@@ -1,126 +1,114 @@
 ﻿<properties 
-	pageTitle="Betriebssystemfunktionen für Anwendungen in Azure-Websites" 
-	description="Erfahren Sie mehr über die Funktionen des Betriebssystems, die für Webanwendungen auf Azure-Websites zur Verfügung stehen." 
-	services="web-sites" 
+	pageTitle="Betriebssystemfunktionen für Web-Apps in Azure App Service" 
+	description="Erfahren Sie mehr über die Funktionen des Betriebssystems, die für Webanwendungen in Azure App Service zur Verfügung stehen." 
+	services="app-service\web" 
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
 	editor="mollybos"/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/11/2014" 
+	ms.date="04/08/2015" 
 	ms.author="cephalin"/>
 
-# Betriebssystemfunktionen für Anwendungen in Azure-Websites #
+# Betriebssystemfunktionen für Web-Apps in Azure App Service
 
-In diesem Artikel werden allgemeine grundlegende Betriebssystemfunktionen beschrieben, die für Anwendungen zur Verfügung stehen, welche über Azure-Websites ausgeführt werden. Diese Funktionen umfassen Zugriff auf Dateien, Netzwerke und Registrierung sowie Diagnoseprotokolle und Ereignisse. 
+In diesem Artikel werden allgemeine grundlegende Betriebssystemfunktionen beschrieben, die für Anwendungen zur Verfügung stehen, die in Web-Apps in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) ausgeführt werden. Diese Funktionen umfassen Zugriff auf Dateien, Netzwerke und Registrierung sowie Diagnoseprotokolle und Ereignisse. 
 
-##Inhaltsverzeichnis
+<a id="tiers"></a>
+## App Service-Planstufen
+Web-Apps führen Kunden-Apps in einer Hostingumgebung mit mehreren Mandanten aus. Web-Apps mit Bereitstellung in den Modi **Kostenlos** und **Freigegeben** werden mit Workerprozessen auf gemeinsamen virtuellen Computern ausgeführt. Web-Apps mit Bereitstellung in den Modi **Standard** und **Premium** werden hingegen auf virtuellen Computern ausgeführt, die nur für die Web-Apps eines einzelnen Kunden bestimmt sind.
 
-* [Websitemodi](#websitemodes)
-* [Entwicklungsframeworks](#developmentframeworks)
-* [Dateizugriff](#FileAccess)
-	* [Lokale Laufwerke](#LocalDrives)
-	* [Netzlaufwerke(oder auch UNC-Freigaben)](#NetworkDrives)
-	* [Dateizugriff über mehrere Instanzen](#multipleinstances)
-	* [Dateizugriffstypen für eine Webanwendung](#TypesOfFileAccess)
-* [Netzwerkzugriff](#NetworkAccess)
-* [Codeausführung, Prozesse und Speicher](#Code)
-* [Diagnoseprotokolle und Ereignisse](#Diagnostics)
-* [Zugriff auf die Registrierung](#RegistryAccess)
-
-<a id="websitemodes"></a>
-<h2>Websitemodi</h2>
-Mit Azure-Websites werden Kundenwebsites in einer mehrinstanzenfähigen Hostingumgebung ausgeführt. Websites mit Bereitstellung im Skalierungsmodus "Kostenlos" und "Freigegeben" werden mit Workerprozessen auf gemeinsamen virtuellen Computern ausgeführt. Websites mit Bereitstellung im Websiteskalierungsmodus "Standard" werden hingegen auf virtuellen Computern ausgeführt, die nur für die Websites eines einzelnen Kunden bestimmt sind.
-
-Da Azure-Websites eine nahtlose Skalierung zwischen unterschiedlichen Modi unterstützt, bleibt die durchgeführte Sicherheitskonfiguration für Websites gleich. So wird gewährleistet, dass sich Webanwendungen nicht plötzlich anders verhalten und unerwartet ausfallen, wenn zwischen einem Websitemodus und einem anderen umgeschaltet wird.
+Da Web-Apps eine nahtlose Skalierung zwischen unterschiedlichen Modi unterstützen, bleibt die durchgeführte Sicherheitskonfiguration für Web-Apps gleich. So wird gewährleistet, dass sich Webanwendungen nicht plötzlich anders verhalten und unerwartet ausfallen, wenn der Web-App-Modus gewechselt wird.
 
 <a id="developmentframeworks"></a>
-<h2>Entwicklungsframeworks</h2>
+## Entwicklungsframeworks
 
-Websitemodi steuern die Rechnerressourcen (CPU, Datenspeicher, Arbeitsspeicher und Netzwerkausgang), die Websites zur Verfügung stehen. Der Umfang verfügbarer Frameworkfunktionen für Anwendungen bleibt jedoch gleich, unabhängig vom Websitemodus.
+Web-App-Modi steuern die Rechnerressourcen (CPU, Datenspeicher, Speicherplatz und Netzwerkausgang), die Web-Apps zur Verfügung stehen. Der Umfang verfügbarer Frameworkfunktionen für Anwendungen bleibt jedoch gleich, unabhängig vom Web-App-Modus.
 
-Azure-Websites bietet Unterstützung für eine Vielzahl an Entwicklungsframeworks, einschließlich ASP.NET, klassischem ASP, Node.js, PHP und Python. Diese werden alle als Erweiterungen innerhalb von IIS ausgeführt. Azure-Websites führt die verschiedenen Entwicklungsframeworks mit deren Standardeinstellungen aus, um die Sicherheitskonfiguration zu vereinfachen und zu normalisieren. Ein Ansatz für die Konfiguration von Azure-Websites hätte die Anpassung des API-Oberflächenbereichs und der Funktionen für jedes einzelne Entwicklungsframework sein können. Stattdessen ist der Ansatz von Azure-Websites allgemeiner. Es wird eine allgemeine Grundlage der Betriebssystemfunktionen ermöglicht, unabhängig vom Anwendungsentwicklungsframework einer Website.
+Web-Apps bieten Unterstützung für eine Vielzahl an Entwicklungsframeworks, einschließlich ASP.NET, klassischem ASP, Node.js, PHP und Python. Diese werden alle als Erweiterungen innerhalb von IIS ausgeführt. Web-Apps führen die verschiedenen Entwicklungsframeworks mit deren Standardeinstellungen aus, um die Sicherheitskonfiguration zu vereinfachen und zu normalisieren. Ein Ansatz für die Konfiguration von Web-Apps hätte die Anpassung des API-Oberflächenbereichs und der Funktionen für jedes einzelne Entwicklungsframework sein können. Stattdessen ist der Ansatz von Web-Apps allgemeiner. Es wird eine allgemeine Grundlage der Betriebssystemfunktionen ermöglicht, unabhängig vom Anwendungsentwicklungsframework einer Web-App.
 
-In den folgenden Abschnitten werden die allgemeinen Betriebssystemfunktionen für Websites in Azure zusammengefasst.
+In den folgenden Abschnitten werden die allgemeinen Betriebssystemfunktionen für Web-Apps in Azure zusammengefasst.
 
 
 <a id="FileAccess"></a>
-<h2>Dateizugriff</h2>
+##Dateizugriff
 
-In Azure-Websites gibt es viele Laufwerke, einschließlich lokaler Laufwerke und Netzwerklaufwerke.
+In Web-Apps gibt es viele Laufwerke, einschließlich lokaler Laufwerke und Netzwerklaufwerke.
 
 <a id="LocalDrives"></a>
-<h3>Lokale Laufwerke</h3>
+### Lokale Laufwerke
 
-Im Kern ist Azure-Websites ein Dienst, der auf der Azure-PaaS-Infrastruktur (Platform-as-a-Service) ausgeführt wird. Daher sind die lokalen Laufwerke, die an einen virtuellen Computer "angehängt" sind, die gleichen Laufwerktypen wie die für jede in Azure ausgeführte Workerrolle verfügbaren Typen. Dies umfasst ein Betriebssystemlaufwerk (Laufwerk D:\), ein Anwendungslaufwerk, das Azure-Paketdateien (CSPKG-Dateien) enthält, die ausschließlich von Azure-Websites verwendet werden (Kunden können darauf nicht zugreifen), sowie ein "Benutzer"-Laufwerk (Laufwerk C:\), dessen Umfang von der Größe des virtuellen Computers abhängt.
+Im Kern ist eine Web-App ein Dienst, der auf der Azure-PaaS-Infrastruktur (Platform-as-a-Service) ausgeführt wird. Daher sind die lokalen Laufwerke, die an einen virtuellen Computer "angehängt" sind, die gleichen Laufwerkstypen wie die für jede in Azure ausgeführte Workerrolle verfügbaren Typen. Dies umfasst ein Betriebssystemlaufwerk (Laufwerk "D:\"), ein Anwendungslaufwerk, das Azure-Paketdateien (CSPKG-Dateien) enthält, die ausschließlich von Web-Apps verwendet werden (Kunden können darauf nicht zugreifen), und ein "Benutzer"-Laufwerk (Laufwerk "C:\"), dessen Umfang von der Größe des virtuellen Computers abhängt.
 
 <a id="NetworkDrives"></a>
-<h3>Netzwerklaufwerke (oder auch UNC-Freigaben)</h3>
+### Netzwerklaufwerke (oder auch UNC-Freigaben)
 
-Ein Alleinstellungsmerkmal von Azure-Websites, das die Webanwendungsbereitstellung und -wartung so unkompliziert macht, ist die Tatsache, dass alle Benutzerinhalte auf einem Satz an UNC-Freigaben gespeichert werden. Dieses Modell passt sehr gut zum allgemeinen Muster der Inhaltsspeicherung, das von lokalen Webhostingumgebungen verwendet wird, die über mehrere Server mit Lastenausgleich verfügen. 
+Ein Alleinstellungsmerkmal von Web-Apps, das die Webanwendungsbereitstellung und -wartung so unkompliziert macht, ist die Tatsache, dass alle Benutzerinhalte auf einem Satz an UNC-Freigaben gespeichert werden. Dieses Modell passt sehr gut zum allgemeinen Muster der Inhaltsspeicherung, das von lokalen Webhostingumgebungen verwendet wird, die über mehrere Server mit Lastenausgleich verfügen. 
 
-In Azure-Websites werden mehrere UNC-Freigaben in jedem Rechenzentrum erstellt. Ein Prozentsatz der Benutzerinhalte aller Kunden in jedem Rechenzentrum wird auf alle UNC-Freigaben verteilt. Außerdem werden alle Dateiinhalte für das Abonnement eines Kunden immer auf derselben UNC-Freigabe abgelegt. 
+In den Web-Apps werden mehrere UNC-Freigaben in jedem Rechenzentrum erstellt. Ein Prozentsatz der Benutzerinhalte aller Kunden in jedem Rechenzentrum wird auf alle UNC-Freigaben verteilt. Außerdem werden alle Dateiinhalte für das Abonnement eines Kunden immer auf derselben UNC-Freigabe abgelegt. 
 
-Beachten Sie, dass sich aufgrund der Funktionsweise von Clouddiensten der spezifische virtuelle Computer, der die UNC-Freigabe hostet, im Laufe der Zeit ändert. Es wird gewährleistet, dass UNC-Freigaben von unterschiedlichen virtuellen Computern bereitgestellt werden, da diese während des normalen Verlaufs von Cloudvorgängen ein- und ausgeschaltet werden. Aus diesem Grund sollten Anwendungen nicht fest codiert annehmen, dass die Computerinformationen in einem UNC-Dateipfad immer stabil bleiben. Stattdessen sollte der praktische " *faux* absolute" Pfad **D:\home\site** verwendet werden, den Azure-Websites zur Verfügung stellt. Dieser pseudoabsolute Pfad bietet eine portable, website- und benutzeragnostische Methode für die Verknüpfung zur eigenen Website. Wenn Sie **D:\home\site** verwenden, können Sie freigegebene Dateien von Website zu Website übertragen, ohne für jede Übertragung einen neuen absoluten Pfad konfigurieren zu müssen.
+Beachten Sie, dass sich aufgrund der Funktionsweise von Clouddiensten der spezifische virtuelle Computer, der die UNC-Freigabe hostet, im Laufe der Zeit ändert. Es wird gewährleistet, dass UNC-Freigaben von unterschiedlichen virtuellen Computern bereitgestellt werden, da diese während des normalen Verlaufs von Cloudvorgängen ein- und ausgeschaltet werden. Aus diesem Grund sollten Anwendungen nicht fest codiert annehmen, dass die Computerinformationen in einem UNC-Dateipfad immer stabil bleiben. Stattdessen sollte der praktische pseudoabsolute Pfad **D:\home\site** verwendet werden, den Web-Apps zur Verfügung stellen. Dieser pseudoabsolute Pfad bietet eine portable, Web-App- und benutzeragnostische Methode für die Verknüpfung zur eigenen App. Wenn Sie **D:\home\site** verwenden, können Sie freigegebene Dateien von App zu App übertragen, ohne für jede Übertragung einen neuen absoluten Pfad konfigurieren zu müssen.
 
 <a id="TypesOfFileAccess"></a>
-<h3>Dateizugriffstypen für eine Webanwendung</h3>
+### Dateizugriffstypen für eine Webanwendung
 
-Jedes Abonnement eines Kunden verfügt über eine reservierte Verzeichnisstruktur auf einer bestimmten UNC-Freigabe innerhalb eines Rechenzentrums. Ein Kunde kann über mehrere Websites verfügen, die in einem bestimmten Rechenzentrum erstellt werden. Alle Verzeichnisse, die zu einem Abonnement eines Kunden gehören, werden daher auf derselben UNC-Freigabe erstellt. In der Freigabe können Verzeichnisse für Inhalt, Fehler- und Diagnoseprotokolle und frühere Versionen der Website, erstellt von der Quellcodeverwaltung, enthalten sein. Wie erwartet, sind Websiteverzeichnisse eines Kunden für Lese- und Schreibzugriff während der Laufzeit über den Anwendungscode der Website verfügbar.
+Jedes Abonnement eines Kunden verfügt über eine reservierte Verzeichnisstruktur auf einer bestimmten UNC-Freigabe innerhalb eines Rechenzentrums. Ein Kunde kann über mehrere Web-Apps verfügen, die in einem bestimmten Rechenzentrum erstellt werden. Alle Verzeichnisse, die zu einem Abonnement eines Kunden gehören, werden daher auf derselben UNC-Freigabe erstellt. In der Freigabe können Verzeichnisse für Inhalt, Fehler- und Diagnoseprotokolle und frühere Versionen der Web-App, erstellt von der Quellcodeverwaltung, enthalten sein. Wie erwartet, sind Web-App-Verzeichnisse eines Kunden für Lese- und Schreibzugriff während der Laufzeit über den Anwendungscode der Web-App verfügbar.
 
-Auf den lokalen Laufwerken, die zum virtuellen Computer gehören, auf dem eine Website ausgeführt wird, reserviert Azure-Websites Speicherplatz auf Laufwerk C:\ für eine websitespezifische, temporäre lokale Speicherung. Obwohl Websites vollständigen Lese- und Schreibzugriff für den eigenen temporären lokalen Speicher besitzen, ist dieser Speicherplatz nicht dazu gedacht, direkt von Anwendungscode verwendet zu werden. Stattdessen dient er dem Zweck, temporären Dateispeicher für IIS und Webanwendungsframeworks bereitzustellen. Azure-Websites beschränkt außerdem den temporären lokalen Speicherplatz für jede Website, damit einzelne Websites nicht übermäßig viel lokalen Dateispeicher beanspruchen können.
+Auf den lokalen Laufwerken, die zum virtuellen Computer gehören, auf dem eine Webanwendung ausgeführt wird, reserviert die Web-App Speicherplatz auf Laufwerk C:\ für eine App-spezifische, temporäre lokale Speicherung. Obwohl eine Web-App vollständigen Lese- und Schreibzugriff für den eigenen temporären lokalen Speicher besitzt, ist dieser Speicherplatz nicht dazu gedacht, direkt von Anwendungscode verwendet zu werden. Stattdessen dient er dem Zweck, temporären Dateispeicher für IIS und Webanwendungsframeworks bereitzustellen. Web-Apps beschränken außerdem den temporären lokalen Speicherplatz für jede Webanwendung, damit einzelne Apps nicht übermäßig viel lokalen Speicherplatz verbrauchen können.
 
-Zwei Beispiele dazu, wie Azure-Websites temporären lokalen Speicherplatz verwendet, sind das Verzeichnis für ASP.NET-Dateien und das Verzeichnis für komprimierte IIS-Dateien. Das Kompilierungssystem von ASP.NET verwendet das Verzeichnis "Temporary ASP.NET Files" als temporären Speicherort für den Kompilierungscache. IIS verwenden das Verzeichnis "IIS Temporary Compressed Files" zum Speichern von komprimierten Antworten. Diese beiden Typen der Dateinutzung (und weitere) werden in Azure-Websites über temporären lokalen Speicherplatz pro Website neu zugewiesen. Durch diese Neuzuweisung wird eine durchgängige Funktionalität gewährleistet.
+Zwei Beispiele dazu, wie Web-Apps temporären lokalen Speicherplatz verwenden, sind das Verzeichnis für ASP.NET-Dateien und das Verzeichnis für komprimierte IIS-Dateien. Das Kompilierungssystem von ASP.NET verwendet das Verzeichnis "Temporary ASP.NET Files" als temporären Speicherort für den Kompilierungscache. IIS verwenden das Verzeichnis "IIS Temporary Compressed Files", um komprimierte Rückmeldungen zu speichern. Diese beiden Typen der Dateinutzung (und weitere) werden in Web-Apps über temporären lokalen Speicherplatz pro App neu zugewiesen. Durch diese Neuzuweisung wird eine durchgängige Funktionalität gewährleistet.
 
-Jede Website in Azure-Websites führt eine zufällige, eindeutige Workerrollenidentität mit geringen Berechtigungen aus, die "Anwendungspoolidentität" heißt, und hier beschrieben wird (in englischer Sprache): [http://www.iis.net/learn/manage/configuring-security/application-pool-identities](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Anwendungscode nutzt diese Identität für grundlegenden schreibgeschützten Zugriff auf das Betriebssystemlaufwerk (Laufwerk D:\). Das bedeutet, Anwendungscode kann allgemeine Verzeichnisstrukturen auflisten und allgemeine Dateien auf dem Betriebssystemlaufwerk lesen. Dies erscheint zwar wie ein sehr umfassender Zugriff, dieselben Verzeichnisse und Dateien sind jedoch zugänglich, wenn Sie in einem von Azure gehosteten Dienst eine Workerrolle bereitstellen und die Laufwerksinhalte lesen. 
+Jede Anwendung der Web-App führt eine zufällige, eindeutige Workerrollenidentität mit geringen Berechtigungen aus, die "Anwendungspoolidentität" heißt und unter folgendem Link beschrieben wird (in englischer Sprache): [http://www.iis.net/learn/manage/configuring-security/application-pool-identities](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Anwendungscode nutzt diese Identität für grundlegenden schreibgeschützten Zugriff auf das Betriebssystemlaufwerk (Laufwerk D:\). Das bedeutet, Anwendungscode kann allgemeine Verzeichnisstrukturen auflisten und allgemeine Dateien auf dem Betriebssystemlaufwerk lesen. Dies erscheint zwar wie ein sehr umfassender Zugriff, dieselben Verzeichnisse und Dateien sind jedoch zugänglich, wenn Sie in einem von Azure gehosteten Dienst eine Workerrolle bereitstellen und die Laufwerksinhalte lesen. 
 
 <a name="multipleinstances"></a>
 ### Dateizugriff über mehrere Instanzen
 
-Das Basisverzeichnis enthält den Inhalt einer Website, und Webanwendungen können darauf schreiben. Wenn eine Website auf mehreren Instanzen ausgeführt wird, wird das Basisverzeichnis auf alle Instanzen verteilt, sodass für alle Instanzen das gleiche Verzeichnis angezeigt wird. Wenn also beispielsweise eine Website hochgeladene Dateien im Basisverzeichnis speichert, sind diese Dateien sofort für alle Instanzen verfügbar. 
+Das Basisverzeichnis enthält den Inhalt einer App, und Webanwendungen können darin schreiben. Wenn eine Web-App auf mehreren Instanzen ausgeführt wird, wird das Homeverzeichnis auf alle Instanzen verteilt, sodass für alle Instanzen das gleiche Verzeichnis angezeigt wird. Wenn also beispielsweise eine Web-App hochgeladene Dateien im Homeverzeichnis speichert, sind diese Dateien sofort für alle Instanzen verfügbar. 
 
 <a id="NetworkAccess"></a>
-<h2>Netzwerkzugriff</h2>
-Anwendungscode kann TCP/IP- und UDP-basierte Protokolle verwenden, um ausgehende Verbindungen zu zugänglichen Endpunkten im Internet herzustellen, die externe Dienste bereitstellen. Anwendungen können die gleichen Protokolle verwenden, um sich mit Diensten in Azure zu verbinden,#151;beispielsweise durch Einrichten von HTTPS-Verbindungen mit SQL Azure.
+## Netzwerkzugriff
+Anwendungscode kann TCP/IP- und UDP-basierte Protokolle verwenden, um ausgehende Verbindungen zu zugänglichen Endpunkten im Internet herzustellen, die externe Dienste bereitstellen. Anwendungen können die gleichen Protokolle verwenden, um eine Verbindung mit Diensten innerhalb von Azure herzustellen, beispielsweise HTTPS-Verbindungen zu SQL Azure.
 
-Es ist außerdem eine eingeschränkte Funktion für Anwendungen vorhanden, mit der eine lokale Loopbackverbindung erstellt werden kann und die Anwendungen über dieses Loopbacksocket empfängt. Diese Funktion dient vor allem dazu, Anwendungen zu ermöglichen, die als Teil ihrer Funktionalität über lokale Loopbacksockets empfangen. Beachten Sie, dass in der Anwendung eines jeden Kunden eine "private" Loopbackverbindung angezeigt wird. Anwendung "A" kann nicht über ein lokales Loopbacksocket empfangen, das von Anwendung "B" eingerichtet wurde.
+Es ist außerdem eine eingeschränkte Funktion für Anwendungen vorhanden, mit der eine lokale Loopbackverbindung erstellt werden kann und die Anwendungen über dieses Loopbacksocket empfängt. Diese Funktion dient vor allem dazu, Anwendungen zu ermöglichen, die als Teil ihrer Funktionalität über lokale Loopbacksockets empfangen. Beachten Sie, dass in der Anwendungen eines jeden Kunden eine "private" Loopbackverbindung angezeigt wird. Anwendung "A" kann nicht über ein lokales Loopbacksocket empfangen, das von Anwendung "B" eingerichtet wurde.
 
-Named Pipes werden auch als Mechanismus für die Kommunikation zwischen Prozessen (IPC) unterstützt. Dies umfasst unterschiedliche Prozesse, die zusammen eine Website ausführen. Beispielsweise nutzt das IIS FastCGI-Modul Named Pipes für die Koordinierung der individuellen Prozesse, die PHP-Websites ausführen.
+Named Pipes werden auch als Mechanismus für die Kommunikation zwischen Prozessen (IPC) unterstützt. Dies umfasst unterschiedliche Prozesse, die zusammen eine Web-App ausführen. Beispielsweise nutzt das IIS FastCGI-Modul Named Pipes für die Koordinierung der individuellen Prozesse, die PHP-Websites ausführen.
 
 
 <a id="Code"></a>
-<h2>Codeausführung, Prozesse und Speicher</h2>
-Wie bereits zuvor erwähnt, werden Websites innerhalb von Workerprozessen mit geringen Berechtigungen und mit einer zufälligen Anwendungspoolidentität ausgeführt. Anwendungscode besitzt Zugriff auf den Speicherplatz, der zum Workerprozess gehört, sowie alle untergeordneten Prozesse, die aus CGI-Prozessen oder anderen Anwendungen stammen. Anwendungen von einer Website können jedoch nicht auf den Arbeitsspeicher oder die Daten einer Website eines anderen Kunden zugreifen, selbst wenn diese auf demselben virtuellen Computer ausgeführt wird.
+## Codeausführung, Prozesse und Speicher
+Wie bereits zuvor erwähnt, werden Web-Apps innerhalb von Workerprozessen mit geringen Berechtigungen und mit einer zufälligen Anwendungspoolidentität ausgeführt. Anwendungscode besitzt Zugriff auf den Speicherplatz, der zum Workerprozess gehört, sowie alle untergeordneten Prozesse, die aus CGI-Prozessen oder anderen Anwendungen stammen. Die Web-App eines Kunden kann jedoch nicht auf den Speicher oder die Daten einer Web-App eines anderen Kunden zugreifen, selbst wenn diese auf demselben virtuellen Computer ausgeführt werden.
 
-Anwendungen können Skripts oder Seiten ausführen, die mit unterstützten Webanwendungsframeworks erstellt wurden. Azure-Websites konfiguriert die Einstellungen von Webanwendungsframeworks nicht auf eingeschränktere Modi. Beispielsweise werden auf Azure-Websites ausgeführte ASP.NET-Websites als "vollständig" vertrauenswürdig eingestuft und nicht auf eingeschränkter Vertrauensebene ausgeführt. Anwendungsframeworks, einschließlich klassischem ASP und ASP.NET, können prozessinterne COM-Komponenten aufrufen (jedoch keine prozessexternen COM-Komponenten), zum Beispiel ADO (ActiveX Data Objects), die standardmäßig auf dem Windows-Betriebssystem registriert sind.
+Anwendungen können Skripts oder Seiten ausführen, die mit unterstützten Webanwendungsframeworks erstellt wurden. Web-Apps konfigurieren die Einstellungen von Webanwendungsframeworks nicht auf eingeschränktere Modi. Beispielsweise werden ASP.NET-Apps, die in Web-Apps ausgeführt werden, als voll vertrauenswürdig statt auf eingeschränkter Vertrauensebene ausgeführt. Anwendungsframeworks, einschließlich klassischem ASP und ASP.NET, können prozessinterne COM-Komponenten aufrufen (jedoch keine prozessexternen COM-Komponenten), zum Beispiel ADO (ActiveX Data Objects), die standardmäßig auf dem Windows-Betriebssystem registriert sind.
 
-Webanwendungen können willkürlichen Code erzeugen und ausführen. Es ist zulässig, dass Webanwendungen beispielsweise eine Befehlsshell erzeugen oder ein PowerShell-Skript ausführen. Obwohl willkürlicher Code und willkürliche Prozesse von einer Webanwendung erzeugt werden können, sind ausführbare Programme und Skripte jedoch immer durch die Berechtigungen beschränkt, die der übergeordnete Anwendungspool besitzt. Beispielsweise kann eine Website ein ausführbares Programm erzeugen, das einen ausgehenden HTTP-Aufruf ausführt. Dieses ausführbare Programm kann jedoch nicht versuchen, die IP-Adresse eines virtuellen Computers von deren NIC loszulösen. Die Durchführung eines ausgehenden Netzwerkaufrufes ist für Code mit geringen Berechtigungen zulässig, der Versuch, die Netzwerkeinstellungen auf einem virtuellen Computer zu konfigurieren erfordert jedoch Administratorberechtigungen.
+Webanwendungen können willkürlichen Code erzeugen und ausführen. Es ist zulässig, dass Webanwendungen beispielsweise eine Befehlsshell erzeugen oder ein PowerShell-Skript ausführen. Obwohl willkürlicher Code und willkürliche Prozesse von einer Webanwendung erzeugt werden können, sind ausführbare Programme und Skripte jedoch immer durch die Berechtigungen beschränkt, die der übergeordnete Anwendungspool besitzt. Beispielsweise kann eine Web-App ein ausführbares Programm erzeugen, das einen ausgehenden HTTP-Aufruf ausführt. Dieses ausführbare Programm kann jedoch nicht versuchen, die IP-Adresse eines virtuellen Computers von deren NIC loszulösen. Die Durchführung eines ausgehenden Netzwerkaufrufes ist für Code mit geringen Berechtigungen zulässig, der Versuch, die Netzwerkeinstellungen auf einem virtuellen Computer zu konfigurieren erfordert jedoch Administratorberechtigungen.
 
 
 <a id="Diagnostics"></a>
-<h2>Diagnoseprotokolle und Ereignisse</h2>
-Bei Protokollinformationen handelt es sich um einen weiteren Datensatz, auf den einige Webanwendungen versuchen, zuzugreifen. Die Typen von Protokollinformationen, die für in Azure ausgeführten Code verfügbar sind, umfassen diagnostische und Protokollinformationen, die von einer Website generiert wurden, und auf die Websites einfach zugreifen können. 
+## Diagnoseprotokolle und Ereignisse
+Bei Protokollinformationen handelt es sich um einen weiteren Datensatz, auf den einige Webanwendungen versuchen, zuzugreifen. Die Typen von Protokollinformationen, die für in Web-Apps ausgeführten Code verfügbar sind, umfassen Diagnose- und Protokollinformationen, die von einer Web-App generiert wurden, und auf die Web-Apps einfach zugreifen können. 
 
-Beispielsweise sind W3C-HTTP-Protokolle, die von einer aktiven Website generiert werden, entweder in einem Protokollverzeichnis in der für die Website erstellten Netzwerkfreigabe oder im Blob-Speicher verfügbar, wenn ein Kunde W3C-Protokollierung im Speicher eingerichtet hat. Die zweite Option ermöglicht es Ihnen, große Mengen an Protokollen zu sammeln, ohne die Dateispeicherbeschränkungen der Netzwerkfreigabe zu überschreiten.
+Beispielsweise sind W3C-HTTP-Protokolle, die von einer aktiven Web-App generiert werden, entweder in einem Protokollverzeichnis in der Netzwerkfreigabe, die für die Web-App erstellt wurde, verfügbar oder im Blob-Speicher, wenn ein Kunde W3C-Protokollierung in einem Speicher eingerichtet hat. Die zweite Option ermöglicht es Ihnen, große Mengen an Protokollen zu sammeln, ohne die Dateispeicherbeschränkungen der Netzwerkfreigabe zu überschreiten.
 
-Ebenso können Echtzeitdiagnoseinformationen aus .NET-Anwendungen protokolliert werden. Dies ist mit der Nachverfolgungs- und Diagnoseinfrastruktur von .NET möglich, wobei die Nachverfolgungsinformationen entweder auf die Netzwerkfreigabe der Website oder in einen Blob-Speicherort geschrieben werden können.
+Ebenso können Echtzeitdiagnoseinformationen aus .NET-Anwendungen protokolliert werden. Dies ist möglich mit der Nachverfolgungs- und Diagnosestruktur von .NET, wobei die Nachverfolgungsinformationen entweder auf die Netzwerkfreigabe der Web-App oder an einen Blob-Speicherort geschrieben werden können.
 
-Bereiche der Diagnoseprotokollierung und Nachverfolgung, die für Webanwendungen in Azure nicht verfügbar sind, sind Windows-ETW-Ereignisse und Windows-Ereignisprotokolle (zum Beispiel System-, Anwendungs- und Sicherheitsereignisprotokolle). Da ETW-Nachverfolgungsinformationen potenziell computerweit sichtbar sind (mit den entsprechenden ACLs), sind Lese- und Schreibzugriff auf ETW-Ereignisse blockiert. Entwickler erkennen wahrscheinlich, dass API-Aufrufe zum Schreiben und Lesen von ETW-Ereignissen und allgemeinen Windows-Ereignisprotokollen scheinbar funktionieren. Dies liegt jedoch daran, dass Azure-Websites die Aufrufe "fälscht", sodass sie scheinbar erfolgreich ausgeführt werden. Tatsächlich erhält Websiteanwendungscode keinen Zugriff auf diese Ereignisdaten.
+Bereiche der Diagnoseprotokollierung und Nachverfolgung, die für Webanwendungen in Azure nicht verfügbar sind, sind Windows-ETW-Ereignisse und Windows-Ereignisprotokolle (zum Beispiel System-, Anwendungs- und Sicherheitsereignisprotokolle). Da ETW-Nachverfolgungsinformationen potenziell computerweit sichtbar sind (mit den entsprechenden ACLs), sind Lese- und Schreibzugriff auf ETW-Ereignisse blockiert. Entwickler erkennen wahrscheinlich, dass API-Aufrufe für das Schreiben und Lesen von ETW-Ereignissen und allgemeinen Windows-Ereignisprotokollen scheinbar funktionieren. Dies liegt jedoch daran, dass Web-Apps die Aufrufe "fälschen", sodass sie scheinbar erfolgreich ausgeführt werden. Tatsächlich erhält Web-App-Code keinen Zugriff auf diese Ereignisdaten.
 
 <a id="RegistryAccess"></a>
-<h2>Registrierungszugriff</h2>
+## Registrierungszugriff
 Anwendungen verfügen über schreibgeschützten Zugriff auf einen großen Teil des Verzeichnisses des virtuellen Computers (jedoch nicht auf das gesamte), auf dem sie ausgeführt werden. In der Praxis bedeutet das, Registrierungsschlüssel, die schreibgeschützten Zugriff auf lokale Benutzergruppen gewähren, sind für Webanwendungen zugänglich. Ein Bereich der Registrierung, der aktuell nicht für Lese- oder Schreibzugriff unterstützt wird, ist die Struktur HKEY\_CURRENT\_USER.
 
-Der Schreibzugriff auf die Registrierung ist blockiert, einschließlich des Zugriffs auf benutzerbezogene Registrierungsschlüssel. Aus Sicht einer Anwendung sollte in einer Cloudumgebung nie von Schreibzugriff auf eine Registrierung ausgegangen werden, da Anwendungen über unterschiedliche virtuelle Computer migriert werden können (und dies auch geschieht). Der einzige dauerhaft beschreibbare Speicher, auf den sich eine Webanwendung stützen kann, ist die Inhaltsverzeichnisstruktur jeder Website, die auf UNC-Freigaben von Azure-Websites gespeichert wird. 
+Der Schreibzugriff auf die Registrierung ist blockiert, einschließlich des Zugriffs auf benutzerbezogene Registrierungsschlüssel. Aus Sicht einer Anwendung sollte in einer Cloudumgebung nie von Schreibzugriff auf eine Registrierung ausgegangen werden, da Anwendungen über unterschiedliche virtuelle Computer migriert werden können (und dies auch geschieht). Der einzige dauerhaft beschreibbare Speicher, auf den sich eine Webanwendung stützen kann, ist die Inhaltsverzeichnisstruktur jeder Web-App, die auf UNC-Freigaben von Web-Apps gespeichert wird. 
 
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service and existing Azure services (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529714)
+* Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter: [Reference for navigating the preview portal (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529715)
 
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

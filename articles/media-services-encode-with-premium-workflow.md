@@ -16,11 +16,11 @@
 	ms.date="03/03/2015" 
 	ms.author="juliako"/>
 
-# Erweiterte Codierung mit dem Media Encoder Premium Workflow (öffentliche Vorschau)
+#Erweiterte Codierung mit dem Media Encoder Premium Workflow (öffentliche Vorschau)
 
 **Hinweis**Der in diesem Thema beschriebene Media Encoder Premium Workflow-Medienprozessor ist in China nicht verfügbar.
 
-## Übersicht
+##Übersicht
 
 Microsoft Azure Media Services stellt eine öffentliche Vorschau des **Media Encoder Premium Workflow**-Medienprozessors vor. Dieser Prozessor bietet leistungsstarke Codierungsfunktionen für Ihre bedarfsgesteuerten Premium-Workflows. 
 
@@ -28,13 +28,13 @@ Die folgenden Themen stellen nähere Informationen zum **Media Encoder Premium-W
 
 - [Von Media Encoder Premium Workflow unterstützte Formate](media-services-premium-workflow-encoder-formats.md) - Erläutert die von **Media Encoder Premium Workflow** unterstützten Dateiformate und Codecs.
 
-- Im Abschnitt [Encoder-Vergleich](media-services-encode-asset#compare_encoders.md) werden die Codierungsfunktionen von**Media Encoder Premium Workflow** und **Azure Media Encoder** verglichen.
+- Im Abschnitt [Encoder-Vergleich](media-services-encode-asset.md#compare_encoders) werden die Codierungsfunktionen von**Media Encoder Premium Workflow** und **Azure Media Encoder** verglichen.
 
 Dieses Thema zeigt die Codierung mit **Media Encoder Premium Workflow** unter Verwendung von .NET.
 
-## Codieren
+##Codieren
 
-Das Codieren von Aufgaben für den **Media Encoder Premium Workflow** erfordert eine separate Konfigurationsdatei, die sogenannte Workflowdatei. Diese Dateien haben die Erweiterung .workflow werden mit dem [Workflow-Designer](media-services-workflow-designer.md) erstellt.
+Das Codieren von Aufgaben für den **Media Encoder Premium Workflow** erfordert eine separate Konfigurationsdatei, die sogenannte Workflowdatei. Diese Dateien haben die Erweiterung .workflow und werden mit dem [Workflow-Designer](media-services-workflow-designer.md) erstellt.
 
 Sie können die standardmäßigen Workflowdateien [hier](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows) abrufen. Der Ordner enthält auch Beschreibungen dieser Dateien.
 
@@ -50,7 +50,7 @@ Es werden folgende Schritte ausgeführt:
 4. Erstellen eines Auftrags und einer Aufgabe.
 5. Hinzufügen von zwei Medienobjekten zur Aufgabe.
 	
-	a. 1. - das Medienobjekt für den Workflow
+	a. 1. - das Workflow-Medienobjekt
 
 	b. 2. - das Videomedienobjekt
 	
@@ -144,39 +144,39 @@ Im folgenden finden Sie ein vollständiges Beispiel. Informationen zur Einrichtu
 	        {
 	            // Declare a new job.
 	            IJob job = _context.Jobs.Create("Premium Workflow encoding job");
-	            // Get a media processor reference, and pass to it the name of the 
-	            // processor to use for the specific task.
+	            // Rufen Sie einen Verweis auf den Medienprozessor ab, und übergeben Sie ihm den Namen des 
+	            // Prozessors für die spezielle Aufgabe.
 	            IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Premium Workflow");
 	
-	            // Create a task with the encoding details, using a string preset.
+	            // Erstellen Sie eine Aufgabe mit den Codierungsdetails unter Verwendung einer Voreinstellung.
 	            ITask task = job.Tasks.AddNew("Premium Workflow encoding task",
 	                processor,
 	                "",
 	                TaskOptions.None);
 	
-	            // Specify the input asset to be encoded.
+	            // Geben Sie das zu codierende Eingabemedienobjekt an.
 	            task.InputAssets.Add(workflow);
-	            task.InputAssets.Add(video); // we add one asset
-	            // Add an output asset to contain the results of the job. 
-	            // This output is specified as AssetCreationOptions.None, which 
-	            // means the output asset is not encrypted. 
+	            task.InputAssets.Add(video); // Fügen Sie ein Medienobjekt hinzu.
+	            // Fügen Sie ein Ausgabemedienobjekt hinzu, das die Ergebnisse des Auftrags enthält. 
+	            // Diese Ausgabe wird als AssetCreationOptions.None, angegeben. Das 
+	            // bedeutet, dass das Ausgabemedienobjekt nicht verschlüsselt ist. 
 	            task.OutputAssets.AddNew("Output asset",
 	                AssetCreationOptions.None);
 	
-	            // Use the following event handler to check job progress.  
+	            // Verwenden Sie den folgenden Ereignishandler zum Überprüfen des Auftragsfortschritts.  
 	            job.StateChanged += new
 	                    EventHandler<JobStateChangedEventArgs>(StateChanged);
 	
-	            // Launch the job.
+	            // Starten Sie den Auftrag.
 	            job.Submit();
 	
-	            // Check job execution and wait for job to finish. 
+	            // Überprüfen Sie die Auftragsausführung, und warten Sie die Beendigung des Auftrags ab. 
 	            Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
 	            progressJobTask.Wait();
 	
-	            // If job state is Error the event handling 
-	            // method for job progress should log errors.  Here we check 
-	            // for error state and exit if needed.
+	            // Wenn der Auftragsstatus einem Fehler entspricht, sollte die Event Handling- 
+	            // Methode zum Auftragsfortschritt etwaige Fehler protokollieren.  Hier erfolgt eine Überprüfung 
+	            // auf einen Fehlerstatus. Bei Bedarf wird die Anwendung beendet.
 	            if (job.State == JobState.Error)
 	            {
 	                throw new Exception("\nExiting method due to job error.");
@@ -260,4 +260,10 @@ Im folgenden finden Sie ein vollständiges Beispiel. Informationen zur Einrichtu
 	        }
 	    }
 	}
-<!--HONumber=47-->
+
+
+##Bekannte Probleme
+
+Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjekt trotzdem eine leere TTML-Datei.
+
+<!--HONumber=52-->

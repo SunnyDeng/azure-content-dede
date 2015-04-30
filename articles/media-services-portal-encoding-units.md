@@ -17,11 +17,11 @@
 	ms.author="juliako"/>
 
 
-# Skalieren der Codierung
+#Skalieren der Codierung
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) .
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).
 
-## Übersicht
+##Übersicht
 
 Ein Media Services-Konto ist dem Typ einer reservierten Einheit zugeordnet, der die Geschwindigkeit bestimmt, mit der Codierungsaufträge verarbeitet werden. Sie können zwischen den folgenden Typen reservierter Einheiten auswählen: **Basic**, **Standard** oder **Premium**. Derselbe Codierungsauftrag wird bei Verwendung der reservierten Einheit **Standard** beispielsweise schneller ausgeführt als mit dem Typ **Basic**. Weitere Informationen finden Sie unter der [Typen reservierter Einheiten für die Codierung](http://azure.microsoft.com/blog/author/milanga).
 
@@ -38,7 +38,7 @@ Führen Sie folgende Schritte aus, um den Typ reservierter Einheiten und die Anz
 	Verwenden Sie zum Ändern der Anzahl reservierter Einheiten für den ausgewählten Typ reservierter Einheiten den Schieberegler unter **CODIERUNG**. 
 	
 	
-	![Processors page](./media/media-services-how-to-scale/media-services-encoding-scale.png)
+	![Prozessorenseite](./media/media-services-how-to-scale/media-services-encoding-scale.png)
 
 	  
 	>[Azure.Note] Der Premium-Typ für reservierte Einheiten ist in den folgenden Rechenzentren nicht verfügbar: Singapur, Hongkong, Osaka, Peking, Shanghai.
@@ -49,12 +49,12 @@ Führen Sie folgende Schritte aus, um den Typ reservierter Einheiten und die Anz
 
 	>[Azure.Note] Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet.
 
-## Kontingente und Einschränkungen
+##Kontingente und Einschränkungen
 
-Informationen zu Kontingenten und Einschränkungen sowie zum Öffnen von Supporttickets finden Sie unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md).
-
-
+Informationen zu Kontingenten und Einschränkungen sowie zum Öffnen von Supporttickets finden Sie unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md)
 
 
 
-<!--HONumber=47-->
+
+
+<!--HONumber=52-->

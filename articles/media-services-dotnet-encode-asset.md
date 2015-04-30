@@ -17,11 +17,11 @@
 	ms.author="juliako"/>
 
 
-# Codieren eines Medienobjekts mit Azure Media Encoder
+#Codieren eines Medienobjekts mit Azure Media Encoder
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md). 
 
-## Übersicht
+##Übersicht
 
 Um digitale Videos über das Internet zu übermitteln, müssen Sie die Medien komprimieren. Digitale Videodateien sind sehr umfangreich und möglicherweise zu groß, um sie über das Internet zu übermitteln oder auf den Geräten Ihrer Kunden ordnungsgemäß wiederzugeben. Bei der Codierung werden Video- und Audiodaten komprimiert, damit Ihre Kunden Ihre Medien anzeigen können.
 
@@ -29,12 +29,13 @@ Die Codierung ist einer der häufigsten Verarbeitungsvorgänge in Media Services
 
 Es wird empfohlen, Zwischendateien immer in einen MP4-Satz mit adaptiver Bitrate zu codieren und anschließend mithilfe der [dynamischen Paketerstellung](https://msdn.microsoft.com/library/azure/jj889436.aspx) in das gewünschte Format zu konvertieren.
 
+Wenn Ihr Ausgabemedienobjekt speicherverschlüsselt ist, müssen Sie die Übermittlungsrichtlinien für Medienobjekte konfigurieren. Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren von Übermittlungsrichtlinien für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md).
 
-## Erstellen eines Auftrags mit einer einzelnen Codierungsaufgabe 
+##Erstellen eines Auftrags mit einer einzelnen Codierungsaufgabe 
 
 Bei der Codierung mit Azure Media Encoder können Sie die [hier](https://msdn.microsoft.com/library/azure/dn619389.aspx) angegebenen Voreinstellungen für die Aufgabenkonfiguration verwenden.
 
-### Verwenden des Azure Media Services SDKs für .NET  
+###Verwenden des Azure Media Services SDKs für .NET  
 
 Mit der folgenden **EncodeToAdaptiveBitrateMP4Set**-Methode werden ein Codierungsauftrag erstellt und dem Auftrag eine einzelne Codierungsaufgabe hinzugefügt. Bei der Aufgabe wird "Azure Media Encoder" verwendet, um eine Codierung in "H264 Adaptive Bitrate MP4 Set 720p" auszuführen. 
 
@@ -105,7 +106,7 @@ Mit der folgenden **EncodeToAdaptiveBitrateMP4Set**-Methode werden ein Codierung
         return processor;
     }
 
-### Verwenden von Media Services SDK für .NET-Erweiterungen
+###Verwenden von Media Services SDK für .NET-Erweiterungen
 
     static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset asset)
     {
@@ -137,7 +138,7 @@ Mit der folgenden **EncodeToAdaptiveBitrateMP4Set**-Methode werden ein Codierung
         return outputAsset;
     } 
 
-## Erstellen eines Auftrags mit verketteten Aufgaben 
+##Erstellen eines Auftrags mit verketteten Aufgaben 
 
 In zahlreichen Anwendungsszenarien möchten Entwickler eine Reihe von Verarbeitungsaufgaben erstellen. In Media Services können Sie eine Reihe verketteter Aufgaben erstellen. In jeder Aufgabe können verschiedene Verarbeitungsschritte ausgeführt und unterschiedliche Medienprozessoren verwendet werden. Innerhalb der verketteten Aufgaben kann ein Medienobjekt von einer Aufgabe an eine andere übergeben werden, sodass eine lineare Aufgabensequenz auf das Medienobjekt angewendet wird. In einem Auftrag ausgeführte Aufgaben müssen jedoch nicht sequenziell sein. Beim Erstellen einer verketteten Aufgabe werden die verketteten **ITask**-Objekte in einem einzelnen **IJob**-Objekt erstellt.
 
@@ -206,8 +207,7 @@ Durch die folgende **CreateChainedTaskEncodingJob**-Methode wird ein Auftrag mit
     }
 
 
-## Nächste Schritte
-Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erstellen und können mit dem Thema [Prüfen des Auftragsfortschritts mit Media Services](media-services-check-job-progress.md) fortfahren.
+##Nächste Schritte
 
 [Azure Marketplace]: https://datamarket.azure.com/
 [Encoder-Voreinstellung]: http://msdn.microsoft.com/library/dn619392.aspx
@@ -217,4 +217,4 @@ Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erst
 [Vorgehensweise: Prüfen des Auftragsfortschritts]:http://go.microsoft.com/fwlink/?LinkId=301737
 [Aufgabenvoreinstellungen für Azure Media Packager]:http://msdn.microsoft.com/library/windowsazure/hh973635.aspx
 
-<!--HONumber=47-->
+<!--HONumber=52-->

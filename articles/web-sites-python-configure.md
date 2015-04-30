@@ -1,46 +1,33 @@
 ﻿<properties 
 	pageTitle="Konfigurieren von Python mit Azure-Websites" 
 	description="Dieses Lernprogramm beschreibt die Optionen für das Erstellen und Konfigurieren einer einfachen WSGI-kompatiblen (Web Server Gateway Interface) Python-Anwendung auf Azure-Websites." 
-	services="web-sites" 
+	services="app-service\web" 
 	documentationCenter="python" 
+	tags="python"
 	authors="huguesv" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="12/17/2014" 
-	ms.author="huvalo"/>
+	ms.date="02/09/2015" 
+	ms.author="huguesv"/>
 
 
 
 
 # Konfigurieren von Python mit Azure-Websites
 
-Dieses Lernprogramm beschreibt die Optionen für das Erstellen und Konfigurieren einer einfachen WSGI-kompatiblen (Web Server Gateway Interface) Python-Anwendung auf Azure-Websites.
+Dieses Lernprogramm beschreibt die Optionen für das Erstellen und Konfigurieren einer grundlegenden Web Server Gateway Interface (WSGI)-kompatiblen Python-Anwendung auf Azure-Websites.
 
 Außerdem beschrieben werden zusätzliche Funktionen der Git-Bereitstellung, z. B. virtuelle Umgebung und Paketinstallation mithile von "requirements.txt".
 
-+ [Bottle, Django oder Flask?](#bottle-django-flask)
-+ [Erstellen von Websites im Portal](#website-creation-on-portal)
-+ [Git-Veröffentlichung](#git-publishing)
-+ [Anwendungsübersicht](#application-overview)
-+ [WSGI-Handler](#wsgi-handler)
-+ [Virtuelle Umgebung](#next-steps)
-+ [Verwalten von Paketen](#next-steps)
-+ [Python-Version](#next-steps)
-+ [Proxy für die virtuelle Umgebung](#virtual-environment-proxy)
-+ [Anpassen der Git-Bereitstellung](#customize-git-deployment)
-+ [Problembehandlung - Bereitstellung](#troubleshooting-deployment)
-+ [Problembehandlung - Paketinstallation](#troubleshooting-package-installation)
-+ [Problembehandlung - virtuelle Umgebung](#troubleshooting-virtual-environment)
 
-
-<h2><a name="bottle-django-flask"></a>Bottle, Django oder Flask?</h2>
+## Bottle, Django oder Flask?
 
 Der Azure-Katalog enthält Vorlagen für die Frameworks Bottle, Django und Flask.  Wenn Sie Ihre erste Azure-Website entwickeln oder nicht mit Git vertraut sind, empfehlen wir, dass Sie diese Lernprogramme befolgen, die schrittweise Anleitungen zum Entwickeln einer funktionierenden Anwendung aus dem Katalog mithilfe der Git-Bereitstellung unter Windows oder Mac enthalten:
 
@@ -49,7 +36,7 @@ Der Azure-Katalog enthält Vorlagen für die Frameworks Bottle, Django und Flask
 - [Erstellen von Websites mit Flask][]
 
 
-<h2><a name="website-creation-on-portal"></a>Erstellen von Websites im Portal</h2>
+## Erstellen von Websites im Portal
 
 Für dieses Lernprogramm wird davon ausgegangen, dass Sie über ein Azure-Abonnement verfügen und Zugang zum Azure-Verwaltungsportal haben.
 
@@ -58,7 +45,7 @@ Wenn Sie noch keine Website haben, können Sie eine über das Azure-Verwaltungsp
 ![](./media/web-sites-python-configure/configure-python-create-website.png)
 
 
-<h2><a name="git-publishing"></a>Git-Veröffentlichung</h2>
+## Git-Veröffentlichung
 
 Verwenden Sie die Registerkarte SCHNELLSTART oder DASHBOARD für die neu erstellte Website, um die Git-Veröffentlichung zu konfigurieren.  In diesem Lernprogramm wird die Python-Website mit Git erstellt, verwaltet und auf Azure-Websites veröffentlicht.
 
@@ -67,7 +54,7 @@ Verwenden Sie die Registerkarte SCHNELLSTART oder DASHBOARD für die neu erstell
 Sobald die Git-Veröffentlichung eingerichtet ist, wird ein Git-Repository erstellt und der Website zugewiesen.  Die URL des Repository wird angezeigt und kann ab sofort verwendet werden, um Daten aus der lokalen Entwicklungsumgebung mittels Push in die Cloud zu übertragen. Stellen Sie beim Veröffentlichen von Anwendungen mittels Git sicher, dass auch ein Git-Client installiert ist, und verwenden Sie die bereitgestellten Anweisungen, um den Websiteinhalt per Push auf Azure-Websites zu übertragen.
 
 
-<h2><a name="application-overview"></a>Anwendungsübersicht</h2>
+## Anwendungsübersicht
 
 In den nächsten Abschnitten werden die folgenden Dateien erstellt.  Sie müssen im Stammverzeichnis des Git-Repositorys gespeichert werden.
 
@@ -78,7 +65,7 @@ In den nächsten Abschnitten werden die folgenden Dateien erstellt.  Sie müssen
     ptvs_virtualenv_proxy.py
 
 
-<h2><a name="wsgi-handler"></a>WSGI-Handler</h2>
+## WSGI-Handler
 
 WSGI ist ein Python-Standard, der in der Spezifikation [PEP 3333](http://www.python.org/dev/peps/pep-3333/) beschrieben wird und der eine Schnittstelle zwischen dem Webserver und Python definiert. Es bietet eine standardisierte Schnittstelle zum Schreiben verschiedener Webanwendungen und Frameworks mit Python.  Beliebte Python-Webframeworks nutzen heute WSGI.  Azure-Websites bietet Ihnen die Unterstützung für solche Frameworks. Darüber hinaus können erfahrenere Benutzer auch ihre eigenen Frameworks erstellen, sofern der benutzerdefinierte Handler die Richtlinien der WSGI-Spezifikation befolgt.
 
@@ -97,10 +84,10 @@ Hier ist ein Beispiel für der Datei  `app.py`, die einen benutzerdefinierten Ha
         httpd = make_server('localhost', 5555, wsgi_app)
         httpd.serve_forever()
 
-Sie können diese Anwendung lokal mit  `python app.py` ausführen und dann in Ihrem Webbrowser zu `http://localhost:5555` navigieren.
+Sie können diese Anwendung lokal mit `python app.py` ausführen und dann in Ihrem Webbrowser zu `http://localhost:5555` navigieren.
 
 
-<h2><a name="virtual-environment"></a>Virtuelle Umgebung</h2>
+## Virtuelle Umgebung
 
 Obwohl die obige Beispiel-App keine externen Pakete erfordert, ist es wahrscheinlich, dass Ihre Anwendung einige benötigt.
 
@@ -111,25 +98,25 @@ Wenn Azure eine Datei namens "requirements.txt" im Stammverzeichnis des Reposito
 Sie werden wahrscheinlich eine virtuelle Umgebung für die lokale Entwicklung erstellen. Fügen Sie diese jedoch nicht Ihrem Git-Repository hinzu.
 
 
-<h2><a name="package-management"></a>Verwalten von Paketen</h2>
+## Verwalten von Paketen
 
 In "requirements.txt" aufgeführe Paket werden mit Pip in der virtuellen Umgebung automatisch installiert.  Dies erfolgt bei jeder Bereitstellung, doch Pip überspringt die Installation, wenn ein Paket bereits installiert ist.
 
-Beispiel `requirements.txt`:
+Beispiel für `requirements.txt`:
 
     azure==0.8.4
 
 
-<h2><a name="python-version"></a>Python-Version</h2>
+## Python-Version
 
 [AZURE.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-runtime.md)]
 
-Beispiel `runtime.txt`:
+Beispiel für `runtime.txt`:
 
     python-2.7
 
 
-<h2><a name="web-config"></a>Web.config</h2>
+## Web.config
 
 Sie müssen eine "web.config"-Datei erstellen, um anzugeben, wie der Server Anforderungen verarbeiten soll.
 
@@ -244,12 +231,12 @@ Es ist möglich, die Regel  `Static Files` so zu konfigurieren, dass Dateien an 
       <action type="Rewrite" url="^/FlaskWebProject/static/.*" appendQueryString="true" />
     </rule>
 
-`WSGI_ALT_VIRTUALENV_HANDLER`  dient zum Angeben des WSGI-Handlers.  In den obigen Beispielen, handelt es sich um  `app.wsgi_app`, da der Handler eine Funktion namens  `wsgi_app` in  `app.py` im Stammordner ist.
+`WSGI_ALT_VIRTUALENV_HANDLER` dient zum Angeben des WSGI-Handlers.  In den obigen Beispielen, handelt es sich um  `app.wsgi_app`, da der Handler eine Funktion namens  `wsgi_app` in  `app.py` im Stammordner ist.
 
 `PYTHONPATH` kann angepasst werden, doch wenn Sie alle Ihre Abhängigkeiten in der virtuellen Umgebung installieren, indem Sie sie in "requirements.txt" angeben, sollten keine Änderungen erforderlich sein.
 
 
-<h2><a name="virtual-environment-proxy"></a>Proxy für die virtuelle Umgebung</h2>
+## Proxy für die virtuelle Umgebung
 
 Das folgende Skript dient zum Abrufen des WSGI-Handlers, Aktivieren der virtuellen Umgebung und Protokollieren von Fehlern. Es ist generisch ausgelegt und soll ohne Änderungen verwendet werden.
 
@@ -259,13 +246,13 @@ Inhalt von  `ptvs_virtualenv_proxy.py`:
      #
      # Copyright (c) Microsoft Corporation. 
      #
-     # This source code is subject to terms and conditions of the Apache License, Version 2.0. A 
-     # copy of the license can be found in the License.html file at the root of this distribution. If 
-     # you cannot locate the Apache License, Version 2.0, please send an email to 
-     # vspython@microsoft.com. By using this source code in any fashion, you are agreeing to be bound 
-     # by the terms of the Apache License, Version 2.0.
+     # Dieser Quellcode unterliegt den Bestimmungen und Bedingungen der Apache-Lizenz, Version 2.0. Ein 
+     # Kopie der Lizenz finden Sie in der Datei "License.html" im Stammverzeichnis von diesem Verteilungspunkt. Wenn 
+     # Sie keine Apache-Lizenz, Version 2.0, finden, senden Sie bitte eine e-Mail an 
+     # vspython@microsoft.com. Durch die Verwendung dieses Quellcodes stimmen Sie den 
+     # Bedingungen der Apache-Lizenz, Version 2.0 zu.
      #
-     # You must not remove this notice, or any other, from this software.
+     # Sie dürfen diesen oder einen anderen Hinweis nicht aus dieser Software entfernen.
      #
      # ###########################################################################
 
@@ -375,33 +362,29 @@ Inhalt von  `ptvs_virtualenv_proxy.py`:
         return handler
 
 
-<h2><a name="customize-git-deployment"></a>Anpassen der Git-Bereitstellung</h2>
+## Anpassen der Git-Bereitstellung
 
 [AZURE.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-deployment.md)]
 
 
-<h2><a name="troubleshooting-deployment"></a>Problembehandlung - Bereitstellung</h2>
+## Problembehandlung - Bereitstellung
 
 [AZURE.INCLUDE [web-sites-python-troubleshooting-deployment](../includes/web-sites-python-troubleshooting-deployment.md)]
 
 
-<h2><a name="troubleshooting-package-installation"></a>Problembehandlung - Paketinstallation</h2>
+## Problembehandlung - Paketinstallation
 
 [AZURE.INCLUDE [web-sites-python-troubleshooting-package-installation](../includes/web-sites-python-troubleshooting-package-installation.md)]
 
 
-<h2><a name="troubleshooting-virtual-environment"></a>Problembehandlung - Virtuelle Umgebung</h2>
+## Problembehandlung - Virtuelle Umgebung
 
 [AZURE.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../includes/web-sites-python-troubleshooting-virtual-environment.md)]
 
 
 
-[Erstellen von Websites mit Bottle]: ../web-sites-python-create-deploy-bottle-app
-[Erstellen von Websites mit Django]: ../web-sites-python-create-deploy-django-app
-[Erstellen von Websites mit Flask]: ../web-sites-python-create-deploy-flask-app
+[Erstellen von Websites mit Bottle]: web-sites-python-create-deploy-bottle-app.md
+[Erstellen von Websites mit Django]: web-sites-python-create-deploy-django-app.md
+[Erstellen von Websites mit Flask]: web-sites-python-create-deploy-flask-app.md
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

@@ -30,11 +30,11 @@ In diesem Lernprogramm erfahren Sie, wie Nachrichten an einen Ereignis-Hub mithi
 
 Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
-+ Eine C-Entwicklungsumgebung. In diesem Lernprogramm wird vom GCC-Stack auf einem [virtuellen Linux-Computer mit Azure](http://azure.microsoft.com/documentation/articles/virtual-machines-linux-tutorial/) mit Ubuntu 14.04 ausgegangen. Anweisungen für andere Umgebungen werden in externen Links bereitgestellt.
++ Eine C-Entwicklungsumgebung. In diesem Lernprogramm wird vom GCC-Stack auf einem [virtuellen Azure-Computer mit Linux](virtual-machines-linux-tutorial.md) mit Ubuntu 14.04 ausgegangen. Anweisungen für andere Umgebungen werden in externen Links bereitgestellt.
 
 + Eine Java-Entwicklungsumgebung, die zum Ausführen von [Maven](http://maven.apache.org/) konfiguriert ist. In diesem Lernprogramm wird von [Eclipse](https://www.eclipse.org/) ausgegangen.
 
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten dazu finden Sie hier: <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
++ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">1 Monat kostenlose Testversion</a>.
 
 ## Erstellen eines Ereignis-Hub
 
@@ -44,7 +44,7 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
    	![][1]
 
-3. Geben Sie einen Namen für den Ereignis-Hub ein. Wählen Sie die gewünschte Region aus, und klicken Sie dann auf **Neuen Event Hub erstellen**.
+3. Geben Sie einen Namen für den Ereignis-Hub ein. Wählen Sie die gewünschte Region aus, und klicken Sie dann auf **Create a new Event Hub**.
 
    	![][2]
 
@@ -81,7 +81,7 @@ Sie können jetzt die Anwendung ausführen.
 
    	![][23]
 
-> [AZURE.NOTE] Verwenden Sie nur in diesem Lernprogramm Storm im lokalen Modus zu Entwicklungszwecken. Weitere Informationen zu Storm-Bereitstellungen und -Mustern finden Sie in der [Übersicht zu HDInsight Storm] und in der offiziellen Dokumentation zu [Apache Storm].
+> [AZURE.NOTE] Verwenden Sie nur in diesem Lernprogramm Storm im lokalen Modus zu Entwicklungszwecken. Weitere Informationen zu Storm-Bereitstellungen und -Mustern finden Sie in der [Übersicht über HDInsight Storm] und in der offiziellen Dokumentation zu [Apache Storm].
 
 ## Nächste Schritte
 
@@ -110,4 +110,5 @@ Die folgenden Ressourcen sind für die Entwicklung von Anwendungen verfügbar, d
 [Übersicht über HDInsight Storm]: http://azure.microsoft.com/documentation/articles/hdinsight-storm-overview/
 [Analysieren von Sensordaten mit Storm und HDInsight]: http://azure.microsoft.com/documentation/articles/hdinsight-storm-sensor-data-analysis/
 [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm und HDInsight]: http://azure.microsoft.com/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/
-<!--HONumber=47-->
+
+<!--HONumber=52-->

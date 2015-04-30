@@ -18,18 +18,18 @@
 
 
 
-# Verwenden des Azure Media Services iOS Media Player Framework
+#Verwenden des Azure Media Services iOS Media Player Framework
 
 Mit der Azure Media Services iOS Media Player Framework-Bibliothek können Entwickler für iPod, iPhone und iPad reichhaltig ausgestattete, dynamische Clientanwendungen erstellen, die Video- und Audiostreams spontan erzeugen und mischen. Beispielsweise können in Anwendungen, die Sportinhalte zeigen, ohne weiteres an beliebiger Stelle Werbespots eingefügt werden, und Sie können festlegen, wie oft diese Werbespots angezeigt werden, auch wenn der Hauptinhalt zurückgespult wird. Bildungsanwendungen können mit den gleichen Funktionen z. B. Inhalte erstellen, bei denen neben dem Hauptvortrag Randleisten dargestellt werden, bevor der Hauptinhalt fortgesetzt wird.
 
-In der Regel ist es recht kompliziert, eine Anwendung zu erstellen, die Inhaltsdatenströme erzeugen kann, die durch die Interaktion zwischen Anwendung und Benutzer entstehen. Normalerweise müssen Sie den gesamten Stream von Grund auf neu erstellen und vorab auf dem Server speichern. Mit dem iOS Media Player Framework können Sie Clientanwendungen erstellen, die all dies ermöglichen, ohne dass die Anwendungen Einfluss auf den Stream des Hauptinhalts haben. Sie können:
+In der Regel ist es recht kompliziert, eine Anwendung zu erstellen, die Inhaltsdatenströme erzeugen kann, die durch die Interaktion zwischen Anwendung und Benutzer entstehen. Normalerweise müssen Sie den gesamten Datenstrom von Grund auf neu erstellen und vorab auf dem Server speichern. Mit dem iOS Media Player Framework können Sie Clientanwendungen erstellen, die all dies ermöglichen, ohne dass die Anwendungen Einfluss auf den Datenstrom des Hauptinhalts haben. Sie können:
 
 - Inhaltsdatenströme vorab auf dem Clientgerät planen;
 - Pre-Roll-Werbespots oder -Inserts planen;
 - Post-Roll-Werbespots oder -Inserts planen;
 - Mid-Roll-Werbespots oder -Inserts planen und Werbespot-Pods erzeugen;
 - steuern, ob die Mid-Roll-Werbespots oder -Inserts jedes Mal wiedergegeben werden, wenn die Inhaltszeitleiste zurückgespult wird, oder ob sie nur einmal wiedergegeben und dann automatisch aus der Zeitleiste entfernt werden;
-- Inhalte dynamisch und ereignisgesteuert direkt in die Zeitleiste einfügen; mögliche Ereignisse sind beispielsweise ein Tastendruck oder eine Benachrichtigung der Anwendung durch einen Dienst - ein Nachrichtenprogramm kann z. B. Benachrichtigungen zu aktuellen Neuigkeiten senden, und die Anwendung kann den Hauptinhalt "anhalten", um einen Stream mit aktuellen Neuigkeiten dynamisch zu laden. 
+- Inhalte dynamisch und ereignisgesteuert direkt in die Zeitleiste einfügen; mögliche Ereignisse sind beispielsweise ein Tastendruck oder eine Benachrichtigung der Anwendung durch einen Dienst - ein Nachrichtenprogramm kann z. B. Benachrichtigungen zu aktuellen Neuigkeiten senden, und die Anwendung kann den Hauptinhalt "anhalten", um einen Datenstrom mit aktuellen Neuigkeiten dynamische zu laden. 
 
 Werden diese Funktionen mit den Medienwiedergabemöglichkeiten von iOS-Geräten kombiniert, können in sehr kurzer Zeit mit geringem Ressourceneinsatz reichhaltige multimediale Darbietungen erzeugt werden.
 
@@ -42,7 +42,7 @@ Im Folgenden wird beschrieben, wie Sie die Anwendung erhalten, und es werden die
 
     `git clone https://github.com/WindowsAzure/azure-media-player-framework`
 
-2. Öffnen Sie das Projekt im Verzeichnis `azure-media-player-framework/src/iOS/HLSClient/`: **SamplePlayer.xcodeproj**.
+2. Öffnen Sie das Projekt unter `azure-media-player-framework/src/iOS/HLSClient/`: **SamplePlayer.xcodeproj**.
 
  
 3. Hier sehen Sie die Struktur von SamplePlayer:
@@ -51,7 +51,7 @@ Im Folgenden wird beschrieben, wie Sie die Anwendung erhalten, und es werden die
 
 4. Der iPad-Ordner enthält zwei XIB-Dateien: **SeekbarViewController** und **SamplePlayerViewController**. Damit wird das Layout der Benutzeroberfläche der iPad-Anwendung erzeugt. Dementsprechend enthält der iPhone-Ordner zwei XIB-Dateien, mit denen die Suchleiste und die Steuerung definiert werden. 
 
-6. Die Logik der Hauptanwendung befindet sich in **SamplePlayerViewController.m** im Ordner  `Shared`. Die meisten der unten erläuterten Codeausschnitte sind in dieser Datei enthalten. 
+6. Die Logik der Hauptanwendung befindet sich in **SamplePlayerViewController.m** im Ordner `Shared`. Die meisten der unten erläuterten Codeausschnitte sind in dieser Datei enthalten. 
 
 ## Das Layout der Benutzeroberfläche
 Die Benutzeroberfläche des Players wird mit zwei XIB-Dateien definiert. (In den folgenden Erläuterungen wird das iPad-Layout als Beispiel verwendet; das iPhone-Layout ist jedoch sehr ähnlich, und die Prinzipien sind gleich.)
@@ -75,7 +75,7 @@ Die Benutzeroberfläche des Players wird mit zwei XIB-Dateien definiert. (In den
 
 * Die Schaltflächen **SkipForward/SkipBackward** funktionieren derzeit noch nicht wie erwartet. In Kürze wird eine aktualisierte Version herausgegeben.
 
-* Wenn Sie während der Wiedergabe des Hauptinhalts die Schaltfläche **Schedule Now** drücken, wird eine Werbeeinblendung eingefügt (Sie können die Quell-URL für die Werbeeinblendung in der CodeBehind-Datei definieren). Hinweis: In der aktuellen Version können Sie keine Werbeeinblendung planen, während eine andere Einblendung wiedergegeben wird. 
+* Wenn Sie während der Wiedergabe des Hauptinhalts die Schaltfläche **Schedule Now** drücken, wird eine Werbeeinblendung eingefügt (Sie können die Quell-URL für die Werbeeinblendung in der CodeBehind-Datei definieren). Hinweis: In der aktuellen Version können Sie keinen Werbespot planen, während ein anderer Werbespot wiedergegeben wird. 
 
 ### Planen des Hauptinhalts
 Geplant wird ein Inhaltsclip von 0 bis 80 Sekunden:
@@ -98,9 +98,9 @@ Erläuterungen zum obigen Beispielcode:
 * **clipBeginMediaTime** stellt die Startzeit für die Wiedergabe eines Videos dar. Wenn z. B. **clipBeginMediaTime** = 5, wird dieser Videoclip nach fünf Sekunden im Videoclip gestartet.
 * **clipEndMediaTime** stellt die Endzeit für die Wiedergabe eines Videos dar. Wenn **clipEndMediaTime**=100, endet die Wiedergabe des Videos in der 100. Sekunde des Videoclips.
 *Anschließend wird die **MediaTime** geplant. Dazu wird Framework aufgefordert, **appendContentClip** auszuführen. Im obigen Beispiel wird die URL für den Hauptinhalt in `[NSURL URLWithString:url]` angegeben, und die Planung des entsprechenden Mediums wird mit **withMedia** festgelegt:
- `[framework appendContentClip:[NSURL URLWithString:url] withMediaTime:mediaTime andGetClipId:&clipId])` .
+ `[framework appendContentClip:[NSURL URLWithString:url] withMediaTime:mediaTime andGetClipId:&clipId])`.
 
-**Hinweis:** Planen Sie den Hauptinhalt stets, bevor Sie eine Werbeeinblendung (einschließlich Pre-Roll-Werbung) planen. 
+**Hinweis:** Planen Sie den Hauptinhalt stets, bevor Sie einen Werbespot planen (einschließlich Pre-Roll-Werbespots).
 
 ### Variante: Wenn Sie zwei Clips mit Hauptinhalt wiedergeben, können Sie den zweiten Clip mit dem folgenden Code auch nach dem ersten planen:
 
@@ -114,7 +114,7 @@ Erläuterungen zum obigen Beispielcode:
         [self logFrameworkError];
     }
 
-Wenn dieser Code nach dem vorhergehenden Code ausgeführt wird, werden in der Zeitleiste des Hauptinhalts zwei Inhaltsdatenströme geplant. Der erste Stream wird auf Basis von `URLWithString:url` geplant, und der zweite Inhalt auf Basis von `URLWithString:secondContent`. Der zweite Inhalt beginnt am Punkt 30 Sekunden im Mediendatenstrom und endet am Punkt 80 Sekunden. 
+Wenn dieser Code nach dem vorhergehenden Code ausgeführt wird, werden in der Zeitleiste des Hauptinhalts zwei Inhaltsdatenströme geplant. Der erste Stream wird auf Basis von `URLWithString:url` geplant und der zweite Inhalt auf Basis von `URLWithString:secondContent`. Der zweite Inhalt beginnt am Punkt 30 Sekunden im Mediendatenstrom und endet am Punkt 80 Sekunden. 
 
 ## Planen von Werbespots 
 In der aktuellen Version wird nur ein **pauseTimeline=false**-Werbespot unterstützt. Das bedeutet, dass der Player die Wiedergabe nach einem Werbespot an der Stelle fortsetzt, an der der Hauptinhalt verlassen wurde. 
@@ -128,7 +128,7 @@ Im Folgenden wird auf einige wichtige Punkte hingewiesen:
 </ul>
 ### Planen von Pre-Roll-, Mid-Roll-, Post-Roll-Werbespots und Werbespot-Pods
 
-#### Planen von Pre-Roll-Werbespots
+####Planen von Pre-Roll-Werbespots
 
     LinearTime *adLinearTime = [[[LinearTime alloc] init] autorelease];
     NSString *adURLString = @"http://smoothstreamingdemo.blob.core.windows.net/videoasset/WA-BumpShort_120530-1.mp4";
@@ -153,11 +153,11 @@ Das **AdInfo**-Objekt stellt alle Informationen über den Werbespotclip dar:
 * Sie müssen den **appendTo**-Wert auf -1 setzen, wenn es sich nicht um einen Ad Pod handelt. 
 * Der **type**-Wert kann auf "pre-roll", "mid-roll", "post-roll" oder "ad pod" festgelegt werden. Geben Sie bei Pre-Roll- oder Post-Roll-Werbespots den Typ an, da diesen Typen keine Anzeigedauer zugeordnet ist. 
 
-#### Planen von Mid-Roll-Werbespots
+####Planen von Mid-Roll-Werbespots
 
 Wenn Sie `adLinearTime.startTime = 23;` zum vorherigen Codebeispiel hinzufügen, wird der Werbespot bei 23 Sekunden in der Zeitleiste des Hauptinhalts wiedergegeben.
 
-#### Planen von Post-Roll-Werbespots
+####Planen von Post-Roll-Werbespots
 
     //Schedule Post Roll Ad
     NSString *postAdURLString=@"http://wamsblureg001orig-hs.cloudapp.net/aa152d7f-3c54-487b-ba07-a58e0e33280b/wp-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
@@ -174,7 +174,7 @@ Wenn Sie `adLinearTime.startTime = 23;` zum vorherigen Codebeispiel hinzufügen,
         [self logFrameworkError];
     }
 
-Der einzige Unterschied gegenüber der Planung des Pre-Roll-Werbespots ist die Zeile `postAdInfo.type = AdType_Postroll;`. Mit dem obigen Code wird ein Fünf-Sekunden-Werbespot als Post-Roll-Werbespot geplant. 
+Der einzige Unterschied bei der Planung eines Werbespots vor dem eigentlichen Video ist `postAdInfo.type = AdType_Postroll;`. Mit dem obigen Code wird ein Fünf-Sekunden-Werbespot als Post-Roll-Werbespot geplant. 
 
 #### Planen von Werbespot-Pods
 Werbespot-Pods sind Werbeunterbrechungen mit mehreren Werbespots, die nacheinander wiedergegeben werden. Mit dem folgenden Code werden zwei Werbespots in einem Werbespot-Pod geplant. 
@@ -209,7 +209,7 @@ Werbespot-Pods sind Werbeunterbrechungen mit mehreren Werbespots, die nacheinand
     }
 
 Hier sind einige Dinge zu beachten:
-* Für den ersten Clip entspricht **appendTo** dem Wert -1. Beim Aufruf von `[framework scheduleClip:adpodInfo1 atTime:adLinearTime forType:PlaylistEntryType_Media andGetClipId:&adIndex]` erhält `adIndex` einen eindeutigen Wert, der das Ende des ersten Clips im Ad Pod angibt. Richten Sie dann beim zweiten Clip im Werbespot-Pod den Anfang des zweiten Werbespots am Ende des ersten aus, indem Sie **appendTo** auf `adpodInfo2.appendTo = adIndex;` festlegen. Damit wird die Endposition des ersten Clips als Punkt definiert, an dem der zweite beginnt. 
+* Für den ersten Clip entspricht **appendTo** dem Wert -1. Und wenn wir `[framework scheduleClip:adpodInfo1 atTime:adLinearTime forType:PlaylistEntryType_Media andGetClipId:&adIndex]` aufrufen, empfängt `adIndex` einen eindeutigen Wert, der das Ende dieses ersten Clips im Werbespot-Pod angibt. Richten Sie dann beim zweiten Clip im Werbespot-Pod den Anfang des zweiten Werbespots am Ende des ersten aus, indem Sie **appendTo** auf `adpodInfo2.appendTo = adIndex;` festlegen. Damit wird die Endposition des ersten Clips als Punkt definiert, an dem der zweite beginnt. 
 * Anschließend müssen Sie als Typ `AdType_Pod` festlegen, um anzugeben, dass es sich um einen Werbespot-Pod handelt. 
 
 ### Planen von einmal wiedergegebenen Werbespots oder Sticky Ads
@@ -219,4 +219,4 @@ Hier sind einige Dinge zu beachten:
 Wie das vorherige Codebeispiel zeigt, wird dieser Werbespot nur einmal wiedergegeben, wenn Sie **deleteAfterPlay** auf **YES** festlegen. Wenn Sie **deleteAfterPlay** hingegen auf **NO** festlegen, wird dieser Werbespot immer weiter wiedergegeben. Ein solcher Werbespot wird als "Sticky Ad" bezeichnet.
 ### Weitere Informationen finden Sie im [Azure Media Player Framework Wiki](https://github.com/WindowsAzure/azure-media-player-framework/wiki).
 
-<!--HONumber=45--> 
+<!--HONumber=52-->

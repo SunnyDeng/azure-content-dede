@@ -1,4 +1,4 @@
-﻿
+
 Im Folgenden sehen Sie Screenshots aus der fertigen App:
 
 ![](./media/mobile-services-windows-universal-get-started/mobile-quickstart-completed.png)
@@ -8,4 +8,5 @@ Im Folgenden sehen Sie Screenshots aus der fertigen App:
 <br/>Windows Phone Store-App
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Services-Lernprogramme für Windows Store- und Windows Phone Store-Apps. 
-<!--HONumber=42-->
+
+<!--HONumber=52--> 

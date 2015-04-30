@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Erste Schritte mit Mobile Services für Windows Store-Apps | Mobile Dev Center" 
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Windows Store-Entwicklung in C# oder JavaScript." 
 	services="mobile-services" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="javascript" 
 	ms.topic="hero-article" 
-	ms.date="08/18/2014" 
+	ms.date="02/26/2015" 
 	ms.author="glenga"/>
 
 # <a name="getting-started"> </a>Erste Schritte mit Mobile Services
@@ -22,16 +22,16 @@
 
 In diesem Lernprogramm wird gezeigt, wie Sie einer universellen Windows-App einen cloudbasierten Back-End-Dienst unter Verwendung von Azure Mobile Services hinzufügen. 
 
-In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache  *To do list*-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik. Informationen zum Erstellen eines mobilen Diensts, mit dem Sie serverseitige Geschäftslogik in den unterstützten .NET-Sprachen mithilfe von Visual Studio verfassen können, finden Sie in der .NET-Back-End-Version dieses Themas.
+In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache  *To-Do-Listen*-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik. Informationen zum Erstellen eines mobilen Diensts, mit dem Sie serverseitige Geschäftslogik in den unterstützten .NET-Sprachen mithilfe von Visual Studio verfassen können, finden Sie in der .NET-Back-End-Version dieses Themas.
 
 [AZURE.INCLUDE [mobile-services-windows-universal-get-started](../includes/mobile-services-windows-universal-get-started.md)]
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Detaillierte Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
+* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [1 Monat kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
 * [Visual Studio 2013 Express für Windows] 
 
-## Erstellen eines neuen mobilen Dienstes
+## Erstellen eines neuen mobilen Diensts
 
 [AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
@@ -44,7 +44,7 @@ In diesem Abschnitt erstellen Sie eine neue universelle Windows-App, die sich mi
 1.  Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
    
-2. Klicken Sie auf der Schnellstartregisterkarte unter **Plattform auswählen** auf **Windows**. Erweitern Sie dann**Neue Windows Store-App erstellen**.
+2. Klicken Sie auf der Schnellstartregisterkarte unter **Plattform auswählen** auf **Windows**. Erweitern Sie dann **Neue Windows Store-App erstellen**.
 
    	![](./media/mobile-services-javascript-backend-windows-store-javascript-get-started/mobile-portal-quickstart.png)
 
@@ -69,16 +69,13 @@ In diesem Abschnitt erstellen Sie eine neue universelle Windows-App, die sich mi
 ## Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden: 
 
-* [Erste Schritte mit Daten]
-  <br/>Informationen über das Speichern und Abfragen von Daten mit Mobile Services.
-
-* [Erste Schritte mit der Authentifizierung]
+* [Hinzufügen von Authentifizierung zu Ihrer App][Erste Schritte mit der Authentifizierung]
   <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
-* [Erste Schritte mit Pushbenachrichtigungen]
+* [Hinzufügen von Pushbenachrichtigungen zur App][Erste Schritte mit Pushbenachrichtigungen] 
   <br/>Informationen über das Versenden einer grundlegenden Pushbenachrichtigung an die App.
 
-Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstützen mehrerer Geräteplattformen aus einem einzigen Mobile Service heraus](mobile-services-how-to-use-multiple-clients-single-service#shared-vs.md).
+Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstützen mehrerer Geräteplattformen aus einem einzigen Mobile Service heraus](mobile-services-how-to-use-multiple-clients-single-service.md#shared-vs).
 
 <!-- Anchors. -->
 [Erste Schritte mit Mobile Services]:#getting-started
@@ -89,13 +86,11 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 <!-- Images. -->
 
 <!-- URLs. -->
-[Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-universal-javascript-get-started-data
-[Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-users
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push
+[Erste Schritte mit Daten]: mobile-services-javascript-backend-windows-universal-javascript-get-started-data.md
+[Erste Schritte mit der Authentifizierung]: mobile-services-windows-store-javascript-get-started-users.md
+[Erste Schritte mit Pushbenachrichtigungen]: mobile-services-javascript-backend-windows-store-javascript-get-started-push.md
 [Visual Studio 2013 Express für Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Verwaltungsportal]: https://manage.windowsazure.com/
 
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

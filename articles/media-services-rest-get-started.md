@@ -1,33 +1,32 @@
-﻿<properties pageTitle="Erste Schritte mit Azure Media Services-REST-APIs" description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mit Azure Media Services mithilfe von REST-APIs." services="media-services" documentationCenter="" authors="Juliako" manager="dwrede" />
+<properties 
+	pageTitle="Übermitteln von Vide-on-Demand-Inhalten mit Media Services-REST-APIs" 
+	description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mit Azure Media Services mithilfe von REST-APIs." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="Juliako" 
+	manager="dwrede" 
+	editor=""/>
 
-<tags ms.service="media-services" ms.devlang="REST" ms.topic="article" ms.tgt_pltfrm="" ms.workload="media" ms.date="01/20/2015" ms.author="juliako" />
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="04/14/2015" 
+	ms.author="juliako"/>
 
-
-# Übermitteln von Vide-on-Demand-Inhalten mit Media Services-REST-APIs 
+# Schnellstart: Übermitteln von Vide-on-Demand-Inhalten mit Media Services-REST-APIs 
 
 [AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
 
 
 >[AZURE.NOTE]
-> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">"Kostenlose Azure-Testversion"</a>.
+> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">1 Monat kostenlose Testversion</a>.
 
-Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mit Azure Media Services (AMS)-REST-APIs. 
+Dieser Schnellstart führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mit Azure Media Services (AMS)-REST-APIs. 
 
 Das Lernprogramm stellt den Media Services-Arbeitsfluss und die gängigsten Programmierobjekte und Aufgaben für die Media Services-Entwicklung vor. Nach Abschluss des Lernprogramms sind Sie in der Lage, eine einfache Mediendatei zu streamen oder progressiv herunterzuladen, die Sie hochgeladen, codiert und heruntergeladen haben.  
-
-Um eine Anwendung zur VoD-Inhaltsübermittlung zu implementieren, können Sie verschiedene Technologien (z. B. .NET, REST oder Java) oder Tools (Azure-Verwaltungsportal oder Azure Media Services Explorer) oder eine Kombination aus beiden verwenden. 
-
-In diesem Lernprogramm werden das Azure-Verwaltungsportal und die Media Services-REST-APIs verwendet, um die folgenden Aufgaben auszuführen:     
-
-
-1.  [Erstellen eines Media Services-Kontos mithilfe des Portals](#create_ams).
-1.  [Herstellen einer Verbindung mit dem Media Services-Konto mit der REST-API](#connect).
-1.  [Erstellen eines neuen Medienobjekts und Hochladen einer Videodatei mit der REST-API](#upload).
-1.  [Konfigurieren von Streamingeinheiten mit der REST-API](#configure_streaming_units).
-2.  [Codieren der Quelldatei in einen Satz von MP4-Dateien mit adaptiver Bitrate mit der REST-API](#encode).
-1.  [Konfigurieren der Übermittlungsrichtlinie für das codierte Medienobjekt mit der REST-API](#configure_delivery_method).
-1.  [Veröffentlichen des Medienobjekts und Abrufen von URLs für Streaming und progressiven Download mit der REST-API](#publish_get_urls). 
-1.  [Wiedergeben Ihrer Inhalte](#play). 
 
 ## Voraussetzungen
 Für den Einstieg in die Entwicklung mit Media Services mithilfe von REST-APIs gelten die folgenden Voraussetzungen:
@@ -35,10 +34,21 @@ Für den Einstieg in die Entwicklung mit Media Services mithilfe von REST-APIs g
 - Kenntnisse darüber, wie Sie mit der Media Services-REST-API Code entwickeln. Weitere Informationen finden Sie unter [media-services-rest-overview](http://msdn.microsoft.com/library/azure/hh973616.aspx).
 - Eine Anwendung Ihrer Wahl, die HTTP-Anforderungen und -Antworten senden kann. In diesem Lernprogramm wird [Fiddler](http://www.telerik.com/download/fiddler) verwendet. 
 
+Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
+
+1.  Erstellen eines Media Services-Kontos mithilfe des Portals
+1.  Herstellen einer Verbindung mit dem Media Services-Konto mit der REST-API
+1.  Erstellen eines neuen Medienobjekts und Hochladen einer Videodatei mit der REST-API
+1.  Konfigurieren von Streamingeinheiten mit der REST-API
+2.  Codieren der Quelldatei in einen Satz von MP4-Dateien mit adaptiver Bitrate mit der REST-API
+1.  Konfigurieren der Übermittlungsrichtlinie für das codierte Medienobjekt mit der REST-API
+1.  Veröffentlichen des Medienobjekts und Abrufen von URLs für Streaming und progressiven Download mit der REST-API 
+1.  Wiedergeben Ihrer Inhalte 
+
 
 ## <a id="create_ams"></a>Erstellen eines Media Services-Kontos mithilfe des Portals
 
-1. Klicken Sie im [Verwaltungsportal][] auf **Neu**, klicken Sie auf **Mediendienst** und dann auf **Schnellerfassung**.
+1. Klicken Sie im [Verwaltungsportal][] auf **Neu**, klicken Sie auf **Media Services** und dann auf **Schnellerfassung**.
    
 	![Media Services Quick Create](./media/media-services-create-account/wams-QuickCreate.png)
 
@@ -59,7 +69,7 @@ Für den Einstieg in die Entwicklung mit Media Services mithilfe von REST-APIs g
 	Am unteren Rand der Seite wird die Schaltfläche **SCHLÜSSEL VERWALTEN** angezeigt. Wenn Sie auf diese Schaltfläche klicken, wird ein Dialogfeld mit dem Media Services-Kontonamen und dem primären und sekundären Schlüssel angezeigt. Sie benötigen den Kontonamen und den Primärschlüssel, um programmgesteuert auf das Media Services-Konto zugreifen zu können. 
 
 	
-	![Media Services Page](./media/media-services-create-account/wams-mediaservices-page.png)
+![Media Services Page](./media/media-services-create-account/wams-mediaservices-page.png)
 
 	Wenn Sie auf den Kontonamen doppelklicken, wird standardmäßig die Seite "Schnellstart" angezeigt. Auf dieser Seite können Sie einige Verwaltungsaufgaben ausführen, die auch auf anderen Seiten des Portals verfügbar sind. Sie können beispielsweise eine Videodatei auf dieser Seite oder auf der Seite INHALT hochladen.
 
@@ -84,11 +94,11 @@ Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der 
 		HTTP/1.1 301 Moved Permanently
 		Location: https://wamsbayclus001rest-hs.cloudapp.net/api/
 
-	sollten Sie nachfolgende API-Aufrufe an "https://wamsbayclus001rest-hs.cloudapp.net/api/" senden.
+	Senden Sie nachfolgende API-Aufrufe an https://wamsbayclus001rest-hs.cloudapp.net/api/.
 
-### Abrufen eines Zugriffstokens
+###Abrufen eines Zugriffstokens
 
-Um direkt über die RST-API auf Media Services zuzugreifen, rufen Sie das Zugriffstoken von ACS ab und verwenden es während jeder im Dienst ausgeführten HTTP-Anforderung. Dieses Token ähnelt anderen Token, die von ACS auf der Basis von Zugriffsansprüchen im HTTP-Anforderungsheader und mit dem OAuth v2-Protokoll bereitgestellt werden. Für die direkte Verbindung mit Media Services gelten keine weiteren Voraussetzungen.
+Um direkt über die REST-API auf Media Services zuzugreifen, rufen Sie das Zugriffstoken von ACS ab und verwenden es während jeder im Dienst ausgeführten HTTP-Anforderung. Dieses Token ähnelt anderen Token, die von ACS auf der Basis von Zugriffsansprüchen im HTTP-Anforderungsheader und mit dem OAuth v2-Protokoll bereitgestellt werden. Für die direkte Verbindung mit Media Services gelten keine weiteren Voraussetzungen.
 
 Das folgende Beispiel zeigt den HTTP-Anforderungsheader bzw. -text, die zum Abrufen eines Tokens verwendet werden.
 
@@ -107,7 +117,7 @@ Das folgende Beispiel zeigt den HTTP-Anforderungsheader bzw. -text, die zum Abru
 
 Sie müssen den client_id-Wert und den client_secret-Wert im Text dieser Anforderung überprüfen. Die Werte client_id und client_secret entsprechen dem AccountName-Wert und dem AccountKey-Wert. Diese Werte werden Ihnen von Media Services bei der Einrichtung Ihres Kontos bereitgestellt. 
 
-Beachten Sie, dass der AccountKey für Ihr Media Services-Konto URL-codiert sein muss, wenn Sie ihn als client_secret Wert in Ihrer Zugriffstokenanforderung verwenden.
+Beachten Sie, dass der "AccountKey" für Ihr Media Services-Konto URL-codiert sein muss, wenn Sie ihn als client_secret-Wert in Ihrer Zugriffstokenanforderung verwenden.
 
 	grant_type=client_credentials&client_id=ams_account_name&client_secret=URL_encoded_ams_account_key&scope=urn%3aWindowsAzureMediaServices
 
@@ -132,7 +142,7 @@ Das folgende Beispiel zeigt die HTTP-Antwort, die das Zugriffstoken im Antwortte
 	
 	{  
 	   "token_type":"http://schemas.xmlsoap.org/ws/2009/11/swt-token-profile-1.0",
-	   "access_token":"http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421330840&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=uf69n82KlqZmkJDNxhJkOxpyIpA2HDyeGUTtSnq1vlE%3d",
+	   "access_token":"http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421330840&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=uf69n82KlqZmkJDNxhJkOxpyIpA2HDyeGUTtSnq1vlE%3d",
 	   "expires_in":"21600",
 	   "scope":"urn:WindowsAzureMediaServices"
 	}
@@ -143,18 +153,18 @@ Es wird empfohlen, den access_token-Wert und den expires_in-Wert in einem extern
 
 Überwachen Sie den expires_in-Wert des Zugriffstokens, und aktualisieren Sie Ihre REST-API-Aufrufe nach Bedarf anhand neuer Token.
 
-### Herstellen einer Verbindung mit dem Media Services-URI
+###Herstellen einer Verbindung mit dem Media Services-URI
 
-Der Stamm-URI für Media Services ist "https://media.windows.net/Token". Sie sollten zunächst eine Verbindung mit diesem URI herstellen. Falls Sie eine 301 Redirect-Antwort erhalten, senden Sie nachfolgende Aufrufe an den neuen URI. Außerdem sollten Sie keine Logik für die automatische Umleitung/Verfolgung in Ihren Anforderungen verwenden. HTTP-Verben und -Anforderungstexte werden nicht an den neuen URI weitergeleitet.
+Der Stamm-URI für Media Services lautet https://media.windows.net/. Sie sollten zunächst eine Verbindung mit diesem URI herstellen. Falls Sie eine 301 Redirect-Antwort erhalten, senden Sie nachfolgende Aufrufe an den neuen URI. Außerdem sollten Sie keine Logik für die automatische Umleitung/Verfolgung in Ihren Anforderungen verwenden. HTTP-Verben und -Anforderungstexte werden nicht an den neuen URI weitergeleitet.
 
-Beachten Sie, dass der Stamm-URI für das Hochladen und Herunterladen von Medienobjektdateien "https://yourstorageaccount.blob.core.windows.net/" ist. Dabei entspricht der Speicherkontoname dem Namen, den Sie bei der Einrichtung des Media Services-Konto verwendet haben.
+Beachten Sie, dass der Stamm-URI für das Hochladen und Herunterladen von Medienobjektdateien https://yourstorageaccount.blob.core.windows.net/ lautet. Dabei entspricht der Speicherkontoname dem Namen, den Sie bei der Einrichtung des Media Services-Kontos verwendet haben.
 
 Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für Media Services (https://media.windows.net/). Auf die Anforderung wird eine 301 Redirect-Antwort zurückgegeben. Die nachfolgende Anforderung wird mithilfe des neuen URIs (https://wamsbayclus001rest-hs.cloudapp.net/api/) gesendet.     
 
 **HTTP-Anforderung**:
 	
 	GET https://media.windows.net/ HTTP/1.1
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421500579&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=ElVWXOnMVggFQl%2ft9vhdcv1qH1n%2fE8l3hRef4zPmrzg%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421500579&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=ElVWXOnMVggFQl%2ft9vhdcv1qH1n%2fE8l3hRef4zPmrzg%3d
 	x-ms-version: 2.8
 	Accept: application/json
 	Host: media.windows.net
@@ -180,7 +190,7 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 **HTTP-Anforderung** (mit den neuen URI):
 			
 	GET https://wamsbayclus001rest-hs.cloudapp.net/api/ HTTP/1.1
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421500579&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=ElVWXOnMVggFQl%2ft9vhdcv1qH1n%2fE8l3hRef4zPmrzg%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421500579&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=ElVWXOnMVggFQl%2ft9vhdcv1qH1n%2fE8l3hRef4zPmrzg%3d
 	x-ms-version: 2.8
 	Accept: application/json
 	Host: wamsbayclus001rest-hs.cloudapp.net
@@ -235,7 +245,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie ein Medienobjekt erstellen.
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
 	x-ms-version: 2.8
 	x-ms-client-request-id: c59de965-bc89-4295-9a57-75d897e5221e
 	Host: wamsbayclus001rest-hs.cloudapp.net
@@ -278,7 +288,7 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
 	
 ### Erstellen einer AssetFile
 
-Die [AssetFile](http://msdn.microsoft.com/library/azure/hh974275.aspx)-Entität stellt eine Video- oder Audiodatei dar, die in einem BLOB-Container gespeichert ist. Eine Medienobjektdatei ist immer mit einem Medienobjekt verknüpft, wobei ein Medienobjekt eine oder mehrere AssetFiles enthalten kann. Der Media Services Encoder-Task schlägt fehl, wenn ein Medienobjektdatei-Objekt keiner digitalen Datei in einem BLOB-Container zugeordnet ist.
+Die [AssetFile](http://msdn.microsoft.com/library/azure/hh974275.aspx)-Entität stellt eine Video- oder Audiodatei dar, die in einem Blob-Container gespeichert ist. Eine Medienobjektdatei ist immer mit einem Medienobjekt verknüpft, wobei ein Medienobjekt eine oder mehrere AssetFiles enthalten kann. Der Media Services Encoder-Task schlägt fehl, wenn ein Medienobjektdatei-Objekt keiner digitalen Datei in einem BLOB-Container zugeordnet ist.
 
 Nachdem Sie Ihre digitale Mediendatei in einen BLOB-Container hochgeladen haben, verwenden Sie die HTTP **MERGE**-Anforderung, um die AssetFile anhand von Informationen über Ihre Mediendatei zu aktualisieren (wie später in diesem Thema beschrieben). 
 
@@ -290,7 +300,7 @@ Nachdem Sie Ihre digitale Mediendatei in einen BLOB-Container hochgeladen haben,
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
 	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 164
@@ -341,7 +351,7 @@ Nachdem Sie Ihre digitale Mediendatei in einen BLOB-Container hochgeladen haben,
 
 ### Erstellen der AccessPolicy mit Schreibberechtigung 
 
-Bevor Sie Dateien in den BLOB-Speicher hochladen, legen Sie die Zugriffsrichtlinienberechtigungen für das Schreiben in ein Medienobjekt fest. Senden Sie dazu eine HTTP POST-Anforderung an die AccessPolicies-Entitätenmenge. Definieren Sie bei der Erstellung einen DurationInMinutes-Wert, da Sie andernfalls eine Antwort mit einer "500 Interner Serverfehler"-Meldung empfangen. Weitere Informationen zu AccessPolicies finden Sie unter [AccessPolicy](http://msdn.microsoft.com/library/azure/hh974297.aspx).
+Bevor Sie Dateien in den BLOB-Speicher hochladen, legen Sie die Zugriffsrichtlinienberechtigungen für das Schreiben in ein Medienobjekt fest. Senden Sie dazu eine HTTP POST-Anforderung an die AccessPolicies-Entitätenmenge. Definieren Sie bei der Erstellung einen DurationInMinutes-Wert, da Sie andernfalls eine Antwort mit einer "500 Interner Serverfehler"-Meldung empfangen. Weitere Informationen zu "AccessPolicies" finden Sie unter [AccessPolicy](http://msdn.microsoft.com/library/azure/hh974297.aspx).
 
 Im folgenden Beispiel wird veranschaulicht, wie eine AccessPolicy erstellt wird:
 		
@@ -353,7 +363,7 @@ Im folgenden Beispiel wird veranschaulicht, wie eine AccessPolicy erstellt wird:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421640053&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=vlG%2fPYdFDMS1zKc36qcFVWnaNh07UCkhYj3B71%2fk1YA%3d
 	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 74
@@ -362,7 +372,7 @@ Im folgenden Beispiel wird veranschaulicht, wie eine AccessPolicy erstellt wird:
 
 **HTTP-Anforderung**
 
-	Im Erfolgsfall wird die folgende Antwort zurückgegeben:
+	If successful, the following response is returned:
 	
 	HTTP/1.1 201 Created
 	Cache-Control: no-cache
@@ -477,7 +487,7 @@ Nachdem Sie Ihre Datei nun hochgeladen haben, sollten Sie die FileAsset-Größe 
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421662918&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=utmoXXbm9Q7j4tW1yJuMVA3egRiQy5FPygwadkmPeaY%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421662918&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=utmoXXbm9Q7j4tW1yJuMVA3egRiQy5FPygwadkmPeaY%3d
 	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	
@@ -505,7 +515,7 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421662918&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=utmoXXbm9Q7j4tW1yJuMVA3egRiQy5FPygwadkmPeaY%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421662918&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=utmoXXbm9Q7j4tW1yJuMVA3egRiQy5FPygwadkmPeaY%3d
 	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 
@@ -524,7 +534,7 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421662918&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=utmoXXbm9Q7j4tW1yJuMVA3egRiQy5FPygwadkmPeaY%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421662918&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=utmoXXbm9Q7j4tW1yJuMVA3egRiQy5FPygwadkmPeaY%3d
 	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 
@@ -538,22 +548,21 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
  
 ## <a id="configure_streaming_units"></a>Konfigurieren von Streamingeinheiten mit der REST-API
 
-Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarien darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Beim Streaming mit adaptiver Bitrate kann der Client während der Videodarstellung abhängig von der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren auf einen Stream mit höherer oder niedrigerer Bitrate wechseln. Media Services unterstützt die folgenden Technologien für das Streaming mit adaptiver Bitrate: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (für Adobe PrimeTime/Access-Lizenznehmer verfügbar). 
+Bei der Arbeit mit Azure Media Services ist eines der häufigsten Szenarios das Streaming mit adaptiver Bitrate an Clients. Beim Streaming mit adaptiver Bitrate kann der Client während der Videodarstellung abhängig von der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren auf einen Stream mit höherer oder niedrigerer Bitrate wechseln. Media Services unterstützt die folgenden Technologien für das Streaming mit adaptiver Bitrate: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (für Adobe PrimeTime/Access-Lizenznehmer verfügbar). 
 
-Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden (MPEG-DASH, HLS, Smooth Streaming, HDS), ohne dass Sie diese Streamingformate erneut verpacken müssen. 
+Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden (MPEG DASH, HLS, Smooth Streaming, HDS), ohne dass Sie diese Streamingformate erneut verpacken müssen. 
 
 Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
 
-- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte (wie in diesem Abschnitt beschrieben) planen.
+- Abrufen von mindestens einer Streamingeinheit für den **Streamingendpunkt**, von dem aus Sie die Bereitstellung Ihrer Inhalte (wie in diesem Abschnitt beschrieben) planen.
 - Codieren oder Transcodieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm veranschaulicht).  
 
-Mit dynamischer Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client. 
+Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client. 
 
-Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zusätzlich zur dynamischen Paketerstellung auch eine dedizierte Ausgangskapazität bereitstellen, die in Schritten von 200 Mbit/s erworben werden kann. Standardmäßig wird das bedarfsgesteuerte Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen (z. B. Rechen- und Ausgangskapazität usw.) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Durchsatz des bedarfsgesteuerten Streamings zu erhöhen, sollten Sie die reservierten Einheiten für bedarfsgesteuertes Streaming kaufen.
 
 >[AZURE.NOTE] Informationen zu den Preisen finden Sie unter [Media Services - Preisdetails](http://go.microsoft.com/fwlink/?LinkId=275107).
 
-Um die Anzahl der reservierten Einheiten für bedarfsgesteuertes Streaming zu ändern, gehen Sie folgendermaßen vor:
+Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Sie folgendermaßen vor:
 	
 ### Abrufen des zu aktualisierenden Streamingendpunkts
 
@@ -566,7 +575,7 @@ Hier rufen wir z. B. den ersten Streamingendpunkt in Ihrem Konto ab (es können 
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json;odata=verbose
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421466122&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=TiKGEOTporft4pFGU24sSZRZk5GRAWszFXldl5NXAhY%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421466122&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=TiKGEOTporft4pFGU24sSZRZk5GRAWszFXldl5NXAhY%3d
 	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 
@@ -586,7 +595,7 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json;odata=verbose
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421466122&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=TiKGEOTporft4pFGU24sSZRZk5GRAWszFXldl5NXAhY%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421466122&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=TiKGEOTporft4pFGU24sSZRZk5GRAWszFXldl5NXAhY%3d
 	x-ms-version: 2.8
 	x-ms-client-request-id: 39f96c93-a4b1-43ce-b97e-b2aaa44ee2dd
 	Host: wamsbayclus001rest-hs.cloudapp.net
@@ -609,9 +618,9 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
 	Content-Length: 0
 
 	
-### <a id="long_running_op_status"></a> Überprüfen des Status eines Vorgangs mit langer Ausführungsdauer
+### <a id="long_running_op_status"></a>Überprüfen des Status eines Vorgangs mit langer Ausführungsdauer
 
-Die Zuordnung neuer Einheiten für das bedarfsgesteuerte Streaming dauert ca. 20 Minuten. Sie überprüfen den Vorgangsstatus mithilfe der **Operations**-Methode, indem Sie die ID des Vorgangs angeben. Die Vorgangs-ID wurde in der Antwort auf die **Scale**- Anforderung zurückgegeben.
+Die Zuordnung neuer Einheiten dauert ca. 20 Minuten. Sie überprüfen den Vorgangsstatus mithilfe der **Operations**-Methode, indem Sie die ID des Vorgangs angeben. Die Vorgangs-ID wurde in der Antwort auf die **Scale**- Anforderung zurückgegeben.
 
 	operation-id: nb:opid:UUID:1853bcbf-b71f-4ed5-a4c7-a581d4f45ae7
  
@@ -621,7 +630,7 @@ Die Zuordnung neuer Einheiten für das bedarfsgesteuerte Streaming dauert ca. 20
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json;odata=verbose
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421466122&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=TiKGEOTporft4pFGU24sSZRZk5GRAWszFXldl5NXAhY%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421466122&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=TiKGEOTporft4pFGU24sSZRZk5GRAWszFXldl5NXAhY%3d
 	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	
@@ -658,14 +667,14 @@ Die Zuordnung neuer Einheiten für das bedarfsgesteuerte Streaming dauert ca. 20
 
 ## <a id="encode"></a>Codieren der Quelldatei in einen Satz von MP4-Dateien mit adaptiver Bitrate
 
-Nach dem Erfassen der Medienobjekte in Media Services können die Medien u. a. codiert, transcodiert/multiplexiert und mit einem Wasserzeichen versehen werden, bevor sie an die Clients übermittelt werden. Diese Aktivitäten werden geplant und für mehrere Hintergrundrolleninstanzen ausgeführt, um hohe Leistung und Verfügbarkeit zu gewährleisten. Diese Aktivitäten werden als Aufträge bezeichnet, und jeder [Auftrag](http://msdn.microsoft.com/library/azure/hh974289.aspx) besteht aus atomarischen Aufgaben, die die eigentliche Arbeit für die Medienobjektdatei leisten. 
+Nach dem Erfassen der Medienobjekte in Media Services können die Medien u. a. codiert, transcodiert/multiplexiert und mit einem Wasserzeichen versehen werden, bevor sie an die Clients übermittelt werden. Diese Aktivitäten werden geplant und für mehrere Hintergrundrolleninstanzen ausgeführt, um hohe Leistung und Verfügbarkeit zu gewährleisten. Diese Aktivitäten werden als Aufträge bezeichnet, und jeder [Auftrag](http://msdn.microsoft.com/library/azure/hh974289.aspx) besteht aus atomaren Aufgaben, die die eigentliche Arbeit für die Medienobjektdatei leisten. 
 
-Wie bereits erwähnt, besteht beim Arbeiten mit Azure Media Services eines der häufigsten Szenarien darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Media Services können eine Reihe von MP4-Dateien mit adaptiver Bitrate dynamisch in eines der folgenden Formate verpacken: HTTP Live Streaming (HLS), Smooth Streaming, MPEG-DASH und HDS (nur für Adobe PrimeTime/Access-Lizenznehmer). 
+Wie bereits erwähnt, besteht beim Arbeiten mit Azure Media Services eines der häufigsten Szenarios darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Media Services können eine Reihe von MP4-Dateien mit adaptiver Bitrate dynamisch in eines der folgenden Formate verpacken: HTTP Live Streaming (HLS), Smooth Streaming, MPEG-DASH und HDS (nur für Adobe PrimeTime/Access-Lizenznehmer). 
 
 Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
 
 - Codieren oder Transcodieren Ihrer Zwischendatei (Quelldatei) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate  
-- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. 
+- Abrufen von mindestens einer Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. 
 
 Der folgende Abschnitt veranschaulicht die Erstellung eines Auftrags, der eine Codierungsaufgabe enthält. Die Aufgabe gibt an, dass die Zwischendatei mit **Azure Media Encoder** in einen MP4-Dateisatz mit adaptiver Bitrate transcodiert werden soll. Außerdem wird in diesem Abschnitt erläutert, wie Sie den Fortschritt der Auftragsverarbeitung überwachen. Nachdem Sie den Auftrag abgeschlossen haben, können Sie Locators erstellen, die für den Zugriff auf Ihre Medienobjekte erforderlich sind. 
 
@@ -718,9 +727,9 @@ Durch den folgenden Code wird die Encoder-ID angefordert.
 
 ### Erstellen eines Auftrags
 
-Je nach Art der Verarbeitung, die Sie durchführen möchten, können einem Auftrag eine oder mehrere Aufgaben zugeordnet sein. Sie haben zwei Möglichkeiten, um über die REST-API Aufträge und die zugehörigen Aufgaben zu erstellen: Aufgaben können inline über die Tasks-Navigationseigenschaft für Auftragentitäten oder durch OData-Batchverarbeitung erstellt werden. Das Media Services SDK verwendet Batchverarbeitung. Für die einfache Lesbarkeit der Codebeispiele in diesem Thema werden Aufgaben jedoch inline definiert. Weitere Informationen zur Batchverarbeitung finden Sie unter [OData-Batchverarbeitung (Open Data Protocol)](http://www.odata.org/documentation/odata-version-3-0/batch-processing/).
+Je nach Art der Verarbeitung, die Sie durchführen möchten, können einem Auftrag eine oder mehrere Aufgaben zugeordnet sein. Sie haben zwei Möglichkeiten, um über die REST-API Aufträge und die zugehörigen Aufgaben zu erstellen: Aufgaben können inline über die Tasks-Navigationseigenschaft für Auftragentitäten oder durch OData-Batchverarbeitung erstellt werden. Das Media Services SDK verwendet Batchverarbeitung. Für die einfache Lesbarkeit der Codebeispiele in diesem Thema werden Aufgaben jedoch inline definiert. Weitere Informationen zur Batchverarbeitung finden Sie unter [Open Data Protocol (OData) Batch Processing](http://www.odata.org/documentation/odata-version-3-0/batch-processing/) (in englischer Sprache).
 
-Das folgende Beispiel zeigt, wie Sie einen Auftrag mit einer Aufgabe erstellen und bereitstellen, die für die Codierung eines Videos mit einer bestimmten Auflösung und Qualität konfiguriert wurde. Der folgende Abschnitt dieser Dokumentation enthält eine Liste sämtlicher [Aufgabenvoreinstellungen](http://msdn.microsoft.com/library/azure/dn619392.aspx), die vom Azure Media-Prozessor unterstützt werden.  
+Das folgende Beispiel zeigt, wie Sie einen Auftrag mit einer Aufgabe erstellen und bereitstellen, die für die Codierung eines Videos mit einer bestimmten Auflösung und Qualität konfiguriert wurde. Der folgende Abschnitt dieser Dokumentation enthält eine Liste sämtlicher [Aufgabenvoreinstellungen](http://msdn.microsoft.com/library/azure/dn619392.aspx), die vom Azure-Medienprozessor unterstützt werden.  
 
 **HTTP-Anforderung**
 	
@@ -730,7 +739,7 @@ Das folgende Beispiel zeigt, wie Sie einen Auftrag mit einer Aufgabe erstellen u
 	Content-Type: application/json
 	Accept: application/json;odata=verbose
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421675491&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=9hUudHYnATpi5hN3cvTfgw%2bL4N3tL0fdsRnQnm6ZYIU%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421675491&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=9hUudHYnATpi5hN3cvTfgw%2bL4N3tL0fdsRnQnm6ZYIU%3d
 	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 482
@@ -819,7 +828,7 @@ Im Erfolgsfall wird die folgende Antwort zurückgegeben:
 Bei jeder Auftragsanforderung sind einige wichtige Punkte zu beachten:
 
 - TaskBody-Eigenschaften MÜSSEN literalen XML-Code verwenden, um die Anzahl der von der Aufgabe verwendeten Eingabe- oder Ausgabemedienobjekte zu definieren. Das Thema "Aufgabe" enthält die XML-Schemadefinition für den XML-Code.
-- In der TaskBody-Definition muss jeder interne Wert für <inputAsset> und <outputAsset> als JobInputAsset(Wert) oder JobOutputAsset(Wert) festgelegt werden.
+- In der "TaskBody"-Definition muss jeder interne Wert für <inputAsset> und <outputAsset> als "JobInputAsset(value)" oder "JobOutputAsset(value)" festgelegt werden.
 - Eine Aufgabe kann mehrere Ausgabemedienobjekte besitzen. Ein JobOutputAsset(x)-Objekt kann nur ein Mal als Ausgabe einer Aufgabe in einem Auftrag verwendet werden.
 - Sie können JobInputAsset oder JobOutputAsset als Eingabemedienobjekt einer Aufgabe angeben.
 - Aufgaben dürfen keine Schleife bilden.
@@ -830,7 +839,7 @@ Bei jeder Auftragsanforderung sind einige wichtige Punkte zu beachten:
 - InputMediaAssets ist mindestens einem Medienobjekt zugeordnet, das Sie in Media Services erstellt haben. OutputMediaAssets werden vom System erstellt. Sie verweisen nicht auf ein vorhandenes Medienobjekt.
 - OutputMediaAssets können mithilfe des assetName-Attributs benannt werden. Wenn dieses Attribut nicht vorhanden ist, wird als Name von OutputMediaAsset der interne Textwert des <outputAsset>-Elements mit dem Wert des Auftragsnamens oder der Auftrags-ID (falls die Name-Eigenschaft nicht definiert ist) als Suffix verwendet. Wenn Sie für assetName z. B. den Wert "Sample" festlegen, wird die Name-Eigenschaft von OutputMediaAsset auf "Sample" festgelegt. Wenn Sie jedoch keinen Wert für assetName festgelegt haben, der Auftragsname jedoch auf NewJob festgelegt wurde, wird OutputMediaAsset der Name JobOutputAsset(Wert)_NewJob zugewiesen. 
 
-	Im folgenden Beispiel wird gezeigt, wie das AssetName-Attribut festgelegt wird:
+	The following example shows how to set the assetName attribute:
 	
 		"<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset assetName=\"CustomOutputAssetName\">JobOutputAsset(0)</outputAsset></taskBody>"
 
@@ -854,7 +863,7 @@ Sie können den Auftragsstatus mithilfe der State-Eigenschaft abrufen, wie im fo
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
 	x-ms-version: 2.8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1336908022&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=RYXOraO6Z%2f7l9whWZQN%2bypeijgHwIk8XyikA01Kx1%2bk%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=zf84471d-2233-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1336908022&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=RYXOraO6Z%2f7l9whWZQN%2bypeijgHwIk8XyikA01Kx1%2bk%3d
 	Host: wamsbayclus001rest-hs.net
 	Content-Length: 0
 
@@ -916,12 +925,12 @@ Im nächsten Abschnitt konfigurieren wir die Übermittlungsrichtlinie für das A
 	Accept: application/json
 	Accept-Charset: UTF-8
 	User-Agent: Microsoft ADO.NET Data Services
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421675491&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=9hUudHYnATpi5hN3cvTfgw%2bL4N3tL0fdsRnQnm6ZYIU%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421675491&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=9hUudHYnATpi5hN3cvTfgw%2bL4N3tL0fdsRnQnm6ZYIU%3d
 	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	
 
-**HTTP-Antwort**
+**HTTP Response**
 
 	HTTP/1.1 200 OK
 	Cache-Control: no-cache
@@ -958,22 +967,7 @@ Im nächsten Abschnitt konfigurieren wir die Übermittlungsrichtlinie für das A
 
 Einer der Schritte im Workflow zur Inhaltsübermittlung in Media Services ist das Konfigurieren von Übermittlungsrichtlinien für das Medienobjekt. Die Konfiguration der Übermittlungsrichtlinien für das Medienobjekt umfasst u. a. Folgendes: die Protokolle, die verwendet werden können (z. B. MPEG DASH, HLS, HDS, Smooth Streaming oder alle), ob das Medienobjekt dynamisch verschlüsselt werden soll und wie dies geschehen soll (Umschlagverschlüsselung oder allgemeine Verschlüsselung). 
 
-Die folgende HTTP-Anforderung **AssetDeliveryPolicies** gibt an, dass keine dynamische Verschlüsselung angewendet werden soll (AssetDeliveryPolicyType kann einen der folgenden Werte aufweisen: None = 0, Blocked = 1, NoDynamicEncryption = 2, DynamicEnvelopeEncryption = 3, DynamicCommonEncryption = 4) und der Stream in einem der folgenden Protokolle bereitgestellt werden soll:   MPEG-DASH-, HLS- und Smooth Streaming-Protokoll (AssetDeliveryProtocol kann eine Kombination der folgenden Werte sein: None = 0,        SmoothStreaming = 1, Dash = 2, HLS = 4, Hds = 8, All = 65535). 
-
-
-Im Zuge dieser Übermittlungskonfiguration wären Sie in der Lage, mit den folgenden Formaten Smooth-, HLS- oder MPEG DASH-Streams anzufordern:
-
-Smooth Streaming:
-
-	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest
-
-HLS:
-
-	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
-
-MPEG DASH
-
-	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf) 
+Die folgende HTTP-Anforderung **AssetDeliveryPolicies** gibt an, dass keine dynamische Verschlüsselung angewendet werden soll (AssetDeliveryPolicyType kann einen der folgenden Werte aufweisen: None = 0, Blocked = 1, NoDynamicEncryption = 2, DynamicEnvelopeEncryption = 3, DynamicCommonEncryption = 4) und der Stream in einem der folgenden Protokolle bereitgestellt werden soll:  MPEG-DASH-, HLS- und Smooth Streaming-Protokoll (AssetDeliveryProtocol kann eine Kombination der folgenden Werte sein: None = 0,        SmoothStreaming = 1, Dash = 2, HLS = 4, Hds = 8, All = 65535). 
 
 
 ### Erstellen von AssetDeliveryPolicies
@@ -1035,7 +1029,7 @@ Die folgende HTTP-Anforderung verknüpft die angegebene Übermittlungsrichtlinie
 	Accept: application/json
 	Accept-Charset: UTF-8
 	Content-Type: application/json
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421679198&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=aUvBcDwRAFk1JLxceWu%2bf9dVrCZM7PrTRbZd0TtoKvU%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421679198&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=aUvBcDwRAFk1JLxceWu%2bf9dVrCZM7PrTRbZd0TtoKvU%3d
 	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 140
@@ -1051,20 +1045,20 @@ Die folgende HTTP-Anforderung verknüpft die angegebene Übermittlungsrichtlinie
 
 ## <a id="publish_get_urls"></a>Veröffentlichen des Medienobjekts und Abrufen von URLs für Streaming und progressiven Download mit der REST-API
 
-Um ein Medienobjekt zu streamen oder herunterzuladen, müssen Sie es zunächst durch Erstellen eines Locators "veröffentlichen". Locators ermöglichen den Zugriff auf Dateien im Medienobjekt. Media Services unterstützt zwei Arten von Locatorobjekten: OnDemandOrigin-Locators, die zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) dienen, und Access Signature (SAS)-Locator, die zum Herunterladen von Mediendateien dienen.
+Um ein Medienobjekt zu streamen oder herunterzuladen, müssen Sie es zunächst durch Erstellen eines Locators "veröffentlichen". Locator ermöglichen den Zugriff auf Dateien im Medienobjekt. Media Services unterstützt zwei Arten von Locatorobjekten: OnDemandOrigin-Locator, die zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) dienen, und Access Signature (SAS)-Locator, die zum Herunterladen von Mediendateien dienen.
 
-Nachdem Sie die Locators erstellt haben, können Sie die URLs erstellen, mit denen Sie die Dateien streamen oder herunterladen möchten. 
+Nachdem Sie die Locator erstellt haben, können Sie die URLs erstellen, mit denen Sie die Dateien streamen oder herunterladen möchten. 
 
 
-Eine On-Demand-URL für Smooth Streaming hat das folgende Format:
+Eine URL für Smooth Streaming hat das folgende Format:
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest
 
-Eine Anforderungs-URL für HLS hat das folgende Format:
+Eine Streaming-URL für HLS hat das folgende Format:
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
 
-Eine On-Demand-URL für MPEG DASH hat das folgende Format:
+Eine Streaming-URL für MPEG DASH hat das folgende Format:
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 
@@ -1079,9 +1073,9 @@ In diesen Abschnitten wird gezeigt, wie Medienobjekte anhand der folgenden Aufga
 - Erstellen eines SAS-URLs zum Herunterladen von Inhalten 
 - Erstellen einer Ursprungs-URL für das Streamen von Inhalten 
 
-### Erstellen der AccessPolicy mit Leseberechtigung
+###Erstellen der AccessPolicy mit Leseberechtigung
 
-Vor dem Herunterladen oder Streamen von Medieninhalten definieren Sie zunächst eine AccessPolicy mit Leseberechtigungen und erstellen die entsprechende Locator-Entität, die den Typ des Übermittlungsmechanismus angibt, den Sie für Clients aktivieren möchten. Weitere Informationen zu den verfügbaren Eigenschaften finden Sie unter [AccessPolicy-Entitätseigenschaften](https://msdn.microsoft.com/de-de/library/azure/hh974297.aspx#accesspolicy_properties).
+Vor dem Herunterladen oder Streamen von Medieninhalten definieren Sie zunächst eine AccessPolicy mit Leseberechtigungen und erstellen die entsprechende Locator-Entität, die den Typ des Übermittlungsmechanismus angibt, den Sie für Clients aktivieren möchten. Weitere Informationen zu den verfügbaren Eigenschaften finden Sie unter [AccessPolicy-Entitätseigenschaften](https://msdn.microsoft.com/library/azure/hh974297.aspx#accesspolicy_properties).
 
 Das folgende Beispiel zeigt, wie die AccessPolicy für Leseberechtigungen eines bestimmten Medienobjekts angegeben wird.
 
@@ -1104,7 +1098,7 @@ Im Erfolgsfall wird ein 201 Erfolgscode zurückgegeben, der die erstellte Access
 Dieser grundlegende Workflow entspricht dem Hochladen einer Datei bei der Sammelerfassung eines Medienobjekts (wie oben in diesem Thema beschrieben). Wie beim Hochladen von Dateien gilt Folgendes: Wenn Sie (oder die Clients) sofortigen Zugriff auf Ihre Dateien benötigen, legen Sie den StartTime-Wert auf fünf Minuten vor der aktuellen Zeit fest. Dies ist erforderlich, weil ggf. eine Uhrzeitabweichung zwischen dem Clientcomputer und Media Services vorliegen kann. Der StartTime-Wert muss das folgende DateTime-Format aufweisen: YYYY-MM-DDTHH:mm:ssZ (z. B. "2014-05-23T17:53:50Z").
 
 
-### Erstellen eines SAS-URLs zum Herunterladen von Inhalten 
+###Erstellen eines SAS-URLs zum Herunterladen von Inhalten 
 
 Der folgende Code zeigt, wie Sie eine URL abrufen, die zum Herunterladen einer zuvor erstellten und hochgeladenen Mediendatei verwendet werden kann. Für die AccessPolicy wurden Leseberechtigungen festgelegt, und der Locator-Pfad verweist auf eine SAS-URL zum Herunterladen von Inhalten.
 
@@ -1114,7 +1108,7 @@ Der folgende Code zeigt, wie Sie eine URL abrufen, die zum Herunterladen einer z
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
 	x-ms-version: 2.8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337067658&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=dithjGvlXR9HlyAf5DE99N5OCYkPAxsHIcsTSjm9%2fVE%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=zf84471d-b1ae-2233-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337067658&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=dithjGvlXR9HlyAf5DE99N5OCYkPAxsHIcsTSjm9%2fVE%3d
 	Host: wamsbayclus001rest-hs.net
 	Content-Length: 182
 	Expect: 100-continue
@@ -1170,7 +1164,7 @@ Die zurückgegebene **Path** -Eigenschaft enthält die SAS-URL.
 >[AZURE.NOTE]
 Wenn Sie speicherverschlüsselten Inhalt herunterladen, müssen Sie ihn vor dem Rendern manuell entschlüsseln. Alternativ können Sie den MediaProcessor für die Speicherverschlüsselung in einer Verarbeitungsaufgabe verwenden, um verarbeitete Dateien unverschlüsselt an ein OutputAsset auszugeben und dann von diesem Medienobjekt herunterzuladen. Weitere Informationen zur Verarbeitung finden Sie unter "Erstellen und Verschlüsseln von Aufträgen mit der Media Services-REST-API". Nachdem die SAS URL-Locators erstellt wurden, können sie nicht mehr aktualisiert werden. Beispielsweise kann derselbe Locator nicht mit einem aktualisierten StartTime-Wert wiederverwendet werden. Dies liegt an der Art, wie SAS-URLs erstellt werden. Wenn ein Locator abgelaufen ist und Sie auf ein Medienobjekt zugreifen möchten, um es herunterzuladen, müssen Sie einen neuen Locator mit einem neuen StartTime-Wert erstellen.
 
-### Herunterladen von Dateien
+###Herunterladen von Dateien
 
 Nachdem Sie AccessPolicy und Locator konfiguriert haben, können Sie Dateien mithilfe der Azure Storage-REST-APIs herunterladen.  
 
@@ -1197,10 +1191,10 @@ Als Ergebnis des zuvor ausgeführten Codierungsauftrags (Codierung in einen MP4-
 	https://storagetestaccount001.blob.core.windows.net/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_AAC_und_ch2_56kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
 
 
-### Erstellen einer On-Demand-Ursprungs-URL für das Streamen von Inhalten
+###Erstellen einer Streaming-URL für das Streamen von Inhalten
 
 
-Der folgende Code zeigt, wie Sie einen Ursprungs-URL-Locator erstellen:
+Der folgende Code zeigt, wie Sie einen Streaming-URL-Locator erstellen:
 
 	POST https://wamsbayclus001rest-hs/API/Locators HTTP/1.1
 	Content-Type: application/json
@@ -1280,13 +1274,13 @@ Verwenden Sie zum Testen von Smooth Streaming [http://amsplayer.azurewebsites.ne
 
 Verwenden Sie zum Testen von MPEG DASH [http://dashif.org](http://dashif.org/reference/players/javascript/).
 
-Verwenden Sie zum Testen von HLS iOS- oder Safari-Geräte oder [3ivx-hls-player](http://apps.microsoft.com/windows/de-de/app/3ivx-hls-player/f79ce7d0-2993-4658-bc4e-83dc182a0614). 
+Verwenden Sie zum Testen von HLS iOS- oder Safari-Geräte oder [3ivx-hls-player](http://apps.microsoft.com/windows/app/3ivx-hls-player/f79ce7d0-2993-4658-bc4e-83dc182a0614). 
 
 
 
-<h2>Zusätzliche Ressourcen</h2>
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Stellen Sie Ihr Video jetzt online!</a>
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamische Pakete und mobile Geräte</a>
+##Zusätzliche Ressourcen
+- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Get your video online now!</a> (in englischer Sprache)
+- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamic Packaging and Mobile Devices</a> (in englischer Sprache)
 
 
 <!-- Anchors. -->
@@ -1298,4 +1292,4 @@ Verwenden Sie zum Testen von HLS iOS- oder Safari-Geräte oder [3ivx-hls-player]
 
 
 
-<!--HONumber=45--> 
+<!--HONumber=52-->

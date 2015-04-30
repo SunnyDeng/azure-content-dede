@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Erste Schritte mit Azure Mobile Services für Windows Phone-Apps" 
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Windows Phone-Entwicklung." 
 	services="mobile-services" 
@@ -10,9 +10,9 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-phone" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="dotnet" 
-	ms.topic="article" 
+	ms.topic="hero-article" 
 	ms.date="11/20/2014" 
 	ms.author="glenga"/>
 
@@ -23,6 +23,4 @@ Dieses Thema wird nicht mehr unterstützt. Es steht kein Windows Phone 8.0-Schne
 Ein Download für ein Schnellstartprojekt ist für Windows Phone Store 8.1-Apps als Teil eines universellen Windows-Projekts verfügbar. Weitere Informationen finden Sie unter [Erste Schritte mit Mobile Services](mobile-services-dotnet-backend-windows-store-dotnet-get-started.md).
 
 
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

@@ -3,7 +3,7 @@
 	description="Übersicht über die Media Services-REST-API" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -31,8 +31,8 @@ Für jeden Media Services-Aufruf müssen Sie eine Reihe obligatorischer Header i
 <tr><th>Header</th><th>Typ</th><th>Wert</th></tr>
 <tr><td>Autorisierung</td><td>Bearer</td><td>Das Bearer-Token ist der einzig zulässige Autorisierungsmechanismus. Der Wert muss außerdem das von ACS bereitgestellte Zugriffstoken enthalten.</td></tr>
 <tr><td>x-ms-version</td><td>Decimal</td><td>2.9</td></tr>
-<tr><td>DataServiceVersion</td><td>Decimal</td><td>3.0</td></tr>
-<tr><td>MaxDataServiceVersion</td><td>Decimal</td><td>3.0</td></tr>
+<tr><td>DataServiceVersion</td><td>Decimal</td><td>3,0</td></tr>
+<tr><td>MaxDataServiceVersion</td><td>Decimal</td><td>3,0</td></tr>
 </table><br/>
 
 
@@ -88,7 +88,7 @@ Im Folgenden finden eine vollständige Liste der HTTP-Verben, die für HTTP-Anfo
 
 ## Ermitteln des Media Services-Modells
 
-Um Media Services-Entitäten schnell aufzufinden, können Sie den $metadata-Vorgang verwenden. Dadurch können Sie alle gültigen Entitätstypen, Entitätseigenschaften, Zuordnungen, Funktionen, Aktionen usw. abrufen. Im folgenden Beispiel wird gezeigt, wie Sie den URI erstellen https://media.windows.net/API/$metadata.
+Um Media Services-Entitäten schnell aufzufinden, können Sie den $metadata-Vorgang verwenden. Dadurch können Sie alle gültigen Entitätstypen, Entitätseigenschaften, Zuordnungen, Funktionen, Aktionen usw. abrufen. Im folgenden Beispiel wird gezeigt, wie Sie den URI erstellen.: https://media.windows.net/API/$metadata.
 
 Sie sollten "?api-version=2.x" an das Ende des URIs anhängen, wenn Sie die Metadaten in einem Browser anzeigen möchten. Andernfalls sollte der x-ms-version-Header nicht in die Anforderung eingeschlossen werden.
 
@@ -103,4 +103,4 @@ Sie sollten "?api-version=2.x" an das Ende des URIs anhängen, wenn Sie die Meta
 
 
 
-<!--HONumber=47-->
+<!--HONumber=52-->

@@ -1,3 +1,1 @@
-Wenn Sie noch kein Traffic Manager-Profil haben, verwenden Sie die Informationen unter [Erstellen eines Traffic Manager-Profils mithilfe von "Schnellerfassung",](/de-de/library/windowsazure/dn339012.aspx) um ein Profil zu erstellen. Schreiben Sie sich den **.trafficmanager.net** Domänennamen auf, der Ihrem Traffic Manager-Profil zugewiesen ist, da dieser für spätere Schritte in diesem Dokument benötigt wird.
-
-<!--HONumber=42-->
+Wenn Sie noch kein Traffic Manager-Profil haben, verwenden Sie die Informationen unter [Erstellen eines Traffic Manager-Profils mithilfe von "Schnellerfassung"](/library/windowsazure/dn339012.aspx), um ein Profil zu erstellen. Schreiben Sie sich den Domänennamen **.trafficmanager.net** auf, der Ihrem Traffic Manager-Profil zugewiesen ist, da dieser für spätere Schritte in diesem Dokument benötigt wird.<!--HONumber=52--> 

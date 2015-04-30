@@ -1,44 +1,36 @@
-﻿<properties 
+<properties 
 	pageTitle="Verwenden von Azure-Tabellenspeicher mit dem Webaufträge-SDK" 
 	description="Erfahren Sie, wie Sie Azure-Tabellenspeicher mit dem Webaufträge-SDK nutzen. Erstellen von Tabellen, Entitäten zu Tabellen hinzufügen und vorhandene Tabellen lesen." 
-	services="web-sites, storage" 
+	services="app-service\web, storage" 
 	documentationCenter=".net" 
 	authors="tdykstra" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/15/2014" 
+	ms.date="04/03/2015" 
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure-Tabellenspeicher mit dem Webaufträge-SDK
 
-Diese Anleitung enthält C#-Codebeispiele, die zeigen, wie Sie Azure-Speichertabellen mithilfe des [Webaufträge-SDK](websites-dotnet-webjobs-sdk.md),Version 1.x, gelesen und geschrieben werden.
+## Übersicht
 
-In der Anleitung wird davon ausgegangen, dass Sie wissen, [wie ein Webauftragsprojekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](websites-dotnet-webjobs-sdk-get-started.md)..
+Diese Anleitung enthält C#-Codebeispiele, die zeigen, wie Azure-Speichertabellen mithilfe des [Webaufträge-SDK](websites-dotnet-webjobs-sdk.md),Version 1.x, gelesen und geschrieben werden.
+
+Im Handbuch wird davon ausgegangen, dass Sie wissen, [wie ein Webauftrags-Projekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](websites-dotnet-webjobs-sdk-get-started.md).
 		
-Einige der Codeausschnitte zeigen das  `Table`-Attribut in Funktionen, die  [manuell aufgerufen werden](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#manual), d. h. nicht mithilfe eines der Auslöserattribute. 
-
-## Inhaltsverzeichnis
-
--   [Hinzufügen von Entitäten zu einer Tabelle](#ingress)
--   [Überwachung in Echtzeit](#monitor)
--   [Lesen mehrerer Entitäten aus einer Tabelle](#multiple)
--   [Lesen einer einzelnen Entität aus einer Tabelle](#readone)
--   [Verwenden der .NET Storage API für das direkte Arbeiten mit der Tabelle](#readone)
--   [Verwandte in den Artikeln zu Warteschlangen behandelte Themen](#queues)
--   [Nächste Schritte](#nextsteps)
+Einige der Codeausschnitte zeigen die Verwendung des `Table`-Attributs in Funktionen, die [manuell aufgerufen](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#manual) werden, also nicht mithilfe eines der Auslöserattribute. 
 
 ## <a id="ingress"></a>Hinzufügen von Entitäten zu einer Tabelle
 
-Verwenden zum Hinzufügen von Entitäten zu einer Tabelle das  `Table`-Attribut mit einem  `ICollector<T>`- oder  `IAsyncCollector<T>`-Parameter, wobei das Schema der Entitäten angibt, die Sie hinzufügen möchten. ( `T` specifies the schema of the entities you want to add. The attribute constructor takes a string parameter that specifies the name of the table. )
+Verwenden zum Hinzufügen von Entitäten zu einer Tabelle das  `Table`-Attribut mit einem  `ICollector<T>`- oder  `IAsyncCollector<T>`-Parameter, wobei das Schema der Entitäten angibt, die Sie hinzufügen möchten. Wobei`T` das Schema der Entitäten angibt, die Sie hinzufügen möchten.. Der Attributkonstruktor verwendet einen Zeichenfolgenparameter, der den Namen der Tabelle angibt. )
 
-(The following code sample adds `Person`)Das folgende Codebespiel fügt Entitäten der Tabelle  *Ingress* hinzu.
+(Das folgende Codebespiel fügt `Person`)Das folgende Codebespiel fügt Entitäten der Tabelle  *Ingress* hinzu.
 
 		[NoAutomaticTrigger]
 		public static void IngressDemo(
@@ -75,19 +67,19 @@ Wenn Sie direkt mit dem Azure-Speicher-API arbeiten möchten, können Sie der Me
 
 Da Dateneingangsfunktionen oft große Datenmengen verarbeiten, bietet das Dashboard des Webaufträge-SDK Überwachungsdaten in Echtzeit. Der Abschnitt **Aufrufprotokoll** informiert Sie, ob die Funktion noch ausgeführt wird.
 
-![Ingress function running](./media/websites-dotnet-webjobs-sdk-storage-tables-how-to/ingressrunning.png)
+![Eingangsfunktion wird ausgeführt](./media/websites-dotnet-webjobs-sdk-storage-tables-how-to/ingressrunning.png)
 
 Die Seite **Aufrufdetails** meldet den Status der Funktion (Anzahl der geschriebenen Entitäten ) während der Ausführung und bietet Ihnen die Möglichkeit, sie abzubrechen. 
 
-![Ingress function running](./media/websites-dotnet-webjobs-sdk-storage-tables-how-to/ingressprogress.png)
+![Eingangsfunktion wird ausgeführt](./media/websites-dotnet-webjobs-sdk-storage-tables-how-to/ingressprogress.png)
 
 Wenn die Funktion abgeschlossen ist, meldet die Seite **Aufrufdetails** die Anzahl der geschriebenen Zeilen.
 
-![Ingress function finished](./media/websites-dotnet-webjobs-sdk-storage-tables-how-to/ingresssuccess.png)
+![Eingangsfunktion ist abgeschlossen](./media/websites-dotnet-webjobs-sdk-storage-tables-how-to/ingresssuccess.png)
 
 ## <a id="multiple"></a> Lesen mehrerer Entitäten aus einer Tabelle
 
-Verwenden Sie zum Lesen einer Tabelle das  `Table`-Attribut mit dem  `IQueryable<T>`-Parameter, wobei der Typ von  `T` derives from `TableEntity` abgeleitet ist oder  `ITableEntity` implementiert wird.
+Verwenden Sie zum Lesen einer Tabelle das  `Table`-Attribut mit dem  `IQueryable<T>`-Parameter, wobei der Typ von  `T` wird von `TableEntity` abgeleitet ist oder  `ITableEntity` implementiert wird.
 
 Das folgende Codebeispiel liest und meldet alle Zeilen aus der Tabelle  `Ingress`:
  
@@ -153,7 +145,7 @@ Weitere Informationen zur Verwendung des  `CloudTable`-Objekts finden Sie unter 
 
 ## <a id="queues"></a>Verwandte in den Artikeln zu Warteschlangen behandelte Themen
 
-Informationen zur Handhabung der Tabellenverarbeitung, die durch eine Warteschlangennachricht ausgelöst wird, oder zu Szenarien für das Webaufträge-SDK, die nicht spezifisch für die Tabellenverarbeitung sind, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md). .
+Informationen zur Handhabung der Tabellenverarbeitung, die durch eine Warteschlangennachricht ausgelöst wird, oder zu Szenarios für das Webaufträge-SDK, die nicht spezifisch für die Blob-Verarbeitung sind, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md). 
 
 In diesem Artikel werden u. a. die folgenden Themen behandelt:
 
@@ -162,16 +154,12 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 * Ordnungsgemäßes Herunterfahren
 * Verwenden von Webaufträge-SDK-Attributen im Hauptteil einer Funktion
 * Festlegen der SDK-Verbindungszeichenfolgen im Code
-* Festlegen von Werten für Konstruktorparameter im Webaufträge-SDK im Code
+* Festlegen von Werten für Konstruktorparameter des Webaufträge-SDK im Code
 * Manuelles Auslösen einer Funktion
 * Schreiben von Protokollen
 
-## <a id="nextsteps"></a>Nächste Schritte
+## <a id="nextsteps"></a> Nächste Schritte
 
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Tabellen behandelt werden. Weitere Informationen zur Verwendung von Azure-Webaufträgen und dem Webaufträge-SDK finden Sie unter [Empfohlene Ressourcen für Azure-Webaufträge](http://go.microsoft.com/fwlink/?linkid=390226).
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

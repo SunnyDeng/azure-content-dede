@@ -16,18 +16,18 @@
 	ms.date="02/18/2015" 
 	ms.author="juliako"/>
 
-# Media Services-Schnellstarts
+#Media Services-Schnellstarts
 
-## <a id="vod_quickstart"></a>Video on Demand (VoD) 
+##<a id="vod_quickstart"></a>Video on Demand (VoD) 
 
 Wählen Sie aus, ob Sie den Schnellstart mit Implementierung über .NET oder REST anzeigen möchten.
  
 [AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
 
 
-## <a id="live_quickstart"></a>Livestreaming
+##<a id="live_quickstart"></a>Livestreaming
  
 [Erste Schritte mit .NET](http://msdn.microsoft.com/library/azure/dn783465.aspx)
 
 
-<!--HONumber=47-->
+<!--HONumber=52-->

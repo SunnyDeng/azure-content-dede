@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-html" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="javascript" 
 	ms.topic="hero-article" 
 	ms.date="11/21/2014" 
@@ -34,7 +34,7 @@ Unten sehen Sie einen Screenshot aus der fertigen App:
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Services-Lernprogramme für HTML-Apps. 
 
-> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-html%2F"%20target="_blank).  
+> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchführen zu können. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [1 Monat kostenlose Testversion](http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-html%2F"%20target="_blank).  
 
 ###Weitere Anforderungen
 
@@ -64,7 +64,7 @@ In diesem Abschnitt erstellen Sie eine neue HTML-App, die mit dem mobilen Dienst
    
 2. Klicken Sie auf der Schnellstartregisterkarte unter **Plattform auswählen** auf **Windows**. Erweitern Sie dann **Neue HTML-App erstellen**.
 
-   	![][6]
+   ![][6]
 
    	Hierdurch werden die drei einfachen Schritte zum Erstellen und Hosten einer mit dem mobilen Dienst verbundenen HTML-App angezeigt.
 
@@ -76,7 +76,7 @@ In diesem Abschnitt erstellen Sie eine neue HTML-App, die mit dem mobilen Dienst
 
   	Hierdurch werden die Websitedateien für die _To do list_-Beispielanwendung, die mit dem mobilen Dienst verbunden ist, heruntergeladen. Speichern Sie die komprimierte Datei auf dem lokalen Computer, und merken Sie sich, wo Sie sie gespeichert haben.
 
-5. Vergewissern Sie sich auf der Registerkarte **Konfigurieren**, dass  `localhost` bereits im Feld **Anforderungen von Hostnamen zulassen** unter **Cross-Origin Resource Sharing (CORS)** eingetragen ist. Falls nicht, geben Sie  `localhost` im Feld **Hostname** ein, und klicken Sie dann auf **Speichern**.
+5. Vergewissern Sie sich auf der Registerkarte **Konfigurieren**, dass `localhost` bereits im Feld **Anforderungen von Hostnamen zulassen** unter **Cross-Origin Resource Sharing (CORS)** eingetragen ist. Falls nicht, geben Sie `localhost` im Feld **Hostname** ein, und klicken Sie dann auf **Speichern**.
 
   	![][9]
 
@@ -98,21 +98,21 @@ Der letzte Schritt dieses Lernprogramms besteht im Hosten und Ausführen der neu
 
 2. Öffnen Sie die URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> in einem Webbrowser, um die App zu starten.
 
-3. Geben Sie in der App unter **Neue Aufgabe eingeben** eine Beschreibung ein, wie zum Beispiel _Complete the tutorial_, und klicken Sie anschließend auf **Hinzufügen**.
+3. Geben Sie in der App unter **Neue Aufgabe eingeben** eine Beschreibung ein, wie zum Beispiel "_Lernprogramm ausführen_", und klicken Sie anschließend auf **Hinzufügen**.
 
-   	![][10]
+   ![][10]
 
    	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Werte werden vom mobilen Dienst zurückgegeben, und die Daten werden in der zweiten Spalte der App angezeigt.
 
 	> [AZURE.NOTE] Sie können den Code, der zur Abfrage und zum Einfügen von Daten auf Ihren mobilen Dienst zugreift, in der Datei app.js finden und prüfen.
 
-4. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die **TodoItems**-Tabelle.
+4. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
-   	![][11]
+   ![][11]
 
    	Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.
 
-   	![][12]
+   ![][12]
 
 ## <a name="next-steps"> </a>Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden: 
@@ -152,16 +152,14 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 
 <!-- URLs. -->
-[Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-html
-[Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-html
-[Aufrufen einer benutzerdefinierten API aus einer HTML-Anwendung]: /de-de/documentation/articles/mobile-services-html-call-custom-api 
+[Erste Schritte mit Daten]: /develop/mobile/tutorials/get-started-with-data-html
+[Erste Schritte mit der Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-html
+[Aufrufen einer benutzerdefinierten API aus einer HTML-Anwendung]: mobile-services-html-call-custom-api.md 
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
 [Microsoft-Webplattform-Installer]:  http://go.microsoft.com/fwlink/p/?LinkId=286333
 [neueste Version von Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342
-[Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-html-js-client
+[Mobile Services HTML/JavaScript: Konzeptionelle Referenz]: /develop/mobile/how-to-guides/work-with-html-js-client
 [Cross-Origin Resource Sharing (CORS)]: http://msdn.microsoft.com/library/windowsazure/dn155871.aspx
 
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

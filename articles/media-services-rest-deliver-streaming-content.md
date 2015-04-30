@@ -1,7 +1,7 @@
 ﻿<properties 
 	pageTitle="Bereitstellen von Streaminginhalten über Media Services" 
 	description="Erfahren Sie, wie Sie einen Locator erstellen, der zum Generieren einer Streaming-URL verwendet wird. Der Code verwendet die REST-API." 
-	authors="juliako" 
+	authors="Juliako" 
 	manager="dwrede" 
 	editor="" 
 	services="media-services" 
@@ -17,14 +17,14 @@
 	ms.author="juliako"/>
 
 
-# Vorgehensweise: Bereitstellen von Streaming-Inhalten
+#Gewusst wie: Bereitstellen von Streaminginhalten
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md) .  
+Dieser Artikel gehört zur Reihe [Media Services: Video-on- Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).  
 
-## Übersicht
+##Übersicht
 
 
-Sie können einen MP4-Satz mit adaptiver Bitrate streamen, indem Sie einen OnDemand-Streaminglocator und eine Streaming-URL erstellen. Im Thema [Codieren eines Medienobjekts](media-services-rest-encode-asset.md) wird die Codierung in einen MP4-Satz mit adaptiver Bitrate erläutert. Bevor Sie einen Locator erstellen, sollten Sie eine Übermittlungsrichtlinie für Medienobjekte konfigurieren, wie in [diesem] Thema(media-services-rest-configure-asset-delivery-policy.md) beschrieben. 
+Sie können einen MP4-Satz mit adaptiver Bitrate streamen, indem Sie einen OnDemand-Streaminglocator und eine Streaming-URL erstellen. Im Thema [Codieren eines Medienobjekts](media-services-rest-encode-asset.md) wird die Codierung in einen MP4-Satz mit adaptiver Bitrate erläutert. Bevor Sie einen Locator erstellen, sollten Sie eine Übermittlungsrichtlinie für Medienobjekte konfigurieren, wie in [diesem](media-services-rest-configure-asset-delivery-policy.md) Thema beschrieben. 
 
 Sie können auch einen OnDemand-Streaminglocator zum Erstellen von URLs verwenden, die auf MP4-Dateien verweisen, die progressiv heruntergeladen werden können.  
 
@@ -32,7 +32,7 @@ In diesem Thema wird erläutert, wie Sie einen OnDemand-Streaminglocator erstell
 
 Im [folgenden](#types) Abschnitt finden Sie die Enumerationstypen, deren Werte in REST-Aufrufen verwendet werden.   
   
-## Erstellen eines OnDemand-Streaminglocators
+##Erstellen eines OnDemand-Streaminglocators
 
 Verfahren Sie zum Erstellen des OnDemand-Streaminglocators und Abrufen von URLs wie folgt:
 
@@ -45,7 +45,7 @@ Verfahren Sie zum Erstellen des OnDemand-Streaminglocators und Abrufen von URLs 
    4. Erstellen Sie URLs für die Manifestdatei oder MP4-Dateien. 
 
 
-### Erstellen einer Zugriffsrichtlinie
+###Erstellen einer Zugriffsrichtlinie
 
 Anforderung:
 		
@@ -55,7 +55,7 @@ Anforderung:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstest1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1424263184&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=NWE%2f986Hr5lZTzVGKtC%2ftzHm9n6U%2fxpTFULItxKUGC4%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstest1&urn%3aSubscriptionId=zbbef702-e769-2233-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1424263184&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=NWE%2f986Hr5lZTzVGKtC%2ftzHm9n6U%2fxpTFULItxKUGC4%3d
 	x-ms-version: 2.8
 	x-ms-client-request-id: 6bcfd511-a561-448d-a022-a319a89ecffa
 	Host: media.windows.net
@@ -63,7 +63,7 @@ Anforderung:
 	
 	{"Name":"access policy","DurationInMinutes":43200.0,"Permissions":1}
 	
-Antwort:
+Response:
 	
 	HTTP/1.1 201 Created
 	Cache-Control: no-cache
@@ -82,7 +82,7 @@ Antwort:
 	
 	{"odata.metadata":"https://media.windows.net/api/$metadata#AccessPolicies/@Element","Id":"nb:pid:UUID:69c80d98-7830-407f-a9af-e25f4b0d3e5f","Created":"2015-02-18T06:52:09.8862191Z","LastModified":"2015-02-18T06:52:09.8862191Z","Name":"access policy","DurationInMinutes":43200.0,"Permissions":1}
 
-### Erstellen eines OnDemand-Streaminglocators
+###Erstellen eines OnDemand-Streaminglocators
 
 Erstellen Sie den Locator für das angegebene Medienobjekt und die zugehörige Richtlinie.
 
@@ -94,7 +94,7 @@ Anforderung:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstest1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1424263184&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=NWE%2f986Hr5lZTzVGKtC%2ftzHm9n6U%2fxpTFULItxKUGC4%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstest1&urn%3aSubscriptionId=zbbef702-e769-2233-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1424263184&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=NWE%2f986Hr5lZTzVGKtC%2ftzHm9n6U%2fxpTFULItxKUGC4%3d
 	x-ms-version: 2.8
 	x-ms-client-request-id: ac159492-9a0c-40c3-aacc-551b1b4c5f62
 	Host: media.windows.net
@@ -102,7 +102,7 @@ Anforderung:
 	
 	{"AccessPolicyId":"nb:pid:UUID:1480030d-c481-430a-9687-535c6a5cb272","AssetId":"nb:cid:UUID:cc1e445d-1500-80bd-538e-f1e4b71b465e","StartTime":"2015-02-18T06:34:47.267872Z","Type":2}
 
-Antwort:
+Response:
 	
 	HTTP/1.1 201 Created
 	Cache-Control: no-cache
@@ -121,7 +121,7 @@ Antwort:
 	
 	{"odata.metadata":"https://media.windows.net/api/$metadata#Locators/@Element","Id":"nb:lid:UUID:be245661-2bbd-4fc6-b14f-9cf9a1492e5e","ExpirationDateTime":"2015-03-20T06:34:47.267872+00:00","Type":2,"Path":"http://amstest1.streaming.mediaservices.windows.net/be245661-2bbd-4fc6-b14f-9cf9a1492e5e/","BaseUri":"http://amstest1.streaming.mediaservices.windows.net","ContentAccessComponent":"be245661-2bbd-4fc6-b14f-9cf9a1492e5e","AccessPolicyId":"nb:pid:UUID:1480030d-c481-430a-9687-535c6a5cb272","AssetId":"nb:cid:UUID:cc1e445d-1500-80bd-538e-f1e4b71b465e","StartTime":"2015-02-18T06:34:47.267872+00:00","Name":null}
 
-### Erstellen von Streaming-URLs
+###Erstellen von Streaming-URLs
 
 Verwenden Sie den nach der Locator-Erstellung zurückgegebenen **Path**-Wert, um die Smooth-, HLS- und MPEG DASH-URLs zu erstellen. 
 
@@ -146,7 +146,7 @@ Beispiel:
 	http://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny.ism/manifest(format=mpd-time-csf)
 
 
-### Erstellen von URLs für progressive Downloads
+###Erstellen von URLs für progressive Downloads
 
 Verwenden Sie den nach der Locator-Erstellung zurückgegebenen **Path**-Wert, um die URL für progressive Downloads zu generieren.   
 
@@ -156,7 +156,7 @@ Beispiel:
 
 	http://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny_H264_650kbps_AAC_und_ch2_96kbps.mp4
 
-## <a id="types"></a>Enum-Typen
+##<a id="types"></a>Enum-Typen
 
     [Flags]
     public enum AccessPermissions
@@ -174,4 +174,5 @@ Beispiel:
         Sas = 1,
         OnDemandOrigin = 2,
     }
-<!--HONumber=47-->
+
+<!--HONumber=52-->

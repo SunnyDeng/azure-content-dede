@@ -16,11 +16,11 @@
 	ms.date="02/10/2015" 
 	ms.author="juliako"/>
 
-# Vorgehensweise: Prüfen des Auftragsfortschritts
+#Gewusst wie: Prüfen des Auftragsfortschritts
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md). 
 
-## Überprüfen des Auftragsstatus im Portal
+##Überprüfen des Auftragsstatus im Portal
 
 1. Klicken Sie im [Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=256666&clcid=0x409) auf **Media Services** und anschließend auf den Media Services-Kontonamen.
 2. Wählen Sie die Seite **AUFTRÄGE** aus. 
@@ -29,11 +29,11 @@ Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](medi
 
 	![CheckStatus][checkstatus]
 
-## Nächster Schritt
+##Nächster Schritt
 
 Veröffentlichen des Inhalts. Weitere Informationen finden Sie unter [Vorgehensweise: Codieren von Medienobjekten](media-services-manage-content#publish.md). 
 
 
 [checkstatus]: ./media/media-services-monitor-job-progress/media-services-monitor-job-progress.png
 
-<!--HONumber=47-->
+<!--HONumber=52-->

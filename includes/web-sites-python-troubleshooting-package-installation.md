@@ -1,4 +1,4 @@
-﻿Einige Pakete möglicherweise bei der Ausführung auf Azure bei Verwendung von Pip nicht installiert.  Es kann einfach sein, dass das Paket nicht im Python-Paketindex verfügbar ist.  Möglicherweise ist ein Compiler erforderlich (ein Compiler ist nicht auf dem Computer verfügbar, auf dem die Azure-Website ausgeführt wird).
+Einige Pakete möglicherweise bei der Ausführung auf Azure bei Verwendung von Pip nicht installiert.  Es kann einfach sein, dass das Paket nicht im Python-Paketindex verfügbar ist.  Möglicherweise ist ein Compiler erforderlich (ein Compiler ist nicht auf dem Computer verfügbar, auf dem die Azure-Website ausgeführt wird).
 
 In diesem Abschnitt werden Methoden zur Behandlung dieses Problems vorgestellt.
 
@@ -14,9 +14,9 @@ Hinweis: Wenn Sie diese Option verwenden, achten Sie darauf, dass Sie das Paket 
 
 Wenn das Paket nicht installiert wird, weil es einen Compiler erfordert, können Sie den Compiler auf Ihrem lokalen Computer installieren und ein Wheel für das Paket erstellen, das dann in Ihrem Repository enthalten ist.
 
-Mac/Linux-Benutzer: Wenn Sie keinen Zugriff auf einen Windows-Computer haben, finden Sie unter [Erstellen einer virtuellen Maschine unter Windows][] Informationen zum Erstellen eines virtuellen Computers in Azure.  Sie können damit Wheels erstellen, diese zum Repository hinzufügen und den virtuellen Computer ggf. verwerfen. 
+Mac/Linux-Benutzer: Wenn Sie keinen Zugriff auf einen Windows-Computer haben, finden Sie unter [Erstellen eines virtuellen Computers, der Windows ausführt][] Informationen zum Erstellen eines virtuellen Computers in Azure.  Sie können damit Wheels erstellen, diese zum Repository hinzufügen und den virtuellen Computer ggf. verwerfen. 
 
-Für Python 2.7 können Sie [Microsoft Visual C++ Compiler für Python 2.7][] installieren.
+Für Python 2.7 können Sie [Microsoft Visual C++-Compiler für Python 2.7][] installieren.
 
 Für Python 3.4 können Sie [Microsoft Visual C++ 2010 Express][] installieren.
 
@@ -68,4 +68,4 @@ Es wird empfohlen, dass Sie die vorhandene virtuelle Umgebung auf der Website l�
 [Microsoft Visual C++-Compiler für Python 2.7]: http://aka.ms/vcpython27
 [Microsoft Visual C++ 2010 Express]: http://go.microsoft.com/?linkid=9709949
 
-<!--HONumber=49-->
+<!--HONumber=52--> 

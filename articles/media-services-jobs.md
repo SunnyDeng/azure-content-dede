@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="Verwalten von Azure Media Services-Aufträgen" 
+	pageTitle="Arbeiten mit Azure Media Services-Aufträgen" 
 	description="Das vorliegende Thema bietet einen Überblick über die Verwaltung von Azure Media Services-Aufträge." 
 	services="media-services" 
 	documentationCenter="" 
@@ -11,54 +11,52 @@
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
+	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/27/2015" 
+	ms.date="03/10/2015" 
 	ms.author="juliako"/>
 
-## Verwalten von Aufträgen
+#Arbeiten mit Azure Media Services-Aufträgen
 
 Ein **Auftrag** enthält Metadaten zur auszuführenden Verarbeitung. Jeder **Auftrag** enthält eine oder mehrere **Aufgaben**. Diese geben eine unteilbare Verarbeitungsaufgabe, die zugehörigen Eingabe- und Ausgabemedienobjekte, einen Medienprozessor und die zugehörigen Einstellungen an. Weitere Informationen zu Encoder-Einstellungen finden Sie in den Encoder-Handbüchern und -Schemata.
 
 Ein Codierungsauftrag wird normalerweise mit anderen Verarbeitungsschritten kombiniert, z. B. mit der Paketerstellung oder Verschlüsselung von Medienobjekten oder mit dem Generieren von Medienobjekten durch den Encoder. Aufgaben innerhalb eines Auftrags können verkettet werden, wobei das Ausgabemedienobjekt als Eingabemedienobjekt für die nächste Aufgabe dient. Auf diese Weise kann ein Auftrag die gesamten Verarbeitungsschritte für eine Medienpräsentation umfassen.
 
+In diesem Abschnitt werden Links zu gängigen Aufgaben im Zusammenhang mit Aufträgen/Aufgaben bereitgestellt.
 
 >[AZURE.NOTE]Die Aufgabenanzahl ist derzeit auf 30 Aufgaben pro Auftrag begrenzt. Wenn Sie mehr als 30 Aufgaben verketten müssen, erstellen Sie mehrere Aufträge, um die Aufgaben zu verteilen.
 
-## Arbeiten mit Aufträgen/Aufgaben
 
-In diesem Abschnitt werden Links zu gängigen Aufgaben im Zusammenhang mit Aufträgen/Aufgaben bereitgestellt.
+##Abrufen eines Medienprozessors
 
-### Abrufen eines Medienprozessors
-
-Rufen Sie einen Medienprozessor mit **.NET** oder **REST-API** ab.
+Rufen Sie mithilfe von **.NET** oder **REST-API** einen Medienprozessor ab.
 
 [AZURE.INCLUDE [media-services-selector-get-media-processor](../includes/media-services-selector-get-media-processor.md)]
 
-### Erstellen von Aufträgen 
+##Erstellen von Aufträgen 
 
 Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthält (z. B. Codierung oder Indizierung). Jede Aufgabe führt einen unteilbaren Vorgang für das (oder die) Eingangsmedienobjekt(e) durch. Ein Beispiel zum Erstellen von Codierungsaufträgen finden Sie hier:
 
 [AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode.md)]
 
-### Indizieren
+##Indizieren
 
 [AZURE.INCLUDE [media-services-selector-index-content](../includes/media-services-selector-index-content.md)]
 
-### Codieren 
+##Codieren 
 
 Codieren Sie mit dem **Azure Media Encoder** unter Verwendung von **Azure-Verwaltungsportal**, **.NET** oder **REST-API**.
  
 [AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode.md)]
 
-### Überwachen des Auftragsfortschritts
+##Überwachen des Auftragsfortschritts
 
-Überwachen Sie den Auftragsfortschritt mit dem **Azure-Verwaltungsportal**, **.NET** oder **REST-API**.
+Überwachen Sie den Auftragsfortschritt mithilfe von **Azure-Verwaltungsportal**, **.NET** oder **REST-API**.
 
 [AZURE.INCLUDE [media-services-selector-job-progress](../includes/media-services-selector-job-progress.md)]
 
-## Verwandte Links
+##Verwandte Links
 
-[Kontingente und Einschränkungen](media-services-quotas-and-limitations.md) - beschreibt verwendete Kontingente und Einschränkungen für den Media Services Encoder
+[Kontingente und Einschränkungen](Media-Services-Kontingente-und-limitations.md) - beschreibt verwendete Kontingente und Einschränkungen von Media Services-Encoder
 
-<!--HONumber=47-->
+<!--HONumber=52-->

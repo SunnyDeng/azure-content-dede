@@ -1,19 +1,19 @@
-﻿<properties 
-	pageTitle="Erste Schritte mit Ereignis-Hubs" 
-	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Event Hubs mit C# mithilfe von EventProcessorHost." 
-	services="service-bus" 
-	documentationCenter="" 
-	authors="fsautomata" 
-	manager="timlt" 
+<properties
+	pageTitle="Erste Schritte mit Ereignis-Hubs"
+	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Event Hubs mit C# mithilfe von EventProcessorHost."
+	services="service-bus"
+	documentationCenter=""
+	authors="fsautomata"
+	manager="timlt"
 	editor=""/>
 
-<tags 
-	ms.service="service-bus" 
-	ms.workload="core" 
-	ms.tgt_pltfrm="csharp" 
-	ms.devlang="csharp" 
-	ms.topic="hero-article" 
-	ms.date="02/10/2015" 
+<tags
+	ms.service="service-bus"
+	ms.workload="core"
+	ms.tgt_pltfrm="csharp"
+	ms.devlang="csharp"
+	ms.topic="hero-article"
+	ms.date="04/13/2015"
 	ms.author="sethm"/>
 
 # Erste Schritte mit Ereignis-Hubs
@@ -22,17 +22,15 @@
 
 ## Einführung
 
-Ereignis-Hubs ist ein hoch skalierbares Erfassungssystem, das Millionen von Ereignissen pro Sekunde verarbeiten kann und so Ihrer Anwendung ermöglicht, die massiven Datenmengen zu verarbeiten und zu analysieren, die von verbundenen Geräten und Anwendungen erzeugt werden. Nach der Erfassung in Ereignis-Hubs können Sie Daten über einen beliebigen Echtzeit-Analyseanbieter oder ein Speichercluster transformieren und speichern. Weitere Informationen zu Ereignis-Hubs finden Sie im [Ereignis-Hubs-Entwicklerhandbuch]. 
+Ein Ereignis-Hub ist ein Dienst, mit dem Sie große Mengen von Daten aus verbundenen Geräte und Anwendungen verarbeiten können. Nach dem Sammeln von Daten auf Ereignis-Hubs können die Daten mithilfe eines Speicherclusters gespeichert oder mit einem Echtzeitanalyse-Anbieter transformiert werden. Diese umfangreiche Ereignissammlung und -verarbeitung ist eine wichtige Komponente moderner Anwendungsarchitekturen, einschließlich des Internets der Dinge.
 
-Weitere Informationen finden Sie unter [Übersicht über Ereignis-Hubs].
+Dieses Lernprogramm zeigt, wie Sie mit dem Azure-Verwaltungsportal einen Ereignis-Hub erstellen. Sie erfahren in diesem Lernprogramm außerdem, wie Nachrichten an einen Ereignis-Hub mithilfe einer Konsolenanwendung in C# aufgenommen werden können und wie Sie diese parallel mit der C#-[Ereignisprozessorhost]-Bibliothek abrufen.
 
-In diesem Lernprogramm erfahren Sie, wie Nachrichten an einen Ereignis-Hub mithilfe einer Konsolenanwendung in C# aufgenommen werden können und wie Sie diese parallel mit der C#-[Ereignisprozessorhost]-Bibliothek abrufen.
+Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
-Zum Abschließen dieses Lernprogramms benötigen Sie Folgendes:
++ Microsoft Visual Studio 2013 oder Microsoft Visual Studio Express 2013 für Windows.
 
-+ Microsoft Visual Studio Express 2013 für Windows
-
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten dazu finden Sie hier: <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
++ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">1 Monat kostenlose Testversion</a>.
 
 ## Erstellen eines Ereignis-Hub
 
@@ -46,7 +44,7 @@ Zum Abschließen dieses Lernprogramms benötigen Sie Folgendes:
 
    	![][2]
 
-4. Klicken Sie auf den soeben erstellten Namespace (normalerweise ***Name des Ereignis-Hubs*-ns**).
+4. Klicken Sie auf den soeben erstellten Namespace (normalerweise ****Name des Ereignis-Hubs*-ns**).
 
    	![][3]
 
@@ -54,15 +52,15 @@ Zum Abschließen dieses Lernprogramms benötigen Sie Folgendes:
 
    	![][4]
 
-6. Klicken Sie oben auf die Registerkarte **Konfigurieren**, fügen Sie eine Regel mit dem Namen **SendRule** mit *Send*-Rechten und eine weitere Regel mit dem Namen **ReceiveRule** mit *Manage, Send, Listen*-Rechten hinzu, und klicken Sie dann auf **Speichern**.
+6. Klicken Sie oben auf die Registerkarte **Konfigurieren**, fügen Sie eine Regel namens **SendRule** mit *Send*-Rechten hinzu, fügen Sie eine weitere Regel mit dem Namen **ReceiveRule** mit den Rechten *Manage, Send und Listen* hinzu, und klicken Sie auf **Speichern**.
 
    	![][5]
 
-7. Klicken Sie am oberen Seitenrand auf die Registerkarte **Dashboard**, und klicken Sie dann auf Verbindungsinformationen.**Verbindungsinformationen**. Notieren Sie sich die beiden Verbindungszeichenfolgen.
+7. Klicken Sie am oberen Seitenrand auf die Registerkarte **Dashboard**, und klicken Sie dann auf Verbindungsinformationen.**Verbindungsinformationen**. Notieren Sie sich die beiden Verbindungszeichenfolgen, oder kopieren Sie sie für die spätere Verwendung in diesem Lernprogramm.
 
    	![][6]
 
-Ihr Ereignis-Hub wird jetzt erstellt, und Sie erhalten die Verbindungszeichenfolgen, die Sie zum Senden und Empfangen von Ereignissen benötigen.
+Ihr Ereignis-Hub wird jetzt erstellt, und Sie verfügen über die zum Senden und Empfangen von Ereignissen erforderlichen Verbindungszeichenfolgen.
 
 [AZURE.INCLUDE [service-bus-event-hubs-get-started-send-csharp](../includes/service-bus-event-hubs-get-started-send-csharp.md)]
 
@@ -81,6 +79,14 @@ Sie können jetzt die Anwendung ausführen.
 
    	![][22]
 
+## Nächste Schritte
+
+Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hub erstellt und Daten sendet und empfängt, können Sie mit den folgenden Szenarios fortfahren:
+
+- Eine vollständige [Beispielanwendung mit Verwendung von Ereignis-Hubs].
+- Das Beispiel zum [Horizontales Hochskalieren der Ereignisverarbeitung mit Ereignis-Hubs].
+- Eine [Messaginglösung mit Warteschlange] unter Verwendung von Service Bus-Warteschlangen.
+
 <!-- Images. -->
 [1]: ./media/service-bus-event-hubs-getstarted/create-event-hub1.png
 [2]: ./media/service-bus-event-hubs-getstarted/create-event-hub2.png
@@ -96,5 +102,8 @@ Sie können jetzt die Anwendung ausführen.
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Ereignisprozessorhost]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn836025.aspx
+[Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
+[Horizontales Hochskalieren der Ereignisverarbeitung mit Ereignis-Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
+[Messaginglösung mit Warteschlange]: cloud-services-dotnet-multi-tier-app-using-service-bus-queues.md
 
-<!--HONumber=47-->
+<!--HONumber=52-->

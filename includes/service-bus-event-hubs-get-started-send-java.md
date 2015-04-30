@@ -1,9 +1,9 @@
-﻿## Senden von Nachrichten an Ereignis-Hubs
-In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an den Ereignis-Hub zu senden. Wir nutzen den JMS AMQP-Anbieter aus dem [Apache Qpid-Projekt](http://qpid.apache.org/). Dies entspricht der Verwendung von Servicebuswarteschlangen und -Themen mit AMQP aus Java, wie [hier](http://azure.microsoft.com/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/) gezeigt. Weitere Informationen finden Sie in der [Qpid JMS-Dokumentation](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html) und [Java Messaging Service](http://www.oracle.com/technetwork/java/jms/index.html).
+## Senden von Nachrichten an Ereignis-Hubs
+In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an den Ereignis-Hub zu senden. Wir verwenden den JMS AMQP-Anbieter aus dem [Apache Qpid-Projekt](http://qpid.apache.org/). Dies entspricht der Verwendung von Service Bus-Warteschlangen und -Themen mit AMQP über Java, wie [hier](../articles/service-bus-java-how-to-use-jms-api-amqp.md) beschrieben. Weitere Informationen finden Sie in der [Qpid JMS-Dokumentation](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html) und unter [Java Messaging Service](http://www.oracle.com/technetwork/java/jms/index.html).
 
 1. Erstellen Sie in Eclipse ein neues Java-Projekt namens **Sender**.
 
-2. Laden Sie die neueste Version der Bibliothek **Qpid JMS AMQP 1.0** von [hier](http://qpid.apache.org/components/qpid-jms/index.html) herunter.
+2. Laden Sie die neueste Version der Bibliothek **Qpid JMS AMQP 1.0** [hier](http://qpid.apache.org/components/qpid-jms/index.html) herunter.
 
 3. Extrahieren Sie die Dateien aus dem Archiv, und kopieren Sie die folgenden JAR-Dateien aus dem Archivverzeichnis `qpid-amqp-1-0-client-jms\<version>\lib` in Ihr Eclipse-Projekt **Sender**.
 
@@ -13,15 +13,15 @@ In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an 
 
 5. Erstellen Sie im Stammverzeichnis des Projekts **Sender** eine Datei namens **servicebus.properties** mit folgendem Inhalt. Vergessen Sie nicht, den Wert für den Namen von Ereignis-Hub und Namespace (letzterer lautet in der Regel `{event hub name}-ns`) zu ersetzen. Sie müssen auch eine URL-codierte Version des Schlüssels für die zuvor erstellte **SendRule** einsetzen. Die URL-Codierung können Sie [hier](http://www.w3schools.com/tags/ref_urlencode.asp) vornehmen.
 
-		# servicebus.properties - sample JNDI configuration
+		# servicebus.properties - JNDI-Beispielkonfiguration
 
-		# Register a ConnectionFactory in JNDI using the form:
-		# connectionfactory.[jndi_name] = [ConnectionURL]
+		# Registrieren einer ConnectionFactory in JNDI in folgender Form:
+		# connectionfactory.[jndi_name] = [Verbindungs-URL]
 		connectionfactory.SBCF = amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.windows.net/?sync-publish=false
 
-		# Register some queues in JNDI using the form
-		# queue.[jndi_name] = [physical_name]
-		# topic.[jndi_name] = [physical_name]
+		# Registrieren von Warteschlangen JNDI in folgender Form
+		# queue.[jndi_name] = [physischer_Name]
+		# topic.[jndi_name] = [physischer_Name]
 		queue.EventHub = {event hub name}
 
 5. Erstellen Sie eine neue Klasse namens **Sender**. Fügen Sie die folgenden `import`-Anweisungen ein:
@@ -47,7 +47,7 @@ In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an 
 
 		public static void main(String[] args) throws NamingException,
 				JMSException, IOException, InterruptedException {
-			// Configure JNDI environment
+			// JNDI-Umgebung konfigurieren
 			Hashtable<String, String> env = new Hashtable<String, String>();
 			env.put(Context.INITIAL_CONTEXT_FACTORY,
 					"org.apache.qpid.amqp_1_0.jms.jndi.PropertiesFileInitialContextFactory");
@@ -58,16 +58,16 @@ In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an 
 	
 			Destination queue = (Destination) context.lookup("EventHub");
 	
-			// Create Connection
+			// Verbindung erstellen
 			Connection connection = cf.createConnection();
 	
-			// Create sender-side Session and MessageProducer
+			// Sitzung und MessageProducer senderseitig erstellen
 			Session sendSession = connection.createSession(false,
 					Session.AUTO_ACKNOWLEDGE);
 			MessageProducer sender = sendSession.createProducer(queue);
 	
-			System.out.println("Press Ctrl-C to stop the sender process");
-			System.out.println("Press Enter to start now");
+			System.out.println("Drücken Sie STRG+C, um das Senden abzubrechen.");
+			System.out.println("Drücken Sie zum Starten die EINGABETASTE.");
 			BufferedReader commandLine = new java.io.BufferedReader(
 					new InputStreamReader(System.in));
 			commandLine.readLine();
@@ -93,4 +93,5 @@ In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an 
 
 <!-- Images -->
 [8]: ./media/service-bus-event-hubs-getstarted/create-sender-java1.png
-<!--HONumber=47-->
+
+<!--HONumber=52--> 

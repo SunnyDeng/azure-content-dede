@@ -1,4 +1,4 @@
-﻿
+
 1. Drücken Sie die F5-Taste, um das Projekt neu zu erstellen und die Windows Store-App zu starten.
 
 2. Geben Sie in der App einen sinnvollen Text, z.B. *Complete the tutorial*, in **Ein TodoItem einfügen** ein, und klicken sie anschließend auf **Speichern**.
@@ -13,5 +13,4 @@
 	
 	Beachten Sie, dass nach dem Starten der App im vorhergehenden Schritt gespeicherte Daten aus dem mobilen Dienst geladen werden.
 
-
-<!--HONumber=42-->
+<!--HONumber=52--> 

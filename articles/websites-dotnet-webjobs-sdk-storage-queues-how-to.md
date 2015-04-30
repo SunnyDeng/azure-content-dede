@@ -1,26 +1,28 @@
-﻿<properties 
+<properties 
 	pageTitle="Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK" 
 	description="Erfahren Sie, wie Sie Azure-Warteschlangenspeicher mit dem Webaufträge-SDK nutzen. Sie können Warteschlangen erstellen und löschen, Warteschlangennachrichten einfügen, einsehen, abrufen und löschen und vieles mehr." 
-	services="web-sites, storage" 
+	services="app-service\web, storage" 
 	documentationCenter=".net" 
 	authors="tdykstra" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/15/2014" 
+	ms.date="04/03/2015" 
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK
 
+## Übersicht
+
 Diese Anleitungen enthält C#-Codebeispiele, die zeigen, wie das Azure-Webaufträge-SDK, Version 1.x, mit dem Azure-Warteschlangenspeicherdienst verwendet wird.
 
-Im Leitfaden wird davon ausgegangen, dass Sie wissen, [wie ein Webauftragsprojekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](websites-dotnet-webjobs-sdk-get-started.md).
+Im Handbuch wird davon ausgegangen, dass Sie wissen, [wie ein Webauftrags-Projekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto zeigen](websites-dotnet-webjobs-sdk-get-started.md).
 
 Wie in diesem Beispiel zeigen die meisten Codeausschnitte nur Funktionen und nicht den Code, der das  `JobHost`-Objekt erstellt:
 
@@ -30,7 +32,7 @@ Wie in diesem Beispiel zeigen die meisten Codeausschnitte nur Funktionen und nic
 		    host.RunAndBlock();
 		}
 		
-## Inhaltsverzeichnis
+Die Anleitung umfasst die folgenden Themen:
 
 -   [Auslösen einer Funktion, wenn eine Warteschlangennachricht empfangen wird](#trigger)
 	- Zeichenfolgen-Warteschlangennachrichten
@@ -58,7 +60,7 @@ Wie in diesem Beispiel zeigen die meisten Codeausschnitte nur Funktionen und nic
 -   [Festlegen von Konfigurationsoptionen](#config)
 	- Festlegen von SDK-Verbindungszeichenfolgen im Code
 	- Konfigurieren von "QueueTrigger"-Einstellungen
-	- Festlegen von Werten für Konstruktorparameter im Webaufträge-SDK im Code
+	- Festlegen von Werten für Konstruktorparameter des Webaufträge-SDK im Code
 -   [Manuelles Auslösen einer Funktion](#manual)
 -   [Schreiben von Protokollen](#logs)
 -   [Nächste Schritte](#nextsteps)
@@ -129,7 +131,7 @@ Das SDK implementiert einen zufälligen exponentiellen Backoff-Algorithmus, um d
 
 ### <a id="instances"></a> Mehrere Instanzen
 
-Falls Ihre Website auf mehreren virtuellen Instanzen läuft, wird ein kontinuierlicher Webauftrag auf allen Computern ausgeführt, und jeder Computer wartet auf Auslöser und versucht, Funktionen auszuführen. In manchen Szenarien kann dies dazu führen, dass manche Funktionen dieselben Daten doppelt verarbeiten. Die Funktionen sollten daher "idempotent" geschrieben sein, d. h. beim wiederholten Aufrufen mit denselben Eingangsdaten dürfen keine duplizierten Resultate entstehen.  
+Wenn Ihre Web-App auf mehreren virtuellen Instanzen läuft, wird ein kontinuierlicher Webauftrag auf allen Computern ausgeführt, und jeder Computer wartet auf Auslöser und versucht, Funktionen auszuführen. In manchen Szenarien kann dies dazu führen, dass manche Funktionen dieselben Daten doppelt verarbeiten. Die Funktionen sollten daher "idempotent" geschrieben sein, d. h. beim wiederholten Aufrufen mit denselben Eingangsdaten dürfen keine duplizierten Resultate entstehen.  
 
 ### <a id="parallel"></a> Parallele Ausführung
 
@@ -144,7 +146,7 @@ Sie können die folgenden Nachrichteneigenschaften abrufen, indem Sie Parameter 
 * `DateTimeOffset` expirationTime
 * `DateTimeOffset` insertionTime
 * `DateTimeOffset` nextVisibleTime
-* `string`QueueTrigger (enthält Nachrichtentext)
+* `string` queueTrigger (contains message text)
 * `string` id
 * `string` popReceipt
 * `int` dequeueCount
@@ -266,10 +268,10 @@ Jede Warteschlangennachricht wird unmittelbar nach dem Aufruf der `Add`-Methode 
 
 Sie können das `Queue`-Attribut für die folgenden Parametertypen verwenden:
 
-* `out string` (erstellt Warteschlangennachricht, wenn der Parameterwert nicht Null ist, sobald die Funktion beendet wird.)
+* `out string` (erstellt Warteschlangennachricht, wenn der Parameterwert nicht null ist, sobald die Funktion beendet wird)
 * `out byte[]` (funktioniert wie `string`) 
 * `out CloudQueueMessage` (funktioniert wie `string`) 
-* `out POCO`(ein serialisierbarer Typ, erstellt eine Nachricht mit einem NULL-Objekt, wenn der Parameter NULL ist, sobald die Funktion beendet)
+* `out POCO` (ein serialisierbarer Typ, erstellt eine Nachricht mit einem NULL-Objekt, wenn der Parameter NULL ist, sobald die Funktion beendet wird)
 * `ICollector`
 * `IAsyncCollector`
 * `CloudQueue` (zum manuellen Erstellen von Nachrichten, die direkt die Azure-Speicher-API verwenden)
@@ -294,7 +296,7 @@ Die `IBinder`-Schnittstelle kann auch mit den Attributen `Table` und  `Blob` ver
 
 ## <a id="blobs"></a> Lesen und Schreiben von BLOBs und Tabellen beim Verarbeiten einer Warteschlangennachricht
 
-Mithilfe der Attribute `Blob` und `Table` können Sie BLOBs und Tabellen lesen und schreiben. Die Beispiele in diesem Abschnitt gelten für BLOBs. Codebeispiele, die zeigen, wie Sie Prozesse auslösen, wenn BLOBs erstellt oder aktualisiert werden, finden Sie unter [Verwenden von Azure-BLOB-Speicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-blobs-how-to.md). Codebeispiele für das Lesen und Schreiben von Tabellen finden Sie unter [Verwenden von Azure-Tabellenspeicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-tables-how-to.md).
+Mithilfe der Attribute `Blob` und `Table` können Sie BLOBs und Tabellen lesen und schreiben. Die Beispiele in diesem Abschnitt gelten für BLOBs. Codebeispiele, die zeigen, wie Prozesse ausgelöst werden, wenn Blobs erstellt oder aktualisiert werden, finden Sie unter [Verwenden von Azure-Blob-Speicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-blobs-how-to.md)Codebeispiele zum Lesen und Schreiben von Tabellen finden Sie unter [Verwenden von Azure-Tabellenspeicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-tables-how-to.md).
 
 ### Zeichenfolge-Warteschlangennachrichten, die BLOB-Vorgänge auslösen
 
@@ -310,7 +312,7 @@ Im folgenden Beispiel werden  `Stream`-Objekte zum Lesen und Schreiben von BLOBs
 		    blobInput.CopyTo(blobOutput, 4096);
 		}
 
-Der  `Blob`-Attributkonstruktor verwendet den  `blobPath`-Parameter, der den Container und BLOB-Namen angibt. Weitere Informationen zu diesen Platzhalter finden Sie unter [Verwenden von Azure-BLOB-Speicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-blobs-how-to.md), .
+Der  `Blob`-Attributkonstruktor verwendet den  `blobPath`-Parameter, der den Container und BLOB-Namen angibt. Weitere Informationen zu diesem Platzhalter finden Sie unter [Verwenden von Azure-Blob-Speicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-blobs-how-to.md), 
 
 Wenn das Attribut ein  `Stream`-Objekt anpasst, gibt ein anderer Konstruktorparameter den  `FileAccess`-Modus als Lesen, Schreiben oder Lesen/ Schreiben an. 
 
@@ -349,17 +351,17 @@ Wenn Sie an Ihrer Funktion vor dem Binden eines Blobs an ein Objekt einige Ände
  
 Das  `Blob`-Attribut kann mit den folgenden Typen verwendet werden:
 
-* `Stream`(Lesen oder Schreiben, wird mit dem "FileAccess"-Konstruktorparameter angegeben)
+* `Stream` (Lesen oder Schreiben, wird mit dem "FileAccess"-Konstruktorparameter angegeben)
 * `TextReader`
 * `TextWriter`
 * `string` (Lesen)
-* `out string`(Schreiben, erstellt ein BLOB nur dann, wenn der Parameter bei Rückgabe der Funktion ungleich NULL ist)
+* `out string` (Schreiben, erstellt ein Blob nur dann, wenn der Parameter bei Rückgabe der Funktion ungleich NULL ist)
 * POCO (Lesen)
 * POCO (Schreiben; erstellt immer ein BLOB, erstellt ein NULL-Objekt , wenn der POCO-Parameter bei Rückgabe der Funktion NULL ist)
 * `CloudBlobStream` (Schreiben)
-* `ICloudBlob`(Lesen oder Schreiben)
-* `CloudBlockBlob`(Lesen oder Schreiben) 
-* `CloudPageBlob`(Lesen oder Schreiben) 
+* `ICloudBlob` (Lesen oder Schreiben)
+* `CloudBlockBlob` (Lesen oder Schreiben) 
+* `CloudPageBlob` (Lesen oder Schreiben) 
 
 ## <a id="poison"></a> Behandlung von nicht verarbeitbaren Nachrichten
 
@@ -389,7 +391,7 @@ Im folgenden Beispiel tritt bei der  `CopyBlob`-Funktion ein Fehler auf, wenn ei
 
 Die folgende Abbildung zeigt die Konsolenausgabe dieser Funktionen, wenn eine nicht verarbeitbare Nachricht verarbeitet wird.
 
-![Console output for poison message handling](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/poison.png)
+![Konsolenausgabe für nicht verarbeitbare Nachrichten](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/poison.png)
 
 ### Manuelle Behandlung von nicht verarbeitbaren Nachrichten
 
@@ -466,16 +468,16 @@ Das folgende Beispiel zeigt, wie diese Einstellungen konfiguriert werden können
 
 Mitunter möchten Sie einen Warteschlangennamen, einen BLOB-Namen oder Container oder einen Tabellennamen im Code angeben, anstatt ihn hart zu codieren. Sie möchten z. B. den Warteschlangennamen für  `QueueTrigger` in einer Datei oder Umgebungsvariablen angeben. 
 
-Möglich wird dies, indem Sie ein  `NameResolver`-Objekts an den  `JobHostConfiguration`-Typ übergeben. Sie fügen in Konstruktorparametern von Webaufträge-SDK-Attributn spezielle Platzhalter hinzu, die von Prozentzeichen (%) umgeben werden, und Ihr  `NameResolver`-Code gibt die tatsächlichen Werte an, die anstelle dieser Platzhalter verwendet werden sollen.
+Möglich wird dies, indem Sie ein  `NameResolver`-Objekts an den  `JobHostConfiguration`-Typ übergeben. Sie fügen in Konstruktorparametern von WebJobs-SDK-Attributen spezielle Platzhalter hinzu, die von Prozentzeichen (%) umgeben werden, und Ihr `NameResolver`-Code gibt die tatsächlichen Werte an, die anstelle dieser Platzhalter verwendet werden sollen.
 
-Angenommen, Sie möchten eine Warteschlange mit dem Namen "logqueuetest" in der Testumgebung und eine Warteschlange mit dem Namen "logqueueprod" in einer Produktionsumgebung verwenden. Anstelle eines hartcodierten Warteschlangennamens möchten Sie den Namen eines Eintrags in der Auflistung  `appSettings` angeben, die den tatsächlichen Namen der Warteschlange hätte. Wenn der  `appSettings`-Schlüssel "logqueue" ist, könnte die Funktion wie im folgenden Beispiel aussehen.
+Angenommen, Sie möchten eine Warteschlange mit dem Namen "logqueuetest" in der Testumgebung und eine Warteschlange mit dem Namen "logqueueprod" in einer Produktionsumgebung verwenden. Anstelle eines hartcodierten Warteschlangennamens möchten Sie den Namen eines Eintrags in der Auflistung  `appSettings` angeben, die den tatsächlichen Namen der Warteschlange hätte. Wenn der `appSettings`-Schlüssel "logqueue" ist, könnte die Funktion wie im folgenden Beispiel aussehen.
 
 		public static void WriteLog([QueueTrigger("%logqueue%")] string logMessage)
 		{
 		    Console.WriteLine(logMessage);
 		}
 
-Die  `NameResolver`-Klasse kann dann den Namen der Warteschlange aus  `appSettings` abrufen, wie im folgenden Beispiel gezeigt:
+Die Klasse `NameResolver` kann damm den Namen der Warteschlange aus `appSettings` abrufen, wie im folgenden Beispiel gezeigt::
 
 		public class QueueNameResolver : INameResolver
 		{
@@ -524,15 +526,15 @@ Zum manuellen Auslösen einer Funktion verwenden Sie die Methode  `Call` oder  `
 
 Das Dashboard zeigt Protokolle an zwei Stellen: auf der Seite für den Webauftrag und auf der Seite für eines bestimmten Webauftragsaufrufs. 
 
-![Logs in WebJob page](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
+![Protokolle auf Webauftragsseiten](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
 
-![Logs in function invocation page](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardlogs.png)
+![Protokolle auf Funktionsaufrufseiten](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardlogs.png)
 
-Methoden für dieKonsolenausgabe, die Sie in einer Funktion oder in der  `Main()`-Methode aurufen, werden auf der Dashboard-Seite für den Webauftrag und nicht auf den Seite eines bestimmten Methodenaufrufs angezeigt. Die Ausgabe des "TextWriter"-Objekts, die Sie von einem Parameter in Ihrer Methodensignatur erhalten, wird auf der Dashboard-Seite eines bestimmten Methodenaufrufs angezeigt.
+Die Ausgabe von Konsolenmethoden, die Sie in einer Funktion oder in der `Main()`-Methode aufrufen, werden auf der Dashboard-Seite für den WebJob und nicht auf der Seite eines bestimmten Methodenaufrufs angezeigt. Die Ausgabe des "TextWriter"-Objekts, die Sie von einem Parameter in Ihrer Methodensignatur erhalten, wird auf der Dashboard-Seite eines Methodenaufrufs angezeigt.
 
 Die Konsolenausgabe kann nicht an einen bestimmten Methodenaufruf geknüpft werden, da die Konsole als Singlethread ausgeführt wird, während viele Aufgaben ggf. gleichzeitig ausgeführt werden. Deshalb versieht das SDK jeden Funktionsaufruf mit einem eigenen eindeutigen Protokollschreibobjekt.
 
-Zum Schreiben von [Ablaufverfolgungsprotokollen](../web-sites-dotnet-troubleshoot-visual-studio/#logsoverview) verwenden Sie  `Console.Out` (erstellt als INFO markierte Protokolle) und  `Console.Error` (erstellt von als FEHLER markierte Protokolle). Eine Alternative ist die Verwendung von [Trace oder TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), zusätzlich zu INFO und FEHLER die Stufen AUSFÜHRLICH, WARNUNG und KRITISCH geboten werden. Ablaufverfolgungsprotokolle von Anwendungen werden in den Website-Protokolldateien, Azure-Tabellen oder Azure-BLOBs angezeigt, je nachdem, wie Sie Ihre Azure-Website konfigurieren. Wie bei sämtlichen Konsolenausgaben werden die 100 letzten Anwendungsprotokolle auch auf der Seite "Dashboard" für den Webauftrag und nicht auf der Seite für die Funktionsaufruf angezeigt. 
+Zum Schreiben von [Ablaufverfolgungsprotokollen](web-sites-dotnet-troubleshoot-visual-studio.md#logsoverview)verwenden Sie `Console.Out` (erstellt Protokolle, die als INFO gekennzeichnet sind) und `Console.Error` (erstellt Protokolle, die als ERROR markiert sind). Eine Alternative ist die Verwendung von [Trace oder TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), zusätzlich zu INFO und FEHLER die Stufen AUSFÜHRLICH, WARNUNG und KRITISCH geboten werden. Ablaufverfolgungsprotokolle von Anwendungen werden in den Web-App-Protokolldateien, Azure-Tabellen oder Azure-Blobs angezeigt, je nachdem, wie Sie Ihre Azure-Web-App konfigurieren. Wie bei sämtlichen Konsolenausgaben werden die 100 letzten Anwendungsprotokolle auch auf der Seite "Dashboard" für den Webauftrag und nicht auf der Seite für die Funktionsaufruf angezeigt. 
 
 Die Konsolenausgabe wird nur im Dashboard angezeigt, wenn das Programm in einem Azure-Webauftrag ausgeführt wird, und nicht, wenn die Anwendung lokal oder in einer anderen Umgebung ausgeführt wird.
 
@@ -552,37 +554,33 @@ Im folgenden Beispiel sind mehrere Möglichkeiten zum Schreiben von Protokollen 
 
 Im Dashboard des Webaufträge-SDK wird die Ausgabe des  `TextWriter`-Objekts angezeigt, wenn Sie zu der Seite für einen bestimmten Funktionsaufruf wechseln und auf **Toggle Output** klicken:
 
-![Click function invocation link](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardinvocations.png)
+![Link zum Aufruf der "Click"-Funktion](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardinvocations.png)
 
-![Logs in function invocation page](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardlogs.png)
+![Protokolle auf Funktionsaufrufseiten](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardlogs.png)
 
 Im Dashboard des Webaufträge-SDK werden die letzten 100 Zeilen der Konsolenausgabe angezeigt, wenn Sie zur Seite für den Webauftrag (nicht für den Funktionsaufruf) wechseln und auf **Toggle Output** klicken.
  
-![Click Toggle Output](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
+![Ausgabe von "Click Toggle"](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
 
-Bei einem fortlaufenden Webauftrag werden Anwendungsprotokolle in /data/jobs/continuous/*{webjobname}*/job_log.txt im Dateisystem der Website angezeigt.
+Bei einem fortlaufenden Webauftrag werden Anwendungsprotokolle im Dateisystem der Web-App in /data/jobs/continuous/*{webjobname}*/job_log.txt angezeigt.
 
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Write - Hello world!
 		[09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Out - Hello world!
 
-Bei einem Azure-BLOB sieht das Anwendungsprotokoll folgendermaßen aus:
+In einem Azure-Blob sieht das Anwendungsprotokoll folgendermaßen aus:
 		2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738373502,0,17404,17,Console.Write - Hello world!,
 		2014-09-26T21:01:13,Error,contosoadsnew,491e54,635473620738373502,0,17404,19,Console.Error - Hello world!,
 		2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738529920,0,17404,17,Console.Out - Hello world!,
 
 Und bei einer Azure-Tabelle sehen die Protokolle  `Console.Out` und  `Console.Error` wie folgt aus:
 
-![Info log in table](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/tableinfo.png)
+![Informationsprotokoll in Tabelle](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/tableinfo.png)
 
-![Error log in table](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/tableerror.png)
+![Fehlerprotokoll in Tabelle](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/tableerror.png)
 
-## <a id="nextsteps"></a>Nächste Schritte
+## <a id="nextsteps"></a> Nächste Schritte
 
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure-Webaufträgen und dem Webaufträge-SDK finden Sie unter [Empfohlene Ressourcen für Azure-Webaufträge](http://go.microsoft.com/fwlink/?linkid=390226).
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

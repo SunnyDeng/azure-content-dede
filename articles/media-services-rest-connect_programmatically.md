@@ -3,7 +3,7 @@
 	description="In diesem Thema wird veranschaulicht, wie Sie über die REST-API eine Verbindung mit Media Services herstellen." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/03/2015" 
+	ms.date="04/13/2015" 
 	ms.author="juliako"/>
 
 
 # Herstellen einer Verbindung mit einem Media Services-Konto über die Media Services-REST-API
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md). 
 
 In diesem Thema wird beschrieben, wie bei der Programmierung mit der Media Services-REST-API eine programmgesteuerte Verbindung mit Microsoft Azure Media Services hergestellt wird.
 
@@ -37,12 +37,12 @@ Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der 
 
 	Wenn nach einem Verbindungsversuch folgende Meldung angezeigt wird:
 
-		HTTP/1.1 301 Moved Permanently
-		Location: https://wamsbayclus001rest-hs.cloudapp.net/api/
+		HTTP/1.1 301 Permanent verschoben
+		Standort: https://wamsbayclus001rest-hs.cloudapp.net/api/
 
-	Senden Sie nachfolgende API-Aufrufe an https://wamsbayclus001rest-hs.cloudapp.net/api/.
+	Senden Sie nachfolgende API-Aufrufe an https://wamsbayclus001rest-hs.cloudapp.net/api/..
 
-## Abrufen eines Zugriffstokens
+##Abrufen eines Zugriffstokens
 
 Um direkt über die REST-API auf Media Services zuzugreifen, rufen Sie das Zugriffstoken von ACS ab und verwenden es während jeder im Dienst ausgeführten HTTP-Anforderung. Dieses Token ähnelt anderen Token, die von ACS auf der Basis von Zugriffsansprüchen im HTTP-Anforderungsheader und mit dem OAuth v2-Protokoll bereitgestellt werden. Für die direkte Verbindung mit Media Services gelten keine weiteren Voraussetzungen.
 
@@ -53,7 +53,7 @@ Das folgende Beispiel zeigt den HTTP-Anforderungsheader bzw. -text, die zum Abru
 	POST https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13 HTTP/1.1
 	Content-Type: application/x-www-form-urlencoded
 	Host: wamsprodglobal001acs.accesscontrol.windows.net
-	Content-Length: 120
+	Inhaltslänge: 120
 	Expect: 100-continue
 	Connection: Keep-Alive
 	Accept: application/json
@@ -61,9 +61,9 @@ Das folgende Beispiel zeigt den HTTP-Anforderungsheader bzw. -text, die zum Abru
 	
 **Text**:
 
-Sie müssen den client_id-Wert und den client_secret-Wert im Text dieser Anforderung überprüfen. Die Werte client_id und client_secret entsprechen dem AccountName-Wert und dem AccountKey-Wert. Diese Werte werden Ihnen von Media Services bei der Einrichtung Ihres Kontos bereitgestellt. 
+Sie müssen den "client_id"-Wert und den "client_secret"-Wert im Text dieser Anforderung überprüfen. Die Werte "client_id" und "client_secret" entsprechen dem "AccountName"-Wert und dem "AccountKey"-Wert. Diese Werte werden Ihnen von Media Services bei der Einrichtung Ihres Kontos bereitgestellt. 
 
-Beachten Sie, dass der "AccountKey" für Ihr Media Services-Konto URL-codiert sein muss, wenn Sie ihn als client_secret-Wert in Ihrer Zugriffstokenanforderung verwenden.
+Beachten Sie, dass der "AccountKey" für Ihr Media Services-Konto URL-codiert sein muss (siehe [Prozentcodierung](http://tools.ietf.org/html/rfc3986#section-2.1)), wenn Sie ihn als "client_secret"-Wert in Ihrer Zugriffstokenanforderung verwenden.
 
 	grant_type=client_credentials&client_id=ams_account_name&client_secret=URL_encoded_ams_account_key&scope=urn%3aWindowsAzureMediaServices
 
@@ -88,7 +88,7 @@ Das folgende Beispiel zeigt die HTTP-Antwort, die das Zugriffstoken im Antwortte
 	
 	{  
 	   "token_type":"http://schemas.xmlsoap.org/ws/2009/11/swt-token-profile-1.0",
-	   "access_token":"http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421330840&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=uf69n82KlqZmkJDNxhJkOxpyIpA2HDyeGUTtSnq1vlE%3d",
+	   "access_token":"http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f19258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421330840&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=uf69n82KlqZmkJDNxhJkOxpyIpA2HDyeGUTtSnq1vlE%3d",
 	   "expires_in":"21600",
 	   "scope":"urn:WindowsAzureMediaServices"
 	}
@@ -99,7 +99,7 @@ Es wird empfohlen, den access_token-Wert und den expires_in-Wert in einem extern
 
 Überwachen Sie den expires_in-Wert des Zugriffstokens, und aktualisieren Sie Ihre REST-API-Aufrufe nach Bedarf anhand neuer Token.
 
-### Herstellen einer Verbindung mit dem Media Services-URI
+###Herstellen einer Verbindung mit dem Media Services-URI
 
 Der Stamm-URI für Media Services lautet https://media.windows.net/. Sie sollten zunächst eine Verbindung mit diesem URI herstellen. Falls Sie eine 301 Redirect-Antwort erhalten, senden Sie nachfolgende Aufrufe an den neuen URI. Außerdem sollten Sie keine Logik für die automatische Umleitung/Verfolgung in Ihren Anforderungen verwenden. HTTP-Verben und -Anforderungstexte werden nicht an den neuen URI weitergeleitet.
 
@@ -110,8 +110,8 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 **HTTP-Anforderung**:
 	
 	GET https://media.windows.net/ HTTP/1.1
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421500579&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=ElVWXOnMVggFQl%2ft9vhdcv1qH1n%2fE8l3hRef4zPmrzg%3d
-	x-ms-version: 2.8
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f19258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421500579&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=ElVWXOnMVggFQl%2ft9vhdcv1qH1n%2fE8l3hRef4zPmrzg%3d
+	x-ms-version: 2.9
 	Accept: application/json
 	Host: media.windows.net
 
@@ -136,8 +136,8 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 **HTTP-Anforderung** (mit den neuen URI):
 			
 	GET https://wamsbayclus001rest-hs.cloudapp.net/api/ HTTP/1.1
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421500579&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=ElVWXOnMVggFQl%2ft9vhdcv1qH1n%2fE8l3hRef4zPmrzg%3d
-	x-ms-version: 2.8
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f19258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421500579&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=ElVWXOnMVggFQl%2ft9vhdcv1qH1n%2fE8l3hRef4zPmrzg%3d
+	x-ms-version: 2.9
 	Accept: application/json
 	Host: wamsbayclus001rest-hs.cloudapp.net
 
@@ -169,4 +169,4 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 
 <!-- URLs. -->
 
-<!--HONumber=47-->
+<!--HONumber=52-->

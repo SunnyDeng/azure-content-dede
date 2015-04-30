@@ -1,9 +1,9 @@
 <properties 
 	pageTitle="Node.js-Anleitung, erste Schritte - Azure-Lernprogramm" 
-	description="Ein umfassendes Lernprogramm, das Sie bei der Entwicklung einer einfachen Node.js-Webanwendung und deren Bereitstellung in Azure unterstützt." 
+	description="Erfahren Sie, wie Sie eine einfache Node.js-Webanwendung erstellen und in einem Azure-Cloud-Dienst bereitstellen können." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
-	authors="" 
+	authors="MikeWasson" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -12,180 +12,176 @@
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="09/17/2014" 
-	ms.author="wpickett"/>
+	ms.topic="hero-article" 
+	ms.date="02/24/2015" 
+	ms.author="mwasson"/>
 
 
+# Erstellen und Bereitstellen einer Node.js-Anwendung in einem Azure-Cloud-Dienst
+
+> [AZURE.SELECTOR]
+- [Node.js](cloud-services-nodejs-develop-deploy-app.md)
+- [.NET](cloud-services-dotnet-get-started.md)
+
+Dieses Lernprogramm veranschaulicht, wie Sie eine einfache Node.js-Anwendung erstellen können, die in einem Azure-Cloud-Dienst ausgeführt wird. Clouddienste sind die Bausteine skalierbarer Cloudanwendungen in Azure. Sie ermöglichen die Trennung und unabhängige Verwaltung und Skalierung von Front-End- und Back-End-Komponenten von Anwendungen.  Clouddienste bieten stabile und dedizierte virtuelle Computer, um jede Rolle zuverlässig zu hosten.
+
+Weitere Informationen zu Cloud-Diensten und einen Vergleich hinsichtlich Azure-Websites und virtueller Computern finden Sie unter [Vergleich von Websites, Cloud-Diensten und virtuellen Computern in Azure](http://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/).
+
+>[AZURE.TIP] Möchten Sie eine einfache Website erstellen? Wenn Ihr Szenario nur ein einfaches Website-Front-End umfasst, sollten Sie die <a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">Verwendung einer einfachen Azure-Website</a> ins Auge fassen. Sie können einen Cloud-Dienst leicht upgraden, wenn die Website größer wird und sich Ihre Anforderungen ändern.
 
 
+In diesem Lernprogramm werden Sie eine einfache Webanwendung erstellen, die in einer Webrolle gehostet wird. Sie werden den Serveremulator verwenden, um die Anwendung lokal zu testen. Anschließend stellen Sie sie mithilfe der PowerShell-Befehlszeilentools bereit.
 
+Die Anwendung ist eine einfache "Hello World"-Anwendung:
 
-# Erstellen und Bereitstellen einer Node.js-Anwendung zu einem Azure-Cloud-Dienst
-
-Nach Durchführung dieser Anleitung werden Sie eine einfache Node.js-Anwendung erhalten, die in einem Azure-Cloud-Dienst ausgeführt wird. Cloud-Dienste sind die Bausteine skalierbarer Cloud-Anwendungen in Azure. Sie ermöglichen die Trennung und unabhängige Verwaltung und Skalierung von Front-End- und Back-End-Komponenten von Anwendungen.  Cloud-Dienste bieten stabile und dedizierte virtuelle Computer, um jede Rolle zuverlässig zu hosten.
-
-Weitere Informationen zu Cloud-Diensten und einen Vergleich hinsichtlich Azure-Websites und virtueller Computern finden Sie unter [Vergleich von Websites, Cloud-Diensten und virtuellen Computern in Azure](http://azure.microsoft.com/ documentation/articles/choose-web-site-cloud-service-vm/).
-
->[AZURE.TIP] Möchten Sie eine einfache Website erstellen? Wenn Ihr Szenario nur ein einfaches Website-Front-End umfasst, sollten Sie <a href="/de-de/documentation/articles/web-sites-nodejs-develop-deploy-mac/">die Verwendung einer einfachen Azure-Website ins Auge fassen.</a> Sie können einen Cloud-Dienst leicht upgraden, wenn die Website größer wird und sich Ihre Anforderungen ändern.
-
-
-In diesem Lernprogramm werden Sie eine einfache Webanwendung erstellen, die in einer Webrolle gehostet wird. Sie werden den Serveremulator verwenden, um die Anwendung lokal zu testen. Anschließend werden Sie diese mithilfe der PowerShell-Befehlszeilentools bereitstellen.
-
-Unten finden Sie einen Screenshot der vollständigen Anwendung:
-
-<p><img src="https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/de-de/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png" alt="A browser window displaying the hello world page. The URL indicates the page is hosted on Azure.">
+<p><img src="https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png" alt="Ein Browserfenster, in dem die Seite 'Hello World' angezeigt wird. Die URL zeigt an, dass die Seite auf Azure gehostet wird.>
 </p>
 
+## Voraussetzungen
+
+> [AZURE.NOTE] In diesem Lernprogramm wird Azure PowerShell verwendet, für die Windows installiert sein muss.
+
+- Installieren Sie das Azure SDK für Node.js: <a href="http://go.microsoft.com/fwlink/?LinkId=254279">Windows Installer</a> 
+
+- Installieren und konfigurieren Sie [Azure Powershell](install-configure-powershell.md).
 
 
-## Erstellen einer neuen Knotenanwendung
+## Erstellen eines Azure-Cloud-Dienstprojekts
 
-Führen Sie folgende Aufgaben durch, um ein neues Azure-Cloud-Dienstprojekt sowie ein grundlegendes Node.js-Gerüst zu erstellen:
-
-1. Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Azure PowerShell**. Klicken Sie dann mit der rechten Maustaste auf **Azure PowerShell**, und wählen Sie **Als Administrator ausführen**.
-
-	![Azure PowerShell icon][powershell-menu]
-
-	[AZURE.INCLUDE [install-dev-tools](../includes/install-dev-tools.md)]
+Führen Sie folgende Aufgaben durch, um ein neues Azure-Cloud-Dienstprojekt sowie ein einfaches Node.js-Gerüst zu erstellen:
 
 
-2.  Erstellen Sie ein neues **Knotenverzeichnis** auf dem Laufwerk C, und ändern Sie es in das Verzeichnis "c:\\node":
-	
-	![A command prompt displaying the commands 'mkdir c:\\node' and 'cd node'.][mkdir]
+1. Führen Sie **Azure PowerShell** als Administrator aus. (Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Azure PowerShell**.)
 
-3.  Geben Sie das folgende Cmdlet ein, um eine neue Lösung zu erstellen:
+2.  Geben Sie das folgende PowerShell-Cmdlet ein, um das Projekt zu erstellen:
 
-        PS C:\node> New-AzureServiceProject helloworld
-
-    	Sie werden folgende Antwort erhalten:
+        New-AzureServiceProject helloworld
 
 	![The result of the New-AzureService helloworld command](./media/cloud-services-nodejs-develop-deploy-app/node9.png)
 
-	Das Cmdlet **New-AzureServiceProject** generiert eine einfache Struktur für die Erstellung einer neuen Azure-Knotenanwendung, die in einem Cloud-Dienst veröffentlicht wird. Darin sind Konfigurationsdateien enthalten, die für die Veröffentlichung in Azure erforderlich sind. Das Cmdlet ändert zudem das Arbeitsverzeichnis in das Verzeichnis des Diensts.
+	Das **New-AzureServiceProject**-Cmdlet generiert eine einfache Struktur für die Veröffentlichung einer Node.js-Anwendung in einem Cloud-Dienst. Darin sind Konfigurationsdateien enthalten, die für die Veröffentlichung in Azure erforderlich sind. Das Cmdlet ändert zudem das Arbeitsverzeichnis in das Verzeichnis des Diensts.
 
-	Die durch das Cmdlet **New-AzureServiceProject** erstellten Dateien sind:
+	Das Cmdlet erstellt die folgenden Dateien:
 
-	-   **ServiceConfiguration.Cloud.cscfg**, **ServiceConfiguration.Local.cscfg** und **ServiceDefinition.csdef**. Dies sind Azure-spezifische Dateien, die für die Veröffentlichung der Anwendung erforderlich sind.
-		
-	Weitere Informationen zu diesen Dateien finden Sie unter
+	-   **ServiceConfiguration.Cloud.cscfg**,
+        **ServiceConfiguration.Local.cscfg** und **ServiceDefinition.csdef**: 
+        Dies sind Azure-spezifische Dateien, die für die Veröffentlichung der Anwendung erforderlich sind. Weitere Informationen finden Sie unter
         [Übersicht zum Erstellen eines gehosteten Diensts für Azure][].
 
-	-   **deploymentSettings.json** speichert lokale Einstellungen,die von den
-        Azure PowerShell-Bereitstellungs-Cmdlets verwendet werden.
+	-   **deploymentSettings.json**: speichert lokale Einstellungen, die von den Azure PowerShell-Bereitstellungs-Cmdlets verwendet werden.
 
-4.  Geben Sie den folgenden Befehl ein, um eine neue Webrolle mithilfe des Cmdlet **Add-AzureNodeWebRole** hinzuzufügen:
+4.  Geben Sie den folgenden Befehl zum Hinzufügen einer neuen Webrolle ein:
 
-        PS C:\node\helloworld> Add-AzureNodeWebRole
-
-	Sie werden folgende Antwort erhalten:
-
+        Add-AzureNodeWebRole
+	
 	![The output of the Add-AzureNodeWebRole command.](./media/cloud-services-nodejs-develop-deploy-app/node11.png)
 
-	Das Cmdlet **Add-AzureNodeWebRole** erstellt ein neues Verzeichnis für die Anwendung, und generiert ein Gerüst für eine einfache Node.js-Anwendung. Zudem ändert es die im vorherigen Schritt erstellten Dateien **ServiceConfiguration.Cloud.csfg**, **ServiceConfiguration.Local.csfg** und **ServiceDefinition.csdef**, um Konfigurationseinträge für die neue Rolle hinzuzufügen.
+	Das **Add-AzureNodeWebRole**-Cmdlet erstellt eine einfache Node.js-Anwendung. Zudem ändert es die **CSFG**- und **CSDEF**-Dateien, um Konfigurationseinträge für die neue Rolle hinzuzufügen.
 
-	> [AZURE.NOTE] Wenn Sie keinen Rollennamen eingeben, wird standardmäßig ein Name erstellt. Sie können einen Namen als ersten Parameter für **Add-AzureNodeWebRole** angeben. Zum Beispiel `Add-AzureNodeWebRole MyRole`
+	> [AZURE.NOTE] Wenn Sie keinen Rollennamen angeben, wird ein Standardname verwendet. Sie können einen Namen als ersten Cmdlet-Parameter angeben: `Add-AzureNodeWebRole MyRole`
 
-5.  Verwenden Sie folgende Befehle, um zum Verzeichnis **WebRole1** zu navigieren, und öffnen Sie dann die Datei **server.js** im Editor. 
 
-	PS C:\\node\\helloworld> cd WebRole1
-        PS C:\node\helloworld\WebRole1> notepad server.js
+Die Node.js-Anwendung wird in der Datei **server.js** im Verzeichnis für die Webrolle (**WebRole1** in der Standardeinstellung) definiert. Hier folgt der Code:
 
-	Die Datei **server.js** wurde durch das Cmdlet **Add-AzureNodeWebRole** erstellt, und enthält folgenden Startcode. Dieser Code ist ähnlich wie im "Hallo Welt"-Beispiel auf der [nodejs.org][]-Website, mit folgender Ausnahme:
+	var http = require('http');
+	var port = process.env.port || 1337;
+	http.createServer(function (req, res) {
+	    res.writeHead(200, { 'Content-Type': 'text/plain' });
+	    res.end('Hello World\n');
+	}).listen(port);
 
-   	-   Der Port wurde geändert, sodass die Anwendung den korrekten Port finden kann, der ihr durch die Cloud-Umgebung zugewiesen wurde.
-   	-   Konsolenprotokollierung wurde entfernt.
+Dieser Code ist im Wesentlichen identisch mit dem Beispiel "Hello World" auf der [nodejs.org][]-Website, mit der Ausnahme, dass die von der Cloudumgebung zugewiesene Portnummer verwendet wird.
 
-	![Notepad displaying the contents of server.js](./media/cloud-services-nodejs-develop-deploy-app/node13.png)
 
-## Lokales Ausführen der Anwendung im Emulator
+## Ausführen der Anwendung lokal im Emulator
 
-Eines der durch das Azure-SDK erstellten Tools ist der Azure-Serveremulator, der Ihnen ermöglicht, die Anwendung lokal zu testen. Der Serveremulator simuliert die Umgebung, in der die Anwendung ausgeführt wird, wenn diese in der Cloud bereitgestellt ist. Führen Sie folgende Schritte aus, um die Anwendung im Emulator zu testen.
+Zu den Tools, die mit dem Azure-SDK installiert werden, gehört der
+Azure-Serveremulator, mit dem Sie die Anwendung lokal testen können. Die
+Serveremulator simuliert die Umgebung, in der die Anwendung ausgeführt wird,
+wenn sie in der Cloud bereitgestellt wird. 
 
-1.  Schließen Sie den Editor, und wechseln Sie zurück zum Windows PowerShell-Fenster.
-  	Geben Sie das folgende Cmdlet ein, um den Dienst im Emulator auszuführen:
+1.  Geben Sie das folgende Azure PowerShell-Cmdlet ein, um den Dienst im Emulator auszuführen:
 
-        PS C:\node\helloworld\WebRole1> Start-AzureEmulator -Launch
+        Start-AzureEmulator -Launch
 
-	Der Parameter **-Launch** gibt an, dass die Tools automatisch ein Browserfenster öffnen und die Anwendung anzeigen, sobald diese im Emulator ausgeführt wird. Es wird ein Browser geöffnet, der wie im Screenshot unten "Hallo Welt" anzeigt. Dies zeigt an, dass der Dienst im Serveremulator ausgeführt wird und korrekt läuft.
+	Verwenden Sie den "**-Launch**"-Parameter, um automatisch ein Browserfenster zu öffnen, wenn die Webrolle im Emulator ausgeführt wird. Im Browserfenster sollte "Hello World" angezeigt werden, wie dies im folgenden Screenshot abgebildet ist. 
 
 	![A web browser displaying the Hello World web page](./media/cloud-services-nodejs-develop-deploy-app/node14.png)
 
-2.  Verwenden Sie den Befehl **Stop-AzureEmulator**, um den Serveremulator anzuhalten:
+2.  Verwenden Sie das Cmdlet **Stop-AzureEmulator**, um den Serveremulator anzuhalten:
 	
-	PS C:\node\helloworld\WebRole1> Stop-AzureEmulator
+		Stop-AzureEmulator
 
-## Bereitstellung der Anwendung zu Azure
+## Bereitstellen der Anwendung in Azure
 
 	[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 
+### Herunterladen der Azure-Veröffentlichungseinstellungen
 
-### <a id="download_publishing_settings"></a>Herunterladen der Azure-Veröffentlichungseinstellungen
+Um die Anwendung in Azure bereitzustellen, müssen Sie zuerst die Veröffentlichungseinstellungen für Ihr Azure-Abonnement herunterladen. 
 
-Um die Anwendung in Azure bereitzustellen, müssen Sie zuerst die Veröffentlichungseinstellungen für Ihr Azure-Abonnement herunterladen. Die folgenden Schritte führen Sie durch diesen Prozess:
+1.  Führen Sie das folgende Azure PowerShell-Cmdlet aus:
 
-1.  Starten Sie im Windows PowerShell-Fenster die Downloadseite, indem Sie folgendes Cmdlet ausführen:
-
-        PS C:\node\helloworld\WebRole1> Get-AzurePublishSettingsFile
+        Get-AzurePublishSettingsFile
 
 	Dadurch wird Ihr Browser zur Downloadseite mit den Veröffentlichungseinstellungen navigieren. Sie werden möglicherweise aufgefordert, sich mit einem Microsoft-Konto anzumelden. Verwenden Sie in diesem Fall das mit Ihrem Azure-Abonnement verknüpfte Konto.
 
 	Speichern Sie das heruntergeladene Profil an einem Datenspeicherort, auf den Sie leicht zugreifen können.
 
-2.  Verwenden Sie im Azure PowerShell-Fenster das folgende Cmdlet, um Windows PowerShell für Node.js-Cmdlets zur Nutzung des heruntergeladenen Azure-Veröffentlichungsprofils zu konfigurieren:
+2.  Führen Sie das folgende Cmdlet aus, um das heruntergeladene Veröffentlichungsprofil zu importieren:
 
-        PS C:\node\helloworld\WebRole1> Import-AzurePublishSettingsFile [path to file]
+        Import-AzurePublishSettingsFile [Pfad zur Datei]
 
 
-	> [AZURE.NOTE] Nach dem Importieren der Veröffentlichungseinstellungen sollten Sie die heruntergeladene .publishsettings-Datei löschen, da sie Informationen enthält, die von anderen Personen für den Zugriff auf Ihr Konto verwendet werden können.
+	> [AZURE.NOTE] Nach dem Importieren der Veröffentlichungseinstellungen empfiehlt es sich, die heruntergeladene .publishSettings-Datei zu löschen, da sie Informationen enthält, die von anderen Personen für den Zugriff auf Ihr Konto verwendet werden können.
     
 
-### Veröffentlichung zur Anwendung
+### Veröffentlichen der Anwendung
 
-1.  Veröffentlichen Sie die Anwendung mithilfe des Cmdlet **Publish-AzureServiceProject** wie unten gezeigt.
+Führen Sie zum Veröffentlichen das **Publish-AzureServiceProject**-Cmdlet wie folgt aus:
 
-        PS C:\node\helloworld\WebRole1> Publish-AzureServiceProject -ServiceName NodeHelloWorld -Location "East US" -Launch
+    Publish-AzureServiceProject -ServiceName NodeHelloWorld -Location "East US" -Launch
 
-	- Der Parameter **servicename** gibt den Namen an, der für diese Bereitstellung verwendet wurde. Dieser Name muss eindeutig sein, da ansonsten der Veröffentlichungsprozess fehlschlagen wird.
+- **-ServiceName** gibt den Namen für die Bereitstellung an. Dieser Name muss eindeutig sein, andernfalls schlägt der Veröffentlichungsvorgang fehl.
 
-	- Der Parameter **location** gibt das Rechenzentrum an, in dem die Anwendung gehostet wird. Verwenden Sie das Cmdlet **Get-AzureLocation**, um eine Liste der verfügbaren Rechenzentren anzuzeigen.
+- **-Location** gibt das Data Center an, in dem die Anwendung gehostet wird. Verwenden Sie das **Get-AzureLocation**-Cmdlet, um eine Liste der verfügbaren Data Center anzuzeigen.
 
-	- Der Parameter **launch** startet den Browser und navigiert zum gehosteten Dienst, nachdem die Bereitstellung erfolgt ist.
+- **-Launch** öffnet nach Abschluss der Bereitstellung ein Browserfenster und navigiert zum gehosteten Dienst.
 
-	Nach der erfolgreichen Veröffentlichung wird eine Antwort dieser Art angezeigt:
+Nach der erfolgreichen Veröffentlichung wird eine Antwort dieser Art angezeigt:
 
-	![The output of the Publish-AzureService command](./media/cloud-services-nodejs-develop-deploy-app/node19.png)
+![The output of the Publish-AzureService command](./media/cloud-services-nodejs-develop-deploy-app/node19.png)
 
-	Das Cmdlet **Publish-AzureServiceProject** führt folgende Schritte aus:
+> [AZURE.NOTE]
+> Es kann nach der ersten Veröffentlichung fünf bis sieben Minuten dauern, bis die Anwendung bereitgestellt wird und verfügbar ist.
 
-1.  Erstellt ein Paket, das in Azure bereitgestellt wird. Das Paket enthält alle Dateien im Ordner der node.js-Anwendung.
+Nachdem die Bereitstellung abgeschlossen ist, wird ein Browserfenster geöffnet und der Cloud-Dienst angezeigt.
+
+
+![A browser window displaying the hello world page. The URL indicates the page is hosted on Azure.](./media/cloud-services-nodejs-develop-deploy-app/node21.png)
+
+Ihre Anwendung läuft jetzt auf Azure!
+
+Das Cmdlet **Publish-AzureServiceProject** führt folgende Schritte aus:
+
+1.  Erstellt ein Paket zum Bereitstellen. Das Paket enthält alle Dateien im Anwendungsordner.
 
 2.  Erstellt ein neues **Speicherkonto**, falls noch keines vorhanden ist. Das Azure-Speicherkonto wird verwendet, um das Anwendungspaket während der Bereitstellung zu speichern. Sie können das Speicherkonto problemlos löschen, wenn die Bereitstellung erfolgt ist.
 
-3.  Erstellt einen neuen **Cloud-Dienst**, falls noch keiner vorhanden ist. Ein **Cloud-Dienst** ist der Container, in dem die Anwendung gehostet wird, wenn diese in Azure bereitgestellt wird. Weitere Informationen erhalten Sie unter [Übersicht zum Erstellen eines gehosteten Diensts für Azure][].
+3.  Erstellt einen neuen **Cloud-Dienst**, falls noch keiner vorhanden ist. Ein **Cloud-Dienst** ist der Container, in dem die Anwendung gehostet wird, wenn diese in Azure bereitgestellt wird. Weitere Informationen finden Sie unter [Übersicht zum Erstellen eines gehosteten Diensts für Azure][].
 
 4.  Veröffentlicht das Bereitstellungspaket in Azure.
 
 
-	> [AZURE.NOTE]
-	> Es kann nach der ersten Veröffentlichung fünf bis sieben Minuten dauern, bis die Anwendung bereitgestellt wird und verfügbar ist.
 
-	Sobald die Bereitstellung erfolgt ist, wird ein Browserfenster geöffnet und navigiert zum Cloud-Dienst.
-
-
-	![A browser window displaying the hello world page. The URL indicates the page is hosted on Azure.](./media/cloud-services-nodejs-develop-deploy-app/node21.png)
-
-	Ihre Anwendung läuft jetzt auf Azure!
-
-
-## Anhalten und Löschen Ihrer Anwendung
+## Beenden und Löschen Ihrer Anwendung
 
 Nachdem Sie Ihre Anwendung bereitgestellt haben, möchten Sie diese möglicherweise deaktivieren, um Extrakosten zu vermeiden. Azure berechnet Webrolleninstanzen pro Stunde verbrauchter Serverzeit. Die Serverzeit wird verbraucht, sobald Ihre Anwendung bereitgestellt wurde, selbst wenn die Instanzen nicht ausgeführt werden und gestoppt wurden.
 
 1.  Stoppen Sie im Windows PowerShell-Fenster die im vorherigen Abschnitt erstellte Dienstbereitstellung mit folgendem Cmdlet:
 
-        PS C:\node\helloworld\WebRole1> Stop-AzureService
+        Stop-AzureService
 
 	Das Stoppen des Diensts kann einige Minuten dauern. Wenn der Dienst gestoppt wurde, erhalten Sie eine entsprechende Nachricht.
 
@@ -193,7 +189,7 @@ Nachdem Sie Ihre Anwendung bereitgestellt haben, möchten Sie diese möglicherwe
 
 2.  Um den Dienst zu löschen, rufen Sie folgendes Cmdlet auf:
 
-        PS C:\node\helloworld\WebRole1> Remove-AzureService
+        Remove-AzureService
 
 	Geben Sie nach entsprechender Aufforderung **Y** ein, um den Dienst zu löschen.
 
@@ -204,19 +200,19 @@ Nachdem Sie Ihre Anwendung bereitgestellt haben, möchten Sie diese möglicherwe
 	> [AZURE.NOTE] Durch das Löschen dieses Diensts wird das Speicherkonto, das beim erstmaligen Veröffentlichen des Diensts erstellt wurde, nicht gelöscht, und Sie erhalten weiterhin eine Rechnung über den verwendeten Speicherplatz. Weitere Informationen zum Löschen eines Speicherkontos finden Sie unter [Löschen eines Speicherkontos aus einem Azure-Abonnement](http://msdn.microsoft.com/library/windowsazure/hh531562.aspx).
 
 
-[The Windows Start menu with the Azure SDK Node.js entry expanded]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-menu.png
+[Windows-Startmenü mit erweitertem Eintrag Azure SDK Node.js]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-menu.png
 [mkdir]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-6.png
 [nodejs.org]: http://nodejs.org/
-[A directory listing of the helloworld folder.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-7.png
+[Eine Verzeichnisliste des helloworld-Ordners.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-7.png
 [Übersicht zum Erstellen eines gehosteten Diensts für Azure]: http://msdn.microsoft.com/library/windowsazure/jj155995.aspx
-[A directory listing of the WebRole1 folder]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-8.png
-[The menu displayed when right-clicking the Azure emulator from the task bar.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-11.png
-[A browser window displaying http://www.windowsazure.com/ with the Free Trial link highlighted]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-12.png
-[A browser window displaying the liveID sign in page]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-13.png
-[Internet Explorer displaying the save as dialog for the publishSettings file.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-14.png
+[Eine Verzeichnisliste des WebRole1-Ordners]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-8.png
+[Das in der Taskleiste über das Kontextmenü des Azure-Emulators aufgerufene Menü.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-11.png
+[Ein Browserfenster, in dem http://www.windowsazure.com/ mit hervorgehobenem Link für die kostenlose Testversion angezeigt wird]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-12.png
+[Ein Browserfenster, in dem die liveID-Anmeldeseite angezeigt wird]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-13.png
+[Internet Explorer mit Dialogfeld "Speichern unter" für die Datei "publishSettings".]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-14.png
 
-[The full status output of the Publish-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
-[Löschen eines Speicherkontos aus einem Azure-Abonnement]: https://www.windowsazure.com/de-de/manage/services/storage/how-to-manage-a-storage-account/
+[Die vollständige Statusausgabe des Publish-AzureService-Befehls]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
+[Löschen eines Speicherkontos aus einem Azure-Abonnement]: https://www.windowsazure.com/manage/services/storage/how-to-manage-a-storage-account/
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
 
-<!--HONumber=45--> 
+<!--HONumber=52-->

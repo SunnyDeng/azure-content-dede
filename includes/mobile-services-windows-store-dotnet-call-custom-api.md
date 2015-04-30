@@ -51,7 +51,7 @@
 		    await dialog.ShowAsync();
 		}
 
-	Diese Methode behandelt das **Click**-Ereignis für die neue Schaltfläche. Die [InvokeApiAsync](http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx)-Methode wird auf dem Client aufgerufen und sendet eine POST-Anforderung an die neue benutzerdefinierte API. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Nachrichtendialog angezeigt, ebenso wie jegliche Fehler.
+	Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die [InvokeApiAsync](http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx)-Methode wird auf dem Client aufgerufen und sendet eine POST-Anforderung an die neue benutzerdefinierte API. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
 
 ## <a name="test-app"></a>Testen der App
 
@@ -61,10 +61,10 @@
 
 3. Wiederholen Sie den vorherigen Schritt, bis Sie der Liste mehrere todo-Einträge hinzugefügt haben.
 
-4. Klicken Sie auf die Schaltfläche **Alle abgeschlossen**.
+4. Klicken Sie auf die Schaltfläche **Complete All**.
 
   	![](./media/mobile-services-windows-store-dotnet-call-custom-api/mobile-custom-api-windows-store-completed.png)
 
 	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
 
-<!--HONumber=42-->
+<!--HONumber=52-->

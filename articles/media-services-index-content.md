@@ -10,10 +10,10 @@
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/04/2015" 
+	ms.date="03/25/2015" 
 	ms.author="juliako"/>
 
 
@@ -21,7 +21,7 @@
 
 Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) . 
 
-Mit dem Azure Media Indexer können Sie die Inhalte Ihrer Mediendateien durchsuchbar machen und eine Volltext-Aufzeichnung für Untertitel und Schlüsselwörter generieren. Sie können eine einzelne Mediendatei oder mehrere Mediendateien in einem Batch verarbeiten. Sie können auch öffentlich im Internet verfügbare Dateien indizieren, indem Sie die URLs der Dateien in der Manifestdatei angeben.
+Mit dem Azure Media Indexer können Sie die Inhalte Ihrer Mediendateien durchsuchbar machen und eine Volltext-Aufzeichnung für Untertitel und Schlüsselwörter generieren. Sie können eine einzelne Mediendatei oder mehrere Mediendateien in einem Batch verarbeiten.  
 
 >[AZURE.NOTE] Stellen Sie beim Indizieren von Inhalten sicher, dass Mediendateien verwendet werden, die sehr klare Sprache enthalten (ohne Hintergrundmusik, Lärm, Effekte oder Mikrofonrauschen). Die folgenden Beispiele sind geeignete Inhalte: aufgezeichnete Besprechungen, Vorträge oder Präsentationen. Folgende Inhalte sind für die Indizierung ggf. nicht geeignet: Filme, Fernsehsendungen, Material mit gemischten Audio- und Soundeffekten, schlecht aufgezeichnete Inhalte mit Hintergrundgeräuschen (Rauschen).
 
@@ -38,11 +38,11 @@ Ein Indizierungsauftrag erzeugt vier Ausgaben für jede Indexdatei:
 	Weitere Informationen finden Sie unter [Verwenden von AIB-Dateien mit Azure Media Indexer und SQL Server](http://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/).
 
 
-Dieses Thema zeigt Ihnen das Erstellen von Indizierungsaufträgen zum **Indizieren eines Medienobjekts**, **Indizieren mehrerer Dateien** und **Indizieren von öffentlich verfügbaren Dateien im Internet**.
+In diesem Thema wird das Erstellen von IndizierungsaAufträgen zum **Indizieren ein Medienobjekts** und zum **Indizieren mehrerer Dateien** beschrieben.
 
 Die neuesten Updates zu Azure Media Indexer finden Sie in den [Media Services-Blogs](http://azure.microsoft.com/blog/topics/media-services/).
 
-## Verwenden von Konfigurations- und Manifestdateien für Indizierungsaufgaben
+##Verwenden von Konfigurations- und Manifestdateien für Indizierungsaufgaben
 
 Sie können weitere Details für Ihre Indizierungsaufgaben mithilfe einer Aufgabenkonfiguration angeben. Beispielsweise können Sie angeben, welche Metadaten für Ihre Mediendatei verwendet werden sollen. Diese Metadaten werden durch das Sprachmodul zum Erweitern des Vokabulars verwendet und verbessern erheblich die Spracherkennungsgenauigkeit.
 
@@ -50,7 +50,7 @@ Sie können auch mehrere Mediendateien gleichzeitig mithilfe einer Manifestdatei
 
 Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
 
-## Indizieren eines Medienobjekts
+##Indizieren eines Medienobjekts
 
 Mit der folgenden Methode werden eine Mediendatei als Medienobjekt hochgeladen und ein Auftrag zum Indizieren des Medienobjekts erstellt.
 
@@ -58,53 +58,53 @@ Beachten Sie, dass die Mediendatei mit allen Standardeinstellungen indiziert wir
 	
 	static bool RunIndexingJob(string inputMediaFilePath, string outputFolder, string configurationFile = "")
 	{
-	    // Create an asset and upload the input media file to storage.
+	    // Erstellen Sie ein Medienobjekt und laden Sie eine Eingabemediendatei in den Speicher hoch.
 	    IAsset asset = CreateAssetAndUploadSingleFile(inputMediaFilePath,
 	        "My Indexing Input Asset",
 	        AssetCreationOptions.None);
 	
-	    // Declare a new job.
+	    // Deklarieren Sie einen neuen Auftrag.
 	    IJob job = _context.Jobs.Create("My Indexing Job");
 	
-	    // Get a reference to the Azure Media Indexer.
+	    // Rufen Sie einen Verweis auf den Azure Media Indexer ab.
 	    string MediaProcessorName = "Azure Media Indexer",
 	    IMediaProcessor processor = GetLatestMediaProcessorByName(MediaProcessorName);
 	
-	    // Read configuration from file if specified.
+	    // Lesen Sie die Konfiguration aus der Datei, sofern angegeben.
 	    string configuration = string.IsNullOrEmpty(configurationFile) ? "" : File.ReadAllText(configurationFile);
 	
-	    // Create a task with the encoding details, using a string preset.
+	    // Erstellen Sie eine Aufgabe mit den Codierungsdetails unter Verwendung einer Voreinstellung.
 	    ITask task = job.Tasks.AddNew("My Indexing Task",
 	        processor,
 	        configuration,
 	        TaskOptions.None);
 	
-	    // Specify the input asset to be indexed.
+	    // Geben Sie das zu indizierende Eingabemedienobjekt an.
 	    task.InputAssets.Add(asset);
 	
-	    // Add an output asset to contain the results of the job. 
+	    // Fügen Sie ein Ausgabemedienobjekt hinzu, das die Ergebnisse des Auftrags enthält. 
 	    task.OutputAssets.AddNew("My Indexing Output Asset", AssetCreationOptions.None);
 	
-	    // Use the following event handler to check job progress.  
+	    // Verwenden Sie den folgenden Ereignishandler zum Überprüfen des Auftragsfortschritts.  
 	    job.StateChanged += new EventHandler<JobStateChangedEventArgs>(StateChanged);
 	
-	    // Launch the job.
+	    // Starten Sie den Auftrag.
 	    job.Submit();
 	
-	    // Check job execution and wait for job to finish. 
+	    // Überprüfen Sie die Auftragsausführung, und warten Sie die Beendigung des Auftrags ab. 
 	    Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
 	    progressJobTask.Wait();
 	
-	    // If job state is Error, the event handling 
-	    // method for job progress should log errors.  Here we check 
-	    // for error state and exit if needed.
+	    // Wenn der Auftragsstatus einem Fehler entspricht, sollte die Event Handling- 
+	    // Methode zum Auftragsfortschritt etwaige Fehler protokollieren.  Hier erfolgt eine Überprüfung 
+	    // auf einen Fehlerstatus. Bei Bedarf wird die Anwendung beendet.
 	    if (job.State == JobState.Error)
 	    {
 	        Console.WriteLine("Exiting method due to job error.");
 	        return false;
 	    }
 	
-	    // Download the job outputs.
+	    // Laden Sie die Ausgaben des Auftrags herunter.
 	    DownloadAsset(task.OutputAssets.First(), outputFolder);
 	
 	    return true;
@@ -143,7 +143,7 @@ Beachten Sie, dass die Mediendatei mit allen Standardeinstellungen indiziert wir
 	    return processor;
 	} 
 	
-### <a id="output_files"></a>Ausgabedateien
+###<a id="output_files"></a>Ausgabedateien
 
 Der Indizierungsauftrag generiert die folgenden Ausgabedateien. Die Dateien werden im ersten Ausgabemedienobjekt gespeichert.
 
@@ -176,7 +176,7 @@ Die Datei kann für unterschiedliche Zwecke verwendet werden, beispielsweise zum
 
 Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht der Indizierungsauftrag einen Fehler mit dem Fehlercode 4000. Weitere Informationen finden Sie unter [Fehlercodes](#error_codes).
 
-## Indizieren mehrerer Dateien
+##Indizieren mehrerer Dateien
 
 Mit der folgenden Methode werden mehrere Mediendateien als Medienobjekt hochgeladen und ein Auftrag zum Indizieren all dieser Dateien in einem Batch erstellt.
 
@@ -184,59 +184,59 @@ Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Medienobj
 	
 	static bool RunBatchIndexingJob(string[] inputMediaFiles, string outputFolder)
 	{
-	    // Create an asset and upload to storage.
+	    // Erstellen Sie ein Medienobjekt und laden Sie es in den Speicher hoch.
 	    IAsset asset = CreateAssetAndUploadMultipleFiles(inputMediaFiles,
 	        "My Indexing Input Asset - Batch Mode",
 	        AssetCreationOptions.None);
 	
-	    // Create a manifest file that contains all the asset file names and upload to storage.
+	    // Erstellen Sie eine Manifestdatei, die alle Dateinamen des Medienobjekts enthält, und laden Sie sie in den Speicher hoch.
 	    string manifestFile = "input.lst";            
 	    File.WriteAllLines(manifestFile, asset.AssetFiles.Select(f => f.Name).ToArray());
 	    var assetFile = asset.AssetFiles.Create(Path.GetFileName(manifestFile));
 	    assetFile.Upload(manifestFile);
 	
-	    // Declare a new job.
+	    // Deklarieren Sie einen neuen Auftrag.
 	    IJob job = _context.Jobs.Create("My Indexing Job - Batch Mode");
 	
-	    // Get a reference to the Azure Media Indexer.
+	    // Rufen Sie einen Verweis auf den Azure Media Indexer ab.
 	    string MediaProcessorName = "Azure Media Indexer";
 	    IMediaProcessor processor = GetLatestMediaProcessorByName(MediaProcessorName);
 	
-	    // Read configuration.
+	    // Lesen Sie die Konfiguration ein.
 	    string configuration = File.ReadAllText("batch.config");
 	
-	    // Create a task with the encoding details, using a string preset.
+	    // Erstellen Sie eine Aufgabe mit den Codierungsdetails unter Verwendung einer Voreinstellung.
 	    ITask task = job.Tasks.AddNew("My Indexing Task - Batch Mode",
 	        processor,
 	        configuration,
 	        TaskOptions.None);
 	
-	    // Specify the input asset to be indexed.
+	    // Geben Sie das zu indizierende Eingabemedienobjekt an.
 	    task.InputAssets.Add(asset);
 	
-	    // Add an output asset to contain the results of the job.
+	    // Fügen Sie ein Ausgabemedienobjekt hinzu, das die Ergebnisse des Auftrags enthält.
 	    task.OutputAssets.AddNew("My Indexing Output Asset - Batch Mode", AssetCreationOptions.None);
 	
-	    // Use the following event handler to check job progress.  
+	    // Verwenden Sie den folgenden Ereignishandler zum Überprüfen des Auftragsfortschritts.  
 	    job.StateChanged += new EventHandler<JobStateChangedEventArgs>(StateChanged);
 	
-	    // Launch the job.
+	    // Starten Sie den Auftrag.
 	    job.Submit();
 	
-	    // Check job execution and wait for job to finish. 
+	    // Überprüfen Sie die Auftragsausführung, und warten Sie die Beendigung des Auftrags ab. 
 	    Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
 	    progressJobTask.Wait();
 	
-	    // If job state is Error, the event handling 
-	    // method for job progress should log errors.  Here we check 
-	    // for error state and exit if needed.
+	    // Wenn der Auftragsstatus einem Fehler entspricht, sollte die Event Handling- 
+	    // Methode zum Auftragsfortschritt etwaige Fehler protokollieren.  Hier erfolgt eine Überprüfung 
+	    // auf einen Fehlerstatus. Bei Bedarf wird die Anwendung beendet.
 	    if (job.State == JobState.Error)
 	    {
 	        Console.WriteLine("Exiting method due to job error.");
 	        return false;
 	    }
 	
-	    // Download the job outputs.
+	    // Laden Sie die Ausgaben des Auftrags herunter.
 	    DownloadAsset(task.OutputAssets.First(), outputFolder);
 	
 	    return true;
@@ -256,7 +256,7 @@ Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Medienobj
 	}
 
 
-### Ausgabedateien
+###Ausgabedateien
 
 Wenn mehr als eine Eingabemediendatei vorhanden ist, generiert WAMI die Manifestdatei "JobResult.txt" für die Auftragsausgaben. Die sich daraus ergebenden AIB-, SAMI-, TTML- und Stichwortdateien werden für jede Eingabemediendatei sequenziell nummeriert, wie dies im Folgenden aufgelistet ist.
 
@@ -298,88 +298,13 @@ Fehler: Gibt an, ob diese Mediendatei erfolgreich indiziert wurde. 0 für Erfolg
 
 Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht der Indizierungsauftrag einen Fehler mit dem Fehlercode 4000. Weitere Informationen finden Sie unter [Fehlercodes](#error_codes).
 
-### Teilweise erfolgreicher Auftrag
+###Teilweise erfolgreicher Auftrag
 
 Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht der Indizierungsauftrag einen Fehler mit dem Fehlercode 4000. Weitere Informationen finden Sie unter [Fehlercodes](#error_codes).
 
 
 Es werden die gleichen Ausgaben (wie bei erfolgreichen Aufträgen) generiert. Sie können anhand der Ausgabemanifestdatei feststellen, welche Eingabedateien gemäß den Werten in der Fehlerspalte fehlerhaft sind. Bei fehlerhaften Eingabedateien werden KEINE AIB-, SAMI-, TTML- und Stichwortdateien generiert.
 
-## Indizieren von Dateien aus dem Internet
-
-Sie können auch öffentlich verfügbare Mediendateien im Internet indizieren, ohne sie in Azure Storage zu kopieren. Sie können die Manifestdatei verwenden, um die URLs der Mediendateien anzugeben. Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
-
-Beachten Sie, dass HTTP- und HTTPS-URL-Protokolle unterstützt werden.
-
-Mit der folgenden Methode und Konfiguration wird ein Auftrag zum Indizieren einer Mediendatei im Internet erstellt.
-	
-	static bool RunIndexingJobWithPublicUrl(string inputMediaUrl, string outputFolder)
-	{
-	    // Create the manifest file that contains the input media URL
-	    string manifestFile = "input.lst";
-	    File.WriteAllLines(manifestFile, new string[] { inputMediaUrl });
-	
-	    // Create an asset and upload the manifest file to storage.
-	    IAsset asset = CreateAssetAndUploadSingleFile(manifestFile,
-	        "My Indexing Input Asset - Public URL",
-	        AssetCreationOptions.None);
-	
-	    // Declare a new job.
-	    IJob job = _context.Jobs.Create("My Indexing Job - Public URL");
-	
-	    // Get a reference to the Azure Media Indexer.
-	    IMediaProcessor processor = GetLatestMediaProcessorByName(MediaProcessorName);
-	
-	    // Read configuration.
-	    string configuration = File.ReadAllText("public.config");
-	
-	    // Create a task with the encoding details, using a string preset.
-	    ITask task = job.Tasks.AddNew("My Indexing Task - Public URL",
-	        processor,
-	        configuration,
-	        TaskOptions.None);
-	
-	    // Specify the input asset to be indexed.
-	    task.InputAssets.Add(asset);
-	
-	    // Add an output asset to contain the results of the job.
-	    task.OutputAssets.AddNew("My Indexing Output Asset - Public URL", AssetCreationOptions.None);
-	
-	    // Use the following event handler to check job progress.  
-	    job.StateChanged += new EventHandler<JobStateChangedEventArgs>(StateChanged);
-	
-	    // Launch the job.
-	    job.Submit();
-	
-	    // Check job execution and wait for job to finish. 
-	    Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
-	    progressJobTask.Wait();
-	
-	    // If job state is Error, the event handling 
-	    // method for job progress should log errors.  Here we check 
-	    // for error state and exit if needed.
-	    if (job.State == JobState.Error)
-	    {
-	        Console.WriteLine("Exiting method due to job error.");
-	        return false;
-	    }
-	
-	    // Download the job outputs.
-	    DownloadAsset(task.OutputAssets.First(), outputFolder);
-	
-	    return true;
-	}
-
-### Ausgabedateien
-
-Beschreibungen der Ausgabedateien, finden Sie unter [Ausgabedateien](#output_files). 
-
-
-## Verarbeiten geschützter Dateien
-
-Der Indexer unterstützt die Standardauthentifizierung mit Benutzernamen und Kennwort beim Herunterladen von Internetdateien über HTTP oder HTTPS.
-
-Sie können in der Aufgabenkonfiguration Werte für **Benutzername** und **Kennwort** festlegen, wie beschrieben unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
 
 ### <a id="error_codes"></a>Fehlercodes
 
@@ -404,11 +329,11 @@ Kein Audiostream in den Eingabemedien</td></tr>
 </table>
 
 
-## <a id="supported_languages"></a>Unterstützte Sprachen
+##<a id="supported_languages"></a>Unterstützte Sprachen
 
 Derzeit wird nur Englisch unterstützt.
 
-## Verwandte Links
+##Verwandte Links
 
 [Verwenden von AIB-Dateien mit Azure Media Indexer und SQL Server](http://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/)
 
@@ -418,4 +343,4 @@ Derzeit wird nur Englisch unterstützt.
 
 <!-- URLs. -->
 
-<!--HONumber=47-->
+<!--HONumber=52-->

@@ -16,13 +16,13 @@
 	ms.date="02/15/2015" 
 	ms.author="juliako"/>
 
-# Vorgehensweise: Bereitstellen eines Medienobjekts durch Herunterladen
+#Gewusst wie: Bereitstellen eines Medienobjekts durch Herunterladen
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).  
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) .  
 
-Dieser Artikel beschreibt Optionen zur Bereitstellung von Medienobjekten, die in Media Services hochgeladen wurden. Sie können Media Services-Inhalte in verschiedenen Anwendungsszenarien bereitstellen. Sie können Medienobjekte herunterladen oder über einen Locator abrufen. Sie können Medieninhalte an andere Anwendungen oder andere Inhaltsanbieter senden. Für verbesserte Leistung und Skalierbarkeit können Sie Inhalte auch über ein Content Delivery Network (CDN) wie z. B. das Azure CDN anbieten.
+Dieser Artikel beschreibt Optionen zur Bereitstellung von Medienobjekten, die in Media Services hochgeladen wurden. Sie können Media Services-Inhalte in verschiedenen Anwendungsszenarien bereitstellen. Sie können Medienobjekte herunterladen oder über einen Locator abrufen. Sie können Medieninhalte an andere Anwendungen oder andere Inhaltsanbieter senden. Für verbesserte Leistung und Skalierbarkeit können Sie Inhalte auch über ein Netzwerk für die Inhaltsübermittlung (Content Delivery Network, CDN) anbieten.
 
-Dieses Beispiel zeigt, wie Sie Medienobjekte von Media Services herunterladen können. Der Code fragt die Aufträge des Media Services-Kontos nach Job-ID ab und greift auf die **OutputMediaAssets**-Sammlung zu (eine Sammlung mit einem oder mehreren Ausgabe-Medienobjekten als Ergebnis einer Jobausführung). Dieses  Beispiel zeigt, wie Sie Ausgabe-Medienobjekte eines Jobs herunterladen können. Dieser Ansatz funktioniert jedoch auch für den Download anderer Medienobjekte.
+Dieses Beispiel zeigt, wie Sie Medienobjekte von Media Services auf Ihren lokalen Computer herunterladen können. Der Code fragt die Aufträge des Media Services-Kontos nach Job-ID ab und greift auf die **OutputMediaAssets**-Sammlung zu (eine Sammlung mit einem oder mehreren Ausgabe-Medienobjekten als Ergebnis einer Jobausführung). Dieses Beispiel zeigt, wie Sie Ausgabemedienobjekte eines Auftrags herunterladen können. Dieser Ansatz funktioniert jedoch auch für den Download anderer Medienobjekte.
 
 	
 	// Download the output asset of the specified job to a local folder.
@@ -41,7 +41,7 @@ Dieses Beispiel zeigt, wie Sie Medienobjekte von Media Services herunterladen k�
 	
 		// Create a SAS locator to download the asset
 	    IAccessPolicy accessPolicy = _context.AccessPolicies.Create("File Download Policy", TimeSpan.FromDays(30), AccessPermissions.Read);
-	    ILocator locator = _context.Locators.CreateSasLocator(outputAsset, accessPolicy);
+	    ILocator locator = _context.Locators.CreateLocator(LocatorType.Sas, outputAsset, accessPolicy);
 	
 	    BlobTransferClient blobTransfer = new BlobTransferClient
 	    {
@@ -74,4 +74,5 @@ Dieses Beispiel zeigt, wie Sie Medienobjekte von Media Services herunterladen k�
 	    Console.WriteLine(string.Format("{0} % download progress. ", e.Progress));
 	}
   
-<!--HONumber=45--> 
+
+<!--HONumber=52-->

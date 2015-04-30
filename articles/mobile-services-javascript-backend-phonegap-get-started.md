@@ -10,9 +10,9 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-phonegap" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="multiple" 
-	ms.topic="article" 
+	ms.topic="hero-article" 
 	ms.date="11/21/2014" 
 	ms.author="glenga"/>
 
@@ -33,7 +33,7 @@ Dieses Lernprogramm erfordert die PhoneGap-Tools (v3.2+ für Windows Phone 8-Pro
 PhoneGap unterstützt die Entwicklung für verschiedene Plattformen. Zusätzlich zu den eigentlichen PhoneGap-Tools müssen Sie die Tools für jede geplante Plattform installieren:
 
 - Windows Phone: Installieren Sie [Visual Studio 2012 Express für Windows Phone](https://go.microsoft.com/fwLink/p/?LinkID=268374)
-- iOS: Installieren Sie [Xcode] (v4.4+ erforderlich)
+- iOS: Installieren Sie [Xcode](v4.4+ erforderlich)
 - Android: Installieren Sie die [Android Developer Tools][Android-SDK]
 	<br/>(Das Mobile Services SDK für Android unterstützt Apps für Android 2.2 oder höhere Versionen. Android 4.2 oder höher ist zum Ausführen der Schnellstart-App erforderlich.)
 
@@ -59,7 +59,7 @@ In diesem Abschnitt erstellen Sie eine neue PhoneGap-App, die mit Ihrem Mobile S
 
 3. Falls Sie es nicht bereits getan haben, laden Sie PhoneGap sowie mindestens eines der Plattform-Entwicklungstools (Windows Phone, iOS oder Android) herunter und installieren Sie sie.
 
-4. Klicken Sie auf **TodoItems-Tabelle erstellen**, um eine Tabelle zum Speichern der App-Daten zu erstellen.
+4. Klicken Sie auf **TodoItem-Tabelle erstellen**, um eine Tabelle zum Speichern von App-Daten zu erstellen.
 
 5. Klicken Sie unter **App herunterladen und ausführen** auf **Herunterladen**. 
 
@@ -91,11 +91,11 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	+ **Android**
 
-		1. Klicken Sie in Eclipse auf **File** und dann auf **Import**, erweitern **Android**, klicken Sie auf **Existing Android Code into Workspace**, und klicken Sie dann auf **Next.** 
+		1. Klicken Sie in Eclipse auf **Datei** und **Importieren**, erweitern Sie dann **Android**. Klicken Sie auf **Vorhandenen Android-Code im Arbeitsbereich** und anschließend auf **Weiter**. 
 		
-		2. Klicken Sie auf **Browse**, navigieren Sie zum Speicherort der entpackten Projektdateien, klicken Sie auf **OK**, stellen Sie sicher, dass das TodoActivity-Projekt ausgewählt ist, und klicken Sie dann auf **Finish**. <p>Daraufhin werden die Projektdateien in den aktuellen Arbeitsbereich importiert.</p>
+		2. Klicken Sie auf **Durchsuchen**, navigieren Sie zum Speicherort der entpackten Projektdateien, klicken Sie auf **OK**, stellen Sie sicher, dass das TodoActivity-Projekt ausgewählt ist, und klicken Sie dann auf **Fertig stellen**. <p>Daraufhin werden die Projektdateien in den aktuellen Arbeitsbereich importiert.</p>
 		
-		3. Klicken Sie im Menü **Run** auf **Run**, um das Projekt im Android-Emulator zu starten.
+		3. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um das Projekt im Android-Emulator zu starten.
 		
 			![][4]
 	
@@ -108,7 +108,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	> [AZURE.WICHTIG] Änderungen an diesem Plattformprojekt werden überschrieben, falls das Hauptprojekt mit den PhoneGap-Tools neu erstellt wird. Nehmen Sie die Änderungen stattdessen im www-Stammverzeichnis des Projekts vor, wie im Abschnitt unten dargestellt.
 
-4. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte <strong>Daten</strong> und dann auf die Tabelle <strong>TodoItems</strong>.
+4. Klicken Sie im Verwaltungsportal auf die Registerkarte <strong>Daten</strong> und dann auf die Tabelle <strong>TodoItems</strong>.
 
 	![](./media/mobile-services-javascript-backend-phonegap-get-started/mobile-data-tab.png)
 
@@ -165,15 +165,13 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [4]: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-android.png
 
 <!-- URLs. -->
-[Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-html-get-started-data
-[Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-html-get-started-users
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/mobile-services-html-get-started-push
-[Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
+[Erste Schritte mit Daten]: mobile-services-html-get-started-data.md
+[Erste Schritte mit der Authentifizierung]: mobile-services-html-get-started-users.md
+[Erste Schritte mit Pushbenachrichtigungen]: /develop/mobile/tutorials/mobile-services-html-get-started-push
+[Android-SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 [Verwaltungsportal]: https://manage.windowsazure.com/
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [Visual Studio 2012 Express für Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
 
 
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

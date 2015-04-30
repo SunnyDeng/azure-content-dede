@@ -16,20 +16,20 @@
 	ms.date="03/01/2015" 
 	ms.author="juliako"/>
 
-# Codieren Ihrer Medien mit Dolby Digital Plus
+#Codieren Ihrer Medien mit Dolby Digital Plus
 
 Der Azure Media Encoder unterstützt die **Dolby(r) Digital Plus**-Codierung. Dolby(r) Digital Plus oder Enhanced AC-3 (E-AC-3) ist ein erweiterter Surround Sound-Audiocodec, der speziell für die neuen Medien entwickelt wurde. Dolby Digital Plus definiert die High-Fidelity-Audioqualität von Heimkino und PCs bis hin zu Mobiltelefonen und Onlinestreaming. Sie erhalten auf allen Mediengeräten immer das Dolby-Kinoerlebnis. Dolby Digital Plus basiert auf den wichtigsten Dolby Digital-Technologien, dem etablierten Standard für Kino, Rundfunk und Surround Sound für das Heimkino. Genau wie die mobilen Geräte einer ständigen Entwicklung unterliegen, entwickelt sich Dolby Digital Plus zum Standard für das mobile Entertainment. Die erweiterten neuen Audiotechnologien bieten eine bessere Soundqualität und zusätzliche Bandbreiteneinsparungen. Sie können qualitativ hochwertige Inhalte mit weniger Unterbrechungen abrufen, selbst wenn die Bandbreite eingeschränkt ist.
 
 
-## Einrichten von Azure Media Encoder zum Codieren mit Dolby Digital Plus
+##Einrichten von Azure Media Encoder zum Codieren mit Dolby Digital Plus
 
-### Abrufen des Azure Media Encoder-Prozessors 
+###Abrufen des Azure Media Encoder-Prozessors 
 
-Dolby Digital Plus wird vom Azure Media Encoder unterstützt. Informationen zum Abrufen eines Verweises auf den **Azure Media Encoder** finden Sie im Thema [Abrufen eines Medienprozessors](media-services-get-media-processor.md) .
+Dolby Digital Plus wird vom Azure Media Encoder unterstützt. Informationen zum Abrufen eines Verweises auf den **Azure Media Encoder** finden Sie im Thema [Abrufen eines Medienprozessors](media-services-get-media-processor.md).
 
-### <a id="configure_preset"></a>Konfigurieren von Azure Media Encoder-Einstellungen
+###<a id="configure_preset"></a>Konfigurieren von Azure Media Encoder-Einstellungen
 
-Beim Konfigurieren der Codierungseinstellungen zur Verwendung mit Azure Media Encoder werden einige vordefinierte Einstellungen durch leicht einprägsame Zeichenfolgen repräsentiert. Der Dolby Digital Plus-Encoder stellt eine umfangreiche Auswahl an Steuerelementen bereit, siehe [<DolbyDigitalPlusAudioProfile>](https://msdn.microsoft.com/library/azure/dn296500.aspx). Es gibt daher keine vordefinierten Zeichenfolgeneinstellungen, die diesen Codec verwenden. Sie müssen die gewünschten Encoder-Einstellungen in einer XML-Datei festlegen und diese Daten übergeben. with your Task as shown in the following code example:
+Beim Konfigurieren der Codierungseinstellungen zur Verwendung mit Azure Media Encoder werden einige vordefinierte Einstellungen durch leicht einprägsame Zeichenfolgen repräsentiert. Der Dolby Digital Plus-Encoder stellt eine umfangreiche Auswahl an Steuerelementen bereit, siehe [<DolbyDigitalPlusAudioProfile>](https://msdn.microsoft.com/library/azure/dn296500.aspx). Es gibt daher keine vordefinierten Zeichenfolgeneinstellungen, die diesen Codec verwenden. Sie müssen die gewünschten Encoder-Einstellungen in einer XML-Datei angeben und diese Daten mit Ihrer Aufgabe wie im folgenden Codebeispiel gezeigt übermitteln:
 	
 	string configuration = File.ReadAllText(pathToXMLConfigFile));
 
@@ -40,13 +40,13 @@ Beim Konfigurieren der Codierungseinstellungen zur Verwendung mit Azure Media En
 
 Im vorliegenden Thema werden verschiedene XML-Voreinstellungen zum Konfigurieren der Encoder-Einstellungen beschrieben. Das Element zum Konfigurieren der Dolby Digital Plus-Codierung ist [<DolbyDigitalPlusAudioProfile>](https://msdn.microsoft.com/library/azure/dn296500.aspx). Hierbei handelt es sich um einen untergeordneten Knoten des Elements <AudioProfile> in einer Azure Media Encoder-XML-Voreinstellung. Dieses XML-Element enthält eine Reihe von Attributen, die verschiedene Elemente der Codierung steuern.
 
-## Codieren in Dolby Digital Plus 5.1 Multichannel
+##Codieren in Dolby Digital Plus 5.1 Multichannel
 
 Legen Sie zum Codieren in Dolby Digital Plus 5.1 Multichannel die Attribute "Codec" und "EncoderMode" auf "DolbyDigitalPlus" fest. Die Anzahl der codierten Kanäle wird mit dem AudioCodingMode-Attribut des <DolbyDigitalPlusAudioProfile>-Elements angegeben. Für eine 5.1 Multichannel-Codierung legen Sie "AudioCodingMode" auf "Mode32" fest. 
 
 Die folgende XML-Voreinstellung enthält eine vollständige Azure Media Encoder-XML-Voreinstellung, die eine MP4-Datei mit H264 Broadband 1080p-Video und Dolby Digital Plus 5.1 Multichannel-Audio erzeugt. Sie codiert außerdem einen LFE-Kanal (Low Frequency Effects), der durch Festlegen des Attributs "LFEOn" auf "true" angegeben wird. Für alle nicht angegebenen Attribute werden deren Standardwerte verwendet.
 
-Diese XML-Voreinstellung muss an den **Azure Media Encoder** übergeben werden, um eine Codierungsaufgabe zu erstellen, wie sie in [diesem](media-services-dotnet-encode-asset.md) Thema beschrieben wird (nur übergeben Sie anstelle einer vordefinierten Voreinstellungszeichenfolge die vollständige XML-Voreinstellung, siehe [hier](#configure_preset)).
+Diese XML-Voreinstellung sollte an den **Azure Media Encoder** übergeben werden, um wie in [hier](Media-Services-Dotnet-codieren-asset.md) beschrieben einen Codierungsauftrag zu erstellen (anstelle einer vordefinierten Voreinstellungszeichenfolge übergeben Sie die komplette XML-Voreinstellung wie [hier](#configure_preset) beschrieben).
 
 
 	<?xml version="1.0" encoding="utf-16"?>
@@ -125,11 +125,11 @@ Diese XML-Voreinstellung muss an den **Azure Media Encoder** übergeben werden, 
 	    </MediaFile>
 	  </Preset>
 
-## Codieren in Dolby Digital Plus Stereo
+##Codieren in Dolby Digital Plus Stereo
 
 Legen Sie zum Codieren in Dolby Digital Plus Stereo die Attribute "Codec" und "EncoderMode" auf "DolbyDigitalPlus" fest. Die Anzahl der codierten Kanäle wird mit dem AudioCodingMode-Attribut angegeben. Für eine Stereocodierung legen Sie "AudioCodingMode" auf "Mode20" fest. Das folgende vordefinierte XML-Beispiel zeigt, wie <DolbyDigitalPlusAudioProfile> zur Codierung in 5.1-Audio verwendet wird. Für alle nicht angegebenen Attribute werden deren Standardwerte verwendet.
 
-Diese XML-Voreinstellung muss an den **Azure Media Encoder** übergeben werden, um eine Codierungsaufgabe zu erstellen, wie sie in [diesem](media-services-dotnet-encode-asset.md) Thema beschrieben wird (nur übergeben Sie anstelle einer vordefinierten Voreinstellungszeichenfolge die vollständige XML-Voreinstellung, siehe [hier](#configure_preset)).
+Diese XML-Voreinstellung sollte an den **Azure Media Encoder** übergeben werden, um wie in [hier](Media-Services-Dotnet-codieren-asset.md) beschrieben einen Codierungsauftrag zu erstellen (anstelle einer vordefinierten Voreinstellungszeichenfolge übergeben Sie die komplette XML-Voreinstellung wie [hier](#configure_preset) beschrieben).
 
 	<?xml version="1.0" encoding="utf-16"?>
 	<!--Created for Azure Media Encoder, May 26 2013 -->
@@ -206,32 +206,32 @@ Diese XML-Voreinstellung muss an den **Azure Media Encoder** übergeben werden, 
 	    </MediaFile>
 	  </Preset>
 
-## Codierung in mehrere MP4-Dateien 
+##Codierung in mehrere MP4-Dateien 
 
 Sie können die Codierung in mehrere MP4-Dateien in einer einzelnen XML-Voreinstellung ausführen. Fügen Sie für jede MP4-Datei, die generiert werden soll, ein Element <Preset> in die Konfiguration ein. Jedes Element <Preset> kann Konfigurationsinformationen für Video, Audio oder beides enthalten.
 
-### Konfiguration
+###Konfiguration
 
 Die folgende Konfiguration erzeugt die folgenden Ausgaben:
 
-- 8 Nur-Video-MP4-Dateien
-	- 1080p Video mit 6000 KBit/s
-	- 1080p Video mit 4700 KBit/s
-	- 720p Video mit 3400 KBit/s
-	- 960 x 540 Video mit 2250 KBit/s
-	- 960 x 540 Video mit 1500 KBit/s
-	- 640 x 380 Video mit 1000 KBit/s
-	- 640 x 380 Video mit 650 KBit/s
-	- 320 x 180 Video mit 400 KBit/s
+- 8 Video-only MP4 files
+	- 1080p Video @ 6000 kbps
+	- 1080p Video @ 4700 kbps
+	- 720p Video @ 3400 kbps
+	- 960 x 540 Video @ 2250 kbps
+	- 960 x 540 Video @ 1500 kbps
+	- 640 x 380 Video @ 1000 kbps
+	- 640 x 380 Video @ 650 kbps
+	- 320 x 180 Video @ 400 kbps
 
-- 5 Nur-Audio-MP4-Dateien
-	- AAC Audio Stereo mit 128 KBit/s
-	- AAC Audio 5.1 mit 512 KBit/s
-	- Dolby Digital Plus Stereo mit 128 KBit/s
-	- Dolby Digital Plus 5.1 Multichannel mit 512 KBit/s
-	- AAC Stereo mit 56 KBit/s
-- Ein ISM-Manifest
-- Eine XML-Datei, welche die Eigenschaften der generierten MP4-Dateien auflistet.
+- 5 Audio-only MP4 files
+	- AAC Audio Stereo @ 128 kbp
+	- AAC Audio 5.1 @ 512 kbps
+	- Dolby Digital Plus Stereo @ 128 kbps
+	- Dolby Digital Plus 5.1 Multichannel @ 512 kbps
+	- AAC Stereo @ 56 kbps
+- A .ism manifest
+- An XML file listing the properties of the generated MP4 files.
 		
 		<?xml version="1.0" encoding="utf-16"?>
 		<!--Created for Azure Media Encoder, May 16 2013 -->
@@ -539,13 +539,13 @@ Die folgende Konfiguration erzeugt die folgenden Ausgaben:
 		  </Preset>
 		</Presets>
 
-## Erstellen kommerzieller Codierungsdienste
+##Erstellen kommerzieller Codierungsdienste
 
 Einige Kunden möchten ggf. einen kommerziellen Codierungsdienst basierend auf Azure Media Services aufbauen. Wenn Sie einen solchen "aufbauenden" Dienst erstellen möchten, müssen unbedingt alle Dolby Digital Plus-Codierungsparameter verfügbar sein. Stellen Sie daher sicher, dass alle Parameter im Tag <DolbyDigitalPlusAudioProfile> für den Endbenutzer verfügbar und konfigurierbar sind. Wenden Sie sich an prolicensingsupport@dolby.com, wenn Sie Unterstützung beim Bereitstellen dieser Parameter benötigen.
 
-## Verwenden von Dolby Professional Loudness Metering-Unterstützung (DPLM)
+##Verwenden von Dolby Professional Loudness Metering-Unterstützung (DPLM)
 
-Der Azure Media Encoder kann das DPLM-SDK verwenden, um die Lautstärke von Dialogen in den Eingabeaudiodaten zu messen und den richtigen Wert für "DialogNormalization" festzulegen. Diese Funktion wird nur aktiviert, wenn die Audiodaten in Dolby Digital Plus codiert werden. DPLM wird in einer vordefinierten Konfigurationsdatei eingerichtet. Hierbei wird das Element <LoudnessMetering> verwendet, bei dem es sich um ein untergeordnetes Element des Elements <DolbyDigitalPlusAudioProfile> handelt. Das folgende Beispiel zeigt, wie DPLM konfiguriert wird:
+Der Azure Media Encoder kann das DPLM-SDK verwenden, um die Lautstärke von Dialogen in den Eingabeaudiodaten zu messen und den richtigen Wert für "DialogNormalization" festzulegen. Diese Funktion wird nur aktiviert, wenn die Audiodaten in Dolby Digital Plus codiert werden. DPLM wird in einer vordefinierten Konfigurationsdatei eingerichtet. Hierbei wird das <LoudnessMetering>-Element verwendet, bei dem es sich um ein untergeordnetes Element des <DolbyDigitalPlusAudioProfile>-Elements handelt. Das folgende Beispiel zeigt, wie DPLM konfiguriert wird:
 	
 	<?xml version="1.0" encoding="utf-16"?>
 	<Preset
@@ -583,11 +583,11 @@ Der Azure Media Encoder kann das DPLM-SDK verwenden, um die Lautstärke von Dial
 	  </MediaFile>
 	</Preset>
 
-Das Element <LoudnessMetering> kann nur in einem Element <DolbyDigitalPlusAudioProfile> angegeben werden. Wenn das Element <LoudnessMetering> verwendet wird, darf das Attribut "DialogNormalization" nicht verwendet werden. Der Encoder generiert einen Fehler, wenn das Element <LoudnessMetering> und das DialogNormalization-Attribut verwendet werden. Alle LoudnessMetering-Attribute sind optional, und der Encoder verwendet per Voreinstellung die von Dolby Laboratories, Inc. empfohlenen Werte.
+Das <LoudnessMetering>-Element kann nur in einem <DolbyDigitalPlusAudioProfile>-Element angegeben werden. Wenn das <LoudnessMetering>-Element verwendet wird, darf das Attribut "DialogNormalization" nicht verwendet werden. Der Encoder generiert einen Fehler, wenn das <LoudnessMetering> -Element und das "DialogNormalization"-Attribut verwendet werden. Alle LoudnessMetering-Attribute sind optional, und der Encoder verwendet per Voreinstellung die von Dolby Laboratories, Inc. empfohlenen Werte.
 
 Jedes Attribut wird in den folgenden Abschnitten beschrieben.
 
-### Mode-Attribut
+###Mode-Attribut
 
 Dieses Attribut bestimmt den Loudness Metering-Modus. Zulässige Werte sind:
 
@@ -602,26 +602,26 @@ Dieses Attribut bestimmt den Loudness Metering-Modus. Zulässige Werte sind:
 
 **Hinweis:**
 
-Der **EBU R128**-Modus kann mit **ITU_R_BS_1770_2_DI** erzielt werden
+Der** EBU R128**-Modus kann mit **ITU_R_BS_1770_2_DI** erzielt werden
 
 **Leq(A)** wurde aus Kompatibilitätsgründen aufgenommen und sollte nur in bestimmten älteren Workflows verwendet werden
 
 Die **ITU** hat vor kurzem eine Aktualisierung namens BS.1770-3 veröffentlicht, die BS.1770-2 mit der Einstellung "False" für "TruePeakDCBlock" und "TruePeakEmphasis" entspricht
 
-### SpeechThreshold-Attribut
+###SpeechThreshold-Attribut
 
 Gibt die von DPLM verwendete Sprachschwelle zur Erzeugung eines integrierten Lautheitergebnisses an (z. B. Auswahl zwischen Sprach-Gating, Lautstärke-Gating und kein Gating). Die Sprachschwelleneinstellung reicht von 0 % bis 100 % in Schritten von 1 %. Dieser Parameter ist nur dann wirksam, wenn DPLM in einem Modus konfiguriert ist, der Dialogue Intelligence verwendet. Dies bedeutet, er kann nur dann angegeben werden, wenn der Modus auf ITU_R_BS_1770_2_DI oder ITU_R_BS_1770_1_DI festgelegt ist. Der Standardwert ist 20 %, wenn der Modus ITU_R_BS_1770_2_DI oder ITU_R_BS_1770_1_DI lautet. Die Werte für dieses Attribut müssen im Bereich 0, 1 bis 100 festgelegt werden.
 
-### TruePeakDCBlock-Attribut
+###TruePeakDCBlock-Attribut
 
 Dieser Eingabeparameter gibt an, ob der DC-Block mit True Peak-Messung aktiviert (true) oder deaktiviert (false) ist. Ausführliche Informationen zum DC-Block finden Sie unter ITU‐R BS.1770‐2. Der Standardwert ist "false".
 
-### TruePeakEmphasis-Attribut
+###TruePeakEmphasis-Attribut
 
 Gibt an, ob der Verzerrungsfilter mit True Peak-Messung aktiviert (true) oder deaktiviert (false) ist. Ausführliche Informationen zum Verzerrungsfilter finden Sie unter ITU‐R BS.1770‐2. Der Standardwert ist "false".
 
 
-### DPLM-Ergebnisse
+###DPLM-Ergebnisse
 
 Wenn eine Codierungsaufgabe die Verwendung von DPLM angibt, werden die Ergebnisse der Lautheitsmessung in die Metadaten-XML des Ausgabeobjekts einbezogen Dies ist ein Beispiel.
 	
@@ -650,4 +650,4 @@ Alle Attribute werden im Folgenden beschrieben.
 
 **TruePeak** - Dieses Ergebnis enthält den größten absoluten True Peak-Wert in jedem Kanal, seit die Messung zurückgesetzt wurde. Eine Beschreibung von True Peak finden Sie unter ITU‐R BS.1770‐2. Die Werte liegen im Bereich von -70 bis 12.04 dBTP.
 
-<!--HONumber=47-->
+<!--HONumber=52-->

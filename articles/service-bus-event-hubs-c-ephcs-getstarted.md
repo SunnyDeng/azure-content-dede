@@ -30,11 +30,11 @@ In diesem Lernprogramm erfahren Sie, wie Nachrichten an einen Ereignis-Hub mithi
 
 Zum Abschließen dieses Lernprogramms benötigen Sie Folgendes:
 
-+ Eine C-Entwicklungsumgebung. In diesem Lernprogramm wird vom GCC-Stack auf einem [virtuellen Linux-Computer mit Azure](http://azure.microsoft.com/documentation/articles/virtual-machines-linux-tutorial/) mit Ubuntu 14.04 ausgegangen. Anweisungen für andere Umgebungen werden in externen Links bereitgestellt.
++ Eine C-Entwicklungsumgebung. In diesem Lernprogramm wird vom GCC-Stack auf einem [virtuellen Azure-Computer mit Linux](virtual-machines-linux-tutorial.md) mit Ubuntu 14.04 ausgegangen. Anweisungen für andere Umgebungen werden in externen Links bereitgestellt.
 
 + Microsoft Visual Studio Express 2013 für Windows
 
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten dazu finden Sie hier: <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
++ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">1 Monat kostenlose Testversion</a>.
 
 ## Erstellen eines Ereignis-Hub
 
@@ -56,7 +56,7 @@ Zum Abschließen dieses Lernprogramms benötigen Sie Folgendes:
 
    	![][4]
 
-6. Klicken Sie oben auf der Seite auf die Registerkarte **Konfigurieren**, fügen Sie eine Regel mit dem Namen **SendRule** mit *Send*-Rechten und eine weitere Regel mit dem Namen **ReceiveRule** mit *Manage, Send, Listen*-Rechten hinzu, und klicken Sie dann auf **Speichern**.
+6. Klicken Sie oben auf der Seite auf die Registerkarte **Konfigurieren**, fügen Sie eine Regel namens **SendRule** mit *Send*-Rechten hinzu, fügen Sie eine weitere Regel mit dem Namen **ReceiveRule** mit den Rechten *Manage, Send und Listen* hinzu, und klicken Sie auf **Speichern**.
 
    	![][5]
 
@@ -68,7 +68,7 @@ Zum Abschließen dieses Lernprogramms benötigen Sie Folgendes:
 
    	![][6]
 
-Ihr Ereignis-Hub wird jetzt erstellt, und Sie erhalten die Verbindungszeichenfolgen, die Sie zum Senden und Empfangen von Ereignissen benötigen.
+Ihr Ereignis-Hub wird jetzt erstellt, und Sie verfügen über die zum Senden und Empfangen von Ereignissen erforderlichen Verbindungszeichenfolgen.
 
 [AZURE.INCLUDE [service-bus-event-hubs-get-started-send-c](../includes/service-bus-event-hubs-get-started-send-c.md)]
 
@@ -104,4 +104,5 @@ Sie können jetzt die Anwendung ausführen.
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Ereignisprozessorhost]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn836025.aspx
-<!--HONumber=47-->
+
+<!--HONumber=52-->

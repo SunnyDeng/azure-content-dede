@@ -20,7 +20,7 @@
 
 
 
-<h1>Vorgehensweise: Bereitstellen von Apple HLS-Streaminginhalten</h1>
+<h1>Gewusst wie: Bereitstellen von Apple HLS-Streaminginhalten</h1>
 
 Dieser Artikel ist Teil einer Reihe zum Thema Programmierung mit Azure Media Services. Das vorherige Thema war [Gewusst wie: Bereitstellen von Streaminginhalten](media-services-deliver-streaming-content.md).
 
@@ -99,6 +99,6 @@ Dies ist das letzte Thema der Reihe zur Verwendung von Azure Media Services. Sie
 [Erste Schritte mit dem Media Services SDK für .NET]: http://go.microsoft.com/fwlink/?linkid=252966
 [Erstellen von Anwendungen mit der Azure Media Services-REST-API]: http://go.microsoft.com/fwlink/?linkid=252967
 [Erstellen von Anwendungen mit dem Media Services SDK für .NET]: http://go.microsoft.com/fwlink/?linkid=247821
-[Media Services-Forum]: http://social.msdn.microsoft.com/Forums/en-US/MediaServices/threads
+[Media Services-Forum]: http://social.msdn.microsoft.com/Forums/MediaServices/threads
 
-<!--HONumber=45--> 
+<!--HONumber=52-->

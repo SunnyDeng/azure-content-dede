@@ -1,5 +1,5 @@
 ﻿
-## <a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
+##<a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
 1. Wir fügen neben der vorhandenen Schaltfläche eine Schaltfläche namens "Complete All" ein und verschieben beide Schaltflächen um eine Zeile nach unten. Öffnen Sie in Android Studio die Datei *res\layout\activity_to_do.xml* in Ihrem Schnellstartprojekt, und suchen Sie das **LinearLayout**-Element, das das **Button**-Element namens `buttonAddToDo` enthält. Kopieren Sie das **LinearLayout**, und fügen Sie es direkt nach dem ursprünglichen ein. Löschen Sie das **Button**-Element aus dem ersten **LinearLayout**.
 
@@ -36,13 +36,13 @@
 	    </LinearLayout>
 	
 
-4. Öffnen Sie die Datei res\values\string.xml file, und fügen Sie die folgende Codezeile hinzu:
+4. Öffnen Sie die Datei res\values\string.xml, und fügen Sie die folgende Codezeile hinzu:
 
     	<string name="complete_button_text">Complete All</string>
 
 
 
-5. Klicken Sie im Projektexplorer mit der rechten Maustaste auf den Projektnamen im Ordner *src* (`com.example.{your projects name}`), wählen Sie **Neu** und dann **Klasse**. Im Dialog geben Sie **MarkAllResult** in das Klassennamensfeld ein, wählen Sie "OK", und ersetzen Sie die resultierende Klassendefinition durch den folgenden Code:
+5. Klicken Sie im Projekt-Explorer mit der rechten Maustaste auf den Projektnamen im Ordner *src* (`com.example.{your projects name}`), wählen Sie **Neu** und dann **Klasse**. Im Dialog geben Sie **MarkAllResult** in das Klassennamensfeld ein, wählen Sie "OK", und ersetzen Sie die resultierende Klassendefinition durch den folgenden Code:
 
 		import com.google.gson.annotations.SerializedName;
 		
@@ -111,4 +111,5 @@
   	![](./media/mobile-services-android-call-custom-api/mobile-custom-api-android-completed.png)
 
 	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
-<!--HONumber=47-->
+
+<!--HONumber=52-->

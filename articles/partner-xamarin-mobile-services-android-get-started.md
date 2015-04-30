@@ -6,12 +6,12 @@
 	authors="lindydonna" 
 	manager="dwrede" 
 	editor="" 
-	services=""/>
+	services="mobile-services"/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-xamarin-android" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="dotnet" 
 	ms.topic="hero-article" 
 	ms.date="11/11/2014" 
@@ -35,7 +35,7 @@ Zum Abschließen dieses Lernprogramms ist [Xamarin.Android] erforderlich, über 
 
 Das heruntergeladene Schnellstart-Projekt enthält die Azure Mobile Services-Komponente für Xamarin.Android. Während dieses Projekt auf Android 4.2 oder eine höhere Version abzielt, benötigt das Mobile Services SDK lediglich Android 2.2 oder eine höhere Version.
 
-> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchzuführen. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A9C9624B5"%20target="_blank).
+> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchführen zu können. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Einzelheiten finden Sie unter [1 Monat kostenlose Testversion](http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A9C9624B5"%20target="_blank).
 
 ## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Diensts
 
@@ -57,9 +57,9 @@ In diesem Abschnitt erstellen Sie eine neue Xamarin.Android-App, die mit dem mob
 
 	![][7]
 
-3. Klicken Sie auf **TodoItem-Tabelle** erstellen, um eine Tabelle zum Speichern von App-Daten zu erstellen.
+3. Klicken Sie auf **TodoItem-Tabelle erstellen**, um eine Tabelle zum Speichern von App-Daten zu erstellen.
 
-4. Klicken Sie unter **App herunterladen und ausführen** auf **Download**. 
+4. Klicken Sie unter **App herunterladen und ausführen** auf **Herunterladen**. 
 
 	Hierdurch wird das Projekt für die _To do list_-Beispielanwendung, die mit dem mobilen Dienst verbunden ist, heruntergeladen. Speichern Sie die komprimierte Projektdatei auf dem lokalen Computer und merken Sie sich, wo Sie sie gespeichert haben.
 
@@ -79,16 +79,16 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	> [AUZRE.NOTE] Sie müssen mindestens ein Android Virtual Device (AVD) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
 
-4. Geben Sie in der App einen sinnvollen Text ein, beispielsweise _Lernprogramm durchführen_, und klicken Sie dann auf **Hinzufügen**.
+4. Geben Sie in der App einen sinnvollen Text ein, beispielsweise _Lernprogramm abschließen_, und klicken Sie dann auf **Hinzufügen**.
 
 	![][10]
 
-	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten aus der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen Dienst zurückgegeben, und die Daten werden in der Liste angezeigt.
+	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen Dienst zurückgegeben, und die Daten werden in der Liste angezeigt.
 
 	> [AZURE.NOTE] 
    	> Sie können den Code überprüfen, der zum Abfragen und Einfügen von Daten auf den mobilen Dienst zugreift. Der Code befindet sich in der C#-Datei "ToDoActivity.cs".
 
-6. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
+6. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
 	![][11]
 
@@ -100,7 +100,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden: 
 
 * [Erste Schritte mit der Offline-Datensynchronisierung]
-  <br/>Erfahren Sie mehr darüber, wie der Schnellstart die Offline-Datensynchronisierung verwendet, um die App reaktionsfähig und stabil zu machen.
+  <br/>Erfahren Sie, wie der Schnellstart die Offline-Datensynchronisierung verwendet, um die App reaktionsfähig und stabil zu machen.
 
 * [Erste Schritte mit der Authentifizierung]
   <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
@@ -131,17 +131,13 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 
 <!-- URLs. -->
-[Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-android
-[Erste Schritte mit der Offline-Datensynchronisierung]: /de-de/documentation/articles/mobile-services-xamarin-android-get-started-offline-data
-[Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-xamarin-android
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-xamarin-android
+[Erste Schritte mit Daten]: /develop/mobile/tutorials/get-started-with-data-xamarin-android
+[Erste Schritte mit der Offline-Datensynchronisierung]: mobile-services-xamarin-android-get-started-offline-data.md
+[Erste Schritte mit der Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-xamarin-android
+[Erste Schritte mit Pushbenachrichtigungen]: /develop/mobile/tutorials/get-started-with-push-xamarin-android
 [Xamarin.Android]: http://xamarin.com/download
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[WindowsAzure.com]: http://azure.microsoft.com/
+[WindowsAzure.com]: http://www.windowsazure.com/
 [Verwaltungsportal]: https://manage.windowsazure.com/
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

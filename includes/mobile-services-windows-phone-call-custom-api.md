@@ -1,6 +1,6 @@
 ﻿##<a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
-1. Öffnen Sie in Visual Studio 2012 Express für Windows Phone die Datei "MainPage.xaml" in Ihrem Schnellstartprojekt, suchen Sie die **Schaltfläche** Element mit dem Namen `ButtonRefresh`, und ersetzen Sie es durch den folgenden XAML-Code: 
+1. Öffnen Sie die Datei "MainPage.xaml" in Ihrem Schnellstartprojekt in Visual Studio, suchen Sie die **Schaltfläche** Element mit dem Namen `ButtonRefresh`, und ersetzen Sie es durch folgenden XAML-Code: 
 
         <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button Width="225" Name="ButtonRefresh" 
@@ -48,7 +48,7 @@
 		    MessageBox.Show(message);  
 		}
 
-	Diese Methode behandelt das **Click**-Ereignis für die neue Schaltfläche. Die **InvokeApiAsync**-Methode wird beim Client aufgerufen, der eine Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API erhaltene Ergebnis wird in einem Meldungsdialogfeld angezeigt.
+	Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die **InvokeApiAsync**-Methode wird beim Client aufgerufen, der eine Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API erhaltene Ergebnis wird in einem Meldungsdialogfeld angezeigt.
 
 ## <a name="test-app"></a>Testen der App
 
@@ -64,5 +64,4 @@
 
 	Ein Meldungsfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, wodurch alle Elemente aus der Liste gelöscht werden.
 
-
-<!--HONumber=42-->
+<!--HONumber=52-->

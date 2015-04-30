@@ -1,9 +1,9 @@
-<properties 
+﻿<properties 
 	pageTitle="Konfigurieren von Übermittlungsrichtlinien für Medienobjekte mit REST" 
 	description="In diesem Thema wird die Konfiguration verschiedener Übermittlungsrichtlinien für Medienobjekte erläutert." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -16,16 +16,16 @@
 	ms.date="02/06/2015" 
 	ms.author="juliako"/>
 
-# Vorgehensweise: Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
+#Gewusst wie: Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md). 
 
 Einer der Schritte im Workflow zur Inhaltsübermittlung in Media Services ist das Konfigurieren von Übermittlungsrichtlinien für Medienobjekte, die gestreamt werden sollen. Anhand der Übermittlungsrichtlinie für Medienobjekte kann Media Services ermitteln, wie das Medienobjekt übermittelt werden soll, also mit welchem Streamingprotokoll das Medienobjekt dynamisch verpackt werden soll (z. B. MPEG-DASH, HLS, Smooth Streaming oder alle) und ob und wie das Medienobjekt ggf. dynamisch verschlüsselt werden soll (Umschlag- oder allgemeine Verschlüsselung). 
 
 In diesem Thema wird erläutert, warum und wie Übermittlungsrichtlinien für Medienobjekte erstellt und konfiguriert werden. 
 
->[AZURE.NOTE]Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine Skalierungseinheit (auch als Streamingeinheit bezeichnet) verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](media-services-manage-origins#scale_streaming_endpoints.md). 
+>[AZURE.NOTE]Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine Skalierungseinheit (auch als Streamingeinheit bezeichnet) verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](media-services-manage-origins.md#scale_streaming_endpoints). 
 >
 >Darüber hinaus muss Ihr Medienobjekt einen MP4-Satz bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten.  
 
@@ -57,17 +57,17 @@ Anweisungen zum Veröffentlichen eines Medienobjekts und Erstellen einer Streami
 
 >[AZURE.NOTE] Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
 >
->Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services REST-API](media-services-rest-how-to-use.md).
+>Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services-REST-API](media-services-rest-how-to-use.md).
 
->Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](media-services-rest-connect_programmatically.md) beschrieben, müssen Sie nachfolgende Aufrufe an den neuen URI senden.
+>Nach der erfolgreichen Verbindung mit "https://media.windows.net" erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](media-services-rest-connect_programmatically.md) beschrieben müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
 
 
-## Löschen einer Übermittlungsrichtlinie für Medienobjekte 
+##Löschen einer Übermittlungsrichtlinie für Medienobjekte 
 
-### <a id="create_asset_delivery_policy"></a>Erstellen einer Übermittlungsrichtlinie für Medienobjekte
+###<a id="create_asset_delivery_policy"></a>Erstellen einer Übermittlungsrichtlinie für Medienobjekte
 Durch die folgende HTTP-Anforderung wird eine Übermittlungsrichtlinie für Medienobjekte erstellt. Diese gibt an, dass keine dynamische Verschlüsselung angewendet und der Stream mit einem der folgenden Protokolle übermittelt wird:  MPEG DASH, HLS und Smooth Streaming-Protokoll. 
 
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben können.   
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln.   
 
 
 Anforderung:
@@ -78,7 +78,7 @@ Anforderung:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amsaccount1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423397827&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=Szo6lbJAvL3dyecAeVmyAnzv3mGzfUNClR5shk9Ivbk%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amsaccount1&urn%3aSubscriptionId=zbbef702-e769-2233-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423397827&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=Szo6lbJAvL3dyecAeVmyAnzv3mGzfUNClR5shk9Ivbk%3d
 	x-ms-version: 2.8
 	x-ms-client-request-id: 4651882c-d7ad-4d5e-86ab-f07f47dcb41e
 	Host: media.windows.net
@@ -114,7 +114,7 @@ Antwort:
 	"Created":"2015-02-08T06:21:27.6908329Z",
 	"LastModified":"2015-02-08T06:21:27.6908329Z"}
 	
-### <a id="link_asset_with_asset_delivery_policy"></a>Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte
+###<a id="link_asset_with_asset_delivery_policy"></a>Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte
 
 Die folgende HTTP-Anforderung verknüpft das angegebene Medienobjekt mit der Übermittlungsrichtlinie für Medienobjekte.
 
@@ -126,7 +126,7 @@ Anforderung:
 	Accept: application/json
 	Accept-Charset: UTF-8
 	Content-Type: application/json
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amsaccount1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423397827&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=Szo6lbJAvL3dyecAeVmyAnzv3mGzfUNClR5shk9Ivbk%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amsaccount1&urn%3aSubscriptionId=zbbef702-e769-3344-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423397827&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=Szo6lbJAvL3dyecAeVmyAnzv3mGzfUNClR5shk9Ivbk%3d
 	x-ms-version: 2.8
 	x-ms-client-request-id: 56d2763f-6e72-419d-ba3c-685f6db97e81
 	Host: media.windows.net
@@ -135,17 +135,17 @@ Anforderung:
 
 Antwort:
 
-	HTTP/1.1 204 No Content
+	HTTP/1.1 204 Kein Inhalt
 
 
-## DynamicEnvelopeEncryption-Übermittlungsrichtlinie für Medienobjekte 
+##DynamicEnvelopeEncryption-Übermittlungsrichtlinie für Medienobjekte 
 
-### Erstellen eines Inhaltsschlüssels des EnvelopeEncryption-Typs und Verknüpfen des Schlüssels mit dem Medienobjekt
+###Erstellen eines Inhaltsschlüssels des EnvelopeEncryption-Typs und Verknüpfen des Schlüssels mit dem Medienobjekt
 
-Wenn Sie die DynamicEnvelopeEncryption-Übermittlungsrichtlinie angeben, müssen Sie sicherstellen, dass Ihr Medienobjekt mit einem Inhaltsschlüssel des EnvelopeEncryption-Typs verknüpft wird. Weitere Informationen finden Sie unter: [Erstellen eines Inhaltsschlüssels](media-services-rest-create-contentkey.md).
+Wenn Sie die DynamicEnvelopeEncryption-Übermittlungsrichtlinie angeben, müssen Sie sicherstellen, dass Ihr Medienobjekt mit einem Inhaltsschlüssel des EnvelopeEncryption-Typs verknüpft wird. Weitere Informationen finden Sie unter: [Erstellen eines Inhaltsschlüssels](media-services-rest-create-contentkey.md)).
 
 
-### <a id="get_delivery_url"></a>Abrufen der Übermittlungs-URL
+###<a id="get_delivery_url"></a>Abrufen der Übermittlungs-URL
 
 Rufen Sie die Übermittlungs-URL für die angegebene Übermittlungsmethode des Inhaltsschlüssels auf, den Sie im vorherigen Schritt erstellt haben. Ein Client verwendet die zurückgegebene URL, um einen AES-Schlüssel oder eine PlayReady-Lizenz zur Wiedergabe des geschützten Inhalts anzufordern.
 
@@ -158,7 +158,7 @@ Anforderung:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amsaccount1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423452029&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=IEXV06e3drSIN5naFRBdhJZCbfEqQbFZsGSIGmawhEo%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amsaccount1&urn%3aSubscriptionId=zbbef702-2233-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423452029&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=IEXV06e3drSIN5naFRBdhJZCbfEqQbFZsGSIGmawhEo%3d
 	x-ms-version: 2.8
 	x-ms-client-request-id: 569d4b7c-a446-4edc-b77c-9fb686083dd8
 	Host: media.windows.net
@@ -184,12 +184,12 @@ Antwort:
 	{"odata.metadata":"media.windows.net/api/$metadata#Edm.String","value":"https://amsaccount1.keydelivery.mediaservices.windows.net/?KID=dc88f996-2859-4cf7-a279-c52a9d6b2f04"}
 
 
-### Erstellen einer Übermittlungsrichtlinie für Medienobjekte
+###Erstellen einer Übermittlungsrichtlinie für Medienobjekte
 
 Durch die folgende HTTP-Anforderung wird die **AssetDeliveryPolicy** erstellt. Die Richtlinie ist so konfiguriert, dass sie die dynamische Umschlagsverschlüsselung (**DynamicEnvelopeEncryption**) auf das **HLS**-Protokoll anwendet (andere Protokolle in diesem Beispiel sind vom Streaming ausgeschlossen). 
 
 
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben können.   
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln.   
 
 Anforderung:
 
@@ -200,7 +200,7 @@ Anforderung:
 	Accept: application/json
 	Accept-Charset: UTF-8
 	User-Agent: Microsoft ADO.NET Data Services
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amsaccount1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423480651&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=T2FG3tIV0e2ETzxQ6RDWxWAsAzuy3ez2ruXPhrBe62Y%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amsaccount1&urn%3aSubscriptionId=zbbef702-2233-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423480651&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=T2FG3tIV0e2ETzxQ6RDWxWAsAzuy3ez2ruXPhrBe62Y%3d
 	x-ms-version: 2.8
 	x-ms-client-request-id: fff319f6-71dd-4f6c-af27-b675c0066fa7
 	Host: media.windows.net
@@ -227,26 +227,26 @@ Antwort:
 	{"odata.metadata":"media.windows.net/api/$metadata#AssetDeliveryPolicies/@Element","Id":"nb:adpid:UUID:ec9b994e-672c-4a5b-8490-a464eeb7964b","Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":4,"AssetDeliveryPolicyType":3,"AssetDeliveryConfiguration":"[{\"Key\":2,\"Value\":\"https:\\/\\/amsaccount1.keydelivery.mediaservices.windows.net\\/\"}]","Created":"2015-02-09T05:24:38.9167436Z","LastModified":"2015-02-09T05:24:38.9167436Z"}
 
 
-### Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte
+###Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte
 
 Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte](#link_asset_with_asset_delivery_policy)
 
-## DynamicCommonEncryption-Übermittlungsrichtlinie für Medienobjekte 
+##DynamicCommonEncryption-Übermittlungsrichtlinie für Medienobjekte 
 
-### Erstellen eines Inhaltsschlüssels des CommonEncryption-Typs und Verknüpfen des Schlüssels mit dem Medienobjekt
+###Erstellen eines Inhaltsschlüssels des CommonEncryption-Typs und Verknüpfen des Schlüssels mit dem Medienobjekt
 
-Wenn Sie die DynamicCommonEncryption-Übermittlungsrichtlinie angeben, müssen Sie sicherstellen, dass Ihr Medienobjekt mit einem Inhaltsschlüssel des CommonEncryption-Typs verknüpft wird. Weitere Informationen finden Sie unter: [Erstellen eines Inhaltsschlüssels](media-services-rest-create-contentkey.md).
+Wenn Sie die DynamicCommonEncryption-Übermittlungsrichtlinie angeben, müssen Sie sicherstellen, dass Ihr Medienobjekt mit einem Inhaltsschlüssel des CommonEncryption-Typs verknüpft wird. Weitere Informationen finden Sie unter: [Erstellen eines Inhaltsschlüssels](media-services-rest-create-contentkey.md)).
 
 
-### Abrufen der übermittlungs-URL
+###Abrufen der übermittlungs-URL
 
 Rufen Sie die Übermittlungs-URL für die PlayReady-Übermittlungsmethode des Inhaltsschlüssels auf, den Sie im vorherigen Schritt erstellt haben. Ein Client verwendet die zurückgegebene URL, um eine PlayReady-Lizenz zur Wiedergabe des geschützten Inhalts anzufordern. Weitere Informationen finden Sie unter [Abrufen der Übermittlungs-URL](#get_delivery_url).
 
-### Erstellen einer Übermittlungsrichtlinie für Medienobjekte
+###Erstellen einer Übermittlungsrichtlinie für Medienobjekte
 
 Durch die folgende HTTP-Anforderung wird die **AssetDeliveryPolicy** erstellt. Die Richtlinie ist so konfiguriert, dass sie die dynamische allgemeine Verschlüsselung (**DynamicCommonEncryption**) auf das **Smooth Streaming**-Protokoll anwendet (andere Protokolle in diesem Beispiel sind vom Streaming ausgeschlossen). 
 
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben können.   
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln.   
 
 
 Anforderung:
@@ -258,7 +258,7 @@ Anforderung:
 	Accept: application/json
 	Accept-Charset: UTF-8
 	User-Agent: Microsoft ADO.NET Data Services
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amsaccount1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423480651&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=T2FG3tIV0e2ETzxQ6RDWxWAsAzuy3ez2ruXPhrBe62Y%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amsaccount1&urn%3aSubscriptionId=zbbef702-2233-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423480651&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=T2FG3tIV0e2ETzxQ6RDWxWAsAzuy3ez2ruXPhrBe62Y%3d
 	x-ms-version: 2.8
 	x-ms-client-request-id: fff319f6-71dd-4f6c-af27-b675c0066fa7
 	Host: media.windows.net
@@ -266,14 +266,14 @@ Anforderung:
 	{"Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":1,"AssetDeliveryPolicyType":4,"AssetDeliveryConfiguration":"[{\"Key\":2,\"Value\":\"https:\\/\\/amsaccount1.keydelivery.mediaservices.windows.net\/PlayReady\/"}]"}
 
 
-### Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte
+###Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte
 
 Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte](#link_asset_with_asset_delivery_policy)
 
 
-## <a id="types"></a>Beim Definieren von AssetDeliveryPolicy verwendete Typen
+##<a id="types"></a>Beim Definieren von AssetDeliveryPolicy verwendete Typen
 
-### AssetDeliveryProtocol 
+###AssetDeliveryProtocol 
 
     /// <summary>
     /// Delivery protocol for an asset delivery policy.
@@ -312,7 +312,7 @@ Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer 
         All = 0xFFFF
     }
 
-### AssetDeliveryPolicyType
+###AssetDeliveryPolicyType
 
     /// <summary>
     /// Policy type for dynamic encryption of assets.
@@ -346,7 +346,7 @@ Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer 
         DynamicCommonEncryption
     }
 
-### ContentKeyDeliveryType
+###ContentKeyDeliveryType
 
     /// <summary>
     /// Delivery method of the content key to the client.
@@ -369,7 +369,7 @@ Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer 
         BaselineHttp
     }
 
-### AssetDeliveryPolicyConfigurationKey
+###AssetDeliveryPolicyConfigurationKey
 
     /// <summary>
     /// Keys used to get specific configuration for an asset delivery policy.
@@ -412,4 +412,4 @@ Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer 
         EnvelopeEncryptionIV,
     }
 
-<!--HONumber=47-->
+<!--HONumber=52-->

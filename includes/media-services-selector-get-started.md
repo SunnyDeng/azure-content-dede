@@ -1,5 +1,5 @@
-﻿> [AZURE.SELECTOR]
-- [.NET SDK](media-services-dotnet-get-started.md)
-- [REST-API](media-services-rest-get-started.md)
-
-<!--HONumber=47-->
+> [AZURE.SELECTOR]
+- [Portal](../articles/media-services-portal-get-started.md)
+- [.NET SDK](../articles/media-services-dotnet-get-started.md)
+- [REST-API](../articles/media-services-rest-get-started.md)
+<!--HONumber=52--> 

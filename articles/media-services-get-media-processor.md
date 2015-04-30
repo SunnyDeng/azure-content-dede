@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Erstellen eines Medienprozessors - Azure" 
 	description="Erfahren Sie, wie Sie eine Medienprozessorkomponente erstellen können, um Medieninhalte für Azure Media Services zu codieren, zu ver- oder entschlüsseln, und um Formate zu konvertieren. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." 
 	services="media-services" 
@@ -17,11 +17,11 @@
 	ms.author="juliako"/>
 
 
-# Vorgehensweise: Abrufen einer Media Processor-Instanz
+#Gewusst wie: Abrufen einer Media Processor-Instanz
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) . 
 
-## Übersicht
+##Übersicht
 
 Der Medienprozessor in Media Services ist für bestimmte Verarbeitungsaufgaben wie z. B. Codierung, Formatumwandlungen, Verschlüsselung oder Entschlüsselung von Medieninhalten zuständig. Normalerweise erstellen Sie einen Medienprozessor, wenn Sie eine Aufgabe zur Codierung, Verschlüsselung oder Formatumwandlung von Medieninhalten erstellen.
 
@@ -38,8 +38,18 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
   <tbody>
     <tr>
        <td>Azure Media Encoder</td>
-       <td>Zur Ausführung von Codieraufgaben mit dem Media Encoder.</td>
-       <td><a href="http://msdn.microsoft.com/library/jj129582.aspx"> Aufgabenvoreinstellungen für den Azure Media Encoder</a></td>
+       <td>Zur Ausführung von Codieraufgaben mit dem Azure Media Encoder.</td>
+       <td><a href="http://msdn.microsoft.com/library/jj129582.aspx">Aufgabenvoreinstellungen für den Azure Media Encoder</a></td>
+    </tr>
+    <tr>
+       <td>Media Encoder Premium Workflow</td>
+       <td>Zur Ausführung von Codieraufgaben mit dem Media Encoder Premium Workflow.</td>
+       <td><a href="http://azure.microsoft.com/documentation/articles/media-services-encode-with-premium-workflow/">Codierung mit dem Media Encoder Premium Workflow</a></td>
+    </tr>    
+	<tr>
+        <td>Azure Media Indexer</td>
+        <td>Macht Mediendateien und Inhalte durchsuchbar und generiert Untertitelspuren und Schlüsselwörter.</td>
+		<td><a href="http://azure.microsoft.com/documentation/articles/media-services-index-content/">Indizieren von Mediendateien mit Azure Media Indexer</a></td>
     </tr>
     <tr>
         <td>Azure Media Packager</td>
@@ -52,11 +62,6 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
         <td><a href="http://msdn.microsoft.com/library/hh973610.aspx">Aufgabenvoreinstellungen für den Azure Media Packager</a></td>
     </tr>
     <tr>
-        <td>Azure Media Indexer</td>
-        <td>Macht Mediendateien und Inhalte durchsuchbar und generiert Untertitelspuren und Schlüsselwörter.</td>
-		<td>N/V</td>
-    </tr>
-    <tr>
         <td>Storage Decryption</td>
         <td>Entschlüsselt Medienobjekte, die mit der Speicherverschlüsselung verschlüsselt wurden.</td>
 		<td>-</td>
@@ -65,9 +70,9 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
 
 <br />
 
-## Abrufen von MediaProcessor
+##Abrufen von MediaProcessor
 
-Das folgende Beispiel zeigt, wie Sie eine Medienprozessor-Instanz erstellen. Dieses Codebeispiel verwendet eine Variable auf Modulebene mit dem Namen **_context**, um auf den Serverkontext zu verweisen, wie beschrieben in [Gewusst wie: Programmgesteuertes Verbinden mit Media Services].
+Das folgende Beispiel zeigt, wie Sie eine Medienprozessor-Instanz erstellen. Das folgende Codebeispiel setzt eine Variable auf Modulebene mit dem Namen **_context** voraus, die Zugriff auf den Serverkontext bietet. Siehe [Gewusst wie: Programmgesteuertes Verbinden mit Media Services].
 
 	private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
 	{
@@ -80,10 +85,11 @@ Das folgende Beispiel zeigt, wie Sie eine Medienprozessor-Instanz erstellen. Die
 	    return processor;
 	}
 
-## Nächste Schritte
-Sie sind nun in der Lage, eine Medienprozessor-Instanz abzurufen, und können mit dem Thema [Gewusst wie: Codieren von Medienobjekten][] fortfahren. Dort lernen Sie, wie Sie Medienobjekte mit dem Azure Media Encoder codieren können.
+##Nächste Schritte
+Sie sind nun in der Lage, eine Medienprozessorinstanz abzurufen, und können mit dem Thema [Codieren von Medienobjekten][] fortfahren. Dort lernen Sie, wie Sie Medienobjekte mit dem Azure Media Encoder codieren können.
 
-[Gewusst wie: Codieren von Medienobjekten]: ../media-services-encode-asset/
+[Codieren von Medienobjekten]: media-services-encode-asset.md
 [Aufgabenvoreinstellungen für den Azure Media Encoder]: http://msdn.microsoft.com/library/jj129582.aspx
-[Gewusst wie: Programmgesteuertes Verbinden mit Media Services]: ../media-services-set-up-computer/
-<!--HONumber=45--> 
+[Vorgehensweise: Programmgesteuertes Verbinden mit Mediendiensten]: ../media-services-set-up-computer/
+
+<!--HONumber=52-->

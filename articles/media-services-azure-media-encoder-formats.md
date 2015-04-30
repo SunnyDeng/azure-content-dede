@@ -16,11 +16,11 @@
 	ms.date="02/27/2015" 
 	ms.author="juliako"/>
 
-# Azure Media Encoder-Formate und -Codecs
+#Azure Media Encoder-Formate und -Codecs
 
 Encoder komprimieren digitale Medien mithilfe von Codecs. Encoder bieten üblicherweise verschiedene Einstellungen, mit denen Sie Eigenschaften der generierten Medien angeben können, z. B. verwendete Codecs, Dateiformat, Auflösung und Bitrate. Dateiformate sind Container, die das komprimierte Video sowie Informationen zu den Codecs enthalten, die für dessen Komprimierung verwendet wurden. 
 
-Codecs verfügen über zwei Komponenten: eine zum Komprimieren digitaler Mediendateien für die Übertragung und die andere zum Dekomprimieren digitaler Mediendateien für die Wiedergabe. Für die Komprimierung und Dekomprimierung von Audiodaten existieren Audiocodecs, und für Videodaten entsprechend Videocodecs. Codecs können entweder verlustfreie oder verlustbehaftete Komprimierung verwenden. Verlustfreie Codecs erhalten bei der Komprimierung alle Informationen. Das Ergebnis der Dekomprimierung ist eine Datei, die identisch mit dem Eingabemedium ist. Verlustfreie Codecs eignen sich daher gut für Archivierung und Speicherung. Verlustbehaftete Codecs verlieren beim Komprimieren einen Teil der Informationen, produzieren kleinere Dateien (im Vergleich zum Original) auf Kosten der Videoqualität und eignen sich gut zum Streaming über das Internet. Die zwei Hauptcodecs, die vom Azure Media Encoder zum Codieren verwendet werden, sind H.264 und VC-1. Andere Codecs sind möglicherweise über unser Partner-Ökosystem von Encodern verfügbar.
+Codecs verfügen über zwei Komponenten: eine zum Komprimieren digitaler Mediendateien für die Übertragung und die andere zum Dekomprimieren digitaler Mediendateien für die Wiedergabe. Für die Komprimierung und Dekomprimierung von Audiodaten existieren Audiocodecs, und für Videodaten entsprechend Videocodecs. Codecs können entweder verlustfreie oder verlustbehaftete Komprimierung verwenden. Verlustfreie Codecs erhalten bei der Komprimierung alle Informationen. Das Ergebnis der Dekomprimierung ist eine Datei, die identisch mit dem Eingabemedium ist. Verlustfreie Codecs eignen sich daher gut für Archivierung und Speicherung. Verlustbehaftete Codecs verlieren beim Komprimieren einen Teil der Informationen, produzieren kleinere Dateien (im Vergleich zum Original) auf Kosten der Videoqualität und eignen sich gut zum Streaming über das Internet. Die zwei Hauptcodecs, die vom Azure Media Encoder zum Codieren verwendet werden, sind H.264 und VC-1. Andere Codecs sind möglicherweise über unser Partner-Ökosystem von Encodern verfügbar
 
 Es ist wichtig, den Unterschied zwischen Codecs und Dateiformaten zu kennen. Bei Codecs handelt es sich um die Software, die die Algorithmen für die Komprimierung/Dekomprimierung implementiert. Dateiformate dagegen sind die Container, die das komprimierte Video enthalten. Weitere Informationen finden Sie unter [Codierung im Vergleich zur Paketerstellung](http://blog-ndrouin.azurewebsites.net/streaming-media-terminology-explained/).
 
@@ -32,11 +32,11 @@ Dieses Dokument enthält eine Liste der gängigsten Import- und Exportdateiforma
 [Media Encoder-Exportformate](#export_formats)
 
 
-## <a id="import_formats"></a>Media Encoder-Importformate 
+##<a id="import_formats"></a>Media Encoder-Importformate 
 
 Im folgenden Abschnitt werden die Codecs und Dateiformate aufgelistet, die für den Import unterstützt werden.
 
-### Videocodecs
+###Videocodecs
 
 - H.264 (Baseline, Main und High Profile)
 - MPEG-1 (einschließlich MPEG-PS)
@@ -47,14 +47,14 @@ Im folgenden Abschnitt werden die Codecs und Dateiformate aufgelistet, die für 
 - DV (DVC, DVHD, DVSD, DVSL)
 - Grass Valley HQ/HQX
  
-### Audiocodecs
+###Audiocodecs
 
 - AC-3 (Dolby Digital-Audio)
 - AAC (AAC-LC, HE-AAC v1 mit AAC-LC-Kernfunktionen und HE-AAC v2 mit AAC-LC-Kernfunktionen)
 - MP3
 - Windows Media Audio 9 (Windows Media Audio Standard, Windows Media Audio Professional und Windows Media Audio Lossless)
 
-### Videodateiformate
+###Videodateiformate
  
 <table border="1">
 <tr><th>Dateiformat</th><th>Dateierweiterungen</th></tr>
@@ -75,7 +75,7 @@ Im folgenden Abschnitt werden die Codecs und Dateiformate aufgelistet, die für 
 
 Einige nicht komprimierte Dateiformate werden unterstützt. Weitere Informationen finden Sie unter [Unterstützte nicht komprimierte Videoformate](#uncompressed)
 
-### Audiodateiformate
+###Audiodateiformate
 
 <table border="1">
 <tr><th>Dateiformat</th><th>Dateierweiterungen</th></tr>
@@ -89,7 +89,7 @@ Einige nicht komprimierte Dateiformate werden unterstützt. Weitere Informatione
 <tr><td>Windows Media Audio</td><td>.wma</td></tr>   
 </table>
 
-### Bilddateiformate
+###Bilddateiformate
 
 <table border="1">
 <tr><th>Dateiformat</th><th>Dateierweiterungen</th></tr>
@@ -102,7 +102,7 @@ Einige nicht komprimierte Dateiformate werden unterstützt. Weitere Informatione
 </table>
 
 
-## <a id="export_formats"></a>Media Encoder-Exportformate
+##<a id="export_formats"></a>Media Encoder-Exportformate
 
 In der folgenden Tabelle werden die Codecs und Dateiformate aufgeführt, die für den Export unterstützt werden.
 
@@ -118,7 +118,7 @@ AAC-LC, HE-AAC v1, HE-AAC v2</td></tr>
 
 Zusätzliche unterstützte Codecs und Filter in Media Services finden Sie unter [Windows DirectShow-Filter](https://msdn.microsoft.com/library/windows/desktop/dd375464.aspx).
 
-## <a id="uncompressed"></a>Unterstützte nicht komprimierte Videoformate 
+##<a id="uncompressed"></a>Unterstützte nicht komprimierte Videoformate 
 
 Azure Media Services stellt Unterstützung für das Importieren nicht komprimierter Videodaten bereit.
 
@@ -137,4 +137,4 @@ Dies ist eine unvollständige Liste der unterstützten nicht komprimierten Forma
 <tr><td>Von Indeo generiertes YVU9-Format</td><td>Das von Indeo generierte YVU9-Format mit zusätzlichen Informationen über die Unterschiede zum letzten Frame. 9,5 Bit pro Pixel, wird jedoch als 9 angezeigt.</td></tr>
 </table>
 
-<!--HONumber=47-->
+<!--HONumber=52-->

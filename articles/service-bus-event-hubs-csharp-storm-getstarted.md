@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Erste Schritte mit Ereignis-Hubs" 
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Event Hubs für das Senden von Ereignissen mit C# und das Empfangen in einem Apache Storm-Cluster." 
 	services="service-bus" 
@@ -34,7 +34,7 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 + Eine Java-Entwicklungsumgebung, die zum Ausführen von [Maven](http://maven.apache.org/) konfiguriert ist. In diesem Lernprogramm wird von [Eclipse](https://www.eclipse.org/) ausgegangen.
 
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten dazu finden Sie hier: <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
++ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">1 Monat kostenlose Testversion</a>.
 
 ## Erstellen eines Ereignis-Hub
 
@@ -44,7 +44,7 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
    	![][1]
 
-3. Geben Sie einen Namen für den Ereignis-Hub ein. Wählen Sie die gewünschte Region aus, und klicken Sie dann auf **Neuen Event Hub erstellen**.
+3. Geben Sie einen Namen für den Ereignis-Hub ein. Wählen Sie die gewünschte Region aus, und klicken Sie dann auf **Create a new Event Hub**.
 
    	![][2]
 
@@ -64,11 +64,11 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
    	![][6c]
 
-8. Klicken Sie oben auf die Registerkarte **Dashboard**, und klicken Sie danach auf **Verbindungsinformationen**. Notieren Sie sich die beiden Verbindungszeichenfolgen.
+8. Klicken Sie oben auf die Registerkarte **Dashboard**, und klicken Sie danach auf **Connection Information**. Notieren Sie sich die beiden Verbindungszeichenfolgen.
 
    	![][6]
 
-Ihr Ereignis-Hub wird jetzt erstellt, und Sie erhalten die Verbindungszeichenfolgen, die Sie zum Senden und Empfangen von Ereignissen benötigen.
+Ihr Ereignis-Hub wird jetzt erstellt, und Sie verfügen über die zum Senden und Empfangen von Ereignissen erforderlichen Verbindungszeichenfolgen.
 
 [AZURE.INCLUDE [service-bus-event-hubs-get-started-send-csharp](../includes/service-bus-event-hubs-get-started-send-csharp.md)]
 
@@ -101,4 +101,4 @@ Sie können jetzt die Anwendung ausführen.
 [Ereignisprozessorhost]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn836025.aspx
 
-<!--HONumber=47-->
+<!--HONumber=52-->

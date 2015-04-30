@@ -25,7 +25,7 @@ Das Lernprogramm beinhaltet zwei Hauptszenarien für einen schnellen Einstieg in
 - Ausführen Ihrer ersten Azure Storage-Anwendung auf dem Azure-Speicheremulator
 - Ausführen Ihrer ersten Azure Storage-Anwendung über den Azure Storage-Dienst
 
-Wenn Sie mehr über Azure Storage erfahren möchten, bevor Sie am Code arbeiten, finden Sie die entsprechenden Informationen unter [Nächste Schritte][].
+Wenn Sie mehr über Azure Storage erfahren möchten, bevor Sie am Code arbeiten, finden Sie die entsprechenden Informationen unter [Nächste Schritte](#next-steps).
 
 ## Ausführen Ihrer ersten Azure Storage-Anwendung auf dem Azure-Speicheremulator
 
@@ -56,7 +56,7 @@ Führen Sie die Beispielanwendung nun mithilfe des [Azure-Speicheremulators](htt
 2.	Wählen Sie in Visual Studio im Menü **Build** die Option **Projektmappe bereitstellen** aus. 
 3.	Drücken Sie im Menü **Debuggen** auf **F11**, um die Projektmappe Schritt für Schritt auszuführen, oder **F5**, um die Projektmappe auszuführen.
 
-## Ausführen Ihrer ersten Azure Storage-Anwendung über den Azure Storage-Dienst
+## Ausführen Ihrer ersten Azure Storage-Anwendung über Azure Storage in der Cloud
 In diesem Abschnitt wird durch die Entwicklung einer Beispielanwendung über den [Azure Storage-Dienst](http://azure.microsoft.com/documentation/services/storage/) veranschaulicht, wie Sie **Azure Storage-Blobs**, **-Tabellen** und **-Warteschlangen** bei der Programmierung einbinden können.
 
 Führen Sie zum Abschließen dieses Abschnitts folgende notwendige Aufgaben durch:
@@ -112,4 +112,4 @@ Weitere Informationen hierzu finden Sie unter folgenden Links:
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
 
 
-<!--HONumber=47-->
+<!--HONumber=52-->

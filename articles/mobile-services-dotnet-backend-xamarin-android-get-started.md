@@ -1,7 +1,7 @@
-<properties 
+﻿<properties 
 	pageTitle="Erste Schritte mit Mobile Services für Xamarin Android-Apps - Azure Mobile Services" 
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Xamarin Android-Entwicklung." 
-	services="" 
+	services="mobile-services" 
 	documentationCenter="xamarin" 
 	authors="lindydonna" 
 	manager="dwrede" 
@@ -10,9 +10,9 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-xamarin-android" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="dotnet" 
-	ms.topic="article" 
+	ms.topic="hero-article" 
 	ms.date="11/11/2014" 
 	ms.author="donnam"/>
 
@@ -30,9 +30,9 @@ Unten sehen Sie einen Screenshot aus der fertigen App:
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Services-Lernprogramme für Xamarin Android-Apps. 
 
->[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-xamarin-android-get-started" target="_blank">Kostenlose Azure-Testversion</a>.<br />Für dieses Lernprogramm ist <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a> erforderlich. Dazu ist eine kostenlose Testversion verfügbar.
+>[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen erhalten Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-xamarin-android-get-started" target="_blank">1 Monat kostenlose Testversion</a>.<br />Für dieses Lernprogramm ist <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a> erforderlich. Dazu ist eine kostenlose Testversion verfügbar.
 
-## Erstellen eines neuen mobilen Dienstes
+## Erstellen eines neuen mobilen Diensts
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
 
@@ -52,13 +52,13 @@ In diesem Abschnitt laden Sie eine neue Xamarin Android-App  und ein Dienstproje
 
   	![][7]
 
-3. Falls noch nicht geschehen, sollten Sie <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a> auf den lokalen Computer oder virtuellen Computer herunterladen und installieren.  
+3. Falls noch nicht geschehen, sollten Sie <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a> auf dem lokalen Computer oder virtuellen Computer herunterladen und installieren.  
 
-4. Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Xamarin Studio] oder Xamarin für Visual Studio herunter, und installieren Sie die entsprechende Anwendung.
+4. Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Xamarin Studio] oder Xamarin für Visual Studio herunter, und installieren Sie diese.
 
 5. Wählen Sie unter **Service in der Cloud herunterladen und veröffentlichen** die Option **Android** aus, und klicken Sie auf **Herunterladen**. 
 
-  	Daraufhin wird eine Lösung heruntergeladen, die Projekte für den mobilen Dienst und für die beispielhafte _To do list_-Anwendung, die mit dem mobilen Dienst verbunden ist, enthält. Speichern Sie die komprimierte Projektdatei auf dem lokalen Computer und merken Sie sich, wo Sie sie gespeichert haben.
+  	Daraufhin wird eine Lösung heruntergeladen, die Projekte für den mobilen Dienst und für die _To-Do-Listen_-Beispielanwendung, die mit dem mobilen Dienst verbunden ist, enthält. Speichern Sie die komprimierte Projektdatei auf dem lokalen Computer und merken Sie sich, wo Sie sie gespeichert haben.
 
 6. Laden Sie das Veröffentlichungsprofil herunter, speichern Sie die heruntergeladene Datei auf dem lokalen Computer, und notieren Sie sich den Speicherort.
 
@@ -84,20 +84,20 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	> [AZURE.NOTE] Sie müssen mindestens ein Android Virtual Device (AVD) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
 
-3. Geben Sie in der App sinnvollen Text ein, z. B. _Complete the tutorial_, und klicken Sie dann auf das Pluszeichen (**+**).
+3. Geben Sie in der App einen sinnvollen Text, wie z. B. _Lernprogramm abschließen_ ein, und klicken Sie dann auf das Plus-Symbol (**+**).
 
 	![][10]
 
 	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen Dienst zurückgegeben, und die Daten werden in der Liste angezeigt.
 
 	> [AZURE.NOTE] 
-   	> Sie können den Code überprüfen, der auf den Mobile Service zugreift, um Daten abzufragen und einzufügen. Sie finden ihn in der C#-Datei ToDoActivity.cs.
+   	> Sie können den Code überprüfen, der zum Abfragen und Einfügen von Daten auf den mobilen Dienst zugreift. Der Code befindet sich in der C#-Datei "ToDoActivity.cs".
     
 ## Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden: 
 
 * [Erste Schritte mit der Offline-Datensynchronisierung]
-  <br/>Erfahren Sie mehr darüber, wie vom Schnellstart die Offline-Datensynchronisierung verwendet wird, um die App reaktionsfähig und stabil zu machen.
+  <br/>Erfahren Sie, wie der Schnellstart die Offline-Datensynchronisierung verwendet, um die App reaktionsfähig und stabil zu machen.
 
 * [Erste Schritte mit der Authentifizierung]
   <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
@@ -124,22 +124,20 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [10]: ./media/mobile-services-dotnet-backend-xamarin-android-get-started/mobile-quickstart-startup-android.png
 
 <!-- URLs. -->
-[Erste Schritte mit der Offline-Datensynchronisierung]: /de-de/documentation/articles/mobile-services-xamarin-android-get-started-offline-data
-[Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-users
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-push
+[Erste Schritte mit der Offline-Datensynchronisierung]: mobile-services-xamarin-android-get-started-offline-data.md
+[Erste Schritte mit der Authentifizierung]: mobile-services-dotnet-backend-xamarin-android-get-started-users.md
+[Erste Schritte mit Pushbenachrichtigungen]: mobile-services-dotnet-backend-xamarin-android-get-started-push.md
 [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [JavaScript und HTML]: mobile-services-win8-javascript/
 [Verwaltungsportal]: https://manage.windowsazure.com/
-[JavaScript-Back-End-Version]: /de-de/documentation/articles/partner-xamarin-mobile-services-android-get-started
-[Erste Schritte mit Daten in Mobile Services mit Visual Studio 2012]: /de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-data-vs2012
-[Problembehandlung beim Mobile Services .NET-Back-End]: /de-de/documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot/
+[JavaScript-Back-End-version]: partner-xamarin-mobile-services-android-get-started.md
+[Erste Schritte mit Daten in Mobile Services mit Visual Studio 2012]: mobile-services-windows-store-dotnet-get-started-data-vs2012.md
+[Problembehandlung beim Mobile Services .NET-Back-End]: mobile-services-dotnet-backend-how-to-troubleshoot.md
 
 
 [Xamarin Studio]: http://xamarin.com/download
 [Xcode]: https://go.microsoft.com/fwLink/?LinkID=266532&clcid=0x409
 [Xamarin für Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
 
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

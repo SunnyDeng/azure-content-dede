@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Einrichten des Computers für die Media Services-Entwicklung mit .NET" 
 	description="Lernen Sie die Voraussetzungen für Media Services bei Verwendung des Media Services SDK für .NET kennen. Erfahren Sie zudem, wie Sie eine Visual Studio-App erstellen." 
 	services="media-services" 
@@ -16,28 +16,28 @@
 	ms.date="02/02/2015" 
 	ms.author="juliako"/>
 
-# Media Services-Entwicklung mit .NET 
+#Media Services-Entwicklung mit .NET 
 
 In diesem Thema wird das Entwickeln von Media Services-Anwendungen mit .NET erläutert. 
 
 Die Bibliothek für das **Azure Media Services .NET SDK** ermöglicht es Ihnen, unter Verwendung von .NET für Media Services zu programmieren. Um die Entwicklung mit .NET weiter zu vereinfachen, steht die Bibliothek für **Azure Media Services .NET SDK-Erweiterungen** zur Verfügung. Diese Bibliothek enthält eine Reihe von Erweiterungsmethoden und Hilfsfunktionen, die Ihren .NET-Code vereinfachen. Beide Bibliotheken sind über **NuGet** und **GitHub** verfügbar.
  
 
-## Voraussetzungen
+##Voraussetzungen
 
--   Ein Mediendienstekonto in einem neuen oder existierenden Azure-Abonnement. Weitere Informationen finden Sie unter [Erstellen eines Media Services-Kontos](media-services-create-account.md).
+-   Ein Mediendienstekonto in einem neuen oder existierenden Azure-Abonnement. Weitere Informationen finden Sie unter [Erstellen eines Media Services-Kontos](media-services-create-account.md)..
 -   Betriebssysteme: Windows 7, Windows 2008 R2 oder Windows 8.
--   .NET Framework 4.5.
+-   .NET Framework 4,5.
 -   Visual Studio 2013, Visual Studio 2012 oder Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express). 
   
 
-## Erstellen und Konfigurieren eines Visual Studio-Projekts 
+##Erstellen und Konfigurieren eines Visual Studio-Projekts 
 
 Dieser Abschnitt beschreibt, wie Sie ein Projekt in Visual Studio erstellen und für die Mediendienste-Entwicklung einrichten.  Es handelt sich um eine C# Windows-Konsolenanwendung, allerdings gelten für andere Typen von Projekten für Mediendienst-Anwendungen (z. B. eine Windows Forms-Anwendung oder ASP.NET-Webanwendung) dieselben Schritte.
 
 In diesem Abschnitt wird beschrieben, wie Sie mithilfe von **NuGet** das Media Services .NET SDK und andere abhängige Bibliotheken hinzufügen. 
 
-Alternativ können Sie die neuesten Media Services .NET SDK-Komponenten von GitHub ([github.com/Azure/azure-sdk-for-media-services](https://github.com/Azure/azure-sdk-for-media-services) und [github.com/Azure/azure-sdk-for-media-services-extensions](https://github.com/Azure/azure-sdk-for-media-services-extensions)) herunterladen, die Projektmappe erstellen und die Verweise zum Clientprojekt hinzufügen. Beachten Sie, dass alle erforderlichen Abhängigkeiten automatisch heruntergeladen und extrahiert werden.   
+Sie können auch die neuesten Media Services .NET SDK-Komponenten von GitHub ([github.com/Azure/azure-sdk-for-media-services](https://github.com/Azure/azure-sdk-for-media-services) und [github.com/Azure/azure-sdk-for-media-services-extensions](https://github.com/Azure/azure-sdk-for-media-services-extensions)) herunterladen, die Projektmappe erstellen und die Verweise zum Clientprojekt hinzufügen. Beachten Sie, dass alle erforderlichen Abhängigkeiten automatisch heruntergeladen und extrahiert werden.   
 
 1. Erstellen Sie eine neue C#-Konsolenanwendung in Visual Studio 2013, Visual Studio 2012 oder Visual Studio 2010 SP1. Geben Sie den **Namen**, **Speicherort**, und den **Projektmappennamen** an, und klicken Sie dann auf OK. 
 
@@ -48,11 +48,11 @@ Alternativ können Sie die neuesten Media Services .NET SDK-Komponenten von GitH
 	
 	2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Namen des Projekts, und wählen Sie "NuGet-Pakete verwalten..." aus.
 	
-		The Manage NuGet Packages dialog box appears.
+		Das Dialogfeld "NuGet-Pakete verwalten" wird geöffnet.
 
 	3. Suchen Sie im Onlinekatalog nach den Azure Media Services-Erweiterungen, wählen Sie die Azure Media Services .NET SDK-Erweiterungen aus, und klicken Sie dann auf die Schaltfläche "Installieren".
  
-		Das Projekt wird geändert, und Verweise auf die Media Services .NET SDK-Erweiterungen, das Media Services .NET SDK und andere abhängige Assemblys werden hinzugefügt.
+		Das Projekt wird geändert, und Verweise auf die Media Services .NET SDK-Erweiterungen, das Media Services .NET-SDK und andere abhängige Assemblys werden hinzugefügt.
 
 	4. Um die Entwicklungsumgebung übersichtlicher zu halten, sollten Sie die Verwendung von NuGet Package Restore in Erwägung ziehen. Weitere Informationen finden Sie unter [NuGet Package Restore](http://docs.nuget.org/consume/package-restore).
 
@@ -68,7 +68,7 @@ Alternativ können Sie die neuesten Media Services .NET SDK-Komponenten von GitH
 	3. Klicken Sie auf "OK".
 
 
-4. Öffnen Sie die Datei "App.config" (fügen Sie die Datei dem Projekt hinzu, wenn sie nicht standardmäßig hinzugefügt wurde) und fügen Sie einen *appSettings* Abschnitt zu der Datei hinzu. Legen Sie die Werte für Ihren Azure Media Services-Kontonamen und Schlüssel fest, wie im folgenden Beispiel gezeigt. 
+4. Öffnen Sie die Datei "App.config" (fügen Sie die Datei dem Projekt hinzu, wenn sie nicht standardmäßig hinzugefügt wurde), und fügen Sie einen *appSettings*-Abschnitt in der Datei hinzu. Legen Sie die Werte für Ihren Azure Media Services-Kontonamen und Schlüssel fest, wie im folgenden Beispiel gezeigt. 
 	
 	Um den **Kontonamen** und Informationen zum **Kontoschlüssel** zu erhalten, öffnen Sie das **Azure-Verwaltungsportal**, wählen Ihr Media Services-Konto aus und klicken auf die Schaltfläche **SCHLÜSSEL VERWALTEN**.
 
@@ -97,4 +97,4 @@ Alternativ können Sie die neuesten Media Services .NET SDK-Komponenten von GitH
 
 Nun können Sie mit der Entwicklung einer Mediendienste-Anwendung beginnen.    
 
-<!--HONumber=45--> 
+<!--HONumber=52-->

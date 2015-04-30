@@ -17,7 +17,7 @@
 	ms.author="juliako"/>
 
 
-# Vorgehensweise: Verwalten von Medienobjekten im Speicher
+#Gewusst wie: Verwalten von Medienobjekten im Speicher
 
 Dieser Artikel gehört zur Reihe [Media Services: Video-on- Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).  
 
@@ -85,4 +85,4 @@ Der folgende Codeausschnitt löscht alle Medienobjekte aus dem Media Services-Ko
 	}
 
 
-<!--HONumber=45--> 
+<!--HONumber=52-->

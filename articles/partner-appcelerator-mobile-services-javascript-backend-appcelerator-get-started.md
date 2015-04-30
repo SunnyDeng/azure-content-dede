@@ -10,9 +10,9 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-appcelerator" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="multiple" 
-	ms.topic="article" 
+	ms.topic="hero-article" 
 	ms.date="11/24/2014" 
 	ms.author="mahender"/>
 
@@ -52,7 +52,7 @@ Wenn Sie für Android entwickeln, benötigen Sie außerdem Android 4.3 SDK oder 
 
 Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der neuen App.
 
-1. Öffnen Sie Titanium Studio, und gehen Sie zu **File -> Import**, um das zuvor heruntergeladene Projekt zu importieren.
+1. Öffnen Sie Titanium Studio, und importieren Sie über **File -> Import** das zuvor heruntergeladene Projekt.
 
     ![][0]
 
@@ -78,7 +78,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
     ![][5]
 
-8.	Klicken Sie im nächsten Bildschirm auf das Plus-Symbol (+), und geben Sie ein beschreibenden Text ein, wie etwa &quot;Dieses Lernprogramm abschließen&quot;, klicken Sie dann auf die Schaltfläche "Save".<br />
+8.	Klicken Sie im nächsten Bildschirm auf das Plus-Smybol (+), und geben Sie ein beschreibenden Text ein, wie etwa &quot;Dieses Lernprogramm abschließen&quot;. Klicken Sie dann auf die Schaltfläche "Speichern".<br />
 
     ![][6]
 
@@ -91,7 +91,7 @@ Dadurch wird eine POST-Anforderung an den neuen, in Microsoft Azure gehosteten m
 
 >[AZURE.NOTE] Sie können den Code überprüfen, der auf Ihren mobilen Dienst zugreift, um Daten abzufragen und einzufügen. Der Code befindet sich in der Datei "TodoService.m".
 
-4. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
+4. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
    	![][9]
 
@@ -127,11 +127,7 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 <!-- URLs. -->
 [Todolist-Anwendung]: http://go.microsoft.com/fwlink/p/?LinkId=506859
 [Appcelerator Titanium]: http://go.microsoft.com/fwlink/p/?LinkID=509987
-[Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-users
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push
+[Erste Schritte mit der Authentifizierung]: partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-users.md
+[Erste Schritte mit Pushbenachrichtigungen]: partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push.md
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

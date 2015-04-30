@@ -1,51 +1,42 @@
-﻿<properties 
+<properties 
 	pageTitle="Was ist das Azure WebJobs-SDK?" 
 	description="Eine Einführung in Bezug auf das Azure WebJobs-SDK. Erläutert, was das SDK ist, typische Szenarien, für die es nützlich ist, und enthält Codebeispiele." 
-	services="web-sites, storage" 
+	services="app-service\web, storage" 
 	documentationCenter=".net" 
 	authors="tdykstra" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/12/2014" 
+	ms.date="04/03/2015" 
 	ms.author="tdykstra"/>
 
 # Was ist das Azure WebJobs-SDK?
 
-Dieser Artikel erläutert, was das WebJobs-SDK ist. In ihm werden einige allgemeine Szenarien beleuchtet, für die es nützlich ist, und er enthält eine Übersicht, wie sie das SDK in Ihrem Code verwenden können.
-
-## Inhaltsverzeichnis
-
-- [Übersicht](#overview)
-- [Szenarien](#scenarios)
-- [Codebeispiele](#code)
-- [Verwenden des Webaufträge-SDK außerhalb von Webaufträgen](#workerrole)
-- [Verwenden des Webaufträge-SDK zum Aufrufen einer beliebigen Funktion](#nostorage)
-- [Nächste Schritte](#nextsteps)
-
 ## <a id="overview"></a>Übersicht
 
-[WebJobs](web-sites-create-web-jobs.md) ist ein Feature von Azure-Websites, mit dem Sie ein Programm oder Skript im selben Kontext wie eine Website ausführen können. Der Zweck des WebJobs-SDKs besteht darin, die Aufgabe für das Schreiben von Code zu vereinfachen, die als ein WebJob ausgeführt wird und mit Azure Storage-Warteschlangen, Blobs und Tabellen sowie Servicebus-Warteschlangen funktioniert.
+Dieser Artikel erläutert, was das WebJobs-SDK ist. In ihm werden einige allgemeine Szenarien beleuchtet, für die es nützlich ist, und er enthält eine Übersicht, wie sie das SDK in Ihrem Code verwenden können.
+
+[Webaufträge](web-sites-create-web-jobs.md) sind ein Feature von Azure App Service, mit dem Sie ein Programm oder Skript im selben Kontext wie eine Web-App ausführen können. Der Zweck des WebJobs-SDKs besteht darin, die Aufgabe für das Schreiben von Code zu vereinfachen, die als ein WebJob ausgeführt wird und mit Azure Storage-Warteschlangen, Blobs und Tabellen sowie Servicebus-Warteschlangen funktioniert.
 
 Das WebJobs-SDK enthält die folgenden Komponenten:
 
 * **NuGet-Pakete**. NuGet-Pakete, die Sie zu einem Visual Studio-Konsolenanwendungsprojekt hinzufügen, bieten ein Framework, das Ihr Code verwendet, um mit dem Azure Storage-Dienst oder Service-Warteschlangen zu interagieren.   
   
-* **Dashboard**. Ein Teil des WebJobs-SDKs ist in Azure-Websites enthalten und bietet eine umfangreiche Überwachung und Diagnose für Programme, die NuGet-Pakete verwenden. Sie müssen keinen Code schreiben, um diese Überwachungs- und Diagnosefeatures zu verwenden.
+* **Dashboard**. Ein Teil des Webaufträge-SDKs ist in Azure App Service enthalten und bietet eine umfangreiche Überwachung und Diagnose für Programme, die NuGet-Pakete verwenden. Sie müssen keinen Code schreiben, um diese Überwachungs- und Diagnosefeatures zu verwenden.
 
-## <a id="scenarios"></a>Szenarien
+## <a id="scenarios"></a>Szenarios
 
 Im Folgenden finden Sie einige typische Szenarien, die Sie mit dem Azure WebJobs-SDK einfacher umsetzen können:
 
 * Bildverarbeitung oder andere CPU-intensive Arbeiten. Ein übliches Feature von Websites ist die Fähigkeit, Bilder oder Videos hochzuladen. Oftmals möchten Sie den Inhalt ändern, nachdem er hochgeladen wurde, dabei soll der Benutzer aber nicht warten, während Sie dies vornehmen.
 
-* Warteschlangenverarbeitung. Eine übliche Möglichkeit, damit ein Web-Front-End mit einem Back-End-Dienst kommunizieren kann, besteht in der Verwendung von Warteschlangen. Wenn die Website die Arbeit abschließen muss, überträgt sie eine Nachricht auf eine Warteschlange. Ein Back-End-Dienst bezieht Nachrichten aus der Warteschlange und führt die Arbeit aus. Sie können Warteschlangen für die Bildbearbeitung verwenden: Versetzen Sie beispielsweise, nachdem der Benutzer einige Dateien hochgeladen hat, die Dateinamen in eine Warteschlangennachricht, die vom Back-End für die Verarbeitung abgeholt wird. Alternativ könnten Sie Warteschlangen zum Verbessern der Websitereaktionsfähigkeit verwenden. Anstelle beispielsweise direkt in eine SQL-Datenbank zu schreiben, schreiben Sie in eine Warteschlange, teilen Sie dem Benutzer mit, dass Sie fertig sind, und überlassen Sie dem Back-End-Dienst die Verarbeitung der relationalen Datenbankarbeit mit hoher Latenz. Ein Beispiel einer Warteschlangenverarbeitung mit einem Bildvorgang finden Sie im [Lernprogramm für die ersten Schritte über das Webaufträge-SDK](websites-dotnet-webjobs-sdk-get-started.md).
+* Warteschlangenverarbeitung. Eine übliche Möglichkeit, damit ein Web-Front-End mit einem Back-End-Dienst kommunizieren kann, besteht in der Verwendung von Warteschlangen. Wenn die Website die Arbeit abschließen muss, überträgt sie eine Nachricht auf eine Warteschlange. Ein Back-End-Dienst bezieht Nachrichten aus der Warteschlange und führt die Arbeit aus. Sie können Warteschlangen für die Bildbearbeitung verwenden: Versetzen Sie beispielsweise, nachdem der Benutzer einige Dateien hochgeladen hat, die Dateinamen in eine Warteschlangennachricht, die vom Back-End für die Verarbeitung abgeholt wird. Alternativ könnten Sie Warteschlangen zum Verbessern der Websitereaktionsfähigkeit verwenden. Anstelle beispielsweise direkt in eine SQL-Datenbank zu schreiben, schreiben Sie in eine Warteschlange, teilen Sie dem Benutzer mit, dass Sie fertig sind, und überlassen Sie dem Back-End-Dienst die Verarbeitung der relationalen Datenbankarbeit mit hoher Latenz. Ein Beispiel einer Warteschlangenverarbeitung mit einem Bildvorgang finden Sie im [Lernprogramm für die ersten Schritte mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-get-started.md).
 
 * RSS-Aggregation. Wenn Sie über eine Website verfügen, die eine Liste von RSS-Feeds verwaltet, könnten Sie alle Artikel aus den Feeds in einen Hintergrundvorgang einziehen.
 
@@ -97,7 +88,7 @@ Das WebJobs-SDK bietet viele Möglichkeiten für die Arbeit mit Azure Storage. W
 
 Ein das WebJobs-SDK verwendende Programm ist eine standardmäßige Konsolenanwendung und kann überall ausgeführt werden - es muss nicht als ein WebJob ausgeführt werden. Sie können das Programm lokal auf Ihrem Entwicklungscomputer testen, und in der Produktion können Sie es als eine Cloud-Dienst-Workerrolle oder einen Windows-Dienst ausführen, wenn Sie eine dieser Umgebungen bevorzugen. 
 
-Das Dashboard steht jedoch nur als eine Websiteerweiterung für eine Azure-Website zur Verfügung. Wenn Sie es außerhalb von einem WebJob ausführen und das Dashboard weiterhin verwenden möchten, können Sie eine Azure-Website so konfigurieren, dasselbe Speicherkonto zu verwenden, worauf Ihre WebJobs-SDK-Dashboardverbindungszeichenfolge verweist, und das WebJobs-Dashboard dieser Website zeigt dann Daten über die Funktionsausführung von Ihrem Programm an, das irgendwo anders ausgeführt wird. Sie können das Dashboard über die URL https://*{websitename}*.scm.azurewebsites.net/azurejobs/#/functions abrufen. Weitere Informationen finden Sie unter [Getting a dashboard for local development with the WebJobs SDK](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx) (Abrufen eines Dashboards für die lokale Entwicklung mit dem Webaufträge-SDK, in englischer Sprache). Beachten Sie jedoch, dass im Blogbeitrag ein alter Verbindungszeichenfolgenname gezeigt wird. 
+Das Dashboard steht jedoch nur als eine Erweiterung für eine Azure App Services-Web-App zur Verfügung. Wenn Sie es außerhalb von einem Webauftrag ausführen und das Dashboard weiterhin verwenden möchten, können Sie eine Web-App so konfigurieren, dasselbe Speicherkonto zu verwenden, worauf Ihre Webaufträge-SDK-Dashboardverbindungszeichenfolge verweist, und das Webaufträge-Dashboard dieser Web-App zeigt dann Daten über die Funktionsausführung von Ihrem Programm an, das irgendwo anders ausgeführt wird. Sie können das Dashboard über die URL https://*{webappname}*.scm.azurewebsites.net/azurejobs/#/functions abrufen. Weitere Informationen finden Sie unter [Getting a dashboard for local development with the WebJobs SDK](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx) (Abrufen eines Dashboards für die lokale Entwicklung mit dem Webaufträge-SDK, in englischer Sprache). Beachten Sie jedoch, dass im Blogbeitrag ein alter Verbindungszeichenfolgenname gezeigt wird. 
 
 ## <a id="nostorage"></a>Verwenden des Webaufträge-SDK zum Aufrufen einer beliebigen Funktion
 
@@ -105,16 +96,12 @@ Das WebJobs-SDK bietet verschiedene Vorteile, auch wenn Sie nicht direkt mit Azu
 
 * Sie können Funktionen im Dashboard aufrufen.
 * Sie können Funktionen im Dashboard wiedergeben.
-* Sie können Protokolle im Dashboard anzeigen, die mit dem bestimmten Webauftrag (Anwendungsprotokolle) oder mit dem bestimmten Funktionsaufruf verknüpft sind, die sie generiert haben (`TextWriter`-Parameterprotokolle). 
+* Sie können im Dashboard Protokolle anzeigen, die dem jeweiligen Webauftrag zugeordnet (Anwendungsprotokolle, die mit "Console.Out", "Console.Error", "Trace" usw. geschrieben wurden) oder mit dem speziellen Funktionsaufruf verknüpft sind, der sie generiert hat (Protokolle, die mit einem `TextWriter`-Objekt geschrieben wurde, das das SDK als Parameter an die Funktion übergibt). 
 
-* Weitere Informationen finden Sie unter [Manuelles Aufrufen einer Funktion](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#manual) und [Schreiben von Protokollen](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs) 
+* Weitere Informationen finden Sie unter [Manuelles Aufrufen einer Funktion](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#manual) und [Schreiben von Protokollen](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#logs) 
 
 ## <a id="nextsteps"></a>Nächste Schritte
 
 Weitere Informationen über das Webaufträge-SDK finden Sie im Thema [Empfohlene Ressourcen für Azure-Webaufträge](http://go.microsoft.com/fwlink/?linkid=390226).
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

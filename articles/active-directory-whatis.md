@@ -44,6 +44,6 @@ Azure AD weist eine Reihe von Funktionsebenen auf, die von einem Cloud-Verzeichn
 
 * [Als Unternehmen für Azure registrieren](/manage/services/identity/organizational-account/)
 * [Azure-Identität](/manage/windows/fundamentals/identity/)
-* [Informationen in MSDN zu Azure AD](http://go.microsoft.com/fwlink/?LinkId=293425)
+* [Informationen in MSDN zur Azure AD-Bibliothek](http://go.microsoft.com/fwlink/?LinkId=293425)
 
-<!--HONumber=47-->
+<!--HONumber=52-->

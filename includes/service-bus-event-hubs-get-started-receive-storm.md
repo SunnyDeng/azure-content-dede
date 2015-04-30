@@ -1,4 +1,4 @@
-﻿## Empfangen von Nachrichten mit Apache Storm
+## Empfangen von Nachrichten mit Apache Storm
 
 [**Apache Storm**](https://storm.incubator.apache.org) ist ein verteiltes Echtzeit-Berechnungssystem, das die zuverlässige Verarbeitung von unbegrenzten Datenströmen vereinfacht. In diesem Abschnitt wird gezeigt, wie Sie den Ereignis-Hub-Spout in Storm zum Empfangen von Ereignissen vom Ereignis-Hubs verwenden. Mit Apache Storm können Sie Ereignisse auf mehrere Prozesse aufteilen, die in verschiedenen Knoten gehostet werden. Die Ereignis-Hub-Integration in Storm vereinfacht die Ereignisnutzung durch transparente Prüfung des Fortschritts mithilfe der Zookeeper Installation von Storm, der Verwaltung von permanenten Prüfpunkten und dem parallelen von Ereignissen von Ereignis-Hubs.
 
@@ -6,7 +6,7 @@ Weitere Informationen zu Empfangsmustern von Ereignis-Hubs finden Sie unter [Üb
 
 In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in der der Ereignis-Hub-Spout bereits verfügbar ist.
 
-1. Gehen Sie wie unter [HDInsight Storm - Erste Schritte](http://azure.microsoft.com/documentation/articles/hdinsight-storm-getting-started/) beschrieben vor, um ein neues HDInsight-Cluster zu erstellen und über Remotedesktop eine Verbindung damit herzustellen.
+1. Gehen Sie wie unter [HDInsight Storm - Erste Schritte](../articles/hdinsight-storm-getting-started.md) beschrieben vor, um ein neues HDInsight-Cluster zu erstellen und über Remotedesktop eine Verbindung damit herzustellen.
 
 2. Kopieren Sie die Datei `%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar` in Ihre lokale Entwicklungsumgebung. Sie enthält events-storm-spout.
 
@@ -25,7 +25,7 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 7. Fügen Sie **GroupId** und **ArtifactId** ein, und klicken Sie auf **Finish**
 
 8. Fügen Sie in der Datei **pom.xml** die folgenden Abhängigkeiten in den Knoten `<dependency>` ein.
-		
+
 		<dependency>
 			<groupId>org.apache.storm</groupId>
 			<artifactId>storm-core</artifactId>
@@ -57,20 +57,20 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 9. Erstellen Sie im Ordner **src** eine Datei namens **Config.properties**, und kopieren Sie den folgenden Inhalt, wobei Sie die folgenden Werte ersetzen:
 
 		eventhubspout.username = ReceiveRule
-		
+
 		eventhubspout.password = {receive rule key}
-		
+
 		eventhubspout.namespace = ioteventhub-ns
-		
+
 		eventhubspout.entitypath = {event hub name}
-		
+
 		eventhubspout.partitions.count = 16
-		
-		# if not provided, will use storm's zookeeper settings
+
+		# fehlt die Angabe, werden die zookeeper-Einstellungen von Storm verwendet
 		# zookeeper.connectionstring=localhost:2181
-		
+
 		eventhubspout.checkpoint.interval = 10
-		
+
 		eventhub.receiver.credits = 10
 
 	Der Wert für **eventhub.receiver.credits** bestimmt, wie viele Ereignisse als Stapel verarbeitet werden, bevor sie für die Storm-Pipeline freigegeben werden. Der Einfachheit halber wird in diesem Beispiel der Wert auf 10 gesetzt. In einer Produktionsumgebung sollten normalerweise höhere Werte festgelegt werden, beispielsweise 1024.
@@ -85,31 +85,31 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 		import backtype.storm.topology.OutputFieldsDeclarer;
 		import backtype.storm.topology.base.BaseRichBolt;
 		import backtype.storm.tuple.Tuple;
-		
+
 		public class LoggerBolt extends BaseRichBolt {
 			private OutputCollector collector;
 			private static final Logger logger = LoggerFactory
 				      .getLogger(LoggerBolt.class);
-		
+
 			@Override
-			public void execute(Tuple tuple) {				
+			public void execute(Tuple tuple) {
 				String value = tuple.getString(0);
-				logger.info("Tuple value: " + value);
-				
+				logger.info("Tuplewert: " + value);
+
 				collector.ack(tuple);
 			}
-		
+
 			@Override
 			public void prepare(Map map, TopologyContext context, OutputCollector collector) {
 				this.collector = collector;
 				this.count = 0;
 			}
-		
+
 			@Override
 			public void declareOutputFields(OutputFieldsDeclarer declarer) {
-				// no output fields
+				// keine Ausgabefelder
 			}
-		
+
 		}
 
 	Diese Storm-Klasse protokolliert den Inhalt der empfangenen Ereignisse. Sie kann problemlos erweitert werden, um Tupel in einem Speicherdienst speichern. Im [Lernprogramm zur HDInsight-Sensoranalyse] wird derselbe Ansatz zum Speichern von Daten in HBase verwendet.
@@ -126,11 +126,11 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 		import com.microsoft.eventhubs.samples.EventCount;
 		import com.microsoft.eventhubs.spout.EventHubSpout;
 		import com.microsoft.eventhubs.spout.EventHubSpoutConfig;
-		
+
 		public class LogTopology {
 			protected EventHubSpoutConfig spoutConfig;
 			protected int numWorkers;
-		
+
 			protected void readEHConfig(String[] args) throws Exception {
 				Properties properties = new Properties();
 				if (args.length > 1) {
@@ -139,7 +139,7 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 					properties.load(EventCount.class.getClassLoader()
 							.getResourceAsStream("Config.properties"));
 				}
-		
+
 				String username = properties.getProperty("eventhubspout.username");
 				String password = properties.getProperty("eventhubspout.password");
 				String namespaceName = properties
@@ -152,33 +152,33 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 				int checkpointIntervalInSeconds = Integer.parseInt(properties
 						.getProperty("eventhubspout.checkpoint.interval"));
 				int receiverCredits = Integer.parseInt(properties
-						.getProperty("eventhub.receiver.credits")); // prefetch count
-																	// (opt)
-				System.out.println("Eventhub spout config: ");
-				System.out.println("  partition count: " + partitionCount);
-				System.out.println("  checkpoint interval: "
+						.getProperty("eventhub.receiver.credits")); // Vorabrufanzahl
+																	// (opt.)
+				System.out.println("Ereignis-Hub-Spout-Konfiguration: ");
+				System.out.println(" Partitionsanzahl: " + partitionCount);
+				System.out.println(" Checkpoint-Intervall: "
 						+ checkpointIntervalInSeconds);
-				System.out.println("  receiver credits: " + receiverCredits);
-		
+				System.out.println(" Empfängerguthaben: " + receiverCredits);
+
 				spoutConfig = new EventHubSpoutConfig(username, password,
 						namespaceName, entityPath, partitionCount, zkEndpointAddress,
 						checkpointIntervalInSeconds, receiverCredits);
-		
-				// set the number of workers to be the same as partition number.
-				// the idea is to have a spout and a logger bolt co-exist in one
-				// worker to avoid shuffling messages across workers in storm cluster.
+
+				// Die Anzahl der Worker sollte mit der Partitionsanzahl identisch sein.
+				// Dabei sollten der Spout und eine Protokollierung in einem
+				// Worker enthalten sein, um das Verschieben von Nachrichten zwischen den Workern im Storm-Cluster zu vermeiden.
 				numWorkers = spoutConfig.getPartitionCount();
-		
+
 				if (args.length > 0) {
-					// set topology name so that sample Trident topology can use it as
-					// stream name.
+					// Legen Sie den Topologienamen so fest, dass die Trident-Beispieltopologie sie als
+					// Name für den Datenstrom verwenden kann.
 					spoutConfig.setTopologyName(args[0]);
 				}
 			}
-		
+
 			protected StormTopology buildTopology() {
 				TopologyBuilder topologyBuilder = new TopologyBuilder();
-		
+
 				EventHubSpout eventHubSpout = new EventHubSpout(spoutConfig);
 				topologyBuilder.setSpout("EventHubsSpout", eventHubSpout,
 						spoutConfig.getPartitionCount()).setNumTasks(
@@ -190,14 +190,14 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 						.setNumTasks(spoutConfig.getPartitionCount());
 				return topologyBuilder.createTopology();
 			}
-		
+
 			protected void runScenario(String[] args) throws Exception {
 				boolean runLocal = true;
 				readEHConfig(args);
 				StormTopology topology = buildTopology();
 				Config config = new Config();
 				config.setDebug(false);
-		
+
 				if (runLocal) {
 					config.setMaxTaskParallelism(2);
 					LocalCluster localCluster = new LocalCluster();
@@ -209,7 +209,7 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 				    StormSubmitter.submitTopology(args[0], config, topology);
 				}
 			}
-		
+
 			public static void main(String[] args) throws Exception {
 				LogTopology topology = new LogTopology();
 				topology.runScenario(args);
@@ -220,7 +220,7 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 	Diese Klasse erstellt einen neuen Ereignis-Hubs-Spout, und verwendet die Eigenschaften in der Konfigurationsdatei zum Instanziieren. Beachten Sie unbedingt, dass in diesem Beispiel eine der Anzahl der Partitionen auf dem Ereignis-Hub entsprechende die Anzahl von Spout-Aufgaben erstellt wird, um die maximale für diesen Ereignis-Hub zulässige Parallelität zulässig zu verwenden.
 
 <!-- Links -->
-[Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn821413.aspx
+[Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn836025.aspx
 [HDInsight Storm]: http://azure.microsoft.com/documentation/articles/hdinsight-storm-overview/
 [Lernprogramm zur HDInsight-Sensoranalyse]: http://azure.microsoft.com/documentation/articles/hdinsight-storm-sensor-data-analysis/
 
@@ -229,4 +229,5 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 [12]: ./media/service-bus-event-hubs-getstarted/create-storm1.png
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
-<!--HONumber=47-->
+
+<!--HONumber=52--> 

@@ -1,11 +1,11 @@
-﻿
+
 Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der neuen App.
 
 1. Navigieren Sie zu dem Verzeichnis, in dem Sie die komprimierten Projektdateien gespeichert haben, erweitern Sie die Dateien auf Ihrem Computer, und öffnen Sie die Projektmappen-Datei in Visual Studio.
 
 2. Drücken Sie die **F5**-Taste, um das Projekt neu zu erstellen und die App zu starten.
 
-3. Geben Sie in der App einen sinnvollen Text ein, z. B. *Lernprogramm beenden* in **Ein TodoItem einfügen**, und klicken sie anschließend auf **Speichern**.
+3. Geben Sie in der App einen sinnvollen Text, z.B. *Complete the tutorial*, in **Ein TodoItem einfügen** ein, und klicken sie anschließend auf **Speichern**.
 
    	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Werte werden vom mobilen Dienst zurückgegeben, und die Daten werden in der zweiten Spalte der App angezeigt.
 
@@ -13,13 +13,10 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	Beachten Sie, dass nach dem Starten der App im vorhergehenden Schritt gespeicherte Daten aus dem mobilen Dienst geladen werden.
  
-4. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten**, und klicken Sie anschließend auf die Tabelle **TodoItems**.
-
-   	![](./media/mobile-services-javascript-backend-run-app/mobile-data-tab.png)
+4. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
    	Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.
 
-   	![](./media/mobile-services-javascript-backend-run-app/mobile-data-browse.png)
+	![](./media/mobile-services-javascript-backend-run-app/mobile-data-browse.png)
 
-
-<!--HONumber=42-->
+<!--HONumber=52-->

@@ -1,6 +1,6 @@
-<properties 
+﻿<properties 
 	pageTitle="Bereitstellen von Streaminginhalten in Media Services - Azure" 
-	description="Erfahren Sie, wie einen Locator erstellen, der zum Erstellen einer Streaming-URL verwendet wird. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." 
+	description="Erfahren Sie, wie Sie einen Locator erstellen, der zum Generieren einer Streaming-URL verwendet wird. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." 
 	authors="juliako" 
 	manager="dwrede" 
 	editor="" 
@@ -17,12 +17,12 @@
 	ms.author="juliako"/>
 
 
-# Vorgehensweise: Bereitstellen von Streaming-Inhalten
+#Gewusst wie: Bereitstellen von Streaminginhalten
 
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).  
+Dieser Artikel gehört zur Reihe [Media Services: Video-on- Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).  
 
-## Übersicht
+##Übersicht
 
 Sie können einen MP4-Satz mit adaptiver Bitrate streamen, indem Sie einen OnDemand-Streaminglocator und eine Streaming-URL erstellen. Im Thema [Codieren eines Medienobjekts](media-services-encode-asset.md) wird die Codierung in einen MP4-Satz mit adaptiver Bitrate erläutert. Bevor Sie einen Locator erstellen, sollten Sie eine Übermittlungsrichtlinie für Medienobjekte konfigurieren, wie in [diesem](media-services-dotnet-configure-asset-delivery-policy.md) Thema beschrieben. 
 
@@ -30,19 +30,19 @@ Sie können auch einen OnDemand-Streaminglocator zum Erstellen von URLs verwende
 
 In diesem Thema wird erläutert, wie Sie einen OnDemand-Streaminglocator erstellen, um Ihr Medienobjekt zu veröffentlichen und Smooth-, MPEG-DASH- sowie HLS-Streaming-URLs zu erstellen. Außerdem wird veranschaulicht, wie Sie URLs für progressive Downloads erstellen. 
   	 
-## Erstellen eines OnDemand-Streaminglocators
+##Erstellen eines OnDemand-Streaminglocators
 
 Verfahren Sie zum Erstellen des OnDemand-Streaminglocators und Abrufen von URLs wie folgt:
 
    1. Definieren Sie eine Zugriffsrichtlinie.
    2. Erstellen Sie einen OnDemand-Streaminglocator.
-   3. Wenn Sie Streamen möchten, rufen Sie die Streaming-Manifestdatei (ISM) im Medienobjekt ab. 
+   3. Wenn Sie ein Streaming planen, rufen Sie die Streaming-Manifestdatei (ISM) im Medienobjekt ab. 
    		
 	Wenn Sie einen progressiven Download ausführen möchten, rufen Sie die Namen der MP4-Dateien im Medienobjekt ab.  
    4. Erstellen Sie URLs für die Manifestdatei oder MP4-Dateien. 
    
 
-### Verwenden des Media Services .NET SDKs 
+###Verwenden des Media Services .NET SDKs 
 
 Erstellen von Streaming-URLs 
 
@@ -131,7 +131,7 @@ Codeausgabe:
 	
 	. . . 
 
-### Verwenden von Media Services .NET SDK-Erweiterungen
+###Verwenden von Media Services .NET SDK-Erweiterungen
 
 Im folgenden Code werden .NET SDK-Erweiterungsmethoden aufgerufen, durch die ein Locator erstellt und die Smooth Streaming-, HLS- und MPEG-DASH-URLs für adaptives Streaming generiert werden.
 
@@ -151,4 +151,4 @@ Im folgenden Code werden .NET SDK-Erweiterungsmethoden aufgerufen, durch die ein
 	Console.WriteLine(hlsUri);
 	Console.WriteLine(mpegDashUri);
 
-<!--HONumber=45--> 
+<!--HONumber=52-->

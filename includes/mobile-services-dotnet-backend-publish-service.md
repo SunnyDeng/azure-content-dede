@@ -1,4 +1,4 @@
-﻿
+
 
 Nachdem Sie die Client-App anhand des lokalen mobilen Diensts getestet haben, besteht der letzte Schritt dieses Lernprogramms im Veröffentlichen des mobilen Diensts in Azure und Ausführen der App mit einem Live-Dienst.
 
@@ -15,5 +15,4 @@ Nachdem Sie die Client-App anhand des lokalen mobilen Diensts getestet haben, be
 	![](./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish-2.png)
 
 	Nachdem die Veröffentlichung erfolgreich durchgeführt wurde, wird erneut die Seite zur Bestätigung angezeigt, dass der Dienst ausgeführt wird, diesmal in Azure.
-
-<!--HONumber=49-->
+<!--HONumber=52-->

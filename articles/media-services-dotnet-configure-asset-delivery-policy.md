@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Konfigurieren von Übermittlungsrichtlinien für Medienobjekte mit .NET" 
 	description="In diesem Thema wird die Konfiguration verschiedener Übermittlungsrichtlinien für Medienobjekte erläutert." 
 	services="media-services" 
@@ -16,7 +16,7 @@
 	ms.date="02/06/2015" 
 	ms.author="juliako"/>
 
-# Vorgehensweise: Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
+#Gewusst wie: Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
 
 Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md) . 
@@ -25,7 +25,7 @@ Einer der Schritte im Workflow zur Inhaltsübermittlung in Media Services ist da
 
 In diesem Thema wird erläutert, warum und wie Übermittlungsrichtlinien für Medienobjekte erstellt und konfiguriert werden. 
 
->[AZURE.NOTE]Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine Skalierungseinheit (auch als Streamingeinheit bezeichnet) verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](media-services-manage-origins#scale_streaming_endpoints.md). 
+>[AZURE.NOTE]Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine Skalierungseinheit (auch als Streamingeinheit bezeichnet) verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](media-services-manage-origins.md#scale_streaming_endpoints). 
 >
 >Darüber hinaus muss Ihr Medienobjekt einen MP4-Satz bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten.      
 
@@ -55,11 +55,11 @@ HDS
 
 Anweisungen zum Veröffentlichen eines Medienobjekts und Erstellen einer Streaming-URL finden Sie unter [Erstellen einer Streaming-URL](media-services-deliver-streaming-content.md).
 
-## Löschen einer Übermittlungsrichtlinie für Medienobjekte 
+##Löschen einer Übermittlungsrichtlinie für Medienobjekte 
 
-Mit der folgenden **ConfigureClearAssetDeliveryPolicy**-Methode wird angegeben, keine dynamische Verschlüsselung anzuwenden und den Stream unter Verwendung eines der folgenden Protokolle zu übermitteln:  MPEG-DASH-, HLS- und Smooth Streaming-Protokoll. 
+Mit der folgenden **ConfigureClearAssetDeliveryPolicy**-Methode wird angegeben, keine dynamische Verschlüsselung anzuwenden und den Stream unter Verwendung eines der folgenden Protokolle zu übermitteln:  MPEG DASH, HLS und Smooth Streaming-Protokoll. 
   
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben können. 
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln. 
 
     static public void ConfigureClearAssetDeliveryPolicy(IAsset asset)
     {
@@ -71,12 +71,12 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) 
         asset.DeliveryPolicies.Add(policy);
     }
 
-## DynamicCommonEncryption-Übermittlungsrichtlinie für Medienobjekte 
+##DynamicCommonEncryption-Übermittlungsrichtlinie für Medienobjekte 
 
 
-Durch die folgende **CreateAssetDeliveryPolicy**-Methode wird **AssetDeliveryPolicy** erstellt. Die Richtlinie ist für die Anwendung der dynamischen allgemeinen Verschlüsselung (**DynamicCommonEncryption**) auf ein Smooth Streaming-Protokoll konfiguriert (andere Protokolle werden vom Streaming ausgeschlossen). Die Methode akzeptiert zwei Parameter: **Asset** (das Medienobjekt, auf das die Übermittlungsrichtlinie angewendet werden soll) und **IContentKey** (der Inhaltsschlüssel des **CommonEncryption**-Typs. Weitere Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-dotnet-create-contentkey#common_contentkey.md)zur Verfügung steht).
+Durch die folgende **CreateAssetDeliveryPolicy**-Methode wird **AssetDeliveryPolicy** erstellt. Die Richtlinie ist für die Anwendung der dynamischen allgemeinen Verschlüsselung (**DynamicCommonEncryption**) auf ein Smooth Streaming-Protokoll konfiguriert (andere Protokolle werden vom Streaming ausgeschlossen). Die Methode akzeptiert zwei Parameter: **Asset** (das Medienobjekt, auf das die Übermittlungsrichtlinie angewendet werden soll) und **IContentKey** (der Inhaltsschlüssel des **CommonEncryption**-Typs. Weitere Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-dotnet-create-contentkey.md#common_contentkey)).
 
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben können. 
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln. 
 
 
     static public void CreateAssetDeliveryPolicy(IAsset asset, IContentKey key)
@@ -105,12 +105,12 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) 
 
 
 
-## DynamicEnvelopeEncryption-Übermittlungsrichtlinie für Medienobjekte 
+##DynamicEnvelopeEncryption-Übermittlungsrichtlinie für Medienobjekte 
 
-Durch die folgende **CreateAssetDeliveryPolicy**-Methode wird **AssetDeliveryPolicy** erstellt. Die Richtlinie ist für die Anwendung der dynamischen Umschlagverschlüsselung (**DynamicEnvelopeEncryption**) auf HLS- und DASH-Protokolle konfiguriert (andere Protokolle werden vom Streaming ausgeschlossen). Die Methode akzeptiert zwei Parameter: **Asset** (das Medienobjekt, auf das die Übermittlungsrichtlinie angewendet werden soll) und **IContentKey** (der Inhaltsschlüssel des **EnvelopeEncryption**-Typs. Weitere Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-dotnet-create-contentkey#envelope_contentkey.md)zur Verfügung steht).
+Durch die folgende **CreateAssetDeliveryPolicy**-Methode wird **AssetDeliveryPolicy** erstellt. Die Richtlinie ist für die Anwendung der dynamischen Umschlagverschlüsselung (**DynamicEnvelopeEncryption**) auf HLS- und DASH-Protokolle konfiguriert (andere Protokolle werden vom Streaming ausgeschlossen). Die Methode akzeptiert zwei Parameter: **Asset** (das Medienobjekt, auf das die Übermittlungsrichtlinie angewendet werden soll) und **IContentKey** (der Inhaltsschlüssel des **EnvelopeEncryption**-Typs. Weitere Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-dotnet-create-contentkey.md#envelope_contentkey)).
 
 
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben können.   
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln.   
 
     private static void CreateAssetDeliveryPolicy(IAsset asset, IContentKey key)
     {
@@ -150,9 +150,9 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) 
     }
 
 
-## <a id="types"></a>Beim Definieren von AssetDeliveryPolicy verwendete Typen
+##<a id="types"></a>Beim Definieren von AssetDeliveryPolicy verwendete Typen
 
-### <a id="AssetDeliveryProtocol"></a>AssetDeliveryProtocol 
+###<a id="AssetDeliveryProtocol"></a>AssetDeliveryProtocol 
 
     /// <summary>
     /// Delivery protocol for an asset delivery policy.
@@ -191,7 +191,7 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) 
         All = 0xFFFF
     }
 
-### <a id="AssetDeliveryPolicyType"></a>AssetDeliveryPolicyType
+###<a id="AssetDeliveryPolicyType"></a>AssetDeliveryPolicyType
 
     /// <summary>
     /// Policy type for dynamic encryption of assets.
@@ -225,7 +225,7 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) 
         DynamicCommonEncryption
     }
 
-### <a id="ContentKeyDeliveryType"></a>ContentKeyDeliveryType
+###<a id="ContentKeyDeliveryType"></a>ContentKeyDeliveryType
 
     /// <summary>
     /// Delivery method of the content key to the client.
@@ -248,7 +248,7 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) 
         BaselineHttp
     }
 
-### <a id="AssetDeliveryPolicyConfigurationKey"></a>AssetDeliveryPolicyConfigurationKey
+###<a id="AssetDeliveryPolicyConfigurationKey"></a>AssetDeliveryPolicyConfigurationKey
 
     /// <summary>
     /// Keys used to get specific configuration for an asset delivery policy.
@@ -290,4 +290,5 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) 
         /// </summary>
         EnvelopeEncryptionIV,
     }
-<!--HONumber=47-->
+
+<!--HONumber=52-->

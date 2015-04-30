@@ -1,5 +1,5 @@
-﻿## Senden von Nachrichten an Ereignis-Hubs
-In diesem Abschnitt schreiben wir eine Windows-Konsolenanwendung, um Ereignisse an den Ereignis-Hub zu senden.
+## Senden von Nachrichten an Ereignis-Hubs
+In diesem Abschnitt schreiben wir eine Windows-Konsolenanwendung, die Ereignisse an den Ereignis-Hub sendet.
 
 1. Erstellen Sie in Visual Studio mithilfe der Projektvorlage **Konsolenanwendung** ein neues Visual C#-Desktopanwendungsprojekt. Geben Sie dem Projekt den Namen **Sender**.
 
@@ -19,10 +19,10 @@ In diesem Abschnitt schreiben wir eine Windows-Konsolenanwendung, um Ereignisse 
 
 		using Microsoft.ServiceBus.Messaging;
 
-5. Fügen Sie die folgenden `static`-Felder der **Program**-Klasse hinzu, wobei Sie die Werte durch den Namen des im vorigen Abschnitt erstellten Ereignis-Hubs und die Verbindungszeichenfolge durch **send**-Rechte ersetzen:
+5. Fügen Sie die folgenden-Felder der **Program**-Klasse hinzu, wobei Sie die Platzhalterwerte durch den Namen des im vorigen Abschnitt erstellten Ereignis-Hubs und die Verbindungszeichenfolge mit **Senden**-Rechten ersetzen:
 
-		static string eventHubName = "{event hub name}";
-        static string connectionString = "{send connection string}";
+		static string eventHubName = "{Ereignis-Hub-name}";
+        static string connectionString = "{Verbindungszeichenfolge zum Senden}";
 
 6. Fügen Sie die folgende Methode der **Program**-Klasse hinzu:
 
@@ -34,13 +34,13 @@ In diesem Abschnitt schreiben wir eine Windows-Konsolenanwendung, um Ereignisse 
                 try
                 {
                     var message = Guid.NewGuid().ToString();
-                    Console.WriteLine("{0} > Sending message: {1}", DateTime.Now.ToString(), message);
+                    Console.WriteLine("{0} > Sende Nachricht: {1}", DateTime.Now.ToString(), message);
                     await eventHubClient.SendAsync(new EventData(Encoding.UTF8.GetBytes(message)));
                 }
                 catch (Exception exception)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("{0} > Exception: {1}", DateTime.Now.ToString(), exception.Message);
+                    Console.WriteLine("{0} > Ausnahme: {1}", DateTime.Now.ToString(), exception.Message);
                     Console.ResetColor();
                 }
 
@@ -52,8 +52,8 @@ In diesem Abschnitt schreiben wir eine Windows-Konsolenanwendung, um Ereignisse 
 
 7. Fügen Sie abschließend die folgenden Zeilen der **Main**-Methode hinzu:
 
-		Console.WriteLine("Press Ctrl-C to stop the sender process");
-        Console.WriteLine("Press Enter to start now");
+		Console.WriteLine("Drücken Sie STRG+C, um das Senden abzubrechen.");
+        Console.WriteLine("Drücken Sie zum Starten die EINGABETASTE.");
         Console.ReadLine();
         SendingRandomMessages().Wait();
 
@@ -61,4 +61,5 @@ In diesem Abschnitt schreiben wir eine Windows-Konsolenanwendung, um Ereignisse 
 <!-- Images -->
 [7]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 [8]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp2.png
-<!--HONumber=47-->
+
+<!--HONumber=52--> 

@@ -17,15 +17,15 @@
 	ms.author="juliako"/>
 
 
-# Vorgehensweise: Dynamisches Verschlüsseln eines Medienobjekts mit PlayReady oder AES-128
+#Gewusst wie: Dynamisches Verschlüsseln eines Medienobjekts mit PlayReady oder AES-128
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) and [Media Services Live Streaming workflow](media-services-live-streaming-workflow.md) .
+Dieser Artikel gehört zur Reihe [Media Services: Video-on- Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
   
-## Übersicht
+##Übersicht
 
 Mit Microsoft Azure Media Services können Sie Inhalte (dynamisch) verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und PlayReady-DRM. Media Services umfasst auch einen Dienst für die Übermittlung von Schlüsseln und PlayReady-Lizenzen an autorisierte Clients. Zum Übermitteln geschützten Inhalts müssen Sie die Autorisierungsrichtlinie für Inhaltsschlüssel und die  Übermittlungsrichtlinie für Medienobjekte konfigurieren.
 
-## Konfigurieren
+##Konfigurieren
 
 Informationen zum Konfigurieren von Autorisierungsrichtlinien für Inhaltsschlüssel 
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../includes/media-services-selector-content-key-auth-policy.md)] 
@@ -33,4 +33,5 @@ Informationen zum Konfigurieren von Autorisierungsrichtlinien für Inhaltsschlü
 Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
  
-<!--HONumber=45--> 
+
+<!--HONumber=52-->

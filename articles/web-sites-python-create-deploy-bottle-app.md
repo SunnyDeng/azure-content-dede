@@ -1,20 +1,21 @@
-﻿<properties 
+<properties 
 	pageTitle="Python-Websites mit Bottle - Azure-Lernprogramm" 
-	description="In diesem Lernprogramm werden Sie in die Ausführung einer Python-Website in Azure eingeführt." 
-	services="web-sites" 
+	description="In diesem Lernprogramm werden Sie in die Ausführung einer Python-Website in Azure eingeführt."
+	services="app-service\web" 
 	documentationCenter="python" 
+	tags="python"
 	authors="huguesv" 
-	manager="" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="12/17/2014" 
-	ms.author="huvalo"/>
+	ms.date="02/09/2015" 
+	ms.author="huguesv"/>
 
 
 
@@ -23,48 +24,35 @@
 
 In diesem Lernprogramm werden die ersten Schritte bei der Ausführung von Python auf Azure-Websites beschrieben.  Azure-Websites bieten uneingeschränktes kostenloses Hosting und schnelle Bereitstellung, und Sie können Python verwenden!  Wenn die Anwendung größer wird, können Sie zu kostenpflichtigem Hosting wechseln und außerdem alle anderen Azure-Dienste integrieren.
 
-Sie erstellen eine Anwendung mithilfe das Webframeworks Bottle (siehe auch die alternativen Versionen dieses Lernprogramms für [Django](web-sites-python-create-deploy-django-app.md) und Flask](web-sites-python-create-deploy-flask-app.md))).  Sie erstellen die Website aus dem Azure-Katalog, richten die Git-Bereitstellung ein und klonen das Repository lokal.  Dann führen Sie die Anwendung lokal aus, nehmen Änderungen vor, führen ein Commit aus und übertragen die Änderungen in Azure.  Das Lernprogramm zeigt, wie dies unter Windows oder Mac/Linux erfolgt.
+Sie erstellen eine Anwendung mit dem Webframework Bottle (siehe auch alternative Versionen dieses Lernprogramms für [Django](web-sites-python-create-deploy-django-app.md) und [Flask](web-sites-python-create-deploy-flask-app.md)).  Sie erstellen die Website aus dem Azure-Katalog, richten die Git-Bereitstellung ein und klonen das Repository lokal.  Dann führen Sie die Anwendung lokal aus, nehmen Änderungen vor, führen ein Commit aus und übertragen die Änderungen in Azure.  Das Lernprogramm zeigt, wie dies unter Windows oder Mac/Linux erfolgt.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 
-+ [Voraussetzungen](#prerequisites)
-+ [Erstellen von Websites im Portal](#website-creation-on-portal)
-+ [Anwendungsübersicht](#application-overview)
-+ Entwickeln von Websites
-  + [Windows - Python Tools für Visual Studio](#website-development-windows-ptvs)
-  + [Windows - Befehlszeile](#website-development-windows-command-line)
-  + [Mac/Linux - Befehlszeile](#website-development-mac-linux-command-line)
-+ [Problembehandlung - Bereitstellung](#troubleshooting-deployment)
-+ [Problembehandlung - Paketinstallation](#troubleshooting-package-installation)
-+ [Problembehandlung - Virtuelle Umgebung](#troubleshooting-virtual-environment)
-+ [Nächste Schritte](#next-steps)
-
-
-<h2><a name="prerequisites"></a>Voraussetzungen</h2>
+## Voraussetzungen
 
 - Windows, Mac oder Linux
 - Python 2.7 oder 3.4
 - setuptools, pip, virtualenv (nur Python 2.7)
 - Git
-- Python Tools für Visual Studio (optional)
+- [Python Tools 2.1 für Visual Studio][] (optional)
 
 **Hinweis**: TFS-Veröffentlichung wird derzeit für Python-Projekte nicht unterstützt.
 
 ### Windows
 
-Falls Python 2.7 oder 3.4 (32 Bit) noch nicht installiert ist, empfehlen wir die Installation von [Azure SDK für Python 2.7](http://go.microsoft.com/fwlink/?linkid=254281&clcid=0x409) oder [Azure SDK für Python 3.4](http://go.microsoft.com/fwlink/?LinkID=516990&clcid=0x409) über den Webplattform-Installer.  Dadurch werden die 32-Bit-Version von Python, setuptools, pip, virtualenv usw. installiert (32-Bit-Python ist auf den Azure-Hostcomputern installiert).  Alternativ können Sie Python von [python.org](http://www.python.org/) abrufen.
+Falls Python 2.7 oder 3.4 (32 Bit) noch nicht installiert ist, empfehlen wir die Installation von [Azure SDK für Python 2.7][] oder [Azure SDK für Python 3.4][] über den Webplattform-Installer.  Dadurch werden die 32-Bit-Version von Python, setuptools, pip, virtualenv usw. installiert (32-Bit-Python ist auf den Azure-Hostcomputern installiert).  Alternativ können Sie Python von [python.org][] abrufen.
 
-Für Git empfehlen wir [Git für Windows](http://msysgit.github.io/) oder [GitHub für Windows](https://windows.github.com/).  Wenn Sie Visual Studio verwenden, können Sie die integrierte Unterstützung für Git nutzen.
+Für Git empfehlen wir [Git für Windows][] oder [GitHub für Windows][].  Wenn Sie Visual Studio verwenden, können Sie die integrierte Unterstützung für Git nutzen.
 
-Wir empfehlen auch die Installation von [Python Tools für Visual Studio](http://pytools.codeplex.com).  Dies ist optional, aber wenn Sie über [Visual Studio](http://www.visualstudio.com/) einschließlich des kostenlosen Visual Studio Express 2013 for Web verfügen, erhalten Sie eine leistungsfähige Python IDE.
+Wir empfehlen auch die Installation von [Python Tools 2.1 für Visual Studio][].  Dies ist optional, aber wenn Sie über [Visual Studio][] einschließlich des kostenlosen isual Studio Community 2013 oder Visual Studio Express 2013 for Web verfügen, erhalten Sie eine leistungsfähige Python-IDE.
 
 ### Mac/Linux
 
 Sie sollten Python und Git bereits installiert haben, doch stellen Sie sicher, dass Sie über Python 2.7 oder 3.4 verfügen.
 
 
-<h2><a name="website-creation-on-portal"></a>Erstellen von Websites im Portal</h2>
+## Erstellen von Websites im Portal
 
 Der erste Schritt beim Erstellen einer App ist das Erstellen der Website im Azure-Verwaltungsportal.  Melden Sie sich dazu beim Portal an, und klicken Sie unten links auf die Schaltfläche **NEU**. Daraufhin wird ein Fenster angezeigt. Klicken Sie auf **SERVER**, **WEBSITE**, **AUS KATALOG**.
 
@@ -80,7 +68,7 @@ Die Website wird umgehend eingerichtet. Wenn Sie auf die Schaltfläche**Durchsuc
 
 ![](./media/web-sites-python-create-deploy-bottle-app/portal-website-bottle.png)
  
-Nun fügen Sie Unterstützung für die Veröffentlichung mit Git hinzu.  Dazu wählen Sie **Bereitstellung über Quellcodeverwaltung einrichten** aus.
+Nun fügen Sie Unterstützung für die Veröffentlichung mit Git hinzu.  Dazu wählen Sie **Bereitstellung von Quellensteuerung einrichten** aus.
 
 ![](./media/web-sites-python-create-deploy-bottle-app/portal-site-created.png)
 
@@ -95,7 +83,7 @@ Nach dem Einrichten der Git-Veröffentlichung wird kurz eine Seite mit der Infor
 Wir folgen diesen Anweisungen in den nächsten Abschnitten.
 
 
-<h2><a name="application-overview"></a>Anwendungsübersicht</h2>
+## Anwendungsübersicht
 
 ### Inhalt des Git-Repositorys
 
@@ -119,7 +107,7 @@ Unterstützung für lokale Entwicklungsserver. Dient zum lokalen Ausführen der 
     \BottleWebProject.pyproj
     \BottleWebProject.sln
 
-Projektdateien für die Verwendung mit [Python Tools für Visual Studio](http://pytools.codeplex.com).
+Projektdateien für die Verwendung mit [Python Tools für Visual Studio][].
 
     \ptvs_virtualenv_proxy.py
 
@@ -161,7 +149,7 @@ In den nächsten drei Abschnitten wird beschrieben, wie Sie die Websiteentwicklu
 - Mac/Linux, über die Befehlszeile
 
 
-<h2><a name="website-development-windows-ptvs"></a>Website-Entwicklung - Windows - Python Tools für Visual Studio</h2>
+## Website-Entwicklung - Windows - Python Tools für Visual Studio
 
 ### Klonen des Repositorys
 
@@ -193,7 +181,7 @@ Drücken Sie F5, um mit dem Debuggen beginnen. Ihr Webbrowser wird automatisch a
 
 ![](./media/web-sites-python-create-deploy-bottle-app/windows-browser-bottle.png)
 
-Sie können Haltepunkte im Quellcode setzen, die Überwachungsfenster verwenden usw. In der [PTVS-Dokumentation](http://pytools.codeplex.com/documentation) finden Sie weitere Informationen zu den verschiedenen Features.
+Sie können Haltepunkte im Quellcode setzen, die Überwachungsfenster verwenden usw. In der [PTVS-Dokumentation][] finden Sie weitere Informationen zu den verschiedenen Features.
 
 ### Vornehmen von Änderungen
 
@@ -230,7 +218,7 @@ Visual Studio zeigt nicht den Fortschritt der Bereitstellung an.  Wenn Sie die A
 Navigieren Sie zur Azure-URL, um die Änderungen anzuzeigen.
 
 
-<h2><a name="website-development-windows-command-line"></a>Website-Entwicklung - Windows - Befehlszeile</h2>
+## Website-Entwicklung - Windows - Befehlszeile
 
 ### Klonen des Repositorys
 
@@ -309,7 +297,7 @@ Die Ausgabe des Bereitstellungsskripts wird mit Angaben zur Erstellung der virtu
 Navigieren Sie zur Azure-URL, um die Änderungen anzuzeigen.
 
 
-<h2><a name="website-development-mac-linux-command-line"></a>Website-Entwicklung - Mac/Linux - Befehlszeile</h2>
+## Website-Entwicklung - Mac/Linux - Befehlszeile
 
 ### Klonen des Repositorys
 
@@ -388,22 +376,22 @@ Die Ausgabe des Bereitstellungsskripts wird mit Angaben zur Erstellung der virtu
 Navigieren Sie zur Azure-URL, um die Änderungen anzuzeigen.
 
 
-<h2><a name="troubleshooting-deployment"></a>Problembehandlung - Bereitstellung</h2>
+## Troubleshooting - Deployment
 
 [AZURE.INCLUDE [web-sites-python-troubleshooting-deployment](../includes/web-sites-python-troubleshooting-deployment.md)]
 
 
-<h2><a name="troubleshooting-package-installation"></a>Problembehandlung - Paketinstallation</h2>
+## Problembehandlung - Paketinstallation
 
 [AZURE.INCLUDE [web-sites-python-troubleshooting-package-installation](../includes/web-sites-python-troubleshooting-package-installation.md)]
 
 
-<h2><a name="troubleshooting-virtual-environment"></a>Problembehandlung - Virtuelle Umgebung</h2>
+## Problembehandlung - Virtuelle Umgebung
 
 [AZURE.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../includes/web-sites-python-troubleshooting-virtual-environment.md)]
 
 
-<h2><a name="next-steps"></a>Nächste Schritte</h2>
+## Nächste Schritte
 
 Folgen Sie diesen Links, um weitere Informationen zu Bottle- und Python Tools für Visual Studio zu erhalten: 
  
@@ -417,15 +405,20 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 
 
 <!--Link references-->
-[Bottle und MongoDB in Azure mit Python Tools 2.1 für Visual Studio]: ../web-sites-python-ptvs-bottle-table-storage
-[Bottle und Azure Table Storage in Azure mit Python Tools 2.1 für Visual Studio]: ../web-sites-python-ptvs-bottle-mongodb
+[Bottle und MongoDB in Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-bottle-table-storage.md
+[Bottle und Azure Table Storage in Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-bottle-mongodb.md
 
 <!--External Link references-->
+[Azure SDK für Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
+[Azure SDK für Python 3.4]: http://go.microsoft.com/fwlink/?linkid=516990
+[python.org]: http://www.python.org/
+[Git für Windows]: http://msysgit.github.io/
+[GitHub für Windows]: https://windows.github.com/
+[Python Tools für Visual Studio]: http://aka.ms/ptvs
+[Python Tools 2.1 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
+[Visual Studio]: http://www.visualstudio.com/
+[PTVS-Dokumentation]: http://pytools.codeplex.com/documentation
 [Python Tools für Visual Studio - Dokumentation]: http://pytools.codeplex.com/documentation 
 [Dokumentation zu Bottle]: http://bottlepy.org/docs/dev/index.html
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->

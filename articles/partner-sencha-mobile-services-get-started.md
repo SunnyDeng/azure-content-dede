@@ -10,9 +10,9 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-sencha" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="multiple" 
-	ms.topic="article" 
+	ms.topic="hero-article" 
 	ms.date="11/22/2014" 
 	ms.author="sencha"/>
 
@@ -67,11 +67,11 @@ eine neue Datenbanktabelle für die Verwendung im mobilen Dienst zu erstellen.
 
 1. Notieren Sie sich **appKey** und **appUrl** im Verwaltungsportal. Sie werden diese in anderen Abschnitten dieses Lernprogramms benötigen.
 
-    ![app key](./media/partner-sencha-mobile-services-get-started/mobile-app-key-portal.png)
+    ![App-Schlüssel](./media/partner-sencha-mobile-services-get-started/mobile-app-key-portal.png)
 
-1. Stellen Sie sicher, dass auf der Registerkarte **Konfigurieren** in der Liste **Anforderungen von Hostnamen zulassen** unterhalb von **Cross-Origin Resource Sharing (CORS)** bereits der Eintrag `localhost` aufgeführt ist. Falls nicht, geben Sie `localhost` im Feld **Hostname** ein, und klicken Sie dann auf **Speichern**.
+1. Vergewissern Sie sich auf der Registerkarte **Konfigurieren**, dass `localhost` bereits im Feld **Anforderungen von Hostnamen zulassen** unter **Cross-Origin Resource Sharing (CORS)** eingetragen ist. Falls nicht, geben Sie `localhost` im Feld **Hostname** ein, und klicken Sie dann auf **Speichern**.
 
-    ![Setup CORS for localhost](./media/partner-sencha-mobile-services-get-started/mobile-services-set-cors-localhost.png)
+    ![CORS für localhost einrichten](./media/partner-sencha-mobile-services-get-started/mobile-services-set-cors-localhost.png)
 
 ##Generieren der Touch-Anwendung
 
@@ -662,7 +662,8 @@ Der letzte Schritt dieses Lernprogramms besteht im Hosten und Ausführen der neu
 
   2. Verwenden Sie Sencha Cmd, um folgende Befehle auszuführen:
 
-    * *sencha app refresh* : Dieser Befehl weist Sencha Cmd an, alle App-Abhängigkeiten zu suchen und alle benötigten Pakete herunterzuladen (z. B. [Sencha Touch-Erweiterungen für Azure](https://market.sencha.com/extensions/sencha-touch-extensions-for-windows-azure)).
+    * *sencha app refresh*: Dadurch erhält Sencha Cmd die Anweisung, alle App-Abhängigkeiten zu suchen
+      und alle benötigten Pakete herunterzuladen (beispielsweise [Sencha Touch-Erweiterungen für Azure](https://market.sencha.com/extensions/sencha-touch-extensions-for-windows-azure)).
 
     * *sencha web start* : Dadurch wird ein lokaler Webserver gestartet, der die Anwendung testet.
 
@@ -672,17 +673,17 @@ Der letzte Schritt dieses Lernprogramms besteht im Hosten und Ausführen der neu
 
   4. Geben Sie in der App einen sinnvollen Text ein, beispielsweise "Lernprogramm beenden", und klicken Sie dann auf **Hinzufügen**.
 
-    ![new todo item](./media/partner-sencha-mobile-services-get-started/new-todo-item.png)
+    ![Neues TodoItem](./media/partner-sencha-mobile-services-get-started/new-todo-item.png)
 
-    Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Die Daten aus der Anforderung werden in die TodoItem-Tabelle eingefügt.
+    Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt.
 
-  5. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle "TodoItems".
+  5. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle "TodoItems".
 
-    ![Todo Items table](./media/partner-sencha-mobile-services-get-started/mobile-data-tab.png)
+    ![Tabelle TodoItems](./media/partner-sencha-mobile-services-get-started/mobile-data-tab.png)
 
     Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.
 
-    ![browse todo table](./media/partner-sencha-mobile-services-get-started/mobile-data-browse.png)
+    ![Todo-Tabelle durchsuchen](./media/partner-sencha-mobile-services-get-started/mobile-data-browse.png)
 
 ##Nächste Schritte
 Nachdem Sie den Leitfaden für die ersten Schritte jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services mit Sencha ausgeführt werden.
@@ -712,8 +713,4 @@ Weitere Informationen zu den ersten Schritten in Sencha Touch finden Sie im voll
 <!-- images -->
 [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=52-->
