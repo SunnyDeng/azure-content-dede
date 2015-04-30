@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Lernprogramm zu aktuellen Nachrichten mit Notification Hubs - iOS" 
 	description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu aktuellen Nachrichten an iOS-Geräte." 
 	services="notification-hubs" 
@@ -104,7 +104,7 @@ Zunächst werden Sie Benutzeroberflächenelemente zum vorhandenen Storyboard hin
 
 		self.notifications = [[Notifications alloc] init];
 
-	The initializes the Notification singleton.
+	Dieser Code initialisiert den Notification-Singleton.
 
 10. Entfernen Sie in der **didRegisterForRemoteNotificationsWithDeviceToken**-Methode in "BreakingNewsAppDelegate.m" den Aufruf von **registerNativeWithDeviceToken**, und fügen Sie den folgenden Code ein:
 
@@ -255,7 +255,7 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 
 
 <!-- URLs. -->
-[Gewusst wie: Service Bus Notification Hubs (iOS-Apps)].: http://msdn.microsoft.com/library/jj927168.aspx
+[Gewusst wie: Service Bus Notification Hubs (iOS-Apps)]: http://msdn.microsoft.com/library/jj927168.aspx
 [Verwenden von Notification Hubs zum Übermitteln von lokalisierten aktuellen Nachrichten]: /manage/services/notification-hubs/breaking-news-localized-dotnet/
 [Mobile Service]: /develop/mobile/tutorials/get-started
 [Benachrichtigen von Benutzern mit Notification Hubs]: /manage/services/notification-hubs/notify-users/

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Schützen einer Azure API-App" 
 	description="Erfahren Sie, wie Sie eine Azure API-App mithilfe von Visual Studio schützen." 
 	services="app-service\api" 
@@ -139,7 +139,7 @@ Im alten Portal enthält die Registerkarte **Konfiguration** der Anwendung, die 
 
 ## Sicherstellen, dass die Authentifizierung funktioniert 
 
-1. Öffnen Sie ein Browserfenster, und geben Sie in der Adressleiste die URL ein, mit der (wie zuvor) die Get-Methode Ihrer API-App aufgerufen wird.
+1. Öffnen Sie ein Browserfenster, und geben Sie in der Adressleiste die URL ein, mit der (wie zuvor) die `Get`-Methode Ihrer API-App aufgerufen wird.
 
 	Dieses Mal führt der Zugriffsversuch auf die API-App zu einer Fehlermeldung.
 
@@ -227,6 +227,9 @@ Diese Anweisungen zeigen, wie Sie das Postman-Tool im Chrome-Browser verwenden, 
 Sie haben erfahren, wie Sie eine Azure API-App schützen, indem Sie sie für eine Authentifizierung über Azure Active Directory oder ein soziales Netzwerk konfigurieren. Weitere Informationen finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md). 
 
 [Altes Portal]: https://manage.windowsazure.com/
+[alte Portal]: https://manage.windowsazure.com/
+[alten Portal]: https://manage.windowsazure.com/
+[alten Portals]: https://manage.windowsazure.com/
 [Azure-Portal]: https://portal.azure.com/
 
 

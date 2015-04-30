@@ -62,7 +62,7 @@ Sie müssen die App an den Windows Store übermitteln, um Pushbenachrichtigungen
 
    	![][3]
 
-   	Der ****Assistent zum Verknüpfen der App mit dem Windows Store wird angezeigt.
+   	Der **Assistent zum Verknüpfen der App mit dem Windows Store** wird angezeigt.
 
 5. Klicken Sie im Assistenten auf **Anmelden**. Melden Sie sich dann mit Ihrem Microsoft-Konto an.
 

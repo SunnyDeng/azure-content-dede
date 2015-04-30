@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Verbinden einer mobilen App mit einer SaaS-Unternehmenslösung | Mobile Dev Center" 
 	description="Erfahren Sie, wie Sie Unternehmensressourcen wie beispielsweise SharePoint Online aufrufen." 
 	documentationCenter="" 
@@ -180,6 +180,7 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 
 [Vorschau auf das Azure-Verwaltungsportal]: https://portal.azure.com/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Azure-Verwaltungsportals]: https://manage.windowsazure.com/
 [SharePoint Online]: http://office.microsoft.com/de-de/sharepoint/
 [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden]: app-service-mobile-dotnet-backend-ios-aad-sso-preview.md
 

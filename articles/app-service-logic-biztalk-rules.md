@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="BizTalk-Regeln" 
    description="Dieses Thema behandelt die Funktionen von BizTalk-Regeln und bietet Anleitungen zu deren Verwendung" 
    services="app-service\logic" 
@@ -113,7 +113,7 @@ Nach dem Erstellen einer BizTalk-Regel-API-App besteht der nächste Schritt im E
  
    ![Alt text][4]
 
-2. Klicken Sie als nächstes auf "Vokabulardefinitionen". Der Bildschirm zum Verfassen des Vokabulars wird angezeigt. Klicken Sie auf "Hinzufügen", um neue Vokabulardefinitionen hinzuzufügen.
+2.Klicken Sie als nächstes auf "Vokabulardefinitionen". Der Bildschirm zum Verfassen des Vokabulars wird angezeigt. Klicken Sie auf "Hinzufügen", um neue Vokabulardefinitionen hinzuzufügen.
 Derzeit werden zwei Arten von Vokabulardefinitionen unterstützt - literal und XML.
 
 ## Literale Definition

@@ -87,7 +87,7 @@
 
 9. Drücken Sie F5, um die Windows Store-App auszuführen, klicken Sie auf die Schaltfläche **Sign in**, und melden Sie sich mit dem von Ihnen ausgewählten Identitätsanbieter bei der App an. 
 
-   Wenn Sie erfolgreich angemeldet sind, sollte die App ohne Fehler ausgeführt werden, und Sie sollten in der Lage sein, Ihre Mobile App abzufragen und Daten zu aktualisieren.
+   	Wenn Sie erfolgreich angemeldet sind, sollte die App ohne Fehler ausgeführt werden, und Sie sollten in der Lage sein, Ihre Mobile App abzufragen und Daten zu aktualisieren.
 
 10. Klicken Sie mit der rechten Maustaste auf das Windows Phone Store-App-Projekt, klicken Sie auf **Als Startprojekt festlegen**, und führen Sie dann den obigen Schritt erneut aus, um sicherzustellen, dass die Windows Phone Store-App ebenfalls ordnungsgemäß ausgeführt wird.  
 

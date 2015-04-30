@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Konfigurieren der Facebook-Authentifizierung für Ihre App Services-Anwendung"
 	description="Erfahren Sie, wie Sie die Facebook-Authentifizierung für Ihre App Services-Anwendung konfigurieren." 
 	services="app-service\mobile" 
@@ -73,6 +73,7 @@ Sie können nun Facebook für die Authentifizierung in Ihrer App verwenden.
 
 <!-- URLs. -->
 [Facebook-Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=268286
+[Facebook Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268286
 [facebook.com]: http://go.microsoft.com/fwlink/p/?LinkId=268285
 [Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-dotnet/
 [Azure-Verwaltungsportal]: https://portal.azure.com/

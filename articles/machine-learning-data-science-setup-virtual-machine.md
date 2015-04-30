@@ -107,7 +107,7 @@ IPython Notebooks bieten eine einfache Möglichkeit für das Hochladen vorhanden
 ![Create workspace][23]
 
 
-##<a name="shutdown"></a>Herunterfahren und Freigeben von nicht genutzten virtuellen Computern
+## <a name="shutdown"></a>Herunterfahren und Freigeben von nicht genutzten virtuellen Computern
 
 Virtuelle Azure-Computer werden **nach Nutzung abgerechnet**. Damit Sie nicht für ungenutzte virtuelle Computer bezahlen müssen, sollten Sie diese in den Status **Angehalten (Freigegeben)** versetzen, wenn sie nicht mehr benötigt werden.
 

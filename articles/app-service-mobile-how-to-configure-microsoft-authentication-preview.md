@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Konfigurieren der Microsoft-Kontoauthentifizierung für Ihre App Services-Anwendung"
 	description="Erfahren Sie, wie Sie die Microsoft-Kontoauthentifizierung für Ihre App Services-Anwendung konfigurieren." 
 	authors="mattchenderson,ggailey777" 
@@ -63,6 +63,7 @@ Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verw
 <!-- URLs. -->
 
 [Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Eigene Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Azure-Verwaltungsportal]: https://portal.azure.com/
 
 <!--HONumber=49-->

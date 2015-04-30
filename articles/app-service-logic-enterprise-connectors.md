@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Enterprise-Connectors in Microsoft Azure App Service | Azure" 
 	description="Erfahren Sie mehr über das Erstellen und Konfigurieren von Enterprise-Connectors; Microservices-Architektur" 
 	services="app-service-logic" 
@@ -160,7 +160,7 @@ Einige der Enterprise-Connectors verwenden die OAuth-Sicherheitsfunktionen. Wenn
 [BizTalk-Integrationsconnectors](app-service-logic-integration-connectors.md)<br/>
 [Business-to-Business-Connectors](app-service-logic-b2b-connectors.md)<br/>
 [Connectors für soziale Netzwerke](app-service-logic-social-connectors.md)<br/>
-[Protokollconnectors]app-service-logic-protocol-connectors.md)<br/>
+[Protokollconnectors](app-service-logic-protocol-connectors.md)<br/>
 [App- und Data Services-Connectors](app-service-logic-data-connectors.md)<br/>
 [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)
 

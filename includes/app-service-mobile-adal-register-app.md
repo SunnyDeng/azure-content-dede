@@ -1,4 +1,4 @@
-﻿1. Registrieren Sie Ihr Mobile App-Back-End mit Ihrem Azure Active Directory-Mandanten anhand der Anweisungen im Thema zum [Konfigurieren der Mobile App mit Azure Active Directory].
+1. Registrieren Sie Ihr Mobile App-Back-End mit Ihrem Azure Active Directory-Mandanten anhand der Anweisungen im Thema zum [Konfigurieren der Mobile App mit Azure Active Directory].
 
 2. Navigieren Sie im [Azure-Verwaltungsportal] zu **Active Directory**.
 
@@ -26,5 +26,6 @@ Die Anwendung wird jetzt in AAD so konfiguriert, dass Benutzer mit dem einmalige
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [So konfigurieren Sie die Mobile App mit Azure Active Directory]: ../articles/app-service-how-to-configure-active-directory-authentication-preview.md
+[Konfigurieren der Mobile App mit Azure Active Directory]: ../articles/app-service-how-to-configure-active-directory-authentication-preview.md
 
 <!--HONumber=49-->

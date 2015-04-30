@@ -19,7 +19,7 @@
 	ms.author="hangzh;bradsev"/>
 
  
-#Erstellen und Laden von Daten in Hive-Tabellen aus Azure-Blob-Speicher
+# Erstellen und Laden von Daten in Hive-Tabellen aus Azure-Blob-Speicher
  
 In diesem Dokument werden generische Hive-Abfragen beschrieben, die Hive-Tabellen erstellen und Daten aus dem Azure-Blob-Speicher laden. Es werden auch einige Hinweise zur Partitionierung der Hive-Tabellen und zur Verwendung des ORC-Formats (Optimized Row Columnar) zur Verbesserung der Abfrageleistung bereitgestellt.
 
@@ -140,7 +140,7 @@ Sie können nicht direkt Daten im ORC-Speicherformat aus dem Blob in Hive-Tabell
 
 		INSERT OVERWRITE TABLE <database name>.<ORC table name> SELECT * FROM <database name>.<external textfile table name>;
 
->[AZURE.NOTE] Wenn die "TEXTFILE"-Tabelle `<database name>.<external textfile table name>` Partitionen aufweist, fügt `SELECT * FROM <database name>.<external textfile table name>` in Schritt 3 die Partitionsvariable als ein Feld in die zurückgegebenen Daten ein. Beim Einfügen in `<database name>.<ORC table name>` tritt ein Fehler auf, weil `<database name>.<ORC table name>` nicht die Partitionsvariable als Feld im Tabellenschema enthält. In diesem Fall müssen Sie die in `<database name>.<ORC table name>` einzufügenden Felder explizit wie folgt auswählen:
+[AZURE.NOTE] Wenn die "TEXTFILE"-Tabelle `<database name>.<external textfile table name>` Partitionen aufweist, fügt `SELECT * FROM <database name>.<external textfile table name>` in Schritt 3 die Partitionsvariable als ein Feld in die zurückgegebenen Daten ein. Beim Einfügen in `<database name>.<ORC table name>` tritt ein Fehler auf, weil `<database name>.<ORC table name>` nicht die Partitionsvariable als Feld im Tabellenschema enthält. In diesem Fall müssen Sie die in `<database name>.<ORC table name>` einzufügenden Felder explizit wie folgt auswählen:
 
 		INSERT OVERWRITE TABLE <database name>.<ORC table name> PARTITION (<partition variable>=<partition value>)
 		      SELECT field1, field2, ..., fieldN

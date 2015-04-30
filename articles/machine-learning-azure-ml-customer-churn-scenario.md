@@ -18,17 +18,17 @@
 
 # Analysieren der Kundenabwanderung mithilfe von Microsoft Azure Machine Learning
 
-##Übersicht
+## Übersicht
 Dieses Thema bietet eine Referenzimplementierung eines Projekts zur Analyse der Kundenabwanderung, das in Azure Machine Learning Studio erstellt wird. Es wird das Zuordnen generischer Modelle für eine ganzheitliche Lösung des Kundenabwanderungsproblems in der Industrie erläutert. Wir messen auch die Genauigkeit von Modellen, die mit Machine Learning erstellt werden, und wir bewerten mögliche Richtungen der weiteren Entwicklung.  
 
 [AZURE.INCLUDE [machine-learning-free-trial](../includes/machine-learning-free-trial.md)] 
 
-##Das Problem der Kundenabwanderung
+## Das Problem der Kundenabwanderung
 Firmen müssen sich sowohl auf dem Verbrauchermarkt als auch in allen Unternehmenssektoren mit der Kundenabwanderung auseinandersetzen. Gelegentlich kann es zur übermäßigen Abwanderung kommen, die dann Grundsatzentscheidungen beeinflusst. Die traditionelle Lösung besteht darin, eine starke Abwanderungsbereitschaft von Kunden vorherzusagen und sich über einen Concierge-Dienst, Marketingkampagnen oder Sonderregelungen mit ihren Bedürfnissen auseinanderzusetzen. Diese Ansätze können von Branche zu Branche unterschiedlich sein und auch innerhalb einer Branche (z. B. Telekommunikation) je nach bestimmter Verbrauchergruppe variieren. 
 
 Die Gemeinsamkeit besteht darin, dass die Unternehmen diese besonderen Bemühungen zur Kundenbindung minimieren müssen. Eine natürliche Methode wäre somit, jeden Kunden mit einer Abwanderungswahrscheinlichkeit zu bewerten und sich mit einer bestimmten Anzahl (N) der Kunden mit den höchsten Werten zu befassen. Die Kunden mit den höchsten Bewertungen sind möglicherweise die einträglichsten Kunden. In komplexeren Szenarios wird bei der Auswahl der Anwärter für Sonderregelungen eine Gewinnfunktion verwendet. Diese Überlegungen sind jedoch nur ein Teil der ganzheitlichen Strategie zur Behandlung der Abwanderung. Die Unternehmen müssen auch das Risiko (und die zugehörige Risikobereitschaft), das Interventionsniveau und die zugehörigen Kosten sowie die eingängige Kundensegmentierung berücksichtigen.  
 
-##Branchenprognose und Ansätze
+## Branchenprognose und Ansätze
 Ein durchdachter Umgang mit der Abwanderung ist ein Zeichen für eine gefestigte Branche. Das klassische Beispiel ist die Telekommunikationsbranche, in der Kunden häufig den Anbieter wechseln. Diese spontane Abwanderung ist ein wesentliches Problem. Darüber hinaus haben die Anbieter wichtige Erfahrungen zu *Abwanderungsargumenten* gesammelt, die für die Kunden die Faktoren für einen Wechsel darstellen. 
 
 In der Mobilfunkbranche stellt z. B. die Auswahl an Mobiltelefonen oder Geräten ein bekanntes Argument für eine Abwanderung dar. Daher besteht eine beliebte Strategie darin, den Preis für ein Mobiltelefon für Neukunden zu subventionieren und Bestandskunden bei einem Upgrade den vollen Preis zu berechnen. Diese Strategie hat in der Vergangenheit dazu geführt, dass die Kunden von einem Anbieter zum nächsten wechseln, um einen neuen Rabatt zu erhalten. Dies hat die Anbieter wiederum dazu veranlasst, ihre Strategien zu überarbeiten. 
@@ -39,7 +39,7 @@ Das Endergebnis hinsichtlich der Modellerstellung ist, dass Sie keinen vernünft
 
 Die Unternehmen führen großangelegte Datenanalysen, insbesondere zur Abwanderungserkennung auf Basis großer Datenmengen, mit umfangreichen Datenbeständen zu ihren Kunden als effektiven Lösungsansatz für das Problem durch. Weitere Informationen zum Ansatz mit der Analyse großer Datenmengen für das Abwanderungsproblem finden Sie im Abschnitt mit den Empfehlungen zu ETL.  
 
-##Methode zum Abbilden der Kundenabwanderung
+## Methode zum Abbilden der Kundenabwanderung
 Ein allgemeiner Problemlösungsprozess für die Kundenabwanderung ist in den Abbildungen 1 bis 3 dargestellt:  
 
 1.	Mit einem Risikomodell können Sie berücksichtigen, wie sich Aktionen auf die Wahrscheinlichkeit und das Risiko auswirken.
@@ -61,7 +61,7 @@ Der Gesamtzyklus von Risiko-Entscheidung-Marketingsegmentierung/-spaltung entspr
 Eine interessante Ergänzung ist hier die Analyse großer Datenmengen. Die heutigen Telekommunikations- und Einzelhandelsunternehmen erfassen flächendeckend Daten zu ihren Kunden, und es ist leicht vorherzusehen, dass sich der Bedarf an Verbindungen zwischen den verschiedenen Modellen zu einem allgemeinen Trend entwickelt, wenn man aufkommende Trends wie das "Internet der Dinge" und allgegenwärtige Geräte bedenkt, die es Unternehmen gestatten, intelligente Lösungen auf verschiedenen Ebenen einzusetzen.  
 
  
-##Implementieren des Modellierungs-Prototyps in Machine Learning Studio 
+## Implementieren des Modellierungs-Prototyps in Machine Learning Studio 
 Wie können wir für das soeben beschriebene Problem einen integrierten Ansatz für die Modellierung und Bewertung implementieren? In diesem Abschnitt wird veranschaulicht, wie dies mithilfe von Azure Machine Learning Studio erreicht wird.  
 
 Der Multi-Modell-Ansatz ist beim Entwerfen eines globalen Prototyps für die Abwanderung zwingend erforderlich. Selbst der (voraussagende) Bewertungsteil des Ansatzes sollte mehrere Modelle einbeziehen.  
@@ -74,7 +74,7 @@ Das folgende Diagramm zeigt den erstellten Prototyp, der vier Bewertungsalgorith
 
 Die folgenden Abschnitte enthalten Einzelheiten zum Bewertungsmodell des Prototyps, das wir mithilfe von Machine Learning Studio implementiert haben.  
 
-###Datenauswahl und Vorbereitung
+### Datenauswahl und Vorbereitung
 Die zum Erstellen der Modelle und zum Bewerten der Kunden verwendeten Daten wurden aus einer vertikalen CRM-Lösung abgerufen, wobei die Daten verschleiert wurden, um den Datenschutz der Kunden zu gewährleisten. Die Daten enthalten Informationen über 8.000 Abonnements in den USA, und es werden drei Quellen kombiniert: Bereitstellungsdaten (Abonnementmetadaten), Aktivitätsdaten (Nutzung des Systems) und Kundensupportdaten. Die Daten beziehen keine geschäftlichen Daten der Kunden ein, so sind z. B. keine Treuemetadaten oder Bonitätsbewertungen enthalten.  
 
 Der Einfachheit halber liegen die ETL- und Datenbereinigungsprozesse außerhalb des Anwendungsbereichs, da wir annehmen, dass die Vorbereitung der Daten bereits an anderer Stelle durchgeführt wurde.   
@@ -96,7 +96,7 @@ Die folgenden Diagramme veranschaulichen die verwendeten Daten:
  
 *Abbildung 7: Aus der Datenquelle extrahierte Funktionen*
  
-###Im Prototyp verwendete Algorithmen
+### Im Prototyp verwendete Algorithmen
 
 Wir haben die folgenden vier Machine Learning-Algorithmen für die Erstellung des Prototyps verwendet (keine Anpassung):  
 
@@ -113,15 +113,15 @@ Das folgende Diagramm veranschaulicht einen Teil der Experimententwurfsoberfläc
  
 *Abbildung 8: Erstellen von Modellen in Machine Learning Studio*  
 
-###Bewertungsmethoden
+### Bewertungsmethoden
 Wir haben die vier Modelle mithilfe eines bezeichneten Trainings-DataSets bewertet.  
 
 Wir haben das Bewertungs-DataSet auch mit der Desktop-Edition von SAS Enterprise Miner 12 an ein vergleichbares Modell übermittelt. Wir maßen die Genauigkeit des SAS-Modells und aller vier Machine Learning Studio-Modelle.  
 
-##Ergebnisse 
+## Ergebnisse 
 In diesem Abschnitt werden unsere Ergebnisse zur Genauigkeit der Modelle auf Basis des Bewertungsdatasets präsentiert.  
 
-###Richtigkeit und Genauigkeit der Bewertung
+### Richtigkeit und Genauigkeit der Bewertung
 Im Allgemeinen ist die Implementierung in Machine Learning etwas ungenauer als SAS, und zwar um etwa 10-15 % (Area Under Curve oder AUC).  
 
 Die wichtigste Kennzahl in Codeänderung ist jedoch die Rate der falschen Klassifizierung: Welcher der vom Klassifizierer vorhergesagten wichtigsten N Abwanderer ist tatsächlich **nicht** abgewandert und hat trotzdem besondere Behandlung erhalten? Das folgende Diagramm vergleicht die Fehlklassifizierungsrate für alle Modelle:  
@@ -131,12 +131,12 @@ Die wichtigste Kennzahl in Codeänderung ist jedoch die Rate der falschen Klassi
  
 *Abbildung 9: Area Under Curve (Fläche unter der Kurve) für den Passauer Prototyp* 
 
-###Verwenden von AUC zum Vergleichen von Ergebnissen
+### Verwenden von AUC zum Vergleichen von Ergebnissen
 "Area Under Curve" (AUC) ist eine Kennzahl, die eine globale Maßeinheit für die *Trennbarkeit* zwischen den Verteilungen von Punktzahlen für positive und negative Bestände darstellt. Sie ähnelt dem traditionellen ROC-Diagramm (Receiver Operator Characteristic), aber ein wesentlicher Unterschied ist, dass die AUC-Kennzahl von Ihnen keinen Schwellenwert erfordert. Stattdessen fasst sie die Ergebnisse über **alle** möglichen Optionen zusammen. Im Gegensatz dazu zeigt das traditionelle ROC-Diagramm den positiven Wert an der vertikalen und den falsch positiven Wert an der horizontalen Achse an, wobei der Schwellenwert für die Klassifizierung variiert.   
 
 AUC wird i. Allg. als Maßstab für den Wert verschiedener Algorithmen (oder verschiedener Systeme) verwendet, da die Kennzahl den Vergleich von Modellen anhand ihrer AUC-Werte gestattet. Dies ist ein beliebter Ansatz in Branchen wie der Meteorologie oder Biosciences. Somit stellt AUC ein beliebtes Werkzeug zur Bewertung der Leistung von Klassifizierern dar.  
 
-###Vergleichen der Fehlklassifikationsraten
+### Vergleichen der Fehlklassifikationsraten
 Wir haben die Fehlklassifikationsraten für das fragliche Dataset mithilfe der CRM-Daten von ungefähr 8.000 Kunden verglichen.  
 
 -	Die SAS-Fehlklassifizierungsrate lag bei 10-15 %.
@@ -152,7 +152,7 @@ Das folgende Diagramm aus Wikipedia veranschaulicht die Beziehung in einer einfa
  
 *Abbildung 10: Kompromiss zwischen Richtigkeit und Genauigkeit*
 
-###Ergebnisse für Richtigkeit und Genauigkeit für das Boosted Tree-Modell  
+### Ergebnisse für Richtigkeit und Genauigkeit für das Boosted Tree-Modell  
 
 Das folgende Diagramm zeigt die Originalergebnisse der Bewertung mithilfe des Machine Learning-Prototyps für das Boosted Decision Tree-Modell, bei dem es sich um das genaueste der vier Modelle handelt:  
 
@@ -160,7 +160,7 @@ Das folgende Diagramm zeigt die Originalergebnisse der Bewertung mithilfe des Ma
 
 *Abbildung 11: Merkmale des Boosted Decision Tree-Modells*
 
-##Leistungsvergleich 
+## Leistungsvergleich 
 Wir haben die Geschwindigkeit, mit der Daten mithilfe der Machine Learning Studio-Modelle bewertet wurden, mit einem vergleichbaren Modell verglichen, das mithilfe der Desktopversion von SAS Enterprise Miner 12.1 erstellt wurde.  
 
 Die folgende Tabelle fasst die Leistung der Algorithmen zusammen:  
@@ -173,7 +173,7 @@ Durchschnittliches Modell|	Bestes Modell|	Unterdurchschnittliches Modell|	Durchs
 
 Die in Machine Learning Studio gehosteten Modelle haben SAS hinsichtlich der Ausführungsgeschwindigkeit um 15-25 % übertroffen, aber die Richtigkeit war größtenteils vergleichbar.  
 
-##Diskussion und Empfehlungen
+## Diskussion und Empfehlungen
 In der Telekommunikationsbranche haben sich verschiedene Methoden zur Analyse der Abwanderung entwickelt, darunter:  
 
 -	Ableitung der Metriken für vier grundlegende Kategorien:
@@ -193,7 +193,7 @@ Eine weitere interessante Funktion von Azure Machine Learning ist die Möglichke
 
 Wir hoffen, dieses Thema weiter behandeln zu können, insbesondere in Bezug auf die Analyse großer Datenmengen.
   
-##Zusammenfassung
+## Zusammenfassung
 In diesem Dokument wird ein sinnvoller Ansatz zur Bewältigung eines allgemeinen Problems, der Kundenabwanderung, mithilfe einer allgemeinen Struktur beschrieben. Wir haben einen Prototyp zur Bewertung von Modellen betrachtet und ihn mithilfe von Azure Machine Learning implementiert. Abschließend haben wird die Genauigkeit und Leistung der Prototyplösung hinsichtlich vergleichbarer Algorithmen in SAS bewertet.  
 
 **Weitere Informationen:**  
@@ -207,7 +207,7 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 
 [Feedback senden](mailto:sqlfback@microsoft.com).
  
-##Referenzen
+## Referenzen
 [1] Predictive Analytics: Beyond the Predictions, W. McKnight, Information Management, Juli/August 2011, S. 18-20 (in englischer Sprache).  
 
 [2] [Accuracy and precision](http://en.wikipedia.org/wiki/Accuracy_and_precision), Wikipedia (in englischer Sprache) 
@@ -218,7 +218,7 @@ Dieses Feedback hilft uns dabei, die Qualität der von uns veröffentlichten Whi
 
 [5] [Big Data Marketing: Engage Your Customers More Effectively and Drive Value](http://www.amazon.com/Big-Data-Marketing-Customers-Effectively/dp/1118733894/ref=sr_1_12?ie=UTF8&qid=1387541531&sr=8-12&keywords=customer+churn) (in englischer Sprache)
  
-##Anhang
+## Anhang
 
 ![][10]
  

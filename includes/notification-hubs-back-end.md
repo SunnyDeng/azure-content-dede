@@ -73,7 +73,7 @@ Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, i
 	
 	> [AZURE.NOTE] Dieser Back-End-Code unterstützt Windows Store-, Windows Phone-, iOS- und Android-Clients. Send-Methoden geben einen Fehler zurück, wenn der Benachrichtigungshub noch nicht für eine bestimmte Clientplattform konfiguriert wurde. 
 
-6. Ersetzen Sie im Code oben die Platzhalter <hub name> und <connection string with full access> durch den Namen Ihres Notification Hub und die Verbindungszeichenfolge für *DefaultFullSharedAccessSignature*, die Sie zuvor erhalten haben.
+6. Ersetzen Sie im Code oben die Platzhalter `<hub name>` und `<connection string with full access>` durch den Namen Ihres Notification Hub und die Verbindungszeichenfolge für *DefaultFullSharedAccessSignature*, die Sie zuvor erhalten haben.
 
 7. Fügen Sie die folgenden Zeilen zur **Main**-Methode hinzu:
 

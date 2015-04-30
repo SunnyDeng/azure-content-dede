@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Konfigurieren der Twitter-Authentifizierung für Ihre App Services-Anwendung"
 	description="Erfahren Sie, wie Sie die Twitter-Authentifizierung für Ihre App Services-Anwendung konfigurieren." 
 	services="app-service\mobile" 
@@ -63,6 +63,7 @@ Sie können nun Twitter für die Authentifizierung in Ihrer App verwenden.
 <!-- URLs. -->
 
 [Twitter-Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=268300
+[Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [Azure-Verwaltungsportal]: https://portal.azure.com/
 [xamarin]: app-services-mobile-app-dotnet-backend-xamarin-ios-get-started-users-preview.md
 
