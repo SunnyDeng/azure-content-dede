@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Understand NoSQL technologies" pageTitle="NoSQL-Technologien in Azure | Azure" metaKeywords="" description="Erfahren Sie, wie Sie mit NoSQL-Technologien in HDInsight Daten verwalten können, die nicht für relationale Datenbanken geeignet sind, z. B. große Datensätze und JSON-Dokumente oder Graphen." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="storage,hdinsight,documentdb" documentationCenter="" title="Data management: Understanding NoSQL technologies on Azure" authors="cgronlun" />
+<properties urlDisplayName="Understand NoSQL technologies" pageTitle="NoSQL-Technologien in Azure | Azure" metaKeywords="" description="Erfahren Sie, wie Sie mit NoSQL-Technologien in HDInsight Daten verwalten können, die nicht für relationale Datenbanken geeignet sind, z. B. große Datensätze und JSON-Dokumente oder Graphen." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="storage,hdinsight,documentdb" documentationCenter="" title="Data management: Understanding NoSQL technologies on Azure" authors="cgronlun" />
 
 <tags ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="12/01/2014" ms.author="cgronlun" />
 
@@ -28,3 +28,4 @@ Lange Zeit waren für das Arbeiten mit Daten relationale Technologien vorherrsch
 
 **Download:** <a href="http://go.microsoft.com/fwlink/p/?LinkId=330292" target="_blank">NoSQL auf Microsoft Azure (PDF)</a>
 
+<!--HONumber=35.2-->
