@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Erste Schritte mit Daten (Windows Store JavaScript) | Mobile Dev Center" 
-	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Windows Store-JavaScript-App. 
+	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Windows Store-JavaScript-App." 
 	services="mobile-services" 
 	documentationCenter="windows" 
 	authors="ggailey777" 

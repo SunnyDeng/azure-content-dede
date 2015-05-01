@@ -1,30 +1,27 @@
-﻿<properties 
-   authors="danielceckert" 
-   documentationCenter="dev-center-name" 
-   editor=""
-   manager="jefco" 
-   pageTitle="Verwaltung: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)" 
-   description="Verwaltungsfunktionen für den Azure-Lastenausgleichs-Verteilungsmodus" 
-   services="virtual-network" 
-   />
+<properties 
+	authors="danielceckert" 
+	documentationCenter="dev-center-name" 
+	editor=""
+	manager="jefco" 
+	pageTitle="Verwaltung: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)" 
+	description="Verwaltungsfunktionen für den Azure-Lastenausgleichs-Verteilungsmodus" 
+	services="virtual-network"
+	authors="" 
+/>
 
 <tags
-   ms.author="danecke"
-   ms.date="02/20/2015"
-   ms.devlang="na"
-   ms.service="virtual-network"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-<<<<<<< HEAD:articles/virtual-networks-load-balancer-manage-distribution-mode.md
-   />
+	ms.author="danecke"
+	ms.date="02/20/2015"
+	ms.devlang="na"
+	ms.service="virtual-network"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"/>
+
+<!--HEAD:articles/virtual-networks-load-balancer-manage-distribution-mode.md # Verwaltung virtueller Netzwerke: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)--> 
    
 # Verwaltung virtueller Netzwerke: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)
-=======
-   /> 
-   
-# Verwaltung virtueller Netzwerke: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)
->>>>>>> 5781a6382194f50134d2a16bd9d72a6cca290f3d:articles/virtual-networks-load-balancer-manage-distribution-mode-source-ip.md
+
 
 **Quell-IP-Affinität** (auch als **Sitzungsaffinität** oder **Client-IP-Affinität** bezeichnet), ein Azure-Lastenausgleichs-Verteilungsmodus, erzeugt eine Bindung zwischen einem einzelnen Client und einem über Azure gehosteten Server, statt die Clientverbindungen dynamisch auf unterschiedliche über Azure gehostete Server zu verteilen (dies ist das Standardverhalten für den Lastenausgleich).
 
