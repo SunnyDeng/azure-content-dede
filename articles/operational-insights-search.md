@@ -52,4 +52,5 @@ Sie können Facets verwenden und Steuerelemente filtern, um die Ergebnisse einzu
 - [IIS Management Pack Event-Alerting Rules's OpInsights Searches Equivalents](http://blogs.msdn.com/b/dmuscett/archive/2014/11/05/iis-mp-event-alerting-rules-s-opinsights-searches-equivalents.aspx)
 - [Useful Operational Insights Search Query Collection](http://blogs.msdn.com/b/dmuscett/archive/2014/10/19/advisor-searches-collection.aspx)
 
+
 <!--HONumber=52-->

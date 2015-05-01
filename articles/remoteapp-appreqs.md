@@ -55,4 +55,5 @@ Gehen Sie nach den folgenden Richtlinien vor, um Anwendungen für RemoteApp zu e
 - Sie sollten die [Threadnutzung](https://msdn.microsoft.com/library/aa383520.aspx) von Anwendungen für Umgebungen mit mehreren Benutzern und mehreren Prozessoren abstimmen und ausbalancieren.
 - Um die Leistung zu optimieren, empfiehlt es sich, der Anwendung eine [Erkennung](https://msdn.microsoft.com/library/aa380798.aspx) hinzuzufügen, ob sie in einer Clientsitzung ausgeführt wird. 
 
+
 <!--HONumber=52-->

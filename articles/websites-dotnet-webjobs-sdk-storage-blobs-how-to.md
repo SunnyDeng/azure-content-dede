@@ -229,4 +229,5 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-BLOBs behandelt werden. Weitere Informationen zur Verwendung von Azure-Webaufträgen und dem Webaufträge-SDK finden Sie unter [Empfohlene Ressourcen für Azure-Webaufträge](http://go.microsoft.com/fwlink/?linkid=390226).
 
+
 <!--HONumber=52-->

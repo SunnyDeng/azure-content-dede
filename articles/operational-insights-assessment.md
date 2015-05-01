@@ -133,4 +133,5 @@ Sie können Bewertungen der Einhaltung für Ihre Infrastruktur zusammenfassen un
 
 4. Ergreifen Sie die unter **Vorgeschlagene Aktionen** vorgeschlagenen Korrekturmaßnahmen. Nachdem das Element behandelt wurde, geben spätere Bewertungen an, dass empfohlene Aktionen ausgeführt wurden, und Ihre Bewertung der Einhaltung erhöht sich. Korrigierte Elemente werden als **Passed Objects** angezeigt.
 
+
 <!--HONumber=52-->

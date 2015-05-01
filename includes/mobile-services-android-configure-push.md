@@ -9,4 +9,5 @@
 
 Sowohl Ihr Mobile Service als auch Ihre App sind nun konfiguriert und funktionieren mit GCM und Notification Hubs. 
 
+
 <!--HONumber=52-->

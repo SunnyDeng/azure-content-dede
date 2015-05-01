@@ -35,4 +35,5 @@ Ihre Meinung zählt. Am Ende jeder Sitzung wird ein Dialogfeld angezeigt, in dem
 >[AZURE.NOTE] Da es sich um eine kontrollierte Umgebung zu Demonstrationszwecken handelt, ist der externe Internetzugriff von den veröffentlichten Demonstrationsanwendungen nicht aktiviert. Deshalb stehen Dienste wie OneDrive nicht zur Verfügung. Außerdem sind die gemeinsame Nutzung der Zwischenablage (Kopieren und Einfügen) sowie die USB- und Druckerumleitung deaktiviert.  
 
 
+
 <!--HONumber=52-->

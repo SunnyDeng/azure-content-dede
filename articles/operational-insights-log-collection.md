@@ -94,4 +94,5 @@ Dies kann über das Azure-Verwaltungsportal, nicht +über das Operational Insigh
 - [Anforderungen des IIS-Protokollformats in Azure Operational Insights](http://blogs.technet.com/b/momteam/archive/2014/09/19/iis-log-format-requirements-in-system-center-advisor.aspx)
 - Sehen Sie sich im [Feedback-Forum](http://feedback.azure.com/forums/267889-azure-operational-insights/category/88086-log-management-and-log-collection-policy) an, welche weiteren Datenquellen und Protokolltypen die Community implementiert haben möchte.
 
+
 <!--HONumber=52-->

@@ -93,4 +93,5 @@ Sobald Ihre API-App erstellt wurde, können Sie den Datei-Connector als Trigger 
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [File Connector]: https://msdn.microsoft.com/en-US/library/dn936296.aspx (in englischer Sprache)
 
+
 <!--HONumber=52-->

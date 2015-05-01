@@ -65,4 +65,5 @@ Werbeeinblendungen können an jeder Stelle auf der Zeitachse des Hauptvideos pla
 
 Informationen zu Untertiteln und der Unterstützung von Werbeeinblendungen in Livestreaming-Videos finden Sie unter [Standards für unterstützte Untertitel und für Werbeeinblendungen](https://msdn.microsoft.com/library/c49e0b4d-357e-4cca-95e5-2288924d1ff3#caption_ad).
 
+
 <!--HONumber=52-->

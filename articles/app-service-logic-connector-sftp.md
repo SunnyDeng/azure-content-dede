@@ -116,4 +116,5 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 [11]: ./media/app-service-logic-connector-sftp/img11.PNG
 [12]: ./media/app-service-logic-connector-sftp/img12.PNG
 
+
 <!--HONumber=52-->

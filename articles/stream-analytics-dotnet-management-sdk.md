@@ -357,4 +357,5 @@ Die Methode **Delete** löscht den Auftrag sowie die zugrunde liegenden Unterres
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
+
 <!--HONumber=52-->

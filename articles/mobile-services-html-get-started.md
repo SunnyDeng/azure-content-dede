@@ -162,4 +162,5 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Mobile Services HTML/JavaScript: Konzeptionelle Referenz]: /develop/mobile/how-to-guides/work-with-html-js-client
 [Cross-Origin Resource Sharing (CORS)]: http://msdn.microsoft.com/library/windowsazure/dn155871.aspx
 
+
 <!--HONumber=52-->

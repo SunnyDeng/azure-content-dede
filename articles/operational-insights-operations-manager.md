@@ -100,4 +100,5 @@ Wenn Sie beispielsweise von einer täglichen Uploadgröße von 100 KB pro Agent 
 Wenn Sie Daten von Servern an unterschiedlichen geografischen Standorten analysieren möchten, sollten Sie die Verwendung einer Verwaltungsgruppe pro Standort in Betracht ziehen. Dadurch können Sie die Leistung der Datenübertragung vom Agent an die Verwaltungsgruppe verbessern.
 
 
+
 <!--HONumber=52-->

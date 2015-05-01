@@ -495,4 +495,5 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Verwalten von Media Services-Medienobjekten für mehrere Speicherkonten]: http://msdn.microsoft.com/library/azure/dn271889.aspx
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
 
+
 <!--HONumber=52-->

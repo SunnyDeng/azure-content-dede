@@ -814,4 +814,5 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 * [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md)
 * [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
 
+
 <!--HONumber=52-->

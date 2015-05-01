@@ -421,4 +421,5 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 [Python Tools für Visual Studio - Dokumentation]: http://pytools.codeplex.com/documentation 
 [Dokumentation zu Bottle]: http://bottlepy.org/docs/dev/index.html
 
+
 <!--HONumber=52-->

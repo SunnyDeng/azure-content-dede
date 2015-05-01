@@ -101,4 +101,5 @@ Sie können jetzt die Anwendung ausführen.
 [Ereignisprozessorhost]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [Übersicht über Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn836025.aspx
 
+
 <!--HONumber=52-->

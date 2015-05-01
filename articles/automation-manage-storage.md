@@ -49,4 +49,5 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Verwendu
 
 Azure Automation: [Lernprogramm für den Einstieg](automation-create-runbook-from-samples.md)
 
+
 <!--HONumber=52-->

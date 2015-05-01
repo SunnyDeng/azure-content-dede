@@ -30,4 +30,5 @@ Wählen Sie aus, ob Sie den Schnellstart mit Implementierung über .NET oder RES
 [Erste Schritte mit .NET](http://msdn.microsoft.com/library/azure/dn783465.aspx)
 
 
+
 <!--HONumber=52-->

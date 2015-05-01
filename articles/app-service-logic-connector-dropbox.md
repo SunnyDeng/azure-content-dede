@@ -80,4 +80,5 @@ Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Datei hochladen" wie
 [8]: ./media/app-service-logic-connector-dropbox/img8.PNG
 [9]: ./media/app-service-logic-connector-dropbox/img9.PNG
 
+
 <!--HONumber=52-->

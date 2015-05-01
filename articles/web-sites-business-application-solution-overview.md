@@ -125,4 +125,5 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 [Vorgehensweise: Empfangen von Warnbenachrichtigungen und Verwalten von Warnungsregeln in Azure]:http://msdn.microsoft.com/library/windowsazure/dn306638.aspx
 
 
+
 <!--HONumber=52-->

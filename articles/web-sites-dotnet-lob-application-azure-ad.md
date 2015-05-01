@@ -356,4 +356,5 @@ Nachdem Sie die Autorisierungen und die Branchenfunktionalität für die verschi
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service and existing Azure services (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529714)
 * Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter: [Reference for navigating the preview portal (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529715)
 
+
 <!--HONumber=52-->

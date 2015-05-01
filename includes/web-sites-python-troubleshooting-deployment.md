@@ -8,4 +8,5 @@ Klicken Sie auf **Protokoll anzeigen**, um die Ausgabe des benutzerdefinierten B
 
 ![](./media/web-sites-python-troubleshoot-deployment/portal-deployment-log.png)
 
+
 <!--HONumber=52--> 

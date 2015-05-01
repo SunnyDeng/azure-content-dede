@@ -216,4 +216,5 @@ Unter den folgenden Links finden Sie weitere Informationen zu Python Tools für 
 [Azure-Speicher]: http://azure.microsoft.com/documentation/services/storage/
 [Azure SDK für Python]: https://github.com/Azure/azure-sdk-for-python
 
+
 <!--HONumber=52-->

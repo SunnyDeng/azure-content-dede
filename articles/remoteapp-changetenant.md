@@ -46,4 +46,5 @@ Wenn Sie einen anderen Mandanten verwenden möchten, führen Sie die folgenden S
 
 Nun können Sie den neuen Azure-AD-Mandanten für die Zugriffskontrolle auf das Azure-Abonnement und zum Konfigurieren des Benutzerzugriffs in RemoteApp verwenden.
 
+
 <!--HONumber=52-->

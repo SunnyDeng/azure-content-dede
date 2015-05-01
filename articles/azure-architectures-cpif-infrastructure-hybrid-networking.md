@@ -58,4 +58,5 @@ Das Hybrid Networking-Architekturmuster ist aufgrund der möglichen Anzahl von S
 
 [Batch Processing Tier](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-0bc3f8b1)
 
+
 <!--HONumber=52-->

@@ -583,4 +583,5 @@ Und bei einer Azure-Tabelle sehen die Protokolle  `Console.Out` und  `Console.Er
 
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure-Webaufträgen und dem Webaufträge-SDK finden Sie unter [Empfohlene Ressourcen für Azure-Webaufträge](http://go.microsoft.com/fwlink/?linkid=390226).
 
+
 <!--HONumber=52-->

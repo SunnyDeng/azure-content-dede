@@ -50,4 +50,5 @@ Nachdem Sie Ihr benutzerdefiniertes Vorlagenimage erstellt oder aktualisiert hab
 - Nehmen Sie keine Änderungen am Skript vor, die Überprüfungen sollen Ihnen helfen.
 - Wenn die VHD-Datei beim Upload ausgesperrt wird, kopieren oder verschieben Sie sie an den neuen Speicherort, und wiederholen Sie den Upload. Möglicherweise verhindern bestimmte Windows-Prozesse den Upload.  
 
+
 <!--HONumber=52-->

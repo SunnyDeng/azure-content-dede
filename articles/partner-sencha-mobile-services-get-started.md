@@ -713,4 +713,5 @@ Weitere Informationen zu den ersten Schritten in Sencha Touch finden Sie im voll
 <!-- images -->
 [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png
 
+
 <!--HONumber=52-->

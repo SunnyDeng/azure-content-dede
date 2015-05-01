@@ -92,4 +92,5 @@ Sie sind nun in der Lage, eine Medienprozessorinstanz abzurufen, und können mit
 [Aufgabenvoreinstellungen für den Azure Media Encoder]: http://msdn.microsoft.com/library/jj129582.aspx
 [Vorgehensweise: Programmgesteuertes Verbinden mit Mediendiensten]: ../media-services-set-up-computer/
 
+
 <!--HONumber=52-->

@@ -52,4 +52,5 @@ Sie können Änderungen an Ihrer Infrastruktur anzeigen und dann Einzelheiten f�
 
 4. Auf jeder Seite in Search können Sie die Ergebnisdetails in eine CSV-Datei **exportieren**, die in Excel oder einer anderen Anwendung geöffnet, angezeigt oder geändert werden kann.
 
+
 <!--HONumber=52-->

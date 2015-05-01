@@ -266,4 +266,5 @@ Im folgenden finden Sie ein vollständiges Beispiel. Informationen zur Einrichtu
 
 Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjekt trotzdem eine leere TTML-Datei.
 
+
 <!--HONumber=52-->

@@ -208,4 +208,5 @@ Die SAS und die gespeicherte Zugriffsrichtlinie müssen zusammen alle Felder ent
 
 Um den Zugriff auf SAS aufzuheben, die dieselbe gespeicherte Zugriffsrichtlinie verwenden, entfernen Sie die gespeicherte Richtlinie aus der Speicherressource, indem Sie die Liste der gespeicherten Richtlinien durch eine neue Liste überschreiben, in der der betreffende Richtlinienname nicht enthalten ist. Wenn Sie die Zugriffseinstellungen für eine gespeicherte Zugriffsrichtlinie ändern möchten, überschreiben Sie die Liste der gespeicherten Richtlinien durch eine neue Liste, die eine Richtlinie mit demselben Namen enthält, die über neue Zugriffssteuerungsdetails verfügt.
 
+
 <!--HONumber=52-->

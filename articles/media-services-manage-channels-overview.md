@@ -285,4 +285,5 @@ Informationen zum Skalieren von Streamingeinheiten finden Sie unter: [Skalieren 
 
 [live-overview]: ./media/media-services-overview/media-services-live-streaming-current.png
 
+
 <!--HONumber=52-->

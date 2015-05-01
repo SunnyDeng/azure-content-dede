@@ -87,4 +87,5 @@ Sie sollten die neueste Gastbetriebssystemfamilie verwenden, um Ihre Cloud-Diens
 
 Wenn Die Architektur Ihrer Webanwendung eine tiefer gehende Abhängigkeit vom zugrunde liegenden Betriebssystem erfordert, verwenden Sie von der Plattform unterstützte Funktionen wie z. B. "[Startaufgaben](https://msdn.microsoft.com/library/windowsazure/gg456327.aspx)" oder andere, zukünftig verfügbare Mechanismen zur Erweiterbarkeit. Alternativ dazu können Sie auch [virtuelle Azure-Computer](http://www.windowsazure.com/home/scenarios/virtual-machines/) (IaaS - Infrastructure as a Service) verwenden, bei denen die Verwaltung des zugrunde liegenden Betriebssystems in Ihrem Verantwortungsbereich liegt.
 
+
 <!--HONumber=52-->

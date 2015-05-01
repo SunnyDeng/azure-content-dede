@@ -93,4 +93,5 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Verwaltungsportal]: https://manage.windowsazure.com/
 
+
 <!--HONumber=52-->

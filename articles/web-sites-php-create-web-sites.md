@@ -106,4 +106,5 @@ Lernprogramme von Entwicklern für Entwickler finden Sie auf der Seite [Lernprog
 [App Service-Preisdetails]:/pricing/details/app-service/
 [Skalieren einer Web-App in Azure App Service]: web-sites-scale.md
 
+
 <!--HONumber=52-->

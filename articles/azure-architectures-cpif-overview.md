@@ -59,4 +59,5 @@ Zur Unterstützung der Entwicklung von Lösungsarchitekturen innerhalb von Azure
 
 [Azure Search](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-e581d65d)
 
+
 <!--HONumber=52-->

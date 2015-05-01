@@ -171,4 +171,5 @@ Sie können die Logik-App testen, indem Sie in der abgefragten Tabelle einen neu
 [Konfigurieren des Oracle-Clients]: https://msdn.microsoft.com/de-de/library/dd787872.aspx
 
 
+
 <!--HONumber=52-->

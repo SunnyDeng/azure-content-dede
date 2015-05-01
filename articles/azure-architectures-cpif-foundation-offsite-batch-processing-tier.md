@@ -53,4 +53,5 @@ Dieses Dokument beschreibt ein Muster für die Offsite-Batchverarbeitung mithilf
 [Azure Search Tier](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-e581d65d) 
 
 
+
 <!--HONumber=52-->

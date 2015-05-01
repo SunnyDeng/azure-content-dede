@@ -73,4 +73,5 @@ Um Ihrer benutzerdefinierten Domäne eine Web-App in Azure App Services zuzuweis
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=529714)
 * Hinweise zu den Änderungen des neuen Portals gegenüber dem alten finden Sie unter: [Referenz für das Navigieren im Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
+
 <!--HONumber=52-->

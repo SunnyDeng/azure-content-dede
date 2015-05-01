@@ -97,4 +97,5 @@ Wenn Sie das Azure IaaS-Diagnosepaket (Windows) nicht ausführen konnten oder da
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH](http://msdn.microsoft.com/library/azure/dn535788.aspx)
 
 
+
 <!--HONumber=52-->

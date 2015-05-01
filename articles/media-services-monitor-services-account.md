@@ -68,4 +68,5 @@ Metriken werden im Speicherkonto in vier Tabellen namens $MetricsTransactionsBlo
 [storage_options_scoped]: ./media/media-services-monitor-services-account/storagemonitoringoptions_scoped.png
 
 
+
 <!--HONumber=52-->

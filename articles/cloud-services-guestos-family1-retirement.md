@@ -78,4 +78,5 @@ Wir empfehlen Ihnen, Ihre Cloud-Dienst-Rollen zu einer der unterstützten Gastbe
 ## Erweiterte Unterstützung für Gastbetriebssystemfamilie 1 wurde am 3. November 2014 beendet 
 Cloud-Dienste unter Gastbetriebssystemfamilie 1 werden nicht mehr unterstützt. Migrieren Sie schnellst möglich von Familie 1 zu einer neueren Familie, um Dienstunterbrechungen zu vermeiden. 
 
+
 <!--HONumber=52-->

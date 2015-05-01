@@ -60,4 +60,5 @@ Um ein Supportticket zu öffnen, gehen Sie folgendermaßen vor:
 11. Klicken Sie auf "Senden", um das Ticket zu öffnen.
 
 
+
 <!--HONumber=52-->

@@ -137,4 +137,5 @@ Dies ist eine unvollständige Liste der unterstützten nicht komprimierten Forma
 <tr><td>Von Indeo generiertes YVU9-Format</td><td>Das von Indeo generierte YVU9-Format mit zusätzlichen Informationen über die Unterschiede zum letzten Frame. 9,5 Bit pro Pixel, wird jedoch als 9 angezeigt.</td></tr>
 </table>
 
+
 <!--HONumber=52-->

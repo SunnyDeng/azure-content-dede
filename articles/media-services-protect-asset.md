@@ -34,4 +34,5 @@ Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
  
 
+
 <!--HONumber=52-->

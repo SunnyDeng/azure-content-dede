@@ -160,4 +160,5 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
 
+
 <!--HONumber=52-->

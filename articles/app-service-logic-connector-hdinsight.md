@@ -123,4 +123,5 @@ Sie können auf 'Ausführen' klicken, um die Logik-App zu starten und das Szenar
 [10]: ./media/app-service-logic-connector-hdinsight/LogicApp6.jpg
 [11]: ./media/app-service-logic-connector-hdinsight/LogicApp7.jpg
 
+
 <!--HONumber=52-->

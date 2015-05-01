@@ -106,4 +106,5 @@ Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hu
 [Horizontales Hochskalieren der Ereignisverarbeitung mit Ereignis-Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [Messaginglösung mit Warteschlange]: cloud-services-dotnet-multi-tier-app-using-service-bus-queues.md
 
+
 <!--HONumber=52-->

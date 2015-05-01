@@ -31,4 +31,5 @@ Sie möchten nicht warten? Zeigen Sie ein kurzes Video zum [Erstellen einer Clou
 Sie haben Fragen oder Anmerkungen? Stellen Sie Fragen im [Diskussionsforum](http://feedback.azure.com/forums/247748-azure-remoteapp). Wenn Sie über einen [Azure-Supportplan](http://azure.microsoft.com/support/plans/) verfügen, können Sie einen Supportfall einreichen. In unserem [Feedbackforum](http://feedback.azure.com/forums/247748-azure-remoteapp) kann jede Person Feedback abgeben.  
 
 
+
 <!--HONumber=52-->

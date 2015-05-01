@@ -219,4 +219,5 @@ Hier sind einige Dinge zu beachten:
 Wie das vorherige Codebeispiel zeigt, wird dieser Werbespot nur einmal wiedergegeben, wenn Sie **deleteAfterPlay** auf **YES** festlegen. Wenn Sie **deleteAfterPlay** hingegen auf **NO** festlegen, wird dieser Werbespot immer weiter wiedergegeben. Ein solcher Werbespot wird als "Sticky Ad" bezeichnet.
 ### Weitere Informationen finden Sie im [Azure Media Player Framework Wiki](https://github.com/WindowsAzure/azure-media-player-framework/wiki).
 
+
 <!--HONumber=52-->

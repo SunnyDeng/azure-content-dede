@@ -82,4 +82,5 @@ Wenn Sie in Ihrer Umgebung Proxyserver oder Firewalls verwenden, die den Zugriff
 - [Blogbeitrag: Enable Operational Insights for Azure Virtual machines](in englischer Sprache)(http://azure.microsoft.com/updates/easily-enable-operational-insights-for-azure-virtual-machines/)
 
 
+
 <!--HONumber=52-->

@@ -422,4 +422,5 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 [Python Tools für Visual Studio - Dokumentation]: http://pytools.codeplex.com/documentation 
 [Dokumentation zu Flask]: http://flask.pocoo.org/ 
 
+
 <!--HONumber=52-->

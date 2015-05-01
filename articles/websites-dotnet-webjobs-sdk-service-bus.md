@@ -156,4 +156,5 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 
 In diesem Leitfaden wurden Codebeispiele bereitgestellt, die veranschaulichen, wie gängige Szenarien für die Arbeit mit Azure Service Bus behandelt werden. Weitere Informationen zur Verwendung von Azure-Webaufträgen und dem Webaufträge-SDK finden Sie unter [Empfohlene Ressourcen für Azure-Webaufträge](http://go.microsoft.com/fwlink/?linkid=390226).
 
+
 <!--HONumber=52-->

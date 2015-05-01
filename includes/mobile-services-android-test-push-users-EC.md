@@ -9,4 +9,5 @@
 
 4. (Optional) Wiederholen Sie die Schritte 1 bis 3 auf einem anderen Clientgerät, und verwenden Sie beim Anmelden ein anderes Konto. Vergewissern Sie sich, dass die Benachrichtigung nur auf Geräten empfangen wird, die sich mit demselben Benutzerkonto authentifizieren. 
 
+
 <!--HONumber=52-->

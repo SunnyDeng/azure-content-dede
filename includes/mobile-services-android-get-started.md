@@ -61,4 +61,5 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
 
+
 <!--HONumber=52-->

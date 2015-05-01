@@ -217,4 +217,5 @@ Durch die folgende **CreateChainedTaskEncodingJob**-Methode wird ein Auftrag mit
 [Vorgehensweise: Prüfen des Auftragsfortschritts]:http://go.microsoft.com/fwlink/?LinkId=301737
 [Aufgabenvoreinstellungen für Azure Media Packager]:http://msdn.microsoft.com/library/windowsazure/hh973635.aspx
 
+
 <!--HONumber=52-->

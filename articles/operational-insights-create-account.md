@@ -40,4 +40,5 @@ Weitere Informationen zum Einstieg in Operational Insights finden Sie unter:
 
 - [Einrichten und Konfigurieren des Arbeitsbereichs](operational-insights-setup-workspace.md)
 
+
 <!--HONumber=52-->

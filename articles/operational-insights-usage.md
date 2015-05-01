@@ -56,4 +56,5 @@ Das Dashboard **Nutzung** zeigt die folgenden Informationen an:
 3. Wenn eine Verwaltungsgruppe keine Daten sendet, können Sie auf **Problembehandlung** klicken, um ausführliche Informationen zur Problembehandlung zu erhalten. Wenn Sie eine Verwaltungsgruppe und alle Agents, die diesen Bericht erstatten, nicht länger behalten möchten, klicken Sie auf **Entfernen**.
 
 
+
 <!--HONumber=52-->

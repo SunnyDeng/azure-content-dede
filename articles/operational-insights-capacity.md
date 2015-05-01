@@ -162,4 +162,5 @@ Mithilfe des Projektionstools können Sie historische Trends für die Speicherpl
 4. Verschieben Sie im Tool **Projection** den Datumsschieberegler, um eine Projektion für die Kapazität anzuzeigen, die an dem von Ihnen gewählten Datum verwendet werden wird.
 
 
+
 <!--HONumber=52-->

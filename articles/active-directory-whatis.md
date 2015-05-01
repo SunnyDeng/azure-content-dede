@@ -46,4 +46,5 @@ Azure AD weist eine Reihe von Funktionsebenen auf, die von einem Cloud-Verzeichn
 * [Azure-Identität](/manage/windows/fundamentals/identity/)
 * [Informationen in MSDN zur Azure AD-Bibliothek](http://go.microsoft.com/fwlink/?LinkId=293425)
 
+
 <!--HONumber=52-->

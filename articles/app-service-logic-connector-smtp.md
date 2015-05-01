@@ -90,4 +90,5 @@ Sobald Ihre API-App erstellt wurde, k√∂nnen Sie den SMTP-Connector als Aktion f√
 [5]: ./media/app-service-logic-connector-smtp/img5.PNG
 [6]: ./media/app-service-logic-connector-smtp/img6.PNG
 
+
 <!--HONumber=52-->

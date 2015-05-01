@@ -123,4 +123,5 @@ Um [EventProcessorHost] verwenden zu können, müssen Sie ein [Azure-Speicherkon
 
 [Programmierleitfaden für Ereignis-Hubs]: http://msdn.microsoft.com/library/azure/dn789972.aspx
 
+
 <!--HONumber=52--> 

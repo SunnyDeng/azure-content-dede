@@ -274,4 +274,5 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [Azure Mobile App SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/2.0.0-beta
 [SQLite Store Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.2
 
+
 <!--HONumber=52-->

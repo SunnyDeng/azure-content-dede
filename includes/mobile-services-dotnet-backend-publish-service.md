@@ -15,4 +15,5 @@ Nachdem Sie die Client-App anhand des lokalen mobilen Diensts getestet haben, be
 	![](./media/mobile-services-dotnet-backend-publish-service/mobile-quickstart-publish-2.png)
 
 	Nachdem die Veröffentlichung erfolgreich durchgeführt wurde, wird erneut die Seite zur Bestätigung angezeigt, dass der Dienst ausgeführt wird, diesmal in Azure.
+
 <!--HONumber=52-->

@@ -215,4 +215,5 @@ Nachdem Sie Ihre Anwendung bereitgestellt haben, möchten Sie diese möglicherwe
 [Löschen eines Speicherkontos aus einem Azure-Abonnement]: https://www.windowsazure.com/manage/services/storage/how-to-manage-a-storage-account/
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
 
+
 <!--HONumber=52-->

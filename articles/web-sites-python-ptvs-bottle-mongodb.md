@@ -228,4 +228,5 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Bo
 [Webprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [Cloud-Dienstprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 
+
 <!--HONumber=52-->

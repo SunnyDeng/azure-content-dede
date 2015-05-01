@@ -39,4 +39,5 @@ Sie können Operational Insights mit einer vorhandenen System Center Operations 
 
 [Konfigurieren von Proxy- und Firewall-Einstellungen (Optional)](https://msdn.microsoft.com/library/azure/dn884643.aspx)
 
+
 <!--HONumber=52-->

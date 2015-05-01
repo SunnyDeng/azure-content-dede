@@ -130,4 +130,5 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Erste Schritte mit der Authentifizierung]: partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-users.md
 [Erste Schritte mit Pushbenachrichtigungen]: partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push.md
 
+
 <!--HONumber=52-->

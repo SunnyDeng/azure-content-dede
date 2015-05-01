@@ -64,4 +64,5 @@
 
 	Ein Meldungsfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, wodurch alle Elemente aus der Liste gelöscht werden.
 
+
 <!--HONumber=52-->

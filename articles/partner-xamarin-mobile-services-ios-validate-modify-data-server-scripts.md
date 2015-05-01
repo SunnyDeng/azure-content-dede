@@ -147,4 +147,5 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=331330
 
+
 <!--HONumber=52-->

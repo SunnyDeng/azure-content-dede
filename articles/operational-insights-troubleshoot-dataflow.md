@@ -121,4 +121,5 @@ Melden Sie sich im OpInsights-Portal an, und navigieren Sie von der Seite "Über
 
 Diese Seite bietet zudem Messungsinformationen (hierbei wird nicht der Search-Index, sondern das Abrechnungssystem verwendet, die Daten werden alle paar Stunden aktualisiert) über die an den Dienst gesendeten Datenmengen, aufgeschlüsselt nach Intelligence Pack.
 
+
 <!--HONumber=52-->

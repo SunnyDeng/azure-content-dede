@@ -241,4 +241,5 @@ In der folgenden Liste werden verschiedene Streamingformate beschrieben und Beis
 		http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f) 
 
 
+
 <!--HONumber=52-->

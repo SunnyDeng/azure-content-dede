@@ -104,4 +104,5 @@ Das WebJobs-SDK bietet verschiedene Vorteile, auch wenn Sie nicht direkt mit Azu
 
 Weitere Informationen über das Webaufträge-SDK finden Sie im Thema [Empfohlene Ressourcen für Azure-Webaufträge](http://go.microsoft.com/fwlink/?linkid=390226).
 
+
 <!--HONumber=52-->
