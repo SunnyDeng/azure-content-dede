@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Auswählen von Benutzernamen für Linux in Azure" 
-	description = "Informationen zum Auswählen von Benutzernamen für einen virtuellen Linux-Computer in Azure." 
+	description="Informationen zum Auswählen von Benutzernamen für einen virtuellen Linux-Computer in Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 

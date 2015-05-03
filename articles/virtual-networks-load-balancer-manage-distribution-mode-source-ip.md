@@ -1,24 +1,27 @@
 <properties 
-	authors="danielceckert" 
-	documentationCenter="dev-center-name" 
-	editor=""
-	manager="jefco" 
+
 	pageTitle="Verwaltung: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)" 
 	description="Verwaltungsfunktionen für den Azure-Lastenausgleichs-Verteilungsmodus" 
 	services="virtual-network"
-	authors="" 
+
+	documentationCenter="dev-center-name" 
+	authors="danielceckert" 
+	manager="jefco" 
+	editor=""
 />
 
 <tags
-	ms.author="danecke"
-	ms.date="02/20/2015"
+	ms.service="virtual-network"	
+
+
 	ms.devlang="na"
-	ms.service="virtual-network"
+
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"/>
-
-<!--HEAD:articles/virtual-networks-load-balancer-manage-distribution-mode.md # Verwaltung virtueller Netzwerke: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)--> 
+	ms.date="02/20/2015"
+	ms.author="danecke"
+	/>
    
 # Verwaltung virtueller Netzwerke: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)
 
