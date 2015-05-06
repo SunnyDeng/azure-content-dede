@@ -37,9 +37,9 @@ Die Kachel öffnet das Dashboard **Updates**, welches eine allgemeine Zusammenfa
 
 Klicken Sie auf eine beliebige Kachel oder ein Element, um Details dazu auf der Seite **Search** anzuzeigen und weitere Informationen zu dem fehlenden Update zu erhalten. 
 
-[Abbildung des Updates-Dashboards](./media/operational-insights-updates/gallery-sysupdate-01.png)
+![Abbildung des Updates-Dashboards](./media/operational-insights-updates/gallery-sysupdate-01.png)
 
-[Abbildung des Updates-Dashboards](./media/operational-insights-updates/gallery-sysupdate-02.png)
+![Abbildung des Updates-Dashboards](./media/operational-insights-updates/gallery-sysupdate-02.png)
 
 ## Suchergebnisse##
 Zu den Updatesuchergebnissen gehören:

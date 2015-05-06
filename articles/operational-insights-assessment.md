@@ -32,7 +32,7 @@ Sie können Schwerpunktbereiche wählen, die für Ihre Organisation am wichtigst
 
 Sie installieren die Intelligence Packs, um den Operations Manager-Agent und das Basiskonfigurationsmodul für Operational Insights zu aktualisieren, und fügen auf den überwachten Servern die Datei "AdvisorAssessment.exe" hinzu. Konfigurationsdaten werden gelesen und dann zur Verarbeitung an den Operational Insights-Dienst in der Cloud gesendet. Auf die empfangenen Daten wird Logik angewendet, und der Cloud-Dienst zeichnet die Daten auf. Sobald die Bewertungen abgeschlossen sind, werden zusammenfassende Informationen für Schwerpunktbereiche im Dashboard **Assessment** für die Infrastruktur in Ihrer Umgebung angezeigt. Mithilfe der Informationen auf dem Dashboard **Assessment** können Sie für Ihre Serverinfrastruktur empfohlene Maßnahmen anzeigen und anschließend ergreifen.
 
-[Abbildung der Kachel "SQL Assessment"](./media/operational-insights-assessment/overview-sql-assess.png)
+![Abbildung der Kachel "SQL Assessment"](./media/operational-insights-assessment/overview-sql-assess.png)
 
 ![Abbildung des Dashboards "SQL-Assessment"](./media/operational-insights-assessment/gallery-ad-01.png)
 
