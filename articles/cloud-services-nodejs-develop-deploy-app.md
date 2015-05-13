@@ -34,7 +34,7 @@ In diesem Lernprogramm werden Sie eine einfache Webanwendung erstellen, die in e
 
 Die Anwendung ist eine einfache "Hello World"-Anwendung:
 
-<p><img src="https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png" alt="Ein Browserfenster, in dem die Seite 'Hello World' angezeigt wird. Die URL zeigt an, dass die Seite auf Azure gehostet wird.>
+<p><img src="https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png" alt="Ein Browserfenster, in dem die Seite 'Hello World' angezeigt wird. Die URL zeigt an, dass die Seite auf Azure gehostet wird.">
 </p>
 
 ## Voraussetzungen
@@ -214,6 +214,5 @@ Nachdem Sie Ihre Anwendung bereitgestellt haben, möchten Sie diese möglicherwe
 [Die vollständige Statusausgabe des Publish-AzureService-Befehls]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
 [Löschen eines Speicherkontos aus einem Azure-Abonnement]: https://www.windowsazure.com/manage/services/storage/how-to-manage-a-storage-account/
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
-
 
 <!--HONumber=52-->

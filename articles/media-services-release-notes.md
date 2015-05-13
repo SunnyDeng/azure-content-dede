@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Versionshinweise zu Media Services" 
 	description="Versionshinweise zu Media Services" 
 	services="media-services" 
@@ -464,11 +464,15 @@ Die folgende Funktion war neu in der November-Version des SDK.
 
 <!-- URLs. -->
 [Azure Media Services MSDN-Forum]: http://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices
+[MSDN-Forum für Azure Media Services]: http://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices
 [REST-API-Referenz für Azure-Speicherdienste]: http://msdn.microsoft.com/library/azure/hh973617.aspx 
+[Azure Media Services - REST-API-Referenz]: http://msdn.microsoft.com/library/azure/hh973617.aspx 
 [Media Services-Preisdetails]: http://azure.microsoft.com/pricing/details/media-services/
+[Mediendienste - Preisdetails]: http://azure.microsoft.com/pricing/details/media-services/
 [Eingeben von Metadaten]: http://msdn.microsoft.com/library/azure/dn783120.aspx
 [Ausgeben von Metadaten]: http://msdn.microsoft.com/library/azure/dn783217.aspx
 [Bereitstellung von Inhalten]: http://msdn.microsoft.com/library/azure/hh973618.aspx
+[Bereitstellen von Inhalten]: http://msdn.microsoft.com/library/azure/hh973618.aspx
 [Indizieren von Mediendateien mit Azure Media Indexer]: http://msdn.microsoft.com/library/azure/dn783455.aspx
 [StreamingEndpoint]: http://msdn.microsoft.com/library/azure/dn783468.aspx
 [Arbeiten mit Azure Media Services-Livestreaming]: http://msdn.microsoft.com/library/azure/dn783466.aspx
@@ -477,10 +481,12 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Vorschaufunktionen]: http://azure.microsoft.com/services/preview/
 [Media Services PlayReady-Lizenzvorlage - Übersicht]: http://msdn.microsoft.com/library/azure/dn783459.aspx
 [Streaming von speicherverschlüsselten Inhalten]: http://msdn.microsoft.com/library/azure/dn783451.aspx
+[Bereitstellen von speicherverschlüsselten Inhalten]: http://msdn.microsoft.com/library/azure/dn783451.aspx
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com
 [Dynamische Paketerstellung]: http://msdn.microsoft.com/library/azure/jj889436.aspx
 [Nick Drouin's Blog]: http://blog-ndrouin.azurewebsites.net/hls-v3-new-old-thing/
 [Schützen von Smooth Stream mit PlayReady]: http://msdn.microsoft.com/library/azure/dn189154.aspx
+[Schützen von Smooth Streaming und MPEG DASH mit PlayReady]: http://msdn.microsoft.com/library/azure/dn189154.aspx
 [Wiederholungslogik im Media Services SDK für .NET]: http://msdn.microsoft.com/library/azure/dn745650.aspx
 [Grass Valley Announces EDIUS 7 Streaming Through the Cloud]: http://www.streamingmedia.com/Producer/Articles/ReadArticle.aspx?ArticleID=96351&utm_source=dlvr.it&utm_medium=twitter
 [Steuern von Media Services Encoder-Ausgabedateinamen]: http://msdn.microsoft.com/library/azure/dn303341.aspx
@@ -488,12 +494,14 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Zusammenfügen von Videosegmenten]: http://msdn.microsoft.com/library/azure/dn640504.aspx
 [Azure Media Services .NET SDK-Versionen 3.0.0.1 und 3.0.0.2]: http://www.gtrifonov.com/2014/02/07/windows-azure-media-services-.net-sdk-3.0.0.2-release/
 [Zugriffssteuerungsdienst für Azure Active Directory]: http://msdn.microsoft.com/library/hh147631.aspx
+[Token des Zugriffssteuerungsdiensts für Azure Active Directory]: http://msdn.microsoft.com/library/hh147631.aspx
 [Herstellen einer Verbindung mit Media Services mit dem Media Services SDK für .NET]: http://msdn.microsoft.com/library/azure/jj129571.aspx
+[Herstellen einer Verbindung mit Media Services mit dem Media Services SDK]: http://msdn.microsoft.com/library/azure/jj129571.aspx
 [Azure Media Services .NET SDK-Erweiterungen]: https://github.com/Azure/azure-sdk-for-media-services-extensions/tree/dev
 [azure-sdk-tools]: https://github.com/Azure/azure-sdk-tools
 [GitHub]: https://github.com/Azure/azure-sdk-for-media-services
 [Verwalten von Media Services-Medienobjekten für mehrere Speicherkonten]: http://msdn.microsoft.com/library/azure/dn271889.aspx
+[Verwalten von Media Services-Medienobjekte über mehrere Speicherkonten]: http://msdn.microsoft.com/library/azure/dn271889.aspx
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
-
 
 <!--HONumber=52-->

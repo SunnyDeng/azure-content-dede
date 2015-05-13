@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Dynamische Verschlüsselung:  Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel mit .NET" 
 	description="Erfahren Sie, wie Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfigurieren." 
 	services="media-services" 
@@ -29,7 +29,7 @@ Mit Microsoft Azure Media Services können Sie Inhalte (dynamisch) verschlüssel
 
 Derzeit können Sie die folgenden Streamingformate verschlüsseln: HLS, MPEG-DASH und Smooth Streaming. Das HDS-Streamingformat oder progressive Downloads können nicht verschlüsselt werden.
 
-Wenn ein Medienobjekt durch Media Services verschlüsselt werden soll, müssen Sie ihm einen Verschlüsselungsschlüssel (**CommonEncryption** oder **EnvelopeEncryption**) zuordnen (wie [hier] beschrieben)(media-services-dotnet-create-contentkey.md)und zusätzlich Autorisierungsrichtlinien für den Schlüssel konfigurieren (wie in diesem Artikel beschrieben). 
+Wenn ein Medienobjekt durch Media Services verschlüsselt werden soll, müssen Sie ihm einen Verschlüsselungsschlüssel (**CommonEncryption** oder **EnvelopeEncryption**) zuordnen (wie [hier](media-services-dotnet-create-contentkey.md) beschrieben)und zusätzlich Autorisierungsrichtlinien für den Schlüssel konfigurieren (wie in diesem Artikel beschrieben). 
 
 Wenn ein Player einen Stream anfordert, verwendet Media Services den angegebenen Schlüssel, um Ihren Inhalt mit AES- oder PlayReady-Verschlüsselung dynamisch zu verschlüsseln. Um den Stream zu entschlüsseln, fordert der Player den Schlüssel vom Schlüsselübermittlungsdienst an. Um zu entscheiden, ob der Benutzer berechtigt ist, den Schlüssel zu erhalten, wertet der Dienst die Autorisierungsrichtlinien aus, die Sie für den Schlüssel angegeben haben.
 
@@ -286,7 +286,7 @@ Im folgenden Beispiel wird eine Open-Autorisierungsrichtlinie erstellt und dem I
 
 ###Token-Einschränkung
 
-Zur Konfiguration der Token-Einschränkungsoption müssen die Autorisierungsanforderungen des Tokens in XML beschrieben werden. Die XML für die Konfiguration der Token-Einschränkung muss dem in [diesem] Abschnitt beschriebenen XML-Schema entsprechen(#schema) wechseln.
+Zur Konfiguration der Token-Einschränkungsoption müssen die Autorisierungsanforderungen des Tokens in XML beschrieben werden. Die XML für die Konfiguration der Token-Einschränkung muss dem in [diesem](#schema) Abschnitt beschriebenen XML-Schema entsprechen wechseln.
 	
 	public static string AddTokenRestrictedAuthorizationPolicy(IContentKey contentKey)
 	{
@@ -365,6 +365,7 @@ Um ein Testtoken abzurufen, das auf der Token-Einschränkung basiert, die für d
 ##<a id="types"></a>Beim Definieren von ContentKeyAuthorizationPolicy verwendete Typen
 
 ###<a id="ContentKeyRestrictionType"></a>ContentKeyRestrictionType
+
     public enum ContentKeyRestrictionType
     {
         Open = 0,
@@ -394,6 +395,5 @@ Um ein Testtoken abzurufen, das auf der Token-Einschränkung basiert, die für d
 
 ##Nächste Schritte
 Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Konfigurieren einer Übermittlungsrichtlinie für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md) .
-
 
 <!--HONumber=52-->

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Konfigurieren von Übermittlungsrichtlinien für Medienobjekte mit .NET" 
 	description="In diesem Thema wird die Konfiguration verschiedener Übermittlungsrichtlinien für Medienobjekte erläutert." 
 	services="media-services" 
@@ -59,7 +59,7 @@ Anweisungen zum Veröffentlichen eines Medienobjekts und Erstellen einer Streami
 
 Mit der folgenden **ConfigureClearAssetDeliveryPolicy**-Methode wird angegeben, keine dynamische Verschlüsselung anzuwenden und den Stream unter Verwendung eines der folgenden Protokolle zu übermitteln:  MPEG DASH, HLS und Smooth Streaming-Protokoll. 
   
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln. 
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben wechseln. 
 
     static public void ConfigureClearAssetDeliveryPolicy(IAsset asset)
     {
@@ -76,7 +76,7 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erl
 
 Durch die folgende **CreateAssetDeliveryPolicy**-Methode wird **AssetDeliveryPolicy** erstellt. Die Richtlinie ist für die Anwendung der dynamischen allgemeinen Verschlüsselung (**DynamicCommonEncryption**) auf ein Smooth Streaming-Protokoll konfiguriert (andere Protokolle werden vom Streaming ausgeschlossen). Die Methode akzeptiert zwei Parameter: **Asset** (das Medienobjekt, auf das die Übermittlungsrichtlinie angewendet werden soll) und **IContentKey** (der Inhaltsschlüssel des **CommonEncryption**-Typs. Weitere Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-dotnet-create-contentkey.md#common_contentkey)).
 
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln. 
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben wechseln. 
 
 
     static public void CreateAssetDeliveryPolicy(IAsset asset, IContentKey key)
@@ -110,7 +110,7 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erl
 Durch die folgende **CreateAssetDeliveryPolicy**-Methode wird **AssetDeliveryPolicy** erstellt. Die Richtlinie ist für die Anwendung der dynamischen Umschlagverschlüsselung (**DynamicEnvelopeEncryption**) auf HLS- und DASH-Protokolle konfiguriert (andere Protokolle werden vom Streaming ausgeschlossen). Die Methode akzeptiert zwei Parameter: **Asset** (das Medienobjekt, auf das die Übermittlungsrichtlinie angewendet werden soll) und **IContentKey** (der Inhaltsschlüssel des **EnvelopeEncryption**-Typs. Weitere Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-dotnet-create-contentkey.md#envelope_contentkey)).
 
 
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln.   
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben wechseln.   
 
     private static void CreateAssetDeliveryPolicy(IAsset asset, IContentKey key)
     {
@@ -290,6 +290,5 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erl
         /// </summary>
         EnvelopeEncryptionIV,
     }
-
 
 <!--HONumber=52-->

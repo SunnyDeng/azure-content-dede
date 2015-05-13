@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Optionen für die Übertragung von gespeicherten Daten in die Cloud | Azure" 
 	description="Hilfestellung bei der Auswahl der besten Option für die Übertragung von Daten aus einer lokalen Bereitstellung oder anderen Cloudquellen in Microsoft Azure für eine erweiterte Analyse." 
 	services="data-factory, hdinsight, machine-learning, storage, sql-database" 
@@ -65,7 +65,7 @@ Azure Data Factory ist ein vollständig verwalteter Dienst für das Kombinieren 
 
 Entwickler können datengesteuerte Workflows erstellen, die semi-strukturierte, unstrukturierte und strukturierte Daten aus lokalen Diensten (über Data Management Gateway), cloudbasierten und Internetdiensten zusammenführen, aggregieren und transformieren. Darüber hinaus kann eine komplexe Datenverarbeitung über einfache JSON-Skripts eingerichtet werden. Die Ergebnisdaten können für eine erweiterte Analyse in Azure Storage oder Azure SQL-Datenbank gespeichert werden.
 
-Insbesondere können Entwickler regelmäßige Kopieraktivitäten zwischen verschiedenen Quellen und Zielen konfigurieren, wie gezeigt im Abschnitt "[Unterstützte Eingaben und Ausgaben]"(data-factory-copy-activity.md#SupportedSourcesAndSinks)" im Thema [Kopieren von Daten mit Azure Data Factory](data-factory-copy-activity.md), In diesem Thema werden auch Eigenschaften für unterschiedliche Arten von Datenspeichern, Spaltenzuordnungen, Serialisierungsformaten und Typenverarbeitungen behandelt.
+Insbesondere können Entwickler regelmäßige Kopieraktivitäten zwischen verschiedenen Quellen und Zielen konfigurieren, wie gezeigt im Abschnitt "[Unterstützte Eingaben und Ausgaben](data-factory-copy-activity.md#SupportedSourcesAndSinks)" im Thema [Kopieren von Daten mit Azure Data Factory](data-factory-copy-activity.md), In diesem Thema werden auch Eigenschaften für unterschiedliche Arten von Datenspeichern, Spaltenzuordnungen, Serialisierungsformaten und Typenverarbeitungen behandelt.
 
 Der Dienst kann Fehler beim automatischen Start beheben und ermöglicht beim Verschieben von Daten die Formatierung von einem Format in ein anderes. Informationen zum Definieren einer Kopieraktivität finden Sie unter [Erste Schritte mit Data Factory][start]. Das Registrieren von Datenspeicher und die Gatewayinstallation werden unter [Aktivieren Ihrer Pipelines zum Arbeiten mit lokalen Daten][pipelines] beschrieben. 
 
@@ -268,6 +268,5 @@ Hinweise zum Entscheidungsbaum:
 [stream]: stream-analytics-introduction.md
 [sync]: http://msdn.microsoft.com/library/azure/hh456371.aspx
 [hybrid]: integration-hybrid-connection-overview.md
-
 
 <!--HONumber=52-->

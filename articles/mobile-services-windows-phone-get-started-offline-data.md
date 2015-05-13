@@ -59,7 +59,7 @@ In diesem Abschnitt wird SQLite als lokaler Speicher für die Offlinefunktionen 
 
     >[AZURE.NOTE] Wenn Sie Internet Explorer verwenden und auf den Link für das Herunterladen von SQLite klicken, werden Sie möglicherweise aufgefordert, die VSIX-Datei als ZIP-Datei herunterzuladen. Speichern Sie die Datei mit der Endung .vsix statt .zip an einem Speicherort auf Ihrer Festplatte. Doppelklicken Sie im Windows-Explorer auf die VSIX-Datei, um die Installation auszuführen.
 
-2. Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten abgeschlossen] haben. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf**Verweise**unterhalb des Projekts, und fügen Sie einen Verweis auf **SQLite für Windows Phone** unter **Windows Phone**>**Erweiterungen hinzu. 
+2. Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten abgeschlossen] haben. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf**Verweise**unterhalb des Projekts, und fügen Sie einen Verweis auf **SQLite für Windows Phone** unter **Windows Phone**>**Erweiterungen hinzu**. 
 
     ![][1]
 
@@ -243,9 +243,9 @@ In diesem Abschnitt testen Sie die Push- und Pull-Vorgänge zur Synchronisierung
     ![][10] 
   
 
-##Zusammenfassung
+## Zusammenfassung
 
-##Zusammenfassung
+## Zusammenfassung
 
 [AZURE.INCLUDE [mobile-services-offline-summary-csharp](../includes/mobile-services-offline-summary-csharp.md)]
 
@@ -258,6 +258,7 @@ In diesem Abschnitt testen Sie die Push- und Pull-Vorgänge zur Synchronisierung
 <!-- Anchors. -->
 [Aktualisieren der App zur Unterstützung von Offlinefunktionen]: #enable-offline-app
 [esten der App in einem Offlineszenario]: #test-offline-app
+[Testen der App in einem Offlineszenario]: #test-offline-app
 [Aktualisieren der App zur erneuten Herstellung einer Verbindung mit dem mobilen Dienst]: #update-online-app
 [Testen der App mit Verbindung zum Mobile Service]: #test-online-app
 [Nächste Schritte]:#next-steps
@@ -281,14 +282,15 @@ In diesem Abschnitt testen Sie die Push- und Pull-Vorgänge zur Synchronisierung
 [Behandeln von Konflikten mit der Offlineunterstützung für Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-handling-conflicts-offline-data/ 
 [Erste Schritte: Offlinebeispiel für Windows Phone]: http://go.microsoft.com/fwlink/?LinkId=397952
 [Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-get-started/
+[Schnellstart für Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-get-started/
 [Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-data/
+[Erste Schritte mit Daten abgeschlossen]: /de-de/documentation/articles/mobile-services-windows-phone-get-started-data/
 [SQLite für Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
 [Vorläufiges Löschen]: /de-de/documentation/articles/mobile-services-using-soft-delete/
 
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite Store Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
-
 
 
 <!--HONumber=42-->

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erstellen eines Medienprozessors - Azure" 
 	description="Erfahren Sie, wie Sie eine Medienprozessorkomponente erstellen können, um Medieninhalte für Azure Media Services zu codieren, zu ver- oder entschlüsseln, und um Formate zu konvertieren. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." 
 	services="media-services" 
@@ -91,6 +91,6 @@ Sie sind nun in der Lage, eine Medienprozessorinstanz abzurufen, und können mit
 [Codieren von Medienobjekten]: media-services-encode-asset.md
 [Aufgabenvoreinstellungen für den Azure Media Encoder]: http://msdn.microsoft.com/library/jj129582.aspx
 [Vorgehensweise: Programmgesteuertes Verbinden mit Mediendiensten]: ../media-services-set-up-computer/
-
+[Gewusst wie: Programmgesteuertes Verbinden mit Media Services]: ../media-services-set-up-computer/
 
 <!--HONumber=52-->

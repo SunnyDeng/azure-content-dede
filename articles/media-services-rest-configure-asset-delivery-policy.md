@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Konfigurieren von Übermittlungsrichtlinien für Medienobjekte mit REST" 
 	description="In diesem Thema wird die Konfiguration verschiedener Übermittlungsrichtlinien für Medienobjekte erläutert." 
 	services="media-services" 
@@ -67,7 +67,7 @@ Anweisungen zum Veröffentlichen eines Medienobjekts und Erstellen einer Streami
 ###<a id="create_asset_delivery_policy"></a>Erstellen einer Übermittlungsrichtlinie für Medienobjekte
 Durch die folgende HTTP-Anforderung wird eine Übermittlungsrichtlinie für Medienobjekte erstellt. Diese gibt an, dass keine dynamische Verschlüsselung angewendet und der Stream mit einem der folgenden Protokolle übermittelt wird:  MPEG DASH, HLS und Smooth Streaming-Protokoll. 
 
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln.   
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben wechseln.   
 
 
 Anforderung:
@@ -189,7 +189,7 @@ Antwort:
 Durch die folgende HTTP-Anforderung wird die **AssetDeliveryPolicy** erstellt. Die Richtlinie ist so konfiguriert, dass sie die dynamische Umschlagsverschlüsselung (**DynamicEnvelopeEncryption**) auf das **HLS**-Protokoll anwendet (andere Protokolle in diesem Beispiel sind vom Streaming ausgeschlossen). 
 
 
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln.   
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben wechseln.   
 
 Anforderung:
 
@@ -246,7 +246,7 @@ Rufen Sie die Übermittlungs-URL für die PlayReady-Übermittlungsmethode des In
 
 Durch die folgende HTTP-Anforderung wird die **AssetDeliveryPolicy** erstellt. Die Richtlinie ist so konfiguriert, dass sie die dynamische allgemeine Verschlüsselung (**DynamicCommonEncryption**) auf das **Smooth Streaming**-Protokoll anwendet (andere Protokolle in diesem Beispiel sind vom Streaming ausgeschlossen). 
 
-Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen] wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben(#types) wechseln.   
+Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben wechseln.   
 
 
 Anforderung:
@@ -411,6 +411,5 @@ Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer 
         /// </summary>
         EnvelopeEncryptionIV,
     }
-
 
 <!--HONumber=52-->

@@ -30,12 +30,12 @@ Verwenden Sie `pip wheel`, um eine Abhängigkeit zu kompilieren:
 
 Dies erstellt eine .whl-Datei im Ordner \wheelhouse.  Fügen Sie den \wheelhouse-Ordner und die Wheel-Dateien zum Repository hinzu.
 
-Bearbeiten Sie die Datei requirements.txt, und fügen Sie die Option "--find-links" am Anfang ein. Dies weist Pip an, nach einer genauen Übereinstimmung im lokalen Ordner zu suchen, bevor es zum Python-Paketindex wechselt.
+Bearbeiten Sie die Datei requirements.txt, und fügen Sie die Option `--find-links` am Anfang ein. Dies weist Pip an, nach einer genauen Übereinstimmung im lokalen Ordner zu suchen, bevor es zum Python-Paketindex wechselt.
 
     --find-links wheelhouse
     azure==0.8.4
 
-Wenn alle Ihre Abhängigkeiten im \wheelhouse-Ordner enthalten sein sollen und Sie keinen Python-Paketindex verwenden möchten, können Sie erzwingen, dass Pip den Paketindex ignoriert, indem "--no-index" am Anfang von requirements.txt einfügen.
+Wenn alle Ihre Abhängigkeiten im \wheelhouse-Ordner enthalten sein sollen und Sie keinen Python-Paketindex verwenden möchten, können Sie erzwingen, dass Pip den Paketindex ignoriert, indem `--no-index` am Anfang von requirements.txt einfügen.
 
     --no-index
 
@@ -67,6 +67,5 @@ Es wird empfohlen, dass Sie die vorhandene virtuelle Umgebung auf der Website l�
 [Erstellen eines virtuellen Computers, der Windows ausführt]: http://azure.microsoft.com/documentation/articles/virtual-machines-windows-tutorial/
 [Microsoft Visual C++-Compiler für Python 2.7]: http://aka.ms/vcpython27
 [Microsoft Visual C++ 2010 Express]: http://go.microsoft.com/?linkid=9709949
-
 
 <!--HONumber=52--> 

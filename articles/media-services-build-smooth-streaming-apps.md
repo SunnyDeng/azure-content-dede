@@ -354,7 +354,7 @@ Diese Lektion enthält die folgenden Prozeduren:
 		}
 		#endregion Adaptive Source Level Events
 
-4.	At the end of the <strong>mediaElement AdaptiveSourceOpened</strong> method, add the following code to subscribe to the events:
+4.	Fügen Sie am Ende der <strong>mediaElement AdaptiveSourceOpened</strong> -Methode den folgenden Code hinzu, um die Ereignisse zu abonnieren:
 	
 		adaptiveSource.ManifestReadyEvent +=
 	                mediaElement_ManifestReady;
@@ -1007,6 +1007,5 @@ Sie haben Lektion 4 abgeschlossen.  In dieser Lektion haben Sie die Funktion zur
 
 [PlayerApplication]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-1.png
 [CodeViewPic]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-2.png
-
 
 <!--HONumber=52-->

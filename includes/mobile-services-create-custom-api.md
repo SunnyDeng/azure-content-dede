@@ -1,4 +1,4 @@
-﻿
+
 
 1. Melden Sie sich beim Azure-Verwaltungsportal an, klicken Sie auf **Mobile Services**, und wählen Sie dann Ihren mobilen Dienst aus.
 
@@ -10,7 +10,7 @@
 
 4. Klicken Sie in der API-Tabelle auf **completeall**.
 
-5. Klicken Sie auf die Registerkarte **Skript**, ersetzen Sie den vorhandenen Code durch folgenden Code, und klicken Sie anschließend auf **Speichern**. 	Dieser Code verwendet das [mssql]-Objekt, um direkt auf die Tabelle **todoitem** zuzugreifen und für alle Elemente das  `complete`-Kennzeichen zu setzen. Da die Funktion **exports.post** verwendet wird, senden die Clients eine POST-Anforderung zur Durchführung des Vorgangs. Die Anzahl der geänderten Zeilen wird an den Client als Ganzzahl zurückgegeben.
+5. Klicken Sie auf die Registerkarte **Skript**, ersetzen Sie den vorhandenen Code durch folgenden Code, und klicken Sie anschließend auf **Speichern**. 	Dieser Code verwendet das [mssql-Objekt], um direkt auf die Tabelle **todoitem** zuzugreifen und für alle Elemente das  `complete`-Kennzeichen zu setzen. Da die Funktion **exports.post** verwendet wird, senden die Clients eine POST-Anforderung zur Durchführung des Vorgangs. Die Anzahl der geänderten Zeilen wird an den Client als Ganzzahl zurückgegeben.
 
 
 		exports.post = function(request, response) {

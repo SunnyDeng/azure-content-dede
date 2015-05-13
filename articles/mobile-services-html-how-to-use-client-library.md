@@ -638,7 +638,7 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 [Erste Schritte zur Authentifizierung von Windows Store]: /de-de/develop/mobile/tutorials/get-started-with-users-js
 [then]: http://msdn.microsoft.com/library/windows/apps/br229728.aspx
 [done]: http://msdn.microsoft.com/library/windows/apps/hh701079.aspx
-[Weitere Informationen zum Unterschied zwischen "then" und "done"].: http://msdn.microsoft.com/library/windows/apps/hh700334.aspx
+[Weitere Informationen zum Unterschied zwischen "then" und "done"]: http://msdn.microsoft.com/library/windows/apps/hh700334.aspx
 [Behandeln von Fehlern in Zusagen]: http://msdn.microsoft.com/library/windows/apps/hh700337.aspx
 
 [sessionStorage]: http://msdn.microsoft.com/library/cc197062(v=vs.85).aspx
@@ -658,9 +658,9 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 [login]: http://msdn.microsoft.com/library/windowsazure/jj554236.aspx
 [Authentifizieren Ihrer Anwendung mit einmaliger Anmeldung]: /de-de/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/
 [ASCII-Steuerungscodes C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
+[ASCII-Steuerzeichen C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [CLI zum Verwalten von Mobile Services-Tabellen]: http://azure.microsoft.com/manage/linux/other-resources/command-line-tools/#Mobile_Tables
 [Referenz zu OData-Systemabfrageoptionen]: http://go.microsoft.com/fwlink/p/?LinkId=444502
-
 
 
 <!--HONumber=42-->

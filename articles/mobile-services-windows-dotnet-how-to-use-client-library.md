@@ -50,7 +50,7 @@ Dieser Artikel beschreibt gängige Szenarien für die Verwendung eines .NET-Clie
 - [Gewusst wie: Verwenden von optimistischer Nebenläufigkeit]
 - [Gewusst wie: Bindung von Daten an die Benutzeroberfläche in einem mobilen Dienst]
 - [Gewusst wie: Authentifizieren von Benutzern]
-- [Gewusst wie: ]Fehlerbehandlung
+- [Gewusst wie: Fehlerbehandlung]
 - [Gewusst wie: Arbeiten mit nicht typisierten Daten]
 - [Gewusst wie: Design von Komponententests]
 - [Gewusst wie: Anpassen des Clients]
@@ -264,7 +264,7 @@ Der `id`-Wert muss eindeutig sein und darf keine Zeichen aus den folgenden Sätz
 +  Die IDs "." und ".."
 
 
-Alternativ können Sie auch ganzzahlige Ids für Ihre Tabellen verwenden. Um ganzzahlige Ids zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die "--integerId"-Option verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI zum Verwalten von Tabellen in Mobile Services].
+Alternativ können Sie auch ganzzahlige Ids für Ihre Tabellen verwenden. Um ganzzahlige Ids zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die `--integerId`-Option verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI zum Verwalten von Tabellen in Mobile Services].
 
 
 Zum Einfügen von untypisierten Daten können Sie Json.NET verwenden, wie unten gezeigt.
@@ -332,9 +332,9 @@ Beachten Sie, dass dies ein typisierter Methodenaufruf ist, der erfordert, dass 
 
 In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. Die Steuerung für optimistische Nebenläufigkeit setzt voraus, dass jede Transaktion Commits ausführen kann, und sperrt daher keine Ressourcen. Vor dem Commit einer Transaktion prüft die Steuerung für optimistische Nebenläufigkeit, ob die Daten von einer anderen Transaktion geändert wurden. Falls die Daten geändert wurden, wird für die Transaktion, die den Commit durchführen sollte, ein Rollback durchgeführt.
 
-Mobile Services unterstützen die Steuerung für optimistische Parallelität, indem Änderungen an Elementen in der "__version"-Systemeigenschaftenspalte registriert werden, die in allen von Mobile Services erstellten Tabellen existiert. Bei jeder Änderung an einem Element setzt Mobile Services einen neuen Wert für die "__version"-Eigenschaft des entsprechenden Elements fest. Bei jeder Änderungsanfrage wird die "__version"-Eigenschaft des entsprechenden Eintrags mit der Eigenschaft des Eintrags auf dem Server verglichen. Wenn die mit der Anforderung übergebene Version nicht mit dem Server übereinstimmt, löst die Mobile Services .NET-Clientbibliothek `MobileServicePreconditionFailedException<T>` aus. Der in der Ausnahme enthaltene Typ ist der Eintrag vom Server mit der Serverversion des Eintrags. Anschließend kann die Anwendung anhand dieser Informationen entscheiden, ob die Änderungsanfrage erneut mit dem korrekten "__version"-Wert vom Server geschickt werden soll, um den Commit für die Änderungen auszuführen.  
+Mobile Services unterstützen die Steuerung für optimistische Parallelität, indem Änderungen an Elementen in der `__version`-Systemeigenschaftenspalte registriert werden, die in allen von Mobile Services erstellten Tabellen existiert. Bei jeder Änderung an einem Element setzt Mobile Services einen neuen Wert für die `__version`-Eigenschaft des entsprechenden Elements fest. Bei jeder Änderungsanfrage wird die `__version`-Eigenschaft des entsprechenden Eintrags mit der Eigenschaft des Eintrags auf dem Server verglichen. Wenn die mit der Anforderung übergebene Version nicht mit dem Server übereinstimmt, löst die Mobile Services .NET-Clientbibliothek `MobileServicePreconditionFailedException<T>` aus. Der in der Ausnahme enthaltene Typ ist der Eintrag vom Server mit der Serverversion des Eintrags. Anschließend kann die Anwendung anhand dieser Informationen entscheiden, ob die Änderungsanfrage erneut mit dem korrekten `__version`-Wert vom Server geschickt werden soll, um den Commit für die Änderungen auszuführen.  
 
-Die Anwendung definiert eine Spalte in der Tabellenklasse für die "__version"-Systemeigenschaft, um die Kontrolle für optimistische Nebenläufigkeit zu aktivieren. Die folgende Definition zeigt ein Beispiel.
+Die Anwendung definiert eine Spalte in der Tabellenklasse für die `__version`-Systemeigenschaft, um die Kontrolle für optimistische Nebenläufigkeit zu aktivieren. Die folgende Definition zeigt ein Beispiel.
 
     public class TodoItem
     {
@@ -358,7 +358,7 @@ Anwendungen, die nicht typisierte Tabellen verwenden, können die optimistische 
 	todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 
 
-Der folgende Code zeigt, wie ein erkannter Schreibkonflikt gelöst werden kann. Der korrekte "__version"-Wert muss im `UpdateAsync()`-Aufruf angegeben werden, um einen Commit für die Auflösung auszuführen.
+Der folgende Code zeigt, wie ein erkannter Schreibkonflikt gelöst werden kann. Der korrekte `__version`-Wert muss im `UpdateAsync()`-Aufruf angegeben werden, um einen Commit für die Auflösung auszuführen.
 
 	private async void UpdateToDoItem(TodoItem item)
 	{
@@ -690,6 +690,7 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 
 <!-- Anchors. -->
 [Mobile Services]: #what-is
+[Was sind Mobile Services]: #what-is
 [Konzepte]: #concepts
 [Gewusst wie: Erstellen des Mobile Services-Clients]: #create-client
 [Gewusst wie: Erstellen eines Tabellenverweises]: #instantiating
@@ -697,6 +698,7 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 [Filtern zurückgegebener Daten]: #filtering
 [Sortieren zurückgegebener Daten]: #sorting
 [Seitenweises Zurückgegeben von Daten]: #paging
+[Seitenweises Zurückgeben von Daten]: #paging
 [Auswählen bestimmter Spalten]: #selecting
 [Abrufen von Daten nach ID]: #lookingup
 [Gewusst wie: Bindung von Daten an die Benutzeroberfläche in einem mobilen Dienst]: #binding
@@ -723,10 +725,15 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
+[SDK für Mobile Services]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Windows Store Schnellstart-Lernprogramm]: http://azure.microsoft.com/develop/mobile/tutorials/get-started/
+[Windows Store-Schnellstartlernprogramm]: http://azure.microsoft.com/develop/mobile/tutorials/get-started/
 [Windows Phone Schnellstart-Lernprogramm]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-wp8/
+[Windows Phone-Schnellstartlernprogramm]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-wp8/
 [Lernprogramm für Windows Store-Daten]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-with-data-dotnet/
+[Windows Store-Datenlernprogramm]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-with-data-dotnet/
 [Lernprogramm für Windows Phone-Daten]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-with-data-wp8/
+[Windows Phone-Datenlernprogramm]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-with-data-wp8/
 [Windows Store-Authentifizierung]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-with-users-dotnet/
 [Windows Phone-Authentifizierung]: http://azure.microsoft.com/develop/mobile/tutorials/get-started-with-users-wp8/
 [PasswordVault]: http://msdn.microsoft.com/library/windows/apps/windows.security.credentials.passwordvault.aspx
@@ -744,17 +751,20 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 [UserID]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
 [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
 [ASCII-Steuerungscodes C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
+[ASCII-Steuerzeichen C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [CLI zum Verwalten von Mobile Services-Tabellen]: http://azure.microsoft.com/manage/linux/other-resources/command-line-tools/#Mobile_Tables
+[CLI zum Verwalten von Tabellen in Mobile Services]: http://azure.microsoft.com/manage/linux/other-resources/command-line-tools/#Mobile_Tables
 [Lernprogramm für optimistische Nebenläufigkeit]: http://azure.microsoft.com/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/
 
 [IncludeTotalCount]: http://msdn.microsoft.com/library/windowsazure/dn250560.aspx
 [Überspringen]: http://msdn.microsoft.com/library/windowsazure/dn250573.aspx
+[Skip]: http://msdn.microsoft.com/library/windowsazure/dn250573.aspx
 [Verwenden]: http://msdn.microsoft.com/library/windowsazure/dn250574.aspx
+[Take]: http://msdn.microsoft.com/library/windowsazure/dn250574.aspx
 [Fiddler]: http://www.telerik.com/fiddler
 [Benutzerdefinierte API in Azure Mobile Services Client SDKs]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
 [Aufrufen einer benutzerdefinierten API aus dem Client]: /de-de/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api/
 [InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
-
 
 
 <!--HONumber=42-->
