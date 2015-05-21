@@ -1,4 +1,11 @@
-\<properties pageTitle="Erstellen und Bereitstellen einer Node.js-API-App in Azure App Service" description="Erfahren Sie, wie Sie ein Node.js-API-App-Paket erstellen und dieses in Azure App Service bereitstellen." services="app-service\\api" documentationCenter="nodejs" authors="pkefal" manager="", editor=""/\>
+<properties 
+	pageTitle="Erstellen und Bereitstellen einer Node.js-API-App in Azure App Service" 
+	description="Erfahren Sie, wie Sie ein Node.js-API-App-Paket erstellen und dieses in Azure App Service bereitstellen." 
+	services="app-service\api" 
+	documentationCenter="nodejs" 
+	authors="pkefal" 
+	manager="", 
+	editor=""/>
 
 <tags
 	ms.service="app-service-api"
@@ -25,7 +32,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 2. Klicken Sie links unten im Portal auf **NEU**.
 
-3. Klicken Sie auf **Web + Mobil \> API-App**.
+3. Klicken Sie auf **Web + Mobil > API-App**.
 
 	![][portal-quick-create]
 
@@ -41,9 +48,9 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 	Wenn Sie das Kontrollkästchen **Zum Startboard hinzufügen** aktiviert lassen, öffnet das Portal nach dem Erstellen der API-App automatisch das zugehörige Blatt. Wenn Sie das Kontrollkästchen deaktiviert haben, klicken Sie auf der Startseite des Portals auf **Benachrichtigungen**, um den Status der API-App-Erstellung anzuzeigen. Klicken Sie anschließend auf die Benachrichtigung, um zum Blatt für die neue API-App zu wechseln.
 
-7. Klicken Sie auf **Einstellungen \> Anwendungseinstellungen**.
+7. Klicken Sie auf **Einstellungen > Anwendungseinstellungen**.
 
-9. Legen Sie die Zugriffsebene auf **Öffentlich \(anonym\)** fest.
+9. Legen Sie die Zugriffsebene auf **Öffentlich (anonym)** fest.
 
 11. Klicken Sie auf **Speichern**.
 
@@ -63,7 +70,7 @@ Im Portal verwalten Sie die API-App-spezifischen Funktionen im Blatt **API-App**
 
 	![][deployment-part]
 
-3. Klicken Sie auf **Quelle auswählen \> Lokales Git-Repository**.
+3. Klicken Sie auf **Quelle auswählen > Lokales Git-Repository**.
 
 5. Klicken Sie auf **OK**.
 
@@ -79,7 +86,7 @@ Im Portal verwalten Sie die API-App-spezifischen Funktionen im Blatt **API-App**
 
 	![][deployment-credentials]
 
-1. Klicken Sie im Blatt **API-App-Host** auf **Einstellungen \> Eigenschaften**. Die URL des Git-Remoterepositorys, in dem Sie die Bereitstellung durchführen möchten, wird unter "GIT-URL" angezeigt.
+1. Klicken Sie im Blatt **API-App-Host** auf **Einstellungen > Eigenschaften**. Die URL des Git-Remoterepositorys, in dem Sie die Bereitstellung durchführen möchten, wird unter "GIT-URL" angezeigt.
 
 2. Kopieren Sie die URL zur späteren Verwendung im Lernprogramm.
 
@@ -183,7 +190,7 @@ In diesem Abschnitt erstellen Sie ein lokales Git-Repository und führen einen P
 
 		remote: Deployment successful.
 		To https://user@testsite.scm.azurewebsites.net/testsite.git
-		\* [new branch] master -\> master
+		* [new branch] master -> master
 
 ## Anzeigen der API-Definition im Azure-Vorschauportal
 
