@@ -1,11 +1,8 @@
-﻿Diese schrittweise Anleitung erläutert die Installation und Ausführung von MongoDB auf einem virtuellen Computer, der CentOS Linux ausführt.
+Diese schrittweise Anleitung erläutert die Installation und Ausführung von MongoDB auf einem virtuellen Computer, der CentOS Linux ausführt.
 
-<div class="dev-callout">
-<b>Warnung</b>
-<p>MongoDB-Sicherheitsfunktionen wie Authentifizierung und IP-Adressen-Anbindung werden nicht standardmäßig aktiviert. Die Sicherheitsfunktionen sollten aktiviert werden, bevor MongoDB in einer Produktionsumgebung eingesetzt wird.  Weitere Informationen finden Sie unter <a href="http://www.mongodb.org/display/DOCS/Security+and+Authentication">Sicherheit und Authentifizierung</a> .</p>
-</div>
+> [AZURE.WARNING]MongoDB-Sicherheitsfunktionen wie Authentifizierung und IP-Adressen-Anbindung werden nicht standardmäßig aktiviert. Die Sicherheitsfunktionen sollten aktiviert werden, bevor MongoDB in einer Produktionsumgebung eingesetzt wird. Weitere Informationen finden Sie unter [Sicherheit und Authentifizierung](http://www.mongodb.org/display/DOCS/Security+and+Authentication).
 
-1. Konfigurieren Sie das Package Management System (YUM) so, dass Sie MongoDB installieren können. Erstellen Sie eine Datei */etc/yum.repos.d/10gen.repo* mit Informationen über das Repository, und fügen Sie Folgendes hinzu:
+1. Konfigurieren Sie das Package Management System \(YUM\) so, dass Sie MongoDB installieren können. Erstellen Sie eine Datei */etc/yum.repos.d/10gen.repo* mit Informationen über das Repository, und fügen Sie Folgendes hinzu:
 
 		[10gen]
 		name=10gen Repository
@@ -28,7 +25,7 @@
 		$ sudo mkdir -p /srv/datadrive/data
 		$ sudo chown `id -u` /srv/datadrive/data
 
-	Weitere Informationen zur Installation von MongoDB auf Linux finden Sie unter [Unix-Schnellstart][QuickstartUnix].
+	Weitere Informationen zur Installation von MongoDB auf Linux finden Sie unter [Quickstart Unix][QuickstartUnix] \(in englischer Sprache\).
 
 5. Führen Sie zum Starten der Datenbank aus:
 
@@ -52,11 +49,11 @@
 
 7. Wenn MongoDB installiert ist, müssen Sie einen Endpunkt konfigurieren, damit ein Fernzugriff auf MongoDB möglich ist. Klicken Sie im Verwaltungsportal auf **Virtueller Computer** und anschließend auf den Namen Ihres neuen virtuellen Computers sowie auf **Endpunkte**.
 	
-	![Endpoints][Image7]
+	![Endpunkte][Image7]
 
 8. Klicken Sie am unteren Seitenrand auf **Endpunkt hinzufügen**.
 	
-	![Endpoints][Image8]
+	![Endpunkte][Image8]
 
 9. Fügen Sie einen Endpunkt mit den folgenden Einstellungen hinzu:
 
@@ -75,4 +72,4 @@
 [Image7]: ./media/install-and-run-mongo-on-centos-vm/LinuxVmAddEndpoint.png
 [Image8]: ./media/install-and-run-mongo-on-centos-vm/LinuxVmAddEndpoint2.png
 
-<!--HONumber=35.1-->
+<!--HONumber=52-->

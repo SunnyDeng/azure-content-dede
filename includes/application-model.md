@@ -1,12 +1,6 @@
-﻿# Compute
+# Compute
 
-Azure ermöglicht es Ihnen, Anwendungscode bereitzustellen und zu überwachen,
-der in einem Microsoft-Rechenzentrum ausgeführt wird. Wenn Sie eine Anwendung erstellen
-und auf Azure ausführen, wird der Code und die Konfiguration zusammen als
-gehosteter Azure-Dienst bezeichnet. Gehostete Dienste können einfach
-verwaltet, aufwärts und abwärts skaliert, neu konfiguriert und mit neuen Versionen des
-Anwendungscodes aktualisiert werden. Dieser Artikel konzentriert sich auf das Anwendungsmodell mit gehosteten Azure-
-Diensten.<a id="compare" name="compare"></a>
+Azure ermöglicht die Bereitstellung und Überwachung Ihres in einem Microsoft-Rechenzentrum ausgeführten Anwendungscodes. Wenn Sie eine Anwendung erstellen und mit Azure ausführen, werden der Code und die Konfiguration gemeinsam als gehosteter Azure-Dienst bezeichnet. Gehostete Dienste können problemlos verwaltet, hoch- und herunterskaliert, neu konfiguriert sowie mit neuen Versionen des Codes Ihrer Anwendung aktualisiert werden. Dieser Artikel behandelt das Anwendungsmodell von gehosteten Azure-Diensten.<a id="compare" name="compare"></a>
 
 ## Inhaltsverzeichnis<a id="_GoBack" name="_GoBack"></a>
 
@@ -22,109 +16,37 @@ Diensten.<a id="compare" name="compare"></a>
 
 ## <a id="benefits"> </a>Vorteile des Azure-Anwendungsmodells
 
-Wenn Sie Ihre Anwendung als gehosteten Dienst bereitstellen,
-erstellt Azure mindestens einen virtuellen Computer (VM) mit Ihrem
-Anwendungscode und startet die virtuellen Computer auf physischen Computern, die sich in
-einem der Azure-Rechenzentren befinden. Wenn Clientanforderungen an Ihre gehostete
-Anwendung das Rechenzentrum erreichen, verteilt ein Lastenausgleich diese
-Anforderungen gleichmäßig auf die virtuellen Computer. Wenn Ihre Anwendung in
-Azure gehostet wird, ergeben sich drei wichtige Vorteile:
+Wenn Sie Ihre Anwendung als gehosteten Dienst bereitstellen, sorgt Azure für die Erstellung eines oder mehrerer virtueller Computer \(Virtual Machine, VM\), die den Code Ihrer Anwendung enthalten, sowie für das Starten der virtuellen Computer auf physischen Computern, die sich in einem der Azure-Rechenzentren befinden. Wenn Clientanforderungen an Ihre gehostete Anwendung das Rechenzentrum erreichen, werden diese Anforderungen mithilfe eines Lastenausgleichs gleichmäßig auf die virtuellen Computer verteilt. Das Hosten Ihrer Anwendung in Azure bietet drei wichtige Vorteile:
 
--   **Hohe Verfügbarkeit.** Hohe Verfügbarkeit bedeutet, dass Azure sicherstellt,
-    dass Ihre Anwendung so häufig wie möglich ausgeführt wird und
-auf Clientanforderungen reagieren kann. Wenn Ihre Anwendung (z. B. aufgrund einer
-    nicht behandelten Ausnahme) beendet wird, erkennt Azure dass
-und startet die Anwendung automatisch neu. Wenn der
-    Computer auf dem Computer, auf der die Anwendung ausgeführt wird,
-    ein Hardwarefehler auftritt, erkennt das Azure ebenfalls und
-    erstellt automatisch einen neuen virtuellen Computer auf einem anderen, funktionierenden physischen Computer
-und führt den Code von dort aus. HINWEIS: Damit die Anwendung
-    die Microsoft-Servicelevelvereinbarung von 99,95 % Verfügbarkeit einhalten kann,
-müssen mindestens zwei virtuelle Computer den Anwendungscode ausführen. Dadurch
-    kann ein virtueller Computer Clientanforderungen verarbeiten, während Azure
-    den Code von einem fehlerhaften virtuellen Computer auf einen neuen, funktionierenden virtuellen Computer verschiebt.
+-   **Hohe Verfügbarkeit**. Hohe Verfügbarkeit bedeutet, dass durch Azure sichergestellt wird, dass Ihre Anwendung möglichst ohne Unterbrechung ausgeführt wird und auf Clientanforderungen reagieren kann. Wenn Ihre Anwendung beendet wird \(beispielsweise aufgrund eines Ausnahmefehlers\), wird dies von Azure erkannt, und Ihre Anwendung wird automatisch neu gestartet. Wenn bei dem Computer, auf dem Ihre Anwendung ausgeführt wird, ein Hardwarefehler auftritt, wird dies ebenfalls von Azure erkannt, und ein neuer virtueller Computer wird automatisch auf einem anderen, funktionierenden physischen Computer erstellt, von dem Ihr Code dann ausgeführt wird. HINWEIS: Damit für Ihre Anwendung die Vereinbarung zum Servicelevel von Microsoft bezüglich einer Verfügbarkeit von 99,95 % gilt, muss Ihr Anwendungscode von mindestens zwei virtuellen Computern ausgeführt werden. Damit kann ein virtueller Computer Clientanforderungen verarbeiten, während Ihr Code von Azure von einem fehlerhaften virtuellen Computer zu einem neuen, funktionierenden virtuellen Computer verschoben wird.
 
--   **Skalierbarkeit.** Azure ermöglicht Ihnen das problemlose und dynamische
-    Ändern der Anzahl der virtuellen Computer, die den Anwendungscode ausführen, um
-die tatsächliche Last Ihrer Anwendung verarbeiten zu können. Auf diese Weise können Sie
-    die Anwendung auf die Arbeitslast, mit der Ihre Kunden
-    die Anwendung nutzen, anpassen, während Sie nur für die virtuellen Computer bezahlen,
-wenn Sie sie benötigen. Wenn Sie die Anzahl der virtuellen Computer ändern möchten,
-    reagiert Azure innerhalb von Minuten, sodass es möglich ist, die Anzahl der
-    ausgeführten virtuellen Computer so oft wie gewünscht dynamisch zu ändern.
+-   **Skalierbarkeit**. Mit Azure können Sie die Anzahl der virtuellen Computer, auf denen Ihr Anwendungscode ausgeführt wird, problemlos und dynamisch ändern, damit die tatsächliche Last Ihrer Anwendung bewältigt werden kann. Damit können Sie Ihre Anwendung an die Arbeitsauslastung durch Ihre Kunden anpassen. Gleichzeitig bezahlen Sie nur für die virtuellen Computer, die Sie benötigen, und nur dann, wenn Sie diese benötigen. Wenn Sie die Anzahl der virtuellen Computer ändern möchten, erfolgt die Anpassung durch Azure innerhalb von Minuten. Sie können die Anzahl der virtuellen Computer so oft wie Sie möchten dynamisch ändern.
 
--   **Verwaltbarkeit.** Da Azure ein PaaS-Angebot (Platform as a Service)
-    ist, verwaltet es die Infrastruktur (die Hardware selbst,
-    Elektrizität und Netzwerk), die zum Ausführen dieser Computer erforderlich ist,
-selbst. Azure verwaltet auch die Plattform und stellt so ein
-    aktuelles Betriebssystem mit allen erforderlichen Patches und
-    Sicherheitsupdates sowie Updates von Komponenten wie .NET
-Framework und Internet Information Server sicher. Da auf allen virtuellen Computern
-    Windows Server 2008 ausgeführt wird, stellt Azure zusätzliche
-    Funktionen, wie z. B. Diagnoseüberwachung, Unterstützung von Remotedesktop,
-Firewalls und Konfiguration des Zertifikatspeichers, bereit. Alle diese Funktionen
-werden ohne zusätzliche Kosten bereitgestellt. Wenn Sie Ihre
-    Anwendung in Azure ausführen, ist die Windows Server 2008-Betriebssystemlizenz
-enthalten. Da auf allen virtuellen Computern
-    Windows Server 2008 ausgeführt wird, funktioniert jeder Code, der auf Windows Server 2008 ausgeführt wird,
-    genau so gut auch in Azure.
+-   **Verwaltbarkeit**. Da es sich bei Azure um ein Platform as a Service \(PaaS\)-Angebot handelt, wird die zur Ausführung dieser Computer erforderliche Infrastruktur \(die Hardware selbst, die Stromversorgung und das Netzwerk\) verwaltet. Auch die Plattform wird von Azure verwaltet. Dadurch werden ein aktuelles Betriebssystem mit allen erforderlichen Patches und Sicherheitsupdates sowie Updates von Komponenten, wie .NET Framework und Internet Information Server, gewährleistet. Da alle virtuellen Computer Windows Server 2008 ausführen, bietet Azure zusätzliche Features, wie Diagnoseüberwachung, Unterstützung von Remotedesktop, Firewalls und die Konfiguration des Zertifikatspeichers. Diese Features werden ohne Zusatzkosten bereitgestellt. Tatsächlich ist die Lizenz für das Windows Server 2008-Betriebssystem eingeschlossen, wenn Sie Ihre Anwendung in Azure ausführen. Da alle virtuellen Computer Windows Server 2008 ausführen, kann jeglicher Code, der mit Windows Server 2008 ausgeführt werden kann, auch in Azure ausgeführt werden.
 
 ## <a id="concepts"> </a>Wichtige Konzepte zu gehosteten Diensten
 
-Wenn Ihre Anwendung als gehosteter Dienst in Azure bereitgestellt wird,
-wird er als eine oder mehrere *Rollen* ausgeführt. Eine *Rolle* bezieht sich auf Anwendungsdateien
-und die Konfiguration. Sie können eine oder mehrere Rollen für die
-Anwendung definieren, jede mit einem eigenen Satz Anwendungsdateien und
-einer eigenen Konfiguration. Sie können für jede Rolle in der Anwendung die
-Anzahl der virtuellen Computern oder auszuführenden *Rolleninstanzen* angeben. Die Abbildung unten zeigt zwei
-einfache Beispiele für eine Anwendung, die als gehosteter Dienst mithilfe
-von Rollen und Rolleninstanzen verwendet wird.
+Wenn Ihre Anwendung als gehosteter Dienst in Azure bereitgestellt wird, wird sie als eine oder mehrere *Rollen* ausgeführt. Mit einer *Rolle* werden die Anwendungsdateien und die Konfiguration bezeichnet. Sie können eine oder mehrere Rollen für Ihre Anwendung definieren. Jede dieser Rollen verfügt über einen eigenen Satz von Anwendungsdateien sowie eine eigene Konfiguration. Für jede Rolle Ihrer Anwendung können Sie die Anzahl der auszuführenden virtuellen Computer oder *Rolleninstanzen* festlegen. In der Abbildung unten sind zwei einfache Beispiele für eine als gehosteter Dienst mit Rollen und Rolleninstanzen modellierte Anwendung dargestellt.
 
-##### Abbildung 1: Eine einfache Rolle mit drei Instanzen (virtuelle Computer), die in einem Azure-Rechenzentrum ausgeführt wird
+##### Abbildung 1: Eine einzelne Rolle mit drei Instanzen \(virtuelle Computer\), die in einem Azure-Datencenter ausgeführt wird.
 
 ![image][0]
 
-##### Abbildung 2: Zwei Rollen mit jeweils zwei Instanzen (virtuelle Computer), die in einem Azure-Rechenzentrum ausgeführt werden
+##### Abbildung 2: Zwei Rollen mit jeweils zwei Instanzen \(virtuelle Computer\), die in einem Azure-Datencenter ausgeführt werden.
 
 ![image][1]
 
-Rolleninstanzen verarbeiten in der Regel Internetclientanforderungen, die im
-Rechenzentrum durch einen sogenannten eine *Eingabeendpunkt* eingehen. Eine einzelne Rolle
-kann 0 oder mehr Eingabeendpunkte haben. Jeder Endpunkt gibt ein Protokoll
-(HTTP, HTTPS oder TCP) und einen Port an. Es ist üblich, eine Rolle mit zwei
-Eingabeendpunkten zu konfigurieren: HTTP-Überwachung auf Port 80 und HTTPS-Überwachung
-auf Port 443. Die folgende Abbildung zeigt ein Beispiel für zwei unterschiedliche Rollen
-mit unterschiedlichen Eingabeendpunkten, an die Clientanforderungen geleitet werden.
+Rolleninstanzen verarbeiten in der Regel Internet-Clientanforderungen, die das Rechenzentrum durch einen sogenannten *Eingabeendpunkt* erreichen. Eine Rolle kann mit 0 oder mehr Eingabeendpunkten ausgestattet sein. Jeder Endpunkt weist ein Protokoll \(HTTP, HTTPS oder TCP\) und einen Port auf. Üblicherweise wird eine Rolle mit zwei Eingabeendpunkten konfiguriert: HTTP-Überwachung auf Port 80 und HTTP-Überwachung auf Port 443. In der Abbildung unten ist ein Beispiel für zwei verschiedene Rollen mit unterschiedlichen Eingabeendpunkten dargestellt, die Clientanforderungen an die Rollen weiterleiten.
 
 ![image][2]
 
-Beim Erstellen eines gehosteten Diensts in Azure wird ihm eine
-öffentlich adressierbare IP-Adresse zugewiesen, die Clients verwenden können, um darauf zuzugreifen. Beim
-Erstellen des gehosteten Diensts müssen Sie außerdem ein URL-Präfix auswählen, das
-dieser IP-Adresse zugeordnet ist. Dieses Präfix muss eindeutig sein, da Sie
-im Prinzip die *Präfix*.cloudapp.net-URL reservieren, damit sie von niemand
-anderem verwendet werden kann. Clients kommunizieren mit Ihren Rolleninstanzen mithilfe der
-URL. In der Regel verteilen oder veröffentlichen Sie die Azure-
-*Präfix*.cloudapp.net-URL nicht. Stattdessen kaufen Sie einen DNS-Namen von.
-der DNS-Registrierung Ihrer Wahl und konfigurieren Ihren DNS-Namen zum Umleiten von
-Clientanforderungen an die Azure-URL. Weitere Informationen finden Sie unter
-[Konfigurieren eines benutzerdefinierten Domänennamens in Azure][].
+Wenn Sie einen gehosteten Dienst in Azure erstellen, wird dieser einer öffentlich adressierbaren IP-Adresse zugewiesen, über die Clients auf den Dienst zugreifen können. Beim Erstellen des gehosteten Diensts müssen Sie ein URL-Präfix auswählen, das dieser IP-Adresse zugeordnet wird. Dieses Präfix muss eindeutig sein, da Sie damit die URL *Präfix*.cloudapp.net reservieren, die dann nur von Ihnen verwendet werden kann. Clients kommunizieren mit Ihren Rolleninstanzen mithilfe der URL. In der Regel verteilen oder veröffentlichen Sie die Azure-URL *Präfix*.cloudapp.net nicht. Stattdessen erwerben Sie einen DNS-Namen von einer von Ihnen gewählten DNS-Registrierungsstelle und konfigurieren Ihren DNS-Namen, sodass Clientanforderungen an die Azure-URL umgeleitet werden. Weitere Informationen finden Sie unter [Configuring a Custom Domain Name in Azure][] \(Konfigurieren eines benutzerdefinierten Domänennamens in Azure, in englischer Sprache\).
 
 ## <a id="considerations"> </a>Entwurfsüberlegungen zu gehosteten Diensten
 
-Beim Entwerfen einer Anwendung für die Ausführung in einer Cloudumgebung müssen Sie
-verschiedene Aspekte bedenken, etwa Latenz,
-hohe Verfügbarkeit und Skalierbarkeit.
+Beim Entwerfen einer Anwendung, die in einer Cloudumgebung ausgeführt werden soll, müssen verschiedene Punkte, wie Latenz, hohe Verfügbarkeit und Skalierbarkeit, beachtet werden.
 
-Die Entscheidung, wo sich Ihr Anwendungscode befinden soll, ist ein wichtiger
-Aspekt beim Ausführen eines gehosteten Diensts in Azure. Normalerweise
-wird die Anwendung in Rechenzentren bereitgestellt, die sich möglichst Nahe
-bei Ihren Kunden befinden, um Latenz zu reduzieren und die optimale Leistung zu erreichen.
-Sie können jedoch ein Rechenzentrum näher an Ihrem Unternehmen oder näher
-an Ihren Daten auswählen, wenn Sie rechtliche Bedenken bezüglich
-Ihrer Daten und den Aufbewahrungsort haben. Es gibt weltweit sechs Rechenzentren, die
-den Anwendungscode hosten können. Die folgende Tabelle zeigt
-die verfügbaren Standorte:
+Die Entscheidung, wo sich Ihr Anwendungscode befinden soll, ist ein wichtiger Punkt beim Ausführen eines gehosteten Diensts in Azure. Üblicherweise wird Ihre Anwendung in Rechenzentren bereitgestellt, die sich möglichst nah an Ihren Kunden befinden, um die Latenz zu reduzieren und eine optimale Leistung zu erreichen. Sie können jedoch ein Rechenzentrum auswählen, das sich näher an Ihrem Unternehmen oder an Ihren Daten befindet, wenn Sie gerichtliche oder rechtliche Bedenken bezüglich Ihrer Daten oder deren Speicherort haben. Ihr Anwendungscode kann in sechs Rechenzentren rund um die Welt gehostet werden. In der Tabelle unten sind die verfügbaren Orte angegeben:
 
 <table border="2" cellspacing="0" cellpadding="5" style="border: 2px solid #000000;">
 <tbody>
@@ -170,124 +92,39 @@ Südöstlich und östlich
 </tr>
 </tbody>
 </table>
-Wenn Sie einen gehosteten Dienst erstellen, wählen Sie eine Unterregion aus, die
-den Standort angibt, an dem Ihr Code ausgeführt werden soll.
+Wenn Sie einen gehosteten Dienst erstellen, wählen Sie eine Unterregion aus, mit der der Ort angegeben wird, an dem Ihr Code ausgeführt werden soll.
 
-Um hohe Verfügbarkeit und Skalierbarkeit zu erreichen, ist es von entscheidender Bedeutung,
-dass die Daten der Anwendung in einem zentralen Repository so abgelegt werden,
-dass mehrere Rolleninstanzen darauf zugreifen können. Um diese Aufgabe zu erleichtern, bietet Azure
-verschiedene Speicheroptionen, wie z. B. BLOBs, Tabellen und SQL-Datenbanken. Informationen finden Sie im Artikel
-[Datenspeicherlösungen in Azure][].
-Dort erhalten Sie detaillierte Informationen zu diesen Speichertechnologien. Die folgende Abbildung zeigt, wie
-der Lastenausgleich im Azure-Rechenzentrum Clientanforderungen
-an unterschiedliche Rolleninstanzen verteilt, die alle auf den
-gleichen Datenspeicher zugreifen können.
+Damit eine hohe Verfügbarkeit und Skalierbarkeit gewährleistet ist, müssen die Daten Ihrer Anwendung in einem zentralen Repository gespeichert werden, auf das mehrere Rolleninstanzen zugreifen können. Dazu bietet Azure verschiedene Speicheroptionen, wie Blobs, Tabellen und SQL-Datenbanken, an. Weitere Informationen zu diesen Speichertechnologien finden Sie im Artikel [Data Storage Offerings in Azure][] \(Datenspeicherangebote in Azure, in englischer Sprache\). In der Abbildung unten ist dargestellt, wie der Lastenausgleich im Azure-Rechenzentrum Clientanforderungen an unterschiedliche Rolleninstanzen verteilt, die alle auf denselben Datenspeicher zugreifen.
 
 ![image][3]
 
-In der Regel sollte der Anwendungscode und die Daten im
-gleichen Rechenzentrum abgelegt werden, da dies eine niedrige Latenz (bessere Leistung) ermöglicht,
-wenn der Anwendungscode auf die Daten zugreift. Darüber hinaus wird Ihnen keine
-Bandbreite in Rechnung gestellt, wenn Daten innerhalb des gleichen Rechenzentrums
-verschoben werden.
+In der Regel befinden sich Ihr Anwendungscode und Ihre Daten im selben Rechenzentrum, da dies zu einer niedrigen Latenz \(bessere Leistung\) führt, wenn Ihr Anwendungscode auf die Daten zugreift. Darüber hinaus müssen Sie nicht für die Bandbreite bezahlen, wenn Daten im selben Rechenzentrum verschoben werden.
 
 ## <a id="scale"> </a>Entwerfen Ihrer Anwendung im Hinblick auf Skalierbarkeit
 
-In einigen Fällen sollten Sie eine einzelne Anwendung (wie eine einfache Website)
-in Azure hosten. Aber häufig kann Ihre
-Anwendung aus verschiedenen Rollen bestehen, die zusammenarbeiten. In der Abbildung
-unten gibt es beispielsweise zwei Instanzen der Websiterolle,
-drei Instanzen der Auftragsbearbeitungsrolle und eine Instanz der
-Berichts-Generator-Rolle. Diese Rollen arbeiten zusammen und der
-Code für alle kann zusammengefasst und als ein einzelne
-Einheit in Azure bereitgestellt werden.
+Gelegentlich ist es wünschenswert, eine einzelne Anwendung \(wie eine einfache Website\) in Azure zu hosten. Häufig bestehen Anwendungen jedoch aus verschiedenen Rollen, die alle zusammenarbeiten. In der Abbildung unten sind beispielsweise zwei Instanzen der Rolle "Website", drei Instanzen der Rolle "Order Processing" und eine Instanz der Rolle "Report Generator" dargestellt. Diese Rollen arbeiten zusammen, und der Code für alle Rollen kann zusammengefasst und als eine Einheit in Azure bereitgestellt werden.
 
 ![image][4]
 
-Der Hauptgrund für das Aufteilen einer Anwendung in verschiedene Rollen, die
-jeweils auf einem eigenen Satz von Rolleninstanzen (also virtuelle Computer) ausgeführt werden, ist das unabhängige Skalieren der
-Rollen. Während der Urlaubszeit kaufen zum Beispiel viele
-Kunden Produkte von Ihrem Unternehmen, sodass Sie möglicherweise
-die Anzahl der Rolleninstanzen, auf denen die Websiterolle ausgeführt wird, und
-die Anzahl der Rolleninstanzen, auf denen Auftragsbearbeitungsrolle ausgeführt wird,
-erhöhen sollten. Nachdem die Urlaubszeit erhalten Sie möglicherweise viele Produkte zurück,
-sodass Sie weiterhin viele Websiteinstanzen, aber weniger Auftragsbearbeitungsinstanzen
-benötigen. Während des restlichen Jahres benötigen Sie möglicherweise nur wenige
-Website- und Auftragsbearbeitungsinstanzen. In der gesamten Zeit benötigen Sie
-möglicherweise nur eine Berichts-Generator-Instanz. Die Flexibilität von
-rollenbasierten Bereitstellungen in Azure ermöglicht Ihnen das problemlose Anpassen Ihrer
-Anwendung auf die Geschäftsanforderungen.
+Der Hauptgrund für das Aufteilen einer Anwendung in verschiedene Rollen, die jeweils ihren eigenen Satz von Rolleninstanzen \(also virtuellen Computern\) ausführen, ist die unabhängige Skalierung der Rollen. Beispielsweise kaufen möglicherweise viele Kunden in der Feriensaison Produkte von Ihrem Unternehmen. Daher möchten Sie möglicherweise die Anzahl von Rolleninstanzen zur Ausführung der Rolle "Website" sowie die Anzahl von Rolleninstanzen zur Ausführung der Rolle "Order Processing" erhöhen. Nach der Feriensaison werden möglicherweise viele Produkte zurückgeschickt. Daher benötigen Sie weiterhin viele Instanzen der Rolle "Website", jedoch weniger Instanzen der Rolle "Order Processing". In der übrigen Zeit benötigen Sie möglicherweise nur wenige Instanzen der Rollen "Website" und "Order Processing". Während der gesamten Zeit benötigen Sie möglicherweise nur eine Instanz der Rolle "Report Generator". Aufgrund der Flexibilität der rollenbasierten Bereitstellung in Azure können Sie Ihre Anwendung problemlos Ihren Geschäftsanforderungen anpassen.
 
-Es ist üblich, dass die Rolleninstanzen in Ihrem gehosteten Dienst
-miteinander kommunizieren. Beispielsweise akzeptiert die Websiterolle eine
-Kundenbestellung, übergibt dann die Auftragsbearbeitung aber an die
-Auftragsbearbeitungs-Rolleninstanzen. Die beste Methode zum Übergeben von Arbeit von einen Satz von
-Rolleninstanzen an einen anderen Satz von Instanzen ist das Verwenden der Warteschlangen-
-technologie von Azure, entweder den Warteschlangendienst oder
-Servicebus-Warteschlangen. Die Verwendung einer Warteschlange ist in diesem Zusammenhang
-entscheidend. Die Warteschlange ermöglicht dem gehosteten Dienst das unabhängige Skalieren seiner Rollen,
-sodass Sie zwischen Arbeitslast und Kosten ein Gleichgewicht herstellen können. Wenn die
-Anzahl der Nachrichten in der Warteschlange mit der Zeit steigt, können Sie
-die Anzahl der Auftragsbearbeitungs-Rolleninstanzen aufwärts skalieren. Wenn die Anzahl der
-Nachrichten in der Warteschlange mit der Zeit abnimmt, dann können Sie
-die Anzahl der Auftragsbearbeitungs-Rolleninstanzen abwärts skalieren. Auf diese Weise zahlen Sie nur
-für die Instanzen, die für die tatsächliche Arbeitsauslastung erforderlich sind.
+In der Regel kommunizieren die Rolleninstanzen in Ihrem gehosteten Dienst miteinander. Die Rolle "Website" nimmt beispielsweise die Bestellung eines Kunden an, lagert die Verarbeitung der Bestellung jedoch dann an die Instanzen der Rolle "Order Processing" aus. Die beste Methode zum Übergeben von Arbeit von einem Satz von Rolleninstanzen an einen anderen Satz von Instanzen ist die Verwendung der von Azure bereitgestellten Queuing-Technologie, d. h. entweder des Wartenschlangendiensts oder der Service Bus-Wartenschlangen. Die Verwendung einer Warteschlange ist in diesem Zusammenhang entscheidend. Mithilfe der Warteschlange kann der gehostete Dienst seine Rollen unabhängig voneinander skalieren. Damit können Sie die Kosten in Abhängigkeit von der Arbeitsauslastung kontrollieren. Wenn die Anzahl der Nachrichten in der Warteschlange mit der Zeit ansteigt, können Sie die Anzahl der Rolleninstanzen Order Processing hochskalieren. Wenn die Anzahl der Nachrichten in der Warteschlange mit der Zeit sinkt, können Sie die Anzahl der Rolleninstanzen Order Processing runterskalieren. Damit bezahlen Sie nur für die Instanzen, die zur Verarbeitung der tatsächlichen Arbeitsauslastung erforderlich sind.
 
-Außerdem sorgt die Warteschlange für Zuverlässigkeit. Wenn Sie die Anzahl der
-Auftragsbearbeitungs-Rolleninstanzen abwärts skalieren, entscheidet Azure, welche Instanzen
-beendet werden. Möglicherweise wird so eine Instanz beendet, die gerade
-eine Warteschlangennachricht verarbeitet. Da die Nachrichtenverarbeitung aber
-nicht erfolgreich abgeschlossen wird, geht die Nachricht zu einer
-anderen Auftragsbearbeitungs-Rolleninstanz über, die sie übernimmt und
-verarbeitet. Aufgrund der Sichtbarkeit von Warteschlangennachrichten werden Nachrichten
-garantiert verarbeitet. Die Warteschlange fungiert außerdem als
-Lastenausgleich durch das effektive Verteilen der Nachrichten an alle
-Rolleninstanzen, die Nachrichten anfordern.
+Außerdem sorgt die Warteschlange für Zuverlässigkeit. Wenn die Anzahl der Rolleninstanzen Order Processing herunterskaliert wird, wird von Azure entschieden, welche Instanzen beendet werden. Möglicherweise wird eine Instanz beendet, die gerade eine Warteschlangennachricht verarbeitet. Da damit die Verarbeitung der Nachricht nicht erfolgreich abgeschlossen wird, wird die Nachricht jedoch für eine andere Instanz der Rolle Order Processing sichtbar, die die Nachricht aufnimmt und verarbeitet. Aufgrund der Sichtbarkeit von Warteschlangennachrichten werden Nachrichten garantiert verarbeitet. Die Warteschlange fungiert außerdem als Lastenausgleich, indem sie ihre Nachrichten effektiv an alle Rolleninstanzen verteilt, die Nachrichten von ihr anfordern.
 
-Für die Website-Rolleninstanzen können Sie den eingehenden Datenverkehr überwachen
-und beschließen, die Anzahl zu erhöhen oder zu reduzieren. Die
-Warteschlange ermöglicht Ihnen das Skalieren der Anzahl der Rolleninstanzen für die Website - 
-unabhängig von der Auftragsbearbeitungs-Rolleninstanzen. Diese Funktion ist sehr
-leistungsfähig und bietet Ihnen ein hohes Maß an Flexibilität. Wenn Ihre
-Anwendung aus zusätzliche Rollen besteht, können Sie natürlich auch zusätzliche
-Warteschlangen zur Kommunikation zwischen ihnen hinzufügen, um die
-gleichen Skalierungs- und Kostenvorteile zu nutzen.
+Für die Instanzen der Rolle "Website" können Sie den eingehenden Datenverkehr überwachen und entscheiden, ob die Anzahl dieser Rolleninstanzen ebenfalls hoch- oder herunterskaliert werden soll. Mithilfe der Warteschlange können Sie die Anzahl von Instanzen der Rolle "Website" unabhängig von den Instanzen der Rolle "Order Processing" skalieren. Diese Funktion ist sehr nützlich und ermöglicht ein hohes Maß an Flexibilität. Wenn Ihre Anwendung weitere Rollen umfasst, können Sie selbstverständlich weitere Warteschlangen zur Kommunikation zwischen diesen hinzufügen, um dieselben Skalierungs- und Kostenvorteile zu nutzen.
 
 ## <a id="defandcfg"> </a>Definition und Konfiguration von gehosteten Diensten
 
-Für das Bereitstellen eines gehosteten Diensts in Azure benötigen Sie
-eine Dienstdefinitionsdatei und eine Dienstkonfigurationsdatei. Diese beiden
-Dateien sind XML-Dateien und ermöglichen Ihnen das deklarative Angeben
-von Bereitstellungsoptionen für den gehosteten Dienst. Die Dienstdefinitionsdatei
-Beschreibt alle Rollen, aus denen der gehostete Dienst besteht, und wie sie
-miteinander kommunizieren. Die Dienstkonfigurationsdatei beschreibt die Anzahl der
-Instanzen für jede Rolle und die Einstellungen zum Konfigurieren der einzelnen
-Rolleninstanzen.
+Für die Bereitstellung eines gehosteten Diensts in Azure müssen Sie auch eine Dienstdefinitionsdatei und eine Dienstkonfigurationsdatei bereitstellen. Bei beiden dieser Dateien handelt es sich um XML-Dateien. Sie ermöglichen die deklarative Angabe von Bereitstellungsoptionen für Ihren gehosteten Dienst. In der Dienstdefinitionsdatei werden alle Rollen, die Ihr gehosteter Dienst umfasst, sowie deren Kommunikation untereinander beschrieben. In der Dienstkonfigurationsdatei werden die Anzahl der Instanzen für die einzelnen Rollen sowie die Einstellungen zur Konfiguration der einzelnen Rolleninstanzen beschrieben.
 
 ## <a id="def"> </a>Die Dienstdefinitionsdatei
 
-Wie bereit erwähnt, ist die Dienstdefinitionsdatei (CSDEF) eine XML-
-Datei, die die verschiedenen Rollen beschreibt, aus denen die gesamte
-Anwendung besteht. Das vollständige Schema für die XML-Datei ist unter folgendem Link zu finden:
-[http://msdn.microsoft.com/library/windowsazure/ee758711.aspx][].
-Die CSDEF-Datei enthält ein WebRole- oder WorkerRole-Element für jede Rolle,
-die Sie in der Anwendung verwenden möchten. Das Bereitstellen einer Rolle als Webrolle (mit
-dem WebRole-Element) bedeutet, dass der Code auf einer Rolleninstanz ausgeführt wird,
-die Windows Server 2008 und Internet Information Server (IIS) enthält.
-Das Bereitstellen einer Rolle als Workerrolle (mit dem WorkerRole-Element)
-bedeutet, dass die Rolleninstanz Windows Server 2008 verwendet (IIS wird nicht
-installiert sein).
+Wie bereits erwähnt handelt es sich bei der Dienstdefinitionsdatei \(CSDEF-Datei\) um eine XML-Datei, in der die verschiedenen Rollen beschrieben werden, aus denen Ihre Gesamtanwendung besteht. Das vollständige Schema für die XML-Datei finden Sie hier: [http://msdn.microsoft.com/library/windowsazure/ee758711.aspx][]. Die CSDEF-Datei enthält ein Element WebRole oder ein Element WorkerRole für jede Rolle, die Sie in Ihrer Anwendung verwenden möchten. Wenn eine Rolle als Webrolle \(mit dem Element WebRole\) bereitgestellt wird, wird der Code mit einer Rolleninstanz ausgeführt, die Windows Server 2008 und Internet Information Server \(IIS\) enthält. Wenn eine Rolle als Workerrolle \(mit dem Element WorkerRole\) bereitgestellt wird, enthält die Rolleninstanz ebenfalls Windows Server 2008 \(IIS wird nicht installiert\).
 
-Sie können sicherlich eine Worker-Rolle erstellen und bereitstellen, die einen anderen
-Mechanismus zum Überwachen eingehender Webanforderungen verwendet (Der Code könnte z. B.
-einen .NET-HttpListener erstellen und verwenden). Da die Rolleninstanzen alle
-unter Windows Server 2008 ausgeführt werden, kann Ihr Code alle Vorgänge ausführen,
-die normalerweise einer Anwendung unter Windows Server
-2008.
+Sie können selbstverständlich eine Workerrolle erstellen und bereitstellen, die einen anderen Mechanismus zum Lauschen von eingehenden Webanforderungen verwendet \(beispielsweise kann Ihr Code einen .NET HttpListener erstellen und verwenden\). Da alle Rolleninstanzen Windows Server 2008 ausführen, kann Ihr Code alle Operationen ausführen, die üblicherweise für eine unter Windows Server 2008 ausgeführte Anwendung zur Verfügung stehen.
 
-zur Verfügung stehen. Für jede Rolle geben Sie die gewünschte Größe des virtuellen Computers an, die Instanzen dieser
-Rolle verwenden sollen. Die folgende Tabelle zeigt die verschiedenen
-heute verfügbaren Größen von virtuellen Computern und die jeweiligen Attribute:
+Für jede Rolle geben Sie die gewünschte Größe des virtuellen Computers an, die Instanzen dieser Rolle verwenden sollen. In der Tabelle unten sind die verschiedenen verfügbaren Größen von virtuellen Computern und die jeweiligen Attribute angegeben:
 
 <table border="2" cellspacing="0" cellpadding="5" style="border: 2px solid #000000;">
 <tbody>
@@ -309,8 +146,7 @@ heute verfügbaren Größen von virtuellen Computern und die jeweiligen Attribut
 
 </td>
 <td>
-**Spitzenzeiten  
-Netzwerk-E/A**
+**Höchstwert der Netzwerk-E/A**
 
 </td>
 </tr>
@@ -328,11 +164,11 @@ Netzwerk-E/A**
 
 </td>
 <td>
-20 GB
+20GB
 
 </td>
 <td>
-\~5 MBit/s
+\~5&#160;MBit/s
 
 </td>
 </tr>
@@ -350,11 +186,11 @@ Netzwerk-E/A**
 
 </td>
 <td>
-225 GB
+225GB
 
 </td>
 <td>
-\~100 MBit/s
+\~100&#160;MBit/s
 
 </td>
 </tr>
@@ -372,11 +208,11 @@ Netzwerk-E/A**
 
 </td>
 <td>
-490 GB
+490GB
 
 </td>
 <td>
-\~200 MBit/s
+\~200&#160;MBit/s
 
 </td>
 </tr>
@@ -394,11 +230,11 @@ Netzwerk-E/A**
 
 </td>
 <td>
-1 TB
+1&#160;TB
 
 </td>
 <td>
-\~400 MBit/s
+\~400&#160;MBit/s
 
 </td>
 </tr>
@@ -416,140 +252,53 @@ Netzwerk-E/A**
 
 </td>
 <td>
-2 TB
+2&#160;TB
 
 </td>
 <td>
-\~800 MBit/s
+\~800&#160;MBit/s
 
 </td>
 </tr>
 </tbody>
 </table>
-Sie müssen stündlich für jeden virtuellen Computer bezahlen, den Sie als Rolleninstanz verwenden, und Sie müssen
-auch für alle Daten bezahlen, die die Rolleninstanzen außerhalb eines Rechenzentrums
-senden. In das Rechenzentrum eingehende Daten werden Ihnen nicht in Rechnung gestellt. Weitere
-Informationen finden Sie in der [Azure-Preisübersicht][]. Im Allgemeinen ist es
-ratsam, viele kleine Rolleninstanzen anstelle weniger großer
-Instanzen verwenden, damit Ihre Anwendung weniger fehleranfällig ist. Im Prinzip gilt:
-Je weniger Rolleninstanzen Sie haben, desto stärker beeinträchtigt ein Fehler in
-einer davon die gesamte Anwendung. Außerdem müssen Sie, wie bereits erwähnt,
-mindestens zwei Instanzen für jede Rolle bereitstellen, um die
-Vereinbarung zum Servicelevel von 99,95 % zu erreichen, die Microsoft anbietet.
+Ihnen wird die Nutzung jedes als Rolleninstanz verwendeten virtuellen Computers stundenweise in Rechnung gestellt. Außerdem werden Daten in Rechnung gestellt, die Ihre Rolleninstanzen aus dem Rechenzentrum senden. In das Rechenzentrum eingehende Daten werden Ihnen nicht in Rechnung gestellt. Weitere Informationen finden Sie unter [Azure Pricing][] \(Azure-Preisübersicht, in englischer Sprache\). Im Allgemeinen ist die Verwendung vieler kleiner Rolleninstanzen anstelle von wenigen großen Instanzen empfehlenswert, damit Ihre Anwendung eine größere Robustheit gegenüber Fehlern aufweist. Denn über je weniger Rolleninstanzen Sie verfügen, desto stärker beeinträchtigt ein Fehler in einer dieser Instanzen Ihre Gesamtanwendung. Außerdem müssen Sie wie zuvor erwähnt mindestens zwei Instanzen für jede Rolle bereitstellen, damit die von Microsoft angebotene Vereinbarung zum Servicelevel bezüglich einer Verfügbarkeit von 99,95 % gilt.
 
-In der Dienstdefinitionsdatei (CSDEF) geben Sie außerdem viele
-Attribute zu den einzelnen Rollen in der Anwendung an. Im folgenden werden einige der
-nützlichen Elemente, die Ihnen zur Verfügung stehen, aufgeführt:
+In der Dienstdefinitionsdatei \(CSDEF-Datei\) geben Sie außerdem viele Attribute zu den einzelnen Rollen in Ihrer Anwendung an. Einige der nützlichsten Elemente werden im Folgenden beschrieben:
 
--   **Zertifikate**. Sie verwenden Zertifikate zum Verschlüsseln von Daten oder wenn
-der Webdienst SSL unterstützt. Alle Zertifikate müssen zu Azure hochgeladen
- werden. Weitere Informationen finden Sie unter [Verwalten von Zertifikaten.
-in Azure][]. Diese XML-Einstellung installiert zuvor hochgeladene
-    Zertifikate in den Zertifikatspeicher der Rolleninstanz, sodass sie
-    vom Anwendungscode verwendet werden können.
+-   **Zertifikate**. Sie verwenden Zertifikate, wenn Ihr Webdienst SSL unterstützt, sowie zum Verschlüsseln von Daten. Sämtliche Zertifikate müssen zu Azure hochgeladen werden. Weitere Informationen finden Sie unter [Verwalten von Zertifikaten in Azure][]. Mit dieser XML-Einstellung werden bereits hochgeladene Zertifikate im Zertifikatspeicher der Rolleninstanz installiert, sodass diese vom Anwendungscode verwendet werden können.
 
--   **Konfigurationseinstellungsnamen**. Für Werte, die Ihre
-Anwendungen während der Ausführung auf einer Rolleninstanz lesen sollen. Der tatsächliche
-    Wert der Konfigurationseinstellungen wird in der Dienstkonfigurationsdatei
-    (CSCFG) festgelegt, die jederzeit und ohne erneute Bereitstellung
-des Codes aktualisiert werden kann. Sie können sogar Ihre
-    Anwendungen auf eine Weise codieren, dass die geänderten Konfigurationswerte
-    ohne Ausfallzeiten erkannt werden.
+-   **Konfigurationseinstellungsnamen**. Dieses Element ist für Werte vorgesehen, die Ihre Anwendung\(en\) während der Ausführung einer Rolleninstanz lesen sollen. Der tatsächliche Wert der Konfigurationseinstellungen wird in der Dienstkonfigurationsdatei \(CSCFG-Datei\) festgelegt, die jederzeit aktualisiert werden kann, ohne dass der Code erneut bereitgestellt werden muss. Tatsächlich können Sie Ihre Anwendungen so programmieren, dass die geänderten Konfigurationswerte erkannt werden, ohne dass Downtime verursacht wird.
 
--   **Eingabeendpunkte**. Hier geben Sie HTTP-, HTTPS- oder TCP-Endpunkte
-    (mit Ports) an, die nach außen
-über die *Präfix*.cloadapp.net-URL verfügbar gemacht werden sollen. Wenn Azure Ihre
-    Rolle bereitstellt, wird die Firewall auf der Rolleninstanz automatisch
-    konfiguriert.
+-   **Eingabeendpunkte**. In diesem Element geben Sie HTTP-, HTTPS- oder TCP-Endpunkte \(mit Ports\) an, die über Ihre URL *Präfix*.cloadapp.net von außen erreichbar sein sollen. Wenn Azure Ihre Rolle bereitstellt, wird die Firewall der Rolleninstanz automatisch konfiguriert.
 
--   **Interne Endpunkte**. Hier geben Sie HTTP- oder TCP-Endpunkte an,
-    die anderen Rolleninstanzen verfügbar gemachten sollen, die als
-Teil der Anwendung bereitgestellt werden. Interne Endpunkte ermöglichen allen Rolleninstanzen
-    innerhalb der Anwendung die Kommunikation untereinander, aber der Zugriff
-    auf Rolleninstanzen, die sich außerhalb der Anwendung befinden, ist nicht möglich.
+-   **Interne Endpunkte**. In diesem Element geben Sie HTTP- oder TCP-Endpunkte an, die von anderen als Teil Ihrer Anwendung bereitgestellten Rolleninstanzen erreichbar sein sollen. Interne Endpunkte ermöglichen die Kommunikation aller Rolleninstanzen innerhalb Ihrer Anwendung, auf sie kann jedoch nicht von Rolleninstanzen zugegriffen werden, die sich außerhalb Ihrer Anwendung befinden.
 
--   **Importmodule**. Diese installieren optional nützliche Komponenten auf
-den Rolleninstanzen. Es gibt Komponenten für Diagnoseüberwachung,
-    Remotedesktop und Azure Connect (dies ermöglicht
-    Ihrer Rolleninstanz den Zugriff auf lokale Ressourcen über einen sicheren Kanal).
+-   **Importmodule**. Mit diesen Elementen werden optional nützliche Komponenten für Ihre Rolleninstanzen installiert. Es gibt Komponenten für Diagnoseüberwachung, Remotedesktop und Azure Connect \(diese ermöglicht Ihrer Rolleninstanz den Zugriff auf lokale Ressourcen über einen sicheren Kanal\).
 
--   **Lokaler Speicher**. Dies weist ein Unterverzeichnis in der Rolleninstanz
-zur Verwendung durch Ihre Anwendung zu. Weitere Informationen dazu finden Sie
-    in den [Datenspeicherlösungen im Azure-][]Artikel.
+-   **Lokaler Speicher**. Mit diesem Element wird ein Unterverzeichnis der Rolleninstanz zugeordnet, das Ihre Anwendung verwenden kann. Es wird ausführlicher im Artikel [Data Storage Offerings in Azure][] \(Datenspeicherangebote in Azure, in englischer Sprache\) beschrieben.
 
--   **Startaufgaben**. Startaufgaben ermöglichen Ihnen die Installation von
-erforderlichen Komponenten für eine Rolleninstanz, wenn sie gestartet wird. Die Aufgaben
-    können bei Bedarf mit erhöhten Rechten als Administrator ausgeführt werden.
+-   **Startaufgaben**. Mithilfe von Startaufgaben können Sie Voraussetzungskomponenten für eine Rolleninstanz installieren, wenn diese gestartet wird. Die Aufgaben können bei Bedarf mit erhöhten Rechten als Administrator ausgeführt werden.
 
 ## <a id="cfg"> </a>Die Dienstkonfigurationsdatei
 
-Die Dienstkonfigurationsdatei (CSCFG) ist eine XML-Datei, die Einstellungen
-beschreibt, die geändert werden können, ohne die Anwendung erneut bereitzustellen. Das
-vollständige Schema für die XML-Datei ist unter folgendem Link zu finden:
-[http://msdn.microsoft.com/library/windowsazure/ee758710.aspx][].
-Die CSCFG-Datei enthält ein Rollenelement für jede Rolle in Ihrer
-Anwendung Einige der Elemente, die Sie in der CSCFG-Datei angeben können,
-werden im Folgenden beschrieben:
+Bei der Dienstkonfigurationsdatei \(CSCFG-Datei\) handelt es sich um eine XML-Datei, in der Einstellungen beschrieben werden, die ohne die erneute Bereitstellung Ihrer Anwendung geändert werden können. Das vollständige Schema für die XML-Datei finden Sie hier: [http://msdn.microsoft.com/library/windowsazure/ee758710.aspx][]. Die CSCFG-Datei enthält ein Rollenelement für jede Rolle in Ihrer Anwendung. Einige der Elemente, die Sie in der CSCFG-Datei angeben können, werden im Folgenden beschrieben:
 
--   **Betriebssystemversion**. Dieses Attribut ermöglicht Ihnen die Auswahl der Betriebssystemversion,
-    die für alle Rolleninstanzen verwendet werden soll, die
-Ihren Anwendungscode ausführen. Dieses Betriebssystem wird als *Gastbetriebssystem* bezeichnet, und jede
-    neue Version enthält die neuesten Sicherheitspatches und -updates,
-die zum Zeitpunkt den Veröffentlichung des Gastbetriebssystems verfügbar sind. Wenn Sie den
-    OsVersion-Attributwert auf "\*" festlegen, aktualisiert Azure automatisch
-    das Gastbetriebssystem auf jedem der Rolleninstanzen, wenn neue
-Gastbetriebssystemversionen verfügbar werden. Allerdings können Sie automatische Updates
-deaktivieren, indem Sie eine bestimmte Gastbetriebssystemversion auswählen. Beispiel: 
-    Das Festlegen des OsVersion-Attributs auf den Wert
-    "WA-GUEST-OS-2.8\_201109-01" bewirkt, dass alle Rolleninstanzen das abrufen,
-    was auf dieser Webseite beschrieben wird:
-    [http://msdn.microsoft.com/library/hh560567.aspx][]. Weitere
-Informationen zum Gastbetriebssystemversionen finden Sie unter [Verwalten von Aktualisierungen des
-Azure-Gastbetriebssystems].
+-   **Betriebssystemversion**. Mit diesem Attribut können Sie die Betriebssystemversion auswählen, die für alle Rolleninstanzen verwendet wird, die Ihren Anwendungscode ausführen. Dieses Betriebssystem wird als *Gastbetriebssystem* bezeichnet, und alle neuen Versionen umfassen die neuesten Sicherheitspatches und -updates, die zum Zeitpunkt der Veröffentlichung des Gastbetriebssystems verfügbar sind. Wenn Sie das Attribut osVersion auf \* festlegen, dann aktualisiert Azure automatisch das Gastbetriebssystem für Ihre Rolleninstanzen, wenn neue Versionen des Gastbetriebssystems verfügbar werden. Sie können sich jedoch auch gegen automatische Updates entscheiden, indem Sie eine bestimmte Version des Gastbetriebssystems auswählen. Wenn beispielsweise das Attribut "osVersion" auf den Wert "WA-GUEST-OS-2.8\_201109-01" festgelegt wird, erhalten Ihre Rolleninstanzen das Betriebssystem, das auf folgender Webseite beschrieben wird: [http://msdn.microsoft.com/library/hh560567.aspx][]. Weitere Informationen zu Versionen von Gastbetriebssystemen finden Sie unter [Managing Upgrades to the Azure Guests OS] \(Verwalten von Upgrades des Azure-Gastbetriebssystems, in englischer Sprache\).
 
--   **Instanzen**. Der Wert dieses Elements gibt die Anzahl der Rolleninstanzen
-    an, die für die Ausführung des Codes für eine bestimmte Rolle bereitgestellt werden
-sollen. Da Sie eine neue CSCFG-Datei zu Azure hochladen können
-    (ohne die Anwendung erneut bereitzustellen), ist es problemlos möglich,
-    den Wert für dieses Element zu ändern und eine neue CSCFG-Datei hochzuladen, um
-    die Anzahl der Rolleninstanzen, die Ihren Anwendungscode ausführen,
-dynamisch zu erhöhen oder verringern. Dies ermöglicht Ihnen die einfache Aufwärts- und Abwärtsskalierung Ihrer
-    Anwendung, um den tatsächlichen Arbeitsauslastungsanforderungen zu entsprechen, während auch
-    gesteuert wird, wie viel Ihnen für die Ausführung der Rolleninstanzen in Rechnung gestellt wird.
+-   **Instanzen**. Der Wert dieses Elements gibt die Anzahl von Rolleninstanzen an, die zum Ausführen des Codes für eine bestimmte Rolle bereitgestellt werden sollen. Da Sie eine neue CSCFG-Datei zu Azure hochladen können \(ohne Ihre Anwendung neu bereitzustellen\), ist es problemlos möglich, den Wert dieses Elements zu ändern und eine neue CSCFG-Datei hochzuladen, um die Anzahl von Rolleninstanzen, die Ihren Anwendungscode ausführen, dynamisch zu erhöhen oder zu verringern. Damit können Sie Ihre Anwendung problemlos hoch- oder runterskalieren, um die tatsächlichen Arbeitsauslastungsanforderungen zu erfüllen und gleichzeitig zu kontrollieren, wie viel Ihnen für die Ausführung der Rolleninstanzen in Rechnung gestellt wird.
 
--   **Konfigurationseinstellungswerte**. Dieses Element gibt Werte für
-Einstellungen an (wie sie in der CSDEF-Datei definiert werden). Die Rolle kann diese
-Werte während der Ausführung lesen. Diese Konfigurationseinstellungswerte werden
-    normalerweise für Verbindungszeichenfolgen zur SQL-Datenbank oder zum 
-    Azure-Speicher verwendet, aber sie können für einen beliebigen Zweck verwendet werden.
+-   **Konfigurationseinstellungswerte**. Mit diesem Element werden Werte für die Einstellungen \(die in der CSDEF-Datei definiert wurden\) angegeben. Ihre Rolle kann diese Werte während der Ausführung lesen. Diese Konfigurationswerte werden üblicherweise für Verbindungszeichenfolgen für eine SQL-Datenbank oder für Azure Storage verwendet, Sie können sie jedoch für beliebige Zwecke verwenden.
 
 ## <a id="hostedservices"> </a>Erstellen und Bereitstellen eines gehosteten Diensts
 
-Das Erstellen eines gehosteten Diensts erfordert, dass Sie  zunächst im der [Azure-Verwaltungsportal] einen gehosteten Dienst bereitstellen, indem Sie
-ein DNS-Präfix und das Rechenzentrum angeben, in dem Ihr Code im Endeffekt
-ausgeführt werden soll. Erstellen Sie dann in Ihrer Entwicklungsumgebung die
-Dienstdefinitionsdatei (CSDEF), erstellen Sie den Anwendungscode und verpacken (Zip)
-Sie alle diese Dateien in eine Dienstpaketdatei (CSPKG). Sie müssen auch
-die Dienstkonfigurationsdatei (CSCFG) vorbereiten. Zum Bereitstellen Ihrer Rolle
-laden Sie die CSPKG- und CSCFG-Dateien mit der Azure-
-Dienstverwaltungs-API hoch. Nach der Bereitstellung stellt Azure Rolleninstanzen
-im Rechenzentrum bereit (je nach den Konfigurationsdaten),
-extrahiert den Anwendungscode aus dem Paket extrahiert, kopiert ihn in die Rolleninstanzen
-und startet die Instanzen. Jetzt wird Ihr Code ausgeführt.
+Das Erstellen eines gehosteten Diensts erfordert, dass Sie zunächst im [ Azure-Verwaltungsportal] einen gehosteten Dienst bereitstellen, indem Sie ein DNS-Präfix und das Datencenter angeben, in dem Ihr Code ausgeführt werden soll. In der Entwicklungsumgebung erstellen Sie anschließend die Dienstdefinitionsdatei \(CSDEF\), erstellen Ihren Anwendungscode, und verpacken \(Zip\) sämtliche Dateien in einer Dienstpaketdatei \(CSPKG\). Außerdem müssen Sie Ihre Dienstkonfigurationsdatei \(CSCFG-Datei\) vorbereiten. Zum Bereitstellen Ihrer Rolle laden Sie die CSPKG-Datei und die CSCFG-Datei mit der Azure Service Management-API hoch. Nach der Bereitstellung sorgt Azure dafür, dass Rolleninstanzen im Rechenzentrum \(je nach den Konfigurationsdaten\) bereitgestellt werden, Ihr Anwendungscode aus dem Paket extrahiert und in die Rolleninstanzen kopiert wird und die Instanzen gestartet werden. Nun wird Ihr Code ausgeführt.
 
-Die Abbildung unten zeigt die CSPKG-Datei und die CSCFG-Datei, die Sie auf Ihrem
-Entwicklungscomputer erstellen. Die CSPKG-Datei enthält die CSDEF-Datei und den
-Code für zwei Rollen. Nach dem Hochladen der CSPKG- und CSCFG-Dateien mit der
-Azure-Dienstverwaltungs-API erstellt Azure die Rolleninstanzen
-im Rechenzentrum. In diesem Beispiel hat die CSCFG-Datei angegeben,
-dass Azure drei Instanzen der Rolle \#1 und zwei
-Instanzen der Rolle \#2 erstellen soll.
+In der Abbildung unten sind die CSPKG-Datei und die CSCFG-Datei dargestellt, die Sie mit Ihrem Entwicklungscomputer erstellen. Die CSPKG-Datei enthält die CSDEF-Datei und den Code für zwei Rollen. Nach dem Hochladen der CSPKG-Datei und der CSCFG-Datei mit der Azure Service Management-API erstellt Azure die Rolleninstanzen im Rechenzentrum. In diesem Beispiel wird in der CSCFG-Datei angegeben, dass drei Instanzen von Rolle Nr. 1 und zwei Instanzen von Rolle Nr. 2 von Azure erstellt werden sollen.
 
 ![image][5]
 
-Weitere Informationen zum Bereitstellen, Aktualisieren und Neukonfigurieren der
-Rollen finden Sie im Artikel [Bereitstellen und Aktualisieren von Azure-Anwendungen][]
-.<a id="Ref" name="Ref"></a>
+Weitere Informationen zum Bereitstellen, Aktualisieren und erneuten Konfigurieren Ihrer Rollen finden Sie im Artikel [Bereitstellen und Aktualisieren von Azure-Anwendungen][].<a id="Ref" name="Ref"></a>
 
 ## <a id="references"> </a>Referenzen
 
@@ -567,32 +316,33 @@ Rollen finden Sie im Artikel [Bereitstellen und Aktualisieren von Azure-Anwendun
 
 </div>
 
-  [Vorteile des Azure-Anwendungsmodells]: #benefits
-  [Wichtige Konzepte zu gehosteten Diensten]: #concepts
-  [Entwurfsüberlegungen zu gehosteten Diensten]: #considerations
-  [Entwerfen Ihrer Anwendung im Hinblick auf Skalierbarkeit]: #scale
-  [Definition und Konfiguration von gehosteten Diensten]: #defandcfg
-  [Die Dienstdefinitionsdatei]: #def
-  [Die Dienstkonfigurationsdatei]: #cfg
-  [Erstellen und Bereitstellen eines gehosteten Diensts]: #hostedservices
-  [Referenzen]: #references
-  [0]: ./media/application-model/application-model-3.jpg
-  [1]: ./media/application-model/application-model-4.jpg
-  [2]: ./media/application-model/application-model-5.jpg
-  [Configuring a Custom Domain Name in Azure]: http://www.windowsazure.com/de-de/develop/net/common-tasks/custom-dns/
-  [Data Storage Offerings in Azure]: http://www.windowsazure.com/de-de/develop/net/fundamentals/cloud-storage/
-  [3]: ./media/application-model/application-model-6.jpg
-  [4]: ./media/application-model/application-model-7.jpg
-  
-  [Azure-Preise]: http://www.windowsazure.com/de-de/pricing/calculator/
-  [Verwalten von Zertifikaten in Azure]: http://msdn.microsoft.com/library/windowsazure/gg981929.aspx
-  [http://msdn.microsoft.com/library/windowsazure/ee758710.aspx]: http://msdn.microsoft.com/library/windowsazure/ee758710.aspx
-  [http://msdn.microsoft.com/library/hh560567.aspx]: http://msdn.microsoft.com/library/hh560567.aspx
-  [Verwalten von Aktualisierungen des Azure-Gastbetriebssystems]: http://msdn.microsoft.com/library/ee924680.aspx
-  [Azure-Verwaltungsportal]: http://manage.windowsazure.com/
-  [5]: ./media/application-model/application-model-8.jpg
-  [Bereitstellen und Aktualisieren von Azure-Anwendungen]: http://www.windowsazure.com/de-de/develop/net/fundamentals/deploying-applications/
-  [Erstellen eines gehosteten Diensts für Azure]: http://msdn.microsoft.com/library/gg432967.aspx
-  [Verwalten von gehosteten Diensten in Azure]: http://msdn.microsoft.com/library/gg433038.aspx
-  [Migrieren von Anwendungen zu Azure]: http://msdn.microsoft.com/library/gg186051.aspx
-  [Konfigurieren einer Azure-Anwendung]: http://msdn.microsoft.com/library/windowsazure/ee405486.aspx
+[Vorteile des Azure-Anwendungsmodells]: #benefits
+[Wichtige Konzepte zu gehosteten Diensten]: #concepts
+[Entwurfsüberlegungen zu gehosteten Diensten]: #considerations
+[Entwerfen Ihrer Anwendung im Hinblick auf Skalierbarkeit]: #scale
+[Definition und Konfiguration von gehosteten Diensten]: #defandcfg
+[Die Dienstdefinitionsdatei]: #def
+[Die Dienstkonfigurationsdatei]: #cfg
+[Erstellen und Bereitstellen eines gehosteten Diensts]: #hostedservices
+[Referenzen]: #references
+[0]: ./media/application-model/application-model-3.jpg
+[1]: ./media/application-model/application-model-4.jpg
+[2]: ./media/application-model/application-model-5.jpg
+[Configuring a Custom Domain Name in Azure]: http://www.windowsazure.com/develop/net/common-tasks/custom-dns/
+[Data Storage Offerings in Azure]: http://www.windowsazure.com/develop/net/fundamentals/cloud-storage/
+[3]: ./media/application-model/application-model-6.jpg
+[4]: ./media/application-model/application-model-7.jpg
+[Azure Pricing]: http://www.windowsazure.com/pricing/calculator/
+[Managing Certificates in Azure]: http://msdn.microsoft.com/library/windowsazure/gg981929.aspx
+[http://msdn.microsoft.com/library/windowsazure/ee758710.aspx]: http://msdn.microsoft.com/library/windowsazure/ee758710.aspx
+[http://msdn.microsoft.com/library/hh560567.aspx]: http://msdn.microsoft.com/library/hh560567.aspx
+[Managing Upgrades to the Azure Guests OS]: http://msdn.microsoft.com/library/ee924680.aspx
+[ Azure-Verwaltungsportal]: http://manage.windowsazure.com/
+[5]: ./media/application-model/application-model-8.jpg
+[Bereitstellen und Aktualisieren von Azure-Anwendungen]: http://www.windowsazure.com/develop/net/fundamentals/deploying-applications/
+[Erstellen eines gehosteten Diensts für Azure]: http://msdn.microsoft.com/library/gg432967.aspx
+[Verwalten von gehosteten Diensten in Azure]: http://msdn.microsoft.com/library/gg433038.aspx
+[Migrieren von Anwendungen zu Azure]: http://msdn.microsoft.com/library/gg186051.aspx
+[Konfigurieren einer Azure-Anwendung]: http://msdn.microsoft.com/library/windowsazure/ee405486.aspx
+
+<!--HONumber=52-->

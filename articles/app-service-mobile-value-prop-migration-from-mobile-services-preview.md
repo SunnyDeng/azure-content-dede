@@ -1,5 +1,5 @@
-﻿<properties
-	pageTitle="Ich verwende Mobile Services - welche Vorteile bietet App Service?"
+<properties
+	pageTitle="Ich verwende Mobile Services – welche Vorteile bietet App Service?"
 	description="Erfahren Sie, welche Vorteile App Service für Ihre vorhandenen Mobile Services-Projekte bietet."
 	services="app-service\mobile"
 	documentationCenter="ios"
@@ -16,56 +16,56 @@
 	ms.date="02/20/2015"
 	ms.author="kirillg"/>
 
-# <a name="getting-started"> </a>Ich verwende Mobile Services - welche Vorteile bietet App Service?
+# <a name="getting-started"> </a>Ich verwende Mobile Services. Welche Vorteile bietet App Service?
 
 ##Übersicht
-Ihre vorhandenen Mobile Service-Projekte sind sicher und werden weiterhin unterstützt. Die *Azure App Service*-Plattform bietet jedoch zahlreiche Vorteile für Ihre mobilen Apps, die mit Mobile Services aktuell nicht genutzt werden können:  
+Ihr vorhandener Mobile Service ist sicher und wird weiterhin unterstützt. Die *Azure App Service*-Plattform bietet für Ihre mobile App jedoch eine Reihe von Vorteilen, die mit Mobile Services derzeit nicht verfügbar sind:
 
-- Einfachere und kostengünstigere Angebote für Apps, die sowohl Webclients als auch mobile Clients einschließen
-- Neue Hostingfunktionen, darunter Webaufträge, benutzerdefinierte CName-Werte, bessere Überwachung
-- Sofortige Integration in Office 365, Dynamics CRM, Salesforce und viele weitere wichtige Saas-APIs
-- Unterstützung für Java- und PHP-Back-End-Code (zusätzlich zu Node.js und .NET) 
-- Sofortige Integration in Traffic Manager
-- Konnektivität mit Ihren lokalen Ressourcen und VPNs über VNet (zusätzlich zu Hybridverbindungen)
+- Einfacheres und kostengünstigeres Angebot für Apps, die sowohl Web- als auch mobile Clients enthalten
+- Neue Hostfunktionen, einschließlich Webaufträgen, benutzerdefinierter CNames, besserer Überwachung
+- Gebrauchsfertige Integration in Office 365, Dynamics CRM, Salesforce und andere wichtige SaaS-APIs
+- Unterstützung für Java- und PHP-Back-End-Code zusätzlich zu Node.js und .NET 
+- Gebrauchsfertige Integration in Traffic Manager
+- Konnektivität mit lokalen Ressourcen und VPNs mit VNet zusätzlich zu Hybridverbindungen
 - Überwachung und Problembehandlung für Ihre App mit NewRelic oder AppInsights sowie Warnungen
-- Umfangreichere Möglichkeiten bei den zugrunde liegenden Computingressourcen, z. B. VM-Größen 
+- Umfangreicheres Spektrum an zugrunde liegenden Serverressourcen, z. B. VM-Größen 
 - Integrierte automatische Skalierung, Lastenausgleich und Leistungsüberwachung
-- Integrierte Funktionen für Staging, Sicherung, Rollback und Testen 
+- Integrierte Funktionen für Staging, Sicherung, Rollback und Produktionstests 
 
 ## Neue Hostingfunktionen
-In *Azure App Service* wird der *Mobile App*-Back-End-Code im selben Container ausgeführt wie Web-App und API-App. Auf diese Weise können Sie die Vorteile aller Features in diesem Container nutzen, darunter einige, die derzeit in Mobile Services nicht zur Verfügung stehen: 
+In *Azure App Service* wird der *Mobile App*-Back-End-Code in demselben Container ausgeführt wie Web-App und API-App. So können Sie alle Funktionen in diesem Container nutzen, einschließlich einiger, die derzeit nicht in Mobile Services vorhanden sind:
 
-- Kontinuierliche Ausführung von Back-End-Logik über Webaufträge 
-- Sicherstellen, dass Ihr Back-End-Code immer ausgeführt wird
-- Verwenden von benutzerdefinierten CName-Werten zur Bereitstellung benutzerfreundlicher und dauerhafter Namen für die Endpunkte Ihres mobilen Back-Ends
+- Hinzufügen ständig ausgeführter Back-End-Logik über Webaufträge 
+- Sicherstellen der ständigen Ausführen des Back-End-Codes
+- Verwenden benutzerdefinierter CNames zum Bereitstellen benutzerfreundlicher und stabiler Namen für Ihre mobilen Back-End-Endpunkte
 - Geoskalierung Ihrer App mit Traffic Manager
 
 
-##Verbinden Ihrer *Mobile App* mit einer SaaS-API
-*Azure App Service* macht es einfacher, Ihre mobile App mit SaaS-APIs zu verbinden, z. B. mit Office 365, Dynamics, Salesforce, SAP und vielen weiteren. *Azure App Service* stellt eine sofort einsatzfähige Authentifizierung im Namen des Benutzers bereit und bietet für einzelne SaaS-APIs echte SSO-Funktionalität (Single Sign-On, einmaliges Anmelden) über Ihre primäre Identität.
+##Verbinden Ihrer *Mobile App* mit SaaS-API
+*Azure App Service* erleichtert das Verbinden Ihrer Mobile App mit SaaS-APIs wie Office 365, Dynamics, Salesforce, SAP und vielen mehr. *Azure App Service* bietet eine sofort einsetzbare Authentifizierung im Namen des Benutzers und ermöglicht Ihnen eine einmalige Anmeldung über alle SaaS-APIs hinweg, indem Token für einzelne SaaS-APIs Ihrer primären Identität zugeordnet werden.
 
-##Zugriff auf lokale Daten mit VNet
-Mit Mobile Services können Sie bereits Hybridverbindungen für den Zugriff auf lokale Ressourcen nutzen. Es gibt jedoch Situationen, in denen eine VPN-Lösung besser geeignet ist. Mit *Azure App Service* können Sie Azure VNet für Ihren Mobile App-Back-End-Code verwenden.
+##Zugriff auf lokale Daten über VNet
+Mit Mobile Services können Sie schon heute Hybridverbindungen für den Zugriff auf lokale Ressourcen verwenden. Es gibt jedoch Situationen, in denen eine VPN-Lösung bevorzugt wird. Mit *Azure App Service* können Sie Azure-VNet für Mobile App-Back-End-Code verwenden.
 
-##Verwenden Sie Ihre bevorzugte Back-End-Sprache
-*Azure App Service* bietet umfangreichere Unterstützung für Entwicklerplattformen, darunter Java, PHP und Python - zusätzlich zu .NET und Node.js, die bereits in Mobile Services unterstützt wurden.
+##Verwenden Ihrer bevorzugten Back-End-Sprache
+*Azure App Service* bietet eine breitere und umfassendere Unterstützung für Entwicklerplattformen, einschließlich Java, PHP und Python zusätzlich zu .NET und Node.js, die in Mobile Services unterstützt werden.
 
-##Einrichten einer automatischen Skalierung
-Mit Mobile Services wurden alle Instanzen Ihres Back-End-Codes in kleinen VMs ausgeführt. *Azure App Service* ermöglicht es Ihnen, die Größe der VMs über eine umfangreichere Auswahl an Optionen festzulegen. Sie können darüber hinaus basierend auf verschiedenen Leistungsmetriken eine schnelle vertikale oder horizontale Skalierung durchführen, um beliebige eingehende Datenlasten zu verarbeiten. 
+##Einrichten der automatischen Skalierung
+Mit Mobile Services wurden alle Instanzen des Back-End-Codes auf kleinen virtuellen Computern ausgeführt. Mit *Azure App Service* können Sie die Größe der virtuellen Computer aus einem umfassenderen Satz von Optionen auswählen. Sie können zudem schnell zentral oder horizontal hochskalieren, um die gesamte von den Kunden eingehende Workload basierend auf verschiedenen Leistungsmetriken zu bewältigen.
 
-##Jederzeit alles im Blick
-Dank einer verbesserten Überwachung und durch Warnungen, die Sie und Ihr Team automatisch benachrichtigen, können Sie in Echtzeit auf mögliche Probleme reagieren. Integrieren Sie eine erweiterte App-Analyse und Überwachungsfunktionen aus New Relic und AppInsights, um noch besseren Einblick in die Leistung Ihrer mobilen App zu erhalten. Mit *Azure App Service* können Sie jetzt programmatisch und über das Portal Warnungen einrichten, die auf einer Vielzahl von Leistungsmetriken basieren.
+##Auf dem Laufenden bleiben
+Reagieren Sie auf Probleme in Echtzeit mithilfe von Überwachung und Warnungen, durch die Sie und Ihr Team automatisch benachrichtigt werden. Integrieren Sie die erweiterten App-Analyse- und Überwachungsfunktionen von New Relic und AppInsights, und erhalten Sie noch umfangreichere Informationen zur Leistung Ihrer mobilen App. Mit *Azure App Service* können Sie jetzt programmgesteuert und über das Portal Warnungen basiert auf verschiedenen Leistungsmetriken einrichten.
 
-##Schützen Sie Ihre Ressourcen
-Sichern Sie Back-End und Datenbank automatisch. Ihr Code und Ihre Daten sind vor Katastrophen geschützt und können auf einfache Weise wiederhergestellt werden. So können Sie sich ganz auf Ihre geschäftlichen Aufgaben konzentrieren.
+##Schützen Ihrer Ressourcen
+Sichern Sie automatisch Back-End und Datenbank. Ihr Code und Ihre Daten werden in Notfällen geschützt und können problemlos wiederhergestellt werden, sodass Sie sich keine Sorgen um Ihr Unternehmen machen müssen.
 
-##Auf die Plätze, Staging, Los!
-Mit *Azure App Service* können Sie jetzt verschiedene private Test- und Stagingumgebungen für Ihre mobilen Apps erstellen. Verwenden Sie diese für Tests vor der Bereitstellung. Wechseln Sie ohne Ausfallzeiten in die Produktionsumgebung. Web Apps werden vorab geladen, um ein bestmögliches Kundenerlebnis sicherzustellen.
-
-
-
-Bei allgemeiner Verfügbarkeit der *Azure App Service Mobile App*-Funktion wird eine nahtlose Migration vorhandener Mobile Services-Projekte auf App Service ermöglicht (sofern Sie sich für eine Migration entscheiden). In der Zwischenzeit können Sie sich mit *App Service* vertraut machen und die Vorteile von *App Service* für Ihre vorhandenen Mobile Service-Projekte nutzen. [tutorial](app-service-mobile-dotnet-backend-migrating-from-mobile-services-preview.md).
+##Auf die Plätze, Staging, los!
+Mit *Azure App Service* können Sie jetzt mehrere private Test- und Stagingumgebungen für Ihre mobilen Apps erstellen. Verwenden Sie sie zum Durchführen von Tests vor der Bereitstellung. Wechseln Sie ohne Ausfallzeiten in die Produktion. Web-Apps werden vorab geladen, um höchste Kundenzufriedenheit zu gewährleisten.
 
 
 
-<!--HONumber=49-->
+Sobald die Funktion *Mobile Azure App Service-App* allgemein verfügbar wird, stellen wir eine nahtlose Migrationsmöglichkeit für Ihre vorhandenen Mobile Services auf App Service bereit, falls Sie die Migration durchführen möchten. In der Zwischenzeit können Sie sich mithilfe dieses [Lernprogramms](app-service-mobile-dotnet-backend-migrating-from-mobile-services-preview.md) mit *App Service* vertraut machen und die Vorteile von *App Service* für Ihre vorhandenen Mobile Service-Projekte nutzen.
+
+
+
+<!--HONumber=52-->
