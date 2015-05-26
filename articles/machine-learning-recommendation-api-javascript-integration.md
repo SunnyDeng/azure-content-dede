@@ -20,7 +20,7 @@
 
 Dieses Dokument beschreibt die Integration Ihrer Website mithilfe von JavaScript. JavaScript ermöglicht es Ihnen, Datensammlungsereignisse zu senden und Empfehlungen zu nutzen, nachdem Sie ein Empfehlungsmodell erstellt haben. Alle Vorgänge, die über JS erfolgen, können auch von der Serverseite her erfolgen.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-free-trial](../includes/machine-learning-free-trial.md)]
 
 ##1. Allgemeine Übersicht
 Die Integration Ihrer Website in Azure ML-Empfehlungen umfasst zwei Phasen:

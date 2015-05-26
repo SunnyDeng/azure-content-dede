@@ -42,11 +42,11 @@ Wählen Sie ein beliebiges Telemetrieelement aus, um Schlüsselfelder und verwan
 
 ![Diagnosesuche öffnen](./media/app-insights-diagnostic-search/10-detail.png)
 
-Um alle Felder zu finden, verwenden Sie einfache Zeichenfolgen \(ohne Platzhalterzeichen\). Die verfügbaren Felder hängen vom Typ der Telemetrie ab.
+Um alle Felder zu finden, verwenden Sie einfache Zeichenfolgen (ohne Platzhalterzeichen). Die verfügbaren Felder hängen vom Typ der Telemetrie ab.
 
 ## Filtern von Ereignistypen
 
-Öffnen Sie das Blatt "Filter", und wählen Sie die Ereignistypen, die Sie anzeigen möchten. \(Wenn Sie später die Filter wiederherstellen möchten, mit denen Sie das Blatt geöffnet haben, klicken Sie auf "Zurücksetzen".\)
+Öffnen Sie das Blatt "Filter", und wählen Sie die Ereignistypen, die Sie anzeigen möchten. \(Wenn Sie später die Filter wiederherstellen möchten, mit denen Sie das Blatt geöffnet haben, klicken Sie auf "Zurücksetzen".)
 
 
 ![Wählen Sie "Filter" und dann Telemetrietypen](./media/app-insights-diagnostic-search/02-filter-req.png)
@@ -101,9 +101,9 @@ Suchen Sie alle Elemente mit dem gleichen Eigenschaftswert:
 
 ## Suchen nach metrischem Wert
 
-Rufen Sie alle Anforderungen mit einer Antwortzeit \> 5 Sek. ab. Zeiten werden mithilfe von Teilstrichen dargestellt: 10.000 Teilstriche = 1 ms.
+Rufen Sie alle Anforderungen mit einer Antwortzeit > 5 Sek. ab. Zeiten werden mithilfe von Teilstrichen dargestellt: 10.000 Teilstriche = 1 ms.
 
-!["Response time":(threshold TO *)](./media/app-insights-diagnostic-search/11-responsetime.png\)
+!["Response time":(threshold TO *)](./media/app-insights-diagnostic-search/11-responsetime.png)
 
 
 
@@ -130,12 +130,12 @@ Beispielabfrage | Effekt
 ---|---
 langsam|Findet alle Ereignisse im Datumsbereich, deren Felder den Begriff „langsam“ enthalten
 Datenbank??|Datenbank01, Datenbankab,... entspricht<br/>? ist am Anfang eines Suchbegriffs nicht zulässig.
-Datenbank\*|Datenbank, Datenbank01, DatenbankNNNN entspricht<br/> ist am Anfang eines Suchbegriffs nicht zulässig.
+Datenbank*|Datenbank, Datenbank01, DatenbankNNNN entspricht<br/> ist am Anfang eines Suchbegriffs nicht zulässig.
 Apfel UND Banane|Findet Ereignisse, die beide Begriffe enthalten. Verwenden Sie „AND“ in Großbuchstaben, nicht „and“.
 Apfel OR Banane<br/>Apfel Banane|Findet Ereignisse, die einen der beiden Begriffe enthalten. Verwenden Sie "OR" nicht "or".</br/>Kurzform.
 Apfel NOT Banane<br/>Apfel -Banane|Findet Ereignisse, die den einen Begriff enthalten, aber nicht den anderen.<br/>Kurzform.
-Apf\* AND Banane -\(Traube Birne\)|Logische Operatoren und Klammern.
-"Metrik": 0 BIS 500<br/>"Metrik": 500 BIS \* | Suchen Sie Ereignisse, die die benannte Messung im Wertebereich enthalten.
+Apf\* AND Banane -(Traube Birne\)|Logische Operatoren und Klammern.
+"Metrik": 0 BIS 500<br/>"Metrik": 500 BIS * | Suchen Sie Ereignisse, die die benannte Messung im Wertebereich enthalten.
 
 
 ## Speichern der Suche
