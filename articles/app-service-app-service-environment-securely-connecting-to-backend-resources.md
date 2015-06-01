@@ -25,7 +25,7 @@ Beispielsweise kann ein SQL Server auf einem Cluster virtueller Computer ausgef�
 
 Als weiteres Beispiel können vertrauliche Endpunkte lokal ausgeführt werden und mit Azure entweder über [Site-to-Site][SiteToSite]- oder [Azure ExpressRoute][ExpressRoute]-Verbindungen verbunden sein. Daher können nur Ressourcen in virtuellen Netzwerken, die mit den Site-to-Site- oder ExpressRoute-Tunneln verbunden sind, auf lokale Standorte zugreifen.
 
-In all diesen Szenarien können Apps, die in einer App Service-Umgebung ausgeführt werden, sich sicher mit den verschiedenen Servern und Ressourcen verbinden. Ausgehender Datenverkehr von in einer App Service-Umgebung ausgeführten Apps zu privaten Endpunkte in demselben virtuellen Netzwerk \(oder die mit demselben virtuellen Netzwerk verbunden sind\) wird nur über das virtuelle Netzwerk geleitet. Ausgehender Datenverkehr an private Endpunkte verläuft nicht über das öffentliche Internet.
+In all diesen Szenarien können Apps, die in einer App Service-Umgebung ausgeführt werden, sich sicher mit den verschiedenen Servern und Ressourcen verbinden. Ausgehender Datenverkehr von in einer App Service-Umgebung ausgeführten Apps zu privaten Endpunkte in demselben virtuellen Netzwerk (oder die mit demselben virtuellen Netzwerk verbunden sind) wird nur über das virtuelle Netzwerk geleitet. Ausgehender Datenverkehr an private Endpunkte verläuft nicht über das öffentliche Internet.
 
 
 ## Verbinden mit einem SQL Server
@@ -36,7 +36,7 @@ Eine gängige SQL Server-Konfiguration verfügt über einen Endpunkt, der an Por
 Es gibt zwei Ansätze zum Einschränken des Datenverkehrs zu diesem Endpunkt:
 
 
-- [Netzwerk-Zugriffssteuerungslisten][NetworkAccessControlLists] \(Netzwerk-ACLs\)
+- [Netzwerk-Zugriffssteuerungslisten][NetworkAccessControlLists] (Netzwerk-ACLs)
 
 - [Netzwerksicherheitsgruppen][NetworkSecurityGroups]
 

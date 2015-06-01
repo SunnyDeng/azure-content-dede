@@ -50,9 +50,9 @@ Wenn Sie Änderungen an einer bereits veröffentlichten Website vornehmen möcht
 
 Verwenden Sie die kostenlose App Service-Web-App-Domäne, oder nehmen Sie zu eine Zuordnung zu Ihrem registrierten Domänennamen vor, und sorgen Sie anschließend für Sicherheit mit einem von einer Zertifizierungsstelle signierten SSL-Zertifikat.
 
-Die Domäne **\*.azurewebsites.net** ist kostenlos, wenn Sie Ihre Website in Web-Apps ausführen. Oder Sie können Ihre Website einer [benutzerdefinierten Domäne](z. B. contoso.com) zuordnen, die Sie bei einer DNS-Registrierungsstelle wie z. B. GoDaddy bezogen haben.
+Die Domäne ***.azurewebsites.net** ist kostenlos, wenn Sie Ihre Website in Web-Apps ausführen. Oder Sie können Ihre Website einer [benutzerdefinierten Domäne](z. B. contoso.com) zuordnen, die Sie bei einer DNS-Registrierungsstelle wie z. B. GoDaddy bezogen haben.
 
-Wenn Sie Benutzerinformationen erfassen, E-Commerce betreiben oder andere sensible Daten verwalten, können Sie den Ruf Ihres Unternehmens und Ihre Kunden mit [HTTPS] schützen. Der Domänenname **\*.azurewebsites.net** umfasst bereits ein SSL-Zertifikat, und wenn Sie eine benutzerdefinierte Domäne einsetzen, können Sie Ihr SSL-Zertifikat in Web-Apps weiterhin verwenden. Für jedes SSL-Zertifikat fällt eine monatliche Gebühr an (abgerechnet nach Stunden). Weitere Informationen finden Sie unter [App Service-Preisdetails].
+Wenn Sie Benutzerinformationen erfassen, E-Commerce betreiben oder andere sensible Daten verwalten, können Sie den Ruf Ihres Unternehmens und Ihre Kunden mit [HTTPS] schützen. Der Domänenname ***.azurewebsites.net** umfasst bereits ein SSL-Zertifikat, und wenn Sie eine benutzerdefinierte Domäne einsetzen, können Sie Ihr SSL-Zertifikat in Web-Apps weiterhin verwenden. Für jedes SSL-Zertifikat fällt eine monatliche Gebühr an (abgerechnet nach Stunden). Weitere Informationen finden Sie unter [App Service-Preisdetails].
 
 ## Globale Präsenz
 

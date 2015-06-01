@@ -42,13 +42,13 @@ Sie müssen zum Ausführen der folgenden Cmdlets die zertifikatbasierte Authenti
 	* Verwenden Sie den Schalter **RestorableDropped**, und geben Sie den **ServerName** des Servers an, von dem die Datenbank gelöscht wurde.
 	* Mit dem folgenden Befehl werden die Ergebnisse in einer Variablen namens **$RecoverableDBs** speichert.
 	
-	`PS C:\>$RecoverableDBs = Get-AzureSqlDatabase -ServerName "myserver" -RestorableDropped`
+	`PS C:>$RecoverableDBs = Get-AzureSqlDatabase -ServerName "myserver" -RestorableDropped`
 
 2. Wählen Sie in der Liste der gelöschten Datenbanken die gelöschte Datenbank aus, die Sie wiederherstellen möchten.
 
 	* Geben Sie die Nummer der gelöschten Datenbank mithilfe der Liste **$RecoverableDBs** ein.  
 
-	`PS C:\>$Database = $RecoverableDBs[<deleted database number>]`
+	`PS C:>$Database = $RecoverableDBs[<deleted database number>]`
 
 	* Weitere Informationen zum Abrufen eines wiederherstellbaren gelöschten Datenbankobjekts finden Sie unter [Get-AzureSqlDatabase](http://msdn.microsoft.com/library/dn546735.aspx).
 
@@ -58,14 +58,14 @@ Sie müssen zum Ausführen der folgenden Cmdlets die zertifikatbasierte Authenti
 
 	Speichern Sie die Rückgabe in einer Variablen namens **$RestoreRequest**. Diese Variable enthält die Wiederherstellungsanforderungs-ID zum Überwachen des Status einer Wiederherstellung.
 	
-	`PS C:\>$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database -TargetDatabaseName "myrestoredDB"`
+	`PS C:>$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database -TargetDatabaseName "myrestoredDB"`
 
 Eine Wiederherstellung kann einige Zeit in Anspruch nehmen. Verwenden Sie zum Überwachen des Status der Wiederherstellung das Cmdlet [Get-AzureSqlDatabaseOperation](http://msdn.microsoft.com/library/azure/dn546738.aspx), und geben Sie die folgenden Parameter an:
 
 * **ServerName**: Name des Servers, auf dem die Datenbank wiederhergestellt werden soll.
 * **OperationGuid**: GUID des Vorgangs, wobei es sich um die Wiederherstellungsanforderungs-ID handelt, die in Schritt 3 in der Variablen **$RecoveryRequest** gespeichert wurde.
 
-	`PS C:\>Get-AzureSqlDatabaseOperation -ServerName "myserver" -OperationGuid $RestoreRequest.RequestID`
+	`PS C:>Get-AzureSqlDatabaseOperation -ServerName "myserver" -OperationGuid $RestoreRequest.RequestID`
 
 Die Felder **Status** und **PercentComplete** zeigen den Status der Wiederherstellung.
 

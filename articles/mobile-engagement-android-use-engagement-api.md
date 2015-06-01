@@ -253,7 +253,7 @@ Jeder Schlüssel im `Bundle` muss dem folgenden regulären Ausdruck entsprechen:
 
 `^[a-zA-Z][a-zA-Z_0-9]*`
 
-Das bedeutet, die Schlüssel müssen mit mindestens einem Buchstaben beginnen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (\_).
+Das bedeutet, die Schlüssel müssen mit mindestens einem Buchstaben beginnen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_).
 
 #### Größe
 
@@ -261,7 +261,7 @@ Extras sind auf **1024** Zeichen pro Aufruf begrenzt (nach der JSON-Codierung du
 
 Im vorherigen Beispiel hatte der an den Server gesendete JSON-Code eine Länge von 58 Zeichen:
 
-			{"ref_click":"http:\/\/foobar.com\/blog","video_id":"123"}
+			{"ref_click":"http://foobar.com/blog","video_id":"123"}
 
 ## Melden von Anwendungsinformationen
 
@@ -288,7 +288,7 @@ Jeder Schlüssel im `Bundle` muss dem folgenden regulären Ausdruck entsprechen:
 
 `^[a-zA-Z][a-zA-Z_0-9]*`
 
-Das bedeutet, die Schlüssel müssen mit mindestens einem Buchstaben beginnen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (\_).
+Das bedeutet, die Schlüssel müssen mit mindestens einem Buchstaben beginnen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_).
 
 #### Größe
 

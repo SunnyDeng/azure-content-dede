@@ -39,7 +39,7 @@ Dieses Dokument bietet eine Übersicht über die Technologie und von ihr unterst
 
 **Downloads:**
 
-* <a href="http://go.microsoft.com/fwlink/p/?LinkId=522547" target="_blank">"Einführung in Azure Search" \(als PDF\)</a>
-* <a href="http://go.microsoft.com/fwlink/p/?LinkId=529011" target="_blank">"Einführung in Azure Search" \(in Microsoft Word\)</a>
+* <a href="http://go.microsoft.com/fwlink/p/?LinkId=522547" target="_blank">"Einführung in Azure Search" (als PDF)</a>
+* <a href="http://go.microsoft.com/fwlink/p/?LinkId=529011" target="_blank">"Einführung in Azure Search" (in Microsoft Word)</a>
 
 <!--HONumber=52-->

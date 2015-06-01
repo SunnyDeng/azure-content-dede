@@ -33,7 +33,7 @@ Gehen Sie folgendermaßen vor, um eine MySQL-Datenbank über den [Azure Store] z
 
 	![MySQL-Datenbank im Azure-Portal verwalten](./media/create-mysql-db/manage-mysql-add-on.png)
 
-7. Sie können die Datenbankverbindungsinformationen abrufen, indem Sie unten auf der Seite auf **Verbindungsinformationen** klicken \(siehe oben\).
+7. Sie können die Datenbankverbindungsinformationen abrufen, indem Sie unten auf der Seite auf **Verbindungsinformationen** klicken (siehe oben).
 
 	![MySQL-Verbindungsinformationen](./media/create-mysql-db/mysql-conn-info.png)
 
@@ -51,7 +51,7 @@ Um beim Erstellen einer [Azure-Website][waws] eine MySQL-Datenbank als verknüpf
 
 	![Websitedetails angeben](./media/create-mysql-db/provide-website-details.png)
 
-4. Geben Sie einen **NAMEN** für die Datenbank ein, wählen Sie die **REGION** für die Datenbank aus \(muss mit der Region für die Website übereinstimmen\), stimmen Sie den ClearDB-Bedingungen zu, und klicken Sie auf das Häkchen unten im Fenster.
+4. Geben Sie einen **NAMEN** für die Datenbank ein, wählen Sie die **REGION** für die Datenbank aus (muss mit der Region für die Website übereinstimmen), stimmen Sie den ClearDB-Bedingungen zu, und klicken Sie auf das Häkchen unten im Fenster.
 
 	![MySQL-Details angeben](./media/create-mysql-db/provide-mysql-details.png)
 

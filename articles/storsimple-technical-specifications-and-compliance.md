@@ -19,23 +19,23 @@
 
 ##Übersicht
 
-Die Hardwarekomponenten des Microsoft Azure StorSimple-Geräts verfügen über die in diesem Artikel beschriebenen technischen Spezifikationen und entsprechen den aufgeführten gesetzlichen Richtlinien. In den technischen Spezifikationen sind die Stromversorgungs- und Kühleinheiten \(PCMs\), Laufwerke und Gehäuse enthalten. Die Richtlinieninformationen umfassen z. B. internationale Standards sowie Sicherheits-, Emissions- sowie Verkabelungsbestimmungen.
+Die Hardwarekomponenten des Microsoft Azure StorSimple-Geräts verfügen über die in diesem Artikel beschriebenen technischen Spezifikationen und entsprechen den aufgeführten gesetzlichen Richtlinien. In den technischen Spezifikationen sind die Stromversorgungs- und Kühleinheiten (PCMs), Laufwerke und Gehäuse enthalten. Die Richtlinieninformationen umfassen z. B. internationale Standards sowie Sicherheits-, Emissions- sowie Verkabelungsbestimmungen.
 
-> [AZURE.NOTE]Laden Sie für weitere Informationen über das StorSimple-Gerät das [StorSimple 8000 Series Datasheet](http://www.microsoft.com/server-cloud/products/storsimple/resources.aspx) \(in englischer Sprache\) herunter.
+> [AZURE.NOTE]Laden Sie für weitere Informationen über das StorSimple-Gerät das [StorSimple 8000 Series Datasheet](http://www.microsoft.com/server-cloud/products/storsimple/resources.aspx) (in englischer Sprache) herunter.
 
 ##Spezifikationen der Stromversorgungs- und Kühleinheit  
 
-Das StorSimple-Gerät verfügt über zwei SBB-kompatible Stromversorgungs- und Kühleinheiten \(PCMs\) mit 100–240-V-Dual-Lüftern. Dadurch wird eine redundante Stromversorgungskonfiguration gewährleistet. Beim Ausfall eines PCMs wird das Gerät mit der anderen PCM normal weiterbetrieben, bis die fehlerhafte Einheit ausgetauscht wird.
+Das StorSimple-Gerät verfügt über zwei SBB-kompatible Stromversorgungs- und Kühleinheiten (PCMs) mit 100–240-V-Dual-Lüftern. Dadurch wird eine redundante Stromversorgungskonfiguration gewährleistet. Beim Ausfall eines PCMs wird das Gerät mit der anderen PCM normal weiterbetrieben, bis die fehlerhafte Einheit ausgetauscht wird.
 
 Das EBOD-Gehäuse enthält ein PCM mit 580 W, und das primäre Gehäuse wird mit einer PCM-Stromversorgung mit 764 W betrieben. In den folgenden Tabellen sind die technischen Spezifikationen der PCMs aufgeführt.
  
-| Spezifikation | 580 W PCM \(EBOD\) | 764 W PCM \(primär\) |
+| Spezifikation | 580 W PCM (EBOD) | 764 W PCM (primär) |
 |------------------------ | --------------------------------------------------- | -------------------------------------------------- |
 | Maximale Ausgangsleistung | 580 W | 764 |
 | Frequency | 50/60 Hz | 50/60 Hz |
 | Spannungsbereichsauswahl | Automatischer Spannungsbereich: 90–264 V AC, 47/63 Hz | Automatischer Spannungsbereich: 90–264 V AC, 47/63 Hz |
 | Maximaler Eingangsstrom | 20 A | 20 A |
-| Leistungsfaktorkorrektur | \> 95 % Nenneingangsspannung | \> 95 % Nenneingangsspannung |
+| Leistungsfaktorkorrektur | > 95 % Nenneingangsspannung | > 95 % Nenneingangsspannung |
 | Oberschwingungen | Erfüllt EN61000-3-2 | Erfüllt EN61000-3-2 |
 | Ausgabe | 5 V Standbyspannung bei 2,0 A | 5 V Standbyspannung bei 2,7 A |
 | | +5 V bei 42 A | +5 V bei 40 A |
@@ -60,11 +60,11 @@ Die folgende Tabelle enthält die Stromverbrauchsdaten für die verschiedenen Mo
 
 ##Laufwerksspezifikationen  
 
-Das StorSimple-Gerät unterstützt bis zu zwölf serielle SAS-Laufwerke \(Serial Attached SCSI\) im 3,5-Zoll-Formfaktor. Bei den tatsächlichen Laufwerken kann es sich je nach Produktkonfiguration um eine Mischumgebung aus Solid-State-Laufwerken \(SSDs\) oder Festplattenlaufwerken \(HDDs\) handeln. Die zwölf Laufwerkseinschübe befinden sich in einer 3 x 4-Konfiguration vor dem Gehäuse. Das EBOD-Gehäuse bietet zusätzlichen Platz für weitere zwölf Laufwerke. Dies müssen jedoch HDDs sein.
+Das StorSimple-Gerät unterstützt bis zu zwölf serielle SAS-Laufwerke (Serial Attached SCSI) im 3,5-Zoll-Formfaktor. Bei den tatsächlichen Laufwerken kann es sich je nach Produktkonfiguration um eine Mischumgebung aus Solid-State-Laufwerken (SSDs) oder Festplattenlaufwerken (HDDs) handeln. Die zwölf Laufwerkseinschübe befinden sich in einer 3 x 4-Konfiguration vor dem Gehäuse. Das EBOD-Gehäuse bietet zusätzlichen Platz für weitere zwölf Laufwerke. Dies müssen jedoch HDDs sein.
 
 ##Gehäuseabmessungen und Gewicht  
 
-In den folgenden Tabellen sind die verschiedenen Gehäusespezifikationen \(Abmessungen und Gewicht\) aufgeführt.
+In den folgenden Tabellen sind die verschiedenen Gehäusespezifikationen (Abmessungen und Gewicht) aufgeführt.
 
 ###Gehäuseabmessungen
 Die folgenden Tabellen enthalten die Abmessungen des Gehäuses in Millimetern und Zoll.
@@ -84,12 +84,12 @@ Je nach Konfiguration kann ein vollständig beladenes primäres Gehäuse von 21�
  
 | Gehäuse | Gewicht |
 |-----------|--------| 
-| Max. Gewicht \(abhängig von der Konfiguration\) |30–33 kg |
-| Leer \(ohne Laufwerke\) |21–23 kg |
+| Max. Gewicht (abhängig von der Konfiguration) |30–33 kg |
+| Leer (ohne Laufwerke) |21–23 kg |
 
 ##Spezifikationen der Gehäuseumgebung  
 
-Dieser Abschnitt enthält die Spezifikationen im Zusammenhang mit der Gehäuseumgebung. Diese Kategorie enthält die Umgebungsvorgaben für Temperatur, Feuchtigkeit, Höhe, Stoßfestigkeit, Schwingungen, Ausrichtung, Sicherheit und elektromagnetische Kompatibilität \(EMC\).
+Dieser Abschnitt enthält die Spezifikationen im Zusammenhang mit der Gehäuseumgebung. Diese Kategorie enthält die Umgebungsvorgaben für Temperatur, Feuchtigkeit, Höhe, Stoßfestigkeit, Schwingungen, Ausrichtung, Sicherheit und elektromagnetische Kompatibilität (EMC).
 
 ###Temperatur und Feuchtigkeit
 
@@ -102,18 +102,18 @@ Dieser Abschnitt enthält die Spezifikationen im Zusammenhang mit der Gehäuseum
  
 | Gehäuse | Betriebsspezifikationen |
 |--------------------|---------------------------------------------------------------------------| 
-| Luftströmung | Die Luftströmung im System verläuft von vorne nach hinten. Das System muss mit einem hinteren Luftstromauslass mit niedrigem Druck betrieben werden. Der Rückstau durch Gehäusetüren und Hindernisse sollte 5 Pascal \(0,5 mm Wassersäule\) nicht überschreiten. |
-| Höhe, Betrieb | –30 m bis 3045 m \(–100 bis 10.000 Fuß\) mit einer um 5 °C herabgesetzten maximalen Betriebstemperatur bei Höhen über 7000 Fuß. |
-| Höhe, außerhalb des Betriebs | –305 m bis 12.192 m \(–1000 Fuß bis 40.000 Fuß\) |
+| Luftströmung | Die Luftströmung im System verläuft von vorne nach hinten. Das System muss mit einem hinteren Luftstromauslass mit niedrigem Druck betrieben werden. Der Rückstau durch Gehäusetüren und Hindernisse sollte 5 Pascal (0,5 mm Wassersäule) nicht überschreiten. |
+| Höhe, Betrieb | –30 m bis 3045 m (–100 bis 10.000 Fuß) mit einer um 5 °C herabgesetzten maximalen Betriebstemperatur bei Höhen über 7000 Fuß. |
+| Höhe, außerhalb des Betriebs | –305 m bis 12.192 m (–1000 Fuß bis 40.000 Fuß) |
 | Stoßfestigkeit, bei Betrieb | 5 g 10 ms ½ Sinus | 
 | Stoßfestigkeit, außerhalb des Betriebs | 30 g 10 ms ½ Sinus |
 | Schwingungen, bei Betrieb | 0,21 g RMS 5 bis 500 Hz zufällig |
 | Schwingungen, außerhalb des Betriebs | 1,04 g RMS 2 bis 200 Hz zufällig |
 | Schwingungen, bei Umplatzierung | 3 g 2 bis 200 Hz Sinus |
-| Ausrichtung und Montage | 19-Zoll-Rackmontage \(2 EIA-Einheiten\) |
-| Rackschienen | Passend für IEC 297-kompatible Racks mit mindestens 700 mm \(31,50 Zoll\) Tiefe |
+| Ausrichtung und Montage | 19-Zoll-Rackmontage (2 EIA-Einheiten) |
+| Rackschienen | Passend für IEC 297-kompatible Racks mit mindestens 700 mm (31,50 Zoll) Tiefe |
 | Sicherheit und Genehmigungen |	CE und UL EN 61000-3, IEC 61000-3, UL 61000-3 |
-| EMC | EN55022 \(CISPR – A\), FCC A |
+| EMC | EN55022 (CISPR – A), FCC A |
 
 ##Einhaltung internationaler Standards
 Ihr Microsoft Azure StorSimple-Gerät entspricht den folgenden internationalen Standards:
@@ -151,7 +151,7 @@ Das Gerät entspricht EN55024.
   
 Der Stecker und das gesamte Netzkabelmodul müssen den Richtlinien des jeweiligen Landes entsprechen, in dem das Gerät verwendet wird, und sie müssen über die erforderlichen Sicherheitsgenehmigungen für das Land verfügen. In den folgenden Tabellen sind die Standards für USA und Europa aufgeführt.
 
-###Netzkabel – USA \(muss NRTL-registriert sein\)
+###Netzkabel – USA (muss NRTL-registriert sein)
 
 | Komponente | Spezifikation |
 | --------------- | ----------------------------------------------------------------- | 
@@ -168,7 +168,7 @@ Der Stecker und das gesamte Netzkabelmodul müssen den Richtlinien des jeweilige
 
 ##Unterstützte Netzwerkkabel  
 
-Für die 10 GbE-Netzwerkschnittstellen, DATA 2 und DATA 3, finden Sie eine Liste der unterstützten Netzwerkkabel und Module unter folgendem Link: [http://www.mellanox.com/page/cables?mtag=cable\_overview](http://www.mellanox.com/page/cables?mtag=cable_overview) \(in englischer Sprache\).
+Für die 10 GbE-Netzwerkschnittstellen, DATA 2 und DATA 3, finden Sie eine Liste der unterstützten Netzwerkkabel und Module unter folgendem Link: [http://www.mellanox.com/page/cables?mtag=cable_overview](http://www.mellanox.com/page/cables?mtag=cable_overview) (in englischer Sprache).
 
 
 <!--HONumber=52-->

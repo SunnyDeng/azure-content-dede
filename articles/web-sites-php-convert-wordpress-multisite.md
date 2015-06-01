@@ -34,7 +34,7 @@ Lassen Sie uns anfangen.
 
 ## Zulassen von Multisite
 
-Sie müssen Multisite zunächst über die Datei `wp-config.php` mit der Konstanten **WP\_ALLOW\_MULTISITE** aktivieren. Es gibt zwei Möglichkeiten zum Bearbeiten von Web-App-Dateien: über FTP und über Git. Wenn Sie sich weder mit der Einrichtung der einen noch der anderen Methode auskennen, finden Sie weitere Informationen in den folgenden Lernprogrammen:
+Sie müssen Multisite zunächst über die Datei `wp-config.php` mit der Konstanten **WP_ALLOW_MULTISITE** aktivieren. Es gibt zwei Möglichkeiten zum Bearbeiten von Web-App-Dateien: über FTP und über Git. Wenn Sie sich weder mit der Einrichtung der einen noch der anderen Methode auskennen, finden Sie weitere Informationen in den folgenden Lernprogrammen:
 
 * [PHP-Website mit MySQL und FTP][website-w-mysql-and-ftp-ftp-setup]
 

@@ -21,7 +21,7 @@
 
 Wenn Ihre App bei den Benutzern abstürzt, möchten Sie davon schnell erfahren und wünschen sich Details dazu, was passiert ist. Mit Application Insights können Sie überwachen, wie häufig Abstürze auftreten, Benachrichtigungen erhalten, wenn sie auftreten, und die Berichte zu den einzelnen Vorfällen untersuchen.
 
-"Absturz" bedeutet, dass die Anwendung aufgrund einer nicht abgefangenen Ausnahme beendet wird. Wenn Ihre Anwendung eine Ausnahme abfängt, können Sie dies mithilfe der "TrackException\(\)"-API melden, jedoch die Ausführung fortsetzen. In diesem Fall wird sie nicht wie ein Absturz protokolliert.
+"Absturz" bedeutet, dass die Anwendung aufgrund einer nicht abgefangenen Ausnahme beendet wird. Wenn Ihre Anwendung eine Ausnahme abfängt, können Sie dies mithilfe der "TrackException()"-API melden, jedoch die Ausführung fortsetzen. In diesem Fall wird sie nicht wie ein Absturz protokolliert.
 
 
 ## Überwachen der Häufigkeit von Abstürzen

@@ -53,7 +53,7 @@ Die Befehlszeilenschnittstelle kann mithilfe von *Node.js Package Manager (NPM)*
 
 		npm install -g azure-cli
 
-	> [AZURE.NOTE] Falls Sie einen Fehler erhalten und der NPM-Befehl nicht gefunden wird, vergewissern Sie sich, dass die PATH-Umgebungsvariable die folgenden Pfade enthält: <i>C:\Programme (x86)\nodejs;C:\Benutzer\[Benutzername]\AppData\Roaming\npm</i> oder <i>C:\Programme\nodejs;C:\Benutzer\[Benutzername]\AppData\Roaming\npm</i>
+	> [AZURE.NOTE] Falls Sie einen Fehler erhalten und der NPM-Befehl nicht gefunden wird, vergewissern Sie sich, dass die PATH-Umgebungsvariable die folgenden Pfade enthält: <i>C:\Programme (x86)\nodejs;C:\Benutzer[Benutzername]\AppData\Roaming\npm</i> oder <i>C:\Programme\nodejs;C:\Benutzer[Benutzername]\AppData\Roaming\npm</i>
 
 5.	Führen Sie den folgenden Befehl aus, um die Installation zu überprüfen:
 

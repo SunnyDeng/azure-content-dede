@@ -111,7 +111,7 @@ Nachdem ein Experiment in Machine Learning Studio ausgeführt wurde, ist es mög
 
 Auf Zwischen-Datasets kann zugegriffen werden, solange das Datenformat mit der Python-Clientbibliothek kompatibel ist.
 
-Die folgenden Formate werden unterstützt \(Konstanten hierfür sind der `azureml.DataTypeIds` Klasse\):
+Die folgenden Formate werden unterstützt (Konstanten hierfür sind der `azureml.DataTypeIds` Klasse):
 
  - PlainText
  - GenericCSV
@@ -187,7 +187,7 @@ Um nur die Beispiel-Datasets aufzulisten:
     for ds in ws.example_datasets:
         print(ds.name)
 
-Sie können auf ein Dataset nach Namen zugreifen \(es wird zwischen Groß-und Kleinschreibung unterschieden\):
+Sie können auf ein Dataset nach Namen zugreifen (es wird zwischen Groß-und Kleinschreibung unterschieden):
 
     ds = ws.datasets['my dataset name']
 
@@ -198,7 +198,7 @@ Oder Sie können über Index darauf zugreifen:
 
 ### Metadaten
 
-Datasets enthalten zusätzlich zum Inhalt Metadaten. \(Zwischen-Datasets sind eine Ausnahme dieser Regel und verfügen nicht über Metadaten.\)
+Datasets enthalten zusätzlich zum Inhalt Metadaten. (Zwischen-Datasets sind eine Ausnahme dieser Regel und verfügen nicht über Metadaten.)
 
 Einige Metadatenwerte werden bei der Erstellung vom Benutzer zugewiesen:
 
@@ -264,7 +264,7 @@ Wenn Ihre Daten bereits serialisiert sind, können Sie Folgendes verwenden:
         description='my description'
     )
 
-Die Python-Clientbibliothek kann Pandas DataFrame in die folgenden Formate serialisieren \(diese Konstanten dafür sind in der `azureml.DataTypeIds` Klasse\):
+Die Python-Clientbibliothek kann Pandas DataFrame in die folgenden Formate serialisieren (diese Konstanten dafür sind in der `azureml.DataTypeIds` Klasse):
 
  - PlainText
  - GenericCSV

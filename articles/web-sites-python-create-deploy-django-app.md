@@ -90,7 +90,7 @@ Wir folgen diesen Anweisungen in den nächsten Abschnitten.
 
 Hier sehen Sie eine Übersicht der Dateien, die sich im Git-Ausgangsrepository befinden, das wir im nächsten Abschnitt klonen.
 
-    \app\__init__.py
+    \app__init__.py
     \app\forms.py
     \app\models.py
     \app\tests.py
@@ -104,7 +104,7 @@ Hier sehen Sie eine Übersicht der Dateien, die sich im Git-Ausgangsrepository b
     \app\templates\layout.html
     \app\templates\login.html
     \app\templates\loginpartial.html
-    \DjangoWebProject\__init__.py
+    \DjangoWebProject__init__.py
     \DjangoWebProject\settings.py
     \DjangoWebProject\urls.py
     \DjangoWebProject\wsgi.py
@@ -450,7 +450,7 @@ Die Sammlung statischer Dateien erfolgt automatisch als Teil des Bereitstellungs
 
 Wenn Sie die Sammlung statischer Dateien für die Django-Anwendung zu überspringen möchten:
 
-    \.skipDjango 
+    .skipDjango 
 
 Dann müssen Sie die Sammlung manuell auf dem lokalen Computer ausführen:
 

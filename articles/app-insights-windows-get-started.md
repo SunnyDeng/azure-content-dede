@@ -35,7 +35,7 @@ Sie benötigen Folgendes:
 * Ein Abonnement für [Microsoft Azure][azure]
 * Visual Studio 2013 oder höher
 
-## 1\. Erstellen einer Application Insights-Ressource 
+## 1. Erstellen einer Application Insights-Ressource 
 
 Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource.
 
@@ -50,7 +50,7 @@ Mit diesem Schlüssel wird die Ressource identifiziert. Sie benötigen ihn in K�
 ![Öffnen Sie die Dropdownliste "Essentials", und wählen Sie den Instrumentationsschlüssel aus](./media/app-insights-windows-get-started/02-props.png)
 
 
-## 2\. Hinzufügen des Application Insights SDK zu Ihren Apps
+## 2. Hinzufügen des Application Insights SDK zu Ihren Apps
 
 Fügen Sie in Visual Studio das entsprechende SDK Ihrem Projekt hinzu.
 
@@ -68,9 +68,9 @@ Wenn es sich um eine universelle Windows App handelt, wiederholen Sie die Schrit
    * Application Insights für Windows-Anwendungen* – für Windows Store-Apps*
    * Application Insights für Windows Phone-Anwendungen
    * Application Insights für Web-Apps* – wählen Sie dieses Paket für eine Desktopanwendung* 
-4. Bearbeiten Sie die Datei "ApplicationInsights.config" \(die bei der NuGet-Installation hinzugefügt wurde\). Fügen Sie Folgendes direkt vor dem Endtag ein:
+4. Bearbeiten Sie die Datei "ApplicationInsights.config" (die bei der NuGet-Installation hinzugefügt wurde). Fügen Sie Folgendes direkt vor dem Endtag ein:
 
-    `<InstrumentationKey>`\*den kopierten Schlüssel\*`</InstrumentationKey>`
+    `<InstrumentationKey>`*den kopierten Schlüssel*`</InstrumentationKey>`
 
 **Universelle Windows Apps**: Wiederholen Sie die Schritte für sowohl das Windows Phone-Projekt als auch das Windows Store-Projekt.
 
@@ -116,7 +116,7 @@ Wenn Sie die Einrichtungsschritte lieber in Visual Studio ausführen möchten, i
 
 Wählen Sie Application Insights im Dialogfeld "Neues Projekt" aus.
 
-Wenn Sie aufgefordert werden, sich anzumelden, verwenden Sie die Anmeldeinformationen Ihres Azure-Kontos \(das vom Visual Studio Online-Konto getrennt ist\).
+Wenn Sie aufgefordert werden, sich anzumelden, verwenden Sie die Anmeldeinformationen Ihres Azure-Kontos (das vom Visual Studio Online-Konto getrennt ist).
 
 ![](./media/appinsights/appinsights-d21-new.png)
 

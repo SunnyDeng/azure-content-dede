@@ -24,7 +24,7 @@
 
 # Verwenden des Anwendungsblocks für die automatische Skalierung
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Anwendungsblock für die automatische Skalierung im [Microsoft Enterprise Library 5.0 Integration Pack for Azure][] demonstriert. Die Beispiele sind in C\# geschrieben# und verwenden die .NET API. Die behandelten Szenarien umfassen das **Hosten des Blocks**, das **Verwenden von Einschränkungsregeln** und das **Verwenden von reaktiven Regeln**. Weitere Informationen zum Anwendungsblock für die automatische Skalierung finden Sie im Abschnitt [Nächste Schritte][].
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Anwendungsblock für die automatische Skalierung im [Microsoft Enterprise Library 5.0 Integration Pack for Azure][] demonstriert. Die Beispiele sind in C# geschrieben# und verwenden die .NET API. Die behandelten Szenarien umfassen das **Hosten des Blocks**, das **Verwenden von Einschränkungsregeln** und das **Verwenden von reaktiven Regeln**. Weitere Informationen zum Anwendungsblock für die automatische Skalierung finden Sie im Abschnitt [Nächste Schritte][].
 
 ## Inhaltsverzeichnis
 
@@ -270,7 +270,7 @@ Dieses Beispiel enthält drei Regeln für die automatische Skalierung (eine **Ei
 
 -   Die Einschränkungsregel ist immer aktiv und legt die Mindestanzahl an Rolleninstanzen auf zwei und die Höchstzahl an Rolleninstanzen auf sechs fest.
 
--   Die beiden reaktiven Regeln verwenden einen **Operanden** namens **WebRoleA\_CPU\_Avg\_5m**, der die durchschnittliche CPU-Auslastung während der letzten fünf Minuten für eine Azure-Rolle mit dem Namen **AutoscalingApplicationRole** prüft. Diese Rolle ist im **Dienstmodell** definiert.
+-   Die beiden reaktiven Regeln verwenden einen **Operanden** namens **WebRoleA_CPU_Avg_5m**, der die durchschnittliche CPU-Auslastung während der letzten fünf Minuten für eine Azure-Rolle mit dem Namen **AutoscalingApplicationRole** prüft. Diese Rolle ist im **Dienstmodell** definiert.
 
 -   Die reaktive Rolle mit dem Namen **ScaleUpOnHighUtilization erhöht** die Zahl der Instanzen der Zielrolle um eins, wenn die durchschnittliche CPU-Auslastung während der letzten fünf Minuten größer als oder gleich 60 % war.
 

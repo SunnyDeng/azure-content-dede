@@ -119,7 +119,7 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
 		azure storage blob download <container-name> <blob-name> <destination-file>
 
-	> [AZURE.NOTE] Sie müssen entweder den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben, oder die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** festlegen. Weitere Informationen finden Sie unter <a href="../hdinsight-upload-data/" target="_blank" for more information.
+	> [AZURE.NOTE] Sie müssen entweder den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben, oder die Umgebungsvariablen **AZURE_STORAGE_ACCOUNT** und **AZURE_STORAGE_ACCESS_KEY** festlegen. Weitere Informationen finden Sie unter <a href="../hdinsight-upload-data/" target="_blank" for more information.
 
 6. Verwenden Sie die folgenden Anweisungen zum Erstellen einer neuen "internen" Tabelle namens **errorLogs**.
 
@@ -133,7 +133,7 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
     * **STORED AS ORC** speichert die Daten im ORC-Format (Optimized Row Columnar). Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
     * **INSERT OVERWRITE ... SELECT**: wählt Zeilen aus der **log4jLogs**-Tabelle aus, die **[ERROR]** enthalten. Anschließend werden die Daten in die Tabelle **errorLogs** eingefügt.
-    * <strong>SELECT \*</strong> wählt alle Zeilen aus der neuen **errorLogs**-Tabelle aus.
+    * <strong>SELECT *</strong> wählt alle Zeilen aus der neuen **errorLogs**-Tabelle aus.
 
 7. Verwenden Sie die zurückgegebene Auftrags-ID, um den Status des Auftrags zu überprüfen. Nach der erfolgreichen Ausführung verwenden Sie xplat-cli wie zuvor beschrieben, um die Ergebnisse herunterzuladen und anzuzeigen. Die Ausgabe sollte drei Zeilen mit dem Inhalt **[ERROR]** enthalten.
 

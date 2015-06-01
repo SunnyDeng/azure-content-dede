@@ -27,10 +27,10 @@
 
      ![Volume hinzufügen](./media/storsimple-create-volume/HCS_AddVolume1M-include.png)
 
-3. Fügen Sie im Dialogfeld **Zusätzliche Einstellungen** einen neuen Datensatz für die Zugriffssteuerung \(Access Control Record, ACR\) hinzu:
+3. Fügen Sie im Dialogfeld **Zusätzliche Einstellungen** einen neuen Datensatz für die Zugriffssteuerung (Access Control Record, ACR) hinzu:
    1. Geben Sie einen **Namen** für den ACR ein.
-   2. Geben Sie unter **iSCSI-Initiatorname** den qualifizierten iSCSI-Namen \(IQN\) des Windows-Hosts an. Wenn Sie den IQN nicht kennen, fahren Sie mit [Abrufen des IQNs eines Windows Server-Hosts](#get-the-iqn-of-a-windows-server-host) fort.
-   3. Aktivieren Sie unter **Standardsicherung für dieses Volume?** das Kontrollkästchen **Aktivieren**. Die Standardsicherung erstellt eine Richtlinie, die jeden Tag um 22:30 Uhr ausgeführt wird \(Uhrzeit des Geräts\) und eine Cloud-Momentaufnahme dieses Volumes erstellt.
+   2. Geben Sie unter **iSCSI-Initiatorname** den qualifizierten iSCSI-Namen (IQN) des Windows-Hosts an. Wenn Sie den IQN nicht kennen, fahren Sie mit [Abrufen des IQNs eines Windows Server-Hosts](#get-the-iqn-of-a-windows-server-host) fort.
+   3. Aktivieren Sie unter **Standardsicherung für dieses Volume?** das Kontrollkästchen **Aktivieren**. Die Standardsicherung erstellt eine Richtlinie, die jeden Tag um 22:30 Uhr ausgeführt wird (Uhrzeit des Geräts) und eine Cloud-Momentaufnahme dieses Volumes erstellt.
 
      >[AZURE.NOTE]Nachdem die Sicherung hier aktiviert wurde, kann sie nicht zurückgesetzt werden. Sie müssen das Volume bearbeiten, um diese Einstellung zu ändern.
 

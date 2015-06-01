@@ -38,7 +38,7 @@ Je nach gewählter Edition stehen unter Umständen nicht alle BizTalk Service-Ei
 2.  Wählen Sie im unteren Navigationsbereich **NEU** aus:
     ![Schaltfläche 'Neu' auswählen][Schaltfläche 'Neu' auswählen]
 
-3.  Wählen Sie **APP-DIENSTE** \> **BIZTALK SERVICE** \> **BENUTZERDEFINIERT ERSTELLEN** aus:
+3.  Wählen Sie **APP-DIENSTE** > **BIZTALK SERVICE** > **BENUTZERDEFINIERT ERSTELLEN** aus:
     ![BizTalk Service und 'Benutzerdefiniert erstellen' auswählen][BizTalk Service und 'Benutzerdefiniert erstellen' auswählen]
 
 4.  Geben Sie die folgenden Einstellungen für den BizTalk Service ein.

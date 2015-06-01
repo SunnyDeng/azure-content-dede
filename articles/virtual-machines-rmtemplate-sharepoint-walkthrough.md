@@ -109,7 +109,7 @@ Beispiel:
 
 ### Microsoft.Network/virtualNetworks
 
-In diesem Abschnitt wird ein virtuelles Nur-Cloud-Netzwerk mit vier Subnetzen erstellt \(eines für jede Bereitstellungsebene\), in dem sich die virtuellen Computer befinden. Hier finden Sie den JSON-Code:
+In diesem Abschnitt wird ein virtuelles Nur-Cloud-Netzwerk mit vier Subnetzen erstellt (eines für jede Bereitstellungsebene), in dem sich die virtuellen Computer befinden. Hier finden Sie den JSON-Code:
 
 	{
 		"name": "[parameters('virtualNetworkName')]",
@@ -130,7 +130,7 @@ In diesem Abschnitt wird ein virtuelles Nur-Cloud-Netzwerk mit vier Subnetzen er
 
 ### Microsoft.Network/loadBalancers
 
-In diesen Abschnitten werden Lastenausgleichsinstanzen für jeden virtuellen Computer erstellt, die NAT und Filterung für eingehenden Datenverkehr aus dem Internet bereitstellen. Für jedes Lastenausgleichssystem werden Front-End- und Back-End-Einstellungen sowie NAT-Regeln für eingehenden Datenverkehr festgelegt. Es gibt z. B. Remotedesktop-Verkehrsregeln für jeden virtuellen Computer und eine Regel zum Zulassen von eingehendem Webdatenverkehr \(TCP-Port 80\) über das Internet für die Server auf Webebene. Es folgt ein Beispiel für den Server auf Webebene:
+In diesen Abschnitten werden Lastenausgleichsinstanzen für jeden virtuellen Computer erstellt, die NAT und Filterung für eingehenden Datenverkehr aus dem Internet bereitstellen. Für jedes Lastenausgleichssystem werden Front-End- und Back-End-Einstellungen sowie NAT-Regeln für eingehenden Datenverkehr festgelegt. Es gibt z. B. Remotedesktop-Verkehrsregeln für jeden virtuellen Computer und eine Regel zum Zulassen von eingehendem Webdatenverkehr (TCP-Port 80) über das Internet für die Server auf Webebene. Es folgt ein Beispiel für den Server auf Webebene:
 
         {
             "apiVersion": "2014-12-01-preview",
@@ -341,15 +341,15 @@ Zusätzliche Abschnitte **"Microsoft.Compute/virtualMachines/extensions"** rufen
 
 Beachten Sie die allgemeine Organisation der Unterabschnitte des Abschnitts **"Ressourcen"** der JSON-Datei:
 
-1.	Erstellen Sie die Elemente der Azure-Infrastruktur, die für die Unterstützung mehrerer virtueller Computer erforderlich sind \(ein Speicherkonto, öffentliche IP-Adressen, Verfügbarkeitsgruppen, ein virtuelles Netzwerk, Netzwerkschnittstellen, Lastenausgleichsinstanzen\).
+1.	Erstellen Sie die Elemente der Azure-Infrastruktur, die für die Unterstützung mehrerer virtueller Computer erforderlich sind (ein Speicherkonto, öffentliche IP-Adressen, Verfügbarkeitsgruppen, ein virtuelles Netzwerk, Netzwerkschnittstellen, Lastenausgleichsinstanzen).
 2.	Erstellen Sie die virtuellen Computer des Domänencontrollers, die die zuvor erstellten allgemeinen und spezifischen Elemente der Azure-Infrastruktur verwenden, fügen Sie Datenträger hinzu, und führen Sie PowerShell-Skripts aus. Aktualisieren Sie außerdem das virtuelle Netzwerk, sodass die statischen IP-Adressen des Domänencontrollers verwendet werden.
 3.	Erstellen Sie die virtuellen Computer des SQL Server-Clusters, die die zuvor für die Domänencontroller erstellten allgemeinen und spezifischen Elemente der Azure-Infrastruktur verwenden, fügen Sie Datenträger hinzu, und führen Sie PowerShell-Skripts zum Konfigurieren des Clusters und der SQL Server-AlwaysOn-Verfügbarkeitsgruppen aus.
 4.	Erstellen Sie die virtuellen Computer des SharePoint-Servers, die die zuvor erstellten allgemeinen und spezifischen Elemente der Azure-Infrastruktur verwenden, fügen Sie Datenträger hinzu, und führen Sie PowerShell-Skripts aus.
 
 Bei Ihren eigenen JSON-Vorlagen zum Erstellen einer Infrastruktur mit mehreren Ebenen in Azure sollten Sie die gleichen Schritte ausführen:
 
-1.	Erstellen Sie die allgemeinen Elemente \(Speicherkonto, virtuelles Netzwerk\), spezifische Elemente für die Ebene \(Verfügbarkeitsgruppen\) und spezifische Elemente für die virtuellen Computer \(öffentliche IP-Adressen, Verfügbarkeitsgruppen, Netzwerkschnittstellen und Lastenausgleichsinstanzen\) der Azure-Infrastruktur, die für die Bereitstellung erforderlich sind.
-2.	Erstellen Sie für jede Ebene in der Anwendung \(z. B. Authentifizierung , Datenbank, Web\) die Server in dieser Ebene mithilfe der allgemeinen Elemente \(Speicherkonto, virtuelles Netzwerk\), der spezifischen Elemente für die Ebene \(Verfügbarkeitsgruppe\) und der spezifischen Elemente für die virtuellen Computer \(öffentliche IP-Adressen, Netzwerkschnittstellen, Lastenausgleichsinstanzen\), und konfigurieren Sie sie.
+1.	Erstellen Sie die allgemeinen Elemente (Speicherkonto, virtuelles Netzwerk), spezifische Elemente für die Ebene (Verfügbarkeitsgruppen) und spezifische Elemente für die virtuellen Computer (öffentliche IP-Adressen, Verfügbarkeitsgruppen, Netzwerkschnittstellen und Lastenausgleichsinstanzen) der Azure-Infrastruktur, die für die Bereitstellung erforderlich sind.
+2.	Erstellen Sie für jede Ebene in der Anwendung (z. B. Authentifizierung , Datenbank, Web) die Server in dieser Ebene mithilfe der allgemeinen Elemente (Speicherkonto, virtuelles Netzwerk), der spezifischen Elemente für die Ebene (Verfügbarkeitsgruppe) und der spezifischen Elemente für die virtuellen Computer (öffentliche IP-Adressen, Netzwerkschnittstellen, Lastenausgleichsinstanzen), und konfigurieren Sie sie.
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
 

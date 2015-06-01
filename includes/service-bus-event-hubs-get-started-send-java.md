@@ -5,7 +5,7 @@ In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an 
 
 2. Laden Sie die neueste Version der Bibliothek **Qpid JMS AMQP 1.0** [hier](http://qpid.apache.org/components/qpid-jms/index.html) herunter.
 
-3. Extrahieren Sie die Dateien aus dem Archiv, und kopieren Sie die folgenden JAR-Dateien aus dem Archivverzeichnis `qpid-amqp-1-0-client-jms\<version>\lib` in Ihr Eclipse-Projekt **Sender**.
+3. Extrahieren Sie die Dateien aus dem Archiv, und kopieren Sie die folgenden JAR-Dateien aus dem Archivverzeichnis `qpid-amqp-1-0-client-jms<version>\lib` in Ihr Eclipse-Projekt **Sender**.
 
 4. Klicken Sie in Eclipse Package Explorer mit der rechten Maustaste auf das Projekt **Sender**, und wählen Sie **Properties**. Klicken Sie im linken Bereich des Dialogfelds auf **Java Build Path**, klicken Sie dann auf die Registerkarte **Libraries** und anschließend auf die Schaltfläche **Add JARs**. Wählen Sie all zuvor kopierten JAR-Dateien aus, und klicken Sie auf **OK**.
 

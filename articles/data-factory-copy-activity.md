@@ -16,15 +16,15 @@
 	ms.date="04/02/2015" 
 	ms.author="spelluru"/>
 
-# Kopieren von Daten mit Azure Data Factory \(Kopieraktivität\)
+# Kopieren von Daten mit Azure Data Factory (Kopieraktivität)
 ## Übersicht
-Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer Quelle an eine Senke \(Ziel\) in einem Batch kopieren. Die Kopieraktivität kann in den folgenden Szenarien verwendet werden:
+Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer Quelle an eine Senke (Ziel) in einem Batch kopieren. Die Kopieraktivität kann in den folgenden Szenarien verwendet werden:
 
-- **Eingehend in Azure**. In diesem Szenario werden Daten aus einer lokalen Datenquelle \(ex: SQL Server\) auf einen Azure-Datenspeicher \(ex: Azure-Blob, Azure-Tabelle oder Azure SQL-Datenbank\) für die folgenden untergeordneten Szenarien kopiert:
+- **Eingehend in Azure**. In diesem Szenario werden Daten aus einer lokalen Datenquelle (ex: SQL Server) auf einen Azure-Datenspeicher (ex: Azure-Blob, Azure-Tabelle oder Azure SQL-Datenbank) für die folgenden untergeordneten Szenarien kopiert:
 	- Sammeln von Daten an einem zentralen Ort in Azure zur weiteren Verarbeitung.
 	- Migrieren von Daten aus lokalen oder Nicht-Azure-Cloud-Plattformen in Azure.
 	- Archivieren oder Sichern von Daten in Azure für kosteneffizienten mehrstufigen Speicher.
-- **Ausgehend von Azure**. In diesem Szenario werden Daten von Azure \(ex: Azure-Blob, Azure-Tabelle oder Azure SQL-Datenbank\) auf lokale Data Marts und Data Warehouses \(ex: SQL-Server\) für die folgenden untergeordneten Szenarien kopiert:
+- **Ausgehend von Azure**. In diesem Szenario werden Daten von Azure (ex: Azure-Blob, Azure-Tabelle oder Azure SQL-Datenbank) auf lokale Data Marts und Data Warehouses (ex: SQL-Server) für die folgenden untergeordneten Szenarien kopiert:
 	- Übertragen von Daten in lokale Data Warehouses aufgrund mangelnder Unterstützung für Cloud Data Warehouses.
 	- Übertragen von Daten in lokale Lösung, um vorhandene lokale Lösung oder Berichterstellungsinfrastruktur zu nutzen.
 	- Archivieren oder Sichern von Daten in lokalen mehrstufigen Speicher.
@@ -125,7 +125,7 @@ Die Kopieraktivität unterstützt folgende Datenbewegungen:
 
 </table>
 
-### SQL unter IaaS \(Infrastructure-as-a-Service\)
+### SQL unter IaaS (Infrastructure-as-a-Service)
 Für SQL unter IaaS wird Azure als IaaS-Anbieter unterstützt. Die folgenden Netzwerk- und VPN-Topologien werden unterstützt. Beachten Sie, dass für Fall 2 und 3 das Datenverwaltungsgateway erforderlich ist, während es für den Fall 1 nicht erforderlich ist. Weitere Informationen zum Datenverwaltungsgateway finden Sie unter [Aktivieren von Pipelines für den Zugriff auf lokale Daten][use-onpremises-datasources].
 
 1.	VM mit öffentlichem DNS-Namen und statischem, öffentlichen Port: private Portzuordnung
@@ -267,7 +267,7 @@ Das folgende JSON-Skript definiert eine Eingabetabelle, die auf eine SQL-Tabelle
  		}
 	}
 
-Der folgende Azure PowerShell-Befehl verwendet **New-AzureDataFactoryTable**, das eine JSON-Datei verwendet, die das obige Skript zum Erstellen einer Tabelle \(**MyOnPremTable**) in einer Azure Data Factory enthält: **CopyFactory**.
+Der folgende Azure PowerShell-Befehl verwendet **New-AzureDataFactoryTable**, das eine JSON-Datei verwendet, die das obige Skript zum Erstellen einer Tabelle (**MyOnPremTable**) in einer Azure Data Factory enthält: **CopyFactory**.
          
 	New-AzureDataFactoryTable -ResourceGroupName ADF –Name MyOnPremTable –DataFactoryName CopyFactory –File <Filepath>\MyOnPremTable.json.
 
@@ -303,18 +303,18 @@ Das folgende JSON-Skript definiert eine Ausgabetabelle: **MyDemoBlob**, die auf 
    		}
 	}
 
-Der folgende Azure PowerShell-Befehl verwendet **New-AzureDataFactoryTable**, das eine JSON-Datei verwendet, die das obige Skript zum Erstellen einer Tabelle \(**MyDemoBlob**) in einer Azure Data Factory enthält: **CopyFactory**.
+Der folgende Azure PowerShell-Befehl verwendet **New-AzureDataFactoryTable**, das eine JSON-Datei verwendet, die das obige Skript zum Erstellen einer Tabelle (**MyDemoBlob**) in einer Azure Data Factory enthält: **CopyFactory**.
          
 	New-AzureDataFactoryTable -ResourceGroupName ADF -DataFactoryName CopyFactory –File <Filepath>
 
 
-### JSON für Pipeline \(mit Kopieraktivität\)
+### JSON für Pipeline (mit Kopieraktivität)
 In diesem Beispiel, eine Pipeline: **CopyActivityPipeline** ist mit den folgenden Eigenschaften definiert:
 
 - Die **type**-Eigenschaft wird auf **CopyActivity** festgelegt.
-- **MyOnPremTable** wird als Eingabe angegeben \(**Eingaben**-Tag\).
-- **MyAzureBlob** wird als Ausgabe angegeben \(**Ausgaben\**-Tag\)
-- Der Abschnitt **Transformation** enthält zwei Unterabschnitte: **Quelle** und **Senke**. Für den Typ der Quelle wird **SqlSource** und für den Typ der Senke **BlobSink** festgelegt. **sqlReaderQuery** definiert die Transformation \(Projektion\), die für die Quelle ausgeführt werden soll. Weitere Informationen zu allen Eigenschaften finden Sie in der [JSON-Skriptreferenz][json-script-reference].
+- **MyOnPremTable** wird als Eingabe angegeben (**Eingaben**-Tag).
+- **MyAzureBlob** wird als Ausgabe angegeben (**Ausgaben**-Tag)
+- Der Abschnitt **Transformation** enthält zwei Unterabschnitte: **Quelle** und **Senke**. Für den Typ der Quelle wird **SqlSource** und für den Typ der Senke **BlobSink** festgelegt. **sqlReaderQuery** definiert die Transformation (Projektion), die für die Quelle ausgeführt werden soll. Weitere Informationen zu allen Eigenschaften finden Sie in der [JSON-Skriptreferenz][json-script-reference].
 
          
 		{
@@ -348,7 +348,7 @@ In diesem Beispiel, eine Pipeline: **CopyActivityPipeline** ist mit den folgende
 		}
 
 
- Der folgende Azure PowerShell-Befehl verwendet **New-AzureDataFactoryPipeline**, das eine JSON-Datei verwendet, die das obige Skript zum Erstellen einer Pipeline \(**CopyActivityPipeline**) in einer Azure Data Factory enthält: **CopyFactory**.
+ Der folgende Azure PowerShell-Befehl verwendet **New-AzureDataFactoryPipeline**, das eine JSON-Datei verwendet, die das obige Skript zum Erstellen einer Pipeline (**CopyActivityPipeline**) in einer Azure Data Factory enthält: **CopyFactory**.
          
 		New-AzureDataFactoryPipeline -ResourceGroupName ADF –DataFactoryName CopyFactory –File <Filepath>
 

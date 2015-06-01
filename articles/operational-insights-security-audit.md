@@ -34,7 +34,7 @@ Folgendes wird in diesem Artikel beschrieben:
 3. Prüfen Sie auf der Seite **Sicherheit und Überwachung** die Informationen auf dem Blatt **RELEVANTE PROBLEME**. Im Beispielbild sehen Sie 6 relevante Probleme für heute, 2 von gestern. In diesem Beispiel gibt es 1 verdächtige ausführbare Datei. Klicken Sie im Blatt **RELEVANTE PROBLEME** auf **Verdächtige ausführbare Dateien**. ![Bild der Seite "Sicherheit und Überwachung"](./media/operational-insights-security-audit/sec-audit-dash03.png)
 4. In der Suche werden die Abfrage sowie die Ergebnisse für die verdächtige ausführbare Datei, auf die Sie geklickt haben, angezeigt. Im Beispiel gibt es 1 Ergebnis, der Dateihash wird angezeigt. Klicken Sie auf die **DATEIHASH**-ID. ![Bild der Suchergebnisse "Dateihash"](./media/operational-insights-security-audit/sec-audit-search01.png) 
 5. In der Suche werden nun weitere Informationen über die ausführbare Datei angezeigt, u.a. der Dateipfad und der Prozessname. Klicken Sie auf **Prozess &lt;Dateiname&gt;**. In diesem Beispiel ist das HEXEDIT.EXE. ![Bild der Suchergebnisse "Prozess"](./media/operational-insights-security-audit/sec-audit-search02.png) 
-6. In der Suche wird die Abfrage um den Prozessnamen in Anführungszeichen ergänzt. In diesem Beispiel "\*\*HEXEDIT.EXE"\*\*. ![Bild der Suchabfrage](./media/operational-insights-security-audit/sec-audit-search03.png)
+6. In der Suche wird die Abfrage um den Prozessnamen in Anführungszeichen ergänzt. In diesem Beispiel "**HEXEDIT.EXE"**. ![Bild der Suchabfrage](./media/operational-insights-security-audit/sec-audit-search03.png)
 7. Lassen Sie im Feld für die Suchabfrage nur den Prozessnamen und die Anführungszeichen stehen und klicken Sie dann auf das Suchsymbol. ![Bild der detaillierten Suchinformationen](./media/operational-insights-security-audit/sec-audit-search04.png)
 8. In der Suche werden ausführliche Informationen über den Prozess angezeigt, u.a. der oder die Computer, wo der Prozess lief, das entsprechende Benutzerkonto sowie Datum und Uhrzeit, zu der das Ereignis für den Prozess erstellt wurde.
 9. Mit den gewonnenen Informationen können Sie nun die gewünschten Maßnahmen ergreifen. Falls Sie zum Beispiel feststellen, dass es sich bei der ausführbaren Datei um Schadsoftware handelt, können Sie sie von allen betroffenen Computersystemen entfernen lassen. Wenn die ausführbare Datei entfernt wurde und Operational Insights aktuelle Protokoll- und Überwachungsereignisse für Ihr Computersystem erhält, werden sich die Werte auf dem Blatt RELEVANTE PROBLEME am folgenden Tag ändern.
@@ -51,9 +51,9 @@ Ganz gleich, ob die Benutzer direkt oder per Remote auf ihre Computer zugreifen,
 
 Um das Sicherheits- und Überwachungspack optimal zu nutzen, sollten Sie mithilfe der folgenden Ressourcen die Ebene der von Ihrer Windows-Umgebung erhobenen Überwachungsereignisse konfigurieren, so dass sie Ihren Anforderungen am besten entspricht.
 
-- [Konfigurieren der Sicherheitsrichtlinieneinstellungen]\(https://technet.microsoft.com/library/dn135243(v=ws.10).aspx\)
+- [Konfigurieren der Sicherheitsrichtlinieneinstellungen](https://technet.microsoft.com/library/dn135243(v=ws.10).aspx)
 
-- [Erweiterte Überwachungsrichtlinienkonfiguration]\(https://technet.microsoft.com/library/jj852202(v=ws.10).aspx\)
+- [Erweiterte Überwachungsrichtlinienkonfiguration](https://technet.microsoft.com/library/jj852202(v=ws.10).aspx)
 
 - [Empfehlungen zu Überwachungsrichtlinien](https://technet.microsoft.com/library/dn487457.aspx)
 
@@ -91,7 +91,7 @@ Verwenden Sie das Sicherheits- und Überwachungspack, um Überwachungsdaten Ihre
 
 **Verwenden von Gruppenrichtlinien zur Erfassung von Überwachungsdaten**
 
-Alle Überwachungsdaten, die Sie erfassen und an Operational Insights senden möchten, werden vollständig über die Gruppenrichtlinien verwaltet. Sie verwenden sie, um Sicherheitskonfigurationen als Teil eines Gruppenrichtlinienobjekts \(GPO\) zu definieren, die zu Active Directory-Containern wie Sites, Domänen und Organisationseinheiten verlinkt sind. Sie helfen bei der Verwaltung der Sicherheitseinstellungen. Richtliniendaten werden protokolliert und später an den Operational Insights-Dienst gesendet.
+Alle Überwachungsdaten, die Sie erfassen und an Operational Insights senden möchten, werden vollständig über die Gruppenrichtlinien verwaltet. Sie verwenden sie, um Sicherheitskonfigurationen als Teil eines Gruppenrichtlinienobjekts (GPO) zu definieren, die zu Active Directory-Containern wie Sites, Domänen und Organisationseinheiten verlinkt sind. Sie helfen bei der Verwaltung der Sicherheitseinstellungen. Richtliniendaten werden protokolliert und später an den Operational Insights-Dienst gesendet.
 
 **Verwenden von AppLocker zur Erfassung von Überwachungsdaten**
 

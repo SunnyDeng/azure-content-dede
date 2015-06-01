@@ -110,7 +110,7 @@ Azure" anzuzeigen.
 
 2.  Ändern Sie die letzte Textzeile, indem Sie **in Azure** anhängen.
 
-	![The index.jade file, the last line reads: p Welcome to \#{title} in Azure](./media/cloud-services-nodejs-develop-deploy-express-app/node31.png)
+	![The index.jade file, the last line reads: p Welcome to #{title} in Azure](./media/cloud-services-nodejs-develop-deploy-express-app/node31.png)
 
 3.  Speichern Sie die Datei, und beenden Sie den Editor.
 

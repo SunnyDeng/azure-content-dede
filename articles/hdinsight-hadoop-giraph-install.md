@@ -73,7 +73,7 @@ Zur Demonstration der grundlegenden <a href = "http://people.apache.org/~edwardy
 
 	Laden Sie die Datei "tiny_graph.txt" in den Primärspeicher Ihres HDInsight-Clusters hoch. Anweisungen zum Hochladen von Daten finden Sie unter [Hochladen von Daten für Hadoop-Aufträge in HDInsight](hdinsight-upload-data.md).
 
-	Diese Daten beschreiben eine Beziehung zwischen Objekten in einem gerichteten Graph mithilfe des Formats [source\_id, source\_value,[[dest\_id], [edge\_value],...]]. Jede Zeile repräsentiert eine Beziehung zwischen einem **source\_id**-Objekt und einem oder mehreren **dest\_id**-Objekten. Der **edge\_value** (bzw. die Gewichtung) ist vorstellbar als die Stärke oder Distanz der Verbindung zwischen **source_id** und **dest\_id**.
+	Diese Daten beschreiben eine Beziehung zwischen Objekten in einem gerichteten Graph mithilfe des Formats [source_id, source_value,[[dest_id], [edge_value],...]]. Jede Zeile repräsentiert eine Beziehung zwischen einem **source_id**-Objekt und einem oder mehreren **dest_id**-Objekten. Der **edge_value** (bzw. die Gewichtung) ist vorstellbar als die Stärke oder Distanz der Verbindung zwischen **source_id** und **dest_id**.
 
 	Wenn die obigen Daten auseinandergezogen und der Wert (die Gewichtung) als Abstand zwischen den Objekten verwendet werden, dann könnte das so aussehen:
 

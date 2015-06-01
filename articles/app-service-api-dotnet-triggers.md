@@ -47,7 +47,7 @@ Zurzeit werden zwei Arten von Triggern unterstützt:
 
 ### Abfragetrigger
 
-Ein Abfragetrigger wird als reguläre REST-API implementiert und erwartet, dass die Clients \(z. B. eine App-Logik\) ihn abfragen, um eine Benachrichtigung zu erhalten. Während der Client sein Zustand beibehalten kann, ist der Abfragetrigger selbst zustandslos.
+Ein Abfragetrigger wird als reguläre REST-API implementiert und erwartet, dass die Clients (z. B. eine App-Logik) ihn abfragen, um eine Benachrichtigung zu erhalten. Während der Client sein Zustand beibehalten kann, ist der Abfragetrigger selbst zustandslos.
 
 Die folgenden Informationen in Bezug auf die Anforderungs- und Antwortpakete veranschaulichen einige wichtige Aspekte des Abfragetriggervertrags:
 
@@ -95,7 +95,7 @@ Der folgende Codeausschnitt ist ein Beispiel für die Implementierung eines Abfr
 
 Um diesen Abfragetrigger zu testen, gehen Sie folgendermaßen vor:
 
-1. Stellen Sie die API-App mit der Authentifizierungseinstellung **Öffentlich \(anonym\)** bereit.
+1. Stellen Sie die API-App mit der Authentifizierungseinstellung **Öffentlich (anonym)** bereit.
 2. Rufen Sie den **touch**-Vorgang auf, um eine Datei zu bearbeiten. Die folgende Abbildung zeigt eine Beispielanforderung über Postman. ![Aufrufen des Touchvorgangs über Postman](./media/app-service-api-dotnet-triggers/calltouchfilefrompostman.PNG)
 3. Rufen Sie den Abfragetrigger mit dem **triggerState**-Parameter auf, der auf einen Zeitstempel vor Schritt 2 festgelegt wurde. Die folgende Abbildung zeigt die Beispielanforderung über Postman. ![Aufrufen des Abfragetriggers über Postman](./media/app-service-api-dotnet-triggers/callpolltriggerfrompostman.PNG)
 
@@ -108,7 +108,7 @@ Die folgenden Informationen in Bezug auf die Anforderungs- und Antwortpakete ver
 - Request
     - HTTP-Methode: PUT
     - Parameter
-        - triggerId: erforderlich – nicht transparente Zeichenfolge \(z. B. eine GUID\), welche die Registrierung eines Pushtriggers darstellt.
+        - triggerId: erforderlich – nicht transparente Zeichenfolge (z. B. eine GUID), welche die Registrierung eines Pushtriggers darstellt.
         - callbackUrl: erforderlich – URL des Rückrufs, der bei Auslösung des Ereignisses aufgerufen werden soll. Der Aufruf ist ein einfacher POST-HTTP-Aufruf.
         - API-spezifische Parameter
 - Antwort
@@ -198,7 +198,7 @@ Der folgende Codeausschnitt ist ein Beispiel für die Implementierung eines Push
 
 Um diesen Abfragetrigger zu testen, gehen Sie folgendermaßen vor:
 
-1. Stellen Sie die API-App mit der Authentifizierungseinstellung **Öffentlich \(anonym\)** bereit.
+1. Stellen Sie die API-App mit der Authentifizierungseinstellung **Öffentlich (anonym)** bereit.
 2. Navigieren Sie zu [http://requestb.in/](http://requestb.in/), um ein RequestBin-Element zu erstellen, das als Rückruf-URL verwendet wird.
 3. Rufen Sie den Pushtrigger mit der GUID als **triggerId** und der RequestBin-URL als **callbackUrl** auf. ![Aufrufen des Pushtriggers über Postman](./media/app-service-api-dotnet-triggers/callpushtriggerfrompostman.PNG)
 4. Rufen Sie den **touch**-Vorgang auf, um eine Datei zu bearbeiten. Die folgende Abbildung zeigt eine Beispielanforderung über Postman. ![Aufrufen des Touchvorgangs über Postman](./media/app-service-api-dotnet-triggers/calltouchfilefrompostman.PNG)
@@ -227,7 +227,7 @@ Wenn Sie auf die Schaltfläche **Swagger herunterladen** klicken und die JSON-Da
       }
     }
 
-Mit der Erweiterungseigenschaft **x-ms-scheduler-trigger** werden Trigger in der API-Definition  beschrieben. Diese Eigenschaft wird automatisch vom API-App-Gateway hinzugefügt, wenn Sie die API-Definition über das Gateway anfordern und die Anforderung eines der folgenden Kriterien erfüllt. \(Sie können diese Eigenschaft auch manuell hinzufügen.\)
+Mit der Erweiterungseigenschaft **x-ms-scheduler-trigger** werden Trigger in der API-Definition  beschrieben. Diese Eigenschaft wird automatisch vom API-App-Gateway hinzugefügt, wenn Sie die API-Definition über das Gateway anfordern und die Anforderung eines der folgenden Kriterien erfüllt. (Sie können diese Eigenschaft auch manuell hinzufügen.)
 
 - Abfragetrigger
     - Wenn die HTTP-Methode **GET** lautet.

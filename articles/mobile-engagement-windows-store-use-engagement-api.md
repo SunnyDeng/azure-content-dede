@@ -315,7 +315,7 @@ Jeder Schlüssel in dem Objekt muss mit dem folgenden regulären Ausdruck übere
 
 `^[a-zA-Z][a-zA-Z_0-9]*$`
 
-Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (\) beginnen müssen.
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen () beginnen müssen.
 
 #### Größe
 
@@ -329,7 +329,7 @@ Extras sind beschränkt auf **1024** Zeichen pro Aufruf.
 
 Sie können Nachverfolgungsinformationen (oder beliebige andere anwendungsspezifische Informationen) manuell mithilfe der SendAppInfo()-Funktion melden.
 
-Beachten Sie, dass diese Informationen inkrementell gesendet werden können: Nur der letzte Wert für einen bestimmten Schlüssel wird für ein bestimmtes Gerät gespeichert. Verwenden Sie wie bei Ereignisextras ein Wörterbuch\<object, object\>, um Informationen anzufügen.
+Beachten Sie, dass diese Informationen inkrementell gesendet werden können: Nur der letzte Wert für einen bestimmten Schlüssel wird für ein bestimmtes Gerät gespeichert. Verwenden Sie wie bei Ereignisextras ein Wörterbuch<object, object>, um Informationen anzufügen.
 
 ### Beispiel
 
@@ -349,7 +349,7 @@ Jeder Schlüssel in dem Objekt muss mit dem folgenden regulären Ausdruck übere
 
 `^[a-zA-Z][a-zA-Z_0-9]*$`
 
-Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (\) beginnen müssen.
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen () beginnen müssen.
 
 #### Größe
 

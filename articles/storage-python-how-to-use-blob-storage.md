@@ -59,9 +59,9 @@ Nach dieser Änderung kann jeder Benutzer im Internet Blobs in einem öffentlich
 
 ## Vorgehensweise: Hochladen eines Blobs in einen Container
 
-Zum Hochladen von Daten in einen Blob verwenden Sie die Methode **put\_block\_blob\_from\_path**, **put\_block\_blob\_from\_file**, **put\_block\_blob\_from\_bytes** oder **put\_block\_blob\_from\_text**. Dies sind allgemeine Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
+Zum Hochladen von Daten in einen Blob verwenden Sie die Methode **put_block_blob_from_path**, **put_block_blob_from_file**, **put_block_blob_from_bytes** oder **put_block_blob_from_text**. Dies sind allgemeine Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
 
-**put\_block\_blob\_from\_path** lädt den Inhalt einer Datei aus dem angegebenen Pfad hoch, **put\_block\_blob\_from\_file** lädt den Inhalt aus einer bereits geöffneten Datei/einem Stream. **put\_block\_blob\_from\_bytes** lädt ein Byte-Array hoch, und **put\_block\_blob\_from\_text** lädt den festgelegten Textwert mithilfe der festgelegten Codierung (Standard ist UTF-8) hoch.
+**put_block_blob_from_path** lädt den Inhalt einer Datei aus dem angegebenen Pfad hoch, **put_block_blob_from_file** lädt den Inhalt aus einer bereits geöffneten Datei/einem Stream. **put_block_blob_from_bytes** lädt ein Byte-Array hoch, und **put_block_blob_from_text** lädt den festgelegten Textwert mithilfe der festgelegten Codierung (Standard ist UTF-8) hoch.
 
 Das folgende Beispiel lädt den Inhalt der Datei **sunset.png** in das Blob **myblob** hoch.
 
@@ -74,7 +74,7 @@ Das folgende Beispiel lädt den Inhalt der Datei **sunset.png** in das Blob **my
 
 ## Vorgehensweise: Auflisten der Blobs in einem Container
 
-Verwenden Sie zum Auflisten des Blobs in einem Container die Methode **list\_blobs** mit einer
+Verwenden Sie zum Auflisten des Blobs in einem Container die Methode **list_blobs** mit einer
 **for**-Schleife, um die Namen der einzelnen Blobs im Container anzuzeigen. Der folgende Code gibt den **Namen** und die **URL** der einzelnen Blobs in einem Container in der Konsole aus.
 
 	blobs = blob_service.list_blobs('mycontainer')
@@ -84,9 +84,9 @@ Verwenden Sie zum Auflisten des Blobs in einem Container die Methode **list\_blo
 
 ## Vorgehensweise: Herunterladen von Blobs
 
-Verwenden Sie **get\_blob\_to\_path**, **get\_blob\_to\_file**, **get\_blob\_to\_bytes** oder **get\_blob\_to\_text**, um Daten aus einem Blob herunterzuladen. Dies sind allgemeine Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
+Verwenden Sie **get_blob_to_path**, **get_blob_to_file**, **get_blob_to_bytes** oder **get_blob_to_text**, um Daten aus einem Blob herunterzuladen. Dies sind allgemeine Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
 
-Das folgende Beispiel verwendet **get\_blob\_to\_path**, um den Inhalt des Blobs **myblob** herunterzuladen und in der Datei **out-sunset.png** zu speichern:
+Das folgende Beispiel verwendet **get_blob_to_path**, um den Inhalt des Blobs **myblob** herunterzuladen und in der Datei **out-sunset.png** zu speichern:
 
 	blob_service.get_blob_to_path('mycontainer', 'myblob', 'out-sunset.png')
 

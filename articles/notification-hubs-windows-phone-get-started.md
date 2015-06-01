@@ -21,9 +21,9 @@
 
 ## Übersicht
 
-In diesem Thema wird gezeigt, wie Sie mit Azure Notification Hubs Pushbenachrichtigungen an eine Windows Phone 8- oder Windows Phone 8.1 Silverlight-Anwendung senden können. Informationen zu Windows Phone 8.1 \(nicht Silverlight\) finden Sie bei der [Windows Universal](notification-hubs-windows-store-dotnet-get-started.md)-Version. In diesem Lernprogramm erstellen Sie eine leere Windows Phone 8-App, die Pushbenachrichtigungen mithilfe des Microsoft-Pushbenachrichtigungsdienst \(MPNS\) erhält. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Notification Hub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
+In diesem Thema wird gezeigt, wie Sie mit Azure Notification Hubs Pushbenachrichtigungen an eine Windows Phone 8- oder Windows Phone 8.1 Silverlight-Anwendung senden können. Informationen zu Windows Phone 8.1 (nicht Silverlight) finden Sie bei der [Windows Universal](notification-hubs-windows-store-dotnet-get-started.md)-Version. In diesem Lernprogramm erstellen Sie eine leere Windows Phone 8-App, die Pushbenachrichtigungen mithilfe des Microsoft-Pushbenachrichtigungsdienst (MPNS) erhält. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Notification Hub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
 
-> [AZURE.NOTE]Im Windows Phone SDK von Notification Hubs wird die Verwendung von WNS mit Windows Phone 8.1 Silverlight-Apps nicht unterstützt. Um WNS \(anstelle von MPNS\) mit Windows Phone 8.1-Silverlight-Apps zu verwenden, führen Sie dieses [Beispiellernprogramm Notification Hub - WP Silverlight] aus, in dem REST-APIs verwendet werden.
+> [AZURE.NOTE]Im Windows Phone SDK von Notification Hubs wird die Verwendung von WNS mit Windows Phone 8.1 Silverlight-Apps nicht unterstützt. Um WNS (anstelle von MPNS) mit Windows Phone 8.1-Silverlight-Apps zu verwenden, führen Sie dieses [Beispiellernprogramm Notification Hub - WP Silverlight] aus, in dem REST-APIs verwendet werden.
 
 Das Lernprogramm zeigt ein einfaches Übertragungsszenario mithilfe von Benachrichtigungshubs.
 
@@ -49,7 +49,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen B
 
    ![][8]
 
-4. Klicken Sie auf den soeben erstellten Namespace \(für gewöhnlich ***Name des Benachrichtigungshubs*-ns**\) und anschließend oben auf die Registerkarte **Konfigurieren**.
+4. Klicken Sie auf den soeben erstellten Namespace (für gewöhnlich ***Name des Benachrichtigungshubs*-ns**) und anschließend oben auf die Registerkarte **Konfigurieren**.
 
    ![][9]
 
@@ -94,7 +94,7 @@ Nun verfügen Sie über die Verbindungszeichenfolgen, die Sie zum Registrieren I
         using Microsoft.Phone.Notification;
         using Microsoft.WindowsAzure.Messaging;
 
-5. Fügen Sie den folgenden Code oben in der Methode **Application\_Launching** in App.xaml.cs ein:
+5. Fügen Sie den folgenden Code oben in der Methode **Application_Launching** in App.xaml.cs ein:
 	
 	    var channel = HttpNotificationChannel.Find("MyPushChannel");
         if (channel == null)
@@ -115,7 +115,7 @@ Nun verfügen Sie über die Verbindungszeichenfolgen, die Sie zum Registrieren I
 
 	>[AZURE.NOTE]Dieses Lernprogramm sendet eine Popupbenachrichtigung an das Gerät. Wenn Sie eine Kachelbenachrichtigung senden, müssen Sie stattdessen die **BindToShellTile**-Methode für den Kanal aufrufen. Um Popup- und Kachelbenachrichtigungen zu unterstützen, rufen Sie beide Methoden, **BindToShellTile** und **BindToShellToast**, auf.
     
-6. Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei "WMAppManifest.xml", klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **ID\_\_\_CAP\_\_\_PUSH\_NOTIFICATION**.
+6. Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei "WMAppManifest.xml", klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **ID___CAP___PUSH_NOTIFICATION**.
 
    ![][14]
 
@@ -127,9 +127,9 @@ Nun verfügen Sie über die Verbindungszeichenfolgen, die Sie zum Registrieren I
 
 ## Senden von Benachrichtigungen vom Back-End aus
 
-Sie können Benachrichtigungen mithilfe von Notification Hubs von jedem beliebigen Back-End aus über die <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST-Schnittstelle</a> senden. In diesem Lernprogramm senden Sie Benachrichtigungen mit einer .NET-Konsolenanwendung. Ein Beispiel zum Senden von Benachrichtigungen von einem mit Notification Hubs integrierten Azure Mobile Services-Back-End aus finden Sie unter **Erste Schritte mit Pushbenachrichtigungen in Mobile Services** \([.NET-Back-End](mobile-services-javascript-backend-windows-phone-get-started-push.md) \| [JavaScript-Back-End](mobile-services-javascript-backend-windows-phone-get-started-push.md)\). Ein Beispiel zum Senden von Benachrichtigungen über die REST-APIs finden Sie unter **Verwenden von Notification Hubs von Java/PHP** \([Java](notification-hubs-java-backend-how-to.md) \| [PHP](notification-hubs-php-backend-how-to.md)\).
+Sie können Benachrichtigungen mithilfe von Notification Hubs von jedem beliebigen Back-End aus über die <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST-Schnittstelle</a> senden. In diesem Lernprogramm senden Sie Benachrichtigungen mit einer .NET-Konsolenanwendung. Ein Beispiel zum Senden von Benachrichtigungen von einem mit Notification Hubs integrierten Azure Mobile Services-Back-End aus finden Sie unter **Erste Schritte mit Pushbenachrichtigungen in Mobile Services** ([.NET-Back-End](mobile-services-javascript-backend-windows-phone-get-started-push.md) | [JavaScript-Back-End](mobile-services-javascript-backend-windows-phone-get-started-push.md)). Ein Beispiel zum Senden von Benachrichtigungen über die REST-APIs finden Sie unter **Verwenden von Notification Hubs von Java/PHP** ([Java](notification-hubs-java-backend-how-to.md) | [PHP](notification-hubs-php-backend-how-to.md)).
 
-1. Klicken Sie mit der rechten Maustaste auf die Projektmappe, wählen Sie **Hinzufügen** und **Neues Projekt...** aus, und klicken Sie dann unter **Visual C\#** auf **Windows**, **Konsolenanwendung** und **OK**. 
+1. Klicken Sie mit der rechten Maustaste auf die Projektmappe, wählen Sie **Hinzufügen** und **Neues Projekt...** aus, und klicken Sie dann unter **Visual C#** auf **Windows**, **Konsolenanwendung** und **OK**. 
 
    ![][6]
 
@@ -155,8 +155,8 @@ Sie können Benachrichtigungen mithilfe von Notification Hubs von jedem beliebig
         {
             NotificationHubClient hub = NotificationHubClient
 				.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            string toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
-                "<wp:Notification xmlns:wp=\"WPNotification\">" +
+            string toast = "<?xml version="1.0" encoding="utf-8"?>" +
+                "<wp:Notification xmlns:wp="WPNotification">" +
                    "<wp:Toast>" +
                         "<wp:Text1>Hello from a .NET App!</wp:Text1>" +
                    "</wp:Toast> " +
@@ -166,7 +166,7 @@ Sie können Benachrichtigungen mithilfe von Notification Hubs von jedem beliebig
 
 	Stellen Sie sicher, dass Sie den Platzhalter "hub name" durch den Namen des Notification Hub ersetzen, der im Portal auf der Registerkarte **Notification Hubs** angezeigt wird. Ersetzen Sie außerdem den Platzhalter für die Verbindungszeichenfolge durch die Verbindungszeichenfolge **DefaultFullSharedAccessSignature**, die Sie im Abschnitt "Konfigurieren Ihres Notification Hub" erhalten haben.
 
-	>[AZURE.NOTE]Stellen Sie sicher, dass Sie die Verbindungszeichenfolge mit Vollzugriff \(**Full**\) verwenden, nicht mit Abhörzugriff \(**Listen**\). Die Verbindungszeichenfolge mit Abhörzugriff verfügt nicht über die Berechtigungen zum Senden von Benachrichtigungen.
+	>[AZURE.NOTE]Stellen Sie sicher, dass Sie die Verbindungszeichenfolge mit Vollzugriff (**Full**) verwenden, nicht mit Abhörzugriff (**Listen**). Die Verbindungszeichenfolge mit Abhörzugriff verfügt nicht über die Berechtigungen zum Senden von Benachrichtigungen.
 
 4. Fügen Sie dann die folgende Zeile zu Ihrer Main-Methode hinzu:
 

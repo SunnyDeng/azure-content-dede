@@ -25,7 +25,7 @@ Denken Sie daran: Wenn Sie normalerweise ein Skalierungsattribut für eine Web-A
 Die Skalierung einer Web-App in einer App Service-Umgebung ähnelt sehr stark dem normalen Skalieren von Web-Apps. In Azure App Service können üblicherweise drei Faktoren skaliert werden:
 
 - Tarif
-- Workergröße \(für dedizierte Instanzen\)
+- Workergröße (für dedizierte Instanzen)
 - Anzahl von Instanzen
 
 In einer App Service-Umgebung ist es nicht erforderlich, den Tarif auszuwählen oder zu ändern. Diese wird im Hinblick auf die Funktionalität bereits im Premium-Plan ausgeführt. In einer App Service-Umgebung gibt es keine freigegebenen Worker. Alle Worker sind dedizierte Worker. Anstelle von festen Größen kann der Administrator der App Service-Umgebung die Größe der Compute-Ressource zuweisen, die für jeden Workerpool verwendet wird. Dies bedeutet, dass Sie P4-Compute-Ressourcen für Workerpool 1 und P1-Compute-Ressourcen für Workerpool 2 zuweisen können, wenn dies gewünscht ist. Es ist keine Reihenfolge nach Größe erforderlich. Ausführliche Informationen zu Größen und Preisen finden Sie im Dokument [Azure App Service-Preise][AppServicePricing]. Damit stehen für die Skalierung von Web-Apps und App Service-Plänen in einer App Service-Umgebung die folgenden Optionen zur Verfügung:

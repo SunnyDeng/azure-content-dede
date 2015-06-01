@@ -50,12 +50,12 @@ Um eine Entität hinzuzufügen, erstellen Sie zunächst ein Wörterbuch, das die
 Entitäten mit dem gleichen **PartitionKey** werden auf dem gleichen Knoten gespeichert. Der
 **RowKey**-Wert ist eine eindeutige ID der Entität innerhalb der Partition, zu der sie gehört.
 
-Um eine Entität zu Ihrer Tabelle hinzuzufügen, übergeben Sie das Wörterbuchobjekt an die **insert\_entity**-Methode.
+Um eine Entität zu Ihrer Tabelle hinzuzufügen, übergeben Sie das Wörterbuchobjekt an die **insert_entity**-Methode.
 
 	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '1', 'description' : 'Take out the trash', 'priority' : 200}
 	table_service.insert_entity('tasktable', task)
 
-Sie können auch eine Instanz der **Entity**-Klasse an die **insert\_entity**-Methode übergeben.
+Sie können auch eine Instanz der **Entity**-Klasse an die **insert_entity**-Methode übergeben.
 
 	task = Entity()
 	task.PartitionKey = 'tasksSeattle'
@@ -71,7 +71,7 @@ Dieser Code zeigt, wie Sie die alte Version einer existierenden Entität durch e
 	task = {'description' : 'Take out the garbage', 'priority' : 250}
 	table_service.update_entity('tasktable', 'tasksSeattle', '1', task)
 
-Der Aktualisierungsvorgang schlägt fehl, wenn die zu aktualisierende Entität nicht existiert. Daher sollten Sie **insert\_or\_replace_entity**verwenden, wenn Sie eine Entität unabhängig davon speichern möchten, ob diese bereits vorhanden ist. 
+Der Aktualisierungsvorgang schlägt fehl, wenn die zu aktualisierende Entität nicht existiert. Daher sollten Sie **insert_or_replace_entity**verwenden, wenn Sie eine Entität unabhängig davon speichern möchten, ob diese bereits vorhanden ist. 
 Der erste Aufruf im folgenden Beispiel ersetzt die existierende Entität. Der zweite Aufruf fügt eine neue Entität ein, da keine Entität mit dem angegebenen **PartitionKey** und **RowKey** in der Tabelle vorhanden ist.
 
 	task = {'description' : 'Take out the garbage again', 'priority' : 250}
@@ -82,7 +82,7 @@ Der erste Aufruf im folgenden Beispiel ersetzt die existierende Entität. Der zw
 
 ## Ändern einer Gruppe von Entitäten
 
-Gelegentlich ist es sinnvoll, mehrere Vorgänge zusammen in einem Stapel zu senden, um die atomische Verarbeitung durch den Server sicherzustellen. Hierzu rufen Sie zunächst die **begin\_batch**-Methode für **TableService** auf, und dann rufen Sie die Folge von Vorgängen wie üblich auf. Wenn Sie den Batch übermitteln möchten, rufen Sie **commit\_batch** auf. Beachten Sie, dass sich alle Entitäten in derselben Partition befinden müssen, um diese als Batch ändern zu können. Das folgende Beispiel fügt zwei Entitäten als Batch ein.
+Gelegentlich ist es sinnvoll, mehrere Vorgänge zusammen in einem Stapel zu senden, um die atomische Verarbeitung durch den Server sicherzustellen. Hierzu rufen Sie zunächst die **begin_batch**-Methode für **TableService** auf, und dann rufen Sie die Folge von Vorgängen wie üblich auf. Wenn Sie den Batch übermitteln möchten, rufen Sie **commit_batch** auf. Beachten Sie, dass sich alle Entitäten in derselben Partition befinden müssen, um diese als Batch ändern zu können. Das folgende Beispiel fügt zwei Entitäten als Batch ein.
 
 	task10 = {'PartitionKey': 'tasksSeattle', 'RowKey': '10', 'description' : 'Go grocery shopping', 'priority' : 400}
 	task11 = {'PartitionKey': 'tasksSeattle', 'RowKey': '11', 'description' : 'Clean the bathroom', 'priority' : 100}
@@ -93,7 +93,7 @@ Gelegentlich ist es sinnvoll, mehrere Vorgänge zusammen in einem Stapel zu send
 
 ## Abfragen einer Entität
 
-Um eine Entität in einer Tabelle abzufragen, verwenden Sie die **get\_entity**-Methode und übergeben den **PartitionKey** und **RowKey** an sie.
+Um eine Entität in einer Tabelle abzufragen, verwenden Sie die **get_entity**-Methode und übergeben den **PartitionKey** und **RowKey** an sie.
 
 	task = table_service.get_entity('tasktable', 'tasksSeattle', '1')
 	print(task.description)

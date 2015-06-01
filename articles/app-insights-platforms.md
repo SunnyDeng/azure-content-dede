@@ -24,7 +24,7 @@
 
 ## Sprachen
 
-+ [C\#, VB](app-insights-start-monitoring-app-health-usage.md)
++ [C#, VB](app-insights-start-monitoring-app-health-usage.md)
 + [JavaScript-Webseiten](app-insights-web-track-usage.md)
 + [Windows Store JavaScript-Apps](#cordova)
 + [Java](app-insights-java.md)

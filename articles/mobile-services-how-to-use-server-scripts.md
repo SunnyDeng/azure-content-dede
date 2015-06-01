@@ -229,7 +229,7 @@ Wenn eine Anwendung einen Wert für eine ID übergibt, speichert Mobile Services
 Der `id`-Wert muss eindeutig sein und darf keine Zeichen aus den folgenden Sätzen enthalten:
 
 + Steuerzeichen: [0x0000-0x001F] und [0x007F-0x009F]. Weitere Informationen finden Sie unter [ASCII-Steuerzeichen C0 und C1](http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set).
-+  Druckbare Zeichen: **"**(0x0022), **\+** (0x002B), **/** (0x002F), **?** (0x003F), **\\** (0x005C), **`** (0x0060)
++  Druckbare Zeichen: **"**(0x0022), **\+** (0x002B), **/** (0x002F), **?** (0x003F), **\** (0x005C), **`** (0x0060)
 +  Die IDs "." und ".."
 
 Alternativ können Sie auch ganzzahlige IDs für Ihre Tabellen verwenden. Um ganzzahlige IDs zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [Verwalten von Mobile Services-Tabellen mit der Befehlszeilenschnittstelle](virtual-machines-command-line-tools.md/#Mobile_Tables).
@@ -538,7 +538,7 @@ Im folgenden Beispiel wird ein Tabellenskript für den insert-Vorgang registrier
  
 Hilfsfunktionen müssen in Skripts nach der main-Funktion definiert werden. Sie müssen alle Variablen in Ihrem Skript deklarieren. Nicht deklarierte Variablen verursachen einen Fehler.
 
-Hilfsfunktionen können an einer Stelle definiert und von mehreren Serverskripts verwendet werden. Um eine Funktion zwischen Skripts freizugeben, müssen Funktionen exportiert werden, und die Skriptdatei muss im Verzeichnis `.\service\shared\` enthalten sein. Es folgt ein Beispiel für den Export einer freigegebenen Funktion in eine Datei `.\services\shared\helpers.js`:
+Hilfsfunktionen können an einer Stelle definiert und von mehreren Serverskripts verwendet werden. Um eine Funktion zwischen Skripts freizugeben, müssen Funktionen exportiert werden, und die Skriptdatei muss im Verzeichnis `.\service\shared` enthalten sein. Es folgt ein Beispiel für den Export einer freigegebenen Funktion in eine Datei `.\services\shared\helpers.js`:
 
 		exports.handleUnapprovedItem = function (tables, user, callback) {
 		    
@@ -600,7 +600,7 @@ In Mobile Services können Sie Serverskripts mithilfe des Azure-Befehlszeilentoo
 
 Diese Verzeichnisstruktur entspricht dem Git-Repository, falls Sie Quellcodeverwaltung verwenden. 
 
-Beim Hochladen von Skriptdateien im Befehlszeilentool müssen Sie zuerst zum Verzeichnis `.\services\` navigieren. Der folgende Befehl lädt ein Skript namens `todoitem.insert.js` aus dem Unterverzeichnis `table` hoch:
+Beim Hochladen von Skriptdateien im Befehlszeilentool müssen Sie zuerst zum Verzeichnis `.\services` navigieren. Der folgende Befehl lädt ein Skript namens `todoitem.insert.js` aus dem Unterverzeichnis `table` hoch:
 
 		~$azure mobile script upload todolist table/todoitem.insert.js
 		info:    Executing command mobile script upload
@@ -659,7 +659,7 @@ Skripts, die sowohl für Tabellenvorgänge als auch für geplante Aufträge regi
 
 		var todoItemsTable = tables.getTable('TodoItems');
 
-Skripts in benutzerdefinierten APIs können auf das [Tabellenobjekt] \(über die <strong>service</strong> -Eigenschaft des angegebenen [Anforderungsobjekts]) zugreifen. Die folgende Codezeile ruft das [Tabellenobjekt] aus der Anforderung ab:
+Skripts in benutzerdefinierten APIs können auf das [Tabellenobjekt] (über die <strong>service</strong> -Eigenschaft des angegebenen [Anforderungsobjekts]) zugreifen. Die folgende Codezeile ruft das [Tabellenobjekt] aus der Anforderung ab:
 
 		var todoItemsTable = request.service.tables.getTable('TodoItem');
 

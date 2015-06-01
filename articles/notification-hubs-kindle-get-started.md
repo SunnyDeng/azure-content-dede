@@ -22,13 +22,13 @@
 
 ## Übersicht
 
-In diesem Thema wird gezeigt, wie Sie mit Azure Benachrichtigungshubs Pushbenachrichtigungen an eine Kindle-Anwendung senden können. In diesem Lernprogramm erstellen Sie eine leere Kindle-App, die Pushbenachrichtigungen über Amazon Device Messaging \(ADM\) empfängt.
+In diesem Thema wird gezeigt, wie Sie mit Azure Benachrichtigungshubs Pushbenachrichtigungen an eine Kindle-Anwendung senden können. In diesem Lernprogramm erstellen Sie eine leere Kindle-App, die Pushbenachrichtigungen über Amazon Device Messaging (ADM) empfängt.
 
 ## Voraussetzungen
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-+ Das Android-SDK \(es wird davon ausgegangen, dass Sie Eclipse verwenden\), das Sie <a href="http://go.microsoft.com/fwlink/?LinkId=389797">hier</a> herunterladen können.
++ Das Android-SDK (es wird davon ausgegangen, dass Sie Eclipse verwenden), das Sie <a href="http://go.microsoft.com/fwlink/?LinkId=389797">hier</a> herunterladen können.
 + Befolgen Sie <a href="https://developer.amazon.com/appsandservices/resources/development-tools/ide-tools/tech-docs/01-setting-up-your-development-environment">diese</a> Schritte zum Einrichten Ihrer Entwicklungsumgebung für Kindle.
 
 ## Hinzufügen einer neuen App zum Entwicklerportal
@@ -45,7 +45,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 	![][2]
 
-4. Klicken Sie auf **Create a New Security Profile**, und erstellen Sie ein neues Sicherheitsprofil \(z. B. **TestAdm Sicherheitsprofil**\). Klicken Sie anschließend auf **Save**.
+4. Klicken Sie auf **Create a New Security Profile**, und erstellen Sie ein neues Sicherheitsprofil (z. B. **TestAdm Sicherheitsprofil**). Klicken Sie anschließend auf **Save**.
 
 	![][3]
 
@@ -66,7 +66,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 4.  Geben Sie als **keystore**-Kennwort **android** ein.
 
 5.  Kopieren Sie den **MD5**-Fingerabdruck.
-6.  Klicken Sie im Entwicklerportal auf der Registerkarte **Messaging** auf **Android/Kindle**, und geben Sie den Paketnamen für Ihre App ein \(z. B. **com.sample.notificationhubtest**\), den Wert für **MD5**, und klicken Sie dann auf **Generate API Key**.
+6.  Klicken Sie im Entwicklerportal auf der Registerkarte **Messaging** auf **Android/Kindle**, und geben Sie den Paketnamen für Ihre App ein (z. B. **com.sample.notificationhubtest**), den Wert für **MD5**, und klicken Sie dann auf **Generate API Key**.
 
 ## Hinzufügen von Anmeldeinformationen zum Hub
 
@@ -80,7 +80,7 @@ Fügen Sie die ADM-Bibliotheken zum Eclipse-Projekt hinzu.
 
 1. Um die ADM-Bibliothek zu erhalten, [laden Sie das SDK herunter]. Extrahieren Sie die SDK-ZIP-Datei.
 2. Klicken Sie in Eclipse mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Properties**. Wählen Sie den **Java Build Path** auf der linken Seite, und klicken Sie oben auf die Registerkarte **Libraries**. Klicken Sie auf **Add External Jar**, und wählen Sie die Datei `\SDK\Android\DeviceMessaging\lib\amazon-device-messaging-*.jar` aus dem Verzeichnis aus, in das Sie das Amazon-SDK extrahiert haben.
-3. Laden Sie das NotificationHubs Android-SDK \(Link\) herunter.
+3. Laden Sie das NotificationHubs Android-SDK (Link) herunter.
 4. Entpacken Sie das Paket, und ziehen Sie die Datei `notification-hubs-sdk.jar` in den Ordner `libs ` in Eclipse.
 
 Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
@@ -107,7 +107,7 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 		<!-- ADM uses WAKE_LOCK to keep the processor from sleeping when a message is received. -->
 		<uses-permission android:name="android.permission.WAKE_LOCK" />
 
-3. Fügen Sie das folgende Element als erstes untergeordnetes Element des Anwendungselements ein. Ersetzen Sie **[IHR DIENSTNAME]** durch den Namen des ADM-Meldungshandlers, den Sie im nächsten Abschnitt erstellen \(einschließlich Paket\), und ersetzen Sie **[IHR PAKETNAME]** durch den Namen des Pakets, mit dem Sie Ihre App erstellt haben.
+3. Fügen Sie das folgende Element als erstes untergeordnetes Element des Anwendungselements ein. Ersetzen Sie **[IHR DIENSTNAME]** durch den Namen des ADM-Meldungshandlers, den Sie im nächsten Abschnitt erstellen (einschließlich Paket), und ersetzen Sie **[IHR PAKETNAME]** durch den Namen des Pakets, mit dem Sie Ihre App erstellt haben.
 
 		<amazon:enable-feature
 		      android:name="com.amazon.device.messaging"
@@ -148,7 +148,7 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 		import com.amazon.device.messaging.ADMMessageReceiver;
 		import com.microsoft.windowsazure.messaging.NotificationHub
 
-3. Fügen Sie den folgenden Code zur soeben erstellten Klasse hinzu. Ersetzen Sie den Hubnamen und die Verbindungszeichenfolge \(Überwachung\):
+3. Fügen Sie den folgenden Code zur soeben erstellten Klasse hinzu. Ersetzen Sie den Hubnamen und die Verbindungszeichenfolge (Überwachung):
 
 		public static final int NOTIFICATION_ID = 1;
 		private NotificationManager mNotificationManager;
@@ -242,7 +242,7 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 
 ## Hinzufügen Ihres API-Schlüssels zur App
 
-1. Erstellen Sie in Eclipse eine neue Datei namens **api\_key.txt** im Verzeichnisobjekt des Projekts.
+1. Erstellen Sie in Eclipse eine neue Datei namens **api_key.txt** im Verzeichnisobjekt des Projekts.
 2. Öffnen Sie die Datei, und kopieren Sie den **API-Schlüssel**, den Sie im Amazon-Entwicklerportal generiert haben.
 
 ## Ausführen der App
@@ -251,7 +251,7 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 2. Streifen Sie im Emulator nach unten, und klicken Sie auf **Einstellungen** und anschließend auf **Mein Konto**, und registrieren Sie sich mit einem Amazon-Konto.
 3. Führen Sie die App in Eclipse aus.
 
-> [AZURE.NOTE]Falls Probleme auftreten, überprüfen Sie die Uhrzeit des Emulators \(oder des Geräts\). Die Uhrzeit muss stimmen. Um die Uhrzeit des Kindle-Emulators zu ändern, können Sie folgenden Befehl aus dem Tools-Verzeichnis der Android SDK-Plattform ausführen:
+> [AZURE.NOTE]Falls Probleme auftreten, überprüfen Sie die Uhrzeit des Emulators (oder des Geräts). Die Uhrzeit muss stimmen. Um die Uhrzeit des Kindle-Emulators zu ändern, können Sie folgenden Befehl aus dem Tools-Verzeichnis der Android SDK-Plattform ausführen:
 
 		adb shell  date -s "yyyymmdd.hhmmss"
 
@@ -263,7 +263,7 @@ So senden Sie eine Nachricht mit .NET:
         {
             NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("[conn string]", "[hub name]");
 
-            hub.SendAdmNativeNotificationAsync("{\"data\":{\"msg\" : \"Hello from .NET!\"}}").Wait();
+            hub.SendAdmNativeNotificationAsync("{"data":{"msg" : "Hello from .NET!"}}").Wait();
         }
 
 ![][7]

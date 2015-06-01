@@ -37,6 +37,6 @@
 
 7. Nach Abschluss des Neustarts des ersten Controllers, stellen Sie eine Verbindung mit dem anderen Controller her, und führen Sie die Schritte 1 bis 6 für diesen durch.
 
-8. Nachdem beide Controller aktualisiert wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [So beenden Sie den Wartungsmodus]\](\#to-exit-maintenance-mode\).
+8. Nachdem beide Controller aktualisiert wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [So beenden Sie den Wartungsmodus](#to-exit-maintenance-mode).
 
 <!--HONumber=52-->

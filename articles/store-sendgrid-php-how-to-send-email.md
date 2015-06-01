@@ -48,7 +48,7 @@ senden.
 
 ### SMTP-API
 
-Wenn Sie eine E-Mail über die SendGrid-SMTP-API senden möchten, verwenden Sie *Swift Mailer*, eine komponentenbasierte Bibliothek zum Senden von E-Mails aus PHP-Anwendungen. Sie können die Swift Mailer-Bibliothek unter [http://swiftmailer.org/download][] v5.3.0 herunterladen (verwenden Sie [Composer], um Swift Mailer zu installieren). Das Senden von E-Mails mithilfe der Bibliothek umfasst das Erstellen von Instanzen der Klassen <span class="auto-style2">"Swift\_SmtpTransport"</span>, <span class="auto-style2">"Swift\_Mailer"</span>und <span class="auto-style2">"Swift\_Message",</span> das Festlegen der entsprechenden Eigenschaften und das Aufrufen der Methode <span class="auto-style2">"Swift\_Mailer::send"</span> .
+Wenn Sie eine E-Mail über die SendGrid-SMTP-API senden möchten, verwenden Sie *Swift Mailer*, eine komponentenbasierte Bibliothek zum Senden von E-Mails aus PHP-Anwendungen. Sie können die Swift Mailer-Bibliothek unter [http://swiftmailer.org/download][] v5.3.0 herunterladen (verwenden Sie [Composer], um Swift Mailer zu installieren). Das Senden von E-Mails mithilfe der Bibliothek umfasst das Erstellen von Instanzen der Klassen <span class="auto-style2">"Swift_SmtpTransport"</span>, <span class="auto-style2">"Swift_Mailer"</span>und <span class="auto-style2">"Swift_Message",</span> das Festlegen der entsprechenden Eigenschaften und das Aufrufen der Methode <span class="auto-style2">"Swift_Mailer::send"</span> .
 
     <?php
      include_once "vendor/autoload.php";
@@ -227,7 +227,7 @@ Die zusätzliche Codezeile lautet wie folgt:
 
      $message->attach(Swift_Attachment::fromPath("path\to\file")->setFileName('file_name'));
 
-Diese Codezeile ruft die Methode "attach" für das <span class="auto-style2">Swift\_Message-Objekt</span> auf und verwendet die statische Methode <span class="auto-style2">"fromPath"</span> für die Klasse <span class="auto-style2">"Swift\_Attachment"</span> zum Abrufen und Anfügen einer Datei an eine Nachricht.
+Diese Codezeile ruft die Methode "attach" für das <span class="auto-style2">Swift_Message-Objekt</span> auf und verwendet die statische Methode <span class="auto-style2">"fromPath"</span> für die Klasse <span class="auto-style2">"Swift_Attachment"</span> zum Abrufen und Anfügen einer Datei an eine Nachricht.
 
 ### Web-API
 

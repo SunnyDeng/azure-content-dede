@@ -18,7 +18,7 @@
 
 # DataStax auf Ubuntu-Ressourcen-Manager-Vorlage
 
-DataStax ist ein anerkannter Branchenführer bei der Entwicklung und Bereitstellung von Lösungen basierend auf dem kommerziell unterstützten, für den Unternehmenseinsatz bereiten Apache Cassandra ™. Die NoSQL-verteilte Open Source-Datenbanktechnologie ist weithin anerkannt als agil, immer bereit und vorhersehbar auf jede Größe skalierbar. DataStax ist sowohl für Unternehmen \(DSE\) als auch für die Community \(DSC\) verfügbar und bietet Funktionen wie In-Memory-Computing, unternehmensweite Sicherheit, schnelle und leistungsfähige integrierte Analysen und Unternehmenssuche.
+DataStax ist ein anerkannter Branchenführer bei der Entwicklung und Bereitstellung von Lösungen basierend auf dem kommerziell unterstützten, für den Unternehmenseinsatz bereiten Apache Cassandra ™. Die NoSQL-verteilte Open Source-Datenbanktechnologie ist weithin anerkannt als agil, immer bereit und vorhersehbar auf jede Größe skalierbar. DataStax ist sowohl für Unternehmen (DSE) als auch für die Community (DSC) verfügbar und bietet Funktionen wie In-Memory-Computing, unternehmensweite Sicherheit, schnelle und leistungsfähige integrierte Analysen und Unternehmenssuche.
 
 Zusätzlich zu dem, was bereits in Azure Marketplace verfügbar war, können Sie jetzt auch auf einfache Weise auf Ubuntu-VMs mit Azure PowerShell oder der Azure-CLI mithilfe einer Vorlage für Ressourcen-Manager einen neuen DataStax-Cluster bereitstellen.
 
@@ -44,7 +44,7 @@ Gehen folgendermaßen Sie vor, um ein auf DataStax basierendes Apache Cassandra-
 
 ### Schritt 1: Laden Sie die JSON-Datei für die Vorlage und andere Dateien herunter.
 
-Bestimmen Sie einen lokalen Ordner als Speicherort für die JSON-Vorlage und andere Dateien, und erstellen Sie den Ordner \(z. B. C:\\Azure\\Vorlagen\\DataStax\).
+Bestimmen Sie einen lokalen Ordner als Speicherort für die JSON-Vorlage und andere Dateien, und erstellen Sie den Ordner (z. B. C:\\Azure\\Vorlagen\\DataStax).
 
 Geben Sie den Ordnernamen an, und führen Sie die folgenden Befehle aus:
 
@@ -84,7 +84,7 @@ Als Alternative können Sie auch das Vorlagen-Repository mithilfe eine Git-Clien
 
 Sobald dies abgeschlossen ist, suchen Sie in C:\\Azure\\Templates nach dem Ordner datastax-on-ubuntu.
 
-### Schritt 2: \(optional\) Machen Sie sich mit Vorlagenparametern vertraut.
+### Schritt 2: (optional) Machen Sie sich mit Vorlagenparametern vertraut.
 
 Wenn Sie nicht-triviale Lösungen wie ein auf Datastax basierendes Apache Cassandra-Cluster bereitstellen, müssen Sie eine Reihe von Konfigurationsparametern für den Umgang mit einer Anzahl an erforderlichen Einstellungen angeben. Durch Deklarieren dieser Parameter in der Vorlagendefinition ist es möglich, Werte während der Bereitstellungsausführung über eine externe Datei oder auf der Befehlszeile anzugeben.
 
@@ -167,7 +167,7 @@ Wenn Sie im Abschnitt "Parameter" am Anfang der Datei azuredeploy.json nachsehen
 		}
 	}
 
-Indem Sie die erforderlichen Parameter beschreiben, einschließlich Details wie Datentypen, zulässige Werte usw., ist klar, dass dieser Abschnitt nicht nur sehr nützlich für alle auf Parameterwerte bezogenen Überprüfungsaufgaben ist, die bei der Vorlagenausführung im interaktiven Modus \(z. B. PowerShell oder Azure-CLI\) übergeben werden, sondern auch auf beliebige automatische Erkennungs-Benutzeroberflächen, die durch das Analysieren der Liste der erforderlichen Parameter und der zugehörigen Beschreibung dynamisch erstellt werden konnten.
+Indem Sie die erforderlichen Parameter beschreiben, einschließlich Details wie Datentypen, zulässige Werte usw., ist klar, dass dieser Abschnitt nicht nur sehr nützlich für alle auf Parameterwerte bezogenen Überprüfungsaufgaben ist, die bei der Vorlagenausführung im interaktiven Modus (z. B. PowerShell oder Azure-CLI) übergeben werden, sondern auch auf beliebige automatische Erkennungs-Benutzeroberflächen, die durch das Analysieren der Liste der erforderlichen Parameter und der zugehörigen Beschreibung dynamisch erstellt werden konnten.
 
 ### Schritt 3: Bereitstellen von neuen DataStax-Clustern mit der Vorlage.
 
@@ -221,7 +221,7 @@ Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die Ressou
 
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateParameterFile $templateParameterFile -TemplateFile $templateFile
 
-Beim Ausführen des **New-AzureResourceGroupDeployment**-Befehls werden Parameterwerte aus der JSON-Datei extrahiert und die Ausführung der Vorlage entsprechend gestartet. Das Definieren und Verwenden mehrerer Parameterdateien in den verschiedenen Umgebungen \(z. B. Test, Produktion usw.\) fördert die Wiederverwendung von Vorlagen und vereinfacht komplexe Multi-Umgebungslösungen.
+Beim Ausführen des **New-AzureResourceGroupDeployment**-Befehls werden Parameterwerte aus der JSON-Datei extrahiert und die Ausführung der Vorlage entsprechend gestartet. Das Definieren und Verwenden mehrerer Parameterdateien in den verschiedenen Umgebungen (z. B. Test, Produktion usw.) fördert die Wiederverwendung von Vorlagen und vereinfacht komplexe Multi-Umgebungslösungen.
 
 Denken Sie beim Bereitstellen daran, dass ein neues Azure-Speicherkonto erstellt werden muss, sodass der Name, den Sie als Speicherkonto-Parameter angeben, eindeutig ist und alle Anforderungen für ein Azure-Speicherkonto erfüllt werden.
 
@@ -234,7 +234,7 @@ Wechseln Sie zu diesem Zweck ins [Azure Portal](https://portal.azure.com) und ge
 - Durch Klicken auf das Balken-Diagramm "Ereignisse" im Bereich "Überwachung" des Blattes "Ressourcengruppe" erscheinen die Ereignisse für die Bereitstellung:
 - Durch Klicken auf die einzelnen Ereignisse können Sie sich die Details jedes einzelnen Vorgangs, der von der Vorlage angestoßen wurde, noch näher anzeigen.
 
-Nach den Tests verwenden Sie zum Entfernen dieser Ressourcengruppe und all ihrer Ressourcen \(Speicherkonto, virtueller Computer, virtuelles Netzwerk\) den folgenden Befehl:
+Nach den Tests verwenden Sie zum Entfernen dieser Ressourcengruppe und all ihrer Ressourcen (Speicherkonto, virtueller Computer, virtuelles Netzwerk) den folgenden Befehl:
 
 	Remove-AzureResourceGroup –Name "<resource group name>" -Force
 
@@ -260,7 +260,7 @@ In diesem Diagramm werden die Beziehungen zwischen allen Dateien beschrieben, di
 
 ![datastax-files](media/virtual-machines-datastax-template/datastax-files.png)
 
-Wir haben bereits die Rolle der Datei **azuredeploy-parameters.json** erwähnt, die verwendet werden soll, um einen bestimmten Satz von Parameterwerten während der Vorlagenausführung zu übergeben. Der Kern dieses Bereitstellungsansatzes befindet sich jedoch in der Datei **azuredeploy.json**. Der Parameter-Abschnitt wird übersprungen, da diese in diesem Dokument bereits beschrieben wurden. Im folgenden Abschnitt werden **"Variablen"** dargestellt. Im Grunde ist hier eine Anzahl an Feldern \(JSON-Datentypen oder -Fragmente\) enthalten, die auf Konstanten oder berechnete Werte zum Zeitpunkt der Ausführung festgelegt werden, wie im folgenden Beispiel ersichtlich:
+Wir haben bereits die Rolle der Datei **azuredeploy-parameters.json** erwähnt, die verwendet werden soll, um einen bestimmten Satz von Parameterwerten während der Vorlagenausführung zu übergeben. Der Kern dieses Bereitstellungsansatzes befindet sich jedoch in der Datei **azuredeploy.json**. Der Parameter-Abschnitt wird übersprungen, da diese in diesem Dokument bereits beschrieben wurden. Im folgenden Abschnitt werden **"Variablen"** dargestellt. Im Grunde ist hier eine Anzahl an Feldern (JSON-Datentypen oder -Fragmente) enthalten, die auf Konstanten oder berechnete Werte zum Zeitpunkt der Ausführung festgelegt werden, wie im folgenden Beispiel ersichtlich:
 
 	"variables": {
 	"templateBaseUrl": "https://raw.githubusercontent.com/trentmswanson/azure-quickstart-templates/master/datastax-on-ubuntu/",
@@ -315,7 +315,7 @@ Wenn Sie sich dieses Beispiel im Detail ansehen, erkennen Sie zwei verschiedene 
 	      },
 
 	 
-Im zweiten Fragment ist stattdessen die "Skripts"-Variable ein JSON-Array, in dem einzelne Elemente zur Laufzeit mithilfe einer Vorlagensprachenfunktion \(concat\) und dem Wert einer anderen Variablen plus Zeichenfolgenkonstanten berechnet werden:
+Im zweiten Fragment ist stattdessen die "Skripts"-Variable ein JSON-Array, in dem einzelne Elemente zur Laufzeit mithilfe einer Vorlagensprachenfunktion (concat) und dem Wert einer anderen Variablen plus Zeichenfolgenkonstanten berechnet werden:
 
 	      "scripts": [
 	        "[concat(variables('templateBaseUrl'), 'dsenode.sh')]",
@@ -323,7 +323,7 @@ Im zweiten Fragment ist stattdessen die "Skripts"-Variable ein JSON-Array, in de
 	        "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/shared_scripts/ubuntu/vm-disk-utils-0.1.sh"
 	      ]
 
-Im Abschnitt **“Ressourcen“** geschieht am meisten. Schauen Sie sich diesen Abschnitt sorgfältig an. Sie können sofort zwei verschiedene Fälle identifizieren: der erste ist ein vom Typ `Microsoft.Resources/deployments` definiertes Element, was im Grunde den Aufruf einer geschachtelten Bereitstellung innerhalb der Hauptbereitstellung bedeutet. Durch das Element `templateLink` \(und zugehörige Versionseigenschaften\) kann eine verknüpfte Vorlagendatei bestimmt werden, die zur Übergabe eines Parametersatz als Eingabe aufgerufen wird, wie Sie in diesem Fragment sehen:
+Im Abschnitt **“Ressourcen“** geschieht am meisten. Schauen Sie sich diesen Abschnitt sorgfältig an. Sie können sofort zwei verschiedene Fälle identifizieren: der erste ist ein vom Typ `Microsoft.Resources/deployments` definiertes Element, was im Grunde den Aufruf einer geschachtelten Bereitstellung innerhalb der Hauptbereitstellung bedeutet. Durch das Element `templateLink` (und zugehörige Versionseigenschaften) kann eine verknüpfte Vorlagendatei bestimmt werden, die zur Übergabe eines Parametersatz als Eingabe aufgerufen wird, wie Sie in diesem Fragment sehen:
 
 	{
 	      "name": "shared",
@@ -355,12 +355,12 @@ Insbesondere folgende verknüpfte Vorlagen werden für diese Bereitstellung eing
 
 -	**shared-resource.json**: enthält die Definition aller Ressourcen, die in der Bereitstellung geteilt werden. Beispiele hierfür sind Speicherkonten, die zum Speichern der Datenträger auf dem Betriebssystem oder den virtuellen Netzwerken des virtuellen Computers verwendet werden.
 -	**opscenter-resources.json**: stellt die OpsCenter-VM und alle dazugehörigen Ressourcen wie Netzwerkschnittstelle, öffentliche IP-Adresse und so weiter bereit.
--	**opscenter-install-resources.json**: stellt eine OpsCenter-VM-Erweiterung \(benutzerdefiniertes Skript für Linux\) bereit, die die spezifische Bash-Skriptdatei aufruft \(\*\* opscenter.sh\*\*\), die für die Einrichtung des OpsCenter-Dienstes auf diesem virtuellen Computer erforderlich ist.
--	**ephemeral-nodes-resources.json**: stellt alle Clusterknoten-VMs und verbundene Ressourcen \(z. B. Netzwerkkarten, private IP-Adressen, etc.\) bereit. Diese Vorlage stellt auch VM-Erweiterungen bereit \(benutzerdefinierte Skripts für Linux\) und ruft ein Bash-Skript \(\*\* dsenode.sh\*\*\) ab, um Apache Cassandra-Bits auf jedem Knoten physisch zu installieren.
+-	**opscenter-install-resources.json**: stellt eine OpsCenter-VM-Erweiterung (benutzerdefiniertes Skript für Linux) bereit, die die spezifische Bash-Skriptdatei aufruft (** opscenter.sh**), die für die Einrichtung des OpsCenter-Dienstes auf diesem virtuellen Computer erforderlich ist.
+-	**ephemeral-nodes-resources.json**: stellt alle Clusterknoten-VMs und verbundene Ressourcen (z. B. Netzwerkkarten, private IP-Adressen, etc.) bereit. Diese Vorlage stellt auch VM-Erweiterungen bereit (benutzerdefinierte Skripts für Linux) und ruft ein Bash-Skript (** dsenode.sh**) ab, um Apache Cassandra-Bits auf jedem Knoten physisch zu installieren.
 
 Sehen wir uns nun die letzte Vorlage genauer an, da diese aus Sicht der Vorlagenentwicklung am interessantesten ist. Ein wichtiges, hervorzuhebendes Konzept ist, wie eine einzelne Vorlagendatei mehrere Kopien eines einzelnen Ressourcentyps bereitstellen und für jede Instanz eindeutige Werte für die erforderlichen Einstellungen festgelegen kann. Dieses Konzept ist als **Ressourcen-Looping** bekannt.
 
-Wenn **ephemeral-nodes-resources.json** aus der Hauptdatei **azuredeploy.json** aufgerufen wird, wird tatsächlich ein Parameter namens **NodeCount** als Teil der Parameterliste bereitgestellt. Innerhalb der untergeordneten Vorlage wird dieser Parameter \(Anzahl der bereitzustellenden Knoten im Cluster\) innerhalb des Elements **"kopieren"** jeder einzelnen Ressource benutzt, die in mehreren Kopien bereitgestellt werden muss, wie im folgenden Fragment verdeutlicht wird. Für alle Einstellungen, in denen es erforderlich ist, eindeutige Werte zwischen verschiedenen Instanzen der bereitgestellten Ressource anzugeben, kann die **copyindex\(\)**-Funktion verwendet werden, um einen numerischen Wert zu erhalten, der den aktuellen Index in der bestimmten Ressourcenschleifenerstellung angibt. Im folgenden Fragment können Sie sehen, wie dieses Konzept für die Erstellung mehrerer VMs für Clusterknoten angewendet wird:
+Wenn **ephemeral-nodes-resources.json** aus der Hauptdatei **azuredeploy.json** aufgerufen wird, wird tatsächlich ein Parameter namens **NodeCount** als Teil der Parameterliste bereitgestellt. Innerhalb der untergeordneten Vorlage wird dieser Parameter (Anzahl der bereitzustellenden Knoten im Cluster) innerhalb des Elements **"kopieren"** jeder einzelnen Ressource benutzt, die in mehreren Kopien bereitgestellt werden muss, wie im folgenden Fragment verdeutlicht wird. Für alle Einstellungen, in denen es erforderlich ist, eindeutige Werte zwischen verschiedenen Instanzen der bereitgestellten Ressource anzugeben, kann die **copyindex()**-Funktion verwendet werden, um einen numerischen Wert zu erhalten, der den aktuellen Index in der bestimmten Ressourcenschleifenerstellung angibt. Im folgenden Fragment können Sie sehen, wie dieses Konzept für die Erstellung mehrerer VMs für Clusterknoten angewendet wird:
 
 			   {
 			      "apiVersion": "2015-05-01-preview",
@@ -421,15 +421,15 @@ Wenn **ephemeral-nodes-resources.json** aus der Hauptdatei **azuredeploy.json** 
 			      }
 			    },
 
-Ein weiteres wichtiges Konzept bei der Ressourcenerstellung ist die Möglichkeit, Abhängigkeiten und Vorränge zwischen Ressourcen anzugeben, wie Sie am JSON-Array **DependsOn** sehen können. In dieser Vorlage verfügt jeder Knoten zusätzlich über einen angeschlossenen Datenträger mit 1 TB \(siehe `dataDisks`\), der zum Hosten von Backups und Snapshots von der Apache Cassandra-Instanz verwendet werden kann.
+Ein weiteres wichtiges Konzept bei der Ressourcenerstellung ist die Möglichkeit, Abhängigkeiten und Vorränge zwischen Ressourcen anzugeben, wie Sie am JSON-Array **DependsOn** sehen können. In dieser Vorlage verfügt jeder Knoten zusätzlich über einen angeschlossenen Datenträger mit 1 TB (siehe `dataDisks`), der zum Hosten von Backups und Snapshots von der Apache Cassandra-Instanz verwendet werden kann.
 
 Angeschlossene Datenträger werden als Teil der Knoten-vorbereitenden Aktivitäten formatiert, die durch das Ausführen der Skriptdatei **dsenode.sh** ausgelöst werden. Die erste Zeile des Skripts ruft tatsächlich ein anderes Skript auf:
 
 	bash vm-disk-utils-0.1.sh
 
-vm-disk-utils-0.1.sh ist Teil des Ordners **shared\_scripts\\ubuntu** innerhalb der Azure-Schnellstart-Vorlage aus dem Github-Repository und enthält nützliche Funktionen für die Bereitstellung von Datenträgern, der Formatierung und des Stripings, die jedes Mal wiederverwendet werden können, wenn Sie ähnliche Aufgaben im Rahmen der Vorlagenerstellung ausführen müssen.
+vm-disk-utils-0.1.sh ist Teil des Ordners **shared_scripts\\ubuntu** innerhalb der Azure-Schnellstart-Vorlage aus dem Github-Repository und enthält nützliche Funktionen für die Bereitstellung von Datenträgern, der Formatierung und des Stripings, die jedes Mal wiederverwendet werden können, wenn Sie ähnliche Aufgaben im Rahmen der Vorlagenerstellung ausführen müssen.
 
-Ein weiteres interessantes Fragment zum Erkunden ist das Fragment im Zusammenhang mit den CustomScriptForLinux -VM-Erweiterungen. Diese werden als gesonderter Typ Ressource installiert, mit einer Abhängigkeit auf jedem Clusterknoten \(und in der OpsCenter-Instanz\), sodass der gleiche Mechanismus für die Ressourcenschleife genutzt wird, der für virtuelle Maschinen beschrieben ist:
+Ein weiteres interessantes Fragment zum Erkunden ist das Fragment im Zusammenhang mit den CustomScriptForLinux -VM-Erweiterungen. Diese werden als gesonderter Typ Ressource installiert, mit einer Abhängigkeit auf jedem Clusterknoten (und in der OpsCenter-Instanz), sodass der gleiche Mechanismus für die Ressourcenschleife genutzt wird, der für virtuelle Maschinen beschrieben ist:
 
 	{
 	"type": "Microsoft.Compute/virtualMachines/extensions",
@@ -464,10 +464,10 @@ Indem Sie sich mit den anderen Dateien in dieser Bereitstellung vertraut machen,
 Im Wesentlichen empfiehlt diesen Ansatz:
 
 -	Definieren Sie die Kernvorlagendatei als eine zentrale Orchestrierungsstelle für alle spezifischen Aktivitäten der Bereitstellung, indem Sie Vorlagen nutzen, die zum Aufrufen von Sub-Vorlagenausführungen verknüpfen.
--	Erstellen Sie eine spezifische Vorlagendatei, die alle Ressourcen bereitstellt, die gemeinsam von allen anderen bestimmten Bereitstellungsaufgaben geteilt werden \(z. B. Speicherkonten, Vnet-Konfiguration usw.\). Diese kann häufig zwischen Bereitstellungen wiederverwendet werden, die ähnliche Anforderungen im Hinblick auf die allgemeine Infrastruktur haben.
+-	Erstellen Sie eine spezifische Vorlagendatei, die alle Ressourcen bereitstellt, die gemeinsam von allen anderen bestimmten Bereitstellungsaufgaben geteilt werden (z. B. Speicherkonten, Vnet-Konfiguration usw.). Diese kann häufig zwischen Bereitstellungen wiederverwendet werden, die ähnliche Anforderungen im Hinblick auf die allgemeine Infrastruktur haben.
 -	Schließen Sie optionale Ressourcenvorlagen ein, um Ressourcen-spezifische Anforderungen zu erkennen.
--	Erstellen Sie für identische Mitglieder einer Gruppe von Ressourcen \(Knoten in einem Cluster usw.\) bestimmte Vorlagen, die die Ressource-Schleife nutzen, um mehreren Instanzen eindeutige Eigenschaften bereitstellen.
--	Für alle Post-Bereitstellungsaufgaben \(z. B. Produktinstallation, Konfiguration usw.\) nutzen Sie die Bereitstellung von Skripterweiterungen und erstellen erstellen Sie Skripte, die für die einzelnen Technologien spezifisch sind.
+-	Erstellen Sie für identische Mitglieder einer Gruppe von Ressourcen (Knoten in einem Cluster usw.) bestimmte Vorlagen, die die Ressource-Schleife nutzen, um mehreren Instanzen eindeutige Eigenschaften bereitstellen.
+-	Für alle Post-Bereitstellungsaufgaben (z. B. Produktinstallation, Konfiguration usw.) nutzen Sie die Bereitstellung von Skripterweiterungen und erstellen erstellen Sie Skripte, die für die einzelnen Technologien spezifisch sind.
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
 

@@ -25,10 +25,10 @@ Die Installation von .NET auf ihren Web- und Workerrollen schließt die Erfassun
 ## Das Installationsprogramm für .NET zu Ihrem Projekt hinzufügen
 1. Laden Sie den [.NET 4.5.2 Webinstaller](http://www.microsoft.com/de-de/download/details.aspx?id=42643) herunter.
 2. Für eine Webrolle
-  1. Klicken Sie im **Projektmappen-Explorer** unter **Rollen** im Cloud-Dienst-Projekt mit der rechten Maustaste auf Ihre Rolle und wählen Sie  **Hinzufügen \> Neuer Ordner** aus. Erstellen Sie einen Ordner mit dem Namen  *bin*.
-  2. Klicken Sie mit der rechten Maustaste auf den Ordner **bin** und wählen Sie **Hinzufügen \> Vorhandenes Element** aus. Wählen Sie das Installationsprogramm für .NET aus und fügen Sie es dem Ordner „Bin“ hinzu.
+  1. Klicken Sie im **Projektmappen-Explorer** unter **Rollen** im Cloud-Dienst-Projekt mit der rechten Maustaste auf Ihre Rolle und wählen Sie  **Hinzufügen > Neuer Ordner** aus. Erstellen Sie einen Ordner mit dem Namen  *bin*.
+  2. Klicken Sie mit der rechten Maustaste auf den Ordner **bin** und wählen Sie **Hinzufügen > Vorhandenes Element** aus. Wählen Sie das Installationsprogramm für .NET aus und fügen Sie es dem Ordner „Bin“ hinzu.
 3. Für eine Workerrolle
-  1. Klicken Sie mit der rechten Maustaste auf Ihre Rolle und wählen Sie **Hinzufügen \> Vorhandenes Element** aus. Wählen Sie das Installationsprogramm für .NET aus und fügen Sie zur Rolle hinzu. 
+  1. Klicken Sie mit der rechten Maustaste auf Ihre Rolle und wählen Sie **Hinzufügen > Vorhandenes Element** aus. Wählen Sie das Installationsprogramm für .NET aus und fügen Sie zur Rolle hinzu. 
 
 Dateien, die auf diese Weise dem Inhaltsordner „Rolle“ hinzugefügt werden, werden automatisch dem Cloud-Dienstpaket hinzugefügt und an einem einheitlichen Ort auf dem virtuellen Computer bereitgestellt. Wiederholen Sie diesen Vorgang für alle Web- und Workerrollen in Ihrem Cloud-Dienst, sodass alle Rollen über eine Kopie des Installationsprogramms verfügen.
 
@@ -74,15 +74,15 @@ Mit Startaufgaben können Sie Vorgänge ausführen, bevor eine Rolle gestartet w
 	echo install.cmd completed: %date:~-4,4%%date:~-10,2%%date:~-7,2%-%timehour: =0%%time:~3,2% >> %startuptasklog%
 	```
 
-	Das Installationsskript überprüft, ob .NET 4.5.2 bereits auf dem Computer installiert ist, indem die Registrierungsdatenbank abgefragt wird. Wenn .NET 4.5.2 nicht installiert ist, wird der .NET Webinstaller gestartet. Zur Unterstützung bei der Problembehandlung protokolliert das Skript alle Aktivitäten in einer Datei mit dem Namen *startuptasklog-\(currentdatetime\).txt*, die unter *InstallLogs* im lokalen Speicher abgelegt ist.
+	Das Installationsskript überprüft, ob .NET 4.5.2 bereits auf dem Computer installiert ist, indem die Registrierungsdatenbank abgefragt wird. Wenn .NET 4.5.2 nicht installiert ist, wird der .NET Webinstaller gestartet. Zur Unterstützung bei der Problembehandlung protokolliert das Skript alle Aktivitäten in einer Datei mit dem Namen *startuptasklog-(currentdatetime).txt*, die unter *InstallLogs* im lokalen Speicher abgelegt ist.
 
-	> [AZURE.NOTE]Verwenden Sie einen einfachen Texteditor wie Notepad, um diese Datei zu erstellen. Wenn Sie Visual Studio verwenden, um eine Textdatei erstellen und diese dann in  „.cmd“ umbenennen, enthält die Datei möglicherweise weiterhin eine UTF-8-Bytereihenfolge-Markierung und das Ausführen der ersten Zeile des Skripts führt zu einem Fehler. Verwenden Sie Visual Studio, um die Datei zu erstellen, fügen Sie eine REM \(Anmerkung\) zur ersten Zeile der Datei hinzu, damit diese bei der Ausführung ignoriert wird.
+	> [AZURE.NOTE]Verwenden Sie einen einfachen Texteditor wie Notepad, um diese Datei zu erstellen. Wenn Sie Visual Studio verwenden, um eine Textdatei erstellen und diese dann in  „.cmd“ umbenennen, enthält die Datei möglicherweise weiterhin eine UTF-8-Bytereihenfolge-Markierung und das Ausführen der ersten Zeile des Skripts führt zu einem Fehler. Verwenden Sie Visual Studio, um die Datei zu erstellen, fügen Sie eine REM (Anmerkung) zur ersten Zeile der Datei hinzu, damit diese bei der Ausführung ignoriert wird.
       
-3. Fügen Sie die Datei „install.cmd“ allen Rollen hinzu, indem Sie einen Rechtsklick auf die Rolle machen und **Hinzufügen \> Vorhandenes Element...** auswählen. Nun sollten alle Rollen über die .NET Installerdateien sowie die Datei install.cmd verfügen.
+3. Fügen Sie die Datei „install.cmd“ allen Rollen hinzu, indem Sie einen Rechtsklick auf die Rolle machen und **Hinzufügen > Vorhandenes Element...** auswählen. Nun sollten alle Rollen über die .NET Installerdateien sowie die Datei install.cmd verfügen.
 	
 	![Inhalte der Rolle mit allen Dateien][2]
 
-## Konfigurieren der Diagnose zur Übertragung der Startaufgaben-Protokolle in den Blob-Speicher \(optional\)
+## Konfigurieren der Diagnose zur Übertragung der Startaufgaben-Protokolle in den Blob-Speicher (optional)
 Optional können Sie die Azure-Diagnose so konfigurieren, dass alle Protokolldateien, die durch das Startskript oder das Installationsprogramm für .NET erstellt wurden, in den Blob-Speicher übertragen werden. Bei diesem Ansatz können Sie die Protokolle anzeigen, indem Sie einfach die Protokolldateien aus dem Blob-Speicher herunterladen, anstatt sich über Remote Desktop mit der Rolle anzumelden.
 
 Öffnen Sie zur Konfiguration der Diagnose *diagnostics.wadcfgx* und fügen Sie Folgendes unter dem *<Directories>* Knoten hinzu:

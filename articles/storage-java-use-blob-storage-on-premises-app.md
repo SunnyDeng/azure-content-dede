@@ -53,8 +53,8 @@ Deklarieren Sie eine Klasse mit dem Namen **StorageSample** und fügen Sie eine 
 
     public class StorageSample {
 
-Deklarieren Sie in der Klasse **StorageSample** eine Zeichenfolgenvariable für das Standard-Endpunktprotokoll, den Namen Ihres Speicherkontos und Ihren Speicherzugriffsschlüssel gemäß Ihrem Azure-Speicherkonto. Ersetzen Sie die Platzhalterwerte **your\_account\_name** und
-**your\_account\_key** durch Ihren Kontonamen und Ihren Kontoschlüssel.
+Deklarieren Sie in der Klasse **StorageSample** eine Zeichenfolgenvariable für das Standard-Endpunktprotokoll, den Namen Ihres Speicherkontos und Ihren Speicherzugriffsschlüssel gemäß Ihrem Azure-Speicherkonto. Ersetzen Sie die Platzhalterwerte **your_account_name** und
+**your_account_key** durch Ihren Kontonamen und Ihren Kontoschlüssel.
 
     public static final String storageConnectionString = 
            "DefaultEndpointsProtocol=http;" + 
@@ -211,8 +211,8 @@ Schließen Sie **MakeHTMLPage** mit einer geschweiften Klammer: **}**
 
 Schließen Sie **StorageSample** mit einer geschweiften Klammer: **}**
 
-Es folgt der vollständige Code für dieses Beispiel. Ersetzen Sie die Platzhalterwerte **your\_account\_name** und
-**your\_account\_key** durch Ihren Kontonamen und Ihren Kontoschlüssel.
+Es folgt der vollständige Code für dieses Beispiel. Ersetzen Sie die Platzhalterwerte **your_account_name** und
+**your_account_key** durch Ihren Kontonamen und Ihren Kontoschlüssel.
 
     import com.microsoft.windowsazure.services.core.storage.*;
     import com.microsoft.windowsazure.services.blob.client.*;

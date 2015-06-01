@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory" 
 	description="In diesem fortgeschrittenen Lernprogramm wird ein nahezu reales Szenario beschrieben und mithilfe des Azure Data Factory-Diensts implementiert." 
 	services="data-factory" 
@@ -119,7 +119,7 @@ Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim
 		$azuresqlPassword = <sql azure password>
 
  
-	> [WACOM.NOTE] Dieses Skript erfordert, dass Sie das sqlcmd-Dienstprogramm auf dem Computer installiert haben. Wenn Sie SQL Server installiert haben, verfügen Sie bereits über das Dienstprogramm. Andernfalls [laden Sie das Dienstprogramm herunter][sqlcmd-install] und installieren es. 
+> [WACOM.NOTE] Dieses Skript erfordert, dass Sie das sqlcmd-Dienstprogramm auf dem Computer installiert haben. Wenn Sie SQL Server installiert haben, verfügen Sie bereits über das Dienstprogramm. Andernfalls [laden Sie das Dienstprogramm herunter][sqlcmd-install] und installieren es. 
 	> Alternativ können Sie die Dateien im folgenden Ordner verwenden: C:\ADFWalkthrough\Scripts, um Pig-/Hive-Skripts und Beispieldateien in den Adfwalkthrough-Container im Blob-Speicher hochzuladen und die Tabelle "MarketingCampaignEffectiveness" in der MarketingCamapaigns-Azure-SQL-Datenbank zu erstellen.   
 2. Bestätigen Sie, dass der lokale Computer auf die Azure SQL-Datenbank zugreifen darf. Um den Zugriff zu aktivieren, verwenden Sie das **Azure-Verwaltungsportal** oder **sp_set_firewall_rule** in der Masterdatenbank, um eine Firewallregel für die IP-Adresse auf dem Computer zu erstellen. Es kann bis zu fünf Minuten dauert, bis diese Änderung wirksam wird. Unter [Festlegen von Firewallregeln für Azure SQL][azure-sql-firewall] finden Sie weitere Informationen.
 3. Starten Sie **Azure PowerShell**. 
@@ -284,7 +284,7 @@ Das Erstellen von Datasets/Tabellen wird vom Azure-Verwaltungsportal noch nicht 
 
 #### So erstellen Sie die Tabellen
 
-1.	Navigieren Sie in Azure PowerShell zum Ordner **Tabellen** (**C:\ADFWalkthrough\Tables\**) von dem Speicherort aus, an dem Sie die Beispiele extrahiert haben. 
+1.	Navigieren Sie in Azure PowerShell zum Ordner **Tabellen** (**C:\ADFWalkthrough\Tables**) von dem Speicherort aus, an dem Sie die Beispiele extrahiert haben. 
 2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryTable**, um die Tabellen für **RawGameEventsTable**.json wie folgt zu erstellen.	
 
 

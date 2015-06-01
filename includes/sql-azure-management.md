@@ -183,11 +183,11 @@ serverweit verwaltet werden. Weitere Informationen finden Sie unter [Verwalten v
 
             CREATE USER login1User FROM LOGIN login1;
 
--   Verwenden Sie die gespeicherte Prozedur **sp\_addrolemember**, um dem Benutzerkonto
+-   Verwenden Sie die gespeicherte Prozedur **sp_addrolemember**, um dem Benutzerkonto
     die erforderlichen Berechtigungen für die Datenbank zu erteilen. Weitere
     Informationen finden Sie unter [sp_addrolemember (Transact-SQL)][]. Mit der nachfolgenden Anweisung erhält **login1User**
     Berechtigungen für einen schreibgeschützten Zugriff auf die Datenbank, indem **login1User** der
-    Rolle **db\_datareader** hinzugefügt wird.
+    Rolle **db_datareader** hinzugefügt wird.
 
         exec sp_addrolemember 'db_datareader', 'login1User';    
 
@@ -213,7 +213,7 @@ serverweit verwaltet werden. Weitere Informationen finden Sie unter [Verwalten v
 
         DROP LOGIN login1;
 
--   Die master-Datenbank verfügt über die Sicht**sys.sql\_logins**, die Sie
+-   Die master-Datenbank verfügt über die Sicht**sys.sql_logins**, die Sie
     zum Anzeigen der Anmeldungen nutzen können. Führen Sie zum Anzeigen aller vorhandenen Anmeldungen die
     folgende Anweisung aus:
 
@@ -234,8 +234,8 @@ Details und weitere Anwendungsbeispiele finden Sie unter [Überwachen der Azure 
 
         GRANT VIEW DATABASE STATE TO login1User;
 
--   Berechnen Sie die Datenbankgröße mit der **sys.dm\_db\_partition\_stats**
-    -Sicht. Die Sicht **sys.dm\_db\_partition\_stats** gibt Informationen zur Seiten- und
+-   Berechnen Sie die Datenbankgröße mit der **sys.dm_db_partition_stats**
+    -Sicht. Die Sicht **sys.dm_db_partition_stats** gibt Informationen zur Seiten- und
     Zeilenanzahl jeder Partition der Datenbank zurück, die Sie
     zum Berechnen der Datenbankgröße verwenden können. Die folgende Abfrage gibt
     die Größe der Datenbank in MB zurück:
@@ -243,7 +243,7 @@ Details und weitere Anwendungsbeispiele finden Sie unter [Überwachen der Azure 
         SELECT SUM(reserved_page_count)*8.0/1024
         FROM sys.dm_db_partition_stats;   
 
--   Die Sichten **sys.dm\_exec\_connections** und **sys.dm\_exec\_sessions**
+-   Die Sichten **sys.dm_exec_connections** und **sys.dm_exec_sessions**
     dienen zum Abrufen von Informationen über aktuelle Benutzerverbindungen und
     interne im Zusammenhang mit der Datenbank stehende Aufgaben. Die folgende Abfrage
     liefert Informationen über die aktuelle Verbindung:
@@ -259,7 +259,7 @@ Details und weitere Anwendungsbeispiele finden Sie unter [Überwachen der Azure 
             INNER JOIN sys.dm_exec_connections e
               ON s.session_id = e.session_id;
 
--   Die Sicht **sys.dm\_exec\_query\_stats** dient zum Abrufen aggregierter
+-   Die Sicht **sys.dm_exec_query_stats** dient zum Abrufen aggregierter
     Leistungsstatistiken für zwischengespeicherte Abfragepläne. Die folgende Abfrage
     gibt Informationen über die "Top-Fünf"-Abfragen gemessen an durchschnittlicher CPU-Zeit
     zurück.
@@ -292,8 +292,7 @@ Details und weitere Anwendungsbeispiele finden Sie unter [Überwachen der Azure 
   [Schritt 2: Herstellen einer Verbindung mit SQL-Datenbank]: #Step2
   [Schritt 3: Erstellen und Verwalten von Datenbanken]: #Step3
   [Schritt 4: Erstellen und Verwalten von Anmeldungen]: #Step4
-  [Schritt 5: Überwachen von SQL-Datenbanken mit dynamischen Verwaltungssichten]:
-    #Step5
+  [Schritt 5: Überwachen von SQL-Datenbanken mit dynamischen Verwaltungssichten]: #Step5
   [Microsoft SQL Server 2014 Express]: http://www.microsoft.com/download/details.aspx?id=42299
   [Kumulatives Updatepaket 5 für SQL Server 2014]: http://support2.microsoft.com/kb/3011055
   [SSMS Installer - Installationstyp wählen]: /media/installer_installation_type.png

@@ -41,7 +41,7 @@ Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die entsprechenden App S
             var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
  
             // building templates for wns
-            var toastTemplate = "<toast><visual><binding template=\"ToastText01\"><text id=\"1\">$(message)</text></binding></visual></toast>";
+            var toastTemplate = "<toast><visual><binding template="ToastText01"><text id="1">$(message)</text></binding></visual></toast>";
             JObject templateBody = new JObject();
             templateBody["body"] = toastTemplate;
  

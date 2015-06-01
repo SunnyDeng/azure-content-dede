@@ -21,7 +21,7 @@
 Das Microsoft Azure-Vorschauportal ist eine zentrale Stelle zum Bereitstellen und Verwalten von Azure-Ressourcen. Dieses Lernprogramm macht Sie mit dem Portal vertraut und zeigt Ihnen, wie die folgenden wichtigen Funktionen verwendet werden:
  - Der **Marketplace**, auf dem Sie Tausende Artikel von Microsoft oder Drittanbietern durchsuchen können, die gekauft und/oder bereitgestellt werden können. 
  - **Einheitliche und skalierbare Suchfunktion**, mit der Sie die Ressourcen, die Sie interessieren, leichter finden und verschiedene Verwaltungsvorgänge ausführen können.
- - **Konsistente Verwaltungsbereiche** \(„Blades“\), mit denen Sie die große Vielfalt der Azure-Dienste verwalten können und die Ihnen Einstellungen, Aktionen, Abrechnungsinformationen, Zustandsdaten, Nutzungsdaten und vieles mehr auf einheitliche Art und Weise zur Verfügung stellen. 
+ - **Konsistente Verwaltungsbereiche** („Blades“), mit denen Sie die große Vielfalt der Azure-Dienste verwalten können und die Ihnen Einstellungen, Aktionen, Abrechnungsinformationen, Zustandsdaten, Nutzungsdaten und vieles mehr auf einheitliche Art und Weise zur Verfügung stellen. 
  - Ein **individuelles Benutzererlebnis**, das es Ihnen ermöglicht, eine persönliche Startseite zu erstellen, die Ihnen bei jedem Anmelden die gewünschten Informationen anzeigt. Sie können auch die Verwaltungsbereiche anpassen, die Kacheln enthalten.
 
  ![Azure-Portal-UI-Ausrichtung][UIOrientation]
@@ -38,7 +38,7 @@ Azure verfügt über einen Markt mit Tausenden von Elementen, die Sie von einem 
 2.	Füllen Sie das Formular mit einigen grundlegenden Angaben aus.
 3.	Klicken Sie auf „Erstellen“ und der virtuelle Computer beginnt sofort mit der Bereitstellung. 
 
-Der Hub „Benachrichtigungen“ informiert Sie, wenn die Ressource erstellt wurde, und ein Verwaltungsbereich wird geöffnet \(später können Sie zu den Ressourcen gehen\).
+Der Hub „Benachrichtigungen“ informiert Sie, wenn die Ressource erstellt wurde, und ein Verwaltungsbereich wird geöffnet (später können Sie zu den Ressourcen gehen).
 
 ![Portal-Kategorien][PortalCategories]
 
@@ -51,7 +51,7 @@ Häufig verwendete Ressourcen können Sie an Ihr Startmenü anheften. Möglicher
 
 ## Verwalten und Delegieren des Zugriffs auf eine Ressource
 
-Von diesem Bereich aus können Sie sich mithilfe des Remotedesktop mit dem virtuellen Computer verbinden, wichtige Leistungsmetriken überwachen, den Zugriff auf den virtuellen Computer über rollenbasierten Zugriff \(RBAC\) steuern, den virtuellen Computer konfigurieren und andere wichtige Verwaltungsaufgaben ausführen. Das Delegieren des Zugriffs auf der Grundlage von Rollen ist entscheidend für skalierbares Verwalten. Klicken Sie  [hier](role-based-access-control-configure.md), um mehr darüber zu erfahren. Um den Zugriff auf eine Ressource zu delegieren, führen Sie die folgenden Aktionen aus:
+Von diesem Bereich aus können Sie sich mithilfe des Remotedesktop mit dem virtuellen Computer verbinden, wichtige Leistungsmetriken überwachen, den Zugriff auf den virtuellen Computer über rollenbasierten Zugriff (RBAC) steuern, den virtuellen Computer konfigurieren und andere wichtige Verwaltungsaufgaben ausführen. Das Delegieren des Zugriffs auf der Grundlage von Rollen ist entscheidend für skalierbares Verwalten. Klicken Sie  [hier](role-based-access-control-configure.md), um mehr darüber zu erfahren. Um den Zugriff auf eine Ressource zu delegieren, führen Sie die folgenden Aktionen aus:
 
 1.	Navigieren Sie zu der Ressource.
 2.	Klicken Sie im Abschnitt „Essentials“ auf „Alle Einstellungen“.
@@ -70,7 +70,7 @@ Die Bereiche für Ihre Ressourcen werden von Azure konfiguriert; die Kacheln in 
 3.	Klicken Sie auf „Elemente hinzufügen“.
 4.	Nun können Sie Elemente per Drag & Drop hinzufügen.  
 
-![Anpassen von Bereichen \(Blades\)][CustomizeBlades]
+![Anpassen von Bereichen (Blades)][CustomizeBlades]
 
 ## So erhalten Sie Hilfe
 
@@ -84,9 +84,9 @@ Sollten Sie auf ein Problem stoßen, sind wir für Sie da. Das Portal verfügt �
 
  - Sie haben gelernt, sich zu registrieren, ein Abonnement zu erhalten und zu dem Portal zu navigieren
  - Sie haben die Benutzeroberfläche des Portals kennengelernt und erfahren, wie man Ressourcen erstellt und danach sucht 
- - Sie haben die Struktur des Portals bzw. die Verwaltungsbereiche \(Blades\) kennengelernt und erfahren, wie verschiedene Arten von Ressourcen einheitlich verwaltet werden können 
+ - Sie haben die Struktur des Portals bzw. die Verwaltungsbereiche (Blades) kennengelernt und erfahren, wie verschiedene Arten von Ressourcen einheitlich verwaltet werden können 
  - Sie wissen nun, wie Sie das Portal anpassen können, um die gewünschten Informationen griffbereit zu haben 
- - Sie wissen nun, wie der Zugriff auf Ressourcen mithilfe des rollenbasierten Zugriffs \(RBAC\) gesteuert werden kann 
+ - Sie wissen nun, wie der Zugriff auf Ressourcen mithilfe des rollenbasierten Zugriffs (RBAC) gesteuert werden kann 
  - Sie haben erfahren, wie Sie auf Hilfe und Support zugreifen können.
 
 Das Microsoft Azure-Vorschauportal vereinfacht die Erstellung und Verwaltung Ihrer Anwendungen in der Cloud radikal. Um auf dem Laufenden zu bleiben, besuchen Sie unseren [Verwaltungsblog](http://azure.microsoft.com/blog/topics/management/). Wir sind stets offen für [Feedback](http://feedback.azure.com/forums/223579-azure-preview-portal) und nehmen ständig Verbesserungen vor. Der Blog von [ScottGu](http://weblogs.asp.net/scottgu) ist eine weitere umfangreiche Quelle für alle Azure-Aktualisierungen.

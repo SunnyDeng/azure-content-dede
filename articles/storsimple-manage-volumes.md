@@ -29,7 +29,7 @@ Der StorSimple-Manager-Dienst ist eine Erweiterung des Azure-Verwaltungsportals,
 
 ##Die Seite "Volumes"
 
-Auf der Seite **Volumes** können Sie die Speichervolumes verwalten, die auf dem Microsoft Azure StorSimple-Gerät für die Initiatoren \(Server\) bereitgestellt werden. Auf der Seite wird eine Liste der Volumes auf dem StorSimple-Gerät angezeigt.
+Auf der Seite **Volumes** können Sie die Speichervolumes verwalten, die auf dem Microsoft Azure StorSimple-Gerät für die Initiatoren (Server) bereitgestellt werden. Auf der Seite wird eine Liste der Volumes auf dem StorSimple-Gerät angezeigt.
 
  ![Seite "Volumes"](./media/storsimple-manage-volumes/HCS_VolumesPage.png)
 
@@ -37,11 +37,11 @@ Ein Volume umfasst eine Reihe von Attributen:
 
 - **Name** – ein beschreibender Name, der eindeutig sein muss und den Datenträger identifiziert. Dieser Name wird auch in Überwachungsberichten zum Filtern nach einem bestimmten Volume verwendet.
 
-- **Status** – online oder offline. Offline-Volumes sind für die Initiatoren \(Server\), die über Zugriff für die Verwendung des Volumes verfügen, nicht sichtbar.
+- **Status** – online oder offline. Offline-Volumes sind für die Initiatoren (Server), die über Zugriff für die Verwendung des Volumes verfügen, nicht sichtbar.
 
-- **Kapazität** – gibt an, wie groß das Volume aus Sicht des Initiators \(Servers\) ist. Die Kapazität entspricht der Gesamtmenge der Daten, die vom Initiator \(Server\) gespeichert werden können. Die Volumes verfügen über eine schlanke Speicherzuweisung, und die Daten werden dedupliziert. Dies bedeutet, dass Ihr Gerät die physische Speicherkapazität weder intern noch in der Cloud vorab anhand der konfigurierten Volumekapazität zuweist. Die Volumekapazität ist zugewiesen und wird bei Bedarf genutzt.
+- **Kapazität** – gibt an, wie groß das Volume aus Sicht des Initiators (Servers) ist. Die Kapazität entspricht der Gesamtmenge der Daten, die vom Initiator (Server) gespeichert werden können. Die Volumes verfügen über eine schlanke Speicherzuweisung, und die Daten werden dedupliziert. Dies bedeutet, dass Ihr Gerät die physische Speicherkapazität weder intern noch in der Cloud vorab anhand der konfigurierten Volumekapazität zuweist. Die Volumekapazität ist zugewiesen und wird bei Bedarf genutzt.
 
-- **Zugriff** – gibt die Initiatoren \(Server\) an, die Zugriff auf dieses Volume haben. Initiatoren, die nicht Mitglieder des dem Volume zugeordneten Zugriffssteuerungsdatensatzes \(ACR\) sind, wird das Volume nicht angezeigt.
+- **Zugriff** – gibt die Initiatoren (Server) an, die Zugriff auf dieses Volume haben. Initiatoren, die nicht Mitglieder des dem Volume zugeordneten Zugriffssteuerungsdatensatzes (ACR) sind, wird das Volume nicht angezeigt.
 
 - **Überwachung** – gibt an, ob ein Volume überwacht wird. Beim Erstellen von Volumes wird die Überwachung standardmäßig aktiviert. Für einen Volumeklon wird die Überwachung jedoch deaktiviert. Befolgen Sie zum Überwachen eines Volumes die Anweisungen unter "Überwachen von Volumes".
 
@@ -76,7 +76,7 @@ Sie haben beim Bereitstellen der StorSimple-Lösung [ein Volume erstellt](storsi
 
      ![Volume hinzufügen](./media/storsimple-manage-volumes/HCs_AddVolume2M.png)
    
-5. Fügen Sie unter **Weitere Einstellungen** einen neuen Zugriffssteuerungsdatensatz \(Access Control Record, ACR\) hinzu:
+5. Fügen Sie unter **Weitere Einstellungen** einen neuen Zugriffssteuerungsdatensatz (Access Control Record, ACR) hinzu:
   
   1. Wählen Sie aus der Dropdownliste einen Zugriffssteuerungsdatensatz aus. Sie können auch einen neuen Zugriffssteuerungsdatensatz hinzufügen. Mithilfe von Zugriffssteuerungsdatensätzen wird festgelegt, welche Hosts auf die Volumes zugreifen dürfen, indem der Host-IQN mit dem im Datensatz aufgeführten abgeglichen wird.
   2. Es wird empfohlen, unter **Standardsicherung für dieses Volume?** die Standardsicherung zu aktivieren, indem Sie das Kontrollkästchen **Aktivieren** aktivieren.

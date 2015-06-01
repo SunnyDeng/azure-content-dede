@@ -16,14 +16,14 @@ Der BLOB-Dienst umfasst die folgenden Komponenten:
 
 ![Blob1][Blob1]
 
--   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Azure Storage Scalability and Performance Targets](storage-scalability-targets.md) \(Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher, in englischer Sprache\).
+-   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Azure Storage Scalability and Performance Targets](storage-scalability-targets.md) (Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher, in englischer Sprache).
 
 -   **Container:** Ein Container dient zur Gruppierung eines Satzes von Blobs. Alle BLOBs müssen sich in Containern befinden. Ein Konto kann eine beliebige Anzahl von Containern enthalten. In einem Container kann eine beliebige Anzahl von BLOBs gespeichert sein.
 
 -   **Blob:** Eine Datei von beliebiger Art und Größe. Es gibt zwei Arten von Blobs, die im Azure-Speicher gespeichert werden können: Block- und Seitenblobs. Die meisten Dateien sind Block-BLOBs. Ein einzelner Block-Blob kann bis zu 200 GB groß sein. In diesem Tutorial werden Block-BLOBs verwendet. Der andere Blob-Typ, Seiten-Blobs, kann bis zu 1 TB groß sein und ist effizienter, wenn Byte-Bereiche in einer Datei häufig geändert werden. Weitere Informationen über BLOBs finden Sie unter [Grundlegendes zu Block-BLOBs und Seiten-BLOBs](https://msdn.microsoft.com/library/azure/ee691964.aspx).
 
 -   **URL-Format:** Blobs sind über das folgende URL-Format adressierbar: http://`<storage
-    account>`.blob.core.windows.net/`<container>`/`<blob>\`
+    account>`.blob.core.windows.net/`<container>`/`<blob>`
       
     Zur Adressierung eines der Blobs im Diagramm oben sollte die folgende Beispiel-URL verwendet werden:`http://sally.blob.core.windows.net/movies/MOV1.AVI`
 

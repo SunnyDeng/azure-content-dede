@@ -332,7 +332,7 @@ Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Proj
 	}
 
 ###Einrichten des Websitestils###
-Um den Titel oben auf der Seite zu ändern, öffnen Sie die Datei *Views\Shared\\_Layout.cshtml* im **Projektmappen-Explorer** und ersetzen "Application name" im Navigationsleistenheader durch "My Task List Application", sodass die Zeile folgendermaßen lautet:
+Um den Titel oben auf der Seite zu ändern, öffnen Sie die Datei *Views\Shared_Layout.cshtml* im **Projektmappen-Explorer** und ersetzen "Application name" im Navigationsleistenheader durch "My Task List Application", sodass die Zeile folgendermaßen lautet:
 
  	@Html.ActionLink("My Task List Application", "Index", "Home", null, new { @class = "navbar-brand" })
 
@@ -373,7 +373,7 @@ Um den Titel oben auf der Seite zu ändern, öffnen Sie die Datei *Views\Shared\
 	<div>  @Html.Partial("Create", new MyTaskListApp.Models.MyTask())</div>
 
 
-Um die Möglichkeit zum Erstellen eines neuen Tasks hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Ordner *Views\Home\\*, und fügen Sie über **Hinzufügen** eine neue **Ansicht** hinzu.  Benennen Sie die Ansicht *Create*. Ersetzen Sie den Code durch den folgenden Code:
+Um die Möglichkeit zum Erstellen eines neuen Tasks hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Ordner *Views\Home*, und fügen Sie über **Hinzufügen** eine neue **Ansicht** hinzu.  Benennen Sie die Ansicht *Create*. Ersetzen Sie den Code durch den folgenden Code:
 
 	@model MyTaskListApp.Models.MyTask
 	

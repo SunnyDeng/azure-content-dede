@@ -145,7 +145,7 @@ Für das Produkt **Kostenloser Test** gilt ein Kontingent von 200 Aufrufen pro W
     <quota calls="200" bandwidth="kilobytes" renewal-period="604800">
     </quota>
 
-> Die Richtlinienintervalle werden in Sekunden angegeben. Um die Intervalle für eine Woche zu berechnen, multiplizieren Sie die Anzahl der Tage (7) mit der Anzahl der Stunden pro Tag (24), der Anzahl der Minuten pro Stunde (60) und der Anzahl von Sekunden pro Minute (60). 7 \* 24 \* 60 \* 60 = 604800.
+> Die Richtlinienintervalle werden in Sekunden angegeben. Um die Intervalle für eine Woche zu berechnen, multiplizieren Sie die Anzahl der Tage (7) mit der Anzahl der Stunden pro Tag (24), der Anzahl der Minuten pro Stunde (60) und der Anzahl von Sekunden pro Minute (60). 7 * 24 * 60 * 60 = 604800.
 
 Konfigurieren Sie die Richtlinie, sodass diese dem folgenden Beispiel entspricht.
 

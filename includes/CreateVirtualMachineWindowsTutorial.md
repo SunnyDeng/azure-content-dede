@@ -4,7 +4,7 @@
 
 In diesem Lernprogramm erfahren Sie, wie Sie mithilfe der Imagegalerie im Windows Azure-Verwaltungsportal ganz einfach einen virtuellen Azure-Computer mit Windows Server erstellen. Die Image-Galerie bietet verschiedene Images, unter anderem von Windows-Betriebssystemen, Linux-basierten Betriebssystemen sowie Anwendungs-Images.
 
-> [AZURE.NOTE]Sie benötigen keine Erfahrungen mit Azure-VMs, um dieses Lernprogramm auszuführen. Allerdings benötigen Sie ein Azure-Konto. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account \(in englischer Sprache\)](http://www.windowsazure.com/develop/php/tutorials/create-a-windows-azure-account/).
+> [AZURE.NOTE]Sie benötigen keine Erfahrungen mit Azure-VMs, um dieses Lernprogramm auszuführen. Allerdings benötigen Sie ein Azure-Konto. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)](http://www.windowsazure.com/develop/php/tutorials/create-a-windows-azure-account/).
 
 In diesem Lernprogramm wird Folgendes erläutert:
 
@@ -91,7 +91,7 @@ In diesem Abschnitt erfahren Sie, wie Sie einen leeren Datenträge an den virtue
 
 	![Datei- und Speicherdienste im Server-Manager erweitern](./media/CreateVirtualMachineWindowsTutorial/selectdisks.png)
 	
-10. Im Abschnitt **Datenträger** sind drei Datenträger in der Liste vorhanden: Datenträger 0, Datenträger 1 und Datenträger 2. Datenträger 0 ist der Betriebssystem-Datenträger. Bei Datenträger 1 handelt es sich um einen temporären Ressourcendatenträger \(der nicht für die Datenspeicherung verwendet werden sollte\), und Datenträger 2 ist der Datenträger, den Sie an den virtuellen Computer angefügt haben. Beachten Sie, dass der Datenträger eine Kapazität von 5 GB hat, wie zuvor festgelegt. Klicken Sie mit der rechten Maustaste auf Disk 2, und wählen Sie **Initialisieren** aus.
+10. Im Abschnitt **Datenträger** sind drei Datenträger in der Liste vorhanden: Datenträger 0, Datenträger 1 und Datenträger 2. Datenträger 0 ist der Betriebssystem-Datenträger. Bei Datenträger 1 handelt es sich um einen temporären Ressourcendatenträger (der nicht für die Datenspeicherung verwendet werden sollte), und Datenträger 2 ist der Datenträger, den Sie an den virtuellen Computer angefügt haben. Beachten Sie, dass der Datenträger eine Kapazität von 5 GB hat, wie zuvor festgelegt. Klicken Sie mit der rechten Maustaste auf Disk 2, und wählen Sie **Initialisieren** aus.
 
 	![Starten Sie die Initialisierung.](./media/CreateVirtualMachineWindowsTutorial/initializedisk.png)
 

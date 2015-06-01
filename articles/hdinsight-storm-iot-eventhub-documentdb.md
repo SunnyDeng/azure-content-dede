@@ -18,19 +18,19 @@ ms.author="larryfr"/>
 
 #Verarbeitung von Sensordaten von Azure Event Hubs mit Apache Storm auf HDInsight
 
-Erfahren Sie, wie Sie Fahrzeugsensordaten von Azure Event Hubs mit Apache Storm auf HDInsight verarbeiten. In diesem Beispiel werden Sensordaten von Azure Event Hubs gelesen, die Daten werden  durch Verweisen auf  in Azure DocumentDB gespeicherte Daten angereichert und schließlich mit Hadoop File System \(HDFS\) im Azure-Speicher abgespeichert.
+Erfahren Sie, wie Sie Fahrzeugsensordaten von Azure Event Hubs mit Apache Storm auf HDInsight verarbeiten. In diesem Beispiel werden Sensordaten von Azure Event Hubs gelesen, die Daten werden  durch Verweisen auf  in Azure DocumentDB gespeicherte Daten angereichert und schließlich mit Hadoop File System (HDFS) im Azure-Speicher abgespeichert.
 
 ![Architekturdiagramm](./media/hdinsight-storm-iot-eventhub-documentdb/iot.png)
 
 ##Übersicht
 
-Das Hinzufügen von Sensoren zu Fahrzeugen ermöglicht sowohl die Voraussage von Anlagenprobleme basierend auf Vergangenheitsdatentrends als auch Verbesserungen für zukünftige Versionen aufgrund von Nutzungsverhaltenanalyse. Es kann herkömmlichen MapReduce-Batchverarbeitung für diese Analyse verwendet werden, dabei muss es jedoch möglich sein, Daten schnell und effizient von allen Fahrzeugen in Hadoop bevor zu laden, bevor die MapReduce-Verarbeitung beginnen kann. Darüber wollen Sie möglicherweise Analysen für kritischen Fehlerpfade \(Motortemperatur, Bremsen usw.\) in Echtzeit durchführen.
+Das Hinzufügen von Sensoren zu Fahrzeugen ermöglicht sowohl die Voraussage von Anlagenprobleme basierend auf Vergangenheitsdatentrends als auch Verbesserungen für zukünftige Versionen aufgrund von Nutzungsverhaltenanalyse. Es kann herkömmlichen MapReduce-Batchverarbeitung für diese Analyse verwendet werden, dabei muss es jedoch möglich sein, Daten schnell und effizient von allen Fahrzeugen in Hadoop bevor zu laden, bevor die MapReduce-Verarbeitung beginnen kann. Darüber wollen Sie möglicherweise Analysen für kritischen Fehlerpfade (Motortemperatur, Bremsen usw.) in Echtzeit durchführen.
 
-Azure Event Hubs wurden zum Behandeln großer Menge von Daten entworfen, die von Sensoren generierte wurden und Apache-Storm auf HDInsight kann für zusätzliche MapReduce-Verarbeitung zum Laden und Verarbeiten der Daten vor dem Speichern in HDFS \(unterstützt durch Azure-Speicher\) verwendet werden.
+Azure Event Hubs wurden zum Behandeln großer Menge von Daten entworfen, die von Sensoren generierte wurden und Apache-Storm auf HDInsight kann für zusätzliche MapReduce-Verarbeitung zum Laden und Verarbeiten der Daten vor dem Speichern in HDFS (unterstützt durch Azure-Speicher) verwendet werden.
 
 ##Lösung
 
-Telemetriedaten für Motortemperatur, Umgebungstemperatur und Geschwindigkeit des Fahrzeugs werden von Sensoren zusammen mit Fahrgestellnummer \(FIN\) und einem Zeitstempel an Event Hubs gesendet. Von dort liest eine Storm-Topologie, die auf einem Apache-Storm auf HDInsight-Cluster ausgeführt wird, die Daten, verarbeitet diese und speichert sie in HDFS.
+Telemetriedaten für Motortemperatur, Umgebungstemperatur und Geschwindigkeit des Fahrzeugs werden von Sensoren zusammen mit Fahrgestellnummer (FIN) und einem Zeitstempel an Event Hubs gesendet. Von dort liest eine Storm-Topologie, die auf einem Apache-Storm auf HDInsight-Cluster ausgeführt wird, die Daten, verarbeitet diese und speichert sie in HDFS.
 
 Während der Verarbeitung wird die FIN verwendet, um Modellinformationen aus Azure DocumentDB abzurufen. Dies wird dem Datenstrom hinzugefügt, bevor er gespeichert wird.
 
@@ -42,7 +42,7 @@ Die in der Storm-Topologie verwendet Komponenten sind:
 
 * **DataReferencBolt** - Sucht das Fahrzeugmodell über die FIN in DocumentDB
 
-* **WasbStoreBolt** - Speichert die Daten in HDFS \(Azure-Speicher\)
+* **WasbStoreBolt** - Speichert die Daten in HDFS (Azure-Speicher)
 
 Es folgt eine Darstellung dieser Lösung:
 

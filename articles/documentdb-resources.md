@@ -104,7 +104,7 @@ Ressourcen wie Datenbankkonten, Datenbanken, Sammlungen, Benutzer, Berechtigunge
 DocumentDB verfügt über keine proprietären Erweiterungen des JSON-Standards oder besonderer Codierungen, und kann nur mit standardkonformen JSON-Dokumenten verwendet werden.  
  
 ###Adressieren einer Ressource
-Alle Ressourcen können über URI aufgerufen werden. Der Wert der **_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /\<feed\>/{_rid}-Pfadsegmenten:  
+Alle Ressourcen können über URI aufgerufen werden. Der Wert der **_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /<feed>/{_rid}-Pfadsegmenten:  
 
 |Wert von "_self"	|Beschreibung
 |-------------------|-----------

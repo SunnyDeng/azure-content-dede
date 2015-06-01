@@ -26,7 +26,7 @@ Mit einem Pufferconnector können Sie Nachrichten in Pufferkanälen bereitstelle
 Um den Pufferconnector zu verwenden, müssen Sie zunächst eine Instanz der Pufferconnector-API-App erstellen. Gehen Sie dazu folgendermaßen vor:
 
 1.	Öffnen Sie den Azure Marketplace mithilfe der Option "+ NEU" unten links im Azure-Portal.
-2.	Navigieren Sie zu "Web und Mobile \> Azure Marketplace", und suchen Sie nach "Pufferconnector".
+2.	Navigieren Sie zu "Web und Mobile > Azure Marketplace", und suchen Sie nach "Pufferconnector".
 3.	Konfigurieren Sie den Pufferconnector wie folgt:
  
 	![][1]
@@ -50,7 +50,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den Pufferconnector als Aktion f
 3.	Der Pufferconnector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt.
  
 	![][2]
-4.	Die Pufferconnector-API-App kann durch Klicken auf den "Pufferconnector" in den Editor gezogen werden. Klicken Sie auf die Schaltfläche "Autorisieren". Geben Sie Ihre Microsoft-Anmeldeinformationen an \(falls Sie nicht automatisch angemeldet werden\). Melden Sie sich durch Befolgen der Schritte bei Ihrem Pufferkonto an. Am Ende werden Sie aufgefordert, dem Connector die Zugriffsberechtigung für Ihr Pufferkonto zu erteilen. Klicken Sie auf "Autorisieren".
+4.	Die Pufferconnector-API-App kann durch Klicken auf den "Pufferconnector" in den Editor gezogen werden. Klicken Sie auf die Schaltfläche "Autorisieren". Geben Sie Ihre Microsoft-Anmeldeinformationen an (falls Sie nicht automatisch angemeldet werden). Melden Sie sich durch Befolgen der Schritte bei Ihrem Pufferkonto an. Am Ende werden Sie aufgefordert, dem Connector die Zugriffsberechtigung für Ihr Pufferkonto zu erteilen. Klicken Sie auf "Autorisieren".
  
 	![][3]
 	![][4]
@@ -68,7 +68,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den Pufferconnector als Aktion f
 	Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Nachricht bereitstellen" wie folgt:
 
  - **Text** – Geben Sie den Text der bereitzustellenden Nachricht ein.
- - **Kanalname** – Geben Sie den Pufferkanal an, in den diese Nachricht hochgeladen werden soll. Wenn dieser nicht angegeben wird, wird die Nachricht in \#general bereitgestellt.
+ - **Kanalname** – Geben Sie den Pufferkanal an, in den diese Nachricht hochgeladen werden soll. Wenn dieser nicht angegeben wird, wird die Nachricht in #general bereitgestellt.
 
  	**Erweiterte Eigenschaften**
  	- **Bot-Benutzername** - Name des Bots, der für diese Nachricht verwendet werden soll. Die Nachricht wird als "Bot" bereitgestellt, wenn diese Angabe nicht gemacht wird. 
@@ -76,7 +76,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den Pufferconnector als Aktion f
  	- **Emoticon** - Emoticon, das als Symbol für diese Nachricht verwendet werden soll. Setzt die Symbol-URL außer Kraft.
  
 
-7. Um den Connector außerhalb einer Logik-App zu verwenden, können die vom Connector zur Verfügung gestellten REST-APIs genutzt werden. Sie können diese API-Definitionen mit "Durchsuchen" -\> "API-App" -\> "Pufferconnector" anzeigen. Klicken Sie jetzt auf die Lupe "API-Definition" im Abschnitt "Zusammenfassung", um alle APIs anzuzeigen, die von diesem Connector zur Verfügung gestellt werden.
+7. Um den Connector außerhalb einer Logik-App zu verwenden, können die vom Connector zur Verfügung gestellten REST-APIs genutzt werden. Sie können diese API-Definitionen mit "Durchsuchen" -> "API-App" -> "Pufferconnector" anzeigen. Klicken Sie jetzt auf die Lupe "API-Definition" im Abschnitt "Zusammenfassung", um alle APIs anzuzeigen, die von diesem Connector zur Verfügung gestellt werden.
 
 	![][9]
 

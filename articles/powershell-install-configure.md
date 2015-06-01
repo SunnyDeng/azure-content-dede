@@ -124,11 +124,11 @@ Azure-Verwaltungsportal, über die Sie die Abonnementinformationen herunterladen
 
 4. Laden Sie das Veröffentlichungsprofil herunter und speichern Sie es, wenn Sie eine entsprechende Aufforderung erhalten, und notieren Sie den Pfad und Namen der Datei mit der Erweiterung *.publishsettings. Diese Informationen werden benötigt, wenn Sie das Cmdlet **Import-AzurePublishSettingsFile** ausführen, um die Einstellungen zu importieren. Für den Standardspeicherort und -dateinamen gilt folgendes Format:
 
-			C:\\Users\<UserProfile>\\Download\\[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
+			C:\\Users<UserProfile>\\Download[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
 
 5. Geben Sie einen Befehl wie den folgenden ein, wobei Sie die Platzhalter durch Ihren Windows-Kontonamen und den Pfad und Dateinamen ersetzen:
 
-		Import-AzurePublishSettingsFile C:\Users\<Benutzerprofil>\Downloads\<Abonnementname>-credentials.publishsettings
+		Import-AzurePublishSettingsFile C:\Users<Benutzerprofil>\Downloads<Abonnementname>-credentials.publishsettings
 
 > [AZURE.NOTE] Wenn Sie nach dem Import Ihrer Veröffentlichungseinstellungen als Co-Administrator zu anderen Abonnements hinzugefügt werden, müssen Sie diesen Vorgang wiederholen, um eine neue Datei mit der Erweiterung "*.publishsettings" herunterzuladen und dann diese Einstellungen zu importieren. Informationen zum Hinzufügen von Co-Administratoren als Unterstützung bei der Verwaltung von Diensten für ein Abonnement finden Sie unter [Hinzufügen und Entfernen von Co-Administratoren für Azure-Abonnements](http://msdn.microsoft.com/library/windowsazure/gg456328.aspx).
 

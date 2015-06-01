@@ -58,7 +58,7 @@ Nach einigen Minuten wird Ihr API-App-Paket mit dem Azure Marketplace synchronis
 
 ## Bereitstellen Ihres API-App-Pakets im Azure-Vorschauportal
 
-Sie können sich auch mit Ihrem Azure-Konto beim [Azure-Vorschauportal](https://portal.azure.com) anmelden \(es kann sich um ein anderes Konto handeln als das zum Veröffentlichen des API-App-Pakets verwendete Konto\). Hier können Sie den Erstellvorgang für Ihr API-App-Paket im Azure-Vorschauportal prüfen. Falls Änderungen erforderlich sind, nehmen Sie einfach Änderungen im API-App-Paket vor, und veröffentlichen Sie das Paket erneut.
+Sie können sich auch mit Ihrem Azure-Konto beim [Azure-Vorschauportal](https://portal.azure.com) anmelden (es kann sich um ein anderes Konto handeln als das zum Veröffentlichen des API-App-Pakets verwendete Konto). Hier können Sie den Erstellvorgang für Ihr API-App-Paket im Azure-Vorschauportal prüfen. Falls Änderungen erforderlich sind, nehmen Sie einfach Änderungen im API-App-Paket vor, und veröffentlichen Sie das Paket erneut.
 
 Ausführliche Informationen zum Bereitstellen eines API-App-Pakets im Azure-Portal finden Sie [hier](app-service-api-connnect-your-app-to-saas-connector.md) im Bereitstellungsbeispiel für DropboxConnector.
 

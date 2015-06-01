@@ -22,7 +22,7 @@
 
 # Einsatz von Servicebus-Warteschlangen
 
-<span>In diesem Leitfaden wird beschrieben, wie Sie Service Bus-Warteschlangen verwenden. Die Beispiele sind in C\# geschrieben und verwenden die .NET API. Die behandelten Szenarien umfassen das **Erstellen von Warteschlangen, Senden und Empfangen von Nachrichten** und
+<span>In diesem Leitfaden wird beschrieben, wie Sie Service Bus-Warteschlangen verwenden. Die Beispiele sind in C# geschrieben und verwenden die .NET API. Die behandelten Szenarien umfassen das **Erstellen von Warteschlangen, Senden und Empfangen von Nachrichten** und
 **Löschen der Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte]. </span>
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]

@@ -51,19 +51,19 @@ In den folgenden Abschnitten werden alle Dateien und Ordner in der API-App-Ordne
 
 Dies ist die Manifestdatei für Ihre API-App.
 
-|Name \(Fettformatierung = erforderlich\)|Typ|Format|Beschreibung|
+|Name (Fettformatierung = erforderlich)|Typ|Format|Beschreibung|
 |:---------------------|:-----|:-------|:------------|
-|**id**|string|[a-zA-Z0-9\_.]|Die ID des Pakets. Die ID muss innerhalb eines Namespace eindeutig sein und darf nur alphanumerische Zeichen, "\_" und "." enthalten. Die ID muss mit einem alphanumerischen Zeichen beginnen.|
+|**id**|string|[a-zA-Z0-9_.]|Die ID des Pakets. Die ID muss innerhalb eines Namespace eindeutig sein und darf nur alphanumerische Zeichen, "_" und "." enthalten. Die ID muss mit einem alphanumerischen Zeichen beginnen.|
 |**namespace**|string|Domänenname|Der Namespace, der die API-App gemeinsam mit der **id**-Eigenschaft eindeutig identifiziert. Es muss sich um einen Domänennamen des AAD-Mandanten des Herausgebers handeln.|
 |**version**|string|[semver](http://docs.nuget.org/Create/Versioning)|Die Version des Pakets. Wenn die Option für automatische Upgrades für dieses Paket aktiviert wurde, gilt dies nur für neue Versionen innerhalb derselben Hauptversion.|
 |**gateway**|string|2015-01-14|Die Gateway-API-Version, die das Paket verwendet. Ein Gateway ist eine spezielle Web-App, mit der alle Anforderungen für API-Apps in einer Ressourcengruppe geroutet werden. Eine der Hauptfunktionen des Gateways besteht darin, die Authentifizierung zu übernehmen. Momentan steht nur die Gatewayversion 2015-01-14 zur Verfügung. Wenn in Zukunft neue Gatewayversionen veröffentlicht werden, können Sie mithilfe dieser Eigenschaft Funktionsbeeinträchtigungen verhindern und weiterhin die vorherige Gateway-API verwenden.| 
 |**title**|string||Der Anzeigename der API-App.|
 |**summary**|string|max. 100 Zeichen|Eine kurze Zusammenfassung der API-App.
-|description|string|max. 1.500 Zeichen|Die vollständige Beschreibung der API-App. Kann HTML enthalten. Zulässige Elemente und Attribute: "h1", "h2", "h3", "h4", "h5", "p", "ol", "ul", "li", "a[target\|href]", "br", "strong", "em", "b", "i".|
-|**author**|string|max. 256 Zeichen|Der bzw. die Autor\(en\) der API-App.|
+|description|string|max. 1.500 Zeichen|Die vollständige Beschreibung der API-App. Kann HTML enthalten. Zulässige Elemente und Attribute: "h1", "h2", "h3", "h4", "h5", "p", "ol", "ul", "li", "a[target|href]", "br", "strong", "em", "b", "i".|
+|**author**|string|max. 256 Zeichen|Der bzw. die Autor(en) der API-App.|
 |homepage|string|URL|Die Startseite der API-App.|
 |endpoints|object||Eine Liste der Endpunkte, die die API-App-Plattform nach Informationen zu Methoden und Status der API-App abfragen kann.|
-|endpoints.apiDefinition|string|URL-Pfad|Relative URL einer von der API-App verfügbar gemachten API, die eine Swagger 2.0-API-Definition auf eine GET-Anforderung zurückgibt \(beispielsweise "/swagger/docs/v1"\). Falls gesetzt, wird diese anstelle der statischen apiDefinition.swagger.json-Datei im Paket verwendet \(sofern vorhanden\).|
+|endpoints.apiDefinition|string|URL-Pfad|Relative URL einer von der API-App verfügbar gemachten API, die eine Swagger 2.0-API-Definition auf eine GET-Anforderung zurückgibt (beispielsweise "/swagger/docs/v1"). Falls gesetzt, wird diese anstelle der statischen apiDefinition.swagger.json-Datei im Paket verwendet (sofern vorhanden).|
 |endpoints.status|string|URL-Pfad|Relative URL einer von der API-App verfügbar gemachten API, die Laufzeitstatusinformationen zur API-App auf eine GET-Anforderung zurückgibt.|
 |categories|string[]|community, social, enterprise, integration, protocol, app-datasvc, other|Die Azure Marketplace-Kategorie, in der dieses API-App-Paket angezeigt wird. Standardmäßig wird die API-App immer in der Community-Kategorie angezeigt. Sobald die API-App genehmigt wurde, wird sie in der angegebenen Kategorie angezeigt.|
 |license|object||Die Lizenz der API-App.|
@@ -83,9 +83,9 @@ Dies ist die Manifestdatei für Ihre API-App.
 
 Sie können hier optional eine statische Swagger 2.0-JSON-Datei bereitstellen, um die API-Definition Ihrer API-App verfügbar zu machen. Die Plattform prüft zunächst, ob die Eigenschaft **endpoints.apiDefinition** in **apiapp.json** konfiguriert ist. Falls ja, wird die API-Definition von der URL abgerufen, die in der Eigenschaft angegeben ist. Falls nicht, wird versucht, diese Datei zu ermitteln.
 
-- Informationen zum Swagger 2.0-Standard finden Sie unter [http://swagger.io/](http://swagger.io/). \<!--todo provide URLs
+- Informationen zum Swagger 2.0-Standard finden Sie unter [http://swagger.io/](http://swagger.io/). <!--todo provide URLs
 - Informationen zum Anpassen der API-Definition, um diese für Logik-Apps zu optimieren, finden Sie unter [Titel des Dokuments]().
-- Informationen dazu, wie Sie eine dynamische API-Definition verfügbar machen, finden Sie unter [Titel des Dokuments](). --\>
+- Informationen dazu, wie Sie eine dynamische API-Definition verfügbar machen, finden Sie unter [Titel des Dokuments](). -->
 
 ## metadata/icons
 
@@ -107,13 +107,13 @@ Sie können optional bis zu 5 Screenshots für Ihr API-App-Paket bereitstellen.
 
 |Datei|Breite|Höhe|Beschreibung|
 |:--------------------|:----|:-----|:----------|
-|metadata/screenshots/\*.png|533px|324px|Screenshots Ihres API-App-Pakets.|
+|metadata/screenshots/*.png|533px|324px|Screenshots Ihres API-App-Pakets.|
 
 ## metadata/deploymentTemplates
 
 Für einige API-App-Pakete ist bei der Bereitstellung eine benutzerdefinierte Konfiguration erforderlich. Beispielsweise erfordert der [Azure Storage-Blobconnector](http://azure.microsoft.com/marketplace/partners/microsoft_com/azurestorageblobconnector/) den URI zum Azure Storage-Blobcontainer. Optional können Sie auch einen Zugriffsschlüssel konfigurieren.
 
-Um dieses Szenario zu unterstützen, können Sie eine Liste der JSON-Vorlagendateien für den Azure-Ressourcen-Manager \(ARM\) in diesem Ordner hinzufügen, um die API-App-Bereitstellung anzupassen. Die API-App-Plattform führt Ihre benutzerdefinierten ARM-Vorlagen mit den Systemvorlagen zusammen, um eine finale Vorlage für die Bereitstellung zu erzeugen. Alle Parameter, die in Ihren benutzerdefinierten ARM-Vorlagen definiert sind \(erwartet für **$system**\), werden automatisch auch im Blatt **Erstellen** im Azure-Vorschauportal angefordert, sodass Benutzer Ihrer API-App die Werte eingeben können.
+Um dieses Szenario zu unterstützen, können Sie eine Liste der JSON-Vorlagendateien für den Azure-Ressourcen-Manager (ARM) in diesem Ordner hinzufügen, um die API-App-Bereitstellung anzupassen. Die API-App-Plattform führt Ihre benutzerdefinierten ARM-Vorlagen mit den Systemvorlagen zusammen, um eine finale Vorlage für die Bereitstellung zu erzeugen. Alle Parameter, die in Ihren benutzerdefinierten ARM-Vorlagen definiert sind (erwartet für **$system**), werden automatisch auch im Blatt **Erstellen** im Azure-Vorschauportal angefordert, sodass Benutzer Ihrer API-App die Werte eingeben können.
 
 Nachstehend wird eine ARM-Beispielvorlage gezeigt, die veranschaulicht, wie Sie während der API-App-Bereitstellung der Blobcontainer-URI und der Zugriffsschlüssel angefordert werden.
 
@@ -155,7 +155,7 @@ Nachstehend wird eine ARM-Beispielvorlage gezeigt, die veranschaulicht, wie Sie 
       ]
     }
 
-Das entsprechende Blatt zum Erstellen im Azure-Vorschauportal wird im nachstehenden Screenshot gezeigt. \(Der Screenshot zeigt ein API-App-Paket mit Verwendung von UIDefinition.json zur Verbesserung des Blatts "Erstellen".\) Weitere Informationen finden Sie unter [metadata/UIDefinition.json](#metadata-uidefinition-json).
+Das entsprechende Blatt zum Erstellen im Azure-Vorschauportal wird im nachstehenden Screenshot gezeigt. (Der Screenshot zeigt ein API-App-Paket mit Verwendung von UIDefinition.json zur Verbesserung des Blatts "Erstellen".) Weitere Informationen finden Sie unter [metadata/UIDefinition.json](#metadata-uidefinition-json).
 
 ![Beispiel für eine benutzerdefinierte ARM-Vorlage im Blatt "Erstellen"](./media/app-service-api-create-package/custom-arm-template-create-blade-example.png)
 
@@ -258,7 +258,7 @@ So erstellen Sie ein API-App-Paket
 Hierdurch werden die Paketinhalte überprüft, um Folgendes sicherzustellen:
 
 - Die Inhalten entsprechen dem oben beschriebenen Format
-- "Metadata\\apiDefinition.swagger.json" \(falls vorhanden\) enthält eine gültige Swagger 2.0-API-Definition
+- "Metadata\\apiDefinition.swagger.json" (falls vorhanden) enthält eine gültige Swagger 2.0-API-Definition
 
 Falls ein Problem vorliegt, werden die Details angezeigt, damit Sie das Problem beheben und ein gültiges API-App-Paket erstellen können.
 

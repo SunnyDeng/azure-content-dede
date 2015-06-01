@@ -21,7 +21,7 @@
 
 Dieses Dokument enthält die Versionshinweise zu Azure SDK für .NET 2.6-Version.
 
-Mit Azure SDK 2.6 können Sie Cloud-Dienst-Anwendungen \(PaaS\) entwickeln, die auf .NET 4.5.2 oder .NET 4.6 gedacht sind. Voraussetzung ist, dass Sie das .NET Ziel-Framework manuell auf der Cloud-Dienst-Rolle installieren. Siehe [Installieren Sie .NET auf einer Cloud-Dienst-Rolle](http://go.microsoft.com/fwlink/?LinkID=309796).
+Mit Azure SDK 2.6 können Sie Cloud-Dienst-Anwendungen (PaaS) entwickeln, die auf .NET 4.5.2 oder .NET 4.6 gedacht sind. Voraussetzung ist, dass Sie das .NET Ziel-Framework manuell auf der Cloud-Dienst-Rolle installieren. Siehe [Installieren Sie .NET auf einer Cloud-Dienst-Rolle](http://go.microsoft.com/fwlink/?LinkID=309796).
 
 
 ##Service Bus Updates
@@ -36,7 +36,7 @@ Mit Azure SDK 2.6 können Sie Cloud-Dienst-Anwendungen \(PaaS\) entwickeln, die 
 
 - **IntelliSense-Erweiterung**: Remote-Metadatenvorschlag
 
-	HDInsight Tools für Visual Studio unterstützt das Abrufen von Remote-Metadaten, wenn Sie Ihr Hive-Skript bearbeiten. Sie können z. B. **WÄHLEN\* AUS** eingeben, um alle Tabellennamen anzeigen zu lassen. Darüber hinaus werden die Spaltennamen nach der Angabe einer Tabelle angezeigt.
+	HDInsight Tools für Visual Studio unterstützt das Abrufen von Remote-Metadaten, wenn Sie Ihr Hive-Skript bearbeiten. Sie können z. B. **WÄHLEN* AUS** eingeben, um alle Tabellennamen anzeigen zu lassen. Darüber hinaus werden die Spaltennamen nach der Angabe einer Tabelle angezeigt.
 
 - **HDInsight Emulator-Support**
 
@@ -44,7 +44,7 @@ Mit Azure SDK 2.6 können Sie Cloud-Dienst-Anwendungen \(PaaS\) entwickeln, die 
 
 	Weitere Informationen finden Sie in [diesem Handbuch](http://go.microsoft.com/fwlink/?LinkID=529540&clcid=0x409).
 
-- **HDInsight Tools für Visual Studio-Unterstützung für generische Hadoop-Cluster** \(Vorschau\)
+- **HDInsight Tools für Visual Studio-Unterstützung für generische Hadoop-Cluster** (Vorschau)
 
 	HDInsight-Tools für Visual Studio unterstützt jetzt generische Hadoop-Cluster, wodurch Sie HDInsight Tools für Visual Studio verwenden können, um folgende Aufgaben auszuführen:
 
@@ -69,7 +69,7 @@ Die folgenden Elemente wurden in Version 2.6 von Azure SDK aktualisiert.
 - Erweiterte Azure-Veröffentlichung zur Einbeziehung von Azure API-Apps als Bereitstellungsziel.
 - API-Apps Bereitstellungsfunktion, um Benutzern API-App-Erstellung und Bereitstellungsfunktion zu eröffnen.
 - Server-Explorer geändert, um neuen App Service Knoten mit Web-, Mobil- und API-Apps, gruppiert nach Ressourcengruppe, widerzuspiegeln.
-- Hinzufügen von Azure API-App-Client-Bewegung, die für die meisten C\#-Projekte ergänzt wird. Diese ermöglicht die automatische Generierung von Swagger-fähigen API-Apps, die im Azure-Abonnement des Benutzers ausgeführt werden können.
+- Hinzufügen von Azure API-App-Client-Bewegung, die für die meisten C#-Projekte ergänzt wird. Diese ermöglicht die automatische Generierung von Swagger-fähigen API-Apps, die im Azure-Abonnement des Benutzers ausgeführt werden können.
 - API-Apps Tools und App Service Knoten im Server-Explorer sind nur in Visual Studio 2013 verfügbar. 
 
 ##Azure Ressourcen-Manager Tools Updates
@@ -78,9 +78,9 @@ Die Azure Ressourcen-Manager-Tools wurden mit Vorlagen für virtuelle Computer, 
 
 ##Verbesserungen bei der Diagnose für Cloud-Dienste
 
-Azure SDK 2.6 hat nun wieder Unterstützung für das Sammeln von Diagnoseprotokollen in Azure-Serveremulator und deren Übertragung in den Entwicklungsspeicher. Alle Diagnoseprotokolle \(einschließlich Anwendungsrückverfolgungsprotokollen, Ereignisverfolgungsprotokollen für Windows \(ETW\), Leistungsindikatoren, Infrastrukturprotokollen und Windows-Ereignisprotokollen\) die generiert werden, wenn die Anwendung im Emulator ausgeführt wird, können an den Entwicklungsspeicher übertragen werden, um zu überprüfen, ob die Diagnoseprotokollierung auf Ihrem lokalen Computer funktioniert.
+Azure SDK 2.6 hat nun wieder Unterstützung für das Sammeln von Diagnoseprotokollen in Azure-Serveremulator und deren Übertragung in den Entwicklungsspeicher. Alle Diagnoseprotokolle (einschließlich Anwendungsrückverfolgungsprotokollen, Ereignisverfolgungsprotokollen für Windows (ETW), Leistungsindikatoren, Infrastrukturprotokollen und Windows-Ereignisprotokollen) die generiert werden, wenn die Anwendung im Emulator ausgeführt wird, können an den Entwicklungsspeicher übertragen werden, um zu überprüfen, ob die Diagnoseprotokollierung auf Ihrem lokalen Computer funktioniert.
 
-Das Speicherkonto für die Diagnose kann jetzt in der Dienstkonfigurationsdatei \(.csfg\) angegeben werden, wodurch die Nutzung verschiedener Speicherkonten für die Diagnose unterschiedliche Umgebungen vereinfacht wird. Es gibt einige wichtige Unterschiede zwischen der Funktion der Verbindungszeichenfolge in Azure SDK 2.4 und Azure SDK 2.6. Weitere Informationen zur Verwendung der Verbindungszeichenfolge des Diagnosespeichers und Auswirkungen auf Ihre Projekte finden Sie unter [Konfigurieren der Diagnose für Azure Cloud Services](http://go.microsoft.com/fwlink/?LinkID=532784).
+Das Speicherkonto für die Diagnose kann jetzt in der Dienstkonfigurationsdatei (.csfg) angegeben werden, wodurch die Nutzung verschiedener Speicherkonten für die Diagnose unterschiedliche Umgebungen vereinfacht wird. Es gibt einige wichtige Unterschiede zwischen der Funktion der Verbindungszeichenfolge in Azure SDK 2.4 und Azure SDK 2.6. Weitere Informationen zur Verwendung der Verbindungszeichenfolge des Diagnosespeichers und Auswirkungen auf Ihre Projekte finden Sie unter [Konfigurieren der Diagnose für Azure Cloud Services](http://go.microsoft.com/fwlink/?LinkID=532784).
 
 ##Wichtige Änderungen
 

@@ -102,7 +102,7 @@ Stellen Sie sicher, dass Sie die folgenden Berechtigungen in der Datei  `Android
 
 ## Gewähren von OAuth-Anmeldeinformationen für Engagement
 
-Übermitteln Sie Ihre OAuth-Anmeldeinformationen (Client-ID und Clientschlüssel) an $/\#application/YOUR\_APPID/native-push.
+Übermitteln Sie Ihre OAuth-Anmeldeinformationen (Client-ID und Clientschlüssel) an $/#application/YOUR_APPID/native-push.
 
 Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Option "Any Time "(Jederzeit) auswählen.
 

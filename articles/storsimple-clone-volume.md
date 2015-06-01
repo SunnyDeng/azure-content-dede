@@ -43,13 +43,13 @@ Sie können einen Klon anhand einer lokalen oder einer Cloud-Momentaufnahme auf 
 
   1. Ermitteln Sie ein Zielgerät. Dies ist der Speicherort, an dem der Klon erstellt wird. Sie können das gleiche Gerät auswählen oder ein anderes Gerät angeben.
 
-        >  [AZURE.NOTE] Make sure that the capacity required for the clone is lower than the capacity available on the target device.
+        >  [AZURE.NOTE] Vergewissern Sie sich, dass für den Klon weniger Kapazität erforderlich ist, als auf dem Zielgerät verfügbar ist.
   2. Geben Sie einen eindeutigen Volumenamen für Ihren Klon an. Der Name muss zwischen 3 und 127 Zeichen lang sein.
   3. Klicken Sie auf den Pfeil ![Pfeilsymbol](./media/storsimple-clone-volume/HCS_ArrowIcon.png), um zur nächsten Seite zu wechseln.
 
 5. Führen Sie unter **Hosts angeben, die dieses Volume verwenden können** folgende Schritte aus:
 
-  1. Geben Sie einen Zugriffssteuerungsdatensatz \(ACR\) für den Klon an. Sie können einen neuen ACR hinzufügen oder diesen aus der Liste mit vorhandenen ACRs auswählen.
+  1. Geben Sie einen Zugriffssteuerungsdatensatz (ACR) für den Klon an. Sie können einen neuen ACR hinzufügen oder diesen aus der Liste mit vorhandenen ACRs auswählen.
   2. Klicken Sie auf das Häkchen ![Häkchensymbol](./media/storsimple-clone-volume/HCS_CheckIcon.png), um den Vorgang abzuschließen.
 
 6. Es wird ein Klonauftrag initiiert. Sie werden benachrichtigt, wenn der Klon erstellt wurde. Klicken Sie auf **Auftrag anzeigen**, um den Klonauftrag auf der Seite **Aufträge** zu überwachen.

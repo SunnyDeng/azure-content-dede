@@ -128,7 +128,7 @@ Sobald Ihr Cloud-Dienst-Projekt auf Azure bereitgestellt ist, verbinden Sie Ihre
     #Initialize domain variables
 
     $domain = '<your-domain-name>';
-    $dmuser = '$domain\<your-username>';
+    $dmuser = '$domain<your-username>';
     $dmpswd = '<your-domain-password>';
     $dmspwd = ConvertTo-SecureString $dmpswd -AsPlainText -Force;
     $dmcred = New-Object System.Management.Automation.PSCredential ($dmuser, $dmspwd);

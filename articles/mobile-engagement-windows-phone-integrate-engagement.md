@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Integration des Azure Mobile Engagement Windows Phone SDK" 
-	description="Integration von Engagement in Windows Phone" 					
+	description="Integration von Engagement in Windows Phone" 
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="lalathie" 
@@ -105,7 +105,7 @@ Um den Bericht über alle Protokolle zu aktivieren, die Engagement zum Berechnen
 
 Das folgende Beispiel zeigt die Vorgehensweise für eine Seite Ihrer Anwendung. Dasselbe Verfahren gilt für alle Seiten Ihrer Anwendung.
 
-#### C\#-Quelldatei
+#### C#-Quelldatei
 
 Ändern Sie die Datei `.xaml.cs` Ihrer Seite:
 
@@ -232,7 +232,7 @@ Legen Sie die Berichterstattung bei Abstürzen über das Objekt "EngagementConfi
 			/* Engagement configuration. */
 
 			EngagementConfiguration engagementConfiguration = new EngagementConfiguration(); engagementConfiguration.Agent.ConnectionString = "Endpoint={appCollection}.{domain};AppId={appId};SdkKey={sdkKey}";
-			/\* Disable Engagement crash reporting. \*/ engagementConfiguration.Agent.ReportCrash = false;
+			/* Disable Engagement crash reporting. */ engagementConfiguration.Agent.ReportCrash = false;
 
 ### Burstmodus [Beta]
 

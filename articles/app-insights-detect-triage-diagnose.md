@@ -50,7 +50,7 @@ Application Insights eignet sich für Geräte- und Webanwendungen. In dieser exe
 
 Marcela Markova ist im OBS-Team eine Spezialistin für Tests und für die Überwachung der Onlineleistung zuständig. Sie richtet mehrere [Webtests][availability] ein:
 
-* Einen einzelnen URL-Test für die Hauptangebotsseite der App, http://fabrikambank.com/onlinebanking/. Sie legt Kriterien für den HTTP-Code 200 und den Text "Willkommen!" fest. Wenn dieser Test misslingt, ist etwas mit dem Netzwerk oder den Servern ernsthaft nicht in Ordnung, oder es liegt ggf. ein Bereitstellungsproblem vor. \(Oder jemand hat ohne ihr Wissen die Begrüßungsmeldung auf der Seite geändert.\) 
+* Einen einzelnen URL-Test für die Hauptangebotsseite der App, http://fabrikambank.com/onlinebanking/. Sie legt Kriterien für den HTTP-Code 200 und den Text "Willkommen!" fest. Wenn dieser Test misslingt, ist etwas mit dem Netzwerk oder den Servern ernsthaft nicht in Ordnung, oder es liegt ggf. ein Bereitstellungsproblem vor. (Oder jemand hat ohne ihr Wissen die Begrüßungsmeldung auf der Seite geändert.) 
 
 
 * Einen umfassenden mehrstufigen Test, der eine Anmeldung ausführt, eine aktuelle Kontoauflistung abruft und einige wichtige Details auf jeder Seite überprüft. Dieser Test bestätigt, dass die Verbindung mit der Kontendatenbank funktioniert. Sie verwendet eine fiktive Kunden-ID, von denen einige für Testzwecke vorgehalten werden.
@@ -78,7 +78,7 @@ Auf der Übersichtsseite mit dem Verfügbarkeitsdiagramm gibt es auch ein Diagra
 Die Clientverarbeitungszeit wird von Telemetriedaten abgeleitet, die direkt von Webseiten gesendet werden. Die anderen Abbildungen zeigen auf den Webservern berechnete Metriken.
 
 
-Der Zähler "Anforderungsfehler" bezieht sich auf Fälle, bei denen Benutzern ein Fehler angezeigt wurde, meist im Anschluss an eine im Code ausgelöste Ausnahme. Vielleicht wird den Benutzern auf dem Bildschirm die Meldung "Es tut uns leid, dass wir Ihre Daten zur Zeit nicht aktualisieren können" oder aber \(im absolut peinlichsten Fall\) ein Stapelabbild des Webservers gezeigt.
+Der Zähler "Anforderungsfehler" bezieht sich auf Fälle, bei denen Benutzern ein Fehler angezeigt wurde, meist im Anschluss an eine im Code ausgelöste Ausnahme. Vielleicht wird den Benutzern auf dem Bildschirm die Meldung "Es tut uns leid, dass wir Ihre Daten zur Zeit nicht aktualisieren können" oder aber (im absolut peinlichsten Fall) ein Stapelabbild des Webservers gezeigt.
 
 
 Marcela wirft von Zeit zu Zeit gern einen Blick auf diese Diagramme. Die ständig im Hintergrund schwebenden fehlerhaften Anforderungen sind ein wenig deprimierend, haben ihre Ursache aber in einem Fehler, den das Team gerade untersucht. Nach dessen Behebung sollte sich die Lage entspannen. Doch wenn es bei den Anforderungsfehlern oder einigen anderen Metriken wie der Serverantwortzeit zu plötzlichen Spitzen kommt, möchte Marcela sofort davon wissen. Dabei kann es sich um ein unvorhergesehenes Problem handeln, das von einer bestimmten Codeversion, einem Fehler in einer Abhängigkeit, z. B. einer Datenbank, oder einer nicht ordnungsgemäßen Reaktion auf eine hohe Anforderungslast verursacht werden kann.
@@ -103,7 +103,7 @@ Es ist auch möglich, Warnungen für eine Vielzahl anderer Metriken festzulegen.
 ## Erkennen von Ausnahmen
 
 
-Ausnahmen werden Application Insights gemeldet, indem [TrackException\(\)][api] aufgerufen wird:
+Ausnahmen werden Application Insights gemeldet, indem [TrackException()][api] aufgerufen wird:
 
     var telemetry = new TelemetryClient();
     ...
@@ -126,7 +126,7 @@ Ausnahmen werden Application Insights gemeldet, indem [TrackException\(\)][api] 
 
 Das Team der Fabrikam-Bank hat lässt sich bei einer Ausnahme stets Telemetriedaten senden, es sei denn, es gibt eine offensichtliche Problemlösung.
 
-Die Strategie des Teams ist sogar noch umfassender: es lässt sich Telemetriedaten in allen Fällen senden, in denen der Kunde nicht den gewünschten Schritt ausführen kann, ob aufgrund einer Ausnahme im Code oder nicht. Wenn z. B. das externe Interbank-Überweisungssystem die Meldung "Diese Transaktion kann nicht abgeschlossen werden" aus bestimmten betrieblichen Gründen \(ohne Fehlverhalten des Kunden\) zurückgibt, wird auch dieses Ereignis nachverfolgt.
+Die Strategie des Teams ist sogar noch umfassender: es lässt sich Telemetriedaten in allen Fällen senden, in denen der Kunde nicht den gewünschten Schritt ausführen kann, ob aufgrund einer Ausnahme im Code oder nicht. Wenn z. B. das externe Interbank-Überweisungssystem die Meldung "Diese Transaktion kann nicht abgeschlossen werden" aus bestimmten betrieblichen Gründen (ohne Fehlverhalten des Kunden) zurückgibt, wird auch dieses Ereignis nachverfolgt.
 
     var successCode = AttemptTransfer(transferAmount, ...);
     if (successCode < 0)
@@ -147,13 +147,13 @@ Ausnahmen und Ereignisse werden auf dem Blatt [Diagnosesuche][diagnostic] gezeig
 ## Überwachung fehlerfreier Ereignisse 
 
 
-Das Entwicklungsteam von Fabrikam möchte gerne sowohl positive als auch negative Aspekte nachverfolgen. Erstens weil es schön, sich an den positiven Aspekten \(d. h. dem reibungslose Betrieb\) zu erfreuen und gewappnet zu sein, wenn ein positiver Aspekt sich plötzlich in einen negativen umkehrt.
+Das Entwicklungsteam von Fabrikam möchte gerne sowohl positive als auch negative Aspekte nachverfolgen. Erstens weil es schön, sich an den positiven Aspekten (d. h. dem reibungslose Betrieb) zu erfreuen und gewappnet zu sein, wenn ein positiver Aspekt sich plötzlich in einen negativen umkehrt.
 
 
 Die Wege vieler Benutzer durch das System folgen einem Trichtermodell: viele Kunden sehen sich die Zinssätze verschiedener Arten von Darlehen an, einige füllen das Angebotsformular aus, und diejenigen, die ein Angebot erhalten, nehmen anschließend das Darlehen auf.
 
 
-Das Entwicklungsteam fügt in jede Phase im Trichter "TrackMetric\(\)"-Aufrufe ein. Im Metrik-Explorer kann Brian, der Geschäftssystemarchitekt, die Werte der einzelnen Metriken vergleichen, um einzuschätzen, wie gut mit dem System Darlehen verkauft werden.
+Das Entwicklungsteam fügt in jede Phase im Trichter "TrackMetric()"-Aufrufe ein. Im Metrik-Explorer kann Brian, der Geschäftssystemarchitekt, die Werte der einzelnen Metriken vergleichen, um einzuschätzen, wie gut mit dem System Darlehen verkauft werden.
 
 
 Ursula, die Spezialistin für die Benutzererfahrung, behält auch die einwandfreien Metriken im Auge. Wenn im Trichterdiagramm in einer beliebigen Phase ein plötzlicher Abfall zu verzeichnen ist, zeigt dies an, dass ein bestimmtes Problem vorliegt. Vielleicht ist es schwierig, die richtige Schaltfläche zu finden, oder der Text ist ggf. nicht sehr förderlich. Oder es liegt ein Fehler vor: Benutzer klicken auf die Schaltfläche, aber nichts geschieht.
@@ -217,10 +217,10 @@ Bei einigen Problemen mit langsamen Abhängigkeiten ist die Geolocation die Ursa
 **Was haben wir gemacht?** Wenn das Problem nicht einer Abhängigkeit zuzuschreiben ist und nicht immer vorhanden war, wird es wahrscheinlich durch eine zuletzt erfolgte Änderung verursacht. Die von den Metrik- und Ereignisdiagrammen zur Verfügung gestellte Verlaufsansicht erleichtert das Korrelieren plötzlicher Änderungen mit Bereitstellungen Dadurch kann die Suche nach der Problemursache eingeengt werden.
 
 
-**Was passiert?** Einige Probleme treten nur selten auf und können schwierig aufzuspüren sein, wenn Tests offline erfolgen. Alles, was wir tun können, ist versuchen, den Fehler zu erfassen, wenn er online auftritt. Sie können das Stapelabbild in den Ausnahmeberichten prüfen. Darüber hinaus können Sie die Ablaufverfolgungsaufrufe mit Ihrem bevorzugten Protokollierungsframework oder mit "TrackTrace\(\)" oder "TrackEvent\(\)" schreiben.
+**Was passiert?** Einige Probleme treten nur selten auf und können schwierig aufzuspüren sein, wenn Tests offline erfolgen. Alles, was wir tun können, ist versuchen, den Fehler zu erfassen, wenn er online auftritt. Sie können das Stapelabbild in den Ausnahmeberichten prüfen. Darüber hinaus können Sie die Ablaufverfolgungsaufrufe mit Ihrem bevorzugten Protokollierungsframework oder mit "TrackTrace()" oder "TrackEvent()" schreiben.
 
 
-Bei Fabrikam war ein zwischenzeitliches Problem bei Überweisungen zwischen Konten, jedoch nur bei bestimmten Kontotypen aufgetreten. Um besser zu verstehen, was passiert ist, hat das Team "TrackTrace\(\)"-Aufrufe an wichtigen Punkten im Code eingefügt, wobei der Kontotyp jedem Aufruf als Eigenschaft angefügt wird. Dadurch wurde das Herausfiltern bloß dieser Ablaufverfolgungen bei der Diagnosesuche erleichtert. Außerdem hat das Team Parameterwerte als Eigenschaften und Kennzahlen an die Ablaufverfolgungsaufrufe angefügt.
+Bei Fabrikam war ein zwischenzeitliches Problem bei Überweisungen zwischen Konten, jedoch nur bei bestimmten Kontotypen aufgetreten. Um besser zu verstehen, was passiert ist, hat das Team "TrackTrace()"-Aufrufe an wichtigen Punkten im Code eingefügt, wobei der Kontotyp jedem Aufruf als Eigenschaft angefügt wird. Dadurch wurde das Herausfiltern bloß dieser Ablaufverfolgungen bei der Diagnosesuche erleichtert. Außerdem hat das Team Parameterwerte als Eigenschaften und Kennzahlen an die Ablaufverfolgungsaufrufe angefügt.
 
 
 ## Fehlerkorrektur 

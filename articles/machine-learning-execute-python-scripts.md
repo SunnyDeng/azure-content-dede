@@ -39,11 +39,11 @@ Die primäre Schnittstelle zu Python in Azure Machine Learning Studio wird durch
 
 Abbildung 1. Das **Execute Python Script**-Modul
 
-Ebenso wie sein R-Äquivalent, das [Execute R Script][execute-r-script]-Modul, akzeptiert das [Execute Python Script][execute-python-script]-Modul bis zu drei Eingaben und erzeugt bis zu zwei Ausgaben \(wie unten beschrieben\). Der auszuführende Python-Code wird in das Parameterfeld als speziell benannte Einstiegspunktfunktion namens `azureml_main` eingegeben. Im Folgenden sind die wichtigsten Entwurfsprinzipien zur Implementierung dieses Moduls aufgeführt:
+Ebenso wie sein R-Äquivalent, das [Execute R Script][execute-r-script]-Modul, akzeptiert das [Execute Python Script][execute-python-script]-Modul bis zu drei Eingaben und erzeugt bis zu zwei Ausgaben (wie unten beschrieben). Der auszuführende Python-Code wird in das Parameterfeld als speziell benannte Einstiegspunktfunktion namens `azureml_main` eingegeben. Im Folgenden sind die wichtigsten Entwurfsprinzipien zur Implementierung dieses Moduls aufgeführt:
 
 1.	*Muss für Python-Benutzer idiomatisch sein.* Die meisten Python-Benutzer schreiben ihren Code als Funktionen innerhalb von Modulen. Daher werden in ein Modell der obersten Ebene eher selten viele ausführbare Anweisungen eingefügt. Demzufolge akzeptiert das Skriptfeld auch eine speziell benannte Python-Funktion und nicht nur eine Sequenz von Anweisungen. Die in der Funktion verfügbar gemachten Objekte sind Standardtypen der Python-Bibliothek, z. B. [Pandas](http://pandas.pydata.org/)-Datenrahmen und [NumPy](http://www.numpy.org/)-Arrays.
 2.	*Erfordert eine hohe Genauigkeit zwischen lokalen und Cloudausführungen.* Das zum Ausführen des Python-Codes verwendete Back-End basiert auf [Anaconda](https://store.continuum.io/cshop/anaconda/) 2.1, einer weit verbreiteten plattformübergreifenden, wissenschaftlichen Python-Distribution. Sie wird mit knapp 200 der gängigsten Python-Pakete geliefert. Aus diesem Grund kann ein Datenanalyst den Code in der lokalen, mit Azure Machine Learning kompatiblen Anaconda-Umgebung debuggen und qualifizieren. Hierzu können vorhandene Entwicklungsumgebungen wie [IPython](http://ipython.org/) Notebook oder [Python-Tools für Visual Studio](http://pytools.codeplex.com/) verwendet und mit hoher Zuverlässigkeit als Teil eines Azure Machine Learning-Versuchs ausgeführt werden. Zudem handelt es sich beim `azureml_main`-Einstiegspunkt um eine einfache Python-Funktion, die ohne spezifischen Azure Machine Learning-Code und ohne Installation des SDK erstellt werden kann.
-3.	*Muss eine nahtlos mit anderen Azure Machine Learning-Modulen zusammensetzbar sein.* Das Modul [Execute Python Script][execute-python-script] akzeptiert Azure Machine Learning-Standard-Datasets als Eingabe und Ausgabe. Das zugrunde liegende Framework verbindet transparent und effizient die Laufzeiten von Azure Machine Learning und Python \(mit Unterstützung von Features wie z. B. fehlenden Werten\). Python kann daher in Verbindung mit vorhandenen Azure Machine Learning-Workflows eingesetzt werden, auch mit solchen, die R- und SQLite-Aufrufe verwenden. Daher kann man sich Workflows vorstellen, die folgende Aktionen ausführen:
+3.	*Muss eine nahtlos mit anderen Azure Machine Learning-Modulen zusammensetzbar sein.* Das Modul [Execute Python Script][execute-python-script] akzeptiert Azure Machine Learning-Standard-Datasets als Eingabe und Ausgabe. Das zugrunde liegende Framework verbindet transparent und effizient die Laufzeiten von Azure Machine Learning und Python (mit Unterstützung von Features wie z. B. fehlenden Werten). Python kann daher in Verbindung mit vorhandenen Azure Machine Learning-Workflows eingesetzt werden, auch mit solchen, die R- und SQLite-Aufrufe verwenden. Daher kann man sich Workflows vorstellen, die folgende Aktionen ausführen:
   * Verwenden von Python und Pandas zur Datenvorbereitung und -bereinigung 
   * Einführen von Daten in eine SQL-Transformation, wobei mehrere Datasets zu Features verknüpft werden 
   * Trainieren von Modellen mit der umfassenden Sammlung von Algorithmen in Azure Maschine Learning 
@@ -52,7 +52,7 @@ Ebenso wie sein R-Äquivalent, das [Execute R Script][execute-r-script]-Modul, a
 
 ## Grundlegende Verwendung
 In diesem Abschnitt untersuchen wir einige der grundlegenden Anwendungsmöglichkeiten des Moduls [Execute Python Script][execute-python-script]. 
-Wie bereits erwähnt, werden alle Eingaben in das Python-Modul als Pandas-Datenrahmen verfügbar gemacht. Weitere Informationen zu Pandas und wie es zum effektiven und effizienten Verarbeiten von Daten verwendet werden kann, finden Sie in *Python for Data Analysis* \(Sebastopol, CA.: O' Reilly, 2012\) von W. McKinney. Die Funktion muss einen einzigen Pandas-Datenrahmen zurückgeben, der in eine Python-[Sequenz](https://docs.python.org/2/c-api/sequence.html) wie z. B. ein Tupel, eine Liste oder ein NumPy-Array eingebettet ist. Das erste Element der Sequenz wird anschließend am ersten Ausgabeport des Moduls zurückgegeben. Dieses Schema wird in Abbildung 2 dargestellt.
+Wie bereits erwähnt, werden alle Eingaben in das Python-Modul als Pandas-Datenrahmen verfügbar gemacht. Weitere Informationen zu Pandas und wie es zum effektiven und effizienten Verarbeiten von Daten verwendet werden kann, finden Sie in *Python for Data Analysis* (Sebastopol, CA.: O' Reilly, 2012) von W. McKinney. Die Funktion muss einen einzigen Pandas-Datenrahmen zurückgeben, der in eine Python-[Sequenz](https://docs.python.org/2/c-api/sequence.html) wie z. B. ein Tupel, eine Liste oder ein NumPy-Array eingebettet ist. Das erste Element der Sequenz wird anschließend am ersten Ausgabeport des Moduls zurückgegeben. Dieses Schema wird in Abbildung 2 dargestellt.
 
 ![Bild3](./media/machine-learning-execute-python-scripts/figure2.png) 
 Abbildung 2. Zuordnung von Eingabeports zu Parametern und des Rückgabewerts zum Ausgabeport.
@@ -63,14 +63,14 @@ Eine ausführlichere Semantik zur Zuordnung der Eingangsports zu Parametern der 
 
 Tabelle 1. Zuordnung von Eingabeports zu Funktionsparametern.
 
-Beachten Sie, dass die Zuordnung zwischen Eingabeports und Funktionsparametern nach Position erfolgt, d. h. der erste verbundene Eingabeport wird dem ersten Parameter der Funktion zugeordnet, und der zweite Eingabeport \(falls verbunden\) wird dem zweiten Parameter der Funktion zugeordnet.
+Beachten Sie, dass die Zuordnung zwischen Eingabeports und Funktionsparametern nach Position erfolgt, d. h. der erste verbundene Eingabeport wird dem ersten Parameter der Funktion zugeordnet, und der zweite Eingabeport (falls verbunden) wird dem zweiten Parameter der Funktion zugeordnet.
 
 ## Übersetzung von Eingabe- und Ausgabetypen
 Wie bereits erwähnt, werden Eingabedatasets in Azure Machine Learning in Datenrahmen in Pandas konvertiert, und Ausgabedatenrahmen werden in Azure Machine Learning-Datasets zurückkonvertiert. Die folgenden Konvertierungen werden durchgeführt:
 
-1.	Zeichenfolgen- und numerische Spalten werden unverändert konvertiert, und fehlende Werte in einem Dataset werden in NA-Werte in Pandas konvertiert. Dieselbe Konvertierung erfolgt auf dem Rückweg \(NA-Werte in Pandas werden in fehlende Werte in Azure Machine Learning konvertiert\).
+1.	Zeichenfolgen- und numerische Spalten werden unverändert konvertiert, und fehlende Werte in einem Dataset werden in NA-Werte in Pandas konvertiert. Dieselbe Konvertierung erfolgt auf dem Rückweg (NA-Werte in Pandas werden in fehlende Werte in Azure Machine Learning konvertiert).
 2.	Indexvektoren in Pandas werden in Azure Machine Learning nicht unterstützt, und alle Eingabedatenrahmen in der Python-Funktion besitzen immer einen numerischen 64-Bit-Index von 0 bis zur Anzahl der Zeilen minus 1. 
-3.	Azure Machine Learning-Datasets können keine doppelten Spaltennamen aufweisen und keine Spaltennamen, die keine Zeichenfolgen sind. Wenn ein Ausgabedatenrahmen nicht-numerische Spalten enthält, ruft das Framework `str` für die Spaltennamen auf. Ebenso werden alle doppelten Spaltennamen automatisch geändert, um sicherzustellen, dass die Namen eindeutig sind. Das Suffix \(2\) wird dem ersten Duplikat, das Suffix \(3\) dem zweiten Duplikat usw. hinzugefügt.
+3.	Azure Machine Learning-Datasets können keine doppelten Spaltennamen aufweisen und keine Spaltennamen, die keine Zeichenfolgen sind. Wenn ein Ausgabedatenrahmen nicht-numerische Spalten enthält, ruft das Framework `str` für die Spaltennamen auf. Ebenso werden alle doppelten Spaltennamen automatisch geändert, um sicherzustellen, dass die Namen eindeutig sind. Das Suffix (2) wird dem ersten Duplikat, das Suffix (3) dem zweiten Duplikat usw. hinzugefügt.
 
 ## Operationalisieren von Python-Skripts
 Alle [Execute Python Script][execute-python-script]-Module in einem Bewertungsversuch werden bei der Veröffentlichung als Webdienst aufgerufen. Abbildung 3 zeigt beispielsweise einen Bewertungsversuch, der den Code zum Auswerten eines einzelnen Python-Ausdrucks enthält.
@@ -81,7 +81,7 @@ Alle [Execute Python Script][execute-python-script]-Module in einem Bewertungsve
 
 Abbildung 3. Webdienst zum Auswerten eines Python-Ausdrucks.
 
-Ein aus diesem Versuch erstellter Webdienst akzeptiert als Eingabe einen Python-Ausdruck \(als Zeichenfolge\), sendet ihn an den Python-Interpreter und gibt eine Tabelle mit dem Ausdruck und dem ausgewerteten Ergebnis zurück.
+Ein aus diesem Versuch erstellter Webdienst akzeptiert als Eingabe einen Python-Ausdruck (als Zeichenfolge), sendet ihn an den Python-Interpreter und gibt eine Tabelle mit dem Ausdruck und dem ausgewerteten Ergebnis zurück.
 
 ## Importieren vorhandener Python-Module
 Ein häufiges Anwendungsbeispiel für viele Datenanalysten besteht darin, vorhandene Python-Skripts in Azure Machine Learning-Versuche zu integrieren. Statt den gesamten Code zu verketten und in ein einziges Skriptfeld einzufügen, akzeptiert das [Execute Python Script][execute-python-script]-Modul einen dritten Eingabeport, mit dem eine ZIP-Datei, die die Python-Module enthält, verbunden werden kann. Die Datei wird dann vom Ausführungs-Framework entpackt, und die Inhalte werden dem Bibliothekspfad des Python-Interpreters hinzugefügt. Die `azureml_main`-Einstiegspunktfunktion kann diese Module anschließend direkt importieren.
@@ -120,7 +120,7 @@ Um Bilder aus MatplotLib zu generieren, müssen Sie das folgende Verfahren absch
 * Rufen Sie die Achse ab, und generieren Sie alle zugehörigen Plots. 
 * Speichern Sie die Abbildung als PNG-Datei. 
 
-Dieser Prozess wird unten in Abbildung 8 dargestellt, die mithilfe der scatter\_matrix-Funktion in Pandas eine Punktdiagramm-Matrix erstellt.
+Dieser Prozess wird unten in Abbildung 8 dargestellt, die mithilfe der scatter_matrix-Funktion in Pandas eine Punktdiagramm-Matrix erstellt.
  
 ![Bild1v](./media/machine-learning-execute-python-scripts/figure-v1-8.png)
 
@@ -158,7 +158,7 @@ Das Modul [Execute Python Script][execute-python-script] weist derzeit die folge
 1.	*Sandbox-Ausführung.* Die Python-Laufzeit befindet sich derzeit im Sandbox-Modus und ermöglicht daher keinen dauerhaften Zugriff auf das Netzwerk oder auf das lokale Dateisystem. Alle lokal gespeicherten Dateien sind isoliert und werden nach Abschluss des Moduls gelöscht. Auf dem Computer, auf dem er ausgeführt wird, kann der Python-Code nur auf das aktuelle Verzeichnis und die zugehörigen Unterverzeichnisse zugreifen.
 2.	*Keine differenzierte Unterstützung für Entwicklung und Debuggen.* IDE-Features wie Intellisense und Debuggen werden vom Python-Modul derzeit nicht unterstützt. Wenn das Modul zur Laufzeit einen Fehler verursacht, steht die vollständige Python-Stapelüberwachung zur Verfügung, muss jedoch im Ausgabeprotokoll für das Modul angezeigt werden. Derzeit wird empfohlen, dass Benutzer ihre Python-Skripts in einer Umgebung wie IPython entwickeln und debuggen und dann den Code in das Modul importieren.
 3.	*Ausgabe in einem einzelnen Datenrahmen.* Der Python-Einstiegspunkt kann nur einen einzelnen Datenrahmen als Ausgabe zurückgeben. Derzeit ist es nicht möglich, beliebige Python-Objekte wie z. B. trainierte Modelle direkt an die Azure Machine Learning-Laufzeit zurückzugeben. Wie beim [Execute R Script][execute-r-script]-Modul, das dieselbe Einschränkung aufweist, ist es jedoch in vielen Fällen möglich, Objekte in ein Bytearray einzubetten und dieses innerhalb eines Datenrahmens zurückzugeben.
-4.	*Keine Möglichkeit zum Anpassen der Python-Installation*. Derzeit besteht die einzige Möglichkeit zum Hinzufügen benutzerdefinierter Python-Module über den weiter oben beschriebenen ZIP-Dateimechanismus. Während dies bei kleinen Modulen machbar ist, ist dieser Ansatz für große Module \(vor allem solche mit systemeigenen DLLs\) oder eine große Anzahl von Modulen umständlich. 
+4.	*Keine Möglichkeit zum Anpassen der Python-Installation*. Derzeit besteht die einzige Möglichkeit zum Hinzufügen benutzerdefinierter Python-Module über den weiter oben beschriebenen ZIP-Dateimechanismus. Während dies bei kleinen Modulen machbar ist, ist dieser Ansatz für große Module (vor allem solche mit systemeigenen DLLs) oder eine große Anzahl von Modulen umständlich. 
 
 
 ##Zusammenfassung

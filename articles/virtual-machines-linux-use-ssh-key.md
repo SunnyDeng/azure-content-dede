@@ -122,7 +122,7 @@ Die Datei **myCert.pem** ist der öffentliche Schlüssel, der anschließend verw
 
 4. Klicken Sie auf das Menü: Datei > Privaten Schlüssel laden
 
-5. Suchen Sie nach dem privaten Schlüssel, den wir oben als  `myPrivateKey_rsa` benannt haben. Ändern Sie den Dateifilter, sodass er **Alle Dateien (\*.\*)** anzeigt.
+5. Suchen Sie nach dem privaten Schlüssel, den wir oben als  `myPrivateKey_rsa` benannt haben. Ändern Sie den Dateifilter, sodass er **Alle Dateien (*.*)** anzeigt.
 
 6. Klicken Sie auf **Öffnen**. Sie erhalten eine Aufforderung, die ungefähr folgendermaßen aussieht:
 

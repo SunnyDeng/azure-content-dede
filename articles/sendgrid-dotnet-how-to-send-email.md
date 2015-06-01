@@ -27,7 +27,7 @@ Letzte Aktualisierung: 24. Februar 2015
 <h2><a name="overview"></a><span  class="short-header">Übersicht</span></h2>
 
 Dieser Leitfaden veranschaulicht die Durchführung allgemeiner Programmieraufgaben mit dem
-SendGrid-E-Mail-Dienst in Azure. Die Beispiele sind in C\# geschrieben und verwenden die .NET API. Beschrieben werden die Szenarien **Schreiben einer E-Mail**, **Senden einer E-Mail**, **Hinzufügen von Anhängen** und **Verwenden von Filtern**. Weitere Informationen zu SendGrid und zum Senden von E-Mails finden Sie im
+SendGrid-E-Mail-Dienst in Azure. Die Beispiele sind in C# geschrieben und verwenden die .NET API. Beschrieben werden die Szenarien **Schreiben einer E-Mail**, **Senden einer E-Mail**, **Hinzufügen von Anhängen** und **Verwenden von Filtern**. Weitere Informationen zu SendGrid und zum Senden von E-Mails finden Sie im
 Abschnitt [Nächste Schritte][].
 
 <h2><a name="whatis"></a><span  class="short-header">Was ist der SendGrid-E-Mail-Dienst?</span></h2>
@@ -71,7 +71,7 @@ Die .NET-Klassenbibliothek für SendGrid heißt **SendGridMail**. Sie enthält d
 -   **SendGridMail** zur Erstellung und Bearbeitung von E-Mail-Elementen.
 -   **SendGridMail.Transport** zum Senden von E-Mails entweder über das Protokoll **SMTP** oder über das Protokoll HTTP 1.1 mit **Web/REST**.
 
-Fügen Sie zu Beginn aller C\#-Dateien, in denen Sie programmgesteuert auf den E-Mail-Dienst SendGrid zugreifen möchten, die folgenden Namespace-Codedeklarationen hinzu:
+Fügen Sie zu Beginn aller C#-Dateien, in denen Sie programmgesteuert auf den E-Mail-Dienst SendGrid zugreifen möchten, die folgenden Namespace-Codedeklarationen hinzu:
 **System.Net** und **System.Net.Mail** sind .NET Framework-Namespaces, die enthalten sind, weil sie Typen enthalten, die üblicherweise mit den SendGrid-APIs verwendet werden.
 
     using System;
@@ -204,7 +204,7 @@ Die folgenden Beispiele veranschaulichen die Filter für die Fußzeile und die K
     myMessage.AddTo("anna@example.com");
     myMessage.From = new MailAddress("john@example.com", "John Smith");
     myMessage.Subject = "Testing the SendGrid Library";
-    myMessage.Html = "<p><a href=\"http://www.example.com\">Hello World Link!</a></p>";
+    myMessage.Html = "<p><a href="http://www.example.com">Hello World Link!</a></p>";
     myMessage.Text = "Hello World!";
     
     // true indicates that links in plain text portions of the email 
@@ -219,7 +219,7 @@ SendGrid bietet webbasierte APIs und Webhooks, die Sie zur Nutzung zusätzlicher
 
 Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
-* Repo für die SendGrid C\#-Bibliothek: [sendgrid-csharp][]
+* Repo für die SendGrid C#-Bibliothek: [sendgrid-csharp][]
 *   Dokumentation zur SendGrid-API: <https://sendgrid.com/docs>
 *   Spezielles SendGrid-Angebot für Azure-Kunden: [https://sendgrid.com](https://sendgrid.com)
 

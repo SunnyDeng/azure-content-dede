@@ -45,7 +45,7 @@ HDInsight unterstützt mehrere Hadoop-Clusterversionen, die jederzeit bereitgest
 
 **Abrufen von aktuellen Versionsinformationen zu Komponenten**
 
-Die den HDInsight-Clusterversionen zugeordneten Komponentenversionen können sich bei künftigen Updates für HDInsight ändern. Eine Möglichkeit, die verfügbaren Komponenten zu bestimmen und zu prüfen, welche Versionen für einen Cluster verwendet werden, bietet die Ambari REST-API. Der Befehl **GetComponentInformation** kann zum Abrufen von Informationen zu einer Dienstkomponente verwendet werden. Weitere Informationen finden Sie in der [Ambari-Dokumentation][ambari-docs]. Um diese Informationen zu erhalten, können Sie sich auch per Remotedesktop bei einem Cluster anmelden und den Inhalt des Verzeichnisses "C:\apps\dist\" direkt prüfen.
+Die den HDInsight-Clusterversionen zugeordneten Komponentenversionen können sich bei künftigen Updates für HDInsight ändern. Eine Möglichkeit, die verfügbaren Komponenten zu bestimmen und zu prüfen, welche Versionen für einen Cluster verwendet werden, bietet die Ambari REST-API. Der Befehl **GetComponentInformation** kann zum Abrufen von Informationen zu einer Dienstkomponente verwendet werden. Weitere Informationen finden Sie in der [Ambari-Dokumentation][ambari-docs]. Um diese Informationen zu erhalten, können Sie sich auch per Remotedesktop bei einem Cluster anmelden und den Inhalt des Verzeichnisses "C:\apps\dist" direkt prüfen.
 
 
 **Versionshinweise**	

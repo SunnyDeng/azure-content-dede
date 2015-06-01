@@ -5,11 +5,11 @@
 
 Sie können die Kommunikation zwischen Web-App und Browser mit HTTPS sichern, wobei Secure Socket Layer (SSL)-Verschlüsselung verwendet wird. Dies ist die gängigste Methode zum Schützen von Daten, die über das Internet gesendet werden, und bietet Besuchern die Sicherheit, dass ihre Transaktionen mit Ihrer Web-App sicher sind. In diesem Artikel wird die Vorgehensweise beim Konfigurieren von HTTPS für eine Web-App in Azure App Service beschrieben. 
 
-##<a name="bkmk_azurewebsites"></a>HTTPS für die Domäne "\*.azurewebsites.net"
+##<a name="bkmk_azurewebsites"></a>HTTPS für die Domäne "*.azurewebsites.net"
 
-Wenn Sie keinen benutzerdefinierten Domänennamen verwenden möchten, sondern stattdessen die Domäne "\*.azurewebsites.net" verwenden möchten, die Ihrer Web-App von Azure zugewiesen wird (z. B. "contoso.azurewebsites.net"), wird Ihre Web-App bereits durch ein von Microsoft bereitgestelltes Zertifikat geschützt, das HTTPS aktiviert. Sie können mit **https://mywebsite.azurewebsites.net** auf Ihre App zugreifen. \*.azurewebsites.net ist jedoch eine Domäne mit Platzhalter. Wie [alle Platzhalterdomänen](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/) ist es nicht so sicher wie die Verwendung einer benutzerdefinierten Domäne mit Ihrem eigenen Zertifikat. 
+Wenn Sie keinen benutzerdefinierten Domänennamen verwenden möchten, sondern stattdessen die Domäne "*.azurewebsites.net" verwenden möchten, die Ihrer Web-App von Azure zugewiesen wird (z. B. "contoso.azurewebsites.net"), wird Ihre Web-App bereits durch ein von Microsoft bereitgestelltes Zertifikat geschützt, das HTTPS aktiviert. Sie können mit **https://mywebsite.azurewebsites.net** auf Ihre App zugreifen. *.azurewebsites.net ist jedoch eine Domäne mit Platzhalter. Wie [alle Platzhalterdomänen](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/) ist es nicht so sicher wie die Verwendung einer benutzerdefinierten Domäne mit Ihrem eigenen Zertifikat. 
 
-In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie HTTPS für benutzerdefinierte Domänen wie **contoso.com**, **www.contoso.com** oder **\*.contoso.com** aktiviert wird.
+In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie HTTPS für benutzerdefinierte Domänen wie **contoso.com**, **www.contoso.com** oder ***.contoso.com** aktiviert wird.
 
 ##<a name="bkmk_domainname"></a>Aktivieren von SSL für Ihre benutzerdefinierte Domäne
 
@@ -39,7 +39,7 @@ Um ein SSL-Zertifikat für die Verwendung mit Azure-Web-Apps zu erhalten, müsse
 - [Abrufen eines SubjectAltName-Zertifikats mit OpenSSL](#bkmk_subjectaltname)
 - [Generieren selbstsignierter Zertifikate (nur für Testzwecke)](#bkmk_selfsigned) 
 
-> [AZURE.NOTE] Wenn Sie die Schritte befolgen, werden Sie aufgefordert, einen **Allgemeinen Namen**, z. B. `www.contoso.com` einzugeben. Für Platzhalterzertifikate sollte dieser Wert \*.domainname (z. B. \*.contoso.com) sein. Wenn Sie einen Platzhalternamen wie *.contoso.com und einen Stammdomänennamen wie contoso.com unterstützen müssen, können Sie ein Platzhalterzertifikat für einen alternativen Antragstellernamen (subjectAltName) verwenden.
+> [AZURE.NOTE] Wenn Sie die Schritte befolgen, werden Sie aufgefordert, einen **Allgemeinen Namen**, z. B. `www.contoso.com` einzugeben. Für Platzhalterzertifikate sollte dieser Wert *.domainname (z. B. *.contoso.com) sein. Wenn Sie einen Platzhalternamen wie *.contoso.com und einen Stammdomänennamen wie contoso.com unterstützen müssen, können Sie ein Platzhalterzertifikat für einen alternativen Antragstellernamen (subjectAltName) verwenden.
 >
 > Zertifikate für die Kryptografie für elliptische Kurven (ECC) werden für Azure-Web-Apps zwar unterstützt, sie sind jedoch noch relativ neu, daher sollten Sie bei Ihrer Zertifizierungsstelle erfragen, wie genau Sie die CSR-Datei erstellen.
 

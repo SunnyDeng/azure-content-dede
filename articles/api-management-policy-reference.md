@@ -390,9 +390,9 @@ Das Caching von Antworten senkt Bandbreitennutzung und Prozessoranforderungen au
 
 | Element/Attribut                                  | Beschreibung                                                                                                                                                                                                                                         |
 |---------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| vary-by-developer="true | false"                  | Für \*true\* werden Antworten pro Entwickler-Schlüssel zwischengespeichert; der Standardwert ist \*false\*                                                                                                                                           |
-| vary-by-developer-groups="true | false"           | Für \*true\* werden Antworten pro Benutzerrolle zwischengespeichert; der Standardwert ist \*false\*                                                                                                                                                  |
-| downstream-caching-type="none | private | public" | \*none\* - kein Downstream-Caching erlaubt; standardmäßig eingestellt | \*private\* - privates Downstream-Caching ist erlaubt | \*public\* - privates und gemeinsam genutztes Downstream-Caching ist erlaubt.                                        |
+| vary-by-developer="true | false"                  | Für *true* werden Antworten pro Entwickler-Schlüssel zwischengespeichert; der Standardwert ist *false*                                                                                                                                           |
+| vary-by-developer-groups="true | false"           | Für *true* werden Antworten pro Benutzerrolle zwischengespeichert; der Standardwert ist *false*                                                                                                                                                  |
+| downstream-caching-type="none | private | public" | *none* - kein Downstream-Caching erlaubt; standardmäßig eingestellt | *private* - privates Downstream-Caching ist erlaubt | *public* - privates und gemeinsam genutztes Downstream-Caching ist erlaubt.                                        |
 | vary-by-header: "Accept"                          | Antworten werden je nach Wert des `Accept`-Headers zwischengespeichert                                                                                                                                                                               |
 | vary-by-header: Accept-Charset"                   | Antworten werden je nach Wert des `Accept-Charset`-Headers zwischengespeichert                                                                                                                                                                       |
 | vary-by-header: "Headername"                      | Antworten werden je nach Wert des angegebenen Headers zwischengespeichert, z. B. `Accept | Accept-Charset | Accept-Encoding | Accept-Language | Authorization | Expect | From | Host | If-Match`                                                     |
@@ -537,7 +537,7 @@ Für eingehende Aufrufe im *API-* oder *Operations-*Geltungsbereich.
 
 | Attribut             | Beschreibung                                                                                                                         |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| <origin>\*</origin>  | Alle ODER eine Liste bestimmter URIs erlauben                                                                                        |
+| <origin>*</origin>  | Alle ODER eine Liste bestimmter URIs erlauben                                                                                        |
 | <origin>URI</origin> | Die URI muss Schema, Host und Port enthalten. Wenn kein Port angegeben ist, wird Port 80 für HTTP und Port 443 für HTTPS angenommen. |
 
   [Richtlinien für die API-Verwaltung]: ../api-management-howto-policies

@@ -22,7 +22,7 @@ Dieser Artikel enthält Anleitungen für häufige Aufgaben zum Bereitstellen und
 
 ## Vorbereitung
 
-Vor der Verwendung der Azure-Befehlszeilenschnittstelle mit Azure Ressourcengruppen benötigen Sie die richtige Version der Azure-CLI und eine Arbeits- oder Schul-ID \(auch als "Organisations-ID" bezeichnet\).
+Vor der Verwendung der Azure-Befehlszeilenschnittstelle mit Azure Ressourcengruppen benötigen Sie die richtige Version der Azure-CLI und eine Arbeits- oder Schul-ID (auch als "Organisations-ID" bezeichnet).
 
 ### Schritt 1: Aktualisieren Sie Ihre Azure-CLI-Version zu 0.9.0
 
@@ -60,7 +60,7 @@ mit dem Abonnementnamen oder der ID festlegen, die über die Ressourcen verfügt
 
 ### Schritt 3: Wechseln Sie zum Azure CLI-Ressourcengruppenmodus
 
-Standardmäßig beginnt die Azure-CLI im Verwaltungsdienst-Modus \(\*\*Asm\*\*-Modus\). Typ
+Standardmäßig beginnt die Azure-CLI im Verwaltungsdienst-Modus (**Asm**-Modus). Typ
 
 	azure config mode arm
 
@@ -70,14 +70,14 @@ um in den Ressourcengruppen-Modus zu wechseln.
 
 ## Grundlegendes zu Azure-Ressourcenvorlagen und -Ressourcengruppen
 
-Die meisten Anwendungen sind aus einer Kombination aus verschiedenen Ressourcentypen \(z. B. als eine oder mehrere VMs und Speicherkonten, SQL-Datenbank, virtuelles Netzwerk oder ein Content Delivery Network oder *CDN*\) erstellt. Die standardmäßige Azure-Dienstverwaltungs-API und das klassische Azure-Portal stellten diese Elemente mit dem Dienst-Ansatz dar. Das erfordert das Bereitstellen und Verwalten jedes einzelnen Dienstes individuell \(wenn dies nicht andere Tools übernehmen\), und nicht als eine einzige logische Einheit zur Bereitstellung.
+Die meisten Anwendungen sind aus einer Kombination aus verschiedenen Ressourcentypen (z. B. als eine oder mehrere VMs und Speicherkonten, SQL-Datenbank, virtuelles Netzwerk oder ein Content Delivery Network oder *CDN*) erstellt. Die standardmäßige Azure-Dienstverwaltungs-API und das klassische Azure-Portal stellten diese Elemente mit dem Dienst-Ansatz dar. Das erfordert das Bereitstellen und Verwalten jedes einzelnen Dienstes individuell (wenn dies nicht andere Tools übernehmen), und nicht als eine einzige logische Einheit zur Bereitstellung.
 
 *Azure Resource Manager-Vorlagen* ermöglichen es Ihnen, diese verschiedenen Ressourcen als eine logische Bereitstellungseinheit auf deklarative Weise bereitzustellen und zu verwalten. Anstatt Azure imperativisch mitzuteilen, wie ein Befehl nach dem anderen bereitgestellt wird, beschreiben Sie die gesamte Bereitstellung in einer JSON-Datei – alle Ressourcen und zugeordnete Konfigurations- und Bereitstellungsparameter – und geben an Azure weiter, dass diese Ressourcen als eine Gruppe bereitgestellt werden sollen.
 
 Sie können dann den gesamten Lebenszyklus der Gruppenressourcen mithilfe von Ressourcenverwaltungsbefehlen in Azure CLI verwalten:
 
 - Alle Ressourcen in der Gruppe auf einmal beenden, starten oder löschen. 
-- Role-Based Access Control \(RBAC\)-Regeln zum Sperren von Sicherheitsberechtigungen. 
+- Role-Based Access Control (RBAC)-Regeln zum Sperren von Sicherheitsberechtigungen. 
 - Vorgänge zu überwachen. 
 - Ressourcen mit zusätzlichen Metadaten zur besseren Nachverfolgung auszuzeichnen. 
 
@@ -107,21 +107,21 @@ Zweitens benötigen Sie ein Image. Um ein Image mit der Azure CLI zu finden, geh
 
 | Herausgeber | ImageOffer | ImageSku | ComputeImageVersion |
 |:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
-| OpenLogic | CentOS | 7 | 7\.0.201503 |
-| OpenLogic | CentOS | 7\.1 | 7\.1.201504 |
-| CoreOS | CoreOS | Beta | 647\.0.0 |
-| CoreOS | CoreOS | Stable | 633\.1.0 |
-| MicrosoftDynamicsNAV | DynamicsNAV | 2015 | 8\.0.40459 |
-| MicrosoftSharePoint | MicrosoftSharePointServer | 2013 | 1\.0.0 |
-| msopentech | Oracle-Database-12c-Weblogic-Server-12c | Standard | 1\.0.0 |
-| msopentech | Oracle-Database-12c-Weblogic-Server-12c | Enterprise | 1\.0.0 |
-| MicrosoftSQLServer | SQL 2014 WS2012R2 | Enterprise-Optimized-for-DW | 12\.0.2430 |
-| MicrosoftSQLServer | SQL 2014 WS2012R2 | Enterprise-Optimized-for-OLTP | 12\.0.2430 |
-| Canonical | UbuntuServer | 14\.04.1-LTS | 14\.04.201501230 |
-| Canonical | UbuntuServer | 14\.04.2-LTS | 14\.04.201503090 |
-| MicrosoftWindowsServer | Windows Server | Windows-Server-Technical-Preview | 5\.0.201504 |
-| MicrosoftWindowsServerEssentials | WindowsServerEssentials | WindowsServerEssentials | 1\.0.141204 |
-| MicrosoftWindowsServerHPCPack | WindowsServerHPCPack | 2012R2 | 4\.3.4665 |
+| OpenLogic | CentOS | 7 | 7.0.201503 |
+| OpenLogic | CentOS | 7.1 | 7.1.201504 |
+| CoreOS | CoreOS | Beta | 647.0.0 |
+| CoreOS | CoreOS | Stable | 633.1.0 |
+| MicrosoftDynamicsNAV | DynamicsNAV | 2015 | 8.0.40459 |
+| MicrosoftSharePoint | MicrosoftSharePointServer | 2013 | 1.0.0 |
+| msopentech | Oracle-Database-12c-Weblogic-Server-12c | Standard | 1.0.0 |
+| msopentech | Oracle-Database-12c-Weblogic-Server-12c | Enterprise | 1.0.0 |
+| MicrosoftSQLServer | SQL 2014 WS2012R2 | Enterprise-Optimized-for-DW | 12.0.2430 |
+| MicrosoftSQLServer | SQL 2014 WS2012R2 | Enterprise-Optimized-for-OLTP | 12.0.2430 |
+| Canonical | UbuntuServer | 14.04.1-LTS | 14.04.201501230 |
+| Canonical | UbuntuServer | 14.04.2-LTS | 14.04.201503090 |
+| MicrosoftWindowsServer | Windows Server | Windows-Server-Technical-Preview | 5.0.201504 |
+| MicrosoftWindowsServerEssentials | WindowsServerEssentials | WindowsServerEssentials | 1.0.141204 |
+| MicrosoftWindowsServerHPCPack | WindowsServerHPCPack | 2012R2 | 4.3.4665 |
 
 Erstellen Sie Ihren virtuellen Computer einfach durch Eingabe von `azure vm quick-create command`, sodass er für Eingabeaufforderungen bereit ist. Das sollte ungefähr so aussehen.
 
@@ -216,9 +216,9 @@ Verwenden Sie die Anweisungen in den folgenden Abschnitten zum Bereitstellen ein
  
 ### Schritt 1: Untersuchen der JSON-Datei für die Vorlagenparameter
 
-Dies ist der Inhalt der JSON-Datei für die Vorlage. \(Die Vorlage befindet sich auch [hier](https://github.com/Azure/azure-quickstart-templates/blob/master/101-simple-linux-vm/azuredeploy.json) in GitHub.\)
+Dies ist der Inhalt der JSON-Datei für die Vorlage. (Die Vorlage befindet sich auch [hier](https://github.com/Azure/azure-quickstart-templates/blob/master/101-simple-linux-vm/azuredeploy.json) in GitHub.)
 
-Vorlagen sind flexibel, und der Entwickler hat sich möglicherweise entschieden, viele Parameter zur Verfügung zu stellen oder nur einige wenige, indem eine Vorlage erstellt wurde, die stärker festgelegt ist. Um die Informationen zu sammeln, müssen Sie die Vorlage als Parameter übergeben, die Vorlagendatei öffnen \(unten in diesem Thema finden Sie ein Vorlagen-Inline\), und die **Parameter**werte untersuchen.
+Vorlagen sind flexibel, und der Entwickler hat sich möglicherweise entschieden, viele Parameter zur Verfügung zu stellen oder nur einige wenige, indem eine Vorlage erstellt wurde, die stärker festgelegt ist. Um die Informationen zu sammeln, müssen Sie die Vorlage als Parameter übergeben, die Vorlagendatei öffnen (unten in diesem Thema finden Sie ein Vorlagen-Inline), und die **Parameter**werte untersuchen.
 
 In diesem Fall fragt die untere Vorlage nach:
 
@@ -432,8 +432,8 @@ Geben Sie zum Erstellen der Ressourcengruppe `azure group create <group name> <l
 
 Erstellen Sie nun die Bereitstellung, rufen Sie `azure group deployment create` auf und übergeben Sie:
 
-- die Vorlagendatei \(im Fall, dass Sie die oben genannte JSON-Vorlage in einer lokalen Datei gespeichert haben\) 
-- eine Uri-Vorlage \(im Fall, dass Sie auf die Datei in Github oder einigen anderen Webadressen zeigen möchten\)
+- die Vorlagendatei (im Fall, dass Sie die oben genannte JSON-Vorlage in einer lokalen Datei gespeichert haben) 
+- eine Uri-Vorlage (im Fall, dass Sie auf die Datei in Github oder einigen anderen Webadressen zeigen möchten)
 - die Ressourcengruppe, in die Sie bereitstellen möchten
 - und einen optionalen Bereitstellungsnamen. 
 
@@ -479,7 +479,7 @@ Sie erhalten den folgenden Informationstyp:
 
 ## Allgemeine Aufgaben: Erstellen Sie ein benutzerdefiniertes VM-Image
 
-Sie haben oben die grundlegende Verwendung von Vorlagen gesehen, sodass wir ähnliche Anweisungen zum Erstellen eines benutzerdefinierten virtuellen Computers aus einer spezifischen VHD-Datei in Azure mit einer Azure CLI-Vorlage verwenden können. Der Unterschied ist hier, dass diese Vorlage eine einzelne virtuelle Maschine von einer angegebenen virtuellen Festplatte \(VHD\) erstellt.
+Sie haben oben die grundlegende Verwendung von Vorlagen gesehen, sodass wir ähnliche Anweisungen zum Erstellen eines benutzerdefinierten virtuellen Computers aus einer spezifischen VHD-Datei in Azure mit einer Azure CLI-Vorlage verwenden können. Der Unterschied ist hier, dass diese Vorlage eine einzelne virtuelle Maschine von einer angegebenen virtuellen Festplatte (VHD) erstellt.
 
 ### Schritt 1: Untersuchen der JSON-Datei für die Vorlage
 
@@ -693,7 +693,7 @@ Sie nun können einen neuen virtuellen Computer basierend auf der VHD-Datei erst
     data:    
     info:    group create command OK
     
-Erstellen Sie dann die Bereitstellung mithilfe der Option `--template-uri`, um die Vorlage direkt aufzurufen \(oder verwenden Sie die Option `--template-file` für eine lokal gespeicherte Datei\). Beachten Sie, dass Sie nur einige Dinge eingeben können, da in der Vorlage Standardwerte angegeben sind. Wenn Sie die Vorlage in verschiedenen Speicherorten bereitstellen, treten möglicherweise einige Namenskonflikte mit den Standardwerten auf \(insbesondere dem von Ihnen erstellten DNS-Namen\).
+Erstellen Sie dann die Bereitstellung mithilfe der Option `--template-uri`, um die Vorlage direkt aufzurufen (oder verwenden Sie die Option `--template-file` für eine lokal gespeicherte Datei). Beachten Sie, dass Sie nur einige Dinge eingeben können, da in der Vorlage Standardwerte angegeben sind. Wenn Sie die Vorlage in verschiedenen Speicherorten bereitstellen, treten möglicherweise einige Namenskonflikte mit den Standardwerten auf (insbesondere dem von Ihnen erstellten DNS-Namen).
 
     azure group deployment create \
     > --template-uri https://raw.githubusercontent.com/azurermtemplates/azurermtemplates/master/101-vm-from-user-image/azuredeploy.json \
@@ -1166,17 +1166,17 @@ Beachten Sie, dass Sie zu einer Ressourcengruppe erneut bereitstellen können. A
     
 ## Anzeigen des Protokolls für die Ressourcengruppenbereitstellung
 
-Dieses tritt häufig beim Erstellen oder Verwenden von Vorlagen auf. Der Aufruf zur Anzeige von Bereitstellungsprotokollen für eine Gruppe ist `azure group log show <groupname>`. Es werden eine Menge Informationen angezeigt, die für das Verständnis hilfreich sind, warum etwas passiert ist oder auch nicht. \(Weitere Informationen zur Problembehandlung für Ihre Bereitstellungen sowie andere Informationen zu Problemen finden Sie unter [Problembehandlung Ressourcengruppen-Bereitstellungen in Azure](resource-group-deploy-debug.md).\)
+Dieses tritt häufig beim Erstellen oder Verwenden von Vorlagen auf. Der Aufruf zur Anzeige von Bereitstellungsprotokollen für eine Gruppe ist `azure group log show <groupname>`. Es werden eine Menge Informationen angezeigt, die für das Verständnis hilfreich sind, warum etwas passiert ist oder auch nicht. (Weitere Informationen zur Problembehandlung für Ihre Bereitstellungen sowie andere Informationen zu Problemen finden Sie unter [Problembehandlung Ressourcengruppen-Bereitstellungen in Azure](resource-group-deploy-debug.md).)
 
 Auf bestimmte Ziel-Fehler z. B. können Sie Tools wie **Jq** verwenden, um Dinge genauer abzufragen. Zum Beispiel, welche individuellen Fehler Sie korrigieren müssen. Im folgenden Beispiel wird **Jq** zum Analysieren eines Bereitstellungsprotokolls für die **Lbgroup** verwendet, um nach Fehlern zu suchen.
 
     azure group log show lbgroup -l --json | jq '.[] | select(.status.value == "Failed") | .properties' 
 
-Sie können sehr schnell ermitteln, welche Fehler aufgetreten sind, sie beheben und es erneut versuchen. Im folgenden Fall wurden zwei virtuelle Computer gleichzeitig von der Vorlage erstellt, was eine Sperre auf die VHD-Datei verursachte. \(Nach dem Ändern der Vorlage funktionierte die Bereitstellung schnell.\)
+Sie können sehr schnell ermitteln, welche Fehler aufgetreten sind, sie beheben und es erneut versuchen. Im folgenden Fall wurden zwei virtuelle Computer gleichzeitig von der Vorlage erstellt, was eine Sperre auf die VHD-Datei verursachte. (Nach dem Ändern der Vorlage funktionierte die Bereitstellung schnell.)
 
     {
       "statusCode": "Conflict",
-      "statusMessage": "{\"status\":\"Failed\",\"error\":{\"code\":\"ResourceDeploymentFailure\",\"message\":\"The resource operation completed with terminal provisioning state 'Failed'.\",\"details\":[{\"code\":\"AcquireDiskLeaseFailed\",\"message\":\"Failed to acquire lease while creating disk 'osdisk' using blob with URI http://storage.blob.core.windows.net/vhds/osdisk.vhd.\"}]}}"
+      "statusMessage": "{"status":"Failed","error":{"code":"ResourceDeploymentFailure","message":"The resource operation completed with terminal provisioning state 'Failed'.","details":[{"code":"AcquireDiskLeaseFailed","message":"Failed to acquire lease while creating disk 'osdisk' using blob with URI http://storage.blob.core.windows.net/vhds/osdisk.vhd."}]}}"
     }
     
 
@@ -1289,7 +1289,7 @@ Um einen vorhandenen Datenträger anzufügen, führen Sie den folgenden Befehl a
 
     azure vm disk attach <resource-group> <vm-name> [vhd-url]
     
-Anschließend müssen Sie den Datenträger wie gewohnt in Linux \(oder Windows\) einbinden.
+Anschließend müssen Sie den Datenträger wie gewohnt in Linux (oder Windows) einbinden.
 
 
 ## Nächste Schritte

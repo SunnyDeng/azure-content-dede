@@ -24,7 +24,7 @@ Visual Studio Application Insights überwacht Ihre Live-Anwendung. So können Si
 
 In diesem Artikel liegt der Schwerpunkt auf App-Typen, die in Visual Studio entwickelt werden. Es gibt auch Application Insights-Erweiterungen für andere integrierte Entwicklungsumgebungen.
 
-Sie benötigen [Visual Studio 2013 Update 3](http://go.microsoft.com/fwlink/?linkid=397827&clcid=0x409) \(oder neuer\) und ein Konto in [Microsoft Azure](http://azure.com).
+Sie benötigen [Visual Studio 2013 Update 3](http://go.microsoft.com/fwlink/?linkid=397827&clcid=0x409) (oder neuer) und ein Konto in [Microsoft Azure](http://azure.com).
 
 ## <a name="ide"></a> Hinzufügen von Application Insights zu Ihrem Projekt
 
@@ -51,7 +51,7 @@ In diesem Fall wird das [JavaScript-SDK][client] nicht Ihren Webseiten hinzugef�
 
 #### Setupoptionen
 
-Falls Sie erstmals ein Projekt erstellen, werden Sie nach einer Anmeldung bei Microsoft Azure Preview gefragt. \(Dies ist nicht zu verwechseln mit Ihrem Visual Studio Online-Konto.\)
+Falls Sie erstmals ein Projekt erstellen, werden Sie nach einer Anmeldung bei Microsoft Azure Preview gefragt. (Dies ist nicht zu verwechseln mit Ihrem Visual Studio Online-Konto.)
 
 Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithilfe von **Einstellungen konfigurieren** in derselben Ressourcengruppe wie die anderen Komponenten abzulegen.
 

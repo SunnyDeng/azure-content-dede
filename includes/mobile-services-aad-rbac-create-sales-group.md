@@ -1,4 +1,4 @@
-﻿In diesem Abschnitt fügen Sie Ihrem Verzeichnis zwei neue Benutzer und die neue Gruppe "Sales" hinzu. Nur einem der Benutzer wird die Mitgliedschaft in der Gruppe "Sales" gewährt. Der andere Benutzer wird nicht als Mitglied in diese Gruppe aufgenommen. 
+In diesem Abschnitt fügen Sie Ihrem Verzeichnis zwei neue Benutzer und die neue Gruppe "Sales" hinzu. Nur einem der Benutzer wird die Mitgliedschaft in der Gruppe "Sales" gewährt. Der andere Benutzer wird nicht als Mitglied in diese Gruppe aufgenommen. 
 
 ### Die Benutzer erstellen
 
@@ -30,10 +30,9 @@
 
 3. Klicken Sie auf der Seite der Gruppe "Sales" auf **Eigenschaften**, und kopieren Sie die **Objekt-ID** der Gruppe "Sales" unten auf der Seite. 
 
-   
     ![](./media/mobile-services-aad-rbac-create-sales-group/sales-group-id.png)
 
-4. Navigieren Sie zurück zu Konfigurationsseite von Mobile Services, und fügen Sie die Objekt-ID als App-Einstellung mit dem Namen **AAD\_SALES\_GROUP\_ID** hinzu. In diesem Lernprogramm wird die Objekt-ID der Gruppe als App-Einstellung verwendet, sodass die ID nicht anhand des Gruppennamens gesucht werden muss. Der Gruppenname kann sich ändern, die ID bleibt dagegen immer gleich.
+4. Navigieren Sie zurück zu Konfigurationsseite von Mobile Services, und fügen Sie die Objekt-ID als App-Einstellung mit dem Namen **AAD_SALES_GROUP_ID** hinzu. In diesem Lernprogramm wird die Objekt-ID der Gruppe als App-Einstellung verwendet, sodass die ID nicht anhand des Gruppennamens gesucht werden muss. Der Gruppenname kann sich ändern, die ID bleibt dagegen immer gleich.
 
     ![](./media/mobile-services-aad-rbac-create-sales-group/sales-group-id-app-setting.png)
 

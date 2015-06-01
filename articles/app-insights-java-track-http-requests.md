@@ -85,7 +85,7 @@ Mithilfe der Korrelation von Ereignissen können Sie eine Zuordnung zwischen ein
 
 Suchen und öffnen Sie die Datei "ApplicationInsights.xml" in Ihrem Projekt, und führen den folgenden Codeausschnitt unter dem Element <TelemetryInitializers> zusammen.
 
-Wenn in dieser Datei kein Element < TelemetryInitializers> vorhanden ist, fügen Sie eines unter dem Element <ApplicationInsights> hinzu.
+Wenn in dieser Datei kein Element <TelemetryInitializers> vorhanden ist, fügen Sie eines unter dem Element <ApplicationInsights> hinzu.
 
     <TelemetryInitializers>
       <Add   type="com.microsoft.applicationinsights.web.extensibility.initializers.WebOperationIdTelemetryInitializer"/>
@@ -99,7 +99,7 @@ Führen Sie Ihre Anwendung aus.
 
 Kehren Sie zur Application Insights-Ressource in Microsoft Azure zurück.
 
-HTTP-Anforderungsdaten werden auf dem Blatt "Übersicht" angezeigt. \(Wenn sie nicht vorhanden sind, warten Sie einige Sekunden, und klicken Sie dann auf "Aktualisieren".\)
+HTTP-Anforderungsdaten werden auf dem Blatt "Übersicht" angezeigt. (Wenn sie nicht vorhanden sind, warten Sie einige Sekunden, und klicken Sie dann auf "Aktualisieren".)
 
 ![](./media/app-insights-java-track-http-requests/5-results.png)
  

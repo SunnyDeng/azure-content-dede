@@ -259,7 +259,7 @@ Sie können die Befehlszeilenschnittstelle entweder über den  *Node.js-Paketman
 
 		npm install -g https://github.com/Azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz
 
-	> [WACOM.NOTE] Falls Sie einen Fehler erhalten und der NPM-Befehl nicht gefunden wird, vergewissern Sie sich, dass die PATH-Umgebungsvariable die folgenden Pfade enthält: <i>C:\Program Files (x86)\nodejs;C:\Users\[username]\AppData\Roaming\npm</i> oder <i>C:\Program Files\nodejs;C:\Users\[username]\AppData\Roaming\npm</i>
+	> [WACOM.NOTE] Falls Sie einen Fehler erhalten und der NPM-Befehl nicht gefunden wird, vergewissern Sie sich, dass die PATH-Umgebungsvariable die folgenden Pfade enthält: <i>C:\Program Files (x86)\nodejs;C:\Users[username]\AppData\Roaming\npm</i> oder <i>C:\Program Files\nodejs;C:\Users[username]\AppData\Roaming\npm</i>
 
 5.	Führen Sie den folgenden Befehl aus, um die Installation zu überprüfen:
 

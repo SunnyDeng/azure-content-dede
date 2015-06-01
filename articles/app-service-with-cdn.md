@@ -351,7 +351,7 @@ Skripts und CSS-Stylesheets ändern sich häufig und sind daher die idealen Kand
 		...
     }
 
-Die erste  `bundles.Add()`-Anweisung fügt dem virtuellen Verzeichnis `~/bundles/jquery` ein Skriptbündel hinzu. Öffnen Sie anschließend die Datei  *Views\Shared\_Layout.cshtml*, um sich anzusehen, wie das Skriptbündel-Tag gerendert wird. Sie sollten die folgende Zeile mit Razor-Code finden:
+Die erste  `bundles.Add()`-Anweisung fügt dem virtuellen Verzeichnis `~/bundles/jquery` ein Skriptbündel hinzu. Öffnen Sie anschließend die Datei  *Views\Shared_Layout.cshtml*, um sich anzusehen, wie das Skriptbündel-Tag gerendert wird. Sie sollten die folgende Zeile mit Razor-Code finden:
 
     @Scripts.Render("~/bundles/jquery")
 
@@ -545,25 +545,25 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 	                    }
 	                }
 	                return true;
-	            }())||document.write(&#39;&lt;script src=&quot;/Content/css&quot;&gt;&lt;\/script&gt;&#39;);&lt;/script&gt;</mark>
+	            }())||document.write(&#39;&lt;script src=&quot;/Content/css&quot;&gt;&lt;/script&gt;&#39;);&lt;/script&gt;</mark>
 	
 	    &lt;script src=&quot;http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25474&quot;&gt;&lt;/script&gt;
-	<mark>&lt;script&gt;(window.Modernizr)||document.write(&#39;&lt;script src=&quot;/bundles/modernizr&quot;&gt;&lt;\/script&gt;&#39;);&lt;/script&gt;</mark>
+	<mark>&lt;script&gt;(window.Modernizr)||document.write(&#39;&lt;script src=&quot;/bundles/modernizr&quot;&gt;&lt;/script&gt;&#39;);&lt;/script&gt;</mark>
 	
 	...	
 	
 	    &lt;script src=&quot;http://az673227.vo.msecnd.net/bundles/jquery?v=1.0.0.25474&quot;&gt;&lt;/script&gt;
-	<mark>&lt;script&gt;(window.jquery)||document.write(&#39;&lt;script src=&quot;/bundles/jquery&quot;&gt;&lt;\/script&gt;&#39;);&lt;/script&gt;</mark>
+	<mark>&lt;script&gt;(window.jquery)||document.write(&#39;&lt;script src=&quot;/bundles/jquery&quot;&gt;&lt;/script&gt;&#39;);&lt;/script&gt;</mark>
 	
 	    &lt;script src=&quot;http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25474&quot;&gt;&lt;/script&gt;
-	<mark>&lt;script&gt;($.fn.modal)||document.write(&#39;&lt;script src=&quot;/bundles/bootstrap&quot;&gt;&lt;\/script&gt;&#39;);&lt;/script&gt;</mark>
+	<mark>&lt;script&gt;($.fn.modal)||document.write(&#39;&lt;script src=&quot;/bundles/bootstrap&quot;&gt;&lt;/script&gt;&#39;);&lt;/script&gt;</mark>
 	
 	...
 	</pre>
 
 	Beachten Sie, dass das eingefügte Skript für das CSS-Bündel immer noch den fehlgeleiteten Rest aus der  `CdnFallbackExpression`-Eigenschaft in der folgenden Zeile enthält:
 
-        }())||document.write('<script src="/Content/css"><\/script>');</script>
+        }())||document.write('<script src="/Content/css"></script>');</script>
 
 	Da jedoch der erste Teil des ||-Ausdrucks immer "true" zurückgibt (in der Zeile unmittelbar darüber), wird die document.write()-Funktion niemals ausgeführt.
 

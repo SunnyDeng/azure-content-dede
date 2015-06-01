@@ -33,7 +33,7 @@ Weitere Informationen finden Sie unter [Konfiguration einer VNet-zu-VNet-Verbind
 
 Dieses Lernprogramm ist Teil der [Reihe][hdinsight-hbase-replication] zum Erstellen von HBase Georeplikation.
 
-- Konfigurieren einer VPN-Konnektivität zwischen zwei virtuellen Netzwerken \(dieses Lernprogramm\)
+- Konfigurieren einer VPN-Konnektivität zwischen zwei virtuellen Netzwerken (dieses Lernprogramm)
 - [Konfigurieren von DNS für virtuelle Netzwerke][hdinsight-hbase-geo-replication-DNS]
 - [Konfigurieren von HBase-Georeplikation][hdinsight-hbase-geo-replication]
 
@@ -74,18 +74,18 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 	- **NAME**: Contoso-VNet-EU
 	- **STANDORT**: Nordeuropa
 
-		This tutorial uses North Europe and East US datacenters. You can choose your own datacenters.
+		In diesem Lernprogramm werden die Datencenter in Nordeuropa und im Osten der USA verwendet. Sie können eigene Datencenter auswählen.
 4.	Geben Sie Folgendes ein:
 
-	- **DNS-SERVER**: \(Lassen Sie diese Angabe leer\) 
+	- **DNS-SERVER**: (Lassen Sie diese Angabe leer) 
 	
-		You will need your own DNS server for name resolution within virtual networks. For more information on when to use Azure-provided name resolution and when to use your own DNS server, see [Name Resolution (DNS)](https://msdn.microsoft.com/library/azure/jj156088.aspx). For instructions to configure name resolution between VNets, see [Configure DNS between two Azure virtual networks][hdinsight-hbase-dns].
+		Sie benötigen einen eigenen DNS-Server für die Namensauflösung in virtuellen Netzwerken. Weitere Informationen zu Verwendungszwecken für die in Azure bereitgestellte Namensauflösung und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](https://msdn.microsoft.com/library/azure/jj156088.aspx). Anweisungen zur Konfiguration der Namensauflösung zwischen VNets finden Sie unter [Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-dns]
   
-	- **Punkt-zu-Standort-VPN konfigurieren**: \(nicht aktiviert\)
+	- **Punkt-zu-Standort-VPN konfigurieren**: (nicht aktiviert)
 
 		Point-to-site doesn't apply to this scenario.
 
- 	- **Standort-zu-Standort-VPN konfigurieren**: \(nicht aktiviert\)
+ 	- **Standort-zu-Standort-VPN konfigurieren**: (nicht aktiviert)
  	
 		You will configure the site-to-site VPN connection to the Azure virtual network in the East U.S. datacenter.
 5.	Geben Sie Folgendes ein:
@@ -104,9 +104,9 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 	- **NAME**: Contoso-VNet-US
 	- **STANDORT**: USA, Osten
 	 
-	- **DNS-SERVER**: \(Lassen Sie diese Angabe leer\)
-	- **Punkt-zu-Standort-VPN konfigurieren**: \(nicht aktiviert\)
-	- **Standort-zu-Standort-VPN konfigurieren**: \(nicht aktiviert\)
+	- **DNS-SERVER**: (Lassen Sie diese Angabe leer)
+	- **Punkt-zu-Standort-VPN konfigurieren**: (nicht aktiviert)
+	- **Standort-zu-Standort-VPN konfigurieren**: (nicht aktiviert)
 	 
 	- **ADRESSRAUM START-IP**: 10.2.0.0
 	- **ADRESSRAUM CIDR**: / 16
@@ -144,7 +144,7 @@ Wenn Sie eine VNet-zu-VNet-Konfiguration erstellen, müssen Sie jedes VNet so ko
 3. Geben Sie Folgendes ein:
 
 	- **NAME**: Contoso-LNet-EU
-	- **IP-ADRESSE DES VPN-GERÄTS**: 192.168.0.1 \(diese Adresse wird später aktualisiert\)
+	- **IP-ADRESSE DES VPN-GERÄTS**: 192.168.0.1 (diese Adresse wird später aktualisiert)
 
 		Typically, you’d use the actual external IP address for a VPN device. For VNet to VNet configurations, you will use the VPN gateway IP address. Given that you have not created the VPN gateways for the two VNets yet, you enter an arbitary IP address and come back to fix it.
 4.	Geben Sie Folgendes ein:
@@ -159,7 +159,7 @@ Wenn Sie eine VNet-zu-VNet-Konfiguration erstellen, müssen Sie jedes VNet so ko
 - Wiederholen Sie das letzte Verfahren mit den folgenden Parametern:
 
 	- **NAME**: Contoso-LNet-US
-	- **IP-ADRESSE DES VPN-GERÄTS**: 192.168.0.1 \(diese Adresse wird später aktualisiert\)
+	- **IP-ADRESSE DES VPN-GERÄTS**: 192.168.0.1 (diese Adresse wird später aktualisiert)
 	 
 	- **ADRESSRAUM START-IP**: 10.2.0.0
 	- **ADRESSRAUM CIDR**: / 16

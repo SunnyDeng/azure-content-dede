@@ -33,9 +33,9 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine webbasierte Aufgabenverwaltung
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](../../pricing/free-trial/).
-- [Java Development Kit \(JDK\) 7+](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+- [Java Development Kit (JDK) 7+](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 - [Eclipse IDE für Java EE-Entwickler.](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)
-- [Eine Azure-Website mit aktivierter Java-Laufzeitumgebung \(z. B. Tomcat oder Jetty\).](web-sites-java-get-started.md)
+- [Eine Azure-Website mit aktivierter Java-Laufzeitumgebung (z. B. Tomcat oder Jetty).](web-sites-java-get-started.md)
 
 Wenn Sie diese Tools zum ersten Mal installieren, finden Sie unter coreservlets.com im Abschnitt „Schnellstart“  eine schrittweise Anleitung im Artikel [Lernprogramm: TomCat7 installieren und mit Eclipse verwenden](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html).
 
@@ -56,13 +56,13 @@ So erstellen Sie eine JSP-Anwendung
 
 	![](./media/documentdb-java-application/image10.png)
 
-2. Geben Sie einen **Projektnamen** in das Feld Projektname ein, wählen Sie optional im Dropdownmenü **Ziellaufzeit** einen Wert aus \(z. B. Apache Tomcat v7.0\), und klicken Sie dann auf **Fertig stellen**. Durch das Auswählen einer Ziellaufzeit können Sie das Projekt lokal über Eclipse ausführen.
+2. Geben Sie einen **Projektnamen** in das Feld Projektname ein, wählen Sie optional im Dropdownmenü **Ziellaufzeit** einen Wert aus (z. B. Apache Tomcat v7.0), und klicken Sie dann auf **Fertig stellen**. Durch das Auswählen einer Ziellaufzeit können Sie das Projekt lokal über Eclipse ausführen.
 3. Erweitern Sie in der Projektexplorer-Ansicht von Eclipse Ihr Projekt. Klicken Sie mit der rechten Maustaste auf **WebContent**, und klicken Sie dann auf **Neu** sowie auf **JSP-Datei**.
 4. Geben Sie der Datei im Dialogfeld **Neue JSP-Datei** den Namen **index.jsp**. Behalten Sie für den übergeordneten Ordner **WebContent** bei, wie in der folgenden Abbildung gezeigt, und klicken dann auf **Weiter**.
 
 	![](./media/documentdb-java-application/image11.png)
 
-5. Wählen Sie im Dialogfeld **JSP-Vorlage auswählen** im Rahmen dieses Lernprogramms **Neue JSP-Datei \(HTML\)**, und klicken Sie dann auf **Fertig stellen**.
+5. Wählen Sie im Dialogfeld **JSP-Vorlage auswählen** im Rahmen dieses Lernprogramms **Neue JSP-Datei (HTML)**, und klicken Sie dann auf **Fertig stellen**.
 
 6. Wenn in Eclipse die Datei "index.jsp" geöffnet wird, geben Sie den Text **Hello World!** zum Anzeigen im vorhandenen Element "<body>" ein. Der aktualisierte <body>-Inhalt sollte wie im folgenden Code aussehen:
     
@@ -118,7 +118,7 @@ Dazu müssen Sie das Projekt zu einem Maven-Projekt konvertieren, indem Sie die 
 
 	In diesem Projekt verwenden wir [Project Lombok](http://projectlombok.org/), um den Konstruktor, die Getter, die Setter und einen Generator zu generieren. Alternativ können Sie diesen Code manuell eingeben oder von der IDE generieren lassen.
 
-2. Um den DocumentDB-Dienst aufrufen, müssen Sie ein neues **DocumentClient** instanziieren. Im Allgemeinen ist es am besten, **DocumentClient** wiederzuverwenden, anstatt für jede nachfolgende Anforderung einen neuen Client zu erstellen. Der Client kann wiederverwendet werden, indem der Client in ein **DocumentClientFactory** eingehüllt wird. Hier müssen Sie auch die Werte für den URI und den PRIMÄRSCHLÜSSEL einfügen, die Sie in [Schritt 1](#CreateDB) in der Zwischenablage gespeichert haben. Ersetzen Sie [YOUR\_ENDPOINT\_HERE] durch den URI und [YOUR\_KEY\_HERE] durch den PRIMÄRSCHLÜSSEL.
+2. Um den DocumentDB-Dienst aufrufen, müssen Sie ein neues **DocumentClient** instanziieren. Im Allgemeinen ist es am besten, **DocumentClient** wiederzuverwenden, anstatt für jede nachfolgende Anforderung einen neuen Client zu erstellen. Der Client kann wiederverwendet werden, indem der Client in ein **DocumentClientFactory** eingehüllt wird. Hier müssen Sie auch die Werte für den URI und den PRIMÄRSCHLÜSSEL einfügen, die Sie in [Schritt 1](#CreateDB) in der Zwischenablage gespeichert haben. Ersetzen Sie [YOUR_ENDPOINT_HERE] durch den URI und [YOUR_KEY_HERE] durch den PRIMÄRSCHLÜSSEL.
 
 	    private static final String HOST = "[YOUR_ENDPOINT_HERE]";
 	    private static final String MASTER_KEY = "[YOUR_KEY_HERE]";
@@ -134,9 +134,9 @@ Dazu müssen Sie das Projekt zu einem Maven-Projekt konvertieren, indem Sie die 
 	        return documentClient;
 	    }
 
-3. Jetzt wird ein Datenzugriffsobjekt \(Data Access Object, DAO\) erstellt, um das Speichern der Aufgabenelemente für DocumentDB zusammenzufassen.
+3. Jetzt wird ein Datenzugriffsobjekt (Data Access Object, DAO) erstellt, um das Speichern der Aufgabenelemente für DocumentDB zusammenzufassen.
 
-	Um die Aufgabenelemente in einer Sammlung zu speichern, muss der Client wissen, in welcher Datenbank und Sammlung die Speicherung erfolgen soll \(auf die durch eigene Links verwiesen wird\). Im Allgemeinen empfiehlt es sich, die Datenbank und Sammlung nach Möglichkeit zwischenzuspeichern, um zusätzliche Roundtrips zur Datenbank zu vermeiden.
+	Um die Aufgabenelemente in einer Sammlung zu speichern, muss der Client wissen, in welcher Datenbank und Sammlung die Speicherung erfolgen soll (auf die durch eigene Links verwiesen wird). Im Allgemeinen empfiehlt es sich, die Datenbank und Sammlung nach Möglichkeit zwischenzuspeichern, um zusätzliche Roundtrips zur Datenbank zu vermeiden.
 
 	Der folgende Code veranschaulicht, wie eine vorhandene Datenbank und Sammlung abgerufen bzw. eine neue Datenbank und Sammlung erstellt werden, wenn diese nicht vorhanden sind:
 
@@ -230,7 +230,7 @@ Dazu müssen Sie das Projekt zu einem Maven-Projekt konvertieren, indem Sie die 
 		    }
 		}
 
-4. Der nächste Schritt besteht darin, einigen Code zum Speichern der Aufgabenelemente in der Sammlung zu schreiben. In diesem Beispiel wird [Gson](https://code.google.com/p/google-gson/) verwendet, um TodoItem-POJOs \(Plain Old Java Objects\) in JSON-Dokumenten zu serialisieren oder zu deserialisieren. [Jackson](http://jackson.codehaus.org/) oder Ihr eigenes benutzerdefiniertes Serialisierungsprogramm sind ebenfalls hervorragende Alternativen für die Serialisierung von POJOs.
+4. Der nächste Schritt besteht darin, einigen Code zum Speichern der Aufgabenelemente in der Sammlung zu schreiben. In diesem Beispiel wird [Gson](https://code.google.com/p/google-gson/) verwendet, um TodoItem-POJOs (Plain Old Java Objects) in JSON-Dokumenten zu serialisieren oder zu deserialisieren. [Jackson](http://jackson.codehaus.org/) oder Ihr eigenes benutzerdefiniertes Serialisierungsprogramm sind ebenfalls hervorragende Alternativen für die Serialisierung von POJOs.
 
 	    // We'll use Gson for POJO <=> JSON serialization for this example.
 	    private static Gson gson = new Gson();
@@ -259,7 +259,7 @@ Dazu müssen Sie das Projekt zu einem Maven-Projekt konvertieren, indem Sie die 
 
 
 
-5. Wie bei DocumentDB-Datenbanken und -Sammlungen wird auch auf Dokumente über eigene Links verwiesen. Mit der folgenden Hilfsfunktion können Dokumente über ein anderes Attribut \(z. B. „id“\) abgerufen werden, anstatt eigene Links zu verwenden:
+5. Wie bei DocumentDB-Datenbanken und -Sammlungen wird auch auf Dokumente über eigene Links verwiesen. Mit der folgenden Hilfsfunktion können Dokumente über ein anderes Attribut (z. B. „id“) abgerufen werden, anstatt eigene Links zu verwenden:
 
 	    private Document getDocumentById(String id) {
 	        // Retrieve the document using the DocumentClient.
@@ -361,7 +361,7 @@ Dazu müssen Sie das Projekt zu einem Maven-Projekt konvertieren, indem Sie die 
 
 Nachdem der angenehme Teil erledigt ist, muss nur noch schnell eine Benutzeroberfläche erstellt und mit unserem DAO verbunden werden.
 
-1. Zunächst beginnen wir mit der Erstellung eines Controllers zum Aufrufen des Datenzugriffsobjekts \(DAO\):
+1. Zunächst beginnen wir mit der Erstellung eines Controllers zum Aufrufen des Datenzugriffsobjekts (DAO):
 
 		public class TodoItemController {
 		    public static TodoItemController getInstance() {
@@ -736,7 +736,7 @@ Nachdem der angenehme Teil erledigt ist, muss nur noch schnell eine Benutzerober
 
 ## <a id="Deploy"></a>Schritt 6: Bereitstellen der Anwendung auf Azure-Websites ##
 
-Azure-Websites gestalten die Bereitstellung von Java-Anwendungen so einfach wie das Exportieren Ihrer Anwendung als WAR-Datei und dem anschließenden Hochladen über die Quellcodeverwaltung \(z. B. GIT\) oder über FTP.
+Azure-Websites gestalten die Bereitstellung von Java-Anwendungen so einfach wie das Exportieren Ihrer Anwendung als WAR-Datei und dem anschließenden Hochladen über die Quellcodeverwaltung (z. B. GIT) oder über FTP.
 
 1. Zum Exportieren Ihrer Anwendung als WAR-Datei klicken Sie mit der rechten Maustaste auf das Projekt im **Projektexplorer**, klicken Sie auf **Exportieren**, und klicken Sie dann auf **WAR-Datei**. 
 2. Gehen Sie im Fenster **WAR-Export** wie folgt vor:
@@ -747,7 +747,7 @@ Azure-Websites gestalten die Bereitstellung von Java-Anwendungen so einfach wie 
 3. Nachdem Sie jetzt über eine WAR-Datei verfügen, können Sie diese ganz einfach in das Verzeichnis **Webapps** auf Ihre Azure-Website hochladen. Anweisungen zum Hochladen der Datei finden Sie unter [Hinzufügen einer Anwendung zur Java-Website in Azure](web-sites-java-add-app.md).
 
 	Sobald die WAR-Datei in das Verzeichnis "webapps" hochgeladen wurde, erkennt die Laufzeitumgebung, dass sie hinzugefügt wurde. Anschließend wird sie automatisch geladen.
-4. Navigieren Sie zum Anzeigen Ihres fertigen Produkts zu http://YOUR\_SITE\_NAME.azurewebsites.net/azure-documentdb-java-sample/, und beginnen Sie mit dem Hinzufügen Ihrer Aufgaben!
+4. Navigieren Sie zum Anzeigen Ihres fertigen Produkts zu http://YOUR_SITE_NAME.azurewebsites.net/azure-documentdb-java-sample/, und beginnen Sie mit dem Hinzufügen Ihrer Aufgaben!
 
 ## <a id="GetProject"></a>Abrufen des Projekts von GitHub##
 
@@ -763,7 +763,7 @@ Alle Beispiele in diesem Lernprogramm sind im [Todo](https://github.com/Azure/az
 8. Klicken Sie auf dem Bildschirm **Lokales Ziel** auf **Durchsuchen**, um einen Ordner auszuwählen, in den das Repository kopiert werden kann, und klicken Sie dann auf **Weiter**.
 9. Stellen Sie auf dem Bildschirm **Assistent zum Importieren von Projekten auswählen** sicher, dass **Vorhandene Projekte importieren** ausgewählt ist, und klicken Sie dann auf **Weiter**.
 10. Heben Sie auf dem Bildschirm **Projekte importieren** die Auswahl des Projekts **DocumentDB** auf, und klicken Sie dann auf **Fertig stellen**. Das DocumentDB-Projekt enthält das DocumentDB Java SDK, das wir stattdessen als Abhängigkeit hinzufügen.
-11. Navigieren Sie im **Projektexplorer** zu "azure-documentdb-java-sample\\src\\com.microsoft.azure.documentdb.sample.dao\\DocumentClientFactory.java", und ersetzen Sie die Werte "HOST" und "MASTER\_KEY" durch den URI und den PRIMÄRSCHLÜSSEL für Ihr DocumentDB-Konto. Speichern Sie dann die Datei. Weitere Informationen finden Sie unter [Schritt 1. Erstellen eines DocumentDB-Datenbankkontos](#CreateDB).
+11. Navigieren Sie im **Projektexplorer** zu "azure-documentdb-java-sample\\src\\com.microsoft.azure.documentdb.sample.dao\\DocumentClientFactory.java", und ersetzen Sie die Werte "HOST" und "MASTER_KEY" durch den URI und den PRIMÄRSCHLÜSSEL für Ihr DocumentDB-Konto. Speichern Sie dann die Datei. Weitere Informationen finden Sie unter [Schritt 1. Erstellen eines DocumentDB-Datenbankkontos](#CreateDB).
 12. Klicken Sie im **Projektexplorer** mit der rechten Maustaste auf **azure-documentdb-java-sample**, klicken Sie auf **Buildpfad**, und klicken Sie dann auf **Buildpfad konfigurieren**.
 13. Wählen Sie auf dem Bildschirm **Java-Buildpfad** im rechten Bereich die Registerkarte **Bibliotheken** aus, und klicken Sie dann auf **Externe JARs hinzufügen**. Navigieren Sie zum Speicherort der Datei „lombok.jar“, und klicken Sie auf **Öffnen** und dann auf **OK**.
 14. Verwenden Sie Schritt 12, um das Fenster **Eigenschaften** erneut zu öffnen, und klicken Sie dann im linken Bereich auf **Vorgesehene Laufzeiten**.

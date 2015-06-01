@@ -47,7 +47,7 @@ Rufen Sie im Schnellstart das Skript für Webseiten ab.
 
 ![](./media/appinsights/appinsights-06webcode.png)
 
-Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie nachverfolgen möchten. Wenn Ihre Website über eine Masterseite verfügt, können Sie das Skript dort ablegen. Beispielsweise würden Sie es in einem ASP.NET MVC-Projekt unter "View\Shared\_Layout.cshtml" ablegen.
+Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie nachverfolgen möchten. Wenn Ihre Website über eine Masterseite verfügt, können Sie das Skript dort ablegen. Beispielsweise würden Sie es in einem ASP.NET MVC-Projekt unter "View\Shared_Layout.cshtml" ablegen.
 
 ## <a name="usage"></a>Nutzungsanalyse
 

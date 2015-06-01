@@ -49,7 +49,7 @@ Erstellen Sie eine Wortzählungs-MapReduce-Anwendung. Diese einfache Anwendung z
 
 **So erstellen Sie ein Projekt mit Maven**
 
-1. Erstellen Sie das Verzeichnis **C:\Tutorials\WordCountJava\**.
+1. Erstellen Sie das Verzeichnis **C:\Tutorials\WordCountJava**.
 2. Wechseln Sie in der Befehlszeile in Ihrer Entwicklungsumgebung in das neu erstellte Verzeichnis.
 3. Verwenden Sie Befehl __Mvn__, der mit Maven installiert wird, um das Grundgerüst für das Projekt zu generieren.
 
@@ -82,7 +82,7 @@ Erstellen Sie eine Wortzählungs-MapReduce-Anwendung. Diese einfache Anwendung z
       	  <version>2.5.1</version>                                                                                            
     	</dependency>
 
-	Damit teilen Sie Maven mit, dass das Projekt die Bibliotheken (aufgelistet in <artifactId\>) in bestimmten Versionen benötigt (aufgelistet in <version\>). Beim Kompilieren wird er aus dem standardmäßigen Maven-Repository heruntergeladen. Sie können die [Maven-Repositorysuche](http://search.maven.org/#artifactdetails%7Corg.apache.hadoop%7Chadoop-mapreduce-examples%7C2.5.1%7Cjar) verwenden, um weitere Komponenten anzuzeigen.
+	Damit teilen Sie Maven mit, dass das Projekt die Bibliotheken (aufgelistet in <artifactId>) in bestimmten Versionen benötigt (aufgelistet in <version>). Beim Kompilieren wird er aus dem standardmäßigen Maven-Repository heruntergeladen. Sie können die [Maven-Repositorysuche](http://search.maven.org/#artifactdetails%7Corg.apache.hadoop%7Chadoop-mapreduce-examples%7C2.5.1%7Cjar) verwenden, um weitere Komponenten anzuzeigen.
 
 2. Fügen Sie der Datei __pom.xml__ folgenden Code hinzu. Dieser muss sich zwischen den Tags `<project>...</project>` in der Datei befinden; z. B. zwischen `</dependencies>` und `</project>`.
 
@@ -251,7 +251,7 @@ In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop_home% als 
 
 2. Führen Sie den folgenden Befehl aus, um einige Textdateien in den Eingabeordner im HDFS zu kopieren:
 
-		hadoop fs -copyFromLocal C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common\*.txt /WordCount/Input
+		hadoop fs -copyFromLocal C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common*.txt /WordCount/Input
 
 	Der MapReduce-Job zählt die Wörter in diesen Dateien.
 
@@ -322,7 +322,7 @@ In diesem Lernprogramm erstellen Sie einen Container auf einem separaten Speiche
 		$containerName_Data = "<ContainerName>"
 		$location = "<MicrosoftDataCenter>"  # For example, "East US"
 
-	Der **$subscripionName** wird ihrem Azure-Abonnement zugeordnet. Geben Sie dem **$storageAccountName\_Data** und **$containerName\_Data** Namen. Informationen zu Einschränkungen bei der Benennung finden Sie unter [Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese](http://msdn.microsoft.com/library/windowsazure/dd135715.aspx). 
+	Der **$subscripionName** wird ihrem Azure-Abonnement zugeordnet. Geben Sie dem **$storageAccountName_Data** und **$containerName_Data** Namen. Informationen zu Einschränkungen bei der Benennung finden Sie unter [Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese](http://msdn.microsoft.com/library/windowsazure/dd135715.aspx). 
 
 3. Führen Sie den folgenden Befehl aus, um ein Speicherkonto und einen Blob-Speichercontainer auf diesem Konto zu erstellen.
 
@@ -351,10 +351,10 @@ In diesem Lernprogramm erstellen Sie einen Container auf einem separaten Speiche
 		$storageAccountName_Data = "<AzureStorageAccountName>"  
 		$containerName_Data = "<ContainerName>"
 
-		$localFolder = "C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common\"
+		$localFolder = "C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common"
 		$destFolder = "WordCount/Input"
 
-	Die Variablen **$storageAccountName\_Data** und **$containerName\_Data** entsprechen den Definitionen im letzten Verfahren.
+	Die Variablen **$storageAccountName_Data** und **$containerName_Data** entsprechen den Definitionen im letzten Verfahren.
 
 	Bitte beachten Sie: Der Quellordner ist **c:\Hadoop\hadoop-1.1.0-SNAPSHOT**, und der Zielordner ist **WordCount/Input**.
 
@@ -404,7 +404,7 @@ In diesem Lernprogramm erstellen Sie einen Container auf einem separaten Speiche
 		$jarFile = "C:\Tutorials\WordCountJava\WordCount.jar"
 		$blobFolder = "WordCount/jars"
 
-	Die Variablen **$storageAccountName\_Data** und **$containerName\_Data** entsprechen Ihrer Definition im letzten Verfahren. Dies bedeutet, dass Sie sowohl die Datendatei als auch die Anwendung in denselben Container auf demselben Speicherkonto hochladen.
+	Die Variablen **$storageAccountName_Data** und **$containerName_Data** entsprechen Ihrer Definition im letzten Verfahren. Dies bedeutet, dass Sie sowohl die Datendatei als auch die Anwendung in denselben Container auf demselben Speicherkonto hochladen.
 
 	Beachten Sie, dass der Zielordner **WordCount/Jars** lautet.
 
@@ -532,7 +532,7 @@ In diesem Abschnitt erstellen Sie ein PowerShell-Skript, das die folgenden Aufga
 
 3. Legen Sie die ersten sechs Variablen in dem Skript fest. **$stringPrefix** wird den angegebenen Zeichenfolgen für die Namen von HDInsight-Cluster, Speicherkonto und Blobspeicher-Container vorangestellt. Da diese Namen zwischen 3 und 24 Zeichen lang sein dürfen, müssen Sie sicherstellen, dass die angegebene Zeichenfolge und die im Skript verwendeten Namen diese Längeneinschränkung nicht überschreiten. Verwenden Sie für **$stringPrefix** ausschließlich Kleinbuchstaben. 
  
-	**$storageAccountName\_Data** and **$containerName\_Data** are the storage account and container that are used for storing the data files and the application. **$location** must match the data storage account location.
+	**$storageAccountName_Data** and **$containerName_Data** are the storage account and container that are used for storing the data files and the application. **$location** must match the data storage account location.
 
 4. Prüfen Sie auch die restlichen Variablen.
 5. Speichern Sie die Skript-Datei.

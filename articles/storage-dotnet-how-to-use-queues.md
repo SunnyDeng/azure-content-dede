@@ -40,10 +40,10 @@ Azure-Warteschlangen-Speicherdienst demonstriert. Die Beispiele sind in C# gesch
 ### Abrufen der Assembly
 Sie können die Assembly  `Microsoft.WindowsAzure.Storage.dll` mit NuGet abrufen. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf Ihr Projekt, und wählen Sie **NuGet-Pakete verwalten** aus.  Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie dann auf **Installieren**, um das Azure Storage-Paket und die zugehörigen Abhängigkeiten zu installieren.
 
-"Microsoft.WindowsAzure.Storage.dll" ist ebenfalls im Azure-SDK für .NET enthalten, das Sie im <a href="http://azure.microsoft.com/develop/net/#">.NET Developer Center</a> herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Azure\.NET SDK\<sdk-version>\ref\` installiert.
+"Microsoft.WindowsAzure.Storage.dll" ist ebenfalls im Azure-SDK für .NET enthalten, das Sie im <a href="http://azure.microsoft.com/develop/net/#">.NET Developer Center</a> herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Azure.NET SDK<sdk-version>\ref` installiert.
 
 ### Namespace-Deklarationen
-Fügen Sie die folgende Codenamespace-Deklaration am Anfang aller C\#-Dateien hinzu, mit denen Sie programmgesteuert auf Azure Storage zugreifen möchten:
+Fügen Sie die folgende Codenamespace-Deklaration am Anfang aller C#-Dateien hinzu, mit denen Sie programmgesteuert auf Azure Storage zugreifen möchten:
 
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Auth;

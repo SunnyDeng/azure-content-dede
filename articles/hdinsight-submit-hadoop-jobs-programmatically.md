@@ -110,7 +110,7 @@ Hadoop MapReduce ist ein Software-Framework zum Schreiben von Anwendungen, die r
 		# Get the blob content
 		Get-AzureStorageBlobContent -Container $ContainerName -Blob example/data/WordCountOutput/part-r-00000 -Context $storageContext -Force
 
-	Der Ordner *example/data/WordCountOutput* ist der angegebene Ausgabeordner für die Ausführung des MapReduce-Auftrags. *part-r-00000* ist der Standarddateiname für MapReduce-Auftragsausgaben.  Die Datei wird in dieselbe Ordnerstruktur auf dem lokalen Ordner heruntergeladen. Im folgenden Screenshot ist der aktuelle Ordner der Stammordner C.  Die Datei wird in den Ordner *C:\example\data\WordCountOutput\* heruntergeladen.
+	Der Ordner *example/data/WordCountOutput* ist der angegebene Ausgabeordner für die Ausführung des MapReduce-Auftrags. *part-r-00000* ist der Standarddateiname für MapReduce-Auftragsausgaben.  Die Datei wird in dieselbe Ordnerstruktur auf dem lokalen Ordner heruntergeladen. Im folgenden Screenshot ist der aktuelle Ordner der Stammordner C.  Die Datei wird in den Ordner *C:\example\data\WordCountOutput* heruntergeladen.
 
 5. Führen Sie den folgenden Befehl aus, um die MapReduce-Jobausgabedatei auszudrucken:
 

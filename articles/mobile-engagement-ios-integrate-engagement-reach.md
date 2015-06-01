@@ -24,7 +24,7 @@
 
 ### Einbetten des Engagement Reach-SDK in Ihr iOS-Projekt
 
--   Fügen Sie das Reach-SDK in Ihr Xcode-Projekt ein. Wechseln Sie in Xcode zur **Project \> Add to project**, und wählen Sie den Ordner `EngagementReach`.
+-   Fügen Sie das Reach-SDK in Ihr Xcode-Projekt ein. Wechseln Sie in Xcode zur **Project > Add to project**, und wählen Sie den Ordner `EngagementReach`.
 
 ### Ändern des Anwendungsdelegaten
 
@@ -44,7 +44,7 @@
 			}
 
 -   Legen Sie die Zeichenfolge **'icon.png'** auf den Namen der Bilddatei fest, die Sie als Benachrichtigungssymbol verwenden möchten.
--   Wenn Sie die Option  *Badgewert aktualisieren* in Reach-Kampagnen verwenden oder systemeigene Pushkampagnen - \</SaaS/Reach-API/Kampagnenformat/Systemeigener Push\> - einsetzen möchten, müssen Sie dem Reach-Modul die Verwaltung des Badgesymbols gestatten (Anwendungsbadge wird automatisch gelöscht und der von Engagement gespeicherte Wert wird bei jedem Start bzw. bei jeder Aktivierung der Anwendung zurückgesetzt). Dies geschieht durch Hinzufügen der folgenden Codezeile nach der Initialisierung des Reach-Moduls:
+-   Wenn Sie die Option  *Badgewert aktualisieren* in Reach-Kampagnen verwenden oder systemeigene Pushkampagnen - </SaaS/Reach-API/Kampagnenformat/Systemeigener Push> - einsetzen möchten, müssen Sie dem Reach-Modul die Verwaltung des Badgesymbols gestatten (Anwendungsbadge wird automatisch gelöscht und der von Engagement gespeicherte Wert wird bei jedem Start bzw. bei jeder Aktivierung der Anwendung zurückgesetzt). Dies geschieht durch Hinzufügen der folgenden Codezeile nach der Initialisierung des Reach-Moduls:
 
 			[reach setAutoBadgeEnabled:YES];
 
@@ -324,7 +324,7 @@ Um eine Kategorie für eine Ankündigung zu erstellen, müssen Sie **AEAnnouncem
 			AEReachModule* reach = [AEReachModule moduleWithNotificationIcon:[UIImage imageNamed:@"icon.png"]];
 			[reach registerAnnouncementController:[MyCustomAnnouncementViewController class] forCategory:@"my_category"];
 
-> [AZURE.NOTE] Immer dann, wenn ein Benutzer auf eine Benachrichtigung für eine Ankündigung mit der Kategorie "my\_category" klickt, wird Ihr registrierter Ansichtencontroller (in diesem Fall `MyCustomAnnouncementViewController`) durch einen Aufruf der Methode `initWithAnnouncement:` initialisiert, und die Ansicht wird dem aktuellen Anwendungsfenster hinzugefügt.
+> [AZURE.NOTE] Immer dann, wenn ein Benutzer auf eine Benachrichtigung für eine Ankündigung mit der Kategorie "my_category" klickt, wird Ihr registrierter Ansichtencontroller (in diesem Fall `MyCustomAnnouncementViewController`) durch einen Aufruf der Methode `initWithAnnouncement:` initialisiert, und die Ansicht wird dem aktuellen Anwendungsfenster hinzugefügt.
 
 In Ihrer Implementierung der Klasse `AEAnnouncementViewController` müssen Sie die Eigenschaft `announcement` lesen, um Ihre Unteransichten zu initialisieren. Siehe hierzu das nachfolgende Beispiel, in dem mithilfe der Eigenschaften `title` und `body` der Klasse `AEReachAnnouncement` zwei Labels initialisiert werden:
 

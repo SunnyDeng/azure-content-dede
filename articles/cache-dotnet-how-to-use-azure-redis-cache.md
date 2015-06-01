@@ -18,7 +18,7 @@
 
 # Verwenden des Azure-Redis-Caches
 
-Dieser Leitfaden beschreibt die ersten Schritte mit dem **Azure-Redis-Cache**. Die Beispiele sind in C\#-Code geschrieben und verwenden die .NET-API. Die behandelten Szenarien umfassen das **Erstellen und Konfigurieren eines Caches**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten aus dem Cache** und **Speichern des ASP.NET-Sitzungszustands im Cache**. Weitere Informationen zum Verwenden von Azure-Redis-Cache finden Sie im Abschnitt [Nächste Schritte][].
+Dieser Leitfaden beschreibt die ersten Schritte mit dem **Azure-Redis-Cache**. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET-API. Die behandelten Szenarien umfassen das **Erstellen und Konfigurieren eines Caches**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten aus dem Cache** und **Speichern des ASP.NET-Sitzungszustands im Cache**. Weitere Informationen zum Verwenden von Azure-Redis-Cache finden Sie im Abschnitt [Nächste Schritte][].
 
 <a name="video"></a>
 ## Einführung in Azure-Redis-Cache (Video)

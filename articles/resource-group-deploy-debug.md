@@ -24,7 +24,7 @@ Zwar lassen sich durch vorherige Überprüfung verschiedener Aspekte Bereitstell
 Das Modul AzureResourceManager beinhaltet Cmdlets, mit denen Sie bei der Arbeit mit Ihren Azure-Ressourcen in der Befehlszeile Tools sammeln können, die Ihre Arbeit erleichtern. Vorlagen für Azure-Ressourcengruppen sind JSON-Dokumente, und die Azure-Ressourcen-Management-API akzeptiert und gibt JSON zurück. Das heißt JSON-Analysetools zählen zu den ersten Instrumenten, die Sie für leichteres Navigieren durch Informationen zu Ihren Ressourcen sowie für das Entwerfen von oder die Interaktion mit Vorlagen und Parameterdateien von Vorlagen verwenden werden.
 
 ### Mac-, Linux- und Windows-Tools
-Wenn Sie die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows verwenden, sind Sie wahrscheinlich mit den Standard-Downloadtools wie **[curl](http://curl.haxx.se/)** und **[wget](https://www.gnu.org/software/wget/)** oder **[Resty](https://github.com/beders/Resty)** vertraut, sowie mit JSON-Dienstprogrammen wie **[jq](http://stedolan.github.io/jq/download/)**, **[jsawk](https://github.com/micha/jsawk)** und Sprachbibliotheken, die JSON verarbeiten können. \(Viele dieser Tools verfügen auch über Ports für Windows, wie z.B. [wget](http://gnuwin32.sourceforge.net/packages/wget.htm). Tatsächlich gibt es verschiedene Arten, um Linux und andere Open Source-Tools auch in Windows auszuführen.\)
+Wenn Sie die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows verwenden, sind Sie wahrscheinlich mit den Standard-Downloadtools wie **[curl](http://curl.haxx.se/)** und **[wget](https://www.gnu.org/software/wget/)** oder **[Resty](https://github.com/beders/Resty)** vertraut, sowie mit JSON-Dienstprogrammen wie **[jq](http://stedolan.github.io/jq/download/)**, **[jsawk](https://github.com/micha/jsawk)** und Sprachbibliotheken, die JSON verarbeiten können. (Viele dieser Tools verfügen auch über Ports für Windows, wie z.B. [wget](http://gnuwin32.sourceforge.net/packages/wget.htm). Tatsächlich gibt es verschiedene Arten, um Linux und andere Open Source-Tools auch in Windows auszuführen.)
 
 Dieses Thema beinhaltet einige Azure Befehlszeilenschnittstelle-Befehle, die Sie mit **jq** verwenden können, um auf effizientere Weise genau die Informationen zu erhalten, die Sie wünschen. Sie sollten für ein besseres Verständnis Ihres Azure-Ressourceneinsatzes ein Ihnen vertrautes Toolset wählen.
 
@@ -33,7 +33,7 @@ Dieses Thema beinhaltet einige Azure Befehlszeilenschnittstelle-Befehle, die Sie
 Windows PowerShell verfügt über mehrere Basisbefehle, um die gleichen Prozeduren auszuführen. 
 
 - Verwenden Sie das Cmdlet **[Invole-WebRequest](https://technet.microsoft.com/library/hh849901%28v=wps.640%29)**, um Dateien wie Ressourcengruppen-Vorlagen oder JSON-Parameterdateien herunterzuladen.
-- Verwenden Sie das Cmdlet **[ConvertFrom-Json](https://technet.microsoft.com/library/hh849898%28v=wps.640%29.aspx)**, um eine JSON-Zeichenfolge in ein benutzerdefiniertes Objekt zu konvertieren \([PSCustomObject](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pscustomobject%28v=vs.85%29.aspx)\), das für jedes Feld in der JSON-Zeichenfolge eine Eigenschaft hat.
+- Verwenden Sie das Cmdlet **[ConvertFrom-Json](https://technet.microsoft.com/library/hh849898%28v=wps.640%29.aspx)**, um eine JSON-Zeichenfolge in ein benutzerdefiniertes Objekt zu konvertieren ([PSCustomObject](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pscustomobject%28v=vs.85%29.aspx)), das für jedes Feld in der JSON-Zeichenfolge eine Eigenschaft hat.
 
 ## Vermeiden von Fehlern in der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows
 
@@ -41,7 +41,7 @@ Die Azure-Befehlszeilenschnittstelle verfügt über mehrere Befehle, um Fehler z
 
 - **azure location list**. Dieser Befehl ruft die Speicherorte auf, die jeden Ressourcentyp unterstützen, wie z.B. der Anbieter für virtuelle Computer. Bevor Sie einen Speicherort für eine Ressource eingeben, verwenden Sie diesen Befehl, um zu überprüfen, ob der Speicherort den Ressourcentyp unterstützt.
 
-    Da die Liste der Speicherorte lang sein kann und es viele Anbieter gibt, können Sie Tools verwenden, um Anbieter und Speicherorte zu überprüfen, bevor Sie einen Speicherort nutzen, der noch nicht zur Verfügung steht. Das folgende Skript nutzt **jq**, um die Speicherorte zu entdecken, an denen der Ressourcenanbieter für virtuelle Azure-Computer verfügbar ist. \(\)
+    Da die Liste der Speicherorte lang sein kann und es viele Anbieter gibt, können Sie Tools verwenden, um Anbieter und Speicherorte zu überprüfen, bevor Sie einen Speicherort nutzen, der noch nicht zur Verfügung steht. Das folgende Skript nutzt **jq**, um die Speicherorte zu entdecken, an denen der Ressourcenanbieter für virtuelle Azure-Computer verfügbar ist. ()
 
         azure location list --json | jq '.[] | select(.name == "Microsoft.Compute/virtualMachines")'
         {
@@ -209,7 +209,7 @@ Das AzureResourceManager-Modul umfasst Cmdlets, mit denen Sie Fehler vermeiden k
 
 Es gibt ein oder mehrere mögliche Probleme, die eine erfolgreiche Bereitstellung mit Authentifizierung, Autorisierung und Azure Active Directory verhindern. Unabhängig davon, wie Sie Ihre Azure-Ressourcengruppen verwalten, muss die Identität, die Sie nutzen, um sich bei Ihrem Konto anzumelden, entweder Azure Active Directory-Objekten oder Dienstprinzipalen entsprechen, die auch Geschäfts- oder Schulkonten oder Organisations-ID genannt werden.
 
-Doch mit Azure Active Directory können Sie oder Ihr Verwalter sehr genau kontrollieren, welche Identitäten auf welche Ressourcen Zugriff haben. Falls Ihre Bereitstellungen fehlschlagen, überprüfen Sie die eigentlichen Anfragen auf Anzeichen von Authentifizierungs- oder Autorisierungsproblemen sowie die Bereitstellungsprotokolle für Ihre Ressourcengruppen. Sie werden feststellen, dass Sie zwar über Berechtigungen für manche Ressourcen verfügen, doch für andere nicht. Mithilfe der Azure-Befehlszeilenschnittstelle können Sie über die `azure ad` Befehle Azure Active Directory-Mandanten und -Benutzer überprüfen. \(Eine vollständige Liste der Befehle der Azure-Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit Azure Resource Management](azure-cli-arm-commands.md).\)
+Doch mit Azure Active Directory können Sie oder Ihr Verwalter sehr genau kontrollieren, welche Identitäten auf welche Ressourcen Zugriff haben. Falls Ihre Bereitstellungen fehlschlagen, überprüfen Sie die eigentlichen Anfragen auf Anzeichen von Authentifizierungs- oder Autorisierungsproblemen sowie die Bereitstellungsprotokolle für Ihre Ressourcengruppen. Sie werden feststellen, dass Sie zwar über Berechtigungen für manche Ressourcen verfügen, doch für andere nicht. Mithilfe der Azure-Befehlszeilenschnittstelle können Sie über die `azure ad` Befehle Azure Active Directory-Mandanten und -Benutzer überprüfen. (Eine vollständige Liste der Befehle der Azure-Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit Azure Resource Management](azure-cli-arm-commands.md).)
 
 Probleme können auch auftreten, wenn eine Bereitstellung ein Standardkontingent erreicht, wie für Ressourcengruppe, Abonnements, Konten oder andere Bereiche. Vergewissern Sie sich, dass Sie über die für eine einwandfreie Bereitstellung benötigten Ressourcen verfügen. Die vollständigen Kontingentinformationen finden Sie unter [Azure-Abonnement und Service-Grenzen, Kontingente und Einschränkungen](azure-subscription-service-limits.md).
 
@@ -222,7 +222,7 @@ Es kann sein, dass Azure-Ressourcen, die mithilfe der Serviceverwaltungs-API ode
 
 Ressourcen werden von Ressourcenanbietern verwaltet und ein Konto oder ein Abonnement kann aktiviert werden, um einen bestimmten Anbieter zu nutzen. Falls Ihre Aktivierung die Nutzung eines bestimmten Anbieters vorsieht, muss dieser auch für die Nutzung registriert sein. Die meisten Anbieter sind automatisch über das Azure-Portal oder die Befehlszeilenschnittstelle, die Sie verwenden, zur Nutzung registriert. Das gilt jedoch nicht für alle.
 
-Um mithilfe der Azure-Befehlszeilenschnittstelle zu sehen, ob der Anbieter zur Nutzung registriert ist, verwenden Sie den `azure provider list` Befehl \(es folgt ein gekürztes Beispiel für eine Ausgabe\).
+Um mithilfe der Azure-Befehlszeilenschnittstelle zu sehen, ob der Anbieter zur Nutzung registriert ist, verwenden Sie den `azure provider list` Befehl (es folgt ein gekürztes Beispiel für eine Ausgabe).
 
         azure provider list
         info:    Executing command provider list

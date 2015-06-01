@@ -30,7 +30,7 @@ Allgemein besteht eine App Service-Umgebung aus mehreren Hauptkomponenten:
 - Virtual Network mit mindestens einem Subnetz
 - Subnetz mit darin ausgeführtem gehosteten Dienst der Azure App-Umgebung
 
-Zum Verwalten und Überwachen Ihrer App Service-Umgebungen können Sie im Azure-Portal über "Durchsuchen" -\> "App Service-Umgebungen" auf eine Benutzeroberfläche zugreifen. Die erste Version verfügt über die nötigen Funktionen zum Verwalten des Systems. Sie wird in den kommenden Wochen weiterhin durch zusätzliche Funktionen ergänzt.
+Zum Verwalten und Überwachen Ihrer App Service-Umgebungen können Sie im Azure-Portal über "Durchsuchen" -> "App Service-Umgebungen" auf eine Benutzeroberfläche zugreifen. Die erste Version verfügt über die nötigen Funktionen zum Verwalten des Systems. Sie wird in den kommenden Wochen weiterhin durch zusätzliche Funktionen ergänzt.
 
 ![][1]
 

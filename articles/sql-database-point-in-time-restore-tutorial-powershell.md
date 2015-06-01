@@ -42,7 +42,7 @@ Sie müssen zum Ausführen der folgenden Cmdlets die zertifikatbasierte Authenti
 	* **ServerName**: Der Server, auf dem sich die Datenbank befindet.
 	* **DatabaseName**: Name der Datenbank, die Sie wiederherstellen möchten.	
 
-	`PS C:\>$Database = Get-AzureSqlDatabase -ServerName "myserver" -DatabaseName "mydb"`
+	`PS C:>$Database = Get-AzureSqlDatabase -ServerName "myserver" -DatabaseName "mydb"`
 
 2. Beginnen Sie die Wiederherstellung mithilfe des Cmdlets [Start-AzureSqlDatabaseRestore](http://msdn.microsoft.com/library/azure/dn720218.aspx). Geben Sie die folgenden Parameter an:	
 	* **SourceDatabase**: Die Quelldatenbank, aus der die Wiederherstellung erfolgen soll.
@@ -51,14 +51,14 @@ Sie müssen zum Ausführen der folgenden Cmdlets die zertifikatbasierte Authenti
 
 	Speichern Sie die Rückgabe in einer Variablen namens **$RestoreRequest**. Diese Variable enthält die Wiederherstellungsanforderungs-ID zum Überwachen des Status einer Wiederherstellung. 
 
-	`PS C:\>$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceDatabase $Database -TargetDatabaseName "myrestoredDB" -PointInTime "2015-01-01 06:00:00"`
+	`PS C:>$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceDatabase $Database -TargetDatabaseName "myrestoredDB" -PointInTime "2015-01-01 06:00:00"`
 
 Eine Wiederherstellung kann einige Zeit in Anspruch nehmen. Verwenden Sie zum Überwachen des Status der Wiederherstellung das Cmdlet [Get-AzureSqlDatabaseOperation](http://msdn.microsoft.com/library/azure/dn546738.aspx), und geben Sie die folgenden Parameter an:
 
 * **ServerName**: Name des Servers, auf dem die Datenbank wiederhergestellt werden soll.
 * **OperationGuid**: GUID des Vorgangs, wobei es sich um die Wiederherstellungsanforderungs-ID handelt, die in Schritt 2 in der Variablen **$RecoveryRequest** gespeichert wurde.
 
-	`PS C:\>Get-AzureSqlDatabaseOperation -ServerName "myserver" -OperationGuid $RestoreRequest.RequestID`
+	`PS C:>Get-AzureSqlDatabaseOperation -ServerName "myserver" -OperationGuid $RestoreRequest.RequestID`
 
 Die Felder **Status** und **PercentComplete** zeigen den Status der Wiederherstellung. 
 

@@ -60,7 +60,7 @@ die mit den Speicher-REST-Diensten kommunizieren, herunterladen und verwenden.
 		└── request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
 
 3.  Sie können den Befehl **ls** manuell ausführen, um zu überprüfen, ob der
-    Ordner **node\_modules** erstellt wurde. In diesem Ordner finden Sie
+    Ordner **node_modules** erstellt wurde. In diesem Ordner finden Sie
     das **Azure-Speicher**-Paket, das die für den Speicherzugriff benötigten Bibliotheken
     enthält.
 
@@ -73,7 +73,7 @@ Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anf
 
 ## Einrichten einer Azure Storage-Verbindung
 
-Das Azure-Modul entnimmt den Umgebungsvariablen AZURE\_STORAGE\_ACCOUNT and AZURE\_STORAGE\_ACCESS\_KEY oder AZURE\_STORAGE\_CONNECTION\_STRING die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie die Kontoinformationen beim Aufruf von **createQueueService** angeben.
+Das Azure-Modul entnimmt den Umgebungsvariablen AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_ACCESS_KEY oder AZURE_STORAGE_CONNECTION_STRING die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie die Kontoinformationen beim Aufruf von **createQueueService** angeben.
 
 Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher].
 

@@ -9,7 +9,7 @@
 <tags 
 	ms.service="azure-portal" 
 	ms.workload="na" 
-	ms.tgt\_pltfrm="na" 
+	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/28/2015" 
@@ -44,7 +44,9 @@ Verwenden Sie Ihre Anwendung eine Zeit lang, um einige Telemetriedaten zu generi
 2. Klicken Sie auf die Zeile, die Ihrer Anwendung entspricht, um zu diesem Anbieter zu wechseln: 
 ![Klick auf "Aktualisieren"](./media/insights-perf-analytics/06-overview.png) 
 
-Sie können auch mithilfe von **Durchsuchen** direkt zur Application Insights-Komponente oder zum verwendeten New Relic-Konto wechseln. Nachdem Sie das Blatt geöffnet haben, beispielsweise für Application Insights, können Sie folgende Aufgaben ausführen: 
+Sie können auch mithilfe von **Durchsuchen** direkt zur Application Insights-Komponente oder zum verwendeten New Relic-Konto wechseln.
+
+Nachdem Sie das Blatt geöffnet haben, beispielsweise für Application Insights, können Sie folgende Aufgaben ausführen: 
 - Öffnen der Einstellung "Leistung": 
 
 ![Klicken Sie im Blatt für die Application Insights-Übersicht auf die Kachel "Leistung"](./media/insights-perf-analytics/07-dependency.png) 

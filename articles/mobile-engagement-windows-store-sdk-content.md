@@ -1,6 +1,6 @@
-﻿<properties 
+<properties 
 	pageTitle="Windows Store-SDK für Azure Mobile Engagement - Inhalt" 
-	description="Neueste Updates und Verfahren für Windows Store-SDK für Azure Mobile Engagement" 					
+	description="Neueste Updates und Verfahren für Windows Store-SDK für Azure Mobile Engagement" 
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="lalathie" 
@@ -24,7 +24,7 @@ Dieses Dokument enthält eine Liste und beschreibt den Inhalt des SDK-Archivs.
 
 Dieser Ordner enthält Kopien der Softwarelizenzen und einen Link zu der Onlinedokumentation.
 
-`documentation.html` : Enthält einen Link zur Engagement-SDK-Onlinedokumentation für Windows 8 C\#-Metro-Anwendung.
+`documentation.html` : Enthält einen Link zur Engagement-SDK-Onlinedokumentation für Windows 8 C#-Metro-Anwendung.
 
 Dieser Ordner enthält auch Lizenzdateien.
 

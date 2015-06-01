@@ -16,9 +16,9 @@
    ms.author="telmos" />
 
 # Anbieter von Netzwerkressourcen
-Ein zentrales Bedürfnis für den heutigen Geschäftserfolg ist die Fähigkeit, großmaßstäbliche netzwerksensible Anwendungen auf agile, flexible und wiederholbare Weise aufzubauen und zu verwalten. Mit Azure Resource Manager \(ARM\) können Sie solche Anwendungen als eine einzelne Ressourcensammlung in Ressourcengruppen erstellen. Solche Ressourcen werden durch mehrere Ressourcenanbieter unter ARM verwaltet.
+Ein zentrales Bedürfnis für den heutigen Geschäftserfolg ist die Fähigkeit, großmaßstäbliche netzwerksensible Anwendungen auf agile, flexible und wiederholbare Weise aufzubauen und zu verwalten. Mit Azure Resource Manager (ARM) können Sie solche Anwendungen als eine einzelne Ressourcensammlung in Ressourcengruppen erstellen. Solche Ressourcen werden durch mehrere Ressourcenanbieter unter ARM verwaltet.
 
-Mit dem Azure Resource Manager \(ARM\) können Sie solche Anwendungen und die damit verbundene Sammlung von Netzwerkressourcen als eine einzelne Ressourcensammlung in einer Ressourcengruppe erstellen. Die Anwendung und die Netzwerkressourcen werden als eine Einheit in einer ARM-Ressourcengruppe ausgeführt.
+Mit dem Azure Resource Manager (ARM) können Sie solche Anwendungen und die damit verbundene Sammlung von Netzwerkressourcen als eine einzelne Ressourcensammlung in einer Ressourcengruppe erstellen. Die Anwendung und die Netzwerkressourcen werden als eine Einheit in einer ARM-Ressourcengruppe ausgeführt.
 
 Sie können Netzwerkressourcen mithilfe der folgenden Verwaltungsschnittstellen verwalten:
 
@@ -42,7 +42,7 @@ Mit Einführung der Anbieter von Netzwerkressourcen können Sie die folgenden Vo
 - **Wiederholbare Anpassung** - Sie können Vorlagen im deklarativen Stil verwenden, um eine wiederholbare und schnelle Anpassung von Bereitstellungen zu aktivieren.
 
 ## Netzwerkressourcen 
-Die Verwaltung von Netzwerkressourcen kann nun unabhängig voneinander erfolgen, anstatt sie alle durch eine einzelne Computerressource \(virtueller Computer\) zu verwalten. Das stellt ein höheres Maß an Flexibilität und Agilität beim Verfassen einer komplexen und großmaßstäblichen Infrastruktur in einer Ressourcengruppe sicher.
+Die Verwaltung von Netzwerkressourcen kann nun unabhängig voneinander erfolgen, anstatt sie alle durch eine einzelne Computerressource (virtueller Computer) zu verwalten. Das stellt ein höheres Maß an Flexibilität und Agilität beim Verfassen einer komplexen und großmaßstäblichen Infrastruktur in einer Ressourcengruppe sicher.
  
 Das untenstehende Diagramm stellt eine umfassende Sicht des Netzwerkressourcen-Modells und seinen Zuordnungen aus höherer Ebene dar. Die Ressourcen der höchsten Ebene sind farbig und blau konturiert. Zusätzlich zu den Ressourcen der höchsten Ebene sind  untergeordnete Ressourcen farbig und grau konturiert dargestellt. Sie können jede Ressource individuell verwalten.
 
@@ -74,7 +74,7 @@ Die folgenden HTTP-Methoden werden bei Aufrufen der REST API unterstützt:
 Sowohl die Anforderung als auch die Antwort entsprechen einem JSON-Nutzlast-Format. Weitere Informationen finden Sie unter [Azure Resource Management APIs](https://msdn.microsoft.com/library/azure/dn948464.aspx).
 
 ## ARM-Vorlagensprache
-Neben dem unerlässlichen Verwalten von Ressourcen \(über APIs oder SDK\) können Sie auch einen deklarativen Programmierstil verwenden, um Netzwerkressourcen mithilfe der ARM-Vorlagensprache zu erstellen und zu verwalten.
+Neben dem unerlässlichen Verwalten von Ressourcen (über APIs oder SDK) können Sie auch einen deklarativen Programmierstil verwenden, um Netzwerkressourcen mithilfe der ARM-Vorlagensprache zu erstellen und zu verwalten.
 
 Nachstehend finden Sie eine Beispieldarstellung einer Vorlage –
 
@@ -215,7 +215,7 @@ Weitere Informationen zur ARM-Vorlagensprache finden Sie unter [Azure Resource M
 Die oben abgebildete Vorlage nutzt das virtuelle Netzwerk und Subnetzressourcen. Wie unten aufgeführt, gibt es weitere Netzwerkressourcen, die Sie nutzen können:
 
 ## NIC
-Die Netzwerkschnittstellenkarte \(Network Interface Card, NIC\) stellt eine Netzwerkschnittstelle dar, die einem virtuellen Computer \(VM\) zugeordnet werden kann. Ein virtueller Computer hat ein oder mehrere NICs.
+Die Netzwerkschnittstellenkarte (Network Interface Card, NIC) stellt eine Netzwerkschnittstelle dar, die einem virtuellen Computer (VM) zugeordnet werden kann. Ein virtueller Computer hat ein oder mehrere NICs.
 
 ![NICs auf einem einzelnen virtuellen Computer](./media/resource-groups-networking/Figure3.png)
 
@@ -225,11 +225,11 @@ Zu den Schlüsseleigenschaften einer NIC-Ressource zählen:
 
 Eine NIC kann auch den folgenden Netzwerkressourcen zugeordnet werden:
 
-- Netzwerksicherheitsgruppen \(NSG\) 
+- Netzwerksicherheitsgruppen (NSG) 
 - Lastenausgleichsmodul
 
 ## Virtuelles Netzwerk und Subnetz
-Virtuelle Netzwerke \(VNET\) und Subnetze helfen, eine Sicherheitsbegrenzung für in Azure ausgeführte Arbeitsauslastungen zu definieren. Ein VNET verfügt über einen Adressraum, der auch als CIDR-Block bezeichnet wird.
+Virtuelle Netzwerke (VNET) und Subnetze helfen, eine Sicherheitsbegrenzung für in Azure ausgeführte Arbeitsauslastungen zu definieren. Ein VNET verfügt über einen Adressraum, der auch als CIDR-Block bezeichnet wird.
 
 Ein Subnetz ist eine untergeordnete Ressource eines VNET und hilft, die Segmente von Adressräumen innerhalb eines CIDR-Blocks mithilfe von IP-Adressenpräfixen zu definieren. Virtuelle Computer, die mehrere Arbeitsauslastungen ausführen, arbeiten grundsätzlich in einer Subnetzgrenze.
 
@@ -237,7 +237,7 @@ Ein Subnetz ist eine untergeordnete Ressource eines VNET und hilft, die Segmente
 
 Zu den Schlüsseleigenschaften einer VNET-Ressource zählen:
 
-- IP-Adressenraum \(CIDR-Block\) 
+- IP-Adressenraum (CIDR-Block) 
 - VNET-Name
 - Subnetze
 
@@ -261,7 +261,7 @@ Ein Lastenausgleichsmodul wird verwendet, wenn Sie Ihre Anwendungen skalieren m�
 
 Lastenausgleichsmodule enthalten die folgenden untergeordneten Ressourcen:
 
-- **Front-End-IP-Konfiguration** – ein Lastenausgleichsmodul kann ein oder mehrere Front-End-IP-Adressen umschließen, auch als virtuelle IPs \(VIPs\) bekannt. Diese IP-Adressen dienen als Eingang für den Datenverkehr. 
+- **Front-End-IP-Konfiguration** – ein Lastenausgleichsmodul kann ein oder mehrere Front-End-IP-Adressen umschließen, auch als virtuelle IPs (VIPs) bekannt. Diese IP-Adressen dienen als Eingang für den Datenverkehr. 
 - **Back-End-Adresspool** – IP-Adressen, die den VM NICs zugeordnet sind, an die Last verteilt wird.
 - **Lastenausgleichsregeln** – eine Regeleigenschaft ordnet eine bestimmte Front-End-IP-/Port-Kombination einer Back-End-IP-Adressen-/Port-Kombination zu. Mit einer einzelnen Definition eines Lastenausgleichsmodul können Sie mehrere Lastenausgleichsregeln definieren, von denen jede eine Kombination aus Front-End-IP und Port sowie Back-End-IP und Port ist, die dem virtuellen Computer zugeordnet ist. 
 - **Überprüfungen** – Mit Überprüfungen können Sie die Integrität der VM-Instanzen nachverfolgen. Schlägt eine Integritätsüberprüfung fehl, wird die VM-Instanz automatisch aus der Rotation entfernt. 
@@ -275,8 +275,8 @@ Zu den Schlüsseleigenschaften einer öffentlichen IP-Ressource zählen:
 
 - **IP-Zuordnungsmethode** – reserviert oder dynamisch 
 
-## Netzwerksicherheitsgruppen \(NSG\)
-Eine NSG-Ressource ermöglicht das Erstellen einer Sicherheitsbegrenzung für Arbeitsauslastungen durch Implementieren von Zulassungs- und Ablehnungsregeln. Solche Regeln können auf NIC-Ebene \(VM-Instanzebene\) oder auf Subnetzebene \(VM-Gruppe\) angewendet werden.
+## Netzwerksicherheitsgruppen (NSG)
+Eine NSG-Ressource ermöglicht das Erstellen einer Sicherheitsbegrenzung für Arbeitsauslastungen durch Implementieren von Zulassungs- und Ablehnungsregeln. Solche Regeln können auf NIC-Ebene (VM-Instanzebene) oder auf Subnetzebene (VM-Gruppe) angewendet werden.
 
 Zu den Schlüsseleigenschaften einer NSG-Ressource zählen: 
 
@@ -301,7 +301,7 @@ Eine VPN-Gateway-Ressource ermöglicht Ihnen, eine sichere Verbindung zwischen i
  
 - **Punkt-zu-Standort** – Mit einem VPN-Client von einem beliebigen Computer können Sie sicher auf Ihre in einem VNET gehosteten Azure-Ressourcen zugreifen. 
 - **Multisite-Verbindung** – Sie können von Ihren lokalen Rechenzentren eine sichere Verbindung zu Ressourcen aufbauen, die in einem VNET ausgeführt werden. 
-- **VNET-zu-VNET** – Sie können über Azure-VNETs hinweg \(in der gleichen Region oder regionsübergreifend\) eine sichere Verbindung aufbauen, um Arbeitsauslastungen mit Georedundanz zu erstellen.
+- **VNET-zu-VNET** – Sie können über Azure-VNETs hinweg (in der gleichen Region oder regionsübergreifend) eine sichere Verbindung aufbauen, um Arbeitsauslastungen mit Georedundanz zu erstellen.
 
 Zu den Schlüsseleigenschaften eines VPN-Gateway zählen:
  

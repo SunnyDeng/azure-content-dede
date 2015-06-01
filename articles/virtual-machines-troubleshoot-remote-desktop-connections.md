@@ -22,12 +22,12 @@ In diesem Thema wird ein methodischer Ansatz für die Korrektur und Bestimmung d
 
 ## Schritt 1: Ausführen des Azure IaaS-Diagnosepakets
 
-Zur Behebung von Problemen, die beim Herstellen von Remotedesktopverbindungen häufig auftreten, hat Microsoft ein [Diagnosepaket für Azure IaaS \(Windows\)](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864) erstellt.
+Zur Behebung von Problemen, die beim Herstellen von Remotedesktopverbindungen häufig auftreten, hat Microsoft ein [Diagnosepaket für Azure IaaS (Windows)](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864) erstellt.
 
-1.	Klicken Sie auf dieser Seite auf **Diagnosepaket Microsoft Azure IaaS \(Windows\)**, um eine neue Diagnosesitzung zu erstellen.
-2.	Wählen Sie auf der Seite **Welches der folgenden Probleme tritt mit Ihrem virtuellen Azure-Computer auf?** das Problem **RDP-Verbindung mit einem virtuellen Azure-Computer \(Neustart erforderlich\)**. 
+1.	Klicken Sie auf dieser Seite auf **Diagnosepaket Microsoft Azure IaaS (Windows)**, um eine neue Diagnosesitzung zu erstellen.
+2.	Wählen Sie auf der Seite **Welches der folgenden Probleme tritt mit Ihrem virtuellen Azure-Computer auf?** das Problem **RDP-Verbindung mit einem virtuellen Azure-Computer (Neustart erforderlich)**. 
 
-Weitere Informationen finden Sie in der Knowledge Base im Artikel [Microsoft Azure IaaS \(Windows\) und Diagnoseprogramme](http://support.microsoft.com/kb/2976864).
+Weitere Informationen finden Sie in der Knowledge Base im Artikel [Microsoft Azure IaaS (Windows) und Diagnoseprogramme](http://support.microsoft.com/kb/2976864).
 
 Wenn sich Problem nicht durch Ausführen des Azure IaaS-Diagnosepakets beheben ließ oder wenn Sie das Diagnosepaket nicht ausführen konnten, kann eine ausführlichere Problembehandlung erforderlich sein, die in den folgenden Schritten beschrieben wird.
 
@@ -88,7 +88,7 @@ Ursache: Das Konto, mit dem Sie eine Verbindung herstellen, verfügt über keine
 
 Jeder Windows-Computer verfügt über die lokale Gruppe "Remotedesktopbenutzer", die Konten und Gruppen enthält, die dazu berechtigt sind, sich über eine Remotedesktopverbindung anzumelden. Auch Mitglieder der lokalen Gruppe Administratoren haben Zugriff, obwohl diese Konten nicht als Mitglieder der lokalen Gruppe "Remotedesktopbenutzer" aufgelistet werden. Bei Computern, die Mitglieder einer Domäne sind, enthält die lokalen Gruppe "Administratoren" auch die Domänenadministratoren für die Domäne.
 
-Stellen Sie sicher, dass das Konto, das Sie zum Herstellen der Verbindung verwenden, über Remotedesktop-Anmelderechte verfügt. Verwenden Sie ein Domänenadministrator- oder ein lokales Administratorkonto als vorübergehende Problemumgehung, um eine Remotedesktopverbindung herzustellen, und fügen Sie das gewünschte Konto mit dem Snap-In "Computerverwaltung" der lokalen Gruppe "Remotedesktopbenutzer" hinzu (**Systemprogramme \> Lokale Benutzer und Gruppen \> Gruppen \> Remotedesktopbenutzer**).
+Stellen Sie sicher, dass das Konto, das Sie zum Herstellen der Verbindung verwenden, über Remotedesktop-Anmelderechte verfügt. Verwenden Sie ein Domänenadministrator- oder ein lokales Administratorkonto als vorübergehende Problemumgehung, um eine Remotedesktopverbindung herzustellen, und fügen Sie das gewünschte Konto mit dem Snap-In "Computerverwaltung" der lokalen Gruppe "Remotedesktopbenutzer" hinzu (**Systemprogramme > Lokale Benutzer und Gruppen > Gruppen > Remotedesktopbenutzer**).
 
 ### Meldungsfenster der Remotedesktopverbindung: Remotedesktop kann aus einem der folgenden Gründe keine Verbindung mit dem Remotecomputer herstellen...
 
@@ -100,7 +100,7 @@ Nachfolgend werden die beteiligten Komponenten aufgeführt.
  
 Bevor Sie mit einer detaillierte Problembehandlung beginnen, empfiehlt es sich, sich zu überlegen, was sich geändert hat, seit Sie zuletzt erfolgreich Remotedesktopverbindungen herstellen konnten, und diese Änderung als Ausgangspunkt für die Problembehebung zu verwenden. Zum Beispiel:
 
-- Wenn Sie Remotedesktopverbindungen herstellen konnten und die öffentliche IP-Adresse des Cloud-Diensts mit dem virtuellen Computer \(auch virtuelle IP-Adresse [VIP] genannt\) geändert haben, enthält der DNS-Clientcache möglicherweise einen Eintrag für den DNS-Namen des Cloud-Diensts und die *alte IP-Adresse*. Löschen Sie den Cache des DNS-Clients, und versuchen Sie es erneut. Versuchen Sie stattdessen, die Verbindung mit der neuen VIP herzustellen.
+- Wenn Sie Remotedesktopverbindungen herstellen konnten und die öffentliche IP-Adresse des Cloud-Diensts mit dem virtuellen Computer (auch virtuelle IP-Adresse [VIP] genannt) geändert haben, enthält der DNS-Clientcache möglicherweise einen Eintrag für den DNS-Namen des Cloud-Diensts und die *alte IP-Adresse*. Löschen Sie den Cache des DNS-Clients, und versuchen Sie es erneut. Versuchen Sie stattdessen, die Verbindung mit der neuen VIP herzustellen.
 - Wenn Sie statt des Azure-Verwaltungsportals oder des Azure-Vorschauportals eine Anwendung zum Verwalten von Remotedesktopverbindungen verwenden, stellen Sie sicher, dass die Anwendungskonfiguration den nach dem Zufallsprinzip bestimmten TCP-Port für den Remotedesktop-Datenverkehr enthält. 
 
 In den folgenden Abschnitten wird schrittweise erläutert, wie die verschiedenen Ursachen für dieses Problem isoliert und ermittelt werden. Zudem werden Lösungen und Problemumgehungen bereitgestellt.
@@ -121,7 +121,7 @@ Dass der Remotedesktopclient den Dienst der Remotedesktopdienste auf dem virtuel
 
 - Remotedesktop-Clientcomputer
 - Edgegerät im Intranet des Unternehmens
-- Cloud-Dienstendpunkt und die Zugriffssteuerungsliste \(ACL\)
+- Cloud-Dienstendpunkt und die Zugriffssteuerungsliste (ACL)
 - Netzwerksicherheitsgruppen
 - Windows-basierter virtueller Azure-Computer
 
@@ -183,9 +183,9 @@ Der letzte Satz möglicher Probleme hat mit dem virtuellen Azure-Computer selbst
 
 ![](./media/virtual-machines-troubleshoot-remote-desktop-connections/tshootrdp_5.png)
  
-Wenn Sie das [Diagnosepaket Azure IaaS \(Windows\)](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864) für das Problem **RDP-Verbindung mit einer Azure-VM \(Neustart erforderlich\)** ausführen konnten, folgen Sie den Anweisungen unter [Zurücksetzen eines Kennworts oder des Remotedesktopdiensts für virtuelle Windows-Computer](virtual-machines-windows-reset-password.md), um den Dienst der Remotedesktopdienste auf dem virtuellen Computer zurückzusetzen. Dies bewirkt Folgendes:
+Wenn Sie das [Diagnosepaket Azure IaaS (Windows)](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864) für das Problem **RDP-Verbindung mit einer Azure-VM (Neustart erforderlich)** ausführen konnten, folgen Sie den Anweisungen unter [Zurücksetzen eines Kennworts oder des Remotedesktopdiensts für virtuelle Windows-Computer](virtual-machines-windows-reset-password.md), um den Dienst der Remotedesktopdienste auf dem virtuellen Computer zurückzusetzen. Dies bewirkt Folgendes:
 
-- Die Windows-Firewall-Standardregel "Remotedesktop" \(TCP-Port 3389\) wird aktiviert.
+- Die Windows-Firewall-Standardregel "Remotedesktop" (TCP-Port 3389) wird aktiviert.
 - Remotedesktopverbindungen werden aktiviert, indem der HKLM\\System\\CurrentControlSet\\Control\\Terminal Server\\fDenyTSConnections-Registrierungswert auf 0 festgelegt wird.
 
 Versuchen Sie erneut, die Verbindung von Ihrem Computer aus herzustellen. Wenn Sie nicht erfolgreich sind, können u. a. die folgenden Probleme der Grund dafür sein:
@@ -201,7 +201,7 @@ Installieren Sie dann Azure PowerShell, sofern noch nicht geschehen. Weitere Inf
 
 Als Nächstes öffnen Sie eine Azure-PowerShell-Eingabeaufforderung, und ändern Sie dann den aktuellen Ordner in den Speicherort der Skriptdatei **InstallWinRMCertAzureVM.ps1**. Um ein PowerShell-Skript auszuführen, müssen Sie die richtige Ausführungsrichtlinie festlegen. Führen Sie den Befehl **Get-ExecutionPolicy** aus, um die aktuelle Richtlinienebene zu ermitteln. Weitere Informationen zum Festlegen der geeigneten Ebene finden Sie unter [Set-ExecutionPolicy](https://technet.microsoft.com/library/hh849812.aspx).
 
-Als Nächstes tragen Sie Ihren Azure-Abonnement-Namen, den Namen des Cloud-Diensts und den Name des virtuellen Computers ein \(entfernen Sie die < and >-Zeichen\), führen Sie dann diese Befehle aus.
+Als Nächstes tragen Sie Ihren Azure-Abonnement-Namen, den Namen des Cloud-Diensts und den Name des virtuellen Computers ein (entfernen Sie die < and >-Zeichen), führen Sie dann diese Befehle aus.
 
 	$subscr="<Name of your Azure subscription>"
 	$serviceName="<Name of the cloud service that contains the target virtual machine>"
@@ -210,7 +210,7 @@ Als Nächstes tragen Sie Ihren Azure-Abonnement-Namen, den Namen des Cloud-Diens
 
 Sie können den richtigen Abonnementnamen der SubscriptionName-Eigenschaft in der Ausgabe des Befehls **Get-AzureSubscription** entnehmen. Der Name des virtuellen Computers und der Name des Cloud-Diensts wird in der ServiceName-Spalte in der Ausgabe des Befehls **Get-AzureVM** angezeigt.
 
-Um sich davon zu überzeugen, dass Sie das neue Zertifikat besitzen, öffnen Sie ein Zertifikate-Snap-In für den aktuellen Benutzer, und zeigen Sie den Ordner **Trusted Root Certification Authorities\\Certificates** an. Es sollte ein Zertifikat mit dem DNS-Namen des Cloud-Diensts in der Spalte "Ausgestellt für" angezeigt werden \(Beispiel: cloudservice4testing.cloudapp.net\).
+Um sich davon zu überzeugen, dass Sie das neue Zertifikat besitzen, öffnen Sie ein Zertifikate-Snap-In für den aktuellen Benutzer, und zeigen Sie den Ordner **Trusted Root Certification Authorities\\Certificates** an. Es sollte ein Zertifikat mit dem DNS-Namen des Cloud-Diensts in der Spalte "Ausgestellt für" angezeigt werden (Beispiel: cloudservice4testing.cloudapp.net).
 
 Starten Sie als Nächstes mit diesen Befehlen eine Powershell-Remotesitzung.
 
@@ -228,11 +228,11 @@ Sie können jetzt PowerShell-Befehle eingeben, um die oben genannten weitere Pro
 
 ### So korrigieren Sie manuell den TCP-Port, der vom Dienst der Remotedesktopdienste überwacht wird
 
-Wenn Sie [Azure IaaS \(Windows\) und Diagnoseprogramme](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864) für das Problem **RDP-Verbindung mit einer Azure-VM \(Neustart erforderlich\)** nicht ausführen konnten, führen Sie diesen Befehl an der Eingabeaufforderung der PowerShell-Sitzung aus.
+Wenn Sie [Azure IaaS (Windows) und Diagnoseprogramme](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864) für das Problem **RDP-Verbindung mit einer Azure-VM (Neustart erforderlich)** nicht ausführen konnten, führen Sie diesen Befehl an der Eingabeaufforderung der PowerShell-Sitzung aus.
 
 	Get-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -Name "PortNumber"
 
-Die PortNumber-Eigenschaft enthält die aktuelle Portnummer. Ändern Sie bei Bedarf die Remotedesktop-Portnummer mit dem folgenden Befehl wieder in den Standardwert \(3389\).
+Die PortNumber-Eigenschaft enthält die aktuelle Portnummer. Ändern Sie bei Bedarf die Remotedesktop-Portnummer mit dem folgenden Befehl wieder in den Standardwert (3389).
 
 	Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -Name "PortNumber" -Value 3389
 
@@ -252,7 +252,7 @@ Um Hilfe von Azure-Experten aus aller Welt zu erhalten, können Sie Ihr Problem 
 
 ## Schritt 6: Erstellen eines Azure-Supportfalls
 
-Wenn Sie [Azure IaaS \(Windows\) und Diagnoseprogramme](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864) für das Problem **RDP-Verbindung mit einer Azure-VM \(Neustart erforderlich\)** oder die Schritte 2 bis 5 in diesem Artikel ausgeführt und Ihr Problem an die Azure-Supportforen gesendet haben, aber weiterhin keine Remotedesktopverbindung  herstellen können, besteht eine zu berücksichtigende Alternative darin, ob Sie den virtuellen Computer neu erstellen können.
+Wenn Sie [Azure IaaS (Windows) und Diagnoseprogramme](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864) für das Problem **RDP-Verbindung mit einer Azure-VM (Neustart erforderlich)** oder die Schritte 2 bis 5 in diesem Artikel ausgeführt und Ihr Problem an die Azure-Supportforen gesendet haben, aber weiterhin keine Remotedesktopverbindung  herstellen können, besteht eine zu berücksichtigende Alternative darin, ob Sie den virtuellen Computer neu erstellen können.
 
 Wenn Sie den virtuellen Computer nicht neu erstellen können, ist es wahrscheinlich an der Zeit, einen Azure-Supportfall zu erstellen.
 
@@ -262,7 +262,7 @@ Informationen zur Nutzung von Azure-Support finden Sie unter der [Microsoft Azur
 
 ## Zusätzliche Ressourcen
 
-[Azure IaaS \(Windows\) und Diagnoseprogramme](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)
+[Azure IaaS (Windows) und Diagnoseprogramme](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)
 
 [Zurücksetzen eines Kennworts oder des Remotedesktopdiensts für virtuelle Windows-Computer](virtual-machines-windows-reset-password.md)
 

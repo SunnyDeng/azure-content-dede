@@ -208,7 +208,7 @@ Daraufhin wird in etwa Folgendes ausgegeben: `5112500ae3b842c8b9c604889f8753c3__
 		
 	- Bearbeiten Sie den Abschnitt **[mariadb]**, und fügen Sie Folgendes an:
 	
-	> [AZURE.NOTE] Es wird empfohlen, dass **innodb\_buffer\_pool_size** 70 % des Speichers des virtuellen Computers beträgt. In diesem Fall wurde sie für den mittleren virtuellen Azure-Computer mit 3,5 GB RAM auf 2,45 GB festgelegt.
+	> [AZURE.NOTE] Es wird empfohlen, dass **innodb_buffer_pool_size** 70 % des Speichers des virtuellen Computers beträgt. In diesem Fall wurde sie für den mittleren virtuellen Azure-Computer mit 3,5 GB RAM auf 2,45 GB festgelegt.
 	
 	        innodb_buffer_pool_size = 2508M # The buffer pool contains buffered data and the index. This is usually set to 70% of physical memory.
             innodb_log_file_size = 512M #  Redo logs ensure that write operations are fast, reliable, and recoverable after a crash

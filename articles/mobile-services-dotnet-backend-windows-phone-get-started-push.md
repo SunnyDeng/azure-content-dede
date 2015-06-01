@@ -120,8 +120,8 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
         {
             TodoItem current = await InsertAsync(item);
             MpnsPushMessage message = new MpnsPushMessage();
-            message.XmlPayload = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
-                "<wp:Notification xmlns:wp=\"WPNotification\">" +
+            message.XmlPayload = "<?xml version="1.0" encoding="utf-8"?>" +
+                "<wp:Notification xmlns:wp="WPNotification">" +
                    "<wp:Toast>" +
                         "<wp:Text1>" + item.Text + "</wp:Text1>" +
                    "</wp:Toast> " +

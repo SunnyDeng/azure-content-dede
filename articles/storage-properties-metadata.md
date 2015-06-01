@@ -11,7 +11,7 @@
 <tags 
 	ms.service="storage" 
 	ms.workload="storage"
-	ms.tgt\_pltfrm="na"
+	ms.tgt_pltfrm="na"
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/21/2015" 
@@ -117,7 +117,7 @@ Das folgende Codebeispiel erstellt einen Container und einen Blob und schreibt E
 
 Sie können Metadaten als ein oder mehrere Name-Wert-Paare für einen Blob oder Container angeben. Fügen Sie zum Festlegen von Metadaten Name-Wert-Paare zur **Metadaten**-Auflistung der Ressource hinzu, und rufen Sie dann die **SetMetadata**-Methode auf, um die Werte für den Dienst zu speichern.
 
-> [AZURE.NOTE]Der Name der Metadaten muss den Benennungskonventionen für C\#-Bezeichner entsprechen.
+> [AZURE.NOTE]Der Name der Metadaten muss den Benennungskonventionen für C#-Bezeichner entsprechen.
  
 Zum Abrufen von Metadaten rufen Sie die **FetchAttributes**-Methode für den Blob oder Container auf, um die **Metadaten**-Auflistung zu füllen, und lesen Sie anschließend die Werte.
 

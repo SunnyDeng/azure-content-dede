@@ -29,7 +29,7 @@ Erfahren Sie, wie Sie DNS-Server zu virtuellen Netzwerken in Azure hinzufügen u
 Dieses Lernprogramm ist der zweite Teil der [Reihe][hdinsight-hbase-geo-replication] zum Erstellen von HBase Georeplikation:
 
 - [Konfigurieren einer VPN-Konnektivität zwischen zwei virtuellen Netzwerken][hdinsight-hbase-geo-replication-vnet]
-- Konfigurieren von DNS für virtuelle Netzwerke \(dieses Lernprogramm\)
+- Konfigurieren von DNS für virtuelle Netzwerke (dieses Lernprogramm)
 - [Konfigurieren von HBase-Georeplikation][hdinsight-hbase-geo-replication]
 
 
@@ -61,7 +61,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 **So erstellen Sie einen virtuellen Computer innerhalb Contoso-VNet-EU namens Contoso-DNS-EU**
 
-1.	Klicken Sie auf **NEU** \> **BERECHNEN** \> **VIRTUELLER COMPUTER** \> **AUS KATALOG**.
+1.	Klicken Sie auf **NEU** > **BERECHNEN** > **VIRTUELLER COMPUTER** > **AUS KATALOG**.
 2.	Wählen Sie **Windows Server 2012 R2 Datencenter** aus.
 3.	Geben Sie Folgendes ein:
 	- **NAME DES VIRTUELLEN COMPUTERS**: Contoso-DNS-EU
@@ -69,14 +69,14 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 	- **NEUES KENNWORT**: 
 4.	Geben Sie Folgendes ein:
 	- **CLOUD-DIENST**: Erstellen Sie einen neuen Cloud-Dienst
-	- **REGION/AFFINITÄTSGRUPPE/VIRTUELLES NETZWERK**: \(Wählen Sie Contoso-VNet-EU aus\)
+	- **REGION/AFFINITÄTSGRUPPE/VIRTUELLES NETZWERK**: (Wählen Sie Contoso-VNet-EU aus)
 	- **SUBNETZE DES VIRTUELLEN NETZWERKS**: Subnetz-1
 	- **SPEICHERKONTO**: Verwenden Sie ein automatisch generiertes Speicherkonto
 	
-		The cloud service name will be the same as the virtual machine name. In this case, that is Contoso-DNS-EU. For subsequent virtual machines, I can choose to use the same cloud service.  All the virtual machines under the same cloud service share the same virtual network and domain suffix.
+		Der Clouddienstname ist mit dem Namen des virtuellen Computers identisch. In diesem Fall ist das "Contoso-DNS-EU". Für nachfolgende virtuelle Computer kann ich denselben Clouddienst auswählen.  Alle virtuellen Computer in gleichen Clouddienst nutzen dasselbe virtuelle Netzwerk und Domänensuffix.
 
-		The storage account is used to store the virtual machine image file. 
-	- **ENDPUNKTE**: \(Scrollen nach unten, und wählen Sie **DNS** aus\) 
+		Das Speicherkonto wird zum Speichern der Imagedatei für den virtuellen Computer verwendet. 
+	- **ENDPUNKTE**: (Scrollen nach unten, und wählen Sie **DNS** aus) 
 
 Ermitteln Sie nach der Erstellung des virtuellen Computers die interne und externe IP.
 
@@ -94,7 +94,7 @@ Ermitteln Sie nach der Erstellung des virtuellen Computers die interne und exter
 	- REGION/AFFINITÄTSGRUPPE/VIRTUELLES NETZWERK: Wählen Sie Contoso-VNet-US aus
 	- SUBNETZE DES VIRTUELLEN NETZWERKS: Subnetz-1
 	- SPEICHERKONTO: Verwenden Sie ein automatisch generiertes Speicherkonto
-	- ENDPUNKTE: \(DNS auswählen\)
+	- ENDPUNKTE: (DNS auswählen)
 
 ## Legen Sie statische IP-Adressen für die beiden virtuellen Computer fest
 
@@ -129,7 +129,7 @@ DNS-Server erfordern statische IP-Adressen. Dieser Schritt kann nicht vom Azure-
 4.	Klicken Sie auf **Rollen und Features hinzufügen**.
 5.	Klicken Sie auf **Weiter**.
 6.	Wählen Sie **Rollenbasierte oder featurebasierte Installation** und klicken Sie auf **Weiter**.
-7.	Wählen Sie Ihre DNS-VM \(sie sollte bereits hervorgehoben sein\), und klicken Sie dann auf **Weiter**.
+7.	Wählen Sie Ihre DNS-VM (sie sollte bereits hervorgehoben sein), und klicken Sie dann auf **Weiter**.
 8.	Überprüfen Sie den **DNS-Server**.
 9.	Klicken Sie auf **Features hinzufügen** und anschließend auf **Weiter**.
 10.	Klicken Sie dreimal auf **Weiter**, und klicken Sie dann auf **Installieren**. 
@@ -202,7 +202,7 @@ Um bedingte Weiterleitung zu konfigurieren, müssen Sie die Domänenendungen der
 
 ## Testen Sie die Namensauflösung in den virtuellen Netzwerken
 
-Sie können nun die Auflösung von Hostnamen in den virtuellen Netzwerken testen. Ping wird standardmäßig von der Firewall blockiert. Sie können mit nslookup die virtuellen Computer der DNS-Server \(Sie müssen FQDN verwenden\) in den Peer-Netzwerken auflösen.
+Sie können nun die Auflösung von Hostnamen in den virtuellen Netzwerken testen. Ping wird standardmäßig von der Firewall blockiert. Sie können mit nslookup die virtuellen Computer der DNS-Server (Sie müssen FQDN verwenden) in den Peer-Netzwerken auflösen.
 
 
 ## Nächste Schritte

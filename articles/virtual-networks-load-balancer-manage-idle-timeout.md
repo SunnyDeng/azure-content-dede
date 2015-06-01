@@ -58,7 +58,7 @@ Laden Sie die [neueste Azure PowerShell-Version](https://github.com/Azure/azure-
 
 ### Abrufen Ihrer Leerlauftimeout-Konfiguration
 
-    PS C:\> Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
+    PS C:> Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
     
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
     LBSetName : MyLoadBalancedSet

@@ -180,7 +180,7 @@ Unter Linux:
 
 Unter Windows:
 
-    cd \users\azureuser\.ipython\profile_nbserver
+    cd \users\azureuser.ipython\profile_nbserver
 
 Erstellen Sie das SSL-Zertifikat (Linux und Windows) wie folgt:
 
@@ -223,7 +223,7 @@ mindestens den folgenden Inhalt hat:
     c.NotebookApp.certfile = u'/home/azureuser/.ipython/profile_nbserver/mycert.pem'
     
     # And if using a Windows VM:
-    c.NotebookApp.certfile = r'C:\Users\azureuser\.ipython\profile_nbserver\mycert.pem'
+    c.NotebookApp.certfile = r'C:\Users\azureuser.ipython\profile_nbserver\mycert.pem'
     
     # Create your own password as indicated above
     c.NotebookApp.password = u'sha1:b86e933199ad:a02e9592e5 etc... '

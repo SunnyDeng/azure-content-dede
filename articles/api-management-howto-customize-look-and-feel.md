@@ -36,7 +36,7 @@ Jede Regel steht für eine Stileigenschaft des ausgewählten Elements. Der ausge
 
 > Falls Sie mit [bootstrap][<http://getbootstrap.com/>] vertraut sind, werden Sie feststellen, dass es sich bei diesen Regeln um [LESS-Variablen][<http://getbootstrap.com/css/>] aus dem Bootstrap-Design für das Entwicklerportal handelt.
 
-Ändern Sie nun die Farbe der Überschrift. Wählen Sie den Eintrag im Feld <**@headings-color*>\* aus und geben Sie \#000000 ein. Dies ist der Hexadezimalcode für die Farbe Schwarz. Daraufhin sollte ein rechteckiger Farbindikator am Ende des Textfelds angezeigt werden. Wenn Sie diesen Indikator anklicken, können Sie mit einem Farbwähler eine Farbe auswählen.
+Ändern Sie nun die Farbe der Überschrift. Wählen Sie den Eintrag im Feld <**@headings-color*>* aus und geben Sie #000000 ein. Dies ist der Hexadezimalcode für die Farbe Schwarz. Daraufhin sollte ein rechteckiger Farbindikator am Ende des Textfelds angezeigt werden. Wenn Sie diesen Indikator anklicken, können Sie mit einem Farbwähler eine Farbe auswählen.
 
 ![Farbauswahl][Farbauswahl]
 

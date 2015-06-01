@@ -46,8 +46,8 @@ Ja. ExpressRoute-Verbindungen sind so konfiguriert, dass sie Situationen unterst
 ### Kann ich die gleiche private Netzwerkverbindung gleichzeitig mit Virtual Network und anderen Azure-Diensten verwenden?
 Ja. Sobald eine ExpressRoute-Verbindung eingerichtet ist, können Sie gleichzeitig auf Dienste in einem virtuellen Netzwerk und in anderen Azure-Diensten zugreifen. Über einen privaten Peeringpfad können Sie eine Verbindung mit virtuellen Netzwerken herstellen, und über den öffentlichen Peeringpfad stellen Sie die Verbindung mit anderen Diensten her.
 
-### Bietet ExpressRoute eine Service Level Agreement \(SLA\)?
-Auf der Seite [Vereinbarungen zum Servicelevel \(SLAs\) für ExpressRoute](http://azure.microsoft.com/support/legal/sla/) finden Sie dazu weitere Informationen.
+### Bietet ExpressRoute eine Service Level Agreement (SLA)?
+Auf der Seite [Vereinbarungen zum Servicelevel (SLAs) für ExpressRoute](http://azure.microsoft.com/support/legal/sla/) finden Sie dazu weitere Informationen.
 
 ## Unterstützte Azure-Dienste
 ExpressRoute unterstützt die meisten Azure-Dienste.
@@ -134,10 +134,10 @@ Nein. Alle virtuellen Netzwerke, die mit der gleichen ExpressRoute-Verbindung ve
 Ja. Sie können ein einzelnes virtuelles Netzwerk mit bis zu 4 ExpressRoute-Verbindungen verknüpfen. Alle ExpressRoute-Verbindungen müssen sich auf demselben Kontinent befinden. Sie können bei verschiedenen Dienstanbietern angefordert werden und sich an verschiedenen Standorten befinden.
 
 ### Kann ich von meinen virtuellen Netzwerken aus, die mit ExpressRoute-Verbindungen verbunden sind, ins Internet gehen?
-Ja. Wenn Sie über die BGP-Sitzung keine Standardrouten \(0.0.0.0/0\) oder Internet-Routepräfixe angekündigt haben, können Sie von einem virtuellen Netzwerk aus, das mit einer ExpressRoute-Verbindung verknüpft ist, eine Verbindung zum Internet herstellen.
+Ja. Wenn Sie über die BGP-Sitzung keine Standardrouten (0.0.0.0/0) oder Internet-Routepräfixe angekündigt haben, können Sie von einem virtuellen Netzwerk aus, das mit einer ExpressRoute-Verbindung verknüpft ist, eine Verbindung zum Internet herstellen.
 
 ### Kann ich die Verbindung zum Internet für virtuelle Netzwerke blockieren, die mit ExpressRoute-Verbindungen verbunden sind?
-Ja. Sie können Standardrouten \(0.0.0.0/0\) ankündigen, um die Internetkonnektivität von virtuellen Computern in einem virtuellen Netzwerk zu blockieren und den gesamten Datenverkehr über die ExpressRoute-Verbindung zu leiten. Beachten Sie, dass wir den Datenverkehr an Dienste, die über öffentliches Peering \(z. B. Azure Storage und SQL-Datenbank\) angeboten werden, wieder an Ihren Standort zurückleiten, wenn Sie keine Standardrouten ankündigen. Sie müssen Ihre Router so konfigurieren, dass der Datenverkehr über den öffentlichen Peeringpfad oder über das Internet an Azure zurückgegeben wird.
+Ja. Sie können Standardrouten (0.0.0.0/0) ankündigen, um die Internetkonnektivität von virtuellen Computern in einem virtuellen Netzwerk zu blockieren und den gesamten Datenverkehr über die ExpressRoute-Verbindung zu leiten. Beachten Sie, dass wir den Datenverkehr an Dienste, die über öffentliches Peering (z. B. Azure Storage und SQL-Datenbank) angeboten werden, wieder an Ihren Standort zurückleiten, wenn Sie keine Standardrouten ankündigen. Sie müssen Ihre Router so konfigurieren, dass der Datenverkehr über den öffentlichen Peeringpfad oder über das Internet an Azure zurückgegeben wird.
 
 ### Können virtuelle Netzwerke mit der gleichen ExpressRoute-Verbindung verknüpft sein und miteinander kommunizieren?
 Ja. Virtuelle Maschinen in virtuellen Netzwerken, die mit der gleichen ExpressRoute-Verbindung verbunden sind, können miteinander kommunizieren.
@@ -155,20 +155,20 @@ Sie müssen eine ExpressRoute-Verbindung einrichten und Routen für öffentliche
 Ja. Wir akzeptieren bis zu 4.000 Routenpräfixe für privates Peering und öffentliches Peering. Sie können diesen Wert auf 10.000 Routen erhöhen, wenn Sie für ExpressRoute das Premium-Feature aktivieren.
 
 ### Gibt es Einschränkungen hinsichtlich der IP-Adressbereiche, die ich über die BGP-Sitzung ankündigen kann?
-Über BGP angekündigte Präfixe müssen "/29" oder größer \(/28 bis /8\) sein.
+Über BGP angekündigte Präfixe müssen "/29" oder größer (/28 bis /8) sein.
 
-Wir filtern private Präfixe \(RFC1918\) in der öffentlichen BGP-Peeringsitzung heraus.
+Wir filtern private Präfixe (RFC1918) in der öffentlichen BGP-Peeringsitzung heraus.
 
 ### Was geschieht, wenn ich die BGP-Limits überschreite?
 BGP-Sitzungen werden abgebrochen. Sie werden zurückgesetzt, sobald die Präfixanzahl unter das Limit fällt.
 
-### Nachdem ich die Standardroute \(0.0.0.0/0\) für meine virtuellen Netzwerke angekündigt habe, kann ich Windows, das auf meinen Azure-VMs ausgeführt wird, nicht mehr aktivieren. Was kann ich tun?
+### Nachdem ich die Standardroute (0.0.0.0/0) für meine virtuellen Netzwerke angekündigt habe, kann ich Windows, das auf meinen Azure-VMs ausgeführt wird, nicht mehr aktivieren. Was kann ich tun?
 Die folgenden Schritte helfen Azure dabei, die Aktivierungsanforderung zu erkennen:
 
 1. Richten Sie für die ExpressRoute-Verbindung öffentliches Peering ein.
 2. Führen Sie ein DNS-Lookup durch, und suchen Sie die IP-Adresse von **kms.core.windows.net**.
 3. Führen Sie eines der beiden folgenden Elemente aus, damit der Schlüsselverwaltungsdienst erkennt, dass die Aktivierungsanforderung von Azure stammt und die Anforderung berücksichtigt.
-	- Leiten Sie in Ihrem lokalen Netzwerk den Datenverkehr für die IP-Adresse \(abgerufen in Schritt 2\) über das öffentliche Peering zurück an Azure.
+	- Leiten Sie in Ihrem lokalen Netzwerk den Datenverkehr für die IP-Adresse (abgerufen in Schritt 2) über das öffentliche Peering zurück an Azure.
 	- Fordern Sie Ihren Netzwerkdienstanbieter auf, den Datenverkehr über das öffentliche Peering wieder an Azure zurückzuleiten. 
 
 ### Kann ich die Bandbreite einer ExpressRoute-Verbindung ändern?
@@ -183,7 +183,7 @@ Sie können die Bandbreite der ExpressRoute-Verbindung mithilfe der API zum Aktu
 ExpressRoute Premium ist eine Sammlung der unten aufgeführten Features.
  
  - Höheres Routingtabellen-Limit von 4000 Routen auf 10.000 Routen für öffentliches und privates Peering.
- - Größere Anzahl an VNets, die mit der ExpressRoute-Verbindung verbunden werden können.  \(Der Standardwert ist 10.\) Weitere Details finden Sie in der Tabelle unten.
+ - Größere Anzahl an VNets, die mit der ExpressRoute-Verbindung verbunden werden können.  (Der Standardwert ist 10.) Weitere Details finden Sie in der Tabelle unten.
  - Globale Konnektivität über das Microsoft-Kernnetzwerk. Jetzt können Sie ein VNet in einer geopolitischen Region mit einer ExpressRoute-Verbindung in einer anderen Region verknüpfen. **Beispiel:** Sie können ein in Westeuropa erstelltes VNet mit einer ExpressRoute-Verbindung verknüpfen, die im Silicon Valley erstellt wurde. 
 
 ### Wie viele VNets kann ich mit einer ExpressRoute-Verbindung verknüpfen, wenn ich ExpressRoute Premium aktiviert habe?
@@ -271,7 +271,7 @@ Die folgenden Lernprogramme helfen Ihnen bei den folgenden Aufgaben:
 - Yammer
 - Office 365 ProPlus-Clientdownloads
 - Lokale Identitätsanbieter-Anmeldung 
-- Office 365 \(über 21 Vianet\)-Dienst in China
+- Office 365 (über 21 Vianet)-Dienst in China
 
 Mit diesen Diensten können Sie eine Verbindung über das Internet herstellen.
 

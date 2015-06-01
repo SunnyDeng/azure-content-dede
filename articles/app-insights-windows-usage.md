@@ -32,7 +32,7 @@ Klicken Sie sich auf der Zeitachse "Übersicht" durch die Diagramme "Benutzer un
 ![](./media/appinsights/appinsights-d018-oview.png)
 
 * **Benutzer** werden anonym nachverfolgt, weshalb der gleiche Benutzer auf verschiedenen Geräten zweimal gezählt wird.
-* Eine **Sitzung** wird gezählt, wenn die App angehalten wird \(und zwar für mehr als einen kurzen Zeitraum, um das Zählen unbeabsichtigter Unterbrechungen zu vermeiden\).
+* Eine **Sitzung** wird gezählt, wenn die App angehalten wird (und zwar für mehr als einen kurzen Zeitraum, um das Zählen unbeabsichtigter Unterbrechungen zu vermeiden).
 
 #### Segmentierung
 

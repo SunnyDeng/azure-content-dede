@@ -43,7 +43,7 @@ Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgende
 
 - Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](../../pricing/free-trial/).
 - [Node.js][] Version v0.10.29 oder höher.
-- [Express Generator](http://www.expressjs.com/starter/generator.html) \(Installation über `npm install express-generator -g`\)
+- [Express Generator](http://www.expressjs.com/starter/generator.html) (Installation über `npm install express-generator -g`)
 - [Git][].
 
 ## <a name="_Toc395637761"></a>Schritt 1: Erstellen eines DocumentDB-Datenbankkontos
@@ -93,7 +93,7 @@ Die Datei **package.json** ist eine der im Stammverzeichnis des Projekts erstell
 
 	![Screenshot der Registerkarte "package.json"](./media/documentdb-nodejs-application/image17.png)
 
-       Dadurch wird Node \(und später Azure\) darüber informiert, dass Ihre Anwendung von diesen zusätzlichen Modulen abhängig ist.
+       Dadurch wird Node (und später Azure) darüber informiert, dass Ihre Anwendung von diesen zusätzlichen Modulen abhängig ist.
 
 ## <a name="_Toc395783180"></a>Schritt 4: Verwenden des DocumentDB-Diensts in einer Knotenanwendung
 
@@ -390,7 +390,7 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		
 		module.exports = config;
 
-3. Aktualisieren Sie in der Datei **config.js** die Werte für HOST und AUTH\_KEY unter Verwendung der Werte im Blatt "Schlüssel" Ihres DocumentDB-Kontos im [Microsoft Azure-Portal](http://portal.azure.com):
+3. Aktualisieren Sie in der Datei **config.js** die Werte für HOST und AUTH_KEY unter Verwendung der Werte im Blatt "Schlüssel" Ihres DocumentDB-Kontos im [Microsoft Azure-Portal](http://portal.azure.com):
 
 4. Speichern und schließen Sie die Datei **config.js**.
  
@@ -424,7 +424,7 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		app.post('/completetask', taskList.completeTask.bind(taskList));
 
 
-6. Diese Zeilen definieren eine neue Instanz unseres **TaskDao**-Objekts mit einer neuen Verbindung zu DocumentDB \(unter Verwendung der aus **config.js** gelesenen Werte\). Sie initialisieren das Task-Objekt und binden dann Formularaktionen an Methoden auf unserem **TaskList**-Controller. 
+6. Diese Zeilen definieren eine neue Instanz unseres **TaskDao**-Objekts mit einer neuen Verbindung zu DocumentDB (unter Verwendung der aus **config.js** gelesenen Werte). Sie initialisieren das Task-Objekt und binden dann Formularaktionen an Methoden auf unserem **TaskList**-Controller. 
 
 7. Speichern und schließen Sie abschließend die Datei **app.js**. Wir sind fast fertig.
  

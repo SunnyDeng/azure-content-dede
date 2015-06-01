@@ -118,7 +118,7 @@ Verwenden Sie dann "azure role assignment create" zum Erstellen einer Rollenzuwe
 
 - Mit dem folgenden Befehl wird eine Rollenzuweisung auf Ressourcengruppenebene erstellt:
 
-    "PS C:\> azure role assignment create --upn <user's email> -o Contributor -g group1"
+    "PS C:> azure role assignment create --upn <user's email> -o Contributor -g group1"
 
 - Mit dem folgenden Befehl wird eine Rollenzuweisung auf Ressourcenebene erstellt:
 
@@ -128,8 +128,8 @@ Verwenden Sie dann "azure role assignment create" zum Erstellen einer Rollenzuwe
 
 Nachdem Sie überprüft haben, ob mit Ihrem Konto Rollenzuweisungen verknüpft sind, können Sie die Berechtigungen der zugewiesenen Rollen anzeigen. Führen Sie dazu folgende Befehle aus:
 
-    PS C:\> azure group list
-    PS C:\> azure resource list
+    PS C:> azure group list
+    PS C:> azure resource list
 
 Mit diesen beiden Cmdlets werden Ressourcengruppen und Ressourcen mit Leseberechtigung zurückgegeben. Zusätzlich werden auch Ihre Berechtigungen angezeigt.
 

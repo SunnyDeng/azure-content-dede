@@ -198,7 +198,7 @@ Die folgende PHP-Seite erstellt eine TwiML-Antwort, die beim Anruf **Hello World
 
     <?php    
 		header("content-type: text/xml");    
-		echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+		echo "<?xml version="1.0" encoding="UTF-8"?>\n";
 	?>
 	<Response>    
 		<Say>Hello world.</Say>

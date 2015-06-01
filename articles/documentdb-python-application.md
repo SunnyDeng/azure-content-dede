@@ -58,7 +58,7 @@ Im Folgenden wird erläutert, wie Sie eine Python Flask-Webanwendung von Grund a
 
 ## Schritt 2: Erstellen einer neuen Python Flask-Webanwendung
 
-1. Öffnen Sie Visual Studio, klicken Sie auf **Datei** -\> **Neues Projekt** -\> **Python** -\>, **Flask-Webprojekt**, und erstellen Sie ein neues Projekt mit dem Namen **tutorial**. 
+1. Öffnen Sie Visual Studio, klicken Sie auf **Datei** -> **Neues Projekt** -> **Python** ->, **Flask-Webprojekt**, und erstellen Sie ein neues Projekt mit dem Namen **tutorial**. 
 
 	Bei Flask handelt es sich um ein Webframework, das uns beim schnelleren Erstellen von Webanwendungen in Python unterstützt. [Klicken Sie hier, um Flask-Lernprogramme zu öffnen][].
 
@@ -272,12 +272,12 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
     	{% endblock %}
 
 
-### Hinzufügen einer Konfigurationsdatei und Ändern von \_\_init\_\_.py
+### Hinzufügen einer Konfigurationsdatei und Ändern von __init__.py
 
 1. Klicken Sie mit der rechten Maustaste auf den Projektnamen "tutorial", und fügen Sie die Datei **config.py** hinzu.
 Diese Konfiguration ist für Formulare in Flask erforderlich. Sie können damit auch einen geheimen Schlüssel bereitstellen. Dies ist jedoch für dieses Lernprogramm nicht erforderlich. 
 
-2. Fügen Sie folgenden Code zur Datei "config.py" hinzu: Ändern Sie die Werte von **DOCUMENTDB\_HOST** und **DOCUMENTDB\_KEY**.
+2. Fügen Sie folgenden Code zur Datei "config.py" hinzu: Ändern Sie die Werte von **DOCUMENTDB_HOST** und **DOCUMENTDB_KEY**.
 
     	CSRF_ENABLED = True
     	SECRET_KEY = 'you-will-never-guess'
@@ -289,7 +289,7 @@ Diese Konfiguration ist für Formulare in Flask erforderlich. Sie können damit 
     	DOCUMENTDB_COLLECTION = 'voting collection'
     	DOCUMENTDB_DOCUMENT = 'voting document'
 
-3. Ersetzen Sie den Inhalt von **\_\_init\_\_.py** durch Folgendes.
+3. Ersetzen Sie den Inhalt von **__init__.py** durch Folgendes.
 
     	from flask import Flask
     	app = Flask(__name__)

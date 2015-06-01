@@ -102,7 +102,7 @@ Wechseln Sie zurück zum Herausgeberportal, und fügen Sie den Schlüssel in das
 
 ![Zulässige Mandanten][api-management-client-allowed-tenants]
 
-Im Abschnitt **Zulässige Mandanten** können mehrere Domänen angegeben werden. Bevor sich Benutzer aus einer anderen Domäne als der ursprünglichen Domäne \(der Domäne, in der die Anwendung registriert wurde\) anmelden können, muss ein globaler Administrator dieser anderen Domäne der Anwendung Berechtigungen für den Verzeichnisdatenzugriff erteilen. Hierzu muss sich der globale Administrator bei der Anwendung anmelden und auf **Akzeptieren** klicken. Im folgenden Beispiel wurde `miaoaad.onmicrosoft.com` im Abschnitt **Zulässige Mandanten** hinzugefügt, und ein globaler Administrator dieser Domäne meldet sich zum ersten Mal an.
+Im Abschnitt **Zulässige Mandanten** können mehrere Domänen angegeben werden. Bevor sich Benutzer aus einer anderen Domäne als der ursprünglichen Domäne (der Domäne, in der die Anwendung registriert wurde) anmelden können, muss ein globaler Administrator dieser anderen Domäne der Anwendung Berechtigungen für den Verzeichnisdatenzugriff erteilen. Hierzu muss sich der globale Administrator bei der Anwendung anmelden und auf **Akzeptieren** klicken. Im folgenden Beispiel wurde `miaoaad.onmicrosoft.com` im Abschnitt **Zulässige Mandanten** hinzugefügt, und ein globaler Administrator dieser Domäne meldet sich zum ersten Mal an.
 
 ![Berechtigungen][api-management-permissions-form]
 

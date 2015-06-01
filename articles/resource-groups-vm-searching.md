@@ -21,7 +21,7 @@
 
 ## Azure-Befehlszeilenschnittstelle
 
-Der schnellste und einfachste Weg ein Datenträgerabbild zu suchen, um es entweder mit `azure vm quick-create` zu verwenden oder um eine Vorlagendatei einer Ressourcengruppe zu erstellen, ist den Befehl `azure vm image list` aufzurufen und den Speicherort, den Herausgebernamen \(keine Unterscheidung zwischen Groß- und Kleinschreibung\) und ein Angebot - wenn Sie es kennen - zu übergeben. Zum Beispiel ist die folgende Liste nur ein kurzes Beispiel \(einige Listen sind sehr lang\), wenn Sie wissen, dass „Canonical“ ein Herausgeber für das „UbuntuServer“-Angebot ist.
+Der schnellste und einfachste Weg ein Datenträgerabbild zu suchen, um es entweder mit `azure vm quick-create` zu verwenden oder um eine Vorlagendatei einer Ressourcengruppe zu erstellen, ist den Befehl `azure vm image list` aufzurufen und den Speicherort, den Herausgebernamen (keine Unterscheidung zwischen Groß- und Kleinschreibung) und ein Angebot - wenn Sie es kennen - zu übergeben. Zum Beispiel ist die folgende Liste nur ein kurzes Beispiel (einige Listen sind sehr lang), wenn Sie wissen, dass „Canonical“ ein Herausgeber für das „UbuntuServer“-Angebot ist.
 
     azure vm image list westus canonical ubuntuserver
     info:    Executing command vm image list
@@ -40,7 +40,7 @@ Der schnellste und einfachste Weg ein Datenträgerabbild zu suchen, um es entwed
     
 Die **URN**-Spalte ist das Formular, dass Sie an `azure vm quick-create` weiterleiten.
     
-Oftmals ist jedoch noch unbekannt, was verfügbar ist. In diesem Fall können Sie durch Datenträgerabbilder navigieren, indem Sie mithilfe von `azure vm image list-publishers` zuerst Herausgeber entdecken und auf die Speicherort-Eingabeaufforderung mit dem Rechenzentrum-Speicherort antworten, den Sie voraussichtlich für Ihre Ressourcengruppe verwenden werden. Beispielsweise werden im Folgenden alle Herausgeber von Datenträgerabbildern am Speicherort „West US“ aufgelistet \(übergeben Sie das Speicherort-Argument mit Kleinbuchstaben und Entfernen von Leerzeichen von Standardspeicherorten\).
+Oftmals ist jedoch noch unbekannt, was verfügbar ist. In diesem Fall können Sie durch Datenträgerabbilder navigieren, indem Sie mithilfe von `azure vm image list-publishers` zuerst Herausgeber entdecken und auf die Speicherort-Eingabeaufforderung mit dem Rechenzentrum-Speicherort antworten, den Sie voraussichtlich für Ihre Ressourcengruppe verwenden werden. Beispielsweise werden im Folgenden alle Herausgeber von Datenträgerabbildern am Speicherort „West US“ aufgelistet (übergeben Sie das Speicherort-Argument mit Kleinbuchstaben und Entfernen von Leerzeichen von Standardspeicherorten).
 
     azure vm image list-publishers
     info:    Executing command vm image list-publishers
@@ -149,8 +149,8 @@ Sie können der Anzeige des Befehls **Get-AzureVMImageSku** alle Informationen e
 
 Beispiel:
 
-	PS C:\> $locName="West US"
-	PS C:\> Get-AzureVMImagePublisher -Location $locName | Select PublisherName
+	PS C:> $locName="West US"
+	PS C:> Get-AzureVMImagePublisher -Location $locName | Select PublisherName
 	
 	PublisherName
 	-------------
@@ -168,8 +168,8 @@ Beispiel:
 
 Für den Herausgeber „MicrosoftWindowsServer“:
 
-	PS C:\> $pubName="MicrosoftWindowsServer"
-	PS C:\> Get-AzureVMImageOffer -Location $locName -Publisher $pubName | Select Offer
+	PS C:> $pubName="MicrosoftWindowsServer"
+	PS C:> Get-AzureVMImageOffer -Location $locName -Publisher $pubName | Select Offer
 	
 	Offer
 	-----
@@ -177,8 +177,8 @@ Für den Herausgeber „MicrosoftWindowsServer“:
 
 Für das Angebot „WindowsServer“:
 
-	PS C:\> $offerName="WindowsServer"
-	PS C:\> Get-AzureVMImageSku -Location $locName -Publisher $pubName -Offer $offerName | Select Skus
+	PS C:> $offerName="WindowsServer"
+	PS C:> Get-AzureVMImageSku -Location $locName -Publisher $pubName -Offer $offerName | Select Skus
 	
 	Skus
 	----

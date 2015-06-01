@@ -99,11 +99,11 @@ Zum Zeitpunkt der Erstellung dieses Dokuments (5. Februar 2014) stand das folgen
 
 -   Öffnen Sie die [Google Developers Console].
 -   Wählen Sie dasselbe Projekt aus wie in früheren Schritten des Verfahrens (das Projekt mit dem Wert für **Project Number** (Projektnummer), den Sie in `AndroidManifest.xml` integriert haben).
--   Wechseln Sie zu "APIs & auth -\> Credentials" (APIs & Authentifizierung -\> Anmeldeinformationen), und klicken Sie im Abschnitt "Public API access" (Öffentlicher API-Zugriff) auf "CREATE NEW KEY" (Neuen Schlüssel erstellen).
+-   Wechseln Sie zu "APIs & auth -> Credentials" (APIs & Authentifizierung -> Anmeldeinformationen), und klicken Sie im Abschnitt "Public API access" (Öffentlicher API-Zugriff) auf "CREATE NEW KEY" (Neuen Schlüssel erstellen).
 -   Wählen Sie "Server key" (Serverschlüssel).
 -   Lassen Sie den nächsten Bildschirm leer **(no IP restriction)** (keine IP-Einschränkung), und klicken Sie dann auf "Create" (Erstellen).
 -   Kopieren Sie den generierten **API-Schlüssel**.
--   Wechseln Sie zu $/\#application/YOUR\_ENGAGEMENT\_APPID/native-push.
+-   Wechseln Sie zu $/#application/YOUR_ENGAGEMENT_APPID/native-push.
 -   Bearbeiten Sie im GCM-Abschnitt den API-Schlüssel mithilfe des Schlüssels, den Sie soeben generiert und kopiert haben.
 
 Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Option "Any Time" (Jederzeit) auswählen.

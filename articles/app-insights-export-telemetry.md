@@ -35,7 +35,7 @@ Wählen Sie die Ereignistypen, die Sie exportieren möchten:
 ![Klicken Sie auf "Ereignistypen auswählen".](./media/app-insights-export-telemetry/03-types.png)
 
 
-Nachdem Sie Ihren Exportvorgang erstellt haben, geht es gleich los. \(Sie erhalten nur Daten, die nach Erstellung des Exportvorgangs eingehen.\)
+Nachdem Sie Ihren Exportvorgang erstellt haben, geht es gleich los. (Sie erhalten nur Daten, die nach Erstellung des Exportvorgangs eingehen.)
 
 
 Wenn Sie die Ereignistypen später ändern möchten, bearbeiten Sie einfach den Export:
@@ -70,7 +70,7 @@ Um diese Daten programmgesteuert herunterzuladen, verwenden Sie die [Blobspeiche
 
 Oder erwägen Sie den Einsatz von [DataFactory](http://azure.microsoft.com/services/data-factory/), in der Sie Pipelines zum Verwalten von Daten nach Maß einrichten können.
 
-Zunächst schreiben wir pro Stunde ein neues Blob \(wenn Ereignisse empfangen werden\). Deshalb müssen Sie stets die Daten der vorangegangenen Stunde verarbeiten und den Abschluss der aktuellen Stunde abwarten.
+Zunächst schreiben wir pro Stunde ein neues Blob (wenn Ereignisse empfangen werden). Deshalb müssen Sie stets die Daten der vorangegangenen Stunde verarbeiten und den Abschluss der aktuellen Stunde abwarten.
 
 [Codebeispiel][exportcode]
 

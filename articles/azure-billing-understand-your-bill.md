@@ -76,7 +76,7 @@ Anzeigen oder Herunterladen von Rechnungen:
 
  **ANGEBOTSNAME** | **ANGEBOTSTYP** | **ENTHÄLT KOSTENLOSE DIENSTE** | **HERUNTERLADEN** |
  :--------- |:-------- | :----------------: | :-------|
-Azure MSDN – Visual Studio Ultimate| Vorteilsprogramm | Ja\* | [Beispieldatei](https://azurepricing.blob.core.windows.net/sampleinvoices/Microsoft_Azure_MSDN_Sample.pdf)
+Azure MSDN – Visual Studio Ultimate| Vorteilsprogramm | Ja* | [Beispieldatei](https://azurepricing.blob.core.windows.net/sampleinvoices/Microsoft_Azure_MSDN_Sample.pdf)
 Nutzungsbasierte Bezahlung | Verbrauch | Nein| [Beispieldatei](https://azurepricing.blob.core.windows.net/sampleinvoices/Microsoft_Azure_PAYG_Sample.pdf)
 Ausführliche Informationen zur Nutzung - CSV | N/V | N/V | [Beispieldatei](https://azurepricing.blob.core.windows.net/sampleinvoices/Microsoft_Azure_Detailed_Usage_v1_csv.xlsx)
 
@@ -95,7 +95,7 @@ Der Zeitraum, in dem die Nutzung stattgefunden hat.
 Datum, an dem die Rechnung generiert wurde.
 
 ### Payment Method
-Die Zahlungsart, die für das Konto verwendet wird \(d. h. Rechnung oder Kreditkarte\).
+Die Zahlungsart, die für das Konto verwendet wird (d. h. Rechnung oder Kreditkarte).
 
 ### Bill to
 Anschrift für Microsoft Azure-Rechnungen.
@@ -118,8 +118,8 @@ Dies ist der Gesamtbetrag Ihrer letzten Rechnung.
 ### Payments
 Dies sind sämtliche mit Ihrer letzten Rechnung verrechneten Zahlungen.
 
-### Outstanding balance \(from previous billing cycle\)
-Beträge \(Gutschriften oder Restbeträge\), die seit Ihrer letzten Rechnung mit Ihrem Konto verrechnet wurden.
+### Outstanding balance (from previous billing cycle)
+Beträge (Gutschriften oder Restbeträge), die seit Ihrer letzten Rechnung mit Ihrem Konto verrechnet wurden.
 
 
 ## Informationen zu aktuellen Gebühren
@@ -168,7 +168,7 @@ Der Azure-Dienst ist in dieser Spalte ggf. weiter definiert. Die Dienstart kann 
 Gibt die Maßeinheit für die Ressource an, für die der Verbrauch gemessen wird.
 
 ### Region
-Regionen, auf die sich die Nutzung bezieht. Die Tarife für Cloud Services und Virtual Machines sowie für Datenübertragungen \(außer CDN\) können nach Region variieren. Die Region für CDN bezieht sich auf den Standort des Rechenzentrums, in dem der Datenverkehr verarbeitet wurde.
+Regionen, auf die sich die Nutzung bezieht. Die Tarife für Cloud Services und Virtual Machines sowie für Datenübertragungen (außer CDN) können nach Region variieren. Die Region für CDN bezieht sich auf den Standort des Rechenzentrums, in dem der Datenverkehr verarbeitet wurde.
 
 ### Consumed
 Enthält die Menge der Ressource, die während des Abrechnungszeitraums verbraucht wurde.
@@ -186,7 +186,7 @@ Unter „Rate“ wird der Satz angezeigt, der Ihnen pro abrechenbarer Einheit be
 Zeigt das Ergebnis der Multiplikation der Spalte „Billable“ mit der Spalte „Rate“ an. Wenn der Betrag für „Consumed“ den Betrag für „Included“ nicht übersteigt, sind in dieser Spalte keine Kosten aufgeführt.
 
 ## Analyse der täglichen Nutzungsdaten
-Je nach Nutzung können Tausende von Zeilen an täglichen Nutzungsdaten vorhanden sein. Wenn Sie diese Daten analysieren möchten, klicken Sie auf „Download Usage“, um die täglichen Nutzungsdaten für den aktuellen Abrechnungszeitraum in eine durch Trennzeichen getrennte Datei \(CSV\) zu exportieren, die Sie in Microsoft Office Excel und anderen Programmen anzeigen können. Als Referenz können Sie eine Beispiel-CSV-Datei herunterladen.
+Je nach Nutzung können Tausende von Zeilen an täglichen Nutzungsdaten vorhanden sein. Wenn Sie diese Daten analysieren möchten, klicken Sie auf „Download Usage“, um die täglichen Nutzungsdaten für den aktuellen Abrechnungszeitraum in eine durch Trennzeichen getrennte Datei (CSV) zu exportieren, die Sie in Microsoft Office Excel und anderen Programmen anzeigen können. Als Referenz können Sie eine Beispiel-CSV-Datei herunterladen.
 
 
 ![Zusammenfassung PAYG](./media/azure-billing-understand-your-bill/AnalyzeDailyUsageData1.png)
@@ -203,7 +203,7 @@ Billing Period | Der Abrechnungszeitraum, in dem die Ressource verbraucht wurde.
 Name | Name des Dienstes, der verwendet wurde.
 Type | In einigen Fällen sind Azure-Dienste in dieser Spalte noch weiter nach Typ definiert, was sich auf die Gebühren auswirken kann.
 Resource | Gibt den Typ der verbrauchten Ressource an. Datenübertragung, Serverstunden und Speichertransaktionen sind Beispiele für Ressourcentypen.
-Region | Gibt den Standort des Rechenzentrums für bestimmte Dienste an, die basierend auf dem Standort des Rechenzentrums berechnet werden. \(z. B. Datenübertragungen\).
+Region | Gibt den Standort des Rechenzentrums für bestimmte Dienste an, die basierend auf dem Standort des Rechenzentrums berechnet werden. (z. B. Datenübertragungen).
 SKU | Gibt den eindeutigen Systembezeichner für jede Azure-Ressource an.
 Unit | Gibt die Einheit an, in der der Dienst in Rechnung gestellt wird. Beispiele sind GB, Stunden oder 10.000 s.
 Consumed | Enthält den Betrag der Ressource, die an diesem Tag verbraucht wurde.
@@ -225,7 +225,7 @@ Das Datum, an dem der Verbrauch ausgegeben wurde.
 Die GUID des Verbrauchszählers.
 
 ### Sub Region
-Gibt den genauen Standort des ausgegebenen Dienstes an \(d. h. den Standort des Rechenzentrums\).
+Gibt den genauen Standort des ausgegebenen Dienstes an (d. h. den Standort des Rechenzentrums).
 
 ### Service
 Diese Spalte dient der Verfolgung des einzelnen Azure Platform-Diensts, der in der Spalte „Name“ möglicherweise nicht einzeln aufgeführt ist. In der Spalte „Service“ wird angegeben, auf welchen Dienst genau sich die jeweilige Nutzung bezieht.
@@ -247,7 +247,7 @@ Nutzen Sie diese Dateien als zusätzliche Informationsquellen. Diese Dateien wer
 >>  https://azurepricing.blob.core.windows.net/supplemental/MOSPServices_v1_MMYYYY.xlsx
 
 
-Um nach der aktuellen Version zu suchen, geben Sie Jahr und Monat an \(geben Sie bspw. für die Datei für Mai 2015 **052015** in den Abschnitt _**MMYYYY**_ der obigen URL ein\). Diese Tabelle enthält eine Liste aller möglichen Kombinationen „Service“-bezogener Felder im heruntergeladenen **Nutzungsbericht**.
+Um nach der aktuellen Version zu suchen, geben Sie Jahr und Monat an (geben Sie bspw. für die Datei für Mai 2015 **052015** in den Abschnitt _**MMYYYY**_ der obigen URL ein). Diese Tabelle enthält eine Liste aller möglichen Kombinationen „Service“-bezogener Felder im heruntergeladenen **Nutzungsbericht**.
 
 
 <!--Image references-->

@@ -2,7 +2,7 @@
 
 2. Klicken Sie auf **Virtueller Computer** und dann auf **From Gallery**.
 
-3. Wählen Sie unter **Abbild auswählen** ein Abbild aus einer der Listen aus. \(Die verfügbaren Abbilder können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.\) Klicken Sie auf den Pfeil, um fortzufahren.
+3. Wählen Sie unter **Abbild auswählen** ein Abbild aus einer der Listen aus. (Die verfügbaren Abbilder können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.) Klicken Sie auf den Pfeil, um fortzufahren.
 
 4. Wenn mehrere Versionen des Images verfügbar sind, wählen Sie unter **Version Release Date** die Version aus, die Sie verwenden möchten.
 

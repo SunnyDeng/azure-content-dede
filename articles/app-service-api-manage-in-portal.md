@@ -30,10 +30,10 @@ Jede Ressourcengruppe, die mindestens eine API-App umfasst, verfügt auch über 
 
 Sie verwenden das Blatt **API-App** für die folgenden Aufgaben:
 
-- Konfigurieren der Zugriffsebene – Klicken Sie auf **Einstellungen \> Anwendungseinstellungen**. Der Standardwert lautet "Intern". Dies bedeutet, dass nur API-Apps in derselben Ressourcengruppe die API-App aufrufen dürfen. Weitere Informationen finden Sie unter [Schützen einer API-App](app-service-api-dotnet-add-authentication.md).   
-- Konfigurieren der Aktualisierungsrichtlinie – Klicken Sie auf **Einstellungen \> Anwendungseinstellungen**. Der Standardwert lautet **Ein**. Dies bedeutet, dass beim Veröffentlichen einer neuen Version der API-App im Marketplace Ihre API-App automatisch auf die neue Version aktualisiert wird, sofern sie keine Funktionsbeeinträchtigung \(non-breaking\) bedeutet.  
-- Konfigurieren der Authentifizierung für ausgehende Aufrufe aus der API-App – Klicken Sie auf **Einstellungen \> Authentifizierung**. Wenn die API-App einen externen Dienst aufruft, der eine Authentifizierung erfordert, werden hier die erforderlichen Konfigurationswerte eingegeben. Ein Dropbox-Connector erfordert beispielsweise eine Client-ID und einen geheimen Clientschlüssel für den Zugriff auf den Dropbox-Dienst.
-- Konfigurieren von [RBAC](role-based-access-control-configure.md) – Klicken Sie auf **Einstellungen \> Benutzer**. Der hier konfigurierte Benutzerzugriff legt fest, wer auf die API-App-spezifischen Funktionen zugreifen kann. Verwenden Sie zum Konfigurieren von RBAC für die Web-App-Funktionen das Blatt **API-App-Host**. Normalerweise sollten die RBAC-Einstellungen für die API-App und den API-App-Host synchronisiert werden. Wenn Sie Zugriff auf die API-App erteilen, jedoch nicht auf den API-App-Host, können die Funktionen im Blatt **API-App**, die tatsächlich den API-App-Host betreffen, nicht genutzt werden. Die Beziehung zwischen dem Blatt **API-App** und dem Blatt **API-App-Host** wird nachstehend erläutert.
+- Konfigurieren der Zugriffsebene – Klicken Sie auf **Einstellungen > Anwendungseinstellungen**. Der Standardwert lautet "Intern". Dies bedeutet, dass nur API-Apps in derselben Ressourcengruppe die API-App aufrufen dürfen. Weitere Informationen finden Sie unter [Schützen einer API-App](app-service-api-dotnet-add-authentication.md).   
+- Konfigurieren der Aktualisierungsrichtlinie – Klicken Sie auf **Einstellungen > Anwendungseinstellungen**. Der Standardwert lautet **Ein**. Dies bedeutet, dass beim Veröffentlichen einer neuen Version der API-App im Marketplace Ihre API-App automatisch auf die neue Version aktualisiert wird, sofern sie keine Funktionsbeeinträchtigung (non-breaking) bedeutet.  
+- Konfigurieren der Authentifizierung für ausgehende Aufrufe aus der API-App – Klicken Sie auf **Einstellungen > Authentifizierung**. Wenn die API-App einen externen Dienst aufruft, der eine Authentifizierung erfordert, werden hier die erforderlichen Konfigurationswerte eingegeben. Ein Dropbox-Connector erfordert beispielsweise eine Client-ID und einen geheimen Clientschlüssel für den Zugriff auf den Dropbox-Dienst.
+- Konfigurieren von [RBAC](role-based-access-control-configure.md) – Klicken Sie auf **Einstellungen > Benutzer**. Der hier konfigurierte Benutzerzugriff legt fest, wer auf die API-App-spezifischen Funktionen zugreifen kann. Verwenden Sie zum Konfigurieren von RBAC für die Web-App-Funktionen das Blatt **API-App-Host**. Normalerweise sollten die RBAC-Einstellungen für die API-App und den API-App-Host synchronisiert werden. Wenn Sie Zugriff auf die API-App erteilen, jedoch nicht auf den API-App-Host, können die Funktionen im Blatt **API-App**, die tatsächlich den API-App-Host betreffen, nicht genutzt werden. Die Beziehung zwischen dem Blatt **API-App** und dem Blatt **API-App-Host** wird nachstehend erläutert.
 - Anzeigen der API-Definition – Klicken Sie im Abschnitt **Zusammenfassung** auf **API-Definition**, um eine Liste der von der **API-App** verfügbar gemachten Methoden anzuzeigen.
 
 ### Gängige Funktionen in den Blättern "API-App" und "API-App-Host" 
@@ -50,8 +50,8 @@ Sie verwenden das Blatt **API-App-Host** für alle Aufgaben, die Sie für eine b
 
 Sie verwenden das Blatt **Gateway** für die folgenden Aufgaben:
 
-- Konfigurieren des Authentifizierungsanbieters für eingehende Aufrufe an API-Apps – Klicken Sie auf **Einstellungen \> Identität**. Wenn das Gateway Benutzer authentifizieren muss, bevor diese API-Apps in der Ressourcengruppe aufrufen, müssen hier die erforderlichen Konfigurationswerte eingegeben werden. Weitere Informationen finden Sie unter [Konfigurieren und Testen eines SaaS-Connectors in Azure App Service](app-service-api-connnect-your-app-to-saas-connector.md). 
-- Konfigurieren von [RBAC](role-based-access-control-configure.md) – Klicken Sie auf **Einstellungen \> Benutzer**. Die Erläuterungen zur Beziehung zwischen der RBAC-Konfiguration in den Blättern "API-App" und "API-App-Host" gelten gleichermaßen für die Blätter "Gateway" und "Gatewayhost".
+- Konfigurieren des Authentifizierungsanbieters für eingehende Aufrufe an API-Apps – Klicken Sie auf **Einstellungen > Identität**. Wenn das Gateway Benutzer authentifizieren muss, bevor diese API-Apps in der Ressourcengruppe aufrufen, müssen hier die erforderlichen Konfigurationswerte eingegeben werden. Weitere Informationen finden Sie unter [Konfigurieren und Testen eines SaaS-Connectors in Azure App Service](app-service-api-connnect-your-app-to-saas-connector.md). 
+- Konfigurieren von [RBAC](role-based-access-control-configure.md) – Klicken Sie auf **Einstellungen > Benutzer**. Die Erläuterungen zur Beziehung zwischen der RBAC-Konfiguration in den Blättern "API-App" und "API-App-Host" gelten gleichermaßen für die Blätter "Gateway" und "Gatewayhost".
 
 ### Aufgaben im Blatt "Gatewayhost"
 
@@ -59,7 +59,7 @@ Sie verwenden das Blatt **Gatewayhost** für alle Aufgaben, die Sie für eine be
 
 ## Navigieren zum Blatt "API-App" 
 
-Eine Möglichkeit, zum Blatt **API-App** zu wechseln besteht darin, die Suchfunktion im Azure-Vorschauportal zu verwenden. Klicken Sie auf der Startseite des Portals auf **Durchsuchen \> API-Apps**, um alle API-Apps anzuzeigen, die Sie verwalten können.
+Eine Möglichkeit, zum Blatt **API-App** zu wechseln besteht darin, die Suchfunktion im Azure-Vorschauportal zu verwenden. Klicken Sie auf der Startseite des Portals auf **Durchsuchen > API-Apps**, um alle API-Apps anzuzeigen, die Sie verwalten können.
 
 ![](./media/app-service-api-manage-in-portal/browse.png)
 
@@ -97,7 +97,7 @@ Um zum Blatt **Gatewayhost** zu gelangen, klicken Sie auf den Link **Gatewayhost
 
 Im Server-Explorer von Visual Studio können Sie eine Remotedebuggingsitzung starten, Streamingprotokolle anzeigen und auf einen Menüeintrag klicken, der das Blatt "API-App" im Portal öffnet.
 
-Um im Server-Explorer zu einer API-App zu wechseln, klicken Sie auf **Azure \> App Service \> [Name der Ressourcengruppe] \> [Name der API-App]**, wie in der Abbildung gezeigt.
+Um im Server-Explorer zu einer API-App zu wechseln, klicken Sie auf **Azure > App Service > [Name der Ressourcengruppe] > [Name der API-App]**, wie in der Abbildung gezeigt.
 
 ![](./media/app-service-api-manage-in-portal/se.png)
 

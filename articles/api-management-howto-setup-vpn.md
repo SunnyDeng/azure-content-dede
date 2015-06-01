@@ -42,7 +42,7 @@ Beachten Sie, dass sich die VIP-Adresse des Proxys bei jeder Aktivierung oder De
 
 ## <a name="connect-vpn"> </a>Herstellen einer Verbindung mit einem Webdienst hinter dem VPN
 
-Nachdem Ihr API Management-Dienst mit dem VPN verbunden wurde, unterscheidet sich der Zugriff auf Webdienste im virtuellen Netzwerk nicht vom Zugriff auf öffentliche Dienste. Geben Sie einfach die lokale Adresse oder den Hostnamen Ihres Webdiensts \(falls der DNS-Server für Azure Virtual Network konfiguriert wurde\) im Feld **Webdienst-URL** ein, wenn Sie eine neue API erstellen oder eine vorhandene API bearbeiten.
+Nachdem Ihr API Management-Dienst mit dem VPN verbunden wurde, unterscheidet sich der Zugriff auf Webdienste im virtuellen Netzwerk nicht vom Zugriff auf öffentliche Dienste. Geben Sie einfach die lokale Adresse oder den Hostnamen Ihres Webdiensts (falls der DNS-Server für Azure Virtual Network konfiguriert wurde) im Feld **Webdienst-URL** ein, wenn Sie eine neue API erstellen oder eine vorhandene API bearbeiten.
 
 ![API über VPN hinzufügen][api-management-setup-vpn-add-api]
 

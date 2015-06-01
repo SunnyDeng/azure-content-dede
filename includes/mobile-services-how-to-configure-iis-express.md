@@ -11,7 +11,7 @@
 
 3. Öffnen Sie in Visual Studio die Datei "applicationhost.config" für IIS Express. Diese Datei befindet sich im folgenden Unterverzeichnis Ihres Benutzerprofilverzeichnisses.
 
-        C:\Users\<your profile name>\Documents\IISExpress\config\applicationhost.config
+        C:\Users<your profile name>\Documents\IISExpress\config\applicationhost.config
 
 4. Konfigurieren Sie IIS Express so, dass Remoteverbindungsanforderungen für den Dienst möglich sind. Suchen Sie dazu in der Datei "applicationhost.config" das Websiteelement für Ihren mobilen Dienst, und fügen Sie unter Verwendung der weiter oben notierten IP-Adresse ein neues  `binding`-Element für den Port hinzu. Speichern Sie anschließend die Datei "applicationhost.config". 
 

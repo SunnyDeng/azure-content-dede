@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Windows Store-SDK für Azure Mobile Engagement - Übersicht" 
-	description="Neueste Updates und Verfahren für Windows Store-SDK für Azure Mobile Engagement" 					
+	description="Neueste Updates und Verfahren für Windows Store-SDK für Azure Mobile Engagement" 
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="kpiteira" 
@@ -148,8 +148,8 @@ Beachten Sie, dass andere Ressourcen wie Capptain-Bilder und HTML-Dateien auch f
 
 Auf der Verpackung wurde "appxmanifest" `File Type Associations` aktualisiert von:
 
-> -   capptain\_reach\_content to engagement\_reach\_content
-> -   capptain\_log\_file to engagement\_log\_file
+> -   capptain_reach_content to engagement_reach_content
+> -   capptain_log_file to engagement_log_file
 
 ### Anwendungs-ID/SDK-Schlüssel
 

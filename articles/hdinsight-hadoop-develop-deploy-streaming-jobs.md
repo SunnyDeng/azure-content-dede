@@ -199,7 +199,7 @@ In diesem Lernprogramm werden die TXT-Dateien im Verzeichnis %hadoop_home% verwe
 
 2. Führen Sie den folgenden Befehl aus, um einige Textdateien in den Eingabeordner im HDFS zu kopieren:
 
-		hadoop fs -copyFromLocal %hadoop_home%\share\doc\hadoop\common\*.txt \WordCount\Input
+		hadoop fs -copyFromLocal %hadoop_home%\share\doc\hadoop\common*.txt \WordCount\Input
 
 3. Führen Sie den folgenden Befehl aus, um die hochgeladenen Dateien aufzulisten:
 

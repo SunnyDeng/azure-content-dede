@@ -46,7 +46,7 @@ Um alle Felder zu finden, verwenden Sie einfache Zeichenfolgen (ohne Platzhalter
 
 ## Filtern von Ereignistypen
 
-Öffnen Sie das Blatt "Filter", und wählen Sie die Ereignistypen, die Sie anzeigen möchten. \(Wenn Sie später die Filter wiederherstellen möchten, mit denen Sie das Blatt geöffnet haben, klicken Sie auf "Zurücksetzen".)
+Öffnen Sie das Blatt "Filter", und wählen Sie die Ereignistypen, die Sie anzeigen möchten. (Wenn Sie später die Filter wiederherstellen möchten, mit denen Sie das Blatt geöffnet haben, klicken Sie auf "Zurücksetzen".)
 
 
 ![Wählen Sie "Filter" und dann Telemetrietypen](./media/app-insights-diagnostic-search/02-filter-req.png)
@@ -115,13 +115,13 @@ Sie können auch einen Zeitbereich festlegen, da die Suche in einem kürzeren Be
 
 ![Diagnosesuche öffnen](./media/appinsights/appinsights-311search.png)
 
-Suchen Sie nach Begriffen, nicht nach Teilzeichenfolgen. Begriffe sind alphanumerische Zeichenfolgen, die Zeichen wie '.' und '\_' enthalten können. Beispiel:
+Suchen Sie nach Begriffen, nicht nach Teilzeichenfolgen. Begriffe sind alphanumerische Zeichenfolgen, die Zeichen wie '.' und '_' enthalten können. Beispiel:
 
 Begriff|stimmt *nicht* überein mit|stimmt überein mit
 ---|---|---
-HomeController.Info|info<br/>home|h\*info<br/>home\*
-IstLokal|lokal<br/>ist<br/>\*lokal|istl\*<br/>istlokal<br/>i\*l\*
-Neue Stornierung|e s|neue<br/>stornierung<br/>n\* AND s\*
+HomeController.Info|info<br/>home|h*info<br/>home*
+IstLokal|lokal<br/>ist<br/>*lokal|istl*<br/>istlokal<br/>i*l*
+Neue Stornierung|e s|neue<br/>stornierung<br/>n* AND s*
 
 
 Dies sind einige Suchausdrücke, die Sie verwenden können:
@@ -134,7 +134,7 @@ Datenbank*|Datenbank, Datenbank01, DatenbankNNNN entspricht<br/> ist am Anfang e
 Apfel UND Banane|Findet Ereignisse, die beide Begriffe enthalten. Verwenden Sie „AND“ in Großbuchstaben, nicht „and“.
 Apfel OR Banane<br/>Apfel Banane|Findet Ereignisse, die einen der beiden Begriffe enthalten. Verwenden Sie "OR" nicht "or".</br/>Kurzform.
 Apfel NOT Banane<br/>Apfel -Banane|Findet Ereignisse, die den einen Begriff enthalten, aber nicht den anderen.<br/>Kurzform.
-Apf\* AND Banane -(Traube Birne\)|Logische Operatoren und Klammern.
+Apf* AND Banane -(Traube Birne)|Logische Operatoren und Klammern.
 "Metrik": 0 BIS 500<br/>"Metrik": 500 BIS * | Suchen Sie Ereignisse, die die benannte Messung im Wertebereich enthalten.
 
 

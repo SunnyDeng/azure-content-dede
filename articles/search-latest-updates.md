@@ -24,7 +24,7 @@ Azure Search ist nun allgemein verfügbar und bietet für die unterstützten Kon
 
 Die Funktionen werden gemeinsam oder separat über die [REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx), das [.NET-SDK](http://go.microsoft.com/fwlink/?LinkId=528216) oder das Dienst-Dashboard im [Azure-Portal](https://portal.azure.com) veröffentlicht.
 
-Sowohl die .NET-Bibliothek als auch die REST-APIs liegen in mehreren Versionen vor. Die älteren APIs funktionieren weiterhin, auch nach Einführung neuerer Features. Nähere Informationen zu unseren Versionierungsrichtlinien erhalten Sie im Artikel [Search service versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) \(+++Versionsverwaltung des Suchdienstes\).
+Sowohl die .NET-Bibliothek als auch die REST-APIs liegen in mehreren Versionen vor. Die älteren APIs funktionieren weiterhin, auch nach Einführung neuerer Features. Nähere Informationen zu unseren Versionierungsrichtlinien erhalten Sie im Artikel [Search service versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) (+++Versionsverwaltung des Suchdienstes).
 
 
 ##.NET-SDK 0.10.0-preview
@@ -44,11 +44,11 @@ Dies ist die erste offizielle Veröffentlichung des .NET-SDK für Azure Search. 
 
 In diesem Release nicht enthalten:
 
-- [Indexer](http://go.microsoft.com/fwlink/p/?LinkId=528173) \(ab Version 0.10.0-preview ist dieses Feature enthalten\)
+- [Indexer](http://go.microsoft.com/fwlink/p/?LinkId=528173) (ab Version 0.10.0-preview ist dieses Feature enthalten)
 - [Management-REST-API](https://msdn.microsoft.com/library/azure/dn832684.aspx)
-- Features von [2015-02-28-Preview](search-api-2015-02-28-Preview.md) \(zurzeit nur als Preview verfügbare Features sind Microsoft Natural Language-Prozessoren und `moreLikeThis`\).
+- Features von [2015-02-28-Preview](search-api-2015-02-28-Preview.md) (zurzeit nur als Preview verfügbare Features sind Microsoft Natural Language-Prozessoren und `moreLikeThis`).
 
-Anleitungen zur Installation und Verwendung des SDK finden Sie im Artikel [How to use Azure Search in .NET](http://go.microsoft.com/fwlink/p/?LinkId=528088) \(+++Verwenden von Azure Search in .NET\).
+Anleitungen zur Installation und Verwendung des SDK finden Sie im Artikel [How to use Azure Search in .NET](http://go.microsoft.com/fwlink/p/?LinkId=528088) (+++Verwenden von Azure Search in .NET).
 
 ##API-Version 2015-02-28-Preview
 **Veröffentlicht am 22.04.2015**
@@ -68,11 +68,11 @@ Anleitungen zur Installation und Verwendung des SDK finden Sie im Artikel [How t
 
 - [Indexer](http://go.microsoft.com/fwlink/p/?LinkID=528210) sind eine neue Funktion, welche die Indizierung der Daten aus Datenquellen wie der Azure SQL-Datenbank, Azure DocumentDB und SQL Server auf Azure-VMs erheblich vereinfacht.
 
-- [Suggester](https://msdn.microsoft.com/library/azure/dn798936.aspx) ersetzen die eher eingeschränkte Unterstützung für Typ-ahead-Abfragen der vorherigen Implementierung \(bei der nur Präfixes abgeglichen wurden\) durch die Unterstützung des Infix-Abgleichs. In dieser Implementierung werden Übereinstimmungen an jeder Stelle eines Begriffs gefunden und auch der Fuzzy-Match-Abgleich wird unterstützt.
+- [Suggester](https://msdn.microsoft.com/library/azure/dn798936.aspx) ersetzen die eher eingeschränkte Unterstützung für Typ-ahead-Abfragen der vorherigen Implementierung (bei der nur Präfixes abgeglichen wurden) durch die Unterstützung des Infix-Abgleichs. In dieser Implementierung werden Übereinstimmungen an jeder Stelle eines Begriffs gefunden und auch der Fuzzy-Match-Abgleich wird unterstützt.
 
-- [\+++Tag-Boosting](http://go.microsoft.com/fwlink/p/?LinkId=528212) ermöglicht ein neues Szenario für Wertungsprofile. Insbesondere nutzt es persistente Daten \(z. B. Warenkorb-Einstellungen\), so dass die Suchergebnisse für einzelne Benutzer basierend auf deren persönlichen Informationen verbessert werden können.
+- [\+++Tag-Boosting](http://go.microsoft.com/fwlink/p/?LinkId=528212) ermöglicht ein neues Szenario für Wertungsprofile. Insbesondere nutzt es persistente Daten (z. B. Warenkorb-Einstellungen), so dass die Suchergebnisse für einzelne Benutzer basierend auf deren persönlichen Informationen verbessert werden können.
 
-Besuchen Sie auch den Artikel [Azure Search is now Generally Available](http://go.microsoft.com/fwlink/p/?LinkId=528211) \(+++Azure Search jetzt allgemein verfügbar\) im Azure-Blog, in dem alle diese Funktionen vorgestellt werden.
+Besuchen Sie auch den Artikel [Azure Search is now Generally Available](http://go.microsoft.com/fwlink/p/?LinkId=528211) (+++Azure Search jetzt allgemein verfügbar) im Azure-Blog, in dem alle diese Funktionen vorgestellt werden.
 
 ##API-Version 2014-10-20-Preview
 **Veröffentlicht im November 2014 und Januar 2015**
@@ -86,7 +86,7 @@ Besuchen Sie auch den Artikel [Azure Search is now Generally Available](http://g
 
 Diese Version war die öffentliche Preview-Version für Azure Search. Sie enthielt die folgenden zentralen Features:
 
-- REST-API für Index- und Dokumentoperationen. Der größte Teil der Features dieser API-Version ist in Version 2015-02-28 nach wie vor vorhanden. Die Dokumentation für Version `2014-07-31-Preview` finden Sie unter [Azure Search Service REST API Version 2014-07-31](search-api-2014-07-31-preview.md) \(+++REST-API des Azure Search-Dienstes Version 2014-07-31\).
+- REST-API für Index- und Dokumentoperationen. Der größte Teil der Features dieser API-Version ist in Version 2015-02-28 nach wie vor vorhanden. Die Dokumentation für Version `2014-07-31-Preview` finden Sie unter [Azure Search Service REST API Version 2014-07-31](search-api-2014-07-31-preview.md) (+++REST-API des Azure Search-Dienstes Version 2014-07-31).
 
 - Wertungsprofile für die Optimierung der Suchergebnisse. Ein Wertungsprofil fügt Kriterien zum Berechnen der Suchergebnisse hinzu. Die Dokumentation für dieses Feature finden Sie unter [Azure Search Service Scoring Profiles REST API Version 2014-07-31](search-api-scoring-profiles-2014-07-31-preview.md) (+++Wertungsprofil-REST-API des Azure Search-Dienstes Version 2014-07-31).
 

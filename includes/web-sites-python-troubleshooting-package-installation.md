@@ -41,13 +41,13 @@ Wenn alle Ihre Abhängigkeiten im \wheelhouse-Ordner enthalten sein sollen und S
 
 ### Anpassen der Installation
 
-Sie können das Bereitstellungsskript zum Installieren eines Pakets in der virtuellen Umgebung mithilfe eines alternativen Installationsprogramms anpassen, z. B. easy\_install.  Ein auskommentiertes Beispiel finden Sie unter "deploy.cmd".  Stellen Sie sicher, dass solche Pakete nicht in requirements.txt aufgelistet sind, um zu verhindern, dass Pip sie installiert.
+Sie können das Bereitstellungsskript zum Installieren eines Pakets in der virtuellen Umgebung mithilfe eines alternativen Installationsprogramms anpassen, z. B. easy_install.  Ein auskommentiertes Beispiel finden Sie unter "deploy.cmd".  Stellen Sie sicher, dass solche Pakete nicht in requirements.txt aufgelistet sind, um zu verhindern, dass Pip sie installiert.
 
 Fügen Sie Folgendes zum Bereitstellungsskript hinzu:
 
     env\scripts\easy_install somepackage
 
-Sie können möglicherweise auch easy\_install verwenden, um mithilfe eines EXE-Installers zu installieren (einige sind ZIP-kompatibel, sodass Easy\_install unterstützt).  Fügen Sie das Installationsprogramm zum Repository hinzu und rufen Sie easy\_install auf, indem Sie den Pfad zur ausführbaren Datei übergeben.
+Sie können möglicherweise auch easy_install verwenden, um mithilfe eines EXE-Installers zu installieren (einige sind ZIP-kompatibel, sodass Easy_install unterstützt).  Fügen Sie das Installationsprogramm zum Repository hinzu und rufen Sie easy_install auf, indem Sie den Pfad zur ausführbaren Datei übergeben.
 
 Fügen Sie Folgendes zum Bereitstellungsskript hinzu:
 

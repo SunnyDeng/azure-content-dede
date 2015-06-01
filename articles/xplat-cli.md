@@ -225,8 +225,8 @@ Sie greifen mit dem Befehl  `azure` auf die plattformübergreifende Befehlszeile
 
 	info:             _    _____   _ ___ ___
 	info:            /_\  |_  / | | | _ \ __|
-	info:      _ ___/ _ \__/ /| |_| |   / _|___ _ _
-	info:    (___  /_/ \_\/___|\___/|_|_\___| _____)
+	info:      _ ___/ _ __/ /| |_| |   / _|___ _ _
+	info:    (___  /_/ _/___|___/|_|____| _____)
 	info:       (_______ _ _)         _ ______ _)_ _
 	info:              (______________ _ )   (___ _ _)
 	info:

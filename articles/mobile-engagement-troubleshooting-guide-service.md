@@ -29,10 +29,10 @@ Im Folgenden finden Sie mögliche Probleme, die bei der Ausführung von Azure Mo
 ### Ursachen
 - Probleme, die scheinbar von Azure Mobile Engagement-Dienstausfällen verursacht werden, können verschiedene Ursachen haben:
     - Isolierte Probleme, die ursprünglich systemisch in Azure Mobile Engagement auftreten
-    - Bekannte Probleme, die durch Serverausfälle verursacht werden \(nicht immer im Serverstatus angezeigt\):
+    - Bekannte Probleme, die durch Serverausfälle verursacht werden (nicht immer im Serverstatus angezeigt):
 	- Verzögerungen bei der Planung, Fehler bei der Zielgruppenadressierung, Probleme bei der Badgeaktualisierung, keine Erfassung von Statistiken, Pushvorgänge funktionieren nicht mehr, APIs funktionieren nicht mehr, neue Apps oder Benutzer können nicht erstellt werden, DNS-Fehler, Zeitüberschreitungen in Benutzeroberfläche, API oder Apps auf einem Gerät.
-    - Cloudabhängigkeitsfehler [Azure-Dienststatus](http://status.azure.com/), [Amazon Web Services \(AWS\)-Status](http://status.aws.amazon.com/) 
-    - Abhängigkeitsfehler des Pushbenachrichtungsdienstes \(PNS\) [Google – Service](http://www.google.com/appsstatus#hl=en&v=status), [Apple – Service](http://www.apple.com/support/systemstatus/), [Android – Google GCM](http://developer.android.com/google/gcm/index.html), [Android – Amazon ADM](https://developer.amazon.com/appsandservices/apis/engage/device-messaging), [Apple – APNS](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html), [Windows Phone – WNS](http://msdn.microsoft.com/library/windows/apps/hh465407.aspx), [Windows Phone – MPNS][LinkMPNS], [Windows – WNS](https://developer.windows.com/)
+    - Cloudabhängigkeitsfehler [Azure-Dienststatus](http://status.azure.com/), [Amazon Web Services (AWS)-Status](http://status.aws.amazon.com/) 
+    - Abhängigkeitsfehler des Pushbenachrichtungsdienstes (PNS) [Google – Service](http://www.google.com/appsstatus#hl=en&v=status), [Apple – Service](http://www.apple.com/support/systemstatus/), [Android – Google GCM](http://developer.android.com/google/gcm/index.html), [Android – Amazon ADM](https://developer.amazon.com/appsandservices/apis/engage/device-messaging), [Apple – APNS](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html), [Windows Phone – WNS](http://msdn.microsoft.com/library/windows/apps/hh465407.aspx), [Windows Phone – MPNS][LinkMPNS], [Windows – WNS](https://developer.windows.com/)
     - App Store-Ausfälle [GooglePlay](https://play.google.com/), [iTunes](http://www.apple.com/itunes/charts/), [Windows Phone Store](http://www.windowsphone.com/), [Windows Store](http://windows.microsoft.com/)
 
 *Um zu testen, ob es sich um ein systemisches Problem handelt, können Sie dieselbe Funktion von anderer Stelle ausführen:*
@@ -91,8 +91,8 @@ So testen Sie, ob ein Problem mit Betriebssystemupgrades auf Endbenutzergeräten
     - Stellen Sie sicher, dass es sich nicht um ein isoliertes Problem mit einem Computer oder Ihrem lokalen Netzwerk handelt.
     - Vergewissern Sie sich, dass der Azure Mobile Engagement-Dienst keine Ausfälle meldet.
     - Stellen Sie sicher, dass Ihre App-Infotagdateien allen der folgenden Regeln entsprechen:
-        - Verwenden Sie ausschließlich den UTF8-Zeichensatz \(der ANSI-Zeichensatz wird nicht unterstützt\).
-        - Verwenden Sie als Trennzeichen ein Komma "," \(Sie können über eine Dienstanfrage die Änderung des CSV-Trennzeichens von einem Komma "," in ein anderes Zeichen anfordern, beispielsweise ein Semikolon ";"\).
+        - Verwenden Sie ausschließlich den UTF8-Zeichensatz (der ANSI-Zeichensatz wird nicht unterstützt).
+        - Verwenden Sie als Trennzeichen ein Komma "," (Sie können über eine Dienstanfrage die Änderung des CSV-Trennzeichens von einem Komma "," in ein anderes Zeichen anfordern, beispielsweise ein Semikolon ";").
         - Verwenden Sie ausschließlich Kleinbuchstaben für die booleschen Werte "true" und "false".
         - Verwenden Sie eine Datei, die die maximale Größe von 35 MB nicht übersteigt.
 

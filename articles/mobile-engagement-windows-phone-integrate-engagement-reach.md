@@ -1,6 +1,6 @@
-﻿<properties 
+<properties 
 	pageTitle="Integration des Azure Mobile Engagement Windows Phone SDK" 
-	description="Integration von Engagement Reach in Windows Phone"				
+	description="Integration von Engagement Reach in Windows Phone"
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="kapiteir" 
@@ -104,7 +104,7 @@ Aus der Microsoft-Dokumentation zu [Anwendungsrichtlinien], Abschnitt 2.9:
 
 Das EngagementReach-Objekt bietet zwei Methoden zum Verwalten der Aktivierung/Deaktivierung, `EnableNativePush()` und `DisableNativePush()`. Beispielsweise könnten Sie in den Einstellungen eine Option mit einem Schalter zum Deaktivieren oder Aktivieren von MPNS erstellen.
 
-Sie können MPNS auch über die Engagement-Konfiguration\<windows-phone-sdk-reach-configuration\> deaktivieren.
+Sie können MPNS auch über die Engagement-Konfiguration<windows-phone-sdk-reach-configuration> deaktivieren.
 
 > 2.9.2) Durch die Anwendung und deren Nutzung des Microsoft-Pushbenachrichtigungsdiensts darf die Netzwerkkapazität oder Bandbreite des Microsoft-Pushbenachrichtigungsdiensts nicht übermäßig beansprucht oder ein Windows Phone, ein anderes Microsoft-Gerät oder ein Dienst nicht durch übermäßige Pushbenachrichtigungen über Gebühr belastet werden, wie von Microsoft nach eigenem Ermessen festgelegt. Durch die Anwendung und deren MPNS-Nutzung dürfen Microsoft-Netzwerke oder -Server bzw. Server von Drittanbietern oder Netzwerke, die mit dem Microsoft-Pushbenachrichtigungsdienst verbunden sind, nicht beschädigt oder behindert werden.
 

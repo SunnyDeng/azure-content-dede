@@ -41,7 +41,7 @@ Engagement erfordert, dass zusätzliche Frameworks funktionieren: Öffnen Sie im
 > -   `CoreLocation.framework`
 > -   `libxml2.dylib`
 
-> [AZURE.NOTE] Das AdSupport-Framework kann entfernt werden. Dieses Framework ist für Engagement zum Erfassen der IDFA erforderlich. Die IDFA-Erfassung kann jedoch deaktiviert werden ("\<ios-sdk-engagement-idfa\>"), um der neuen Apple-Richtlinie zu dieser ID zu entsprechen.
+> [AZURE.NOTE] Das AdSupport-Framework kann entfernt werden. Dieses Framework ist für Engagement zum Erfassen der IDFA erforderlich. Die IDFA-Erfassung kann jedoch deaktiviert werden ("<ios-sdk-engagement-idfa>"), um der neuen Apple-Richtlinie zu dieser ID zu entsprechen.
 
 ## Initialisieren des Engagement-SDKs
 
@@ -65,7 +65,7 @@ Sie müssen Ihre Anwendungsstellvertretung ändern:
 
 ### Empfohlene Methode: überladen Sie Ihre `UIViewController`-Klassen.
 
-Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `UIViewController`-Unterklassen von den entsprechenden `EngagementViewController`-Klassen abgeleitet werden (gleiche Regel für `UITableViewController` -\> `EngagementTableViewController`).
+Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `UIViewController`-Unterklassen von den entsprechenden `EngagementViewController`-Klassen abgeleitet werden (gleiche Regel für `UITableViewController` -> `EngagementTableViewController`).
 
 **Ohne Engagement:**
 
@@ -124,7 +124,7 @@ Fügen Sie die folgende Zeile hinter der Initialisierung des Engagement-Agent hi
 Mithilfe der Echtzeit-Berichterstellung für Speicherorte können der Längen- und Breitengrad gemeldet werden, die Geräten zugeordnet sind. Diese Art der Berichterstellung für Speicherorte verwendet ausschließlich Netzwerkspeicherorte (auf Basis von Zell-ID oder WLAN), und die Berichterstellung ist nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung).
 
 Echtzeit-Speicherorte werden *NICHT* zum Berechnen von Statistiken verwendet. Ihr einziger Zweck ist es, die Verwendung des
-Echtzeit-Geofence-Kriteriums \<Reach-Audience-geofencing\> in Reach-Kampagnen zu ermöglichen.
+Echtzeit-Geofence-Kriteriums <Reach-Audience-geofencing> in Reach-Kampagnen zu ermöglichen.
 
 Fügen Sie die folgende Zeile hinter der Initialisierung des Engagement-Agent hinzu, um die Echtzeit-Berichterstellung für Speicherorte zu aktivieren:
 
@@ -162,7 +162,7 @@ Integration in der Datei **prefix.pch**:
 			#define ENGAGEMENT_DISABLE_IDFA
 			...
 
-Sie können überprüfen, ob die IDFA-Erfassung in Ihrer Anwendung ordnungsgemäß deaktiviert ist, indem Sie die Engagement-Testprotokolle prüfen. Weitere Informationen finden Sie in der Dokumentation zum Integrationstest ("\<ios-sdk-engagement-test-idfa\>").
+Sie können überprüfen, ob die IDFA-Erfassung in Ihrer Anwendung ordnungsgemäß deaktiviert ist, indem Sie die Engagement-Testprotokolle prüfen. Weitere Informationen finden Sie in der Dokumentation zum Integrationstest ("<ios-sdk-engagement-test-idfa>").
 
 ## Deaktivieren der Protokollberichterstellung
 

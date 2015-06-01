@@ -106,10 +106,10 @@ Mit dem **BlobService**-Objekt können Sie mit Containern und Blobs arbeiten. Mi
 
 Verwenden Sie die folgenden Methoden zum Hochladen von Daten in ein Blob:
  
-1. put\_block\_blob\_from\_path (lädt den Inhalt einer Datei aus dem angegebenen Pfad)
-2. put\_block_blob\_from\_file (lädt den Inhalt aus einer/m bereits geöffneten Datei/Stream)
-3. put\_block\_blob\_from\_bytes (lädt ein Array von Bytes)
-4. put\_block\_blob\_from\_text (lädt den angegebenen Textwert mit der angegebenen Codierung)
+1. put_block_blob_from_path (lädt den Inhalt einer Datei aus dem angegebenen Pfad)
+2. put_block_blob_from_file (lädt den Inhalt aus einer/m bereits geöffneten Datei/Stream)
+3. put_block_blob_from_bytes (lädt ein Array von Bytes)
+4. put_block_blob_from_text (lädt den angegebenen Textwert mit der angegebenen Codierung)
  
 Der folgende Beispielcode lädt eine lokale Datei in einen Container hoch:
 	
@@ -143,10 +143,10 @@ Der folgende Beispielcode lädt alle Dateien (ausgenommen Verzeichnisse) in eine
 ###Herunterladen von Daten aus dem Blob
 
 Verwenden Sie die folgenden Methoden zum Herunterladen von Daten aus einem Blob:
-1. get\_blob\_to\_path
-2. get\_blob\_to\_file
-3. get\_blob\_to\_bytes
-4. get\_blob\_to\_text 
+1. get_blob_to_path
+2. get_blob_to_file
+3. get_blob_to_bytes
+4. get_blob_to_text 
 
 Dies sind Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt. 
 
@@ -154,7 +154,7 @@ Der folgende Beispielcode lädt den Inhalt eines Blobs in einem Container in ein
 
 	blob_service.get_blob_to_path("<your_container_name>", "<your_blob_name>", "<your_local_file_name>")
 
-Der folgende Beispielcode lädt alle Blobs aus einem Container herunter. Dabei wird "list\_blobs" verwendet, um die Liste der verfügbaren Blobs im Container abzurufen und in ein lokales Verzeichnis herunterzuladen. 
+Der folgende Beispielcode lädt alle Blobs aus einem Container herunter. Dabei wird "list_blobs" verwendet, um die Liste der verfügbaren Blobs im Container abzurufen und in ein lokales Verzeichnis herunterzuladen. 
 
 	from azure.storage import BlobService
 	from os.path import join

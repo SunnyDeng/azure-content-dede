@@ -17,7 +17,7 @@
 
 ###So stellen Sie über die serielle Konsole eine Verbindung her
 
-1. Schließen Sie das serielle Kabel \(direkt oder über einen seriellen USB-Adapter\) an das Gerät an.
+1. Schließen Sie das serielle Kabel (direkt oder über einen seriellen USB-Adapter) an das Gerät an.
 
 2. Öffnen Sie die **Systemsteuerung**, und öffnen Sie dann den **Geräte-Manager**.
 
@@ -33,8 +33,8 @@
   - Geschwindigkeit: 115.200
   - Datenbits: 8
   - Stoppbits: 1
-  - Parität: Kein\(e\)
-  - Flusssteuerung: Kein\(e\)
+  - Parität: Kein(e)
+  - Flusssteuerung: Kein(e)
 
     Diese Einstellungen werden in der folgenden Abbildung gezeigt.
 

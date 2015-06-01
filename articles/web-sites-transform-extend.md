@@ -94,7 +94,7 @@ Die einzige spezielle Logik, die für die Datei-E/A benötigt wird, ist die Anga
     		{
         		rootPath = System.IO.Path.GetTempPath(); // For testing purposes
     		};
-    		var userSettingsFile = Path.Combine(rootPath, @"site\wwwroot\.user.ini");
+    		var userSettingsFile = Path.Combine(rootPath, @"site\wwwroot.user.ini");
     		return userSettingsFile;
 	}
 
@@ -143,15 +143,15 @@ Dadurch wird der Websiteliste  `system.applicationHost` unter der SCM-Website ei
         			<binding protocol="http" bindingInformation="*:80: [your-website].scm.azurewebsites.net" />
         			<binding protocol="https" bindingInformation="*:443: [your-website].scm.azurewebsites.net" />
       			</bindings>
-      			<traceFailedRequestsLogging enabled="false" directory="C:\DWASFiles\Sites\[your-website]\VirtualDirectory0\LogFiles" />
-      			<detailedErrorLogging enabled="false" directory="C:\DWASFiles\Sites\[your-website]\VirtualDirectory0\LogFiles\DetailedErrors" />
+      			<traceFailedRequestsLogging enabled="false" directory="C:\DWASFiles\Sites[your-website]\VirtualDirectory0\LogFiles" />
+      			<detailedErrorLogging enabled="false" directory="C:\DWASFiles\Sites[your-website]\VirtualDirectory0\LogFiles\DetailedErrors" />
       			<logFile logSiteId="false" />
       			<application path="/" applicationPool="[your-website]">
         			<virtualDirectory path="/" physicalPath="D:\Program Files (x86)\SiteExtensions\Kudu\1.24.20926.5" />
       			</application>
 				<!-- Note the custom changes that go here -->
       			<application path="/[your-extension-name]" applicationPool="[your-website]">
-        			<virtualDirectory path="/" physicalPath="C:\DWASFiles\Sites\[your-website]\VirtualDirectory0\SiteExtensions\[your-extension-name]" />
+        			<virtualDirectory path="/" physicalPath="C:\DWASFiles\Sites[your-website]\VirtualDirectory0\SiteExtensions[your-extension-name]" />
       			</application>
     		</site>
   	</sites>
@@ -160,7 +160,7 @@ Dadurch wird der Websiteliste  `system.applicationHost` unter der SCM-Website ei
 
 ###<a id="deploy"></a> Bereitstellung von Web-App-Erweiterungen
 
-Zur Installation der Web-App-Erweiterung können Sie mit FTP alle Dateien der Webanwendung in den Ordner "`\SiteExtensions\[your-extension-name]`" der Website kopieren, auf der Sie die Erweiterung installieren möchten.  Kopieren Sie in diesen Ordner auch die Datei ApplicationHost.xdt. Starten Sie Ihre Web-App neu, um die Erweiterung zu aktivieren.
+Zur Installation der Web-App-Erweiterung können Sie mit FTP alle Dateien der Webanwendung in den Ordner "`\SiteExtensions[your-extension-name]`" der Website kopieren, auf der Sie die Erweiterung installieren möchten.  Kopieren Sie in diesen Ordner auch die Datei ApplicationHost.xdt. Starten Sie Ihre Web-App neu, um die Erweiterung zu aktivieren.
 
 Die Web-App-Erweiterung sollte unter folgender Adresse angezeigt werden:
 

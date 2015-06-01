@@ -1,6 +1,6 @@
-﻿<properties 
+<properties 
 	pageTitle="Windows Store-SDK für Azure Mobile Engagement - Übersicht" 
-	description="Neueste Updates und Verfahren für Windows Store-SDK für Azure Mobile Engagement" 					
+	description="Neueste Updates und Verfahren für Windows Store-SDK für Azure Mobile Engagement" 
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="lalathie" 
@@ -116,7 +116,7 @@ Um den Bericht über alle Protokolle zu aktivieren, die zum Berechnen von Benutz
 
 Hier ist ein Beispiel für eine Seite Ihrer Anwendung. Das Gleiche gilt für alle Seiten der Anwendung.
 
-#### C\-Quelldatei
+#### C#-Quelldatei
 
 Ändern Sie Ihre Seite `.xaml.cs`Datei:
 
@@ -197,7 +197,7 @@ Wenn Sie einige zusätzliche Informationen mit Ihrer Aktivität zusammen melden 
 			  return extra;
 			}
 
-Weitere Details zu den zusätzlichen Informationen finden Sie hier \<windows-sdk-extras-parameters\>.
+Weitere Details zu den zusätzlichen Informationen finden Sie hier <windows-sdk-extras-parameters>.
 
 Diese Methoden werden von innerhalb der `OnNavigatedTo`-Methode Ihrer Seite aufgerufen.
 

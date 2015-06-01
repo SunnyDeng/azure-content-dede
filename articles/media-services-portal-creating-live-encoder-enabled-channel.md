@@ -17,7 +17,7 @@
 	ms.author="juliako"/>
 
 
-#Verwenden des Verwaltungsportals, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird \(Vorschau\)
+#Verwenden des Verwaltungsportals, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird (Vorschau)
 
 
 In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines **Kanals** geführt, von dem ein Single-Bitrate-Livedatenstrom empfangen und in einen Multi-Bitrate-Datenstrom codiert wird.
@@ -28,7 +28,7 @@ In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines **Kanal
 
 Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreaminganwendungen erläutert.
 
-1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein Single-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP \(MPEG-TS\). Weitere Informationen finden Sie unter [￼Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
+1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein Single-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [￼Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 	
 	Dieser Schritt kann auch nach der Erstellung des Kanals ausgeführt werden.
 
@@ -41,14 +41,14 @@ Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreamin
 
 	Verwenden Sie diese URL, um sicherzustellen, dass der Livedatenstrom ordnungsgemäß vom Kanal empfangen wird.
 
-3. Erstellen Sie ein Programm \(dadurch wird auch ein Medienobjekt erstellt\).
-1. Veröffentlichen Sie das Programm \(dadurch wird ein OnDemand-Locator für das zugehörige Medienobjekt erstellt\).  
+3. Erstellen Sie ein Programm (dadurch wird auch ein Medienobjekt erstellt).
+1. Veröffentlichen Sie das Programm (dadurch wird ein OnDemand-Locator für das zugehörige Medienobjekt erstellt).  
 
 	Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
 1. Wenn Sie zum Starten von Streaming und Archivierung bereit sind, starten Sie das Programm.
 2. Optional kann vom Liveencoder eine Ankündigung gestartet werden. Die Ankündigung wird in den Ausgabedatenstrom eingefügt.
 1. Sie können das Programm und damit das Streaming und die Archivierung des Ereignisses jederzeit beenden.
-1. Löschen Sie das Programm \(und optional das Medienobjekt\).   
+1. Löschen Sie das Programm (und optional das Medienobjekt).   
 
 ##Dieses Lernprogramm umfasst folgende Punkte
 
@@ -57,7 +57,7 @@ In diesem Lernprogramm wird das Azure-Verwaltungsportal verwendet, um die folgen
 2.  Konfigurieren von Streamingendpunkten
 3.  Erstellen eines Kanals, der zum Ausführen von Livecodierung aktiviert ist
 1.  Abrufen der Erfassungs-URL, um sie dem Liveencoder bereitzustellen Diese URL wird vom Liveencoder verwendet, um den Datenstrom in den Kanal zu leiten.
-1.  Erstellen eines Programms \(und eines Medienobjekts\)
+1.  Erstellen eines Programms (und eines Medienobjekts)
 1.  Veröffentlichen des Medienobjekts und Abrufen von Streaming-URLs  
 1.  Wiedergeben Ihrer Inhalte 
 2.  Bereinigen
@@ -72,9 +72,9 @@ Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](azur
 
 ##Konfigurieren von Streamingendpunkten mithilfe des Portals
 
-Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarien darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Durch Streaming mit adaptiver Bitrate kann während der Videodarstellung je nach aktueller Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren zu Datenströmen mit höheren oder niedrigeren Bitraten gewechselt werden. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming \(HLS\), Smooth Streaming, MPEG DASH und HDS \(nur mit Adobe PrimeTime/Access-Lizenz\).
+Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarien darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Durch Streaming mit adaptiver Bitrate kann während der Videodarstellung je nach aktueller Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren zu Datenströmen mit höheren oder niedrigeren Bitraten gewechselt werden. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
-Beim Arbeiten mit Livestreaming wird ein Livedatenstrom mit mehreren Bitraten von einem lokalen Liveencoder \(im Beispielfall Wirecast\) in den Kanal geleitet. Wenn der Datenstrom durch einen Benutzer angefordert wird, so wird der Quelldatenstrom durch dynamische Paketerstellung in die angeforderte Bitrate \(HLS, DASH oder Smooth\) umgewandelt.
+Beim Arbeiten mit Livestreaming wird ein Livedatenstrom mit mehreren Bitraten von einem lokalen Liveencoder (im Beispielfall Wirecast) in den Kanal geleitet. Wenn der Datenstrom durch einen Benutzer angefordert wird, so wird der Quelldatenstrom durch dynamische Paketerstellung in die angeforderte Bitrate (HLS, DASH oder Smooth) umgewandelt.
 
 Um dynamische Paketerstellung nutzen zu können, ist mindestens eine Streamingeinheit für den **Streamingendpunkt** erforderlich, aus dem die Inhalte geliefert werden sollen.
 
@@ -110,9 +110,9 @@ Wählen Sie **Standard** als Codierungstyp aus. Mit diesem Typen geben Sie an, d
 
 Beim Codierungstyp **Standard** gibt es die folgenden gültigen Erfassungsprotokolloptionen:
 
-- Fragmentiertes Single-Bitrate-MP4 \(Smooth Streaming\)
+- Fragmentiertes Single-Bitrate-MP4 (Smooth Streaming)
 - Single-Bitrate-RTMP
-- RTP \(MPEG-TS\): MPEG-2-Transportdatenstrom über RTP
+- RTP (MPEG-TS): MPEG-2-Transportdatenstrom über RTP
 
 Ausführliche Erläuterungen der Protokolle finden Sie unter [Arbeiten mit Kanälen, von denen Livecodierung von Single-Bitrate- in Multi-Bitrate-Livedatenströme ausgeführt wird](media-services-manage-live-encoder-enabled-channels.md).
 
@@ -130,7 +130,7 @@ Auf der Seite **Codierungsvoreinstellungen** können Sie Systemvoreinstellungen 
 
 ![standard3][standard3]
 
-Auf der Seite **Kanalerstellung** können Sie die IP-Adressen definieren, die zum Veröffentlichen von Videos in diesem Kanal zugelassen sind. Zulässige IP-Adressen können als eine einzelne IP-Adresse \(z. B. „10.0.0.1“\), als IP-Adressbereich mithilfe einer IP-Adresse und einer CIDR-Subnetzmaske \(z. B. „10.0.0.1/22“\) oder als IP-Adressbereich mithilfe einer Subnetzmaske in punktierter Dezimalschreibweise \(z. B. „10.0.0.1\(255.255.252.0\)“\) angegeben werden.
+Auf der Seite **Kanalerstellung** können Sie die IP-Adressen definieren, die zum Veröffentlichen von Videos in diesem Kanal zugelassen sind. Zulässige IP-Adressen können als eine einzelne IP-Adresse (z. B. „10.0.0.1“), als IP-Adressbereich mithilfe einer IP-Adresse und einer CIDR-Subnetzmaske (z. B. „10.0.0.1/22“) oder als IP-Adressbereich mithilfe einer Subnetzmaske in punktierter Dezimalschreibweise (z. B. „10.0.0.1(255.255.252.0)“) angegeben werden.
 
 Wenn keine IP-Adressen angegeben werden und keine Regeldefinition vorhanden ist, so ist keine IP-Adresse zulässig. Um alle IP-Adressen zuzulassen, erstellen Sie eine Regel und legen „0.0.0.0/0“ fest.
 
@@ -217,7 +217,7 @@ Wenn Sie zur Seite **INHALT** wechseln, sehen Sie die Ressourcen, die für Ihre 
 
 ##Wiedergeben von Inhalten
 
-Um Ihren Benutzern eine URL bereitzustellen, die zum Streamen Ihrer Inhalte verwendet werden kann, müssen Sie Ihr Medienobjekt zunächst „veröffentlichen“ wie im vorigen Abschnitt beschrieben, indem Sie einen Locator erstellen \(wenn Sie ein Medienobjekt mithilfe des Portals veröffentlichen, werden die Locators automatisch erstellt\). Locators ermöglichen den Zugriff auf Dateien im Medienobjekt.
+Um Ihren Benutzern eine URL bereitzustellen, die zum Streamen Ihrer Inhalte verwendet werden kann, müssen Sie Ihr Medienobjekt zunächst „veröffentlichen“ wie im vorigen Abschnitt beschrieben, indem Sie einen Locator erstellen (wenn Sie ein Medienobjekt mithilfe des Portals veröffentlichen, werden die Locators automatisch erstellt). Locators ermöglichen den Zugriff auf Dateien im Medienobjekt.
 
 Je nach dem Streamingprotokoll, das zum Wiedergeben Ihrer Inhalte verwendet werden soll, müssen Sie möglicherweise die URL ändern, die Sie über den Link **URL VERÖFFENTLICHEN** des Kanals/Programms erhalten haben.
 
@@ -227,11 +227,11 @@ Eine Streaming-URL, mit der Sie Smooth Streaming-Medienobjekte wiedergeben könn
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest
 
-Um eine HLS-Streaming-URL zu erstellen, fügen Sie „\(format=m3u8-aapl\)“ an die URL an.
+Um eine HLS-Streaming-URL zu erstellen, fügen Sie „(format=m3u8-aapl)“ an die URL an.
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
 
-Um eine MPEG DASH-Streaming-URL zu erstellen, fügen Sie „\(format=mpd-time-csf\)“ an die URL an.
+Um eine MPEG DASH-Streaming-URL zu erstellen, fügen Sie „(format=mpd-time-csf)“ an die URL an.
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 

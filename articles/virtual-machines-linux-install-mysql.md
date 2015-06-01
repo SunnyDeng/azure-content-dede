@@ -81,7 +81,7 @@ Sie können ein beliebiges SSH-Tool für das Herstellen einer Verbindung mit Ihr
 
    ![image](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p06.png)
  
-- Bevor Sie „Öffnen“ auswählen, klicken Sie auf die Registerkarte „Verbindung \> SSH \> Auth“, um Ihre von Puttygen generierte Datei zu durchsuchen, die den privaten Schlüssel enthält. Das auszufüllende Feld finden sie auf dem Screenshot unten.
+- Bevor Sie „Öffnen“ auswählen, klicken Sie auf die Registerkarte „Verbindung > SSH > Auth“, um Ihre von Puttygen generierte Datei zu durchsuchen, die den privaten Schlüssel enthält. Das auszufüllende Feld finden sie auf dem Screenshot unten.
 
    ![image](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p07.png)
  
@@ -126,19 +126,19 @@ Wir verwenden Ubuntu 14.04 LTS als Beispiel für diesen Artikel.
     
     Stellen Sie nach der Anmeldung sicher, dass der MySQL-Dienst ausgeführt wird. Sie können folgende Befehle zum Starten/Neustarten des Dienstes benutzen.
 
-    \(a\) Um den Status vom MySQL-Dienst zu erhalten.
+    (a) Um den Status vom MySQL-Dienst zu erhalten.
 
              #sudo service mysql status
 
-    \(b\) Um den MySQL-Dienst zu starten.
+    (b) Um den MySQL-Dienst zu starten.
 
              #sudo service mysql start
 
-    \(c\) Um den MySQL-Dienst anzuhalten.
+    (c) Um den MySQL-Dienst anzuhalten.
 
              #sudo service mysql stop
 
-    \(d\) Um den MySQL-Dienst neu zu starten.
+    (d) Um den MySQL-Dienst neu zu starten.
 
              #sudo service mysql restart
 
@@ -156,7 +156,7 @@ Wir verwenden Ubuntu 14.04 LTS als Beispiel für diesen Artikel.
 
     Dies ist ein typischer Eintrag für ein Subrepository der Versionsreihe in der Datei:
 
-        \# *Enable to use MySQL 5.6*
+        # *Enable to use MySQL 5.6*
 
         [mysql56-community]
         name=MySQL 5.6 Community Server

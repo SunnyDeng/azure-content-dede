@@ -2,7 +2,7 @@ Diese schrittweise Anleitung erläutert die Installation und Ausführung von Mon
 
 > [AZURE.WARNING]MongoDB-Sicherheitsfunktionen wie Authentifizierung und IP-Adressen-Anbindung werden nicht standardmäßig aktiviert. Die Sicherheitsfunktionen sollten aktiviert werden, bevor MongoDB in einer Produktionsumgebung eingesetzt wird. Weitere Informationen finden Sie unter [Sicherheit und Authentifizierung](http://www.mongodb.org/display/DOCS/Security+and+Authentication).
 
-1. Konfigurieren Sie das Package Management System \(YUM\) so, dass Sie MongoDB installieren können. Erstellen Sie eine Datei */etc/yum.repos.d/10gen.repo* mit Informationen über das Repository, und fügen Sie Folgendes hinzu:
+1. Konfigurieren Sie das Package Management System (YUM) so, dass Sie MongoDB installieren können. Erstellen Sie eine Datei */etc/yum.repos.d/10gen.repo* mit Informationen über das Repository, und fügen Sie Folgendes hinzu:
 
 		[10gen]
 		name=10gen Repository
@@ -25,7 +25,7 @@ Diese schrittweise Anleitung erläutert die Installation und Ausführung von Mon
 		$ sudo mkdir -p /srv/datadrive/data
 		$ sudo chown `id -u` /srv/datadrive/data
 
-	Weitere Informationen zur Installation von MongoDB auf Linux finden Sie unter [Quickstart Unix][QuickstartUnix] \(in englischer Sprache\).
+	Weitere Informationen zur Installation von MongoDB auf Linux finden Sie unter [Quickstart Unix][QuickstartUnix] (in englischer Sprache).
 
 5. Führen Sie zum Starten der Datenbank aus:
 

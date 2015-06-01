@@ -33,9 +33,9 @@ Mit Application Insights können Sie die Nutzung und Leistung Ihrer bereitgestel
 
 1.  Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource. Wählen Sie als Anwendungstyp "ASP.NET-App" oder "Windows Store-App" aus. 
 
-    ![Klicken Sie auf "Neu \> Application Insights"](./media/app-insights-windows-get-started/01-new.png)
+    ![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-windows-get-started/01-new.png)
 
-    \(Die Auswahl des Anwendungstyps bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften.\)
+    (Die Auswahl des Anwendungstyps bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften.)
 
 2.  Erstellen Sie eine Kopie des Instrumentationsschlüssels.
 
@@ -50,11 +50,11 @@ Mit Application Insights können Sie die Nutzung und Leistung Ihrer bereitgestel
 
     ![Wählen Sie **Online**, **Vorabversion einschließen** aus, und suchen Sie nach "Application Insights"](./media/app-insights-windows-get-started/04-ai-nuget.png)
 
-    \(Alternativ können Sie das Application Insights SDK für Webanwendungen auswählen. Dieses bietet einige integrierte Leistungsindikatoren für Telemetrie.\)
+    (Alternativ können Sie das Application Insights SDK für Webanwendungen auswählen. Dieses bietet einige integrierte Leistungsindikatoren für Telemetrie.)
 
-3. Bearbeiten Sie die Datei "ApplicationInsights.config" \(die bei der NuGet-Installation hinzugefügt wurde\). Fügen Sie Folgendes direkt vor dem Endtag ein:
+3. Bearbeiten Sie die Datei "ApplicationInsights.config" (die bei der NuGet-Installation hinzugefügt wurde). Fügen Sie Folgendes direkt vor dem Endtag ein:
 
-    &lt;InstrumentationKey&gt;\*den kopierten Schlüssel\*&lt;/InstrumentationKey&gt;
+    &lt;InstrumentationKey&gt;*den kopierten Schlüssel*&lt;/InstrumentationKey&gt;
 
     Alternativ können Sie denselben Effekt mit folgendem Code erzielen:
     
@@ -66,7 +66,7 @@ Mit Application Insights können Sie die Nutzung und Leistung Ihrer bereitgestel
 
 Erstellen Sie eine `TelemetryClient`-Instanz und [nutzen Sie sie anschließend, um Telemetriedaten zu senden][track].
 
-Verwenden Sie `TelemetryClient.Flush` zum Senden von Nachrichten vor dem Schließen der App. \(Dies wird nicht für andere Arten von Apps empfohlen.\)
+Verwenden Sie `TelemetryClient.Flush` zum Senden von Nachrichten vor dem Schließen der App. (Dies wird nicht für andere Arten von Apps empfohlen.)
 
 Beispielsweise können Sie in einer Windows Forms-Anwendung Folgendes schreiben:
 
@@ -96,11 +96,11 @@ Beispielsweise können Sie in einer Windows Forms-Anwendung Folgendes schreiben:
 
 Verwenden Sie eine der [Application Insights-APIs][track], um Telemetriedaten zu senden. In Windows-Desktopanwendungen werden Telemetriedaten nicht automatisch gesendet. In der Regel würden Sie Folgendes verwenden:
 
-* "TrackPageView\(pageName\)" für umschaltbare Formulare, Seiten oder Registerkarten
-* "TrackEvent\(eventName\)" für andere Benutzeraktionen
-* "TrackTrace\(logEvent\)" für die [Diagnoseprotokollierung][diagnostic]
-* "TrackException\(exception\)" in Catch-Klauseln
-* "TrackMetric\(Name, Wert\)" bei einer Hintergrundaufgabe, um Berichte zu Metriken, die nicht bestimmten Ereignissen zugeordnet sind, regelmäßig zu senden.
+* "TrackPageView(pageName)" für umschaltbare Formulare, Seiten oder Registerkarten
+* "TrackEvent(eventName)" für andere Benutzeraktionen
+* "TrackTrace(logEvent)" für die [Diagnoseprotokollierung][diagnostic]
+* "TrackException(exception)" in Catch-Klauseln
+* "TrackMetric(Name, Wert)" bei einer Hintergrundaufgabe, um Berichte zu Metriken, die nicht bestimmten Ereignissen zugeordnet sind, regelmäßig zu senden.
 
 Um die Anzahl von Benutzern und Sitzungen anzuzeigen, legen Sie einen Initialisiererkontext fest:
 

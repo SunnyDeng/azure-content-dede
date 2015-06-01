@@ -102,13 +102,13 @@ Siehe [Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem virtuellen
 
 #### Konfigurieren eines virtuellen Netzwerks und eines dynamischen Routing-Gateways
 
-Stellen Sie sicher, dass Sie einen HBase-Cluster in einem virtuellen Azure Netzwerk bereitgestellt haben \(siehe die Voraussetzungen für diesen Abschnitt\). Der nächste Schritt die Konfiguration einer Punkt-zu-Standort-Verbindung.
+Stellen Sie sicher, dass Sie einen HBase-Cluster in einem virtuellen Azure Netzwerk bereitgestellt haben (siehe die Voraussetzungen für diesen Abschnitt). Der nächste Schritt die Konfiguration einer Punkt-zu-Standort-Verbindung.
 
 **So konfigurieren Sie die Punkt-zu-Standort-Konnektivität**
 
 1. Melden Sie sich auf dem [Azure-Portal][azure-portal] an.
 2. Klicken Sie auf der linken Seite auf **NETZWERKE**.
-3. Klicken Sie auf das virtuelle Netzwerk, das Sie erstellt haben \(siehe [Bereitstellen von HBase-Clustern im virtuellen Azure Netzwerk][hdinsight-hbase-provision-vnet]\).
+3. Klicken Sie auf das virtuelle Netzwerk, das Sie erstellt haben (siehe [Bereitstellen von HBase-Clustern im virtuellen Azure Netzwerk][hdinsight-hbase-provision-vnet]).
 4. Klicken Sie oben auf **KONFIGURIEREN** .
 5. Im Abschnitt **Punkt-zu-Standort-Konnektivität** wählen Sie **Konfiguration Punkt-zu-Standort-Konnektivität** aus. 
 6. Konfigurieren Sie **START-IP** und **CIDR**, um den IP-Adressbereich anzugeben, von dem Ihre VPN-Clients eine IP-Adresse erhalten, wenn eine Verbindung besteht. Der Bereich darf nicht mit anderen Bereichen überlappen, die sich auf Ihrem lokalen Netzwerk und dem virtuellen Azure Netzwerk befinden, mit dem Sie eine Verbindung herstellen werden. Wenn Sie zum Beispiel 10.0.0.0/20 für das virtuelle Netzwerk ausgewählt haben, können Sie 10.1.0.0/24 für den Client-Adressraum auswählen. Siehe Seite [Punkt-zu-Standort-Konnektivität][vnet-point-to-site-connectivity] für weitere Informationen.
@@ -130,7 +130,7 @@ Stellen Sie sicher, dass Sie einen HBase-Cluster in einem virtuellen Azure Netzw
 
 #### Erstellen Ihrer Zertifikate
 
-Eine Möglichkeit zum Erstellen eines X.509-Zertifikats ist mithilfe des Tools zur Erstellung von Zertifikaten \(makecert.exe\), das im Lieferumfang von [Microsoft Visual Studio Express 2013 für Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx) enthalten ist.
+Eine Möglichkeit zum Erstellen eines X.509-Zertifikats ist mithilfe des Tools zur Erstellung von Zertifikaten (makecert.exe), das im Lieferumfang von [Microsoft Visual Studio Express 2013 für Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx) enthalten ist.
 
 
 **So erstellen Sie ein selbstsigniertes Stammzertifikat**
@@ -149,17 +149,17 @@ Eine Möglichkeit zum Erstellen eines X.509-Zertifikats ist mithilfe des Tools z
 
 **Erstellen eines Client-Zertifikats**
 
-- Aus der gleichen Befehlszeile \(Muss auf demselben Computer sein, auf dem das Stammzertifikat erstellt wurde. Das Client-Zertifikat muss aus dem Stammzertifikat generiert werden\) den folgenden Befehl ausführen:
+- Aus der gleichen Befehlszeile (Muss auf demselben Computer sein, auf dem das Stammzertifikat erstellt wurde. Das Client-Zertifikat muss aus dem Stammzertifikat generiert werden) den folgenden Befehl ausführen:
 
   		makecert.exe -n "CN=HBaseVnetVPNClientCertificate" -pe -sky exchange -m 96 -ss My -in "HBaseVnetVPNRootCertificate" -is my -a sha1
 
-	HBaseVnetVPNRootCertificate is the root certificate name.  It has to match the root certificate name.  
+	"HBaseVnetVPNRootCertificate" ist der Name des Stammzertifikats.  Er muss mit dem Namen des Stammzertifikats übereinstimmen.  
 
-	Both the root certificate and the client certificate are stored in your Personal certificate store on your computer. Use certmgr.msc to verify.
+	Sowohl das Stammzertifikat als auch das Clientzertifikat werden in ihrem persönlichen Zertifikatspeicher auf Ihrem Computer gespeichert. Verwenden Sie für die Überprüfung "certmgr.msc".
 
 	![Azure virtual network point-to-site vpn certificate][img-certificate]
 
-	A client certificate must be installed on each computer that you want to connect to the virtual network. We recommend that you create unique client certificates for each computer that you want to connect to the virtual network. To export the client certificates, use certmgr.msc. 
+	Es muss auf jedem Computer, der eine Verbindung mit dem virtuellen Netzwerk herstellen soll, ein Clientzertifikat installiert sein. Es wird empfohlen, eindeutige Clientzertifikate für jeden Computer zu erstellen, den Sie mit dem virtuellen Netzwerk verbinden möchten. Verwenden Sie zum Exportieren der Clientzertifikate "certmgr.msc". 
 
 **Hochladen de Stammzertifikats in der Azure-Portal**
 
@@ -202,7 +202,7 @@ Eine Möglichkeit zum Erstellen eines X.509-Zertifikats ist mithilfe des Tools z
 
 **Installation von SQuirrel**
 
-1. Laden Sie die SQuirrel SQL Client-Jar-Datei von [http://squirrel-sql.sourceforge.net/\#installation](http://squirrel-sql.sourceforge.net/#installation) herunter.
+1. Laden Sie die SQuirrel SQL Client-Jar-Datei von [http://squirrel-sql.sourceforge.net/#installation](http://squirrel-sql.sourceforge.net/#installation) herunter.
 2. Die Jar-Datei öffnen/ausführen. Hierzu ist die [Java-Laufzeitumgebung](http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html) erforderlich.
 3. Klicken Sie zwei Mal auf **Weiter**.
 4. Geben Sie einen Pfad an, an dem die Schreibberechtigung besitzen und klicken Sie dann auf **Weiter**.
@@ -220,8 +220,8 @@ Die Phoenix-Treiber JAR-Datei befindet sich im HBase Cluster. Der Pfad ist je na
 
 	C:\apps\dist\phoenix-4.0.0.2.1.11.0-2316\phoenix-4.0.0.2.1.11.0-2316-client.jar
 Sie müssen diesen unter [SQuirrel Installationsordner]/LIB-Pfad auf Ihre Arbeitsstation kopieren. Am einfachsten ist es, ihn mit RDP in den Cluster zu bewegen und die Datei 
-dann zu kopieren und auf Ihrer Arbeitsstation abzulegen \(STRG + C und 
-STRG + V\).
+dann zu kopieren und auf Ihrer Arbeitsstation abzulegen (STRG + C und 
+STRG + V).
 
 **Hinzufügen von Phoenix-Treiber zu SQuirrel**
 
@@ -272,10 +272,10 @@ STRG + V\).
 ##Nächste Schritte
 In diesem Artikel haben Sie erfahren, wie Sie Apache Phoenix in HDInsight verwenden. Weitere Informationen finden Sie unter
 
-- [Übersicht HBase mit HDInsight][hdinsight-hbase-overview]\: HBase ist eine Open-Source-NoSQL-Datenbank von Apache, die auf Hadoop aufbaut und wahlfreien Zugriff sowie starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten bietet.
-- [Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk][hdinsight-hbase-provision-vnet]\: Mit der Integration in virtuelle Netzwerke können HBase-Cluster im selben virtuellen Netzwerk bereitgestellt werden wie Ihre Anwendungen, sodass Anwendungen direkt mit HBase kommunizieren können.
+- [Übersicht HBase mit HDInsight][hdinsight-hbase-overview]: HBase ist eine Open-Source-NoSQL-Datenbank von Apache, die auf Hadoop aufbaut und wahlfreien Zugriff sowie starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten bietet.
+- [Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk][hdinsight-hbase-provision-vnet]: Mit der Integration in virtuelle Netzwerke können HBase-Cluster im selben virtuellen Netzwerk bereitgestellt werden wie Ihre Anwendungen, sodass Anwendungen direkt mit HBase kommunizieren können.
 - [Konfiguration von HBase-Replikation in HDInsight](hdinsight-hbase-geo-replication.md): Erfahren Sie, wie Sie HBase-Replikation über zwei Azure-Rechenzentren konfigurieren. 
-- [Analysieren der Twitter-Stimmungen mit HBase in HDInsight][hbase-twitter-sentiment]\: Erfahren Sie, wie Sie in Echtzeit [Stimmungsanalysen](http://en.wikipedia.org/wiki/Sentiment_analysis)  bei Big Data mithilfe von HBase in einem Hadoop-Cluster in HDInsight durchführen können.
+- [Analysieren der Twitter-Stimmungen mit HBase in HDInsight][hbase-twitter-sentiment]: Erfahren Sie, wie Sie in Echtzeit [Stimmungsanalysen](http://en.wikipedia.org/wiki/Sentiment_analysis)  bei Big Data mithilfe von HBase in einem Hadoop-Cluster in HDInsight durchführen können.
 
 [azure-portal]: https://manage.windowsazure.com
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT

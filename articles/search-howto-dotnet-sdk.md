@@ -41,7 +41,7 @@ Folgende Funktionen werden in diesem SDK nicht unterstützt:
 
 1. Visual Studio 2013 oder eine neuere Version.
 
-2. Ihr eigener Azure Search-Dienst. Zur Verwendung des SDK benötigen Sie den Namen Ihres Dienstes und mindestens einen API-Schlüssel. Informationen zu diesen Schritten finden Sie im Abschnitt [Create a service in the portal](../search-create-service-portal/) \(+++Erstellen eines Dienstes im Portal\).
+2. Ihr eigener Azure Search-Dienst. Zur Verwendung des SDK benötigen Sie den Namen Ihres Dienstes und mindestens einen API-Schlüssel. Informationen zu diesen Schritten finden Sie im Abschnitt [Create a service in the portal](../search-create-service-portal/) (+++Erstellen eines Dienstes im Portal).
 
 3. Laden Sie das [NuGet-Paket](http://www.nuget.org/packages/Microsoft.Azure.Search) mit dem Azure Search-.NET-SDK in Visual Studio mithilfe von „NuGet-Pakete verwalten“ herunter. Suchen Sie unter NuGet.org nach dem Paketnamen `Microsoft.Azure.Search`. Vergewissern Sie sich, dass „Vorabversion einschließen“ aktiviert ist, um sicherzustellen, dass das SDK der Vorabversion in den Suchergebnissen angezeigt wird.
 
@@ -333,7 +333,7 @@ Vielleicht fragen Sie sich, wie das Azure Search-.NET-SDK Instanzen einer benutz
         }
     }
 
-Das Erste, was Sie sehen, ist, dass jede öffentliche Eigenschaft von `Hotel` einem Feld in der Indexdefinition entspricht, allerdings mit einem bedeutsamen Unterschied: die Namen der Felder beginnen mit einem Kleinbuchstaben \(„camel-Schreibweise“\), während die Namen der öffentlichen Eigenschaften von `Hotel` mit einem Großbuchstaben \(„Pascal-Schreibweise“\) beginnen. Dies ist ein typisches Szenario für .NET-Anwendungen, die Datenbindungen durchführen, wenn das Zielschema außerhalb der Kontrolle des Anwendungsentwicklers liegt. Anstatt nun die Namenskonventionen von .NET mit Eigenschaftsnamen in camel-Schreibweise zu verletzen, können Sie das SDK mit dem Attribut `[SerializePropertyNamesAsCamelCase]` anweisen, Eigenschaftsnamen automatisch der camel-Schreibweise zuzuordnen.
+Das Erste, was Sie sehen, ist, dass jede öffentliche Eigenschaft von `Hotel` einem Feld in der Indexdefinition entspricht, allerdings mit einem bedeutsamen Unterschied: die Namen der Felder beginnen mit einem Kleinbuchstaben („camel-Schreibweise“), während die Namen der öffentlichen Eigenschaften von `Hotel` mit einem Großbuchstaben („Pascal-Schreibweise“) beginnen. Dies ist ein typisches Szenario für .NET-Anwendungen, die Datenbindungen durchführen, wenn das Zielschema außerhalb der Kontrolle des Anwendungsentwicklers liegt. Anstatt nun die Namenskonventionen von .NET mit Eigenschaftsnamen in camel-Schreibweise zu verletzen, können Sie das SDK mit dem Attribut `[SerializePropertyNamesAsCamelCase]` anweisen, Eigenschaftsnamen automatisch der camel-Schreibweise zuzuordnen.
 
 Ebenso bemerkenswert an der Klasse `Hotel` sind die Datentypen der öffentlichen Eigenschaften. Die .NET-Typen dieser Eigenschaften stimmen mit den entsprechenden Feldtypen in der Indexdefinition überein. Die Zeichenfolgeeigenschaft `Category` passt zum Beispiel zum Feld `category`, das den Typ `Edm.String` hat. Ähnliche Zuordnungen bestehen auch zwischen `bool?` und `Edm.Boolean`, `DateTimeOffset?`, `Edm.DateTimeOffset` usw. Die jeweiligen Regeln für die Zuordnung eines Typs sind mit der `Documents.Get`-Methode auf [MSDN](https://msdn.microsoft.com/library/azure/dn931291.aspx) dokumentiert. Beachten Sie, dass in der Klasse `Hotel` für Wertetypen wie `bool` und `int` auch Nullwerte zulässig sind, da in Azure Search für alle primitiven Feldtypen Nullwerte zugelassen sind.
 
@@ -374,7 +374,7 @@ Wir wollen uns nun näher ansehen, wie diese Methode aufgerufen wird:
 
     SearchDocuments(indexClient, searchText: "*", filter: "category eq 'Luxury'");
 
-Im ersten Aufruf werden alle Dokumente mit den Abfrageausdrücken „fancy“ und „wifi“ gesucht. Im zweiten Aufruf ist der Suchtext auf „\*“ gesetzt, d. h., es wird nach allem gesucht. Weitere Informationen zur Syntax von Such- bzw. Abfrageausdrücken finden Sie [hier](https://msdn.microsoft.com/library/azure/dn798920.aspx).
+Im ersten Aufruf werden alle Dokumente mit den Abfrageausdrücken „fancy“ und „wifi“ gesucht. Im zweiten Aufruf ist der Suchtext auf „*“ gesetzt, d. h., es wird nach allem gesucht. Weitere Informationen zur Syntax von Such- bzw. Abfrageausdrücken finden Sie [hier](https://msdn.microsoft.com/library/azure/dn798920.aspx).
 
 Der zweite Aufruf verwendet den OData-`$filter`-Ausdruck `category eq 'Luxury'`. Diese Suche gibt damit nur Dokumente zurück, deren `category`-Feld genau der Zeichenfolge „Luxury“ entspricht. Weitere Informationen zur von Azure Search unterstützten OData-Syntax finden Sie [hier](https://msdn.microsoft.com/library/azure/dn798921.aspx).
 

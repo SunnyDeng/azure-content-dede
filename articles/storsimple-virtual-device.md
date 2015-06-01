@@ -75,7 +75,7 @@ Bevor Sie das virtuelle Gerät bereitstellen, müssen Sie in Ihrer Umgebung die 
 
 >[AZURE.IMPORTANT]**Stellen Sie sicher, dass sich das virtuelle Netzwerk in der gleichen Region befindet, wie die mit dem Gerät zu verwendenden Cloud-Speicherkonten.**
 
-- Erstellen Sie im virtuellen Netzwerk [virtuelle Azure-Computer](https://msdn.microsoft.com/library/azure/jj156003.aspx) \(Hostserver\). Diese Server müssen die folgenden Anforderungen erfüllen: 							
+- Erstellen Sie im virtuellen Netzwerk [virtuelle Azure-Computer](https://msdn.microsoft.com/library/azure/jj156003.aspx) (Hostserver). Diese Server müssen die folgenden Anforderungen erfüllen: 							
 	- Es muss sich um virtuelle Windows- oder Linux-Computer mit iSCSI-Initiatorsoftware handeln.
 	- Sie müssen im gleichen virtuellen Netzwerk wie das virtuelle Gerät ausgeführt werden.
 	- Das iSCSI-Ziel des virtuellen Geräts muss über die interne IP-Adresse des virtuellen Geräts eine Verbindung herstellen können.
@@ -156,7 +156,7 @@ Im folgenden Abschnitt werden die Gerätekonfigurationseinstellungen beschrieben
 
 ####Konfigurieren des CHAP-Initiators
 
-Dieser Parameter enthält die Anmeldeinformationen, die Ihr virtuelles Gerät \(Ziel\) von den Initiatoren \(Servern\) erwartet, die auf die Volumes zugreifen. Die Initiatoren stellen einen CHAP-Benutzernamen und ein CHAP-Kennwort bereit, um sich bei der Authentifizierung bei Ihrem Gerät zu identifizieren.
+Dieser Parameter enthält die Anmeldeinformationen, die Ihr virtuelles Gerät (Ziel) von den Initiatoren (Servern) erwartet, die auf die Volumes zugreifen. Die Initiatoren stellen einen CHAP-Benutzernamen und ein CHAP-Kennwort bereit, um sich bei der Authentifizierung bei Ihrem Gerät zu identifizieren.
 
 ####Konfigurieren des CHAP-Ziels
 
@@ -172,7 +172,7 @@ Beim Konfigurieren eines Geräts im StorSimple-Momentaufnahme-Manager werden Sie
 
 Führen Sie die folgenden Schritte durch, um den StorSimple-Momentaufnahme-Manager für die Verwendung mit dem virtuellen StorSimple-Gerät zu konfigurieren.
 
-1. Wechseln Sie auf dem virtuellen Gerät zu **Geräte \> Konfigurieren**.
+1. Wechseln Sie auf dem virtuellen Gerät zu **Geräte > Konfigurieren**.
 
 - Scrollen Sie nach unten zum Abschnitt **Momentaufnahme-Manager**. Geben Sie ein Kennwort mit einer Länge von 14 oder 15 Zeichen ein. Stellen Sie sicher, dass das Kennwort eine Kombination aus Großbuchstaben, Kleinbuchstaben, Zahlen und Sonderzeichen enthält.
 
@@ -188,7 +188,7 @@ Wenn Sie über die Windows PowerShell-Benutzeroberfläche auf das virtuelle Ger�
 
 Führen Sie die folgenden Schritte durch, um das Geräteadministratorkennwort für das virtuelle StorSimple-Gerät zu konfigurieren.
 
-1. Wechseln Sie auf dem virtuellen Gerät zu **Geräte \> Konfigurieren**.
+1. Wechseln Sie auf dem virtuellen Gerät zu **Geräte > Konfigurieren**.
  
 1. Scrollen Sie nach unten zum Kennwortabschnitt für den **Geräteadministrator**. Geben Sie ein Administratorkennwort ein, das zwischen 8 und 15 Zeichen lang ist. Beim Kennwort muss es sich um eine Kombination aus Großbuchstaben, Kleinbuchstaben, Zahlen und Sonderzeichen handeln.
 
@@ -207,7 +207,7 @@ Sie können eine Verbindung über HTTP oder HTTPS herstellen. Aus Sicherheitsgr�
 Führen Sie die folgenden Schritte durch, um die Remoteverwaltung für das virtuelle StorSimple-Gerät zu konfigurieren.
 
 
-1. Wechseln Sie auf dem virtuellen Gerät zu **Geräte \> Konfigurieren**.
+1. Wechseln Sie auf dem virtuellen Gerät zu **Geräte > Konfigurieren**.
 
 2. Scrollen nach unten zum Abschnitt **Remoteverwaltung**.
 
@@ -237,8 +237,8 @@ In den folgenden Abschnitten werden einige der Unterschiede bei der Arbeit mit v
 
 Da es sich um ein reines Softwaregerät handelt, ist der Verwaltungsaufwand im Vergleich zu einem physischen Gerät minimal. Folgende Optionen stehen zur Auswahl:
 
-- **Automatische Updates** – Sie können die automatischen Updates deaktivieren oder aktivieren. Wenn automatischen Updates aktiviert sind, wird das virtuelle Gerät automatisch heruntergefahren und \(ggf.\) neu gestartet, um alle veröffentlichten Updates zu übernehmen. Da nur eine einzige Schnittstelle zum virtuellen Gerät vorhanden ist, tritt beim Übernehmen der Updates eine kurze Dienstunterbrechung auf.
-- **Softwareupdates** – Sie können das Datum des letzten Softwareupdates sowie alle Updatestatusmeldungen anzeigen. Mit der Schaltfläche zum Suchen von Updates \(unten auf der Seite\) können Sie manuell nach Updates suchen.
+- **Automatische Updates** – Sie können die automatischen Updates deaktivieren oder aktivieren. Wenn automatischen Updates aktiviert sind, wird das virtuelle Gerät automatisch heruntergefahren und (ggf.) neu gestartet, um alle veröffentlichten Updates zu übernehmen. Da nur eine einzige Schnittstelle zum virtuellen Gerät vorhanden ist, tritt beim Übernehmen der Updates eine kurze Dienstunterbrechung auf.
+- **Softwareupdates** – Sie können das Datum des letzten Softwareupdates sowie alle Updatestatusmeldungen anzeigen. Mit der Schaltfläche zum Suchen von Updates (unten auf der Seite) können Sie manuell nach Updates suchen.
 - **Supportpaket** – Sie können ein Supportpaket erstellen und hochladen, um den Microsoft-Support beim Beheben von Problemen mit Ihrem virtuellen Gerät zu unterstützen.
 
 ###Speicherkonten für ein virtuelles Gerät
@@ -279,7 +279,7 @@ Führen Sie die folgenden Schritte durch, um auf dem virtuellen Gerät einen öf
 
 - Klicken Sie auf **Endpunkte**. Auf der Seite "Endpunkte" werden alle Endpunkte für den virtuellen Computer aufgelistet.
 
-- Klicken Sie auf \*\*Hinzufügen\*\*. Das Dialogfeld Endpunkt hinzufügen wird angezeigt. Klicken Sie auf den Pfeil, um fortzufahren.
+- Klicken Sie auf **Hinzufügen**. Das Dialogfeld Endpunkt hinzufügen wird angezeigt. Klicken Sie auf den Pfeil, um fortzufahren.
 
 - Geben Sie unter **Name** den folgenden Namen für den Endpunkt ein: **WinRMHttps**.
 

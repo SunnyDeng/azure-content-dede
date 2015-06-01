@@ -31,7 +31,7 @@ Um diese Beispiele verwenden zu können, müssen Sie zunächst ein CoreOS-Cluste
 
 Hier ist eine einfache "Hello World"-Anwendung, die in einem einzelnen Docker-Container ausgeführt wird. Dazu wird das [Docker-Hub-Image BusyBox] verwendet.
 
-Erstellen Sie auf dem Linux-Clientcomputer mit einem Texteditor Ihrer Wahl die folgende **systemd**-Unit-Datei, und nennen Sie sie `helloworld.service`. \(Nähere Informationen zur Syntax finden Sie unter [Unit Files].\)
+Erstellen Sie auf dem Linux-Clientcomputer mit einem Texteditor Ihrer Wahl die folgende **systemd**-Unit-Datei, und nennen Sie sie `helloworld.service`. (Nähere Informationen zur Syntax finden Sie unter [Unit Files].)
 
 ```
 [Unit]
@@ -60,7 +60,7 @@ fleetctl --tunnel coreos-cluster.cloudapp.net:22 start helloworld.service
 Unit helloworld.service launched on 62f0f66e.../100.79.86.62
 ```
 
->[AZURE.NOTE] Um die **fleetctl**-Remotebefehle ohne den **--tunnel**-Parameter auszuführen, können Sie optional die FLEETCTL\_TUNNEL-Umgebungsvariable zum Tunneln der Anforderungen festlegen. Beispiel: `export FLEETCTL_TUNNEL=coreos-cluster.cloudapp.net:22`.
+>[AZURE.NOTE] Um die **fleetctl**-Remotebefehle ohne den **--tunnel**-Parameter auszuführen, können Sie optional die FLEETCTL_TUNNEL-Umgebungsvariable zum Tunneln der Anforderungen festlegen. Beispiel: `export FLEETCTL_TUNNEL=coreos-cluster.cloudapp.net:22`.
 
 
 Sie können eine Verbindung mit dem Container herstellen, um die Ausgabe des Diensts anzuzeigen:
@@ -92,7 +92,7 @@ fleetctl --tunnel coreos-cluster.cloudapp.net:22 unload helloworld.service
 
 Ein Vorteil der Verwendung von CoreOS, Docker und **fleet** besteht darin, dass dann Dienste problemlos mit hoher Verfügbarkeit ausgeführt werden können. In diesem Beispiel stellen Sie einen Dienst bereit, der aus drei identischen Containern besteht, in denen der Apache-Webserver ausgeführt wird. Der Container werden auf die drei virtuellen Computern im Cluster ausgeführt. Dieses Beispiel ähnelt dem Beispiel in [Starten von Containern mit fleet] und verwendet das [CoreOS-Image Apache Docker Hub].
 
->[AZURE.NOTE] Um den Apache-Server mit hoher Verfügbarkeit auszuführen, müssen Sie auf den virtuellen Computern einen HTTP-Endpunkt mit Lastenausgleich konfigurieren \(öffentlicher Port 80, privater Port 80\). Sie können dies nach der Erstellung des CoreOS-Clusters im Azure-Verwaltungsportal oder mit dem  Befehl **azure vm endpoint** tun. Weitere Informationen finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich].
+>[AZURE.NOTE] Um den Apache-Server mit hoher Verfügbarkeit auszuführen, müssen Sie auf den virtuellen Computern einen HTTP-Endpunkt mit Lastenausgleich konfigurieren (öffentlicher Port 80, privater Port 80). Sie können dies nach der Erstellung des CoreOS-Clusters im Azure-Verwaltungsportal oder mit dem  Befehl **azure vm endpoint** tun. Weitere Informationen finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich].
 
 Erstellen Sie auf dem Clientcomputer mit Ihrem bevorzugten Texteditor eine **systemd**-Unit-Vorlagendatei namens apache@.service. Sie verwenden diese Vorlage zum Starten von drei separaten Instanzen namens apache@1.service, apache@2.service und apache@3.service:
 
@@ -133,10 +133,10 @@ Um den Apache-Server, der in einer dieser Units ausgeführt wird, zu erreichen, 
 Sie sehen Standardtext, der vom Apache-Server zurückgegeben wird und etwa wie folgt lautet:
 
 ```
-\<htm\l>\<body\>\<h1\>It works!\</h1\>
-\<p\>This is the default web page for this server.\</p\>
-\<p\>The web server software is running but no content has been added, yet.\</p\>
-\</body\>\</html\>
+<htm\l><body><h1>It works!</h1>
+<p>This is the default web page for this server.</p>
+<p>The web server software is running but no content has been added, yet.</p>
+</body></html>
 ```
 
 Sie können versuchen, einen oder mehrere virtuelle Computer im Cluster herunterzufahren, um zu überprüfen, ob der Apache-Dienst weiterhin ausgeführt wird.
@@ -151,7 +151,7 @@ fleetctl --tunnel coreos-cluster.cloudapp.net:22 unload apache@{1,2,3}.service
 
 ## Nächste Schritte
 
-Sie können das CoreOS-Cluster mit drei Knoten in Azure auch zu anderen Zwecken verwenden. Lesen Sie [Tim Park's CoreOS Tutorial] \(Tim Parks CoreOS-Lernprogramm\), [Patrick Chanezon's CoreOS Tutorial] \(Patrick Chanezons CoreOS-Lernprogramm\), die [Docker]-Dokumentation und [CoreOS Overview] \(Übersicht zu CoreOS\) \(allesamt in englischer Sprache\), um herauszufinden, wie Sie komplexere Cluster erstellen und Docker verwenden sowie interessantere Anwendungen erstellen können.
+Sie können das CoreOS-Cluster mit drei Knoten in Azure auch zu anderen Zwecken verwenden. Lesen Sie [Tim Park's CoreOS Tutorial] (Tim Parks CoreOS-Lernprogramm), [Patrick Chanezon's CoreOS Tutorial] (Patrick Chanezons CoreOS-Lernprogramm), die [Docker]-Dokumentation und [CoreOS Overview] (Übersicht zu CoreOS) (allesamt in englischer Sprache), um herauszufinden, wie Sie komplexere Cluster erstellen und Docker verwenden sowie interessantere Anwendungen erstellen können.
 
 Weitere Informationen zur Verwendung von Open Source-Umgebungen in virtuellen Linux-Computern in Azure finden Sie unter [Linux- und Open Source-Computing in Azure].
 

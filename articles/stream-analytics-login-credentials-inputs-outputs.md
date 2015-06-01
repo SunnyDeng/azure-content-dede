@@ -94,7 +94,7 @@ Für andere Ein-/Ausgaben fahren Sie mit Teil 2 fort.
 ![Grafik23][graphic23]
 12. Klicken Sie auf "Neue Abfrage": 
 ![Grafik24][graphic24]
-13. Geben Sie die folgende Abfrage ein, und ersetzen Sie <user_name> mit einem Namen, mit dem diese Anmeldung im Kontext der Datenbank identifiziert werden soll \(Sie können z. B. den gleichen Wert wie für <login_name> eingeben\). Ersetzen Sie anschließend <login_name> mit Ihrem neuen Benutzernamen: `CREATE USER <user_name> FROM LOGIN <login_name>`
+13. Geben Sie die folgende Abfrage ein, und ersetzen Sie <user_name> mit einem Namen, mit dem diese Anmeldung im Kontext der Datenbank identifiziert werden soll (Sie können z. B. den gleichen Wert wie für <login_name> eingeben). Ersetzen Sie anschließend <login_name> mit Ihrem neuen Benutzernamen: `CREATE USER <user_name> FROM LOGIN <login_name>`
 14. Klicken Sie auf "Ausführen": 
 ![Grafik25][graphic25]
 15. Sie sollten nun dem neuen Benutzer die gleichen Rollen und Berechtigungen zuweisen, über die der ursprüngliche Benutzer verfügte.
@@ -159,7 +159,7 @@ Für andere Ein-/Ausgaben fahren Sie mit Teil 2 fort.
 4.	Fahren Sie mit Teil 5 fort.  
 
 ##Teil 5: Entfernen des alten Anmeldeinformationssatzes
-Dieser Teil gilt für die folgenden Ein-/Ausgaben: \* Blob-Speicher \* Event Hubs \* SQL-Datenbank \* Tabellenspeicher
+Dieser Teil gilt für die folgenden Ein-/Ausgaben: * Blob-Speicher * Event Hubs * SQL-Datenbank * Tabellenspeicher
 
 ###Blob-Speicher/Tabellenspeicher
 Wiederholen Sie Teil 1 für den Zugriffsschlüssel, der bislang für den Auftrag verwendet wurde, um den jetzt nicht mehr verwendeten Zugriffsschlüssel zu erneuern.

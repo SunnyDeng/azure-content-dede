@@ -31,10 +31,10 @@ Sie können außerdem [Webtests][availability] einrichten, um die Verfügbarkeit
 Sie benötigen Folgendes:
 
 * Oracle JRE 1.6 oder höher bzw. Zulu JRE 1.6 oder höher
-* Ein Abonnement für [Microsoft Azure](http://azure.microsoft.com/). \(Sie können mit der [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) beginnen.\)
+* Ein Abonnement für [Microsoft Azure](http://azure.microsoft.com/). (Sie können mit der [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) beginnen.)
 
 
-## 1\. Abrufen eines Application Insights-Instrumentationsschlüssels
+## 1. Abrufen eines Application Insights-Instrumentationsschlüssels
 
 1. Melden Sie sich am [Microsoft Azure-Portal](https://portal.azure.com) an.
 2. Erstellen einer neuen Application Insights-Ressource
@@ -47,7 +47,7 @@ Sie benötigen Folgendes:
 
     ![Klicken Sie in der Übersicht über neue Ressourcen auf "Eigenschaften", und kopieren Sie den Instrumentationsschlüssel](./media/app-insights-java-get-started/03-key.png)
 
-## 2\. Hinzufügen des Application Insights SDK für Java zu Ihrem Projekt
+## 2. Hinzufügen des Application Insights SDK für Java zu Ihrem Projekt
 
 *Wählen Sie die geeignete Methode für Ihr Projekt.*
 
@@ -121,7 +121,7 @@ Fügen Sie das SDK manuell hinzu:
 `applicationinsights-core` bietet Ihnen die bloße API ohne automatische Telemetrie. `applicationinsights-web` bietet Ihnen Metriken zum Nachverfolgen der Anzahl von HTTP-Anforderungen und Antwortzeiten.
 
 
-## 3\. Hinzufügen der Datei "ApplicationInsights.XML"
+## 3. Hinzufügen der Datei "ApplicationInsights.XML"
 
 Fügen Sie "ApplicationInsights.xml" dem Ordner "Ressourcen" in Ihrem Projekt hinzu. Kopieren Sie sie in den folgenden XML-Code.
 
@@ -162,9 +162,9 @@ Fügen Sie den Instrumentationsschlüssel ein, den Sie aus dem Azure-Portal abge
 * Die Komponente "HTTP-Anforderung" ist optional. Sie sendet automatisch Telemetriedaten zu Anforderungen und Antwortzeiten zum Portal.
 * Die Korrelation von Ereignissen ist eine Ergänzung der HTTP-Anforderungskomponente. Sie weist den einzelnen Anforderungen, die vom Server empfangen wurden, einen Bezeichner zu und fügt diesen als Eigenschaft 'Operation.Id' jedem Telemetrieelement hinzu. Diese Eigenschaft ermöglicht das Korrelieren der jeder Anforderung zugeordneten Telemetriedaten, indem in [Diagnosesuche][diagnostic] ein Filter festgelegt wird.
 
-## 4\. Hinzufügen eines HTTP-Filters
+## 4. Hinzufügen eines HTTP-Filters
 
-Der letzte Konfigurationsschritt ermöglicht der HTTP-Anforderungskomponente das Protokollieren jeder Webanforderung. \(Nicht erforderlich, wenn nur die bloße API wünschen.\)
+Der letzte Konfigurationsschritt ermöglicht der HTTP-Anforderungskomponente das Protokollieren jeder Webanforderung. (Nicht erforderlich, wenn nur die bloße API wünschen.)
 
 Suchen und öffnen Sie die Datei "web.xml" in Ihrem Projekt, und führen Sie den folgenden Codeausschnitt unter dem Knoten "web-app" zusammen, in dem Ihre Anwendungsfilter konfiguriert sind.
 
@@ -196,22 +196,22 @@ Bearbeiten Sie diese Elemente so, dass das Application Insights-Paket einbezogen
 
 #### Wenn Sie Struts 2 verwenden...
 
-Fügen Sie dieses Element der Struts-Konfigurationsdatei \(die in der Regel "struts.xml" oder "struts-default.xml" heißt\) hinzu:
+Fügen Sie dieses Element der Struts-Konfigurationsdatei (die in der Regel "struts.xml" oder "struts-default.xml" heißt) hinzu:
 
      <interceptors>
        <interceptor name="ApplicationInsightsRequestNameInterceptor" class="com.microsoft.applicationinsights.web.struts.RequestNameInterceptor" />
      </interceptors>
      <default-interceptor-ref name="ApplicationInsightsRequestNameInterceptor" />
 
-\(Wenn Sie in einem Standardstapel Interceptors definiert haben, kann der Interceptor einfach diesem Stapel hinzugefügt werden.\)
+(Wenn Sie in einem Standardstapel Interceptors definiert haben, kann der Interceptor einfach diesem Stapel hinzugefügt werden.)
 
-## 5\. Anzeigen Ihrer Telemetriedaten in Application Insights
+## 5. Anzeigen Ihrer Telemetriedaten in Application Insights
 
 Führen Sie Ihre Anwendung aus.
 
 Kehren Sie zur Application Insights-Ressource in Microsoft Azure zurück.
 
-HTTP-Anforderungsdaten werden auf dem Blatt "Übersicht" angezeigt. \(Wenn sie nicht vorhanden sind, warten Sie einige Sekunden, und klicken Sie dann auf "Aktualisieren".\)
+HTTP-Anforderungsdaten werden auf dem Blatt "Übersicht" angezeigt. (Wenn sie nicht vorhanden sind, warten Sie einige Sekunden, und klicken Sie dann auf "Aktualisieren".)
 
 ![Beispieldaten](./media/app-insights-java-track-http-requests/5-results.png)
  
@@ -239,7 +239,7 @@ Application Insights setzt voraus, dass das Format von HTTP-Anforderungen für M
 
 Dadurch werden aussagekräftige Aggregationen von Anforderungen ermöglicht, z. B. die Anzahl der Anforderungen und die durchschnittliche Ausführungszeit von Anforderungen.
 
-## 5\. Leistungsindikatoren
+## 5. Leistungsindikatoren
 
 Klicken Sie auf die Kachel "Server", auf der Sie einen Bereich mit Leistungsindikatoren sehen.
 
@@ -258,7 +258,7 @@ Um die Erfassung der Standardgruppe von Leistungsindikatoren zu deaktivieren, f�
 
 Sie können weitere Leistungsindikatoren angeben, die erfasst werden sollen.
 
-#### JMX-Leistungsindikatoren \(von der Java Virtual Machine bereitgestellt\)
+#### JMX-Leistungsindikatoren (von der Java Virtual Machine bereitgestellt)
 
     <PerformanceCounters>
       <Jmx>
@@ -270,16 +270,16 @@ Sie können weitere Leistungsindikatoren angeben, die erfasst werden sollen.
 *	`displayName` – Der im Application Insights-Portal angezeigte Name.
 *	`objectName` – Der JMX-Objektname.
 *	`attribute` – Das Attribut des abzurufenden JMX-Objektnamens
-*	`type` \(optional\) – Der Typ des Attributs des JMX-Objekts:
+*	`type` (optional) – Der Typ des Attributs des JMX-Objekts:
  *	Standard: ein einfacher Typ wie "int" oder "long".
  *	`composite`: Die Leistungsindikatordaten haben das Format 'Attribut.Daten'.
  *	`tabular`: Die Leistungsindikatordaten haben das Format einer Tabellenzeile.
 
 
 
-#### Leistungsindikatoren für Windows \(64 Bit\) 
+#### Leistungsindikatoren für Windows (64 Bit) 
 
-Jeder [Windows-Leistungsindikator](https://msdn.microsoft.com/library/windows/desktop/aa373083.aspx) gehört zu einer Kategorie \(genauso wie ein Feld zu einer Klasse gehört\). Kategorien können entweder global sein oder nummerierte oder benannte Instanzen haben.
+Jeder [Windows-Leistungsindikator](https://msdn.microsoft.com/library/windows/desktop/aa373083.aspx) gehört zu einer Kategorie (genauso wie ein Feld zu einer Klasse gehört). Kategorien können entweder global sein oder nummerierte oder benannte Instanzen haben.
 
     <PerformanceCounters>
       <Windows>
@@ -289,20 +289,20 @@ Jeder [Windows-Leistungsindikator](https://msdn.microsoft.com/library/windows/de
     </PerformanceCounters>
 
 *	displayName – Der im Application Insights-Portal angezeigte Name.
-*	categoryName – Die Leistungsindikatorkategorie \(Leistungsobjekt\), der dieser Leistungsindikator zugeordnet ist.
+*	categoryName – Die Leistungsindikatorkategorie (Leistungsobjekt), der dieser Leistungsindikator zugeordnet ist.
 *	counterName – Der Name des Leistungsindikators.
-*	instanceName – Der Name der Instanz der Leistungsindikatorkategorie oder eine leere Zeichenfolge \(""\), wenn die Kategorie eine einzelne Instanz enthält. Wenn "categoryName" auf "Process" festgelegt ist und der Leistungsindikator, den Sie erfassen möchten, aus dem aktuellen JVM-Prozess stammt, in dem Ihre Anwendung ausgeführt wird, geben Sie `"__SELF__"` an.
+*	instanceName – Der Name der Instanz der Leistungsindikatorkategorie oder eine leere Zeichenfolge (""), wenn die Kategorie eine einzelne Instanz enthält. Wenn "categoryName" auf "Process" festgelegt ist und der Leistungsindikator, den Sie erfassen möchten, aus dem aktuellen JVM-Prozess stammt, in dem Ihre Anwendung ausgeführt wird, geben Sie `"__SELF__"` an.
 
 Ihre Leistungsindikatoren werden im [Metrik-Explorer][metrics] als benutzerdefinierte Metriken angezeigt.
 
 ![](./media/app-insights-java-get-started/12-custom-perfs.png)
 
 
-## 6\. Erfassen von Protokollablaufverfolgungen
+## 6. Erfassen von Protokollablaufverfolgungen
 
 Sie können Application Insights verwenden, um Protokolle aus Log4J, Logback oder anderen Frameworks zu segmentieren. Sie können die Protokolle mit HTTP-Anforderungen und anderer Telemetrie in Beziehung setzen. [Weitere Informationen][javalogs]￼.
 
-## 7\. Senden eigener Telemetriedaten
+## 7. Senden eigener Telemetriedaten
 
 Nachdem Sie das SDK installiert haben, können Sie die API verwenden, um eigene Telemetriedaten senden.
 

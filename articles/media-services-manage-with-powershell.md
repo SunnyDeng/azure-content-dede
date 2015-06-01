@@ -36,11 +36,11 @@ Wenn Sie PowerShell-Cmdlets installieren und konfigurieren, sollten Sie angeben,
 
 Führen Sie das folgende Cmdlet aus, um eine Liste der verfügbaren Abonnements aufzurufen:
 
-	PS C:\> Get-AzureSubscription
+	PS C:> Get-AzureSubscription
 
 Wählen Sie dann wie folgt ein Abonnement aus:
 
-	PS C:\> Select-AzureSubscription "TestSubscription"
+	PS C:> Select-AzureSubscription "TestSubscription"
 
  
 ##Abrufen des Speicherkontonamens
@@ -73,14 +73,14 @@ In diesem Beispiel wird ein vorhandenes Speicherkonto verwendet. Das Cmdlet [Get
 Verwenden Sie zum Erstellen eines neuen Azure Media Services-Kontos das Cmdlet [New-AzureMediaServicesAccount](https://msdn.microsoft.com/library/azure/dn495286.aspx), und geben Sie den Namen des Media Services-Kontos, den Speicherort im Data Center, in dem es erstellt wird, und den Namen des Speicherkontos an. 
 
 
-	PS C:\> New-AzureMediaServicesAccount -Name "amstestaccount001" -StorageAccountName "storagetest001" -Location "East US"
+	PS C:> New-AzureMediaServicesAccount -Name "amstestaccount001" -StorageAccountName "storagetest001" -Location "East US"
 
 ##Abrufen von Media Services-Konten
 
 Nachdem Sie Media Services-Konten erstellt haben, können Sie mithilfe von [Get-AzureMediaServicesAccount](https://msdn.microsoft.com/library/azure/dn495286.aspx) Informationen abrufen.
 
 	
-	PS C:\> Get-AzureMediaServicesAccount
+	PS C:> Get-AzureMediaServicesAccount
 	
 	AccountId		Name				State
 	---------       ----       			 -----
@@ -88,7 +88,7 @@ Nachdem Sie Media Services-Konten erstellt haben, können Sie mithilfe von [Get-
 
 Durch Angabe des "Name"-Parameters erhalten Sie ausführlichere Informationen, darunter die Kontoschlüssel.
 
-	PS C:\> Get-AzureMediaServicesAccount -Name amstestaccount001
+	PS C:> Get-AzureMediaServicesAccount -Name amstestaccount001
 
 ##Neugenerieren der Media Services-Zugriffsschlüssel
 
@@ -97,13 +97,13 @@ Sie müssen den Kontonamen angeben und festlegen, welcher Schlüssel neu generie
 
 Geben Sie einen "-Force"-Schalter an, wenn in der PowerShell keine Aufforderungen zur Bestätigung angezeigt werden sollen.
 
-	PS C:\> New-AzureMediaServicesKey -Name "amstestaccount001" -KeyType "Primary" -Force
+	PS C:> New-AzureMediaServicesKey -Name "amstestaccount001" -KeyType "Primary" -Force
 
 ##Entfernen von Media Services-Kontos
 
 Wenn Sie das Azure Media Services-Konto löschen möchten, verwenden Sie [Remove-AzureMediaServicesAccount](https://msdn.microsoft.com/library/azure/dn495220.aspx).
 
-	PS C:\> Remove-AzureMediaServicesAccount -Name "amstestaccount001" -Force
+	PS C:> Remove-AzureMediaServicesAccount -Name "amstestaccount001" -Force
 
 
 

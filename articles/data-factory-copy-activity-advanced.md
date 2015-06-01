@@ -18,7 +18,7 @@
 
 # Erweiterte Szenarien für die Verwendung der Kopieraktivität in Azure Data Factory 
 ## Übersicht
-Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer Quelle an eine Senke \(Ziel\) in einem Batch kopieren. Dieses Thema beschreibt die erweiterten Szenarien, die von der Kopieraktivität unterstützt werden. Eine ausführliche Übersicht über die Kopieraktivität und wichtige Szenarien, die davon unterstützt werden, finden Sie unter [Kopieren von Daten mit Azure Data Factory][adf-copyactivity].
+Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer Quelle an eine Senke (Ziel) in einem Batch kopieren. Dieses Thema beschreibt die erweiterten Szenarien, die von der Kopieraktivität unterstützt werden. Eine ausführliche Übersicht über die Kopieraktivität und wichtige Szenarien, die davon unterstützt werden, finden Sie unter [Kopieren von Daten mit Azure Data Factory][adf-copyactivity].
 
 
 ## Strukturdefinition verwendende Spaltenfilterung
@@ -136,9 +136,9 @@ In diesem Beispiel wird die **Ausgabetabelle** wie folgt definiert. Die Ausgabet
 		}
 	}	
 
-Wenn Sie keinen **fileName** für eine **Ausgabetabelle** angeben, werden die generierten Dateien in **folderPath** im folgenden Format benannt: Data.<Guid>.txt \(Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt\).
+Wenn Sie keinen **fileName** für eine **Ausgabetabelle** angeben, werden die generierten Dateien in **folderPath** im folgenden Format benannt: Data.<Guid>.txt (Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt).
 
-Um **folderPath** und **fileName** dynamisch basierend auf der **SliceStart**-Zeit festzulegen, verwenden Sie die **partitionedBy**-Eigenschaft. Im folgenden Beispiel verwendet **folderPath** die Angaben für Jahr, Monat und Tag aus SliceStart \(Startzeit des zu vearbeitenden Slices\) und "fileName" die Angabe für Stunde aus SliceStart. Wenn beispielsweise ein Slice für den Zeitpunkt "2014-10-20T08:00:00" erzeugt wird, wird "folderName" auf "wikidatagateway/wikisampledataout/2014/10/20" und "filName" auf "08.csv" festgelegt.
+Um **folderPath** und **fileName** dynamisch basierend auf der **SliceStart**-Zeit festzulegen, verwenden Sie die **partitionedBy**-Eigenschaft. Im folgenden Beispiel verwendet **folderPath** die Angaben für Jahr, Monat und Tag aus SliceStart (Startzeit des zu vearbeitenden Slices) und "fileName" die Angabe für Stunde aus SliceStart. Wenn beispielsweise ein Slice für den Zeitpunkt "2014-10-20T08:00:00" erzeugt wird, wird "folderName" auf "wikidatagateway/wikisampledataout/2014/10/20" und "filName" auf "08.csv" festgelegt.
 
   	"folderPath": "wikidatagateway/wikisampledataout/{Year}/{Month}/{Day}",
     "fileName": "{Hour}.csv",
@@ -151,7 +151,7 @@ Um **folderPath** und **fileName** dynamisch basierend auf der **SliceStart**-Ze
     ],
 
 #### Beispiel – Definieren der Spaltenzuordnung
-In diesem Beispiel wird eine Aktivität in einer Pipeline wie folgt definiert. Die Spalten der Quelle werden mithilfe der **Translator**-Eigenschaft den Spalten der Senke \(\*\*columnMappings\*\*\) zugeordnet.
+In diesem Beispiel wird eine Aktivität in einer Pipeline wie folgt definiert. Die Spalten der Quelle werden mithilfe der **Translator**-Eigenschaft den Spalten der Senke (**columnMappings**) zugeordnet.
 
 	{
 		"name": "CopyActivity",
@@ -180,7 +180,7 @@ In diesem Beispiel wird eine Aktivität in einer Pipeline wie folgt definiert. D
 ![Spaltenzuordnung][image-data-factory-column-mapping-1]
 
 ### Beispiel 2 – Spaltenzuordnung mit SQL-Abfrage von SQL Server zu Azure-BLOB
-In diesem Beispiel wird eine SQL-Abfrage \(im Vergleich zur Tabelle im vorherigen Beispiel\) zum Extrahieren von Daten aus einem lokalen SQL Server verwendet, und Spalten aus Abfrageergebnissen werden zu Quellartefakten und dann zu Zielartefakten zugeordnet. Für dieses Beispiel gibt die Abfrage fünf Spalten zurück.
+In diesem Beispiel wird eine SQL-Abfrage (im Vergleich zur Tabelle im vorherigen Beispiel) zum Extrahieren von Daten aus einem lokalen SQL Server verwendet, und Spalten aus Abfrageergebnissen werden zu Quellartefakten und dann zu Zielartefakten zugeordnet. Für dieses Beispiel gibt die Abfrage fünf Spalten zurück.
 
 	{
 		"name": "CopyActivity",
@@ -193,7 +193,7 @@ In diesem Beispiel wird eine SQL-Abfrage \(im Vergleich zur Tabelle im vorherige
 			"source":
 			{
 				"type": "SqlSource",
-				"SqlReaderQuery": "$$Text.Format('SELECT * FROM MyTable WHERE StartDateTime = \\'{0:yyyyMMdd-HH}\\'', SliceStart)"
+				"SqlReaderQuery": "$$Text.Format('SELECT * FROM MyTable WHERE StartDateTime = \{0:yyyyMMdd-HH}\', SliceStart)"
 			},
 			"sink":
 			{
@@ -263,7 +263,7 @@ Die im Abschnitt "Structure" der Tabellendefinition angegebenen Datentypen werde
 ## Aufrufen der gespeicherten Prozedur für SQL-Senke
 Beim Kopieren von Daten in SQL Server oder Azure SQL-Datenbank konnte eine vom Benutzer angegebene gespeicherte Prozedur konfiguriert und mit zusätzlichen Parametern aufgerufen werden.
 ### Beispiel
-1. Definieren Sie die JSON der Ausgabetabelle wie folgt \(verwenden Sie die Tabelle aus Azure SQL-Datenbank als Beispiel\):
+1. Definieren Sie die JSON der Ausgabetabelle wie folgt (verwenden Sie die Tabelle aus Azure SQL-Datenbank als Beispiel):
 
     	{
     		"name": "MyAzureSQLTable",
@@ -320,7 +320,7 @@ Beim Kopieren von Daten in SQL Server oder Azure SQL-Datenbank konnte eine vom B
 Das Feature der gespeicherten Prozedur nutzt [Tabellenwertparameter][table-valued-parameters].
 
 ## Angeben der Codierung für Textdateien
-Obwohl die UTF-8-Codierung sehr beliebt ist, verwenden Textdateien in Azure-Blob aus historischen Gründen häufig andere Codierungen. Anhand der **encodingName**-Eigenschaft können Sie die Codierung für Tabellen vom Typ "TextFormat" nach Codeseitennamen angeben. Eine Liste der gültigen Codierungsnamen finden Sie unter "Encoding.EncodingName-Eigenschaft". Beispiel: Windows-1250 oder Shift-JIS. Der Standardwert lautet "UTF-8". Gültige Codierungsnamen finden Sie in [Codierungsklasse](https://msdn.microsoft.com/library/system.text.encoding(v=vs.110).aspx\).
+Obwohl die UTF-8-Codierung sehr beliebt ist, verwenden Textdateien in Azure-Blob aus historischen Gründen häufig andere Codierungen. Anhand der **encodingName**-Eigenschaft können Sie die Codierung für Tabellen vom Typ "TextFormat" nach Codeseitennamen angeben. Eine Liste der gültigen Codierungsnamen finden Sie unter "Encoding.EncodingName-Eigenschaft". Beispiel: Windows-1250 oder Shift-JIS. Der Standardwert lautet "UTF-8". Gültige Codierungsnamen finden Sie in [Codierungsklasse](https://msdn.microsoft.com/library/system.text.encoding(v=vs.110).aspx).
 
 ## Weitere Informationen
 

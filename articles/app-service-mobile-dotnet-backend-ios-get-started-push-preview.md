@@ -73,7 +73,7 @@ Dieses Lernprogramm baut auf dem App Service-Schnellstart für mobile Apps auf. 
         NotificationHubClient Hub = NotificationHubClient.CreateClientFromConnectionString(notificationHubConnection, notificationHubName)
 
         // iOS payload
-        var appleNotificationPayload = "{\"aps\":{\"alert\":\"" + item.Text + "\"}}";
+        var appleNotificationPayload = "{"aps":{"alert":"" + item.Text + ""}}";
 
         try
         {

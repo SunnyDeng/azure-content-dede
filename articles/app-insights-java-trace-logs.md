@@ -17,7 +17,7 @@
 
 # Untersuchen von Java-Ablaufverfolgungsprotokollen in Application Insights
 
-Wenn Sie für die Ablaufverfolgung Logback oder Log4J \(Version 1.2 bzw. 2.0\) verwenden, werden Ihre Ablaufverfolgungsprotokolle automatisch an Application Insights gesendet. Hier können Sie sie durchsuchen und untersuchen.
+Wenn Sie für die Ablaufverfolgung Logback oder Log4J (Version 1.2 bzw. 2.0) verwenden, werden Ihre Ablaufverfolgungsprotokolle automatisch an Application Insights gesendet. Hier können Sie sie durchsuchen und untersuchen.
 
 Installieren Sie das [Application Insights SDK für Java][java], falls noch nicht geschehen.
 
@@ -89,7 +89,7 @@ Protokollierungstool | Herunterladen | Bibliothek
 ----|----|----
 Logback|[SDK mit Logback-Appender](http://dl.msopentech.com/applicationinsights/javabin/logbackAppender.zip)|applicationinsights-logging-logback
 Log4J v2. 0|[SDK mit Log4J-v2-Appender](http://dl.msopentech.com/applicationinsights/javabin/log4j2Appender.zip)|applicationinsights-logging-log4j2 
-Log4J v1. 2|[SDK mit Log4J-v1. 2-Appender](http://dl.msopentech.com/applicationinsights/javabin/log4j1_2Appender.zip)|applicationinsights-logging-log4j1\_2 
+Log4J v1. 2|[SDK mit Log4J-v1. 2-Appender](http://dl.msopentech.com/applicationinsights/javabin/log4j1_2Appender.zip)|applicationinsights-logging-log4j1_2 
 
 
 
@@ -130,7 +130,7 @@ Zum Starten von Ablaufverfolgungen führen Sie den relevanten Codeausschnitt mit
       <appender-ref ref="aiAppender" />
     </root>
 
-Die Application Insights-Appender können von jeder konfigurierten Protokollierung und müssen nicht unbedingt von der Stammprotokollierung referenziert werden \(siehe die obigen Codebeispiele\).
+Die Application Insights-Appender können von jeder konfigurierten Protokollierung und müssen nicht unbedingt von der Stammprotokollierung referenziert werden (siehe die obigen Codebeispiele).
 
 ## Untersuchen Ihrer Ablaufverfolgungen im Application Insights-Portal
 

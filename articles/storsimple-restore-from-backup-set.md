@@ -39,7 +39,7 @@ Die gefilterten Sicherungssätze werden dann basierend auf den folgenden Attribu
 - **Größe** – die tatsächliche Größe des Sicherungssatzes.
 - **Erstellt am** – das Datum und die Uhrzeit der Erstellung der Sicherungen. 
 - **Typ** – Sicherungssätze können lokale Momentaufnahmen oder Cloud-Momentaufnahmen sein. Eine lokale Momentaufnahme ist eine Sicherung aller Volumedaten, die auf dem lokalen Gerät gespeichert ist, während die Sicherung von Volumedaten in der Cloud als Cloud-Momentaufnahme bezeichnet wird. Lokale Momentaufnahmen bieten schnelleren Zugriff, während Cloud-Momentaufnahmen für Datenstabilität ausgewählt werden.
-- **Initiiert von** – die Sicherungen können automatisch nach einem Zeitplan oder manuell durch einen Benutzer initiiert werden. \(Sie können eine Sicherungsrichtlinie verwenden, um Sicherungen zu planen. Es ist aber auch möglich, mithilfe der Option **Sicherung erstellen** eine interaktive Sicherung durchzuführen.\)
+- **Initiiert von** – die Sicherungen können automatisch nach einem Zeitplan oder manuell durch einen Benutzer initiiert werden. (Sie können eine Sicherungsrichtlinie verwenden, um Sicherungen zu planen. Es ist aber auch möglich, mithilfe der Option **Sicherung erstellen** eine interaktive Sicherung durchzuführen.)
 
 ##Wiederherstellen von Geräten aus einer Sicherung
 

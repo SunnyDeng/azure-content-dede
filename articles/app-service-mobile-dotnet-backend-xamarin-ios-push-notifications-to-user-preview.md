@@ -60,7 +60,7 @@ Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die entsprechenden App S
 
         // delete await push.RegisterAsync (deviceToken);
         
-        var notificationTemplate = "{\"aps\": {\"alert\":\"$(message)\"}}";
+        var notificationTemplate = "{"aps": {"alert":"$(message)"}}";
 
         JObject templateBody = new JObject();
         templateBody["body"] = notificationTemplate;

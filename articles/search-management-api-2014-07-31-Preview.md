@@ -24,7 +24,7 @@ Die Management-REST-API des Diensts Azure Search bietet auf die meisten Funktion
 - Erstellen, Ändern oder Abrufen von `api-keys` für die Automatisierung regulärer Änderungen an den Admin-Schlüsseln für die Authentifizierung von Datensuchvorgängen 
 - Anpassen der Skalierung eines Azure Search-Dienstes in Reaktion auf Änderungen am Abfragevolumen oder den Speicheranforderungen
 
-Für die vollständige programmgesteuerte Verwaltung des Dienstes benötigen Sie zwei APIs: die Management-REST-API von Azure Search sowie die allgemeine [REST-API von Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn790568.aspx). Über die Resource Manager-API werden allgemeine, dienstunspezifische Operationen wie die Abfrage von Abonnementdaten, die Auflistung geografischer Standorte und dergleichen mehr ausgeführt. Wenn Sie innerhalb Ihres Abonnements Azure Search-Dienste erstellen und verwalten möchten, muss Ihre HTTP-Anforderung den Resource Manager-Endpunkt, die Abonnement-ID, den Anbieter \(in diesem Fall Azure Search\) und die Azure Search-spezifische Operation enthalten.
+Für die vollständige programmgesteuerte Verwaltung des Dienstes benötigen Sie zwei APIs: die Management-REST-API von Azure Search sowie die allgemeine [REST-API von Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn790568.aspx). Über die Resource Manager-API werden allgemeine, dienstunspezifische Operationen wie die Abfrage von Abonnementdaten, die Auflistung geografischer Standorte und dergleichen mehr ausgeführt. Wenn Sie innerhalb Ihres Abonnements Azure Search-Dienste erstellen und verwalten möchten, muss Ihre HTTP-Anforderung den Resource Manager-Endpunkt, die Abonnement-ID, den Anbieter (in diesem Fall Azure Search) und die Azure Search-spezifische Operation enthalten.
 
 In [Erste Schritte mit der Azure Search Management-REST-API](http://go.microsoft.com/fwlink/p/?linkID=516968) finden Sie exemplarische Vorgehensweisen, welche die Aufgaben der Anwendungskonfiguration und Dienstverwaltung anhand von Beispielcode darstellen. Die Beispielanwendung gibt Anforderungen an die Azure Resource Manager-API und die Dienstverwaltungs-API von Azure Search aus und ist somit ein gutes Beispiel für eine zusammenhängende Anwendung, die auf beide APIs zugreift.
 
@@ -45,7 +45,7 @@ Die Azure Search Management-REST-API ist eine Erweiterung des Azure Resource Man
 Beachten Sie, dass Sie, wenn Ihr Anwendungscode sowohl *Dienstverwaltungs-* als auch *Datenoperationen* für Indizes oder Dokumente ausführt, zwei Authentifizierungsmethoden, eine für jede Azure Search-API verwenden:
 
 - Die Dienst- und Schlüsselverwaltung verwendet aufgrund der Abhängigkeit von Resource Manager Active Directory zur Authentifizierung.
-- Datenanforderungen für Azure Search-Dienstendpunkte, wie „Create Index“ oder „Search Documents“, verwenden einen `api-key` im Anforderungsheader. Informationen zur Authentifizierung einer Datenanforderung finden Sie unter [Azure Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) \(+++REST-API des Azure Search-Dienstes\).
+- Datenanforderungen für Azure Search-Dienstendpunkte, wie „Create Index“ oder „Search Documents“, verwenden einen `api-key` im Anforderungsheader. Informationen zur Authentifizierung einer Datenanforderung finden Sie unter [Azure Search Service REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) (+++REST-API des Azure Search-Dienstes).
 
 Die im Abschnitt [Erste Schritte mit der Azure Search Management-REST-API](http://go.microsoft.com/fwlink/p/?linkID=516968) dokumentierte Beispielanwendung zeigt die Authentifizierungsmethoden für jede Art von Operation. Anweisungen zur Konfiguration einer Clientanwendung für Active Directory sind in den ersten Schritten enthalten.
 
@@ -99,7 +99,7 @@ Die Operationen umfassen die folgenden APIs:
 <a name="ServiceOps"></a>
 ## Dienstoperationen ##
 
-Sie können die Dienste von Azure Search mit HTTP-Anforderungen innerhalb Ihres Azure-Abonnements bereitstellen und wieder entfernen. Mittels dieser Dienstoperationen mögliche Szenarien umfassen die Erstellung benutzerdefinierter Verwaltungstools oder die Einrichtung einer vollständigen Produktions- oder Entwicklungsumgebung \(von der Diensterstellung bis zum Füllen eines Index\). Ebenso können Lösungsanbieter, die Cloud-Lösungen entwickeln und vertreiben, mit diesen Operationen eine automatisierte, wiederholbare Methode für die Bereitstellung ihrer Dienste für neue Kunden entwickeln.
+Sie können die Dienste von Azure Search mit HTTP-Anforderungen innerhalb Ihres Azure-Abonnements bereitstellen und wieder entfernen. Mittels dieser Dienstoperationen mögliche Szenarien umfassen die Erstellung benutzerdefinierter Verwaltungstools oder die Einrichtung einer vollständigen Produktions- oder Entwicklungsumgebung (von der Diensterstellung bis zum Füllen eines Index). Ebenso können Lösungsanbieter, die Cloud-Lösungen entwickeln und vertreiben, mit diesen Operationen eine automatisierte, wiederholbare Methode für die Bereitstellung ihrer Dienste für neue Kunden entwickeln.
 
 **Operationen an einem Dienst**
 
@@ -132,18 +132,18 @@ Die Operation **Suchdienst erstellen** stellt einen neuen Suchdienst mit den ang
 
 ### Anforderungsheader ###
 
-`Content-Type`: Erforderlich. Setzt diesen Header auf „application/json“ \(Anwendung/JSON\).
+`Content-Type`: Erforderlich. Setzt diesen Header auf „application/json“ (Anwendung/JSON).
 
 `x-ms-client-request-id`: Optional. Ein vom Client generierter GUID-Wert zur Identifizierung dieser Anforderung. Falls angegeben, wird dieser Wert in die Antwortinformationen eingeschlossen, um die Anforderung zuordnen zu können.
 
 
 ### Anforderungstext ###
 
-{ "location": "location of search service", "tags": { "key": "value", ... }, "properties": { "sku": { "name": "free \| standard \| standard2" }, "replicaCount": 1 \| 2 \| 3 \| 4 \| 5 \| 6, "partitionCount": 1 \| 2 \| 3 \| 4 \| 6 \| 12 } }
+{ "location": "location of search service", "tags": { "key": "value", ... }, "properties": { "sku": { "name": "free | standard | standard2" }, "replicaCount": 1 | 2 | 3 | 4 | 5 | 6, "partitionCount": 1 | 2 | 3 | 4 | 6 | 12 } }
 
 ### Textparameter der Anforderung ###
 
-`location`: Erforderlich. Eine der von Azure unterstützten und registrierten geografischen Regionen \(z. B. West US \(USA \(Westen\)\), East US \(USA \(Osten\)\), Southeast Asia \(Südostasien\) usw.\). Nach der Erstellung kann der Standort einer Ressource nicht mehr geändert werden.
+`location`: Erforderlich. Eine der von Azure unterstützten und registrierten geografischen Regionen (z. B. West US (USA (Westen)), East US (USA (Osten)), Southeast Asia (Südostasien) usw.). Nach der Erstellung kann der Standort einer Ressource nicht mehr geändert werden.
 
 `tags`: Optional. Eine Liste mit Schlüssel-/Wertpaaren, welche die Ressource beschreiben. Diese Tags können über Ressourcengruppen hinweg zum Anzeigen und Gruppieren von Ressourcen verwendet werden. Pro Ressource können maximal 10 Tags eingegeben werden. Der Schlüssel eines Tags darf nicht länger als 128 Zeichen und der Wert nicht länger als 256 Zeichen sein.
 
@@ -156,7 +156,7 @@ Die Operation **Suchdienst erstellen** stellt einen neuen Suchdienst mit den ang
 
 ### Antwort ###
 
-HTTP 200 \(OK\) wird bei der Aktualisierung einer Dienstdefinition zurückgegeben. HTTP 201 \(Created\) wird bei der Erstellung eines neuen Dienstes zurückgegeben.
+HTTP 200 (OK) wird bei der Aktualisierung einer Dienstdefinition zurückgegeben. HTTP 201 (Created) wird bei der Erstellung eines neuen Dienstes zurückgegeben.
 
 
 ### Antwortheader ###
@@ -195,11 +195,11 @@ Bei HTTP 200 und 201 enthält der Antworttext die Dienstdefinition.
 
 ### Textelemente der Antwort ###
 
-`id`: Die ID ist die URL \(ohne Hostname/Schema\) dieses Suchdienstes.
+`id`: Die ID ist die URL (ohne Hostname/Schema) dieses Suchdienstes.
 
 `name`: Der Name des Suchdienstes.
 
-`location`: Eine der von Azure unterstützten und registrierten geografischen Regionen \(z. B. West US \(USA \(Westen\)\), East US \(USA \(Osten\)\), Southeast Asia \(Südostasien\) usw.\).
+`location`: Eine der von Azure unterstützten und registrierten geografischen Regionen (z. B. West US (USA (Westen)), East US (USA (Osten)), Southeast Asia (Südostasien) usw.).
 
 `tags`: Eine Liste mit Schlüssel-/Wertpaaren, welche die Ressource beschreiben und über Ressourcengruppen hinweg zum Anzeigen und Gruppieren von Ressourcen verwendet werden.
 
@@ -232,7 +232,7 @@ Bei HTTP 200 und 201 enthält der Antworttext die Dienstdefinition.
 - `provisioning`: Der Dienst wird gerade bereitgestellt.
 - `failed`: Die Bereitstellung ist fehlgeschlagen. 
 
-Die Bereitstellung ist ein vorübergehender Zustand während der Einrichtung der Dienstkapazität. Nach deren Einrichtung wechselt `provisioningState` zu „succeeded“ \(erfolgreich\) oder „failed“ \(fehlgeschlagen\). Um festzustellen, wann eine Operation abgeschlossen ist, können Clientanwendungen den Bereitstellungsstatus mit der Operation **Suchdienst abrufen** abrufen \(empfohlenes Abrufintervall: 30 Sekunden bis 1 Minute\). Bei Verwendung des kostenlosen Dienstes wird der Status in der Regel direkt im Aufruf zur Diensterstellung als „succeeded“ zurückgemeldet. Grund hierfür ist, dass der kostenlose Dienst bereits eingerichtete Kapazitäten verwendet.
+Die Bereitstellung ist ein vorübergehender Zustand während der Einrichtung der Dienstkapazität. Nach deren Einrichtung wechselt `provisioningState` zu „succeeded“ (erfolgreich) oder „failed“ (fehlgeschlagen). Um festzustellen, wann eine Operation abgeschlossen ist, können Clientanwendungen den Bereitstellungsstatus mit der Operation **Suchdienst abrufen** abrufen (empfohlenes Abrufintervall: 30 Sekunden bis 1 Minute). Bei Verwendung des kostenlosen Dienstes wird der Status in der Regel direkt im Aufruf zur Diensterstellung als „succeeded“ zurückgemeldet. Grund hierfür ist, dass der kostenlose Dienst bereits eingerichtete Kapazitäten verwendet.
 
 <a name="GetService"></a>
 ## Suchdienst abrufen  ##
@@ -263,7 +263,7 @@ Keiner.
 
 ### Statuscode der Antwort ###
 
-HTTP 200 \(OK\), wenn erfolgreich.
+HTTP 200 (OK), wenn erfolgreich.
 
 
 ### Antwortheader ###
@@ -298,11 +298,11 @@ HTTP 200 \(OK\), wenn erfolgreich.
 
 ### Textelemente der Antwort ###
 
-`id`: Die ID ist die URL \(ohne Hostname/Schema\) dieses Suchdienstes.
+`id`: Die ID ist die URL (ohne Hostname/Schema) dieses Suchdienstes.
 
 `name`: Der Name des Suchdienstes.
 
-`location`: Der Standort der Ressource. Dies ist eine der von Azure unterstützten und registrierten geografischen Regionen \(z. B. West US \(USA \(Westen\)\), East US \(USA \(Osten\)\), Southeast Asia \(Südostasien\) usw.\).
+`location`: Der Standort der Ressource. Dies ist eine der von Azure unterstützten und registrierten geografischen Regionen (z. B. West US (USA (Westen)), East US (USA (Osten)), Southeast Asia (Südostasien) usw.).
 
 `tags`: Eine Liste mit Schlüssel-/Wertpaaren, welche die Ressource beschreiben. Diese Tags können über Ressourcengruppen hinweg zum Anzeigen und Gruppieren von Ressourcen verwendet werden.
 
@@ -361,7 +361,7 @@ Keiner.
 
 ###Antwort###
 
-Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 \(OK\).
+Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 (OK).
 
 ### Antwortheader ###
 
@@ -452,7 +452,7 @@ Keiner.
 
 ###Antwort###
 
-Bei HTTP 200 ist der Antworttext leer. HTTP 200 \(OK\) wird zurückgegeben, wenn die Ressource nicht vorhanden ist.
+Bei HTTP 200 ist der Antworttext leer. HTTP 200 (OK) wird zurückgegeben, wenn die Ressource nicht vorhanden ist.
 
 Mit **Suchdienst-API abrufen** können Sie den Status des Löschvorgangs abrufen. Wir empfehlen Abrufintervalle von 30 Sekunden bis zu einer Minute.
 
@@ -489,7 +489,7 @@ Alternativ können Sie auch eine PUT-Anforderung verwenden.
 
 ###Anforderungsheader###
 
-`Content-Type`: Erforderlich. Setzt diesen Header auf „application/json“ \(Anwendung/JSON\).
+`Content-Type`: Erforderlich. Setzt diesen Header auf „application/json“ (Anwendung/JSON).
 
 `x-ms-client-request-id`: Optional. Ein vom Client generierter GUID-Wert zur Identifizierung dieser Anforderung. Falls angegeben, wird dieser Wert in die Antwortinformationen eingeschlossen, um die Anforderung zuordnen zu können.
 
@@ -516,7 +516,7 @@ Alternativ können Sie auch eine PUT-Anforderung verwenden.
 
 ###Antwort###
 
-HTTP 200 \(OK\) wird zurückgegeben, wenn die Operation erfolgreich ausgeführt wurde. Mit **Suchdienst-API abrufen** können Sie den Status des Aktualisierungsvorgangs abrufen. Wir empfehlen Abrufintervalle von 30 Sekunden bis zu einer Minute.
+HTTP 200 (OK) wird zurückgegeben, wenn die Operation erfolgreich ausgeführt wurde. Mit **Suchdienst-API abrufen** können Sie den Status des Aktualisierungsvorgangs abrufen. Wir empfehlen Abrufintervalle von 30 Sekunden bis zu einer Minute.
 
 
 ### Antwortheader ###
@@ -535,10 +535,10 @@ Der Antworttext enthält die aktualisierte Dienstdefinition. Ein Beispiel finden
 
 Für die Authentifizierung bei einem Azure Search-Dienst sind zwei Angaben erforderlich: die URL des Suchdienstes und ein API-Schlüssel. Die API-Schlüssel werden bei der Erstellung des Dienstes generiert und können nach der Bereitstellung des Dienstes bei Bedarf neu generiert werden. Es gibt zwei Arten von API-Schlüsseln:
 
-- Admin-Schlüssel: Bietet Zugriff auf alle Operationen \(maximal 2 pro Dienst\)
-- Abfrageschlüssel: Authentifiziert nur Abfrageanforderungen \(maximal 50 pro Dienst\)
+- Admin-Schlüssel: Bietet Zugriff auf alle Operationen (maximal 2 pro Dienst)
+- Abfrageschlüssel: Authentifiziert nur Abfrageanforderungen (maximal 50 pro Dienst)
 
-Die Möglichkeit der programmgesteuerten Verwaltung der Admin- und Abfrageschlüssel Ihres Azure Search-Dienstes ermöglicht Ihnen die Erstellung benutzerdefinierter Tools zum Beispiel für folgende Aufgaben: Routinemäßiges und regelmäßiges Rollover \(Änderung\) der Schlüssel aus Sicherheitsgründen; Rollover der Schlüssel, wenn ein Mitarbeiter das Unternehmen verlässt; Generieren und Abrufen der Schlüssel bei der Dienstbereitstellung, wenn zur Implementierung der Lösung ein Skript oder eine programmgesteuerte Vorgehensweise verwendet wird.
+Die Möglichkeit der programmgesteuerten Verwaltung der Admin- und Abfrageschlüssel Ihres Azure Search-Dienstes ermöglicht Ihnen die Erstellung benutzerdefinierter Tools zum Beispiel für folgende Aufgaben: Routinemäßiges und regelmäßiges Rollover (Änderung) der Schlüssel aus Sicherheitsgründen; Rollover der Schlüssel, wenn ein Mitarbeiter das Unternehmen verlässt; Generieren und Abrufen der Schlüssel bei der Dienstbereitstellung, wenn zur Implementierung der Lösung ein Skript oder eine programmgesteuerte Vorgehensweise verwendet wird.
 
 Abfrageschlüssel können abgerufen, erstellt und gelöscht werden. Für Admin-Schlüssel können lediglich vorhandene Schlüsselwerte abgerufen und neu generiert werden. Durch das Löschen eines Admin-Schlüssels sperren Sie sich unter Umständen für immer aus dem Dienst aus. Diese Operation steht daher nicht zur Verfügung.
 
@@ -588,7 +588,7 @@ Keiner.
 
 ###Antwort###
 
-HTTP 200 \(OK\) wird zurückgegeben, wenn die Operation erfolgreich ausgeführt wurde.
+HTTP 200 (OK) wird zurückgegeben, wenn die Operation erfolgreich ausgeführt wurde.
 
 ### Antwortheader ###
 
@@ -630,7 +630,7 @@ Die Operation **Admin-Schlüssel neu generieren** löscht den primären oder sek
 
 ###Anforderungsheader###
 
-`Content-Type`: Erforderlich. Setzt diesen Header auf „application/json“ \(Anwendung/JSON\).
+`Content-Type`: Erforderlich. Setzt diesen Header auf „application/json“ (Anwendung/JSON).
 
 `x-ms-client-request-id`: Optional. Ein vom Client generierter GUID-Wert zur Identifizierung dieser Anforderung. Falls angegeben, wird dieser Wert in die Antwortinformationen eingeschlossen, um die Anforderung zuordnen zu können.
 
@@ -640,7 +640,7 @@ Keiner.
 
 ###Antwort###
 
-HTTP 200 \(OK\) wird zurückgegeben, wenn die Operation erfolgreich ausgeführt wurde.
+HTTP 200 (OK) wird zurückgegeben, wenn die Operation erfolgreich ausgeführt wurde.
 
 ### Antwortheader ###
 
@@ -694,7 +694,7 @@ Keiner.
 
 ###Antwort###
 
-Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 \(OK\).
+Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 (OK).
 
 ### Antwortheader ###
 
@@ -720,7 +720,7 @@ Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 \(OK\).
 ## Abfrageschlüssel auflisten ##
 
 
-Die Operation **Abfrageschlüssel auflisten** gibt die Abfrageschlüssel für den angegebenen Suchdienst zurück. Abfrageschlüssel werden zum Senden von Abfrage-API-Aufrufen \(schreibgeschützt\) an einen Suchdienst verwendet. Pro Dienst können bis zu 50 Abfrageschlüssel verwendet werden.
+Die Operation **Abfrageschlüssel auflisten** gibt die Abfrageschlüssel für den angegebenen Suchdienst zurück. Abfrageschlüssel werden zum Senden von Abfrage-API-Aufrufen (schreibgeschützt) an einen Suchdienst verwendet. Pro Dienst können bis zu 50 Abfrageschlüssel verwendet werden.
 
     GET	https://management.azure.com/subscriptions/[subscriptionId]/resourceGroups/[resourceGroupName]/providers/Microsoft.Search/searchServices/[serviceName]/listQueryKeys?api-version=2014-07-31-Preview
 
@@ -746,7 +746,7 @@ Keiner.
 
 ###Antwort###
 
-Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 \(OK\).
+Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 (OK).
 
 ### Antwortheader ###
 
@@ -810,7 +810,7 @@ Keiner.
 
 ###Antwort###
 
-Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 \(OK\).
+Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 (OK).
 
 ### Antwortheader ###
 

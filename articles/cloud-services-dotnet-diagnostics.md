@@ -242,7 +242,7 @@ Für die Verwaltung der Diagnose in einer Web- oder Workerrolle werden folgende 
 
 		$storage_name = "wadexample"
 		$key = "<StorageAccountKey>"
-		$config_path="c:\users\<user>\documents\visual studio 2013\Projects\WadExample\WorkerRole1\WadExample.xml"
+		$config_path="c:\users<user>\documents\visual studio 2013\Projects\WadExample\WorkerRole1\WadExample.xml"
 		$service_name="wadexample"
 		$storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key 
 		Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name -Slot Staging -Role WorkerRole1
@@ -389,7 +389,7 @@ Für die Verwaltung der Diagnose auf einem virtuellen Computer werden folgende P
 
 		$storage_name = "wadexamplevm"
 		$key = "<StorageAccountKey>"
-		$config_path="c:\users\<user>\documents\visual studio 2013\Projects\WadExampleVM\WadExampleVM\WadExample.xml"
+		$config_path="c:\users<user>\documents\visual studio 2013\Projects\WadExampleVM\WadExampleVM\WadExample.xml"
 		$service_name="wadexamplevm"
 		$vm_name="WadExample"
 		$storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key 
@@ -411,7 +411,7 @@ Die Diagnosekonfigurationsdatei definiert Werte, die verwendet werden, um beim S
 <h3>Die Azure-Diagnose wird nicht gestartet.</h3>
 Die Diagnose besteht aus zwei Komponenten: einem Gast-Agent-Plug-In und dem Überwachungs-Agent. Die Protokolldateien für das Gast-Agent-Plug-In befinden sich in folgender Datei: 
 
-*%SystemDrive%\ WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<DiagnosticsVersion>*\CommandExecution.log
+*%SystemDrive%\ WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics<DiagnosticsVersion>*\CommandExecution.log
 
 Die folgenden Fehlercodes werden von dem Plug-In zurückgegeben:
 

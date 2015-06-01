@@ -67,7 +67,7 @@ Weitere Informationen zum Ausführen dieser Konvertierung finden Sie unter [Konv
 
 Nachdem das Bewertungsexperiment ausreichend vorbereitet wurde, können Sie es als Azure-Webdienst veröffentlichen. Mithilfe des Webdiensts können Benutzer Daten an das Modell senden, und das Modell gibt seine Vorhersagen zurück.
 
-Um das Bewertungsexperiment zu veröffentlichen, klicken Sie auf  am unteren Rand des Experiment-Canvas auf **Run** \(Ausführen\) und anschließend auf **PUBLISH WEB SERVICE** \(WEBDIENST VERÖFFENTLICHEN\). Der Webdienst wird eingerichtet, und Sie werden zum Webdienst-Dashboard weitergeleitet.
+Um das Bewertungsexperiment zu veröffentlichen, klicken Sie auf  am unteren Rand des Experiment-Canvas auf **Run** (Ausführen) und anschließend auf **PUBLISH WEB SERVICE** (WEBDIENST VERÖFFENTLICHEN). Der Webdienst wird eingerichtet, und Sie werden zum Webdienst-Dashboard weitergeleitet.
 
 ![Veröffentlichen des Webdiensts](./media/machine-learning-publish-web-service/figure-2.png)
 
@@ -75,11 +75,11 @@ Um den Webdienst zu testen, klicken Sie auf der Registerkarte **DASHBOARD** auf 
 
 ![Testen des Webdiensts](./media/machine-learning-publish-web-service/figure-3.png)
 
-Auf der Registerkarte **CONFIGURATION** \(KONFIGURATION\) können Sie den Anzeigenamen des Dienstes ändern und eine Beschreibung dafür eingeben. Der Namen und die Beschreibung werden im Azure-Verwaltungsportal angezeigt, wo Sie Ihre Webdienste verwalten. Sie können auch die Protokollierung aktivieren, um Fehler zu diagnostizieren, die angezeigt werden, wenn Sie den Webdienst verwenden. Weitere Informationen hierzu finden Sie unter [Aktivieren der Protokollierung für Machine Learning-Webdienste](machine-learning-web-services-logging.md).
+Auf der Registerkarte **CONFIGURATION** (KONFIGURATION) können Sie den Anzeigenamen des Dienstes ändern und eine Beschreibung dafür eingeben. Der Namen und die Beschreibung werden im Azure-Verwaltungsportal angezeigt, wo Sie Ihre Webdienste verwalten. Sie können auch die Protokollierung aktivieren, um Fehler zu diagnostizieren, die angezeigt werden, wenn Sie den Webdienst verwenden. Weitere Informationen hierzu finden Sie unter [Aktivieren der Protokollierung für Machine Learning-Webdienste](machine-learning-web-services-logging.md).
 
 ![Konfigurieren des Webdiensts](./media/machine-learning-publish-web-service/figure-4.png)
 
-Darüber hinaus können eine Beschreibung für die Eingabedaten, Ausgabedaten und Webdienstparameter bereitstellen, indem Sie Zeichenfolgen für jede Spalte unter **INPUT SCHEMA** \(EINGABESCHEMA\), **OUTPUT SCHEMA** \(AUSGABESCHEMA\) und **WEB SERVICE PARAMETER** \(WEBDIENSTPARAMETER\) eingeben. Diese Beschreibungen werden in der Beispielcodedokumentation für den Webdienst verwendet.
+Darüber hinaus können eine Beschreibung für die Eingabedaten, Ausgabedaten und Webdienstparameter bereitstellen, indem Sie Zeichenfolgen für jede Spalte unter **INPUT SCHEMA** (EINGABESCHEMA), **OUTPUT SCHEMA** (AUSGABESCHEMA) und **WEB SERVICE PARAMETER** (WEBDIENSTPARAMETER) eingeben. Diese Beschreibungen werden in der Beispielcodedokumentation für den Webdienst verwendet.
 
 ##Zugreifen auf den Webdienst
 
@@ -103,7 +103,7 @@ For more information on how to manage Azure Machine Learning web service endpoin
 
 Sie können Änderungen am Webdienst vornehmen, z. B. das Modell mit zusätzlichen Trainingsdaten aktualisieren, und ihn dann erneut veröffentlichen, wobei der ursprüngliche Webdienst überschrieben wird.
 
-Um den Webdienst zu aktualisieren, öffnen Sie das ursprüngliche Bewertungsexperiment, das Sie zum Veröffentlichen des ursprünglichen Webdiensts verwendet habe, und klicken Sie auf **SAVE AS** \(SPEICHERN UNTER\), um eine bearbeitbare Kopie zu erstellen. Nehmen Sie die gewünschten Änderungen vor, und klicken Sie dann auf **PUBLISH WEB SERVICE** (WEBDIENST VERÖFFENTLICHEN). Da Sie dieses Experiment zuvor bereits veröffentlicht hatten, werden Sie von Machine Learning Studio gefragt, ob Sie den vorhandenen Dienst überschreiben möchten. Wenn Sie auf **YES** \(JA\) klicken, wird der vorhandenen Webdienst beendet, und das neue Bewertungsexperiment wird an seiner Stelle veröffentlicht.
+Um den Webdienst zu aktualisieren, öffnen Sie das ursprüngliche Bewertungsexperiment, das Sie zum Veröffentlichen des ursprünglichen Webdiensts verwendet habe, und klicken Sie auf **SAVE AS** (SPEICHERN UNTER), um eine bearbeitbare Kopie zu erstellen. Nehmen Sie die gewünschten Änderungen vor, und klicken Sie dann auf **PUBLISH WEB SERVICE** (WEBDIENST VERÖFFENTLICHEN). Da Sie dieses Experiment zuvor bereits veröffentlicht hatten, werden Sie von Machine Learning Studio gefragt, ob Sie den vorhandenen Dienst überschreiben möchten. Wenn Sie auf **YES** (JA) klicken, wird der vorhandenen Webdienst beendet, und das neue Bewertungsexperiment wird an seiner Stelle veröffentlicht.
 
 > [AZURE.NOTE]Wenn Sie Konfigurationsänderungen im ursprünglichen Webdienst vorgenommen haben, z. B. einen anderen Anzeigenamen oder eine andere Beschreibung eingegeben haben, dann müssen Sie diese Werte erneut eingeben.
 

@@ -26,7 +26,7 @@ Zu diesem Zeitpunkt unterstützt Stream Analytics keine Echtzeitbearbeitungen de
 
 ##Von der Eingabequelle abgeleitete Datentypen
 
-Wird nicht die Anweisung **CREATE TABLE** verwendet, so wird der Eingabetyp vom Eingabeformat abgeleitet \(Beispiel: Alle Felder aus CSV sind Zeichenfolgen\). Um Typkonflikte zu vermeiden, müssen die Felder mithilfe der CAST-Funktion explizit in den richtigen Typ konvertiert werden.
+Wird nicht die Anweisung **CREATE TABLE** verwendet, so wird der Eingabetyp vom Eingabeformat abgeleitet (Beispiel: Alle Felder aus CSV sind Zeichenfolgen). Um Typkonflikte zu vermeiden, müssen die Felder mithilfe der CAST-Funktion explizit in den richtigen Typ konvertiert werden.
 
 ##Fehlende Felder werden als Nullwerte ausgegeben.
 

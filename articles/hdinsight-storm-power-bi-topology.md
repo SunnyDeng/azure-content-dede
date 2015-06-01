@@ -16,7 +16,7 @@
  ms.date="04/28/2015"
  ms.author="larryfr"/>
 
-# Verwenden Sie zur Visualisierung von Daten aus einer Storm-Topologie Power Bi \(Vorschau\)
+# Verwenden Sie zur Visualisierung von Daten aus einer Storm-Topologie Power Bi (Vorschau)
 
 Mit der Power BI-Vorschau können Sie Daten visuell als Berichte oder Dashboards anzeigen. Mithilfe der Power BI-REST-API können Sie problemlos Daten aus einer Topologie unter Apache Storm-Cluster in HDInsight auf Power BI verwenden.
 
@@ -28,7 +28,7 @@ In diesem Dokument erfahren Sie, wie Sie mit Power BI aus Daten, die von einer S
 
 * Einen Azure Active Directory-Benutzer mit [Power BI](https://powerbi.com)-Zugriff
 
-* Visual Studio \(eine der folgenden Versionen\):
+* Visual Studio (eine der folgenden Versionen):
 
     * Visual Studio 2012 mit [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)
 
@@ -40,7 +40,7 @@ In diesem Dokument erfahren Sie, wie Sie mit Power BI aus Daten, die von einer S
 
 ## So funktioniert's
 
-Dieses Beispiel enthält eine C\#-Storm-Topologie, die nach dem Zufallsprinzip einen Satz generiert, ihn in Wörter teilt, die Wörter zählt und die Wörter und die Wortzahl an die Power BI-REST-API sendet. Das Nuget-Paket [PowerBi.Api.Client](https://github.com/Vtek/PowerBI.Api.Client) wird für die Kommunikation mit Power BI verwendet.
+Dieses Beispiel enthält eine C#-Storm-Topologie, die nach dem Zufallsprinzip einen Satz generiert, ihn in Wörter teilt, die Wörter zählt und die Wörter und die Wortzahl an die Power BI-REST-API sendet. Das Nuget-Paket [PowerBi.Api.Client](https://github.com/Vtek/PowerBI.Api.Client) wird für die Kommunikation mit Power BI verwendet.
 
 Die folgenden Dateien in diesem Projekt implementieren die spezifische Power BI-Funktionalität:
 
@@ -48,7 +48,7 @@ Die folgenden Dateien in diesem Projekt implementieren die spezifische Power BI-
 
 * **Data.cs**: Beschreibt das Datenobjekt/die Zeile, die an Power BI gesendet wird
 
-> [AZURE.WARNING]Power BI scheint das Erstellen von mehreren Datensätzen mit demselben Namen zu ermöglichen. Dies kann auftreten, wenn der Datensatz nicht vorhanden ist und Ihre Topologie mehrere Instanzen des Power BI Bolts erstellt. Um dies zu vermeiden, müssen Sie entweder den Parallelitätshinweis des Bolts auf 1 festlegen \(wie in diesem Beispiel\) oder den Datensatz vor dem Bereitstellen der Topologie erstellen.
+> [AZURE.WARNING]Power BI scheint das Erstellen von mehreren Datensätzen mit demselben Namen zu ermöglichen. Dies kann auftreten, wenn der Datensatz nicht vorhanden ist und Ihre Topologie mehrere Instanzen des Power BI Bolts erstellt. Um dies zu vermeiden, müssen Sie entweder den Parallelitätshinweis des Bolts auf 1 festlegen (wie in diesem Beispiel) oder den Datensatz vor dem Bereitstellen der Topologie erstellen.
 >
 > Die in dieser Lösung enthaltene **CreateDataset**-Konsolenanwendung dient als Beispiel zum Erstellen des Datensatzes außerhalb der Topologie.
 
@@ -62,7 +62,7 @@ Die folgenden Dateien in diesem Projekt implementieren die spezifische Power BI-
 
 ## Das Beispiel herunterladen
 
-Herunterladen des [HDInsight c\# Storm Power BI-Beispiels]\] \(https://github.com/Blackmist/hdinsight-csharp-storm-powerbi). Zum Herunterladen verzweigen/klonen Sie es entweder mit [Git](http://git-scm.com/) oder verwenden Sie den **Download**-Link zum Herunterladen einer ZIP-Datei aus dem Archiv.
+Herunterladen des [HDInsight c# Storm Power BI-Beispiels](https://github.com/Blackmist/hdinsight-csharp-storm-powerbi). Zum Herunterladen verzweigen/klonen Sie es entweder mit [Git](http://git-scm.com/) oder verwenden Sie den **Download**-Link zum Herunterladen einer ZIP-Datei aus dem Archiv.
 
 ## Das Beispiel konfigurieren
 
@@ -74,7 +74,7 @@ Herunterladen des [HDInsight c\# Storm Power BI-Beispiels]\] \(https://github.co
 
     * **Kennwort**: Das Kennwort für das Azure Active Directory-Konto.
 
-2. \(Optional\). Der von diesem Projekt verwendete Standardname für den Datensatz ist **Wörter**. Um dies zu ändern, klicken Sie mit der rechten Maustaste auf das Projekt **WordCount** im **Projektmappen-Explorer**, wählen Sie **Eigenschaften** aus und anschließend **Einstellungen**. Ändern Sie den Eintrag **DatasetName** in den gewünschten Wert.
+2. (Optional). Der von diesem Projekt verwendete Standardname für den Datensatz ist **Wörter**. Um dies zu ändern, klicken Sie mit der rechten Maustaste auf das Projekt **WordCount** im **Projektmappen-Explorer**, wählen Sie **Eigenschaften** aus und anschließend **Einstellungen**. Ändern Sie den Eintrag **DatasetName** in den gewünschten Wert.
 
 2. Speichern und schließen Sie die Dateien.
 
@@ -92,7 +92,7 @@ Herunterladen des [HDInsight c\# Storm Power BI-Beispiels]\] \(https://github.co
 
     > [AZURE.NOTE]Sie können die Storm-Topologien auch im Server-Explorer anzeigen, indem Sie Azure, HDInsight erweitern und dann mit der rechten Maustaste auf einen Storm-Cluster in HDInsight klicken und Storm-Topologien anzeigen auswählen.
 
-3. Beim Anzeigen der **Topologie-Zusammenfassung** blättern Sie solange, bis Sie zum Abschnitt **Bolts** gelangen. Beachten Sie in diesem Abschnitt die Spalte **Ausgeführt** für den **PowerBI**-Bolt. Zum Aktualisieren verwenden Sie die Schaltfläche "Aktualisieren" am oberen Rand der Seite, bis der Wert sich in einen anderen als 0 \(Null\) ändert. Wenn diese Zahl größer wird, bedeutet dies, dass Elemente in Power BI geschrieben werden.
+3. Beim Anzeigen der **Topologie-Zusammenfassung** blättern Sie solange, bis Sie zum Abschnitt **Bolts** gelangen. Beachten Sie in diesem Abschnitt die Spalte **Ausgeführt** für den **PowerBI**-Bolt. Zum Aktualisieren verwenden Sie die Schaltfläche "Aktualisieren" am oberen Rand der Seite, bis der Wert sich in einen anderen als 0 (Null) ändert. Wenn diese Zahl größer wird, bedeutet dies, dass Elemente in Power BI geschrieben werden.
 
 ## Erstellen eines Berichts
 

@@ -46,10 +46,10 @@ Wenn Sie einen Linux-basierten HDInsight-Cluster erstellen, können Sie sich mit
 
 	Achten Sie auf die folgenden Dateien im Verzeichnis. Hierbei handelt es sich um allgemeine Namen für öffentliche SSH-Schlüssel.
 
-	* id\_dsa.pub
-	* id\_ecdsa.pub
-	* id\_ed25519.pub
-	* id\_rsa.pub
+	* id_dsa.pub
+	* id_ecdsa.pub
+	* id_ed25519.pub
+	* id_rsa.pub
 
 2. Wenn Sie keine vorhandene Datei verwenden möchten oder keine vorhandenen SSH-Schlüssel verfügbar sind, verwenden Sie die folgenden Schritte zum Generieren einer neuen Datei.
 
@@ -57,12 +57,12 @@ Wenn Sie einen Linux-basierten HDInsight-Cluster erstellen, können Sie sich mit
 
 	Sie werden aufgefordert, die folgenden Informationen bereitzustellen:
 
-	* Speicherort der Datei: die Standardeinstellung ist "~/.ssh/id\_rsa"
+	* Speicherort der Datei: die Standardeinstellung ist "~/.ssh/id_rsa"
 	* Eine Passphrase: Sie werden aufgefordert, diese erneut einzugeben
 	
 		> [AZURE.NOTE] Es wird dringend empfohlen, dass Sie für den Schlüssel eine sichere Passphrase verwenden. Wenn Sie die Passphrase vergessen, besteht jedoch keine Möglichkeit, diese wiederherzustellen.
 
-	Nach Abschluss des Befehls sind zwei neue Dateien verfügbar: der private Schlüssel (z. B. **id\_rsa**) und der öffentliche Schlüssel (z. B. **id\_rsa.pub**.)
+	Nach Abschluss des Befehls sind zwei neue Dateien verfügbar: der private Schlüssel (z. B. **id_rsa**) und der öffentliche Schlüssel (z. B. **id_rsa.pub**.)
 
 ## Erstellen eines Linux-basierten HDInsight-Clusters
 
@@ -213,7 +213,7 @@ Wenn Sie **FoxyProxy Standard** installiert haben, konfigurieren Sie es folgende
 
 	* **Name des Musters**: **Stammknoten** - Dies ist lediglich ein Anzeigename für das Muster.
 
-	* **URL-Muster**: **\*stammknoten\*** - Definiert ein Muster, das mit jeder URL übereinstimmt, die das Wort **Stammknoten** enthält.
+	* **URL-Muster**: ***stammknoten*** - Definiert ein Muster, das mit jeder URL übereinstimmt, die das Wort **Stammknoten** enthält.
 
 	![foxyproxy pattern](./media/hdinsight-hadoop-linux-use-ssh-unix/foxypattern.png)
 

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Rechenintensive .NET-Aufgabe auf einem virtuellen Computer - Azure" 
 	description="Erfahren Sie, wie Sie eine rechenintensive .NET-App auf einem virtuellen Azure-Computer bereitstellen und ausführen und Servicebus-Warteschlangen für die Remoteüberwachung des Status verwenden." 
 	services="virtual-machines" 
@@ -109,10 +109,10 @@ Namespace abrufen.
 
 1. Laden Sie auf dem Entwicklungscomputer (der nicht mit dem erstellten virtuellen Computer identisch sein muss) das [Azure-SDK für .NET](http://www.windowsazure.com/develop/net/) herunter.
 2. Erstellen Sie eine .NET-Konsolenanwendung mit dem Projekt namens **TSPSolver**. Stellen Sie sicher, dass als Zielframework **.NET Framework 4** oder höher (nicht **.NET Framework 4 Client Profile**) eingestellt ist. Nach dem Erstellen eines Projekts kann das Zielframework folgendermaßen eingestellt werden: Klicken Sie im Menü von Visual Studio auf **Projekte**, klicken Sie auf **Eigenschaften**, klicken Sie auf die Registerkarte **Anwendung**, und legen Sie anschließend den Wert für **v** fest.
-3. Fügen Sie die Microsoft ServiceBus-Bibliothek hinzu. Klicken Sie in Visual Studio Solution Explorer mit der rechten Maustaste auf **TSPSolver**, klicken Sie auf **Verweis hinzufüge**, klicken Sie auf die Registerkarte **Durchsuchen** und navigieren Sie zum Azure .NET SDK (zum Beispiel unter **C:\Program Files\Microsoft SDKs\Azure\.NET SDK\v2.5\ToolsRef**) und wählen Sie **Microsoft.ServiceBus.dll** als Verweis.
+3. Fügen Sie die Microsoft ServiceBus-Bibliothek hinzu. Klicken Sie in Visual Studio Solution Explorer mit der rechten Maustaste auf **TSPSolver**, klicken Sie auf **Verweis hinzufüge**, klicken Sie auf die Registerkarte **Durchsuchen** und navigieren Sie zum Azure .NET SDK (zum Beispiel unter **C:\Program Files\Microsoft SDKs\Azure.NET SDK\v2.5\ToolsRef**) und wählen Sie **Microsoft.ServiceBus.dll** als Verweis.
 4. Fügen Sie die System.Runtime.Serialization-Bibliothek hinzu. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf **TSPSolver**, klicken Sie auf **Verweis hinzufügen**, klicken Sie auf die Registerkarte **.NET**, und wählen Sie **System.Runtime.Serialization** als Verweis aus.
 5. Verwenden Sie das Codebeispiel am Ende dieses Abschnitts als Inhalt der Datei **Program.cs**.
-6. Ändern Sie die Platzhalter **your\_service\_bus\_namespace**, **your\_service\_bus\_owner** und **your\_service\_bus\_key**, sodass diese jeweils Ihre Servicebus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwenden.
+6. Ändern Sie die Platzhalter **your_service_bus_namespace**, **your_service_bus_owner** und **your_service_bus_key**, sodass diese jeweils Ihre Servicebus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwenden.
 7. Kompilieren Sie die Anwendung. Damit wird **TSPSolver.exe** im Ordner **bin** des Projekts erstellt (entweder **bin\release** oder **bin\debug**, je nachdem, ob Sie als Ziel eine Releaseversion oder eine Debugversion vorgesehen haben). Später kopieren Sie diese ausführbare Datei und Microsoft.ServiceBus.dll auf den virtuellen Computer.
 
 <p/>
@@ -341,10 +341,10 @@ Namespace abrufen.
 <h2>Erstellen einer .NET-Anwendung, die den Fortschritt der rechenintensiven Aufgabe überwacht</h2>
 
 1. Erstellen Sie auf dem Entwicklungscomputer eine .NET-Konsolenanwendung mit **TSPClient** als Projektnamen. Stellen Sie sicher, dass als Zielframework **.NET Framework 4** oder höher (nicht **.NET Framework 4 Client Profile**) eingestellt ist. Nach dem Erstellen eines Projekts kann das Zielframework folgendermaßen eingestellt werden: Klicken Sie im Menü von Visual Studio auf **Projekte**, klicken Sie auf **Eigenschaften**, klicken Sie auf die Registerkarte **Anwendung**, und legen Sie anschließend den Wert für **v** fest.
-2. Fügen Sie die Microsoft ServiceBus-Bibliothek hinzu. Klicken Sie in Visual Studio Solution Explorer mit der rechten Maustaste auf **TSPSolver**, klicken Sie auf **Verweis hinzufüge**, klicken Sie auf die Registerkarte **Durchsuchen** und navigieren Sie zum Azure .NET SDK (zum Beispiel unter **C:\Program Files\Microsoft SDKs\Azure\.NET SDK\v2.5\ToolsRef**) und wählen Sie **Microsoft.ServiceBus.dll** als Verweis.
+2. Fügen Sie die Microsoft ServiceBus-Bibliothek hinzu. Klicken Sie in Visual Studio Solution Explorer mit der rechten Maustaste auf **TSPSolver**, klicken Sie auf **Verweis hinzufüge**, klicken Sie auf die Registerkarte **Durchsuchen** und navigieren Sie zum Azure .NET SDK (zum Beispiel unter **C:\Program Files\Microsoft SDKs\Azure.NET SDK\v2.5\ToolsRef**) und wählen Sie **Microsoft.ServiceBus.dll** als Verweis.
 3. Fügen Sie die System.Runtime.Serialization-Bibliothek hinzu. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf **TSPClient**, klicken Sie auf **Verweis hinzufügen**, klicken Sie auf die Registerkarte **.NET**, und wählen Sie **System.Runtime.Serialization** als Verweis aus.
 4. Verwenden Sie das Codebeispiel am Ende dieses Abschnitts als Inhalt der Datei **Program.cs**.
-5. Ändern Sie die Platzhalter **your\_service\_bus\_namespace**, **your\_service\_bus\_owner** und **your\_service\_bus\_key**, sodass diese jeweils Ihre Servicebus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwenden.
+5. Ändern Sie die Platzhalter **your_service_bus_namespace**, **your_service_bus_owner** und **your_service_bus_key**, sodass diese jeweils Ihre Servicebus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwenden.
 5. Kompilieren Sie die Anwendung. Damit wird **TSPClient.exe** im Ordner **bin** des Projekts erstellt (entweder **bin\release** oder **bin\debug**, je nachdem, ob Sie als Ziel eine Releaseversion oder eine Debugversion vorgesehen haben). Sie können diesen Code auf dem Entwicklungscomputer ausführen oder diese ausführbare Datei und Microsoft.ServiceBus.dll auf einen Computer kopieren, auf dem die Clientanwendung ausgeführt wird (sie muss nicht auf den virtuellen Computer kopiert werden).
 
 <p/>
@@ -532,8 +532,8 @@ Führen Sie die rechenintensive Anwendung aus, zunächst um die Warteschlage zu 
 
 Der Solver wird ausgeführt, bis alle Routen untersucht wurden.
 
-> [AZURE.NOTE]
-> Je größer die angegebene Zahl, desto länger wird der Solver ausgeführt. Die Ausführung für 14 Städte könnte zum Beispiel mehrere Minuten dauern, und die Ausführung für 15 Städte könnte mehrere Stunden dauern. Wird der Wert auf 16 oder darüber hinaus erhöht, könnte die Ausführung mehrere Tage (und schließlich Wochen, Monate und Jahre) dauern. Dies liegt an der schnellen Zunahme der Anzahl der Permutationen, die vom Solver analysiert werden, wenn die Anzahl der Städte zunimmt.
+>[AZURE.NOTE]
+>Je größer die angegebene Zahl, desto länger wird der Solver ausgeführt. Die Ausführung für 14 Städte könnte zum Beispiel mehrere Minuten dauern, und die Ausführung für 15 Städte könnte mehrere Stunden dauern. Wird der Wert auf 16 oder darüber hinaus erhöht, könnte die Ausführung mehrere Tage (und schließlich Wochen, Monate und Jahre) dauern. Dies liegt an der schnellen Zunahme der Anzahl der Permutationen, die vom Solver analysiert werden, wenn die Anzahl der Städte zunimmt.
  
 <h3>Ausführen der überwachenden Clientanwendung</h3>
 1. Melden Sie sich an dem Computer an, auf dem die Clientanwendung ausgeführt wird. Dieser Computer muss nicht zwingend mit dem Computer identisch sein, auf dem die **TSPSolver**-Anwendung ausgeführt wird.

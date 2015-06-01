@@ -1,6 +1,6 @@
-﻿<properties 
+<properties 
 	pageTitle="Integration von Azure Mobile Engagement für Windows Phone SDK" 
-	description="Erfahren Sie mehr über den Inhalt des Windows Phone SDK für Azure Mobile Engagement" 					
+	description="Erfahren Sie mehr über den Inhalt des Windows Phone SDK für Azure Mobile Engagement" 
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="lalathie" 
@@ -58,7 +58,7 @@ Dieser Ordner enthält die EngagementPage.
 
 ## Der `/src/reach` Ordner
 
-Abschließend finden Sie in diesem Ordner die Standardeinstellungen XAML (und deren C\#-Gegenstücke in) jeder Seite.
+Abschließend finden Sie in diesem Ordner die Standardeinstellungen XAML (und deren C#-Gegenstücke in) jeder Seite.
 
 Sie können diese als Grundlage für Ihre eigenen Seiten verwenden. Befolgen Sie die Kommentare, um zu wissen, was Sie genau tun müssen.
 

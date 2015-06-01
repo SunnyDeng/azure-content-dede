@@ -56,7 +56,7 @@ Damit Azure Service Bus verwendet werden kann, müssen Sie das Node.js-Azure-Pak
 		└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
 
 3.  Sie können den Befehl **ls** manuell ausführen, um zu überprüfen, ob der
-    Ordner **node\_modules** erstellt wurde. In diesem Ordner finden Sie das
+    Ordner **node_modules** erstellt wurde. In diesem Ordner finden Sie das
     **azure**-Paket, das die benötigten Bibliotheken für den Zugriff auf
     Servicebus-Warteschlangen enthält.
 
@@ -68,7 +68,7 @@ Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anf
 
 ### Einrichten einer Azure Service Bus-Verbindung
 
-Das Azure-Modul entnimmt den Umgebungsvariablen "AZURE\_SERVICEBUS\_NAMESPACE" und "AZURE\_SERVICEBUS\_ACCESS\_KEY" die Informationen, die zum Herstellen einer Verbindung mit Azure Service Bus benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie die Kontoinformationen beim Aufruf von **createServiceBusService** angeben.
+Das Azure-Modul entnimmt den Umgebungsvariablen "AZURE_SERVICEBUS_NAMESPACE" und "AZURE_SERVICEBUS_ACCESS_KEY" die Informationen, die zum Herstellen einer Verbindung mit Azure Service Bus benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie die Kontoinformationen beim Aufruf von **createServiceBusService** angeben.
 
 Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Cloud-Dienst finden Sie unter [Node.js-Cloud-Dienst mit Speicher].
 

@@ -74,7 +74,7 @@ Das folgende Beispiel zeigt, wie Sie mithilfe der DocumentDB-REST-API während d
 	           }                                                  
 	        ],                                                               
 	        "ExcludedPaths":[                                                
-	           "/\"nonIndexedContent\"/*"                                 
+	           "/"nonIndexedContent"/*"                                 
 	        ]                                                               
 	     }                                                                 
 	 }                                                                                                                                                
@@ -86,7 +86,7 @@ Das folgende Beispiel zeigt, wie Sie mithilfe der DocumentDB-REST-API während d
 
 **Hinweis:** Die Indizierungsrichtlinie einer Sammlung muss zur Erstellungszeit angegeben werden. Die Änderung der Indizierungsrichtlinie nach der Erstellung der Sammlung ist nicht zulässig, wird jedoch in einer zukünftigen Version von DocumentDB unterstützt.
 
-**Hinweis:** Standardmäßig indiziert DocumentDB alle Pfade in Dokumenten konsistent mit einem Hashindex. Der interne Pfad für Zeitstempel (\_ts) wird mit einem Bereichsindex gespeichert.
+**Hinweis:** Standardmäßig indiziert DocumentDB alle Pfade in Dokumenten konsistent mit einem Hashindex. Der interne Pfad für Zeitstempel (_ts) wird mit einem Bereichsindex gespeichert.
 
 ### Automatische Indizierung
 
@@ -285,7 +285,7 @@ Im folgenden Beispiel wird ein bestimmter Pfad mit Bereichsindizierung und benut
 	pathRange.IndexingPolicy.IncludedPaths.Add(
 								new IndexingPath { 
 										IndexType = IndexType.Range, 
-										Path = "/\"CreatedTimestamp\"/?",   
+										Path = "/"CreatedTimestamp"/?",   
 										NumericPrecision = 7   
 							 			}
 									);   
@@ -307,7 +307,7 @@ Platzhalters "*" von der Indizierung ausgeschlossen.
   	excluded.IndexingPolicy.IncludedPaths.Add(
 	newIndexingPath {  Path = "/" });  
 
-	excluded.IndexingPolicy.ExcludedPaths.Add("/\" nonIndexedContent\"/*");    
+	excluded.IndexingPolicy.ExcludedPaths.Add("/" nonIndexedContent"/*");    
 	excluded = await client.CreateDocumentCollectionAsync(database.SelfLink,excluded);                                                               
 
 
@@ -316,7 +316,7 @@ Leistungsoptimierung
 
 Da Sie unterschiedliche Konfigurationen für die Indizierungsrichtlinie auswerten, sollten Sie die Auswirkungen der Richtlinie auf den Speicher und den Durchsatz über die DocumentDB-APIs messen.
 
-Um das Speicherkontingent und die Verwendung einer Sammlung zu überprüfen, führen Sie ein "HEAD" oder "GET" für die Sammlungsressource aus, und überprüfen Sie die Header "x-ms-request-quota" und "x-ms-request-usage". Im .NET SDK enthalten die Eigenschaften [DocumentSizeQuota](http://msdn.microsoft.com/library/dn850325.aspx) und [DocumentSizeUsage](http://msdn.microsoft.com/library/azure/dn850324.aspx) in [ResourceResponse<T\>](http://msdn.microsoft.com/library/dn799209.aspx) diese entsprechenden Werte.
+Um das Speicherkontingent und die Verwendung einer Sammlung zu überprüfen, führen Sie ein "HEAD" oder "GET" für die Sammlungsressource aus, und überprüfen Sie die Header "x-ms-request-quota" und "x-ms-request-usage". Im .NET SDK enthalten die Eigenschaften [DocumentSizeQuota](http://msdn.microsoft.com/library/dn850325.aspx) und [DocumentSizeUsage](http://msdn.microsoft.com/library/azure/dn850324.aspx) in [ResourceResponse<T>](http://msdn.microsoft.com/library/dn799209.aspx) diese entsprechenden Werte.
 
 
  	// Measure the document size usage (which includes the index size) against   

@@ -56,7 +56,7 @@ Der [Runbook-Katalog](http://aka.ms/runbookgallery) enthält Beispiel-Runbooks, 
 
 	![Registerkarte "Runbooks"](./media/automation/automation_04_RunbooksTab.png)
   
-6.	Klicken Sie auf **Neu** \> **Runbook** \> **Aus Katalog**.
+6.	Klicken Sie auf **Neu** > **Runbook** > **Aus Katalog**.
 
 	![Runbook-Katalog](./media/automation/automation_05_ImportGallery.png)
 

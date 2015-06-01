@@ -29,13 +29,13 @@ Sie können Webdienstparameter definieren und einem oder mehreren Modulparameter
 
 ##Festlegen und Verwenden von Webdienstparametern
 
-Sie definieren einen Webdienstparameter, indem Sie auf das Symbol neben dem Parameter für ein Modul klicken und "Set as web service parameter" \(Als Webdienstparameter festlegen\) auswählen. Daraufhin wird ein neuer Webdienstparameter erstellt und mit diesem Modulparameter verbunden. Wenn auf den Webdienst zugegriffen wird, kann der Benutzer kann einen Wert für den Webdienstparameter angeben, der dann auf den Modulparameter angewendet wird.
+Sie definieren einen Webdienstparameter, indem Sie auf das Symbol neben dem Parameter für ein Modul klicken und "Set as web service parameter" (Als Webdienstparameter festlegen) auswählen. Daraufhin wird ein neuer Webdienstparameter erstellt und mit diesem Modulparameter verbunden. Wenn auf den Webdienst zugegriffen wird, kann der Benutzer kann einen Wert für den Webdienstparameter angeben, der dann auf den Modulparameter angewendet wird.
 
 Nachdem Sie einen Web Service-Parameter definiert haben, steht dieser für andere Modulparameter im Experiment zur Verfügung. Sie können einen Webdienstparameter, den Sie definiert und einem Modulparameter zugeordnet haben, auch für einen Parameter eines anderen Moduls verwenden, sofern der betreffende Parameter denselben Typ von Wert erwartet. Wenn der Webdienstparameter z. B. ein numerischer Wert ist, kann er nur für Modulparameter verwendet werden, die einen numerischen Wert erwarten. Wenn der Benutzer einen Wert für den Webdienstparameter festlegt, wird dieser auf alle zugehörigen Modulparameter angewendet.
 
 Sie können entscheiden, ob Sie einen Standardwert für den Webdienstparameter angeben. Wenn Sie dies tun, ist der Parameter für die Benutzer des Webdiensts optional. Geben Sie keinen Standardwert an, dann muss der Benutzer einen Wert eingeben, wenn auf den Webdienst zugegriffen wird.
 
-Die Dokumentation für den Webdienst \(die über den Link zur **API-Hilfeseite** im Webdienst-**DASHBOARD** in Machine Learning Studio bereitgestellt wird\) enthält Informationen, der die Webdienstbenutzer entnehmen können, wie der Webdienstparameter beim Zugriff auf den Webdienst programmgesteuert angegeben werden kann.
+Die Dokumentation für den Webdienst (die über den Link zur **API-Hilfeseite** im Webdienst-**DASHBOARD** in Machine Learning Studio bereitgestellt wird) enthält Informationen, der die Webdienstbenutzer entnehmen können, wie der Webdienstparameter beim Zugriff auf den Webdienst programmgesteuert angegeben werden kann.
 
 
 ##Beispiel
@@ -46,27 +46,27 @@ Nehmen wir beispielsweise an, wir hätten ein Experiment mit einem [Writer][writ
 
 2.	Geben Sie den Speichertyp an:
 
-    - Wählen Sie unter **Please specify data destination** \(Datenziel angeben\) das Ziel "Azure Blob Storage" \(Azure-Blob-Speicher" aus.
-    - Wählen Sie unter **Please specify authentication type** \(Authentifizierungstyp angeben\) die Option "Account" \(Konto\) aus.
+    - Wählen Sie unter **Please specify data destination** (Datenziel angeben) das Ziel "Azure Blob Storage" (Azure-Blob-Speicher" aus.
+    - Wählen Sie unter **Please specify authentication type** (Authentifizierungstyp angeben) die Option "Account" (Konto) aus.
     - Geben Sie die Kontoinformationen für den Azure-Blob-Speicher ein. <p />
 
-3.	Klicken Sie auf das Symbol rechts neben **Path to blob beginning with container parameter** \(Blob-Pfad beginnt mit Containerparameter\). Es sieht folgendermaßen aus:
+3.	Klicken Sie auf das Symbol rechts neben **Path to blob beginning with container parameter** (Blob-Pfad beginnt mit Containerparameter). Es sieht folgendermaßen aus:
 
 	![Symbol für Webdienstparameter][icon]
 
-    Wählen Sie "Set as web service parameter" \(Als Webdienstparameter festlegen\) aus.
+    Wählen Sie "Set as web service parameter" (Als Webdienstparameter festlegen) aus.
 
-    Ein Eintrag wird unter **Web Service Parameters** \(Webdienstparameter\) am unteren Rand des Eigenschaftenbereichs mit dem Namen "Path to blob beginning with container" \(Blob-Pfad beginnt mit Container\) hinzugefügt. Dies ist der Webdienstparameter, der nun diesem [Writer][writer]-Modulparameter zugeordnet ist.
+    Ein Eintrag wird unter **Web Service Parameters** (Webdienstparameter) am unteren Rand des Eigenschaftenbereichs mit dem Namen "Path to blob beginning with container" (Blob-Pfad beginnt mit Container) hinzugefügt. Dies ist der Webdienstparameter, der nun diesem [Writer][writer]-Modulparameter zugeordnet ist.
 
 4.	Wenn Sie den Webdienstparameter umbenennen möchten, klicken Sie auf den Namen, geben Sie "Blob-Pfad" ein, und drücken Sie die **EINGABETASTE**.
  
-5.	Um einen Standardwert für den Webdienstparameter bereitzustellen, klicken Sie auf das Symbol neben dem Namen, wählen Sie "Provide default value" \(Standardwert bereitstellen\) aus, geben Sie einen Wert \(z. B. "container1/output1.csv"\) ein, und drücken Sie die **EINGABETASTE**.
+5.	Um einen Standardwert für den Webdienstparameter bereitzustellen, klicken Sie auf das Symbol neben dem Namen, wählen Sie "Provide default value" (Standardwert bereitstellen) aus, geben Sie einen Wert (z. B. "container1/output1.csv") ein, und drücken Sie die **EINGABETASTE**.
 
 	![Webdienstparameter][parameter]
 
-6.	Klicken Sie auf **Run** \(Ausführen\).
+6.	Klicken Sie auf **Run** (Ausführen).
 
-7.	Klicken Sie auf **PUBLISH WEB SERVICE** \(Webdienst veröffentlichen\), um den Webdienst zu veröffentlichen.
+7.	Klicken Sie auf **PUBLISH WEB SERVICE** (Webdienst veröffentlichen), um den Webdienst zu veröffentlichen.
 
 Benutzer des Webdiensts können jetzt beim Zugriff auf den Webdienst ein neues Ziel für das [Writer][writer]-Modul angeben.
 

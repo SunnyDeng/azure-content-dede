@@ -22,7 +22,7 @@ Dieses Thema beschreibt alle Funktionen, die Sie in einer Azure Resource Manager
 
 ## base64
 
-**base64 \(InputString\)**
+**base64 (InputString)**
 
 Rückkehr zur base64-Darstellung der Eingabezeichenfolge.
 
@@ -39,7 +39,7 @@ Das folgende Beispiel zeigt die Funktionsweise der base64-Funktion.
 
 ## concat
 
-**concat \(arg1, arg2, arg3, ...\)**
+**concat (arg1, arg2, arg3, ...)**
 
 Kombiniert mehrere Zeichenfolgewerte und gibt den resultierenden Zeichenfolgewert zurück. Diese Funktion kann eine beliebige Anzahl an Argumenten entgegennehmen. 
 
@@ -54,7 +54,7 @@ Das folgende Beispiel zeigt die Kombinationsweise mehrerer Werte, um einen Wert 
 
 ## listKeys
 
-**listKeys \(resourceName oder resourceIdentifier, [apiVersion]\)**
+**listKeys (resourceName oder resourceIdentifier, [apiVersion])**
 
 Gibt die Schlüssel eines Speicherkontos zurück. Die Ressourcen-ID kann mithilfe der [Ressourcen-ID-Funktion](./#resourceid) oder mithilfe des Formats **providerNamespaces/resourceType/resourceName** angegeben werden. Sie können die Funktion nutzen um den Primär- und Sekundärschlüssel abzurufen.
   
@@ -74,7 +74,7 @@ Das folgende Beispiel zeigt, wie die Schlüssel von einem Speicherkonto in die A
 
 ## angeben
 
-**Parameter \(parameterName\)**
+**Parameter (parameterName)**
 
 Gibt einen Parameterwert zurück. Der spezifizierte Parametername muss im Parameterabschnitt der Vorlage definiert werden.
 
@@ -100,7 +100,7 @@ Die folgenden Beispiele zeigen eine vereinfachte Nutzungsweise der Parameterfunk
 
 ## Anbieter
 
-**Anbieter \(providerNamespace, [resourceType]\)**
+**Anbieter (providerNamespace, [resourceType])**
 
 Rückgabe von Informationen über einen Ressourcenanbieter und die von ihm unterstützten Ressourcentypen. Wenn kein Typ angegeben wird, werden alle unterstützten Typen zurückgegeben.
 
@@ -128,7 +128,7 @@ Das folgende Beispiel zeigt die Nutzungsweise der Anbieterfunktion:
 
 ## Referenz
 
-**Referenz \(resourceName oder resourceIdentifier, [apiVersion]\)**
+**Referenz (resourceName oder resourceIdentifier, [apiVersion])**
 
 Aktiviert einen Ausdruck, um seinen Wert vom Laufzeitstatus einer anderen Ressource abzuleiten.
 
@@ -150,7 +150,7 @@ Mithilfe des Referenzausdrucks können Sie deklarieren, dass eine Ressource von 
 
 ## Ressourcengruppe
 
-**resourceGroup\(\)**
+**resourceGroup()**
 
 Gibt ein strukturiertes Objekt zurück, das die aktuelle Ressourcengruppe repräsentiert. Das Objekt wird das folgende Format haben:
 
@@ -174,7 +174,7 @@ Das folgende Beispiel nutzt den Speicherort der Ressourcengruppe, um einer Websi
 
 ## Ressourcen-ID
 
-**Ressourcen-ID \([resourceGroupName], resourceType, resourceName1, [resourceName2]...\)**
+**Ressourcen-ID ([resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
 
 Gibt den eindeutigen Bezeichner einer Ressource zurück. Diese Funktion wird verwendet, wenn der Ressourcenname zweideutig ist oder nicht innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Der Bezeichner wird im folgenden Format zurückgeben:
 
@@ -238,7 +238,7 @@ Sie müssen diese Funktion oft nutzen, wenn Sie ein Speicherkonto oder einen vir
 
 ## Abonnement
 
-**subscription\(\)**
+**subscription()**
 
 Gibt Details über das Abonnement im folgenden Format zurück:
 
@@ -258,7 +258,7 @@ Das folgende Beispiel zeigt ein Abrufen der Abonnement-Funktion im Ausgabeabschn
 
 ## Variablen
 
-**Variablen \(variableName\)**
+**Variablen (variableName)**
 
 Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variablenabschnitt der Vorlage definiert werden.
 

@@ -103,7 +103,7 @@ Führen Sie die folgenden Schritte für die von Ihnen verwendete Entwicklungsumg
 
 4. Wählen Sie den Eintrag **New Relic for Azure Websites** aus, und klicken Sie dann auf **Installieren**.
 
-5. Nach der Installation des Pakets enthält Ihre Website einen Ordner namens **newrelic**. Erweitern Sie diesen Ordner, und öffnen Sie die Datei **newrelic.config**. Ersetzen Sie in dieser Datei den Wert **REPLACE\_WITH\_LICENSE_KEY** durch den Lizenzschlüssel, den Sie im Azure Store erhalten haben.
+5. Nach der Installation des Pakets enthält Ihre Website einen Ordner namens **newrelic**. Erweitern Sie diesen Ordner, und öffnen Sie die Datei **newrelic.config**. Ersetzen Sie in dieser Datei den Wert **REPLACE_WITH_LICENSE_KEY** durch den Lizenzschlüssel, den Sie im Azure Store erhalten haben.
 
 	![erweiterter newrelic-Ordner mit newrelic.conf ausgewählt][newrelicconf]
 
@@ -136,19 +136,19 @@ Das New Relic-Paket, das im vorherigen Schritt Ihrer Anwendung hinzugefügt wurd
 	</thead>
 	<tbody>
 	<tr>
-	<td>COR\_ENABLE\_PROFILING</td><td>1</td>
+	<td>COR_ENABLE_PROFILING</td><td>1</td>
 	</tr>
 	<tr>
-	<td>COR\_PROFILER</td><td>{71DA0A04-7777-4EC6-9643-7D28B46A8A41}</td>
+	<td>COR_PROFILER</td><td>{71DA0A04-7777-4EC6-9643-7D28B46A8A41}</td>
 	</tr>
 	<tr>
-	<td>COR\_PROFILER\_PATH</td><td>C:\Home\site\wwwroot\newrelic\NewRelic.Profiler.dll</td>
+	<td>COR_PROFILER_PATH</td><td>C:\Home\site\wwwroot\newrelic\NewRelic.Profiler.dll</td>
 	</tr>
 	<tr>
-	<td>NEWRELIC\_HOME</td><td>C:\Home\site\wwwroot\newrelic</td>
+	<td>NEWRELIC_HOME</td><td>C:\Home\site\wwwroot\newrelic</td>
 	</tr>
 	<tr>
-	<td>NEWRELIC\_LICENSEKEY</td><td>Your license key</td>
+	<td>NEWRELIC_LICENSEKEY</td><td>Your license key</td>
 	</tr>
 	</tbody>
 	</table><br/>

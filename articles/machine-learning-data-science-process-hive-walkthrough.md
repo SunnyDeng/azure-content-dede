@@ -46,17 +46,17 @@ Die NYC Taxi Trips-Daten umfassen ca. 20 GB komprimierter CSV-Dateien (~48 GB un
 		DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:54:15,CSH,5,0.5,0.5,0,0,6
 		DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:25:03,CSH,9.5,0.5,0.5,0,0,10.5
 
-Der eindeutige Schlüssel für die Zusammenführung von "trip\_data" und "trip\_fare" besteht aus den Feldern: "medallion", "hack\_licence" und "pickup\_datetime".
+Der eindeutige Schlüssel für die Zusammenführung von "trip_data" und "trip_fare" besteht aus den Feldern: "medallion", "hack_licence" und "pickup_datetime".
 
 Es gibt jeweils 12 Fahrtendateien 'trip_data' und 'trip_fare'. In den Dateinamen stellen die Zahlen 1 bis 12 die Monate dar, in denen die Fahrten vorgenommen wurden. 
 
 ## <a name="mltasks"></a>Beispiele für Vorhersageaufgaben
 Bei der Arbeit mit Daten ist es zunächst wichtig, die Art der Vorhersagen zu bestimmen, die Sie treffen möchten. Basierend auf der Analyse können Sie dann die Aufgaben ermitteln, die Sie durchführen müssen.
-Hier sehen Sie drei Beispiele für Vorhersageprobleme, die in dieser exemplarischen Vorgehensweise behandelt werden. Die Formulierung basiert auf *tip\_amount*:
+Hier sehen Sie drei Beispiele für Vorhersageprobleme, die in dieser exemplarischen Vorgehensweise behandelt werden. Die Formulierung basiert auf *tip_amount*:
 
-1. **Binäre Klassifizierung**: Vorhersagen, ob ein Trinkgeld bezahlt wurde, d. h. ein *tip\_amount* größer als 0 $ ist eine positive Probe, während ein *tip\_amount* gleich 0 $ eine negative Probe ist.
+1. **Binäre Klassifizierung**: Vorhersagen, ob ein Trinkgeld bezahlt wurde, d. h. ein *tip_amount* größer als 0 $ ist eine positive Probe, während ein *tip_amount* gleich 0 $ eine negative Probe ist.
 
-2. **Multi-Klassen-Klassifizierung**: Vorhersage des Trinkgeldbereichs für die Fahrt. Wir teilen *tip\_amount* in fünf Fächer oder Klassen auf:
+2. **Multi-Klassen-Klassifizierung**: Vorhersage des Trinkgeldbereichs für die Fahrt. Wir teilen *tip_amount* in fünf Fächer oder Klassen auf:
 	
 		Class 0 : tip_amount = $0
 		Class 1 : tip_amount > $0 and tip_amount <= $5
@@ -85,7 +85,7 @@ Führen Sie folgende Schritte aus, um Ihre Azure Data Science-Umgebung für dies
 
 3. [Stellen Sie einen virtuellen Computer unter **Windows** für Data Science bereit](machine-learning-data-science-setup-virtual-machine.md).
 
-	> [AZURE.NOTE] Die Beispielskripts werden während der Einrichtung auf den virtuellen Computer für Data Science heruntergeladen. Nach Abschluss der VM-Nachinstallationsskripts finden Sie die Beispiele in der Dokumentbibliothek auf Ihrem virtuellen Computer unter *C:\Users\<user_name>\Documents\Data Science Scripts*.  Dieser Ordner wird im Folgenden mit **Beispielskripts** bezeichnet. Die Hive-Beispielabfragen befinden sich in Dateien mit der Erweiterung ".hql" im Ordner **Beispielskripts**. Beachten Sie, dass mit *<user_name>* in der Pfadangabe zu diesem Ordner Ihr Windows-Anmeldename für die VM gemeint ist, nicht Ihr Azure-Benutzername.
+	> [AZURE.NOTE] Die Beispielskripts werden während der Einrichtung auf den virtuellen Computer für Data Science heruntergeladen. Nach Abschluss der VM-Nachinstallationsskripts finden Sie die Beispiele in der Dokumentbibliothek auf Ihrem virtuellen Computer unter *C:\Users<user_name>\Documents\Data Science Scripts*.  Dieser Ordner wird im Folgenden mit **Beispielskripts** bezeichnet. Die Hive-Beispielabfragen befinden sich in Dateien mit der Erweiterung ".hql" im Ordner **Beispielskripts**. Beachten Sie, dass mit *<user_name>* in der Pfadangabe zu diesem Ordner Ihr Windows-Anmeldename für die VM gemeint ist, nicht Ihr Azure-Benutzername.
 
 4. [Anpassen von Azure HDInsight Hadoop-Clustern für Data Science](machine-learning-data-science-customize-hadoop-cluster.md). In diesem Schritt erstellen Sie ein Azure HDInsight Hadoop-Cluster, bei dem auf allen Knoten 64-Bit-Anaconda Python 2.7 installiert ist. Nachdem der benutzerdefinierte Hadoop-Cluster erstellt wurde, aktivieren Sie im Azure-Portal mithilfe der in diesem Thema zur Anpassung beschriebenen Vorgehensweise den Remotezugriff auf den obersten Knoten des Hadoop-Clusters.
 
@@ -211,7 +211,7 @@ Das Durchsuchen von Daten und das Verarbeiten von Funktionen für die in die Hiv
 - Anzeigen der ersten 10 Datensätze in beiden Tabellen
 - Untersuchen der Datenverteilungen einiger Felder in unterschiedlichen Zeitfenstern
 - Überprüfen der Datenqualität der Felder "longitude" und "latitude"
-- Generieren von binären und Multi-Klassen-Klassifizierungsbezeichnern auf der Grundlage von **tip\_amount**
+- Generieren von binären und Multi-Klassen-Klassifizierungsbezeichnern auf der Grundlage von **tip_amount**
 - Generieren von Funktionen durch Berechnung der direkten Fahrtentfernungen
 - Zusammenführen der beiden Tabellen und Extrahieren einer zufälligen Stichprobe zum Erstellen von Modellen
 
@@ -363,7 +363,7 @@ Nach dem Abschluss der Abfrage können Sie mit dem Azure SDK die Ausgabe der Abf
 	
 ### Vorbereiten von Daten für die Modellerstellung
 
-Die in diesem Abschnitt bereitgestellte Abfrage führt die Tabellen **nyctaxidb.trip** und **nyctaxidb.fare** zusammen, und generiert den binären Klassifizierungsbezeichner **tipped** und den Multi-Klasse Klassifizierungsbezeichner **tip\_class**. Diese Abfrage kann kopiert und dann direkt in das Reader-Modul in [Azure Machine Learning Studio](https://studio.azureml.net) eingefügt werden, um eine direkte Datenerfassung aus der **Hive-Abfrage** in Azure zu erreichen. Diese Abfrage schließt auch Datensätze mit falschen Koordinaten in "longitude" und "latitude" aus.
+Die in diesem Abschnitt bereitgestellte Abfrage führt die Tabellen **nyctaxidb.trip** und **nyctaxidb.fare** zusammen, und generiert den binären Klassifizierungsbezeichner **tipped** und den Multi-Klasse Klassifizierungsbezeichner **tip_class**. Diese Abfrage kann kopiert und dann direkt in das Reader-Modul in [Azure Machine Learning Studio](https://studio.azureml.net) eingefügt werden, um eine direkte Datenerfassung aus der **Hive-Abfrage** in Azure zu erreichen. Diese Abfrage schließt auch Datensätze mit falschen Koordinaten in "longitude" und "latitude" aus.
 
 Diese Abfrage wendet in Hive eingebettete UDFs direkt an, um verschiedene Funktionen aus Hive-Datensätzen zu generieren. Dazu gehören die Stunde, die Kalenderwoche und der Wochentag (1 steht für Montag und 7 für Sonntag) aus dem Feld "_pickup_datetime_". Eine vollständige Liste der eingebetteten Hive-UDFs finden Sie in [LanguageManual UDF (in englischer Sprache)](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF).
 
@@ -496,7 +496,7 @@ Ein Beispiel für ein binäres Klassifizierungsexperiment zum Lesen von Daten di
 
 ![Create workspace][12]
 
-> [AZURE.IMPORTANT] In den Modellierungsbeispielen für Datenextraktion und Stichprobengenerierung in den vorherigen Abschnitten sind **alle Bezeichner für die drei Modellierungsübungen in der Abfrage enthalten**. Ein wichtiger (erforderlicher) Schritt in den einzelnen Modellierungsübungen ist das **Ausschließen** unnötiger Bezeichner für die anderen beiden Probleme und alle anderen **Zielverluste**. Wenn Sie z. B. eine binäre Klassifizierung anwenden, verwenden Sie den Bezeichner **tipped** und schließen die Felder **tip\_class**, **tip\_amount** und **total\_amount** aus. Letztere sind Zielverluste, da sie das bezahlte Trinkgeld beinhalten.
+> [AZURE.IMPORTANT] In den Modellierungsbeispielen für Datenextraktion und Stichprobengenerierung in den vorherigen Abschnitten sind **alle Bezeichner für die drei Modellierungsübungen in der Abfrage enthalten**. Ein wichtiger (erforderlicher) Schritt in den einzelnen Modellierungsübungen ist das **Ausschließen** unnötiger Bezeichner für die anderen beiden Probleme und alle anderen **Zielverluste**. Wenn Sie z. B. eine binäre Klassifizierung anwenden, verwenden Sie den Bezeichner **tipped** und schließen die Felder **tip_class**, **tip_amount** und **total_amount** aus. Letztere sind Zielverluste, da sie das bezahlte Trinkgeld beinhalten.
 
 > In diesem Experiment ergänzt das erste **Metadaten-Editor**-Modul die Spaltennamen in den Ausgabedaten vom Reader-Modul. Dieses Modul ist erforderlich, da das Reader-Modul, das die Daten aus der Hive-Abfrage liest, keine Spaltennamen für die Ausgabedaten erstellt. 
 

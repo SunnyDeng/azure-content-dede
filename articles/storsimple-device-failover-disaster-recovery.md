@@ -57,7 +57,7 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem physischen Zielg
 
 	1. Wählen Sie in der Liste der Volumecontainer die Volumecontainer aus, für die ein Failover durchgeführt werden soll.
 
-		>[AZURE.NOTE] **Only the volume containers with associated cloud snapshots and offline volumes are displayed.**
+		>[AZURE.NOTE] **Es werden nur Volumecontainer mit zugehörigen Cloud-Momentaufnahmen und Offline-Volumes angezeigt.**
 
 	1. Wählen Sie unter **Choose a target device for the volumes in the selected containers** ein Zielgerät aus der Dropdownliste der verfügbaren Geräte aus. Nur die Geräte, die über die verfügbare Kapazität verfügen, werden in der Dropdownliste angezeigt.
 
@@ -85,7 +85,7 @@ Führen Sie die folgenden Schritte aus, wenn Sie nur über ein einzelnes Gerät 
 												
 	>[AZURE.IMPORTANT]**Wenn nicht zuerst die Mindestkonfiguration abgeschlossen wird, schlägt die Notfallwiederherstellung aufgrund eines Fehlers in der aktuellen Implementierung fehl. Dieses Verhalten wird in einer späteren Version behoben werden.**
 
-1. Wählen Sie das alte Gerät \(Status "Offline"\) aus, und klicken Sie auf **Failover**. Führen Sie im daraufhin angezeigten Assistenten ein Failover für dieses Gerät durch, und geben Sie das Zielgerät als neu registriertes Gerät an. Ausführliche Anweisungen finden Sie unter [Failover auf ein anderes physisches Gerät](#fail-over-to-another-physical-device).
+1. Wählen Sie das alte Gerät (Status "Offline") aus, und klicken Sie auf **Failover**. Führen Sie im daraufhin angezeigten Assistenten ein Failover für dieses Gerät durch, und geben Sie das Zielgerät als neu registriertes Gerät an. Ausführliche Anweisungen finden Sie unter [Failover auf ein anderes physisches Gerät](#fail-over-to-another-physical-device).
 
 1. Es wird ein Gerätewiederherstellungsauftrag erstellt, den Sie auf der Seite **Aufträge** überwachen können.
 
@@ -113,7 +113,7 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorS
 													
 	1. Wählen Sie in der Liste der Volumecontainer die Volumecontainer aus, für die ein Failover durchgeführt werden soll.
 
-		>[AZURE.NOTE] **Only the volume containers with associated cloud snapshots and offline volumes are displayed.**
+		>[AZURE.NOTE] **Es werden nur Volumecontainer mit zugehörigen Cloud-Momentaufnahmen und Offline-Volumes angezeigt.**
 
 1. Wählen Sie unter **Choose a target device for the volumes in the selected containers** das virtuelle StorSimple-Gerät aus der Dropdownliste der verfügbaren Geräte aus. Nur die Geräte, die über ausreichende Kapazität verfügen, werden in der Dropdownliste angezeigt.
 

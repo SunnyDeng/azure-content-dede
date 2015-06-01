@@ -240,7 +240,7 @@ Jeder Schlüssel in `NSDictionary` muss mit dem folgenden regulären Ausdruck ü
 
 `^[a-zA-Z][a-zA-Z_0-9]*`
 
-Dies bedeutet, dass Schlüssel mit mindestens einem Buchstaben beginnen müssen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (\_).
+Dies bedeutet, dass Schlüssel mit mindestens einem Buchstaben beginnen müssen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_).
 
 #### Größe
 
@@ -248,7 +248,7 @@ Zusätzliche Daten sind auf **1024** Zeichen pro Aufruf beschränkt (nach Codier
 
 Im vorherigen Beispiel ist die an den Server gesendete JSON-Zeichenfolge 58 Zeichen lang:
 
-			{"ref_click":"http:\/\/foobar.com\/blog","video_id":"123"}
+			{"ref_click":"http://foobar.com/blog","video_id":"123"}
 
 ## Berichterstellung für Anwendungsinformationen
 
@@ -273,7 +273,7 @@ Jeder Schlüssel in `NSDictionary` muss mit dem folgenden regulären Ausdruck ü
 
 `^[a-zA-Z][a-zA-Z_0-9]*`
 
-Dies bedeutet, dass Schlüssel mit mindestens einem Buchstaben beginnen müssen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (\_).
+Dies bedeutet, dass Schlüssel mit mindestens einem Buchstaben beginnen müssen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_).
 
 #### Größe
 

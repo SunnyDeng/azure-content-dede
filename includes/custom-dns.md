@@ -22,7 +22,7 @@ Ein CNAME-Datensatz weist eine *specific* Domäne, beispielsweise **contoso.com*
 
 ### A-Eintrag
 
-Ein A-Datensatz ordnet eine Domäne, z. B. **contoso.com** oder **www.contoso.com**, *or a wildcard domain* wie **\*.contoso.com** einer IP-Adresse zu. Im Falle eines Azure Cloud Service ist dies die virtuelle IP des Service. Daher ist der Hauptvorteil eines A-Datensatzes im Vergleich zu einem CNAME-Datensatz, dass Sie einen Eintrag haben können, der einen Platzhalter verwendet, wie z. B. **.contoso.com**, der Anforderungen für mehrere Unterdomänen wie z. B. **mail.contoso.com**, **login.contoso.com** oder **www.contso.com** verarbeiten würde.
+Ein A-Datensatz ordnet eine Domäne, z. B. **contoso.com** oder **www.contoso.com**, *or a wildcard domain* wie ***.contoso.com** einer IP-Adresse zu. Im Falle eines Azure Cloud Service ist dies die virtuelle IP des Service. Daher ist der Hauptvorteil eines A-Datensatzes im Vergleich zu einem CNAME-Datensatz, dass Sie einen Eintrag haben können, der einen Platzhalter verwendet, wie z. B. **.contoso.com**, der Anforderungen für mehrere Unterdomänen wie z. B. **mail.contoso.com**, **login.contoso.com** oder **www.contso.com** verarbeiten würde.
 
 > [AZURE.NOTE]
 > Da ein A-Datensatz einer statischen IP-Adresse zugeordnet ist, kann er Änderungen an der IP-Adresse des Cloud-Diensts nicht automatisch auflösen. Die von Ihrem Cloud-Dienst verwendete IP-Adresse wird zum ersten Mal zugewiesen, wenn Sie sie an einem leeren Steckplatz bereitstellen (entweder Produktion oder Staging). Wenn Sie die Bereitstellung für den Steckplatz löschen, wird die IP-Adresse von Azure freigegeben und zukünftigen Bereitstellungen an dem Steckplatz wird eine neue IP-Adresse zugewiesen.

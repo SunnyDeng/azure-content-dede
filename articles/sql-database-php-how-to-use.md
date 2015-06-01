@@ -73,7 +73,7 @@ Notieren Sie im PHP-Abschnitt des Ergebnisfensters die Werte für **SERVER**, **
 
 ##<a id="Connect"></a>Gewusst wie: Herstellen einer Verbindung zu einer SQL-Datenbankinstanz
 
-In den folgenden Beispielen wird gezeigt, wie Sie mit den Erweiterungen **SQLSRV** und **PDO_SQLSRV** eine Verbindung mit einer SQL-Datenbank namens `testdb` herstellen. Informationen zu den **SQLSRV**- und **PDO\_SQLSRV**-APIs finden Sie in der [Dokumentation für Microsoft-Treiber für PHP für SQL Server][driver-docs]. Sie benötigen die im vorstehenden Abschnitt abgerufenen Informationen. Ersetzen Sie `SERVER_ID` durch Ihre 10-stellige Server-ID (dies sind die ersten zehn Zeichen des im vorstehenden Abschnitt abgerufenen SERVER-Werts), und weisen Sie den Variablen `$user` und `$pwd` die entsprechenden Werte (Ihren Benutzernamen und Ihr Kennwort) zu.
+In den folgenden Beispielen wird gezeigt, wie Sie mit den Erweiterungen **SQLSRV** und **PDO_SQLSRV** eine Verbindung mit einer SQL-Datenbank namens `testdb` herstellen. Informationen zu den **SQLSRV**- und **PDO_SQLSRV**-APIs finden Sie in der [Dokumentation für Microsoft-Treiber für PHP für SQL Server][driver-docs]. Sie benötigen die im vorstehenden Abschnitt abgerufenen Informationen. Ersetzen Sie `SERVER_ID` durch Ihre 10-stellige Server-ID (dies sind die ersten zehn Zeichen des im vorstehenden Abschnitt abgerufenen SERVER-Werts), und weisen Sie den Variablen `$user` und `$pwd` die entsprechenden Werte (Ihren Benutzernamen und Ihr Kennwort) zu.
 
 #####SQLSRV
 
@@ -105,7 +105,7 @@ In den folgenden Beispielen wird gezeigt, wie Sie mit den Erweiterungen **SQLSRV
 
 
 ##<a id="NextSteps"></a>Nächste Schritte
-Wie bereits erwähnt, ähnelt die Verwendung von SQL-Datenbank sehr der Verwendung von SQL Server. Sobald Sie eine Verbindung mit einer SQL-Datenbank (wie oben gezeigt) hergestellt haben, können Sie die APIs **SQLSRV** oder **PDO\_SQLSRV** zum Einfügen, Abrufen, Aktualisieren und Löschen von Daten verwenden.  Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien und Einschränkungen (SQL-Datenbanken)][limitations].
+Wie bereits erwähnt, ähnelt die Verwendung von SQL-Datenbank sehr der Verwendung von SQL Server. Sobald Sie eine Verbindung mit einer SQL-Datenbank (wie oben gezeigt) hergestellt haben, können Sie die APIs **SQLSRV** oder **PDO_SQLSRV** zum Einfügen, Abrufen, Aktualisieren und Löschen von Daten verwenden.  Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien und Einschränkungen (SQL-Datenbanken)][limitations].
 
 Ein Beispiel, das die Verwendung der SQL-Datenbank mit PHP auf Azure zeigt, ist auf <https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/tasklist-sqlazure> verfügbar.
 

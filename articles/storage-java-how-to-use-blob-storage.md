@@ -188,7 +188,7 @@ Führen Sie zum Herunterladen von Blobs die gleichen Schritte wie zum Hochladen 
 	       if (blobItem instanceof CloudBlob) {
 	           // Download the item and save it to a file with the same name.
     	        CloudBlob blob = (CloudBlob) blobItem;
-    	        blob.download(new FileOutputStream("C:\\mydownloads\\" + blob.getName()));
+    	        blob.download(new FileOutputStream("C:\\mydownloads" + blob.getName()));
     	    }
     	}
     }

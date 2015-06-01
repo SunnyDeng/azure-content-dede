@@ -19,7 +19,7 @@
 
 1. Wählen Sie auf der Seite **Geräte** das Gerät aus, für das Sie Updates installieren möchten.
 
-2. Navigieren Sie zu **Geräte** \> **Wartung**, und scrollen Sie nach unten zu **Softwareupdates**.
+2. Navigieren Sie zu **Geräte** > **Wartung**, und scrollen Sie nach unten zu **Softwareupdates**.
 
 3. Klicken Sie am unteren Rand der Seite auf **Updates prüfen**, um nach Updates zu suchen.
 

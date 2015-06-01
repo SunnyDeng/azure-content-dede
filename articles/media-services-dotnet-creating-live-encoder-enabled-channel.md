@@ -17,7 +17,7 @@
 	ms.author="juliako"/>
 
 
-#Verwenden von .NET SDK, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird \(Vorschau\)
+#Verwenden von .NET SDK, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird (Vorschau)
 
 ##Übersicht
 
@@ -29,7 +29,7 @@ In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines **Kanal
 
 Im Folgenden werden die Schritte und Aufgaben zum Erstellen allgemeiner Livestreaminganwendungen beschrieben.
 
-1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein Single-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP \(MPEG-TS\). Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
+1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein Single-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 	
 	Dieser Schritt kann auch nach der Erstellung des Kanals ausgeführt werden.
 
@@ -47,7 +47,7 @@ Im Folgenden werden die Schritte und Aufgaben zum Erstellen allgemeiner Livestre
 	
 	1. 	Erstellen Sie einen Inhaltsschlüssel. 
 	1. 	Konfigurieren Sie eine Autorisierungsrichtlinie für Inhaltsschlüssel.
-1. Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte \(wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet\).
+1. Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte (wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet).
 3. Erstellen Sie ein Programm, und legen Sie fest, dass das erstellte Medienobjekt verwendet werden soll.
 1. Veröffentlichen Sie das dem Programm zugeordnete Medienobjekt, indem Sie einen OnDemand-Locator erstellen.  
 
@@ -55,7 +55,7 @@ Im Folgenden werden die Schritte und Aufgaben zum Erstellen allgemeiner Livestre
 1. Wenn Sie zum Starten von Streaming und Archivierung bereit sind, starten Sie das Programm.
 2. Optional kann vom Liveencoder eine Ankündigung gestartet werden. Die Ankündigung wird in den Ausgabedatenstrom eingefügt.
 1. Sie können das Programm und damit das Streaming und die Archivierung des Ereignisses jederzeit beenden.
-1. Löschen Sie das Programm \(und optional das Medienobjekt\).   
+1. Löschen Sie das Programm (und optional das Medienobjekt).   
 
 ##In diesem Thema
 

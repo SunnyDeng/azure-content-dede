@@ -26,14 +26,14 @@ Stellen Sie vor dem Loslegen sicher, dass Azure PowerShell bereit ist.
 
 ## Grundlegendes zu Azure-Ressourcenvorlagen und -Ressourcengruppen
 
-Die meisten Anwendungen, die in Microsoft Azure bereitgestellt und  ausgeführt werden, sind aus einer Kombination aus verschiedenen Cloud-Ressourcentypen \(z. B. als eine oder mehrere VMs und Speicherkonten, SQL-Datenbank, virtuelles Netzwerk oder CDN\) erstellt. *Azure Resource Manager-Vorlagen* ermöglichen Ihnen die gemeinsame Bereitstellung und Verwaltung dieser verschiedenen Ressourcen, indem eine JSON-Beschreibung der Ressourcen und zugeordnete Parameter für Konfiguration und Bereitstellung genutzt wird.
+Die meisten Anwendungen, die in Microsoft Azure bereitgestellt und  ausgeführt werden, sind aus einer Kombination aus verschiedenen Cloud-Ressourcentypen (z. B. als eine oder mehrere VMs und Speicherkonten, SQL-Datenbank, virtuelles Netzwerk oder CDN) erstellt. *Azure Resource Manager-Vorlagen* ermöglichen Ihnen die gemeinsame Bereitstellung und Verwaltung dieser verschiedenen Ressourcen, indem eine JSON-Beschreibung der Ressourcen und zugeordnete Parameter für Konfiguration und Bereitstellung genutzt wird.
 
 Sobald Sie eine JSON-basierte Ressourcenvorlage definiert haben, können Sie sie ausführen und die darin definierten Ressourcen in Azure mithilfe eines PowerShell-Befehls bereitstellen. Sie können diese Befehle entweder eigenständig in der PowerShell-Befehlsshell oder in einem Skript ausführen, das eine zusätzliche Automatisierungslogik enthält.
 
 Die Ressourcen, die Sie mithilfe von Azure Resource Manager-Vorlagen erstellen, werden entweder in einer neuen oder einer vorhandenen Azure-Ressourcengruppe bereitgestellt. Eine *Azure-Ressourcengruppe* ermöglicht Ihnen, mehrere bereitgestellte Ressourcen zusammen als eine logische Gruppe zu verwalten. Daher können Sie den gesamten Lebenszyklus der Gruppe/Anwendung verwalten und Verwaltungs-APIs bereitstellen, die es Ihnen ermöglichen:
 
 - alle Ressourcen in der Gruppe auf einmal zu beenden, starten oder löschen. 
-- Role-Based Access Control \(RBAC\)-Regeln zum Sperren von Sicherheitsberechtigungen. 
+- Role-Based Access Control (RBAC)-Regeln zum Sperren von Sicherheitsberechtigungen. 
 - Vorgänge zu überwachen. 
 - Tag-Ressourcen mit zusätzlichen Metadaten zur besseren Nachverfolgung. 
 
@@ -292,7 +292,7 @@ Nun ist ein neuer virtueller Windows-Computer mit dem Namen „MyWindowsVM“ in
 
 ## Allgemeine Aufgaben: Erstellen Sie ein benutzerdefiniertes VM-Image
 
-Verwenden Sie die Anweisungen in diesem Abschnitt, um ein benutzerdefiniertes VM-Image in Azure mit einer Resource Manager-Vorlage mit Azure PowerShell zu erstellen. Diese Vorlage erstellt eine einzelne virtuelle Maschine von einer angegebenen virtuellen Festplatte \(VHD\).
+Verwenden Sie die Anweisungen in diesem Abschnitt, um ein benutzerdefiniertes VM-Image in Azure mit einer Resource Manager-Vorlage mit Azure PowerShell zu erstellen. Diese Vorlage erstellt eine einzelne virtuelle Maschine von einer angegebenen virtuellen Festplatte (VHD).
 
 ### Schritt 1: Untersuchen der JSON-Datei für die Vorlage.
 
@@ -383,7 +383,7 @@ Informationen zu einer Linux-basierten virtuellen Maschine finden Sie in [Erstel
 
 ### Schritt 3: Erstellen Sie den virtuellen Computer mit der Vorlage.
 
-Um eine neue virtuelle Maschine basierend auf der virtuellen Festplatte zu erstellen, ersetzen Sie die Elemente innerhalb der "\< \>" durch Ihre spezifischen Informationen und führen Sie diese Befehle aus:
+Um eine neue virtuelle Maschine basierend auf der virtuellen Festplatte zu erstellen, ersetzen Sie die Elemente innerhalb der "< >" durch Ihre spezifischen Informationen und führen Sie diese Befehle aus:
 
 	$deployName="<deployment name>"
 	$RGName="<resource group name>"

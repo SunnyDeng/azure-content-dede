@@ -6,7 +6,7 @@ Don't use this file. It's deprecated and will be removed. Instead use, virtual-m
 
 Sie können den SSH-Client verwenden, um die Einstellungen des virtuellen Computers und der Anwendungen zu verwalten, die auf dem Computer ausgeführt werden. Hierzu müssen Sie einen SSH-Client auf dem Computer installieren, über den Sie auf den virtuellen Computer zugreifen möchten. Es gibt eine Vielzahl an SSH-Client-Programmen, die Sie verwenden können. Hier einige mögliche Programme:
 
-- Wenn Sie einen Computer mit einem Windows-Betriebssystem verwenden, können Sie beispielsweise einen SSH-Client wie PuTTY verwenden. Weitere Informationen erhalten Sie unter [PuTTY Download](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) \(in englischer Sprache\).
+- Wenn Sie einen Computer mit einem Windows-Betriebssystem verwenden, können Sie beispielsweise einen SSH-Client wie PuTTY verwenden. Weitere Informationen erhalten Sie unter [PuTTY Download](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) (in englischer Sprache).
 - Wenn Sie einen Computer mit einem Linux-Betriebssystem verwenden, können Sie beispielsweise einen SSH-Client wie OpenSSH verwenden. Weitere Informationen finden Sie unter [OpenSSH](http://www.openssh.org/).
 
 Dieses Tutorial zeigt Ihnen, wie Sie mithilfe des PuTTY-Programms auf den virtuellen Computer zugreifen.
@@ -35,9 +35,9 @@ Möglicherweise muss Ihre Anwendung Daten speichern. Schließen Sie hierzu einen
 **Hinweis: Datenträger und Ressourcendatenträger**  
 Datenträger befinden sich im Azure-Speicher und können zur dauerhaften Speicherung von Dateien und Anwendungsdaten verwendet werden.
 
-An jeden erstellen virtuellen Computer ist auch ein temporärer lokaler *Ressourcendatenträger* angeschlossen. Da die Daten auf einem Ressourcendatenträger bei Neustarts verloren gehen können, werden Ressourcendatenträger oft von Anwendungen und Prozessen zur vorübergehenden \(temporären\) Datenspeicherung auf dem virtuellen Computer verwendet. Außerdem dienen sie zur Speicherung von Auslagerungsdateien für das Betriebssystem.
+An jeden erstellen virtuellen Computer ist auch ein temporärer lokaler *Ressourcendatenträger* angeschlossen. Da die Daten auf einem Ressourcendatenträger bei Neustarts verloren gehen können, werden Ressourcendatenträger oft von Anwendungen und Prozessen zur vorübergehenden (temporären) Datenspeicherung auf dem virtuellen Computer verwendet. Außerdem dienen sie zur Speicherung von Auslagerungsdateien für das Betriebssystem.
 
-Auf Linux wird der Ressourcendatenträger in der Regel vom Azure Linux Agent verwaltet und automatisch in **/mnt/resource** \(oder **/mnt** auf Ubuntu-Abbildern\) eingebunden. Beachten Sie, dass der Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Andererseits kann der Datenträger unter Linux vom Kernel den Namen `/dev/sdc` erhalten und die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Weitere Informationen erhalten Sie im [Azure Linux Agent User Guide](http://www.windowsazure.com/manage/linux/how-to-guides/linux-agent-guide/) \(Benutzerhandbuch für Azure Linux, in englischer Sprache\).
+Auf Linux wird der Ressourcendatenträger in der Regel vom Azure Linux Agent verwaltet und automatisch in **/mnt/resource** (oder **/mnt** auf Ubuntu-Abbildern) eingebunden. Beachten Sie, dass der Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Andererseits kann der Datenträger unter Linux vom Kernel den Namen `/dev/sdc` erhalten und die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Weitere Informationen erhalten Sie im [Azure Linux Agent User Guide](http://www.windowsazure.com/manage/linux/how-to-guides/linux-agent-guide/) (Benutzerhandbuch für Azure Linux, in englischer Sprache).
 
 
 
@@ -128,7 +128,7 @@ Der gerade von Ihnen an den virtuellen Computer angeschlossene Datenträger ist 
 
 11. Fügen Sie das neue Laufwerk zu /etc/fstab hinzu:
 
-	Um sicherzustellen, dass das Laufwerk nach einem Neustart automatisch wieder eingebunden wird, muss es zur Datei /etc/fstab hinzugefügt werden. Außerdem wird dringend empfohlen, den UUID \(Universally Unique IDentifier\) in /etc/fstab zu verwenden, um auf das Laufwerk und nicht auf den Gerätenamen \(d. h. auf /dev/sdc1\) zu verweisen. Sie können das Hilfsprogramm **blkid** verwenden, um den UUID des neuen Laufwerks herauszufinden:
+	Um sicherzustellen, dass das Laufwerk nach einem Neustart automatisch wieder eingebunden wird, muss es zur Datei /etc/fstab hinzugefügt werden. Außerdem wird dringend empfohlen, den UUID (Universally Unique IDentifier) in /etc/fstab zu verwenden, um auf das Laufwerk und nicht auf den Gerätenamen (d. h. auf /dev/sdc1) zu verweisen. Sie können das Hilfsprogramm **blkid** verwenden, um den UUID des neuen Laufwerks herauszufinden:
 	
 		`sudo -i blkid`
 

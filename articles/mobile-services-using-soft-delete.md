@@ -20,9 +20,9 @@
 
 ## Übersicht
 
-Für Tabellen, die mit dem JavaScript- oder .NET-Backend erstellt wurden, kann das vorläufige Löschen aktiviert sein. Bei Verwendung des vorläufigen Löschens wird eine neue Spalte *\__deleted* vom [SQL-Bit-Typ] zur Datenbank hinzugefügt. Bei aktiviertem vorläufigem Löschen werden Reihen nicht physisch aus der Datenbank gelöscht; stattdessen wird der Wert der gelöschten Spalte auf "TRUE" gesetzt.
+Für Tabellen, die mit dem JavaScript- oder .NET-Backend erstellt wurden, kann das vorläufige Löschen aktiviert sein. Bei Verwendung des vorläufigen Löschens wird eine neue Spalte *__deleted* vom [SQL-Bit-Typ] zur Datenbank hinzugefügt. Bei aktiviertem vorläufigem Löschen werden Reihen nicht physisch aus der Datenbank gelöscht; stattdessen wird der Wert der gelöschten Spalte auf "TRUE" gesetzt.
 
-Bei der Abfrage von Datensätzen in einer Tabelle mit aktiviertem vorläufigem Löschen werden gelöschte Reihen standardmäßig nicht zurückgegeben. Um diese Reihen anzufordern, müssen Sie einen Abfrageparameter *\__includeDeleted=true* in den [REST-Abfragevorgang](http://msdn.microsoft.com/library/azure/jj677199.aspx) einschließen. Im .NET-Client-SDK können Sie zudem die Hilfsmethode `IMobileServiceTable.IncludeDeleted()` verwenden.
+Bei der Abfrage von Datensätzen in einer Tabelle mit aktiviertem vorläufigem Löschen werden gelöschte Reihen standardmäßig nicht zurückgegeben. Um diese Reihen anzufordern, müssen Sie einen Abfrageparameter *__includeDeleted=true* in den [REST-Abfragevorgang](http://msdn.microsoft.com/library/azure/jj677199.aspx) einschließen. Im .NET-Client-SDK können Sie zudem die Hilfsmethode `IMobileServiceTable.IncludeDeleted()` verwenden.
 
 Unterstützung für vorläufiges Löschen für das .NET-Backend wurde erstmalig mit Version 1.0.402 des .NET-Backend von Microsoft Azure Mobile Services veröffentlicht. Die neuesten NuGet-Pakete stehen unter [Microsoft Azure Mobile Services .NET-Back-End](http://go.microsoft.com/fwlink/?LinkId=513165) zur Verfügung.
 
@@ -67,11 +67,11 @@ Wenn Sie eine neue Tabelle für Ihren mobilen Dienst erstellen, können Sie das 
 So aktivieren Sie das vorläufige Löschen für eine vorhandene Tabelle im JavaScript-Backend:
 
 1. Klicken Sie im [Verwaltungsportal] auf Ihren mobilen Dienst. Klicken Sie dann auf die Registerkarte "Daten".
-2. Klicken Sie auf der Seite "Daten", um die gewünschte Tabelle auszuwählen. Klicken Sie dann in der Befehlsleiste auf die Schaltfläche **Vorläufiges Löschen aktivieren**. Sollte das vorläufige Löschen bereits für die Tabelle aktiviert sein, wird die Schaltfläche nicht angezeigt, Sie können jedoch die Spalte *\__deleted* sehen, wenn Sie auf die Registerkarte **Durchsuchen** oder **Spalten** für die Tabelle klicken.
+2. Klicken Sie auf der Seite "Daten", um die gewünschte Tabelle auszuwählen. Klicken Sie dann in der Befehlsleiste auf die Schaltfläche **Vorläufiges Löschen aktivieren**. Sollte das vorläufige Löschen bereits für die Tabelle aktiviert sein, wird die Schaltfläche nicht angezeigt, Sie können jedoch die Spalte *__deleted* sehen, wenn Sie auf die Registerkarte **Durchsuchen** oder **Spalten** für die Tabelle klicken.
 
     ![][0]
 
-    Um das vorläufige Löschen für die Tabelle zu deaktivieren, klicken Sie auf die Registerkarte **Spalten**, klicken Sie dann auf die Spalte *\__deleted* und anschließend auf die Schaltfläche **Löschen**.  
+    Um das vorläufige Löschen für die Tabelle zu deaktivieren, klicken Sie auf die Registerkarte **Spalten**, klicken Sie dann auf die Spalte *__deleted* und anschließend auf die Schaltfläche **Löschen**.  
 
     ![][1]
 

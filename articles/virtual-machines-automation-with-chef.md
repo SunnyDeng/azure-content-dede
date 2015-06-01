@@ -1,18 +1,20 @@
 <properties 
-   pageTitle="Automatisieren der Bereitstellung von Azure Virtual Machine mit Chef" 
-   description="Lernen Sie die Automatisierung von Azure Virtual Machine mit Chef kennen" 
-   services="virtual-machines" 
-   documentationCenter="" 
-   authors="diegoviso" 
-   manager="timlt" 
-   editor=""/>
+	pageTitle="Automatisieren der Bereitstellung von Azure Virtual Machine mit Chef" 
+	description="Lernen Sie die Automatisierung von Azure Virtual Machine mit Chef kennen" 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="diegoviso" 
+	manager="timlt" 
+	editor=""/>
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" 
-ms.tgt_pltfrm="vm-multiple" 
-ms.devlang="na" 
-ms.topic="article" 
-ms.date="01/29/2015" 
-ms.author="diviso"/>
+<tags 
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-multiple" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="01/29/2015" 
+	ms.author="diviso"/>
 
 #Automatisieren der Bereitstellung von Azure Virtual Machine mit Chef
 
@@ -76,7 +78,7 @@ Die ZIP-Datei dieses Starterkits enthält die Konfigurationsdateien und Schlüss
 
 Extrahieren Sie den Inhalt der Datei "chef-starter.zip" im Ordner **C:\chef**
 
-Kopieren Sie alle Dateien unter **chef-starter\chef-repo\.chef** in den Ordner **c:\chef**
+Kopieren Sie alle Dateien unter **chef-starter\chef-repo.chef** in den Ordner **c:\chef**
 
 Ihr Verzeichnis sollte in etwa wie folgt aussehen:
 
@@ -110,7 +112,7 @@ Laden Sie als Nächstes das ChefDK (Chef Development Kit) zum Einrichten der Che
 
 Das ist ganz einfach. Lassen Sie es in seinem Standardverzeichnis c:\opscode installieren. Die Installation dauert ca. 10 Minuten.
 
-Vergewissern Sie sich, dass die PATH-Variable Einträge für C:\opscode\chefdk\bin;C:\opscode\chefdk\embedded\bin;c:\users\Ihr_Benutzername\.chefdk\gem\ruby\2.0.0\bin enthält.
+Vergewissern Sie sich, dass die PATH-Variable Einträge für C:\opscode\chefdk\bin;C:\opscode\chefdk\embedded\bin;c:\users\Ihr_Benutzername.chefdk\gem\ruby\2.0.0\bin enthält.
 
 Wenn sie nicht vorhanden sind, stellen Sie sicher, dass Sie diese Pfade hinzufügen!
 

@@ -421,7 +421,7 @@ Die Anwendung sollte nun fertig zur Bereitstellung sein.
 
 	Capistrano stellt über SSH eine Verbindung mit dem virtuellen Computer her und erstellt dann das Verzeichnis (~/apps), auf dem die Anwendung bereitgestellt wird. Wenn es sich um die erste Bereitstellung handelt, erstellt das capistrano-postgresql Gem auch eine Rolle und eine Datenbank in PostgreSQL auf dem Server. Es erstellt außerdem eine database.yml-Konfigurationsdatei, die Rails verwendet, um sich mit der Datenbank zu verbinden.
 
-	> [AZURE.NOTE] Wenn Sie beim Bereitstellen die Fehlermeldung **Error reading response length from authentication socket** erhalten, müssen Sie eventuell mit dem Befehl `ssh-agent` den SSH-Agent in der Entwicklungsumgebung starten. Beispielsweise das Hinzufügen von `eval $(ssh-agent)` zu Ihrer ~/.bash\_profile-Datei.
+	> [AZURE.NOTE] Wenn Sie beim Bereitstellen die Fehlermeldung **Error reading response length from authentication socket** erhalten, müssen Sie eventuell mit dem Befehl `ssh-agent` den SSH-Agent in der Entwicklungsumgebung starten. Beispielsweise das Hinzufügen von `eval $(ssh-agent)` zu Ihrer ~/.bash_profile-Datei.
 	> 
 	> Sie müssen auch den SSH-Schlüssel des Agents Cache mit Hinzufügen der `ssh-add` Befehl.
 

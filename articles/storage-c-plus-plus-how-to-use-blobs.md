@@ -35,8 +35,8 @@ Dafür müssen Sie die Azure-Speicherclientbibliothek für C++ installieren und 
 
 Zum Installieren der Azure-Speicherclientbibliothek für C++ können Sie die folgenden Methoden verwenden:
 
--	**Linux:** Befolgen Sie die Anweisungen auf der Seite [Azure Storage Client Library for C++ README](https://github.com/Azure/azure-storage-cpp/blob/master/README.md) \(in englischer Sprache\).  
--	**Windows:** Klicken Sie in Visual Studio auf **Extras \> NuGet-Paket-Manager \> Paket-Manager-Konsole**. Geben Sie im Fenster der [NuGet-Paket-Manager-Konsole](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) den folgenden Befehl ein, und drücken Sie die **EINGABETASTE**:  
+-	**Linux:** Befolgen Sie die Anweisungen auf der Seite [Azure Storage Client Library for C++ README](https://github.com/Azure/azure-storage-cpp/blob/master/README.md) (in englischer Sprache).  
+-	**Windows:** Klicken Sie in Visual Studio auf **Extras > NuGet-Paket-Manager > Paket-Manager-Konsole**. Geben Sie im Fenster der [NuGet-Paket-Manager-Konsole](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) den folgenden Befehl ein, und drücken Sie die **EINGABETASTE**:  
 
 		Install-Package wastorage -Pre
 
@@ -62,12 +62,12 @@ Wählen Sie zum Starten des Azure-Speicheremulators die Schaltfläche **Start** 
 In den folgenden Beispielen wird davon ausgegangen, dass Sie eine dieser zwei Methoden verwendet haben, um die Speicherverbindungszeichenfolge abzurufen.
 
 ## Abrufen der Verbindungszeichenfolge
-Sie können Ihre Speicherkontoinformationen mit der Klasse **cloud\_storage\_account** darstellen. Verwenden Sie zum Abrufen von Speicherkontoinformationen aus der Speicher-Verbindungszeichenfolge die **parse**-Methode.
+Sie können Ihre Speicherkontoinformationen mit der Klasse **cloud_storage_account** darstellen. Verwenden Sie zum Abrufen von Speicherkontoinformationen aus der Speicher-Verbindungszeichenfolge die **parse**-Methode.
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
 
-Rufen Sie als nächstes einen Verweis auf die Klasse **cloud\_blob\_client** ab, da Sie mit dieser Objekte abrufen können, die im Blob-Speicherdienst gespeicherte Container und Blobs darstellen. Mit dem folgenden Code wird unter Verwendung des oben abgerufenen Speicherkontenobjekts ein **cloud\_blob\_client**-Objekt erstellt:
+Rufen Sie als nächstes einen Verweis auf die Klasse **cloud_blob_client** ab, da Sie mit dieser Objekte abrufen können, die im Blob-Speicherdienst gespeicherte Container und Blobs darstellen. Mit dem folgenden Code wird unter Verwendung des oben abgerufenen Speicherkontenobjekts ein **cloud_blob_client**-Objekt erstellt:
 
 	// Create the blob client.
 	azure::storage::cloud_blob_client blob_client = storage_account.create_cloud_blob_client();  
@@ -95,7 +95,7 @@ Jeder Blob im Azure-Speicher muss sich in einem Container befinden. Dieses Beisp
 	}  
 
 
-Standardmäßig ist der neue Container privat, und Sie müssen Ihren Speicherzugriffsschlüssel angeben, um Blobs aus diesem Container herunterzuladen. Wenn die Dateien \(Blobs\) im Container für alle verfügbar sein sollen, können Sie den Container mithilfe des folgenden Codes öffentlich machen:
+Standardmäßig ist der neue Container privat, und Sie müssen Ihren Speicherzugriffsschlüssel angeben, um Blobs aus diesem Container herunterzuladen. Wenn die Dateien (Blobs) im Container für alle verfügbar sein sollen, können Sie den Container mithilfe des folgenden Codes öffentlich machen:
 
 	// Make the blob container publicly accessible.
 	azure::storage::blob_container_permissions permissions;
@@ -107,7 +107,7 @@ Jede Person im Internet kann Blobs in einem öffentlichen Container anzeigen, Si
 ## Hochladen von Blobs in einen Container
 Azure Blob-Speicher unterstützt Blockblobs und Seitenblobs. In den meisten Fällen wird die Verwendung von Blockblobs empfohlen.
 
-Rufen Sie einen Containerverweis ab und verwenden Sie diesen zum Abrufen eines Blockblobverweises, um eine Datei in einen Blockblob hochzuladen. Sobald Sie über einen BLOB-Verweis verfügen, können Sie jeden Datenstrom in diesen hochladen, indem Sie die **upload\_from\_stream**-Methode aufrufen. Bei diesem Vorgang wird das Blob erstellt, falls es nicht bereits vorhanden ist, oder überschrieben, falls es vorhanden ist. Im folgenden Beispiel wird gezeigt, wie ein Blob in einen bereits erstellten Container hochgeladen wird.
+Rufen Sie einen Containerverweis ab und verwenden Sie diesen zum Abrufen eines Blockblobverweises, um eine Datei in einen Blockblob hochzuladen. Sobald Sie über einen BLOB-Verweis verfügen, können Sie jeden Datenstrom in diesen hochladen, indem Sie die **upload_from_stream**-Methode aufrufen. Bei diesem Vorgang wird das Blob erstellt, falls es nicht bereits vorhanden ist, oder überschrieben, falls es vorhanden ist. Im folgenden Beispiel wird gezeigt, wie ein Blob in einen bereits erstellten Container hochgeladen wird.
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -135,10 +135,10 @@ Rufen Sie einen Containerverweis ab und verwenden Sie diesen zum Abrufen eines B
 	azure::storage::cloud_block_blob blob3 = container.get_block_blob_reference(U("my-directory/my-sub-directory/my-blob-3"));
 	blob3.upload_text(U("other text"));  
 
-Sie können wahlweise auch die **upload\_from\_file**-Methode verwenden, um eine Datei in einen Block-Blob hochzuladen.
+Sie können wahlweise auch die **upload_from_file**-Methode verwenden, um eine Datei in einen Block-Blob hochzuladen.
 
 ## Auflisten der Blobs in einem Container
-Um die Blobs in einem Container aufzuführen, müssen Sie zuerst einen Containerverweis abrufen. Danach können Sie mit der **list\_blobs\_segmented**-Methode des Containers die Blobs oder die darin befindlichen Verzeichnisse abrufen. Um auf den umfassenden Satz an Eigenschaften und Methoden für ein zurückgegebenes **blob\_result\_segment** zuzugreifen, müssen Sie die **blob\_result\_segment.blobs**-Eigenschaft aufrufen, um ein **cloud\_blob**-Objekt abzurufen, oder Sie rufen die **blob\_result\_segment.directories**-Eigenschaft auf, um ein "cloud\_blob\_directory"-Objekt abzurufen. Im folgenden Code wird gezeigt, wie der URI der einzelnen Elemente im Container **my-sample-container** abgerufen und ausgegeben wird:
+Um die Blobs in einem Container aufzuführen, müssen Sie zuerst einen Containerverweis abrufen. Danach können Sie mit der **list_blobs_segmented**-Methode des Containers die Blobs oder die darin befindlichen Verzeichnisse abrufen. Um auf den umfassenden Satz an Eigenschaften und Methoden für ein zurückgegebenes **blob_result_segment** zuzugreifen, müssen Sie die **blob_result_segment.blobs**-Eigenschaft aufrufen, um ein **cloud_blob**-Objekt abzurufen, oder Sie rufen die **blob_result_segment.directories**-Eigenschaft auf, um ein "cloud_blob_directory"-Objekt abzurufen. Im folgenden Code wird gezeigt, wie der URI der einzelnen Elemente im Container **my-sample-container** abgerufen und ausgegeben wird:
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -172,7 +172,7 @@ Um die Blobs in einem Container aufzuführen, müssen Sie zuerst einen Container
 
 
 ## Herunterladen von Blobs
-Zum Herunterladen von Blobs rufen Sie zunächst einen Blob-Verweis ab, und rufen Sie anschließend die **download\_to\_stream**-Methode auf. Im folgenden Beispiel wird die **download\_to\_stream**-Methode verwendet, um den Blob-Inhalt auf ein Datenstromobjekt zu übertragen, das danach in einer lokalen Datei gespeichert werden kann.
+Zum Herunterladen von Blobs rufen Sie zunächst einen Blob-Verweis ab, und rufen Sie anschließend die **download_to_stream**-Methode auf. Im folgenden Beispiel wird die **download_to_stream**-Methode verwendet, um den Blob-Inhalt auf ein Datenstromobjekt zu übertragen, das danach in einer lokalen Datei gespeichert werden kann.
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -197,7 +197,7 @@ Zum Herunterladen von Blobs rufen Sie zunächst einen Blob-Verweis ab, und rufen
 	outfile.write((char *)&data[0], buffer.size());
 	outfile.close();  
 
-Alternativ können Sie die **download\_to\_file**-Methode verwenden, um den Inhalt eines Blobs in eine Datei herunterzuladen. Sie können auch die **download\_text**-Methode verwenden, um den Inhalt eines Blobs als Textzeichenfolge herunterzuladen.
+Alternativ können Sie die **download_to_file**-Methode verwenden, um den Inhalt eines Blobs in eine Datei herunterzuladen. Sie können auch die **download_text**-Methode verwenden, um den Inhalt eines Blobs als Textzeichenfolge herunterzuladen.
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -215,7 +215,7 @@ Alternativ können Sie die **download\_to\_file**-Methode verwenden, um den Inha
 	utility::string_t text = text_blob.download_text();
 
 ## Löschen von Blobs
-Zum Löschen eines Blobs rufen Sie zunächst einen Blob-Verweis ab, und rufen Sie anschließend die **delete\_blob**-Methode für diesen auf.
+Zum Löschen eines Blobs rufen Sie zunächst einen Blob-Verweis ab, und rufen Sie anschließend die **delete_blob**-Methode für diesen auf.
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);

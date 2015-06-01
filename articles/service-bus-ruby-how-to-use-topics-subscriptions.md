@@ -91,7 +91,7 @@ Fügen Sie mit Ihrem bevorzugten Texteditor Folgendes oben in die Ruby-Datei an 
 
 ## Einrichten einer Azure-Servicebus-Verbindung
 
-Das Azure-Modul entnimmt den Umgebungsvariablen **AZURE\_SERVICEBUS\_NAMESPACE** und **AZURE\_SERVICEBUS\_ACCESS\_KEY** 
+Das Azure-Modul entnimmt den Umgebungsvariablen **AZURE_SERVICEBUS_NAMESPACE** und **AZURE_SERVICEBUS_ACCESS_KEY** 
 die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure Service Bus-Namespace benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt werden, müssen Sie die Namespaceinformationen vor dem Verwenden von **Azure::ServiceBusService** mit dem folgenden Code angeben:
 
     Azure.config.sb_namespace = "<your azure service bus namespace>"
@@ -101,7 +101,7 @@ Legen Sie den Wert für den Service Bus-Namespace auf den von Ihnen erstellten W
 
 ## Erstellen eines Themas
 
-Das **Azure::ServiceBusService**-Objekt ermöglicht es Ihnen, mit Themen zu arbeiten. Der folgende Code erstellt ein **Azure::ServiceBusService**-Objekt. Verwenden Sie die **create\_topic()**-Methode, um ein Thema zu erstellen. Im folgenden Beispiel wird ein Thema erstellt oder ggf. ein Fehler ausgegeben.
+Das **Azure::ServiceBusService**-Objekt ermöglicht es Ihnen, mit Themen zu arbeiten. Der folgende Code erstellt ein **Azure::ServiceBusService**-Objekt. Verwenden Sie die **create_topic()**-Methode, um ein Thema zu erstellen. Im folgenden Beispiel wird ein Thema erstellt oder ggf. ein Fehler ausgegeben.
 
 	azure_service_bus_service = Azure::ServiceBusService.new
 	begin
@@ -137,11 +137,11 @@ Sie können auch Filter einrichten, durch die Sie angeben können, welche an ein
 
 Der von Abonnements unterstützte flexibelste Filtertyp ist **Azure::ServiceBus::SqlFilter**, der eine Teilmenge von SQL92 implementiert. SQL-Filter werden auf die Eigenschaften der Nachrichten angewendet, die für das Thema veröffentlicht werden. Weitere Informationen zu den Ausdrücken, die mit einem SQL-Filter verwendet werden können, finden Sie in der Syntax [SqlFilter.SqlExpression](http://msdn.microsoft.com/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx).
 
-Sie können mithilfe der **create\_rule()**-Methode des **Azure::ServiceBusService**-Objekts Filter zu einem Abonnement hinzufügen. Durch diese Methode können Sie neue Filter zu einem vorhandenen Abonnement hinzufügen.
+Sie können mithilfe der **create_rule()**-Methode des **Azure::ServiceBusService**-Objekts Filter zu einem Abonnement hinzufügen. Durch diese Methode können Sie neue Filter zu einem vorhandenen Abonnement hinzufügen.
 
-Da der Standardfilter automatisch auf alle neuen Abonnements angewendet wird, müssen Sie zuerst den Standardfilter entfernen. Ansonsten überschreibt **MatchAll** alle anderen Filter, die Sie angeben. Sie können die Standardregel mithilfe der **delete\_rule()**-Methode des **Azure::ServiceBusService**-Objekts entfernen.
+Da der Standardfilter automatisch auf alle neuen Abonnements angewendet wird, müssen Sie zuerst den Standardfilter entfernen. Ansonsten überschreibt **MatchAll** alle anderen Filter, die Sie angeben. Sie können die Standardregel mithilfe der **delete_rule()**-Methode des **Azure::ServiceBusService**-Objekts entfernen.
 
-Mit dem folgenden Beispiel wird ein Abonnement namens "high-messages" mit einem **Azure::ServiceBus::SqlFilter**-Filter erstellt, der nur Nachrichten auswählt, deren benutzerdefinierte **message\_number**-Eigenschaft größer ist als 3:
+Mit dem folgenden Beispiel wird ein Abonnement namens "high-messages" mit einem **Azure::ServiceBus::SqlFilter**-Filter erstellt, der nur Nachrichten auswählt, deren benutzerdefinierte **message_number**-Eigenschaft größer ist als 3:
 
 	subscription = azure_service_bus_service.create_subscription("test-topic", 
 	  "high-messages")
@@ -173,7 +173,7 @@ Wenn eine Nachricht an "test-topic" gesendet wird, wird diese nun stets an die E
 
 ## Senden von Nachrichten an ein Thema
 
-Um eine Nachricht an ein Service Bus-Thema zu senden, muss die Anwendung die **send\_topic\_message()**-Methode des **Azure::ServiceBusService**-Objekts verwenden. Nachrichten, die an Service Bus-Themen gesendet werden, sind **Azure::ServiceBus::BrokeredMessage**-Objekte. **Azure::ServiceBus::BrokeredMessage**-Objekte weisen eine Reihe von Standardeigenschaften (wie etwa **label** und **time\_to\_live**), ein Wörterbuch zur Aufnahme benutzerdefinierter anwendungsspezifischer Eigenschaften und einen Körper mit Zeichenfolgendaten auf. Eine Anwendung kann den Nachrichtenkörper festlegen, indem sie einen Zeichenfolgenwert an **send\_topic\_message()** weitergibt. Erforderliche Standardeigenschaften werden mit den Standardwerten gefüllt.
+Um eine Nachricht an ein Service Bus-Thema zu senden, muss die Anwendung die **send_topic_message()**-Methode des **Azure::ServiceBusService**-Objekts verwenden. Nachrichten, die an Service Bus-Themen gesendet werden, sind **Azure::ServiceBus::BrokeredMessage**-Objekte. **Azure::ServiceBus::BrokeredMessage**-Objekte weisen eine Reihe von Standardeigenschaften (wie etwa **label** und **time_to_live**), ein Wörterbuch zur Aufnahme benutzerdefinierter anwendungsspezifischer Eigenschaften und einen Körper mit Zeichenfolgendaten auf. Eine Anwendung kann den Nachrichtenkörper festlegen, indem sie einen Zeichenfolgenwert an **send_topic_message()** weitergibt. Erforderliche Standardeigenschaften werden mit den Standardwerten gefüllt.
 
 Das folgende Beispiel zeigt, wie Sie fünf Testnachrichten an "test-topic" senden. Beachten Sie, dass der benutzerdefinierte **message_number**-Eigenschaftswert jeder Nachricht gemäß der Iteration der Schleife variiert (dadurch wird bestimmt, welches Abonnement die Nachricht erhält):
 
@@ -187,13 +187,13 @@ Servicebus-Themen unterstützen eine maximale Nachrichtengröße von 256 MB (der
 
 ## Empfangen von Nachrichten aus einem Abonnement
 
-Nachrichten werden von einem Abonnement über die **receive\_subscription\_message()**-Methode des **Azure::ServiceBusService**-Objekts empfangen. Standardmäßig werden Nachrichten gelesen(peak) und gesperrt, ohne aus dem Abonnement gelöscht zu werden. Sie können die Nachricht lesen und aus dem Abonnement löschen, indem Sie die Option **peek\_lock** auf **false** setzen.
+Nachrichten werden von einem Abonnement über die **receive_subscription_message()**-Methode des **Azure::ServiceBusService**-Objekts empfangen. Standardmäßig werden Nachrichten gelesen(peak) und gesperrt, ohne aus dem Abonnement gelöscht zu werden. Sie können die Nachricht lesen und aus dem Abonnement löschen, indem Sie die Option **peek_lock** auf **false** setzen.
 
-Im Standardverhalten ist sind Empfang und Löschung von Nachrichten zweistufig. Dadurch können Anwendungen unterstützt werden, die fehlende Nachrichten nicht zulassen können. Wenn Servicebus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann an die Anwendung zurück. Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen hat (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat), führt sie die zweite Phase des Empfangsprozesses durch Aufruf der **delete\_subscription\_message()**-Methode und Bereitstellen der Nachricht durch, die als Parameter gelöscht wird. Die **delete\_subscription\_message()**-Methode markiert die Nachricht als verarbeitet, und entfernt sie aus dem Abonnement.
+Im Standardverhalten ist sind Empfang und Löschung von Nachrichten zweistufig. Dadurch können Anwendungen unterstützt werden, die fehlende Nachrichten nicht zulassen können. Wenn Servicebus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann an die Anwendung zurück. Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen hat (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat), führt sie die zweite Phase des Empfangsprozesses durch Aufruf der **delete_subscription_message()**-Methode und Bereitstellen der Nachricht durch, die als Parameter gelöscht wird. Die **delete_subscription_message()**-Methode markiert die Nachricht als verarbeitet, und entfernt sie aus dem Abonnement.
 
-Wenn der **:peek\_lock**-Parameter auf **false** gesetzt ist, wird zum Lesen und Löschen der Nachricht das einfachste Modell verwendet. Dieses sollte für Anwendungen eingesetzt werden, die damit umgehen können, wenn Nachrichten bei Auftreten eines Fehlers nicht verarbeitet werden. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da Servicebus die Nachricht als verwendet markiert hat, wird er jene Nachricht auslassen, die vor dem Absturz verwendet wurde, wenn die Anwendung neu startet und erneut mit der Verwendung von Nachrichten beginnt.
+Wenn der **:peek_lock**-Parameter auf **false** gesetzt ist, wird zum Lesen und Löschen der Nachricht das einfachste Modell verwendet. Dieses sollte für Anwendungen eingesetzt werden, die damit umgehen können, wenn Nachrichten bei Auftreten eines Fehlers nicht verarbeitet werden. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da Servicebus die Nachricht als verwendet markiert hat, wird er jene Nachricht auslassen, die vor dem Absturz verwendet wurde, wenn die Anwendung neu startet und erneut mit der Verwendung von Nachrichten beginnt.
 
-Das Beispiel unten zeigt, wie Nachrichten mithilfe von **receive\_subscription\_message()** empfangen und verarbeitet werden können. In diesem Beispiel wird zuerst eine Nachricht des Abonnements "low-messages" mit **:peek\_lock** gleich **false** empfangen und gelöscht, und anschließend eine Nachricht des Abonnements "high-messages" empfangen und mit **delete\_subscription\_message()** gelöscht:
+Das Beispiel unten zeigt, wie Nachrichten mithilfe von **receive_subscription_message()** empfangen und verarbeitet werden können. In diesem Beispiel wird zuerst eine Nachricht des Abonnements "low-messages" mit **:peek_lock** gleich **false** empfangen und gelöscht, und anschließend eine Nachricht des Abonnements "high-messages" empfangen und mit **delete_subscription_message()** gelöscht:
 
     message = azure_service_bus_service.receive_subscription_message(
 	  "test-topic", "low-messages", { :peek_lock => false })
@@ -203,11 +203,11 @@ Das Beispiel unten zeigt, wie Nachrichten mithilfe von **receive\_subscription\_
 
 ## Umgang mit Anwendungsabstürzen und nicht lesbaren Nachrichten
 
-Servicebus stellt Funktionen zur Verfügung, die Ihnen bei der ordnungsgemäßen Behebung von Fehlern in der Anwendung oder bei Problemen beim Verarbeiten einer Nachricht helfen. Wenn eine Empfängeranwendung die Nachricht aus einem bestimmten Grund nicht verarbeiten kann, so kann sie die **unlock\_subscription\_message()**-Methode des **Azure::ServiceBusService**-Objekts aufrufen. Dies führt dazu, dass Servicebus die Nachricht innerhalb des Abonnements entsperrt und verfügbar macht, damit sie erneut empfangen werden kann, und zwar entweder durch dieselbe verarbeitende Anwendung oder durch eine andere verarbeitenden Anwendung.
+Servicebus stellt Funktionen zur Verfügung, die Ihnen bei der ordnungsgemäßen Behebung von Fehlern in der Anwendung oder bei Problemen beim Verarbeiten einer Nachricht helfen. Wenn eine Empfängeranwendung die Nachricht aus einem bestimmten Grund nicht verarbeiten kann, so kann sie die **unlock_subscription_message()**-Methode des **Azure::ServiceBusService**-Objekts aufrufen. Dies führt dazu, dass Servicebus die Nachricht innerhalb des Abonnements entsperrt und verfügbar macht, damit sie erneut empfangen werden kann, und zwar entweder durch dieselbe verarbeitende Anwendung oder durch eine andere verarbeitenden Anwendung.
 
 Zudem wird der im Abonnement gesperrten Anwendung ein Zeitlimit zugeordnet. Wenn die Anwendung die Nachricht vor Ablauf des Sperrzeitlimits nicht verarbeiten kann (zum Beispiel, wenn die Anwendung abstürzt), entsperrt Servicebus die Nachricht automatisch und macht sie verfügbar, um erneut empfangen zu werden.
 
-Falls die Anwendung nach der Verarbeitung der Nachricht, aber vor Aufrufen der **delete\_subscription\_message()**-Methode abstürzt, wird die Nachricht erneut an die Anwendung zugestellt, wenn diese neu gestartet wird. Dies wird häufig als **At Least Once Processing** (mindestens einmalige Verarbeitung) bezeichnet und bedeutet, dass jede Nachricht mindestens ein Mal verarbeitet wird, unter bestimmten Umständen jedoch ggf. auch erneut übermittelt wird. Wenn eine doppelte Verarbeitung im betreffenden Szenario nicht geeignet ist, sollten Anwendungsentwickler ihrer Anwendung zusätzliche Logik für den Umgang mit der Übermittlung doppelter Nachrichten hinzufügen. Dies wird häufig durch die Verwendung der **message\_id**-Eigenschaft der Nachricht erzielt, die über mehrere Zustellungsversuche hinweg konstant bleibt.
+Falls die Anwendung nach der Verarbeitung der Nachricht, aber vor Aufrufen der **delete_subscription_message()**-Methode abstürzt, wird die Nachricht erneut an die Anwendung zugestellt, wenn diese neu gestartet wird. Dies wird häufig als **At Least Once Processing** (mindestens einmalige Verarbeitung) bezeichnet und bedeutet, dass jede Nachricht mindestens ein Mal verarbeitet wird, unter bestimmten Umständen jedoch ggf. auch erneut übermittelt wird. Wenn eine doppelte Verarbeitung im betreffenden Szenario nicht geeignet ist, sollten Anwendungsentwickler ihrer Anwendung zusätzliche Logik für den Umgang mit der Übermittlung doppelter Nachrichten hinzufügen. Dies wird häufig durch die Verwendung der **message_id**-Eigenschaft der Nachricht erzielt, die über mehrere Zustellungsversuche hinweg konstant bleibt.
 
 ## Löschen von Themen und Abonnements
 

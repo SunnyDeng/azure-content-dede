@@ -28,8 +28,8 @@ In diesem Lernprogramm wird das Azure-Verwaltungsportal verwendet, um die folgen
 
 2.  Konfigurieren von Streamingendpunkten
 3.  Erstellen eines Kanals
-1.  Konfigurieren Sie einen Live-Encoder und nehmen Sie Live-Datenströme in den Kanal auf \(bei diesem Schritt wird Wirecast verwendet\)
-1.  Erstellen eines Programms \(und eines Medienobjekts\)
+1.  Konfigurieren Sie einen Live-Encoder und nehmen Sie Live-Datenströme in den Kanal auf (bei diesem Schritt wird Wirecast verwendet)
+1.  Erstellen eines Programms (und eines Medienobjekts)
 1.  Veröffentlichen des Medienobjekts und Abrufen von Streaming-URLs  
 1.  Wiedergeben Ihrer Inhalte 
 2.  Bereinigen
@@ -44,9 +44,9 @@ Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt 
 	 
 ##Konfigurieren von Streamingendpunkten mithilfe des Portals
 
-Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarien darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Mit adaptivem Bitrate-Streaming kann der Client während der Videodarstellung auf einen höheren oder niedrigeren Bitraten-Stream wechseln, basierend auf der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming \(HLS\), Smooth Streaming, MPEG DASH und HDS \(nur mit Adobe PrimeTime/Access-Lizenz\).
+Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarien darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Mit adaptivem Bitrate-Streaming kann der Client während der Videodarstellung auf einen höheren oder niedrigeren Bitraten-Stream wechseln, basierend auf der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
-Beim Arbeiten mit Livestreaming wird ein Livedatenstrom mit mehreren Bitraten von einem lokalen Liveencoder \(im Beispielfall Wirecast\) in den Kanal geleitet. Wenn der Datenstrom durch einen Benutzer angefordert wird, so wird der Quelldatenstrom durch dynamische Paketerstellung in die angeforderte Bitrate \(HLS, DASH oder Smooth\) umgewandelt.
+Beim Arbeiten mit Livestreaming wird ein Livedatenstrom mit mehreren Bitraten von einem lokalen Liveencoder (im Beispielfall Wirecast) in den Kanal geleitet. Wenn der Datenstrom durch einen Benutzer angefordert wird, so wird der Quelldatenstrom durch dynamische Paketerstellung in die angeforderte Bitrate (HLS, DASH oder Smooth) umgewandelt.
 
 Um die dynamische Paketerstellung nutzen zu können, ist mindestens eine Streamingeinheit für den **Streamingendpunkt** erforderlich, aus dem die Inhalte geliefert werden sollen.
 
@@ -161,7 +161,7 @@ Wenn Sie zur Seite **INHALT** wechseln, sehen Sie die Ressourcen, die für Ihre 
 
 ##Wiedergeben von Inhalten
 
-Um Ihren Benutzern eine URL bereitzustellen, die zum Streamen Ihrer Inhalte verwendet werden kann, müssen Sie Ihr Medienobjekt zunächst „veröffentlichen“ wie im vorigen Abschnitt beschrieben, indem Sie einen Locator erstellen \(wenn Sie ein Medienobjekt mithilfe des Portals veröffentlichen, werden die Locators automatisch erstellt\). Locators ermöglichen den Zugriff auf Dateien im Medienobjekt.
+Um Ihren Benutzern eine URL bereitzustellen, die zum Streamen Ihrer Inhalte verwendet werden kann, müssen Sie Ihr Medienobjekt zunächst „veröffentlichen“ wie im vorigen Abschnitt beschrieben, indem Sie einen Locator erstellen (wenn Sie ein Medienobjekt mithilfe des Portals veröffentlichen, werden die Locators automatisch erstellt). Locators ermöglichen den Zugriff auf Dateien im Medienobjekt.
 
 Je nach dem Streamingprotokoll, das zum Wiedergeben Ihrer Inhalte verwendet werden soll, müssen Sie möglicherweise die URL ändern, die Sie über den Link **URL VERÖFFENTLICHEN** des Kanals/Programms erhalten haben.
 
@@ -171,11 +171,11 @@ Eine Streaming-URL, mit der Sie Smooth Streaming-Medienobjekte wiedergeben könn
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest
 
-Um eine HLS-Streaming-URL zu erstellen, fügen Sie „\(format=m3u8-aapl\)“ an die URL an.
+Um eine HLS-Streaming-URL zu erstellen, fügen Sie „(format=m3u8-aapl)“ an die URL an.
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
 
-Um eine MPEG DASH-Streaming-URL zu erstellen, fügen Sie „\(format=mpd-time-csf\)“ an die URL an.
+Um eine MPEG DASH-Streaming-URL zu erstellen, fügen Sie „(format=mpd-time-csf)“ an die URL an.
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 

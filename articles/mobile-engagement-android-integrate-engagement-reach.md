@@ -238,7 +238,7 @@ Wenn Sie die bereitgestellten Layouts ändern, verändern Sie das Aussehen Ihrer
 
 Sie müssen beim Initialisieren der Anwendung einen Aufruf hinzufügen, um einen Kategoriehandler für Ihre Benachrichtigungen zu registrieren.
 
-> [AZURE.IMPORTANT] Bevor Sie fortfahren, finden Sie Informationen zur Warnung zum "android:process"-Attribut "\<android-sdk-engagement-process\>" unter "Integrieren von Engagement unter Android".
+> [AZURE.IMPORTANT] Bevor Sie fortfahren, finden Sie Informationen zur Warnung zum "android:process"-Attribut "<android-sdk-engagement-process>" unter "Integrieren von Engagement unter Android".
 
 Im folgenden Beispiel wird angenommen, dass Sie die vorherige Warnung bestätigt haben und eine Unterklasse von `EngagementApplication` verwenden:
 

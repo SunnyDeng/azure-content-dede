@@ -107,7 +107,7 @@ Der erste Schritt besteht darin, ein PowerShell-Modul zu erstellen, das auf die 
 2. Extrahieren Sie alle Inhalte.
 
     ![Extract all][1]
-3. Rufen Sie die Client-DLL für die elastische Skalierung (d. h. "Microsoft.Azure.SqlDatabase.ElasticScale.Client.dll") ab, und kopieren Sie die folgenden Dateien in den lokalen Ordner "ShardElasticityModule", den Sie in Schritt 1 heruntergeladen haben. Dies kann auf zwei Arten erfolgen:  Dies kann auf zwei Arten erfolgen: 1) Laden Sie die DLL über das NuGet-Paket für die elastische Skalierung [Link] oder 2) über das Starter-Kit-Projekt für die elastische Skalierung [Link] (muss erstellt werden) herunter. Wechseln Sie zu "\bin\Debug\", um die DLL abzurufen.
+3. Rufen Sie die Client-DLL für die elastische Skalierung (d. h. "Microsoft.Azure.SqlDatabase.ElasticScale.Client.dll") ab, und kopieren Sie die folgenden Dateien in den lokalen Ordner "ShardElasticityModule", den Sie in Schritt 1 heruntergeladen haben. Dies kann auf zwei Arten erfolgen:  Dies kann auf zwei Arten erfolgen: 1) Laden Sie die DLL über das NuGet-Paket für die elastische Skalierung [Link] oder 2) über das Starter-Kit-Projekt für die elastische Skalierung [Link] (muss erstellt werden) herunter. Wechseln Sie zu "\bin\Debug", um die DLL abzurufen.
 
     ![Obtain Dll][2]
 

@@ -24,7 +24,7 @@
 ## Übersicht
 
 In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem
-Azure Blob-Speicherdienst demonstriert. Die Beispiele sind in C\# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die aufgeführten Szenarien umfassen das
+Azure Blob-Speicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die aufgeführten Szenarien umfassen das
 **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs.
 
 > [AZURE.NOTE] Diese Anleitung gilt für die Azure .NET Storage Client Library 2.x und höher. Die empfohlene Version für die Storage-Clientbibliothek ist 4.x. Diese Version ist entweder über [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/) oder als Teil des [Azure-SDK für .NET](/downloads/) erhältlich. Unter [Programmgesteuerter Zugriff auf Blob-Speicher](#programmatically-access-blob-storage) weiter unten finden Sie weitere Informationen zum Download der Storage-Clientbibliothek.
@@ -40,7 +40,7 @@ Azure Blob-Speicherdienst demonstriert. Die Beispiele sind in C\# geschrieben un
 ### Abrufen der Assembly
 Wir empfehlen die Verwendung von NuGet zum Abrufen der `Microsoft.WindowsAzure.Storage.dll`-Assembly. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf Ihr Projekt, und wählen Sie **NuGet-Pakete verwalten** aus.  Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie dann auf **Installieren**, um das Azure Storage-Paket und die zugehörigen Abhängigkeiten zu installieren.
 
-"Microsoft.WindowsAzure.Storage.dll" ist ebenfalls im Azure-SDK für .NET enthalten, das Sie im <a href="http://azure.microsoft.com/develop/net/#">.NET Developer Center</a> herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Azure\.NET SDK\<sdk-version>\ref\` installiert.
+"Microsoft.WindowsAzure.Storage.dll" ist ebenfalls im Azure-SDK für .NET enthalten, das Sie im <a href="http://azure.microsoft.com/develop/net/#">.NET Developer Center</a> herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Azure.NET SDK<sdk-version>\ref` installiert.
 
 ### Namespace-Deklarationen
 Fügen Sie zu Beginn aller C#-Dateien, in denen Sie programmgesteuert auf Azure Storage zugreifen möchten, die folgenden Namespacedeklarationen hinzu:

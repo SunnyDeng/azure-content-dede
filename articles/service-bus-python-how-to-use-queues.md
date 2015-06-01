@@ -55,9 +55,9 @@ Den Namen und Wert des SAS-Schlüssels finden Sie in den Verbindungsinformatione
 
 ## Senden von Nachrichten an eine Warteschlange
 
-Um eine Nachricht an eine Service Bus-Warteschlange zu senden, ruft Ihre Anwendung die **send\_queue\_message()**-Methode für das **ServiceBusService**-Objekt auf.
+Um eine Nachricht an eine Service Bus-Warteschlange zu senden, ruft Ihre Anwendung die **send_queue_message()**-Methode für das **ServiceBusService**-Objekt auf.
 
-Im folgenden Beispiel wird veranschaulicht, wie eine Testnachricht an die Warteschlange namens *taskqueue* mithilfe von **send\_queue\_message** gesendet wird:
+Im folgenden Beispiel wird veranschaulicht, wie eine Testnachricht an die Warteschlange namens *taskqueue* mithilfe von **send_queue_message** gesendet wird:
 
 	msg = Message(b'Test Message')
 	bus_service.send_queue_message('taskqueue', msg)
@@ -66,17 +66,17 @@ Service Bus-Warteschlangen unterstützen eine maximale Nachrichtengröße von 25
 
 ## Empfangen von Nachrichten aus einer Warteschlange
 
-Nachrichten werden von einer Warteschlange empfangen, indem die **receive\_queue\_message**-Methode für das **ServiceBusService**-Objekt verwendet wird:
+Nachrichten werden von einer Warteschlange empfangen, indem die **receive_queue_message**-Methode für das **ServiceBusService**-Objekt verwendet wird:
 
 	msg = bus_service.receive_queue_message('taskqueue', peek_lock=False)
 	print(msg.body)
 
-Wenn der Parameter **peek\_lock** auf **False** festgelegt ist, werden Nachrichten nach dem Lesen aus der Warteschlange gelöscht. Sie können die Nachricht lesen (peek) und sperren, ohne sie aus der Warteschlange zu löschen, indem Sie den Parameter **peek\_lock** auf **True** festlegen.
+Wenn der Parameter **peek_lock** auf **False** festgelegt ist, werden Nachrichten nach dem Lesen aus der Warteschlange gelöscht. Sie können die Nachricht lesen (peek) und sperren, ohne sie aus der Warteschlange zu löschen, indem Sie den Parameter **peek_lock** auf **True** festlegen.
 
 Das Verhalten für das Lesen und Löschen der Nachricht als Teil des Empfangsvorgangs ist das einfachste Modell. Es wird am besten für Szenarien eingesetzt, bei denen es eine Anwendung tolerieren kann, wenn eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da Service Bus die Nachricht als verwendet markiert hat, wird diese Nachricht verpasst, die vor dem Absturz verwendet wurde, wenn die Anwendung neu gestartet wird und erneut mit der Verwendung von Nachrichten beginnt.
 
 
-Wenn der Parameter **peek\_lock** auf **True** festgelegt ist, wird der Empfangsvorgang zu einem zweistufigen Vorgang. Dadurch können Anwendungen unterstützt werden, die fehlende Nachrichten nicht tolerieren können. Wenn Service Bus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann zurück an die Anwendung.
+Wenn der Parameter **peek_lock** auf **True** festgelegt ist, wird der Empfangsvorgang zu einem zweistufigen Vorgang. Dadurch können Anwendungen unterstützt werden, die fehlende Nachrichten nicht tolerieren können. Wenn Service Bus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann zurück an die Anwendung.
 Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen hat (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat), führt Sie die zweite Phase des Empfangsprozesses durch Aufrufen der **delete**-Methode des **Message**-Objekts aus. Die **delete**-Methode markiert die Nachricht als verarbeitet, und entfernt sie aus der Warteschlange.
 
 	msg = bus_service.receive_queue_message('taskqueue', peek_lock=True)

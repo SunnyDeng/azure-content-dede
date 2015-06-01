@@ -18,7 +18,7 @@
 
 # Erstellen einer Verfügbarkeitsgruppe mithilfe von Vorlagen im Azure-Ressourcen-Manager
 
-Sie können ganz einfach eine Verfügbarkeitsgruppe für einen virtuellen Computer erstellen, indem Sie Azure PowerShell oder die plattformübergreifende Befehlszeilenschnittstelle \(XPlat-CLI\) und eine Ressourcen-Manager-Vorlage verwenden. Von dieser Vorlage wird eine Verfügbarkeitsgruppe erstellt.
+Sie können ganz einfach eine Verfügbarkeitsgruppe für einen virtuellen Computer erstellen, indem Sie Azure PowerShell oder die plattformübergreifende Befehlszeilenschnittstelle (XPlat-CLI) und eine Ressourcen-Manager-Vorlage verwenden. Von dieser Vorlage wird eine Verfügbarkeitsgruppe erstellt.
  
 Stellen Sie zunächst sicher, dass Azure PowerShell und die XPlat-CLI konfiguriert und einsatzbereit sind.
 
@@ -33,17 +33,17 @@ Gehen folgendermaßen Sie vor, um mit einer Ressourcen-Manager-Vorlage im Github
 
 ### Schritt 1: Laden Sie die JSON-Datei herunter.
 
-Bestimmen Sie einen lokalen Ordner als Speicherort für die JSON-Vorlagendateien, und erstellen Sie den Ordner \(z. B. C:\\Azure\\Vorlagen\[Name\]\).
+Bestimmen Sie einen lokalen Ordner als Speicherort für die JSON-Vorlagendateien, und erstellen Sie den Ordner (z. B. C:\\Azure\\Vorlagen[Name]).
 
 Ersetzen Sie den Ordnernamen, kopieren Sie die folgenden Befehle, und führen Sie sie aus.
 
-	$folderName="<folder name, such as C:\Azure\Templates\[thing]>"
+	$folderName="<folder name, such as C:\Azure\Templates[thing]>"
 	$webclient = New-Object System.Net.WebClient
 	$url = "[Writers: add the URL to the RAW version of the target template in GitHub]"
 	$filePath = $folderName + "\azuredeploy.json"
 	$webclient.DownloadFile($url,$filePath) 
 
-### Schritt 2 \(optional\): Rufen Sie die Parameter auf.
+### Schritt 2 (optional): Rufen Sie die Parameter auf.
 
 Wenn Sie mit einer Vorlage [Aktionen ausführen], müssen Sie mehrere Konfigurationsparameter angeben. Um die Parameter anzuzeigen, die Sie für die Vorlage in einer lokalen JSON-Datei angeben müssen, bevor Sie den Befehl zum Erstellen des virtuellen Computers ausführen, öffnen Sie die JSON-Datei in einem Tool oder Texteditor Ihrer Wahl. Suchen Sie oben in der Datei nach dem Bereich „Parameter“. Dort sind die Parameter aufgeführt, die erforderlich sind, damit der virtuelle Computer von der Vorlage konfiguriert werden kann. Dies ist der Bereich **„Parameter“** der Vorlage „azuredeploy.json“:
 
@@ -60,7 +60,7 @@ Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die Ressou
 	$deployName="<deployment name>"
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as West US>"
-	$folderName="<folder name, such as C:\Azure\Templates\[thing]>" 
+	$folderName="<folder name, such as C:\Azure\Templates[thing]>" 
 	$templateFile= $folderName + "\azuredeploy.json"
 	New-AzureResourceGroup –Name $RGName –Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateFile $templateFile
@@ -72,7 +72,7 @@ Es folgt ein PowerShell-Beispielbefehlssatz für die Vorlage.
 	$deployName="TestDeployment"
 	$RGName="TestRG"
 	$locname="West US"
-	$folderName="C:\Azure\Templates\[thing]"
+	$folderName="C:\Azure\Templates[thing]"
 	$templateFile= $folderName + "\azuredeploy.json"
 	New-AzureResourceGroup –Name $RGName –Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateFile $templateFile
@@ -91,7 +91,7 @@ Die Ausgabe sollte folgendermaßen aussehen:
 	vmSourceImageName: a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201503.01-en.us-127GB.vhd
 	...
 
-Verwenden Sie zum Entfernen dieser Ressourcengruppe und all ihrer Ressourcen \(Speicherkonto, virtueller Computer, virtuelles Netzwerk\) den folgenden Befehl:
+Verwenden Sie zum Entfernen dieser Ressourcengruppe und all ihrer Ressourcen (Speicherkonto, virtueller Computer, virtuelles Netzwerk) den folgenden Befehl:
 
 	Remove-AzureResourceGroup –Name "<resource group name>"
 
@@ -102,13 +102,13 @@ Gehen Sie folgendermaßen vor, um mit einer Ressourcen-Manager-Vorlage im Github
 
 ### Schritt 1: Laden Sie die JSON-Datei für die Vorlage herunter.
 
-Bestimmen Sie einen lokalen Ordner als Speicherort für die JSON-Vorlagendateien, und erstellen Sie den Ordner \(z. B. C:\\Azure\\Vorlagen\[Name\]\).
+Bestimmen Sie einen lokalen Ordner als Speicherort für die JSON-Vorlagendateien, und erstellen Sie den Ordner (z. B. C:\\Azure\\Vorlagen[Name]).
 
 Geben Sie den Ordnernamen an, und führen Sie die folgenden Befehle aus:
 
 [XPlat-Befehle zum Herunterladen der Vorlagendatei]
 
-### Schritt 2 \(optional\): Rufen Sie die Parameter der Vorlage auf.
+### Schritt 2 (optional): Rufen Sie die Parameter der Vorlage auf.
 
 Wenn Sie mit einer Vorlage [Aktionen ausführen], müssen Sie mehrere Konfigurationsparameter angeben. Um die Parameter anzuzeigen, die Sie für die Vorlage in einer lokalen JSON-Datei angeben müssen, bevor Sie den Befehl zum Erstellen des virtuellen Computers ausführen, öffnen Sie die JSON-Datei in einem Tool oder Texteditor Ihrer Wahl. Suchen Sie oben in der Datei nach dem Bereich „Parameter“. Dort sind die Parameter aufgeführt, die erforderlich sind, damit der virtuelle Computer von der Vorlage konfiguriert werden kann. Dies ist der Bereich **„Parameter“** der Vorlage „azuredeploy.json“:
 
@@ -136,7 +136,7 @@ Die Ausgabe sollte folgendermaßen aussehen:
 [Hinweis für Autoren: Fügen Sie bei den ersten Parametern, zu deren Eingabe Sie aufgefordert werden, die XPlat-Anzeige ein.]
 
 
-Zum Entfernen dieser Ressourcengruppe und all ihrer Ressourcen \([Elemente in der Ressourcengruppe]\) verwenden Sie den folgenden Befehl:
+Zum Entfernen dieser Ressourcengruppe und all ihrer Ressourcen ([Elemente in der Ressourcengruppe]) verwenden Sie den folgenden Befehl:
 
 [XPlat-Befehl]
 

@@ -108,7 +108,7 @@ Im vorstehenden Beispiel ist  `sms` ein **ServiceManagementService**-Objekt. Die
 
 ## <a name="ListAvailableLocations"> </a>Vorgehensweise: Auflisten verfügbarer Standorte
 
-Um die für das Hosten von Diensten verfügbaren Standorte aufzulisten, verwenden Sie die Methode **list\_locations**:
+Um die für das Hosten von Diensten verfügbaren Standorte aufzulisten, verwenden Sie die Methode **list_locations**:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -119,7 +119,7 @@ Um die für das Hosten von Diensten verfügbaren Standorte aufzulisten, verwende
 	for location in result:
 		print(location.name)
 
-Wenn Sie einen Cloud-Dienst, einen Speicherdienst oder eine Affinitätsgruppe erstellen, müssen Sie einen gültigen Standort angeben. Die Methode **list\_locations** gibt stets eine aktuelle Liste der derzeit verfügbaren Standorte zurück. Zum Zeitpunkt der Erstellung dieses Dokuments waren folgende Standorte verfügbar:
+Wenn Sie einen Cloud-Dienst, einen Speicherdienst oder eine Affinitätsgruppe erstellen, müssen Sie einen gültigen Standort angeben. Die Methode **list_locations** gibt stets eine aktuelle Liste der derzeit verfügbaren Standorte zurück. Zum Zeitpunkt der Erstellung dieses Dokuments waren folgende Standorte verfügbar:
 
 - Westeuropa 
 - Südostasien 
@@ -132,7 +132,7 @@ Wenn Sie einen Cloud-Dienst, einen Speicherdienst oder eine Affinitätsgruppe er
 
 ## <a name="CreateCloudService"> </a>Vorgehensweise: Erstellen eines Cloud-Diensts
 
-Wenn Sie eine Anwendung erstellen und in Azure ausführen, wird die Kombination aus Code und Konfiguration als Azure-[Cloud-Dienst] bezeichnet (in früheren Azure-Versionen als  *hosted service*). Mit der Methode **create\_hosted\_service** können Sie einen neuen gehosteten Dienst erstellen, indem Sie einen Namen des gehosteten Diensts (der in Azure eindeutig sein muss), eine Bezeichnung (automatisch base64-codiert), eine Beschreibung und einen Standort angeben. Anstelle eines Standorts können Sie auch eine Affinitätsgruppe für den Dienst angeben. 
+Wenn Sie eine Anwendung erstellen und in Azure ausführen, wird die Kombination aus Code und Konfiguration als Azure-[Cloud-Dienst] bezeichnet (in früheren Azure-Versionen als  *hosted service*). Mit der Methode **create_hosted_service** können Sie einen neuen gehosteten Dienst erstellen, indem Sie einen Namen des gehosteten Diensts (der in Azure eindeutig sein muss), eine Bezeichnung (automatisch base64-codiert), eine Beschreibung und einen Standort angeben. Anstelle eines Standorts können Sie auch eine Affinitätsgruppe für den Dienst angeben. 
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -147,7 +147,7 @@ Wenn Sie eine Anwendung erstellen und in Azure ausführen, wird die Kombination 
 	# You can either set the location or an affinity_group
 	sms.create_hosted_service(name, label, desc, location)
 
-Mit der Methode **list\_hosted\_services** können Sie alle gehosteten Dienste für Ihr Abonnement auflisten:
+Mit der Methode **list_hosted_services** können Sie alle gehosteten Dienste für Ihr Abonnement auflisten:
 
 	result = sms.list_hosted_services()
 
@@ -158,7 +158,7 @@ Mit der Methode **list\_hosted\_services** können Sie alle gehosteten Dienste f
 		print('Location: ' + hosted_service.hosted_service_properties.location)
 		print('')
 
-Wenn Sie Informationen über einen bestimmten gehosteten Dienst abrufen möchten, übergeben Sie den Namen des gehosteten Diensts an die Methode **get\_hosted\_service\_properties**:
+Wenn Sie Informationen über einen bestimmten gehosteten Dienst abrufen möchten, übergeben Sie den Namen des gehosteten Diensts an die Methode **get_hosted_service_properties**:
 
 	hosted_service = sms.get_hosted_service_properties('myhostedservice')
 
@@ -167,11 +167,11 @@ Wenn Sie Informationen über einen bestimmten gehosteten Dienst abrufen möchten
 	print('Affinity group: ' + hosted_service.hosted_service_properties.affinity_group)
 	print('Location: ' + hosted_service.hosted_service_properties.location)
 			
-Nachdem Sie einen Cloud-Dienst erstellt haben, können Sie Ihren Code mit der Methode **create\_deployment** für den Dienst bereitstellen.
+Nachdem Sie einen Cloud-Dienst erstellt haben, können Sie Ihren Code mit der Methode **create_deployment** für den Dienst bereitstellen.
 
 ## <a name="DeleteCloudService"> </a>Vorgehensweise: Löschen eines Cloud-Diensts
 
-Sie können einen Cloud-Dienst löschen, indem Sie den Dienstnamen an die Methode **delete\_hosted\_service** übergeben:
+Sie können einen Cloud-Dienst löschen, indem Sie den Dienstnamen an die Methode **delete_hosted_service** übergeben:
 
 	sms.delete_hosted_service('myhostedservice')
 
@@ -179,10 +179,10 @@ Bevor Sie einen Dienst löschen können, müssen zunächst alle Bereitstellungen
 
 ## <a name="CreateDeployment"> </a>Vorgehensweise: Erstellen einer Bereitstellung
 
-Die Methode **create\_deployment** lädt ein neues [Dienstpaket] hoch und erstellt eine neue Bereitstellung in der Staging- oder Produktionsumgebung. Für diese Methode sind folgende Parameter verfügbar:
+Die Methode **create_deployment** lädt ein neues [Dienstpaket] hoch und erstellt eine neue Bereitstellung in der Staging- oder Produktionsumgebung. Für diese Methode sind folgende Parameter verfügbar:
 
 * **name**: Der Name des gehosteten Diensts.
-* **deployment\_name**: Der Name der Bereitstellung.
+* **deployment_name**: Der Name der Bereitstellung.
 * **slot**: Eine Zeichenfolge, die den Slot  `staging` oder  `production` angibt.
 * **package_url**: Die URL für das Bereitstellungspaket (eine .cspgk-Datei). Die Paketdatei muss in einem Azure-Blob-Speicherkonto unter demselben Abonnement gespeichert werden wie der gehostete Dienst, in den das Paket hochgeladen wird. Zum Erstellen eines Bereitstellungspakets können Sie die [Azure-PowerShell-Cmdlets] oder das [cspack-Befehlszeilentool] verwenden.
 * **configuration**: Die base64-codierte Dienstkonfigurationsdatei (.cscfg-Datei).
@@ -208,9 +208,9 @@ Das folgende Beispiel erstellt eine neue Bereitstellung `v1` for a hosted servic
 	operation_result = sms.get_operation_status(result.request_id)
 	print('Operation status: ' + operation_result.status)
 
-Beachten Sie, dass im vorstehenden Beispiel der Status des Vorgangs **create\_deployment** abgerufen werden kann, indem das von **create\_deployment** zurückgegebene Ergebnis an die Methode **get\_operation\_status** übergeben wird.
+Beachten Sie, dass im vorstehenden Beispiel der Status des Vorgangs **create_deployment** abgerufen werden kann, indem das von **create_deployment** zurückgegebene Ergebnis an die Methode **get_operation_status** übergeben wird.
 
-Mit den Methoden **get\_deployment\_by\_slot** und **get\_deployment\_by\_name** können Sie auf Bereitstellungseigenschaften zugreifen. Der folgende Beispielcode ruft eine Bereitstellung durch Angabe des Bereitstellungsslots ab. Außerdem iteriert das Beispiel durch alle Instanzen für die Bereitstellung:
+Mit den Methoden **get_deployment_by_slot** und **get_deployment_by_name** können Sie auf Bereitstellungseigenschaften zugreifen. Der folgende Beispielcode ruft eine Bereitstellung durch Angabe des Bereitstellungsslots ab. Außerdem iteriert das Beispiel durch alle Instanzen für die Bereitstellung:
 
 	result = sms.get_deployment_by_slot('myhostedservice', 'production')
 
@@ -226,9 +226,9 @@ Mit den Methoden **get\_deployment\_by\_slot** und **get\_deployment\_by\_name**
 
 ## <a name="UpdateDeployment"> </a>Vorgehensweise: Aktualisieren einer Bereitstellung
 
-Eine Bereitstellung kann mit der Methode **change\_deployment\_configuration** oder der Methode **update\_deployment\_status** aktualisiert werden.
+Eine Bereitstellung kann mit der Methode **change_deployment_configuration** oder der Methode **update_deployment_status** aktualisiert werden.
 
-Die Methode **change\_deployment\_configuration** ermöglicht das Hochladen einer neuen Dienstkonfigurationsdatei (`CSCFG`), wodurch mehrere Diensteinstellungen geändert werden können (einschließlich der Anzahl der Instanzen in einer Bereitstellung). Weitere Informationen finden Sie unter [Azure-Dienstkonfigurationsschema (.cscfg-Datei)]. Im folgenden Beispiel wird das Hochladen einer neuen Dienstkonfigurationsdatei veranschaulicht:
+Die Methode **change_deployment_configuration** ermöglicht das Hochladen einer neuen Dienstkonfigurationsdatei (`CSCFG`), wodurch mehrere Diensteinstellungen geändert werden können (einschließlich der Anzahl der Instanzen in einer Bereitstellung). Weitere Informationen finden Sie unter [Azure-Dienstkonfigurationsschema (.cscfg-Datei)]. Im folgenden Beispiel wird das Hochladen einer neuen Dienstkonfigurationsdatei veranschaulicht:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -246,9 +246,9 @@ Die Methode **change\_deployment\_configuration** ermöglicht das Hochladen eine
 	print('Operation status: ' + operation_result.status)
 
 
-Beachten Sie, dass im vorstehenden Beispiel der Status des Vorgangs **change\_deployment\_configuration** abgerufen werden kann, indem das von **create\_deployment\_configuration** zurückgegebene Ergebnis an die Methode **get\_operation\_status** übergeben wird.
+Beachten Sie, dass im vorstehenden Beispiel der Status des Vorgangs **change_deployment_configuration** abgerufen werden kann, indem das von **create_deployment_configuration** zurückgegebene Ergebnis an die Methode **get_operation_status** übergeben wird.
 
-Mit der Methode **update\_deployment\_status** können Sie den Status einer Bereitstellung auf RUNNING oder SUSPENDED festlegen. Im folgenden Beispiel wird veranschaulicht, wie der Status für eine Bereitstellung mit dem Namen  `v1` of a hosted service called `myhostedservice` auf RUNNING festgelegt wird:
+Mit der Methode **update_deployment_status** können Sie den Status einer Bereitstellung auf RUNNING oder SUSPENDED festlegen. Im folgenden Beispiel wird veranschaulicht, wie der Status für eine Bereitstellung mit dem Namen  `v1` of a hosted service called `myhostedservice` auf RUNNING festgelegt wird:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -264,7 +264,7 @@ Mit der Methode **update\_deployment\_status** können Sie den Status einer Bere
 
 Azure stellt zwei Bereitstellungsumgebungen bereit: Staging und Produktion. Normalerweise wird ein Dienst in der Stagingumgebung bereitgestellt, um ihn zu testen, bevor er in der Produktionsumgebung bereitgestellt wird. Wenn Sie den Dienst von der Staging- in die Produktionsumgebung hochstufen möchten, ist keine erneute Bereitstellung erforderlich. Sie können hierzu einfach die Bereitstellungen austauschen. (Weitere Informationen zum Austauschen von Bereitstellungen finden Sie unter [Verwalten von Bereitstellungen in Azure].)
 
-Das folgende Beispiel zeigt, wie Sie mithilfe der Methode **swap\_deployment** zwei Bereitstellungen (namens `v1` und `v2`) austauschen. Im Beispiel befindet sich Bereitstellung **v1** vor dem Aufruf von `swap\_deployment` im Produktionsslot und Bereitstellung `v2` im Stagingslot. Nach Aufruf von **swap\_deployment** befindet sich `v2` im Produktions- und `v1` im Stagingslot.  
+Das folgende Beispiel zeigt, wie Sie mithilfe der Methode **swap_deployment** zwei Bereitstellungen (namens `v1` und `v2`) austauschen. Im Beispiel befindet sich Bereitstellung **v1** vor dem Aufruf von `swap_deployment` im Produktionsslot und Bereitstellung `v2` im Stagingslot. Nach Aufruf von **swap_deployment** befindet sich `v2` im Produktions- und `v1` im Stagingslot.  
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -275,7 +275,7 @@ Das folgende Beispiel zeigt, wie Sie mithilfe der Methode **swap\_deployment** z
 
 ## <a name="DeleteDeployment"> </a>Vorgehensweise: Löschen einer Bereitstellung
 
-Verwenden Sie zum Löschen einer Bereitstellung die Methode **delete\_deployment**. Im folgenden Beispiel wird eine Bereitstellung namens `v1` gelöscht.
+Verwenden Sie zum Löschen einer Bereitstellung die Methode **delete_deployment**. Im folgenden Beispiel wird eine Bereitstellung namens `v1` gelöscht.
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -286,7 +286,7 @@ Verwenden Sie zum Löschen einer Bereitstellung die Methode **delete\_deployment
 
 ## <a name="CreateStorageService"> </a>Vorgehensweise: Erstellen eines Speicherdiensts
 
-Ein [Speicherdienst] gewährt Ihnen Zugriff auf Azure-[Blobs][azure-blobs], -[Tabellen][azure-tables] und -[Warteschlangen][azure-queues]. Zum Erstellen eines Speicherdiensts müssen Sie Folgendes angeben: einen Namen für den Dienst (bestehend aus 3 bis 24 Kleinbuchstaben und innerhalb von Azure eindeutig), eine Beschreibung, eine Bezeichnung (maximal 100 Zeichen, automatisch base64-codiert) und entweder einen Standort oder eine Affinitätsgruppe. Im folgenden Beispiel wird ein Speicherdienst durch Angabe eines Standorts erstellt. Wenn Sie eine Affinitätsgruppe verwenden möchten, müssen Sie zunächst eine solche Gruppe erstellen (Informationen finden Sie unter [Gewusst wie: Erstellen einer Affinitätsgruppe](#CreateAffinityGroup)) und mit dem Parameter **affinity\_group** festlegen.
+Ein [Speicherdienst] gewährt Ihnen Zugriff auf Azure-[Blobs][azure-blobs], -[Tabellen][azure-tables] und -[Warteschlangen][azure-queues]. Zum Erstellen eines Speicherdiensts müssen Sie Folgendes angeben: einen Namen für den Dienst (bestehend aus 3 bis 24 Kleinbuchstaben und innerhalb von Azure eindeutig), eine Beschreibung, eine Bezeichnung (maximal 100 Zeichen, automatisch base64-codiert) und entweder einen Standort oder eine Affinitätsgruppe. Im folgenden Beispiel wird ein Speicherdienst durch Angabe eines Standorts erstellt. Wenn Sie eine Affinitätsgruppe verwenden möchten, müssen Sie zunächst eine solche Gruppe erstellen (Informationen finden Sie unter [Gewusst wie: Erstellen einer Affinitätsgruppe](#CreateAffinityGroup)) und mit dem Parameter **affinity_group** festlegen.
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -303,9 +303,9 @@ Ein [Speicherdienst] gewährt Ihnen Zugriff auf Azure-[Blobs][azure-blobs], -[Ta
 	operation_result = sms.get_operation_status(result.request_id)
 	print('Operation status: ' + operation_result.status)
 
-Beachten Sie, dass im vorstehenden Beispiel der Status des Vorgangs **create\_storage\_account** abgerufen werden kann, indem das von **create\_storage\_account** zurückgegebene Ergebnis an die Methode **get\_operation\_status** übergeben wird.  
+Beachten Sie, dass im vorstehenden Beispiel der Status des Vorgangs **create_storage_account** abgerufen werden kann, indem das von **create_storage_account** zurückgegebene Ergebnis an die Methode **get_operation_status** übergeben wird.  
 
-Mit der Methode **list\_storage\_accounts** können Sie Ihre Speicherkonten und deren Eigenschaften auflisten:
+Mit der Methode **list_storage_accounts** können Sie Ihre Speicherkonten und deren Eigenschaften auflisten:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -321,7 +321,7 @@ Mit der Methode **list\_storage\_accounts** können Sie Ihre Speicherkonten und 
 
 ## <a name="DeleteStorageService"> </a>Vorgehensweise: Löschen eines Speicherdiensts
 
-Sie können einen Speicherdienst löschen, indem Sie den Speicherdienstnamen an die Methode **delete\_storage\_account** übergeben. Beim Löschen eines Speicherdiensts werden alle im Dienst gespeicherten Daten ebenfalls gelöscht (Blobs, Tabellen und Warteschlangen).
+Sie können einen Speicherdienst löschen, indem Sie den Speicherdienstnamen an die Methode **delete_storage_account** übergeben. Beim Löschen eines Speicherdiensts werden alle im Dienst gespeicherten Daten ebenfalls gelöscht (Blobs, Tabellen und Warteschlangen).
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -350,7 +350,7 @@ Zum Erstellen einer Affinitätsgruppe benötigen Sie einen Namen, eine Bezeichnu
 
 Nachdem Sie eine Affinitätsgruppe erstellt haben, können Sie beim [Erstellen eines Speicherdiensts](#CreateStorageService).
 
-Mit der Methode **list\_affinity\_groups** können Sie Affinitätsgruppen auflisten und deren Eigenschaften überprüfen:
+Mit der Methode **list_affinity_groups** können Sie Affinitätsgruppen auflisten und deren Eigenschaften überprüfen:
 
 	result = sms.list_affinity_groups()
 
@@ -362,7 +362,7 @@ Mit der Methode **list\_affinity\_groups** können Sie Affinitätsgruppen auflis
 
 ## <a name="DeleteAffinityGroup"> </a>Vorgehensweise: Löschen einer Affinitätsgruppe
 	
-Sie können eine Affinitätsgruppe löschen, indem Sie den Gruppennamen an die Methode **delete\_affinity\_group** übergeben. Bevor Sie eine Affinitätsgruppe löschen können, muss diese von allen Diensten getrennt werden (alternativ müssen Dienste, die die Affinitätsgruppe verwenden, gelöscht werden).
+Sie können eine Affinitätsgruppe löschen, indem Sie den Gruppennamen an die Methode **delete_affinity_group** übergeben. Bevor Sie eine Affinitätsgruppe löschen können, muss diese von allen Diensten getrennt werden (alternativ müssen Dienste, die die Affinitätsgruppe verwenden, gelöscht werden).
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -373,7 +373,7 @@ Sie können eine Affinitätsgruppe löschen, indem Sie den Gruppennamen an die M
 
 ## <a name="ListOperatingSystems"> </a>Vorgehensweise: Auflisten verfügbarer Betriebssysteme
 
-Mit der Methode **list\_operating\_systems** können Sie die für das Hosten von Diensten verfügbaren Betriebssysteme auflisten:
+Mit der Methode **list_operating_systems** können Sie die für das Hosten von Diensten verfügbaren Betriebssysteme auflisten:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -387,7 +387,7 @@ Mit der Methode **list\_operating\_systems** können Sie die für das Hosten von
 		print('Family: ' + os.family_label)
 		print('Active: ' + str(os.is_active))
 
-Alternativ können Sie die Methode **list\_operating\_system\_families** verwenden, die die Betriebssysteme nach Familie gruppiert:
+Alternativ können Sie die Methode **list_operating_system_families** verwenden, die die Betriebssysteme nach Familie gruppiert:
 
 	result = sms.list_operating_system_families()
 
@@ -401,7 +401,7 @@ Alternativ können Sie die Methode **list\_operating\_system\_families** verwend
 
 ## <a name="CreateVMImage"> </a>Vorgehensweise: Erstellen eines Betriebssystemimage
 
-Wenn Sie dem Imagerepository ein Betriebssystemimage hinzufügen möchten, verwenden Sie die Methode **add\_os\_image**:
+Wenn Sie dem Imagerepository ein Betriebssystemimage hinzufügen möchten, verwenden Sie die Methode **add_os_image**:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -418,7 +418,7 @@ Wenn Sie dem Imagerepository ein Betriebssystemimage hinzufügen möchten, verwe
 	operation_result = sms.get_operation_status(result.request_id)
 	print('Operation status: ' + operation_result.status)
 
-Mit der Methode **list\_os\_images** können Sie die verfügbaren Betriebssystemimages auflisten. Die Liste umfasst alle Plattformimages und Benutzerimages:
+Mit der Methode **list_os_images** können Sie die verfügbaren Betriebssystemimages auflisten. Die Liste umfasst alle Plattformimages und Benutzerimages:
 
 	result = sms.list_os_images()
 
@@ -435,7 +435,7 @@ Mit der Methode **list\_os\_images** können Sie die verfügbaren Betriebssystem
 
 ## <a name="DeleteVMImage"> </a>Vorgehensweise: Löschen eines Betriebssystemimage
 
-Verwenden Sie zum Löschen eines Betriebssystemimages die Methode **delete\_os\_image**:
+Verwenden Sie zum Löschen eines Betriebssystemimages die Methode **delete_os_image**:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -449,7 +449,7 @@ Verwenden Sie zum Löschen eines Betriebssystemimages die Methode **delete\_os\_
 
 ## <a name="CreateVM"> </a>Vorgehensweise: Erstellen eines virtuellen Computers
 
-Zum Erstellen eines virtuellen Computers müssen Sie zunächst einen [Cloud-Dienst] erstellen.(#CreateCloudService).  Anschließend erstellen Sie die Bereitstellung des virtuellen Computers mit der Methode **create\_virtual\_machine\_deployment**:
+Zum Erstellen eines virtuellen Computers müssen Sie zunächst einen [Cloud-Dienst] erstellen.(#CreateCloudService).  Anschließend erstellen Sie die Bereitstellung des virtuellen Computers mit der Methode **create_virtual_machine_deployment**:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -488,7 +488,7 @@ Zum Erstellen eines virtuellen Computers müssen Sie zunächst einen [Cloud-Dien
 
 ## <a name="DeleteVM"> </a>Vorgehensweise: Löschen eines virtuellen Computers
 
-Zum Löschen eines virtuellen Computers löschen Sie zunächst die Bereitstellung mit der Methode **delete\_deployment**:
+Zum Löschen eines virtuellen Computers löschen Sie zunächst die Bereitstellung mit der Methode **delete_deployment**:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -498,7 +498,7 @@ Zum Löschen eines virtuellen Computers löschen Sie zunächst die Bereitstellun
 	sms.delete_deployment(service_name='myvm',
 		deployment_name='myvm')
 
-Anschließend kann der Cloud-Dienst mit der Methode **delete\_hosted\_service** gelöscht werden:
+Anschließend kann der Cloud-Dienst mit der Methode **delete_hosted_service** gelöscht werden:
 
 	sms.delete_hosted_service(service_name='myvm')
 

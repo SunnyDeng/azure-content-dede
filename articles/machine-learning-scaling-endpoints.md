@@ -20,10 +20,10 @@
 
 Webdienst-Endpunkte in Azure Machine Learning verfügen über auswählbare Drosselungsstufen, mit denen sie sich an die Nutzungsrate anpassen lassen.
 
-Mit zwei Faktoren lässt sich die Stärke der Drosselung eines Endpunkts steuern – Drosselungsstufe: Low \(niedrig\) oder High \(hoch\). Nur zahlende Kunden dürfen die Drosselungsstufe High \(Hoch\) festlegen - Höchstzahl gleichzeitiger Anrufe: 4 für Drosselungsstufe "Low" \(Niedrig\), 20 bis 200 für Drosselungsstufe "High" \(Hoch\).
+Mit zwei Faktoren lässt sich die Stärke der Drosselung eines Endpunkts steuern – Drosselungsstufe: Low (niedrig) oder High (hoch). Nur zahlende Kunden dürfen die Drosselungsstufe High (Hoch) festlegen - Höchstzahl gleichzeitiger Anrufe: 4 für Drosselungsstufe "Low" (Niedrig), 20 bis 200 für Drosselungsstufe "High" (Hoch).
 
 
-Die synchronen APIs werden in der Regel in Situationen verwendet, in denen eine niedrige Latenz erwünscht ist. Mit Latenz ist hier der Zeitraum gemeint, der von der API benötigt wird, um eine Anforderung abzuschließen, wobei keinerlei Netzwerkverzögerungen berücksichtigt werden. Angenommen, Sie haben eine API mit einer Latenz von 50 ms \(Millisekunden\). Um die verfügbare Kapazität mit der Drosselungsstufe High \(Hoch\) und einer Höchstzahl gleichzeitiger Anrufe = 20 voll nutzen zu können, müssen Sie diese API 20 \* 1000 / 50 = 400 Mal pro Sekunde aufrufen. Wenn man dieses Beispiel weiter fortspinnt, dann ermöglicht eine Höchstzahl von 200 gleichzeitigen Aufrufen 4000 Aufrufe der API pro Sekunde, sofern die Latenz 50 ms beträgt.
+Die synchronen APIs werden in der Regel in Situationen verwendet, in denen eine niedrige Latenz erwünscht ist. Mit Latenz ist hier der Zeitraum gemeint, der von der API benötigt wird, um eine Anforderung abzuschließen, wobei keinerlei Netzwerkverzögerungen berücksichtigt werden. Angenommen, Sie haben eine API mit einer Latenz von 50 ms (Millisekunden). Um die verfügbare Kapazität mit der Drosselungsstufe High (Hoch) und einer Höchstzahl gleichzeitiger Anrufe = 20 voll nutzen zu können, müssen Sie diese API 20 * 1000 / 50 = 400 Mal pro Sekunde aufrufen. Wenn man dieses Beispiel weiter fortspinnt, dann ermöglicht eine Höchstzahl von 200 gleichzeitigen Aufrufen 4000 Aufrufe der API pro Sekunde, sofern die Latenz 50 ms beträgt.
 
 Wenn Sie API stärker auslasten möchten, als sich durch 200 gleichzeitige Aufrufe unterstützen lässt, sollten Sie mehrere Endpunkte im gleichen Webdienst erstellen und die Last beliebig über alle Endpunkte verteilen.
 
@@ -41,7 +41,7 @@ Die Drosselungsstufe kann in der Verwaltungsschnittstelle geändert werden. Wenn
 - Klicken Sie auf den Endpunkt anschließend auf die Registerkarte "Configure" (Konfigurieren) ![Navigieren zur Endpunktkonfiguration](./media/machine-learning-scaling-endpoints/figure-2.png).
 
 
-- Ändern Sie die Drosselungsstufe in "High" (Hoch), und klicken Sie auf "Save" \(Speichern\).
+- Ändern Sie die Drosselungsstufe in "High" (Hoch), und klicken Sie auf "Save" (Speichern).
 
 
 

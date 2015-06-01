@@ -1,13 +1,13 @@
-﻿
+
 ##<a name="add-select-images"></a>Aktualisieren Sie die Quickstart-Client-App, um Bilder aufzunehmen und hochzuladen
 
 In diesem Abschnitt aktualisieren Sie das Projekt aus dem Lernprogramm [Erste Schritte mit Mobile Services], um Fotos aufzunehmen, und diese in den Azure-BLOB-Speicher hochzuladen. Zum Aufnehmen des Bilds wird in diesem Lernprogramm [CameraCaptureTask] aus dem  `Microsoft.Phone.Tasks`-Namespace verwendet. Diese Klasse startet die Kamera-Benutzeroberfläche auf dem Windows Phone-Gerät, um das Foto aufzunehmen, und speichert das Bild automatisch in Eigene Aufnahmen auf dem Windows Phone-Gerät. Falls Sie die Bilder nicht in "Eigene Aufnahmen" speichern möchten, verwenden Sie stattdessen die [PhotoCamera]-Klasse im  `Microsoft.Devices`-Namespace.
 
-1. Erweitern Sie im Projektmappen-Explorer für Visual Studio unter dem Projekt **Eigenschaften**. Öffnen Sie dann die Datei "WMAppManifest.xml", und aktivieren Sie auf der Registerkarte **Funktionen** die Kamera, indem Sie auf **ID\_CAP\_ISV\_CAMERA** klicken. Schließen Sie die Datei, um die Änderung zu speichern.
+1. Erweitern Sie im Projektmappen-Explorer für Visual Studio unter dem Projekt **Eigenschaften**. Öffnen Sie dann die Datei "WMAppManifest.xml", und aktivieren Sie auf der Registerkarte **Funktionen** die Kamera, indem Sie auf **ID_CAP_ISV_CAMERA** klicken. Schließen Sie die Datei, um die Änderung zu speichern.
 
-   	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-WMAppmanifest-wp8.png)
+    ![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-WMAppmanifest-wp8.png)
 
-   	Damit stellen Sie sicher, dass Ihre App eine am Computer angeschlossene Kamera nutzen kann. Bei der erstmaligen Ausführung der App wird der Benutzer dazu aufgefordert, Kamerazugang zu gestatten.
+   Damit stellen Sie sicher, dass Ihre App eine am Computer angeschlossene Kamera nutzen kann. Bei der erstmaligen Ausführung der App wird der Benutzer dazu aufgefordert, Kamerazugang zu gestatten.
 
 2. Öffnen Sie die Datei "MainPage.xaml", und ersetzen Sie das **Grid**-Element namens **ContentPanel** durch den folgenden Code:
 
@@ -156,13 +156,13 @@ Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass da
 
 2. Geben Sie einen Text in das Textfeld ein, und klicken Sie dann auf **Capture Image**.
 
-   	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-wp8.png)
+    ![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-wp8.png)
 
   	Dadurch wird die Benutzeroberfläche zur Kameraaufnahme angezeigt. 
 
 3. Klicken Sie auf die Bild- oder Schnappschuss-Schaltfläche auf dem Phone, um eine Aufnahme zu machen.
   
-   	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-camera-wp8.png)
+    ![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-camera-wp8.png)
 
 4. Klicken Sie auf **Akzeptieren**, um das Bild anzunehmen, und die Kamera-Benutzeroberfläche zu verlassen.
 

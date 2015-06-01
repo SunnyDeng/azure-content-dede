@@ -207,7 +207,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
     <p>Zunächst soll eine Hive-Tabelle aus der entsprechenden DocumentDB-Auflistung erstellt werden. Fügen Sie den folgenden Codeausschnitt zum PowerShell-Skript-Bereich <strong>nach</strong> dem Codeausschnitt von Nr. 1 hinzu. Sie müssen den optionalen DocumentDB.Abfrage-Parameter einbinden, um die entsprechenden Dokumente gemäß _ts und _rid zuzuschneiden. </p>
 
     > [AZURE.NOTE] **Die Benennung "DocumentDB.inputCollections" war kein Fehler.** Es ist möglich, mehrere Sammlungen als Eingabe hinzuzufügen: </br>
-    '*DocumentDB.inputCollections*' = '*\<DocumentDB-Eingabesammlung 1\>*,*\<DocumentDB-Eingabesammlung 2\>*' </br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet.
+    '*DocumentDB.inputCollections*' = '*<DocumentDB-Eingabesammlung 1>*,*<DocumentDB-Eingabesammlung 2>*' </br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet.
 
 		# Create a Hive table using data from DocumentDB. Pass DocumentDB the query to filter transferred data to _rid and _ts.
 		$queryStringPart1 = "drop table DocumentDB_timestamps; "  + 
@@ -223,7 +223,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 3.  Als Nächstes wird eine Hive-Tabelle für die Ausgabeauflistung erstellt. Bei den Eigenschaften des Ausgabedokuments handelt es sich um Monat, Tag, Stunde, Minute und die Gesamtanzahl an Vorkommen.
 
 	> [AZURE.NOTE] **Und auch hier war die Benennung "DocumentDB.outputCollections" kein Fehler.** Es ist möglich, mehrere Sammlungen als Ausgabe hinzuzufügen: </br>
-    '*DocumentDB.outputCollections*' = '*\<DocumentDB-Ausgabesammlung 1\>*,*\<DocumentDB-Ausgabesammlung 2\>*' </br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet. </br></br>
+    '*DocumentDB.outputCollections*' = '*<DocumentDB-Ausgabesammlung 1>*,*<DocumentDB-Ausgabesammlung 2>*' </br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet. </br></br>
     Die Dokumente werden in Umlauf gebracht und über mehrere Auflistungen hinweg verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
 
 		# Create a Hive table for the output data to DocumentDB.
@@ -303,7 +303,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
     <p>Laden Sie zunächst die Dokumente aus DocumentDB in HDInsight. Fügen Sie den folgenden Codeausschnitt zum PowerShell-Skript-Bereich <strong>nach</strong> dem Codeausschnitt von Nr. 1 hinzu. Achten Sie darauf, dass eine DocumentDB-Abfrage zum optionalen DocumentDB-Abfrageparameter hinzugefügt wird, um die Dokumente gemäß _ts und _rid zu verkürzen.</p>
 
     > [AZURE.NOTE] Ja, das Hinzufügen mehrerer Auflistungen ist als Eingabe zulässig: </br>
-    '*\<DocumentDB-Eingabesammlung 1\>*,*\<DocumentDB-Eingabesammlung 2\>*'</br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet. </b>
+    '*<DocumentDB-Eingabesammlung 1>*,*<DocumentDB-Eingabesammlung 2>*'</br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet. </b>
 
 	Die Dokumente werden in Umlauf gebracht und über mehrere Auflistungen hinweg verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
 
@@ -324,7 +324,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 4. Schließlich werden die Ergebnisse in der neuen Ausgabeauflistung abgespeichert.
 
     > [AZURE.NOTE] Ja, das Hinzufügen mehrerer Auflistungen ist als Ausgabe zulässig: </br>
-    '\<DocumentDB Output Collection Name 1\>,\<DocumentDB Output Collection Name 2\>'</br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet.</br>
+    '<DocumentDB Output Collection Name 1>,<DocumentDB Output Collection Name 2>'</br> Die Auflistungsnamen werden ohne Leerzeichen von einander abgegrenzt. Es wird lediglich ein einzelnes Komma verwendet.</br>
     Die Dokumente werden in Umlauf gebracht und über die mehrfachen Auflistungen hinweg verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
 
 		# Store output data to DocumentDB.

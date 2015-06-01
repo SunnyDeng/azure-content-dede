@@ -42,17 +42,17 @@ Um Probleme in Clientanwendungen mit Microsoft Azure-Speicher zu beheben, könne
 
 - **AzCopy**. Serverprotokolle für den Azure-Speicher werden als Blobs gespeichert, damit Sie AzCopy verwenden können, um die Protokoll-Blobs für die Analyse mithilfe von Microsoft Message Analyzer in ein lokales Verzeichnis zu kopieren. Weitere Informationen zu AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md).
 
-- **Microsoft Message Analyzer**. Message Analyzer ist ein Tool, das Protokolldateien in einem grafischen Format anzeigt, das es Ihnen erleichtert, Protokolldaten zu filtern, zu durchsuchen und zu gruppieren und so nützliche Zusammenstellungen für die Analyse von Fehlern und Leistungsproblemen zu erhalten. Weitere Informationen zu Message Analyzer finden Sie unter [Microsoft Message Analyzer Operating Guide](http://technet.microsoft.com/library/jj649776.aspx) \(in englischer Sprache\).
+- **Microsoft Message Analyzer**. Message Analyzer ist ein Tool, das Protokolldateien in einem grafischen Format anzeigt, das es Ihnen erleichtert, Protokolldaten zu filtern, zu durchsuchen und zu gruppieren und so nützliche Zusammenstellungen für die Analyse von Fehlern und Leistungsproblemen zu erhalten. Weitere Informationen zu Message Analyzer finden Sie unter [Microsoft Message Analyzer Operating Guide](http://technet.microsoft.com/library/jj649776.aspx) (in englischer Sprache).
 
 ## Informationen zum Beispielszenario
 
-Für dieses Lernprogramm untersuchen wir ein Szenario, in denen Metriken des Azure-Speichers eine niedrige prozentuale Erfolgsrate für eine Anwendung anzeigt, die den Azure-Speicher aufruft. Die Metrik zur niedrigen prozentualen Erfolgsrate \(im Azure-Portal und den Metrikentabellen als **PercentSuccess** angezeigt\) erfasst Vorgänge, die zwar erfolgreich waren, aber einen HTTP-Statuscode über 299 zurückgeben. In den serverseitigen Speicher-Protokollierungsdateien sind diese Vorgänge mit dem Transaktionsstatus **ClientOtherErrors** erfasst. Ausführliche Informationen zur Metrik zur niedrigen prozentualen Erfolgsrate finden Sie unter [Metriken zeigen niedrigen PercentSuccess an, oder Analyse-Protokolleinträge enthalten Vorgänge mit Transaktionsstatus "ClientOtherErrors"](storage-monitoring-diagnosing-troubleshooting.md#metrics-show-low-percent-success).
+Für dieses Lernprogramm untersuchen wir ein Szenario, in denen Metriken des Azure-Speichers eine niedrige prozentuale Erfolgsrate für eine Anwendung anzeigt, die den Azure-Speicher aufruft. Die Metrik zur niedrigen prozentualen Erfolgsrate (im Azure-Portal und den Metrikentabellen als **PercentSuccess** angezeigt) erfasst Vorgänge, die zwar erfolgreich waren, aber einen HTTP-Statuscode über 299 zurückgeben. In den serverseitigen Speicher-Protokollierungsdateien sind diese Vorgänge mit dem Transaktionsstatus **ClientOtherErrors** erfasst. Ausführliche Informationen zur Metrik zur niedrigen prozentualen Erfolgsrate finden Sie unter [Metriken zeigen niedrigen PercentSuccess an, oder Analyse-Protokolleinträge enthalten Vorgänge mit Transaktionsstatus "ClientOtherErrors"](storage-monitoring-diagnosing-troubleshooting.md#metrics-show-low-percent-success).
 
 Azure-Speichervorgänge geben möglicherweise als Teil ihrer normalen Funktionalität HTTP-Statuscodes zurück, die höher sind als 299. Diese Fehler zeigen jedoch in einigen Fällen an, dass Sie Ihre Clientanwendung optimieren können, um eine bessere Leistung zu erzielen.
 
 In diesem Szenario gehen wir davon aus, dass es sich bei Werten unter 100 % um eine niedrige prozentuale Erfolgsrate handelt. Sie können jedoch Ihren Anforderungen entsprechend eine andere Metrikgrenze auswählen. Es wird empfohlen, dass Sie beim Testen der Anwendung eine grundlegende Toleranz für die wichtigen Leistungsmetriken festlegen. Beispielsweise können Sie basierend auf Tests bestimmen, dass Ihre Anwendung eine gleichbleibende prozentuale Erfolgsrate von 90 oder 85 % erzielen sollte. Wenn Ihre Metrikdaten anzeigen, dass die Anwendung von dieser Zahl abweicht, können Sie die Ursache der Abweichung untersuchen.
 
-Nachdem wir in unserem Beispielszenario eingerichtet haben, dass die Metrik für die prozentuale Erfolgsrate unter 100 % liegt, untersuchen wir die Protokolle, um die Fehler zu finden, die mit diesen Metriken zusammenhängen, und nutzen sie, um die Ursache der geringeren prozentualen Erfolgsrate zu finden. Insbesondere konzentrieren wir uns auf Fehler im Bereich von 400. Daraufhin untersuchen wir Fehler 404 \(nicht gefunden\) genauer.
+Nachdem wir in unserem Beispielszenario eingerichtet haben, dass die Metrik für die prozentuale Erfolgsrate unter 100 % liegt, untersuchen wir die Protokolle, um die Fehler zu finden, die mit diesen Metriken zusammenhängen, und nutzen sie, um die Ursache der geringeren prozentualen Erfolgsrate zu finden. Insbesondere konzentrieren wir uns auf Fehler im Bereich von 400. Daraufhin untersuchen wir Fehler 404 (nicht gefunden) genauer.
 
 ### Einige Ursachen von Fehlern im Bereich von 400
 
@@ -60,20 +60,20 @@ Die Beispiele unten zeigen Stichproben einiger Fehler im Bereich von 400 für An
 
 Beachten Sie, dass die folgenden Listen nicht vollständig sind. Informationen zu allgemeinen Azure-Speicherfehlern und Fehlern der einzelnen Speicherdienste finden Sie unter [Status- und Fehlercodes](http://msdn.microsoft.com/library/azure/dd179382.aspx) auf MSDN.
 
-**Beispiele für Statuscode 404 \(nicht gefunden\)**
+**Beispiele für Statuscode 404 (nicht gefunden)**
 
 Tritt auf, wenn ein Lesevorgang für einen Container oder einen Blob fehlschlägt, weil der Blob oder Container nicht gefunden wurde.
 
 - Tritt auf, wenn ein Container oder Blob vor dieser Anfrage von einem anderen Client gelöscht wurde. 
 - Tritt auf, wenn Sie einen API-Aufruf verwenden, der den Container oder Blob erstellt, nachdem überprüft wurde, ob er vorhanden ist. Die APIs CreateIfNotExists führen zunächst einen HEAD-Aufruf durch, um das Vorhandensein des Containers oder Blobs zu überprüfen. Wenn hierbei festgestellt wird, dass er nicht vorhanden ist, wird ein Fehler 404 zurückgegeben und ein zweiter PUT-Aufruf durchgeführt, um den Container oder Blob zu erstellen.
 
-**Beispiele für Statuscode 409 \(Konflikt\)**
+**Beispiele für Statuscode 409 (Konflikt)**
 
 - Tritt auf, wenn Sie eine Create-API verwenden, um einen neuen Container oder Blob zu erstellen, ohne zunächst sein Vorhandensein zu überprüfen, sodass ein Container oder Blob mit einem bereits vorhandenen Namen erstellt wird. 
 - Tritt auf, wenn ein Container gelöscht wird und Sie versuchen, einen neuen Container mit demselben Namen zu erstellen, bevor der Löschvorgang abgeschlossen ist.
 - Tritt auf, wenn Sie eine Lease für einen Container oder Blob angeben, obwohl bereits eine Lease vorhanden ist.
  
-**Beispiele für Statuscode 412 \(Vorbedingung nicht erfüllt\)**
+**Beispiele für Statuscode 412 (Vorbedingung nicht erfüllt)**
 
 - Tritt auf, wenn die von einem Bedingungsheader angegebene Bedingung nicht erfüllt wurde.
 - Tritt auf, wenn die angegebene Lease-ID nicht mit der Lease-ID des Containers oder Blobs übereinstimmt.
@@ -130,13 +130,13 @@ Informationen zum Einstieg in PowerShell für Azure finden Sie unter [Installier
 
 ### Konfigurieren der clientseitigen .NET-Protokollierung
 
-Aktivieren Sie zum Konfigurieren der clientseitigen Protokollierung für eine .NET-Anwendung die .NET-Diagnose in der Konfigurationsdatei der Anwendung \(web.config oder app.config\). Weitere Informationen finden Sie unter [Clientseitige Protokollierung mit der .NET-Speicherclientbibliothek](http://msdn.microsoft.com/library/azure/dn782839.aspx) und [Clientseitige Protokollierung mit dem Microsoft Azure Storage SDK für Java](http://msdn.microsoft.com/library/azure/dn782844.aspx) auf MSDN.
+Aktivieren Sie zum Konfigurieren der clientseitigen Protokollierung für eine .NET-Anwendung die .NET-Diagnose in der Konfigurationsdatei der Anwendung (web.config oder app.config). Weitere Informationen finden Sie unter [Clientseitige Protokollierung mit der .NET-Speicherclientbibliothek](http://msdn.microsoft.com/library/azure/dn782839.aspx) und [Clientseitige Protokollierung mit dem Microsoft Azure Storage SDK für Java](http://msdn.microsoft.com/library/azure/dn782844.aspx) auf MSDN.
 
 Das clientseitige Protokoll enthält detaillierte Informationen darüber, wie der Client die Anfrage vorbereitet und die Antwort empfängt und verarbeitet.
 
 Die clientseitige Protokollfunktion wird in der Datei app.config oder web.config in der Anwendung konfiguriert. Weitere Informationen finden Sie unter [Clientseitige Protokollierung mit der .NET-Speicherclientbibliothek](http://msdn.microsoft.com/library/azure/dn782839.aspx) auf MSDN.
 
-Die Speicherclientbibliothek speichert clientseitige Protokolldaten an dem in der Konfigurationsdatei der Anwendung \(web.config oder app.config\) festgelegten Speicherort.
+Die Speicherclientbibliothek speichert clientseitige Protokolldaten an dem in der Konfigurationsdatei der Anwendung (web.config oder app.config) festgelegten Speicherort.
 
 ### Erfassen einer Netzwerkablaufverfolgung
 
@@ -144,19 +144,19 @@ Sie können Message Analyzer verwenden, um eine HTTP-/HTTPS-Ablaufverfolgung zu 
 
 1. Installieren Sie [Fiddler](http://www.telerik.com/download/fiddler).
 2. Starten Sie Fiddler.
-2. Wählen Sie **Tools \| Fiddler Options**.
+2. Wählen Sie **Tools | Fiddler Options**.
 3. Stellen Sie sicher, dass im Dialogfeld "Options" die Optionen **Capture HTTPS CONNECTs** und **Decrypt HTTPS Traffic** wie unten dargestellt aktiviert sind.
 
 ![Konfigurieren von Fiddler-Optionen](./media/storage-e2e-troubleshooting/fiddler-options-1.png)
 
 Erfassen und speichern Sie für das Lernprogramm zunächst eine Netzwerkablaufverfolgung in Message Analyzer, und erstellen Sie daraufhin eine Analysesitzung, um die Ablaufverfolgung und die Protokolle zu analysieren. So erfassen Sie eine Netzwerkablaufverfolgung in Message Analyzer:
 
-1. Wählen Sie in Message Analyzer **File \| Quick Trace \| Unencrypted HTTPS** aus.
+1. Wählen Sie in Message Analyzer **File | Quick Trace | Unencrypted HTTPS** aus.
 2. Die Ablaufverfolgung beginnt sofort. Wählen Sie **Stop** aus, um die Ablaufverfolgung anzuhalten, sodass sie für die ausschließliche Verfolgung des Speicherverkehrs konfiguriert werden kann.
 3. Wählen Sie **Edit** aus, um die Ablaufverfolgungssitzung zu bearbeiten.
 4. Wählen Sie **Configure** rechts neben dem ETW-Anbieter **Microsoft-Pef-WebProxy** aus.
 5. Klicken Sie im Dialogfeld **Advanced Settings** auf die Registerkarte **Provider**.
-6. Geben Sie im Feld **Hostname Filter** die Speicherendpunkte an \(getrennt durch Leerzeichen\). Sie können beispielsweise Ihre Endpunkte wie folgt angeben \(ändern Sie hierbei `storagesample` in den Namen Ihres Speicherkontos\):
+6. Geben Sie im Feld **Hostname Filter** die Speicherendpunkte an (getrennt durch Leerzeichen). Sie können beispielsweise Ihre Endpunkte wie folgt angeben (ändern Sie hierbei `storagesample` in den Namen Ihres Speicherkontos):
 	
 	```	
 	storagesample.blob.core.windows.net storagesample.queue.core.windows.net storagesample.table.core.windows.net 
@@ -166,7 +166,7 @@ Erfassen und speichern Sie für das Lernprogramm zunächst eine Netzwerkablaufve
 
 >[AZURE.NOTE]Nach dem Erfassen der Netzwerkablaufverfolgung wird dringend empfohlen, dass Sie die Einstellungen wiederherstellen, die Sie in Fiddler bezüglich der Entschlüsselung von HTTPS-Datenverkehr geändert haben. Deaktivieren Sie im Dialogfeld "Fiddler Options" die Kontrollkästchen **Capture HTTPS CONNECTs** und **Decrypt HTTPS Traffic**.
 
-Weitere Informationen finden Sie unter [Using the Network Tracing Features](http://technet.microsoft.com/library/jj674819.aspx) \(in englischer Sprache\) auf Technet.
+Weitere Informationen finden Sie unter [Using the Network Tracing Features](http://technet.microsoft.com/library/jj674819.aspx) (in englischer Sprache) auf Technet.
 
 ## Überprüfen der Metrikdaten im Portal
 
@@ -178,7 +178,7 @@ Sobald die Anwendung über einen bestimmten Zeitraum hinweg ausgeführt wurde, k
 
 ![Auswählen von Metriken](./media/storage-e2e-troubleshooting/choose-metrics-portal-1.png)
 
-Im Portal wird nun **Prozentsatz erfolgreich** im Überwachungsdiagramm neben sämtlichen anderen Metriken angezeigt, die Sie möglicherweise hinzugefügt haben \(bis zu sechs Metriken können gleichzeitig im Diagramm angezeigt werden\). Die folgende Abbildung zeigt, dass die prozentuale Erfolgsrate unter 100 % liegt. Dies ist das Szenario, das wir im Folgenden durch die Analyse der Protokolle in Message Analyzer untersuchen:
+Im Portal wird nun **Prozentsatz erfolgreich** im Überwachungsdiagramm neben sämtlichen anderen Metriken angezeigt, die Sie möglicherweise hinzugefügt haben (bis zu sechs Metriken können gleichzeitig im Diagramm angezeigt werden). Die folgende Abbildung zeigt, dass die prozentuale Erfolgsrate unter 100 % liegt. Dies ist das Szenario, das wir im Folgenden durch die Analyse der Protokolle in Message Analyzer untersuchen:
 
 ![Metrikdiagramm im Verwaltungsportal](./media/storage-e2e-troubleshooting/portal-metrics-chart-1.png)
 
@@ -200,7 +200,7 @@ Weitere Informationen zum Herunterladen serverseitiger Protokolle finden Sie unt
 
 ## Analysieren von Protokolldaten mithilfe von Microsoft Message Analyzer
 
-Microsoft Message Analyzer ist ein Tool zum Erfassen, Anzeigen und Analysieren von Messagingverkehr, -ereignissen und anderen System- oder Anwendungsnachrichten in Problembehandlungs- und Diagnoseszenarien. Message Analyzer ermöglicht außerdem das Laden, Zusammenfassen und Analysieren von Daten aus dem Protokoll und den gespeicherten Ablaufverfolgungsdateien. Weitere Informationen zu Message Analyzer finden Sie unter [Microsoft Message Analyzer Operating Guide](http://technet.microsoft.com/library/jj649776.aspx) \(in englischer Sprache\).
+Microsoft Message Analyzer ist ein Tool zum Erfassen, Anzeigen und Analysieren von Messagingverkehr, -ereignissen und anderen System- oder Anwendungsnachrichten in Problembehandlungs- und Diagnoseszenarien. Message Analyzer ermöglicht außerdem das Laden, Zusammenfassen und Analysieren von Daten aus dem Protokoll und den gespeicherten Ablaufverfolgungsdateien. Weitere Informationen zu Message Analyzer finden Sie unter [Microsoft Message Analyzer Operating Guide](http://technet.microsoft.com/library/jj649776.aspx) (in englischer Sprache).
 
 Message Analyzer enthält Ressourcen für Azure Storage, mit denen Sie Server-, Client- und Netzwerkprotokolle analysieren können. In diesem Abschnitt beschreiben wir die Verwendung dieser Tools zum Umgang mit Problemen niedriger prozentualer Erfolgsraten in den Speicherprotokollen.
 
@@ -223,7 +223,7 @@ Message Analyzer enthält Ressourcen für Azure Storage, mit denen Sie Server-, 
 
 ### Importieren der Protokolldateien in Message Analyzer
 
-Sie können alle Ihre gespeicherten Protokolldateien \(serverseitig, clientseitig und Netzwerk\) in einer einzigen Sitzung in Microsoft Message Analyzer für die Analyse importieren.
+Sie können alle Ihre gespeicherten Protokolldateien (serverseitig, clientseitig und Netzwerk) in einer einzigen Sitzung in Microsoft Message Analyzer für die Analyse importieren.
 
 1. Klicken Sie im Menü **File** von Microsoft Message Analyzer auf **New Session**, und klicken Sie dann auf **Blank Session**. Geben Sie im Dialogfeld **New Session** einen Namen für Ihre Analysesitzung ein. Klicken Sie im Bereich **Session Details** auf die Schaltfläche **Files**. 
 1. Um die von Message Analyzer generierten Netzwerkablaufverfolgungs-Daten zu laden, klicken Sie auf **Add Files**, navigieren Sie zum Speicherort, an dem Sie die MATP-Datei der Web-Protokollierungssitzung gespeichert haben, wählen Sie die MATP-Datei aus, und klicken Sie auf **Open**. 
@@ -241,7 +241,7 @@ Bestimmen Sie zunächst den Zeitraum, den Sie überprüfen möchten, und halten 
 
 Wenn Sie dennoch über eine große Menge von Protokolldaten verfügen, empfiehlt es sich möglicherweise, einen Sitzungsfilter festzulegen, der die Protokolldaten vor dem Laden filtert. Klicken Sie im Feld **Session Filter** auf die Schaltfläche **Library**, um einen vordefinierten Filter auszuwählen. Wählen Sie beispielsweise **Global Time Filter I** in den Azure-Speicherfiltern aus, um nach einem Zeitraum zu filtern. Anschließend können Sie die Filterkriterien bearbeiten, um das Start- und Enddatum des gewünschten Zeitraums festzulegen. Sie können auch nach bestimmten Status filtern: Sie können z. B. auswählen, dass nur Protokolleinträge mit dem Statuscode 404 geladen werden.
 
-Weitere Informationen zum Importieren von Daten in Microsoft Message Analyzer finden Sie unter [Retrieving Message Data](http://technet.microsoft.com/library/dn772437.aspx) \(in englischer Sprache\) auf TechNet.
+Weitere Informationen zum Importieren von Daten in Microsoft Message Analyzer finden Sie unter [Retrieving Message Data](http://technet.microsoft.com/library/dn772437.aspx) (in englischer Sprache) auf TechNet.
 
 ### Verwenden der Client-ID zum Zuordnen von Protokolldaten
 
@@ -257,7 +257,7 @@ Die Abbildung unten zeigt das Menü **View Layout** das über die Schaltfläche 
 
 ![Menü "Layout anzeigen"](./media/storage-e2e-troubleshooting/view-layout-menu.png)
 
-Wählen Sie zunächst **Grouped by ClientRequestID and Module** aus. Dieses Ansichtslayout gruppiert Protokolldaten aus allen drei Protokollen nach Clientanfragen-ID und dann nach Quellprotokolldatei \(oder **Module** in Message Analyzer\). Mit dieser Ansicht können Sie eine bestimmte Clientanfragen-ID überprüfen und die Daten aller drei Protokolldateien für diese Clientanfragen-ID anzeigen.
+Wählen Sie zunächst **Grouped by ClientRequestID and Module** aus. Dieses Ansichtslayout gruppiert Protokolldaten aus allen drei Protokollen nach Clientanfragen-ID und dann nach Quellprotokolldatei (oder **Module** in Message Analyzer). Mit dieser Ansicht können Sie eine bestimmte Clientanfragen-ID überprüfen und die Daten aller drei Protokolldateien für diese Clientanfragen-ID anzeigen.
 
 Die Abbildung unten zeigt die Anwendung dieses Ansichtslayouts auf die Beispielprotokolldaten mit einem angezeigten Teilsatz der Spalten. Sie können erkennen, dass das Analyseraster für eine bestimmte Clientanfragen-ID Daten aus dem Clientprotokoll, dem Serverprotokoll und der Netzwerkablaufverfolgung anzeigt.
 
@@ -271,7 +271,7 @@ Zusätzlich zur Verwendung der Azure-Speicheransichtslayouts können Sie auch ei
 
 Die Speicherressourcen umfassen auch Farbregeln, die ein visuelles Mittel zum Identifizieren der verschiedenen Arten von Fehlern im Analyseraster bieten. Die vordefinierten Farbregeln gelten für HTTP-Fehler, sodass sie nur für das Serverprotokoll und die Netzwerkablaufverfolgung angezeigt werden.
 
-Um die Farbregeln anzuwenden, wählen Sie auf der Symbolleiste die Option **Color Rules** aus. Daraufhin werden die Azure-Speicherfarbregeln im Menü angezeigt. Wählen Sie für das Lernprogramm **Client Errors \(StatusCode between 400 and 499\)** aus, wie in der folgenden Abbildung dargestellt.
+Um die Farbregeln anzuwenden, wählen Sie auf der Symbolleiste die Option **Color Rules** aus. Daraufhin werden die Azure-Speicherfarbregeln im Menü angezeigt. Wählen Sie für das Lernprogramm **Client Errors (StatusCode between 400 and 499)** aus, wie in der folgenden Abbildung dargestellt.
 
 ![Layout: Azure-Speicheransicht](./media/storage-e2e-troubleshooting/color-rules-menu.png)
 
@@ -296,7 +296,7 @@ Nach dem Anwenden dieses Filters werden die Zeilen aus dem Clientprotokoll ausge
 
 >[AZURE.NOTE]Sie können die Spalte **StatusCode** filtern und dennoch die Daten aller drei Protokolle anzeigen, einschließlich des Clientprotokolls, indem Sie dem Filter einen Ausdruck hinzufügen, der Protokolleinträge mit dem Statuscode null einschließt. Verwenden Sie für das Erstellen dieses Filters folgende Elemente:
 >
-> <code>&\#42;StatusCode \>= 400 oder !&\#42;StatusCode</code>
+> <code>&#42;StatusCode >= 400 oder !&#42;StatusCode</code>
 >
 > Dieser Filter gibt alle Zeilen aus dem Clientprotokoll sowie die Zeilen des Serverprotokolls und des HTTP-Protokolls mit einem Statuscode über 400 zurück. Wenn Sie den Filter auf das Ansichtslayout anwenden, das nach Clientanfragen-ID und -modul gruppiert ist, können Sie die Protokolleinträge durchsuchen, um diejenigen zu finden, in denen alle drei Protokolle dargestellt werden.
 
@@ -305,7 +305,7 @@ Nach dem Anwenden dieses Filters werden die Zeilen aus dem Clientprotokoll ausge
 Die Speicherressourcen enthalten vordefinierte Filter, die Sie verwenden können, um Protokolldaten zu filtern und so die gesuchten Fehler oder Trends zu finden. Als Nächstes wenden wir zwei vordefinierte Filter an: einer, der die Server- und Netzwerkablaufverfolgungs-Protokolle nach 404-Fehlern filtert, und einen anderen, der die Daten nach einem angegebenen Zeitraum filtert.
 
 1. Öffnen Sie das Toolfenster "View Window", wenn es nicht bereits angezeigt wird. Wählen Sie auf der Symbolleiste die Option **Tool Windows** und dann **View Filter** aus.
-2. Wählen Sie im Fenster "View Filter" die Option **Library** aus, und suchen Sie in `Azure Storage`, um die Azure-Speicherfilter zu finden. Wählen Sie den Filter **404 \(Not Found\) messages in all logs** aus.
+2. Wählen Sie im Fenster "View Filter" die Option **Library** aus, und suchen Sie in `Azure Storage`, um die Azure-Speicherfilter zu finden. Wählen Sie den Filter **404 (Not Found) messages in all logs** aus.
 3. Öffnen Sie das Menü **Library** erneut, und wählen Sie den **Global Time Filter** aus.
 4. Ändern Sie die im Filter angezeigten Zeitstempel zu dem gewünschten Zeitraum. So können Sie den Zeitraum der zu analysierenden Daten eingrenzen.
 5. Der Filter wird ähnlich wie im folgenden Beispiel angezeigt. Klicken Sie auf **Apply**, um den Filter auf das Analyseraster anzuwenden.
@@ -342,25 +342,25 @@ Wenn Sie die Adresse des Blobs kennen, der den 404-Fehler verursacht hat, könne
 
 ## Analysieren anderer Arten von Speicherfehlern
 
-Nachdem Sie nun mit der Verwendung von Message Analyzer zum Analysieren Ihrer Daten vertraut sind, können Sie andere Arten von Fehlern mithilfe von Ansichtslayouts, Farbregeln und Such-/Filterfunktionen analysieren. Einige mögliche Probleme und die erforderlichen Filterkriterien zum Finden dieser Probleme sind in den folgenden Tabellen aufgeführt. Weitere Informationen zum Erstellen von Filtern und zur Filtersyntax von Message Analyzer finden Sie unter [Filtering Message Data](http://technet.microsoft.com/library/jj819365.aspx) \(in englischer Sprache\).
+Nachdem Sie nun mit der Verwendung von Message Analyzer zum Analysieren Ihrer Daten vertraut sind, können Sie andere Arten von Fehlern mithilfe von Ansichtslayouts, Farbregeln und Such-/Filterfunktionen analysieren. Einige mögliche Probleme und die erforderlichen Filterkriterien zum Finden dieser Probleme sind in den folgenden Tabellen aufgeführt. Weitere Informationen zum Erstellen von Filtern und zur Filtersyntax von Message Analyzer finden Sie unter [Filtering Message Data](http://technet.microsoft.com/library/jj819365.aspx) (in englischer Sprache).
 
-| Zum Untersuchen von... | Verwenden Sie folgenden Filterausdruck... | Ausdruck gilt für Protokoll \(Client, Server, Netzwerk, Alle\) |
+| Zum Untersuchen von... | Verwenden Sie folgenden Filterausdruck... | Ausdruck gilt für Protokoll (Client, Server, Netzwerk, Alle) |
 |------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
 | Unerwartete Verzögerungen bei der Nachrichtenübermittlung in einer Warteschlange | AzureStorageClientDotNetV4.Description contains "Retrying failed operation." | Client |
 | HTTP-Zunahme von PercentThrottlingError | HTTP.Response.StatusCode == 500 HTTP.Response.StatusCode == 503 | Netzwerk |
 | Zunahme von PercentTimeoutError | HTTP.Response.StatusCode == 500 | Netzwerk |
-| Zunahme von PercentTimeoutError (alle\) | *StatusCode == 500 | All | 
-| Zunahme von PercentNetworkError | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 \| Client | 
-| HTTP 403 (Forbidden\)-Meldungen | HTTP.Response.StatusCode == 403 | Network | 
-| HTTP 404 (Not found\)-Meldungen | HTTP.Response.StatusCode == 404 | Network | 
-| 404 (Alle\) | *StatusCode == 404 | All | 
-| Autorisierungsproblem für Shared Access Signature (SAS\) | AzureStorageLog.RequestStatus == "SASAuthorizationError" | Network | 
-| HTTP 409 (Conflict\)-Meldungen | HTTP.Response.StatusCode == 409 | Network | 
-| 409 (Alle\) | *StatusCode == 409 | All | 
+| Zunahme von PercentTimeoutError (alle) | *StatusCode == 500 | All | 
+| Zunahme von PercentNetworkError | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | Client | 
+| HTTP 403 (Forbidden)-Meldungen | HTTP.Response.StatusCode == 403 | Network | 
+| HTTP 404 (Not found)-Meldungen | HTTP.Response.StatusCode == 404 | Network | 
+| 404 (Alle) | *StatusCode == 404 | All | 
+| Autorisierungsproblem für Shared Access Signature (SAS) | AzureStorageLog.RequestStatus == "SASAuthorizationError" | Network | 
+| HTTP 409 (Conflict)-Meldungen | HTTP.Response.StatusCode == 409 | Network | 
+| 409 (Alle) | *StatusCode == 409 | All | 
 | "Low PercentSuccess" oder Analyseprotokolleinträge verfügen über Vorgänge mit Transaktionsstatus "ClientOtherErrors" | AzureStorageLog.RequestStatus == "ClientOtherError" | Server | 
-| Nagle-Warnung| (\(AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS\) \> \(AzureStorageLog.ServerLatencyMS \* 1.5\)\) and \(AzureStorageLog.RequestPacketSize \<1460\) and \(AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS \>= 200\) | Server | 
-| Zeitraum in Server- und Netzwerkprotokollen| \#Timestamp \>= 2014-10-20T16:36:38 and \#Timestamp \<= 2014-10-20T16:36:39 | Server, Network | 
-| Zeitraum in Serverprotokollen| AzureStorageLog.Timestamp \>= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp \<= 2014-10-20T16:36:39 | Server |
+| Nagle-Warnung| ((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) | Server | 
+| Zeitraum in Server- und Netzwerkprotokollen| #Timestamp >= 2014-10-20T16:36:38 and #Timestamp <= 2014-10-20T16:36:39 | Server, Network | 
+| Zeitraum in Serverprotokollen| AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 | Server |
 
 
 ## Nächste Schritte

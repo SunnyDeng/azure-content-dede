@@ -227,9 +227,9 @@ Erstellen Sie eine Konsolenanwendung, um Tweets zu erhalten, einen Tweet-Stimmun
         const string HBASETABLENAME = "tweets_by_words";
 
         // Sentiment dictionary file and the punctuation characters
-        const string DICTIONARYFILENAME = @"..\..\data\dictionary\dictionary.tsv";
+        const string DICTIONARYFILENAME = @"....\data\dictionary\dictionary.tsv";
         private static char[] _punctuationChars = new[] { 
-            ' ', '!', '\"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/',   //ascii 23--47
+            ' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/',   //ascii 23--47
             ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~' };   //ascii 58--64 + misc.
 
         // For writting to HBase
@@ -262,7 +262,7 @@ Erstellen Sie eine Konsolenanwendung, um Tweets zu erhalten, einen Tweet-Stimmun
                 tableSchema.name = HBASETABLENAME;
                 tableSchema.columns.Add(new ColumnSchema { name = "d" });
                 client.CreateTable(tableSchema);
-                Console.WriteLine("Table \"{0}\" is created.", HBASETABLENAME);
+                Console.WriteLine("Table "{0}" is created.", HBASETABLENAME);
             }
 
             // Load sentiment dictionary from a file

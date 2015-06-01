@@ -146,11 +146,11 @@ Windows stellt nun bei einem Neustart des virtuellen Computers erneut eine Verbi
 
 Nachdem Sie eine Remoteverbindung zum virtuellen Computer hergestellt haben, können Sie den Befehl  `net use` mit folgender Syntax ausführen, um die Dateifreigabe bereitzustellen. Ersetzen Sie `<storage-account>` durch den Namen Ihres Speicherkontos und `<share-name>` durch den Namen der Dateispeicherfreigabe.
 
-	net use z: \\<storage-account>.file.core.windows.net\<share-name>
+	net use z: <storage-account>.file.core.windows.net<share-name>
 
 > [AZURE.NOTE] Da Sie die Speicherkonto-Anmeldeinformationen im vorherigen Schritt dauerhaft gespeichert haben, müssen Sie diese nicht mit dem Befehl  `net use` angeben. Wenn Sie Ihre Anmeldeinformationen jedoch nicht dauerhaft gespeichert haben, fügen Sie sie als Parameter hinzu, der an den Befehl  `net use` übergeben wird. Ersetzen Sie `<storage-account>` durch den Namen Ihres Speicherkontos, `<share-name>` durch den Namen der Dateispeicher-Freigabe und `<account-key>` durch den Speicherkontoschlüssel:
 	   
-	net use z: \\<storage-account>.file.core.windows.net\<share-name> /u:<storage-account> <account-key>
+	net use z: <storage-account>.file.core.windows.net<share-name> /u:<storage-account> <account-key>
 
 Sie können nun mit der Dateispeicher-Freigabe vom virtuellen Computer aus arbeiten wie von jedem anderen Laufwerk auch. Sie können die Standarddateibefehle über die Eingabeaufforderung eingeben oder die bereitgestellte Freigabe und deren Inhalt im Datei-Explorer anzeigen. Außerdem können Sie Code auf dem virtuellen Computer ausführen, der über standardmäßige Windows-E/A-APIs auf die Dateifreigabe zugreift, die z. B. über die [System.IO-Namespaces](http://msdn.microsoft.com/library/gg145019(v=vs.110).aspx) in .NET Framework bereitgestellt werden. 
 

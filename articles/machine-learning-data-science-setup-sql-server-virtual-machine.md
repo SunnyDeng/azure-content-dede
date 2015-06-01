@@ -140,7 +140,7 @@ Das SQL Server-Datenbankmodul kann ohne Domänenumgebung keine Windows-Authentif
 
     Wenn Sie Management Studio erstmalig öffnen, muss dieses eine Management Studio-Benutzerumgebung erstellen. Dies kann einige Zeit dauern.
 
-2.  Beim Öffnen wird in Management Studio das Dialogfeld **Verbindung mit Server herstellen** angezeigt. Geben Sie im Feld **Servername** den Namen des virtuellen Computers ein, um das Datenbankmodul mit dem Objekt-Explorer zu verbinden. (Anstelle des Namens des virtuellen Computers können Sie auch **(lokal)** oder einen einzigen Punkt als **Servername** verwenden. Wählen Sie **Windows-Authentifizierung** aus, und lassen Sie ***Ihr\_VM-Name\\Ihr\_lokaler\_Administrator** im Feld **Benutzername** unverändert. Klicken Sie auf **Verbinden**.
+2.  Beim Öffnen wird in Management Studio das Dialogfeld **Verbindung mit Server herstellen** angezeigt. Geben Sie im Feld **Servername** den Namen des virtuellen Computers ein, um das Datenbankmodul mit dem Objekt-Explorer zu verbinden. (Anstelle des Namens des virtuellen Computers können Sie auch **(lokal)** oder einen einzigen Punkt als **Servername** verwenden. Wählen Sie **Windows-Authentifizierung** aus, und lassen Sie ***Ihr_VM-Name\\Ihr_lokaler_Administrator** im Feld **Benutzername** unverändert. Klicken Sie auf **Verbinden**.
 
     ![Connect to Server][6]
 
@@ -177,7 +177,7 @@ Das SQL Server-Datenbankmodul kann ohne Domänenumgebung keine Windows-Authentif
 
 Um von einem anderen Computer aus eine Verbindung zum Datenbankmodul herzustellen, müssen Sie mindestens einen Anmeldenamen für die SQL Server-Authentifizierung erstellen.  
 
-> [AZURE.TIP] Sie können programmgesteuert oder mithilfe von SQL Server Management Studio neue SQL Server-Anmeldungen erstellen. Um programmgesteuert einen neuen sysadmin-Benutzer mit SQL-Authentifizierung zu erstellen, starten Sie eine **Neue Abfrage** und führen das folgende Skript aus. Ersetzen Sie <new user name\> und <new password\> mit dem gewünschten Benutzernamen und Kennwort. Passen Sie die Kennwortrichtlinie ggf. an (der Beispielcode deaktiviert die Richtlinienprüfung und den Ablauf von Kennwörtern). Weitere Informationen zu Anmeldenamen für SQL Server finden Sie unter [Erstellen eines Anmeldenamens](http://msdn.microsoft.com/library/aa337562.aspx)  
+> [AZURE.TIP] Sie können programmgesteuert oder mithilfe von SQL Server Management Studio neue SQL Server-Anmeldungen erstellen. Um programmgesteuert einen neuen sysadmin-Benutzer mit SQL-Authentifizierung zu erstellen, starten Sie eine **Neue Abfrage** und führen das folgende Skript aus. Ersetzen Sie <new user name> und <new password> mit dem gewünschten Benutzernamen und Kennwort. Passen Sie die Kennwortrichtlinie ggf. an (der Beispielcode deaktiviert die Richtlinienprüfung und den Ablauf von Kennwörtern). Weitere Informationen zu Anmeldenamen für SQL Server finden Sie unter [Erstellen eines Anmeldenamens](http://msdn.microsoft.com/library/aa337562.aspx)  
 	
     USE master
     go

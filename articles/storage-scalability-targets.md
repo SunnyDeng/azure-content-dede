@@ -24,7 +24,7 @@ In diesem Thema werden die Skalierbarkeits- und Leistungsaspekte von Microsoft A
 
 >[AZURE.IMPORTANT] Die hier aufgelisteten Ziele für Skalierbarkeit und Leistung sind hochgesteckte Ziele, die jedoch erreichbar sind. In jedem Fall hängen die von Ihrem Speicherkonto erzielte Anforderungsrate und Bandbreite von der Größe der gespeicherten Objekte, den verwendeten Zugriffsmustern und der Art der von der Anwendung ausgeführten Arbeitslast ab. Testen Sie unbedingt Ihren Dienst, um festzustellen, ob seine Leistung Ihren Anforderungen entspricht. Wenn möglich, vermeiden Sie plötzliche Lastspitzen bei der Datenverkehrsrate, und stellen Sie sicher, dass der Datenverkehr über alle Partitionen verteilt ist.
 
->Wenn Ihre Anwendung die Grenze dessen erreicht, was eine Partition an Arbeitsauslastung bewältigen kann, dann gibt Azure Storage den Fehlercode 503 \(Server ausgelastet\) oder den Fehlercode 500 \(Zeitüberschreitung für Vorgang\) zurück. In diesem Fall sollte die Anwendung eine exponentielle Backoffrichtlinie für Wiederholungen verwenden. Durch exponentielle Backoffs kann die Auslastung der Partition verringert werden, um die Datenverkehrsspitzen bei dieser Partition auszugleichen.
+>Wenn Ihre Anwendung die Grenze dessen erreicht, was eine Partition an Arbeitsauslastung bewältigen kann, dann gibt Azure Storage den Fehlercode 503 (Server ausgelastet) oder den Fehlercode 500 (Zeitüberschreitung für Vorgang) zurück. In diesem Fall sollte die Anwendung eine exponentielle Backoffrichtlinie für Wiederholungen verwenden. Durch exponentielle Backoffs kann die Auslastung der Partition verringert werden, um die Datenverkehrsspitzen bei dieser Partition auszugleichen.
 
 Wenn die Anforderungen Ihrer Anwendung die Skalierbarkeitsziele eines einzelnen Speicherkontos überschreiten, sollten Sie die Anwendung so erstellen, dass mehrere Speicherkonten verwendet werden, und die Datenobjekte in diesen Speicherkonten partitionieren. In einem einzelnen Azure-Abonnement sind 100 Speicherkonten zulässig. Informationen zu Volumenpreisen finden Sie unter [Speicherpreisdetails](http://azure.microsoft.com/pricing/details/storage/).
 
@@ -86,9 +86,9 @@ In der folgende Tabelle werden die Skalierbarkeitsziele für Standardspeicherkon
 </tr>
 </table>
 
-*"Eingehend" bezieht sich auf alle Daten \(Anforderungen\), die an ein Speicherkonto gesendet werden.
+*"Eingehend" bezieht sich auf alle Daten (Anforderungen), die an ein Speicherkonto gesendet werden.
 
-*"Ausgehend" bezieht sich auf alle Daten \(Antworten\), die von einem Speicherkonto empfangen werden.
+*"Ausgehend" bezieht sich auf alle Daten (Antworten), die von einem Speicherkonto empfangen werden.
 
 ### Skalierbarkeitsziele für Premium Storage-Konten
 
@@ -106,9 +106,9 @@ Die folgende Tabelle enthält die Skalierbarkeitsziele für Premium Storage-Kont
 <td>Bis zu 50&#160;GB pro Sekunde für eingehenden und ausgehenden Datenverkehr</td>
 </table>
 
-*"Eingehend" bezieht sich auf alle Daten \(Anforderungen\), die an ein Speicherkonto gesendet werden.
+*"Eingehend" bezieht sich auf alle Daten (Anforderungen), die an ein Speicherkonto gesendet werden.
 
-*"Ausgehend" bezieht sich auf alle Daten \(Antworten\), die von einem Speicherkonto empfangen werden.
+*"Ausgehend" bezieht sich auf alle Daten (Antworten), die von einem Speicherkonto empfangen werden.
 
 Informationen zu Premium Storage-Datenträgern finden Sie unter [Premium Storage:  Hochleistungsspeicher für Azure Virtual Machine-Arbeitsauslastungen](storage-premium-storage-preview-portal.md).
 
@@ -128,7 +128,7 @@ Die folgende Tabelle enthält die Leistungsziele für eine einzelne Partition f�
 <td>Bis 60 MB pro Sekunde</td>
 </table>
 
-Jedes Objekt, das Daten enthält, die in Azure Storage \(Blobs, Nachrichten, Entitäten und Dateien\) gespeichert werden, gehört zu einer Partition und wird durch einen Partitionsschlüssel identifiziert. Die Partition bestimmt, wie in Azure Storage der Lastenausgleich für Blobs, Nachrichten, Entitäten und Dateien auf Servern erfolgt, sodass die Datenverkehrsanforderungen dieser Objekte erfüllt werden. Der Partitionsschlüssel ist innerhalb des Speicherkontos eindeutig und wird verwendet, um einen Blob, eine Nachricht oder eine Entität zu suchen.
+Jedes Objekt, das Daten enthält, die in Azure Storage (Blobs, Nachrichten, Entitäten und Dateien) gespeichert werden, gehört zu einer Partition und wird durch einen Partitionsschlüssel identifiziert. Die Partition bestimmt, wie in Azure Storage der Lastenausgleich für Blobs, Nachrichten, Entitäten und Dateien auf Servern erfolgt, sodass die Datenverkehrsanforderungen dieser Objekte erfüllt werden. Der Partitionsschlüssel ist innerhalb des Speicherkontos eindeutig und wird verwendet, um einen Blob, eine Nachricht oder eine Entität zu suchen.
 
 Bei Tabellen werden alle Entitäten mit demselben Partitionsschlüsselwert in derselben Partition gruppiert und auf demselben Partitionsserver gespeichert. Dies ist ein wichtiger Punkt, der beim Entwurf von Anwendungen zu berücksichtigt werden muss. In der Anwendung sollten die Vorteile bezüglich der Skalierbarkeit, den die Verteilung von Entitäten auf mehrere Partitionen bietet, und die Vorteile bezüglich des Datenzugriffs, den die Gruppierung von Entitäten in einer einzelnen Partition bietet, gegeneinander abgewogen werden. Ein wichtiger Vorteil der Gruppierung von Entitäten in Partitionen besteht darin, dass es möglich ist, atomare Vorgänge mit verschiedenen Entitäten einer Partitionen auszuführen, da sich eine Partition auf einem einzelnen Server befindet.
 

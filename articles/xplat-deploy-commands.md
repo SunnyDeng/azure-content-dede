@@ -21,7 +21,7 @@
 ##Installieren von curl, wget und anderen Dowloadprogrammen
 In diesem Thema wird **curl** verwendet. Verwenden Sie den Paket-Manager Ihres Betriebssystems, oder laden Sie es [hier](http://curl.haxx.se/download.html) herunter.
 
-##Herunterladen der Vorlagenparameterdatei \(oder ggf. der Vorlage\)
+##Herunterladen der Vorlagenparameterdatei (oder ggf. der Vorlage)
 
 Die folgenden Schritte ermöglichen das Bereitstellen einer Azure-Vorlage, auch einer sehr komplexen. In diesem Thema wird als Beispiel die Vorlage zum Erstellen eines grundlegenden Ubuntu-Servers mit der CustomScript-Erweiterung für virtuelle Computer installiert. Die Dateien sind zu Referenzzwecken auch am Ende des Themas angefügt.
 
@@ -33,7 +33,7 @@ Laden Sie die Datei "azuredeploy parameters.json" herunter, sofern eine solche f
     
 ##Angeben der Bereitstellungsinformationen für die Ressourcengruppe
     
-Öffnen Sie diese Datei mit Ihrem bevorzugten Editor. Sie müssen einen Wert für mehrere Schlüssel angeben. Insbesondere müssen Sie den **adminUsername**, das **adminPassword** \(beachten Sie die Komplexitätsregeln!\) sowie den Namen des Speicherkontos und die gewünschten DNS-Namen bereitstellen.
+Öffnen Sie diese Datei mit Ihrem bevorzugten Editor. Sie müssen einen Wert für mehrere Schlüssel angeben. Insbesondere müssen Sie den **adminUsername**, das **adminPassword** (beachten Sie die Komplexitätsregeln!) sowie den Namen des Speicherkontos und die gewünschten DNS-Namen bereitstellen.
     
     {
       "newStorageAccountName": {
@@ -71,7 +71,7 @@ Laden Sie die Datei "azuredeploy parameters.json" herunter, sofern eine solche f
       }
     }
     
-Sie können neue Werte hinzufügen – Azure erstellt dann neue Speicher- und DNS-Ressourcen für Sie \(sofern möglich\) – oder bereits erstellte Ressourcen verwenden. Die folgende Datei "azuredeploy-parameters.json" stellt ein Beispiel dar:
+Sie können neue Werte hinzufügen – Azure erstellt dann neue Speicher- und DNS-Ressourcen für Sie (sofern möglich) – oder bereits erstellte Ressourcen verwenden. Die folgende Datei "azuredeploy-parameters.json" stellt ein Beispiel dar:
 
 
 
@@ -89,7 +89,7 @@ Parameter können festgelegt werden, oder sie sind bereits Teil der Vorlage selb
 Wenn Ihre Vorlage Parameter direkt enthält oder Sie die Parameterdaten selbst extrahieren möchten, finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx) weiterführende Informationen zur Struktur von Vorlagen.
 
 
-https://github.com/azure/azurermtemplates/raw/master/linux-virtual-machine-with-customdata/azuredeploy.json \(oder nur die Datei "azuredeploy parameters.json"\). Sie können den Parameterabschnitt aus der Vorlage extrahieren – in diesem Fall müssen Sie ihn wieder in die Vorlage selbst oder als separate Datei "azuredeploy-parameters.json" speichern. Sie benötigen die Werte, die Sie in die Parameter einfügen möchten.
+https://github.com/azure/azurermtemplates/raw/master/linux-virtual-machine-with-customdata/azuredeploy.json (oder nur die Datei "azuredeploy parameters.json"). Sie können den Parameterabschnitt aus der Vorlage extrahieren – in diesem Fall müssen Sie ihn wieder in die Vorlage selbst oder als separate Datei "azuredeploy-parameters.json" speichern. Sie benötigen die Werte, die Sie in die Parameter einfügen möchten.
 
 ##Ändern der Datei "azuredeploy-templates.json"
 

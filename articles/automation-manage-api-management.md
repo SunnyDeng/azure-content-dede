@@ -41,6 +41,6 @@ API Management kann in Azure Automation mithilfe der [API Management-REST-API](h
 Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Einsatz zur Verwaltung von Azure API Management vertraut gemacht haben, folgen Sie diesen Links, um weitere Informationen zu erhalten.
 
 * Weitere Informationen erhalten Sie im Lernprogramm [Erste Schritte](automation-create-runbook-from-samples.md) zu Azure Automation.
-* Lesen Sie den Community-Blogbeitrag [PowerShell Module for the \#Azure API Management REST APIs](https://alexandrebrisebois.wordpress.com/2014/08/17/powershell-module-for-the-azure-api-management-rest-apis/) .
+* Lesen Sie den Community-Blogbeitrag [PowerShell Module for the #Azure API Management REST APIs](https://alexandrebrisebois.wordpress.com/2014/08/17/powershell-module-for-the-azure-api-management-rest-apis/) .
 
 <!--HONumber=54-->

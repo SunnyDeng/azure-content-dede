@@ -31,11 +31,11 @@ Eine Nachrichtenwebsite ist daran interessiert, der Konkurrenz durch Seiteninhal
 
 ## Erstellen einer Event Hub-Eingabe und einer Verbrauchergruppe
 
-Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hub-Instanz \(kurz ein Event Hub\). Service Bus Event Hubs sind die bevorzugte Methode der Ereigniserfassung für Stream Analytics. Weitere Informationen finden Sie unter „Event Hubs“ in der [Service Bus-Dokumentation](/documentation/services/service-bus/).
+Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hub-Instanz (kurz ein Event Hub). Service Bus Event Hubs sind die bevorzugte Methode der Ereigniserfassung für Stream Analytics. Weitere Informationen finden Sie unter „Event Hubs“ in der [Service Bus-Dokumentation](/documentation/services/service-bus/).
 
 Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
 
-1.	Klicken Sie im Azure-Portal auf **NEU** \> **APP SERVICES** \> **SERVICE BUS** \> **EVENT HUB** \> **SCHNELLERFASSUNG** und geben Sie einen Namen, eine Region und einen neuen oder vorhandenen Namespace an.  
+1.	Klicken Sie im Azure-Portal auf **NEU** > **APP SERVICES** > **SERVICE BUS** > **EVENT HUB** > **SCHNELLERFASSUNG** und geben Sie einen Namen, eine Region und einen neuen oder vorhandenen Namespace an.  
 2.	Als bewährte Methode sollte jeder Stream Analytics-Auftrag aus einer einzelnen Event Hubs-Verbrauchergruppe lesen. Im Folgenden werden Sie durch den Prozess der Erstellung einer Verbrauchergruppe geführt und erfahren mehr über diese. Um eine Verbrauchergruppe zu erstellen, wechseln Sie zu dem neu erstellten Event Hub, klicken Sie auf die Registerkarte **VERBRAUCHERGRUPPEN** und anschließend auf **ERSTELLEN** am unteren Rand der Seite. Geben Sie einen Namen für die Verbrauchergruppe ein.
 3.	Um Zugriff auf den Event Hub zu gewähren, müssen wir eine Richtlinie für gemeinsamen Zugriff erstellen. Klicken Sie auf die Registerkarte **KONFIGURIEREN** des Event Hubs.
 4.	Erstellen Sie unter **RICHTLINIEN FÜR GEMEINSAMEN ZUGRIFF** eine neue Richtlinie mit Berechtigungen zum **VERWALTEN**.
@@ -45,22 +45,22 @@ Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
   ![Unter „Gemeinsame Zugriffsrichtlinien“ können Sie eine neue Richtlinie mit Verwaltungsberechtigungen erstellen.](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-ananlytics-shared-access-policies.png)
 
 5.	Klicken Sie unten auf der Seite auf **Speichern**.
-6.	Gehen Sie zum **DASHBOARD**, klicken Sie dann am unteren Rand auf **VERBINDUNGSINFORMATIONEN**, und kopieren und speichern Sie die Verbindungszeichenfolge. \(Verwenden Sie das Symbol „Kopieren“, das unter dem Suchsymbol angezeigt wird.\)
+6.	Gehen Sie zum **DASHBOARD**, klicken Sie dann am unteren Rand auf **VERBINDUNGSINFORMATIONEN**, und kopieren und speichern Sie die Verbindungszeichenfolge. (Verwenden Sie das Symbol „Kopieren“, das unter dem Suchsymbol angezeigt wird.)
 
 ## Konfigurieren und starten der Ereignisgenerator-Anwendung
 
-Wir haben eine Clientanwendung bereitgestellt, die über die [REST-APIs von Twitter](https://dev.twitter.com/rest/public) auf Twitter-Daten zugreift, um Tweet-Ereignisse zu einer parametrisierten Reihe von Themen zu sammeln. Das Open-Source-Tool [Sentiment140](http://help.sentiment140.com/) eines Drittanbieters wird verwendet, um jedem Tweet einen Stimmungswert zuzuweisen \(0: negativ, 2: neutral, 4: positiv\). Danach werden die Tweet-Ereignisse mithilfe von Push an den Event Hub übertragen.
+Wir haben eine Clientanwendung bereitgestellt, die über die [REST-APIs von Twitter](https://dev.twitter.com/rest/public) auf Twitter-Daten zugreift, um Tweet-Ereignisse zu einer parametrisierten Reihe von Themen zu sammeln. Das Open-Source-Tool [Sentiment140](http://help.sentiment140.com/) eines Drittanbieters wird verwendet, um jedem Tweet einen Stimmungswert zuzuweisen (0: negativ, 2: neutral, 4: positiv). Danach werden die Tweet-Ereignisse mithilfe von Push an den Event Hub übertragen.
 
 Gehen Sie folgendermaßen vor, um die Anwendung einzurichten:
 
 1.	[Laden Sie die TwitterClient-Lösung herunter.](https://github.com/streamanalytics/samples/tree/master/TwitterClient)
-2.	Öffnen Sie App.config und ersetzen Sie oauth\_consumer\_key, oauth\_consumer\_secret, oauth\_token und oauth\_token\_secret mit den Twitter-Token mit Ihren Werten.  
+2.	Öffnen Sie App.config und ersetzen Sie oauth_consumer_key, oauth_consumer_secret, oauth_token und oauth_token_secret mit den Twitter-Token mit Ihren Werten.  
 
 	[Schritte zum Generieren eines OAuth-Zugriffstokens](https://dev.twitter.com/oauth/overview/application-owner-access-tokens)
 
 	Beachten Sie, dass Sie zum Generieren eines Tokens eine leere Anwendung erstellen müssen.
 3.	Ersetzen Sie die Werte EventHubConnectionString und EventHubName in App.config mit der Verbindungszeichenfolge und dem Namen Ihres Event Hubs.
-4.	*Optional:* Passen Sie die Schlüsselwörter für die Suche an. Standardmäßig sucht diese Anwendung nach „Azure,Skype,XBox,Microsoft,Seattle“. Falls gewünscht, können Sie die Werte für twitter\_keywords in App.config anpassen.
+4.	*Optional:* Passen Sie die Schlüsselwörter für die Suche an. Standardmäßig sucht diese Anwendung nach „Azure,Skype,XBox,Microsoft,Seattle“. Falls gewünscht, können Sie die Werte für twitter_keywords in App.config anpassen.
 5.	Erstellen Sie die Lösung.
 6.	Starten Sie die Anwendung. Sie sehen nun, wie Ereignisse mit den Werten CreatedAt, Topic und SentimentScore an Ihren Event Hub gesendet werden:
 
@@ -72,7 +72,7 @@ Nun, da wir einen Datenstrom von Tweet-Ereignissen haben, können wir einen Stre
 
 ### Bereitstellen eines Stream Analytics-Auftrags
 
-1.	Klicken Sie im [Azure-Portal](https://manage.windowsazure.com/) auf **NEU** \> **DATA SERVICES** \> **STREAM ANALYTICS** \> **SCHNELLERFASSUNG**.
+1.	Klicken Sie im [Azure-Portal](https://manage.windowsazure.com/) auf **NEU** > **DATA SERVICES** > **STREAM ANALYTICS** > **SCHNELLERFASSUNG**.
 2.	Geben Sie die folgenden Werte an, und klicken Sie dann auf **STREAM ANALYTICS-AUFTRAG ERSTELLEN**:
 
 	* **AUFTRAGSNAME**: Geben Sie einen Auftragsnamen ein.
@@ -185,7 +185,7 @@ Nun, da wir einen Datenstrom, eine Event Hub-Eingabe zum Erfassen von Ereignisse
 
 Befolgen Sie die nachstehenden Schritte zum Erstellen eines Containers für Blob-Speicher, wenn Sie noch keinen erstellt haben:
 
-1.	Verwenden Sie ein vorhandenes Speicherkonto oder erstellen Sie ein neues, indem Sie auf **NEU** \> **DATA SERVICES** \> **SPEICHER** \> **SCHNELLERFASSUNG** klicken und die Anweisungen auf dem Bildschirm befolgen.
+1.	Verwenden Sie ein vorhandenes Speicherkonto oder erstellen Sie ein neues, indem Sie auf **NEU** > **DATA SERVICES** > **SPEICHER** > **SCHNELLERFASSUNG** klicken und die Anweisungen auf dem Bildschirm befolgen.
 2.	Wählen Sie das Speicherkonto, klicken Sie anschließend auf **CONTAINER** am oberen Rand der Seite, und klicken Sie dann auf **HINZUFÜGEN**.
 3.	Geben Sie einen **NAMEN** für den Container an legen Sie seinen **ZUGRIFF** auf „Öffentlicher Blob“ fest.
 
@@ -217,7 +217,7 @@ Nachdem wir Eingabe, Abfrage und Ausgabe für den Auftrag angegeben haben, könn
 
 ## Ausgabe anzeigen
 
-Verwenden Sie ein Tool wie [Azure Storage Explorer](https://azurestorageexplorer.codeplex.com/) oder [Azure Explorer](http://www.cerebrata.com/products/azure-explorer/introduction), um die Auftragsausgabe in Echtzeit anzuzeigen. Von hier aus können Sie Ihre Anwendung erweitern, sodass diese über der Ausgabe ein an Ihre Bedürfnisse angepasstes Dashboard enthält, wie in der Abbildung unten gezeigt \([Power BI](https://powerbi.com/)\).
+Verwenden Sie ein Tool wie [Azure Storage Explorer](https://azurestorageexplorer.codeplex.com/) oder [Azure Explorer](http://www.cerebrata.com/products/azure-explorer/introduction), um die Auftragsausgabe in Echtzeit anzuzeigen. Von hier aus können Sie Ihre Anwendung erweitern, sodass diese über der Ausgabe ein an Ihre Bedürfnisse angepasstes Dashboard enthält, wie in der Abbildung unten gezeigt ([Power BI](https://powerbi.com/)).
 
 ![Stream Analytics-Ausgabe in einem Power BI-Dashboard.](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-analytics-output-power-bi.png)
 

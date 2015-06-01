@@ -23,7 +23,7 @@ Dieses Dokument enthält Informationen zu den Protokollierungsfunktionen der Azu
 -	So aktivieren Sie die Protokollierung in  Webdiensten:   
 	-	Zum Aktivieren der Protokollierung müssen Sie vom Azure-Portal aus auf das Web Service-Dashboard zugreifen, Aktivieren Sie dann die Protokollierung durch Klicken auf die Schaltfläche "Ja", und klicken Sie dann auf "Speichern".  
 -	Diese Auswirkungen hat die Aktivierung der Protokollierung:  
-	-	Wenn die Protokollierung aktiviert ist, werden alle Diagnoseergebnisse/Fehler vom Standardendpunkt in dem Azure-Speicherkonto protokolliert, das mit dem Arbeitsbereich des Benutzers verknüpft ist. Dieses Speicherkonto wird in der Azure Portal-Dashboardansicht \(am unteren Rand des Abschnitts "Auf einen Blick"\) im Arbeitsbereich angezeigt.  
+	-	Wenn die Protokollierung aktiviert ist, werden alle Diagnoseergebnisse/Fehler vom Standardendpunkt in dem Azure-Speicherkonto protokolliert, das mit dem Arbeitsbereich des Benutzers verknüpft ist. Dieses Speicherkonto wird in der Azure Portal-Dashboardansicht (am unteren Rand des Abschnitts "Auf einen Blick") im Arbeitsbereich angezeigt.  
 -	Hier ist die Funktion verfügbar:  
 	-	Derzeit aktivieren wir die Protokollierung für den Standardendpunkt des Webdiensts. Wir werden dieses Feature bald für die zusätzliche Endpunkte anbieten, die der Benutzer im Azure-Portal erstellen kann.  
 -	So zeigen Sie die Protokolle an:  

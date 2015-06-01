@@ -56,8 +56,8 @@ Dieses Skript installiert einen LAMP-Stack auf Ubuntu (einschließlich Einrichtu
 	apt-get -y install apache2 mysql-server php5 php5-mysql  
 
 	# write some PHP
-	echo \<center\>\<h1\>My Demo App\</h1\>\<br/\>\</center\> > /var/www/html/phpinfo.php
-	echo \<\?php phpinfo\(\)\; \?\> >> /var/www/html/phpinfo.php
+	echo <center><h1>My Demo App</h1><br/></center> > /var/www/html/phpinfo.php
+	echo <\?php phpinfo()\; \?> >> /var/www/html/phpinfo.php
 
 	# restart Apache
 	apachectl restart

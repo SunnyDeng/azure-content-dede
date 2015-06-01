@@ -114,7 +114,7 @@ In diesem Abschnitt laden Sie im Rahmen des NodeAPIApp-Beispiels Code herunter u
 
 	Beachten Sie die Eigenschaft **apiDefinition**. Der Pfad für diese URL ist relativ zur URL Ihrer API und verweist auf den Swagger 2.0-Endpunkt. Azure App Service verwendet diese Eigenschaft zum Ermitteln der Definition Ihrer API und zum Aktivieren zahlreicher der App Service-API-App-Funktionen.
 
-	> [AZURE.NOTE]Der Endpunkt muss der Swagger 2.0-Spezifikation entsprechen, da ältere Versionen \(beispielsweise 1.2\) nicht von der Plattform unterstützt werden. Die Beispielanwendung verwendet "swaggerize-express" zum Erstellen eines Endpunkts nach Swagger 2.0-Spezifikation.
+	> [AZURE.NOTE]Der Endpunkt muss der Swagger 2.0-Spezifikation entsprechen, da ältere Versionen (beispielsweise 1.2) nicht von der Plattform unterstützt werden. Die Beispielanwendung verwendet "swaggerize-express" zum Erstellen eines Endpunkts nach Swagger 2.0-Spezifikation.
 
 4. Öffnen Sie die Datei **server.js**, und untersuchen Sie den Code.
 
@@ -128,7 +128,7 @@ In diesem Abschnitt laden Sie im Rahmen des NodeAPIApp-Beispiels Code herunter u
 		    handlers: './handlers/'
 		}));
 
-	Die Eigenschaft `api` verweist auf die Datei "api.json", die die API-Definition nach Swagger 2.0-Spezifikation enthält. Sie können die Datei manuell in einem Text-Editor erstellen oder den [Online-Editor von Swagger](http://editor.swagger.io) verwenden und die JSON-Datei von dort herunterladen. \(Die Datei *api.json* legt eine Eigenschaft `host` fest, aber der Wert dieser Eigenschaft wird zur Laufzeit dynamisch ermittelt und ersetzt.\)
+	Die Eigenschaft `api` verweist auf die Datei "api.json", die die API-Definition nach Swagger 2.0-Spezifikation enthält. Sie können die Datei manuell in einem Text-Editor erstellen oder den [Online-Editor von Swagger](http://editor.swagger.io) verwenden und die JSON-Datei von dort herunterladen. (Die Datei *api.json* legt eine Eigenschaft `host` fest, aber der Wert dieser Eigenschaft wird zur Laufzeit dynamisch ermittelt und ersetzt.)
 
 	Die Eigenschaft `docspath` verweist auf den Swagger 2.0-Endpunkt. Diese URL ist relativ zum Basispfad Ihrer API. Der Basispfad wird in der Datei "api.json" deklariert. In unserem Beispiel lautet der Basispfad */api/data*, deshalb lautet der relative Pfad zum Swagger-Endpunkt */api/data/swagger*.
 
@@ -176,7 +176,7 @@ In diesem Abschnitt erstellen Sie ein lokales Git-Repository und führen einen P
 		git add .
 		git commit -m "Initial commit of the API App"
 
-3. Erstellen Sie eine Remotereferenz, um Updates für die zuvor erstellte Web-App \(API-App-Host\) zu pushen, und verwenden Sie hierbei die zuvor kopierte Git-URL:
+3. Erstellen Sie eine Remotereferenz, um Updates für die zuvor erstellte Web-App (API-App-Host) zu pushen, und verwenden Sie hierbei die zuvor kopierte Git-URL:
 
 		git remote add azure [URL for remote repository]
 

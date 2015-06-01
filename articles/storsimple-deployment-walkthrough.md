@@ -23,7 +23,7 @@ Willkommen bei der exemplarischen Vorgehensweise für die Bereitstellung von Mic
 
 Diese Reihe von Lernprogrammen beschreibt die Konfiguration Ihrer StorSimple-Geräte. Sie enthält darüber hinaus eine Installationsvorbereitungsprüfliste, Konfigurationsvoraussetzungen und detaillierte Konfigurationsschritte.
 
-> [AZURE.NOTE]Die StorSimple-Bereitstellungsinformationen, die auf der Microsoft Azure-Website und in der MSDN Library veröffentlicht werden, gelten nur für die Geräte der StorSimple-Serie 8000. Vollständige Informationen zu Geräten der Serie 7000 finden Sie unter: [http://onlinehelp.storsimple.com/](http://onlinehelp.storsimple.com). Bereitstellungsinformationen zur Serie 7000 finden Sie in der [Schnellstartanleitung zum StorSimple-System](http://onlinehelp.storsimple.com/111_Appliance/) \(in englischer Sprache\).
+> [AZURE.NOTE]Die StorSimple-Bereitstellungsinformationen, die auf der Microsoft Azure-Website und in der MSDN Library veröffentlicht werden, gelten nur für die Geräte der StorSimple-Serie 8000. Vollständige Informationen zu Geräten der Serie 7000 finden Sie unter: [http://onlinehelp.storsimple.com/](http://onlinehelp.storsimple.com). Bereitstellungsinformationen zur Serie 7000 finden Sie in der [Schnellstartanleitung zum StorSimple-System](http://onlinehelp.storsimple.com/111_Appliance/) (in englischer Sprache).
 
 Bei den Informationen in diesen Lernprogrammen wird davon ausgegangen, dass Sie die Sicherheitsvorkehrungen und die Konfigurationsprüfliste bearbeitet und Ihr StorSimple-Gerät ausgepackt, installiert und verkabelt haben. Wenn Sie weiterhin solche Aufgaben ausführen müssen, fahren Sie ggf. mit [Sicherheitsmaßnahmen](https://msdn.microsoft.com/library/azure/dn772366.aspx), [Konfigurationsprüfliste](https://msdn.microsoft.com/library/azure/dn757787.aspx) und [Hardwareinstallation Ihres Geräts](https://msdn.microsoft.com/library/azure/dn772375.aspx) fort.
 
@@ -40,9 +40,9 @@ Die folgende Vorinstallationsprüfliste enthält die Informationen, die Sie vor 
 | 3 | Serieller Zugriff | Anfängliche Gerätekonfiguration | Ja/Nein |
 | 4 | IP-Adressen der DNS-Server | Erforderlich für die Verbindung mit Microsoft Azure: insgesamt 2 erforderlich für hohe Verfügbarkeit | |
 | 5 | IP-Adressen der NTP-Server | Erforderlich zur Zeitsynchronisierung mit Azure: 1 erforderlich, 1 optional | |
-| 6 | Proxyserver \(optional\) | IP-Adresse/vollqualifizierter Domänenname des Proxyservers, zu verwendender Port | |
+| 6 | Proxyserver (optional) | IP-Adresse/vollqualifizierter Domänenname des Proxyservers, zu verwendender Port | |
 | 7 | Azure-Speicherkonto | Anmeldeinformationen für den Zugriff, z. B. Kontoname, Zugriffsschlüssel, pro Speicherkonto | |
-| 8 | Verschlüsselungsschlüssel für Cloud-Speicher \(empfohlen\) | Pro Volumecontainer | |
+| 8 | Verschlüsselungsschlüssel für Cloud-Speicher (empfohlen) | Pro Volumecontainer | |
 | 9 | IQN des Hosts | Pro Host | |
 
 ##Voraussetzungen für die Bereitstellung
@@ -67,7 +67,7 @@ Stellen Sie vor der Konfiguration des Geräts Folgendes sicher:
 
 - Ihr Gerät wurde wie unter [Auspacken des Geräts vom Typ 8100](https://msdn.microsoft.com/library/azure/dn772327.aspx) oder [Auspacken des Geräts vom Typ 8600](https://msdn.microsoft.com/library/azure/dn772418.aspx) beschrieben vollständig ausgepackt.
 
-- Ihr Gerät wurde wie unter [Einbauen eines Geräts vom Typ 8100 \[StorSimple 8100\] in ein Gestell](https://msdn.microsoft.com/library/azure/dn757749.aspx) oder [Einbauen eines Geräts vom Typ 8600 \[StorSimple 8600\] in ein Gestell](https://msdn.microsoft.com/library/azure/dn757745.aspx) beschrieben vollständig installiert.
+- Ihr Gerät wurde wie unter [Einbauen eines Geräts vom Typ 8100 [StorSimple 8100] in ein Gestell](https://msdn.microsoft.com/library/azure/dn757749.aspx) oder [Einbauen eines Geräts vom Typ 8600 [StorSimple 8600] in ein Gestell](https://msdn.microsoft.com/library/azure/dn757745.aspx) beschrieben vollständig installiert.
 
 - Ihr Gerät wurde wie unter [Verkabeln eines Geräts vom Typ 8100](https://msdn.microsoft.com/library/azure/dn757738.aspx) oder [Verkabeln eines Geräts vom Typ 8600](https://msdn.microsoft.com/library/azure/dn757762.aspx) beschrieben vollständig für Stromversorgung, Netzwerk- und seriellen Zugriff verkabelt.
 
@@ -183,7 +183,7 @@ Zum Herstellen einer Verbindung mit Windows PowerShell für StorSimple benötige
 
 ##Abrufen des IQN eines Windows Server-Hosts
 
-Führen Sie die folgenden Schritte aus, um den IQN \(iSCSI Qualified Name\) eines Windows-Hosts abzurufen, auf dem Windows Server® 2012 ausgeführt wird.
+Führen Sie die folgenden Schritte aus, um den IQN (iSCSI Qualified Name) eines Windows-Hosts abzurufen, auf dem Windows Server® 2012 ausgeführt wird.
 
 [AZURE.INCLUDE [Erstellen einer manuellen Sicherung](../includes/storsimple-get-iqn.md)]
 
@@ -195,7 +195,7 @@ Führen Sie die folgenden Schritte im Verwaltungsportal aus, um nach Bedarf eine
 
 ##Konfigurieren von MPIO
 
-Multipfad-E/A \(Multipath I/O, MPIO\) ist ein optionales Feature und wird unter Windows Server nicht standardmäßig installiert. Diese Funktion sollte als Feature über den Server-Manager installiert werden.
+Multipfad-E/A (Multipath I/O, MPIO) ist ein optionales Feature und wird unter Windows Server nicht standardmäßig installiert. Diese Funktion sollte als Feature über den Server-Manager installiert werden.
 
 > [AZURE.NOTE]MPIO wird auf einem virtuellen StorSimple-Gerät nicht unterstützt.
 

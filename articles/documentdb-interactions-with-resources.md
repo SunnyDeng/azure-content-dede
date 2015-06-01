@@ -63,7 +63,7 @@ Der DocumentDB-Dienst gibt eine erfolgreiche Antwort und einen Statuscode zurüc
 	      "_rid": "UoEi5w==",
 	      "_self": "dbs/MyDb/",
 	      "_ts": 1407370063,
-	      "_etag": "\"00002100-0000-0000-0000-50e71fda0000\"",
+	      "_etag": ""00002100-0000-0000-0000-50e71fda0000"",
 	      "_colls": "colls/",
 	      "_users": "users/"
 	}
@@ -107,7 +107,7 @@ Der DocumentDB-Dienst gibt eine erfolgreiche Antwort und einen Statuscode zurüc
 	      "id": "sproc1",
 	      "_rid": "EoEi5w==",
 	      "_self": "dbs/MyDb/colls/MyColl/sprocs/sproc1",
-	      "_etag": "\"00002100-0000-0000-0000-50f71fda0000\"",
+	      "_etag": ""00002100-0000-0000-0000-50f71fda0000"",
 	       ...
 	}
 

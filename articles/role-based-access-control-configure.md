@@ -107,7 +107,7 @@ Um Brock zur Rolle "Mitwirkender" der Prod-Ressourcengruppe hinzuzufügen, klick
 
 Rollenzuweisungen können auch mit dem Microsoft Azure-Modul für Windows PowerShell verwaltet werden. Im folgenden Beispiel wird das Konto von Brock über das New-AzureRoleAssignment-Cmdlet anstatt über das Portal hinzugefügt:
 
-	PS C:\> New-AzureRoleAssignment -Mail brockh@contoso.com -RoleDefinitionName Contributor -ResourceGroupName ProdDB
+	PS C:> New-AzureRoleAssignment -Mail brockh@contoso.com -RoleDefinitionName Contributor -ResourceGroupName ProdDB
 
 Weitere Informationen über das Hinzufügen und Entfernen von Zugriffsrechten mit Windows PowerShell finden Sie unter [Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell](http://azure.microsoft.com/documentation/articles/role-based-access-control-powershell/). 
 
@@ -119,7 +119,7 @@ Zugriffsberechtigungen können einfach wieder entfernt werden. Angenommen, Sie m
 
 Im folgenden Beispiel wird der Benutzer Bernd Ahrend über das Remove-AzureRoleAssignment-Cmdlet entfernt:
 
-	PS C:\> Remove-AzureRoleAssignment -Mail badams@contoso.com -RoleDefinitionName Reader -ResourceGroupName TestDB
+	PS C:> Remove-AzureRoleAssignment -Mail badams@contoso.com -RoleDefinitionName Reader -ResourceGroupName TestDB
 
 <h3><a id="addremoveext"></a>Zugriff für externe Benutzer hinzufügen und entfernen</h3>
 

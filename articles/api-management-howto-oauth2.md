@@ -79,7 +79,7 @@ Für einen Azure Active Directory OAuth 2.0-Server hat die **Token-Endpunkt-URL
 
 Die Standardeinstellung für **Client-Authentifizierungsmethoden** lautet **Basis**, und die **Sendemethode für Zugriffstoken** ist **Autorisierungsheader**. Diese Werte werden zusammen mit **Standardmäßiger Geltungsbereich** in diesem Abschnitt des Formulars festgelegt.
 
-Der Abschnitt **Client-Berechtigungen** enthält **Client-ID** und **Geheimer Clientschlüssel**, die bei der Erstellung und Konfiguration Ihres OAuth 2.0-Servers festgelegt werden. Sobald **Client-ID** und **Geheimer Clientschlüssel** angegeben wurden, wird die **redirect\_uri** für den **Autorisierungscode** erzeugt. Die URI wird zum Konfigurieren der Antwort-URL in Ihrer OAuth 2.0-Serverkonfiguration verwendet.
+Der Abschnitt **Client-Berechtigungen** enthält **Client-ID** und **Geheimer Clientschlüssel**, die bei der Erstellung und Konfiguration Ihres OAuth 2.0-Servers festgelegt werden. Sobald **Client-ID** und **Geheimer Clientschlüssel** angegeben wurden, wird die **redirect_uri** für den **Autorisierungscode** erzeugt. Die URI wird zum Konfigurieren der Antwort-URL in Ihrer OAuth 2.0-Serverkonfiguration verwendet.
 
 ![Neuer Server][api-management-oauth2-server-4]
 

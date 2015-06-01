@@ -53,7 +53,7 @@ Fügen Sie mit Ihrem bevorzugten Texteditor Folgendes oben in die Ruby-Datei an 
 
 ## Einrichten einer Azure-Speicherverbindung
 
-Das Azure-Modul entnimmt den Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt werden, müssen Sie die Kontoinformationen vor dem Verwenden von **Azure::TableService** mit dem folgenden Code angeben:
+Das Azure-Modul entnimmt den Umgebungsvariablen **AZURE_STORAGE_ACCOUNT** und **AZURE_STORAGE_ACCESS_KEY** die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt werden, müssen Sie die Kontoinformationen vor dem Verwenden von **Azure::TableService** mit dem folgenden Code angeben:
 
 	Azure.config.storage_account_name = "<your azure storage account>"
 	Azure.config.storage_access_key = "<your azure storage access key>"
@@ -70,7 +70,7 @@ So rufen Sie diese Werte ab:
 
 ## Erstellen einer Tabelle
 
-Mit dem **Azure::TableService**-Objekt können Sie mit Tabellen und Entitäten arbeiten. Verwenden Sie die **create\_table()**-Methode, um eine Tabelle zu erstellen. Im folgenden Beispiel wird eine Tabelle erstellt oder ggf. ein Fehler ausgegeben.
+Mit dem **Azure::TableService**-Objekt können Sie mit Tabellen und Entitäten arbeiten. Verwenden Sie die **create_table()**-Methode, um eine Tabelle zu erstellen. Im folgenden Beispiel wird eine Tabelle erstellt oder ggf. ein Fehler ausgegeben.
 
 	azure_table_service = Azure::TableService.new
 	begin
@@ -91,18 +91,18 @@ Um eine Entität hinzuzufügen, erstellen Sie zunächst ein Hashobjekt, das die 
 
 Es sind mehrere Methoden zum Aktualisieren einer vorhandenen Entität vorhanden:
 
-* **update\_entity():** Aktualisiert eine vorhandene Entität, indem sie ersetzt wird.
-* **merge\_entity():**: Aktualisiert eine vorhandene Entität durch Zusammenführen neuer Eigenschaftenwerte mit der vorhandenen Entität.
-* **insert\_or\_merge\_entity():** Aktualisiert eine vorhandene Entität, indem sie ersetzt wird. Wenn keine Entität vorhanden ist, wird eine neue eingefügt:
-* **insert\_or\_replace\_entity():** Aktualisiert eine vorhandene Entität durch Zusammenführen neuer Eigenschaftenwerte mit der vorhandenen Entität. Wenn keine Entität vorhanden ist, wird eine neue eingefügt.
+* **update_entity():** Aktualisiert eine vorhandene Entität, indem sie ersetzt wird.
+* **merge_entity():**: Aktualisiert eine vorhandene Entität durch Zusammenführen neuer Eigenschaftenwerte mit der vorhandenen Entität.
+* **insert_or_merge_entity():** Aktualisiert eine vorhandene Entität, indem sie ersetzt wird. Wenn keine Entität vorhanden ist, wird eine neue eingefügt:
+* **insert_or_replace_entity():** Aktualisiert eine vorhandene Entität durch Zusammenführen neuer Eigenschaftenwerte mit der vorhandenen Entität. Wenn keine Entität vorhanden ist, wird eine neue eingefügt.
 
-Das folgende Beispiel zeigt, wie eine Entität mit **update\_entity()** aktualisiert wird:
+Das folgende Beispiel zeigt, wie eine Entität mit **update_entity()** aktualisiert wird:
 
 	entity = { "content" => "test entity with updated content", 
 	  :PartitionKey => "test-partition-key", :RowKey => "1" }
 	azure_table_service.update_entity("testtable", entity)
 
-Bei **update\_entity()** und **merge\_entity()** missling der Aktualisierungsvorgang, wenn die zu aktualisierende Entität nicht vorhanden ist. Wenn Sie daher eine Entität unabhängig davon speichern möchten, ob sie bereits vorhanden ist, sollten Sie stattdessen **insert\_or\_replace\_entity()** oder **insert\_or\_merge\_entity()** verwenden.
+Bei **update_entity()** und **merge_entity()** missling der Aktualisierungsvorgang, wenn die zu aktualisierende Entität nicht vorhanden ist. Wenn Sie daher eine Entität unabhängig davon speichern möchten, ob sie bereits vorhanden ist, sollten Sie stattdessen **insert_or_replace_entity()** oder **insert_or_merge_entity()** verwenden.
 
 ## Vorgehensweise: Arbeiten mit Gruppen von Entitäten
 
@@ -125,7 +125,7 @@ Um eine Entität in einer Tabelle abzufragen, verwenden Sie die **get_entity()**
 
 ## Vorgehensweise: Abfragen einer Gruppe von Entitäten
 
-Um eine Gruppe von Entitäten in einer Tabelle abzufragen, erstellen Sie ein Hashobjekt und verwenden die **query\_entities()**-Methode. Das folgende Beispiel demonstriert das Abrufen aller Entitäten mit dem gleichen **PartitionKey**:
+Um eine Gruppe von Entitäten in einer Tabelle abzufragen, erstellen Sie ein Hashobjekt und verwenden die **query_entities()**-Methode. Das folgende Beispiel demonstriert das Abrufen aller Entitäten mit dem gleichen **PartitionKey**:
 
 	query = { :filter => "PartitionKey eq 'test-partition-key'" }
 	result, token = azure_table_service.query_entities("testtable", query)
@@ -142,13 +142,13 @@ Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer En
 
 ## Vorgehensweise: Löschen einer Entität
 
-Verwenden Sie die **delete\_entity()**-Methode, um eine Entität zu löschen. Sie müssen den Namen der Tabelle mit der Entität, dem PartitionKey und dem RowKey der Entität übergeben.
+Verwenden Sie die **delete_entity()**-Methode, um eine Entität zu löschen. Sie müssen den Namen der Tabelle mit der Entität, dem PartitionKey und dem RowKey der Entität übergeben.
 
 		azure_table_service.delete_entity("testtable", "test-partition-key", "1")
 
 ## Vorgehensweise: Löschen einer Tabelle
 
-Um eine Tabelle zu löschen, verwenden Sie die **delete\_table()**-Methode und übergeben an sie den Namen der zu löschenden Tabelle.
+Um eine Tabelle zu löschen, verwenden Sie die **delete_table()**-Methode und übergeben an sie den Namen der zu löschenden Tabelle.
 
 		azure_table_service.delete_table("testtable")
 

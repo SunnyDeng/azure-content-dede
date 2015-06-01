@@ -26,7 +26,7 @@
  
     Es wird ein Auftrag zum Erstellen einer Momentaufnahme gestartet. Am unteren Rand der Seite wird eine Benachrichtigung angezeigt, nachdem der Auftrag erfolgreich erstellt wurde.
 
-4. Klicken Sie im Benachrichtigungsbereich \(unten auf der Seite\) auf **Auftrag anzeigen**, um den Auftrag zu überwachen.
+4. Klicken Sie im Benachrichtigungsbereich (unten auf der Seite) auf **Auftrag anzeigen**, um den Auftrag zu überwachen.
 
     ![Erstellen einer manuellen Sicherung 2](./media/storsimple-create-manual-backup/HCS_CreateManualBackup2-include.png)
 

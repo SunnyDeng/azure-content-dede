@@ -27,7 +27,7 @@ Sie müssen das Azure SDK 2.6 installiert haben, um die folgenden Schritte durch
 
 ## Erstellen eines Projekts
 
-1. Klicken Sie auf das Menü **Datei**, und wählen Sie **Neu** \> **Projekt** (oder wählen Sie **Hinzufügen** und dann **Neues Projekt**, um es einer vorhandenen Projektmappe hinzuzufügen). ![Menü "Datei"](./media/app-service-logic-deploy-from-vs/filemenu.png)
+1. Klicken Sie auf das Menü **Datei**, und wählen Sie **Neu** > **Projekt** (oder wählen Sie **Hinzufügen** und dann **Neues Projekt**, um es einer vorhandenen Projektmappe hinzuzufügen). ![Menü "Datei"](./media/app-service-logic-deploy-from-vs/filemenu.png)
 
 2. Finden Sie im Dialogfeld den Eintrag **Cloud**, und wählen Sie dann **Azure-Ressourcengruppe**. Geben Sie einen **Namen** ein, und klicken Sie dann auf **OK**. ![Neues Projekt hinzufügen](./media/app-service-logic-deploy-from-vs/addnewproject.png)
 
@@ -51,7 +51,7 @@ Wenn Sie zuvor eine Logik-App innerhalb des Azure-Portals erstellt haben und die
 
 Nach der Konfiguration Ihrer App können Sie sie in nur wenigen Schritten direkt von Visual Studio aus bereitstellen.
 
-1. Klicken Sie mit der rechten Maustaste auf den Projektmappen-Explorer, und wechseln Sie zu **Bereitstellen** \> **Neue Bereitstellung...** ![Neue Bereitstellung](./media/app-service-logic-deploy-from-vs/newdeployment.png)
+1. Klicken Sie mit der rechten Maustaste auf den Projektmappen-Explorer, und wechseln Sie zu **Bereitstellen** > **Neue Bereitstellung...** ![Neue Bereitstellung](./media/app-service-logic-deploy-from-vs/newdeployment.png)
 
 2. Sie werden dazu aufgefordert, sich bei Ihrem Azure-Abonnement anzumelden.
 

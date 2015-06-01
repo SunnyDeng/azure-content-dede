@@ -54,7 +54,7 @@ Es gibt drei Typen von Speicherkonten, die mit dem StorSimple-Gerät verwendet w
 
 ##Hinzufügen von Speicherkonten
 
-Sie können ein Speicherkonto hinzufügen, indem Sie einen eindeutigen Anzeigenamen und Anmeldeinformationen für den Zugriff angeben, die mit dem Speicherkonto \(mit dem angegebenen Cloud-Dienstanbieter\) verknüpft sind. Sie haben außerdem die Möglichkeit, den SSL-Modus \(Secure Sockets Layer\) zu aktivieren, um einen sicheren Kanal für die Netzwerkkommunikation zwischen dem Gerät und der Cloud zu erstellen.
+Sie können ein Speicherkonto hinzufügen, indem Sie einen eindeutigen Anzeigenamen und Anmeldeinformationen für den Zugriff angeben, die mit dem Speicherkonto (mit dem angegebenen Cloud-Dienstanbieter) verknüpft sind. Sie haben außerdem die Möglichkeit, den SSL-Modus (Secure Sockets Layer) zu aktivieren, um einen sicheren Kanal für die Netzwerkkommunikation zwischen dem Gerät und der Cloud zu erstellen.
 
 Sie können mehrere Konten für einen Cloud-Dienstanbieter erstellen. Bedenken Sie jedoch, dass der Cloud-Dienstanbieter nach der Erstellung eines Speicherkontos nicht mehr geändert werden kann.
 
@@ -105,7 +105,7 @@ Sie können ein Speicherkonto, das von einem Volumecontainer verwendet wird, bea
 
 2. Zeigen Sie in der tabellarischen Liste der Speicherkonten auf das Konto, das Sie löschen möchten.
 
-3. Ein Löschsymbol \(**x**\) wird in der äußersten rechten Spalte für das Speicherkonto angezeigt. Klicken Sie auf das Symbol **x**, um die Anmeldeinformationen zu löschen.
+3. Ein Löschsymbol (**x**) wird in der äußersten rechten Spalte für das Speicherkonto angezeigt. Klicken Sie auf das Symbol **x**, um die Anmeldeinformationen zu löschen.
 
 4. Wenn Sie zur Bestätigung aufgefordert werden, klicken Sie auf **Ja**, um den Löschvorgang fortzusetzen. Die tabellarische Auflistung wird den Änderungen entsprechend aktualisiert.
 
@@ -125,9 +125,9 @@ Die Speicherkontenschlüssel werden immer in verschlüsselter Form im Dienst ges
 
 ##Rotationsworkflow
 
-Ein Microsoft Azure-Administrator kann den primären oder sekundären Schlüssel durch direkten Zugriff auf das Speicherkonto \(über den Microsoft Azure-Speicherdienst\) erneut generieren oder ändern. Dem StorSimple-Manager-Dienst wird diese Änderung nicht automatisch angezeigt.
+Ein Microsoft Azure-Administrator kann den primären oder sekundären Schlüssel durch direkten Zugriff auf das Speicherkonto (über den Microsoft Azure-Speicherdienst) erneut generieren oder ändern. Dem StorSimple-Manager-Dienst wird diese Änderung nicht automatisch angezeigt.
 
-Um den StorSimple-Manager-Dienst über die Änderung zu informieren, müssen Sie auf den StorSimple-Manager-Dienst sowie auf das Speicherkonto zugreifen und anschließend \(je nach geändertem Schlüssel\) den primären oder sekundären Schlüssel synchronisieren. Der Dienst ruft dann den neuesten Schlüssel ab, verschlüsselt ihn und sendet ihn an das Gerät.
+Um den StorSimple-Manager-Dienst über die Änderung zu informieren, müssen Sie auf den StorSimple-Manager-Dienst sowie auf das Speicherkonto zugreifen und anschließend (je nach geändertem Schlüssel) den primären oder sekundären Schlüssel synchronisieren. Der Dienst ruft dann den neuesten Schlüssel ab, verschlüsselt ihn und sendet ihn an das Gerät.
 
 ###So synchronisieren Sie Schlüssel für Speicherkonten im selben Abonnement wie der Dienst
 
@@ -138,7 +138,7 @@ Um den StorSimple-Manager-Dienst über die Änderung zu informieren, müssen Sie
 3. Führen Sie im Dialogfeld folgende Schritte aus:
 
   1. Wählen Sie das Speicherkonto mit dem Schlüssel, den Sie synchronisieren möchten, aus. Die Speicherkontenschlüssel werden bei der Anzeige verschlüsselt.
-  2. Sie müssen den zuvor im Microsoft Azure-Speicherdienst geänderten Schlüssel im StorSimple-Manager-Dienst aktualisieren. Wenn der primäre Zugriffsschlüssel geändert \(erneut generiert\) wurde, klicken Sie auf **synchronize secondary key**. Wenn der sekundäre Schlüssel geändert wurde, klicken Sie auf **synchronize secondary key**.
+  2. Sie müssen den zuvor im Microsoft Azure-Speicherdienst geänderten Schlüssel im StorSimple-Manager-Dienst aktualisieren. Wenn der primäre Zugriffsschlüssel geändert (erneut generiert) wurde, klicken Sie auf **synchronize secondary key**. Wenn der sekundäre Schlüssel geändert wurde, klicken Sie auf **synchronize secondary key**.
 
     ![Synchronisieren von Schlüsseln](./media/storsimple-manage-storage-accounts/HCS_KeyRotationStorageAccountSameSubscriptionAsService.png)
 

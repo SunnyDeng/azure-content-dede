@@ -52,7 +52,7 @@ In diesem Abschnitt wird erläutert, wie ein MSBuild-Befehl konstruiert wird, de
 
 1.  Wenn Visual Studio auf dem Buildserver installiert ist, klicken Sie auf **Start**, klicken Sie auf **Alle Programme**. Suchen Sie anschließend im Ordner **Visual Studio-Tools** nach **Visual Studio-Eingabeaufforderung**, und klicken Sie darauf.
 
-    Wenn Visual Studio auf dem Buildserver nicht installiert ist, öffnen Sie eine Eingabeaufforderung, und stellen Sie sicher, dass MSBuild.exe im Pfad verfügbar ist. MSBuild wird mit .NET Framework im Pfad "%WINDIR%\\Microsoft.NET\\Framework\\*Version*" installiert. Um z. B. MSBuild.exe der Umgebungsvariable PATH hinzuzufügen, wenn .NET Framework 4 installiert ist, geben Sie an der Eingabeaufforderung den folgenden Befehl ein:
+    Wenn Visual Studio auf dem Buildserver nicht installiert ist, öffnen Sie eine Eingabeaufforderung, und stellen Sie sicher, dass MSBuild.exe im Pfad verfügbar ist. MSBuild wird mit .NET Framework im Pfad "%WINDIR%\\Microsoft.NET\\Framework*Version*" installiert. Um z. B. MSBuild.exe der Umgebungsvariable PATH hinzuzufügen, wenn .NET Framework 4 installiert ist, geben Sie an der Eingabeaufforderung den folgenden Befehl ein:
 
         set PATH=%PATH%;"C:\Windows\Microsoft.NET\Framework\v4.0.30319"
 
@@ -66,7 +66,7 @@ In diesem Abschnitt wird erläutert, wie ein MSBuild-Befehl konstruiert wird, de
 
     Den Projektnamen können Sie optional als MSBuild-Parameter angeben. Wird er nicht angegeben, wird das aktuelle Verzeichnis verwendet. Weitere Informationen über MSBuild-Befehlszeilenoptionen finden Sie unter [MSBuild-Befehlszeilenreferenz][1].
 
-4.  Suchen Sie die Ausgabe. Standardmäßig erstellt dieser Befehl ein Verzeichnis unter dem Stammordner des Projekts, z. B. "*ProjectDir*\\bin\\*Konfiguration*\\app.publish\\". Beim Erstellen eines Azure-Projekts werden zwei Dateien generiert, die Paketdatei selbst und die zugehörige Konfigurationsdatei:
+4.  Suchen Sie die Ausgabe. Standardmäßig erstellt dieser Befehl ein Verzeichnis unter dem Stammordner des Projekts, z. B. "*ProjectDir*\\bin*Konfiguration*\\app.publish". Beim Erstellen eines Azure-Projekts werden zwei Dateien generiert, die Paketdatei selbst und die zugehörige Konfigurationsdatei:
 
     -   Project.cspkg
     -   ServiceConfiguration.*Zielprofil*.cscfg
@@ -77,7 +77,7 @@ In diesem Abschnitt wird erläutert, wie ein MSBuild-Befehl konstruiert wird, de
 
         MSBuild /t:Publish /p:TargetProfile=Cloud
 
-6.  Geben Sie den Speicherort der Ausgabe an. Legen Sie den Pfad mit der Option "/p:PublishDir=*Verzeichnis*\\" fest, und geben Sie dabei wie im folgenden Beispiel auch den abschließenden umgekehrten Schrägstrich an:
+6.  Geben Sie den Speicherort der Ausgabe an. Legen Sie den Pfad mit der Option "/p:PublishDir=*Verzeichnis*" fest, und geben Sie dabei wie im folgenden Beispiel auch den abschließenden umgekehrten Schrägstrich an:
 
         MSBuild /target:Publish /p:PublishDir=\\myserver\drops\
 
@@ -101,7 +101,7 @@ Um TFS zum Erstellen von Azure-Paketen zu konfigurieren, führen Sie die folgend
 
 5.  Klicken Sie auf die Registerkarte **Prozess**. Wählen Sie auf der Registerkarte "Prozess" unter **Erstellen** das Projekt aus, falls es noch nicht ausgewählt ist, und erweitern Sie den Abschnitt **Erweitert** im Abschnitt **Erstellen** des Rasters. 
 
-6.  Wählen Sie **MSBuild-Argumente** aus, und legen Sie die entsprechenden MSBuild-Befehlszeilenargumente wie in Schritt 2 oben erläutert fest. Geben Sie z. B. **/t:Publish /p:PublishDir=\\\\myserver\\drops\\** ein, um ein Paket zu erstellen und die Paketdateien in folgendes Verzeichnis zu kopieren: \\\\myserver\\drops\\:
+6.  Wählen Sie **MSBuild-Argumente** aus, und legen Sie die entsprechenden MSBuild-Befehlszeilenargumente wie in Schritt 2 oben erläutert fest. Geben Sie z. B. **/t:Publish /p:PublishDir=\\\\myserver\\drops** ein, um ein Paket zu erstellen und die Paketdateien in folgendes Verzeichnis zu kopieren: \\\\myserver\\drops:
 
     ![][2]
 
@@ -132,7 +132,7 @@ In diesem Abschnitt wird erläutert, wie ein Windows PowerShell-Skript erstellt 
 
     Damit werden Informationen über Ihr Abonnement angezeigt. Prüfen Sie, ob alles richtig ist.
 
-4.  Speichern Sie die am [Ende dieses Artikels][] bereitgestellte Skriptvorlage im Skriptordner unter "c:\\scripts\\WindowsAzure\\**PublishCloudService.ps1**".
+4.  Speichern Sie die am [Ende dieses Artikels][] bereitgestellte Skriptvorlage im Skriptordner unter "c:\\scripts\\WindowsAzure**PublishCloudService.ps1**".
 
 5.  Prüfen Sie den Parameterabschnitt des Skripts. Fügen Sie Standardwerte hinzu, oder ändern Sie diese. Diese Werte können durch Übergabe expliziter Parameter stets überschrieben werden.
 
@@ -172,7 +172,7 @@ In diesem Abschnitt wird erläutert, wie ein Windows PowerShell-Skript erstellt 
 
     Laden Sie Remotedesktopzertifikate in einem einmaligen Schritt während der Einrichtung mit dem folgenden Cmdlet-Skript hoch:
 
-        Add-AzureCertificate -serviceName <CLOUDSERVICENAME> -certToDeploy (get-item cert:\CurrentUser\MY\<THUMBPRINT>)
+        Add-AzureCertificate -serviceName <CLOUDSERVICENAME> -certToDeploy (get-item cert:\CurrentUser\MY<THUMBPRINT>)
 
     Beispiel:
 
@@ -180,7 +180,7 @@ In diesem Abschnitt wird erläutert, wie ein Windows PowerShell-Skript erstellt 
 
     Alternativ können Sie die PFX-Zertifikatdatei mit privatem Schlüssel exportieren und Zertifikate über das Azure-Verwaltungsportal zu jedem Ziel-Cloud-Dienst hochladen. Weitere Informationen hierzu finden Sie im folgenden Artikel: [http://msdn.microsoft.com/library/windowsazure/gg443832.aspx][].
 
-    **Bereitstellung aktualisieren im Unterschied zu Bereitstellung löschen -\> Neue Bereitstellung**
+    **Bereitstellung aktualisieren im Unterschied zu Bereitstellung löschen -> Neue Bereitstellung**
 
     In der Standardeinstellung aktualisiert das Skript eine Bereitstellung ($enableDeploymentUpgrade = 1), wenn kein Parameter übergeben wird oder der Wert 1 explizit übergeben wird. Bei Einzelinstanzen bietet dies den Vorteil, dass die Bereitstellung weniger Zeit in Anspruch nimmt als eine vollständige Bereitstellung. Bei Instanzen, die hoch verfügbar sein müssen, bietet dies außerdem den Vorteil, dass einige Instanzen weiter aktiv sein können, während andere aktualisiert werden (wandernde Aktualisierungsdomäne). Außerdem wird Ihr VIP nicht gelöscht.
 

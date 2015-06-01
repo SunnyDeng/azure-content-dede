@@ -32,18 +32,18 @@ Zudem führen wir gerade die nächste Vorschauversion [2015-02-28-Preview](searc
 ###Checkliste für die Migration###
 
 - Überprüfen Sie die Hinweise zu wichtigen Änderungen, um zu ermitteln, ob Ihre Lösung betroffen ist.
-- Ändern Sie die API-Version für die gesperrte Version in `2015-02-28`. Diese Version unterliegt einer Vereinbarung zum Servicelevel \(SLA\). Wenn Probleme auftreten, können Sie sie schneller beheben.
+- Ändern Sie die API-Version für die gesperrte Version in `2015-02-28`. Diese Version unterliegt einer Vereinbarung zum Servicelevel (SLA). Wenn Probleme auftreten, können Sie sie schneller beheben.
 - Erstellen, Bereitstellen, Testen. Abgesehen von den wichtigen Änderungen, sollte das Suchverhalten zu 100 % gleichwertig sein.
 - Einführen in die Produktionsumgebung.
 - Bewerten Sie die neuen Features hinsichtlich der Einführung künftiger Features. Ändern Sie die Version wieder in 2015-02-28-Preview, wenn Sie die Microsoft Natural Language-Prozessoren oder `morelikethis` testen möchten.
 
-##Wichtige Änderungen in api-version = 2015\*##
+##Wichtige Änderungen in api-version = 2015*##
 
 Die erste Version der API enthielt ein Feature für die automatische Vervollständigung bzw. für Eingabevorschläge. Es war zwar nützlich, aber begrenzt auf den Präfixabgleich, wobei nur nach den ersten Zeichen im Suchbegriff gesucht und der Abgleich weiterer Zeichen im Feld nicht unterstützt wurde. Dies wurde durch eine boolesche Eigenschaft namens `suggestions` implementiert, die auf `true` festgelegt wurde, wenn der Präfixabgleich für ein bestimmtes Feld aktiviert werden sollte.
 
 Diese ursprüngliche Implementierung ist jetzt veraltet, da sie durch ein neues `Suggesters`-Konstrukt ersetzt wurde, das in der [Index](https://msdn.microsoft.com/de-de/library/azure/dn798941.aspx)-Funktion definiert ist und die Infix- und Fuzzyabgleich bereitstellt. Wie die Namen bereits andeuten, bieten Infix- und Fuzzyabgleich eine viel breitere Palette von Vergleichsfunktionen. Der Infixabgleich umfasst das Präfix, weil auch hier die Anfangszeichen verglichen werden. Der Abgleich wird jedoch auf die restliche Zeichenfolge ausgeweitet.
 
-Wir entschieden uns dafür, die vorherige Implementierung \(die boolesche Eigenschaft\) einzustellen. Das bedeutet, dass sie in beiden 2015-Versionen nicht mehr verfügbar ist und dass keine Abwärtskompatibilität besteht, damit sie von Kunden, die neuere Lösungen erstellen, nicht versehentlich verwendet werden kann. Bei Verwendung von `2015-02-28` oder `2015-02-28-Preview` müssen Sie das neue `Suggesters` -Konstrukt verwenden, um Abfragen zu Eingabevorschlägen zu aktivieren.
+Wir entschieden uns dafür, die vorherige Implementierung (die boolesche Eigenschaft) einzustellen. Das bedeutet, dass sie in beiden 2015-Versionen nicht mehr verfügbar ist und dass keine Abwärtskompatibilität besteht, damit sie von Kunden, die neuere Lösungen erstellen, nicht versehentlich verwendet werden kann. Bei Verwendung von `2015-02-28` oder `2015-02-28-Preview` müssen Sie das neue `Suggesters` -Konstrukt verwenden, um Abfragen zu Eingabevorschlägen zu aktivieren.
 
 ##Portieren vorhandenen Codes##
 
@@ -54,15 +54,15 @@ Für benutzerdefinierte Anwendungen, die Vorschläge implementiert haben, sollte
 1. Aktualisieren Sie alle NuGet-Pakete.
 1. Ändern Sie die API-Version in `2015-02-28`. Wenn Sie das folgende Codebeispiel verwenden, ist die API-Version in der **AzureSearchHelper**-Klasse enthalten.
 1. Löschen Sie das `Suggestions={true | false}`-Attribut aus dem JSON-Schema, das den Index definiert.
-1. Fügen Sie ein Konstrukt am Ende des Index für `Suggesters` ein \(wie im Abschnitt [Nachher](#after) gezeigt\).
-1. Stellen Sie sicher, dass Sie den Dienst veröffentlichen können \(möglicherweise müssen Sie den Index umbenennen, um Namenskonflikte zu vermeiden\).
+1. Fügen Sie ein Konstrukt am Ende des Index für `Suggesters` ein (wie im Abschnitt [Nachher](#after) gezeigt).
+1. Stellen Sie sicher, dass Sie den Dienst veröffentlichen können (möglicherweise müssen Sie den Index umbenennen, um Namenskonflikte zu vermeiden).
 1. Erstellen Sie die Lösung neu, und stellen Sie sie in einer Testumgebung bereit.
 1. Führen Sie alle Testfälle aus, um sicherzustellen, dass sich die Lösung erwartungsgemäß verhält.
 1. Einführen in die Produktionsumgebung.
 
 Im Codebeispiel aus dem [Adventure Works-Beispiel auf Codeplex](https://azuresearchadventureworksdemo.codeplex.com/) wird die ursprüngliche `Suggestions`-Implementierung verwendet. Sie sollten dieses Beispiel verwenden, um die Codemigration anhand von Beispielcode zu üben.
 
-Im folgenden Abschnitt werden eine [Vorher](#before)- und eine [Nachher](#after)-Implementierung von Vorschlägen dargestellt. Sie können die **CreateCatalogIndex\(\)**-Methode durch die Version im Abschnitt [Nachher](#after) ersetzen und die Lösung dann erstellen und bereitstellen, um die neuen Funktionen auszuprobieren.
+Im folgenden Abschnitt werden eine [Vorher](#before)- und eine [Nachher](#after)-Implementierung von Vorschlägen dargestellt. Sie können die **CreateCatalogIndex()**-Methode durch die Version im Abschnitt [Nachher](#after) ersetzen und die Lösung dann erstellen und bereitstellen, um die neuen Funktionen auszuprobieren.
 
 <a name="before"></a>
 ###Vorher###
@@ -134,13 +134,13 @@ In der migrierten Schemadefinition wird die `Suggestions`-Eigenschaft weggelasse
 
 Nachdem Sie die Lösung portiert und sichergestellt haben, dass sie wie erwartet ausgeführt wird, können Sie diese Links verwenden, um sich über die neuen Features zu informieren.
 
-- [Azure Search ist allgemein verfügbar \(Blogbeitrag\)](http://go.microsoft.com/fwlink/p/?LinkId=528211)
+- [Azure Search ist allgemein verfügbar (Blogbeitrag)](http://go.microsoft.com/fwlink/p/?LinkId=528211)
 - [Neuerungen im aktuellen Update für Azure Search](../search-latest-updates/)
-- [Azure Search – Übersicht\)](https://msdn.microsoft.com/de-de/library/azure/dn798933.aspx)
+- [Azure Search – Übersicht)](https://msdn.microsoft.com/de-de/library/azure/dn798933.aspx)
 
 ##Abrufen von Hilfe##
 
-Die API-Version `2015-02-28` unterliegt einer Vereinbarung zum Servicelevel \(SLA\). Verwenden Sie die Support-Optionen und Links auf [dieser Seite](http://azure.microsoft.com/support/options/), um ein Support-Ticket anzulegen.
+Die API-Version `2015-02-28` unterliegt einer Vereinbarung zum Servicelevel (SLA). Verwenden Sie die Support-Optionen und Links auf [dieser Seite](http://azure.microsoft.com/support/options/), um ein Support-Ticket anzulegen.
 
 
 <!--HONumber=54-->

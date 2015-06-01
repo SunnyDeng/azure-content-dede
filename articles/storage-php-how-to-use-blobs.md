@@ -135,7 +135,7 @@ Mithilfe eines **BlobRestProxy**-Objekts können Sie einen Blob-Container mit de
 		echo $code.": ".$error_message."<br />";
 	}
 
-Wird **setPublicAccess(PublicAccessType::CONTAINER\_AND\_BLOBS)** aufgerufen, kann über Anonyme Anforderungen auf die Container- und Blobdaten zugegriffen werden. Wird **setPublicAccess(PublicAccessType::CONTAINER\_AND\_BLOBS)** aufgerufen, kann über Anonyme Anforderungen lediglich auf die Blobdaten zugegriffen werden. Weitere Informationen zu Container-ACLs finden Sie im Thema zum [Festlegen der Container-ACL (REST-API)][container-acl].
+Wird **setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS)** aufgerufen, kann über Anonyme Anforderungen auf die Container- und Blobdaten zugegriffen werden. Wird **setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS)** aufgerufen, kann über Anonyme Anforderungen lediglich auf die Blobdaten zugegriffen werden. Weitere Informationen zu Container-ACLs finden Sie im Thema zum [Festlegen der Container-ACL (REST-API)][container-acl].
 
 Weitere Informationen zu Fehlercodes des Blob-Diensts finden Sie im Thema [Fehlercodes des Blob-Diensts][error-codes].
 
@@ -168,7 +168,7 @@ Um eine Datei als Blob hochzuladen, verwenden Sie die **BlobRestProxy->createBlo
 		echo $code.": ".$error_message."<br />";
 	}
 
-Beachten Sie, dass in dem Beispiel oben ein Blob als Stream hochgeladen wird. Ein Blob kann allerdings auch als Zeichenfolge hochgeladen werden, zum Beispiel mit der [file\_get\_contents][file_get_contents]-Funktion. Ändern Sie dazu `$content = fopen("c:\myfile.txt", "r");` im Beispiel oben in `$content = file_get_contents("c:\myfile.txt");`.
+Beachten Sie, dass in dem Beispiel oben ein Blob als Stream hochgeladen wird. Ein Blob kann allerdings auch als Zeichenfolge hochgeladen werden, zum Beispiel mit der [file_get_contents][file_get_contents]-Funktion. Ändern Sie dazu `$content = fopen("c:\myfile.txt", "r");` im Beispiel oben in `$content = file_get_contents("c:\myfile.txt");`.
 
 ## Vorgehensweise: Auflisten der Blobs in einem Container
 
@@ -230,7 +230,7 @@ Um einen Blob herunterzuladen, rufen Sie zunächst die **BlobRestProxy->getBlob*
 		echo $code.": ".$error_message."<br />";
 	}
 
-Beachten Sie, dass in dem Beispiel oben ein Blob als Streamressource abgerufen wird (das Standardverhalten). Sie können allerdings die [stream\_get\_contents][stream-get-contents]-Funktion verwenden, um den zurückgegebenen Stream in eine Zeichenfolge zu konvertieren.
+Beachten Sie, dass in dem Beispiel oben ein Blob als Streamressource abgerufen wird (das Standardverhalten). Sie können allerdings die [stream_get_contents][stream-get-contents]-Funktion verwenden, um den zurückgegebenen Stream in eine Zeichenfolge zu konvertieren.
 
 ## Vorgehensweise: Löschen eines Blobs
 

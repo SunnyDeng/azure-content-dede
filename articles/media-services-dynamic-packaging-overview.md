@@ -21,7 +21,7 @@
 
 ##Übersicht
 
-Microsoft Azure Media Services kann verwendet werden, um zahlreiche Medien-Quelldateiformate, Medienstreamingformate und Inhaltsschutzformate in verschiedenen Clienttechnologien wie iOS, XBOX, Silverlight oder Windows 8 bereitzustellen. Von den Clients werden verschiedene Protokolle verarbeitet. So ist für iOS ein HLS-V4-Format \(HTTP Live Streaming\) erforderlich, für Silverlight und Xbox dagegen Smooth Streaming. Wenn Sie über einen Satz MP4-Dateien \(ISO Base Media 14496-12\) mit adaptiver Bitrate \(Multi-Bitrate\) oder einen Satz von Smooth Streaming-Dateien mit adaptiver Bitrate verfügen, die Sie Clients bereitstellen möchten, von denen MPEG DASH, HLS oder Smooth Streaming verarbeitet wird, sollten Sie die Vorteile der dynamischen Paketerstellung von Media Services nutzen.
+Microsoft Azure Media Services kann verwendet werden, um zahlreiche Medien-Quelldateiformate, Medienstreamingformate und Inhaltsschutzformate in verschiedenen Clienttechnologien wie iOS, XBOX, Silverlight oder Windows 8 bereitzustellen. Von den Clients werden verschiedene Protokolle verarbeitet. So ist für iOS ein HLS-V4-Format (HTTP Live Streaming) erforderlich, für Silverlight und Xbox dagegen Smooth Streaming. Wenn Sie über einen Satz MP4-Dateien (ISO Base Media 14496-12) mit adaptiver Bitrate (Multi-Bitrate) oder einen Satz von Smooth Streaming-Dateien mit adaptiver Bitrate verfügen, die Sie Clients bereitstellen möchten, von denen MPEG DASH, HLS oder Smooth Streaming verarbeitet wird, sollten Sie die Vorteile der dynamischen Paketerstellung von Media Services nutzen.
 
 Bei der dynamischen Paketerstellung müssen Sie lediglich ein Medienobjekt erstellen, das einen Satz von MP4- oder Smooth Streaming-Dateien mit adaptiver Bitrate enthält. Dann wird durch den bedarfsgesteuerten Streamingserver auf Basis des in der Manifest- oder Fragmentanforderung angegebenen Formats sichergestellt, dass Sie den Datenstrom im ausgewählten Protokoll erhalten. So müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Die entsprechende Antwort wird von Media Services basierend auf Clientanforderungen erstellt und verfügbar gemacht.
 
@@ -38,7 +38,7 @@ Im folgenden Diagramm wird der Workflow zur dynamischen Paketerstellung dargeste
 
 ##Allgemeines Szenario
 
-1. Laden Sie eine Eingabedatei \(auch Mezzaninedatei genannt\) hoch. Beispielformate: H.264, MP4 oder WMV \(eine Liste unterstützter Formate finden Sie unter Von Media Services Encoder unterstützte Formate“\).
+1. Laden Sie eine Eingabedatei (auch Mezzaninedatei genannt) hoch. Beispielformate: H.264, MP4 oder WMV (eine Liste unterstützter Formate finden Sie unter Von Media Services Encoder unterstützte Formate“).
  
 1. Codieren Sie Ihre Mezzaninedatei zu H.264-MP4-Sätzen mit adaptiver Bitrate.
  
@@ -46,7 +46,7 @@ Im folgenden Diagramm wird der Workflow zur dynamischen Paketerstellung dargeste
  
 1. Erstellen Sie die Streaming-URLs zum Zugreifen und Streamen Ihrer Inhalte.
  
->[AZURE.NOTE]Es werden nicht alle MP4-Dateiformate von der dynamischen Paketerstellung unterstützt. Weitere Informationen finden Sie unter [Formats that are not supported by dynamic packaging](media-services-dynamic-packaging-overview.md#unsupported_formats) \(Formate, die nicht von der dynamischen Paketerstellung unterstützt werden\).
+>[AZURE.NOTE]Es werden nicht alle MP4-Dateiformate von der dynamischen Paketerstellung unterstützt. Weitere Informationen finden Sie unter [Formats that are not supported by dynamic packaging](media-services-dynamic-packaging-overview.md#unsupported_formats) (Formate, die nicht von der dynamischen Paketerstellung unterstützt werden).
 
 ##Vorbereiten von Medienobjekten auf dynamisches Streaming
 
@@ -75,7 +75,7 @@ Diese Aufgabe führen Sie in der Regel dann aus, wenn Sie einen Satz von MP4-Dat
 
 ##Streamen Ihre Inhalte an Clients
 
-Wenn die Datensätze mit adaptiver Bitrate vorhanden sind, können Sie Ihr Medienobjekt veröffentlichen, indem Sie einen On-Demand-Locator und die Streaming-URLs für Smooth Streaming, MPEG DASH, HLS und HDS \(nur mit Adobe PrimeTime/Access-Lizenz\) erstellen.
+Wenn die Datensätze mit adaptiver Bitrate vorhanden sind, können Sie Ihr Medienobjekt veröffentlichen, indem Sie einen On-Demand-Locator und die Streaming-URLs für Smooth Streaming, MPEG DASH, HLS und HDS (nur mit Adobe PrimeTime/Access-Lizenz) erstellen.
 
 Informationen zum Erstellen von Locators und zum Verwenden der dynamischen Paketerstellung zum Streamen von Inhalten finden Sie unter den folgenden Themen:
 
@@ -85,7 +85,7 @@ Konfigurieren von Übermittlungsrichtlinien für Medienobjekte mithilfe von **.N
 
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
 
-Veröffentlichen von Medienobjekten \(durch Locator-Erstellung\) mithilfe des **Azure-Verwaltungsportals** oder mithilfe von **.NET**.
+Veröffentlichen von Medienobjekten (durch Locator-Erstellung) mithilfe des **Azure-Verwaltungsportals** oder mithilfe von **.NET**.
 
 [AZURE.INCLUDE [media-services-selector-publish](../includes/media-services-selector-publish.md)]
 

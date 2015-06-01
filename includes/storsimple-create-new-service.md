@@ -20,7 +20,7 @@
 
 1. Melden Sie sich mithilfe Ihrer Microsoft-Kontoanmeldeinformationen beim Microsoft Azure-Verwaltungsportal an: [Azure-Verwaltungsportal](https://manage.windowsazure.com/).
 
-2. Klicken Sie im Verwaltungsportal auf **Neu** \> **Datendienste** \> **StorSimple-Manager** \> **Schnellerfassung**.
+2. Klicken Sie im Verwaltungsportal auf **Neu** > **Datendienste** > **StorSimple-Manager** > **Schnellerfassung**.
 
 3. Gehen Sie im angezeigten Formular folgendermaßen vor:
   1. Geben Sie einen eindeutigen **Namen** für Ihren Dienst an. Dies ist ein Anzeigename, der zum Identifizieren des Diensts verwendet werden kann. Der Name kann zwischen 2 und 50 Zeichen lang sein und darf nur Buchstaben, Zahlen und Bindestriche enthalten. Der Name muss mit einem Buchstaben oder einer Zahl beginnen und enden.

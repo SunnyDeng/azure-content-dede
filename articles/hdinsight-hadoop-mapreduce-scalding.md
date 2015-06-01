@@ -139,15 +139,15 @@ Erfahren Sie in diesem Dokument, wie Maven verwendet wird, um einen einfachen Ma
 
     * **repositories**: Die Bibliotheken, die die von diesem Projekt verwendeten Abhängigkeitsdateien enthalten.
 
-    * **scalding-core\_2.11** und **hadoop-core**: Dieses Projekts hängt sowohl von den Scalding- und als auch den Hadoop-Core-Paketen ab.
+    * **scalding-core_2.11** und **hadoop-core**: Dieses Projekts hängt sowohl von den Scalding- und als auch den Hadoop-Core-Paketen ab.
 
     * **maven-scala-plugin**: Plug-In zur Kompilierung von Scala-Anwendungen.
 
-    * **maven-shade-plugin**: Plug-In zum erstellen von Shade-Jars \(Fatjars\). Dieses Plug-In verwendet Filter und Transformationen, im Besonderen:
+    * **maven-shade-plugin**: Plug-In zum erstellen von Shade-Jars (Fatjars). Dieses Plug-In verwendet Filter und Transformationen, im Besonderen:
 
-        * **filters**: The filters applied modify the meta information included with in the jar file. To prevent signing exceptions at runtime, this excludes various signature files that may be included with dependencies.
+        * **filters**: Die angewendeten Filter ändern die in die JAR-Datei eingefügten Metadaten. Zur Vermeidung von Signaturausnahmen zur Laufzeit sind verschiedene Signaturdateien ausgeschlossen, die über Abhängigkeiten eingefügt werden könnten.
 
-        * **executions**: The package phase execution configuration specifies the **com.twitter.scalding.Tool** class as the main class for the package. Without this, you would need to specify com.twitter.scalding.Tool, as well as the class that contains the application logic, when running the job with the hadoop command.
+        * **executions**: Die Ausführungskonfiguration für die Paketphase gibt die **com.twitter.scalding.Tool**-Klasse als Hauptklasse für das Paket an. Ohne diese Information müssten Sie "com.twitter.scalding.Tool" sowie die Klasse mit der Anwendungslogik angeben, wen Sie den Auftrag mit dem Hadoop-Befehl ausführen.
 
 3. Löschen Sie das **Src/Test**-Verzeichnis, da Sie keine Tests in diesem Beispiel erstellen.
 

@@ -68,7 +68,7 @@ Wenn Sie den Azure Store bereits kennengelernt haben, finden Sie in diesem Absch
  		...
  		mongoose.connect(connectionString);
 
-Hinweis: Azure fügt das Präfix **CUSTOMCONNSTR\_** zur ursprünglich deklarierten Verbindungszeichenfolge hinzu. Deshalb referenziert der Code **CUSTOMCONNSTR\_MONGOLAB\_URI.** anstelle von **MONGOLAB\_URI**.
+Hinweis: Azure fügt das Präfix **CUSTOMCONNSTR_** zur ursprünglich deklarierten Verbindungszeichenfolge hinzu. Deshalb referenziert der Code **CUSTOMCONNSTR_MONGOLAB_URI.** anstelle von **MONGOLAB_URI**.
 
 Nun folgt das vollständige Lernprogramm ...
 
@@ -506,7 +506,7 @@ Das Erstellen einer Website in Azure ist sehr einfach. Wenn dies Ihre erste Azur
 Sie sind fast fertig!
 
 ### Konfigurieren der Umgebung
-Erinnern Sie sich an "process.env.CUSTOMCONNSTR\_MONGOLAB\_URI" im Code? Wir möchten diese Umgebungsvariable mit dem Wert auffüllen, der Azure während der MongoLab-Datenbankbereitstellung bereitgestellt wird.
+Erinnern Sie sich an "process.env.CUSTOMCONNSTR_MONGOLAB_URI" im Code? Wir möchten diese Umgebungsvariable mit dem Wert auffüllen, der Azure während der MongoLab-Datenbankbereitstellung bereitgestellt wird.
 
 #### Abrufen der MongoLab-Verbindungszeichenfolge
 

@@ -208,7 +208,7 @@ Wenn Sie **FoxyProxy Standard** installiert haben, konfigurieren Sie es folgende
 
 	* **Name des Musters**: **Stammknoten** - Dies ist lediglich ein Anzeigename für das Muster.
 
-	* **URL-Muster**: <strong>\*stammknoten\*</strong> - Definiert ein Muster, das mit jeder URL übereinstimmt, die das Wort **Stammknoten** enthält.
+	* **URL-Muster**: <strong>*stammknoten*</strong> - Definiert ein Muster, das mit jeder URL übereinstimmt, die das Wort **Stammknoten** enthält.
 
 	![foxyproxy pattern](./media/hdinsight-hadoop-linux-use-ssh-windows/foxypattern.png)
 

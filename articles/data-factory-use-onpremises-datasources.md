@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Aktivieren von Pipelines zum Arbeiten mit lokalen Daten | Azure Data Factory" 
 	description="Erfahren Sie, wie Sie eine lokale Datenquelle bei Azure Data Factory registrieren und Daten von/aus der Datenquelle kopieren." 
 	services="data-factory" 
@@ -57,8 +57,8 @@ In dieser exemplarischen Vorgehensweise erstellen Sie eine Data Factory mit eine
 ### Schritt 1: Erstellen einer Azure Data Factory
 In diesem Schritt verwenden Sie das Azure-Verwaltungsportal zum Erstellen einer Azure Data Factory-Instanz mit dem Namen **ADFTutorialOnPremDF**. Sie können auch eine Data Factory mithilfe von Azure Data Factory-Cmdlets erstellen. 
 
-1.	Nach der Anmeldung beim [Azure-Vorschauportal][
-2.	azure-preview-portal] klicken Sie in der unteren linken Ecke auf **NEW** und dann auf **Data Factory** im Fenster **New**.
+1.	Nach der Anmeldung beim [Azure-Vorschauportal][]
+2.	[azure-preview-portal] klicken Sie in der unteren linken Ecke auf **NEW** und dann auf **Data Factory** im Fenster **New**.
 
 	![New->DataFactory][image-data-factory-new-datafactory-menu] 
 	
@@ -208,7 +208,7 @@ In diesem Schritt erstellen Sie die Eingabe- und Ausgabedatasets, die ein- und a
 
 ### Erstellen der Eingabetabelle
 
-1.	Erstellen Sie eine JSON-Datei für eine Data Factory-Tabelle, die Daten aus der Tabelle **emp** in der SQL Server-Datenbank darstellt. Öffnen Sie den **Editor**, kopieren Sie das folgende JSON-Skript, und speichern Sie es als **EmpOnPremSQLTable.json** im Ordner C:\ADFGetStarted\**OnPrem**. Erstellen Sie den Unterordner **OnPrem** in **C:\ADFGetStarted**, falls er noch nicht vorhanden ist. 
+1.	Erstellen Sie eine JSON-Datei für eine Data Factory-Tabelle, die Daten aus der Tabelle **emp** in der SQL Server-Datenbank darstellt. Öffnen Sie den **Editor**, kopieren Sie das folgende JSON-Skript, und speichern Sie es als **EmpOnPremSQLTable.json** im Ordner C:\ADFGetStarted**OnPrem**. Erstellen Sie den Unterordner **OnPrem** in **C:\ADFGetStarted**, falls er noch nicht vorhanden ist. 
 
 
         {
@@ -437,7 +437,7 @@ Dieser Abschnitt beschreibt das Erstellen und Registrieren eines Gateways mit Az
 	**Beispiel für eine Befehlszeile und Ausgabe**:
 
 
-		PS C:\> New-AzureDataFactoryGateway -Name MyGateway -DataFactoryName $df -Location "West US" -ResourceGroupName ADF -Description "gateway for walkthrough"
+		PS C:> New-AzureDataFactoryGateway -Name MyGateway -DataFactoryName $df -Location "West US" -ResourceGroupName ADF -Description "gateway for walkthrough"
 
 		Name            : MyGateway
 		Location        : West US
@@ -459,12 +459,12 @@ Dieser Abschnitt beschreibt das Erstellen und Registrieren eines Gateways mit Az
 	**Beispiel für eine Befehlszeilenausgabe:**
 
 
-		PS C:\> $Key = New-AzureDataFactoryGatewayKey -GatewayName MyGateway -ResourceGroupName ADF -DataFactoryName $df 
+		PS C:> $Key = New-AzureDataFactoryGatewayKey -GatewayName MyGateway -ResourceGroupName ADF -DataFactoryName $df 
 
 	
-4. Wechseln Sie in Azure PowerShell zu folgendem Ordner: **C:\Programme\Microsoft Data Management Gateway\1.0\PowerShellScript\**, und führen Sie das Skript **RegisterGateway.ps1** aus, das mit der lokalen Variablen **$Key** verknüpft ist, wie im folgenden Befehl zum Registrieren des Client-Agents auf dem Computer mit dem logischen Gateway, das Sie zuvor erstellt haben, dargestellt.
+4. Wechseln Sie in Azure PowerShell zu folgendem Ordner: **C:\Programme\Microsoft Data Management Gateway\1.0\PowerShellScript**, und führen Sie das Skript **RegisterGateway.ps1** aus, das mit der lokalen Variablen **$Key** verknüpft ist, wie im folgenden Befehl zum Registrieren des Client-Agents auf dem Computer mit dem logischen Gateway, das Sie zuvor erstellt haben, dargestellt.
 
-		PS C:\> .\RegisterGateway.ps1 $Key.GatewayKey
+		PS C:> .\RegisterGateway.ps1 $Key.GatewayKey
 		
 		Agent registration is successful!
 

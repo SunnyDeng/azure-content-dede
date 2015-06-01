@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Hinzufügen von Pushbenachrichtigungen zu Ihrer Xamarin iOS-App mit Azure App Service" 
 	description="Erfahren Sie, wie Azure App Service zum Senden von Pushbenachrichtigungen an Ihre Xamarin iOS-App verwendet wird." 
 	services="app-service\mobile" 
@@ -31,7 +31,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
    > [AZURE.NOTE] Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
 
-Der Apple Push Notification Service (APNS) verwendet Zertifikate, um Ihre mobile App zu authentifizieren. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen der Zertifikate in Ihre mobile App. Die offizielle Dokumentation der APNS-Funktionen finden Sie unter [Apple Push Notification Service].
+Der Apple Push Notification Service (APNS) verwendet Zertifikate, um Ihre mobile App zu authentifizieren. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen der Zertifikate in Ihre mobile App. Die offizielle Dokumentation der APNS-Funktionen finden Sie unter [Apple Push Notification Service (APNS)].
 
 ## <a name="certificates"></a>Generieren der Zertifikatsignieranforderungsdatei
 
@@ -168,7 +168,7 @@ Später können Sie mit diesem Zertifikat eine .p12-Datei generieren und in Ihre
         NotificationHubClient Hub = NotificationHubClient.CreateClientFromConnectionString(notificationHubConnection, notificationHubName)
 
         // iOS payload
-        var appleNotificationPayload = "{\"aps\":{\"alert\":\"" + item.Text + "\"}}";
+        var appleNotificationPayload = "{"aps":{"alert":"" + item.Text + ""}}";
 
         try
         {

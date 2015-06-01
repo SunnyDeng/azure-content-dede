@@ -23,7 +23,7 @@
 
 # Verwenden des In-Role Caches (Azure Cache)
 
-Dieser Leitfaden zeigt Ihnen die ersten Schritte mit **In-Role Cache für Azure Cache**. Die Beispiele sind in C\#-Code geschrieben und verwenden die .NET-API. Es werden folgende Szenarien vorgestellt: **Konfigurieren eines Cacheclusters**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten vom Cache, Speichern des ASP.NET-Sitzungszustands im Cache** und **Aktivieren des ASP.NET-Seitenausgabecaches mithilfe des Cache**. Weitere Informationen zur Verwendung des In-Role Cache erhalten Sie unter [Nächste Schritte][].
+Dieser Leitfaden zeigt Ihnen die ersten Schritte mit **In-Role Cache für Azure Cache**. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET-API. Es werden folgende Szenarien vorgestellt: **Konfigurieren eines Cacheclusters**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten vom Cache, Speichern des ASP.NET-Sitzungszustands im Cache** und **Aktivieren des ASP.NET-Seitenausgabecaches mithilfe des Cache**. Weitere Informationen zur Verwendung des In-Role Cache erhalten Sie unter [Nächste Schritte][].
 
 >Hilfestellung bei der Auswahl des für Ihre Anwendung geeigneten Azure Cache-Angebots finden Sie unter [Welches Azure Cache-Angebot ist für mich das richtige?][].
 
@@ -197,7 +197,7 @@ Handelt es sich bei Ihrer Rolle um eine ASP.NET-Webrolle, wird auch die folgende
 
 -	Microsoft.Web.DistributedCache.dll.
 
->Diese Assemblys befinden sich im Ordner "C:\\Program Files\\Microsoft SDKs\\Microsoft Azure\\.NET SDK\\2012-10\\ref\\Caching\\".
+>Diese Assemblys befinden sich im Ordner "C:\\Program Files\\Microsoft SDKs\\Microsoft Azure.NET SDK\\2012-10\\ref\\Caching".
 
 Nachdem die Zwischenspeicherung im Clientprojekt konfiguriert wurde, können Sie die in den folgenden Abschnitten beschriebenen Methoden verwenden, um mit dem Cache zu arbeiten.
 

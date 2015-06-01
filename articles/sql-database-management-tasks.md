@@ -57,7 +57,7 @@ Bevor Sie sich verbinden können, müssen Sie unter Umständen eine Firewall-Aus
 
 ##Verbinden mit einem lokalen Server
 
-1. Vergewissern Sie sich in Management Studio unter "Verbindung mit dem Server herstellen", dass "Datenbankmodul" ausgewählt ist, und geben Sie den Namen einer lokalen Instanz im folgenden Format ein: *servername*\\*instancename*. Für eine Standardinstanz auf dem lokalen Server geben Sie *localhost* ein.
+1. Vergewissern Sie sich in Management Studio unter "Verbindung mit dem Server herstellen", dass "Datenbankmodul" ausgewählt ist, und geben Sie den Namen einer lokalen Instanz im folgenden Format ein: *servername**instancename*. Für eine Standardinstanz auf dem lokalen Server geben Sie *localhost* ein.
 
 2. Wählen Sie unter "Authentifizierung" die Option **Windows-Authentifizierung** aus, und geben Sie ein Windows-Konto ein, das Mitglied der sysadmin-Rolle ist.
 

@@ -522,14 +522,14 @@ Die Daten in der Objektcontainerdatei werden mit dem [**Deflate**][deflate-100]-
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during creation and writing to the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during creation and writing to the file "{0}"", path);
                         Console.WriteLine(e.Message);
                         return false;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not create file \"{0}\". File already exists", path);
+                    Console.WriteLine("Can not create file "{0}". File already exists", path);
                     return false;
 
                 }
@@ -548,7 +548,7 @@ Die Daten in der Objektcontainerdatei werden mit dem [**Deflate**][deflate-100]-
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("The following exception was thrown during reading from the file \"{0}\"", path);
+                    Console.WriteLine("The following exception was thrown during reading from the file "{0}"", path);
                     Console.WriteLine(e.Message);
                     return false;
                 }
@@ -565,13 +565,13 @@ Die Daten in der Objektcontainerdatei werden mit dem [**Deflate**][deflate-100]-
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during deleting the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during deleting the file "{0}"", path);
                         Console.WriteLine(e.Message);
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not delete file \"{0}\". File does not exist", path);
+                    Console.WriteLine("Can not delete file "{0}". File does not exist", path);
                 }
             }
 
@@ -782,14 +782,14 @@ Anschließend werden die Daten aus der Datei gelesen und in eine Objektsammlung 
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during creation and writing to the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during creation and writing to the file "{0}"", path);
                         Console.WriteLine(e.Message);
                         return false;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not create file \"{0}\". File already exists", path);
+                    Console.WriteLine("Can not create file "{0}". File already exists", path);
                     return false;
 
                 }
@@ -808,7 +808,7 @@ Anschließend werden die Daten aus der Datei gelesen und in eine Objektsammlung 
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("The following exception was thrown during reading from the file \"{0}\"", path);
+                    Console.WriteLine("The following exception was thrown during reading from the file "{0}"", path);
                     Console.WriteLine(e.Message);
                     return false;
                 }
@@ -825,13 +825,13 @@ Anschließend werden die Daten aus der Datei gelesen und in eine Objektsammlung 
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during deleting the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during deleting the file "{0}"", path);
                         Console.WriteLine(e.Message);
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not delete file \"{0}\". File does not exist", path);
+                    Console.WriteLine("Can not delete file "{0}". File does not exist", path);
                 }
             }
 
@@ -1282,14 +1282,14 @@ Die [Avro-Spezifikation](http://avro.apache.org/docs/current/spec.html#Required+
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during creation and writing to the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during creation and writing to the file "{0}"", path);
                         Console.WriteLine(e.Message);
                         return false;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not create file \"{0}\". File already exists", path);
+                    Console.WriteLine("Can not create file "{0}". File already exists", path);
                     return false;
 
                 }
@@ -1308,7 +1308,7 @@ Die [Avro-Spezifikation](http://avro.apache.org/docs/current/spec.html#Required+
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("The following exception was thrown during reading from the file \"{0}\"", path);
+                    Console.WriteLine("The following exception was thrown during reading from the file "{0}"", path);
                     Console.WriteLine(e.Message);
                     return false;
                 }
@@ -1325,13 +1325,13 @@ Die [Avro-Spezifikation](http://avro.apache.org/docs/current/spec.html#Required+
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during deleting the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during deleting the file "{0}"", path);
                         Console.WriteLine(e.Message);
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not delete file \"{0}\". File does not exist", path);
+                    Console.WriteLine("Can not delete file "{0}". File does not exist", path);
                 }
             }
             #endregion

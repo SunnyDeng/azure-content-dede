@@ -29,8 +29,8 @@ Wir arbeiten immer daran, RemoteApp mithilfe Ihres Feedbacks zu verbessern. Das 
 |Verfügbarkeit in australischen Rechenzentren| | |X| |
 |PowerShell-Cmdlets für RemoteApp und SDK für die Bereitstellung und Verwaltung| | |X| |
 |Ein Image von einer Azure-VM erstellen und hochladen| | |X| |
-|Ohne Beitritt zu einer Domäne \(Verbindung der Cloud-Sammlung zu den Azure-VMs\) auf einem VNET bereitstellen \([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5928457-provide-ability-to-add-vnet-to-cloud-deloyment-th)\)| | | |X|	
-|Ein vorhandenes virtuelles Netzwerk für die RemoteApp-Hybridsammlung erneut verwenden \(ermöglicht auch ExpressRoute\) \([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5933123-existing-virtual-network-does-not-appear-when-tryi)\)| | | |X|
-|ExpressRoute \([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5933123-existing-virtual-network-does-not-appear-when-tryi)\)| | | |X|
+|Ohne Beitritt zu einer Domäne (Verbindung der Cloud-Sammlung zu den Azure-VMs) auf einem VNET bereitstellen ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5928457-provide-ability-to-add-vnet-to-cloud-deloyment-th))| | | |X|	
+|Ein vorhandenes virtuelles Netzwerk für die RemoteApp-Hybridsammlung erneut verwenden (ermöglicht auch ExpressRoute) ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5933123-existing-virtual-network-does-not-appear-when-tryi))| | | |X|
+|ExpressRoute ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5933123-existing-virtual-network-does-not-appear-when-tryi))| | | |X|
 
 <!--HONumber=52-->

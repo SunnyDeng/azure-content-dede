@@ -22,7 +22,7 @@ Nachdem Sie Ihre Java-Website wie unter [Erste Schritte mit Microsoft Azure-Webs
 
 Der Navigationspfad zum Ordner **webapps** hängt davon ab, wie Sie Ihre Website einrichten.
 
-- Wenn Sie Ihre Website mithilfe der Azure-Anwendungsgalerie einrichten, weist der Pfad zum Ordner **webapps** das Format **d:\home\site\wwwroot\bin\application\_server\webapps** auf, wobei **application\_server** für den Namen des für Ihre Website verwendeten Anwendungsservers steht. 
+- Wenn Sie Ihre Website mithilfe der Azure-Anwendungsgalerie einrichten, weist der Pfad zum Ordner **webapps** das Format **d:\home\site\wwwroot\bin\application_server\webapps** auf, wobei **application_server** für den Namen des für Ihre Website verwendeten Anwendungsservers steht. 
 - Wenn Sie Ihre Website über die Azure-Konfigurationsbenutzeroberfläche einrichten, weist der Pfad zum Ordner **webapps** das Format **d:\home\site\wwwroot\webapps**. 
 
 Beachten Sie, dass Sie die Quellcodeverwaltung zum Hochladen Ihrer Anwendung oder Webseiten verwenden können, auch in Szenarien mit fortlaufender Integration. Anweisungen zur Verwendung der Quellcodeverwaltung mit Ihrer Website finden Sie unter [Veröffentlichen aus der Quellcodeverwaltung auf Azure-Websites](web-sites-publish-source-control.md). FTP stellt ebenfalls eine Möglichkeit zum Hochladen Ihrer Anwendung oder Webseiten dar.

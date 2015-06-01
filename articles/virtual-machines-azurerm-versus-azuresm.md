@@ -24,11 +24,11 @@ Wenn der Azure-Ressourcen-Manager um Rechen-, Netzwerk- und Speicherkapazitäten
 
 Mit dem Azure-Ressourcen-Manager können Sie vordefinierte Anwendungsvorlagen unkompliziert nutzen oder selbst Anwendungsvorlagen erstellen, um Rechen-, Netzwerk- und Speicherressourcen in Azure bereitzustellen und zu verwalten. In diesem Abschnitt werden die Vorteile einer Bereitstellung von Ressourcen mithilfe der Azure-Ressourcen-Manager erläutert.
 
--	Komplexität ganz einfach – Entwicklung, Integration und Zusammenarbeit rund um komplexe Anwendungen mit der gesamten Skala von Azure-Ressourcen \(z. B. Websites, SQL-Datenbanken, virtuelle Computer, virtuelle Netzwerke\) aus einer Vorlagendatei, die freigegeben werden kann
+-	Komplexität ganz einfach – Entwicklung, Integration und Zusammenarbeit rund um komplexe Anwendungen mit der gesamten Skala von Azure-Ressourcen (z. B. Websites, SQL-Datenbanken, virtuelle Computer, virtuelle Netzwerke) aus einer Vorlagendatei, die freigegeben werden kann
 -	Flexibilität durch reproduzierbare Bereitstellungen für Entwicklung, DevOps und Systemadministratoren durch Verwendung der gleichen Vorlagendatei
--	Tiefe Integration von VM-Erweiterungen \(benutzerdefinierte Skripts, DSC, Chef, Puppet usw.\) mit dem Azure-Ressourcen-Manager in einer Vorlagendatei ermöglicht eine unkomplizierte Orchestrierung der VM-Setupkonfiguration
+-	Tiefe Integration von VM-Erweiterungen (benutzerdefinierte Skripts, DSC, Chef, Puppet usw.) mit dem Azure-Ressourcen-Manager in einer Vorlagendatei ermöglicht eine unkomplizierte Orchestrierung der VM-Setupkonfiguration
 -	Definieren von Tags und Weitergabe dieser Tags zur Abrechnung bei Server-, Netzwerk- und Speicher-Ressourcen
--	Einfache, doch genaue organisatorische Ressourcenzugriffsverwaltung mit Azure Role-Based Access Control \(RBAC, rollenbasierte Zugriffskontrolle\)
+-	Einfache, doch genaue organisatorische Ressourcenzugriffsverwaltung mit Azure Role-Based Access Control (RBAC, rollenbasierte Zugriffskontrolle)
 -	Vereinfachter Upgrade-/Updateverlauf durch Ändern und erneutes Bereitstellen der Originalvorlage
 
 
@@ -49,15 +49,15 @@ Zusätzlich zu den oben genannten Vorteilen sind einige bedeutende Leistungsverb
 
 In diesem Abschnitt werden einige der wichtigsten konzeptuellen Unterschiede zwischen den heute verfügbaren XML-basierten APIs und den im Azure-Ressourcen-Manager verfügbaren JSON-basierten APIs für Rechen-, Netzwerk- und Speicherkapazitäten erläutert.
 
- Element | Azure-Dienstverwaltung \(XML-basiert\) | Rechen-, Netzwerk- und Speicheranbieter \(JSON-basiert\)
+ Element | Azure-Dienstverwaltung (XML-basiert) | Rechen-, Netzwerk- und Speicheranbieter (JSON-basiert)
  ---|---|---
 | Clouddienst für virtuelle Computer |	Beim Clouddienst handelte es sich um einen Container für die virtuellen Computer, für den Plattformverfügbarkeit sowie Lastenausgleich erforderlich waren. | Der Clouddienst ist kein erforderliches Objekt zum Erstellen eines virtuellen Computers mithilfe des neuen Modells mehr. |
 | Verfügbarkeitsgruppen | Die Plattformverfügbarkeit wurde durch das Konfigurieren des gleichen „AvailabilitySetName“ auf den virtuellen Computern angezeigt. Die maximale Anzahl von Fehlerdomänen betrug 2. | Verfügbarkeitsgruppen sind Ressourcen, die vom Microsoft.Compute-Anbieter bereitgestellt werden. Virtuelle Computer, für die eine hohe Verfügbarkeit erforderlich ist, müssen in der Verfügbarkeitsgruppe enthalten sein. Die maximale Anzahl von Fehlerdomänen beträgt nun 3. |
 | Affinitätsgruppen |	Zum Erstellen von virtuellen Netzwerken waren Affinitätsgruppen erforderlich. Dies ist jedoch seit der Einführung regionaler virtueller Netzwerke nicht mehr erforderlich. |Zur Vereinfachung ist das Affinitätsgruppenkonzept in über den Azure-Ressourcen-Manager verfügbaren APIs nicht vorhanden. |
 | Lastenausgleich | Durch das Erstellen von Clouddiensten ist ein impliziter Lastenausgleich für die bereitgestellten virtuellen Computer verfügbar. | Der Lastenausgleich ist eine Ressource, die vom Microsoft.Network-Anbieter bereitgestellt wird. Die primäre Netzwerkschnittstelle der virtuellen Computer, die mit einem Lastenausgleich versehen werden soll, muss auf das Lastenausgleichsmodul verweisen. Lastenausgleichsmodule können intern oder extern sein. [Weitere Informationen](resource-groups-networking.md) |
-|Virtuelle IP-Adresse | Clouddienste erhalten eine Standard-VIP \(virtuelle IP-Adresse\), wenn ihnen ein virtueller Computer hinzugefügt wird. Die virtuelle IP-Adresse ist dem impliziten Lastenausgleich zugeordnet. | Die öffentliche IP-Adresse ist eine Ressource, die vom Microsoft.Network-Anbieter bereitgestellt wird. Die öffentliche IP-Adresse kann statisch \(reserviert\) oder dynamisch sein. Dynamische öffentliche IP-Adressen können einem Lastenausgleich zugewiesen werden. Öffentliche IP-Adressen können mithilfe von Sicherheitsgruppen gesichert werden. |
-|Reservierte IP-Adresse|	Sie können eine IP-Adresse in Azure reservieren und einem Clouddienst zuordnen, um die Persistenz der IP-Adresse sicherzustellen. | Die Öffentliche IP-Adresse kann im Modus „Static“ erstellt werden. Sie bietet die gleiche Funktionalität wie eine reservierte IP-Adresse \(„Reserved IP Address“\). Statische öffentliche IP-Adressen können nur direkt einem Lastenausgleich zugewiesen werden. |
-|Öffentliche IP-Adresse \(PIP\) pro virtuellem Computer | Öffentliche IP-Adressen können virtuellen Computern auch direkt zugeordnet werden. | Die öffentliche IP-Adresse ist eine Ressource, die vom Microsoft.Network-Anbieter bereitgestellt wird. Die öffentliche IP-Adresse kann statisch \(reserviert\) oder dynamisch sein. Netzwerkschnittstellen können jedoch nur dynamische öffentliche IP-Adressen zugewiesen werden, um direkt öffentliche IPs pro virtuellem Computer abzurufen. |
+|Virtuelle IP-Adresse | Clouddienste erhalten eine Standard-VIP (virtuelle IP-Adresse), wenn ihnen ein virtueller Computer hinzugefügt wird. Die virtuelle IP-Adresse ist dem impliziten Lastenausgleich zugeordnet. | Die öffentliche IP-Adresse ist eine Ressource, die vom Microsoft.Network-Anbieter bereitgestellt wird. Die öffentliche IP-Adresse kann statisch (reserviert) oder dynamisch sein. Dynamische öffentliche IP-Adressen können einem Lastenausgleich zugewiesen werden. Öffentliche IP-Adressen können mithilfe von Sicherheitsgruppen gesichert werden. |
+|Reservierte IP-Adresse|	Sie können eine IP-Adresse in Azure reservieren und einem Clouddienst zuordnen, um die Persistenz der IP-Adresse sicherzustellen. | Die Öffentliche IP-Adresse kann im Modus „Static“ erstellt werden. Sie bietet die gleiche Funktionalität wie eine reservierte IP-Adresse („Reserved IP Address“). Statische öffentliche IP-Adressen können nur direkt einem Lastenausgleich zugewiesen werden. |
+|Öffentliche IP-Adresse (PIP) pro virtuellem Computer | Öffentliche IP-Adressen können virtuellen Computern auch direkt zugeordnet werden. | Die öffentliche IP-Adresse ist eine Ressource, die vom Microsoft.Network-Anbieter bereitgestellt wird. Die öffentliche IP-Adresse kann statisch (reserviert) oder dynamisch sein. Netzwerkschnittstellen können jedoch nur dynamische öffentliche IP-Adressen zugewiesen werden, um direkt öffentliche IPs pro virtuellem Computer abzurufen. |
 |Endpunkte| Eingabeendpunkte mussten auf virtuellen Computern konfiguriert werden, um Konnektivität für bestimmte Ports zu ermöglichen. Zu den häufigen Verbindungsmodi mit virtuellen Computern gehört das Einrichten von Eingabeendpunkten. | Es können auch eingehende NAT-Regeln auf Lastenausgleichsmodulen konfiguriert werden, um Endpunkte auf bestimmten Ports zum Herstellen einer Verbindung mit den virtuellen Computern zu aktivieren. |
 |DNS-Name| Clouddienste erhielten implizite global eindeutige DNS-Namen. Beispiel: `mycoffeeshop.cloudapp.net`. | DNS-Namen sind optionale Parameter, die auf öffentlichen IP-Adressressourcen angegeben werden können. Der FQDN weist das folgende Format auf: `<domainlabel>.<region>.cloudapp.azure.com`. |
 |Netzwerkschnittstellen | Primäre und sekundäre Netzwerkschnittstellen und deren Eigenschaften wurden als Netzwerkkonfiguration eines virtuellen Computers definiert. | Die Netzwerkschnittstelle ist eine Ressource, die vom Microsoft.Network-Anbieter bereitgestellt wird. Der Lebenszyklus von Netzwerkschnittstellen ist nicht an virtuelle Computer gebunden. |
@@ -68,7 +68,7 @@ Sie können mit den Azure-Vorlagen beginnen, indem Sie die verschiedenen Tools z
 
 ### Azure-Portal
 
-Das Azure-Portal bietet weiterhin die Möglichkeit, virtuelle Computer und virtuelle Computer \(Preview\) zugleich bereitzustellen. Im Azure-Portal sind auch Bereitstellungen benutzerdefinierter Vorlagen möglich.
+Das Azure-Portal bietet weiterhin die Möglichkeit, virtuelle Computer und virtuelle Computer (Preview) zugleich bereitzustellen. Im Azure-Portal sind auch Bereitstellungen benutzerdefinierter Vorlagen möglich.
 
 ### Windows Azure PowerShell
 
@@ -76,7 +76,7 @@ Azure PowerShell wird zwei Bereitstellungsmodi bieten: den **AzureServiceManagem
 
 ### Azure-Befehlszeilenschnittstelle
 
-Der Azure-Befehlszeilenschnittstelle \(Azure-CLI\) wird zwei Bereitstellungsmodi bieten: den **AzureServiceManagement**-Modus und den **AzureResourceManager**-Modus. Der AzureResourceManager-Modus enthält jetzt auch Befehle zum Verwalten von virtuellen Computern, virtuellen Netzwerken und Speicherkonten. Weitere Informationen dazu finden Sie [hier](xplat-cli-azure-resource-manager.md).
+Der Azure-Befehlszeilenschnittstelle (Azure-CLI) wird zwei Bereitstellungsmodi bieten: den **AzureServiceManagement**-Modus und den **AzureResourceManager**-Modus. Der AzureResourceManager-Modus enthält jetzt auch Befehle zum Verwalten von virtuellen Computern, virtuellen Netzwerken und Speicherkonten. Weitere Informationen dazu finden Sie [hier](xplat-cli-azure-resource-manager.md).
 
 ### Visual Studio
 

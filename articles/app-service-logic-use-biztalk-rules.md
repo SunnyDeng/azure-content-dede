@@ -150,17 +150,17 @@ Eine Regel ist eine Auflistung von Bedingungs- und Aktionsanweisungen. Die Aktio
 Das Feld "Bedingung" kann zum Erstellen komplexer Bedingungsanweisungen verwendet werden. Folgende Schlüsselwörter werden unterstützt:  
 1. 	Und - bedingter Operator  
 2. 	Oder - bedingter Operator  
-3. 	does\_not\_exist  
+3. 	does_not_exist  
 4. 	exists  
 5. 	false  
-6. 	is\_equal\_to  
-7. 	is\_greater\_than  
-8. 	is\_greater\_than\_equal\_to  
-9. 	is\_in  
-10. is\_less\_than  
-11. is\_less\_than\_equal\_to  
-12. is\_not\_in  
-13. is\_not\_equal\_to  
+6. 	is_equal_to  
+7. 	is_greater_than  
+8. 	is_greater_than_equal_to  
+9. 	is_in  
+10. is_less_than  
+11. is_less_than_equal_to  
+12. is_not_in  
+13. is_not_equal_to  
 14. mod  
 15. true  
 

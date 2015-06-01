@@ -173,7 +173,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
         private async Task ResolveConflict(TodoItem localItem, TodoItem serverItem)
         {
             //Ask user to choose the resolution between versions
-            MessageDialog msgDialog = new MessageDialog(String.Format("Server Text: \"{0}\" \nLocal Text: \"{1}\"\n", 
+            MessageDialog msgDialog = new MessageDialog(String.Format("Server Text: "{0}" \nLocal Text: "{1}"\n", 
                                                         serverItem.Text, localItem.Text), 
                                                         "CONFLICT DETECTED - Select a resolution:");
             UICommand localBtn = new UICommand("Commit Local Text");

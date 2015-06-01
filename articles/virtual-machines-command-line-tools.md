@@ -348,7 +348,7 @@ Das Image eines virtuellen Computers kann nur erfasst werden, wenn der Zustand d
 
 Dieser Befehl exportiert ein Image eines virtuellen Azure-Computers in eine Datei
 
-	~$ azure vm export "myvm" "C:\"
+	~$ azure vm export "myvm" "C:"
 	info:    Executing command vm export
 	+ Getting virtual machines
 	+ Exporting the VM

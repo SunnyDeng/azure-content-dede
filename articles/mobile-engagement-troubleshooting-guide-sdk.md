@@ -74,8 +74,8 @@ Im Folgenden finden Sie mögliche Probleme, die bei der Integration von Azure Mo
     -     Android-SDK in Java
     -     iOS-SDK in Objective-C
     -     Web-SDK in JavaScript
-    -     Windows-SDK in C\# und JavaScript
-    -     Windows Phone-SDK in C\# und JavaScript
+    -     Windows-SDK in C# und JavaScript
+    -     Windows Phone-SDK in C# und JavaScript
 
 ### Weitere Informationen
 

@@ -36,7 +36,7 @@ Dies ist der dritte Teil der Serie:
 
 - [Konfigurieren einer VPN-Konnektivität zwischen zwei virtuellen Netzwerken][hdinsight-hbase-replication-vnet]
 - [Konfigurieren von DNS für virtuelle Netzwerke][hdinsight-hbase-replication-dns]
-- Konfigurieren von HBase-Georeplikation \(dieses Lernprogramm\)
+- Konfigurieren von HBase-Georeplikation (dieses Lernprogramm)
 
 Das folgende Diagramm veranschaulicht die beiden virtuellen Netzwerke und die Netzwerkverbindung, die Sie in [Konfigurieren Sie eine VPN-Konnektivität zwischen zwei virtuellen Netzwerken][hdinsight-hbase-geo-replication-vnet] und [Konfigurieren von DNS für die virtuellen Netzwerke][hdinsight-hbase-replication-dns] erstellt haben:
 
@@ -223,8 +223,8 @@ Erstellen Sie HBase-Tabellen mit dem gleichen Namen und den gleichen Spaltenfami
 
 **Hinzufügen von Contoso-HBase-US als Replikation-Peer**
 
-1. Wechseln Sie zum **Contso-HBase\_EU** RDP-Fenster.
-2. Fügen Sie aus dem HBase-Shell-Fenster den Zielcluster \(Contoso-HBase-US\) als Peer hinzu, zum Beispiel:
+1. Wechseln Sie zum **Contso-HBase_EU** RDP-Fenster.
+2. Fügen Sie aus dem HBase-Shell-Fenster den Zielcluster (Contoso-HBase-US) als Peer hinzu, zum Beispiel:
 
 		add_peer '1', 'zookeeper0.contoso-hbase-us.d4.internal.cloudapp.net,zookeeper1.contoso-hbase-us.d4.internal.cloudapp.net,zookeeper2.contoso-hbase-us.d4.internal.cloudapp.net:2181:/hbase'
 
@@ -290,7 +290,7 @@ In diesem Lernprogramm haben Sie gelernt, HBase-Replikation über zwei Rechenzen
 - [Überblick HDInsight HBase][hdinsight-hbase-overview]
 - [Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk][hdinsight-hbase-provision-vnet]
 - [Analyse der Twitter-Stimmungen in Echtzeit mit HBase][hdinsight-hbase-twitter-sentiment]
-- [Analyse von Sensordaten mit Storm und HBase in HDInsight \(Hadoop\)][hdinsight-sensor-data]
+- [Analyse von Sensordaten mit Storm und HBase in HDInsight (Hadoop)][hdinsight-sensor-data]
 
 [hdinsight-hbase-geo-replication-vnet]: hdinsight-hbase-geo-replication-configure-VNets.md
 [hdinsight-hbase-geo-replication-dns]: hdinsight-hbase-geo-replication-configure-VNet.md

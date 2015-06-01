@@ -18,12 +18,12 @@
 	
 #Azure Stream Analytics & Power BI: Live-Dashboard mit Echtzeit-Analyse von Streamingdaten
 
-Ein häufiger Anwendungsfall für Azure Stream Analytics ist die Analyse von hohen Volumen an Streamingdaten in Echtzeit und Darstellung dieser in einem Live-Dashboard \(einem Dashboard, das sich in Echtzeit aktualisiert, ohne dass der Benutzer den Browser aktualisieren muss\). [Microsoft Power BI](https://powerbi.com/) eignet sich optimal, um ein solches Live-Dashboard in kürzester Zeit zu erstellen. [Hier finden Sie ein Beispielvideo, um das Szenario zu veranschaulichen.](https://www.youtube.com/watch?v=SGUpT-a99MA) In diesem Artikel erfahren Sie, wie Sie Power BI als Ausgabe für Ihre Aufträge in Azure Stream Analytics verwenden. Hinweis: Azure Stream Analytics ist allgemein verfügbar, Power BI ist zu diesem Zeitpunkt jedoch eine Vorschaufunktion von Azure Stream Analytics.
+Ein häufiger Anwendungsfall für Azure Stream Analytics ist die Analyse von hohen Volumen an Streamingdaten in Echtzeit und Darstellung dieser in einem Live-Dashboard (einem Dashboard, das sich in Echtzeit aktualisiert, ohne dass der Benutzer den Browser aktualisieren muss). [Microsoft Power BI](https://powerbi.com/) eignet sich optimal, um ein solches Live-Dashboard in kürzester Zeit zu erstellen. [Hier finden Sie ein Beispielvideo, um das Szenario zu veranschaulichen.](https://www.youtube.com/watch?v=SGUpT-a99MA) In diesem Artikel erfahren Sie, wie Sie Power BI als Ausgabe für Ihre Aufträge in Azure Stream Analytics verwenden. Hinweis: Azure Stream Analytics ist allgemein verfügbar, Power BI ist zu diesem Zeitpunkt jedoch eine Vorschaufunktion von Azure Stream Analytics.
 
 ##Voraussetzungen
 
-* Microsoft Azure-Konto mit Organisations-ID \(Power BI funktioniert nur mit Ihrer Organisations-ID. Die Organisations-ID ist Ihre geschäftliche E-Mail-Adresse, z. B. xyz@mycompany.com. Persönliche E-Mail-Adressen wie xyz@hotmail.com sind keine Organisations-IDs. [Erfahren Sie hier mehr über die Organisations-ID](https://www.arin.net/resources/request/org.html)\).
-* Ein Eingabestream für Ihren ASA-Auftrag \(Azure Stream Analytics\), aus dem Streamingdaten verwendet werden können. Derzeit akzeptiert ASA die Eingabe aus einem Azure-Ereignis-Hub oder aus Azure-Blobspeicher.  
+* Microsoft Azure-Konto mit Organisations-ID (Power BI funktioniert nur mit Ihrer Organisations-ID. Die Organisations-ID ist Ihre geschäftliche E-Mail-Adresse, z. B. xyz@mycompany.com. Persönliche E-Mail-Adressen wie xyz@hotmail.com sind keine Organisations-IDs. [Erfahren Sie hier mehr über die Organisations-ID](https://www.arin.net/resources/request/org.html)).
+* Ein Eingabestream für Ihren ASA-Auftrag (Azure Stream Analytics), aus dem Streamingdaten verwendet werden können. Derzeit akzeptiert ASA die Eingabe aus einem Azure-Ereignis-Hub oder aus Azure-Blobspeicher.  
 
 ##Erstellen eines Azure Stream Analytics-Auftrags
 
@@ -72,14 +72,14 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie EventHub als Eingabe mit
 
 ![Grafik2][graphic2]
 
-> [AZURE.NOTE]Hinweis: Die Power BI-Ausgabe ist nur für Azure-Konten mit Org-Ids verfügbar. Wenn Sie für Ihr Azure-Konto keine Organisations-ID verwenden \(sondern z. B. Ihre Live-ID / Ihr persönliches Microsoft-Konto\), wird die Power BI-Ausgabeoption nicht angezeigt.
+> [AZURE.NOTE]Hinweis: Die Power BI-Ausgabe ist nur für Azure-Konten mit Org-Ids verfügbar. Wenn Sie für Ihr Azure-Konto keine Organisations-ID verwenden (sondern z. B. Ihre Live-ID / Ihr persönliches Microsoft-Konto), wird die Power BI-Ausgabeoption nicht angezeigt.
 
 2.  Wählen Sie **Power BI**, und klicken Sie dann auf die rechte Taste.
 3.  Es wird ein Bildschirm ähnlich dem folgenden angezeigt:
 
 ![Grafik3][graphic3]
 
-4.  In diesem Schritt müssen Sie darauf achten, dieselbe Organisations-ID zu verwenden, die Sie für den ASA-Auftrag verwenden. Derzeit muss die Power BI-Ausgabe dieselbe Organisations-ID wie Ihr ASA-Auftrag verwenden. Wenn Sie bereits ein Power BI-Konto mit der gleichen Organisations-ID haben, wählen Sie „Jetzt autorisieren“. Falls nicht, wählen Sie „Jetzt registrieren“, und verwenden Sie während des Anmeldevorgangs für Power BI dieselbe Organisations-Id wie für Ihr Azure-Konto. [Hier finden Sie ein gutes Blog über die Einzelheiten der Power BI-Anmeldung \(in englischer Sprache\)](http://blogs.technet.com/b/powerbisupport/archive/2015/02/06/power-bi-sign-up-walkthrough.aspx).
+4.  In diesem Schritt müssen Sie darauf achten, dieselbe Organisations-ID zu verwenden, die Sie für den ASA-Auftrag verwenden. Derzeit muss die Power BI-Ausgabe dieselbe Organisations-ID wie Ihr ASA-Auftrag verwenden. Wenn Sie bereits ein Power BI-Konto mit der gleichen Organisations-ID haben, wählen Sie „Jetzt autorisieren“. Falls nicht, wählen Sie „Jetzt registrieren“, und verwenden Sie während des Anmeldevorgangs für Power BI dieselbe Organisations-Id wie für Ihr Azure-Konto. [Hier finden Sie ein gutes Blog über die Einzelheiten der Power BI-Anmeldung (in englischer Sprache)](http://blogs.technet.com/b/powerbisupport/archive/2015/02/06/power-bi-sign-up-walkthrough.aspx).
 5.  Als Nächstes wird ein Bildschirm ähnlich dem folgenden angezeigt:
 
 ![Grafik4][graphic4]
@@ -130,7 +130,7 @@ Um ein neues Dashboard zu erstellen, gehen Sie zur Option „Dashboards“.
 
 In diesem Beispiel nennen wir es „Demo Dashboard“.
 
-Klicken Sie jetzt auf das Dataset, das durch den ASA-Auftrag \(im aktuellen Beispiel „pbidemo“\) erstellt wurde. Zum Erstellen eines Diagramms auf diesem Dataset werden Sie zu einer anderen Seite weitergeleitet. Im Folgenden nur ein Beispiel für die Berichte, die Sie erstellen können:
+Klicken Sie jetzt auf das Dataset, das durch den ASA-Auftrag (im aktuellen Beispiel „pbidemo“) erstellt wurde. Zum Erstellen eines Diagramms auf diesem Dataset werden Sie zu einer anderen Seite weitergeleitet. Im Folgenden nur ein Beispiel für die Berichte, die Sie erstellen können:
 
 Wählen Sie die Felder „Σ temp“ und „time“ aus. Sie werden automatisch dem Wert und der Achse des Diagramms zugewiesen:
 
@@ -144,7 +144,7 @@ Klicken Sie im Abschnitt „Wert“ auf die Dropdownliste für „temp“ und w�
 
 ![Grafik9][graphic9]
 
-Jetzt erhalten Sie ein Liniendiagramm der Durchschnittstemperatur im Laufe des Zeitraums. Verwenden die Option zum Anheften \(siehe unten\) und verknüpfen Sie das Diagramm mit dem Dashboard, das Sie zuvor erstellt haben:
+Jetzt erhalten Sie ein Liniendiagramm der Durchschnittstemperatur im Laufe des Zeitraums. Verwenden die Option zum Anheften (siehe unten) und verknüpfen Sie das Diagramm mit dem Dashboard, das Sie zuvor erstellt haben:
 
 ![Grafik10][graphic10]
 

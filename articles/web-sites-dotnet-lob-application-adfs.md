@@ -253,7 +253,7 @@ Bisher haben Sie Folgendes erreicht:
 - AD FS hat einen Active Directory-Benutzer authentifiziert und leitet Sie zur Startseite der Anwendung zurück.
 - AD FS hat den Namensanspruch (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) an Ihre Anwendung gesendet. Dies geht daraus hervor, dass der Benutzername in der Ecke angezeigt wird. 
 
-Wenn der Namensanspruch fehlt, würde **Hallo !** angezeigt. Wenn Sie die Datei "Views\Shared\_LoginPartial.cshtml" betrachten, werden Sie feststellen, dass sie `User.Identity.Name` verwendet, um den Benutzernamen anzuzeigen. Wie bereits erwähnt, füllt ASP.NET diese Eigenschaft mit den Namensanspruch des authentifizierten Benutzers, wenn dieser im SAML-Token verfügbar ist. Um alle Ansprüche zu sehen, die von AD FS gesendet werden, setzen Sie in der Datei "Controllers\HomeController.cs" einen Haltepunkt in der Index-Aktionsmethode. Nachdem der Benutzer authentifiziert wurde, überprüfen Sie die `System.Security.Claims.Current.Claims`-Auflistung.
+Wenn der Namensanspruch fehlt, würde **Hallo !** angezeigt. Wenn Sie die Datei "Views\Shared_LoginPartial.cshtml" betrachten, werden Sie feststellen, dass sie `User.Identity.Name` verwendet, um den Benutzernamen anzuzeigen. Wie bereits erwähnt, füllt ASP.NET diese Eigenschaft mit den Namensanspruch des authentifizierten Benutzers, wenn dieser im SAML-Token verfügbar ist. Um alle Ansprüche zu sehen, die von AD FS gesendet werden, setzen Sie in der Datei "Controllers\HomeController.cs" einen Haltepunkt in der Index-Aktionsmethode. Nachdem der Benutzer authentifiziert wurde, überprüfen Sie die `System.Security.Claims.Current.Claims`-Auflistung.
 
 ![](./media/web-sites-dotnet-lob-application-adfs/12-test-debugging-all-claims.png) 
 

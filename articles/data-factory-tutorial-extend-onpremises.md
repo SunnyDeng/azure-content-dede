@@ -20,7 +20,7 @@
 # Exemplarische Vorgehensweise: Kopieren von Daten zur Kampagneneffektivität in eine lokale SQL Server-Datenbank 
 In dieser exemplarischen Vorgehensweise erfahren Sie, wie die Umgebung eingerichtet werden muss, damit die Pipeline mit lokalen Daten arbeiten kann.
  
-Im letzten Schritt des Protokollverarbeitungszenarien aus der ersten exemplarischen Vorgehensweise mit dem Workflow „Partition -\> Enrich -\> Analyze“ wurde die Ausgabe der Wirksamkeit der Marketingkampagne in eine Azure SQL-Datenbank kopiert. Sie können diese Daten auch in einen lokalen SQL Server für Analysen innerhalb Ihrer Organisation verschieben.
+Im letzten Schritt des Protokollverarbeitungszenarien aus der ersten exemplarischen Vorgehensweise mit dem Workflow „Partition -> Enrich -> Analyze“ wurde die Ausgabe der Wirksamkeit der Marketingkampagne in eine Azure SQL-Datenbank kopiert. Sie können diese Daten auch in einen lokalen SQL Server für Analysen innerhalb Ihrer Organisation verschieben.
  
 Um die Wirksamkeitsdaten der Marketingkampagne aus dem Azure-BLOB auf einen lokalen SQL Server zu kopieren, müssen Sie einen zusätzlichen lokalen verknüpften Dienst, eine Tabelle und eine Pipeline erstellen, die die gleichen Cmdlets wie in der ersten exemplarischen Vorgehensweise verwenden.
 
@@ -28,7 +28,7 @@ Um die Wirksamkeitsdaten der Marketingkampagne aus dem Azure-BLOB auf einen loka
 
 Sie **müssen** die exemplarische Vorgehensweise im [Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][datafactorytutorial] durchführen, bevor Sie die exemplarische Vorgehensweise in diesem Artikel befolgen.
 
-**\(Empfohlen\)** Beschäftigen Sie sich mit der exemplarischen Vorgehensweise im Artikel [Aktivieren von Pipelines zum Arbeiten mit lokalen Daten][useonpremisesdatasources], um eine exemplarische Vorgehensweise zum Erstellen einer Pipeline zum Verschieben von Daten von einem lokalen SQL Server zu einem Azure-Blobspeicher zu erhalten.
+**(Empfohlen)** Beschäftigen Sie sich mit der exemplarischen Vorgehensweise im Artikel [Aktivieren von Pipelines zum Arbeiten mit lokalen Daten][useonpremisesdatasources], um eine exemplarische Vorgehensweise zum Erstellen einer Pipeline zum Verschieben von Daten von einem lokalen SQL Server zu einem Azure-Blobspeicher zu erhalten.
 
 
 In dieser exemplarischen Vorgehensweise führen Sie die folgenden Schritte aus:
@@ -52,17 +52,17 @@ Sie müssen mindestens ein Gateway in Ihrer Unternehmensumgebung installiert hab
 Wenn Sie ein vorhandenes Datengateway haben, das Sie verwenden können, überspringen Sie diesen Schritt.
 
 1.	Erstellen eines logischen Datengateways. Klicken Sie im **Azure-Vorschauportal** auf dem Blatt **DATA FACTORY** auf **Verknüpfte Dienste**.
-2.	Klicken Sie in der Befehlsleiste auf **\(+\) Datengateway hinzufügen**.  
+2.	Klicken Sie in der Befehlsleiste auf **(+) Datengateway hinzufügen**.  
 3.	Klicken Sie auf dem Blatt **Neues Datengateway** auf **ERSTELLEN**.
 4.	Geben Sie auf dem Blatt **Erstellen** als **Namen** für das Datengateway **MyGateway**.
 5.	Klicken Sie auf **REGION AUSWÄHLEN**, und ändern Sie diese, falls erforderlich. 
 6.	Klicken Sie auf dem Blatt **Erstellen** auf **OK**. 
 7.	Daraufhin wird das Blatt **Konfigurieren** angezeigt. 
-8.	Klicken Sie auf dem Blatt **Konfigurieren** auf **Direkt auf diesem Computer installieren**. Daraufhin wird das Gateway auf Ihren Computer heruntergeladen, installiert und konfiguriert und dann bei dem Dienst registriert. Wenn Sie ein vorhandenes Gateway auf dem Computer installiert haben, das Sie mit diesem logischen Gateway im Portal verknüpfen möchten, verwenden Sie den Schlüssel in diesem Fenster, um das Gateway mithilfe des Tools „Datenverwaltungsgateway-Konfigurations-Managers \(Vorschau\)“ erneut zu registrieren.
+8.	Klicken Sie auf dem Blatt **Konfigurieren** auf **Direkt auf diesem Computer installieren**. Daraufhin wird das Gateway auf Ihren Computer heruntergeladen, installiert und konfiguriert und dann bei dem Dienst registriert. Wenn Sie ein vorhandenes Gateway auf dem Computer installiert haben, das Sie mit diesem logischen Gateway im Portal verknüpfen möchten, verwenden Sie den Schlüssel in diesem Fenster, um das Gateway mithilfe des Tools „Datenverwaltungsgateway-Konfigurations-Managers (Vorschau)“ erneut zu registrieren.
 
 	![Datenverwaltungsgateway-Konfigurations-Manager][image-data-factory-datamanagementgateway-configuration-manager]
 
-9. Klicken Sie auf **OK**, um das Blatt **Konfigurieren** zu schließen, und erneut auf **OK**, um das Blatt **Erstellen** zu schließen. Warten Sie, bis sich der Status von **MyGateway** auf dem Blatt **Verknüpfte Dienste** in **GUT** ändert. Sie können auch das Tool **Datenverwaltungsgateway-Konfigurations-Manager \(Vorschau\)** starten, um zu sich zu vergewissern, dass der Name des Gateways mit dem Namen im Portal übereinstimmt und dass der **Status** **Registriert** lautet. Sie müssen möglicherweise das Fenster „Verknüpfte Dienste“ schließen und erneut öffnen, um den aktuellen Status anzuzeigen. Es kann ein paar Minuten dauern, bis der Bildschirm mit dem aktuellen Status aktualisiert wird.
+9. Klicken Sie auf **OK**, um das Blatt **Konfigurieren** zu schließen, und erneut auf **OK**, um das Blatt **Erstellen** zu schließen. Warten Sie, bis sich der Status von **MyGateway** auf dem Blatt **Verknüpfte Dienste** in **GUT** ändert. Sie können auch das Tool **Datenverwaltungsgateway-Konfigurations-Manager (Vorschau)** starten, um zu sich zu vergewissern, dass der Name des Gateways mit dem Namen im Portal übereinstimmt und dass der **Status** **Registriert** lautet. Sie müssen möglicherweise das Fenster „Verknüpfte Dienste“ schließen und erneut öffnen, um den aktuellen Status anzuzeigen. Es kann ein paar Minuten dauern, bis der Bildschirm mit dem aktuellen Status aktualisiert wird.
 
 ## <a name="OnPremStep2"></a> Schritt 2: Erstellen eines verknüpften Diensts für den lokalen SQL Server
 
@@ -72,15 +72,15 @@ In diesem Schritt erstellen Sie zuerst die erforderliche Datenbank und Tabelle a
 
 Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte Typen und gespeicherte Prozeduren erstellen. Diese werden zum Verschieben der Ergebnisse von **MarketingCampaignEffectiveness** aus dem Azure-Blob in die SQL Server-Datenbank verwendet.
 
-1.	Navigieren Sie in **Windows-Explorer** zum Unterordner **OnPremises** in **C:\\ADFWalkthrough** \(oder zu dem Speicherort, an dem Sie die Beispiele extrahiert haben\).
-2.	Öffnen Sie **prepareOnPremDatabase&Table.ps1** in Ihrem bevorzugten Editor, ersetzen Sie die markierten Informationen durch Ihre SQL Server-Informationen, und speichern Sie die Datei \(geben Sie die Details der **SQL-Authentifizierung** ein\). Aktivieren Sie für das Lernprogramm die SQL-Authentifizierung für die Datenbank. 
+1.	Navigieren Sie in **Windows-Explorer** zum Unterordner **OnPremises** in **C:\\ADFWalkthrough** (oder zu dem Speicherort, an dem Sie die Beispiele extrahiert haben).
+2.	Öffnen Sie **prepareOnPremDatabase&Table.ps1** in Ihrem bevorzugten Editor, ersetzen Sie die markierten Informationen durch Ihre SQL Server-Informationen, und speichern Sie die Datei (geben Sie die Details der **SQL-Authentifizierung** ein). Aktivieren Sie für das Lernprogramm die SQL-Authentifizierung für die Datenbank. 
 			
 			$dbServerName = "<servername>"
 			$dbUserName = "<username>"
 			$dbPassword = "<password>"
 
 3. Navigieren Sie in **Azure PowerShell** zum Ordner **C:\\ADFWalkthrough\\OnPremises**.
-4.	Führen Sie **prepareOnPremDatabase&Table.ps1** aus **\(entweder & in doppelten Anführungszeichen oder wie unten dargestellt\)**.
+4.	Führen Sie **prepareOnPremDatabase&Table.ps1** aus **(entweder & in doppelten Anführungszeichen oder wie unten dargestellt)**.
 			
 		& '.\prepareOnPremDatabase&Table.ps1'
 
@@ -104,10 +104,10 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 	2.	Ersetzen Sie **<databasename>** durch **MarketingCampaigns**.
 	3.	Bei Verwendung der **SQL-Authentifizierung**
 		1.	Geben Sie **<username>** und **<password>** in **connectionString** an.
-		2.	Entfernen Sie die letzten beiden Zeilen. \(Die JSON-Eigenschaften \*\*username\*\* und **password** sind nur erforderlich, wenn Sie die Windows-Authentifizierung verwenden.\) 
-		3.	Entfernen Sie **, \(Komma\) **am Ende der Zeile **GatewayName**. 
-		**Bei Verwendung der Windows-Authentifizierung:** 1. Legen Sie in **connectionString** den Wert für **Integrierte Sicherheit** auf **True** fest. Entfernen Sie "\*\*User ID=<username>;Password=<password>;\*\*" aus "connectionString". 2. Geben Sie für die Eigenschaft **username** den Namen des Benutzers an, der auf die Datenbank zugreifen kann. 3. Geben Sie **password** für das Benutzerkonto an.   
-	4. Geben Sie den Namen des Gateways \(\*\*MyGateway\*\*\) für die gatewayName-Eigenschaft an. 		  	 
+		2.	Entfernen Sie die letzten beiden Zeilen. (Die JSON-Eigenschaften **username** und **password** sind nur erforderlich, wenn Sie die Windows-Authentifizierung verwenden.) 
+		3.	Entfernen Sie **, (Komma) **am Ende der Zeile **GatewayName**. 
+		**Bei Verwendung der Windows-Authentifizierung:** 1. Legen Sie in **connectionString** den Wert für **Integrierte Sicherheit** auf **True** fest. Entfernen Sie "**User ID=<username>;Password=<password>;**" aus "connectionString". 2. Geben Sie für die Eigenschaft **username** den Namen des Benutzers an, der auf die Datenbank zugreifen kann. 3. Geben Sie **password** für das Benutzerkonto an.   
+	4. Geben Sie den Namen des Gateways (**MyGateway**) für die gatewayName-Eigenschaft an. 		  	 
 3.	Klicken Sie in der Symbolleiste auf **Bereitstellen**, um den verknüpften Dienst bereitzustellen. 
 
 ## <a name="OnPremStep3"></a> Schritt 3: Erstellen der Tabelle und der Pipeline
@@ -116,20 +116,20 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 
 1.	Klicken Sie in **Data Factory Editor** in der Symbolleiste auf **Neues Dataset**, und wählen Sie **Lokaler SQL Server**. 
 2. Ersetzen Sie JSON im rechten Bereich durch das JSON-Skript aus der Datei **MarketingCampaignEffectivenessOnPremSQLTable.json** im Ordner **C:\\ADFWalkthrough\\OnPremises**.
-3. Ändern Sie den Namen des verknüpften-Diensts \(\*\*linkedServiceName\*\*-Eigenschaft\) von **OnPremSqlServerLinkedService** in **SqlServerLinkedService**.
+3. Ändern Sie den Namen des verknüpften-Diensts (**linkedServiceName**-Eigenschaft) von **OnPremSqlServerLinkedService** in **SqlServerLinkedService**.
 4. Klicken Sie in der Symbolleiste auf **Bereitstellen**, um die Tabelle bereitzustellen. 
 	 
 #### Erstellen der Pipeline zum Kopieren der Daten aus dem Azure-BLOB auf SQL Server
 
-1.	1. Klicken Sie in **Data Factory Editor** in der Symbolleiste auf die Schaltfläche **Neue Pipeline**. Klicken Sie in der Symbolleiste auf **... \(drei Punkte\)**, wenn die Schaltfläche nicht angezeigt wird. Alternativ können Sie in der Strukturansicht mit der rechten Maustaste auf **Pipelines** und dann auf **Neue Pipeline** klicken.
+1.	1. Klicken Sie in **Data Factory Editor** in der Symbolleiste auf die Schaltfläche **Neue Pipeline**. Klicken Sie in der Symbolleiste auf **... (drei Punkte)**, wenn die Schaltfläche nicht angezeigt wird. Alternativ können Sie in der Strukturansicht mit der rechten Maustaste auf **Pipelines** und dann auf **Neue Pipeline** klicken.
 2. Ersetzen Sie JSON im rechten Bereich durch das JSON-Skript aus der Datei **EgressDataToOnPremPipeline.json** im Ordner **C:\\ADFWalkthrough\\OnPremises**.
-3. Fügen Sie ein **Komma \(','\)** am Ende der **schließenden eckigen Klammer \('\] '\)** in JSON hinzu, und fügen Sie hinter der schließenden eckigen Klammer die folgenden drei Zeilen hinzu. 
+3. Fügen Sie ein **Komma (',')** am Ende der **schließenden eckigen Klammer ('] ')** in JSON hinzu, und fügen Sie hinter der schließenden eckigen Klammer die folgenden drei Zeilen hinzu. 
 
         "start": "2014-05-01T00:00:00Z",
         "end": "2014-05-05T00:00:00Z",
         "isPaused": false
 
-	[AZURE.NOTE] Beachten Sie, dass die Start- und Endzeiten auf 05/01/2014 und 05/05/2014 festgelegt sind, da sich die Beispieldaten in dieser exemplarischen Vorgehensweise auf den Zeitraum von 05/01/2014 bis 05/05/2014 beziehen.
+	>[AZURE.NOTE] Beachten Sie, dass die Start- und Endzeiten auf 05/01/2014 und 05/05/2014 festgelegt sind, da sich die Beispieldaten in dieser exemplarischen Vorgehensweise auf den Zeitraum von 05/01/2014 bis 05/05/2014 beziehen.
  
 3. Klicken Sie in der Symbolleiste auf **Bereitstellen**, um die Pipeline bereitzustellen. Vergewissern Sie sich, dass die Nachricht **PIPELINE ERFOLGREICH ERSTELLT** in der Titelleiste des Editors angezeigt wird.
 	

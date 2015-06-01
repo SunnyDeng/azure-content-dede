@@ -20,7 +20,7 @@
 
 In diesem Lernprogramm werden die ersten Schritte bei der Verwendung von [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) und [DocumentDB .NET SDK](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) beschrieben. Erstellen Sie eine Konsolenanwendung, die DocumentDB-Ressourcen erstellt und abfragt, und die Ausgabe in das Konsolenfenster schreibt.
 
-DocumentDB ist ein NoSQL-Dokumentdatenbankdienst, der über eine [Reihe von APIs und SDKs](https://msdn.microsoft.com/library/dn781482.aspx) verfügt. Der Code in diesem Artikel ist in C\# geschrieben und verwendet das DocumentDB .NET SDK, das als NuGet-Paket verpackt und verteilt wird.
+DocumentDB ist ein NoSQL-Dokumentdatenbankdienst, der über eine [Reihe von APIs und SDKs](https://msdn.microsoft.com/library/dn781482.aspx) verfügt. Der Code in diesem Artikel ist in C# geschrieben und verwendet das DocumentDB .NET SDK, das als NuGet-Paket verpackt und verteilt wird.
 
 In diesem Artikel werden die folgenden Szenarien behandelt:
 
@@ -51,7 +51,7 @@ Erstellen Sie zunächst ein DocumentDB-Konto. Wenn Sie bereits über ein Konto v
 
 1. Öffnen Sie **Visual Studio** auf Ihrem Computer.
 2. Wählen Sie **Neu** im Menü **Datei** und wählen Sie dann **Projekt** aus.
-3. Im **Dialogfeld "Neues Projekt"** wählen Sie **Vorlagen** / **Visual C\#** / **Konsolenanwendung** aus, geben Sie Ihrem Projekt einen Namen, und klicken Sie dann auf **Hinzufügen**.
+3. Im **Dialogfeld "Neues Projekt"** wählen Sie **Vorlagen** / **Visual C#** / **Konsolenanwendung** aus, geben Sie Ihrem Projekt einen Namen, und klicken Sie dann auf **Hinzufügen**.
 4. Im **Projektmappen-Explorer** klicken Sie mit der rechten Maustaste auf die neue Konsolenanwendung, die sich unter Ihrer Visual Studio-Projektmappe befindet.
 5. Klicken Sie im gleichen Menü auf **NuGet-Pakete verwalten...**.
 6. Klicken Sie im Bereich ganz links des Fensters **NuGet-Pakete verwalten** auf **Online** / **nuget.org**.
@@ -62,7 +62,7 @@ Prima. Sie können nun mit DocumentDB arbeiten.
 
 ## <a id="Connect"></a> Schritt 3: Herstellen einer Verbindung mit einem DocumentDB-Konto
 
-Wir beginnen mit dem Erstellen einer neuen Instanz von [DocumentClient](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.aspx), um eine Verbindung mit unserem DocumentDB-Konto herzustellen. Dafür brauchen wir folgende Referenzen am Anfang unserer C\#-Anwendung:
+Wir beginnen mit dem Erstellen einer neuen Instanz von [DocumentClient](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.aspx), um eine Verbindung mit unserem DocumentDB-Konto herzustellen. Dafür brauchen wir folgende Referenzen am Anfang unserer C#-Anwendung:
 
     using Microsoft.Azure.Documents;
     using Microsoft.Azure.Documents.Client;
@@ -131,7 +131,7 @@ Eine [Sammlung](documentdb-resources.md#collections) kann mithilfe der [CreateDo
   		    });
     
 ## <a id="CreateDoc"></a>Schritt 6: Erstellen von Dokumenten
-Ein [Dokument](documentdb-resources.md#documents) kann mithilfe der [CreateDocumentAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentasync.aspx)-Methode der **DocumentClient**-Klasse erstellt werden. Dokumente sind benutzerdefinierter \(beliebiger\) JSON-Inhalt. Die im vorherigen Schritt erstellte Sammlung besitzt eine Reihe von Eigenschaften, darunter die [DocumentsLink](https://msdn.microsoft.com/library/microsoft.azure.documents.documentcollection.documentslink.aspx)-Eigenschaft. Mit dieser Information können wir jetzt eines oder mehrere Dokumente einfügen.
+Ein [Dokument](documentdb-resources.md#documents) kann mithilfe der [CreateDocumentAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentasync.aspx)-Methode der **DocumentClient**-Klasse erstellt werden. Dokumente sind benutzerdefinierter (beliebiger) JSON-Inhalt. Die im vorherigen Schritt erstellte Sammlung besitzt eine Reihe von Eigenschaften, darunter die [DocumentsLink](https://msdn.microsoft.com/library/microsoft.azure.documents.documentcollection.documentslink.aspx)-Eigenschaft. Mit dieser Information können wir jetzt eines oder mehrere Dokumente einfügen.
 
 Zunächst müssen wir eine **übergeordnete**, **untergeordnete**, **Pet-**, **Adress-** und **Familien-**Klasse erstellen. Erstellen Sie diese Klassen, indem Sie die folgenden internen Unterklassen hinzufügen.
 
@@ -244,7 +244,7 @@ DocumentDB unterstützt umfassende [Abfragen](documentdb-sql-query.md) der in je
     var families = client.CreateDocumentQuery(documentCollection.DocumentsLink,
         "SELECT * " +
         "FROM Families f " +
-        "WHERE f.id = \"AndersenFamily\"");
+        "WHERE f.id = "AndersenFamily"");
 
     foreach (var family in families)
     {
@@ -305,7 +305,7 @@ Das [FROM](documentdb-sql-query.md/#from-clause) -Schlüsselwort ist in der Abfr
 
 ## <a id="DeleteDatabase"></a>Schritt 8: Löschen der Datenbank
 
-Das Löschen der erstellten Datenbank entfernt die Datenbank und alle untergeordneten Ressourcen \(Sammlungen, Dokumente usw.\). Sie können die Datenbank und den Dokument-Client löschen, indem Sie folgenden Codeausschnitt an das Ende der asynchronen **GetStartedDemo**-Methode hängen.
+Das Löschen der erstellten Datenbank entfernt die Datenbank und alle untergeordneten Ressourcen (Sammlungen, Dokumente usw.). Sie können die Datenbank und den Dokument-Client löschen, indem Sie folgenden Codeausschnitt an das Ende der asynchronen **GetStartedDemo**-Methode hängen.
 
     // Clean up/delete the database
     await client.DeleteDatabaseAsync(database.SelfLink);
@@ -356,7 +356,7 @@ Die Ausgabe der GetStarted-Anwendung sollte jetzt angezeigt werden. Die Ausgabe 
 	  "_rid": "ybVlALUoqAEBAAAAAAAAAA==",
 	  "_ts": 1428372205,
 	  "_self": "dbs/ybVlAA==/colls/ybVlALUoqAE=/docs/ybVlALUoqAEBAAAAAAAAAA==/",
-	  "_etag": "\"0000400c-0000-0000-0000-55233aed0000\"",
+	  "_etag": ""0000400c-0000-0000-0000-55233aed0000"",
 	  "_attachments": "attachments/"
 	} from SQL
 	Read {
@@ -394,7 +394,7 @@ Die Ausgabe der GetStarted-Anwendung sollte jetzt angezeigt werden. Die Ausgabe 
 	  "_rid": "ybVlALUoqAEBAAAAAAAAAA==",
 	  "_ts": 1428372205,
 	  "_self": "dbs/ybVlAA==/colls/ybVlALUoqAE=/docs/ybVlALUoqAEBAAAAAAAAAA==/",
-	  "_etag": "\"0000400c-0000-0000-0000-55233aed0000\"",
+	  "_etag": ""0000400c-0000-0000-0000-55233aed0000"",
 	  "_attachments": "attachments/"
 	} from LINQ
 	Read {
@@ -432,7 +432,7 @@ Die Ausgabe der GetStarted-Anwendung sollte jetzt angezeigt werden. Die Ausgabe 
 	  "_rid": "ybVlALUoqAEBAAAAAAAAAA==",
 	  "_ts": 1428372205,
 	  "_self": "dbs/ybVlAA==/colls/ybVlALUoqAE=/docs/ybVlALUoqAEBAAAAAAAAAA==/",
-	  "_etag": "\"0000400c-0000-0000-0000-55233aed0000\"",
+	  "_etag": ""0000400c-0000-0000-0000-55233aed0000"",
 	  "_attachments": "attachments/"
 	} from LINQ query
 	{

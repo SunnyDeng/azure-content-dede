@@ -1985,9 +1985,9 @@ Die folgenden Beispiele zeigen POST für eine DocumentDB-Abfrage an eine Sammlun
 	         },
 	         "_rid":"u1NXANcKogEcAAAAAAAAAA==",
 	         "_ts":1407691744,
-	         "_self":"dbs\/u1NXAA==\/colls\/u1NXANcKogE=\/docs\/u1NXANcKogEcAAAAAAAAAA==\/",
+	         "_self":"dbs/u1NXAA==/colls/u1NXANcKogE=/docs/u1NXANcKogEcAAAAAAAAAA==/",
 	         "_etag":"00002b00-0000-0000-0000-53e7abe00000",
-	         "_attachments":"_attachments\/"
+	         "_attachments":"_attachments/"
 	      }
 	   ],
 	   "count":1
@@ -2059,7 +2059,7 @@ Das .NET SDK unterstützt Abfragen per LINQ und SQL. Das folgende Beispiel zeigt
 
 
 	foreach (var family in client.CreateDocumentQuery(collectionLink, 
-	    "SELECT * FROM Families f WHERE f.id = \"AndersenFamily\""))
+	    "SELECT * FROM Families f WHERE f.id = "AndersenFamily""))
 	{
 	    Console.WriteLine("\tRead {0} from SQL", family);
 	}

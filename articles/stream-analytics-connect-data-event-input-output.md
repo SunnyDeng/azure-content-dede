@@ -97,11 +97,11 @@ Sie können auch Azure-Tabellen für strukturierte Daten mit weniger Einschränk
  
 Um einen Azure-Tabellenspeicher verwenden zu können, benötigen Sie die folgenden Informationen über die Tabelle:
 
-1. Name des Speicherkontos \(wenn dieser Speicher zu einem anderen Abonnement als der Streamingauftrag gehört\)
-2. Speicherkontoschlüssel \(wenn dieser Speicher zu einem anderen Abonnement als der Streamingauftrag gehört\)
-3. Name der Ausgabetabelle \(wird erstellt, sofern nicht vorhanden\)
-4. Partitionsschlüssel \(erforderlich\)
-5.   Zeilenschlüssel \(derzeit noch erforderlich, aufgrund von Kunden-Feedback als optional geplant\)
+1. Name des Speicherkontos (wenn dieser Speicher zu einem anderen Abonnement als der Streamingauftrag gehört)
+2. Speicherkontoschlüssel (wenn dieser Speicher zu einem anderen Abonnement als der Streamingauftrag gehört)
+3. Name der Ausgabetabelle (wird erstellt, sofern nicht vorhanden)
+4. Partitionsschlüssel (erforderlich)
+5.   Zeilenschlüssel (derzeit noch erforderlich, aufgrund von Kunden-Feedback als optional geplant)
 
 Informationen zum optimalen Entwurf von Partitions- und Zeilenschlüssel finden Sie im Artikel unter [Entwerfen einer Strategie für die skalierbare Partitionierung des Azure-Tabellenspeichers](https://msdn.microsoft.com/library/azure/hh508997.aspx).
 

@@ -1,29 +1,29 @@
-﻿Diese schrittweise Anleitung erläutert die Installation und Ausführung von MongoDB auf einem virtuellen Computer, der Windows Server ausführt.
+Diese schrittweise Anleitung erläutert die Installation und Ausführung von MongoDB auf einem virtuellen Computer, der Windows Server ausführt.
 
-> [AZURE.WICHTIG] MongoDB-Sicherheitsfunktionen wie Authentifizierung und IP-Adressen-Anbindung werden nicht standardmäßig aktiviert. Die Sicherheitsfunktionen sollten aktiviert werden, bevor MongoDB in einer Produktionsumgebung eingesetzt wird.  Weitere Informationen finden Sie unter [Sicherheit und Authentifizierung](http://www.mongodb.org/display/DOCS/Security+and+Authentication).
+> [AZURE.IMPORTANT] MongoDB-Sicherheitsfunktionen wie Authentifizierung und IP-Adressen-Anbindung werden nicht standardmäßig aktiviert. Die Sicherheitsfunktionen sollten aktiviert werden, bevor MongoDB in einer Produktionsumgebung eingesetzt wird.  Weitere Informationen finden Sie unter [Sicherheit und Authentifizierung](http://www.mongodb.org/display/DOCS/Security+and+Authentication).
 
 1. Wenn Sie über Remote Desktop eine Verbindung zum virtuellen Computer aufgebaut haben, öffnen Sie im Menü **Start** den Internet Explorer.
-2. Klicken Sie in der oberen rechten Ecke auf **Extras**.  Öffnen Sie unter **Internetoptionen** die Registerkarte **Sicherheit**, wählen Sie anschließend das Symbol **Vertrauenswürdige Sites**, und klicken Sie anschließend auf die Schaltfläche **Sites**. Fügen Sie *http://\*.mongodb.org* zur Liste vertrauenswürdiger Sites hinzu.
+2. Klicken Sie in der oberen rechten Ecke auf **Extras**.  Öffnen Sie unter **Internetoptionen** die Registerkarte **Sicherheit**, wählen Sie anschließend das Symbol **Vertrauenswürdige Sites**, und klicken Sie anschließend auf die Schaltfläche **Sites**. Fügen Sie *http://*.mongodb.org* zur Liste vertrauenswürdiger Sites hinzu.
 3. Wechseln Sie zu [Downloads- MongoDB] [MongoDownloads].
 4. Suchen Sie die neueste Version im Abschnitt **Production Release (Recommended)**, und klicken Sie in der Spalte "Windows 64-bit" auf den Link ***2008+**.  Klicken Sie auf **Speichern unter**, und speichern Sie die Zip-Datei auf dem Desktop.
 5. Klicken Sie mit der rechten Maustaste auf die Zip-Datei und anschließend auf **Alle extrahieren...**  Geben Sie als Ziel "C:" an und klicken Sie auf **Extrahieren**.  Wenn die Dateien extrahiert wurden, können Sie den Installationsordner umbenennen und ihm einen einfacheren Namen geben,  z. B. "MongoDB".
 6. Erstellen Sie die Daten- und Protokollverzeichnisse für MongoDB auf dem Datenträger (z. B. Laufwerk **F:**), den Sie in den vorherigen Schritten erstellt haben. Wählen Sie unter **Start** die Option **Eingabeaufforderung**, um ein Eingabeaufforderungsfenster zu öffnen.  Geben Sie Folgendes ein:
 
-		C:\> F:
-		F:\> mkdir \MongoData
-		F:\> mkdir \MongoLogs
+		C:> F:
+		F:> mkdir \MongoData
+		F:> mkdir \MongoLogs
 
 7. Geben Sie Folgendes ein, um die Datenbank auszuführen: 
 
-		F:\> C:
-		C:\> cd \MongoDB\bin
+		F:> C:
+		C:> cd \MongoDB\bin
 		C:\my_mongo_dir\bin> mongod --dbpath F:\MongoData\ --logpath F:\MongoLogs\mongolog.log
 
 	Alle Protokollmeldungen werden in die Datei  *F:\MongoLogs\mongolog.log* geleitet, sobald der Server "mongod.exe" startet und die Journaldateien reserviert. Es kann einige Minuten dauern, bis MongoDB die Journaldateien reserviert hat und mit dem Lauschen auf Verbindungen beginnt.
 
 8. Starten Sie die MongoDB-Administrator-Shell, indem Sie unter **Start** ein weiteres Befehlsfenster öffnen und Folgendes eingeben:
 
-		C:\> cd \my_mongo_dir\bin  
+		C:> cd \my_mongo_dir\bin  
 		C:\my_mongo_dir\bin> mongo  
 		>db  
 		test  	  

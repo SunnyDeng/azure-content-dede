@@ -22,7 +22,7 @@ Das Erstellen von Web-Apps ist in einer App Service-Umgebung nahezu identisch mi
 
 Um eine Web-App in einer App Service-Umgebung erstellen zu können, müssen Sie zunächst über eine App Service-Umgebung verfügen. Einzelheiten zum Erstellen einer App Service-Umgebung finden Sie im Dokument [Erstellen einer App Service-Umgebung][HowtoCreateASE].
 
-Der erste Schritt beim Erstellen einer Web-App ist das Erstellen oder Auswählen eines App Service-Plans \(ASP\). Um einen ASP in einer App Service-Umgebung zu erstellen, führen Sie zunächst die üblichen Schritte zum Erstellen einer Web-App durch. Wählen Sie dazu "Neu" -\> "Web + mobil" -\> "Web-App".
+Der erste Schritt beim Erstellen einer Web-App ist das Erstellen oder Auswählen eines App Service-Plans (ASP). Um einen ASP in einer App Service-Umgebung zu erstellen, führen Sie zunächst die üblichen Schritte zum Erstellen einer Web-App durch. Wählen Sie dazu "Neu" -> "Web + mobil" -> "Web-App".
 
 ![][1]
 

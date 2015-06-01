@@ -85,7 +85,7 @@ Stellen Sie dann *using the local administrator account* eine Verbindung mit dem
 3.	Wenn Sie zum Öffnen von "SQL1.rdp" aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld für eine Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, verwenden Sie:
-	- Name: **SQL1\\**[Name des lokalen Administratorkontos]
+	- Name: **SQL1**[Name des lokalen Administratorkontos]
 	- Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 

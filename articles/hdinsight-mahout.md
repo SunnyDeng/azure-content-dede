@@ -75,7 +75,7 @@ Praktischerweise stellt GroupLens Research [Bewertungsdaten für Filme][movielen
 
 3. Laden Sie die Datei __u.data__ in __example/data/u.data__ Ihres HDInsight-Clusters hoch. Mit [Azure PowerShell][aps] können Sie das [HDInsight-Tools][tools] PowerShell-Modul zum Hochladen der Datei verwenden. Andere Möglichkeiten zum Hochladen von Dateien finden Sie unter [Hochladen von Daten für Hadoop-Aufträge in HDInsight][upload]. Im Folgenden wird gezeigt, wie Sie `Add-HDInsightFile` zum Hochladen der Datei verwenden.
 
-    	PS C:\> Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
+    	PS C:> Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
 
     Dabei wird die Datei __u.data__ in __example/data/u.data__ im Standardspeicher Ihres Clusters hochgeladen. Es ist dann möglich, mithilfe der __wasb:///example/data/u.data__-URI von HDInsight-Aufträgen aus auf diese Daten zuzugreifen.
 
@@ -89,7 +89,7 @@ Verwenden Sie das folgende PowerShell-Skript zum Ausführen eines Auftrags mithi
 	# NOTE: The version number portion of the file path
 	# may change in future versions of HDInsight.
 	# So dynamically grab it using Hive.
-	$mahoutPath = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target\*-job.jar' | where {$_.startswith("C:\apps\dist")}
+	$mahoutPath = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target*-job.jar' | where {$_.startswith("C:\apps\dist")}
 	$jarFile = "file:///$mahoutPath"
     #
 	# If you are using an earlier version of HDInsight,
@@ -143,7 +143,7 @@ Die erste Spalte ist die `userID`. Die in "[" und "]" enthaltenen Werte sind der
 
 ###Anzeigen der Ausgabe
 
-Zwar ist die generierte Ausgabe in Ordnung für die Nutzung in einer Anwendung; sie ist allerdings von Menschen nicht gut lesbar. Einige der anderen Dateien, die im Vorfeld in den Ordner __ml-100k__ extrahiert wurden, können für die Auflösung der `movieId` in den Namen eines Films verwendet werden. Im Ordner __ml-100k__ ist ein Python-Skript enthalten, das dies Aufgabe übernimmt (__show\_recommendations.py__). Sie können aber auch das folgende PowerShell-Skript verwenden.
+Zwar ist die generierte Ausgabe in Ordnung für die Nutzung in einer Anwendung; sie ist allerdings von Menschen nicht gut lesbar. Einige der anderen Dateien, die im Vorfeld in den Ordner __ml-100k__ extrahiert wurden, können für die Auflösung der `movieId` in den Namen eines Films verwendet werden. Im Ordner __ml-100k__ ist ein Python-Skript enthalten, das dies Aufgabe übernimmt (__show_recommendations.py__). Sie können aber auch das folgende PowerShell-Skript verwenden.
 
 	<#
 	.SYNOPSIS
@@ -229,10 +229,10 @@ Zwar ist die generierte Ausgabe in Ordnung für die Nutzung in einer Anwendung; 
 
 Damit Sie es nutzen können, müssen Sie im Vorfeld den Ordner __ml-100k__ extrahiert haben; sie benötigen außerdem eine lokale Kopie der Ausgabedatei __part-r-00000__, die vom Mahout-Auftrag generiert wurde. Nachfolgend sehen Sie ein Beispiel für das Ausführen des Skripts.
 
-	PS C:\> show-recommendation.ps1 -userId 4 -userDataFile .\ml-100k\u.data -movieFile .\ml-100k\u.item -recommendationFile .\output.txt
+	PS C:> show-recommendation.ps1 -userId 4 -userDataFile .\ml-100k\u.data -movieFile .\ml-100k\u.item -recommendationFile .\output.txt
 
 
-> [AZURE.NOTE] Das Python-Beispielskript __show\_recommendations.py__ übernimmt dieselben Parameter.
+> [AZURE.NOTE] Das Python-Beispielskript __show_recommendations.py__ übernimmt dieselben Parameter.
 
 Die Ausgabe sollte in etwa wie folgt aussehen.
 
@@ -353,7 +353,7 @@ Mahout wird auf HDInsight 3.1-Clustern installiert. Die Installation kann manuel
 
 1. Die zu verwendende Version von Mahout hängt von der Mahout-Version auf Ihrem Cluster ab. Die Clusterversion finden Sie heraus, wenn Sie Folgendes mit [Azure PowerShell][aps] verwenden:
 
-    	PS C:\> Get-AzureHDInsightCluster -Name YourClusterName | Select version
+    	PS C:> Get-AzureHDInsightCluster -Name YourClusterName | Select version
 
 
   * __Bei HDInsight 2.1__ können Sie eine JAR-Datei herunterladen, die [Mahout 0.9](http://repo2.maven.org/maven2/org/apache/mahout/mahout-core/0.9/mahout-core-0.9-job.jar) enthält.
@@ -368,7 +368,7 @@ Mahout wird auf HDInsight 3.1-Clustern installiert. Die Installation kann manuel
 
 2. Laden Sie die JAR-Datei in __example/jars__ im Standardspeicher Ihres Clusters hoch. Das folgende Beispiel verwendet das Skript [send-hdinsight][sendhdinsight] zum Hochladen der Datei.
 
-    	PS C:\> .\Send-HDInsight -LocalPath "path\to\mahout-core-0.9-job.jar" -DestinationPath "example/jars/mahout-core-0.9-job.jar" -ClusterName "your cluster name"
+    	PS C:> .\Send-HDInsight -LocalPath "path\to\mahout-core-0.9-job.jar" -DestinationPath "example/jars/mahout-core-0.9-job.jar" -ClusterName "your cluster name"
 
 ###Dateien können nicht überschrieben werden
 
@@ -381,7 +381,7 @@ Um Fehler beim Ausführen von Mahout-Aufträgen zu vermeiden, löschen Sie entwe
 Zwar enthält HDInsight 3.1 Mahout, der Pfad- und Dateiname beinhaltet aber die Versionsnummer der auf dem Cluster installierten Mahout-Version. Das PowerShell-Beispielskript in diesem Lernprogramm verwendet einen Pfad, der im Juli 2014 gültig ist. Die Versionsnummer wird sich aber mit künftigen Aktualisierungen von HDInsight ändern. Den aktuellen Pfad zur Mahout jar-Datei Ihres Clusters stellen Sie mithilfe folgender PowerShell-Befehle fest. Ändern Sie dann das Skript und referenzieren Sie den ausgegebenen Pfad.
 
 	Use-AzureHDInsightCluster -Name $clusterName
-	$jarFile = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target\*-job.jar'
+	$jarFile = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target*-job.jar'
 
 ###<a name="nopowershell"></a>Klassen, die nicht mit PowerShell funktionieren
 

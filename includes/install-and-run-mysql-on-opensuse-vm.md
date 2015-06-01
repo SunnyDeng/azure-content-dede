@@ -25,7 +25,7 @@
 
 		# rcmysql stop
 
-5. Warnung! Nach der Installation ist das MySQL-Stammkennwort standardmäßig leer.  Es wird empfohlen, das Skript **mysql\_secure\_installation** auszuführen, das bei der Sicherung von MySQL hilft. Beim Ausführen von **mysql\_secure\_installation** werden Sie aufgefordert, das MySQL-Stammkennwort zu ändern, anonyme Benutzerkonten zu entfernen, remote Stammanmeldedaten zu deaktivieren, Testdatenbanken zu entfernen und die Berechtigungstabelle erneut zu laden. Es wird empfohlen, für alle diese Optionen mit "Ja" zu antworten und das Stammkennwort zu ändern. Führen Sie den folgenden Befehl aus, um das Skript auszuführen:
+5. Warnung! Nach der Installation ist das MySQL-Stammkennwort standardmäßig leer.  Es wird empfohlen, das Skript **mysql_secure_installation** auszuführen, das bei der Sicherung von MySQL hilft. Beim Ausführen von **mysql_secure_installation** werden Sie aufgefordert, das MySQL-Stammkennwort zu ändern, anonyme Benutzerkonten zu entfernen, remote Stammanmeldedaten zu deaktivieren, Testdatenbanken zu entfernen und die Berechtigungstabelle erneut zu laden. Es wird empfohlen, für alle diese Optionen mit "Ja" zu antworten und das Stammkennwort zu ändern. Führen Sie den folgenden Befehl aus, um das Skript auszuführen:
 
 		$ mysql_secure_installation
 

@@ -17,11 +17,11 @@
 	ms.author="larryfr"/>
 
 
-#Verwenden von C\# mit Hive und Pig in HDInsight
+#Verwenden von C# mit Hive und Pig in HDInsight
 
-Hive und Pig sind hervorragend für die Arbeit mit Daten in Azure HDInsight geeignet. Manchmal benötigt man aber eine allgemeinere Sprache. Sowohl Hive als auch Pig ermöglichen es Ihnen, externen Code über benutzerdefinierte Funktionen \(User-Defined Functions, UDFs\) oder per Streaming aufzurufen.
+Hive und Pig sind hervorragend für die Arbeit mit Daten in Azure HDInsight geeignet. Manchmal benötigt man aber eine allgemeinere Sprache. Sowohl Hive als auch Pig ermöglichen es Ihnen, externen Code über benutzerdefinierte Funktionen (User-Defined Functions, UDFs) oder per Streaming aufzurufen.
 
-In diesem Dokument erfahren Sie, wie Sie C\# mit Hive und Pig verwenden.
+In diesem Dokument erfahren Sie, wie Sie C# mit Hive und Pig verwenden.
 
 ##Voraussetzungen
 
@@ -41,19 +41,19 @@ In diesem Dokument erfahren Sie, wie Sie C\# mit Hive und Pig verwenden.
 
 ##.NET in HDInsight
 
-Die .NET CLR \(Common Language Runtime\) und Frameworks sind standardmäßig auf Windows-basierten HDInsight-Clustern installiert. Dies ermöglicht Ihnen die Verwendung von C\#-Anwendungen mit Hive- und Pig-Streaming \(Daten werden zwischen Hive/Pig und der C\#-Anwendung über "stdout/stdin" übergeben\).
+Die .NET CLR (Common Language Runtime) und Frameworks sind standardmäßig auf Windows-basierten HDInsight-Clustern installiert. Dies ermöglicht Ihnen die Verwendung von C#-Anwendungen mit Hive- und Pig-Streaming (Daten werden zwischen Hive/Pig und der C#-Anwendung über "stdout/stdin" übergeben).
 
 Die Ausführung von .NET Framework-Anwendungen auf Linux-basierten HDInsight-Clustern wird derzeit nicht unterstützt.
 
 ##.NET und Streaming
 
-Beim Streaming übergeben Hive und Pig Daten über "stdout" an externe Anwendungen und empfangen die Ergebnisse über "stdin". Für C\#-Anwendungen wird dies am einfachsten über `Console.ReadLine()` und `Console.WriteLine()` erreicht.
+Beim Streaming übergeben Hive und Pig Daten über "stdout" an externe Anwendungen und empfangen die Ergebnisse über "stdin". Für C#-Anwendungen wird dies am einfachsten über `Console.ReadLine()` und `Console.WriteLine()` erreicht.
 
-Da Hive und Pig die Anwendung zur Laufzeit aufrufen, sollte die Vorlage **Konsolenanwendung** für Ihre C\#-Projekte verwendet werden.
+Da Hive und Pig die Anwendung zur Laufzeit aufrufen, sollte die Vorlage **Konsolenanwendung** für Ihre C#-Projekte verwendet werden.
 
 ##Hive and C&#35;
 
-###Erstellen des C\#-Projekts
+###Erstellen des C#-Projekts
 
 1. Öffnen Sie Visual Studio, und erstellen Sie eine neue Projektmappe. Wählen Sie als Projekttyp **Konsolenanwendung** aus, und geben Sie dem neuen Projekt den Namen **HiveCSharp**.
 
@@ -146,15 +146,15 @@ Da Hive und Pig die Anwendung zur Laufzeit aufrufen, sollte die Vorlage **Konsol
 		FROM hivesampletable
 		ORDER BY clientid LIMIT 50;
 
-    Mit diesem Code werden die Felder `clientid`, `devicemake` und `devicemodel` aus `hivesampletable` ausgewählt und an die Anwendung "HiveCSharp.exe" übergeben. Die Abfrage erwartet, dass die Anwendung drei Felder zurückgibt, die als `clientid`, `phoneLabel` und `phoneHash` gespeichert werden. Darüber hinaus wird bei der Abfrage davon ausgegangen, dass sich "HiveCSharp.exe" im Stamm des standardmäßigen Speichercontainers \(`add file wasb:///HiveCSharp.exe`\) befindet.
+    Mit diesem Code werden die Felder `clientid`, `devicemake` und `devicemodel` aus `hivesampletable` ausgewählt und an die Anwendung "HiveCSharp.exe" übergeben. Die Abfrage erwartet, dass die Anwendung drei Felder zurückgibt, die als `clientid`, `phoneLabel` und `phoneHash` gespeichert werden. Darüber hinaus wird bei der Abfrage davon ausgegangen, dass sich "HiveCSharp.exe" im Stamm des standardmäßigen Speichercontainers (`add file wasb:///HiveCSharp.exe`) befindet.
 
 5. Klicken Sie auf **Senden**, um den Auftrag an den HDInsight-Cluster zu übermitteln. Das Fenster **Hive-Auftrag – Zusammenfassung** wird geöffnet.
 
 6. Klicken Sie auf **Aktualisieren**, um die Zusammenfassung zu aktualisieren, bis der **Auftragsstatus** sich in **Abgeschlossen** ändert. Klicken Sie auf **Auftragsausgabe**, um die Auftragsausgabe anzuzeigen.
 
-###Pig und C&\#35;
+###Pig und C&#35;
 
-###Erstellen des C\#-Projekts
+###Erstellen des C#-Projekts
 
 1. Öffnen Sie Visual Studio, und erstellen Sie eine neue Projektmappe. Wählen Sie als Projekttyp **Konsolenanwendung** aus, und geben Sie dem neuen Projekt den Namen **PigUDF**.
 
@@ -195,7 +195,7 @@ Da Hive und Pig die Anwendung zur Laufzeit aufrufen, sollte die Vorlage **Konsol
 
 1. Beim Pig-Streaming wird vorausgesetzt, dass die Anwendung lokal im Clusterdateisystem vorliegt. Aktivieren Sie Remotedesktop für den HDInsight-Cluster, und stellen Sie anschließend mithilfe der Anweisungen unter <a href="http://azure.microsoft.com/documentation/articles/hdinsight-administer-use-management-portal/#rdp" target="_blank">Verbinden mit HDInsight-Clustern über RDP</a> eine Verbindung her.
 
-2. Kopieren Sie nach der Verbindungsherstellung **PigUDF.exe** aus dem Verzeichnis **bin/debug** für das PigUDF-Projekt auf Ihren lokalen Computer, und fügen Sie die Datei im Verzeichnis **%PIG\_HOME%** des Clusters ein.
+2. Kopieren Sie nach der Verbindungsherstellung **PigUDF.exe** aus dem Verzeichnis **bin/debug** für das PigUDF-Projekt auf Ihren lokalen Computer, und fügen Sie die Datei im Verzeichnis **%PIG_HOME%** des Clusters ein.
 
 ###Verwenden der Anwendung aus Pig Latin
 
@@ -218,7 +218,7 @@ Da Hive und Pig die Anwendung zur Laufzeit aufrufen, sollte die Vorlage **Konsol
 
 	Die `DEFINE`-Anweisung erstellt einen Alias von `streamer` für die Anwendung "pigudf.exe", und `SHIP` verteilt sie über die Knoten im Cluster. Später wird `streamer` mit dem `STREAM`-Operator verwendet, um die einzelnen Zeilen in LOG zu verarbeiten und die Daten als Serie von Spalten zurückzugeben.
 
-> [AZURE.NOTE]Der Anwendungsname, der für das Streaming verwendet wird, muss von bei der Aliaserstellung mit \` \(Gravis\) und bei der Verwendung mit `SHIP` von ' \(einfaches Anführungszeichen\) umschlossen werden.
+> [AZURE.NOTE]Der Anwendungsname, der für das Streaming verwendet wird, muss von bei der Aliaserstellung mit ` (Gravis) und bei der Verwendung mit `SHIP` von ' (einfaches Anführungszeichen) umschlossen werden.
 
 3. Nach Eingabe der letzten Zeile sollte der Auftrag gestartet werden. Die Ausgabe sollte ähnliche Ergebnisse wie diese liefern:
 

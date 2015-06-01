@@ -32,11 +32,11 @@ Der vorliegende Artikel baut auf den genannten Artikeln auf und veranschaulicht,
 
 ## Aktivieren von CORS
 
-Typischerweise wird CORS \(Cross-Origin Resource Sharing\) in HTML-Anwendungen benötigt, die von anderen Hosts bedient werden als von der API selbst. Bei API-Apps stehen mindestens zwei Optionen für die Aktivierung von CORS zur Verfügung. Diese Optionen werden im vorliegenden Abschnitt beschrieben.
+Typischerweise wird CORS (Cross-Origin Resource Sharing) in HTML-Anwendungen benötigt, die von anderen Hosts bedient werden als von der API selbst. Bei API-Apps stehen mindestens zwei Optionen für die Aktivierung von CORS zur Verfügung. Diese Optionen werden im vorliegenden Abschnitt beschrieben.
 
 ### Aktivieren von CORS für API-App-Gateways
 
-API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS konfiguriert werden. Durch Hinzufügen von **MS\_CrossDomainOrigins** *appSetting* können Sie angeben, welche URLs zum Aufrufen Ihrer API-App berechtigt sind. In diesem Abschnitt wird erläutert, wie Sie *appSetting* zum Aktivieren von CORS auf API-Gatewayebene verwenden.
+API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS konfiguriert werden. Durch Hinzufügen von **MS_CrossDomainOrigins** *appSetting* können Sie angeben, welche URLs zum Aufrufen Ihrer API-App berechtigt sind. In diesem Abschnitt wird erläutert, wie Sie *appSetting* zum Aktivieren von CORS auf API-Gatewayebene verwenden.
 
 1. Navigieren Sie im Azure-Vorschauportal zum Blatt für die API-App, für die Sie CORS aktivieren möchten. Klicken Sie im Blatt auf das Symbol *Gateway* für Ihre API-App. 
 
@@ -48,13 +48,13 @@ API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS k
 
 1. Klicken Sie im Portalblatt auf den Link **Alle Einstellungen**.
 
-	![Gateway – Alle Einstellungen \(Link\)](./media/app-service-api-javascript-client/21-gateway-blade-all-settings.png)
+	![Gateway – Alle Einstellungen (Link)](./media/app-service-api-javascript-client/21-gateway-blade-all-settings.png)
 
 1. Klicken Sie im Portalblatt auf die Schaltfläche **Anwendungseinstellungen**.
 
 	![Gateway – Anwendungseinstellungen](./media/app-service-api-javascript-client/22-gateway-app-settings-blade.png)
 
-1. Fügen Sie die Anwendung **MS\_CrossDomainOrigins** hinzu. Legen Sie die Einstellung auf die durch Trennzeichen getrennte Liste der HTTP-Hosts fest, denen Sie Zugriff auf Ihre API-App gewähren möchten. Wenn Sie mehreren Hosts Zugriff erteilen möchten, können Sie den Wert von *appSetting* auf einen ähnlichen wie den nachstehenden Code festlegen.
+1. Fügen Sie die Anwendung **MS_CrossDomainOrigins** hinzu. Legen Sie die Einstellung auf die durch Trennzeichen getrennte Liste der HTTP-Hosts fest, denen Sie Zugriff auf Ihre API-App gewähren möchten. Wenn Sie mehreren Hosts Zugriff erteilen möchten, können Sie den Wert von *appSetting* auf einen ähnlichen wie den nachstehenden Code festlegen.
 
 		http://foo.azurewebsites.net, https://foo.azurewebsites.net, http://contactlistwebapp.azurewebsites.net
 
@@ -66,7 +66,7 @@ API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS k
 
 	![](./media/app-service-api-javascript-client/23-app-settings-set.png)
 
-Die Anwendungseinstellung **MS\_CrossDomainOrigins** wird im Blogbeitrag [Azure Mobile Service .NET Updates](http://azure.microsoft.com/blog/2014/07/28/azure-mobile-services-net-updates/) ausführlich besprochen. Wenn Sie daher weitere Informationen zu dieser Einstellung benötigen, besuchen Sie diesen Blog.
+Die Anwendungseinstellung **MS_CrossDomainOrigins** wird im Blogbeitrag [Azure Mobile Service .NET Updates](http://azure.microsoft.com/blog/2014/07/28/azure-mobile-services-net-updates/) ausführlich besprochen. Wenn Sie daher weitere Informationen zu dieser Einstellung benötigen, besuchen Sie diesen Blog.
 
 ### Aktivieren von CORS im Web-API-Code
 
@@ -80,7 +80,7 @@ Das Vorgehen zum Aktivieren von CORS in Web API wird im ASP.NET-Artikel [Aktivie
 
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/01-cors-installed.png)
 
-1. Öffnen Sie die Datei *App\_Start/WebApiConfig.cs*. Fügen Sie in der Datei die nachstehende Codezeile zur Methode **Register** der Klasse **WebApiConfig** hinzu.
+1. Öffnen Sie die Datei *App_Start/WebApiConfig.cs*. Fügen Sie in der Datei die nachstehende Codezeile zur Methode **Register** der Klasse **WebApiConfig** hinzu.
 
 		config.EnableCors();
 
@@ -143,7 +143,7 @@ Das Vorgehen zum Aktivieren von CORS in Web API wird im ASP.NET-Artikel [Aktivie
 
 In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren AngularJS in der Webanwendung und verknüpfen ein einfaches HTML-Front-End mit der API-App. Sie stellen die Web-App anschließend in Azure App Service bereit. Die HTML-Web-App verfügt über ein Bindung mit der API-App, zeigt die aus der API-App abgerufenen Daten an und stellt für die Benutzer eine einfache Oberfläche für die Contacts-API bereit.
 
-1. Klicken Sie mit der rechten Maustaste auf die Projektmappe, und wählen Sie **Hinzufügen -\> Neues Projekt**.
+1. Klicken Sie mit der rechten Maustaste auf die Projektmappe, und wählen Sie **Hinzufügen -> Neues Projekt**.
 
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/02-add-project.png)
 
@@ -171,7 +171,7 @@ In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren Ang
 
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/07-index-html.png)
 
-1. Fügen Sie die Bootstrap-CSS- und die AngularJS JavaScript-Dateien zur HTML-Seite hinzu, verwenden Sie eine einfache Bootstrapvorlage \([wie diese](http://getbootstrap.com/examples/starter-template/)\), und erstellen Sie ein leeres script-Tag, um die Seite vorzubereiten.
+1. Fügen Sie die Bootstrap-CSS- und die AngularJS JavaScript-Dateien zur HTML-Seite hinzu, verwenden Sie eine einfache Bootstrapvorlage ([wie diese](http://getbootstrap.com/examples/starter-template/)), und erstellen Sie ein leeres script-Tag, um die Seite vorzubereiten.
 	
 	> Hinweis: Die Kommentare im nachstehenden HTML- und JavaScript-Code sind eine Einleitung der nachfolgenden Schritte in diesem Abschnitt.
 

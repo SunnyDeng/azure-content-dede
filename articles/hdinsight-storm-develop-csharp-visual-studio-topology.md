@@ -309,7 +309,7 @@ Da die Wortanzahl lokal in der Counter-Instanz gespeichert wird, möchten wir si
         // Add topology config
         topologyBuilder.SetTopologyConfig(new Dictionary<string, string>()
         {
-            {"topology.kryo.register","[\"[B\"]"}
+            {"topology.kryo.register","["[B"]"}
         });
 
         return topologyBuilder;
@@ -500,7 +500,7 @@ Obwohl es relativ einfach ist, eine Topologie auf einem Cluster bereitzustellen,
 
 3. Speichern Sie die Änderungen, und verwenden Sie dann **F5** oder **Debuggen**, **Debugging starten**, um das Projekt zu starten. Daraufhin sollte ein Konsolenfenster angezeigt und mit fortschreitendem Test der Status protokolliert werden. Nachdem angezeigt wurde, dass die **Tests abgeschlossen** sind, drücken Sie eine beliebige Taste, um das Fenster zu schließen.
 
-4. Wechseln Sie im **Explorer** in das Verzeichnis, in dem das Projekt enthalten ist. Beispiel: **C:\Benutzer\<Ihr_Benutzername>\Dokumente\Visual Studio 2013\Projects\WordCount\WordCount**. Öffnen Sie in diesem Verzeichnis **Bin** und dann **Debug**. Verwenden Sie die beim Ausführen der Tests erstellten Textdateien: sentences.txt, counter.txt und splitter.txt. Öffnen Sie die einzelnen Textdateien, und überprüfen Sie die Daten.
+4. Wechseln Sie im **Explorer** in das Verzeichnis, in dem das Projekt enthalten ist. Beispiel: **C:\Benutzer<Ihr_Benutzername>\Dokumente\Visual Studio 2013\Projects\WordCount\WordCount**. Öffnen Sie in diesem Verzeichnis **Bin** und dann **Debug**. Verwenden Sie die beim Ausführen der Tests erstellten Textdateien: sentences.txt, counter.txt und splitter.txt. Öffnen Sie die einzelnen Textdateien, und überprüfen Sie die Daten.
 
 	> [AZURE.NOTE] Zeichenfolgendaten werden in diesen Dateien als Array von Dezimalwerten beibehalten. Beispiel: [[97,103,111]] in der Datei **splitter.txt** entspricht dem Wort 'and'.
 

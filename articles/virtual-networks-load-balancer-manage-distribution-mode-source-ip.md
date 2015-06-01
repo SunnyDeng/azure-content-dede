@@ -1,28 +1,21 @@
 <properties 
-
-	pageTitle="Verwaltung: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)" 
-	description="Verwaltungsfunktionen für den Azure-Lastenausgleichs-Verteilungsmodus" 
+	pageTitle="Verwaltung: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)"
+	description="Verwaltungsfunktionen für den Azure-Lastenausgleichs-Verteilungsmodus"
 	services="virtual-network"
-
-	documentationCenter="dev-center-name" 
-	authors="danielceckert" 
-	manager="jefco" 
-	editor=""
-/>
+	documentationCenter="dev-center-name"
+	authors="danielceckert"
+	manager="jefco"
+	editor=""/>
 
 <tags
-	ms.service="virtual-network"	
-
-
+	ms.service="virtual-network"
 	ms.devlang="na"
-
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"/>
 	ms.date="02/20/2015"
-	ms.author="danecke"
-	/>
-   
+	ms.author="danecke"/>
+
 # Verwaltung virtueller Netzwerke: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)
 
 
@@ -69,7 +62,7 @@ Laden Sie die [neueste Azure PowerShell-Version](https://github.com/Azure/azure-
 ### Fügen Sie einem virtuellen Computer einen Azure-Endpunkt hinzu, und legen Sie den Lastenausgleichs-Verteilungsmodus fest.
 
 <<<<<<< HEAD:articles/virtual-networks-load-balancer-manage-distribution-mode.md
-    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -LoadBalancerDistribution "sourceIP"| Update-AzureVM  
+Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -LoadBalancerDistribution "sourceIP"| Update-AzureVM  
 =======
     Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 â€"LoadBalancerDistribution â€œsourceIPâ€�| Update-AzureVM  
 >>>>>>> 5781a6382194f50134d2a16bd9d72a6cca290f3d:articles/virtual-networks-load-balancer-manage-distribution-mode-source-ip.md
@@ -79,9 +72,9 @@ Laden Sie die [neueste Azure PowerShell-Version](https://github.com/Azure/azure-
 ### Abrufen einer Lastenausgleichs-Verteilungsmoduskonfiguration für einen Endpunkt
 
 <<<<<<< HEAD:articles/virtual-networks-load-balancer-manage-distribution-mode.md
-    PS C:\> Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
+    PS C:> Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
 =======
-    PS C:\> Get-AzureVM â€"ServiceName â€œMyServiceâ€� â€"Name â€œMyVMâ€� | Get-AzureEndpoint
+    PS C:> Get-AzureVM â€"ServiceName â€œMyServiceâ€� â€"Name â€œMyVMâ€� | Get-AzureEndpoint
 >>>>>>> 5781a6382194f50134d2a16bd9d72a6cca290f3d:articles/virtual-networks-load-balancer-manage-distribution-mode-source-ip.md
     
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment

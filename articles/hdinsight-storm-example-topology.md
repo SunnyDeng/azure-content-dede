@@ -18,21 +18,21 @@
 
 # Beispiel-Storm-Topologien für Apache Storm auf HDInsight
 
-Es folgt eine Liste von Beispielen zur Verwendung mit Apache Storm in HDInsight, die von Microsoft erstellt und verwaltet wird. Diese Beispiele decken eine Vielzahl von Themen ab, angefangen bei grundlegenden C\# und Java-Topologien bis hin zur Arbeit mit Azure-Diensten wie Event Hubs, DocumentDB, Power BI, SQL-Datenbank, HBase auf HDInsight und Azure-Speicher. Einige Beispiele demonstrieren außerdem die Arbeit mit nicht-Azure oder sogar nicht-Microsoft-Technologien, wie SignalR und Socket.IO
+Es folgt eine Liste von Beispielen zur Verwendung mit Apache Storm in HDInsight, die von Microsoft erstellt und verwaltet wird. Diese Beispiele decken eine Vielzahl von Themen ab, angefangen bei grundlegenden C# und Java-Topologien bis hin zur Arbeit mit Azure-Diensten wie Event Hubs, DocumentDB, Power BI, SQL-Datenbank, HBase auf HDInsight und Azure-Speicher. Einige Beispiele demonstrieren außerdem die Arbeit mit nicht-Azure oder sogar nicht-Microsoft-Technologien, wie SignalR und Socket.IO
 
 | Beschreibung | Zeigt | Sprache/Framework |
 |:--------------------------------------------------------------------------------------------------------|:-----------------------------------------------------|:---------------------------|
 | [Entwickeln von Java-basierten Topologien für Apache Storm in HDInsight][5797064f] | Maven | Java |
-| [Entwickeln von C\#-Topologien für Apache Storm in HDInsight mithilfe von Visual Studio][16fce2d1] | HDInsight Tools für Visual Studio | C\#, Java |
-| [Erstellen Sie mehrerer Datenströme in einer C\#-Storm-Topologie][ec5a4064] | Mehrere Datenströme | C\# |
+| [Entwickeln von C#-Topologien für Apache Storm in HDInsight mithilfe von Visual Studio][16fce2d1] | HDInsight Tools für Visual Studio | C#, Java |
+| [Erstellen Sie mehrerer Datenströme in einer C#-Storm-Topologie][ec5a4064] | Mehrere Datenströme | C# |
 | [Beliebte Twitter-Themen mit Apache Storm in HDInsight ermitteln][3c86c7c8] | Trident | Java, Trident |
-| [Verarbeitung von Ereignissen von Azure-Event-Hubs mit Storm auf HDInsight][844d1d81] | Event Hubs | C\# und Java |
-| [Verwenden Sie zur Visualisierung von Daten aus einer Storm-Topologie Power Bi \(Vorschau\)][94d15238] | Power BI | C\# |
-| [Analysieren von Sensordaten mit Storm und HBase in HDInsight][ab894747] | Event Hubs, HBase, Socket.IO, Web-Dashboard | C\#, Java, JavaScript, HTML |
-| [Verarbeitung von Fahrzeugsensordaten von Event Hubs mit Storm auf HDInsight][246ee964] | Event Hubs, DocumentDb, Azure-Speicher-Blob \(WASB\) | C\#, Java |
-| [Extrahieren, Transformieren und Laden \(ETL\) von Azure- Event Hubs auf HBase mit  Storm in HDInsight][b4b68194] | Event Hubs, HBase | C\# |
-| [C\#-Storm-Topologie-Vorlagenprojekt für die Arbeit mit Azure-Diensten über Storm auf HDInsight][ce0c02a2] | Event Hubs, DocumentDb, SQL-Datenbank, HBase, SignalR | C\#, Java |
-| [Skalierbarkeits-Benchmarks für das Lesen von Azure-Event Hubs mit Storm auf HDInsight][d6c540e3] | Nachrichtendurchsatz, Event Hubs, SQL-Datenbank | C\#, Java |
+| [Verarbeitung von Ereignissen von Azure-Event-Hubs mit Storm auf HDInsight][844d1d81] | Event Hubs | C# und Java |
+| [Verwenden Sie zur Visualisierung von Daten aus einer Storm-Topologie Power Bi (Vorschau)][94d15238] | Power BI | C# |
+| [Analysieren von Sensordaten mit Storm und HBase in HDInsight][ab894747] | Event Hubs, HBase, Socket.IO, Web-Dashboard | C#, Java, JavaScript, HTML |
+| [Verarbeitung von Fahrzeugsensordaten von Event Hubs mit Storm auf HDInsight][246ee964] | Event Hubs, DocumentDb, Azure-Speicher-Blob (WASB) | C#, Java |
+| [Extrahieren, Transformieren und Laden (ETL) von Azure- Event Hubs auf HBase mit  Storm in HDInsight][b4b68194] | Event Hubs, HBase | C# |
+| [C#-Storm-Topologie-Vorlagenprojekt für die Arbeit mit Azure-Diensten über Storm auf HDInsight][ce0c02a2] | Event Hubs, DocumentDb, SQL-Datenbank, HBase, SignalR | C#, Java |
+| [Skalierbarkeits-Benchmarks für das Lesen von Azure-Event Hubs mit Storm auf HDInsight][d6c540e3] | Nachrichtendurchsatz, Event Hubs, SQL-Datenbank | C#, Java |
 
 ## Nächste Schritte
 

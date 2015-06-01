@@ -6,7 +6,7 @@
 
 	![Navigieren Sie zu From Gallery in der Befehlsleiste](./media/virtual-machines-create-WindowsVM/fromgallery.png)
 	
-4. Im ersten Bildschirm können Sie für Ihren virtuellen Computer ein **Image** aus einer Liste in der Image-Galerie auswählen. \(Die verfügbaren Abbilder können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.\) Klicken Sie auf den Pfeil, um fortzufahren.
+4. Im ersten Bildschirm können Sie für Ihren virtuellen Computer ein **Image** aus einer Liste in der Image-Galerie auswählen. (Die verfügbaren Abbilder können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.) Klicken Sie auf den Pfeil, um fortzufahren.
 
 	![Wählen Sie ein Image aus](./media/virtual-machines-create-WindowsVM/chooseimage.png)
 

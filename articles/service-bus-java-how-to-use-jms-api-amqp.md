@@ -42,7 +42,7 @@ Informationen zum Downloadort der neuesten Version der Apache Qpid JMS AMQP 1.0-
 
 Folgende vier JAR-Dateien müssen aus dem Apache Qpid JMS AMQP 1.0-Verteilungsarchiv zu dem Java-KLASSENPFAD hinzugefügt werden, wenn JMS-Anwendungen mit Service Bus erstellt und ausgeführt werden:
 
-*    geronimo-jms\_1.1\_spec-1.0.jar
+*    geronimo-jms_1.1_spec-1.0.jar
 *    qpid-amqp-1-0-client-[version].jar
 *    qpid-amqp-1-0-client-jms-[version].jar
 *    qpid-amqp-1-0-common-[version].jar
@@ -136,7 +136,7 @@ oder
 
 	topic.[jndi_name] = [physical_name]
 
-Wobei [jndi\_name] und [physical\_name] die folgenden Bedeutungen haben:
+Wobei [jndi_name] und [physical_name] die folgenden Bedeutungen haben:
 
 <table>
   <tr>

@@ -260,7 +260,7 @@ Wenn eine Anwendung einen Id-Wert übergibt, speichert der mobile Dienst diesen 
 Der `id`-Wert muss eindeutig sein und darf keine Zeichen aus den folgenden Sätzen enthalten:
 
 + Steuerzeichen: [0x0000-0x001F] und [0x007F-0x009F]. Weitere Informationen finden Sie unter [ASCII-Steuerzeichen C0 und C1].
-+  Druckbare Zeichen: **"**(0x0022), **\+** (0x002B), **/** (0x002F), **?** (0x003F), **\\** (0x005C), **`** (0x0060)
++  Druckbare Zeichen: **"**(0x0022), **\+** (0x002B), **/** (0x002F), **?** (0x003F), **\** (0x005C), **`** (0x0060)
 +  Die IDs "." und ".."
 
 
@@ -386,7 +386,7 @@ Der folgende Code zeigt, wie ein erkannter Schreibkonflikt gelöst werden kann. 
 	private async Task ResolveConflict(TodoItem localItem, TodoItem serverItem)
 	{
     	//Ask user to choose the resoltion between versions
-	    MessageDialog msgDialog = new MessageDialog(String.Format("Server Text: \"{0}\" \nLocal Text: \"{1}\"\n",
+	    MessageDialog msgDialog = new MessageDialog(String.Format("Server Text: "{0}" \nLocal Text: "{1}"\n",
         	                                        serverItem.Text, localItem.Text),
                                                 	"CONFLICT DETECTED - Select a resolution:");
 

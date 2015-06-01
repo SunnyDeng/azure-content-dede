@@ -262,7 +262,7 @@ Wenn die Hive-Tabelle ein Textfeld enthält, das eine Zeichenfolge von durch Lee
 
 Die in diesem Abschnitt angegebene Abfrage kann direkt auf die "NYC Taxi Trip"-Daten angewendet werden. Diese Abfrage soll veranschaulichen, wie Sie die eingebetteten mathematischen Funktionen in Hive zum Generieren von Funktionen verwenden. 
 
-Die in dieser Abfrage verwendeten Felder sind GPS-Koordinaten von Start- und Zielorten mit den Bezeichnungen "pickup\_longitude", "pickup\_latitude", "dropoff\_longitude" und "dropoff\_latitude". Die Abfragen zur Berechnung der direkten Entfernung zwischen den Start- und Zielkoordinaten sind:
+Die in dieser Abfrage verwendeten Felder sind GPS-Koordinaten von Start- und Zielorten mit den Bezeichnungen "pickup_longitude", "pickup_latitude", "dropoff_longitude" und "dropoff_latitude". Die Abfragen zur Berechnung der direkten Entfernung zwischen den Start- und Zielkoordinaten sind:
 
 		set R=3959;
 		set pi=radians(180);

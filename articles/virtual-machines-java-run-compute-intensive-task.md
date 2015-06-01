@@ -123,7 +123,7 @@ Namespace abrufen.
 ##Erstellen einer Java-Anwendung für die Ausführung einer rechenintensiven Aufgabe
 
 1. Laden Sie auf dem Entwicklungscomputer (der nicht mit dem erstellten virtuellen Computer identisch sein muss) das [Azure-SDK für Java](http://www.windowsazure.com/develop/java/) herunter.
-2. Erstellen Sie eine Java-Konsolenanwendung mithilfe des Beispielcodes am Ende dieses Abschnitts. In diesem Lernprogramm wird **TSPSolver.java** als Java-Dateiname verwendet. Ändern Sie die Platzhalter **your\_service\_bus\_namespace**, **your\_service\_bus\_owner** und **your\_service\_bus\_key**, sodass diese jeweils Ihre Servicebus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwenden.
+2. Erstellen Sie eine Java-Konsolenanwendung mithilfe des Beispielcodes am Ende dieses Abschnitts. In diesem Lernprogramm wird **TSPSolver.java** als Java-Dateiname verwendet. Ändern Sie die Platzhalter **your_service_bus_namespace**, **your_service_bus_owner** und **your_service_bus_key**, sodass diese jeweils Ihre Servicebus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwenden.
 3. Exportieren Sie die Anwendung nach der Programmierung in ein ausführbares Java-Archiv (JAR), und packen Sie die erforderlichen Bibliotheken in die erzeugte JAR-Datei. In diesem Lernprogramm wird **TSPSolver.jar** als Name der erzeugten JAR-Datei verwendet.
 
 <p/>

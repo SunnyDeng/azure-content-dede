@@ -26,7 +26,7 @@
 - [Azure classic portal](virtual-machines-windows-tutorial-classic-portal.md)
 - [PowerShell](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-In diesem Lernprogramm erfahren Sie, wie einfach es ist, einen virtuellen Azure-Computer \(Azure-VM\) zu erstellen. In diesem Lernprogramm wird ein Windows Server-Image verwendet, das jedoch nur eines von vielen in Azure verfügbaren Images ist. Hierzu zählen Windows- und Linux-basierte Betriebssysteme sowie Images mit vorinstallierten Anwendungen. Welche Images Sie auswählen können, hängt jeweils von der Art Ihres Abonnements ab. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
+In diesem Lernprogramm erfahren Sie, wie einfach es ist, einen virtuellen Azure-Computer (Azure-VM) zu erstellen. In diesem Lernprogramm wird ein Windows Server-Image verwendet, das jedoch nur eines von vielen in Azure verfügbaren Images ist. Hierzu zählen Windows- und Linux-basierte Betriebssysteme sowie Images mit vorinstallierten Anwendungen. Welche Images Sie auswählen können, hängt jeweils von der Art Ihres Abonnements ab. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
 
 Sie können auch mithilfe [eigener Images](virtual-machines-create-upload-vhd-windows-server-classic-portal.md) virtuelle Windows-Computer erstellen. Weitere Informationen zu virtuellen Azure-Computern finden Sie unter [Übersicht über virtuelle Computer in Azure](http://msdn.microsoft.com/library/azure/jj156143.aspx).
 

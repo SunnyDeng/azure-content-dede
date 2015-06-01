@@ -234,7 +234,7 @@ Wenn Clientbrowser immer wieder auf Long Polling zurückfallen und WebSockets ni
 		      <rules>
 		        <!-- Do not interfere with requests for node-inspector debugging -->
 		        <rule name="NodeInspector" patternSyntax="ECMAScript" stopProcessing="true">
-		          <match url="^app.js\/debug[\/]?" />
+		          <match url="^app.js/debug[/]?" />
 		        </rule>
 		
 		        <!-- First we consider whether the incoming URL matches a physical file in the /public folder -->
