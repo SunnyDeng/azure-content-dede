@@ -186,13 +186,12 @@ Parameter:
 Dieses Ereignis sollte verwendet werden, wenn der Benutzer seinen Einkaufswagen gekauft hat.
 
 Parameter: 
-* event (Zeichenfolge) 
-* "purchase" * items ( Purchased[] ) 
-* ein Array mit einem Eintrag für jeden gekauften Artikel.<br><br> Purchased-Format: * item (Zeichenfolge) 
-* eindeutige Bezeichner des Elements * count (ganze Zahl oder Zeichenfolge) 
-* die Anzahl der Elemente, die gekauft wurden * price (Gleitkommazahl oder Zeichenfolge) 
-* optionales Feld 
-* der Preis des Elements
+* event (Zeichenfolge) – “purchase”
+* items ( Purchased[] ) – ein Array mit einem Eintrag für jeden gekauften Artikel.<br><br>
+Purchased-Format:
+	* item (Zeichenfolge) - eindeutige Bezeichner des Elements
+	* count (ganze Zahl oder Zeichenfolge) – die Anzahl der Elemente, die gekauft wurden
+	* price (Gleitkommazahl oder Zeichenfolge) - optionales Feld der Preis des Elements
 
 Das folgende Beispiel zeigt den Kauf von 3 Elementen (33, 34, 35), zwei Elemente, bei denen alle Feldern aufgefüllt sind (item, count, price), und ein Element ohne Preis (item 34).
 
@@ -207,9 +206,12 @@ Die Ereignisbibliothek für Azure ML-Empfehlungen Bibliothek erstellt und verwen
 Dieses Ereignis sollte nach der Benutzeranmeldung auf Ihrer Website verwendet werden.
 
 Parameter: 
-* event (Zeichenfolge) 
-* "userlogin" * user (Zeichenfolge) 
-* eindeutige Identifikation des Benutzers. <script> if (typeof AzureMLRecommendationsEvent=="undefined") { AzureMLRecommendationsEvent = []; } AzureMLRecommendationsEvent.push({event: "userlogin", user: “ABCD10AA” }); </script>
+* event (string) – “userlogin”
+* user (string) – unique identification of the user.
+		<script>
+			if (typeof AzureMLRecommendationsEvent=="undefined") { AzureMLRecommendationsEvent = []; }
+			AzureMLRecommendationsEvent.push({event: "userlogin", user: “ABCD10AA” });
+		</script>
 
 ##4. Nutzen von Empfehlungen über JavaScript
 Der Code, der die Empfehlung nutzt, wird durch ein JavaScript-Ereignis von der Client-Webseite ausgelöst. Die Antwort mit der Empfehlung enthält die Ids der empfohlenen Elemente, deren Namen und ihre Bewertungen. Es empfiehlt sich, diese Option nur für eine Listenanzeige der empfohlenen Elemente zu verwenden. Eine komplexere Aufbereitung (wie z. B. das Hinzufügen von Metadaten des Elements) sollte in der serverseitigen Integration erledigt werden.
@@ -236,11 +238,13 @@ Beispiel: Mit dem folgenden Code werden acht Empfehlungen für das Element "64f6
  			var reco = AzureMLRecommendationsGetI2IRecommendation(["64f6eb0d-947a-4c18-a16c-888da9e228ba"], 8, false, function (reco) {
  				var buff = "";
  				for (var ii = 0; ii < reco.length; ii++) {
-   					buff += reco[ii].item + "," + reco[ii].name + "," + reco[ii].rating + "n";
+   					buff += reco[ii].item + "," + reco[ii].name + "," + reco[ii].rating + "\n";
  				}
  				alert(buff);
 			});
 		</script>
+
+
 [1]: ./media/machine-learning-recommendation-api-javascript-integration/Drawing1.png
 [2]: ./media/machine-learning-recommendation-api-javascript-integration/Drawing2.png
 [3]: ./media/machine-learning-recommendation-api-javascript-integration/Drawing3.png
