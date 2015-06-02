@@ -1,12 +1,12 @@
-﻿##<a name="add-select-images"></a>Aktualisieren Sie die Quickstart-Client-App, um Bilder aufzunehmen und hochzuladen
+##<a name="add-select-images"></a>Aktualisieren der Schnellstart-Client-App zum Aufnehmen und Hochladen von Bildern
 
-1. Öffnen Sie die Datei Package.appxmanifest in Visual Studio 2012, und aktivieren Sie in der Registerkarte **Funktionen** die Funktionen **Webcam** und **Mikrofon**.
+1. Öffnen Sie die Datei "Package.appxmanifest" in Visual Studio, und aktivieren Sie auf der Registerkarte **Funktionen** die Funktionen **Webcam** und **Mikrofon**.
 
    	![](./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-app-manifest-camera.png)
  
    	Damit stellen Sie sicher, dass Ihre App eine am Computer angeschlossene Kamera nutzen kann. Bei der erstmaligen Ausführung der App wird der Benutzer dazu aufgefordert, Kamerazugang zu gestatten.
 
-1. Öffnen Sie die Datei MainPage.xaml, und ersetzen Sie das **StackPanel**-Element direkt nach dem ersten **Aufgabe**-Element durch den folgenden Code:
+1. Öffnen Sie die Datei MainPage.xaml und ersetzen Sie das **StackPanel**-Element direkt nach dem ersten **Aufgabe**-Element durch den folgenden Code:
 
         <StackPanel Orientation="Horizontal" Margin="72,0,0,0">
             <TextBox Name="TextInput" Margin="5" MaxHeight="40" MinWidth="300"></TextBox>
@@ -16,7 +16,7 @@
                     Click="ButtonSave_Click"/>
         </StackPanel>
 
-2. Ersetzen Sie das **StackPanel**-Element in der **DataTemplate** durch den folgenden Code:
+2. Ersetzen Sie das **StackPanel**-Element in der **Datenvorlage** durch den folgenden Code:
 
         <StackPanel Orientation="Vertical">
             <CheckBox Name="CheckBoxComplete" IsChecked="{Binding Complete, Mode=TwoWay}" 
@@ -26,9 +26,9 @@
                     MaxHeight="250"/>
         </StackPanel> 
 
-   	Dadurch wird ein Bild zu **ItemTemplate** hinzugefügt, und dessen Bindungsquelle als URI des hochgeladenen Bilds im Blob-Speicherdienst festgelegt.
+   	Dadurch wird ein Bild zu **ItemTemplate** hinzugefügt und dessen Bindungsquelle als URI des hochgeladenen Bilds im Blob-Speicherdienst festgelegt.
 
-3. Öffnen Sie die Projektdatei "MainPage.xaml.cs", und fügen Sie die folgende **using**-Anweisungen ein:
+3. Öffnen Sie die Projektdatei MainPage.xaml.cs, und fügen Sie die folgenden **using**-Anweisungen ein:
 	
 		using Windows.Media.Capture;
 		using Windows.Storage;
@@ -50,7 +50,7 @@
         [JsonProperty(PropertyName = "imageUri")]
         public string ImageUri { get; set; } 
 
-   	>[AZURE.NOTE]Zum Hinzufügen neuer Eigenschaften zum TodoItem-Objekt muss das dynamische Schema im mobilen Service aktiviert sein. Wenn das dynamische Schema aktiviert ist, werden automatisch neue Spalten in die TodoItem-Tabelle eingefügt, die auf diese neuen Eigenschaften verweisen.
+   	>[AZURE.NOTE]Um neue Eigenschaften zum TodoItem-Objekt hinzuzufügen, muss das dynamische Schema im mobilen Dienst aktiviert sein. Wenn das dynamische Schema aktiviert ist, werden automatisch neue Spalten in die TodoItem-Tabelle eingefügt, die auf diese neuen Eigenschaften verweisen.
 
 5. Fügen Sie in der MainPage-Klasse den folgenden Code hinzu:
 
@@ -118,15 +118,15 @@
 
 Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass das Hochladen funktioniert.
 		
-##<a name="test"></a>Testen Sie das Hochladen der Bilder in Ihrer App
+##<a name="test"></a>Testen des Hochladens von Bildern in der App
 
 1. Drücken Sie in Visual Studio die Taste F5, um die App auszuführen.
 
-2. Geben Sie in der App einen Text in **Insert a TodoItem**, ein, und klicken Sie dann auf **Foto**.
+2. Geben Sie in das Textfeld unter **TodoItem einfügen** einen Text ein, und klicken Sie dann auf **Foto**.
 
    	![](./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-quickstart-blob-appbar.png)
 
-  	Dadurch wird die Benutzeroberfläche zur Kameraaufnahme angezeigt. 
+  	Dadurch wird die Kamera-Aufnahme-Benutzeroberfläche angezeigt.
 
 3. Klicken Sie auf das Bild, um eine Aufnahme zu machen, und klicken Sie dann auf **OK**.
   
@@ -140,7 +140,7 @@ Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass da
 
 	![](./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-quickstart-blob-ie.png)
 
-   	>[AZURE.NOTE]Das Bild wird automatisch vom Blob-Speicherdienst heruntergeladen, wenn die <code>imageUri</code>-Eigenschaft des neuen Elements an das <strong>Bild</strong>-Steuerelement gebunden wird.
+   	>[AZURE.NOTE]Das Bild wird automatisch vom Blob-Speicherdienst heruntergeladen, wenn die <code>imageUri</code>-Eigenschaft des neuen Elements an das <strong>Image</strong>-Steuerelement gebunden wird.
 
 
-<!--HONumber=42-->
+<!--HONumber=54-->

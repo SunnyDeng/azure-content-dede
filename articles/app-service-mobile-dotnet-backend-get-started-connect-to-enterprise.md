@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verbinden einer mobilen App mit einer SaaS-Unternehmenslösung | Mobile Dev Center" 
+	pageTitle="Verbinden einer mobilen App mit einer SaaS-Unternehmensressource | Mobile Dev Center" 
 	description="Erfahren Sie, wie Sie Unternehmensressourcen wie beispielsweise SharePoint Online aufrufen." 
 	documentationCenter="" 
 	authors="mattchenderson" 
@@ -22,48 +22,50 @@ In diesem Lernprogramm verbinden Sie Ihre mobile App mit einer SaaS-Unternehmens
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-* Visual Studio 2013 unter Windows 8.1
+* Visual Studio 2013 unter Windows 8.1
 * Ein aktives Abonnement von [SharePoint Online]
 * Sie haben das Lernprogramm [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden] durchlaufen. Sie sollten das Mandat verwenden, das von Ihrem SharePoint-Abonnement bereitgestellt wird.
 
 ## <a name="configure-permissions"></a>Konfigurieren Ihrer Anwendung für den delegierten Zugriff auf SharePoint
 Standardmäßig hat der Token, den Sie von AAD erhalten, eingeschränkte Berechtigungen. Um auf eine Ressource von Dritten oder eine SaaS-Anwendung wie etwa SharePoint Online zugreifen zu können, müssen Sie dies explizit erlauben.
 
-1. Wählen Sie im Abschnitt **Active Directory** des [Azure-Verwaltungsportals] Ihren Mandant. Navigieren Sie zur Webanwendung, die Sie für App Service erstellt haben.
+1. Wählen Sie im Abschnitt **Active Directory** des [Azure-Verwaltungsportals] Ihr Mandat. Navigieren Sie zur Webanwendung, die Sie für App Service erstellt haben.
 
-2. Scrollen Sie auf der Registerkarte **Konfigurieren** nach unten zum Abschnitt "Berechtigungen für andere Anwendungen". Wählen Sie **Office 365 SharePoint Online**, und gewähren Sie die delegierte Berechtigung **Dateien der Benutzer bearbeiten oder löschen**. Klicken Sie dann auf **Speichern**.
+2. Scrollen Sie auf der Registerkarte **Konfigurieren** nach unten zum Abschnitt "Berechtigungen für andere Anwendungen". Wählen Sie **Office 365 SharePoint Online**, und gewähren Sie die Berechtigung **Dateien des Benutzer bearbeiten oder löschen**. Klicken Sie anschließend auf **Save**.
 
     ![][1]
 
-Sie haben jetzt AAD so konfiguriert, dass App Services ein SharePoint-Zugriffstoken ausgestellt wird.
+Sie haben jetzt AAD so konfiguriert, dass für App Service ein SharePoint-Zugriffstoken ausgestellt wird.
 
 ## <a name="store-credentials"></a>Hinzufügen von SharePoint-Informationen zu Ihrer mobilen App
 
-Um einen Aufruf an SharePoint zu richten, müssen Sie die Endpunkte festlegen, mit denen die mobile App kommunizieren soll. Sie müssen außerdem die Identität Ihrer mobilen App nachweisen können. Das wird mit einer Client-ID und einem geheimen Clientschlüsselpaar erreicht. Sie haben bereits während der Einrichtung der AAD-Anmeldung die Client-ID für die mobile App bezogen und gespeichert. Da dies sensible Anmeldeinformationen sind, sollten Sie sie nicht als Klartext im Code speichern. Stattdessen legen Sie diese Werte als Anwendungseinstellungen für die Mobile App-Codesite fest.
+Um einen Aufruf an SharePoint zu richten, müssen Sie die Endpunkte festlegen, mit denen die mobile App kommunizieren soll. Sie müssen außerdem die Identität Ihrer mobilen App nachweisen können. Das wird mit einer Kombination aus Client-ID und einem geheimen Clientschlüssel erreicht. Sie haben bereits während der Einrichtung der AAD-Anmeldung die Client-ID für die mobile App abgerufen und gespeichert. Da dies sensible Anmeldeinformationen sind, sollten Sie sie nicht als Klartext im Code speichern. Stattdessen legen Sie diese Werte als Anwendungseinstellungen für die Mobile App-Codesite fest.
 
-1. Wechseln Sie zurück zur Registerkarte "AAD-Anwendung" für Ihren Mandanten, und wählen Sie die Webanwendung für App Service aus.
+1. Wechseln Sie zurück zur Registerkarte "AAD-Anwendungen" für Ihren Mandanten, und wählen Sie die Webanwendung für App Service aus.
 
 2. Scrollen Sie unter "Konfigurieren" zu "Schlüssel". Sie erhalten einen geheimen Clientschlüssel, indem Sie einen neuen Schlüssel generieren. Nachdem Sie einen Schlüssel erzeugt und die Seite verlassen haben, gibt es keine Möglichkeit mehr, ihn aus dem Portal zu bekommen. Sie müssen eine Kopie dieses Werts an einem sicheren Ort speichern. Wählen Sie eine Dauer für den Schlüssel und klicken Sie dann auf "Speichern", und kopieren Sie den resultierenden Wert.
 
 3. Navigieren Sie im Verwaltungsportal im Abschnitt für den Code der mobilen App zur Registerkarte "Konfiguration", und führen Sie einen Bildlauf zu den App-Einstellungen durch. Hier können Sie ein Schlüsselwertepaar bereitstellen, mit dem Sie auf die nötigen Anmeldeinformationen verweisen.
 
-* Legen Sie SP_Authority als Autoritätsendpunkt für das AAD-Mandat fest. Das sollte derselbe Autoritätsendpunkt sein, den Sie auch für die Client-App verwendet haben. Er sollte das folgende Format aufweisen: `https://login.windows.net/contoso.onmicrosoft.com`
+* Legen Sie SP_Authority als Autoritätsendpunkt für das AAD-Mandat fest. Das sollte derselbe Autoritätsendpunkt sein, den Sie auch für die Client-App verwendet haben. Er hat das Format `https://login.windows.net/contoso.onmicrosoft.com`.
 
-* Legen Sie bei SP_ClientSecret den geheimen Clientwert fest, den Sie vorhin bezogen haben.
+* Legen Sie bei SP_ClientSecret den geheimen Clientwert fest, den Sie zuvor abgerufen haben.
 
 * Legen Sie bei SP_SharePointURL die URL für Ihre SharePoint-Website fest. Sie sollte das folgende Format aufweisen: `https://contoso-my.sharepoint.com`
 
 Sie können diese Werte mithilfe von "ApiServices.Settings" in Ihrem Code abrufen.
 
-## <a name="obtain-token"></a>Beziehen eines Zugriffstokens und Aufrufen der SharePoint-API
+## <a name="obtain-token"></a>Abrufen eines Zugriffstokens und Aufrufen der SharePoint-API
 
-Um auf SharePoint zugreifen zu können, benötigen Sie ein spezielles Zugriffstoken mit SharePoint als Zielgruppe. Um dieses Token zu erhalten, müssen Sie erneut einen Aufruf in AAD ausführen und dabei die App Service-Identität und das Token verwenden, das für den Benutzer ausgestellt wurde.
+Um auf SharePoint zugreifen zu können, benötigen Sie einen speziellen Zugriffstoken mit SharePoint als Zielgruppe. Um dieses Token zu erhalten, müssen Sie erneut einen Aufruf in AAD ausführen und dabei die App Service-Identität und das Token verwenden, das für den Benutzer ausgestellt wurde.
 
 1. Öffnen Sie das Codeprojekt für die mobile App in Visual Studio.
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-adal-install-nuget](../includes/app-service-mobile-dotnet-adal-install-nuget.md)]
 
-2. Erstellen Sie im Codeprojekt für die mobile App eine neue Klasse mit dem Namen "SharePointUploadContext". Fügen Sie dort Folgendes hinzu:
+2. Klicken Sie im NuGet-Paket-Manager auf **Online**. Geben Sie als Suchbegriff **Microsoft.Azure.Mobile.Server.AppService** ein. Klicken Sie dann auf **Installieren**, um das Paket [Mobile Apps .NET Backend App Service Extension] zu installieren. Dieses Paket stellt Erweiterungsmethoden für die Arbeit mit Informationen zum aktuell angemeldeten Benutzer bereit.
+
+2. Erstellen Sie im Codeprojekt für die mobile App eine neue Klasse mit dem Namen "SharePointUploadContext". Fügen Sie der Datei eine `using Microsoft.Azure.Mobile.Server.AppService;`-Anweisung hinzu. Fügen Sie anschließend folgenden Code zur Klasse hinzu:
 
         private String accessToken;
         private String mySiteApiPath;
@@ -178,10 +180,10 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 
 <!-- URLs. -->
 
-[Vorschau auf das Azure-Verwaltungsportal]: https://portal.azure.com/
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Preview Azure Management Portal]: https://portal.azure.com/
 [Azure-Verwaltungsportals]: https://manage.windowsazure.com/
 [SharePoint Online]: http://office.microsoft.com/de-de/sharepoint/
 [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden]: app-service-mobile-dotnet-backend-ios-aad-sso-preview.md
+[Mobile Apps .NET Backend App Service Extension]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.AppService/
 
-<!--HONumber=49-->
+<!--HONumber=54-->

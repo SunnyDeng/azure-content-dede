@@ -1,10 +1,10 @@
-Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit diesen kostenlosen 25.000 monatlichen E-Mails erhalten Sie Zugriff auf erweiterte Berichterstellung und Analysen sowie auf [sämtliche APIs][] (Web, SMTP, Ereignis, Analyse usw.). Informationen über die zusätzlichen Dienste von SendGrid finden Sie auf der Seite [SendGrid Features][].
+Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit diesen kostenlosen 25.000 monatlichen E-Mails erhalten Sie Zugriff auf erweiterte Berichterstellung und Analysen sowie auf [sämtliche APIs][] (Web, SMTP, Ereignis, Analyse usw.). Informationen über die zusätzlichen Dienste von SendGrid finden Sie auf der Seite [SendGrid Features][] (in englischer Sprache).
 
 ### So registrieren Sie ein SendGrid-Konto
 
-1. Melden Sie sich am [Azure-Verwaltungsportal][] an.
+1. Melden Sie sich beim [Azure-Verwaltungsportal][] an.
 
-2. Klicken Sie im unteren Bereich des Verwaltungsportals auf **Neu**.
+2. Klicken Sie im unteren Bereich des Verwaltungsportal auf **Neu**.
 
 	![command-bar-new][command-bar-new]
 
@@ -12,11 +12,11 @@ Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit d
 
 	![sendgrid-store][sendgrid-store]
 
-4. Klicken Sie im Dialogfeld **App und Service wählen** auf **SendGrid** und anschließend auf den Pfeil nach rechts.
+4. Klicken Sie im Dialogfeld **Choose an Application and Service** auf **SendGrid** und anschließend auf den Pfeil nach rechts.
 
 5. Klicken Sie im Dialogfeld **Personalize Application and Service** auf den **SendGrid**-Plan, für den Sie sich anmelden möchten.
 
-6. Geben Sie einen Namen zur Identifizierung Ihres **SendGrid**-Diensts in Ihren Azure-Einstellungen ein, oder verwenden Sie den Standardwert **SendGridEmailDelivery.Simplified.SMTPWebAPI**. Namen müssen zwischen 1 und 100 Zeichen lang sein und dürfen nur alphanumerische Zeichen, Gedankenstriche, Punkte und Unterstriche enthalten. Der Name muss in der Liste der abonnierten Azure-Speicherelemente einzigartig sein.
+6. Geben Sie einen Namen zur Identifizierung Ihres **SendGrid**-Diensts in Ihren Azure-Einstellungen ein, oder verwenden Sie den Standardwert **SendGridEmailDelivery.Simplified.SMTPWebAPI**. Namen müssen zwischen 1 und 100 Zeichen lang sein und dürfen nur alphanumerische Zeichen, Gedankenstriche, Punkte und Unterstriche enthalten. Der Name muss in der Liste der abonnierten Azure Store-Artikel eindeutig sein.
 
 	![store-screen-2][store-screen-2]
 
@@ -32,9 +32,9 @@ Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit d
 
 	![sendgrid-purchasing-message][sendgrid-purchasing-message]
 
-	Ihr SendGrid-Konto wird sofort bereitgestellt, und Ihnen wird die Meldung **Successfully purchased Add-On SendGrid** angezeigt. Jetzt erfolgt die Erstellung Ihres Kontos und Ihrer Anmeldedaten. Von nun an können Sie E-Mails versenden. 
+	Ihr SendGrid-Konto wird sofort bereitgestellt, und Ihnen wird die Meldung **Successfully purchased Add-On SendGrid** angezeigt. Jetzt erfolgt die Erstellung Ihres Kontos und Ihrer Anmeldedaten. Von nun an können Sie E-Mails versenden.
 
-	Wenn Sie Ihren Abonnementplan ändern oder die SendGrid-Kontakteinstellungen anzeigen möchten, klicken Sie auf den Namen des SendGrid-Diensts, um das SendGrid-Marketplace-Dashboard zu öffnen. 
+	Wenn Sie Ihren Abonnementplan ändern oder die SendGrid-Kontakteinstellungen anzeigen möchten, klicken Sie auf den Namen des SendGrid-Diensts, um das SendGrid-Marketplace-Dashboard zu öffnen.
 
 	![sendgrid-add-on-dashboard][sendgrid-add-on-dashboard]
 
@@ -46,15 +46,15 @@ Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit d
 
 	![sendgrid-connection-info-button][sendgrid-connection-info-button]
 
-2. Kopieren Sie im Feld *Connection info* das **Kennwort** und den Benutzernamen, um beides später in diesem Lernprogramm zu verwenden.
+2. Kopieren Sie im Feld *Verbindungsinformationen* das **Kennwort** und den Benutzernamen, um beides später in diesem Lernprogramm zu verwenden.
 
 	![sendgrid-connection-info][sendgrid-connection-info]
 
-	Um Einstellungen für die Zustellung von E-Mails festzulegen, klicken Sie auf die Schaltfläche **Verwalten**. Daraufhin wird die Weboberfläche "Sendgrid.com" geöffnet. Dort können Sie sich anmelden und die SendGrid-Systemsteuerung öffnen. 
+	Um Einstellungen für die Zustellung von E-Mails festzulegen, klicken Sie auf die Schaltfläche **Verwalten**. Daraufhin wird die Weboberfläche "Sendgrid.com" geöffnet. Dort können Sie sich anmelden und die SendGrid-Systemsteuerung öffnen.
 
 	![sendgrid-control-panel][sendgrid-control-panel]
 
-	Weitere Informationen über die ersten Schritte mit SendGrid finden Sie unter [SendGrid Getting Started][].
+	Weitere Informationen über die ersten Schritte mit SendGrid finden Sie unter [SendGrid Getting Started][] (in englischer Sprache).
 
 <!--images-->
 
@@ -73,10 +73,8 @@ Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit d
 [SendGrid Features]: http://sendgrid.com/features
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com
 [SendGrid Getting Started]: http://sendgrid.com/docs
-[SendGrid Provisioning Process]: https://support.sendgrid.com/hc/articles/200181628-Why-is-my-account-being-provisioned-
 [SendGrid-Bereitstellungsvorgang]: https://support.sendgrid.com/hc/articles/200181628-Why-is-my-account-being-provisioned-
-[Alle APIs]: https://sendgrid.com/docs/API_Reference/index.html
 [sämtliche APIs]: https://sendgrid.com/docs/API_Reference/index.html
 
 
-<!--HONumber=49-->
+<!--HONumber=54-->

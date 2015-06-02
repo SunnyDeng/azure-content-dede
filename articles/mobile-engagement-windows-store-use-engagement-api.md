@@ -1,9 +1,9 @@
-﻿<properties 
-	pageTitle="Azure Mobile Service Windows Store-SDK-API - Übersicht" 
-	description="Neueste Updates und Verfahren für Windows Store-SDK für Azure Mobile Engagement" 					
+<properties 
+	pageTitle="Verwenden der Engagement-API auf der universellen Windows-Plattform" 
+	description="Verwenden der Engagement-API auf der universellen Windows-Plattform"
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
-	authors="kpiteira" 
+	authors="piyushjo" 
 	manager="dwrede" 
 	editor="" />
 
@@ -11,34 +11,34 @@
 	ms.service="mobile-engagement" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-windows-store" 
-	ms.devlang="" 
+	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/12/2015" 
-	ms.author="kapiteir" />
+	ms.date="04/07/2015" 
+	ms.author="piyushjo" />
 
-# Verwendung der Engagement-API unter Windows
+#Verwenden der Engagement-API auf der universellen Windows-Plattform
 
-Dieses Dokument ist ein Add-on für das Dokument [Integration der Engagement-Reichweite in Windows](mobile-engagement-windows-store-integrate-engagement.md): Es bietet tiefergehende Details zur Verwendung der Engagement-API, um Ihre Anwendungsstatistik zu melden.
+Dieses Dokument ist ein Zusatz zu dem Dokument [Integration von Engagement in die universelle Windows-Plattform](../mobile-engagement-windows-store-integrate-engagement/): Es bietet tiefergehende Details zur Verwendung der Engagement-API zur Ausgabe von Anwendungsstatistiken.
 
-Beachten Sie: Wenn Engagement nur die Sitzungsaktivitäten der Anwendung, Abstürze und technische Informationen melden soll, ist es am einfachsten, wenn alle Ihre  `Page`-Unterklassen von der  `EngagementPage`-Klasse erben.
+Beachten Sie: Wenn Engagement nur die Sitzungsaktivitäten der Anwendung, Abstürze und technische Informationen melden soll, ist es am einfachsten, wenn alle `Page`-Unterklassen von der `EngagementPage`-Klasse erben.
 
-Wenn Sie darüber hinaus noch mehr Meldungen wünschen, z. B. wenn Sie anwendungsspezifische Ereignisse, Fehler und Aufträge melden möchten, oder wenn die Aktivitäten Ihrer Anwendung anders als in den  `EngagementPage`-Klassen implementiert gemeldet werden sollen, dann müssen Sie die Engagement-API verwenden.
+Wenn Sie darüber hinaus noch mehr Meldungen wünschen, z. B. wenn Sie anwendungsspezifische Ereignisse, Fehler und Aufträge melden möchten, oder wenn die Aktivitäten Ihrer Anwendung anders als in den `EngagementPage`-Klassen implementiert gemeldet werden sollen, dann müssen Sie die Engagement-API verwenden.
 
-Die Engagement-API wird von der  `EngagementAgent`-Klasse zur Verfügung gestellt. Sie können auf diese Methoden über `EngagementAgent.Instance` zugreifen.
+Die Engagement-API wird von der `EngagementAgent`-Klasse zur Verfügung gestellt. Sie können über `EngagementAgent.Instance` auf diese Methoden zugreifen.
 
-Auch wenn das Agent-Modul nicht initialisiert wurde, wird jeder Aufruf zur API verzögert und erneut ausgeführt, wenn der Agent verfügbar ist.
+Auch wenn das Agent-Modul nicht initialisiert wurde, wird jeder Aufruf zur API verzögert und erneut ausgeführt, sobald der Agent verfügbar ist.
 
-## Engagement-Konzepte
+##Engagement-Konzepte
 
-In den folgenden Abschnitten werden die [Mobile Engagement-Konzepte](mobile-engagement-concepts.md)  für die Windows-Plattform genauer dargestellt.
+In den folgenden Abschnitten werden die [Mobile Engagement-Konzepte](../mobile-engagement-concepts/) für die universelle Windows-Plattform genauer dargestellt.
 
-### `Sitzung` und `Aktivität`
+### `Session` und `Activity`
 
-Eine *-Aktivität* wird normalerweise mit einer Seite der Anwendung in Zusammenhang gebracht, d. h. die *Aktivität* beginnt, wenn die Seite angezeigt wird, und wird beendet, wenn die Seite geschlossen wird: Dies ist der Fall, wenn das Engagement-SDK durch Verwendung der  `EngagementPage`-Klasse integriert ist.
+Eine *Aktivität* ist normalerweise  einer Seite der Anwendung zugeordnet, d. h. die *Aktivität* beginnt, wenn die Seite angezeigt wird, und wird beendet, wenn die Seite geschlossen wird: Dies ist der Fall, wenn das Engagement-SDK unter Verwendung der `EngagementPage`-Klasse integriert worden ist.
 
-Aber *Aktivitäten* können auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann eine bestimmte Seite in mehrere Unterteile geteilt werden, um weitere Informationen über die Verwendung dieser Seite zu erhalten (z. B. um zu erfahren, wie oft und wie lange Dialoge innerhalb dieser Seite verwendet werden).
+ *Aktivitäten* können aber auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann eine bestimmte Seite in mehrere Teile unterteilt werden, um weitere Informationen über die Verwendung dieser Seite zu erhalten (z. B. um zu erfahren, wie oft und wie lange Dialoge innerhalb dieser Seite verwendet werden).
 
-## Berichterstellung für Aktivitäten
+##Berichterstellung für Aktivitäten
 
 ### Benutzer startet eine neue Aktivität
 
@@ -46,9 +46,9 @@ Aber *Aktivitäten* können auch manuell mithilfe der Engagement-API gesteuert w
 
 			void StartActivity(string name, Dictionary<object, object> extras = null)
 
-Sie müssen  `StartActivity()` jedes Mal aufrufen, wenn sich die Benutzeraktivität ändert. Der erste Aufruf dieser Funktion startet eine neue Benutzersitzung.
+Sie müssen jedes Mal `StartActivity()` aufrufen, wenn sich die Benutzeraktivität ändert. Der erste Aufruf dieser Funktion startet eine neue Benutzersitzung.
 
-> [AZURE.TIP] Sie müssen  `EndActivity()`nicht nach jedem Aufruf von `StartActivity()`aufrufen.
+> [AZURE.IMPORTANT]Das SDK ruft automatisch die EndActivity-Methode auf, wenn die Anwendung geschlossen wird. Daher wird DRINGEND empfohlen, die StartActivity-Methode aufzurufen, sobald sich die Aktivität des Benutzers ändert, und die EndActivity-Methode NIE aufzurufen, weil dadurch ein Beenden der aktuellen Sitzung erzwungen wird.
 
 #### Beispiel
 
@@ -56,21 +56,21 @@ Sie müssen  `StartActivity()` jedes Mal aufrufen, wenn sich die Benutzeraktivit
 
 ### Der Benutzer beendet seine aktuelle Aktivität
 
-#### Verweis
+#### Referenz-
 
 			void EndActivity()
 
-Dies beendet die Aktivität und die Sitzung. Sie sollten diese Methode nur dann aufrufen, wenn Sie sich wirklich sicher sind.
+Damit werden die Aktivität und die Sitzung beendet. Sie sollten diese Methode nur dann aufrufen, wenn Sie sich wirklich sicher sind.
 
 #### Beispiel
 
 			EngagementAgent.Instance.EndActivity();
 
-## Berichterstellung für Aufträge
+##Berichterstellung für Aufträge
 
 ### Starten eines Auftrags
 
-#### Verweis
+#### Referenz-
 
 			void StartJob(string name, Dictionary<object, object> extras = null)
 
@@ -93,16 +93,16 @@ Sie können den Auftrag verwenden, um bestimmte Aufgaben eine Zeit lang nachzuve
 
 			void EndJob(string name)
 
-Sobald eine Aufgabe, die von einem Auftrag nachverfolgt wurde, beendet ist, sollten Sie die EndJob-Methode für diesen Auftrag aufrufen, indem Sie den Auftragsnamen angeben.
+Sobald eine Aufgabe, die von einem Auftrag nachverfolgt wird, beendet ist, sollten Sie die EndJob-Methode für diesen Auftrag aufrufen, indem Sie den Auftragsnamen angeben.
 
 #### Beispiel
 
-			// In the previous section, we started an upload Überwachung mit einem Auftrag
+			// In the previous section, we started an upload tracking with a job
 			// Then, the upload ends
 			
 			EngagementAgent.Instance.EndJob("uploadData");
 
-## Berichterstellung für Ereignisse
+##Berichterstellung für Ereignisse
 
 Es gibt drei Arten von Ereignissen:
 
@@ -148,7 +148,7 @@ Sitzungsereignisse werden normalerweise verwendet, um die Aktionen eines Benutze
 
 ### Auftragsereignisse
 
-#### Verweis
+#### Referenz-
 
 			void SendJobEvent(string eventName, string jobName, Dictionary<object, object> extras = null)
 
@@ -158,7 +158,7 @@ Auftragsereignisse werden normalerweise verwendet, um die Aktionen eines Benutze
 
 			EngagementAgent.Instance.SendJobEvent("eventName", "jobName", extras);
 
-## Melden von Fehlern
+##Melden von Fehlern
 
 Es gibt drei Arten von Fehlern:
 
@@ -202,7 +202,7 @@ Fehler können mit einem ausgeführten Auftrag in Zusammenhang stehen anstatt mi
 
 			EngagementAgent.Instance.SendJobError("errorName", "jobname", extra);
 
-## Berichterstellung von Abstürzen
+##Berichterstellung von Abstürzen
 
 Der Agent stellt zwei Methoden für den Umgang mit Abstürzen zur Verfügung.
 
@@ -236,7 +236,7 @@ Durch diese Methode werden **IMMER** die Engagement-Sitzungen und -Aufträge nac
 
 #### Beispiel
 
-Sie können sie verwenden, um Ihren eigenen UnhandledExceptionEventArgs-Handler zu implementieren. Fügen Sie z. B. die `Current_UnhandledException` Methode der `App.xaml.cs` Datei hinzu:
+Sie können sie verwenden, um Ihren eigenen UnhandledExceptionEventArgs-Handler zu implementieren. Fügen Sie z. B. die `Current_UnhandledException`-Methode der `App.xaml.cs`-Datei hinzu:
 
 			// In your App.xaml.cs file
 			
@@ -250,13 +250,13 @@ Fügen Sie in "App.xaml.cs" in "Public App(){}" Folgendes hinzu:
 
 			Application.Current.UnhandledException += Current_UnhandledException;
 
-## Geräte-ID
+##Geräte-ID
 
 			String EngagementAgent.Instance.GetDeviceId()
 
 Sie können die Engagement-Geräte-ID durch Aufrufen dieser Methode abrufen.
 
-## Extras-Parameter
+##Extras-Parameter
 
 Einem Ereignis, einem Fehler, einer Aktivität oder einem Auftrag können beliebige Daten zugeordnet werden. Diese Daten können unter Verwendung eines Wörterbuchs strukturiert werden. Schlüssel und Werte können einen beliebigen Typ aufweisen.
 
@@ -264,7 +264,7 @@ Extras-Daten werden serialisiert; wenn Sie also einen eigenen Typ in Extras einf
 
 ### Beispiel
 
-Erstellen Sie eine neue Klasse "Person".
+Erstellen Sie die neue Klasse "Person".
 
 			using System.Runtime.Serialization;
 			
@@ -315,13 +315,13 @@ Jeder Schlüssel in dem Objekt muss mit dem folgenden regulären Ausdruck übere
 
 `^[a-zA-Z][a-zA-Z_0-9]*$`
 
-Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen () beginnen müssen.
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_) beginnen müssen.
 
 #### Größe
 
 Extras sind beschränkt auf **1024** Zeichen pro Aufruf.
 
-## Informationen zur Berichterstellung
+##Informationen zur Berichterstellung für Anwendungen
 
 ### Verweis
 
@@ -329,7 +329,7 @@ Extras sind beschränkt auf **1024** Zeichen pro Aufruf.
 
 Sie können Nachverfolgungsinformationen (oder beliebige andere anwendungsspezifische Informationen) manuell mithilfe der SendAppInfo()-Funktion melden.
 
-Beachten Sie, dass diese Informationen inkrementell gesendet werden können: Nur der letzte Wert für einen bestimmten Schlüssel wird für ein bestimmtes Gerät gespeichert. Verwenden Sie wie bei Ereignisextras ein Wörterbuch<object, object>, um Informationen anzufügen.
+Beachten Sie, dass diese Informationen inkrementell gesendet werden können: Nur der letzte Wert für einen bestimmten Schlüssel wird für ein bestimmtes Gerät gespeichert. Verwenden Sie wie bei Ereignisextras ein Wörterbuch <Objekt, Objekt>, um Informationen anzufügen.
 
 ### Beispiel
 
@@ -349,14 +349,14 @@ Jeder Schlüssel in dem Objekt muss mit dem folgenden regulären Ausdruck übere
 
 `^[a-zA-Z][a-zA-Z_0-9]*$`
 
-Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen () beginnen müssen.
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_) beginnen müssen.
 
 #### Größe
 
 Anwendungsinformationen sind beschränkt auf **1024** Zeichen pro Aufruf.
 
-Im vorherigen Beispiel enthält die an den Server gesendete JSON 44 Zeichen:
+Im vorherigen Beispiel enthält das an den Server gesendete JSON 44 Zeichen:
 
 			{"birthdate":"1983-12-07","gender":"female"}
 
-<!--HONumber=47-->
+<!--HONumber=54-->

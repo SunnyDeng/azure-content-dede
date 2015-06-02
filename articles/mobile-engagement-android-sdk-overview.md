@@ -13,23 +13,24 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="02/12/2015" 
+	ms.date="05/04/2015" 
 	ms.author="kapiteir" />
 
 
-# Android SDK für Azure Mobile Engagement Version 3.0.0
-Beginnen Sie hier, um alle Details zum Integrieren von Azure Mobile Engagement in eine Android-App zu erhalten. Wenn Sie zunächst einen Eindruck erhalten möchten, stellen Sie sicher, dass Sie das [15 minütige Lernprogramm ausführen](mobile-engagement-android-get-started.md).
+# Android SDK für Azure Mobile Engagement
 
-Hier klicken, um den [SDK-Inhalt](mobile-engagement-android-sdk-content.md) anzuzeigen
+Beginnen Sie hier, um alle Details zum Integrieren von Azure Mobile Engagement in eine Android-App zu erhalten. Wenn Sie es zunächst nur probieren möchten, stellen Sie sicher, dass Sie das [15-Minuten-Lernprogramm](mobile-engagement-android-get-started.md) durchführen
+
+Klicken Sie, um den [SDK-Inhalt](mobile-engagement-android-sdk-content.md) anzuzeigen.
 
 ## Integrationsverfahren
-1. Hier starten: [Integrieren von Mobile Engagement in Ihre Android-App](mobile-engagement-android-integrate-engagement.md)
+1. Beginnen Sie hier: [Integrieren von Mobile Engagement in Ihre Android-App](mobile-engagement-android-integrate-engagement.md)
 
-2. Für Benachrichtigungen: [Integrieren von Reach (Benachrichtigungen) in Ihre Android-App](mobile-engagement-android-integrate-engagement-reach.md)
+2. Für Benachrichtigungen: [Integration von Reach (Benachrichtigungen) in Ihre Android-App](mobile-engagement-android-integrate-engagement-reach.md)
 	1. Google Cloud Messaging (GCM): [Integrieren von GCM mit Mobile Engagement](mobile-engagement-android-gcm-integrate.md)
 	2. Amazon Device Messaging (ADM): [Integrieren von ADM mit Mobile Engagement](mobile-engagement-android-adm-integrate.md)
 
-3. Markieren der Planimplementierung: [Verwenden der erweiterten Kennzeichnungs-API von Mobile Engagement in Ihrer Android-App](mobile-engagement-android-use-engagement-api.md)
+3. Tag-Plan-Implementierung: [Verwenden der erweiterten Mobile Engagement-Tagging-API in Ihrer Android-App](mobile-engagement-android-use-engagement-api.md)
 
 
 ## Versionshinweise
@@ -37,31 +38,31 @@ Hier klicken, um den [SDK-Inhalt](mobile-engagement-android-sdk-content.md) anzu
 ### 3.0.0 (17.02.2015)
 
 -   Erste Version von Azure Mobile Engagement
--   Die "appId"-Konfiguration wird durch eine Verbindungszeichenfolgen-Konfiguration ersetzt.
--   Eine API wurde entfernt, um beliebige XMPP-Nachrichten von beliebigen XMPP-Entitäten zu senden und zu empfangen.
--   Eine API wurde entfernt, um Nachrichten zwischen Geräten zu senden und zu empfangen.
--   Die Sicherheit wurde erhöht.
+-   Die „appId“-Konfiguration wird durch eine Verbindungszeichenfolgen-Konfiguration ersetzt.
+-   API entfernt, um beliebige XMPP-Nachrichten über beliebige XMPP-Entitäten zu senden und zu empfangen.
+-   API entfernt, um Nachrichten zwischen Geräten zu senden und zu empfangen.
+-   Verbesserungen der Sicherheit.
 -   Google Play und die SmartAd-Nachverfolgung wurden entfernt.
 
-Informationen zu früheren Versionen finden Sie in den [vollständigen Versionshinweisen](mobile-engagement-android-release-notes.md)
+Frühere Versionen finden Sie unter [Vollständige Versionshinweise](mobile-engagement-android-release-notes.md)
 
-## Upgradeverfahren
+## Upgrade-Verfahren
 
-Wenn Sie bereits eine ältere Version unseres SDKs in Ihre Anwendung integriert haben, müssen Sie die folgenden Punkte beim Upgrade des SDKs berücksichtigen.
+Wenn Sie bereits eine ältere Version unseres SDK in Ihrer Anwendung integriert haben, müssen Sie die folgenden Punkte beim Aktualisieren des SDK beachten.
 
-Sie müssen möglicherweise verschiedene Verfahren befolgen, wenn Sie mehrere Versionen des SDKs verpasst haben. Weitere Informationen finden Sie in den vollständigen [Upgradeverfahren](mobile-engagement-android-upgrade-procedure.md). Wenn Sie z. B. von Version 1.4.0 zu Version 1.6.0 migrieren, müssen Sie zunächst dem Verfahren zum Upgrade "von 1.4.0 auf 1.5.0" und dann dem Verfahren zum Upgrade "von 1.5.0 auf 1.6.0" folgen.
+Möglicherweise müssen Sie mehrere Verfahren ausführen, wenn Sie mehrere SDK-Versionen übersprungen haben. Siehe [Upgradeverfahren](mobile-engagement-android-upgrade-procedure.md) für vollständige Informationen Wenn Sie beispielsweise von 1.4.0 zu 1.6.0 migrieren, müssen Sie zunächst den Vorgang „von 1.4.0 zu 1.5.0“ ausführen und anschließend den Vorgang „1.5.0 zu 1.6.0“.
 
-Unabhängig von der der Version, für die Sie das Upgrade ausführen, müssen Sie alle `mobile-engagement-VERSION.jar` durch die neuen Versionen ersetzen.
+Unabhängig von der Version, für die Sie das Upgrade ausführen, müssen Sie alle `mobile-engagement-VERSION.jar` durch die neuen Versionen ersetzen.
 
-### Von Version 2.4.0 zu Version 3.0.0
+### Von 2.4.0 zu 3.0.0
 
-Nachfolgend wird die Migration einer SDK-Integration des vom Capptain SAS angebotenen Capptain-Diensts zu einer App beschrieben, die von Azure Mobile Engagement unterstützt wird. 
+Im Folgenden wird beschrieben, wie Sie die Migration einer SDK-Integration vom Capptain-Dienst, der von Capptain-SAS angeboten wird, in eine App von Azure Mobile Engagement durchführen. Wenn Sie von einer früheren Version migrieren, sehen Sie auf der Capptain-Website nach, wie eine Migration auf Version 2.4.0 durchgeführt wird. Führen Sie anschließend das folgende Verfahren aus.
 
->[AZURE.IMPORTANT] Capptain und Mobile Engagement sind nicht dieselben Dienste und das unten aufgeführte Verfahren hebt nur die Migration der Client-App hervor. Durch die Migration des SDKs in der App werden Ihre Daten NICHT von den Capptain-Servern auf die Mobile Engagement-Server migriert.
+>[AZURE.IMPORTANT]Capptain und Mobile Engagement sind nicht dieselben Dienste, und die unten beschriebene Vorgehensweise hebt nur hervor, wie die Migration der Clientapp durchzuführen ist. Bei der Migration des SDK in die App werden Ihre Daten NICHT von den Capptain-Servern zu den Mobile Engagement-Servern migriert.
 
 #### JAR-Datei
 
-Ersetzen Sie `capptain.jar` durch `mobile-engagement-VERSION.jar` (im Ordner `libs`).
+Ersetzen Sie `capptain.jar`durch `mobile-engagement-VERSION.jar` (im Ordner `libs`).
 
 #### Ressourcendateien
 
@@ -79,7 +80,7 @@ Sie müssen die `EngagementAgent.init`-Methode in Ihrer Startprogrammaktivität 
 			engagementConfiguration.setConnectionString("Endpoint={appCollection}.{domain};AppId={appId};SdkKey={sdkKey}");
 			EngagementAgent.getInstance(this).init(engagementConfiguration);
 
-Die Verbindungszeichenfolge für Ihre Anwendung wird im Azure-Portal angezeigt.
+Die Verbindungszeichenfolge für die Anwendung wird im Azure-Portal angezeigt.
 
 Entfernen Sie alle Aufrufe von `CapptainAgent.configure`, da diese Methode von `EngagementAgent.init` ersetzt wird.
 
@@ -91,7 +92,7 @@ Entfernen Sie diesen Abschnitt aus der Datei `AndroidManifest.xml`, wenn diese v
 
 #### Java-API
 
-Jeder Aufruf einer beliebigen Java-Klasse des SDKs muss umbenannt werden, z. B. muss `CapptainAgent.getInstance(this)` in `EngagementAgent.getInstance(this)` sowie `extends CapptainActivity` in `extends EngagementActivity` umbenannt werden usw.
+Jeder Aufruf einer beliebigen Java-Klasse des SDKs muss umbenannt werden, z. B. muss `CapptainAgent.getInstance(this)` in `EngagementAgent.getInstance(this)` sowie `extends CapptainActivity` in `extends EngagementActivity` umbenannt werden usw.
 
 Wenn die Integration mit den Standardeinstellungsdateien des Agent erfolgt ist, wird jetzt der Standarddateiname `engagement.agent` verwendet, während der Schlüssel `engagement:agent` lautet.
 
@@ -105,7 +106,7 @@ Die Dienstdeklaration wurde vereinfacht, der Zielfilter und alle darin enthalten
 
 Es ist eine umfassende Umbenennung zur Verwendung von Engagement erfolgt.
 
-Es muss jetzt wie folgt aussehen:
+Es sieht jetzt wie folgt aus:
 
 			<service
 			  android:name="com.microsoft.azure.engagement.service.EngagementService"
@@ -327,4 +328,4 @@ Die Umbenennung kann sich auf die Proguard-Konfiguration auswirken. Die Regeln s
 			  <methods>;
 			}
 
-<!--HONumber=47-->
+<!--HONumber=54-->

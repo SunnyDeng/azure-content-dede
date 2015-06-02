@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Azure Mobile Engagement iOS-SDK für die Reach-Integration" 
 	description="Neueste Updates und Verfahren für das iOS-SDK für Azure Mobile Engagement"
 	services="mobile-engagement" 
@@ -16,11 +16,11 @@
 	ms.date="02/12/2015" 
 	ms.author="kapiteir" />
 
-# So integrieren Sie Engagement Reach auf iOS
+#So integrieren Sie Engagement Reach auf iOS
 
-> [AZURE.IMPORTANT] Bevor Sie die in diesem Leitfaden beschriebenen Schritte ausführen, müssen Sie die im Dokument "So integrieren Sie Engagement auf iOS" beschriebenen Verfahren ausführen.
+> [AZURE.IMPORTANT]Bevor Sie die in diesem Leitfaden beschriebenen Schritte ausführen, müssen Sie die im Dokument "So integrieren Sie Engagement auf iOS" beschriebenen Verfahren ausführen.
 
-## Schritte für die Integration
+##Schritte für die Integration
 
 ### Einbetten des Engagement Reach-SDK in Ihr iOS-Projekt
 
@@ -44,7 +44,7 @@
 			}
 
 -   Legen Sie die Zeichenfolge **'icon.png'** auf den Namen der Bilddatei fest, die Sie als Benachrichtigungssymbol verwenden möchten.
--   Wenn Sie die Option  *Badgewert aktualisieren* in Reach-Kampagnen verwenden oder systemeigene Pushkampagnen - </SaaS/Reach-API/Kampagnenformat/Systemeigener Push> - einsetzen möchten, müssen Sie dem Reach-Modul die Verwaltung des Badgesymbols gestatten (Anwendungsbadge wird automatisch gelöscht und der von Engagement gespeicherte Wert wird bei jedem Start bzw. bei jeder Aktivierung der Anwendung zurückgesetzt). Dies geschieht durch Hinzufügen der folgenden Codezeile nach der Initialisierung des Reach-Moduls:
+-   Wenn Sie die Option *Badgewert aktualisieren* in Reach-Kampagnen verwenden oder systemeigene Pushkampagnen – </SaaS/Reach API/Campaign format/Native Push> campaigns – einsetzen möchten, müssen Sie dem Reach-Modul die Verwaltung des Badgesymbols gestatten (Anwendungsbadge wird automatisch gelöscht und der von Engagement gespeicherte Wert wird bei jedem Start bzw. bei jeder Aktivierung der Anwendung zurückgesetzt). Dies geschieht durch Hinzufügen der folgenden Codezeile nach der Initialisierung des Reach-Moduls:
 
 			[reach setAutoBadgeEnabled:YES];
 
@@ -67,13 +67,13 @@
 			   return YES;
 			}
 
-### Kategorie
+### Category
 
 Der category-Parameter ist optional, wenn Sie eine Datenpushkampagne erstellen und eine Filterung von Datenpushvorgängen ermöglichen. Dies ist nützlich, wenn Sie unterschiedliche Arten von `Base64`-Daten pushen und vor der Analyse deren Typ ermitteln möchten.
 
 **Ihre Anwendung ist nun bereit, Reach-Inhalte zu empfangen und anzuzeigen!**
 
-## Jederzeitiges Empfangen von Ankündigungen und Umfragen
+##Jederzeitiges Empfangen von Ankündigungen und Umfragen
 
 Engagement kann über APNS (Apple Push Notification Service) jederzeit Reach-Benachrichtigungen an Ihre Endbenutzer senden.
 
@@ -81,7 +81,7 @@ Zur Aktivierung dieser Funktionalität müssen Sie Ihre Anwendung auf Apple-Push
 
 ### Vorbereiten Ihrer Anwendung auf Apple-Pushbenachrichtigungen
 
-Befolgen Sie die Anleitung: Vorbereiten Ihrer Anwendung auf Apple-Pushbenachrichtigungen
+Bitte folgen Sie den Anweisungen im Handbuch: Vorbereiten der Anwendung für Apple-Pushbenachrichtigungen.
 
 ### Hinzufügen des erforderlichen Clientcodes
 
@@ -116,7 +116,7 @@ Anschließend muss das Engagement-SDK darüber informiert werden, wenn Ihre Anwe
 
 Nachdem Sie all diese Schritte durchgeführt haben, kann Ihre Anwendung jederzeit Engagement-Pushnachrichten empfangen.
 
-Möglicherweise möchten Sie dem Endbenutzer jedoch Daten anzeigen, wenn Ihre Anwendung als Reaktion auf den Empfang einer Engagement-Pushnachricht gestartet wird. Hierzu werden im  `AEPushDelegate`-Protokoll drei weitere Delegate-Methoden bereitgestellt:
+Möglicherweise möchten Sie dem Endbenutzer jedoch Daten anzeigen, wenn Ihre Anwendung als Reaktion auf den Empfang einer Engagement-Pushnachricht gestartet wird. Hierzu werden im `AEPushDelegate`-Protokoll drei weitere Delegate-Methoden bereitgestellt:
 
 			-(void)willRetrieveLaunchMessage;
 			-(void)didFailToRetrieveLaunchMessage;
@@ -203,7 +203,7 @@ Hier sehen Sie ein vollständiges Beispiel für die Integration:
 			  [alert release];
 			}
 
-## Anpassen von Kampagnen
+##Anpassen von Kampagnen
 
 ### Benachrichtigungen
 
@@ -211,13 +211,13 @@ Es gibt zwei Arten von Benachrichtigungen: System- und anwendungsinterne Benachr
 
 Systembenachrichtigungen werden von iOS verarbeitet und können nicht angepasst werden.
 
-Anwendungsinterne Benachrichtigungen bestehen aus einer Ansicht, die dynamisch in das aktuelle Anwendungsfenster eingefügt wird. Dies wird als Benachrichtigungsoverlay bezeichnet. Benachrichtigungsoverlays eignen sich besonders für eine schnelle Integration, da für sie keine Änderung von Ansichten in Ihrer Anwendung erforderlich ist.
+Anwendungsinterne Benachrichtigungen bestehen aus einer Ansicht, die dynamisch in das aktuelle Anwendungsfenster eingefügt wird. Dies wird als Benachrichtigungsüberlagerung bezeichnet. Benachrichtigungsoverlays eignen sich besonders für eine schnelle Integration, da für sie keine Änderung von Ansichten in Ihrer Anwendung erforderlich ist.
 
-#### Layout
+#### Layout 
 
 Um das Layout Ihrer anwendungsinternen Benachrichtigungen zu ändern, können Sie einfach die Datei `AENotificationView.xib` an Ihre Anforderungen anpassen. Sie müssen hierbei jedoch darauf achten, dass die Tagwerte und -typen der vorhandenen Unteransichten beibehalten werden.
 
-Standardmäßig werden anwendungsinterne Benachrichtigungen am unteren Bildschirmrand angezeigt. Wenn Sie eine Anzeige der Benachrichtigungen am oberen Bildschirmrand bevorzugen, bearbeiten Sie die bereitgestellte Datei `AENotificationView.xib`, und ändern Sie die Eigenschaft `AutoSizing` der Hauptansicht, sodass die Benachrichtigungen weiterhin im obereen Bereich der übergeordneten Ansicht angezeigt werden können.
+Standardmäßig werden anwendungsinterne Benachrichtigungen am unteren Bildschirmrand angezeigt. Wenn Sie eine Anzeige der Benachrichtigungen am oberen Bildschirmrand bevorzugen, bearbeiten Sie die bereitgestellte Datei `AENotificationView.xib`, und ändern Sie die Eigenschaft `AutoSizing` der Hauptansicht, sodass die Benachrichtigungen weiterhin im oberen Bereich der übergeordneten Ansicht angezeigt werden können.
 
 #### Kategorien
 
@@ -231,7 +231,7 @@ Um einen Kategorie-Handler für Ihre Benachrichtigungen zu registrieren, müssen
 
 Bei `myNotifier` muss es sich um eine Instanz eines Objekts handeln, das mit dem `AENotifier`-Protokoll konform ist.
 
-Sie können die Protokollmethoden selbst implementieren oder erneut die vorhandene Klasse `AEDefaultNotifier` implementieren, mit der bereits die meisten Aufgaben ausgeführt werden.
+Sie können die Protokollmethoden selbst implementieren oder erneut die vorhandene `AEDefaultNotifier`-Klasse implementieren, mit der bereits die meisten Aufgaben ausgeführt werden.
 
 Wenn Sie beispielsweise die Benachrichtigungsansicht für eine spezifische Kategorie neu definieren möchten, können Sie diesem Beispiel folgen:
 
@@ -254,10 +254,10 @@ Dieses einfache Beispiel einer Kategorie setzt voraus, dass Sie in Ihrem Hauptan
 Die bereitgestellte NIB-Datei sollte den folgenden Regeln entsprechen:
 
 -   Sie sollte nur eine Ansicht enthalten.
--   Unteransichten sollten dieselben Typen aufweisen wie diejenigen in der bereitgestellten NIB-Datei `AENotificationView.xib`
--   Unteransichten sollten dieselben Tags aufweisen wie diejenigen in der bereitgestellten NIB-Datei `AENotificationView.xib`
+-   Unteransichten sollten dieselben Typen aufweisen wie diejenigen in der bereitgestellten NIB-Datei namens `AENotificationView.xib`
+-   Unteransichten sollten dieselben Tags aufweisen wie diejenigen in der bereitgestellten NIB-Datei namens `AENotificationView.xib`
 
-> [AZURE.TIP] Kopieren Sie einfach die bereitgestellte NIB-Datei namens `AENotificationView.xib`, und beginnen Sie Ihre Arbeit mit dieser Datei. Seien Sie jedoch vorsichtig, die Ansicht in dieser NIB-Datei ist mit der Klasse `AENotificationView` verknüpft. Diese Klasse definiert die Methode `layoutSubViews` neu, um die zugehörigen Unteransichten gemäß Kontext zu verschieben und in der Größe zu ändern. Sie können die Klasse durch `UIView` oder eine benutzerdefinierte Ansichtenklasse ersetzen.
+> [AZURE.TIP]Kopieren Sie einfach die bereitgestellte NIB-Datei namens `AENotificationView.xib`, und beginnen Sie Ihre Arbeit mit dieser Datei. Seien Sie jedoch vorsichtig, die Ansicht in dieser NIB-Datei ist mit der Klasse `AENotificationView` verknüpft. Diese Klasse definiert die Methode `layoutSubViews` neu, um die zugehörigen Unteransichten gemäß Kontext zu verschieben und in der Größe zu ändern. Sie können die Klasse durch `UIView` oder eine benutzerdefinierte Ansichtenklasse ersetzen.
 
 Wenn Sie eine umfangreichere Anpassung der Benachrichtigungen benötigen (wenn Sie beispielsweise Ihre Ansicht direkt aus dem Code laden möchten), sollten Sie einen Blick auf den bereitgestellten Quellcode und die Klassendokumentation von `Protocol ReferencesDefaultNotifier` und `AENotifier` werfen.
 
@@ -272,16 +272,16 @@ Sie können auch den standardmäßigen Notifier folgendermaßen neu definieren:
 
 Bei Verwendung der Standardkategorie werden für das `AEReachContent`-Objekt einige Lebenszyklusmethoden aufgerufen, um Statistiken bereitzustellen und den Kampagnenstatus zu aktualisieren:
 
--   Bei Anzeige der Benachrichtigung in der Anwendung wird von `AEReachModule` die `displayNotification`-Methode aufgerufen (diese liefert Statistiken), wenn `handleNotification:` den Wert `YES` zurückgibt.
+-   Bei Anzeige der Benachrichtigung in der Anwendung wird von die `displayNotification`-Methode von `AEReachModule` aufgerufen (diese liefert Statistiken), wenn `handleNotification:` den Wert `YES` zurückgibt.
 -   Wird die Benachrichtigung geschlossen, wird die Methode `exitNotification` aufgerufen, es werden Statistiken bereitgestellt, und es können weitere Kampagnen verarbeitet werden.
 -   Wird auf die Benachrichtigung geklickt, wird `actionNotification` aufgerufen, es werden Statistiken bereitgestellt, und die verknüpfte Aktion wird ausgeführt.
 
 Wenn Ihre Implementierung von `AENotifier` das Standardverhalten umgeht, müssen Sie diese Lebenszyklusmethoden selbst aufrufen. Das folgende Beispiel zeigt einige Fälle, in denen das Standardverhalten umgangen wird:
 
--   Es erfolgt keine Erweiterung von `AEDefaultNotifier`, d. h. Sie haben die Kategorieverarbeitung von Grund auf implementiert.
--   Sie haben `prepareNotificationView:forContent:` außer Kraft gesetzt und sichergestellt, dass mindestens`onNotificationActioned` oder `onNotificationExited` einem Ihrer Benutzeroberflächen-Steuerelemente zugeordnet ist.
+-   Es erfolgt keine Erweiterung von `AEDefaultNotifier`, d. h. Sie haben die Kategorieverarbeitung von Grund auf implementiert.
+-   Sie haben `prepareNotificationView:forContent:` außer Kraft gesetzt. Stellen Sie sicher, dass mindestens `onNotificationActioned` oder `onNotificationExited` einem Ihrer Benutzeroberflächen-Steuerelemente zugeordnet ist.
 
-> [AZURE.WARNING] Wenn `handleNotification:` eine Ausnahme generiert, wird der Inhalt gelöscht, und es erfolgt ein Aufruf von `drop`. Dies wird in der Statistik berichtet, und es können weitere Kampagnen verarbeitet werden.
+> [AZURE.WARNING]Wenn `handleNotification:` eine Ausnahme generiert, wird der Inhalt gelöscht, und es erfolgt ein Aufruf von `drop`. Dies wird in der Statistik berichtet, und es können weitere Kampagnen verarbeitet werden.
 
 #### Einschließen von Benachrichtigungen als Bestandteil einer vorhandenen Ansicht
 
@@ -293,8 +293,8 @@ Sie können unser Benachrichtigungslayout in Ihre vorhandenen Ansichten einfüge
 
 1.  Fügen Sie die Benachrichtigungsansicht mit dem Interface Builder hinzu.
 
-	-   Öffnen Sie *Interface Builder*.
-	-   Platzieren Sie ein  `UIView`-Element der Größe 320 x 60 (oder 768 x 60 für das iPad) an der Stelle, an der die Benachrichtigung angezeigt werden soll.
+	-   Öffnen Sie den *Interface Builder*
+	-   Platzieren Sie ein `UIView`-Element der Größe 320 x 60 (oder 768 x 60 für das iPad) an der Stelle, an der die Benachrichtigung angezeigt werden soll.
 	-   Legen Sie den Tagwert für diese Ansicht auf diesen Wert fest: **36822491**
 
 2.  Fügen Sie die Benachrichtigungsansicht programmatisch hinzu. Fügen Sie einfach nach dem Initialisieren Ihrer Ansicht den folgenden Code ein:
@@ -305,7 +305,7 @@ Sie können unser Benachrichtigungslayout in Ihre vorhandenen Ansichten einfüge
 
 Das Makro `NOTIFICATION_AREA_VIEW_TAG` befindet sich in `AEDefaultNotifier.h`.
 
-> [AZURE.NOTE] Der standardmäßige Notifier erkennt automatisch, dass das Benachrichtigungslayout in dieser Ansicht enthalten ist und fügt kein Overlay hinzu.
+> [AZURE.NOTE]Der standardmäßige Notifier erkennt automatisch, dass das Benachrichtigungslayout in dieser Ansicht enthalten ist und fügt kein Overlay hinzu.
 
 ### Ankündigungen und Umfragen
 
@@ -324,7 +324,7 @@ Um eine Kategorie für eine Ankündigung zu erstellen, müssen Sie **AEAnnouncem
 			AEReachModule* reach = [AEReachModule moduleWithNotificationIcon:[UIImage imageNamed:@"icon.png"]];
 			[reach registerAnnouncementController:[MyCustomAnnouncementViewController class] forCategory:@"my_category"];
 
-> [AZURE.NOTE] Immer dann, wenn ein Benutzer auf eine Benachrichtigung für eine Ankündigung mit der Kategorie "my_category" klickt, wird Ihr registrierter Ansichtencontroller (in diesem Fall `MyCustomAnnouncementViewController`) durch einen Aufruf der Methode `initWithAnnouncement:` initialisiert, und die Ansicht wird dem aktuellen Anwendungsfenster hinzugefügt.
+> [AZURE.NOTE]Immer dann, wenn ein Benutzer auf eine Benachrichtigung für eine Ankündigung mit der Kategorie "my_category" klickt, wird Ihr registrierter Ansichtencontroller (in diesem Fall `MyCustomAnnouncementViewController`) durch einen Aufruf der Methode `initWithAnnouncement:` initialisiert, und die Ansicht wird dem aktuellen Anwendungsfenster hinzugefügt.
 
 In Ihrer Implementierung der Klasse `AEAnnouncementViewController` müssen Sie die Eigenschaft `announcement` lesen, um Ihre Unteransichten zu initialisieren. Siehe hierzu das nachfolgende Beispiel, in dem mithilfe der Eigenschaften `title` und `body` der Klasse `AEReachAnnouncement` zwei Labels initialisiert werden:
 
@@ -346,7 +346,7 @@ In Ihrer Implementierung der Klasse `AEAnnouncementViewController` müssen Sie d
 
 Wenn Sie Ihre Ansichten nicht selbst laden, sondern lediglich das Ansichtenlayout der Standardankündigung wiederverwenden möchten, können Sie einfach über Ihren benutzerdefinierten Ansichtencontroller die bereitgestellte Klasse `AEDefaultAnnouncementViewController` erweitern. In diesem Fall duplizieren Sie die NIB-Datei `AEDefaultAnnouncementView.xib`, und benennen Sie sie um, sodass Sie von Ihrem benutzerdefinierten Ansichtencontroller geladen werden kann (wenn Ihr Controller beispielsweise `CustomAnnouncementViewController` heißt, sollten Sie Ihrer NIB-Datei den Namen `CustomAnnouncementView.xib` geben).
 
-Um die Standardkategorie für Ankündigungen zu ersetzen, registrieren Sie einfach Ihren benutzerdefinierten Ansichtencontroller für die in  `kAEReachDefaultCategory` definierte Kategorie:
+Um die Standardkategorie für Ankündigungen zu ersetzen, registrieren Sie einfach Ihren benutzerdefinierten Ansichtencontroller für die in `kAEReachDefaultCategory` definierte Kategorie:
 
 			[reach registerAnnouncementController:[MyCustomAnnouncementViewController class] forCategory:kAEReachDefaultCategory];
 
@@ -357,7 +357,7 @@ Umfragen können auf die gleiche Weise angepasst werden:
 
 Dieses Mal muss der bereitgestellte `MyCustomPollViewController` zur Erweiterung von `AEPollViewController` verwendet werden. Alternativ können Sie eine Erweiterung über den Standardcontroller durchführen: `AEDefaultPollViewController`.
 
-> [AZURE.IMPORTANT] Vergessen Sie nicht, entweder die Methode `action` (`submitAnswers:` für benutzerdefinierte Ansichtencontroller für Umfragen) oder die Methode  `exit` aufzurufen, bevor der Ansichtencontroller verworfen wird. Andernfalls werden keine Statistiken gesendet (z. B. Analysen der Kampagne) und - noch wichtiger - weitere Kampagnen erhalten erst eine Benachrichtigung, wenn der Anwendungsprozess neu gestartet wurde.
+> [AZURE.IMPORTANT]Vergessen Sie nicht, entweder `action` (`submitAnswers:` für benutzerdefinierte Ansichtencontroller für Umfragen) oder die Methode `exit` aufzurufen, bevor der Ansichtencontroller verworfen wird. Andernfalls werden keine Statistiken gesendet (z. B. Analysen der Kampagne) und – noch wichtiger – weitere Kampagnen erhalten erst eine Benachrichtigung, wenn der Anwendungsprozess neu gestartet wurde.
 
 ##### Beispiel für die Implementierung
 
@@ -457,4 +457,4 @@ Wie bei der erweiterten Benachrichtigungsanpassung wird empfohlen, sich den Quel
 			
 			@end
 
-<!--HONumber=47-->
+<!--HONumber=54-->

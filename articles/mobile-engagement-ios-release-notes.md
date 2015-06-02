@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Versionshinweise zum iOS-SDK für Azure Mobile Engagement" 
 	description="Neueste Updates und Verfahren für das iOS-SDK für Azure Mobile Engagement"
 	services="mobile-engagement" 
@@ -18,14 +18,21 @@
 
 # Versionshinweise
 
+## 2.1.0 (24.04.2015)
+
+-   Hinzufügen der Swift-Kompatibilität.
+-   Wenn Sie auf eine Benachrichtigung klicken, wird die Aktions-URL nun direkt nach dem Öffnen der Anwendung ausgeführt.
+-   Fehlende Headerdatei im SDK-Paket hinzugefügt.
+-   Behebung eine Fehlers, wenn der Mobile Engagement-Absturzmelder deaktiviert wurde.
+
 ## 2.0.0 (17.02.2015)
 
 -   Erste Version von Azure Mobile Engagement
--   appId/sdkKey-Konfiguration durch eine Konfiguration mit Verbindungszeichenfolge ersetzt.
+-   appId/sdkKey-Konfiguration wird durch die Konfiguration einer Verbindungszeichenfolge ersetzt.
 -   API entfernt, um beliebige XMPP-Nachrichten über beliebige XMPP-Entitäten zu senden und zu empfangen.
 -   API entfernt, um Nachrichten zwischen Geräten zu senden und zu empfangen.
--   Sicherheitsverbesserungen.
+-   Verbesserungen der Sicherheit.
 -   SmartAd-Verfolgung entfernt.
 
 
-<!--HONumber=47-->
+<!--HONumber=54-->

@@ -1,156 +1,87 @@
-﻿<properties 
-	pageTitle="Verwenden von Hadoop MapReduce in HDInsight | Azure" 
-	description="Erfahren Sie, wie Sie mit HDInsight einen einfachen Hadoop MapReduce-Auftrag ausführen können." 
-	services="hdinsight" 
-	documentationCenter="" 
-	authors="mumian" 
-	manager="paulettm" 
-	editor="cgronlun"/>
+<properties
+   pageTitle="MapReduce mit Hadoop in HDInsight"
+   description="Erfahren Sie, wie Sie MapReduce mit Hadoop in HDInsight verwenden."
+   services="hdinsight"
+   documentationCenter=""
+   authors="Blackmist"
+   manager="paulettm"
+   editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="11/12/2014" 
-	ms.author="jgao"/>
+<tags
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="04/23/2015"
+   ms.author="larryfr"/>
 
+# Verwenden von MapReduce mit Hadoop in HDInsight
 
+[AZURE.INCLUDE [mapreduce-selector](../includes/hdinsight-selector-use-mapreduce.md)]
 
-# Verwenden von Hadoop MapReduce in HDInsight
+In diesem Artikel erfahren Sie, wie MapReduce-Aufträge auf Hadoop in HDInsight-Clustern ausgeführt werden. Es wird ein einfacher Vorgang zum Zählen von Wörtern als Java MapReduce-Auftrag implementiert.
 
-Hadoop MapReduce ist ein Software-Framework zum Schreiben von Anwendungen, die riesige Datenmengen (Big Data) verarbeiten. In diesem Lernprogramm übermitteln Sie von Ihrer Arbeitsstation aus unter Verwendung von Azure PowerShell ein MapReduce-Programm, das Worthäufigkeiten in einem Text zählt, an einen HDInsight-Cluster. Das Wortzählprogramm ist in Java geschrieben und im HDInsight-Cluster enthalten.
+##<a id="whatis"></a>Was ist MapReduce?
 
+Hadoop MapReduce ist ein Software-Framework zum Schreiben von Aufträgen, die sehr große Datenmengen verarbeiten. Die Eingabedaten werden in unabhängige Segmente unterteilt, die anschließend von den Knoten im Cluster parallel verarbeitet werden. Ein MapReduce-Auftrag besteht aus zwei Funktionen:
 
-**Voraussetzungen:**
+* **Mapper:** verarbeitet Eingabedaten, analysiert sie (in der Regel mit Filter- und Sortiervorgängen) und gibt Tupel (Schlüssel-Wert-Paare) aus
+* **Reducer:** verarbeitet Tupel, die vom Mapper ausgegeben wurden, und führt einen Zusammenfassungsvorgang aus, der kleinere, kombinierte Ergebnisse aus den Mapper-Daten erstellt
 
-Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
+Ein Beispiel für einen grundlegenden Wortanzahl-MapReduce-Auftrag wird im folgenden Diagramm veranschaulicht:
 
-- Einen HDInsight-Cluster. Anweisungen zu den verschiedenen Optionen beim Erstellen eines solchen Clusters finden Sie unter [Bereitstellung eines HDInsight-Clusters][hdinsight-provision].
+![HDI.Wortzähldiagramm][image-hdi-wordcountdiagram]
 
-- Eine Arbeitsstation, auf der Azure PowerShell installiert und konfiguriert ist. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
+Dieser Auftrag gibt die Anzahl der Vorkommen jedes Worts im analysierten Text aus.
 
-## Dieses Lernprogramm umfasst folgende Punkte
-1. [Das Szenario](#scenario)
-2. [Ausführen des Beispiels mit Azure PowerShell](#run-sample)	
-3. [Der Java-Code für das MapReduce-Wortzählprogramm](#java-code)
-4. [Nächste Schritte](#next-steps)	
+* Der Mapper verwendet die einzelnen Zeilen des Eingabetexts als Eingabe und unterteilt diese in Wörter. Er gibt bei jedem Vorkommen eines Worts ein Schlüssel-Wert-Paar des Worts gefolgt von einer 1 aus. Die Ausgabe wird sortiert, bevor sie an den Reducer gesendet wird.
 
-## <a id="scenario"></a>Das Szenario
+* Der Reducer addiert die einzelnen Zählwerte jedes Worts und gibt ein einziges Schlüssel-Wert-Paar aus, das aus dem Wort gefolgt von der Summe seiner Vorkommen besteht.
 
-Im folgenden Diagramm wird die Funktionsweise von MapReduce im Wortzählszenario veranschaulicht:
+MapReduce kann in einer Vielzahl von Sprachen implementiert werden. Java ist die am häufigsten verwendete Implementierung und wird zu Demonstrationszwecken in diesem Dokument verwendet.
 
-![HDI.WordCountDiagram][image-hdi-wordcountdiagram]
+### Hadoop-Datenströme
 
+Sprachen oder Frameworks auf der Grundlage von Java und der Java Virtual Machine (z. B. Scalding oder Cascading) können direkt als MapReduce-Auftrag ausgeführt werden, ähnlich einer Java-Anwendung. Andere, wie z. B. C# oder Python bzw. eigenständige ausführbare Dateien, müssen Hadoop-Datenströme verwenden.
 
+Hadoop-Datenströme kommunizieren über STDIN und STDOUT mit dem Mapper und dem Reducer. Der Mapper und der Reducer lesen Daten jeweils zeilenweise aus STDIN und schreiben die Ausgabe in STDOUT. Jede vom Mapper und vom Reducer gelesene oder ausgegebene Zeile muss als Schlüssel-Wert-Paar mit Tabstopptrennzeichen formatiert sein:
 
-Bei der Ausgabe des MapReduce-Jobs handelt es sich um einen Satz Schlüssel/Wert-Paare. Der Schlüssel ist eine Zeichenfolge, die ein Wort angibt, und der Wert ist eine ganze Zahl, die angibt, wie oft das Wort insgesamt im Text vorkommt. Der Vorgang besteht aus zwei Phasen: 
+    [key]/t[value]
 
-* Der Mapper verwendet die einzelnen Zeilen des Eingabetexts als Eingabe und unterteilt diese in Wörter. Er gibt bei jedem Vorkommen eines Worts ein Schlüssel/Wert-Paar des Worts gefolgt von einer 1 aus. Die Ausgabe wird sortiert, bevor sie an den Reducer gesendet wird. 
+Weitere Informationen finden Sie unter [Hadoop Streaming](http://hadoop.apache.org/docs/r1.2.1/streaming.html) (in englischer Sprache).
 
-* Der Reducer addiert die einzelnen Zählwerte jedes Worts und gibt ein einziges Schlüssel/Wert-Paar aus, das aus dem Wort gefolgt von der Summe seiner Vorkommen besteht.
+Beispiele für die Verwendung von Hadoop-Datenströmen mit HDInsight finden Sie hier:
 
-Für die Ausführung eines MapReduce-Jobs sind folgende Elemente erforderlich:
+* [Entwickeln von C# Hadoop-Streamingprogrammen](hdinsight-hadoop-develop-deploy-streaming-jobs.md)
 
-* Ein MapReduce-Programm. In diesem Lernprogramm verwenden Sie das in HDInsight-Clustern enthaltene Wortzählprogramm, sodass Sie kein eigenes Programm schreiben müssen. Es befindet sich in */example/jars/hadoop-examples.jar*. In HDInsight-Clustern der Version 3.0 lautet der Dateiname  *hadoop-mapreduce-examples.jar*. Anweisungen zum Schreiben eines eigenen MapReduce-Jobs finden Sie unter [Entwickeln von Java MapReduce-Programmen für HDInsight][hdinsight-develop-MapReduce-jobs].
-* Eine Eingabedatei. Sie verwenden */example/data/gutenberg/davinci.txt* als Eingabedatei. Informationen zum Hochladen von Dateien finden Sie unter [Hochladen von Daten in HDInsight][hdinsight-upload-data].
-* Einen Ordner für die Ausgabedatei. Sie verwenden */example/data/WordCountOutput* als Ordner für die Ausgabedatei. Das System erstellt den Ordner, falls dieser nicht vorhanden ist. Der MapReduce-Job schlägt fehl, falls der Ordner bereits existiert.  Wenn Sie den MapReduce-Job zum zweiten Mal ausführen möchten, müssen Sie entweder den vorhandenen Ausgabeordner löschen oder einen anderen Ausgabeordner angeben.
+* [Entwickeln von Python-MapReduce-Aufträgen](hdinsight-hadoop-streaming-python.md)
 
-	
-## <a id="run-sample"></a>Ausführen des Beispiels mit Azure PowerShell
+##<a id="data"></a>Infos zu Beispieldaten
 
-1.	Öffnen Sie **Azure PowerShell**. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
+In diesem Beispiel werden die Notizbücher von Leonardo Da Vinci als Beispieldaten verwendet, die in Form eines Textdokuments in Ihrem HDInsight-Cluster bereitgestellt werden.
 
-3. Legen Sie die zwei Variablen in den folgenden Befehlen fest, und führen Sie die Befehle aus:
-		
-		$subscriptionName = "<SubscriptionName>"   # Azure subscription name
-		$clusterName = "<ClusterName>"             # HDInsight cluster name
-4. Führen Sie den folgenden Befehl aus, und geben Sie Ihre Azure-Kontoinformationen an:
+Die Beispieldaten werden in einem Azure-Blob-Speicher gespeichert, den HDInsight als Standarddateisystem für Hadoop-Cluster verwendet. HDInsight kann mithilfe des Präfix **wasb** auf Dateien zugreifen, die in Blob-Speicher gespeichert sind. Für die Datei "sample.log" gilt z. B. die folgende Syntax:
 
-		Add-AzureAccount
-		
-5. Führen Sie die folgenden Befehle aus, um eine MapReduce-Jobdefinition zu erstellen:
+	wasb:///example/data/gutenberg/davinci.txt
 
-		# Define the MapReduce job
-		$wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-examples.jar" -ClassName "wordcount" -Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput" 
+Da Azure-Blob-Speicher der Standardspeicher für HDInsight ist, können Sie auch mithilfe von **/example/data/gutenberg/davinci.txt** auf die Datei zugreifen.
 
-	> [AZURE.NOTE] *hadoop-examples.jar* ist in HDInsight-Clustern der Version 2.1 enthalten. Für HDInsight-Cluster der Version 3.0 wurde die Datei in  *hadoop-mapreduce.jar* umbenannt.
-	
-	Die Datei "hadoop-examples.jar" ist in der HDInsight-Clusterbereitstellung enthalten. Es gibt zwei Argumente für den MapReduce-Job. Das erste ist der Name der Quelldatei, das zweite ist der Pfad der Ausgabedatei. Die Quelldatei ist in der HDInsight-Clusterbereitstellung enthalten, und der Pfad der Ausgabedatei wird während der Laufzeit erstellt.
+> [AZURE.NOTE]In der vorherigen Syntax wird **wasb:///** für den Zugriff auf Dateien verwendet, die im Standardspeichercontainer für Ihren HDInsight-Cluster gespeichert werden. Wenn Sie beim Bereitstellen Ihres Clusters weitere Speicherkonten angegeben haben und auf die unter diesen Konten gespeicherten Dateien zugreifen möchten, können Sie den Containernamen und die Speicherkontoadresse angeben, um auf diese Daten zuzugreifen. Beispiel: **wasb://mycontainer@mystorage.blob.core.windows.net/example/data/gutenberg/davinci.txt**.
 
-6. Führen Sie den folgenden Befehl aus, um den MapReduce-Job zu übermitteln:
+##<a id="job"></a>Infos zum Beispiel-MapReduce
 
-		# Submit the job
-		Select-AzureSubscription $subscriptionName
-		$wordCountJob = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $wordCountJobDefinition | Wait-AzureHDInsightJob -WaitTimeoutInSeconds 3600  
+Der MapReduce-Auftrag, der in diesem Beispiel verwendet wird, befindet sich unter **wasb://example/jars/hadoop-mapreduce-examples.jar**, und er wird mit dem HDInsight-Cluster bereitgestellt. Er enthält ein Wortzählungs-Beispiel, das Sie auf **davinci.txt** anwenden.
 
-	Zusätzlich zur MapReduce-Jobdefinition müssen Sie auch den Namen des HDInsight-Clusters angeben, auf dem Sie den MapReduce-Job ausführen möchten, sowie die Anmeldeinformationen. "Start-AzureHDInsightJob" ist ein asynchronisierter Aufruf. Verwenden Sie das Cmdlet *Wait-AzureHDInsightJob*, um zu überprüfen, ob der Job abgeschlossen ist.
+> [AZURE.NOTE]Im HDInsight 2.1-Cluster lautet der Speicherort **wasb:///example/jars/hadoop-examples.jar**.
 
-7. Führen Sie den folgenden Befehl aus, um den Abschluss des MapReduce-Jobs zu überprüfen:
+Zu Referenzzwecken ist im Folgenden der Java-Code für den Wortzählungs-MapReduce-Auftrag aufgeführt:
 
-		Wait-AzureHDInsightJob -Job $wordCountJob -WaitTimeoutInSeconds 3600 
-
-8. Führen Sie den folgenden Befehl aus, um zu überprüfen, ob Fehler beim Ausführen des MapReduce-Jobs aufgetreten sind:	
-	
-		# Get the job output
-		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $wordCountJob.JobId -StandardError 
-		
-**Zum Abrufen der Ergebnisse des MapReduce-Jobs**
-
-1. Öffnen Sie **Azure PowerShell**.
-2. Führen Sie den folgenden Befehl aus, um in das Stammverzeichnis "c:" zu wechseln:
-
-		cd \
-
-	Das Standardverzeichnis für Azure Powershell ist *C:\Windows\System32\WindowsPowerShell\v1.0*. Sie haben standardmäßig keinen Schreibzugriff für diesen Ordner. Sie müssen entweder in das Stammverzeichnis "c:" oder einen Ordner wechseln, für den Sie über Schreibberechtigung verfügen.
-
-2. Legen Sie die drei Variablen in den folgenden Befehlen fest, und führen Sie die Befehle aus:
-
-		$subscriptionName = "<SubscriptionName>"       # Azure subscription name
-		
-		$storageAccountName = "<StorageAccountName>"   # Azure storage account name
-		$containerName = "<ContainerName>"			   # Blob storage container name
-
-		The Azure Storage account is the one you created earlier in the tutorial. The storage account is used to host the Blob container that is used as the default HDInsight cluster file system.  The Blob storage container name usually share the same name as the HDInsight cluster unless you specify a different name when you provision the cluster.
-
-3. Führen Sie folgende Befehle aus, um ein Azure-Speicherkonto-Kontextobjekt zu erstellen:
-		
-		# Select the current subscription
-		Select-AzureSubscription $subscriptionName
-
-		# Create the storage account context object
-		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
-
-	 *Select-AzureSubscription* wird verwendet, um das aktuelle Abonnement festzulegen, falls Sie mehrere Abonnements haben und das Standardabonnement nicht verwendet werden soll. 
-
-4. Führen Sie den folgenden Befehl aus, um die MapReduce-Jobausgabe aus dem Blob-Container auf die Arbeitsstation herunterzuladen:
-
-		# Download the job output to the workstation
-		Get-AzureStorageBlobContent -Container $ContainerName -Blob example/data/WordCountOutput/part-r-00000 -Context $storageContext -Force
-
-	Der Ordner *example/data/WordCountOutput* ist der Ausgabeordner, den Sie bei der Ausführung des MapReduce-Jobs angegeben haben. *part-r-00000* ist der Standarddateiname für MapReduce-Jobausgaben.  Die Datei wird in dieselbe Ordnerstruktur in den lokalen Ordner heruntergeladen. Im folgenden Screenshot ist der aktuelle Ordner der Stammordner C.  Die Datei wird in den Ordnere *C:\example\data\WordCountOutput* heruntergeladen. 
-
-5. Führen Sie den folgenden Befehl aus, um die MapReduce-Jobausgabedatei auszudrucken:
-
-		cat ./example/data/WordCountOutput/part-r-00000 | findstr "there"
-
-
-	Der MapReduce-Job produziert eine Datei namens *part-r-00000*, die die Wörter und deren Anzahl enthält.  Das Skript verwendet den Befehl findstr, um alle Wörter aufzulisten, die *"there"* enthalten.
-
-
-Beachten Sie, dass die Ausgabedateien eines MapReduce-Jobs nicht geändert werden können. Wenn Sie dieses Beispiel erneut ausführen, müssen Sie daher den Namen der Ausgabedatei ändern.
-
-## <a id="java-code"></a>Der Java-Code für das MapReduce-Wortzählprogramm
-
-Nachfolgend ist der Quellcode für das Java-MapReduce-Wortzählprogramm abgebildet:
- 
 	package org.apache.hadoop.examples;
-	
+
 	import java.io.IOException;
 	import java.util.StringTokenizer;
-	
+
 	import org.apache.hadoop.conf.Configuration;
 	import org.apache.hadoop.fs.Path;
 	import org.apache.hadoop.io.IntWritable;
@@ -161,15 +92,15 @@ Nachfolgend ist der Quellcode für das Java-MapReduce-Wortzählprogramm abgebild
 	import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 	import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 	import org.apache.hadoop.util.GenericOptionsParser;
-	
+
 	public class WordCount {
-	
-	  public static class TokenizerMapper 
+
+	  public static class TokenizerMapper
 	       extends Mapper<Object, Text, Text, IntWritable>{
-	    
+
 	    private final static IntWritable one = new IntWritable(1);
 	    private Text word = new Text();
-	      
+
 	    public void map(Object key, Text value, Context context
 	                    ) throws IOException, InterruptedException {
 	      StringTokenizer itr = new StringTokenizer(value.toString());
@@ -179,12 +110,12 @@ Nachfolgend ist der Quellcode für das Java-MapReduce-Wortzählprogramm abgebild
 	      }
 	    }
 	  }
-	  
-	  public static class IntSumReducer 
+
+	  public static class IntSumReducer
 	       extends Reducer<Text,IntWritable,Text,IntWritable> {
 	    private IntWritable result = new IntWritable();
-	
-	    public void reduce(Text key, Iterable<IntWritable> values, 
+
+	    public void reduce(Text key, Iterable<IntWritable> values,
 	                       Context context
 	                       ) throws IOException, InterruptedException {
 	      int sum = 0;
@@ -195,7 +126,7 @@ Nachfolgend ist der Quellcode für das Java-MapReduce-Wortzählprogramm abgebild
 	      context.write(key, result);
 	    }
 	  }
-	
+
 	  public static void main(String[] args) throws Exception {
 	    Configuration conf = new Configuration();
 	    String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
@@ -215,36 +146,50 @@ Nachfolgend ist der Quellcode für das Java-MapReduce-Wortzählprogramm abgebild
 	    System.exit(job.waitForCompletion(true) ? 0 : 1);
 	  }
 	}
- 
 
+Anweisungen zum Schreiben eines eigenen MapReduce-Auftrags finden Sie unter [Entwickeln von Java MapReduce-Programmen für HDInsight](hdinsight-develop-deploy-java-mapreduce.md).
 
-## <a id="nextsteps"></a>Nächste Schritte
-MapReduce bietet zwar leistungsstarke Diagnosemöglichkeiten, ist jedoch ggf. etwas kompliziert in der Anwendung. Andere Sprachen wie Pig und Hive sind benutzerfreundlichere Alternativen für die Arbeit mit HDInsight-Daten. Weitere Informationen finden Sie in den folgenden Artikeln:
+##<a id="run"></a>Ausführen von MapReduce
 
-* [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
-* [Entwickeln von Java MapReduce-Programmen für HDInsight][hdinsight-develop-MapReduce-jobs]
+HDInsight kann HiveQL-Aufträge mithilfe verschiedener Methoden ausführen. Die folgende Tabelle hilft Ihnen bei der Entscheidung, welche Methode für Sie geeignet ist. Folgen Sie anschließend dem Link für eine exemplarische Vorgehensweise.
+
+| **Verwenden Sie dies** ... | **... für die Aktion** | ... mit diesem **Clusterbetriebssystem** | ... von diesem **Clusterbetriebssystem** |
+|:-------------------------------------------------------------------|:--------------------------------------------------------|:------------------------------------------|:-----------------------------------------|
+| [SSH](hdinsight-hadoop-use-mapreduce-ssh.md) | Verwenden des Hadoop-Befehls über **SSH** | Linux | Linux, Unix, Mac OS X oder Windows |
+| [Curl](hdinsight-hadoop-use-mapreduce-curl.md) | Remoteübermittlung des Auftrags mit **REST** | Linux oder Windows | Linux, Unix, Mac OS X oder Windows |
+| [Windows PowerShell](hdinsight-hadoop-use-mapreduce-powershell.md) | Remoteübermittlung des Auftrags mit **Windows PowerShell** | Linux oder Windows | Windows |
+| [Remotedesktop](hdinsight-hadoop-use-mapreduce-remote-desktop) | Verwenden des Hadoop-Befehls über **Remotedesktop** | Windows | Windows |
+
+##<a id="nextsteps"></a>Nächste Schritte
+
+MapReduce bietet zwar leistungsstarke Diagnosemöglichkeiten, ist jedoch eventuell etwas kompliziert in der Anwendung. Es gibt mehrere Java-basierte Frameworks, mit denen es einfacher ist, MapReduce-Anwendungen zu definieren, sowie Technologien wie Pig und Hive, die einfachere Methoden zur Arbeit mit Daten in HDInsight zur Verfügung stellen. Weitere Informationen finden Sie in den folgenden Artikeln:
+
+* [Entwickeln von Java MapReduce-Programmen für HDInsight](hdinsight-develop-deploy-java-mapreduce.md)
+
+* [Entwickeln von Python-Streaming-MapReduce-Programmen für HDInsight](hdinsight-hadoop-streaming-python.md)
+
 * [Entwickeln von Hadoop-Streaming-MapReduce-Programmen in C# für HDInsight][hdinsight-develop-streaming]
+
+* [Entwickeln von Scalding-MapReduce-Aufträgen mit Apache Hadoop in HDInsight](hdinsight-hadoop-mapreduce-scalding.md)
+
 * [Verwenden von Hive mit HDInsight][hdinsight-use-hive]
-* [Verwenden von Pig mit HDInsight][hdinsight-use-pig] 
+
+* [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
+
 * [Ausführen der HDInsight-Beispiele][hdinsight-samples]
 
 
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-get-started]: ../hdinsight-get-started/
-[hdinsight-develop-mapreduce-jobs]: ../hdinsight-develop-deploy-java-mapreduce/
-[hdinsight-develop-streaming]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
-[hdinsight-use-hive]: ../hdinsight-use-hive/
-[hdinsight-use-pig]: ../hdinsight-use-pig/
-[hdinsight-samples]: ../hdinsight-run-samples/
-[hdinsight-provision]: ../hdinsight-provision-clusters/
+[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-get-started]: hdinsight-get-started.md
+[hdinsight-develop-mapreduce-jobs]: hdinsight-develop-deploy-java-mapreduce.md
+[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+[hdinsight-use-hive]: hdinsight-use-hive.md
+[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-samples]: hdinsight-run-samples.md
+[hdinsight-provision]: hdinsight-provision-clusters.md
 
-[powershell-install-configure]: ../install-and-configure-powershell/
+[powershell-install-configure]: powershell-install-configure.md
 
-[image-hdi-wordcountdiagram]: ./media/hdinsight-get-started/HDI.WordCountDiagram.gif
+[image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif
 
-
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=54-->

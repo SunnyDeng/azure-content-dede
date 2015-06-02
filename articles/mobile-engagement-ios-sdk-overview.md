@@ -3,7 +3,7 @@
 	description="Neueste Updates und Verfahren für das iOS-SDK für Azure Mobile Engagement"
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
-	authors="kpiteira" 
+	authors="piyushjo" 
 	manager="dwrede" 
 	editor="" />
 
@@ -13,81 +13,43 @@
 	ms.tgt_pltfrm="mobile-ios" 
 	ms.devlang="objective-c" 
 	ms.topic="article" 
-	ms.date="02/12/2015" 
-	ms.author="kapiteir" />
+	ms.date="05/04/2015" 
+	ms.author="piyushjo" />
 
-# 2.0.0
+# iOS SDK für Azure Mobile Engagement
 
-Beginnen Sie hier, um alle Details zur Integration von Azure Mobile Engagement in eine iOS-App zu erhalten. Wenn Sie zunächst einen Versuch starten möchten, sehen Sie sich in jedem Fall das [15-Minuten-Lernprogramm](mobile-engagement-ios-get-started.md) an.
+Beginnen Sie hier, um alle Details zur Integration von Azure Mobile Engagement in eine iOS-App zu erhalten. Wenn Sie es zunächst nur probieren möchten, stellen Sie sicher, dass Sie das [15-Minuten-Lernprogramm](mobile-engagement-ios-get-started.md) durchführen
 
-Klicken Sie hier, um die [SDK-Inhalte](mobile-engagement-ios-sdk-content.md) anzuzeigen.
+Klicken Sie, um den [SDK-Inhalt](mobile-engagement-ios-sdk-content.md) anzuzeigen
 
 ## Integrationsverfahren
 1. Beginnen Sie hier: [Integration von Mobile Engagement in Ihre iOS-App](mobile-engagement-ios-integrate-engagement.md)
 
 2. Für Benachrichtigungen: [Integration von Reach (Benachrichtigungen) in Ihre iOS-App](mobile-engagement-ios-integrate-engagement-reach.md)
 
-3. Implementierung von Tags: [Verwenden der erweiterten Mobile Engagement-Tagging-API in Ihrer iOS-App](mobile-engagement-ios-use-engagement-api.md)
+3. Tag-Plan-Implementierung: [Verwenden der erweiterten Mobile Engagement-Tagging-API in Ihrer iOS-App](mobile-engagement-ios-use-engagement-api.md)
 
 
 ## Versionshinweise
 
-### 2.0.0 (17.02.2015)
+### 2.1.0 (24.04.2015)
 
--   Erste Version von Azure Mobile Engagement
--   appId/sdkKey-Konfiguration durch eine Konfiguration mit Verbindungszeichenfolge ersetzt.
--   API entfernt, um beliebige XMPP-Nachrichten über beliebige XMPP-Entitäten zu senden und zu empfangen.
--   API entfernt, um Nachrichten zwischen Geräten zu senden und zu empfangen.
--   Sicherheitsverbesserungen.
--   SmartAd-Verfolgung entfernt.
+-   Hinzufügen der Swift-Kompatibilität.
+-   Wenn Sie auf eine Benachrichtigung klicken, wird die Aktions-URL nun direkt nach dem Öffnen der Anwendung ausgeführt.
+-   Fehlende Headerdatei im SDK-Paket hinzugefügt.
+-   Behebung eine Fehlers, wenn der Mobile Engagement-Absturzmelder deaktiviert wurde.
 
-Frühere Versionen finden Sie unter [Vollständige Versionshinweise](mobile-engagement-ios-release-notes.md).
+Eine frühere Version finden Sie unter [Vollständige Versionshinweise](mobile-engagement-ios-release-notes.md)
 
-## Upgradeverfahren
+## Upgrade-Verfahren
 
-Wenn Sie bereits eine ältere Engagement-Version in Ihre Anwendung integriert haben, müssen Sie beim SDK-Upgrade die folgenden Punkte berücksichtigen.
+Wenn Sie bereits eine ältere Version von Engagement in Ihrer Anwendung integriert haben, müssen Sie die folgenden Punkte beim Aktualisieren des SDK beachten.
 
-Möglicherweise müssen Sie mehrere Verfahren ausführen, wenn Sie mehrere SDK-Versionen übersprungen haben. Siehe [Upgradeverfahren](mobile-engagement-ios-upgrade-procedure.md) für vollständige Informationen.
+Möglicherweise müssen Sie mehrere Verfahren ausführen, wenn Sie mehrere SDK-Versionen übersprungen haben. Siehe [Upgradeverfahren](mobile-engagement-ios-upgrade-procedure.md) für vollständige Informationen
 
 Für jede neue SDK-Version müssen Sie zunächst die Ordner "EngagementSDK" und "EngagementReach" ersetzen (entfernen und in Xcode neu importieren).
 
-### Version 1.16.0 bis 2.0.0
-Nachfolgend wird beschrieben, wie Sie eine SDK-Integration aus dem Capptain-Dienst von Capptain SAS in eine Azure Mobile Engagement-App migrieren. 
+### Version 2.0.0 bis 2.1.0
+Keiner.
 
->[Azure.IMPORTANT] Capptain und Mobile Engagement sind nicht dieselben Dienste, und das nachstehende Verfahren zeigt nur, wie die Client-App migriert wird. Eine SDK-Migration in der App führt NICHT zu einer Migration Ihrer Daten von den Capptain-Servern auf die Mobile Engagement-Server.
-
-Wenn Sie von einer früheren Version migrieren, sehen Sie auf der Capptain-Website nach, wie eine Migration auf Version 1.16 durchgeführt wird. Führen Sie anschließend das folgende Verfahren aus.
-
-#### Agent
-
-Die Methode `registerApp:` wurde durch die neue Methode `init` ersetzt. Ihr Anwendungsdelegat muss entsprechend aktualisiert werden und eine Verbindungszeichenfolge verwenden:
-
-			- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-			{
-			  [...]
-			  [EngagementAgent init:@"YOUR_CONNECTION_STRING"];
-			  [...]
-			}
-
-Die SmartAd-Verfolgung wurde aus dem SDK entfernt, und Sie müssen lediglich alle Instanzen der  `AETrackModule`-Klasse entfernen.
-
-#### Änderungen von Klassennamen
-
-Im Rahmen der Umfirmierung müssen verschiedene Klassen-/Dateinamen geändert werden.
-
-Alle Klassen mit dem Präfix "CP" erhalten stattdessen das Präfix "AE".
-
-Beispiel:
-
--   `CPModule.h` wird umbenannt in `AEModule.h`.
-
-Alle Klassen mit dem Präfix "Capptain" erhalten stattdessen das Präfix "Engagement".
-
-Beispiele:
-
--   Die Klasse `CapptainAgent` wird umbenannt in `EngagementAgent`.
--   Die Klasse `CapptainTableViewController` wird umbenannt in `EngagementTableViewController`.
--   Die Klasse `CapptainUtils` wird umbenannt in `EngagementUtils`.
--   Die Klasse `CapptainViewController` wird umbenannt in `EngagementViewController`.
-
-<!--HONumber=47-->
+<!--HONumber=54-->

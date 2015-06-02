@@ -1,6 +1,6 @@
-﻿<properties 
+<properties 
 	pageTitle="Verwenden der Engagement-API auf iOS" 
-	description="Neuestes iOS-SDK - Verwenden der Engagement-API auf iOS"
+	description="Neuestes iOS-SDK – Verwenden der Engagement-API auf iOS"
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="kapiteir" 
@@ -17,47 +17,47 @@
 	ms.author="kapiteir" />
 
 
-# Verwenden der Engagement-API auf iOS
+#Verwenden der Engagement-API auf iOS
 
 Dieses Dokument ist ein Add-On zum Dokument "So integrieren Sie Engagement auf iOS". Es bietet detaillierte Informationen zur Verwendung der Engagement-API zur Bereitstellung von Anwendungsstatistiken.
 
 Beachten Sie Folgendes: Wenn Sie über Engagement nur Berichte zu Anwendungssitzungen, Aktivitäten, Abstürzen und technischen Informationen bereitstellen möchten, ist es am einfachsten, für alle benutzerdefinierten `UIViewController`-Objekte eine Vererbung aus den entsprechenden `EngagementViewController`-Klassen zu konfigurieren.
 
-Wenn Sie mehr möchten und beispielsweise auch Berichte zu anwendungsspezifischen Ereignissen, Fehlern und Aufträgen benötigen oder Anwendungsaktivitäten in anderer Weise bereitstellen möchten als in den `EngagementViewController`-Klassen implementiert, müssen Sie die Engagement-API verwenden.
+Wenn Sie darüber hinaus noch mehr Meldungen wünschen, z. B. wenn Sie anwendungsspezifische Ereignisse, Fehler und Aufträge melden möchten, oder wenn die Aktivitäten Ihrer Anwendung anders als in den `EngagementViewController`-Klassen implementiert gemeldet werden sollen, dann müssen Sie die Engagement-API verwenden.
 
-Die Engagement-API wird über die  `EngagementAgent`-Klasse bereitgestellt. Eine Instanz dieser Klasse kann durch Aufruf der statischen Methode `[EngagementAgent shared]` abgerufen werden (beachten Sie, dass das zurückgegebene  `EngagementAgent`-Objekt ein Singleton-Objekt ist).
+Die Engagement-API wird von der `EngagementAgent`-Klasse zur Verfügung gestellt. Eine Instanz dieser Klasse kann durch Aufruf der `[EngagementAgent shared]` statischen Methode abgerufen werden (beachten Sie, dass das zurückgegebene `EngagementAgent`-Objekt ein Singleton-Objekt ist).
 
-Vor jeglichen API-Aufrufen muss das  `EngagementAgent`-Objekt durch Aufrufen der Methode `[EngagementAgent init:@"Endpoint={YOUR_APP_COLLECTION.DOMAIN};SdkKey={YOUR_SDK_KEY};AppId={YOUR_APPID}"];` initialisiert werden.
+Vor jeglichen API-Aufrufen muss das `EngagementAgent`-Objekt durch Aufrufen der Methode `[EngagementAgent init:@"Endpoint={YOUR_APP_COLLECTION.DOMAIN};SdkKey={YOUR_SDK_KEY};AppId={YOUR_APPID}"];` initialisiert werden.
 
-## Engagement-Konzepte
+##Engagement-Konzepte
 
-Nachfolgend werden die gängigen [Mobile Engagement-Konzepte](mobile-engagement-concepts.md) für die iOS-Plattform näher erläutert.
+In den folgenden Abschnitten werden die [Mobile Engagement-Konzepte](mobile-engagement-concepts.md) für die iOS-Plattform genauer dargestellt.
 
 ### `Session` und `Activity`
 
-Eine  *Aktivität* ist üblicherweise mit einem Bildschirm einer Anwendung verknüpft, d. h. die  *Aktivität* startet, wenn der Bildschirm angezeigt wird und endet, wenn der Bildschirm geschlossen wird. Dies ist der Fall, wenn das Engagement-SDK über die `EngagementViewController`-Klassen integriert wird.
+Eine *Aktivität* ist üblicherweise mit einem Bildschirm einer Anwendung verknüpft, d. h. die *Aktivität* startet, wenn der Bildschirm angezeigt wird und endet, wenn der Bildschirm geschlossen wird. Dies ist der Fall, wenn das Engagement-SDK über die `EngagementViewController`-Klassen integriert wird.
 
- *Aktivitäten* können jedoch auch manuell über die Engagement-API gesteuert werden. Auf diese Weise kann ein vorhandener Bildschirm in mehrere Unterabschnitte geteilt werden, um mehr Details über die Verwendung des Bildschirms zu erhalten (um beispielsweise zu erfahren, wie häufig und wie lange Dialoge in diesem Bildschirm verwendet werden).
+Aber *Aktivitäten* können auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann ein vorhandener Bildschirm in mehrere Unterabschnitte geteilt werden, um mehr Details über die Verwendung des Bildschirms zu erhalten (um beispielsweise zu erfahren, wie häufig und wie lange Dialoge in diesem Bildschirm verwendet werden).
 
-## Berichterstellung für Aktivitäten
+##Berichterstellung für Aktivitäten
 
 ### Benutzer startet eine neue Aktivität
 
 			[[EngagementAgent shared] startActivity:@"MyUserActivity" extras:nil];
 
-Sie müssen bei jeder Änderung der Benutzeraktivität `startActivity()` aufrufen. Der erste Aufruf dieser Funktion startet eine neue Benutzersitzung.
+Sie müssen jedes Mal `startActivity()` aufrufen, wenn sich die Benutzeraktivität ändert. Der erste Aufruf dieser Funktion startet eine neue Benutzersitzung.
 
-### Benutzer beendet seine aktuelle Aktivität
+### Der Benutzer beendet seine aktuelle Aktivität
 
 			[[EngagementAgent shared] endActivity];
 
-> [AZURE.WARNING] Sie sollten diese Funktion **NIE** selbst aufrufen - es sei denn, Sie möchten eine Verwendung Ihrer Anwendung in mehrere Sitzungen unterteilen. Durch einen Aufruf dieser Funktion wird die Sitzung sofort beendet, sodass ein nachfolgender Aufruf von `startActivity()` eine neue Sitzung startet. Diese Funktion wird durch das SDK automatisch aufgerufen, wenn Ihre Anwendung geschlossen wird.
+> [AZURE.WARNING]Sie sollten diese Funktion **NIE** selbst aufrufen – es sei denn, Sie möchten eine Verwendung Ihrer Anwendung in mehrere Sitzungen unterteilen. Durch einen Aufruf dieser Funktion wird die Sitzung sofort beendet, sodass ein nachfolgender Aufruf von `startActivity()` eine neue Sitzung startet. Diese Funktion wird durch das SDK automatisch aufgerufen, wenn Ihre Anwendung geschlossen wird.
 
-## Berichterstellung für Ereignisse
+##Berichterstellung für Ereignisse
 
 ### Sitzungsereignisse
 
-Sitzungsereignisse werden normalerweise verwendet, um die von einem Benutzer während einer Sitzung ausgeführten Aktionen zu melden.
+Sitzungsereignisse werden normalerweise verwendet, um die Aktionen eines Benutzers während seiner Sitzung zu melden.
 
 **Beispiel ohne zusätzliche Daten:**
 
@@ -98,11 +98,11 @@ Im Gegensatz zu Sitzungsereignissen können eigenständige Ereignisse außerhalb
 
 			[[EngagementAgent shared] sendEvent:@"received_notification" extras:nil];
 
-## Berichterstellung für Fehler
+##Melden von Fehlern
 
 ### Sitzungsfehler
 
-Sitzungsfehler werden normalerweise zum Melden der Fehler verwendet, die sich während einer Sitzung auf den Benutzer auswirken.
+Sitzungsfehler werden normalerweise zum Melden der Fehler verwendet, die Auswirkungen auf den Benutzer während seiner Sitzung haben.
 
 **Beispiel:**
 
@@ -126,7 +126,7 @@ Im Gegensatz zu Sitzungsfehlern können eigenständige Fehler außerhalb des Kon
 
 			[[EngagementAgent shared] sendError:@"something_failed" extras:nil];
 
-## Berichterstellung für Aufträge
+##Berichterstellung für Aufträge
 
 **Beispiel:**
 
@@ -147,7 +147,7 @@ Angenommen, Sie möchten die Dauer des Anmeldevorgangs melden:
 
 ### Berichterstellung zu Fehlern während eines Auftrags
 
-Fehler können statt mit der aktuellen Benutzersitzung in Zusammenhang mit einem ausgeführten Auftrag stehen.
+Fehler können mit einem ausgeführten Auftrag in Zusammenhang stehen anstatt mit der aktuellen Benutzersitzung.
 
 **Beispiel:**
 
@@ -211,15 +211,15 @@ Angenommen, wir verfügen über ein soziales Netzwerk und verwenden einen Auftra
 			}
 			[...]
 
-## Zusätzliche Parameter
+##Zusätzliche Parameter
 
 Ereignissen, Fehlern, Aktivitäten und Aufträgen können beliebige Daten zugeordnet werden.
 
 Diese Daten können strukturiert werden und die iOS-Klasse "NSDictionary" nutzen.
 
-Zusätzliche Daten können `arrays(NSArray, NSMutableArray)`, `numbers(NSNumber class)`, `strings(NSString, NSMutableString)`, `urls(NSURL)`, `data(NSData, NSMutableData)` oder weitere `NSDictionary`-Instanzen enthalten.
+Zusätzliche Daten können `arrays(NSArray, NSMutableArray)`, `numbers(NSNumber class)`, `strings(NSString, NSMutableString)`, `urls(NSURL)`, `data(NSData, NSMutableData)` oder weitere `NSDictionary` Instanzen enthalten.
 
-> [AZURE.NOTE] Der zusätzliche Parameter wird im JSON-Format serialisiert. Wenn Sie andere Objekte als die oben beschriebene übergeben möchten, müssen Sie die folgende Methode in Ihrer Klasse implementieren:
+> [AZURE.NOTE]Der zusätzliche Parameter wird im JSON-Format serialisiert. Wenn Sie andere Objekte als die oben beschriebene übergeben möchten, müssen Sie die folgende Methode in Ihrer Klasse implementieren:
 >
 			 -(NSString*)JSONRepresentation; 
 >
@@ -232,7 +232,7 @@ Zusätzliche Daten können `arrays(NSArray, NSMutableArray)`, `numbers(NSNumber 
 			[extras setObject:@"http://foobar.com/blog" forKey:@"ref_click"];
 			[[EngagementAgent shared] sendEvent:@"video_clicked" extras:extras];
 
-### Einschränkungen
+### Grenzen
 
 #### Schlüssel
 
@@ -240,21 +240,21 @@ Jeder Schlüssel in `NSDictionary` muss mit dem folgenden regulären Ausdruck ü
 
 `^[a-zA-Z][a-zA-Z_0-9]*`
 
-Dies bedeutet, dass Schlüssel mit mindestens einem Buchstaben beginnen müssen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_).
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_) beginnen müssen.
 
 #### Größe
 
 Zusätzliche Daten sind auf **1024** Zeichen pro Aufruf beschränkt (nach Codierung in JSON durch den Engagement-Agent).
 
-Im vorherigen Beispiel ist die an den Server gesendete JSON-Zeichenfolge 58 Zeichen lang:
+Im vorherigen Beispiel enthält die an den Server gesendete JSON 58 Zeichen:
 
 			{"ref_click":"http://foobar.com/blog","video_id":"123"}
 
-## Berichterstellung für Anwendungsinformationen
+##Informationen zur Berichterstellung
 
 Sie können Berichte zur Nachverfolgung (oder zu anderen anwendungsspezifischen Informationen) mithilfe der `sendAppInfo:`-Funktion manuell erstellen.
 
-Beachten Sie, dass diese Informationen inkrementell gesendet werden können: Nur der letzte Wert für einen vorhandenen Schlüssel wird für ein Gerät beibehalten.
+Beachten Sie, dass diese Informationen inkrementell gesendet werden können: Nur der letzte Wert für einen bestimmten Schlüssel wird für ein bestimmtes Gerät gespeichert.
 
 Wie bei den zusätzlichen Daten zu Ereignissen wird die `NSDictionary`-Klasse zum Abstrahieren der Anwendungsinformationen verwendet. Hierbei werden Arrays oder Teilwörterbücher als flache Zeichenfolgen behandelt (unter Verwendung der JSON-Serialisierung).
 
@@ -265,7 +265,7 @@ Wie bei den zusätzlichen Daten zu Ereignissen wird die `NSDictionary`-Klasse zu
 			[appInfo setObject:@"1983-12-07" forKey:@"birthdate"]; // December 7th 1983
 			[[EngagementAgent shared] sendAppInfo:appInfo];
 
-### Einschränkungen
+### Grenzen
 
 #### Schlüssel
 
@@ -273,15 +273,15 @@ Jeder Schlüssel in `NSDictionary` muss mit dem folgenden regulären Ausdruck ü
 
 `^[a-zA-Z][a-zA-Z_0-9]*`
 
-Dies bedeutet, dass Schlüssel mit mindestens einem Buchstaben beginnen müssen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_).
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_) beginnen müssen.
 
 #### Größe
 
 Anwendungsinformationen sind beschränkt auf **1024** Zeichen pro Aufruf (einmal im JSON-Format vom Agent Engagement codiert).
 
-Im vorherigen Beispiel ist die an den Server gesendete JSON-Zeichenfolge 44 Zeichen lang:
+Im vorherigen Beispiel enthält das an den Server gesendete JSON 44 Zeichen:
 
 			{"birthdate":"1983-12-07","gender":"female"}
 
 
-<!--HONumber=47-->
+<!--HONumber=54-->

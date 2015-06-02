@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Erste Schritte mit Daten (HTML 5) | Mobile Dev Center" 
-	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer HTML-App." 
+	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (HTML 5) | Mobile Dev Center" 
+	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services in einer vorhandenen HTML-App." 
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="ggailey777" 
@@ -13,26 +13,20 @@
 	ms.tgt_pltfrm="mobile-html" 
 	ms.devlang="javascript" 
 	ms.topic="article" 
-	ms.date="09/24/2014" 
+	ms.date="05/02/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
-Dieses Thema beschreibt den Einsatz von Azure Mobile Services für die Nutzung von Daten in HTML-Apps. In diesem Lernprogramm laden Sie eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App und melden sich dann beim Azure-Verwaltungsportal an, um Datenänderungen beim Ausführen der App anzuzeigen.
+##Übersicht 
 
->[AZURE.NOTE]Dieses Lernprogramm vermittelt ein besseres Verständnis davon, wie Sie mit Mobile Services in Azure Daten aus einer HTML-App speichern und abrufen können. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart für mobile Dienste abgenommen werden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie eventuell zuerst das Lernprogramm <a href="/de-de/develop/mobile/tutorials/get-started-html">Erste Schritte mit Mobile Services</a> abschließen.
+Dieses Thema beschreibt den Einsatz von Azure Mobile Services für die Nutzung von Daten in HTML-Apps. In diesem Lernprogramm laden Sie eine App herunter, speichern die Daten im Speicher, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in die App und melden sich am Azure-Verwaltungsportal an, um die beim Ausführen der App an den Daten vorgenommenen Änderungen anzuzeigen.
 
-In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
+>[AZURE.NOTE]Dieses Lernprogramm vermittelt ein besseres Verständnis davon, wie Sie mit Mobile Services in Azure Daten aus einer HTML-App speichern und abrufen können. Dieses Thema behandelt viele der Schritte, die Ihnen im Mobile Services-Schnellstart abgenommen werden. Falls Sie noch keine Erfahrung mit mobilen Diensten haben, sollten Sie eventuell zuerst das Lernprogramm [Erste Schritte mit mobilen Diensten] abschließen.
 
-1. [Herunterladen des HTML-App-Projekts]
-2. [Erstellen des mobilen Diensts]
-3. [Hinzufügen einer Datentabelle als Speicher]
-4. [Aktualisieren der App zur Verwendung von Mobile Services]
-5. [Testen der App mit Mobile Services]
-
-> [AZURE.IMPORTANT] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-html%2F"%20target="_blank).
+> [AZURE.IMPORTANT]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2documentation%2Farticles%2Fmobile-services-html-get-started-data).
 
 ###Weitere Anforderungen
 
@@ -40,23 +34,23 @@ Sie können die GetStartedWithData-App auf jedem beliebigen Webserver hosten. Wi
  
 + Um localhost für dieses Lernprogramm verwenden zu können, muss einer der folgenden Webserver auf Ihrem lokalen Computer laufen:
 
-	+  **Unter Windows**: IIS Express. IIS Express wird mit dem [Microsoft-Webplattform-Installer] installiert.   
-	+  **Unter MacOS X**: Python, das bereits installiert sein sollte.
-	+  **Unter Linux**: Python. Sie müssen die [neueste Version von Python] installieren. 
+	+  **Unter Windows**: IIS Express. IIS Express wird mit dem [Microsoft Web Platform Installer] installiert.   
+	+  **Unter Mac OS X**: Python, das bereits installiert sein sollte.
+	+  **Unter Linux**: Python. Die [neueste Version von Python] muss installiert werden. 
 	
-	Die App kann zwar auf jedem Webserver gehostet werden, aber dies sind die von den heruntergeladenen Skripts unterstützen Webserver.  
+	Die App kann zwar auf jedem Webserver gehostet werden, aber dies sind die von den heruntergeladenen Skripts unterstützen Webserver.
 
 + Ein Webbrowser, der HTML5 unterstützt.
 
-<h2><a name="download-app"></a>Herunterladen des GetStartedWithData-Projekts</h2>
+##<a name="download-app"></a>Herunterladen des GetStartedWithData-Projekts
 
-Dieses Lernprogramm verwendet die HTML5-App [GetStartedWithData]. Die Benutzeroberfläche dieser App und die vom Mobile Services-Schnellstart generierte Benutzeroberfläche sind identisch, mit der Ausnahme, dass hinzugefügte Einträge lokal im Arbeitsspeicher gespeichert werden. 
+Dieses Lernprogramm verwendet die HTML5-App [GetStartedWithData]. Die Benutzeroberfläche dieser App und die vom Mobile Services-Schnellstart generierte Benutzeroberfläche sind identisch, mit der Ausnahme, dass hinzugefügte Einträge lokal im Arbeitsspeicher gespeichert werden.
 
-1. [Laden Sie die HTML-App-Projektdateien][GetStartedWithData-App] herunter.
+1. [Download der HTML-App-Projektdateien][GetStartedWithData app].
 
 2. Öffnen Sie das heruntergeladene Projekt in einem HTML-Editor und sehen Sie sich die Datei app.js an.
 
-   	Beachten Sie, dass hinzugefügte Elemente in einem speicherinternen **Array**-Objekt gespeichert werden (**staticItems**). Aktualisieren Sie die Seite, und die Daten verschwinden. Die Daten werden nicht persistent gespeichert.
+   	Beachten Sie, dass hinzugefügte Elemente in einem speicherinternen **Array**-Objekt (**staticItems**) gespeichert werden. Aktualisieren Sie die Seite, und die Daten verschwinden. Die Daten werden nicht persistent gespeichert.
 
 3. Starten Sie eine der folgenden Befehlsdateien aus dem **server**-Unterordner.
 
@@ -64,103 +58,62 @@ Dieses Lernprogramm verwendet die HTML5-App [GetStartedWithData]. Die Benutzerob
 	+ **launch-mac.command** (Mac OS X-Computer)
 	+ **launch-linux.sh** (Linux-Computer)
 
-	> [AZURE.NOTE] Bei einem Windows-Computer geben Sie "R" ein, wenn Sie von PowerShell zur Bestätigung aufgefordert werden, dass Sie das Skript ausführen möchten. Ihr Webbrowser rät Ihnen unter Umständen von einer Ausführung des Skripts ab, weil es vom Internet heruntergeladenen wurde. In diesem Fall müssen Sie darauf bestehen, dass der Browser mit dem Laden des Skripts fortfährt
+	> [AZURE.NOTE]Geben Sie auf einem Windows-Computer `R` ein, wenn Sie von PowerShell aufgefordert werden, die Skriptausführung zu bestätigen. Ihr Webbrowser rät Ihnen unter Umständen von einer Ausführung des Skripts ab, weil es vom Internet heruntergeladenen wurde. In diesem Fall müssen Sie darauf bestehen, dass der Browser mit dem Laden des Skripts fortfährt
 	
 	Hierdurch wird ein Webserver auf Ihrem lokalen Computer zum Hosten der neuen App gestartet.
 
 4. Öffnen Sie die URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> in einem Webbrowser, um die App zu starten.
 
-5. Geben Sie in der App unter **Neue Aufgabe eingeben** eine Beschreibung ein, wie zum Beispiel _Complete the tutorial_, und klicken Sie anschließend auf **Hinzufügen**.
+5. Geben Sie in der App in _Neue Aufgabe eingeben_ eine Beschreibung ein, wie zum Beispiel **Lernprogramm ausführen**, und klicken Sie dann auf **Hinzufügen**.
 
-   	![][0]  
+   ![][0]
 
    	Beachten Sie, dass der gespeicherte Text dem **staticItems**-Array hinzugefügt wird. Anschließend wird die Seite aktualisiert, um das neue Element anzuzeigen.
 
-<h2><a name="create-service"></a>Erstellen eines neuen mobilen Diensts im Verwaltungsportal</h2>
+##<a name="create-service"></a>Erstellen eines neuen mobilen Diensts im Verwaltungsportal
 
 [AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
-<h2><a name="add-table"></a>Hinzufügen einer neuen Tabelle zum mobilen Dienst</h2>
+##<a name="add-table"></a>Hinzufügen neuer Tabellen zum mobilen Dienst
 
 Um App-Daten im neuen mobilen Dienst speichern zu können, müssen Sie zuerst eine neue Tabelle in der verknüpften SQL-Datenbankinstanz erstellen.
 
-1. Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
+1. Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
 
 2. Klicken Sie auf die Registerkarte **Daten** und anschließend auf **+Erstellen**.
 
-   	![][5]
-
    	Das Dialogfeld **Neue Tabelle erstellen** wird angezeigt.
 
-3. Geben Sie unter **Tabellenname** _TodoItem_ ein, und klicken Sie auf das Kontrollkästchen.
+3. Geben Sie unter **Tabellenname** den Namen _TodoItem_ ein und klicken Sie auf das Kontrollkästchen.
 
-  	![][6]
-
-  	Dadurch wird die neue Speichertabelle **TodoItem** mit Standardberechtigungen erstellt. Dies bedeutet, dass jeder mit dem Anwendungsschlüssel (der mit Ihrer App verteilt wird) auf die Daten in der Tabelle zugreifen und diese ändern kann.
-
-    > [AZURE.NOTE] Der gleiche Tabellenname wird in Mobile Services-Quickstart verwendet. Jede Tabelle wird jedoch in einem Schema erstellt, das für einen bestimmten mobilen Dienst gilt. Dadurch soll verhindert werden, dass es zu Datenkollisionen kommt, wenn mehrere mobile Dienste dieselbe Datenbank verwenden.
+  	Dadurch wird die neue Speichertabelle **TodoItem** mit Standardberechtigungen erstellt. Dies bedeutet, dass jeder mit dem Anwendungsschlüssel (der mit Ihrer App verteilt wird) auf die Daten in der Tabelle zugreifen und diese ändern kann. Jede Tabelle wird in einem Schema erstellt, das für einen bestimmten mobilen Dienst gilt. Dadurch soll verhindert werden, dass es zu Datenkollisionen kommt, wenn mehrere mobile Dienste dieselbe Datenbank verwenden.
 
 4. Klicken Sie auf die neue Tabelle **TodoItem**, und überprüfen Sie, dass keine Datenzeilen vorhanden sind.
 
-5. Klicken Sie auf die Registerkarte **Spalten**. Überprüfen Sie, dass folgende Standardspalten automatisch erstellt werden: 
-	
-	<table border="1" cellpadding="10">
- 	<tr>
- 	<th>Spaltenname</th>
- 	<th>Typ</th>
- 	<th>Index</th>
- 	</tr>
- 	<tr>
- 	<td>id</td>
- 	<td>string</td>
- 	<td>Indexed</td>
- 	</tr>
- 	<tr>
- 	<td>__createdAt</td>
- 	<td>date</td>
- 	<td>Indexed</td>
- 	</tr>
- 	<tr>
- 	<td>__updatedAt</td>
- 	<td>date</td>
- 	<td><font color="transparent">-</font></td>
- 	</tr>
- 	<tr>
- 	<td>__version</td>
- 	<td>timestamp (MSSQL)</td>
- 	<td><font color="transparent">-</font></td>
- 	</tr> 	
- 	</table> 
+>[AZURE.NOTE]Neue Tabellen werden mit den Spalten Id, __createdAt, __updatedAt und __version erstellt. Wenn das dynamische Schema aktiviert ist, generieren Mobile Services automatisch neue Spalten auf Grundlage des JSON-Objekts in der Einfüge- oder Aktualisierungsanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema](http://msdn.microsoft.com/library/windowsazure/jj193175.aspx).
 
-  	Dies ist die Mindestanforderung für eine Tabelle in Mobile Services. 
+6. Vergewissern Sie sich auf der Registerkarte **Konfigurieren**, dass `localhost` bereits im Feld **Anforderungen von Hostnamen zulassen** unter **Cross-Origin Resource Sharing (CORS)** eingetragen ist. Falls nicht, geben Sie `localhost` im Feld **Hostname** ein, und klicken Sie dann auf **Speichern**.
 
-    > [AZURE.NOTE] Wenn für Ihren mobilen Dienst das dynamische Schema aktiviert ist, werden neue Spalten immer dann automatisch erstellt, wenn JSON-Objekte über einen Einfüge- oder Aktualisierungsvorgang an den mobilen Dienst gesendet werden.
 
-6. Vergewissern Sie sich auf der Registerkarte **Konfigurieren**, dass  `localhost` bereits im Feld **Anforderungen von Hostnamen zulassen** unter **Cross-Origin Resource Sharing (CORS)** eingetragen ist. Falls nicht, geben Sie  `localhost` im Feld **Hostname** ein, und klicken Sie dann auf **Speichern**.
-
-  	![][11]
-
-	> [AZURE.IMPORTANT] Wenn Sie die Schnellstart-App auf einem anderen Webserver als "localhost" bereitstellen, müssen Sie den Hostnamen des Webservers der Liste **Anforderungen von Hostnamen zulassen** hinzufügen. Weitere Informationen finden Sie unter [Cross-Origin Resource Sharing (CORS)](http://msdn.microsoft.com/library/windowsazure/dn155871.aspx"%20target="_blank).
+> [AZURE.IMPORTANT]Wenn Sie die Schnellstart-App auf einem anderen Webserver als "localhost" bereitstellen, müssen Sie den Hostnamen des Webservers der Liste **Anforderungen von Hostnamen zulassen** hinzufügen. Weitere Informationen finden Sie unter [Cross-Origin Resource Sharing (CORS)](http://msdn.microsoft.com/library/windowsazure/dn155871.aspx"%20target="_blank).
 
 Sie können den neuen mobilen Dienst nun als Datenspeicher für die App verwenden.
 
-<h2><a name="update-app"></a>Aktualisieren der App für den Datenzugriff über mobile Dienste</h2>
+##<a name="update-app"></a>Aktualisieren der App für den Datenzugriff über mobile Dienste
 
-Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass dieser Elemente im mobilen Dienst anstatt in einer lokalen Sammlung speichert. 
+Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass Elemente in Mobile Services anstatt in einer lokalen Sammlung gespeichert werden.
 
 3. Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
 
-4. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich die **Site URL**. Klicken Sie anschließend auf **Schlüssel verwalten**, und notieren Sie sich den **Anwendungsschlüssel**.
-
-   	![][8]
+4. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich die **Mobile Service-URL**. Klicken Sie anschließend auf **Schlüssel verwalten**, und notieren Sie sich den **Anwendungsschlüssel**.
 
   	Sie benötigen diese Werte beim Zugriff auf den mobilen Dienst von Ihrem App-Code aus.
 
 1. Öffnen Sie die Projektdatei index.html in Ihrem Web-Editor und fügen Sie den folgenden Code zu den Skriptverweisen der Seite hinzu:
 
-        <script src='http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.1.2.min.js'></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
 
-5. Öffnen Sie die Datei "app.js" im Editor, und fügen Sie den folgenden Code hinzu, der die **MobileServiceClient**-Variable definiert, und übergeben Sie die URL und den Anwendungsschlüssel aus dem mobilen Dienst in der folgenden Reihenfolge an den **MobileServiceClient**-Konstruktor:
+5. Öffnen Sie die Datei app.js im Editor und fügen Sie den folgenden Code hinzu, um die **MobileServiceClient**-Variable zu definieren und übergeben Sie Anwendungs-URL und -Schlüssel in dieser Reihenfolge an den **MobileServiceClient**-Konstruktor:
 
 	    var MobileServiceClient = WindowsAzure.MobileServiceClient,
 			client = new MobileServiceClient('AppUrl', 'AppKey'),   		    
@@ -178,7 +131,7 @@ Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass 
 
         todoItemTable = client.getTable('todoitem');
 
-   	Dieser Code erstellt ein Proxyobjekt (**todoItemTable**) für das **TodoItem** der SQL-Datenbank. 
+   	Dieser Code erstellt ein Proxyobjekt (**todoItemTable**) für die SQL-Datenbank **TodoItem**.
 
 7. Ersetzen Sie den **$('#add-item').submit**-Ereignishandler durch den folgenden Code:
 
@@ -211,15 +164,13 @@ Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass 
 						.append($('<div>').append($('<input class="item-text">').val(item.text)));
 				});
 					   
-				$('#todo-items').empty().append(listItems).toggle(listIte
-	ms.length > 0);
-				$('#summary').html('<strong>' + todoIte
-	ms.length + '</strong> item(s)');
+				$('#todo-items').empty().append(listItems).toggle(listItems.length > 0);
+				$('#summary').html('<strong>' + todoItems.length + '</strong> item(s)');
 			});
 		}
 	   
 
-   Dieser Code schickt eine Abfrage an den mobilen Dienst, die alle Elemente zurückgibt. Das Ergebnis wird durchlaufen und die Daten auf der Seite angezeigt. 
+   Dieser Code schickt eine Abfrage an den mobilen Dienst, die alle Elemente zurückgibt. Das Ergebnis wird durchlaufen und die Daten auf der Seite angezeigt.
 
 9. Ersetzen Sie die Ereignishandler **$(document.body).on('change', '.item-text')** und **$(document.body).on('change', '.item-complete')** durch den folgenden Code:
         
@@ -242,33 +193,31 @@ Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass 
 			todoItemTable.del({ id: getTodoItemId(this) }).then(refreshTodoItems);
 		});
 
-	Dieser Code schickt eine Löschanfrage an den mobilen Dienst, wenn auf die **Löschen**-Schaltfläche geklickt wird.
+	Dieser Code schickt eine Löschanfrage an den Server, wenn die **Delete**-Schaltfläche angeklickt wird.
 
 Nachdem nun die App für die Verwendung von Mobile Services als Back-End-Speicher aktualisiert ist, können Sie die App mit Mobile Services testen.
 
-<h2><a name="test-app"></a>Testen der App mit dem neuen mobilen Dienst</h2>
+##<a name="test-app"></a>Testen der App mit dem neuen mobilen Dienst
 
-4. Öffnen Sie die URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> in einem Webbrowser, um die App zu starten.
+4. Laden Sie die URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> erneut in einem Webbrowser, um die App zu starten.
 
-    > [AZURE.NOTE] Wiederholen Sie die Schritte im ersten Abschnitt, falls Sie den Webserver neu starten müssen.
+    > [AZURE.NOTE]Wiederholen Sie die Schritte im ersten Abschnitt, falls Sie den Webserver neu starten müssen.
 
-2. Geben Sie wie zuvor Text in das Feld **Neue Aufgabe eingeben** ein, und klicken Sie auf **Hinzufügen**. 
+2. Geben Sie wie zuvor Text in das Feld **Neue Aufgabe eingeben** ein und klicken Sie auf **Hinzufügen**.
 
-   	Auf diese Weise wird ein neuer Eintrag an den mobilen Service gesendet.
+   	Dieser Code schickt ein neues einzufügendes Element an den mobilen Dienst.
 
-3. Klicken Sie im [Verwaltungsportal] auf **Mobile Services** und dann auf Ihren mobilen Dienst.
+3. Klicken Sie im [Verwaltungsportal] auf **Mobile Dienste** und dann auf Ihren mobilen Dienst.
 
 4. Klicken Sie auf die Registerkarte **Daten** und dann auf **Durchsuchen**.
-
-   	![][9]
   
-   	Beachten Sie, dass die **TodoItem**-Tabelle nun Daten mit von Mobile Services generierten ID-Werten enthält, und dass der Tabelle automatisch Spalten entsprechend der TodoItem-Klasse der App hinzugefügt wurden.
+   	Die **TodoItem**-Tabelle enthält nun Daten mit von Mobile Services generierten ID-Werten, und der Tabelle wurden automatisch Spalten entsprechend der TodoItem-Klasse der App hinzugefügt.
 
-5. Markieren Sie in der App einen Eintrag in der Liste, kehren Sie dann zurück zur Registerkarte "Durchsuchen" des Portals, und klicken Sie auf **Aktualisieren**. 
+5. Markieren Sie in der App einen Eintrag in der Liste, kehren Sie dann zurück zur Registerkarte "Durchsuchen" des Portals, und klicken Sie auf **Aktualisieren**.
 
   	Beachten Sie, dass der Wert "complete" von **false** in **true** geändert wurde.
 
-6. Suchen Sie die **RefreshTodoItems**-Methode in der Projektdatei "app.js", und ersetzen Sie die Codezeile, in der  `query` definiert wird, durch die folgende Zeile:
+6. Suchen Sie die **RefreshTodoItems**-Methode in der Projektdatei "app.js", und ersetzen Sie die Codezeile, in der `query` definiert wird, durch die folgende Zeile:
 
    		var query = todoItemTable.where({ complete: false });
 
@@ -280,53 +229,31 @@ Damit ist das Lernprogramm **Erste Schritte mit Daten** beendet.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-In diesem Lernprogramm wurden die Grundlagen für die Integration von Daten in HTML-Apps in Mobile Services behandelt. Als Nächstes können Sie eines der folgenden Lernprogramme ausführen, das auf der GetStartedWithData-App aufbaut, die Sie in diesem Lernprogramm erstellt haben:
-
-* [Überprüfen und Ändern von Daten mit Skripts]
-  <br/>Erfahren Sie mehr über die Verwendung von Serverskripts in Mobile Services, um die von Ihrer App gesendeten Daten zu prüfen und zu ändern.
-
-* [Optimieren von Abfragen mit Paging]
-  <br/>Erfahren Sie, wie Sie Paging in Abfragen zum Steuern der in einer einzelnen Anforderung verarbeiteten Datenmengen verwenden können.
- 
-Nach Abschluss der Daten-Lernprogramme können Sie herausfinden, wie Sie Benutzer Ihrer App authentifizieren können. Probieren Sie eines der anderen Lernprogramme aus, z. B. [Erste Schritte mit der Authentifizierung].
+In diesem Lernprogramm wurden die Grundlagen für die Integration von Daten in HTML-Apps in Mobile Services behandelt. Nach Abschluss der Daten-Lernprogramme können Sie herausfinden, wie Sie Benutzer Ihrer App authentifizieren können. Probieren Sie eines der anderen Lernprogramme aus, z. B. [Authentifizierung zu Ihrer App hinzufügen]. Wenn Sie mit einem Cordova oder PhoneGap-App-Projekt arbeiten, erfahren Sie mehr über Push-Benachrichtigungen in [Push-Benachrichtigungen für Cordova-Apps mit Microsoft Azure](https://msdn.microsoft.com/magazine/dn879353.aspx).
 
 <!-- Anchors. -->
-[Herunterladen des HTML-App-Projekts]: #download-app
-[Erstellen des mobilen Diensts]: #create-service
-[Hinzufügen einer Datentabelle als Speicher]: #add-table
-[Aktualisieren der App zur Verwendung von Mobile Services]: #update-app
-[Testen der App mit Mobile Services]: #test-app
-[Nächste Schritte]:#next-steps
+[Download the HTML app project]: #download-app
+[Create the mobile service]: #create-service
+[Add a data table for storage]: #add-table
+[Update the app to use Mobile Services]: #update-app
+[Test the app against Mobile Services]: #test-app
+[Next Steps]: #next-steps
 
 <!-- Images. -->
 [0]: ./media/mobile-services-html-get-started-data/mobile-quickstart-startup-html.png
 
-
-
-
-[5]: ./media/mobile-services-html-get-started-data/mobile-data-tab-empty.png
-[6]: ./media/mobile-services-html-get-started-data/mobile-create-todoitem-table.png
-
-[8]: ./media/mobile-services-html-get-started-data/mobile-dashboard-tab.png
-[9]: ./media/mobile-services-html-get-started-data/mobile-todoitem-data-browse.png
-
-[11]: ./media/mobile-services-html-get-started-data/mobile-services-set-cors-localhost.png
-
 <!-- URLs. -->
-[Überprüfen und Ändern von Daten mit Skripts]: /de-de/develop/mobile/tutorials/validate-modify-and-augment-data-html
-[Optimieren von Abfragen mit Paging]: /de-de/develop/mobile/tutorials/add-paging-to-data-html
-[Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started
-[Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-html
+[Erste Schritte mit mobilen Diensten]: mobile-services-html-get-started.md
+[Authentifizierung zu Ihrer App hinzufügen]: mobile-services-html-get-started-users.md
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.com/
 [Verwaltungsportal]: https://manage.windowsazure.com/
-[GetStartedWithData-App]:  http://go.microsoft.com/fwlink/?LinkID=286345
+[GetStartedWithData app]: http://go.microsoft.com/fwlink/?LinkID=286345
+[GetStartedWithData]: http://go.microsoft.com/fwlink/?LinkID=286345
 
-[Mobile Services HTML/JavaScript-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-html-js-client
+[Mobile Services HTML/JavaScript How-to Conceptual Reference]: mobile-services-html-how-to-use-client-library.md
 
-[Cross-Origin Resource Sharing (CORS)]: http://msdn.microsoft.com/library/windowsazure/dn155871.aspx
-
-
+[Cross-origin resource sharing]: http://msdn.microsoft.com/library/azure/dn155871.aspx
 
 
-<!--HONumber=42-->
+<!--HONumber=54-->

@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Azure App Service zum Senden von Pushbenachrichtigungen an Ihre Xamarin iOS-App verwendet wird." 
 	services="app-service\mobile" 
 	documentationCenter="xamarin" 
-	authors="yuaxu"
+	authors="ysxu"
 	manager="dwrede" 
 	editor=""/>
 
@@ -20,7 +20,7 @@
 
 [AZURE.INCLUDE [app-service-mobile-selector-get-started-push-preview](../includes/app-service-mobile-selector-get-started-push-preview.md)]
 
-In diesem Thema wird erläutert, wie Sie Azure App Service zum Senden von Pushbenachrichtigungen an eine Xamarin iOS 8-App verwenden. In diesem Lernprogramm fügen Sie mithilfe des Apple Push Notification Service (APNS) Pushbenachrichtigungen zum Projekt [Erste Schritte mit mobilen App Service-Apps] hinzu. Anschließend sendet Ihr mobiles Back-End immer dann eine Pushbenachrichtigung, wenn ein Datensatz eingefügt wird.
+In diesem Thema wird erläutert, wie Sie Azure App Service zum Senden von Pushbenachrichtigungen an eine Xamarin iOS 8-App verwenden. In diesem Lernprogramm fügen Sie mithilfe des Apple Push Notification Service (APNS) Pushbenachrichtigungen zum Projekt [Erste Schritte mit mobilen App Service-Apps] hinzu. Anschließend sendet Ihr mobiles Back-End immer dann eine Pushbenachrichtigung, wenn ein Datensatz eingefügt wird.
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
@@ -29,21 +29,21 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + [Xamarin.iOS Studio]
 + [Azure Mobile Services-Komponente]
 
-   > [AZURE.NOTE] Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
+   >[AZURE.NOTE]Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
 
-Der Apple Push Notification Service (APNS) verwendet Zertifikate, um Ihre mobile App zu authentifizieren. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen der Zertifikate in Ihre mobile App. Die offizielle Dokumentation der APNS-Funktionen finden Sie unter [Apple Push Notification Service (APNS)].
+Der Apple Push Notification Service (APNS) verwendet Zertifikate, um Ihre mobile App zu authentifizieren. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen der Zertifikate in Ihre mobile App. Die offizielle Dokumentation der APNS-Merkmale finden Sie unter [Apple Push Notification Service].
 
-## <a name="certificates"></a>Generieren der Zertifikatsignieranforderungsdatei
+## <a name="certificates"></a>Erstellen der Zertifikatsignieranforderungsdatei
 
 Zunächst müssen Sie die Zertifikatsignieranforderungsdatei (CSR-Datei) erstellen, die von Apple zur Generierung eines signierten Zertifikats verwendet wird.
 
 1. Führen Sie unter den Hilfsprogrammen die **Schlüsselbundverwaltung** aus.
 
-2. Klicken Sie auf **Schlüsselbundverwaltung**, erweitern Sie **Zertifikatsassistent**, und klicken Sie dann auf **Zertifikat von einer Zertifizierungsinstanz anfordern ...**.
+2. Klicken Sie auf **Schlüsselbundverwaltung**, erweitern Sie **Zertifikatsassistent**, und klicken Sie dann auf **Zertifikat einer Zertifizierungsinstanz anfordern …**.
 
     ![][5]
 
-3. Machen Sie Angaben in den Feldern **E-Mail des Benutzers** und **Allgemeiner Name**. Vergewissern Sie sich, dass **Auf der Festplatte sichern** ausgewählt ist, und klicken Sie dann auf **Fortfahren**.
+3. Machen Sie Angaben in den Feldern **E-Mail-Adresse des Benutzers** und **Allgemeiner Name**. Vergewissern Sie sich, dass **Auf Datenträger speichern** ausgewählt ist, und klicken Sie dann auf **Fortfahren**.
 
     ![][6]
 
@@ -57,77 +57,77 @@ Anschließend werden Sie Ihre App bei Apple registrieren, Pushbenachrichtigungen
 
 ## <a name="register"></a>Registrieren der App für Pushbenachrichtigungen
 
-Um von Ihrer mobilen App aus Pushbenachrichtigungen an ein iOS-Gerät senden zu können, muss die Anwendung bei Apple und für Pushbenachrichtigungen registriert werden. 
+Um von Ihrer mobilen App aus Pushbenachrichtigungen an ein iOS-Gerät senden zu können, muss die Anwendung bei Apple und für Pushbenachrichtigungen registriert werden.
 
-1. Wenn Sie Ihre App noch nicht registriert haben, navigieren Sie zum iOS-Bereitstellungsportal</a> im Apple Developer Center. Melden Sie sich mit Ihrer Apple-ID an, klicken Sie auf **Identifiers** und dann auf **App IDs**. Klicken Sie dann auf das Pluszeichen **+**, um eine App-ID für Ihre App zu erstellen.
+1. Falls Sie Ihre App noch nicht registriert haben, navigieren Sie im Apple Developer Center zum iOS Provisioning Portal</a>, melden Sie sich mit Ihrer Apple-ID an, klicken Sie auf **Identifiers**, dann auf **App IDs** und schließlich auf das Zeichen **+**, um eine App-ID für Ihre App zu erstellen.
     
     ![][102]
 
-2. Geben Sie in **Description** einen Namen für Ihre App ein, tragen Sie den eindeutigen **Bundle Identifier** ein, und merken Sie ihn sich, markieren Sie die Option "Push Notifications" im Abschnitt "App Services", und klicken Sie dann auf **Continue**. In diesem Beispiel wird die ID **MobileServices.Quickstart** verwendet. Dieselbe ID kann jedoch nicht erneut benutzt werden, da App-IDs über alle Benutzer einzigartig sein müssen. Daher empfiehlt es sich, dass Sie Ihren vollen Namen oder Ihre Initialen an den App-Namen anhängen. 
+2. Geben Sie in **Description** einen Namen für Ihre App ein, tragen Sie den eindeutigen **Bundle Identifier** ein und merken Sie ihn sich, markieren Sie die Option "Push Notifications" im Abschnitt "App Services", und klicken Sie dann auf **Continue**. In diesem Beispiel wird die ID **MobileServices.Quickstart** verwendet. Dieselbe ID kann jedoch nicht erneut benutzt werden, da App-IDs über alle Benutzer einzigartig sein müssen. Daher empfiehlt es sich, dass Sie Ihren vollen Namen oder Ihre Initialen an den App-Namen anhängen.
 
     ![][103]
    
-    Hierdurch wird Ihre App-ID generiert und Sie werden aufgefordert, die Daten per **Senden** zu übermitteln. Klicken Sie auf **Submit**.
+    Hierdurch wird Ihre App-ID generiert, und Sie werden zum **Übermitteln** der Daten aufgefordert. Klicken Sie auf **Senden**.
    
-    ![][104] 
+    ![][104]
    
-    Nach dem Klicken auf **Senden** wird der Bildschirm **Registrierung abgeschlossen** geöffnet, wie nachstehend gezeigt. Klicken Sie auf **Done**.
+    Nachdem Sie **Submit** angeklickt haben, wird der **Registration complete**-Bildschirm geöffnet, wie unten gezeigt. Klicken Sie auf **Done**.
    
-    ![][105]    
+    ![][105]
 
-3. Lokalisieren Sie die soeben erstellte App-ID und klicken Sie auf deren Zeile. 
+3. Lokalisieren Sie die soeben erstellte App-ID und klicken Sie auf deren Zeile.
 
     ![][106]
    
-    Durch Klicken auf die App-ID werden Einzelheiten zur App und die App-ID angezeigt. Klicken Sie auf die Schaltfläche **Einstellungen**.
+    Durch Klicken auf die App-ID werden Einzelheiten zur App und die App-ID angezeigt. Klicken Sie auf die Schaltfläche **Settings**.
    
-    ![][107] 
+    ![][107]
    
-4. Führen Sie einen Bildlauf bis zum unteren Bildschirmbereich durch, und klicken Sie auf die Schaltfläche **Create Certificate...** unterhalb des Abschnitts **Development Push SSL Certificate**.
+4. Scrollen Sie bis zur Unterseite des Bildschirms und klicken Sie auf die Schaltfläche **Create Certificate...** unter dem Abschnitt **Development Push SSL Certificate**.
 
-    ![][108] 
+    ![][108]
 
-    Hierdurch wird der Assistent "Add iOS Certificate" angezeigt.
+    Hierdurch wird der Assistent "Add iOS Certificate" zur Anzeige gebracht.
    
     Hinweis: In diesem Lernprogramm wird ein Entwicklungszertifikat verwendet. Derselbe Prozess wird auch zum Registrieren eines Produktionszertifikats durchgeführt. Stellen Sie lediglich sicher, dass Sie beim Hochladen des Zertifikats in Ihre mobile App denselben Zertifikattyp festlegen.
 
-5. Klicken Sie auf **Choose File**, wechseln Sie zum Speicherort der CSR-Datei, und klicken Sie dann auf **Generate**. 
+5. Klicken Sie auf **Choose File**, navigieren Sie zum Speicherort der CSR-Datei, und klicken Sie dann auf **Generate**.
 
     ![][110]
   
-6. Nach Erstellung des Zertifikats durch das Portal klicken Sie auf die Schaltfläche **Download** und dann auf **Done**.
+6. Nach Erstellung des Zertifikats vom Portal klicken Sie auf die Schaltfläche **Download** und dann auf **Done**.
  
-    ![][111]  
+    ![][111]
 
-    Hierdurch wird das Signierzertifikat heruntergeladen und auf Ihrem Computer in Ihrem Download-Ordner gespeichert. 
+    Hierdurch wird das Signierzertifikat heruntergeladen und auf Ihrem Computer in Ihrem Download-Ordner gespeichert.
 
-    ![][9] 
+    ![][9]
 
     Hinweis: Standardmäßig ist die heruntergeladene Datei ein Entwicklungszertifikat namens <strong>aps_development.cer</strong>.
 
-7. Doppelklicken Sie auf das heruntergeladene Pushzertifikat **aps_development.cer**.
+7. Doppelklicken Sie auf dem heruntergeladenen Pushzertifikat **aps_development.cer**.
 
     Hierdurch wird das neue Zertifikat im Schlüsselbund installiert, wie unten gezeigt:
 
     ![][10]
 
-    Hinweis: Der Name in Ihrem Zertifikat kann abweichen, erhält aber das Präfix <strong>Apple Development iOS Push Notification Services:</strong>.
+    Hinweis: Der Name in Ihrem Zertifikat kann abweichen, weist jedoch das Präfix <strong>Apple Development iOS Push Notification Services:</strong> auf.
 
 Später können Sie mit diesem Zertifikat eine .p12-Datei generieren und in Ihre mobile App hochladen, um die Authentifizierung mit APNS zu ermöglichen.
 
 ## <a name="profile"></a>Erstellen eines Bereitstellungsprofils für die App
  
-1. Zurück im <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS Provisioning Portal</a> wählen Sie **Provisioning Profiles**, dann **All**, und klicken Sie schließlich auf die Schaltfläche **+**, um ein neues Profil zu erstellen. Hierdurch wird der Assistent **Add iOS Provisiong Profile** gestartet.
+1. Zurück im <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS Provisioning Portal</a> wählen Sie **Provisioning Profiles**, dann **All**, und klicken Sie schließlich auf die Schaltfläche **+**, um ein neues Profil zu erstellen. Hierdurch wird der Assistent **Add iOS Provisiong Profile** gestartet
 
     ![][112]
 
-2. Wählen Sie unter **Development** den Punkt **iOS App Development** als Bereitstellungsprofiltyp, und klicken Sie dann auf **Continue**.
+2. Wählen Sie unter **Development** die Option **iOS App Development** als Bereitstellungsprofiltyp aus, und klicken Sie dann auf **Continue**.
 
 3. Wählen Sie anschließend die App-ID für die Mobile App-Schnellstart-App aus der Dropdownliste **App ID** aus, und klicken Sie auf **Continue**.
 
     ![][113]
 
-4. Wählen Sie im Bildschirm **Select certificates** das zuvor erstellte Zertifikat aus, und klicken Sie auf **Continue**.
+4. Wählen Sie auf dem Bildschirm **Select certificates** wählen Sie das zuvor erstellte Zertifikat aus, und klicken Sie auf **Continue**
 
     ![][114]
 
@@ -135,7 +135,7 @@ Später können Sie mit diesem Zertifikat eine .p12-Datei generieren und in Ihre
   
     ![][115]
 
-6. Wählen Sie abschließend in **Profile Name** einen Namen für das Profil, klicken Sie auf **Generate** und anschließend auf **Done**.
+6. Geben Sie zum Schluss noch einen Namen für das Profil im Feld **Profile Name** ein, klicken Sie auf **Generate**, dann auf **Done**.
 
     ![][116]
 
@@ -158,51 +158,44 @@ Später können Sie mit diesem Zertifikat eine .p12-Datei generieren und in Ihre
         using System.Collections.Generic;
         using Microsoft.Azure.NotificationHubs;
 
-4. Fügen Sie der `PostTodoItem`-Methode nach dem Aufruf von **InsertAsync** den folgenden Codeausschnitt hinzu:  
+4. Fügen Sie der `PostTodoItem`-Methode nach dem Aufruf von **InsertAsync** den folgenden Codeausschnitt hinzu:
 
         // get Notification Hubs credentials associated with this Mobile App
         string notificationHubName = this.Services.Settings.NotificationHubName;
         string notificationHubConnection = this.Services.Settings.Connections[ServiceSettingsKeys.NotificationHubConnectionString].ConnectionString;
 
         // connect to notification hub
-        NotificationHubClient Hub = NotificationHubClient.CreateClientFromConnectionString(notificationHubConnection, notificationHubName)
+        NotificationHubClient Hub = NotificationHubClient.CreateClientFromConnectionString(notificationHubConnection, notificationHubName);
 
         // iOS payload
         var appleNotificationPayload = "{"aps":{"alert":"" + item.Text + ""}}";
 
-        try
-        {
-            await Hub.Push.SendAppleNativeNotificationAsync(appleNotificationPayload);
-        }
-        catch (System.Exception ex)
-        {
-            throw;
-        }
+        await Hub.Push.SendAppleNativeNotificationAsync(appleNotificationPayload);
 
     Dieser Code weist den mit dieser mobilen App verknüpften Notification Hub an, nach dem Einfügen eines Todo-Elements eine Pushbenachrichtigung zu senden.
 
 
-<h2><a name="publish-the-service"></a>Veröffentlichen des mobilen Back-Ends in Azure</h2>
+## <a name="publish-the-service"></a>Veröffentlichen des mobilen Back-Ends in Azure
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service-preview](../includes/app-service-mobile-dotnet-backend-publish-service-preview.md)]
 
 ## <a name="configure-app"></a>Konfigurieren der Xamarin.iOS-Anwendung
 
-1. Öffnen Sie in Xamarin.Studio **Info.plist**, und aktualisieren Sie die **Bundle-IDs** mit der ID, die Sie zuvor erstellt haben.
+1. Öffnen Sie in Xamarin.Studio die Datei **Info.plist**, und aktualisieren Sie die **Bundle-ID** mit der zuvor erstellten ID.
 
     ![][121]
 
-2. Führen Sie einen Bildlauf nach unten bis **Hintergrundmodi** durch, und aktivieren Sie die Felder **Hintergrundmodi aktivieren** und **Remotebenachrichtigungen**. 
+2. Scrollen Sie nach unten zu **Background Modes**, und aktivieren Sie **Enable Background Modes** und **Remote notifications**.
 
     ![][122]
 
 3. Doppelklicken Sie im Projektmappen-Bereich auf Ihr Projekt, um die **Projektoptionen** zu öffnen.
 
-4.  Aktivieren Sie unter **Build** die Option **iOS-Bundle signieren**, und wählen Sie die **Identität** und das **Bereitstellungsprofil**, die bzw. das Sie für dieses Projekt eingerichtet haben. 
+4.  Wählen Sie unter **Build** die Option **iOS Bundle Signing** aus, und wählen Sie die **Identität** und das **Bereitstellungsprofil**, die Sie gerade für dieses Projekt eingerichtet haben.
 
     ![][120]
 
-    Dadurch wird sichergestellt, dass das Xamarin-Projekt das neue Profil für die Codesignierung verwendet. Die offizielle Dokumentation zur Xamarin-Gerätebereitstellung finden Sie unter [Xamarin-Gerätebereitstellung].
+    Dadurch wird sichergestellt, dass das Xamarin-Projekt das neue Profil für die Codesignierung verwendet. Die offizielle Dokumentation zur Xamarin-Gerätebereitstellung finden Sie unter [Xamarin Device Provisioning] (Xamarin – Gerätebereitstellung, in englischer Sprache).
 
 ## <a name="add-push"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
@@ -210,7 +203,7 @@ Später können Sie mit diesem Zertifikat eine .p12-Datei generieren und in Ihre
         
         public MobileServiceClient client { get; private set; }
 
-2. Setzen Sie in **AppDelegate** das Ereignis **FinishedLaunching** außer Kraft: 
+2. Überschreiben Sie in **AppDelegate** das Ereignis **FinishedLaunching**:
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
@@ -259,21 +252,21 @@ Später können Sie mit diesem Zertifikat eine .p12-Datei generieren und in Ihre
 Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
 
-<h2><a name="publish-the-service"></a>Veröffentlichen des mobilen Back-Ends in Azure</h2>
+## <a name="publish-the-service"></a>Veröffentlichen des mobilen Back-Ends in Azure
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service-preview](../includes/app-service-mobile-dotnet-backend-publish-service-preview.md)]
 
-## <a name="test"></a>Testen von Pushbenachrichtigungen in Ihrer App
+## <a name="test"></a>Testen von Pushbenachrichtigungen in der App
 
-1. Drücken Sie die Schaltfläche **Ausführen**, um das Projekt zu erstellen, und starten Sie die App auf einem iOS-fähigen Gerät, klicken Sie anschließend auf**OK**, um die Pushbenachrichtigungen zu akzeptieren.
+1. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen. Starten Sie die App auf einem iOS-fähigen Gerät, und klicken Sie dann auf **OK**, um Pushbenachrichtigungen zu akzeptieren.
 	
-	> [AZURE.NOTE] Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
+	> [AZURE.NOTE]Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
 
-2. Geben Sie in der App eine Aufgabe ein, und klicken Sie dann auf das Pluszeichen (**+**).
+2. Geben Sie in der App eine Aufgabe ein, und klicken Sie dann auf das Pluszeichen (+).
 
-3. Vergewissern Sie sich, dass eine Benachrichtigung empfangen wird, und klicken Sie dann auf **OK**, um die Benachrichtigung zu schließen.
+3. Stellen Sie sicher, dass Sie eine Benachrichtigung erhalten haben, und klicken Sie dann auf **OK**, um diese zu schließen.
 
-4. Wiederholen Sie Schritt 2, schließen Sie die App unverzüglich, und überprüfen Sie dann, ob eine Benachrichtigung angezeigt wird.
+4. Wiederholen Sie Schritt 2, schließen Sie die App unverzüglich, und überprüfen Sie dann, ob eine Benachrichtigung angezeigt wird.
 
 Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
@@ -318,28 +311,28 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 [116]: ./media/partner-xamarin-mobile-services-ios-get-started-push/mobile-services-ios-push-16.png
 [117]: ./media/partner-xamarin-mobile-services-ios-get-started-push/mobile-services-ios-push-17.png
 
-[120]:./media/partner-xamarin-mobile-services-ios-get-started-push/mobile-services-ios-push-20.png
-[121]:./media/partner-xamarin-mobile-services-ios-get-started-push/mobile-services-ios-push-21.png
-[122]:./media/partner-xamarin-mobile-services-ios-get-started-push/mobile-services-ios-push-22.png
+[120]: ./media/partner-xamarin-mobile-services-ios-get-started-push/mobile-services-ios-push-20.png
+[121]: ./media/partner-xamarin-mobile-services-ios-get-started-push/mobile-services-ios-push-21.png
+[122]: ./media/partner-xamarin-mobile-services-ios-get-started-push/mobile-services-ios-push-22.png
 
 [Xamarin.iOS Studio]: http://xamarin.com/platform
-[Installieren von Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[iOS-Bereitstellungsportal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
+[Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
+[iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Apple Push Notification Service (APNS)]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-[Erste Schritte mit Mobile Services]: /de-de/develop/mobile/tutorials/get-started-xamarin-ios
-[Erste Schritte mit Daten]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-ios
-[Erste Schritte mit der Authentifizierung]: /de-de/develop/mobile/tutorials/get-started-with-users-xamarin-ios
-[Erste Schritte mit Pushbenachrichtigungen]: /de-de/develop/mobile/tutorials/get-started-with-push-xamarin-ios
-[Senden von Pushbenachrichtigungen an App-Benutzer]: /de-de/develop/mobile/tutorials/push-notifications-to-users-ios
-[Autorisieren von Benutzern mit Skripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios
-[Xamarin-Gerätebereitstellung]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
+[Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
+[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started-xamarin-ios
+[Get started with data]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-ios
+[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-xamarin-ios
+[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-xamarin-ios
+[Push notifications to app users]: /de-de/develop/mobile/tutorials/push-notifications-to-users-ios
+[Authorize users with scripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios
+[Xamarin Device Provisioning]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[apns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=272333
+[Azure Management Portal]: https://manage.windowsazure.com/
+[apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 [Azure Mobile Services-Komponente]: http://components.xamarin.com/view/azure-mobile-services/
-[Abgeschlossenes Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331303
+[completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303
 
 
-<!--HONumber=49-->
+<!--HONumber=54-->

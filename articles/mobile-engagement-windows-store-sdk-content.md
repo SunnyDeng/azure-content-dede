@@ -1,9 +1,9 @@
 <properties 
-	pageTitle="Windows Store-SDK für Azure Mobile Engagement - Inhalt" 
-	description="Neueste Updates und Verfahren für Windows Store-SDK für Azure Mobile Engagement" 
+	pageTitle="Windows Universal Apps SDK – Inhalt" 
+	description="Informieren Sie sich über den Inhalt des Windows Universal Apps SDK für Azure Mobile Engagement" 					
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
-	authors="lalathie" 
+	authors="piyushjo" 
 	manager="dwrede" 
 	editor="" />
 
@@ -11,67 +11,47 @@
 	ms.service="mobile-engagement" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-windows-store" 
-	ms.devlang="" 
+	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/12/2015" 
-	ms.author="kapiteir" />
+	ms.date="04/06/2015" 
+	ms.author="piyushjo" />
 
-# SDK-Inhalt
+#Windows Universal Apps SDK – Inhalt
 
-Dieses Dokument enthält eine Liste und beschreibt den Inhalt des SDK-Archivs.
+In diesem Dokument wird aufgelistet und beschrieben, was durch das SDK in der Anwendung bereitgestellt wird.
 
-## Der `Root` Ordner
+##Der Ordner `/Resources`
 
-Dieser Ordner enthält Kopien der Softwarelizenzen und einen Link zu der Onlinedokumentation.
+Dieser Ordner enthält alle von Mobile Engagement benötigten Ressourcen. Sie können diese auch an Ihre App anpassen.
 
-`documentation.html` : Enthält einen Link zur Engagement-SDK-Onlinedokumentation für Windows 8 C#-Metro-Anwendung.
-
-Dieser Ordner enthält auch Lizenzdateien.
-
-## Der `/lib` Ordner
-
-Dieser Ordner enthält Informationen darüber, wo Sie das Engagement-SDK erhalten.
-
-`azuresdk-mobileengagement-windows-X.X.X.nupkg` : NuGet-Paket für die SDK-Integration.
-
-## Der `/Resources` Ordner
-
-Dieser Ordner enthält alle Ressourcen, die Engagement benötigt. Sie können Ihre App auch entsprechend anpassen.
-
-`EngagementConfiguration.xml` : Die Konfigurationsdatei von Engagement, hier können Sie Engagement-Einstellungen (Engagement-Verbindungszeichenfolge, Berichtabsturz...) anpassen.
+- `EngagementConfiguration.xml` : Die Konfigurationsdatei von Mobile Engagement, hier können Sie Mobile Engagement-Einstellungen (Mobile Engagement-Verbindungszeichenfolge, Absturzbericht...) anpassen.
 
 ### /html-Ordner
 
-`EngagementNotification.html` :  Das `HTML-Design der Webansicht `Benachrichtigung.
+- `EngagementNotification.html` : Der HTML-Entwurf der `Notification`-Webansicht
 
-`EngagementAnnouncement.html` :  Das ` HTML-Design der Webansicht `Ankündigung.
+- `EngagementAnnouncement.html` : Der HTML-Entwurf der `Announcement`-Webansicht
 
 ### /images-Ordner
 
-`EngagementIconNotification.png` : Das Markensymbol, das auf der linken Seite einer Benachrichtigung angezeigt wird.
+- `EngagementIconNotification.png` : Das Markensymbol, das auf der linken Seite einer Benachrichtigung angezeigt wird. Ersetzen Sie dieses Symbol durch Ihr eigenes Markensymbol.
 
-`EngagementIconOk.png` :  Das `Ok`-Symbol der Reichweiten-Inhaltsseiten für die Aktions- oder Validierungsschaltfläche.
+- `EngagementIconOk.png` : Das `Ok`-Symbol der Reach-Inhaltsseiten für die Aktions- oder Validierungsschaltfläche.
 
-`EngagementIconNOK.png` :  Das `NOK`-Symbol wird verwendet, wenn die Validierungsschaltfläche der Reichweiten-Inhaltsseiten deaktiviert ist.
+- `EngagementIconNOK.png` : Das `NOK`-Symbol, das verwendet wird, wenn die Validierungsschaltfläche der Reach-Inhaltsseiten deaktiviert ist.
+ 
+- `EngagementIconClose.png` : Das `Close`-Symbol der Reach-Benachrichtigungen und -Inhalte für die Schaltfläche zum Verwerfen.
 
-`EngagementIconClose.png` :  Das `Schließen`-Symbol der Reichweitenbenachrichtigungen und Inhalte für die Schaltfläche "Verwerfen".
+### /overlay-Ordner
 
-### /Overlay-Ordner
+- `EngagementOverlayAnnouncement.xaml` : Der xaml-Entwurf für `Announcement`
 
-`EngagementOverlayAnnouncement.xaml` :  Das `XAML-Design von `Ankündigung.
-
-`EngagementOverlayAnnouncement.xaml.cs` : Der mit  `EngagementOverlayAnnouncement.xaml` verknüpfte Code.
-
-`EngagementOverlayNotification.xaml` :  Das XAML-Design von  `Benachrichtigung`.
-
-`EngagementOverlayNotification.xaml.cs` : Der mit  `EngagementOverlayNotification.xaml` verknüpfte Code.
-
-`EngagementPageOverlay.cs` :  Der Anzeigecode für  `Überlagerungs`ankündigung und Benachrichtigung.
-
-## Der `/src/agent` Ordner
-
-Dieser Ordner enthält die EngagementPage.
-
-`EngagementPage.cs` : Die Basisklasse für die Seiten, die automatisch eine Aktivität an Engagement meldet.
-
-<!--HONumber=47-->
+- `EngagementOverlayAnnouncement.xaml.cs` : Der mit `EngagementOverlayAnnouncement.xaml` verknüpfte Code
+ 
+- `EngagementOverlayNotification.xaml` : Der xaml-Entwurf für `Notification`
+ 
+- `EngagementOverlayNotification.xaml.cs` : Der mit `EngagementOverlayNotification.xaml` verknüpfte Code
+ 
+- `EngagementPageOverlay.cs` : Der Anzeigecode der `Overlay`-Ankündigung und -Benachrichtigung.
+ 
+<!--HONumber=54-->

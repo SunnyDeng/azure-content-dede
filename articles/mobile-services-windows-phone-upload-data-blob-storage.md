@@ -4,50 +4,50 @@
 	documentationCenter="windows" 
 	authors="wesmc7777" 
 	writer="wesmc" 
-	services="mobile-services, storage" 
+	services="mobile-services" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-phone" 
+	ms.tgt_pltfrm="" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="10/06/2014" 
+	ms.date="02/23/2015" 
 	ms.author="wesmc"/>
 
 # Verwenden von Mobile Services zum Hochladen von Bildern in Azure Storage
 
 [AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
-In diesem Thema wird erläutert, wie Sie Azure Mobile Services dazu verwenden können, Ihre App für das Hochladen und Speichern von durch Benutzer erzeugten Bildern in Azure Storage zu aktivieren. Mobile Services verwendet zur Datenspeicherung eine SQL-Datenbank. BLOB (Binary Large Object)-Daten lassen sich allerdings effizienter im Azure-Blob-Speicherdienst speichern. 
+## Übersicht
 
-Die Anmeldeinformationen zum sicheren Hochladen von Daten in den Blob-Speicherdienst können mit der Client-App nicht sicher zugewiesen werden. Stattdessen müssen Sie diese Anmeldeinformationen in Ihrem mobilen Dienst speichern und dazu verwenden, eine Shared Access Signature (SAS) zu erstellen, die dann zum Hochladen eines neuen Bildes verwendet wird. Die SAS, eine Anmeldeinformation mit einer kurzen Laufzeit &mdash;in diesem Falle fünf Minuten -, wird durch Mobile Services sicher an die Client-App zurückgegeben. Anschließend nutzt die App diese temporäre Anmeldeinformation zum Hochladen des Bildes. In diesem Beispiel sind Downloads vom Blob-Dienst öffentlich.
+In diesem Thema wird erläutert, wie Sie Azure Mobile Services dazu verwenden können, Ihre App für das Hochladen und Speichern von durch Benutzer erzeugten Bildern in Azure Storage zu aktivieren. Mobile Services verwendet zur Datenspeicherung eine SQL-Datenbank. BLOB (Binary Large Object)-Daten lassen sich allerdings effizienter im Azure-Blob-Speicherdienst speichern.
 
-In diesem Lernprogramm fügen Sie dem [GetStartedWithData-App-Beispielprojekt ](mobile-services-windows-phone-get-started-data.md) Funktionen zum Aufnehmen von Bildern und Hochladen dieser Bilder in Azure unter Verwendung einer von Mobile Services erzeugten SAS hinzu. Dieses Lernprogramm führt Sie durch die folgenden grundlegenden Schritte zum Aktualisieren der einfachen TodoList-App zum Hochladen von Bildern in den BLOB-Speicherdienst:
+Die Anmeldeinformationen zum sicheren Hochladen von Daten in den Blob-Speicherdienst können mit der Client-App nicht sicher zugewiesen werden. Stattdessen müssen Sie diese Anmeldeinformationen in Ihrem mobilen Dienst speichern und dazu verwenden, eine Shared Access Signature (SAS) zu erstellen, die dann zum Hochladen eines neuen Bildes verwendet wird. Die SAS, eine Anmeldeinformation mit einer kurzen Laufzeit &mdash; in diesem Falle 5 Minuten –, wird durch Mobile Services sicher an die Client-App zurückgegeben. Anschließend nutzt die App diese temporäre Anmeldeinformation zum Hochladen des Bildes. In diesem Beispiel sind Downloads vom Blob-Dienst öffentlich.
 
-1. [Installieren der Speicherclientbibliothek]
-2. [Aktualisieren des Einfügeskripts zum Generieren einer SAS]
-3. [Aktualisieren der Client-App zur Aufnahme von Bildern]
-4. [Hochladen von Bildern zum Testen der App]
+In diesem Lernprogramm fügen Sie dem [GetStartedWithData-Beispiel-App-Projekt](mobile-services-windows-phone-get-started-data.md) zur Aufnahme von Bildern und zum Hochladen dieser Bilder unter Verwendung einer von Mobile Services erzeugten SAS in Azure Funktionen hinzu.
+
+
+## Voraussetzungen
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + Microsoft Visual Studio 2012 Express für Windows 8 oder eine höhere Version
 + [Windows Phone SDK 8.0] oder höher
 + NuGet Package Manager installiert für Microsoft Visual Studio.
-+ [Azure-Speicherkonto][So erstellen Sie ein Speicherkonto]
-+ Abschluss des Lernprogramms [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-windows-phone-get-started-data.md)  
++ [Azure-Speicherkonto][How To Create a Storage Account]
++ Schließen Sie das Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen Anwendung](mobile-services-windows-phone-get-started-data.md) ab.  
 
 
-##<a name="install-storage-client"></a>Installieren des Speicherclients für Windows Phone-Apps
+## Installieren des Speicherclients für Windows Phone-Apps
 
 Um eine SAS für das Hochladen von Bildern in den BLOB-Speicher verwenden zu können, müssen Sie zuerst das NuGet-Paket hinzufügen, das die Speicherclientbibliothek für Windows Phone-Apps installiert.
 
 1. Klicken Sie im **Projektmappen-Explorer** in Visual Studio mit der rechten Maustaste auf den Projektnamen, und wählen Sie dann **NuGet-Pakete verwalten** aus.
 
-2. Wählen Sie im linken Bereich die Kategorie **Online** und dann **Include Prerelease** aus, suchen Sie nach **WindowsAzure.Storage-Preview**, klicken Sie im Paket **Azure Storage** auf **Installieren**, und stimmen Sie dem Lizenzvertrag zu. 
+2. Wählen Sie im linken Bereich die Kategorie **Online** und **Include Prerelease** aus, suchen Sie nach **WindowsAzure.Storage-Preview**, klicken Sie auf **Installieren** im Paket **Azure Storage**, und stimmen Sie dem Lizenzvertrag zu.
 
   	![][2]
 
@@ -55,7 +55,7 @@ Um eine SAS für das Hochladen von Bildern in den BLOB-Speicher verwenden zu kö
 
 Als Nächstes aktualisieren Sie die Schnellstart-App zum Aufnehmen und Hochladen von Bildern.
 
-##<a name="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
+## Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
 
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
@@ -65,17 +65,17 @@ Als Nächstes aktualisieren Sie die Schnellstart-App zum Aufnehmen und Hochladen
 [AZURE.INCLUDE [mobile-services-windows-phone-upload-to-blob-storage](../includes/mobile-services-windows-phone-upload-to-blob-storage.md)]
 
 
-## <a name="next-steps"> </a>Nächste Schritte
+## Nächste Schritte
 
-Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen Dienstes in den Blob-Dienst sicher hochzuladen, können Sie sich einigen anderen Themen aus dem Bereich Back-End-Dienste und Integration zuwenden:
+Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen Dienstes in den Blob-Dienst sicher hochzuladen, können Sie sich einigen anderen Themen aus dem Bereich Backend-Dienste und Integration zuwenden:
 
 + [Senden von E-Mails in Mobile Services mit SendGrid]
  
-  Lernen Sie, wie Sie mithilfe des E-Mail-Dienstes SendGrid eine E-Mail-Funktion zu Ihrem mobilen Dienst hinzufügen können. In diesem Thema wird erläutert, wie serverseitige Skripts zum Senden von E-Mails mithilfe von SendGrid hinzugefügt werden
+  Lernen Sie, wie Sie mithilfe des E-Mail-Dienstes SendGrid eine E-Mail-Funktion zu Ihrem mobilen Dienst hinzufügen können. In diesem Thema wird erläutert, wie serverseitige Skripts zum Senden von E-Mails mithilfe von SendGrid hinzugefügt werden.
 
 + [Planen von Back-End-Aufträgen in Mobile Services]
 
-  Lernen Sie, wie Sie die Auftragsplanerfunktion in Mobile Services zur Definition von Skriptcode verwenden können, der gemäß einem von Ihnen definierten Zeitplan ausgeführt wird.
+  Lernen Sie, wie Sie die Auftragsplanerfunktoin in Mobile Services zur Definition von Skriptcode verwenden können, der gemäß einem von Ihnen definierten Zeitplan ausgeführt wird.
 
 + [Mobile Services: Serverskriptreferenz]
 
@@ -86,12 +86,6 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
   Lernen Sie mehr über die Verwendung von Mobile Services mit .NET
   
  
-<!-- Anchors. -->
-[Installieren der Speicherclientbibliothek]: #install-storage-client
-[Aktualisieren der Client-App zur Aufnahme von Bildern]: #add-select-images
-[Aktualisieren des Einfügeskripts zum Generieren einer SAS]: #update-scripts
-[Hochladen von Bildern zum Testen der App]: #test
-[Nächste Schritte]:#next-steps
 
 <!-- Images. -->
 
@@ -108,19 +102,17 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 [11]: ./media/mobile-services-windows-phone-upload-data-blob-storage/mobile-upload-blob-app-view-camera-accept-wp8.png
 
 <!-- URLs. -->
-[Senden von E-Mails in Mobile Services mit SendGrid]: /de-de/develop/mobile/tutorials/send-email-with-sendgrid/
-[Planen von Back-End-Aufträgen in Mobile Services]: /de-de/develop/mobile/tutorials/schedule-backend-tasks/
+[Senden von E-Mails in Mobile Services mit SendGrid]: /develop/mobile/tutorials/send-email-with-sendgrid/
+[Planen von Back-End-Aufträgen in Mobile Services]: /develop/mobile/tutorials/schedule-backend-tasks/
 [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/p/?LinkId=262293
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-windows-phone-get-started
+[Get started with Mobile Services]: mobile-services-windows-phone-get-started.md
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Erstellen eines Speicherkontos]: /de-de/manage/services/storage/how-to-create-a-storage-account
-[Azure-Speicherclientbibliothek für Store-Apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866 
-[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /de-de/develop/mobile/how-to-guides/work-with-net-client-library
-[Windows Phone SDK 8.0]: http://www.microsoft.com/de-de/download/details.aspx?id=35471
-
-
+[Azure Management Portal]: https://manage.windowsazure.com/
+[How To Create a Storage Account]: /manage/services/storage/how-to-create-a-storage-account
+[Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
+[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /develop/mobile/how-to-guides/work-with-net-client-library
+[Windows Phone SDK 8.0]: http://www.microsoft.com/download/details.aspx?id=35471
 
 
 
-<!--HONumber=42-->
+<!--HONumber=54-->

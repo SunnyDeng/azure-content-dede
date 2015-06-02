@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Verwenden von Hadoop Hive in HDInsight | Azure"
+   pageTitle="Verwenden von HDInsight Hadoop Hive mit PowerShell und HDInsight | Microsoft Azure"
    description="Verwenden von Hadoop Hive in HDInsight über PowerShell."
    services="hdinsight"
    documentationCenter=""
@@ -9,23 +9,23 @@
 
 <tags
    ms.service="hdinsight"
-   ms.devlang=""
+   ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="02/18/2015"
+   ms.date="04/03/2015"
    ms.author="larryfr"/>
 
-# Ausführen von Hive-Abfragen mit PowerShell
+#Ausführen von Hive-Abfragen mit PowerShell
 
-[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
+[AZURE.INCLUDE [Hive-Selektor](../includes/hdinsight-selector-use-hive.md)]
 
-Dieses Dokument enthält ein Beispiel zur Verwendung von PowerShell zum Ausführen von Hive-Abfragen auf einem Hadoop-Cluster in HDInsight.
+Dieses Dokument enthält ein Beispiel zur Verwendung von Azure PowerShell zum Ausführen von Hive-Abfragen auf einem Hadoop-Cluster in HDInsight.
 
-> [AZURE.NOTE] Dieses Dokument bietet keine detaillierte Beschreibung dazu, wie die in diesem Beispiel verwendeten HiveQL-Anweisungen vorgehen. Informationen zu der in diesem Beispiel verwendeten HiveQL finden Sie unter <a href="../hdinsight-use-hive/" target="_blank">Verwenden von Hive mit Hadoop unter HDInsight</a>.
+> [AZURE.NOTE]Dieses Dokument bietet keine detaillierte Beschreibung dazu, wie die in diesem Beispiel verwendeten HiveQL-Anweisungen vorgehen. Informationen zu der HiveQL, die in diesem Beispiel verwendet wird, finden Sie unter <a href="hdinsight-use-hive.md" target="_blank">Verwenden von Hive mit Hadoop in HDInsight</a>.
 
 
-## <a id="prereq"></a>Voraussetzungen
+##<a id="prereq"></a>Voraussetzungen
 
 Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benötigen Sie Folgendes:
 
@@ -34,27 +34,27 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 * <a href="http://azure.microsoft.com/documentation/articles/install-configure-powershell/" target="_blank">Azure PowerShell</a>
 
 
-## <a id="powershell"></a>Ausführen von Hive-Abfragen mit PowerShell
+##<a id="powershell"></a>Ausführen von Hive-Abfragen mit PowerShell
 
-Azure PowerShell stellt *cmdlets* bereit, mit denen Sie Hive-Abfragen in HDInsight remote ausführen können. Intern erfolgt dies durch REST-Aufrufe von <a href="https://cwiki.apache.org/confluence/display/Hive/WebHCat" target="_blank">WebHCat</a> (früher als "Templeton" bezeichnet), das auf dem HDInsight-Cluster ausgeführt wird.
+Azure PowerShell stellt *cmdlets* bereit, mit denen Sie Hive-Abfragen in HDInsight remote ausführen können. Intern wird dies mithilfe von REST-Aufrufen an <a href="https://cwiki.apache.org/confluence/display/Hive/WebHCat" target="_blank">WebHCat</a> (früher Templeton) auf dem HDInsight-Cluster realisiert.
 
-Die folgenden Cmdlets werden zum Ausführen der Hive-Abfragen auf einem HDInsight-Remotecluster verwendet.
+Die folgenden Cmdlets werden zum Ausführen der Hive-Abfragen auf einem HDInsight-Remotecluster verwendet:
 
-* **Add-AzureAccount**: authentifiziert PowerShell für Ihr Azure-Abonnement
+* **Add-AzureAccount**: Authentifiziert PowerShell für Ihr Azure-Abonnement
 
-* **New-AzureHDInsightHiveJobDefinition** erstellt mithilfe der angegebenen HiveQL-Anweisungen eine neue *job definition*.
+* **New-AzureHDInsightHiveJobDefinition**: Erstellt mithilfe der angegebenen HiveQL-Anweisungen eine neue *Auftragsdefinition*
 
-* **Start-AzureHDInsightJob** sendet die Auftragsdefinition an HDInsight, startet den Auftrag und gibt ein  *job*-Objekt zurück, mit dem der Status des Auftrags geprüft werden kann.
+* **Start-AzureHDInsightJob**: Sendet die Auftragsdefinition an HDInsight, startet den Auftrag und gibt ein *Auftrags*-Objekt zurück, mit dem der Status des Auftrags geprüft werden kann
 
-* **Wait-AzureHDInsightJob**: verwendet das job-Objekt, um den Status des Auftrags zu prüfen Es wird gewartet, bis der Auftrag abgeschlossen oder die Wartezeit überschritten ist.
+* **Wait-AzureHDInsightJob**: Verwendet das Auftragsobjekt, um den Status des Auftrags zu prüfen Es wird gewartet, bis der Auftrag abgeschlossen oder die Wartezeit überschritten ist.
 
-* **Get-AzureHDInsightJobOutput**: wird zum Abrufen der Ausgabe des Auftrags verwendet
+* **Get-AzureHDInsightJobOutput**: Wird zum Abrufen des Auftrags verwendet
 
-* **Invoke-Hive**: wird zum Ausführen von HiveQL-Anweisungen und abgeschlossenen Blöcken verwendet Anschließend werden die Ergebnisse zurückgegeben.
+* **Invoke-Hive**: Wird zum Ausführen von HiveQL-Anweisungen verwendet. Dadurch wird die Abfrage vollständig blockiert und anschließend die Ergebnisse zurückgegeben
 
-* **Use-AzureHDInsightCluster**: legt den aktuellen Cluster für die Verwendung mit dem Befehl **Invoke-Hive** fest
+* **Use-AzureHDInsightCluster**: Legt den aktuellen Cluster für die Verwendung mit dem Befehl **Invoke-Hive** fest
 
-Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines Auftrags auf dem HDInsight-Cluster verwendet werden. 
+Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines Auftrags auf dem HDInsight-Cluster verwendet werden:
 
 1. Speichern Sie den folgenden Code mithilfe eines Editors als **hivejob.ps1**. Ersetzen Sie **CLUSTERNAME** durch den Namen des HDInsight-Clusters.
 
@@ -65,35 +65,35 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
 		{
 		    Add-AzureAccount
 		}
-		
+
 		#Specify the cluster name
-		$clusterName = "CLUSTERNAME" 
-		
+		$clusterName = "CLUSTERNAME"
+
 		#HiveQL
 		$queryString = "DROP TABLE log4jLogs;" +
 				       "CREATE EXTERNAL TABLE log4jLogs(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION 'wasb:///example/data/';" +
 				       "SELECT t4 AS sev, COUNT(*) AS cnt FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;"
-		
+
 		#Create an HDInsight Hive job definition
 		$hiveJobDefinition = New-AzureHDInsightHiveJobDefinition -Query $queryString
-		
+
 		#Submit the job to the cluster
 		Write-Host "Start the Hive job..." -ForegroundColor Green
 		$hiveJob = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $hiveJobDefinition
-		
+
 		#Wait for the Hive job to complete
 		Write-Host "Wait for the job to complete..." -ForegroundColor Green
 		Wait-AzureHDInsightJob -Job $hiveJob -WaitTimeoutInSeconds 3600
-		
+
 		# Print the output
 		Write-Host "Display the standard output..." -ForegroundColor Green
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $hiveJob.JobId -StandardOutput
 
-2. Öffnen Sie eine neue **Microsoft Azure PowerShell**-Eingabeaufforderung. Navigieren Sie zum Speicherort der Datei **hivejob.ps1**, und verwenden Sie Folgendes zum Ausführen des Skripts.
+2. Öffnen Sie eine neue **Azure PowerShell**-Befehlsaufforderung. Navigieren Sie zum Speicherort der Datei **hivejob.ps1**, und verwenden Sie folgenden Befehl zum Ausführen des Skripts:
 
 		.\hivejob.ps1
 
-7. Nachdem der Auftrag abgeschlossen ist, muss er Informationen zurückgeben, die den folgenden ähneln.
+7. Nachdem der Auftrag abgeschlossen ist, muss er Informationen zurückgeben, die den folgenden ähneln:
 
 		Display the standard output...
 		[ERROR]	3
@@ -107,33 +107,33 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
 		SELECT * FROM errorLogs;
 		"@
 
-	Die Ausgabe sieht dann wie folgt aus.
+	Die Ausgabe sieht dann wie folgt aus:
 
-		2012-02-03	18:35:34	SampleClass0	[ERROR]	incorrect	id	
-		2012-02-03	18:55:54	SampleClass1	[ERROR]	incorrect	id	
+		2012-02-03	18:35:34	SampleClass0	[ERROR]	incorrect	id
+		2012-02-03	18:55:54	SampleClass1	[ERROR]	incorrect	id
 		2012-02-03	19:25:27	SampleClass4	[ERROR]	incorrect	id
 
-	> [AZURE.NOTE] Für längere HiveQL-Abfragen können Sie PowerShell Here-Zeichenfolgen oder HiveQL-Skriptdateien verwenden. Der folgende Codeausschnitt zeigt, wie Sie eine HiveQL-Skriptdatei mit dem  *Invoke-Hive*-Cmdlet ausführen können. Die HiveQL-Skriptdatei muss auf WASB hochgeladen werden.
+	> [AZURE.NOTE]Für längere HiveQL-Abfragen können Sie Azure PowerShell **Here-Strings**-Cmdlet oder HiveQL-Skriptdateien verwenden. Der folgende Ausschnitt zeigt, wie Sie eine HiveQL-Skriptdatei mit dem **Invoke-Hive**-Cmdlet ausführen können. Die HiveQL-Skriptdatei muss auf wasb:// hochgeladen werden.
 	>
 	> `Invoke-Hive -File "wasb://<ContainerName>@<StorageAccountName>/<Path>/query.hql"`
 	>
-	> Weitere Informationen zu Here-Strings erhalten Sie unter <a href="http://technet.microsoft.com/library/ee692792.aspx" target="_blank">Verwenden von Windows PowerShell-Here-Strings</a>.
+	> Weitere Informationen zu <a href="http://technet.microsoft.com/library/ee692792.aspx" target="_blank">Here-Strings</a> erhalten Sie unter **Verwenden von Windows PowerShell-Here-Strings**.
 
-## <a id="troubleshooting"></a>Problembehandlung
+##<a id="troubleshooting"></a>Problembehandlung
 
-Wenn nach Abschluss des Auftrags keine Informationen zurückgegeben werden, ist während der Verarbeitung möglicherweise ein Fehler aufgetreten. Um Fehlerinformationen für diesen Auftrag anzuzeigen, fügen Sie Folgendes am Ende der Datei **hivejob.ps1** hinzu. Anschließend speichern Sie die Datei und führen sie erneut aus.
+Wenn nach Abschluss des Auftrags keine Informationen zurückgegeben werden, ist während der Verarbeitung möglicherweise ein Fehler aufgetreten. Um Fehlerinformationen für diesen Auftrag anzuzeigen, fügen Sie Folgendes am Ende der Datei **hivejob.ps1** hinzu. Speichern Sie die Datei anschließend und führen Sie sie erneut aus.
 
 	# Print the output of the Hive job.
 	Write-Host "Display the standard output ..." -ForegroundColor Green
 	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $hiveJob.JobId -StandardError
 
-Dadurch werden die beim Ausführen des Auftrags an STDERR auf dem Server geschriebenen Informationen zurückgegeben, die möglicherweise bei der Ermittlung helfen können, warum der Auftrag fehlgeschlagen ist.
+Dadurch werden die beim Ausführen des Auftrags an STDERR auf dem Server geschriebenen Informationen zurückgegeben, die möglicherweise hilfreich sind, um festzustellen, warum der Auftrag fehlgeschlagen ist.
 
-## <a id="summary"></a>Zusammenfassung
+##<a id="summary"></a>Zusammenfassung
 
 Wie Sie sehen können, bietet Azure PowerShell eine einfache Möglichkeit, um Hive-Abfragen auf einem HDInsight-Cluster auszuführen, den Auftragsstatus zu überwachen und die Ausgabe abzurufen.
 
-## <a id="nextsteps"></a>Nächste Schritte
+##<a id="nextsteps"></a>Nächste Schritte
 
 Allgemeine Informationen zu Hive in HDInsight:
 
@@ -145,4 +145,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!--HONumber=47-->
+<!--HONumber=54-->

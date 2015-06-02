@@ -18,7 +18,7 @@
 
 # Konfigurieren Ihrer Anwendung zur Verwendung der Twitter-Anmeldung
 
-In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung von Twitter als Authentifizierungsanbieter konfigurieren. 
+In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung von Twitter als Authentifizierungsanbieter konfigurieren.
 
 Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in diesem Thema beschriebenen Vorgang abzuschließen. Rufen Sie die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkID=268287" target="_blank">twitter.com</a> auf, um ein neues Twitter-Konto zu erstellen.
 
@@ -34,16 +34,16 @@ Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in die
 
 4. Klicken Sie auf die Registerkarte **Settings**, aktivieren Sie die Option **Allow this application to be used to sign in with Twitter**, und klicken Sie dann auf **Update Settings**.
 
-5. Wählen Sie die Registerkarte **Keys and Access Tokens**. Notieren Sie die Werte für **Consumer Key (API Key)** und **Consumer secret (API Secret)**. 
+5. Wählen Sie die Registerkarte **Keys and Access Tokens**. Notieren Sie die Werte für **Consumer Key (API Key)** und **Consumer secret (API Secret)**.
 
-    > [AZURE.NOTE] Consumer secret ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.
+    > [AZURE.NOTE]Consumer secret ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.
 
 
 ## <a name="secrets"> </a>Hinzufügen von Twitter-Informationen zu Ihrer mobilen App
 
 6. Melden Sie sich am [Azure-Verwaltungsportal] an, und navigieren Sie zu Ihrem App Service-Gateway.
 
-7. Wählen Sie unter **Einstellungen** die Option **Identität**, und wählen Sie dann **Twitter**. Fügen Sie die Werte für App-ID und den geheimen App-Schlüssel ein, die Sie zuvor abgerufen haben. Klicken Sie dann auf **Speichern**.
+7. Wählen Sie unter **Einstellungen** die Option **Identität**, und wählen Sie dann **Twitter**. Fügen Sie die Werte für App-ID und den geheimen App-Schlüssel ein, die Sie zuvor abgerufen haben. Klicken Sie anschließend auf **Save**.
 
     ![][1]
 
@@ -62,9 +62,8 @@ Sie können nun Twitter für die Authentifizierung in Ihrer App verwenden.
 
 <!-- URLs. -->
 
-[Twitter-Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [Azure-Verwaltungsportal]: https://portal.azure.com/
 [xamarin]: app-services-mobile-app-dotnet-backend-xamarin-ios-get-started-users-preview.md
 
-<!--HONumber=49-->
+<!--HONumber=54-->

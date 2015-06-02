@@ -1,19 +1,19 @@
 <properties 
 	pageTitle="Zugreifen auf SharePoint im Namen eines Benutzers | Mobile Dev Center" 
 	description="Erfahren Sie, wie Sie im Namen des Benutzers Aufrufe an SharePoint durchführen." 
-	documentationCenter="windows" 
+	documentationCenter="" 
 	authors="mattchenderson" 
 	manager="dwrede" 
 	editor="" 
-	services=""/>
+	services="mobile-services"/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
+	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="11/21/2014" 
+	ms.date="04/13/2015" 
 	ms.author="mahender"/>
 
 # Zugreifen auf SharePoint im Namen eines Benutzers
@@ -23,33 +23,33 @@
 <p>In diesem Thema erfahren Sie, wie Sie im Namen des aktuell angemeldeten Benutzers auf SharePoint-APIs zugreifen.</p>
 <p>Wenn Sie lieber ein Video zu diesem Thema ansehen möchten, können Sie den Clip auf der rechten Seite auswählen. In diesem werden dieselben Schritte behandelt wie in diesem Lernprogramm. Im Video zeigt Ihnen Mat Velloso, wie man eine Windows Store-App so ändert, dass sie mit SharePoint Online interagiert.</p>
 </div>
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Azure-Mobile-Services-AAD-O365-Authentication-identity-across-services" target="_blank" class="label">Lernprogramm anschauen</a> <a style="background-image: url('http://media.ch9.ms/ch9/f217/3f8cbf94-f36b-4162-b3da-1c00339ff217/AzureMobileServicesAADO365AuthenticationIdentityA_960.jpg') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Azure-Mobile-Services-AAD-O365-Authentication-identity-across-services" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a> <span class="time">12:51</span></div>
+<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Azure-Mobile-Services-AAD-O365-Authentication-identity-across-services" target="_blank" class="label">Lernprogramm ansehen</a> <a style="background-image: url('http://media.ch9.ms/ch9/f217/3f8cbf94-f36b-4162-b3da-1c00339ff217/AzureMobileServicesAADO365AuthenticationIdentityA_960.jpg') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Azure-Mobile-Services-AAD-O365-Authentication-identity-across-services" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a> <span class="time">12:51:00</span></div>
 </div>
 
-In diesem Lernprogramm ändern Sie die App vom Lernprogramm Active Directory "Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden" so, dass ein Word-Dokument in SharePoint Online erstellt wird, wenn ein neues TodoItem hinzugefügt wird.
+In diesem Lernprogramm ändern Sie die App vom Lernprogramm Active Directory „Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden“ so, dass ein Word-Dokument in SharePoint Online erstellt wird, wenn ein neues TodoItem hinzugefügt wird.
 
 Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung des SharePoint-Zugriff Im-Namen-von:
 
 1. [Registrieren Ihrer Anwendung für den delegierten Zugriff auf SharePoint]
-2. [Hinzufügen von SharePoint-Informationen zu ihrem mobilen Dienst]
+2. [Hinzufügen von SharePoint-Informationen zu Ihrem mobilen Dienst]
 3. [Beziehen eines Zugriffstokens und Aufrufen der SharePoint-API]
 4. [Erstellen und Hochladen eines Word-Dokuments]
 5. [Testen der Anwendung]
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-* Visual Studio 2013 unter Windows 8.1
+* Visual Studio 2013 unter Windows 8.1
 * Ein aktives Abonnement von [SharePoint Online]
 * Sie haben das Lernprogramm [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden] durchlaufen. Sie sollten das Mandat verwenden, das von Ihrem SharePoint-Abonnement bereitgestellt wird.
 
 ## <a name="configure-permissions"></a>Konfigurieren Ihrer Anwendung für den delegierten Zugriff auf SharePoint
 Standardmäßig hat der Token, den Sie von AAD erhalten, eingeschränkte Berechtigungen. Um auf eine Ressource von Dritten oder eine SaaS-Anwendung wie etwa SharePoint Online zugreifen zu können, müssen Sie dies explizit erlauben.
 
-1. Wählen Sie im Abschnitt **Active Directory** des [Azure-Verwaltungsportals] Ihren Mandant. Navigieren Sie zur Webanwendung, die Sie für den mobilen Dienst erstellt haben.
+1. Wählen Sie im Abschnitt **Active Directory** des [Azure-Verwaltungsportals] Ihr Mandat. Navigieren Sie zur Webanwendung, die Sie für den mobilen Dienst erstellt haben.
 
     ![][0]
 
-2. Scrollen Sie auf der Registerkarte **Konfigurieren** nach unten zum Abschnitt "Berechtigungen für andere Anwendungen". Wählen Sie **Office 365 SharePoint Online** aus, und gewähren Sie die delegierte Berechtigung **Dateien der Benutzer bearbeiten oder löschen**. Klicken Sie dann auf **Speichern**.
+2. Scrollen Sie auf der Registerkarte **Konfigurieren** nach unten zum Abschnitt „Berechtigungen für andere Anwendungen“. Wählen Sie **Office 365 SharePoint Online**, und gewähren Sie die Berechtigung **Dateien des Benutzer bearbeiten oder löschen**. Klicken Sie anschließend auf **Save**.
 
     ![][1]
 
@@ -61,11 +61,11 @@ Um einen Aufruf an SharePoint zu richten, müssen Sie die Endpunkte festlegen, m
 
 1. Gehen Sie zurück zur Registerkarte AAD-Anwendung für Ihr Mandat und wählen Sie die Webanwendung für ihren mobilen Dienst aus.
 
-2. Scrollen Sie unter "Konfigurieren" zu "Schlüssel". Sie erhalten einen geheimen Clientschlüssel, indem Sie einen neuen Schlüssel generieren. Nachdem Sie einen Schlüssel erzeugt und die Seite verlassen haben, gibt es keine Möglichkeit mehr, ihn aus dem Portal zu bekommen. Sie müssen eine Kopie dieses Werts an einem sicheren Ort speichern. Wählen Sie eine Dauer für den Schlüssel und klicken Sie dann auf "Speichern", und kopieren Sie den resultierenden Wert.
+2. Scrollen Sie unter „Konfigurieren“ zu „Schlüssel“. Sie erhalten einen geheimen Clientschlüssel, indem Sie einen neuen Schlüssel generieren. Nachdem Sie einen Schlüssel erzeugt und die Seite verlassen haben, gibt es keine Möglichkeit mehr, ihn aus dem Portal zu bekommen. Sie müssen eine Kopie dieses Werts an einem sicheren Ort speichern. Wählen Sie eine Dauer für den Schlüssel und klicken Sie dann auf „Speichern“, und kopieren Sie den resultierenden Wert.
 
     ![][2]
 
-3. Navigieren Sie im Abschnitt "Mobile Services" des Verwaltungsportals zur Registerkarte "Konfigurieren" und scrollen Sie zu "App-Einstellungen". Hier können Sie ein Schlüsselwertepaar bereitstellen, mit dem Sie auf die nötigen Anmeldeinformationen verweisen.
+3. Navigieren Sie im Abschnitt „Mobile Services“ des Verwaltungsportals zur Registerkarte „Konfigurieren“ und scrollen Sie zu „App-Einstellungen“. Hier können Sie ein Schlüsselwertepaar bereitstellen, mit dem Sie auf die nötigen Anmeldeinformationen verweisen.
 
     ![][3]
 
@@ -79,7 +79,7 @@ Sie können diese Wert mithilfe von ApiServices.Settings diese Werte in unserem 
 
 ## <a name="obtain-token"></a>Beziehen eines Zugriffstokens und Aufrufen der SharePoint-API
 
-Um auf SharePoint zugreifen zu können, benötigen Sie ein spezielles Zugriffstoken mit SharePoint als Zielgruppe. Diesen Token erhalten Sie, wenn Sie einen Abruf bei AAD mit der Identität des mobilen Diensts und dem Token machen, der für den Benutzer ausgestellt worden ist.
+Um auf SharePoint zugreifen zu können, benötigen Sie einen speziellen Zugriffstoken mit SharePoint als Zielgruppe. Diesen Token erhalten Sie, wenn Sie einen Abruf bei AAD mit der Identität des mobilen Diensts und dem Token machen, der für den Benutzer ausgestellt worden ist.
 
 1. Öffnen Sie Ihr Mobile Services Back-End-Projekt in Visual Studio.
 
@@ -192,7 +192,7 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 
 2. Navigieren Sie zu Ihrer SharePoint-Website, und melden Sie sich mit demselben Benutzer an.
 
-3. Wählen Sie die Registerkarte "OneDrive". Unter dem Dokumentenordner sollten Sie ein Word-Dokument mit einem GUID-Titel sehen. Wenn Sie es öffnen, sollten Sie den Text für Ihr TodoItem finden.
+3. Wählen Sie die Registerkarte „OneDrive“. Unter dem Dokumentenordner sollten Sie ein Word-Dokument mit einem GUID-Titel sehen. Wenn Sie es öffnen, sollten Sie den Text für Ihr TodoItem finden.
 
     ![][4]
 
@@ -208,15 +208,14 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 <!-- Anchors. -->
 
 [Registrieren Ihrer Anwendung für den delegierten Zugriff auf SharePoint]: #configure-permissionss
-[Hinzufügen von SharePoint-Informationen zu ihrem mobilen Dienst]: #store-credentials
+[Hinzufügen von SharePoint-Informationen zu Ihrem mobilen Dienst]: #store-credentials
 [Beziehen eines Zugriffstokens und Aufrufen der SharePoint-API]: #obtain-token
 [Erstellen und Hochladen eines Word-Dokuments]: #create-document
 [Testen der Anwendung]: #test-application
 
 <!-- URLs. -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[SharePoint Online]: http://office.microsoft.com/de-de/sharepoint/
+[Azure-Verwaltungsportals]: https://manage.windowsazure.com/
+[SharePoint Online]: http://office.microsoft.com/sharepoint/
 [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden]: http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/
 
-
-<!--HONumber=42-->
+<!--HONumber=54-->

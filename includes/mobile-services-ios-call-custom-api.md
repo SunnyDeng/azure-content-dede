@@ -1,4 +1,4 @@
-﻿
+
 ## <a name="update-app"></a>Aufrufen der benutzerdefinierten API aus einer iOS-App
 
 Verwenden Sie zum Aufrufen dieser benutzerdefinierten API von einem iOS-Client aus die `MSClient invokeAPI`-Methode. Es gibt zwei Versionen dieser Methode, eine für JSON-formatierte Anforderungen und eine für beliebige Datentypen:
@@ -22,7 +22,7 @@ Verwenden Sie zum Aufrufen dieser benutzerdefinierten API von einem iOS-Client a
 	      completion:(MSAPIDataBlock)completion;
 
 
-Übergeben Sie z. B. zum Senden einer JSON-Anforderung an die benutzerdefinierte API "SendEmail" ein `NSDictionary` für die Anforderungsparameter:
+Übergeben Sie z. B. zum Senden einer JSON-Anforderung an die benutzerdefinierte API "SendEmail" ein `NSDictionary` für die Anforderungsparameter:
 
 	NSDictionary *emailHeader = @{ @"to": @"email.com", @"subject" : @"value" };
 
@@ -35,5 +35,4 @@ Verwenden Sie zum Aufrufen dieser benutzerdefinierten API von einem iOS-Client a
 		
 
 
-
-<!--HONumber=52-->
+<!--HONumber=54-->

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erstellen einer PHP-MySQL-Web-App in Azure App Service und Bereitstellen über FTP" 
 	description="In diesem Lernprogramm wird gezeigt, wie Sie eine PHP-Web-App erstellen, die Daten in MySQL speichert, und wie Sie die FTP-Bereitstellung in Azure verwenden." 
 	services="app-service\web" 
@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="PHP" 
@@ -17,60 +17,60 @@
 	ms.author="tomfitz"/>
 
 
-#Erstellen einer PHP-MySQL-Web-App in Azure App Service und Bereitstellen über FTP
+# Erstellen einer PHP-MySQL-Web-App in Azure App Service und Bereitstellen über FTP
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-MySQL-Web-App erstellen und über FTP bereitstellen. Dieses Lernprogramm setzt voraus, dass Sie [PHP][install-php], [MySQL][install-mysql], einen Webserver und einen FTP-Client auf Ihrem Computer installiert haben. Die Anweisungen in diesem Lernprogramm lassen sich von jedem Betriebssystem aus befolgen, einschließlich Windows, Max und Linux. Nachdem Sie diese Anleitung durchgearbeitet haben, werden Sie eine in Azure ausgeführte PHP-/MySQL-Web-App besitzen.
+In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-MySQL-Web-App erstellen und über FTP bereitstellen. Dieses Lernprogramm setzt voraus, dass Sie [PHP][install-php], [MySQL][install-mysql], einen Webserver und einen FTP-Client auf Ihrem Computer installiert haben. Die Anweisungen in diesem Lernprogramm lassen sich von jedem Betriebssystem aus befolgen, einschließlich Windows, Max und Linux. Nachdem Sie diese Anleitung durchgearbeitet haben, verfügen Sie über eine in Azure ausgeführte PHP-/MySQL-Web-App.
  
 Sie erhalten Informationen zu folgenden Themen:
 
 * Erstellen einer Web-App und einer MySQL-Datenbank über das Azure-Portal. Da PHP standardmäßig auf Web-Apps aktiviert ist, gelten für die Ausführung Ihres PHP-Codes keine besonderen Voraussetzungen.
 * Veröffentlichen der Anwendung in Azure über FTP.
  
-Mithilfe dieses Lernprogramms erstellen Sie eine einfache Web-App für die Registrierung in PHP. Die Anwendung wird in einer Web-App gehostet. Unten finden Sie einen Screenshot der vollständigen Anwendung:
+Mithilfe dieses Lernprogramms erstellen Sie eine einfache Web-App für die Registrierung in PHP. Die Anwendung wird in einer Web-App gehostet. Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 ![Azure-PHP-Website][running-app]
 
->[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen. 
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 
-##Erstellen einer Web-App und Einrichten der FTP-Veröffentlichung
+## Erstellen einer Web-App und Einrichten der FTP-Veröffentlichung
 
 Befolgen Sie diese Schritte, um eine Web-App und eine MySQL-Datenbank zu erstellen:
 
-1. Melden Sie sich am [Azure-Portal][management-portal] an.
+1. Melden Sie sich beim [Azure-Portal][management-portal] an.
 2. Klicken Sie unten links im Portal auf das Symbol **+ Neu**.
 
-	![Erstellen einer neuen Azure-Website][new-website]
+	![Neue Azure-Website erstellen][new-website]
 
-3. Klicken Sie auf **Web + Mobile** und dann auf **Web App + MySQL**.
+3. Klicken Sie auf **Web + Mobile** und dann auf **Web-App + MySQL**.
 
-	![Benutzerdefiniertes Erstellen einer neuen Website][custom-create]
+	![Neue Website benutzerdefiniert erstellen][custom-create]
 
 4. Geben Sie einen gültigen Namen für die Ressourcengruppe ein.
 
-    ![Festlegen von Ressourcengruppennamen][resource-group]
+    ![Ressourcengruppenname festlegen][resource-group]
 
 5. Geben Sie Werte für die neue Web-App ein.
 
-     ![Erstellen von Web-Apps][new-web-app]
+     ![Web-App erstellen][new-web-app]
 
 6. Geben Sie Werte für die neue Datenbank ein, einschließlich Ihrer Zustimmung der rechtlichen Bedingungen.
 
-	![Erstellen einer neuen MySQL-Datenbank][new-mysql-db]
+	![Neue MySQL-Datenbank erstellen][new-mysql-db]
 	
-7. Wenn die Web-App erstellt wurde, wird die neue Ressourcengruppe angezeigt. Klicken Sie auf den Namen der Web-App, um deren Einstellungen zu konfigurieren.
+7. Nachdem die Web-App erstellt wurde, wird die neue Ressourcengruppe angezeigt. Klicken Sie auf den Namen der Web-App, um deren Einstellungen zu konfigurieren.
 
-	![Öffnen einer Web-App][go-to-webapp]
+	![Web-App öffnen][go-to-webapp]
 
-6. Führen Sie einen Bildlauf nach unten durch, bis Sie auf **Set deployment credentials** stoßen. 
+6. Führen Sie einen Bildlauf nach unten durch, bis Sie **Anmeldeinformationen für die Bereitstellung einrichten** finden.
 
-	![Festlegen von Anmeldeinformationen für die Bereitstellung][set-deployment-credentials]
+	![Anmeldeinformationen für die Bereitstellung zurücksetzen][set-deployment-credentials]
 
 7. Um die FTP-Veröffentlichung aktivieren zu können, müssen Sie einen Benutzernamen und ein Kennwort angeben. Speichern Sie die Anmeldeinformationen, und notieren Sie den Benutzernamen und das Kennwort, die Sie erstellen.
 
-	![Erstellen von Anmeldedaten für die Veröffentlichung][portal-ftp-username-password]
+	![Anmeldedaten für die Veröffentlichung erstellen][portal-ftp-username-password]
 
-##Lokales Erstellen und Testen der App
+## Lokales Erstellen und Testen der App
 
 Die Registrierungsanwendung ist eine einfache PHP-Anwendung, die Ihnen die Registrierung für eine Veranstaltung durch Angabe Ihres Namens und Ihrer E-Mail-Adresse ermöglicht. Informationen zu vorherigen Registranten werden in einer Tabelle angezeigt. Registrierungsinformationen werden in einer MySQL-Datenbank gespeichert. Die App besteht aus zwei Dateien:
 
@@ -79,13 +79,13 @@ Die Registrierungsanwendung ist eine einfache PHP-Anwendung, die Ihnen die Regis
 
 Befolgen Sie die unten stehenden Schritte, um die App lokal zu erstellen und auszuführen. Beachten Sie, dass Voraussetzung für diese Schritte ist, dass PHP, MySQL und ein Webserver auf Ihrem lokalen Computer eingerichtet sind und die [PDO-Erweiterung für MySQL][pdo-mysql] aktiviert ist.
 
-1. Erstellen Sie eine MySQL-Datenbank namens  `registration`. Sie können dies in der MySQL-Eingabeaufforderung mit diesem Befehl ausführen:
+1. Erstellen Sie eine MySQL-Datenbank namens `registration`. Sie können dies in der MySQL-Eingabeaufforderung mit diesem Befehl ausführen:
 
 		mysql> create database registration;
 
-2. Erstellen Sie im Stammverzeichnis Ihres Webservers einen Ordner mit dem Namen  `registration`, und erstellen Sie darin zwei Dateien mit den Namen  `createtable.php` und  `index.php`.
+2. Erstellen Sie im Stammverzeichnis Ihres Webservers einen Ordner mit dem Namen `registration`, und erstellen Sie darin zwei Dateien mit den Namen `createtable.php` und `index.php`.
 
-3. Öffnen Sie die Datei  `createtable.php` in einem Texteditor oder IDE, und fügen Sie den folgenden Code hinzu. Dieser Code wird verwendet, um die Tabelle  `registration_tbl` in der Datenbank  `registration` zu erstellen.
+3. Öffnen Sie die Datei `createtable.php` in einem Texteditor oder IDE, und fügen Sie den folgenden Code hinzu. Dieser Code wird verwendet, um die Tabelle `registration_tbl` in der Datenbank `registration` zu erstellen.
 
 		<?php
 		// DB connection info
@@ -110,10 +110,9 @@ Befolgen Sie die unten stehenden Schritte, um die App lokal zu erstellen und aus
 		echo "<h3>Table created.</h3>";
 		?>
 
-	> [AZURE.NOTE] 
-	> Sie müssen die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
+	> [AZURE.NOTE]Sie müssen die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
 
-4. Öffnen Sie einen Webbrowser, und navigieren Sie zu [http://localhost/registration/createtable.php][localhost-createtable]. Dadurch wird die Tabelle  `registration_tbl` in der Datenbank erstellt.
+4. Öffnen Sie einen Webbrowser und navigieren Sie zu [http://localhost/registration/createtable.php][localhost-createtable]. Dadurch wird die Tabelle `registration_tbl` in der Datenbank erstellt.
 
 5. Öffnen Sie die Datei **index.php** in einem Texteditor oder IDE, und fügen Sie den Basis-HTML- und CSS-Code für die Seite hinzu (der PHP-Code wird in einem späteren Schritt hinzugefügt).
 
@@ -164,8 +163,7 @@ Befolgen Sie die unten stehenden Schritte, um die App lokal zu erstellen und aus
 			die(var_dump($e));
 		}
 
-	> [AZURE.NOTE]
-	Auch hier müssen Sie die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
+	> [AZURE.NOTE]Sie müssen erneut die Werte für <code>$user</code> und <code>$pwd</code> durch Ihren lokalen MySQL-Benutzernamen und das Kennwort aktualisieren.
 
 7. Fügen Sie nach dem Datenbankverbindungscode den Code für die Eingabe der Registrierungsinformationen in die Datenbank hinzu.
 
@@ -210,41 +208,41 @@ Befolgen Sie die unten stehenden Schritte, um die App lokal zu erstellen und aus
 			echo "<h3>No one is currently registered.</h3>";
 		}
 
-Nun können Sie [http://localhost/registration/index.php][localhost-index] aufrufen, um die App zu testen.
+Nun können Sie zu [http://localhost/registration/index.php][localhost-index] navigieren, um die Anwendung zu testen.
 
-##Abrufen der Verbindungsinformationen für MySQL und FTP
+## Abrufen der Verbindungsinformationen für MySQL und FTP
 
-Für die Herstellung einer Verbindung mit der in Web-Apps ausgeführten MySQL-Datenbank benötigen Sie die Verbindungsinformationen. Befolgen Sie die folgenden Schritte, um MySQL-Verbindungsinformationen abzurufen:
+Um eine Verbindung mit der in Web-Apps ausgeführten MySQL-Datenbank herzustellen, benötigen Sie die Verbindungsinformationen. Befolgen Sie die folgenden Schritte, um MySQL-Verbindungsinformationen abzurufen:
 
 1. Klicken Sie in der Ressourcengruppe auf die Datenbank:
 
-	![Auswählen einer Datenbank][select-database]
+	![Datenbank auswählen][select-database]
 
-2. Wählen Sie für der Datenbankzusammenfassung die Option **Eigenschaften**.
+2. Wählen Sie für der Datenbankzusammenfassung die Option **Eigenschaften** aus.
 
-    ![Auswählen von Eigenschaften][select-properties]
+    ![Eigenschaften auswählen][select-properties]
 	
-2. Notieren Sie sich die Werte für  `Database`, `Host`, `User Id` und  `Password`.
+2. Notieren Sie sich die Werte für `Database`, `Host`, `User Id` und `Password`.
 
-    ![Notieren von Eigenschaften][note-properties]
+    ![Eigenschaften notieren][note-properties]
 
-3. Klicken Sie in Ihrer Web-App rechts unten auf der Seite auf den Link **Download publish profile**:
+3. Klicken Sie in Ihrer Web-App rechts unten auf der Seite auf den Link **Veröffentlichungsprofil herunterladen**:
 
-	![Herunterladen von Veröffentlichungsprofilen][download-publish-profile]
+	![Veröffentlichungsprofil herunterladen][download-publish-profile]
 
-4. Öffnen Sie die Datei  `.publishsettings` in einem XML-Editor. 
+4. Öffnen Sie die Datei `.publishsettings` in einem XML-Editor.
 
-3. Suchen Sie das Element `<publishProfile >` mit `publishMethod="FTP"`, das ungefähr wie folgt aussieht:
+3.  Suchen Sie das Element `<publishProfile >` mit `publishMethod="FTP"`, das ungefähr wie folgt aussieht:
 
 		<publishProfile publishMethod="FTP" publishUrl="ftp://[mysite].azurewebsites.net/site/wwwroot" ftpPassiveMode="True" userName="[username]" userPWD="[password]" destinationAppUrl="http://[name].antdf0.antares-test.windows-int.net" 
 			...
 		</publishProfile>
 	
-Notieren Sie sich die Attribute  `publishUrl`, `userName` und `userPWD`.
+Notieren Sie sich die Attribute `publishUrl`, `userName` und `userPWD`.
 
-##Veröffentlichen der App
+## Veröffentlichen der App
 
-Nachdem Sie Ihre App lokal getestet haben, können Sie sie über FTP in Ihrer Web-App veröffentlichen. Sie müssen jedoch zuerst die Datenbankverbindungsinformationen in der Anwendung aktualisieren. Aktualisieren Sie mithilfe der Datenbankverbindungsinformationen, die Sie zuvor erhalten haben (im Abschnitt **Abrufen von MySQL- und FTP-Verbindungsinformationen)**, folgende Informationen in **sowohl** der Datei  `createdatabase.php` als auch in  `index.php` den entsprechenden Werten:
+Nachdem Sie Ihre App lokal getestet haben, können Sie sie über FTP in Ihrer Web-App veröffentlichen. Sie müssen jedoch zuerst die Datenbankverbindungsinformationen in der Anwendung aktualisieren. Aktualisieren Sie mithilfe der Datenbank-Verbindungsinformationen, die Sie zuvor erhalten haben (im Abschnitt **Abrufen der Verbindungsinformationen für MySQL und FTP**), folgende Informationen in **beiden** Dateien `createdatabase.php` und `index.php` mit den entsprechenden Werten:
 
 	// DB connection info
 	$host = "value of Data Source";
@@ -256,15 +254,15 @@ Jetzt können Sie die App mithilfe von FTP veröffentlichen.
 
 1. Öffnen Sie den FTP-Client Ihrer Wahl.
 
-2. Geben Sie den Wert  *host name portion* aus dem zuvor notierten Attribut  `publishUrl` in den FTP-Client ein.
+2. Geben Sie den *Hostnamenteil* des Attributs `publishUrl` ein, das Sie oben im FTP-Client notiert haben.
 
-3. Geben Sie die Attribute  `userName` und  `userPWD` ein, die Sie oben notiert haben, unverändert in den FTP-Client ein.
+3. Geben Sie die Attribute `userName` und `userPWD` ein, die Sie oben unverändert im FTP-Client notiert haben.
 
 4. Stellen Sie eine Verbindung her.
 
-Nachdem Sie eine Verbindung hergestellt haben, können Sie Dateien beliebig hoch- und herunterladen. Achten Sie darauf, dass Sie Dateien in das Stammverzeichnis  `/site/wwwroot` hochladen.
+Nachdem Sie eine Verbindung hergestellt haben, können Sie Dateien beliebig hoch- und herunterladen. Achten Sie darauf, dass Sie Dateien in das Stammverzeichnis `/site/wwwroot` hochladen.
 
-Nachdem Sie sowohl  `index.php` als auch  `createtable.php` hochgeladen haben, navigieren Sie zu **http://[Sitename].azurewebsites.net/createtable.php**, um die MySQL-Tabelle für die Anwendung zu erstellen. Navigieren Sie anschließend zu **http://[Sitename].azurewebsites.net/index.php**, um die Anwendung zu nutzen.
+Nachdem Sie sowohl `index.php` als auch `createtable.php` hochgeladen haben, navigieren Sie zu **http://[site name].azurewebsites.net/createtable.php**, um die MySQL-Tabelle für die Anwendung zu erstellen. Navigieren Sie anschließend zu **http://[site name].azurewebsites.net/index.php**, um die Anwendung zu nutzen.
  
 
 [install-php]: http://www.php.net/manual/en/install.php
@@ -290,4 +288,4 @@ Nachdem Sie sowohl  `index.php` als auch  `createtable.php` hochgeladen haben, n
 [management-portal]: https://portal.azure.com
 [download-publish-profile]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/download_publish_profile_3.png
 
-<!--HONumber=49-->
+<!--HONumber=54-->

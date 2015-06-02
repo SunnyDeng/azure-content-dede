@@ -1,6 +1,6 @@
-﻿<properties 
-	pageTitle="Erstellen einer API-App in Azure App Service" 
-	description="Dieser Artikel beschreibt, wie Sie mit Visual Studio 2013 eine API-App in Azure App Service erstellen" 
+<properties 
+	pageTitle="Erstellen einer ASP.NET-API-App in Azure App Service" 
+	description="Erfahren Sie, wie Sie mithilfe von Visual Studio 2013 eine ASP.NET-API-App in Azure App Service erstellen." 
 	services="app-service\api" 
 	documentationCenter=".net" 
 	authors="bradygaster" 
@@ -16,113 +16,50 @@
 	ms.date="02/19/2015" 
 	ms.author="bradyg;tarcher"/>
 
-# Erstellen einer API-App in Azure App Service
+# Erstellen einer ASP.NET-API-App in Azure App Service
 
 ## Übersicht
 
-Dies ist das erste von drei Lernprogrammen, die Ihnen den Einstieg in API-Apps in Azure App Service ermöglichen.
+In diesem Lernprogramm wird gezeigt, wie Sie ein ASP.NET-Web-API-Projekt von Grund auf neu erstellen und es zur Bereitstellung in der Cloud als [API-App](app-service-api-apps-why-best-platform.md) in [Azure App Service](app-service-value-prop-what-is.md) konfigurieren. Wenn Sie über ein vorhandenes Web-API-Projekt verfügen, das Sie in eine API-App konvertieren möchten, lesen Sie den Artikel [Konfigurieren eines Web-API-Projekts als API-App](./app-service-dotnet-create-api-app-visual-studio). Nachfolgenden Lernprogramme in dieser Reihe zeigen, wie Sie das in diesem Lernprogramm erstellte API-App-Projekt [bereitstellen](app-service-dotnet-deploy-api-app.md) und [debuggen](app-service-dotnet-remotely-debug-api-app.md).
 
-1. In diesem Lernprogramm erstellen Sie eine neue API-App und bereiten sie für die Bereitstellung in Ihrem Azure-Abonnement vor. 
-* In [Bereitstellen einer API-App](app-service-dotnet-create-api-app.md) stellen Sie die API-App in Ihrem Azure-Abonnement bereit.
-* In [Debuggen einer API-App](app-service-dotnet-remotely-debug-api-app.md) verwenden Sie Visual Studio zum Remotedebuggen des Codes, während er in Azure ausgeführt wird.
+Weitere Informationen zu API-Apps finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
 
 [AZURE.INCLUDE [install-sdk-2013-only](../includes/install-sdk-2013-only.md)]
 
-## Erstellen Ihrer ersten API-App ##
+Für dieses Lernprogramm ist Version 2.5.1 oder höher des Azure-SDK für .NET erforderlich.
 
-Öffnen Sie Visual Studio 2013, und wählen Sie **Datei -> Neues Projekt** aus. Wählen Sie die Vorlage **ASP.NET-Webanwendung**.  Benennen Sie das Projekt *ContactsList*, und klicken Sie auf **OK**.
+## Erstellen eines API-App-Projekts 
 
-![](./media/app-service-dotnet-create-api-app/01-filenew-v3.png)
+In diesem Abschnitt wird gezeigt, wie Sie mithilfe der Azure API-App-Projektvorlage eine neue API-App erstellen. Wenn Sie wissen möchten, wie Sie ein vorhandenes Web-API-Projekt als API-App konfigurieren, wechseln Sie zum [nächsten Abschnitt](#configure-a-web-api-project-as-an-api-app).
 
-Wählen Sie die Projektvorlage **Azure API-App** aus, und klicken Sie dann auf **OK**.
+1. Öffnen Sie Visual Studio 2013.
 
-![](./media/app-service-dotnet-create-api-app/02-api-app-template-v3.png)
+2. Wählen Sie **Datei > Neues Projekt** aus.
 
-Klicken Sie im Web-API-Projekt mit der rechten Maustaste auf den Ordner **Modelle**, und wählen Sie dann im Kontextmenü **Hinzufügen > Klasse**. 
+3. Wählen Sie die Vorlage **ASP.NET-Webanwendung**.
 
-![](./media/app-service-dotnet-create-api-app/03-add-new-class-v3.png) 
+4. Geben Sie dem Projekt den Namen *ContactsList*.
 
-Nennen Sie die neue Datei *Contact.cs*, und klicken Sie dann auf **Hinzufügen**. 
+	![](./media/app-service-dotnet-create-api-app/01-filenew-v3.png)
 
-![](./media/app-service-dotnet-create-api-app/0301-add-new-class-dialog-v3.png) 
+5. Klicken Sie auf **OK**.
 
-Ersetzen Sie den gesamten Inhalt der Datei durch den folgenden Code. 
+6. Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** die Projektvorlage **Azure API-App** aus.
 
-	namespace ContactsList.Models
-	{
-		public class Contact
-		{
-			public int Id { get; set; }
-			public string Name { get; set; }
-			public string EmailAddress { get; set; }
-		}
-	}
+	![](./media/app-service-dotnet-create-api-app/02-api-app-template-v3.png)
 
-Klicken Sie mit der rechten Maustaste auf den Ordner **Controller**, und wählen Sie dann im Kontextmenü **Hinzufügen > Controller**. 
+7. Klicken Sie auf **OK**, um das Projekt zu generieren.
 
-![](./media/app-service-dotnet-create-api-app/05-new-controller-v3.png)
+Visual Studio erstellt ein Web-API-Projekt, das zur Bereitstellung als API-App konfiguriert ist.
 
-Wählen Sie im Dialogfeld **Gerüst hinzufügen** die Option **Web API 2 Controller - Leer** aus, und klicken Sie auf **Hinzufügen**. 
+[AZURE.INCLUDE [app-service-api-review-metadata](../includes/app-service-api-review-metadata.md)]
 
-![](./media/app-service-dotnet-create-api-app/06-new-controller-dialog-v3.png)
+[AZURE.INCLUDE [app-service-api-define-api-app](../includes/app-service-api-define-api-app.md)]
 
-Nennen Sie den Controller **ContactsController**, und klicken Sie auf **Hinzufügen**. 
-
-![](./media/app-service-dotnet-create-api-app/07-new-controller-name-v2.png)
-
-Ersetzen Sie den Code in dieser Datei durch den folgenden Code. 
-
-	using ContactsList.Models;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Net;
-	using System.Net.Http;
-	using System.Threading.Tasks;
-	using System.Web.Http;
-	
-	namespace ContactsList.Controllers
-	{
-	    public class ContactsController : ApiController
-	    {
-	        [HttpGet]
-	        public IEnumerable<Contact> Get()
-	        {
-	            return new Contact[]{
-					new Contact { Id = 1, EmailAddress = "barney@contoso.com", Name = "Barney Poland"},
-					new Contact { Id = 2, EmailAddress = "lacy@contoso.com", Name = "Lacy Barrera"},
-                	new Contact { Id = 3, EmailAddress = "lora@microsoft.com", Name = "Lora Riggs"}
-	            };
-	        }
-	    }
-	}
-
-API-App-Projekte sind aktiviert mit automatischer [Swagger](http://swagger.io/ "Official Swagger information")-Metadatengenerierung und einer API-Testseite. Standardmäßig ist die API-Testseite deaktiviert. Öffnen Sie zum Aktivieren der API-Testseite die Datei *App_Start/SwaggerConfig.cs*. Suchen Sie nach **EnableSwaggerUI**:
-
-![](./media/app-service-dotnet-create-api-app/12-enable-swagger-ui-with-box.png)
-
-Entfernen Sie die Kommentare in den folgenden Codezeilen:
-
-        })
-    .EnableSwaggerUi(c =>
-        {
-
-Wenn der Vorgang abgeschlossen ist, sollte die Datei in Visual Studio 2013 wie folgt aussehen.
-
-![](./media/app-service-dotnet-create-api-app/13-enable-swagger-ui-with-box.png)
-
-Um die API-Testseite anzuzeigen, führen Sie die App lokal aus, und navigieren Sie zu`/swagger`. 
-
-![](./media/app-service-dotnet-create-api-app/14-swagger-ui.png)
-
-Klicken Sie auf die Schaltfläche **Testen Sie es**. Sie sehen, dass die API funktioniert und das erwartete Ergebnis zurückgibt. 
-
-![](./media/app-service-dotnet-create-api-app/15-swagger-ui-post-test.png)
+[AZURE.INCLUDE [app-service-api-direct-deploy-metadata](../includes/app-service-api-direct-deploy-metadata.md)]
 
 ## Nächste Schritte
 
-Die API-App kann jetzt bereitgestellt werden. Dazu können Sie das Lernprogramm [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
+Ihre API-App kann jetzt bereitgestellt werden. Dazu können Sie das Lernprogramm [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
 
-Weitere Informationen finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md)
-
-<!--HONumber=49-->
+<!--HONumber=54-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden des Anwendungsblocks (.NET) für die automatische Skalierung - Azure" 
+	pageTitle="Verwenden des Anwendungsblocks (.NET) für die automatische Skalierung – Azure" 
 	description="Hier erfahren Sie, wie Sie die Anwendung für die automatische Skalierung verwenden. Die Codebeispiele sind in C# geschrieben und verwenden die .NET API." 
 	services="cloud-services" 
 	documentationCenter=".net" 
@@ -24,18 +24,11 @@
 
 # Verwenden des Anwendungsblocks für die automatische Skalierung
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Anwendungsblock für die automatische Skalierung im [Microsoft Enterprise Library 5.0 Integration Pack for Azure][] demonstriert. Die Beispiele sind in C# geschrieben# und verwenden die .NET API. Die behandelten Szenarien umfassen das **Hosten des Blocks**, das **Verwenden von Einschränkungsregeln** und das **Verwenden von reaktiven Regeln**. Weitere Informationen zum Anwendungsblock für die automatische Skalierung finden Sie im Abschnitt [Nächste Schritte][].
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Anwendungsblock für die automatische Skalierung im [Microsoft Enterprise Library 5.0 Integration Pack for Azure][] demonstriert. Die Beispiele sind in C# geschrieben und verwenden die .NET API. Die behandelten Szenarien umfassen das **Hosten des Blocks**, das **Verwenden von Einschränkungsregeln** und das **Verwenden von reaktiven Regeln**. Weitere Informationen zum Anwendungsblock für die automatische Skalierung finden Sie im Abschnitt [Nächste Schritte][].
 
 ## Inhaltsverzeichnis
 
-[Was ist der Anwendungsblock für die automatische Skalierung?][]   
- [Konzepte][]   
- [Sammeln von Leistungsindikatordaten in der Azure-Zielanwendung][]:   
- [Einrichten einer Hostanwendung für den Anwendungsblock für die automatische Skalierung][]:   
- [Vorgehensweise: Instanziieren und Ausführen der automatischen Skalierung][] [Gewusst wie: Definieren des Dienstmodells][]   
- [Vorgehensweise: Definieren der Regeln für die automatische Skalierung][]   
- [Vorgehensweise: Konfigurieren des Anwendungsblocks für die automatische Skalierung][]   
- [Nächste Schritte][]
+[Was ist der Anwendungsblock für die automatische Skalierung?][] [Konzepte][] [Erfassen von Leistungsindikatordaten aus der Azure-Zielanwendung][] [Einrichten einer Hostanwendung für den Anwendungsblock für die automatische Skalierung][] [Instanziieren und Ausführen der automatischen Skalierung][] [Definieren des Dienstmodells][] [Definieren der Regeln für die automatische Skalierung][] [Konfigurieren des Anwendungsblocks für die automatische Skalierung][] [Nächste Schritte][]
 
 ## <a id="WhatIs"> </a>Was ist der Anwendungsblock für die automatische Skalierung?
 
@@ -49,23 +42,23 @@ Der Anwendungsblock für die automatische Skalierung ist Teil des [Microsoft Ent
 
 Im folgenden Diagramm stellt die grüne Linie die Anzahl der ausgeführten Instanzen einer Azure-Rolle über einen Zeitraum von zwei Tagen dar. Die Anzahl der Instanzen ändert sich mit der Zeit automatisch entsprechend einer Reihe von Regeln für die automatische Skalierung.
 
-![Diagramm eines Beispiels für die automatische Skalierung](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling01.png)
+![Diagramm mit Beispiel für automatische Skalierung](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling01.png)
 
 Im Block wird das Verhalten der automatischen Skalierung für Ihre Anwendung mit zwei Arten von Regeln definiert:
 
--   **Einschränkungsregeln:** Verwenden Sie eine **Einschränkungsregel**, wenn Sie eine obere und untere Grenze für die Anzahl der Instanzen festlegen möchten, z. B. wenn Sie zwischen 8:00 und 10:00 Uhr morgens mindestens vier und maximal sechs Instanzen wünschen. Im Diagramm stellen die rote und die blaue Linie die Einschränkungsregeln dar. An Punkt **A** im Diagramm nimmt die Mindestanzahl an Rolleninstanzen z. B. von zwei auf vier zu, damit die während dieser Zeit zu erwartende Zunahme der Arbeitsauslastung der Anwendung bewältigt werden kann. An Punkt **B** im Diagramm wird verhindert, dass die Anzahl an Rolleninstanzen auf mehr als fünf zunimmt, um die laufenden Kosten der Anwendung zu steuern.
+-   **Einschränkungsregeln:** Verwenden Sie eine **Einschränkungsregel**, wenn Sie eine obere und untere Grenze für die Anzahl der Instanzen festlegen möchten, z. B. wenn es zwischen 8:00 und 10:00 Uhr morgens mindestens vier und maximal sechs Instanzen geben soll. Im Diagramm stellen die rote und die blaue Linie die Einschränkungsregeln dar. An Punkt **A** im Diagramm nimmt die Mindestanzahl an Rolleninstanzen z. B. von zwei auf vier zu, damit die während dieser Zeit zu erwartende Zunahme der Arbeitsauslastung der Anwendung bewältigt werden kann. An Punkt **B** im Diagramm wird verhindert, dass die Anzahl an Rolleninstanzen auf mehr als fünf zunimmt, um die laufenden Kosten der Anwendung zu steuern.
 
--   **Reaktive Regeln:** Um die Anzahl der Rolleninstanzen an unvorhersehbare Änderungen der Nachfrage anpassen zu können, verwenden Sie **reaktive Regeln**. An Punkt **C** im Diagramm reduziert der Block die Anzahl an Rolleninstanzen entsprechend der verringerten Arbeitsauslastung automatisch von vier auf drei. An Punkt **D** erkennt der Block eine Zunahme der Arbeitsauslastung und erhöht die Anzahl ausgeführter Rolleninstanzen automatisch von drei auf vier.
+-   **Reaktive Regeln:** Verwenden Sie **reaktive Regeln**, damit die Anzahl der Rolleninstanzen an unvorhersehbare Nachfrageänderungen angepasst werden kann. An Punkt **C** im Diagramm reduziert der Block die Anzahl an Rolleninstanzen entsprechend der verringerten Arbeitsauslastung automatisch von vier auf drei. An Punkt **D** erkennt der Block eine Zunahme der Arbeitsauslastung und erhöht die Anzahl ausgeführter Rolleninstanzen automatisch von drei auf vier.
 
 Die Konfigurationseinstellungen des Blocks werden an zwei Orten gespeichert:
 
--   **Regelspeicher:** Der Regelspeicher enthält die Unternehmenskonfiguration, eine Liste aller Regeln für die automatische Skalierung, die Sie für Ihre Azure-Anwendung definiert haben. Bei diesem Speicher handelt es sich in der Regel um eine XML-Datei, die sich an einem Ort befindet, wo sie vom Anwendungsblock für die automatische Skalierung gelesen werden kann, z. B. im Azure-Blob-Speicher oder in einer lokalen Datei.
+-   **Regelspeicher:** Der Regelspeicher enthält die Unternehmenskonfiguration, eine Liste aller Regeln für die automatische Skalierung, die Sie für Ihre Azure-Anwendung definiert haben. Bei diesem Speicher handelt es sich in der Regel um eine XML-Datei, die sich an einem Ort befindet, wo sie vom Anwendungsblock für die automatische Skalierung gelesen werden kann, z. B. im Azure-Blobspeicher oder in einer lokalen Datei.
 
--   **Dienstinformationsspeicher:** Im Dienstinformationsspeicher wird die Betriebskonfiguration, das Dienstmodell der Azure-Anwendung, abgelegt. Dieses Dienstmodell umfasst alle Informationen über Ihre Azure-Anwendung (wie Rollennamen und Speicherkontodetails), die der Block benötigt, um Datenpunkte in der Azure-Zielanwendung sammeln und Skalieroperationen durchführen zu können.
+-   **Dienstinformationsspeicher:** Im Dienstinformationsspeicher wird die Betriebskonfiguration, sprich das Dienstmodell der Azure-Anwendung, abgelegt. Dieses Dienstmodell umfasst alle Informationen über Ihre Azure-Anwendung (wie Rollennamen und Speicherkontodetails), die der Block benötigt, um Datenpunkte in der Azure-Zielanwendung sammeln und Skalieroperationen durchführen zu können.
 
-## <a id="PerfCounter"> </a>Sammeln von Leistungsindikatordaten in der Azure-Zielanwendung:
+## <a id="PerfCounter"> </a>Erfassen von Leistungsindikatordaten aus der Azure-Zielanwendung
 
-Bei der Definition reaktiver Regeln können Leistungsindikatordaten verwendet werden. Eine reaktive Regel kann z. B. die CPU-Auslastung einer Azure-Rolle überwachen, um festzustellen, ob der Block eine Skalieroperation auslösen soll. Der Block liest Leistungsindikatordaten aus der Azure-Diagnose-Tabelle mit dem Namen **WADPerformanceCountersTable** im Azure-Speicher.
+Bei der Definition reaktiver Regeln können Leistungsindikatordaten verwendet werden. Eine reaktive Regel kann z. B. die CPU-Auslastung einer Azure-Rolle überwachen, um festzustellen, ob der Block eine Skalieroperation auslösen soll. Der Block liest Leistungsindikatordaten aus der Azure-Diagnose-Tabelle mit dem Namen **WADPerformanceCountersTable** im Azure-Speicher.
 
 Standardmäßig schreibt Azure keine Leistungsindikatordaten in die Azure-Diagnose-Tabelle im Azure-Speicher. Um diese Daten zu speichern, müssen Sie daher die Rollen ändern, deren Leistungsindikatordaten Sie sammeln möchten. Ausführliche Informationen zum Aktivieren von Leistungsindikatoren in Ihrer Anwendung finden Sie unter [Verwenden von Leistungsindikatoren in Azure][].
 
@@ -79,7 +72,7 @@ Bevor Sie den Anwendungsblock für die automatische Skalierung in Ihrem Visual S
 
 Gehen Sie nach der Installation des NuGet-Paket-Managers folgendermaßen vor, um das NuGet-Paket für die automatische Skalierung in Ihrer Anwendung zu installieren:
 
-1.  Öffnen Sie das Fenster der **NuGet-Paket-Manager-Konsole**. Wählen Sie im Menü **Extras** den Eintrag **Bibliothekspaket-Manager** und danach **Paket-Manager-Konsole** aus.
+1.  Öffnen Sie das Fenster der **NuGet-Paket-Manager-Konsole**. Wählen Sie im Menü **Extras** den Eintrag **Library Package Manager** und danach **Paket-Manager-Konsole** aus.
 
 2.  Geben Sie im Fenster der NuGet-Paket-Manager-Konsole den folgenden Befehl ein:
 
@@ -87,12 +80,12 @@ Gehen Sie nach der Installation des NuGet-Paket-Managers folgendermaßen vor, um
 
 Wenn Sie das NuGet-Paket installieren, wird Ihr Projekt mit allen erforderlichen Assemblys und Referenzen aktualisiert, die Sie benötigen, um den Anwendungsblock für die automatische Skalierung verwenden zu können. Ihr Projekt umfasst jetzt die XML-Schemadateien mit Regeldefinitionen für die automatische Skalierung und Informationen für den Dienst für die automatische Skalierung. Zu dem Projekt gehört jetzt auch eine Infodatei mit wichtigen Informationen über den Anwendungsblock für die automatische Skalierung:
 
-![files configured by autoscaling NuGet package](./media/cloud-services-dotnet-autoscaling-application-block/auotscaling02.png)
+![Vom NuGet-Paket für die automatische Skalierung konfigurierte Dateien](./media/cloud-services-dotnet-autoscaling-application-block/auotscaling02.png)
 
 
 ### Festlegen des Zielframeworks auf .NET Framework 4
 
-Ihr Projekt muss auf .NET Framework 4 verweisen. So ändern oder überprüfen Sie das Zielframework
+Ihr Projekt muss auf .NET Framework 4 verweisen. So ändern oder überprüfen Sie das Zielframework
 
 1.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Eigenschaften** aus.
 
@@ -108,15 +101,15 @@ Fügen Sie am Anfang aller C#-Dateien, in denen Sie programmgesteuert auf den An
     using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
     using Microsoft.Practices.EnterpriseLibrary.WindowsAzure.Autoscaling;
 
-## <a id="Instantiate"> </a>Vorgehensweise: Instanziieren und Ausführen der automatischen Skalierung
+## <a id="Instantiate"> </a>Instanziieren und Ausführen der automatischen Skalierung
 
-Verwenden Sie die Methode **IServiceLocator.GetInstance**, um die automatische Skalierung zu instanziieren, und rufen Sie anschließend die Methode **Autoscaler.Start** auf, um die **automatische Skalierung** auszuführen.
+Verwenden Sie die **IServiceLocator.GetInstance**-Methode, um die automatische Skalierung zu instanziieren, und rufen Sie anschließend die **Autoscaler.Start**-Methode auf, um die **automatische Skalierung** auszuführen.
 
     Autoscaler scaler =
         EnterpriseLibraryContainer.Current.GetInstance<Autoscaler>();
     scaler.Start();
 
-## <a id="DefineServiceModel"> </a>Vorgehensweise: Definieren des Dienstmodells
+## <a id="DefineServiceModel"> </a>Definieren des Dienstmodells
 
 In der Regel speichern Sie Ihr Dienstmodell (eine Beschreibung Ihrer Azure-Umgebung, die Informationen über Abonnements, gehostete Dienste, Rollen und Speicherkonten umfasst) in einer XML-Datei. Eine Kopie des Schemas dieser XML-Datei finden Sie in Ihrem Projekt in der Datei **AutoscalingServiceModel.xsd**. In Visual Studio stellt dieses Schema Intellisense und Prüfung bereit, wenn Sie die XML-Datei des Dienstmodells bearbeiten.
 
@@ -128,48 +121,31 @@ In Visual Studio müssen Sie sicherstellen, dass die Dienstmodelldatei in den Au
 
 2.  Legen Sie im Bereich "Eigenschaften" den Wert für **In Ausgabeverzeichnis kopieren** auf **Immer kopieren** fest.
 
-    ![Set Copy to Output Directory value](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling04.png)
+    ![Wert für "In Ausgabeverzeichnis kopieren" festlegen](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling04.png)
 
 
-	Das folgende Codebeispiel enthält ein Beispiel für ein Dienstmodell in der Datei **services.xml**:
+Das folgende Codebeispiel enthält ein Beispiel für ein Dienstmodell in der Datei **services.xml**:
 
-    	<?xml version="1.0" encoding="utf-8" ?>
-    	<serviceModel xmlns="http://schemas.microsoft.com/practices/2011/entlib/autoscaling/serviceModel">
-      	<subscriptions>
-        	<subscription name="[subscriptionname]"
-                      	certificateThumbprint="[managementcertificatethumbprint]"
-                      	subscriptionId="[subscriptionid]"
-                      	certificateStoreLocation="CurrentUser"
-                      	certificateStoreName="My">
-          	<services>
-            	<service dnsPrefix="[hostedservicednsprefix]" slot="Staging">
-              	<roles>
-                	<role alias="AutoscalingApplicationRole"
-                      	roleName="[targetrolename]"
-                      	wadStorageAccountName="targetstorage"/>
-              	</roles>
-            	</service>
-          	</services>
-          	<storageAccounts>
-            	<storageAccount alias="targetstorage"
-              	connectionString="DefaultEndpointsProtocol=https;AccountName=[storageaccountname];AccountKey=[storageaccountkey]">
-            	</storageAccount>
-          	</storageAccounts>
-        	</subscription>
-      	</subscriptions>
-    	</serviceModel>
+    <?xml version="1.0" encoding="utf-8" ?> <serviceModel xmlns="http://schemas.microsoft.com/practices/2011/entlib/autoscaling/serviceModel"> <subscriptions> <subscription name="[subscriptionname]"
+                      certificateThumbprint="[managementcertificatethumbprint]"
+                      subscriptionId="[subscriptionid]"
+                      certificateStoreLocation="CurrentUser"
+                      certificateStoreName="My"> <services> <service dnsPrefix="[hostedservicednsprefix]" slot="Staging"> <roles> <role alias="AutoscalingApplicationRole"
+                      roleName="[targetrolename]"
+                      wadStorageAccountName="targetstorage"/> </roles> </service> </services> <storageAccounts> <storageAccount alias="targetstorage"
+              connectionString="DefaultEndpointsProtocol=https;AccountName=[storageaccountname];AccountKey=[storageaccountkey]"> </storageAccount> </storageAccounts> </subscription> </subscriptions> </serviceModel>
 
-Ersetzen Sie die Werte in eckigen Klammern durch spezifische Werte für Ihre Umgebung und Zielanwendung. Viele dieser Werte finden Sie, wenn Sie sich beim [Azure-Verwaltungsportal][] anmelden.
+Ersetzen Sie die Werte in eckigen Klammern durch spezifische Werte für Ihre Umgebung und Zielanwendung. Viele dieser Werte finden Sie nach der Anmeldung beim [Azure-Verwaltungsportal][].
 
 Melden Sie sich beim Verwaltungsportal an.
 
--   **[subscriptionname]:** Wählen Sie einen Anzeigenamen, um auf das Azure-Abonnement zu verweisen, das die Anwendung enthält, in der Sie die automatische Skalierung verwenden möchten.
+-   **[subscriptionname]:** Wählen Sie einen Anzeigenamen aus, um auf das Azure-Abonnement zu verweisen, das die Anwendung enthält, in der Sie die automatische Skalierung verwenden möchten.
 
 -   **[subscriptionid]:** Die eindeutige ID des Azure-Abonnements, das die Anwendung enthält, in der Sie die automatische Skalierung verwenden möchten.
 
     1.  Klicken Sie im Azure-Verwaltungsportal auf **Cloud-Dienste**.
 
-    2.  Klicken Sie in der Liste der Cloud-Dienste auf den Dienst, der die Anwendung hostet, in der Sie die automatische Skalierung verwenden möchten. Im Bereich "Auf einen Blick" auf der rechten Seite wird die **Abonnement-ID** angezeigt.
+    2.  Klicken Sie in der Liste der Cloud-Dienste auf den Dienst, der die Anwendung hostet, in der Sie die automatische Skalierung verwenden möchten. Im Bereich "Schnelleinsicht" auf der rechten Seite wird die **Abonnement-ID** angezeigt.
 
         ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling05.png)
 
@@ -195,9 +171,9 @@ Melden Sie sich beim Verwaltungsportal an.
 
     1.  Klicken Sie im Azure-Verwaltungsportal auf **Speicher**.
 
-    2.  Wählen Sie in der Liste der Speicherkonten  das Speicherkonto aus, das Sie verwenden. In der Spalte **Name** wird der **Name** angezeigt.
+    2.  Wählen Sie in der Liste der Speicherkonten das Speicherkonto aus, das Sie verwenden. In der Spalte **Name** wird der Name **Name** angezeigt.
 
-    3.  Klicken Sie unten auf dem Bildschirm auf die Schaltfläche **Schlüssel verwalten**, um den primären Zugriffsschlüssel zu erhalten.
+    3.  Klicken Sie unten auf dem Bildschirm auf die Schaltfläche **Manage Keys**, um den primären Zugriffsschlüssel zu erhalten.
 
         ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling08.png)
   
@@ -213,7 +189,7 @@ Melden Sie sich beim Verwaltungsportal an.
 
 Weitere Informationen zum Inhalt der Dienstmodelldatei finden Sie unter [Speichern der Dienstinformationsdaten][].
 
-## <a id="DefineAutoscalingRules"> </a>Vorgehensweise: Definieren der Regeln für die automatische Skalierung
+## <a id="DefineAutoscalingRules"> </a>Definieren der Regeln für die automatische Skalierung
 
 Normalerweise speichern Sie die Regeln für die automatische Skalierung, die die Anzahl der Rolleninstanzen in der Zielanwendung steuern, in einer XML-Datei. Eine Kopie des Schemas dieser XML-Datei finden Sie in Ihrem Projekt in der Datei **AutoscalingRules.xsd**. In Visual Studio stellt dieses Schema Intellisense und Prüfung bereit, wenn Sie die XML-Datei bearbeiten.
 
@@ -260,23 +236,23 @@ Das folgende Codebeispiel enthält ein Beispiel für einen Regelsatz in der Date
       </reactiveRules>
       <operands>
         <performanceCounter alias="WebRoleA_CPU_Avg_5m"
-          performanceCounterName="\Processor(_Total)\% Processor Time"
+          performanceCounterName="\Processor(_Total)% Processor Time"
           source ="AutoscalingApplicationRole"
           timespan="00:05:00" aggregate="Average"/>
       </operands>
     </rules>
 
-Dieses Beispiel enthält drei Regeln für die automatische Skalierung (eine **Einschränkungsregel** und zwei **reaktive Regeln**), die ein Ziel namens **AutoscalingApplicationRole** bearbeiten. Dabei handelt es sich um den Alias einer Rolle, die im **Dienstmodell** definiert ist:
+Dieses Beispiel enthält drei Regeln für die automatische Skalierung (eine **Einschränkungsregel** und zwei **reaktive Regeln**), die ein Ziel namens **AutoscalingApplicationRole** bearbeiten. Dabei handelt es sich um den Alias einer Rolle, die die im **Dienstmodell** definiert ist:
 
 -   Die Einschränkungsregel ist immer aktiv und legt die Mindestanzahl an Rolleninstanzen auf zwei und die Höchstzahl an Rolleninstanzen auf sechs fest.
 
 -   Die beiden reaktiven Regeln verwenden einen **Operanden** namens **WebRoleA_CPU_Avg_5m**, der die durchschnittliche CPU-Auslastung während der letzten fünf Minuten für eine Azure-Rolle mit dem Namen **AutoscalingApplicationRole** prüft. Diese Rolle ist im **Dienstmodell** definiert.
 
--   Die reaktive Rolle mit dem Namen **ScaleUpOnHighUtilization erhöht** die Zahl der Instanzen der Zielrolle um eins, wenn die durchschnittliche CPU-Auslastung während der letzten fünf Minuten größer als oder gleich 60 % war.
+-   Die reaktive Rolle mit dem Namen **ScaleUpOnHighUtilization** erhöht die Zahl der Instanzen der Zielrolle um eins, wenn die durchschnittliche CPU-Auslastung während der letzten fünf Minuten größer als oder gleich 60 % war.
 
--   Die reaktive Rolle mit dem Namen **ScaleDownOnLowUtilization** verringert die Zahl der Instanzen der Zielrolle um eins, wenn die durchschnittliche CPU-Auslastung während der letzten fünf Minuten unter 60 % lag.
+-   Die reaktive Rolle mit dem Namen **ScaleDownOnLowUtilization** verringert die Zahl der Instanzen der Zielrolle um eins, wenn die durchschnittliche CPU-Auslastung während der letzten fünf Minuten unter 60 % lag.
 
-## <a id="Configure"> </a>Vorgehensweise: Konfigurieren des Anwendungsblocks für die automatische Skalierung
+## <a id="Configure"> </a>Konfigurieren des Anwendungsblocks für die automatische Skalierung
 
 Nachdem Sie das Dienstmodell und die Regeln für die automatische Skalierung definiert haben, müssen Sie den Anwendungsblock für die automatische Skalierung konfigurieren, um das Modell und die Regeln verwenden zu können. Diese Informationen zur Betriebskonfiguration werden in der Anwendungskonfigurationsdatei gespeichert.
 
@@ -286,32 +262,28 @@ Standardmäßig erwartet der Anwendungsblock für die automatische Skalierung, d
 
 1.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die Datei **App.config**, und klicken Sie anschließend auf **Edit Configuration File**.
 
-2.  Klicken Sie im Menü **Blöcke** auf **Add Autoscaling Settings**:  
-	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling10.png)
+2.  Klicken Sie im Menü **Blöcke** auf **Einstellungen für automatische Skalierung hinzufügen**:![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling10.png)
   
-3.  Erweitern Sie **Autoscaling Settings**, und klicken Sie anschließend auf die Auslassungszeichen (...) neben **Data Points Store Storage Account**, fügen Sie den **Kontonamen** und den **Kontoschlüssel** des Azure-Speicherkontos hinzu, in dem der Block die gesammelten Datenpunkte speichert (siehe [Gewusst wie: Definieren des Dienstmodells][], wenn Sie nicht wissen, wo Sie diese Werte finden), und klicken Sie dann auf **OK**:  
+3.  Erweitern Sie die **Einstellungen für die automatische Skalierung**, und klicken Sie anschließend auf die Auslassungszeichen (...) neben **Datenpunktespeicher-Speicherkonto**, fügen Sie den **Kontonamen** und den **Kontoschlüssel** des Azure-Speicherkontos hinzu, in dem der Block die erfassten Datenpunkte speichert (siehe [Definieren des Dienstmodells][], wenn Sie nicht wissen, wo sich diese Werte befinden). Klicken Sie dann auf **OK**:
 
 	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling11.png)
 
-4.  Erweitern Sie den Abschnitt **Autoscaling Settings**, sodass die Abschnitte **Rules Store** und **Service Information Store** angezeigt werden. Standardmäßig sind sie für die Verwendung des Azure-Blob-Speichers konfiguriert:  
-	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling12.png)
+4.  Erweitern Sie den Abschnitt **Autoscaling Settings**, sodass die Abschnitte **Regelspeicher** und **Service Information Store** angezeigt werden. Standardmäßig sind sie für die Verwendung des Azure-Blobsspeichers konfiguriert: ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling12.png)
 
 
-5.  Klicken Sie auf das Pluszeichen (+) neben **Rules Store**, zeigen Sie auf **Set Rules Store**, und klicken Sie dann auf **Use Local File Rules Store** und anschließend auf **Yes**.
+5.  Klicken Sie auf das Pluszeichen (+) neben **Regelspeicher**, zeigen Sie auf **Set Rules Store**, klicken Sie dann auf **Use Local File Rules Store**, und klicken Sie auf **Ja**.
 
-6.  Geben Sie in das Feld **File Name** den Dateinamen **rules.xml** ein. Dies ist der Name der Datei, welche die Regeln für die automatische Skalierung enthält:  
-	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling13.png)
-
-
-7.  Klicken Sie auf das Pluszeichen (+) neben **Service Information Store**, zeigen Sie auf **Set Service Information Store**, und klicken Sie dann auf **Use Local File Service Information Store** und anschließend auf **Yes**.
-
-8.  Geben Sie in das Feld **File Name** den Dateinamen **services.xml** ein. Dies ist der Name der Datei, welche die Regeln für die automatische Skalierung enthält:  
-	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling14.png)
+6.  Geben Sie in das Feld **Dateiname** den Dateinamen **rules.xml** ein. Dies ist der Name der Datei, die die Regeln für die automatische Skalierung enthält: ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling13.png)
 
 
-9.  Klicken Sie im Fenster "Enterprise Library Configuration" im Menü **File** auf **Save**, um die Änderungen an der Konfiguration zu speichern. Klicken Sie danach im Fenster "Enterprise Library Configuration" im Menü **File** auf **Exit**.
+7.  Klicken Sie auf das Pluszeichen (+) neben **Service Information Store**, zeigen Sie auf **Set Service Information Store**, klicken Sie dann auf **Use Local File Service Information Store**, und klicken Sie auf **Ja**.
 
-Um detaillierte Informationen über die Aktionen zu erhalten, die vom Anwendungsblock für die automatische Skalierung ausgeführt werden, müssen Sie die von diesem geschriebenen Protokollmeldungen erfassen. Wenn Sie den Block z. B. in einer Konsolenanwendung hosten, können Sie die Protokollmeldungen in Visual Studio im Ausgabefenster anzeigen. In den folgenden Abschnitten wird erläutert, wie Sie dieses Verhalten konfigurieren.
+8.  Geben Sie in das Feld **File Name** den Dateinamen **services.xml** ein. Dies ist der Name der Datei, die die Regeln für die automatische Skalierung enthält: ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling14.png)
+
+
+9.  Klicken Sie im Fenster "Enterprise Library Configuration" im Menü **Datei** auf **Speichern**, um die Änderungen an der Konfiguration zu speichern. Klicken Sie danach im Fenster "Enterprise Library Configuration" im Menü **Datei** auf **Beenden**.
+
+Um detaillierte Informationen über die Aktionen zu erhalten, die vom Anwendungsblock für die automatische Skalierung ausgeführt werden, müssen Sie die von diesem geschriebenen Protokollmeldungen erfassen. Wenn Sie den Block z. B. in einer Konsolenanwendung hosten, können Sie die Protokollmeldungen in Visual Studio im Ausgabefenster anzeigen. In den folgenden Abschnitten wird erläutert, wie Sie dieses Verhalten konfigurieren.
 
 ### Konfigurieren der Protokollierung in der Hostanwendung des Anwendungsblocks für die automatische Skalierung
 
@@ -333,7 +305,7 @@ Um detaillierte Informationen über die Aktionen zu erhalten, die vom Anwendungs
 
 2.  Speichern Sie die Änderungen.
 
-Jetzt können Sie die Host-Konsolenanwendung für den Anwendungsblock für die automatische Skalierung ausführen und beobachten, wie die Regeln für die automatische Skalierung in der Azure-Zielanwendung arbeiten. Wenn Sie die Host-Konsolenanwendung ausführen, werden in Visual Studio im Ausgabefenster Meldungen ähnlich den folgenden angezeigt. Diese Protokollmeldungen helfen Ihnen, das Verhalten des Blocks zu verstehen. Sie geben z. B. an, welche Regeln dem Block entsprechen und welche Aktionen der Block ausführt.
+Jetzt können Sie die Host-Konsolenanwendung für den Anwendungsblock für die automatische Skalierung ausführen und beobachten, wie die Regeln für die automatische Skalierung in der Azure-Zielanwendung arbeiten. Wenn Sie die Host-Konsolenanwendung ausführen, werden in Visual Studio im Ausgabefenster Meldungen ähnlich den folgenden angezeigt. Diese Protokollmeldungen helfen Ihnen, das Verhalten des Blocks zu verstehen. Sie geben z. B. an, welche Regeln dem Block entsprechen und welche Aktionen der Block ausführt.
 
     Autoscaling General Verbose: 1002 : Rule match.
     [BEGIN DATA]{"EvaluationId":"6b27dfa0-b671-44a3-adf1-bb1e0b7c3726",
@@ -370,41 +342,41 @@ Jetzt können Sie die Host-Konsolenanwendung für den Anwendungsblock für die a
 Da Sie jetzt die Grundlagen der Verwendung des Anwendungsblocks für die automatische Skalierung kennen gelernt haben, folgen Sie diesen Links, um zu erfahren, wie Sie komplexere Szenarien mit automatischer Skalierung implementieren können:
 
 -   [Hosten des Anwendungsblocks für die automatische Skalierung in einer Workerrolle][]
--   [Implementieren des Einschränkungsverhaltens][]
--   [Grundlegendes zu Regelrängen und -abstimmung][]
+-   [Implementieren des Drosselungsverhaltens][]
+-   [Grundlegendes zu Regelrängen und Abstimmung][]
 -   [Erweitern und Ändern des Anwendungsblocks für die automatische Skalierung][]
 -   [Verwenden des Optimizing Stabilizer zur Verhinderung hochfrequenter Oszillation und zur Optimierung von Kosten][]
 -   [Verwenden von Benachrichtigungen und manueller Skalierung][]
 -   [Definieren von Skalierungsgruppen][]
 -   [Verwenden der WASABiCmdlets zum Bearbeiten des Blocks über Windows PowerShell][]
--   [Entwicklerhandbuch für Enterprise Library 5.0 Integration Pack for Azure][]
+-   [Entwicklerhandbuch für das Enterprise Library 5.0 Integration Pack for Azure][]
 -   [Wie Sage die Azure-Hostingkosten mithilfe der automatischen Skalierung reduziert][]
--   [Verringern der TechNet- und MSDN-Hostingkosten und der Umweltbelastung mit automatischer Skalierung in Azure][]
+-   [Reduzieren der TechNet- und MSDN-Hostingkosten und der Umweltbelastung mit automatischer Skalierung in Azure][]
 
-  [Microsoft Enterprise Library 5.0 Integration Pack for Azure]: http://go.microsoft.com/fwlink/?LinkID=235134
-  [Nächste Schritte]: #NextSteps
-  [Was ist der Anwendungsblock für die automatische Skalierung?]: #WhatIs
-  [Konzepte]: #Concepts
-  [Sammeln von Leistungsindikatordaten in der Azure-Zielanwendung]: #PerfCounter
-  [Einrichten einer Hostanwendung für den Anwendungsblock für die automatische Skalierung]: #CreateHost
-  [Vorgehensweise: Instanziieren und Ausführen der automatischen Skalierung]: #Instantiate
-  [Gewusst wie: Definieren des Dienstmodells]: #DefineServiceModel
-  [Vorgehensweise: Definieren der Regeln für die automatische Skalierung]: #DefineAutoscalingRules
-  [Vorgehensweise: Konfigurieren des Anwendungsblocks für die automatische Skalierung]: #Configure
-  [Verwenden von Leistungsindikatoren in Azure]: http://azure.microsoft.com/develop/net/common-tasks/performance-profiling/
-  [NuGet]: http://nuget.org/
-  [Azure-Verwaltungsportal]: http://manage.windowsazure.com
-  [Speichern der Dienstinformationsdaten]: http://msdn.microsoft.com/library/hh680878(PandP.50).aspx		
-  [Hosten des Anwendungsblocks für die automatische Skalierung in einer Workerrolle]: http://msdn.microsoft.com/library/hh680914(PandP.50).aspx
-  [Implementieren des Einschränkungsverhaltens]: http://msdn.microsoft.com/library/hh680896(PandP.50).aspx
-  [Grundlegendes zu Regelrängen und -abstimmung]: http://msdn.microsoft.com/library/hh680923(PandP.50).aspx
-  [Erweitern und Ändern des Anwendungsblocks für die automatische Skalierung]: http://msdn.microsoft.com/library/hh680889(PandP.50).aspx
-  [Verwenden des Optimizing Stabilizer zur Verhinderung hochfrequenter Oszillation und zur Optimierung von Kosten]: http://msdn.microsoft.com/library/hh680951(PandP.50).aspx
-  [Verwenden von Benachrichtigungen und manueller Skalierung]: http://msdn.microsoft.com/library/hh680885(PandP.50).aspx
-  [Definieren von Skalierungsgruppen]: http://msdn.microsoft.com/library/hh680902(PandP.50).aspx
-  [Verwenden der WASABiCmdlets zum Bearbeiten des Blocks über Windows PowerShell]: http://msdn.microsoft.com/library/hh680938(PandP.50).aspx
-  [Entwicklerhandbuch für Enterprise Library 5.0 Integration Pack for Azure]: http://msdn.microsoft.com/library/hh680949(PandP.50).aspx
-  [Wie Sage die Azure-Hostingkosten mithilfe der automatischen Skalierung reduziert]: http://msdn.microsoft.com/library/jj838716(PandP.50).aspx
-  [Verringern der TechNet- und MSDN-Hostingkosten und der Umweltbelastung mit automatischer Skalierung in Azure]: http://msdn.microsoft.com/library/jj838718(PandP.50).aspx
+[Microsoft Enterprise Library 5.0 Integration Pack for Azure]: http://go.microsoft.com/fwlink/?LinkID=235134
+[Nächste Schritte]: #NextSteps
+[Was ist der Anwendungsblock für die automatische Skalierung?]: #WhatIs
+[Konzepte]: #Concepts
+[Erfassen von Leistungsindikatordaten aus der Azure-Zielanwendung]: #PerfCounter
+[Einrichten einer Hostanwendung für den Anwendungsblock für die automatische Skalierung]: #CreateHost
+[Instanziieren und Ausführen der automatischen Skalierung]: #Instantiate
+[Definieren des Dienstmodells]: #DefineServiceModel
+[Definieren der Regeln für die automatische Skalierung]: #DefineAutoscalingRules
+[Konfigurieren des Anwendungsblocks für die automatische Skalierung]: #Configure
+[Verwenden von Leistungsindikatoren in Azure]: http://www.windowsazure.com/develop/net/common-tasks/performance-profiling/
+[NuGet]: http://nuget.org/
+[Azure-Verwaltungsportal]: http://manage.windowsazure.com
+[Speichern der Dienstinformationsdaten]: http://msdn.microsoft.com/library/hh680878(PandP.50).aspx
+[Hosten des Anwendungsblocks für die automatische Skalierung in einer Workerrolle]: http://msdn.microsoft.com/library/hh680914(PandP.50).aspx
+[Implementieren des Drosselungsverhaltens]: http://msdn.microsoft.com/library/hh680896(PandP.50).aspx
+[Grundlegendes zu Regelrängen und Abstimmung]: http://msdn.microsoft.com/library/hh680923(PandP.50).aspx
+[Erweitern und Ändern des Anwendungsblocks für die automatische Skalierung]: http://msdn.microsoft.com/library/hh680889(PandP.50).aspx
+[Verwenden des Optimizing Stabilizer zur Verhinderung hochfrequenter Oszillation und zur Optimierung von Kosten]: http://msdn.microsoft.com/library/hh680951(PandP.50).aspx
+[Verwenden von Benachrichtigungen und manueller Skalierung]: http://msdn.microsoft.com/library/hh680885(PandP.50).aspx
+[Definieren von Skalierungsgruppen]: http://msdn.microsoft.com/library/hh680902(PandP.50).aspx
+[Verwenden der WASABiCmdlets zum Bearbeiten des Blocks über Windows PowerShell]: http://msdn.microsoft.com/library/hh680938(PandP.50).aspx
+[Entwicklerhandbuch für das Enterprise Library 5.0 Integration Pack for Azure]: http://msdn.microsoft.com/library/hh680949(PandP.50).aspx
+[Wie Sage die Azure-Hostingkosten mithilfe der automatischen Skalierung reduziert]: http://msdn.microsoft.com/library/jj838716(PandP.50).aspx
+[Reduzieren der TechNet- und MSDN-Hostingkosten und der Umweltbelastung mit automatischer Skalierung in Azure]: http://msdn.microsoft.com/library/jj838718(PandP.50).aspx
 
-<!--HONumber=45--> 
+<!--HONumber=54-->

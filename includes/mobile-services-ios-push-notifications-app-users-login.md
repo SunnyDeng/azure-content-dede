@@ -1,36 +1,14 @@
-﻿
-Als Nächstes müssen Sie die Methode zur Registrierung von Push-Benachrichtigungen ändern, um sicherzustellen, dass der Benutzer vor einem Registrierungsversuch authentifiziert wird. 
 
-1. Entfernen Sie in **QSAppDelegate.m** die Umsetzung des **DidFinishLaunchingWithOptions** vollständig:
+Als Nächstes müssen Sie die Methode zur Registrierung von Pushbenachrichtigungen ändern, um sicherzustellen, dass der Benutzer vor einem Registrierungsversuch authentifiziert wird.
 
-		
-		- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:
-		(NSDictionary *)launchOptions
-		{
-		    // Register for remote notifications
-		    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-		    UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
-		    return YES;
-		}
+1. Entfernen Sie aus **QSAppDelegate.m** die Implementierung von **didFinishLaunchingWithOptions** vollständig:
 
-2. Öffnen Sie die Projektdatei **QSTodoListViewController.m**, und fügen Sie den oben entfernten Code in der Methode **ViewDidLoad** zur ADD hinzu:
+2. Öffnen Sie **QSTodoListViewController.m** und fügen Sie folgenden Code an das Ende der **viewDidLoad**-Methode hinzu:
 
-	
-		- (void)viewDidAppear:(BOOL)animated
-		{
-		    MSClient *client = self.todoService.client;
-		
-		    if (client.currentUser != nil) {
-		        return;
-		    }
-		
-		    [client loginWithProvider:@"facebook" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
-		        [self refresh];
-		    }];
-		
-		    // Register for remote notifications
-		    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-		    UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
-		}
+```
+// Register for remote notifications
+[[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+```
 
-<!--HONumber=42-->
+<!--HONumber=54-->

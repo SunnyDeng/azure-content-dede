@@ -1,44 +1,44 @@
 <properties 
-	pageTitle="Integration von Azure Mobile Engagement für Windows Phone SDK" 
-	description="Verwendung der Engagement-API auf Windows Phone" 
+	pageTitle="Verwendung der Engagement-API auf Windows Phone" 
+	description="Verwendung der Engagement-API auf Windows Phone"
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
-	authors="lalathie" 
+	authors="piyushjo" 
 	manager="dwrede" 
-	editor="" /> 
+	editor="" />
 
 <tags 
 	ms.service="mobile-engagement" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="" 
+	ms.devlang="C#" 
 	ms.topic="article" 
-	ms.date="02/02/2015" 
-	ms.author="kapiteir" />
+	ms.date="04/07/2015" 
+	ms.author="piyushjo" />
 
-# Verwendung der Engagement-API auf Windows Phone
+#Verwendung der Engagement-API auf Windows Phone
 
-Dieses Dokument ist ein Zusatz zum Dokument [Integration von Mobile Engagement in Ihrer Windows Phone-App](mobile-engagement-windows-phone-integrate-engagement.md). Es bietet tiefergehende Details zur Verwendung der Engagement-API, um Ihre Anwendungsstatistik zu melden.
+Dieses Dokument ist ein Zusatz zum Dokument [Integration von Mobile Engagement in Ihrer Windows Phone Silverlight-App](../mobile-engagement-windows-phone-integrate-engagement/). Es bietet tiefergehende Details zur Verwendung der Engagement-API, um Ihre Anwendungsstatistik zu melden.
 
-Wenn Engagement nur die Sitzungsaktivitäten der Anwendung, Abstürze und technische Informationen melden soll, ist es am einfachsten, wenn alle Ihre  `PhoneApplicationPage`-Unterklassen von der  `EngagementPage`-Klasse erben.
+Wenn Engagement nur die Sitzungsaktivitäten der Anwendung, Abstürze und technische Informationen melden soll, ist es am einfachsten, wenn alle Ihre `PhoneApplicationPage`-Unterklassen von der `EngagementPage`-Klasse erben.
 
-Wenn Sie darüber hinaus noch mehr Meldungen wünschen, z. B. wenn Sie anwendungsspezifische Ereignisse, Fehler und Aufträge melden möchten, oder wenn die Aktivitäten Ihrer Anwendung anders als in den  `EngagementPage`-Klassen implementiert gemeldet werden sollen, dann müssen Sie die Engagement-API verwenden.
+Wenn Sie darüber hinaus noch mehr Meldungen wünschen, z. B. wenn Sie anwendungsspezifische Ereignisse, Fehler und Aufträge melden möchten, oder wenn die Aktivitäten Ihrer Anwendung anders als in den `EngagementPage`-Klassen implementiert gemeldet werden sollen, dann müssen Sie die Engagement-API verwenden.
 
-Die Engagement-API wird von der  `EngagementAgent`-Klasse zur Verfügung gestellt. Sie können auf diese Methoden über `EngagementAgent.Instance` zugreifen.
+Die Engagement-API wird von der `EngagementAgent`-Klasse zur Verfügung gestellt. Sie können über `EngagementAgent.Instance` auf diese Methoden zugreifen.
 
-Auch wenn das Agent-Modul nicht initialisiert wurde, wird jeder Aufruf zur API verzögert und erneut ausgeführt, wenn der Agent verfügbar ist.
+Auch wenn das Agent-Modul nicht initialisiert wurde, wird jeder Aufruf zur API verzögert und erneut ausgeführt, sobald der Agent verfügbar ist.
 
-## Engagement-Konzepte
+##Engagement-Konzepte
 
 In den folgenden Abschnitten werden die Mobile Engagement-Konzepte für die Windows Phone-Plattform genauer dargestellt.
 
-### `Sitzung` und `Activity`
+### `Session` und `Activity`
 
-Eine *-Aktivität* wird normalerweise mit einer Seite der Anwendung in Zusammenhang gebracht, d. h. die *Aktivität* beginnt, wenn die Seite angezeigt wird, und wird beendet, wenn die Seite geschlossen wird: Dies ist der Fall, wenn das Engagement-SDK durch Verwendung der  `EngagementPage`-Klasse integriert ist.
+Eine *Aktivität* ist normalerweise  einer Seite der Anwendung zugeordnet, d. h. die *Aktivität* beginnt, wenn die Seite angezeigt wird, und wird beendet, wenn die Seite geschlossen wird: Dies ist der Fall, wenn das Engagement-SDK unter Verwendung der `EngagementPage`-Klasse integriert worden ist.
 
-Aber *Aktivitäten* können auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann eine bestimmte Seite in mehrere Unterteile geteilt werden, um weitere Informationen über die Verwendung dieser Seite zu erhalten (z. B. um zu erfahren, wie oft und wie lange Dialoge innerhalb dieser Seite verwendet werden).
+ *Aktivitäten* können aber auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann eine bestimmte Seite in mehrere Teile unterteilt werden, um weitere Informationen über die Verwendung dieser Seite zu erhalten (z. B. um zu erfahren, wie oft und wie lange Dialoge innerhalb dieser Seite verwendet werden).
 
-## Berichterstellung für Aktivitäten
+##Berichterstellung für Aktivitäten
 
 ### Benutzer startet eine neue Aktivität
 
@@ -46,9 +46,9 @@ Aber *Aktivitäten* können auch manuell mithilfe der Engagement-API gesteuert w
 
 			void StartActivity(string name, Dictionary<object, object> extras = null)
 
-Sie müssen  `StartActivity()` jedes Mal aufrufen, wenn sich die Benutzeraktivität ändert. Der erste Aufruf dieser Funktion startet eine neue Benutzersitzung.
+Sie müssen jedes Mal `StartActivity()` aufrufen, wenn sich die Benutzeraktivität ändert. Der erste Aufruf dieser Funktion startet eine neue Benutzersitzung.
 
-> [AZURE.IMPORTANT] Das Windows Phone-SDK ruft automatisch die EndActivity-Methode auf, wenn die Anwendung geschlossen wird. Daher wird DRINGEND empfohlen, die StartActivity-Methode aufzurufen, sobald sich die Aktivität des Benutzers ändert, und die EndActivity-Methode NIE aufzurufen, weil dadurch ein Beenden der aktuellen Sitzung erzwungen wird.
+> [AZURE.IMPORTANT]Das SDK ruft automatisch die EndActivity-Methode auf, wenn die Anwendung geschlossen wird. Daher wird DRINGEND empfohlen, die StartActivity-Methode aufzurufen, sobald sich die Aktivität des Benutzers ändert, und die EndActivity-Methode NIE aufzurufen, weil dadurch ein Beenden der aktuellen Sitzung erzwungen wird.
 
 #### Beispiel
 
@@ -60,17 +60,17 @@ Sie müssen  `StartActivity()` jedes Mal aufrufen, wenn sich die Benutzeraktivit
 
 			void EndActivity()
 
-Dies beendet die Aktivität und die Sitzung. Sie sollten diese Methode nur dann aufrufen, wenn Sie sich wirklich sicher sind.
+Sie müssen `EndActivity()` mindestens einmal aufrufen, wenn der Benutzer seine letzte Aktivität beendet. Dadurch wird das Engagement-SDK darüber informiert, dass sich der Benutzer derzeit im Leerlauf befindet und die Benutzersitzung geschlossen werden muss, sobald das Sitzungszeitlimit abläuft (wenn Ihr Aufruf `StartActivity()` von vor dem Sitzungszeitlimit abläuft, wird die Sitzung einfach fortgesetzt).
 
 #### Beispiel
 
 			EngagementAgent.Instance.EndActivity();
 
-## Berichterstellung für Aufträge
+##Berichterstellung für Aufträge
 
 ### Starten eines Auftrags
 
-#### Verweis
+#### Referenz-
 
 			void StartJob(string name, Dictionary<object, object> extras = null)
 
@@ -93,7 +93,7 @@ Sie können den Auftrag verwenden, um bestimmte Aufgaben eine Zeit lang nachzuve
 
 			void EndJob(string name)
 
-Sobald eine Aufgabe, die von einem Auftrag nachverfolgt wurde, beendet ist, sollten Sie die EndJob-Methode für diesen Auftrag aufrufen, indem Sie den Auftragsnamen angeben.
+Sobald eine Aufgabe, die von einem Auftrag nachverfolgt wird, beendet ist, sollten Sie die EndJob-Methode für diesen Auftrag aufrufen, indem Sie den Auftragsnamen angeben.
 
 #### Beispiel
 
@@ -102,7 +102,7 @@ Sobald eine Aufgabe, die von einem Auftrag nachverfolgt wurde, beendet ist, soll
 			
 			EngagementAgent.Instance.EndJob("uploadData");
 
-## Berichterstellung für Ereignisse
+##Berichterstellung für Ereignisse
 
 Es gibt drei Arten von Ereignissen:
 
@@ -140,7 +140,7 @@ Sitzungsereignisse werden normalerweise verwendet, um die Aktionen eines Benutze
 			
 			EngagementAgent.Instance.SendSessionEvent("sessionEvent", null);
 
-**With data :**
+**Mit Daten:**
 
 			Dictionary<object, object> extras = new Dictionary<object,object>();
 			extras.Add("name", "data");
@@ -148,7 +148,7 @@ Sitzungsereignisse werden normalerweise verwendet, um die Aktionen eines Benutze
 
 ### Auftragsereignisse
 
-#### Verweis
+#### Referenz-
 
 			void SendJobEvent(string eventName, string jobName, Dictionary<object, object> extras = null)
 
@@ -158,7 +158,7 @@ Auftragsereignisse werden normalerweise verwendet, um die Aktionen eines Benutze
 
 			EngagementAgent.Instance.SendJobEvent("eventName", "jobName", extras);
 
-## Melden von Fehlern
+##Melden von Fehlern
 
 Es gibt drei Arten von Fehlern:
 
@@ -168,7 +168,7 @@ Es gibt drei Arten von Fehlern:
 
 ### Eigenständige Fehler
 
-#### Verweis
+#### Referenz-
 
 			void SendError(string name, Dictionary<object, object> extras = null)
 
@@ -192,7 +192,7 @@ Sitzungsfehler werden normalerweise zum Melden der Fehler verwendet, die Auswirk
 
 ### Auftragsfehler
 
-#### Verweis
+#### Referenz-
 
 			void SendJobError(string errorName, string jobName, Dictionary<object, object> extras = null)
 
@@ -202,7 +202,7 @@ Fehler können mit einem ausgeführten Auftrag in Zusammenhang stehen anstatt mi
 
 			EngagementAgent.Instance.SendJobError("errorName", "jobname", extra);
 
-## Berichterstellung von Abstürzen
+##Berichterstellung von Abstürzen
 
 Der Agent stellt zwei Methoden für den Umgang mit Abstürzen zur Verfügung.
 
@@ -236,7 +236,7 @@ Durch diese Methode werden **IMMER** die Engagement-Sitzungen und -Aufträge nac
 
 #### Beispiel
 
-Sie können sie verwenden, um Ihren eigenen UnhandledException-Handler zu implementieren (insbesondere, wenn Sie die automatische Absturzberichtsfunktion von Engagement deaktiviert haben). Beispielsweise in der `Application_UnhandledException` Methode der `App.xaml.cs` Datei:
+Sie können sie verwenden, um Ihren eigenen UnhandledException-Handler zu implementieren (insbesondere, wenn Sie die automatische Absturzberichtsfunktion von Engagement deaktiviert haben). Beispielsweise in der Methode `Application_UnhandledException` der Datei `App.xaml.cs`:
 
 			// In your App.xaml.cs file
 			
@@ -248,7 +248,7 @@ Sie können sie verwenden, um Ihren eigenen UnhandledException-Handler zu implem
 			  EngagementAgent.Instance.SendCrash(e);
 			}
 
-## OnActivated
+##OnActivated
 
 ### Verweis
 
@@ -256,7 +256,7 @@ Sie können sie verwenden, um Ihren eigenen UnhandledException-Handler zu implem
 
 Wenn der Benutzer weiter navigiert, weg von einer Anwendung, nachdem das Deaktiviert-Ereignis aufgetreten ist, versucht das Betriebssystem, die Anwendung in den Ruhezustand zu versetzen. Dann wird die Anwendung als veraltet markiert. In diesem Prozess wird eine Anwendung beendet, aber einige Daten zum Zustand der Anwendung und die einzelnen Seiten innerhalb der Anwendung bleiben erhalten.
 
-Sie müssen  `EngagementAgent.Instance.OnActivated(e)` in die  `Application_Activated`-Methode aus der App.xaml.cs-Datei eingeben, um den Engagement-Agent zurückzusetzen, wenn die Anwendung als veraltet markiert wurde.
+Sie müssen in die `Application_Activated`-Methode aus der App.xaml.cs-Datei `EngagementAgent.Instance.OnActivated(e)` eingeben, um den Engagement-Agent zurückzusetzen, wenn die Anwendung als veraltet markiert wurde.
 
 ### Beispiel
 
@@ -269,13 +269,13 @@ Sie müssen  `EngagementAgent.Instance.OnActivated(e)` in die  `Application_Acti
 			  EngagementAgent.Instance.OnActivated(e);
 			}
 
-## Geräte-ID
+##Geräte-ID
 
 			String GetDeviceId()
 
 Sie können die Engagement-Geräte-ID durch Aufrufen dieser Methode abrufen.
 
-## Extras-Parameter
+##Extras-Parameter
 
 Einem Ereignis, einem Fehler, einer Aktivität oder einem Auftrag können beliebige Daten zugeordnet werden. Diese Daten können unter Verwendung eines Wörterbuchs strukturiert werden. Schlüssel und Werte können einen beliebigen Typ aufweisen.
 
@@ -283,7 +283,7 @@ Extras-Daten werden serialisiert; wenn Sie also einen eigenen Typ in Extras einf
 
 ### Beispiel
 
-Erstellen Sie eine neue Klasse "Person".
+Erstellen Sie die neue Klasse "Person".
 
 			using System.Runtime.Serialization;
 			
@@ -324,7 +324,7 @@ Fügen Sie anschließend eine `Person`-Instanz zu einem Extra hinzu.
 			
 			EngagementAgent.Instance.SendEvent("Event", extras);
 
-> [AZURE.WARNING] Wenn Sie andere Objekttypen einfügen, stellen Sie sicher, dass deren ToString()-Methode implementiert wird, sodass eine visuell lesbare Zeichenfolge zurückgegeben wird.
+> [AZURE.WARNING]Wenn Sie andere Objekttypen einfügen, stellen Sie sicher, dass deren ToString()-Methode implementiert wird, sodass eine visuell lesbare Zeichenfolge zurückgegeben wird.
 
 ### Grenzen
 
@@ -334,21 +334,21 @@ Jeder Schlüssel in dem Objekt muss mit dem folgenden regulären Ausdruck übere
 
 `^[a-zA-Z][a-zA-Z_0-9]*$`
 
-Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen () beginnen müssen.
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_) beginnen müssen.
 
 #### Größe
 
 Extras sind beschränkt auf **1024** Zeichen pro Aufruf.
 
-## Informationen zur Berichterstellung
+##Informationen zur Berichterstellung für Anwendungen
 
-### Verweis
+### Referenz-
 
 			void SendAppInfo(Dictionary<object, object> appInfos)
 
 Sie können Nachverfolgungsinformationen (oder beliebige andere anwendungsspezifische Informationen) manuell mithilfe der SendAppInfo()-Funktion melden.
 
-Beachten Sie, dass diese Informationen inkrementell gesendet werden können: Nur der letzte Wert für einen bestimmten Schlüssel wird für ein bestimmtes Gerät gespeichert. Verwenden Sie wie bei Ereignisextras ein Wörterbuch<object, object>, um Informationen anzufügen.
+Beachten Sie, dass diese Informationen inkrementell gesendet werden können: Nur der letzte Wert für einen bestimmten Schlüssel wird für ein bestimmtes Gerät gespeichert. Verwenden Sie wie bei Ereignisextras ein Wörterbuch <Objekt, Objekt>, um Informationen anzufügen.
 
 ### Beispiel
 
@@ -368,14 +368,14 @@ Jeder Schlüssel in dem Objekt muss mit dem folgenden regulären Ausdruck übere
 
 `^[a-zA-Z][a-zA-Z_0-9]*$`
 
-Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen () beginnen müssen.
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_) beginnen müssen.
 
 #### Größe
 
 Anwendungsinformationen sind beschränkt auf **1024** Zeichen pro Aufruf.
 
-Im vorherigen Beispiel enthält die an den Server gesendete JSON 44 Zeichen:
+Im vorherigen Beispiel enthält das an den Server gesendete JSON 44 Zeichen:
 
 			{"subscription":"2013-12-07","premium":"true"}
 
-<!--HONumber=47-->
+<!--HONumber=54-->

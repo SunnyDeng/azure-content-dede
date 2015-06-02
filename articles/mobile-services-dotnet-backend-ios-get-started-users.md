@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App (iOS) | Mobile Dev Center"
+	pageTitle="Hinzufügen von Authentifizierung zur Mobile Services-App (iOS) | Mobile Dev Center"
 	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer iOS-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren."
 	services="mobile-services"
 	documentationCenter="ios"
@@ -10,10 +10,10 @@
 <tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
-	ms.tgt_pltfrm=""
+	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="2/16/2015"
+	ms.date="04/13/2015"
 	ms.author="krisragh"/>
 
 # Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App
@@ -32,7 +32,7 @@ In diesem Lernprogramm fügen Sie dem Schnellstartprojekt mithilfe eines unterst
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
-Öffnen Sie das Projekt in Xcode. Klicken Sie auf die Schaltfläche **Ausführen**, um die App zu starten. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) ausgelöst wird. Dies liegt daran, dass die App versucht als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die _TodoItem_-Tabelle jetzt jedoch Authentifizierung erfordert.
+Öffnen Sie das Projekt in Xcode. Klicken Sie auf die Schaltfläche **Ausführen**, um die App zu starten. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) ausgelöst wird. Dies liegt daran, dass die App als nicht authentifizierter Benutzer auf Mobile Services zugreift und die _TodoItem_-Tabelle nun eine Authentifizierung verlangt.
 
 ##<a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
@@ -47,22 +47,22 @@ In diesem Lernprogramm fügen Sie dem Schnellstartprojekt mithilfe eines unterst
 Im nächsten Lernprogramm, [Dienstseitige Autorisierung von Benutzern in Mobile Services], werden Sie den Benutzer-ID-Wert verwenden, um zurückgegebene Daten zu filtern.
 
 <!-- Anchors. -->
-[Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
-[Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions
-[Hinzufügen von Authentifizierung zur App]: #add-authentication
-[Nächste Schritte]:#next-steps
-[Speichern von Authentifizierungstoken in der App]:#store-authentication
+[Register your app for authentication and configure Mobile Services]: #register
+[Restrict table permissions to authenticated users]: #permissions
+[Add authentication to the app]: #add-authentication
+[Next Steps]: #next-steps
+[Storing authentication tokens in your app]: #store-authentication
 
 <!-- URLs. -->
 [Dienstseitige Autorisierung von Benutzern in Mobile Services]: mobile-services-dotnet-backend-service-side-authorization.md
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
-[Erste Schritte mit Daten]: mobile-services-dotnet-backend-ios-get-started-data.md
-[Erste Schritte mit der Authentifizierung]: mobile-services-dotnet-backend-ios-get-started-users.md
-[Erste Schritte mit Pushbenachrichtigungen]: mobile-services-dotnet-backend-ios-get-started-push.md
-[Autorisieren von Benutzern mit Skripts]: mobile-services-dotnet-backend-ios-authorize-users-in-scripts.md
+[Get started with data]: mobile-services-dotnet-backend-ios-get-started-data.md
+[Get started with authentication]: mobile-services-dotnet-backend-ios-get-started-users.md
+[Get started with push notifications]: mobile-services-dotnet-backend-ios-get-started-push.md
+[Authorize users with scripts]: mobile-services-dotnet-backend-ios-authorize-users-in-scripts.md
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: /develop/mobile/how-to-guides/work-with-net-client-library
-[Registrieren Ihres Windows Store-App-Pakets für die Microsoft Authentifizierung]: mobile-services-how-to-register-store-app-package-microsoft-authentication.md
+[Azure Management Portal]: https://manage.windowsazure.com/
+[Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library
+[Register your Windows Store app package for Microsoft authentication]: mobile-services-how-to-register-store-app-package-microsoft-authentication.md
 
-<!--HONumber=49-->
+<!--HONumber=54-->

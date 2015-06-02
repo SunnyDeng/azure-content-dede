@@ -1,42 +1,35 @@
-﻿<properties 
+<properties 
 	pageTitle="" 
-	description="Using mobile services in Cordova projects" 
+	description="Verwendung von Mobile Services in Cordova-Projekten" 
 	services="mobile-services" 
 	documentationCenter="" 
-	authors="patshea" 
+	authors="patshea123" 
 	manager="douge" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="NA" 
+	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="10/11/2014" 
-	ms.author="patshea"/>
+	ms.date="05/06/2015" 
+	ms.author="patshea123"/>
 
-### Verwendung von Mobile Services mit Cordova-Projekten in Visual Studio 2015 Preview
+# Verwendung von Mobile Services mit Cordova-Projekten in Visual Studio 2015 Preview
 
 Wenn Sie Azure Mobile Services in Cordova-Projekten in Visual Studio 2015 Preview verwenden möchten, müssen Sie die folgende Problemumgehung anwenden.
 
-1. Öffnen Sie in Ihrem Visual Studio 2015 Preview-Cordova-Projekt die Datei "config.xml", und aktivieren Sie auf der Registerkarte **Plug-Ins** das Plug-In **Microsoft Azure Mobile Services**.<br/>
-![][1]
+1. Öffnen Sie in Ihrem Visual Studio 2015 Preview-Cordova-Projekt die Datei „config.xml“, und aktivieren Sie unter der Registerkarte **Plug-Ins** das Plug-In **Azure Mobile Services**.<br/> ![][1]
 
-2. Löschen Sie in "index.html" die Zeilen, die auf **MobileServices.Web-1.2.2.min.js** verweisen.<br/>
+2. Löschen Sie in index.html die Zeilen, die auf **MobileServices.Web-1.2.2.min.js** verweisen.<br/>
 
 <PRE style="prettyprint">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset="utf-8" /&gt;
-    &lt;title&gt;MyCordovaApp&gt;/title&gt;
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset="utf-8" /&gt; &lt;title&gt;MyCordovaApp&gt;/title&gt;
 
     &lt;!--MyCordovaApp references --&gt;
     &lt;link href="css/index.css" rel="stylesheet" /&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;Hello world!&lt/p&gt;
+&lt;/head&gt; &lt;body&gt; &lt;p&gt;Hello world!&lt/p&gt;
 
     &lt;!--Cordova reference, this is added to your app when it's build. --&gt;
     &lt;script src="cordova.js"&gt;&lt;/script&gt;
@@ -47,9 +40,7 @@ Wenn Sie Azure Mobile Services in Cordova-Projekten in Visual Studio 2015 Previe
     &lt;!-- yourservicename references --&gt;
     <span style="background-color:yellow">&lt;script src="//ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.2.min.js"&gt;&lt/script&gt;</span>
     &lt;script src="/services/mobileservices/settings/yourservicename.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</PRE>
+&lt;/body&gt; &lt;/html&gt; </PRE>
 
 3. Öffnen Sie {IhrDienstname}.js unter "Dienste -> MobileServices -> Einstellungen", und ersetzen Sie den vorhandenen Codeausschnitt durch Folgendes:
 
@@ -61,9 +52,5 @@ Wenn Sie Azure Mobile Services in Cordova-Projekten in Visual Studio 2015 Previe
                     "<your application key>");
 		});
 
-[1]: ./media/vs-mobile-services-cordova-vs2015/AzureMobileServicesPlugIn.png 
-
-
-
-
-<!--HONumber=42-->
+[1]: ./media/vs-mobile-services-cordova-vs2015/AzureMobileServicesPlugIn.png
+<!--HONumber=54-->

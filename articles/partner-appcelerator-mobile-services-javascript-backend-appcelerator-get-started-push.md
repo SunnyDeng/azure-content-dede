@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-appcelerator" 
+	ms.tgt_pltfrm="mobile-multiple" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
 	ms.date="11/24/2014" 
@@ -18,21 +18,15 @@
 
 # Erste Schritte mit Pushbenachrichtigungen in Mobile Services (Legacypushvorgang)
 <div class="dev-center-tutorial-selector sublanding">
-	<a href="/de-de/documentation/articles/mobile-services-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows Store C#</a>
-	<a href="/de-de/documentation/articles/mobile-services-windows-store-javascript-get-started-push" title="Windows Store JavaScript">Windows Store JavaScript</a>
-	<a href="/de-de/documentation/articles/mobile-services-windows-phone-get-started-push" title="Windows Phone">Windows Phone</a>
-	<a href="/de-de/documentation/articles/mobile-services-ios-get-started-push" title="iOS">iOS</a>
-	<a href="/de-de/documentation/articles/mobile-services-android-get-started-push" title="Android">Android</a>
-<!--    <a href="/de-de/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push" title="Xamarin.iOS">Xamarin.iOS</a>
-    <a href="/de-de/documentation/articles/partner-xamarin-mobile-services-android-get-started-push" title="Xamarin.Android">Xamarin.Android</a> -->
-	<a href="/de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push" title="Appcelerator" class="current">Appcelerator</a>
+	<a href="/documentation/articles/mobile-services-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows Store C#</a> <a href="/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push" title="Windows Store JavaScript">Windows Store JavaScript</a> <a href="/documentation/articles/mobile-services-windows-phone-get-started-push" title="Windows Phone">Windows Phone</a> <a href="/documentation/articles/mobile-services-ios-get-started-push" title="iOS">iOS</a> <a href="/documentation/articles/mobile-services-android-get-started-push" title="Android">Android</a> <!--    <a href="/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push" title="Xamarin.iOS">Xamarin.iOS</a>
+    <a href="/documentation/articles/partner-xamarin-mobile-services-android-get-started-push" title="Xamarin.Android">Xamarin.Android</a> --> <a href="partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started.md-push" title="Appcelerator" class="current">Appcelerator</a>
 </div>
 
 In diesem Thema erfahren Sie, wie Sie mithilfe von Microsoft Azure Mobile Services eine Pushbenachrichtigung sowohl an eine iOS- als auch an eine Android-App senden, die in Appcelerator Titanium Studio entwickelt wurde. In diesem Lernprogramm fügen Sie mithilfe des Apple Push Notification Services (APNS) und Google Cloud Messaging Pushbenachrichtigungen zum Schnellstart-Projekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
 
->[AZURE.NOTE] Mobile Services werden in Azure Notification Hubs integriert, damit zusätzliche Pushbenachrichtigungsfunktionen wie Vorlagen, mehrere Plattformen und verbesserte Skalierung unterstützt werden können. Dieses Thema behandelt vorhandene mobile Dienste, die noch nicht für den Einsatz der Integration von Notification Hubs aktualisiert worden sind. Wenn Sie einen neuen mobilen Dienst erstellen, ist diese integrierte Funktionalität automatisch integriert. Sie sollten nach Möglichkeit Ihren Dienst im Hinblick auf die Verwendung von Notification Hubs aktualisieren. **Wir arbeiten an einem Lernprogramm für die Pushübertragung mit Notification Hubs mit Appcelerator. Es ist in Kürze verfügbar.**
+>[AZURE.NOTE]Mobile Services werden in Azure Notification Hubs integriert, damit zusätzliche Pushbenachrichtigungsfunktionen wie Vorlagen, mehrere Plattformen und verbesserte Skalierung unterstützt werden können. Dieses Thema behandelt vorhandene mobile Dienste, die noch nicht für den Einsatz der Integration von Notification Hubs aktualisiert worden sind. Wenn Sie einen neuen mobilen Dienst erstellen, ist diese integrierte Funktionalität automatisch integriert. Sie sollten nach Möglichkeit Ihren Dienst im Hinblick auf die Verwendung von Notification Hubs aktualisieren. **Wir arbeiten an einem Lernprogramm für die Pushübertragung mit Notification Hubs mit Appcelerator. Es ist in Kürze verfügbar.**
 
-1.	[Generieren der Zertifikatsignieranforderungsdatei]
+1.	[Erstellen der Zertifikatsignieranforderung]
 2.	[Registrieren der App und Aktivieren von Pushbenachrichtigungen]
 3.	[Erstellen eines Bereitstellungsprofils für die App]
 4.	[Aktivieren von Google Cloud Messaging]
@@ -50,7 +44,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 * iOS-Entwicklerprogramm-Mitgliedschaft
 * Ein aktives Google-Konto
 
-> [AZURE.NOTE] Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
+> [AZURE.NOTE]Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services] abschließen.
 
@@ -58,18 +52,18 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 ## <a name="register-gcm"></a>Aktivieren von Google Cloud Messaging
 
->[AZURE.NOTE] Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um diesen Vorgang abzuschließen. Besuchen Sie die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>, um ein neues Google-Konto zu erstellen.
+>[AZURE.NOTE]Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um diesen Vorgang abzuschließen. Besuchen Sie die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>, um ein neues Google-Konto zu erstellen.
 
 [AZURE.INCLUDE [Aktivieren von GCM](../includes/mobile-services-enable-Google-cloud-messaging.md)]
 
 
-##  <a name="gcm-module"></a>Das GCM-Modul für Titanium erstellen
+##  <a name="gcm-module"></a>Erstellen des GCM-Moduls für Titanium
 
 ### Appcelerator Titanium Studio für die Modulerstellung vorbereiten
 
-Wenn Sie Android-Module erstellen, müssen Sie in Appcelerator Titanium Studio eine Java-Unterstützung installieren. Weitere Informationen finden Sie unter [Installieren der Java-Entwicklungstools] bei Appcelerator, falls Sie noch keine Installation durchgeführt haben.
+Wenn Sie Android-Module erstellen, müssen Sie in Appcelerator Titanium Studio eine Java-Unterstützung installieren. Weitere Informationen finden Sie unter [Installieren der Java-Entwicklungstools] bei Appcelerator mit einer kurzen Beschreibung, falls Sie das noch nicht getan haben.
 
-Sie müssen Android NDK installieren. Laden Sie die entsprechende .zip-Datei von [http://developer.android.com/sdk/ndk/index.html](http://developer.android.com/sdk/ndk/index.html) herunter, und extrahieren Sie sie auf der Festplatte. Merken Sie sich diesen Ort. 
+Sie müssen Android NDK installieren. Laden Sie die entsprechende ZIP-Datei von [http://developer.android.com/sdk/ndk/index.html](http://developer.android.com/sdk/ndk/index.html) herunter, und extrahieren Sie sie auf der Festplatte. Merken Sie sich diesen Ort.
 
 ### Erstellen eines neuen Moduls
 
@@ -79,25 +73,25 @@ Sie müssen Android NDK installieren. Laden Sie die entsprechende .zip-Datei von
 
     ![][0]
 
-3. Geben Sie im nächsten Fenster die Daten der Projekteinstellungen ein: 
+3. Geben Sie im nächsten Fenster die Daten der Projekteinstellungen ein:
 
     * **Projektname:** In unserem Fall verwenden wir &quot;notificationhub&quot; (kann gleich sein).
 
-    * **Modul-ID:** In unserem Fall verwenden wir &quot;com.winwire.notificationhub&quot; (muss mit "Anwendungs-ID" übereinstimmen).
+    * **Modul-ID:** In unserem Fall verwenden wir &quot;com.winwire.notificationhub&quot;. Das muss unserer „application Id“ entsprechen.
 
     * **Bereitstellungsziele:** Hier wählen wir Android aus.
 
-    > [AZURE.NOTE] Es ist wichtig, dass der Name unseres WorkSpace keine Leerzeichen enthält, da es sonst zu Problemen beim Erstellen der Kompilierung kommen kann.
+    > [AZURE.NOTE]Es ist wichtig, dass der Name unseres WorkSpace keine Leerzeichen enthält, da es sonst zu Problemen beim Erstellen der Kompilierung gibt.
 
     ![][1]
 
-4. Klicken Sie auf "Next" und füllen Sie die Informationen für dieses Modul aus.
+4. Klicken Sie auf „Next“ und füllen Sie die Informationen für dieses Modul aus.
 
     ![][2]
 
-5. Klicken Sie schließlich auf "Finish".
+5. Klicken Sie schließlich auf „Finish“.
 
-6. Öffnen Sie die Datei "timodule.xml". Fügen Sie folgende Änderungen im Android-Tag hinzu.
+6. Öffnen Sie die Datei timodule.xml. Fügen Sie folgende Änderungen im Android-Tag hinzu.
 
 
         <manifest package="com.winwire.notificationhub" android:versionCode="1" android:versionName="1.0">
@@ -137,15 +131,15 @@ Sie müssen Android NDK installieren. Laden Sie die entsprechende .zip-Datei von
 
 
 
-> [AZURE.NOTE] Im obigen Code müssen Sie alle Vorkommen des Texts  *com.winwire.notificationhub* durch den Paketnamen Ihrer Anwendung ersetzen (Modul-ID).
+> [AZURE.NOTE]Im obigen Code müssen Sie alle Vorkommen des Texts *com.winwire.notificationhub* durch den Paketnamen Ihrer Anwendung ersetzen (Modul-ID).
 
-7. Klicken Sie in Ihrem Notification Hub-Modul mit der rechten Maustaste auf den Ordner &quot;src&quot;, wählen Sie &quot;Neu&quot; und anschließend &quot;Ordner&quot;. Geben Sie dem Ordner einen Namen wie com.google.android.gcm.
+7. Klicken Sie in Ihrem Notification Hub-Modul mit der rechten Maustaste auf den Ordner "src", klicken Sie auf "Neu", und wählen Sie "Ordner" aus. Geben Sie dem Ordner einen Namen wie com.google.android.gcm.
 
-> [AZURE.NOTE] Wenn &quot;Ordner&quot; in &quot;Neu&quot; nicht angezeigt wird, wählen Sie &quot;Andere&quot;, erweitern Sie "Allgemein" und wählen dort &quot;Ordner&quot;.
+> [AZURE.NOTE]Sollten Sie den Punkt &quot;Ordner&quot; unter den Optionen für &quot;Neu&quot; nicht finden, wählen Sie &quot;Andere&quot;, erweitern Sie "Allgemein", und wählen Sie dann &quot;Ordner&quot;.
 
-8. Laden Sie jetzt die &quot;.java&quot;-Dateien (gcm.zip) von hier herunter, und kopieren Sie diese Dateien in den eben erstellten Ordner (com.google.android.gcm).
+8. Laden Sie &quot;.java&quot;-Dateien (gcm.zip) von hier herunter und kopieren Sie diese Dateien in den eben erstellten Ordner (com.google.android.gcm).
 
-9. Sie finden jetzt einen Ordner, der wie Ihre "module Id" benannt ist; entpacken Sie ihn. In diesem Ordner sehen Sie eine Liste von ".java"-Dateien. Öffnen Sie aus diesen Dateien diejenige, die den Namen Ihres Projekts mit der Erweiterung ".java" trägt (wenn der Name Ihres Projekts beispielsweise "notificationhub" lautet, dann wäre das &quot;NotificationhubModule.java&quot;). Fügen Sie die nachstehende Codezeile am Anfang der Datei ein.
+9. Sie finden jetzt einen Ordner, der wie Ihre „module Id“ benannt ist; entpacken Sie ihn. In diesem Ordner sehen Sie eine Liste von „.java“-Dateien. Öffnen Sie aus diesen Dateien diejenige mit Ihrem Projektnamen+module.java (wenn der Name Ihres Projekts beispielsweise notificationhub lautet, dann wäre das „NotificationhubModule.java“), und fügen Sie die unten gezeigten Codezeilen oben ein.
 
         private static NotificationhubModule _THIS;
         private KrollFunction successCallback;
@@ -214,22 +208,22 @@ Sie müssen Android NDK installieren. Laden Sie die entsprechende .zip-Datei von
 	        return _THIS;
         }
 
-12. Laden Sie jetzt "module.zip" herunter und kopieren Sie die Dateien in den Ordner mit der "module Id" im Namen.
+12. Laden Sie jetzt „module.zip“ herunter und kopieren Sie die Dateien in den Ordner mit der „module Id“ im Namen.
 
-> [AZURE.NOTE] In den obigen Dateien müssen Sie alle Vorkommen des Texts  *com.winwire.notificationhub* durch den Paketnamen Ihrer Anwendung ersetzen (Modul-ID). Ersetzen Sie außerdem &quot;NotificationhubModule&quot; durch Projektname+Modul (z. B. &quot;NotificationhubModule&quot;).
+> [AZURE.NOTE]In den obigen Dateien müssen Sie alle Vorkommen des Texts *com.winwire.notificationhub* durch den Paketnamen Ihrer Anwendung ersetzen (Modul-ID). Ersetzen Sie außerdem „NotificationhubModule“ durch ProjektName+Modul (z. B. „NotificationhubModule“).
 
 ### Erstellen/Packen eines Moduls
 
-Wählen Sie **Deploy > Package - Android Module** aus. Sie können mit Studio kein BlackBerry-Modul erstellen - verwenden Sie entweder die BlackBerry NDK CLI-Tools oder Momentics IDE. 
+Wählen Sie **Deploy > Package - Android Module**. Sie können mit Studio kein BlackBerry-Modul erstellen &ndash; verwenden Sie entweder die BlackBerry NDK CLI-Tools oder Momentics IDE.
 
 ![][3]
 
 
-Sie können dann wählen, ob Sie das Modul für alle Projekte bereitstellen möchten oder für ein spezifisches. Diese Vorgehensweise folgt den Installationsregeln, die in [Verwenden von Titanium-Modulen] erläutert werden. Zusammengefasst lauten diese:
+Sie können dann wählen, ob Sie das Modul für alle Projekte bereitstellen möchten oder für ein spezifisches. Dies folgt den Installationsregeln, die in [Titanium-Module verwenden] erläutert sind; zusammenfassend:
 
 - Die Modul-.zip-Datei wird für alle Projekte im Stamm des Titanium SDK-Installationsorts abgelegt. 
 
-- Für ein bestimmtes Projekt: Die Modul-.zip-Datei wird im Stamm des Projekts abgelegt. 
+- Für ein bestimmtes Projekt: Die ZIP-Datei für das Modul wird im Stamm des Projekts abgelegt.
 
 
 ## <a name="configure"></a>Konfigurieren von Mobile Services zum Senden von Pushanforderungen
@@ -237,7 +231,7 @@ Sie können dann wählen, ob Sie das Modul für alle Projekte bereitstellen möc
 
 [AZURE.INCLUDE [mobile-services-apns-configure-push](../includes/mobile-services-apns-configure-push.md)]
 
-5.	Geben Sie den Wert "API-Schlüssel" ein, den Sie zuvor von GCM erhalten haben, und klicken Sie auf "Speichern".
+5.	Geben Sie den Wert „API-Schlüssel“ ein, den Sie zuvor von GCM erhalten haben, und klicken Sie auf „Speichern“.
 
     ![][4]
 
@@ -245,7 +239,7 @@ Ihr mobiler Dienst ist nun sowohl für APNS als auch für GCM konfiguriert.
 
 ## <a name="add-push"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
-1.	Wählen Sie in "tiapp.xml" die Registerkarte "tiapp.xml" aus (diese befindet sich neben der Registerkarte &quot;Übersicht&quot;), und suchen Sie nach dem Tag "<android>". Fügen Sie unter dem Tag folgenden Code ein:
+1.	Wählen Sie in "tiapp.xml" die Registerkarte "tiapp.xml" (Sie finden ihn unten neben der Registerkarte &quot;Übersicht&quot; tab) und suchen Sie den Tag `<android>`. Fügen Sie unter dem Tag folgenden Code ein:
 
         <modules>
             <module platform="android">ModuleId</module>
@@ -254,7 +248,7 @@ Ihr mobiler Dienst ist nun sowohl für APNS als auch für GCM konfiguriert.
         <property name="ApplicationId.icon type="int">2130837504</property>
         <property name="ApplicationId.component" type="string">ApplicationId/ApplicationId.AppNameActivity</property>
 
->[AZURE.NOTE] Im obigen Code müssen Sie **ModuleId** und **ApplicationId** ersetzen. Die Modul-ID, die Sie bei der Erstellung des GCM-Moduls erhalten, und die Anwendungs-ID, die bei der Projekterstellung eingegeben wird.  Achten Sie außerdem darauf, dass **ModuleId** und **ApplicationId** gleich sind. Sie müssen außerdem **ApplicationId.AppNameActivity** ändern. Das sollte dann in etwa so aussehen: com.winwire.notificationhub/ com.winwire.notificationhub.NotificationhubActivity.
+>[AZURE.NOTE]Sie müssen im Code oben **ModuleId** und **ApplicationId** ersetzen. Die Modul-ID, die Sie bei der Erstellung des GCM-Moduls erhalten, und die Anwendungs-ID, die bei der Projekterstellung eingegeben wird. Achten Sie darauf, dass **ModuleId** und **ApplicationId** gleich sind. Es ist außerdem nötig, **ApplicationId.AppNameActivity** zu ändern. Das sollte dann in etwa so aussehen: com.winwire.notificationhub/ com.winwire.notificationhub.NotificationhubActivity.
 
 
 2.	Kopieren Sie das im Vorfeld erstellte GCM-Modul und platzieren Sie es an den unten genannten Ort.	
@@ -265,7 +259,7 @@ Ihr mobiler Dienst ist nun sowohl für APNS als auch für GCM konfiguriert.
     <td>/Library/Application Support/Titanium oder ~/Library/Application Support/Titanium
     </td>
     </tr>
-    <td>Windows 7
+    <td>Windows&#160;7
     </td>
     <td>C:\Users\username\AppData\Roaming (oder C:\ProgramData\Titanium in Titanium Studio 1.0.1 und früher)
     </td>
@@ -282,7 +276,7 @@ Ihr mobiler Dienst ist nun sowohl für APNS als auch für GCM konfiguriert.
     
     </table>
 
->[AZURE.NOTE]  In Mac OS ist "Library" ein ausgeblendeter Ordner. Um ihn sichtbar zu machen, müssen Sie folgenden Befehl ausführen und dann den Finder erneut starten: **defaults write com.apple.finder AppleShowAllFiles TRUE**
+>[AZURE.NOTE]In Mac OS ist „Library“ ein ausgeblendeter Ordner. Um ihn sichtbar zu machen, müssen Sie folgenden Befehl ausführen und dann den Finder erneut starten: `**defaults write com.apple.finder AppleShowAllFiles TRUE**`
 
 3.	Öffnen Sie in Appcelerator Titanium Studio die Datei index.js und fügen Sie folgenden Code am Ende ein. Dieser Code registriert Ihr Gerät für Pushbenachrichtigungen.
 
@@ -360,7 +354,7 @@ Ihr mobiler Dienst ist nun sowohl für APNS als auch für GCM konfiguriert.
             }
    
 
-4.	Öffnen Sie jetzt die TableData.js-Datei, und suchen Sie nach den folgenden Zeilen in der Funktion **addOrUpdateDataFromAndroid**.
+4.	Öffnen Sie jetzt die Datei TableData.js und lokalisieren Sie folgende Zeilen in der Funktion **addOrUpdateDataFromAndroid**
 
         var request = {
     	    'text' : alertTextField.getValue(),
@@ -368,50 +362,48 @@ Ihr mobiler Dienst ist nun sowohl für APNS als auch für GCM konfiguriert.
         };
   
 
-    Ersetzen Sie obigen Code bitte nur in der Bedingung "else" (für das Einfügen eines neuen Elements).
+    Ersetzen Sie obigen Code bitte nur in der Bedingung „else“ (für das Einfügen eines neuen Elements).
 
 5.	Ersetzen Sie für Android den obigen Code mit Folgendem:
 
-       var request = {
+        var request = {
     	'text' : alertTextField.getValue(),
     	'complete' : false,
     	'handle' : Alloy.Globals.tempRegId
-    }; 
-    
-    
+        };
+  
 
-6.	Suchen Sie jetzt nach den folgenden Zeilen in der Funktion **updateOrAddData**
+6.	Lokalisieren Sie nun folgende Zeilen in der Funktion **updateOrAddData**
 
            var request = {
     	    'text' : alertTextField.getValue(),
     	    'complete' : false
         };
     
-    Ersetzen Sie obigen Code bitte nur in der Bedingung "else" (für das Einfügen eines neuen Elements).
+    Ersetzen Sie obigen Code bitte nur in der Bedingung „else“ (für das Einfügen eines neuen Elements).
 
 7.	Ersetzen Sie für iOS den obigen Code mit Folgendem:
 
-       var request = {
+           var request = {
     	'text' : alertTextField.getValue(),
     	'complete' : false,
     	'deviceToken' : Alloy.Globals.tempRegId
-    };
+        };
     
- 
 Ihre App unterstützt nun Pushbenachrichtigungen sowohl für die Plattform iOS als auch Android.
 
 
 ## <a name="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
 
-1.	Klicken Sie im Verwaltungsportal auf die Registerkarte "Daten" und dann auf die Tabelle "TodoItems".
+1.	Klicken Sie im Verwaltungsportal auf die Registerkarte „Daten“ und dann auf die Tabelle „TodoItems“.
 
     ![][5]
 
-2.	Klicken Sie in "todoitem" auf die Registerkarte "Skript" und dann auf "Einfügen".
+2.	Klicken Sie in „todoitem“ auf die Registerkarte „Skript“ und dann auf „Einfügen“.
 
     ![][6]
 
-    Auf diese Weise wird die Funktion angezeigt, die aufgerufen wird, wenn in der Tabelle "TodoItem" eine Einfügung erfolgt.
+    Auf diese Weise wird die Funktion angezeigt, die aufgerufen wird, wenn in der Tabelle „TodoItem“ eine Einfügung auftritt.
 
 3.	Ersetzen Sie die Einfügefunktion durch den folgenden Code. Klicken Sie dann auf **Speichern**:
 
@@ -431,7 +423,7 @@ Ihre App unterstützt nun Pushbenachrichtigungen sowohl für die Plattform iOS a
             }, 2500);
         }
   
-   	> [AZURE.NOTE] Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Pushbenachrichtigung zu geben.  
+   	> [AZURE.NOTE] This script delays sending the notification to give you time to close the app to receive a push notification.  
 
 **Für Android:**
 
@@ -453,7 +445,7 @@ Ihre App unterstützt nun Pushbenachrichtigungen sowohl für die Plattform iOS a
 
 
 
-Auf diese Weise wird ein neues Einfügeskript registriert, das über das [Mobile Services-Push-Objekt] eine Pushbenachrichtigung (den eingefügten Text) zum in der Einfügeanforderung angegebenen Gerät sendet.
+Auf diese Weise wird ein neues Einfügeskript registriert, das über das [Mobile Services Push-Objekt] eine Pushbenachrichtigung (den eingefügten Text) zum in der Einfügeanforderung angegebenen Gerät sendet.
 
 
 <!-- Images. -->
@@ -466,7 +458,7 @@ Auf diese Weise wird ein neues Einfügeskript registriert, das über das [Mobile
 [6]: ./media/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-push/image066.png
 
 <!-- Anchors. -->
-[Generieren der Zertifikatsignieranforderungsdatei]: #certificates
+[Erstellen der Zertifikatsignieranforderung]: #certificates
 [Registrieren der App und Aktivieren von Pushbenachrichtigungen]: #register
 [Erstellen eines Bereitstellungsprofils für die App]: #profile
 [Aktivieren von Google Cloud Messaging]: #register-gcm
@@ -477,14 +469,10 @@ Auf diese Weise wird ein neues Einfügeskript registriert, das über das [Mobile
 [Einfügen von Daten zum Empfangen von Benachrichtigungen]: #test
 
 <!-- URLs. -->
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
-[Verwenden von Titanium-Modulen]: http://docs.appcelerator.com/titanium/latest/#!/guide/Using_Titanium_Modules
-[Microsoft Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Mobile Services-Push-Objekt]: http://go.microsoft.com/fwlink/p/?linkid=272333&clcid=0x409
+[Erste Schritte mit Mobile Services]: partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started.md
+[Titanium-Module verwenden]: http://docs.appcelerator.com/titanium/latest/#!/guide/Using_Titanium_Modules
+[Microsoft Azure Management Portal]: https://manage.windowsazure.com/
+[Mobile Services Push-Objekt]: http://go.microsoft.com/fwlink/p/?linkid=272333&clcid=0x409
 [Installieren der Java-Entwicklungstools]: http://docs.appcelerator.com/titanium/latest/#!/guide/Installing_the_Java_Development_Tools
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=54-->

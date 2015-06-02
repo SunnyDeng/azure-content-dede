@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Senden von plattformübergreifenden Benachrichtigungen an einen bestimmten Benutzer in iOS" 
 	description="Erfahren Sie, wie Sie Pushbenachrichtigungen an alle Geräte eines bestimmten Benutzers senden."
 	services="app-service\mobile" 
@@ -22,15 +22,15 @@
 
 In diesem Thema wird das Senden von Benachrichtigungen an alle registrierten Geräte eines bestimmten Benutzers aus Ihrem mobilen Back-End veranschaulicht. Sie erhalten eine Einführung in das Konzept der [Vorlagen], mit denen Clientanwendungen die Möglichkeit erhalten, bei der Registrierung Nutzlastformate und variable Platzhalter anzugeben. Die Versendung erfolgt anschließend an alle Plattformen mit diesen Platzhaltern, sodass plattformübergreifende Benachrichtigungen ermöglicht werden.
 
-> [AZURE.NOTE] Um Pushbenachrichtigungen mit plattformübergreifenden Clients zu unterstützen, müssen Sie dieses Lernprogramm für jede Plattform absolvieren, die Sie aktivieren möchten. Die [Aktualisierung des mobilen Back-Ends](#backend) muss für Clients, die dasselbe mobile Back-End verwenden, nur einmal durchgeführt werden.
+> [AZURE.NOTE]Um Pushbenachrichtigungen mit plattformübergreifenden Clients zu unterstützen, müssen Sie dieses Lernprogramm für jede Plattform absolvieren, die Sie aktivieren möchten. Die [Aktualisierung des mobilen Back-Ends](#backend) muss für Clients, die dasselbe mobile Back-End verwenden, nur einmal durchgeführt werden.
  
 ##Voraussetzungen 
 
 Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die entsprechenden App Service-Lernprogramme für jede Clientplattform abschließen, mit der Sie arbeiten möchten:
 
-+ [Erste Schritte mit der Authentifizierung]<br/>Fügt eine Anmeldeanforderung zur TodoList-Beispiel-App hinzu.
++ [Erste Schritte mit der Authentifizierung]<br/>Fügt eine Anmeldeanforderung zur Beispiel-App "TodoList" hinzu.
 
-+ [Erste Schritte mit Pushbenachrichtigungen]<br/>Konfiguriert die TodoList-Beispiel-App für Pushbenachrichtigungen.
++ [Erste Schritte mit Pushbenachrichtigungen]<br/>Konfiguriert die Beispiel-App "TodoList" für Pushbenachrichtigungen.
 
 ##<a name="client"></a>Aktualisieren des Clients zum Registrieren von Vorlagen zur Verarbeitung plattformübergreifender Pushvorgänge
 
@@ -105,4 +105,4 @@ Veröffentlichen Sie erneut Ihr mobiles Back-End-Projekt, und führen Sie eine b
 [Erste Schritte mit Pushbenachrichtigungen]: app-service-mobile-dotnet-backend-ios-get-started-push-preview.md
 [Vorlagen]: https://msdn.microsoft.com/de-de/library/dn530748.aspx
 
-<!--HONumber=49-->
+<!--HONumber=54-->

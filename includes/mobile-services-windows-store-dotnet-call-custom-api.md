@@ -1,7 +1,7 @@
-﻿
+
 ##<a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
-1. Öffnen Sie die Datei "MainPage.xaml" in Ihrem Schnellstartprojekt in Visual Studio, suchen Sie die **Schaltfläche** Element mit dem Namen `ButtonRefresh`, und ersetzen Sie es durch folgenden XAML-Code: 
+1. Öffnen Sie in Visual Studio die Datei "MainPage.xaml" in Ihrem Schnellstartprojekt, suchen Sie das **Button**-Element namens `ButtonRefresh`, und ersetzen Sie es durch den folgenden XAML-Code: 
 
 		<StackPanel Orientation="Horizontal">
 	        <Button Margin="72,0,0,0" Name="ButtonRefresh" 
@@ -10,7 +10,7 @@
 	                Click="ButtonCompleteAll_Click">Complete All</Button>
 	    </StackPanel>
 
-	Auf diese Weise wird eine neue Schaltfläche zur Seite hinzugefügt. 
+	Auf diese Weise wird eine neue Schaltfläche zur Seite hinzugefügt.
 
 2. Öffnen Sie die Codedatei MainPage.xaml.cs, und fügen Sie den folgenden Klassendefinitionscode hinzu:
 
@@ -19,15 +19,15 @@
 	        public int Count { get; set; }
 	    }
 
-	Diese Klasse dient zur Aufnahme des von der benutzerdefinierten API zurückgegebenen Zeilenanzahlwerts. 
+	Diese Klasse dient zur Aufnahme des von der benutzerdefinierten API zurückgegebenen Zeilenanzahlwerts.
 
-3. Suchen Sie die **RefreshTodoItems**-Methode in der **MainPage**-Klasse, und stellen Sie sicher, dass  `query` definiert ist, indem Sie die folgende **Where**-Methode verwenden:
+3. Suchen Sie die **RefreshTodoItems**-Methode in der **MainPage**-Klasse, und stellen Sie sicher, dass `query` definiert ist, indem Sie die folgende **Where**-Methode verwenden:
 
         .Where(todoItem => todoItem.Complete == false)
 
 	Hierdurch werden die Elemente so gefiltert, dass abgeschlossene Elemente von der Abfrage nicht zurückgegeben werden.
 
-3. Fügen Sie In der **MainPage**-Klasse die folgende Methode hinzu:
+3. Fügen Sie in der **MainPage**-Klasse die folgende Methode hinzu:
 
 		private async void ButtonCompleteAll_Click(object sender, RoutedEventArgs e)
 		{
@@ -51,13 +51,13 @@
 		    await dialog.ShowAsync();
 		}
 
-	Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die [InvokeApiAsync](http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx)-Methode wird auf dem Client aufgerufen und sendet eine POST-Anforderung an die neue benutzerdefinierte API. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
+	Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die [InvokeApiAsync](http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx)-Methode wird beim Client aufgerufen, der eine POST-Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
 
 ## <a name="test-app"></a>Testen der App
 
-1. Drücken Sie in Visual Studio die **F5**-Taste, um das Projekt neu zu erstellen, und starten Sie die App.
+1. Drücken Sie in Visual Studio die **F5**-Taste, um das Projekt neu zu erstellen und die App zu starten.
 
-2. Geben Sie in der App einen Text in **Insert a TodoItem** ein, und klicken Sie dann auf **Speichern**.
+2. Geben Sie in der App in **Insert a TodoItem** Text ein, und klicken Sie dann auf **Save**.
 
 3. Wiederholen Sie den vorherigen Schritt, bis Sie der Liste mehrere todo-Einträge hinzugefügt haben.
 
@@ -67,5 +67,4 @@
 
 	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
 
-
-<!--HONumber=52-->
+<!--HONumber=54-->

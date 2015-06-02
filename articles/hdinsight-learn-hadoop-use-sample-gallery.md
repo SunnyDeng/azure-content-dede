@@ -1,6 +1,6 @@
-﻿<properties 
-   pageTitle="Kennenlernen von Hadoop in HDInsight mithilfe der Beispielgalerie" 
-   description="Kennenlernen von Hadoop in HDInsight mithilfe der HDInsight-Beispielgalerie" 
+<properties 
+   pageTitle="Erlernen von Hadoop in HDInsight mithilfe des Beispielkatalogs | Microsoft Azure" 
+   description="Der HDInsight-Katalog für erste Schritte bietet eine schnelle und einfache Möglichkeit zum Ausführen von Hadoop-Beispielanwendungen in HDInsight. Einige Beispiele enthalten Beispieldaten, oder Sie können eigene Daten angeben." 
    services="hdinsight" 
    documentationCenter="" 
    authors="mumian" 
@@ -13,12 +13,12 @@
    ms.tgt_pltfrm="na" 
    ms.devlang="na" 
    ms.topic="article" 
-   ms.date="1/29/2015" 
+   ms.date="03/31/2015" 
    ms.author="jgao"/>
 
-# Kennenlernen von Hadoop mithilfe der HDInsight-Galerie für erste Schritte
+# Kennenlernen von Hadoop mithilfe des HDInsight-Katalogs für erste Schritte
 
-Die HDInsight-Galerie für erste Schritte bietet eine schnelle und einfache Möglichkeit zum Ausführen von Hadoop-Beispielanwendungen in HDInsight. Einige Beispiele verfügen über Beispieldaten. Für die restlichen Beispiele können Sie eigene Daten bereitstellen. Derzeit sind sechs Beispiele enthalten und weitere werden in Kürze folgen:
+Der HDInsight-Katalog für erste Schritte bietet eine schnelle und einfache Möglichkeit zum Ausführen von Hadoop-Beispielanwendungen in HDInsight. Einige Beispiele verfügen über Beispieldaten. Für die restlichen Beispiele können Sie eigene Daten bereitstellen. Derzeit stehen die folgenden sechs Beispiele bereit (weitere folgen):
 
 - Lösungen mit Ihren Azure-Daten
 	- Microsoft Azure Website-Protokollanalyse
@@ -29,29 +29,29 @@ Die HDInsight-Galerie für erste Schritte bietet eine schnelle und einfache Mög
 	- Analysieren von Website-Protokollen
 	- Mahout-Filmempfehlung
 
-![HDInsight Hadoop/Storm/HBase Getting Started Gallery][hdinsight.sample.gallery]
+![Die Lösungen für HDInsight Hadoop, Storm und HBase im Katalog für erste Schritte enthalten Beispieldaten.][hdinsight.sample.gallery]
 
 Der folgende Videoclip zeigt, wie das Beispiel zur Twitter-Trendanalyse ausgeführt wird:
 
-<center><iframe width="650" height="388" src="https://www.youtube.com/embed/7ePbHot1SN4" frameborder="0" allowfullscreen></iframe></center>
+<center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4</a></center>
 
 
-**So führen Sie ein Beispiel in der Galerie für erste Schritte aus**
+**So führen Sie ein Beispiel im Katalog für erste Schritte aus**
 
-1.	Melden Sie sich beim [Azure-Verwaltungsportal][azure.management.portal] an.
+1.	Melden Sie sich beim [Azure-Portal][azure.portal] an.
 2.	Klicken Sie im linken Menü auf **HDInsight**. Es wird eine Liste der vorhandenen HDInsight-Cluster angezeigt, einschließlich der Hadoop-, Storm- und HBase-Cluster. 
 3.	Klicken Sie auf den Cluster, in dem Sie das Beispiel ausführen möchten.
-4.	Klicken Sie unten auf **ABFRAGEKONSOLE**.
+4.	Wählen Sie am Ende der Seite die Option **QUERY CONSOLE** aus.
 5.	Geben Sie den Hadoop-Benutzernamen und das zugehörige Kennwort für den Cluster ein.
-6.	Klicken Sie oben auf **Erste Schritte**.
+6.	Klicken Sie oben auf **Getting Started Gallery**.
 7.	Klicken Sie auf eines der Beispiele. Jedes Beispiel bietet ausführliche Anweisungen zur Ausführung. Die folgende Abbildung zeigt das Beispiel zur Twitter-Trendanalyse:
 
-	![HDInsight Twitter trend analysis sample][hdinsight.twitter.sample]
+	![HDInsight-Beispiel zur Twitter-Trendanalyse][hdinsight.twitter.sample]
 
 ## Nächste Schritte
-Andere Möglichkeiten zum Kennenlernen von HDInsight:
+Weitere Möglichkeiten zum Erlernen von HDInsight:
 
-- [HDInsight-Lernkonzept][hdinsight.learning.map]
+- [HDInsight-Lernkonzept][hdinsight.learn.map]
 - [HDInsight-Infografik][hdinsight.infographic]
 
 <!--Image references-->
@@ -59,7 +59,7 @@ Andere Möglichkeiten zum Kennenlernen von HDInsight:
 [hdinsight.twitter.sample]: ./media/hdinsight-learn-hadoop-use-sample-gallery/HDInsight-Twitter-Trend-Analysis-sample.png
 
 <!--Link references-->
-[hdinsight.learning.map]: ../hdinsight-learning-map/
+[hdinsight.learn.map]: hdinsight-learn-map.md
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
-
-<!--HONumber=47-->
+[azure.portal]: https://manage.windowsazure.com
+<!--HONumber=54-->

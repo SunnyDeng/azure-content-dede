@@ -1,5 +1,4 @@
-﻿Nur für die **Freigabe-**, **Basic-** und **Standardmodi** für Web-Apps kann ein benutzerdefinierter Domänenname festgelegt werden. Bevor Sie den Modus einer Web-App vom Modus **Kostenlos** in den **Freigabe-**, **Basic-** oder **Standardmodus** ändern, müssen Sie zunächst die für Ihr Abonnement geltenden Kostenbeschränkungen aufheben. 
+Ein benutzerdefinierter Domänenname kann nur für die Modi **Shared**, **Basic** und **Standard** für Web-Apps festgelegt werden. Bevor Sie den Modus einer Web-App vom Modus **Free** in den Modus **Shared**, **Basic** oder **Standard** ändern, müssen Sie zunächst die für Ihr Web-Apps-Abonnement geltenden Kostenbeschränkungen aufheben.
 
-Weitere Informationen zu App Service-Planmodi, darunter auch Informationen zum Ändern des Websitemodus, finden Sie unter [Skalieren von Web-Apps](web-sites-scale.md).
-
-<!--HONumber=49-->
+Weitere Informationen zu den Modi des App Service-Plans, darunter auch Informationen zum Ändern des Websitemodus, finden Sie unter [Skalieren von Web-Apps](web-sites-scale.md).
+<!--HONumber=54-->

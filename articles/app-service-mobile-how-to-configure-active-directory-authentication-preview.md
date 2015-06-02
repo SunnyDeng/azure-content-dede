@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Konfigurieren der Azure Active Directory-Authentifizierung für die App Services-Anwendung" 
 	description="Erfahren Sie, wie Sie die Azure Active Directory-Authentifizierung für die App Services-Anwendung konfigurieren." 
 	authors="mattchenderson,wesmc7777" 
@@ -18,9 +18,9 @@
 
 # Konfigurieren Ihrer Anwendung zur Verwendung der Azure Active Directory-Anmeldung
 
-In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung von Azure Active Directory als Authentifizierungsanbieter konfigurieren. 
+In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung von Azure Active Directory als Authentifizierungsanbieter konfigurieren.
 
-## <a name="register"> </a>Registrieren Ihrer Anwendung für Azure Active Directory
+## <a name="register"> </a>Registrieren Ihrer Anwendung bei Azure Active Directory
 
 1. Melden Sie sich unter [Vorschau auf das Azure-Verwaltungsportal] an, und navigieren Sie zu Ihrem App Service-Gateway.
 
@@ -30,17 +30,17 @@ In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung 
 
 3. Melden Sie sich am [Azure-Verwaltungsportal] an, und navigieren Sie zu **Active Directory**.
 
-    ![][2] 
+    ![][2]
 
-4. Wählen Sie Ihr Verzeichnis und anschließend die Registerkarte **Anwendungen** im oberen Bereich aus. Klicken Sie im unteren Bereich auf **ADD**, um eine neue App-Registrierung zu erstellen. 
+4. Wählen Sie Ihr Verzeichnis und anschließend die Registerkarte **Anwendungen** im oberen Bereich aus. Klicken Sie im unteren Bereich auf **HINZUFÜGEN**, um eine neue App-Registrierung zu erstellen.
 
-5. Klicken Sie auf **Eine von meinem Unternehmen entwickelte Anwendung hinzufügen**.
+5. Klicken Sie auf **Add an application my organization is developing**.
 
-6. Geben Sie Assistenten zum Hinzufügen von Anwendungen im Feld **Name** einen Namen für Ihre Anwendung ein, und klicken Sie auf den Typ **Webanwendung und/oder Web-API**. Klicken Sie auf "Weiter".
+6. Geben Sie im Add Application-Assistenten einen **Namen** für Ihre Anwendung ein und klicken Sie auf den Typ **Web Application And/Or Web API**. Klicken Sie dann auf Continue.
 
 7. Fügen Sie im Feld **ANMELDE-URL** die aus den Active Directory-Identitätsanbietereinstellungen kopierte App-ID Ihres Gateways ein. Geben Sie denselben eindeutigen Ressourcenbezeichner in das Feld **App-ID-URI** ein. Klicken Sie dann auf Continue.
 
-8. Nachdem die Anwendung hinzugefügt wurde, klicken Sie auf die Registerkarte **Konfigurieren**. Ändern Sie die **Antwort-URL** unterhalb von **Einmaliges Anmelden** in die URL Ihres Gateways mit angehängtem Pfad "_/signin-aad_". Beispiel: `https://contosogateway.azurewebsites.net/signin-aad`. Stellen Sie sicher, dass Sie das HTTPS-Schema verwenden.
+8. Nachdem die Anwendung hinzugefügt wurde, klicken Sie auf die Registerkarte **Konfigurieren**. Ändern Sie die **Antwort-URL** unterhalb von **Einmaliges Anmelden** in die URL Ihres Gateways mit angehängtem Pfad _/signin-aad_. Beispiel: `https://contosogateway.azurewebsites.net/signin-aad`. Stellen Sie sicher, dass Sie das HTTPS-Schema verwenden.
 
     ![][3]
 
@@ -50,9 +50,9 @@ In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung 
 
 10. Kehren Sie zum Vorschauverwaltungsportal und zum Blatt **Benutzerauthentifizierung** für Ihr Gateway zurück. Fügen Sie die **Client-ID**-Einstellung für den Azure Active Directory-Identitätsanbieter ein.
   
-11. In der Liste **Zulässige Mandanten** müssen Sie die Domäne des Verzeichnisses hinzufügen, in dem Sie die Anwendung registriert haben (z. B. "contoso.onmicrosoft.com"). Den Namen der Standarddomäne finden Sie, indem Sie in Ihrem Azure Active Directory-Mandanten auf die Registerkarte **Domänen** klicken. Fügen Sie den Domänennamen der Liste **Zulässige Mandanten** hinzu, und klicken Sie auf **Speichern**.  
+11. In der Liste **Zulässige Mandanten** müssen Sie die Domäne des Verzeichnisses hinzufügen, in dem Sie die Anwendung registriert haben (z. B. "contoso.onmicrosoft.com"). Den Namen der Standarddomäne finden Sie, indem Sie in Ihrem Azure Active Directory-Mandanten auf die Registerkarte **Domänen** klicken. Fügen Sie den Domänennamen der Liste **Zulässige Mandanten** hinzu, und klicken Sie auf **Speichern**.
 
-Sie können nun Azure Active Directory für die Authentifizierung in Ihrer App verwenden. 
+Sie können nun Azure Active Directory für die Authentifizierung in Ihrer App verwenden.
 
 ## <a name="related-content"> </a>Verwandte Inhalte
 
@@ -72,4 +72,4 @@ Authentifizieren von Benutzern Ihrer mobilen App mit Azure Active Directory für
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [ios-adal]: app-service-mobile-dotnet-backend-xamarin-ios-aad-sso-preview.md
 
-<!--HONumber=49-->
+<!--HONumber=54-->

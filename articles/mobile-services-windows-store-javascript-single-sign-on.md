@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Authentifizieren Ihrer App mit Live Connect (JavaScript)" 
-	description="Erfahren Sie, wie Sie das einmalige Anmelden mit Live Connect in Azure Mobile Services von einer Windows Store-Anwendung aus verwenden." 
+	description="Erfahren Sie, wie Sie das einmalige Anmelden mit Live Connect in Azure Mobile Services von einer Windows Store-Anwendung verwenden." 
 	services="mobile-services" 
 	documentationCenter="windows" 
 	authors="ggailey777" 
@@ -10,27 +10,21 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="javascript" 
 	ms.topic="article" 
-	ms.date="11/22/2014" 
+	ms.date="04/08/2015" 
 	ms.author="glenga"/>
 
-# Authentifizieren Ihrer Windows Store-App mit einmaliger Anmeldung von Live Connect
-<div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/" title="Windows Store C#">Windows Store C#</a><a href="/documentation/articles/mobile-services-windows-store-javascript-single-sign-on/" title="Windows Store JavaScript" class="current">Windows Store JavaScript</a><a href="/documentation/articles/mobile-services-windows-phone-single-sign-on/" title="Windows Phone">Windows Phone</a>
-</div>	
+# Authentifizieren Ihrer Windows Store-App mit auf dem Client verwalteter Authentifizierung mit Microsoft-Konto
 
+[AZURE.INCLUDE [mobile-services-selector-single-signon](../includes/mobile-services-selector-single-signon.md)] 
 
-Dieses Thema beschreibt die Authentifizierung von Benutzern in Azure Mobile Services aus Ihrer Windows Store-App.  In diesem Lernprogramm fügen Sie die Authentifizierung mithilfe von Live Connect zum Schnellstartprojekt hinzu. Sobald die Authentifizierung durch Live Connect erfolgreich war, wird ein angemeldeter Benutzer mit seinem Namen begrüßt und der Benutzer-ID-Wert wird angezeigt.  
+## Übersicht
+Dieses Thema beschreibt die Authentifizierung von Benutzern in Azure Mobile Services aus Ihrer Windows Store-App. In diesem Lernprogramm fügen Sie die Authentifizierung mithilfe von Live Connect zum Schnellstartprojekt hinzu. Sobald die Authentifizierung durch Live Connect erfolgreich war, wird ein angemeldeter Benutzer mit seinem Namen begrüßt und der Benutzer-ID-Wert wird angezeigt.
 
->[AZURE.NOTE] Dieses Lernprogramm zeigt die Vorteile der Verwendung der einmaligen Anwendung mithilfe von Live Connect für Windows Store-Apps. Dadurch können Sie einen bereits angemeldeten Benutzer einfacher mit Ihrem Mobile Service authentifizieren. Informationen zu einem allgemeineren Authentifizierungsverfahren, das verschiedene Authentifizierungsanbieter unterstützt, finden Sie im Thema <a href="mobile-services-windows-store-javascript-get-started-users.md/">Erste Schritte mit der Authentifizierung</a>.
-
-In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung der Live Connect-Authentifizierung behandelt:
-
-1. [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]
-2. [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]
-3. [Hinzufügen von Authentifizierung zur App]
+>[AZURE.NOTE]Dieses Lernprogramm veranschaulicht die Vorteile der Verwendung einer auf dem Client verwalteten Authentifizierung und des Live SDK. Dadurch können Sie einen bereits angemeldeten Benutzer einfacher mit Ihrem Mobile Service authentifizieren. Sie können auch zusätzliche Bereiche anfordern, damit Ihre App auch Zugriff auf Ressourcen wie OneDrive erhält. 
+>Eine dienstverwaltete Authentifizierung ist etwas umfassender, und sie unterstützt auch mehrere Authentifizierungsanbieter. Weitere Informationen zur dienstverwalteten Authentifizierung finden Sie unter dem Thema [Hinzufügen von Authentifizierung zur App](mobile-services-windows-store-javascript-get-started-users.md).
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
@@ -38,153 +32,117 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + Microsoft Visual Studio 2012 Express für Windows 8 RC oder eine höhere Version
 + Sie müssen außerdem zunächst das Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen App] abschließen.
 
-##<a name="register"></a>Registrieren der App für den Windows Store
+## Registrieren Ihrer App für die Verwendung eines Microsoft-Kontos für die Authentifizierung
 
-Sie müssen Ihre App beim Windows Store registrieren, damit Sie Benutzer authentifizieren können. Dann müssen Sie den geheimen Clientschlüssel registrieren, um Live Connect in Mobile Services zu integrieren.
+Damit Sie Benutzer authentifizieren können, müssen Sie Ihre App beim Microsoft-Konto für das Developer Center registrieren. Sie müssen dann diese Registrierung mit Ihrem mobilen Dienst verbinden. Führen Sie die Schritte im folgenden Thema aus, um eine Microsoft-Kontoregistrierung zu erstellen und mit Ihrem mobilen Dienst zu verbinden.
 
-[AZURE.INCLUDE [mobile-services-register-windows-store-app](../includes/mobile-services-register-windows-store-app.md)]
++ [Registrieren Ihrer App für die Verwendung einer Microsoft-Kontoanmeldung](mobile-services-how-to-register-microsoft-authentication.md)
 
-##<a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
+## <a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
 
-[AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)] 
+Als Nächstes müssen Sie den Zugriff auf eine Ressource, in diesem Fall die *TodoItems*-Tabelle, einschränken, damit nur angemeldete Benutzer darauf zugreifen können.
 
-<ol start="3">
-<li><p>Öffnen Sie im Visual Studio 2012 Express für Windows 8 das Projekt, das Sie beim Abschluss des Lernprogramms <a href="/documentation/articles/mobile-services-windows-store-get-started">Erste Schritte mit Mobile Services</a> erstellt haben.</p></li> 
-<li><p>Drücken Sie F5, um diese Schnellstart-basierte App auszuführen. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.</p>
-   
-   	<p>Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die <em>TodoItem</em>-Tabelle jetzt jedoch eine Authentifizierung erfordert.</p></li>
-</ol>
+[AZURE.INCLUDE [mobile-services-restrict-permissions-windows](../includes/mobile-services-restrict-permissions-windows.md)] 
 
-Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren, bevor diese Ressourcen vom Mobile Service anfordern.
+## <a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
-##<a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
+Abschließend fügen Sie das Live SDK hinzu und verwenden es zum Authentifizieren von Benutzern in Ihrer App.
 
-1. Laden Sie das [Live SDK für Windows] herunter, und installieren Sie es.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Projektmappe, und wählen Sie dann **NuGet-Pakete verwalten** aus.
 
-2. Klicken Sie in Visual Studio im Menü **Projekt** auf **Verweis hinzufügen**, erweitern Sie **Windows**, klicken Sie auf **Erweiterungen**, aktivieren Sie **Live SDK**, und klicken Sie dann auf **OK**. 
+2. Wählen Sie im linken Bereich die Kategorie **Online** aus, suchen Sie nach **Live SDK**, klicken Sie auf dem Paket **Live SDK** auf **Installieren**, wählen Sie alle Projekte aus, und stimmen Sie dem Lizenzvertrag zu.
 
-  	![][16]
+  	Damit wird das Live SDK der Projektmappe hinzugefügt.
 
-  	So wird ein Verweis zum Live SDK zum Projekt hinzugefügt.
+3. Öffnen Sie die Projektdatei default.html und fügen Sie dem `<script>`-Element unterhalb des `<head>`-Element Folgendes hinzu:
 
-3. Öffnen Sie die Projektdatei "default.html", und fügen Sie das folgende &lt;script&gt;-Element im &lt;head&gt;-Element hinzu: 
+        <script src="/js/wl.js"></script>
 
-        <script src="///LiveSDKHTML/js/wl.js"></script>
-
-   	Dadurch wird Microsoft IntelliSense in der Datei "default.html" aktiviert.
-
-
-4. Öffnen Sie die Projektdatei default.js und fügen Sie den folgenden Kommentar am Anfang der Datei hinzu. 
-
-        /// <reference path="///LiveSDKHTML/js/wl.js" />
-
-   	Dadurch wird Microsoft IntelliSense in der Datei "default.js" aktiviert.
-
-5. Ersetzen Sie in der Methodenüberladung **app.OnActivated** den Aufruf der **refreshTodoItems**-Methode durch den folgenden Code: 
+5. Ersetzen Sie in der Methodenüberladung **app.OnActivated** den Aufruf der **refreshTodoItems**-Methode durch den folgenden Code:
 	
-        var session = null;   
+        // Set the mobileClient variable to client variable generated by the tooling.
+        var mobileClient = <yourClient>;
 
-        var logout = function () {
-            return new WinJS.Promise(function (complete) {
-                WL.getLoginStatus().then(function () {
-                    if (WL.canLogout()) {
-                        WL.logout(complete);                            
-                    }
-                    else {
-                        complete();
-                    }
-                });
-            });
-        };                  
-
+        var session = null;
         var login = function () {
-            return new WinJS.Promise(function (complete) {                    
-                WL.login({ scope: "wl.basic"}).then(function (result) {
+            return new WinJS.Promise(function (complete) {
+                WL.login({ scope: "wl.basic" }).then(function (result) {
                     session = result.session;
 
                     WinJS.Promise.join([
                         WL.api({ path: "me", method: "GET" }),
-                        client.login(result.session.authentication_token)
+                        mobileClient.login(result.session.authentication_token)
                     ]).done(function (results) {
-                        var profile = results[0];
-                        var mobileServicesUser = results[1];
-                        refreshTodoItems();
+                        // Build the welcome message from the Microsoft account info.
+                        var profile = results[0];                            
                         var title = "Welcome " + profile.first_name + "!";
-                        var message = "You are now logged in as: " + mobileServicesUser.userId;
+                        var message = "You are now logged in as: "
+                            + mobileClient.currentUser.userId;
                         var dialog = new Windows.UI.Popups.MessageDialog(message, title);
-                        dialog.showAsync().done(complete);                                
-                    });                       
-                }, function (error) {                        
+                        dialog.showAsync().then(function () {
+                            // Reload items from the mobile service.
+                            refreshTodoItems();
+                        }).done(complete);
+                        
+                    }, function (error) {
+
+                    });
+                }, function (error) {
                     session = null;
                     var dialog = new Windows.UI.Popups.MessageDialog("You must log in.", "Login Required");
-                    dialog.showAsync().done(complete);                        
+                    dialog.showAsync().done(complete);
                 });
             });
         }
 
         var authenticate = function () {
-            // Force a logout to make it easier to test with multiple Microsoft Accounts
-            logout().then(login).then(function () {
+            // Block until sign-in is successful.
+            login().then(function () {
                 if (session === null) {
-                    // Authentifizierung fehlgeschlagen, erneut versuchen.
+                    // Authentication failed, try again.
                     authenticate();
                 }
             });
         }
 
+		// Initialize the Live client.
         WL.init({
-            redirect_uri: "<< INSERT REDIRECT DOMAIN HERE >>"
-        });           
-            
+            redirect_uri: mobileClient.applicationUrl
+        });
+
+		// Start the sign-in process.
         authenticate();
 
-    Dieser Code initialisiert den Live Connect-Client, erzwingt eine Abmeldung, sendet eine neue Anmelde-Anforderung an Live Connect, sendet das zurückgegebene Authentifizierungs-Token an Mobile Services und zeigt anschließend Informationen über den angemeldeten Benutzer an. Dieser Code erzwingt wenn möglich eine Abmeldung, damit der Benutzer jedes Mal zur Eingabe der Anmeldeinformationen aufgefordert wird, wenn die Anwendung ausgeführt wird. Dies erleichtert das Testen der Anwendung mit verschiedenen Microsoft-Konten, um sicherzustellen, dass die Authentifizierung ordnungsgemäß funktioniert. Dieser Mechanismus funktioniert nur, wenn der angemeldete Benutzer nicht über ein verbundenes Microsoft-Konto verfügt.
+    Dies initialisiert den Live Connect-Client, sendet eine neue Anmelde-Anforderung an das Microsoft-Konto, sendet das zurückgegebene Authentifizierungstoken an Mobile Services und zeigt anschließend Informationen über den angemeldeten Benutzer an.
 
-	>[AZURE.NOTE]Sie sollten nicht bei jeder Ausführung der App Live Connection-Authentifizierungstoken oder Mobile Services-Autorisierungstoken anfordern. Diese Methode ist ineffizient, und zudem können nutzungsbedingte Probleme auftreten, wenn viele Kunden die App gleichzeitig starten möchten. Ein besserer Ansatz ist es daher, die Token zwischenzuspeichern und zunächst zu versuchen, die zwischengespeicherten Mobile Services-Token zu verwenden, bevor Sie **LoginWithMicrosoftAccountAsync** aufrufen. Ein Beispiel zum Zwischenspeichern dieses Tokens finden Sie unter [Erste Schritte mit der Authentifizierung](mobile-services-windows-store-javascript-get-started-users.md#tokens)
+	>[AZURE.NOTE]Sie sollten im Idealfall nicht bei jeder Ausführung der App Live Connection-Authentifizierungstoken oder Mobile Services-Autorisierungstoken anfordern. Diese Methode ist ineffizient, und zudem können nutzungsbedingte Probleme auftreten, wenn viele Kunden die App gleichzeitig starten möchten. Ein besserer Ansatz ist es daher, die Token zwischenzuspeichern und zunächst zu versuchen, die zwischengespeicherten Mobile Services-Token zu verwenden, bevor Sie **LoginWithMicrosoftAccountAsync** aufrufen. Ein Beispiel zum Zwischenspeichern dieses Tokens finden Sie unter [Erste Schritte mit der Authentifizierung](mobile-services-windows-store-javascript-get-started-users.md#tokens).
 	
-7. Aktualisieren Sie die Zeichenfolge << INSERT REDIRECT DOMAIN HERE >> aus dem vorherigen Schritt mit der Umleitungsdomäne, die bei der Konfiguration der App in Live Connect angegeben wurde, im Format **https://_service-name_.azure-mobile.net/**.
+7. Ersetzen Sie den Wert `<yourClient>` in der ersten Zeile des oben angegebenen Codes mit der in der JS-Datei, die Sie beim Verbinden des Projekts mit Mobile Service hinzugefügt haben, definierten Variablen.
 		
-8. Drücken Sie die Taste F5, um die App auszuführen, und melden Sie sich bei Live Connect mit Ihrem Microsoft-Konto an. 
+8. Drücken Sie F5, um die App auszuführen, und melden Sie sich mit Ihrem Microsoft-Konto an.
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Informationen zur Verwendung anderer Identitätsanbieter für die Authentifizierung finden Sie unter [Erste Schritte mit der Authentifizierung].
+Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie den von Mobile Services auf Basis eines authentifizierten Benutzers bereitgestellten Benutzer-ID-Wert verwenden, um von Mobile Services zurückgegebene Daten zu filtern. Weitere Informationen zur Verwendung anderer Identitätsanbieter für die Authentifizierung finden Sie unter [Erste Schritte mit der Authentifizierung].
 
 <!-- Anchors. -->
-[Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
-[Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions
-[Hinzufügen von Authentifizierung zur App]: #add-authentication
-[Nächste Schritte]:#next-steps
+[Register your app for authentication and configure Mobile Services]: #register
+[Restrict table permissions to authenticated users]: #permissions
+[Add authentication to the app]: #add-authentication
+[Next Steps]: #next-steps
 
 <!-- Images. -->
-[0]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-submit-win8-app.png
-[1]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-win8-app-name.png
-[2]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-store-association.png
-[3]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-select-app-name.png
-[4]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-selection.png
-[5]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-service-uri.png
-[6]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-live-connect-apps-list.png
-[7]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-live-connect-app-api-settings.png
-
-
-
-
-
-[13]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-identity-tab-ma-only.png
-[14]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-portal-data-tables.png
-[15]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-portal-change-table-perms.png
-[16]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-add-reference-live-js.png
 
 <!-- URLs. -->
-[Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK für Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-windows-store-javascript-get-started-data.md
 [Erste Schritte mit der Authentifizierung]: mobile-services-windows-store-javascript-get-started-users.md
 [Autorisieren von Benutzern mit Skripts]: mobile-services-windows-store-javascript-authorize-users-in-scripts.md
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.com/
 
-<!--HONumber=49-->
+<!--HONumber=54-->

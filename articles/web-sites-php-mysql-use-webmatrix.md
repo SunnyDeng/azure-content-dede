@@ -1,128 +1,134 @@
-﻿<properties 
-	pageTitle="PHP-Website mit MySQL und WebMatrix - Azure-Lernprogramm" 
-	description="In diesem Lernprogramm wird gezeigt, wie Sie mithilfe der kostenlosen WebMatrix-IDE eine PHP-Website erstellen, die Daten in MySQL speichert." 
-	services="web-sites" 
+<properties 
+	pageTitle="Erstellen und Bereitstellen einer PHP-MySQL-Web-App in Azure App Service mithilfe von WebMatrix" 
+	description="In diesem Lernprogramm wird gezeigt, wie Sie mithilfe der kostenlosen WebMatrix-IDE eine PHP-Web-App in Azure App Service erstellen und bereitstellen, die Daten in MySQL speichert."
+	tags="azure-portal" 
+	services="app-service\web" 
 	documentationCenter="php" 
 	authors="tfitzmac" 
 	manager="wpickett" 
 	editor="mollybos"/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="PHP" 
 	ms.topic="article" 
-	ms.date="11/14/2014" 
+	ms.date="04/22/2015" 
 	ms.author="tomfitz"/>
 
 
 
 
 
-#Erstellen und Bereitstellen einer PHP-MySQL-Azure-Website über WebMatrix
+# Erstellen und Bereitstellen einer PHP-MySQL-Web-App in Azure App Service mithilfe von WebMatrix
 
-In diesem Lernprogramm erfahren Sie, wie Sie WebMatrix zum Entwickeln und Bereitstellen einer PHP-MySQL-Anwendung auf einer Azure-Website verwenden. WebMatrix ist ein kostenloses Webentwicklungstool von Microsoft, das alles enthält, was Sie für die Entwicklung von Websites benötigen. WebMatrix unterstützt PHP und enthält IntelliSense für die PHP-Entwicklung.
+In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-MySQL-Anwendung mithilfe von WebMatrix in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-Apps entwickeln und bereitstellen. WebMatrix ist ein kostenloses Webentwicklungstool von Microsoft, das alles enthält, was Sie für die Entwicklung von Websites benötigen. WebMatrix unterstützt PHP und enthält IntelliSense für die PHP-Entwicklung.
 
-Dieses Lernprogramm geht davon aus, dass Sie [MySQL][install-mysql] auf Ihrem Computer installiert haben, sodass Sie eine Anwendung lokal testen können. Sie können das Lernprogramm jedoch auch durchführen, ohne MySQL installiert zu haben. Sie können stattdessen die Anwendung auch direkt auf Azure-Websites bereitstellen.
+In diesem Lernprogramm wird davon ausgegangen, dass Sie [MySQL][install-mysql] auf Ihrem Computer installiert haben, sodass Sie eine Anwendung lokal testen können. Sie können das Lernprogramm jedoch auch durchführen, ohne MySQL installiert zu haben. Sie können stattdessen die Anwendung auch direkt in Azure App Service-Web-Apps bereitstellen.
 
-Nachdem Sie diese Anleitung durchgearbeitet haben, werden Sie eine in Azure ausgeführte PHP-MySQL-Website besitzen.
+Nachdem Sie diese Anleitung durchgearbeitet haben, verfügen Sie über eine in Web-Apps ausgeführte PHP-MySQL-Website.
  
 Sie erhalten Informationen zu folgenden Themen:
 
-* Erstellen einer Azure-Website und einer MySQL-Datenbank über das Verwaltungsportal. Da PHP standardmäßig auf Azure-Websites aktiviert ist, gelten für die Ausführung Ihres PHP-Codes keine besonderen Voraussetzungen.
+* Erstellen einer Website in App Service-Web-Apps und einer MySQL-Datenbank über das [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715). Da PHP standardmäßig auf Web-Apps aktiviert ist, gelten für die Ausführung Ihres PHP-Codes keine besonderen Voraussetzungen.
 * Entwickeln einer PHP-Anwendung mithilfe von WebMatrix.
-* Veröffentlichen und erneutes Veröffentlichen Ihrer Anwendung mithilfe von WebMatrix in Azure.
+* Veröffentlichen und erneutes Veröffentlichen Ihrer Anwendung mithilfe von WebMatrix in Web-Apps.
  
-Mithilfe dieses Lernprogramms erstellen Sie eine einfache Tasklist-Webanwendung in PHP. Die Anwendung wird auf einer Azure-Website gehostet. Unten finden Sie einen Screenshot der laufenden Anwendung:
+Mithilfe dieses Lernprogramms erstellen Sie eine einfache Tasklist-Webanwendung in PHP. Die Anwendung wird in App Service-Web-Apps gehostet. Unten finden Sie einen Screenshot der laufenden Anwendung:
 
-![Azure PHP Web Site][running-app]
+![Azure-PHP-Website][running-app]
 
-> [AZURE.NOTE]
-> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können Ihre <a href="http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/">Vorteile für MSDN-Abonnenten aktivieren</a> oder <a href="http://azure.microsoft.com/pricing/free-trial/">sich für eine kostenlose Testversion anmelden</a>.
-> 
-> Wenn Sie Azure-Websites ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie <a href="https://trywebsites.azurewebsites.net/?language=php">https://trywebsites.azurewebsites.net</a>. Auf dieser Seite können Sie sofort und kostenlos eine befristete ASP.NET Starter Site in Azure-Websites erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-##Voraussetzungen
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-1. Sie müssen die Tasklist-Anwendungsdateien [herunterladen][tasklist-mysql-download]. Die Tasklist-Anwendung ist eine einfache PHP-Anwendung, mit der Sie Elemente einer Aufgabenliste hinzufügen, als erledigt markieren und löschen können. Elemente der Aufgabenliste werden in einer MySQL-Datenbank gespeichert. Die Anwendung besteht aus diesen Dateien:
+## Voraussetzungen
+
+1. [Herunterladen][tasklist-mysql-download] der Tasklist-Anwendungsdateien. Die Tasklist-Anwendung ist eine einfache PHP-Anwendung, mit der Sie Elemente einer Aufgabenliste hinzufügen, als erledigt markieren und löschen können. Die Elemente der Aufgabenliste werden in einer MySQL-Datenbank gespeichert. Die Anwendung besteht aus diesen Dateien:
 
 	* **additem.php**: Fügt ein Element zur Liste hinzu.
 	* **createtable.php**: Erstellt die MySQL-Tabelle für die Anwendung. Diese Datei wird nur einmal abgerufen.
 	* **deleteitem.php**: Löscht ein Element.
 	* **getitems.php**: Ruft alle Elemente in der Datenbank ab.
 	* **index.php**: Zeigt Aufgaben an und bietet ein Formular für das Hinzufügen eines Elements zur Liste.
-	* **markitemcomplete.php**: Ändert den Status eines Elements in erledigt.
+	* **markitemcomplete.php**: Ändert den Status eines Elements in Abgeschlossen.
 	* **taskmodel.php**: Enthält Funktionen, welche Elemente aus der Datenbank hinzufügen, abrufen, aktualisieren und löschen.
 
-1. Erstellen eine lokale MySQL-Datenbank namens  `tasklist`. Sie können dies entweder im Datenbankarbeitsbereich in WebMatrix (nach der Installation weiter unten in diesem Lernprogramm) oder über die MySQL-Eingabeaufforderung mit diesem Befehl ausführen:
+1. Erstellen Sie eine lokale MySQL-Datenbank namens `tasklist`. Verwenden Sie dazu entweder den Datenbank-Arbeitsbereich in WebMatrix (nachdem er nachfolgend im Lernprogramm installiert wurde) oder die MySQL-Eingabeaufforderung mit folgendem Befehl:
 
 		mysql> create database tasklist;
 
 	Dieser Schritt ist nur erforderlich, wenn Sie die Anwendung lokal testen möchten.
 
-<h2><a id="CreateWebsite"></a>Erstellen einer Azure-Website und einer MySQL-Datenbank</h2>
+## Erstellen einer Web-App und einer MySQL-Datenbank
 
-1. Melden Sie sich am [Verwaltungsportal][preview-portal] an.
-1. Klicken Sie unten links im Portal auf das Symbol **+ Neu**.
+Befolgen Sie diese Schritte, um eine Web-App und eine MySQL-Datenbank zu erstellen:
 
-	![Create New Azure Web Site][NewWebSite1]
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
-1. Klicken Sie auf **WEBSITE** und dann auf **BENUTZERDEFINIERT ERSTELLEN**.
+2. Klicken Sie unten links im Portal auf das Symbol **Neu**.
 
-	![Custom Create a new Web Site][NewWebSite2]
+	![Neue Azure-Website erstellen](./media/web-sites-php-mysql-use-webmatrix/new_website2.png)
 
-	> [AZURE.NOTE]
-	> Sie können eine MySQL-Datenbank für eine Website nicht nach dem Generieren der Website erstellen. Sie müssen eine Website und eine MySQL-Datenbank wie unten beschrieben erstellen.
+3. Klicken Sie auf **Web + Mobile** und dann auf **Web-App + MySQL**.
 
-1. Geben Sie einen Wert für **URL** ein, und wählen Sie **Neue MySQL-Datenbank erstellen** aus der Dropdownliste **DATENBANK** und das Datencenter für Ihre Website aus der Dropdownliste **REGION** aus. Klicken Sie unten im Dialogfeld auf den Pfeil.
+	![Neue Website benutzerdefiniert erstellen](./media/web-sites-php-mysql-use-webmatrix/create_web_mysql.png)
 
-	![Fill in web site details][NewWebSite3]
+4. Geben Sie einen gültigen Namen für die Ressourcengruppe ein.
 
-5. Geben Sie einen Wert für den **NAMEN** Ihrer Datenbank ein, wählen Sie das Rechenzentrum für Ihre Datenbank aus der Dropdownliste **REGION** aus, und aktivieren Sie das Kontrollkästchen zur Zustimmung zu den rechtlichen Bedingungen. Klicken Sie auf das Häkchen unten im Dialogfeld.
+    ![Ressourcengruppenname festlegen](./media/web-sites-php-mysql-use-webmatrix/set_group.png)
 
-	![Create new MySQL database][NewWebSite4]
+5. Geben Sie Werte für die neue Web-App ein.
 
-	Nachdem die Website erstellt wurde, wird der Text **Die Erstellung der Website "[WEBSITENAME]" wurde erfolgreich abgeschlossen** angezeigt.
+    ![Web-App erstellen](./media/web-sites-php-mysql-use-webmatrix/create_wa.png)
 
-	Als nächstes benötigen Sie die MySQL-Verbindungsinformationen.
+6. Geben Sie Werte für die neue Datenbank ein, einschließlich Ihrer Zustimmung der rechtlichen Bedingungen.
 
+	![Neue MySQL-Datenbank erstellen](./media/web-sites-php-mysql-use-webmatrix/create_db.png)
 
-6. Klicken Sie auf den Namen der Website, der in der Liste der Websites aufgeführt ist, um die Schnellstart-Seite der Website zu öffnen.
+	Wenn die Web-App erstellt wurde, wird die neue Ressourcengruppe angezeigt.
 
-	![Open web site dashboard][NewWebSite5]
+## Abrufen von MySQL-Remoteverbindungsinformationen
 
-7. Klicken Sie auf die Registerkarte **KONFIGURIEREN**:
+Um eine Verbindung mit der in Web-Apps ausgeführten MySQL-Datenbank herzustellen, benötigen Sie die Verbindungsinformationen. Befolgen Sie die folgenden Schritte, um MySQL-Verbindungsinformationen abzurufen:
 
-	![Configure tab][NewWebSite6]
+1. Klicken Sie in der Ressourcengruppe auf die Datenbank:
 
-8. Wechseln nach unten zum Abschnitt **Verbindungszeichenfolgen**. Die Werte für  `Database`, `Data Source`, `User Id` und  `Password` sind jeweils der Datenbankname, Servername, Benutzername und das Benutzerkennwort. Notieren Sie sich die Datenbankverbindungsinformationen, da Sie diese später benötigen.
+	![Datenbank auswählen](./media/web-sites-php-mysql-use-webmatrix/select_database.png)
 
-	![Connection string][ConnectionString]
+2. Wählen Sie für der Datenbankzusammenfassung die Option **Eigenschaften**.
 
-##Installieren von WebMatrix und Entwickeln Ihrer Anwendung
+    ![Eigenschaften auswählen](./media/web-sites-php-mysql-use-webmatrix/select_properties.png)
 
-Sie können WebMatrix aus dem [Verwaltungsportal][preview-portal] installieren. 
+2. Notieren Sie sich die Werte für `Database`, `Host`, `User Id` und `Password`.
 
-1. Navigieren Sie nach der Anmeldung zur Schnellstartseite der Anwendung, und klicken Sie auf das WebMatrix-Symbol unten auf der Seite:
+    ![Eigenschaften notieren](./media/web-sites-php-mysql-use-webmatrix/note-properties.png)
 
-	![Install WebMatrix][InstallWebMatrix]
+## Erstellen Ihrer Anwendung in WebMatrix
 
-	Folgen Sie den Anweisungen, um WebMatrix zu installieren.
+In den nächsten Schritten werden Sie die Tasklist-Anwendung entwickeln, indem Sie die zuvor heruntergeladenen Dateien hinzufügen und einige Änderungen vornehmen. Sie können jedoch auch eigene Dateien hinzufügen oder neue Dateien erstellen.
 
-2. Nachdem WebMatrix installiert ist, wird es versuchen, die Website als WebMatrix-Projekt zu öffnen. Sie können die Live-Website direkt bearbeiten oder eine lokale Kopie herunterladen. Wählen Sie für dieses Lernprogramm  'Edit local copy'. 
+1. Starten Sie [Microsoft WebMatrix](http://www.microsoft.com/web/webmatrix/). Wenn Sie es noch nicht installiert haben, holen Sie dies jetzt nach.
+2. Wenn Sie WebMatrix 3 zum ersten Mal verwenden, werden Sie aufgefordert, sich bei Azure anzumelden. Klicken Sie sonst auf die Schaltfläche **Anmelden**, und wählen Sie **Konto hinzufügen**. Melden Sie sich mit Ihrem Microsoft-Konto an.
 
-3. Wenn Sie aufgefordert werden, die Website herunterzuladen, wählen Sie **Ja, aus dem Vorlagenkatalog installieren**.
+	![Konto hinzufügen](./media/web-sites-php-mysql-use-webmatrix/webmatrix-add-account.png)
 
-	![Download web site][download-site]
+3. Wenn Sie sich für ein Azure-Konto angemeldet haben, können Sie sich mit Ihrem Microsoft-Konto anmelden:
 
-4. Wählen Sie aus den verfügbaren Vorlagen **PHP** aus.
+	![Anmelden bei Azure](./media/web-sites-php-mysql-use-webmatrix/webmatrix-sign-in.png)
 
-	![Site from template][site-from-template]
+1. Klicken Sie im Startbildschirm auf die Schaltfläche **Neu**, und wählen Sie **Vorlagenkatalog**, um eine neue Site aus dem Vorlagenkatalog zu erstellen:
 
-5. Wählen Sie die Vorlage **Leere Website**. Geben Sie einen Namen für die Website an, und klicken Sie auf **WEITER**.
+	![Neue Site aus Vorlagenkatalog](./media/web-sites-php-mysql-use-webmatrix/webmatrix-site-from-template.png)
 
-	![Provide name for site][site-from-template-2]
+4. Wählen Sie aus den verfügbaren Vorlagen **PHP**.
+
+	![Website von Vorlage][site-from-template]
+
+5. Wählen Sie die Vorlage **Empty Site**. Geben Sie einen Namen für die Website an, und klicken Sie auf **NEXT**.
+
+	![Namen für Website angeben][site-from-template-2]
 
 	Ihre Website wird in WebMatrix mit einigen Standarddateien geöffnet.
 
@@ -130,11 +136,11 @@ Sie können WebMatrix aus dem [Verwaltungsportal][preview-portal] installieren.
 
 6. Fügen Sie die Anwendungsdateien hinzu, indem Sie auf **Vorhandene hinzufügen** klicken:
 
-	![WebMatrix - Add existing files][edit_addexisting]
+	![WebMatrix – Vorhandene Dateien hinzufügen][edit_addexisting]
 
-	Navigieren Sie im angezeigten Dialogfenster zu den zuvor heruntergeladenen Dateien, wählen Sie alle aus, und klicken Sie dann auf "Öffnen". Wählen Sie bei entsprechender Aufforderung, dass die Datei  `index.php` ersetzt wird. 
+	Navigieren Sie im angezeigten Dialogfenster zu den zuvor heruntergeladenen Dateien, wählen Sie alle aus, und klicken Sie dann auf Open. Geben Sie bei entsprechender Aufforderung an, dass die Datei `index.php` ersetzt werden soll.
 
-7. Anschließend müssen Sie die Verbindungsinformationen für die lokale MySQL-Datenbank zur Datei  `taskmodel.php` hinzufügen. Öffnen Sie die Datei  `taskmodel.php` per Doppelklick, und aktualisieren Sie die Verbindungsinformationen für die Datenbank in der Funktion  `connect`. (**Hinweis**: Wechseln Sie zu [Veröffentlichen der Anwendung](#Publish) , falls Sie die Anwendung nicht lokal testen möchten und diese stattdessen direkt in Azure-Websites veröffentlichen möchten.)
+7. Anschließend müssen Sie die Verbindungsinformationen für die lokale MySQL-Datenbank zur Datei `taskmodel.php` hinzufügen. Öffnen Sie die `taskmodel.php`-Datei, indem Sie darauf doppelklicken, und aktualisieren Sie die Datenbank-Verbindungsinformationen in der Funktion `connect`. (**Hinweis**: Wechseln Sie zu [Veröffentlichung der Anwendung](#Publish), wenn Sie Ihre Anwendung nicht lokal testen möchten und stattdessen direkt in Azure App Service-Web-Apps veröffentlichen möchten.)
 
 		// DB connection info
 		$host = "localhost";
@@ -142,20 +148,20 @@ Sie können WebMatrix aus dem [Verwaltungsportal][preview-portal] installieren.
 		$pwd = "your password";
 		$db = "tasklist";
 
-	Speichern Sie die Datei  `taskmodel.php`.
+	Speichern Sie die Datei `taskmodel.php`.
 
-8. Damit die Anwendung ausgeführt werden kann, muss die Tabelle  `items` erstellt werden. Klicken Sie mit der rechten Maustaste auf die Datei  `createtable.php`, und wählen Sie **In Browser starten**. Dadurch wird  `createtable.php` im Browser gestartet und Code ausgeführt, wodurch die Tabelle  `items` in der Datenbank  `tasklist` erstellt wird.
+8. Damit die Anwendung ausgeführt werden kann, muss die Tabelle `items` erstellt werden. Klicken Sie mit der rechten Maustaste auf die Datei `createtable.php`, und wählen Sie **In Browser starten**. Dadurch wird `createtable.php` im Browser gestartet und Code ausgeführt, wodurch die Tabelle `items` in der Datenbank `tasklist` erstellt wird.
 
-	![WebMatrix - Launch createtable.php in browser][edit_run]
+	![WebMatrix – createtable.php im Browser starten][edit_run]
 
-9. Sie können die Anwendung jetzt lokal testen. Klicken Sie mit der rechten Maustaste auf die Datei  `index.php`, und wählen Sie **In Browser starten**. Testen Sie die Anwendung, indem Sie Elemente hinzufügen, diese als erledigt markieren und löschen.  
+9. Sie können die Anwendung jetzt lokal testen. Klicken Sie mit der rechten Maustaste auf die Datei `index.php`, und wählen Sie **In Browser starten**. Testen Sie die Anwendung, indem Sie Elemente hinzufügen, diese als erledigt markieren und löschen.
 
 
-<h2><a id="Publish"></a>Veröffentlichen der Anwendung</h2>
+## Veröffentlichen der Anwendung
 
-Bevor die Anwendung auf Azure-Websites veröffentlicht wird, müssen die Verbindungsinformationen für die Datenbank in  `taskmodel.php` mit den Verbindungsinformationen aktualisiert werden, die Sie zuvor erhalten haben (im Abschnitt [Erstellen einer Website und einer MySQL-Datenbank](#CreateWebsite) ).
+Bevor die Anwendung in App Service-Web-Apps veröffentlicht wird, müssen die Verbindungsinformationen für die Datenbank in `taskmodel.php` mit den Verbindungsinformationen aktualisiert werden, die Sie zuvor erhalten haben (im Abschnitt [Erstellen einer Web-App und einer SQL-Datenbank](#CreateWebsite)).
 
-1. Öffnen Sie die Datei  `taskmodel.php` per Doppelklick, und aktualisieren Sie die Verbindungsinformationen für die Datenbank in der Funktion  `connect`.
+1. Öffnen Sie die Datei `taskmodel.php` durch einen Doppelklick, und aktualisieren Sie die Verbindungsinformationen für die Datenbank in der Funktion `connect`.
 
 		// DB connection info
 		$host = "value of Data Source";
@@ -163,41 +169,47 @@ Bevor die Anwendung auf Azure-Websites veröffentlicht wird, müssen die Verbind
 		$pwd = "value of Password";
 		$db = "value of Database";
 	
-	Save the `taskmodel.php` file.
+	Speichern Sie die Datei `taskmodel.php`.
 
-2. Klicken Sie in WebMatrix auf **Veröffentlichen** und anschließend im Dialogfeld **Vorschau veröffentlichen** auf **Weiter**.
+2. Klicken Sie in WebMatrix auf **Veröffentlichen**.
 
-	![WebMatrix - Publish][edit_publish]
+	![WebMatrix – Veröffentlichen][edit_publish]
 
-3. Navigieren Sie zu http://[Name der Website].azurewebsites.net/createtable.php , um die Tabelle  `items` zu erstellen.
+3. Klicken Sie auf **Bestehende Website in Microsoft Azure auswählen**.
 
-4. Navigieren Sie zuletzt zu http://[Name der Website].azurewebsites.net/index.php , um die Anwendung zu verwenden.
+	![](./media/web-sites-php-sql-database-use-webmatrix/webmatrix-publish-existing-site.png)
+
+3. Wählen Sie die App Service-Web-App aus, die Sie zuvor erstellt haben.
+
+	![](./media/web-sites-php-sql-database-use-webmatrix/webmatrix-publish-existing-site-choose.png)
+
+3. Klicken Sie so lange auf **Weiter**, bis WebMatrix die Website in Azure App Service-Web-Apps veröffentlicht.
+
+3. Navigieren Sie zu http://[your Name der Website].azurewebsites.net/createtable.php, um die Tabelle `items` zu erstellen.
+
+4. Navigieren Sie zuletzt zu http://[your Name der Website].azurewebsites.net/index.php, um die Anwendung zu verwenden.
 	
-##Ändern und erneutes Veröffentlichen der Anwendung
+## Ändern und erneutes Veröffentlichen der Anwendung
 
-Sie können die Anwendung einfach ändern, indem Sie die lokale Kopie der zuvor heruntergeladenen Website bearbeiten und dann erneut veröffentlichen. Alternativ können Sie die Änderung auch direkt im Remotemodus vornehmen. In diesem Fall nehmen Sie eine einfache Änderung an der Kopfzeile der Datei  `index.php` vor und speichern diese direkt in der Live-Website.
+Sie können die Anwendung einfach ändern, indem Sie die lokale Kopie der zuvor heruntergeladenen Website bearbeiten und dann erneut veröffentlichen. Alternativ können Sie die Änderung auch direkt im Remotemodus vornehmen. In diesem Fall nehmen Sie eine einfache Änderung an der Kopfzeile der Datei `index.php` vor und speichern diese direkt in der Live-Website.
 
-1. Klicken Sie in WebMatrix auf die Registerkarte "Remote" der Website, und wählen Sie **Remoteansicht öffnen**. Dadurch wird die Remotewebsite für die direkte Bearbeitung geöffnet.
-	 ![WebMatrix - Open Remote View][OpenRemoteView]
+1. Klicken Sie in WebMatrix auf die Remote-Registerkarte der Website, und wählen Sie **Open Remote View**. Dadurch wird die Remotewebsite für die direkte Bearbeitung geöffnet.![WebMatrix – Remote-Ansicht öffnen][OpenRemoteView]
  
-2. Öffnen Sie durch Doppelklick die Datei  `index.php`.
-	![WebMatrix - Open index file][Remote_editIndex]
+2. Öffnen Sie die Datei `index.php` durch Doppelklick. ![WebMatrix – Indexdatei öffnen][Remote_editIndex]
 
-3. Ändern Sie **My ToDo List** in **My Task List** in den Tags **title** und **h1**, und speichern Sie die Datei.
-
-
-4. Klicken Sie nach dem Speichern auf die Run-Schaltfläche, um die Änderungen an der Live-Website anzuzeigen.
-	![WebMatrix - Launch site in Remote][Remote_run]
+3. Ändern Sie **My ToDo List** in **My Task List** in den Tags **Titel** und **h1**, und speichern Sie die Datei.
 
 
-# Nächste Schritte
+4. Klicken Sie nach dem Speichern auf die Schaltfläche "Ausführen", um die Änderungen an der Live-Website anzuzeigen. ![WebMatrix – Website in Remote starten][Remote_run]
 
-Sie haben gesehen, wie Sie eine Website erstellen und von WebMatrix auf Azure bereitstellen. Weitere Informationen zu WebMatrix erhalten Sie hier:
 
-* [WebMatrix für Azure](http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409)
+## Nächste Schritte
 
 * [WebMatrix-Website](http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398)
 
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 
 
@@ -250,8 +262,4 @@ Sie haben gesehen, wie Sie eine Website erstellen und von WebMatrix auf Azure be
 
 
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=54-->

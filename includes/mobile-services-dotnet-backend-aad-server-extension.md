@@ -1,6 +1,6 @@
-﻿### (Optional) Konfigurieren von .NET Mobile Services für Azure Active Directory
+### (Optional) Konfigurieren von .NET Mobile Services für Azure Active Directory
 
->[AZURE.NOTE] Diese Schritte sind optional, da sie nur für den Azure Active Directory-Anmeldeanbieter gelten.
+>[AZURE.NOTE]Diese Schritte sind optional, da sie nur für den Azure Active Directory-Anmeldeanbieter gelten.
 
 1. Installieren Sie das NuGet-Paket [WindowsAzure.MobileServices.Backend.Security](https://www.nuget.org/packages/WindowsAzure.MobileServices.Backend.Security).
 
@@ -13,4 +13,4 @@
         options.LoginProviders.Remove(typeof(AzureActiveDirectoryLoginProvider));
         options.LoginProviders.Add(typeof(AzureActiveDirectoryExtendedLoginProvider));
 
-<!--HONumber=49-->
+<!--HONumber=54-->

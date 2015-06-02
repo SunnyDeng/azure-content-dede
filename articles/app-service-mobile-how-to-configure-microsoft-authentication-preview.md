@@ -18,30 +18,30 @@
 
 # Konfigurieren Ihrer Anwendung zur Verwendung der Microsoft-Kontoanmeldung
 
-In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung eines Microsoft-Kontos als Authentifizierungsanbieter konfigurieren. 
+In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung eines Microsoft-Kontos als Authentifizierungsanbieter konfigurieren.
 
 ## <a name="register"> </a>Registrieren Ihrer Anwendung für ein Microsoft-Konto
 
 1. Navigieren Sie im Microsoft Account Developer Center zur Seite [Eigene Anwendungen], und melden Sie sich, falls erforderlich, mit Ihrem Microsoft-Konto an. 
 
-2. Klicken Sie auf **Anwendung erstellen**, geben Sie einen **Anwendungsnamen** ein, und klicken Sie auf **Ich stimme zu**.
+2. Klicken Sie auf **Anwendung erstellen**, geben Sie dann einen **Anwendungsnamen** ein, und klicken Sie auf **Ich stimme zu**.
 
 3. Klicken Sie auf **API-Einstellungen**. Wählen Sie für **Mobile oder Desktopclient-App** die Einstellung **Ja** aus. Geben Sie im Feld **Umleitungs-URL** die URL Ihres Gateways mit angehängtem Pfad _/signin-microsoft_ ein. Beispiel: `https://contosogateway.azurewebsites.net/signin-microsoft`. Stellen Sie sicher, dass Sie das HTTPS-Schema verwenden. Klicken Sie nach der Eingabe der Umleitungs-URL auf **Speichern**.
 
 	![][0]
 
-	>[AZURE.NOTE]Zur Registrierung einer vorhandenen Live Connect-App müssen Sie u. U. zuerst **Erweiterte Umleitungssicherheit** aktivieren.
+	>[AZURE.NOTE]Zur Registrierung einer vorhandenen Microsoft-Konto-App müssen Sie u. U. zuerst **Erweiterte Umleitungssicherheit** aktivieren.
 
-4. Klicken Sie auf **App-Einstellungen**, und notieren Sie sich die Werte unter **Client-ID** und **Geheimer Clientschlüssel**. 
+4. Klicken Sie auf **App-Einstellungen**, und notieren Sie sich die Werte unter **Client-ID** und **Geheimer Clientschlüssel**.
 
-    > [AZURE.NOTE] Der geheime Clientschlüssel ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre Anwendung weiter.
+    > [AZURE.NOTE]Der geheime Clientschlüssel ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre Anwendung weiter.
 
 
 ## <a name="secrets"> </a>Hinzufügen von Microsoft-Kontoinformationen zu Ihrer mobilen App
 
 5. Melden Sie sich am [Azure-Verwaltungsportal] an, und navigieren Sie zu Ihrem App Services-Gateway.
 
-6. Klicken Sie unter **Einstellungen** auf **Identität**, und wählen Sie anschließend **Microsoft-Konto**. Fügen Sie die Werte für App-ID und den geheimen App-Schlüssel ein, die Sie zuvor abgerufen haben. Klicken Sie dann auf **Speichern**.
+6. Klicken Sie unter **Einstellungen** auf **Identität**, und wählen Sie anschließend **Microsoft-Konto**. Fügen Sie die Werte für App-ID und den geheimen App-Schlüssel ein, die Sie zuvor abgerufen haben. Klicken Sie anschließend auf **Save**.
 
     ![][1]
 
@@ -62,8 +62,6 @@ Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verw
 
 <!-- URLs. -->
 
-[Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Eigene Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Azure-Verwaltungsportal]: https://portal.azure.com/
-
-<!--HONumber=49-->
+<!--HONumber=54-->

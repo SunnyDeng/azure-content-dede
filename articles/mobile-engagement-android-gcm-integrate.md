@@ -1,6 +1,6 @@
-﻿<properties 
-	pageTitle="Integration des Android-SDKs für Azure Mobile Engagement" 
-	description="Neueste Updates und Verfahren für das Android-SDK für Azure Mobile Engagement"
+<properties 
+	pageTitle="Integration des Azure Mobile Engagement Android SDKs" 
+	description="Neueste Updates und Verfahren für das Android SDK für Azure Mobile Engagement"
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="kpiteira" 
@@ -16,9 +16,9 @@
 	ms.date="02/12/2015" 
 	ms.author="kapiteir" />
 
-# So integrieren Sie GCM in Mobile Engagement
+# Integrieren von GCM mit Mobile Engagement
 
-> [AZURE.IMPORTANT] Bevor Sie die in diesem Leitfaden beschriebenen Schritte ausführen, müssen Sie die im Dokument "So integrieren Sie Engagement auf Android" beschriebenen Verfahren ausführen.
+> [AZURE.IMPORTANT]Bevor Sie dieser Anleitung folgen, müssen Sie das unter „Integrieren von Mobile Engagement unter Android“ beschriebene Integrationsverfahren befolgen.
 >
 > Das vorliegende Dokument ist nur hilfreich, wenn Sie das Reach-Modul für die jederzeitige Kampagnenunterstützung integriert haben. Lesen Sie zunächst das Dokument "So integrieren Sie Engagement Reach auf Android", um Informationen zum Integrieren von Reach-Kampagnen zu erhalten.
 
@@ -30,10 +30,10 @@ Durch die Integration von GCM kann Ihre Anwendung selbst dann Pushnachrichten em
 
 Engagement verwendet ausschließlich [Send-to-Sync]-Nachrichten mit dem `engagement.tickle`-Ausblendschlüssel.
 
-> [AZURE.IMPORTANT] Über GCM können nur Geräte aktiviert werden, die über Android 2.2 oder höher verfügen, auf denen Google Play installiert ist und die über eine Google-Hintergrundverbindung verfügen. Dieser Code kann jedoch ohne Sicherheitsbedenken auch auf älteren Versionen des Android-SDK und auf Geräten integriert werden, die GCM nicht unterstützen (es werden nur "Intents" verwendet). Wenn die Anwendung nicht per GCM aktiviert werden kann, wird die Engagement-Benachrichtigung beim nächsten Anwendungsstart empfangen.
+> [AZURE.IMPORTANT]Über GCM können nur Geräte aktiviert werden, die über Android 2.2 oder höher verfügen, auf denen Google Play installiert ist und die über eine Google-Hintergrundverbindung verfügen. Dieser Code kann jedoch ohne Sicherheitsbedenken auch auf älteren Versionen des Android-SDK und auf Geräten integriert werden, die GCM nicht unterstützen (es werden nur "Intents" verwendet). Wenn die Anwendung nicht per GCM aktiviert werden kann, wird die Engagement-Benachrichtigung beim nächsten Anwendungsstart empfangen.
 
 
-> [AZURE.WARNING] Wenn Ihr eigener Clientcode C2DM-Registrierungs-IDs nutzt und das Engagement-SDK zur Verwendung von GCM konfiguriert ist, tritt ein Konflikt bei den Registrierungs-IDs auf. Verwenden Sie GCM nur dann in Engagement, wenn Ihr eigener Code nicht C2DM verwendet.
+> [AZURE.WARNING]Wenn Ihr eigener Clientcode C2DM-Registrierungs-IDs nutzt und das Engagement-SDK zur Verwendung von GCM konfiguriert ist, tritt ein Konflikt bei den Registrierungs-IDs auf. Verwenden Sie GCM nur dann in Engagement, wenn Ihr eigener Code nicht C2DM verwendet.
 
 ## Anmelden bei GCM und Aktivieren des GCM-Diensts
 
@@ -45,7 +45,7 @@ Führen Sie dieses Verfahren nur zum Aktivieren von GCM für Ihr Konto aus. Wenn
 
 Im Verfahren wird erläutert, dass der Wert für **Project Number** (Projektnummer) als **GCM sender ID** (GCM-Sende-ID) verwendet wird, Sie benötigen diesen Wert später in diesem Verfahren.
 
-> [AZURE.IMPORTANT] **Project Number** (Projektnummer) darf nicht verwechselt werden mit **Project ID** (Projekt-ID). Die Projekt-ID kann abweichen (es handelt sich um einen Namen für neue Projekte). Sie benötigen zur Integration im Engagement-SDK den Wert für **Project Number** (Projektnummer). Dieser wird im Menü **Overview** (Übersicht) in der [Google Developers Console] angezeigt.
+> [AZURE.IMPORTANT]**Project Number** (Projektnummer) darf nicht mit **Project ID** (Projekt-ID) verwechselt werden. Die Projekt-ID kann abweichen (es handelt sich um einen Namen für neue Projekte). Sie benötigen zur Integration im Engagement-SDK den Wert für **Project Number** (Projektnummer). Dieser wird im Menü **Overview** (Übersicht) in der [Google Developers Console] angezeigt.
 
 ## SDK-Integration
 
@@ -108,18 +108,18 @@ Zum Zeitpunkt der Erstellung dieses Dokuments (5. Februar 2014) stand das folgen
 
 Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Option "Any Time" (Jederzeit) auswählen.
 
-> [AZURE.IMPORTANT] Engagement benötigt tatsächlich einen **Serverschlüssel**, ein Android-Schlüssel kann von den Engagement-Servern nicht verwendet werden.
+> [AZURE.IMPORTANT]Engagement benötigt tatsächlich einen **Serverschlüssel**, ein Android-Schlüssel kann von den Engagement-Servern nicht verwendet werden.
 
 ## Test
 
-Überprüfen Sie jetzt Ihre Integration, mithilfe der Informationen im Abschnitt "So testen Sie die Engagement-Integration auf Android".
+Überprüfen Sie jetzt Ihre Integration, indem Sie den Abschnitt „Testen der Engagement-Integration unter Android“ lesen.
 
 
-[Send-to-Sync]:http://developer.android.com/google/gcm/adv.html#collapsible
-[<http://developer.android.com/guide/google/gcm/gs.html>]:http://developer.android.com/guide/google/gcm/gs.html
-[Google Developers Console]:https://cloud.google.com/console
-[GCM-Clientbibliothek]:http://developer.android.com/guide/google/gcm/gs.html#libs
-[Google Developers Console]:https://cloud.google.com/console
+[Send-to-Sync]: http://developer.android.com/google/gcm/adv.html#collapsible
+[<http://developer.android.com/guide/google/gcm/gs.html>]: http://developer.android.com/guide/google/gcm/gs.html
+[Google Developers Console]: https://cloud.google.com/console
+[GCM-Clientbibliothek]: http://developer.android.com/guide/google/gcm/gs.html#libs
+[Google Developers Console]: https://cloud.google.com/console
 
 
-<!--HONumber=47-->
+<!--HONumber=54-->

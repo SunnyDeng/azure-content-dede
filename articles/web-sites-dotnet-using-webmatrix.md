@@ -1,27 +1,27 @@
-﻿<properties 
-	pageTitle=".NET-Website mit WebMatrix - Azure-Lernprogramme" 
-	description="Erfahren Sie mehr über die Entwicklung und Bereitstellung einer Azure-Website mit WebMatrix." 
-	services="web-sites" 
+<properties 
+	pageTitle="Entwickeln und Bereitstellen von Web-Apps mit Microsoft WebMatrix" 
+	description="Erfahren Sie, wie Sie eine ASP.NET-Webanwendung in Azure App Service-Web-Apps mit Microsoft WebMatrix entwickeln und bereitstellen." 
+	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="tfitzmac" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="10/27/2014" 
+	ms.date="04/21/2015" 
 	ms.author="tomfitz"/>
 
 
+# Entwickeln und Bereitstellen von Web-Apps mit Microsoft WebMatrix
 
+## Übersicht
 
-
-#Entwickeln und Bereitstellen einer Website mit Microsoft WebMatrix
-Dieser Leitfaden beschreibt, wie Sie mit Microsoft WebMatrix eine Website erstellen und in Azure bereitstellen.  Sie verwenden hierzu eine Beispielanwendung einer WebMatrix-Websitevorlage.
+Dieser Leitfaden beschreibt, wie Sie mit Microsoft WebMatrix eine .NET-Website erstellen und in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-Apps bereitstellen. Sie verwenden hierzu eine Beispielanwendung einer WebMatrix-Websitevorlage.
 
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -29,68 +29,68 @@ Sie erhalten Informationen zu folgenden Themen:
 * Erstellen einer Site mit einer in WebMatrix integrierten Vorlage 
 * Bereitstellen der benutzerdefinierten Website direkt über WebMatrix in Azure
 
-> [AZURE.NOTE]
-> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Sie können Ihre <a href="http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/">Vorteile für MSDN-Abonnenten aktivieren</a> oder <a href="http://azure.microsoft.com/pricing/free-trial/">sich für eine kostenlose Testversion anmelden</a>.
-> Wenn Sie Azure-Websites ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie <a href="https://trywebsites.azurewebsites.net/">https://trywebsites.azurewebsites.net</a>. Auf dieser Seite können Sie sofort und kostenlos eine befristete ASP.NET Starter Site in Azure-Websites erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Anmelden bei Azure
 
 1. Starten Sie WebMatrix.
-2. Wenn Sie WebMatrix 3 zum ersten Mal verwenden, werden Sie aufgefordert, sich bei Azure anzumelden.  Klicken Sie sonst auf die Schaltfläche **Anmelden**, und wählen Sie **Konto hinzufügen**.  **Melden Sie sich** mit Ihrem Microsoft-Konto an.
+2. Wenn Sie WebMatrix 3 zum ersten Mal verwenden, werden Sie aufgefordert, sich bei Azure anzumelden. Klicken Sie sonst auf die Schaltfläche **Anmelden**, und wählen Sie **Konto hinzufügen**. Melden Sie sich mit Ihrem Microsoft-Konto an.
 
-	![Add Account][addaccount]
+	![Konto hinzufügen][addaccount]
 
 3. Wenn Sie sich für ein Azure-Konto angemeldet haben, können Sie sich mit Ihrem Microsoft-Konto anmelden:
 
-	![Sign into Azure][signin]	
+	![Anmelden bei Azure][signin]
 
 
 ## Erstellen einer Site für Azure mit einer integrierten Vorlage
 
 1. Klicken Sie im Startbildschirm auf die Schaltfläche **Neu**, und wählen Sie **Vorlagenkatalog**, um eine neue Site aus dem Vorlagenkatalog zu erstellen:
 
-	![New site from Template Gallery][sitefromtemplate]
+	![Neue Site aus Vorlagenkatalog][sitefromtemplate]
 
-2. Im Vorlagenkatalog wird eine Liste der verfügbaren Vorlagen angezeigt, die lokal oder auf Azure ausgeführt werden können.  Wählen Sie die Vorlage **Konditorei** in der Liste aus, geben Sie **Konditoreibeispiel** im Feld **Websitename** ein, und klicken Sie auf **Weiter**.
+2. Im Vorlagenkatalog wird eine Liste der verfügbaren Vorlagen angezeigt, die lokal oder auf Azure ausgeführt werden können. Wählen Sie die Vorlage **Konditorei** aus der Liste, geben Sie **Konditoreibeispiel** im Feld **Websitename** ein, und klicken Sie auf **Weiter**.
 
-	![Create Site from Template][sitefromtemplatedetails]
+	![Site aus Vorlage erstellen][sitefromtemplatedetails]
 
-3. Wenn Sie bei Azure angemeldet sind, können Sie nun eine Azure-Website für eine lokale Site erstellen.  Wählen Sie einen eindeutigen Namen, und wählen Sie das Data Center aus, in dem die Site erstellt werden soll: 
+3. Wenn Sie bei Azure angemeldet sind, können Sie nun eine Azure App Service-Web- Apps-Instanz für eine lokale Site erstellen. Wählen Sie einen eindeutigen Namen und das Rechenzentrum aus, in dem die Web-Apps-Instanz erstellt werden soll.
 
-	![Create site on Azure][sitefromtemplateazure]
+	![Site auf Azure erstellen][sitefromtemplateazure]
 
-	Nachdem WebMatrix die Website erstellt hat, wird die WebMatrix-IDE angezeigt:
+	Nachdem WebMatrix die lokale Site und die Web-Apps-Instanz in Azure erstellt hat, wird die WebMatrix IDE angezeigt.
 
-	![WebMatrix IDE][howtowebmatrixide] 
+	![WebMatrix-IDE][howtowebmatrixide]
 
-## E-Mail einrichten
+## Einrichten von E-Mail
 
 Das Konditoreibeispiel umfasst ein simuliertes Bestellformular, mit dem eine E-Mail-Nachricht mit der Bestellung gesendet wird. Sie verwenden den SendGrid-E-Mail-Dienst in Azure, um E-Mails von Ihrer Site zu senden.
 
-1. Führen Sie die Schritte im Lernprogramm [Senden von E-Mails mithilfe von SendGrid mit Azure][sendgridexample] aus, um ein SendGrid-Konto einzurichten und die Verbindungsinformationen abzurufen. Sie müssen nicht das gesamte Lernprogramm absolvieren- nur bis zu dem Punkt, wie die Verbindungsinformationen abgerufen werden.
+1. Führen Sie die Schritte im Lernprogramm [Senden von E-Mails mit SendGrid in Azure][sendgridexample] aus, um ein SendGrid-Konto einzurichten und die Verbindungsinformationen abzurufen. Sie müssen nicht das gesamte Lernprogramm absolvieren– nur bis zu dem Punkt, wie die Verbindungsinformationen abgerufen werden.
 
 2. Fügen Sie das SendGrid-NuGet-Pakets zu Ihrem WebMatrix-Projekt hinzu. Klicken Sie zunächst auf die NuGet-Schaltfläche.
 
-    ![Add SendGrid][addsendgrid]
+    ![SendGrid hinzufügen][addsendgrid]
 
-    Suchen Sie nach "SendGrid", und installieren Sie es.
+    Suchen und installieren Sie SendGrid.
 
-    ![Install SendGrid][installsendgrid]
+    ![SendGrid installieren][installsendgrid]
 
-    Nachdem das Paket installiert wurde, beachten Sie, dass die SendGrid-Assemblys zu "Bin" hinzugefügt wurden.
+    Nachdem das Paket installiert wurde, sehen Sie, dass die SendGrid-Assemblys zu "bin" hinzugefügt wurden.
 
-    ![SendGrid added][binsendgrid]
+    ![SendGrid hinzugefügt][binsendgrid]
 
 3. Öffnen Sie die Seite *Order.cshtml*, indem Sie auf den Dateinamen doppelklicken.
 
 	![][modify2]
 
-4. Fügen Sie am Anfang der Datei den folgenden Code hinzu:
+4. Fügen Sie am Anfang der Datei folgenden Code hinzu:
 
         @using SendGrid;
-        @using System.Net.Mail;	
+        @using System.Net.Mail;
 
-4. Suchen Sie den Kommentar mit der Meldung //SMTP Configuration for Hotmail, und löschen Sie den gesamten Code für die Verwendung von WebMail bzw. kommentieren Sie diesen aus.
+4. Suchen Sie den Kommentar "//SMTP Configuration for Hotmail", und löschen oder kommentieren Sie den gesamten Code für die Verwendung von WebMail.
 
         /*
         //SMTP Configuration for Hotmail
@@ -151,28 +151,28 @@ Das Konditoreibeispiel umfasst ein simuliertes Bestellformular, mit dem eine E-M
 
 7. Klicken Sie für eines der Produkte auf **Jetzt bestellen**, und senden Sie die Bestellung an sich selbst.
 
-8. Überprüfen Sie Ihre E-Mail-Nachrichten darauf, ob Sie die Bestellbestätigung erhalten haben. Wenn Sie Probleme beim Senden von E-Mail-Nachrichten haben, finden Sie weitere Informationen unter [Probleme beim Senden von E-Mail][sendmailissues] in der Problembehandlung zu ASP.NET-Webseiten (Razor).
+8. Überprüfen Sie Ihre E-Mail-Nachrichten darauf, ob Sie die Bestellbestätigung erhalten haben. Wenn Sie Probleme beim Senden von E-Mail-Nachrichten haben, finden Sie weitere Informationen unter [Issues with Sending Email][sendmailissues] (Probleme beim Senden von E-Mail, in englischer Sprache) in der Problembehandlung zu ASP.NET-Webseiten (Razor).
  
 
 ## Bereitstellen der benutzerdefinierten Website direkt über WebMatrix in Azure
 
 1. Klicken Sie in WebMatrix im Menüband **Startseite** auf **Veröffentlichen**, um das Dialogfeld **Vorschau veröffentlichen** aufzurufen.
 
-	![WebMatrix Publish Preview][howtopublishpreview]
+	![WebMatrix-Vorschau veröffentlichen][howtopublishpreview]
 
-2. Aktivieren Sie das Kontrollkästchen neben "bakery.sdf", und klicken Sie dann auf **Weiter**.  Wenn die Veröffentlichung abgeschlossen ist, wird die URL für die aktualisierte Website auf Azure unten in der WebMatrix-IDE angezeigt.  
+2. Klicken Sie in das Kontrollkästchen neben "bakery.sdf", und klicken Sie dann auf **Weiter**. Wenn die Veröffentlichung abgeschlossen ist, wird die URL für die aktualisierte Web-App im Azure App Service unten in der WebMatrix IDE angezeigt.
 
-	![Publishing Complete][publishcomplete]
+	![Veröffentlichung abgeschlossen][publishcomplete]
 
-3. Klicken Sie auf den Link, um die Website in Ihrem Browser zu öffnen:
+3. Klicken Sie auf den Link, um die Website (eine Web-Apps-Instanz in Azure) in Ihrem Browser zu öffnen:
 
-	![Bakery Sample Site][bakerysample]
+	![Konditorei-Beispielsite][bakerysample]
 
-	Sie können die URL für die Website auch im Azure-Portal finden, indem Sie auf **Websites** klicken, um alle Websites Ihres Abonnements anzuzeigen. Die URLs der einzelnen Websites befinden sich in der URL-Spalte auf der Seite mit den Websites.
+	Die URL für die Web-Apps-Instanz finden Sie auch im [Azure-Portal](https://portal.azure.com), indem Sie auf **Durchsuchen** > **Web-Apps** klicken, um alle Web-Apps-Instanzen für Ihr Abonnement anzuzeigen. Wählen Sie dann eine Web-App aus. Die URL für die Web-App wird auf dem Blatt der Web-App angezeigt.
 
-## Ändern der Website und erneute Veröffentlichung auf der Azure-Website
+## Ändern der Website und erneute Veröffentlichung in Web-Apps
 
-Sie können die Site mit WebMatrix ändern und dann erneut auf der Azure-Website veröffentlichen. Im folgenden Verfahren fügen Sie ein Kontrollkästchen hinzu, mit dem angegeben werden kann, ob es sich bei der Bestellung um ein Geschenk handelt.
+Sie können die Site mit WebMatrix ändern und dann erneut in Ihrer Web-Apps-Instanz veröffentlichen. Im folgenden Verfahren fügen Sie ein Kontrollkästchen hinzu, mit dem angegeben werden kann, ob es sich bei der Bestellung um ein Geschenk handelt.
 
 1. Öffnen Sie die Seite *Order.cshtml*.
 
@@ -187,7 +187,7 @@ Sie können die Site mit WebMatrix ändern und dann erneut auf der Azure-Website
 
 	![][modify5]
 
-3. Suchen Sie in der Datei nach der Zeile "var shipping = Request["orderShipping"];", und fügen Sie die folgende Codezeile direkt danach ein.
+3. Suchen Sie nach der Zeile "var shipping = Request["orderShipping"];" in der Datei, und fügen Sie die folgende Codezeile direkt danach ein.
 
 		var gift = Request["isGift"];
 
@@ -209,16 +209,15 @@ Sie können die Site mit WebMatrix ändern und dann erneut auf der Azure-Website
 
 7. Stellen Sie sicher, dass im Dialogfeld **Vorschau veröffentlichen** beide "Order.cshtml" ausgewählt sind, und klicken Sie auf "Weiter".
 
-8. Klicken Sie auf den Link, um die Website im Browser zu öffnen und das Update auf der Azure-Website zu testen.
+8. Klicken Sie auf den Link, um die Website im Browser zu öffnen und das Update auf der Web-Apps-Instanz zu testen.
 
-# Nächste Schritte
-
-Sie haben gesehen, wie Sie eine Website erstellen und von WebMatrix auf Azure bereitstellen. Weitere Informationen zu WebMatrix erhalten Sie hier:
-
-* [WebMatrix für Azure](http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409)
+## Nächste Schritte
 
 * [WebMatrix-Website](http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398)
 
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 
 
@@ -250,8 +249,4 @@ Sie haben gesehen, wie Sie eine Website erstellen und von WebMatrix auf Azure be
 [sendmailissues]: http://go.microsoft.com/fwlink/?LinkId=253001#email
 [sendgridexample]: http://azure.microsoft.com/documentation/articles/sendgrid-dotnet-how-to-send-email/
 
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=54-->

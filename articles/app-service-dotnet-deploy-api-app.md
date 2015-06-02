@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Bereitstellen einer API-App in Azure App Service" 
 	description="Erfahren Sie, wie Sie ein API-App-Projekt für Ihr Azure-Abonnement bereitstellen." 
 	services="app-service\api" 
@@ -13,111 +13,117 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/19/2015" 
+	ms.date="05/04/2015" 
 	ms.author="bradyg;tarcher"/>
 
-# Bereitstellen einer API-App in Azure App Service
+# Bereitstellen einer API-App in Azure App Service 
 
 ## Übersicht
 
-Wenn Sie aktiv eine eigene API-App mit Visual Studio entwickeln und Ihre API in der Cloud testen möchten, können Sie in Ihrem Azure-Abonnement eine neue API-App erstellen und den Code mithilfe der praktischen App Service-Bereitstellungsfunktionen von Visual Studio bereitstellen. 
+In diesem Lernprogramm stellen Sie das Web-API-Projekt, das Sie im [vorherigen Lernprogramm](app-service-dotnet-create-api-app.md) erstellt haben, in einer neuen [API-App](app-service-api-apps-why-best-platform.md) bereit. Sie verwenden Visual Studio zum Erstellen der API-App-Ressource in [Azure App Service](app-service-value-prop-what-is.md) und zum Bereitstellen Ihres Web-API-Codes in der Azure API-App.
 
-Dies ist das zweite von drei Lernprogrammen:
+### Weitere Optionen für die Bereitstellung
 
-1. In [Erstellen einer API-App](app-service-dotnet-create-api-app.md) haben Sie ein API-App-Projekt erstellt. 
-* In diesem Lernprogramm werden Sie die API-App in Ihrem Azure-Abonnement bereitstellen.
-* In [Debuggen einer API-App](app-service-dotnet-remotely-debug-api-app.md) werden Sie den Code mithilfe von Visual Studio remote debuggen, während er in Azure ausgeführt wird.
+Es gibt zahlreiche weitere Möglichkeiten zum Bereitstellen von API-Apps. Eine API-App ist eine [Web-App](app-service-web-overview.md) mit zusätzlichen Funktionen zum Hosten von Webdiensten, und sämtliche der [verfügbaren Bereitstellungsmethoden für Web-Apps](web-sites-deploy.md) können auch für API-Apps verwendet werden. Die Web-App, die eine API-App hostet, wird im Azure-Vorschauportal als API-App-Host bezeichnet, und Sie können die Bereitstellung über das Portalblatt "API-App-Host" konfigurieren. Weitere Informationen zum Blatt "API-App-Host" finden Sie unter [Verwalten einer API-App](app-service-api-manage-in-portal.md).
 
+Die Tatsache, dass API-Apps auf Web-Apps basieren, bedeutet auch, dass Sie Code, der für andere Plattformen als ASP.NET geschrieben wurde, in API-Apps bereitstellen können. Ein Beispiel mit Verwendung von Git zum Bereitstellen von Node.js-Code in einer API-App finden Sie unter [Erstellen einer Node.js-API-App in Azure App Service](app-service-api-nodejs-api-app.md).
+ 
 ## Bereitstellen der API-App 
 
-Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt (nicht die Projektmappe), und klicken Sie auf **Veröffentlichen**. 
+In diesem Abschnitt werden die erforderlichen Schritte zum Bereitstellen einer API-App in einem Azure-Abonnement gezeigt.
 
-![Project publish menu option](./media/app-service-dotnet-deploy-api-app/20-publish-gesture-v3.png)
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt (nicht die Projektmappe), und klicken Sie auf **Veröffentlichen...**. 
 
-Klicken Sie auf die Registerkarte **Profil**, und klicken Sie auf **Microsoft Azure-API-Apps (Vorschau)**. 
+	![Menüoption zur Projektveröffentlichung](./media/app-service-dotnet-deploy-api-app/20-publish-gesture-v3.png)
 
-![Publish Web dialog](./media/app-service-dotnet-deploy-api-app/21-select-api-apps-for-deployment-v2.png)
+2. Klicken Sie auf die Registerkarte **Profil**, und klicken Sie auf **Microsoft Azure API-Apps (Vorschau)**.
 
-Klicken Sie auf **Neu**, um eine neue API-App im Azure-Abonnement bereitzustellen.
+	![Dialogfeld zur Webveröffentlichung](./media/app-service-dotnet-deploy-api-app/21-select-api-apps-for-deployment-v2.png)
 
-![Select Existing API Services dialog](./media/app-service-dotnet-deploy-api-app/23-publish-to-apiapps-v3.png)
+3. Klicken Sie auf **Neu**, um eine neue API-App in Ihrem Azure-Abonnement bereitzustellen.
 
-Geben Sie im Dialogfeld **API-App erstellen** Folgendes ein:
+	![Dialogfeld zur Auswahl vorhandener API-Dienste](./media/app-service-dotnet-deploy-api-app/23-publish-to-apiapps-v3.png)
 
-- Geben Sie unter **Name der API-App** einen Namen für die App ein. 
-- Wenn Sie über mehrere Azure-Abonnements verfügen, wählen Sie dasjenige aus, das Sie verwenden möchten.
-Treffen Sie unter "App Service-Plan" eine Auswahl aus Ihren vorhandenen App Service-Plänen, oder wählen Sie **Neuen App Service-Plan erstellen**, und geben Sie den Namen eines neuen Plans ein. 
-- Treffen Sie unter **Ressourcengruppe** eine Auswahl aus Ihren vorhandenen Ressourcengruppen, oder wählen Sie **Neue Ressourcengruppe erstellen**, und geben Sie einen Namen ein. Der Name muss eindeutig sein. Verwenden Sie eventuell den App-Namen als Präfix, und hängen Sie einige persönliche Informationen wie z. B. Ihre Microsoft-ID (ohne das @-Zeichen) an.  
-- Wählen Sie unter **Zugriffsebene** die Option **Für jeden verfügbar** aus. Durch diese Option wird die API komplett öffentlich, was für dieses Lernprogramm in Ordnung ist. Sie können den Zugriff später über das Azure-Portal einschränken.
-- Wählen Sie eine Region aus.  
+4. Geben Sie im Dialogfeld **API-App erstellen** Folgendes ein:
 
-![Configure Microsoft Azure Web App dialog](./media/app-service-dotnet-deploy-api-app/24-new-api-app-dialog-v3.png)
+	- Geben Sie als **API-App-Name** "ContactsList" ein. 
+	- Wenn Sie über mehrere Azure-Abonnements verfügen, wählen Sie dasjenige aus, das Sie verwenden möchten.
+	- Wählen Sie unter **App Service-Plan** einen vorhandenen App Service-Plan aus, oder wählen Sie **Neuen App Service-Plan erstellen**, und geben Sie den Namen eines neuen Plans ein. 
+	- Wählen Sie unter **Ressourcengruppe** eine vorhandene Ressourcengruppe aus, oder wählen Sie **Neue Ressourcengruppe erstellen**, und geben Sie einen Namen ein. Der Name muss eindeutig sein. Verwenden Sie eventuell den App-Namen als Präfix, und hängen Sie persönliche Informationen wie z. B. Ihre Microsoft-ID (ohne das @-Zeichen) an.  
+	- Wählen Sie unter **Zugriffsebene** die Option **Für alle Benutzer verfügbar** aus. Durch diese Option wird steht die gesamte API öffentlich zur Verfügung, was für dieses Lernprogramm in Ordnung ist. Sie können den Zugriff später über das Azure-Vorschauportal einschränken.
+	- Wählen Sie unter **Region** eine Region in Ihrer Nähe aus.  
 
-Klicken Sie auf **OK**, um die API-App in Ihrem Abonnement zu erstellen. Der Prozess kann einige Minuten dauern, daher werden Sie von Visual Studio über ein Dialogfeld benachrichtigt, dass der Vorgang gestartet wurde. 
+	![Dialogfeld zum Konfigurieren von Microsoft Azure Web-Apps](./media/app-service-dotnet-deploy-api-app/24-new-api-app-dialog-v3.png)
 
-![API Service Creation Started confirmation message](./media/app-service-dotnet-deploy-api-app/25-api-provisioning-started-v3.png)
+5. Klicken Sie auf **OK**, um die API-App in Ihrem Abonnement zu erstellen. Da dieser Vorgang einige Minuten in Anspruch nehmen kann, zeigt Visual Studio ein Bestätigungsdialogfeld an.
 
-Im Rahmen des Bereitstellungsprozesses werden die Ressourcengruppe und die API-App im Azure-Abonnement erstellt. Visual Studio zeigt den Fortschritt im Fenster **Azure App Service-Aktivität** an. 
+	![Bestätigungsmeldung zum Start der Erstellung von API-Diensten](./media/app-service-dotnet-deploy-api-app/25-api-provisioning-started-v3.png)
 
-![Status notification via the Azure App Service Activity window](./media/app-service-dotnet-deploy-api-app/26-provisioning-success-v3.png)
+6. Klicken Sie im Bestätigungsdialogfeld auf **OK**. Im Rahmen des Bereitstellungsprozesses werden die Ressourcengruppe und die API-App in Ihrem Azure-Abonnement erstellt. Visual Studio zeigt den Fortschritt im Fenster **Azure App Service-Aktivität** an.
 
-Sobald die API-App bereitgestellt wird, klicken Sie mit der rechten Maustaste auf das Projekt im Projektmappen-Explorer, und wählen Sie **Veröffentlichen**, um das Dialogfeld "Veröffentlichen" erneut zu öffnen. Das Veröffentlichungsprofil, das Sie im vorherigen Schritt erstellt haben, sollte vorab ausgewählt sein. Klicken Sie auf **Veröffentlichen**, um den Bereitstellungsprozess zu beginnen. 
+	![Statusbenachrichtigung über das Fenster "Azure App Service-Aktivität"](./media/app-service-dotnet-deploy-api-app/26-provisioning-success-v3.png)
 
-![Deploying the API App](./media/app-service-dotnet-deploy-api-app/26-5-deployment-success-v3.png)
+7. Sobald die API-App bereitgestellt wird, klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie **Veröffentlichen**, um das Dialogfeld für die Veröffentlichung erneut zu öffnen. Das Veröffentlichungsprofil, das Sie im vorherigen Schritt erstellt haben, sollte vorab ausgewählt sein. Klicken Sie auf **Veröffentlichen**, um den Bereitstellungsprozess zu beginnen.
 
-Das Fenster **Azure App Service-Aktivität** zeigt den Fortschritt der Bereitstellung an. 
+	![Bereitstellen der API-App](./media/app-service-dotnet-deploy-api-app/26-5-deployment-success-v3.png)
 
-![Status notification of the Azure App Service Activity window](./media/app-service-dotnet-deploy-api-app/26-5-deployment-success-v4.png)
+Das Fenster **Azure App Service-Aktivität** zeigt den Fortschritt der Bereitstellung an.
 
-## Anzeigen der App im Azure-Portal
+![Statusbenachrichtigung im Fenster "Azure App Service-Aktivität"](./media/app-service-dotnet-deploy-api-app/26-5-deployment-success-v4.png)
 
-In diesem Abschnitt navigieren Sie zum Portal, um die grundlegenden Einstellungen für API-Apps anzuzeigen und iterative Änderungen an Ihrer API-App vorzunehmen. Bei jeder Bereitstellung zeigt das Portal die Änderungen an, die Sie in Ihrer API-App vorgenommen haben. 
+## Anzeigen der App im Azure-Vorschauportal
 
-Navigieren Sie in Ihrem Browser zum [Azure-Portal](https://portal.azure.com). 
+In diesem Abschnitt navigieren Sie zum Portal, um die grundlegenden Einstellungen für API-Apps anzuzeigen und iterative Änderungen an Ihrer API-App vorzunehmen. Bei jeder Bereitstellung zeigt das Portal die Änderungen an, die Sie in Ihrer API-App vorgenommen haben.
 
-Klicken Sie in der Randleiste auf die Schaltfläche **Durchsuchen**, und wählen Sie **API-Apps**.
+1. Navigieren Sie in Ihrem Browser zum [Azure-Vorschauportal](https://portal.azure.com). 
 
-![Browse options on Azure portal](./media/app-service-dotnet-deploy-api-app/27-browse-in-portal-v3.png)
+2. Klicken Sie in der Randleiste auf die Schaltfläche **Durchsuchen**, und wählen Sie **API-Apps**.
 
-Wählen Sie die API, die Sie erstellt haben, aus der Liste der API-Apps in Ihrem Abonnement aus.
+	![Suchoptionen im Azure-Portal](./media/app-service-dotnet-deploy-api-app/27-browse-in-portal-v3.png)
 
-![API Apps list](./media/app-service-dotnet-deploy-api-app/28-view-api-list-v3.png)
+3. Wählen Sie die erstellte API aus der Liste der API-Apps in Ihrem Abonnement aus.
 
-Klicken Sie auf **API-Definition**. Das Blatt **API-Definition** der App zeigt die Liste der API-Vorgänge an, die Sie beim Erstellen der App definiert haben. 
+	![API-Apps-Liste](./media/app-service-dotnet-deploy-api-app/28-view-api-list-v3.png)
 
-![API Definition](./media/app-service-dotnet-deploy-api-app/29-api-definition-v3.png)
+4. Klicken Sie auf **API-Definition**. Das Blatt **API-Definition** der App zeigt die Liste der API-Vorgänge an, die Sie beim Erstellen der App definiert haben.
 
-Kehren Sie jetzt zum Projekt in Visual Studio zurück. Fügen Sie der Datei **ContactsController.cs** den folgenden Code hinzu:  
+	![API-Definition](./media/app-service-dotnet-deploy-api-app/29-api-definition-v3.png)
 
-	[HttpPost]
-	public HttpResponseMessage Post([FromBody] Contact contact)
-	{
-		// todo: save the contact somewhere
-		return Request.CreateResponse(HttpStatusCode.Created);
-	}
+5. Wechseln Sie jetzt zurück zum Projekt in Visual Studio, und fügen Sie der Datei **ContactsController.cs** den folgenden Code hinzu. Dieser Code fügt eine **Post**-Methode hinzu, mit deren Hilfe neue `Contact`-Instanzen in der API platziert werden können.
 
-Dieser Code fügt eine **Post**-Methode hinzu, mit deren Hilfe neue `Kontakt`-Instanzen in der API gepostet werden können. 
+		[HttpPost]
+		public HttpResponseMessage Post([FromBody] Contact contact)
+		{
+			// todo: save the contact somewhere
+			return Request.CreateResponse(HttpStatusCode.Created);
+		}
 
-![Adding the Post method to the controller](./media/app-service-dotnet-deploy-api-app/30-post-method-added-v3.png)
+	![Hinzufügen der Post-Methode zum Controller](./media/app-service-dotnet-deploy-api-app/30-post-method-added-v3.png)
 
-Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Veröffentlichen** aus. 
+6. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Veröffentlichen** aus.
 
-![Project Publish context menu](./media/app-service-dotnet-deploy-api-app/31-publish-gesture-v3.png)
+	![Kontextmenü zur Projektveröffentlichung](./media/app-service-dotnet-deploy-api-app/31-publish-gesture-v3.png)
 
-Wählen Sie die Konfiguration **Debuggen** aus der Dropdownliste **Konfiguration** aus, und klicken Sie auf **Veröffentlichen**, um die API-App erneut bereitzustellen. 
+7. Klicken Sie auf die Registerkarte **Einstellungen**.
 
-![Publish Web settings](./media/app-service-dotnet-deploy-api-app/36.5-select-debug-option-v3.png)
+8. Wählen Sie in der Dropdownliste **Konfiguration** die Einstellung **Debuggen** aus.
 
-Klicken Sie im Assistenten **Web veröffentlichen** auf der Registerkarte **Vorschau** auf **Veröffentlichen**.  
+	![Einstellungen für die Webveröffentlichung](./media/app-service-dotnet-deploy-api-app/36.5-select-debug-option-v3.png)
 
-![Publish Web dialog](./media/app-service-dotnet-deploy-api-app/39-re-publish-preview-step-v2.png)
+9. Klicken Sie auf die Registerkarte **Vorschau**.
 
-Nach Abschluss des Veröffentlichungsprozesses kehren Sie zum Portal zurück, schließen Sie das Blatt **API-Definition**, und öffnen Sie es erneut. Sie sehen den neuen API-Endpunkt, den Sie gerade erstellt und direkt in Ihrem Azure-Abonnement bereitgestellt haben.
+10. Klicken Sie auf **Vorschau starten**, um die Änderungen anzuzeigen, die durchgeführt werden.
 
-![API Definition](./media/app-service-dotnet-deploy-api-app/38-portal-with-post-method-v4.png)
+	![Dialogfeld zur Webveröffentlichung](./media/app-service-dotnet-deploy-api-app/39-re-publish-preview-step-v2.png)
+
+11. Klicken Sie auf **Veröffentlichen**.
+
+12. Nach Abschluss des Veröffentlichungsprozesses kehren Sie zum Portal zurück, schließen Sie das Blatt **API-Definition**, und öffnen Sie es erneut. Sie sehen den neuen API-Endpunkt, den Sie gerade erstellt und direkt in Ihrem Azure-Abonnement bereitgestellt haben.
+
+	![API-Definition](./media/app-service-dotnet-deploy-api-app/38-portal-with-post-method-v4.png)
 
 ## Nächste Schritte
 
 Sie haben gesehen, wie die direkten Bereitstellungsfunktionen in Visual Studio die Iteration und Bereitstellung sowie das Testen der ordnungsgemäßen Funktion der API vereinfachen. Im [nächsten Lernprogramm](app-service-dotnet-remotely-debug-api-app.md) erfahren Sie, wie Sie die API-App debuggen, während sie in Azure ausgeführt wird.
 
-<!--HONumber=49-->
+<!--HONumber=54-->

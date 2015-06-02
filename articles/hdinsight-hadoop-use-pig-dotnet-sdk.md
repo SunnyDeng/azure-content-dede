@@ -1,22 +1,22 @@
-﻿<properties
-   pageTitle="Verwenden von Hadoop Pig in HDInsight | Azure"
+<properties
+   pageTitle="Verwenden von Hadoop Pig mit .NET in HDInsight | Microsoft Azure"
    description="Erfahren Sie, wie Sie mithilfe des .NET SDK für Hadoop Pig-Aufträge an Hadoop in HDInsight übermitteln."
    services="hdinsight"
-   documentationCenter=""
+   documentationCenter=".net"
    authors="Blackmist"
    manager="paulettm"
    editor="cgronlun"/>
 
 <tags
    ms.service="hdinsight"
-   ms.devlang=""
+   ms.devlang="dotnet"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="02/18/2015"
    ms.author="larryfr"/>
 
-# Ausführen von Pig-Aufträgen mithilfe des .NET SDK für Hadoop
+#Ausführen von Pig-Aufträgen mithilfe des .NET-SDK für Hadoop in HDInsight
 
 [AZURE.INCLUDE [pig-selector](../includes/hdinsight-selector-use-pig.md)]
 
@@ -24,7 +24,7 @@ Dieses Dokument enthält ein Beispiel zur Verwendung von .NET SDK für Hadoop zu
 
 Das HDInsight .NET SDK enthält .NET-Clientbibliotheken, die das Arbeiten mit HDInsight-Clustern in .NET vereinfachen. Mithilfe von Pig können Sie MapReduce-Vorgänge erstellen, indem Sie eine Reihe von Datentransformationen modellieren. Sie werden erfahren, wie Sie mit einer einfachen C#-Anwendung einen Pig-Auftrag an einen HDInsight-Cluster übermitteln.
 
-## <a id="prereq"></a>Voraussetzungen
+##<a id="prereq"></a>Voraussetzungen
 
 Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benötigen Sie Folgendes:
 
@@ -32,15 +32,15 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
 * Visual Studio 2012 oder 2013
 
-## <a id="certificate"></a>Erstellen eines Verwaltungszertifikats
+##<a id="certificate"></a>Erstellen von Verwaltungszertifikaten
 
 Um die Anwendung für Azure HDInsight zu authentifizieren, müssen Sie ein selbstsigniertes Zertifikat erstellen, es auf Ihrer Entwicklungsarbeitsstation installieren und es auch in Ihrem Azure-Abonnement hochladen.
 
 Anweisungen hierzu finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=511138" target="_blank">Erstellen eines selbstsignierten Zertifikats</a>.
 
-> [AZURE.NOTE] Stellen Sie beim Erstellen des Zertifikats sicher, dass Sie sich den verwendeten Anzeigenamen notieren, da dieser später verwendet wird.
+> [AZURE.NOTE]Stellen Sie beim Erstellen des Zertifikats sicher, dass Sie sich den verwendeten Anzeigenamen notieren, da dieser später verwendet wird.
 
-## <a id="subscriptionid"></a>Ermitteln Ihrer Abonnement-ID
+##<a id="subscriptionid"></a>Suchen Ihrer Abonnement-ID
 
 Jedes Azure-Abonnement wird durch einen GUID-Wert gekennzeichnet, der als Abonnement-ID bezeichnet wird. Ermitteln Sie diesen Wert mithilfe der folgenden Schritte.
 
@@ -52,7 +52,7 @@ Jedes Azure-Abonnement wird durch einen GUID-Wert gekennzeichnet, der als Abonne
 
 Speichern Sie die Abonnement-ID, da sie später verwendet wird.
 
-## <a id="create"></a>Erstellen der Anwendung
+##<a id="create"></a>Erstellen der Anwendung
 
 1. Öffnen Sie Visual Studio 2012 oder 2013.
 
@@ -61,23 +61,23 @@ Speichern Sie die Abonnement-ID, da sie später verwendet wird.
 3. Geben Sie für das neue Projekt die folgenden Werte ein, oder wählen Sie sie aus.
 
 	<table>
-	<tr>
-	<th>Eigenschaft</th>
-	<th>Wert</th>
-	</tr>
-	<tr>
-	<th>Kategorie</th>
-	<th>Vorlagen/Visual C#/Windows</th>
-	</tr>
-	<tr>
-	<th>Vorlage</th>
-	<th>Konsolenanwendung</th>
-	</tr>
-	<tr>
-	<th>Name</th>
-	<th>SubmitPigJob</th>
-	</tr>
-	</table>
+<tr>
+<th>Eigenschaft</th>
+<th>Wert</th>
+</tr>
+<tr>
+<th>Kategorie</th>
+<th>Vorlagen/Visual C#/Windows</th>
+</tr>
+<tr>
+<th>Vorlage</th>
+<th>Konsolenanwendung</th>
+</tr>
+<tr>
+<th>Name</th>
+<th>SubmitPigJob</th>
+</tr>
+</table>
 
 4. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
@@ -195,9 +195,9 @@ Speichern Sie die Abonnement-ID, da sie später verwendet wird.
 
 7. Speichern Sie die Datei.
 
-## <a id="run"></a>Ausführen der Anwendung
+##<a id="run"></a>Ausführen der Anwendung
 
-Drücken Sie **F5**, um die Anwendung zu starten. Wenn Sie dazu aufgefordert werden, geben Sie **Abonnement-ID**, **Angezeigter Zertifikatname** und **HDInsight-Clustername** ein. Die Anwendung erzeugt während der Ausführung mehrere Zeilen mit Informationen, die ähnlich dem Folgenden enden.
+Drücken Sie **F5**, um die Anwendung zu starten. Wenn Sie dazu aufgefordert werden, geben Sie **Abonnement-ID**, **Angezeigter Zertifikatname** und **HDInsight cluster name** ein. Die Anwendung erzeugt während der Ausführung mehrere Zeilen mit Informationen, die ähnlich dem Folgenden enden.
 
 ```
 ----- The Pig job output log.
@@ -213,11 +213,11 @@ Drücken Sie **F5**, um die Anwendung zu starten. Wenn Sie dazu aufgefordert wer
 
 Drücken Sie die **EINGABETASTE**, um die Anwendung zu beenden.
 
-## <a id="summary"></a>Zusammenfassung
+##<a id="summary"></a>Zusammenfassung
 
 Wie Sie sehen, können Sie mit dem .NET SDK für Hadoop .NET-Anwendungen erstellen, die Pig-Aufträge an einen HDInsight-Cluster übermitteln, den Auftragsstatus überwachen und die Ausgabe abrufen.
 
-## <a id="nextsteps"></a>Nächste Schritte
+##<a id="nextsteps"></a>Nächste Schritte
 
 Allgemeine Informationen zu Pig in HDInsight:
 
@@ -229,4 +229,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!--HONumber=47-->
+<!--HONumber=54-->

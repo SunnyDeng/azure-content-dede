@@ -2,10 +2,10 @@
 	pageTitle="Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden (iOS) | Mobile Dev Center" 
 	description="Erfahren Sie, wie Sie Benutzer für das für einmalige Anmelden mit ADAL in Ihrer iOS-Anwendung authentifizieren." 
 	documentationCenter="ios" 
-	authors="wesmc7777" 
+	authors="mattchenderson" 
 	manager="dwrede" 
 	editor="" 
-	services=""/>
+	services="mobile-services"/>
 
 <tags 
 	ms.service="mobile-services" 
@@ -13,44 +13,42 @@
 	ms.tgt_pltfrm="mobile-ios" 
 	ms.devlang="objective-c" 
 	ms.topic="article" 
-	ms.date="10/10/2014" 
-	ms.author="wesmc,mahender"/>
+	ms.date="04/29/2015" 
+	ms.author="mahender"/>
 
 # Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden
 
 [AZURE.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
+
+##Übersicht
 
 In diesem Lernprogramm fügen Sie die Authentifizierung mithilfe der Active Directory-Authentifizierungsbibliothek zum Schnellstartprojekt hinzu.
 
 Um Benutzer authentifizieren zu können, müssen Sie Ihre Anwendung in Azure Active Directory (AAD) registrieren. Dazu sind zwei Schritte erforderlich. Zunächst müssen Sie Ihren mobilen Dienst registrieren und entsprechende Berechtigungen vergeben. Zweitens müssen Sie Ihre iOS-App registrieren und ihr Zugriff auf diese Berechtigungen geben.
 
 
->[AZURE.NOTE] In diesem Lernprogramm erfahren Sie, wie Sie die Authentifizierung per einmaliger Anmeldung in Azure Active Directory für iOS-Apps umsetzen können. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
+>[AZURE.NOTE]In diesem Lernprogramm erfahren Sie, wie Sie die Authentifizierung per einmaliger Anmeldung in Azure Active Directory für iOS-Apps umsetzen können. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
 
-In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
-1. [Registrieren Ihres mobilen Diensts beim Azure Active Directory]
-2. [Registrieren Ihre App beim Azure Active Directory]
-3. [Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung]
-4. [Hinzufügen des Authentifizierungscodes zur Client-App]
-5. [Testen des Clients mit Authentifizierung]
+##Voraussetzungen
+
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-* XCode 4.5 und iOS 6.0 (oder neuere Versionen)
-* Abschluss des Lernprogramms [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten]
+* Xcode 4.5 und iOS 6.0 (oder neuere Versionen)
+* Abschluss des Lernprogramms [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten].
 * Microsoft Azure Mobile Services SDK
 * Die [Active Directory-Authentifizierungsbibliothek für iOS]
 
 [AZURE.INCLUDE [mobile-services-dotnet-adal-register-client](../includes/mobile-services-dotnet-adal-register-client.md)]
 
-## <a name="require-authentication"></a>Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung
+##Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
-## <a name="add-authentication-code"></a>Hinzufügen des Authentifizierungscodes zur Client-App
+##Hinzufügen des Authentifizierungscodes zur Client-App
 
-1. Laden Sie die [Active Directory-Authentifizierungsbibliothek für iOS] herunter, und schließen Sie sie in Ihr Projekt ein. Achten Sie darauf, auch die Storyboards der ADAL-Quelle hinzuzufügen.
+1. Laden Sie die [Active Directory-Authentifizierungsbibliothek für iOS] herunter und schließen Sie sie in Ihr Projekt ein. Achten Sie darauf, auch die Storyboards der ADAL-Quelle hinzuzufügen.
 
 2. Schließen Sie im QSTodoListViewController ADAL mit Folgendem ein:
 
@@ -92,41 +90,34 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
         }
 
 
-6. Ersetzen Sie im Code für die oben angegebene  `loginAndGetData`-Methode **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, in dem Sie Ihre Anwendung bereitgestellt haben. Das Format sollte https://login.windows.net/tenant-name.onmicrosoft.com sein. Sie können diesen Wert in der Registerkarte "Domäne" in Ihrem Azure Active Directory im [Azure-Verwaltungsportal] kopieren.
+6. Ersetzen Sie im Code für die oben angegebene `loginAndGetData`-Methode **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, in dem Sie Ihre Anwendung bereitgestellt haben. Das Format sollte https://login.windows.net/tenant-name.onmicrosoft.com sein. Sie können diesen Wert in der Registerkarte Domäne in Ihrem Azure Active Directory im [Azure-Verwaltungsportal] kopieren.
 
-7. Ersetzen Sie im Code für die oben angegebene  `loginAndGetData`-Methode **INSERT-RESOURCE-URI-HERE** durch die **URI der App-ID** für Ihren mobilen Dienst. Wenn Sie das Thema [Registrieren in Azure Active Directory] verfolgt haben, sollte Ihre URI der App-ID in etwa so aussehen: https://todolist.azure-mobile.net/login/aad.
+7. Ersetzen Sie im Code für die oben angegebene `loginAndGetData`-Methode **INSERT-RESOURCE-URI-HERE** durch die **URI der APP-ID** für Ihren mobilen Dienst. Wenn Sie das Thema [Registrieren in Azure Active Directory] befolgt haben, sollte der URI Ihrer App-ID in etwa so aussehen: https://todolist.azure-mobile.net/login/aad.
 
-8. Ersetzen Sie im Code für die oben angegebene  `loginAndGetData`-Methode **INSERT-CLIENT-ID-HERE** durch die Client-ID, die Sie aus der systemeigenen Clientanwendung kopiert haben.
+8. Ersetzen Sie im Code für die oben angegebene `loginAndGetData`-Methode **INSERT-CLIENT-ID-HERE** durch die Client-ID, die Sie aus der systemeigenen Clientanwendung kopiert haben.
 
-9. Ersetzen Sie im Code für die oben angegebene  `loginAndGetData`-Methode **INSERT-REDIRECT-URI-HERE** durch den /login/done-Endpunkt für Ihren mobilen Dienst. Das ist vergleichbar mit https://todolist.azure-mobile.net/login/done..
+9. Ersetzen Sie im Code in der obigen `loginAndGetData`-Methode den Text **INSERT-REDIRECT-URI-HERE** durch den/login/done-Endpunkt für den mobilen Dienst. Das ist vergleichbar mit https://todolist.azure-mobile.net/login/done.
 
 
-3. Modifizieren Sie im QSTodoListViewController  `ViewDidLoad`, indem Sie `[self refresh]` durch Folgendes ersetzen:
+3. Modifizieren Sie im QSTodoListViewController `ViewDidLoad`, indem Sie `[self refresh]` durch Folgendes ersetzen:
 
         [self loginAndGetData];
 
-## <a name="test-client"></a>Testen des Clients mit Authentifizierung
+##Testen des Clients mit Authentifizierung
 
-1. Klicken Sie im Menü "Produkt" auf "Run", um die App zu starten.
+1. Klicken Sie im Menü „Produkt“ auf „Run“, um die App zu starten.
 2. Sie werden aufgefordert, sich bei Ihrem Azure Active Directory anzumelden.  
 3. Die App authentifiziert sich und gibt die TodoItems zurück.
 
    ![](./media/mobile-services-dotnet-backend-ios-adal-sso-authentication/mobile-services-app-run.png)
 
-<!-- Anchors. -->
-[Registrieren Ihres mobilen Diensts beim Azure Active Directory]: #register-mobile-service-aad
-[Registrieren Ihre App beim Azure Active Directory]: #register-app-aad
-[Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung]: #require-authentication
-[Hinzufügen des Authentifizierungscodes zur Client-App]: #add-authentication-code
-[Testen des Clients mit Authentifizierung]: #test-client
+
 
 <!-- URLs. -->
-[Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-ios-get-started-data/
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started/
-[Registrieren in Azure Active Directory]: /de-de/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
+[Erste Schritte mit Daten]: mobile-services-ios-get-started-data.md
+[Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
+[Registrieren in Azure Active Directory]: mobile-services-how-to-register-active-directory-authentication.md
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Active Directory-Authentifizierungsbibliothek für iOS]: https://github.com/MSOpenTech/azure-activedirectory-library-for-ios
 
-
-
-<!--HONumber=42-->
+<!--HONumber=54-->

@@ -1,6 +1,6 @@
-﻿<properties 
-	pageTitle="Integration des Android-SDKs für Azure Mobile Engagement" 
-	description="Neueste Updates und Verfahren für das Android-SDK für Azure Mobile Engagement"
+<properties 
+	pageTitle="Integration des Azure Mobile Engagement Android SDKs" 
+	description="Neueste Updates und Verfahren für das Android SDK für Azure Mobile Engagement"
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="kpiteira" 
@@ -19,7 +19,7 @@
 
 # So integrieren Sie ADM in Engagement
 
-> [AZURE.IMPORTANT] Bevor Sie die in diesem Leitfaden beschriebenen Schritte ausführen, müssen Sie die im Dokument "So integrieren Sie Engagement auf Android" beschriebenen Verfahren ausführen.
+> [AZURE.IMPORTANT]Bevor Sie dieser Anleitung folgen, müssen Sie das unter „Integrieren von Mobile Engagement unter Android“ beschriebene Integrationsverfahren befolgen.
 >
 > Das vorliegende Dokument ist nur hilfreich, wenn Sie das Reach-Modul für die jederzeitige Kampagnenunterstützung integriert haben. Lesen Sie zunächst das Dokument "So integrieren Sie Engagement Reach auf Android", um Informationen zum Integrieren von Reach-Kampagnen zu erhalten.
 
@@ -29,7 +29,7 @@ Durch die Integration von ADM kann Ihre Anwendung selbst dann Pushnachrichten em
 
 Über ADM werden nicht tatsächlich Kampagnendaten gesendet, es handelt sich lediglich um ein Hintergrundsignal, mit dem die Anwendung angewiesen wird, die Engagement-Pushnachricht abzurufen. Wenn die Anwendung beim Empfang einer ADM-Pushnachricht nicht ausgeführt wird, wird eine Verbindung mit den Engagement-Servern zum Abrufen der Pushnachricht ausgelöst. Die Engagement-Verbindung bleibt für etwa eine Minute aktiv, falls der Benutzer die Anwendung als Reaktion auf die Pushnachricht startet.
 
-> [AZURE.IMPORTANT] Von Amazon Device Messaging werden nur Amazon Kindle-Geräte mit Android 4.0.3 oder höher unterstützt, dieser Code kann jedoch ohne Sicherheitsbedenken auf anderen Geräten integriert werden. Wenn die Anwendung nicht per ADM aktiviert werden kann, wird die Engagement-Benachrichtigung beim nächsten Anwendungsstart empfangen.
+> [AZURE.IMPORTANT]Von Amazon Device Messaging werden nur Amazon Kindle-Geräte mit Android 4.0.3 oder höher unterstützt, dieser Code kann jedoch ohne Sicherheitsbedenken auf anderen Geräten integriert werden. Wenn die Anwendung nicht per ADM aktiviert werden kann, wird die Engagement-Benachrichtigung beim nächsten Anwendungsstart empfangen.
 
 ## Anmelden bei ADM
 
@@ -52,7 +52,7 @@ Wenn Sie bereits die [ADM-Clientbibliothek] verwenden und eine [ADM-Integration]
 
 Wenn Sie ADM noch nicht integriert haben, bietet Engagement eine einfache Methode zur Aktivierung in Ihrer Anwendung:
 
-Bearbeiten Sie die `AndroidManifest.xml`-Datei:
+Bearbeiten Sie Ihre `AndroidManifest.xml`-Datei:
 
 -   Fügen Sie den Amazon-Namespace hinzu, die Datei sollte folgendermaßen beginnen:
 
@@ -68,14 +68,14 @@ Bearbeiten Sie die `AndroidManifest.xml`-Datei:
 		
 		<meta-data android:name="engagement:adm:register" android:value="true" />
 
--   Nach dem Hinzufügen des Amazon-Tags erhalten Sie möglicherweise einen Buildfehler, wenn der Buildzielname des aktuellen Projekts unter Android 2.1 liegt. Sie müssen als Buildzielname **Android 2.1+** verwenden (keine Sorge, Sie können  `minSdkVersion` weiterhin auf 4 festlegen).
+-   Nach dem Hinzufügen des Amazon-Tags erhalten Sie möglicherweise einen Buildfehler, wenn der Buildzielname des aktuellen Projekts unter Android 2.1 liegt. Sie müssen als Buildzielname **Android 2.1+** verwenden (keine Sorge, Sie können `minSdkVersion` weiterhin auf 4 festlegen).
 -   Integrieren Sie den ADM-API-Schlüssel als Medienobjekt, indem Sie [dieses Verfahren] ausführen.
 
 Folgen Sie anschließend den Anweisungen in den nächsten Abschnitten.
 
 ### Übermitteln der Registrierungs-ID an den Engagement-Pushdienst, um Benachrichtigungen zu erhalten
 
-Um die Registrierungs-ID des Geräts an den Engagement-Pushdienst zu übermitteln und Benachrichtigungen zu empfangen, fügen Sie in der  `AndroidManifest.xml`-Datei im Tag `<application/>` den folgenden Code ein (selbst, wenn Sie ADM ohne Engagement verwenden):
+Um die Registrierungs-ID des Geräts an den Engagement-Pushdienst zu übermitteln und Benachrichtigungen zu empfangen, fügen Sie in der `AndroidManifest.xml`-Datei im Tag `<application/>` den folgenden Code ein (selbst, wenn Sie ADM ohne Engagement verwenden):
 
 		<receiver android:name="com.microsoft.azure.engagement.adm.EngagementADMEnabler"
 		  android:exported="false">
@@ -93,7 +93,7 @@ Um die Registrierungs-ID des Geräts an den Engagement-Pushdienst zu übermittel
 		  </intent-filter>
 		</receiver>   
 
-Stellen Sie sicher, dass Sie die folgenden Berechtigungen in der Datei  `AndroidManifest.xml` festgelegt haben (vor dem Tag `</application>`).
+Stellen Sie sicher, dass Sie die folgenden Berechtigungen in der Datei `AndroidManifest.xml` festgelegt haben (vor dem Tag `</application>`).
 
 		<uses-permission android:name="android.permission.WAKE_LOCK"/>
 		<uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE"/>
@@ -107,9 +107,9 @@ Stellen Sie sicher, dass Sie die folgenden Berechtigungen in der Datei  `Android
 Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Option "Any Time "(Jederzeit) auswählen.
 
 
-[<https://developer.amazon.com/sdk/adm/credentials.html>]:https://developer.amazon.com/sdk/adm/credentials.html
-[ADM-Clientbibliothek]:https://developer.amazon.com/sdk/adm/setup.html
-[ADM-Integration]:https://developer.amazon.com/sdk/adm/integrating-app.html
-[dieses Verfahren]:https://developer.amazon.com/sdk/adm/integrating-app.html#Asset
+[<https://developer.amazon.com/sdk/adm/credentials.html>]: https://developer.amazon.com/sdk/adm/credentials.html
+[ADM-Clientbibliothek]: https://developer.amazon.com/sdk/adm/setup.html
+[ADM-Integration]: https://developer.amazon.com/sdk/adm/integrating-app.html
+[dieses Verfahren]: https://developer.amazon.com/sdk/adm/integrating-app.html#Asset
 
-<!--HONumber=47-->
+<!--HONumber=54-->

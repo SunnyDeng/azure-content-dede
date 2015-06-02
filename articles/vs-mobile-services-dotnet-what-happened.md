@@ -1,28 +1,30 @@
-﻿<properties 
+<properties 
 	pageTitle="" 
-	description="" 
+	description="Beschreibt, was mit Ihrem Azure Mobile Services .NET-Projekt in Visual Studio passiert ist." 
 	services="mobile-services" 
 	documentationCenter="" 
-	authors="kempb" 
+	authors="patshea123" 
 	manager="douge" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="vs-what-happened" 
-	ms.devlang="na" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="NA" 
+	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="10/8/2014" 
-	ms.author="kempb"/>
+	ms.date="05/06/2015" 
+	ms.author="patshea123"/>
+
+# Was ist mit meinem Projekt passiert?
 
 > [AZURE.SELECTOR]
-> - [Erste Schritte](vs-mobile-services-dotnet-getting-started.md)
-> - [Was ist passiert?](vs-mobile-services-dotnet-what-happened.md)
+> - [Getting Started](vs-mobile-services-dotnet-getting-started.md)
+> - [What Happened](vs-mobile-services-dotnet-what-happened.md)
 
-###<span id="whathappened">Was ist mit meinem Projekt passiert?</span>
+### <span id="whathappened">Was ist mit meinem Projekt passiert?</span>
 
-#####Verweise wurden hinzugefügt
+##### Verweise wurden hinzugefügt
 
 Das NuGet-Paket für Azure Mobile Services wurde Ihrem Projekt hinzugefügt. Die folgenden .NET-Verweise wurde Ihrem Projekt hinzugefügt:
 
@@ -32,13 +34,9 @@ Das NuGet-Paket für Azure Mobile Services wurde Ihrem Projekt hinzugefügt. Die
 - `System.Net.Http.Extensions`
 - `System.Net.Http.Primitives` 
 
-#####Werte für die Verbindungszeichenfolge für Mobile Services
+##### Werte für die Verbindungszeichenfolge für Mobile Services
 
-In Ihrer Datei "App.xaml.cs" wurde ein **MobileServiceClient**-Objekt mit der Anwendungs-URL des ausgewählten mobilen Diensts und dem zugehörigen Anwendungsschlüssel erstellt. 
+In Ihrer Datei **App.xaml.cs** wurde ein MobileServiceClient-Objekt mit der Anwendungs-URL des ausgewählten mobilen Diensts und seinem Anwendungsschlüssel erstellt.
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
-
-
-
-
-<!--HONumber=42-->
+<!--HONumber=54-->

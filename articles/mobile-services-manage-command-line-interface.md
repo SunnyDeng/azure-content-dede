@@ -1,8 +1,8 @@
 <properties 
-	pageTitle="Verwalten von Mobile Services über die Befehlszeile - Azure-Lernprogramm" 
+	pageTitle="Verwalten von Mobile Services über die Befehlszeile – Azure-Lernprogramm" 
 	description="Erfahren Sie, wie Sie Azure Mobile Services mithilfe von Befehlszeilentools erstellen, bereitstellen und verwalten." 
 	services="mobile-services" 
-	documentationCenter="" 
+	documentationCenter="Mobile" 
 	authors="ggailey777" 
 	manager="dwrede" 
 	editor=""/>
@@ -10,39 +10,27 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="NA" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="11/21/2014" 
+	ms.date="04/07/2015" 
 	ms.author="glenga"/>
 
 # Automatisieren von mobilen Diensten mit Befehlszeilentools 
 
-In diesem Thema erfahren Sie, wie Sie die Azure-Befehlszeilentools verwenden, um das Erstellen und Verwalten von Azure Mobile Services zu automatisieren. In diesem Thema erfahren Sie, wie Sie mithilfe der Befehlszeilentools die Installation und die ersten Schritte vornehmen und wie Sie diese Tools einsetzen, um die folgenden Mobile Services-Aufgaben durchzuführen:
+##Übersicht
 
--	[Erstellen eines neuen mobilen Diensts] 
--	[Erstellen einer neuen Tabelle]
--   [Registrieren eines Skripts für einen Tabellenvorgang][Registrieren eines Skripts für einen Tabellenvorgang]
--   [Auflisten von Tabellen]
-- 	[Löschen einer vorhandenen Tabelle]
--	[Auflisten von mobilen Diensten]
--   [Löschen eines vorhandenen mobilen Diensts]
+In diesem Thema erfahren Sie, wie Sie die Azure-Befehlszeilentools verwenden, um das Erstellen und Verwalten von Azure Mobile Services zu automatisieren. In diesem Thema erfahren Sie, wie Sie mithilfe der Befehlszeilentools die Installation und die ersten Schritte vornehmen und wie Sie diese Tools einsetzen, um die wichtigsten Mobile Services-Aufgaben durchzuführen.
  
-Bei der Zusammenführung in eine einzelne Skript- oder Batch-Datei automatisieren diese individuellen Befehle den Erstellungs-, den Verifizierungs- oder den Löschungsvorgang eines mobilen Diensts. 
+Bei der Zusammenführung in eine einzelne Skript- oder Batch-Datei automatisieren diese individuellen Befehle den Erstellungs-, den Verifizierungs- oder den Löschungsvorgang eines mobilen Diensts.
 
-Um die Azure-Befehlszeilentools zur Verwaltung von Mobile Services verwenden zu können, benötigen Sie ein Azure-Konto, bei dem die Azure Mobile Services-Funktion aktiviert ist.
+In diesem Thema wird eine Auswahl von allgemeinen Verwaltungsaufgaben behandelt, die von den Azure-Befehlszeilentools unterstützt werden. Weitere Informationen finden Sie unter [Azure-Befehlszeilentools-Dokumentation][reference-docs].
 
-+ Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/" target="_blank">Kostenlose Azure-Testversion</a>.
+<!--+  You must download and install the Azure command-line tools to your local machine. To do this, follow the instructions in the first section of this topic. 
 
-+ Wenn Sie bereits über ein Konto verfügen und die Azure Mobile Services-Vorschau aktivieren möchten, finden Sie unter <a href="http://azure.microsoft.com/documentation/articles/php-create-account/#enable" target="_blank">Aktivieren der Azure-Vorschaufeatures</a> weitere Informationen dazu.
++ (Optional) To be able to execute HTTP requests directly from the command-line, you must use cURL or an equivalent tool. cURL runs on a variety of platforms. Locate and install cURL for your specific platform from the <a href=http://go.microsoft.com/fwlink/p/?LinkId=275676 target="_blank">cURL download  page</a>.-->
 
-In diesem Thema wird eine Auswahl von allgemeinen Verwaltungsaufgaben behandelt, die von den Azure-Befehlszeilentools unterstützt werden. Weitere Informationen finden Sie unter [Dokumentation zu Azure-Befehlszeilentools][reference-docs].
-
-<!--+  Sie müssen die Azure-Befehlszeilentools auf Ihrem lokalen Computer herunterladen und installieren. Befolgen Sie hierzu die Anweisungen im ersten Abschnitt dieses Themas. 
-
-+ (Optional) Wenn Sie HTTP-Anforderungen direkt über die Befehlszeile ausführen möchten, müssen Sie cURL oder ein gleichwertiges Tool verwenden. cURL wird von vielen Plattformen unterstützt. Installieren Sie cURL für die benötigte Plattform über die <a href=http://go.microsoft.com/fwlink/p/?LinkId=275676 target="_blank">cURL-Downloadseite</a>.-->
-
-<h2><a name="install"></a>Installieren der Azure-Befehlszeilentools</h2>
+##Installieren der Azure-Befehlszeilentools
 
 Die folgende Liste enthält Informationen zur Installation der Befehlszeilentools, abhängig von Ihrem Betriebssystem:
 
@@ -50,137 +38,133 @@ Die folgende Liste enthält Informationen zur Installation der Befehlszeilentool
 
 * **Mac**: Laden Sie den [Azure SDK Installer][mac-installer] herunter. Öffnen Sie die heruntergeladene PKG-Datei, und führen Sie die Installationsschritte durch, zu denen Sie aufgefordert werden.
 
-* **Linux**: Installieren Sie die neueste Version von [Node.js][nodejs-org] (siehe [Installieren von Node.js mithilfe des Paket-Managers][install-node-linux]),und führen Sie dann den folgenden Befehl aus:
+* **Linux**: Installieren Sie die neueste Version von [Node.js][nodejs-org] (siehe [Install Node.js via Package Manager][install-node-linux] (Installieren von Node.js mithilfe des Paket-Managers, in englischer Sprache)), und führen Sie dann den folgenden Befehl aus:
 
-		npm install azure-cli -g
+	npm install azure-cli -g
 
 Geben Sie `azure` an der Eingabeaufforderung ein, um die Installation zu überprüfen. Wenn die Installation erfolgreich ist, wird eine Liste aller verfügbaren `azure`-Befehle angezeigt.
-<h2><a name="import-account"></a>Herunterladen und Importieren der Veröffentlichungseinstellungen</h2>
 
-Laden Sie zunächst Ihre Veröffentlichungseinstellungen herunter, und importieren Sie sie. Anschließend können Sie die Tools verwenden, um Azure Services zu erstellen und zu verwalten. Mit dem `account download`-Befehl können Sie die Veröffentlichungseinstellungen herunterladen:
+##Herunterladen und Importieren der Veröffentlichungseinstellungen
 
-		azure account download
+Laden Sie zunächst Ihre Veröffentlichungseinstellungen herunter, und importieren Sie sie. Anschließend können Sie die Tools verwenden, um Azure Services zu erstellen und zu verwalten. Mit dem Befehl `account download` können Sie die Veröffentlichungseinstellungen herunterladen:
+
+	azure account download
 
 Ihr Standardbrowser wird geöffnet, und Sie werden aufgefordert, sich beim Verwaltungsportal anzumelden. Nachdem Sie sich angemeldet haben, wird die `.publishsettings`-Datei heruntergeladen. Notieren Sie sich den Speicherort, unter dem die Datei gespeichert wird.
 
-Importieren Sie anschließend die `.publishsettings`-Datei, indem Sie den folgenden Befehl ausführen und dabei `<path-to-settings-file>` durch den Pfad zu Ihrer `.publishsettings`-Datei ersetzen:
+Importieren Sie als Nächstes die `.publishsettings`-Datei, indem Sie den folgenden Befehl ausführen und dabei `<path-to-settings-file>` durch den Pfad zu Ihrer `.publishsettings`-Datei ersetzen:
 
-		azure account import <path-to-settings-file>
+	azure account import <path-to-settings-file>
 
-Sie können alle von dem Befehl <code>Importieren</code> gespeicherten Informationen entfernen, indem Sie den Befehl <code>"account clear"</code> Befehl aus:
+Sie können alle vom Befehl <code>import</code> gespeicherten Informationen entfernen, indem Sie den Befehl <code>account clear</code> verwenden:
 
-		azure account clear
+	azure account clear
 
 Verwenden Sie die Option `-help`, um eine Liste der Optionen für `account`-Befehle anzuzeigen.
 
-		azure account -help
+	azure account -help
 
-Nachdem Sie Ihre Veröffentlichungseinstellungen importiert haben, löschen Sie die `.publishsettings`-Datei aus Sicherheitsgründen. Weitere Informationen finden Sie unter [Installieren der Azure-Befehlszeilentools für Mac und Linux]. Sie können nun damit beginnen, Azure Mobile Services aus der Befehlszeile heraus oder in Batch-Dateien zu erstellen und zu verwalten.  
+Nachdem Sie Ihre Veröffentlichungseinstellungen importiert haben, löschen Sie die `.publishsettings`-Datei aus Sicherheitsgründen. Weitere Informationen finden Sie im Thema zur [Installation der Azure-Befehlszeilentools für Mac und Linux]. Sie können nun damit beginnen, Azure Mobile Services aus der Befehlszeile heraus oder in Batch-Dateien zu erstellen und zu verwalten.
 
-<h2><a name="create-service"></a>Erstellen eines mobilen Diensts</h2>
+##Erstellen eines mobilen Diensts
 
-Sie können die Befehlszeilentools verwenden, um eine neue mobile Dienstinstanz zu erstellen. Während Sie den mobilen Dienst erstellen, können Sie außerdem eine SQL-Datenbankinstanz auf einem neuen Server erstellen. 
+Sie können die Befehlszeilentools verwenden, um eine neue mobile Dienstinstanz zu erstellen. Während Sie den mobilen Dienst erstellen, können Sie außerdem eine SQL-Datenbankinstanz auf einem neuen Server erstellen.
 
 Über den folgenden Befehl wird eine neue mobile Dienstinstanz in Ihrem Abonnement erstellt, wobei `<service-name>` den Namen des neuen mobilen Diensts darstellt. Außerdem ist `<server-admin>` der Anmeldename des neuen Servers, und `<server-password>` ist das Kennwort für die neue Anmeldung:
 
-		azure mobile create <service-name> <server-admin> <server-password>
+	azure mobile create <service-name> <server-admin> <server-password>
 
-Wenn der angegebene mobile Dienst vorhanden ist, tritt beim Ausführen des `mobile create`-Befehls ein Fehler auf. Sie sollten bei Ihren automatisierten Skripts einen mobilen Dienst löschen, bevor Sie diesen neu zu erstellen versuchen.
+Der Befehl `mobile create` schlägt fehl, wenn der angegebene mobile Dienst vorhanden ist. Sie sollten bei Ihren automatisierten Skripts einen mobilen Dienst löschen, bevor Sie diesen neu zu erstellen versuchen.
 
-<h2><a name="list-services"></a>Auflisten vorhandener mobiler Dienste in einem Abonnement</h2>
+##Auflisten vorhandener mobiler Dienste in einem Abonnement
+
+> [AZURE.NOTE]In der Befehlszeilenschnittstelle funktionieren Befehle im Zusammenhang mit "List" und "Script" nur mit dem JavaScript-Back-End.
 
 Der folgende Befehl gibt eine Liste aller mobilen Dienste in einem Azure-Abonnement zurück:
 
-		azure mobile list
+	azure mobile list
 
 Dieser Befehl zeigt zudem den aktuellen Status und die URL des jeweiligen mobilen Diensts an.
 
-<h2><a name="delete-service"></a>Löschen ein vorhandenes mobiles Diensts</h2>
+##Löschen ein vorhandenes mobiles Diensts
 
 Sie können die Befehlszeilentools verwenden, um einen vorhandenen mobilen Dienst zusammen mit der zugehörigen SQL-Datenbank und dem entsprechenden Server zu löschen. Mit dem folgenden Befehl wird der mobile Dienst gelöscht, wobei `<service-name>` der Name des zu löschenden mobilen Diensts ist:
 
-		azure mobile delete <service-name> -a -q
+	azure mobile delete <service-name> -a -q
 
-Durch Einbeziehen der Parameter `-a` und `-q` löscht dieser Befehl außerdem die SQL-Datenbank und den entsprechenden Server, die vom mobilen Dienst verwendet werden, ohne dass dabei eine Eingabeaufforderung angezeigt wird.
+Durch Einbeziehen der Parameter `-a` und `-q` löscht dieser Befehl außerdem die SQL-Datenbank und den Server, die vom mobilen Dienst verwendet werden, ohne dass dabei eine Eingabeaufforderung angezeigt wird.
 
-> [AZURE.NOTE] Wenn Sie den Parameter <code>-q</code> nicht zusammen mit dem Parameter <code>-a</code> oder <code>-d angeben,</code>wird die Ausführung angehalten, und Sie werden aufgefordert, Löschoptionen für Ihre SQL-Datenbank auszuwählen. Verwenden Sie den Parameter <code>-a</code> nur, wenn kein anderer Dienst die Datenbank oder den Server verwendet. Benutzen Sie andernfalls den Parameter <code>-d,</code> um nur Daten zu löschen, die zu dem zu löschenden mobilen Dienst gehören.
+> [AZURE.NOTE]Wenn Sie den Parameter <code>-q</code> nicht zusammen mit <code>-a</code> oder <code>-d</code> angeben, wird die Ausführung unterbrochen, und Sie werden aufgefordert, Löschoptionen für die SQL-Datenbank auszuwählen. Verwenden Sie ausschließlich den Parameter <code>-a</code>, wenn kein weiterer Dienst die Datenbank oder den Server verwendet. Verwenden Sie anderenfalls den Parameter <code>-d</code>, um nur die Daten zu löschen, welche zu dem mobilen Dienst gehören, der gelöscht werden soll.
 
-<h2><a name="create-table"></a>Erstellen einer Tabelle im mobilen Dienst</h2>
+##Erstellen einer Tabelle im mobilen Dienst
 
-Mit dem folgenden Befehl wird eine Tabelle im angegebenen mobilen Dienst erstellt, wobei `<service-name>` der Name des mobilen Diensts und `<table-name>` der Name der zu erstellenden Tabelle ist:
+Mit dem folgenden Befehl wird eine Tabelle im angegebenen mobilen Dienst erstellt. Dabei ist `<service-name>` der Name des mobilen Diensts, und `<table-name>` ist der Name der zu erstellenden Tabelle:
 
-		azure mobile table create <service-name> <table-name>
+	azure mobile table create <service-name> <table-name>
 
-Damit wird eine neue Tabelle mit den Standardberechtigungen, `application`, für folgende Tabellenvorgänge erstellt: `insert`, `read`, `update` und `delete`. 
+Damit wird eine neue Tabelle mit den Standardberechtigungen, `application`, für folgende Tabellenvorgänge erstellt: `insert`, `read`, `update` und `delete`.
 
 Mit dem folgenden Befehl wird eine neue Tabelle erstellt, die die öffentliche Berechtigung `read` aufweist, die aber zugleich die Berechtigung `delete` nur bei Administratoren gewährt:
 
-		azure mobile table create <service-name> <table-name> -p read=public,delete=admin
+	azure mobile table create <service-name> <table-name> -p read=public,delete=admin
 
 Die folgende Tabelle enthält den Skriptberechtigungswert im Gegensatz zum Berechtigungswert im [Azure-Verwaltungsportal].
 
 <table border="1" width="100%"><tr><th>Skriptwert</th><th>Verwaltungsportalwert</th></tr>
 <tr><td><code>public</code></td><td>Jeder Benutzer</td></tr>
-<tr><td><code>application</code> (Standardeinstellung)</td><td>Jeder Benutzer mit Anwendungsschlüssel</td></tr>
+<tr><td><code>application</code> (Standard)</td><td>Jeder Benutzer mit Anwendungsschlüssel</td></tr>
 <tr><td><code>user</code></td><td>Nur authentifizierte Benutzer</td></tr>
-<tr><td><code>admin	</code></td><td>Nur Skripts und Administratoren</td></tr></table>
+<tr><td><code>admin </code></td><td>Nur Skripts und Administratoren</td></tr></table>
 
-Beim Ausführen des `mobile table create`-Befehls tritt ein Fehler auf, wenn die angegebene Tabelle bereits vorhanden ist. Sie sollten bei Ihren automatisierten Skripts eine Tabelle löschen, bevor Sie diese neu zu erstellen versuchen.
+Der Befehl `mobile table create` schlägt fehl, wenn die angegebene Tabelle bereits vorhanden ist. Sie sollten bei Ihren automatisierten Skripts eine Tabelle löschen, bevor Sie diese neu zu erstellen versuchen.
 
-<h2><a name="list-tables"></a>Auflisten vorhandener Tabellen in einem mobilen Dienst</h2>
+##Auflisten vorhandener Tabellen in einem mobilen Dienst
 
 Der folgende Befehl gibt eine Liste aller Tabellen in einem mobilen Dienst zurück, wobei `<service-name>` der Name des mobilen Diensts ist:
 
-		azure mobile table list <service-name>
+	azure mobile table list <service-name>
 
 Dieser Befehl zeigt außerdem die Anzahl der Indizes zu jeder Tabelle und die Anzahl der Datenzeilen an, die sich aktuell in der Tabelle befinden.
 
-<h2><a name="delete-table"></a>Löschen einer vorhandenen Tabelle aus einem mobilen Dienst</h2>
+##Löschen einer vorhandenen Tabelle aus einem mobilen Dienst
 
-Mit dem folgenden Befehl wird eine Tabelle aus dem angegebenen mobilen Dienst gelöscht, wobei `<service-name>` der Name des mobilen Diensts und `<table-name>` der Name der zu löschenden Tabelle ist:
+Mit dem folgenden Befehl wird eine Tabelle aus dem mobilen Dienst gelöscht. Dabei ist `<service-name>` der Name des mobilen Diensts, und `<table-name>` ist der Name der zu löschenden Tabelle:
 
-		azure mobile table delete <service-name> <table-name> -q
+	azure mobile table delete <service-name> <table-name> -q
 
-Verwenden Sie in automatisierten Skripts den Parameter `-q`, um die Tabelle zu löschen, ohne dass dabei eine Bestätigungsaufforderung angezeigt wird, welche die Ausführung blockiert.
+Verwenden Sie in Automatisierungsskripts den Parameter `-q`, um die Tabelle zu löschen, ohne dass dabei eine Bestätigungsaufforderung angezeigt wird, die die Ausführung blockiert.
 
-<h2><a name="register-script"></a>Registrieren eines Skripts für einen Tabellenvorgang</h2>
+##Registrieren eines Skripts für einen Tabellenvorgang
 
-Mit dem folgenden Befehl wird eine Funktion an einen Vorgang an einer Tabelle hochgeladen und registriert, wobei `<service-name>` der Name des mobilen Diensts, `<table-name>` der Name der Tabelle und `<operation>` ist der Tabellenvorgang, der `read`, `insert`, `update`, oder `delete` sein kann:
+Mit dem folgenden Befehl wird eine Funktion für einen Tabellenvorgang hochgeladen und registriert. Dabei entspricht `<service-name>` dem Namen des mobilen Diensts, `<table-name>` dem Namen der Tabelle und `<operation>` dem Tabellenvorgang, der `read`, `insert`, `update` oder `delete` lauten kann:
 
-		azure mobile script upload <service-name> table/<table-name>.<operation>.js
+	azure mobile script upload <service-name> table/<table-name>.<operation>.js
 
 Beachten Sie, dass mit diesem Vorgang eine JavaScript (.js)-Datei vom lokalen Computer hochgeladen wird. Der Name der Datei muss sich aus dem Tabellen- und Vorgangsnamen zusammensetzen, und die Datei muss sich im Unterordner `table` relativ zum Verzeichnis befinden, in dem der Befehl ausgeführt wird. Beim folgenden Vorgang wird beispielsweise ein neues `insert`-Skript hochgeladen und registriert, das zur Tabelle `TodoItems` gehört:
 
-		azure mobile script upload todolist table/todoitems.insert.js
+	azure mobile script upload todolist table/todoitems.insert.js
 
-Die Funktionsdeklaration in der Skriptdatei muss ebenfalls mit dem registrierten Tabellenvorgang übereinstimmen. Dies bedeutet, dass bei einem  `insert`-Skript das hochgeladene Skript eine Funktion mit folgender Signatur enthält:
+Die Funktionsdeklaration in der Skriptdatei muss ebenfalls mit dem registrierten Tabellenvorgang übereinstimmen. Dies bedeutet, dass bei einem `insert`-Skript das hochgeladene Skript eine Funktion mit folgender Signatur enthält:
 
-		function insert(item, user, request) {
-		    ...
-		} 
+	function insert(item, user, request) {
+	    ...
+	} 
 
-Weitere Informationen zum Registrieren von Skripts finden Sie unter [Mobile Services: Serverskriptreferenz].
+Weitere Informationen über das Registrieren von Skripts finden Sie unter [Mobile Services: Serverskriptreferenz].
 
-<!--<h2><a name="test-service"></a>Testen des mobilen Diensts</h2>
-
-Wenn Sie die Erstellung Ihres mobilen Diensts automatisieren möchten, können Sie optional cURL oder einen anderen Befehlszeilen-Anforderungsgenerator verwenden. 
-
-## <a name="nextsteps"> </a>Nächste Schritte
-Nächste Schritte...
--->
 <!-- Anchors. -->
-[Herunterladen und Installieren der Befehlszeilentools]: #install
-[Herunterladen und Importieren von Veröffentlichungseinstellungen]: #import
-[Erstellen eines neuen mobilen Diensts]: #create-service
-[Abrufen des Hauptschlüssels]: #get-master-key
-[Erstellen einer neuen Tabelle]: #create-table
-[Registrieren eines Skripts für einen Tabellenvorgang]: #register-script
-[Löschen einer vorhandenen Tabelle]: #delete-table
-[Löschen eines vorhandenen mobilen Diensts]: #delete-service
-[Testen des mobilen Dienstes]: #test-service
-[Auflisten von mobilen Diensten]: #list-services
-[Auflisten von Tabellen]: #list-tables
-[Nächste Schritte]: #next-steps
+[Download and install the command-line tools]: #install
+[Download and import publish settings]: #import
+[Create a new mobile service]: #create-service
+[Get the master key]: #get-master-key
+[Create a new table]: #create-table
+[Register a new table script]: #register-script
+[Delete an existing table]: #delete-table
+[Delete an existing mobile service]: #delete-service
+[Test the mobile service]: #test-service
+[List mobile services]: #list-services
+[List tables]: #list-tables
+[Next steps]: #next-steps
 
 <!-- Images. -->
 
@@ -204,7 +188,7 @@ Nächste Schritte...
 [mac-installer]: http://go.microsoft.com/fwlink/p?LinkId=252249
 [windows-installer]: http://go.microsoft.com/fwlink/p?LinkID=275464
 [reference-docs]: http://azure.microsoft.com/documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
-[Installieren der Azure-Befehlszeilentools für Mac und Linux]: http://go.microsoft.com/fwlink/p/?LinkId=275795
+[Installation der Azure-Befehlszeilentools für Mac und Linux]: http://go.microsoft.com/fwlink/p/?LinkId=275795
 
 
-<!--HONumber=47-->
+<!--HONumber=54-->

@@ -1,10 +1,10 @@
-﻿Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, um Elemente in Mobile Services anstatt in der lokalen Auflistung zu speichern. 
+Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass dieser Elemente im mobilen Dienst anstatt in einer lokalen Sammlung speichert.
 
-1. Falls Sie das [Mobile Services Android SDK] noch nicht haben, laden Sie es jetzt herunter, und entpacken Sie die komprimierten Dateien.
+1. Falls Sie das [Android-SDK für mobile Dienste] noch nicht haben, laden Sie es jetzt herunter und entpacken Sie die komprimierten Dateien.
 
-2. Kopieren Sie die `.jar`-Dateien aus dem Ordner `mobileservices` des SDK in den Ordner `libs` des GetStartedWithData-Projekts.
+2. Kopieren Sie die `.jar`-Dateien aus dem `mobileservices`-Ordner des SDK in den `libs`-Ordner des GetStartedWithData-Projekts.
 
-3. Klicken Sie im Paket-Explorer in Eclipse mit der rechten Maustaste auf den `libs`-Ordner, und klicken Sie auf **Refresh**, um die kopierten jar-Dateien anzuzeigen.
+3. Klicken Sie im Paket-Explorer in Eclipse mit der rechten Maustaste auf den `libs`-Ordner, und klicken Sie auf **Aktualisieren**, um die kopierten jar-Dateien anzuzeigen.
 
   	Damit wird das SDK für mobile Dienste zum Arbeitsbereich hinzugefügt.
 
@@ -12,7 +12,7 @@
 
 		<uses-permission android:name="android.permission.INTERNET" />
 
-5. Öffnen Sie im Paket-Explorer die Datei TodoActivity.java im Paket com.example.getstartedwithdata und entfernen Sie die Kommentare in den folgenden Codezeilen: 
+5. Öffnen Sie im Paket-Explorer die Datei TodoActivity.java im Paket com.example.getstartedwithdata und entfernen Sie die Kommentare in den folgenden Codezeilen:
 
 		import java.net.MalformedURLException;
 		import android.os.AsyncTask;
@@ -33,18 +33,18 @@
 		import java.util.ArrayList;
 		import java.util.List;
 
-7. Wir werden die aktuell verwendete speicherinterne Liste entfernen und durch einen mobilen Dienst ersetzen. Kommentieren Sie in der Klasse **ToDoActivity** die folgende Codezeile aus, in der die **toDoItemList**-Liste definiert wird.
+7. Wir werden die aktuell verwendete speicherinterne Liste entfernen und durch einen mobilen Dienst ersetzen. Kommentieren Sie in der Klasse **ToDoActivity** die folgenden Codezeilen, in denen die **toDoItemList**-Liste definiert wird.
 
 		public List<ToDoItem> toDoItemList = new ArrayList<ToDoItem>();
 
-8. Speichern Sie die Datei, und daraufhin zeigt das Projekt Buildfehler an. Suchen Sie nach den verbleibenden Vorkommen, in denen die `toDoItemList`-Variable verwendet wird, und kommentieren Sie angegebenen Abschnitte aus. Nun haben Sie die speicherinterne Liste vollständig entfernt. 
+8. Speichern Sie die Datei, und daraufhin zeigt das Projekt Buildfehler an. Suchen Sie nach den verbleibenden drei Orten, an denen die Variable `toDoItemList` verwendet wird, und kennzeichnen Sie die entsprechenden Abschnitte als Kommentar. Nun haben Sie die speicherinterne Liste vollständig entfernt.
 
 9. Wir werden nun den mobilen Dienst hinzufügen. Entfernen Sie die Kommentare in den folgenden Codezeilen:
 
 		private MobileServiceClient mClient;
 		private private MobileServiceTable<ToDoItem> mToDoTable;
 
-10. Suchen Sie nach der Klasse  *ProgressFilter* am Ende der Datei, und heben Sie die Auskommentierung auf. Diese Klasse zeigt einen 'loading'-Hinweis an, wenn *MobileServiceClient* Netzwerkvorgänge ausführt.
+10. Suchen Sie die *ProgressFilter*-Klasse am Ende der Datei, und entfernen Sie auch hier die Kommentarzeichen. Diese Klasse zeigt den Hinweis 'loading' an, wenn der *MobileServiceClient* Netzwerkvorgänge ausführt.
 
 
 11. Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
@@ -55,7 +55,7 @@
 
   	Sie benötigen diese Werte beim Zugriff auf den mobilen Dienst von Ihrem App-Code aus.
 
-13. Entfernen Sie in der Methode **onCreate** die Kommentarzeichen in den folgenden Codezeilen, in denen die **MobileServiceClient**-Variable definiert wird:
+13. Entfernen Sie in der Methode **onCreate** die Kommentare in den folgenden Codezeilen, in denen die **MobileServiceClient**-Variable definiert wird:
 
 		try {
 		// Create the Mobile Service Client instance, using the provided
@@ -71,13 +71,13 @@
 			createAndShowDialog(new Exception("There was an error creating the Mobile Service. Verify the URL"), "Error");
 		}
 
-  	Auf diese Weise wird eine neue Instanz von *MobileServiceClient* erstellt, die zum Zugriff auf Ihren mobilen Dienst verwendet wird. Es wird außerdem die Instanz *MobileServiceTable* für die Proxy-Datenspeicherung im mobilen Dienst erstellt.
+  	Dieser Code erstellt eine neue *MobileServiceClient*-Instanz, die für den Zugriff auf Ihren mobilen Dienst verwendet wird. Außerdem wird die *MobileServiceTable*-Instanz für die Proxy-Datenspeicherung im mobilen Dienst erstellt.
 
-14. Ersetzen Sie im obigen Code `MobileServiceUrl` und `AppKey` durch URL und Anwendungsschlüssel Ihres mobilen Diensts, in dieser Reihenfolge.
+14. Ersetzen Sie im obigen Code `MobileServiceUrl` und `AppKey` durch die URL und den Anwendungsschlüssel des mobilen Dienstes.
 
 
 
-15. Entfernen Sie die Kommentarzeichen in diesen Zeilen in der **checkItem**-Methode:
+15. Entfernen Sie die Kommentare in diesen Zeilen in der **checkItem**-Methode:
 
 	    new AsyncTask<Void, Void, Void>() {
 	        @Override
@@ -101,7 +101,7 @@
 
    	Dieser Code schickt eine Elementaktualisierung an den mobilen Dienst und entfernt markierte Elemente aus dem Adapter.
     
-16. Entfernen Sie die Kommentarzeichen in diesen Zeilen in der **addItem**-Methode:
+16. Entfernen Sie die Kommentare in diesen Zeilen in der **addItem**-Methode:
 	
 		// Insert the new item
 		new AsyncTask<Void, Void, Void>() {
@@ -126,7 +126,7 @@
 
   	Dieser Code erstellt ein neues Element und fügt es in die Tabelle im mobilen Dienst ein.
 
-18. Entfernen Sie die Kommentarzeichen in diesen Zeilen in der **refreshItemsFromTable**-Methode:
+18. Entfernen Sie die Kommentare in diesen Zeilen in der **refreshItemsFromTable**-Methode:
 
 		// Get the items that weren't marked as completed and add them in the adapter
 	    new AsyncTask<Void, Void, Void>() {
@@ -155,5 +155,5 @@
 		
 
 <!-- URLs. -->
-[Mobile Services Android SDK]: http://aka.ms/Iajk6q
-<!--HONumber=47-->
+[Android-SDK für mobile Dienste]: http://aka.ms/Iajk6q
+<!--HONumber=54-->

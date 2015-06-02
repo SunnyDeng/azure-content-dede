@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Lernempfehlung für Mad in HDInsight | Azure" 
 	description="Hier finden Sie eine Empfehlung für Ressourcen, die alle wichtigen Themen zu HDInsight behandeln" 
 	services="hdinsight" 
@@ -18,13 +18,12 @@
 
 
 # Learning Map für HDInsight
-In HDInsight können Sie mit Big Data in der Cloud in Hadoop-, HBase- und benutzerdefinierten Clustern arbeiten. Befolgen Sie die Anleitungen auf dieser Seite für ein effektives Lernerlebnis mit der HDInsight-Dokumentation.
+In HDInsight können Sie mit Big Data in der Cloud in Hadoop-, HBase- und benutzerdefinierten Clustern arbeiten. Befolgen Sie die Anleitungen auf dieser Seite für ein effektives Lernerlebnis mit der HDInsight-Dokumentation:
 
-<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/HDI.Content.Flow.svg" width="100%" height="100%">
-</object>
-
+<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/HDI.Content.Flow.svg" width="100%" height="100%"> </object>
 
 
 
 
-<!--HONumber=42-->
+
+<!--HONumber=54-->

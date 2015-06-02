@@ -5,25 +5,25 @@
 	authors="krisragh" 
 	manager="dwrede" 
 	editor="" 
-	services=""/>
+	services="mobile-services"/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-ios" 
-	ms.devlang="dotnet" 
+	ms.devlang="objective-c" 
 	ms.topic="article" 
-	ms.date="01/26/2015" 
-	ms.author="krisragh,donnam"/>
+	ms.date="04/16/2015" 
+	ms.author="krisragh;donnam"/>
 
 
 # Behandeln von Konflikten bei der Synchronisierung von Offlinedaten in Mobile Services
 
-[WACOM.INCLUDE [mobile-services-selector-offline-conflicts](../includes/mobile-services-selector-offline-conflicts.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../includes/mobile-services-selector-offline-conflicts.md)]
 
 In diesem Thema erfahren Sie, wie Sie Daten synchronisieren und Konflikte behandeln können, wenn Sie die Offlinefunktionen von Azure Mobile Services verwenden. Dieses Lernprogramm baut auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Offlinedaten] auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie [Erste Schritte mit Offlinedaten] abschließen.
 
->[AZURE.NOTE] Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Kostenlose Azure-Testversion</a>.
+>[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Kostenlose Azure-Testversion</a>.
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
@@ -51,7 +51,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
 ### <a name="update-list-view"></a>Aktualisieren des Todo-Listen-View-Controller
 
-1. Wählen Sie im Xcode Project Navigator **MainStoryboard_iPhone.storyboard** aus und dann **Todo List View Controller** (Todo-Listen-View-Controller). Wählen Sie die Tabellenansichtszelle aus, und wählen Sie für den Modus "Accessory" die Option **Disclosure indicator** aus. Der Anzeigenindikator gibt Benutzern an, dass bei Tippen auf den zugehörigen Tabellenansichts-Controller eine neue Ansicht angezeigt wird. Der Anzeigenindikator löst kein Ereignis aus.
+1. Wählen Sie im Xcode Project Navigator **MainStoryboard_iPhone.storyboard** und dann **Todo List View Controller (Todo-Listen-View-Controller)**. Wählen Sie die Tabellenansichtszelle aus, und wählen Sie für den Modus "Accessory" die Option **Disclosure indicator** aus. Der Anzeigenindikator gibt Benutzern an, dass bei Tippen auf den zugehörigen Tabellenansichts-Controller eine neue Ansicht angezeigt wird. Der Anzeigenindikator löst kein Ereignis aus.
 
       ![][update-todo-list-view-controller-2]
 
@@ -77,7 +77,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
         @property (nonatomic, weak) NSMutableDictionary *item;
         @property (nonatomic, strong) ItemEditCompletionBlock editCompleteBlock;
 
-4. Fügen Sie in **QSItemViewController.m** zwei private Eigenschaften für die beiden Felder des zu bearbeitenden Todo-Eintrags hinzu - den Abschlussstatus und den Text des Todo-Eintrags selbst:
+4. Fügen Sie in **QSItemViewController.m** zwei private Eigenschaften für die beiden Felder des zu bearbeitenden Todo-Eintrags hinzu – den Abschlussstatus und den Text des Todo-Eintrags selbst:
 
         @interface QSItemViewController ()
 
@@ -147,9 +147,9 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
 1. Kehren Sie mit dem Project Navigator zur Datei **MainStoryboard_iPhone.storyboard** zurück.
 
-2. Fügen Sie einen neuen View Controller für den Todo-Eintrag zum Storyboard hinzu, und zwar rechts vom vorhandenen **Todo-Listen-View-Controller**. Legen Sie als benutzerdefinierte Klasse dieses neuen View Controller **QSItemViewController** fest. Weitere Informationen finden Sie unter [Hinzufügen einer Szene zu einem Storyboard].
+2. Fügen Sie einen neuen View Controller für den Todo-Eintrag zum Storyboard hinzu, und zwar rechts vom vorhandenen **Todo-Listen-View-Controller**. Legen Sie als benutzerdefinierte Klasse dieses neuen View Controller **QSItemViewController** fest. Weitere Informationen finden Sie unter [Adding a Scene to a Storyboard] (in englischer Sprache).
 
-3. Fügen Sie einen **Show**-Segue aus dem **Todo-Listen-View-Controller** zum **Todo-Eintrags-View-Controller** hinzu. Legen Sie dann in Attributes Inspector den Segue-Bezeichner auf **detailSegue** fest. 
+3. Fügen Sie einen **Show**-Segue aus dem **Todo-Listen-View-Controller** zum **Todo-Eintrags-View-Controller** hinzu. Legen Sie dann in Attributes Inspector den Segue-Bezeichner auf **detailSegue** fest.
 
     Erstellen Sie diesen Segue nicht über eine beliebige Zelle oder eine Schaltfläche im ursprünglichen View Controller. Drücken Sie stattdessen STRG, und ziehen Sie vom View-Controller-Symbol über dem **Todo-Listen-View-Controller** in der Storyboard-Oberfläche zum **Todo-Eintrags-View-Controller**:
 
@@ -159,19 +159,19 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
         Nested push animation can result in corrupted navigation bar
 
-    Weitere Informationen über Segues finden Sie unter [Hinzufügen eines Segue zwischen Szenen in einem Storyboard]. 
+    Weitere Informationen über Segues finden Sie unter [Hinzufügen eines Segue zwischen Szenen in einem Storyboard].
 
-4. Fügen Sie dem neuen **Todo-Eintrags-View-Controller** ein Textfeld für Eintragstext und ein segmentiertes Steuerelement für den Abschlussstatus sowie Label hinzu. Legen Sie im segmentierten Steuerelement den Titel von **Segment 0** auf **Ja** und den Titel für **Segment 1** auf **Nein** fest. Verbinden Sie diese neuen Felder mit Outlets im Code. Weitere Informationen finden Sie unter [Erstellen einer Benutzeroberfläche] und [Segmentierte Steuerelemente].
+4. Fügen Sie dem neuen **Todo-Eintrags-View-Controller** ein Textfeld für Eintragstext und ein segmentiertes Steuerelement für den Abschlussstatus sowie Label hinzu. Setzen Sie im segmentierten Steuerelement den Titel von **Segment 0** auf **Yes** (Ja) und den Titel für **Segment 1** auf **No** (Nein). Verbinden Sie diese neuen Felder mit Outlets in Code. Weitere Informationen finden Sie unter [Build a User Interface] und [Segmented Controls] (in englischer Sprache).
 
       ![][add-todo-item-view-controller-3]
 
-5. Verbinden Sie diese neuen Felder mit den entsprechenden Outlets, die Sie bereits **QSItemViewController.m** hinzugefügt haben. Verbinden Sie das Eintragstextfeld mit dem Outlet **itemText** und das segmentierte Steuerelement des Abschlussstatus mit dem Outlet **itemComplete**. Weitere Informationen finden Sie unter [Erstellen einer Outlet-Verbindung].
+5. Verbinden Sie diese neuen Felder mit den entsprechenden Outlets, die Sie bereits **QSItemViewController.m** hinzugefügt haben. Verbinden Sie das Eintragstextfeld mit dem Outlet **itemText** und das segmentierte Steuerelement des Abschlussstatus mit dem Outlet **itemComplete**. Weitere Informationen finden Sie unter [Creating an Outlet Connection] (in englischer Sprache).
 
 6. Legen Sie den Delegat des Textfelds auf den View Controller fest. Drücken Sie STRG, und ziehen Sie vom View-Controller-Symbol unter dem **Todo-Eintrags-View-Controller** in der Storyboard-Oberfläche nach unten. Wählen Sie dann das Delegat-Outlet. Dadurch wird dem Storyboard angegeben, dass der Delegat dieses Textfelds dieser View Controller ist.
 
 7. Überprüfen Sie, ob die App mit den bisher vorgenommenen Änderungen funktioniert. Führen Sie die App nun im Simulator aus. Fügen Sie der Todo-Liste Einträge hinzu, und klicken Sie auf diese. Der (derzeit leere) Eintrags-View-Controller wird angezeigt.
 
-      ![][add-todo-item-view-controller-4]          ![][add-todo-item-view-controller-5]
+      ![][add-todo-item-view-controller-4] ![][add-todo-item-view-controller-5]
 
 ### <a name="add-item-details"></a>Hinzufügen von Eintragsdetails zum Todo-Eintrags-View-Controller
 
@@ -192,7 +192,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
             [self performSegueWithIdentifier:@"detailSegue" sender:self];
         }
 
-4. Implementieren Sie **PrepareForSegue:sender:** in **QSTodoListViewController.m**, um den Eintrag an den **TODO-Eintrags-View-Controller** zu übergeben, und geben Sie den Rückruf an, für den Fall, dass der Benutzer die Detailansicht beendet:
+4. Implementieren Sie **PrepareForSegue:sender:** in **QSTodoListViewController.m**, um den Eintrag an den **Todo-Eintrags-View-Controller** zu übergeben, und geben Sie den Rückruf an, für den Fall, dass der Benutzer die Detailansicht beendet:
 
         - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
             if ([[segue identifier] isEqualToString:@"detailSegue"]) {
@@ -213,7 +213,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
 ### <a name="saving-edits"></a>Hinzufügen von Unterstützung für das Speichern von Bearbeitungen
 
-1. Wenn Sie in der Navigationsansicht auf die Schaltfläche "Zurück" klicken, gehen die Bearbeitungen verloren. Wir haben Daten an die Detailansicht gesendet, sie werden jedoch nicht zurück an die Masteransicht gesendet. Da wir bereits einen Zeiger an eine Kopie des Eintrags übergeben haben, können wir anhand dieses Zeigers die Liste der an dem Eintrag vorgenommenen Aktualisierungen abrufen und ihn auf dem Server aktualisieren. Aktualisieren Sie zunächst die Server-Wrapper-Klasse von **QSTodoService** in **QSTodoService.m**, indem Sie den Vorgang **completeItem** entfernen und einen neuen Vorgang **updateItem** hinzufügen. Das ist notwendig, weil mit **completeItem** Einträge lediglich als abgeschlossen markiert werden. Mit **updateItem** hingegen werden die Einträge aktualisiert.
+1. Wenn Sie in der Navigationsansicht auf die Schaltfläche Zurück klicken, gehen die Bearbeitungen verloren. Wir haben Daten an die Detailansicht gesendet, sie werden jedoch nicht zurück an die Masteransicht gesendet. Da wir bereits einen Zeiger an eine Kopie des Eintrags übergeben haben, können wir anhand dieses Zeigers die Liste der an dem Eintrag vorgenommenen Aktualisierungen abrufen und ihn auf dem Server aktualisieren. Aktualisieren Sie zunächst die Server-Wrapper-Klasse von **QSTodoService** in **QSTodoService.m**, indem Sie den Vorgang **completeItem** entfernen und einen neuen Vorgang **updateItem** hinzufügen. Das ist notwendig, weil mit **completeItem** Einträge lediglich als abgeschlossen markiert werden. Mit **updateItem** hingegen werden die Einträge aktualisiert.
 
         - (void)updateItem:(NSDictionary *)item completion:(QSCompletionBlock)completion
         {
@@ -238,7 +238,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
 ### <a name="conflict-handling-problem"></a>Problem bei der Konfliktbehandlung
 
-1. Untersuchen wir, was passiert, wenn zwei unterschiedliche Clients versuchen, gleichzeitig dieselben Daten zu bearbeiten. Im folgenden Beispiel gibt es einen Eintrag "Mobile Services is Cool!" Ändern wir diesen auf einem Gerät in "I love Mobile Services!" und auf einem anderen Gerät in "I love Azure!".
+1. Untersuchen wir, was passiert, wenn zwei unterschiedliche Clients versuchen, gleichzeitig dieselben Daten zu bearbeiten. Im folgenden Beispiel gibt es einen Eintrag „Mobile Services is Cool!“ Ändern wir diesen auf einem Gerät in „I love Mobile Services!“ und auf einem anderen Gerät in „I love Azure!“.
 
       ![][conflict-handling-problem-1]
 
@@ -259,17 +259,17 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
             "The server's version did not match the passed version"
         ), NSLocalizedDescription=Not all operations completed successfully}
 
-  Das liegt daran, dass im Aufruf für **pullWithQuery:completion:** im completion-Block der Fehlerparameter "non-nil" lautet, sodass der Fehler über **NSLog** ausgegeben wird.
+  Das liegt daran, dass im Aufruf für **pullWithQuery:completion:** im completion-Block der Fehlerparameter „non-nil“ lautet, sodass der Fehler über **NSLog** ausgegeben wird.
 
 ### <a name="service-add-conflict-handling"></a>Aktualisieren von QSTodoService zur Unterstützung der Konfliktbehandlung
 
-1. Lassen wir den Benutzer entscheiden, wie er den Konflikt im Client behandelt. Dafür implementieren wir das Protokoll **MSSyncContextDelegate**. Ändern Sie in **QSTodoService.h** und **QSTodoService.m** die Factorymethodendeklaration **QSTodoService *)defaultService;** auf die unten stehende Anweisung, sodass der Synchronisierungskontextdelegat als Parameter ausgegeben wird:
+1. Lassen wir den Benutzer entscheiden, wie er den Konflikt im Client behandelt. Dafür implementieren wir das Protokoll **MSSyncContextDelegate**. Ändern Sie in **QSTodoService.h** und **QSTodoService.m** die Factorymethodendeklaration (**QSTodoService *)defaultService;** auf die unten stehende Anweisung, sodass der Synchronisierungskontextdelegat als Parameter ausgegeben wird:
 
         + (QSTodoService *)defaultServiceWithDelegate:(id)delegate;
 
 2. Ändern Sie in **QSTodoService.m** die Zeile **init** wie unten dargestellt, um wieder den Synchronisierungskontextdelegat als Parameter zu erhalten:
 
-€
+        -(QSTodoService *)initWithDelegate:(id)syncDelegate
 
 3. Ändern Sie in **QSTodoService.m** den Aufruf **init** in **defaultServiceWithDelegate** stattdessen zu **initWithDelegate**:
 
@@ -301,7 +301,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
         @end
 
-3. Überschreiben Sie als Nächstes **QSUIAlertViewWithBlock.m** mit der folgenden Datei:
+3. Überschreiben Sie als nächstes **QSUIAlertViewWithBlock.m** mit der folgenden Datei:
 
         #import "QSUIAlertViewWithBlock.h"
         #import <objc/runtime.h>
@@ -356,7 +356,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
 ### <a name="add-conflict-handling"></a>Hinzufügen der Konfliktbehandlung zum Todo-Listen-View-Controller
 
-1. Bearbeiten Sie **viewDidLoad** in **QSTodoListViewController.m**. Ersetzen Sie den Aufruf von **DefaultService** durch einen Aufruf von **DefaultServiceWithDelegate**:
+1. Bearbeiten Sie **viewDidLoad** in **QSTodoListViewController.m**. Ersetzen Sie den Aufruf von **defaultService** durch einen Aufruf von **defaultServiceWithDelegate**:
 
         self.todoService = [QSTodoService defaultServiceWithDelegate:self];
 
@@ -415,7 +415,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
 ### <a name="test-app"></a>Testen der App
 
-Testen wir die Anwendung mit Konflikten. Bearbeiten Sie denselben Eintrag in zwei unterschiedlichen Instanzen der App, die gleichzeitig ausgeführt werden, oder verwenden Sie die App und einen REST-Client. 
+Testen wir die Anwendung mit Konflikten. Bearbeiten Sie denselben Eintrag in zwei unterschiedlichen Instanzen der App, die gleichzeitig ausgeführt werden, oder verwenden Sie die App und einen REST-Client.
 
 Führen Sie eine Aktualisierung in den App-Instanzen durch, indem Sie von oben nach unten ziehen. Ihnen wird eine Eingabeaufforderung zum Auflösen des Konflikts angezeigt:
 
@@ -457,20 +457,18 @@ Nebenbei haben Sie eine Hilfsklasse **QSUIAlertViewWithBlock** hinzugefügt, dam
 [conflict-ui]: ./media/mobile-services-ios-handling-conflicts-offline-data/conflict-ui.png
 
 
-[Segmentierte Steuerelemente]: https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UISegmentedControl.html
-[Hilfe zu Core-Datenmodell-Editor]: https://developer.apple.com/library/mac/recipes/xcode_help-core_data_modeling_tool/Articles/about_cd_modeling_tool.html
-[Erstellen einer Outlet-Verbindung]: https://developer.apple.com/library/mac/recipes/xcode_help-interface_builder/articles-connections_bindings/CreatingOutlet.html
-[Erstellen einer Benutzeroberfläche]: https://developer.apple.com/library/mac/documentation/ToolsLanguages/Conceptual/Xcode_Overview/Edit_User_Interfaces/edit_user_interface.html
+[Segmented Controls]: https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UISegmentedControl.html
+[Core Data Model Editor Help]: https://developer.apple.com/library/mac/recipes/xcode_help-core_data_modeling_tool/Articles/about_cd_modeling_tool.html
+[Creating an Outlet Connection]: https://developer.apple.com/library/mac/recipes/xcode_help-interface_builder/articles-connections_bindings/CreatingOutlet.html
+[Build a User Interface]: https://developer.apple.com/library/mac/documentation/ToolsLanguages/Conceptual/Xcode_Overview/Edit_User_Interfaces/edit_user_interface.html
 [Hinzufügen eines Segue zwischen Szenen in einem Storyboard]: https://developer.apple.com/library/ios/recipes/xcode_help-IB_storyboard/chapters/StoryboardSegue.html#//apple_ref/doc/uid/TP40014225-CH25-SW1
-[Hinzufügen einer Szene zu einem Storyboard]: https://developer.apple.com/library/ios/recipes/xcode_help-IB_storyboard/chapters/StoryboardScene.html
-[Core-Daten]: https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html
-[Hier die SDK-Preview herunterladen]: http://aka.ms/Gc6fex
-[Verwenden der Mobile Services-Clientbibliothek für iOS]: /de-de/documentation/articles/mobile-services-ios-how-to-use-client-library/
-[Erste Schritte offline - iOS-Beispiel]: https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS/blog20140611
-[Erste Schritte mit Offlinedaten]: /de-de/documentation/articles/mobile-services-ios-get-started-offline-data/
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-ios-get-started/
-[Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-ios-get-started-data/
+[Adding a Scene to a Storyboard]: https://developer.apple.com/library/ios/recipes/xcode_help-IB_storyboard/chapters/StoryboardScene.html
+[Core Data]: https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html
+[Download the preview SDK here]: http://aka.ms/Gc6fex
+[How to use the Mobile Services client library for iOS]: mobile-services-ios-how-to-use-client-library.md
+[Getting Started Offline iOS Sample]: https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS/blog20140611
+[Erste Schritte mit Offlinedaten]: mobile-services-ios-get-started-offline-data.md
+[Get started with Mobile Services]: mobile-services-ios-get-started.md
+[Get started with data]: mobile-services-ios-get-started-data.md
 
-
-
-<!--HONumber=42-->
+<!--HONumber=54-->

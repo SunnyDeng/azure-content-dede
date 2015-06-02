@@ -1,6 +1,6 @@
-﻿<properties
+<properties
 	pageTitle="Referenz zur Navigation im Azure-Portal"
-	description="Informationen zu den unterschiedlichen Benutzerumgebungen für App Service Web Apps zwischen dem Verwaltungsportal und Azure-Portal"
+	description="Informationen zu den Unterschieden in Bezug auf App Service-Web-Apps zwischen dem Verwaltungsportal und dem Azure-Portal"
 	services="app-service\web"
 	documentationCenter=""
 	authors="jaime-espinosa"
@@ -18,33 +18,33 @@
 
 # Referenz zur Navigation im Azure-Portal
 
-Azure Websites heißt nun [App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Wir aktualisieren unsere gesamte Dokumentation entsprechend dieser Namensänderung und bieten Anleitungen für das neue Azure-Portal. Bis dieser Prozess abgeschlossen ist, können Sie dieses Dokument als Leitfaden für die Arbeit mit Web-Apps im neuen Azure-Portal verwenden.
+Azure Websites heißt ab sofort [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Wir aktualisieren unsere gesamte Dokumentation, um dieser Namensänderung Rechnung zu tragen und bieten Anleitungen für das neue Azure-Portal. Bis dieser Prozess abgeschlossen ist, können Sie dieses Dokument als Leitfaden für die Arbeit mit Web-Apps im neuen Azure-Portal verwenden.
  
 ## Die Zukunft des alten Portals
 
-Sie werden die Brandingänderungen am alten Portal schon bemerkt haben. Dieses Portal wird gerade durch das neue Azure-Portal ersetzt. Da das alte Portal ein Auslaufmodell ist, wird der Schwerpunkt für neue Entwicklung auf das neue Portal verlagert. Alle anstehenden neuen Features für Web-Apps fließen in das neue Portal. Beginnen Sie mit dem Nutzen des neuen Portals, um in den Genuss der neuesten und besten Features zu kommen, die Web-Apps zu bieten haben.
+Sie werden die Brandingänderungen am alten Portal schon bemerkt haben. Dieses Portal wird gerade durch das neue Azure-Portal ersetzt. Da das alte Portal schrittweise außer Betrieb genommen wird, werden die neuen Entwicklungen auf das neue Portal verlagert. Alle anstehenden neuen Features für Web-Apps fließen in das neue Portal ein. Nutzen Sie das neue Portal, um von den neuesten und besten Features zu profitieren, die Web-Apps zu bieten haben.
 
 ## Unterschiede beim Layout zwischen dem alten Portal und dem Azure-Portal
 
-Im alten Portal sind alle Azure-Dienste auf der linken Seite aufgeführt. Die Navigation im alten Portal folgt einer Baumstruktur, bei der Sie beim Dienst starten und in jedes einzelne Element navigieren. Diese Struktur funktioniert gut, wenn Sie unabhängige Komponenten verwalten. Auf Azure basierende Anwendungen sind jedoch eine Sammlung miteinander verbundener Dienste, weshalb diese Struktur für die Arbeit mit Sammlungen von Diensten nicht ideal ist. 
+Im alten Portal sind alle Azure-Dienste auf der linken Seite aufgeführt. Die Navigation im alten Portal erfolgt in einer Strukturansicht, bei der Sie bei einem Dienst starten und zu den einzelnen Elementen navigieren. Diese Struktur funktioniert gut, wenn Sie unabhängige Komponenten verwalten. Auf Azure basierende Anwendungen sind jedoch eine Sammlung miteinander verbundener Dienste, weshalb diese Struktur für die Arbeit mit Sammlungen von Diensten nicht ideal ist.
 
-Das neue Portal erleichtert das Entwickeln von Anwendungen von A bis Z mit Komponenten aus mehreren Diensten. Das neue Azure-Portal ist organisiert als  *journeys*. Eine  *journey* ist eine Folge von  *blades*, die Container für die verschiedenen Komponenten sind. Das Einrichten der automatischen Skalierung für eine Web-App ist z. B. eine  *journey*, bei der Sie, wie im folgenden Beispiel gezeigt, zu mehreren Blättern gelangen: zum Blatt **Website** (der Blatttitel wurde noch nicht mit der neuen Terminologie aktualisiert), zum Blatt **Einstellungen** und zum Blatt **Skalieren**. Bei diesem Beispiel ist die automatische Skalierung so eingerichtet, dass sie von der CPU-Auslastung abhängig ist. Daher gibt es auch ein Blatt **CPU-Prozentsatz**. Die Komponenten in den  *blades* heißen  *parts*, die wie Kacheln aussehen. 
+Das neue Portal vereinfacht die Entwicklung von Anwendungen mit Komponenten aus mehreren Diensten in allen Aspekten. Das neue Azure-Portal ist in Form von *Abläufen* strukturiert. Ein *Ablauf* umfasst eine Folge von *Blättern*, die als Container für die verschiedenen Komponenten dienen. Das Einrichten der automatischen Skalierung für eine Web-App ist z. B. ein *Ablauf*, bei dem Sie, wie im folgenden Beispiel gezeigt, zu mehreren Blättern gelangen: zum Blatt **Website**, zum Blatt **Einstellungen** und zum Blatt **Skalieren**. Bei diesem Beispiel ist die automatische Skalierung so eingerichtet, dass sie von der CPU-Auslastung abhängig ist. Daher gibt es auch ein Blatt **CPU-Prozentsatz**. Die Komponenten in den *Blättern* heißen *Teile* und sehen wie Kacheln aus.
 
 ![](./media/app-service-web-app-preview-portal/AutoScaling.png)
 
 ## Navigationsbeispiel: Erstellen einer Web-App
 
-Das Erstellen neuer Web-Apps ist immer noch kinderleicht. Die folgende Abbildung zeigt das alte Portal und das neue Portal nebeneinander, um zu zeigen, dass sich die Anzahl der Schritte, die zum Erstellen einer neuen Web-App und Aufnehmen ihres Betriebs erforderlich sind, nicht groß geändert hat. 
+Das Erstellen neuer Web-Apps ist immer noch kinderleicht. Die folgende Abbildung zeigt das alte Portal und das neue Portal nebeneinander. Sie können sehen, dass sich die Anzahl der Schritte, die für Erstellung und Inbetriebnahme einer neuen Web-App erforderlich sind, nur unwesentlich geändert hat.
 
 ![](./media/app-service-web-app-preview-portal/CreateWebApp.png)
 
-Im neuen Portal können Sie aus den am häufigsten verwendeten Typen von Webanwendungen wählen, wozu auch beliebte Kataloganwendungen wie WordPress zählen. Eine vollständige Liste der verfügbaren Anwendungen finden Sie im [Azure Marketplace].
+Im neuen Portal können Sie aus den gängigsten Typen von Web-Apps wählen, darunter z. B. auch beliebte Kataloganwendungen wie WordPress. Eine vollständige Liste der verfügbaren Anwendungen finden Sie im [Azure Marketplace].
 
-Wenn Sie eine Webanwendung erstellen, geben Sie im neuen Portal die URL, den App Service-Plan und Speicherort wie im alten Portal an. 
+Wenn Sie eine Web-App erstellen, geben Sie im neuen Portal die URL, den App Service-Plan und Speicherort wie im alten Portal an.
 
 ![](./media/app-service-web-app-preview-portal/CreateWebAppSettings.png)
 
-Darüber hinaus können Sie im neuen Portal weitere allgemeine Einstellungen festlegen. Beispielsweise vereinfachen [Ressourcengruppen] (azure-preview-portal-using-resource-groups.md) das Anzeigen und Verwalten zugehöriger Azure-Ressourcen. 
+Darüber hinaus können Sie im neuen Portal weitere allgemeine Einstellungen festlegen. Beispielsweise vereinfachen [Ressourcengruppen](resource-group-overview.md) das Anzeigen und Verwalten zugehöriger Azure-Ressourcen.
 
 ## Navigationsbeispiel: Einstellungen und Features
 
@@ -56,19 +56,19 @@ Beispielsweise können Sie benutzerdefinierte Domänen erstellen, indem Sie im B
 
 ![](./media/app-service-web-app-preview-portal/ConfigureWebApp.png)
 
-Um eine Überwachungswarnung einzurichten, klicken Sie auf **Anforderungen und Fehler** und dann auf **Warnung hinzufügen**.
+Um eine Überwachungswarnung einzurichten, klicken Sie auf **Anforderungen und Fehler** und anschließend auf **Warnung hinzufügen**.
 
 ![](./media/app-service-web-app-preview-portal/Monitoring.png)
 
-Um die Diagnose zu aktivieren, klicken Sie auf dem Blatt **Einstellungen** auf **Diagnoseprotokolle**.
+Um die Diagnose zu aktivieren, klicken Sie im Blatt **Einstellungen** auf **Diagnoseprotokolle**.
 
 ![](./media/app-service-web-app-preview-portal/Diagnostics.png)
  
-Zum Konfigurieren von Anwendungseinstellungen klicken Sie im Blatt **Einstellungen** auf **Anwendungseinstellungen**. 
+Zum Konfigurieren von Anwendungseinstellungen klicken Sie im Blatt **Einstellungen** auf **Anwendungseinstellungen**.
 
 ![](./media/app-service-web-app-preview-portal/AppSettingsPreview.png)
 
-Außer dem Markennamen wurden ein paar Dinge im Portal umbenannt oder anders gruppiert, damit Sie sie einfacher finden können. Nachstehend sehen Sie beispielsweise ein Bildschirmfoto der entsprechenden Seite für App-Einstellungen (**Konfigurieren**) im alten Portal.
+Neben dem Markennamen wurden einige Elemente im Portal umbenannt oder anders gruppiert, um ihr Auffinden zu erleichtern. Nachstehend sehen Sie beispielsweise einen Screenshot der entsprechenden Seite für App-Einstellungen (Konfigurieren) im alten Portal.
 
 ![](./media/app-service-web-app-preview-portal/AppSettings.png)
 
@@ -76,13 +76,13 @@ Außer dem Markennamen wurden ein paar Dinge im Portal umbenannt oder anders gru
 
 [Die Azure-Cloudanwendungsplattform](app-service-cloud-app-platform.md)
 
-[Neues Portal]: https://portal.azure.com
+[New portal]: https://portal.azure.com
 [Azure Marketplace]: /marketplace/
 
->[AZURE.NOTE] Wenn Sie in Azure App Service einsteigen möchten, ohne sich zuvor für ein Azure-Konto zu registrieren, wechseln Sie zur Website [App Service ausprobieren](http://go.microsoft.com/fwlink/?LinkId=523751), auf der Sie eine Web-App mit kurzer Gültigkeitsdauer für Einsteiger in App Service erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-## Was sich geändert hat
-* Informationen über die Änderung von Websites zu App Service finden Sie unter: [Azure App Service und seine Auswirkungen auf vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714)
-* Informationen über die Änderung vom alten Portal zum neuen Portal finden Sie unter: [Referenz zur Navigation im neuen Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+## Änderungen
+* Hinweise zu den Änderungen von Websites zu App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
-<!--HONumber=49-->
+<!--HONumber=54-->

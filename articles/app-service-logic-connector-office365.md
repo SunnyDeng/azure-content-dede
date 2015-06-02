@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="Office 365-Connector" 
    description="Verwenden des Office 365-Connectors" 
    services="app-service\logic" 
@@ -17,9 +17,9 @@
    ms.author="sutalasi"/>
 
 
-# Mithilfe des Office 365-Connectors in Ihrer Logik-App#
+#Verwenden des Office 365-Connectors in Ihrer Logik-App#
 
-Logik-Apps können basierend auf einer Vielzahl von Datenquellen auslösen und Connectors das Abrufen und Verarbeiten von Daten im Rahmen des Datenflusses ermöglichen. Mit dem Office 365-Connector können Sie E-Mails senden und empfangen sowie Kalender und Kontakte in Ihrem Office 365-Konto verwalten. Sie können verschiedene Aktionen wie z. B. das Senden und Empfangen von E-Mails, das Erstellen und Löschen von Ereignissen in Ihrem Kalender sowie das Erstellen, Aktualisieren und Löschen von Kontakten durchführen.
+Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Mit dem Office 365-Connector können Sie E-Mails senden und empfangen sowie Kalender und Kontakte in Ihrem Office 365-Konto verwalten. Sie können verschiedene Aktionen wie z. B. das Senden und Empfangen von E-Mails, das Erstellen und Löschen von Ereignissen in Ihrem Kalender sowie das Erstellen, Aktualisieren und Löschen von Kontakten durchführen.
 
 **Grundlegende Aktionen**
 
@@ -29,9 +29,18 @@ Logik-Apps können basierend auf einer Vielzahl von Datenquellen auslösen und C
 - Ereignis senden
 - Kontakt hinzufügen
 
+##Erstellen der O365-Connector-API-Anwendung ##
+Um die O365-Connector-API-Anwendung zu erstellen, führen Sie die folgenden Schritte aus:
 
-## Erstellen einer Logik-App##
-Zum Verwenden eines Office 365-Connectors in Ihrer Logik-App sollte die Connector-API-App bereits erstellt worden sein. Alternativ dazu können Sie sie dynamisch in der Logik-App erstellen. Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (an Ihre E-Mail-ID für Vertriebsanfragen - z. B. sales@contoso.com) eingeht. Zudem wird ein Ereignis erstellt, ein Kontakt mit den Absenderdetails hinzugefügt, eine E-Mail an Ihr persönliches Konto gesendet und schließlich eine Antwort mit einer Bestätigung gesendet.
+1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" unten rechts im Azure-Portal.
+2.	Wechseln Sie zu "Web und Mobil > API-Apps", und suchen Sie nach "Office365".
+3.	Konfigurieren Sie den Office365-Connector, indem Sie die Informationen für den Hostingplan und die Ressourcengruppe angeben und einen Namen für die API-App wählen.
+
+	![][21]
+
+
+##Erstellen einer Logik-App##
+Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (an Ihre E-Mail-ID für Vertriebsanfragen – z. B. sales@contoso.com)) eingeht. Zudem wird ein Ereignis erstellt, ein Kontakt mit den Absenderdetails hinzugefügt, eine E-Mail an Ihr persönliches Konto gesendet und schließlich eine Antwort mit einer Bestätigung gesendet.
 
 1.	Melden Sie sich beim Azure-Portal an, und klicken Sie auf "Neu -> Web + Mobil -> Logik-App"
 
@@ -45,12 +54,11 @@ Zum Verwenden eines Office 365-Connectors in Ihrer Logik-App sollte die Connecto
 
 	![][3]
 
-4.	Erweitern Sie "Neu erstellen" in der Galerie, um alle verfügbaren API-Apps anzuzeigen. Wählen Sie in der Galerie "Office 365" aus. Der "Office 365-Trigger" wird dem Datenfluss hinzugefügt.
+4.	Wählen Sie den Office 365-Trigger aus dem Abschnitt "API-Apps in diese Ressourcengruppe" im Katalog, um ihn dem Datenfluss hinzufügen.
+
 	![][4]
 
-5.	Dadurch wird eine neue API-App "Office 365-Connector" in derselben Ressourcengruppe wie die Logik-App erstellt. Es dauert ungefähr 30 Sekunden, bis die API-App erstellt ist.
-
-6.	Nachdem die App erstellt wurde, klicken Sie auf "Autorisieren", um Office 365-Anmeldeinformationen bereitzustellen.
+6.	Zum Herstellen einer Verbindung mit Office 365 müssen Sie die Logik-App für den Zugriff auf Ihr Konto autorisieren. Klicken Sie auf "Autorisieren", um Office 365-Anmeldeinformationen bereitzustellen.
 
 	![][5]
 
@@ -67,15 +75,15 @@ Zum Verwenden eines Office 365-Connectors in Ihrer Logik-App sollte die Connecto
 9.	Wählen Sie den Trigger "Neue E-Mail", und die Eingabeparameter werden angezeigt.
 
 
-10.	Ändern Sie die Häufigkeit des Triggers in 'Minutes', und klicken Sie auf ✓. 
+10.	Ändern Sie die Häufigkeit des Triggers in "Minuten", und klicken Sie auf ✓.
 
 	![][9]
 
-11. Der Office 365-Trigger 'New Email' wird konfiguriert, und Sie können die Ausgabeparameter ebenfalls anzeigen.
+11. Der Office 365-Trigger "Neue E-Mail" wird konfiguriert, und Sie können die Ausgabeparameter ebenfalls anzeigen.
 	
 	![][10]
 
-12.	Wählen Sie in der Galerie im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
+12.	Wählen Sie im Katalog im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
 
 13.	Wählen Sie "Ereignis senden" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "Ereignis senden" werden angezeigt.
 
@@ -85,13 +93,13 @@ Zum Verwenden eines Office 365-Connectors in Ihrer Logik-App sollte die Connecto
 
 	![][12]
 
-15.	Wählen Sie in der Galerie im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
+15.	Wählen Sie im Katalog im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
 
 16.	Wählen Sie "Kontakt hinzufügen" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "Kontakt hinzufügen" werden angezeigt.
 
 	![][13]
 
-17.	Klicken Sie neben dem Feld 'Email Address' auf "+", und wählen Sie den Wert des Ausgabefelds 'From' aus dem Trigger aus.
+17.	Klicken Sie neben dem Feld "E-Mail-Adresse" auf "+", und wählen Sie den Wert des Ausgabefelds "Von" aus dem Trigger aus.
 
 	![][14]
 
@@ -99,30 +107,30 @@ Zum Verwenden eines Office 365-Connectors in Ihrer Logik-App sollte die Connecto
 
 	![][15]
 
-19.	Wählen Sie in der Galerie im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
+19.	Wählen Sie im Katalog im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
 
 
 20.	Wählen Sie "E-Mail senden" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "E-Mail senden" werden angezeigt.
 
 	![][19]
 
-21.	Geben Sie die Details an, die zum Senden der E-Mail erforderlich sind. Sie können eine Meldung erstellen, indem Sie zum Beispiel Folgendes eingeben. Sobald die 'Send Email'-Aktion konfiguriert ist, klicken Sie auf ✓.
+21.	Geben Sie die Details an, die zum Senden der E-Mail erforderlich sind. Sie können eine Meldung erstellen, indem Sie zum Beispiel Folgendes eingeben. Sobald die-Aktion "E-Mail senden" konfiguriert ist, klicken Sie auf ✓.
 
 		Body - @concat('You got a new sales enquiry from',triggers().output.body.From)
 
 	![][20]
-22.	Wählen Sie in der Galerie im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
+22.	Wählen Sie im Katalog im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
 
 
 23.	Wählen Sie "Antworten an" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "Antworten an" werden angezeigt.
 
 	![][16]
 
-24.	Klicken Sie neben dem 'From'-Feld auf "+", und wählen Sie den Wert aus der Ausgabenachricht-ID des Triggers, und klicken Sie auf ✓.
+24.	Klicken Sie neben dem Feld "Von" auf "+", wählen Sie den Wert aus der Ausgabenachricht-ID des Triggers, und klicken Sie auf ✓.
 
 	![][17]
 
-25. Klicken Sie im Bildschirm des Logik-App-Editors auf "OK", und klicken Sie dann auf 'Create'. Es dauert ungefähr 30 Sekunden, bis die Erstellung abgeschlossen ist.
+25. Klicken Sie im Bildschirm des Logik-App-Editors auf "OK", und klicken Sie dann auf "Erstellen". Es dauert ungefähr 30 Sekunden, bis die Erstellung abgeschlossen ist.
 
 26. Senden Sie eine E-Mail an das Konto, mit dem Sie den Trigger konfiguriert haben. Sie sollten eine E-Mail in Ihrem persönlichen E-Mail-Konto vorfinden sowie ein Ereignis und einen Kontakt in Ihrem Büro-E-Mail-Konto. Darüber hinaus sollten Sie eine Antwort zur Bestätigung erhalten, dass die Vertriebsanfrage in Kürze beantwortet wird.
 
@@ -147,6 +155,8 @@ Zum Verwenden eines Office 365-Connectors in Ihrer Logik-App sollte die Connecto
 [18]: ./media/app-service-logic-connector-office365/18_Office365_Reply_To_Configured.png
 [19]: ./media/app-service-logic-connector-office365/19_Office365_Send_Inputs.png
 [20]: ./media/app-service-logic-connector-office365/20_Office365_Send_Configured.png
+[21]: ./media/app-service-logic-connector-office365/21-create-new-o365-api-app.png
 
 
-<!--HONumber=49-->
+
+<!--HONumber=54-->

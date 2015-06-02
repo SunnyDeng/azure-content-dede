@@ -16,20 +16,23 @@
 	ms.date="02/12/2015" 
 	ms.author="kapiteir" />
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/documentation/articles/mobile-engagement-windows-store-integrate-engagement/" title="Windows Store">Windows Store</a><a href="/documentation/articles/mobile-engagement-windows-phone-integrate-engagement/" title="Windows Phone">Windows Phone</a><a href="/documentation/articles/mobile-engagement-ios-integrate-engagement/" title="iOS">iOS</a><a href="/documentation/articles/mobile-engagement-android-integrate-engagement/" title="Android" class="current">Android</a></div>
-
-
 # Integrieren von Mobile Engagement unter Android
 
-> [AZURE.IMPORTANT] Die minimale API-Ebene des Android-SDKs muss "Level 10" oder höher sein (Android 2.3.3 oder höher).
+> [AZURE.SELECTOR] 
+- [Windows Universal](mobile-engagement-windows-store-integrate-engagement.md) 
+- [Windows Phone Silverlight](mobile-engagement-windows-phone-integrate-engagement.md) 
+- [iOS](mobile-engagement-ios-integrate-engagement.md) 
+- [Android](mobile-engagement-android-integrate-engagement.md) 
 
 In diesem Verfahren wird die einfachste Art der Aktivierung der Analyse- und Überwachungsfunktionen von Mobile Engagement in Ihrer Android-Anwendung beschrieben.
 
-Mithilfe der folgenden Schritte kann der Protokollbericht aktiviert werden, der zum Berechnen aller Statistiken zu Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Informationen erforderlich ist. Der zum Berechnen anderer Statistiken zu Ereignissen, Fehlern und Aufträgen erforderliche Protokollbericht muss mithilfe der Engagement-API (siehe "android-sdk-engagement-advanced") manuell ausgeführt werden, da diese Statistiken anwendungsabhängig sind.
+> [AZURE.IMPORTANT]Die minimale API-Ebene des Android-SDKs muss „Level 10“ oder höher sein (Android 2.3.3 oder höher).
+ 
+Mithilfe der folgenden Schritte kann der Protokollbericht aktiviert werden, der zum Berechnen aller Statistiken zu Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Informationen erforderlich ist. Der Bericht von Protokollen, die zur Berechnung anderer Statistiken wie Ereignisse, Fehler und Aufträge erforderlich ist, muss manuell mithilfe der Engagement-API erfolgen (siehe [So verwenden Sie die erweiterte Mobile Engagement API für Tags in Ihrer Android-App](mobile-engagement-android-use-engagement-api.md)), da diese Statistiken von der Anwendung abhängig sind.
 
 ## Einbetten des Engagement-SDKs und des Diensts in Ihr Android-Projekt
 
-Rufen Sie `mobile-engagement-VERSION.jar` ab, und fügen Sie dies zum Ordner `libs` des Android-Projekts hinzu (erstellen Sie den Ordner "libs", sofern dieser noch nicht vorhanden ist).
+Rufen Sie `mobile-engagement-VERSION.jar` ab, und fügen Sie dies zum Ordner `libs` des Android-Projekts hinzu (erstellen Sie den Ordner „libs“, sofern dieser noch nicht vorhanden ist).
 
 > [AZURE.IMPORTANT]
 > Wenn Sie das Anwendungspaket mithilfe von ProGuard erstellen, müssen Sie einige Klassen behalten. Sie können den folgenden Codeausschnitt der Konfiguration verwenden:
@@ -46,14 +49,14 @@ Geben Sie die Engagement-Verbindungszeichenfolge durch Aufrufen der folgenden Me
 			engagementConfiguration.setConnectionString("Endpoint={appCollection}.{domain};AppId={appId};SdkKey={sdkKey}");
 			EngagementAgent.getInstance(this).init(engagementConfiguration);
 
-Die Verbindungszeichenfolge für Ihre Anwendung wird im Azure-Portal angezeigt.
+Die Verbindungszeichenfolge für die Anwendung wird im Azure-Portal angezeigt.
 
 -   Fügen Sie die folgenden Android-Berechtigungen (vor dem `<application>`-Tag) hinzu, falls diese fehlen:
 
 			<uses-permission android:name="android.permission.INTERNET"/>
 			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
--   Für einige Gerätemodelle kann der Engagement-Gerätebezeichner nicht aus der "ANDROID_ID" generiert werden (sie ist möglicherweise fehlerhaft oder nicht verfügbar). In diesem Fall generiert das SDK einen zufälligen Gerätebezeichner und versucht dann, ihn im externen Speicher des Geräts zu speichern, damit derselbe Gerätebezeichner von anderen Engagement-Anwendungen gemeinsam genutzt werden kann (er wird auch als gemeinsam genutzte Voreinstellung gespeichert, um sicherzustellen, dass die Anwendung unabhängig vom externen Speicher immer denselben Gerätebezeichner verwendet). Damit dieser Mechanismus ordnungsgemäß funktioniert, müssen Sie die folgende Berechtigung hinzufügen, wenn diese fehlt (vor dem `<application>`-Tag):
+-   Für einige Gerätemodelle kann der Engagement-Gerätebezeichner nicht aus der „ANDROID_ID“ generiert werden (sie ist möglicherweise fehlerhaft oder nicht verfügbar). In diesem Fall generiert das SDK einen zufälligen Gerätebezeichner und versucht dann, ihn im externen Speicher des Geräts zu speichern, damit derselbe Gerätebezeichner von anderen Engagement-Anwendungen gemeinsam genutzt werden kann (er wird auch als gemeinsam genutzte Voreinstellung gespeichert, um sicherzustellen, dass die Anwendung unabhängig vom externen Speicher immer denselben Gerätebezeichner verwendet). Damit dieser Mechanismus ordnungsgemäß funktioniert, müssen Sie die folgende Berechtigung hinzufügen, wenn diese fehlt (vor dem `<application>`-Tag):
 
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
@@ -67,13 +70,13 @@ Die Verbindungszeichenfolge für Ihre Anwendung wird im Azure-Portal angezeigt.
 
 -   Ersetzen Sie `<Your application name>` durch den Namen Ihrer Anwendung.
 
-> [AZURE.TIP] Das `android:label`-Attribut möglichst es Ihnen, den Namen des Engagement-Diensts so auszuwählen, wie er den Endbenutzern auf dem Bildschirm für aktive Dienste ihres Mobiltelefons angezeigt wird. Es wird empfohlen, für dieses Attribut den Wert `"<Your application name>Service"` festzulegen (z. B. `"AcmeFunGameService"`).
+> [AZURE.TIP]Das`android:label`-Attribut möglichst es Ihnen, den Namen des Engagement-Diensts so auszuwählen, wie er den Endbenutzern auf dem Bildschirm für aktive Dienste ihres Mobiltelefons angezeigt wird. Es wird empfohlen, für dieses Attribut den Wert `"<Your application name>Service"` festzulegen (z. B. `"AcmeFunGameService"`).
 
-Durch die Angabe des Attributs `android:process` wird sichergestellt, dass der Engagement-Dienst im eigenen Prozess ausgeführt wird (durch Ausführen von Engagement in demselben Prozess wie die Anwendung wird der Thread "main/UI" potenziell weniger reaktionsfähig).
+Durch die Angabe des Attributs `android:process` wird sichergestellt, dass der Engagement-Dienst im eigenen Prozess ausgeführt wird (durch Ausführen von Engagement in demselben Prozess wie die Anwendung wird der Thread „main/UI“ potenziell weniger reaktionsfähig).
 
-> [AZURE.NOTE] Sämtlicher in `Application.onCreate()` hinzugefügte Code und andere Anwendungsrückruffunktionen werden für alle Prozesse der Anwendung ausgeführt, einschließlich des Engagement-Diensts. Dies kann unerwünschte Nebeneffekte haben (z. B. nicht erforderliche Speicherbelegungen und Threads im Engagement-Prozess, doppelte Übertragungsempfänger oder -dienste).
+> [AZURE.NOTE]Sämtlicher in `Application.onCreate()` hinzugefügter Code und andere Anwendungsrückruffunktionen werden für alle Prozesse der Anwendung ausgeführt, einschließlich des Engagement-Diensts. Dies kann unerwünschte Nebeneffekte haben (z. B. nicht erforderliche Speicherbelegungen und Threads im Engagement-Prozess, doppelte Übertragungsempfänger oder -dienste).
 
-Wenn Sie `Application.onCreate()` außer Kraft setzen, wird empfohlen, den folgenden Codeausschnitt am Anfang der  `Application.onCreate()`-Funktion hinzuzufügen:
+Wenn Sie `Application.onCreate()` außer Kraft setzen, wird empfohlen, den folgenden Codeausschnitt am Anfang der `Application.onCreate()`-Funktion hinzuzufügen:
 
 			 public void onCreate()
 			 {
@@ -85,13 +88,13 @@ Wenn Sie `Application.onCreate()` außer Kraft setzen, wird empfohlen, den folge
 
 Sie können dieselben Schritte für `Application.onTerminate()`, `Application.onLowMemory()` und `Application.onConfigurationChanged(...)` ausführen.
 
-Sie können auch `EngagementApplication` anstelle von `Application` erweitern: Die Rückruffunktion `Application.onCreate()` übernimmt die Prozessprüfung und ruft  `Application.onApplicationProcessCreate()` nur auf, wenn es sich bei dem aktuellen Prozess nicht um den Prozess handelt, der den Engagement-Dienst hostet. Dieselben Regeln gelten für die anderen Rückruffunktionen.
+Sie können auch `EngagementApplication` anstelle von `Application` erweitern: Die Rückruffunktion `Application.onCreate()` übernimmt die Prozessprüfung und ruft `Application.onApplicationProcessCreate()` nur auf, wenn es sich bei dem aktuellen Prozess nicht um den Prozess handelt, der den Engagement-Dienst hostet. Dieselben Regeln gelten für die anderen Rückruffunktionen.
 
-## Einfache Berichterstellung
+## Grundlegende Berichterstellung
 
-### Empfohlene Methode: überladen Sie Ihre `Activity`-Klassen.
+### Empfohlene Methode: Überladen der `Activity`-Klassen
 
-Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `*Activity`-Unterklassen von den entsprechenden `Engagement*Activity`-Klassen abgeleitet werden (wenn z. B. Ihre Legacy-Aktivität `ListActivity` erweitert, sorgen Sie dafür, dass sie `EngagementListActivity` erweitert).
+Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `*Activity`-Unterklassen von den entsprechenden `Engagement*Activity`-Klassen abgeleitet werden (wenn z. B. Ihre Legacy-Aktivität `ListActivity` erweitert, sorgen Sie dafür, dass sie `EngagementListActivity` erweitert).
 
 **Ohne Engagement:**
 
@@ -127,7 +130,7 @@ Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berech
 			  }
 			}
 
-> [AZURE.IMPORTANT] Stellen Sie bei der Verwendung von `EngagementListActivity` oder `EngagementExpandableListActivity` sicher, dass jeder Aufruf von `requestWindowFeature(...);` vor dem Aufruf von `super.onCreate(...);` erfolgt, da es andernfalls zu einem Absturz kommt.
+> [AZURE.IMPORTANT]Stellen Sie bei der Verwendung von `EngagementListActivity` oder `EngagementExpandableListActivity` sicher, dass jeder Aufruf von `requestWindowFeature(...);` vor dem Aufruf von `super.onCreate(...);` erfolgt, da es andernfalls zu einem Absturz kommt.
 
 Wir stellen Unterklassen von `FragmentActivity` und `MapActivity` bereit, aber zur Vermeidung von Problemen mit Anwendungen, die **ProGuard** verwenden, wurden sie nicht in `engagement.jar` einbezogen.
 
@@ -137,7 +140,7 @@ Sie finden diese Klassen im Ordner `src`, und Sie können sie in Ihr Projekt kop
 
 Wenn Sie die `Activity`-Klassen nicht überladen können oder möchten, können Sie die Aktivitäten stattdessen durch direktes Aufrufen der Methoden von `EngagementAgent` starten und beenden.
 
-> [AZURE.IMPORTANT] Das Android-SDK ruft die `endActivity()`-Methode niemals auf, auch nicht beim Schließen der Anwendung (unter Android werden Anwendungen eigentlich niemals geschlossen). Daher wird *DRINGEND* empfohlen, die `startActivity()`-Methode in der `onResume`-Rückruffunktion *ALLER* Aktivitäten und die `endActivity()`-Methode in der `onPause()`-Rückruffunktion *ALLER* Aktivitäten aufzurufen. Dies ist die einzige Möglichkeit, um sicherzustellen, dass die Sitzungen nicht verloren gehen. Wenn eine Sitzung verloren geht, wird die Verbindung vom Engagement-Dienst zum Engagement-Back-End niemals getrennt (da der Dienst verbunden bleibt, so lange eine Sitzung aussteht).
+> [AZURE.IMPORTANT]Das Android-SDK ruft die `endActivity()`-Methode niemals auf, auch nicht beim Schließen der Anwendung (unter Android werden Anwendungen eigentlich niemals geschlossen). Daher wird *DRINGEND* empfohlen, die `startActivity()`-Methode in der `onResume`-Rückruffunktion *ALLER* Aktivitäten und die `endActivity()`-Methode in der `onPause()`-Rückruffunktion *ALLER* Aktivitäten aufzurufen. Dies ist die einzige Möglichkeit, um sicherzustellen, dass die Sitzungen nicht verloren gehen. Wenn eine Sitzung verloren geht, wird die Verbindung vom Engagement-Dienst zum Engagement-Back-End niemals getrennt (da der Dienst verbunden bleibt, so lange eine Sitzung aussteht).
 
 Beispiel:
 
@@ -163,7 +166,7 @@ Dieses Beispiel ähnelt der `EngagementActivity`-Klasse und ihrer Varianten, der
 
 ## Test
 
-Überprüfen Sie jetzt Ihre Integration, indem Sie den Abschnitt "Testen der Engagement-Integration unter Android" lesen.
+Überprüfen Sie jetzt Ihre Integration, indem Sie den Abschnitt „Testen der Engagement-Integration unter Android“ lesen.
 
 Die nächsten Abschnitte sind optional.
 
@@ -187,10 +190,9 @@ Sie müssen auch die folgende Berechtigung hinzufügen, sofern diese noch nicht 
 
 ### Echtzeit-Berichterstellung für Speicherorte
 
-Mithilfe der Echtzeit-Berichterstellung für Speicherorte können der Längen- und Breitengrad gemeldet werden, die Geräten zugeordnet sind. Diese Art der Berichterstellung für Speicherorte verwendet ausschließlich Netzwerkspeicherorte (auf Basis von Zell-ID oder WLAN), und die Berichterstellung ist nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung).
+Mithilfe der Echtzeit-Berichterstellung für Speicherorte können der Längen- und Breitengrad gemeldet werden, die Geräten zugeordnet sind. Diese Art der Berichterstellung für Speicherorte verwendet ausschließlich Netzwerkspeicherorte (auf Basis von Zell-ID oder WLAN), und die Berichterstellung ist nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung).
 
-Echtzeit-Speicherorte werden *NICHT* zum Berechnen von Statistiken verwendet. Ihr einziger Zweck ist es, die Verwendung des
-Echtzeit-Geofence-Kriteriums <Reach-Audience-geofencing> in Reach-Kampagnen zu ermöglichen.
+Echtzeit-Speicherorte werden *NICHT* zum Berechnen von Statistiken verwendet. Ihr einziger Zweck ist es, die Verwendung des Echtzeit-Geofencing <Reach-Audience-geofencing >Kriteriums in Reach-Kampagnen zu ermöglichen.
 
 Fügen Sie Folgendes hinzu, um die Echtzeit-Berichterstellung für Speicherorte zu aktivieren:
 
@@ -212,11 +214,11 @@ Sie müssen auch die folgende Berechtigung hinzufügen, sofern diese noch nicht 
 
 #### Berichterstellung im Hintergrund
 
-Die Echtzeit-Berichterstellung für Speicherorte ist standardmäßig nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung). Fügen Sie Folgendes hinzu, um die Berichterstellung auch im Hintergrund zu aktivieren:
+Die Echtzeit-Berichterstellung für Speicherorte ist standardmäßig nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung). Fügen Sie Folgendes hinzu, um die Berichterstellung auch im Hintergrund zu aktivieren:
 
 			<meta-data android:name="engagement:locationReport:realTime:background" android:value="true" />
 
-> [AZURE.NOTE] Wenn die Anwendung im Hintergrund ausgeführt wird, werden nur netzwerkbasierte Speicherorte gemeldet, auch wenn Sie das GPS aktiviert haben.
+> [AZURE.NOTE]Wenn die Anwendung im Hintergrund ausgeführt wird, werden nur netzwerkbasierte Speicherorte gemeldet, auch wenn Sie das GPS aktiviert haben.
 
 Der Hintergrundbericht für Speicherorte wird beendet, wenn der Benutzer sein Gerät neu startet. Sie können dies hinzufügen, damit zur Startzeit automatisch ein Neustart erfolgt:
 
@@ -235,10 +237,9 @@ Sie müssen auch die folgende Berechtigung hinzufügen, sofern diese noch nicht 
 
 Wenn Sie anwendungsspezifische Ereignisse, Fehler und Aufträge optional melden möchten, müssen Sie die Engagement-API über die Methoden der `EngagementAgent`-Klasse verwenden. Ein Objekt dieser Klasse kann durch Aufrufen der statischen `EngagementAgent.getInstance()`-Methode abgerufen werden.
 
-Die Engagement-API gestattet die Verwendung aller erweiterten Engagement-Funktionen. Sie wird im Abschnitt "Verwenden der
-Engagement-API unter Android" (sowie in der technischen Dokumentation der `EngagementAgent`-Klasse) ausführlich beschrieben.
+Die Engagement-API ermöglicht es, alle erweiterten Funktionen von Engagement zu verwenden. Ausführliche Informationen finden Sie unter „Verwenden der Engagement-API unter Android (sowie in der technischen Dokumentation der `EngagementAgent`-Klasse).
 
-## Erweiterte Konfiguration (in "AndroidManifest.xml")
+## Erweiterte Konfiguration (in „AndroidManifest.xml“)
 
 Wenn Sie sicherstellen möchten, dass Statistiken bei der Verwendung von WLAN-Verbindungen oder bei Deaktiviertem Bildschirm in Echtzeit gesendet werden, fügen Sie die folgende optionale Berechtigung hinzu:
 
@@ -248,11 +249,11 @@ Fügen Sie folgenden Code (zwischen den Tags `<application>` und `</application>
 
 			<meta-data android:name="engagement:reportCrash" android:value="false"/>
 
-Der Engagement-Dienst meldet Protokolle standardmäßig in Echtzeit. Wenn Ihre Anwendung Protokolle sehr häufig meldet, ist es besser, die Protokolle zu puffern und sie in regelmäßigen Abständen alle auf einmal zu melden (dies wird als "Burstmodus" bezeichnet). Fügen Sie dazu den folgenden Code (zwischen den Tags `<application>` und `</application>`) hinzu:
+Standardmäßig meldet der Engagement-Dienst Protokolle in Echtzeit. Wenn Ihre Anwendung Protokolle sehr häufig meldet, ist es besser, die Protokolle zu puffern und sie in regelmäßigen Abständen alle auf einmal zu melden (dies wird als „Burstmodus“ bezeichnet). Fügen Sie dazu Folgendes (zwischen den Tags `<application>` und `</application>`) hinzu:
 
 			<meta-data android:name="engagement:burstThreshold" android:value="<interval between too bursts (in milliseconds)>"/>
 
-Der Burstmodus erhöht die Betriebsdauer des Akkus leicht, hat aber Auswirkungen auf die Engagement-Überwachung: Die Dauer aller Sitzungen und Aufträge wird gemäß des Schwellenwerts für den Burstmodus aufgerundet (daher werden Sitzungen und Aufträge, die kürzer als der Schwellenwert des Burstmodus sind, möglicherweise nicht angezeigt). Es wird empfohlen, einen Schwellenwert für den Burstmodus zu verwenden, der nicht größer als 30.000 (30 Sek.) ist.
+Der Burst-Modus verlängert leicht die Akkulaufzeit, wirkt sich jedoch auf den Engagement-Monitor aus: Die Dauer von allen Sitzungen und Aufträgen wird auf den Burst-Schwellenwert gerundet (folglich sind eventuell Sitzungen und Aufträge, die kürzer als der Burst-Schwellenwert sind, möglicherweise nicht sichtbar). Es wird empfohlen, einen Burst-Schwellenwert von höchstens 30000 (30 s) zu verwenden.
 
 Der Engagement-Dienst richtet die Verbindung zu unseren Servern standardmäßig sofort ein, sobald das Netzwerk verfügbar ist. Fügen Sie Folgendes (zwischen den Tags `<application>` und `</application>`) hinzu, um die Verbindung zu verschieben:
 
@@ -310,4 +311,4 @@ Dann können Sie `CheckBoxPreference` wie folgt im Einstellungslayout hinzufüge
 <!-- URLs. -->
 [Geräte-API]: http://go.microsoft.com/?linkid=9876094
 
-<!--HONumber=47-->
+<!--HONumber=54-->

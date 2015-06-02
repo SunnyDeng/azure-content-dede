@@ -1,114 +1,119 @@
-﻿<properties 
-	pageTitle="Erstellen einer Umbraco-Website aus der Galerie in Microsoft Azure" 
-	description="Erstellen Sie ein Umbraco-Content-Management-System und stellen Sie es auf einer Azure-Website bereit." 
-	services="web-sites" 
+<properties 
+	pageTitle="Erstellen einer Umbraco Web-App im Marketplace in Microsoft Azure" 
+	description="Erstellen Sie ein Umbraco-Content-Management-System und stellen Sie es auf Azure App Service-Web-Apps bereit." 
+	tags="azure-portal"
+	services="app-service\web" 
 	documentationCenter="" 
 	authors="tfitzmac" 
 	manager="wpickett" 
 	editor="mollybos"/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/25/2015" 
+	ms.date="04/21/2015" 
 	ms.author="tomfitz"/>
 
-#Erstellen einer Umbraco-Website aus der Galerie in Microsoft Azure
+# Erstellen einer Umbraco Web-App im Marketplace in Microsoft Azure#
 
-Umbraco CMS ist ein voll ausgestattetes Open Source Content Management System, das zur Erstellung einer Vielzahl von kleineren bis hin zu komplexen Anwendungen verwendet werden kann. Die Azure Websites-Anwendungsgalerie bietet eine breite Auswahl an beliebten Webanwendungen, die von Microsoft, anderen Unternehmen oder Open Source-Softwareinitiativen entwickelt wurden. Die Galerie ermöglicht es Ihnen, in nur wenigen Minuten eine Umbraco CMS-Seite zu erstellen, indem Sie die Starterkits verwenden oder Ihr eigenes Design integrieren. 
+Umbraco CMS ist ein voll ausgestattetes Open Source Content Management System, das zur Erstellung einer Vielzahl von kleineren bis hin zu komplexen Anwendungen verwendet werden kann. Der Azure Marketplace bietet eine breite Auswahl an beliebten Webanwendungen, die von Microsoft, anderen Unternehmen oder Open Source-Softwareinitiativen entwickelt wurden. Die Galerie ermöglicht es Ihnen, in wenigen Minuten eine Umbraco CMS-App zu erstellen, indem Sie die Starterkits verwenden oder Ihr eigenes Design integrieren.
 
-Dieser Artikel präsentiert das neue Azure-Vorschauportal, das die Ressourcenverwaltung stark vereinfacht. Das neue Azure-Portal wurde konzipiert, um Ihren Softwareentwicklungsprozess durch die Platzierung von plattformübergreifenden Tools, Technologien und Diensten von Microsoft und seinen Partnern in eine einzige Arbeitsoberfläche zu beschleunigen. Anstelle der Verwendung von unabhängigen Ressourcen, wie Azure-Websites, Visual Studio-Projekten oder Datenbanken, können Sie Ihre gesamte Anwendung als eine einzige Ressourcengruppe erstellen, verwalten und analysieren. 
+Dieser Artikel präsentiert das neue Azure-Vorschauportal, das die Ressourcenverwaltung stark vereinfacht. Das neue Azure-Vorschauportal wurde konzipiert, um Ihren Softwareentwicklungsprozess durch die Platzierung von plattformübergreifenden Tools, Technologien und Diensten von Microsoft und seinen Partnern in eine einzige Arbeitsoberfläche zu beschleunigen. Anstelle der Verwendung von eigenständigen Ressourcen wie [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-Apps, Visual Studio-Projekten oder Datenbanken, können Sie Ihre gesamte Anwendung als einzelne Ressourcengruppe erstellen, verwalten und analysieren.
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
-- Erstellen einer neuen Seite mithilfe der Galerie unter Verwendung des neuen Azure-Vorschauportals
+- Erstellen einer neuen Web-App über den Marketplace unter Verwendung des Azure-Vorschauportals
 - Aufbauen einer Blog-Website unter Verwendung von Umbraco CMS 
 
-##Erstellen einer Website aus der Galerie im Azure-Portal
+## Erstellen einer Web-App über den Marketplace im Azure-Vorschauportal
 
-1. Melden Sie sich beim [Windows Azure-Verwaltungsportal](https://portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
 
-2. Wählen Sie das Symbol der **Azure-Galerie**.
+2. Wählen Sie das Symbol **Marketplace** aus.
 	
-	![Choose Web Gallery][01Startboard]
+	![Wählen Sie Web-Galerie][01Startboard]
 	
-3. Wählen Sie in der **Galerie** die Registerkarte **Web** und anschließend **Umbraco CMS**.
+3. Wählen Sie im **Marketplace** die Registerkarte **Web-Apps** und anschließend **Umbraco CMS** aus.
 	
-	![Select Umbraco in the Web Gallery][02WebGallery]
+	![Wählen Sie Umbraco in der Web-Galerie][02WebGallery]
 	
-4. Zum Erstellen einer neuen Umbraco CMS-Website, klicken Sie auf **Erstellen**.
+4. Zum Erstellen einer neuen Umbraco CMS-Web-App, klicken Sie auf **Erstellen**.
 	
-	![Click Create][03UmbracoCMS]
+	![Klicken Sie auf Erstellen][03UmbracoCMS]
 	
-5. Im nächsten Schritt konfigurieren Sie alle Ressourcen, die mit Umbraco CMS verbunden sind. In diesem Fall sind die Ressourcen eine Website und eine SQL Server-Datenbank. Wählen Sie zuerst **Website**, um die Einstellungen der Website, wie die **URL** der Seite, das **Webhosting**, die **Web-App-Einstellungen** und den **Ort** zu konfigurieren. 
+5. Im nächsten Schritt konfigurieren Sie alle Ressourcen, die mit Umbraco CMS verbunden sind. In diesem Fall sind die Ressourcen eine Web-App und eine SQL Server-Datenbank. Wählen Sie zuerst **Web-App** aus, um die Einstellungen der Web-App, wie die **URL**, den **App Service-Plan**, die **Web-App-Einstellungen** und den **Ort** zu konfigurieren.
 	
-	![Configure resources][04AppSettings]
+	![Konfigurieren der Ressourcen][04AppSettings]
 	
-6. Konfigurieren Sie jetzt die Datenbank. Wählen Sie **Datenbank** und wählen Sie anschließend **Eine neue Datenbank erstellen**. Dieses Beispiel erstellt einen SQL Server für die Datenbank in Azure.
+6. Konfigurieren Sie jetzt die Datenbank. Wählen Sie **Datenbank**, und wählen Sie dann **Server**. Dieses Beispiel erstellt einen SQL Server für die Datenbank in Azure.
 	
-	![Create a SQL Server on Azure][05NewServer]
+	![Erstellen eines SQL Servers in Azure][05NewServer]
 	
-7. Jetzt sind die Website und die Datenbank konfiguriert und Sie können mit der Bereitstellung der App beginnen, indem Sie am unteren Ende des ersten **Umbraco CMS**-Fensters, das Sie auf der vorherigen Seite gesehen haben, auf **Erstellen** klicken.
+7. Nachdem Web-App und Datenbank konfiguriert sind, können Sie mit der Bereitstellung der Anwendung beginnen. Klicken Sie dazu auf **Erstellen** unten im ersten **Umbraco CMS**-Fenster, das Sie auf der vorherigen Seite gesehen habe.
 	
-	![Click Create][06UmbracoCMSGroup]
+	![Klicken Sie auf Erstellen][06UmbracoCMSGroup]
 	
-Nachdem die Bereitstellung abgeschlossen ist, wird Ihnen im Startboard des Portals angezeigt, dass Ihre Ressourcengruppe für Umbraco CMS, in diesem Fall **UmbracoCMSgroup**, erstellt wurde. Klicken Sie im Abschnitt **Zusammenfassung** auf den Namen der Website (hier **umbracocmsgroup**), um die Eigenschaften Ihrer Website zu sehen. Im Abschnitt **Zusammenfassung** können Sie auch die Ressourcen der Datenbank auswählen, um die Eigenschaften der entsprechenden Datenbank zu sehen.
+Nachdem die Bereitstellung abgeschlossen ist, wird im Portal das Blatt für die Ressourcengruppe Ihrer Umbraco CMS-Web-App angezeigt. Klicken Sie im Abschnitt **Zusammenfassung** auf den Web-App-Namen, um die Eigenschaften Ihrer Web-App anzuzeigen. Im Abschnitt **Zusammenfassung** können Sie auch die Ressourcen der Datenbank auswählen, um die Eigenschaften der entsprechenden Datenbank zu sehen.
 	
 ![][07UmbracoCMSGroupBlade]
 
-## Starten und Konfigurieren Ihrer Umbraco CMS-Website
+## Starten und Konfigurieren Ihrer Umbraco CMS-Web-App ##
 
-1. Klicken Sie im Details-Fenster Ihrer Website auf **Durchsuchen**, um Ihre Website zu durchsuchen (in diesem Fall umbracocmsgroup.azurewebsites.net).
+1. Klicken Sie im Details-Fenster Ihrer Web-App auf **Durchsuchen**, um Ihre Web-App zu durchsuchen.
 	
-	![Browse to your site][08UmbracoCMSGroupRunning]
+	![Ihre Website durchsuchen][08UmbracoCMSGroupRunning]
 	
-2. Wenn Sie die Website durchsuchen, startet Umbraco CMS seinen Installationsassistenten. Geben Sie die gewünschten Informationen ein und klicken Sie auf **Anpassen**.
+2. Wenn Sie die Web-App durchsuchen, startet Umbraco CMS seinen Installationsassistenten. Geben Sie die gewünschten Informationen ein und klicken Sie auf **Anpassen**.
 	
-	![Install Umbraco wizard][09InstallUmbraco7]
+	![Installieren des Umbraco-Assistenten][09InstallUmbraco7]
 	
-3. Geben Sie Ihre Verbindungs- und Authentifizierungdaten für die Datenbank ein, die Umbraco verwendet. Wählen Sie **Microsoft SQL Azure** als Datenbanktyp.  Sie erhalten die Verbindungszeichenfolge für Ihre Datenbank im Abschnitt **Seiteneinstellungen** Ihrer Website.
+3. Geben Sie Ihre Verbindungs- und Authentifizierungdaten für die Datenbank ein, die Umbraco verwendet. Wählen Sie **Microsoft SQL Azure** als Datenbanktyp. Sie erhalten die Verbindungszeichenfolge für Ihre Datenbank im Abschnitt **Websiteeinstellungen** Ihrer Web-App.
 	
-	![Configure your database][10ConfigureYourDatabase] 
+	![Konfigurieren der Datenbank][10ConfigureYourDatabase]
 	
 4. Wenn Sie Einsteiger bei Umbraco CMS sind, können Sie ein Starterkit für die Website auswählen. Andernfalls klicken Sie auf **Nein danke, ich möchte keinen Starterkit für die Website installieren**.
 	
-	![Install a starter website][11InstallAStarterWebsite]
+	![Installieren einer Starter-Website][11InstallAStarterWebsite]
 	
 5. Der Umbraco-Installer schließt die Installation für Ihre Anwendung ab. Nachdem ihre Anwendungen konfiguriert wurde, werden Sie zum Umbraco CMS-Verwaltungsdashboard weitergeleitet.
 	
-	![Umbraco CMS dashboard][14FriendlyCMS]
+	![Umbraco CMS-Dashboard][14FriendlyCMS]
 	
 6. Sie erstellen jetzt eine Beispieltextseite, die Sie veröffentlichen. Wählen Sie **Inhalt**, wählen Sie dann **Überlauf** und schließlich **Textseite**.
 	
-	![Create a text page][15CreateItemUnderOverflow]
+	![Erstellen einer Textseite][15CreateItemUnderOverflow]
 	
 7. Geben Sie einen Titel und einen Inhalt für Ihre Textseite ein, wie unten angezeigt. Wenn Sie fertig sind, klicken Sie auf **Speichern und veröffentlichen**.
 	
-	![Enter a title and some content][16EnterAName]
+	![Eingabe eines Titels und Inhalts][16EnterAName]
 	
-8. Warten Sie, während Ihre Seite veröffentlicht wird. Wenn die Veröffentlichung abgeschlossen ist, erhalten Sie eine kleine Benachrichtigung unten rechts in Ihrem Bildschirm. Sie können jetzt den neuen Inhalt Ihrer Website durchsuchen. 
+8. Warten Sie, während Ihre Seite veröffentlicht wird. Wenn die Veröffentlichung abgeschlossen ist, erhalten Sie eine kleine Benachrichtigung unten rechts in Ihrem Bildschirm. Sie können jetzt den neuen Inhalt Ihrer Web-App durchsuchen.
 	
-	![Published web site page][17MyPage]
+	![Veröffentlichte Seite der Website][17MyPage]
 	
 
-Fertig! Sie haben in nur wenigen Minuten erfolgreich eine Blog-Website mit Umbraco CMS erstellt. 
+Fertig! Sie haben in nur wenigen Minuten erfolgreich eine Blog-Web-App mit Umbraco CMS erstellt.
 
-##Zusätzliche Ressourcen
+## Zusätzliche Ressourcen
 
 [Umbraco-Dokumentation](http://our.umbraco.org/documentation)
 
 [Umbraco-Videolernprogramme](https://umbraco.com/help-and-support/video-tutorials.aspx)
 
-[Übersicht über das Microsoft Azure-Vorschauportal](http://azure.microsoft.com/overview/preview-portal/)
+[Dokumentation zum Azure-Portal](preview-portal.md)
 
-[Dokumentation zum Microsoft Azure-Vorschauportal](http://azure.microsoft.com/documentation/preview-portal/)
+[Azure-Portal (Kanal 9)](http://channel9.msdn.com/Blogs/Windows-Azure/Azure-Preview-portal)
 
-[Azure-Vorschauportal (Kanal 9)](http://channel9.msdn.com/Blogs/Windows-Azure/Azure-Preview-portal) 
+[Dokumentation zu Azure App Service-Web-Apps](/documentation/services/websites/)
 
-[Dokumentation zu Microsoft Azure-Websites](http://azure.microsoft.com/documentation/services/web-sites/)
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des Portals gegenüber dem Vorschauportal finden Sie unter [Referenz zur Navigation im Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
+
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 
 <!-- IMAGES -->
@@ -129,4 +134,4 @@ Fertig! Sie haben in nur wenigen Minuten erfolgreich eine Blog-Website mit Umbra
 [16EnterAName]: ./media/web-sites-gallery-umbraco/16EnterAName.PNG
 [17MyPage]: ./media/web-sites-gallery-umbraco/17MyPage.PNG
 
-<!--HONumber=49-->
+<!--HONumber=54-->

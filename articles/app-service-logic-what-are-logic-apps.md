@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Was sind Logik-Apps?" 
 	description="Weitere Informationen zu App Service-Logik-Apps" 
 	authors="joshtwist" 
@@ -18,52 +18,54 @@
 
 #Was sind Logik-Apps?
 
-Azure App Service ist ein vollständiges PaaS-Angebot (Platform as a Service) für professionelle Entwickler, das einen umfangreichen Satz von Funktionen für Web-, mobile und Integrationsszenarien bereitstellt. Logik-Apps sind ein Teil der App Service-Produktfamilie und ermöglichen technisch orientierten Benutzern und Entwicklern das Automatisieren der Ausführung von Geschäftsprozessen mithilfe eines leicht zu bedienenden visuellen Designers.
+Azure App Service ist eine vollständig verwaltete PaaS-Lösung (Platform-as-a-Service) für Entwickler, die das Erstellen von Web-, mobilen und Integrations-Apps vereinfacht. Logik-Apps sind ein Teil dieser Produktfamilie und ermöglichen technisch orientierten Benutzern und Entwicklern das Automatisieren der Ausführung von Geschäftsprozessen und des Workflows mithilfe eines leicht zu bedienenden visuellen Designers.
 
-Außerdem können Logik-Apps mit API-Apps und Connectors aus unserem Marketplace kombiniert werden, um selbst schwierige Integrationsszenarien einfach zu meistern.
+Außerdem können Logik-Apps mit [Connectors][connectors] aus unserem Marketplace kombiniert werden, um selbst schwierige Integrationsszenarien einfach zu meistern.
 
-![Flow app designer](./media/app-service-learn-about-flows-preview/Designer.png)
+![Datenfluss-App-Designer](./media/app-service-learn-about-flows-preview/Designer.png)
 
-##Die SaaS-, PaaS- und Hybrid-Explosion
-
-Das Zeitalter der Cloud bringt eine Flut von SaaS- und PaaS-Systemen mit sich, die Entwickler überall zunehmend unter Druck setzen. In der Zwischenzeit werden die Arbeitsrückstände bei der Anwendungsentwicklung immer größer, wobei diese heterogenen und verteilten Lösungen neue Integrationsherausforderungen darstellen.  Darüber hinaus müssen Unternehmen ihre lokalen Daten und Dienste in ihren Lösungen nutzen - und zwar auf sichere Weise.
-
-Die Entwicklung von Lösungen, die sich über diese Systeme erstrecken, bringt keine einfach zu bewältigenden Herausforderungen mit sich, die für Entwicklungsteams sehr zeitaufwändig und fehleranfällig sind.
+Wenn Sie automatisch neue Datensätze in Ihrer SQL-Datenbank replizieren und per E-Mail an den Empfang senden möchten oder automatisch negative Tweets finden und an einen Pufferkanal senden möchten
 
 ##Gründe für Logik-Apps
 
-Logik-Apps ermöglichen Entwicklern das Entwerfen von Workflows, in denen eine Absicht mithilfe eines Triggers und einer Reihen von Schritten ausgedrückt wird. Bei jedem Schritt wird eine App Service-API-App aufgerufen, und zugleich wird für eine sichere Authentifizierung und beständige Ausführung gesorgt.
+Logik-Apps ermöglichen Entwicklern das Entwerfen von Workflows, die bei einem Trigger beginnen und dann eine Reihe von Schritten ausführen. Bei jedem Schritt wird eine App Service-API-App aufgerufen, und zugleich werden eine sichere Authentifizierung und Best Practices wie Prüfpunktausführung und beständige Ausführung gewährleistet.
 
-- **Leicht zu bedienende Entwurfstools** - Logik kann von A bis Z im Browser entwickelt werden. Beginnen Sie mit einem Trigger - von einem einfachen Zeitplan bis zum Auftauchen eines Tweets zu Ihrem Unternehmen. Orchestrieren Sie anschließend eine beliebige Anzahl von Aktionen mithilfe des umfassenden Angebots an Connectors.
+Wenn Sie einen beliebigen Geschäftsprozess automatisieren möchten (z. B. negative Tweets finden und an Ihren internen Pufferkanal senden oder neue Kundendatensätze aus SQL gleich bei ihrem Eintreffen in das CRM-System replizieren), können Sie mit Logik-Apps ganz leicht verschiedene Datenquellen integrieren, ob Cloud oder lokal. Weitere Inspiration erhalten Sie durch unsere [Connectors][connectors]. Führen Sie jetzt die [ersten Schritte][create] durch, um Ihre Optionen kennen zu lernen.
 
-- **Einfaches Zusammensetzen von SaaS** - Zusammensetzungsaufgaben, die einfach zu beschreiben sind, lassen sich nur schwierig in Code implementieren. Mit Logik-Apps ist es kinderleicht, verschiedenartige Systeme miteinander zu verbinden. Möchten Sie in Ihrer CRM-Software eine Aufgabe erstellen, die auf Aktivität in Ihren Facebook- oder Twitter-Konten basiert? Wollen Sie Ihre Marketinglösung in der Cloud mit Ihrem lokalen Abrechnungssystem verbinden? Logik-Apps sind die schnellste und zuverlässigste Möglichkeit, Lösungen für diese Probleme bereitzustellen.
+Mit unseren [BizTalk-API][biztalk]-Apps können Sie darüber hinaus ausgereifte Integrationsszenarien herstellen – dank [Regelmodul][rules], [Handelspartnerverwaltung][tpm] und vielem mehr.
 
-- **Schneller Einstieg mit Vorlagen** - Um Ihnen den Einstieg zu erleichtern, bieten wir eine Galerie mit Vorlagen, mit denen Hilfe Sie einige allgemeine Lösungen rasch erstellen können. Von BizTalk-Lösungen bis zu einfachen SaaS-Konnektivitätslösungen und sogar einigen, die " just  'for fun'" sind - die Galerie ist die schnellste Möglichkeit, sich mit der Leistungsfähigkeit von Logik-Apps vertraut zu machen.
+- **Leicht zu bedienende Entwurfstools** – Logik-Apps können von A bis Z im Browser entwickelt werden. Beginnen Sie mit einem Trigger - von einem einfachen Zeitplan bis zum Auftauchen eines Tweets zu Ihrem Unternehmen. Orchestrieren Sie anschließend eine beliebige Anzahl von Aktionen mithilfe des umfassenden Angebots an Connectors.
 
-- **Integrierte Erweiterbarkeit** - Sie finden nicht den Connector, den Sie brauchen? Logik-Apps sind Teil der App Service-Produktfamilie und für das Arbeiten mit API-Apps ausgelegt. Sie können problemlos eine eigene API-App entwickeln und anschließend als Connector nutzen. Entwickeln Sie eine neue App nur für sich allein, oder veröffentlichen Sie sie im Marketplace, um sie kommerziell zu verwerten.
+- **Einfaches Zusammensetzen von SaaS** – Zusammensetzungsaufgaben, die einfach zu beschreiben sind, lassen sich nur schwierig in Code implementieren. Mit Logik-Apps ist es kinderleicht, verschiedenartige Systeme miteinander zu verbinden. Möchten Sie in Ihrer CRM-Software eine Aufgabe erstellen, die auf Aktivität in Ihren Facebook- oder Twitter-Konten basiert? Wollen Sie Ihre Marketinglösung in der Cloud mit Ihrem lokalen Abrechnungssystem verbinden? Logik-Apps sind die schnellste und zuverlässigste Möglichkeit, Lösungen für diese Probleme bereitzustellen.
 
-- **Hohes Integrationspotenzial** - Fangen Sie einfach an, und wachsen Sie Ihrem Bedarf entsprechend. Logik-Apps können problemlos die Leistungsstärke von BizTalk, der branchenführenden Integrationslösung von Microsoft nutzen, damit Integrationsexperten die Lösungen erstellen können, die sie brauchen. Erfahren Sie mehr über die von [App Services gebotenen BizTalk-Funktionen][biztalk].
+- **Schneller Einstieg mit Vorlagen** – Um Ihnen den Einstieg zu erleichtern, bieten wir einen Katalog mit Vorlagen, mit deren Hilfe Sie einige allgemeine Lösungen rasch erstellen können. Von BizTalk-Lösungen bis zu einfachen SaaS-Konnektivitätslösungen und sogar einigen, die "just for fun" sind – der Katalog ist die schnellste Möglichkeit, sich mit der Leistungsfähigkeit von Logik-Apps vertraut zu machen.
 
-## Logik-App - Konzepte
+- **Integrierte Erweiterbarkeit** – Sie finden nicht den Connector, den Sie brauchen? Logik-Apps sind Teil der App Service-Produktfamilie und für das Arbeiten mit API-Apps ausgelegt. Sie können problemlos eine eigene API-App entwickeln und anschließend als Connector nutzen. Entwickeln Sie eine neue App nur für sich allein, oder veröffentlichen Sie sie im Marketplace, um sie kommerziell zu verwerten.
 
-Es folgt eine Beschreibung einiger der wichtigsten Elemente von Logik-Apps. 
+- **Hohes Integrationspotenzial** – Fangen Sie einfach an, und wachsen Sie Ihrem Bedarf entsprechend. Logik-Apps können problemlos die Leistungsstärke von BizTalk, der branchenführenden Integrationslösung von Microsoft nutzen, damit Integrationsexperten die Lösungen erstellen können, die sie brauchen. Erfahren Sie mehr über die [von App Services gebotenen BizTalk-Funktionen][biztalk].
 
-- **Workflow** - Logik-Apps bieten eine grafische Möglichkeit zum Abbilden Ihrer Geschäftsprozesse als Folge von Schritten bzw. Workflow.
-- **Connectors** - Logik-Apps benötigen Zugriff auf Daten und Dienste. Ein Connector ist eine besondere Art von API-App. Sein Zweck ist, Ihnen beim Herstellen von Verbindungen und Arbeiten mit Ihren Daten zu helfen. Unter [Was sind Connectors?][biztalk] finden Sie weitere Informationen.
-- **Trigger** - Einige Connectors können auch als Trigger fungieren. Ein Trigger startet eine neue Instanz eines Workflows basierend auf einem bestimmten Ereignis, z. B. Eingang einer E-Mail oder einer Änderung in Ihrem Azure Storage-Konto.
-- **BizTalk** - Für anspruchsvollere Integrationsszenarien bietet Azure App Services Funktionen von Biztalk. BizTalk ist die branchenführenden Integrationsplattform von Microsoft. Die BizTalk-API-Apps ermöglichen die problemlose Einbeziehung von u. a. Validierung, Transformation und Regeln in Ihre Logik-App-Workflows. Unter [Was sind BizTalk-API-Apps?][biztalk] finden Sie weitere Informationen.
+## Logik-App – Konzepte
+
+Es folgt eine Beschreibung einiger der wichtigsten Elemente von Logik-Apps.
+
+- **Workflow** – Logik-Apps bieten eine grafische Möglichkeit zum Abbilden Ihrer Geschäftsprozesse als Folge von Schritten bzw. Workflow.
+- **[Connectors][connectors]** – Logik-Apps benötigen Zugriff auf Daten und Dienste. Ein Connector ist eine besondere Art von API-App. Sein Zweck ist, Ihnen beim Herstellen von Verbindungen und Arbeiten mit Ihren Daten zu helfen. Die Liste der aktuell verfügbaren Connectors finden Sie unter [Verwenden von Connectors][connectors].
+- **Trigger** – Einige Connectors können auch als Trigger fungieren. Ein Trigger startet eine neue Instanz eines Workflows basierend auf einem bestimmten Ereignis, z. B. Eingang einer E-Mail oder einer Änderung in Ihrem Azure Storage-Konto.
+-  **Aktionen** – Jeder Schritt nach dem Trigger in einem Workflow wird als Aktion bezeichnet. Jede Aktion wird in der Regel einem Vorgang in Ihrem Connector oder benutzerdefinierten API-Apps zugeordnet.
+- **BizTalk** – Für anspruchsvollere Integrationsszenarien bietet Azure App Services Funktionen von Biztalk. BizTalk ist die branchenführenden Integrationsplattform von Microsoft. Die BizTalk-API-Apps ermöglichen die problemlose Einbeziehung von u. a. Validierung, Transformation und Regeln in Ihre Logik-App-Workflows. Unter [Was sind BizTalk-API-Apps?][biztalk] finden Sie weitere Informationen.
 
 ## Erste Schritte
 
-Befolgen Sie zum Einstieg in Logik-Apps das Lernprogramm [Erstellen einer Logik-App ][create].
+Befolgen Sie zum Einstieg in Logik-Apps das Lernprogramm [Erstellen einer Logik-App][create].
 
 Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure App Service][appservice].
 
 [biztalk]: app-service-logic-what-are-biztalk-api-apps.md
 [appservice]: app-service-value-prop-what-is.md
 [create]: app-service-logic-create-a-logic-app.md
+[connectors]: app-service-logic-use-biztalk-connectors.md
+[tpm]: app-service-logic-create-a-trading-partner-agreement
+[rules]: app-service-logic-use-biztalk-rules
 
 
-
-
-<!--HONumber=49-->
+<!--HONumber=54-->

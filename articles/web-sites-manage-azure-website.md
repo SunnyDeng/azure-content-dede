@@ -1,111 +1,103 @@
-﻿<properties 
-	pageTitle="Verwalten einer Azure-Website" 
-	description="Links zu Ressourcen für die Verwaltung einer Microsoft Azure-Website" 
-	services="web-sites" 
+<properties 
+	pageTitle="Verwalten einer Web-App in Azure App Service" 
+	description="Links zu Ressourcen für die Verwaltung einer Web-App in Azure App Service." 
+	services="app-service\web" 
 	documentationCenter="" 
 	authors="MikeWasson" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/16/2014" 
+	ms.date="04/23/2015" 
 	ms.author="mwasson"/>
 
-# Verwalten einer Azure-Website
+# Verwalten einer Web-App in Azure App Service
 
-Dieses Thema enthält Links zu Ressourcen für die Verwaltung einer Azure-Website. Die Verwaltung umfasst alle Aufgaben, die für eine reibungslose Ausführung Ihrer Website sorgen. 
+Dieses Thema enthält Links zu Ressourcen für die Verwaltung einer Web-App in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714). Die Verwaltung umfasst alle Aufgaben, die für eine reibungslose Ausführung Ihrer Web-App sorgen.
 
-Im Laufe der Lebensdauer einer Website werden Sie verschiedene Verwaltungsaufgaben ausführen, von der ersten Bereitstellung zum Normalbetrieb, inklusive Wartung und Updates.
+Im Laufe der Lebensdauer einer Web-App führen Sie verschiedene Verwaltungsaufgaben aus, von der ersten Bereitstellung zum Normalbetrieb, einschließlich Wartung und Aktualisierungen.
 
-- [Bevor Sie Ihre Website für die Produktion bereitstellen]
-- [Während Ihre Website ausgeführt wird]
-- [Wenn Sie Ihre Website aktualisieren]
+Viele Aufgaben der Web-App-Verwaltung können im Azure-Portal ausgeführt werden. Weitere Informationen finden Sie unter [Verwalten von Web-Apps mithilfe des Azure-Portals](web-sites-manage.md).
 
-Viele Aufgaben der Websiteverwaltung können im Azure-Portal ausgeführt werden. Weitere Informationen finden Sie unter [Verwalten von Websites über das Azure-Verwaltungsportal](http://azure.microsoft.com/documentation/articles/web-sites-manage/).
-
-## Bevor Sie Ihre Website für die Produktion bereitstellen
+## Bevor Sie Ihre Web-App für die Produktion bereitstellen
 
 ### Wählen Sie eine Ebene aus:
 
-Azure Websites wird in vier Ebenen angeboten: Free, Shared, Basic und Standard. Weitere Informationen zu Funktionen und der Preisgestaltung für jede Ebene finden Sie unter [Preisdetails](http://azure.microsoft.com/pricing/details/websites/). 
+Azure App Service wird in fünf Stufen angeboten: Kostenlos, Freigegeben, Basic, Standard und Premium. Weitere Informationen zu Funktionen und der Preisgestaltung für jede Ebene finden Sie unter [Preisdetails](/pricing/details/app-service/).
 
-- Mit [Webhostingplänen](http://azure.microsoft.com/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview) können Sie mehrere Websites unter der gleichen Ebene zusammenfassen.
-- Sie können immer zwischen [Ebenen wechseln](http://azure.microsoft.com/documentation/articles/web-sites-scale/), nachdem Sie Ihre Website erstellt haben.
+- Mit [App Service-Plänen](azure-web-sites-web-hosting-plans-in-depth-overview.md) können Sie mehrere Web-Apps unter der gleichen Ebene zusammenfassen.
+- Sie können jederzeit [zwischen Ebenen wechseln](web-sites-scale.md), nachdem Sie Ihre Web-App erstellt haben.
 
 ### Konfiguration
 
-Verwenden Sie das [Azure-Verwaltungsportal](https://manage.windowsazure.com/), um verschiedene Konfigurationsoptionen einzustellen. Nähere Informationen finden Sie unter [Konfigurieren von Websites](http://azure.microsoft.com/documentation/articles/web-sites-configure/). Hier sehen Sie eine kurze Checkliste:
+Verwenden Sie das [Azure-Vorschauportal,](https://portal.azure.com/) um verschiedene Konfigurationsoptionen einzustellen. Weitere Informationen finden Sie unter [Konfigurieren von Web-Apps in Azure App Service](web-sites-configure.md). Hier sehen Sie eine kurze Checkliste:
 
 - Wählen Sie **Laufzeitversionen** für .NET, PHP, Java oder Python aus, falls erforderlich.
-- Aktivieren Sie **WebSockets**, wenn Ihre Website das WebSocket-Protokoll verwendet. (Dies umfasst Anwendungen, die [ASP.NET SignalR](http://www.asp.net/signalr) oder [socket.io](http://azure.microsoft.com/documentation/articles/web-sites-nodejs-chat-app-socketio/) verwenden.)
-- Lassen Sie kontinuierliche WebJobs laufen? Falls ja, aktivieren Sie **Always On**.
-- Legen Sie das **Standarddokument** fest, z. B. "index.html".
+- Aktivieren Sie **WebSockets**, wenn Ihre Web-App das WebSocket-Protokoll verwendet. (Dies beinhaltet Anwendungen, die [ASP.NET SignalR](http://www.asp.net/signalr) oder [socket.io](web-sites-nodejs-chat-app-socketio.md) verwenden.)
+- Lassen Sie kontinuierliche WebJobs laufen? Falls dies der Fall ist, aktivieren Sie **Immer bereit**.
+- Stellen Sie das **Standarddokument** ein, beispielsweise index.html.
 
 Zusätzlich zu diesen grundlegenden Konfigurationseinstellungen können Sie Folgendes festlegen:
 
-- **Secure Socket Layer (SSL)**-Verschlüsselung. Um SSL mit einem benutzerdefinierten Domänennamen zu verwenden, müssen Sie ein SSL-Zertifikat anfordern und Ihre Website entsprechend konfigurieren. Siehe [Aktivieren von HTTPS für eine Azure-Website](http://azure.microsoft.com/documentation/articles/web-sites-configure-ssl-certificate/).
-- **Nenutzerdefinierter Domänenname .** hre Website verfügt automatisch über eine Unterdomäne unter "azurewebsites.net". Sie können einen benutzerdefinierten Domänennamen, wie z. B. "contoso.com" zuordnen. Weitere Einzelheiten finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens](http://azure.microsoft.com/documentation/articles/web-sites-custom-domain-name/).
+- **Secure Socket Layer (SSL)**-Verschlüsselung. Um SSL mit einem benutzerdefinierten Domänennamen zu verwenden, müssen Sie ein SSL-Zertifikat anfordern und Ihre Web-App entsprechend konfigurieren. Weitere Informationen finden Sie unter [Aktivieren von HTTPS für eine Web-App in Azure App Service](web-sites-configure-ssl-certificate.md).
+- **Benutzerdefinierte Domänennamen.** Zu Ihrer Web-App gibt es automatisch eine Unterdomäne unter azurewebsites.net. Sie können einen benutzerdefinierten Domänennamen zuweisen, beispielsweise contoso.com. Weitere Informationen finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](web-sites-custom-domain-name.md).
 
 Sprachspezifische Konfiguration:
 
-- **PHP**: [Konfigurieren von PHP in Azure-Websites](http://azure.microsoft.com/documentation/articles/web-sites-php-configure/).
-- **Python**: [Konfigurieren von Python mit Azure-Websites](http://azure.microsoft.com/documentation/articles/web-sites-python-configure/)
+- **PHP**: [Konfigurieren von PHP in Azure App Service-Web-Apps](web-sites-php-configure.md).
+- **Python**: [Konfigurieren von Python in Azure App Service-Web-Apps](web-sites-python-configure.md).
 
 
-## Während Ihre Website ausgeführt wird
+## Während Ihre Web-App ausgeführt wird
 
-Beim Betrieb Ihrer Website müssen Sie sicherstellen, dass sie verfügbar und dem Benutzerverkehr entsprechend skaliert ist. Möglicherweise müssen Sie auch Fehler beheben.
+Bei der Ausführung Ihrer Web-App müssen Sie sicherstellen, dass sie verfügbar und dem Benutzerverkehr entsprechend skaliert ist. Möglicherweise müssen Sie auch Fehler beheben.
 
 ### Überwachung
 
-- Über das Verwaltungsportal können Sie [Leistungsmetriken hinzufügen](http://azure.microsoft.com/documentation/articles/web-sites-monitor), wie CPU-Auslastung und Anzahl der Clientanforderungen.
-- Für einen tieferen Einblick verwenden Sie New Relic zur Leistungsüberwachung und -verwaltung. Siehe [Verwaltung der Anwendungsleistung mit New Relic in Azure Websites](http://azure.microsoft.com/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/).
-- [Skalieren Sie Ihre Website](http://azure.microsoft.com/documentation/articles/web-sites-scale/) entsprechend dem Datenverkehr. Abhängig von Ihrer Ebene können Sie die Anzahl von VMs und/oder die Größe der VM-Instanzen skalieren. Im Standardplan können Sie auch Autoskalierung einstellen, sodass Ihre Website automatisch skaliert, entweder nach einem festen Zeitplan oder entsprechend der Last.  
+- Über das Azure-Vorschauportal können Sie [Leistungsmetriken hinzufügen](web-sites-monitor.md), wie z. B. CPU-Auslastung und Anzahl der Clientanforderungen.
+- Für einen tieferen Einblick verwenden Sie New Relic zur Leistungsüberwachung und -verwaltung. Weitere Informationen finden Sie unter [.NET Web-App in Azure App Service mit Verwaltung der Anwendungsleistung mit New Relic](store-new-relic-web-sites-dotnet-application-performance-management.md).
+- [Skalieren Sie Ihre Web-App](web-sites-scale.md) entsprechend dem Verkehr. Abhängig von Ihrer Ebene können Sie die Anzahl von VMs und/oder die Größe der VM-Instanzen skalieren. Auf den Stufen Standard oder Premium können Sie auch automatische Skalierung einrichten, sodass Ihre Website automatisch skaliert wird, entweder nach einem festen Zeitplan oder entsprechend der Last.  
  
 ### Backups
 
-- Legen Sie [automatische Sicherungen](http://azure.microsoft.com/documentation/articles/web-sites-backup/) Ihrer Website fest. [In diesem Video](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/) erfahren Sie mehr über Sicherungen.
+- Legen Sie [automatische Sicherungen](web-sites-backup.md) Ihrer Web-App fest. Erfahren Sie in [diesem Video](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/) mehr über Backups.
 - Erfahren Sie mehr über die Optionen für die [Datenbankwiederherstellung](http://msdn.microsoft.com/library/azure/hh852669.aspx) in der Azure SQL-Datenbank.
 
 ### Problembehandlung
 
-- Wenn etwas nicht funktioniert, können Sie unter Verwendung von Diagnoseprotokollen und durch Live-Debugging in der Cloud [Probleme in Visual Studio behandeln](http://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remotedebug). 
-- Außerhalb von Visual Studio gibt es verschiedene Möglichkeiten, Diagnoseprotokolle zu sammeln. Siehe [Aktivieren der Diagnoseprotokollierung für Azure Websites](http://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/).
-- Für Node.js-Anwendungen siehe [Debuggen einer Node.js-Anwendung in Azure Websites](http://azure.microsoft.com/documentation/articles/web-sites-nodejs-debug/).
+- Wenn etwas nicht funktioniert, können Sie [Probleme in Visual Studio behandeln](web-sites-dotnet-troubleshoot-visual-studio.md#remotedebug), unter Verwendung von Diagnoseprotokollen und durch Live-Debuggen in der Cloud. 
+- Außerhalb von Visual Studio gibt es verschiedene Möglichkeiten, Diagnoseprotokolle zu sammeln. Weitere Informationen finden Sie unter [Aktivieren der Diagnoseprotokollierung für Web-Apps in Azure App Service](web-sites-enable-diagnostic-log.md).
+- Für Node.js-Anwendungen siehe [Debuggen einer Node.js-Web-App in Azure App Service](web-sites-nodejs-debug.md).
 
 ### Datenwiederherstellung
 
-- Sie können eine Website [wiederherstellen](http://azure.microsoft.com/documentation/articles/web-sites-restore/), die zuvor gesichert wurde.
+- [Wiederherstellen](web-sites-restore.md) einer Web-App, die zuvor gesichert wurde.
 
 
-## Wenn Sie Ihre Website aktualisieren
+## Wenn Sie Ihre Web-App aktualisieren
 
-Wenn Sie keine automatische Sicherungen aktiviert haben, können Sie eine [manuelle Sicherung](http://azure.microsoft.com/documentation/articles/web-sites-backup/) erstellen.
+Wenn Sie automatische Sicherungen nicht aktiviert haben, können Sie eine [manuelle Sicherung](web-sites-backup.md) erstellen.
 
-Ziehen Sie eine [gestaffelte Bereitstellung](http://azure.microsoft.com/documentation/articles/web-sites-staged-publishing/) in Betracht. Mit dieser Option können Sie Updates in Form einer gestaffelten Bereitstellung veröffentlichen, die parallel zu Ihrer Produktionsbereitstellung ausgeführt wird. 
+Ziehen Sie eine [gestaffelte Bereitstellung](web-sites-staged-publishing.md) in Betracht. Mit dieser Option können Sie Updates in Form einer gestaffelten Bereitstellung veröffentlichen, die parallel zu Ihrer Produktionsbereitstellung ausgeführt wird.
 
 Wenn Sie Visual Studio One verwenden, können Sie die fortlaufende Bereitstellung aus der Quellcodeverwaltung einstellen:
 
-- [Verwenden von Team Foundation Version Control (TFVC)](http://azure.microsoft.com/documentation/articles/cloud-services-continuous-delivery-use-vso/) 
-- [Verwenden von Git](http://azure.microsoft.com/documentation/articles/cloud-services-continuous-delivery-use-vso-git/)
+- [Verwendung von Team Foundation Version Control (TFVC)](cloud-services-continuous-delivery-use-vso.md) 
+- [Verwendung von Git](cloud-services-continuous-delivery-use-vso-git.md)
  
+[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
+[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
  
 <!-- Anchors. -->
 
 
-[Bevor Sie Ihre Website für die Produktion bereitstellen]: #before-you-deploy-your-site-to-production
-[Während Ihre Website ausgeführt wird]: #while-your-website-is-running
-[Wenn Sie Ihre Website aktualisieren]: #when-you-update-your-website
-
- 
-
-
-
-
-<!--HONumber=42-->
+[Before you deploy your site to production]: #before-you-deploy-your-site-to-production
+[While your website is running]: #while-your-website-is-running
+[When you update your website]: #when-you-update-your-website
+<!--HONumber=54-->

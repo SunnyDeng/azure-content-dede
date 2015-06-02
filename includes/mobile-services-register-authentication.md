@@ -1,4 +1,6 @@
-﻿Registrieren Sie Ihre App zum Authentifizieren von Benutzern bei einem Identitätsanbieter. Registrieren Sie dann die vom Anbieter generierten Anmeldeinformationen des Clients mit Azure Mobile Services.
+
+
+Registrieren Sie Ihre App zum Authentifizieren von Benutzern bei einem Identitätsanbieter. Registrieren Sie dann die vom Anbieter generierten Anmeldeinformationen des Clients mit Azure Mobile Services.
 
 1. Melden Sie sich beim Azure-Verwaltungsportal an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
@@ -12,10 +14,12 @@
  - <a href="/documentation/articles/mobile-services-how-to-register-google-authentication/" target="_blank">Google </a>
  - <a href="/documentation/articles/mobile-services-how-to-register-active-directory-authentication/" target="_blank">Azure Active Directory</a>
 
-    > [AZURE.IMPORTANT] Der vom Anbieter generierte geheime Clientschlüssel ist eine wichtige Sicherheitsanmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.
+    > [AZURE.IMPORTANT]Der vom Anbieter generierte geheime Schlüssel ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.
 
-4. Klicken Sie im Verwaltungsportal auf die Registerkarte **Identität**, geben Sie die App-ID und die freigegebenen geheimen Werte ein, die Sie von Ihrem Identitätsanbieter erhalten haben, und klicken Sie auf **Speichern**. Sowohl Ihr mobiler Dienst als auch Ihre App sind nun konfiguriert und funktionieren mit dem ausgewählten Authentifizierungsanbieter.
+4. Klicken Sie dann im Verwaltungsportal auf die Registerkarte **Identität**, geben Sie den App-Bezeichner und die freigegebenen geheimen Werte ein, die Sie von Ihrem Identitätsanbieter erhalten haben, und klicken Sie auf **Speichern**. Sowohl Ihr mobiler Dienst als auch Ihre App sind nun konfiguriert und funktionieren mit dem ausgewählten Authentifizierungsanbieter.
 
-    > [AZURE.IMPORTANT] Überprüfen Sie, ob Sie den richtigen URI für die Umleitung auf der Entwicklerwebsite Ihres Identitätsanbieters festgelegt haben. Wie in den verknüpften Anweisungen für die einzelnen Anbieter oben beschrieben, kann sich der Umleitungs-URI für einen .NET-Back-End-Dienst von einem JavaScript-Back-End-Dienst unterscheiden. Bei einem falsch konfigurierten Umleitungs-URI kann der Anmeldebildschirm möglicherweise nicht ordnungsgemäß angezeigt werden und die App weist unerwartete Störungen auf.
+    > [AZURE.IMPORTANT]Überprüfen Sie, ob Sie den richtigen URI für die Umleitung auf der Entwicklerwebsite Ihres Identitätsanbieters festgelegt haben. Wie in den verknüpften Anweisungen für die einzelnen Anbieter oben beschrieben, kann sich der Umleitungs-URI für einen .NET-Back-End-Dienst von einem JavaScript-Back-End-Dienst unterscheiden. Bei einem falsch konfigurierten Umleitungs-URI kann der Anmeldebildschirm möglicherweise nicht ordnungsgemäß angezeigt werden und die App weist unerwartete Störungen auf.
 
-<!--HONumber=49-->
+5. (Optional) Wiederholen Sie die Schritte 3 und 4 zum Konfigurieren weiterer Identitätsanbieter, die Ihre App unterstützen soll.
+
+<!--HONumber=54-->

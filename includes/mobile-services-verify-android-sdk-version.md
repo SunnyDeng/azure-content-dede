@@ -1,12 +1,12 @@
-﻿Aufgrund ständiger Weiterentwicklung stimmt die Version des in Android Studio installierten Android-SDK unter Umständen nicht mit der Version im Code überein. In diesem Lernprogramm wird von Version 21 des Android-SDK ausgegangen. Das war die neueste Version zum Zeitpunkt der Verfassung. Mit neuen Ausgaben des SDK kann die Versionsnummer größer werden. Es empfiehlt sich, die neueste verfügbare Version zu benutzen.
+Aufgrund ständiger Weiterentwicklung stimmt die Version des in Android Studio installierten Android-SDK unter Umständen nicht mit der Version im Code überein. In diesem Lernprogramm wird von Version 21 des Android-SDK ausgegangen. Das war die neueste Version zum Zeitpunkt der Verfassung. Mit neuen Ausgaben des SDK kann die Versionsnummer größer werden. Es empfiehlt sich, die neueste verfügbare Version zu benutzen.
 
 Zwei Symptome nicht übereinstimmender Versionen sind:
 
-1. Wenn Sie das Projekt erstellen oder erneut erstellen, erhalten Sie möglicherweise eine Gradle-Fehlermeldung dazu, dass das **Ziel nicht gefunden werden konnte: Google Inc.:Google APIs:n**".
+1. Wenn Sie das Projekt erstellen oder erneut erstellen, erhalten Sie möglicherweise eine Gradle-Fehlermeldung dazu, dass das Ziel nicht gefunden werden konnte: Google Inc.:Google APIs:n.
 
-2. Standard-Android-Objekte im Code, die auf Grundlage von  `import`-Ausdrücken aufgelöst werden sollten, können Fehlermeldungen verursachen.
+2. Standard-Android-Objekte im Code, die auf Grundlage von `import`-Ausdrücken aufgelöst werden sollten, können Fehlermeldungen verursachen.
 
-Wenn eines dieser Symptome auftritt, stimmt die Version des in Android Studio installierten Android-SDK möglicherweise nicht mit dem SDK-Ziel des heruntergeladenen Projekts überein.  Zur Überprüfung der Version nehmen Sie die folgenden Änderungen vor:
+Wenn eines dieser Symptome auftritt, stimmt die Version des in Android Studio installierten Android-SDK möglicherweise nicht mit dem SDK-Ziel des heruntergeladenen Projekts überein. Zur Überprüfung der Version nehmen Sie die folgenden Änderungen vor:
 
 
 1. Klicken Sie in Android Studio auf **Tools** => **Android** => **SDK Manager**. Wenn nicht die neueste Version der SDK-Plattform installiert ist, so klicken Sie zur Installation. Notieren Sie sich die Versionsnummer.
@@ -20,4 +20,4 @@ Wenn eines dieser Symptome auftritt, stimmt die Version des in Android Studio in
 
 4. In Android Studio wird anders als bei Eclipse die Manifestdatei nicht mehr dazu verwendet, die Ziel-SDK und die SDK-Mindestversion anzugeben.
 
-<!--HONumber=49-->
+<!--HONumber=54-->

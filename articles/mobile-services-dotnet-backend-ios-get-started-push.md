@@ -1,21 +1,23 @@
 <properties 
-	pageTitle="Erste Schritte mit Pushbenachrichtigungen (iOS) | Mobile Dev Center" 
+	pageTitle="Hinzufügen von Pushbenachrichtigungen zu Mobile Services-Apps (iOS) – Mobile Services" 
 	description="Erfahren Sie mehr über die Verwendung von Azure Mobile Services zum Senden von Pushbenachrichtigungen an Ihre iOS-App." 
-	services="mobile-services, notification-hubs" 
+	services="mobile-services,notification-hubs" 
 	documentationCenter="ios" 
-	manager="dwrede" editor="" 
+	manager="dwrede" 
+	editor="" 
 	authors="krisragh"/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-ios" 
-	ms.devlang="objective-c" ms.topic="article" 
-	ms.date="12/15/2014" 
+	ms.tgt_pltfrm="ios" 
+	ms.devlang="objective-c" 
+	ms.topic="article" 
+	ms.date="04/24/2015" 
 	ms.author="krisragh"/>
 
 
-# Hinzufügen von Pushbenachrichtigungen zu einer Mobile Services-App
+# Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
@@ -24,11 +26,11 @@ In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pu
 
 In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
 
-1. [Erstellen der Zertifikatsignieranforderungsdatei]
+1. [Erstellen der Zertifikatsignieranforderung]
 2. [Registrieren der App und Aktivieren von Pushbenachrichtigungen]
 3. [Erstellen eines Bereitstellungsprofils für die App]
 4. [Aktualisieren des Servers zum Senden von Pushbenachrichtigungen](#update-server)
-5. [Veröffentlichen des mobilen Dienstes in Azure]
+5. [Veröffentlichen des mobilen Diensts in Azure]
 6. [Hinzufügen von Pushbenachrichtigungen zur App]
 7. [Aktivieren von Pushbenachrichtigungen für lokale Tests](#local-testing)
 8. [Testen der App mit dem veröffentlichten mobilen Dienst]
@@ -36,16 +38,16 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + [Mobile Services iOS SDK]
-+ [XCode 4.5][Installieren von Xcode]
-+ Ein Gerät, das auf iOS 6.0 (oder einer neueren Version) laufen kann
++ [XCode 4.5][Install Xcode]
++ Ein Gerät, das auf iOS 6,0 (oder einer neueren Version) laufen kann
 + iOS-Entwicklerprogramm-Mitgliedschaft
 
-   > [AZURE.NOTE] Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
+   >[AZURE.NOTE]Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
 
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zur App][Erste Schritte mit Daten] abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer App][Get started with data] abschließen.
 
 
-[AZURE.INCLUDE [Enable Apple Push Notifications](../includes/enable-apple-push-notifications.md)]
+[AZURE.INCLUDE [Aktivieren von Apple-Pushbenachrichtigungen](../includes/enable-apple-push-notifications.md)]
 
 
 ## Konfigurieren von Mobile Services zum Senden von Pushanforderungen
@@ -55,13 +57,13 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 ##<a id="update-server"></a>Aktualisieren des Servers zum Senden von Pushbenachrichtigungen
 
-1. Erweitern Sie im Projektmappen-Explorer in Visual Studio den Ordner **Controllers** im mobilen Dienstprojekt. Öffnen Sie "TodoItemController.cs". Fügen Sie am Anfang der Datei die folgenden  `using`-Anweisungen hinzu:
+1. Erweitern Sie im Projektmappen-Explorer in Visual Studio den Ordner **Controllers** im mobilen Dienstprojekt. Öffnen Sie „TodoItemController.cs“. Fügen Sie am Anfang der Datei, die folgenden `using`-Anweisungen hinzu:
 
 
 		using System;
 		using System.Collections.Generic;
 
-2. Aktualisieren Sie die  `PostTodoItem`-Methode mit dem folgenden Code:  
+2. Ersetzen Sie die `PostTodoItem`-Methode durch den folgenden Code:
 
         public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
         {
@@ -84,13 +86,13 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
     Dieser Code sendet eine Pushbenachrichtigung (mit dem Text des eingefügten Eintrags), nachdem ein todo-Eintrag eingefügt wurde. Falls ein Fehler auftritt, wird vom Code ein Fehlerprotokolleintrag hinzugefügt, der auf der Registerkarte **Protokolle** des mobilen Diensts im Verwaltungsportal angezeigt werden kann.
 
 
-<h2><a name="publish-the-service"></a>Veröffentlichen des mobilen Dienstes in Azure</h2>
+##<a name="publish-the-service"></a>Veröffentlichen des mobilen Diensts in Azure
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 ## Hinzufügen von Pushbenachrichtigungen zur App
 
-1. Fügen Sie in QSAppDelegate.m den folgenden Codeausschnitt ein, um das Mobile Services iOS SDK zu importieren:
+1. Fügen Sie in QSAppDelegate.m den folgenden Codeausschnitt zum Importieren des Mobile Services iOS SDK hinzu:
 
         #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 
@@ -128,7 +130,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
             NSLog(@"Failed to register for remote notifications: %@", error);
         }
 
-5. In QSAppDelegate.m fügen Sie die folgende Handlermethode in der Implementierung hinzu:  
+5. In QSAppDelegate.m fügen Sie die folgende Handlermethode in der Implementierung hinzu:
 
         // Because alerts don't work when the app is running, the app handles them.
         // This uses the userInfo in the payload to display a UIAlertView.
@@ -141,7 +143,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
             [alert show];
         }
 
-   > [AZURE.NOTE] </strong>Sie müssen diesen Code hinzufügen, bevor Sie die <strong>addItemaddItem-Methode aufrufen.
+   >[AZURE.NOTE]Sie müssen diesen Code hinzufügen, bevor Sie die <strong>addItem</strong>-Methode aufrufen.
 
 Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
@@ -151,13 +153,13 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
 ## Testen von Pushbenachrichtigungen in der App
 
-1. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen, starten Sie die App auf einem iOS-fähigen Gerät, und klicken Sie dann auf **OK**, um Pushbenachrichtigungen zu akzeptieren.
+1. Drücken Sie auf **Run**, um das Projekt zu erstellen, starten Sie die App auf einem iOS-fähigen Gerät, und klicken Sie dann auf **OK**, um Pushbenachrichtigungen zu akzeptieren
 
   	![][23]
 
-    > [AZURE.NOTE] Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
+    > [AZURE.NOTE]Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
 
-2. Geben Sie in der App sinnvollen Text ein, z. B. _A new Mobile Services task_, und klicken Sie dann auf das Pluszeichen (**+**).
+2. Geben Sie in der App einen aussagekräftigen Text ein, beispielsweise _Neue Mobile Services-Aufgabe_, und klicken Sie dann auf das Plussymbol (**+**).
 
   	![][24]
 
@@ -173,44 +175,40 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
 ## Nächste Schritte
 
-In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer iOS-App für die Arbeit mit Mobile Services und Notification Hubs zum Senden von Pushbenachrichtigungen aufgezeigt. Als Nächstes können Sie das Lernprogramm [Senden von Pushbenachrichtigungen an authentifizierte Benutzer] ausführen, in dem die Verwendung von Tags zum Versand von Pushbenachrichtigungen von einem mobilen Dienst ausschließlich an einen authentifizierten Benutzer demonstriert wird.
+Dieses Lernprogramm zeigt die Grundlagen, mit denen eine iOS-App Mobile Services und Benachrichtigungs-Hubs für das Senden von Pushbenachrichtigungen nutzen kann. Als Nächstes können Sie das Lernprogramm [Senden von Pushbenachrichtigungen an authentifizierte Benutzer] ausführen, in dem die Verwendung von Tags zum Versand von Pushbenachrichtigungen von einem mobilen Dienst ausschließlich an einen authentifizierten Benutzer demonstriert wird.
 
-<!--+ [Senden von Pushbenachrichtigungen an authentifizierte Benutzer]
-	<br/>Erfahren Sie, wie Pushbenachrichtigungen mithilfe von Tags von einem mobilen Dienst ausschließlich an einen authentifizierten Benutzer gesendet werden.
+<!--+ [Send push notifications to authenticated users]
+	<br/>Learn how to use tags to send push notifications from a Mobile Service to only an authenticated user.
 
-+ [Senden von Übertragungsbenachrichtigungen an Abonnenten]
-	<br/>Erfahren Sie, wie sich Benutzer registrieren und Pushbenachrichtigungen für Kategorien erhalten können, an denen sie interessiert sind.
++ [Send broadcast notifications to subscribers]
+	<br/>Learn how users can register and receive push notifications for categories they're interested in.
 
-+ [Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]
-	<br/>Erfahren Sie, wie Vorlagen zum Senden von Pushbenachrichtigungen mit einem mobilen Dienst gesendet werden, ohne dass Sie in Ihrem Back-End auf plattformspezifische Nutzlasten zurückgreifen müssen.
++ [Send template-based notifications to subscribers]
+	<br/>Learn how to use templates to send push notifications from a Mobile Service, without having to craft platform-specific payloads in your back-end.
 -->
 Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in den folgenden Themen:
 
-* [Erste Schritte mit Daten]
-  <br/>Erfahren Sie mehr über das Speichern und Abfragen von Daten mit Mobile Services.
+* [Erste Schritte mit Daten] <br/>Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
-* [Erste Schritte mit der Authentifizierung]
-  <br/>Erfahren Sie mehr über die Authentifizierung von Benutzern Ihrer App mit verschiedenen Kontotypen über Mobile Services.
+* [Erste Schritte mit der Authentifizierung] <br/>Informationen zur Authentifizierung von Benutzern Ihrer App mit verschiedenen Kontotypen mithilfe von mobilen Diensten.
 
-* [Was sind Notification Hubs?]
-  <br/>Erfahren Sie, wie Sie mit Benachrichtigungshubs Benachrichtigungen an all Ihre Apps auf allen großen Clientplattformen versenden können.
+* [Was sind Notification Hubs?] <br/>Erfahren Sie, wie Sie mit Benachrichtigungshubs Benachrichtigungen an all Ihre Apps auf allen großen Clientplattformen versenden können.
 
-* [Debuggen von Notification Hubs-Anwendungen](http://go.microsoft.com/fwlink/p/?linkid=386630)
-  </br>Erhalten Sie Anweisungen zur Problembehandlung und zum Debuggen von Notification Hubs-Lösungen. 
+* [Debuggen von Notification Hubs-Anwendungen](http://go.microsoft.com/fwlink/p/?linkid=386630) </br>Hier finden Sie die Anleitungen zur Problembehandlung und zum Debuggen von Notification Hubs-Lösungen.
 
 <!-- Anchors.  -->
-[Erstellen der Zertifikatsignieranforderungsdatei]: #certificates
+[Erstellen der Zertifikatsignieranforderung]: #certificates
 [Registrieren der App und Aktivieren von Pushbenachrichtigungen]: #register
 [Erstellen eines Bereitstellungsprofils für die App]: #profile
-[Konfigurieren von Mobile Services]: #configure
-[Aktualisieren von Skripts zum Senden von Pushbenachrichtigungen]: #update-scripts
+[Configure Mobile Services]: #configure
+[Update scripts to send push notifications]: #update-scripts
 [Hinzufügen von Pushbenachrichtigungen zur App]: #add-push
-[Einfügen von Daten zum Empfangen von Benachrichtigungen]: #test
+[Insert data to receive notifications]: #test
 [Testen der App mit dem veröffentlichten mobilen Dienst]: #test-app
-[Nächste Schritte]:#next-steps
-[Lokales Herunterladen des Diensts]: #download-the-service-locally
-[Testen des mobilen Dienstes]: #test-the-service
-[Veröffentlichen des mobilen Dienstes in Azure]: #publish-mobile-service
+[Next Steps]: #next-steps
+[Download the service locally]: #download-the-service-locally
+[Test the mobile service]: #test-the-service
+[Veröffentlichen des mobilen Diensts in Azure]: #publish-mobile-service
 
 <!-- Images. -->
 [5]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-step5.png
@@ -250,23 +248,22 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [117]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-17.png
 
 <!-- URLs. -->
-[Installieren von Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[iOS-Bereitstellungsportal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
+[Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
+[iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Apple Pushbenachrichtigungsdienst]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-[Erste Schritte mit Mobile Services]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
+[Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
+[Azure Management Portal]: https://manage.windowsazure.com/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
-[Erste Schritte mit Daten]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
-[Erste Schritte mit der Authentifizierung]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
+[Get started with data]: mobile-services-dotnet-backend-ios-get-started-data.md
+[Erste Schritte mit Daten]: mobile-services-dotnet-backend-ios-get-started-data.md
+[Erste Schritte mit der Authentifizierung]: mobile-services-dotnet-backend-ios-get-started-users.md
 
-[Senden von Pushbenachrichtigungen an authentifizierte Benutzer]: /de-de/documentation/articles/mobile-services-dotnet-backend-ios-push-notifications-app-users/
+[Senden von Pushbenachrichtigungen an authentifizierte Benutzer]: mobile-services-dotnet-backend-ios-push-notifications-app-users.md
 
-[Was sind Notification Hubs?]: /de-de/documentation/articles/notification-hubs-overview/
-[Senden von Übertragungsbenachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-ios-send-breaking-news/
-[Senden von vorlagenbasierten Benachrichtigungen an Abonnenten]: /de-de/documentation/articles/notification-hubs-ios-send-localized-breaking-news/
+[Was sind Notification Hubs?]: notification-hubs-overview.md
+[Send broadcast notifications to subscribers]: notification-hubs-ios-send-breaking-news.md
+[Send template-based notifications to subscribers]: notification-hubs-ios-send-localized-breaking-news.md
 
-
-
-<!--HONumber=42-->
+<!--HONumber=54-->

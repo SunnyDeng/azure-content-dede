@@ -1,11 +1,11 @@
-﻿<properties 
-   pageTitle="Verbinden von mobilen und Web-Apps mit SaaS-APIs (O365, SharePoint, Salesforce) in Azure App Service" 
-   description="In diesem Lernprogramm wird veranschaulicht, wie eine SaaS-API-App in einer in Azure App Service Web Apps gehosteten ASP.NET-Anwendung genutzt wird." 
+<properties 
+   pageTitle="Verbinden einer Web-App mit einer API-App in Azure App Service" 
+   description="In diesem Lernprogramm wird veranschaulicht, wie eine API-App in einer in Azure App Service gehosteten ASP.NET-Web-App genutzt wird." 
    services="app-service\web" 
-   documentationCenter="" 
+   documentationCenter=".net" 
    authors="syntaxc4" 
    manager="yochayk" 
-   editor=""/>
+   editor="jimbe"/>
 
 <tags
    ms.service="app-service-web"
@@ -16,28 +16,21 @@
    ms.date="03/24/2015"
    ms.author="cfowler"/>
 
-# Verbinden von mobilen und Web-Apps mit SaaS-APIs (O365, SharePoint, Salesforce) in Azure App Service
+# Verbinden einer Web-App mit einer API-App in Azure App Service
 
-In diesem Lernprogramm wird veranschaulicht, wie eine SaaS-API-App in einer in [ App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714) gehosteten ASP.NET-Anwendung genutzt wird.
-
-## Übersicht
-
-Sie erhalten Informationen zu folgenden Themen:
-
-- Nutzen einer API-App in einer in Web Apps gehosteten ASP.NET-Anwendung
+In diesem Lernprogramm wird veranschaulicht, wie eine API-App in einer in [App Service](app-service.md) gehosteten ASP.NET-Web-App genutzt wird.
 
 ## Voraussetzungen
 
 Dieses Lernprogramm baut auf der Reihe der API-App-Lernprogramme auf:
 
-1. [Erstellen einer Azure-API-App](app-service-dotnet-create-api-app)
-2. [Veröffentlichen einer Azure-API-App](app-service-dotnet-publish-api-app)
-3. [Bereitstellen einer Azure-API-App](app-service-dotnet-deploy-api-app)
-4. [Debuggen einer Azure-API-App](app-service-dotnet-remotely-debug-api-app)
+1. [Erstellen einer Azure API-App](../app-service-dotnet-create-api-app)
+3. [Bereitstellen einer Azure API-App](../app-service-dotnet-deploy-api-app)
+4. [Debuggen einer Azure API-App](../app-service-dotnet-remotely-debug-api-app)
 
 ## Ermöglichen des öffentlichen Zugriffs auf die API-App
 
-Wählen Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) die API-App aus. Klicken Sie auf der Befehlsleiste auf die Schaltfläche **Einstellungen**. Ändern Sie auf dem Blatt **Grundeinstellungen** die **Zugriffsebene** in **Öffentlich (anonym)**.
+Wählen Sie die API-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) aus. Klicken Sie auf der Befehlsleiste auf die Schaltfläche **Einstellungen**. Ändern Sie im Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich (authentifiziert)**.
 
 ![](./media/app-service-web-connect-web-app-to-saas-api/4-5-Change-Access-Level-To-Public.png)
 
@@ -45,23 +38,23 @@ Wählen Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) die
 
 1. Öffnen Sie Visual Studio. Fügen Sie im Dialogfeld **Neues Projekt** eine neue **ASP.NET-Webanwendung** hinzu. Klicken Sie auf **OK**.
 
-	![File > New > Web > ASP.NET Web Application](./media/app-service-web-connect-web-app-to-saas-api/1-Create-New-MVC-App-For-Consumption.png)
+	![Datei > Neu > Web > ASP.NET-Webanwendung](./media/app-service-web-connect-web-app-to-saas-api/1-Create-New-MVC-App-For-Consumption.png)
 
 1. Wählen Sie die Vorlage **MVC** aus. Klicken Sie auf **Authentifizierung ändern**, und wählen Sie dann **Keine Authentifizierung** aus. Klicken Sie zweimal auf **OK**.
 
-	![New ASP.NET Application](./media/app-service-web-connect-web-app-to-saas-api/2-Change-Auth-To-No-Auth.png)
+	![Neue ASP.NET-Webanwendung](./media/app-service-web-connect-web-app-to-saas-api/2-Change-Auth-To-No-Auth.png)
 
-1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das neu erstellte Webanwendungsprojekt, und wählen Sie **Azure-App-Verweis hinzufügen**.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das neu erstellte Webanwendungsprojekt, und wählen Sie **Azure App-Verweis hinzufügen**.
 
-	![Add Azure API App Reference...](./media/app-service-web-connect-web-app-to-saas-api/3-Add-Azure-API-App-SDK.png)
+	![Azure API-App-Verweis hinzufügen...](./media/app-service-web-connect-web-app-to-saas-api/3-Add-Azure-API-App-SDK.png)
 
 1. Wählen Sie in der Dropdownliste **Vorhandene API-Apps** die API-App aus, mit der Sie eine Verbindung herstellen möchten.
 
-	![Select Existing API App](./media/app-service-web-connect-web-app-to-saas-api/4-Add-Azure-API-App-SDK-Dialog.png)
+	![Auswählen einer vorhandenen API-App](./media/app-service-web-connect-web-app-to-saas-api/4-Add-Azure-API-App-SDK-Dialog.png)
 
-	>[AZURE.NOTE] Der Clientcode für die Verbindung mit der API-Anwendung wird von einem Swagger-API-Endpunkt automatisch generiert.
+	>[AZURE.NOTE]Der Clientcode für die Verbindung mit der API-Anwendung wird von einem Swagger-API-Endpunkt automatisch generiert.
 
-1. Um den generierten API-Code zu nutzen, öffnen Sie die Datei "HomeController.cs" und ersetzen die Aktion  `Contact` durch Folgendes:
+1. Um den generierten API-Code zu nutzen, öffnen Sie die Datei "HomeController.cs" und ersetzen die `Contact`-Aktion durch Folgendes:
 
 	    public async Task<ActionResult> Contact()
 	    {
@@ -74,32 +67,22 @@ Wählen Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) die
 	        return View(contactList);
 	    }
 
-	![HomeController.cs Code Updates](./media/app-service-web-connect-web-app-to-saas-api/5-Write-Code-Which-Leverages-Swagger-Generated-Code.png)
+	![Codeaktualisierung in "HomeController.cs"](./media/app-service-web-connect-web-app-to-saas-api/5-Write-Code-Which-Leverages-Swagger-Generated-Code.png)
 
-1. Aktualisieren Sie die Ansicht  `Contact` entsprechend der dynamischen Liste von Kontakten mit dem folgenden Code:  
-	<pre>// Add to the very top of the view file
-	@model IList&lt;MyContactsList.Web.Models.Contact&gt;
+1. Aktualisieren Sie die `Contact`-Ansicht, um die dynamische Kontaktliste durch den folgenden Code zu repräsentieren: <pre>// Add to the very top of the view file @model IList&lt;MyContactsList.Web.Models.Contact&gt;
 	
-	// Replace the default email addresses with the following
-    &lt;h3&gt;Public Contacts&lt;/h3&gt;
-    &lt;ul&gt;
-        @foreach (var contact in Model)
-        {
-            &lt;li&gt;&lt;a href=&quot;mailto:@contact.EmailAddress&quot;&gt;@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a&gt;&lt;/li&gt;
-        }
-    &lt;/ul&gt; 
-	</pre>
+	// Replace the default email addresses with the following &lt;h3&gt;Public Contacts&lt;/h3&gt; &lt;ul&gt; @foreach (var contact in Model) { &lt;li&gt;&lt;a href=&quot;mailto:@contact.EmailAddress&quot;&gt;@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a&gt;&lt;/li&gt; } &lt;/ul&gt; </pre>
 
-	![Contact.cshtml Code Updates](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
+	![Codeaktualisierung in "Contact.cshtml"](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
 
 ## Bereitstellen der Webanwendung in Web-Apps in App Service
 
-Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure-Web-App](web-sites-deploy.md).
+Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure Web-App](web-sites-deploy.md).
 
->[AZURE.NOTE] Wenn Sie in Azure App Service einsteigen möchten, ohne sich zuvor für ein Azure-Konto zu registrieren, wechseln Sie zur Website [App Service ausprobieren](http://go.microsoft.com/fwlink/?LinkId=523751), auf der Sie eine Web-App mit kurzer Gültigkeitsdauer für Einsteiger in App Service erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-## Was sich geändert hat
-* Informationen über die Änderung von Websites zu App Service finden Sie unter: [Azure App Service und seine Auswirkungen auf vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714)
-* Informationen über die Änderung vom alten Portal zum neuen Portal finden Sie unter: [Referenz zur Navigation im Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
+## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
-<!--HONumber=49-->
+<!--HONumber=54-->

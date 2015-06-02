@@ -1,4 +1,4 @@
-﻿Azure bestimmt, dass Ihre Anwendung Python verwendet, **wenn die folgenden Bedingungen zutreffen**:
+Azure bestimmt, dass Ihre Anwendung Python verwendet, **wenn beide der folgenden Bedingungen zutreffen**:
 
 - requirements.txt-Datei im Stammordner
 - eine .py-Datei im Stammordner ODER eine runtime.txt-Datei, die Python angibt
@@ -16,7 +16,7 @@ Wenn Sie alle Python-spezifischen Bereitstellungsschritte überspringen möchten
 
     .skipPythonDeployment
 
-Wenn Sie die Auflistung von statischen Dateien für die Django-Anwendung überspringen möchten:
+Wenn Sie die Sammlung statischer Dateien für die Django-Anwendung zu überspringen möchten:
 
     .skipDjango 
 
@@ -25,13 +25,12 @@ Für mehr Kontrolle über die Bereitstellung können Sie das Standardskript für
     .deployment
     \deploy.cmd
 
-Sie können die [Azure-Befehlszeilenschnittstelle][] verwenden, um Dateien zu erstellen.  Verwenden Sie diesen Befehl vom Projektordner aus:
+Sie können die [Azure-Befehlszeilenschnittstelle][] verwenden, um die Dateien zu erstellen. Verwenden Sie diesen Befehl vom Projektordner aus:
 
     azure site deploymentscript --python
 
-Wenn diese Dateien nicht vorhanden sind, wird von Azure ein temporäres Bereitstellungsskript erstellt und ausgeführt.  Es ist identisch mit dem, das Sie mit dem oben aufgeführten Befehl erstellen.
+Wenn diese Dateien nicht vorhanden sind, wird von Azure ein temporäres Bereitstellungsskript erstellt und ausgeführt. Es ist identisch mit dem, das Sie mit dem oben aufgeführten Befehl erstellen.
 
 [Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/downloads/
 
-
-<!--HONumber=52--> 
+<!--HONumber=54-->

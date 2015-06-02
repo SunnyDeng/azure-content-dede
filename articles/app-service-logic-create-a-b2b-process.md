@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="Erstellen eines B2B-Prozesses in Microsoft Azure App Service" 
    description="Übersicht über die Erstellung eines Business-to-Business-Prozesses" 
    services="app-service\logic" 
@@ -27,10 +27,10 @@ Ziel dieses Lernprogramms ist das Vermitteln, wie Northwind einen Geschäftsproz
 
 
 ## Veranschaulichte Funktionen 
-In diesem Lernprogramm werden die folgenden Funktionen veranschaulicht: 
+In diesem Lernprogramm werden die folgenden Funktionen veranschaulicht:
 
 - **Nachrichtentransport**: Einzelhändler und Lieferant können sich auf verschiedenen Plattformen befinden, aber dennoch eine Kommunikation einrichten. In diesem Lernprogramm kommunizieren sie über AS2 (Applicability Statement 2). AS2 ist eine beliebte Möglichkeit zur Übertragung von Daten zwischen Handelspartnern bei der Business-to-Business-Kommunikation.
-- **Datenpersistenz**: Nachdem die Nachricht über AS2 empfangen wurde, möchte Northwind sie vor der weiteren Verarbeitung beständig speichern. Mithilfe eines Connectors können Nachrichten beständig im eigenen Cloud-Speicher gespeichert werden. In diesem Lernprogramm werden Azure-Blobs als Cloud-Speicher für Northwind genutzt.
+- **Datenpersistenz:** Nachdem die Nachricht über AS2 empfangen wurde, möchte Northwind sie vor der weiteren Verarbeitung beständig speichern. Mithilfe eines Connectors können Nachrichten beständig im eigenen Cloud-Speicher gespeichert werden. In diesem Lernprogramm werden Azure-Blobs als Cloud-Speicher für Northwind genutzt.
 - **Erstellen eines Geschäftsprozesses**: Zum Errichten einer Lösung können (wie hier gezeigt) mehrere API-Anwendungen in einem Datenfluss zusammengefügt werden.
 
 
@@ -41,14 +41,14 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie ein grundlegendes Verst�
 ## Schritte zum Realisieren des Geschäftsszenarios
 **Erstellen und Konfigurieren der erforderlichen API-Apps**
 
-1. Erstellen Sie eine Instanz des **Azure Storage-Blob-Connectors**. Dies erfordert die Anmeldeinformationen für ein Azure Storage-Konto. Stellen Sie sicher, dass es bereit ist, bevor Sie beginnen, dieses Szenario zu erstellen.
-2. Erstellen Sie eine Instanz des **BizTalk Trading Partner Management**-Connectors. Hierfür ist eine leere SQL-Datenbank erforderlich. Stellen Sie sicher, dass sie bereit ist, bevor Sie beginnen, diese Instanz zu erstellen.
+1. Erstellen Sie eine Instanz des **Azure Storage-Blobconnectors**. Dies erfordert die Anmeldeinformationen für ein Azure Storage-Konto. Stellen Sie sicher, dass es bereit ist, bevor Sie beginnen, dieses Szenario zu erstellen.
+2. Erstellen Sie eine Instanz der **BizTalk-Handelspartnerverwaltung**. Hierfür ist eine leere SQL-Datenbank erforderlich. Stellen Sie sicher, dass sie bereit ist, bevor Sie beginnen, diese Instanz zu erstellen.
 3. Erstellen Sie eine Instanz des **AS2-Connectors**. Hierfür ist auch eine leere SQL-Datenbank erforderlich. Stellen Sie sicher, dass sie bereit ist, bevor Sie beginnen, diese Instanz zu erstellen. Wenn Sie außerdem Nachrichten im Rahmen der AS2-Verarbeitung archivieren möchten, können Sie Anmeldeinformationen für ein Azure-Blob bei dessen Erstellung angeben.
-4. Konfigurieren Sie den TPM-Dienst (Trading Partner Management), der erstellt wird:
+4. Konfigurieren Sie den TPM-Dienst (Trading Partner Management, Handelspartnerverwaltung), der erstellt wird:
 	1. Navigieren Sie zur Instanz des TPM-Diensts, die als Teil der oben genannten Schritte erstellt wird.
-	2. Verwenden Sie die Option **Partner** unter  *Components* zum **Hinzufügen** eines neuen Partners mit dem Namen **Contoso**, und fügen Sie die erforderliche AS2-Identität in seinem Profil hinzu.
-	3. Verwenden Sie die Option **Partner** unter  *Components* zum **Hinzufügen** eines neuen Partners mit dem Namen **Northwind**, und fügen Sie die erforderliche AS2-Identität in seinem Profil hinzu.
-	4. Verwenden Sie die Option **Vereinbarungen** unter  *Components* zum **Hinzufügen** einer neuen AS2-Vereinbarung zwischen Northwind und Contoso. Northwind ist hierbei der gehostete Partner, Contoso der Gastpartner. Konfigurieren Sie nach Bedarf während der Erstellung dieser Vereinbarung die Signatur, Verschlüsselung, Komprimierung und Bestätigungen. Für den Fall, dass Zertifikate verwendet werden müssen, können sie über die Option **Zertifikate** hochgeladen werden, wenn zum TPM-Dienst, der erstellt wird, navigiert wird.
+	2. Verwenden Sie die Option **Partner** unter *Komponenten* zum **Hinzufügen** eines neuen Partners mit dem Namen **Contoso**, und fügen Sie die erforderliche AS2-Identität in seinem Profil hinzu.
+	3. Verwenden Sie die Option **Partner** unter *Komponenten* zum **Hinzufügen** eines neuen Partners mit dem Namen **Northwind**, und fügen Sie die erforderliche AS2-Identität in seinem Profil hinzu.
+	4. Verwenden Sie die Option **Vereinbarungen** unter *Komponenten* zum **Hinzufügen** einer neuen AS2-Vereinbarung zwischen Northwind und Contoso. Northwind ist hierbei der gehostete Partner, Contoso der Gastpartner. Konfigurieren Sie nach Bedarf während der Erstellung dieser Vereinbarung die Signatur, Verschlüsselung, Komprimierung und Bestätigungen. Für den Fall, dass Zertifikate verwendet werden müssen, können sie über die Option **Zertifikate** hochgeladen werden, wenn zum TPM-Dienst, der erstellt wird, navigiert wird.
 
 
 ## Erstellen eines Datenflusses/Geschäftsprozesses
@@ -56,7 +56,7 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie ein grundlegendes Verst�
 
 ![][1]
 
-2. Sie müssen als Nächstes den **Azure Storage-Blob-Connector** ziehen und ablegen und dann die bereits erstellte Instanz wählen. Wählen Sie "Aktion" als Funktion und dann "Blob hochladen" als gewünschte Funktionalität aus. Konfigurieren Sie nach Bedarf.
+2. Sie müssen als Nächstes den **Azure Storage-Blobconnector** ziehen und ablegen und dann die bereits erstellte Instanz wählen. Wählen Sie "Aktion" als Funktion und dann "Blob hochladen" als gewünschte Funktionalität aus. Konfigurieren Sie nach Bedarf.
 
 3. Dann müssen Sie den Datenfluss erstellen bzw. bereitstellen.
 
@@ -72,4 +72,4 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie ein grundlegendes Verst�
 [1]: ./media/app-service-logic-create-a-b2b-process/Flow.jpg
 [2]: ./media/app-service-logic-create-a-b2b-process/Tracking.jpg
 
-<!--HONumber=49-->
+<!--HONumber=54-->

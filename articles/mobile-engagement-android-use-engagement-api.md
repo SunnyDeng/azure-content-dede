@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwenden der Engagement-API unter Android" 
-	description="Neuestes Android SDK - Verwenden der Engagement-API unter Android"
+	description="Neuestes Android SDK – Verwenden der Engagement-API unter Android"
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="kapiteir" 
@@ -18,52 +18,52 @@
 
 # Verwenden der Engagement-API unter Android
 
-Dieses Dokument ist eine Ergänzung zum Dokument [Integrieren von Engagement unter Android](mobile-engagement-android-integrate-engagement.md): Es bietet detaillierte Informationen zum Melden der Anwendungsstatistiken mithilfe der Engagement-API.
+Dieses Dokument ist ein Add-On zum Dokument [So integrieren Sie Engagement auf Android](mobile-engagement-android-integrate-engagement.md). Es bietet detaillierte Informationen zur Verwendung der Engagement-API zur Bereitstellung von Anwendungsstatistiken.
 
 Bedenken Sie, dass die einfachste Methode darin besteht, dass Ihre `Activity`-Unterklassen von der entsprechenden `EngagementActivity`-Klasse erben, wenn Engagement lediglich die Sitzungen, Aktivitäten, Abstürze und technischen Informationen Ihrer Anwendung melden soll.
 
-Wenn Sie weitere Schritte (z. B. anwendungsabhängige Ereignisse, Fehler und Aufträge melden) unternehmen oder die Aktivitäten Ihrer Anwendung auf eine andere Weise als in den `EngagementActivity`-Klassen implementiert, melden möchten, dann müssen Sie die Engagement-API verwenden.
+Wenn Sie darüber hinaus noch mehr Meldungen wünschen, z. B. wenn Sie anwendungsspezifische Ereignisse, Fehler und Aufträge melden möchten, oder wenn die Aktivitäten Ihrer Anwendung anders als in den `EngagementActivity`-Klassen implementiert gemeldet werden sollen, dann müssen Sie die Engagement-API verwenden.
 
-Die Engagement-API wird von der `EngagementAgent`-Klasse bereitgestellt. Eine Instanz dieser Klasse kann durch Aufrufen der statischen `EngagementAgent.getInstance(Context)`-Methode abgerufen werden (beachten Sie, dass das zurückgegebene `EngagementAgent`-Objekt ein Singleton ist).
+Die Engagement-API wird von der `EngagementAgent`-Klasse zur Verfügung gestellt. Eine Instanz dieser Klasse kann durch Aufruf der `EngagementAgent.getInstance(Context)` statischen Methode abgerufen werden (beachten Sie, dass das zurückgegebene `EngagementAgent`-Objekt ein Singleton-Objekt ist).
 
 ## Engagement-Konzepte
 
-Die folgenden Komponenten erweitern die allgemeinen [Mobile Engagement-Konzepte] (mobile-engagement-concepts.md)für die Android-Plattform.
+In den folgenden Abschnitten werden die [Mobile Engagement-Konzepte](mobile-engagement-concepts.md) für die Android-Plattform genauer dargestellt.
 
-### `Sitzung` und `Aktivität`
+### `Session` und `Activity`
 
-Wenn sich der Benutzer zwischen zwei *Aktivitäten* mehr als zwei Sekunden im Leerlauf befindet, dann wird diese Folge von *Aktivitäten* in zwei einzelne *Sitzungen* unterteilt. Diese paar Sekunden werden als "Sitzungszeitlimit" bezeichnet.
+Wenn sich der Benutzer zwischen zwei *Aktivitäten* mehr als zwei Sekunden im Leerlauf befindet, dann wird diese Folge von *Aktivitäten* in zwei einzelne *Sitzungen* unterteilt. Diese paar Sekunden werden als „Sitzungszeitlimit“ bezeichnet.
 
-Eine *Aktivität* ist normalerweise einem Bildschirm der Anwendung zugeordnet, d. h. die *Aktivität* beginnt, wenn der Bildschirm angezeigt wird, und endet, wenn der Bildschirm geschlossen wird: dies ist der Fall, wenn das Engagement SDK mithilfe der `EngagementActivity`-Klassen integriert wird.
+Eine *Aktivität* ist üblicherweise mit einem Bildschirm einer Anwendung verknüpft, d. h. die *Aktivität* startet, wenn der Bildschirm angezeigt wird und endet, wenn der Bildschirm geschlossen wird. Dies ist der Fall, wenn das Engagement-SDK über die `EngagementActivity`-Klassen integriert wird.
 
-Andererseits können *Aktivitäten* auch manuell mithilfe der Engagement-API gesteuert werden. Dadurch kann ein vorhandener Bildschirm in verschiedene Teilkomponenten unterteilt werden, um weitere Details zur Verwendung dieses Bildschirms zu erhalten (um z. B. zu erfahren, wie häufig und wie lange Dialogfelder innerhalb dieses Bildschirms verwendet werden).
+Aber *Aktivitäten* können auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann ein vorhandener Bildschirm in mehrere Unterabschnitte geteilt werden, um mehr Details über die Verwendung des Bildschirms zu erhalten (um beispielsweise zu erfahren, wie häufig und wie lange Dialoge in diesem Bildschirm verwendet werden).
 
-## Melden von Aktivitäten
+## Berichterstellung für Aktivitäten
 
-> [AZURE.IMPORTANT] Wenn Sie die `EngagementActivity`-Klasse und ihre Varianten, wie unter "Integrieren von Engagement unter Android" beschrieben, verwenden, müssen Sie die Aktivitäten nicht gemäß der Beschreibung in diesem Abschnitt melden.
+> [AZURE.IMPORTANT]Wenn Sie die `EngagementActivity`-Klasse und ihre Varianten, wie unter „Integrieren von Engagement unter Android“ beschrieben, verwenden, müssen Sie die Aktivitäten nicht gemäß der Beschreibung in diesem Abschnitt melden.
 
-### Starten einer neuen Aktivität durch den Benutzer
+### Benutzer startet eine neue Aktivität
 
 			EngagementAgent.getInstance(this).startActivity(this, "MyUserActivity", null);
 			// Passing the current activity is required for Reach to display in-app notifications, passing null will postpone such announcements and polls.
 
-Sie müssen `startActivity()` bei jeder Änderung der Benutzeraktivität aufrufen. Der erste Aufruf dieser Funktion startet eine neue Benutzersitzung.
+Sie müssen jedes Mal `startActivity()` aufrufen, wenn sich die Benutzeraktivität ändert. Der erste Aufruf dieser Funktion startet eine neue Benutzersitzung.
 
 Der beste Ort zum Aufrufen dieser Funktion ist die `onResume`-Rückruffunktion der einzelnen Aktivitäten.
 
-### Beenden der aktuellen Aktivität durch den Benutzer
+### Der Benutzer beendet seine aktuelle Aktivität
 
 			EngagementAgent.getInstance(this).endActivity();
 
-Sie müssen `endActivity()` mindestens einmal aufrufen, wenn der Benutzer seine letzte Aktivität beendet. Dadurch wird das Engagement-SDK darüber informiert, dass sich der Benutzer derzeit im Leerlauf befindet und die Benutzersitzung geschlossen werden muss, sobald das Sitzungszeitlimit abläuft (wenn Ihr Aufruf von `startActivity()` vor dem Sitzungszeitlimit abläuft, wird die Sitzung einfach fortgesetzt).
+Sie müssen `endActivity()` mindestens einmal aufrufen, wenn der Benutzer seine letzte Aktivität beendet. Dadurch wird das Engagement-SDK darüber informiert, dass sich der Benutzer derzeit im Leerlauf befindet und die Benutzersitzung geschlossen werden muss, sobald das Sitzungszeitlimit abläuft (wenn Ihr Aufruf `startActivity()` von vor dem Sitzungszeitlimit abläuft, wird die Sitzung einfach fortgesetzt).
 
 Der beste Ort zum Aufrufen dieser Funktion ist die `onPause`-Rückruffunktion der einzelnen Aktivitäten.
 
-## Melden von Ereignissen
+## Berichterstellung für Ereignisse
 
 ### Sitzungsereignisse
 
-Mithilfe von Sitzungsereignissen werden in der Regel Aktionen gemeldet, die von einem Benutzer im Verlauf seiner Sitzung durchgeführt werden.
+Sitzungsereignisse werden normalerweise verwendet, um die Aktionen eines Benutzers während seiner Sitzung zu melden.
 
 **Beispiel ohne zusätzliche Daten:**
 
@@ -111,7 +111,7 @@ Angenommen, Sie möchten Ereignisse melden, die beim Auslösen eines Übertragun
 
 ### Sitzungsfehler
 
-Sitzungsfehler werden in der Regel dazu verwendet, um die Fehler zu melden, die sich während seiner Sitzung auf den Benutzer auswirken.
+Sitzungsfehler werden normalerweise zum Melden der Fehler verwendet, die Auswirkungen auf den Benutzer während seiner Sitzung haben.
 
 **Beispiel:**
 
@@ -129,7 +129,7 @@ Sitzungsfehler werden in der Regel dazu verwendet, um die Fehler zu melden, die 
 
 ### Eigenständige Fehler
 
-Im Gegensatz zu Sitzungsfehlern können eigenständige Fehler außerhalb eines Sitzungskontextes auftreten.
+Im Gegensatz zu Sitzungsfehlern können eigenständige Fehler außerhalb des Kontexts einer Sitzung auftreten.
 
 **Beispiel:**
 
@@ -143,11 +143,11 @@ Das folgende Beispiel veranschaulicht die Meldung eines Fehlers, sobald auf dem 
 			  }
 			}
 
-## Melden von Aufträgen
+## Berichterstellung für Aufträge
 
 ### Beispiel
 
-Angenommen, Sie möchten die Dauer des Anmeldeprozesses melden:
+Angenommen, Sie möchten die Dauer des Anmeldevorgangs melden:
 			
 			[...]
 			public void signIn(Context context, ...) {
@@ -165,9 +165,9 @@ Angenommen, Sie möchten die Dauer des Anmeldeprozesses melden:
 			}
 			[...]
 
-### Melden von Fehlern während eines Auftrags
+### Berichterstellung zu Fehlern während eines Auftrags
 
-Fehler können einem aktiven Auftrag zugeordnet werden, anstatt sie einer aktuellen Benutzersitzung zuzuordnen.
+Fehler können mit einem ausgeführten Auftrag in Zusammenhang stehen anstatt mit der aktuellen Benutzersitzung.
 
 **Beispiel:**
 
@@ -175,7 +175,7 @@ Angenommen, Sie möchten einen Fehler während des Anmeldeprozesses melden:
 
 			[...]
 			public void signIn(Context context, ...) {
-
+			
 			  /* We need an Android context to call the Engagement API, if you are extending Activity, Service, you can pass "this" */
 			  EngagementAgent engagementAgent = EngagementAgent.getInstance(context);
 			
@@ -203,13 +203,13 @@ Angenommen, Sie möchten einen Fehler während des Anmeldeprozesses melden:
 
 ### Melden von Ereignissen während eines Auftrags
 
-Ereignisse können einem aktiven Auftrag zugeordnet werden, anstatt sie einer aktuellen Benutzersitzung zuzuordnen.
+Ereignisse können statt mit der aktuellen Benutzersitzung in Zusammenhang mit einem ausgeführten Auftrag stehen.
 
 **Beispiel:**
 
-Angenommen, wir verwenden ein soziales Netzwerk sowie einen Auftrag, um die Gesamtzeit zu melden, die der Benutzer mit dem Server verbunden ist. Der Benutzer kann im Hintergrund mit dem Server verbunden bleiben, auch wenn er eine andere Anwendung verwendet oder sich das Mobiltelefon im Ruhemodus befindet und somit keine Sitzung besteht.
+Angenommen, wir verfügen über ein soziales Netzwerk und verwenden einen Auftrag, um die Zeit insgesamt zu melden, die der Benutzer mit dem Server verbunden ist. Der Benutzer kann im Hintergrund mit dem Server verbunden bleiben, auch wenn er eine andere Anwendung verwendet oder sich das Mobiltelefon im Ruhemodus befindet und somit keine Sitzung besteht.
 
-Der Benutzer kann Nachrichten von seinen Freunden empfangen. Hierbei handelt es sich um ein Auftragsereignis.
+Der Benutzer kann Nachrichten von Freunden empfangen, hierbei handelt es sich um ein Auftragsereignis.
 			
 			[...]
 			public void signin(Context context, ...) {
@@ -230,13 +230,13 @@ Der Benutzer kann Nachrichten von seinen Freunden empfangen. Hierbei handelt es 
 
 ## Zusätzliche Parameter
 
-Ereignissen, Fehlern, Aktivitäten und Aufträgen können beliebige Daten angehängt werden.
+Ereignissen, Fehlern, Aktivitäten und Aufträgen können beliebige Daten zugeordnet werden.
 
-Diese Daten können strukturiert werden. Sie verwenden die "Bundle"-Klasse von Android (sie funktionieren in Android-Vorhaben eigentlich wie zusätzliche Parameter). Beachten Sie, dass ein Bündel Arrays oder andere Bündelinstanzen enthalten kann.
+Diese Daten können strukturiert werden. Sie verwenden die „Bundle“-Klasse von Android (sie funktionieren in Android-Vorhaben eigentlich wie zusätzliche Parameter). Beachten Sie, dass ein Bündel Arrays oder andere Bündelinstanzen enthalten kann.
 
-> [AZURE.IMPORTANT] Wenn Sie verpackbare oder serialisierbare Parameter einfügen, stellen Sie sicher, dass ihre `toString()`-Methode implementiert ist, damit eine lesbare Zeichenfolge zurückgegeben wird. Serialisierbare Klassen, die nicht flüchtige Felder enthalten, die nicht serialisiert werden können, führen zu einem Absturz von Android, wenn Sie `bundle.putSerializable("key",value);` aufrufen.
+> [AZURE.IMPORTANT]Wenn Sie verpackbare oder serialisierbare Parameter einfügen, stellen Sie sicher, dass ihre `toString()`-Methode implementiert ist, damit eine lesbare Zeichenfolge zurückgegeben wird. Serialisierbare Klassen, die nicht flüchtige Felder enthalten, die nicht serialisiert werden können, führen zu einem Absturz von Android, wenn Sie `bundle.putSerializable("key",value);` aufrufen.
 
-> [AZURE.WARNING] Spärliche Arrays in zusätzlichen Parametern werden nicht unterstützt, d. h. sie werden nicht als Array serialisiert. Sie sollten sie in Standardarrays konvertieren, bevor sie in zusätzlichen Parametern verwendet werden.
+> [AZURE.WARNING]Spärliche Arrays in zusätzlichen Parametern werden nicht unterstützt, d. h. sie werden nicht als Array serialisiert. Sie sollten sie in Standardarrays konvertieren, bevor sie in zusätzlichen Parametern verwendet werden.
 
 ### Beispiel
 
@@ -245,31 +245,31 @@ Diese Daten können strukturiert werden. Sie verwenden die "Bundle"-Klasse von A
 			extras.putString("ref_click", "http://foobar.com/blog");
 			EngagementAgent.getInstance(context).sendEvent("video_clicked", extras);
 
-### Grenzwerte
+### Grenzen
 
 #### Schlüssel
 
-Jeder Schlüssel im `Bundle` muss dem folgenden regulären Ausdruck entsprechen:
+Jeder Schlüssel in `Bundle` muss mit dem folgenden regulären Ausdruck übereinstimmen:
 
 `^[a-zA-Z][a-zA-Z_0-9]*`
 
-Das bedeutet, die Schlüssel müssen mit mindestens einem Buchstaben beginnen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_).
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_) beginnen müssen.
 
 #### Größe
 
 Extras sind auf **1024** Zeichen pro Aufruf begrenzt (nach der JSON-Codierung durch den Engagement-Dienst).
 
-Im vorherigen Beispiel hatte der an den Server gesendete JSON-Code eine Länge von 58 Zeichen:
+Im vorherigen Beispiel enthält die an den Server gesendete JSON 58 Zeichen:
 
 			{"ref_click":"http://foobar.com/blog","video_id":"123"}
 
-## Melden von Anwendungsinformationen
+## Informationen zur Berichterstellung
 
-Sie können Nachverfolgungsinformationen (oder beliebige andere anwendungsabhängige Informationen) mithilfe der `sendAppInfo()`-Funktion manuell melden.
+Sie können Berichte zur Nachverfolgung (oder zu anderen anwendungsspezifischen Informationen) mithilfe der `sendAppInfo()`-Funktion manuell erstellen.
 
-Beachten Sie, dass diese Informationen inkrementell gesendet werden können, d. h. nur der neueste Wert bleibt für einen Schlüssel für ein angegebenes Gerät erhalten.
+Beachten Sie, dass diese Informationen inkrementell gesendet werden können: Nur der letzte Wert für einen bestimmten Schlüssel wird für ein bestimmtes Gerät gespeichert.
 
-Wie bei Ereigniszusätzen wird die "Bundle"-Klasse zum Abstrahieren von Anwendungsinformationen verwendet. Beachten Sie, dass Arrays oder Teilbündel als einfache Zeichenfolgen behandelt werden (mithilfe der JSON-Serialisierung).
+Wie bei Ereigniszusätzen wird die „Bundle“-Klasse zum Abstrahieren von Anwendungsinformationen verwendet. Beachten Sie, dass Arrays oder Teilbündel als einfache Zeichenfolgen behandelt werden (mithilfe der JSON-Serialisierung).
 
 ### Beispiel
 
@@ -280,22 +280,22 @@ Hier folgt ein Codebeispiel zum Senden von Geschlecht und Geburtstag des Benutze
 			appInfo.putString("expiration", "2016-12-07"); // December 7th 2016
 			EngagementAgent.getInstance(context).sendAppInfo(appInfo);
 
-### Grenzwerte
+### Grenzen
 
 #### Schlüssel
 
-Jeder Schlüssel im `Bundle` muss dem folgenden regulären Ausdruck entsprechen:
+Jeder Schlüssel in `Bundle` muss mit dem folgenden regulären Ausdruck übereinstimmen:
 
 `^[a-zA-Z][a-zA-Z_0-9]*`
 
-Das bedeutet, die Schlüssel müssen mit mindestens einem Buchstaben beginnen, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_).
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_) beginnen müssen.
 
 #### Größe
 
 Anwendungsinformationen sind auf **1024** Zeichen pro Aufruf begrenzt (nach der JSON-Codierung durch den Engagement-Dienst).
 
-Im vorherigen Beispiel hatte der an den Server gesendete JSON-Code eine Länge von 44 Zeichen:
+Im vorherigen Beispiel enthält die an den Server gesendete JSON 44 Zeichen:
 
 			{"expiration":"2016-12-07","status":"premium"}
 
-<!--HONumber=47-->
+<!--HONumber=54-->

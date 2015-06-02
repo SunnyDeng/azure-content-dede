@@ -16,22 +16,20 @@
 	ms.date="02/12/2015" 
 	ms.author="kapiteir" />
 
-# Upgradeverfahren
+# Upgrade-Verfahren
 
-Wenn Sie bereits eine ältere Engagement-Version in Ihre Anwendung integriert haben, müssen Sie beim SDK-Upgrade die folgenden Punkte berücksichtigen.
+Wenn Sie bereits eine ältere Version von Engagement in Ihrer Anwendung integriert haben, müssen Sie die folgenden Punkte beim Aktualisieren des SDK beachten.
 
 Für jede neue SDK-Version müssen Sie zunächst die Ordner "EngagementSDK" und "EngagementReach" ersetzen (entfernen und in Xcode neu importieren).
 
 ## Version 1.16.0 bis 2.0.0
-Nachfolgend wird beschrieben, wie Sie eine SDK-Integration aus dem Capptain-Dienst von Capptain SAS in eine Azure Mobile Engagement-App migrieren. 
+Im Folgenden wird beschrieben, wie Sie die Migration einer SDK-Integration vom Capptain-Dienst, der von Capptain-SAS angeboten wird, in eine App von Azure Mobile Engagement durchführen. Wenn Sie von einer früheren Version migrieren, sehen Sie auf der Capptain-Website nach, wie eine Migration auf Version 1.16 durchgeführt wird. Führen Sie anschließend das folgende Verfahren aus.
 
->[Azure.IMPORTANT] Capptain und Mobile Engagement sind nicht dieselben Dienste, und das nachstehende Verfahren zeigt nur, wie die Client-App migriert wird. Eine SDK-Migration in der App führt NICHT zu einer Migration Ihrer Daten von den Capptain-Servern auf die Mobile Engagement-Server.
-
-Wenn Sie von einer früheren Version migrieren, sehen Sie auf der Capptain-Website nach, wie eine Migration auf Version 1.16 durchgeführt wird. Führen Sie anschließend das folgende Verfahren aus.
+>[Azure.IMPORTANT]Capptain und Mobile Engagement sind nicht dieselben Dienste, und die unten beschriebene Vorgehensweise hebt nur hervor, wie die Migration der Clientapp durchzuführen ist. Bei der Migration des SDK in die App werden Ihre Daten NICHT von den Capptain-Servern zu den Mobile Engagement-Servern migriert
 
 ### Agent
 
-Die Methode `registerApp:` wurde durch die neue Methode `init` ersetzt. Ihr Anwendungsdelegat muss entsprechend aktualisiert werden und eine Verbindungszeichenfolge verwenden:
+Die Methode `registerApp:` wurde durch die neue Methode `init:` ersetzt. Ihr Anwendungsdelegat muss entsprechend aktualisiert werden und eine Verbindungszeichenfolge verwenden:
 
 			- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 			{
@@ -40,7 +38,7 @@ Die Methode `registerApp:` wurde durch die neue Methode `init` ersetzt. Ihr Anwe
 			  [...]
 			}
 
-Die SmartAd-Verfolgung wurde aus dem SDK entfernt, und Sie müssen lediglich alle Instanzen der  `AETrackModule`-Klasse entfernen.
+Die SmartAd-Verfolgung wurde aus dem SDK entfernt, und Sie müssen lediglich alle Instanzen der Klasse `AETrackModule` entfernen.
 
 ### Änderungen von Klassennamen
 
@@ -61,4 +59,4 @@ Beispiele:
 -   Die Klasse `CapptainUtils` wird umbenannt in `EngagementUtils`.
 -   Die Klasse `CapptainViewController` wird umbenannt in `EngagementViewController`.
 
-<!--HONumber=47-->
+<!--HONumber=54-->

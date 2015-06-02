@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erste Schritte mit der Authentifizierung (Appcelerator) | Mobile Dev Center" 
 	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer iOS-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
 	services="mobile-services" 
@@ -20,7 +20,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
-In diesem Thema erfahren Sie, wie Sie Benutzer in Microsoft Azure Mobile Services über Ihre App authentifizieren. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.
+In diesem Thema erfahren Sie, wie Sie Benutzer in Windows Azure Mobile Services über Ihre App authentifizieren. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.
 
 Dieses Lernprogramm zeigt Ihnen die grundlegenden Schritte zur Aktivierung von Authentifizierung in Ihrer App:
 
@@ -32,25 +32,25 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 Um dieses Lernprogramm durchführen zu können, benötigen Sie Appcelerator Titanium Studio 3.2.1 oder neuer und iOS 7.0 und/oder neuer sowie Android 4.3 oder neuer.
 
-##<a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
+## <a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
 
 [AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)] 
 
-##<a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
+## <a name="permissions"></a> Einschränken von Berechtigungen für authentifizierte Benutzer
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
-3.	Öffnen Sie in Appcelerator Titanium Studio das Projekt, das Sie beim Abschließen des Lernprogramms [Erste Schritte mit Mobile Services] erstellt haben.
+3.	Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit Daten] geändert haben.
 
-4.	Klicken Sie auf die Schaltfläche "Ausführen", um das Projekt zu erstellen und die App im iPhone-Simulator zu starten. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.
+4.	Klicken Sie auf die Schaltfläche „Ausführen“, um das Projekt zu erstellen und die App im iPhone-Simulator zu starten. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.
     
     Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Mobile Services zuzugreifen, die TodoItem-Tabelle jetzt jedoch Authentifizierung erfordert.
 
 Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren, bevor diese Ressourcen vom Mobile Service anfordern.
 
-##<a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
+## <a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
-1.	Öffnen Sie die index.js-Datei und suchen Sie in der Tabelle "event Lister method" nach "Case 2":
+1.	Öffnen Sie die Datei „index.js“ und suchen Sie in der „Listener“-Methode für Tabellenereignisse nach `case 2:`.
 
     Sie können in Ihrer App entweder den Benutzer mit verfügbaren Identitätsanbietern auffordern oder automatisch einen bestimmten Identitätsanbieter vorschlagen.
 
@@ -94,9 +94,9 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
             }
         });
 
->[AZURE.NOTE] Wenn Sie einen anderen Identitätsanbieter als Google verwenden, ändern Sie den an **AuthorizeClient** übergebenen Wert in einen der folgenden Werte: *microsoftaccount*, *facebook*, *twitter* oder *windowsazureactivedirectory*.
+>[AZURE.NOTE]Falls Sie einen anderen Identitätsanbieter als Google verwenden, ändern Sie den an **authorizeClient** übergebenen Wert auf einen der folgenden Werte: *microsoftaccount*, *facebook*, *twitter* oder *windowsazureactivedirectory*.
 
-4.	Klicken Sie auf die Schaltfläche "Ausführen", um das Projekt zu erstellen, starten Sie die App im iPhone- oder Android-Simulator, und klicken Sie dann auf die Option "Mit Anmeldung", sodass die Anmeldung mit dem Identitätsanbieter erfolgt.
+4.	Klicken Sie auf die Schaltfläche „Ausführen“, um das Projekt zu erstellen, starten Sie die App im iPhone- oder Android-Simulator, und klicken Sie dann auf die Option „Mit Anmeldung“, sodass die Anmeldung mit dem Identitätsanbieter erfolgt.
 
     Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
@@ -110,7 +110,6 @@ Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren,
 <!-- Images. -->
 
 <!-- URLs. -->
+[Erste Schritte mit Daten]: partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started.md
 [Erste Schritte mit Mobile Services]: partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started.md
-<!--HONumber=49--> 
-
-<!--HONumber=49-->
+<!--HONumber=54-->

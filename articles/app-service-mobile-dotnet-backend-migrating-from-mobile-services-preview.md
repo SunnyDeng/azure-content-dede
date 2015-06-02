@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Migrieren von Mobile Services in eine mobile App Service-App" 
 	description="Erfahren Sie, wie einfach Sie Ihre Mobile Services-Anwendung in eine mobile App Service-App migrieren können." 
 	services="app-service\mobile" 
@@ -20,15 +20,15 @@
 
 In diesem Thema erfahren Sie, wie Sie eine vorhandene Anwendung aus Azure Mobile Services in eine neue mobile App Service-App migrieren können. Alle vorhandenen Mobile Services-Apps können auf einfache Weise in eine neue mobile App Service-App migriert werden. Während der Migration kann Ihre vorhandene Mobile Services-Anwendung weiterhin betrieben werden. Langfristig soll die Vorgehensweise für die Migration sogar noch weiter vereinfacht werden, aber bis dahin müssen für eine Migration die folgenden Schritte ausgeführt werden.
 
->[AZURE.NOTE] Eine Migration wird derzeit nur für Kunden unterstützt, die das Mobile Services .NET-Back-End verwenden. Anwendungen, die das Node.JS-Back-End verwenden, müssen vorerst in Mobile Services verbleiben.
+>[AZURE.NOTE]Eine Migration wird derzeit nur für Kunden unterstützt, die das Mobile Services .NET-Back-End verwenden. Anwendungen, die das Node.JS-Back-End verwenden, müssen vorerst in Mobile Services verbleiben.
 
 ##<a name="understand"></a>Grundlegendes zu mobilen App Service-Apps
 
 Mobile App Service-Apps sind eine neue Methode zum Erstellen mobiler Anwendungen mithilfe von Microsoft Azure. Weitere Einzelheiten zu mobilen Apps erhalten Sie im Thema [Was sind mobile Apps?].
 
-Bei einer Migration in mobile Apps kann die gesamte Funktionalität der App (sowie der Code) beibehalten werden. Darüber hinaus stehen neue Funktionen für die Anwendung zur Verfügung. Im Mobile Apps-Modell wird Ihr Code tatsächlich in einer Web-App ausgeführt (der neuen Version von Azure-Websites). Sie haben vollständige Kontrolle über die Web-App und deren Funktionsweise. Zusätzlich können jetzt Funktionen der Web-App verwendet werden, die bisher für Mobile Services-Kunden nicht verfügbar waren. Dazu gehören beispielsweise Traffic Manager und Entwicklungsslots. 
+Bei einer Migration in mobile Apps kann die gesamte Funktionalität der App (sowie der Code) beibehalten werden. Darüber hinaus stehen neue Funktionen für die Anwendung zur Verfügung. Im Mobile Apps-Modell wird Ihr Code tatsächlich in einer Web-App ausgeführt (der neuen Version von Azure-Websites). Sie haben vollständige Kontrolle über die Web-App und deren Funktionsweise. Zusätzlich können jetzt Funktionen der Web-App verwendet werden, die bisher für Mobile Services-Kunden nicht verfügbar waren. Dazu gehören beispielsweise Traffic Manager und Entwicklungsslots.
 
-Mit dem neuen Modell werden außerdem einige Schwierigkeiten beseitigt, die beim Arbeiten mit Mobile Services auftraten. Jetzt kann eine beliebige Version eines NuGet-Pakets bereitgestellt werden, ohne sich über Konflikte durch Abhängigkeiten Gedanken machen zu müssen. Weitere Informationen zu den Vorteilen der Migration finden Sie im Thema [Ich verwende bereits Websites und mobile Dienste - wie kann App Service mich unterstützen?].
+Mit dem neuen Modell werden außerdem einige Schwierigkeiten beseitigt, die beim Arbeiten mit Mobile Services auftraten. Jetzt kann eine beliebige Version eines NuGet-Pakets bereitgestellt werden, ohne sich über Konflikte durch Abhängigkeiten Gedanken machen zu müssen. Weitere Informationen zu den Vorteilen der Migration finden Sie im Thema [Ich verwende bereits Websites und mobile Dienste – welche Vorteile bietet App Service?].
 
 Wenn Sie eine mobile App Service-App erstellen, erhalten Sie Folgendes:
 
@@ -39,7 +39,7 @@ Wenn Sie eine mobile App Service-App erstellen, erhalten Sie Folgendes:
 ##<a name="overview"></a>Übersicht über die grundlegenden Schritte bei der Migration
 Die einfachste Form der Migration besteht darin, eine neue Instanz einer mobilen App Service-App zu erstellen. In vielen Fällen erfolgt die Migration einfach durch den Wechsel zum neuen Server-SDK und einer erneuten Veröffentlichung Ihres Codes auf einer neuen mobilen App. Es gibt jedoch einige Szenarien, die eine zusätzliche Konfiguration erfordern, beispielsweise erweiterte Authentifizierungsszenarien und das Arbeiten mit geplanten Aufträgen. Diese Fälle werden in den nachstehenden Abschnitten beschrieben.
 
->[AZURE.NOTE] Es wird empfohlen, die restlichen Abschnitte in diesem Thema vollständig zu lesen, bevor Sie mit einer Migration beginnen. Notieren Sie sich alle Features, die Sie verwenden möchten und die nachfolgend behandelt werden.
+>[AZURE.NOTE]Es wird empfohlen, die restlichen Abschnitte in diesem Thema vollständig zu lesen, bevor Sie mit einer Migration beginnen. Notieren Sie sich alle Features, die Sie verwenden möchten und die nachfolgend behandelt werden.
 
 Sie können Ihren Code im eigenen Tempo verschieben und testen. Wenn die mobile App bereit ist, können Sie eine neue Version Ihrer Clientanwendung veröffentlichen. Zu diesem Zeitpunkt verfügen Sie über zwei Kopien Ihrer Anwendung, die parallel ausgeführt werden. Wenn Sie eine Fehlerbehebung durchführen, muss diese auf beide Versionen angewendet werden. Wenn Sie Ihre Benutzer schließlich auf die neue Version aktualisiert haben, können Sie den ursprünglichen mobilen Dienst löschen.
 
@@ -58,7 +58,7 @@ Sie möchten sehr wahrscheinlich dieselbe Datenbank und denselben Notification H
 
 Mobile Apps bietet ein neues [Mobile App Server SDK], das einen Großteil der Funktionalität der Mobile Services-Laufzeit bereitstellt. Sie sollten das Mobile Services-NuGet-Paket aus Ihrem vorhandenen Projekt entfernen und stattdessen das Server-SDK einfügen. Sie müssen möglicherweise einige Anweisungen ändern. Visual Studio bietet hierbei Unterstützung. Das wichtigste Element, das Sie möglicherweise im Server-SDK vermissen, ist die Klasse "PushRegistrationHandler". Registrierungen werden in Mobile Apps etwas anders gehandhabt, es sind standardmäßig Registrierungen ohne Tags aktiviert. Das Verwalten von Tags kann mithilfe von benutzerdefinierten APIs erfolgen. Weitere Informationen finden Sie im Thema [Hinzufügen von Pushbenachrichtigungen zu Ihrer mobilen App].
 
-Geplante Aufträge sind nicht in Mobile Apps integriert, deshalb müssen vorhandene Aufträge in Ihrem .NET-Back-End manuell migriert werden. Eine Option hierbei ist das Erstellen eines geplanten [Webauftrags] auf der Mobile App-Codesite. Sie können auch einen Controller einrichten, der Ihren Auftragscode enthält und den [Azure Scheduler] zum Ansprechen dieses Endpunkts zum erwarteten Zeitpunkt konfigurieren.
+Geplante Aufträge sind nicht in Mobile Apps integriert, deshalb müssen vorhandene Aufträge in Ihrem .NET-Back-End manuell migriert werden. Eine Option hierbei ist das Erstellen eines geplanten [WebJob] auf der Mobile App-Codesite. Sie können auch einen Controller einrichten, der Ihren Auftragscode enthält und den [Azure Scheduler] zum Ansprechen dieses Endpunkts zum erwarteten Zeitpunkt konfigurieren.
 
 
 ##<a name="authentication"></a>Überlegungen zur Authentifizierung
@@ -72,12 +72,12 @@ Wenn Ihre Anwendung Benutzer-ID-Abhängigkeiten nutzt und IDs beispielsweise in 
     FacebookCredentials creds = (await user.GetIdentitiesAsync()).OfType< FacebookCredentials >().FirstOrDefault();
     string mobileServicesUserId = creds.Provider + ":" + creds.UserId;
 
-Wenn Sie Abhängigkeiten von Benutzer-IDs nutzen, ist es außerdem wichtig, nach Möglichkeit dieselbe Registrierung für einen Identitätsanbieter zu verwenden. Benutzer-IDs sind typischerweise auf die verwendete Anwendungsregistrierung ausgelegt, deshalb könnte das Einführen einer neuen Registrierung Probleme beim Abgleich von Benutzern mit den zugehörigen Daten verursachen. Falls aus bestimmten Gründen für Ihre Anwendung dieselbe Identitätsanbieterregistrierung benötigt wird, können Sie die folgenden Schritte ausführen:
+Wenn Sie Abhängigkeiten von Benutzer-IDs nutzen, ist es außerdem wichtig, nach Möglichkeit dieselbe Registrierung für einen Identitätsanbieter zu verwenden. Benutzer-IDs sind typischerweise auf die verwendete Anwendungsregistrierung ausgelegt, deshalb könnte das Einführen einer neuen Registrierung Probleme beim Abgleich von Benutzern mit den zugehörigen Daten verursachen. Falls aus bestimmten Gründen für Ihre Anwendung dieselbe Systematisierungsbestrebungen benötigt wird, können Sie die folgenden Schritte ausführen:
 
 1. Kopieren Sie Client-ID und die geheimen Clientverbindungsinformationen für jeden Anbieter, der von Ihrer Anwendung genutzt wird.
 2. Fügen Sie die /signin-*-Endpunkte des Gateways als zusätzlichen Umleitungs-URI für jeden Anbieter hinzu. 
 
->[AZURE.NOTE] Einige Anbieter, beispielsweise Twitter und Microsoft-Konto, lassen die Festlegung mehrerer Umleitungs-URIs in verschiedenen Domänen nicht zu. Wenn Ihre App einen dieser Anbieter verwendet und Abhängigkeiten von Benutzer-IDs verwendet, wird empfohlen, zu diesem Zeitpunkt keine Migration durchzuführen.
+>[AZURE.NOTE]Einige Anbieter, beispielsweise Twitter und Microsoft-Konto, lassen die Festlegung mehrerer Umleitungs-URIs in verschiedenen Domänen nicht zu. Wenn Ihre App einen dieser Anbieter verwendet und Abhängigkeiten von Benutzer-IDs verwendet, wird empfohlen, zu diesem Zeitpunkt keine Migration durchzuführen.
 
 ##<a name="updating clients"></a>Aktualisieren von Clients
 Sobald Sie über ein betriebsbereites Mobile App-Back-End verfügen, können Sie Ihre Clientanwendung für die Nutzung der neuen mobilen App aktualisieren. Mobile Apps umfasst außerdem eine neue Version der Mobile Services-Client-SDKs, die es Entwicklern ermöglichen, die Vorteile der neuen App Service-Features zu nutzen. Sobald Sie über eine Mobile App-Version Ihres Back-Ends verfügen, können Sie eine neue Version Ihrer Clientanwendung veröffentlichen, die die neue SDK-Version nutzt.
@@ -90,7 +90,7 @@ Die wichtigste Änderung, die im Clientcode erforderlich ist, betrifft den Konst
         "983682c4-f043-483e-a75b-8a8545fc1846"
     );
 
-Auf diese Weise kann der Client Anforderungen an die Komponenten Ihrer mobilen App routen. Nähere Einzelheiten zu Ihrer Zielplattform finden Sie im entsprechenden Thema unter [Erstellen einer mobilen App].
+Auf diese Weise kann der Client Anforderungen an die Komponenten Ihrer mobilen App routen. Nähere Einzelheiten zu Ihrer Zielplattform finden Sie im entsprechenden Thema [Erstellen einer mobilen App].
 
 Im selben Update müssen Sie Registrierungsaufrufe von Pushbenachrichtigungen anpassen, die Sie durchführen. Es gibt neue APIs, die Verbesserungen am Registrierungsprozess vornehmen (mit Verwendung von Windows als Beispiel):
 
@@ -105,14 +105,13 @@ Sobald Ihre Kunden diese Updates erhalten haben, können Sie die Mobile Services
 
 [Vorschau auf das Azure-Verwaltungsportal]: https://portal.azure.com/
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Was sind mobile Apps??]: app-service-mobile-value-prop-preview.md
-[Ich verwende bereits Websites und mobile Dienste - wie kann App Service mich unterstützen?]: /de-de/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview
+[Was sind mobile Apps?]: app-service-mobile-value-prop-preview.md
+[Ich verwende bereits Websites und mobile Dienste – welche Vorteile bietet App Service?]: /de-de/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview
 [Mobile App Server SDK]: http://www.nuget.org/packages/microsoft.azure.mobile.server
 [Erstellen einer mobilen App]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-preview.md
-[Hinzufügen von Pushbenachrichtigungen zu Ihrer App]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-push-preview.md
-[Hinzufügen von Authentifizierung zu Ihrer mobilen App]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-users-preview.md
+[Hinzufügen von Pushbenachrichtigungen zu Ihrer mobilen App]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-push-preview.md
+[Hinzufügen der Authentifizierung zu Ihrer mobilen App]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-users-preview.md
 [Azure Scheduler]: /de-de/documentation/services/scheduler/
-[Webauftrag]: websites-webjobs-resources.md
+[WebJob]: websites-webjobs-resources.md
 [Senden von plattformübergreifenden Pushbenachrichtigungen]: app-service-mobile-dotnet-backend-xamarin-ios-push-notifications-to-user-preview.md
-
-<!--HONumber=49-->
+<!--HONumber=54-->

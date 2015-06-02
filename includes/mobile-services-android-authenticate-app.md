@@ -1,5 +1,5 @@
-﻿
-1. Öffnen Sie die Datei "ToDoActivity.java" im **Projektexplorer** in Android Studio, und fügen Sie die folgenden Import-Anweisungen hinzu.
+
+1. Öffnen Sie die Datei "ToDoActivity.java" im **Projektexplorer** in Android Studio, und fügen Sie die folgenden import-Anweisungen hinzu.
 
 		import java.util.concurrent.ExecutionException;
 		import java.util.concurrent.atomic.AtomicBoolean;
@@ -11,7 +11,7 @@
 		import com.microsoft.windowsazure.mobileservices.authentication.MobileServiceAuthenticationProvider;
 		import com.microsoft.windowsazure.mobileservices.authentication.MobileServiceUser;
 
-2. Fügen Sie der **ToDoActivity**-Klasse die folgende Methode hinzu: 
+2. Fügen Sie der **ToDoActivity**-Klasse die folgende Methode hinzu:
 	
 		private void authenticate() {
 		    // Login using the Google provider.
@@ -34,9 +34,9 @@
 		}
 
 
-	Auf diese Weise wird eine neue Methode zur Verarbeitung des Authentifizierungsprozesses erstellt. Der Benutzer wird mithilfe einer Google-Anmeldung authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet. Ohne erfolgreiche Authentifizierung können Sie nicht fortfahren.
+	Diese neue Methode erledigt den Authentifizierungsprozess. Der Benutzer wird mithilfe einer Google-Anmeldung authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet. Ohne erfolgreiche Authentifizierung können Sie nicht fortfahren.
 
-    > [AZURE.NOTE] Falls Sie einen anderen Identitätsanbieter als Google verwenden, ändern Sie den an die **login**-Methode übergebenen Wert auf einen der folgenden Werte: _MicrosoftAccount_, _Facebook_, _Twitter_ oder _windowsazureactivedirectory_.
+    > [AZURE.NOTE]Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an die **login**-Methode übergebenen Wert in einen der folgenden Werte: _MicrosoftAccount_, _Facebook_, _Twitter_ oder _windowsazureactivedirectory_.
 
 3. Fügen Sie in der **onCreate**-Methode die folgende Codezeile im Anschluss an den Code hinzu, der das `MobileServiceClient`-Objekt instanziiert.
 
@@ -44,26 +44,25 @@
 
 	Dieser Aufruf startet den Authentifizierungsprozess.
 
-4. Verschieben Sie den verbleibenden Code nach "authenticate();" in der **onCreate**-Methode in eine neue **createTable**-Methode mit folgendem Code:
+4. Verschieben Sie den verbleibenden Code nach `authenticate();` in der **onCreate**-Methode in eine neue **createTable**-Methode, die etwa so aussieht:
 
 		private void createTable() {
 	
-			// Abrufen der zu verwendenden Mobile Service-Tabelleninstanz
+			// Get the Mobile Service Table instance to use
 			mToDoTable = mClient.getTable(ToDoItem.class);
 	
 			mTextNewToDo = (EditText) findViewById(R.id.textNewToDo);
 	
-			// Erstellen eines Adapters zum Binden der Elemente an die Ansicht
+			// Create an adapter to bind the items with the view
 			mAdapter = new ToDoItemAdapter(this, R.layout.row_list_to_do);
 			ListView listViewToDo = (ListView) findViewById(R.id.listViewToDo);
 			listViewToDo.setAdapter(mAdapter);
 	
-			// Laden der Elemente aus dem Mobile Service
+			// Load the items from the Mobile Service
 			refreshItemsFromTable();
 		}
 
-9. Klicken Sie im Menü **Ausführen** auf **App ausführen**, um die App zu starten, und melden Sie sich mit Ihrem gewählten Identitätsanbieter an. 
+9. Klicken Sie im Menü **Ausführen** auf **App ausführen**, um die App zu starten, und melden Sie sich mit dem Identitätsanbieter Ihrer Wahl an.
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
-
-<!--HONumber=49-->
+<!--HONumber=54-->

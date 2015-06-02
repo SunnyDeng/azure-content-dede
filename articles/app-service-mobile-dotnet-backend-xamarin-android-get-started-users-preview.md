@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erste Schritte mit der Authentifizierung für mobile Anwendungen in Xamarin Android" 
 	description="Erfahren Sie, wie Sie mobile Apps zum Authentifizieren Ihrer Xamarin Android-App über eine Vielzahl von Identitätsanbietern nutzen können, darunter AAD, Google, Facebook, Twitter und Microsoft." 
 	services="app-service\mobile" 
@@ -22,7 +22,7 @@
 
 In diesem Thema wird die Authentifizierung von Benutzern einer mobilen App Service-App über Ihre Clientanwendung veranschaulicht. In diesem Lernprogramm fügen Sie dem Schnellstartprojekt durch Verwenden eines von App Service unterstützten Identitätsanbieters eine Authentifizierungsfunktion hinzu. Nach der erfolgreichen Authentifizierung und Autorisierung durch Ihre mobile App wird die Benutzer-ID angezeigt.
 
-Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen außerdem zunächst das Lernprogramm [Erstellen einer Xamarin.Android-App] abschließen. 
+Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen außerdem zunächst das Lernprogramm [Erstellen einer Xamarin.Android-App] abschließen.
 
 ##<a name="register"></a>Registrieren Ihrer App für die Authentifizierung und Konfigurieren von App Services
 
@@ -44,9 +44,9 @@ Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor 
 
 1. Fügen Sie der **TodoActivity**-Klasse die folgende Eigenschaft hinzu:
 
-			private MobileServiceUser user;
+			private MobileServiceUser user;
 
-2. Fügen Sie der **ToDoActivity**-Klasse die folgende Methode hinzu: 
+2. Fügen Sie der **ToDoActivity**-Klasse die folgende Methode hinzu:
 
 	        private async Task Authenticate()
 	        {
@@ -61,11 +61,11 @@ Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor 
 	            }
 	        }
 
-    Auf diese Weise wird eine neue Methode zur Verarbeitung des Authentifizierungsprozesses erstellt. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet. 
+    Diese neue Methode erledigt den Authentifizierungsprozess. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet.
 
-    > [AZURE.NOTE] Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an **LoginAsync** oben übergebenen Wert auf einen der folgenden Werte: _MicrosoftAccount_, _Twitter_, _Google_ oder _WindowsAzureActiveDirectory_.
+    > [AZURE.NOTE]Falls Sie einen anderen Identitätsanbieter als ein Facebook verwenden, ändern Sie den an **LoginAsync** übergebenen Wert auf einen der folgenden Werte: _MicrosoftAccount_, _Twitter_, _Google_ oder _WindowsAzureActiveDirectory_.
 
-3. Fügen Sie in der **OnCreate**-Methode im Anschluss an den Code zur Instanziierung des `MobileServiceClient`-Objekts die folgende Codezeile hinzu.
+3. Fügen Sie in der **onCreate**-Methode die folgende Codezeile im Anschluss an den Code hinzu, der das `MobileServiceClient`-Objekt instanziiert.
 
 		// Get the Mobile App Table instance to use
         toDoTable = client.GetTable <ToDoItem> ();
@@ -75,17 +75,17 @@ Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor 
 	Dieser Aufruf startet den Authentifizierungsprozess und wartet asynchron auf eine Antwort.
 
 
-4. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten, und melden Sie sich mit Ihrem gewählten Identitätsanbieter an. 
+4. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten und sich mit dem Identitätsanbieter Ihrer Wahl anzumelden.
 
-   	Nachdem Sie sich erfolgreich angemeldet haben, zeigt die App die Liste der To-Do-Objekte an, und Sie können die Daten ändern.
+   	Nachdem Sie sich erfolgreich angemeldet haben, zeigt die App die Liste der Todo-Objekte an, und Sie können die Daten ändern.
 
 
 <!-- URLs. -->
-[Absenden einer App-Seite]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Meine Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 
 [Erstellen einer Xamarin.Android-App]: app-service-mobile-dotnet-backend-xamarin-android-get-started-preview.md
 
-[Azure-Verwaltungsportal]: https://portal.azure.com
+[Azure Management Portal]: https://portal.azure.com
 
-<!--HONumber=49-->
+<!--HONumber=54-->
