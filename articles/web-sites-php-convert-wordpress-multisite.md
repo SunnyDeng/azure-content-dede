@@ -76,7 +76,7 @@ Mit dem [WordPress MU Domain Mapping][wordpress-plugin-wordpress-mu-domain-mappi
 
 ## Aktivieren der Domänenzuordnung zur Web-App
 
-Im [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Planmodus **Kostenlos** wird das Hinzufügen benutzerdefinierter Domänen zu Web-Apps nicht unterstützt. Sie müssen in den Modus **Freigegeben** oder**Standard** wechseln. Gehen Sie dazu folgendermaßen vor:
+Im [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Planmodus **Kostenlos** wird das Hinzufügen benutzerdefinierter Domänen zu Web-Apps nicht unterstützt. Sie müssen in den Modus **Shared** oder**Standard** wechseln. Gehen Sie dazu folgendermaßen vor:
 
 * Melden Sie sich beim Azure-Portal an, und suchen Sie Ihre Web-App. 
 * Klicken Sie im Hauptbereich auf die Registerkarte **Scale**.

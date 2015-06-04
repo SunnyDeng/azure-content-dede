@@ -18,7 +18,7 @@
 
 # Skalieren einer Web-App in Azure App Service #
 
-Zur Steigerung von Leistung und Durchsatz für Ihre Web-Apps unter Microsoft Azure können Sie mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) Ihren[App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan vom Modus **Kostenlos** zum Modus **Freigegeben**,**Basic**, **Standard** oder **Premium** hochstufen.
+Zur Steigerung von Leistung und Durchsatz für Ihre Web-Apps unter Microsoft Azure können Sie mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) Ihren[App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan vom Modus **Kostenlos** zum Modus **Shared**,**Basic**, **Standard** oder **Premium** hochstufen.
 
 Das Skalieren von Azure-Web-Apps umfasst zwei zusammenhängende Vorgänge: Ändern des App Service-Plan-Modus auf einen höhere Servicelevel und Konfigurieren bestimmter Einstellungen nach dem Wechsel zum höheren Servicelevel. Beide Themen werden in diesem Artikel erläutert. Höhere Servicelevel wie die Modi **Standard** und **Premium** bieten bessere Stabilität und Flexibilität bei der Festlegung, wie Ressourcen auf Azure verwendet werden.
 
@@ -29,7 +29,7 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 > [AZURE.NOTE]Bevor Sie Web-Apps vom Modus **Kostenlos** in den Modus **Basic**, **Standard** oder **Premium** ändern, müssen Sie zuerst das für Ihr Microsoft Azure App Service-Abonnement geltende Ausgabenlimit entfernen. Informationen zum Anzeigen oder Ändern von Optionen für Ihr Microsoft Azure App Service-Abonnement finden Sie unter [Microsoft Azure-Abonnements][azuresubscriptions].
 
 <a name="scalingsharedorbasic"></a> <!-- ===================================== -->
-## Skalierung auf Modus "Freigegeben" oder "Basic"
+## Skalierung auf Modus "Shared" oder "Basic"
 <!-- ===================================== -->
 
 1. Öffnen Sie in Ihrem Browser das [Azure-Portal][portal].
@@ -38,11 +38,11 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 	
 	![Auswählen eines Plans][ChooseWHP]
 	
-4. Markieren Sie im Blatt **Wählen Sie Ihre Preisstufe** entweder den Modus **Freigegeben** oder **Basic**, und klicken Sie dann auf **Auswählen**.
+4. Markieren Sie im Blatt **Wählen Sie Ihre Preisstufe** entweder den Modus **Shared** oder **Basic**, und klicken Sie dann auf **Auswählen**.
 	
 	Auf der Registerkarte **Benachrichtigungen** wird in grüner Schrift der Text **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde.
 	
-5. Schieben Sie den Schieberegler **Instanz** von links nach rechts, um die Anzahl von Instanzen zu erhöhen, und klicken Sie in der Befehlsleiste auf **Speichern**. Die Instanzgrößenoption ist im Modus **Freigegeben** nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure][vmsizes].
+5. Schieben Sie den Schieberegler **Instanz** von links nach rechts, um die Anzahl von Instanzen zu erhöhen, und klicken Sie in der Befehlsleiste auf **Speichern**. Die Instanzgrößenoption ist im Modus **Shared** nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure][vmsizes].
 	
 	![Instanzgröße für Basic-Modus][ChooseBasicInstances]
 	
@@ -54,7 +54,7 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 
 > [AZURE.NOTE]Bevor Sie einen App Service-Plan in den Modus **Standard** oder **Premium** ändern, müssen Sie das für Ihr Microsoft Azure App Service-Abonnement geltende Ausgabenlimit entfernen. Andernfalls besteht das Risiko, dass Ihre Web-App nicht mehr verfügbar ist, wenn Sie Ihr Ausgabenlimit vor dem Ende der Abrechnungsperiode erreichen. Informationen zum Anzeigen oder Ändern von Optionen für Ihr Microsoft Azure App Service-Abonnement finden Sie unter [Microsoft Azure-Abonnements][azuresubscriptions].
 
-1. Gehen Sie für die Skalierung zum Modus **Standard** oder **Premium** zunächst vor wie bei der Skalierung auf **Freigegeben** oder **Basic**. Wählen Sie dann unter **Wählen Sie Ihre Preisstufe** den Modus **Standard** oder **Premium**, und klicken Sie anschließend auf **Auswählen**. 
+1. Gehen Sie für die Skalierung zum Modus **Standard** oder **Premium** zunächst vor wie bei der Skalierung auf **Shared** oder **Basic**. Wählen Sie dann unter **Wählen Sie Ihre Preisstufe** den Modus **Standard** oder **Premium**, und klicken Sie anschließend auf **Auswählen**. 
 	
 	Auf der Registerkarte **Benachrichtigungen** wird in grüner Schrift der Text **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde, und der **Autoskalierungsmodus** wird aktiviert.
 	
@@ -124,11 +124,11 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 ### Bitness ###
 
 - Die Modi **Basic**, **Standard** und **Premium** unterstützen 64-Bit- und 32-Bit-Anwendungen.
-- Die Planmodi **Kostenlos** und **Freigegeben** unterstützt nur 32-Bit-Anwendungen.
+- Die Planmodi **Kostenlos** und **Shared** unterstützt nur 32-Bit-Anwendungen.
 
 ### Debugger-Support ###
 
-- Debugger-Support ist für die Modi **Kostenlos**, **Freigegeben** und**Basic** bei 1 gleichzeitigen Verbindung pro App Service-Plan verfügbar.
+- Debugger-Support ist für die Modi **Kostenlos**, **Shared** und**Basic** bei 1 gleichzeitigen Verbindung pro App Service-Plan verfügbar.
 - Debugger-Support ist für die Modi **Standard** und **Premium** bei 5 gleichzeitigen Verbindungen pro App Service-Plan verfügbar.
 
 <a name="OtherFeatures"></a>
