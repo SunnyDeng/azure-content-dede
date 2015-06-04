@@ -67,7 +67,8 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 8. Falls Sie noch keine Web-App in Azure erstellt haben, kann Visual Studio Sie bei der Erstellung unterstützen. Stellen Sie im Dialogfeld **Microsoft Azure-Website konfigurieren** sicher, dass der Name Ihrer Website eindeutig ist. Klicken Sie dann auf **OK**.
 
-	<!--todo: need 2.5.1 screenshot-->![](media/cdn-websites-with-cdn/5-create-website.png)
+	<!--todo: need 2.5.1 screenshot-->
+	![](media/cdn-websites-with-cdn/5-create-website.png)
 
 9. Nachdem Ihre ASP.NET-Anwendung erstellt wurde, veröffentlichen Sie sie im Webveröffentlichungs-Aktivitätsbereich von Azure, indem Sie auf **`<app name>` jetzt auf dieser Website veröffentlichen** klicken. Klicken Sie auf **Veröffentlichen**, um den Vorgang abzuschließen.
 
