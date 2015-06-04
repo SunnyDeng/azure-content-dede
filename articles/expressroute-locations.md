@@ -113,4 +113,6 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren von privaten Verbindungen für
 - Stellen Sie sicher, dass Sie die [ExpressRoute-Voraussetzungen](expressroute-prerequisites.md) erfüllen.
 - Weitere Informationen finden Sie in den [FAQs](expressroute-faqs.md).
 - Wählen Sie Ihren Anbieter, und konfigurieren Sie die Verbindung. Konfigurationsinformationen finden Sie unter [Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter](expressroute-configuring-exps.md) oder [Konfigurieren einer ExpressRoute-Verbindung über einen Netzwerkdienstanbieter](expressroute-configuring-nsps.md).
-<!--HONumber=54-->
+
+
+<!---HONumber=54-->
