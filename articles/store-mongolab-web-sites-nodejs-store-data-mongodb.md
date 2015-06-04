@@ -48,19 +48,19 @@ Bevor Sie fortfahren, sollten Sie sicherstellen, dass Sie Folgendes installiert 
 Wenn Sie den Azure Store bereits kennengelernt haben, finden Sie in diesem Abschnitt einen Schnellstart. Fahren Sie andernfalls mit [Bereitstellen der Datenbank][provision] weiter unten fort.
  
 1. Öffnen Sie den Azure Marketplace, indem Sie auf **Neu** > **Marketplace** klicken.  
-	<!-- ![Store][button-store] -->
+<!-- ![Store][button-store] -->
 
 2. Klicken Sie auf das **MongoLab**-Add-On.  
-	![MongoLab][entry-mongolab]
+![MongoLab][entry-mongolab]
 3. Klicken Sie in der Liste der Add-Ons auf das **MongoLab**-Add-On und dann auf **Verbindungsinformationen**.  
-	![ConnectionInfoButton][button-connectioninfo]  
+![ConnectionInfoButton][button-connectioninfo]  
 4. Kopieren Sie den **MONGOLAB_URI** in die Zwischenablage.  
-	![ConnectionInfoScreen][screen-connectioninfo]
+![ConnectionInfoScreen][screen-connectioninfo]
   
 	>[AZURE.NOTE]Dieser URI enthält Ihren Benutzernamen und Ihr Kennwort für die Datenbank. Behandeln Sie diese Informationen als vertraulich, und geben Sie sie nicht weiter.
 
 5. Fügen Sie den Wert der Liste mit den **Verbindungszeichenfolgen** im **Konfigurationsmenü** Ihrer Web-App im Azure App Service hinzu:  
-	![WebAppConnectionStrings][focus-website-connectinfo]
+![WebAppConnectionStrings][focus-website-connectinfo]
 6. Geben Sie unter **Name** **MONGOLAB_URI** ein.
 7. Fügen Sie unter **Wert** die Verbindungszeichenfolge ein, die wir im vorhergehenden Abschnitt erzeugt haben.
 8. Wählen Sie im Dropdownfeld für den Typ die Option **Benutzerdefiniert** aus (anstelle des Standards **SQLAzure**).
@@ -582,4 +582,4 @@ Glückwunsch! Sie haben gerade eine "Node.js"-Anwendung mit einer von MongoLab g
 
 
 
-<!--HONumber=54-->
+<!----HONumber=54-->
