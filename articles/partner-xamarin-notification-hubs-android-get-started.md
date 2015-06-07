@@ -255,7 +255,7 @@ Der im Xamarin Component Store erhältliche Google Cloud Messaging Client verein
 
 Wenn Sie diese App im Emulator ausführen, stellen Sie sicher, dass Sie ein Android Virtual Device (AVD) verwenden, das Google-APIs unterstützt.
 
-	> [AZURE.IMPORTANT] In order to receive push notifications, you must set up a Google account on your Android Virtual Device (in the emulator, navigate to **Settings** and click **Add Account**). Also, make sure that the emulator is connected to the Internet.
+	> [AZURE.IMPORTANT] Um Pushbenachrichtigungen erhalten zu können, müssen Sie ein Google-Konto auf Ihrem virtuellen Android-Gerät einrichten (gehen Sie im Emulator auf **Einstellungen** und klicken Sie dann auf **Konto hinzufügen**). Stellen Sie sicher, dass der Emulator mit dem Internet verbunden ist.
 
 1. Klicken Sie unter **Tools** auf **Open Android Emulator Manager**, wählen Sie Ihr Gerät aus, und klicken Sie auf **Edit**.
 
@@ -294,7 +294,7 @@ So senden Sie Benachrichtigungen mit einer .NET-App:
         private static async void SendNotificationAsync()
         {
             NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            await hub.SendGcmNativeNotificationAsync("{ "data" : {"msg":"Hello from Azure!"}}");
+            await hub.SendGcmNativeNotificationAsync("{ \"data\" : {\"msg\":\"Hello from Azure!\"}}");
         }
 
 4. Fügen Sie dann folgende Zeilen zur Main-Methode hinzu:
