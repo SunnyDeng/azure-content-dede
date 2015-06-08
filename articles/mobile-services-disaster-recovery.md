@@ -56,7 +56,7 @@ So stellen Sie die mobilen Dienste nach einem Ausfall wieder her:
 
 4. Jetzt können Sie den sekundären Dienst verwenden, um den primären wiederherzustellen.
 
-    > [AZURE.IMPORTANT]Wenn Sie den Befehl in diesem Schritt ausführen, wird der sekundäre Dienst gelöscht, sodass seine Kapazität verwendet werden kann, um den primären Dienst wiederherzustellen. Wir empfehlen, Ihre Skripts und Einstellungen vor dem Ausführen des Befehls zu sichern, wenn Sie sie behalten möchten.
+    > [AZURE.IMPORTANT] Wenn Sie den Befehl in diesem Schritt ausführen, wird der sekundäre Dienst gelöscht, sodass seine Kapazität verwendet werden kann, um den primären Dienst wiederherzustellen. Wir empfehlen, Ihre Skripts und Einstellungen vor dem Ausführen des Befehls zu sichern, wenn Sie sie behalten möchten.
     
    Führen Sie diesen Befehl aus, wenn Sie bereit sind:
 
@@ -69,7 +69,7 @@ So stellen Sie die mobilen Dienste nach einem Ausfall wieder her:
 		info:    mobile recover command OK
 
 
-	> [AZURE.NOTE] It may take a few minutes after the command completes until you can see the changes in the portal.
+	> [AZURE.NOTE] Es kann nach Abschluss des Befehls einige Minuten dauern, bis die Änderungen im Portal angezeigt werden.
 
 5. Überprüfen Sie, ob alle Skripts korrekt wiederhergestellt wurden, indem Sie sie mit den Originalen in der Quellcodeverwaltung vergleichen. In den meisten Fällen werden Skripts automatisch ohne Datenverlust wiederhergestellt. Falls Sie aber eine Diskrepanz finden, können Sie das entsprechende Skript manuell wiederherstellen.
 
