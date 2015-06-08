@@ -1,6 +1,6 @@
-﻿<properties 
-	pageTitle="Überwachen und Verwalten von Azure Data Factory mit Azure PowerShell" 
-	description="Erfahren Sie, wie Sie von Ihnen erstellte Azure Data Factories mithilfe von Azure PowerShell überwachen und verwalten." 
+<properties 
+	pageTitle="Lernprogramm: Erstellen und Überwachen einer Azure Data-Factory mit Azure PowerShell" 
+	description="Informationen Sie zum Verwenden von Azure PowerShell erstellen und Überwachen von Azure Data-Factorys." 
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
@@ -13,417 +13,415 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="2/10/2015" 
+	ms.date="05/04/2015" 
 	ms.author="spelluru"/>
 
-# Überwachen und Verwalten von Azure Data Factory mit Azure PowerShell
-Die folgende Tabelle enthält die Cmdlets, die Sie zum Überwachen und Verwalten von Azure Data Factory mithilfe von Azure PowerShell verwenden können. 
+# Lernprogramm: Erstellen Sie und überwachen Sie eine Daten-Factory mit Azure PowerShell
+> [AZURE.SELECTOR]
+- [Tutorial Overview](data-factory-get-started.md)
+- [Using Data Factory Editor](data-factory-get-started-using-editor.md)
+- [Using PowerShell](data-factory-monitor-manage-using-powershell.md)
 
-> [WACOM.NOTE] In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets. 
+Die [Erste Schritte mit Azure Data Factory][adf-get-started] Lernprogramm erfahren Sie, wie erstellen und Überwachen einer Azure Data Factory mithilfe der [Azure Preview Portal][azure-preview-portal]. In diesem Lernprogramm werden Sie erstellen und Überwachen eine Azure Data-Factory mithilfe von Azure PowerShell-Cmdlets. Die Pipeline in der Data-Factory, die Sie in diesem Lernprogramm erstellen kopiert Daten aus einer Azure-Blob an einer Azure SQL-Datenbank.
+
+> [AZURE.NOTE]Alle Daten Factory-Cmdlets in diesem Artikel nicht behandelt. Finden Sie unter [Daten Factory-Cmdlet-Referenz][cmdlet-reference] für umfassende Dokumentation zu "Data Factory"-Cmdlets.
+
+##Voraussetzungen
+Abgesehen von den Voraussetzungen, die im Lernprogramm Übersichtsthema aufgeführt werden müssen Sie Azure PowerShell auf Ihrem Computer installiert haben. Wenn Sie es nicht noch, herunterladen und installieren [Azure PowerShell][download-azure-powershell] auf Ihrem Computer.
+
+##Inhalt dieses Lernprogramms
+In der folgende Tabelle sind die Schritte, die Sie, als Teil des Lernprogramms und ihre Beschreibungen ausführen müssen aufgeführt.
+
+Schritt | Beschreibung
+-----| -----------
+[Schritt 1: Erstellen einer Azure Data-Factory](#CreateDataFactory) | In diesem Schritt erstellen Sie eine Azure Data-Factory, die mit dem Namen **ADFTutorialDataFactoryPSH**. 
+[Schritt 2: Erstellen von verknüpften Dienste](#CreateLinkedServices) | In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **StorageLinkedService** und **AzureSqlLinkedService**. Der StorageLinkedService verbindet einen Azure-Speicher und AzureSqlLinkedService eine Azure SQL-Datenbank mit der ADFTutorialDataFactoryPSH verknüpft.
+[Schritt 3: Erstellen von Eingabe und Ausgabe von datasets](#CreateInputAndOutputDataSets) | In diesem Schritt definieren Sie zwei Datasets (** EmpTableFromBlob ** und **EmpSQLTable**), dienen als Eingabe- und Tabellen für die **Kopie Aktivität** in den ADFTutorialPipeline, den Sie im nächsten Schritt erstellen.
+[Schritt 4: Erstellen und Ausführen einer pipeline](#CreateAndRunAPipeline) | In diesem Schritt erstellen Sie eine Pipeline, die mit dem Namen **ADFTutorialPipeline** in der Factory Daten: **ADFTutorialDataFactoryPSH**... Die Pipeline haben eine **Kopie Aktivität** kopiert, die Daten aus einer Azure-Blob, das eine Ausgabetabelle der Azure-Datenbank.
+[Schritt 5: Überwachen von Datasets und pipeline](#MonitorDataSetsAndPipeline) | In diesem Schritt werden Sie die Datasets und die Pipeline mit Azure PowerShell in diesem Schritt überwachen.
+
+## <a name="CreateDataFactory"></a>Schritt 1: Erstellen einer Azure Data-Factory
+In diesem Schritt verwenden Sie Azure PowerShell zum Erstellen einer Azure Data-Factory, die mit dem Namen **ADFTutorialDataFactoryPSH**.
+
+1. Starten Sie **Azure PowerShell** und führen Sie die folgenden Befehle aus. Lassen Sie die Azure PowerShell bis zum Ende dieses Lernprogramms geöffnet. Wenn Sie zu schließen und erneut öffnen, müssen Sie diese Befehle erneut ausführen.
+	- Führen Sie **Add-AzureAccount** und geben Sie den Benutzernamen und das Kennwort, das Sie verwenden, um das Azure Preview Portal anmelden.  
+	- Führen Sie **Get-AzureSubscription** alle Abonnements für dieses Konto anzeigen.
+	- Führen Sie **Select-AzureSubscription** das Abonnement aus, die Sie arbeiten möchten. Dieses Abonnement sollte dasselbe sein, das Sie im Azure-Vorschauportal verwendet haben. 
+2. Wechseln Sie zu **AzureResourceManager** Modus als "Data Factory" Azure-Cmdlets sind in diesem Modus verfügbar.
+
+		Switch-AzureMode AzureResourceManager 
+3. Erstellen Sie eine Azure-Ressourcengruppe mit dem Namen: **ADFTutorialResourceGroup** durch den folgenden Befehl ausführen.
+   
+		New-AzureResourceGroup -Name ADFTutorialResourceGroup  -Location "West US"
+
+	Einige der Schritte in diesem Lernprogramm wird davon ausgegangen, dass Sie die Ressourcengruppe mit dem Namen verwenden **ADFTutorialResourceGroup**. Bei Verwendung eine anderen Ressourcengruppe müssen Sie anstelle von ADFTutorialResourceGroup in diesem Lernprogramm verwenden. 
+4. Führen Sie die **neu AzureDataFactory** -Cmdlet zum Erstellen einer Daten-Factory, die mit dem Namen: **ADFTutorialDataFactoryPSH**.  
+
+		New-AzureDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH –Location "West US"
 
 
-- [Get-AzureDataFactory](#get-azuredatafactory)
-- [Get-AzureDataFactoryLinkedService](#get-azuredatafactorylinkedservice)
-- [Get-AzureDataFactoryTable](#get-azuredatafactorytable)
-- [Get-AzureDataFactoryPipeline](#get-azuredatafactorypipeline)
-- [Get-AzureDataFactorySlice](#get-azuredatafactoryslice)
-- [Get-AzureDataFactoryRun](#get-azuredatafactoryrun)
-- [Save-AzureDataFactoryLog](#save-azuredatafactorylog)
-- [Get-AzureDataFactoryGateway](#get-azuredatafactorygateway)
-- [Set-AzureDataFactoryPipelineActivePeriod](#set-azuredatafactorypipelineactiveperiod)
-- [Set-AzureDataFactorySliceStatus](#set-azuredatafactoryslicestatus)
-- [Suspend-AzureDataFactoryPipeline](#suspend-azuredatafactorypipeline)
-- [Resume-AzureDataFactoryPipeline](#resume-azuredatafactorypipeline)
+	> [AZURE.NOTE]Der Name der Azure Data Factory muss global eindeutig sein. Wenn Sie die Fehlermeldung: **Daten Factory Name "ADFTutorialDataFactoryPSH" ist nicht verfügbar**, ändern Sie den Namen (z. B. YournameADFTutorialDataFactoryPSH). Verwenden Sie diesen Namen anstelle von ADFTutorialFactoryPSH beim Ausführen der Schritte in diesem Lernprogramm.
 
+## <a name="CreateLinkedServices"></a>Schritt 2: Erstellen von verknüpften Dienste
+Verknüpfte Dienste verknüpfen Datenspeicher oder Serverdienste mit einer Azure Data Factory. Ein Datenspeicher kann ein Azure-Speicher, Azure SQL-Datenbank oder einer lokalen SQL Server-Datenbank, die Eingabedaten enthält oder die Ausgabedaten für eine Pipeline Data Factory speichert. Ein Computingdienst ist der Dienst, der Eingabedaten verarbeitet und die ausgegebenen Daten erzeugt.
 
-##<a name="get-azuredatafactory"></a>Get-AzureDataFactory
-Ruft die Informationen zu einer bestimmten Data Factory oder alle Data Factorys in einem Azure-Abonnement innerhalb der angegebenen Ressourcengruppe ab.
- 
-###Beispiel 1
+In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **StorageLinkedService** und **AzureSqlLinkedService**. StorageLinkedService verknüpft den Dienst Links Azure-Speicherkonto und AzureSqlLinkedService eine Azure SQL-Datenbank mit der Factory Daten verknüpft: **ADFTutorialDataFactoryPSH**. Erstellen Sie eine Pipeline weiter unten in diesem Lernprogramm, die Daten aus einem Blob-Container in StorageLinkedService in einer SQL-Tabelle in AzureSqlLinkedService kopiert.
 
-    Get-AzureDataFactory -ResourceGroupName ADFTutorialResourceGroup
+### Erstellen eines verknüpften Diensts für ein Azure-Speicherkonto
+1.	Erstellen Sie eine JSON-Datei mit dem Namen **StorageLinkedService.json** in den **C:\ADFGetStartedPSH** mit folgendem Inhalt. Erstellen Sie den Ordner ADFGetStartedPSH, wenn sie nicht bereits vorhanden ist.
 
-Dieser Befehl gibt alle Data Factorys in der Ressourcengruppe "ADFTutorialResourceGroup" zurück.
- 
-###Beispiel 2
+		{
+		    "name": "StorageLinkedService",
+		    "properties":
+		    {
+		        "type": "AzureStorageLinkedService",
+		        "connectionString": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>"
+		    }
+		}
+2.	In der **Azure PowerShell**, wechseln Sie zu den **ADFGetStartedPSH** Ordner. 
+3.	Können Sie die **neu AzureDataFactoryLinkedService** -Cmdlet zum Erstellen eines verknüpften Diensts. Dieses Cmdlet und andere Daten Factory-Cmdlets, die Sie in diesem Lernprogramm verwenden, müssen Sie Werte übergeben, für die **ResourceGroupName** und **DataFactoryName** Parameter. Sie können auch **Get-AzureDataFactory** rufen Sie ein DataFactory-Objekt, und übergeben das Objekt ohne Eingabe von ResourceGroupName und DataFactoryName jedes Mal ein Cmdlet ausführen. Führen Sie folgenden Befehl die Ausgabe der Zuweisen der **Get-AzureDataFactory** Cmdlet, um eine Variable: **$df**. 
 
-    Get-AzureDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactory
+		$df=Get-AzureDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoyPSH
 
-Dieser Befehl gibt Details zur Data Factory "ADFTutorialDataFactory" in der Ressourcengruppe "ADFTutorialResourceGroup" zurück. 
+4.	Führen Sie nun die **neu AzureDataFactoryLinkedService** -Cmdlet zum Erstellen des Dienstes verknüpften: **StorageLinkedService**.
 
-## <a name="get-azuredatafactorylinkedservice"></a> Get-AzureDataFactoryLinkedService
-Das Get-AzureDataFactoryLinkedService-Cmdlet ruft Informationen zu einem bestimmten verknüpften Dienst oder allen verknüpften Dienste in einer Azure Data Factory ab.
+		New-AzureDataFactoryLinkedService $df -File .\StorageLinkedService.json
 
-### Beispiel 1
+	Hadn't Ausführen der **Get-AzureDataFactory** Cmdlet und die Ausgabe an **$df** Variable, müssten Sie folgende Werte für die Parameter ResourceGroupName und DataFactoryName angeben.
+		
+		New-AzureDataFactoryLinkedService -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactoryPSH -File .\StorageLinkedService.json
 
-    Get-AzureDataFactoryLinkedService -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory
- 
-Dieser Befehl gibt Informationen über alle verknüpften Dienste in der Azure Data Factory "ADFTutorialDataFactory" zurück.
+	Wenn Sie die Azure PowerShell in der Mitte des Lernprogramms schließen, werden Sie ausgeführt haben das Cmdlet "Get-AzureDataFactory" beim nächsten Starten von Azure PowerShell, um das Lernprogramm abgeschlossen.
 
+### Erstellen eines verknüpften Diensts für eine Azure SQL-Datenbank
+1.	Erstellen Sie eine JSON-Datei mit dem Namen AzureSqlLinkedService.json mit folgendem Inhalt.
 
-Sie können den Parameter "-DataFactory" anstelle der Parameter "DataFactoryName" und "ResourceGroupName" verwenden. Auf diese Weise müssen Sie den Namen der Ressourcengruppe und der Factory nur einmal eingeben und können das Data Factory-Objekt als Parameter für alle Cmdlets verwenden, die sowohl "ResourceGroupName" als auch "DataFactoryName" als Parameter akzeptieren.
-
-    $df = Get-AzureDataFactory -ResourceGroup ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory
+		{
+		    "name": "AzureSqlLinkedService",
+		    "properties":
+		    {
+		        "type": "AzureSqlLinkedService",
+		        "connectionString": "Server=tcp:<server>.database.windows.net,1433;Database=<databasename>;User ID=user@server;Password=<password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
+		    }
+		}
+2.	Führen Sie den folgenden Befehl zum Erstellen eines verknüpften Diensts. 
 	
-	Get-AzureDataFactoryLinkedService -DataFactory $df 
+		New-AzureDataFactoryLinkedService $df -File .\AzureSqlLinkedService.json
 
-### Beispiel 2
+	> [AZURE.NOTE]Überprüfen Sie, ob die **Zulassen des Zugriffs auf Azure Services** Einstellung für Ihren Azure SQL-Server aktiviert ist. Um zu überprüfen, und schalten Sie ihn aus, führen Sie folgende Schritte aus:
+	>
+	> <ol>
+<li>Klicken Sie auf <b>Durchsuchen</b> Hub auf der linken Seite und auf <b>SQL Server</b>.</li>
+<li>Wählen Sie Ihren Server, und klicken Sie auf <b>Einstellungen</b> auf der <b>SQL SERVER</b> Blade.</li>
+<li>In der <b>Einstellungen</b> Blade, klicken Sie auf <b>Firewall</b>.</li>
+<li>In der <b>Firewalll-Einstellungen</b> Blade, klicken Sie auf <b>auf</b> für <b>ermöglichen den Zugriff auf Azure Services</b>.</li>
+<li>Klicken Sie auf <b>ACTIVE</b> Hub auf der linken Seite, wechseln zu der <b>Data Factory</b> Blade Sie waren.</li>
+</ol>
 
-    Get-AzureDataFactoryLinkedService -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -Name MyBlobStore
+## <a name="CreateInputAndOutputDataSets"></a>Schritt 3: Erstellen von Eingabe- und Ausgabe von Tabellen
 
-Mit diesem Befehl werden Informationen zu dem verknüpften Dienst "MyBlobStore" in der Azure Data Factory "ADFTutorialDataFactory" zurückgegeben. 
+Im vorherigen Schritt erstellten Sie verknüpfte Dienste **StorageLinkedService** und **AzureSqlLinkedService** eine Azure Storage-Konto und Azure SQL-Datenbank mit der Factory Daten zu verknüpfen: **ADFTutorialDataFactoryPSH**. In diesem Schritt erstellen Sie Tabellen, die die Eingabe darstellen und Ausgabedaten für die Aktivität der Kopie in der Pipeline, die Sie im nächsten Schritt erstellen werden.
 
-Sie können den Parameter "-DataFactory" anstelle der Parameter "-ResourceGroup" und "-DataFactoryName" verwenden, wie nachfolgend dargestellt: 
+Eine Tabelle ist ein rechteckiges Dataset und die einzige Art von Dataset, die zu diesem Zeitpunkt unterstützt wird. In diesem Lernprogramm die Eingabetabelle verweist auf einen Blob-Container in der Azure-Speicher, StorageLinkedService verweist auf und Ausgabetabelle verweist auf eine SQL-Tabelle in der Azure SQL-Datenbank, das auf AzureSqlLinkedService verweist.
+
+### Vorbereiten von Azure Blob-Speicher und Azure SQL-Datenbank für das Lernprogramm
+Überspringen Sie diesen Schritt, wenn Sie das Lernprogramm unter durchgegangen sind [Erste Schritte mit Azure Data Factory][adf-get-started] Artikel.
+
+Sie müssen die folgenden Schritte zur Vorbereitung der Azure-Blob-Speicher und Azure SQL-Datenbank für dieses Lernprogramm ausführen.
+ 
+* Erstellen Sie einen Blob-Container mit dem Namen **Adftutorial** in Azure blob-Speicher, **StorageLinkedService** verweist. 
+* Erstellen und Hochladen eine Textdatei **emp.txt**, wie ein Blob, das **Adftutorial** Container. 
+* Erstellen Sie eine Tabelle mit dem Namen **emp** in Azure SQL-Datenbank in SQL Azure-Datenbank, die **AzureSqlLinkedService** verweist.
 
 
-    $df = Get-AzureDataFactory -ResourceGroup ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory
+1. Starten Sie den Editor, fügen Sie den folgenden Text, und speichern Sie sie als **emp.txt**  **C:\ADFGetStartedPSH** Ordner auf Ihrer Festplatte. 
+
+        John, Doe
+		Jane, Doe
+				
+2. Verwenden Sie Tools wie z. B. [Azure Storage Explorer](https://azurestorageexplorer.codeplex.com/) zum Erstellen der **Adftutorial** Container und zum Hochladen der **emp.txt** Datei auf den Container.
+
+    ![Azure-Speicher-Explorer][image-data-factory-get-started-storage-explorer]
+3. Verwenden Sie das folgende SQL-Skript zum Erstellen der **emp** Tabelle in Azure SQL-Datenbank.  
+
+
+        CREATE TABLE dbo.emp 
+		(
+			ID int IDENTITY(1,1) NOT NULL,
+			FirstName varchar(50),
+			LastName varchar(50),
+		)
+		GO
+
+		CREATE CLUSTERED INDEX IX_emp_ID ON dbo.emp (ID); 
+
+	Wenn Sie SQL Server 2014 auf Ihrem Computer installiert haben: befolgen Sie die Anweisungen aus [Schritt2: Herstellen einer Verbindung mit SQL-Datenbank Verwalten von Azure SQL-Datenbank mit SQL Server Management Studio][sql-management-studio] Artikel Ihre Azure SQL-Server herstellen, und führen Sie das SQL-Skript.
+
+	Wenn Sie Visual Studio 2013 auf Ihrem Computer installiert haben: im Azure-Vorschauportal ([http://portal.azure.com](http://portal.sazure.com)), klicken Sie auf **Durchsuchen** -Hub auf Links auf **SQL Server**, wählen Sie die Datenbank, und klicken Sie auf **in Visual Studio geöffnet** Schaltfläche auf der Symbolleiste der Azure SQL-Server herstellen, und führen Sie das Skript. Wenn der Client Zugriff auf den Azure SQL-Server nicht zulässig ist, müssen Sie die Firewall für den Azure SQL-Server ermöglicht den Zugriff auf Ihren Computer (IP-Adresse) konfigurieren. Finden Sie im Artikel über die Schritte zum Konfigurieren der Firewall für Ihren Azure SQL-Server aus.
+		
+### Erstellen der Eingabetabelle 
+Eine Tabelle ist ein rechteckiges Dataset und verfügt über ein Schema. In diesem Schritt erstellen Sie eine Tabelle namens **EmpBlobTable** verweist auf einen Blob-Container in der Azure-Speicher, dargestellt durch die **StorageLinkedService** Dienst verknüpft. Dieses Blob-Containers (** Adftutorial **) enthält die Eingabedaten in der Datei: **emp.txt**.
+
+1.	Erstellen Sie eine JSON-Datei mit dem Namen **EmpBlobTable.json** in den **C:\ADFGetStartedPSH** Ordner mit folgendem Inhalt:
+
+		{
+	    	"name": "EmpTableFromBlob",
+	        "properties":
+	        {
+	            "structure":  
+	                [ 
+	                { "name": "FirstName", "type": "String"},
+	                { "name": "LastName", "type": "String"}
+	            ],
+	            "location": 
+	            {
+	                "type": "AzureBlobLocation",
+	                "folderPath": "adftutorial/",
+	                "format":
+	                {
+	                    "type": "TextFormat",
+	                    "columnDelimiter": ","
+	                },
+	                "linkedServiceName": "StorageLinkedService"
+	            },
+	            "availability": 
+	            {
+	                "frequency": "hour",
+	                "interval": 1,
+	                "waitonexternal": {}
+	                }
+	        }
+		}
 	
-	Get-AzureDataFactoryLinkedService -DataFactory $df -Name MyBlobStore
-
-
-## <a name="get-azuredatafactorytable"></a> Get-AzureDataFactoryTable
-Das Get-AzureDataFactoryTable-Cmdlet ruft Informationen zu einer bestimmten Tabelle oder allen Tabellen in einer Azure Data Factory ab. 
-
-### Beispiel 1
-
-    Get-AzureDataFactoryTable -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory
-
-Dieser Befehl gibt Informationen über alle Tabellen in der Azure Data Factory "ADFTutorialDataFactory" zurück.
-
-Sie können den Parameter "-DataFactory" anstelle der Parameter "-ResourceGroup" und "-DataFactoryName" verwenden, wie nachfolgend dargestellt: 
-
-
-    $df = Get-AzureDataFactory -ResourceGroup ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory
+	Beachten Sie Folgendes:
 	
-	Get-AzureDataFactoryTable -DataFactory $df
+	- Speicherort **Typ** minFreeThreads auf **AzureBlobLocation**.
+	- **LinkedServiceName** minFreeThreads auf **StorageLinkedService**. 
+	- **FolderPath** festgelegt ist, um die **Adftutorial** Container. Sie können auch den Namen eines Blobs innerhalb des Ordners angeben. Da Sie nicht den Namen des Blobs angeben, werden Daten aus allen Blobs im Container als Eingabedaten betrachtet.  
+	- Format **Typ** minFreeThreads auf **TextFormat**
+	- Es gibt zwei Felder in der Textdatei – **FirstName** und **LastName** – durch ein Komma getrennt (** ColumnDelimiter **)	
+	- Die **Verfügbarkeit** festgelegt ist, um **stündlich** (** Häufigkeit ** festgelegt ist **Stunde** und **Intervall** festgelegt ist, um **1** ), so dass der Dienst Daten Factory Eingabedaten pro Stunde im Stammordner im Blob-Container (** Adftutorial **) angegeben.
 
-### Beispiel 2
-
-    Get-AzureDataFactoryTable -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -Name EmpTableFromBlob
-
-Dieser Befehl gibt Informationen über die Tabelle "EmpTableFromBlob" in der Azure Data Factory "ADFTutorialDataFactory" zurück.
-
-
-
-## <a name="get-azuredatafactorypipeline"></a>Get-AzureDataFactoryPipeline
-Das Get-AzureDataFactoryPipeline-Cmdlet ruft Informationen zu einer bestimmten Pipeline oder allen Pipelines in einer Azure Data Factory ab.
-
-### Beispiel 1
-
-    Get-AzureDataFactoryPipeline -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory
-
-Dieser Befehl gibt Informationen über alle Pipelines in der Azure Data Factory "ADFTutorialDataFactory" zurück.
-
-### Beispiel 2
-
-    Get-AzureDataFactoryPipeline -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -Name ADFTutorialPipeline
-
-Ruft Informationen über die Pipeline "ADFTutorialPipeline" in der Azure Data Factory "ADFTutorialDataFactory" ab.
-
-## <a name="get-azuredatafactoryslice"> </a> Get-AzureDataFactorySlice
-Das Get-AzureDataFactorySlice-Cmdlet ruft alle Slices für eine Tabelle in einer Azure Data Factory ab, die nach dem StartDateTime und vor der EndDateTime produziert werden. Der Datenslice mit dem Status "Bereit" ist für eine Nutzung durch abhängige Slices bereit.
-
-In der folgenden Tabelle sind alle Status eines Slices und ihre Beschreibungen aufgeführt.
-
-<table border="1">	
-	<tr>
-		<th align="left">Status</th>
-		<th align="left">Beschreibung</th>
-	</tr>	
-
-	<tr>
-		<td>Ausstehende Ausführung</td>
-		<td>Die Datenverarbeitung wurde noch nicht gestartet.</td>
-	</tr>	
-
-	<tr>
-		<td>In Bearbeitung</td>
-		<td>Die Datenverarbeitung wird ausgeführt.</td>
-	</tr>
-
-	<tr>
-		<td>Bereit</td>
-		<td>Die Datenverarbeitung ist abgeschlossen, und der Datenslice ist bereit.</td>
-	</tr>
-
-	<tr>
-		<td>Fehler</td>
-		<td>Fehler bei der Ausführung, die den Slice erstellt.</td>
-	</tr>
-
-	<tr>
-		<td>Überspringen</td>
-		<td>Die Verarbeitung des Slices wird übersprungen.</td>
-	</tr>
-
-	<tr>
-		<td>Wiederholen</td>
-		<td>Erneuter Versuch der Ausführung, die den Slice erstellt.</td>
-	</tr>
-
-	<tr>
-		<td>Zeitüberschreitung</td>
-		<td>Zeitüberschreitung bei der Datenverarbeitung des Slices.</td>
-	</tr>
-
-	<tr>
-		<td>Ausstehende Überprüfung</td>
-		<td>Der Datenslice wartet auf Überprüfung im Hinblick auf Überprüfungsrichtlinien, bevor es verarbeitet wird.</td>
-	</tr>
-
-	<tr>
-		<td>Überprüfung wiederholen</td>
-		<td>Die Überprüfung des Slices wird wiederholt.</td>
-	</tr>
-
-	<tr>
-		<td>Fehler bei der Überprüfung</td>
-		<td>Fehler beim Überprüfen des Slices.</td>
-	</tr>
-
-	<tr>
-		<td>Lange Wiederholung</td>
-		<td>Ein Slice weist diesen Status auf, wenn "Lange Wiederholung" in der JSON-Tabelle angegeben wird und reguläre Wiederholungen für den Slice fehlgeschlagen sind.</td>
-	</tr>
-
-	<tr>
-		<td>Überprüfung wird ausgeführt</td>
-		<td>Überprüfung des Slices (basierend auf den in der JSON-Tabelle definierten Richtlinien) wird ausgeführt.</td>
-	</tr>
-
-</table>
-
-Sie können für die einzelnen Slices einen Drilldown ausführen und weitere Informationen zu der Ausführung anzeigen, die den Slice erstellt, indem Sie die Cmdlets "Get-AzureDataFactoryRun" und "Save-AzureDataFactoryLog" verwenden.
-
-### Beispiel
-
-    Get-AzureDataFactorySlice -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -StartDateTime 2014-05-20T10:00:00
-
-Dieser Befehl ruft alle Slices, für die Tabelle "EmpSQLTable" in der Azure Data Factory "ADFTutorialDataFactory" ab, die nach 2014-05-20T10:00:00 (GMT) erstellt wurde. Ersetzen Sie Datum und Uhrzeit mit dem Startdatum und der Uhrzeit, das bzw. die Sie bei der Ausführung von "Set-AzureDataFactoryPipelineActivePeriod" angegeben haben.
-
-## <a name="get-azuredatafactoryrun"></a> Get-AzureDataFactoryRun
-
-Das "Get-AzureDataFactoryRun"-Cmdlet ruft alle Ausführungen für einen Datenslice einer Tabelle in einer Azure Data Factory ab.  Eine Tabelle in einer Azure Data Factory besteht aus Slices auf der Zeitachse. Die Breite eines Slices wird durch den Zeitplan (stündlich/täglich) bestimmt. Die Ausführung ist eine Verarbeitungseinheit für einen Slice. Im Falle von Wiederholungen, oder wenn Sie Ihren Slice im Falle von Fehlern erneut ausführen, kann es eine oder mehrere Ausführungen für einen Slice geben. Ein Slice wird durch seine Startzeit identifiziert. Aus diesem Grund müssen Sie für das "Get-AzureDataFactoryRun"-Cmdlet die Startzeit des Slices aus den Ergebnissen des "Get-AzureDataFactorySlice"-Cmdlets übergeben.
-
-Um beispielsweise eine Ausführung für den folgenden Slice abzurufen, verwenden Sie 2015-04-02T20:00:00. 
-
-    ResourceGroupName  	: ADFTutorialResourceGroup
-    DataFactoryName 	: ADFTutorialDataFactory
-    TableName 			: EmpSQLTable
-    Start 				: 5/2/2014 8:00:00 PM
-    End 				: 5/3/2014 8:00:00 PM
-    RetryCount 			: 0
-    Status 				: Ready
-    LatencyStatus 		:
-
-
-
-### Beispiel
-
-    Get-AzureDataFactoryRun -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -ResourceGroupName ADFTutorialResourceGroup -StartDateTime 2014-05-21T16:00:00
-
-Dieser Befehl ruft alle Ausführungen für Slices der Tabelle "EmpSQLTable" in der Azure Data Factory "ADFTutorialDataFactory" beginnend mit 16 Uhr Uhr GMT am 05/21/2014 ab.
-
-## <a name="save-azuredatafactorylog"></a> Save-AzureDataFactoryLog
-Das Save-AzureDataFactoryLog-Cmdlet lädt Protokolldateien im Zusammenhang mit der Azure HDInsight-Verarbeitung von Pig- oder Hive-Projekten oder für benutzerdefinierte Aktivitäten auf Ihre lokale Festplatte herunter. Sie führen zunächst das "Get-AzureDataFactoryRun"-Cmdlet aus, um eine ID für eine Aktivitätsausführung für einen Datenslice zu erhalten, und verwenden dann diese ID, um Protokolldateien aus dem BLOB-Speicher (Binary Large Object) abzurufen, der mit dem HDInsight-Cluster verbunden ist. 
-
-Wenn Sie den Parameter **-DownloadLogs** nicht angeben, gibt das Cmdlet nur den Speicherort der Protokolldateien zurück. 
-
-Wenn Sie den Parameter **-DownloadLogs** ohne Angabe eines Ausgabeverzeichnisses angeben (**-Output**-Parameter), werden die Protokolldateien in den standardmäßigen Ordner **Dokumente** heruntergeladen. 
-
-Wenn Sie den Parameter **-DownloadLogs** zusammen mit einem Ausgabeordner angeben (**-Output**), werden die Protokolldateien in den angegebenen Ordner heruntergeladen. 
-
-
-### Beispiel 1
-Dieser Befehl speichert die Protokolldateien für die Aktivitätsausführung mit der ID "841b77c9-d56c-48d1-99a3-8c16c3e77d39", wobei die Aktivität zu einer Pipeline in der Data Factory mit dem Namen "LogProcessingFactory" in der Ressourcengruppe mit dem Namen "ADF" gehört. Die Protokolldateien werden im Ordner "C:\Test" gespeichert. 
-
-	Save-AzureDataFactoryLog -ResourceGroupName "ADF" -DataFactoryName "LogProcessingFactory" -Id "841b77c9-d56c-48d1-99a3-8c16c3e77d39" -DownloadLogs -Output "C:\Test"
+	Wenn Sie kein **Dateiname** für eine **input** **Tabelle**, alle Dateien/Blobs aus der Eingabeordner (** FolderPath **) gelten als Eingaben. Wenn Sie einen Dateinamen in der JSON-Datei angeben, wird nur die angegebene Datei/der angegebene Blob als Eingabe betrachtet. Finden Sie die Beispieldateien aus dem [Lernprogramm][adf-tutorial] Beispiele.
  
+	Wenn Sie nicht angeben einer **Dateiname** für eine **Ausgabetabelle**, die generierte Dateien in der **FolderPath** werden im folgenden Format benannt: Daten. < Guid > .txt (Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt.).
 
-### Beispiel 2
-Dieser Befehl speichert die Protokolldateien im Ordner "Dokumente" (Standard).
+	Um **folderPath** und **fileName** dynamisch basierend auf der **SliceStart**-Zeit festzulegen, verwenden Sie die **partitionedBy**-Eigenschaft. Im folgenden Beispiel verwendet folderPath die Angaben für Jahr, Monat und Tag aus "SliceStart" (Startzeit des zu verarbeitenden Slices) und "fileName" die Angabe für Stunde aus "SliceStart". Wenn beispielsweise ein Slice für den Zeitpunkt "2014-10-20T08:00:00" erzeugt wird, wird "folderName" auf "wikidatagateway/wikisampledataout/2014/10/20" und "filName" auf "08.csv" festgelegt.
+
+	  	"folderPath": "wikidatagateway/wikisampledataout/{Year}/{Month}/{Day}",
+        "fileName": "{Hour}.csv",
+        "partitionedBy": 
+        [
+        	{ "name": "Year", "value": { "type": "DateTime", "date": "SliceStart", "format": "yyyy" } },
+            { "name": "Month", "value": { "type": "DateTime", "date": "SliceStart", "format": "MM" } }, 
+            { "name": "Day", "value": { "type": "DateTime", "date": "SliceStart", "format": "dd" } }, 
+            { "name": "Hour", "value": { "type": "DateTime", "date": "SliceStart", "format": "hh" } } 
+        ],
+
+	> [AZURE.NOTE]Finden Sie unter [JSON Scripting Reference](http://go.microsoft.com/fwlink/?LinkId=516971) ausführliche Informationen zu JSON-Eigenschaften.
+
+2.	Führen Sie den folgenden Befehl zum Erstellen der Tabelle Daten-Factory.
+
+		New-AzureDataFactoryTable $df -File .\EmpBlobTable.json
+
+### Erstellen der Ausgabetabelle
+In diesem Teil des Schritts, erstellen Sie eine Ausgabetabelle mit dem Namen **EmpSQLTable** die auf einer SQL-Tabelle verweist (** emp **) in der Azure SQL-Datenbank, die durch dargestellt ist die **AzureSqlLinkedService** Dienst verknüpft. Die Pipeline kopiert Daten aus der Eingabe-Blob, das die **emp** Tabelle.
+
+1.	Erstellen Sie eine JSON-Datei mit dem Namen **EmpSQLTable.json** in den **C:\ADFGetStartedPSH** Ordner mit folgendem Inhalt.
+		
+		{
+		    "name": "EmpSQLTable",
+		    "properties":
+		    {
+		        "structure":
+		        [
+		            { "name": "FirstName", "type": "String"},
+		            { "name": "LastName", "type": "String"}
+		        ],
+		        "location":
+		        {
+		            "type": "AzureSQLTableLocation",
+		            "tableName": "emp",
+		            "linkedServiceName": "AzureSqlLinkedService"
+		        },
+		        "availability": 
+		        {
+		            "frequency": "Hour",
+		            "interval": 1            
+		        }
+		    }
+		}
+
+     Beachten Sie Folgendes:
+	
+	* Speicherort **Typ** minFreeThreads auf **AzureSQLTableLocation**.
+	* **LinkedServiceName** minFreeThreads auf **AzureSqlLinkedService**.
+	* **Tablename** minFreeThreads auf **emp**.
+	* Befinden sich drei Spalten – **ID**, **FirstName**, und **LastName** – in der Tabelle emp in der Datenbank-ID ist eine Identitätsspalte, daher Sie nur angeben müssen, aber **FirstName** und **LastName** hier.
+	* Die **Verfügbarkeit** minFreeThreads auf **stündlich** (** Häufigkeit ** festgelegt **Stunde** und **Intervall** festgelegt **1**). Die Service Factory von Daten generiert eine Ausgabe Datenslice pro Stunde in die **emp** Tabelle in der Azure SQL-Datenbank.
+
+2.	Führen Sie den folgenden Befehl zum Erstellen der Tabelle Daten-Factory.
+	
+		New-AzureDataFactoryTable $df -File .\EmpSQLTable.json
 
 
-	Save-AzureDataFactoryLog -ResourceGroupName "ADF" -DataFactoryName "LogProcessingFactory" -Id "841b77c9-d56c-48d1-99a3-8c16c3e77d39" -DownloadLogs
+## <a name="CreateAndRunAPipeline"></a>Schritt 4: Erstellen und Ausführen einer pipeline
+In diesem Schritt erstellen Sie eine Pipeline mit einer **Kopie Aktivität** verwendet, die **EmpTableFromBlob** als Eingabe und **EmpSQLTable** als Ausgabe.
+
+1.	Erstellen Sie eine JSON-Datei mit dem Namen **ADFTutorialPipeline.json** in den **C:\ADFGetStartedPSH** Ordner mit folgendem Inhalt: 
+
+		{
+		    "name": "ADFTutorialPipeline",
+		    "properties":
+		    {   
+		        "description" : "Copy data from an Azure blob to an Azure SQL table",
+		        "activities":   
+		        [
+		            {
+		                "name": "CopyFromBlobToSQL",
+		                "description": "Copy data from the adftutorial blob container to emp SQL table",
+		                "type": "CopyActivity",
+		                "inputs": [ {"name": "EmpTableFromBlob"} ],
+		                "outputs": [ {"name": "EmpSQLTable"} ],     
+		                "transformation":
+		                {
+		                    "source":
+		                    {                               
+		                        "type": "BlobSource"
+		                    },
+		                    "sink":
+		                    {
+		                        "type": "SqlSink"
+		                    }   
+		                },
+		                "Policy":
+		                {
+		                    "concurrency": 1,
+		                    "executionPriorityOrder": "NewestFirst",
+		                    "style": "StartOfInterval",
+		                    "retry": 0,
+		                    "timeout": "01:00:00"
+		                }       
+		            }
+		        ],
+		        "start": "2015-03-03T00:00:00Z",
+		        "end": "2015-03-04T00:00:00Z"
+		    }
+		}  
+
+	Beachten Sie Folgendes:
+
+	- Im Bereich Aktivitäten ist es nur eine Aktivität, deren **Typ** minFreeThreads auf **CopyActivity**.
+	- Geben Sie für die Aktivität, dass festgelegt ist **EmpTableFromBlob** und Ausgabe für die Aktivität, dass festgelegt ist **EmpSQLTable**.
+	- In der **Transformation** Abschnitt **BlobSource** als Quelltyp angegeben ist und **SqlSink** als Senkentyp angegeben ist.
+
+	> [AZURE.NOTE]Ersetzen Sie den Wert der **start** Eigenschaft mit dem aktuellen Tag und **End** Wert mit am nächsten Tag. Sowohl start und Ende Uhrzeitangaben müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601). Zum Beispiel: 2014-10-14T16:32:41Z. Die **End** Zeit ist optional, aber wir werden es in diesem Lernprogramm verwenden. Wenn Sie keinen Wert zum Angeben der **End** -Eigenschaft wird berechnet als "** Start + 48 Stunden **". Geben Sie zum Ausführen der Pipeline auf unbestimmte Zeit **9, 9/9999** als Wert für die **End** Eigenschaft. Im obigen Beispiel ergeben sich 24 Datenslices, da jede Stunde ein Datenslice erstellt wird.
+	
+	> [JSON-Scripting-Referenz](http://go.microsoft.com/fwlink/?LinkId=516971)
+2.	Führen Sie den folgenden Befehl zum Erstellen der Tabelle Daten-Factory. 
+		
+		New-AzureDataFactoryPipeline $df -File .\ADFTutorialPipeline.json
+
+**Glückwunsch!** Sie haben erfolgreich eine Azure Data Factory, verknüpfte Dienste, Tabellen und eine Pipeline erstellt und die Pipeline geplant.
+
+## <a name="MonitorDataSetsAndPipeline"></a>Schritt 5: Überwachen der Datasets und die pipeline
+In diesem Schritt verwenden Sie Azure PowerShell zur Überwachung der Aktivitäten in einem Azure Data-Factory.
+
+1.	Führen Sie **Get-AzureDataFactory** und die Ausgabe einer Variablen $df zuzuweisen.
+
+		$df=Get-AzureDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH
  
+2.	Führen Sie **Get-AzureDataFactorySlice** Details über alle Segmente der der **EmpSQLTable**, ist der Ausgabetabelle der Pipeline.
 
-### Beispiel 3
-Dieser Befehl gibt den Speicherort der Protokolldateien zurück. Beachten Sie, dass der Parameter "-DownloadLogs" nicht angegeben wird. 
-  
-	Save-AzureDataFactoryLog -ResourceGroupName "ADF" -DataFactoryName "LogProcessingFactory" -Id "841b77c9-d56c-48d1-99a3-8c16c3e77d39"
- 
+		Get-AzureDataFactorySlice $df -TableName EmpSQLTable -StartDateTime 2015-03-03T00:00:00
 
+	> [AZURE.NOTE]Ersetzen Sie Jahr, Monat und Datumsteil der **StartDateTime** Parameter mit dem aktuellen Jahr, Monat und Datum. Dieser sollte übereinstimmen, die **Starten** Wert in der Pipeline JSON.
 
+	24 Segmente, eines für jede Stunde von 12: 00 Uhr des aktuellen Tag um 12: 00 Uhr des nächsten Tages sollte angezeigt werden.
+	
+	**Erste Segment:**
 
-## <a name="get-azuredatafactorygateway"></a> Get-AzureDataFactoryGateway
-Das Get-AzureDataFactoryGateway-Cmdlet ruft Informationen über ein bestimmtes Gateway oder alle Gateways in einer Azure Data Factory ab. Sie müssen ein Gateway auf dem lokalen Computer installieren, damit Sie einen lokalen SQL Server als verknüpften Dienst zu einer Data Factory hinzufügen können.
+		ResourceGroupName : ADFTutorialResourceGroup
+		DataFactoryName   : ADFTutorialDataFactoryPSH
+		TableName         : EmpSQLTable
+		Start             : 3/3/2015 12:00:00 AM
+		End               : 3/3/2015 1:00:00 AM
+		RetryCount        : 0
+		Status            : PendingExecution
+		LatencyStatus     :
+		LongRetryCount    : 0
 
-### Beispiel 1
-    Get-AzureDataFactoryGateway -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory
-Dieser Befehl gibt Informationen über alle Gateways in der Azure Data Factory "ADFTutorialDataFactory" zurück.
+	**Letzte Schicht:**
 
-### Beispiel 2
+		ResourceGroupName : ADFTutorialResourceGroup
+		DataFactoryName   : ADFTutorialDataFactoryPSH
+		TableName         : EmpSQLTable
+		Start             : 3/4/2015 11:00:00 PM
+		End               : 3/4/2015 12:00:00 AM
+		RetryCount        : 0
+		Status            : PendingExecution
+		LatencyStatus     : 
+		LongRetryCount    : 0
 
-    Get-AzureDataFactoryGateway -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -Name ADFTutorialGateway
+3.	Führen Sie **Get-AzureDataFactoryRun** die Details der abzurufenden Aktivität ausgeführt wird, für eine **bestimmten** Slice. Ändern Sie den Wert von der **StartDateTime** Parameter entsprechend der **Start** Ausführungszeit des Segments aus der obigen Ausgabe. Der Wert der **StartDateTime** muss [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601). Zum Beispiel: 2014-03-03T22:00:00Z.
 
-Dieser Befehl gibt Informationen über das Gateway "ADFTutorialGateway" in der Azure Data Factory "ADFTutorialDataFactory" zurück.
+		Get-AzureDataFactoryRun $df -TableName EmpSQLTable -StartDateTime 2015-03-03T22:00:00
 
-## <a name="set-azuredatafactorypipelineactiveperiod"></a> Set-AzureDataFactoryPipelineActivePeriod
-Dieses Cmdlet legt den aktiven Zeitraum für die Datenslices fest, die von der Pipeline verarbeitet werden. Bei Verwendung von "Set-AzureDataFactorySliceStatus" müssen Sie sicherstellen, dass das Startdatum und das Enddatum des Slices im aktiven Zeitraum der Pipeline liegen.
+	Eine Ausgabe ähnlich der folgenden sollte angezeigt werden:
 
-Sobald die Pipelines erstellt wurden, können Sie die Dauer angeben, in der die Datenverarbeitung von Daten erfolgt. Durch Angeben des aktiven Zeitraums für eine Pipeline definieren Sie die Zeitdauer, in der die Datenslices basierend auf den Verfügbarkeitseigenschaften, die für jede ADF-Tabelle definiert wurden, verarbeitet werden.
+		Id                  : 3404c187-c889-4f88-933b-2a2f5cd84e90_635614488000000000_635614524000000000_EmpSQLTable
+		ResourceGroupName   : ADFTutorialResourceGroup
+		DataFactoryName     : ADFTutorialDataFactoryPSH
+		TableName           : EmpSQLTable
+		ProcessingStartTime : 3/3/2015 11:03:28 PM
+		ProcessingEndTime   : 3/3/2015 11:04:36 PM
+		PercentComplete     : 100
+		DataSliceStart      : 3/8/2015 10:00:00 PM
+		DataSliceEnd        : 3/8/2015 11:00:00 PM
+		Status              : Succeeded
+		Timestamp           : 3/8/2015 11:03:28 PM
+		RetryAttempt        : 0
+		Properties          : {}
+		ErrorMessage        :
+		ActivityName        : CopyFromBlobToSQL
+		PipelineName        : ADFTutorialPipeline
+		Type                : Copy
 
-### Beispiel
+> [AZURE.NOTE]Finden Sie unter [Daten Factory-Cmdlet-Referenz][cmdlet-reference] für umfassende Dokumentation zu "Data Factory"-Cmdlets.
 
-    Set-AzureDataFactoryPipelineActivePeriod  -Name ADFTutorialPipeline -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -StartDateTime 2014-05-21T16:00:00 -EndDateTime 2014-05-22T16:00:00
-
-Mit diesem Befehl wird der aktive Zeitraum für die Datenslices, die von der Pipeline "ADFTutoiralPipeline" verarbeitet werden, von 5/21/2014 4 PM GMT bis 5/22/2014 4 PM GMT festgelegt.
-
-## <a name="set-azuredatafactoryslicestatus"></a> Set-AzureDataFactorySliceStatus
-Legt den Status eines Slices für eine Tabelle fest. Das Startdatum und das Enddatum des Slices muss in dem aktiven Zeitraum der Pipeline liegen.
-
-### Unterstützte Werte für den Status
-Jeder Datenslice für eine Tabelle durchläuft unterschiedliche Phasen. Diese Phasen unterscheiden sich geringfügig dahingehend, ob die Überprüfungsrichtlinien angegeben wurden.
-
-
-- Wenn keine Überprüfungsrichtlinien angegeben wurden: Ausstehende Ausführung -> In Bearbeitung -> Bereit
-- Wenn Überprüfungsrichtlinien angegeben wurden: Ausstehende Ausführung -> Ausstehende Überprüfung -> In Bearbeitung -> Bereit
-
-Die folgende Tabelle enthält eine Beschreibung der möglichen Status eines Slices, und Sie erfahren, ob der Status mithilfe von "Set-AzureDataFactorySliceStatus" festgelegt werden kann oder nicht.
-
-<table border="1">	
-	<tr>
-		<th>Status</th>
-		<th>Beschreibung</th>
-		<th>Kann mithilfe des Cmdlets festgelegt werden ></th>
-	</tr>	
-
-	<tr>
-		<td>Ausstehende Ausführung</td>
-		<td>Die Datenverarbeitung wurde noch nicht gestartet.</td>
-		<td>Y</td>
-	</tr>	
-
-	<tr>
-		<td>In Bearbeitung</td>
-		<td>Die Datenverarbeitung wird ausgeführt.</td>
-		<td>N</td>
-	</tr>
-
-	<tr>
-		<td>Bereit</td>
-		<td>Die Datenverarbeitung ist abgeschlossen, und der Datenslice ist bereit.</td>
-		<td>Y</td>
-	</tr>
-
-	<tr>
-		<td>Fehler</td>
-		<td>Fehler bei der Ausführung, die den Slice erstellt.</td>
-		<td>N</td>
-	</tr>
-
-	<tr>
-		<td>Überspringen</td>
-		<td>Die Verarbeitung des Slices wird übersprungen.</td>
-		<td>Y</td>
-	</tr>
-
-	<tr>
-		<td>Wiederholen</td>
-		<td>Erneuter Versuch der Ausführung, die den Slice erstellt.</td>
-		<td>N</td>
-	</tr>
-
-	<tr>
-		<td>Zeitüberschreitung</td>
-		<td>Zeitüberschreitung bei der Datenverarbeitung.</td>
-		<td>N</td>
-	</tr>
-
-	<tr>
-		<td>Ausstehende Überprüfung</td>
-		<td>Der Datenslice wartet auf Überprüfung im Hinblick auf Überprüfungsrichtlinien, bevor es verarbeitet wird.</td>
-		<td>Y</td>
-	</tr>
-
-	<tr>
-		<td>Überprüfung wiederholen</td>
-		<td>Die Überprüfung des Slices wird wiederholt.</td>
-		<td>N</td>
-	</tr>
-
-	<tr>
-		<td>Fehler bei der Überprüfung</td>
-		<td>Fehler beim Überprüfen des Slices.</td>
-		<td>N</td>
-	</tr>
-	</table>
-
-
-### Unterstützte Werte - Aktualisierungstyp
-Für jede Tabelle in einer Azure Data Factory müssen Sie beim Festlegen des Status eines Slices angeben, ob die Statusaktualisierung für nur die Tabelle gilt oder ob die Statusaktualisierungen für alle betroffenen Slices übertragen werden sollen.
-
-<table border="1">	
-	<tr>
-		<th>Aktualisierungstyp</th>
-		<th>Beschreibung</th>
-		<th>Kann mithilfe des Cmdlets festgelegt werden</th>
-	</tr>
-
-	<tr>
-		<td>Individual</td>
-		<td>Legt den Status der einzelnen Slices für die Tabelle in dem angegebenen Zeitraum fest</td>
-		<td>Y</td>
-	</tr>
-
-	<tr>
-		<td>UpstreamInPipeline</td>
-		<td>Legt den Status jedes Slices für die Tabelle und alle abhängigen Tabellen (upstream) fest, die als Eingabetabellen für Aktivitäten in der Pipeline verwendet werden.</td>
-		<td>Y</td>
-	</tr>
-
-</table>
-## <a name="suspend-azuredatafactorypipeline"></a> Suspend-AzureDataFactoryPipeline
-Das Suspend-AzureDataFactoryPipeline-Cmdlet hält die angegebene Pipeline in einer Azure Data Factory an. Sie können die Pipeline später mithilfe des "Resume-AzureDataFactoryPipeline"-Cmdlets fortsetzen.
-
-### Beispiel
-
-    Suspend-AzureDataFactoryPipeline -Name ADFTutorialPipeline -DataFactoryName ADFTutorialDataFactory -ResourceGroupName ADFTutorialResourceGroup
-
-Dieser Befehl hält die Pipeline "ADFTutorialPipeline" in der Azure Data Factory "ADFTutorialDataFactory" an.
-
-## <a name="resume-azuredatafactorypipeline"></a> Resume-AzureDataFactoryPipeline
-Durch das Resume-AzureDataFactoryPipeline-Cmdlet wird die angegebene Pipeline fortgesetzt, die sich derzeit im angehaltenen Zustand in einer Azure Data Factory befindet. 
-
-### Beispiel
-
-    Resume-AzureDataFactoryPipeline ADFTutorialPipeline -DataFactoryName ADFTutorialDataFactory -ResourceGroupName ADFTutorialResourceGroup
-
-Mit diesem Befehl wird die Pipeline "ADFTutorialPipeline" in der Azure Data Factory "ADFTutorialDataFactory" fortgesetzt, die zuvor durch Verwendung des Befehls "Suspend-AzureDataFactoryPipeline" angehalten wurde.
-
-## Siehe auch
+## Nächste Schritte
 
 Artikel | Beschreibung
 ------ | ---------------
-[Überwachen und Verwalten der Azure Data Factory mit dem Azure-Vorschauportal][monitor-manage-using-portal] | In diesem Artikel wird beschrieben, wie eine Azure Data Factory mithilfe des Azure-Vorschauportals überwacht und verwaltet wird.
-[Aktivieren von Pipelines zum Arbeiten mit lokalen Daten][use-onpremises-datasources] | Dieser Artikel enthält eine exemplarische Vorgehensweise zum Kopieren von Daten aus einer lokalen SQL Server-Datenbank in einen Azure-BLOB.
-[Verwenden von Pig und Hive mit Data Factory][use-pig-and-hive-with-data-factory] | Dieser Artikel enthält eine exemplarische Vorgehensweise, in der gezeigt wird, wie eine HDInsight-Aktivität verwendet wird, um ein Hive-/Pig-Skript zur Verarbeitung von Eingabedaten auszuführen, um Ausgabedaten zu produzieren.
-[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][adf-tutorial] | In diesem Artikel wird in einer umfassenden exemplarischen Vorgehensweise die Implementierung eines realen Szenarios mithilfe von Azure Data Factory veranschaulicht, um Einblicke aus Protokolldateien zu gewinnen.
-[Verwenden von benutzerdefinierten Aktivitäten in einer Data Factory][use-custom-activities] | Dieser Artikel enthält eine exemplarische Vorgehensweise mit schrittweisen Anleitungen zum Erstellen einer benutzerdefinierten Aktivität und deren Verwendung in einer Pipeline.
-[Problembehandlung für Data Factory][troubleshoot] | In diesem Artikel wird beschrieben, wie Probleme in Azure Data Factory behoben werden.
-[Azure Data Factory-Entwicklerreferenz][developer-reference] | Die Entwicklerreferenz enthält umfassende Referenzinformationen für Cmdlets, JSON-Skripts, Funktionen usw. 
-[Azure Data Factory-Cmdlet-Referenz][cmdlet-reference] | Diese Referenz enthält Einzelheiten zu allen **Data Factory-Cmdlets**.
+[Kopieren von Daten mit Azure Data Factory - Copy-Aktivität][copy-activity] | Dieser Artikel enthält eine ausführliche Beschreibung der **Kopie Aktivität** in diesem Lernprogramm verwendet. 
+[Aktivieren von Pipelines zum Arbeiten mit lokalen Daten][use-onpremises-datasources] | Dieser Artikel enthält eine exemplarische Vorgehensweise beim Kopieren von Daten aus einer **lokale SQL Server-Datenbank** in Azure-Blob. 
+[Verwenden von Pig und Hive Data Factory][use-pig-and-hive-with-data-factory] | Dieser Artikel hat eine exemplarische Vorgehensweise, die zeigt, wie Sie **HDInsight-Aktivität** zum Ausführen einer **Hive/Pig** Skript zum Verarbeiten von Eingabedaten in Ausgabedaten zu erzeugen.
+[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien, die mit Daten-Factory][adf-tutorial] | Dieser Artikel bietet eine **End-to-End-Exemplarische Vorgehensweise** veranschaulicht, wie die Implementierung einer **realen Szenario** mithilfe von Azure Data Factory zum Transformieren von Daten aus den Protokolldateien Einblicke in.
+[Verwenden von benutzerdefinierten Aktivitäten in einer Factory Daten][use-custom-activities] | Dieser Artikel enthält eine exemplarische Vorgehensweise mit einer schrittweisen Anleitung zum Erstellen einer **benutzerdefinierte Aktivität** und es in eine Pipeline verwendet wird. 
+[Problembehandlung bei Data Factory][troubleshoot] | Dieser Artikel beschreibt, wie **Problembehandlung bei** Azure Data Factory ausgibt. Sie können die exemplarische Vorgehensweise in diesem Artikel mit "ADFTutorialDataFactory" ausprobieren, indem Sie einen Fehler einbauen (die Tabelle in der Azure SQL-Datenbank löschen). 
+[Azure Data Factory-Cmdlet-Referenz][cmdlet-reference] | Dieser Verweis Inhalt enthält Details über alle die **Data Factory Cmdlets**.
+[Azure Data Factory-Entwicklerreferenz][developer-reference] | Entwicklerreferenz hat die umfassendes Referenzmaterial für die Cmdlets, JSON-Skripts, Funktionen usw.... 
 
-[use-onpremises-datasources]: ../data-factory-use-onpremises-datasources
-[use-pig-and-hive-with-data-factory]: ../data-factory-pig-hive-activities
-[adf-tutorial]: ../data-factory-tutorial
-[use-custom-activities]: ../data-factory-use-custom-activities
-[monitor-manage-using-portal]: ../data-factory-monitor-manage-using-management-portal
-
-[troubleshoot]: ../data-factory-troubleshoot
+[copy-activity]: data-factory-copy-activity.md
+[use-onpremises-datasources]: data-factory-use-onpremises-datasources.md
+[use-pig-and-hive-with-data-factory]: data-factory-pig-hive-activities.md
+[adf-tutorial]: data-factory-tutorial.md
+[use-custom-activities]: data-factory-use-custom-activities.md
+[troubleshoot]: data-factory-troubleshoot.md
 [developer-reference]: http://go.microsoft.com/fwlink/?LinkId=516908
-[cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
 
-<!--HONumber=35.2-->
+[cmdlet-reference]: https://msdn.microsoft.com/library/dn820234.aspx
+[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
+[data-factory-create-storage]: storage-create-storage-account.md
 
-<!--HONumber=46--> 
+[adf-get-started]: data-factory-get-started.md
+[azure-preview-portal]: http://portal.azure.com
+[download-azure-powershell]: powershell-install-configure.md
+[data-factory-create-sql-database]: sql-database-create-configure.md
+[data-factory-introduction]: data-factory-introduction.md
+
+[image-data-factory-get-started-storage-explorer]: ./media/data-factory-monitor-manage-using-powershell/getstarted-storage-explorer.png
+
+[sql-management-studio]: sql-database-manage-azure-ssms.md#Step2
+
+<!---HONumber=GIT-SubDir-->

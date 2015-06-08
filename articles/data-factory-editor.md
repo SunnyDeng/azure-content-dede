@@ -220,4 +220,5 @@ Schrittanleitungen zum Erstellen einer Azure Data Factory mit Data Factory Edito
 [delete-datafactory-entity]: ./media/data-factory-editor/delete-datafactory-entity.png
 [clone-datafactory-entity]: ./media/data-factory-editor/clone-datafactory-entity.png
 [add-activity-options]: ./media/data-factory-editor/add-activity-options.png
-<!--HONumber=54-->
+
+<!---HONumber=GIT-SubDir-->

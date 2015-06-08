@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/14/2015" 
+	ms.date="05/15/2015" 
 	ms.author="spelluru"/>
 
 # Erstellen von Warnungen zu Azure-Ereignissen
@@ -147,24 +147,6 @@ Um die Liste der bereitgestellten Azure-Ressourcengruppen abzurufen, verwenden S
 </tr>
 
 <tr>
-<td>CreateTablePublication</td>
-<td>Succeeded</td>
-<td></td>
-</tr>
-
-<tr>
-<td>UpdateTablePublication</td>
-<td>Succeeded</td>
-<td></td>
-</tr>
-
-<tr>
-<td>RemoveTablePublication</td>
-<td>Succeeded</td>
-<td></td>
-</tr>
-
-<tr>
 <td>OnDemandClusterCreateStarted</td>
 <td>Gestartet</td>
 <td></td>
@@ -189,4 +171,4 @@ Führen Sie den folgenden Befehl aus, um die generierten Ereignisse anzuzeigen:
 
 	Get-AzureResourceGroupLog –Name $ResourceGroup -All | Where-Object EventSource -eq "Microsoft.DataFactory"
 
-<!--HONumber=54-->
+<!---HONumber=GIT-SubDir-->

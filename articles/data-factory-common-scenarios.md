@@ -19,7 +19,7 @@
 # Gängige Szenarien für die Verwendung von Azure Data Factory
 In diesem Abschnitt werden einige Beispielszenarien beschrieben, die Azure Data Factory heute unterstützen kann und die als Hub-Szenarios weiter wachsen werden.
 
-> [AZURE.NOTE] Lesen Sie den Artikel [Einführung in den Azure Data Factory-Dienst][datafactory-introduction], bevor Sie diesen Artikel lesen.
+> [AZURE.NOTE]Lesen Sie den Artikel [Einführung in den Azure Data Factory-Dienst][datafactory-introduction], bevor Sie diesen Artikel lesen.
 
 ##Szenario 1: Datenquellen für den Datenhub
 ![Quellen für den Datenhub][image-data-factory-introduction-secenario1-source-datahub]
@@ -72,7 +72,4 @@ Informationen zur Nutzung von Daten mithilfe von Power Query finden Sie in den f
 
 [image-data-factory-introduction-secenario2-operationalize-infoproduction]: ./media/data-factory-common-scenarios/Scenario2-OperationalizeInformationProduction.png
 
-
-
-
-<!--HONumber=54-->
+<!---HONumber=GIT-SubDir-->

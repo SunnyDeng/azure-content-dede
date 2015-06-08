@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/02/2015" 
+	ms.date="06/04/2015" 
 	ms.author="spelluru"/>
 
 # Kopieren von Daten mit Azure Data Factory (Kopieraktivität)
@@ -126,11 +126,15 @@ Die Kopieraktivität unterstützt folgende Datenbewegungen:
 </table>
 
 ### SQL unter IaaS (Infrastructure-as-a-Service)
-Für SQL unter IaaS wird Azure als IaaS-Anbieter unterstützt. Die folgenden Netzwerk- und VPN-Topologien werden unterstützt. Beachten Sie, dass für Fall 2 und 3 das Datenverwaltungsgateway erforderlich ist, während es für den Fall 1 nicht erforderlich ist. Weitere Informationen zum Datenverwaltungsgateway finden Sie unter [Aktivieren von Pipelines für den Zugriff auf lokale Daten][use-onpremises-datasources].
+SQL Server unter IaaS wird auch als Quelle und Empfänger unterstützt. Data Management Gateway ist erforderlich, beim Erstellen von verknüpften Diensts zu SQL Server auf IaaS. Sie sollten erwägen, installieren das Datenverwaltungsgateway auf einem virtuellen Computer als ein hosting SQL-Server zur Vermeidung von Leistungseinbußen aufgrund von SQL Server und das Gateway Ressourcen konkurrieren. Weitere Informationen zum Datenverwaltungsgateway finden Sie unter [Aktivieren von Pipelines für den Zugriff auf lokale Daten][use-onpremises-datasources].
 
 1.	VM mit öffentlichem DNS-Namen und statischem, öffentlichen Port: private Portzuordnung
 2.	VM mit öffentlichem DNS-Namen ohne bereitgestellten SQL-Endpunkt
-3.	Virtuelles Netzwerk <ol type='a'> <li>Azure-Cloud-VPN mit folgender Topologie am Ende der Liste. </li> <li>VM mit lokal-zu-Cloud- und Standort-zu-Standort-VPN, das Azure Virtual Network verwendet.</li> </ol> ![Data Factory mit Kopieraktivität][image-data-factory-copy-actvity]
+3.	Virtuelles Netzwerk
+	<ol type='a'>
+<li>Azure-Cloud-VPN mit folgender Topologie am Ende der Liste. </li>	
+<li>VM mit lokal-zu-Cloud- und Standort-zu-Standort-VPN, das Azure Virtual Network verwendet.</li>	
+</ol>![Data Factory mit Kopieraktivität][image-data-factory-copy-actvity]
 
 ## Kopieraktivität – Komponenten
 Die Kopieraktivität enthält die folgenden Komponenten:
@@ -247,7 +251,6 @@ In diesem Beispiel werden eine Eingabe- und eine Ausgabetabelle definiert. Die T
 ### JSON für Eingabetabelle
 Das folgende JSON-Skript definiert eine Eingabetabelle, die auf eine SQL-Tabelle verweist: **MyTable** in einer lokalen SQL Server-Datenbank, die den verknüpften Dienst **MyOnPremisesSQLDB** definiert. Beachten Sie, dass **Name** der Name der Azure Data Factory-Tabelle und **Tabellenname** der Name der SQL-Tabelle in einer SQL Server-Datenbank ist.
 
-         
          
 	{
 		"name": "MyOnPremTable",
@@ -403,4 +406,4 @@ Unter [Aktivieren von Pipelines für die Arbeit mit lokalen Daten][use-onpremise
 [image-data-factory-column-mapping-1]: ./media/data-factory-copy-activity/ColumnMappingSample1.png
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity/ColumnMappingSample2.png
 
-<!--HONumber=52-->
+<!---HONumber=GIT-SubDir-->
