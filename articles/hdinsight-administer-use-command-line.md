@@ -59,7 +59,8 @@ Sie können die Befehlszeilenschnittstelle entweder über den *Node.js-Paketmana
 
 **So installieren Sie die Befehlszeilenschnittstelle mit dem Windows Installer**
 
-1.	Navigieren Sie zu **http://azure.microsoft.com/downloads/**. 2.	Scrollen Sie nach unten zum Bereich **Befehlszeilentools**, klicken Sie auf **Plattformübergreifende Befehlszeilenschnittstelle** und führen Sie den Assistenten des Webplattform-Installer aus.
+1.	Navigieren Sie zu **http://azure.microsoft.com/downloads/**.
+2.	Scrollen Sie nach unten zum Bereich **Befehlszeilentools**, klicken Sie auf **Plattformübergreifende Befehlszeilenschnittstelle** und führen Sie den Assistenten des Webplattform-Installer aus.
 
 ##Herunterladen und Importieren der publishsettings-Datei für das Azure-Konto
 

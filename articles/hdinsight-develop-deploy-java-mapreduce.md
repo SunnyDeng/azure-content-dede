@@ -41,7 +41,8 @@ Erstellen Sie eine MapReduce-Anwendung zum Zählen von Wörtern. Diese einfache 
 
 **So erstellen Sie ein Projekt mit Maven**
 
-1. Erstellen Sie das Verzeichnis **C:\\Tutorials\\WordCountJava**. 2. Wechseln Sie in der Befehlszeile Ihrer Entwicklungsumgebung in das neu erstellte Verzeichnis.
+1. Erstellen Sie das Verzeichnis **C:\\Tutorials\\WordCountJava**.
+2. Wechseln Sie in der Befehlszeile Ihrer Entwicklungsumgebung in das neu erstellte Verzeichnis.
 3. Verwenden Sie den Befehl __mvn__, der mit Maven installiert wird, um das Gerüst für das Projekt zu erstellen.
 
 		mvn archetype:generate -DgroupId=org.apache.hadoop.examples -DartifactId=wordcountjava -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false

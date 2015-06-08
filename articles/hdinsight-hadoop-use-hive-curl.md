@@ -81,7 +81,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
     Diese Anweisungen führen die folgenden Aktionen aus:
 
-    * **TABELLE LÖSCHEN** – Löscht Tabelle und Datendatei, falls die Tabelle bereits vorhanden ist.
+    * **TABELLE LÖSCHEN** - Löscht Tabelle und Datendatei, falls die Tabelle bereits vorhanden ist.
     
     * **EXTERNE TABELLE ERSTELLEN** - Erstellt eine neue "externe" Tabelle in Hive. Externe Tabellen speichern nur die Tabellendefinition in Hive. Die Daten verbleiben an ihrem ursprünglichen Speicherort.
 
@@ -89,11 +89,11 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 		>
 		> Durch das Löschen einer externen Tabelle werden **nicht** die Daten, sondern nur die Tabellendefinitionen gelöscht.
 
-    * **ZEILENFORMAT** – Teilt Hive mit, wie die Daten formatiert werden In diesem Fall werden die Felder in den einzelnen Protokollen durch Leerzeichen getrennt.
+    * **ZEILENFORMAT** - Teilt Hive mit, wie die Daten formatiert werden In diesem Fall werden die Felder in den einzelnen Protokollen durch Leerzeichen getrennt.
     
-    * **SPEICHERORT DER TEXTDATEI** – Teilt Hive den Speicherort der Daten (das Verzeichnis "example/data") und die Information mit, dass die Speicherung als Text erfolgt.
+    * **SPEICHERORT DER TEXTDATEI** - Teilt Hive den Speicherort der Daten (das Verzeichnis "example/data") und die Information mit, dass die Speicherung als Text erfolgt.
     
-    * **AUSWÄHLEN** – Wählt die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **[FEHLER]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
+    * **AUSWÄHLEN** - Wählt die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **[FEHLER]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
 
     > [AZURE.NOTE]Beachten Sie, dass die Leerzeichen zwischen HiveQL-Anweisungen bei Curl durch das Zeichen `+` ersetzt werden. Werte in Anführungszeichen, die ein Leerzeichen enthalten, z. B. das Trennzeichen, dürfen nicht durch `+` ersetzt werden.
 
@@ -131,9 +131,9 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
 		> [AZURE.NOTE]Im Gegensatz zu externen Tabellen werden beim Ablegen von internen Tabellen auch die zugrunde liegenden Daten gelöscht.
 
-    * **ALS ORC GESPEICHERT** – Speichert die Daten im ORC-Format (Optimized Row Columnar) Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
-    * **ÜBERSCHREIBEN EINFÜGEN ... AUSWÄHLEN** – Wählt Zeilen aus der Tabelle **log4jLogs** aus, die **[FEHLER]** enthalten. Dann werden die Daten in die Tabelle **errorLogs** eingefügt.
-    * **AUSWÄHLEN** – Wählt alle Zeilen aus der neuen Tabelle **errorLogs** aus.
+    * **ALS ORC GESPEICHERT** - Speichert die Daten im ORC-Format (Optimized Row Columnar) Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
+    * **ÜBERSCHREIBEN EINFÜGEN ... AUSWÄHLEN** - Wählt Zeilen aus der Tabelle **log4jLogs** aus, die **[FEHLER]** enthalten. Dann werden die Daten in die Tabelle **errorLogs** eingefügt.
+    * **AUSWÄHLEN** - Wählt alle Zeilen aus der neuen Tabelle **errorLogs** aus.
 
 7. Verwenden Sie die zurückgegebene Auftrags-ID, um den Status des Auftrags zu überprüfen. Nach der erfolgreichen Ausführung verwenden Sie CLI für Mac, Linux und Windows wie zuvor beschrieben, um die Ergebnisse herunterzuladen und anzuzeigen. Die Ausgabe sollte drei Zeilen mit dem Inhalt **[FEHLER]** enthalten.
 
