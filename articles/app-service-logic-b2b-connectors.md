@@ -27,7 +27,7 @@ Diese B2B-API-Apps bieten Funktionen für "Trigger" und "Aktion". Ein Trigger st
 ## Was sind Business-to-Business-Connectors oder API-Apps?
 Die Business-to-Business-Funktion (B2B) umfasst vorhandene, vorgefertigte API-Apps, mit denen verschiedene Unternehmen, Abteilungen, Anwendungen etc. über EDI, AS2 und EDIFACT kommunizieren können.
 
-Zu den B2B-API-Apps gehören:
+Zu den B2B-API-Apps gehören: 
 
 Connector oder API-Apps | Beschreibung
 --- | ---
@@ -79,7 +79,7 @@ Die TPM-Instanz wird mithilfe der folgenden Schritte erstellt:
 2. Wählen Sie **BizTalk Trading Partner Management** aus. Wählen Sie im neuen Blatt **Erstellen** aus. 
 3. Geben Sie die Eigenschaften ein: 
 
-Eigenschaft | Beschreibung
+	Eigenschaft | Beschreibung
 --- | ---
 Name | Geben Sie einen Namen für die TPM-Instanz ein. Sie können sie z. B. *AccountsPayableTPM* nennen.
 Paketeinstellungen | Geben Sie die ADO.NET-**Datenbankverbindungszeichenfolge** zur Azure-SQL-Datenbank ein, die Sie erstellt haben. <br/><br/>Wenn Sie die Verbindungszeichenfolge kopieren, wird das Kennwort nicht der Verbindungszeichenfolge hinzugefügt. Achten Sie darauf, dass das Kennwort in der Verbindungszeichenfolge eingegeben wird.
@@ -101,7 +101,7 @@ Nachdem die TPM-API-App (TPM-Instanz) erstellt wurde, können Sie den AS2-Connec
 2. Wählen Sie **AS2-Connector** aus. Wählen Sie im neuen Blatt **Erstellen** aus. 
 3. Geben Sie die Eigenschaften ein: 
 
-Eigenschaft | Beschreibung
+	Eigenschaft | Beschreibung
 --- | ---
 Name | Geben Sie einen Namen für den AS2-Connector ein. Sie können ihn z. B. *AS2Connector* nennen.
 Paketeinstellungen | Geben Sie die für diese API-App spezifischen Einstellungen wie den Namen der TPM-Instanz ein. <br/><br/>Unter [Hinzufügen von AS2-Paketeinstellungen](#AddAS2Conn) in diesem Thema finden Sie Informationen zu den einzelnen Eigenschaften. 
@@ -114,7 +114,7 @@ Zum Startmenü hinzufügen | Wählen Sie diese Option aus, um die B2B-API-App Ih
 
 	**<a name="AddAS2Conn"></a>AS2-Connector-Paketeinstellungen**
 
-Eigenschaft | Beschreibung
+	Eigenschaft | Beschreibung
 --- | --- 
 Datenbankverbindungszeichenfolge | Geben Sie die ADO.NET-Verbindungszeichenfolge zur Azure-SQL-Datenbank ein, die Sie erstellt haben. Wenn Sie die Verbindungszeichenfolge kopieren, wird das Kennwort nicht der Verbindungszeichenfolge hinzugefügt. Achten Sie vor dem Einfügen darauf, dass das Kennwort in der Verbindungszeichenfolge eingegeben wird.
 Aktivieren der Archivierung für eingehende Nachrichten | Optional. Aktivieren Sie diese Eigenschaft, damit Nachrichteneigenschaften einer eingehenden AS2-Nachricht gespeichert werden, die von einem Partner empfangen wird. 
@@ -130,7 +130,7 @@ TPM-Instanzname | Geben Sie den Namen der API-App **BizTalk Trading Partner Mana
 2. Wählen Sie **BizTalk X12** oder **BizTalk EDIFACT** aus. Wählen Sie im neuen Blatt **Erstellen** aus. 
 3. Geben Sie die Eigenschaften ein: 
 
-Eigenschaft | Beschreibung
+	Eigenschaft | Beschreibung
 --- | ---
 Name | Geben Sie einen Namen für die B2B-API-App ein. Sie können sie z. B. *EDI850APIApp* nennen.
 Paketeinstellungen | Geben Sie die für diese API-App spezifischen Einstellungen wie den Namen der TPM-Instanz ein. <br/><br/>Unter [X12- oder EDIFACT-Paketeinstellungen](#AddX12) in diesem Thema finden Sie Informationen zu den einzelnen Eigenschaften. 
@@ -143,7 +143,7 @@ Zum Startmenü hinzufügen | Wählen Sie diese Option aus, um die B2B-API-App Ih
 
 	**<a name="AddX12"></a>Paketeinstellungen von X12- und EDIFACT-API-Apps**
 
-Eigenschaft | Beschreibung
+	Eigenschaft | Beschreibung
 --- | --- 
 Datenbankverbindungszeichenfolge | Geben Sie die ADO.NET-Verbindungszeichenfolge zur Azure-SQL-Datenbank ein, die Sie erstellt haben. Wenn Sie die Verbindungszeichenfolge kopieren, wird das Kennwort nicht der Verbindungszeichenfolge hinzugefügt. Achten Sie vor dem Einfügen darauf, dass das Kennwort in der Verbindungszeichenfolge eingegeben wird.
 Service Bus- Namespace | Geben Sie den von Ihnen erstellten Service Bus-Namespace ein. Dies ist nur erforderlich, wenn die Batchverarbeitung aktiviert ist. 
@@ -187,7 +187,7 @@ Wenn Sie in Ihrer App die B2B-API-Apps aus dem Katalog auswählen, werden sie au
 
 3. Fügen Sie über den **Katalog** die von Ihnen erstellte B2B-API-App hinzu, die automatisch Ihrer App hinzugefügt wird. Sie können auch eine neue B2B-API-App erstellen.
 
-	> [AZURE.IMPORTANT]Der AS2-Connector und die X12- und EDIFACT-API-Apps benötigen eine TPM-Instanz. Wenn Sie daher neue B2B-API-Apps erstellen, erstellen Sie zuerst die TPM-API-App und dann den AS2-Connector, die X12-API-App oder die EDIFACT-API-App.
+	> [AZURE.IMPORTANT] Der AS2-Connector und die X12- und EDIFACT-API-Apps benötigen eine TPM-Instanz. Wenn Sie daher neue B2B-API-Apps erstellen, erstellen Sie zuerst die TPM-API-App und dann den AS2-Connector, die X12-API-App oder die EDIFACT-API-App.
 
 4. Klicken Sie zum Speichern der Änderungen auf **OK**.
 
@@ -203,4 +203,4 @@ Wenn Sie in Ihrer App die B2B-API-Apps aus dem Katalog auswählen, werden sie au
 
 ## Weitere Connectors
 [BizTalk-Integrationsconnectors](app-service-logic-integration-connectors.md)<br/> [Enterprise-Connectors](app-service-logic-enterprise-connectors.md)<br/> [Connectors für soziale Netzwerke](app-service-logic-social-connectors.md)<br/> [Protokollconnectors](app-service-logic-protocol-connectors.md)<br/> [App und Data Services-Connectors](app-service-logic-data-connectors.md)<br/> [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
-<!--HONumber=54-->
+<!---HONumber=54-->
