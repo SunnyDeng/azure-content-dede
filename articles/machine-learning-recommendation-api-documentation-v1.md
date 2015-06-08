@@ -72,8 +72,9 @@ Erstellen eine Anforderung "Modell erstellen":
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelName |	Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) zulässig.<br>Max. Länge: 20 |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 
 **Antwort**:
@@ -122,8 +123,9 @@ Erstellen eine Anforderung "Modell abrufen":
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	id |	Der eindeutige Bezeichner des Modells. |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -184,7 +186,8 @@ Ruft alle Modelle des aktuellen Benutzers ab.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -250,8 +253,9 @@ Sie können die Modellbeschreibung oder die aktive Build-ID aktualisieren.<br> <
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	id | Der eindeutige Bezeichner des Modells. |
-|	apiVersion | 1,0 |
-||| | Request Body | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`<Description>New Description</Description>`<br>`<ActiveBuildId>-1</ActiveBuildId>`<br>` </ModelUpdateParams>`<br><br> Beachten Sie, dass die XML-Tags „Description“ und „ActiveBuildId“ optional sind. Wenn Sie weder eine Beschreibung noch eine aktive Build-ID festlegen möchten, entfernen Sie jeweils das gesamte Tag.|
+|	apiVersion		| 1,0 |
+|||
+| Request Body | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`<Description>New Description</Description>`<br>`<ActiveBuildId>-1</ActiveBuildId>`<br>` </ModelUpdateParams>`<br><br> Beachten Sie, dass die XML-Tags „Description“ und „ActiveBuildId“ optional sind. Wenn Sie weder eine Beschreibung noch eine aktive Build-ID festlegen möchten, entfernen Sie jeweils das gesamte Tag.|
 
 **Antwort**:
 
@@ -267,8 +271,9 @@ Löscht vorhandenes Modell nach ID
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	id |	Der eindeutige Bezeichner des Modells. |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -308,8 +313,9 @@ Diese API gibt statistische Daten zur Nutzung von Daten zurück, mit denen diese
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells. |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -317,9 +323,72 @@ HTTP-Statuscode: 200
 
 OData-XML
 
-Die Daten werden als folgende Erfassung zurückgegeben: <pre> Feed/Eintrag/ID/Inhalt/Eigenschaften/Schlüssel-Feed/Eintrag/ID/Inhalt/Eigenschaften/Wert </pre>
+Die Daten werden als folgende Erfassung zurückgegeben:
+	<pre> Feed/Eintrag/ID/Inhalt/Eigenschaften/Schlüssel
+	Feed/Eintrag/ID/Inhalt/Eigenschaften/Wert
+</pre>
 
-In der folgenden Tabelle wird für jeden Schlüssel gezeigt, welchen Wert er darstellt <table> <tr> <th>Schlüssel</th> <th>Beschreibung</th> </tr> <tr> <td>AvgItemLength</td> <td>Durchschnittliche Anzahl unterschiedlicher Benutzer pro Element</td> </tr> <tr> <td>AvgUserLength</td> <td>Durchschnittliche Anzahl unterschiedlicher Elemente pro Benutzer</td> </tr> <tr> <td>DensificationNumberOfItems</td> <td>Anzahl von Elementen nach dem Bereinigen, die nicht modelliert werden können</td> </tr> <tr> <td>DensificationNumberOfUsers</td> <td>Anzahl der Nutzungspunkte nach dem Bereinigen der Benutzer und Elemente, die nicht modelliert werden können</td> </tr> <tr> <td>DensificationNumberOfRecords</td> <td>Anzahl der Nutzungspunkte nach Bereinigung der Benutzer und Elemente, die nicht modelliert werden können</td> </tr> <tr> <td>MaxItemLength</td> <td>Anzahl unterschiedlicher Benutzer für das beliebteste Element</td> </tr> <tr> <td>MaxUserLength</td> <td>Maximale Anzahl unterschiedlicher Elemente für einen Benutzer</td> </tr> <tr> <td>MinItemLength</td> <td>Minimale Anzahl unterschiedlicher Benutzer für ein Element</td> </tr> <tr> <td>MinUserLength</td> <td>Minimale Anzahl verschiedener Elemente für einen Benutzer</td> </tr> <tr> <td>RawNumberOfItems</td> <td>Anzahl der Elemente, die vor dem Bereinigen der Elemente nicht modelliert werden können</td> </tr> <tr> <td>RawNumberOfUsers</td> <td>Anzahl der Nutzungspunkte vor der Bereinigung</td> </tr> <tr> <td>RawNumberOfRecords</td> <td>Anzahl der Nutzungspunkte vor der Bereinigung</td> </tr> <tr> <td>SampelingNumberOfItems</td> <td>Anzahl der Elemente in der Stichprobe, wenn Sampling aktiviert ist. Ignorieren Sie andernfalls</td> </tr> <tr> <td>SampelingNumberOfRecords</td> <td>Wenn Sampling aktiviert ist, Anzahl der Benutzerpunkte in der Stichprobe. Ignorieren Sie andernfalls</td> </tr> <tr> <td>SampelingNumberOfUsers</td> <td>Wenn Sampling aktiviert ist, Anzahl der Benutzerpunkte in der Stichprobe. Ignorieren Sie andernfalls</td> </tr> </table>
+In der folgenden Tabelle wird für jeden Schlüssel gezeigt, welchen Wert er darstellt
+	<table>
+    	<tr>
+        	<th>Schlüssel</th>
+        	<th>Beschreibung</th>
+        </tr>
+        <tr>
+        	<td>AvgItemLength</td>
+        	<td>Durchschnittliche Anzahl unterschiedlicher Benutzer pro Element</td>
+        </tr>
+        <tr>
+        	<td>AvgUserLength</td>
+        	<td>Durchschnittliche Anzahl unterschiedlicher Elemente pro Benutzer</td>
+        </tr>
+        <tr> <td>DensificationNumberOfItems</td> <td>Anzahl von Elementen nach dem Bereinigen, die nicht modelliert werden können</td>
+        </tr>
+        <tr>
+        	<td>DensificationNumberOfUsers</td>
+        	<td>Anzahl der Nutzungspunkte nach dem Bereinigen der Benutzer und Elemente, die nicht modelliert werden können</td>
+        </tr>
+        <tr>
+        	<td>DensificationNumberOfRecords</td>
+        	<td>Anzahl der Nutzungspunkte nach Bereinigung der Benutzer und Elemente, die nicht modelliert werden können</td>
+        </tr>
+        <tr>
+        	<td>MaxItemLength</td>
+        	<td>Anzahl unterschiedlicher Benutzer für das beliebteste Element</td>
+        </tr>
+        <tr>
+        	<td>MaxUserLength</td>
+        	<td>Maximale Anzahl unterschiedlicher Elemente für einen Benutzer</td>
+        </tr>
+        <tr>
+        	<td>MinItemLength</td>
+        	<td>Minimale Anzahl unterschiedlicher Benutzer für ein Element</td>
+        </tr>
+        <tr> <td>MinUserLength</td>
+        	<td>Minimale Anzahl verschiedener Elemente für einen Benutzer</td>
+        	</tr>
+        <tr>
+        	<td>RawNumberOfItems</td>
+        	<td>Anzahl der Elemente, die vor dem Bereinigen der Elemente nicht modelliert werden können</td>
+        </tr>
+        <tr>
+        	<td>RawNumberOfUsers</td><td>Anzahl der Nutzungspunkte vor der Bereinigung</td>
+        	</tr> <tr>
+        <td>RawNumberOfRecords</td> <td>Anzahl der Nutzungspunkte vor der Bereinigung</td>
+        </tr>
+        	<tr>
+        	<td>SampelingNumberOfItems</td>
+        <td>Anzahl der Elemente in der Stichprobe, wenn Sampling aktiviert ist. Ignorieren Sie andernfalls</td>
+        </tr>
+        	<tr>
+        	<td>SampelingNumberOfRecords</td>
+        <td>Wenn Sampling aktiviert ist, Anzahl der Benutzerpunkte in der Stichprobe. Ignorieren Sie andernfalls</td>
+        </tr>
+        	<tr>
+        <td>SampelingNumberOfUsers</td>
+        	<td>Wenn Sampling aktiviert ist, Anzahl der Benutzerpunkte in der Stichprobe. Ignorieren Sie andernfalls</td>
+        </tr>
+        </table>
 
 	<feed xmlns:base="https://api.datamarket.azure.com/amla/recommendations/v1/GetDataInsight" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
 	<title type="text" />
@@ -521,8 +590,9 @@ Diese API gibt einen Modelleinblick in den aktiven bzw., wenn angegeben, einen b
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells. |
 |	buildId |	Optional. Eine Nummer, die einen erfolgreichen Build identifiziert. |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -589,8 +659,9 @@ Abrufen einer Probe des Empfehlungsmodells.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells. |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -619,8 +690,9 @@ Es gibt zwei Arten von Regeln, die Sie hinzufügen können, <strong>Blocklist</s
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells. |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -674,8 +746,9 @@ OData-XML
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
-|	apiVersion | 1,0 |
-||| | Request Body | <ins>Zum Hinzufügen einer BlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen einer Upsale-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`|
+|	apiVersion		| 1,0 |
+|||
+| Request Body | <ins>Zum Hinzufügen einer BlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen einer Upsale-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`|
 
 HTTP-Statuscode: 200
 
@@ -716,8 +789,9 @@ OData-XML
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells. |
 |	filterId |	Der eindeutige Bezeichner des Filters. |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -732,8 +806,9 @@ HTTP-Statuscode: 200
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells. |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -797,8 +872,9 @@ Ruft alle Katalogelemente ab.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells. |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -898,8 +974,9 @@ OData-XML
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells. |
 |	token |	Token des Namens des Katalogelements. Muss mindestens 3 Zeichen enthalten. |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -954,8 +1031,9 @@ In diesem Abschnitt wird gezeigt, wie Verwendungsdaten mithilfe einer Datei hoch
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells. |
 | filename | Dies ist ein Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) zulässig.<br>Max. Länge: 50 |
-|	apiVersion | 1,0 |
-||| | Request Body | Die Nutzungsdaten. Format:<br>`<User Id>,<Item Id>[,<Time>,<Event>]`<br><br><table><tr><th>Name</th><th>Erforderlich</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>User ID</td><td>Ja</td><td>Alphanumerisch</td><td>Eindeutiger Bezeichner eines Benutzers</td></tr><tr><td>Element-ID</td><td>Ja</td><td>Alphanumerisch, Max. Länge 50</td><td>Eindeutiger Bezeichner eines Elements</td></tr><tr><td>Zeit</td><td>Nein </td><td>Datum im Format YYYY/MM/DDTHH:MM:SS (z. B. 2013/06/20T10:00:00)</td><td>Zeitpunkt der Datenerhebung</td></tr><tr><td>Event</td><td>Nein; falls angegeben, muss auch ein Datum angegeben werden</td><td>Eines der folgenden:<br>• Click<br>• RecommendationClick<br>• AddShopCart<br>• RemoveShopCart<br>• Purchase</td><td></td></tr></table><br>Maximale Dateigröße: 200MB<br><br>Beispiel:<br><pre>149452,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>6360,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>50321,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>71285,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>224450,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>236645,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>107951,1b3d95e2-84e4-414c-bb38-be9cf461c347</pre> |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | Die Nutzungsdaten. Format:<br>`<User Id>,<Item Id>[,<Time>,<Event>]`<br><br><table><tr><th>Name</th><th>Erforderlich</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>User ID</td><td>Ja</td><td>Alphanumerisch</td><td>Eindeutiger Bezeichner eines Benutzers</td></tr><tr><td>Element-ID</td><td>Ja</td><td>Alphanumerisch, Max. Länge 50</td><td>Eindeutiger Bezeichner eines Elements</td></tr><tr><td>Zeit</td><td>Nein </td><td>Datum im Format YYYY/MM/DDTHH:MM:SS (z. B. 2013/06/20T10:00:00)</td><td>Zeitpunkt der Datenerhebung</td></tr><tr><td>Event</td><td>Nein; falls angegeben, muss auch ein Datum angegeben werden</td><td>Eines der folgenden:<br>• Click<br>• RecommendationClick<br>• AddShopCart<br>• RemoveShopCart<br>• Purchase</td><td></td></tr></table><br>Maximale Dateigröße: 200MB<br><br>Beispiel:<br><pre>149452,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>6360,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>50321,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>71285,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>224450,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>236645,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>107951,1b3d95e2-84e4-414c-bb38-be9cf461c347</pre> |
 
 **Antwort**:
 
@@ -1105,8 +1183,9 @@ Abrufen der Metadaten von allen Modellnutzungsdateien
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	forModelId |	Der eindeutige Bezeichner des Modells. |
-|	apiVersion | 1,0 |
-||| | Request Body | KEINE |
+|	apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -1170,8 +1249,9 @@ Abrufen von Nutzungsstatistiken:
 | startDate |	Dies ist das Startdatum. Format: yyyy/MM/ddTHH:mm:ss |
 | endDate |	Dies ist das Enddatum. Format: yyyy/MM/ddTHH:mm:ss |
 | eventTypes |	Dies ist eine kommagetrennte Zeichenfolge aus Ereignistypen oder null, um alle Ereignisse abzurufen. |
-| apiVersion | 1,0 |
-||| | Request Body | KEINE |
+| apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -1253,8 +1333,9 @@ Abrufen der ersten 2 KB des Nutzungsdateiinhalts:
 |:--------			|:--------								|
 | modelId |	Der eindeutige Bezeichner des Modells. |
 | fileId |	Der eindeutige Bezeichner der Modellnutzungsdatei. |
-| apiVersion | 1,0 |
-||| | Request Body | KEINE |
+| apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -1274,8 +1355,9 @@ Ruft den vollständigen Inhalt der Nutzungsdatei ab:
 | mid |	Der eindeutige Bezeichner des Modells. |
 | fid |	Der eindeutige Bezeichner der Modellnutzungsdatei. |
 | Download | 1 |
-| apiVersion | 1,0 |
-||| | Request Body | KEINE |
+| apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -1294,8 +1376,9 @@ Löschen der angegebenen Modellnutzungsdatei
 |:--------			|:--------								|
 | modelId |	Der eindeutige Bezeichner des Modells. |
 | fileId | Der eindeutige Bezeichner der zu löschenden Datei |
-| apiVersion | 1,0 |
-||| | Request Body | KEINE |
+| apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -1312,8 +1395,9 @@ Löschen aller Modellnutzungsdateien
 | Parametername |	Gültige Werte |
 |:--------			|:--------								|
 | modelId |	Der eindeutige Bezeichner des Modells. |
-| apiVersion | 1,0 |
-||| | Request Body | KEINE |
+| apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -1331,8 +1415,9 @@ HTTP-Statuscode: 200
 |:--------			|:--------								|
 | modelId |	Der eindeutige Bezeichner des Modells. |
 | userDescription | Dies ist der Textbezeichner des Katalogs. Beachten Sie, dass Sie bei Verwendung von Leerzeichen diese stattdessen mit "%20" codieren müssen. Siehe Beispiel oben. <br>Max. Länge: 50 |
-| apiVersion | 1,0 |
-||| | Request Body | Wird das Feld leer gelassen, so wird der Build mit den Standardbuildparametern ausgeführt<br><br>Wenn Sie die Parameter festlegen möchten, senden Sie sie wie im folgenden Beispiel als XML in den Textkörper (Erläuterungen der Parameter finden Sie im Abschnitt „Buildparameter abrufen“):<br>`<BuildParametersList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><UseFeaturesInModel>false</UseFeaturesInModel><AllowColdItemPlacement>false</AllowColdItemPlacement><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance><EnableFeatureCorrelation>false</EnableFeatureCorrelation><RefreshFeatureScoreOnBuild>false</RefreshFeatureScoreOnBuild><ComputeUpd>false</ComputeUpd><EnableModelingInsights>true</EnableModelingInsights><ModelingFeatureList /><ReasoningFeatureList /></BuildParametersList>`|
+| apiVersion		| 1,0 |
+|||
+| Request Body | Wird das Feld leer gelassen, so wird der Build mit den Standardbuildparametern ausgeführt<br><br>Wenn Sie die Parameter festlegen möchten, senden Sie sie wie im folgenden Beispiel als XML in den Textkörper (Erläuterungen der Parameter finden Sie im Abschnitt „Buildparameter abrufen“):<br>`<BuildParametersList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><UseFeaturesInModel>false</UseFeaturesInModel><AllowColdItemPlacement>false</AllowColdItemPlacement><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance><EnableFeatureCorrelation>false</EnableFeatureCorrelation><RefreshFeatureScoreOnBuild>false</RefreshFeatureScoreOnBuild><ComputeUpd>false</ComputeUpd><EnableModelingInsights>true</EnableModelingInsights><ModelingFeatureList /><ReasoningFeatureList /></BuildParametersList>`|
 
 **Antwort**:
 
@@ -1961,8 +2046,9 @@ Ruft alle Benachrichtigung für alle Modelle oder für ein einzelnes Modell ab.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 | modelId | Optionaler Parameter. Wenn er nicht angegeben wird, erhalten Sie alle Benachrichtigungen für alle Modelle. <br>Gültiger Wert: Der eindeutige Bezeichner des Modells.|
-| apiVersion | 1,0 |
-||| | Request Body | KEINE |
+| apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort:**
 
@@ -2012,8 +2098,9 @@ Löscht alle gelesenen Benachrichtigungen für ein Modell.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 | modelId | Der eindeutige Bezeichner des Modells. |
-| apiVersion | 1,0 |
-||| | Request Body | KEINE |
+| apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -2029,8 +2116,9 @@ Löscht alle Benachrichtigungen für alle Modelle:
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
-| apiVersion | 1,0 |
-||| | Request Body | KEINE |
+| apiVersion		| 1,0 |
+|||
+| Request Body | KEINE |
 
 **Antwort**:
 
@@ -2038,4 +2126,4 @@ HTTP-Statuscode: 200
 
 
 
-<!--HONumber=54-->
+<!---HONumber=54-->
