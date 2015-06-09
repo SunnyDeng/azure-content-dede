@@ -194,13 +194,22 @@ Wenn Sie in Ihrer App die B2B-API-Apps aus dem Katalog auswählen, werden sie au
 
 ## Weitere B2B-Ressourcen
 
-[Erstellen eines B2B-Prozesses](app-service-logic-create-a-b2b-process.md)<br/> [Erstellen einer Handelspartnervereinbarung](app-service-logic-create-a-trading-partner-agreement.md)<br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
+[Erstellen eines B2B-Prozesses](app-service-logic-create-a-b2b-process.md)<br/>
+[Erstellen einer Handelspartnervereinbarung](app-service-logic-create-a-trading-partner-agreement.md)<br/>
+[Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
 
 
 ## Weitere Informationen zu Logik- und Web-Apps
-[Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md)<br/> [Websites und Web-Apps in Azure App Service](app-service-web-app-azure-portal.md)
+[Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md)<br/>
+[Websites und Web-Apps in Azure App Service](app-service-web-app-azure-portal.md)
 
 
 ## Weitere Connectors
-[BizTalk-Integrationsconnectors](app-service-logic-integration-connectors.md)<br/> [Enterprise-Connectors](app-service-logic-enterprise-connectors.md)<br/> [Connectors für soziale Netzwerke](app-service-logic-social-connectors.md)<br/> [Protokollconnectors](app-service-logic-protocol-connectors.md)<br/> [App und Data Services-Connectors](app-service-logic-data-connectors.md)<br/> [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
+[BizTalk-Integrationsconnectors](app-service-logic-integration-connectors.md)<br/>
+[Enterprise-Connectors](app-service-logic-enterprise-connectors.md)<br/>
+[Connectors für soziale Netzwerke](app-service-logic-social-connectors.md)<br/>
+[Protokollconnectors](app-service-logic-protocol-connectors.md)<br/>
+[App und Data Services-Connectors](app-service-logic-data-connectors.md)<br/>
+[Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/>
+[Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
 <!---HONumber=54-->

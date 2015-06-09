@@ -40,7 +40,7 @@ BizTalk XPath Extractor | Eine API-App vom Typ **Aktion**. Dient zum Suchen und 
 Warten | Verzögert die Ausführung für einen Zeitraum, den Sie eingeben, oder bis zu einem bestimmten Zeitpunkt. Falls einer Logik-App hinzugefügt, kann der Connector zum Verzögern der Ausführung der gesamten Anwendung verwendet werden.
 
 
-> [AZURE.NOTE] If the input xml has a simple node with an attribute (like "<authorid= ”1”>abc</author>"), then the JSON output of the library is { “author”: { “@id” : “1”, “#text”: “abc”}}. To handle the “Id” attribute, a new “#text” key is added for the text content of the node. To handle this kind of node, add a constant key. This is by design in the Newtonsoft.Json library. When you insert this into SQL, use “JSONOutput.Author.#text”; do not use “JsonOutput.Author”.
+	> [AZURE.NOTE] If the input xml has a simple node with an attribute (like "<authorid= ”1”>abc</author>"), then the JSON output of the library is { “author”: { “@id” : “1”, “#text”: “abc”}}. To handle the “Id” attribute, a new “#text” key is added for the text content of the node. To handle this kind of node, add a constant key. This is by design in the Newtonsoft.Json library. When you insert this into SQL, use “JSONOutput.Author.#text”; do not use “JsonOutput.Author”.
 
 Mithilfe dieser API-Apps können Sie verschiedene Messaging- oder Datenaufgaben meistern. Mithilfe der BizTalk-Regel-API-App können Sie z. B. eine Bestellung empfangen und einen Rabatt anwenden, sobald eine bestimmte Menge bestellt wird. Oder Sie können je nach Postleitzahl einen bestimmten Steuersatz berechnen.
 
@@ -70,7 +70,7 @@ Im Azure-Portal können Sie beim Erstellen der Logik-Apps, Web-Apps oder mobilen
 2. Wählen Sie die API-App aus. Wählen Sie im neuen Blatt **Erstellen** aus. 
 3. Geben Sie die Eigenschaften ein: 
 
-Eigenschaft | Beschreibung
+	Eigenschaft | Beschreibung
 --- | ---
 Name | Geben Sie für Ihre API-App einen beliebigen Namen ein. Beispielsweise können Sie sie *RulesDiscountTaxCode* oder *APIAppValidateXML* nennen.
 App Service-Plan | Listet Ihren Zahlungsplan auf. Sie können ihn ändern, wenn Sie mehr oder weniger Ressourcen benötigen.
@@ -84,7 +84,7 @@ Zum Startmenü hinzufügen | Wählen Sie diese Option aus, um die Integrations-A
 ## Konfigurieren der BizTalk-API-Apps
 Öffnen Sie im Azure-Verwaltungsportal Ihre BizTalk-API-App. Im Abschnitt **Komponenten** können Sie die zusätzlichen Komponenten hinzufügen, die zum Vervollständigen der API-App erforderlich sind:
 
-API App | Tasks
+	API App | Tasks
 --- | ---
 BizTalk Flat File Encoder | Geben Sie eine Flatfile ein, z. B. eine Excel- oder CSV-Datei, die in XML umgewandelt werden soll. Oder geben Sie eine XML-Datei ein, die in eine Flatfile umgewandelt werden soll.
 BizTalk JSON Encoder | Geben Sie eine JSON-Datei ein, die in XML konvertiert werden soll. Oder geben Sie eine XML-Datei, die in JSON konvertiert werden soll. 
@@ -124,13 +124,23 @@ Wenn Sie in Ihrer App die BizTalk-API-Apps im Katalog auswählen, werden sie aut
 
 
 ## Weitere Ressourcen zu Integrations-API-Apps
-[Erstellen einer EAI-Logik-App mithilfe von VETR](app-service-logic-create-EAI-logic-app-using-VETR.md)<br/> [Transformieren von XML-Dokumenten](app-service-logic-transform-xml-documents.md)<br/> [Verwenden von BizTalk-Regeln](app-service-logic-use-biztalk-rules.md)<br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
+[Erstellen einer EAI-Logik-App mithilfe von VETR](app-service-logic-create-EAI-logic-app-using-VETR.md)<br/>
+[Transformieren von XML-Dokumenten](app-service-logic-transform-xml-documents.md)<br/>
+[Verwenden von BizTalk-Regeln](app-service-logic-use-biztalk-rules.md)<br/>
+[Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
 
 
 ## Weitere Informationen zu Logik- und Web-Apps
-[Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md)<br/> [Websites und Web-Apps in Azure App Service](app-service-web-app-azure-portal.md)
+[Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md)<br/>
+[Websites und Web-Apps in Azure App Service](app-service-web-app-azure-portal.md)
 
 
 ## Weitere Connectors
-[Enterprise-Connectors](app-service-logic-enterprise-connectors.md)<br/> [Business-to-Business-Connectors](app-service-logic-b2b-connectors.md)<br/> [Connectors für soziale Netzwerke](app-service-logic-social-connectors.md)<br/> [Protokollconnectors](app-service-logic-protocol-connectors.md)<br/> [App und Data Services-Connectors](app-service-logic-data-connectors.md)<br/> [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
+[Enterprise-Connectors](app-service-logic-enterprise-connectors.md)<br/>
+[Business-to-Business-Connectors](app-service-logic-b2b-connectors.md)<br/>
+[Connectors für soziale Netzwerke](app-service-logic-social-connectors.md)<br/>
+[Protokollconnectors](app-service-logic-protocol-connectors.md)<br/>
+[App und Data Services-Connectors](app-service-logic-data-connectors.md)<br/>
+[Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/>
+[Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
 <!--HONumber=54-->

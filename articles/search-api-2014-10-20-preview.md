@@ -1135,7 +1135,7 @@ Der Anforderungs-URI gibt den abzufragenden Index für alle Dokumente an, die mi
 
 `search=[zeichenfolge]` (optional) - der zu suchende Text. Standardmäßig werden alle  `searchable` Felder durchsuch, sofern nicht  `searchFields` angegeben ist. Beim Durchsuchen von  `searchable`-Feldern liegt der Suchtext selbst in Form von Token vor, sodass mehrere Ausdrücke durch Leerzeichen getrennt werden können (Beispiel: `search=hello world`). Um Übereinstimmungen mit einem der Ausdrücke anzugeben, verwenden Sie `*` (das kann für Boolesche Filterabfragen nützlich sein). Das Auslassen dieses Parameters hat die gleiche Wirkung wie seine Festlegung auf `*`. Einzelheiten zur Suchsyntax finden Sie unten unter "Einfache Abfragesyntax".
 
-  - **Hinweis**: Die Ergebnisse können manchmal überraschend sein, wenn  `searchable` Felder abgefragt werden. Der Tokenizer enthält Logik zum Behandeln von Fällen, die im Englischen häufig sind, wie etwa Apostrophe, Kommas in Zahlen usw. Beispiel: der Parameter  `search=123,456` will match a single term 123,456 rather than the individual terms 123 and 456, since commas are used as thousand-separators for large numbers in English. For this reason, we recommend using white space rather than punctuation to separate terms in the `search`.
+  - **Hinweis**: Die Ergebnisse können manchmal überraschend sein, wenn  `searchable` Felder abgefragt werden. Der Tokenizer enthält Logik zum Behandeln von Fällen, die im Englischen häufig sind, wie etwa Apostrophe, Kommas in Zahlen usw. Beispiel: der Parameter  `search=123,456` Sucht nach einer einzelnen Zeichenfolge "123,456" und nicht nach den separaten Zeichenfolgen "123" und "456", da Kommas im Englischen als Tausendertrennzeichen verwendet werden. Deshalb wird empfohlen, anstelle von Kommas Leerzeichen zum Trennen von Suchbegriffen in der Suchfunktion zu verwenden.
 
 `searchMode=any|all` (optional, Standardwert  `any`) - ob einer oder alle Suchbegriffe übereinstimmen müssen, um das Dokument als Treffer zu werten.
 
@@ -1476,4 +1476,4 @@ Frage 5 Vorschläge ab, die diese teilweise Sucheingabe aufweisen:  'lux'.
 
 
 
-<!--HONumber=54-->
+<!---HONumber=54-->
