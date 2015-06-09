@@ -108,7 +108,7 @@ Ihre Anwendung muss so konfiguriert sein, dass auf das Zertifikat verwiesen wird
         ...
         </WebRole>
 
-    Der Bereich **Certificates** definiert den Namen des Zertifikats, dessen Speicherort sowie den Namen des Speichers. Da das Zertifikat im Benutzerzertifikatspeicher installiert ist, wird der Wert "My" verwendet. Andere Zertifikatspeicherorte können ebenfalls verwendet werden. Weitere Informationen finden Sie unter [Verknüpfen eines Zertifikats (mit einem Dienst)].
+    Der Bereich **Certificates** definiert den Namen des Zertifikats, dessen Speicherort sowie den Namen des Speichers. Da das Zertifikat im Benutzerzertifikatspeicher installiert ist, wird der Wert "My" verwendet. Andere Zertifikatspeicherorte können ebenfalls verwendet werden. Weitere Informationen finden Sie unter [Verknüpfen eines Zertifikats (mit einem Dienst)](http://msdn.microsoft.com/library/windowsazure/gg465718.aspx).
 
 2.  Aktualisieren Sie in der Dienstdefinitionsdatei im Abschnitt **Endpoints** das **InputEndpoint**-HTTP-Element, um HTTPS zu aktivieren:
 
@@ -123,7 +123,8 @@ Ihre Anwendung muss so konfiguriert sein, dass auf das Zertifikat verwiesen wird
 
     Alle erforderlichen Änderungen an der Dienstdefinitionsdatei sind jetzt abgeschlossen. Sie müssen jedoch noch die Zertifikatinformationen zur Dienstkonfigurationsdatei hinzufügen.
 
-3.  Fügen Sie in Ihren Dienstkonfigurationsdateien (**ServiceConfiguration.Cloud.cscfg** und **ServiceConfiguration.Local.cscfg**) das Zertifikat in den leeren Abschnitt **Certificates** innerhalb des Abschnitts **Role** ein. Damit ersetzen Sie den unten angegebenen Beispielfingerabdruckwert durch den Wert Ihres Zertifikats:
+3.  Fügen Sie in Ihren Dienstkonfigurationsdateien (**ServiceConfiguration.Cloud.cscfg** und **ServiceConfiguration.Local.cscfg**) das Zertifikat in den leeren Abschnitt **
+4.  ** innerhalb des Abschnitts **Role** ein. Damit ersetzen Sie den unten angegebenen Beispielfingerabdruckwert durch den Wert Ihres Zertifikats:
 
         <Role name="WebRole1">
         ...
