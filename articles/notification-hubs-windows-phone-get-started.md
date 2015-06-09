@@ -43,27 +43,27 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen B
 
 2. Klicken Sie auf **App-Dienste**, dann auf **Service Bus**, **Benachrichtigungshub** und **Schnellerfassung**.
 
-   ![][7]
+   	![][7]
 
 3. Geben Sie einen Namen für Ihren Benachrichtigungshub ein, wählen Sie Ihre gewünschte Region aus, und klicken Sie dann auf **Create a new Notification Hub**.
 
-   ![][8]
+   	![][8]
 
 4. Klicken Sie auf den soeben erstellten Namespace (für gewöhnlich ***Name des Benachrichtigungshubs*-ns**) und anschließend oben auf die Registerkarte **Konfigurieren**.
 
-   ![][9]
+   	![][9]
 
 5. Klicken Sie oben auf die Registerkarte **Benachrichtigungshubs** und dann auf den soeben erstellen Benachrichtigungshub.
 
-   ![][10]
+   	![][10]
 
 6. Klicken Sie unten auf **Verbindungsinformationen**. Notieren Sie sich die beiden Verbindungszeichenfolgen.
 
-   ![][12]
+   	![][12]
 
 7. Klicken Sie auf die Registerkarte **Konfigurieren** und dann im Abschnitt **Windows Phone notifications settings** auf das Kontrollkästchen **Enable unauthenticated push notifications**.
 
-   ![][15]
+   	![][15]
 
 Nun verfügen Sie über die Verbindungszeichenfolgen, die Sie zum Registrieren Ihrer Windows Phone 8-App und zum Senden von Benachrichtigungen benötigen.
 
@@ -73,11 +73,11 @@ Nun verfügen Sie über die Verbindungszeichenfolgen, die Sie zum Registrieren I
 
 1. Erstellen Sie in Visual Studio eine neue Windows Phone 8-Anwendung.
 
-   ![][13]
+   	![][13]
 
 	In Visual Studio 2013 Update 2 oder höher erstellen Sie stattdessen eine Windows Phone Silverlight-Anwendung.
 	
-	![][11]
+	![][11]	
 
 2. Klicken Sie in Visual Studio mit der rechten Maustaste auf die Projektmappe, und klicken Sie dann auf **NuGet-Pakete verwalten**. 
 
@@ -117,7 +117,7 @@ Nun verfügen Sie über die Verbindungszeichenfolgen, die Sie zum Registrieren I
     
 6. Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei "WMAppManifest.xml", klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **ID___CAP___PUSH_NOTIFICATION**.
 
-   ![][14]
+   	![][14]
 
    Damit stellen Sie sicher, dass Ihre App Pushbenachrichtigungen empfangen kann.
 	
@@ -131,7 +131,7 @@ Sie können Benachrichtigungen mithilfe von Notification Hubs von jedem beliebig
 
 1. Klicken Sie mit der rechten Maustaste auf die Projektmappe, wählen Sie **Hinzufügen** und **Neues Projekt...** aus, und klicken Sie dann unter **Visual C#** auf **Windows**, **Konsolenanwendung** und **OK**. 
 
-   ![][6]
+   	![][6]
 
 	Damit wird der Projektmappe eine neue Visual C#-Konsolenanwendung hinzugefügt. Sie können dies auch in einer separaten Projektmappe durchführen. 
 
@@ -216,4 +216,4 @@ In diesem einfachen Beispiel übertragen Sie Benachrichtigungen an all Ihre Wind
 [Beispiellernprogramm Notification Hub - WP Silverlight]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
 
 
-<!--HONumber=52-->
+<!---HONumber=52-->
