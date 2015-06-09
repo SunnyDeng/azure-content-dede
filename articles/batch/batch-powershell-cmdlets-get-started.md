@@ -25,11 +25,11 @@ Geben Sie ```get-help <Cmdlet_name>``` ein, um detaillierte Informationen zur Cm
 ## Voraussetzungen
 
 * **Batch-Vorschau**: Melden Sie sich für die [Batch-Vorschau](https://account.windowsazure.com/PreviewFeatures) an, sofern dies noch nicht erfolgt ist, um den Dienst verwenden zu können.
-* **Azure PowerShell**: Anweisungen zu erforderlichen Komponenten, zum Download und zur Installation finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md). Batch-Cmdlets wurden ab Version 0.8.10 eingeführt.
+* **Azure PowerShell**: Anweisungen zu erforderlichen Komponenten, zum Download und zur Installation finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Batch-Cmdlets wurden ab Version 0.8.10 eingeführt.
 
 ## Verwenden der Batch-Cmdlets
 
-Starten Sie Azure PowerShell entsprechend dem Standardverfahren, und [stellen Sie eine Verbindung mit Ihren Azure-Abonnements her](powershell-install-configure.md#Connect). Weitere Vorgänge:
+Starten Sie Azure PowerShell entsprechend dem Standardverfahren, und [stellen Sie eine Verbindung mit Ihren Azure-Abonnements her](../powershell-install-configure.md#Connect). Weitere Vorgänge:
 
 * **Auswählen des Azure-Abonnements**: Wenn Sie über mehrere Abonnements verfügen, wählen Sie das Abonnement aus, in dem Sie die Funktion für die Batch-Vorschau hinzugefügt haben:
 
@@ -37,7 +37,7 @@ Starten Sie Azure PowerShell entsprechend dem Standardverfahren, und [stellen Si
     Select-AzureSubscription -SubscriptionName <SubscriptionName>
     ```
 
-* **Wechseln in den AzureResourceManage-Modus**: Die Batch-Cmdlets befinden sich im Modul Azure-Ressourcen-Manager. Ausführliche Informationen siehe [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](powershell-azure-resource-manager.md). Führen Sie zur Verwendung dieses Moduls das Cmdlet [Switch-AzureMode](https://msdn.microsoft.com/library/dn722470.aspx) aus:
+* **Wechseln in den AzureResourceManage-Modus**: Die Batch-Cmdlets befinden sich im Modul Azure-Ressourcen-Manager. Ausführliche Informationen siehe [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](../powershell-azure-resource-manager.md). Führen Sie zur Verwendung dieses Moduls das Cmdlet [Switch-AzureMode](https://msdn.microsoft.com/library/dn722470.aspx) aus:
 
     ```
     Switch-AzureMode -Name AzureResourceManager
