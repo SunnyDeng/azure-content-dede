@@ -145,7 +145,37 @@ Geben Sie einen Namen ein. Bewertungsprofile sind optional, wenn Sie jedoch ein 
 
 Der Hauptteil des Bewertungsprofils wird aus gewichteten Feldern und Funktionen erstellt.
 
-<font> <table style="font-size:12"> <thead> <tr><td>Element</td><td>Beschreibung</td></tr></thead> <tbody <tr> <td><b>Gewichtungen</b></td> <td> Geben Sie Name-Wert-Paare an, die einem Feld eine relative Gewichtung zuordnen. Im Beispiel [#Bkmk_ex] werden die Felder "albumTitle", "genre" und "artistName" entsprechend um 1, 5 und Null verstärkt. Warum wird "genre" so viel stärker als die anderen Felder erhöht? Wenn die Suche über relativ homogene Daten durchgeführt wird (wie bei "genre" in `musicstoreindex`), ist bei den relativen Gewichtungen möglicherweise eine größere Varianz erforderlich. In `musicstoreindex` wird "rock" z. B. sowohl für "genre" als auch für identisch formulierte Genrebeschreibungen angezeigt.  Wenn "genre" schwerer wiegen soll als die Genrebeschreibung, dann benötigt das Feld "genre" eine viel höhere relative Gewichtung. </td> </tr> <tr> <td><b>Funktionen</b></td><td>Werden verwendet, wenn für bestimmte Kontexte zusätzliche Berechnungen erforderlich sind. Gültige Werte sind `freshness`, `magnitude` oder `distance`. Jede Funktion verfügt über Parameter, die für sie eindeutig sind. <br> - `freshness` sollte verwendet werden, wenn Sie Elemente in Abhängigkeit davon verstärken möchten, wie neu oder alt diese sind.  Diese Funktion kann nur mit datetime-Feldern (edm.DataTimeOffset) verwendet werden. Beachten Sie, dass das `boostingDuration`-Attribut nur mit der Funktion "freshness" verwendet wird. <br> - `magnitude` sollte verwendet werden, wenn die Verstärkung auf Basis der Höhe eines numerischen Werts erfolgen soll. Szenarien, die diese Funktion erforderlich machen, umfassen die Verstärkung nach Gewinnspanne, Höchstpreis, Mindestpreis oder Downloadanzahl.  Diese Funktion kann nur mit Double- und Integer-Feldern verwendet werden. <br> - `distance` sollte verwendet werden,  wenn die Verstärkung entsprechend der Nähe oder geografischen Lage erfolgen soll. Diese Funktion kann nur mit `geo.distance`-Feldern verwendet werden. <br> <b>Regeln für die Verwendung von Funktionen</b> <br> Der Funktionstyp ("freshness", "magnitude", "distance") muss in Kleinbuchstaben angegeben werden. <br> Funktionen dürfen nicht Null sein oder leere Werte enthalten. Insbesondere beim Einbeziehen von Feldnamen muss ein Wert festgelegt werden. <br> Funktionen können nur auf filterbare Felder angewendet werden. Weitere Informationen zu filterbaren Feldern finden Sie unter [Index erstellen (Azure Search-API)](search-api-2014-10-20-preview.md#createindex). <br> Funktionen können nur auf Felder angewendet werden, die in der Felderauflistung für einen Index definiert sind. <td> </tr> </tbody> </table> </font>
+<font>
+<table style="font-size:12">
+<thead>
+<tr><td>Element</td><td>Beschreibung</td></tr></thead>
+<tbody>
+<tr>
+<td><b>Gewichtungen</b></td>
+<td>
+Geben Sie Name-Wert-Paare an, die einem Feld eine relative Gewichtung zuordnen. Im Beispiel [#Bkmk_ex] werden die Felder "albumTitle", "genre" und "artistName" entsprechend um 1, 5 und Null verstärkt. Warum wird "genre" so viel stärker als die anderen Felder erhöht? Wenn die Suche über relativ homogene Daten durchgeführt wird (wie bei "genre" in `musicstoreindex`), ist bei den relativen Gewichtungen möglicherweise eine größere Varianz erforderlich. In `musicstoreindex` wird "rock" z. B. sowohl für "genre" als auch für identisch formulierte Genrebeschreibungen angezeigt.  Wenn "genre" schwerer wiegen soll als die Genrebeschreibung, dann benötigt das Feld "genre" eine viel höhere relative Gewichtung.
+</td>
+</tr>
+<tr>
+<td><b>Funktionen</b></td><td>Werden verwendet, wenn für bestimmte Kontexte zusätzliche Berechnungen erforderlich sind. Gültige Werte sind `freshness`, `magnitude` oder `distance`. Jede Funktion verfügt über Parameter, die für sie eindeutig sind.
+<br> - `freshness` sollte verwendet werden, wenn Sie Elemente in Abhängigkeit davon verstärken möchten, wie neu oder alt diese sind.  Diese Funktion kann nur mit datetime-Feldern (edm.DataTimeOffset) verwendet werden. Beachten Sie, dass das `boostingDuration`-Attribut nur mit der Funktion "freshness" verwendet wird.
+<br> - `magnitude` sollte verwendet werden, wenn die Verstärkung auf Basis der Höhe eines numerischen Werts erfolgen soll. Szenarien, die diese Funktion erforderlich machen, umfassen die Verstärkung nach Gewinnspanne, Höchstpreis, Mindestpreis oder Downloadanzahl.  Diese Funktion kann nur mit Double- und Integer-Feldern verwendet werden.
+<br> - `distance` sollte verwendet werden,  wenn die Verstärkung entsprechend der Nähe oder geografischen Lage erfolgen soll. Diese Funktion kann nur mit `geo.distance`-Feldern verwendet werden.
+<br>
+<b>Regeln für die Verwendung von Funktionen</b>
+<br>
+Der Funktionstyp ("freshness", "magnitude", "distance") muss in Kleinbuchstaben angegeben werden.
+<br>
+Funktionen dürfen nicht Null sein oder leere Werte enthalten. Insbesondere beim Einbeziehen von Feldnamen muss ein Wert festgelegt werden.
+<br>
+Funktionen können nur auf filterbare Felder angewendet werden. Weitere Informationen zu filterbaren Feldern finden Sie unter [Index erstellen (Azure Search-API)](search-api-2014-10-20-preview.md#createindex).
+<br>
+Funktionen können nur auf Felder angewendet werden, die in der Felderauflistung für einen Index definiert sind.
+<td>
+</tr>
+</tbody>
+</table>
+</font>
 
 Nachdem der Index definiert wurde, erstellen Sie den Index durch Hochladen des Indexschemas, gefolgt von Dokumenten. Anweisungen zu diesen Vorgängen finden Sie unter [Index erstellen (Azure Search-API)](search-api-2014-10-20-preview.md#createindex) und [Dokumente hinzufügen oder aktualisieren (Azure Search-API)](search-api-2014-10-20-preview.md#AddOrUpdateDocuments). Nachdem der Index erstellt wurde, sollten Sie über ein funktionsfähiges Bewertungsprofil verfügen, das mit Ihren Suchdaten arbeitet.
 
@@ -255,7 +285,8 @@ In diesem Abschnitt wird die Syntax und die Vorlage für die Bewertungsprofile v
 </tr><tr>
 <td>functionAggregation</td>	<td>Optional. Gilt nur, wenn Funktionen angegeben sind. Gültige Werte: "sum" (Standard), "average", "minimum", "maximum" und "firstMatching". Eine Suchbewertung entspricht einem einzelnen Wert, der aus mehreren Variablen berechnet wird, einschließlich mehrerer Funktionen. Dieses Attribut gibt an, wie die Verstärkungen aller Funktionen zu einer einzelnen Gesamtverstärkung zusammengefasst werden, die dann auf die Basisdokumentbewertung angewendet wird. Die Basisbewertung basiert auf dem tf-idf-Wert, der aus dem Dokument und der Suchabfrage berechnet wird.</td>
 </tr><tr>
-<td>defaultScoringProfile</td>	<td>Beim Ausführen einer Suchanforderung wird die Standardbewertung verwendet (nur tf-idf), wenn kein Bewertungsprofil angegeben ist. Hier kann ein Standardname für das Bewertungsprofil festgelegt werden. Dies führt dazu, dass Azure Search dieses Profil verwendet, wenn in der Suchanforderung kein bestimmtes Profil angegeben ist.  </td>
+<td>defaultScoringProfile</td>	<td>Beim Ausführen einer Suchanforderung wird die Standardbewertung verwendet (nur tf-idf), wenn kein Bewertungsprofil angegeben ist. Hier kann ein Standardname für das Bewertungsprofil festgelegt werden. Dies führt dazu, dass Azure Search dieses Profil verwendet, wenn in der Suchanforderung kein bestimmtes Profil angegeben ist.
+</td>
 </tr>
 </tbody>
 </table>
@@ -273,7 +304,8 @@ Interpolationen ermöglichen Ihnen die Definition der Steigung, in der die Bewer
 
 - `Logarithmic` Im Vergleich zur linearen Interpolation, die eine konstant abnehmende Verstärkung aufweist, erfolgt die Abnahme bei "Logarithmic" anfänglich mit höherer Geschwindigkeit, während zum Bereichsende hin die Abnahme in viel kleineren Schritten erfolgt.
  
-<a name="Figure1"></a> ![][1]
+<a name="Figure1"></a>
+![][1]
 
 <a name="bkmk_boostdur"></a>
 ##Festlegen von boostingDuration##
@@ -311,4 +343,4 @@ Weitere Beispiele finden Sie unter [XML-Schema: Datentypen (W3.org-Website)](htt
 [1]: ./media/search-api-scoring-profiles-2014-07-31-Preview/scoring_interpolations.png
 
 
-<!--HONumber=54-->
+<!---HONumber=54-->
