@@ -1,6 +1,6 @@
-﻿<properties
-	pageTitle="Azure-Befehlszeilen-Tools für Mac und Linux"
-	description="Erfahren Sie mehr über die Verwendung des Befehlszeilentools für Mac und Linux in Azure."
+<properties
+	pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung"
+	description="Erfahren Sie, wie Sie mit den Befehlszeilentools für Mac, Linux und Windows Azure im ASM-Modus für Azure-Befehlszeilenschnittstellen verwalten."
 	services="web-sites, virtual-machines, mobile-services, cloud-services"
 	documentationCenter=""
 	authors="squillace"
@@ -13,39 +13,20 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="2/20/2014" 
+	ms.date="04/23/2015"
 	ms.author="rasquill"/>
 
-#Azure-Befehlszeilentool für Mac und Linux
+# Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung
 
-Mit den Funktionen dieses Werkzeugs können Sie virtuelle Computer, Websites und Azure Mobile Services auf Mac- und Linux-Desktoprechnern erstellen, bereitstellen und verwalten. Die Funktionen ähneln denen der Windows PowerShell-Cmdlets, die mit den Azure SDKs für .NET, Node.JS und PHP installiert werden.
+In diesem Thema wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle im **ASM-Modus** Dienste in der Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Die Funktionen ähneln denen der Windows PowerShell-Cmdlets, die mit den Azure SDKs für .NET, Node.JS und PHP installiert werden.
 
-Um das Tool auf einem Mac zu installieren, laden Sie den [Azure SDK-Installer](http://go.microsoft.com/fwlink/?LinkId=252249) herunter, und führen Sie ihn aus.
+> [AZURE.NOTE]Das Verwenden von Azure-Diensten im **ASM-Modus** ähnelt begrifflich individuellen Azure-Konzepten und -Diensten wie Websites, virtuellen Computern, virtuellen Netzwerken, Speicher usw. Im **ARM-Modus** stehen Ihnen in der Befehlszeile umfangreichere Funktionen mit einem logisch gruppierten und hierarchischen Ressourcenmodell zur Verfügung. Weitere Informationen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md).
 
-Für die Installation unter Linux benötigen Sie zunächst die neueste Version von Node.JS und können anschließend NPM verwenden:
-
-    npm install azure-cli -g
+Eine Installationsanleitung finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
 
 Optionale Parameter werden in eckigen Klammern angezeigt (z. B. [Parameter]). Alle anderen Parameter müssen angegeben werden.
 
 Neben den hier dokumentierten befehlsspezifischen optionalen Parametern gibt es drei weitere optionale Parameter für die Anzeige detaillierter Ausgaben wie z. B. Anforderungsoptionen und Statuscodes. Der Parameter -v bietet ausführliche Ausgaben, und der Parameter -vv bietet noch detailliertere ausführliche Ausgaben. Mit der Option --json erfolgt die Ausgabe im reinen JSON-Format.
-
-**Inhaltsverzeichnis:**
-
-* [Verwalten Ihrer Kontoinformationen und Veröffentlichen von Einstellungen](#Manage_your_account_information_and_publish_settings)
-* [Befehle zum Verwalten Ihrer virtuellen Azure-Computer](#Commands_to_manage_your_Azure_virtual_machines)
-* [Befehle zum Verwalten der Endpunkte Ihrer virtuellen Azure-Computer](#Commands_to_manage_your_Azure_virtual_machine_endpoints)
-* [Befehle zum Verwalten der Images Ihrer virtuellen Azure-Computer](#Commands_to_manage_your_Azure_virtual_machine_images)
-* [Befehle zum Verwalten der Datenträger Ihrer virtuellen Azure-Computer](#Commands_to_manage_your_Azure_virtual_machine_data_disks)
-* [Befehle zum Verwalten Ihrer Azure-Cloud-Dienste](#Commands_to_manage_your_Azure_cloud_services)
-* [Befehle zum Verwalten Ihrer Azure-Zertifikate](#Commands_to_manage_your_Azure_certificates)
-* [Befehle zum Verwalten Ihrer Websites](#Commands_to_manage_your_web_sites)
-* [Befehle zum Verwalten Ihrer Azure Mobile Services](#Commands_to_manage_mobile_services)
-* [Verwalten der lokalen Tooleinstellungen](#Manage_tool_local_settings)
-* [Befehle zum Verwalten von Service Bus](#Commands_to_manage_service_bus)
-* [Befehle zum Verwalten Ihrer Speicherobjekte](#Commands_to_manage_your_Storage_objects)
-* [Befehle zum Verwalten von SQL-Datenbanken](#Commands_to_manage_sql)
-* [Befehle zum Verwalten Ihrer virtuellen Netzwerke](#Commands_to_manage_vnet)
 
 ##<a name="Manage_your_account_information_and_publish_settings"></a>Verwalten Ihrer Kontoinformationen und Veröffentlichen von Einstellungen
 Das Tool verwendet Ihre Azure-Kontoinformationen, um sich mit Ihrem Benutzerkonto zu verbinden. Sie finden diese Informationen im Azure-Portal in einer Einstellungsveröffentlichungsdatei, wie hier beschrieben. Sie können die Einstellungsveröffentlichungsdatei als persistente lokale Konfigurationseinstellung importieren, die das Tool dann in späteren Operationen verwendet. Sie müssen Ihre Veröffentlichungseinstellungen nur einmal importieren.
@@ -75,12 +56,11 @@ Dieser Befehl importiert eine PUBLISHSETTINGS-Datei oder ein Zertifikat für den
 	warn:   Remember to delete it now that it has been imported.
 	info:   Account publish settings imported successfully
 
-> [AZURE.NOTE] .publishsettings-Dateien können Details (Abonnementname und -ID) für mehr als ein Abonnement enthalten. Beim Importieren der PUBLISHSETTINGS-Datei wird das erste Abonnement als Standard-Abonnement verwendet. Führen Sie den folgenden Befehl aus, um ein anderes Abonnement zu verwenden.
-<code>~$ azure config set subscription &lt;other-subscription-id&gt;</code>
+> [AZURE.NOTE].publishsettings-Dateien können Details (Abonnementname und -ID) für mehr als ein Abonnement enthalten. Beim Importieren der PUBLISHSETTINGS-Datei wird das erste Abonnement als Standard-Abonnement verwendet. Führen Sie den folgenden Befehl aus, um ein anderes Abonnement zu verwenden: <code>~$ azure config set subscription &lt;Andere Abonnement-ID&gt;</code>
 
 **account clear [Optionen]**
 
-Dieser Befehl löscht die zuvor importierten Veröffentlichungseinstellungen. Verwenden Sie diesen Befehl, wenn Sie das Tool auf einem Computer nicht mehr benötigen und sicherstellen möchten, dass dieses zukünftig nicht mit Ihrem Benutzerkonto verwendet werden kann.
+Mit diesem Befehl werden die zuvor importierten Veröffentlichungseinstellungen gelöscht. Verwenden Sie diesen Befehl, wenn Sie das Tool auf einem Computer nicht mehr benötigen und sicherstellen möchten, dass dieses zukünftig nicht mit Ihrem Benutzerkonto verwendet werden kann.
 
 	~$ azure account clear
 	Clearing account info.
@@ -110,7 +90,7 @@ Setzt das aktuelle Abonnement
 
 Dieser Befehl listet Ihre Azure-Affinitätsgruppen auf.
 
-Affinitätsgruppen können konfiguriert werden, wenn eine Gruppe von virtuellen Computern mehrere physische Computer umfasst. Die Affinitätsgruppe gibt an, dass die physischen Computer einander möglichst nahe sein sollten, um die Netzwerklatenz zu minimieren.
+Affinitätsgruppe können konfiguriert werden, wenn eine Gruppe von virtuellen Computern mehrere physische Computer umfasst. Die Affinitätsgruppe gibt an, dass die physischen Computer einander möglichst nahe sein sollten, um die Netzwerklatenz zu minimieren.
 
 	~$ azure account affinity-group list
 	+ Fetching affinity groups
@@ -171,7 +151,7 @@ Liste der Kontoumgebungen
 	data:    AzureChinaCloud
 	info:    account env list command OK
 
-**account env show [Optionen] [Umgebung]**
+**account env show [Optionen][environment]**
 
 Zeigt Details der Kontoumgebung an
 
@@ -182,55 +162,42 @@ Zeigt Details der Kontoumgebung an
 	data:    Environment portal  http://go.microsoft.com/fwlink/?LinkId=2544
 	info:    account env show command OK
 
-**account env add [Optionen] [Umgebung]**
+**account env add [Optionen][environment]**
 
 Dieser Befehl fügt eine Umgebung zum Konto hinzu
 
-**account env set [Optionen] [Umgebung]**
+**account env set [Optionen][environment]**
 
 Dieser Befehl setzt die Kontoumgebung
 
-**account env delete [Optionen] [Umgebung]**
+**account env delete [Optionen][environment]**
 
 Dieser Befehl löscht die angegebene Umgebung vom Konto
 
 ##<a name="Commands_to_manage_your_Azure_virtual_machines"></a>Befehle zum Verwalten Ihrer virtuellen Azure-Computer
 Das folgende Diagramm zeigt, wie virtuelle Azure-Computer in der Produktionsumgebung eines Azure-Cloud-Diensts gehostet werden.
 
-![Azure Technical Diagram](./media/virtual-machines-command-line-tools/architecturediagram.jpg)
+![Technisches Diagramm Azure](./media/virtual-machines-command-line-tools/architecturediagram.jpg)
 
-**create-new** erstellt das Laufwerk im Blob-Speicher (also e:\ im Diagramm); **attach** hängt einen bereits erstellten, jedoch nicht angehängten Datenträger an einen virtuellen Computer an.
+**create-new** erstellt das Laufwerk im Blobspeicher (E:\ in diesem Diagramm); **attach** hängt ein bereits erstelltes, aber noch nicht angehängtes Laufwerk an einen virtuellen Computer an.
 
-**vm create [Optionen] &lt;DNS-Name> &lt;Bild> &lt;Benutzername> [Kennwort]**
+**vm create [Optionen] &lt;DNS-Name> &lt;Image> &lt;Benutzername> [Kennwort]**
 
 Dieser Befehl erstellt einen neuen virtuellen Azure-Computer. Standardmäßig wird jeder virtuelle Computer in einem eigenen Cloud-Dienst erstellt. Sie können jedoch mit der Option -c angeben, dass ein virtueller Computer zu einem existierenden Cloud-Dienst hinzugefügt werden soll.
 
 Der Befehl "vm create" erstellt, ebenso wie das Azure-Portal, nur virtuelle Computer in der Produktionsumgebung. Es existiert keine Option zum Erstellen eines virtuellen Computers in der Stagingumgebung eines Cloud-Diensts. Wenn für Ihr Abonnement kein Azure-Speicherkonto vorhanden ist, wird mit diesem Befehl eines erstellt.
 
-Sie können den Parameter "--location" für die Angabe eines Ortes verwenden und den Parameter "--affinity-group" für die Angabe einer Affinitätsgruppe. Falls Sie keinen dieser Parameter verwenden, müssen Sie einen Ort aus einer Liste auswählen.
+Sie können den Parameter --location für die Angabe eines Ortes verwenden und den Parameter --affinity-group für die Angabe einer Affinitätsgruppe. Falls Sie keinen dieser Parameter verwenden, müssen Sie einen Ort aus einer Liste auswählen.
 
-Das angegebene Kennwort muss 8-123 Zeichen lang sein und die Komplexitätsanforderungen des Betriebssystems erfüllen, das Sie auf dem entsprechenden virtuellen Computer verwenden.
+Das angegebene Passwort muss 8-123 Zeichen lang sein und die Komplexitätsanforderungen des Betriebssystems erfüllen, das Sie auf dem entsprechenden virtuellen Computer verwenden.
 
-Falls Sie SSH für die Verwaltung virtueller Linux-Computer benötigen (dies ist häufig der Fall), müssen Sie SSH bei der Erstellung des virtuellen Computers über die Option "-e" aktivieren. SSH kann nach der Erstellung des virtuellen Computers nicht mehr aktiviert werden.
+Falls Sie SSH für die Verwaltung virtueller Linux-Computer benötigen (dies ist häufig der Fall), müssen Sie SSH bei der Erstellung des virtuellen Computers über die Option -e aktivieren. SSH kann nach der Erstellung des virtuellen Computers nicht mehr aktiviert werden.
 
 Virtuelle Windows-Computer können RDP später aktivieren, indem Port 3389 als Endpunkt hinzugefügt wird.
 
 Der Befehl unterstützt die folgenden optionalen Parameter:
 
-**-c, --connect** Erstellt den virtuellen Computer in einer bereits erstellten Bereitstellung in einem Hostingdienst. Bei der Verwendung dieser Option ohne -vmname wird der name des neuen virtuellen Computers automatisch generiert.<br />
-**-n, --vm-name** Gibt den Namen des virtuellen Computers an. Dieser Parameter nimmt standardmäßig den Namen des Hostingdiensts entgegen. Ohne Angabe von -vmname wird der Name des neuen virtuellen Computers als &lt;Dienstname>&lt;ID> generiert, wobei &lt;ID> der Anzahl existierender virtueller Computer im Dienst plus 1 entspricht. Wenn Sie mit diesem Befehl z. B. einen neuen virtuellen Computer einem Hostingdienst "MyService" hinzufügen, der bereits einen virtuellen Computer enthält, dann erhält der neue virtuelle Computer den Namen "MyService2".<br />
-**-u, --blob-url** Gibt die URL des Ziel-Blob-Speichers an, in dem der Systemdatenträger des virtuellen Computers erstellt werden soll. <br />
-**-z, --vm-size** Gibt die Größe des virtuellen Computers an. Gültige Werte sind "extrasmall", "small", "medium", "large", "extralarge". Der Standardwert ist "small". <br />
-**-r** Fügt einem virtuellen Windows-Computer RDP-Konnektivität hinzu. <br />
-**-e, --ssh** Fügt einem virtuellen Windows-Computer SSH-Konnektivität hinzu. <br />
-**-t, --ssh-cert** Gibt das SSH-Zertifikat an. <br />
-**-s** Das Abonnement <br />
-**-o, --community** Das angegebene Bild ist ein Community-Bild <br />
-**-w** Der Name des virtuellen Netzwerks <br/>
-**-l, --location** gibt den Standort an (z. B. "USA (Mitte/Norden)"). <br />
-**-a, --affinity-group** gibt die Affinitätsgruppe an.<br />
-**-w, --virtual-network-name** Gibt an, welchem virtuellen Netzwerk der neue virtuelle Computer hinzugefügt werden soll. Virtuelle Netzwerke können im Azure-Portal eingerichtet und verwaltet werden.<br />
-**-b, --subnet-names** Gibt die Subnetznamen an, die dem virtuellen Computer zugewiesen werden sollen.
+**-c, --connect** Erstellt den virtuellen Computer in einer bereits erstellten Bereitstellung in einem Hostingdienst. Bei der Verwendung dieser Option ohne -vmname wird der Name des neuen virtuellen Computers automatisch generiert.<br /> **-n, --vm-name** Geben Sie den Namen des virtuellen Computers an. Dieser Parameter nimmt standardmäßig den Namen des Hostingdiensts entgegen. Ohne Angabe von -vmname wird der Name des neuen virtuellen Computers als &lt;Dienstname>&lt;ID> generiert, wobei &lt;ID> die Anzahl existierender virtueller Computer im Dienst plus 1 ist. Wenn Sie mit diesem Befehl beispielsweise einen neuen virtuellen Computer zum Hostingdienst MyService hinzufügen, der bereits einen virtuellen Computer enthält, erhält der neue virtuelle Computer den Namen MyService2.<br /> **-u, --blob-url** Geben Sie die URL des Blobspeichers an, in dem das Systemlaufwerk des virtuellen Computers erstellt werden soll. <br /> **-z, --vm-size** Geben Sie die Größe des virtuellen Computers an. Gültige Werte sind: "ExtraSmall", "Small", "Medium", "Large", "ExtraLarge", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "Basic_A0", "Basic_A1", "Basic_A2", "Basic_A3", "Basic_A4", "Standard_D1", "Standard_D2", "Standard_D3", "Standard_D4", "Standard_D11", "Standard_D12", "Standard_D13", "Standard_D14", "Standard_DS1", "Standard_DS2", "Standard_DS3", "Standard_DS4", "Standard_DS11", "Standard_DS12", "Standard_DS13", "Standard_DS14", "Standard_G1", "Standard_G2", "Standard_G3", "Standard_G4", "Standard_G55". Der Standardwert ist "Small". <br /> **-r** Fügt einem virtuellen Windows-Computer RDP-Konnektivität hinzu <br /> **-e, --ssh** Fügt einem virtuellen Windows-Computer SSH-Konnektivität hinzu <br /> **-t, --ssh-cert** Legt das SSH-Zertifikat fest <br /> **-s** Das Abonnement <br /> **-o, --community** Das angegebene Bild ist ein Community-Image. <br /> **-w** Der Name des virtuellen Netzwerks <br/> **-l, --location** Gibt den Speicherort an (z. B. "Norden-Mitte USA") <br /> **-a, --affinity-group** Gibt die Affinitätsgruppe an<br /> **-w, --virtual-network-name** Gibt das virtuelle Netzwerk an, dem der neue virtuelle Computer hinzugefügt werden soll Virtuelle Netzwerke können im Azure-Portal eingerichtet und verwaltet werden.<br /> **-b, --subnet-names** Gibt die Subnetznamen an, die dem virtuellen Computer zugewiesen werden sollen.
 
 In diesem Beispiel wird das Image MSFT__Win2K8R2SP1-120514-1520-141205-01-de-de-30GB von der Plattform bereitgestellt. Weitere Informationen zu Betriebssystem-Images finden Sie in der VM-Imageliste.
 
@@ -239,7 +206,7 @@ In diesem Beispiel wird das Image MSFT__Win2K8R2SP1-120514-1520-141205-01-de-de-
 	Enter VM 'my-vm-name' password: ************
 	info:   vm create command OK
 
-**vm create-from &lt;DNS-Name> &lt;Rollendatei **
+**vm create-from &lt;DNS-Name> &lt;Rollendatei>**
 
 Dieser Befehl erstellt einen neuen virtuellen Azure-Computer aus einer JSON-Rollendatei.
 
@@ -300,7 +267,7 @@ Dieser Befehl zeigt Details zu einem virtuellen Azure-Computer an. Mit der Optio
 
 **vm delete [Optionen] &lt;Name>**
 
-Dieser Befehl löscht einen virtuellen Azure-Computer. Standardmäßig löscht dieser Befehl nicht den Azure-Blob, aus dem Betriebssystemfestplatte und Datenträger erstellt wurden. Verwenden Sie die Option -b, um den Blob gemeinsam mit dem virtuellen Computer zu löschen.
+Dieser Befehl löscht einen virtuellen Azure-Computer. Standardmäßig löscht dieser Befehl nicht den Azure-Blob, aus dem Betriebssystem- und Datenlaufwerk erstellt wurden. Verwenden Sie die Option -b, um den Blob gemeinsam mit dem virtuellen Computer zu löschen.
 
 	~$ azure vm delete my-vm
 	info:   Executing command vm delete
@@ -373,16 +340,16 @@ Dieser Befehl erstellt einen Endpunkt für einen virtuellen Azure-Computer. Mit 
 	+ Updating network configuration
 	info:   vm endpoint create command OK
 
-**vm endpoint create-multiple [Optionen] &lt;VM-Name> &lt;LB-Port>[:&lt;VM-Port>[:&lt;Protokoll>[:&lt;LB-set-name>[:&lt;prob-protocol>:&lt;lb-prob-port>[:&lt;prob-path>]]]]] ]{1-*}**
+**vm endpoint create-multiple [Optionen] &lt;VM-Name> &lt;LB-Port>[:&lt;VM-Port>[:&lt;Protokoll>[:&lt;Direct Server Return aktivieren>[:&lt;Festgelegter LB-Name>[:&lt;Testprotokoll>[:&lt;Testport>[:&lt;Testpfad>[:&lt;Interner LB-Name>]]]]]]]] {1-*}**
 
-Erstellt mehrere Endpunkte für virtuelle Computer. Mit -u oder --enable-direct-server-return können Sie angeben, ob dieser Endpunkt Direct Server Return verwenden soll. Diese Option ist standardmäßig deaktiviert.
+Erstellt mehrere Endpunkte für virtuelle Computer.
 
-**vm endpoint delete &lt;VM-Name> &lt;LB-Port>**
+**vm endpoint delete [Optionen] &lt;VM-Name> &lt;Endpunktname>**
 
 Dieser Befehl löscht einen Endpunkt eines virtuellen Azure-Computers.
 
-	~$ azure vm endpoint delete my-vm 8888
-	azure vm endpoint delete my-vm 8888
+	~$ azure vm endpoint delete my-vm http
+	azure vm endpoint delete my-vm http
 	info:   Executing command vm endpoint delete
 	+ Fetching VM
 	+ Reading network configuration
@@ -439,8 +406,7 @@ Images von virtuellen Computern sind Abbildungen bereits konfigurierter virtuell
 
 **vm image list [Optionen]**
 
-Dieser Befehl listet Images von virtuellen Computern auf. Insgesamt existieren drei Arten von Images: von Microsoft erstellte Images mit dem Präfix "MSFT", Images von Drittanbietern, normalerweise mit dem Namen des Herstellers als Präfix, und benutzerdefinierte Images. Um ein Image zu erstellen, können Sie entweder einen existierenden virtuellen Computer erfassen oder ein Image aus einer benutzerdefinierten .vhd-Datei erstellen, die Sie in einen Blob-Speicher hochgeladen haben. Weitere Informationen zu benutzerdefinierten .vhd-Dateien finden Sie im Abschnitt zur Erstellung von Images für virtuelle Computer.
-Mit der Option --json erfolgt die Ausgabe der Ergebnisse im reinen JSON-Format.
+Dieser Befehl listet Images von virtuellen Computern auf. Insgesamt existieren drei Arten von Images: von Microsoft erstellte Images mit dem Präfix "MSFT", Images von Drittanbietern, normalerweise mit dem Namen des Herstellers als Präfix, und benutzerdefinierte Images. Um ein Image zu erstellen, können Sie entweder einen existierenden virtuellen Computer erfassen oder ein Image aus einer benutzerdefinierten .vhd-Datei erstellen, die Sie in einen Blobspeicher hochgeladen haben. Weitere Informationen zu benutzerdefinierten .vhd-Dateien finden Sie im Abschnitt zur Erstellung von Images für virtuelle Computer. Mit der Option --json erfolgt die Ausgabe der Ergebnisse im reinen JSON-Format.
 
 	~$ azure vm image list
 	data:   Name                                                                   Category   OS
@@ -487,7 +453,7 @@ Dieser Befehl löscht ein Image eines virtuellen Computers.
 
 **vm image create &lt;Name> [Quellpfad]**
 
-Dieser Befehl erstellt ein Image eines virtuellen Computers. Ihre benutzerdefinierten .vhd-Dateien werden in einen Blob-Speicher hochgeladen, und das Image wird anschließend von dort aus erstellt. Anschließend können Sie das Image verwenden, um einen virtuellen Computer zu erstellen. Die Parameter für Ort und Betriebssystem müssen angegeben werden.
+Dieser Befehl erstellt ein Image eines virtuellen Computers. Ihre benutzerdefinierten .vhd-Dateien werden in einen Blobspeicher hochgeladen, und das Image wird anschließend von dort aus erstellt. Anschließend können Sie das Image verwenden, um einen virtuellen Computer zu erstellen. Die Parameter für Ort und Betriebssystem müssen angegeben werden.
 
 Manche Systeme haben Grenzen für Dateideskriptoren pro Prozess. Wenn diese Grenze überschritten wird, zeigt das Tool einen entsprechenden Fehler an. Sie können den Befehl erneut ausführen und mit dem Parameter -p &lt;Anzahl> die Anzahl der parallelen Uploads begrenzen. Der Standardwert für parallele Uploads ist 96.
 
@@ -502,13 +468,13 @@ Manche Systeme haben Grenzen für Dateideskriptoren pro Prozess. Wenn diese Gren
 
 ##<a name="Commands_to_manage_your_Azure_virtual_machine_data_disks"></a>Befehle zum Verwalten der Datenträger Ihrer virtuellen Azure-Computer
 
-Datenträger sind VHD-Dateien im Blob-Speicher, die von virtuellen Computern genutzt werden können. Weitere Informationen zur Bereitstellung von Datenträgern im Blob-Speicher finden Sie im bereits gezeigten technischen Azure-Diagramm.
+Datenträger sind VHD-Dateien im Blob-Speicher, die von virtuellen Computern genutzt werden können. Weitere Informationen zur Bereitstellung von Datenlaufwerken im Blobspeicher finden Sie im bereits gezeigten technischen Azure-Diagramm.
 
-Die Befehle zum Anhängen von Datenträgern ("azure vm disk attach" und "azure vm disk attach-new") weisen dem angehängten Datenträger eine logische Gerätenummer (Logical Unit Number, LUN) zu, wie vom SCSI-Protokoll gefordert. Der erste Datenträger eines virtuellen Computers erhält die Nummer LUN 0, der nächste Datenträger die Nummer LUN 1 usw.
+Die Befehle zum Anhängen von Datenlaufwerken (azure vm disk attach und azure vm disk attach-new) weisen dem angehängten Datenlaufwerk eine logische Gerätenummer (Logical Unit Number LUN) zu, wie vom SCSI-Protokoll gefordert. Der erste Datenträger eines virtuellen Computers erhält die Nummer LUN 0, der nächste Datenträger die Nummer LUN 1 usw.
 
 Wenn Sie einen Datenträger mit dem Befehl "azure vm disk detach" trennen, können Sie mit dem Parameter &lt;lun&gt; angeben, welcher Datenträger getrennt werden soll.
 
-> [AZURE>NOTE] Die Datenträger sollten stets in umgekehrter Reihenfolge getrennt werden, beginnend mit der höchsten zugewiesenen LUN. Die SCSI-Ebene von Linux unterstützt keine Trennung von niedrigeren LUNs, solange noch eine höhere LUN angehängt ist. Sie sollten z. B. LUN 0 nicht trennen, solange LUN 1 noch angehängt ist.
+> [AZURE>NOTE]Die Datenträger sollten stets in umgekehrter Reihenfolge getrennt werden, beginnend mit der höchsten zugewiesenen LUN. Die SCSI-Ebene von Linux unterstützt keine Trennung von niedrigeren LUNs, solange noch eine höhere LUN angehängt ist. Sie sollten z. B. "LUN 0" nicht trennen, solange "LUN 1" noch angehängt ist.
 
 **vm disk show [Optionen] &lt;Name>**
 
@@ -527,7 +493,7 @@ Dieser Befehl zeigt Details zu einem Azure-Laufwerk an.
 	data:   SourceImageName "OpenLogic__OpenLogic-CentOS-62-20120509-de-de-30GB.vhd"
 	info:   vm disk show command OK
 
-**vm disk list [Optionen] [VM-Name]**
+**vm disk list [Optionen][vm-name]**
 
 Dieser Befehl listet Azure-Laufwerke bzw. Laufwerke auf, die an einen bestimmten virtuellen Computer angehängt sind. Wenn der Parameter VM-Name angegeben wird, listet der Befehl alle an diesen virtuellen Computer angehängten Laufwerke auf. Lun 1 wird mit dem virtuellen Computer erstellt, und alle weiteren Laufwerke werden separat angehängt.
 
@@ -560,7 +526,7 @@ Dieser Befehl löscht einen Azure-Laufwerk aus einem persönlichen Repository. D
 
 **vm disk create &lt;Name> [Quellpfad]**
 
-Dieser Befehl lädt ein Azure-Laufwerk hoch und registriert das Laufwerk. --blob-url, --location oder --affinity-group muss angegeben werden. Wenn Sie diesen Befehl mit [Quellpfad] verwenden, wird die angegebene .vhd-Datei hochgeladen und ein neues Image wird erstellt. Sie können das Image anschließend mit dem Befehl vm disk attach an einen virtuellen Computer anhängen.
+Dieser Befehl lädt und registriert einen Azure-Datenträger. Hierfür muss --blob-url, --location, oder --affinity-group angegeben werden. Wenn Sie diesen Befehl mit [Quellpfad] verwenden, wird die angegebene VHD-Datei hochgeladen, und es wird ein neues Image erstellt. Sie können das Image anschließend mit dem Befehl vm disk attach an einen virtuellen Computer anhängen.
 
 Manche Systeme haben Grenzen für Dateideskriptoren pro Prozess. Wenn diese Grenze überschritten wird, zeigt das Tool einen entsprechenden Fehler an. Sie können den Befehl erneut ausführen und mit dem Parameter -p &lt;Anzahl> die Anzahl der parallelen Uploads begrenzen. Der Standardwert für parallele Uploads ist 96.
 
@@ -599,7 +565,7 @@ Dieser Befehl hängt einen Datenträger an einen virtuellen Azure-Computer an. I
 
 **vm disk detach &lt;VM-Name> &lt;LUN>**
 
-Dieser Befehl trennt einen Datenträger von einem virtuellen Azure-Computer. &lt;LUN> identifiziert den zu trennenden Datenträger. Mit dem Befehl "vm disk-list &lt;VM-Name>" können Sie vor dem Trennen eine Liste der angehängten Datenträger abrufen.
+Dieser Befehl trennt einen Datenträger, der mit einem virtuellen Azure-Computer verbunden ist. &lt;LUN> gibt das zu trennende Laufwerk an. Mit dem Befehl "vm disk-list &lt;VM-Name>" können Sie vor dem Trennen eine Liste der verbundenen Datenträger abrufen.
 
 	~$ azure vm disk detach my-vm 2
 	info:   Executing command vm disk detach
@@ -705,13 +671,13 @@ Dieser Befehl löscht ein Azure-Zertifikat.
 	info:   service cert delete command OK
 
 
-##<a name="Commands_to_manage_your_web_sites"></a>Befehle zum Verwalten Ihrer Websites
+##<a name="Commands_to_manage_your_web_sites"></a>Befehle zum Verwalten Ihrer Web-Apps
 
-Eine Azure-Website ist eine Webkonfiguration, die per URI erreichbar ist. Websites werden in virtuellen Computern gehostet, aber Sie müssen sich keine Gedanken über Erstellung und Bereitstellung des virtuellen Computers machen. Azure kümmert sich um diese Details.
+Eine Azure-Web-App ist eine Webkonfiguration, die per URI zugänglich ist. Web-Apps werden auf virtuellen Computern gehostet, die Sie jedoch nicht selbst erstellen und bereitstellen müssen. Azure kümmert sich um diese Details.
 
 **site list [Optionen]**
 
-Dieser Befehl listet Ihre Websites auf.
+Dieser Befehl listet Ihre Web-Apps auf.
 
 	~$ azure site list
 	info:   Executing command site list
@@ -722,9 +688,9 @@ Dieser Befehl listet Ihre Websites auf.
 	data:   mydrupalsite36  Running  mydrupalsite36.antdf0.antares.windows.net
 	info:   site list command OK
 
-**site set [Optionen] [Name]**
+**site set [Optionen][name]**
 
-Dieser Befehl setzt Konfigurationsoptionen für Ihre Website [Name].
+Dieser Befehl setzt Konfigurationsoptionen für Ihre Web-App [Name]
 
 	~$ azure site set
 	info:    Executing command site set
@@ -743,9 +709,9 @@ Dieser Befehl generiert ein benutzerdefiniertes Bereitstellungsskript
 	info:    Generated deployment script files
 	info:    site deploymentscript command OK
 
-**site create [Optionen] [Name]**
+**site create [Optionen][name]**
 
-Dieser Befehl erstellt eine neue Website und ein neues lokales Verzeichnis.
+Dieser Befehl erstellt eine neue Web-App und ein neues lokales Verzeichnis.
 
 	~$ azure site create mysite
 	info:   Executing command site create
@@ -756,20 +722,20 @@ Dieser Befehl erstellt eine neue Website und ein neues lokales Verzeichnis.
 	info:   Repository initialized
 	info:   site create command OK
 
-> [AZURE.NOTE] Der Name der Website muss eindeutig sein. Sie können keine Website mit dem DNS-Namen einer existierenden Website erstellen.
+> [AZURE.NOTE]Der Name der Website muss eindeutig sein. Sie können keine Website mit dem DNS-Namen einer existierenden Website erstellen.
 
-**site browse [Optionen] [Name]**
+**site browse [Optionen][name]**
 
-Dieser Befehl öffnet Ihre Website in einem Browser.
+Dieser Befehl öffnet Ihre Web-App in einem Browser.
 
 	~$ azure site browse mysite
 	info:   Executing command site browse
 	info:   Launching browser to http://mysite.antdf0.antares-test.windows-int.net
 	info:   site browse command OK
 
-**site show [Optionen] [Name]**
+**site show [Optionen][name]**
 
-Dieser Befehl zeigt Details zu einer Website an.
+Dieser Befehl zeigt Details zu einer Web-App an.
 
 	~$ azure site show mysite
 	info:   Executing command site show
@@ -797,9 +763,9 @@ Dieser Befehl zeigt Details zu einer Website an.
 	data:   Repository https://mysite.scm.antdf0.antares-test.windows-int.net/
 	info:   site show command OK
 
-**site delete [Optionen] [Name]**
+**site delete [Optionen][name]**
 
-Dieser Befehl löscht eine Website.
+Dieser Befehl löscht eine Web-App.
 
 	~$ azure site delete mysite
 	info:   Executing command site delete
@@ -807,18 +773,18 @@ Dieser Befehl löscht eine Website.
 	info:   Site mysite has been deleted
 	info:   site delete command OK
 
- **site swap [Optionen] [Name]**
+ **site swap [Optionen][name]**
 
-Dieser Befehl tauscht zwei Website-Steckplätze.
+Dieser Befehl tauscht zwei Web-App-Steckplätze.
 
 Dieser Befehl unterstützt die folgende zusätzliche Option:
 
 **-q oder **--quiet**: Keine Bestätigungsaufforderungen. Verwenden Sie diese Option in automatisierten Skripts.
 
 
-**site start [Optionen] [Name]**
+**site start [Optionen][name]**
 
-Dieser Befehl startet eine Website.
+Dieser Befehl startet eine Web-App.
 
 	~$ azure site start mysite
 	info:   Executing command site start
@@ -826,9 +792,9 @@ Dieser Befehl startet eine Website.
 	info:   Site mysite has been started
 	info:   site start command OK
 
-**site stop [Optionen] [Name]**
+**site stop [Optionen][name]**
 
-Dieser Befehl hält eine Website an.
+Dieser Befehl beendet eine Web-App.
 
 	~$ azure site stop mysite
 	info:   Executing command site stop
@@ -836,9 +802,9 @@ Dieser Befehl hält eine Website an.
 	info:   Site mysite has been stopped
 	info:   site stop command OK
 
-**site restart [Optionen] [Name]
+**site restart [Optionen][name]
 
-Dieser Befehl hält die angegebene Website an und startet sie dann wieder.
+Dieser Befehl beendet die angegebene Web-App und startet sie dann wieder.
 
 Dieser Befehl unterstützt die folgende zusätzliche Option:
 
@@ -847,7 +813,7 @@ Dieser Befehl unterstützt die folgende zusätzliche Option:
 
 **site location list [Optionen]**
 
-Dieser Befehl listet Ihre Website-Orte auf.
+Dieser Befehl listet Ihre Web-App-Orte auf.
 
 	~$ azure site location list
 	info:    Executing command site location list
@@ -862,11 +828,11 @@ Dieser Befehl listet Ihre Website-Orte auf.
 	data:    East US
 	info:    site location list command OK
 
-###Befehle zum Verwalten Ihrer Website-Anwendungseinstellungen
+###Befehle zum Verwalten Ihrer Web-App-Anwendungseinstellungen
 
-**site appsetting list [Optionen] [Name]**
+**site appsetting list [Optionen][name]**
 
-Dieser Befehl listet die Anwendungseinstellungen einer Website auf.
+Dieser Befehl listet die Anwendungseinstellungen einer Web-App auf.
 
 	~$ azure site appsetting list
 	info:    Executing command site appsetting list
@@ -880,7 +846,7 @@ Dieser Befehl listet die Anwendungseinstellungen einer Website auf.
 
 **site appsetting add [Optionen] &lt;Schlüssel-Wert-Paar> [Name]**
 
-Dieser Befehl fügt Ihrer Website eine Anwendungseinstellung in Form eines Schlüssel-Wert-Paars hinzu.
+Dieser Befehl fügt Ihrer Web-App eine Anwendungseinstellung in Form eines Schlüssel-Wert-Paars hinzu.
 
 	~$ azure site appsetting add test=value
 	info:    Executing command site appsetting add
@@ -892,7 +858,7 @@ Dieser Befehl fügt Ihrer Website eine Anwendungseinstellung in Form eines Schl�
 
 **site appsetting delete [Optionen] &lt;Schlüssel> [Name]**
 
-Dieser Befehl löscht die angegebene Anwendungseinstellung von der Website.
+Dieser Befehl löscht die angegebene Anwendungseinstellung in der Web-App.
 
 	~$ azure site appsetting delete test
 	info:    Executing command site appsetting delete
@@ -915,11 +881,11 @@ Dieser Befehl zeigt Details zu der angegebenen Anwendungseinstellung an
 	data:    Value:  value
 	info:    site appsetting show command OK
 
-###Befehle zum Verwalten Ihrer Website-Zertifikate
+###Befehle zum Verwalten Ihrer Web-App-Zertifikate
 
-**site cert list [Optionen] [Name]**
+**site cert list [Optionen][name]**
 
-Dieser Befehl listet Ihre Website-Zertifikate auf.
+Dieser Befehl listet Ihre Web-App-Zertifikate auf.
 
 	~$ azure site cert list
 	info:    Executing command site cert list
@@ -955,9 +921,9 @@ Dieser Befehl zeigt die Details des Zertifikats an
 	data:    Certificate thumbprint CE1CD65852B38DC32001C2E0E8F7A526A29B541F
 	info:    site cert show command OK
 
-###Befehle zum Verwalten Ihrer Website-Verbindungszeichenfolgen
+###Befehle zum Verwalten Ihrer Web-App-Verbindungszeichenfolgen
 
-**site connectionstring list [Optionen] [Name]**
+**site connectionstring list [Optionen][name]**
 
 **site connectionstring add [Optionen] &lt;Verbindungsname> &lt;Wert> &lt;Typ> [Name]**
 
@@ -965,52 +931,51 @@ Dieser Befehl zeigt die Details des Zertifikats an
 
 **site connectionstring show [Optionen] &lt;Verbindungsname> [Name]**
 
-###Befehle zum Verwalten der Standarddokumente Ihrer Website
+###Befehle zum Verwalten der Standarddokumente Ihrer Web-App
 
-**site defaultdocument list [Optionen] [Name]**
+**site defaultdocument list [Optionen][name]**
 
 **site defaultdocument add [Optionen] &lt;Dokument> [Name]**
 
 **site defaultdocument delete [Optionen] &lt;Dokument> [Name]**
 
-###Befehle zum Verwalten Ihrer Website-Bereitstellungen
+###Befehle zum Verwalten Ihrer Web-App-Bereitstellungen
 
-**site deployment list [Optionen] [Name]**
+**site deployment list [Optionen][name]**
 
 **site deployment show [Optionen] &lt;Commit-ID> [Name]**
 
 **site deployment redeploy [Optionen] &lt;Commit-ID> [Name]**
 
-**site deployment github [Optionen] [Name]**
+**site deployment github [Optionen][name]**
 
-**site deployment user set [Optionen] [Benutzername] [Kennwort]**
+**site deployment user set [Optionen][username][Kennwort]**
 
-###Befehle zum Verwalten Ihrer Website-Domänen
+###Befehle zum Verwalten Ihrer Web-App-Domänen
 
-**site domain list [Optionen] [Name]**
+**site domain list [Optionen][name]**
 
 **site domain add [Optionen] &lt;DN> [Name]**
 
 **site domain delete [Optionen] &lt;DN> [Name]**
 
-###Befehle zum Verwalten Ihrer Website-Handlerzuordnungen
+###Befehle zum Verwalten Ihrer Web-App-Handlerzuordnungen
 
-**site handler list [Optionen] [Name]**
+**site handler list [Optionen][name]**
 
 **site handler add [Optionen] &lt;Erweiterung> &lt;Prozessor> [Name]**
 
 **site handler delete [Optionen] &lt;Erweiterung> [Name]**
 
-###Befehle zum Verwalten Ihrer Website-Webaufträge
+###Befehle zum Verwalten Ihrer Webaufträge
 
-**site job list [Optionen] [Name]**
+**site job list [Optionen][name]**
 
-Dieser Befehl listet alle Webaufträge unter einer Website auf.
+Dieser Befehl listet alle Webaufträge unter einer Web-App auf.
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **--job-type** &lt;Auftragstyp>: Optional. Der Typ des Webauftrags. Gültige Werte sind "triggered" und "continuous". Standardmäßig Webaufträge
-aller Typen zurückgeben.
++ **--job-type** &lt;Auftragstyp>: Optional. Der Typ des Webauftrags. Gültige Werte sind "triggered" und "continuous". Standardmäßig werden Webaufträge aller Typen zurückgegeben.
 + **--slot** &lt;Steckplatz>: Der Name der Steckplatzes, der neu gestartet werden soll.
 
 **site job show [Optionen] &lt;Auftragsname> &lt;Auftragstyp> [Name]**
@@ -1029,12 +994,12 @@ Dieser Befehl löscht den angegebenen Webauftrag.
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **--job-name** &lt;Auftragsname>    erforderlich. Der Name des Webauftrags.
-+ **--job-type** &lt;Auftragstyp>    erforderlich. Der Typ des Webauftrags. Gültige Werte sind "triggered" und "continuous".
++ **--job-name** &lt;Auftragsname>: Erforderlich. Der Name des Webauftrags.
++ **--job-type** &lt;Auftragstyp>: Erforderlich. Der Typ des Webauftrags. Gültige Werte sind "triggered" und "continuous".
 + **-q** oder **--quiet**: Keine Bestätigungsaufforderungen. Verwenden Sie diese Option in automatisierten Skripts.
 + **--slot** &lt;Steckplatz>: Der Name der Steckplatzes, der neu gestartet werden soll.
 
-**site job upload [Optionen] &lt;Auftragsname> &lt;Auftragstyp> <Auftragsdatei> [Name]**
+**site job upload [Optionen] &lt;Auftragsname> &lt;Auftragstyp> <jobFile> [Name]**
 
 Dieser Befehl löscht den angegebenen Webauftrag.
 
@@ -1064,9 +1029,9 @@ Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 + **--job-name** &lt;Auftragsname>: Erforderlich. Der Name des Webauftrags.
 + **--slot** &lt;Steckplatz>: Der Name der Steckplatzes, der neu gestartet werden soll.
 
-###Befehle zum Verwalten Ihres Website-Webauftragsverlaufs
+###Befehle zum Verwalten Ihres Webauftragsverlaufs
 
-**site job history list [Optionen] [Auftragsname] [Name]**
+**site job history list [Optionen][jobName] [Name]**
 
 Dieser Befehl zeigt einen Ausführungsverlauf des angegebenen Webauftrags an.
 
@@ -1075,7 +1040,7 @@ Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 + **--job-name** &lt;Auftragsname>: Erforderlich. Der Name des Webauftrags.
 + **--slot** &lt;Steckplatz>: Der Name der Steckplatzes, der neu gestartet werden soll.
 
-**site job history show [Optionen] [Auftragsname] [Ausführungs-ID] [Name]**
+**site job history show [Optionen][jobName] [Ausführungs-ID][name]**
 
 Dieser Befehl zeigt die Details der Auftragsausführung für den angegebenen Webauftrag an.
 
@@ -1085,11 +1050,11 @@ Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 + **--run-id** &lt;Ausführungs-ID>: Optional. Die ID des Ausführungsverlaufs. Wenn diese Option nicht angegeben wird, wird die letzte Ausführung angezeigt.
 + **--slot** &lt;Steckplatz>: Der Name der Steckplatzes, der neu gestartet werden soll.
 
-###Befehle zum Verwalten Ihrer Website-Diagnose
+###Befehle zum Verwalten Ihrer Web-App-Diagnose
 
-**site log download [Optionen] [Name]**
+**site log download [Optionen][name]**
 
-Lädt eine ZIP-Datei mit Ihrer Website-Diagnose herunter.
+Lädt eine ZIP-Datei mit Ihrer Web-App-Diagnose herunter.
 
 	~$ azure site log download
 	info:    Executing command site log download
@@ -1099,7 +1064,7 @@ Lädt eine ZIP-Datei mit Ihrer Website-Diagnose herunter.
 	+ Downloading diagnostic log to diagnostics.zip
 	info:    site log download command OK
 
-**site log tail [Optionen] [Name]**
+**site log tail [Optionen][name]**
 
 Dieser Befehl verbindet Ihre Befehlszeile mit dem Logstreamingdienst.
 
@@ -1110,9 +1075,9 @@ Dieser Befehl verbindet Ihre Befehlszeile mit dem Logstreamingdienst.
 	+ Getting site information
 	2013-11-19T17:24:17  Welcome, you are now connected to log-streaming service.
 
-**site log set [Optionen] [Name]**
+**site log set [Optionen][name]**
 
-Dieser Befehl konfiguriert die Diagnoseoptionen für Ihre Website.
+Dieser Befehl konfiguriert die Diagnoseoptionen für Ihre Web-App.
 
 	~$ azure site log set -a
 	info:    Executing command site log set
@@ -1129,15 +1094,15 @@ Dieser Befehl konfiguriert die Diagnoseoptionen für Ihre Website.
 	+ Updating diagnostic settings
 	info:    site log set command OK
 
-###Befehle zum Verwalten Ihrer Website-Repositorys
+###Befehle zum Verwalten Ihrer Web-App-Repositorys
 
 **site repository branch [Optionen] &lt;Verzweigung> [Name]**
 
-**site repository delete [Optionen] [Name]**
+**site repository delete [Optionen][name]**
 
-**site repository sync [Optionen] [Name]**
+**site repository sync [Optionen][name]**
 
-###Befehle zum Verwalten Ihrer Website-Skalierung
+###Befehle zum Verwalten Ihrer Web-App-Skalierung
 
 **site scale mode [Optionen] &lt;Modus> [Name]**
 
@@ -1174,7 +1139,7 @@ Dieser Befehl listet die von Mobile Services unterstützten geografischen Stando
 	info:    West US
 	info:    North Europe
 
-**mobile create [Optionen] [Dienstname] [sqlAdminBenutzername] [sqlAdminKennwort]**
+**mobile create [Optionen][servicename] [SQL-Admin-Benutzername][sqlAdminPassword]**
 
 Dieser Befehl erstellt einen Mobile Service inklusive SQL-Datenbank und -Server.
 
@@ -1189,12 +1154,12 @@ Dieser Befehl erstellt einen Mobile Service inklusive SQL-Datenbank und -Server.
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **-r `<sqlServer>`**  oder **--sqlServer `<sqlServer>`**:  Verwendet einen vorhandenen SQL-Datenbankserver, angegeben als `<sqlServer>`.
++ **-r `<sqlServer>`** oder **--sqlServer `<sqlServer>`**: Verwendet einen vorhandenen SQL-Datenbankserver, angegeben als `<sqlServer>`.
 + **-d `<sqlDb>`** oder **--sqlDb `<sqlDb>`**: Verwendet eine vorhandene SQL-Datenbank, angegeben als `<sqlDb>`.
-+ **-l `<location>`** oder **--location `<location>`**: Erstellt den Dienst an einem bestimmten Ort, angegeben als `<Ort>`. Rufen Sie azure mobile locations auf, um eine Liste der verfügbaren Orte zu erhalten.
-+ **--sqlLocation `<Ort>`**: Erstellt den SQL Server an einem bestimmten `<Ort>`. Standardwert ist der Ort des Mobile Service.
++ **-l `<location>`** oder **--location `<location>`**: Erstellt den Dienst an einem bestimmten Ort, angegeben als `<location>`. Führen Sie "azure mobile locations" aus, um eine Liste der verfügbaren Orte zu erhalten.
++ **--sqlLocation `<location>`**: Erstellt den SQL Server an einem bestimmten Ort (`<location>`); Standardwert ist der Ort des Mobile Service.
 
-**mobile delete [Optionen] [Dienstname]**
+**mobile delete [Optionen][servicename]**
 
 Dieser Befehl löscht einen Mobile Service inklusive SQL-Datenbank und -Server.
 
@@ -1229,7 +1194,7 @@ Dieser Befehl listet Ihre Mobile Services auf.
 	data:    mymobileapp   Ready  https://mymobileapp.azure-mobile.net/
 	info:    mobile list command OK
 
-**mobile show [Optionen] [Dienstname]**
+**mobile show [Optionen][servicename]**
 
 Dieser Befehl zeigt Details zu einem Mobile Service an.
 
@@ -1255,7 +1220,7 @@ Dieser Befehl zeigt Details zu einem Mobile Service an.
 	data:    tables TodoItem
 	info:    mobile show command OK
 
-**mobile restart [Optionen] [Dienstname]**
+**mobile restart [Optionen][servicename]**
 
 Dieser Befehl startet eine Mobile Services-Instanz neu.
 
@@ -1265,9 +1230,9 @@ Dieser Befehl startet eine Mobile Services-Instanz neu.
 	info:    Service was restarted.
 	info:    mobile restart command OK
 
-**mobile log [Optionen] [Dienstname]**
+**mobile log [Optionen][servicename]**
 
-Dieser Befehl gibt die Mobile Service-Protokolle zurück und filtert alle Protokolltypen mit Ausnahme von  `Fehler` heraus.
+Dieser Befehl gibt die Mobile Service-Protokolle zurück und filtert alle Protokolltypen mit Ausnahme von `error` heraus.
 
 	~$ azure mobile log todolist -t error
 	info:    Executing command mobile log
@@ -1281,14 +1246,14 @@ Dieser Befehl gibt die Mobile Service-Protokolle zurück und filtert alle Protok
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **-r `<Abfrage>`** oder **--query `<Abfrage>`**: Führt die angegebene Protokollabfrage aus.
-+ **-t `<Typ>`** oder **--type `<Typ>`**:  Filtert die zurückgegebenen Protokolle nach Eintragstyp, <type>. Mögliche Typen sind "Information", "Warnung" oder "Fehler".
-+ **-k `<überspringen>`** oder **--skip `<überspringen>`**: Überspringt die in <überspringen> angegebene Anzahl der Zeilen.
-+ **-p `<oben>`** oder **--top `<oben>`**: Gibt die in <oben> angegebene Anzahl an Zeilen zurück.
++ **-r `<query>`** oder **--query `<query>`**: Führt die angegebene Protokollabfrage aus.
++ **-t `<type>`** oder **--type `<type>`**: Filtert die Protokolle nach `<type>` der Einträge. Mögliche Typen sind `information`, `warning` oder `error`.
++ **-k `<skip>`** oder **--skip `<skip>`**: Überspringt die in `<skip>` angegebene Anzahl von Zeilen.
++ **-p `<top>`** oder **--top `<top>`**: Gibt die in `<top>` angegebene Anzahl von Zeilen zurück.
 
-> [AZURE.NOTE] Der Parameter **--query** hat Vorrang vor **--type**, **--skip** und **--top**.
+> [AZURE.NOTE]Der Parameter **--query** hat Vorrang vor **--type**, **--skip** und **--top**.
 
-**mobile recover [Optionen] [Name_des_fehlerhaften_Diensts] [Name_des_fehlerfreien_Diensts]**
+**mobile recover [Optionen][unhealthyservicename] [Name_des_fehlerfreien_Diensts]**
 
 Dieser Befehl stellt einen fehlerhaften Mobile Service dadurch wieder her, dass dieser in einen fehlerfreien Mobile Service in einer anderen Region verschoben wird.
 
@@ -1296,7 +1261,7 @@ Dieser Befehl unterstützt die folgende zusätzliche Option:
 
 **-q** oder **--quiet**: Unterdrückt die Aufforderung zur Bestätigung der Wiederherstellung.
 
-**mobile key regenerate [Optionen] [Dienstname] [Typ]**
+**mobile key regenerate [Optionen][servicename] [Typ]**
 
 Dieser Befehl generiert den Mobile Service-Anwendungsschlüssel neu.
 
@@ -1307,16 +1272,16 @@ Dieser Befehl generiert den Mobile Service-Anwendungsschlüssel neu.
 
 Mögliche Schlüsseltypen sind `master` und `application`.
 
-> [AZURE.NOTE] Wenn Sie einen Schlüssel neu generieren, können Clients, die den alten Schlüssel verwenden, möglicherweise nicht mehr auf Ihren Mobile Service zugreifen. Wenn Sie den Anwendungsschlüssel neu generieren, sollten Sie Ihre Anwendung mit dem neuen Schlüsselwert aktualisieren.
+> [AZURE.NOTE]Wenn Sie einen Schlüssel neu generieren, können Clients, die den alten Schlüssel verwenden, möglicherweise nicht mehr auf Ihren Mobile Service zugreifen. Wenn Sie den Anwendungsschlüssel neu generieren, sollten Sie Ihre Anwendung mit dem neuen Schlüsselwert aktualisieren.
 
-**mobile key set [Optionen] [Dienstname] [Typ] [Wert]**
+**mobile key set [Optionen][servicename] [Typ][value]**
 
 Dieser Befehl legt den Schlüssel des Mobile Service auf einen bestimmten Wert fest.
 
 
 ###<a name="Mobile_Configuration"></a>Befehle zum Verwalten der Mobile Services-Konfiguration
 
-**mobile config list [Optionen] [Dienstname]**
+**mobile config list [Optionen][servicename]**
 
 Dieser Befehl listet Konfigurationsoptionen für einen Mobile Service auf.
 
@@ -1338,7 +1303,7 @@ Dieser Befehl listet Konfigurationsoptionen für einen Mobile Service auf.
 	data:    apnsCertifcate Not configured
 	info:    mobile config list command OK
 
-**mobile config get [Optionen] [Dienstname] [Schlüssel]**
+**mobile config get [Optionen][servicename] [Schlüssel]**
 
 Dieser Befehl ruft eine bestimmte Konfigurationsoption für einen Mobile Service ab, in diesem Fall das dynamische Schema.
 
@@ -1347,7 +1312,7 @@ Dieser Befehl ruft eine bestimmte Konfigurationsoption für einen Mobile Service
 	data:    dynamicSchemaEnabled true
 	info:    mobile config get command OK
 
-**mobile config set [Optionen] [Dienstname] [Schlüssel] [Wert]**
+**mobile config set [Optionen][servicename] [Schlüssel][value]**
 
 Dieser Befehl ändert den Wert einer bestimmten Konfigurationsoption für einen Mobile Service, in diesem Fall das dynamische Schema.
 
@@ -1358,7 +1323,7 @@ Dieser Befehl ändert den Wert einer bestimmten Konfigurationsoption für einen 
 
 ###<a name="Mobile_Tables"></a>Befehle zum Verwalten von Mobile Services-Tabellen
 
-**mobile table list [Optionen] [Dienstname]**
+**mobile table list [Optionen][servicename]**
 
 Dieser Befehl listet alle Tabellen in Ihrem Mobile Service auf.
 
@@ -1370,7 +1335,7 @@ Dieser Befehl listet alle Tabellen in Ihrem Mobile Service auf.
 	data:    TodoItem  1        0
 	info:    mobile table list command OK
 
-**mobile table show [Optionen] [Dienstname] [Tabellenname]**
+**mobile table show [Optionen][servicename] [Tabellenname]**
 
 Dieser Befehl zeigt Details zu einer bestimmten Tabelle an.
 
@@ -1394,7 +1359,7 @@ Dieser Befehl zeigt Details zu einer bestimmten Tabelle an.
 	data:    complete  boolean
 	info:    mobile table show command OK
 
-**mobile table create [Optionen] [Dienstname] [Tabellenname]**
+**mobile table create [Optionen][servicename] [Tabellenname]**
 
 Dieser Befehl erstellt eine Tabelle.
 
@@ -1405,9 +1370,9 @@ Dieser Befehl erstellt eine Tabelle.
 
 Dieser Befehl unterstützt die folgende zusätzliche Option:
 
-+ **-p `&lt;Berechtigungen>`** oder **--permissions `&lt;Berechtigungen>`**: Durch Komma getrennte Liste von `<Vorgang>`=`<Berechtigung>`-Paaren, wobei es sich bei `<Vorgang>` um `insert`, `read`, `update` oder `delete` und bei `&lt;Berechtigungen>` um `public`, `application` (Standard), `user` oder `admin` handelt.
++ **-p `&lt;permissions>`** oder **--permissions `&lt;permissions>`**: Durch Kommas getrennte Liste von `<operation>`=`<permission>`-Paaren, wobei `<operation>` entweder `insert`, `read`, `update` oder `delete` und `&lt;permissions>` entweder `public`, `application` (Standard), `user` oder `admin` sein kann.
 
-**mobile data read [Optionen] [Dienstname] [Tabellenname] [Abfrage]**
+**mobile data read [Optionen][servicename] [Tabellenname][query]**
 
 Dieser Befehl liest Daten aus einer Tabelle.
 
@@ -1423,11 +1388,11 @@ Dieser Befehl liest Daten aus einer Tabelle.
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **-k `<überspringen>`** oder **--skip `<überspringen>`**: Überspringt die in `<überspringen>` angegebene Anzahl an Zeilen.
-+ **-t `<oben>`** oder **--top `<oben>`**: Gibt die in `<oben>` angegebene Anzahl an Zeilen zurück.
-+ **-l** oder **--list**: Gibt Daten in einem Listenformat zurück.
++ **-k `<skip>`** oder **--skip `<skip>`**: Überspringt die in `<skip>` angegebene Anzahl von Zeilen.
++ **-t `<top>`** oder **--top `<top>`**: Gibt die in `<top>` angegebene Anzahl von Zeilen zurück.
++ **-l** oder **--list**: Gibt Daten im Listenformat zurück.
 
-**mobile table update [Optionen] [Dienstname] [Tabellenname]**
+**mobile table update [Optionen][servicename] [Tabellenname]**
 
 Dieser Befehl setzt die Berechtigungen für eine Tabelle ausschließlich für Administratoren.
 
@@ -1439,13 +1404,13 @@ Dieser Befehl setzt die Berechtigungen für eine Tabelle ausschließlich für Ad
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **-p `&lt;Berechtigungen>`** oder **--permissions `&lt;Berechtigungen>`**: Durch Komma getrennte Liste von `<Vorgang>`=`<Berechtigung>`-Paaren, wobei es sich bei `<Vorgang>` um `insert`, `read`, `update` oder `delete` und bei `&lt;Berechtigungen>` um `public`, `application` (Standard), `user` oder `admin` handelt.
-+ **--deleteColumn `<columns>`**: Durch Komma getrennte Liste zu löschender Spalten als `<columns>`.
++ **-p `&lt;permissions>`** oder **--permissions `&lt;permissions>`**: Durch Kommas getrennte Liste von `<operation>`=`<permission>`-Paaren, wobei `<operation>` entweder `insert`, `read`, `update` oder `delete` und `&lt;permissions>` entweder `public`, `application` (Standard), `user` oder `admin` sein kann.
++ **--deleteColumn `<columns>`**: Durch Kommas getrennte Liste zu löschender Spalten, angegeben als `<columns>`.
 + **-q** oder **--quiet**: Löscht Spalten ohne Bestätigungsaufforderung.
-+ **--addIndex `<columns>`**: Durch Kommas getrennte Liste von Spalten, die zum Index hinzugefügt werden sollen.
++ **--addIndex `<columns>`**: Durch Kommas getrennte Liste von Spalten, die dem Index hinzugefügt werden sollen.
 + **--deleteIndex `<columns>`**: Durch Kommas getrennte Liste von Spalten, die aus dem Index entfernt werden sollen.
 
-**mobile table delete [Optionen] [Dienstname] [Tabellenname]**
+**mobile table delete [Optionen][servicename] [Tabellenname]**
 
 Dieser Befehl löscht eine Tabelle.
 
@@ -1455,9 +1420,9 @@ Dieser Befehl löscht eine Tabelle.
 	+ Deleting table
 	info:    mobile table delete command OK
 
-Verwenden Sie den Parameter "-q", um die Tabelle ohne Bestätigung zu löschen. Diese Option ist hilfreich für automatisierte Skripts.
+Verwenden Sie den Parameter -q, um die Tabelle ohne Bestätigung zu löschen. Diese Option ist hilfreich für automatisierte Skripts.
 
-**mobile data truncate [Optionen] [Dienstname] [Tabellenname]**
+**mobile data truncate [Optionen][servicename] [Tabellenname]**
 
 Dieser Befehl löscht alle Zeilen aus der Tabelle.
 
@@ -1471,9 +1436,9 @@ Dieser Befehl löscht alle Zeilen aus der Tabelle.
 
 ###<a name="Mobile_Scripts"></a>Befehle zum Verwalten von Skripts
 
-Mit den Befehlen in diesem Abschnitt können Sie die Serverskripts eines Mobile Service verwalten. Weitere Informationen finden Sie unter [Arbeiten mit Serverskripts in Mobile Services](http://www.windowsazure.com/develop/mobile/how-to-guides/work-with-server-scripts/).
+Mit den Befehlen in diesem Abschnitt können Sie die Serverskripts eines Mobile Service verwalten. Weitere Informationen erhalten Sie unter [Verwenden von Serverskripts in Mobile Services.](mobile-services-how-to-use-server-scripts.md).
 
-**mobile script list [Optionen] [Dienstname]**
+**mobile script list [Optionen][servicename]**
 
 Dieser Befehl listet registrierte Skripts auf, sowohl Tabellen- als auch Planerskripts.
 
@@ -1493,7 +1458,7 @@ Dieser Befehl listet registrierte Skripts auf, sowohl Tabellen- als auch Planers
 	data:    scheduler/undefined  undefined  undefined  undefined  undefined
 	info:    mobile script list command OK
 
-**mobile script download [Optionen] [Dienstname] [Skriptname]**
+**mobile script download [Optionen][servicename] [Skriptname]**
 
 Dieser Befehl lädt das insert-Skript aus der Tabelle TodoItem in eine Datei namens `todoitem.insert.js` im Unterverzeichnis `table` herunter.
 
@@ -1504,12 +1469,12 @@ Dieser Befehl lädt das insert-Skript aus der Tabelle TodoItem in eine Datei nam
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **-p `<Pfad>`** oder **--path `<Pfad>`**: Der Ort, an dem die Skriptdatei gespeichert werden soll, relativ zum aktuellen Arbeitsverzeichnis.
-+ **-f `<Datei>`** oder **--file `<Datei>`**: Der Name der Datei, in der das Skript gespeichert werden soll.
-+ **-o** oder **--override**: Existierende Datei überschreiben.
++ **-p `<path>`** oder **--path `<path>`**: Der Ort, an dem die Skriptdatei gespeichert werden soll, relativ zum aktuellen Arbeitsverzeichnis.
++ **-f `<file>`** oder **--file `<file>`**: Der Name der Datei, in der das Skript gespeichert werden soll.
++ **-o** oder **--override**: Vorhandene Datei überschreiben.
 + **-c** oder **--console**: Skript in die Konsole anstatt in eine Datei schreiben.
 
-**mobile script upload [Optionen] [Dienstname] [Skriptname]**
+**mobile script upload [Optionen][servicename] [Skriptname]**
 
 Dieser Befehl lädt ein Skript namens `todoitem.insert.js` aus dem Unterverzeichnis `table` hoch.
 
@@ -1517,10 +1482,10 @@ Dieser Befehl lädt ein Skript namens `todoitem.insert.js` aus dem Unterverzeich
 	info:    Executing command mobile script upload
 	info:    mobile script upload command OK
 
-Der Name der Datei muss sich aus Tabellen- und Operationsnamen zusammensetzen, und die Datei muss sich im Unterordner "Table" relativ zum Verzeichnis befinden, in dem der Befehl ausgeführt wird. Mit dem Parameter **-f `<Datei>`** oder **--file `<Datei>`** können Sie einen anderen Dateinamen und einen Pfad zu der Datei angeben, die das zu registrierende Skript enthält.
+Der Name der Datei muss sich aus Tabellen- und Operationsnamen zusammensetzen, und die Datei muss sich im Unterordner "Table" relativ zum Verzeichnis befinden, in dem der Befehl ausgeführt wird. Mit dem Parameter **-f `<file>`** oder **--file `<file>`** können Sie einen anderen Dateinamen und einen Pfad zu der Datei angeben, die das zu registrierende Skript enthält.
 
 
-**mobile script delete [Optionen] [Dienstname] [Skriptname]**
+**mobile script delete [Optionen][servicename] [Skriptname]**
 
 Dieser Befehl löscht das existierende insert-Skript aus der Tabelle TodoItem.
 
@@ -1532,7 +1497,7 @@ Dieser Befehl löscht das existierende insert-Skript aus der Tabelle TodoItem.
 
 Mit den Befehlen in diesem Abschnitt können Sie geplante Aufträge eines Mobile Service verwalten. Weitere Informationen finden Sie unter [Geplante Aufträge](http://msdn.microsoft.com/library/windowsazure/jj860528.aspx).
 
-**mobile job list [Optionen] [Dienstname]**
+**mobile job list [Optionen][servicename]**
 
 Dieser Befehl listet geplante Aufträge auf.
 
@@ -1545,9 +1510,9 @@ Dieser Befehl listet geplante Aufträge auf.
 	info:    You can manipulate scheduled job scripts using the 'azure mobile script' command.
 	info:    mobile job list command OK
 
-**mobile job create [Optionen] [Dienstname] [Auftragsname]**
+**mobile job create [Optionen][servicename] [Auftragsname]**
 
-Dieser Befehl erstellt eine neue, stündlich auszuführende Aufgabe mit dem Namen `getUpdates`.
+Dieser Befehl erstellt einen neuen, stündlich auszuführenden Auftrag mit dem Namen `getUpdates`.
 
 	~$azure mobile job create -i 1 -u hour todolist getUpdates
 	info:    Executing command mobile job create
@@ -1557,20 +1522,20 @@ Dieser Befehl erstellt eine neue, stündlich auszuführende Aufgabe mit dem Name
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **-i `<Zahl>`** oder **--interval `<Zahl>`**: Das Ausführungsintervall als ganze Zahl, der Standardwert ist 15.
-+ **-u `<Einheit>`** oder **--intervalUnit `<Einheit>`**: Die Einheit für das Intervall. Dies kann einer der folgenden Werte sein:
++ **-i `<number>`** oder **--interval `<number>`**: Das Ausführungsintervall als ganze Zahl, der Standardwert ist `15`.
++ **-u `<unit>`** oder **--intervalUnit `<unit>`**: Die Einheit für das _Intervall_. Dies kann einer der folgenden Werte sein:
 	+ **minute** (Standard)
 	+ **hour**
 	+ **day**
 	+ **month**
 	+ **none** (bedarfsgesteuerte Aufgaben)
-+ **-t `<Zeit>`** **--startTime `<Zeit>`** Die Startzeit der ersten Skriptausführung im ISO-Format, der Standardwert ist `now`.
++ **-t `<time>`** **--startTime `<time>`** Die Startzeit der ersten Skriptausführung im ISO-Format, der Standardwert ist `now`.
 
-> [AZURE.NOTE] Neue Aufträge werden bei der Erstellung deaktiviert, da zunächst ein Skript hochgeladen werden muss. Mit dem Befehl **mobile script upload** können Sie ein Skript hochladen, und mit dem Befehl **mobile job update** können Sie den Auftrag aktivieren.
+> [AZURE.NOTE]Neue Aufträge werden bei der Erstellung deaktiviert, da zunächst ein Skript hochgeladen werden muss. Mit dem Befehl **mobile script upload** können Sie ein Skript hochladen, und mit dem Befehl **mobile job update** können Sie den Auftrag aktivieren.
 
-**mobile job update [Optionen] [Dienstname] [Auftragsname]**
+**mobile job update [Optionen][servicename] [Auftragsname]**
 
-Der folgende Befehl aktiviert die deaktivierte `getUpdates`-Aufgabe.
+Der folgende Befehl aktiviert den deaktivierten Auftrag `getUpdates`.
 
 	~$azure mobile job update -a enabled todolist getUpdates
 	info:    Executing command mobile job update
@@ -1578,17 +1543,17 @@ Der folgende Befehl aktiviert die deaktivierte `getUpdates`-Aufgabe.
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **-i `<Zahl>`** oder **--interval `<Zahl>`**: Das Ausführungsintervall als ganze Zahl, der Standardwert ist 15.
-+ **-u `<Einheit>`** oder **--intervalUnit `<Einheit>`**: Die Einheit für das Intervall. Dies kann einer der folgenden Werte sein:
++ **-i `<number>`** oder **--interval `<number>`**: Das Ausführungsintervall als ganze Zahl, der Standardwert ist `15`.
++ **-u `<unit>`** oder **--intervalUnit `<unit>`**: Die Einheit für das _Intervall_. Dies kann einer der folgenden Werte sein:
 	+ **minute** (Standard)
 	+ **hour**
 	+ **day**
 	+ **month**
 	+ **none** (bedarfsgesteuerte Aufgaben)
-+ **-t `<Zeit>`** **--startTime `<Zeit>`** Die Startzeit der ersten Skriptausführung im ISO-Format, der Standardwert ist `now`.
-+ **-a `<Status>`** oder **--status `<Status>`**: Der Status des Auftrags, entweder `enabled` oder `disabled`.
++ **-t `<time>`** **--startTime `<time>`** Die Startzeit der ersten Skriptausführung im ISO-Format, der Standardwert ist `now`.
++ **-a `<status>`** oder **--status `<status>`**: Der Status des Auftrags, entweder `enabled` oder `disabled`.
 
-**mobile job delete [Optionen] [Dienstname] [Auftragsname]**
+**mobile job delete [Optionen][servicename] [Auftragsname]**
 
 Dieser Befehl löscht den geplanten Auftrag getUpdates vom Server TodoList.
 
@@ -1596,13 +1561,13 @@ Dieser Befehl löscht den geplanten Auftrag getUpdates vom Server TodoList.
 	info:    Executing command mobile job delete
 	info:    mobile job delete command OK
 
-> [AZURE.NOTE] Beim Löschen eines Auftrags wird auch das hochgeladene Skript gelöscht.
+> [AZURE.NOTE]Beim Löschen eines Auftrags wird auch das hochgeladene Skript gelöscht.
 
 ###<a name="Mobile_Scale"></a>Befehle zum Skalieren eines Mobile Service
 
-Mit den Befehlen in diesem Abschnitt können Sie einen Mobile Service skalieren. Weitere Informationen finden Sie unter [Skalieren eines mobilen Diensts](http://msdn.microsoft.com/library/windowsazure/jj193178.aspx).
+Mit den Befehlen in diesem Abschnitt können Sie einen Mobile Service skalieren. Weitere Informationen finden Sie unter [Scaling a Mobile Service](http://msdn.microsoft.com/library/windowsazure/jj193178.aspx) (Skalieren von Mobile Services, in englischer Sprache).
 
-**mobile scale show [Optionen] [Dienstname]**
+**mobile scale show [Optionen][servicename]**
 
 Dieser Befehl zeigt Skalierungsinformationen an, inklusive dem aktuellen Servermodus und der Anzahl der Instanzen.
 
@@ -1613,7 +1578,7 @@ Dieser Befehl zeigt Skalierungsinformationen an, inklusive dem aktuellen Serverm
 	data:    numberOfInstances 1
 	info:    mobile scale show command OK
 
-**mobile scale change [Optionen] [Dienstname]**
+**mobile scale change [Optionen][servicename]**
 
 Dieser Befehl ändert den Skalierungsmodus des Mobile Service von Free zu Premium.
 
@@ -1624,15 +1589,15 @@ Dieser Befehl ändert den Skalierungsmodus des Mobile Service von Free zu Premiu
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **-c `<Modus>`** oder **--computeMode `<Modus>`**: Der Servermodus kann entweder `Free` oder `Reserved` lauten.
-+ **-i `<Anzahl>`** oder **--numberOfInstances `<Anzahl>`**: Die Anzahl der Instanzen bei Ausführung im Reserved-Modus.
++ **-c `<mode>`** oder **--computeMode `<mode>`**: Der Arbeitsmodus kann `Free` oder `Reserved` sein.
++ **-i `<count>`** oder **--numberOfInstances `<count>`**: Die Anzahl der Instanzen bei Ausführung im Reserved-Modus.
 
-> [AZURE.NOTE] Wenn Sie den Servermodus  `Reserved` aktivieren, laufen all Ihre Mobile Services in derselben Region im Premiummodus.
+> [AZURE.NOTE]Wenn Sie den Arbeitsmodus `Reserved` aktivieren, laufen all Ihre Mobile Services in derselben Region im Premiummodus.
 
 
 ###Befehle zum Aktivieren von Vorschaufeatures für Ihren Mobile Service
 
-**mobile preview list [Optionen] [Dienstname]**
+**mobile preview list [Optionen][servicename]**
 
 Dieser Befehl zeigt die für den angegebenen Dienst verfügbaren Vorschaufeatures an und ob diese aktiviert sind.
 
@@ -1646,13 +1611,13 @@ Dieser Befehl zeigt die für den angegebenen Dienst verfügbaren Vorschaufeature
 	info:    You can enable preview features using the 'azure mobile preview enable' command.
 	info:    mobile preview list command OK
 
-**mobile preview enable [Optionen] [Dienstname] [Featurename]**
+**mobile preview enable [Optionen][servicename] [Featurename]**
 
 Dieser Befehl aktiviert das angegebene Vorschaufeature für einen Mobile Service. Nachdem Vorschaufeatures aktiviert wurden, können sie für einen Mobile Service nicht mehr deaktiviert werden.
 
 ###Befehle zum Verwalten Ihrer Mobile Services-APIs
 
-**mobile api list [Optionen] [Dienstname]**
+**mobile api list [Optionen][servicename]**
 
 Dieser Befehl zeigt eine Liste benutzerdefinierter Mobile Services-APIs an, die Sie für Ihren Mobile Service erstellt haben.
 
@@ -1666,7 +1631,7 @@ Dieser Befehl zeigt eine Liste benutzerdefinierter Mobile Services-APIs an, die 
 	info:    You can manipulate API scripts using the 'azure mobile script' command.
 	info:    mobile api list command OK
 
-**mobile api create [Optionen] [Dienstname] [API-Name]**
+**mobile api create [Optionen][servicename] [API-Name]**
 
 Erstellt eine benutzerdefinierte Mobile Services-API.
 
@@ -1678,9 +1643,9 @@ Erstellt eine benutzerdefinierte Mobile Services-API.
 
 Dieser Befehl unterstützt die folgende zusätzliche Option:
 
-**-p** oder **--permissions** &lt;Berechtigungen>:  Durch Komma getrennte Liste von &lt;Methode>=&lt;Berechtigung>-Paaren.
+**-p** oder **--permissions** &lt;Berechtigung>: Eine durch Komma getrennte Liste mit &lt;Methode>=&lt;Berechtigung>-Paaren.
 
-**mobile api update [Optionen] [Dienstname] [API-Name]**
+**mobile api update [Optionen][servicename] [API-Name]**
 
 Dieser Befehl aktualisiert die angegebene benutzerdefinierte Mobile Services-API.
 
@@ -1688,10 +1653,10 @@ Dieser Befehl unterstützt die folgende zusätzliche Option:
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **-p** oder **--permissions** &lt;Berechtigungen>: Durch Komma getrennte Liste von &lt;Methode>=&lt;Berechtigung>-Paaren.
++ **-p** oder **--permissions** &lt;Berechtigung>: Eine durch Komma getrennte Liste mit &lt;Methode>=&lt;Berechtigung>-Paaren.
 + **-f** oder **--force**: Überschreibt benutzerdefinierte Änderungen an der Metadatendatei für Berechtigungen.
 
-**mobile api delete [Optionen] [Dienstname] [API-Name]**
+**mobile api delete [Optionen][servicename] [API-Name]**
 
 	~$ azure mobile api delete mysite myCustomRetrieveAPI
 	info:    Executing command mobile api delete
@@ -1702,7 +1667,7 @@ Dieser Befehl löscht die angegebene benutzerdefinierte Mobile Services-API.
 
 ###Befehle zum Verwalten der App-Einstellungen Ihrer mobilen Anwendung
 
-**mobile appsetting list [Optionen] [Dienstname]**
+**mobile appsetting list [Optionen][servicename]**
 
 Dieser Befehl zeigt die App-Einstellungen der mobilen Anwendung für den angegebenen Dienst an.
 
@@ -1714,7 +1679,7 @@ Dieser Befehl zeigt die App-Einstellungen der mobilen Anwendung für den angegeb
 	data:    enablebetacontent  true
 	info:    mobile appsetting list command OK
 
-**mobile appsetting add [Optionen] [Dienstname] [Name] [Wert]**
+**mobile appsetting add [Optionen][servicename] [Name][value]**
 
 Dieser Befehl fügt eine benutzerdefinierte Anwendungseinstellung für Ihren Mobile Service hinzu.
 
@@ -1724,7 +1689,7 @@ Dieser Befehl fügt eine benutzerdefinierte Anwendungseinstellung für Ihren Mob
 	+ Adding app setting
 	info:    mobile appsetting add command OK
 
-**mobile appsetting delete [Optionen] [Dienstname] [Name]**
+**mobile appsetting delete [Optionen][servicename] [Name]**
 
 Dieser Befehl entfernt die angegebene Anwendungseinstellung für Ihren Mobile Service.
 
@@ -1734,7 +1699,7 @@ Dieser Befehl entfernt die angegebene Anwendungseinstellung für Ihren Mobile Se
 	+ Removing app setting 'enablebetacontent'
 	info:    mobile appsetting delete command OK
 
-**mobile appsetting show [Optionen] [Dienstname] [Name]**
+**mobile appsetting show [Optionen][servicename] [Name]**
 
 Dieser Befehl entfernt die angegebene Anwendungseinstellung für Ihren Mobile Service.
 
@@ -1884,11 +1849,11 @@ Dieser Befehl zeigt die Speicherkonten für Ihr Abonnement an.
 	data:    mybasestorage           West US
 	info:    storage account list command OK
 
-**storage account show [Optionen] <Name>**
+**storage account show [Optionen] <name>**
 
 Dieser Befehl zeigt Informationen zum angegebenen Speicherkonto einschließlich des URI und der Kontoeigenschaften an.
 
-**storage account create [Optionen] <Name>**
+**storage account create [Optionen] <name>**
 
 Dieser Befehl erstellt ein Speicherkonto auf Grundlage der angegebenen Optionen.
 
@@ -1900,13 +1865,13 @@ Dieser Befehl erstellt ein Speicherkonto auf Grundlage der angegebenen Optionen.
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
 + **-e** oder **--label** &lt;Beschriftung>: Die Beschriftung für das Speicherkonto.
-+ **-d** oder **--description** &lt;Beschreibung>:  Die Beschreibung des Speicherkontos.
++ **-d** oder **--description** &lt;Beschreibung>: Die Beschreibung für das Speicherkonto.
 + **-l** oder **--location** &lt;Name>: Die geografische Region, in der das Speicherkonto erstellt werden soll.
-+ **-a** oder **--affinity-group** &lt;Name>: Die Affinitätsgruppe, der das Speicherkonto zugeordnet werden soll.
-+ **--geoReplication**:  Gibt an, ob Georeplikation aktiviert ist.
++ **-a** oder **--affinity-group** &lt;Name>:Die Affinitätsgruppe, der das Speicherkonto zugeordnet werden soll.
++ **--geoReplication**: Gibt an, ob Georeplikation aktiviert ist.
 + **--disable-geoReplication**: Gibt an, ob Georeplikation deaktiviert ist.
 
-**storage account set [Optionen] <Name>**
+**storage account set [Optionen] <name>**
 
 Dieser Befehl aktualisiert das angegebene Speicherkonto.
 
@@ -1918,12 +1883,12 @@ Dieser Befehl aktualisiert das angegebene Speicherkonto.
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
 + **-e** oder **--label** &lt;Beschriftung>: Die Beschriftung für das Speicherkonto.
-+ **-d** oder **--description** &lt;Beschreibung>:  Die Beschreibung des Speicherkontos.
++ **-d** oder **--description** &lt;Beschreibung>: Die Beschreibung für das Speicherkonto.
 + **-l** oder **--location** &lt;Name>: Die geografische Region, in der das Speicherkonto erstellt werden soll.
-+ **--geoReplication**:  Gibt an, ob Georeplikation aktiviert ist.
++ **--geoReplication**: Gibt an, ob Georeplikation aktiviert ist.
 + **--disable-geoReplication**: Gibt an, ob Georeplikation deaktiviert ist.
 
-**storage account delete [Optionen] <Name>**
+**storage account delete [Optionen] <name>**
 
 Dieser Befehl löscht das angegebene Speicherkonto.
 
@@ -1933,28 +1898,27 @@ Dieser Befehl unterstützt die folgende zusätzliche Option:
 
 ###Befehle zum Verwalten Ihrer Speicherkontoschlüssel
 
-**storage account keys list [Optionen] <Name>**
+**storage account keys list [Optionen] <name>**
 
 Dieser Befehl listet die primären und sekundären Schlüssel für das angegebene Speicherkonto auf.
 
-**storage account keys renew [Optionen] <Name>**
+**storage account keys renew [Optionen] <name>**
 
 ###Befehle zum Verwalten Ihres Speichercontainers
 
-**storage container list [Optionen] [Präfix]**
+**storage container list [Optionen][prefix]**
 
 Dieser Befehl zeigt die Speichercontainerliste für ein angegebenes Speicherkonto an. Das Speicherkonto wird entweder mit der Verbindungszeichenfolge oder mit dem Speicherkontonamen und dem Kontoschlüssel angegeben.
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
 + **-p** oder **-prefix** &lt;Präfix>: Das Präfix des Speichercontainernamens.
-+ **-a** oder **--account-name** &lt;Kontoname>: Der Name des Speicherkontos.
++ **-a** oder **--account-name** &lt;Kontoname>: Der Speicherkontoname.
 + **-k** oder **--account-key** &lt;Kontoschlüssel>: Der Speicherkontoschlüssel.
 + **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>: Die Speicherverbindungszeichenfolge.
 + **--debug**: Führt den Speicherbefehl im Debugmodus aus.
 
-**storage container show [Optionen] [Container]**
-**storage container create [Optionen] [Container]**
+**storage container show [Optionen][container]** **storage container create [Optionen][container]**
 
 Dieser Befehl erstellt einen Speichercontainer für das angegebene Speicherkonto. Das Speicherkonto wird entweder mit der Verbindungszeichenfolge oder mit dem Speicherkontonamen und dem Kontoschlüssel angegeben.
 
@@ -1962,12 +1926,12 @@ Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
 + **--container** &lt;Container>: Der Name des zu erstellenden Speichercontainers.
 + **-p** oder **-prefix** &lt;Präfix>: Das Präfix des Speichercontainernamens.
-+ **-a** oder **--account-name** &lt;Kontoname>: Der Name des Speicherkontos.
-+ **-k** oder **--account-key** &lt;Kontoschlüssel>: Speicherkontoschlüssel
-+ **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>: Die Speicherverbindungszeichenfolge
++ **-a** oder **--account-name** &lt;Kontoname>: Der Speicherkontoname.
++ **-k** oder **--account-key** &lt;Kontoschlüssel>: Der Speicherkontoschlüssel.
++ **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>: Die Speicherverbindungszeichenfolge.
 + **--debug**: Führt den Speicherbefehl im Debugmodus aus.
 
-**storage container delete [Optionen] [Container]**
+**storage container delete [Optionen][container]**
 
 Dieser Befehl löscht den angegebenen Speichercontainer. Das Speicherkonto wird entweder mit der Verbindungszeichenfolge oder mit dem Speicherkontonamen und dem Kontoschlüssel angegeben.
 
@@ -1975,12 +1939,12 @@ Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
 + **--container** &lt;Container>: Der Name des zu erstellenden Speichercontainers.
 + **-p** oder **-prefix** &lt;Präfix>: Das Präfix des Speichercontainernamens.
-+ **-a** oder **--account-name** &lt;Kontoname>: Der Name des Speicherkontos.
++ **-a** oder **--account-name** &lt;Kontoname>: Der Speicherkontoname.
 + **-k** oder **--account-key** &lt;Kontoschlüssel>: Der Speicherkontoschlüssel.
 + **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>: Die Speicherverbindungszeichenfolge.
 + **--debug**: Führt den Speicherbefehl im Debugmodus aus.
 
-**storage container set [Optionen] [Container]**
+**storage container set [Optionen][container]**
 
 Dieser Befehl legt die Zugriffssteuerungsliste für den Speichercontainer fest. Das Speicherkonto wird entweder mit der Verbindungszeichenfolge oder mit dem Speicherkontonamen und dem Kontoschlüssel angegeben.
 
@@ -1988,14 +1952,14 @@ Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
 + **--container** &lt;Container>: Der Name des zu erstellenden Speichercontainers.
 + **-p** oder **-prefix** &lt;Präfix>: Das Präfix des Speichercontainernamens.
-+ **-a** oder **--account-name** &lt;Kontoname>: Der Name des Speicherkontos.
++ **-a** oder **--account-name** &lt;Kontoname>: Der Speicherkontoname.
 + **-k** oder **--account-key** &lt;Kontoschlüssel>: Der Speicherkontoschlüssel.
 + **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>: Die Speicherverbindungszeichenfolge.
 + **--debug**: Führt den Speicherbefehl im Debugmodus aus.
 
 ###Befehle zum Verwalten Ihres Speicher-Blobs
 
-**storage blob list [Optionen] [Container] [Präfix]**
+**storage blob list [Optionen][container] [Präfix]**
 
 Dieser Befehl gibt eine Liste der Speicher-Blobs im angegebenen Speichercontainer zurück.
 
@@ -2003,12 +1967,12 @@ Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
 + **--container** &lt;Container>: Der Name des zu erstellenden Speichercontainers.
 + **-p** oder **-prefix** &lt;Präfix>: Das Präfix des Speichercontainernamens.
-+ **-a** oder **--account-name** &lt;Kontoname>: Der Name des Speicherkontos.
++ **-a** oder **--account-name** &lt;Kontoname>: Der Speicherkontoname.
 + **-k** oder **--account-key** &lt;Kontoschlüssel>: Der Speicherkontoschlüssel.
 + **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>: Die Speicherverbindungszeichenfolge.
 + **--debug**: Führt den Speicherbefehl im Debugmodus aus.
 
-**storage blob show [Optionen] [Container] [Blob]**
+**storage blob show [Optionen][container] [Blob]**
 
 Dieser Befehl zeigt die Details des angegebenen Speicher-Blobs an.
 
@@ -2016,56 +1980,56 @@ Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
 + **--container** &lt;Container>: Der Name des zu erstellenden Speichercontainers.
 + **-p** oder **-prefix** &lt;Präfix>: Das Präfix des Speichercontainernamens.
-+ **-a** oder **--account-name** &lt;Kontoname>: Der Name des Speicherkontos.
++ **-a** oder **--account-name** &lt;Kontoname>: Der Speicherkontoname.
 + **-k** oder **--account-key** &lt;Kontoschlüssel>: Der Speicherkontoschlüssel.
 + **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>: Die Speicherverbindungszeichenfolge.
 + **--debug**: Führt den Speicherbefehl im Debugmodus aus.
 
-**storage blob delete [Optionen] [Container] [Blob]**
+**storage blob delete [Optionen][container] [Blob]**
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **--container** &lt;Container>ab: Der Name des zu erstellenden Speichercontainers.
-+ **-b** oder **--blob** &lt;Blob-Name>ab: Der Name des zu löschenden Speicher-Blobs.
++ **--container** &lt;Container>: Der Name des zu erstellenden Speichercontainers.
++ **-b** oder **--blob** &lt;Blob-Name>: Der Name des zu löschenden Speicher-Blobs.
 + **-q** oder **--quiet**: Entfernt das angegebene Speicher-Blob ohne Bestätigung.
-+ **-a** oder **--account-name** &lt;Kontoname>ab: Der Name des Speicherkontos.
-+ **-k** oder **--account-key** &lt;Kontoschlüssel>ab: Der Speicherkontoschlüssel.
-+ **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>ab: Die Speicherverbindungszeichenfolge.
++ **-a** oder **--account-name** &lt;Kontoname>: Der Speicherkontoname.
++ **-k** oder **--account-key** &lt;Kontoschlüssel>: Der Speicherkontoschlüssel.
++ **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>: Die Speicherverbindungszeichenfolge.
 + **--debug**: Führt den Speicherbefehl im Debugmodus aus.
 
-**storage blob upload [Optionen] [Datei] [Container] [Blob]**
+**storage blob upload [Optionen][file] [Container][blob]**
 
 Dieser Befehl lädt die angegebene Datei in das angegebene Speicher-Blob hoch.
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **--container** &lt;Container>ab: Der Name des zu erstellenden Speichercontainers.
-+ **-b** oder **--blob** &lt;Blob-Name>ab: Der Name des Speicher-Blobs, in das hochgeladen werden soll.
-+ **-t** oder **--blobtype** &lt;Blob-Typ>ab: Der Typ des Speicher-Blobs: Seite oder Block.
-+ **-p** oder **--properties** &lt;Eigenschaften>ab: Die Speicher-Blob-Eigenschaften für die hochgeladene Datei. Bei Eigenschaften handelt es sich um Schlüssel=Wert-Paare, die durch ein Semikolon (;) voneinander getrennt sind. Die verfügbaren Eigenschaften sind contentType, contentEncoding, contentLanguage und cacheControl.
-+ **-m** oder **--metadata** &lt;Metadaten>ab: Die Speicher-Blob-Metadaten für die hochgeladene Datei. Bei Metadaten handelt es sich um Schlüssel=Wert-Paare, die durch ein Semikolon (;) voneinander getrennt sind.
-+ **--concurrenttaskcount** &lt;Anzahl_gleichzeitiger_Aufgaben>ab: Die maximale Anzahl gleichzeitiger Uploadanforderungen.
++ **--container** &lt;Container>: Der Name des zu erstellenden Speichercontainers.
++ **-b** oder **--blob** &lt;Blob-Name>: Der Name des zu löschenden Speicher-Blobs.
++ **-t** oder **--blobtype** &lt;Blob-Typ>: Der Speicher-Blob-Typ: Seite oder Block.
++ **-p** oder **--properties** &lt;Eigenschaften>: Die Speicher-Blob-Eigenschaften für die hochgeladene Datei. Bei Eigenschaften handelt es sich um Schlüssel=Wert-Paare, die durch ein Semikolon (;) voneinander getrennt sind. Die verfügbaren Eigenschaften sind contentType, contentEncoding, contentLanguage und cacheControl.
++ **-m** oder **--metadata** &lt;Metadaten>: Die Speicher-Blob-Metadaten für die hochgeladene Datei. Bei Metadaten handelt es sich um Schlüssel=Wert-Paare, die durch ein Semikolon (;) voneinander getrennt sind.
++ **--concurrenttaskcount** &lt;Anzahl_gleichzeitiger_Aufgaben>: Die maximale Anzahl gleichzeitiger Uploadanforderungen.
 + **-q** oder **--quiet**: Überschreibt das angegebene Speicher-Blob ohne Bestätigung.
-+ **-a** oder **--account-name** &lt;Kontoname>ab: Der Name des Speicherkontos.
-+ **-k** oder **--account-key** &lt;Kontoschlüssel>ab: Der Speicherkontoschlüssel.
-+ **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>ab: Die Speicherverbindungszeichenfolge.
++ **-a** oder **--account-name** &lt;Kontoname>: Der Speicherkontoname.
++ **-k** oder **--account-key** &lt;Kontoschlüssel>: Der Speicherkontoschlüssel.
++ **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>: Die Speicherverbindungszeichenfolge.
 + **--debug**: Führt den Speicherbefehl im Debugmodus aus.
 
-**storage blob download [Optionen] [Container] [Blob] [Ziel]**
+**storage blob download [Optionen][container] [Blob][destination]**
 
 Dieser Befehl aktualisiert das angegebene Speicher-Blob.
 
 Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
-+ **--container** &lt;Container>ab: Der Name des zu erstellenden Speichercontainers.
-+ **-b** oder **--blob** &lt;Blob-Name>ab: Der Name des Speicher-Blobs.
-+ **-d** oder **--destination** [Ziel]: Das Downloadziel als Datei- oder Verzeichnispfad.
++ **--container** &lt;Container>: Der Name des zu erstellenden Speichercontainers.
++ **-b** oder **--blob** &lt;Blob-Name>: Der Speicher-Blob-Name.
++ **-d** oder **--destination** [Ziel]: Die Zieldatei oder der Verzeichnispfad für den Download.
 + **-m** oder **--checkmd5**: Die md5-Prüfsumme für die heruntergeladene Datei.
-+ **--concurrenttaskcount** &lt;Anzahl_gleichzeitiger_Aufgaben>  Die maximale Anzahl gleichzeitiger Uploadanforderungen.
++ **--concurrenttaskcount** &lt;Anzahl_gleichzeitiger_Aufgaben>: Die maximale Anzahl gleichzeitiger Uploadanforderungen.
 + **-q** oder **--quiet**: Überschreibt die Zieldatei ohne Bestätigung.
-+ **-a** oder **--account-name** &lt;Kontoname>ab: Der Name des Speicherkontos.
-+ **-k** oder **--account-key** &lt;Kontoschlüssel>ab: Der Speicherkontoschlüssel.
-+ **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>ab: Die Speicherverbindungszeichenfolge.
++ **-a** oder **--account-name** &lt;Kontoname>: Der Speicherkontoname.
++ **-k** oder **--account-key** &lt;Kontoschlüssel>: Der Speicherkontoschlüssel.
++ **-c** oder **--connection-string** &lt;Verbindungszeichenfolge>: Die Speicherverbindungszeichenfolge.
 + **--debug**: Führt den Speicherbefehl im Debugmodus aus.
 
 ##<a name ="Commands_to_manage_sql"></a>Befehle zum Verwalten von SQL-Datenbanken
@@ -2076,7 +2040,7 @@ Mit diesen Befehlen können Sie Ihre Azure SQL-Datenbanken verwalten
 
 Mit diesen Befehlen können Sie Ihre SQL-Server verwalten
 
-**sql server create &lt;Administratorname> &lt;Administratorkennwort> &lt;Ort>**
+**sql server create &lt;Administratoranmeldung> &lt;Administratorkennwort> &lt;Ort>**
 
 Erstellt einen neuen Datenbankserver
 
@@ -2217,7 +2181,7 @@ Löscht eine Datenbank.
 
 Mit diesen Befehlen können Sie die Firewallregeln für Ihren SQL Server verwalten
 
-**sql firewallrule create [Optionen] &lt;Servername> &lt;Regelname> &lt;Anfangs-IP-Adresse> &lt;End-IP-Adresse>**
+**sql firewallrule create [Optionen] &lt;Servername> &lt;Regelname> &lt;Start-IP-Adresse> &lt;End-IP-Adresse>**
 
 Erstellt eine neue Firewallregel für einen SQL Server.
 
@@ -2376,4 +2340,4 @@ Löscht einen DNS-Servereintrag aus der Netzwerkkonfiguration.
 	+ Deleting the DNS server entry dns-4 ( 77.88.99.11 )
 	info:    network dnsserver unregister command OK
 
-<!--HONumber=47-->
+<!---HONumber=58-->

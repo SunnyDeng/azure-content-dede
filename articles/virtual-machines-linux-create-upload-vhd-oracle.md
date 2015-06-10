@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erstellen und Hochladen einer Oracle Linux-VHD in Azure" 
 	description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein Oracle Linux-Betriebssystem enthält." 
 	services="virtual-machines" 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/13/2015" 
-	ms.author="szarkos"/>
+	ms.date="05/15/2015" 
+	ms.author="szark"/>
 
 # Vorbereiten eines virtuellen Oracle Linux-Computers für Azure
 
@@ -23,7 +23,7 @@
 
 ##Voraussetzungen##
 
-In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Oracle Linux-Betriebssystem auf einer virtuellen Festplatte installiert haben. Es gibt mehrere Tools zum Erstellen von .vhd-Dateien, beispielsweise eine Virtualisierungslösung wie Hyper-V. Anweisungen finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx). 
+In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Oracle Linux-Betriebssystem auf einer virtuellen Festplatte installiert haben. Sie können VHD-Dateien mit unterschiedlichen Tools erstellen, beispielsweise mit einer Virtualisierungslösung wie Hyper-V. Anweisungen hierzu finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
 
 
 **Installationshinweise für Oracle Linux**
@@ -32,13 +32,13 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Oracle Linux-Betr
 
 - Der UEK2 von Oracle wird auf Hyper-V und Azure nicht unterstützt, da er nicht die erforderlichen Treiber enthält.
 
-- Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem Cmdlet "convert-vhd" in das VHD-Format konvertieren.
+- Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem convert-vhd-Cmdlet in das VHD-Format konvertieren.
 
-- Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird.  LVM oder [RAID](virtual-machines-linux-configure-raid.md) kann bei Bedarf auf Datenträgern verwendet werden.
+- Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird. LVM oder [RAID](virtual-machines-linux-configure-raid.md) können bei Bedarf auf Datenträgern verwendet werden.
 
 - NUMA wird bei größeren VMs aufgrund eines Fehlers in den Linux Kernel-Versionen unter 2.6.37 nicht unterstützt. Dieses Problem betrifft in erster Linie jene Verteilungen, die den Red Hat 2.6.32-Upstream-Kernel verwenden. Bei der manuellen Installation des Azure Linux Agent (waagent) wird NUMA in der GRUB-Konfiguration für das Linux-Kernel automatisch deaktiviert. Weitere Informationen dazu finden Sie in den folgenden Schritten.
 
-- Konfigurieren Sie keine SWAP-Partition auf einem Betriebssystemdatenträger. Der Linux-Agent kann konfiguriert werden, um eine Auslagerungsdatei auf dem temporären Ressourcendatenträger zu erstellen.  Weitere Informationen dazu finden Sie in den folgenden Schritten.
+- Konfigurieren Sie keine SWAP-Partition auf einem Betriebssystemdatenträger. Der Linux-Agent kann konfiguriert werden, eine Auslagerungsdatei auf dem temporären Ressourcendatenträger zu erstellen. Weitere Informationen dazu finden Sie in den folgenden Schritten.
 
 - Alle virtuellen Festplatten müssen eine Größe aufweisen, die ein Vielfaches von 1 MB ist.
 
@@ -55,14 +55,14 @@ Sie müssen die spezifischen Konfigurationsschritte im Betriebssystem für den v
 
 		# sudo rpm -e --nodeps NetworkManager
 
-	**Hinweis:** Wenn das Paket noch nicht installiert ist, schlägt dieser Befehl mit einer Fehlermeldung fehl. Dies ist erwartungsgemäß.
+	**Hinweis:** Wenn das Paket noch nicht installiert ist, schlägt dieser Befehl fehl, und Sie erhalten eine Fehlermeldung. Dies entspricht dem erwarteten Verhalten.
 
-4.	Erstellen Sie eine Datei mit der Benennung **network** im Verzeichnis `/etc/sysconfig/`, die den folgenden Text enthält:
+4.	Erstellen Sie im Verzeichnis `/etc/sysconfig/` eine Datei mit dem Namen **network** und folgendem Text:
 
 		NETWORKING=yes
 		HOSTNAME=localhost.localdomain
 
-5.	Erstellen Sie eine Datei mit der Benennung **ifcfg-eth0** im Verzeichnis `/etc/sysconfig/network-scripts/`, die den folgenden Text enthält:
+5.	Erstellen Sie im Verzeichnis `/etc/sysconfig/network-scripts/` eine Datei mit dem Namen**ifcfg-eth0** und folgendem Text:
 
 		DEVICE=eth0
 		ONBOOT=yes
@@ -72,7 +72,7 @@ Sie müssen die spezifischen Konfigurationsschritte im Betriebssystem für den v
 		PEERDNS=yes
 		IPV6INIT=no
 
-6.	Verschieben (oder entfernen) Sie die udev-Regeln, um eine Generierung statischer Regeln für die Ethernet-Schnittstelle zu vermeiden.  Diese Regeln können beim Klonen eines virtuellen Computers unter Microsoft Azure oder Hyper-V zu Problemen führen:
+6.	Verschieben (oder entfernen) Sie die udev-Regeln, um eine Generierung statischer Regeln für die Ethernet-Schnittstelle zu vermeiden. Diese Regeln können beim Klonen eines virtuellen Computers auf Azure oder Hyper-V zu Problemen führen:
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null
@@ -86,32 +86,32 @@ Sie müssen die spezifischen Konfigurationsschritte im Betriebssystem für den v
 
 		# sudo yum install python-pyasn1
 
-9.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür "/boot/grub/menu.lst" in einem Texteditor. Stellen Sie sicher, dass der Standardkernel die folgenden Parameter enthält:
+9.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür „/boot/grub/menu.lst“ in einem Text-Editor. Stellen Sie sicher, dass der Standardkernel die folgenden Parameter enthält:
 
 		console=ttyS0 earlyprintk=ttyS0 rootdelay=300 numa=off
 
 	Dadurch wird zudem sichergestellt, dass alle Konsolennachrichten zum ersten seriellen Port gesendet werden. Dieser kann Azure bei der Behebung von Fehlern unterstützen. Dadurch wird NUMA aufgrund eines Fehlers im Red Hat-kompatiblen Kernel von Oracle deaktiviert.
 
-	Zusätzlich wird empfohlen, die folgenden Parameter zu  *remove*:
+	Neben den oben erwähnten Punkten wird es empfohlen, die folgenden Parameter zu *entfernen*:
 
 		rhgb quiet crashkernel=auto
 
 	Weder der Graphical Boot noch der Quiet Boot sind in einer Cloudumgebung nützlich, in der alle Protokolle an den seriellen Port gesendet werden sollen.
 
-	Die Option  `crashkernel` ist möglicherweise links konfiguriert, falls gewünscht, aber beachten Sie, dass dieser Parameter die Größe des verfügbaren Speichers auf dem virtuellen Computer von 128 MB oder mehr reduziert, was für kleinere VMs problematisch sein kann.
+	Die Option `crashkernel` kann bei Bedarf konfiguriert bleiben. Beachten Sie jedoch, dass dieser Parameter die Menge an verfügbarem Arbeitsspeicher im virtuellen Computer um 128 MB oder mehr reduziert, was bei kleineren virtuellen Computern problematisch sein kann.
 
 
-10.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt.  Dies ist für gewöhnlich die Standardeinstellung.
+10.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung.
 
 11. Installieren Sie den Azure Linux Agent, indem Sie den folgenden Befehl ausführen:
 
 		# sudo yum install WALinuxAgent
 
-	Beachten Sie, dass durch eine Installation des Pakets "WALinuxAgent" die Pakete "NetworkManager" und "NetworkManager-gnome" entfernt werden, sofern sie nicht bereits wie in Schritt 2 beschrieben entfernt wurden.
+	Beachten Sie, dass durch eine Installation des WALinuxAgent-Pakets die NetworkManager- und NetworkManager-gnome-Pakete entfernt werden, sofern sie nicht bereits wie in Schritt 2 beschrieben entfernt wurden.
 
-12.	Richten Sie keinen Auslagerungsbereich auf dem BS-Datenträger ein.
+12.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
 
-	Der Azure Linux Agent kann einen Auslagerungsbereich automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein  *temporary* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) ordnungsgemäß die folgenden Parameter in "/etc/waagent.conf":
+	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -137,7 +137,7 @@ Sie müssen die spezifischen Konfigurationsschritte im Betriebssystem für den v
 
 Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht in etwa der für Oracle Linux 6. Es gibt jedoch einige wichtige Unterschiede:
 
- - Sowohl der Red Hat-kompatible Kernel als auch der UEK3 von Oracle werden in Azure unterstützt.  Der UEK3-Kernel wird empfohlen.
+ - Sowohl der Red Hat-kompatible Kernel als auch der UEK3 von Oracle werden in Azure unterstützt. Der UEK3-Kernel wird empfohlen.
  - Das NetworkManager-Paket führt nicht mehr zu Konflikten mit dem Azure Linux Agent. Dieses Paket ist standardmäßig installiert, und Sie sollten es nicht entfernen.
  - GRUB2 wird nun als standardmäßiger Bootloader verwendet. Daher hat sich die Prozedur für das Bearbeiten der Kernelparameter geändert (siehe unten).
  - XFS ist nun das Standarddateisystem. Das EXT4-Dateisystem kann bei Bedarf weiterhin verwendet werden.
@@ -149,12 +149,12 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
 2. Klicken Sie auf **Verbinden**, um ein Konsolenfenster für den virtuellen Computer zu öffnen.
 
-3.	Erstellen Sie eine Datei mit der Benennung **network** im Verzeichnis `/etc/sysconfig/`, die den folgenden Text enthält:
+3.	Erstellen Sie im Verzeichnis `/etc/sysconfig/` eine Datei mit dem Namen **network** und folgendem Text:
 
 		NETWORKING=yes
 		HOSTNAME=localhost.localdomain
 
-4.	Erstellen Sie eine Datei mit der Benennung **ifcfg-eth0** im Verzeichnis `/etc/sysconfig/network-scripts/`, die den folgenden Text enthält:
+4.	Erstellen Sie im Verzeichnis `/etc/sysconfig/network-scripts/` eine Datei mit dem Namen**ifcfg-eth0** und folgendem Text:
 
 		DEVICE=eth0
 		ONBOOT=yes
@@ -174,7 +174,7 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
 		# sudo chkconfig network on
 
-7. Installieren Sie das Paket "python-pyasn1", indem Sie den folgenden Befehl ausführen:
+7. Installieren Sie das Paket python-pyasn1, indem Sie den folgenden Befehl ausführen:
 
 		# sudo yum install python-pyasn1
 
@@ -183,32 +183,32 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 		# sudo yum clean all
 		# sudo yum -y update
 
-9.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu "/etc/default/grub" in einem Texteditor, und bearbeiten Sie den Parameter  `GRUB_CMDLINE_LINUX`, beispielsweise:
+9.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu „/etc/default/grub“ in einem Text-Editor, und bearbeiten Sie den Parameter `GRUB_CMDLINE_LINUX`. Beispiel:
 
 		GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0"
 
-	Dadurch wird zudem sichergestellt, dass alle Konsolennachrichten zum ersten seriellen Port gesendet werden. Dieser kann Azure bei der Behebung von Fehlern unterstützen. Zusätzlich wird empfohlen, die folgenden Parameter zu  *remove*:
+	Dadurch wird zudem sichergestellt, dass alle Konsolennachrichten zum ersten seriellen Port gesendet werden. Dieser kann Azure bei der Behebung von Fehlern unterstützen. Neben den oben erwähnten Punkten wird es empfohlen, die folgenden Parameter zu *entfernen*:
 
 		rhgb quiet crashkernel=auto
 
 	Weder der Graphical Boot noch der Quiet Boot sind in einer Cloudumgebung nützlich, in der alle Protokolle an den seriellen Port gesendet werden sollen.
 
-	Die Option  `crashkernel` ist möglicherweise links konfiguriert, falls gewünscht, aber beachten Sie, dass dieser Parameter die Größe des verfügbaren Speichers auf dem virtuellen Computer von 128 MB oder mehr reduziert, was für kleinere VMs problematisch sein kann.
+	Die Option `crashkernel` kann bei Bedarf konfiguriert bleiben. Beachten Sie jedoch, dass dieser Parameter die Menge an verfügbarem Arbeitsspeicher im virtuellen Computer um 128 MB oder mehr reduziert, was bei kleineren virtuellen Computern problematisch sein kann.
 
 
 10. Sobald Sie die oben beschriebene Bearbeitung von "/etc/default/grub" abgeschlossen haben, führen Sie den folgenden Befehl zum erneuten Erstellen der Grub-Konfiguration aus:
 
 		# sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
-11.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt.  Dies ist für gewöhnlich die Standardeinstellung.
+11.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung.
 
 12. Installieren Sie den Azure Linux Agent, indem Sie den folgenden Befehl ausführen:
 
 		# sudo yum install WALinuxAgent
 
-13.	Richten Sie keinen Auslagerungsbereich auf dem BS-Datenträger ein.
+13.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
 
-	Der Azure Linux Agent kann einen Auslagerungsbereich automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein  *temporary* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) ordnungsgemäß die folgenden Parameter in "/etc/waagent.conf":
+	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -224,6 +224,4 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
 15. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-
-
-<!--HONumber=45--> 
+<!---HONumber=58-->

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erstellen und Hochladen einer Ubuntu-Linux-VHD in Azure" 
 	description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein Ubuntu-Linux-Betriebssystem enthält." 
 	services="virtual-machines" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/13/2015" 
+	ms.date="05/15/2015" 
 	ms.author="szarkos"/>
 
 
@@ -21,15 +21,15 @@
 
 ##Voraussetzungen##
 
-In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betriebssystem auf einer virtuellen Festplatte installiert haben. Es gibt mehrere Tools zum Erstellen von .vhd-Dateien, beispielsweise eine Virtualisierungslösung wie Hyper-V. Anweisungen finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx). 
+In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betriebssystem auf einer virtuellen Festplatte installiert haben. Sie können VHD-Dateien mit unterschiedlichen Tools erstellen, beispielsweise mit einer Virtualisierungslösung wie Hyper-V. Anweisungen hierzu finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
 
 **Installationshinweise zu Ubuntu**
 
-- Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem Cmdlet "convert-vhd" in das VHD-Format konvertieren.
+- Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem convert-vhd-Cmdlet in das VHD-Format konvertieren.
 
-- Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird.  LVM oder [RAID](virtual-machines-linux-configure-raid.md) kann wahlweise auf Datenträgern verwendet werden.
+- Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird. LVM oder [RAID](virtual-machines-linux-configure-raid.md) können bei Bedarf auf Datenträgern verwendet werden.
 
-- Konfigurieren Sie keine SWAP-Partition auf einem Betriebssystemdatenträger. Der Linux-Agent kann konfiguriert werden, um eine Auslagerungsdatei auf dem temporären Ressourcendatenträger zu erstellen.  Weitere Informationen dazu finden Sie in den folgenden Schritten.
+- Konfigurieren Sie keine SWAP-Partition auf einem Betriebssystemdatenträger. Der Linux-Agent kann konfiguriert werden, eine Auslagerungsdatei auf dem temporären Ressourcendatenträger zu erstellen. Weitere Informationen dazu finden Sie in den folgenden Schritten.
 
 - Alle virtuellen Festplatten müssen eine Größe aufweisen, die ein Vielfaches von 1 MB ist.
 
@@ -42,7 +42,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 
 3.	Ersetzen Sie die aktuellen Repositorys im Image zum Verwenden der Azure-Repositorys von Ubuntu. Die Schritte können je nach Ubuntu-Version geringfügig abweichen.
 
-	Vor der Bearbeitung von "/etc/apt/sources.list" sollten Sie eine Sicherung vornehmen.
+	Vor der Bearbeitung von „/etc/apt/sources.list“ sollten Sie eine Sicherung vornehmen.
 
 		# sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 
@@ -63,7 +63,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 		# sudo sed -i "s/[a-z][a-z].archive.ubuntu.com/azure.archive.ubuntu.com/g" /etc/apt/sources.list
 		# sudo apt-get update
 
-4. Aktualisieren Sie das Betriebssystem auf den neuesten Kernel, indem Sie die folgenden Befehle ausführen: 
+4. Aktualisieren Sie das Betriebssystem auf den neuesten Kernel, indem Sie die folgenden Befehle ausführen:
 
 	Ubuntu 12.04:
 
@@ -89,30 +89,30 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 
 		# sudo reboot
 
-5.	(optional) Wenn das Ubuntu-System einen Fehler feststellt und neu gestartet wird, wartet es oftmals an der Grub-Starteingabeaufforderung auf eine Benutzereingabe, wodurch das ordnungsgemäße Starten des Systems verhindert wird. Um dies zu unterbinden, müssen Sie die folgenden Schritte ausführen:
+5.	(optional) Wenn das Ubuntu-System ein Fehler feststellt und neu gestartet wird, wartet es oftmals an der Grub-Starteingabeaufforderung auf eine Benutzereingabe, wodurch das entsprechende Starten des Systems verhindert wird. Um dies zu unterbinden, müssen Sie die folgenden Schritte ausführen:
 
-	a) Öffnen Sie die Datei "/etc/grub.d/00_header".
+	a) Öffnen Sie die Datei /etc/grub.d/00_header.
 
 	b) Suchen Sie in der Funktion **make_timeout()** nach **if ["\${recordfail}" = 1 ]; then**
 
 	c) Ändern Sie die Anweisung unterhalb dieser Zeile in **set timeout=5**.
 
-	d) Führen Sie  'sudo update-grub' aus.
+	d) Führen Sie 'sudo update-grub' aus.
 
-6. Modifizieren Sie die Boot-Zeile des Kernels für Grub, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür "/etc/default/grub" in einem Texteditor. Suchen Sie nach der Variablen mit der Bezeichnung  `GRUB_CMDLINE_LINUX_DEFAULT` (oder fügen Sie diese gegebenenfalls hinzu), und bearbeiten Sie sie, um die folgenden Parameter einzubinden:
+6. Modifizieren Sie die Boot-Zeile des Kernels für Grub, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür "/etc/default/grub" in einem Texteditor. Suchen Sie nach der Variablen `GRUB_CMDLINE_LINUX_DEFAULT` (oder fügen Sie diese gegebenenfalls hinzu), und bearbeiten Sie sie, um die folgenden Parameter einzubinden:
 
-		GRUB_CMDLINE_LINUX_DEFAULT="console=ttyS0 earlyprintk=ttyS0 rootdelay=300"
+		GRUB_CMDLINE_LINUX_DEFAULT="console=tty1 console=ttyS0 earlyprintk=ttyS0 rootdelay=300"
 
-	Speichern und schließen Sie die Datei. Führen Sie danach '`sudo update-grub`' aus. Dadurch wird sichergestellt, dass alle Konsolennachrichten zum ersten seriellen Port gesendet werden. Dieser kann Azure bei der Behebung von Fehlern in technischer Hinsicht unterstützen. 
+	Speichern und schließen Sie diese Datei. Führen Sie danach "`sudo update-grub`" aus. Dadurch wird sichergestellt, dass alle Konsolennachrichten zum ersten seriellen Port gesendet werden. Dieser kann Azure bei der Behebung von Fehlern in technischer Hinsicht unterstützen.
 
-8.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt.  Dies ist für gewöhnlich die Standardeinstellung.
+8.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung.
 
 9.	Installieren des Azure Linux Agent:
 
 		# sudo apt-get update
 		# sudo apt-get install walinuxagent
 
-	Beachten Sie, dass durch Installieren des Pakets   `walinuxagent` die Pakete  `NetworkManager` und  `NetworkManager-gnome` entfernt werden, wenn sie installiert sind.
+	Beachten Sie, dass durch Installieren des Pakets `walinuxagent` die Pakete `NetworkManager` und `NetworkManager-gnome` entfernt werden, wenn sie installiert sind.
 
 10.	Führen Sie die folgenden Befehle aus, um den virtuellen Computer zurückzusetzen und ihn für die Bereitstellung in Azure vorzubereiten:
 
@@ -122,6 +122,4 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 
 11. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-
-
-<!--HONumber=45--> 
+<!---HONumber=58-->

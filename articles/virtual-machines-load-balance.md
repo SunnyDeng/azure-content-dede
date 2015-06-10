@@ -1,6 +1,6 @@
-﻿<properties 
+<properties 
 	pageTitle="Lastenausgleich für Azure-Infrastrukturdienste" 
-	description="Beschreibt zwei unterschiedliche Typen des durch Azure unterstützten Lastenausgleichs: Lastenausgleich für Cloud-Dienste und Azure Traffic Manager für Clientdatenverkehr." 
+	description="Beschreibt zwei unterschiedliche Typen des durch Azure unterstützten Lastenausgleichs: Lastenausgleich für Clouddienste und Azure Traffic Manager für Clientdatenverkehr." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="cherylmc" 
@@ -13,28 +13,28 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/10/2015" 
+	ms.date="05/12/2015" 
 	ms.author="cherylmc"/>
 
 
-#Lastenausgleich für Azure-Infrastrukturdienste#
+# Lastenausgleich für Azure-Infrastrukturdienste#
 
 Für Azure-Infrastrukturdienste kann Lastenausgleich auf zwei Ebenen genutzt werden:
 
-- **DNS-Ebene**:  Lastenausgleich für Datenverkehr in folgende Richtungen: zu unterschiedlichen Cloud-Diensten in unterschiedlichen Rechenzentren, zu unterschiedlichen Azure-Websites in unterschiedlichen Rechenzentren oder zu externen Endpunkten. Für diese Form des Lastenausgleichs werden der Traffic Manager und die Roundrobin-Methode verwendet.
-- **Netzwerk-Ebene**:  Lastenausgleich für eingehenden Internetdatenverkehr zu unterschiedlichen virtuellen Computern eines Cloud-Diensts oder Lastenausgleich für den Datenverkehr zwischen virtuellen Computern in einem Cloud-Dienst oder virtuellen Netzwerk. Für diese Aufgaben wird das Azure-Lastenausgleichsmodul verwendet.
+- **DNS-Ebene**: Lastenausgleich für Datenverkehr in folgende Richtungen: zu unterschiedlichen Clouddiensten in unterschiedlichen Rechenzentren, zu unterschiedlichen Azure-Websites in unterschiedlichen Rechenzentren oder zu externen Endpunkten. Für diese Form des Lastenausgleichs werden der Traffic Manager und die Roundrobin-Methode verwendet.
+- **Netzwerkebene**: Lastenausgleich für eingehenden Internetdatenverkehr zu unterschiedlichen virtuellen Computern eines Clouddiensts oder Lastenausgleich für den Datenverkehr zwischen virtuellen Computern in einem Clouddienst oder virtuellen Netzwerk. Für diese Aufgaben wird das Azure-Lastenausgleichsmodul verwendet.
 
-##Traffic Manager-Lastenausgleich für Cloud-Dienste und Websites##
+## Traffic Manager-Lastenausgleich für Cloud-Dienste und Websites##
 
-Mit Azure Traffic Manager können Sie die Verteilung des Benutzerdatenverkehrs an Endpunkte steuern, z. B. an Cloud-Dienste, Websites, externe Websites und andere Traffic Manager-Profile. Die Funktionsweise von Traffic Manager basiert darauf, dass Sie ein intelligentes Richtlinienmodul auf DNS-Abfragen (Domain Name System) von Domänennamen Ihrer Internetressourcen anwenden. Die Cloud-Dienste oder Websites können in verschiedenen Rechenzentren auf der ganzen Welt ausgeführt werden. 
+Mit Azure Traffic Manager können Sie die Verteilung des Benutzerdatenverkehrs an Endpunkte steuern, z. B. an Cloud-Dienste, Websites externe Websites und andere Traffic Manager-Profile. Die Funktionsweise von Traffic Manager basiert darauf, dass Sie ein intelligentes Richtlinienmodul auf DNS-Abfragen (Domain Name System) von Domänennamen Ihrer Internetressourcen anwenden. Die Cloud-Dienste oder Websites können in verschiedenen Rechenzentren auf der ganzen Welt ausgeführt werden.
 
-Sie müssen entweder REST oder Windows PowerShell zur Konfiguration externer Endpunkte oder Traffic Manager-Profile als Endpunkte verwenden. 
+Sie müssen entweder REST oder Windows PowerShell zur Konfiguration externer Endpunkte oder Traffic Manager-Profile als Endpunkte verwenden.
 
 Azure Traffic Manager verwendet drei Lastenausgleichsmethoden, um den Datenverkehr zu verteilen:
 
-- **Failover**:  Verwenden Sie diese Methode, wenn Sie einen primären Endpunkt für den gesamten Datenverkehr verwenden, aber Sicherungen bereitstellen möchten, falls der primäre Endpunkt nicht mehr verfügbar sein sollte.
-- **Leistung**:  Verwenden Sie diese Methode, wenn sich die Endpunkte an unterschiedlichen geografischen Standorten befinden und anfordernde Clients den "nächstgelegenen" Endpunkt (im Hinblick auf die geringste Latenzzeit) verwendet sollen.
-- **Round-Robin:** Verwenden Sie diese Methode, wenn Sie die Last auf eine Reihe von Cloud-Diensten im gleichen Rechenzentrum oder auf Cloud-Dienste oder Websites in verschiedenen Rechenzentren verteilen möchten.
+- **Failover**: Verwenden Sie diese Methode, wenn Sie einen primären Endpunkt für den gesamten Datenverkehr verwenden, aber Sicherungskopien bereitstellen möchten, falls der primäre Endpunkt nicht mehr verfügbar sein sollte.
+- **Leistung**: Verwenden Sie diese Methode, wenn sich die Endpunkte an unterschiedlichen geografischen Standorten befinden und anfordernde Clients den „nächstgelegenen“ Endpunkt (im Hinblick auf die geringste Latenzzeit) verwenden sollen.
+- **Roundrobin**: Verwenden Sie diese Methode, wenn Sie die Last auf eine Reihe von Clouddiensten im gleichen Rechenzentrum oder auf Clouddienste oder Websites in verschiedenen Rechenzentren verteilen möchten.
 
 Weitere Informationen finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/library/azure/dn339010.aspx).
 
@@ -69,15 +69,18 @@ Azure ist auch in der Lage, Lasten innerhalb eines Cloud-Diensts oder virtuellen
 - Lastenausgleich für Branchenanwendungen (LOB-Anwendungen), die in Azure gehostet werden, ohne dass zusätzliche Hardware oder Software für den Lastenausgleich erforderlich ist. 
 - Einschließen von lokalen Servern in die Gruppe der Computer, für deren Datenverkehr Lastenausgleich stattfindet.
 
-Vergleichbar mit dem Azure-Lastenausgleich ist auch ein interner Lastenausgleich möglich, indem eine interne Gruppe mit Lastenausgleich konfiguriert wird. 
+Vergleichbar mit dem Azure-Lastenausgleich ist auch ein interner Lastenausgleich möglich, indem eine interne Gruppe mit Lastenausgleich konfiguriert wird.
 
-Die folgende Abbildung zeigt ein Beispiel eines internen Endpunkts mit Lastenausgleich für eine Branchenanwendung (LOB-Anwendung), die in einem standortübergreifenden virtuellen Netzwerk von drei virtuellen Computern gemeinsam genutzt wird. 
+Die folgende Abbildung zeigt ein Beispiel eines internen Endpunkts mit Lastenausgleich für eine Branchenanwendung (LOB-Anwendung), die in einem standortübergreifenden virtuellen Netzwerk von drei virtuellen Computern gemeinsam genutzt wird.
 
 ![loadbalancing](./media/load-balancing-vms/LOBServers.png)
 
-Weitere Informationen finden Sie unter [Interner Lastenausgleich](http://msdn.microsoft.com/library/azure/dn690121.aspx). Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer internen Gruppe mit Lastenausgleich](http://msdn.microsoft.com/library/azure/dn690125.aspx).
+## Nächste Schritte
+
+Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer internen Gruppe mit Lastenausgleich](http://msdn.microsoft.com/library/azure/dn690125.aspx).
+
+Weitere Informationen zum Lastenausgleich finden Sie unter [Interner Lastenausgleich](http://msdn.microsoft.com/library/azure/dn690121.aspx).
 
 <!-- LINKS -->
 
-
-<!--HONumber=49-->
+<!---HONumber=58-->

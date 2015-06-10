@@ -13,33 +13,53 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/29/2015" 
+	ms.date="05/11/2015" 
 	ms.author="rasquill"/>
 
 # Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI
 
-Dieser Artikel enthält Anleitungen für häufige Aufgaben zum Bereitstellen und Verwalten von Azure Virtual Machines mithilfe von Azure Resource Manager-Vorlagen und der Azure-CLI sowie Links zu weiterer Dokumentationen zur Automatisierung für die Automatisierung virtueller Maschinen.
+In diesem Artikel wird gezeigt, wie mit Azure Resource Manager-Vorlagen und der Azure-Befehlszeilenschnittstelle (Azure-CLI) die folgenden allgemeinen Aufgaben zum Bereitstellen und Verwalten von Azure Virtual Machines automatisiert werden. Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [App-Frameworks](virtual-machines-app-frameworks.md).
+
+Allgemeine Aufgaben:
+
+- [Schnelles Erstellen eines virtuellen Computers in Azure](#quick-create-a-vm-in-azure)
+- [Bereitstellen eines virtuellen Computers in Azure aus einer Vorlage](#deploy-a-vm-in-azure-from-a-template)
+- [Erstellen eines virtuellen Computers von einem benutzerdefinierten Image](#create-a-custom-vm-image) 
+- [Bereitstellen eines virtuellen Computers mit virtuellem Netzwerk und Lastenausgleichsmodul](#deploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balancer)
+- [Entfernen einer Ressourcengruppe](#remove-a-resource-group)
+- [Anzeigen des Protokolls für die Ressourcengruppenbereitstellung](#show-the-log-for-a-resource-group-deployment)
+- [Anzeigen von Informationen zu einem virtuellen Computer](#display-information-about-a-virtual-machine)
+- [Anmelden bei einem auf Linux basierten virtuellen Computer](#log-on-to-a-linux-based-virtual-machine)
+- [Beenden eines virtuellen Computers](#stop-a-virtual-machine)
+- [Starten eines virtuellen Computers](#start-a-virtual-machine)
+- [Anfügen eines Datenträgers](#attach-a-data-disk)
+
+
 
 ## Vorbereitung
 
 Vor der Verwendung der Azure-Befehlszeilenschnittstelle mit Azure Ressourcengruppen benötigen Sie die richtige Version der Azure-CLI und eine Arbeits- oder Schul-ID (auch als "Organisations-ID" bezeichnet).
 
-### Schritt 1: Aktualisieren Sie Ihre Azure-CLI-Version zu 0.9.0
+### Aktualisieren Ihrer Azure-CLI auf Version 0.9.0 oder höher
 
-Geben Sie `azure --version` ein, um festzustellen, ob Sie bereits die Version 0.9.0 installiert haben.
+Geben Sie `azure --version` ein, um zu prüfen, ob Sie bereits Version 0.9.0 installiert haben.
 
 	azure --version
     0.9.0 (node: 0.10.25)
 
-Wenn Ihre Version nicht 0.9.0 ist, müssen Sie entweder [die Azure-Befehlszeilenschnittstelle installieren](xplat-cli-install.md) oder mithilfe eines der systemeigenen Installer oder über eine **Npm** durch Eingabe von `npm update -g azure-cli` aktualisieren.
+Wenn Ihre Version nicht 0.9.0 oder höher ist, müssen Sie entweder die [Azure-CLI installieren](xplat-cli-install.md) oder sie mithilfe eines der systemeigenen Installer oder über eine **Npm** durch Eingabe von `npm update -g azure-cli` aktualisieren.
 
-### Schritt 2: Festlegen Ihres Azure-Kontos und -Abonnements
+Sie können die Azure-CLI mit dem folgenden [Docker-Image](https://registry.hub.docker.com/u/microsoft/azure-cli/) auch als Docker-Container ausführen. Führen Sie von einem Docker-Host den folgenden Befehl aus:
+
+	docker run -it microsoft/azure-cli
+
+### Festlegen Ihres Azure-Kontos und -Abonnements
 
 Wenn Sie noch kein Azure-Abonnement aber ein MDSN-Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren. Oder Sie registrieren sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/).
 
 Sie benötigen ein Arbeits- oder Schulkonto, um Azure Resource Management-Vorlagen zu verwenden. Wenn Sie eins besitzen, geben Sie `azure login` ein sowie Ihren Benutzernamen und das Kennwort. Sie sollten sich erfolgreich anmelden können.
 
-> [AZURE.NOTE]Wenn Sie keins besitzen, wird Ihnen die Fehlermeldung angezeigt, dass Sie eine andere Art von Konto benötigen. Um eins von Ihrem aktuellen Azure-Konto aus zu erstellen, sehen Sie unter [Herstellen einer Verbindung mit Ihrem Azure-Konto](xplat-cli-connect.md) nach.
+> [AZURE.NOTE]Wenn Sie keins besitzen, wird Ihnen die Fehlermeldung angezeigt, dass Sie eine andere Art von Konto benötigen. Informationen zum Erstellen eines Kontos auf der Basis Ihres aktuellen Azure-Kontos finden Sie unter [Erstellen einer Arbeits- oder Schulidentität in Azure Active Directory](resource-group-create-work-id-from-personal.md).
 
 Ihr Konto kann über mehrere Abonnements verfügen. Sie können Ihre Abonnements durch Eingabe von `azure account list` auflisten, was etwa wie folgt aussieht:
 
@@ -54,11 +74,11 @@ Ihr Konto kann über mehrere Abonnements verfügen. Sie können Ihre Abonnements
     
 Sie können das aktuelle Azure-Abonnement durch Eingabe von
 
-	`azure account set <subscription name or ID> true
+	azure account set <subscription name or ID> true
 
 mit dem Abonnementnamen oder der ID festlegen, die über die Ressourcen verfügt, die Sie verwalten möchten.
 
-### Schritt 3: Wechseln Sie zum Azure CLI-Ressourcengruppenmodus
+### Wechseln in den Azure CLI-Ressourcengruppenmodus
 
 Standardmäßig beginnt die Azure-CLI im Verwaltungsdienst-Modus (**Asm**-Modus). Typ
 
@@ -83,7 +103,7 @@ Sie können dann den gesamten Lebenszyklus der Gruppenressourcen mithilfe von Re
 
 Erfahren Sie mehr über Azure-Ressourcengruppen und was diese für Sie tun können [hier](resource-groups-overview.md). Wenn Sie das Erstellen von Vorlagen interessiert, sehen Sie in [Azure Resource Manager-Vorlagen erstellen](resource-group-authoring-templates.md) nach.
 
-## Häufige Aufgabe: Schnellerfassung eines virtuellen Computers in Azure
+## Schnelles Erstellen eines virtuellen Computers in Azure
 
 Manchmal wissen Sie, welches Image Sie benötigen, Sie benötigen eine VM von dem Image in diesem Moment und die Infrastruktur ist Ihnen dabei egal – vielleicht müssen Sie etwas auf einer sauberen VM testen. Dann verwenden Sie den Befehl `azure vm quick-create` und übergehen die zum Erstellen eines virtuellen Computers und seiner Infrastruktur erforderlichen Argumente.
 
@@ -105,7 +125,9 @@ Erstellen Sie zunächst die Ressourcengruppe.
 
 Zweitens benötigen Sie ein Image. Um ein Image mit der Azure CLI zu finden, gehen Sie zu [Navigieren und Aussuchen von Azure VM-Datenträgerabbildern mit PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md). Doch für diesen Schnellstart finden Sie hier eine kurze Liste beliebter Images. Für diese Schnellerfassung verwenden wir das CoreOSs Stable-Image.
 
-| Herausgeber | ImageOffer | ImageSku | ComputeImageVersion |
+> [AZURE.NOTE]Sie können für "ComputeImageVersion" sowohl in der Vorlagensprache als auch in der Azure-Befehlszeilenschnittstelle auch einfach "latest" als Parameter angeben. Dies ermöglicht es Ihnen, immer die neueste gepatchte Version des Image zu verwenden, ohne Ihre Skripts oder Vorlagen ändern zu müssen. Dies wird nachfolgend gezeigt.
+
+| PublisherName | Angebot | Sku | Version |
 |:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
 | OpenLogic | CentOS | 7 | 7.0.201503 |
 | OpenLogic | CentOS | 7.1 | 7.1.201504 |
@@ -117,8 +139,10 @@ Zweitens benötigen Sie ein Image. Um ein Image mit der Azure CLI zu finden, geh
 | msopentech | Oracle-Database-12c-Weblogic-Server-12c | Enterprise | 1.0.0 |
 | MicrosoftSQLServer | SQL 2014 WS2012R2 | Enterprise-Optimized-for-DW | 12.0.2430 |
 | MicrosoftSQLServer | SQL 2014 WS2012R2 | Enterprise-Optimized-for-OLTP | 12.0.2430 |
-| Canonical | UbuntuServer | 14.04.1-LTS | 14.04.201501230 |
+| Canonical | UbuntuServer | 12.04.5-LTS | 12.04.201504230 |
 | Canonical | UbuntuServer | 14.04.2-LTS | 14.04.201503090 |
+| MicrosoftWindowsServer | Windows Server | 2012-Datacenter | 3.0.201503 |
+| MicrosoftWindowsServer | Windows Server | 2012-R2-Datacenter | 4.0.201503 |
 | MicrosoftWindowsServer | Windows Server | Windows-Server-Technical-Preview | 5.0.201504 |
 | MicrosoftWindowsServerEssentials | WindowsServerEssentials | WindowsServerEssentials | 1.0.141204 |
 | MicrosoftWindowsServerHPCPack | WindowsServerHPCPack | 2012R2 | 4.3.4665 |
@@ -131,7 +155,7 @@ Erstellen Sie Ihren virtuellen Computer einfach durch Eingabe von `azure vm quic
     Virtual machine name: coreos
     Location name: westus
     Operating system Type [Windows, Linux]: linux
-    ImageURN (format: "publisherName:offer:skus:version"): coreos:coreos:stable:633.1.0
+    ImageURN (format: "publisherName:offer:skus:version"): coreos:coreos:stable:latest
     User name: ops
     Password: *********
     Confirm password: *********
@@ -208,7 +232,7 @@ Erstellen Sie Ihren virtuellen Computer einfach durch Eingabe von `azure vm quic
     
 Und los geht's mit Ihrem neuen virtuellen Computer.
 
-## Allgemeine Aufgabe: Bereitstellen eines virtuellen Computers in Azure aus einer Vorlage
+## Bereitstellen eines virtuellen Computers in Azure aus einer Vorlage
 
 Verwenden Sie die Anweisungen in den folgenden Abschnitten zum Bereitstellen einer neuen Azure-VM mithilfe einer Vorlage mit der Azure-Befehlszeilenschnittstelle. Diese Vorlage erstellt einen einzelnen virtuellen Computer in einem neuen virtuellen Netzwerk mit nur einem Subnetz und ermöglicht Ihnen im Gegensatz zu `azure vm quick-create` die genaue Beschreibung Ihrer Anforderungen, ohne Fehler zu wiederholen. Durch die Vorlage wird Folgendes erstellt:
 
@@ -477,7 +501,7 @@ Sie erhalten den folgenden Informationstyp:
     
 
 
-## Allgemeine Aufgaben: Erstellen Sie ein benutzerdefiniertes VM-Image
+## Erstellen eines benutzerdefinierten VM-Image
 
 Sie haben oben die grundlegende Verwendung von Vorlagen gesehen, sodass wir ähnliche Anweisungen zum Erstellen eines benutzerdefinierten virtuellen Computers aus einer spezifischen VHD-Datei in Azure mit einer Azure CLI-Vorlage verwenden können. Der Unterschied ist hier, dass diese Vorlage eine einzelne virtuelle Maschine von einer angegebenen virtuellen Festplatte (VHD) erstellt.
 
@@ -1198,7 +1222,7 @@ und dann schlagen Sie in myVM1 nach:
     info:    Executing command vm show
     + Looking up the VM "myVM1"                                                    
     + Looking up the NIC "nic1"                                                    
-    data:    Id                              :/subscriptions/8f2d8c5f-742a-4f1b-a2ed-a2b8b246bcd6/resourceGroups/zoo/providers/Microsoft.Compute/virtualMachines/myVM1
+    data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/zoo/providers/Microsoft.Compute/virtualMachines/myVM1
     data:    ProvisioningState               :Failed
     data:    Name                            :myVM1
     data:    Location                        :westus
@@ -1232,7 +1256,7 @@ und dann schlagen Sie in myVM1 nach:
     data:    Network Profile:
     data:      Network Interfaces:
     data:        Network Interface #1:
-    data:          Id                        :/subscriptions/8f2d8c5f-742a-4f1b-a2ed-a2b8b246bcd6/resourceGroups/zoo/providers/Microsoft.Network/networkInterfaces/nic1
+    data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/zoo/providers/Microsoft.Network/networkInterfaces/nic1
     data:          Primary                   :false
     data:          Provisioning State        :Succeeded
     data:          Name                      :nic1
@@ -1241,25 +1265,11 @@ und dann schlagen Sie in myVM1 nach:
     data:            Private IP address      :10.0.0.5
     data:    
     data:    AvailabilitySet:
-    data:      Id                            :/subscriptions/8f2d8c5f-742a-4f1b-a2ed-a2b8b246bcd6/resourceGroups/zoo/providers/Microsoft.Compute/availabilitySets/MYAVSET
+    data:      Id                            :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/zoo/providers/Microsoft.Compute/availabilitySets/MYAVSET
     info:    vm show command OK
     
 
 > [AZURE.NOTE]Wenn Sie die Ausgaben der Konsolenbefehle programmgesteuert speichern und bearbeiten möchten, sollten Sie möglicherweise ein JSON-Analysetool verwenden, z. B. **[jq](https://github.com/stedolan/jq)**, **[jsawk](https://github.com/micha/jsawk)** oder für die Aufgabe geeignete Sprachbibliotheken.
-
-## Anzeigen von Informationen über einen virtuellen Computer
-
-Dies ist eine einfache Aufgabe, die Sie häufig verwenden. Verwenden Sie sie zum Abrufen von Informationen zu einem virtuellen Computer, Ausführen von Aufgaben auf diesem oder Abrufen von Ausgaben zur Speicherung in einer Variablen.
-
-Um Informationen über den virtuellen Computer zu erhalten, führen Sie diesen Befehl aus und ersetzen allen Text in Anführungszeichen einschließlich der < and >-Zeichen:
-
-     azure vm show -g <group name> -n <virtual machine name>
-
-Führen Sie zum Speichern der Ausgabe in einer $vm-Variable als JSON-Dokument folgenden Code aus:
-
-    vmInfo=$(azure vm show -g <group name> -n <virtual machine name> --json)
-    
-Sie können die stdout-Ausgabe auch in eine Datei umleiten.
 
 ## Anmelden bei einem virtuellen Computer auf Linux-Basis
 
@@ -1294,14 +1304,8 @@ Anschließend müssen Sie den Datenträger wie gewohnt in Linux (oder Windows) e
 
 ## Nächste Schritte
 
-Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit dem **arm**-Modus finden Sie unter [Verwenden der Microsoft Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit Azure Resource Manager](xplat-cli-resource-manager.md). Weitere Informationen über die Konzepte und Azure-Ressourcen erhalten Sie unter [Übersicht über Azure Resource Manager](resource-group-overview.md).
+Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit dem **arm**-Modus finden Sie unter [Verwenden der Microsoft Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit Azure Resource Manager](xplat-cli-azure-resource-manager.md). Weitere Informationen über die Konzepte und Azure-Ressourcen erhalten Sie unter [Übersicht über Azure Resource Manager](resource-group-overview.md).
 
+Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [App-Frameworks](virtual-machines-app-frameworks.md).
 
-
-
-
-
-
-
-
-<!--HONumber=52-->
+<!---HONumber=58-->

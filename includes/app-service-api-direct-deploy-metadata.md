@@ -20,12 +20,14 @@ Legen Sie die `namespace`-Eigenschaft auf die Domäne Ihres Azure Active Directo
 
 ### Dynamische Swagger-API-Definition
 
-Wenn Sie einen URL-Endpunkt für eine dynamische [Swagger](http://swagger.io/)-API-Definition bereitstellen möchten, speichern Sie die relative URL einer von der API-App verfügbar gemachten API in der Eigenschaft `endpoints.apiDefinition`. Die API-App gibt als Antwort auf eine GET-Anforderung eine Swagger 2.0-API-Definition zurück. Zum Beispiel:
+Wenn Sie einen URL-Endpunkt für eine dynamische [Swagger](http://swagger.io/)-API-Definition bereitstellen möchten, speichern Sie die relative URL einer von der API-App verfügbar gemachten API in der Eigenschaft `endpoints.apiDefinition`. Die API-App gibt als Antwort auf eine GET-Anforderung eine Swagger 2.0-API-Definition zurück. Beispiel:
 
 		"endpoints": {
 		    "apiDefinition": "/swagger/docs/v1"
 		}
 
+> **Hinweis:** Wenn Sie Swashbuckle verwenden, um eine Swagger-API-Definition zu generieren, kommt es aufgrund von HTTP-Methodenüberladungen in Ihren Web-API-Controllern zu doppelten Vorgang-IDs. Weitere Informationen finden Sie unter [Anpassen von mit Swashbuckle generierten Vorgangs-IDs](app-service-api-dotnet-swashbuckle-customize.md).
+  
 ### Statische Swagger-API-Definition
 
 Wenn Sie eine statische [Swagger](http://swagger.io/) 2.0-API-Definition bereitstellen möchten, speichern Sie die Definitionsdatei im Ordner *Metadata*, und geben Sie der Datei den Namen *apiDefinition.swagger.json*.
@@ -34,9 +36,5 @@ Wenn Sie eine statische [Swagger](http://swagger.io/) 2.0-API-Definition bereits
 
 Lassen Sie `endpoints.apiDefinition` in der Datei *apiapp.json* weg, oder setzen Sie den zugehörigen Wert auf "null". Wenn Sie sowohl eine `endpoints.apiDefinition`-URL als auch eine Datei *apiDefinition.swagger.json* einschließen, hat die URL Vorrang, und die Datei wird ignoriert.
  
-### Weitere API-App-Metadaten
 
-Weitere Informationen zur Datei *apiapp.json* und dem Ordner *Metadata* finden Sie unter [Erstellen eines API-App-Pakets](app-service-api-create-package.md).
-
-
-<!--HONumber=54-->
+<!---HONumber=58-->

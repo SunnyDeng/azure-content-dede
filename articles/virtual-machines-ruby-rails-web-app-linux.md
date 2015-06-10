@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Ruby on Rails-Web-App auf Azure mithilfe eines virtuellen Linux-Computers" 
 	description="Hosten Sie mithilfe eines virtuellen Linux-Computers eine Ruby on Rails-basierte Website auf Azure." 
 	services="virtual-machines" 
@@ -20,40 +20,40 @@
 
 
 
-# Ruby on Rails-Webanwendung auf Azure VM
+#Ruby on Rails-Webanwendung auf Azure VM
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine Ruby on Rails-basierte Website auf Azure mit einem virtuellen Linux-Computer hosten. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Ruby on Rails-basierte Anwendung, die in der Cloud ausgeführt wird.
 
 Sie erhalten Informationen zu folgenden Themen:
 
-* Einrichten der Entwicklungsumgebung
+* Einrichten Ihrer Entwicklungsumgebung
 
 * Einrichten eines virtuellen Azure-Computers zum Hosten von Ruby on Rails
 
 * Erstellen einer neuen Rails-Anwendung
 
-* Kopieren von Dateien auf den virtuellen Computer mit SCP 
+* Kopieren von Dateien auf den virtuellen Computer mit SCP
 
 Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
-![a browser displaying Listing Posts][blog-rails-cloud]
+![Browser mit Listenpositionen][blog-rails-cloud]
 
 
-## <a id="setup"></a>Einrichten der Entwicklungsumgebung
+##<a id="setup"></a>Einrichten der Entwicklungsumgebung
 
 1. Installieren Sie Ruby in Ihrer Entwicklungsumgebung. Je nach Betriebssystem können die Schritte unterschiedlich sein.
 
-	* **Apple OS X** - es gibt verschiedene Ruby-Distributionen für OS X. In diesem Lernprogramm wurde auf OS X mit überprüft [Homebrew](http://brew.sh/) installieren **Rbenv** und **Ruby-Build**. Informationen zur Installation finden Sie unter [https://github.com/sstephenson/rbenv/](https://github.com/sstephenson/rbenv/).
+	* **Apple OS X** - Es gibt verschiedene Ruby-Distributionen für OS X. Dieses Lernprogramm wurde auf OS X unter Verwendung von [Homebrew](http://brew.sh/) getestet, um **rbenv** und **ruby-build** zu installieren. Installationsinformationen finden Sie unter [https://github.com/sstephenson/rbenv/](https://github.com/sstephenson/rbenv/).
 
-	* **Linux** - Verwenden Sie Ihr Verwaltungssystem für Verteilungspakete. Dieses Lernprogramm wurde auf Ubuntu 12.10 mit den Paketen ruby1.9.1 und ruby1.9.1-dev getestet.
+	* **Linux** - Verwenden Sie Ihr Distributions-Paketverwaltungssystem. Dieses Lernprogramm wurde auf Ubuntu 12.10 mit den Paketen ruby1.9.1 und ruby1.9.1-dev getestet.
 
-	* **Windows** - es gibt verschiedene Ruby-Distributionen für Windows. Dieses Lernprogramm wurde mit [RailsInstaller](http://railsinstaller.org/) 1.9.3-p392 getestet.
+	* **Windows** - Es gibt verschiedene Ruby-Distributionen für Windows. Dieses Lernprogramm wurde mit [RailsInstaller](http://railsinstaller.org/) 1.9.3-p392 getestet.
 
 2. Öffnen Sie eine neue Befehlszeile oder Terminalsitzung, und geben Sie folgenden Befehl ein, um Ruby on Rails zu installieren:
 
 		gem install rails --no-rdoc --no-ri
 
-	> [AZURE.NOTE] Dieser Befehl erfordert möglicherweise Administrator- oder Root-Berechtigungen auf einigen Betriebssystemen. Falls beim Ausführen dieses Befehls ein Fehler auftritt, verwenden Sie 'sudo' wie folgt:
+	> [AZURE.NOTE]Dieser Befehl erfordert möglicherweise Administrator- oder Root-Berechtigungen auf einigen Betriebssystemen. Falls beim Ausführen dieses Befehls ein Fehler auftritt, verwenden Sie 'sudo' wie folgt:
 	>
 	>````` 
 	sudo gem install rails
@@ -65,7 +65,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 	
 	Für dieses Lernprogramm wurde [Node.js](http://nodejs.org/) verwendet, da es für die Betriebssysteme OS X, Linux und Windows verfügbar ist.
 
-## <a id="create"></a>Erstellen einer Rails-Anwendung
+##<a id="create"></a>Erstellen einer Rails-Anwendung
 
 1. Erstellen Sie in der Befehlszeile oder Terminalsitzung eine neue Rails-Anwendung mit Namen "blog_app" durch folgenden Befehl:
 
@@ -73,7 +73,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 	Dieser Befehl erstellt ein neues Verzeichnis namens **blog_app** und füllt es mit den Dateien und Unterverzeichnissen aus, die von einer Rails-Anwendung benötigt werden.
 
-	> [AZURE.NOTE] Das Abschließen dieses Befehls kann eine Minute oder länger dauern. Er führt eine Hintergrundinstallation der Gems aus, die für eine Standardanwendung erforderlich sind, und reagiert während dieser Zeit scheinbar nicht.
+	> [AZURE.NOTE]Das Abschließen dieses Befehls kann eine Minute oder länger dauern. Er führt eine Hintergrundinstallation der Gems aus, die für eine Standardanwendung erforderlich sind, und reagiert während dieser Zeit scheinbar nicht.
 
 2. Wechseln Sie zum Verzeichnis **blog_app**, und verwenden Sie dann folgenden Befehl, um ein grundlegendes Blog-Gerüst zu erstellen.
 
@@ -87,7 +87,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 	Dieser verwendet den standardmäßigen Datenbankanbieter für Rails, [SQLite3 Database][sqlite3]. Sie können auch eine andere Datenbank für die Produktionsanwendung nutzen, aber SQLite ist für die Zwecke dieses Lernprogramms ausreichend.
 
-## <a id="test"></a>Testen der Anwendung
+##<a id="test"></a>Testen der Anwendung
 
 Führen Sie die folgenden Schritte aus, um den Rails-Server in Ihrer Entwicklungsumgebung zu starten.
 
@@ -107,23 +107,23 @@ Führen Sie die folgenden Schritte aus, um den Rails-Server in Ihrer Entwicklung
 
 2. Öffnen Sie Ihren Browser, und navigieren Sie zu http://localhost:3000/. Eine Seite ähnlich der folgenden wird angezeigt:
 
-	![default rails page][default-rails]
+	![Standard-Rails-Seite][default-rails]
 
-	Diese Seite ist eine statische Willkommensseite. Um die vom scaffold-Befehl als Grundgerüst generierten Formulare anzuzeigen, rufen Sie "http://localhost:3000/posts" auf. Eine Seite ähnlich der folgenden wird angezeigt:
+	Diese Seite ist eine statische Willkommensseite. Um die vom scaffold-Befehl als Grundgerüst generierten Formulare anzuzeigen, navigieren Sie zu http://localhost:3000/posts. Eine Seite ähnlich der folgenden wird angezeigt:
 
-	![a page listing posts][blog-rails]
+	![Seite mit Einträgen][blog-rails]
 
 	Um den Serverprozess zu stoppen, geben Sie STRG+C an der Befehlszeile ein.
 
-## <a id="createvm"></a>Erstellen des virtuellen Computers in Azure
+##<a id="createvm"></a>Erstellen eines virtuellen Azure-Computers
 
 Folgen Sie den [hier][vm-instructions] angegebenen Anweisungen zum Erstellen eines virtuellen Azure-Computers, der Linux hostet.
 
-> [AZURE.NOTE] Die Schritte dieses Lernprogramms wurden auf einem virtuellen Azure-Computer mit Ubuntu 12.10 ausgeführt. Falls Sie eine andere Linux-Distribution verwenden, können für diese Aufgaben andere Schritte erforderlich sein.
+> [AZURE.NOTE]Die Schritte dieses Lernprogramms wurden auf einem virtuellen Azure-Computer mit Ubuntu 12.10 ausgeführt. Falls Sie eine andere Linux-Distribution verwenden, können für diese Aufgaben andere Schritte erforderlich sein.
 
  
 
-> [AZURE.IMPORTANT] Sie müssen **nur** den virtuellen Computer erstellen. Stoppen Sie, nachdem Sie gelernt haben, wie den virtuellen Computer über SSH verbinden.
+> [AZURE.IMPORTANT]Sie müssen **nur** den virtuellen Computer erstellen. Stoppen Sie, nachdem Sie gelernt haben, wie den virtuellen Computer über SSH verbinden.
 
 
 
@@ -136,8 +136,12 @@ Nachdem Sie den virtuellen Azure-Computer erstellt haben, führen Sie folgende S
 	Verwenden Sie für "username" den beim Erstellen des virtuellen Computers angegebenen Benutzernamen, die DNS-Adresse des virtuellen Computers sowie den Port des SSH-Endpunkts. Beispiel:
 
 		ssh railsdev@railsvm.cloudapp.net -p 61830
+		
+oder für die Standardport 22
 
-	> [AZURE.NOTE] Falls Sie Windows als Entwicklungsumgebung verwenden, können Sie ein Dienstprogramm wie **PuTTY** für die SSH-Funktionen verwenden. PuTTY kann von der [PuTTY Download Page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) heruntergeladen werden
+		ssh railsdev@railsvm.cloudapp.net
+
+	> [AZURE.NOTE] If you are using Windows as your development environment, you can use a utility such as **PuTTY** for SSH functionality. PuTTY can be obtained from the [PuTTY download page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
 2. Verwenden Sie in der SSH-Sitzung die folgenden Befehle zur Installation von Ruby auf dem virtuellen Computer:
 
@@ -157,7 +161,7 @@ Nachdem Sie den virtuellen Azure-Computer erstellt haben, führen Sie folgende S
 
 	Bundler wird verwendet, um die von der Rails-Anwendung benötigten Gems zu installieren, nachdem sie auf den Server kopiert wurde.
 
-## <a id="copy"></a>Kopieren der Anwendung auf den virtuellen Computer
+##<a id="copy"></a>Kopieren der Anwendung auf den virtuellen Computer
 
 Öffnen Sie in der Entwicklungsumgebung eine neue Befehlszeile oder Terminalsitzung, und kopieren Sie mit dem Befehl **scp** das Verzeichnis **blog_app** auf den virtuellen Computer. Das Befehlsformat hierfür ist wie folgt:
 
@@ -167,7 +171,11 @@ Beispiel:
 
 	scp -r -P 54822 -C ~/blog_app railsdev@railsvm.cloudapp.net:
 
-> [AZURE.NOTE] Falls Sie Windows als Entwicklungsumgebung verwenden, können Sie ein Dienstprogramm wie **pscp** für die SCP-Funktionen verwenden. Pscp kann von der [PuTTY Download Page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) heruntergeladen werden
+oder für die Standardport 22
+
+	scp -r -C ~/blog_app railsdev@railsvm.cloudapp.net:
+
+> [AZURE.NOTE]Falls Sie Windows als Entwicklungsumgebung verwenden, können Sie ein Dienstprogramm wie **pscp** für die SCP-Funktionen verwenden. pscp kann von der [PuTTY Download Page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) heruntergeladen werden.
 
 Die für diesen Befehl verwendeten Parameter bewirken Folgendes:
 
@@ -188,7 +196,7 @@ Nach dem Kopiervorgang befindet sich das Verzeichnis **blog_app** im Homeverzeic
 
 Die zurückgegebene Liste der Dateien sollte den im Verzeichnis **blog_app** in Ihrer Entwicklungsumgebung enthaltenen Dateien entsprechen.
 
-## <a id="start"></a>Installieren von Gems und Starten von Rails
+##<a id="start"></a>Installieren von Gems und Starten von Rails
 
 1. Wechseln Sie auf dem virtuellen Computer zum Verzeichnis **blog_app**, und installieren Sie mit dem folgenden Befehl die in **Gemfile** angegebenen Gems:
 
@@ -214,11 +222,11 @@ Die zurückgegebene Liste der Dateien sollte den im Verzeichnis **blog_app** in 
 
 2. Navigieren Sie im Browser zum [Azure-Verwaltungsportal][management-portal], und wählen Sie Ihren virtuellen Computer aus.
 
-	![virtual machine list][vmlist]
+	![Liste der virtuellen Computer][vmlist]
 
 3. Wählen Sie oben auf der Seite **ENDPUNKTE** aus, und klicken Sie dann unten auf **ENDPUNKT HINZUFÜGEN**.
 
-	![endpoints page][endpoints]
+	![Seite "Endpunkte"][endpoints]
 
 4. Klicken Sie im Dialogfeld **ENDPUNKT HINZUFÜGEN** auf den Pfeil unten links, um die zweite Seite anzuzeigen, und geben Sie folgende Informationen in das Formular ein:
 
@@ -232,19 +240,19 @@ Die zurückgegebene Liste der Dateien sollte den im Verzeichnis **blog_app** in 
 
 	Damit wird der öffentliche Port 80 erstellt, der den Datenverkehr an den privaten Port 3000 weiterleitet, den der Rails-Server abhört.
 
-	![new endpoint dialog][new-endpoint]
+	![Dialogfeld für neuen Endpunkt][new-endpoint]
 
 5. Klicken Sie auf das Häkchen, um den Endpunkt zu speichern.
 
-6. Es wird eine Meldung angezeigt, dass die **AKTUALISIERUNG IN BEARBEITUNG** ist. Nachdem diese Meldung ausgeblendet wurde, ist der Endpunkt aktiv. Sie können nun Ihre Anwendung testen, indem Sie zum DNS-Namen des virtuellen Computers navigieren. Die Website sollte in etwa wie folgt aussehen:
+6. Es wird eine Meldung angezeigt, dass die **Aktualisierung in Bearbeitung** ist. Nachdem diese Meldung ausgeblendet wurde, ist der Endpunkt aktiv. Sie können nun Ihre Anwendung testen, indem Sie zum DNS-Namen des virtuellen Computers navigieren. Die Website sollte in etwa wie folgt aussehen:
 
-	![default rails page][default-rails-cloud]
+	![Standard-Rails-Seite][default-rails-cloud]
 
 	Wenn Sie **/posts** an die URL anhängen, werden die vom scaffold-Befehl als Grundgerüst generierten Seiten angezeigt.
 
-	![posts page][blog-rails-cloud]
+	![Seite für Einträge][blog-rails-cloud]
 
-## <a id="next"></a>Nächste Schritte
+##<a id="next"></a>Nächste Schritte
 
 In diesem Artikel haben Sie erfahren, wie Sie eine grundlegende formularbasierte Rails-Anwendung erstellen und auf einem virtuellen Azure-Computer veröffentlichen. Die meisten Aktionen wurden manuell ausgeführt, in einer Produktionsumgebung sollte man diese möglichst automatisieren. Außerdem wird in den meisten Produktionsumgebungen die Rails-Anwendung zusammen mit einem anderen Serverprozess wie Apache oder NginX gehostet, der die Weiterleitung von Anfragen an mehrere Instanzen der Rails-Anwendung und statische Ressourcen bearbeitet.
 
@@ -254,16 +262,16 @@ Wenn Sie mehr über Ruby on Rails erfahren möchten, rufen Sie die Seite [Ruby o
 
 Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Dienste von der Ruby-Anwendung aus finden Sie unter:
 
-* [Speichern von unstrukturierten Daten mithilfe von Blobs][blobs]
+* [Speichern von unstrukturierten Daten mit Blobs][blobs]
 
-* [Speichern von Schlüssel/Wert-Paaren mithilfe von Tabellen][tables]
+* [Speichern von Schlüssel/Wert-Paaren mit Tabellen][tables]
 
-* [Bereitstellen von Inhalten über das Content Delivery Network][cdn-howto]
+* [Bereitstellen von Inhalten mit hoher Bandbreite über das Content Delivery Network][cdn-howto]
 
 
 
 <!-- WA.com links -->
-[blobs]: /documentation/articles/storage-ruby-how-to-use-blob-storage
+[blobs]: storage-ruby-how-to-use-blob-storage.md
 
 [cdn-howto]: /develop/ruby/app-services/
 
@@ -271,9 +279,9 @@ Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Diens
 
 [tables]: /develop/ruby/how-to-guides/table-service/
 
-[unicorn-nginx-capistrano]: /documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/
+[unicorn-nginx-capistrano]: virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn.md
 
-[vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial
+[vm-instructions]: virtual-machines-linux-tutorial.md
 
 
 <!-- External Links -->
@@ -284,7 +292,7 @@ Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Diens
 <!-- Images -->
 [blog-rails]: ./media/virtual-machines-ruby-rails-web-app-linux/blograilslocal.png
 
-[blog-rails-cloud]: ./media/virtual-machines-ruby-rails-web-app-linux/blograilscloud.png 
+[blog-rails-cloud]: ./media/virtual-machines-ruby-rails-web-app-linux/blograilscloud.png
 
 [default-rails]: ./media/virtual-machines-ruby-rails-web-app-linux/basicrailslocal.png
 
@@ -296,5 +304,4 @@ Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Diens
 
 [new-endpoint]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint.png
 
-
-<!--HONumber=47-->
+<!---HONumber=58-->

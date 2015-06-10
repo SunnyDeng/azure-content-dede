@@ -20,11 +20,10 @@
 
 [AZURE.INCLUDE [mobile-services-selector-single-signon](../includes/mobile-services-selector-single-signon.md)] 
 
-## Übersicht
+##Übersicht
 Dieses Thema beschreibt die Authentifizierung von Benutzern in Azure Mobile Services aus Ihrer Windows Store-App. In diesem Lernprogramm fügen Sie die Authentifizierung mithilfe von Live Connect zum Schnellstartprojekt hinzu. Sobald die Authentifizierung durch Live Connect erfolgreich war, wird ein angemeldeter Benutzer mit seinem Namen begrüßt und der Benutzer-ID-Wert wird angezeigt.
 
->[AZURE.NOTE]Dieses Lernprogramm veranschaulicht die Vorteile der Verwendung einer auf dem Client verwalteten Authentifizierung und des Live SDK. Dadurch können Sie einen bereits angemeldeten Benutzer einfacher mit Ihrem Mobile Service authentifizieren. Sie können auch zusätzliche Bereiche anfordern, damit Ihre App auch Zugriff auf Ressourcen wie OneDrive erhält. 
->Eine dienstverwaltete Authentifizierung ist etwas umfassender, und sie unterstützt auch mehrere Authentifizierungsanbieter. Weitere Informationen zur dienstverwalteten Authentifizierung finden Sie unter dem Thema [Hinzufügen von Authentifizierung zur App](mobile-services-windows-store-javascript-get-started-users.md).
+>[AZURE.NOTE]Dieses Lernprogramm veranschaulicht die Vorteile der Verwendung einer auf dem Client verwalteten Authentifizierung und des Live SDK. Dadurch können Sie einen bereits angemeldeten Benutzer einfacher mit Ihrem Mobile Service authentifizieren. Sie können auch zusätzliche Bereiche anfordern, damit Ihre App auch Zugriff auf Ressourcen wie OneDrive erhält. Eine dienstverwaltete Authentifizierung ist etwas umfassender, und sie unterstützt auch mehrere Authentifizierungsanbieter. Weitere Informationen zur dienstverwalteten Authentifizierung finden Sie unter dem Thema [Hinzufügen von Authentifizierung zur App](mobile-services-windows-store-javascript-get-started-users.md).
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
@@ -32,19 +31,19 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + Microsoft Visual Studio 2012 Express für Windows 8 RC oder eine höhere Version
 + Sie müssen außerdem zunächst das Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen App] abschließen.
 
-## Registrieren Ihrer App für die Verwendung eines Microsoft-Kontos für die Authentifizierung
+##Registrieren Ihrer App für die Verwendung eines Microsoft-Kontos für die Authentifizierung
 
 Damit Sie Benutzer authentifizieren können, müssen Sie Ihre App beim Microsoft-Konto für das Developer Center registrieren. Sie müssen dann diese Registrierung mit Ihrem mobilen Dienst verbinden. Führen Sie die Schritte im folgenden Thema aus, um eine Microsoft-Kontoregistrierung zu erstellen und mit Ihrem mobilen Dienst zu verbinden.
 
 + [Registrieren Ihrer App für die Verwendung einer Microsoft-Kontoanmeldung](mobile-services-how-to-register-microsoft-authentication.md)
 
-## <a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
+##<a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
 
 Als Nächstes müssen Sie den Zugriff auf eine Ressource, in diesem Fall die *TodoItems*-Tabelle, einschränken, damit nur angemeldete Benutzer darauf zugreifen können.
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-windows](../includes/mobile-services-restrict-permissions-windows.md)] 
 
-## <a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
+##<a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
 Abschließend fügen Sie das Live SDK hinzu und verwenden es zum Authentifizieren von Benutzern in Ihrer App.
 
@@ -145,4 +144,4 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 
-<!--HONumber=54-->
+<!---HONumber=58-->

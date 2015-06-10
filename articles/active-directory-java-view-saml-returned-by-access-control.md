@@ -1,5 +1,5 @@
-﻿<properties 
-	pageTitle="Anzeigen der vom Azure Access Control Service zurückgegebenen SAML" 
+<properties 
+	pageTitle="Anzeigen der vom Azure Access Control Service zurückgegebenen SAML (Java)" 
 	description="Erfahren Sie, wie Sie die vom Access Control Service in auf Azure gehosteten Java-Anwendungen zurückgegebene SAML anzeigen." 
 	services="" 
 	documentationCenter="java" 
@@ -20,12 +20,11 @@
 
 Diese Anleitung erklärt, wie Sie die Security Assertion Markup Language (SAML) anzeigen können, die vom Azure Access Control Service (ACS) an Ihre Anwendung zurückgegeben wurde. Diese Anleitung baut auf das Thema [Authentifizieren von Webbenutzern mit dem Azure Access Control Service über Eclipse][] auf und enthält Code zum Anzeigen der SAML-Informationen. Die fertige Anwendung sieht etwa wie folgt aus.
 
-![Example SAML output][saml_output]
+![Beispiel-SAML-Ausgabe][saml_output]
 
-Weitere Informationen zum ACS finden Sie im Abschnitt [Nächste Schritte](#next_steps) .
+Weitere Informationen zum ACS finden Sie im Abschnitt [Nächste Schritte](#next_steps).
 
-> [AZURE.NOTE]
-> Der Azure Access Control Service-Filter (von Microsoft Open Technologies) ist eine Technologievorschau für die Community. Als Vorabversion wird diese Software von Microsoft Open Technologies oder Microsoft nicht offiziell unterstützt.
+> [AZURE.NOTE]Der Azure Access Control Service-Filter (von Microsoft Open Technologies) ist eine Technologievorschau für die Community. Als Vorabversion wird diese Software von Microsoft Open Technologies oder Microsoft nicht offiziell unterstützt.
 
 ## Inhaltsverzeichnis
 
@@ -42,19 +41,19 @@ Um die Aufgaben in dieser Anleitung erledigen zu könne, müssen Sie zunächst d
 
 ## <a name="add_library"></a>Hinzufügen der JspWriter-Bibliothek zu Ihrem Buildpfad und zu Ihrer Bereitstellungsassembly
 
-Fügen Sie die Bibliothek mit der Klasse **javax.servlet.jsp.JspWriter** zu Ihrem Buildpfad und zu Ihrer Bereitstellungs-Assembly hinzu. Falls Sie Tomcat verwenden, ist diese Klasse in der Datei **jsp-api.jar** enthalten, die sich im Apache-**lib**-Ordner befindet.
+Fügen Sie die Bibliothek mit der Klasse **javax.servlet.jsp.JspWriter** zu Ihrem Buildpfad und zu Ihrer Bereitstellungs-Assembly hinzu. Falls Sie Tomcat verwenden, ist diese Klasse in der Datei **jsp-api.jar** enthalten, die sich im Apache **lib**-Ordner befindet.
 
-1. Klicken Sie im Projektexplorer in Eclipse mit der rechten Maustaste auf **MyACSHelloWorld**, anschließend auf **Build Path**, auf **Configure Build Path**, auf die Registerkarte **Libraries** und zuletzt auf **Add External JARs**.
+1. Klicken Sie im Project Explorer in Eclipse mit der rechten Maustaste auf **MyACSHelloWorld**, anschließend auf **Build Path**, auf **Configure Build Path**, auf die Registerkarte **Libraries** und zuletzt auf **Add External JARs**.
 2. Navigieren Sie im Dialogfeld **JAR Selection** zum entsprechenden JAR, wählen Sie das JAR aus und klicken Sie auf **Open**.
 3. Klicken Sie im immer noch geöffneten **Properties for MyACSHelloWorld**-Dialogfeld auf **Deployment Assembly**.
 4. Klicken Sie im Dialogfeld **Web Deployment Assembly** auf **Add**.
 5. Klicken Sie im Dialogfeld **New Assembly Directive** auf **Java Build Path Entries** und anschließend auf **Next**.
 6. Wählen Sie die entsprechende Bibliothek aus und klicken Sie auf **Finish**.
-7. Klicken Sie auf **OK**, um das Dialogfeld **Properties for MyACSHelloWorld** zu schließen.
+7. Klicken Sie auf **OK**, um das Dialogfeld **Eigenschaften für MyACSHelloWorld** zu schließen.
 
 ## <a name="modify_jsp"></a>Ändern der JSP-Datei zur Anzeige von SAML
 
-Ändern Sie **index.jsp** für die Verwendung des folgenden Codes.
+Fügen Sie den folgenden Code in **index.jsp** ein.
 
 	<%@ page language="java" contentType="text/html; charset=UTF-8"
 	    pageEncoding="UTF-8"%>
@@ -138,7 +137,7 @@ Fügen Sie die Bibliothek mit der Klasse **javax.servlet.jsp.JspWriter** zu Ihre
 					                 for (i=0; i < nChild; i++)
 				                     {
 					                    Node temp = list.item(i);
-					                    displaySAMLInfo(temp, parent + nodeName + "", out);
+					                    displaySAMLInfo(temp, parent + nodeName + "\", out);
 				                     }
 				               }
 			              }
@@ -201,7 +200,7 @@ Wenn Sie die ACS-Funktionalität genauer erforschen und mit anspruchsvolleren Sz
 [Ausführen der Anwendung]: #run_application
 [Nächste Schritte]: #next_steps
 [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
-[Authentifizieren von Webbenutzern mit dem Azure Access Control Service über Eclipse]: ../active-directory-java-authenticate-users-access-control-eclipse
+[Authentifizieren von Webbenutzern mit dem Azure Access Control Service über Eclipse]: active-directory-java-authenticate-users-access-control-eclipse.md
 [saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
 
-<!--HONumber=47-->
+<!---HONumber=58-->

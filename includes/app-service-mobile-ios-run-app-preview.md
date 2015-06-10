@@ -1,4 +1,4 @@
-﻿
+
 
 
 Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der neuen App.
@@ -7,7 +7,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 2. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App im iPhone-Simulator zu starten.
 
-3. Geben Sie in der App einen sinnvollen Text, wie z. B. _Lernprogramm abschließen_ ein, und klicken Sie dann auf das Plus-Symbol (**+**).
+3. Geben Sie in der App einen sinnvollen Text ein, wie z. B. _Lernprogramm abschließen_, und klicken Sie dann auf das Plus-Symbol (**+**).
 
    	![](./media/mobile-services-ios-run-app/mobile-quickstart-startup-ios.png)
 
@@ -15,4 +15,4 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
  	</div>
 
-<!--HONumber=49-->
+<!---HONumber=58-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Überwachen von Stream Analytics-Aufträgen | Azure" 
-	description="Programmgesteuerte Überwachung von Stream Analytics-Aufträgen" 
+	pageTitle="Programmgesteuertes Überwachen von Stream Analytics-Aufträgen | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie Stream Analytics-Aufträge, die mit REST-APIs, Azure SDK oder PowerShell erstellt wurden, programmgesteuert überwachen können." 
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -13,14 +13,14 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="05/07/2015" 
+	ms.date="05/21/2015" 
 	ms.author="jeffstok"/>
 
 
-# Programmgesteuerte Überwachung von Stream Analytics-Aufträgen
-In diesem Artikel wird veranschaulicht, wie Sie die Überwachung für einen Stream Analytics-Auftrag aktivieren. Für Stream Analytics-Aufträge, die mit REST-APIs, Azure SDK oder PowerShell erstellt wurden, ist in der Standardeinstellung keine Überwachung aktiviert. Sie können diese manuell im Azure-Portal aktivieren, indem Sie zur Überwachungsseite des Auftrags wechseln und auf die Schaltfläche "Aktivieren" klicken. Sie können diesen Prozess auch automatisieren, indem Sie die Schritte in diesem Artikel befolgen. Die Überwachungsdaten werden im Azure-Portal auf der Registerkarte "Überwachung" für den Stream Analytics-Auftrag angezeigt.
+# Programmgesteuertes Überwachen von Stream Analytics-Aufträgen 
+Dieser Artikel erläutert, wie die Überwachung für einen Stream Analytics-Auftrag aktiviert wird. Für Stream Analytics-Aufträge, die mit REST-APIs, Azure SDK oder PowerShell erstellt wurden, ist in der Standardeinstellung keine Überwachung aktiviert. Sie können diese manuell im Azure-Portal aktivieren, indem Sie zur Überwachungsseite des Auftrags wechseln und auf die Schaltfläche "Aktivieren" klicken. Sie können diesen Prozess auch automatisieren, indem Sie die Schritte in diesem Artikel befolgen. Die Überwachungsdaten werden im Azure-Portal auf der Registerkarte "Überwachung" für den Stream Analytics-Auftrag angezeigt.
 
-![Registerkarte „Aufträge überwachen“](./media/stream-analytics-monitor-jobs/stream-analytics-monitor-jobs-tab.png)
+![Registerkarte "Aufträge überwachen"](./media/stream-analytics-monitor-jobs/stream-analytics-monitor-jobs-tab.png)
 
 ## Voraussetzungen
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
@@ -45,6 +45,9 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
     ```
     <appSettings>
     	<!--CSM Prod related values-->
+    	<add key="ResourceGroupName" value="RESOURCE GROUP NAME" />
+    	<add key="JobName" value="YOUR JOB NAME" />
+    	<add key="StorageAccountName" value="YOUR STORAGE ACCOUNT"/>
     	<add key="ActiveDirectoryEndpoint" value="https://login.windows-ppe.net/" />
     	<add key="ResourceManagerEndpoint" value="https://api-current.resources.windows-int.net/" />
     	<add key="WindowsManagementUri" value="https://management.core.windows.net/" />
@@ -135,11 +138,13 @@ Mit dem folgenden Code werden die erforderlichen Variablen und Verwaltungsclient
 
 Mit dem folgenden Code wird die Überwachung für einen **vorhandenen** Stream Analytics-Auftrag aktiviert. Der erste Teil des Codes führt eine GET-Anforderung an den Stream Analytics-Dienst aus, um Daten zum jeweiligen Stream Analytics-Auftrag abzurufen. Hierbei wird die (mit der GET-Anforderung abgerufene) "Id"-Eigenschaft als Parameter für die Put-Methode in der zweiten Hälfte des Codes verwendet, die eine PUT-Anforderung an den Insights-Dienst sendet, um die Überwachung des Stream Analytics-Auftrags zu aktivieren.
 
-> [AZURE.WARNING]
-> - Wenn zuvor die Überwachung eines anderen Stream Analytics-Auftrags über das Azure-Portal oder programmgesteuert mithilfe des folgenden Codes aktiviert wurde, **wird empfohlen, denselben Speicherkontennamen anzugeben wie bei der letzten Überwachungsaktivierung.** 
-> - Das Speicherkonto ist mit der Region verknüpft, in der der Stream Analytics-Auftrag erstellt wurde, nicht jedoch mit dem Auftrag selbst. 
-> - Alle Stream Analytics-Aufträge (sowie alle weiteren Azure-Ressourcen) in derselben Region verwenden zum Speichern der Überwachungsdaten dieses Speicherkonto. Wenn Sie ein anderes Speicherkonto angeben, kann dies möglicherweise zu unbeabsichtigten Nebeneffekten bei der Überwachung Ihrer anderen Stream Analytics-Aufträge und/oder Azure-Ressourcen führen. 
-> - Bei dem im Folgenden zum Ersetzen von ```“<YOUR STORAGE ACCOUNT NAME>”``` verwendeten Speicherkontonamen handelt es sich um dasselbe Abonnement wie für den Stream Analytics-Auftrag, für den die Überwachung aktiviert wurde.
+> [AZURE.WARNING]Wenn Sie die Überwachung bereits für einen anderen Stream Analytics-Auftrag aktiviert haben, entweder über das Azure-Porta oder programmgesteuert über den folgenden Code, **wird empfohlen, dass Sie den gleichen Speicherkontonamen angeben wie bei der zuvor aktivierten Überwachung.**
+> 
+> Das Speicherkonto ist mit der Region verknüpft, in der Sie Ihren Stream Analytics-Auftrag erstellt haben, und nicht mit dem Auftrag selbst.
+> 
+> Alle Stream Analytics-Aufträge (und alle anderen Azure-Ressourcen) in derselben Region nutzen dieses Speicherkonto gemeinsam, um Überwachungsdaten zu speichern. Wenn Sie ein anderes Speicherkonto angeben, führt dies möglicherweise zu unbeabsichtigten Nebenwirkungen auf die Überwachung Ihrer anderen Stream Analytics-Aufträge und/oder anderen Azure-Ressourcen.
+> 
+> Der Speicherkontoname, der zum Ersetzen von ```“<YOUR STORAGE ACCOUNT NAME>”``` unten verwendet wird, sollte sich auf ein Speicherkonto beziehen, das zum gleichen Abonnement gehört wie der Stream Analytics-Auftrag, für den Sie die Überwachung aktivieren.
 
     // Get an existing Stream Analytics job
     JobGetParameters jobGetParameters = new JobGetParameters()
@@ -172,4 +177,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!--HONumber=54-->
+<!---HONumber=58-->

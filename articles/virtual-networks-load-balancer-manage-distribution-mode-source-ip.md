@@ -1,44 +1,44 @@
 <properties 
-	pageTitle="Verwaltung: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)"
-	description="Verwaltungsfunktionen für den Azure-Lastenausgleichs-Verteilungsmodus"
-	services="virtual-network"
-	documentationCenter="dev-center-name"
-	authors="danielceckert"
-	manager="jefco"
-	editor=""/>
+   pageTitle="Verwalten: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)"
+   description="Verwaltungsfunktionen für den Azure-Lastenausgleichs-Verteilungsmodus" 
+   services="virtual-network" 
+   documentationCenter="" 
+   authors="telmosampaio" 
+   manager="carolz" 
+   editor=""
+   />
 
 <tags
-	ms.service="virtual-network"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"/>
-	ms.date="02/20/2015"
-	ms.author="danecke"/>
-
-# Verwaltung virtueller Netzwerke: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)
-
-
-**Quell-IP-Affinität** (auch als **Sitzungsaffinität** oder **Client-IP-Affinität** bezeichnet), ein Azure-Lastenausgleichs-Verteilungsmodus, erzeugt eine Bindung zwischen einem einzelnen Client und einem über Azure gehosteten Server, statt die Clientverbindungen dynamisch auf unterschiedliche über Azure gehostete Server zu verteilen (dies ist das Standardverhalten für den Lastenausgleich).
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="05/27/2015"
+   ms.author="telmos"
+   />
+   
+# Verwalten des virtuellen Netzwerks: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)
+**Quell-IP-Affinität** (auch als **Sitzungsaffinität** oder **Client-IP-Affinität **bezeichnet), ein Azure-Lastenausgleichs-Verteilungsmodus, erzeugt eine Bindung zwischen einem einzelnen Client und einem über Azure gehosteten Server, statt die Clientverbindungen dynamisch auf unterschiedliche über Azure gehostete Server zu verteilen (dies ist das Standardverhalten für den Lastenausgleich).
 
 Mithilfe der Quell-IP-Affinität kann der Azure-Lastenausgleich so konfiguriert werden, dass mit einer 2-Tupel-Kombination (Quell-IP, Ziel-IP) oder eine 3-Tupel-Kombination (Quell-IP, Ziel-IP, Protokoll) der Datenverkehr einem Pool verfügbarer Server zugeordnet wird, die über Azure gehostet werden. Bei Verwendung der Quell-IP-Affinität werden vom selben Clientcomputer initiierte Verbindungen durch einen einzelnen DIP-Endpunkt verarbeitet (einen einzelnen, über Azure gehosteten Server).
 
 ## Dienstursprung
 
-Mit der Quell-IP-Affinität wird das vorherige Problem der [Inkompatibilität zwischen Azure-Lastenausgleich und RD-Gateway (DOC)](http://go.microsoft.com/fwlink/p/?LinkId=517389).
+Mit der Quell-IP-Affinität wird das vorherige Problem der [Inkompatibilität zwischen Azure-Lastenausgleich und RD-Gateway (DOC)](http://go.microsoft.com/fwlink/p/?LinkId=517389) gelöst.
 
 ## Implementierung
 
-Die Quell-IP-Affinität kann für folgende Komponenten konfiguriert werden: 
+Die Quell-IP-Affinität kann für folgende Komponenten konfiguriert werden:
 
-* [VM-Endpunkte](http://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/)
+* [VM-Endpunkte](virtual-machines-set-up-endpoints.md)
 * [Endpunktsätze mit Lastenausgleich](http://msdn.microsoft.com/library/azure/dn655055.aspx)
 * [Webrollen](http://msdn.microsoft.com/library/windowsazure/ee758711.aspx)
 * [Workerrollen](http://msdn.microsoft.com/library/windowsazure/ee758711.aspx)
 
-## Szenarien
+## Szenarios
 1. Remotedesktop-Gatewaycluster mit Verwendung eines einzelnen Cloud-Diensts
-2. Hochladen von Mediendaten (z. B. UDP für Daten, TCP für Steuerung)
+2. Hochladen von Mediendaten (z. B. UDP für Daten, TCP für Steuerung)
   * Client initiiert eine TCP-Sitzung mit einer über Azure gehosteten öffentlichen IP-Adresse mit Lastenausgleich
   * Clientanforderung wird über den Lastenausgleich an einen DIP Client geleitet; dieser Kanal bleibt aktiv, um die Verbindungsintegrität zu überwachen
   * Client initiiert eine UDP-Sitzung mit einer über Azure gehosteten öffentlichen IP-Adresse mit Lastenausgleich
@@ -50,32 +50,19 @@ Die Quell-IP-Affinität kann für folgende Komponenten konfiguriert werden:
 * Die Verwendung der Quell-IP-Affinität kann zu einer ungleichen Verteilung des Datenverkehrs auf die von Azure gehosteten Server führen.
 * Clients, die ihren Datenverkehr über einen Proxy routen, werden vom Azure-Lastenausgleich möglicherweise als einzelner Client erkannt.
 
-<<<<<<< HEAD:articles/virtual-networks-load-balancer-manage-distribution-mode.md
-=======
-## Nächste Schritte
-* TBD
-   
->>>>>>> 5781a6382194f50134d2a16bd9d72a6cca290f3d:articles/virtual-networks-load-balancer-manage-distribution-mode-source-ip.md
 ## PowerShell-Beispiele
-Laden Sie die [neueste Azure PowerShell-Version](https://github.com/Azure/azure-sdk-tools/releases) herunter, um optimale Ergebnisse zu erzielen.
+Laden Sie [die neueste Azure PowerShell-Version](https://github.com/Azure/azure-sdk-tools/releases) herunter, um optimale Ergebnisse zu erzielen.
 
 ### Fügen Sie einem virtuellen Computer einen Azure-Endpunkt hinzu, und legen Sie den Lastenausgleichs-Verteilungsmodus fest.
 
-<<<<<<< HEAD:articles/virtual-networks-load-balancer-manage-distribution-mode.md
-Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -LoadBalancerDistribution "sourceIP"| Update-AzureVM  
-=======
-    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 â€"LoadBalancerDistribution â€œsourceIPâ€�| Update-AzureVM  
->>>>>>> 5781a6382194f50134d2a16bd9d72a6cca290f3d:articles/virtual-networks-load-balancer-manage-distribution-mode-source-ip.md
+    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution “sourceIP”| Update-AzureVM  
 
-"LoadBalancerDistribution" kann für eine 2-Tupel-Konfiguration (Quell-IP, Ziel-IP) auf "sourceIP", für eine 3-Tupel-Konfiguration (Quell-IP, Ziel-IP, Protokoll) auf "sourceIPProtocol", oder gar nicht festgelegt werden, um das Standardverhalten (5-Tupel-Lastenausgleich) zu verwenden.  
+    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 â€“LoadBalancerDistribution â€œsourceIPâ€�| Update-AzureVM  
+
+"LoadBalancerDistribution" kann für eine 2-Tupel-Konfiguration (Quell-IP, Ziel-IP) auf "sourceIP", für eine 3-Tupel-Konfiguration (Quell-IP, Ziel-IP, Protokoll) auf "sourceIPProtocol", oder gar nicht festgelegt werden, um das Standardverhalten (5-Tupel-Lastenausgleich) zu verwenden.
 
 ### Abrufen einer Lastenausgleichs-Verteilungsmoduskonfiguration für einen Endpunkt
-
-<<<<<<< HEAD:articles/virtual-networks-load-balancer-manage-distribution-mode.md
-    PS C:> Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
-=======
-    PS C:> Get-AzureVM â€"ServiceName â€œMyServiceâ€� â€"Name â€œMyVMâ€� | Get-AzureEndpoint
->>>>>>> 5781a6382194f50134d2a16bd9d72a6cca290f3d:articles/virtual-networks-load-balancer-manage-distribution-mode-source-ip.md
+    PS C:> Get-AzureVM –ServiceName "mySvc" -Name "MyVM1" | Get-AzureEndpoint
     
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
     LBSetName : MyLoadBalancedSet
@@ -99,11 +86,9 @@ Wenn das Element "LoadBalancerDistribution" nicht vorhanden ist, verwendet der A
 
 ### Festlegen des Verteilungsmodus für einen Endpunktsatz mit Lastenausgleich
 
-<<<<<<< HEAD:articles/virtual-networks-load-balancer-manage-distribution-mode.md
-    Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -LoadBalancerDistribution "sourceIP"
-=======
-    Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 â€"LoadBalancerDistribution "sourceIP"
->>>>>>> 5781a6382194f50134d2a16bd9d72a6cca290f3d:articles/virtual-networks-load-balancer-manage-distribution-mode-source-ip.md
+    Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 –LoadBalancerDistribution "sourceIP"
+
+    Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 â€“LoadBalancerDistribution "sourceIP"
     
 Wenn Endpunkte Bestandteil eines Endpunktsatzes mit Lastenausgleich sind, muss der Verteilungsmodus für den Endpunktsatz mit Lastenausgleich festgelegt werden.
 
@@ -133,7 +118,7 @@ Nachfolgend sehen Sie ein Beispiel für in der CSDEF-Datei vorgenommene Änderun
     
 ## API-Beispiele
 
-Entwickler können die Lastenausgleichsverteilung mithilfe der Dienstverwaltungs-API konfigurieren.  Stellen Sie sicher, dass der x-ms-version-Header eingefügt und auf Version 2014-09-01 oder höher festgelegt wird.
+Entwickler können die Lastenausgleichsverteilung mithilfe der Dienstverwaltungs-API konfigurieren. Stellen Sie sicher, dass der x-ms-version-Header eingefügt und auf Version 2014-09-01 oder höher festgelegt wird.
 
 ### Aktualisieren der Konfiguration für den angegebenen Endpunktsatz mit Lastenausgleich in einer Bereitstellung
 
@@ -163,7 +148,7 @@ Entwickler können die Lastenausgleichsverteilung mithilfe der Dienstverwaltungs
       </InputEndpoint> 
     </LoadBalancedEndpointList>
 
-Der Wert von "LoadBalancerDistribution" kann "sourceIP" (2-Tupel-Affinität) oder "sourceIPProtocol" (3-Tupel-Affinität) lauten oder nicht festgelegt werden (keine Affinität, d. h. 5-Tupel-Konfiguration).
+Der Wert von "LoadBalancerDistribution" kann "sourceIP" (2-Tupel-Affinität) oder "sourceIPProtocol" (3-Tupel-Affinität) lauten oder nicht festgelegt werden (keine Affinität, d. h. 5-Tupel-Konfiguration).
 
 #### Antwort
 
@@ -175,4 +160,4 @@ Der Wert von "LoadBalancerDistribution" kann "sourceIP" (2-Tupel-Affinität) ode
     x-ms-request-id: 9c7bda3e67c621a6b57096323069f7af 
     Date: Thu, 16 Oct 2014 22:49:21 GMT
 
-<!--HONumber=47-->
+<!---HONumber=58-->

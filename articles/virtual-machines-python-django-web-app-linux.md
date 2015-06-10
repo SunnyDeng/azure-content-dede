@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Python-Web-App mit Django auf Mac - Azure-Lernprogramm" 
+	pageTitle="Python-Web-App mit Django auf Mac – Azure-Lernprogramm" 
 	description="In diesem Lernprogramm erfahren Sie, wie Sie mithilfe eines virtuellen Linux-Computers eine Django-basierte Website auf Azure hosten können." 
 	services="virtual-machines" 
 	documentationCenter="python" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="02/05/2015" 
+	ms.date="05/20/2015" 
 	ms.author="huvalo"/>
 
 
@@ -24,41 +24,37 @@
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/develop/python/tutorials/web-app-with-django/" title="Windows">Windows</a><a href="/develop/python/tutorials/django-hello-world-(maclinux)/" title="Mac/Linux" class="current">Mac/Linux</a></div>
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website unter Windows 
-Azure mithilfe eines virtuellen Linux-Computers hosten können. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Django-basierte Anwendung, die in der Cloud ausgeführt wird.
+In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website unter Microsoft Azure mithilfe eines virtuellen Linux-Computers hosten können. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Django-basierte Anwendung, die in der Cloud ausgeführt wird.
 
-Sie erhalten Informationen zu folgenden Themen:
+Sie lernen Folgendes:
 
 * Einrichten eines virtuellen Azure-Computers als Host von Django. In diesem Lernprogramm wird diese Aufgabe für **Linux** beschrieben; das Gleiche gilt jedoch auch für eine Windows Server-VM, die in Azure gehostet wird. 
 * Erstellen einer neuen Django-Anwendung unter Linux.
 
-Im Rahmen dieses Lernprogramms erstellen Sie eine einfache "Hello World"-Webanwendung.
-"Hello World"-Webanwendung. Die Anwendung wird auf einem virtuellen Azure-Computer gehostet.
+Im Rahmen dieses Lernprogramms erstellen Sie eine einfache Webanwendung "Hello World". Die Anwendung wird auf einem virtuellen Azure-Computer gehostet.
 
 Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
-![A browser window displaying the hello world page on Azure](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-browser.png)
+![Ein Browserfenster, das die Seite 'Hello World' in Azure anzeigt.](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-browser.png)
 
 [AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## Erstellen und Konfigurieren eines virtuellen Azure-Computers als Host von Django
 
-1. Befolgen Sie die [hier][portal-vm] aufgeführten Anweisungen, um einen virtuellen Azure-Computer der *Ubuntu Server 14.04 LTS*-Verteilung zu erstellen.
+1. Befolgen Sie die [hier][portal-vm] aufgeführten Anweisungen, um einen virtuellen Azure-Computer der *Ubuntu Server 14.04 LTS*-Distribution zu erstellen.
 
-  **Hinweis:** Sie müssen *nur* den virtuellen Computer erstellen. Stoppen Sie im Abschnitt *Anmelden bei einem virtuellen Computer nach dessen Erstellung*.
+  **Hinweis:** Sie müssen *nur* den virtuellen Computer erstellen. Hören Sie mit Abschnitt *Anmelden bei einem virtuellen Computer nach dessen Erstellung* auf.
 
-1. Weisen Sie Azure an, den Port **80**-Datenverkehr aus dem Web an Port **80** auf dem virtuellen Computer zu leiten.
+1. Weisen Sie Azure an, den Port **80**-Datenverkehr aus dem Web an Port **80** auf dem virtuellen Computer zu leiten.
 	* Navigieren Sie im Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte *ENDPUNKTE*.
-	* Klicken Sie unten auf der Seite auf *HINZUFÜGEN*.
-	![add endpoint](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
-	* Öffnen Sie den *TCP* des *PUBLIC PORT 80*-Protokolls als *PRIVATE PORT 80*.
-	![port80](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png)
+	* Klicken Sie unten auf der Seite auf *HINZUFÜGEN*. ![Endpunkt hinzufügen](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
+	* Öffnen Sie *ÖFFENTLICHER PORT 80* des *TCP*-Protokolls als *PRIVATER PORT 80*. ![port80](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png)
 
 ## <a id="setup"> </a>Einrichten der Entwicklungsumgebung
 
 **Hinweis:** Wenn Sie Python installieren müssen oder die Clientbibliotheken verwenden möchten, finden Sie weitere Informationen im [Installationshandbuch für Python](python-how-to-install.md).
 
-Auf der Ubuntu Linux-VM ist Python 2.7 bereits vorab installiert; Apache oder Django sind jedoch noch nicht installiert.  Befolgen Sie diese Schritte, um eine Verbindung zum virtuellen Computer herzustellen sowie um Apache und Django zu installieren.
+Auf der Ubuntu Linux-VM ist Python 2.7 bereits vorab installiert; Apache oder Django sind jedoch noch nicht installiert. Befolgen Sie diese Schritte, um eine Verbindung zum virtuellen Computer herzustellen sowie um Apache und Django zu installieren.
 
 1.  Öffnen Sie ein neues **Terminal**-Fenster.
     
@@ -85,10 +81,7 @@ Auf der Ubuntu Linux-VM ist Python 2.7 bereits vorab installiert; Apache oder Dj
 		$ cd /var/www
 		$ sudo django-admin.py startproject helloworld
 
-    Mit dem Skript **django-admin.py** wird eine Grundstruktur für Django-basierte Websites erstellt:
-    -   **helloworld/manage.py** hilft Ihnen, den Hostvorgang für Ihre Django-basierte Website zu starten und zu beenden.
-    -   **helloworld/helloworld/settings.py** enthält Django-Einstellungen für Ihre Anwendung.
-    -   **helloworld/helloworld/urls.py** enthält den Zuordnungscode zwischen den einzelnen URLs und der entsprechenden Ansicht.
+    Das Skript **django-admin.py** generiert eine grundlegende Struktur für Django-basierte Websites: - **helloworld/manage.py** erleichtert es Ihnen, das Hosten Ihrer Django-basierten Website zu starten und zu beenden. - **helloworld/helloworld/settings.py** enthält Django-Einstellungen für Ihre Anwendung. - **helloworld/helloworld/urls.py** enthält den Zuordnungscode zwischen jeder URL und deren Ansicht.
 
 1.  Erstellen Sie eine neue Datei mit dem Namen **views.py** im Verzeichnis **/var/www/helloworld/helloworld**. Diese enthält die Ansicht, mit der die "Hello World"-Seite generiert wird. Starten Sie den Editor, und geben Sie Folgendes ein:
 		
@@ -125,7 +118,7 @@ Auf der Ubuntu Linux-VM ist Python 2.7 bereits vorab installiert; Apache oder Dj
 
 1.  Laden Sie dann die Webseite in Ihrem Browser:
 
-	![A browser window displaying the hello world page on Azure](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-browser.png)
+	![Ein Browserfenster, das die Seite 'Hello World' in Azure anzeigt.](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-browser.png)
 
 
 ## Herunterfahren des virtuellen Azure-Computers
@@ -135,4 +128,4 @@ Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virt
 
 [portal-vm]: /manage/linux/tutorials/virtual-machine-from-gallery/
 
-<!--HONumber=47-->
+<!---HONumber=58-->

@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="Erfassen eines Images für einen virtuellen Linux-Computer mithilfe der CLI"
 	description="Erfahren Sie, wie Sie ein Image eines virtuellen Azure-Computers unter Linux erfassen können."
 	services="virtual-machines"
@@ -27,7 +27,7 @@ Dieser Artikel erläutert, wie Sie einen virtuellen Azure-Computer erfassen, auf
 
 
 
-Azure behandelt diese Vorlage als Image und speichert es in der Liste Ihrer Images. Hier werden sämtliche Images abgelegt, die Sie hochladen. Weitere Informationen zu Images finden Sie unter [Informationen zu Images virtueller Computer in Azure][].
+Azure behandelt diese Vorlage als Image und speichert es in der Liste Ihrer Images. Hier werden sämtliche Images abgelegt, die Sie hochladen. Weitere Informationen zu Images finden Sie unter [Informationen zu Images von virtuellen Computern in Azur][]e.
 
 
 
@@ -39,9 +39,9 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 
 
 
-- [Erstellen eines benutzerdefinierten virtuellen Computers] []
+- [Erstellen eines benutzerdefinierten virtuellen Computers][]
 
-- [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer] []
+- [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer][]
 
 
 
@@ -53,7 +53,7 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 
 
 
-2. Die VM kann nur erfasst werden, wenn sie den Status **StoppedDeallocated** aufweist. Geben Sie im SSH-Fenster den folgenden Befehl ein, um die VM herunterzufahren:
+2. Der virtuelle Computer kann nur erfasst werden, wenn er den Status **StoppedDeallocated** aufweist. Geben Sie im SSH-Fenster den folgenden Befehl ein, um die VM herunterzufahren:
 
 
 
@@ -61,7 +61,7 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 
 
 
-    Beachten Sie, dass für `vm shutdown` u. a. die Option `-p` verfügbar ist, mit der die Rechenressourcen beim Herunterfahren beibehalten werden. Aktivieren Sie diese Option **nicht**, da die Bereitstellung der VM aufgehoben werden muss, um sie zu erfassen.
+    Beachten Sie, dass für `vm shutdown` u. a. die Option `-p` verfügbar ist, mit der die Rechenressourcen beim Herunterfahren beibehalten werden. Aktivieren Sie diese Option **nicht**, da die Bereitstellung der VM aufgehoben werden muss, um sie zu erfassen.
 
 
 
@@ -73,7 +73,7 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 
 
 
-    Die VM muss gelöscht werden, um das Image zu erfassen. Sie können hierzu entweder "--deleted" oder "-t" verwenden.
+    Die VM muss gelöscht werden, um das Image zu erfassen. Sie können dazu `--deleted` oder `-t` verwenden.
 
 
 
@@ -85,7 +85,7 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 
 
 
-    Der Abschnitt `| grep <target-image-name>` ist optional, aber unterstützt Sie beim leichteren Auffinden Ihres Images in der Liste.
+    Der Abschnitt `| grep <target-image-name>` ist optional, aber erleichtert das Auffinden des Images in der Liste.
 
 
 
@@ -151,14 +151,14 @@ Nachfolgend sehen Sie eine exemplarische Vorgehensweise zum Erfassen eines virtu
 Weitere Informationen und zusätzliche Befehlen finden Sie in der [Azure-CLI-Dokumentation][].
 
 
-[Azure-CLI-Dokumentation]: ../virtual-machines-command-line-tools/
+[Azure-CLI-Dokumentation]: virtual-machines-command-line-tools.md
 
-[Anmelden bei einem virtuellen Computer unter Linux]: ../virtual-machines-linux-how-to-log-on/
+[Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird]: virtual-machines-linux-how-to-log-on.md
 
-[Informationen zu Images von virtuellen Computern in Azure]: http://msdn.microsoft.com/library/azure/dn790290.aspx
+[Informationen zu Images von virtuellen Computern in Azur]: http://msdn.microsoft.com/library/azure/dn790290.aspx
 
-[Erstellen eines benutzerdefinierten virtuellen Computers]: ../virtual-machines-create-custom/
+[Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-create-custom.md
 
-[Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer]: ../storage-windows-attach-disk/
+[Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer]: storage-windows-attach-disk.md
 
-<!--HONumber=47-->
+<!---HONumber=58-->

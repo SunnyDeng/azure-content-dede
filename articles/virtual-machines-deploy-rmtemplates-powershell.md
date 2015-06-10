@@ -13,12 +13,21 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/29/2015" 
+	ms.date="05/13/2015" 
 	ms.author="josephd"/>
 
 # Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und PowerShell
 
-In diesem Artikel wird gezeigt, wie mit Azure Resource Manager-Vorlagen und Powershell allgemeine Aufgaben zum Bereitstellen und Verwalten von virtuellen Computern in Azure automatisiert werden.
+In diesem Artikel wird gezeigt, wie mit Azure Resource Manager-Vorlagen und PowerShell allgemeine Aufgaben zum Bereitstellen und Verwalten von Azure Virtual Machines automatisiert werden. Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [App-Frameworks](virtual-machines-app-frameworks.md).
+
+Allgemeine Aufgaben:
+
+- [Bereitstellen einer Windows-VM](#windowsvm)
+- [Erstellen eines benutzerdefinierten VM-Image](#customvm)
+- [Bereitstellen einer Multi-VM-Anwendung, die ein virtuelles Netzwerk und ein externes Lastenausgleichsmodul verwendet](#multivm)
+- [Anmelden bei einem virtuellen Computer](#logon)
+- [Starten eines virtuellen Computers](#start)
+- [Beenden eines virtuellen Computers](#stop)
 
 Stellen Sie vor dem Loslegen sicher, dass Azure PowerShell bereit ist.
 
@@ -26,7 +35,7 @@ Stellen Sie vor dem Loslegen sicher, dass Azure PowerShell bereit ist.
 
 ## Grundlegendes zu Azure-Ressourcenvorlagen und -Ressourcengruppen
 
-Die meisten Anwendungen, die in Microsoft Azure bereitgestellt und  ausgeführt werden, sind aus einer Kombination aus verschiedenen Cloud-Ressourcentypen (z. B. als eine oder mehrere VMs und Speicherkonten, SQL-Datenbank, virtuelles Netzwerk oder CDN) erstellt. *Azure Resource Manager-Vorlagen* ermöglichen Ihnen die gemeinsame Bereitstellung und Verwaltung dieser verschiedenen Ressourcen, indem eine JSON-Beschreibung der Ressourcen und zugeordnete Parameter für Konfiguration und Bereitstellung genutzt wird.
+Die meisten Anwendungen, die in Microsoft Azure bereitgestellt und ausgeführt werden, bestehen aus einer Kombination von verschiedenen Cloudressourcentypen (z. B. einer oder mehreren VMs und Speicherkonten, einer SQL-Datenbank oder einem virtuellen Netzwerk). Mithilfe von Azure Resource Manager-Vorlagen können Sie die unterschiedlichen Ressourcen gemeinsam bereitstellen und verwalten. Sie verwenden hierfür eine JSON-Beschreibung der Ressourcen sowie der zugeordneten Konfigurations- und Bereitstellungsparameter.
 
 Sobald Sie eine JSON-basierte Ressourcenvorlage definiert haben, können Sie sie ausführen und die darin definierten Ressourcen in Azure mithilfe eines PowerShell-Befehls bereitstellen. Sie können diese Befehle entweder eigenständig in der PowerShell-Befehlsshell oder in einem Skript ausführen, das eine zusätzliche Automatisierungslogik enthält.
 
@@ -35,11 +44,11 @@ Die Ressourcen, die Sie mithilfe von Azure Resource Manager-Vorlagen erstellen, 
 - alle Ressourcen in der Gruppe auf einmal zu beenden, starten oder löschen. 
 - Role-Based Access Control (RBAC)-Regeln zum Sperren von Sicherheitsberechtigungen. 
 - Vorgänge zu überwachen. 
-- Tag-Ressourcen mit zusätzlichen Metadaten zur besseren Nachverfolgung. 
+- Ressourcen mit zusätzlichen Metadaten zur besseren Nachverfolgung auszuzeichnen. 
 
-Weitere Informationen zur Ressourcenverwaltung in Azure finden Sie [hier](virtual-machines-azurerm-versus-azuresm.md).
+Weitere Informationen zur Ressourcenverwaltung in Azure finden Sie [hier](virtual-machines-azurerm-versus-azuresm.md). Wenn Sie das Erstellen von Vorlagen interessiert, sehen Sie in [Azure Resource Manager-Vorlagen erstellen](resource-group-authoring-templates.md) nach.
 
-## Allgemeine Aufgaben: Bereitstellen eines Windows-VM
+## <a id="windowsvm"></a>Bereitstellen einer Windows-VM
 
 Verwenden Sie die Anweisungen in diesem Abschnitt, um eine neue Azure-VM mit einer Resource Manager-Vorlage und Azure PowerShell bereitzustellen. Mit dieser Vorlage wird ein einzelner virtueller Computer in einem neuen virtuellen Netzwerk mit einem einzelnen Subnetz erstellt.
 
@@ -236,7 +245,7 @@ Geben Sie einen Azure-Bereitstellungsnamen, einen Ressourcengruppennamen und den
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as West US>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
+	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Beim Ausführen des Befehls **New-AzureResourceGroupDeployment** werden Sie aufgefordert, Parameterwerte im Abschnitt „Parameter“ der JSON-Datei anzugeben. Wenn Sie alle erforderlichen Parameterwerte angegeben haben, werden die Ressourcengruppe und der virtuelle Computer vom Befehl erstellt.
@@ -247,7 +256,7 @@ Beispiel:
 	$RGName="TestRG"
 	$locname="West US"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
+	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Folgendes sollte angezeigt werden:
@@ -290,7 +299,7 @@ Folgendes sollte angezeigt werden:
 
 Nun ist ein neuer virtueller Windows-Computer mit dem Namen „MyWindowsVM“ in Ihrer neuen Ressourcengruppe vorhanden.
 
-## Allgemeine Aufgaben: Erstellen Sie ein benutzerdefiniertes VM-Image
+## <a id="customvm"></a>Erstellen eines benutzerdefinierten VM-Image
 
 Verwenden Sie die Anweisungen in diesem Abschnitt, um ein benutzerdefiniertes VM-Image in Azure mit einer Resource Manager-Vorlage mit Azure PowerShell zu erstellen. Diese Vorlage erstellt eine einzelne virtuelle Maschine von einer angegebenen virtuellen Festplatte (VHD).
 
@@ -383,13 +392,13 @@ Informationen zu einer Linux-basierten virtuellen Maschine finden Sie in [Erstel
 
 ### Schritt 3: Erstellen Sie den virtuellen Computer mit der Vorlage.
 
-Um eine neue virtuelle Maschine basierend auf der virtuellen Festplatte zu erstellen, ersetzen Sie die Elemente innerhalb der "< >" durch Ihre spezifischen Informationen und führen Sie diese Befehle aus:
+Um eine neue virtuelle Maschine basierend auf der virtuellen Festplatte zu erstellen, ersetzen Sie die Elemente innerhalb der "< >" durch Ihre spezifischen Informationen. Führen Sie anschließend die folgenden Befehle aus:
 
 	$deployName="<deployment name>"
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as West US>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-from-specialized-vhd/azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
+	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Sie werden aufgefordert, Parameterwerte im Abschnitt „Parameter“ der JSON-Datei anzugeben. Wenn Sie alle Parameterwerte angegeben haben, erstellt der Azure Resource Manager die Ressourcengruppe und den virtuellen Computer.
@@ -400,7 +409,7 @@ Beispiel:
 	$RGName="TestRG"
 	$locname="West US"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-from-specialized-vhd/azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
+	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 
@@ -415,7 +424,7 @@ Sie erhalten den folgenden Informationstyp:
 	vmSize: Standard_A3
 	...
 
-## Allgemeine Aufgaben: Bereitstellen einer Multi-VM-Anwendung, die ein virtuelles Netzwerk und einen externen Lastenausgleich verwendet.
+## <a id="multivm"></a>Bereitstellen einer Multi-VM-Anwendung, die ein virtuelles Netzwerk und eine externes Lastenausgleichsmodul verwendet
 
 Verwenden Sie die Anweisungen in den folgenden Abschnitten zum Bereitstellen einer Multi-VM-Anwendung, die ein virtuelles Netzwerk und einen Lastenausgleich mit einer Resource Manager-Vorlage mit Azure PowerShell verwendet. Diese Vorlage erstellt zwei virtuelle Computer in einem neuen virtuellen Netzwerk mit nur einem Subnetz im neuen Cloud-Dienst und fügt sie einem externen Lastenausgleichssatz für eingehenden Datenverkehr an TCP-Port 80 hinzu.
 
@@ -746,7 +755,7 @@ Geben Sie einen Azure-Bereitstellungsnamen, einen Ressourcengruppennamen und den
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as West US>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
+	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Beim Ausführen des Befehls New-AzureResourceGroupDeployment werden Sie aufgefordert, die Parameterwerte der JSON-Datei anzugeben. Wenn Sie alle Parameterwerte angegeben haben, werden die Ressourcengruppe und die Bereitstellung vom Befehl erstellt.
@@ -755,7 +764,7 @@ Beim Ausführen des Befehls New-AzureResourceGroupDeployment werden Sie aufgefor
 	$RGName="TestRG"
 	$locname="West US"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
+	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 Die Ausgabe sollte folgendermaßen aussehen:
@@ -783,7 +792,7 @@ Informationen werden wie folgt angezeigt:
 	Are you sure you want to remove resource group 'BuildRG'
 	[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
 
-## Anmelden bei einem virtuellen Windows-Computer
+## <a id="logon"></a>Anmelden bei einem virtuellen Windows-Computer
 
 Ausführliche Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](virtual-machines-log-on-windows-server.md).
 
@@ -791,7 +800,7 @@ Ausführliche Informationen finden Sie unter [Anmelden bei einem virtuellen Comp
 
 Erhalten Sie Informationen zu einem virtuellen Computer mithilfe des Befehls **Get-AzureVM**. Dieser Befehl gibt ein VM-Objekt zurück, das mithilfe verschiedener anderer Cmdlets manipuliert werden kann, um den Status der VM zu aktualisieren. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < and >, durch die korrekten Namen.
 
-	Get-AzureVM –ResourceGroupName "<resource group name>" –Name "<VM name>"
+	Get-AzureVM -ResourceGroupName "<resource group name>" -Name "<VM name>"
 
 Folgende Informationen zu Ihrem virtuellen Computer werden angezeigt:
 
@@ -855,11 +864,11 @@ Folgende Informationen zu Ihrem virtuellen Computer werden angezeigt:
 	Type                     : Microsoft.Compute/virtualMachines
 
 
-## Starten eines virtuellen Computers
+## <a id="start"></a>Starten eines virtuellen Computers
 
 Starten Sie einen virtuellen Computer mithilfe des Befehls **Start-AzureVM**. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < and >, durch die korrekten Namen.
 
-	Start-AzureVM –ResourceGroupName "<resource group name>" –Name "<VM name>"
+	Start-AzureVM -ResourceGroupName "<resource group name>" -Name "<VM name>"
 
 Informationen werden wie folgt angezeigt:
 
@@ -872,11 +881,11 @@ Informationen werden wie folgt angezeigt:
 	RequestId           : aac41de1-b85d-4429-9a3d-040b922d2e6d
 	StatusCode          : OK
 
-## Beenden eines virtuellen Computers
+## <a id="stop"></a>Beenden eines virtuellen Computers
 
 Beenden Sie einen virtuellen Computer mithilfe des Befehls **Stop-AzureVM**. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < and >, durch die korrekten Namen.
 
-	Stop-AzureVM –ResourceGroupName "<resource group name>" –Name "<VM name>"
+	Stop-AzureVM -ResourceGroupName "<resource group name>" -Name "<VM name>"
 
 Informationen werden wie folgt angezeigt:
 
@@ -894,11 +903,11 @@ Informationen werden wie folgt angezeigt:
 	RequestId           : 5cc9ddba-0643-4b5e-82b6-287b321394ee
 	StatusCode          : OK
 
-##Neustarten eines virtuellen Computers
+## Neustarten eines virtuellen Computers
 
 Starten Sie einen virtuellen Computer mithilfe des Befehls **Restart-AzureVM** neu. Ersetzen Sie alles innerhalb der Anführungszeichen einschließlich der Zeichen < and > durch den korrekten Namen.
 
-	Restart-AzureVM –ResourceGroupName "<resource group name>" –Name "<VM name>"
+	Restart-AzureVM -ResourceGroupName "<resource group name>" -Name "<VM name>"
 
 Informationen werden wie folgt angezeigt:
 
@@ -913,9 +922,9 @@ Informationen werden wie folgt angezeigt:
 
 ## Löschen eines virtuellen Computers
 
-Löschen Sie einen virtuellen Computer mithilfe des Befehls **Remove-AzureVM**. Ersetzen Sie alles innerhalb der Anführungszeichen einschließlich der Zeichen < and > durch den korrekten Namen. Verwenden des **– Force**-Parameters zum Überspringen der Bestätigungsaufforderung.
+Löschen Sie einen virtuellen Computer mithilfe des Befehls **Remove-AzureVM**. Ersetzen Sie alles innerhalb der Anführungszeichen einschließlich der Zeichen < and > durch den korrekten Namen. Mit dem Parameter **- Force** können Sie die Bestätigungsaufforderung überspringen.
 
-	Remove-AzureVM –ResourceGroupName "<resource group name>" –Name "<VM name>"
+	Remove-AzureVM -ResourceGroupName "<resource group name>" –Name "<VM name>"
 
 Informationen werden wie folgt angezeigt:
 
@@ -945,5 +954,4 @@ Informationen werden wie folgt angezeigt:
 
 [Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
-
-<!--HONumber=52-->
+<!---HONumber=58-->

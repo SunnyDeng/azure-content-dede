@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="vm-windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/22/2015" 
+	ms.date="03/23/2015" 
 	ms.author="kathydav"/>
 
 
 #Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird#
 
-Verwenden Sie bei einem virtuellen Computer, auf dem das Betriebssystem Windows Server ausgeführt wird, die Schaltfläche "Verbinden" im Verwaltungsportal, um sich auf einem virtuellen Computer anzumelden. (Weitere Informationen zu virtuellen Linux-Computern finden Sie unter [Anmelden auf einem virtuellen Computer unter Linux](virtual-machines-linux-how-to-log-on).)
+Verwenden Sie bei einem virtuellen Computer, auf dem das Betriebssystem Windows Server ausgeführt wird, die Schaltfläche „Verbinden“ im Verwaltungsportal, um sich auf einem virtuellen Computer anzumelden. (Weitere Informationen zu virtuellen Linux-Computern finden Sie unter [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md).)
 
 [AZURE.INCLUDE [virtual-machines-log-on-win-server](../includes/virtual-machines-log-on-win-server.md)]
 
-<!--HONumber=47-->
+<!---HONumber=58-->

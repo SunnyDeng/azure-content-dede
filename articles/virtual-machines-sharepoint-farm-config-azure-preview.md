@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="SharePoint-Serverfarm-Konfigurationsdetails" 
 	description="Beschreibt die standardmäßige Konfiguration von SharePoint-Farmen" 
 	services="virtual-machines" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-sharepoint" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/04/2015" 
+	ms.date="04/09/2015" 
 	ms.author="josephd"/>
 
 
@@ -26,21 +26,21 @@ Die SharePoint-Serverfarm ist ein Feature des Microsoft Azure-Vorschauportals f�
 
 Die folgenden Abschnitte beinhalten Konfigurationsdetails für jede Farm.
 
-Weitere Informationen finden Sie unter [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md).
+Zusätzliche Informationen finden Sie im Thema zur [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md).
 
 ## Grundlegende SharePoint-Farm
 
 Die grundlegende SharePoint-Farm besteht aus drei virtuellen Computern mit der folgenden Konfiguration:
 
-![sharepointfarm](./media/virtual-machines-sharepoint-farm-config-azure-preview/SPFarm_Basic.png) 
+![SharePoint-Farm](./media/virtual-machines-sharepoint-farm-config-azure-preview/SPFarm_Basic.png)
 
 Im Folgenden finden Sie die Konfigurationsdetails:
 
 -	Azure-Abonnement: Wird während der anfänglichen Konfiguration angegeben.
--	Azure-Domänennamen (auch bekannt als Cloud-Dienste): Separate Domänennamen werden automatisch für jeden virtuellen Computer erstellt.
+-	Azure-Domänennamen (auch Clouddienste genannt): Separate Domänennamen werden automatisch für jeden virtuellen Computer erstellt.
 -	Speicherkonto: Wird während der anfänglichen Konfiguration angegeben.
 -	Virtuelles Netzwerk 	
-	-   Geben Sie Folgendes ein: Nur Cloud	
+	-   Typ: Nur Cloud	
     -	Adressraum: 192.168.16.0/26    
 
 - Virtuelle Computer
@@ -49,41 +49,44 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 	-	*HostNamePrefix*-SP (SharePoint 2013-Server)
 
 - Domänencontroller
+	-	Virtual Machine-Image: WindowsServer 2012 R2
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A1 (Standard)
-	-	Domänenname: contoso.com (default)
+	-	Domänenname: contoso.com (Standard)
 	-	Kontoname des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
-	-	Kontokennwort des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
+	-	Kennwort des Domänenadministratorkontos: Wird während der anfänglichen Konfiguration angegeben.
 
 - SQL Server
+	-	Virtual Machine-Abbild: SQL Server 2014 RTM Enterprise unter Windows Server 2012 R2
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A5 (Standard)
 	-	Kontoname für den Datenbankzugriff: Wird während der anfänglichen Konfiguration angegeben.
-	-	Kontokennwort für den Datenbankzugriff: Wird während der anfänglichen Konfiguration angegeben.
+	-	Kennwort für das Datenbankzugriffskonto: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontoname für den SQL Server-Dienst: Wird während der anfänglichen Konfiguration angegeben.
-	-	Kontokennwort für den SQL Server-Dienst: Wird während der anfänglichen Konfiguration angegeben.
+	-	Kennwort für das SQL Server-Dienstkonto: Wird während der anfänglichen Konfiguration angegeben.
 
 - SharePoint-Server
+	-	Virtual Machine-Abbild: SharePoint Server 2013-Testversion.
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A2 (Standard)
 	-	Kontoname für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontokennwort für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
-	-	Passphrase für SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
+	-	Passphrase für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
 
 
 ## Hochverfügbare SharePoint-Farm
 
 Die hochverfügbare SharePoint-Farm besteht aus neun virtuellen Computern mit der folgenden Konfiguration:
 
-![sharepointfarm](./media/virtual-machines-sharepoint-farm-config-azure-preview/SPFarm_HighAvail.png)
+![SharePoint-Farm](./media/virtual-machines-sharepoint-farm-config-azure-preview/SPFarm_HighAvail.png)
  
 Im Folgenden finden Sie die Konfigurationsdetails:
 
 -	Azure-Abonnement: Wird während der anfänglichen Konfiguration angegeben.
--	Azure-Domänennamen (auch bekannt als Cloud-Dienste): Gemäß der obigen Abbildungen werden separate Domänennamen erstellt.
+-	Azure-Domänennamen (auch Clouddienste genannt): Separate Domänennamen werden entsprechend der obigen Abbildung erstellt.
 -	Speicherkonto: Wird während der anfänglichen Konfiguration angegeben.
 -	Virtuelles Netzwerk	
-	-	Geben Sie Folgendes ein: Nur Cloud
+	-	Typ: Nur Cloud
 	-	Adressraum: 192.168.16.0/26	
 
 -	Virtuelle Computer
@@ -98,26 +101,31 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 	-	*HostNamePrefix*-APP2 (SharePoint 2013-Server)
 
 -	Domänencontroller
+	-	Virtual Machine-Image: WindowsServer 2012 R2
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A1 (Standard)
-	-	Domänenname: contoso.com (default)
+	-	Domänenname: contoso.com (Standard)
 	-	Kontoname des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
-	-	Kontokennwort des Domänenadministrators: Wird während der anfänglichen Konfiguration angegeben.
+	-	Kennwort des Domänenadministratorkontos: Wird während der anfänglichen Konfiguration angegeben.
 
 -	SQL Server
+	-	Virtual Machine-Abbild: SQL Server 2014 RTM Enterprise unter Windows Server 2012 R2
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A5 (Standard)
 	-	Kontoname für den Datenbankzugriff: Wird während der anfänglichen Konfiguration angegeben.
-	-	Kontokennwort für den Datenbankzugriff: Wird während der anfänglichen Konfiguration angegeben.
+	-	Kennwort für das Datenbankzugriffskonto: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontoname für den SQL Server-Dienst: Wird während der anfänglichen Konfiguration angegeben.
-	-	Kontokennwort für den SQL Server-Dienst: Wird während der anfänglichen Konfiguration angegeben.
+	-	Kennwort für das SQL Server-Dienstkonto: Wird während der anfänglichen Konfiguration angegeben.
 
 -	SharePoint-Server
+	-	Virtual Machine-Abbild: SharePoint Server 2013-Testversion.
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A2 (Standard)
 	-	Kontoname für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kontokennwort für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.		
-	-	Passphrase für SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
+	-	Passphrase für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
+
+> [AZURE.NOTE]Die SharePoint-Server werden aus dem SharePoint Server 2013-Testversion-Image erstellt. Um den virtuellen Computer nach dem Ablauf der Testversion weiterhin verwenden zu können, müssen Sie die Installation so abändern, dass sie einen Lizenzschlüssel einer Verkaufsversion oder einer Volumenlizenz für die Standard oder Enterprise Edition von SharePoint Server 2013 verwendet.
 
 ## Zusätzliche Ressourcen
 
@@ -125,4 +133,6 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 
 [SharePoint in Azure-Infrastrukturdiensten](http://msdn.microsoft.com/library/azure/dn275955.aspx)
 
-<!--HONumber=47-->
+[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
+
+<!---HONumber=58-->

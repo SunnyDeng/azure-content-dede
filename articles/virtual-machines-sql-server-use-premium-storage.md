@@ -3,7 +3,7 @@
 	description="Dieser Artikel enthält Anleitungen zur Verwendung von Azure Premium-Speicher mit SQL Server auf virtuellen Azure-Computern. Dazu gehören Beispiele für neue Bereitstellungen und Migrationen vorhandener Bereitstellungen von SQL Server auf IaaS." 
 	services="virtual-machines" 
 	documentationCenter="" 
-	authors="rothja" 
+	authors="danielsollondon" 
 	manager="jeffreyg"
 	editor=""/>
 
@@ -31,6 +31,8 @@ Es ist wichtig, den End-to-End-Prozess einschließlich der Nutzung des Premium-A
 - Vollständige End-to-End-Beispiel für Azure-, Windows- und SQL Server-Schritte zur Migration einer vorhandenen AlwaysOn-Implementierung.
 
 Ausführlichere Informationen zur Verwendung von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
+
+**Technische Bearbeiter:** Luis Carlos Vargas Herring, Sanjay Mishra, Pravin Mital, Juergen Thomas, Gonzalo Ruiz
 
 ## Voraussetzungen für Premium-Speicher
 
@@ -869,7 +871,7 @@ Der folgende Code verwendet außerdem die hinzugefügte Option. Sie können hier
     
     ####WAIT FOR FULL AlwaysOn RESYNCRONISATION!!!!!!!!!#####
 
-#### Schritt 14: Aktualisieren von AlwaysOn 
+####Schritt 14: Aktualisieren von AlwaysOn 
     #Code to be executed on a Cluster Node
     $ClusterNetworkNameAmsterdam = "Cluster Network 2" # the azure cluster subnet network name
     $newCloudServiceIPAmsterdam = "192.168.0.25" # IP address of your cloud service 
@@ -1009,15 +1011,7 @@ Für TLOG-Volumes sollte dies auf "NONE" festgelegt sein.
     Get-AzureStorageBlobCopyState -Blob "danRegSvcAms-dansqlams1-2014-07-03.vhd" -Container $containerName -Context $xioContext
      
     
-Sie können den Status des VHD-Kopiervorgangs für alle virtuellen Festplatten überprüfen:  
-       
-       ForEach ($disk in $diskobjects)
-       {
-       $lun = $disk.Lun
-       $vhdname = $disk.vhdname
-       $cacheoption = $disk.HostCaching
-       $disklabel = $disk.DiskLabel
-       $diskName = $disk.DiskName
+Sie können den Status des VHD-Kopiervorgangs für alle virtuellen Festplatten überprüfen:  ForEach ($disk in $diskobjects) { $lun = $disk.Lun $vhdname = $disk.vhdname $cacheoption = $disk.HostCaching $disklabel = $disk.DiskLabel $diskName = $disk.DiskName
       
        $copystate = Get-AzureStorageBlobCopyState -Blob $vhdname -Container $containerName -Context $xioContextnode2
     Write-Host "Copying Disk Lun $lun, Label : $disklabel, VHD : $vhdname, STATUS = " $copystate.Status 
@@ -1027,10 +1021,7 @@ Sie können den Status des VHD-Kopiervorgangs für alle virtuellen Festplatten �
 
 Warten Sie, bis diese als erfolgreich aufgezeichnet wurden.
 
-Informationen zu einzelnen Blobs: 
-
-    #Check individual blob status 
-    Get-AzureStorageBlobCopyState -Blob "danRegSvcAms-dansqlams1-2014-07-03.vhd" -Container $containerName -Context $xioContextnode2
+Informationen zu einzelnen Blobs: #Check individual blob status Get-AzureStorageBlobCopyState -Blob "danRegSvcAms-dansqlams1-2014-07-03.vhd" -Container $containerName -Context $xioContextnode2
 
 #### Schritt 21: Registrieren des BS-Datenträgers
     #change storage account to the new XIO storage account
@@ -1150,4 +1141,4 @@ Informationen zum Hinzufügen einer IP-Adresse finden Sie im [Anhang](#appendix-
 [24]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_14.png
 [25]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_15.png
 
-<!--HONumber=54-->
+<!---HONumber=58-->

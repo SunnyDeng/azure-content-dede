@@ -1,5 +1,5 @@
-﻿<properties 
-	pageTitle="IPython Notebook - Azure-Lernprogramm" 
+<properties 
+	pageTitle="IPython Notebook – Azure-Lernprogramm" 
 	description="Dieses Lernprogramm beschreibt die Bereitstellung von IPython Notebook in Azure mithilfe von virtuellen Linux- oder Windows-Computern (VMs)." 
 	services="virtual-machines" 
 	documentationCenter="python" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-multiple" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="02/05/2015" 
+	ms.date="05/20/2015" 
 	ms.author="huvalo"/>
 
 
@@ -22,58 +22,33 @@
 
 # IPython Notebook in Azure
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
-<p>Das <a href="http://ipython.org">IPython-Projekt</a> enthält eine Sammlung von Tools für wissenschaftliche Berechnungen, die interaktive Shells, leistungsfähige und benutzerfreundliche parallele Bibliotheken und eine Web-basierte Umgebung namens IPython-Notizbuch enthält. Notebook bietet eine Arbeitsumgebung für interaktive Berechnungen, die Codeausführung mit der Erstellung eines Live-Berechnungsdokuments vereint. Diese Notebook-Dateien enthalten beliebigen Text, mathematische Formeln, Eingabecode, Ergebnisse, Grafiken, Videos und beliebige andere Medientypen, die in modernen Webbrowsern angezeigt werden können.</p>
-</div>
-<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkID=254535&amp;clcid=0x409" target="_blank" class="label">Wiedergabe des Lernprogramms</a> <a style="background-image: url('/media/devcenter/python/ipy-youtube2.png') !important;" href="http://go.microsoft.com/fwlink/?LinkID=254535&amp;clcid=0x409" target="_blank" class="dev-onpage-video"><span class="icon">Video wiedergeben</span></a> <span class="time">05:22</span></div>
-</div>
+Das [IPython-Projekt](http://ipython.org) bietet eine Sammlung von Tools für wissenschaftliche Berechnungen inklusive umfangreicher interaktiver Shells, leistungsstarker und leicht einsetzbarer paralleler Bibliotheken und einer webbasierten Umgebung mit dem Namen IPython-Notizbuch. Notebook bietet eine Arbeitsumgebung für interaktive Berechnungen, die Codeausführung mit der Erstellung eines Live-Berechnungsdokuments vereint. Diese Notebook-Dateien enthalten beliebigen Text, mathematische Formeln, Eingabecode, Ergebnisse, Grafiken, Videos und beliebige andere Medientypen, die in modernen Webbrowsern angezeigt werden können.
 
-Ganz gleich, ob Sie Python-Anfänger sind und es in einer aufregenden,
-interaktiven Umgebung lernen möchten oder einige ernsthafte parallele und technische Berechnungen durchführen wollen, das
-IPython-Notebook ist eine gute Wahl. Als Veranschaulichung der Funktionen zeigt der
-folgende Screenshot die Anwendung des IPython-Notebooks in Kombination mit
-Scipy- und Matplotlib-Paketen zum Analysieren der Struktur einer Ton-
-Aufnahme:
+Das IPython-Notizbuch ist eine hervorragende Wahl, egal ob Sie Python-Anfänger sind und die Sprache in einer interessanten und interaktiven Umgebung erlernen möchten, oder ob Sie ernsthafte parallele und technische Berechnungen durchführen möchten. Der folgende Screenshot illustriert diese Möglichkeiten und zeigt das IPython-Notizbuch in Kombination mit den SciPy- und matplotlib-Paketen, um die Struktur einer Tonaufnahme zu analysieren:
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-spectral.png)
 
-In diesem Dokument erfahren Sie über die Bereitstellung des Python-Notebook auf Microsoft
-Azure, Linux oder Windows virtuelle Maschinen (VMs).  Durch Verwendung des IPython
-Notebooks auf Azure können Sie eine webbasierte Schnittstelle für
-skalierbare Rechenressourcen einfach bereitstellen, mit allen Funktionen von Python und seinen vielen
-Bibliotheken.  Da jegliche Installation in der Cloud abgeschlossen wird, können Benutzer Zugriff auf diese
-Ressourcen ohne die Notwendigkeit einer zusätzlichen lokalen Konfiguration jenseits eines einfachen modernen Web-
-Browsers erhalten.
+Dieses Dokument beschreibt die Bereitstellung von IPython Notebook in Microsoft Azure mithilfe von virtuellen Linux- oder Windows-Computern (VMs). Mit dem IPython-Notizbuch in Azure können Sie schnell und einfach webbasierte Schnittstellen für skalierbare Rechenressourcen mit dem gesamten Funktionsumfang von Python und den zahlreichen Bibliotheken erstellen. Da die gesamte Installation in der Cloud erfolgt, können Benutzer diese Ressourcen ohne jegliche lokale Konfiguration einfach in einem modernen Webbrowser nutzen.
 
 [AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## Erstellen und Konfigurieren einer VM in Azure
 
-Zunächst müssen Sie einen virtuellen Computer (VM) in Azure erstellen.
-Dieser virtuelle Computer wird ein vollständiges Betriebssystem in der Cloud und wird verwendet, um
-das IPython-Notebook zu betreiben. Azure kann sowohl auf Linux als auch Windows
-virtuellen Computern ausgeführt werden, und es wird die Einrichtung von IPython auf beiden Arten von virtuellen Maschinen behandelt.
+Zunächst müssen Sie einen virtuellen Computer (VM) in Azure erstellen. Diese VM ist ein komplettes Betriebssystem in der Cloud und wird für die Ausführung des IPython-Notizbuchs verwendet. Azure kann mit virtuellen Linux- und Windows-Computern umgehen, und wir werden die Einrichtung von IPython auf beiden Arten von virtuellen Computern behandeln.
 
 ### Linux-VM
 
-Führen Sie die [hier][portal-vm-linux] angegebenen Anweisungen aus, um einen virtuellen Computer mit einer *OpenSUSE*- oder *Ubuntu*-Distribution zu erstellen. Dieses Lernprogramm verwendet OpenSUSE 13.2 und Ubuntu Server 14.04 LTS. Wir gehen vom Standard-Benutzernamen *azureuser* aus.
+Führen Sie [diese Anweisungen][portal-vm-linux] aus, um einen virtuellen Computer mit einer *OpenSUSE*- oder *Ubuntu*-Distribution zu erstellen. In diesem Lernprogramm werden OpenSUSE 13.2 und Ubuntu Server 14.04 LTS verwendet. Wir gehen vom Standard-Benutzernamen *azureuser* aus.
 
 ### Windows-VM
 
-Führen Sie die [hier][portal-vm-windows] angegebenen Anweisungen aus, um einen virtuellen Computer mit einer *Windows Server 2012 R2 Datacenter*-Distribution zu erstellen. In diesem Lernprogramm gehen wir vom Standard-Benutzernamen *azureuser* aus.
+Führen Sie [diese Anweisungen][portal-vm-windows] aus, um einen virtuellen Computer mit einer *Windows Server 2012 R2 Datacenter*-Distribution zu erstellen. In diesem Lernprogramm gehen wir vom Standard-Benutzernamen *azureuser* aus.
 
 ## Erstellen eines Endpunkts für IPython Notebook
 
-Dieser Schritt gilt für virtuelle Linux- und Windows-Computer. Später wird konfiguriert, wie
-IPython seinen Notebook-Server auf Port 9999 ausführt. Um diesen Port öffentlich
-verfügbar zu machen, müssen wir einen Endpunkt in der Azure-Verwaltungsportal erstellen. Dieser
-Endpunkt öffnet einen Port in der Azure-Firewall und ordnet die öffentlichen Port (HTTPS,
-Port 443) den privaten Ports auf dem virtuellen Computer (9999) zu.
+Dieser Schritt gilt für virtuelle Linux- und Windows-Computer. Später konfigurieren wir IPython für die Ausführung des Notizbuch-Servers auf dem Port 9999. Um diesen Port öffentlich zugänglich zu machen, müssen wir zunächst einen Endpunkt im Azure-Verwaltungsportal erstellen. Dieser Endpunkt öffnet einen Port in der Azure-Firewall und ordnet den öffentlichen Port (HTTPS, 443) dem privaten Port der VM (9999) zu.
 
-Erstellen Sie einen Endpunkt, besuchen Sie das VM-Dashboard, klicken Sie auf "Endpunkte", dann "Endpunkt
-hinzufügen" und erstellen Sie einen neuen Endpunkt (namens `ipython_nb` in diesem Beispiel). Wählen Sie
-TCP als Protokoll aus, für den öffentlichen Port 443 und 9999 für den privaten Port:
+Um einen Endpunkt zu erstellen, öffnen Sie das VM-Dashboard, klicken Sie auf "Endpunkte" und anschließend auf "Endpunkt hinzufügen", und erstellen Sie einen neuen Endpunkt (in diesem Beispiel mit dem Namen `ipython_nb`). Wählen Sie TCP als Protokoll aus, 443 für den öffentlichen Port und 9999 für den privaten Port:
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-azure-linux-005.png)
 
@@ -83,13 +58,11 @@ Nach diesem Schritt sieht die Registerkarte "Endpunkte" im Dashboard folgenderma
 
 ## Installieren der erforderlichen Software auf der VM
 
-Um das IPython-Notizbuch auf unserer VM ausführen zu können, müssen wir zuerst IPython installieren und
-seine Abhängigkeiten.
+Um das IPython-Notizbuch auf unserer VM ausführen zu können, müssen wir zunächst Python und die entsprechenden Abhängigkeiten installieren.
 
 ### Linux (OpenSUSE)
 
-Führen Sie zur Installation von IPython und seinen Abhängigkeiten SSH mit Linux-VM und 
-die folgenden Schritte aus.
+Um IPython und dessen Abhängigkeiten zu installieren, verbinden Sie sich per SSH mit der Linux-VM und führen Sie die folgenden Schritte durch.
 
 Installieren Sie [NumPy][numpy], [Matplotlib][matplotlib], [Tornado][tornado] und andere IPython-Abhängigkeiten mit:
 
@@ -100,8 +73,7 @@ Installieren Sie [NumPy][numpy], [Matplotlib][matplotlib], [Tornado][tornado] un
 
 ### Linux (Ubuntu)
 
-IPython und seine Abhängigkeiten SSH mit Linux-VM installieren und führen Sie 
-die folgenden Schritte aus.
+Um IPython und dessen Abhängigkeiten zu installieren, verbinden Sie sich per SSH mit der Linux-VM und führen Sie die folgenden Schritte durch.
 
 Rufen Sie zunächst die neue Listen von Paketen auf:
 
@@ -116,12 +88,11 @@ Installieren Sie [NumPy][numpy], [Matplotlib][matplotlib], [Tornado][tornado] un
 
 ### Windows
 
-Um IPython und dessen Abhängigkeiten auf der Windows-VM zu installieren, verbinden Sie sich per Remotedesktop mit der VM. Führen Sie dann die folgenden Schritte aus, 
-verwenden Sie dabei Windows PowerShell zum Ausführen von Aktionen für alle Aktionen der Befehlszeile.
+Um IPython und dessen Abhängigkeiten auf der Windows-VM zu installieren, verbinden Sie sich per Remotedesktop mit der VM. Führen Sie anschließend die folgenden Schritte aus, indem Sie die Befehlszeilenaktionen in der Windows PowerShell ausführen.
 
-**Hinweis**: Sie müssen einige Sicherheitseinstellungen ändern, um Downloads mit dem Internet Explorer ausführen zu können.  Klicken Sie im **Server-Manager** auf **Lokaler Server**, anschließend auf **Verstärkte Sicherheitskonfiguration für IE** und deaktivieren Sie die Option für Administratoren.  Sie können diese Option nach der IPython-Installation wieder aktivieren.
+**Hinweis**: Sie müssen einige Sicherheitseinstellungen ändern, um Downloads mit Internet Explorer ausführen zu können. Klicken Sie im **Server-Manager** auf **Lokaler Server**, anschließend auf **Verstärkte Sicherheitskonfiguration für IE** und deaktivieren Sie die Option für Administratoren. Sie können diese Option nach der IPython-Installation wieder aktivieren.
 
-1.  Laden Sie die aktuelle 32-Bit-Version von [Python 2.7][] herunter und installieren Sie sie.  Sie müssen `C:\Python27` und `C:\Python27\Scripts` zu Ihrer `PATH`-Umgebungsvariable hinzufügen.
+1.  Laden Sie die aktuelle 32-Bit-Version von [Python 2.7][] herunter, und installieren Sie sie. Sie müssen `C:\Python27` und `C:\Python27\Scripts` zu der `PATH`-Umgebungsvariablen hinzufügen.
 
 1.  Installieren Sie [Tornado][tornado] und [PyZMQ][pyzmq] und andere IPython-Abhängigkeiten mit:
 
@@ -132,25 +103,25 @@ verwenden Sie dabei Windows PowerShell zum Ausführen von Aktionen für alle Akt
         easy_install python-dateutil
         easy_install pyparsing
 
-1.  Laden Sie [NumPy][numpy] mithilfe des `.exe`-binärinstallationsprogramms auf der Website herunter, und installieren Sie sie.  Zum Zeitpunkt der Erstellung dieses Dokuments ist die neueste Version **numpy-1.9.1-win32-superpack-python2.7.exe**.
+1.  Laden Sie [NumPy][numpy] mithilfe des `.exe`-binärinstallationsprogramms von der Website herunter, und installieren Sie sie. Zum Zeitpunkt der Erstellung dieses Dokuments ist **numpy-1.9.1-win32-superpack-python2.7.exe** die neueste Version.
 
-1.  Installieren Sie [Matplotlib][matplotlib] durch praktische Übungen:
+1.  Installieren Sie [Matplotlib][matplotlib] wie folgt:
 
         pip install matplotlib==1.4.2
 
-1.  Laden Sie [OpenSSL][] herunter und installieren Sie es.
+1.  Laden Sie [OpenSSL][] herunter, und installieren Sie es.
 
 	* Finden Sie das erforderliche **Visual C++ 2008 Redistributable** auf derselben Download-Seite.
 
-	* Sie müssen `C:\OpenSSL-Win32\bin` in Ihre `PATH`-Umgebungsvariable aufnehmen.
+	* Sie müssen `C:\OpenSSL-Win32\bin` der `PATH`-Umgebungsvariable hinzufügen.
 
-	> [AZURE.NOTE] Installieren Sie unbedingt Version 1.0.1g oder höher von OpenSSL, da diese Versionen Schutz vor der Heartbleed-Sicherheitslücke bieten.
+	> [AZURE.NOTE]Installieren Sie unbedingt Version 1.0.1g oder höher von OpenSSL, da diese Versionen Schutz vor der Heartbleed-Sicherheitslücke bieten.
 
 1.  Installieren Sie IPython mit dem Befehl:
 
         pip install ipython==2.4
 
-1.  Öffnen eines Ports in der Windows-Firewall.  Unter Windows Server 2012 sperrt die Firewall eingehende Verbindungen standardmäßig.  Führen Sie die folgenden Schritte aus, um Port 9999 zu öffnen:
+1.  Öffnen eines Ports in der Windows-Firewall. Unter Windows Server 2012 sperrt die Firewall eingehende Verbindungen standardmäßig. Führen Sie die folgenden Schritte aus, um Port 9999 zu öffnen:
 
     - Starten Sie die **Windows-Firewall mit erweiterter Sicherheit** aus dem Startbildschirm.
 
@@ -166,13 +137,11 @@ verwenden Sie dabei Windows PowerShell zum Ausführen von Aktionen für alle Akt
 
 ### Konfigurieren von IPython Notebook
 
-Nun werden wir IPython Notebook konfigurieren. Der erste Schritt besteht darin, ein benutzerdefiniertes
-IPython-Konfigurationsprofil zu erstellen, um die Konfigurationsinformationen zu kapseln:
+Nun werden wir das IPython-Notizbuch konfigurieren. Zunächst müssen wir ein IPython-Konfigurationsprofil erstellen, um die Konfigurationsdaten zu kapseln:
 
     ipython profile create nbserver
 
-Danach wird `cd` ausgeführt, um in das Profilverzeichnis zu wechseln, um unser SSL-Zertifikat zu erstellen und
-die Profil-Konfigurationsdatei zu bearbeiten.
+Anschließend wechseln wir mit `cd` in das Profilverzeichnis, um unser SSL-Zertifikat zu erstellen und die Profil-Konfigurationsdatei zu bearbeiten.
 
 Unter Linux:
 
@@ -186,31 +155,19 @@ Erstellen Sie das SSL-Zertifikat (Linux und Windows) wie folgt:
 
     openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.pem -out mycert.pem
 
-Beachten Sie, dass, da wir ein selbstsigniertes SSL-Zertifikat erstellen, bei der Herstellung einer Verbindung
-zum Notebook Ihr Browser eine Sicherheitswarnung angezeigt.  Für langfristige
-Verwendung in einer Produktionsumgebung sollten Sie ein ordnungsgemäß signiertes Zertifikat verwenden, das
-Ihrer Organisation zugeordnet ist.  Da die Zertifikatsverwaltung nicht Gegenstand
-in dieser Demo ist, werden wir ein selbstsigniertes Zertifikat verwenden.
+Da wir ein selbstsigniertes SSL-Zertifikat erstellen, erhalten Sie eine Sicherheitswarnung, wenn Sie mit Ihrem Browser das Notizbuch aufrufen. Für den langfristigen Produktionseinsatz sollten Sie ein korrekt signiertes Zertifikat verwenden, das Ihrer Organisation zugeordnet ist. Da die Zertifikatsverwaltung nicht Teil dieser Demonstration ist, werden wir ein selbstsigniertes Zertifikat verwenden.
 
-Neben der Verwendung eines Zertifikats müssen Sie auch ein Kennwort zum Schutz Ihres
-Ihres Notebooks vor nicht autorisierter Verwendung schützen.  Aus Sicherheitsgründen verwendet IPython
-verschlüsselte Kennwörter in der Konfigurationsdatei, daher müssen Sie zuerst Ihr
-Kennwort verschlüsseln.  IPython verfügt über ein Hilfsprogramm zu diesem Zweck; führen Sie den folgenden Befehl in einer Eingabeaufforderung aus:
+Neben dem Zertifikat müssen Sie auch ein Kennwort angeben, um Ihr Notizbuch vor unbefugtem Zugriff zu schützen. Aus Sicherheitsgründen verwendet IPython verschlüsselte Kennwörter in der Konfigurationsdatei, daher müssen Sie Ihr Kennwort zunächst verschlüsseln. IPython verfügt über ein Hilfsprogramm zu diesem Zweck; führen Sie den folgenden Befehl in einer Eingabeaufforderung aus:
 
     python -c "import IPython;print IPython.lib.passwd()"
 
-Dadurch werden Sie aufgefordert, ein Kennwort einzugeben und zu bestätigen und das
-Kennwort wird wie folgt gedruckt:
+Daraufhin werden Sie aufgefordert, Ihr Kennwort zweimal einzugeben, und das Kennwort wird anschließend wie folgt ausgegeben:
 
     Enter password: 
     Verify password: 
     sha1:b86e933199ad:a02e9592e59723da722.. (elided the rest for security)
     
-Als Nächstes bearbeiten wir das Profil-Konfigurationsdatei, die die
-`ipython_notebook_config.py` Datei im Verzeichnis ist.  Beachten Sie, dass diese Datei möglicherweise nicht vorhanden ist - erstellen Sie sie einfach.  Diese
-Datei hat eine Anzahl von Feldern und standardmäßig sind allesamt auskommentiert.  Sie können
-diese Datei mit einem Text-Editor Ihrer Wahl öffnen und Sie sollten sicherzustellen, dass er
-mindestens den folgenden Inhalt hat:
+Als Nächstes bearbeiten wir die Konfigurationsdatei des Profils. Hierbei handelt es sich um die `ipython_notebook_config.py`-Datei im Profilverzeichnis, in dem Sie sich befinden. Beachten Sie, dass diese Datei möglicherweise nicht vorhanden ist. Erstellen Sie sie einfach. Diese Datei verfügt über einige Felder, und standardmäßig sind alle auskommentiert. Öffnen Sie diese Datei in einem Text-Editor Ihrer Wahl und stellen Sie sicher, dass mindestens der folgende Text enthalten ist:
 
     c = get_config()
     
@@ -237,122 +194,85 @@ mindestens den folgenden Inhalt hat:
 
 ### Ausführen von IPython Notebook
 
-Nun können wir IPython Notebook starten. Zu diesem Zweck
-navigieren Sie zu dem Verzeichnis, in dem Sie Notebooks speichern und starten Sie den
-IPython-Notebook-Server:
+Nun können wir das IPython-Notizbuch starten. Navigieren Sie dazu in das Verzeichnis, in dem Sie Notizbücher speichern möchten, und führen Sie den IPython-Notizbuch-Server aus:
 
     ipython notebook --profile=nbserver
 
-Jetzt sollten Sie in der Lage sein, unter der folgenden Adresse auf IPython Notebook zuzugreifen:
-`https://[Ihr gewünschter Name hier]. cloudapp.net`.
+Jetzt sollten Sie in der Lage sein, unter der Adresse `https://[Your Chosen Name Here].cloudapp.net` auf IPython Notebook zuzugreifen:
 
 Beim ersten Zugriff auf IPython Notebook müssen Sie auf der Anmeldungsseite Ihr Kennwort eingeben:
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-001.png)
 
-Nachdem Sie sich angemeldet haben, sehen Sie das "IPython-Notebook Dashboard", das das
-Control-Center für alle Notebook-Vorgänge ist.  Auf dieser Seite können Sie
-neue Notebooks erstellen, bestehende öffnen usw.:
+Nach der Anmeldung sehen Sie das "IPython-Notizbuch-Dashboard", die Steuerzentrale für sämtliche Notizbuchoperationen. Auf dieser Seite können Sie neue Notizbücher erstellen, bestehende Notizbücher öffnen usw.:
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-002.png)
 
-Wenn Sie auf die Schaltfläche "Neues Notizbuch" klicken, sehen Sie, wie sich die
-Seite folgendermaßen öffnet:
+Wenn Sie auf die Schaltfläche "Neues Notizbuch" klicken, öffnet sich die folgende Seite:
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-003.png)
 
-Der mit einer `In []:`-Eingabeaufforderung markierte Bereich ist der Eingabebereich. Hier können Sie
-einen gültigen Python-Code eingeben und er wird bei der Eingabe von `Shift-Enter` ausgeführt oder
-klicken Sie auf das Symbol "Play" (das nach rechts zeigendes Dreieck in der Symbolleiste).
+In dem mit der `In []:`-Eingabeaufforderung gekennzeichneten Bereich können Sie gültigen Python-Code eingeben und diesen ausführen, indem Sie `Shift-Enter` drücken oder auf das "Wiedergabe"-Symbol klicken (ein nach rechts zeigendes Dreieck auf der Symbolleiste).
 
-Das Notebook ist so konfiguriert, dass es mit Numpy- und Matplotlib-Unterstützung
-automatisch startet, Sie können auch Zahlen, erstellen z. B.:
+Da wir das Notizbuch für den automatischen Start mit NumPy- und matplotlib-Unterstützung konfiguriert haben, können Sie sogar Diagramme erstellen, z. B.:
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-004.png)
 
 ## Ein mächtiges Paradigma: Live-Berechnungsdokumente mit Rich-Media-Objekten
 
-Das Notizbuch sollte für jeden intuitiv bedienbar sein, der Python und
-ein Textverarbeitungsprogramm verwendet hat, da es in gewisser Hinsicht eine Mischung aus beiden ist: Sie können
-Blöcke von Python-Code ausführen, aber Sie können auch Notizen und anderen Text speichern, indem Sie
-das Format der Zelle von "Code" zu "Markdown" mithilfe des Dropdown-Menüs in der
-Symbolleiste ausführen:
+Das Notizbuch ist seht intuitiv für Benutzer, die mit Python und Textverarbeitungsprogrammen vertraut sind, da es sich in gewisser Weise um beides handelt: Sie können Blöcke von Python-Code ausführen und gleichzeitig Notizen und anderen Text erstellen, indem Sie den Stil einer Zelle im Dropdownmenü der Symbolleiste von "Code" zu "Markdown" ändern:
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-005.png)
 
 
-Dies ist viel mehr als ein Textverarbeitungsprogramm, da das IPython-Notizbuch das
-Mischen von Berechnungen und Rich Media (Text, Grafiken, Video und praktisch
-alles, was in modernen Webbrowsern angezeigt werden kann) ermöglicht. Beispielsweise können Sie
-Erklärungsvideos mit Berechnungen zu Lernzwecken mischen:
+Es handelt sich jedoch um mehr als reine Textverarbeitung, da Sie mit dem IPython-Notizbuch Berechnungen und Rich-Media-Inhalte (Text, Grafiken, Video und praktisch alle in einem modernen Browser darstellbaren Elemente) mischen können. Sie können zum Beispiel Erklärungsvideos mit Berechnungen zu Bildungszwecken mischen:
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-006.png)
 
-oder externe Websites, die innerhalb einer Notebook-Datei live und nutzbar
-bleiben:
+oder externe Websites, die weiterhin live und nutzbar bleiben, in eine Notebook-Datei einbetten:
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-007.png)
 
-Und mit der Leistungsfähigkeit von Pythons vielen hervorragenden Bibliotheken für wissenschaftliche und
-technischen Berechnung kann eine einfache Berechnung kann ebenso leicht ausgeführt werden wie
-eine komplexe Netzwerkanalyse, alles in einer Umgebung:
+Mit den vielen hervorragenden Python-Bibliotheken für wissenschaftliche und technische Berechnungen können Sie einfache Berechnungen ebenso leicht in einer einzigen Umgebung umsetzen wie komplexe Netzwerkanalysen:
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-008.png)
 
-Dieses Paradigma der Mischung aus moderner Web und live-Berechnung
-bietet zahlreiche Vorzüge und eignet sich ideal für die Cloud das Notizbuch
-kann auf folgende Weisen verwendet werden:
+Dieses Paradigma der Mischung aus modernem Web und Live-Berechnungen bietet zahlreiche Vorzüge und eignet sich hervorragend für die Cloud. Notizbücher können zu folgenden Zwecken verwendet werden:
 
-* als Berechnungs-Notizblock für die Aufzeichnung von Forschungsdaten zu einem Problem,
+* als Berechnungs-Notizblock für die Aufzeichnung von Erforschungsdaten zu einem Problem,
 
-* um Ergebnisse mit Kollegen zu teilen, entweder in Form von 'live'-Berechnungen oder als
-  Kopie mit festem Format (HTML, PDF)
+* für die Weitergabe von Ergebnissen an Kollegen, entweder in Form von Live-Berechnungen oder als Kopie mit festem Format (HTML, PDF),
 
-* zur Verteilung und Live-Präsentation von Unterrichtsmaterialien, die Berechnungen betreffen,
-  damit die Studenten sofort mit dem tatsächlichen Code experimentieren, ihn ändern und
-  interaktiv erneut ausführen können,
+* für die Verteilung und Präsentation von Live-Unterrichtsmaterialien inklusive Berechnungen, anhand derer die Studenten mit dem tatsächlichen Code experimentieren, diesen verändern und sofort erneut ausführen können,
 
-* um "ausführbare Paper" bereitzustellen, die die Forschungsergebnisse in einer Weise darstellen,
-  die sofort reproduziert, validiert und von anderen Benutzern erweitert werden kann,
+* für die Bereitstellung von "ausführbaren Arbeiten" die Forschungsergebnisse auf eine Weise präsentieren, die von anderen sofort nachvollzogen, validiert und erweitert werden können.
 
-* als Plattform für gemeinschaftliche Berechnungen: Mehrere Benutzer können sich beim
-  selben Notebook-Server anmelden, um eine Berechnungssitzung gemeinsam zu nutzen,
+* als Plattform für gemeinschaftliche Berechnungen: Mehrere Benutzer können sich bei einem Notizbuch-Server anmelden und eine Live-Berechnungssitzung gemeinsam nutzen.
 
 * und vieles mehr...
 
-Wenn Sie den IPython-Quellcode aufrufen [Repository][], wird Ihnen ein ganzes
-Verzeichnis mit Notizbuch-Beispielen angezeigt, das Sie herunterladen können, und dann können Sie mit Ihrer eigenen IPython-VM in Azure experimentieren.  Laden Sie einfach die `.ipynb` Dateien von der Website herunter und laden Sie die Dateien auf das Dashboard Ihres Notizbuch Azure-VM hoch(oder laden Sie sie direkt in die VM herunter).
+Im IPython-Quellcode-[Repository][] finden Sie ein gesamtes Verzeichnis mit Notizbuch-Beispielen, die Sie herunterladen und anschließend auf Ihrer eigenen IPython-VM in Azure ausprobieren können. Laden Sie einfach die `.ipynb`-Dateien von der Website herunter, und laden Sie die Dateien auf das Dashboard Ihres Notizbuch Azure-VM hoch(oder laden Sie sie direkt in die VM herunter).
 
 ## Zusammenfassung
 
-Das IPython-Notizbuch bietet eine leistungsfähige Schnittstelle für den interaktiven Zugriff auf
-die Leistungsfähigkeit des Python-Ökosystems in Azure.  Es umfasst eine breite Palette von
-Anwendungsbeispielen inklusive Erkundung und Erlernen von Python, Datenanalyse und
-Visualisierung, Simulation und paralleler Berechnung. Die resultierenden Notebook-
-Dokumente enthalten eine vollständige Aufzeichnung der Berechnungen, die ausgeführt werden, und
-diese können für andere IPython-Benutzer freigegeben werden.  Das IPython-Notizbuch kann als eine
-lokale Anwendung verwendet werden, aber es ist ideal für Cloud-Bereitstellungen in Azure geeignet
+IPython-Notizbücher bieten eine leistungsstarke Schnittstelle für die interaktive Nutzung des Funktionsumfangs des Python-Ökosystems in Azure. Die Notizbücher decken ein breites Spektrum von Anwendungsfällen ab, inklusive Erkundung und Erlernen von Python, Datenanalyse und -Darstellung, Simulation und parallele Berechnungen. Die resultierenden Notizbuchdokumente enthalten eine komplette Aufzeichnung aller ausgeführten Berechnungen und können an andere IPython-Benutzer weitergegeben werden. Das IPython-Notizbuch kann auch als lokale Anwendung verwendet werden, eignet sich jedoch ideal für Cloud-Bereitstellungen in Azure.
 
-Die Kernfunktionen von IPython sind auch in Visual Studio über die 
-[Python-Tools für Visual Studio][] (PTVS) verfügbar. PTVS ist ein kostenloses Open-Source-Plug-in 
-von Microsoft, durch das Visual Studio zu einer erweiterten Python-Entwicklungs- 
-Umgebung wird, das einen erweiterten Editor mit IntelliSense, debugging, 
-Profilerstellung und paralleler Berechnungsintegration umfasst.
+Die Kernfunktionen von IPython sind auch in Visual Studio unter [Python Tools for Visual Studio][] (PTVS) verfügbar. PTVS ist ein kostenloses Open Source-Plug-In von Microsoft und verwandelt Visual Studio in eine umfangreiche Python-Entwicklungsumgebung mit einem modernen Editor inklusive IntelliSense, Debugging, Profilerstellung und Integration für parallele Berechnungen.
 
 
 
-[tornado]:      http://www.tornadoweb.org/          "Tornado"
-[PyZMQ]:        https://github.com/zeromq/pyzmq     "PyZMQ"
-[NumPy]:        http://www.numpy.org/               "NumPy"
-[Matplotlib]:   http://matplotlib.sourceforge.net/  "Matplotlib"
+[tornado]: http://www.tornadoweb.org/ "Tornado"
+[PyZMQ]: https://github.com/zeromq/pyzmq "PyZMQ"
+[NumPy]: http://www.numpy.org/ "NumPy"
+[Matplotlib]: http://matplotlib.sourceforge.net/ "Matplotlib"
 
 [portal-vm-windows]: /manage/windows/tutorials/virtual-machine-from-gallery/
 [portal-vm-linux]: /manage/linux/tutorials/virtual-machine-from-gallery/
 
-[Repository]: https://github.com/ipython/ipython
-[Python-Tools für Visual Studio]: http://aka.ms/ptvs
+[repository]: https://github.com/ipython/ipython
+[Python Tools for Visual Studio]: http://aka.ms/ptvs
 
 [Python 2.7]: http://www.python.org/download
 [OpenSSL]: http://slproweb.com/products/Win32OpenSSL.html
 
-<!--HONumber=47-->
+<!---HONumber=58-->

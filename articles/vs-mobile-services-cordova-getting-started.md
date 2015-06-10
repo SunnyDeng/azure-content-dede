@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="05/06/2015" 
+	ms.date="05/22/2015" 
 	ms.author="patshea123"/>
 
 # Erste Schritte mit Mobile Services (Cordova-Projekte)
@@ -24,13 +24,13 @@
 
 Der erste Schritt, der ausgeführt werden muss, um den Code in diesen Beispielen verwenden zu können, hängt davon ab, mit welchem Typ von mobilem Dienst Sie eine Verbindung herstellen.
 
-Für einen mobilen JavaScript-Back-End-Dienst erstellen Sie eine Tabelle namens TodoItem. Wenn Sie eine Tabelle erstellen möchten, suchen Sie den mobilen Dienst unter dem Knoten **Azure** im Server-Explorer, klicken mit der rechten Maustaste auf den Knoten des mobilen Diensts, um das Kontextmenü zu öffnen, und wählen dann Tabelle erstellen aus. Geben Sie TodoItem als Tabellennamen ein.
+- Für einen mobilen JavaScript-Back-End-Dienst erstellen Sie eine Tabelle namens TodoItem. Wenn Sie eine Tabelle erstellen möchten, suchen Sie den mobilen Dienst unter dem Knoten "Azure" im Server-Explorer, klicken mit der rechten Maustaste auf den Knoten des mobilen Diensts, um das Kontextmenü zu öffnen, und wählen dann **Create Table** aus. Geben Sie "TodoItem" als Tabellennamen ein.
 
-Wenn Sie stattdessen einen mobilen .NET-Back-End-Dienst verwenden, ist bereits eine Tabelle TodoItem in der Standardprojektvorlage enthalten, die Visual Studio für Sie erstellt hat. Sie müssen diese jedoch noch in Azure veröffentlichen. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Mobile Services-Projekt, und wählen Sie dann **Web veröffentlichen** aus. Übernehmen Sie die Standardwerte, und klicken Sie dann auf die Schaltfläche **Veröffentlichen**.
+- Wenn Sie einen mobilen .NET-Back-End-Dienst verwenden, ist bereits eine Tabelle "TodoItem" in der Standardprojektvorlage enthalten, die Visual Studio für Sie erstellt hat. Sie müssen diese jedoch noch in Azure veröffentlichen. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Mobile Services-Projekt, und wählen Sie dann **Web veröffentlichen** aus. Übernehmen Sie die Standardwerte, und klicken Sie dann auf die Schaltfläche **Veröffentlichen**.
   
->[AZURE.NOTE]**In Cordova-Projekten, die mit Visual Studio 2015 Preview erstellt wurden, verwenden Sie diese [Problemumgehung](http://go.microsoft.com/fwlink/?LinkId=518765), um mit Azure Mobile Services arbeiten zu können. Die Problemumgehung ist für Projekte mit höheren Versionen von Visual Studio 2015 nicht erforderlich.**
 
-##### Abrufen des Verweises auf eine Tabelle
+
+#####Erstellen eines Verweises auf eine Tabelle
 
 Der folgende Code ruft einen Verweis auf eine Tabelle ab, die Daten für ein TodoItem enthält. Sie können ihn in nachfolgenden Vorgängen zum Lesen und Aktualisieren der Datentabelle verwenden. Die TodoItem-Tabelle wird automatisch erstellt, wenn Sie einen mobilen Dienst erstellen.
 
@@ -38,9 +38,9 @@ Der folgende Code ruft einen Verweis auf eine Tabelle ab, die Daten für ein Tod
 
 Damit diese Beispiele funktionieren, müssen die Berechtigungen für die Tabelle auf **Jeder mit dem Anwendungsschlüssel** festgelegt werden. Später können Sie Authentifizierung einrichten. Weitere Informationen finden Sie unter [Erste Schritte mit Authentifizierung](mobile-services-html-get-started-users.md).
 
-##### Hinzufügen eines Eintrags 
+#####Hinzufügen eines Elements zu einer Tabelle 
 
-Fügen Sie ein neues Element in eine Datentabelle ein. Eine ID (eine GUID vom Typ string) wird automatisch als primärer Schlüssel für die neue Zeile erstellt. Rufen Sie die Methode [done]() für das zurückgegebene [Promise]()-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
+Fügen Sie ein neues Element in eine Datentabelle ein. Eine ID (eine GUID vom Typ "string") wird automatisch als primärer Schlüssel für die neue Zeile erstellt. Rufen Sie die `done()`-Methode für das zurückgegebene [Promise](https://msdn.microsoft.com/library/dn802826.aspx)-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
 
     function TodoItem(text) {
         this.text = text;
@@ -53,7 +53,7 @@ Fügen Sie ein neues Element in eine Datentabelle ein. Eine ID (eine GUID vom Ty
         });
     };
 
-##### Lesen/Abfragen einer Tabelle 
+#####Lesen oder Abfragen einer Tabelle 
 
 Der folgende Code fragt eine Tabelle sortiert nach dem text-Feld nach allen Elementen ab. Sie können Code zum Verarbeiten der Abfrageergebnisse im Erfolgshandler hinzufügen. In diesem Fall wird das lokale Array der Elemente aktualisiert.
 
@@ -74,16 +74,16 @@ Sie können die where-Methode zum Ändern der Abfrage verwenden. Das folgende Be
 
 Weitere Beispiele für Abfragen, die verwendet werden können, finden Sie unter dem Objekt [query](http://msdn.microsoft.com/library/azure/jj613353.aspx).
 
-##### Aktualisieren eines Eintrags
+#####Aktualisieren eines Tabellenelements
 
-Aktualisieren Sie eine Zeile in einer Datentabelle. In diesem Code wird das Element aus der Liste entfernt, wenn der mobile Dienst antwortet. Rufen Sie die Methode [done]() für das zurückgegebene [Promise]()-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
+Aktualisieren Sie eine Zeile in einer Datentabelle. In diesem Code wird das Element aus der Liste entfernt, wenn der mobile Dienst antwortet. Rufen Sie die `done()`-Methode für das zurückgegebene [Promise](https://msdn.microsoft.com/library/dn802826.aspx)-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
 
     todoTable.update(todoItem).done(function (item) {
         // Update a local collection of items.
         items.splice(items.indexOf(todoItem), 1, item);
     });
 
-##### Löschen eines Eintrags
+#####Löschen eines Tabellenelements
 
 Löschen Sie eine Zeile aus einer Datentabelle mithilfe der Methode **del**. Rufen Sie die Methode [done]() für das zurückgegebene [Promise]()-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
 
@@ -92,4 +92,5 @@ Löschen Sie eine Zeile aus einer Datentabelle mithilfe der Methode **del**. Ruf
 	});
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
-<!--HONumber=54-->
+
+<!---HONumber=58-->

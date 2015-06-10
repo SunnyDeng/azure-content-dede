@@ -26,13 +26,13 @@ Bei diesem Thema wird vorausgesetzt, dass der Leser bereits über ein Azure-Kont
 
 ##Erstellen eines VM-Images in Microsoft Azure.
 Hier erstellen wir eine neue VM vom Microsoft Azure-Verwaltungsportal.
-###Generieren eines „SSH-Authentifizierungsschlüssels“
+###Generieren eines "SSH-Authentifizierungsschlüssels"
 Wir benötigen den SSH-Schlüssel, um auf das Azure-Portal zuzugreifen.
 
 
 - Laden und installieren Sie puttygen von [hier](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). 
 - Führen Sie "putty.exe" aus.
-- Klicken Sie auf die Schaltfläche „Generieren“, um den Schlüssel zu generieren.
+- Klicken Sie auf die Schaltfläche "Generieren", um den Schlüssel zu generieren.
 
 
  ![image](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p01.png)
@@ -41,8 +41,8 @@ Wir benötigen den SSH-Schlüssel, um auf das Azure-Portal zuzugreifen.
  
  ![image](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p02.png)
 
-- Kopieren Sie den öffentlichen Schlüssel und speichern Sie ihn in einer Datei namens „publicKey.key”. Klicken Sie nicht auf die Schaltfläche „Öffentlichen Schlüssel speichern“, weil sich das Dateiformat des gespeicherten öffentlichen Schlüssels vom gewünschten öffentlichen Schlüssel unterscheidet.
-- Klicken Sie auf die Schaltfläche „Privaten Schlüssel speichern“, und speichern Sie den Schlüssel dann unter "privateKey.ppk". 
+- Kopieren Sie den öffentlichen Schlüssel und speichern Sie ihn in einer Datei namens "publicKey.key". Klicken Sie nicht auf die Schaltfläche "Öffentlichen Schlüssel speichern", weil sich das Dateiformat des gespeicherten öffentlichen Schlüssels vom gewünschten öffentlichen Schlüssel unterscheidet.
+- Klicken Sie auf die Schaltfläche "Privaten Schlüssel speichern", und speichern Sie den Schlüssel dann unter "privateKey.ppk". 
 
 ###Anmeldung im Azure-Portal
 
@@ -56,7 +56,7 @@ Klicken Sie auf "NEU" links unten, erstellen Sie ein Image, indem Sie den Anweis
 
 ###Einrichten von HOSTNAME
 
-Für "HOSTNAME": Dies ist die URL, die Sie zum Zugriff auf Ihren virtuellen Computer verwenden können. Sie müssen nur den DNS-Namen angeben, z. B. "mysqlnode1", und Azure generiert die URL als "mysqlnode1.cloudapp.net"; "SSH-AUTHENTIFIZIERUNGSSCHLÜSSEL": Dies ist der öffentliche Schlüssel, der von Puttygen generiert wird. Sie müssen  ihn aus dem Inhalt der Datei "publicKey.key" kopieren.
+Für "HOSTNAME": Dies ist die URL, die Sie zum Zugriff auf Ihren virtuellen Computer verwenden können. Sie müssen nur den DNS-Namen angeben, z. B. "mysqlnode1", und Azure generiert die URL als "mysqlnode1.cloudapp.net"; "SSH-AUTHENTIFIZIERUNGSSCHLÜSSEL": Dies ist der öffentliche Schlüssel, der von Puttygen generiert wird. Sie müssen ihn aus dem Inhalt der Datei "publicKey.key" kopieren.
 
   ![image](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p04.png)
   
@@ -75,17 +75,17 @@ Sie können ein beliebiges SSH-Tool für das Herstellen einer Verbindung mit Ihr
 - Klicken Sie nach dem Download von Putty auf die ausführbare Datei "PUTTY.EXE". Wie folgt festlegen.
 
 
-     The “Host Name (or IP address)” is the URL as “DNS NAME” when you create an image.
+     Der "Hostname“ (bzw. die IP-Adresse) ist beim Erstellen eines Image die URL als "DNS-NAME".
      
-     The “Port” we can chose 22.  This is default port of SSH services.
+     Als "Port" kann 22 gewählt werden. Dies ist der Standardport des SSH-Dienstes.
 
    ![image](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p06.png)
  
-- Bevor Sie „Öffnen“ auswählen, klicken Sie auf die Registerkarte „Verbindung > SSH > Auth“, um Ihre von Puttygen generierte Datei zu durchsuchen, die den privaten Schlüssel enthält. Das auszufüllende Feld finden sie auf dem Screenshot unten.
+- Bevor Sie "Öffnen" auswählen, klicken Sie auf die Registerkarte "Verbindung > SSH > Auth", um Ihre von Puttygen generierte Datei zu durchsuchen, die den privaten Schlüssel enthält. Das auszufüllende Feld finden sie auf dem Screenshot unten.
 
    ![image](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p07.png)
  
-- Klicken Sie dann auf "Öffnen". Es erscheint möglicherweise ein Meldungsfeld mit der Information, dass der Computer, mit dem Sie eine Verbindung herstellen, möglicherweise nicht der richtige ist. Wenn Sie den DNS-Namen und die Portnummer richtig konfiguriert haben, klicken Sie auf „Ja“.
+- Klicken Sie dann auf "Öffnen". Es erscheint möglicherweise ein Meldungsfeld mit der Information, dass der Computer, mit dem Sie eine Verbindung herstellen, möglicherweise nicht der richtige ist. Wenn Sie den DNS-Namen und die Portnummer richtig konfiguriert haben, klicken Sie auf "Ja".
   
  ![image](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p08.png)
 
@@ -237,4 +237,5 @@ Wir verwenden Ubuntu 14.04 LTS als Beispiel für diesen Artikel.
     Führen Sie den folgenden Befehl aus, um das System so einzurichten, dass beim Start MySQL gestartet wird:
 
            #mysql-test:~ # insserv mysql
-<!--HONumber=52-->
+
+<!---HONumber=58-->

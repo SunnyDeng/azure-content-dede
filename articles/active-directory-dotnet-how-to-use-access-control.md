@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Access Control (.NET) - Azure-Featureleitfaden" 
+	pageTitle="Verwenden von Access Control (.NET) – Azure-Featureleitfaden" 
 	description="Erfahren Sie, wie Sie Access Control Service (ACS) in Ihrer Azure-Anwendung zur Authentifizierung von Benutzern beim Zugriff auf eine Webanwendung verwenden können." 
 	services="active-directory" 
 	documentationCenter=".net" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="03/04/2014" 
+	ms.date="05/20/2015" 
 	ms.author="mbaldwin"/>
 
 
@@ -48,7 +48,7 @@ Damit Sie die in dieser Anleitung gestellten Aufgaben durchführen können, müs
 
 **Client** - Ein Browser, der versucht, auf Ihre Webanwendung zuzugreifen.
 
-**Anwendung der vertrauenden Seite (Relying Party, RP)** - Ihre Webanwendung. Eine RP-Anwendung ist eine Website oder ein Dienst, die/der die Authentifizierung an eine externe Stelle auslagert. Im Identitätskontext sagt man, dass die RP der Authentifizierungsstelle vertraut. In dieser Anleitung wird erklärt, wie Sie eine Anwendung so konfigurieren, dass sie dem ACS vertraut.
+**Anwendung der vertrauenden Seite (Relying Party, RP) ** - Ihre Webanwendung. Eine RP-Anwendung ist eine Website oder ein Dienst, die/der die Authentifizierung an eine externe Stelle auslagert. Im Identitätskontext sagt man, dass die RP der Authentifizierungsstelle vertraut. In dieser Anleitung wird erklärt, wie Sie eine Anwendung so konfigurieren, dass sie dem ACS vertraut.
 
 **Token** - Ein Benutzer erlangt Zugriff auf eine RP-Anwendung, indem er ein gültiges Token vorweist, das von einer Stelle ausgestellt wurde, der die RP-Anwendung vertraut. Eine Sammlung von Sicherheitsdaten, die bei Authentifizierung eines Clients ausgegeben werden. Sie enthält eine Reihe von Ansprüchen, bei denen es sich um Attribute des authentifizierten Benutzers handelt, beispielsweise den Namen oder das Alter eines Benutzers oder einen Bezeichner einer Benutzerrolle. Ein Token ist digital signiert, sodass der Aussteller identifiziert und der Inhalt nicht geändert werden kann.
 
@@ -65,11 +65,11 @@ Die folgende Abbildung zeigt, wie die ACS-Authentifizierung bei einer Webanwendu
 ![][0]
 
 1.  Der Client (in diesem Fall ein Browser) fordert von der RP eine Seite an.
-2.  Da die Anforderung noch nicht authentifiziert ist, verweist die RP den Benutzer an die Stelle, der sie vertraut, also an den ACS. Der ACS übermittelt dem Benutzer verschiedene IPs, die für diese RP definiert wurden. Der Benutzer wählt einen passenden IP aus.
+2.  Da die Anforderung noch nicht authentifiziert ist, verweist die RP den Benutzer an die Stelle, der sie vertraut, also an ACS. Der ACS übermittelt dem Benutzer verschiedene IPs, die für diese RP definiert wurden. Der Benutzer wählt einen passenden IP aus.
 3.  Der Client geht auf die Authentifizierungsseite des IPs und fordert den Benutzer auf, sich anzumelden.
 4.  Wenn der Client authentifiziert ist (beispielsweise die Anmeldeinformationen eingegeben wurden), gibt der IP ein Sicherheitstoken aus.
 5.  Nach der Ausgabe des Sicherheitstokens weist der IP den Client an, dieses Token an ACS zu senden.
-6.  Der ACS überprüft das vom IP ausgegebene Token, gibt die in diesem Token enthaltenen Identitätsansprüche in das ACS-Regelmodul ein, berechnet die auszugebenden Identitätsansprüche und gibt ein neues Sicherheitstoken aus, das diese Ansprüche enthält.
+6.  ACS validiert das vom IP ausgegebene Token, gibt die in diesem Token enthaltenen Identitätsansprüche in das ACS-Regelmodul ein, berechnet die auszugebenden Identitätsansprüche und gibt ein neues Sicherheitstoken aus, dass diese Ansprüche enthält.
 7.  ACS weist den Client an, das von ACS ausgegebene Token an die RP zu senden. Die RP validiert die Signatur auf dem Sicherheitstoken, extrahiert die für die Geschäftslogik der Anwendung bestimmten Ansprüche und gibt die ursprünglich angeforderte Seite zurück.
 
 ## Voraussetzungen
@@ -86,13 +86,13 @@ Damit Sie die in dieser Anleitung gestellten Aufgaben ausführen können, brauch
 
 Damit Sie den Active Directory-Zugriffssteuerungsdienst in Azure verwenden können, müssen Sie einen Access Control-Namespace anlegen. Dieser Namespace stellt einen eindeutigen Bereich für die Adressierung von ACS-Ressourcen innerhalb Ihrer Anwendung bereit.
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][] (https://manage.WindowsAzure.com) an.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an (https://manage.WindowsAzure.com).
     
-2.  Klicken Sie auf **Active Directory**.  
+2.  Klicken Sie auf **Active Directory**.
 
 	![][1]
 
-3.  Um einen neuen Access Control-Namespace zu erstellen, klicken Sie auf **Neu**. **App-Dienste** und **Zugriffssteuerung** werden ausgewählt. Klicken Sie auf **Schnellerfassung**. 
+3.  Um einen neuen Access Control-Namespace zu erstellen, klicken Sie auf **Neu**. **App-Dienste** und **Zugriffssteuerung** werden ausgewählt. Klicken Sie auf **Schnellerfassung**.
 
 	![][2]
 
@@ -116,7 +116,7 @@ In diesem Schritt erstellen Sie eine ASP.NET MVC-Anwendung. In nachfolgenden Sch
 
 1. Geben Sie in **Name** **MvcACS** ein, und klicken Sie dann auf **OK**.
 1. Wählen Sie im nächsten Dialogfeld **Internetanwendung** aus, und klicken Sie dann auf **OK**.
-1. Bearbeiten Sie die Datei  *Views\Shared_LoginPartial.cshtml*, und ersetzen Sie den Inhalt durch folgenden Code:
+1. Bearbeiten Sie die Datei *Views\Shared_LoginPartial.cshtml*, und ersetzen Sie den Inhalt durch folgenden Code:
 
         @if (Request.IsAuthenticated)
         {
@@ -144,7 +144,7 @@ In diesem Schritt erstellen Sie eine ASP.NET MVC-Anwendung. In nachfolgenden Sch
 
 Derzeit fügt ACS "User.Identity.Name" noch nicht ein, deshalb ist die obige Änderung notwendig.
 
-1. Drücken Sie F5, um die Anwendung auszuführen. Die Standardanwendung ASP.NET MVC erscheint in Ihrem Webbrowser.
+1. Drücken Sie die Taste F5, um die Anwendung auszuführen. Die Standardanwendung ASP.NET MVC erscheint in Ihrem Webbrowser.
 
 ## Integrieren der Webanwendung mit ACS
 
@@ -152,11 +152,11 @@ In dieser Aufgabe werden Sie Ihre ASP.NET-Webanwendung mit ACS integrieren.
 
 1.	Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt "MvcACS", und wählen Sie dann **Identität und Zugriff** aus.
 
-	Wenn die Option **Identität und Zugriff** im Kontextmenü nicht angezeigt wird, installieren Sie das Identitäts- und Zugriffstool. Informationen hierzu finden Sie unter [Identitäts- und Zugriffstool]. 
+	Wenn die Option **Identität und Zugriff** im Kontextmenü nicht angezeigt wird, installieren Sie das Identitäts- und Zugriffstool. Informationen hierzu finden Sie unter [Identitäts- und Zugriffstool].
 
 	![][4]
 
-2.	Wählen Sie auf der Registerkarte **Anbieter** die Position **Azure-Zugriffssteuerungsdienst verwenden** aus.
+2.	Wählen Sie auf der Registerkarte **Anbieter** die Position **Windows Azure-Zugriffssteuerungsdienst verwenden** aus.
 
     ![][44]
 
@@ -176,7 +176,7 @@ In dieser Aufgabe werden Sie Ihre ASP.NET-Webanwendung mit ACS integrieren.
 
 	![][18]
 
-6.	Klicken Sie auf **Symmetrischer Schlüssel**, dann auf **Schlüssel anzeigen**, und kopieren Sie den Schlüsselwert. Klicken Sie abschließend auf **Abbrechen**, um die Seite "Edit Management Client" zu verlassen, ohne Änderungen durchzuführen. 
+6.	Klicken Sie auf **Symmetrischer Schlüssel**, dann auf **Schlüssel anzeigen**, und kopieren Sie den Schlüsselwert. Klicken Sie abschließend auf **Abbrechen**, um die Seite "Edit Management Client" zu verlassen, ohne Änderungen durchzuführen.
 
 	![][19]
 
@@ -186,7 +186,7 @@ In dieser Aufgabe werden Sie Ihre ASP.NET-Webanwendung mit ACS integrieren.
 
 	Visual Studio verwendet die Information über den Namespace, um die Verbindung zum ACS-Verwaltungsportal herzustellen und die Einstellungen für Ihren Namespace abzurufen, unter anderem Identitätsanbieter, Bereich und Rückgabe-URL.
 
-8.	Wählen Sie **Windows Live ID** (Microsoft-Konto) aus, und klicken Sie auf "OK". 
+8.	Wählen Sie **Windows Live ID** (Microsoft-Konto) aus, und klicken Sie auf "OK".
 
 	![][5]
 
@@ -204,30 +204,28 @@ Glückwunsch! Sie haben ACS mit Ihrer ASP.NET-Webanwendung integriert. ACS authe
 
 ## Anzeigen der von ACS gesendeten Ansprüche
 
-In diesem Abschnitt werden wir die Anwendung ändern, sodass die von ACS gesendeten Ansprüche angezeigt werden.  Das Identitäts- und Zugriffstool hat eine Regelgruppe angelegt, die alle Ansprüche vom IP zu Ihrer Anwendung durchleitet.  Beachten Sie, dass unterschiedliche Anbieter unterschiedliche Ansprüche senden.
+In diesem Abschnitt werden wir die Anwendung ändern, sodass die von ACS gesendeten Ansprüche angezeigt werden. Das Identitäts- und Zugriffstool hat eine Regelgruppe angelegt, die alle Ansprüche vom IP zu Ihrer Anwendung durchleitet. Beachten Sie, dass unterschiedliche Anbieter unterschiedliche Ansprüche senden.
 
-1. Öffnen Sie die Datei  *Controllers\HomeController.cs*. Fügen Sie eine **using**-Anweisung für **System.Threading** hinzu:
+1. Öffnen Sie die Datei *Controllers\HomeController.cs*. Fügen Sie eine **using**-Anweisung für **System.Threading** hinzu:
 
  	using System.Threading;
 
-1. Fügen Sie in der HomeController-Klasse die  *Claims*-Methode hinzu:
+1. Fügen Sie in der HomeController-Klasse die *Claims*-Methode hinzu:
 
-    public ActionResult Claims()
-    {
-        ViewBag.Message = "Your claims page.";
+    public ActionResult Claims() { ViewBag.Message = "Your claims page.";
 
         ViewBag.ClaimsIdentity = Thread.CurrentPrincipal.Identity;
 
         return View();
     }
 
-1. Klicken Sie mit der rechten Maustaste auf die Methode  *Claims*, und wählen Sie dann **Ansicht hinzufügen** aus.
+1. Klicken Sie mit der rechten Maustaste auf die Methode *Claims*, und wählen Sie dann **Ansicht hinzufügen** aus.
 
 ![][66]
 
 1. Klicken Sie auf **Hinzufügen**.
 
-1. Ersetzen Sie den Inhalt der Datei  *Views\Home\Claims.cshtml* durch den folgenden Code
+1. Ersetzen Sie den Inhalt der Datei *Views\Home\Claims.cshtml* durch den folgenden Code:
 
         @{
             ViewBag.Title = "Claims";
@@ -277,7 +275,7 @@ In diesem Abschnitt werden wir die Anwendung ändern, sodass die von ACS gesende
         }
         </table>
 
-1. Führen Sie die Anwendung aus, und navigieren Sie zu der Methode  *Claims*:
+1. Führen Sie die Anwendung aus, und navigieren Sie zu der Methode *Claims*:
 
 ![][666]
 
@@ -291,9 +289,9 @@ Wenn Sie die Option "Use Azure Access Control" auswählen und dann Ihre Anwendun
 
 Diese Konfigurationseinstellungen können Sie im ACS-Verwaltungsportal prüfen und ändern. Gehen Sie folgendermaßen vor, um die Änderungen im Portal zu überprüfen.
 
-1.	Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.WindowsAzure.com) an.
+1.	Melden Sie sich auf dem Windows [Azure-Verwaltungsportal](http://manage.WindowsAzure.com) an.
 
-2.	Klicken Sie auf **Active Directory**. 
+2.	Klicken Sie auf **Active Directory**.
 
 	![][8]
 
@@ -329,20 +327,20 @@ Auf dem ACS-Verwaltungsportal ändern wir nun die Authentifizierung der MvcACS-A
 
 	![][13]
 
-2.	Klicken Sie auf **Google** und dann auf **Weiter**. Das Kontrollkästchen der MvcACS-App ist standardmäßig aktiviert. 
+2.	Klicken Sie auf **Google** und dann auf **Weiter**. Das Kontrollkästchen der MvcACS-App ist standardmäßig aktiviert.
 
 	![][14]
 
-3. Klicken Sie auf Speichern. 
+3. Klicken Sie auf Speichern.
 
 	![][15]
 
 
-Das war's! Wenn Sie zu Visual Studio zurückgehen, das Projekt für die MvcACS-App öffnen und auf **Identität und Zugriff** klicken, listet das Tools sowohl Windows Live ID als auch Google als Identitätsanbieter auf.  
+Das war's! Wenn Sie zu Visual Studio zurückgehen, das Projekt für die MvcACS-App öffnen und auf **Identität und Zugriff** klicken, listet das Tools sowohl Windows Live ID als auch Google als Identitätsanbieter auf.
 
 ![][16]
 
-Wenn Sie dann die Anwendung ausführen, sehen Sie, was sich verändert hat. Wenn eine Anwendung mehr als einen Identitätsanbieter unterstützt, wird der Browser des Benutzers zuerst an eine von ACS gehostete Seite geleitet, die den Benutzer dann auffordert, einen Identitätsanbieter auszuwählen. 
+Wenn Sie dann die Anwendung ausführen, sehen Sie, was sich verändert hat. Wenn eine Anwendung mehr als einen Identitätsanbieter unterstützt, wird der Browser des Benutzers zuerst an eine von ACS gehostete Seite geleitet, die den Benutzer dann auffordert, einen Identitätsanbieter auszuwählen.
 
 ![][7]
 
@@ -360,47 +358,47 @@ Wenn Sie die ACS-Funktionalität genauer erforschen und mit anderen Szenarien ex
 
 
 
-  [Was ist der ACS?]: #what-is
-  [Konzepte]: #concepts
-  [Voraussetzungen]: #pre
-  [Erstellen einer ASP.NET MVC-Anwendung]: #create-web-app
-  [Erstellen eines Access Control-Namespace]: #create-namespace
-  [Integrieren der Webanwendung mit ACS]: #Identity-Access
-  [Testen der Integration mit ACS]: #Test-ACS
-  [Anzeigen der Anwendung im ACS-Verwaltungsportal]: acs-portal
-  [Hinzufügen eines Identitätsanbieters]: #add-IP
-  [Nächste Schritte]: #whats-next
-  [vcsb]: #bkmk_viewClaims
-  [vpp]: #bkmk_VP
+[What is ACS?]: #what-is
+[Concepts]: #concepts
+[Prerequisites]: #pre
+[Create an ASP.NET MVC Application]: #create-web-app
+[Create an Access Control Namespace]: #create-namespace
+[Integrate your Web Application with ACS]: #Identity-Access
+[Test the Integration with ACS]: #Test-ACS
+[View the Application in the ACS Management Portal]: acs-portal
+[Add an Identity Provider]: #add-IP
+[What's Next]: #whats-next
+[vcsb]: #bkmk_viewClaims
+[vpp]: #bkmk_VP
 
-  [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
-  [Identitäts- und Zugriffstool]: http://go.microsoft.com/fwlink/?LinkID=245849
-  [Azure-Verwaltungsportal]: http://manage.WindowsAzure.com
+[Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
+[Identitäts- und Zugriffstool]: http://go.microsoft.com/fwlink/?LinkID=245849
+[Azure-Verwaltungsportal]: http://manage.WindowsAzure.com
 
-  [0]: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
-  [1]: ./media/active-directory-dotnet-how-to-use-access-control/acsCreateNamespace.png
-  [2]: ./media/active-directory-dotnet-how-to-use-access-control/acsQuickCreate.png
-  [3]: ./media/active-directory-dotnet-how-to-use-access-control/rzMvc.png
-  [4]: ./media/active-directory-dotnet-how-to-use-access-control/rzIA.png
+[0]: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
+[1]: ./media/active-directory-dotnet-how-to-use-access-control/acsCreateNamespace.png
+[2]: ./media/active-directory-dotnet-how-to-use-access-control/acsQuickCreate.png
+[3]: ./media/active-directory-dotnet-how-to-use-access-control/rzMvc.png
+[4]: ./media/active-directory-dotnet-how-to-use-access-control/rzIA.png
 [44]: ./media/active-directory-dotnet-how-to-use-access-control/rzPT.png
- [444]: ./media/active-directory-dotnet-how-to-use-access-control/rzC.png
-  [5]: ./media/active-directory-dotnet-how-to-use-access-control/acsIdAndAccess1.png
-  [6]: ./media/active-directory-dotnet-how-to-use-access-control/acsMSFTAcct.png
-  [66]: ./media/active-directory-dotnet-how-to-use-access-control/rzAv.png
-  [666]: ./media/active-directory-dotnet-how-to-use-access-control/rzCl.png
-  [7]: ./media/active-directory-dotnet-how-to-use-access-control/acsSignIn.png
-  [8]: ./media/active-directory-dotnet-how-to-use-access-control/acsClickManage.png
-  [9]: ./media/active-directory-dotnet-how-to-use-access-control/acsACSPortal.png
-  [10]: ./media/active-directory-dotnet-how-to-use-access-control/acsRPPage.png
-  [11]: ./media/active-directory-dotnet-how-to-use-access-control/acsEdit-RP.png
-  [12]: ./media/active-directory-dotnet-how-to-use-access-control/acsEdit-RP2.png
-  [13]: ./media/active-directory-dotnet-how-to-use-access-control/acsAdd-Idp.png
-  [14]: ./media/active-directory-dotnet-how-to-use-access-control/acsAdd-Google.png
-  [15]: ./media/active-directory-dotnet-how-to-use-access-control/acsSave-Google.png
-  [16]: ./media/active-directory-dotnet-how-to-use-access-control/acsIdAndA-after.png
-  [17]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace.png
-  [18]: ./media/active-directory-dotnet-how-to-use-access-control/acsManagementService.png
-  [19]: ./media/active-directory-dotnet-how-to-use-access-control/acsShowKey.png
-  [20]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace2.png
+[444]: ./media/active-directory-dotnet-how-to-use-access-control/rzC.png
+[5]: ./media/active-directory-dotnet-how-to-use-access-control/acsIdAndAccess1.png
+[6]: ./media/active-directory-dotnet-how-to-use-access-control/acsMSFTAcct.png
+[66]: ./media/active-directory-dotnet-how-to-use-access-control/rzAv.png
+[666]: ./media/active-directory-dotnet-how-to-use-access-control/rzCl.png
+[7]: ./media/active-directory-dotnet-how-to-use-access-control/acsSignIn.png
+[8]: ./media/active-directory-dotnet-how-to-use-access-control/acsClickManage.png
+[9]: ./media/active-directory-dotnet-how-to-use-access-control/acsACSPortal.png
+[10]: ./media/active-directory-dotnet-how-to-use-access-control/acsRPPage.png
+[11]: ./media/active-directory-dotnet-how-to-use-access-control/acsEdit-RP.png
+[12]: ./media/active-directory-dotnet-how-to-use-access-control/acsEdit-RP2.png
+[13]: ./media/active-directory-dotnet-how-to-use-access-control/acsAdd-Idp.png
+[14]: ./media/active-directory-dotnet-how-to-use-access-control/acsAdd-Google.png
+[15]: ./media/active-directory-dotnet-how-to-use-access-control/acsSave-Google.png
+[16]: ./media/active-directory-dotnet-how-to-use-access-control/acsIdAndA-after.png
+[17]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace.png
+[18]: ./media/active-directory-dotnet-how-to-use-access-control/acsManagementService.png
+[19]: ./media/active-directory-dotnet-how-to-use-access-control/acsShowKey.png
+[20]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace2.png
 
-<!--HONumber=47-->
+<!---HONumber=58-->

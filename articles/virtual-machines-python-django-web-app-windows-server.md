@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Python-Web-App mit Django - Azure-Lernprogramm" 
+	pageTitle="Python-Web-App mit Django – Azure-Lernprogramm" 
 	description="In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website auf Azure mithilfe eines virtuellen Computers mit Windows Server 2012 R2 Datacenter hosten." 
 	services="virtual-machines" 
 	documentationCenter="python" 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-windows" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="02/05/2015" 
+	ms.date="05/20/2015" 
 	ms.author="huvalo"/>
 
 
@@ -24,47 +24,43 @@
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/develop/python/tutorials/web-app-with-django/" title="Windows" class="current">Windows</a><a href="/develop/python/tutorials/django-hello-world-(maclinux)/" title="MacLinux">Mac/Linux</a></div>
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website unter Microsoft 
-Azure mithilfe eines virtuellen Windows Server-Computers hosten können. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Django-basierte Anwendung, die in der Cloud ausgeführt wird.
+In diesem Lernprogramm erfahren Sie, wie Sie eine Django-basierte Website unter Microsoft Azure mithilfe eines virtuellen Windows Server-Computers hosten können. Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss dieses Lernprogramms verfügen Sie über eine Django-basierte Anwendung, die in der Cloud ausgeführt wird.
 
-Sie erhalten Informationen zu folgenden Themen:
+Sie lernen Folgendes:
 
 * Einrichten eines virtuellen Azure-Computers als Host von Django. In diesem Lernprogramm wird diese Aufgabe unter **Windows Server** beschrieben; das Gleiche gilt jedoch auch für eine Linux-VM, die in Azure gehostet wird. 
 * Erstellen einer neuen Django-Anwendung unter Windows.
 
-Im Rahmen dieses Lernprogramms erstellen Sie eine einfache "Hello World"-Webanwendung.
-"Hello World"-Webanwendung. Die Anwendung wird auf einem virtuellen Azure-Computer gehostet.
+Im Rahmen dieses Lernprogramms erstellen Sie eine einfache Webanwendung "Hello World". Die Anwendung wird auf einem virtuellen Azure-Computer gehostet.
 
 Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
-![A browser window displaying the hello world page on Azure][1]
+![Ein Browserfenster, das die Seite 'Hello World' in Azure anzeigt.][1]
 
 [AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## Erstellen und Konfigurieren eines virtuellen Azure-Computers als Host von Django
 
-1. Befolgen Sie die [hier][portal-vm] aufgeführten Anweisungen, um einen virtuellen Azure-Computer der *Windows Server 2012 R2 Datacenter*-Verteilung zu erstellen.
+1. Befolgen Sie die [hier][portal-vm] aufgeführten Anweisungen, um einen virtuellen Azure-Computer mit der *Windows Server 2012 R2 Datacenter*-Distribution zu erstellen.
 
-1. Weisen Sie Azure an, den Port **80**-Datenverkehr aus dem Web an Port **80** auf dem virtuellen Computer zu leiten.
+1. Weisen Sie Azure an, den Port **80**-Datenverkehr aus dem Web an Port **80** auf dem virtuellen Computer zu leiten.
  - Navigieren Sie im Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte *ENDPUNKTE*.
- - Klicken Sie unten auf der Seite auf *HINZUFÜGEN*.
-	![add endpoint](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-addendpoint.png)
+ - Klicken Sie unten auf der Seite auf *HINZUFÜGEN*. ![Endpunkt hinzufügen](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-addendpoint.png)
 
- - Öffnen Sie den *TCP* des *PUBLIC PORT 80*-Protokolls als *PRIVATE PORT 80*.
-![][port80]
-1. Klicken Sie auf der Registerkarte *DASHBOARD* auf *CONNECT*, um sich unter Verwendung von *Remote Desktop* beim neu erstellten virtuellen Azure-Computer remote anzumelden.  
+ - Öffnen Sie *ÖFFENTLICHER PORT 80*  des *TCP*-Protokolls als *PRIVATER PORT 80*. ![][port80]
+1. Klicken Sie auf der Registerkarte *DASHBOARD* auf *Verbinden* zum Verwenden von *Remotedesktop*, um sich beim neu erstellten virtuellen Azure-Computer remote anzumelden.  
 
-**Wichtiger Hinweis:** Für alle nachfolgend aufgeführten Anweisungen müssen Sie ordnungsgemäß beim virtuellen Computer angemeldet sein und Befehle dort anstelle von Ihrem lokalen Computer ausgeben. 
+**Wichtiger Hinweis:** Für alle nachfolgend aufgeführten Anweisungen müssen Sie ordnungsgemäß beim virtuellen Computer angemeldet sein und Befehle dort anstelle von Ihrem lokalen Computer ausgeben.
 
 ## <a id="setup"> </a>Einrichten von Python und Django
 
-**Hinweis:** Für den Download mithilfe von Internet Explorer müssen Sie möglicherweise die erweiterten Sicherheitseinstellungen für Internet Explorer konfigurieren ("Start > Verwaltung > Server-Manager > Lokaler Server", Klicken auf **Verstärkte Sicherheitskonfiguration für IE konfigurieren** und Festlegen der Einstellung auf "Aus").
+**Hinweis:** Für den Download mithilfe von Internet Explorer müssen Sie möglicherweise die erweiterten Sicherheitseinstellungen für Internet Explorer konfigurieren ("Start > Verwaltung > Server-Manager > Lokaler Server". Klicken Sie dann auf **Verstärkte Sicherheitskonfiguration für IE**, und legen Sie "Aus" fest.)
 
-1. Installieren Sie [Webplattform-Installer][].
-1. Installieren Sie Python und WFastCGI mit dem Webplattform-Installer.  Dadurch wird wfastcgi.py in Ihrem Python-Skriptordner installiert.
+1. Installieren Sie den [Webplattform-Installer][].
+1. Installieren Sie Python und WFastCGI mit dem Webplattform-Installer. Dadurch wird wfastcgi.py in Ihrem Python-Skriptordner installiert.
 	1. Starten Sie den Webplattform-Installer.
-	1. Geben Sie "WFastCGI" in der Suchleiste ein. 
-	1. Wählen Sie den Eintrag "WFactCGI" für die Python-Version aus, die Sie verwenden möchten (2.7 oder 3.4).  Beachten Sie, dass dadurch Python als eine Abhängigkeit von WFastCGI installiert wird. 
+	1. Geben Sie „WFastCGI“ in der Suchleiste ein. 
+	1. Wählen Sie den Eintrag „WFactCGI“ für die Python-Version aus, die Sie verwenden möchten (2.7 oder 3.4). Beachten Sie, dass dadurch Python als eine Abhängigkeit von WFastCGI installiert wird. 
 1. Installieren Sie Django mit pip.
 
     Python 2.7:
@@ -78,12 +74,12 @@ Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 ## Einrichten von IIS mit FastCGI
 
-1. Installieren Sie IIS mit Unterstützung für FastCGI.  Die Ausführung nimmt möglicherweise einige Minuten in Anspruch.
+1. Installieren Sie IIS mit Unterstützung für FastCGI. Die Ausführung nimmt möglicherweise einige Minuten in Anspruch.
 
-		start /wait %windir%\System32\\PkgMgr.exe /iu:IIS-WebServerRole;IIS-WebServer;IIS-CommonHttpFeatures;IIS-StaticContent;IIS-DefaultDocument;IIS-DirectoryBrowsing;IIS-HttpErrors;IIS-HealthAndDiagnostics;IIS-HttpLogging;IIS-LoggingLibraries;IIS-RequestMonitor;IIS-Security;IIS-RequestFiltering;IIS-HttpCompressionStatic;IIS-WebServerManagementTools;IIS-ManagementConsole;WAS-WindowsActivationService;WAS-ProcessModel;WAS-NetFxEnvironment;WAS-ConfigurationAPI;IIS-CGI
+		start /wait %windir%\System32\PkgMgr.exe /iu:IIS-WebServerRole;IIS-WebServer;IIS-CommonHttpFeatures;IIS-StaticContent;IIS-DefaultDocument;IIS-DirectoryBrowsing;IIS-HttpErrors;IIS-HealthAndDiagnostics;IIS-HttpLogging;IIS-LoggingLibraries;IIS-RequestMonitor;IIS-Security;IIS-RequestFiltering;IIS-HttpCompressionStatic;IIS-WebServerManagementTools;IIS-ManagementConsole;WAS-WindowsActivationService;WAS-ProcessModel;WAS-NetFxEnvironment;WAS-ConfigurationAPI;IIS-CGI
 
 
-### Python 2.7
+### Python 2,7
 
 Führen Sie diese Befehle nur dann aus, wenn Sie Python 2.7 verwenden.
 
@@ -114,7 +110,7 @@ Führen Sie diese Befehle nur dann aus, wenn Sie Python 2.7 verwenden.
 
 1. Daraufhin sollte Folgendes angezeigt werden:
 
-	![IIS config1](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-iis-27.png) 
+	![IIS config1](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-iis-27.png)
 
 ### Python 3.4
 
@@ -146,7 +142,7 @@ Führen Sie diese Befehle nur dann aus, wenn Sie Python 3.4 verwenden.
 
 1. Daraufhin sollte Folgendes angezeigt werden:
 
-	![IIS config1](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-iis-34.png) 
+	![IIS config1](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-iis-34.png)
 
 
 ## Erstellen einer neuen Django-Anwendung
@@ -162,7 +158,7 @@ Führen Sie diese Befehle nur dann aus, wenn Sie Python 3.4 verwenden.
 
 		C:\Python34\Scripts\django-admin.exe startproject helloworld
     
-	![The result of the New-AzureService command](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-cmd-new-azure-service.png)
+	![Ergebnis des Befehls 'New-AzureService'](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-cmd-new-azure-service.png)
 
 1.  Mit dem Befehl **django-admin** wird eine Grundstruktur für Django-basierte Websites erstellt:
     
@@ -172,7 +168,7 @@ Führen Sie diese Befehle nur dann aus, wenn Sie Python 3.4 verwenden.
 
 
 
-1.  Erstellen Sie eine neue Datei namens **views.py** im Verzeichnis  *C:\inetpub\wwwroot\helloworld\helloworld*. Diese enthält die Ansicht, mit der die "Hello World"-Seite generiert wird. Starten Sie den Editor, und geben Sie Folgendes ein:
+1.  Erstellen Sie eine neue Datei mit dem Namen **views.py** im Verzeichnis *C:\inetpub\wwwroot\helloworld\helloworld*. Diese enthält die Ansicht, mit der die "Hello World"-Seite generiert wird. Starten Sie den Editor, und geben Sie Folgendes ein:
 		
 		from django.http import HttpResponse
 		def home(request):
@@ -188,7 +184,7 @@ Führen Sie diese Befehle nur dann aus, wenn Sie Python 3.4 verwenden.
 
 1. Laden Sie dann die Webseite in Ihrem Browser.
 
-![A browser window displaying the hello world page on Azure][1]
+![Ein Browserfenster, das die Seite 'Hello World' in Azure anzeigt.][1]
 
 ## Herunterfahren des virtuellen Azure-Computers
 
@@ -202,5 +198,4 @@ Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virt
 
 [Webplattform-Installer]: http://www.microsoft.com/web/downloads/platform.aspx
 
-
-<!--HONumber=47-->
+<!---HONumber=58-->
