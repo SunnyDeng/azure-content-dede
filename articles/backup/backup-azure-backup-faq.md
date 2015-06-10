@@ -153,4 +153,4 @@ Im folgenden finden eine Liste häufig gestellte Fragen zur Azure-Sicherung. Wen
 [1]: ./media/backup-azure-backup-faq/Schedule.png
 [2]: ./media/backup-azure-backup-faq/RetentionScreen1.png
 
-<!---HONumber=GIT-SubDir-->
+<!---HONumber=GIT-SubDir--> 

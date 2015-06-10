@@ -186,4 +186,4 @@ Weitere Informationen zum Einstieg in Azure Backup finden Sie unter:
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Verwalten von virtuellen Computern](backup-azure-manage-vms)
 
-<!---HONumber=GIT-SubDir-->
+<!---HONumber=GIT-SubDir--> 

@@ -63,4 +63,4 @@ Bei Verwendung von Azure als Sicherungsspeicher tertiären Endpunkt (z. B. Sie S
 [4]: ./media/backup-azure-backup-create-vault/grs.png
 [5]: ./media/backup-azure-backup-create-vault/lrs.png
 
-<!---HONumber=GIT-SubDir-->
+<!---HONumber=GIT-SubDir--> 
