@@ -53,4 +53,4 @@ Der Anmeldeinformationsdatei Depot wird über einen sicheren Kanal aus dem Azure
 [1]: ./media/backup-azure-backup-download-vc/quickview.png
 [2]: ./media/backup-azure-backup-download-vc/downloadvc.png
 
-<!---HONumber=GIT-SubDir-->
+<!---HONumber=GIT-SubDir--> 

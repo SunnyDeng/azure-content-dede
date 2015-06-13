@@ -41,4 +41,4 @@ Nachdem Sie haben gelernt, dass die Grundlagen von Azure-Automatisierung und wie
  
 * Sehen Sie sich den Azure-Automatisierung [Erste Schritte](http://go.microsoft.com/fwlink/?LinkId=390560)
 
-<!---HONumber=GIT-SubDir-->
+<!---HONumber=GIT-SubDir--> 

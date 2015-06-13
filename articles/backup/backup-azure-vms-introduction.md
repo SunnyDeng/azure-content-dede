@@ -119,7 +119,7 @@ Erfahren Sie mehr über den [VM-Agent](https://go.microsoft.com/fwLink/?LinkID=3
 - Regionsübergreifende Sicherungs- und Wiederherstellungsvorgänge werden nicht unterstützt.
 - Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird nur in bestimmten Regionen unterstützt. Überprüfen Sie die Liste der [unterstützten Regionen](http://azure.microsoft.com/regions/#services). Wenn die gewünschte Region derzeit nicht unterstützt wird, wird sie bei der Erstellung des Tresors in der Dropdownliste nicht angezeigt.
 - Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird nur für bestimmte Betriebssystemversionen unterstützt:
-  - **Linux**: Die Liste der von Azure unterstützten Verteilungen finden Sie [hier](virtual-machines-linux-endorsed-distributions.md). Andere Bring-Your-Own-Linux-Verteilungen sollten ebenfalls funktionieren, sofern der VM-Agent auf dem virtuellen Computer verfügbar ist.
+  - **Linux**: Die Liste der von Azure unterstützten Verteilungen finden Sie [hier](../virtual-machines-linux-endorsed-distributions.md). Andere Bring-Your-Own-Linux-Verteilungen sollten ebenfalls funktionieren, sofern der VM-Agent auf dem virtuellen Computer verfügbar ist.
   - **Windows Server**: Versionen, die älter als Windows Server 2008 R2 sind, werden nicht unterstützt.
 
 Wenn Sie Anregungen zu gewünschten Funktionen haben, [senden Sie uns Ihr Feedback](http://aka.ms/azurebackup_feedback).
@@ -133,4 +133,4 @@ Informationen für Ihre ersten Schritte mit der Sicherung von virtuellen Compute
 
 + Überwachen der Sicherungsaufträge
 
-<!---HONumber=GIT-SubDir-->
+<!---HONumber=GIT-SubDir--> 

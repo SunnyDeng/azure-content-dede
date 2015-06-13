@@ -78,4 +78,4 @@ Durch Klicken auf **Ändern** auf dem Bildschirm oben haben Kunden Flexibilität
 [4]: ./media/backup-azure-backup-cloud-as-tape/samplescreen.png
 [5]: ./media/backup-azure-backup-cloud-as-tape/modify.png
 
-<!---HONumber=GIT-SubDir-->
+<!---HONumber=GIT-SubDir--> 

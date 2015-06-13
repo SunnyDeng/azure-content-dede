@@ -26,7 +26,7 @@ Mit der Azure-Sicherung und Azure-Import/Export ist es einfacher und unkomplizie
 
 ## Voraussetzungen
 
-1. Es ist wichtig, sich mit der Azure-Import-Export-Workflow vertraut machen, die angezeigt wird, [hier](storage-import-export-service.md).
+1. Es ist wichtig, sich mit der Azure-Import-Export-Workflow vertraut machen, die angezeigt wird, [hier](../storage-import-export-service.md).
 
 2. Vor dem Initiieren des Workflows, stellen Sie sicher, dass ein Azure-sicherungstresor erstellt wurde, tresoranmeldedaten heruntergeladen wurden, Azure-Sicherungs-Agent auf dem Server für die Windows Server-Windows-Clients oder System Center Data Protection Manager (SCDPM) installiert wurde und der Computer mit dem Azure Backup-Tresor registriert ist.
 
@@ -42,7 +42,7 @@ Mit der Azure-Sicherung und Azure-Import/Export ist es einfacher und unkomplizie
 
 
 ## Workflow
-In diesem Abschnitt bereitgestellte Informationen ist zum Abschließen der **Offline Backup** Workflow, damit Ihre Daten an ein Azure-Rechenzentrum übermittelt und den Azure-Speicher hochgeladen werden. Wenn Sie Fragen zu den Import-Dienst oder einen Teil des Prozesses haben, finden Sie in der Import-Dienst verwiesen [über](storage-import-export-service.md).
+In diesem Abschnitt bereitgestellte Informationen ist zum Abschließen der **Offline Backup** Workflow, damit Ihre Daten an ein Azure-Rechenzentrum übermittelt und den Azure-Speicher hochgeladen werden. Wenn Sie Fragen zu den Import-Dienst oder einen Teil des Prozesses haben, finden Sie in der Import-Dienst verwiesen [über](../storage-import-export-service.md).
 
 ### Initiieren von Offline-Datensicherungen
 
@@ -119,7 +119,7 @@ Sobald der Vorgang abgeschlossen ist, ein *. AIBBlob* und *. BaseBlob* Datei wir
 Nach die anfänglichen backup-Daten im Speicherkonto verfügbar ist, kopiert der Azure-Sicherungs-Agent den Inhalt der Daten von diesem Konto aus dem Sicherungsspeicher Multi-tenanted-Konto an. In den nächsten geplanten Download backup führt der Azure-Sicherungs-Agent die inkrementelle Sicherung über die erste Sicherungskopie.
 
 ## Nächste Schritte
-+ Fragen auf den Azure-Import/Export-Workflow, finden Sie in diesen [Artikel](storage-import-export-service.md).
++ Fragen auf den Azure-Import/Export-Workflow, finden Sie in diesen [Artikel](../storage-import-export-service.md).
 
 + Lesen Sie den Abschnitt der Offline-Sicherung der Azure-Sicherung [häufig gestellte Fragen zu](backup-azure-backup-faq.md) Fragen zum Workflow
 
@@ -134,4 +134,4 @@ Nach die anfänglichen backup-Daten im Speicherkonto verfügbar ist, kopiert der
 [8]: ./media/backup-azure-backup-import-export/dpmoffline.png
 [9]: ./media/backup-azure-backup-import-export/dpmbackupnow.png
 
-<!---HONumber=GIT-SubDir-->
+<!---HONumber=GIT-SubDir--> 
