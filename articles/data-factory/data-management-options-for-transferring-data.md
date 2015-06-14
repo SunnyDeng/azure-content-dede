@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="Optionen für die Übertragung von gespeicherten Daten in die Cloud | Azure" 
 	description="Hilfestellung bei der Auswahl der besten Option für die Übertragung von Daten aus einer lokalen Bereitstellung oder anderen Cloudquellen in Microsoft Azure für eine erweiterte Analyse." 
 	services="data-factory, hdinsight, machine-learning, storage, sql-database" 
@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="big-data" 
-	ms.date="1/7/2014" 
+	ms.date="01/07/2014" 
 	ms.author="cgronlun"/>
 
 # Optionen für die Übertragung von gespeicherten Daten in die Cloud
