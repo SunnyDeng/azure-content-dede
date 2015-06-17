@@ -308,7 +308,7 @@ Da Service Bus-Warteschlangen eine Vielzahl erweiterter Funktionen wie Sitzungen
 Die folgenden Artikel enthalten weitere Anleitungen und Informationen zur Verwendung von Azure-Warteschlangen oder Service Bus-Warteschlangen.
 
 - [Verwenden von Servicebus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
-- [Verwenden des Warteschlangenspeicherdiensts](storage-dotnet-how-to-use-queues.md)
+- [Verwenden des Warteschlangenspeicherdiensts](storage/storage-dotnet-how-to-use-queues.md)
 - [Bewährte Methoden für Leistungsoptimierungen mithilfe von Service Bus-Brokermessaging](https://msdn.microsoft.com/library/hh528527.aspx)
 - [Introducing Queues and Topics in Azure Service Bus](http://www.code-magazine.com/article.aspx?quickid=1112041) (Einführung in Warteschlangen und Themen in Azure Service Bus, in englischer Sprache)
 - [The Developer's Guide to Service Bus](http://www.cloudcasts.net/devguide/) (Entwicklerhandbuch für Service Bus, in englischer Sprache)

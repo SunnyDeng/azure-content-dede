@@ -75,7 +75,7 @@ In diesem Lernprogramm wird der parallele Massenimport von Daten in SQL Server g
 
 So richten Sie Ihre Azure Data Science-Umgebung ein:
 
-1. [Erstellen Sie ein Speicherkonto.](storage-create-storage-account.md)
+1. [Erstellen Sie ein Speicherkonto.](storage/storage-create-storage-account.md)
 
 2. [Erstellen Sie einen Azure ML-Arbeitsbereich.](machine-learning-create-workspace.md)
 

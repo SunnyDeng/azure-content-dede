@@ -62,7 +62,7 @@ Bevor Sie mit dem Erstellen Ihrer Cloud Data Science-Umgebung beginnen, sollten 
 
 Abhängig von Ihrem Szenario benötigen Sie außerdem Folgendes:
 
-1.  Azure-Tools: [Azure PowerShell SDK](install-configure-powershell.md), [Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/), [AzCopy](storage-use-azcopy.md) und andere
+1.  Azure-Tools: [Azure PowerShell SDK](install-configure-powershell.md), [Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/), [AzCopy](storage/storage-use-azcopy.md) und andere
 2.  Virtuelle Azure-Computer mit SQL Server
 3.  Azure HDInsight (Hadoop)
 4.  Virtuelle Azure-Netzwerke für das Freigeben lokaler Dateien in Azure

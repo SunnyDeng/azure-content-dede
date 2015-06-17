@@ -31,7 +31,7 @@ Virtuelle Computer sind in zwei Ebenen verfügbar: Basic und Standard. Beide Typ
 
 *   VMs der D-Serie dienen zum Ausführen von Anwendungen, die eine höhere Rechenleistung und eine höhere temporäre Datenträgerleistung erfordern. VMs der D-Serie bieten schnellere Prozessoren, ein höheres Verhältnis von Speicher zu Kern und ein SSD (Solid State Drive) für den temporären Datenträger. Einzelheiten finden Sie in der Ankündigung im Azure-Blog unter [New D-Series Virtual Machine Sizes](http://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/) (Neue VM-Größen der D-Serie, in englischer Sprache).  
 
-*   VMs der DS-Serie können Premium-Speicher nutzen, der Hochleistungsspeicher mit geringer Latenz für e/a-intensive Arbeitsauslastungen bietet. Hier werden Solid-State-Laufwerke (SSDs) zum Hosten der Datenträger eines virtuellen Computers verwendet und ein lokaler SSD-Datenträgercache bereitgestellt. Premium-Speicher befindet sich in der Vorschau und ist in bestimmten Regionen verfügbar. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
+*   VMs der DS-Serie können Premium-Speicher nutzen, der Hochleistungsspeicher mit geringer Latenz für e/a-intensive Arbeitsauslastungen bietet. Hier werden Solid-State-Laufwerke (SSDs) zum Hosten der Datenträger eines virtuellen Computers verwendet und ein lokaler SSD-Datenträgercache bereitgestellt. Premium-Speicher befindet sich in der Vorschau und ist in bestimmten Regionen verfügbar. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage/storage-premium-storage-preview-portal.md).
 
 *   VMs der G-Serie bieten die größte Größe und die beste Leistung und werden auf Hosts mit Prozessoren der Intel Xeon E5 V3-Familie ausgeführt.
 
@@ -103,7 +103,7 @@ In den folgenden Tabellen sind die Größe und die Kapazität, die von den einze
 |Standard_DS13 (identisch)|8|56|<p>BS = 1023 GB</p><p>Lokales SSD-Laufwerk = 112 GB</p>|16|288|<p>25.600</p><p>256 MB pro Sekunde</p>|
 |Standard_DS14 (identisch)|16|112|<p>BS = 1023 GB</p><p>Lokales SSD-Laufwerk = 224 GB</p>|32|576|<p>50.000</p><p>512 MB pro Sekunde</p>|
 
-*Die bei einer DS-Serie möglichen Höchstwerte für E/A-Vorgänge pro Sekunde (IOPS) und Durchsatz (Bandbreite) werden durch die Größe des Datenträgers beeinflusst. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
+*Die bei einer DS-Serie möglichen Höchstwerte für E/A-Vorgänge pro Sekunde (IOPS) und Durchsatz (Bandbreite) werden durch die Größe des Datenträgers beeinflusst. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage/storage-premium-storage-preview-portal.md).
 
 ### Standard-Ebene – G-Serie
 

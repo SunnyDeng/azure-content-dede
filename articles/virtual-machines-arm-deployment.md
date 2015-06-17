@@ -25,7 +25,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie einige der verfügbaren Clients in 
 Zur Durchführung dieses Lernprogramms benötigen Sie außerdem Folgendes:
 
 - [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
-- [Azure-Speicherkonto](storage-create-storage-account.md)
+- [Azure-Speicherkonto](storage/storage-create-storage-account.md)
 - [Windows Management Framework 3.0 ](http://www.microsoft.com/de-de/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/de-de/download/details.aspx?id=40855)
 - [Azure PowerShell](install-configure-powershell.md)
 

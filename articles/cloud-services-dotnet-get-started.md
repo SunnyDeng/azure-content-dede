@@ -811,8 +811,8 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 * [Azure Cloud Services Teil 1: Einführung](http://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
 * [Azure Cloud Services](/documentation/services/cloud-services/)
 * [Azure-Speicher](/documentation/services/storage/)
-* [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md)
-* [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
+* [Verwenden des Blob-Speichers mit .NET](storage/storage-dotnet-how-to-use-blobs.md)
+* [Verwenden des Warteschlangenspeichers mit .NET](storage/storage-dotnet-how-to-use-queues.md)
 
 
 <!--HONumber=52-->

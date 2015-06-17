@@ -271,7 +271,7 @@ Informationen zur Verwendung des Azure SDK für Ruby zum Zugriff auf Azure-Diens
 
 
 <!-- WA.com links -->
-[blobs]: storage-ruby-how-to-use-blob-storage.md
+[blobs]: storage/storage-ruby-how-to-use-blob-storage.md
 
 [cdn-howto]: /develop/ruby/app-services/
 

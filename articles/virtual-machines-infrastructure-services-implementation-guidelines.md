@@ -167,7 +167,7 @@ Speicher ist ein integraler Bestandteil jeder Azure-Lösung, da er nicht nur Die
  
 Es sind zwei Arten von Speicher in Azure verfügbar. Mit Standardspeicher erhalten Sie Zugriff auf Blob-Speicher, Tabellenspeicher, Warteschlangenspeicher und Dateispeicher. Premium-Speicher wurde für Anwendungen mit hoher Leistung, wie z. B. SQL Server in einem AlwaysOn-Cluster, entworfen und unterstützt derzeit nur virtuelle Azure-Datenträger.
 
-Speicherkonten sind an Skalierbarkeitsziele gebunden. Machen Sie sich unter [Microsoft Azure-Abonnement- und -Dienstgrenzen, -Kontingente und -Einschränkungen](azure-subscription-service-limits.md#storage-limits) mit den aktuellen Azure-Speichergrenzwerten vertraut. Siehe auch [Skalierbarkeits- und Leistungsziele für Azure-Speicher](storage-scalability-targets.md).
+Speicherkonten sind an Skalierbarkeitsziele gebunden. Machen Sie sich unter [Microsoft Azure-Abonnement- und -Dienstgrenzen, -Kontingente und -Einschränkungen](azure-subscription-service-limits.md#storage-limits) mit den aktuellen Azure-Speichergrenzwerten vertraut. Siehe auch [Skalierbarkeits- und Leistungsziele für Azure-Speicher](storage/storage-scalability-targets.md).
 
 Azure erstellt virtuelle Computer mit Betriebssystem-Datenträger, einem temporären Datenträger und null oder mehreren optionalen Datenträgern. Der Betriebssystem-Datenträger und Datenträger mit Daten sind Azure-Blobs, während der temporäre Datenträger sich im lokalen Speicher des Knotens befindet, in dem auch der Computer gespeichert ist. Dadurch eignet sich der temporäre Datenträger nicht für Daten, die während eines Systemneustarts beibehalten werden müssen, da der Computer im Hintergrund von einem Knoten zu einem anderen migriert werden kann, wodurch Daten auf diesem Datenträger verloren gehen. Speichern Sie keine Daten im temporären Laufwerk.
 
@@ -550,6 +550,6 @@ Diese Azure-PowerShell-Befehle erstellen die virtuellen Computer in dieser Konfi
 
 [Größen virtueller Computer und Clouddienste für Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx)
 
-[Skalierbarkeits- und Leistungsziele für Azure-Speicher](storage-scalability-targets.md)
+[Skalierbarkeits- und Leistungsziele für Azure-Speicher](storage/storage-scalability-targets.md)
 
 <!--HONumber=54-->

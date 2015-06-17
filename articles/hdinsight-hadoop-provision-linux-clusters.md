@@ -79,7 +79,7 @@ Windows | Klicken Sie [hier](#portal) | Klicken Sie [hier](#cli) | Klicken Sie [
 
 ### <a id="portal"></a>Verwenden des Azure-Portals
 
-HDInsight-Cluster verwenden als Standarddateisystem einen Azure-Blobspeichercontainer. Sie benötigen ein Azure-Speicherkonto im entsprechenden Datencenter, um einen HDInsight-Cluster erstellen zu können. Weitere Informationen finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight](hdinsight-use-blob-storage.md). Weitere Informationen zum Erstellen eines Azure-Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](storage-create-storage-account.md).
+HDInsight-Cluster verwenden als Standarddateisystem einen Azure-Blobspeichercontainer. Sie benötigen ein Azure-Speicherkonto im entsprechenden Datencenter, um einen HDInsight-Cluster erstellen zu können. Weitere Informationen finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight](hdinsight-use-blob-storage.md). Weitere Informationen zum Erstellen eines Azure-Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](storage/storage-create-storage-account.md).
 
 
 > [AZURE.NOTE]HDInsight-Cluster können derzeit nur in den Regionen **Südostasien**, **Nordeuropa**, **USA (Osten)** und **USA (Süden-Mitte)** gehostet werden.
@@ -352,7 +352,7 @@ HDInsight verwendet Azure-Blobspeichercontainer als Standarddateisystem. Sie ben
 	Wählen Sie einen geeigneten Ort für die Bereitstellung des HDInsight-Linux-Clusters aus, wenn Sie dazu aufgefordert werden. Der Speicher muss sich am gleichen Standort befinden wie der HDInsight-Cluster.
 
 
-Informationen zum Erstellen von Azure-Speicherkonten im Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](storage-create-storage-account.md).
+Informationen zum Erstellen von Azure-Speicherkonten im Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](storage/storage-create-storage-account.md).
 
 Falls Sie bereits ein Speicherkonto haben, aber dessen Kontonamen und Kontoschlüssel nicht kennen, können Sie diese Daten mit den folgenden Befehlen abrufen:
 
@@ -365,7 +365,7 @@ Falls Sie bereits ein Speicherkonto haben, aber dessen Kontonamen und Kontoschl�
 	-- Lists the keys for a Storage account
 	azure storage account keys list <StorageAccountName>
 
-Ausführliche Informationen zum Abrufen dieser Informationen im Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](storage-create-storage-account.md) im Abschnitt "Anzeigen, Kopieren und Neuerstellen von Speicherzugriffsschlüsseln".
+Ausführliche Informationen zum Abrufen dieser Informationen im Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](storage/storage-create-storage-account.md) im Abschnitt "Anzeigen, Kopieren und Neuerstellen von Speicherzugriffsschlüsseln".
 
 Für einen HDInsight-Cluster benötigen Sie außerdem einen Container innerhalb des Speicherkontos. Falls das angegebene Speicherkonto noch keinen Container enthält, werden Sie von **azure hdinsight cluster create** zur Eingabe eines Containernamens aufgefordert, und der Container wird erstellt. Sie können den folgenden Befehl verwenden, um den Container vorab zu erstellen:
 

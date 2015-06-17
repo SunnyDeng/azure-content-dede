@@ -105,7 +105,7 @@ Das folgende Codebeispiel definiert den StateChanged-Ereignishandler. Dieser Ere
 
 ##<a id="check_progress_with_queues"></a>Verwenden von Azure-Warteschlangenspeicher zum Überwachen von Media Services-Auftragsbenachrichtigungen
 
-Microsoft Azure Media Services bietet die Möglichkeit, Benachrichtigungen an den [Azure-Warteschlangenspeicher](storage-dotnet-how-to-use-queues.md#what-is) zu übermitteln, während Medienaufträge verarbeitet werden. In diesem Thema wird gezeigt, wie Sie diese Benachrichtigungen aus dem Warteschlangenspeicher abrufen.
+Microsoft Azure Media Services bietet die Möglichkeit, Benachrichtigungen an den [Azure-Warteschlangenspeicher](storage/storage-dotnet-how-to-use-queues.md#what-is) zu übermitteln, während Medienaufträge verarbeitet werden. In diesem Thema wird gezeigt, wie Sie diese Benachrichtigungen aus dem Warteschlangenspeicher abrufen.
 
 Auf die an den Warteschlangenspeicher übermittelten Nachrichten kann von überall auf der Welt aus zugegriffen werden. Die Benachrichtigungsarchitektur für Azure-Warteschlangen ist zuverlässig und hochgradig skalierbar. Das Abrufen des Warteschlangenspeichers wird gegenüber anderen Methoden empfohlen. 
 
