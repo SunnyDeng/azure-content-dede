@@ -1,7 +1,8 @@
-﻿<properties 
+<properties 
 	pageTitle="Überwachen der Verfügbarkeit und Reaktionszeit von Websites" 
 	description="Richten Sie Webtests in Application Insights ein. Erhalten Sie Benachrichtigungen, wenn eine Website nicht mehr zur Verfügung steht oder langsam reagiert."
 	services="application-insights" 
+documentationCenter=""
 	authors="alancameronwills" 
 	manager="kamrani"/>
 
@@ -11,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="2015-01-27" 
+	ms.date="01/27/2015" 
 	ms.author="awills"/>
  
 # Überwachen der Verfügbarkeit und Reaktionszeit von Websites

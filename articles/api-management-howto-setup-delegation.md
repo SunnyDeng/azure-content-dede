@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="1/14/2015" 
+	ms.date="01/14/2015" 
 	ms.author="antonba"/>
 
 # Delegieren von Benutzerregistrierung und Produktabonnierung

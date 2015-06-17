@@ -1,7 +1,8 @@
-﻿<properties 
+<properties 
 	pageTitle="Diagnostizieren von Leistungsproblemen auf einer ausgeführten Website" 
 	description="Überwachen Sie die Leistung einer Website, ohne sie erneut bereitzustellen. Zur eigenständigen Verwendung oder in Verbindung mit dem Application Insights SDK" 
 	services="application-insights" 
+documentationCenter=".net"
 	authors="alancameronwills" 
 	manager="kamrani"/>
 
@@ -11,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="2015-01-23" 
+	ms.date="01/23/2015" 
 	ms.author="awills"/>
  
 

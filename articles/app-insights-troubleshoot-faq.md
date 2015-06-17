@@ -11,7 +11,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="2015-02-03" 
+	ms.date="02/03/2015" 
 	ms.author="awills"/>
  
 # Problembehandlung sowie Fragen und Antworten - Application Insights in Microsoft Azure-Vorschau
