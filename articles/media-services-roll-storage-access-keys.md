@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Aktualisieren von Media Services nach dem Austausch der Speicherschlüssel" 
 	description="In diesem Artikel lernen Sie, wie Sie Media Services nach dem Austausch der Speicherzugriffsschlüssel aktualisieren." 
 	services="media-services" 
@@ -33,7 +33,7 @@ In diesem Thema werden die Schritte zum Austausch der Speicherschlüssel und zum
 
 ## Schritt 1: Erneutes Generieren des sekundären Speicherzugriffsschlüssels
 
-Beginnen Sie mit dem Neugenerieren des sekundären Speicherschlüssels. Standardmäßig wird der sekundäre Schlüssel nicht von Media Services verwendet.  Informationen zum Austausch der Speicherschlüssel finden Sie unter [ Informationen zu Azure-Speicherkonten](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+Beginnen Sie mit dem Neugenerieren des sekundären Speicherschlüssels. Standardmäßig wird der sekundäre Schlüssel nicht von Media Services verwendet.  Informationen zum Austausch der Speicherschlüssel finden Sie unter [ Informationen zu Azure-Speicherkonten](storage/storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
   
 ##<a id="step2"></a>Schritt 2:  Aktualisieren von Media Services für die Verwendung des neuen sekundären Speicherschlüssels
 
@@ -91,7 +91,7 @@ Verwenden Sie zum Aktualisieren des Ablaufdatums für einen Locator die [REST](h
 
 ##Schritt 5: Erneutes Generieren des primären Speicherzugriffsschlüssels
 
-Generieren Sie den primären Speicherzugriffsschlüssel neu. Informationen zum Austausch der Speicherschlüssel finden Sie unter [ Informationen zu Azure-Speicherkonten](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+Generieren Sie den primären Speicherzugriffsschlüssel neu. Informationen zum Austausch der Speicherschlüssel finden Sie unter [ Informationen zu Azure-Speicherkonten](storage/storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
 
 ##Schritt 6: Aktualisieren von Media Services für die Verwendung des neuen primären Speicherschlüssels
 	

@@ -635,8 +635,8 @@ Nun wissen Sie, wie Sqoop verwendet haben. Weitere Informationen finden Sie unte
 [hdinsight-upload-data]: hdinsight-upload-data.md
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
 
-[sqldatabase-get-started]: sql-database-get-started.md
-[sqldatabase-create-configue]: sql-database-create-configure.md
+[sqldatabase-get-started]: sql-database/sql-database-get-started.md
+[sqldatabase-create-configue]: sql-database/sql-database-create-configure.md
 
 [powershell-start]: http://technet.microsoft.com/library/hh847889.aspx
 [powershell-install]: install-configure-powershell.md

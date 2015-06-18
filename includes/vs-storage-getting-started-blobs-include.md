@@ -1,4 +1,4 @@
-﻿#####Erstellen eines Containers
+#####Erstellen eines Containers
 Dateien werden in Ordnern gespeichert, Speicher-BLOBs analog dazu in Containern. Sie können ein **CloudBlobClient**-Objekt zum Verweisen auf einen vorhandenen Container verwenden, oder Sie können die Methode CreateCloudBlobClient() zum Erstellen eines neuen Containers aufrufen.
 
 Der folgende Code zeigt, wie ein neuer BLOB-Speichercontainer erstellt wird. Der Code erstellt zuerst ein **BlobClient**-Objekt, damit Sie auf die Funktionen des Objekts zugreifen können, z. B. zum Erstellen eines Speichercontainers. Der Code versucht dann, auf einen Speichercontainer namens "mycontainer" zu verweisen. Wird kein Container mit diesem Namen gefunden, wird der Container erstellt.

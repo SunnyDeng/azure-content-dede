@@ -26,9 +26,9 @@ Mithilfe der Informationen in [Cloud data science sample scenarios](http://azure
 
 
 
-> [AZURE.NOTE] Eine umfassende Einführung in Azure-Blob-Speicher finden Sie unter [How to use Blob storage from .NET](storage-dotnet-how-to-use-blobs.md) (in englischer Sprache) und unter  [Blob-Dienst-Konzepte](https://msdn.microsoft.com/library/azure/dd179376.aspx). 
+> [AZURE.NOTE] Eine umfassende Einführung in Azure-Blob-Speicher finden Sie unter [How to use Blob storage from .NET](storage/storage-dotnet-how-to-use-blobs.md) (in englischer Sprache) und unter  [Blob-Dienst-Konzepte](https://msdn.microsoft.com/library/azure/dd179376.aspx). 
 
-Bevor Sie Daten hoch- und herunterladen können, müssen Sie den Namen Ihres Azure-Speicherkontos und den Kontoschlüssel kennen. Anweisungen zum Abrufen dieser Informationen finden Sie im Abschnitt "Vorgehensweise: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln" unter [Informationen zu Azure-Speicherkonten](storage-create-storage-account.md). In diesem Dokument wird davon ausgegangen, dass Sie über ein Azure-Speicherkonto und die zugehörigen Speicherschlüssel verfügen.
+Bevor Sie Daten hoch- und herunterladen können, müssen Sie den Namen Ihres Azure-Speicherkontos und den Kontoschlüssel kennen. Anweisungen zum Abrufen dieser Informationen finden Sie im Abschnitt "Vorgehensweise: Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln" unter [Informationen zu Azure-Speicherkonten](storage/storage-create-storage-account.md). In diesem Dokument wird davon ausgegangen, dass Sie über ein Azure-Speicherkonto und die zugehörigen Speicherschlüssel verfügen.
 
 <a id="explorer"></a>
 ## Verwenden von Azure-Speicher-Explorer 
@@ -52,7 +52,7 @@ Azure-Speicher-Explorer ist ein kostenloses Windows-Tool zum Prüfen und Ändern
 
 AzCopy ist ein Befehlszeilenprogramm zum Hoch- und Herunterladen von Daten. 
 
-**Warnung** Wenn Sie einen anderen Computer als den oben im Cloud Data Science-Ablauf erstellten virtuellen Computer verwenden, installieren Sie AzCopy mithilfe der folgenden Installationsanweisungen: [Herunterladen und Installieren von AzCopy](storage-use-azcopy.md#install).
+**Warnung** Wenn Sie einen anderen Computer als den oben im Cloud Data Science-Ablauf erstellten virtuellen Computer verwenden, installieren Sie AzCopy mithilfe der folgenden Installationsanweisungen: [Herunterladen und Installieren von AzCopy](storage/storage-use-azcopy.md#install).
 
 ####Beispiele für das Hoch- und Herunterladen von Dateien in und aus Blobs:
 
@@ -77,7 +77,7 @@ AzCopy ist ein Befehlszeilenprogramm zum Hoch- und Herunterladen von Daten.
 > 2. Beim Herunterladen von Datei durchsucht "/S" die Container rekursiv, bis alle Dateien im angegebenen Verzeichnis und seinen Unterverzeichnissen oder alle Dateien, die dem angegebenen Muster im angegebenen Verzeichnis und seinen Unterverzeichnissen entsprechen, heruntergeladen wurden.  
 > 3.  Sie können mit dem "/Source"-Parameter keine bestimmte Blob-Datei für das Herunterladen angeben. Um eine bestimmte Datei herunterzuladen, geben Sie den Blob-Dateinamen mithilfe des "/Pattern"-Parameters an. Der "/S"-Parameter wird verwendet, damit AzCopy ein Dateinamenmuster rekursiv anwendet. Ohne den "/Pattern"-Parameter lädt AzCopy alle Dateien in diesem Verzeichnis herunter. 
 
-Ausführliche Informationen zur Verwendung von AzCopy finden Sie unter [Erste Schritte mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md#install).
+Ausführliche Informationen zur Verwendung von AzCopy finden Sie unter [Erste Schritte mit dem Befehlszeilenprogramm AzCopy](storage/storage-use-azcopy.md#install).
 
 
 <a id="PythonSDK"></a>
@@ -91,7 +91,7 @@ Mit der Python-API im Azure SDK können Sie folgende Aufgaben ausführen:
 - Auflisten der Blobs in einem Container
 - Löschen eines Blobs
 
-In diesem Abschnitt wird beschrieben, wie Blobs aufgelistet, hochgeladen und heruntergeladen werden. Weitere Informationen zur Verwendung der Python-API finden Sie unter [Verwenden des Blob-Speicherdiensts aus Python](storage-python-how-to-use-blob-storage.md). 
+In diesem Abschnitt wird beschrieben, wie Blobs aufgelistet, hochgeladen und heruntergeladen werden. Weitere Informationen zur Verwendung der Python-API finden Sie unter [Verwenden des Blob-Speicherdiensts aus Python](storage/storage-python-how-to-use-blob-storage.md). 
 
 > [AZURE.NOTE] Wenn Sie einen anderen Computer als den oben im Cloud Data Science-Ablauf erstellten virtuellen Computer verwenden, installieren Sie das [Python Azure SDK](python-how-to-install.md) mithilfe des folgenden Beispielcodes:
 

@@ -118,7 +118,7 @@ Voraussetzung für dieses Lernprogramm ist der Abschluss des Lernprogramms [Erst
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 [Erste Schritte mit Daten]: mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[What is the Table Service]: storage-dotnet-how-to-use-tables.md#what-is
+[What is the Table Service]: storage/storage-dotnet-how-to-use-tables.md#what-is
 [MongoLab Add-On-Seite]: /gallery/store/mongolab/mongolab
 
 <!--HONumber=54-->
