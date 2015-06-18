@@ -29,7 +29,7 @@ In diesem Artikel werden die Cloud Data Science Process-Zuordnung sowie einige Q
 
    [Erstellen eines Speicherkontos](storage-whatis-account.md)
 
-  [Erstellen eines Azure ML-Arbeitsbereichs](machine-learning-create-workspace.md)
+  [Erstellen eines Azure ML-Arbeitsbereichs](machine-learning/machine-learning-create-workspace.md)
 
 **In den folgenden Abschnitte werden einige Beispielszenarien vorgestellt. Für jedes Szenario werden ein möglicher Data Science-Ablauf und die unterstützenden Azure-Ressourcen aufgeführt.**
 
@@ -175,7 +175,7 @@ In diesem Artikel werden die Cloud Data Science Process-Zuordnung sowie einige Q
 
     f. Wenn Tabellenverknüpfungen erforderlich sind, erstellen Sie Indizes, um Verknüpfungen zu beschleunigen.
 
- >[AZURE.NOTE]Zum schnelleren Laden großer Datenmengen empfiehlt es sich, die Erstellung partitionierter Tabellen und den Massenimport der Daten parallel durchzuführen. Weitere Informationen finden Sie unter [Paralleler Datenimport in partitionierte SQL-Tabellen](machine-learning-data-science-parallel-load-sql-partitioned-tables.md).
+ >[AZURE.NOTE]Zum schnelleren Laden großer Datenmengen empfiehlt es sich, die Erstellung partitionierter Tabellen und den Massenimport der Daten parallel durchzuführen. Weitere Informationen finden Sie unter [Paralleler Datenimport in partitionierte SQL-Tabellen](machine-learning/machine-learning-data-science-parallel-load-sql-partitioned-tables.md).
 
 5.  Erkunden Sie die Daten, und erstellen Sie Features nach Bedarf. Beachten Sie, dass die Features nicht in den Datenbanktabellen materialisiert werden müssen. Beachten Sie nur die erforderliche Abfrage, um sie zu erstellen.
 
@@ -215,7 +215,7 @@ In diesem Artikel werden die Cloud Data Science Process-Zuordnung sowie einige Q
 
 	f. Wenn Tabellenverknüpfungen erforderlich sind, erstellen Sie Indizes, um Verknüpfungen zu beschleunigen.
 
-> [AZURE.NOTE]Zum schnelleren Laden großer Datenmengen führen Sie die Erstellung partitionierter Tabellen und den Massenimport der Daten parallel durch. Weitere Informationen finden Sie unter [Paralleler Datenimport in partitionierte SQL-Tabellen](machine-learning-data-science-parallel-load-sql-partitioned-tables.md).
+> [AZURE.NOTE]Zum schnelleren Laden großer Datenmengen führen Sie die Erstellung partitionierter Tabellen und den Massenimport der Daten parallel durch. Weitere Informationen finden Sie unter [Paralleler Datenimport in partitionierte SQL-Tabellen](machine-learning/machine-learning-data-science-parallel-load-sql-partitioned-tables.md).
 
 5.  Erkunden Sie die Daten, und erstellen Sie Features nach Bedarf. Beachten Sie, dass die Features nicht in den Datenbanktabellen materialisiert werden müssen. Beachten Sie nur die erforderliche Abfrage, um sie zu erstellen.
 
@@ -300,7 +300,7 @@ Im folgenden Diagramm werden die oben beschriebenen Szenarien und die in den ein
 
 ### Beispiel für Azure Data Science in Aktion
 
-Ein umfassendes Beispiel für den Azure Data Science Process anhand eines öffentlichen Datasets finden Sie unter [Azure Data Science Process in Aktion](machine-learning-data-science-process-sql-walkthrough.md).
+Ein umfassendes Beispiel für den Azure Data Science Process anhand eines öffentlichen Datasets finden Sie unter [Azure Data Science Process in Aktion](machine-learning/machine-learning-data-science-process-sql-walkthrough.md).
 
 [1]: ./media/machine-learning-data-science-plan-sample-scenarios/dsp-plan-small-in-aml.png
 [2]: ./media/machine-learning-data-science-plan-sample-scenarios/dsp-plan-local-with-processing.png

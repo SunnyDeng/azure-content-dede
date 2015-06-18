@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Erstellen Sie Ihre erste Azure-Suchanwendung in .NET" 
 	description="Lernprogramm zum Erstellen einer Projektmappe mithilfe der .NET-Clientbibliothek aus dem Azure Search .NET SDK." 
 	services="search" 
@@ -78,7 +78,7 @@ Im restlichen Teil dieses Abschnitts werden einige Punkte zu jedem Projekt behan
 
 Damit das Projekt einfach bleibt, werden die Daten in die Projektmappe eingebettet. Dazu wird eine Textdatei verwendet, die aus Daten generiert wurde, die von der [USGS-Website (United States Geological Services)](http://geonames.usgs.gov/domestic/download_data.htm) stammen. 
 
-Alternativen zum Einbetten von Daten sind [Indexer für DocumentDB](documentdb-search-indexer.md) oder [Indexer für Azure SQL-Datenbank](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md). Indexer rufen Daten in Ihren Azure Search-Index ab, wodurch sich der Code, den Sie schreiben und pflegen müssen, ggf. deutlich vereinfachen kann. 
+Alternativen zum Einbetten von Daten sind [Indexer für DocumentDB](documentdb/documentdb-search-indexer.md) oder [Indexer für Azure SQL-Datenbank](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md). Indexer rufen Daten in Ihren Azure Search-Index ab, wodurch sich der Code, den Sie schreiben und pflegen müssen, ggf. deutlich vereinfachen kann. 
 
 Sie können auch Daten aus einer lokalen SQL Server-Datenbank laden. [In diesem Lernprogramm](http://azure.microsoft.com/blog/2014/11/10/how-to-sync-sql-server-data-with-azure-search/) wird gezeigt, wie das geht.
 

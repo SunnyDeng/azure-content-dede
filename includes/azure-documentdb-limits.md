@@ -106,6 +106,6 @@
 </tr>
 </table>
 
-Kontingente mit einem Sternchen (*) [können angepasst werden. Wenden Sie sich dafür an den Azure-Support](../articles/documentdb-increase-limits.md).
+Kontingente mit einem Sternchen (*) [können angepasst werden. Wenden Sie sich dafür an den Azure-Support](../articles/documentdb/documentdb-increase-limits.md).
 
 <!---HONumber=58-->
