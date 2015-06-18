@@ -78,6 +78,6 @@ Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe
 
  [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](http://go.microsoft.com/fwlink/p/?linkid=328042)
 
- [Größen für Virtual Machines](virtual-machines-size-specs.md)
+ [Größen für Virtual Machines](virtual-machines/virtual-machines-size-specs.md)
 
 <!---HONumber=58-->

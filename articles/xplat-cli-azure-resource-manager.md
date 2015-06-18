@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Verwenden der plattformübergreifenden Microsoft Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager" 
 	description="Verwenden der plattformübergreifenden Microsoft Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager" 
 	editor="tysonn" 
@@ -185,3 +185,4 @@ Verwenden Sie den Befehl  `azure group log show`, um protokollierte Informatione
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
 
 <!--HONumber=47-->
+ 

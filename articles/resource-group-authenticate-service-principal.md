@@ -126,17 +126,17 @@ Erste Schritte
 
 - [Azure Resource Manager Overview](./resource-group-overview.md)(Übersicht über den Azure-Ressourcen-Manager)  
 - [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](./powershell-azure-resource-manager.md)
-- [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](./xplat-cli-azure-resource-manager.md)  
+- [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](virtual-machines/xplat-cli-azure-resource-manager.md)  
 - [Using the Azure Portal to manage your Azure resources](./resource-group-portal.md)(Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen)  
   
 Erstellen und Bereitstellen von Anwendungen
   
 - [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md)(Erstellen von Vorlagen im Azure-Ressourcen-Manager)  
 - [Deploy an application with Azure Resource Manager Template](./resource-group-template-deploy.md)(Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)  
-- [Troubleshooting Resource Group Deployments in Azure](./resource-group-deploy-debug.md)(Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)  
+- [Troubleshooting Resource Group Deployments in Azure](virtual-machines/resource-group-deploy-debug.md)(Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)  
 - [Azure Resource Manager Template Functions](./resource-group-template-functions.md)(Vorlagenfunktionen im Azure-Ressourcen-Manager)  
 - [Advanced Template Operations](./resource-group-advanced-template.md)(Erweiterte Anwendungen mit Vorlagen)  
-- [Deploy Azure Resources Using .NET Libraries and a Template](./arm-template-deployment.md)(Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage)
+- [Deploy Azure Resources Using .NET Libraries and a Template](virtual-machines/arm-template-deployment.md)(Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage)
   
 Organisieren von Ressourcen
   

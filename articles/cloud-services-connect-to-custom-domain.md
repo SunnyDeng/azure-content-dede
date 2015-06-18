@@ -30,7 +30,7 @@ Befolgen Sie diese Schrittanleitung, und fügen Sie unten einen Kommentar ein, f
 
 ## Erstellen eines virtuellen Netzwerks
 
-Sie können ein Virtual Network in Azure über PowerShell oder das Azure-Portal erstellen. In diesem Lernprogramm wird PowerShell verwendet. Informationen zum Erstellen eines Virtual Network über das Azure-Portal finden Sie unter [Erstellen eines virtuellen Netzwerks](create-virtual-network.md).
+Sie können ein Virtual Network in Azure über PowerShell oder das Azure-Portal erstellen. In diesem Lernprogramm wird PowerShell verwendet. Informationen zum Erstellen eines Virtual Network über das Azure-Portal finden Sie unter [Erstellen eines virtuellen Netzwerks](virtual-machines/create-virtual-network.md).
 
     #Create Virtual Network
 

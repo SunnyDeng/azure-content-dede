@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Azure Search-Fallstudie für Entwickler: So hat WhatToPedia ein Infomedia-Portal auf Microsoft Azure erstellt" 
 	description="Erfahren Sie, wie ein Azure-Suchdienst verwendet werden kann, ein Informationsportal und eine Metasuchmaschine zu erstellen" 
 	services="search, sql-database,  storage, web-sites" 
@@ -417,7 +417,7 @@ Der folgende Code erstellt den Indexer, der im Abschnitt über die Erstellung de
 
 
 <!--Link references-->
-[Link 1 zu einem anderen azure.microsoft.com-Dokumentationsthema]: virtual-machines-windows-tutorial.md
+[Link 1 zu einem anderen azure.microsoft.com-Dokumentationsthema]: virtual-machines/virtual-machines-windows-tutorial.md
 [Link 2 zu einem anderen azure.microsoft.com-Dokumentationsthema]: web-sites-custom-domain-name.md
 [Link 3 zu einem anderen azure.microsoft.com-Dokumentationsthema]: storage-whatis-account.md
 

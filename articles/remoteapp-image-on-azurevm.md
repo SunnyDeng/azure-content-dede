@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
     pageTitle="Erstellen von RemoteApp-Images auf Grundlage einer Azure-VM"
     description="Erfahren Sie, wie Sie ein Image für RemoteApp basierend auf einem virtuellen Azure-Computer erstellen." 
     services="remoteapp" 
@@ -37,7 +37,7 @@ Führen Sie diese Schritte zum Erstellen eines Images auf Grundlage eines Azure-
 
 3. Wenn Sie das Image "Windows Server Remote Desktop Session Host" verwenden, können Sie das enthaltene Validierungsskript nutzen, um sicherzustellen, dass Ihr virtueller Computer den Anforderungen an RemoteApp entspricht. Doppelklicken Sie zur Ausführung des Skripts auf dem Desktop auf **ValidateRemoteAppImage**. Stellen Sie sicher, dass alle vom Skript gemeldeten Fehler behoben wurden, bevor Sie mit dem nächsten Schritt fortfahren.
 
-4. Führen Sie Sysprep mit "/generalize" aus, und erfassen Sie das Image. Weitere Informationen dazu finden Sie unter [Erfassen eines virtuellen Windows-Computers, um ihn als Vorlage zu verwenden](virtual-machines-capture-image-windows-server.md).
+4. Führen Sie Sysprep mit "/generalize" aus, und erfassen Sie das Image. Weitere Informationen dazu finden Sie unter [Erfassen eines virtuellen Windows-Computers, um ihn als Vorlage zu verwenden](virtual-machines/virtual-machines-capture-image-windows-server.md).
 
  
 

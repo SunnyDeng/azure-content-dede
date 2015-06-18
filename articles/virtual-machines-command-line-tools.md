@@ -20,7 +20,7 @@
 
 In diesem Thema wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle im **ASM-Modus** Dienste in der Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Die Funktionen ähneln denen der Windows PowerShell-Cmdlets, die mit den Azure SDKs für .NET, Node.JS und PHP installiert werden.
 
-> [AZURE.NOTE]Das Verwenden von Azure-Diensten im **ASM-Modus** ähnelt begrifflich individuellen Azure-Konzepten und -Diensten wie Websites, virtuellen Computern, virtuellen Netzwerken, Speicher usw. Im **ARM-Modus** stehen Ihnen in der Befehlszeile umfangreichere Funktionen mit einem logisch gruppierten und hierarchischen Ressourcenmodell zur Verfügung. Weitere Informationen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md).
+> [AZURE.NOTE]Das Verwenden von Azure-Diensten im **ASM-Modus** ähnelt begrifflich individuellen Azure-Konzepten und -Diensten wie Websites, virtuellen Computern, virtuellen Netzwerken, Speicher usw. Im **ARM-Modus** stehen Ihnen in der Befehlszeile umfangreichere Funktionen mit einem logisch gruppierten und hierarchischen Ressourcenmodell zur Verfügung. Weitere Informationen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](virtual-machines/xplat-cli-azure-resource-manager.md).
 
 Eine Installationsanleitung finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
 

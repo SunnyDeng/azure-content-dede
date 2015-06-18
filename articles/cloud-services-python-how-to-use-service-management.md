@@ -398,9 +398,9 @@ Um schließlich den virtuellen Computer mithilfe des erfassten Image zu erstelle
 		role_size='Small',
 		vm_image_name = image_name)
 
-Weitere Informationen zum Erfassen eines virtuellen Linux-Computers finden Sie unter [Erfassen eines virtuellen Linux-Computers](virtual-machines-linux-capture-image.md).
+Weitere Informationen zum Erfassen eines virtuellen Linux-Computers finden Sie unter [Erfassen eines virtuellen Linux-Computers](virtual-machines/virtual-machines-linux-capture-image.md).
 
-Weitere Informationen zum Erfassen eines virtuellen Windows-Computers finden Sie unter [Erfassen eines virtuellen Windows-Computers](virtual-machines-capture-image-windows-server.md).
+Weitere Informationen zum Erfassen eines virtuellen Windows-Computers finden Sie unter [Erfassen eines virtuellen Windows-Computers](virtual-machines/virtual-machines-capture-image-windows-server.md).
 
 ## <a name="What's Next"> </a>Nächste Schritte
 
