@@ -1,4 +1,10 @@
-< Eigenschaften Seitentitel = "Application Insights für C++-Anwendungen" Description = "Analysieren der Nutzung und Leistung von C++-Anwendungen mit Application Insights" Dienste "Application Insights" DocumentationCenter = = "Cpp" Autoren = "Crystk" Manager "Jakubo" = "/ >
+<properties 
+pageTitle="Application Insights für C++-Anwendungen" 
+description="Analysieren der Nutzung und Leistung von C++-Anwendungen mit Application Insights" 
+    services="application-insights" 
+    documentationCenter="cpp"
+    authors="crystk" 
+    manager="jakubo""/>
 
 <tags 
     ms.service="application-insights" 
@@ -46,11 +52,11 @@ Der Schlüssel identifiziert die Ressource, den Sie bald im SDK installieren kö
     ![Wählen Sie **Online**, **Vorabversion einschließen** aus, und suchen Sie nach "Application Insights"](./media/app-insights-windows-cpp/04-ai-nuget.png)
 
 3. In Ihren Projekteinstellungen für die Release- und Debugversionen:
-  - Hinzufügen von $(VC++-Verzeichnisse in den Projekteigenschaften SolutionDir)packages\\ApplicationInsights-CPP.1.0.0-Beta\\src\\inc -> -> Includeverzeichnisse
-  - Hinzufügen von $(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native < PLATTFORMTYP > \\release\\AppInsights_Win10-UAP in den Projekteigenschaften -> VC++-Verzeichnisse Bibliotheksverzeichnisse ->
+  - Hinzufügen von $(VC++-Verzeichnisse in den Projekteigenschaften SolutionDir)packages\ApplicationInsights-CPP.1.0.0-Beta\src\inc -> -> Includeverzeichnisse
+  - Hinzufügen von $(SolutionDir)packages\ApplicationInsights.1.0.0-Beta\lib\native\< PLATTFORMTYP >\release\AppInsights_Win10-UAP in den Projekteigenschaften -> VC++-Verzeichnisse Bibliotheksverzeichnisse ->
 
-4. Hinzufügen von ApplicationInsights.winmd als Verweis zum Projekt $(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native < PLATTFORMTYP > \\release\\ApplicationInsights
-5. Fügen Sie der AppInsights_Win10-UAP.dll von $(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native < PLATTFORMTYP > \\release\\AppInsights_Win10-UAP. Wechseln Sie zu Eigenschaften und Inhalte auf "Ja" festgelegt. Dadurch wird die Dll in das Build-Verzeichnis kopiert.
+4. Hinzufügen von ApplicationInsights.winmd als Verweis zum Projekt $(SolutionDir)packages\ApplicationInsights.1.0.0-Beta\lib\native < PLATTFORMTYP > \release\ApplicationInsights
+5. Fügen Sie der AppInsights_Win10-UAP.dll von $(SolutionDir)packages\ApplicationInsights.1.0.0-Beta\lib\native < PLATTFORMTYP > \release\AppInsights_Win10-UAP. Wechseln Sie zu Eigenschaften und Inhalte auf "Ja" festgelegt. Dadurch wird die Dll in das Build-Verzeichnis kopiert.
 
 ## Verwenden des SDK
 
