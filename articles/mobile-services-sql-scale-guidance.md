@@ -205,7 +205,7 @@ In diesem Abschnitt werden erweiterte Diagnoseaufgaben behandelt, die hilfreich 
 ### Voraussetzungen
 Um einige der Diagnoseaufgaben in diesem Abschnitt durchführen zu können, benötigten Sie Zugriff auf ein Verwaltungstool für SQL-Datenbanken wie **SQL Server Management Studio** oder die integrierte Verwaltungsfunktion des **Azure-Verwaltungsportals**.
 
-SQL Server Management Studio ist eine kostenlose Windows-Anwendung, die die fortgeschrittensten Funktionen bietet. Wenn Sie keinen Zugang zu einem Windows-Computer haben (wenn Sie z. B. einen Mac benutzen), können Sie einen virtuellen Computer in Azure wie in [Erstellen eines virtuellen Windows Server-Computers](virtual-machines-windows-tutorial.md) beschrieben bereitstellen und dann eine Remoteverbindung mit ihm herstellen. Wenn Sie den virtuellen Computer hauptsächlich für die Ausführung von SQL Server Management Studio benötigen, sollte eine **Basic A0**-Instanz (früher „Sehr klein“) ausreichend sein.
+SQL Server Management Studio ist eine kostenlose Windows-Anwendung, die die fortgeschrittensten Funktionen bietet. Wenn Sie keinen Zugang zu einem Windows-Computer haben (wenn Sie z. B. einen Mac benutzen), können Sie einen virtuellen Computer in Azure wie in [Erstellen eines virtuellen Windows Server-Computers](virtual-machines/virtual-machines-windows-tutorial.md) beschrieben bereitstellen und dann eine Remoteverbindung mit ihm herstellen. Wenn Sie den virtuellen Computer hauptsächlich für die Ausführung von SQL Server Management Studio benötigen, sollte eine **Basic A0**-Instanz (früher „Sehr klein“) ausreichend sein.
 
 Das Azure-Verwaltungsportal bietet integrierte Verwaltungsfunktionen, die weniger umfassend, aber ohne lokale Installation verfügbar sind.
 

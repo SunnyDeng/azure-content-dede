@@ -1,7 +1,7 @@
 ## Senden von Nachrichten an Ereignis-Hubs
 In diesem Abschnitt schreiben wir eine C-App, um Ereignisse an den Ereignis-Hub zu senden. Wir werden die Proton AMQP-Bibliothek aus dem [Apache Qpid-Projekt](http://qpid.apache.org/) verwenden. Dies entspricht der Verwendung von Servicebuswarteschlangen und -themen mit AMQP aus C, wie [hier](https://code.msdn.microsoft.com/windowsazure/Using-Apache-Qpid-Proton-C-afd76504) gezeigt. Weitere Informationen finden Sie in der [Qpid Proton-Dokumentation](http://qpid.apache.org/proton/index.html).
 
-1. Klicken Sie auf der Seite [Qpid AMQP Messenger](http://qpid.apache.org/components/messenger/index.html) auf den Link **Installing Qpid Proton**, und befolgen Sie die Anweisungen für Ihre Umgebung. Es wird eine Linux-Umgebung vorausgesetzt, z. B. [Azure Linux VM](../articles/virtual-machines-linux-tutorial.md) mit Ubuntu 14.04.
+1. Klicken Sie auf der Seite [Qpid AMQP Messenger](http://qpid.apache.org/components/messenger/index.html) auf den Link **Installing Qpid Proton**, und befolgen Sie die Anweisungen für Ihre Umgebung. Es wird eine Linux-Umgebung vorausgesetzt, z. B. [Azure Linux VM](../articles/virtual-machines/virtual-machines-linux-tutorial.md) mit Ubuntu 14.04.
 
 2. Um die Proton-Bibliothek zu kompilieren, installieren Sie die folgenden Pakete:
 

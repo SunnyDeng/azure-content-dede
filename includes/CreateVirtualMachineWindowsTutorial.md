@@ -53,7 +53,7 @@ In diesem Abschnitt lernen Sie, wie Sie sich bei dem von Ihnen erstellten virtue
 
 ## <a id="attachdisk"> </a>Anschließen eines Datenträgers an den neuen virtuellen Computer ##
 
-In diesem Abschnitt erfahren Sie, wie Sie einen leeren Datenträge an den virtuellen Computer anfügen. Weitere Informationen zum Anfügen eines leeren Datenträgers und zum Anfügen eines vorhandenen Datenträgers finden Sie im [Lernprogramm zum Anfügen eines Datenträgers](../articles/storage-windows-attach-disk.md).
+In diesem Abschnitt erfahren Sie, wie Sie einen leeren Datenträge an den virtuellen Computer anfügen. Weitere Informationen zum Anfügen eines leeren Datenträgers und zum Anfügen eines vorhandenen Datenträgers finden Sie im [Lernprogramm zum Anfügen eines Datenträgers](../articles/virtual-machines/storage-windows-attach-disk.md).
 
 1. Melden Sie sich beim Azure [Verwaltungsportal](http://manage.windowsazure.com) an.
 
@@ -113,11 +113,11 @@ In diesem Abschnitt erfahren Sie, wie Sie einen leeren Datenträge an den virtue
 
 Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azure finden Sie in den folgenden Artikeln:
 
-[Verbinden virtueller Computer in einem Clouddienst](../articles/cloud-services-connect-virtual-machine.md)
+[Verbinden virtueller Computer in einem Clouddienst](../articles/virtual-machines/cloud-services-connect-virtual-machine.md)
 
-[Erstellen und Hochladen einer eigenen virtuellen Festplatte mit Windows Server-Betriebssystem](../articles/virtual-machines-create-upload-vhd-windows-server.md)
+[Erstellen und Hochladen einer eigenen virtuellen Festplatte mit Windows Server-Betriebssystem](../articles/virtual-machines/virtual-machines-create-upload-vhd-windows-server.md)
 
-[Anfügen eines Datenträgers an einen virtuellen Computer](../articles/storage-windows-attach-disk.md)
+[Anfügen eines Datenträgers an einen virtuellen Computer](../articles/virtual-machines/storage-windows-attach-disk.md)
 
 [Verwalten der Verfügbarkeit virtueller Computer](../articles/manage-availability-virtual-machines.md)
 

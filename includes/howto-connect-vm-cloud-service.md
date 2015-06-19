@@ -1,4 +1,4 @@
-﻿<properties authors="kathydav" editor="tysonn" manager="timlt" /> 
+<properties authors="kathydav" editor="tysonn" manager="timlt" /> 
 
 
 #Verbinden virtueller Computer mit einem virtuellen Netzwerk oder einem Cloud-Dienst
