@@ -14,7 +14,7 @@ ms.devlang="NA"
 	ms.author="jhubbard; sstein" 
 	ms.workload="data-services" 
 	ms.topic="article" 
-	ms.tgt_pltfrm=""/>
+	ms.tgt_pltfrm="NA"/>
 
 
 #Upgrade von Web- oder Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen
@@ -172,11 +172,11 @@ Die folgende Abfrage für die Masterdatenbank führt die Berechnung für die Dat
 
 **Beispielergebnis:**
 
-![Sample Result](media/sql-database-upgrade-new-service-tiers/CTnjv26.png)
+![Sample Result](media/sql-database-upgrade-new-service-tiers/sample_result.png)
 
 In der grafischen Darstellung erkennen Sie den Trend des durchschnittlichen prozentualen DTU-Verbrauchs im Lauf der Zeit. Das folgende Beispieldiagramm zeigt eine Datenbank, die sich die meiste Zeit in der S2-Stufe befindet und einige Spitzenwerte aufweist, die bis zu einer P1-Datenbankebene ansteigen.  Der DTU-Verbrauch im Lauf der Zeit variiert zwischen den Grenzwerten von "Basic" bis hin zu den Grenzwerten von "P1". Damit diese Datenbank vollständig in die neue Ebene integriert werden kann, benötigen Sie eine Datenbank der Premium-Dienstebene mit der Leistungsstufe "P1". Andererseits kann eine Datenbank mit der Leistungsstufe S2 funktionieren, wenn diese Spitzen in die Leistungsstufe P1 nur gelegentlich auftreten.
 
-![DTU Usage](media/sql-database-upgrade-new-service-tiers/e4N4ay5.png)
+![DTU Usage](media/sql-database-upgrade-new-service-tiers/DTU_usage.png)
 
 **Arbeitsspeicherauswirkungen auf die Leistung:** Arbeitsspeicher ist zwar eine der Ressourcendimensionen, die zur DTU-Bewertung beitragen - die SQL-Datenbank ist jedoch so konzipiert, dass der gesamte verfügbare Arbeitsspeicher für Datenbankvorgänge verwendet wird. Aus diesem Grund ist der Speicherverbrauch nicht im durchschnittlichen DTU-Verbrauch in der Abfrage oben enthalten. Andererseits wird der verfügbare Arbeitsspeicher für die Datenbank verringert, wenn Sie auf eine niedrigere Leistungsstufe wechseln. Dies kann zu einem höherer E/A-Verbrauch führen und sich auf die verbrauchten DTUs auswirken. Wenn Sie also auf eine niedrigere Leistungsstufe umsteigen, stellen Sie sicher, dass genügend Spielraum für den E/A-Prozentsatz verbleibt. Verwenden Sie die oben beschriebene dynamische Verwaltungssicht [sys.dm_db_resource_stats](http://msdn.microsoft.com/library/azure/dn800981.aspx), um diese Werte zu überwachen.
 
