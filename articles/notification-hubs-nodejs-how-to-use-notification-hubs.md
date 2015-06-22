@@ -210,7 +210,7 @@ Nachdem Sie nun mit der Verwendung von Notification Hubs grundlegend vertraut si
   [Azure Service Bus Notification Hubs]: http://msdn.microsoft.com/library/windowsazure/jj927170.aspx
   [SqlFilter]: http://msdn.microsoft.com/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
   [Website mit WebMatrix]: /develop/nodejs/tutorials/web-site-with-webmatrix/
-  [Node.js-Cloud-Dienst]: cloud-services-nodejs-develop-deploy-app.md
+  [Node.js-Cloud-Dienst]: cloud-services/cloud-services-nodejs-develop-deploy-app.md
 [Vorheriges Verwaltungsportal]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/previous-portal.png
   [nodejswebsite]: /develop/nodejs/tutorials/create-a-website-(mac)/
   [Node.js-Cloud-Dienst mit Speicher]: /develop/nodejs/tutorials/web-app-with-storage/

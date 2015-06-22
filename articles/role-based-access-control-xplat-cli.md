@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Verwalten der rollenbasierten Zugriffssteuerung mit der plattformübergreifenden Azure- Befehlszeilenschnittstelle" 
 	description="Verwalten der rollenbasierten Zugriffssteuerung mit der plattformübergreifenden Befehlszeilenschnittstelle" 
 	services="" 
@@ -148,3 +148,4 @@ In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Ve
 - [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](http://azure.microsoft.com/documentation/articles/role-based-access-control-troubleshooting/)
 
 <!--HONumber=46--> 
+ 

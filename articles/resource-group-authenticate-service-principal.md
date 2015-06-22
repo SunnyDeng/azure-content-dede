@@ -22,7 +22,7 @@ In diesem Thema erfahren Sie, wie Sie einem Dienstprinzipal (z. B. einem automat
 
 
 ## Konzepte
-1. Azure Active Directory (AAD): Dies ist ein Clouddienst zur Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [What is Azure Active Directory?](./active-directory-whatis.md) (Was ist Azure Active Directory?).
+1. Azure Active Directory (AAD): Dies ist ein Clouddienst zur Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [What is Azure Active Directory?](active-directory/active-directory-whatis.md) (Was ist Azure Active Directory?).
 2. Dienstprinzipal: Dies ist eine Anwendungsinstanz in einem Verzeichnis.
 3. AD-Anwendung: Dies ist ein Verzeichnisdatensatz, von dem eine Anwendung bei AAD identifiziert wird. Weitere Informationen finden Sie unter [Grundlagen der Authentifizierung im Azure AD](https://msdn.microsoft.com/library/azure/874839d9-6de6-43aa-9a5c-613b0c93247e#BKMK_Auth).
 
@@ -74,7 +74,7 @@ Zunächst wird ein Dienstprinzipal erstellt. Dazu muss im Verzeichnis eine Anwen
 
    Sie haben nun einen Dienstprinzipal im Verzeichnis erstellt. Dieser Dienstprinzipal verfügt jedoch noch nicht über Berechtigungen, und ihm wurde auch noch kein Bereich zugewiesen. Sie müssen dem Dienstprinzipal ausdrücklich die Berechtigungen zum Ausführen von Aktionen in einem bestimmten Bereich gewähren.
 
-4. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim Parameter **ServicePrincipalName** entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](./resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
+4. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim Parameter **ServicePrincipalName** entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](azure-portal/resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
 
         PS C:> New-AzureRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
@@ -107,7 +107,7 @@ Wenn noch keine Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows ins
 
 Sie müssen bereits über eine AD-Anwendung und einen Dienstprinzipal verfügen, um die folgenden Schritte ausführen zu können. Informationen zum Einrichten einer AD-Anwendung und eines Dienstprinzipals mithilfe des klassischen Azure-Portals finden Sie unter [Create a new Azure Service Principal using the Azure classic portal](./resource-group-create-service-principal-portal.md) (Erstellen eines neuen Azure- Dienstprinzipals mithilfe des klassischen Azure-Portals).
 
-1. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim Parameter **ServicePrincipalName** entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](./resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
+1. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim Parameter **ServicePrincipalName** entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](azure-portal/resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
 
         azure role assignment create --objectId {service-principal-object-id} -o Reader -c /subscriptions/{subscriptionId}/
 
@@ -127,12 +127,12 @@ Erste Schritte
 - [Azure Resource Manager Overview](./resource-group-overview.md)(Übersicht über den Azure-Ressourcen-Manager)  
 - [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](./powershell-azure-resource-manager.md)
 - [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](virtual-machines/xplat-cli-azure-resource-manager.md)  
-- [Using the Azure Portal to manage your Azure resources](./resource-group-portal.md)(Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen)  
+- [Using the Azure Portal to manage your Azure resources](azure-portal/resource-group-portal.md)(Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen)  
   
 Erstellen und Bereitstellen von Anwendungen
   
 - [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md)(Erstellen von Vorlagen im Azure-Ressourcen-Manager)  
-- [Deploy an application with Azure Resource Manager Template](./resource-group-template-deploy.md)(Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)  
+- [Deploy an application with Azure Resource Manager Template](azure-portal/resource-group-template-deploy.md)(Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)  
 - [Troubleshooting Resource Group Deployments in Azure](virtual-machines/resource-group-deploy-debug.md)(Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)  
 - [Azure Resource Manager Template Functions](./resource-group-template-functions.md)(Vorlagenfunktionen im Azure-Ressourcen-Manager)  
 - [Advanced Template Operations](./resource-group-advanced-template.md)(Erweiterte Anwendungen mit Vorlagen)  
@@ -144,7 +144,7 @@ Organisieren von Ressourcen
   
 Zugriffsverwaltung und -überwachung
   
-- [Managing and Auditing Access to Resources](./resource-group-rbac.md)(Verwalten und Überwachen des Zugriffs auf Ressourcen)  
+- [Managing and Auditing Access to Resources](azure-portal/resource-group-rbac.md)(Verwalten und Überwachen des Zugriffs auf Ressourcen)  
 - [Create a new Azure Service Principal using the Azure portal](./resource-group-create-service-principal-portal.md)(Erstellen eines neuen Azure-Dienstprinzipals mithilfe des Azure-Portals)  
   
 

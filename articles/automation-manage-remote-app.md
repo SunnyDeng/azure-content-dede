@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="Verwalten von Azure RemoteApp mithilfe von Azure Automation"
 	description="Erfahren Sie, wie der Azure Automation-Dienst zum Verwalten von Azure RemoteApp verwendet werden kann."
 	services="remoteapp, automation"
@@ -40,7 +40,7 @@ RemoteApp kann in Azure Automation über die PowerShell-Cmdlets verwaltet werden
 
 Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Verwendung zum Verwalten von Azure RemoteApp vertraut gemacht haben, folgen Sie diesen Links, um weitere Informationen zu Azure Automation zu erhalten.
 
-* Azure Automation: [Lernprogramm für den Einstieg](automation-create-runbook-from-samples.md)
+* Azure Automation: [Lernprogramm für den Einstieg](automation/automation-create-runbook-from-samples.md)
 
 
 <!--HONumber=52-->

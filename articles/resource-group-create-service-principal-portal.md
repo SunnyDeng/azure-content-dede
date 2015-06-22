@@ -100,12 +100,12 @@ Erste Schritte
 - [Übersicht des Azure Resource Manager](./resource-group-overview.md)  
 - [Verwenden von Azure PowerShell mit Azure Resource Manager](./powershell-azure-resource-manager.md)
 - [Verwenden der Azure CLI für Mac, Linux und Windows mit Azure Resource Management](virtual-machines/xplat-cli-azure-resource-manager.md)  
-- [Verwenden des Azure-Portals zur Verwaltung Ihrer Azure-Ressourcen](./resource-group-portal.md)  
+- [Verwenden des Azure-Portals zur Verwaltung Ihrer Azure-Ressourcen](azure-portal/resource-group-portal.md)  
   
 Erstellen und Einsetzen von Anwendungen
   
 - [Erstellen von Azure Resource Manager-Vorlagen](./resource-group-authoring-templates.md)  
-- [Bereitstellen einer Anwendung mit einer Azure Resource Manager-Vorlage](./resource-group-template-deploy.md)  
+- [Bereitstellen einer Anwendung mit einer Azure Resource Manager-Vorlage](azure-portal/resource-group-template-deploy.md)  
 - [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](virtual-machines/resource-group-deploy-debug.md)  
 - [Funktionen von Azure Resource Manager-Vorlagen](./resource-group-template-functions.md)  
 - [Erweiterte Vorlagenanwendung](./resource-group-advanced-template.md)  
@@ -117,7 +117,7 @@ Organisieren von Ressourcen
   
 Zugriffsverwaltung und -überwachung
   
-- [Verwalten und Überwachen des Ressourcen-Zugriffs](./resource-group-rbac.md)  
+- [Verwalten und Überwachen des Ressourcen-Zugriffs](azure-portal/resource-group-rbac.md)  
 - [Authentifizieren eines Dienstprinzipals mit Azure Resource Manager](./resource-group-authenticate-service-principal.md)  
 
 <!-- Images. -->
