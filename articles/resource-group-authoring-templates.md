@@ -254,7 +254,7 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
 
 ## Nächste Schritte
 - [Azure Resource Manager Template Functions](./resource-group-template-functions.md) (Vorlagenfunktionen im Azure-Ressourcen-Manager)
-- [Deploy an application with Azure Resource Manager Template](./resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)
+- [Deploy an application with Azure Resource Manager Template](azure-portal/resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)
 - [Advanced Template Operations](./resource-group-advanced-template.md) (Erweiterte Anwendungen mit Vorlagen)
 - [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
 

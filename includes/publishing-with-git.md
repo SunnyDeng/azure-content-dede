@@ -1,4 +1,4 @@
-﻿# Kontinuierliche Bereitstellung mit Git in Azure App Service
+# Kontinuierliche Bereitstellung mit Git in Azure App Service
 
 [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) unterstützt die fortlaufende Bereitstellung von Quellcodeverwaltungs- und Repository-Tools wie BitBucket, CodePlex, Dropbox, Git, GitHub, Mercurial und TFS in Web-Apps. Sie können diese Tools verwenden, um den Inhalt und den Code für Ihre Anwendung zu verwalten und bei Bedarf schnell und einfach Änderungen an Ihrer Azure-Web-App vorzunehmen.
 
@@ -302,6 +302,6 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 [Erstellen eines Repositorys (BitBucket)]: https://confluence.atlassian.com/display/BITBUCKET/Create+an+Account+and+a+Git+Repo
 [Schnellstart - Mercurial]: http://mercurial.selenic.com/wiki/QuickStart
 [Verwenden von Dropbox zum Freigeben von Git-Repositorys]: https://gist.github.com/trey/2722927
-[Kontinuierliche Bereitstellung für Azure mithilfe von Visual Studio Online]: ../articles/cloud-services-continuous-delivery-use-vso.md
+[Kontinuierliche Bereitstellung für Azure mithilfe von Visual Studio Online]: ../articles/cloud-services/cloud-services-continuous-delivery-use-vso.md
 
 <!--HONumber=49-->

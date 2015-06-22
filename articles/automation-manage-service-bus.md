@@ -40,7 +40,7 @@ Service Bus kann in Azure Automation mithilfe der [Service Bus-REST-API](https:/
 
 Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Verwendung zum Verwalten von Azure Service Bus vertraut gemacht haben, folgen Sie diesen Links, um weitere Informationen zu Azure Automation zu erhalten.
 
-* Lernprogramm [Erste Schritte](automation-create-runbook-from-samples.md) zu Azure Automation
+* Lernprogramm [Erste Schritte](automation/automation-create-runbook-from-samples.md) zu Azure Automation
 * Artikel [Verwalten von Service Bus mit PowerShell](service-bus-powershell-how-to-provision.md)
 
 <!---HONumber=58-->
