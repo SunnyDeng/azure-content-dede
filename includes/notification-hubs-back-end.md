@@ -1,6 +1,6 @@
 
 In diesem Abschnitt erfahren Sie, wie Sie Benachrichtigungen von einer .NET-Konsolen-App oder anderen senden.
-Bei Verwendung von Mobile Services finden Sie weitere Informationen in den Lernprogrammen [Erste Schritte mit Push](../articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md) . Wenn Sie Java oder PHP verwenden möchten, lesen Sie die Informationen unter [Verwenden von Notification Hubs von Java/PHP](notification-hubs-java-backend-how-to.md). Sie können Benachrichtigungen von beliebigen Back-Ends mithilfe der [Notification Hubs-REST-Schnittstelle] senden.
+Bei Verwendung von Mobile Services finden Sie weitere Informationen in den Lernprogrammen [Erste Schritte mit Push](../articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md) . Wenn Sie Java oder PHP verwenden möchten, lesen Sie die Informationen unter [Verwenden von Notification Hubs von Java/PHP](../articles/notification-hubs/notification-hubs-java-backend-how-to.md). Sie können Benachrichtigungen von beliebigen Back-Ends mithilfe der [Notification Hubs-REST-Schnittstelle] senden.
 
 Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, iOS- und Android-Geräte. 
 
@@ -92,7 +92,7 @@ Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, i
 [16]: ./media/notification-hubs-back-end/notification-hub-scheduler2.png
 
 <!-- URLs. -->
-[get-started]: ../articles/notification-hubs-windows-store-dotnet-get-started.md
+[get-started]: ../articles/notification-hubs/notification-hubs-windows-store-dotnet-get-started.md
 [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: ../articles/tutorial-notify-users-mobileservices.md
 [Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/

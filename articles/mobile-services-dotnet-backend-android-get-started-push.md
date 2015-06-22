@@ -116,9 +116,9 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 [Senden von Pushbenachrichtigungen an authentifizierte Benutzer]: mobile-services-dotnet-backend-android-push-notifications-app-users.md
 
-[Was sind Notification Hubs?]: notification-hubs-overview.md
-[Senden von Übertragungsbenachrichtigungen an Abonnenten]: notification-hubs-windows-store-dotnet-send-breaking-news.md
-[Senden vorlagenbasierter Benachrichtigungen an Abonnenten]: notification-hubs-windows-store-dotnet-send-localized-breaking-news.md
+[Was sind Notification Hubs?]: notification-hubs/notification-hubs-overview.md
+[Senden von Übertragungsbenachrichtigungen an Abonnenten]: notification-hubs/notification-hubs-windows-store-dotnet-send-breaking-news.md
+[Senden vorlagenbasierter Benachrichtigungen an Abonnenten]: notification-hubs/notification-hubs-windows-store-dotnet-send-localized-breaking-news.md
 [Azure Management Portal]: https://manage.windowsazure.com/
 
 <!--HONumber=54-->
