@@ -237,9 +237,9 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer iOS-App für 
 
 [Senden von Pushbenachrichtigungen an authentifizierte Benutzer]: mobile-services-javascript-backend-ios-push-notifications-app-users.md
 
-[Was sind Notification Hubs?]: notification-hubs-overview.md
-[Senden von Übertragungsbenachrichtigungen an Abonnenten]: notification-hubs-ios-send-breaking-news.md
-[Senden vorlagenbasierter Benachrichtigungen an Abonnenten]: notification-hubs-ios-send-localized-breaking-news.md
+[Was sind Notification Hubs?]: notification-hubs/notification-hubs-overview.md
+[Senden von Übertragungsbenachrichtigungen an Abonnenten]: notification-hubs/notification-hubs-ios-send-breaking-news.md
+[Senden vorlagenbasierter Benachrichtigungen an Abonnenten]: notification-hubs/notification-hubs-ios-send-localized-breaking-news.md
 
 [Mobile Services Objective-C-Anleitungen: Konzeptionelle Referenz]: mobile-services-windows-dotnet-how-to-use-client-library.md
 

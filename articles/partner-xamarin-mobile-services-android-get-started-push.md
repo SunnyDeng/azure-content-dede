@@ -78,7 +78,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 * [Erste Schritte mit der Authentifizierung](partner-xamarin-mobile-services-android-get-started-users.md)
   <br/>Informationen zur Authentifizierung von Benutzern Ihrer App mit verschiedenen Kontotypen mithilfe von mobilen Diensten.
 
-* [Was sind Notification Hubs?](notification-hubs-overview.md)
+* [Was sind Notification Hubs?](notification-hubs/notification-hubs-overview.md)
   <br/>Erfahren Sie, wie Sie mit Benachrichtigungshubs Benachrichtigungen an all Ihre Apps auf allen großen Clientplattformen versenden können.
 
 * [Debuggen von Notification Hubs-Anwendungen](http://go.microsoft.com/fwlink/p/?linkid=386630)

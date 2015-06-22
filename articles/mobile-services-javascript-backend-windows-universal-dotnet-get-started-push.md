@@ -66,13 +66,13 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Windows Store
 
 + [Senden von Pushbenachrichtigungen an authentifizierte Benutzer](mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users.md) <br/>Erfahren Sie, wie Pushbenachrichtigungen mithilfe von Tags von einem mobilen Dienst ausschließlich an authentifizierte Benutzer gesendet werden.
 
-+ [Senden von Übertragungsbenachrichtigungen an Abonnenten](notification-hubs-windows-store-dotnet-send-breaking-news.md) <br/>Erfahren Sie, wie Benutzer sich registrieren und Pushbenachrichtigungen für Kategorien erhalten können, an denen sie interessiert sind.
++ [Senden von Übertragungsbenachrichtigungen an Abonnenten](notification-hubs/notification-hubs-windows-store-dotnet-send-breaking-news.md) <br/>Erfahren Sie, wie Benutzer sich registrieren und Pushbenachrichtigungen für Kategorien erhalten können, an denen sie interessiert sind.
 
-+ [Senden plattformunabhängiger Benachrichtigungen an Abonnenten](notification-hubs-aspnet-cross-platform-notify-users.md) <br/>Erfahren Sie, wie Vorlagen zum Senden von Pushbenachrichtigungen von einem mobilen Dienst genutzt werden, ohne dass Sie im Back-End auf plattformspezifische Nutzlasten zurückgreifen müssen.
++ [Senden plattformunabhängiger Benachrichtigungen an Abonnenten](notification-hubs/notification-hubs-aspnet-cross-platform-notify-users.md) <br/>Erfahren Sie, wie Vorlagen zum Senden von Pushbenachrichtigungen von einem mobilen Dienst genutzt werden, ohne dass Sie im Back-End auf plattformspezifische Nutzlasten zurückgreifen müssen.
 
 Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in den folgenden Themen:
 
-* [Azure Notification Hubs - Diagnoserichtlinien](notification-hubs-diagnosing.md) <br/>Erfahren Sie, wie Sie Probleme mit Pushbenachrichtigungen beheben.
+* [Azure Notification Hubs - Diagnoserichtlinien](notification-hubs/notification-hubs-diagnosing.md) <br/>Erfahren Sie, wie Sie Probleme mit Pushbenachrichtigungen beheben.
 
 * [Erste Schritte mit der Authentifizierung] <br/>Informationen zur Authentifizierung von Benutzern Ihrer App mit verschiedenen Kontotypen mithilfe von mobilen Diensten.
 
@@ -94,7 +94,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 [Send push notifications to authenticated users]: mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users.md
 
-[Was sind Notification Hubs?]: notification-hubs-overview.md
+[Was sind Notification Hubs?]: notification-hubs/notification-hubs-overview.md
 
 [Verwenden eines .NET-Clients für Azure Mobile Services]: mobile-services-windows-dotnet-how-to-use-client-library.md
 

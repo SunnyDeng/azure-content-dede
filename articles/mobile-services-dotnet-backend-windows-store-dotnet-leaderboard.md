@@ -757,7 +757,7 @@ Wenn Sie nun die App ausführen, kommuniziert diese mit dem echten Dienst.
 [Informationen zu Azure Mobile Services]: /develop/mobile/resources/
 [Weitere Informationen zur Web-API]: http://asp.net/web-api
 [Behandeln von Schreibkonflikten in Datenbanken]: mobile-services-windows-store-dotnet-handle-database-conflicts.md
-[Hinzufügen von Pushbenachrichtigungen]: notification-hubs-windows-store-dotnet-get-started.md
+[Hinzufügen von Pushbenachrichtigungen]: notification-hubs/notification-hubs-windows-store-dotnet-get-started.md
 [Erste Schritte mit der Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-dotnet
 
 
