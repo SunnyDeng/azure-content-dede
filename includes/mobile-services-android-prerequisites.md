@@ -5,6 +5,6 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 > [AZURE.NOTE]Das Mobile Services Android SDK wurde auf Version 2.0 aktualisiert. Wenn Sie die beiden obigen Lernprogramme vor einiger Zeit abgeschlossen haben, müssen Sie sie erneut ausführen, wenn sie nicht das aktualisierte SDK verwendet haben. Um die von Ihrer App verwendete Version des SDK zu überprüfen, öffnen Sie sie in Android Studio, und überprüfen Sie die Inhalte des Ordners **libs**. Die Versionsnummern der JAR-Dateien von Mobile Services sollten 2.0 oder höher sein.
 
 <!-- URLs. -->
-[Erste Schritte mit Mobile Services]: ../articles/mobile-services-android-get-started.md
-[Hinzufügen von Mobile Services zu einer vorhandenen App]: ../articles/mobile-services-android-get-started-data.md
+[Erste Schritte mit Mobile Services]: ../articles/mobile-services/mobile-services-android-get-started.md
+[Hinzufügen von Mobile Services zu einer vorhandenen App]: ../articles/mobile-services/mobile-services-android-get-started-data.md
 <!--HONumber=54-->
