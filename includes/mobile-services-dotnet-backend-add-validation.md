@@ -1,4 +1,4 @@
-﻿
+
 Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, zu überprüfen. In diesem Abschnitt fügen Sie Code zum mobilen Service hinzu, der die Länge von Zeichenfolgendaten überprüft, die an den mobilen Service gesendet werden, und der Zeichenfolgen ablehnt, die zu lang sind, in diesem Fall länger als 10 Zeichen.
 
 1. Starten Sie Visual Studio mit der Option **Als Administrator ausführen**, und öffnen Sie die Lösung, die das Projekt für den mobilen Service enthält, mit dem Sie im Lernprogramm [Erste Schritte] oder [Erste Schritte mit Daten](mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md) gearbeitet haben.

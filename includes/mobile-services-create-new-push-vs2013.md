@@ -1,4 +1,4 @@
-﻿Mit den folgenden Schritten werden Ihre App im Windows Store registriert und Ihr mobiler Dienst für die Unterstützung von Pushbenachrichtigungen konfiguriert. Außerdem wird Ihrer App Code hinzugefügt, um einen Gerätekanal bei Ihrem Notification Hub zu registrieren. Visual Studio 2013 verwendet die von Ihnen angegebenen Anmeldeinformationen, um eine Verbindung mit Azure und dem Windows Store herzustellen. 
+Mit den folgenden Schritten werden Ihre App im Windows Store registriert und Ihr mobiler Dienst für die Unterstützung von Pushbenachrichtigungen konfiguriert. Außerdem wird Ihrer App Code hinzugefügt, um einen Gerätekanal bei Ihrem Notification Hub zu registrieren. Visual Studio 2013 verwendet die von Ihnen angegebenen Anmeldeinformationen, um eine Verbindung mit Azure und dem Windows Store herzustellen. 
 
 1. Öffnen Sie den Projektmappen-Explorer in Visual Studio 2013, klicken Sie dann mit der rechten Maustaste auf das Projekt für eine Windows Store-App, und klicken Sie auf **Hinzufügen** und anschließend auf **Pushbenachrichtigung...**. 
 

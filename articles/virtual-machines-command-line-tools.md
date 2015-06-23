@@ -1436,7 +1436,7 @@ Dieser Befehl löscht alle Zeilen aus der Tabelle.
 
 ###<a name="Mobile_Scripts"></a>Befehle zum Verwalten von Skripts
 
-Mit den Befehlen in diesem Abschnitt können Sie die Serverskripts eines Mobile Service verwalten. Weitere Informationen erhalten Sie unter [Verwenden von Serverskripts in Mobile Services.](mobile-services-how-to-use-server-scripts.md).
+Mit den Befehlen in diesem Abschnitt können Sie die Serverskripts eines Mobile Service verwalten. Weitere Informationen erhalten Sie unter [Verwenden von Serverskripts in Mobile Services.](mobile-services/mobile-services-how-to-use-server-scripts.md).
 
 **mobile script list [Optionen][servicename]**
 

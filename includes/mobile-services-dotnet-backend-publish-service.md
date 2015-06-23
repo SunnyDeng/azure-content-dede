@@ -2,7 +2,7 @@
 
 Nachdem Sie die Client-App anhand des lokalen mobilen Diensts getestet haben, besteht der letzte Schritt dieses Lernprogramms im Veröffentlichen des mobilen Diensts in Azure und Ausführen der App mit einem Live-Dienst.
 
->[AZURE.NOTE]Dieses Verfahren zeigt, wie Sie Ihren mobilen Dienst mithilfe der Visual Studio-Tools veröffentlichen können. Sie können auch Ihren mobilen .NET-Back-End-Dienst mithilfe der Quellcodeverwaltung veröffentlichen. Weitere Informationen finden Sie unter [Projektcode in der Quellcodeverwaltung speichern](../articles/mobile-services-dotnet-backend-store-code-source-control.md).
+>[AZURE.NOTE]Dieses Verfahren zeigt, wie Sie Ihren mobilen Dienst mithilfe der Visual Studio-Tools veröffentlichen können. Sie können auch Ihren mobilen .NET-Back-End-Dienst mithilfe der Quellcodeverwaltung veröffentlichen. Weitere Informationen finden Sie unter [Projektcode in der Quellcodeverwaltung speichern](../articles/mobile-services/mobile-services-dotnet-backend-store-code-source-control.md).
 
 1. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf das Projekt für den mobilen Dienst, klicken Sie auf **Veröffentlichen**, und klicken Sie dann im Dialogfeld **Web veröffentlichen** auf **Azure Mobile Services**.
 
