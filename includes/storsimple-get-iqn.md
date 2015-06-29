@@ -15,7 +15,7 @@
    ms.date="04/27/2015"
    ms.author="v-sharos" />
 
-###So rufen Sie den IQN eines Windows Server-Hosts ab
+#### So rufen Sie den IQN eines Windows Server-Hosts ab
 
 1. Starten Sie den Microsoft iSCSI-Initiator auf dem Windows-Host.
 
@@ -25,4 +25,4 @@
 
 3. Speichern Sie diese Zeichenfolge.
 
-<!--HONumber=52-->
+<!---HONumber=58_postMigration-->

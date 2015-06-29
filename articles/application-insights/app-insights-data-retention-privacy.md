@@ -34,9 +34,9 @@ Application Insights SDKs und Agents, die Sie mit Ihrer Anwendung kombinieren, s
 
 #### Wie viele Daten können erfasst werden? 
 
-**Pro Sekunde**: bis zu 500 Datenpunkte pro Sekunde pro instrumentationsschlüssel (d. h. pro Anwendung). Für die kostenlose [Preisstufe][pricing], das Limit ist 100 dp/s.
+**Pro Sekunde**: Es können bis zu 500 Datenpunkte pro Sekunde und pro Instrumentationsschlüssel (d. h. pro Anwendung) erfasst werden. Beim [Tarif "Free"][pricing] gelten 100 Datenpunkte/s als Obergrenze.
 
-**Monatliche**: zwischen 5 und 15 Millionen Datenpunkte pro Kalendermonat, abhängig von Ihrer [Preise Plan](http://azure.microsoft.com/pricing/details/application-insights/). Mit Ausnahme der kostenlosen [Preisstufe][pricing], können Sie zusätzlichen Kapazität kaufen, wenn Sie den Grenzwert erreicht.
+**Pro Monat**: Es können pro Kalendermonat, abhängig von Ihrem [Tarif](http://azure.microsoft.com/pricing/details/application-insights/), zwischen 5 und 15 Millionen Datenpunkte erfasst werden. Mit Ausnahme des [Tarifs "Free"][pricing] können Sie zusätzliche Kapazitäten erwerben, wenn Sie den Grenzwert erreichen.
 
 
 Ein *Datenpunkt* ist ein Telemetrie-Element, z. B.:
@@ -47,17 +47,17 @@ Ein *Datenpunkt* ist ein Telemetrie-Element, z. B.:
 
 *Woher weiß ich, wie viele Datenpunkte meine App sendet?*
 
-* Öffnen Sie die Einstellungen-Kontingent und Preise, um das Datenvolumen Diagramm anzuzeigen.
-* Oder im Metriken-Explorer ein neues Diagramm hinzufügen, und wählen Sie **Datenpunkt Volume** als die Metrik. Aktivieren Sie "Gruppierung", und gruppieren Sie nach **Datentyp**.
+* Öffnen Sie "Settings/Quota and Pricing", um das Diagramm mit dem Datenvolumen anzuzeigen.
+* Oder fügen Sie im Metrik-Explorer ein neues Diagramm hinzu, und wählen Sie **Datenpunktvolumen** als Metrik aus. Aktivieren Sie "Gruppierung", und gruppieren Sie nach **Datentyp**.
 
 
 #### Wie lange werden Daten aufbewahrt? 
 
-Es hängt von Ihrer [Preise Plan](http://azure.microsoft.com/pricing/details/application-insights/).
+Das hängt von Ihrem [Tarif](http://azure.microsoft.com/pricing/details/application-insights/) ab.
 
-Rohdaten-Punkte (d. h. Elemente, die Sie diagnostische Suche überprüfen können): zwischen 7 und 30 Tagen.
+Rohdatenpunkte (also Elemente, die Sie bei der Diagnosesuche überprüfen können): zwischen 7 und 30 Tagen.
 
-Aggregierte Daten (Zählungen, Mittelwerte und andere statistischen Daten, die in der Metrik Explorer angezeigt) werden auf eine Auflösung von 1 Minute für 30 Tage und 1 Stunde oder 1 Tag (abhängig vom Typ) mindestens 13 Monate beibehalten.
+Aggregierte Daten (d. h. Zählungen, Mittelwerte und andere statistischen Daten, die im Metrik-Explorer angezeigt werden) werden im Maß von 1 Minute für 30 Tage und 1 Stunde oder 1 Tag (abhängig vom Typ) für mindestens 13 Monate aufbewahrt.
 
 #### Welche Grenzen gibt es für die verschiedenen Datentypen?
 
@@ -202,6 +202,10 @@ SDK-Diagnose | Ablaufverfolgungsmeldung oder Ausnahme
 Sie können [einige der Daten durch Bearbeiten von ApplicationInsights.config abschalten][config]
 
 
+## Guthaben
+
+Dieses Produkt enthält GeoLite2-Daten, die von MaxMind erstellt wurden und unter [http://www.maxmind.com](http://www.maxmind.com) verfügbar sind.
+
 ## <a name="video"></a>Videos
 
 #### Einführung
@@ -232,4 +236,4 @@ Sie können [einige der Daten durch Bearbeiten von ApplicationInsights.config ab
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

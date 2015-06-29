@@ -1,26 +1,25 @@
 
-In diesem Abschnitt erfahren Sie, wie Sie Benachrichtigungen von einer .NET-Konsolen-App oder anderen senden.
-Bei Verwendung von Mobile Services finden Sie weitere Informationen in den Lernprogrammen [Erste Schritte mit Push](../articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md) . Wenn Sie Java oder PHP verwenden möchten, lesen Sie die Informationen unter [Verwenden von Notification Hubs von Java/PHP](../articles/notification-hubs/notification-hubs-java-backend-how-to.md). Sie können Benachrichtigungen von beliebigen Back-Ends mithilfe der [Notification Hubs-REST-Schnittstelle] senden.
+In diesem Abschnitt erfahren Sie, wie Sie Benachrichtigungen von einer .NET-Konsolen-App oder anderen senden. Bei Verwendung von Mobile Services finden Sie weitere Informationen im Lernprogramm [Erste Schritte mit Push](mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md). Wenn Sie Java oder PHP verwenden möchten, lesen Sie die Informationen unter [Verwenden von Notification Hubs von Java/PHP](../articles/notification-hubs/notification-hubs-java-backend-how-to.md). Sie können Benachrichtigungen von beliebigen Back-Ends mithilfe der [Notification Hubs-REST-Schnittstelle](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx) senden.
 
-Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, iOS- und Android-Geräte. 
+Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, iOS- und Android-Geräte.
 
 Überspringen Sie die Schritte 1 bis 3, wenn Sie eine Konsolenanwendung erstellt haben, als Sie [Erste Schritte mit Notification Hubs][get-started] abgeschlossen haben.
 
 1. Erstellen Sie in Visual Studio eine neue Visual C#-Konsolenanwendung 
 
-   ![][13]
+   	![][13]
 
 2. Klicken Sie im Visual Studio-Hauptmenü auf **Extras**, **Bibliothekspaket-Manager** und **Paket-Managerkonsole**. Geben Sie dann in das Konsolenfenster Folgendes ein und drücken Sie die **Eingabetaste**:
 
         Install-Package WindowsAzure.ServiceBus
  	
-	Dadurch wird dem Azure Service Bus-SDK mithilfe des <a href="http://nuget.org/packages/WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet-Pakets</a> ein Verweis hinzugefügt. 
+	Dadurch wird dem Azure Service Bus-SDK mithilfe des <a href="http://nuget.org/packages/WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet-Pakets</a> ein Verweis hinzugefügt.
 
 3. Öffnen Sie die Datei "Program.cs", und fügen Sie die folgende `using`-Anweisung hinzu:
 
         using Microsoft.ServiceBus.Notifications;
 
-4. Fügen Sie der Klasse `Program` folgende Methode hinzu oder ersetzen Sie sie, falls sie bereits vorhanden ist:
+4. Fügen Sie in der `Program`-Klasse die folgende Methode hinzu, oder ersetzen Sie sie, falls sie bereits vorhanden ist:
 
         private static async void SendNotificationAsync()
         {
@@ -71,9 +70,9 @@ Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, i
 
 	Dieser Code sendet Benachrichtigungen für jeden der sechs Tags im Zeichenfolgenarray an Windows Store-, Windows Phone- und iOS-Geräte. Durch die Verwendung von Tags wird sichergestellt, dass Geräte nur Benachrichtigungen für die registrierten Kategorien erhalten.
 	
-	> [AZURE.NOTE] Dieser Back-End-Code unterstützt Windows Store-, Windows Phone-, iOS- und Android-Clients. Send-Methoden geben einen Fehler zurück, wenn der Benachrichtigungshub noch nicht für eine bestimmte Clientplattform konfiguriert wurde. 
+	> [AZURE.NOTE]Dieser Back-End-Code unterstützt Windows Store-, Windows Phone-, iOS- und Android-Clients. Send-Methoden geben einen Fehler zurück, wenn der Benachrichtigungshub noch nicht für eine bestimmte Clientplattform konfiguriert wurde.
 
-6. Ersetzen Sie im Code oben die Platzhalter `<hub name>` und `<connection string with full access>` durch den Namen Ihres Notification Hub und die Verbindungszeichenfolge für *DefaultFullSharedAccessSignature*, die Sie zuvor erhalten haben.
+6. Ersetzen Sie im Code oben die Platzhalter `<hub name>` und `<connection string with full access>` durch den Namen Ihres Notification Hubs und die Verbindungszeichenfolge für *DefaultFullSharedAccessSignature*, die Sie zuvor erhalten haben.
 
 7. Fügen Sie die folgenden Zeilen zur **Main**-Methode hinzu:
 
@@ -81,9 +80,9 @@ Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, i
 		 Console.ReadLine();
 
 <!-- Anchors -->
-[Von einer Konsolenanwendung aus]: #console
-[Von Mobile Services aus]: #mobile-services
-[Ausführen der App und Erzeugen von Benachrichtigungen]: #test-app
+[From a console app]: #console
+[From Mobile Services]: #mobile-services
+[Run the app and generate notifications]: #test-app
 
 <!-- Images. -->
 [13]: ./media/notification-hubs-back-end/notification-hub-create-console-app.png
@@ -93,12 +92,12 @@ Der folgende Code sendet Benachrichtigungen an Windows Store-, Windows Phone-, i
 
 <!-- URLs. -->
 [get-started]: ../articles/notification-hubs/notification-hubs-windows-store-dotnet-get-started.md
-[Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: ../articles/tutorial-notify-users-mobileservices.md
-[Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[wns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-[Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
-[Notification Hubs-Anleitung für Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
-[Notification Hubs-REST-Schnittstelle]: http://msdn.microsoft.com/library/windowsazure/dn223264.aspx
+[Use Notification Hubs to send notifications to users]: ../articles/tutorial-notify-users-mobileservices.md
+[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
+[Azure Management Portal]: https://manage.windowsazure.com/
+[wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
+[Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
+[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
+[Notification Hubs REST interface]: http://msdn.microsoft.com/library/windowsazure/dn223264.aspx
 
-<!--HONumber=49-->
+<!---HONumber=58_postMigration-->

@@ -189,25 +189,25 @@ Die verschiedenen Konfigurationsoptionen werden nachfolgend ausführlich erläut
 
 **Role.StateConsumer:**
 
-Typ: String  Standardwert: Keiner
+Typ: String Standardwert: Keiner
 
 Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird diese aufgerufen, wenn waagent das Image bereitgestellt hat und in Kürze der Status "Bereit" an das Fabric gemeldet wird. An das Programm wird das Argument "Ready" übergeben. Der Agent wartet nicht auf die Rückkehr des Programms, sondern fährt direkt fort.
 
 **Role.ConfigurationConsumer:**
 
-Typ: String  Standardwert: Keiner
+Typ: String Standardwert: Keiner
 
 Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass eine Konfigurationsdatei für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals aufgerufen werden, bei jeder Änderung der Konfigurationsdatei. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Pfad dieser Datei lautet "/var/lib/waagent/HostingEnvironmentConfig.xml".
 
 **Role.TopologyConsumer:**
 
-Typ: String  Standardwert: Keiner
+Typ: String Standardwert: Keiner
 
 Sofern ein Pfad zu einer ausführbaren Programmdatei angegeben ist, wird das Programm aufgerufen, wenn das Fabric anzeigt, dass ein neues Netzwerktopologie-Layout für den virtuellen Computer verfügbar ist. Der Pfad zur XML-Konfigurationsdatei wird als Argument an die ausführbare Datei übergeben. Diese kann mehrmals, bei jeder Änderung der Netzwerktopologie (z. B. aufgrund einer Dienstreparatur), aufgerufen werden. Eine Beispieldatei steht im Anhang zur Verfügung. Der aktuelle Speicherort dieser Datei lautet "/var/lib/waagent/SharedConfig.xml".
 
 **Provisioning.Enabled:**
 
-Typ: Boolean   Standardwert: y
+Typ: Boolean Standardwert: y
 
 Hiermit kann der Benutzer die Bereitstellungsfunktion im Agenten aktivieren oder deaktivieren. Gültige Werte sind "y" und "n". Bei deaktivierter Bereitstellung werden die SSH-Host- und -Benutzerschlüssel im Image beibehalten, und alle in der Azure-Bereitstellungs-API angegebenen Konfigurationen werden ignoriert.
 
@@ -215,13 +215,13 @@ Hiermit kann der Benutzer die Bereitstellungsfunktion im Agenten aktivieren oder
 
 **Provisioning.DeleteRootPassword:**
 
-Typ: Boolean   Standardwert: n
+Typ: Boolean Standardwert: n
 
 Bei aktivierter Option wird das Stammkennwort in der Datei "/etc/shadow" bei der Bereitstellung gelöscht.
 
 **Provisioning.RegenerateSshHostKeyPair:**
 
-Typ: Boolean   Standardwert: y
+Typ: Boolean Standardwert: y
 
 Bei aktivierter Option werden alle SSH-Hostschlüsselpaare (ecdsa, dsa und rsa) bei der Bereitstellung aus "/etc/ssh/" gelöscht. Außerdem wird ein einzelnes neues Schlüsselpaar generiert.
 
@@ -229,67 +229,67 @@ Der Verschlüsselungstyp für das neue Schlüsselpaar kann mit dem Provisioning.
 
 **Provisioning.SshHostKeyPairType:**
 
-Typ: String  Standardwert: rsa
+Typ: String Standardwert: rsa
 
 Diese Option kann auf einen Verschlüsselungsalgorithmustyp festgelegt werden, der vom SSH-Daemon auf dem virtuellen Computer unterstützt wird. Typischerweise werden die Werte "rsa", "dsa" und "ecdsa" unterstützt. Beachten Sie, dass "putty.exe" unter Windows keine Unterstützung für "ecdsa" bietet. Wenn Sie also beabsichtigen, mithilfe von "putty.exe" unter Windows eine Verbindung zu einer Linux-Bereitstellung herzustellen, verwenden Sie "rsa" oder "dsa".
 
 **Provisioning.MonitorHostName:**
 
-Typ: Boolean   Standardwert: y
+Typ: Boolean Standardwert: y
 
 Bei aktivierter Option überwacht waagent den virtuellen Linux-Computer auf Änderungen des Hostnamens (wie vom Befehl "hostname" zurückgegeben) und aktualisiert die Netzwerkkonfiguration im Image automatisch entsprechend der Änderung. Um die Namensänderung per Push an die DNS-Server zu übertragen, wird die Netzwerkfunktion auf dem virtuellen Computer neu gestartet. Dadurch geht die Internetverbindung verloren.
 
 **ResourceDisk.Format:**
 
-Typ: Boolean   Standardwert: y
+Typ: Boolean Standardwert: y
 
 Bei aktivierter Option wird der von der Plattform bereitgestellte Ressourcendatenträger von waagent formatiert und bereitgestellt, falls der Benutzer in "ResourceDisk.Filesystem" einen anderen Dateisystemtyp als "ntfs" anfordert. Auf dem Datenträger wird eine einzelne Linux-Partition (83) verfügbar gemacht. Diese Partition wird nicht formatiert, falls sie erfolgreich bereitgestellt werden kann.
 
 **ResourceDisk.Filesystem:**
 
-Typ: String   Standardwert: ext4
+Typ: String Standardwert: ext4
 
 Diese Option gibt den Dateisystemtyp für den Ressourcendatenträger an. Die unterstützten Werte sind je nach Linux-Distribution verschieden. Bei der Zeichenfolge X sollte mkfs.X im Linux-Image vorhanden sein. Für SLES 11-Images sollte normalerweise "ext3" verwendet werden. Für FreeBSD-Images sollte hier "ufs2" verwendet werden.
 
 **ResourceDisk.MountPoint:**
 
-Typ: String   Standardwert: /mnt/resource
+Typ: String Standardwert: /mnt/resource
 
 Diese Option gibt den Pfad an, in dem der Ressourcendatenträger bereitgestellt wird. Beachten Sie, dass der Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird.
 
 **ResourceDisk.EnableSwap:**
 
-Typ: Boolean   Standardwert: n
+Typ: Boolean Standardwert: n
 
 Bei aktivierter Option wird eine Auslagerungsdatei (/swapfile) auf dem Ressourcendatenträger erstellt und dem Systemauslagerungsbereich hinzugefügt.
 
 **ResourceDisk.SwapSizeMB:**
 
-Typ: Integer   Standardwert: 0
+Typ: Integer Standardwert: 0
 
 Die Größe der Auslagerungsdatei in Megabyte.
 
 **LBProbeResponder:**
 
-Typ: Boolean   Standardwert: y
+Typ: Boolean Standardwert: y
 
 Bei aktivierter Option antwortet waagent auf Lastenausgleichstests der Plattform (sofern vorhanden).
 
 **Logs.Verbose:**
 
-Typ: Boolean   Standardwert: n
+Typ: Boolean Standardwert: n
 
 Bei aktivierter Option wird ein ausführlicheres Protokoll erstellt. Waagent schreibt das Protokoll in "/var/log/waagent.log" und nutzt die logrotate-Funktion des Systems zu Rotieren von Protokollen.
 
 **OS.RootDeviceScsiTimeout:**
 
-Typ: Integer   Standardwert: 300
+Typ: Integer Standardwert: 300
 
 Hiermit wird die SCSI-Zeitüberschreitung auf dem Betriebssystemdatenträger und Datenlaufwerken in Sekunden konfiguriert. Wird kein Wert festgelegt, gelten die Systemstandardwerte.
 
 **OS.OpensslPath:**
 
-Typ: String  Standardwert: Keiner
+Typ: String Standardwert: Keiner
 
 Hiermit kann ein alternativer Pfad für die openssl-Binärdatei zur Verwendung für kryptografische Vorgänge angegeben werden.
 
@@ -315,4 +315,6 @@ Beachten Sie, dass Cloud Ubuntu-Images für zahlreiche Konfigurationsaufgaben, d
  - [Ubuntu-Wiki: Konfigurieren von Swap-Partitionen](http://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
  - [Einfügen benutzerdefinierter Daten in einen virtuellen Azure-Computer](virtual-machines-how-to-inject-custom-data.md)
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=58_postMigration-->

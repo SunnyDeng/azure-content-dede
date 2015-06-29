@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="04/29/2015"
+   ms.date="06/01/2015"
    ms.author="mbaldwin"/>
 
 # Authentifizierungsszenarien für Azure AD
@@ -23,9 +23,7 @@ Azure Active Directory (Azure AD) vereinfacht die Authentifizierung für Entwic
 
 - [Grundlagen der Authentifizierung in Azure AD](#basics-of-authentication-in-azure-ad)
 
-
 - [Ansprüche in Sicherheitstokens von Azure AD](#claims-in-azure-ad-security-tokens)
-
 
 - [Grundlagen der Anwendungsregistrierung in Azure AD](#basics-of-registering-an-application-in-azure-ad)
 
@@ -47,7 +45,9 @@ Azure Active Directory (Azure AD) vereinfacht die Authentifizierung für Entwic
 
 Lesen Sie diesen Abschnitt, falls Sie noch nicht mit den grundlegenden Authentifizierungskonzepten für Azure AD vertraut sind. Andernfalls können Sie diesen Abschnitt überspringen und mit [Anwendungstypen und -szenarien](#application-types-and-scenarios) fortfahren.
 
-Betrachten wir das einfachste Szenario, bei dem eine Identität erforderlich ist: Ein Benutzer in einem Webbrowser muss sich gegenüber einer Webanwendung authentifizieren. Dieses Szenario ist unter [Webbrowser zu Webanwendung](#web-browser-to-web-application) näher beschrieben und ein guter Ausgangspunkt, um die Funktionen von Azure AD und das Konzept des Szenarios zu veranschaulichen. Sehen Sie sich das folgende Diagramm für dieses Szenario an: Übersicht über die Anmeldung bei einer Webanwendung
+Betrachten wir das einfachste Szenario, bei dem eine Identität erforderlich ist: Ein Benutzer in einem Webbrowser muss sich gegenüber einer Webanwendung authentifizieren. Dieses Szenario ist unter [Webbrowser zu Webanwendung](#web-browser-to-web-application) näher beschrieben und ein guter Ausgangspunkt, um die Funktionen von Azure AD und das Konzept des Szenarios zu veranschaulichen. Berücksichtigen Sie die folgenden Diagramme für dieses Szenario:
+
+![Übersicht über die Anmeldung bei Webanwendungen](./media/active-directory-authentication-scenarios/basics_of_auth_in_aad.png)
 
 Im Anschluss folgen einige wichtige Informationen zu den Komponenten des obigen Diagramms:
 
@@ -60,7 +60,7 @@ Im Anschluss folgen einige wichtige Informationen zu den Komponenten des obigen 
 - Mit den Open Source-Authentifizierungsbibliotheken von Azure AD können sich die Entwickler um die Protokolldetails kümmern und die Authentifizierung für Sie vereinfachen. Weitere Informationen finden Sie unter [Azure Active Directory-Authentifizierungsbibliotheken](https://msdn.microsoft.com/library/azure/dn151135.aspx).
 
 
-• Nach der Authentifizierung eines Benutzers muss die Anwendung das Sicherheitstoken des Benutzers überprüfen, um sicherzustellen, dass die Authentifizierung der betreffenden Parteien erfolgreich war. Mithilfe der bereitgestellten Authentifizierungsbibliotheken können Entwickler die Validierung beliebiger Token von Azure AD behandeln – einschließlich JSON-Webtoken (JWT) und SAML 2.0. Informationen zum Durchführen einer manuellen Überprüfung finden Sie in der Dokumentation für den [JWT-Tokenhandler](https://msdn.microsoft.com/library/dn205065(v=vs.110).aspx).
+• Nach der Authentifizierung eines Benutzers muss die Anwendung das Sicherheitstoken des Benutzers überprüfen, um sicherzustellen, dass die Authentifizierung der betreffenden Parteien erfolgreich war. Mithilfe der bereitgestellten Authentifizierungsbibliotheken können Entwickler die Validierung beliebiger Token von Azure AD behandeln – einschließlich JSON-Webtoken (JWT) und SAML 2.0. Informationen zum Durchführen einer manuellen Überprüfung finden Sie in der Dokumentation zum [JWT-Tokenhandler](https://msdn.microsoft.com/library/dn205065(v=vs.110).aspx).
 
 
 > [AZURE.IMPORTANT]Azure AD verwendet die Verschlüsselung mit öffentlichem Schlüssel, um Token zu signieren und deren Gültigkeit zu überprüfen. Weitere Informationen zur Logik, die in Ihrer Anwendung enthalten sein muss, damit diese immer mit den neuesten Schlüsseln aktualisiert wird, finden Sie unter [Wichtige Informationen zum Signaturschlüsselrollover in Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx).
@@ -130,7 +130,7 @@ Zum besseren Verständnis der Bereitstellung ist es hilfreich zu wissen, dass es
 
 - Mehrinstanzenfähige Anwendung: Eine mehrinstanzenfähige Anwendung ist für die Verwendung in mehreren Organisationen vorgesehen. Hierbei handelt es sich in der Regel um SaaS-Anwendungen (Software as a Service), die von einem unabhängigen Softwarehersteller (Independent Software Vendor, ISV) geschrieben wurden. Mehrinstanzenfähige Anwendungen müssen in jedem Verzeichnis bereitgestellt werden, in dem sie verwendet werden. Für die Registrierung ist also jeweils die Zustimmung des Benutzers oder Administrators erforderlich. Dieser Zustimmungsprozess beginnt, wenn eine Anwendung im Verzeichnis registriert wurde und Zugriff auf die Graph-API (oder ggf. eine andere Web-API) erhält. Wenn sich ein Benutzer oder Administrator aus einer anderen Organisation für die Verwendung der Anwendung registriert, erscheint ein Dialogfeld mit den für die Anwendung erforderlichen Berechtigungen. Stimmt der Benutzer oder Administrator der Anwendung zu, erhält die Anwendung Zugriff auf die angegebenen Daten und wird schließlich im Verzeichnis des Benutzers oder Administrators registriert. Weitere Informationen finden Sie unter [Übersicht über das Consent Framework](https://msdn.microsoft.com/library/azure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_Consent).
 
-Bei der Entwicklung einer mehrinstanzenfähigen Anwendung müssen im Gegensatz zur Einzelinstanzanwendung einige zusätzliche Aspekte berücksichtigt werden. Ein Beispiel: Wenn Sie die Anwendung für Benutzer in mehreren Verzeichnissen verfügbar machen, müssen Sie ermitteln, in welchem Mandaten sich diese befinden. Eine Einzelinstanzanwendung muss nur im eigenen Verzeichnis nach einem Benutzer suchen. Eine mehrinstanzenfähige Anwendung muss dagegen einen bestimmten Benutzer in sämtlichen Verzeichnissen in Azure AD identifizieren. Für diese Aufgabe bietet Azure AD anstelle eines mandantenspezifischen Endpunkts einen gemeinsamen Authentifizierungsendpunkt, an den jede mehrinstanzenfähige Anwendung Anmeldeanforderungen richten kann. Der Endpunkt für alle Verzeichnisse in Azure AD ist „https://login.windows.net/common“. Ein mandantenspezifischer Endpunkt kann dagegen beispielsweise „https://login.windows.net/contoso.onmicrosoft.com“ sein. Der gemeinsame Endpunkt muss insbesondere bei der Anwendungsentwicklung berücksichtigt werden, da Sie die Logik implementieren müssen, die die Verarbeitung mehrerer Mandanten bei der Anmeldung, Abmeldung und Tokenüberprüfung ermöglicht.
+Bei der Entwicklung einer mehrinstanzenfähigen Anwendung müssen im Gegensatz zur Einzelinstanzanwendung einige zusätzliche Aspekte berücksichtigt werden. Ein Beispiel: Wenn Sie die Anwendung für Benutzer in mehreren Verzeichnissen verfügbar machen, müssen Sie ermitteln, in welchem Mandaten sich diese befinden. Eine Einzelinstanzanwendung muss nur im eigenen Verzeichnis nach einem Benutzer suchen. Eine mehrinstanzenfähige Anwendung muss dagegen einen bestimmten Benutzer in sämtlichen Verzeichnissen in Azure AD identifizieren. Für diese Aufgabe bietet Azure AD anstelle eines mandantenspezifischen Endpunkts einen gemeinsamen Authentifizierungsendpunkt, an den jede mehrinstanzenfähige Anwendung Anmeldeanforderungen richten kann. Der Endpunkt für alle Verzeichnisse in Azure AD ist „https://login.microsoftonline.com/common“. Ein mandantenspezifischer Endpunkt kann dagegen beispielsweise „https://login.microsoftonline.com/contoso.onmicrosoft.com“ sein. Der gemeinsame Endpunkt muss insbesondere bei der Anwendungsentwicklung berücksichtigt werden, da Sie die Logik implementieren müssen, die die Verarbeitung mehrerer Mandanten bei der Anmeldung, Abmeldung und Tokenüberprüfung ermöglicht.
 
 Wenn Sie gerade eine Einzelinstanzanwendung entwickeln, diese aber für mehrere Organisationen verfügbar machen möchten, können Sie die Anwendung und deren Konfiguration problemlos in Azure AD ändern, um eine mehrinstanzenfähige Anwendung zu erhalten. Darüber hinaus verwendet Azure AD für alle Token in allen Verzeichnissen den gleichen Anmeldeschlüssel. Es spielt also keine Rolle, ob Sie die Authentifizierung in einer Einzelinstanzanwendung oder in einer mehrinstanzenfähigen Anwendung bereitstellen.
 
@@ -457,14 +457,13 @@ Sehen Sie sich die Codebeispiele für Szenarien vom Typ „Daemon- oder Serveran
 
 Wenn die erste Anwendung mithilfe ihres Autorisierungscodes ein JWT-Zugriffstoken abruft, erhält sie auch ein JWT-Aktualisierungstoken. Dank des Aktualisierungstokens kann der Benutzer bei Ablauf des Zugriffstokens erneut authentifiziert werden, ohne zur Eingabe seiner Anmeldeinformationen aufgefordert zu werden. Das Aktualisierungstoken wird dann zum Authentifizieren des Benutzers verwendet, und ein neues Zugriffstoken sowie ein neues Aktualisierungstoken werden erstellt.
 
-## Siehe auch
+## Weitere Informationen
 
-
-### Konzepte
-[Azure Active Directory-Codebeispiele](active-directory-code-samples.md)
+[Azure Active Directory-Codebeispiele](active-directory-code-samples.md)
 
 [Wichtige Informationen zum Signaturschlüsselrollover in Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx)
-
+ 
 [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/library/azure/dn645545.aspx)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

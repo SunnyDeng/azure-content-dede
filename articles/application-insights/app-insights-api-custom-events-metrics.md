@@ -444,13 +444,13 @@ Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwört
     // ...
 
 
-## <a name="default-properties"></a>Kontext-Initialisierer - Satz von Standardeigenschaften für alle Telemetrie
+## <a name="default-properties"></a>Kontextinitialisierer – Festlegen von Standardeigenschaften für alle Telemetriedaten
 
 Sie können einen universellen Initialisierer einrichten, damit alle neuen "TelemetryClient"-Elemente automatisch Ihren Kontext verwenden. Dies schließt die standardmäßigen Telemetriedaten ein, die von plattformspezifischen Telemetriemodulen gesendet werden, wie z. B. die Nachverfolgung von Webserveranforderungen.
 
-Eine typische Verwendung besteht in der Identifikation von Telemetriedaten aus verschiedenen Versionen oder Komponenten Ihrer App. Im Portal können Sie filtern oder Gruppieren von Ergebnissen durch die Eigenschaft "Version der Anwendung".
+Eine typische Verwendung besteht in der Identifikation von Telemetriedaten aus verschiedenen Versionen oder Komponenten Ihrer App. Im Portal können Sie Ergebnisse nach der Eigenschaft "Application Version" filtern oder gruppieren.
 
-**Definieren der Initialisierer**
+**Definieren des Initialisierers**
 
 
 *C#*
@@ -492,9 +492,9 @@ Eine typische Verwendung besteht in der Identifikation von Telemetriedaten aus v
     }
 ```
 
-**Laden Sie die Initialisierung**
+**Laden des Initialisierers**
 
-In der Datei "applicationinsights.config":
+In "ApplicationInsights.config":
 
     <ApplicationInsights>
       <ContextInitializers>
@@ -504,7 +504,7 @@ In der Datei "applicationinsights.config":
       </ContextInitializers>
     </ApplicationInsights>
 
-*Alternativ* instanziieren den Initialisierer in Code:
+*Alternativ* können Sie den Initialisierer im Code instanziieren:
 
 *C#*
 
@@ -526,17 +526,17 @@ In der Datei "applicationinsights.config":
     TelemetryConfiguration.getActive().getContextInitializers().add(new MyContextInitializer());
 ```
 
-In der JavaScript-Webclient ist zurzeit ein Verfahren zum Festlegen von Standardeigenschaften.
+Im JavaScript-Webclient können derzeit keine Standardeigenschaften festgelegt werden.
 
-## Telemetrie Initialisierer
+## Telemetrieinitialisierer
 
-Verwenden Sie Telemetrie Initialisierer ausgewählten Verhalten der standardmäßigen Telemetrie Module außer Kraft gesetzt.
+Verwenden Sie Telemetrieinitialisierer zum Überschreiben ausgewählter Verhalten der Standardtelemetriemodule.
 
-Beispielsweise erfasst die Application Insights Webpakets Telemetriedaten über HTTP-Anforderungen. Standardmäßig kennzeichnet jede Anforderung einen Antwortcode Fehler > = 400. Aber bei 400 als Erfolg behandeln soll, können Sie angeben, dass eine Telemetrie Initilizer, die die Success-Eigenschaft festlegt.
+Das Application Insights for Web-Paket erfasst beispielsweise Telemetriedaten über HTTP-Anforderungen. Standardmäßig kennzeichnet es jede Anforderung mit einem Antwortcode >= 400 als fehlerhaft. Wenn 400 jedoch als erfolgreich behandelt werden soll, können Sie einen Telemetrieinitialisierer angeben, der die Success-Eigenschaft festlegt.
 
-Wenn Sie einen Initialisierer Telemetrie bereitstellen, heißt es bei jeder Änderung der Track*()-Methoden aufgerufen wird. Dies umfasst auch Methoden, die von der standardmäßigen Telemetrie-Module aufgerufen. Gemäß der Konvention setzen Sie diese Module keine Eigenschaft, die bereits durch einen Initialisierer festgelegt wurde.
+Wenn Sie einen Telemetrieinitialisierer angeben, wird dieser immer aufgerufen, wenn eine der Track*()-Methoden aufgerufen wird. Dies umfasst auch Methoden, die von den Standardtelemetriemodulen aufgerufen werden. Nach Abmachung legen diese Module keine Eigenschaft fest, die bereits durch einen Initialisierer festgelegt wurde.
 
-**Definieren der Initialisierer**
+**Definieren des Initialisierers**
 
 *C#*
 
@@ -577,9 +577,9 @@ Wenn Sie einen Initialisierer Telemetrie bereitstellen, heißt es bei jeder Änd
     }
 ```
 
-**Laden Sie die Initialisierung**
+**Laden des Initialisierers**
 
-In der Datei "applicationinsights.config":
+In "ApplicationInsights.config":
 
     <ApplicationInsights>
       <TelemetryInitializers>
@@ -589,7 +589,7 @@ In der Datei "applicationinsights.config":
       </TelemetryInitializers>
     </ApplicationInsights>
 
-*Alternativ* können Sie die Initialisierung im Code, z. B. in Global.aspx.cs instanziieren:
+*Alternativ* können Sie den Initialisierer im Code instanziieren, z. B. in "Global.aspx.cs":
 
 
 ```C#
@@ -602,7 +602,7 @@ In der Datei "applicationinsights.config":
 ```
 
 
-[Weitere Informationen finden Sie dieses Beispiels.](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/MvcWebRole)
+[Weitere Informationen zu diesem Beispiel anzeigen.](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/MvcWebRole)
 
 ## <a name="dynamic-ikey"></a>Dynamischer Instrumentationsschlüssel
 
@@ -698,8 +698,8 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
 1. Bis zu 500 Telemetriedatenpunkte pro Sekunde pro Instrumentationsschlüssel (d. h. pro Anwendung). Dazu gehören sowohl die vom SDK-Modul gesendete Standardtelemetrie als auch benutzerdefinierte Ereignisse, Metriken und andere Telemetriedaten, die vom Code gesendet werden.
 1.	Bis zu 200 eindeutige Metriknamen und 200 eindeutige Eigenschaftennamen für Ihre Anwendung. Zu den Metriken gehören Daten, die über TrackMetric gesendet werden, sowie Messungen für andere Datentypen wie z. B. Ereignisse. Metriken und Eigenschaftennamen gelten global pro Instrumentationsschlüssel und werden nicht auf den Datentyp begrenzt.
-2.	Eigenschaften können nur zur Filterung und zur Gruppierung verwendet werden, solange sie weniger als 100 eindeutige Werte für jede Eigenschaft aufweisen. Sobald die eindeutigen Werte 100 überschreiten, kann die Eigenschaft zwar noch zur Suche und Filterung, jedoch nicht mehr für Filter verwendet werden.
-3.	Standardeigenschaften wie z. B. RequestName und die Seiten-URL, sind auf 1000 eindeutige Werte pro Woche beschränkt. Nach 1000 eindeutigen Werten werden zusätzliche Werte als "Andere Werte" gekennzeichnet. Der ursprüngliche Wert kann nach wie vor für die Volltextsuche und die Filterung verwendet werden.
+2.	Eigenschaften können nur zur Filterung und zur Gruppierung verwendet werden, solange sie weniger als 100 eindeutige Werte für jede Eigenschaft aufweisen. Sobald es mehr als 100 eindeutige Werte gibt, kann die Eigenschaft zwar noch zur Suche und Filterung, jedoch nicht mehr für Filter verwendet werden.
+3.	Standardeigenschaften wie Anforderungsname und Seiten-URL sind auf 1000 eindeutige Werte pro Woche beschränkt. Nach 1000 eindeutigen Werten werden zusätzliche Werte als "Andere Werte" gekennzeichnet. Der ursprüngliche Wert kann nach wie vor für die Volltextsuche und die Filterung verwendet werden.
 
 * *F: Wie lange werden Daten aufbewahrt?*
 
@@ -747,4 +747,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

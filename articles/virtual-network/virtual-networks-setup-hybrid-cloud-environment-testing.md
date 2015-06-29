@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/07/2015" 
+	ms.date="05/29/2015" 
 	ms.author="josephd"/>
 
 # Einrichten einer Hybrid Cloud-Umgebung zu Testzwecken
@@ -52,7 +52,7 @@ Diese Konfiguration erfordert ein Testsubnetz von bis zu vier Computern, die üb
 
 Befolgen Sie die Anweisungen im Abschnitt "Steps for Configuring the Corpnet Subnet" (Schritte zum Konfigurieren des Subnetzes Corpnet) im [Test Lab Guide: Base Configuration for Windows Server 2012 R2](http://www.microsoft.com/download/details.aspx?id=39638), um die Computer DC1, APP1 und CLIENT1 in einem Subnetz namens Corpnet zu konfigurieren. **Dieses Subnetz muss von Ihrem Organisationsnetzwerk isoliert werden, da es direkt über den RRAS1-Computer mit dem Internet verbunden wird.**
 
-Melden Sie sich zunächst bei DC1 mit den Anmeldeinformationen von CORP\User1 an. Führen Sie die folgenden Befehle von einer Windows PowerShell-Eingabeaufforderung aus, um die CORP-Domäne so zu konfigurieren, dass Computer und Benutzer ihren lokalen Domänencontroller zur Authentifizierung verwenden.
+Melden Sie sich zunächst bei DC1 mit den Anmeldeinformationen von CORP\\User1 an. Führen Sie die folgenden Befehle von einer Windows PowerShell-Eingabeaufforderung aus, um die CORP-Domäne so zu konfigurieren, dass Computer und Benutzer ihren lokalen Domänencontroller zur Authentifizierung verwenden.
 
 	New-ADReplicationSite -Name "TestLab" 
 	New-ADReplicationSite -Name "TestVNET"
@@ -238,7 +238,7 @@ Melden Sie sich anschließend bei dem neuen virtuellen Computer für DC2 an.
 3.	Wenn Sie zum Öffnen von DC2.rdp aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
-	- Name: **DC2**[Name des lokalen Administratorkontos]
+	- Name: **DC2\**[Name des lokalen Administratorkontos]
 	- Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
@@ -267,7 +267,7 @@ Konfigurieren Sie als Nächstes DC2 als replizierten Domänencontroller für die
 	Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 	Install-ADDSDomainController -Credential (Get-Credential CORP\User1) -DomainName "corp.contoso.com" -InstallDns:$true -DatabasePath "F:\NTDS" -LogPath "F:\Logs" -SysvolPath "F:\SYSVOL"
 
-Beachten Sie, dass Sie zur Angabe des Kennworts für CORP\User1 und eines Kennworts für den Verzeichnisdienst-Wiederherstellungsmodus (DSRM) und zum Neustart von DC2 aufgefordert werden.
+Beachten Sie, dass Sie zur Angabe des Kennworts für CORP\\User1 und eines Kennworts für den Verzeichnisdienst-Wiederherstellungsmodus (DSRM) und zum Neustart von DC2 aufgefordert werden.
 
 Da das virtuelle Netzwerk TestVNET nun über einen eigenen DNS-Server (DC2) verfügt, müssen Sie das virtuelle Netzwerk TestVNET zur Verwendung dieses DNS-Servers konfigurieren.
 
@@ -299,6 +299,7 @@ Die Hybrid Cloud-Umgebung kann nun getestet werden.
 
 [Testumgebungen für Azure-Hybridclouds](../virtual-machines/virtual-machines-hybrid-cloud-test-environments.md)
 
+[Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-infrastructure-services-implementation-guidelines.md)
 
 ## Minimieren der laufenden Kosten dieser Umgebung
 
@@ -322,5 +323,6 @@ Melden Sie sich als Nächstes bei RRAS1 als lokaler Administrator an, und führe
 	Set-VpnS2SInterface -Name S2StoTestVNET -Destination "<IP address of the Azure VPN gateway>" -SharedSecret $PresharedKey
 
 Wechseln Sie zum Azure-Verwaltungsportal auf dem lokalen Computer, und warten Sie, bis das virtuelle Netzwerk TestVNET den Status „Verbunden“ aufweist.
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

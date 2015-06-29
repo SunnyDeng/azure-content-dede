@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Delete a StorSimple backup policy"
-   description="Explains how you can use the StorSimple Manager service to delete a backup policy."
+   pageTitle="Löschen einer StorSimple-Sicherungsrichtlinie"
+   description="Beschreibt, wie Sie den StorSimple-Manager-Dienst zum Löschen einer Sicherungsrichtlinie verwenden können."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
@@ -15,16 +15,15 @@
    ms.date="05/14/2015"
    ms.author="v-sharos" />
 
-#### To delete a StorSimple backup policy
+#### So löschen Sie eine StorSimple-Sicherungsrichtlinie
 
-1. On the device **Quick Start** page, click the **Backup Policies** tab. This will take you to the **Backup Policies** page.
+1. Klicken Sie auf der Seite **Schnellstart** des Geräts auf die Registerkarte **Sicherungsrichtlinien**. Dadurch gelangen Sie auf die Seite **Sicherungsrichtlinien**.
 
-2. Select the policy you want to delete, and then click **Delete** at the bottom of the page.
+2. Wählen Sie die zu löschende Richtlinie aus, und klicken Sie unten auf der Seite auf **Löschen**.
 
-3. You will be prompted for confirmation. Keep in mind that deleting a backup policy will delete all the associated backups. Click **OK** to delete.
+3. Sie werden aufgefordert, diesen Schritt zu bestätigen. Bedenken Sie, dass beim Löschen einer Sicherungsrichtlinie alle zugehörigen Sicherungen gelöscht werden. Klicken Sie zum Löschen auf **OK**.
 
-The **Backup Policies** page will be updated to display the new list of policies.
+Die Seite **Sicherungsrichtlinien** wird aktualisiert, um die neue Liste der Richtlinien anzuzeigen.
  
 
-
-
+<!---HONumber=58_postMigration-->

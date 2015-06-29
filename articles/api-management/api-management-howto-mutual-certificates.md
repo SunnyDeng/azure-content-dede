@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="So sichern Sie Back-End-Dienste mittels gegenseitiger Zertifikatauthentifizierung in Azure API Management" 
+	pageTitle="Sichern von Back-End-Diensten über eine gegenseitige Zertifikatauthentifizierung in Azure API Management" 
 	description="Erfahren Sie, wie Sie Back-End-Dienste mittels gegenseitiger Zertifikatauthentifizierung in Azure API Management sichern können." 
 	services="api-management" 
 	documentationCenter="" 
@@ -13,18 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/10/2015" 
+	ms.date="06/18/2015" 
 	ms.author="sdanie"/>
 
 # Sichern von Back-End-Diensten über eine gegenseitige Zertifikatauthentifizierung in Azure API Management
 
 API Management bietet die Möglichkeit, den Zugriff auf den Back-End-Dienst einer API mithilfe von gegenseitigen Zertifikaten abzusichern. Diese Anleitung beschreibt, wie Zertifikate im API-Herausgeberportal verwaltet werden und eine API zur Verwendung eines Zertifikats für den Zugriff auf ihren Back-End-Dienst konfiguriert wird.
 
-Weitere Informationen finden Sie im folgende Video.
-
-> [AZURE.VIDEO last-mile-security]
-
-Informationen zum Verwalten von Zertifikaten, die mit der API-REST-API finden Sie unter [Azure API-REST-API Verwaltungszertifikat Entität][].
+Weitere Informationen zur Verwaltung von Zertifikaten mit der API Management-REST-API finden Sie unter [Azure API Management-REST-API-Zertifikatsentität][].
 
 ## <a name="prerequisites"> </a>Voraussetzungen
 
@@ -98,7 +94,11 @@ Klicken Sie auf **Speichern**, um die Konfigurationsänderungen der API zu speic
 
 ![Zertifikatrichtlinie][api-management-certificate-policy]
 
+## Nächste Schritte
 
+Weitere Informationen finden Sie im folgenden Video.
+
+> [AZURE.VIDEO last-mile-security]
 
 [api-management-management-console]: ./media/api-management-howto-mutual-certificates/api-management-management-console.png
 [api-management-security-client-certificates]: ./media/api-management-howto-mutual-certificates/api-management-security-client-certificates.png
@@ -127,7 +127,7 @@ Klicken Sie auf **Speichern**, um die Konfigurationsänderungen der API zu speic
 [Caching policies]: api-management-policy-reference.md#caching-policies
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 
-[Azure API-REST-API Verwaltungszertifikat Entität]: http://msdn.microsoft.com/library/azure/dn783483.aspx
+[Azure API Management-REST-API-Zertifikatsentität]: http://msdn.microsoft.com/library/azure/dn783483.aspx
 [WebApp-GraphAPI-DotNet]: https://github.com/AzureADSamples/WebApp-GraphAPI-DotNet
 
 [Prerequisites]: #prerequisites
@@ -141,4 +141,4 @@ Klicken Sie auf **Speichern**, um die Konfigurationsänderungen der API zu speic
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

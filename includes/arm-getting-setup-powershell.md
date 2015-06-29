@@ -77,4 +77,4 @@ Um das Azure-Ressourcen-Manager-Modul verwenden zu können, müssen Sie von den 
 
 > [AZURE.NOTE]Sie können mit dem Befehl **Switch-AzureMode AzureServiceManagement** zurück zu den Standardbefehlen wechseln.
 
-<!---HONumber=58-->
+<!---HONumber=58_postMigration-->

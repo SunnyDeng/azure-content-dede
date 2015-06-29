@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="05/02/2015" 
+	ms.date="06/09/2015" 
 	ms.author="mahender"/>
 
 # Erste Schritte mit der benutzerdefinierten Authentifizierung
@@ -52,9 +52,7 @@ Weil Sie eine benutzerdefinierte Authentifizierung verwenden und sich nicht auf 
 
         public DbSet<Account> Accounts { get; set; }
 
-	>[AZURE.NOTE]In den Codeausschnitten in diesem Lernprogramm wird `todoContext` als Kontextname verwendet. Sie müssen die Codeausschnitte für den Kontext Ihres Projekts aktualisieren.
-
-	Als Nächstes richten Sie die Sicherheitsfunktionen für die Arbeit mit diesen Daten ein.
+	>[AZURE.NOTE]In den Codeausschnitten in diesem Lernprogramm wird `todoContext` als Kontextname verwendet. Sie müssen die Codeausschnitte für den Kontext Ihres Projekts aktualisieren. Als Nächstes richten Sie die Sicherheitsfunktionen für die Arbeit mit diesen Daten ein.
  
 5. Erstellen Sie eine Klasse mit dem Namen `CustomLoginProviderUtils`, und fügen Sie ihr die folgende `using`-Anweisung hinzu:
 
@@ -162,7 +160,7 @@ Sie haben an diesem Punkt alles Nötige, um Benutzerkonten anlegen zu können. I
 
         [AuthorizeLevel(AuthorizationLevel.Anonymous)]
 
->[AZURE.IMPORTANT]Auf diesen Registrierungsendpunkt kann von jedem Client über HTTP zugegriffen werden. Bevor Sie dies veröffentlichen
+>[AZURE.IMPORTANT]Auf diesen Registrierungsendpunkt kann von jedem Client über HTTP zugegriffen werden. Bevor Sie diesen Dienst in einer Produktionsumgebung veröffentlichen, sollten Sie ein Schema zum Überprüfen der Registrierungen implementieren, z. B. SMS-basierte oder E-Mail-basierte Überprüfung. Damit können Sie verhindern, dass ein böswilliger Benutzer betrügerische Registrierungen erstellt.
 
 ## Erstellen des LoginProvider
 
@@ -217,11 +215,16 @@ Eines der fundamentalen Konstrukte in der Mobile Services-Authentifizierungspipe
             return;
         }
 
-	Diese Methode ist hier eine leere Methode (No-op-Methode), da **CustomLoginProvider** nicht in die Authentifizierungspipeline integriert wird.
+	Diese Methode ist nicht implementiert, da **CustomLoginProvider** nicht in die Authentifizierungspipeline integriert wird.
 
-4. Fügen Sie **CustomLoginProvider** die folgende Implementierung der abstrakten Methode `ParseCredentials` hinzu. 
+4. Fügen Sie **CustomLoginProvider** die folgende Implementierung der abstrakten Methode `ParseCredentials` hinzu.
 
-		public override ProviderCredentials ParseCredentials(JObject serialized) { if (serialized == null) { throw new ArgumentNullException("serialized"); }
+        public override ProviderCredentials ParseCredentials(JObject serialized)
+        {
+            if (serialized == null)
+            {
+                throw new ArgumentNullException("serialized");
+            }
 
             return serialized.ToObject<CustomLoginProviderCredentials>();
         }
@@ -230,8 +233,8 @@ Eines der fundamentalen Konstrukte in der Mobile Services-Authentifizierungspipe
 
 5. Fügen Sie **CustomLoginProvider** die folgende Implementierung der abstrakten Methode `CreateCredentials` hinzu.
 
-        	public override ProviderCredentials CreateCredentials(ClaimsIdentity claimsIdentity)
-        	{
+        public override ProviderCredentials CreateCredentials(ClaimsIdentity claimsIdentity)
+        {
             if (claimsIdentity == null)
             {
                 throw new ArgumentNullException("claimsIdentity");
@@ -247,6 +250,12 @@ Eines der fundamentalen Konstrukte in der Mobile Services-Authentifizierungspipe
         }
 
 	Diese Methode übersetzt eine [ClaimsIdentity] in ein [ProviderCredentials]-Objekt, das in der Ausstellungsphase des Authentifizierungstoken verwendet wird. Es empfiehlt sich wieder, in dieser Methode alle etwaigen zusätzlichen Ansprüche zu erfassen.
+	
+6. Öffnen Sie die Projektdatei "WebApiConfig.cs" im Ordner "App_Start". Die folgende Codezeile wird nach **ConfigOptions** erstellt:
+		
+		options.LoginProviders.Add(typeof(CustomLoginProvider));
+
+	
 
 ## Erstellen des Anmeldungsendpunkts
 
@@ -409,4 +418,6 @@ Damit ist dieses Lernprogramm abgeschlossen.
 
 [ClaimsIdentity]: https://msdn.microsoft.com/library/system.security.claims.claimsidentity(v=vs.110).aspx
 [ProviderCredentials]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
-<!--HONumber=54--> 
+ 
+
+<!---HONumber=58_postMigration-->

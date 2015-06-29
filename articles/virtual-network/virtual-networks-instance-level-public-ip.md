@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/22/2015"
+   ms.date="06/03/2015"
    ms.author="telmos" />
 
 # Überblick über die öffentliche IP auf Instanzebene
@@ -24,8 +24,10 @@ Eine öffentliche IP auf Instanzebene (Instance-Level Public IP, ILPIP) ist eine
 
 Wie in Abbildung 1 dargestellt, erfolgt der Zugriff auf den Clouddienst über eine VIP-Adresse, während auf die einzelnen virtuellen Computer normalerweise unter Angabe von VIP:&lt;Portnummer&gt; zugegriffen wird. Die Zuweisung einer ILPIP zu einem bestimmten virtuellen Computer ermöglicht es, über diese IP-Adresse direkt auf diesen virtuellen Computer zuzugreifen.
 
-Bei der Erstellung eines Clouddiensts in Azure werden automatisch entsprechende DNS A-Datensätze für den Zugriff auf den Dienst über einen vollständig qualifizierten Domänennamen (FQDN) anstelle der tatsächlichen VIP-Adresse erstellt. Dasselbe geschieht für die ILPIP, um den Zugriff auf die VM- oder Rolleninstanz über den FQDN statt der ILPIP zu ermöglichen.
+Bei der Erstellung eines Clouddiensts in Azure werden automatisch entsprechende DNS A-Datensätze für den Zugriff auf den Dienst über einen vollständig qualifizierten Domänennamen (FQDN) anstelle der tatsächlichen VIP-Adresse erstellt. Dasselbe geschieht für die ILPIP, um den Zugriff auf die VM- oder Rolleninstanz über den FQDN statt der ILPIP zu ermöglichen. Wenn Sie beispielsweise einen Clouddienst namens *contosoadservice* erstellen und eine Webrolle namens *contosoweb* mit zwei Instanzen konfigurieren, registriert Azure die folgenden A-Datensätze für die Instanzen:
 
+- contosoweb_IN_0.contosoadservice.cloudapp.net
+- contosoweb_IN_1.contosoadservice.cloudapp.net 
 
 >[AZURE.NOTE]Sie können einer VM- oder Rolleninstanz jeweils nur eine ILPIP zuweisen. Sie können bis zu 5 ILPIPs pro Abonnement verwenden. Derzeit wird die ILPIP nicht für virtuelle Computer mit mehreren Netzwerkkarten unterstützt.
 
@@ -116,14 +118,11 @@ Eine ILPIP kann auch mithilfe einer Dienstkonfigurationsdatei einem virtuellen C
 	  </NetworkConfiguration>
 	</ServiceConfiguration>
 
-## Siehe auch
+## Nächste Schritte
 
-[Reservierte Private IP-Adresse (DIP)](../virtual-networks-reserved-private-ip)
-
-[Reservierte öffentliche IP-Adresse](../virtual-networks-reserved-public-ip)
-
-[Virtuelle Netzwerke im Überblick](https://msdn.microsoft.com/library/azure/jj156007.aspx)
+[Reservierte IP](../virtual-networks-reserved-public-ip)
 
 [Reservierte IP-REST-APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

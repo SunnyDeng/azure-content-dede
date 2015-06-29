@@ -36,4 +36,4 @@
 <!-- URLs. -->
 [mssql-Objekt]: http://msdn.microsoft.com/library/windowsazure/jj554212.aspx
 
-<!--HONumber=54-->
+<!---HONumber=58_postMigration-->

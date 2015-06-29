@@ -13,50 +13,50 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/14/2015" 
+	ms.date="06/04/2015" 
 	ms.author="spelluru"/>
 
 # Problembehandlung bei Data Factory
 Sie können Azure Data Factory-Probleme mithilfe vom Azure-Portal (oder) Azure PowerShell-Cmdlets beheben. Dieses Thema enthält exemplarische Vorgehensweisen, die Ihnen zeigen, wie Sie das Azure-Portal verwenden, um schnell Fehler zu beheben, die bei Data Factory auftreten.
 
-## Problem: Kann nicht ausgeführt "Data Factory"-Cmdlets
-Wechseln Sie zum Beheben dieses Problems auf Azure-Modus **AzureResourceManager**:
+## Problem: Data Factory-Cmdlets können nicht ausgeführt werden.
+Wechseln Sie zum Beheben des Problems in den Azure-Modus **AzureResourceManager**:
 
-Starten Sie **Azure PowerShell** und führen Sie den folgenden Befehl zum Wechseln der **AzureResourceManager** Modus. Die Azure Data Factory-Cmdlets stehen in der **AzureResourceManager** Modus.
+Starten Sie **Azure PowerShell**, und führen Sie den folgenden Befehl aus, um in den Modus **AzureResourceManager** zu wechseln. Die Azure Data Factory-Cmdlets sind im Modus **AzureResourceManager** verfügbar.
 
          switch-azuremode AzureResourceManager
 
-## Problem: Nicht autorisierter Fehler beim Ausführen eines Daten-Factory-Cmdlets
-Sie verwenden wahrscheinlich nicht die Rechte Azure-Konto oder das Abonnement mit der Azure-PowerShell. Verwenden Sie die folgenden Cmdlets, um die Rechte Azure-Konto und das Abonnement mit der Azure-PowerShell auszuwählen.
+## Problem: Autorisierungsfehler beim Ausführen eines Data Factory-Cmdlets
+Sie verwenden wahrscheinlich nicht das richtige Azure-Konto oder -Abonnement für Azure-PowerShell. Wählen Sie mithilfe der folgenden Cmdlets das richtige Azure-Konto und -Abonnement für die Verwendung mit Azure-PowerShell.
 
-1. Hinzufügen-AzureAccount - verwenden Sie die richtige Benutzer-ID und Kennwort
-2. Get-AzureSubscription - alle Abonnements für das Konto anzeigen. 
-3. SELECT-AzureSubscription <subscription name> -Wählen Sie das richtige Abonnement. Verwenden Sie den gleichen, die Sie verwenden, um eine Factory für die Daten auf das Azure Preview Portal erstellen.
+1. Add-AzureAccount: Verwenden Sie die richtige Benutzer-ID und das richtige Kennwort.
+2. Get-AzureSubscription: Zeigen Sie alle Abonnements für das Konto an. 
+3. Select-AzureSubscription<subscription name>: Wählen Sie das richtige Abonnement. Verwenden Sie dasselbe Abonnement wie zum Erstellen einer Data Factory im Azure-Vorschauportal.
 
-## Problem: Nicht Daten Gateway Express-Installation von Azure-Portal gestartet
-Die Express-Installation für das Gateway Daten erfordert Internet Explorer oder einem kompatiblen Webbrowser Microsoft ClickOnce. Wenn Sie die Express-Installation zu starten, können Sie
+## Problem: Das Express-Setup für das Datengateway kann vom Azure-Portal aus nicht gestartet werden.
+Für das Express-Setup des Datengateways ist Internet Explorer oder ein mit Microsoft ClickOnce kompatibler Webbrowser erforderlich. Wenn das Express-Setup nicht startet, haben Sie folgende Möglichkeiten:
 
-1. Wechseln Sie zu Internet Explorer, schlägt mit anderen Browsern. Oder
-2. Verwenden Sie "Manuelle Installation" Links auf der gleichen Blade im Portal angezeigt, um die Installation durchzuführen, und kopieren Sie den Schlüssel, der auf dem Bildschirm bereitgestellt wird, und fügen Sie Sie bei die Konfiguration von Data Management Gateway bereit ist. Wenn es gestartet wird, überprüfen Sie im Startmenü 'Microsoft-Datenverwaltungsgateway', und fügen Sie in den Schlüssel, wenn er startet. 
+1. Wechseln Sie zu Internet Explorer, wenn andere Browser nicht funktionieren. Oder
+2. Verwenden Sie die auf dem gleichen Blatt im Portal angezeigten Links "Manuelles Setup", um die Installation durchzuführen. Kopieren Sie den auf dem Bildschirm angezeigten Schlüssel, und fügen Sie ihn ein, sobald die Konfiguration des Datenverwaltungsgateways bereit ist. Falls das Gateway nicht gestartet wird, überprüfen Sie das Startmenü auf "Microsoft-Datenverwaltungsgateway", und fügen Sie beim Start den Schlüssel ein. 
 
 
-## Problem: Nicht Anmeldeinformations-Manager von Azure-Portal gestartet
-Beim Einrichten oder aktualisieren eine verknüpfte SQL Server-Dienst über den Azure-Portal den Anmeldeinformations-Manager, die Anwendung gestartet wird, um Sicherheit zu gewährleisten. Internet Explorer oder einem kompatiblen Webbrowser Microsoft ClickOnce benötigt. Sie können in Internet Explorer wechseln, schlägt mit anderen Browsern.
+## Problem: Fehler beim Starten des Anmeldeinformations-Managers im Azure-Portal
+Beim Einrichten oder Aktualisieren eines mit SQL Server verknüpften Diensts über das Azure-Portal wird der Anmeldeinformations-Manager gestartet, um die Zugriffssicherheit zu gewährleisten. Hierfür ist Internet Explorer oder ein mit Microsoft ClickOnce kompatibler Webbrowser erforderlich. Falls andere Browser nicht funktionieren, können Sie zu Internet Explorer wechseln.
 
-## Problem: Bei lokalen SQL Server-Verbindung herstellen 
-Stellen Sie sicher, dass SQL Server von dem Computer, auf dem das Gateway installiert ist, erreichbar ist. Auf dem Computer, auf dem das Gateway installiert ist, können Sie
+## Problem: Fehler beim Herstellen einer Verbindung mit der lokalen SQL Server-Datenbank 
+Stellen Sie sicher, dass SQL Server von dem Computer, auf dem das Gateway installiert ist, erreichbar ist. Sie haben auf dem Computer mit dem installierten Gateway folgende Möglichkeiten:
 
 1. Pingen Sie den Computer, auf dem SQL Server installiert ist. Oder
-2. Versuchen Sie die Verbindung mit den Anmeldeinformationen der Azure-Verwaltungsportal mithilfe von SQL Server Management Studio (SSMS) angegebene SQL Server-Instanz.
+2. Versuchen Sie unter Verwendung der Anmeldeinformationen, die Sie im Azure-Portal mithilfe von SQL Server Management Studio (SSMS) angegeben haben, eine Verbindung mit der SQL Server-Instanz herzustellen.
 
 
-## Problem: Eingabe Slices sind PendingExecution oder PendingValidation zum jemals
+## Problem: Eingabeslices haben permanent den Status "PendingExecution" oder "PendingValidation".
 
-Segmente werden konnte, **PendingExecution** oder **PendingValidation** aufgrund einer Reihe von Gründen und eine der häufigsten Gründe Zustand befindet, der **WaitOnExternal** Eigenschaft nicht angegeben ist die **Verfügbarkeit** Abschnitt der ersten Tabelle/Dataset in der Pipeline. Ein Dataset, das außerhalb des Bereichs der Azure Data Factory erzeugt wird gekennzeichnet werden soll, mit **WaitOnExternal** -Eigenschaft unter **Verfügbarkeit** Abschnitt. Dies bedeutet, dass die Daten nicht gesicherten von Pipelines innerhalb der Factory Daten und externen. Die Datensegmente werden als **bereit** sobald die Daten im entsprechenden Speicher verfügbar ist.
+Slices können den Status **PendingExecution** oder **PendingValidation** aus unterschiedlichen Gründen aufweisen. Zu den häufigsten Gründen zählt, dass die Eigenschaft **waitOnExternal** nicht im Abschnitt **availability** der ersten Tabelle bzw. des ersten Datasets in der Pipeline angegeben ist. Ein Dataset, das außerhalb des Gültigkeitsbereichs von Azure Data Factory erstellt wird, sollte im Abschnitt **availability** mit der Eigenschaft **waitOnExternal** gekennzeichnet sein. Dies bedeutet, dass es sich um externe Daten handelt, die nicht von Pipelines innerhalb der Data Factory unterstützt werden. Die Datenslices werden als **Ready** gekennzeichnet, sobald die Daten im entsprechenden Speicher verfügbar sind.
 
-Im folgenden Beispiel für die Verwendung der **WaitOnExternal** Eigenschaft. Sie können angeben, **WaitOnExternal {}** ohne Werte für Eigenschaften im Abschnitt festlegen, sodass die Standardwerte verwendet werden.
+Das folgende Beispiel zeigt die Verwendung der Eigenschaft **waitOnExternal**. Sie können **waitOnExternal {}** angeben, ohne Werte für Eigenschaften im Abschnitt festzulegen, sodass die Standardwerte verwendet werden.
 
-Tabellen finden Sie in [JSON Scripting Reference][json-scripting-reference] für Weitere Informationen zu dieser Eigenschaft.
+Im Thema "Tabellen" in der [Referenz zur JSON-Skripterstellung][json-scripting-reference] finden Sie weitere Informationen zu dieser Eigenschaft.
 	
 	{
 	    "name": "CustomerTable",
@@ -89,57 +89,57 @@ Tabellen finden Sie in [JSON Scripting Reference][json-scripting-reference] für
 	    }
 	}
 
- Um den Fehler zu beheben, fügen die **WaitOnExternal** im Abschnitt zur Definition der Eingabetabelle JSON und die Tabelle erneut erstellen.
+ Um den Fehler zu beheben, fügen Sie den Abschnitt **waitOnExternal** der JSON-Definition für die Eingabetabelle hinzu und erstellen die Tabelle erneut.
 
-## Problem: Hybrid-Kopiervorgang schlägt fehl
-Um weitere Details zu erfahren:
+## Problem: Fehler beim Hybridkopiervorgang
+So erhalten Sie weitere Details:
 
-1. Starten Sie Data Management Gateway-Konfigurations-Manager auf dem Computer, auf dem Gateway installiert wurde. Überprüfen Sie, ob die **gatewayname** auf den Namen des logischen Gateway festgelegt ist, auf die **Azure Portal**, **Schlüssel des Gateways** ist **registriert** und **Service Status** ist **gestartet**. 
-2. Starten Sie **Ereignisanzeige**. Erweitern Sie **Anwendungs- und Dienstprotokolle** und klicken Sie auf **Datenverwaltungsgateway**. Überprüfen Sie, ob es Fehler im Zusammenhang mit Data Management Gateway gibt. 
+1. Starten Sie den Konfigurations-Manager für das Datenverwaltungsgateway auf dem Computer, auf dem das Gateway installiert wurde. Stellen Sie Folgendes sicher: Als **Gatewayname** ist der logische Gatewayname im **Azure-Portal** festgelegt, der **Schlüsselstatus des Gateways** ist **registriert** und der **Dienststatus** ist **gestartet**. 
+2. Starten Sie die **Ereignisanzeige**. Erweitern Sie **Anwendungs- und Dienstprotokolle**, und klicken Sie auf **Datenverwaltungsgateway**. Überprüfen Sie, ob es Fehler im Zusammenhang mit Data Management Gateway gibt. 
 
-## Problem: Auf Anforderung HDInsight Bereitstellung schlägt fehl mit Fehler
+## Problem: Fehler bei der bedarfsgesteuerten HDInsight-Bereitstellung
 
-Wenn Sie einen verknüpften Dienst vom Typ HDInsightOnDemandLinkedService zu verwenden, sollten Sie eine LinkedServiceName angeben, Azure Blob-Speicher verweist. Dieses Speicherkonto wird verwendet, um die Protokolle und die unterstützenden Dateien für Ihr HDInsight-Cluster bei Bedarf kopieren. Manchmal kann die Aktivität, die die Bereitstellung nach Bedarf auf HDInsight mit folgendem Fehler fehlschlagen:
+Wenn Sie einen verknüpften Dienst vom Typ "HDInsightOnDemandLinkedService" verwenden, sollten Sie einen "linkedServiceName" angeben, der auf den Azure-Blobspeicher verweist. Dieses Speicherkonto wird verwendet, um sämtliche Protokolle und unterstützenden Dateien für Ihren bedarfsgesteuerten HDInsight-Cluster zu kopieren. Mitunter kann bei der Aktivität, die für die bedarfsgesteuerte HDInsight-Bereitstellung sorgt, folgender Fehler auftreten:
 
 		Failed to create cluster. Exception: Unable to complete the cluster create operation. Operation failed with code '400'. Cluster left behind state: 'Error'. Message: 'StorageAccountNotColocated'.
 
-Dieser Fehler gibt normalerweise an, dass der Speicherort des Speicherkontos angegeben, in der LinkedServiceName nicht in demselben Standort des Rechenzentrums als, in dem die Bereitstellung des HDInsight geschieht. Z. B. Wenn Ihre Azure-Daten-Factory Location (Westen) und erfolgt die Bereitstellung nach Bedarf HDInsight, in die auf Osten der USA (Westen), aber der Azure-Blob-kontospeicherort festgelegt, die die bedarfsgesteuerte Bereitstellung fehl.
+Dieser Fehler gibt normalerweise an, dass der Speicherort des Speicherkontos, das in "linkedServiceName" angegeben ist, nicht dem Speicherort des Datencenters entspricht, in dem die HDInsight-Bereitstellung erfolgt. Beispiel: Wenn der Speicherort von Azure Data Factory "USA (Westen)" ist und die bedarfsgesteuerte HDInsight-Bereitstellung in "USA (Westen)" erfolgt, aber der Speicherort des Azure-Blobspeicherkontos auf "USA (Osten)" festgelegt ist, schlägt die bedarfsgesteuerte Bereitstellung fehl.
 
-Darüber hinaus steht eine zweite JSON-Eigenschaft AdditionalLinkedServiceNames wobei zusätzliche Speicherkonten in einer bedarfsgesteuerten HDInsight angegeben werden kann. Diese zusätzlichen verknüpften Speicherkonten sollten am gleichen Speicherort wie der HDInsight-Cluster, oder sie schlägt mit dem gleichen Fehler.
+Darüber hinaus können in der weiteren JSON-Eigenschaft "additionalLinkedServiceNames" zusätzliche Speicherkonten in bedarfsgesteuertem HDInsight angegeben werden. Diese zusätzlichen verknüpften Speicherkonten müssen sich am gleichen Speicherort wie der HDInsight-Cluster befinden. Andernfalls tritt derselbe Fehler auf.
 
 
 
-## Problem: Benutzerdefinierte Aktivität ein Fehler auftritt
-Bei Verwendung einer benutzerdefinierten Aktivität in Azure Data Factory (Pipeline Aktivitätstyp CustomActivity) führt die benutzerdefinierte Anwendung in den angegebenen verknüpften Dienst zu HDInsight als Zuordnung nur streaming-MapReduce-Job.
+## Problem: Fehler bei benutzerdefinierter Aktivität
+Bei Verwendung einer benutzerdefinierten Aktivität in Azure Data Factory (Pipeline-Aktivitätstyp "CustomActivity") wird die benutzerdefinierte Anwendung im festgelegten Dienst, der mit HDInsight verknüpft ist, als auf "Map" beschränkter MapReduce-Streamingauftrag ausgeführt.
 
-Wenn die benutzerdefinierte Aktivität ausgeführt wird, Azure Data Factory werden diese Ausgabe aus dem HDInsight-Cluster zu erfassen und speichern Sie es in der *Adfjobs* Speichercontainer in Ihrem Konto Azure Blob-Speicher. Im Falle eines Fehlers können Sie den Text aus lesen **"stderr"** Output-Textdatei, nachdem ein Fehler aufgetreten ist. Die Dateien sind verfügbar und lesbar aus dem Azure-Portal selbst in einem Webbrowser oder mit Speicher-Explorer-Tools Zugriff auf die Dateien direkt in den Speichercontainer in Azure Blob-Speicher aufbewahrt.
+Wenn die benutzerdefinierte Aktivität ausgeführt wird, kann Azure Data Factory diese Ausgabe aus dem HDInsight-Cluster erfassen und im Speichercontainer *adfjobs* in Ihrem Azure-Blobspeicherkonto speichern. Bei einem Fehler finden Sie Einzelheiten in der Ausgabetextdatei **stderr**. Die Dateien sind im Azure-Portal zugänglich und können von dort in einem Webbrowser gelesen werden. Zudem ist es möglich, die im Speichercontainer enthaltenen Dateien mithilfe von Speicher-Explorer-Tools direkt im Azure-Blobspeicher aufzurufen.
 
-Zum Auflisten und lesen Sie die Protokolle für eine benutzerdefinierte Aktivität, können Sie eine illustrierte exemplarischen Vorgehensweisen weiter unten auf dieser Seite folgen. Zusammenfassung:
+Zum Auflisten und Lesen der Protokolle einer bestimmten benutzerdefinierten Aktivität können Sie eine der anschaulichen exemplarischen Vorgehensweisen weiter unten auf dieser Seite befolgen. Zusammenfassung:
 
-1.  In der Azure-Portal **Durchsuchen** Ihrer Daten Factory zu lokalisieren.
-2.  Verwenden der **Diagramm** um die Factory-Diagramm anzuzeigen, und klicken Sie auf die **Dataset** -Tabelle die spezifische **Pipeline** hat die benutzerdefinierte Aktivität. 
-3.  In der **Tabelle** Blade, klicken Sie auf das Segment Interesse an der **Problem Segmente** für den Zeitrahmen untersucht werden.
-4.  Die ausführliche **Datenslice** Blade wird angezeigt, und es kann mehrere Listen **Aktivität ausgeführt wird** für das Segment. Klicken Sie auf ein **Aktivität** aus der Liste. 
-5.  Die **Aktivitätsdetails ausführen** Blade wird angezeigt. Listet die **Fehlermeldung** in der Mitte der Blade und mehrere **Protokolldateien** unten im Fenster zugeordnet, mit die Aktivität ausgeführt.
-	- Protokolle, System-0.log
+1.  Klicken Sie im Azure-Portal auf **Durchsuchen**, um zu Ihrer Data Factory zu navigieren.
+2.  Klicken Sie auf die Schaltfläche **Diagramm**, um das Data Factory-Diagramm anzuzeigen. Klicken Sie dann auf die Tabelle **Dataset**, die der spezifischen **Pipeline** mit der benutzerdefinierten Aktivität folgt. 
+3.  Klicken Sie auf dem Blatt **Tabelle** in **Problemslices** auf den gewünschten Slice für den zu untersuchenden Zeitraum.
+4.  Das detaillierte Blatt **Datenslice** wird angezeigt. Es kann mehrere **Aktivitätsausführungen** für den Slice beinhalten. Klicken Sie in der Liste auf eine **Aktivität**. 
+5.  Das Blatt **Aktivitätsausführung – Details** wird angezeigt. In der Mitte des Blatts sehen Sie die **Fehlermeldung** und darunter verschiedene mit dieser Aktivitätsausführung verbundene **Protokolldateien**.
+	- Logs/system-0.log
 	- Status
-	- Status/beenden
-	- Status / "stderr"
+	- Status/exit
+	- Status/stderr
 	- Status/stdout
 
-6. Klicken Sie auf der ersten **Protokolldatei** Element in der Liste aus, und das Protokoll wird in einem neuen Fenster geöffnet, mit dem vollständigen Text angezeigt wird, zu lesen. Überprüfen Sie den Text des jeweiligen Protokolls jeweils auf. Das Text-Viewer-Fenster wird geöffnet. Klicken Sie auf die **herunterladen** Schaltfläche zum Herunterladen der Textdatei für die Offlineanzeige optional.
+6. Klicken Sie auf die erste **Protokolldatei** in der Liste. Das Protokoll wird in einem neuen Blatt mit dem vollständigen Text angezeigt. Überprüfen Sie den Inhalt der einzelnen Protokolle, indem Sie darauf klicken. Das Blatt "Text-Viewer" wird geöffnet. Klicken Sie auf die Schaltfläche **Herunterladen**, um die Textdatei für die optionale Offlineanzeige herunterzuladen.
 
-Ein **häufiger Fehler** aus einer benutzerdefinierten Aktivität wird Fehler bei der Paketausführung mit Exitcode "1". Finden Sie unter "wasb://adfjobs@storageaccount.blob.core.windows.net/PackageJobs/<guid>/<jobid>/Status /" stderr "" Weitere Informationen.
+Ein **häufiger Fehler** bei benutzerdefinierten Aktivitäten erfolgt bei der Paketausführung mit Exitcode "1". Weitere Details finden Sie unter "wasb://adfjobs@storageaccount.blob.core.windows.net/PackageJobs/<guid>/<jobid>/Status/stderr".
 
-Um weitere Details für diese Art von Fehler anzuzeigen, öffnen Sie die **"stderr"** Datei. Ein häufiger Fehler angezeigt, es wird eine Timeoutbedingung wie dieser: INFO Mapreduce. Auftrag: Task-Id: attempt_1424212573646_0168_m_000000_0, Status: Fehler AttemptID:attempt_1424212573646_0168_m_000000_0 Zeitlimit von 600 Sekunden
+Um weitere Details zu dieser Art von Fehler anzuzeigen, öffnen Sie die Datei **stderr**. Ein häufiger Fehler ist hier eine Timeoutbedingung wie diese: INFO mapreduce.Job: Task Id : attempt_1424212573646_0168_m_000000_0, Status : FAILED AttemptID:attempt_1424212573646_0168_m_000000_0 Timed out after 600 secs
 
-Diese denselben Fehler möglicherweise mehrmals angezeigt, wenn der Auftrag dreimal z. B. über den Zeitraum von 30 oder mehr Minuten wiederholt wurde.
+Derselbe Fehler wird möglicherweise mehrmals angezeigt, wenn der Auftrag z. B. über einen Zeitraum von mindestens 30 Minuten dreimal wiederholt wurde.
 
-Dieses Timeout-Fehler weist darauf hin, eine 600 Sekunden (10 Minuten) Zeitüberschreitung aufgetreten. In der Regel bedeutet dies, dass die benutzerdefinierte Anwendung .net eine Statusaktualisierung für 10 Minuten nicht ausgestellt hat. Wenn die Anwendung hängen bleibt oder angehalten, warten auf etwas zu lang, Timeout einen Sicherheitsmechanismus, ohne dass diese warten und verzögern der Pipeline Azure Data Factory ist 10 Minuten.
+Dieser Timeoutfehler weist darauf hin, dass ein Timeout von 600 Sekunden (10 Minuten) aufgetreten ist. In der Regel bedeutet dies, dass die benutzerdefinierte .NET-Anwendung 10 Minuten lang keine Statusaktualisierung ausgelöst hat. Falls sich die Anwendung durch zu langes Warten aufhängt, ist das zehnminütige Timeout ein Sicherheitsmechanismus, der verhindert, dass Ihre Azure Data Factory-Pipeline aufgrund eines unbegrenzten Wartezustands der Anwendung verzögert wird.
 
-Dieses Timeout stammt in der Konfiguration des HDInsight-Cluster, die in der benutzerdefinierten Aktivität verknüpft ist. Die Einstellung ist **mapred.task.timeout**, die den Standardwert 600000 Millisekunden an, wie in den Apache-Standardeinstellungen dokumentiert: http://hadoop.apache.org/docs/r2.4.0/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml
+Dieses Timeout stammt aus der Konfiguration des HDInsight-Clusters, der mit der benutzerdefinierten Aktivität verknüpft ist. Als Einstellung wird **mapred.task.timeout** verwendet. Der Standardwert beträgt 600000 Millisekunden, wie hier in den Standardeinstellungen für Apache dokumentiert ist: http://hadoop.apache.org/docs/r2.4.0/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml
 
-Sie können diese Standardeinstellung override aufgenommen, durch Ändern der Standardwerte zum Zeitpunkt der Bereitstellung Ihrer Bereitstellung HDInsight-Clusters. Bei Verwendung von Azure Data Factory und **HDInsight On-Demand** Service, verknüpft die JSON-Eigenschaft in der Nähe Ihrer HDInsightOnDemandLinkedService JSON-Eigenschaften hinzugefügt werden kann. Beispielsweise können Sie den Wert auf 20 Minuten, die Verwendung dieser JSON-Eigenschaft erhöhen.
+Sie können diese Standardeinstellung überschreiben, indem Sie die Standardwerte zum Zeitpunkt der Bereitstellung Ihres HDInsight-Clusters ändern. Bei Verwendung von Azure Data Factory und des mit **bedarfsgesteuertem HDInsight** verknüpften Diensts kann die JSON-Eigenschaft den JSON-Eigenschaften für "HDInsightOnDemandLinkedService" hinzugefügt werden. Sie können beispielsweise den Wert mithilfe dieser JSON-Eigenschaft auf 20 Minuten erhöhen.
 		
 		"mapReduceConfiguration" :
 		{
@@ -147,13 +147,13 @@ Sie können diese Standardeinstellung override aufgenommen, durch Ändern der St
 		}
 		
 
-Reduzieren Sie für weitere Kontext und ein vollständiges Beispiel für JSON Zuordnung bearbeiten Konfiguration Eigenschaften Siehe Beispiel 3 in der MSDN-Dokumentation https://msdn.microsoft.com/library/azure/dn893526.aspx
+Mehr Kontext und ein vollständiges Beispiel des JSON-Codes zum Bearbeiten dieser MapReduce-Konfigurationseigenschaften finden Sie in Beispiel 3 in der MSDN-Dokumentation unter https://msdn.microsoft.com/library/azure/dn893526.aspx.
 
-## Problem: PowerShell-Anforderung schlägt fehl mit Fehler 400 Bad Request "Keine registrierten Ressourcenanbieter gefunden..."
+## Problem: PowerShell-Anforderung löst den Fehler "400/Ungültige Anforderung – Keine registrierten Ressourcenanbieter gefunden..." aus.
 
-Zum Zeitpunkt der Erstellung 10 März 2015 werden die Azure Data Factory PowerShell frühen private Vorschauversionen 2014-05-01-Vorschau 2014-07-01-Vorschau und 2014-08-01-Vorschau eingestellt. Es wird empfohlen, dass Sie die neueste Version der ADF-Cmdlets verwenden, die jetzt Teil der Azure PowerShell herunterladen, z. B. das Herunterladen von folgender URL http://go.microsoft.com/?linkid=9811175&clcid=0x409
+Seit dem 10. März 2015 werden die frühen privaten Vorschauversionen von Azure Data Factory PowerShell "2014-05-01-preview", "2014-07-01-preview" und "2014-08-01-preview" nicht mehr unterstützt. Es wird empfohlen, die neueste Version der ADF-Cmdlets zu verwenden, die jetzt Teil des Azure PowerShell-Downloads sind, der beispielsweise unter folgender URL abgerufen werden kann: http://go.microsoft.com/?linkid=9811175&clcid=0x409.
 
-Wenn Sie die nicht mehr unterstützte Versionen von Azure PowerShell SDK verwenden, erhalten Sie folgende Fehler:
+Wenn Sie die nicht mehr unterstützten Versionen von Azure PowerShell SDK verwenden, erhalten Sie ggf. folgende Fehler:
 
 		HTTP/1.1 400 Bad Request
 		Cache-Control: no-cache
@@ -173,60 +173,60 @@ Wenn Sie die nicht mehr unterstützte Versionen von Azure PowerShell SDK verwend
 In dieser exemplarischen Vorgehensweise führen Sie einen Fehler in das Lernprogramm aus dem Artikel „Erste Schritte mit Data Factory“ und erfahren, wie Sie das Azure-Portal verwenden können, um den Fehler zu beheben.
 
 ### Voraussetzungen
-1. Arbeiten Sie das Lernprogramm, in dem [Erste Schritte mit Azure Data Factory][adfgetstarted] Artikel.
-2. Überprüfen Sie, ob die **ADFTutorialDataFactory** erzeugt der Daten in der **emp** Tabelle in Azure SQL-Datenbank.  
-3. Löschen Sie nun die **emp** Tabelle (** Drop table emp **) von Azure SQL-Datenbank. Dadurch wird ein Fehler eingeführt.
-4. Führen den folgenden Befehl die **Azure PowerShell** zum aktive Periode für die Pipeline zu aktualisieren, sodass er versucht, Daten zu schreiben, die **emp** Tabelle, die nicht mehr vorhanden ist.
+1. Schließen Sie das Lernprogramm im Artikel [Erste Schritte mit Azure Data Factory][adfgetstarted] ab.
+2. Vergewissern Sie sich, dass **ADFTutorialDataFactory** Daten in der Tabelle **emp** in der Azure SQL-Datenbank generiert.  
+3. Löschen Sie jetzt die Tabelle **emp** (**drop table emp**) aus der Azure SQL-Datenbank. Dadurch wird ein Fehler eingeführt.
+4. Führen Sie den folgenden Befehl in **Azure PowerShell** aus, um den aktiven Zeitraum für die Pipeline zu aktualisieren, sodass sie versucht, Daten in die Tabelle **emp** zu schreiben, die nicht mehr existiert.
 
          
 		Set-AzureDataFactoryPipelineActivePeriod -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -StartDateTime 2014-09-29 –EndDateTime 2014-09-30 –Name ADFTutorialPipeline
 	
-	> [AZURE.NOTE]Ersetzen Sie <b>StartDateTime</b> -Wert mit dem aktuellen Tag und <b>EndDateTime</b> Wert mit am nächsten Tag.
+	Ersetzen Sie den Wert **StartDateTime** durch den aktuellen Tag und den Wert **EndDateTime** durch den nächsten Tag.
 
 
 ### Verwenden des Azure-Vorschauportals, um den Fehler zu beheben
 
-1.	Melden Sie sich [Azure Preview Portal][azure-preview-portal]. 
-2.	Klicken Sie auf **ADFTutorialDataFactory** aus der **Startboard**. Wenn die Daten Factory verknüpfen, nicht angezeigt wird die **Startmenü**, klicken Sie auf **Durchsuchen** Hub, und klicken Sie auf **Alles**. Klicken Sie auf **Daten Factorys...** in den **Durchsuchen** Blade, und klicken Sie auf **ADFTutorialDataFactory**.
-3.	Beachten Sie, dass die angezeigten **mit Fehlern** auf der **Datasets** Kachel. Klicken Sie auf **mit Fehlern**. Sollte eine **Datasets mit Fehlern** Blade.
+1.	Melden Sie sich beim [Azure-Vorschauportal][azure-preview-portal] an. 
+2.	Klicken Sie im **Startmenü** auf **ADFTutorialDataFactory**. Wenn Sie den Data Factory-Link nicht im **Startmenü** sehen, klicken Sie auf den Hub **DURCHSUCHEN** und dann auf **Alles**. Klicken Sie auf dem Blatt **Durchsuchen** auf **Data Factorys…** und dann auf **ADFTutorialDataFactory**.
+3.	Wie Sie sehen, wird auf der Kachel **Datasets** die Option **Mit Fehlern** angezeigt. Klicken Sie auf **Mit Fehlern**. Das Blatt **Datasets mit Fehlern** sollte nun angezeigt werden.
 
-	![Daten-Factory mit Fehlern link][image-data-factory-troubleshoot-with-error-link]
+	![Data Factory mit Link "Fehler"][image-data-factory-troubleshoot-with-error-link]
 
-4. In der **Datasets** Fehler Blade, und klicken Sie auf **EmpSQLTable** finden Sie unter der **Tabelle** Blade.
+4. Klicken Sie auf dem Blatt **Datasets mit Fehlern** auf **EmpSQLTable**, um das Blatt **TABELLE** anzuzeigen.
 
-	![Datasets mit Fehlern blade][image-data-factory-troubleshoot-datasets-with-errors-blade]
+	![Blatt "Datasets mit Fehlern"][image-data-factory-troubleshoot-datasets-with-errors-blade]
 
-5. In der **Tabelle** Blade, sollte das Problem Slices verwendet, d. h. Segmente mit einem Fehler in der **Problem Segmente** Liste am unteren Rand. Sie sehen außerdem alle aktuellen Slices mit Fehlern in den **aktuelle Slices** Liste. Klicken Sie auf ein Segment in der **Problem Segmente** Liste.
+5. Auf dem Blatt **TABELLE** sollten unten in der Liste **Problemslices** Slices mit Fehlern angezeigt werden. In der Liste **Zuletzt verwendete Slices** sehen Sie auch alle aktuellen Slices mit Fehlern. Klicken Sie in der Liste **Problemslices** auf einen Slice.
 
-	![Tabelle Blade mit Problem slices][image-data-factory-troubleshoot-table-blade-with-problem-slices]
+	![Blatt "Tabelle" mit Problemslices][image-data-factory-troubleshoot-table-blade-with-problem-slices]
 
-	Wenn Sie auf **Problem Segmente** (nicht auf ein bestimmtes Problem), sehen Sie die **DATENSLICES** Blade und klicken Sie dann auf eine **Problems Slice** finden Sie unter der **DATENSLICE** Folie für den ausgewählten Datenslice.
+	Wenn Sie auf **Problemslices** (nicht auf ein bestimmtes Problem) klicken, sehen Sie das Blatt **DATENSLICES**. Klicken Sie auf einen bestimmten **Problemslice**, um das Blatt **DATENSLICE** für den ausgewählten Datenslice anzuzeigen.
 
-6. In der **DATENSLICE** Blade für **EmpSQLTable**, sehen Sie all **Aktivität ausgeführt wird** für den Slice in der Liste unten. Klicken Sie auf ein **Aktivität ausführen** aus der Liste, die fehlgeschlagen.
+6. Auf dem Blatt **DATENSLICE** für **EmpSQLTable** sehen Sie alle **Aktivitätsausführungen** für den unten in der Liste enthaltenen Slice. Klicken Sie in der Liste auf eine **Aktivitätsausführung**, bei der ein Fehler aufgetreten ist.
 
-	![Daten Slice-Blade mit Aktive Testläufe][image-data-factory-troubleshoot-dataslice-blade-with-active-runs]
+	![Blatt "Datenslice" mit Aktivitätsausführungen][image-data-factory-troubleshoot-dataslice-blade-with-active-runs]
 
 
-7. In der **Aktivitätsdetails ausführen** Blade für die Aktivität führen Sie ausgewählt haben, sollte die Einzelheiten zu dem Fehler. In diesem Szenario finden Sie: **Ungültiger Objektname 'emp'**.
+7. Auf dem Blatt **Aktivitätsausführung – Details** für die von Ihnen ausgewählte Aktivitätsausführung sollten Fehlerdetails angezeigt werden. In diesem Szenario wird Folgendes angezeigt: **Ungültiger Objektname 'emp'**.
 
-	![Aktivität, die Details zu einem Fehler führen][image-data-factory-troubleshoot-activity-run-with-error]
+	![Details zur Aktivitätsausführung mit einem Fehler][image-data-factory-troubleshoot-activity-run-with-error]
 
-Um dieses Problem zu beheben, erstellen Sie die **emp** Tabelle mithilfe des SQL-Skript von [Erste Schritte mit Daten Factory][adfgetstarted] Artikel.
+Um dieses Problem zu beheben, erstellen Sie die Tabelle **emp** mit dem SQL-Skript aus dem Artikel [Erste Schritte mit Data Factory][adfgetstarted].
 
 
 ### Verwenden von Azure PowerShell-Cmdlets, um den Fehler zu beheben
 1.	Starten Sie **Azure PowerShell**. 
-2.	Wechseln Sie zu **AzureResourceManager** Modus als "Data Factory"-Cmdlets sind nur in diesem Modus verfügbar.
+2.	Wechseln Sie in den Modus **AzureResourceManager**, da Data Factory-Cmdlets nur in diesem Modus verfügbar sind.
 
          
 		switch-azuremode AzureResourceManager
 
-3. Führen Sie den Befehl Get-AzureDataFactorySlice aus, um die Slices und deren Status anzuzeigen. Daraufhin sollte einen Slice mit dem Status: Fehler.
+3. Führen Sie den Befehl Get-AzureDataFactorySlice aus, um die Slices und deren Status anzuzeigen. Ein Slice mit dem Status "Fehler" sollte angezeigt werden.
 
          
 		Get-AzureDataFactorySlice -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -StartDateTime 2014-10-15
 
-	> [AZURE.NOTE]Ersetzen Sie **StartDateTime** mit der StartDateTime-Wert für die **Set AzureDataFactoryPipelineActivePeriod**.
+	Ersetzen Sie **StartDateTime** durch den für **Set-AzureDataFactoryPipelineActivePeriod** festgelegten "StartDateTime"-Wert.
 
 		ResourceGroupName 		: ADFTutorialResourceGroup
 		DataFactoryName   		: ADFTutorialDataFactory
@@ -238,12 +238,12 @@ Um dieses Problem zu beheben, erstellen Sie die **emp** Tabelle mithilfe des SQL
 		LatencyStatus     		:
 		LongRetryCount    		: 0
 
-	Beachten Sie die **Starten** für das Problem-Segment (mit **Status** festgelegt **fehlgeschlagen**) in der Ausgabe. 
-4. Führen Sie nun die **Get-AzureDataFactoryRun** -Cmdlet zum Abrufen von Details zur Aktivität für das Segment ausführen.
+	Beachten Sie in der Ausgabe die **Startzeit** für den Problemslice (den Slice mit dem **Status**: **Fehler**). 
+4. Führen Sie nun das Cmdlet **Get-AzureDataFactoryRun** zum Abrufen von Details zur Aktivitätsausführung für den Slice aus.
          
 		Get-AzureDataFactoryRun -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -StartDateTime "10/15/2014 4:00:00 PM"
 
-	Der Wert der **StartDateTime** ist die Startzeit für die Fehler oder Probleme-Segment, das Sie im vorherigen Schritt notiert haben. Datum und Uhrzeit sollte in doppelte Anführungszeichen eingeschlossen werden.
+	Der Wert von **StartDateTime** ist die Startzeit für den Fehler-/Problemslice, den Sie im vorherigen Schritt notiert haben. Datum und Uhrzeit sollte in doppelte Anführungszeichen eingeschlossen werden.
 5. Die Ausgabe mit Einzelheiten zu dem Fehler (ähnlich der folgenden) sollte angezeigt werden:
 
 		Id                  	: 2b19475a-c546-473f-8da1-95a9df2357bc
@@ -272,43 +272,43 @@ Um dieses Problem zu beheben, erstellen Sie die **emp** Tabelle mithilfe des SQL
 Diese exemplarische Vorgehensweise enthält Schritte zum Beheben der Fehler mit Hive/Pig-Verarbeitung mithilfe des Azure-Vorschauportals und Azure PowerShell.
 
 
-### Exemplarische Vorgehensweise: Verwenden Azure-Portal zur Problembehandlung mit Pig-Hive-Verarbeitung
+### Exemplarische Vorgehensweise: Verwenden des Azure-Portals zur Problembehandlung bei der Pig/Hive-Verarbeitung
 In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung auf einen HDInsight-Cluster in einem Fehlerzustand.
 
-1. Klicken Sie auf **mit Fehlern** auf **Datasets** Kachel auf die **DATA FACTORY** auf der Startseite.
+1. Klicken Sie auf der Startseite von **DATA FACTORY** auf der Kachel **Datasets** auf **Mit Fehlern**.
 
-	![Mit Fehlern Link auf Datasets-Kachel][image-data-factory-troubleshoot-walkthrough2-with-errors-link]
+	![Link "Mit Fehlern" auf der Kachel "Datasets"][image-data-factory-troubleshoot-walkthrough2-with-errors-link]
 
-2. In der **Datasets mit Fehlern** Blade, klicken Sie auf die **Tabelle** dass Sie interessiert sind.
+2. Klicken Sie auf dem Blatt **Datasets mit Fehlern** auf die gewünschte **Tabelle**.
 
-	![Datasets mit Fehlern blade][image-data-factory-troubleshoot-walkthrough2-datasets-with-errors]
+	![Blatt "Datasets mit Fehlern"][image-data-factory-troubleshoot-walkthrough2-datasets-with-errors]
 
-3. In der **Tabelle** Blade, klicken Sie auf die **Problem Slice** mit **STATUS** festgelegt **Fehler**.
+3. Klicken Sie auf dem Blatt **TABELLE** auf den **Problemslice** mit dem **STATUS**: **Fehler**.
 
-	![Tabelle mit Problem slices][image-data-factory-troubleshoot-walkthrough2-table-with-problem-slices]
+	![Tabelle mit Problemslices][image-data-factory-troubleshoot-walkthrough2-table-with-problem-slices]
 
-4. In der **DATENSLICE** Blade, klicken Sie auf die **Aktivität ausführen** fehlgeschlagen.
+4. Klicken Sie auf dem Blatt **DATA SLICE** auf die fehlerhafte **Aktivitätsausführung**.
 
-	![Datenslice mit fehlgeschlagenen Ausführungen][image-data-factory-troubleshoot-walkthrough2-slice-activity-runs]
+	![Datenslice mit fehlerhaften Ausführungen][image-data-factory-troubleshoot-walkthrough2-slice-activity-runs]
 
-5. In der **AKTIVITÄTSDETAILS ausführen** Blade, Sie können die Verarbeitung von HDInsight zugeordneten Dateien herunterladen. Klicken Sie auf **herunterladen** für **Status/Stderr** Fehlerprotokolldatei herunterladen, die Details über den Fehler enthält.
+5. Auf dem Blatt **AKTIVITÄTSAUSFÜHRUNG – DETAILS** können Sie die mit der Verarbeitung von HDInsight verknüpften Dateien herunterladen. Klicken Sie für **Status/stderr** auf **Herunterladen**, um die Fehlerprotokolldatei mit Einzelheiten zum Fehler herunterzuladen.
 
-	![Aktivität ausführen Details mit Link zum Herunterladen][image-data-factory-troubleshoot-activity-run-details]
+	![Details zur Aktivitätsausführung mit Downloadlink][image-data-factory-troubleshoot-activity-run-details]
 
     
-### Exemplarische Vorgehensweise: Verwenden von Azure PowerShell zur Problembehandlung mit Pig-Hive-Verarbeitung
+### Exemplarische Vorgehensweise: Verwenden von Azure PowerShell zur Problembehandlung bei der Pig/Hive-Verarbeitung
 1.	Starten Sie **Azure PowerShell**. 
-2.	Wechseln Sie zu **AzureResourceManager** Modus als "Data Factory"-Cmdlets sind nur in diesem Modus verfügbar.
+2.	Wechseln Sie in den Modus **AzureResourceManager**, da Data Factory-Cmdlets nur in diesem Modus verfügbar sind.
 
          
 		switch-azuremode AzureResourceManager
 
-3. Führen Sie den Befehl Get-AzureDataFactorySlice aus, um die Slices und deren Status anzuzeigen. Daraufhin sollte einen Slice mit dem Status: Fehler.
+3. Führen Sie den Befehl Get-AzureDataFactorySlice aus, um die Slices und deren Status anzuzeigen. Ein Slice mit dem Status "Fehler" sollte angezeigt werden.
 
          
 		Get-AzureDataFactorySlice -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -TableName EnrichedGameEventsTable -StartDateTime 2014-05-04 20:00:00
 
-	> [AZURE.NOTE]Ersetzen Sie **StartDateTime** mit der StartDateTime-Wert für die **Set AzureDataFactoryPipelineActivePeriod**.
+	Ersetzen Sie **StartDateTime** durch den für **Set-AzureDataFactoryPipelineActivePeriod** festgelegten "StartDateTime"-Wert.
 
 		ResourceGroupName : ADF
 		DataFactoryName   : LogProcessingFactory
@@ -321,12 +321,12 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 		LongRetryCount    : 0
 
 
-	Beachten Sie die **Starten** für das Problem-Segment (mit **Status** festgelegt **fehlgeschlagen**) in der Ausgabe. 
-4. Führen Sie nun die **Get-AzureDataFactoryRun** -Cmdlet zum Abrufen von Details zur Aktivität für das Segment ausführen.
+	Beachten Sie in der Ausgabe die **Startzeit** für den Problemslice (den Slice mit dem **Status**: **Fehler**). 
+4. Führen Sie nun das Cmdlet **Get-AzureDataFactoryRun** zum Abrufen von Details zur Aktivitätsausführung für den Slice aus.
          
 		Get-AzureDataFactoryRun -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -TableName EnrichedGameEventsTable -StartDateTime "5/5/2014 12:00:00 AM"
 
-	Der Wert der **StartDateTime** ist die Startzeit für die Fehler oder Probleme-Segment, das Sie im vorherigen Schritt notiert haben. Datum und Uhrzeit sollte in doppelte Anführungszeichen eingeschlossen werden.
+	Der Wert von **StartDateTime** ist die Startzeit für den Fehler-/Problemslice, den Sie im vorherigen Schritt notiert haben. Datum und Uhrzeit sollte in doppelte Anführungszeichen eingeschlossen werden.
 5. Die Ausgabe mit Einzelheiten zu dem Fehler (ähnlich der folgenden) sollte angezeigt werden:
 
 		Id                  : 841b77c9-d56c-48d1-99a3-8c16c3e77d39
@@ -348,7 +348,7 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 		PipelineName        : EnrichGameLogsPipeline
 		Type                :
 
-6. Können Sie ausführen, **Speichern AzureDataFactoryLog** Cmdlet mit dem Id-Wert aus der obigen Ausgabe sehen und Protokoll herunterladen Dateien mit der **- DownloadLogs** -Option für das Cmdlet.
+6. Sie können das Cmdlet **Save-AzureDataFactoryLog** mit dem ID-Wert ausführen, den Sie in der oben genannten Ausgabe finden, und die Protokolldateien mithilfe der Option **-DownloadLogs** für das Cmdlet herunterladen.
 
 
 
@@ -384,5 +384,6 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 [image-data-factory-troubleshoot-walkthrough2-slice-activity-runs]: ./media/data-factory-troubleshoot/Walkthrough2DataSliceActivityRuns.png
 
 [image-data-factory-troubleshoot-activity-run-details]: ./media/data-factory-troubleshoot/Walkthrough2ActivityRunDetails.png
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=58_postMigration-->

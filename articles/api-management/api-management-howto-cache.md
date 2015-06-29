@@ -161,4 +161,4 @@ Geben Sie **25** in das Feld **param2** ein, und klicken Sie auf **HTTP Get**.
 [Call an operation and test the caching]: #test-operation
 [Next steps]: #next-steps
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

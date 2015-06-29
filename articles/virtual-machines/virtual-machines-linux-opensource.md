@@ -63,6 +63,7 @@ Ubuntu ist eine äußerst populäre und von Azure unterstützte Linux-Verteilung
 9. [Images: Moodle](http://azure.microsoft.com/marketplace/partners/bitnami/moodle270ubuntu1404/)
 11. [Images: Mono as a Service](http://azure.microsoft.com/marketplace/partners/aegis/monoasaserviceubuntu1204/)
 
+
 ### [Debian](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=Debian)
 
 Debian ist eine wichtige Verteilung für Linux und Open-Source basierend auf der dpgk- und apt-get-Paketverwaltung. Das MSOpenTech VM Depot bietet verschiedene Images.
@@ -72,26 +73,26 @@ Debian ist eine wichtige Verteilung für Linux und Open-Source basierend auf der
 Die CentOS-Linux-Distribution ist eine stabile, vorhersehbare, verwaltbare und reproduzierbare Plattform, die aus den Quellen von Red Hat Enterprise Linux (RHEL) abgeleitet wurde.
 
 1. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=centos)
-2. [Image-Katalog](http://azure.microsoft.com/en-in/marketplace/partners/OpenLogic/)
+2. [Image-Katalog](http://azure.microsoft.com/de-de/marketplace/partners/OpenLogic/)
 3. [Gewusst wie: Vorbereiten eines benutzerdefinierten CentOS-basierten virtuellen Computers für Azure](virtual-machines-linux-create-upload-vhd-centos.md)
 4. [Blog: Bereitstellen eines CentOS-VM-Images aus OpenLogic](http://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)
 6. [Gewusst wie: Installieren von Apache Qpid Proton-C für AMQP und Service Bus](http://msdn.microsoft.com/library/azure/dn235560.aspx)
 7. [Images: Apache 2.2.15 auf OpenLogic CentOS 6.3](http://azure.microsoft.com/marketplace/partners/cognosys/apache2215onopenlogiccentos63/)
 8. [Images: Drupal 7.2, LAMP-Server auf OpenLogic CentOS 6.3](http://azure.microsoft.com/marketplace/partners/cognosys/drupal720lampserveronopenlogiccentos63/)
 
-### SUSE Enterprise Linux und OpenSUSE
+### SUSE Linux Enterprise Server und openSUSE
 
 9. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=OpenSUSE)
 11. [Gewusst wie: Installieren und Ausführen von MySQL](virtual-machines-linux-mysql-use-opensuse.md)
 12. [Gewusst wie: Vorbereiten einer benutzerdefinierten SLES- oder openSUSE-VM](virtual-machines-linux-create-upload-vhd-suse.md)  
-13. [[SUSE-Forum] Gewusst wie: Wechseln zu einem neuen Patchserver](https://forums.suse.com/showthread.php?5622-New-Update-Infrastructure)
+13. [[SUSE-Forum] How to: Move to a New Patch Server (Wechseln zu einem neuen Patchserver, in englischer Sprache)](https://forums.suse.com/showthread.php?5622-New-Update-Infrastructure)
 14. [Images: SUSE Linux Enterprise Server für SAP Cloud Appliance Library](http://azure.microsoft.com/marketplace/partners/suse/suselinuxenterpriseserver11sp3forsapcloudappliance/)
 
 ### CoreOS
 
 CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalierung mit einem hohen Maß an Kontrolle hinsichtlich der Anpassung.
 
-10. [Image-Katalog](http://azure.microsoft.com/en-in/marketplace/partners/coreos/)  
+10. [Image-Katalog](http://azure.microsoft.com/de-de/marketplace/partners/coreos/)  
 11. [Gewusst wie: Verwenden von CoreOS in Azure](virtual-machines-linux-coreos-how-to.md)
 12. [Gewusst wie: Erste Schritte mit Fleet und Docker unter CoreOS in Azure](virtual-machines-linux-coreos-fleet-get-started.md)
 13. [Blog: TechEd Europe – Windows-Docker-Client und Linux-Container](http://azure.microsoft.com/blog/2014/10/28/new-docker-coreos-topics-linux-on-azure/)
@@ -132,7 +133,7 @@ CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalieru
 19. [Blog zu den Grundlagen: Automatisieren der Bereitstellung von Linux auf Azure mit der Azure-CLI, node.js, jhawk](http://blogs.technet.com/b/keithmayer/archive/2014/11/24/step-by-step-automated-provisioning-for-linux-in-the-cloud-with-microsoft-azure-xplat-cli-json-and-node-js-part-1.aspx)
 19. [Erstellen einer Multi-VM-Bereitstellung über die Azure-Befehlszeilenschnittstelle](virtual-machines-create-multi-vm-deployment-../xplat-cli.md)
 20. [Grundlagen: Die Docker-VM-Erweiterung von Azure](virtual-machines-docker-vm-extension.md)
-23. [Azure-Dienstverwaltungs-REST-API](https://msdn.microsoft.com/library/azure/ee460799.aspx) – Referenz 
+23. [Azure-Dienstverwaltungs-REST-API](https://msdn.microsoft.com/library/azure/ee460799.aspx) – Referenz
 24. [GlusterFS auf Azure](http://dastouri.azurewebsites.net/gluster-on-azure-part-1/)
 
 ## Community-Images und Repositorys
@@ -167,7 +168,6 @@ CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalieru
 5. [Azure-Dienstverwaltungs-SDK: Go](https://github.com/MSOpenTech/azure-sdk-for-go)
 5. [Azure-Dienstverwaltungs-SDK: Ruby](https://github.com/MSOpenTech/azure-sdk-for-ruby)
     - [Gewusst wie: Installieren von Ruby on Rails](virtual-machines-ruby-rails-web-app-linux.md)
-    - [Gewusst wie: Installieren von Ruby on Rails mit Capistrano, Nginx, Unicorn und PostgreSQL](virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn.md)
 6. [Azure-Dienstverwaltungs-SDK: Python](https://github.com/Azure/azure-sdk-for-python)
     - [Gewusst wie: Django-Webanwendung "Hello World" (Mac, Linux)](virtual-machines-python-django-web-app-linux.md)
 7. [Azure-Dienstverwaltungs-SDK: Node.js](https://github.com/MSOpenTech/azure-sdk-for-node)
@@ -228,8 +228,6 @@ Dieser Abschnitt enthält Informationen zu mehreren verschiedenen Speicheransät
     - [Hoch verfügbare MySQL-Architektur in Microsoft Azure](http://download.microsoft.com/download/6/1/C/61C0E37C-F252-4B33-9557-42B90BA3E472/MySQL_HADR_solution_in_Azure.pdf)
 7. MariaDB
     - [Gewusst wie: Erstellen eines Clusters mit mehreren Mastern von MariaDbs](virtual-machines-mariadb-cluster.md)
-7. PostgreSQL
-    - [Gewusst wie: Installieren von Ruby on Rails mit Capistrano, Nginx, Unicorn und PostgreSQL](virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn.md)
 8. [Installieren von Postgres mit Corosync Pg_bouncer mit ILB](https://github.com/chgeuer/postgres-azure)
 
 
@@ -296,5 +294,6 @@ Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter 
 <!--Link references--In actual articles, you only need a single period before the slash. -->
 [How to use docker-machine on Azure]: virtual-machines-docker-machine.md
 [How to use docker with swarm on Azure]: virtual-machines-docker-swarm.md
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

@@ -1,9 +1,9 @@
 <properties
-	pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung"
-	description="Erfahren Sie, wie Sie mit den Befehlszeilentools für Mac, Linux und Windows Azure-Ressourcen mithilfe des ARM-Modus der Azure-Befehlszeilenschnittstellen verwalten."
+	pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung | Microsoft Azure"
+	description="Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows Azure-Ressourcen mithilfe des ARM-Modus der Azure-Befehlszeilenschnittstellen verwalten."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="squillace"
+	authors="dlepow"
 	manager="timlt"
 	editor="tysonn"/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/23/2015"
-	ms.author="rasquill"/>
+	ms.date="06/09/2015"
+	ms.author="danlep"/>
 
 # Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung
 
@@ -1091,7 +1091,7 @@ Parameteroptionen:
 	network lb inbound-nat-rule create [options] <resource-group> <lb-name> <name>
 Erstellt eine eingehende NAT-Regel für den Lastenausgleich.
 
-Im folgenden Beispiel haben wir eine NAT-Regel von der Front-End-IP-Adresse, die zuvor definiert wurde, (weitere Informationen finden Sie unter "Befehl "azure network frontend-ip") mit einem eingehenden Überwachungsport und dem ausgehenden Port erstellt, an den das Lastenausgleichsmodul den Netzwerkdatenverkehr sendet.
+Im folgenden Beispiel haben wir eine NAT-Regel von der Front-End-IP-Adresse, die zuvor definiert wurde, (weitere Informationen finden Sie unter dem Befehl "azure network frontend-ip") mit einem eingehenden Überwachungsport und dem ausgehenden Port erstellt, an den das Lastenausgleichsmodul den Netzwerkdatenverkehr sendet.
 
 
 	azure network lb inbound-nat-rule create -g myresourcegroup -l mylb -n myinboundnat -p tcp -f 80 -b 8080 -i myfrontendip
@@ -1245,7 +1245,7 @@ Erstellt eine öffentliche IP-Ressource. Sie erstellen die öffentliche IP-Resso
 	info:    network public-ip create command OK
 
 
-Parameteroptionen: -h, --help output usage information -v, --verbose use verbose output --json use json output -g, --resource-group <resource-group> the name of the resource group -n, --name <name> the name of the public ip -l, --location <location> the location -d, --domain-name-label <domain-name-label> the domain name label. This set DNS to <domain-name-label>.<location>.cloudapp.azure.com -a, --allocation-method <allocation-method> the allocation method [Static][Dynamic] -i, --idletimeout <idletimeout> the idle timeout in minutes -f, --reverse-fqdn <reverse-fqdn> the reverse fqdn -t, --tags <tags> the list of tags. Can be multiple. In the format of "name=value". Name is required and value is optional. For example, -t tag1=value1;tag2 -s, --subscription <subscription> the subscription identifier <br>
+Parameteroptionen: -h, --help output usage information -v, --verbose use verbose output --json use json output -g, --resource-group <resource-group> the name of the resource group -n, --name <name> the name of the public ip -l, --location <location> the location -d, --domain-name-label <domain-name-label> the domain name label. Dies legt DNS auf <domain-name-label>.<location>.cloudapp.azure.com fest. -a, --allocation-method <allocation-method> die Zuordnungsmethode[Static][Dynamic] -i, --idletimeout <idletimeout> das Leerlauftimeout in Minuten -f, --reverse-fqdn <reverse-fqdn> der Reverse-FQDN -t, --tags <tags> die Tagliste. Can be multiple. In the format of "name=value". Name is required and value is optional. For example, -t tag1=value1;tag2 -s, --subscription <subscription> the subscription identifier <br>
 
 	network public-ip set [options] <resource-group> <name>
 Aktualisiert die Eigenschaften einer vorhandenen öffentlichen IP-Ressource. Im folgenden Beispiel wurde die öffentliche IP-Adresse von "Dynamisch" in "Statisch" geändert.
@@ -1286,7 +1286,7 @@ Parameteroptionen:
 	--no-tags                                    remove all existing tags
 	-s, --subscription <subscription>            the subscription identifier
 
-<br> network public-ip list [Optionen] <resource-group> Listet alle öffentliche IP-Ressourcen innerhalb einer Ressourcengruppe auf.
+<br> network public-ip list [Optionen] <resource-group> Listet alle öffentlichen IP-Ressourcen innerhalb einer Ressourcengruppe auf.
 
 	azure network public-ip list -g myresourcegroup
 
@@ -1735,5 +1735,6 @@ Parameteroptionen:
 	vm image list-offers [options] <location> <publisher>
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

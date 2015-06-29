@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Allgemeine Vorgänge in den Machine Learning Empfehlungen API | Azure" 
+	pageTitle="Allgemeine Vorgänge in der Machine Learning-Empfehlungen-API | Microsoft Azure" 
 	description="Azure ML Recommendation-Beispielanwendung" 
 	services="machine-learning" 
 	documentationCenter="" 
@@ -13,85 +13,80 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/14/2014" 
-	ms.author="jaymathe"/> 
+	ms.date="04/15/2015" 
+	ms.author="luiscabrer"/>
 
 
 # Allgemeine Vorgänge in den Machine Learning Empfehlungen-API
 
 ##Zweck
 
-Dieses Dokument zeigt die Verwendung einiger API Azure-ML-Empfehlungen über eine Beispielanwendung.
+Dieses Dokument zeigt die Verwendung der Azure Machine Learning RECOMMENDATIONS-API anhand einer [Beispielanwendung](http://1drv.ms/1xeO2F3).
 
-Diese Anwendung ist nicht dazu vorgesehen, die vollständigen Funktionalität zu enthalten oder alle APIs zu verwenden und soll nur einige allgemeinen Anwendungen zeigen, wenn Sie den Azure ML Empfehlung-Service zum ersten Mal verwenden möchten. 
+Diese Anwendung ist nicht dazu vorgesehen, vollständige Funktionen zu enthalten oder alle APIs zu verwenden. Sie soll nur einige allgemeine Anwendungen zeigen, wenn Sie den Azure Machine Learning-Empfehlungsdienst zum ersten Mal verwenden möchten.
 
-##Einführung in die Empfehlung
+[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
-Empfehlungen über den Azure-ML Empfehlung- Service sind aktiviert, wenn Sie ein Empfehlungsmodell anhand der folgenden Daten erstellen:
+##Einführung zum Machine Learning-Empfehlungsdienst
 
-* Ein Repository für das Element, das Sie einem Katalog empfehlen möchten
-* Daten, die die Verwendung von Elementen pro Benutzer und Sitzungen anzeigen (dies kann über Datenakquisition erfolgen und ist nicht Teil der Musteranwendung).
+Die Empfehlungen über den Azure Machine Learning-Empfehlungsdienst sind aktiviert, wenn Sie ein Empfehlungsmodell anhand der folgenden Daten erstellen:
 
-Nachdem ein Empfehlungsmodell erstellt ist, können Sie es verwenden, um einem Benutzer basierend auf einer Reihe von Elementen ein von ihm gewähltes Element vorauszusagen (kann ein einzelnes Element sein).
+* Ein Repository für die zu empfehlenden Elemente, auch als Katalog bezeichnet
+* Daten, die der Nutzung der Elemente pro Benutzer oder Sitzungen entsprechen (diese können im Lauf der Zeit und nicht als Teil der Beispiel-App gesammelt werden)
 
-Um dem oben beschriebenen Szenario zu folgen müssen Sie im Azure ML Empfehlung-Service wie folgt vorgehen:
+Mit dem erstellten Empfehlungsmodell können Sie Elemente vorhersagen, für die sich ein Benutzer basierend auf einer Reihe der von ihm ausgewählten Elemente (oder einem einzelnen Element) möglicherweise interessiert.
 
-* Erstellen eines Modells - Dies ist ein logischer Container mit den Daten ("Katalog" und "Verwendung") und dem Vorhersage-Modelle. Jeder Modellcontainer wird über eine eindeutige ID identifiziert, die zum Zeitpunkt der Erstellung zugewiesen wird. Diese ID bezeichnet man als Modell-ID und wird in den meisten APIs verwendet 
-* Upload Katalog - Sobald ein Modellcontainer erstellt ist, können Sie ihm einen Katalog, zuordnen.
+Um dieses Szenario zu aktivieren, gehen Sie im Machine Learning-Empfehlungsdienst folgendermaßen vor:
 
-Hinweis: Die oben genannten Schritte ("Modellkatalog erstellen" und "Upload Katalog") werden in der Regel einmal für den Lebenszyklus des Modells ausgeführt.
+* Erstellen eines Modells: Dies ist ein logischer Container mit den Daten (Katalog und Nutzung) und den Vorhersagemodellen. Jeder Modellcontainer wird über eine eindeutige ID identifiziert, die beim Erstellen zugewiesen wird. Diese ID wird als Modell-ID bezeichnet und für die meisten APIs verwendet. 
+* Hochladen in den Katalog: Nachdem ein Modellcontainer erstellt wurde, kann diesem ein Katalog zugeordnet werden.
 
-* Upload-Verwendung - Um Verbraucherdaten dem Modellcontainer hinzuzufügen.
-* Ein Empfehlungsmodell erstellen - Wenn Sie ausreichend Daten haben, lösen Sie Empfehlungsmodell erstellen aus. Dieser Vorgang verwendet modernste Algorithmen-Maschinen, um das Empfehlungsmodell zu erstellen. Jedem Build wird eine eindeutige ID zugeordnet und Sie müssen diese ID beibehalten, da Sie für die Funktionalität einiger APIs erforderlich ist.
-* Erstellungsprozess überwachen - Ein Empfehlungsmodell ist ein asynchroner Vorgang und kann von einigen Minuten bis zu mehreren Stunden dauern, abhängig von der Datenmenge (Katalog und Gebrauch) und den Parametern. Aus diesem Grund müssen Sie den Build überwachen. Ein Empfehlungsmodell wird nur erstellt, wenn es dem Build erfolgreich zugeordnet werden kann.
-* (Optional) Wählen Sie einen aktiven Empfehlungsmodell-Build. Dieser Schritt ist nur erforderlich, wenn Sie in Ihrem Modellcontainer mehr als ein Empfehlungsmodell haben. Jede Anforderung, Empfehlungen zu erhalten, ohne den aktiven Build (aktives Empfehlungsmodell) anzugeben, wird automatisch vom System zum Standard-Build umgeleitet. 
+**Hinweis**: Das Erstellen eines Modells und das Hochladen des Katalogs erfolgt in der Regel einmal pro Lebenszyklus eines Modells.
 
-Hinweis: Eine aktive Buildkonfiguration (Empfehlungsmodell) ist einsatzbereit und ist für Produktions-Arbeitsauslastung bestimmt, im Gegensatz zu einem nichtaktiven Empfehlungsmodell, das in einer Testumgebung bleibt (manchmal als Staging bezeichnet).
+* Hochladen der Nutzung: Hiermit werden dem Modellcontainer Nutzungsdaten hinzugefügt.
+* Erstellen eines Empfehlungsmodells: Wenn Sie über ausreichend Daten verfügen, können Sie das Empfehlungsmodell erstellen. Für diesen Vorgang werden modernste Algorithmen für maschinelles Lernen verwendet, um das Empfehlungsmodell zu erstellen. Jedem Build ist eine eindeutige ID zugeordnet Sie müssen diese ID aufzeichnen, da sie für die Funktionen einiger APIs erforderlich ist.
+* Überwachen des Erstellungsvorgangs: Das Erstellen eines Empfehlungsmodells ist ein asynchroner Vorgang, der einige Minuten oder bis zu mehrere Stunden dauern kann. Dies ist abhängig von der Datenmenge (Katalog und Nutzung) und den Buildparametern. Aus diesem Grund müssen Sie den Build überwachen. Ein Empfehlungsmodell wird nur dann erstellt, wenn der zugeordnete Build erfolgreich abgeschlossen wurde.
+* (Optional:) Wählen Sie einen aktiven Empfehlungsmodell-Build aus. Dieser Schritt ist nur erforderlich, wenn Ihr Modellcontainer mehr als ein Empfehlungsmodell umfasst. Alle Empfehlungsanforderungen ohne Angabe des aktiven Empfehlungsmodells werden automatisch zum aktiven Standardbuild umgeleitet. 
 
-* Empfehlung erhalten - Wenn Sie ein Empfehlungsmodell haben, können Sie damit Empfehlungen für einen einzelnen Artikel oder eine Liste der Artikel, die Sie auswählen, erstellen. 
+**Hinweis:** Ein aktives Empfehlungsmodell ist einsatzbereit und für die Produktionslast ausgelegt. Dies ist ein Unterschied zu einem inaktiven Empfehlungsmodell, das in einer Art Testumgebung verbleibt (mitunter als "Staging" bezeichnet).
 
-In der Regel rufen Sie erste Empfehlung für einen bestimmten Zeitraum, in der Zwischenzeit können Sie Nutzungsdaten umleiten, wieder in das System der Azure-ML-Empfehlung dazu Modell angegebenen Container hinzugefügt wird. Sobald Sie genügend Daten haben, können Sie ein  neues Empfehlungsmodell auslösen, um aktuellere Daten zu verwenden. 
+* Abrufen von Empfehlungen: Wenn Sie über ein Empfehlungsmodell verfügen, können Sie Empfehlungen für einzelne ausgewählte Elemente oder eine Elementliste erstellen. 
+
+In der Regel rufen Sie "Get recommendation" über einen bestimmten Zeitraum auf. Während dieses Zeitraums können Sie die Nutzungsdaten an das Machine Learning-Empfehlungssystem umleiten, damit diese Daten dem angegebenen Modellcontainer hinzugefügt werden. Wenn Sie über ausreichend Nutzungsdaten verfügen, können Sie ein neues Empfehlungsmodell erstellen, das die zusätzlichen Nutzungsdaten integriert.
 
 ##Voraussetzungen
 
 * Visual Studio 2013
 * Zugriff auf das Internet 
 
-##Azure ML Beispiel-App-Lösung
+##Beispielanwendungslösung für Azure Machine Learning
 
-Die Lösung enthält den Quellcode, Nutzung und Katalog-Beispieldatei und Anweisungen zum Herunterladen der Nuget-Pakete für die Kompilierung erforderlich.
+Die Lösung enthält den Quellcode, eine Beispielnutzung, eine Katalogdatei und Anweisungen zum Herunterladen der für die Kompilierung erforderlichen Nuget-Pakete.
 
-##Die API verwendet
+##Die verwendeten APIs
 
-Die Anwendung verwenden, nur eine kleine Teilmenge der Azure-ML Empfehlung Funktionalität über eine Teilmenge der verfügbaren-API. Die folgenden APIs werden in der Anwendung veranschaulicht:
+Die Anwendung verwendet die Machine Learning-Empfehlungsfunktionen über eine Teilmenge der verfügbaren APIs. Die folgenden APIs werden in der Anwendung veranschaulicht:
 
-* Modell erstellen - Den logischen Container für Daten und Empfehlungsmodelle erstellen. Ein Modell wird durch einen Namen identifiziert. Ein Benutzer kann nicht zweimal ein Modell mit demselben Namen erstellen.
-* Hochladen Sie Katalogdatei - zum Hochladen von Katalogdaten
-* Hochladen Sie Verwendung-Datei - zum Hochladen von Daten zur Speicherauslastung
-* Build - Erstellen eines Modells Empfehlung ausgelöst
-* Überwachen der Buildausführung - Überwachen des Status der Modellerstellung Empfehlung
-* Wählen Sie ein Build-Modell für Empfehlungen - um anzugeben, welches Empfehlungsmodell standardmäßig für einen bestimmten Modellcontainer verwendet werden soll. Dieser Schritt ist nur dann notwendig, wenn Sie mehr als ein Empfehlungsmodell haben und Sie einen nichtaktiven Build als aktiven Build verwenden möchten.
-* Erhalten Sie Empfehlungen - empfohlene Artikel mit einer bestimmten einzelnen oder Element abrufen. 
+* Create model: Erstellen Sie einen logischen Container für Daten und Empfehlungsmodelle. Ein Modell wird anhand eines Namens identifiziert. Sie können jeweils nur ein Modell mit demselben Namen erstellen.
+* Upload catalog file: wird zum Hochladen von Katalogdaten verwendet.
+* Upload usage file: wird zum Hochladen der Nutzungsdaten verwendet.
+* Auslösen des Builds: wird zum Erstellen eines Empfehlungsmodells verwendet.
+* Trigger build: wird zum Überwachen des Status eines Empfehlungsmodell-Builds verwendet.
+* Choose a built model for recommendation: wird verwendet, um anzugeben, welches Empfehlungsmodell standardmäßig für einen bestimmten Modellcontainer verwendet werden soll. Dieser Schritt ist nur dann erforderlich, wenn Sie über mehrere Empfehlungsmodelle verfügen und einen inaktiven Build als aktives Empfehlungsmodell aktivieren möchten.
+* Get recommendation: wird zum Abrufen empfohlener Elemente anhand eines bestimmten Einzelelements oder eines Elementsatzes verwendet. 
 
-Eine vollständige Beschreibung der API-Dokumentation Microsoft Azure Marketplace. 
+Eine vollständige Beschreibung der APIs finden Sie in der Dokumentation zum Microsoft Azure Marketplace.
 
-Hinweis: Ein Modell kann mit der Zeit mehrere Builds haben (nicht gleichzeitig). Jeder Build wurde mit dem gleichen oder aktualisierten Katalog und zusätzlichen Verwendungsdaten erstellt.
+**Hinweis:** Ein Modell kann im Lauf der Zeit über mehrere Builds verfügen (nicht jedoch gleichzeitig). Jeder Build wird mit demselben oder einem aktualisierten Katalog und zusätzlichen Nutzungsdaten erstellt.
 
 ## Häufige Probleme
 
-* Sie müssen Ihren Benutzernamen und Ihr Microsoft Azure Marketplace Hauptkonto-Schlüssel als Befehlszeile zum Ausführen des Beispiels angeben
-* Die Beispiel-App fortlaufend ausgeführt fehlschlagen - den Fluss Handle Anwendungserstellung, hochladen, Monitor erstellen und Abrufen des Namens eines vordefinierten Modells Empfehlung, daher schlägt für aufeinanderfolgende Ausführung, wenn Sie nicht den Modellnamen zwischen Aufrufen ändern
-* Empfehlung ist möglicherweise ohne Daten - die Beispielanwendung verwendet einen sehr kleinen Katalog und die Datei, auf der das Empfehlungsmodell die Daten sammelte ohne Bedeutung, so dass keine Elemente empfohlen werden können.
+* Sie müssen Ihren Benutzernamen und den Microsoft Azure Marketplace-Hauptkontoschlüssel angeben, um die Beispiel-App auszuführen.
+* Die Beispiel-App kann nicht mehrfach hintereinander ausgeführt werden. Der Anwendungsfluss umfasst das Erstellen, das Hochladen, das Aufbauen des Bildschirms sowie das Abrufen von Empfehlungen von einem vordefinierten Modell. Daher schlägt eine fortlaufende Ausführung fehl, wenn Sie zwischen den Aufrufen nicht den Modellnamen ändern.
+* Empfehlungen werden möglicherweise ohne Daten zurückgegeben. Die Beispiel-App verwendet einen sehr kleinen Katalog. Dies gilt auch für die Nutzungsdatei. Daher verfügen einige Elemente des Katalogs nicht über empfohlene Elemente.
 
 ## Haftungsausschluss
-Die Beispiel-App ist nicht für die Produktion bestimmt. Die Daten, die  im Katalog aufgeführt werden und die Verwendung ist sehr klein und stellt kein sinnvolles Empfehlungsmodell dar und dient nur Demonstrationszwecken. 
-
-## Rechtliches
-Dieses Dokument wird bereitgestellt "wie-es- ist". Informationen und Stellungnahmen, die in diesem Dokument enthalten sind, einschließlich URLs und andere Verweise auf Internetwebsites, können ohne vorherige Ankündigung geändert werden. 
-Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Keine Ähnlichkeit oder Verbindung ist beabsichtigt und ist rein zufällig. 
-Dieses Dokument gibt keine Rechte an geistigem Eigentum an irgendeinem Microsoft-Produkt. Sie können dieses Dokument für interne Zwecke verwenden. 
-(c) 2014 Microsoft. Alle Rechte vorbehalten. 
-
-
-<!--HONumber=46--> 
+Die Beispiel-App ist nicht für die Ausführung in einer Produktionsumgebung gedacht. Der Katalog umfasst nur sehr wenige Daten, die kein sinnvolles Empfehlungsmodell ergeben. Die Daten werden als Beispiel bereitgestellt.
  
+
+<!---HONumber=58_postMigration-->

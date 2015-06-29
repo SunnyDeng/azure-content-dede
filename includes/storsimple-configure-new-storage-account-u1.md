@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Optional: Configure a new storage account for the service"
-   description="Explains how to configure a storage account for the StorSimple Manager service running Update 1."
+   pageTitle="Optional: Konfigurieren eines neuen Speicherkontos für den Dienst"
+   description="Erläutert, wie Sie ein Speicherkonto für den StorSimple-Manager-Dienst mit Update 1 konfigurieren."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
@@ -15,20 +15,20 @@
    ms.date="05/18/2015"
    ms.author="alkohli" />
 
-#### To add a storage account in StorSimple 8000 Series Update 1.0
+#### So fügen Sie ein Speicherkonto zur StorSimple 8000-Serie mit Update 1.0 hinzu
 
-1. On the StorSimple Manager service landing page, select your service and double-click it. This will take you to the **Quick Start** page. Select the **Configure** page.
+1. Wählen Sie auf der StorSimple-Manager-Dienst-Startseite Ihren Dienst aus, und doppelklicken Sie dann darauf. Damit gelangen Sie auf die Seite **Schnellstart**. Wählen Sie die Seite **Konfigurieren** aus.
 
-2. Click **Add/edit storage account**.
+2. Klicken Sie auf **Speicherkonto hinzufügen/bearbeiten**.
 
-3. In the **Add/Edit Storage Account** dialog box, click **Add new**.
+3. Klicken Sie im Dialogfeld **Speicherkonto hinzufügen/bearbeiten** auf **Neues hinzufügen**:
 
-4. In the **Provider** field, select the appropriate cloud service provider. The supported providers are Azure, Amazon S3, Amazon S3 with RRS, HP and OpenStack. Specify the credentials and the location associated with the storage account of your cloud service providers. The fields presented for credentials will be different depending upon the cloud service provider you have specified. 
-  - If you have selected Azure as your cloud service provider, supply the **Name** and the primary **Access Key** for your Microsoft Azure storage account. For an Azure account, the location will be automatically populated.
+4. Wählen Sie im Feld **Anbieter** den entsprechenden Clouddienstanbieter aus. Die unterstützten Anbieter sind: Azure, Amazon S3, Amazon S3 mit RRS, HP und OpenStack. Geben Sie die Anmeldeinformationen und den Speicherort des Speicherkontos Ihres Clouddienstanbieters an. Die Felder für die Anmeldeinformationen unterscheiden sich in Abhängigkeit vom angegebenen Clouddienstanbieter.
+  - Wenn Sie Azure als Clouddienstanbieter ausgewählt haben, geben Sie den **Namen** und den primären **Zugriffsschlüssel** für Ihr Microsoft Azure-Speicherkonto an. Der Speicherort wird für ein Azure-Konto automatisch angegeben.
 
         ![Add Azure storage account](./media/storsimple-configure-new-storage-account-u1/AddAzureStorageaccount-include.png)
 
- - If you have selected Amazon S3 or Amazon S3 with RRS, provide a friendly **Storage Account name**, **Access Key**, and **Secret Key**. For Amazon S3 and Amazon S3 with RRS, the following locations are supported:
+ - Wenn Sie Amazon S3 oder Amazon-S3 mit RRS ausgewählt haben, geben Sie einen aussagekräftigen **Namen für das Speicherkonto**, den **Zugriffsschlüssel** und den **geheimen Schlüssel** an. Bei Amazon S3 und Amazon S3 mit RRS werden die folgenden Speicherorte unterstützt:
 
 		- US Standard
 		- US West (Oregon)
@@ -41,23 +41,25 @@
 
         ![Add Amazon storage account](./media/storsimple-configure-new-storage-account-u1/AddAmazonStorageaccount-include.png)
 	  		
- - If you have selected HP as your cloud service provider, supply a friendly **Storage Account Name**, **Tenant ID**, **Username**, and **Password**. For HP, the following locations are supported:
+ - Wenn Sie HP als Clouddienstanbieter ausgewählt haben, geben Sie einen aussagekräftigen **Namen für das Speicherkonto**, die **Mandanten-ID**, den **Benutzernamen** und das **Kennwort** an. Bei HP werden die folgenden Speicherorte unterstützt:
 
 		- US East
 		- US West
 	  
         ![Add HP storage account](./media/storsimple-configure-new-storage-account-u1/AddHPStorageaccount-include.png)
 	  		
- - If you have selected **Openstack** as your cloud service provider, provide a **Hostname**, **Access Key**, and **Secret Key**.
+ - Wenn Sie **OpenStack** als Clouddienstanbieter ausgewählt haben, geben Sie einen **Hostnamen**, den **Zugriffsschlüssel** und den **geheimen Schlüssel** an.
 
         > [AZURE.NOTE] For all the cloud service providers, excluding Azure, a friendly name is allowed. You can use different friendly names and create more than one storage account with the same set of credentials.
 
         ![Add Openstack storage account](./media/storsimple-configure-new-storage-account-u1/AddOpenstackStorageaccount-include.png)
 
-5. Select **Enable SSL Mode** to create a secure channel for network communication between your device and the cloud. Clear the **Enable SSL Mode** check box only if you are operating within a private cloud.
+5. Aktivieren Sie **SSL-Modus aktivieren**, um einen sicheren Kanal für die Netzwerkkommunikation zwischen Ihrem Gerät und der Cloud zu erstellen. Deaktivieren Sie das Kontrollkästchen **SSL-Modus aktivieren** nur, wenn der Betrieb in einer privaten Cloud stattfindet.
 
-      > [AZURE.NOTE] If you are using HP as your provider, SSL will always be enabled.
+      >[AZURE.NOTE]Bei Verwendung von HP als Anbieter wird immer SSL aktiviert.
   		
-6. Click the check icon ![check icon](./media/storsimple-configure-new-storage-account/HCS_CheckIcon-include.png). You will be notified after the storage account is successfully created.
+6. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-configure-new-storage-account/HCS_CheckIcon-include.png). Sie werden benachrichtigt, nachdem das Speicherkonto erfolgreich erstellt wurde.
 
-7. The newly created storage account will be displayed on the **Configure** page under **Storage accounts**. Click **Save** to save the new storage account. Click **OK** when prompted for confirmation.
+7. Das neu erstellte Speicherkonto wird auf der Seite **Konfigurieren** unter **Speicherkonten** angezeigt. Klicken Sie auf **Speichern**, um das neue Speicherkonto zu speichern. Klicken Sie auf **OK**, wenn Sie zur Bestätigung aufgefordert werden.
+
+<!---HONumber=58_postMigration-->

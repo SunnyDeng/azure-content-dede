@@ -31,7 +31,7 @@ Sie erhalten Informationen zu folgenden Themen:
 
 * Arbeiten mit dem Azure-Tabellendienst
 
-* Wie der Azure-Befehlszeilenschnittstelle verwenden, um eine Webanwendung zu erstellen.
+* Verwenden der Azure-Befehlszeilenschnittstelle zum Erstellen von Web-Apps.
 
 In diesem Lernprogramm erstellen Sie eine einfache webbasierte Anwendung für Aufgabenlisten, mit der Sie Aufgaben erstellen, abrufen und ausführen können. Diese Aufgaben sind im Tabellendienst gespeichert.
 
@@ -485,7 +485,7 @@ Die Schritte in diesem Abschnitt verwenden die Azure-Befehlszeilentools zum Erst
 >
 > Falls dies die erste von Ihnen erstellte Web-App ist, müssen Sie die Anwendung über das Azure-Portal bereitstellen.
 
-Installieren Sie zunächst die [Azure-Befehlszeilenschnittstelle] durch den folgenden Befehl über die Befehlszeile eingeben:
+Installieren Sie zunächst die [Azure-Befehlszeilenschnittstelle], indem Sie an der Befehlszeile den folgenden Befehl eingeben:
 
 	npm install azure-cli -g
 
@@ -548,7 +548,7 @@ In diesem Schritt fügen Sie Ihrer Web-App-Konfiguration für Azure Umgebungsvar
 		STORAGE_NAME=<storage account name>;STORAGE_KEY=<storage access key>;PARTITION_KEY=mytasks;TABLE_NAME=tasks
 
 
-Ersetzen Sie  **<storage account name>** durch den Namen des zuvor erstellten Speicherkontos und **<storage access key>** durch den primären Zugriffsschlüssel für Ihr Speicherkonto. (Verwenden Sie die gleichen Werte wie die Datei „config.json“, die Sie zuvor erstellt haben.)
+Ersetzen Sie **<storage account name>** durch den Namen des zuvor erstellten Speicherkontos und **<storage access key>** durch den primären Zugriffsschlüssel für Ihr Speicherkonto. (Verwenden Sie die gleichen Werte wie die Datei „config.json“, die Sie zuvor erstellt haben.)
 
 Alternativ können Sie Umgebungsvariablen im [Azure-Portal](https://portal.azure.com) festlegen:
 
@@ -641,4 +641,4 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 [Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

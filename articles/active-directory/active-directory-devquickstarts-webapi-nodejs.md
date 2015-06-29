@@ -25,7 +25,7 @@ In dieser exemplarischen Vorgehensweise wird Ihnen eine schnelle und einfache M�
 Nach Abschluss dieser exemplarischen Vorgehensweise sollten Sie in der Lage sein, einen funktionsfähigen REST-API-Server mit den folgenden Funktionen erstellen zu können:
 
 * Einen node.js-Server mit einer REST-API-Schnittstelle mit JSON und MongoDB als persistenten Speicher
-* REST-APIs mit OAuth2-API-Schutz durch Bearer-Tokens von Azure Active Directory
+* REST-APIs mit OAuth2-API-Schutz durch Bearer-Token von Azure Active Directory
 
 
 Der vollständige Quellcode dieses funktionsfähigen Beispiels ist auf GitHub unter einer Apache 2.0-Lizenz veröffentlicht. Sie können diesen Code gerne klonen oder noch besser abwandeln. Ihr Feedback und Ihre Pull-Anforderungen sind uns herzlich willkommen.
@@ -1176,5 +1176,6 @@ Klonen Sie einfach hinunter zu Ihrem Entwicklungscomputer und führen Sie die Ko
 [ADAL für Android](https://github.com/MSOpenTech/azure-activedirectory-library-for-android)
 
 [ADAL für .Net](http://msdn.microsoft.com/library/windowsazure/jj573266.aspx)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

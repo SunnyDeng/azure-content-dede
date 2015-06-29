@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/14/2015" 
+	ms.date="04/14/2015"
 	ms.author="jparrel"/>
 
 # Verwenden von Gruppen mit Lastenausgleich zum Gruppieren von MySQL auf Linux
@@ -324,7 +324,7 @@ Bei der harten Variante wird der primäre virtuelle Computer (hadb01) über das 
 
 ## STONITH
 
-Es sollte möglich sein, das Herunterfahren eines virtuellen Computers über die Azure-Befehlszeilentools für Linux auszulösen (anstelle eines STONITH-Skripts, das ein physisches Gerät steuert). Sie können `/usr/lib/stonith/plugins/external/ssh` als Basis verwenden und STONITH in der Konfiguration des Clusters aktivieren. Die Azure-Befehlszeilenschnittstelle sollte global installiert sein, und die Veröffentlichungseinstellungen/-profile sollten für den Benutzer des Clusters geladen sein.
+Es sollte möglich sein, das Herunterfahren eines virtuellen Computers über die Azure-Befehlszeilenschnittstelle auszulösen (anstelle eines STONITH-Skripts, das ein physisches Gerät steuert). Sie können `/usr/lib/stonith/plugins/external/ssh` als Basis verwenden und STONITH in der Konfiguration des Clusters aktivieren. Die Azure-Befehlszeilenschnittstelle sollte global installiert sein, und die Veröffentlichungseinstellungen/-profile sollten für den Benutzer des Clusters geladen sein.
 
 Beispielcode für die Ressourcen finden Sie auf [GitHub](https://github.com/bureado/aztonith). Sie müssen die Konfiguration des Clusters ändern, indem Sie `sudo crm configure` Folgendes hinzufügen:
 
@@ -346,5 +346,6 @@ Es gelten die folgenden Einschränkungen:
 - Der Lastenausgleich benötigt mindestens 5 Sekunden, um zu antworten. Anwendungen sollten daher clusterfähig und in Bezug auf eine Zeitüberschreitung toleranter sein. Auch andere Architekturen können hilfreich sein, beispielsweise In-App-Warteschlangen, Middleware-Abfragen usw.
 - Die MySQL-Feinabstimmung ist erforderlich, um sicherzustellen, dass der Schreibvorgang in einer vernünftigen Geschwindigkeit erfolgt und Zwischenspeicherungen möglichst häufig auf den Datenträger übertragen werden, um Speicherverluste zu vermeiden.
 - Die Schreibleistung hängt vom Interconnect des virtuellen Computers im virtuellen Switch ab, da es sich hierbei um den Mechanismus handelt, der durch DRBD zum Replizieren des Geräts verwendet wird.
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

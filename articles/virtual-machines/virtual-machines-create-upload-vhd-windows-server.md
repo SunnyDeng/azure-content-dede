@@ -53,7 +53,7 @@ Führen Sie auf dem virtuellen Computer, auf dem das Betriebssystem installiert 
 
 1. Melden Sie sich beim Betriebssystem an.
 
-2. Öffnen Sie ein Eingabeaufforderungsfenster als ein Administrator. Wechseln Sie in das Verzeichnis **%windir%\system32\sysprep**, und führen Sie dann `sysprep.exe` aus.
+2. Öffnen Sie ein Eingabeaufforderungsfenster als ein Administrator. Wechseln Sie in das Verzeichnis **%windir%\\system32\\sysprep**, und führen Sie dann `sysprep.exe` aus.
 
 	![Öffnen eines Eingabeaufforderungsfensters](./media/virtual-machines-create-upload-vhd-windows-server/sysprep_commandprompt.png)
 
@@ -209,5 +209,6 @@ Nachdem Sie einen virtuellen Computer erstellt haben, sollten Sie versuchen, ein
 [Schritt 2: Erstellen eines Speicherkontos in Azure]: #createstorage
 [Schritt 3: Vorbereiten der Verbindung zu Azure]: #prepAzure
 [Schritt 4: Hochladen der VHD-Datei]: #upload
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

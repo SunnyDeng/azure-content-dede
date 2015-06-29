@@ -1,11 +1,11 @@
-﻿<properties 
+<properties 
 	pageTitle="Herunterladen des Azure SDK für Java (Linux)" 
 	description="Laden Sie das Azure SDK für Java herunter. Der Code wird bereitgestellt, wenn Sie für die Verwendung von Maven für den Build eingerichtet sind." 
 	services="" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="mollybos"/>
+	editor="jimbe"/>
 
 <tags 
 	ms.service="multiple" 
@@ -13,10 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="09/25/2014" 
+	ms.date="06/03/2015" 
 	ms.author="robmcm"/>
 
+#Herunterladen des Azure SDK für Java
 
-[WACOM.INCLUDE [download_libraries](../includes/download_libraries.md)]
+[AZURE.INCLUDE [download_libraries](../includes/download_libraries.md)]
 
-<!--HONumber=46--> 
+<!---HONumber=58_postMigration-->

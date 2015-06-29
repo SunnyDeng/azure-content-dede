@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Bereitstellen lokaler StorSimple-Geräte"
+   pageTitle="Bereitstellen lokaler StorSimple-Geräte im Government-Portal"
    description="Schritte und bewährte Methoden für die Bereitstellung von Update 1 für StorSimple-Gerät und -Dienst im Azure-Portal für Behörden."
    services="storsimple"
    documentationCenter="NA"
@@ -12,22 +12,20 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="05/27/2015"
+   ms.date="06/12/2015"
    ms.author="v-sharos" />
 
-# Bereitstellen lokaler StorSimple-Geräte
-
-[AZURE.INCLUDE [storsimple-version-selector](../../includes/storsimple-version-selector.md)]
+# Bereitstellen lokaler StorSimple-Geräte im Government-Portal
 
 ## Übersicht
 
 Willkommen bei der exemplarischen Vorgehensweise für die Bereitstellung von Microsoft Azure StorSimple-Geräten.
 
-Diese Bereitstellungslernprogramme beziehen sich auf die StorSimple 8000 Serie im Azure-Portal für Behörden.
+Diese Bereitstellungslernprogramme betreffen die StorSimple 8000-Serie mit Update 1 im Azure Governmment-Portal.
 
-Diese  Reihe von Lernprogrammen beschreibt die Konfiguration Ihrer StorSimple-Geräte. Sie enthält darüber hinaus eine Installationsvorbereitungsprüfliste, Konfigurationsvoraussetzungen und detaillierte Konfigurationsschritte.
+Diese Reihe von Lernprogrammen beschreibt die Konfiguration Ihrer StorSimple-Geräte. Sie enthält darüber hinaus eine Installationsvorbereitungsprüfliste, Konfigurationsvoraussetzungen und detaillierte Konfigurationsschritte.
 
-> [AZURE.NOTE]Die StorSimple-Bereitstellungsinformationen, die auf der Microsoft Azure-Website und in der MSDN Library veröffentlicht werden, gelten nur für die Geräte der StorSimple 8000 Serie . Vollständige Informationen zu Geräten der StorSimple 7000 Serie finden Sie unter: [http://onlinehelp.storsimple.com/](http://onlinehelp.storsimple.com). Bereitstellungsinformationen zur StorSimple 7000 Serie finden Sie in der [Schnellstartanleitung zum StorSimple-System](http://onlinehelp.storsimple.com/111_Appliance/) (in englischer Sprache).
+> [AZURE.NOTE]Die StorSimple-Bereitstellungsinformationen, die auf der Microsoft Azure-Website und in der MSDN Library veröffentlicht werden, gelten nur für die Geräte der StorSimple-Serie 8000. Vollständige Informationen zu Geräten der Serie 7000 finden Sie unter: [http://onlinehelp.storsimple.com/](http://onlinehelp.storsimple.com). Bereitstellungsinformationen zur Serie 7000 finden Sie in der [Schnellstartanleitung zum StorSimple-System](http://onlinehelp.storsimple.com/111_Appliance/) (in englischer Sprache).
 
 Bei den Informationen in diesen Lernprogrammen wird davon ausgegangen, dass Sie die Sicherheitsvorkehrungen und die Konfigurationsprüfliste bearbeitet und Ihr StorSimple-Gerät ausgepackt, installiert und verkabelt haben. Wenn Sie weiterhin solche Aufgaben ausführen müssen, fahren Sie ggf. mit [Sicherheitsmaßnahmen](https://msdn.microsoft.com/library/azure/dn772366.aspx), [Konfigurationsprüfliste](https://msdn.microsoft.com/library/azure/dn757787.aspx) und [Hardwareinstallation Ihres Geräts](https://msdn.microsoft.com/library/azure/dn772375.aspx) fort.
 
@@ -39,7 +37,7 @@ Die folgende Vorinstallationsprüfliste enthält die Informationen, die Sie vor 
 
 | | Anforderungen | Details | Werte |
 |---| --------------------- | ---------------------- | ------------- |
-| 1 | Netzwerkeinstellungen <ol><li>Geräte-IP-Adresse</li><li>Netzwerkschnittstellen, 4 x 1 GbE, 2 x 10 GbE</li><li>Feste Controller-IP-Adresse</li><li>Subnetzmasken</li><li>Gateway</li></ol> | Erforderliche Gesamtanzahl von IP-Adressen: 8 <ol><li>Eine pro Gerät</li><li>Eine pro aktivierter Netzwerkschnittstelle, insgesamt 6</li><li>Eine pro Controller, insgesamt 2, für die Verbindung mit dem Internet für Dienstupdates</li><li>Eine für jede IP-Adresse</li><li>Eine pro Gerät</li></ol> | |
+| 1 | Netzwerkeinstellungen <ol><li>Netzwerkschnittstellen, 4 x 1 GbE, 2 x 10 GbE</li><li>Feste Controller-IP-Adresse</li><li>Subnetzmasken</li><li>Gateway</li></ol> | Erforderliche Gesamtanzahl von IP-Adressen: 8 <ol><li>Eine pro aktivierter Netzwerkschnittstelle, insgesamt 6</li><li>Eine pro Controller, insgesamt 2, für die Verbindung mit dem Internet für Dienstupdates</li><li>Eine für jede IP-Adresse</li><li>Eine pro Gerät</li></ol> | |
 | 2 | Serieller Zugriff | Anfängliche Gerätekonfiguration | Ja/Nein |
 | 3 | IP-Adressen der DNS-Server | Erforderlich für die Verbindung mit Microsoft Azure: insgesamt 2 erforderlich für hohe Verfügbarkeit | |
 | 4 | IP-Adressen der NTP-Server | Erforderlich zur Zeitsynchronisierung mit Azure: 1 erforderlich, 1 optional | |
@@ -74,7 +72,7 @@ Stellen Sie vor der Konfiguration des Geräts Folgendes sicher:
 
 - Ihr Gerät wurde wie unter [Verkabeln eines Geräts vom Typ 8100](https://msdn.microsoft.com/library/azure/dn757738.aspx) oder [Verkabeln eines Geräts vom Typ 8600](https://msdn.microsoft.com/library/azure/dn757762.aspx) beschrieben vollständig für Stromversorgung, Netzwerk- und seriellen Zugriff verkabelt.
 
-- Die Ports in der Datencenter-Firewall werden geöffnet, um iSCSI- und Cloud-Datenverkehr zu ermöglichen, wie unter [Netzwerkanforderungen für das StorSimple-Gerät](https://msdn.microsoft.com/library/dn772371.aspx) beschrieben.
+- Die Ports in der Datencenter-Firewall werden geöffnet, um iSCSI- und Cloud-Datenverkehr zu ermöglichen, wie in [Netzwerkanforderungen für das StorSimple-Gerät](https://msdn.microsoft.com/library/dn772371.aspx) beschrieben.
 
 ## Bereitstellungsschritte
 
@@ -108,7 +106,7 @@ Ein StorSimple-Manager-Dienst kann mehrere StorSimple-Geräte verwalten. Führen
 > [AZURE.IMPORTANT]Wenn Sie nicht die automatische Erstellung eines Speicherkontos mit Ihrem Dienst aktiviert haben, müssen Sie mindestens ein Speicherkonto erstellen, nachdem Sie einen Dienst erstellt haben. Dieses Speicherkonto wird beim Erstellen eines Volumecontainers verwendet.
 >
 > * Wenn Sie nicht automatisch ein Speicherkonto erstellt haben, finden Sie unter [Konfigurieren eines neuen Speicherkontos für den Dienst](#configure-a-new-storage-account-for-the-service) ausführliche Anweisungen. 
-> * Wenn Sie die automatische Erstellung eines Speicherkontos aktiviert haben, fahren Sie mit  [Schritt 2: Abrufen des Dienstregistrierungsschlüssels](#step-2:-get-the-service-registration-key) fort.
+> * Wenn Sie die automatische Erstellung eines Speicherkontos aktiviert haben, fahren Sie mit [Schritt 2: Abrufen des Dienstregistrierungsschlüssels](#step-2:-get-the-service-registration-key) fort.
 
 ## Schritt 2: Abrufen des Dienstregistrierungsschlüssels
 
@@ -175,7 +173,7 @@ Dies ist ein optionaler Schritt, den Sie nur dann ausführen müssen, wenn Sie n
 
 Wenn Sie ein Azure-Speicherkonto in einer anderen Region erstellen müssen, finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md) schrittweise Anweisungen.
 
-Führen Sie  im Behörden-Portal auf der Seite für den **StorSimple-Manager-Dienst** die folgenden Schritte aus.
+Führen Sie im Behörden-Portal auf der Seite für den **StorSimple-Manager-Dienst** die folgenden Schritte aus.
 
 [AZURE.INCLUDE [storsimple-configure-new-storage-account-u1](../../includes/storsimple-configure-new-storage-account-u1.md)]
 
@@ -211,5 +209,6 @@ Installationsanweisungen für MPIO finden Sie unter [Konfigurieren von MPIO für
 Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
 
 Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

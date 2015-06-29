@@ -278,8 +278,10 @@ Voraussetzung für eine erfolgreiche Bereitstellung von SharePoint Server auf Az
 
 [In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
 
-[Azure PowerShell](http://msdn.microsoft.com/library/jj156055)
+[Azure-Infrastrukturdienste-Workload: SharePoint-Intranetfarm](virtual-machines-workload-intranet-sharepoint-farm)
 
-[Azure-Verwaltungs-Cmdlets](http://msdn.microsoft.com/library/jj152841)
+[Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=58_postMigration-->

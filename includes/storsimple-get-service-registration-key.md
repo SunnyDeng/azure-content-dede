@@ -16,7 +16,7 @@
    ms.author="v-sharos" />
 
 
-###So rufen Sie den StorSimple-Dienstregistrierungsschlüssel ab
+#### So rufen Sie den StorSimple-Dienstregistrierungsschlüssel ab
 
 1. Klicken Sie auf der Seite des Diensts **StorSimple-Manager** auf den Dienst, den Sie erstellt haben. Damit gelangen Sie auf die Seite **Schnellstart**. (Sie können jederzeit über das Schnellstartsymbol ![StorSimple-Schnellstart, Symbol](./media/storsimple-get-service-registration-key/HCS_QuickStartIcon-include.png) auf die Seite **Schnellstart** zugreifen.)
 
@@ -35,4 +35,5 @@
 > [AZURE.NOTE]Der Dienstregistrierungsschlüssel wird zur Registrierung aller Geräte verwendet, die mit dem StorSimple-Manager-Dienst registriert werden müssen.
 
  
-<!--HONumber=52-->
+
+<!---HONumber=58_postMigration-->

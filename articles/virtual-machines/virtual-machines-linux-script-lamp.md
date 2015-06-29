@@ -20,7 +20,7 @@
 
 Die Azure-CustomScript-Erweiterung für Linux bietet eine Möglichkeit, Ihre virtuellen Computer (VMs) anzupassen, indem Sie beliebigen, in einer von der VM unterstützten Skriptsprache geschriebenen Code ausführen (z. B. Python, Bash usw.) Dies bietet eine sehr flexible Möglichkeit zum Automatisieren der Anwendungsbereitstellung auf verschiedenen Computern.
 
-Sie können die CustomScript-Erweiterung mit dem Azure-Portal, mit PowerShell oder der plattformübergreifenden Azure-Befehlszeilenschnittstelle (Azure-CLI) bereitstellen.
+Sie können die CustomScript-Erweiterung mit dem Azure-Portal, mit PowerShell oder der Azure-Befehlszeilenschnittstelle (Azure-CLI) bereitstellen.
 
 Im vorliegenden Beispiel wird die Bereitstellung einer einfachen LAMP-Anwendung auf Ubuntu mit der Azure-CLI verdeutlicht.
 
@@ -105,5 +105,6 @@ Nachfolgend finden Sie einige zusätzliche Ressourcen für die Azure-CLI, Linux 
 [Azure-Erweiterungen für Linux (GitHub)](https://github.com/Azure/azure-linux-extensions)
 
 [Linux und Open-Source-Computing auf Azure](virtual-machines-linux-opensource.md)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

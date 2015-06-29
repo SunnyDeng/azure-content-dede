@@ -125,7 +125,7 @@ Bei der Installation von Azure AD Connect auf einem neuen Server wird DirSync ni
 1. Führen Sie den Azure AD Connect-Installer aus (MSI)
 2. Wenn der Bildschirm "Willkommen bei Azure AD Connect" angezeigt wird, beenden Sie den Assistenten durch Klicken auf das "X" in der oberen rechten Ecke des Fensters.
 3. Öffnen Sie eine Eingabeaufforderung.
-4. Führen Sie aus dem Installationsordner von Azure AD Connect (Standard: C:\Program Files\Microsoft Azure Active Directory Connect) den folgenden Befehl aus:
+4. Führen Sie aus dem Installationsordner von Azure AD Connect (Standard: C:\Program Files\\Microsoft Azure Active Directory Connect) den folgenden Befehl aus:
     * AzureADConnect.exe /migrate
 
 Azure AD Connect bietet Ihnen die folgende Benutzeroberfläche:
@@ -143,8 +143,8 @@ Diese Optionen finden Sie in der folgenden Benutzeroberfläche:
 ![Geben Sie Ihre Azure AD-Anmeldeinformationen ein.](./media/active-directory-aadconnect-dirsync-upgrade-get-started/advancedsettings.png)
 
 7. Klicken Sie auf Weiter. 
-8. Auf der Seite "Bereit zum Konfigurieren" deaktivieren Sie "Den Synchronisierungsvorgang starten, sobald die Konfiguration abgeschlossen ist".
-8. Klicken Sie auf "Installieren".
+8. Belassen Sie auf der Seite "Bereit zur Konfiguration" das Kontrollkästchen "Start the synchronization process as soon as the configuration completes" aktiviert.[AZURE.NOTE]Die Synchronisierung zwischen Windows Server Active Directory und Azure Active Directory wird gestartet, es werden aber keine Änderungen an Azure AD exportiert. Nur ein Synchronisierungstool kann jeweils aktiv Änderungen exportieren.
+9. Klicken Sie auf "Installieren".
 
 [AZURE.NOTE]Deaktivieren Sie das Kontrollkästchen „Synchronisierung starten“, um sicherzustellen, dass das noch immer installierte und laufende DirSync und Azure AD Connect nicht zur gleichen Zeit an AAD zu schreiben versuchen.
 
@@ -203,5 +203,6 @@ Folgendes ist eine Liste der erforderlichen und unterstützenden Komponenten, di
 * [Wie geht es weiter mit Azure AD Connect?](active-directory-aadconnect-whats-next.md)
 * [Weitere Informationen](active-directory-aadconnect-learn-more.md)
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

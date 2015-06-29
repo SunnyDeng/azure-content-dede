@@ -15,7 +15,7 @@
    ms.date="04/01/2015"
    ms.author="v-sharos" />
 
-###So erstellen Sie eine Sicherung
+### So erstellen Sie eine Sicherung
 
 1. Klicken Sie auf der Seite **Schnellstart** des Geräts auf **Sicherungsrichtlinie hinzufügen**. Damit wird der Assistent zum Hinzufügen einer Sicherungsrichtlinie gestartet. 
 
@@ -40,6 +40,4 @@
 
 Sie haben die Gerätekonfiguration abgeschlossen.
 
-
-
-<!--HONumber=52-->
+<!---HONumber=58_postMigration-->

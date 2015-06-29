@@ -53,7 +53,7 @@ Um Azure AD zum Authentifizieren von Anforderungen an den Azure-Ressourcen-Manag
 
 	>[AZURE.NOTE]Sie finden die Anwendungs-ID auch im Client-ID-Feld der Anwendung im Verwaltungsportal.
 
-5. Ersetzen Sie {application-Id} durch die ID, die Sie gerade notiert haben, und erstellen Sie dann den Dienstprinzipal für die Anwendung:
+5. Ersetzen Sie {application-id} durch die ID, die Sie gerade notiert haben, und erstellen Sie dann den Dienstprinzipal für die Anwendung:
 
         New-AzureADServicePrincipal -ApplicationId {application-id} 
 
@@ -387,4 +387,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/virtual-machines-arm-deployment/crpportal.png)
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

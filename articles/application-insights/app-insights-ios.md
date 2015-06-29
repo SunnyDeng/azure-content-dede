@@ -1,6 +1,6 @@
 <properties 
     pageTitle="Application Insights für iOS-Apps" 
-    description="Analysieren Sie die Auslastung und Leistung von der iOS-app mit Application Insights." 
+    description="Analysieren Sie die Nutzung und Leistung Ihrer iOS-App mit Application Insights." 
     services="application-insights" 
     documentationCenter="ios"
     authors="alancameronwills" 
@@ -141,4 +141,4 @@ Klicken Sie auf ein beliebiges Diagramm, um weitere Details zu erhalten. Zum Bei
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

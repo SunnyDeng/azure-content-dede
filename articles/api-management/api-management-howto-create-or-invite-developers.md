@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Wie Verwalten von Benutzerkonten in Azure API Management" 
-	description="Weitere Informationen zum Erstellen oder das Einladen von Benutzern in Azure API Management" 
+	pageTitle="Verwalten von Benutzerkonten in Azure API Management" 
+	description="Erfahren Sie, wie Sie Benutzer in Azure API Management erstellen und einladen." 
 	services="api-management" 
 	documentationCenter="" 
 	authors="steved0x" 
@@ -91,4 +91,4 @@ Nachdem Sie das Entwicklerkonto erstellt haben, können Sie das Konto zu Rollen 
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 [E-Mail-Vorlagen konfigurieren]: api-management-howto-configure-notifications.md#email-templates
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

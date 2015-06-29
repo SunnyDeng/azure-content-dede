@@ -4,7 +4,7 @@
 	editor="tysonn"
 	manager="timlt"
 	documentationCenter=""
-	authors="dsk-2015"
+	authors="dlepow"
 	services=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/22/2015"
-	ms.author="dkshir"/>
+	ms.date="06/02/2015"
+	ms.author="danlep"/>
 
 # Installieren der Azure-Befehlszeilenschnittstelle
 
@@ -86,7 +86,7 @@ Installieren von Node.js auf rpm-basierten Verteilungen erfordert die Aktivierun
 
 ### Installieren von node.js und npm unter Windows und Mac OS X
 
-Sie können node.js und npm mit den Installationsprogrammen von [Nodejs.org](https://nodejs.org/download/)  unter Windows und OS X installieren. Möglicherweise müssen Sie den Computer zum Abschließen der Installation neu starten. Überprüfen Sie, ob der node.js und npm ordnungsgemäß installiert wurden, indem Sie die Eingabeaufforderung öffnen und Folgendes eingeben
+Sie können node.js und npm mit den Installationsprogrammen von [Nodejs.org](https://nodejs.org/download/) unter Windows und OS X installieren. Möglicherweise müssen Sie den Computer zum Abschließen der Installation neu starten. Überprüfen Sie, ob der node.js und npm ordnungsgemäß installiert wurden, indem Sie die Eingabeaufforderung öffnen und Folgendes eingeben
 
 	npm -v
 
@@ -94,7 +94,7 @@ Wenn die Version des installierten npm angezeigt wird, können Sie fortfahren un
 
 	npm install -g azure-cli
 
-Sobald die Azure-Befehlszeilenschnittstelle installiert worden ist, können Sie den Befehl **azure** in Ihrer Befehlszeilenschnittstelle (Bash, Terminal, cmd.exe use.) verwenden, um auf die Befehle der Azure-Befehlszeilenschnittstelle zuzugreifen. Am Ende der Installation sollte eine Ausgabe angezeigt werden, die etwa wie folgt aussieht:
+Sobald die Azure-Befehlszeilenschnittstelle installiert worden ist, können Sie den Befehl **azure** in Ihrer Befehlszeilenschnittstelle verwenden, um auf die Befehle der Azure-CLI zuzugreifen. Am Ende der Installation sollte eine Ausgabe angezeigt werden, die etwa wie folgt aussieht:
 
 	azure-cli@0.8.0 ..\node_modules\azure-cli
 	|-- easy-table@0.0.1
@@ -116,20 +116,27 @@ Sobald die Azure-Befehlszeilenschnittstelle installiert worden ist, können Sie 
 
 >[AZURE.NOTE]Bei Linux-Systemen können Sie die Azure-Befehlszeilenschnittstelle auch installieren, erstellen Sie sie aus dem [Quellcode](http://go.microsoft.com/fwlink/?linkid=253472&clcid=0x409) neu erstellen. Weitere Informationen zum Erstellen aus dem Quellcode finden Sie in der Datei „INSTALL“, die im Archiv enthalten ist.
 
-Jetzt sind Sie soweit. Als Nächstes können Sie sich [von der Azure-Befehlszeilenschnittstelle aus mit Ihrem Azure-Abonnement verbinden](xplat-cli-connect.md) und die **azure**-Befehle verwenden.
-
 ## Verwenden des Docker-Containers
 
 Führen Sie in einem Docker-Host folgenden Befehl aus: ```
-	docker run -it kmouss/azure-cli
+	docker run -it microsoft/azure-cli
 ```
+
+## Ausführen von Azure-CLI-Befehlen
+
+Sobald die Azure-Befehlszeilenschnittstelle installiert worden ist, können Sie den Befehl **azure** in Ihrer Befehlszeilenschnittstelle (Bash, Terminal, cmd.exe use.) verwenden, um auf die Befehle der Azure-Befehlszeilenschnittstelle zuzugreifen. Um den Hilfebefehl in Windows auszuführen, starten Sie beispielsweise eine Eingabeaufforderung ("cmd.exe") mit Administratorrechten: ```
+	c:> azure help
+```
+
+Jetzt sind Sie soweit. Als Nächstes können Sie sich [von der Azure-Befehlszeilenschnittstelle aus mit Ihrem Azure-Abonnement verbinden](xplat-cli-connect.md) und die **azure**-Befehle verwenden.
+
 
 <a id="additional-resources"></a>
 ## Zusätzliche Ressourcen
 
-* [Verwenden der Azure-Befehlszeilenschnittstelle mit Dienstverwaltungsbefehlen (oder ASM-Modus)][xplatasm]
+* [Verwenden der Azure-Befehlszeilenschnittstelle mit Dienstverwaltungsbefehlen (oder ASM-Modus)][cliasm]
 
-* [Verwenden der Azure-Befehlszeilenschnittstelle mit Ressourcenverwaltungsbefehlen (oder ARM-Modus)][xplatarm]
+* [Verwenden der Azure-Befehlszeilenschnittstelle mit Ressourcenverwaltungsbefehlen (oder ARM-Modus)][cliarm]
 
 * Wenn Sie weitere Informationen zur Azure-Befehlszeilenschnittstelle erhalten, den Quellcode herunterladen, Probleme melden oder etwas zum Projekt beitragen möchten, dann besuchen Sie die Webseite [GitHub repository for the Azure CLI](https://github.com/azure/azure-xplat-cli).
 
@@ -143,7 +150,7 @@ Führen Sie in einem Docker-Host folgenden Befehl aus: ```
 [mac-installer]: http://go.microsoft.com/fwlink/?LinkId=252249
 [windows-installer]: http://go.microsoft.com/?linkid=9828653&clcid=0x409
 [linux-installer]: http://go.microsoft.com/fwlink/?linkid=253472
-[xplatasm]: virtual-machines-command-line-tools.md
-[xplatarm]: xplat-cli-azure-resource-manager.md
+[cliasm]: virtual-machines-command-line-tools.md
+[cliarm]: xplat-cli-azure-resource-manager.md
 
-<!---HONumber=58-->
+<!---HONumber=58_postMigration-->

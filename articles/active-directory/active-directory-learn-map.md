@@ -13,12 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/05/2015"
+	ms.date="06/02/2015"
 	ms.author="curtand"/>
 
 # Weitere Informationen zu Azure AD
 
-[Was ist Azure AD?](active-directory-whatis.md)<br> [Wie funktioniert Azure AD?](active-directory-works.md)<br> [Erste Schritte](active-directory-get-started.md)<br> [Nächste Schritte](active-directory-next-steps.md)
+###Weitere Artikel zu diesem Thema
+[Was ist Azure AD?](active-directory-whatis.md)<br> [Wie funktioniert Azure AD?](active-directory-works.md)<br> [Erste Schritte](active-directory-get-started.md)<br> [Nächste Schritte](active-directory-next-steps.md)<br> [Weitere Informationen](active-directory-learn-map.md)
 
 Ich habe bereits ein Azure-Abonnement. In welcher Beziehung steht Azure AD dazu? [Zuordnung zwischen Abonnements und einem Verzeichnis](active-directory-how-subscriptions-associated-directory.md)
 
@@ -35,5 +36,6 @@ Informationen zu Verwendungseinschränkungen und anderen Dienstbeschränkungen f
 
 * [Als Organisation für Azure registrieren](sign-up-organization.md)
 * [Azure-Identität](fundamentals-identity.md)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Web Application Insights für JavaScript-apps" 
-	description="Erhalten Sie die Anzahl der Seitenaufrufe und Sitzungen, rufen Sie Webclientdaten ab, und verfolgen Sie Verwendungsmuster. Erkennen von Ausnahmen und Leistungsprobleme in JavaScript-Webseiten." 
+	pageTitle="Application Insights für JavaScript-Web-Apps" 
+	description="Erhalten Sie die Anzahl der Seitenaufrufe und Sitzungen, rufen Sie Webclientdaten ab, und verfolgen Sie Verwendungsmuster. Erkennen Sie Ausnahmen und Leistungsprobleme in JavaScript-Web-Apps." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -15,7 +15,7 @@
 	ms.date="06/03/2015" 
 	ms.author="awills"/>
  
-# Web Application Insights für JavaScript-apps
+# Application Insights für JavaScript-Web-Apps
 
 [AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
 
@@ -40,7 +40,7 @@ Erstellen Sie im [Azure-Portal](http://portal.azure.com) eine neue Application I
 
 Rufen Sie im Schnellstart das Skript für Webseiten ab:
 
-![Wählen Sie in Ihrer App auf dem Blatt "Übersicht"  im Schnellstart die Option "Code abrufen", um Ihre Webseiten zu überwachen. Kopieren Sie das Skript.](./media/app-insights-javascript/02-monitor-web-page.png)
+![Wählen Sie in Ihrer App auf dem Blatt "Übersicht" im Schnellstart die Option "Code abrufen", um Ihre Webseiten zu überwachen. Kopieren Sie das Skript.](./media/app-insights-javascript/02-monitor-web-page.png)
 
 Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie nachverfolgen möchten. Wenn Ihre Website über eine Masterseite verfügt, können Sie das Skript dort ablegen. Beispiel:
 
@@ -124,7 +124,7 @@ Fügen Sie an geeigneter Stelle in Ihren Client-Code einen JavaScript-Aufruf wie
 
     appInsights.trackPageView(myPageName);
 
-Der Seitenname kann die gleichen Zeichen wie eine URL enthalten, allerdings wird alles nach den Zeichen „\#“ oder „?“ ignoriert.
+Der Seitenname kann die gleichen Zeichen wie eine URL enthalten, allerdings wird alles nach den Zeichen „#“ oder „?“ ignoriert.
 
 
 ## Überprüfen einzelner Seitenaufruf-Ereignisse
@@ -177,4 +177,4 @@ Falls Sie dies noch nicht durchgeführt haben, können Sie Einblicke von Ihrem S
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

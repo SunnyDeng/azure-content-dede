@@ -82,4 +82,6 @@ Es dauert einige Minuten, bis der Agent gestartet wird, wenn er installiert ist.
 [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: virtual-machines-log-on-windows-server.md
 [Azure-VM-Erweiterungen und Features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=58_postMigration-->

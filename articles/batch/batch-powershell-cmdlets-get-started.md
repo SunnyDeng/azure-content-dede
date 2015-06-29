@@ -1,25 +1,25 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Batch für PowerShell-Cmdlets"
-	description="Einführung in die Azure PowerShell-Cmdlets zum Verwalten des Azure Batch-Diensts"
-	services="batch"
-	documentationCenter=""
-	authors="dlepow"
-	manager="timlt"
-	editor="yidingz"/>
+   pageTitle="Erste Schritte mit Azure PowerShell-Batch-Cmdlets"
+   description="Einführung in die Azure PowerShell-Cmdlets zum Verwalten des Azure Batch-Diensts"
+   services="batch"
+   documentationCenter=""
+   authors="dlepow"
+   manager="timlt"
+   editor=""/>
 
 <tags
-	ms.service="batch"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="powershell"
-	ms.workload="big-compute"
-	ms.date="04/15/2015"
-	ms.author="danlep"/>
+   ms.service="batch"
+   ms.devlang="NA"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="powershell"
+   ms.workload="big-compute"
+   ms.date="05/29/2015"
+   ms.author="danlep"/>
 
 # Erste Schritte mit Azure Batch für PowerShell-Cmdlets
 Dieser Artikel dient als kurze Einführung in die Azure PowerShell-Cmdlets, mit denen Sie Ihre Batch-Konten verwalten und Informationen über Ihre Batch-Arbeitsaufgaben, -Aufträge und -Aufgaben abrufen können.
 
-Geben Sie ```get-help <Cmdlet_name>``` ein, um detaillierte Informationen zur Cmdlet-Syntax zu erhalten.
+Die ausführliche Cmdlet-Syntax erhalten Sie durch Eingabe von `get-help <Cmdlet_name>` oder in der [Referenz zu Azure Batch-Cmdlets](https://msdn.microsoft.com/library/azure/mt125957.aspx).
 
 
 ## Voraussetzungen
@@ -123,9 +123,9 @@ Get-AzureBatchPool -BatchContext $context
 Mit dem **Filter**-Parameter können Sie einen OData-Filter angeben, um nur bestimmte gewünschte Objekte zu suchen. Sie können beispielsweise alle Arbeitsaufgaben suchen, deren Namen mit "myWork" beginnt:
 
 ```
-$filter = "startswith(name,'myWork') and state eq 'active'" 
+$filter = "startswith(name,'myWork') and state eq 'active'"
 Get-AzureBatchWorkItem -Filter $filter -BatchContext $context
-``` 
+```
 
 Diese Methode ist nicht so flexibel wie die Verwendung von "Where-Object" in einer lokalen Pipeline. Die Abfrage wird jedoch direkt an den Batch-Dienst gesendet, sodass die gesamte Filterung auf dem Server erfolgt, was Internetbandbreite einspart.
 
@@ -133,8 +133,8 @@ Diese Methode ist nicht so flexibel wie die Verwendung von "Where-Object" in ein
 
 Eine Alternative zu einem OData-Filter ist die Verwendung des **Name**-Parameters. So führen Sie eine Abfrage einer bestimmten Arbeitsaufgabe mit dem Namen "MyWorkItem" durch:
 
-``` 
-Get-AzureBatchWorkItem -Name "myWorkItem" -BatchContext $context 
+```
+Get-AzureBatchWorkItem -Name "myWorkItem" -BatchContext $context
 
 ```
 Der **Name**-Parameter unterstützt nur die Suche nach dem vollständigen Namen, jedoch keine Platzhalter oder Filter im OData-Format.
@@ -144,7 +144,7 @@ Der **Name**-Parameter unterstützt nur die Suche nach dem vollständigen Namen,
 Batch-Cmdlets können die PowerShell-Pipeline zum Senden von Daten zwischen Cmdlets nutzen. Dies hat dieselbe Auswirkung wie die Angabe eines Parameters, vereinfacht jedoch das Auflisten mehrerer Entitäten. Sie können beispielsweise alle Aufgaben unter Ihrem Konto suchen:
 
 ```
-Get-AzureBatchWorkItem -BatchContext $context | Get-AzureBatchJob -BatchContext $context | Get-AzureBatchTask -BatchContext $context 
+Get-AzureBatchWorkItem -BatchContext $context | Get-AzureBatchJob -BatchContext $context | Get-AzureBatchTask -BatchContext $context
 ```
 
 ### Verwenden des MaxCount-Parameters
@@ -152,7 +152,7 @@ Get-AzureBatchWorkItem -BatchContext $context | Get-AzureBatchJob -BatchContext 
 Jedes Cmdlet gibt standardmäßig bis zu 1.000 Objekte zurück. Wenn dieser Grenzwert erreicht ist, können Sie entweder den Filter weiter eingrenzen, sodass weniger Objekte zurückgegeben werden, oder mit dem **MaxCount**-Parameter explizit einen maximalen Wert festlegen. Beispiel:
 
 ```
-Get-AzureBatchWorkItem -MaxCount 2500 -BatchContext $context 
+Get-AzureBatchWorkItem -MaxCount 2500 -BatchContext $context
 
 ```
 
@@ -161,6 +161,7 @@ Setzen Sie den **MaxCount**-Parameter auf 0 oder eine negative Zahl, um die Ober
 ## Verwandte Themen
 * [Batch – Technische Übersicht](batch-technical-overview.md)
 * [Download Azure PowerShell](http://go.microsoft.com/p/?linkid=9811175)
-* [Azure-Cmdlet-Referenz](https://msdn.microsoft.com/library/jj554330.aspx)
+* [Referenz zu Azure-Batch-Cmdlets](https://msdn.microsoft.com/library/azure/mt125957.aspx)
+* [Effiziente Listenabfragen](batch-efficient-list-queries.md)
 
-<!---HONumber=GIT-SubDir-->
+<!---HONumber=58_postMigration-->

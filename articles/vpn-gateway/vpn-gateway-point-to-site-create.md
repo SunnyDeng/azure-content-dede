@@ -10,7 +10,7 @@
 <tags
    ms.service="vpn-gateway"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="05/12/2015"
@@ -38,7 +38,7 @@ Eine Punkt-zu-Standort-Verbindung erfordert ein virtuelles Netzwerk mit einem Ga
 1. Geben Sie auf der Seite **DNS Server und VPN-Konnektivität** die folgenden Informationen ein, und klicken Sie dann in der unteren rechten Ecke auf den Weiter-Pfeil. Weitere Informationen finden Sie auf der Seite [DNS-Server und VPN-Konnektivität](https://msdn.microsoft.com/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETDNS).
 	- **DNS-Server**: Geben Sie den Namen und die IP-Adresse des DNS-Servers ein, oder wählen Sie einen zuvor registrierten DNS-Server in der Dropdownliste aus. Durch diese Einstellung wird kein DNS-Server erstellt. Sie bietet die Möglichkeit, die DNS-Server anzugeben, die Sie zur Namensauflösung für dieses virtuelle Netzwerk verwenden möchten. Wenn Sie den Standarddienst für die Namensauflösung in Azure verwenden möchten, lassen Sie diesen Abschnitt leer.
 	- **Standort-zu-Standort-VPNs konfigurieren**: Aktivieren Sie dieses Kontrollkästchen.
-1. Geben Sie auf der Seite **Punkt-zu-Standort-Konnektivität** den IP-Adressbereich an, aus dem die VPN-Clients eine IP-Adresse erhalten, wenn eine Verbindung besteht. Es gibt einige Regeln bezüglich der Adressbereiche, die Sie angeben können. Sie müssen unbedingt sicherstellen, dass der angegebene Bereich keine anderen Bereiche überlappt, die sich in Ihrem lokalen Netzwerk befinden. Weitere Informationen finden Sie auf der  Seite [Punkt-zu-Standort-Konnektivität](https://msdn.microsoft.com/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT).
+1. Geben Sie auf der Seite **Punkt-zu-Standort-Konnektivität** den IP-Adressbereich an, aus dem die VPN-Clients eine IP-Adresse erhalten, wenn eine Verbindung besteht. Es gibt einige Regeln bezüglich der Adressbereiche, die Sie angeben können. Sie müssen unbedingt sicherstellen, dass der angegebene Bereich keine anderen Bereiche überlappt, die sich in Ihrem lokalen Netzwerk befinden. Weitere Informationen finden Sie auf der Seite [Punkt-zu-Standort-Konnektivität](https://msdn.microsoft.com/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT).
 1. Geben Sie die folgenden Informationen ein, und klicken Sie dann auf den Pfeil "Weiter".
  - **Adressraum**: Umfasst Start-IP und CIDR (Adressenanzahl).
  - **Adressraum hinzufügen**: Nur hinzufügen, wenn es für den Netzwerkentwurf erforderlich ist.
@@ -118,7 +118,7 @@ Zum Herstellen einer Verbindung mit dem virtuellen Netzwerk müssen Sie auch den
 
 ### Installieren des VPN-Konfigurationspakets auf dem Client und Herstellen der Verbindung
 
-1. Kopieren Sie die Konfigurationsdatei lokal auf den Computer, den Sie mit dem virtuellen Netzwerk verbinden möchten, und doppelklicken Sie auf die EXE-Datei. Sobald das Paket installiert worden ist, können Sie die VPN-Verbindung starten. Beachten Sie, dass das Konfigurationspaket nicht von Microsoft signiert ist. Möglicherweise sollten Sie das Paket mithilfe des Signaturdiensts Ihres Unternehmens oder selbst mit [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) signieren. Sie können das Paket auch ohne Signatur verwenden. Wenn das Paket nicht signiert ist, wird jedoch bei der Installation des Pakets eine Warnung angezeigt. 
+1. Kopieren Sie die Konfigurationsdatei lokal auf den Computer, den Sie mit dem virtuellen Netzwerk verbinden möchten, und doppelklicken Sie auf die EXE-Datei. Sobald das Paket installiert worden ist, können Sie die VPN-Verbindung starten. Beachten Sie, dass das Konfigurationspaket nicht von Microsoft signiert ist. Möglicherweise sollten Sie das Paket mithilfe des Signaturdiensts Ihres Unternehmens oder selbst mit [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) signieren. Sie können das Paket auch ohne Signatur verwenden. Wenn das Paket nicht signiert ist, wird jedoch bei der Installation des Pakets eine Warnung angezeigt.
 2. Navigieren Sie auf dem Clientcomputer zu "VPN-Verbindungen", und suchen Sie die VPN-Verbindung, die Sie gerade erstellt haben. Sie hat den gleichen Namen wie das virtuelle Netzwerk. Klicken Sie auf **Verbinden**.
 3. Eine entsprechende Meldung wird angezeigt, die verwendet wird, um ein selbstsigniertes Zertifikat für den Gateway-Endpunkt zu erstellen. Klicken Sie auf **Weiter**, um Administratorrechte zu nutzen.
 4. Klicken Sie auf der Statusseite **Verbindung** auf **Verbinden**, um die Verbindung herzustellen.
@@ -142,12 +142,12 @@ Beispiel für:
 		Autoconfiguration Enabled.......: Yes
 		IPv4 Address....................: 192.168.130.2(Preferred)
 		Subnet Mask.....................: 255.255.255.255
-		Default Gateway.................: 
+		Default Gateway.................:
 		NetBIOS over Tcpip..............: Enabled
 
 
 
-## Siehe auch
+## Weitere Informationen
 
 
 Weitere Informationen zu standortübergreifenden Verbindungen in virtuellen Netzwerken finden Sie in diesem Artikel: [Informationen zu sicheren standortübergreifenden Verbindungen in virtuellen Netzwerken](https://msdn.microsoft.com/library/azure/dn133798.aspx).
@@ -157,5 +157,6 @@ Wenn Sie eine Standort-zu-Standort-VPN-Verbindung konfigurieren möchten, lesen 
 Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines/virtual-machines-create-custom.md).
 
 Informationen zum Konfigurieren einer VNet-Verbindung mit RRAS finden Sie unter [Konfigurieren eines Standort-zu-Standort-VPN mit Windows Server 2012 Routing- und RAS-Dienst (RRAS)](https://msdn.microsoft.com/library/dn636917.aspx)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

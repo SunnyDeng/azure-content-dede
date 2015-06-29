@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="04/29/2015"
+   ms.date="06/01/2015"
    ms.author="mbaldwin"/>
 
 # Azure Active Directory-Authentifizierungsprotokolle
 
 Azure Active Directory (Azure AD) unterstützt mehrere der am häufigsten verwendeten Protokolle zur Authentifizierung und Autorisierung. Die Themen in diesem Abschnitt beschreiben die unterstützten Protokolle und ihre Implementierung in Azure AD. Die Themen umfassen eine Beschreibung der unterstützten Anspruchstypen, eine Einführung in die Verwendung von Verbundmetadaten, ausführliche OAuth 2.0.- und SAML 2.0-Protokoll-Referenzdokumentation und einen Abschnitt zur Problembehandlung.
 
-Dieser Abschnitt umfasst die folgenden Themen.
+## Authentifizierungsprotokolle, Artikel und Referenz 
 
 - [Wichtige Informationen zum Signieren vom Schlüssel-Rollover in Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx) – Erfahren Sie mehr über das Signieren der Schlüssel-Rolloverkadenz von Azure AD, die Änderungen zum automatischen Update des Schlüssels und die Erläuterungen zum Aktualisieren der häufigsten Anwendungsszenarien.
 
@@ -28,7 +28,7 @@ Dieser Abschnitt umfasst die folgenden Themen.
 - [Unterstützte Token und Anspruchstypen](active-directory-token-and-claims.md) – Erfahren Sie mehr über die Ansprüche in den Token, die von Azure AD ausgegeben werden.
 
 
-- [Verbundmetadaten](https://msdn.microsoft.com/library/azure/dn195592.aspx)  – Erfahren Sie mehr über das Suchen und Interpretieren der von Azure AD generierten Metadatendokumente.
+- [Verbundmetadaten](https://msdn.microsoft.com/library/azure/dn195592.aspx) – Erfahren Sie mehr über das Suchen und Interpretieren der von Azure AD generierten Metadatendokumente.
 
 
 - [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/library/azure/dn645545.aspx) – Erfahren Sie mehr über die Implementierung von OAuth 2.0 in Azure AD.
@@ -47,10 +47,13 @@ Dieser Abschnitt umfasst die folgenden Themen.
 
 
 
-## Siehe auch 
+## Weitere Informationen 
 
+[Entwicklerhandbuch zu Azure Active Directory](active-directory-developers-guide.md)
 
-### Konzepte
-[Azure AD für die Authentifizierung verwenden](https://msdn.microsoft.com/library/azure/dn385718.aspx) [Active Directory-Codebeispiele](active-directory-code-samples.md)
+[Verwenden von Azure AD für Autorisierung](https://msdn.microsoft.com/library/azure/dn385718.aspx)
 
-<!---HONumber=58--> 
+[Active Directory-Codebeispiele](active-directory-code-samples.md)
+ 
+
+<!---HONumber=58_postMigration-->

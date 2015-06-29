@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="infrastructure"
-   ms.date="05/14/2015"
+   ms.date="06/03/2015"
    ms.author="rasquill"/>
 
 # Anwendungsframeworks, von denen Vorlagen verwendet werden
@@ -22,7 +22,7 @@ Verwenden Sie diese Methoden, um Ideen rasch umzusetzen.
 
 | Vorlagenname | Beschreibung | Anzeigen der Vorlage | Direkte Bereitstellung |
 |:---|:---|:---:|:---:|
-| Active Directory-Gesamtstruktur und -Domäne | Von dieser Vorlage werden 2 neue virtuelle Computer (mit neuem virtuellem Netzwerk, Speicherkonto und Lastenausgleich) sowie eine neue Gesamtstruktur und Domäne in Active Directory erstellt. Die virtuellen Computer werden als Domänencontroller für die neue Domäne erstellt und in einer Verfügbarkeitsgruppe platziert, und ihnen wird ein RDP-Endpunkt und eine öffentliche IP-Adresse mit Lastenausgleich hinzugefügt. | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/activedirectorynewdomain-ha-2-dc) | <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Factivedirectorynewdomain-ha-2-dc%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a> |
+| Active Directory-Gesamtstruktur und -Domäne | Von dieser Vorlage werden 2 neue virtuelle Computer (mit neuem virtuellem Netzwerk, Speicherkonto und Lastenausgleich) sowie eine neue Gesamtstruktur und Domäne in Active Directory erstellt. Die virtuellen Computer werden als Domänencontroller für die neue Domäne erstellt und in einer Verfügbarkeitsgruppe platziert, und ihnen wird ein RDP-Endpunkt und eine öffentliche IP-Adresse mit Lastenausgleich hinzugefügt. | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc) | <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Factive-directory-new-domain-ha-2-dc%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a> |
 | Apache-Webserver | Von dieser Vorlage wird die Azure Linux CustomScript-Erweiterung verwendet, um einen Apache-Webserver bereitzustellen. Von der Vorlage wird ein Ubuntu-VM erstellt, Apache2 wird installiert und eine einfache HTML-Datei erstellt.| [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/apache2-on-ubuntu-vm) | <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fapache2-on-ubuntu-vm%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
 | Couchbase-Cluster | Von dieser Vorlage wird ein Couchbase-Cluster auf Ubuntu-VMs bereitgestellt. | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/couchbase-on-ubuntu) | <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fcouchbase-on-ubuntu%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a> |
 | Datastax-Cluster | Von dieser Vorlage wird mithilfe der Azure Linux CustomScript-Erweiterung ein Datastax-Cluster auf Ubuntu-VMs installiert. [Detaillierte Vorgehensweise.](virtual-machines-datastax-template.md)| [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/datastax-on-ubuntu) | <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fdatastax-on-ubuntu%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a> |
@@ -47,5 +47,6 @@ Verwenden Sie diese Methoden, um Ideen rasch umzusetzen.
 Auf [GitHub](https://github.com/Azure/azure-quickstart-templates) finden Sie alle Vorlagen, die Ihnen zur Verfügung stehen.
 
 Weitere Informationen zur Ressourcenverwaltung in Azure finden Sie [hier](../resource-group-template-deploy.md).
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

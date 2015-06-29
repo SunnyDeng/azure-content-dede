@@ -204,5 +204,6 @@ Nach dem Hochladen fügen Sie die VHD-Datei als Image zu der Ihrem Abonnement zu
 4. Nach Abschluss der Bereitstellung sehen Sie, dass Ihre FreeBSD-VM in Azure ausgeführt wird.
 
 	![FreeBSD-Images in Azure](./media/virtual-machines-freebsd-create-upload-vhd/freebsdimageinazure.png)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

@@ -95,4 +95,4 @@ Die SharePoint-Serverfarm verwendet den Azure Resource Manager und Skripte, um d
 
 [In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

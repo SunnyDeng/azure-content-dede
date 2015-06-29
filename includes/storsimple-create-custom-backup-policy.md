@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Create a custom StorSimple backup policy"
-   description="Explains how you can use the StorSimple Manager service to create a custom backup policy."
+   pageTitle="Erstellen einer benutzerdefinierten StorSimple-Sicherungsrichtlinie"
+   description="Erläutert, wie Sie den StorSimple-Manager-Dienst zum Erstellen einer benutzerdefinierten Sicherungsrichtlinie verwenden."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
@@ -15,44 +15,44 @@
    ms.date="05/14/2015"
    ms.author="v-sharos" />
 
-#### To create a custom backup policy
+#### So erstellen Sie eine benutzerdefinierte Sicherungsrichtlinie
 
-1. On the **Devices** page, click **Backup Policies** and then click **Add**.
+1. Klicken Sie auf der Seite **Geräte** auf **Sicherungsrichtlinien** und anschließend auf **Hinzufügen**.
 
-2. In the **Add a backup policy** dialog box, under **Define your backup policy**:
+2. Führen Sie im Dialogfeld **Sicherungsrichtlinie hinzufügen** unter **Sicherungsrichtlinie definieren** die folgenden Schritte aus:
 
-    1. Specify a backup policy name.
+    1. Geben Sie einen Namen für die Sicherungsrichtlinie an.
 
-    2. Select the volumes to be added to this policy. You can choose to add multiple volumes by selecting them from the drop-down list.
+    2. Wählen Sie die Volumes aus, die dieser Richtlinie hinzugefügt werden sollen. Sie können auch mehrere Volumes hinzufügen, indem Sie sie aus der Dropdownliste auswählen.
 
-    3. Click the check icon ![check icon](./media/storsimple-add-backup-policy/HCS_CheckIcon-include.png).
+    3. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-add-backup-policy/HCS_CheckIcon-include.png).
 
-     You will be notified after the policy is created successfully. The backup policies page will also be updated to show the newly created policy.
+     Sie werden benachrichtigt, wenn die Richtlinie erfolgreich erstellt wurde. Die Seite mit den Sicherungsrichtlinien wird ebenfalls aktualisiert und zeigt die neu erstellte Richtlinie an.
 
-4. Click the policy name (first column) to drill down into details of the policy you just created.
+4. Klicken Sie auf den Richtliniennamen (erste Spalte), um einen Drilldown für die Details der gerade erstellten Richtlinie auszuführen.
 
-5. Click **manage schedules**.
+5. Klicken Sie auf **Zeitpläne verwalten**.
 
-6. In the **Manage Schedules** dialog box:
+6. Führen Sie im Dialogfeld **Zeitpläne verwalten** folgende Schritte aus:
 
-    1. Select **Create new** to add another schedule.
+    1. Wählen Sie **Neu erstellen** aus, um einen weiteren Zeitplan hinzuzufügen.
 
-    2. From the drop-down list, choose the backup type as **local** or **cloud** snapshot.
+    2. Wählen Sie in der Dropdownliste als Sicherungstyp für die Momentaufnahme **lokal** oder **Cloud** aus.
 
-    3. Specify the backup frequency in minutes, hours, days, or weeks.
+    3. Geben Sie die Sicherungshäufigkeit in Minuten, Stunden, Tagen oder Wochen an.
 
-    4. Select a retention. The retention choices depend on the backup frequency. For instance, for a daily policy, the retention can be specified in weeks, whereas retention for a monthly policy is in months.
+    4. Wählen Sie die Aufbewahrungsdauer aus. Die Aufbewahrungsdauer hängt von der Sicherungshäufigkeit ab. Für eine tägliche Richtlinie kann die Aufbewahrungsdauer z. B. in Wochen angegeben werden, während die Aufbewahrungsdauer für eine monatliche Richtlinie in Monaten angegeben wird.
  
-    5. Select the starting time and date for the policy.
+    5. Wählen Sie die Startzeit und das Datum für die Richtlinie aus.
 
-    6. Select the check box to enable the policy.
+    6. Aktivieren Sie das Kontrollkästchen, um die Richtlinie zu aktivieren.
 
-7. Click the check icon ![check icon](./media/storsimple-add-backup-policy/HCS_CheckIcon-include.png) to finish.
+7. Klicken Sie auf das Häkchen ![Häkchensymbol](./media/storsimple-add-backup-policy/HCS_CheckIcon-include.png), um den Vorgang abzuschließen.
 
-8. You will return to the policy details. Click **Save** to save the changes you made to this policy. You will be notified when the policy has been saved.
+8. Die Richtliniendetails werden erneut angezeigt. Klicken Sie auf **Speichern**, um die an der Richtlinie vorgenommenen Änderungen zu speichern. Sie werden benachrichtigt, wenn die Richtlinie gespeichert wurde.
 
-9. Navigate back to the **Backup Policies** page. The tabular listing of the backup policies will be updated to display the modified policy.
+9. Navigieren Sie zurück zur Seite **Sicherungsrichtlinien**. Die tabellarische Auflistung der Sicherungsrichtlinien wird aktualisiert, um die geänderte Richtlinie anzuzeigen.
 
-    ![Custom backup policy](./media/storsimple-create-custom-backup-policy/HCS_CustomBackupPolicyM-include.png).
+    ![Benutzerdefinierte Sicherungsrichtlinie](./media/storsimple-create-custom-backup-policy/HCS_CustomBackupPolicyM-include.png).
 
-
+<!---HONumber=58_postMigration-->

@@ -1,7 +1,7 @@
 
 <properties 
-	pageTitle="Anpassen der Swashbuckle generierte API-Definitionen" 
-	description="Informationen Sie zum Anpassen von Swagger API-Definitionen, die von Swashbuckle für eine API-Anwendung in Azure-App-Dienst generiert werden." 
+	pageTitle="Anpassen von mit Swashbuckle generierten API-Definitionen" 
+	description="Erfahren Sie, wie Sie Swagger-API-Definitionen anpassen können, die von Swashbuckle für eine API-App in Azure App Service generiert werden." 
 	services="app-service\api" 
 	documentationCenter=".net" 
 	authors="bradygaster" 
@@ -17,16 +17,16 @@
 	ms.date="05/16/2015" 
 	ms.author="bradyg"/>
 
-# Anpassen der Swashbuckle generierte API-Definitionen 
+# Anpassen von mit Swashbuckle generierten API-Definitionen 
 
 ## Übersicht
 
-In diesem Artikel wird erläutert, wie Swashbuckle, um allgemeine Szenarien zu behandeln, sollten Sie das Standardverhalten ändern anpassen:
+In diesem Artikel wird erläutert, wie Swashbuckle so angepasst wird, dass allgemeine Szenarios behandelt werden, bei denen Sie das Standardverhalten möglicherweise ändern möchten:
 
-* Swashbuckle generiert doppelte Vorgang Bezeichner für Überladungen der Methoden des Controllers
-* Swashbuckle wird davon ausgegangen, dass die einzigen gültige Antwort von einer Methode HTTP 200 (OK) 
+* Swashbuckle generiert doppelte Vorgangs-IDs für Überladungen von Controllermethoden.
+* In Swashbuckle wird davon ausgegangen, dass die einzige gültige Antwort einer Methode "HTTP 200" (OK) ist. 
  
-## Anpassen der Generierung des Vorgangs-ID
+## Anpassen der Generierung von Vorgangs-IDs
 
 Swashbuckle generiert Swagger-Vorgangs-ID, indem Controllername und Methodennamen miteinander verbunden werden. Aufgrund dieses Musters kommt es zu einem Problem, wenn Sie mehrere Überladungen einer Methode haben: Swashbuckle generiert doppelte Vorgang-IDs, was eine ungültige Swagger-JSON ist.
 
@@ -88,9 +88,9 @@ Die folgenden Schritte zeigen, wie Sie Swashbuckle mithilfe der Datei *SwaggerCo
 
 <a id="multiple-response-codes" name="multiple-response-codes"></a>
 	
-## Antwortcodes als 200 zulassen
+## Zulassen anderer Antwortcodes als "200"
 
-Standardmäßig Swashbuckle wird davon ausgegangen, dass eine Antwort HTTP 200 (OK) ist die *nur* legitime Antwort von einer Web-API-Methode. In einigen Fällen empfiehlt es sich, andere Antwortcodes zurück, ohne dass des Clients eine Ausnahme auslöst. Beispielsweise zeigt der folgende Code für die Web-API ein Szenario, in dem den Client 200 oder ein 404 als gültigen Antworten akzeptieren würde.
+Standardmäßig wird in Swashbuckle davon ausgegangen, dass die Antwort "HTTP 200" (OK) die *einzige* legitime Antwort einer Web-API-Methode ist. In einigen Fällen sollen jedoch möglicherweise andere Antwortcodes zurückgegeben werden, ohne dass der Client eine Ausnahme auslöst. Der folgende Web-API-Code gibt beispielsweise ein Szenario an, bei dem der Client entweder "200" oder "404" als gültige Antwort akzeptieren soll.
 
 	[ResponseType(typeof(Contact))]
     public HttpResponseMessage Get(int id)
@@ -109,11 +109,11 @@ Standardmäßig Swashbuckle wird davon ausgegangen, dass eine Antwort HTTP 200 (
         }
     }
 
-In diesem Szenario gibt der Swagger, die Swashbuckle standardmäßig generiert nur eine legitime HTTP-Statuscode HTTP 200.
+In diesem Szenario gibt der Swagger, den Swashbuckle standardmäßig generiert, nur einen legitimen HTTP-Statuscode, d. h. HTTP 200, an.
 
 ![](./media/app-service-api-dotnet-swashbuckle-customize/http-200-output-only.png)
 
-Da Visual Studio die Swagger-API-Definition zum Generieren von Code für den Client verwendet wird, erstellt er Clientcode, der für alle Antworten außer HTTP 200, eine Ausnahme auslöst. Der folgende Code wird von einem c\#-Client, die für dieses Beispiel Web-API-Methode generiert.
+Da in Visual Studio Code für den Client mit der Swagger-API-Definition erstellt wird, wird Clientcode erstellt, der für jede von "HTTP 200" abweichende Antwort eine Ausnahme auslöst. Der folgende Code wird von einem C#-Client für diese Web-API-Beispielmethode generiert.
 
 	if (statusCode != HttpStatusCode.OK)
     {
@@ -128,13 +128,13 @@ Da Visual Studio die Swagger-API-Definition zum Generieren von Code für den Cli
         throw ex;
     } 
 
-Swashbuckle bietet zwei Möglichkeiten zum Anpassen der Liste der erwarteten HTTP-Antwortcodes, die es erzeugt, unter Verwendung von XML-Kommentaren oder `SwaggerResponse` Attribut. Das Attribut ist einfacher, es ist jedoch nur in Swashbuckle 5.1.5 oder höher verfügbar. Die API-Apps Vorschau neuen-Projektvorlage in Visual Studio 2013 enthält Swashbuckle Version 5.0.0, wenn Sie die Vorlage verwendet und Swashbuckle aktualisieren möchten, ist Ihre einzige Option von XML-Kommentaren.
+Swashbuckle bietet zwei Möglichkeiten zum Anpassen der Liste der erwarteten generierten HTTP-Antwortcodes: Verwendung von XML-Kommentaren oder des `SwaggerResponse`-Attributs. Die Verwendung des Attributs ist einfacher, es ist jedoch nur in Swashbuckle 5.1.5 oder späteren Versionen verfügbar. Die Vorlage "new-project" für die API-Apps-Vorschau in Visual Studio 2013 enthält Version 5.0.0 von Swashbuckle. Wenn Sie die Vorlage verwendet haben und Swashbuckle nicht aktualisieren möchten, können Sie lediglich XML-Kommentare verwenden.
 
-### Anpassen der erwarteten Antwortcodes mit XML-Kommentare
+### Anpassen der erwarteten Antwortcodes mithilfe von XML-Kommentaren
 
-Verwenden Sie diese Methode, um die Antwortcodes angeben, ob Ihre Version Swashbuckle 5.1.5 vor.
+Verwenden Sie diese Methode zum Angeben von Antwortcodes, wenn Sie über eine ältere Version als Swashbuckle 5.1.5 verfügen.
 
-1. Fügen Sie zunächst die XML-Dokumentationskommentare über die Methoden, die, denen Sie für HTTP-Antwortcodes angeben möchten. Machen Sie das Web-API-Beispiel ergibt oben dargestellte Aktion und die XML-Dokumentation zuweisen Code wie im folgenden Beispiel. 
+1. Fügen Sie zunächst XML-Dokumentationskommentare für die Methoden hinzu, für die Sie HTTP-Antwortcodes angeben möchten. Wenn in der oben abgebildeten Web-API-Beispielaktion die XML-Dokumentation angewendet wird, ergibt dies den folgenden Beispielcode. 
 
 		/// <summary>
 		/// Returns the specified contact.
@@ -160,9 +160,9 @@ Verwenden Sie diese Methode, um die Antwortcodes angeben, ob Ihre Version Swashb
 		    }
 		}
 
-1. Hinzufügen von Anweisungen in der *SwaggerConfig.cs* Datei leiten Swashbuckle die Nutzung der XML-Dokumentationsdatei.
+1. Fügen Sie Anweisungen in der Datei *SwaggerConfig.cs* hinzu, um Swashbuckle anzuweisen, die XML-Dokumentationsdatei zu verwenden.
 
-	* Open *SwaggerConfig.cs* und erstellen Sie eine Methode für die *SwaggerConfig* Klasse, um den Pfad zu der XML-Dokumentationsdatei angeben. 
+	* Öffnen Sie die Datei *SwaggerConfig.cs*, und erstellen Sie eine Methode für die *SwaggerConfig*-Klasse, um den Pfad zu der XML-Dokumentationsdatei anzugeben. 
 
 			private static string GetXmlCommentsPath()
 			{
@@ -170,23 +170,23 @@ Verwenden Sie diese Methode, um die Antwortcodes angeben, ob Ihre Version Swashb
 			        System.AppDomain.CurrentDomain.BaseDirectory);
 			}
 
-	* Führen Sie einen Bildlauf nach unten der *SwaggerConfig.cs* Datei, bis Sie die auskommentierte Zeile von ähnlichen Code wie im Screenshot unten angezeigt.
+	* Scrollen Sie in der Datei *SwaggerConfig.cs* nach unten, bis Sie die im folgenden Screenshot abgebildete auskommentierte Codezeile sehen.
 
 		![](./media/app-service-api-dotnet-swashbuckle-customize/xml-comments-commented-out.png)
 	
-	* Kommentieren Sie die Zeile, um die XML-Kommentare, die während der Generierung von Swagger Verarbeitung zu ermöglichen.
+	* Heben Sie die Auskommentierung der Zeile auf, um die Verarbeitung von XML-Kommentaren während der Swagger-Generierung zu aktivieren.
 	
 		![](./media/app-service-api-dotnet-swashbuckle-customize/xml-comments-uncommented.png)
 	
-1. Um die XML-Dokumentationsdatei zu generieren, wechseln Sie in den Eigenschaften des Projekts aus, und aktivieren Sie die XML-Dokumentationsdatei wie im folgenden Screenshot gezeigt.
+1. Um die XML-Dokumentationsdatei zu generieren, wechseln Sie in die Eigenschaften des Projekts, und aktivieren Sie die XML-Dokumentationsdatei entsprechend den Vorgaben im folgenden Screenshot.
 
 	![](./media/app-service-api-dotnet-swashbuckle-customize/enable-xml-documentation-file.png)
 
-Nachdem Sie diese Schritte ausführen, wird der JSON-Swagger von Swashbuckle generiert HTTP-Antwortcodes wider, die Sie in die XML-Kommentare angegeben. Der folgende Screenshot zeigt diese neuen JSON-Nutzlast.
+Nachdem Sie diese Schritte ausgeführt haben, werden die HTTP-Antwortcodes, die Sie in den XML-Kommentaren angegeben haben, in dem von Swashbuckle generierten Swagger-JSON-Code übernommen. Im Screenshot unten ist diese neue JSON-Nutzlast dargestellt.
 
 ![](./media/app-service-api-dotnet-swashbuckle-customize/swagger-multiple-responses.png)
 
-Wenn Sie Visual Studio erneut den Clientcode für die REST-API verwenden, akzeptiert der C#-Code HTTP OK und nicht gefunden-Statuscodes ohne das Auslösen einer Ausnahme, die im verwendeten Code zum Behandeln der Rückgabe von einer null Kontaktdatensatz Entscheidungen zu ermöglichen.
+Wenn Sie mithilfe von Visual Studio den Clientcode für die REST-API neu generieren, akzeptiert der C#-Code die beiden HTTP-Statuscodes "OK" und "Not Found", ohne eine Ausnahme auszulösen, sodass der Code die Rückgabe des Kontaktdatensatzes "null" entsprechend verarbeiten kann.
 
 		if (statusCode != HttpStatusCode.OK && statusCode != HttpStatusCode.NotFound)
 		{
@@ -201,21 +201,21 @@ Wenn Sie Visual Studio erneut den Clientcode für die REST-API verwenden, akzept
         	    throw ex;
 		}
 
-Der Code für diese Demo befinden sich im [GitHub-Repository](https://github.com/Azure-Samples/API-Apps-DotNet-Swashbuckle-Customization-MultipleResponseCodes). Zusammen mit der Web-API ist Project mit XML-Dokumentationskommentaren markiert ein Konsolenanwendungsprojekt, das einen generierten Client für diese API enthält.
+Den entsprechenden Code finden Sie in [diesem GitHub-Repository](https://github.com/Azure-Samples/API-Apps-DotNet-Swashbuckle-Customization-MultipleResponseCodes). Zusammen mit dem Web-API-Projekt mit XML-Dokumentationskommentaren umfasst er ein Konsolenanwendungsprojekt, das einen generierten Client für diese API enthält.
 
 ### Anpassen der erwarteten Antwortcodes mit dem SwaggerResponse-Attribut
 
-Die [SwaggerResponse](https://github.com/domaindrivendev/Swashbuckle/blob/master/Swashbuckle.Core/Swagger/Annotations/SwaggerResponseAttribute.cs) -Attribut ist in Swashbuckle 5.1.5 und höher verfügbar. Für den Fall, dass Sie in Ihrem Projekt eine frühere Version haben, startet in diesem Abschnitt erläutern, wie das Swashbuckle NuGet-Paket zu aktualisieren, sodass Sie dieses Attribut verwenden können.
+Das [SwaggerResponse](https://github.com/domaindrivendev/Swashbuckle/blob/master/Swashbuckle.Core/Swagger/Annotations/SwaggerResponseAttribute.cs)-Attribut ist in Swashbuckle 5.1.5 und späteren Versionen verfügbar. Für den Fall, dass in Ihrem Projekt eine frühere Version vorliegt, wird in diesem Abschnitt zunächst erläutert, wie Sie das NuGet-Paket "Swashbuckle" aktualisieren, sodass Sie dieses Attribut verwenden können.
 
-1. In **Projektmappen-Explorer**, mit der rechten Maustaste auf das Web-API-Projekt, und klicken Sie auf **NuGet-Pakete verwalten**. 
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Web-API-Projekt, und klicken Sie dann auf **NuGet-Pakete verwalten**. 
 
 	![](./media/app-service-api-dotnet-swashbuckle-customize/manage-nuget-packages.png)
 
-1. Klicken Sie auf die *Update* neben der *Swashbuckle* NuGet-Paket.
+1. Klicken Sie auf die Schaltfläche *Aktualisieren* neben dem NuGet-Paket *Swashbuckle*.
 
 	![](./media/app-service-api-dotnet-swashbuckle-customize/update-nuget-dialog.png)
 
-1. Hinzufügen der *SwaggerResponse* Attribute auf die Web-API-Aktionsmethoden für den gültigen HTTP-Antwortcodes erstellt werden sollen.
+1. Fügen Sie den Web-API-Aktionsmethoden, für die Sie gültige HTTP-Antwortcodes angeben möchten, die *SwaggerResponse*-Attribute hinzu.
 
 		[SwaggerResponse(HttpStatusCode.OK)]
 		[SwaggerResponse(HttpStatusCode.NotFound)]
@@ -235,19 +235,19 @@ Die [SwaggerResponse](https://github.com/domaindrivendev/Swashbuckle/blob/master
 		    }
 		}
 
-2. Hinzufügen einer `using` -Anweisung für das Attribut Namespace:
+2. Fügen Sie eine `using`-Anweisung für den Namespace des Attributs hinzu:
 
 		using Swashbuckle.Swagger.Annotations;
 		
-1. Navigieren Sie zu den */swagger/docs/v1* URL des Projekts und die verschiedenen HTTP-Antwortcodes in der JSON-Swagger angezeigt werden.
+1. Navigieren Sie zu der URL */swagger/docs/v1* des Projekts. Die verschiedenen HTTP-Antwortcodes werden nun im Swagger-JSON-Format angezeigt.
 
 	![](./media/app-service-api-dotnet-swashbuckle-customize/multiple-responses-post-attributes.png)
 
-Der Code für diese Demo befinden sich im [GitHub-Repository](https://github.com/Azure-Samples/API-Apps-DotNet-Swashbuckle-Customization-MultipleResponseCodes-With-Attributes). Versehen Sie zusammen mit dem Web-API-Projekt mit der *SwaggerResponse* -Attribut ist ein Konsolenanwendungsprojekt, das einen generierten Client für diese API enthält.
+Den entsprechenden Code finden Sie in [diesem GitHub-Repository](https://github.com/Azure-Samples/API-Apps-DotNet-Swashbuckle-Customization-MultipleResponseCodes-With-Attributes). Zusammen mit dem Web-API-Projekt mit dem *SwaggerResponse*-Attribut umfasst er ein Konsolenanwendungsprojekt, das einen generierten Client für diese API enthält.
 
 ## Nächste Schritte
 
-In diesem Artikel wurde gezeigt, wie anpassen, wie Swashbuckle Vorgang-Ids und gültige Antwortcodes generiert. Weitere Informationen finden Sie unter [Swashbuckle auf GitHub](https://github.com/domaindrivendev/Swashbuckle).
+In diesem Artikel wurde erläutert, wie die Generierung von Vorgangs-IDs und von gültigen Antwortcodes in Swashbuckle angepasst werden kann. Weitere Informationen finden Sie unter [Swashbuckle auf GitHub](https://github.com/domaindrivendev/Swashbuckle).
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

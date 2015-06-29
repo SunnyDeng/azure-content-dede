@@ -31,7 +31,7 @@ Ein einzelner Benutzer kann maximal nur 20 Azure Active Directory-Verzeichnisse
 
 ## Objekte
 
-- Für Abonnenten von Azure Active Directory Premium oder Azure Active Directory Basic, Enterprise Mobility Suite, Office 365, Windows Intune oder anderen Microsoft Online Services, die Azure Active Directory für Verzeichnisdienste benötigen, gelten keinerlei Einschränkungen.
+- Für Abonnenten von Azure Active Directory Premium oder Azure Active Directory Basic, Enterprise Mobility Suite, Office 365, Microsoft Intune oder anderen Microsoft-Onlinediensten, die Azure Active Directory für Verzeichnisdienste benötigen, gelten keinerlei Einschränkungen.
 - Im Tarif "Free" von Azure Active Directory kann ein Verzeichnis maximal 500.000 Objekte enthalten.
 - Ein Benutzer ohne Administratorrechte kann bis zu 250 Objekte erstellen.
 
@@ -42,7 +42,7 @@ Derzeit können die Entitäten "User", "Group", "TenantDetail", "Device", "Appli
 - Erweiterungen des Typs "String" sind auf maximal 256 Zeichen begrenzt.
 - Erweiterungen des Typs "Binary" sind auf 256 Bytes beschränkt.
 - 100 Erweiterungswerte (für ALLE Typen und ALLE Anwendungen) können in jedes einzelne Objekt geschrieben werden.
-- Schemaerweiterungen sind nur in der Graph API-Version "1.21-preview" verfügbar. Der Anwendung muss Schreibzugriff zum Registrieren einer Erweiterung gewährt werden.
+- Schemaerweiterungen sind nur in der Graph-API-Version "1.21-preview" verfügbar. Der Anwendung muss Schreibzugriff zum Registrieren einer Erweiterung gewährt werden.
 
 ## Anwendungen
 
@@ -72,4 +72,7 @@ In einem Bericht können maximal 1.000 Zeilen angezeigt oder heruntergeladen wer
 - [Verknüpfung von Azure-Abonnements mit Azure AD](active-directory-how-subscriptions-associated-directory.md)
 - [Azure AD-Terminologie](active-directory-terminology.md)
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=58_postMigration-->

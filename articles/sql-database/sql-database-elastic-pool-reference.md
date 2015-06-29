@@ -52,7 +52,7 @@ Die folgenden Artikel helfen Ihnen beim Einstieg in elastische Datenbanken und e
 | [Elastische SQL-Datenbankpools](sql-database-elastic-pool.md) | Übersicht über elastische Pools |
 | [Erstellen und Verwalten elastischer SQL-Datenbankpools mit dem Azure-Portal](sql-database-elastic-pool-portal.md) | Erstellen und Verwalten elastischer Pools mit dem Azure-Portal |
 | [Erstellen und Verwalten elastischer SQL-Datenbankpools mit PowerShell](sql-database-elastic-pool-powershell.md) | Erstellen und Verwalten elastischer Pools mit PowerShell-Cmdlets |
-| [Übersicht über elastische Datenbankaufträge](sql-database-elastic-jobs-overview.md) | Eine Übersicht über den Dienst für elastische Aufträge, der die Ausführung von T-SQL-Skripts in allen elastischen Datenbanken in einem Pool ermöglicht |
+| [Übersicht über elastische Datenbankaufträge](sql-database-elastic-jobs-overview.md) | Ein Überblick über den Dienst für elastische Aufträge, der die Ausführung von T-SQL-Skripts in allen elastischen Datenbanken in einem Pool ermöglicht |
 | [Installieren der Komponente für elastische Datenbankaufträge](sql-database-elastic-jobs-service-installation.md) | Installieren des Diensts für elastische Datenbankaufträge |
 | [Erstellen des erforderlichen Benutzers für den Dienst für elastische Aufträge](sql-database-elastic-jobs-add-logins-to-dbs.md) | Um ein Skript für elastische Datenbankaufträge ausführen zu können, muss zu jeder Datenbank im Pool ein Benutzer mit den entsprechenden Berechtigungen hinzugefügt werden. |
 | [Deinstallieren der Komponenten für elastische Datenbankaufträge](sql-database-elastic-jobs-uninstall.md) | Wiederherstellung nach Installationsfehlern des Diensts für elastische Datenbankaufträge |
@@ -95,6 +95,8 @@ Die Speicherbegrenzung des Pools wird durch die Menge der DTUs des Pools bestimm
 | storageMB | 200 GB* | 200 GB, 400 GB, 800 GB, 1200 GB |
 
 *Einheiten der API sind MB nicht GB
+
+Wenn das Speicherlimit eines Pools überschritten wird, werden alle Datenbanken im Pool schreibgeschützt. In diesem Fall erhöhen Sie die DTUs oder den Speicherplatz des Pools selbst, oder Sie verschieben eine oder mehrere Datenbanken aus dem Pool. Damit Sie erkennen und verhindern können, wenn die Speicherbegrenzung eines Pools überschritten wird, erstellen Sie eine Warnung im Portal, die ausgelöst wird, wenn die Speicherauslastung des Pools einen vordefinierten Wert überschreitet.
 
 ## Grenzwerte für Worker und Sitzung
 
@@ -191,4 +193,8 @@ Der DTU-Einzelpreis für einen elastischen Anwendungspool ist höher als der DTU
 | 40891 | EX_USER | Die Mindestanzahl von DTUs pro Datenbank (%d) darf die Höchstanzahl von DTUs pro Datenbank (%d) nicht überschreiten. | DTU-Mindestanzahl pro Datenbank; DTU-Höchstanzahl pro Datenbank. | Es wurde versucht, die DTU-Mindestanzahl pro Datenbank höher festzulegen, als die maximale DTU-Anzahl pro Datenbank. | Stellen Sie sicher, dass die Mindestanzahl von DTUs pro Datenbank nicht die Höchstanzahl von DTUs pro Datenbank überschreitet. |
 | TBD | EX_USER | Die Speichergröße für eine einzelne Datenbank in einem elastischen Pool darf die maximal zulässige Größe für die Dienstebene des elastischen Pools "%.*ls" nicht überschreiten. | Dienstebene des elastischen Pools | Die maximale Größe der Datenbank überschreitet die maximale Größe, die von der Dienstebene des elastische Pools zugelassen wird. | Legen Sie die maximale Größe der Datenbank höchstens auf die maximal zulässige Größe der Dienstebene des elastische Pools fest. |
 
-<!---HONumber=58--> 
+
+
+ 
+
+<!---HONumber=58_postMigration-->

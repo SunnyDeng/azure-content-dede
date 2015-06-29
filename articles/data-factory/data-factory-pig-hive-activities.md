@@ -13,22 +13,18 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/14/2015" 
+	ms.date="06/19/2015" 
 	ms.author="spelluru"/>
 
 # Verwenden von Pig und Hive mit Data Factory
-Eine Pipeline in einer Azure Data Factory verarbeitet Daten in verknüpften Speicherdiensten mithilfe verknüpfter Compute Services. Sie enthält eine Abfolge von Aktivitäten, wobei jede Aktivität einen bestimmten Verarbeitungsvorgang ausführt. Dieser Artikel beschreibt, mit der HDInsight-Aktivität mit Pig-Hive-Transformation in einer Pipeline Azure Data-Factory. Finden Sie unter [Aufrufen MapReduce-Programmen aus Daten Factory][data-factory-map-reduce] ausführliche Informationen zum Ausführen von MapReduce Programme auf einem HDInsight-cluster aus einem Azure Data Factory-Pipeline.
+Eine Pipeline in einer Azure Data Factory verarbeitet Daten in verknüpften Speicherdiensten mithilfe verknüpfter Compute Services. Sie enthält eine Abfolge von Aktivitäten, wobei jede Aktivität einen bestimmten Verarbeitungsvorgang ausführt. Dieser Artikel beschreibt das Verwenden der HDInsight-Aktivität mit Pig/Hive-Transformation in einer Azure Data-Factory-Pipeline. Weitere Informationen zum Anwenden von MapReduce-Programmen auf einem HDInsight-Cluster über eine Azure Data Factory-Pipeline finden Sie unter [Aufrufen von MapReduce-Programmen über Data Factory][data-factory-map-reduce].
 
 ## Exemplarische Vorgehensweise: Verwenden von Hive mit Azure Data Factory
-Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Verwenden einer HDInsight-Aktivität mit Hive-Transformation in einer Pipeline Data Factory.
+Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Verwenden einer HDInsight-Aktivität mit Hive-Transformation in einer Data Factory-Pipeline.
 
 ### Voraussetzungen
-1. Arbeiten Sie das Lernprogramm aus [Erste Schritte mit Azure Data Factory][adfgetstarted] Artikel.
-2. Hochladen **emp.txt** Datei, die Sie erstellt, in der oben genannten Lernprogramm als haben **hiveinput\emp.txt** in den Adftutorial-Container im Blob-Speicher. Die **Hiveinput** Ordner wird automatisch erstellt, der **Adftutorial** Container beim Hochladen emp.txt-Datei mit der folgenden Syntax.
-
-	> [AZURE.NOTE]Die Datei emp.txt ist nur eine dummy-Datei für diese exemplarische Vorgehensweise. Die tatsächlichen Eingabedaten stammt aus der **Hivesampletable** der auf dem HDInsight-Cluster bereits vorhanden ist. Die Pipeline verwendet überhaupt keine emp.txt-Datei.
-	
-2. Erstellen Sie **hivequery.hql** Datei in einem Unterordner namens **Hive** unter **C:\ADFGetStarted** mit folgendem Inhalt.
+1. Absolvieren Sie das Lernprogramm im Artikel [Erste Schritte mit Azure Data Factory][adfgetstarted].
+2. Erstellen Sie die Datei **hivequery.hql** in einem Unterordner mit dem Namen **Hive** unter **C:\ADFGetStarted** mit dem folgenden Inhalt.
     		
     	DROP TABLE IF EXISTS adftutorialhivetable; 
 		CREATE EXTERNAL TABLE  adftutorialhivetable
@@ -43,58 +39,17 @@ Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Verwend
 		FROM hivesampletable 
 		group by country, state;
 
-	> [AZURE.NOTE]Verwenden der **Tez** Engine Hive-Abfragen ausführen, in der Datei HQL, fügen "** hive.execution.engine=tez**; festlegen" am Anfang der Datei.
+	> [AZURE.NOTE]Um die **Tez**-Engine zum Ausführen von Hive-Abfragen in der HQL-Datei zu verwenden, fügen Sie am Anfang der Datei "**set hive.execution.engine=tez**;" hinzu.
 		
-3.  Hochladen der **hivequery.hql** auf der **Adftutorial** Container im Blob-Speicher
+3.  Laden Sie die Datei **hivequery.hql** in den Container **adftutorial** in Ihrem Blobspeicher hoch.
 
 
 ### Exemplarische Vorgehensweise
 
-#### Erstellen der Eingabetabelle
-1. In der **DATA FACTORY** Blade für die **ADFTutorialDataFactory**, klicken Sie auf **Autor und Bereitstellen von** Data Factory-Editor zu starten.
-	
-	![Daten-Factory-Blade][data-factory-blade]
-
-2. In der **Data Factory-Editor**, klicken Sie auf **Neues Dataset**, und klicken Sie dann auf **Azure Blob-Speicher** in der Befehlsleiste.
-3. Ersetzen Sie das Skript JSON im rechten Bereich mit dem folgenden JSON-Skript:    
-    		
-		{
-    		"name": "HiveInputBlobTable",
-    		"properties":
-    		{
-        		"location": 
-        		{
-            		"type": "AzureBlobLocation",
-            		"folderPath": "adftutorial/hiveinput",
-            		"linkedServiceName": "StorageLinkedService"
-        		},
-        		"availability": 
-        		{
-            		"frequency": "Day",
-            		"interval": 1,
-            		"waitonexternal": {}
-        		}
-    		}
-		}
-
- 
-	**Beachten Sie Folgendes:**
-	
-	- Speicherort **Typ** minFreeThreads auf **AzureBlobLocation**.
-	- **LinkedServiceName** minFreeThreads auf **StorageLinkedService** Azure-Speicherkonten definiert.
-	- **FolderPath** gibt der Blob-Container\folder für die Eingabedaten. 
-	- **Häufigkeit = Tag** und **Intervall = 1** bedeutet, dass die Segmente täglich verfügbar sind
-	- **WaitOnExternal** bedeutet, dass diese Daten nicht durch eine andere Pipeline erzeugt, es wird vielmehr erzeugt extern der Daten-Factory. 
-	
-
-	Finden Sie unter [Daten Factory-Entwicklerreferenz][developer-reference] für JSON-Eigenschaften.
-
-2. Klicken Sie auf **Bereitstellen** auf der Befehlsleiste in der Tabelle bereitstellen.
-  
 #### Erstellen der Ausgabetabelle
         
-1. In der **Data Factory-Editor**, klicken Sie auf **Neues Dataset**, und klicken Sie dann auf **Azure Blob-Speicher** in der Befehlsleiste.
-2. Ersetzen Sie das Skript JSON im rechten Bereich mit dem folgenden JSON-Skript:
+1. Klicken Sie im **Data Factory-Editor** auf **Neues Dataset** und dann auf der Befehlsleiste auf **Azure-Blobspeicher**.
+2. Ersetzen Sie das JSON-Skript im rechten Bereich durch das folgende JSON-Skript:
 
 		{
     		"name": "HiveOutputBlobTable",
@@ -114,20 +69,20 @@ Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Verwend
     		}
 		}
 
-2. Klicken Sie auf **Bereitstellen** auf der Befehlsleiste in der Tabelle bereitstellen.
+2. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um die Tabelle bereitzustellen.
 
 
 ### Erstellen eines verknüpften Diensts für einen HDInsight-Cluster
-Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Bedarf und verwendet ihn zum Verarbeiten der Eingabe zum Erzeugen von Ausgabedaten. Sie können auch Ihren eigenen Cluster für den gleichen Zweck verwenden. Wenn Sie den bedarfsgesteuerten HDInsight-Cluster verwenden, wird für jeden Slice ein Cluster erstellt. Bei Verwendung Ihres eigenen HDInsight-Clusters kann der Cluster den Slice jedoch sofort verarbeiten. Aus diesem Grund werden bei Verwendung des bedarfsgesteuerten Clusters die Ausgabedaten möglicherweise nicht so schnell angezeigt wie bei der Verwendung Ihres eigenen Clusters. Für dieses Beispiel verwenden wir einen bedarfsgesteuerten Cluster.
+Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Bedarf und verwendet ihn zum Verarbeiten der Eingabe zum Erzeugen von Ausgabedaten. Sie können auch Ihren eigenen Cluster für den gleichen Zweck verwenden. Der bedarfsgesteuerte HDInsight-Cluster wird automatisch vom Azure Data Factory-Dienst zum Verarbeiten von Daten erstellt und verwaltet. Weitere Informationen zum bedarfsgesteuerten verknüpften HDInsight-Dienst finden Sie unter [Bedarfsgesteuerter verknüpfter Dienst für Azure HDInsight](https://msdn.microsoft.com/library/dn893526.aspx). Für dieses Beispiel verwenden wir einen bedarfsgesteuerten Cluster. Beachten Sie, dass es mehr als 15 Minuten dauert, bis der HDInsight-Cluster bei Bedarf erstellt werden kann. Ihnen wird nur die Zeit berechnet, die der HDInsight-Cluster in Betrieb ist und Aufträge ausführt.
 
 #### So verwenden Sie einen bedarfsgesteuerten HDInsight-Cluster
-1. Klicken Sie auf **neue Compute** aus, und wählen Sie die Befehlsleiste **On-Demand-HDInsight-Cluster** aus dem Menü.
-2. Gehen Sie in das JSON-Skript: 
-	1. Für die **ClusterSize** -Eigenschaft, geben Sie die Größe des HDInsight-Clusters.
-	2. Für die **JobsContainer** -Eigenschaft, geben Sie den Namen der Standardcontainer, in denen die Clusterprotokolle gespeichert werden. Geben Sie im Rahmen dieses Lernprogramms **Adfjobscontainer**.
-	3. Für die **TimeToLive** -Eigenschaft angeben, wie lange der Cluster im Leerlauf befinden darf, bevor es gelöscht wird. 
-	4. Für die **Version** -Eigenschaft, geben Sie die HDInsight-Version, die Sie verwenden möchten. Wenn Sie diese Eigenschaft ausschließen, wird die neueste Version verwendet.  
-	5. Für die **LinkedServiceName**, geben Sie **StorageLinkedService** dass Sie erhalten erstellt hätten-Schritte-Lernprogramm. 
+1. Klicken Sie auf der Befehlsleiste auf **Neu -> Compute**, und wählen Sie im Menü **On-Demand-HDInsight-Cluster** aus.
+2. Führen Sie im JSON-Skript folgende Schritte aus: 
+	1. Geben Sie für die Eigenschaft **clusterSize** die Größe des HDInsight-Clusters an.
+	2. Geben Sie für die Eigenschaft **jobsContainer** den Namen des Standardcontainers an, in dem die Clusterprotokolle gespeichert werden sollen. Geben Sie im Rahmen dieses Lernprogramms **adfjobscontainer** an.
+	3. Geben Sie für die Eigenschaft **timeToLive** an, wie lange sich der Cluster im Leerlauf befinden darf, bevor er gelöscht wird. 
+	4. Geben Sie für die Eigenschaft **version** die HDInsight-Version an, die Sie verwenden möchten. Wenn Sie diese Eigenschaft ausschließen, wird die neueste Version verwendet.  
+	5. Geben Sie für **linkedServiceName** den Dienst **StorageLinkedService** an, den Sie im Lernprogramm "Erste Schritte" erstellt haben. 
 
 			{
 		    	"name": "HDInsightOnDemandLinkedService",
@@ -141,24 +96,24 @@ Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Beda
 		    	}
 			}
 
-2. Klicken Sie auf **Bereitstellen** auf der Befehlsleiste, um den verknüpften Dienst bereitzustellen.
+2. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um den verknüpften Dienst bereitzustellen.
    
    
 #### So verwenden Sie Ihren eigenen HDInsight-Cluster: 
 
-1. Klicken Sie auf **neue Compute** aus, und wählen Sie die Befehlsleiste **HDInsight-Cluster** aus dem Menü.
-2. Gehen Sie in das JSON-Skript: 
-	1. Für die **ClusterUri** -Eigenschaft, geben Sie die URL für Ihre HDInsight. Zum Beispiel: https://<clustername>.azurehdinsight.net/     
-	2. Für die **Benutzername** -Eigenschaft, geben Sie den Benutzernamen, der Zugriff auf den HDInsight-Cluster verfügt.
-	3. Für die **Kennwort** -Eigenschaft, geben Sie das Kennwort für den Benutzer. 
-	4. Für die **LinkedServiceName** -Eigenschaft, geben Sie **StorageLinkedService**. Dies ist die verknüpfte Dienst, den Sie in Get-Schritte-Lernprogramm erstellt haben. 
+1. Klicken Sie auf der Befehlsleiste auf **Neu -> Compute**, und wählen Sie im Menü **HDInsight-Cluster** aus.
+2. Führen Sie im JSON-Skript folgende Schritte aus: 
+	1. Geben Sie für die **clusterUri**-Eigenschaft die URL für Ihr HDInsight ein. Beispiel: https://<clustername>.azurehdinsight.net/     
+	2. Geben Sie für die **UserName**-Eigenschaft den Benutzernamen ein, der Zugriff auf den HDInsight-Cluster hat.
+	3. Geben Sie für die **Password**-Eigenschaft das Kennwort für das Benutzerkonto ein. 
+	4. Geben Sie für die **LinkedServiceName**-Eigenschaft das **StorageLinkedService**-Element ein. Dies ist der verknüpfte Dienst, den Sie im Lernprogramm "Erste Schritte" erstellt haben. 
 
-2. Klicken Sie auf **Bereitstellen** auf der Befehlsleiste, um den verknüpften Dienst bereitzustellen.
+2. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um den verknüpften Dienst bereitzustellen.
 
 ### Erstellen und Planen der Pipeline
    
-1. Klicken Sie auf **neue Pipeline** auf der Befehlsleiste. Wenn Sie den Befehl nicht angezeigt werden, klicken Sie auf **... (Mit den drei Punkten)** um es anzuzeigen. 
-2. Ersetzen Sie die JSON im rechten Bereich mit folgendem Skript JSON. Wenn Sie Ihre eigenen Cluster verwenden möchten, und die Schritte zum Erstellen der **HDInsightLinkedService** -Dienst verknüpft ersetzen **HDInsightOnDemandLinkedService** mit **HDInsightLinkedService** in den folgenden JSON. 
+1. Klicken Sie auf der Befehlsleiste auf **Neue Pipeline**. Wenn der Befehl nicht angezeigt wird, klicken Sie auf **... (Auslassungspunkte)**, um ihn anzuzeigen. 
+2. Ersetzen Sie das JSON-Skript im rechten Bereich durch das folgende JSON-Skript. Wenn Sie einen eigenen Cluster verwenden möchten und die Schritte zum Erstellen des verknüpften Diensts **HDInsightLinkedService** ausgeführt haben, ersetzen Sie im folgenden JSON-Code **HDInsightOnDemandLinkedService** durch **HDInsightLinkedService**. 
 
 
     	{
@@ -172,9 +127,9 @@ Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Beda
 						"name": "RunHiveQuery",
 						"description": "Runs a hive query",
 						"type": "HDInsightActivity",
-						"inputs": [{"name": "HiveInputBlobTable"}],
+						"inputs": [],
 						"outputs": [ {"name": "HiveOutputBlobTable"} ],
-						"linkedServiceName": "HDInsightLinkedService",
+						"linkedServiceName": "HDInsightOnDemandLinkedService",
 						"transformation":
 						{
                     		"type": "Hive",
@@ -185,7 +140,7 @@ Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Beda
 		                        "Month":"$$Text.Format('{0:%M}',SliceStart)",
 		                        "Day":"$$Text.Format('{0:%d}',SliceStart)"
 		                    },
-		                    "scriptpath": "adftutorial\hivequery.hql",
+		                    "scriptpath": "adftutorial\\hivequery.hql",
 						    "scriptLinkedService": "StorageLinkedService"
 						},
 						"policy":
@@ -204,19 +159,19 @@ Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Beda
       		}
 		}
 
-	> [AZURE.NOTE]Ersetzen Sie **StartDateTime** -Wert mit den drei Tage vor dem aktuellen Tag und **EndDateTime** Wert mit dem aktuellen Tag. Ist das StartDateTime und EndDateTime [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601). Zum Beispiel: 2014-10-14T16:32:41Z. Die Ausgabetabelle soll jeden Tag erstellt werden, deshalb werden drei Slices erstellt.
+	> [AZURE.NOTE]Ersetzen Sie den Wert **StartDateTime** durch den Zeitpunkt drei Tage vor dem aktuellen Tag und den Wert **EndDateTime** durch den aktuellen Tag. "StartDateTime" und "EndDateTime" müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Ausgabetabelle soll jeden Tag erstellt werden, deshalb werden drei Slices erstellt.
+	> 
+	> Ersetzen Sie **your storage account** im JSON-Code durch den Namen Ihres Speicherkontos.
 	
-	> [AZURE.NOTE]Ersetzen Sie **Ihres Speicherkontos** in JSON mit dem Namen Ihres Speicherkontos.
-	
-	Finden Sie unter [JSON Scripting Reference](http://go.microsoft.com/fwlink/?LinkId=516971) ausführliche Informationen zu JSON-Eigenschaften.
-2. Klicken Sie auf **Bereitstellen** auf der Befehlsleiste auf die Pipeline bereitstellen.
-4. Finden Sie unter [überwachen, Datasets und Pipeline][adfgetstartedmonitoring] Abschnitt [Erste Schritte mit Daten Factory][adfgetstarted] Artikel. 
+	Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](http://go.microsoft.com/fwlink/?LinkId=516971).
+2. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um die Pipeline bereitzustellen.
+4. Weitere Informationen finden Sie im Abschnitt [Überwachen von Datasets und der Pipeline][adfgetstartedmonitoring] des Artikels [Erste Schritte mit Data Factory][adfgetstarted]. 
 
-	> [AZURE.NOTE]In der **AKTIVITÄTSDETAILS ausführen** Blade für ein Segment einer Ausgabetabelle (Ausgabetabelle auswählen -> Select Slice -> Wählen Sie eine Aktivität, die im Portal ausführen), sehen Sie Links zu den Protokollen, die von der HDInsight-Cluster erstellt. Sie können prüfen Sie sie in das Portal selbst oder auf Ihren Computer herunterladen.
+	> [AZURE.NOTE]Auf dem Blatt **AKTIVITÄTSAUSFÜHRUNG – DETAILS** für einen Slice einer Ausgabetabelle (Ausgabetabelle auswählen -> Slice auswählen -> Eine im Portal auszuführende Aktivität auswählen) sehen Sie Links zu Protokollen, die vom HDInsight-Cluster erstellt wurden. Sie können diese direkt im Portal prüfen oder auf Ihren Computer herunterladen.
   
 
 ## Pig-JSON-Beispiel
-Beim Definieren einer Aktivität Pig oder Hive in einer Pipeline JSON, die **Typ** Eigenschaft muss festgelegt werden, um: **HDInsightActivity**.
+Beim Definieren einer Pig- oder Hive-Aktivität in einer JSON-Pipeline muss die Eigenschaft **type** auf **HDInsightActivity** festgelegt werden.
 
     {
 		"name": "Pig Activity",
@@ -238,11 +193,11 @@ Beim Definieren einer Aktivität Pig oder Hive in einer Pipeline JSON, die **Typ
 
 **Beachten Sie Folgendes:**
 	
-- Aktivität **Typ** minFreeThreads auf **HDInsightActivity**.
-- **LinkedServiceName** minFreeThreads auf **MyHDInsightLinkedService**. Finden Sie im Abschnitt Service verknüpft HDInsight unten Weitere Informationen zum Erstellen eines verknüpften HDInsight-Diensts.
-- Die **Typ** von der **Transformation** minFreeThreads auf **Pig**.
-- Können Sie angeben, Pig Skript Inline für den **Skript** Eigenschaft oder Store Skriptdateien in einem von Azure blob-Speicher und finden Sie in der Datei mit **Skriptpfad** -Eigenschaft, die weiter unten in diesem Artikel erläutert wird. 
-- Geben Sie Parameter für das Skript Pig mithilfe der **ExtendedProperties**. Weiter unten in diesem Artikel erhalten Sie weitere Details. 
+- Der **Aktivitätstyp** ist auf **HDInsightActivity** festgelegt.
+- **linkedServiceName** ist auf **MyHDInsightLinkedService** festgelegt. Im nachstehenden Abschnitt "Mit HDInsight verknüpfter Dienst" finden Sie weitere Informationen zum Erstellen eines mit HDInsight verknüpften Diensts.
+- Der **Typ** der **Transformation** ist auf **Pig** festgelegt.
+- Sie können das Pig-Skript inline für die Eigenschaft **script** angeben oder Skriptdateien in einem Azure-Blobspeicher speichern und mithilfe der Eigenschaft **scriptPath**, die später in diesem Artikel erläutert wird, auf die Datei verweisen. 
+- Sie können Parameter für das Pig-Skript mithilfe von **extendedProperties** angeben. Weiter unten in diesem Artikel erhalten Sie weitere Details. 
 
 
 ## Hive-JSON-Beispiel
@@ -268,22 +223,22 @@ Beim Definieren einer Aktivität Pig oder Hive in einer Pipeline JSON, die **Typ
 
 **Beachten Sie Folgendes:**
 	
-- Aktivität **Typ** minFreeThreads auf **HDInsightActivity**.
-- **LinkedServiceName** minFreeThreads auf **MyHDInsightLinkedService**. 
-- Die **Typ** von der **Transformation** minFreeThreads auf **Hive**.
-- Sie können angeben, dass Inline der Hive-Skript für die **Skript** Eigenschaft oder Store Skriptdateien in einem von Azure blob-Speicher und finden Sie in der Datei mit **Skriptpfad** -Eigenschaft, die weiter unten in diesem Artikel erläutert wird. 
-- Geben Sie Parameter für das Hive-Skript mithilfe der **ExtendedProperties**. Weiter unten in diesem Artikel erhalten Sie weitere Details. 
+- Der **Aktivitätstyp** ist auf **HDInsightActivity** festgelegt.
+- **linkedServiceName** ist auf **MyHDInsightLinkedService** festgelegt. 
+- Der **Typ** der **Transformation** ist auf **Hive** festgelegt.
+- Sie können das Hive-Skript inline für die Eigenschaft **script** angeben oder Skriptdateien in einem Azure-Blobspeicher speichern und mithilfe der Eigenschaft **scriptPath**, die später in diesem Artikel erläutert wird, auf die Datei verweisen. 
+- Sie können Parameter für das Hive-Skript mithilfe von **extendedProperties** angeben. Weiter unten in diesem Artikel erhalten Sie weitere Details. 
 
-> [AZURE.NOTE]Finden Sie unter [Entwicklerreferenz](http://go.microsoft.com/fwlink/?LinkId=516908) ausführliche Informationen zu Cmdlets, JSON-Schemas und Eigenschaften im Schema.
+> [AZURE.NOTE]In der [Entwicklerreferenz](http://go.microsoft.com/fwlink/?LinkId=516908) finden Sie Details zu Cmdlets, JSON-Schemas und Eigenschaften im Schema.
 
 
-## Verwenden von Pig und Hive-Skripts in HDInsight-Aktivität
+## Verwenden von Pig- und Hive-Skripts in einer HDInsight-Aktivität
 Sie können Pig-/Hive-Skripts in einem Azure-BLOB-Speicher speichern, der mit dem HDInsight-Cluster verbunden ist, und mithilfe der folgenden Eigenschaften in JSON aus Pig-/Hive-Aktivitäten auf diese verweisen:
 
-* **Skriptpfad** – Pfad zur Skriptdatei Pig oder Hive
-* **ScriptLinkedService** – Azure Storage-Konto, das die Skriptdatei enthält
+* **scriptPath**: Pfad zur Pig- oder Hive-Skriptdatei
+* **scriptLinkedService**: Azure-Speicherkonto, das die Skriptdatei enthält
 
-Das folgende JSON-Beispiel für eine Beispiel-Pipeline verwendet eine Hive-Aktivität, die auf **transformdata.hql** in gespeicherte Datei **Skripts** Ordner in der **Adfwalkthrough** Container im Azure Blob-Speicher, dargestellt durch die **StorageLinkedService**.
+Das folgende JSON-Beispiel für eine Beispielpipeline verwendet eine Hive-Aktivität, die auf die Datei **transformdata.hql** verweist. Diese ist im Ordner **scripts** im Container **adfwalkthrough** im Azure-Blobspeicher gespeichert, der durch **StorageLinkedService** dargestellt wird.
 
     {
     	"name": "AnalyzeMarketingCampaignPipeline",
@@ -303,7 +258,7 @@ Das folgende JSON-Beispiel für eine Beispiel-Pipeline verwendet eine Hive-Aktiv
 					"transformation":
 					{
     					"type": "Hive",
-    					"scriptpath": "adfwalkthrough\scripts\transformdata.hql",    		
+    					"scriptpath": "adfwalkthrough\\scripts\\transformdata.hql",    		
 						"scriptLinkedService": "StorageLinkedService", 
 						"extendedProperties":
 						{
@@ -322,17 +277,17 @@ Das folgende JSON-Beispiel für eine Beispiel-Pipeline verwendet eine Hive-Aktiv
 	}
 
 
-> [AZURE.NOTE]Verwenden der **Tez** -Modul eine Hive-Abfrage ausführen, führen Sie "** hive.execution.engine=tez**; festlegen" vor dem Ausführen der Hive-Abfrage.
+> [AZURE.NOTE]Um die **Tez**-Engine zum Ausführen von Hive-Abfragen zu verwenden, führen Sie vor der Hive-Abfrage "**set hive.execution.engine=tez**;" aus.
 > 
-> Finden Sie unter [Entwicklerreferenz](http://go.microsoft.com/fwlink/?LinkId=516908) ausführliche Informationen zu Cmdlets, JSON-Schemas und Eigenschaften im Schema.
+> In der [Entwicklerreferenz](http://go.microsoft.com/fwlink/?LinkId=516908) finden Sie Details zu Cmdlets, JSON-Schemas und Eigenschaften im Schema.
 
 ## Parametrisierte Pig- und Hive-Abfragen
-Die Daten Factory Pig und Hive-Aktivitäten ermöglichen es Ihnen, geben Sie Werte für Parameter, die in den Pig und Hive-Skripts verwendet werden, mit **ExtendedProperties**. Der Abschnitt "extendedProperties" besteht aus dem Namen des Parameters und dem Wert des Parameters.
+Mit den Pig- und Hive-Aktivitäten in Data Factory können Sie mithilfe von **extendedProperties** Werte für Parameter angeben, die in den Pig- und Hive-Skripts verwendet werden. Der Abschnitt "extendedProperties" besteht aus dem Namen des Parameters und dem Wert des Parameters.
 
-Im folgenden Beispiel für die Angabe von Parametern für eine Hive-Skript mit **ExtendedProperties**. Gehen Sie folgendermaßen vor, um parametrisierte Hive-Skripts zu verwenden:
+Das folgende Beispiel veranschaulicht das Angeben von Parametern für ein Hive-Skript mithilfe von **extendedProperties**. Gehen Sie folgendermaßen vor, um parametrisierte Hive-Skripts zu verwenden:
 
-1.	Definieren Sie die Parameter in **ExtendedProperties**.
-2.	In der Inline-Hive-Skript oder Hive-Skriptdatei, die in den BLOB-Speicher gespeichert, beziehen sich auf die Verwendung des Parameters **${Hiveconf:parameterName}**.
+1.	Definieren Sie die Parameter in **extendedProperties**.
+2.	Verweisen Sie im Inline-Hive-Skript oder in der Hive-Skriptdatei im Blobspeicher mithilfe von **${hiveconf:parameterName}** auf den Parameter.
 
    
     		
@@ -365,12 +320,12 @@ Im folgenden Beispiel für die Angabe von Parametern für eine Hive-Skript mit *
 		}
 
 
-## Siehe auch
+## Weitere Informationen
 
 Artikel | Beschreibung
 ------ | ---------------
-[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien, die mit Daten-Factory][adf-tutorial] | Dieser Artikel bietet eine End-to-End-exemplarische zum Implementieren von near Real World-Szenario mit Azure Data Factory zum Transformieren von Daten aus den Protokolldateien Einblicke in.
-[Azure Data Factory-Entwicklerreferenz][developer-reference] | Entwicklerreferenz hat die umfassendes Referenzmaterial für die Cmdlets, JSON-Skripts, Funktionen usw.... 
+[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][adf-tutorial] | In diesem Artikel wird in einer umfassenden exemplarischen Vorgehensweise die Implementierung eines nahezu realen Szenarios mithilfe von Azure Data Factory veranschaulicht, um mithilfe von Protokolldateien nützliche Einblicke zu gewinnen.
+[Azure Data Factory-Entwicklerreferenz][developer-reference] | Die Entwicklerreferenz enthält umfassende Referenzinformationen für Cmdlets, JSON-Skripts, Funktionen usw. 
 
 [data-factory-copy-activity]: ..//data-factory-copy-activity
 [data-factory-map-reduce]: ..//data-factory-map-reduce
@@ -396,5 +351,6 @@ Artikel | Beschreibung
 
 [Developer Reference]: http://go.microsoft.com/fwlink/?LinkId=516908
 [Azure Portal]: http://portal.azure.com
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=58_postMigration-->

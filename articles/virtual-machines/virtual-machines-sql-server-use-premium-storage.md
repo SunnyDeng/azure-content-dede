@@ -1,9 +1,9 @@
 <properties 
-	pageTitle="Verwenden von Azure Premium-Speicher mit SQL Server auf virtuellen Computern" 
-	description="Dieser Artikel enthält Anleitungen zur Verwendung von Azure Premium-Speicher mit SQL Server auf virtuellen Azure-Computern. Dazu gehören Beispiele für neue Bereitstellungen und Migrationen vorhandener Bereitstellungen von SQL Server auf IaaS." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="danielsollondon" 
+	pageTitle="Verwenden von Azure Premium-Speicher mit SQL Server auf virtuellen Computern"
+	description="Dieser Artikel enthält Anleitungen zur Verwendung von Azure Premium-Speicher mit SQL Server auf virtuellen Azure-Computern. Dazu gehören Beispiele für neue Bereitstellungen und Migrationen vorhandener Bereitstellungen von SQL Server auf IaaS."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="danielsollondon"
 	manager="jeffreyg"
 	editor=""/>
 
@@ -12,15 +12,16 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services" 
-	ms.date="04/29/2015"
+	ms.workload="infrastructure-services"
+	ms.date="06/02/2015"
 	ms.author="jroth"/>
 
 # Verwenden von Azure Premium-Speicher mit SQL Server auf virtuellen Computern
 
+
 ## Übersicht
 
-[Azure Premium-Speicher](../storage-premium-storage-preview-portal.md) ist die nächste Speichergeneration mit geringer Latenz und hohem E/A-Durchsatz. Er ist ideal geeignet für hohe E/A-Arbeitsauslastung, wie z. B. SQL Server auf [virtuellen IaaS-Computern](http://azure.microsoft.com/services/virtual-machines/). Dieser Artikel enthält die Planung und Anleitungen zum Migrieren eines virtuellen Computers für die Verwendung mit Premium-Speicher. Dies umfasst Schritte für die Azure-Infrastruktur (Netzwerk, Speicher) und virtuelle Windows-Gastsysteme. Das Beispiel im [Anhang](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) zeigt eine vollständige End-to-End-Migration zum Verschieben größerer virtueller Computern mit PowerShell, um die besseren lokalen SSD-Speicher zu nutzen.
+[Azure Premium-Speicher](../storage-premium-storage-preview-portal.md) ist die nächste Speichergeneration mit geringer Latenz und hohem E/A-Durchsatz. Er ist ideal geeignet für hohe E/A-Arbeitsauslastung, wie z. B. SQL Server auf [virtuellen IaaS-Computern](http://azure.microsoft.com/services/virtual-machines/). Dieser Artikel enthält die Planung und Anleitungen zum Migrieren eines virtuellen Computers für die Verwendung mit Premium-Speicher. Dies umfasst Schritte für die Azure-Infrastruktur (Netzwerk, Speicher) und virtuelle Windows-Gastsysteme. Das Beispiel im [Anhang](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) zeigt eine vollständige End-to-End-Migration zum Verschieben größerer virtueller Computer mit PowerShell, um die verbesserten lokalen SSD-Speicher zu nutzen.
 
 Es ist wichtig, den End-to-End-Prozess einschließlich der Nutzung des Premium-Azure-Speichers mit SQL Server auf virtuellen IAAS-Computern zu verstehen. Dies umfasst:
 
@@ -32,7 +33,7 @@ Es ist wichtig, den End-to-End-Prozess einschließlich der Nutzung des Premium-A
 
 Ausführlichere Informationen zur Verwendung von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-**Technische Bearbeiter:** Luis Carlos Vargas Herring, Sanjay Mishra, Pravin Mital, Juergen Thomas, Gonzalo Ruiz
+**Autor**: Daniel Sol, **Technische Bearbeiter**: Luis Carlos Vargas Herring, Sanjay Mishra, Pravin Mital, Jürgen Thomas, Gonzalo Ruiz
 
 ## Voraussetzungen für Premium-Speicher
 
@@ -664,7 +665,7 @@ Beachten Sie, dass mit einem niedrigeren "HostRecordTTL"-Wert der DNS-Datenverke
 
 Wenn die SQL-Clientanwendung den .Net 4.5 SQLClient unterstützt, können Sie das Schlüsselwort "MULTISUBNETFAILOVER = TRUE" verwenden. Dies wird empfohlen, da es bei einem Failover eine schnellere Verbindung mit der SQL-AlwaysOn-Verfügbarkeitsgruppe ermöglicht. Dabei werden alle mit dem AlwaysOn-Listener verbundenen IP-Adressen parallel durchlaufen und eine aggressivere Geschwindigkeit bei der TCP-Verbindungswiederholung während eines Failovers angewendet.
 
-Weitere Informationen zu den obigen Einstellungen finden Sie unter [Erstellen oder Konfigurieren eines Verfügbarkeitsgruppenlisteners (SQL Server)](https://msdn.microsoft.com/library/hh213080.aspx#MultiSubnetFailover). Siehe auch [SqlClient-Unterstützung für hohe Verfügbarkeit, Notfallwiederherstellung](https://msdn.microsoft.com/library/hh205662(v=vs.110).aspx).
+Weitere Informationen zu den obigen Einstellungen finden Sie unter [Erstellen oder Konfigurieren eines Verfügbarkeitsgruppenlisteners (SQL Server)](https://msdn.microsoft.com/library/hh213080.aspx#MultiSubnetFailover). Siehe auch [SqlClient Support for High Availability, Disaster Recovery](https://msdn.microsoft.com/library/hh205662(v=vs.110).aspx) (in englischer Sprache).
 
 #### Schritt 5: Clusterquorum-Einstellungen
 
@@ -1011,7 +1012,7 @@ Für TLOG-Volumes sollte dies auf "NONE" festgelegt sein.
     Get-AzureStorageBlobCopyState -Blob "danRegSvcAms-dansqlams1-2014-07-03.vhd" -Container $containerName -Context $xioContext
      
     
-Sie können den Status des VHD-Kopiervorgangs für alle virtuellen Festplatten überprüfen:  ForEach ($disk in $diskobjects) { $lun = $disk.Lun $vhdname = $disk.vhdname $cacheoption = $disk.HostCaching $disklabel = $disk.DiskLabel $diskName = $disk.DiskName
+Sie können den Status des VHD-Kopiervorgangs für alle virtuellen Festplatten überprüfen: ForEach ($disk in $diskobjects) { $lun = $disk.Lun $vhdname = $disk.vhdname $cacheoption = $disk.HostCaching $disklabel = $disk.DiskLabel $diskName = $disk.DiskName
       
        $copystate = Get-AzureStorageBlobCopyState -Blob $vhdname -Container $containerName -Context $xioContextnode2
     Write-Host "Copying Disk Lun $lun, Label : $disklabel, VHD : $vhdname, STATUS = " $copystate.Status 
@@ -1140,5 +1141,6 @@ Informationen zum Hinzufügen einer IP-Adresse finden Sie im [Anhang](#appendix-
 [23]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_13.png
 [24]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_14.png
 [25]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_15.png
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

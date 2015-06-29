@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Verwenden der Docker-VM-Erweiterung für Linux auf Azure"
-	description="Beschreibt die Docker- und Azure Virtual Machines-Erweiterungen und zeigt die programmgesteuerte Erstellung von virtuellen Computern auf Azure, die Docker hostet, über die Befehlszeile mithilfe der „azure-cli“-Befehlsschnittstelle."
+	description="Beschreibt die Docker- und Azure Virtual Machines-Erweiterungen und zeigt die programmgesteuerte Erstellung von virtuellen Computern auf Azure, die von Docker gehostet werden, über die Befehlszeile mithilfe der Azure-CLI."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
@@ -142,5 +142,6 @@ Sie sind nun bereit, das [Docker-Benutzerhandbuch] und Ihren virtuellen Docker-C
 
 [Running Docker with https]: http://docs.docker.com/articles/https/
 [Docker-Benutzerhandbuch]: https://docs.docker.com/userguide/
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

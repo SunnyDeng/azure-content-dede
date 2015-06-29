@@ -4,8 +4,8 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="terrylan" 
-	editor="lisatoft"/>
+	manager="swadhwa" 
+	editor="curtand"/>
 
 <tags 
 	ms.service="active-directory" 
@@ -13,22 +13,21 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/27/2015" 
+	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
 # Azure Active Directory Connect – Erfahren Sie mehr
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/de-de/documentation/articles/active-directory-aadconnect/" title="Worum handelt es sich?" class="current">Worum handelt es sich?</a> <a href="/de-de/documentation/articles/active-directory-aadconnect-how-it-works/" title="Funktionsweise">Funktionsweise</a> <a href="/de-de/documentation/articles/active-directory-aadconnect-get-started/" title="Erste Schritte">Erste Schritte</a> <a href="/de-de/documentation/articles/active-directory-aadconnect-whats-next/" title="Wie geht es weiter?">Wie geht es weiter?</a> <a href="/de-de/documentation/articles/active-directory-aadconnect-learn-more/" title="Weitere Informationen">Weitere Informationen</a>
+<a href="../active-directory-aadconnect/" title="Worum handelt es sich?">Worum handelt es sich?</a> <a href="../active-directory-aadconnect-how-it-works/" title="Funktionsweise">Funktionsweise</a> <a href="../active-directory-aadconnect-get-started/" title="Erste Schritte">Erste Schritte</a> <a href="../active-directory-aadconnect-whats-next/" title="Nächste Schritte">Nächste Schritte</a> <a href="../active-directory-aadconnect-learn-more/" title="Weitere Informationen" class="current">Weitere Informationen</a>
 </div>
 
 Es folgt eine Liste mit zusätzlichen Ressourcen für die Verwendung von Azure AD Connect und die Integration Ihrer lokalen Verzeichnisse in Azure AD.
 
->[AZURE.NOTE]Azure AD Connect umfasst die Komponenten und Funktionen, die zuvor als Dirsync und AAD Sync veröffentlicht wurden. Diese Tools werden nicht mehr länger einzeln veröffentlicht und alle künftigen Verbesserungen werden in den Aktualisierungen von Azure AD Connect enthalten sein, sodass Sie immer wissen, wo Sie die aktuellsten Funktionalitäten bekommen.
+>[AZURE.NOTE]Azure AD Connect umfasst die Komponenten und Funktionen, die zuvor als Dirsync und AAD Sync veröffentlicht wurden. Diese Tools werden nicht mehr einzeln veröffentlicht, und alle künftigen Verbesserungen werden in den Updates von Azure AD Connect enthalten sein, sodass Sie immer wissen, wo Sie die aktuellsten Funktionen bekommen.
 
 ## Dokumentation
 
-[DirSync mit Single Sign-On](https://msdn.microsoft.com/library/azure/dn441213.aspx) – Erstellen Sie einen Verbund in Ihrer lokalen Active Directory-Umgebung mit Azure AD mithilfe von AD FS, um einmaliges Anmelden bereitzustellen.
 
 [Aus mehreren Gesamtstrukturen bestehende Verzeichnissynchronisierung mit Szenario für einmaliges Anmelden](https://msdn.microsoft.com/library/azure/dn510976.aspx) – Integrieren Sie mehrere Verzeichnisse in Azure AD.
 
@@ -36,17 +35,16 @@ Es folgt eine Liste mit zusätzlichen Ressourcen für die Verwendung von Azure A
 
 ## Videos
 
-[AZURE.VIDEO edge-show115-azure-ad-connect-preview-configuring-hybrid-identity-with-azure-ad-] [AZURE.VIDEO 04] 
+Ignite 2015-Präsentation über die Erweiterung lokaler Verzeichnisse in die Cloud.
 
-[AZURE.VIDEO 10] [AZURE.VIDEO teched-new-zealand-2014-microsoft-office-365-directory-synchronization-and-federation-options]
+[AZURE.VIDEO microsoft-ignite-2015-extending-on-premises-directories-to-the-cloud-made-easy-with-azure-active-directory-connect]
 
+<br> <br>
 
-**Zusätzliche Ressourcen**
+In diesem Video erfahren Sie, wie einfach es ist, Ihr lokales Active Directory mithilfe der Expresseinstellungen von Azure Active Directory Connect in die Cloud zu erweitern.
 
-* [Verwenden Sie Ihre lokale Identitätsinfrastruktur in der Cloud](active-directory-aadconnect.md)
-* [Funktionsweise von Azure AD Connect](active-directory-aadconnect-how-it-works.md)
-* [Erste Schritte mit Azure AD Connect](active-directory-aadconnect-get-started.md)
-* [Wie geht es weiter mit Azure AD Connect?](active-directory-aadconnect-whats-next.md)
-* [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
+[AZURE.VIDEO azure-active-directory-connect-express-settings]
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=58_postMigration-->

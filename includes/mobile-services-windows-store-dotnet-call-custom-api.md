@@ -67,4 +67,4 @@
 
 	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
 
-<!--HONumber=54-->
+<!---HONumber=58_postMigration-->

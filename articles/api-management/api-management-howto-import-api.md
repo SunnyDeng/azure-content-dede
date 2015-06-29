@@ -29,7 +29,7 @@ Diese Anleitung beschreibt die Erstellung einer neuen API und den Import von Ope
 
 ## <a name="import-api"> </a>Importieren einer API
 
-APIs werden im Herausgeberportal erstellt und konfiguriert. Um auf das Herausgeberportal zuzugreifen, klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Falls Sie noch keine API Management-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API Management-Dienstinstanz][] im Lernprogramm [Erste Schritte mit Azure API Management][].
+APIs werden im Herausgeberportal erstellt und konfiguriert. Um auf das Herausgeberportal zuzugreifen, klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Falls Sie noch keine API Management-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API-Verwaltungsinstanz][] im Lernprogramm [Erste Schritte mit der Azure API-Verwaltung][].
 
 ![Herausgeberportal][api-management-management-console]
 
@@ -54,7 +54,7 @@ Geben Sie anschließend ein **URL-Suffix für die Web-API** ein. Dieses Suffix w
 
 Geben Sie alle Werte ein, und klicken Sie auf **Speichern**, um die API und die entsprechenden Operationen zu erstellen.
 
->[AZURE.NOTE]Ein Lernprogramm einen Rechner API im Swagger-Format importieren, finden Sie unter [Verwalten Sie Ihre erste API in Azure API Management](api-management-get-started.md).
+>[AZURE.NOTE]Ein Lernprogramm zum Importieren einer einfachen Taschenrechner-API im Swagger-Format finden Sie unter [Verwalten Ihrer ersten API in Azure API Management](api-management-get-started.md).
 
 ## <a name="export-api"> </a>Exportieren einer API
 
@@ -87,12 +87,12 @@ Nachdem Sie die API erstellt und die Operationen importiert haben, können Sie z
 [Configure API settings]: #configure-api-settings
 [Next steps]: #next-steps
 
-[Erste Schritte mit Azure API Management]: api-management-get-started.md
-[Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
+[Erste Schritte mit der Azure API-Verwaltung]: api-management-get-started.md
+[Erstellen einer API-Verwaltungsinstanz]: api-management-get-started.md#create-service-instance
 
 [Hinzufügen von Operationen zu einer API]: api-management-howto-add-operations.md
 [Erstellen und Veröffentlichen eines Produkts]: api-management-howto-add-products.md
 [Erstellen von APIs]: api-management-howto-create-apis.md
 [Konfigurieren von API-Einstellungen]: api-management-howto-create-apis.md#configure-api-settings
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

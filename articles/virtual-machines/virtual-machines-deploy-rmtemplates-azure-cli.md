@@ -20,8 +20,6 @@
 
 In diesem Artikel wird gezeigt, wie mit Azure Resource Manager-Vorlagen und der Azure-Befehlszeilenschnittstelle (Azure-CLI) die folgenden allgemeinen Aufgaben zum Bereitstellen und Verwalten von Azure Virtual Machines automatisiert werden. Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [App-Frameworks](virtual-machines-app-frameworks.md).
 
-Allgemeine Aufgaben:
-
 - [Schnelles Erstellen eines virtuellen Computers in Azure](#quick-create-a-vm-in-azure)
 - [Bereitstellen eines virtuellen Computers in Azure aus einer Vorlage](#deploy-a-vm-in-azure-from-a-template)
 - [Erstellen eines virtuellen Computers von einem benutzerdefinierten Image](#create-a-custom-vm-image) 
@@ -33,8 +31,6 @@ Allgemeine Aufgaben:
 - [Beenden eines virtuellen Computers](#stop-a-virtual-machine)
 - [Starten eines virtuellen Computers](#start-a-virtual-machine)
 - [Anfügen eines Datenträgers](#attach-a-data-disk)
-
-
 
 ## Vorbereitung
 
@@ -101,9 +97,9 @@ Sie können dann den gesamten Lebenszyklus der Gruppenressourcen mithilfe von Re
 - Vorgänge zu überwachen. 
 - Ressourcen mit zusätzlichen Metadaten zur besseren Nachverfolgung auszuzeichnen. 
 
-Erfahren Sie mehr über Azure-Ressourcengruppen und was diese für Sie tun können [hier](../resource-groups-overview.md). Wenn Sie das Erstellen von Vorlagen interessiert, sehen Sie in [Azure Resource Manager-Vorlagen erstellen](../resource-group-authoring-templates.md) nach.
+Erfahren Sie mehr über Azure-Ressourcengruppen und was diese für Sie tun können [hier](../resource-group-overview.md). Wenn Sie das Erstellen von Vorlagen interessiert, sehen Sie in [Azure Resource Manager-Vorlagen erstellen](../resource-group-authoring-templates.md) nach.
 
-## Schnelles Erstellen eines virtuellen Computers in Azure
+## <a id="quick-create-a-vm-in-azure"></a>AUFGABE: schnelles Erstellen eines virtuellen Computers in Azure
 
 Manchmal wissen Sie, welches Image Sie benötigen, Sie benötigen eine VM von dem Image in diesem Moment und die Infrastruktur ist Ihnen dabei egal – vielleicht müssen Sie etwas auf einer sauberen VM testen. Dann verwenden Sie den Befehl `azure vm quick-create` und übergehen die zum Erstellen eines virtuellen Computers und seiner Infrastruktur erforderlichen Argumente.
 
@@ -232,7 +228,7 @@ Erstellen Sie Ihren virtuellen Computer einfach durch Eingabe von `azure vm quic
     
 Und los geht's mit Ihrem neuen virtuellen Computer.
 
-## Bereitstellen eines virtuellen Computers in Azure aus einer Vorlage
+## <a id="deploy-a-vm-in-azure-from-a-template"></a>AUFGABE: Bereitstellen eines virtuellen Computers in Azure aus einer Vorlage
 
 Verwenden Sie die Anweisungen in den folgenden Abschnitten zum Bereitstellen einer neuen Azure-VM mithilfe einer Vorlage mit der Azure-Befehlszeilenschnittstelle. Diese Vorlage erstellt einen einzelnen virtuellen Computer in einem neuen virtuellen Netzwerk mit nur einem Subnetz und ermöglicht Ihnen im Gegensatz zu `azure vm quick-create` die genaue Beschreibung Ihrer Anforderungen, ohne Fehler zu wiederholen. Durch die Vorlage wird Folgendes erstellt:
 
@@ -501,7 +497,7 @@ Sie erhalten den folgenden Informationstyp:
     
 
 
-## Erstellen eines benutzerdefinierten VM-Image
+## <a id="create-a-custom-vm-image"></a>AUFGABE: Erstellen eines benutzerdefinierten VM-Image
 
 Sie haben oben die grundlegende Verwendung von Vorlagen gesehen, sodass wir ähnliche Anweisungen zum Erstellen eines benutzerdefinierten virtuellen Computers aus einer spezifischen VHD-Datei in Azure mit einer Azure CLI-Vorlage verwenden können. Der Unterschied ist hier, dass diese Vorlage eine einzelne virtuelle Maschine von einer angegebenen virtuellen Festplatte (VHD) erstellt.
 
@@ -766,7 +762,7 @@ Die Ausgabe sollte wie folgt angezeigt werden:
     info:    group deployment create command OK
     
 
-## Bereitstellen einer Multi-VM-Anwendung, die ein virtuelles Netzwerk und einen externen Lastenausgleich verwendet.
+## <a id="deploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balancer"></a>AUFGABE: Bereitstellen einer Multi-VM-Anwendung, die ein virtuelles Netzwerk und einen externen Lastenausgleich verwendet
 
 Mit dieser Vorlage können Sie 2 virtuelle Computer unter einem Lastenausgleich erstellen und eine Lastenausgleichsregel auf Port 80 konfigurieren. Diese Vorlage stellt außerdem Speicherkonto, Virtual Network, öffentliche IP-Adresse, Verfügbarkeitsgruppe und Netzwerkschnittstellen bereit.
 
@@ -1178,7 +1174,7 @@ Verwenden Sie jetzt den Befehl `azure group deployment create` und die Option `-
     
 Beachten Sie, dass diese Vorlage ein Windows Server-Image bereitstellt. Allerdings kann es leicht durch ein beliebiges Linux-Image ersetzt werden. Sie möchten ein Docker-Cluster über mehrere Regionen erstellen? [Das ist kein Problem.](http://azure.microsoft.com/documentation/templates/201-discover-private-ip-dynamically/)
 
-## Entfernen einer Ressourcengruppe
+## <a id="remove-a-resource-group"></a>AUFGABE: Entfernen einer Ressourcengruppe
 
 Beachten Sie, dass Sie zu einer Ressourcengruppe erneut bereitstellen können. Aber wenn Sie damit fertig sind, löschen Sie sie mit `azure group delete <group name>`.
 
@@ -1188,7 +1184,7 @@ Beachten Sie, dass Sie zu einer Ressourcengruppe erneut bereitstellen können. A
     + Deleting resource group myResourceGroup                                               
     info:    group delete command OK
     
-## Anzeigen des Protokolls für die Ressourcengruppenbereitstellung
+## <a id="show-the-log-for-a-resource-group-deployment"></a>AUFGABE: Anzeigen des Protokolls für die Ressourcengruppenbereitstellung
 
 Dieses tritt häufig beim Erstellen oder Verwenden von Vorlagen auf. Der Aufruf zur Anzeige von Bereitstellungsprotokollen für eine Gruppe ist `azure group log show <groupname>`. Es werden eine Menge Informationen angezeigt, die für das Verständnis hilfreich sind, warum etwas passiert ist oder auch nicht. (Weitere Informationen zur Problembehandlung für Ihre Bereitstellungen sowie andere Informationen zu Problemen finden Sie unter [Problembehandlung Ressourcengruppen-Bereitstellungen in Azure](resource-group-deploy-debug.md).)
 
@@ -1204,7 +1200,7 @@ Sie können sehr schnell ermitteln, welche Fehler aufgetreten sind, sie beheben 
     }
     
 
-## Anzeigen von Informationen zu einem virtuellen Computer
+## <a id="display-information-about-a-virtual-machine"></a>AUFGABE: Anzeigen von Informationen zu einem virtuellen Computer
 
 Informationen zu spezifischen VMs in Ihrer Ressourcengruppe finden Sie mithilfe von `azure vm show <groupname> <vmname> command`. Möglicherweise müssen Sie die virtuellen Computer in einer Gruppe zuerst auflisten, wenn Sie mehr als einen verwenden, und zwar mithilfe von `azure vm list <groupname>`.
 
@@ -1271,11 +1267,11 @@ und dann schlagen Sie in myVM1 nach:
 
 > [AZURE.NOTE]Wenn Sie die Ausgaben der Konsolenbefehle programmgesteuert speichern und bearbeiten möchten, sollten Sie möglicherweise ein JSON-Analysetool verwenden, z. B. **[jq](https://github.com/stedolan/jq)**, **[jsawk](https://github.com/micha/jsawk)** oder für die Aufgabe geeignete Sprachbibliotheken.
 
-## Anmelden bei einem virtuellen Computer auf Linux-Basis
+## <a id="log-on-to-a-linux-based-virtual-machine"></a>AUFGABE: Anmelden bei einem virtuellen Computer auf Linux-Basis
 
 In der Regel sind Linux-Computer über SSH verbunden. Weitere Informationen finden Sie unter [Verwenden von SSH mit Linux auf Azure](virtual-machines-linux-use-ssh-key.md).
 
-## Anhalten eines virtuellen Computers
+## <a id="stop-a-virtual-machine"></a>AUFGABE: Anhalten eines virtuellen Computers
 
 Führen Sie den folgenden Befehl aus:
 
@@ -1283,11 +1279,11 @@ Führen Sie den folgenden Befehl aus:
 
 >[AZURE.IMPORTANT]Verwenden Sie diesen Parameter, um die virtuelle IP-Adresse des Clouddiensts beizubehalten, falls es sich um den letzten virtuellen Computer in diesem Clouddienst handelt. <br><br> Wenn Sie diesen Parameter verwenden, wird der virtuelle Computer dennoch in Rechnung gestellt.
 
-## Starten eines virtuellen Computers
+## <a id="start-a-virtual-machine"></a>AUFGABE: Starten eines virtuellen Computers
 
 Führen Sie diesen Befehl aus: Azure Resource Manager Overview azure vm start <group name> <virtual machine name>
 
-## Anfügen eines Datenträgers
+## <a id="attach-a-data-disk"></a>AUFGABE: Anfügen eines Datenträgers
 
 Sie müssen auch entscheiden, ob Sie einen neuen Datenträger anfügen oder einen, der Daten enthält. Für einen neuen Datenträger erstellt der Befehl die VHD-Datei und fügt sie im selben Befehl an.
 
@@ -1308,4 +1304,13 @@ Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit
 
 Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [App-Frameworks](virtual-machines-app-frameworks.md).
 
-<!---HONumber=58--> 
+
+
+
+
+
+
+
+ 
+
+<!---HONumber=58_postMigration-->

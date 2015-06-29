@@ -189,4 +189,7 @@ Der [Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md) (waagent) is
 
 - Sie müssen den virtuellen Computer anschließend herunterfahren und die virtuelle Festplatte in Azure hochladen.
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=58_postMigration-->

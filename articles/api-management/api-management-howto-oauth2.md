@@ -18,7 +18,7 @@
 
 # So autorisieren Sie Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management
 
-Viele APIs unterstützen [OAuth 2.0](http://oauth.net/2/) sichern die API und sicherzustellen, dass nur gültige Benutzer Zugriff haben, können nur auf Ressourcen zugreifen, die sie berechtigt sind. Um die interaktive Entwicklerkonsole von Azure API Management mit solchen APIs zu verwenden, ermöglicht der Dienst Ihnen das Konfigurieren Ihrer Dienstinstanz für die Zusammenarbeit mit einer OAuth 2.0-aktivierten API.
+Viele APIs unterstützen [OAuth 2.0](http://oauth.net/2/) zum Schützen der API und um sicherzustellen, dass nur autorisierte Benutzer Zugriff erhalten und nur auf die Ressourcen zugreifen können, für die sie berechtigt sind. Um die interaktive Entwicklerkonsole von Azure API Management mit solchen APIs zu verwenden, ermöglicht der Dienst Ihnen das Konfigurieren Ihrer Dienstinstanz für die Zusammenarbeit mit einer OAuth 2.0-aktivierten API.
 
 ## <a name="prerequisites"> </a>Voraussetzungen
 
@@ -120,7 +120,7 @@ Nun können Sie die gewünschten Werte für die restlichen Parameter konfigurier
 
 ## Nächste Schritte
 
-Weitere Informationen zur Verwendung von OAuth 2.0 und API-Verwaltung finden Sie im folgende Video.
+Weitere Informationen zur Verwendung von OAuth 2.0 und API-Verwaltung finden Sie im folgenden Video.
 
 > [AZURE.VIDEO protecting-web-api-backend-with-azure-active-directory-and-api-management]
 
@@ -160,4 +160,4 @@ Weitere Informationen zur Verwendung von OAuth 2.0 und API-Verwaltung finden Sie
 [Test the OAuth 2.0 user authorization in the Developer Portal]: #step3
 [Next steps]: #next-steps
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

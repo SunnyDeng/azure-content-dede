@@ -13,26 +13,20 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/26/2015"
+	ms.date="05/29/2015"
 	ms.author="kathydav"/>
 
-#Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Linux-Computer
+# Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Linux-Computer
 
 Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. In beiden Fällen sind die Datenträger eigentlich VHD-Dateien, die sich in einem Azure-Speicherkonto befinden. Außerdem müssen Sie in beiden Fällen den Datenträger nach dem Anfügen initialisieren, damit er verwendet werden kann.
 
-> [AZURE.NOTE]Es empfiehlt sich, einen oder mehrere separate Datenträger zu verwenden, um die Daten eines virtuellen Computers zu speichern. Wenn Sie einen virtuellen Azure-Computer erstellen, verfügt dieser über einen Betriebssystem-Datenträger und über einen temporären Datenträger. **Verwenden Sie den temporären Datenträger nicht zum Speichern von Daten.** Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet. Unter Linux wird der temporäre Datenträger normalerweise vom Azure Linux Agent verwaltet und automatisch an **/mnt/resource** (oder auf Ubuntu-Images an **/mnt**) angefügt. Andererseits kann dem Datenträger unter Linux vom Kernel der Name `/dev/sdc` zugewiesen werden. In diesem Fall muss diese Ressource partitioniert, formatiert und eingebunden werden. Weitere Informationen erhalten Sie im [Benutzerhandbuch für Azure Linux-Agent](http://azure.microsoft.com/manage/linux/how-to-guides/linux-agent-guide/).
-
-- [Gewusst wie: Anfügen eines leeren Datenträgers](#attachempty)
-- [Gewusst wie: Anfügen eines vorhandenen Datenträgers](#attachexisting)
-- [Gewusst wie: Initialisieren eines neuen Datenträgers unter Linux](#initializeinlinux)
+> [AZURE.NOTE]Es empfiehlt sich, einen oder mehrere separate Datenträger zu verwenden, um die Daten eines virtuellen Computers zu speichern. Wenn Sie einen virtuellen Azure-Computer erstellen, verfügt dieser über einen Betriebssystem-Datenträger und über einen temporären Datenträger. **Verwenden Sie den temporären Datenträger nicht zum Speichern von Daten.** Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet. Unter Linux wird der temporäre Datenträger normalerweise vom Azure Linux Agent verwaltet und automatisch an **/mnt/resource** (oder auf Ubuntu-Images an **/mnt**) angefügt. Andererseits kann dem Datenträger unter Linux vom Kernel der Name `/dev/sdc` zugewiesen werden. In diesem Fall muss diese Ressource partitioniert, formatiert und eingebunden werden. Weitere Informationen finden Sie im [Benutzerhandbuch für Azure Linux-Agent][Agent].
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-windows-linux.md)]
 
-##<a id="initializeinlinux"></a>Gewusst wie: Initialisieren eines neuen Datenträgers unter Linux
+## Vorgehensweise: Initialisieren eines neuen Datenträgers unter Linux
 
-
-
-1. Stellen Sie eine Verbindung mit dem virtuellen Computer her. Eine Beschreibung der dafür erforderlichen Schritte finden Sie unter [Anmeldung auf einem virtuellen Linux-Computer](logonlinux).
+1. Stellen Sie eine Verbindung mit dem virtuellen Computer her. Anweisungen dazu finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird][Logon].
 
 
 
@@ -137,8 +131,15 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 	Wenn der Befehl `mount` zu einem Fehler führt, prüfen Sie die Datei "/etc/fstab" auf korrekte Syntax. Wenn zusätzliche Datenlaufwerke oder Partitionen erstellt werden, müssen Sie diese ebenfalls einzeln in "/etc/fstab" einfügen.
 
 
-	>[AZURE.NOTE]Wenn Sie später einen Datenträger entfernen, ohne "fstab" zu bearbeiteten, kann der Start des virtuellen Computers fehlschlagen. Für den Fall, dass dieses Problem häufiger auftritt, bieten die meisten Verteilungen die fstab-Optionen `nofail` und/oder `nobootwait`, die einen Systemstart auch dann erlauben, wenn der Datenträger zur Startzeit nicht eingebunden werden kann. Weitere Informationen zu diesen Parametern finden Sie in der Dokumentation zu Ihrer Verteilung.
+>[AZURE.NOTE]Wenn Sie später einen Datenträger entfernen, ohne "fstab" zu bearbeiteten, kann der Start des virtuellen Computers fehlschlagen. Für den Fall, dass dieses Problem häufiger auftritt, bieten die meisten Verteilungen die fstab-Optionen `nofail` und/oder `nobootwait`, die einen Systemstart auch dann erlauben, wenn der Datenträger zur Startzeit nicht eingebunden werden kann. Weitere Informationen zu diesen Parametern finden Sie in der Dokumentation zu Ihrer Verteilung.
 
-[logonlinux]: virtual-machines-linux-how-to-log-on.md
+## Zusätzliche Ressourcen
+[Anmelden bei einem mit Linux betriebenen virtuellen Computer][Logon]
 
-<!---HONumber=58--> 
+
+<!--Link references-->
+[Agent]: virtual-machines-linux-agent-user-guide.md
+[Logon]: virtual-machines-linux-how-to-log-on.md
+ 
+
+<!---HONumber=58_postMigration-->

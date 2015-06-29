@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Get the service registration key"
-   description="Explains how to get the registration key used to register all StorSimple devices."
+   pageTitle="Abrufen des Dienstregistrierungsschlüssels"
+   description="Beschreibt das Abrufen des Registrierungsschlüssels, der zum Registrieren aller StorSimple-Geräte verwendet wird."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
@@ -16,22 +16,24 @@
    ms.author="v-sharos" />
 
 
-#### To get the StorSimple service registration key
+#### So rufen Sie den StorSimple-Dienstregistrierungsschlüssel ab
 
-1. On the **StorSimple Manager service** page, click the service that you created. This will take you to the **Quick Start** page. (You can click the quick start icon ![StorSimple Quick Start icon ](./media/storsimple-get-service-registration-key-gov/HCS_QuickStartIcon-include.png) to access the **Quick Start** page at any time.)
+1. Klicken Sie auf der Seite des Diensts **StorSimple-Manager** auf den Dienst, den Sie erstellt haben. Damit gelangen Sie auf die Seite **Schnellstart**. (Sie können jederzeit über das Schnellstartsymbol ![StorSimple-Schnellstart, Symbol](./media/storsimple-get-service-registration-key-gov/HCS_QuickStartIcon-include.png) auf die Seite **Schnellstart** zugreifen.)
 
-     ![StorSimple Quick Start page](./media/storsimple-get-service-registration-key-gov/HCS_ServiceQuickStart-gov-include.png)
+     ![StorSimple-Schnellstart, Seite](./media/storsimple-get-service-registration-key-gov/HCS_ServiceQuickStart-gov-include.png)
 
-2. Click **Get service registration key**. You can also click **Registration Key** at the bottom of the page. You will have to wait for a few minutes while the key is retrieved. The **Service Registration Key** dialog box appears.
+2. Klicken Sie auf **Dienstregistrierungsschlüssel abrufen**. Sie können auch am unteren Rand der Seite auf **Registrierungsschlüssel** klicken. Sie müssen einige Minuten warten, während der Schlüssel abgerufen werden. Das Dialogfeld **Dienstregistrierungsschlüssel** wird angezeigt.
 
-     ![Service Registration Key dialog box](./media/storsimple-get-service-registration-key-gov/HCS_ServiceRegistrationKey-gov-include.png)
+     ![Dienstregistrierungsschlüssel, Dialogfeld](./media/storsimple-get-service-registration-key-gov/HCS_ServiceRegistrationKey-gov-include.png)
 
-3. Locate the service registration key.
+3. Suchen Sie nach dem Dienstregistrierungsschlüssel.
 
-4. Click the copy icon ![StorSimple Copy icon](./media/storsimple-get-service-registration-key-gov/HCS_CopyIcon-include.png) to copy the key and save it for later use.
+4. Klicken Sie auf das Kopiersymbol ![StorSimple, Kopiersymbol](./media/storsimple-get-service-registration-key-gov/HCS_CopyIcon-include.png), um den Schlüssel zu kopieren und für die spätere Verwendung zu speichern.
 
-5. Click the check icon ![StorSimple Check icon](./media/storsimple-get-service-registration-key-gov/HCS_CheckIcon-include.png) to close this dialog box and return to the **Quick Start** page.
+5. Klicken Sie auf das Häkchensymbol ![StorSimple, Häkchensymbol](./media/storsimple-get-service-registration-key-gov/HCS_CheckIcon-include.png), um das Dialogfeld zu schließen und zur Seite **Schnellstart** zurückzukehren.
 
-> [AZURE.NOTE] The service registration key is used to register all the devices that need to register with your StorSimple Manager service.
+> [AZURE.NOTE]Der Dienstregistrierungsschlüssel wird zur Registrierung aller Geräte verwendet, die mit dem StorSimple-Manager-Dienst registriert werden müssen.
 
  
+
+<!---HONumber=58_postMigration-->

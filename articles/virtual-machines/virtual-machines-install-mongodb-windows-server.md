@@ -54,5 +54,6 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen virtuellen Windows Serv
 [MongoDocs]: http://www.mongodb.org/display/DOCS/Home
 [MongoDB]: http://www.mongodb.org/
 [AzureManagementPortal]: http://manage.windowsazure.com
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

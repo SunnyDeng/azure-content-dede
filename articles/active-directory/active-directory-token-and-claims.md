@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="04/29/2015"
+   ms.date="06/01/2015"
    ms.author="mbaldwin"/>
 
 # Unterstützte Token- und Anspruchstypen
@@ -408,9 +408,9 @@ Dies ist ein Beispiel eines typischen JWT-Tokens (JSON webtoken), das bei einem 
      acr: "1"
     }.
 
-##Siehe auch
-### Konzepte
+##Weitere Informationen
 
-[Azure Active Directory-Authentifizierungsprotokolle](active-directory-authentication-protocols.md)
+[Azure Active Directory-Authentifizierungsprotokolle](https://msdn.microsoft.com/library/azure/dn151124.aspx)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

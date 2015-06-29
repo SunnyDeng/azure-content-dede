@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/25/2015"
+	ms.date="06/11/2015"
 	ms.author="szark"/>
 
 
@@ -59,7 +59,7 @@ Azure bietet einen integrierten Paketfilter, der die Konnektivität auf die im V
 
  - Siehe: [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md)
 
-Die Linux-Images in der Azure-Galerie aktivieren nicht standardmäßig die *iptables*-Firewall. Bei Bedarf kann die Firewall für die Bereitstellung einer zusätzlichen Filterung konfiguriert werden.
+Die Linux-Images im Azure-Katalog aktivieren nicht standardmäßig die *iptables*-Firewall. Bei Bedarf kann die Firewall für die Bereitstellung einer zusätzlichen Filterung konfiguriert werden.
 
 
 ## <a id="hostnamechanges"></a>Hostnamen-Änderungen
@@ -74,10 +74,13 @@ Der Azure Linux Agent enthält eine Funktion zur automatischen Erkennung dieser 
 
  - [Benutzerhandbuch für Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md)
 
-### Ubuntu-Images
-Ubuntu-Images nutzen cloud-init, was zusätzliche Funktionalitäten für das Bootstrapping eines virtuellen Computers bietet.
+### cloud-init
+**Ubuntu**- und **CoreOS**-Images nutzen cloud-init bei Azure, was zusätzliche Funktionen für das Bootstrapping eines virtuellen Computers bietet.
 
- - Weitere Informationen finden Sie unter [Einfügen von benutzerdefinierten Daten](virtual-machines-how-to-inject-custom-data.md) und [Benutzerdefinierte Daten und Cloud-Init in Microsoft Azure](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
+ - [Einfügen von benutzerdefinierten Daten](virtual-machines-how-to-inject-custom-data.md)
+ - [Custom Data and Cloud-Init on Microsoft Azure (Benutzerdefinierte Daten und Cloud-Init in Microsoft Azure, in englischer Sprache)](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
+ - [AzureSwapPartitions (in englischer Sprache)](https://wiki.ubuntu.com/AzureSwapPartitions)
+ - [Verwenden von CoreOS in Azure](virtual-machines-linux-coreos-how-to.md)
 
 
 ## <a id="virtualmachine"></a>Image-Erfassung virtueller Computer
@@ -99,10 +102,12 @@ An jeden virtuellen Computer ist ein temporärer lokaler *Ressourcendatenträger
 
 Unter Linux wird der Ressourcendatenträger normalerweise vom Azure Linux Agent verwaltet und automatisch an **/mnt/resource** (oder auf Ubuntu-Images an **/mnt**) angefügt.
 
+
 	>[AZURE.NOTE] Note that the resource disk is a **temporary** disk, and might be deleted and reformatted when the VM is rebooted.
 
 Der Datenträger unter Linux kann vom Kernel den Namen `/dev/sdc` erhalten. Die Benutzer müssen diese Ressource partitionieren, formatieren und bereitstellen. Dieser Vorgang wird Schritt für Schritt im Lernprogramm [Anfügen eines Datenträgers an einen virtuellen Computer](virtual-machines-linux-how-to-attach-disk.md) beschrieben.
 
- - Siehe auch: [Konfigurieren des Software-RAID unter Linux](virtual-machines-linux-configure-raid.md)
+ - **Siehe auch:** [Konfigurieren des Software-RAID unter Linux](virtual-machines-linux-configure-raid.md)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

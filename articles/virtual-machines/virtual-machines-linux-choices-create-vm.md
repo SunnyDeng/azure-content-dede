@@ -97,4 +97,4 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 [Testumgebung für die Basiskonfiguration]: virtual-machines-base-configuration-test-environment.md
 [Testumgebungen für Azure-Hybridclouds]: virtual-machines-hybrid-cloud-test-environments.md
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

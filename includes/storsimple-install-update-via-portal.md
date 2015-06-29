@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Install Update 1 from the Azure Management Portal"
-   description="Explains how to use the Management Portal to install StorSimple 8000 Series Update 1."
+   pageTitle="Installieren von Update 1 über das Azure-Verwaltungsportal"
+   description="Hier wird erläutert, wie Sie das Verwaltungsportal zum Installieren von Update 1 der StorSimple 8000-Serie verwenden."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
@@ -15,49 +15,50 @@
    ms.date="05/22/2015"
    ms.author="v-sharos" />
 
-#### To install Update 1 from the Management Portal
+#### So installieren Sie Update 1 über das Verwaltungsportal
 
-1. On the StorSimple service page, select your device. Navigate to **Devices** > **Maintenance**.
+1. Wählen Sie auf der Seite des StorSimple-Diensts Ihr Gerät aus. Navigieren Sie zu **Geräte** > **Wartung**.
 
-2. At the bottom of the page, click **Scan Updates**. A job will be created to scan for available updates. You will be notified when the job has completed successfully.
+2. Klicken Sie unten auf der Seite auf **Updates suchen**. Für die Suche nach verfügbaren Updates wird ein Auftrag erstellt. Sie werden benachrichtigt, wenn der Auftrag erfolgreich abgeschlossen wurde.
 
-3. In the **Software Updates** section on the same page, you will see that new software updates are available. We recommend that you review the release notes before you apply Update 1.0 on your device.
+3. Im Abschnitt **Softwareupdates** auf derselben Seite sehen Sie, dass neue Softwareupdates verfügbar sind. Es wird empfohlen, die Versionshinweise zu lesen, bevor Sie Update 1.0 auf Ihrem Gerät installieren.
 
-    ![Install software updates](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates1-include.png)
+    ![Installieren von Softwareupdates](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates1-include.png)
 
-4. At the bottom of the page, click **Install Updates**.
+4. Klicken Sie unten auf der Seite auf **Updates installieren**.
 
-5. You will be prompted for confirmation. Click **OK**.
+5. Sie werden aufgefordert, diesen Schritt zu bestätigen. Klicken Sie auf **OK**.
 
-6. An **Install Updates** dialog box will be presented. Make sure that your device satisfies the checks listed in this dialog box. Select **I understand the above requirement and am ready to update my device**. Click the check icon.
+6. Das Dialogfeld **Updates installieren** wird angezeigt. Stellen Sie sicher, dass Ihr Gerät die in diesem Dialogfeld aufgeführten Voraussetzungen erfüllt. Wählen Sie **Ich habe die oben aufgeführten Anforderungen gelesen und bin bereit, das Gerät zu aktualisieren**. Klicken Sie auf das Häkchensymbol.
 
-    ![Confirmation message](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates2-include.png)
+    ![Bestätigungsmeldung](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates2-include.png)
 
-7. You will be notified that pre-update checks are in progress.
+7. Sie erhalten die Benachrichtigung, dass vor dem Update Überprüfungen ausgeführt werden.
   
-    ![Pre-check notification](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates3-include.png)
+    ![Benachrichtigung zur Vorabprüfung](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates3-include.png)
 
-    The following is an example in which the pre-upgrade check failed. You will need to verify that both the device controllers are healthy and online. You will also need to check the health of the hardware components. In this example, Controller 0 and Controller 1 components need attention. You may need to contact Microsoft Support if you cannot address these issues by yourself.
+    Nachfolgend sehen Sie ein Beispiel, in dem die Überprüfung vor dem Upgrade nicht erfolgreich war. Sie müssen sicherstellen, dass beide Gerätecontroller fehlerfrei und online sind. Sie müssen außerdem den Zustand der Hardwarekomponenten überprüfen. In diesem Beispiel erfordern Controller 0- und Controller 1-Komponenten Ihre Aufmerksamkeit. Möglicherweise müssen Sie den Microsoft Support kontaktieren, wenn Sie diese Probleme nicht selbst beheben können.
 
-    ![Pre-check failed](./media/storsimple-install-update-via-portal/HCS_PreUpgradeChecksFailed-include.png)
+    ![Fehler bei der Vorabprüfung](./media/storsimple-install-update-via-portal/HCS_PreUpgradeChecksFailed-include.png)
 
-8. After the pre-upgrade checks are successfully completed, an update job will be created. You will be notified when the update job is successfully created.
+8. Wenn die Überprüfungen vor dem Upgrade erfolgreich abgeschlossen wurden, wird ein Updateauftrag erstellt. Sie werden benachrichtigt, wenn der Updateauftrag erfolgreich erstellt wurde.
  
-    ![Update job creation](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates4-include.png)
+    ![Erstellen eines Updateauftrags](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates4-include.png)
 
-    The update will then be applied on your device.
+    Das Update wird dann auf Ihr Gerät angewendet.
  
-9. To monitor the progress of the update job, click **View Job**. On the Jobs page, you can see the update progress. 
+9. Um den Status des Updateauftrags zu verfolgen, klicken Sie auf **Auftrag anzeigen**. Auf der Seite "Aufträge" sehen Sie den Updatestatus.
 
-    ![Update job progress](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates5-include.png)
+    ![Status des Updateauftrags](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates5-include.png)
 
-10. The update will take a few hours to complete. You can view the details of the job at any time.
+10. Das Update kann einige Stunden dauern. Sie können die Details des Auftrags jederzeit anzeigen.
 
-    ![Update job details](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates6-include.png)
+    ![Details zum Updateauftrag](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates6-include.png)
 
-11. After the job is complete, navigate to the **Maintenance** page and scroll down to **Software Updates**.
+11. Navigieren Sie nach dem Abschließen des Auftrags zur Seite **Wartung**, und scrollen nach unten zu **Softwareupdates**.
 
-12. Verify that your device is running **StorSimple 8000 Series Update 1.0 (6.3.9600.17491)**. The **Last updated date** should also be modified.
+12. Stellen Sie sicher, dass auf Ihrem Gerät **Update 1.0 der StorSimple 8000-Serie (6.3.9600.17491)** ausgeführt wird. Das **Datum der letzten Aktualisierung** hat sich ebenfalls geändert.
 
-    ![Maintenance page](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates7-include.png)
+    ![Seite "Wartung"](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates7-include.png)
 
+<!---HONumber=58_postMigration-->

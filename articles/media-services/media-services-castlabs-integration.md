@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/12/2015" 
+	ms.date="06/03/2015" 
 	ms.author="juliako"/>
 
 
@@ -32,7 +32,7 @@ In der folgenden Abbildung ist eine allgemeine Azure Media Services- und castLab
 - Medieninhalte werden in AMS gespeichert.
 - Schlüssel-IDs der Inhaltsschlüssel werden in castLabs und AMS gespeichert.
 - castLabs sowie AMS verfügen über eine integrierte Tokenauthentifizierung. In den folgenden Abschnitten werden Authentifizierungstoken erörtert. 
-- Wenn ein Kunde das Streaming eines Videos anfordert, wird der Inhalt mit **CENC** (Common Encryption, allgemeine Verschlüsselung) dynamisch verschlüsselt und von AMS dynamisch in eines (oder alle) der angegebenen Protokolle verpackt: Smooth Streaming, HLS oder DASH. 
+- Wenn ein Kunde das Streaming eines Videos anfordert, wird der Inhalt mit **CENC** (Common Encryption, allgemeine Verschlüsselung) dynamisch verschlüsselt und von AMS dynamisch in Smooth Streaming und DASH verpackt. Wir stellen auch eine elementare Streamverschlüsselung per PlayReady M2TS für das HLS-Streamingprotokoll bereit.
 - Die PlayReady-Lizenz wird vom AMS-Lizenzserver abgerufen und die Widevine-Lizenz vom castLabs-Lizenzserver. 
 - Abhängig von der Plattform des Kunden ruft Media Player automatisch die entsprechende Lizenz ab. 
 
@@ -95,7 +95,7 @@ So verwenden Sie die Webanwendung (STS)
 
 ##Wiedergeben eines Videos
 
-Ein durch allgemeine Verschlüsselung (PlayReady und Widevine) verschlüsseltes Video können Sie mit dem [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) wiedergeben. Wenn Sie die Konsolenanwendung ausführen, werden die Inhaltsschlüssel-ID und die Manifest-URL ausgegeben.
+Ein durch allgemeine Verschlüsselung (PlayReady) verschlüsseltes Video können Sie mit dem [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) wiedergeben. Wenn Sie die Konsolenanwendung ausführen, werden die Inhaltsschlüssel-ID und die Manifest-URL ausgegeben.
 
 1.	Öffnen Sie eine neue Registerkarte, und starten Sie das STS: http://[yourStsName].azurewebsites.net/api/token/assetid/[yourCastLabsAssetId]/contentkeyid/[thecontentkeyid].
 2.	Wechseln Sie zu [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
@@ -106,10 +106,12 @@ Ein durch allgemeine Verschlüsselung (PlayReady und Widevine) verschlüsseltes 
 7.	Aktualisieren Sie den Player.
 8.	Das Video sollte wiedergegeben werden.
 
-Wenn Sie das geschützte Video in HTML5 in Chrome mit dem castLabs-Player wiedergeben möchten, wenden Sie sich an castLabs, um Zugriff auf den Player zu erhalten. Wenn Sie Zugriff haben, sind zwei Punkte zu berücksichtigen:
+Wenn Sie das geschützte Video in HTML5 in Chrome mit dem castLabs-Player wiedergeben möchten, wenden Sie sich an yanmf@microsoft.com, um Zugriff auf den Player zu erhalten. Wenn Sie Zugriff haben, sind zwei Punkte zu berücksichtigen:
 
 1.	Der castLabs-Player benötigt Zugriff auf die MPEG-DASH-Manifestdatei. Hängen Sie daher (format=mpd-time-csf) an Ihre Manifestdatei an, um anstelle der Smooth Streaming-Standarddatei die MPEG-DASH-Manifestdatei abzurufen.
 
 2.	Für den castLabs-Lizenzserver ist das Präfix "Bearer=" vor dem Token nicht erforderlich. Entfernen Sie dieses Präfix vor dem Übermitteln des Tokens.
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=58_postMigration-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Data Factory - Erstellen von Vorhersagepipelines mithilfe von Data Factory und Machine Learning | Azure" 
-	description="Beschreibt das Erstellen von Vorhersage-Pipelines mit Azuer Daten Factory und Azure Computerlernen erstellen" 
+	description="Erläuterungen zum Erstellen von Vorhersagepipelines mithilfe von Data Factory und Azure Machine Learning" 
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
@@ -13,33 +13,33 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/05/2015" 
+	ms.date="06/09/2015" 
 	ms.author="spelluru"/>
 
 # Erstellen von Vorhersagepipelines mithilfe von Azure Data Factory und Azure Machine Learning 
 ## Übersicht
-Sie können durchsetzen veröffentlicht [Azure maschinelles lernen][azure-machine-learning] Modelle innerhalb von Azure Data Factory-Pipelines. Diese Pipelines heißen predictive Pipelines. Sie benötigen Folgendes, um eine Vorhersagepipeline erstellen zu können:
+Sie können veröffentlichte [Azure Machine Learning][azure-machine-learning]-Modelle innerhalb von Azure Data Factory-Pipelines in Betrieb nehmen. Diese Pipelines werden als "Vorhersagepipelines" bezeichnet. Sie benötigen Folgendes, um eine Vorhersagepipeline erstellen zu können:
 
 -	Den API-Schlüssel des veröffentlichten Arbeitsbereichsmodells und die URL für die Stapelbewertung (siehe nachfolgende Abbildung)
--	Ein Azure-Blob-Speicher mit der CSV-Datei (oder) einer Azure SQL-Datenbank, die die Eingabe enthält Daten, die bewertet werden. 
--	Ein Azure-Blob-Speicher, die die Punktzahl Ergebnisse CSV-Datei (oder) einer Azure SQL-Datenbank, die die Ausgabedaten enthält enthalten. 
+-	Einen Azure-Blobspeicher, der die CSV-Eingabedatei enthält, oder eine Azure SQL-Datenbank mit den Eingabedaten, die bewertet werden sollen. 
+-	Einen Azure-Blobspeicher, der die CSV-Datei mit den Bewertungsergebnissen enthält, oder eine Azure SQL-Datenbank mit den Ausgabedaten. 
 
 	![Machine Learning-Dashboard][machine-learning-dashboard]
 
-	Die Bewertung der URL für die AzureMLLinkedService als aus in der Abbildung oben angegebenen abgerufen wird Batch minus ' ** Hilfe ** ": https://ussouthcentral.services.azureml.net/workspaces/da9e350b758e44b2812a6218d507e216/services/8c91ff373a81416f8f8e0d96a1162681/jobs/
+	Die URL für die Stapelbewertung für "AzureMLLinkedService" wird, wie in der obigen Abbildung gezeigt, abgerufen (minus ‘**help**’: https://ussouthcentral.services.azureml.net/workspaces/da9e350b758e44b2812a6218d507e216/services/8c91ff373a81416f8f8e0d96a1162681/jobs/)
 
-Ein **predictive Pipeline** besteht aus folgenden Teilen:
+Eine **Vorhersagepipeline** besteht aus folgenden Teilen:
 
 -	Eingabe- und Ausgabetabellen
--	Azure-Speicher/Azure SQL und Azure ML verknüpfte Dienste
+-	Mit Azure Storage/Azure SQL und Azure ML verknüpfte Dienste
 -	Eine Pipeline mit Azure ML-Stapelbewertungsaktivität
 
-> [AZURE.NOTE]Sie können Web-Service-Parameter verwenden, die von einem veröffentlichten Azure Machine Learning Webdienst in Azure Data Factory (ADF) Pipelines verfügbar gemacht werden. Weitere Informationen finden Sie im Abschnitt "Web Service-Parameter" in diesem Artikel.
+> [AZURE.NOTE]Sie können Webdienstparameter verwenden, die von einem veröffentlichten Azure Machine Learning-Webdienst in ADF-Pipelines (Azure Data Factory) verfügbar gemacht werden. Weitere Informationen finden Sie im Abschnitt "Webdienstparameter" in diesem Artikel.
 
 ## Beispiel
-Dieses Beispiel verwendet den Azure-Speicher zum Speichern der Eingabe- und Daten. Sie können auch Azure SQL-Datenbank verwenden, anstelle von Azure-Speicher.
+Dieses Beispiel verwendet Azure Storage zum Speichern der Ein- und Ausgabedaten. Sie können auch die Azure SQL-Datenbank anstelle von Azure Storage verwenden.
 
-Es wird empfohlen, dass Sie durchlaufen die [Erste Schritte mit Azure Data Factory][adf-getstarted] Tutorial, bevor Sie dieses Beispiel und der Verwendung des Factory-Editors zum Erstellen von Daten-Factory-Artefakte (verknüpften Dienste, Tabellen, Pipeline) in diesem Beispiel durchgehen.
+Es wird empfohlen, dass Sie zunächst das Lernprogramm [Erste Schritte mit Azure Data Factory][adf-getstarted] durchlaufen, bevor Sie sich mit diesem Beispiel beschäftigen und mit dem Data Factory-Editor Data Factory-Artefakte (verknüpfte Dienste, Tabellen, Pipeline) erstellen.
  
 
 1. Erstellen Sie für Ihr Azure Storage einen verknüpften Dienst. Wenn sich die Ein- und Ausgabedateien für die Bewertung in verschiedenen Speicherkonten befinden, benötigen Sie zwei verknüpfte Dienste. Hier folgt ein JSON-Beispiel:
@@ -53,7 +53,7 @@ Es wird empfohlen, dass Sie durchlaufen die [Erste Schritte mit Azure Data Facto
 		    }
 		}
 
-2. Erstellen Sie die Ein- und Ausgabetabellen für Azure Data Factory. Beachten Sie, dass im Gegensatz zu einigen anderen Data Factory-Tabellen, diese beiden sowohl enthalten müssen **FolderPath** und **Dateiname** Werte. Sie können die Partitionierung verwenden, damit jede Stapelausführung (jeder Datenslice) eindeutige Ein- und Ausgabedateien verarbeitet oder erzeugt. Sie müssen wahrscheinlich einige Upstream-Aktivitäten einbeziehen, um die Eingabe in das CSV-Dateiformat umzuwandeln und sie im Speicherkonto für die einzelnen Datenslices abzulegen. In diesem Fall beziehen Sie die im folgenden Beispiel gezeigte "waitOnExternal"-Einstellungen nicht ein, und Ihr "ScoringInputBlob" würde die Ausgabetabelle einer anderen Aktivität darstellen.
+2. Erstellen Sie die Ein- und Ausgabetabellen für Azure Data Factory. Beachten Sie, dass diese im Gegensatz zu einigen anderen Data Factory-Tabellen die beiden Werte **folderPath** und **fileName** enthalten müssen. Sie können die Partitionierung verwenden, damit jede Stapelausführung (jeder Datenslice) eindeutige Ein- und Ausgabedateien verarbeitet oder erzeugt. Sie müssen wahrscheinlich einige Upstream-Aktivitäten einbeziehen, um die Eingabe in das CSV-Dateiformat umzuwandeln und sie im Speicherkonto für die einzelnen Datenslices abzulegen. In diesem Fall beziehen Sie die im folgenden Beispiel gezeigte "waitOnExternal"-Einstellungen nicht ein, und Ihr "ScoringInputBlob" würde die Ausgabetabelle einer anderen Aktivität darstellen.
 
 		{  
 			"name":"ScoringInputBlob",
@@ -85,7 +85,7 @@ Es wird empfohlen, dass Sie durchlaufen die [Erste Schritte mit Azure Data Facto
 		   		}
 			}
 	
-	Der Batch, die Bewertung der Csv-Datei muss die Spaltenkopfzeile verfügen. Bei Verwendung der **Kopie Aktivität** zum Erstellen/im CSV-Format in den Blob-Speicher verschieben, sollten Sie die Ereignissenken-Eigenschaft festlegen **BlobWriterAddHeader** auf **true**. Beispiel:
+	Die CSV-Datei mit der Stapelbewertung muss die Spaltenkopfzeile enthalten. Bei Verwenden der **Kopieraktivität** zum Erstellen/Verschieben der CSV-Datei in den Blobspeicher müssen Sie die Senkeneigenschaft **BlobWriterAddHeader** auf **true** festlegen. Beispiel:
 	
 	     sink: 
 	     {
@@ -93,7 +93,7 @@ Es wird empfohlen, dass Sie durchlaufen die [Erste Schritte mit Azure Data Facto
 	         "blobWriterAddHeader": true 
 	     }
 	 
-	Wenn die Csv-Datei keine Kopfzeilen, sehen Sie möglicherweise den folgenden Fehler: **in der Aktivität Fehler: Fehler beim Lesen der Zeichenfolge. Unerwartetes Token: StartObject. Pfad '', Zeile 1, position 1**.
+	Wenn die CSV-Datei nicht die Kopfzeilen enthält, wird möglicherweise folgender Fehler angezeigt: **Fehler in Aktivität: Fehler beim Lesen der Zeichenfolge. Unerwartetes Token: StartObject. Pfad '', Zeile 1, Position 1**.
 3. In diesem Ausgabebeispiel wird die Partitionierung verwendet, um für die Ausführung der einzelnen Datenslices einen eindeutigen Ausgabepfad zu erstellen. Ohne diesen Schritt würde die Aktivität die Datei überschreiben.
 
 		{  
@@ -124,7 +124,7 @@ Es wird empfohlen, dass Sie durchlaufen die [Erste Schritte mit Azure Data Facto
 		}
 
 
-4. Erstellen Sie einen verknüpften Dienst vom Typ: **AzureMLLinkedService**, den API-Schlüssel und das Modell wird bewertet URL batch.
+4. Erstellen Sie einen verknüpften Dienst vom Typ **AzureMLLinkedService**, der den API-Schlüssel und die URL für die Modellstapelbewertung bereitstellt.
 		
 		{
 		    "name": "MyAzureMLLinkedService",
@@ -136,7 +136,7 @@ Es wird empfohlen, dass Sie durchlaufen die [Erste Schritte mit Azure Data Facto
 		    }
 		}
 
-5. Erstellen Sie abschließend eine Pipeline mit einer **AzureMLBatchScoringActivity**. Dadurch wird der Speicherort der Eingabedatei aus Ihren Eingabetabellen abgerufen, die AzureML-API für die Stapelbewertung aufgerufen und die Stapelbewertungsausgabe in das in der Ausgabetabelle angegebene Blob kopiert. Im Gegensatz zu einigen anderen Data Factory-Aktivitäten kann "AzureMLBatchScoringActivity" nur eine Eingabe- und eine Ausgabetabelle besitzen.
+5. Erstellen Sie abschließend eine Pipeline, die **AzureMLBatchScoringActivity** enthält. Dadurch wird der Speicherort der Eingabedatei aus Ihren Eingabetabellen abgerufen, die AzureML-API für die Stapelbewertung aufgerufen und die Stapelbewertungsausgabe in das in der Ausgabetabelle angegebene Blob kopiert. Im Gegensatz zu einigen anderen Data Factory-Aktivitäten kann "AzureMLBatchScoringActivity" nur eine Eingabe- und eine Ausgabetabelle besitzen.
 
 		 {
 		    "name": "PredictivePipeline",
@@ -164,11 +164,11 @@ Es wird empfohlen, dass Sie durchlaufen die [Erste Schritte mit Azure Data Facto
 		}
 
 
-## Web-Service-Parameter
-Sie können Web-Service-Parameter verwenden, die von einem veröffentlichten Azure Machine Learning Webdienst in Azure Data Factory (ADF) Pipelines verfügbar gemacht werden. Sie können ein Experiment in Azure Computerlernen erstellen und als Webdienst zu veröffentlichen, und dann diesen Webdienst in mehreren ADF Pipelines oder Aktivitäten, die in unterschiedlichen Eingaben über die Web Service-Parameter übergeben.
+## Webdienstparameter
+Sie können Webdienstparameter verwenden, die von einem veröffentlichten Azure Machine Learning-Webdienst in ADF-Pipelines (Azure Data Factory) verfügbar gemacht werden. Sie können ein Experiment in Azure Machine Learning erstellen, es als Webdienst veröffentlichen und dann diesen Webdienst in mehreren ADF-Pipelines oder -Aktivitäten verwenden, um über die Webdienstparameter unterschiedliche Eingaben zu übergeben.
 
-### Übergeben von Werten für Web Service-Parameter
-Hinzufügen einer **Transformation** im Abschnitt zu den **AzureMLBatchScoringActivty** Abschnitt in der Pipeline JSON und geben Sie Werte für Web Service-Parameter in diesem Abschnitt, wie im folgenden Beispiel gezeigt:
+### Übergeben von Werten für Webdienstparameter
+Fügen Sie den Abschnitt **Transformation** dem Abschnitt **AzureMLBatchScoringActivty** im JSON-Code der Pipeline hinzu, um in diesem Abschnitt, wie im folgenden Beispiel gezeigt, Werte für Webdienstparameter hinzuzufügen:
 
 	transformation: {
 		webServiceParameters: {
@@ -178,77 +178,77 @@ Hinzufügen einer **Transformation** im Abschnitt zu den **AzureMLBatchScoringAc
 	}
 
 
-Sie können auch [Factory-Funktionen zur](https://msdn.microsoft.com/library/dn835056.aspx) bei der Übergabe von Werten für das Web service-Parameter wie im folgenden Beispiel gezeigt:
+Sie können auch [Data Factory-Funktionen ](https://msdn.microsoft.com/library/dn835056.aspx) zum Übergeben von Werten für die Webdienstparameter verwenden, wie im folgenden Beispiel gezeigt:
 
 	transformation: {
     	webServiceParameters: {
-    	   "Database query": "$$Text.Format('SELECT * FROM myTable WHERE timeColumn = '{0:yyyy-MM-dd HH:mm:ss}'', Time.AddHours(SliceStart, 0))"
+    	   "Database query": "$$Text.Format('SELECT * FROM myTable WHERE timeColumn = \'{0:yyyy-MM-dd HH:mm:ss}\'', Time.AddHours(SliceStart, 0))"
     	}
   	}
  
-> [AZURE.NOTE]Die Web Service-Parameter Groß-/Kleinschreibung beachtet werden, müssen Sie sicherstellen, dass den Namen, den Sie angeben, in der Aktivität JSON derjenigen, die vom Webdienst verfügbar gemacht.
+> [AZURE.NOTE]Bei Webdienstparametern wird Groß-/Kleinschreibung unterschieden, weshalb Sie sicherstellen müssen, dass die Namen, die Sie im JSON-Code der Aktivität angeben, denjenigen entsprechen, die vom Webdienst verfügbar gemacht werden.
 
-### Azure SQL-Readern und Writern
-Ein häufiges Szenario für die Verwendung von Web Service-Parameter ist die Verwendung von Azure SQL-Readern und Writern. Das Reader-Modul wird verwendet, um das Laden von Daten in einem Experiment aus Datenverwaltungsdienste außerhalb von Azure Machine Learning Studio und das Writer-Modul wird zum Speichern von Daten aus Ihrer Versuche in Data Management Services außerhalb von Azure Machine Learning Studio. Ausführliche Informationen zum Azure-Blob/Azure SQL-Leser/Schreiber finden Sie unter [Reader](https://msdn.microsoft.com/library/azure/dn905997.aspx) und [Writer](https://msdn.microsoft.com/library/azure/dn905984.aspx) -Themen in der MSDN Library. Im Beispiel im vorherigen Abschnitt verwendet den Azure-Blob-Reader und Writer der Azure-Blob. In diesem Abschnitt wird erläutert, mit Azure SQL-Reader und Azure SQL Writer.
+### Die Azure SQL-Module "Reader" und "Writer"
+Ein häufiges Szenario für Webdienstparameter ist die Verwendung der Azure SQL-Module "Reader" und "Writer". Das Modul "Reader" dient zum das Laden von Daten in ein Experiment aus Datenverwaltungsdiensten außerhalb von Azure Machine Learning Studio. Das Modul "Writer" wird zum Speichern von Daten aus Ihren Experimenten in Datenverwaltungsdiensten außerhalb von Azure Machine Learning Studio verwendet. Ausführliche Informationen zu Azure-Blob/Azure SQL Reader/Writer finden Sie in den Themen [Reader](https://msdn.microsoft.com/library/azure/dn905997.aspx) und [Writer](https://msdn.microsoft.com/library/azure/dn905984.aspx) in der MSDN Library. Im Beispiel im vorherigen Abschnitt wurden die Azure-Blobmodule "Reader" und "Writer" verwendet. In diesem Abschnitt werden die Azure SQL-Module "Reader" und "Writer" erläutert.
 
 #### Azure SQL-Reader
-In Azure ML Studio können Sie ein Experiment zu erstellen und veröffentlichen einen Webdienst mit einer Azure SQL-Reader für die Eingabe. Der Azure SQL-Reader hat es sich um Verbindungseigenschaften, die als Web-Service-Parameter bereitgestellt werden, können Werte für die Verbindungseigenschaften zur Laufzeit im Batch, die Bewertung der Anforderung übergeben werden kann.
+In Azure ML Studio können Sie ein Experiment erstellen und einen Webdienst mit einem Azure SQL-Reader für die Eingabe veröffentlichen. Der Azure SQL-Reader weist Verbindungseigenschaften auf, die als Webdienstparameter verfügbar gemacht werden. Dadurch können Werte für die Verbindungseigenschaften zur Laufzeit an die Aufforderung zur Stapelbewertung übergeben werden.
 
-Zur Laufzeit werden die Details der Eingabetabelle Data Factory vom Service Factory von Daten zum Auffüllen der Web Service-Parameter verwendet werden. Beachten Sie, dass Sie Standardnamen (Servername, Datenbankname, Benutzerkontoname Server, Benutzerkontokennwort für Server) für die Web Service-Parameter für diese Integration in die Service Factory von Daten arbeiten.
+Zur Laufzeit werden die Details in der Data Factory-Eingabetabelle vom Data Factory-Dienst zum Ausfüllen der Webdienstparameter verwendet. Beachten Sie, dass Sie Standardnamen (Datenbankservername, Datenbankname, Benutzerkontoname für Server, Benutzerkontokennwort für Server) für die Webdienstparameter angeben müssen, damit diese Integration in den Data Factory-Dienst funktioniert.
 
-Wenn man alle zusätzlichen Web service-Parameter, verwenden Sie die **WebServiceParameters** Abschnitt der JSON-Aktivität. Bei Angabe von Werten für Azure SQL-Reader-Parameter in diesem Abschnitt werden die Werte der Werte aus der Eingabe Azure SQL-verknüpfte Dienst abgeholt überschrieben. Angeben von Werten für Azure SQL-Leser direkt im Abschnitt WebServiceParameters wird nicht empfohlen. Verwenden Sie im Abschnitt, um Werte für alle zusätzlichen Parameter übergeben.
+Wenn Sie über weitere Webdienstparameter verfügen, verwenden Sie den Abschnitt **WebServiceParameters** im JSON-Code der Aktivität. Bei Angabe von Werten für Azure SQL-Reader-Parameter in diesem Abschnitt überschreiben diese Werte die Werte, die vom mit der Azure SQL-Eingabedatenbank verknüpften Dienst gewählt wurden. Es wird nicht empfohlen, Werte für Azure SQL-Reader direkt in den Abschnitt "webServiceParameters" einzugeben. Verwenden Sie diesen Abschnitt, um Werte für alle zusätzlichen Parameter zu übergeben.
 
-Um eine Azure SQL-Reader über eine Pipeline Azure Data Factory verwenden zu können, führen Sie folgende Schritte aus:
+Um einen Azure SQL-Reader über eine Azure Data Factory-Pipeline zu verwenden, führen Sie folgende Schritte aus:
 
-- Erstellen einer **Azure SQL verknüpft Service**. 
-- Erstellen Sie eine Daten-Factory **Tabelle** verwendet, die **AzureSqlTableLocation**.
-- Festlegen von dieser Factory Daten **Tabelle** als die **input** für die **AzureMLBatchScoringActivity** in der Pipeline JSON. 
+- Erstellen Sie einen **mit Azure SQL verknüpften Dienst**. 
+- Erstellen Sie eine Data Factory-**Tabelle**, die **AzureSqlTableLocation** verwendet.
+- Legen Sie diese Data Factory-**Tabelle** als **Eingabe** für die **AzureMLBatchScoringActivity** im JSON-Code der Pipeline fest. 
 
 
 
-#### Azure SQL Writer
-Wie können bei Azure SQL-Reader einer Azure SQL Writer auch seine Eigenschaften, die als Parameter für Web-Service verfügbar gemacht haben. Eine Azure SQL Writer verwendet entweder aus den verknüpften Dienst die Eingabetabelle oder die Ausgabetabelle zugeordnet. In der folgende Tabelle wird beschrieben, wann die Eingabe verwendeten verknüpfte Service im Vergleich zu Ausgabe Dienst verknüpft.
+#### Azure SQL-Writer
+Wie ein Azure SQL-Reader kann auch ein Azure SQL-Writer seine Eigenschaften als Webdienstparameter verfügbar machen. Ein Azure SQL-Writer verwendet Einstellungen aus dem verknüpften Dienst, der der Eingabetabelle oder der Ausgabetabelle zugeordnet ist. In der folgende Tabelle werden diese beiden Typen verknüpfter Dienste miteinander verglichen.
 
 <table>
 <tr>
-<td>Ausgabe/Input</td>
+<td>Ausgabe/Eingabe</td>
 <td><b>Eingabe ist Azure SQL</b></td>
 <td><b>Eingabe ist Azure-Blob</b></td>
 </tr>
 <tr>
-<td><b>Ausgabe wird von Azure-SQL</b></td>
-<td><p>Der Daten-Factory-Dienst verwendet die Verbindungszeichenfolge aus dem Dienst verknüpfte Eingabe zum Generieren der Web Service-Parameter mit Namen: "Database Servername", "Datenbankname", "Server User Account Name", "Benutzerkontokennwort für Server". Beachten Sie, dass Sie diese Standardnamen für Web Service-Parameter in Azure ML Studio verwenden müssen.</p>
-<p>Wenn das Azure SQL-Reader und Azure SQL Writer in Ihrem Azure-ML-Modell die gleichen Web-Service-Parameter, die oben erwähnten, sind Sie in Ordnung. Wenn sie nicht dieselbe Web Service-Paramers, z. B. freigeben, wenn der Azure SQL Writer Parameternamen verwendet: Datenbank Server name1, Datenbank-name1, Server User Account name1, Server-Benutzer Kennwort1 (mit "1" am Ende) zu berücksichtigen, müssen Sie Werte für diese Ausgabe Web Service-Parameter im Abschnitt WebServiceParameters der JSON-Aktivität übergeben.</p>
+<td><b>Ausgabe ist Azure SQL</b></td>
+<td><p>Der Data Factory-Dienst verwendet die Informationen in der Verbindungszeichenfolge aus dem verknüpften Dienst INPUT zum Generieren der Webdienstparameter mit den Namen "Database server name", "Database name", "Server user account name", "Server user account password". Beachten Sie, dass Sie diese Standardnamen für Webdienstparameter in Azure ML Studio verwenden müssen.</p>
+<p>Wenn der Azure SQL-Reader und der Azure SQL-Writer in Ihrem Azure ML-Modell dieselben oben erwähnten Webdienstparameter verwenden, ist alles in Ordnung. Wenn sie nicht dieselben Webdienstparameter gemeinsam verwenden, der Azure SQL-Writer beispielsweise die Parameternamen "Database server name1", "Database name1", "Server user account name1", "Server user account password1" (mit "1" am Ende) verwendet, müssen Sie Werte für diese Webdienstparameter vom Typ OUTPUT im Abschnitt "webServiceParameters" des JSON-Codes der Aktivität übergeben.</p>
 <p>
-Sie können die Werte für alle anderen Web Service Parameter mithilfe des Abschnitts WebServiceParameters JSON-Aktivität übergeben.  
+Sie können Werte für alle anderen Webdienstparameter mithilfe des Abschnitts "webServiceParameters" im JSON-Code der Aktivität übergeben.  
 </p>
 
 </td>
 <td>
-<p>Der Daten-Factory-Dienst verwendet die Verbindungszeichenfolge aus dem Dienst verknüpften Ausgabe zum Generieren der Web Service-Parameter mit Namen: "Database Servername", "Datenbankname", "Server User Account Name", "Benutzerkontokennwort für Server". Beachten Sie, dass Sie diese Standardnamen für Web Service-Parameter in Azure ML Studio verwenden müssen.</p>
-<p>Sie können die Werte für alle anderen Web Service Parameter mithilfe des Abschnitts WebServiceParameters JSON-Aktivität übergeben. <p>Input-Blob wird als Eingabe Speicherort verwendet werden.</p>
+<p>Der Data Factory-Dienst verwendet die Informationen in der Verbindungszeichenfolge aus dem verknüpften Dienst OUTPUT zum Generieren der Webdienstparameter mit den Namen "Database server name", "Database name", "Server user account name", "Server user account password". Beachten Sie, dass Sie diese Standardnamen für Webdienstparameter in Azure ML Studio verwenden müssen.</p>
+<p>Sie können Werte für alle anderen Webdienstparameter mithilfe des Abschnitts "webServiceParameters" im JSON-Code der Aktivität übergeben. <p>Das Eingabeblob wird als Eingabespeicherort verwendet.</p>
 </td>
 </tr>
 <tr>
-<td><b>Ausgabe wird von Azure-Blob</b></td>
-<td>Der Daten-Factory-Dienst verwendet die Verbindungszeichenfolge aus dem Dienst verknüpfte Eingabe zum Generieren der Web Service-Parameter mit Namen: "Database Servername", "Datenbankname", "Server User Account Name", "Benutzerkontokennwort für Server". Beachten Sie, dass Sie diese Standardnamen für Web Service-Parameter in Azure ML Studio verwenden müssen.
+<td><b>Ausgabe ist Azure-Blob</b></td>
+<td>Der Data Factory-Dienst verwendet die Informationen in der Verbindungszeichenfolge aus dem verknüpften Dienst INPUT zum Generieren der Webdienstparameter mit den Namen "Database server name", "Database name", "Server user account name", "Server user account password". Beachten Sie, dass Sie diese Standardnamen für Webdienstparameter in Azure ML Studio verwenden müssen.
 </td>
 <td>
-<p>Sie müssen Werte für alle WebServiceParameters im Bereich der Aktivität JSON Web Service-Parameter übergeben.</p> 
+<p>Sie müssen Werte für beliebige Webdienstparameter mithilfe des Abschnitts "webServiceParameters" im JSON-Code der Aktivität übergeben.</p> 
 
-<p>BLOBs werden als Eingabe- und Speicherorte verwendet werden.</p>
+<p>Blobs werden als Eingabe- und Ausgabespeicherorte verwendet.</p>
 
 </td>
 <tr>
 
 </table>
 
-> [AZURE.NOTE]Wenn sie eine Identity-Spalte überschreibt, kann Azure SQL Writer Schlüsselverletzungen kommen. Sie sollten sicherstellen, dass Ihre Ausgabetabelle zur Vermeidung dieser Situation zu strukturieren.
+> [AZURE.NOTE]Im Azure SQL-Writer kann es zu Schlüsselverletzungen kommen, wenn eine Identitätsspalte überschrieben wird. Sie müssen Ihre Ausgabetabelle so strukturieren, dass diese Situation vermieden wird.
 > 
-> Stagingtabellen können mit einer gespeicherten Prozedur für die Aktivität zum Zusammenführen von Zeilen oder zum Abschneiden von Daten vor dem bewerten. Wenn Sie diesen Ansatz verwenden, Parallelitätseinstellung von die Ausführungsrichtlinie auf 1 festgelegt.
+> Sie können Stagingtabellen mit einer Aktivität vom Typ "Gespeicherte Prozedur" zum Zusammenführen von Zeilen oder Abschneiden von Daten vor der Bewertung nutzen. Legen Sie bei diesem Ansatz die Parallelitätseinstellung von "executionPolicy" auf "1" fest.
 
-### Beispiel zur Verwendung von Web Service-Parameter
-#### Pipeline mit AzureMLBatchScoringActivity mit Web Service-Parameter
+### Beispiel der Verwendung von Webdienstparametern
+#### Pipeline mit "AzureMLBatchScoringActivity" mit Webdienstparameter
 
 	{
 		"name": "MLWithSqlReaderSqlWriter",
@@ -279,31 +279,35 @@ Sie können die Werte für alle anderen Web Service Parameter mithilfe des Absch
 		          		}  
 		        	}
 		      	}
-	    	]
+	    	],
+
+			"start": "2015-02-13T00:00:00Z",
+        	"end": "2015-02-14T00:00:00Z"
 		}
 	}
  
-Im obigen Beispiel für JSON:
+Im obigen JSON-Beispiel:
 
-- Das Azure-ML-Modell verwendet, Azure SQL-Reader und Azure SQL Writer
-- Wenn über den Webdienst verfügbar gemacht wird, werden die Standardnamen für die Parameter verwendet.
-	- Für die **Reader**: Datenbank-Servername, Datenbankname, Benutzerkontoname Server und Server-Benutzerkennwort.
-	- Für die **Writer**: Server name1, Datenbank-name1, Server User Account name1 und Server User Account Kennwort1-Datenbank.
+- Das Azure ML-Modell verwendet den Azure SQL-Reader und Azure SQL-Writer.
+- Falls über den Webdienst verfügbar gemacht, werden die Standardnamen für die Parameter verwendet.
+	- Für den **Reader** sind dies "Database server name", "Database name", "Server user account name" und "Server user account password".
+	- Für den **Writer** sind dies "Database server name1", "Database name1", "Server user account name1" und "Server user account password1".
 	
-		Beachten Sie, dass der Reader und Writer keine Parameter in diesem Fall austauschen.  
-- Der Daten-Factory-Dienst generiert automatisch Werte für Parameter mit den Namen **Datenbankservernamen**, **Datenbankname**, **Benutzerkontoname Server**, und **Benutzerkontokennwort für Server**, die die Namen des Readers für die Eingabe übereinstimmen. Daher müssen Sie nicht explizit übergeben, die Werte für diese Parameter über **WebServiceParameters** in der folgenden JSON-Aktivität.  
-- Die Parameter für den Writer (diejenigen mit "1" Suffix) werden vom Data Factory-Dienst nicht automatisch ausgefüllt. Daher müssen Sie Werte für diese Parameter in der **WebServiceParameters** Abschnitt der JSON-Aktivität.  
-- **Kunden-ID**, **bewertet Bezeichnungen**, und **bewertet Wahrscheinlichkeiten** werden als durch Trennzeichen getrennte Spalten gespeichert. 
-- Die **Name der Datentabelle** in diesem Beispiel wird eine Tabelle in der Ausgabedatenbank entspricht.
+		Beachten Sie, dass der Reader und Writer in diesem Fall keine Parameter gemeinsam verwenden.  
+- Der Data Factory-Dienst generiert Werte für Webdienstparameter mit den Namen **Database server name**, **Database name**, **Server user account name** und **Server user account password**, die mit den Namen des Eingabereaders übereinstimmen. Daher müssen Sie die Werte für diese Parameter nicht explizit über **WebServiceParameters** im folgenden JSON-Code der Aktivität übergeben.  
+- Die Parameter für den Writer (mit dem Suffix "1") werden nicht automatisch vom Data Factory-Dienst ausgefüllt. Daher müssen Sie Werte für diese Parameter im Abschnitt **webServiceParameters** im JSON-Code der Aktivität angeben.  
+- **Customer ID**, **scored labels** und **scored probabilities** werden als durch Trennzeichen getrennte Spalten gespeichert. 
+- Der **Name der Datentabelle** in diesem Beispiel entspricht einer Tabelle in der Ausgabedatenbank.
+- Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Angabe für **end** ist optional, wird aber in diesem Lernprogramm verwendet. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
 
 
 
 
-## Siehe auch
+## Weitere Informationen
 
 Artikel | Beschreibung
 ------ | ---------------
-[Azure Data Factory-Entwicklerreferenz][developer-reference] | Entwicklerreferenz hat die umfassendes Referenzmaterial für die Cmdlets, JSON-Skripts, .NET Klassenbibliothek, Funktionen usw.... 
+[Azure Data Factory-Entwicklerreferenz][developer-reference] | Die Entwicklerreferenz enthält umfassende Referenzinformationen für Cmdlets, die .NET-Klassenbibliothek, JSON-Skripts, Funktionen usw. 
 
 [adf-introduction]: data-factory-introduction.md
 [adf-getstarted]: data-factory-get-started.md
@@ -318,4 +322,6 @@ Artikel | Beschreibung
 [azure-machine-learning]: http://azure.microsoft.com/services/machine-learning/
 [machine-learning-dashboard]: ./media/data-factory-create-predictive-pipelines/AzureMLDashboard.png
 
-<!---HONumber=GIT-SubDir--> 
+ 
+
+<!---HONumber=58_postMigration-->

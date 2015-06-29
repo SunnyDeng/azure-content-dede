@@ -14,23 +14,23 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="04/28/2015" 
+	ms.date="06/16/2015" 
 	ms.author="jeffstok" />
 
 
 # Schlüsselkonzepte von Stream Analytics: Anleitung für die Grundlagen eines Stream Analytics-Auftrags 
 
-Azure Stream Analytics ist ein vollständig verwalteter Dienst, der eine geringe Latenz, hohe Verfügbarkeit und eine skalierbare komplexe Ereignisverarbeitung durch das Streaming von Daten in der Cloud bietet. Stream Analytics ermöglicht Kunden die Einrichtung von Streaming-Aufträgen, um Datenströme zu analysieren und um eine Analyse nahezu in Echtzeit durchzuführen. Dieser Artikel beschreibt die wichtigsten Konzepte eines Stream Analytics -Auftrags.
+Azure Stream Analytics ist ein vollständig verwalteter Dienst, der eine geringe Latenz, hohe Verfügbarkeit und eine skalierbare komplexe Ereignisverarbeitung durch das Streaming von Daten in der Cloud bietet. Stream Analytics ermöglicht Kunden die Einrichtung von Streaming-Aufträgen, um Datenströme zu analysieren und um eine Analyse nahezu in Echtzeit durchzuführen. Dieser Artikel beschreibt die wichtigsten Konzepte eines Stream Analytics-Auftrags.
 
 ## Welche Möglichkeiten bietet Stream Analytics?
 Stream Analytics ermöglicht Folgendes:
 
 - Durchführen einer komplexen Ereignisverarbeitung bei hohem Datenvolumen und hoher Datengeschwindigkeit   
-- Sammeln von Ereignisdaten von global verteilten Ressourcen oder Geräten, wie z. B. verbundenen Fahrzeugen oder Stromnetzen 
+- Sammeln von Ereignisdaten von global verteilten Ressourcen oder Geräten, wie z. B. verbundenen Fahrzeugen oder Stromnetzen 
 - Verarbeiten von Telemetriedaten für die Überwachung und Diagnose nahezu in Echtzeit 
 - Erfassen und Archivieren von Echtzeitereignissen für die zukünftige Verarbeitung
 
-Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream.analytics.introduction).
+Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md).
 
 Ein Stream Analytics-Auftrag umfasst alle der folgenden Angaben: * Ein oder mehrere Eingabequellen * Eine Abfrage über einen eingehender Datenstrom * Ein Ausgabeziel.
 
@@ -39,10 +39,10 @@ Ein Stream Analytics-Auftrag umfasst alle der folgenden Angaben: * Ein oder mehr
 
 ### Datenstrom
 
-Jede Stream Analytics-Auftragsdefinition muss mindestens eine Datenstrom-Eingabequelle enthalten, die vom Auftrag genutzt und umgewandelt werden soll. [Azure-Blob-Speicher](azure.blob.storage) und [Azure Event Hubs](azure.event.hubs) werden als Datenstrom-Eingabequellen unterstützt. Event Hub-Eingabequellen dienen zum Sammeln von Ereignisströmen von mehreren verschiedenen Geräten und Diensten, während Blob-Speicher als Eingabequelle für die Erfassung von großen Datenmengen verwendet werden können. Da Blobs keine Daten per Stream übertragen, sind Stream Analytics-Aufträge über Blobs nicht zeitbezogen, es sei denn, die Datensätze im Blob enthalten Zeitstempel.
+Jede Stream Analytics-Auftragsdefinition muss mindestens eine Datenstrom-Eingabequelle enthalten, die vom Auftrag genutzt und umgewandelt werden soll. [Azure-Blob-Speicher](http://azure.microsoft.com/documentation/services/storage/) und [Azure Event Hubs](http://azure.microsoft.com/services/event-hubs/) werden als Datenstrom-Eingabequellen unterstützt. Event Hub-Eingabequellen dienen zum Sammeln von Ereignisströmen von mehreren verschiedenen Geräten und Diensten, während Blob-Speicher als Eingabequelle für die Erfassung von großen Datenmengen verwendet werden können. Da Blobs keine Daten per Stream übertragen, sind Stream Analytics-Aufträge über Blobs nicht zeitbezogen, es sei denn, die Datensätze im Blob enthalten Zeitstempel.
 
 ### Verweisdaten
-Stream Analytics unterstützt auch einen zweiten Eingabequellentyp: Verweisdaten. Dies sind zusätzliche Daten zum Durchführen von Korrelationen und Suchvorgängen, und die Daten hier sind in der Regel statisch oder ändern sich selten. [Azure-Blob-Speicher](azure.blob.storage) sind die einzige unterstützte Eingabequelle für Verweisdaten. Blobs für Verweisdatenquellen sind auf eine Größe von 50 MB beschränkt.
+Stream Analytics unterstützt auch einen zweiten Eingabequellentyp: Verweisdaten. Dies sind zusätzliche Daten zum Durchführen von Korrelationen und Suchvorgängen, und die Daten hier sind in der Regel statisch oder ändern sich selten. [Azure-Blob-Speicher](http://azure.microsoft.com/documentation/services/storage/) sind die einzige unterstützte Eingabequelle für Verweisdaten. Blobs für Verweisdatenquellen sind auf eine Größe von 50 MB beschränkt.
 
 Um die Unterstützung für das Aktualisieren von Verweisdaten zu aktivieren, muss der Benutzer in der Eingabekonfiguration eine Liste von Blobs angeben. Dies erfolgt im Pfadmuster mithilfe der Tokens {date} und {time}. Der Auftrag lädt das entsprechende Blob anhand des im Blob-Namen codierten Datums und der Uhrzeit in der UTC-Zeitzone.
 
@@ -50,7 +50,7 @@ Wenn für den Auftrag im Portal z. B. eine Verweiseingabe mit dem Pfadmuster "/
 
 
 ### Serialisierung
-Um das korrekte Verhalten von Abfragen sicherzustellen, muss Stream Analytics das Serialisierungsformat kennen, das für eingehende Datenströme verwendet wird. Derzeit unterstützte Formate sind JSON, CSV und AVRO für Streaming-Daten und CSV oder JSON für Verweisdaten.
+Um das korrekte Verhalten von Abfragen sicherzustellen, muss Stream Analytics das Serialisierungsformat kennen, das für eingehende Datenströme verwendet wird. Derzeit unterstützte Serialisierungsformate sind JSON, CSV und AVRO für Datenströme und CSV oder JSON für Verweisdaten.
 
 ### Generierte Eigenschaften
 Je nach Eingabetyp im Auftrag werden einige zusätzliche Felder mit Ereignismetadaten generiert. Diese Felder können genau wie andere Eingabespalten abgefragt werden. Wenn ein vorhandenes Ereignis ein Feld mit dem gleichen Namen wie eine der folgenden Eigenschaften besitzt, wird sie mit den Eingabemetadaten überschrieben.
@@ -94,15 +94,15 @@ Je nach Eingabetyp im Auftrag werden einige zusätzliche Felder mit Ereignismeta
 </table>
 
 ###Partitionen mit langsamem oder gar keinen Eingabedaten
-Beim Lesen von Eingabequellen mit mehreren Partitionen, bei denen mindestens eine Partition verlangsamt ist oder über keine Daten verfügt, muss der Streaming-Auftrag entscheiden, wie mit der Situation umgegangen wird, damit die Ereignisse weiter durch das System fließen. Die Eingabeeinstellung "Maximum allowed arrival delay" steuert dieses Verhalten und wartet in der Standardeinstellung über einen unbegrenzten Zeitraum auf die Daten. Daher werden zwar einerseits die Ereigniszeitstempel nicht verändert, andererseits fließen die Ereignisse jedoch beruhend auf der langsamsten Eingabepartition, wobei der Fluss unterbrochen wird, wenn mindestens eine Eingabepartition über keine Daten verfügt. Dies ist hilfreich, wenn die Daten gleichmäßig auf alle Eingabepartitionen verteilt sind und wenn die zeitliche Konsistenz unter den Ereignissen entscheidend ist.
+Beim Lesen von Eingabequellen mit mehreren Partitionen, bei denen mindestens eine Partition verlangsamt ist oder über keine Daten verfügt, muss der Streaming-Auftrag entscheiden, wie mit der Situation umgegangen wird, damit die Ereignisse weiter durch das System fließen. Die Eingabeeinstellung "Maximum allowed arrival delay" steuert dieses Verhalten und wartet in der Standardeinstellung über einen unbegrenzten Zeitraum auf die Daten. Daher werden zwar einerseits die Ereigniszeitstempel nicht verändert, andererseits fließen die Ereignisse beruhend auf der langsamsten Eingabepartition, wobei der Fluss unterbrochen wird, wenn mindestens eine Eingabepartition über keine Daten verfügt. Dies ist hilfreich, wenn die Daten gleichmäßig auf alle Eingabepartitionen verteilt sind und wenn die zeitliche Konsistenz unter den Ereignissen entscheidend ist.
 
-Sie können jedoch auch festlegen, nur eine begrenzte Zeit zu warten. Mit "Maximum allowed arrival delay" wird die Verzögerung angegeben, nach der der Auftrag weitergeleitet wird und die nachhinkenden Eingabepartitionen hinter sich lässt. Hierbei wird der Umgang mit verzögerten Ereignissen über die Einstellung "Action for late events" festgelegt, wobei Ereignisse verworfen werden oder deren Zeitstempel angepasst wird, wenn Daten später ankommen. Dies ist hilfreich, wenn die Latenzzeit wichtig und eine Veränderung der Zeitstempel zulässig ist. Die Eingabe wird jedoch möglicherweise nicht gleichmäßig verteilt.
+Sie können jedoch auch festlegen, nur eine begrenzte Zeit zu warten. Mit „Maximal zulässige Eingangsverzögerung“ wird die Verzögerung angegeben, nach der der Auftrag weitergeleitet wird und die verzögerten Eingabepartitionen hinter sich lässt. Hierbei wird der Umgang mit verzögerten Ereignissen über die Einstellung „Aktion bei verzögerten Ereignissen“ festgelegt, wobei Ereignisse verworfen werden oder deren Zeitstempel angepasst wird, wenn Daten später ankommen. Dies ist hilfreich, wenn die Latenzzeit wichtig und eine Veränderung der Zeitstempel zulässig ist. Die Eingabe wird jedoch möglicherweise nicht gleichmäßig verteilt.
 
 ###Partitionen mit Ereignissen in der falschen Reihenfolge
 Wenn für die Streaming-Auftragsabfrage das Schlüsselwort "TIMESTAMP BY" verwendet wird, kann die Reihenfolge nicht gewährleistet werden, in der die Ereignisse an der Eingabe ankommen. Einige Ereignisse derselben Eingabepartition sind möglicherweise verzögert, sodass der Parameter "Maximum allowed disorder within an input" dazu führt, dass der Streaming-Auftrag auf Ereignisse außerhalb der Toleranz anhand der Einstellung "Action for late events" reagiert und diese verwirft oder deren Zeitstempel anpasst.
 
 ### Zusätzliche Ressourcen
-Weitere Informationen zum Erstellen von Eingabequellen finden Sie im [Azure Event Hubs-Entwicklerhandbuch](azure.event.hubs.developer.guide) und unter [Verwenden von Azure Blob-Speicher](azure.blob.storage.use).
+Weitere Informationen zum Erstellen von Eingabequellen finden Sie im [Azure Event Hubs-Entwicklerhandbuch](http://msdn.microsoft.com/library/azure/dn789972.aspx) und unter [Verwenden von Azure Blob-Speicher](../storage/storage-dotnet-how-to-use-blobs.md).
 
 
 
@@ -129,22 +129,22 @@ Für komplexere Abfragen kann die SQL-Standardklausel **WITH** verwendet werden,
 	FROM step1 
 	GROUP BY TumblingWindow (day, 1) 
 
-Weitere Informationen zur Abfragesprache finden Sie in der [Azure Stream Analytics-Abfragesprachreferenz](stream.analytics.query.language.reference).
+Weitere Informationen zur Abfragesprache finden Sie in der [Azure Stream Analytics-Abfragesprachreferenz](http://go.microsoft.com/fwlink/?LinkID=513299).
 
 ## Ausgabe
 Die Ausgabequelle ist der Ort, an den die Ergebnisse des Stream Analytics-Auftrags geschrieben werden. Die Ergebnisse werden kontinuierlich in die Ausgabequelle geschrieben, während der Auftrag Eingabeereignisse verarbeitet. Die folgenden Ausgabequellen werden unterstützt:
 
 - Azure Event Hubs – Wählen Sie Event Hubs als Ausgabequelle für Szenarios aus, in denen mehrere Streaming-Pipelines zusammengeführt werden müssen, z. B. die Rückgabe von Befehlen an Geräte.
 - Azure-Blob-Speicher – Verwenden Sie Blob-Speicher für die langfristige Archivierung der Ausgabe oder zum Speichern von Daten für die spätere Verarbeitung.
-- Azure-Tabellenspeicher – der Azure-Tabellenspeicher ist ein strukturierter Datenspeicher mit weniger Schemaeinschränkungen. Entitäten mit unterschiedlichen Schemas und Typen können in der gleichen Azure-Tabelle gespeichert werden. Azure-Tabellenspeicher kann zum Speichern von Daten für dauerhafte Archivierung und effizienten Abruf verwendet werden. Weitere Informationen finden Sie unter [Einführung zum Azure-Speicher](../storage.introduction.md) und [Entwerfen einer Strategie für die skalierbare Partitionierung des Azure-Tabellenspeichers](https://msdn.microsoft.com/library/azure/hh508997.aspx).
+- Azure-Tabellenspeicher – der Azure-Tabellenspeicher ist ein strukturierter Datenspeicher mit weniger Schemaeinschränkungen. Entitäten mit unterschiedlichen Schemas und Typen können in der gleichen Azure-Tabelle gespeichert werden. Azure-Tabellenspeicher kann zum Speichern von Daten für dauerhafte Archivierung und effizienten Abruf verwendet werden. Weitere Informationen finden Sie unter [Einführung zum Azure-Speicher](../storage/storage-introduction.md) und [Entwerfen einer Strategie für die skalierbare Partitionierung des Azure-Tabellenspeichers](https://msdn.microsoft.com/library/azure/hh508997.aspx).
 - Azure-SQL-Datenbank – diese Ausgabequelle eignet sich für relationale Daten oder für Anwendungen, die von dem in einer Datenbank gehosteten Inhalt abhängig sind.
 
 
 ## Skalieren von Aufträgen
 
-Ein Stream Analytics-Auftrag kann durch Konfigurieren von Streaming-Einheiten skaliert werden, die die Größe der Verarbeitungsleistung für einen Auftrag bestimmen. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s. Jedes Abonnement verfügt über ein Kontingent von 12 Streaming-Einheiten pro Region für Aufträge in dieser Region.
+Ein Stream Analytics-Auftrag kann durch Konfigurieren von Streamingeinheiten skaliert werden, die die Größe der Verarbeitungsleistung für einen Auftrag bestimmen. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s. Jedes Abonnement verfügt über ein Kontingent von 12 Streaming-Einheiten pro Region für Aufträge in dieser Region.
 
-Einzelheiten finden Sie unter [Skalieren von Azure Stream Analytics-Aufträgen](stream.analytics.scale.jobs).
+Einzelheiten finden Sie unter [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md).
 
 
 ## Überwachung und Problembehandlung von Aufträgen
@@ -158,7 +158,7 @@ Die folgenden Metriken sind für die Überwachung der Nutzung und Leistung von S
 
 - Fehler – Anzahl von Fehlermeldungen, die durch einen Stream Analytics-Auftrag entstehen.
 - Eingangsereignisse – Vom Stream Analytics-Auftrag erhaltene Datenmenge im Hinblick auf die 
--  Ereignisanzahl.
+- Ereignisanzahl.
 - Ausgangsereignisse – vom Stream Analytics-Auftrag gesendete Datenmenge im Hinblick auf die Ereignisanzahl.
 - Ereignisse mit falscher Reihenfolge – Anzahl der Ereignisse, die in falscher Reihenfolge empfangen und anhand der entsprechenden Richtlinie entweder verworfen oder mit einem angepassten Zeitstempel versehen wurden.
 - Datenkonvertierungsfehler – Anzahl der Datenkonvertierungsfehler im Zusammenhang mit einem Stream Analytics-Auftrag.
@@ -182,10 +182,9 @@ Sie können die folgenden Einstellungen auf der obersten Ebene für einen Stream
 
 ### Status
 
-Der Status von Stream Analytics-Aufträgen kann im Azure-Portal angezeigt werden. Aufträge können in einem der drei folgenden Status durchgeführt werden: **Leerlauf**, **Wird verarbeitet** oder **Heruntergestuft**. Im Folgenden finden Sie die einzelnen Statusdefinitionen:
+Der Status von Stream Analytics-Aufträgen kann im Azure-Portal angezeigt werden. Aufträge können in einem der beiden folgenden Status durchgeführt werden: **Wird ausgeführt** oder **Heruntergestuft**. Im Folgenden finden Sie die einzelnen Statusdefinitionen:
 
-- **Leerlauf** – seit dem Erstellen des Auftrags oder in den letzten zwei Minuten wurden keine Eingabebytes erkannt. Wenn ein Auftrag länger den Status **Leerlauf** aufweist, ist es wahrscheinlich, dass zwar die Eingabe, jedoch keine zu verarbeitenden RAW-Bytes vorhanden sind.
-- **Processing** – eine Menge gefilterter Eingabeereignisse, die nicht Null ist, wurde vom Stream Analytics-Auftrag erfolgreich verarbeitet. Wenn ein Auftrag im Status **Verarbeitung** festhängt, ohne eine Ausgabe zu erzeugen, ist es wahrscheinlich, dass das Zeitfenster für die Verarbeitung groß oder die Abfragelogik kompliziert ist.
+- **Wird ausgeführt**: Der Auftrag ist zugewiesen, verarbeitet Eingaben oder wartet auf die Verarbeitung von Eingaben. Wenn ein Auftrag den Status "Wird ausgeführt" aufweist, ohne eine Ausgabe zu erzeugen, ist es wahrscheinlich, dass das Zeitfenster für die Verarbeitung groß oder die Abfragelogik kompliziert ist. Ein weiterer Grund ist möglicherweise, dass derzeit keine Daten an den Auftrag gesendet werden.
 - **Heruntergestuft** – dieser Status gibt an, dass bei einem Stream Analytics-Auftrag einer der folgenden Fehler vorliegt: Eingabe/Ausgabe-Kommunikationsfehler, Abfragefehler oder wiederholbare Laufzeitfehler. Um die Art der Fehler für Aufträge zu ermitteln, zeigen Sie die Vorgangsprotokolle an.
 
 
@@ -202,27 +201,6 @@ Nachdem Sie nun mit den Schlüsselkonzepten von Stream Analytics vertraut sind, 
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+ 
 
-
-
-
-
-<!--Link references-->
-[azure.blob.storage]: http://azure.microsoft.com/documentation/services/storage/
-[azure.blob.storage.use]: http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/
-
-[azure.event.hubs]: http://azure.microsoft.com/services/event-hubs/
-[azure.event.hubs.developer.guide]: http://msdn.microsoft.com/library/azure/dn789972.aspx
-
-[stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
-[stream.analytics.forum]: http://go.microsoft.com/fwlink/?LinkId=512151
-
-[stream.analytics.introduction]: stream-analytics-introduction.md
-[stream.analytics.get.started]: stream-analytics-get-started.md
-[stream.analytics.developer.guide]: ../stream-analytics-developer-guide.md
-[stream.analytics.scale.jobs]: stream-analytics-scale-jobs.md
-[stream.analytics.limitations]: ../stream-analytics-limitations.md
-[stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
-[stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
-
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

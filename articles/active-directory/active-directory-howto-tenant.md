@@ -18,7 +18,7 @@
 
 # Einrichten eines Azure Active Directory-Mandanten
 
-In Azure Active Directory (Azure AD) ist ein [Mandant](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) ein Stellvertreter einer Organisation. Es handelt sich um eine dedizierte Instanz des Azure AD-Diensts, den eine Organisation erhält und besitzt, nachdem sie sich für einen Microsoft-Clouddienst wie Azure, InTune oder Office 365 registriert hat. Jeder Azure AD-Mandant ist eindeutig und von anderen Azure AD-Mandanten getrennt.
+In Azure Active Directory (Azure AD) ist ein [Mandant](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) ein Stellvertreter einer Organisation. Es handelt sich um eine dedizierte Instanz des Azure AD-Diensts, den eine Organisation erhält und besitzt, nachdem sie sich für einen Microsoft-Clouddienst wie Azure, Microsoft Intune oder Office 365 registriert hat. Jeder Azure AD-Mandant ist eindeutig und von anderen Azure AD-Mandanten getrennt.
 
 Ein Mandant enthält die Benutzer in einem Unternehmen und die dazugehörigen Informationen, wie z. B. Kennwörter, Benutzerprofildaten, Berechtigungen usw. Er enthält außerdem Gruppen, Anwendungen und andere Informationen, die eine Organisation und ihre Sicherheit betreffen.
 
@@ -64,5 +64,6 @@ Wenn Sie sich zuvor mit Ihrem Organisationskonto für ein Azure-Abonnement regis
 Wenn Ihnen diese genannten Schritte unverständlich sind, machen Sie sich keine Sorgen. Besuchen Sie einfach [https://account.windowsazure.com/organization](https://account.windowsazure.com/organization), um sich mit einer neuen Organisation bei Azure zu registrieren. Nachdem Sie den Vorgang abgeschlossen haben, haben Sie einen eigenen Azure AD-Mandanten mit dem Domänennamen, den Sie bei der Registrierung gewählt haben. Sie finden Ihren Mandanten im [Azure-Verwaltungsportal](https://manage.windowsazure.com), indem Sie im linken Navigationsbereich zu "Active Directory" navigieren.
 
 Im Rahmen der Registrierung bei Azure müssen Sie Kreditkarteninformationen angeben. Sie können vertrauensvoll fortfahren, da das Veröffentlichen von Anwendungen in Azure AD oder Erstellen neuer Mandanten nicht berechnet wird.
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

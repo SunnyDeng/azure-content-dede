@@ -12,7 +12,7 @@
 	ms.workload="infrastructure-services"
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
-	ms.topic="hero-article"
+	ms.topic="get-started-article"
 	ms.date="05/22/2015"
 	ms.author="rasquill"/>
 
@@ -49,7 +49,7 @@ Geben Sie `azure group create <my-group-name> westus` ein, und ersetzen Sie _&lt
 	data:
 	info:    group create command OK
 
-Erstellen Sie jetzt Ihren virtuellen Computer, indem Sie `azure vm quick-create` eingeben. Sie erhalten daraufhin Eingabeaufforderungen für die  verbleibenden Parameter. Verwenden Sie den Namen der Ressourcengruppe, die Sie soeben erstellt haben. Verwenden Sie für **ImageURN** den Wert `canonical:ubuntuserver:14.04.2-LTS:latest`, sodass Folgendes angezeigt wird:
+Erstellen Sie jetzt Ihren virtuellen Computer, indem Sie `azure vm quick-create` eingeben. Sie erhalten daraufhin Eingabeaufforderungen für die verbleibenden Parameter. Verwenden Sie den Namen der Ressourcengruppe, die Sie soeben erstellt haben. Verwenden Sie für **ImageURN** den Wert `canonical:ubuntuserver:14.04.2-LTS:latest`, sodass Folgendes angezeigt wird:
 
 	azure vm quick-create
 	info:    Executing command vm quick-create
@@ -288,12 +288,13 @@ Weitere Informationen zu Linux auf Azure erhalten Sie unter:
 
 - [Linux und Open-Source-Computing auf Azure](virtual-machines-linux-opensource.md)
 
-- [Verwenden des Azure-Befehlszeilentools für Mac und Linux](../virtual-machines-command-line-tools.md)
+- [Verwenden der Azure-Befehlszeilenschnittstelle](../virtual-machines-command-line-tools.md)
 
 - [Bereitstellen einer LAMP-App mithilfe der Azure-CustomScript-Erweiterung für Linux](virtual-machines-linux-script-lamp.md)
 
 - [Zu den Azure-VM-Konfigurationseinstellungen](http://msdn.microsoft.com/library/azure/dn763935.aspx)
 
 - [Die Docker-Erweiterung für virtuelle Linux-Computer auf Azure](virtual-machines-docker-vm-extension.md)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

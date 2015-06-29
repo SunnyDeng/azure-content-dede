@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/10/2015" 
+	ms.date="06/19/2015" 
 	ms.author="sdanie"/>
 
 #Was ist API Management?
@@ -25,6 +25,17 @@ API Management unterstützt Organisationen beim Veröffentlichen von APIs für e
 Administratoren erstellen APIs, um API Management zu nutzen. Jede API besteht aus einer oder mehreren Operationen, und jede API kann zu einem oder mehreren Produkten hinzugefügt werden. Um eine API zu nutzen, abonnieren Entwickler ein Produkt, das diese API enthält. Anschließend können sie die Operationen der API aufrufen und unterliegen dabei allen geltenden Nutzungsrichtlinien.
 
 Dieses Thema behandelt einige Schlüsselkonzepte von API Management.
+
+>[AZURE.NOTE]Weitere Informationen finden Sie im Whitepaper [Cloud-based API Management: Harnessing the Power of APIs](http://j.mp/ms-apim-whitepaper) (PDF, in englischer Sprache). In diesem Whitepaper zu API Management von CITO Research werden folgende Themen behandelt:
+>
+> - Allgemeine API-Anforderungen und -Herausforderungen
+>     - Entkoppeln von APIs und Präsentieren von Fassaden
+>     - Schnelle Einrichtung und Inbetriebnahme durch Entwickler
+>     - Sichern des Zugriffs
+>     - Analysen und Metriken
+> - Kontrolle und Einblick mit einer API Management-Plattform
+> - Verwenden von Cloudlösungen im Vergleich zu lokalen Lösungen
+> - Azure API Management
 
 ## <a name="apis"> </a>APIs und Operationen
 
@@ -39,7 +50,7 @@ APIs werden in Form von Produkten an Entwickler bereitgestellt. Produkte in API 
 
 Gruppen dienen zur Verwaltung der Sichtbarkeit von Produkten für Entwickler. Produkte gewähren Sichtbarkeit für Gruppen, und Entwickler können alle Produkte anzeigen und abonnieren, die für die Gruppen sichtbar sind, in denen sie Mitglied sind.
 
-Weitere Informationen finden Sie unter [zum Erstellen und Veröffentlichen eines Produkts][] und im folgenden Video.
+Weitere Informationen finden Sie unter [Erstellen und Veröffentlichen eines Produkts][] und im folgenden Video.
 
 > [AZURE.VIDEO using-products]
 
@@ -51,7 +62,7 @@ Gruppen dienen zur Verwaltung der Sichtbarkeit von Produkten für Entwickler. AP
 -	**Entwickler** – Zu dieser Gruppe gehören authentifizierte Benutzer des Entwicklerportals Entwickler sind die Kunden, die Anwendungen unter Verwendung Ihrer APIs erstellen. Entwickler erhalten Zugriff zum Entwicklerportal und erstellen Anwendungen, die die Operationen einer API aufrufen.
 -	**Gäste** – Nicht authentifizierte Benutzer wie z. B. potenzielle Kunden, die das Entwicklerportal einer API Management-Instanz besuchen, fallen in diese Gruppe. Sie können diesen Benutzern schreibgeschützten Zugriff gewähren, z. B. um die APIs anzuzeigen, jedoch nicht aufrufen zu können.
 
-Zusätzlich zu diesen Systemgruppen können Administratoren benutzerdefinierte Gruppen erstellen oder [Nutzung von externen Gruppen in Azure Active Directory-Mandanten zugeordneten](api-management-howto-aad.md/#how-to-add-an-external-azure-active-directory-group). Benutzerdefinierte und externen Gruppen können neben Systemgruppen erteilen Entwickler Sichtbarkeit und den Zugriff auf API-Produkte verwendet werden. Sie könnten beispielsweise erstellen eine benutzerdefinierte Gruppe für Entwickler, die mit einem bestimmten Partnerunternehmen verbundenen und authentifiziertem Zugriff auf die APIs von einem Produkt mit nur die entsprechenden APIs. Ein Benutzer kann Mitglied mehrerer Gruppen sein.
+Zusätzlich zu diesen Systemgruppen können Administratoren benutzerdefinierte Gruppen erstellen oder [externe Gruppen in zugeordneten Azure Active Directory-Mandanten verwenden](api-management-howto-aad.md/#how-to-add-an-external-azure-active-directory-group). Benutzerdefinierte und externe Gruppen können gemeinsam mit Systemgruppen verwendet werden, um API-Produkte für Entwickler sichtbar zu machen und ihnen den Zugriff auf die API-Produkte zu ermöglichen. Beispielsweise können Sie eine benutzerdefinierte Gruppe für Entwickler eines spezifischen Partnerunternehmens erstellen und diesen Entwicklern Zugriff auf die APIs über ein Produkt erteilen, das nur die relevanten APIs enthält. Ein Benutzer kann Mitglied von mehreren Gruppen sein.
 
 Weitere Informationen finden Sie unter [Erstellen und Verwenden von Gruppen][].
 
@@ -67,11 +78,11 @@ Weitere Informationen finden Sie unter [Erstellen und Einladen von Entwicklern][
 
 Richtlinien sind ein umfassendes Werkzeug in API Management, mit dem Anbieter das Verhalten der API in Form von Konfigurationen verändern können. Richtlinien sind eine Sammlung von Anweisungen, die sequenziell bei Anfragen oder Antworten einer API ausgeführt werden. Häufig verwendete Anweisungen sind z. B. Formatumwandlungen von XML nach JSON und Durchsatzgrenzen, um die Anzahl eingehender Aufrufe von einem Entwickler zu beschränken. Viele weitere Richtlinien sind verfügbar.
 
-Richtlinienausdrücken können als Attributwerten oder Text in der API Management-Richtlinien verwendet werden, die Richtlinie nicht anders angegeben. Einige Richtlinien wie z. B. die [Ablaufsteuerung][] und [Variable festlegen][] Richtlinien basieren auf Richtlinienausdrücken. Weitere Informationen finden Sie unter [Erweiterte Richtlinien][], [Richtlinieausdrücke][], und sehen Sie sich das folgende Video.
+Richtlinienausdrücke können als Attributwerte oder Textwerte in einer beliebigen API Management-Richtlinie verwendet werden, sofern in der Richtlinie nicht anders angegeben. Einige Richtlinien, beispielsweise [Ablaufsteuerung][] und [Variable festlegen][], basieren auf Richtlinienausdrücken. Weitere Informationen finden Sie unter [Erweiterte Richtlinien][], [Richtlinienausdrücke][] und im folgenden Video.
 
 > [AZURE.VIDEO policy-expressions-in-azure-api-management]
 
-Eine vollständige Liste der Richtlinien für API Management finden Sie unter [Gruppenrichtlinienreferenz][]. Weitere Informationen zur Verwendung und Konfiguration von Richtlinien finden Sie unter [Richtlinien für API Management][]. Ein Lernprogramm zum Erstellen eines Produkts mit Richtlinien für Durchsatzgrenzen und Kontingente finden Sie unter [Erstellen und Konfigurieren erweiterter Produkteinstellungen][]. Eine Demo finden Sie im folgende Video.
+Eine vollständige Liste der Richtlinien für API Management finden Sie unter [Gruppenrichtlinienreferenz][]. Weitere Informationen zur Verwendung und Konfiguration von Richtlinien finden Sie unter [Richtlinien für API Management][]. Ein Lernprogramm zum Erstellen eines Produkts mit Richtlinien für Durchsatzgrenzen und Kontingente finden Sie unter [Erstellen und Konfigurieren erweiterter Produkteinstellungen][]. Das folgende Video enthält eine Veranschaulichung.
 
 > [AZURE.VIDEO rate-limits-and-quotas]
 
@@ -90,7 +101,7 @@ Sie können das Erscheinungsbild Ihres Entwicklerportals konfigurieren, indem Si
 
 [Erstellen von APIs]: api-management-howto-create-apis.md
 [Hinzufügen von Operationen zu einer API]: api-management-howto-add-operations.md
-[zum Erstellen und Veröffentlichen eines Produkts]: api-management-howto-add-products.md
+[Erstellen und Veröffentlichen eines Produkts]: api-management-howto-add-products.md
 [Erstellen und Verwenden von Gruppen]: api-management-howto-create-groups.md
 [Zuordnen von Entwicklern zu Gruppen]: api-management-howto-create-groups.md#associate-group-developer
 [Erstellen und Konfigurieren erweiterter Produkteinstellungen]: api-management-howto-product-with-rules.md
@@ -103,4 +114,4 @@ Sie können das Erscheinungsbild Ihres Entwicklerportals konfigurieren, indem Si
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

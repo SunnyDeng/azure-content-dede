@@ -3,7 +3,7 @@
 	description="Erste Schritte mit Azure-Warteschlangenspeicher in einem ASP.NET 5-Projekt in Visual Studio" 
 	services="storage" 
 	documentationCenter="" 
-	authors="kempb" 
+	authors="patshea123" 
 	manager="douge" 
 	editor="tglee"/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/20/2015" 
-	ms.author="kempb"/>
+	ms.author="patshea123"/>
 
 # Erste Schritte mit Azure Storage (ASP.NET 5-Projekte)
 
@@ -102,5 +102,6 @@ Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass ein
 	await queue.DeleteMessageAsync(retrievedMessage);
 
 [Weitere Informationen zu Azure Storage](http://azure.microsoft.com/documentation/services/storage/) finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx) und [ASP.NET 5](http://www.asp.net/vnext).
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

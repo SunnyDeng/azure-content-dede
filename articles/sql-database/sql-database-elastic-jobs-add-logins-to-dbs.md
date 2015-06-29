@@ -18,7 +18,7 @@
 
 # Hinzufügen von Benutzern zu einem elastischen Datenbankpool
 
-Elastische Datenbankaufträge ermöglichen das Ausführen des gleichen Skripts für jede Datenbank in einem [elastischen Datenbankpool](sql-database-elastic-pool.md). Um ein Skript für elastische Datenbankaufträge ausführen zu können, muss ein Benutzer mit den entsprechenden Berechtigungen zu jeder Datenbank im Pool hinzugefügt werden. Dieser Benutzer kann der gleiche Hauptbenutzer auf Serverebene sein, der bei der Installation der **elastischen Datenbankaufträge** erstellt wurde. Er verfügt über die **Auftragsanmeldeinformationen** zum Verwalten von Metadaten in der **Verwaltungsdatenbank**. Weitere Informationen finden Sie unter [Verwalten von Datenbanken, Anmeldungen und Benutzern in der Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee336235.aspx?f=255&MSPPError=-2147217396) oder [Adding Users to Your SQL Azure Database](http://azure.microsoft.com/blog/2010/06/21/adding-users-to-your-sql-azure-database/) (Hinzufügen von Benutzern zur Azure SQL-Datenbank, in englischer Sprache).
+Elastische Datenbankaufträge ermöglichen das Ausführen des gleichen Skripts für jede Datenbank in einem [elastischen Datenbankpool](sql-database-elastic-pool.md). Um ein Skript für elastische Datenbankaufträge ausführen zu können, muss ein Benutzer mit den entsprechenden Berechtigungen zu jeder Datenbank im Pool hinzugefügt werden. Weitere Informationen finden Sie unter [Verwalten von Datenbanken, Anmeldungen und Benutzern in der Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee336235.aspx?f=255&MSPPError=-2147217396) oder [Adding Users to Your SQL Azure Database](http://azure.microsoft.com/blog/2010/06/21/adding-users-to-your-sql-azure-database/) (Hinzufügen von Benutzern zur Azure SQL-Datenbank, in englischer Sprache).
 
 ## Voraussetzungen
 * [Erstellen eines elastischen Datenbankpools (Vorschau)](sql-database-elastic-pool-portal.md)
@@ -46,4 +46,4 @@ Führen Sie einen Auftrag für den Datenbankpool aus. Siehe [Erstellen und Verwa
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

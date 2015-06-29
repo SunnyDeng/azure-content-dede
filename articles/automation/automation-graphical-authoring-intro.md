@@ -49,7 +49,7 @@ Der Zeichenbereich ist der Bereich, in dem Sie Ihr Runbook entwerfen. Sie fügen
 |:---|:---|
 | Cmdlets | Enthält alle Cmdlets, die in Ihrem Runbook verwendet werden können. Die Cmdlets sind nach Modul angeordnet. Es sind alle Module verfügbar, die Sie in Ihrem Automation-Konto installiert haben. |
 | Runbooks | Umfasst die Runbooks in Ihrem Automation-Konto, angeordnet nach Tag. Da ein Runbook mehrere Tags aufweisen kann, wird es möglicherweise unterhalb von mehreren Tags aufgeführt. Diese Runbooks können dem Zeichenbereich hinzugefügt werden, um als untergeordnete Runbooks verwendet zu werden. Das aktuell bearbeitete Runbook wird angezeigt, kann jedoch nicht dem Zeichenbereich hinzugefügt werden, da ein Runbook sich nicht selbst aufrufen kann.
-| Objekte | Enthalten die [Automation-Objekte](http://msdn.microsoft.com/library/dn939988.aspx) in Ihrem Automation-Konto, die im Runbook verwendet werden können. Wenn Sie ein Objekt in ein Runbook einfügen, wird eine Workflowaktivität zum Abrufen des ausgewählten Objekts hinzugefügt.  Im Fall von Variablenobjekten können Sie auswählen, ob Sie eine Aktivität zum Abrufen der Variable oder eine Aktivität zum Festlegen der Variable hinzufügen möchten.
+| Objekte | Enthalten die [Automation-Objekte](http://msdn.microsoft.com/library/dn939988.aspx) in Ihrem Automation-Konto, die im Runbook verwendet werden können. Wenn Sie ein Objekt in ein Runbook einfügen, wird eine Workflowaktivität zum Abrufen des ausgewählten Objekts hinzugefügt. Im Fall von Variablenobjekten können Sie auswählen, ob Sie eine Aktivität zum Abrufen der Variable oder eine Aktivität zum Festlegen der Variable hinzufügen möchten.
 | Steuerelement "Runbook" | Enthält die Runbookaktivitäten, die im aktuellen Runbook verwendet werden können. Eine *Verbindung* akzeptiert mehrere Eingaben und wartet, bis sämtliche dieser Eingaben abgeschlossen wurden, bevor der Workflow fortgesetzt wird. Ein *Workflowskript* führt eine oder mehrere Zeilen PowerShell-Worflowcode aus. Sie können diese Aktivität für benutzerdefinierten Code oder für Funktionalitäten nutzen, die mit anderen Aktivitäten nicht erzielt werden können.|
 
 ### Steuerelement "Konfiguration"
@@ -113,11 +113,16 @@ Wenn Sie einen Wert für einen Parameter angeben, wählen Sie eine Datenquelle a
 
 | Datenquelle | Beschreibung |
 |:---|:---|
-|Aktivitätsausgabe|Ausgabe einer Aktivität, die der aktuellen Aktivität im Workflow vorausgeht. Es werden alle Aktivitäten aufgelistet. Wählen Sie einfach die Aktivität, um ihre Ausgabe für den Parameterwert zu verwenden. Wenn es sich bei der Aktivitätsausgabe um ein Objekt mit mehreren Eigenschaften handelt, können Sie nach Auswahl der Aktivität den Namen der Eigenschaft eingeben.|
 |Konstanter Wert|Geben Sie einen Wert für den Parameter ein. Dies ist nur für die folgenden Datentypen möglich: Int32, Int64, String, Boolean, DateTime, Switch. |
+|Aktivitätsausgabe|Ausgabe einer Aktivität, die der aktuellen Aktivität im Workflow vorausgeht. Es werden alle Aktivitäten aufgelistet. Wählen Sie einfach die Aktivität, um ihre Ausgabe für den Parameterwert zu verwenden. Wenn es sich bei der Aktivitätsausgabe um ein Objekt mit mehreren Eigenschaften handelt, können Sie nach Auswahl der Aktivität den Namen der Eigenschaft eingeben.|
+|Runbook-Eingabeparameter<br>*(in Kürze verfügbar)*|Wählen Sie einen Runbook-Eingabeparameter als Eingabe für den Aktivitätsparameter aus.|  
+|Automation-Variablenobjekt<br>*(in Kürze verfügbar)*|Wählen Sie eine Automation-Variable als Eingabe aus.|  
+|Automation-Anmeldeinformationenobjekt<br>*(in Kürze verfügbar)*|Wählen Sie ein Automation-Anmeldeinformationsobjekt als Eingabe aus.|  
+|Automation-Zertifikatobjekt<br>*(in Kürze verfügbar)*|Wählen Sie ein Automation-Zertifikatobjekt als Eingabe aus.|  
+|Automation-Verbindungsobjekt<br>*(in Kürze verfügbar)*|Wählen Sie ein Automation-Verbindungsobjekt als Eingabe aus.| 
+|PowerShell-Ausdruck|Geben Sie einen einfachen PowerShell-Ausdruck an. Der Ausdruck wird vor der Aktivität ausgewertet, und das Ergebnis wird für den Parameterwert verwendet. Sie können Variablen verwenden, um auf die Ausgabe einer Aktivität oder einen Eingabeparameter für ein Runbook zu verweisen.|
 |Leere Zeichenfolge|Ein leerer Zeichenfolgenwert.|
 |Null|Ein Null-Wert.|
-|PowerShell-Ausdruck|Geben Sie einen einfachen PowerShell-Ausdruck an. Der Ausdruck wird vor der Aktivität ausgewertet, und das Ergebnis wird für den Parameterwert verwendet. Sie können Variablen verwenden, um auf die Ausgabe einer Aktivität oder einen Eingabeparameter für ein Runbook zu verweisen.|
 |Auswahl aufheben|Löscht einen Wert, der zuvor konfiguriert wurde.|
 
 
@@ -161,7 +166,7 @@ Ein grafisches Runbook wird mit allen Aktivitäten gestartet, die keine eingehen
 
 Wenn Sie für eine Verknüpfung eine Bedingung angeben, wird die Zielaktivität nur ausgeführt, wenn die Bedingung als wahr ausgewertet wird. Sie verwenden typischerweise eine $ActivityOutput-Variable in einer Bedingung, um die Ausgabe der Quellaktivität abzurufen.
 
-Bei einer Pipelineverknüpfung geben Sie eine Bedingung für ein einzelnes Objekt an, und die Bedingung wird für jedes ausgegebene Objekt der Quellaktivität ausgewertet.  Die Zielaktivität wird anschließend für jedes Objekt ausgeführt, das die Bedingung erfüllt. Wenn Sie beispielsweise "Get-AzureVM" als Quellaktivität verwenden, könnte die folgende Syntax für eine Pipelineverknüpfung mit Bedingung verwendet werden, um nur virtuelle Computer abzurufen, die zurzeit ausgeführt werden.
+Bei einer Pipelineverknüpfung geben Sie eine Bedingung für ein einzelnes Objekt an, und die Bedingung wird für jedes ausgegebene Objekt der Quellaktivität ausgewertet. Die Zielaktivität wird anschließend für jedes Objekt ausgeführt, das die Bedingung erfüllt. Wenn Sie beispielsweise "Get-AzureVM" als Quellaktivität verwenden, könnte die folgende Syntax für eine Pipelineverknüpfung mit Bedingung verwendet werden, um nur virtuelle Computer abzurufen, die zurzeit ausgeführt werden.
 
 	$ActivityOutput['Get-AzureVM'].PowerState -eq 'Started'
 
@@ -273,5 +278,6 @@ Daten, die von einer Aktivität ohne ausgehende Verknüpfung erstellt werden, we
 
 - [Azure Automation-Runbooks – Konzepte](automation-runbook-concepts.md)
 - [Automation-Objekte](http://msdn.microsoft.com/library/azure/dn939988.aspx)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

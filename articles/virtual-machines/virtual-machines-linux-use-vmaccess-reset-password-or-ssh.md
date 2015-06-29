@@ -261,5 +261,6 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 [Installieren und Konfigurieren von Azure PowerShell]: ../install-configure-powershell.md
 [Azure-VM-Erweiterungen und Features]: http://msdn.microsoft.com/library/azure/dn606311.aspx
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH]: http://msdn.microsoft.com/library/azure/dn535788.aspx
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

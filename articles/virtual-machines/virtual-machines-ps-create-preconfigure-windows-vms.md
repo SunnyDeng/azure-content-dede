@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/22/2015"
+	ms.date="06/10/2015"
 	ms.author="josephd"/>
 
 # Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer
@@ -27,7 +27,11 @@ Diese Schritte zeigen, wie Sie eine Reihe von Azure PowerShell-Befehlen anpassen
 
 Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure PowerShell-Befehlssätzen. Dieser Ansatz kann hilfreich sein, wenn Sie noch nicht mit PowerShell gearbeitet haben oder einfach wissen möchten, welche Werte Sie für die erfolgreiche Konfiguration angeben müssen. Erweiterte PowerShell-Benutzer können die Befehle verwenden und sie durch eigene Werte für die Variablen ersetzen (Zeilen, die mit "$" beginnen).
 
-Das Begleitthema zum Konfigurieren der Linux-basierten virtuellen Computer finden Sie unter [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern](virtual-machines-ps-create-preconfigure-linux-vms.md).
+Das Begleitthema zum Konfigurieren der Linux-basierten virtuellen Computer finden Sie unter [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md).
+
+[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../../includes/service-management-pointer-to-resource-manager.md)]
+
+- [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
 
 ## Schritt 1: Installieren von Azure PowerShell
 
@@ -42,11 +46,11 @@ Legen Sie Ihr Azure-Abonnement und Speicherkonto fest, indem Sie diese Befehle i
 	Select-AzureSubscription -SubscriptionName $subscr –Current
 	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 
-Sie erhalten den korrekten Abonnementnamen aus der Eigenschaft "SubscriptionName" der Ausgabe des Befehls **Get-AzureSubscription**. Sie erhalten den korrekten Speicherkontonamen aus der Eigenschaft "Beschriftung" der Ausgabe des Befehls **Get-AzureStorageAccount**, nachdem Sie den Befehl **Select-AzureSubscription** ausgeben. Sie können diese Befehle auch in einer Textdatei für die zukünftige Verwendung speichern.
+Sie erhalten den korrekten Abonnementnamen aus der Eigenschaft "SubscriptionName" der Ausgabe des Befehls **Get-AzureSubscription**. Sie erhalten den korrekten Speicherkontonamen aus der Eigenschaft "Beschriftung" der Ausgabe des Befehls **Get-AzureStorageAccount**, nachdem Sie den Befehl **Select-AzureSubscription** ausgeben.
 
 ## Schritt 3: Bestimmen der ImageFamily
 
-Als Nächstes müssen Sie den Wert "ImageFamily" oder "Beschriftung" für das Image bestimmen, das dem virtuellen Computer in Azure entspricht, den Sie erstellen möchten. Hier finden Sie einige Beispiele aus der Galerie im Azure-Verwaltungsportal.
+Als Nächstes müssen Sie den Wert "ImageFamily" oder "Beschriftung" für das Image bestimmen, das dem virtuellen Computer in Azure entspricht, den Sie erstellen möchten. Hier finden Sie einige Beispiele aus dem Katalog im Azure-Verwaltungsportal.
 
 ![](./media/virtual-machines-ps-create-preconfigure-windows-vms/PSPreconfigWindowsVMs_1.png)
 
@@ -61,7 +65,7 @@ Hier finden Sie einige Beispiele für ImageFamily-Werte für Windows-basierte Co
 - Windows Server Technical Preview
 - SQL Server 2012 SP1 Enterprise unter Windows Server 2012
 
-Wenn Sie das gewünschte Image gefunden haben, öffnen Sie eine neue Instanz des Texteditors Ihrer Wahl (oder eine Instanz von PowerShell Integrated Scripting Environment [ISE]), und kopieren Sie Folgendes in die neue Textdatei (Ersetzen Sie dabei den ImageFamily-Wert.)
+Wenn Sie das gesuchte Image gefunden haben, öffnen Sie eine neue Instanz des Texteditors Ihrer Wahl oder der PowerShell Integrated Scripting Environment (ISE). Kopieren Sie den folgenden Code in die neue Textdatei oder PowerShell ISE, wobei Sie den Wert von "ImageFamily" ersetzen.
 
 	$family="<ImageFamily value>"
 	$image=Get-AzureVMImage | where { $_.ImageFamily -eq $family } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
@@ -70,14 +74,14 @@ In einigen Fällen befindet sich der Name des Images in der Eigenschaft "Beschri
 
 	Get-AzureVMImage | select Label -Unique
 
-Wenn Sie das richtige Image mit diesem Befehl finden, öffnen Sie eine neue Instanz des Texteditors Ihrer Wahl (oder eine Instanz von PowerShell ISE), und kopieren Sie Folgendes in die neue Textdatei. (Ersetzen Sie dabei den Wert "Beschriftung".)
+Wenn Sie das richtige Image mit diesem Befehl gefunden haben, öffnen Sie eine neue Instanz des Texteditors Ihrer Wahl oder der PowerShell ISE. Kopieren Sie den folgenden Code in die neue Textdatei oder PowerShell ISE, wobei Sie den Wert von "Label" ersetzen.
 
 	$label="<Label value>"
 	$image = Get-AzureVMImage | where { $_.Label -eq $label } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 
 ## Schritt 4: Erstellen des Befehlssatzes
 
-Erstellen Sie den Rest des Befehlssatzes, indem Sie den entsprechenden Satz an Blöcken unten in Ihre neue Textdatei kopieren und dann die Variablenwerte eingeben und die Zeichen < and > entfernen. Anhand der beiden [Beispiele](#examples) am Ende dieses Artikels erhalten Sie eine Idee des Endergebnisses.
+Erstellen Sie den Rest des Befehlssatzes, indem Sie den entsprechenden Satz an Blöcken unten in Ihre neue Textdatei oder ISE kopieren und dann die Variablenwerte eingeben und die Zeichen < and > entfernen. Anhand der beiden [Beispiele](#examples) am Ende dieses Artikels erhalten Sie eine Idee des Endergebnisses.
 
 Starten Sie den Befehlssatz, indem Sie einen dieser beiden Befehlssätze auswählen (erforderlich).
 
@@ -163,13 +167,13 @@ Option 2: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddiens
 
 ## Schritt 5: Ausführen des Befehlssatzes
 
-Überprüfen Sie den Azure PowerShell-Befehl in einem Texteditor, bestehend aus mehreren Blöcken von Befehlen aus Schritt 4. Stellen Sie sicher, dass Sie alle erforderlichen Variablen angegeben haben und diese die richtigen Werte aufweisen. Stellen Sie außerdem sicher, dass Sie alle < and > entfernt haben.
+Überprüfen Sie den aus mehreren Blöcken von Befehlen aus Schritt 4 bestehenden Azure PowerShell-Befehlssatz in einem Texteditor oder der PowerShell ISE. Stellen Sie sicher, dass Sie alle erforderlichen Variablen angegeben haben und diese die richtigen Werte aufweisen. Stellen Sie außerdem sicher, dass Sie alle < and > entfernt haben.
 
-Kopieren Sie den Befehlssatz in die Zwischenablage, und klicken Sie dann mit der rechten Maustaste auf Ihre offene Azure PowerShell-Eingabeaufforderung. Dies gibt den Befehlssatz als Serie von PowerShell-Befehlen aus und erstellt den virtuellen Azure-Computer.
+Wenn Sie einen Texteditor verwenden, kopieren Sie den Befehlssatz schließlich in die Zwischenablage, und klicken Sie dann mit der rechten Maustaste auf Ihre offene Azure PowerShell-Eingabeaufforderung. Dies gibt den Befehlssatz als Serie von PowerShell-Befehlen aus und erstellt den virtuellen Azure-Computer. Führen Sie alternativ den Befehlssatz in der PowerShell ISE aus.
 
 Wenn Sie diesen virtuellen Computer erneut oder einen ähnlichen Computer erstellen, können Sie:
 
-- diesen Befehlssatz als Textdatei oder PowerShell-Skriptdatei (*.ps1) speichern
+- diesen Befehlssatz als PowerShell-Skriptdatei (*.ps1) speichern
 - diesen Befehlssatz als Azure-Automatisierungsrunbook im Bereich **Automatisierung** des Azure-Verwaltungsportals speichern
 
 ## <a id="examples"></a>Beispiele
@@ -263,4 +267,7 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern](virtual-machines-ps-create-preconfigure-linux-vms.md)
 
-<!---HONumber=58--> 
+[Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
+ 
+
+<!---HONumber=58_postMigration-->

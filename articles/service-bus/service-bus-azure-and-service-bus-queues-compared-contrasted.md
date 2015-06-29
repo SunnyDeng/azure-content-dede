@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung."
-   description="analysiert die Unterschiede und Gemeinsamkeiten zwischen den beiden zurzeit von Azure angebotenen Typen von Warteschlangen"
+   description="Analysiert die Unterschiede und Gemeinsamkeiten zwischen den beiden zurzeit von Azure angebotenen Warteschlangentypen."
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
@@ -59,7 +59,7 @@ Als Lösungsarchitekt/-entwickler sollten Sie die **Verwendung von Service Bus-W
 
 - Beim Senden oder Empfangen mehrerer Nachrichten über eine Warteschlange muss sich die Lösung durch Transaktionsfähigkeit und Unteilbarkeit auszeichnen.
 
-- Die Gültigkeitsdauer (Time To Live, TTL) der anwendungsspezifischen Workload kann sieben Tage überschreiten.
+- Die Gültigkeitsdauer (Time To Live, TTL) der anwendungsspezifischen Arbeitsauslastung kann sieben Tage überschreiten.
 
 - Die Anwendung verarbeitet Nachrichten, die zwar 64 KB überschreiten können, die Grenze von 256 KB aber wahrscheinlich nicht erreichen werden.
 
@@ -316,5 +316,6 @@ Die folgenden Artikel enthalten weitere Anleitungen und Informationen zur Verwen
 - [Azure Storage Architecture](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx) (Azure Storage-Architektur, in englischer Sprache)
 - [Using the Queuing Service in Azure](http://www.developerfusion.com/article/120197/using-the-queuing-service-in-windows-azure/) (Verwenden des Warteschlangendiensts in Azure, in englischer Sprache)
 - [Understanding Azure Storage Billing – Bandwidth, Transactions, and Capacity](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx) (Grundlagen zur Abrechnung von Azure Storage – Bandbreite, Transaktionen und Kapazität, in englischer Sprache)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

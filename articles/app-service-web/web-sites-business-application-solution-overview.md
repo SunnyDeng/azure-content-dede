@@ -46,7 +46,7 @@ Schützen Sie Ihre Ressourcen durch Verschlüsselung, Authentifizierung von Unte
 
 Schützen Sie interne Ressourcen mit [HTTPS] vor Lauschangriffen. Der Domänenname ***.azurewebsites.net** schließt bereits ein SSL-Zertifikat ein, und wenn Sie eine benutzerdefinierte Domäne einsetzen, können Sie Ihr SSL-Zertifikat in App Service-Web-Apps weiterhin verwenden. Für jedes SSL-Zertifikat fällt eine monatliche Gebühr an (abgerechnet nach Stunden). Weitere Informationen finden Sie unter [App Service-Preisdetails].
 
-[Authentifizieren von Benutzern] mit dem Unternehmensverzeichnis. App Service-Web-Apps können Benutzer mithilfe von lokalen Identitätsanbietern authentifizieren, beispielsweise mit den Active Directory-Verbunddiensten (AD FS), oder über einen Azure Active Directory-Mandanten, der mit Ihrer Active Directory-Unternehmensbereitstellung synchronisiert wurde. Benutzer können über eine einmalige Anmeldung auf Ihre Webpräsenzen in Web-Apps zugreifen – unabhängig davon, ob sie lokal arbeiten oder sich von unterwegs anmelden. Vorhandene Dienste wie Office 365 oder Microsoft Intune verwenden bereits Azure Active Directory. Über [Easy Auth] ist es sehr einfach, für Ihre Web-App eine Authentifizierung mit demselben Azure Active Directory-Mandanten zu aktivieren.
+[Authentifizieren von Benutzern] mit dem Unternehmensverzeichnis. App Service-Web-Apps können Benutzer mithilfe von lokalen Identitätsanbietern authentifizieren, beispielsweise mit den Active Directory-Verbunddiensten (AD FS), oder über einen Azure Active Directory-Mandanten, der mit Ihrer Active Directory-Unternehmensbereitstellung synchronisiert wurde. Benutzer können über eine einmalige Anmeldung auf Ihre Webpräsenzen in Web-Apps zugreifen – unabhängig davon, ob sie lokal arbeiten oder sich von unterwegs anmelden. Vorhandene Dienste, wie z. B. Office 365 oder Microsoft Intune, verwenden bereits Azure Active Directory. Über [Easy Auth] ist es sehr einfach, für Ihre Web-App eine Authentifizierung mit demselben Azure Active Directory-Mandanten zu aktivieren.
 
 [Autorisieren Sie Benutzer] zur Verwendung von Webeigenschaften. Mit minimalem zusätzlichen Code, beispielsweise mit der `[Authorize]`-Dekoration, können Sie dieselben lokalen ASP.NET-Codierungsmuster in App Service-Web-Apps einbringen. Sie behalten dieselbe Flexibilität zur Optimierung der Zugriffssteuerung wie für Anwendungen, die Sie lokal verwalten.
 
@@ -124,4 +124,4 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

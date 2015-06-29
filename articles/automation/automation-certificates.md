@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Zertifikate"
+   pageTitle="Zertifikatobjekte in Azure Automation"
    description="Zertifikate können sicher in Azure Automation gespeichert werden, sodass sie von Runbooks zur Authentifizierung bei Azure und Drittanbieterressourcen verwendet werden können. Dieser Artikel stellt eine ausführliche Beschreibung von Zertifikaten bereit und zeigt, wie diese in Textrunbooks und grafischen Runbooks eingesetzt werden."
    services="automation"
    documentationCenter=""
@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/21/2015"
+   ms.date="06/14/2015"
    ms.author="bwren" />
 
-# Zertifikate
+# Zertifikatobjekte in Azure Automation
 
 Zertifikate können sicher in Azure Automation gespeichert werden, sodass Sie aus Runbooks mithilfe der Aktivität **Get-AutomationCertificate** darauf zugreifen können. Auf diese Weise können Sie Runbooks erstellen, die Zertifikate für die Authentifizierung verwenden oder diese zu Azure oder zu Drittanbieterressourcen hinzufügen, die möglicherweise über Ihr Runbook erstellt oder konfiguriert werden.
 
->[AZURE.NOTE]Zu den sicheren Objekten in Azure Automation gehören Anmeldeinformationen, Zertifikate, Verbindungen und verschlüsselte Variablen. Diese Objekte werden mithilfe eines eindeutigen Schlüssels verschlüsselt und in Azure Automation gespeichert, der für jedes Automation-Konto generiert wird.  Dieser Schlüssel wird mit einem Masterzertifikat verschlüsselt und in Azure Automation gespeichert. Vor dem Speichern eines sicheren Objekts wird der Schlüssel für das Automation-Konto mit dem Masterzertifikat verschlüsselt und anschließend zum Verschlüsseln des Objekts verwendet.
+>[AZURE.NOTE]Zu den sicheren Objekten in Azure Automation gehören Anmeldeinformationen, Zertifikate, Verbindungen und verschlüsselte Variablen. Diese Objekte werden mithilfe eines eindeutigen Schlüssels verschlüsselt und in Azure Automation gespeichert, der für jedes Automation-Konto generiert wird. Dieser Schlüssel wird mit einem Masterzertifikat verschlüsselt und in Azure Automation gespeichert. Vor dem Speichern eines sicheren Objekts wird der Schlüssel für das Automation-Konto mit dem Masterzertifikat verschlüsselt und anschließend zum Verschlüsseln des Objekts verwendet.
 
 ## Windows PowerShell-Cmdlets
 
@@ -103,8 +103,8 @@ In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die Send-
 ![](media/automation-certificates/add-certificate.png)
 
 
-## Siehe auch
+## Weitere Informationen
 
-- [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow)
+- [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow) 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

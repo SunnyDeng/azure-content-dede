@@ -20,8 +20,8 @@ Standardmäßig sind sämtliche Anfragen an die Ressourcen des mobilen Diensts a
 
 4. (Optional) Legen Sie in der web.config-Projektdatei einen Zeichenfolgenwert für die Anwendungseinstellung `MS_ApplicationKey` fest. Dies ist das Kennwort, mit dem Sie die API-Hilfeseiten testen (ohne Benutzername), wenn Sie den Dienst lokal ausführen.
 
-	[AZURE.NOTE]Dieser Zeichenfolgenwert wird nicht von der Live-Website in Azure verwendet, und Sie müssen nicht den tatsächlichen Anwendungsschlüssel verwenden; es kann eine beliebige gültige Zeichenfolge verwendet werden.
+	>[AZURE.NOTE]Dieser Zeichenfolgenwert wird nicht von der Live-Website in Azure verwendet, und Sie müssen nicht den tatsächlichen Anwendungsschlüssel verwenden; es kann eine beliebige gültige Zeichenfolge verwendet werden.
  
 4. Veröffentlichen Sie das Projekt erneut.
 
-<!--HONumber=54-->
+<!---HONumber=58_postMigration-->

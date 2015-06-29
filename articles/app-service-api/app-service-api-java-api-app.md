@@ -4,7 +4,7 @@
 	services="app-service\api"
 	documentationCenter="java"
 	authors="pkefal"
-	manager="mohisri"
+	manager="mohisri" 
 	editor="jimbe"/>
 
 <tags
@@ -66,7 +66,7 @@ Im Portal verwalten Sie die API-App-spezifischen Funktionen im Blatt **API-App**
 
 	![][api-app-host]
 
-2. Suchen Sie im Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf ** 	Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
+2. Suchen Sie im Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf ** Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
 
 	![][deployment-part]
 
@@ -112,7 +112,7 @@ In diesem Abschnitt laden Sie Code herunter und prüfen ihn, der als Teil des Ja
 
 1. Laden Sie den Code in [diesem GitHub-Repository](http://go.microsoft.com/fwlink/?LinkId=571009) herunter. Sie können das Repository entweder klonen oder auf **ZIP herunterladen** klicken, um den Code als ZIP-Datei herunterzuladen. Wenn Sie die ZIP-Datei herunterladen, extrahieren Sie sie auf Ihre lokale Festplatte.
 
-2. Navigieren Sie zu dem Ordner, in dem Sie das Beispiel extrahiert haben, und navigieren Sie dann zum `build\libs\`-Ordner.
+2. Navigieren Sie zu dem Ordner, in dem Sie das Beispiel extrahiert haben, und navigieren Sie dann zum `build\libs`-Ordner.
 
 	![][api-app-folder-browse]
 
@@ -270,4 +270,4 @@ Sie können diese Beispiel-API-App unter [TryApp Service](http://tryappservice.a
 [api-definition-blade]: ./media/app-service-api-java-api-app/apidefblade.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

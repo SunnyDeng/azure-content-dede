@@ -1,26 +1,26 @@
-﻿<properties 
+<properties 
 	pageTitle="Einrichten von Abrechnungswarnungen für Microsoft Azure-Abonnements" 
 	description="Hier wird beschrieben, wie Sie Warnungen für Ihre Azure-Rechnung einrichten können, um Überraschungen bei der Abrechnung zu vermeiden." 
 	services="" 
 	documentationCenter="" 
-	authors="cabailey" 
-	manager="mbaldwin" 
+	authors="vikdesai" 
+	manager="msmbaldwin" 
 	editor=""/>
 
 <tags 
 	ms.service="multiple" 
 	ms.workload="multiple" 
-	ms.tgt_pltfrm="" 
-	ms.devlang="" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/29/2014" 
-	ms.author="cabailey"/>
+	ms.date="06/01/2015" 
+	ms.author="vikdesai"/>
 
 # Einrichten von Abrechnungswarnungen für Microsoft Azure-Abonnements
 
 Machen Sie sich Gedanken darum, wie viel Sie jeden Monat für Ihr Azure-Abonnement ausgeben? Wenn Sie der Kontoadministrator für ein Azure-Abonnement sind, können Sie den Dienst für Azure-Abrechnungswarnungen zum Erstellen von benutzerdefinierten Abrechnungswarnungen verwenden, mit dem Sie Abrechnungsaktivitäten für Ihre Azure-Konten überwachen und verwalten können.
 
-Dieser Dienst ist ein Vorschaudienst, daher müssen Sie sich zunächst dafür registrieren - besuchen Sie dazu die <a href="https://account.windowsazure.com/PreviewFeatures">Funktionsvorschauseite </a> im Azure-Kontoverwaltungsportal.
+Dieser Dienst ist ein Vorschaudienst, daher müssen Sie sich zunächst dafür registrieren – besuchen Sie dazu die <a href="https://account.windowsazure.com/PreviewFeatures">Funktionsvorschauseite</a> im Azure-Kontoverwaltungsportal.
 
 ## Festlegen des Schwellenwerts für Warnungen und von E-Mail-Empfängern
 
@@ -46,4 +46,4 @@ Nach dem Einrichten von Warnungen werden diese im Account Center aufgelistet. Zu
 [Image2]: ./media/azure-billing-set-up-alerts/billingalert2.png
 [Image3]: ./media/azure-billing-set-up-alerts/billingalerts3.png
 
-<!--HONumber=47-->
+<!---HONumber=58_postMigration-->

@@ -4,17 +4,33 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/28/2015" 
+	ms.date="06/18/2015" 
 	ms.author="sergkanz"/>
  
-# Anmerkungen zu dieser Version für Application Insights SDK für Windows Phone und speichern
+# Versionshinweise für das Application Insights-SDK für Windows Phone und Store
+
+Das [Application Insights-SDK](app-insights-windows-get-started.md) sendet Telemetriedaten über Ihre Live-App an [Application Insights](http://azure.microsoft.com/services/application-insights/), wo Sie die Nutzung und Leistung analysieren können.
+
+
+#### So installieren Sie das SDK in Ihrer Anwendung
+
+Weitere Informationen finden Sie unter [Erste Schritte mit Application Insights für Windows Phone- und Windows Store-Apps](app-insights-windows-get-started.md).
+
+#### So aktualisieren Sie auf das neueste SDK 
+
+* Speichern Sie eine Kopie der Datei "ApplicationInsights.config", um Ihre Anpassungen beizubehalten.
+* Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie dann **NuGet-Pakete verwalten** aus.
+* Legen Sie einen Filter fest, um nur die installierten Pakete anzuzeigen. 
+* Wählen Sie die installierten Application Insights-Pakete und dann "Upgrade" aus.
+* Vergleichen Sie die alte und neue Version der Datei "ApplicationInsights.config". Übernehmen Sie wieder alle Anpassungen, die Sie an der alten Version vorgenommen haben.
+* Erstellen Sie die Projektmappe neu.
 
 
 ## Version 0.16 
@@ -34,4 +50,4 @@ Vorschau vom 28.04.2015
 
 Für ältere Versionen sind keine Versionshinweise verfügbar.
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

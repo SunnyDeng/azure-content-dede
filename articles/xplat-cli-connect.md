@@ -1,10 +1,10 @@
 <properties
-	pageTitle="Anmelden von der Azure-Befehlszeilenschnittstelle (Azure-CLI)"
+	pageTitle="Anmelden von der Azure-Befehlszeilenschnittstelle (Azure-CLI) | Microsoft Azure"
 	description="Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure-Befehlszeilenschnittstelle (Azure-CLI)"
 	editor="tysonn"
 	manager="timlt"
 	documentationCenter=""
-	authors="dsk-2015"
+	authors="dlepow"
 	services=""/>
 
 <tags
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/29/2015"
-	ms.author="dkshir"/>
+	ms.date="06/09/2015"
+	ms.author="danlep"/>
 
 # Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure-CLI)
 
-Die Azure-Befehlszeilenschnittstelle beinhaltet eine Reihe von plattformübergreifenden Open Source-Befehlen für die Arbeit mit der Azure-Plattform. Dieses Dokument beschreibt, wie Sie mit der plattformübergreifenden Befehlszeilenschnittstelle eine Verbindung mit Ihrem Azure-Abonnement herstellen. Installationsanweisungen finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
+Die Azure-Befehlszeilenschnittstelle beinhaltet eine Reihe von plattformübergreifenden Open Source-Befehlen für die Arbeit mit der Azure-Plattform. Dieses Dokument beschreibt, wie Sie mit der Azure-Befehlszeilenschnittstelle eine Verbindung mit Ihrem Azure-Abonnement herstellen. Installationsanweisungen finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
 
 <a id="configure"></a>
 ## Verbinden mit dem Azure-Abonnement
@@ -33,7 +33,7 @@ oder
 
 Weitere Informationen zur Authentifizierung und Abonnementverwaltung finden Sie unter ["Was ist der Unterschied zwischen kontobasierter Authentifizierung und zertifikatbasierter Authentifizierung"][authandsub].
 
-Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion][free-trial].
+Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion][free-trial].
 
 > [AZURE.NOTE]Die flexibelsten und fortschrittlichsten Azure Services nutzen den Azure-Ressourcen-Manager oder den [ARM-Modus](xplat-cli-azure-resource-manager.md). Der ARM-Modus erfordert eine Verbindung mit Azure, die unter Verwendung eines Geschäfts- oder Schulkontos und dem unten beschriebenen Anmeldeverfahren hergestellt wurde.
 
@@ -91,7 +91,7 @@ Importieren Sie anschließend die `.publishsettings`-Datei, indem Sie den folgen
 
 	azure account import <path to your .publishsettings file>
 
-Nach dem Importieren der Veröffentlichungseinstellungen, sollten Sie die `.publishsettings`-Datei löschen, da sie nicht mehr für die Befehlszeilentools benötigt wird und ein Sicherheitsrisiko darstellt, weil sie für den Zugriff auf Ihr Abonnement verwendet werden kann.
+Nach dem Importieren der Veröffentlichungseinstellungen, sollten Sie die Datei `.publishsettings` löschen, denn diese wird nicht mehr für die Azure-CLI benötigt und stellt ein Sicherheitsrisiko dar, da sie für den Zugriff auf Ihr Abonnement verwendet werden kann.
 
 > [AZURE.NOTE]Wenn Sie sich mit einem Geschäfts- oder Schulkonto anmelden oder Veröffentlichungseinstellungen importieren, werden die Daten für den Zugriff auf Ihr Azure-Abonnement in einem `.azure`-Verzeichnis in Ihrem `user`-Verzeichnis gespeichert. Ihr `user`-Verzeichnis wird durch das Betriebssystem geschützt; es wird jedoch empfohlen, zusätzliche Schritte zum Verschlüsseln Ihres `user`-Verzeichnisses auszuführen. Sie haben dazu folgende Möglichkeiten:
 >
@@ -101,7 +101,7 @@ Nach dem Importieren der Veröffentlichungseinstellungen, sollten Sie die `.publ
 
 ### Mehrere Abonnements
 
-Wenn Sie mehrere Azure-Abonnements besitzen, erhalten Sie durch das Herstellen einer Verbindung mit Azure Zugriff auf alle Abonnements, die mit Ihren Anmeldeinformationen verknüpft sind. Ein Abonnement wird als Standardabonnement ausgewählt und von der plattformübergreifenden Befehlszeilenschnittstelle zum Ausführen von Vorgängen verwendet. Mit dem Befehl `azure account list` können Sie die Abonnements anzeigen und herausfinden, welches Abonnement das Standardabonnement ist. Die Ausgabe dieses Befehls sieht etwa so aus:
+Wenn Sie mehrere Azure-Abonnements besitzen, erhalten Sie durch das Herstellen einer Verbindung mit Azure Zugriff auf alle Abonnements, die mit Ihren Anmeldeinformationen verknüpft sind. Ein Abonnement wird als Standardabonnement ausgewählt und von der Azure-CLI zum Ausführen von Vorgängen verwendet. Mit dem Befehl `azure account list` können Sie die Abonnements anzeigen und herausfinden, welches Abonnement das Standardabonnement ist. Die Ausgabe dieses Befehls sieht etwa so aus:
 
 	info:    Executing command account list
 	data:    Name              Id                                    Current
@@ -124,9 +124,9 @@ Nachdem Sie mit Ihrem Azure-Abonnement verbunden sind, können Sie beginnen, die
 <a id="additional-resources"></a>
 ## Zusätzliche Ressourcen
 
-* [Verwenden der Azure-Befehlszeilenschnittstelle mit Dienstverwaltungsbefehlen (oder ASM-Modus)][xplatasm]
+* [Verwenden der Azure-Befehlszeilenschnittstelle mit Dienstverwaltungsbefehlen (oder ASM-Modus)][cliasm]
 
-* [Verwenden der Azure-Befehlszeilenschnittstelle mit Ressourcenverwaltungsbefehlen (oder ARM-Modus)][xplatarm]
+* [Verwenden der Azure-Befehlszeilenschnittstelle mit Ressourcenverwaltungsbefehlen (oder ARM-Modus)][cliarm]
 
 * Wenn Sie weitere Informationen zur Azure-Befehlszeilenschnittstelle erhalten, Quellcode herunterladen, Probleme melden oder etwas zum Projekt beitragen möchten, dann besuchen Sie die Webseite [GitHub repository for the Azure CLI](https://github.com/azure/azure-xplat-cli).
 
@@ -142,7 +142,7 @@ Nachdem Sie mit Ihrem Azure-Abonnement verbunden sind, können Sie beginnen, die
 [free-trial]: http://azure.microsoft.com/pricing/free-trial/
 [portal]: https://manage.windowsazure.com
 [signuporg]: http://azure.microsoft.com/documentation/articles/sign-up-organization/
-[xplatasm]: virtual-machines-command-line-tools.md
-[xplatarm]: xplat-cli-azure-resource-manager.md
+[cliasm]: virtual-machines-command-line-tools.md
+[cliarm]: xplat-cli-azure-resource-manager.md
 
-<!---HONumber=58-->
+<!---HONumber=58_postMigration-->

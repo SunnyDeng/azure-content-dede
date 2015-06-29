@@ -1,27 +1,27 @@
-<properties 
-    pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher | Microsoft Azure" 
-    description="Erfahren Sie, wie Sie die plattformübergreifende Azure-Befehlszeilenschnittstelle (Azure CLI) mit Azure-Speicher verwenden, um Speicherkonten zu erstellen und zu verwalten sowie mit Azure-Blobs und -Dateien zu arbeiten." 
-    services="storage" 
-    documentationCenter="na" 
-    authors="tamram" 
+<properties
+    pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher | Microsoft Azure"
+    description="Erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle (Azure-CLI) mit Azure Storage verwenden, um Speicherkonten zu erstellen und zu verwalten sowie mit Azure-Blobs und -Dateien zu arbeiten."
+    services="storage"
+    documentationCenter="na"
+    authors="tamram"
     manager="jdial"/>
 
-<tags 
-    ms.service="storage" 
-    ms.workload="storage" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
+<tags
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
     ms.topic="article" 
-    ms.date="05/27/2015" 
+    ms.date="05/27/2015"
     ms.author="chungli;jiyang;yaxia;tamram"/>
 
-# Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher 
+# Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher
 
 ## Übersicht
 
 Die Azure-Befehlszeilenschnittstelle stellt eine Reihe von plattformübergreifenden Open Source-Befehlen für die Arbeit mit der Azure-Plattform bereit. Sie bietet im Wesentlichen die gleiche Funktionalität wie das Azure-Verwaltungsportal sowie umfangreiche Datenzugriffsfunktionalität.
 
-Diese Anleitung enthält Informationen zur Verwendung der [plattformübergreifenden Azure-Befehlszeilenschnittstelle (Azure CLI)](../xplat-cli.md) zum Ausführen einer Vielzahl von Entwicklungs- und Verwaltungsaufgaben mit Azure-Speicher. Sie sollten die neueste Azure-Befehlszeilenschnittstelle herunterladen und installieren bzw. ein Upgrade durchführen, bevor Sie diese Anleitung verwenden.
+Diese Anleitung enthält Informationen zur Verwendung der [Azure-Befehlszeilenschnittstelle (Azure-CLI)](../xplat-cli.md) zum Ausführen einer Vielzahl von Entwicklungs- und Verwaltungsaufgaben mit Azure Storage. Sie sollten die neueste Azure-Befehlszeilenschnittstelle herunterladen und installieren bzw. ein Upgrade durchführen, bevor Sie diese Anleitung verwenden.
 
 Diese Anleitung setzt voraus, dass Sie die grundlegenden Konzepte von Azure-Speicher verstehen. Die Anleitung bietet eine Reihe von Skripts, um die Verwendung der Azure-Befehlszeilenschnittstelle mit Azure-Speicher zu veranschaulichen. Sie müssen die Skriptvariablen auf Basis Ihrer Konfiguration aktualisieren, bevor Sie die jeweiligen Skripts ausführen.
 
@@ -55,33 +55,33 @@ Weitere Informationen zu Azure-Abonnements finden Sie unter [Verwalten von Konte
 		export blob_name=<blob_name>
 		export image_to_upload=<image_to_upload>
 		export destination_folder=<destination_folder>
-			   
-		echo "Creating the container..."       
+
+		echo "Creating the container..."
 		azure storage container create $container_name
 
-		echo "Uploading the image..."       
+		echo "Uploading the image..."
 		azure storage blob upload $image_to_upload $container_name $blob_name
 
-		echo "Listing the blobs..."       
+		echo "Listing the blobs..."
 		azure storage blob list $container_name
 
-		echo "Downloading the image..."       
+		echo "Downloading the image..."
 		azure storage blob download $container_name $blob_name $destination_folder
 
 		echo "Done"
-     
+
 5. Öffnen Sie auf Ihrem lokalen Computer Ihren bevorzugten Texteditor (z. B. Vim). Geben Sie das obige Skript in den Texteditor ein.
 
 6. Nun müssen Sie die Skriptvariablen auf Basis der Konfigurationseinstellungen aktualisieren.
-    
+
     - **<storage_account_name>** Verwenden Sie den im Skript angegebenen Namen, oder geben Sie einen neuen Namen für Ihr Speicherkonto ein. **Wichtig:** Der Name des Speicherkontos muss in Azure eindeutig sein. Er darf außerdem nur aus Kleinbuchstaben bestehen!
 
     - **<storage_account_key>** Der Zugriffsschlüssel für Ihr Speicherkonto.
-      
+
     - **<container_name>** Verwenden Sie den im Skript angegebenen Namen, oder geben Sie einen neuen Namen für Ihren Container ein.
-    
+
     - **<image_to_upload>** Geben Sie einen Pfad zu einem Bild auf dem lokalen Computer ein. Zum Beispiel: "~/images/HelloWorld.png".
-    
+
     - **<destination_folder>** Geben Sie einen Pfad zu einem lokalen Verzeichnis zum Speichern von Dateien ein, die aus dem Azure-Speicher heruntergeladen werden. Zum Beispiel: " ~/downloadImages".
 
 7. Nachdem Sie die erforderlichen Variablen in Vim aktualisiert haben, drücken Sie die Tastenkombinationen "Esc, : , wq!", um das Skript zu speichern.
@@ -104,7 +104,7 @@ Für die Verwendung von Azure-Speicher benötigen Sie ein Speicherkonto. Nachdem
 
 Der Name Ihres Speicherkontos muss zwischen 3 und 24 Zeichen lang sein und darf nur Zahlen und Kleinbuchstaben enthalten.
 
-### Festlegen eines Azure-Standardspeicherkontos in Umgebungsvariablen 
+### Festlegen eines Azure-Standardspeicherkontos in Umgebungsvariablen
 
 Sie können mehrere Speicherkonten in Ihrem Abonnement verwenden. Sie können ein Speicherkonto auswählen und es in den Umgebungsvariablen als Standardspeicherkonto für alle Speicherbefehle in einer Sitzung festlegen. Dadurch können Sie die Speicherbefehle der Azure-Befehlszeilenschnittstelle ohne explizite Angabe des Speicherkontos und des Speicherschlüssels ausführen.
 
@@ -112,7 +112,7 @@ Sie können mehrere Speicherkonten in Ihrem Abonnement verwenden. Sie können ei
         export AZURE_STORAGE_ACCESS_KEY=<key>
 
 Eine weitere Möglichkeit zum Festlegen eines Standardspeicherkontos ist die Verwendung einer Verbindungszeichenfolge. Rufen Sie zuerst die Verbindungszeichenfolge per Befehl ab:
-        
+
         azure storage account connectionstring show <account_name>
 
 Kopieren Sie dann die Ausgabeverbindungszeichenfolge und legen Sie sie auf die Umgebungsvariable fest:
@@ -121,7 +121,7 @@ Kopieren Sie dann die Ausgabeverbindungszeichenfolge und legen Sie sie auf die U
 
 ## Erstellen und Verwalten von Blobs
 
-Der Azure-Blob-Speicher ist ein Dienst zur Speicherung großer Mengen unstrukturierter Daten, beispielsweise Text- oder Binärdaten, auf die von überall auf der Welt über HTTP oder HTTPS zugegriffen werden kann. Dieser Abschnitt setzt voraus, dass Sie mit den Konzepten des Azure-Blob-Speichers bereits vertraut sind. Ausführliche Informationen finden Sie unter [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md) und [Blob-Dienst-Konzepte](http://msdn.microsoft.com/library/azure/dd179376.aspx).
+Der Azure-Blob-Speicher ist ein Dienst zur Speicherung großer Mengen unstrukturierter Daten, beispielsweise Text- oder Binärdaten, auf die von überall auf der Welt über HTTP oder HTTPS zugegriffen werden kann. Dieser Abschnitt setzt voraus, dass Sie mit den Konzepten des Azure-Blob-Speichers bereits vertraut sind. Weitere Informationen finden Sie unter [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md) und [Blob-Dienst-Konzepte](http://msdn.microsoft.com/library/azure/dd179376.aspx).
 
 ### Erstellen eines Containers
 
@@ -142,7 +142,7 @@ Um Blobs in einen Container hochzuladen, können Sie den Befehl `azure storage b
 ### Herunterladen von Blobs aus einem Container
 
 Im folgenden Beispiel wird veranschaulicht, wie Blobs aus einem Container heruntergeladen werden.
-    
+
         azure storage blob download mycontainer myBlockBlob '~/downloadImages/downloaded.png'
 
 ### Kopieren von Blobs
@@ -152,9 +152,9 @@ Sie können Blobs innerhalb oder zwischen Speicherkonten und Regionen asynchron 
 Im folgenden Beispiel wird veranschaulicht, wie Sie Blobs von einem Speicherkonto in ein anderes kopieren. In diesem Beispiel erstellen wir einen Container, in dem Blobs öffentlich sind und anonym darauf zugegriffen werden kann.
 
     azure storage container create mycontainer2 -a <accountName2> -k <accountKey2> -p Blob
-    
+
     azure storage blob upload '~/Images/HelloWorld.png' mycontainer2 myBlockBlob2 -a <accountName2> -k <accountKey2>
-    
+
     azure storage blob copy start 'https://<accountname2>.blob.core.windows.net/mycontainer2/myBlockBlob2' mycontainer
 
 In diesem Beispiel wird ein asynchroner Kopiervorgang ausgeführt. Sie können den Status jedes Kopiervorgangs überwachen, indem Sie den Vorgang `azure storage blob copy show` ausführen.
@@ -178,7 +178,7 @@ Der Azure-Dateispeicher bietet einen gemeinsam genutzten Speicher für Anwendung
 Eine Azure-Dateifreigabe ist eine SMB 2.1-Dateifreigabe in Azure. Alle Verzeichnisse und Dateien müssen in einer Dateifreigabe erstellt werden. Ein Konto kann eine unbegrenzte Anzahl von Freigaben enthalten, und eine Freigabe kann eine unbegrenzte Anzahl von Dateien speichern, bis die Kapazitätsgrenze des Speicherkontos erreicht ist. Im folgenden Beispiel wird eine Dateifreigabe namens **myshare** erstellt.
 
         azure storage share create myshare
-        
+
 ### Erstellen eines Verzeichnisses
 
 Ein Verzeichnis enthält eine optionale hierarchische Struktur für eine Azure-Dateifreigabe. Im folgenden Beispiel wird ein Verzeichnis namens **myDir** in der Dateifreigabe erstellt.
@@ -186,7 +186,7 @@ Ein Verzeichnis enthält eine optionale hierarchische Struktur für eine Azure-D
         azure storage directory create myshare myDir
 
 Beachten Sie, dass dieser Verzeichnispfad mehrere Ebenen enthalten kann, *z.B.*, **a/b**. Allerdings müssen Sie sicherstellen, dass alle übergeordneten Verzeichnisse vorhanden ist. Zum Beispiel müssen Sie für Pfad **a/b**, zuerst Verzeichnis **a** erstellen und anschließend Verzeichnis **b**.
-        
+
 ### Hochladen einer lokalen Datei in das Verzeichnis
 
 Im folgenden Beispiel wird eine Datei aus **~/temp/samplefile.txt** in das Verzeichnis **myDir** hochgeladen. Bearbeiten Sie den Dateipfad so, dass er auf eine gültige Datei auf Ihrem lokalen Computer verweist:
@@ -202,7 +202,7 @@ Sie können Sie die Dateien und Unterverzeichnisse in einem Freigabestamm oder e
         azure storage file list myshare myDir
 
 Beachten Sie, dass der Name des Verzeichnisses für den Auflistungsvorgang optional ist. Wenn kein Namen angegeben wird, listet der Befehl den Inhalt des Stammverzeichnisses der Freigabe auf.
-        
+
 ## Nächste Schritte
 
 In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen zum Azure-Speicher.
@@ -212,5 +212,6 @@ In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen zum Az
 
 
 [Image1]: ./media/storage-azure-cli/azure_command.png
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

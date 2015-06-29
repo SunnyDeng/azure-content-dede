@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Ausführen von Runbooks in Azure Automation"
    description="Beschreibt ausführlich, wie ein Runbook in Azure Automation verarbeitet wird."
    services="automation"
@@ -6,10 +6,10 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags 
+<tags
    ms.service="automation"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="04/28/2015"
@@ -37,11 +37,12 @@ Wenn das Runbook vom gleichen Prüfpunkt aus oder vom Anfang des Runbooks drei a
 
 Die Ausführung des Auftrags kann nicht fortgesetzt werden, da er wiederholt am selben Prüfpunkt entfernt wurde. Stellen Sie sicher, dass Ihr Runbook Vorgänge mit langer Ausführungsdauer nicht ausführt, ohne deren Zustand dauerhaft zu speichern.
 
-Sorgen Sie beim Erstellen eines Runbooks dafür, dass die Zeit zum Ausführen von Aktivitäten zwischen zwei Prüfpunkten 3 Stunden nicht überschreitet. Sie müssen ggf. Prüfpunkte zu Ihrem Runbook hinzufügen, um sicherzustellen, dass dieser Grenzwert von 3 Stunden nicht erreicht wird. Falls erforderlich, müssen Sie Vorgänge mit langer Ausführungszeit aufteilen. Angenommen, Ihr Runbook führt eine Neuindizierung für eine große SQL-Datenbank durch. Wenn dieser einzelne Vorgang nicht innerhalb des Grenzwerts für die gleichmäßige Verteilung abgeschlossen wird, wird der Auftrag entladen und vom Anfang neu gestartet.  In diesem Fall sollten Sie den Neuindizierungsvorgang in mehrere Schritte unterteilen (z. B. nur jeweils eine Tabelle gleichzeitig neu indizieren) und dann einen Prüfpunkt nach jedem Vorgang einfügen, damit der Auftrag nach dem letzten Vorgang bis zum Abschluss fortgesetzt werden kann.
+Sorgen Sie beim Erstellen eines Runbooks dafür, dass die Zeit zum Ausführen von Aktivitäten zwischen zwei Prüfpunkten 3 Stunden nicht überschreitet. Sie müssen ggf. Prüfpunkte zu Ihrem Runbook hinzufügen, um sicherzustellen, dass dieser Grenzwert von 3 Stunden nicht erreicht wird. Falls erforderlich, müssen Sie Vorgänge mit langer Ausführungszeit aufteilen. Angenommen, Ihr Runbook führt eine Neuindizierung für eine große SQL-Datenbank durch. Wenn dieser einzelne Vorgang nicht innerhalb des Grenzwerts für die gleichmäßige Verteilung abgeschlossen wird, wird der Auftrag entladen und vom Anfang neu gestartet. In diesem Fall sollten Sie den Neuindizierungsvorgang in mehrere Schritte unterteilen (z. B. nur jeweils eine Tabelle gleichzeitig neu indizieren) und dann einen Prüfpunkt nach jedem Vorgang einfügen, damit der Auftrag nach dem letzten Vorgang bis zum Abschluss fortgesetzt werden kann.
 
 ## Verwandte Artikel
 
 - [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook)
 - [Anzeigen des Status eines Runbookauftrags in Azure Automation](automation-viewing-the-status-of-a-runbook-job)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

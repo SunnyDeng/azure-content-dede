@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen eines Machine Learning-Arbeitsbereichs | Azure" 
+	pageTitle="Erstellen eines Machine Learning-Arbeitsbereichs | Microsoft Azure" 
 	description="Erstellen eines Arbeitsbereichs für Azure Machine Learning Studio" 
 	services="machine-learning" 
 	documentationCenter="" 
@@ -13,37 +13,54 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/06/2014" 
+	ms.date="04/07/2015" 
 	ms.author="garye"/>
 
 
 # Erstellen eines Azure Machine Learning-Arbeitsbereichs 
-Ein Azure Machine Learning-Arbeitsbereich (ML-Arbeitsbereich) enthält die Werkzeuge zum Verwalten und Veröffentlichen von Experimenten. Weitere Informationen zu Machine Learning-Arbeitsbereichen finden Sie unter dem Link.
-## Erstellen eines Arbeitsbereichs ##
+
+Um Azure Machine Learning Studio verwenden zu können, benötigen Sie einen Machine Learning-Arbeitsbereich. Dieser Arbeitsbereich enthält die Tools, die zum Erstellen, Verwalten und Veröffentlichen von Experimenten erforderlich sind.
+
+[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
+
+## Erstellen eines Arbeitsbereichs
+
 1. Melden Sie sich mit Ihrem Microsoft Azure-Konto an.
 2. Klicken Sie im Microsoft Azure-Dienstbereich auf **MACHINE LEARNING**.
 
-![][1]
- 
+    ![Machine Learning-Dienst][1]
 
-1. Klicken Sie auf **CREATE AN ML WORKSPACE**.
-2. Gehen Sie auf der Seite **QUICK CREATE** folgendermaßen vor:
-	1. Geben Sie die Daten für Ihren Arbeitsbereich ein.    
-	> [AZURE.NOTE] Der **WORKSPACE OWNER** ist Ihr Microsoft-Kontoname (name@outlook.com) bzw. Ihr Organisations-Kontoname.
-	2. Klicken Sie auf **CREATE AN ML WORKSPACE**.
-3. Nach der Erstellung wird ihr Machine Learning-Arbeitsbereich auf der Seite **Machine Learning** angezeigt.
+3. Klicken Sie im unteren Seitenbereich auf **+NEU**.
+4. Klicken Sie auf **DATA SERVICES**, dann **COMPUTERLERNEN**, dann **SCHNELLERFASSUNG**.
+
+	![Schnellerfassung eines neuen Arbeitsbereichs][3]
+
+5. Geben Sie im Feld **ARBEITSBEREICHSNAME** für den Arbeitsbereich einen Namen ein, und legen Sie den **WORKSPACE OWNER** fest. Der Besitzer des Arbeitsbereichs muss einem gültigen Microsoft-Konto entsprechen (z. B. name@outlook.com).
+
+    > [AZURE.NOTE]Später können Sie die Experimente, an denen Sie arbeiten, mit anderen teilen, indem Sie andere Personen zum Arbeitsbereich einladen. Dies können Sie in Machine Learning Studio auf der Seite **EINSTELLUNGEN** vornehmen. Sie benötigen nur das Microsoft-Konto oder Organisationskonto des betreffenden Benutzers.
+
+6. Geben Sie den Azure-**SPEICHERORT** ein und geben Sie dann ein vorhandenes Azure-**SPEICHERKONTO** an, oder wählen Sie **Neues Speicherkonto erstellen** aus, um ein neues zu erstellen.
+7. Klicken Sie auf **ML-ARBEITSBEREICH ERSTELLEN**.
+
+Nach dem Erstellen Ihres Machine Learning-Arbeitsbereichs wird dieser auf der Seite **Machine Learning** angezeigt.
+
+Informationen zum Verwalten des Arbeitsbereichs finden Sie unter [Verwalten eines Azure Machine Learning-Arbeitsbereichs]. Sollte ein Problem beim Erstellen des Arbeitsbereichs auftreten, finden Sie weitere Informationen unter [Handbuch zur Problembehandlung: Erstellen und Verbinden eines Machine Learning-Arbeitsbereichs].
+
+[Verwalten eines Azure Machine Learning-Arbeitsbereichs]: machine-learning-manage-workspace.md
+[Handbuch zur Problembehandlung: Erstellen und Verbinden eines Machine Learning-Arbeitsbereichs]: machine-learning-troubleshooting-creating-ml-workspace.md
  
-![][2]
+<!-- ![List of Machine Learning workspaces][2] -->
 
 <!--Anchors-->
-[Erstellen eines Arbeitsbereichs]: #createworkspace
+[To create a workspace]: #createworkspace
 
 <!--Image references-->
-[1]: ./media/machine-learning-create-workspace/cw1.png
-[2]: ./media/machine-learning-create-workspace/cw2.png
+[1]: media/machine-learning-create-workspace/cw1.png
+[2]: media/machine-learning-create-workspace/cw2.png
+[3]: media/machine-learning-create-workspace/cw3.png
 
 
 
 <!--Link references-->
 
-<!--HONumber=49--> 
+<!---HONumber=58_postMigration-->

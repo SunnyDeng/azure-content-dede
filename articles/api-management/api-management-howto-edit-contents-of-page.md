@@ -35,4 +35,4 @@ Klicken Sie auf die Willkommensseite, um den Inhalt zu bearbeiten, der auf der S
 
 [api-management-howto-edit-contents-of-page-manage-content]: ./media/api-management-howto-edit-contents-of-page/api-management-customization-manage-content.png
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

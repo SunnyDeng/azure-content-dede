@@ -42,7 +42,7 @@ Von hier aus können Sie auf jedes einzelne Tag zum Anzeigen einer Liste aller R
 
 ## Markieren mit PowerShell
 
-Holen Sie sich zunächst das aktuelle [Azure PowerShell-Modul](./install-configure-powershell.md). Wenn Sie das Azure PowerShell-Modul zum ersten Mal verwenden, [lesen Sie die Dokumentation](./install-configure-powershell.md), um einen schnelleren Einstieg zu finden. Für die Zwecke dieses Artikels gehen wir davon aus, dass Sie bereits ein Konto hinzugefügt und ein Abonnement mit den Ressourcen, die Sie markieren möchten, ausgewählt haben.
+Holen Sie sich zunächst das aktuelle [Azure PowerShell-Modul](./install-configure-powershell.md). Wenn Sie das Azure PowerShell-Modul zum ersten Mal verwenden, [lesen Sie die Dokumentation](./install-configure-powershell.md), um einen schnelleren Einstieg zu finden. Für diesen Artikel wird davon ausgegangen, dass Sie bereits ein Konto hinzugefügt und ein Abonnement mit den zu markierenden Ressourcen ausgewählt haben.
 
 Markierungen sind nur für Ressourcen und Ressourcengruppen verfügbar, die im [Ressourcen-Manager](http://msdn.microsoft.com/library/azure/dn790568.aspx) verfügbar sind, daher müssen Sie zunächst zur Verwendung des Ressourcen-Managers wechseln. Weitere Informationen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](powershell-azure-resource-manager.md).
 
@@ -56,7 +56,7 @@ Dieses Cmdlet gibt mehrere Teile der Metadaten für die Ressourcengruppe zurück
 
 ![Festlegen von Markierungen mit Set-AzureResourceGroup in PowerShell](./media/resource-group-using-tags/Set-AzureResourceGroup-in-PowerShell.png)
 
-Denken Sie daran, dass die Tags als Ganzes aktualisiert werden. Wenn Sie ein Tag zu einer Ressource hinzufügen, die bereits markiert wurde, müssen Sie zum Speichern ein Array mit allen Tags verwenden, die Sie beibehalten möchten. Um eines zu entfernen, speichern Sie einfach das Array ohne dasjenige, das Sie entfernen möchten.
+Denken Sie daran, dass die Tags als Ganzes aktualisiert werden. Wenn Sie einer Ressource, die bereits markiert wurde, ein Tag hinzufügen, müssen Sie zum Speichern ein Array mit allen Tags verwenden, die Sie beibehalten möchten. Um eines zu entfernen, speichern Sie einfach das Array ohne dasjenige, das Sie entfernen möchten.
 
 Der Prozess ist für Ressourcen der gleiche, Sie verwenden jedoch die Cmdlets `Get-AzureResource` und `Set-AzureResource`. Um Ressourcen oder Ressourcengruppen mit einer bestimmten Markierung abzurufen, verwenden Sie die Cmdlets `Get-AzureResource` oder `Get-AzureResourceGroup` mit dem `-Tag`-Parameter.
 
@@ -112,4 +112,4 @@ Zugriffsverwaltung und -überwachung
 - [Erstellen neuer Azure-Dienstprinzipale mit dem Azure-Portal](./resource-group-create-service-principal-portal.md)  
   
 
-<!---HONumber=58-->
+<!---HONumber=58_postMigration-->

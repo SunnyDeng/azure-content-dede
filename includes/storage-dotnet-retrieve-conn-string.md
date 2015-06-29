@@ -1,18 +1,14 @@
-### Retrieving your connection string
-You can use the **CloudStorageAccount** type to represent 
-your Storage Account information. If you are using an 
-Azure project template and/or have a reference to the
-Microsoft.WindowsAzure.CloudConfigurationManager namespace, you 
-can use the **CloudConfigurationManager** type
-to retrieve your storage connection string and storage account
-information from the Azure service configuration:
+### Abrufen der Verbindungszeichenfolge
+Sie können Ihre Speicherkontoinformationen mit dem Typ **CloudStorageAccount** darstellen. Falls Sie eine Azure-Projektvorlage verwenden und/oder einen Verweis auf den Namespace "Microsoft.WindowsAzure.CloudConfigurationManager" haben, können Sie den Typ **CloudConfigurationManager** verwenden,um Ihre Speicherverbindungszeichenfolge und Speicherkontodaten aus der Azure-Dienstkonfiguration abzurufen:
 
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
         CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-If you are creating an application with no reference to Microsoft.WindowsAzure.CloudConfigurationManager, and your connection string is located in the `web.config` or `app.config` as show above, then you can use **ConfigurationManager** to retrieve the connection string.  You will need to add a reference to System.Configuration.dll to your project and add another namespace declaration for it:
+Wenn Sie eine Anwendung ohne einen Verweis auf "Microsoft.WindowsAzure.CloudConfigurationManager" erstellen und die Verbindungszeichenfolge sich (wie oben gezeigt) in `web.config` oder `app.config` befindet, können Sie die Verbindungszeichenfolge mit **ConfigurationManager** abrufen. Sie müssen einen Verweis auf "System.Configuration.dll" zu Ihrem Projekt und eine andere Namespace-Deklaration dafür hinzufügen:
 
 	using System.Configuration;
 	...
 	CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
 		ConfigurationManager.ConnectionStrings["StorageConnectionString"]);
+
+<!---HONumber=58_postMigration-->

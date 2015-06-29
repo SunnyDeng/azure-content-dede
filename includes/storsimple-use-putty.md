@@ -15,7 +15,7 @@
    ms.date="04/01/2015"
    ms.author="v-sharos" />
 
-###So stellen Sie über die serielle Konsole eine Verbindung her
+#### So stellen Sie über die serielle Konsole eine Verbindung her
 
 1. Schließen Sie das serielle Kabel (direkt oder über einen seriellen USB-Adapter) an das Gerät an.
 
@@ -38,10 +38,11 @@
 
     Diese Einstellungen werden in der folgenden Abbildung gezeigt.
 
-     ![PuTTY-Einstellungen](./media/storsimple-use-putty/HCS_ConnectingViaPutty-include.png)
+     ![PuTTY-Einstellungen](./media/storsimple-use-putty/HCS_PuttyConfig-include.png)
 
     > [AZURE.NOTE]Wenn die Standardeinstellungen für die Flusssteuerung nicht funktionieren, versuchen Sie, die Flusssteuerung auf "XON/XOFF" festzulegen.
 
 7. Klicken Sie auf **Öffnen**, um eine serielle Sitzung zu starten.
  
-<!--HONumber=52-->
+
+<!---HONumber=58_postMigration-->

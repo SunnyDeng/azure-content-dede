@@ -3,7 +3,7 @@
 	description="Erste Schritte mit Azure-Tabellenspeicher in einem Clouddienstprojekt in Visual Studio" 
 	services="storage" 
 	documentationCenter="" 
-	authors="kempb" 
+	authors="patshea123" 
 	manager="douge" 
 	editor="tglee"/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/20/2015" 
-	ms.author="kempb"/>
+	ms.author="patshea123"/>
 
 # Erste Schritte mit Azure Storage (Cloud Service-Projekte)
 
@@ -434,21 +434,26 @@ Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht h
 </li>
 </ul>
 
-[Download and install the Azure SDK for .NET]: /develop/net/
-[Creating an Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
-[Blob5]: ./media/storage-dotnet-how-to-use-table-storage/blob5.png
-[Blob6]: ./media/storage-dotnet-how-to-use-table-storage/blob6.png
-[Blob7]: ./media/storage-dotnet-how-to-use-table-storage/blob7.png
-[Blob8]: ./media/storage-dotnet-how-to-use-table-storage/blob8.png
-[Blob9]: ./media/storage-dotnet-how-to-use-table-storage/blob9.png
-[Blogbeitrag]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
-[.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
-[Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-[Configuring Connection Strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
-[OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
-[Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
-[Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
-[How to: Programmatically access Table Storage]: #tablestorage
+  [Download and install the Azure SDK for .NET]: /develop/net/
+  [Creating an Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
+  
+  [Blob5]: ./media/storage-dotnet-how-to-use-table-storage/blob5.png
+  [Blob6]: ./media/storage-dotnet-how-to-use-table-storage/blob6.png
+  [Blob7]: ./media/storage-dotnet-how-to-use-table-storage/blob7.png
+  [Blob8]: ./media/storage-dotnet-how-to-use-table-storage/blob8.png
+  [Blob9]: ./media/storage-dotnet-how-to-use-table-storage/blob9.png
+  
+  [Blogbeitrag]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
+  [.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
+  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+  [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Configuring Connection Strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
+  [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
+  [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
+  [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
+  [How to: Programmatically access Table Storage]: #tablestorage
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=58_postMigration-->

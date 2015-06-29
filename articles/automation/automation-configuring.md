@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Konfigurieren von Azure Automation"
    description="Beschreibt die Schritte, die Sie zum Konfigurieren von Azure Automation für die erste Verwendung ausführen müssen."
    services="automation"
@@ -6,10 +6,10 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags 
+<tags
    ms.service="automation"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="04/13/2015"
@@ -24,6 +24,11 @@ Dieser Artikel beschreibt die Aktionen, die Sie vor der Verwendung von Azure Aut
 Wenn Sie das erste Mal mit Azure Automation arbeiten, müssen Sie zunächst mindestens ein Automation-Konto erstellen. Mithilfe von Automation-Konten können Sie Ihre Automation-Ressourcen (Runbooks, Objekte) von den Automation-Ressourcen in anderen Automation-Konten isolieren. Sie können Automation-Konten dazu verwenden, Automation-Ressourcen in separate logische Umgebungen zu trennen. Beispielsweise können Sie ein Konto für die Entwicklung und ein anderes für die Produktion verwenden.
 
 Die Automation-Ressourcen für jedes Automation-Konto sind mit einer einzelnen Azure-Region verknüpft, die Automation-Konten können jedoch Azure-Dienste in beliebigen Regionen verwalten. Der Hauptgrund für das Erstellen von Automation-Konten in unterschiedlichen Regionen ist der, dass Richtlinien eine Isolierung von Daten und Ressourcen innerhalb einer spezifischen Region vorsehen.
+
+>[AZURE.NOTE]Auf Automation-Konten und die darin enthaltenen Ressourcen, die mit dem Azure-Vorschauportal erstellt werden, kann im Azure-Portal nicht zugegriffen werden. Wenn Sie diese Konten oder die enthaltenen Ressourcen mit Windows PowerShell verwalten möchten, müssen Sie die Azure-Ressourcen-Manager-Module verwenden.
+>
+>Mit dem Azure-Portal erstellte Automation-Konten können im Portal oder mit Cmdlets verwaltet werden. Nach dem Erstellen des Kontos macht es keinen Unterschied, wie Sie Ressourcen innerhalb des Kontos erstellen und verwalten. Wenn Sie planen, auch weiterhin das Azure-Portal zu verwenden, sollten Sie dieses anstelle des Azure-Vorschauportals für das Erstellen von Automation-Konten verwenden.
+
 
 Ein Automation-Konto kann angehalten werden, wenn ein Problem mit Ihrem Azure-Konto vorliegt, etwa eine überfällige Zahlung. In diesem Fall ist ein Zugriff auf das Konto nicht möglich, ausgeführte Aufträge werden angehalten, und alle geplanten Aufträge werden deaktiviert. Sie können das Konto anzeigen, innerhalb des Kontos werden jedoch keine Ressourcen angezeigt. Nachdem das Problem behoben wurde und das Automation-Konto wieder aktiv ist, müssen Sie Ihre Zeitpläne aktivieren und alle Runbooks neu starten, die angehalten wurden.
 
@@ -58,7 +63,8 @@ Sie können die Anmeldeinformationen in einem Runbook mithilfe der Aktivität [G
 
 Diese Zeilen sollten nach jedem [Prüfpunkt](automation-runbook-execution/#checkpoints) wiederholt werden. Wenn das Runbook angehalten und später von einem anderen Benutzer fortgesetzt wird, muss die Authentifizierung erneut durchgeführt werden.
 
-# Verwandte Artikel
-- [Azure Automation: Authentifizieren bei Azure mit Azure Active Directory](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/) 
+## Verwandte Artikel
+- [Azure Automation: Authentifizieren bei Azure mit Azure Active Directory](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

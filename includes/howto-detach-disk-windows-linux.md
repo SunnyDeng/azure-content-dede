@@ -1,50 +1,41 @@
-﻿<properties writer="kathydav" editor="tysonn" manager="timlt" />
+<properties writer="kathydav" editor="tysonn" manager="timlt" />
 
 
 
-#Trennen eines Datenträgers von einem virtuellen Computer 
+# Trennen eines Datenträgers von einem virtuellen Computer 
 
-- [Schritt 1: Suchen des Datenträgers](#finddisks)
-- [Schritt 2: Trennen des Datenträgers](#detachdisk)
+Wenn Sie einen Datenträger, der an einen virtuellen Computer angefügt ist, nicht mehr benötigen, können Sie ihn leicht trennen. Dadurch wird der Datenträger von dem virtuellen Computer entfernt, aber nicht aus dem Speicher. Wenn Sie die vorhandenen Daten erneut auf dem Datenträger verwenden möchten, können Sie ihn erneut an denselben virtuellen Computer oder an einen anderen anfügen.
 
-Wenn Sie einen Datenträger, der an einen virtuellen Computer angefügt ist, nicht mehr benötigen, können Sie ihn leicht trennen. Dadurch wird der Datenträger von dem virtuellen Computer entfernt, aber nicht aus dem Speicher. Wenn Sie die vorhandenen Daten erneut auf dem Datenträger verwenden möchten, können Sie ihn erneut an denselben virtuellen Computer oder an einen anderen anfügen.  
+> [AZURE.NOTE]Ein virtueller Computer in Azure verwendet verschiedene Arten von Datenträgern wie Betriebssystemfestplatten, lokale temporäre Festplatten und optionale Datenträger. Datenträger sind die empfohlene Möglichkeit zum Speichern von Daten für einen virtuellen Computer. Unter [Datenträger und Images verwalten](http://go.microsoft.com/fwlink/p/?LinkId=263439) finden Sie Details in Bezug auf Datenträger. Es ist nicht möglich, einen Betriebssystem-Datenträger zu trennen, es sei denn, Sie löschen auch den virtuellen Computer.
 
-> [AZURE.NOTE] Ein virtueller Computer in Azure verwendet verschiedene Arten von Datenträgern wie Betriebssystemfestplatten, lokale temporäre Festplatten und optionale Datenträger. Datenträger sind die empfohlene Möglichkeit zum Speichern von Daten für einen virtuellen Computer. Unter [Datenträger und Images verwalten][] finden Sie Details in Bezug auf Datenträger. Anweisungen zum Anfügen neuer Datenträger finden Sie unter [Anfügen eines Datenträgers an einen virtuellen Computer] [attachdisk].
+## Suchen des Datenträgers##
 
-## <a id="finddisks"> </a>Schritt 1: Suchen des Datenträgers##
+Wenn Sie den Namen des Datenträgers nicht kennen oder diesen vor dem Trennen überprüfen möchten, führen Sie die folgenden Schritte aus.
 
+> [AZURE.NOTE]Azure weist dem Datenträger automatisch einen Namen zu, wenn Sie ihn anfügen. Der Name besteht aus dem Namen des Clouddiensts, dem Namen des virtuellen Computers und einer Zahl.
 
-Wenn Sie den Namen des Datenträgers nicht kennen oder diesen vor dem Trennen überprüfen möchten, führen Sie die folgenden Schritte aus. 
+1. Melden Sie sich auf dem [Azure-Verwaltungsportal ](http://manage.windowsazure.com) an, falls Sie dies noch nicht getan haben. 
 
-> [AZURE.NOTE] Azure weist dem Datenträger automatisch einen Namen zu, wenn Sie ihn anfügen. Der Name besteht aus dem Namen des Cloud-Diensts, dem Namen des virtuellen Computers und einer Zahl.
-
-1. Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) an, falls noch nicht geschehen. 
-
-2. Klicken Sie auf **Virtuelle Computer**, klicken Sie auf den Namen des virtuellen Computers, und klicken Sie dann auf **Dashboard**.
+2. Klicken Sie auf **Virtuelle Computer**, auf den Namen des virtuellen Computers und dann auf **Dashboard**.
 
 3. Unter **Datenträger** werden in der Tabelle die Namen und Typen sämtlicher angefügter Datenträger aufgeführt. Beispielsweise zeigt dieser Bildschirm einen virtuellen Computer mit einer Betriebssystemfestplatte und einem Datenträger:
 		
-	![Find data disk](./media/howto-detach-disk-windows-linux/FindDataDisks.png)	
+	![Datenträger suchen](./media/howto-detach-disk-windows-linux/FindDataDisks.png)
 
 
-## <a id="detachdisk"> </a>Schritt 2: Trennen des Datenträgers##
+## Trennen des Datenträgers##
 
 Nachdem Sie den Namen des Datenträgers gefunden haben, sind Sie bereit, den Datenträger zu trennen:
 
-1. Klicken Sie auf **Virtuelle Computer**, wählen Sie den Namen des virtuellen Computer mit dem Datenträger, den Sie trennen möchten, und klicken Sie anschließend auf **Dashboard**.
+1. Klicken Sie auf **Virtuelle Computer**, wählen Sie den Namen des virtuellen Computer mit dem Datenträger, den Sie trennen möchten. Klicken Sie anschließend auf **Dashboard**.
 2. Klicken Sie auf der Befehlsleiste auf **Trennen des Datenträgers**.
 
 3. Wählen Sie den Datenträger aus, und aktivieren Sie das Kontrollkästchen, um ihn zu trennen.
 
-
-	![Detach disk details](./media/howto-detach-disk-windows-linux/DetachDiskDetails.png)
+	![Details zum Trennen des Datenträgers](./media/howto-detach-disk-windows-linux/DetachDiskDetails.png)
 
 Der Datenträger verbleibt im Speicher, ist jedoch nicht mehr an einen virtuellen Computer angefügt.
 
+ 
 
-
-[attachdisk]:/de-de/manage/windows/how-to-guides/attach-a-disk/
-
-[Informationen zu Datenträgern und Images]:http://go.microsoft.com/fwlink/p/?LinkId=263439
-
-<!--HONumber=45--> 
+<!---HONumber=58_postMigration-->

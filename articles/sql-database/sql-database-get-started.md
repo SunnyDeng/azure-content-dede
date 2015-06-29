@@ -10,10 +10,10 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management" 
+	ms.workload="data-management"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="hero-article"
 	ms.date="04/14/2015"
 	ms.author="genemi"/>
 
@@ -109,5 +109,6 @@ Sie können nun ein kleines Clientprogramm schreiben, das eine Verbindung mit de
 [2]: ./media/sql-database-get-started/GettingStarted_CreateServer.png
 [3]: ./media/sql-database-get-started/GettingStarted_BrowseServer.png
 [4]: ./media/sql-database-get-started/GettingStarted_FireWall.png
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/22/2015" 
+	ms.date="06/11/2015" 
 	ms.author="josephd"/>
 
 # Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern
@@ -55,14 +55,14 @@ Hier finden Sie einige Beispiele für ImageFamily-Werte für Linux-basierte Comp
 - CoreOS Alpha
 - SUSE Linux Enterprise Server 12
 
-Öffnen Sie eine neue Instanz des Texteditors Ihrer Wahl (oder eine Instanz von PowerShell Integrated Scripting Environment [ISE]), und kopieren Sie Folgendes in die neue Textdatei (Ersetzen Sie dabei den ImageFamily-Wert.)
+Öffnen Sie eine neue Instanz des Texteditors Ihrer Wahl oder der PowerShell Integrated Scripting Environment (ISE). Kopieren Sie den folgenden Code in die neue Textdatei oder PowerShell ISE, wobei Sie den Wert von "ImageFamily" ersetzen.
  
 	$family="<ImageFamily value>"
 	$image=Get-AzureVMImage | where { $_.ImageFamily -eq $family } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 
 ## Schritt 4: Erstellen des Befehlssatzes
 
-Erstellen Sie den Rest des Befehlssatzes, indem Sie den entsprechenden Satz an Blöcken unten in Ihre neue Textdatei kopieren und dann die Variablenwerte eingeben und die Zeichen < and > entfernen. Anhand der beiden [Beispiele](#examples) am Ende dieses Artikels erhalten Sie eine Idee des Endergebnisses.
+Erstellen Sie den Rest des Befehlssatzes, indem Sie den entsprechenden Satz an Blöcken unten in Ihre neue Textdatei oder PowerShell ISE kopieren und dann die Variablenwerte eingeben und die Zeichen < and > entfernen. Anhand der beiden [Beispiele](#examples) am Ende dieses Artikels erhalten Sie eine Idee des Endergebnisses.
 
 Starten Sie den Befehlssatz, indem Sie einen dieser beiden Befehlssätze auswählen (erforderlich).
 
@@ -85,8 +85,6 @@ Geben Sie den anfänglichen Linux-Benutzernamen und das Kennwort an (erforderlic
 
 	$cred=Get-Credential -Message "Type the name and password of the initial Linux account."	
 	$vm1 | Add-AzureProvisioningConfig -Linux -LinuxUser $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
-
-Wenn Sie den resultierenden Befehlssatz als Datei speichern, speichern Sie ihn an einem sicheren Ort zum Schutz des Kontonamens und -kennworts.
 
 Geben Sie optional einen Satz von SSH-Schlüsselpaaren an, die bereits im Abonnement bereitgestellt wurden.
 
@@ -148,15 +146,17 @@ Option 2: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddiens
 
 ## Schritt 5: Ausführen des Befehlssatzes
 
-Überprüfen Sie den Azure PowerShell-Befehl in einem Texteditor, bestehend aus mehreren Blöcken von Befehlen aus Schritt 4. Stellen Sie sicher, dass Sie alle erforderlichen Variablen angegeben haben und diese die richtigen Werte aufweisen. Stellen Sie außerdem sicher, dass Sie alle < and > entfernt haben.
+Überprüfen Sie den aus mehreren Blöcken von Befehlen aus Schritt 4 bestehenden Azure PowerShell-Befehlssatz in einem Texteditor oder der PowerShell ISE. Stellen Sie sicher, dass Sie alle erforderlichen Variablen angegeben haben und diese die richtigen Werte aufweisen. Stellen Sie außerdem sicher, dass Sie alle < and > entfernt haben.
 
-Kopieren Sie den Befehlssatz in die Zwischenablage, und klicken Sie dann mit der rechten Maustaste auf Ihre offene Azure PowerShell-Eingabeaufforderung. Dies gibt den Befehlssatz als Serie von PowerShell-Befehlen aus und erstellt den virtuellen Azure-Computer. Wenn Sie den virtuellen Computer in falschen Abonnements, Speicherkonten, Cloud-Diensten, Verfügbarkeitsgruppen, virtuellen Netzwerken oder Subnetzen erstellen, löschen Sie den virtuellen Computer, korrigieren Sie die Befehlsblocksyntax, und führen Sie dann den korrigierten Befehlssatz aus.
+Wenn Sie einen Texteditor verwenden, kopieren Sie den Befehlssatz schließlich in die Zwischenablage, und klicken Sie dann mit der rechten Maustaste auf Ihre offene Azure PowerShell-Eingabeaufforderung. Dies gibt den Befehlssatz als Serie von PowerShell-Befehlen aus und erstellt den virtuellen Azure-Computer. Führen Sie alternativ den Befehlssatz in der PowerShell ISE aus.
+
+Wenn Sie den virtuellen Computer in falschen Abonnements, Speicherkonten, Cloud-Diensten, Verfügbarkeitsgruppen, virtuellen Netzwerken oder Subnetzen erstellen, löschen Sie den virtuellen Computer, korrigieren Sie die Befehlsblocksyntax, und führen Sie dann den korrigierten Befehlssatz aus.
 
 Informieren Sie sich nach dem Erstellen des virtuellen Computer unter [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md).
 
 Wenn Sie diesen virtuellen Computer erneut oder einen ähnlichen Computer erstellen, können Sie:
 
-- diesen Befehlssatz als Textdatei oder PowerShell-Skriptdatei (*.ps1) speichern
+- diesen Befehlssatz als PowerShell-Skriptdatei (*.ps1) speichern
 - diesen Befehlssatz als Azure-Automatisierungsrunbook im Bereich **Automatisierung** des Azure-Verwaltungsportals speichern 
 
 ## <a id="examples"></a>Beispiele
@@ -259,4 +259,6 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=58_postMigration-->

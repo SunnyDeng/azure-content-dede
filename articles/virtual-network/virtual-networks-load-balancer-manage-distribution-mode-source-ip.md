@@ -55,14 +55,14 @@ Laden Sie [die neueste Azure PowerShell-Version](https://github.com/Azure/azure-
 
 ### Fügen Sie einem virtuellen Computer einen Azure-Endpunkt hinzu, und legen Sie den Lastenausgleichs-Verteilungsmodus fest.
 
-    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution “sourceIP”| Update-AzureVM  
-
     Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 â€“LoadBalancerDistribution â€œsourceIPâ€�| Update-AzureVM  
+
+    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 Ã¢â‚¬â€œLoadBalancerDistribution Ã¢â‚¬Å“sourceIPÃ¢â‚¬ï¿½| Update-AzureVM  
 
 "LoadBalancerDistribution" kann für eine 2-Tupel-Konfiguration (Quell-IP, Ziel-IP) auf "sourceIP", für eine 3-Tupel-Konfiguration (Quell-IP, Ziel-IP, Protokoll) auf "sourceIPProtocol", oder gar nicht festgelegt werden, um das Standardverhalten (5-Tupel-Lastenausgleich) zu verwenden.
 
 ### Abrufen einer Lastenausgleichs-Verteilungsmoduskonfiguration für einen Endpunkt
-    PS C:> Get-AzureVM –ServiceName "mySvc" -Name "MyVM1" | Get-AzureEndpoint
+    PS C:> Get-AzureVM â€“ServiceName "mySvc" -Name "MyVM1" | Get-AzureEndpoint
     
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
     LBSetName : MyLoadBalancedSet
@@ -86,9 +86,9 @@ Wenn das Element "LoadBalancerDistribution" nicht vorhanden ist, verwendet der A
 
 ### Festlegen des Verteilungsmodus für einen Endpunktsatz mit Lastenausgleich
 
-    Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 –LoadBalancerDistribution "sourceIP"
-
     Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 â€“LoadBalancerDistribution "sourceIP"
+
+    Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 Ã¢â‚¬â€œLoadBalancerDistribution "sourceIP"
     
 Wenn Endpunkte Bestandteil eines Endpunktsatzes mit Lastenausgleich sind, muss der Verteilungsmodus für den Endpunktsatz mit Lastenausgleich festgelegt werden.
 
@@ -159,5 +159,6 @@ Der Wert von "LoadBalancerDistribution" kann "sourceIP" (2-Tupel-Affinität) ode
     x-ms-servedbyregion: ussouth2 
     x-ms-request-id: 9c7bda3e67c621a6b57096323069f7af 
     Date: Thu, 16 Oct 2014 22:49:21 GMT
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

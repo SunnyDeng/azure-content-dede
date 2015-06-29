@@ -41,7 +41,7 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 
 - [Erstellen eines benutzerdefinierten virtuellen Computers][]
 
-- [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer][]
+- [Anfügen eines Datenträgers an einen virtuellen Computer][]
 
 
 
@@ -159,6 +159,7 @@ Weitere Informationen und zusätzliche Befehlen finden Sie in der [Azure-CLI-Dok
 
 [Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-create-custom.md
 
-[Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer]: storage-windows-attach-disk.md
+[Anfügen eines Datenträgers an einen virtuellen Computer]: storage-windows-attach-disk.md
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

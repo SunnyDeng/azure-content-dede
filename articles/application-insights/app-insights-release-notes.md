@@ -18,19 +18,19 @@
 # SDK-Versionshinweise – Application Insights
 
 
-Hier sind detaillierte Versionsinformationen für unsere SDKs:
+Hier finden Sie detaillierte Versionsinformationen und Updateanweisungen für unsere SDKs:
 
 * [.NET](app-insights-release-notes-dotnet.md)
 * [Android](https://github.com/Microsoft/ApplicationInsights-Android)
 * [iOS](https://github.com/Microsoft/ApplicationInsights-iOS)
 * [Java](app-insights-release-notes-java.md)
 * [JavaScript](app-insights-release-notes-javascript.md)
-* [Windows Phone und Store c\# | VB](app-insights-release-notes-windows.md)
+* [Windows Phone und Store C# | VB](app-insights-release-notes-windows.md)
 * [Windows Phone und Store C++](app-insights-release-notes-windows-cpp.md)
 * [Andere Plattformen](https://github.com/Microsoft/ApplicationInsights-Home)
 
-Lesen Sie auch unsere [Dienstupdates](http://azure.microsoft.com/updates/?service=application-insights) die wichtige Verbesserungen in Application Insights-Dienst als Ganzes zusammenfassen.
+Lesen Sie auch unsere [Dienstupdates](http://azure.microsoft.com/updates/?service=application-insights), in denen wichtige Verbesserungen beim Application Insights-Dienst zusammengefasst sind.
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

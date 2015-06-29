@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Add StorSimple backup policies"
-   description="Explains how you can use the StorSimple Manager service to create a backup policy."
+   pageTitle="Hinzufügen von StorSimple-Sicherungsrichtlinien"
+   description="Beschreibt, wie Sie den StorSimple-Manager-Dienst zum Erstellen einer Sicherungsrichtlinie verwenden können."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
@@ -15,20 +15,19 @@
    ms.date="05/22/2015"
    ms.author="alkohli" />
 
-#### To add a StorSimple backup policy
+#### So fügen Sie eine StorSimple-Sicherungsrichtlinie hinzu
 
-1. On the device **Quick Start** page, click the **Backup Policies** tab. This will take you to the **Backup Policies** page.
+1. Klicken Sie auf der Seite **Schnellstart** des Geräts auf die Registerkarte **Sicherungsrichtlinien**. Dadurch gelangen Sie auf die Seite **Sicherungsrichtlinien**.
 
-2. At the bottom of the page, click **Add**.
+2. Klicken Sie unten auf der Seite auf **Hinzufügen**.
 
-3. In the **Add Backup Policy** dialog box, do the following:
+3. Gehen Sie im Dialogfeld **Sicherungsrichtlinie hinzufügen** folgendermaßen vor:
 
-    1. Specify a backup policy name that contains between 3 and 150 characters.
-    2. Assign one or more volumes to this backup policy. If you are using other cloud service providers, based on your first selection, the dropdown list will show volumes belonging to only that cloud service provider. This will allow you to group volumes belonging to a single cloud service provider for taking a snapshot.
-    3. Click the check icon ![check icon](./media/storsimple-add-backup-policy/HCS_CheckIcon-include.png) to save the policy.
+    1. Geben Sie für Ihre Sicherungsrichtlinie einen Namen an, der zwischen 3 und 150 Zeichen lang ist.
+    2. Weisen Sie dieser Sicherungsrichtlinie Volumes zu. Bei Verwendung von anderen Clouddienstanbietern werden in der Dropdownliste basierend auf der ersten Auswahl Volumes angezeigt, die nur zu diesem Clouddienstanbieter gehören. Dadurch können Sie Volumes gruppieren, die zu einem einzelnen Clouddienstanbieter gehören, um eine Momentaufnahme zu erstellen.
+    3. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-add-backup-policy/HCS_CheckIcon-include.png), um die Richtlinie zu speichern.
 
-The newly added policy will be displayed in the tabular view on the **Backup Policies** page.
+Die neu hinzugefügte Richtlinie wird in der Tabellenansicht auf der Seite **Sicherungsrichtlinien** angezeigt.
  
 
-
-
+<!---HONumber=58_postMigration-->

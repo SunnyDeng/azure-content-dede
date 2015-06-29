@@ -4,8 +4,8 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="terrylan" 
-	editor="lisatoft"/>
+	manager="swadhwa" 
+	editor="curtand"/>
 
 <tags 
 	ms.service="active-directory" 
@@ -71,7 +71,7 @@ Sie können den Synchronisierungsregel-Editor dazu verwenden, weitere Geschäfts
 ## Verwenden einer deklarativen Bereitstellung 
 Die deklarative Bereitstellung funktioniert „ohne Code“ und kann mit dem Synchronisierungsregel-Editor eingerichtet und konfiguriert werden. Der Editor kann für die Einrichtung und Erstellung eigener Bereitstellungsregeln verwendet werden.
 
-Ein wesentlicher Bestandteil der deklarativen Bereitstellung ist die in den Attributflüssen verwendete Ausdruckssprache. Die verwendete Sprache ist eine Teilmenge von Microsoft ® Visual Basic ® for Applications (VBA). Diese Sprache wird in Microsoft Office verwendet, und Benutzer mit Erfahrungen mit VBScript werden sie wiedererkennen. Die Ausdruckssprache  für die deklarative Bereitstellung verwendet nur Funktionen und ist keine strukturierte Sprache; es gibt keine Methoden oder Anweisungen. Funktionen werden stattdessen verschachtelt, um den Programmablauf auszudrücken.
+Ein wesentlicher Bestandteil der deklarativen Bereitstellung ist die in den Attributflüssen verwendete Ausdruckssprache. Die verwendete Sprache ist eine Teilmenge von Microsoft ® Visual Basic ® for Applications (VBA). Diese Sprache wird in Microsoft Office verwendet, und Benutzer mit Erfahrungen mit VBScript werden sie wiedererkennen. Die Ausdruckssprache für die deklarative Bereitstellung verwendet nur Funktionen und ist keine strukturierte Sprache; es gibt keine Methoden oder Anweisungen. Funktionen werden stattdessen verschachtelt, um den Programmablauf auszudrücken.
 
 Weitere Informationen zur Ausdruckssprache finden Sie unter [Grundlagen zu den Ausdrücken für eine deklarative Bereitstellung](https://msdn.microsoft.com/library/azure/dn801048.aspx)
 
@@ -85,5 +85,6 @@ Ein Teil der Dokumentation, die für Azure AD Sync erstellte wurde, ist noch imm
 * [Erste Schritte mit Azure AD Connect](../active-directory-aadconnect-getstarted.md)
 * [Azure AD Connect verwalten](active-directory-aadconnect-manage.md)
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

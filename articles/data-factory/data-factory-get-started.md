@@ -22,59 +22,59 @@
 - [Using Data Factory Editor](data-factory-get-started-using-editor.md)
 - [Using PowerShell](data-factory-monitor-manage-using-powershell.md)
 
-Das Lernprogramm in diesem Artikel hilft Ihnen, schnell mit der Service Factory der Azure-Daten beginnen. In diesem Lernprogramm Sie erstellen eine Factory für Azure-Daten und erstellen Sie eine Pipeline in der Factory Daten zum Kopieren von Daten aus einem Azure-Blob-Speicher mit einer Azure SQL-Datenbank.
+Dieser Artikel hilft Ihnen beim raschen Einstieg in die Verwendung des Azure Data Factory-Diensts. Das Lernprogramm zeigt, wie Sie erst eine Azure Data Factory und dann eine Pipeline in der Data Factory erstellen, um Daten aus einem Azure-Blobspeicher in eine Azure SQL-Datenbank zu kopieren.
 
-> [AZURE.NOTE]Einen ausführlichen Überblick über die Service Factory von Daten finden Sie unter der [Einführung in Azure Data Factory][data-factory-introduction] Artikel.
+> [AZURE.NOTE]Eine ausführliche Übersicht über den Data Factory-Dienst finden Sie im Artikel [Einführung in Azure Data Factory][data-factory-introduction].
 
 ##Voraussetzungen für das Lernprogramm
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Azure-Abonnement**. Wenn Sie nicht über ein Abonnement verfügen, können Sie in wenigen Minuten ein kostenloses Testkonto erstellen. Siehe die [kostenlose Testversion][azure-free-trial] Artikel.
-- **Speicherkonto**. Verwenden Sie den Blob-Speicher als eine **Quelle** Datenspeicher in diesem Lernprogramm. Wenn Sie Azure-Speicherkonten, finden Sie unter besitzen die [erstellen ein Speicherkonto][data-factory-create-storage] Artikel die Schritte zu erstellen.
-- **Azure SQL-Datenbank**. Verwenden Sie eine Azure SQL-Datenbank als eine **Ziel** Speichern von Daten in diesem Lernprogramm. Wenn Sie mit eine Azure SQL-Datenbank verfügen, mit denen Sie in diesem Lernprogramm finden Sie unter [zum Erstellen und Konfigurieren einer Azure SQL-Datenbank][data-factory-create-sql-database] zu erstellen.
-- **SQL Server 2012/2014 oder Visual Studio 2013**. Sie verwenden SQL Server Management Studio oder Visual Studio zum Erstellen einer Beispieldatenbank und zum Anzeigen der Daten in der Datenbank.  
+- **Azure-Abonnement**. Wenn Sie über kein Abonnement verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Im Artikel [Kostenlose Testversion][azure-free-trial] finden Sie Details.
+- **Azure Storage-Konto**. In diesem Lernprogramm verwenden Sie den Blobspeicher als **Quelldatenspeicher**. Wenn Sie kein Azure-Speicherkonto haben, finden Sie im Artikel [Erstellen eines Speicherkontos][data-factory-create-storage] Schritte zum Erstellen eines Azure-Speicherkontos.
+- **Azure SQL-Datenbank**. In diesem Lernprogramm verwenden Sie eine Azure SQL-Datenbank als **Zieldatenspeicher**. Wenn Sie keine Azure SQL-Datenbank haben, die Sie in diesem Lernprogramm verwenden können, finden Sie unter [Erstellen und Konfigurieren einer Azure SQL-Datenbank][data-factory-create-sql-database] entsprechende Anweisungen.
+- **SQL Server 2012/2014 oder Visual Studio 2013**. Sie verwenden SQL Server Management Studio oder Visual Studio zum Erstellen einer Beispieldatenbank und zum Anzeigen der Ergebnisdaten in der Datenbank.  
 
-### Sammeln von Kontonamen und Kontoschlüssel für Azure-Speicherkonto
-Sie benötigen den Kontonamen und Kontoschlüssel von Azure-Speicherkonto in diesem Lernprogramm zu tun. Notieren Sie sich die **Kontoname** und **Kontoschlüssel** für Azure-Speicherkonto anhand der nachfolgenden Anweisungen:
+### Notieren des Kontonamens und -schlüssels Ihres Azure-Speicherkontos
+Sie benötigen in diesem Lernprogramm den Kontonamen und -schlüssel Ihres Azure-Speicherkontos. Notieren Sie sich den **Kontonamen** und **Kontoschlüssel** Ihres Azure-Speicherkontos, indem Sie die folgenden Anweisungen befolgen:
 
-1. Melden Sie sich die [Azure Preview Portal][azure-preview-portal].
-2. Klicken Sie auf **Durchsuchen** -Hub auf der linken Seite und wählen Sie **Speicherkonten**.
-3. In der **Speicherkonten** Blade, wählen Sie die **Speicherkonto** die Sie in diesem Lernprogramm verwenden möchten.
-4. In der **Speicher** Blade, klicken Sie auf **Schlüssel** Kachel.
-5. In der **Schlüssel verwalten** Blade, klicken Sie auf **Kopie** (Bild) Schaltfläche neben **SPEICHERKONTONAME** Text Feld und speichern und Einfügen es irgendwo (z. B.: in einer Textdatei).  
-6. Wiederholen Sie den vorherigen Schritt kopieren oder notieren Sie sich die **PRIMARY ACCESS KEY**.
-7. Schließen Sie alle Blades, indem Sie auf **X**.
+1. Melden Sie sich beim [Azure-Vorschauportal][azure-preview-portal] an.
+2. Klicken Sie auf der linken Seite auf den Hub **Durchsuchen**, und wählen Sie **Speicherkonten** aus.
+3. Wählen Sie auf dem Blatt **Speicherkonten** das **Azure-Speicherkonto** aus, das Sie in diesem Lernprogramm verwenden möchten.
+4. Klicken Sie auf dem Blatt **SPEICHER** auf die Kachel **SCHLÜSSEL**.
+5. Klicken Sie auf dem Blatt **Schlüssel verwalten** auf die (Bild-) Schaltfläche **Kopieren** neben dem Textfeld **SPEICHERKONTONAME**, und speichern Sie den Eintrag z. B. in einer Textdatei.  
+6. Wiederholen Sie den vorherigen Schritt zum Kopieren oder Notieren des **PRIMÄREN ZUGRIFFSSCHLÜSSELS**.
+7. Schließen Sie alle Blätter, indem Sie auf **X** klicken.
 
-### Sammeln von Servername, Datenbankname und Benutzerkonto für Azure SQL-Datenbank
-Sie benötigen die Namen der Azure SQL Server-, Datenbank- und Benutzer in diesem Lernprogramm. Notieren Sie den Namen der **Server**, **Datenbank**, und **Benutzer** für Azure SQL-Datenbank anhand der nachfolgenden Anweisungen:
+### Notieren des Servernamens, Datenbanknamens und Benutzerkontos Ihrer Azure SQL-Datenbank
+Sie benötigen in diesem Lernprogramm die Namen von Azure SQL-Server, -Datenbank und -Benutzer. Notieren Sie den Namen des **Servers**, der **Datenbank** und des **Benutzers** Ihrer Azure SQL-Datenbank, indem Sie die folgenden Anweisungen befolgen:
 
-1. In der **Azure Preview Portal**, klicken Sie auf **Durchsuchen** auf der linken Seite und wählen Sie **SQL-Datenbanken**.
-2. In der **SQL-Datenbanken Blade**, wählen Sie die **Datenbank** die Sie in diesem Lernprogramm verwenden möchten. Notieren Sie sich die **Datenbankname**.  
-3. In der **SQL-Datenbank** Blade, klicken Sie auf **Eigenschaften** Kachel.
-4. Notieren Sie sich die Werte für **Servername** und **SERVER ADMIN-Benutzername**.
-5. Schließen Sie alle Blades, indem Sie auf **X**.
+1. Klicken Sie links im **Azure-Vorschauportal** auf **Durchsuchen**, und wählen Sie **SQL-Datenbanken** aus.
+2. Wählen Sie auf dem Blatt **SQL-Datenbanken** die **Datenbank**, die Sie in diesem Lernprogramm verwenden möchten. Notieren Sie sich den **Datenbanknamen**.  
+3. Klicken Sie auf dem Blatt **SQL-DATENBANK** auf die Kachel **EIGENSCHAFTEN**.
+4. Notieren Sie sich die Werte für **SERVERNAME** und **SERVER-ADMIN-ANMELDUNG**.
+5. Schließen Sie alle Blätter, indem Sie auf **X** klicken.
 
-### Können Sie Azure-Diensten auf den Azure SQL-Server zugreifen
-Sicherstellen, dass **ermöglichen den Zugriff auf Azure Services** Einstellung aktiviert **auf** für Ihren Azure SQL-Server, damit der Dienst Daten Factory Ihre Azure SQL-Server zugreifen kann. Um zu überprüfen, und diese Einstellung aktivieren, führen Sie folgende Schritte aus:
+### Zulassen des Zugriffs von Azure-Diensten auf den Azure SQL-Server
+Stellen Sie sicher, dass die Einstellung **Zugriff auf Azure-Dienste erlauben** für Ihren Azure SQL-Server **aktiviert** ist, damit der Data Factory-Dienst auf Ihren Azure SQL-Server zugreifen kann. Um diese Einstellung zu überprüfen und zu aktivieren, führen Sie folgende Schritte aus:
 
-1. Klicken Sie auf **Durchsuchen** Hub auf der linken Seite und auf **SQL Server**.
-2. Wählen Sie **Ihr Server**, und klicken Sie auf **Einstellungen** auf der **SQL SERVER** Blade.
-3. In der **Einstellungen** Blade, klicken Sie auf **Firewall**.
-4. In der **-Firewall-Einstellungen** Blade, klicken Sie auf **auf** für **ermöglichen den Zugriff auf Azure Services**.
-5. Schließen Sie alle Blades, indem Sie auf **X**.
+1. Klicken Sie links auf den Hub **DURCHSUCHEN** und dann auf **SQL-Server**.
+2. Wählen Sie **Ihren Server** aus, und klicken Sie auf dem Blatt **SQL SERVER** auf **EINSTELLUNGEN**.
+3. Klicken Sie auf dem Blatt **EINSTELLUNGEN** auf **Firewall**.
+4. Klicken Sie auf dem Blatt **Firewalleinstellungen** für **Zugriff auf Azure-Dienste erlauben** auf **EIN**.
+5. Schließen Sie alle Blätter, indem Sie auf **X** klicken.
 
 ### Vorbereiten von Azure Blob-Speicher und Azure SQL-Datenbank für das Lernprogramm
-Jetzt bereiten Sie Ihrer Azure-Blob-Speicher und Azure SQL-Datenbank für das Lernprogramm durch die folgenden Schritte ausführen vor:
+Nun bereiten Sie Ihrer Azure-Blobspeicher und die Azure SQL-Datenbank durch Ausführen der folgenden Schritte auf das Lernprogramm vor:
 
-1. Starten Sie den Editor, fügen Sie den folgenden Text, und speichern Sie sie als **emp.txt**  **C:\ADFGetStarted** Ordner auf Ihrer Festplatte.
+1. Öffnen Sie den Editor, fügen Sie den folgenden Text ein, und speichern Sie die Datei als **emp.txt** im Ordner **C:\ADFGetStarted** auf Ihrer Festplatte.
 
         John, Doe
 		Jane, Doe
 
-2. Verwenden Sie Tools wie z. B. [Azure Storage Explorer](https://azurestorageexplorer.codeplex.com/) zum Erstellen der **Adftutorial** Container und zum Hochladen der **emp.txt** Datei auf den Container.
+2. Verwenden Sie Tools wie [Azure Storage-Explorer](https://azurestorageexplorer.codeplex.com/) zum Erstellen des Containers **adftutorial** und zum Hochladen der Datei **emp.txt** in den Container.
 
     ![Azure-Speicher-Explorer][image-data-factory-get-started-storage-explorer]
-3. Verwenden Sie das folgende SQL-Skript zum Erstellen der **emp** Tabelle in Azure SQL-Datenbank.  
+3. Verwenden Sie das folgende SQL-Skript, um die Tabelle **emp** in der Azure SQL-Datenbank zu erstellen.  
 
 
         CREATE TABLE dbo.emp
@@ -87,15 +87,15 @@ Jetzt bereiten Sie Ihrer Azure-Blob-Speicher und Azure SQL-Datenbank für das Le
 
 		CREATE CLUSTERED INDEX IX_emp_ID ON dbo.emp (ID);
 
-	**Wenn Sie SQL Server 2012/2014 auf Ihrem Computer installiert haben:** Anweisungen aus [Schritt2: Herstellen einer Verbindung mit SQL-Datenbank Verwalten von Azure SQL-Datenbank mit SQL Server Management Studio][sql-management-studio] Artikel Ihre Azure SQL-Server herstellen, und führen Sie das SQL-Skript. Beachten Sie, dass dieser Artikel das Release Management Portal verwendet (http://manage.windowsazure.com), nicht die vorschauportal (http://portal.azure.com), um die Firewall für eine Azure SQL-Server zu konfigurieren.
+	**Wenn Sie SQL Server 2012/2014 auf Ihrem Computer installiert haben:** Befolgen Sie die Anweisungen unter "Schritt 2: Herstellen einer Verbindung mit SQL-Datenbank" im Artikel [Verwalten einer Azure SQL-Datenbank mit SQL Server Management Studio][sql-management-studio], um eine Verbindung mit Ihrem Azure SQL-Server herzustellen und das SQL-Skript auszuführen. Beachten Sie, dass in diesem Artikel das Versionsverwaltungsportal (http://manage.windowsazure.com)) und nicht das Vorschauportal (http://portal.azure.com)) verwendet wird, um die Firewall für einen Azure SQL-Server zu konfigurieren.
 
-	**Wenn Sie Visual Studio 2013 auf Ihrem Computer installiert haben:** in den [Azure Preview Portal](http://portal.azure.com), klicken Sie auf **Durchsuchen** -Hub auf Links auf **SQL Server**, wählen Sie die Datenbank, und klicken Sie auf **in Visual Studio geöffnet** Schaltfläche auf der Symbolleiste der Azure SQL-Server herstellen, und führen Sie das Skript. Wenn der Client Zugriff auf den Azure SQL-Server nicht zulässig ist, müssen Sie die Firewall für den Azure SQL-Server ermöglicht den Zugriff auf Ihren Computer (IP-Adresse) konfigurieren. Finden Sie im Artikel über die Schritte zum Konfigurieren der Firewall für Ihren Azure SQL-Server aus.
+	**Wenn Sie Visual Studio 2013 auf Ihrem Computer installiert haben:** Klicken Sie im [Azure-Vorschauportal](http://portal.azure.com) links auf **Durchsuchen**, dann auf **SQL-Server**, wählen Sie Ihre Datenbank aus, und klicken Sie auf der Symbolleiste auf die Schaltfläche **In Visual Studio öffnen**, um eine Verbindung mit Ihrem Azure SQL-Server herzustellen und das SQL-Skript auszuführen. Wenn Ihr Client nicht auf den Azure SQL-Server zugreifen darf, müssen Sie die Firewall für Ihren Azure SQL-Server so konfigurieren, dass der Zugriff über Ihren Computer (bzw. dessen IP-Adresse) ermöglicht wird. Im vorherigen Artikel finden Sie Schritte zum Konfigurieren der Firewall für Ihren Azure SQL-Server.
 
 
 Gehen Sie wie folgt vor:
 
-- Klicken Sie auf [Data Factory-Editor mithilfe von](data-factory-get-started-using-editor.md) Link oben, um das Lernprogramm ausführen, indem Sie mit Factory, die Teil der Azure-Verwaltungsportal ist.
-- Klicken Sie auf [mithilfe von PowerShell](data-factory-monitor-manage-using-powershell.md) Link oben, um das Lernprogramm mit Azure PowerShell ausführen.
+- Klicken Sie oben auf den Link [Data Factory-Editor verwenden](data-factory-get-started-using-editor.md), um das Lernprogramm mithilfe des Data Factory-Editors auszuführen, der Teil des Azure-Portals ist.
+- Klicken Sie oben auf den Link [PowerShell verwenden](data-factory-monitor-manage-using-powershell.md), um das Lernprogramm mit Azure PowerShell auszuführen.
 
 
 <!--Link references-->
@@ -216,5 +216,6 @@ Gehen Sie wie folgt vor:
 [image-data-factory-sql-management-console-2]: ./media/data-factory-get-started/getstarted-azure-sql-management-console-2.png
 
 [image-data-factory-name-not-available]: ./media/data-factory-get-started/getstarted-data-factory-not-available.png
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=58_postMigration-->

@@ -250,7 +250,7 @@ Fahren Sie mit den folgenden Lernprogrammen fort, um das lokale Active Directory
 
 Wenn Sie die Einstellungen des virtuellen Netzwerks in eine Netzwerkkonfigurationsdatei exportieren möchten, um die Konfiguration zu sichern oder als Vorlage zu verwenden, finden Sie weitere Informationen unter [Exportieren von Einstellungen virtueller Netzwerke in eine Netzwerkkonfigurationsdatei](http://go.microsoft.com/fwlink/p/?LinkID=299880).
 
-## Siehe auch
+## Weitere Informationen
 
 -  [Technische Übersicht über Azure Virtual Network](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx)
 
@@ -260,9 +260,15 @@ Wenn Sie die Einstellungen des virtuellen Netzwerks in eine Netzwerkkonfiguratio
 
 -  [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](../virtual-machines/virtual-machines-create-custom.md)
 
--  [Informationen zu VPN-Geräten für virtuelle Netzwerke](http://msdn.microsoft.com/library/windowsazure/jj15] 75.aspx)
+-  [Informationen zu VPN-Geräten für Virtual Network](http://msdn.microsoft.com/library/windowsazure/jj15] 75.aspx)
 
 -  [Namensauflösung für virtuelle Computer und Rolleninstanzen](http://go.microsoft.com/fwlink/p/?LinkId=248097)
 -  [Einrichten einer Hybrid-Cloud-Umgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md)
 
-<!---HONumber=58--> 
+
+
+
+
+ 
+
+<!---HONumber=58_postMigration-->

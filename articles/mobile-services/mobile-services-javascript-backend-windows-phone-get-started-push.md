@@ -10,26 +10,22 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/24/2015" 
+	ms.date="06/11/2015" 
 	ms.author="glenga"/>
 
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-push-legacy](../../includes/mobile-services-selector-get-started-push-legacy.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
+
+##Übersicht
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Mobile Services Pushbenachrichtigungen an eine Windows Phone Silverlight-App senden können. In diesem Lernprogramm fügen Sie Pushbenachrichtigungen mithilfe von Azure-Benachrichtigungshubs zum Schnellstartprojekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung mithilfe von Benachrichtigungshubs. Der von Ihnen erstellte Benachrichtigungshub ist für den mobilen Dienst kostenlos, kann unabhängig vom mobilen Dienst verwaltet werden und kann von anderen Anwendungen und Diensten verwendet werden.
 
-In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
-
-1. [Aktualisieren Ihrer App zur Registrierung für Benachrichtigungen](#update-app)
-2. [Aktualisieren von Serverskripts zum Senden von Pushbenachrichtigungen](#update-scripts)
-3. [Einfügen von Daten zum Empfangen von Pushbenachrichtigungen](#test)
-
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst entweder [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] abschließen, um Ihr Projekt mit Mobile Services zu verbinden. Wenn kein mobiler Dienst verbunden wurde, stellt der Assistent für Pushbenachrichtigungen diese Verbindung für Sie her.
+Dieses Lernprogramm baut auf der TodoList-Beispiel-App auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst das Thema [Hinzufügen von Mobile Services zu einer vorhandenen Anwendung] abschließen, um Ihr Projekt mit dem mobilen Dienst zu verbinden. Wenn ein mobiler Dienst nicht verbunden wurde, stellt der Assistent für Pushbenachrichtigungen diese Verbindung für Sie her.
 
 >[AZURE.NOTE]Zum Senden von Pushbenachrichtigungen an eine Windows Phone 8.1 Store-App führen Sie die Lernprogrammversion für [Windows Store-Apps](../mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md) aus.
 
@@ -82,7 +78,7 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
 
    	![Aktivieren von Benachrichtigungen in VS](./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-app-enable-push-wp8.png)
 
-   	Damit stellen Sie sicher, dass Ihre App Popupbenachrichtigungen anzeigen kann.
+   	Damit stellen Sie sicher, dass Ihre App Popupbenachrichtigungen ausgeben kann.
 
 ##<a id="update-scripts"></a> Aktualisieren von Serverskripts zum Senden von Pushbenachrichtigungen
 
@@ -132,13 +128,13 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
 
 5. Geben Sie in der App in das Textfeld den Text "hello push" ein, und klicken Sie dann auf **Speichern**. Klicken Sie dann direkt auf die Schaltfläche "Start" oder "Zurück", um die App zu verlassen
 
-   ![Eingeben von Text in die App](./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-quickstart-push3-wp8.png)
+   	![Eingeben von Text in die App](./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-quickstart-push3-wp8.png)
 
   	Damit wird eine Einfügeanforderung zum Speichern des hinzugefügten Eintrags an den mobilen Dienst gesendet. Das Gerät empfängt eine Popupbenachrichtigung mit dem Text **hello push**.
 
 	![Empfangene Toast-Benachrichtigung](./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-quickstart-push5-wp8.png)
 
-	>[AZURE.NOTE]Wenn Sie sich noch in der App befinden, erhalten Sie die Benachrichtigung nicht. Um eine Popupbenachrichtigung zu empfangen, während die App aktiv ist, müssen Sie das [ShellToastNotificationReceived]-Ereignis (http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.notification.httpnotificationchannel.shelltoastnotificationreceived(v=vs.105).aspx) behandeln.
+	>[AZURE.NOTE]Wenn Sie sich noch in der App befinden, erhalten Sie die Benachrichtigung nicht. Um eine Popupbenachrichtigung zu empfangen, während die App aktiv ist, müssen Sie das [ShellToastNotificationReceived](http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.notification.httpnotificationchannel.shelltoastnotificationreceived.aspx)-Ereignis behandeln.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
@@ -172,8 +168,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Erste Schritte mit Mobile Services]: ../mobile-services-windows-phone-get-started.md
-[Erste Schritte mit Daten]: mobile-services-windows-phone-get-started-data.md
+[Hinzufügen von Mobile Services zu einer vorhandenen Anwendung]: mobile-services-windows-phone-get-started-data.md
 [Erste Schritte mit der Authentifizierung]: mobile-services-windows-phone-get-started-users.md
 
 [Einrichten eines authentifizierten Webdienstes zum Senden von Pushbenachrichtigungen für Windows Phone]: http://msdn.microsoft.com/library/windowsphone/develop/ff941099(v=vs.105).aspx
@@ -183,5 +178,6 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 [Was sind Notification Hubs?]: ../notification-hubs-overview.md
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=58_postMigration-->

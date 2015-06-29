@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-windows" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="02/20/2015" 
+	ms.date="06/03/2015" 
 	ms.author="robmcm"/>
 
 # Gewusst wie: Ausführen eines Java-Anwendungsservers auf einem virtuellen Computer
@@ -158,5 +158,6 @@ An diesem Punkt sollte die Tomcat-Website unter Verwendung einer URL im Format *
 [NewRuleAction]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleAction.png
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

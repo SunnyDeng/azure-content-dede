@@ -4,26 +4,40 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/28/2015" 
+	ms.date="06/18/2015" 
 	ms.author="sergkanz"/>
  
 # Versionshinweise für das Application Insights-SDK für .NET
 
-[Verwenden des SDK für .NET](app-insights-start-monitoring-app-health-usage.md)
+Das [Application Insights-SDK für .NET](app-insights-start-monitoring-app-health-usage.md) sendet Telemetriedaten über Ihre Live-App an [Application Insights](http://azure.microsoft.com/services/application-insights/), wo Sie die Nutzung und Leistung analysieren können.
 
-## Version 0,17 Dollar
-- Entfernte Abhängigkeit EventSource NuGet für das Framework 4.5-Anwendungen.
-- Anonyme Benutzer und Sitzungscookies werden nicht auf Serverseite generiert. Telemetrie-Module ```WebSessionTrackingTelemetryModule``` und ```WebUserTrackingTelemetryModule``` werden nicht mehr unterstützt und wurden aus der ApplicationInsights.config-Datei entfernt. Cookies von JavaScript-SDK werden eingehalten werden.
-- Optimiert für Szenarien mit hoher Belastung Persistenz-Kanal wird für das Web SDK verwendet. "Spirale of Death"-Problem behoben. Spirale Death ist eine Bedingung, wenn die Spitze in der Anzahl der Telemetrie-Elemente, die am Endpunkt Einschränkungsgrenzwert erheblich überschreitet, führen um zu wiederholen Sie nach bestimmten Zeit und werden während der wieder wiederholen eingeschränkt.
-- Entwicklermodus ist für die Produktion optimiert. Wenn Sie versehentlich verursacht nicht als großer Aufwand als dies vor dem Versuch, zusätzliche Informationen ausgegeben.
-- Entwicklermodus in der Standardeinstellung wird nur aktiviert werden, wenn die Anwendung im Debugger ist. Überschreiben Sie es mit ```DeveloperMode``` Eigenschaft ```ITelemetryChannel``` Schnittstelle.
+
+#### So installieren Sie das SDK in Ihrer Anwendung
+
+Informationen dazu finden Sie unter [Application Insights – Beginnen Sie damit, Integrität und Nutzung Ihrer Anwendung zu überwachen](app-insights-start-monitoring-app-health-usage.md).
+
+#### So aktualisieren Sie auf das neueste SDK 
+
+* Nach dem Upgrade müssen Sie alle an "ApplicationInsights.config" vorgenommenen Anpassungen wieder zusammenführen. Wenn Sie nicht sicher sind, ob Sie Anpassungen vorgenommen haben, erstellen Sie ein neues Projekt, fügen Sie ihm Application Insights hinzu, und vergleichen Sie die CONFIG-Datei mit der Datei im neuen Projekt. Notieren Sie sich alle Unterschiede.
+* Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie dann **NuGet-Pakete verwalten** aus.
+* Legen Sie einen Filter fest, um nur die installierten Pakete anzuzeigen. 
+* Wählen Sie **Microsoft.ApplicationInsights.Web** und dann **Upgrade** aus. (Damit werden auch alle abhängigen Pakete aktualisiert.)
+* Vergleichen Sie "ApplicationInsights.config" mit der alten Kopie. Die meisten Änderungen sind darauf zurückzuführen, dass einige Module entfernt und andere parametrisierbar gemacht wurden. Reaktivieren Sie alle Anpassungen, die Sie an der alten Datei vorgenommen haben.
+* Erstellen Sie die Projektmappe neu.
+
+## Version 0.17
+- Abhängigkeit von EventSource NuGet für die Framework 4.5-Anwendungen wurde entfernt.
+- Anonyme Benutzer und Sitzungscookies werden serverseitig nicht generiert. Die Telemetriemodule ```WebSessionTrackingTelemetryModule``` und ```WebUserTrackingTelemetryModule``` werden nicht mehr unterstützt und wurden aus der Datei "ApplicationInsights.config" entfernt. Cookies des JavaScript-SDK werden berücksichtigt.
+- Der für Szenarios mit hoher Belastung optimierte Persistenz-Kanal wird für das Web SDK verwendet. Das "Spiral of death"-Problem wurde behoben. "Spiral of death" ist eine Bedingung, bei der die Spitze bei der Anzahl der Telemetrieelemente, die den Einschränkungsgrenzwert am Endpunkt erheblich überschreitet, zu einem erneuten Versuch führt und beim erneuten Versuch wieder eingeschränkt wird.
+- Der Entwicklermodus wurde für die Produktion optimiert. Wenn dieser Modus versehentlich aktiviert bleibt, verursacht der Versuch, zusätzliche Informationen auszugeben, keinen so großen Overhead wie zuvor.
+- Der Entwicklermodus wird standardmäßig nur aktiviert, wenn für die Anwendung der Debugger aktiviert ist. Sie können ihn durch Verwenden der ```DeveloperMode```-Eigenschaft der ```ITelemetryChannel```-Schnittstelle überschreiben.
 
 ## Version 0.16 
 
@@ -44,4 +58,4 @@ Für ältere Versionen sind keine Versionshinweise verfügbar.
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

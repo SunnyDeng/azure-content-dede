@@ -23,7 +23,7 @@
 [AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
 
 
-Visual Studio Application Insights überwacht Ihre Live-Anwendung. So können Sie [Leistungsprobleme und -ausnahmen erkennen und diagnostizieren][detect] und zudem [ermitteln, wie Ihre App verwendet wird][knowUsers]. Es kann mit einer Vielzahl von Anwendungstypen verwendet werden. Dies funktioniert für apps, die auf Ihren eigenen lokalen IIS-Servern oder auf Azure Virtual Machines gehostet werden, sowie Azure Web-apps. ([Dies funktioniert auch für Geräte-Apps und Java-Server][start].)
+Visual Studio Application Insights überwacht Ihre Live-Anwendung. So können Sie [Leistungsprobleme und -ausnahmen erkennen und diagnostizieren][detect] und zudem [ermitteln, wie Ihre App verwendet wird][knowUsers]. Es kann mit einer Vielzahl von Anwendungstypen verwendet werden. Dies funktioniert für Apps, die auf den eigenen lokalen IIS-Servern oder Azure-VMs gehostet werden, sowie für Azure-Web-Apps. ([Dies funktioniert auch für Geräte-Apps und Java-Server][start].)
 
 ![Beispiel für Leistungsüberwachungsdiagramm](./media/app-insights-start-monitoring-app-health-usage/10-perf.png)
 
@@ -63,7 +63,7 @@ Der Schlüssel identifiziert die Ressource, den Sie bald im SDK installieren kö
 
 2. Installieren Sie das Application Insights SDK für Web-Apps.
 
-    ![Wählen Sie **Online**, **Vorabversion einschließen** aus, und suchen Sie nach "Application Insights"](./media/app-insights-start-monitoring-app-health-usage/04-ai-nuget.png)
+    ![Suchen Sie nach "Application Insights".](./media/app-insights-start-monitoring-app-health-usage/04-ai-nuget.png)
 
 
 3. Bearbeiten Sie die Datei "ApplicationInsights.config" (die bei der NuGet-Installation hinzugefügt wurde). Fügen Sie Folgendes direkt vor dem Endtag ein:
@@ -72,6 +72,11 @@ Der Schlüssel identifiziert die Ressource, den Sie bald im SDK installieren kö
 
     (Alternativ können Sie [den Schlüssel durch Schreiben von Code][apikey] in Ihrer App festlegen.)
 
+#### So aktualisieren Sie auf zukünftige SDK-Versionen
+
+Für ein Upgrade auf eine [neue Version des SDK](app-insights-release-notes-dotnet.md) öffnen Sie wieder den NuGet-Paket-Manager und filtern die Ansicht nach installierten Paketen. Wählen Sie "Microsoft.ApplicationInsights.Web" und dann "Upgrade" aus.
+
+Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben, speichern Sie vor dem Upgrade eine Kopie davon. Sie können anschließend die Änderungen in die neue Version übernehmen.
 
 
 ## <a name="run"></a> 3. Ausführen des Projekts
@@ -87,9 +92,9 @@ In Visual Studio sehen Sie eine Anzahl der gesendeten Ereignisse.
 Kehren Sie zum [Azure-Portal][portal] zurück, und navigieren Sie zur Application Insights-Ressource.
 
 
-Suchen Sie nach Daten in der Übersichtsdiagrammen. Zuerst sehen Sie lediglich einen oder zwei Punkte. Zum Beispiel:
+Suchen Sie nach Daten in der Übersichtsdiagrammen. Zuerst sehen Sie lediglich einen oder zwei Punkte. Beispiel:
 
-![Zu mehr Daten durchklicken](./media/app-insights-start-monitoring-app-health-usage/12-first-perf.png)
+![Klicken Sie, um weitere Daten anzuzeigen](./media/app-insights-start-monitoring-app-health-usage/12-first-perf.png)
 
 Klicken Sie sich durch ein beliebiges Diagramm, um ausführlichere Metriken anzuzeigen. [Hier finden Sie weitere Informationen zu Metriken.][perf]
 
@@ -191,4 +196,4 @@ Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithi
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

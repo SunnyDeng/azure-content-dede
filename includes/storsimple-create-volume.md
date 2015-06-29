@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="So erstellen Sie ein Volume"
+   pageTitle="Erstellen eines Volumes"
    description="In diesem Artikel wird erläutert, wie Sie ein Volume auf einem StorSimple-Gerät hinzufügen."
    services="storsimple"
    documentationCenter="NA"
@@ -15,7 +15,7 @@
    ms.date="04/28/15"
    ms.author="v-sharos" />
 
-###So erstellen Sie ein Volume
+#### So erstellen Sie ein Volume
 
 1. Klicken Sie auf dem Gerät auf der Seite **Schnellstart** auf **Volume hinzufügen**. Dadurch wird der Assistent "Volume hinzufügen" gestartet.
 
@@ -38,7 +38,4 @@
 
 4. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-create-volume/HCS_CheckIcon-include.png). Ein Volume wird mit den angegebenen Einstellungen erstellt.
 
-
-
-
-<!--HONumber=52-->
+<!---HONumber=58_postMigration-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/23/2015" 
+	ms.date="06/16/2015" 
 	ms.author="spelluru"/>
 
 # Azure Data Factory – Häufig gestellte Fragen
@@ -24,11 +24,11 @@
 
 Data Factory ist ein vollständig verwalteter Dienst für Entwickler zum Erstellen von Diensten für Datenspeicher, Transfer und Verarbeitung in fehlertoleranten Datenpipelines mit hoher Verfügbarkeit. Data Factory arbeitet mit lokalem und Cloud-Datenspeicher. Eine Pipeline ist ein Satz von Dateneingaben, Verarbeitungsaktivitäten und Datenausgaben und wird mit einfachen JSON-Skripts definiert und über PowerShell-Befehle aktiviert. Nach der Aktivierung organisiert und plant die Data Factory Pipelines für die Ausführung in HDInsight (Hadoop) mit Optionen für die automatische Clusterverwaltung im Auftrag des Benutzers. Data Factory bietet zudem eine visuelle Verwaltung und Überwachung über das Azure-Vorschauportal, um alle Pipelines mit umfassenden Informationen zum Betrieb und zur Dienstintegrität über ein Dashboard zu überwachen.
  
-### F: welche Kundenanfragen Data Factory ist zu lösen?
+### F: Welche Kundenherausforderung lässt sich mit Data Factory meistern?
 
 Azure Data Factory verteilt die Flexibilität der Nutzung verschiedener Dienste für Datenspeicherung, Verarbeitung und Datentransfers auf traditionelle relationale Speicher auf Basis unstrukturierter Daten mit den Steuerungs- und Überwachungsfunktionen eines vollständig verwalteten Diensts.
 
-### F: Wer sind die Zielgruppe für Daten Factory?
+### F: Für welche Zielgruppen ist Data Factory konzipiert?
 
 
 - Datenentwickler: die für das Erstellen von Integrationsdiensten zwischen Hadoop und anderen Systemen zuständig sind:
@@ -40,94 +40,113 @@ Azure Data Factory verteilt die Flexibilität der Nutzung verschiedener Dienste 
 	- müssen Rechen- und Speicherressourcen verwalten, um Kosten und Größe auf lokale und Cloud-Lösungen zu verteilen
 	- müssen schnell diverse Quellen und Verarbeitungsmöglichkeiten hinzufügen, um neue Geschäftsanforderungen zu behandeln, während der Überblick über alle Rechen- und Speicherressourcen erhalten bleibt
 
-###  Details f: wo Preise finde ich für Azure Data Factory?
+###  F: Wo finde ich Preisinformationen zu Azure Data Factory?
 
-Finden Sie unter [Daten Factory-Preisdetails Seite][adf-pricing-details] für die Preisdetails für Azure-Daten-Factory.
+Preisinformationen zu Azure Data Factory finden Sie auf der Seite [Data Factory – Preisübersicht][adf-pricing-details].
 
-### F: Wie mit Azure Data Factory fange ich?
+### F: F: Was sind die ersten Schritte mit Azure Data Factory?
 
-- Einen Überblick über die Azure Data Factory finden Sie unter [Einführung in Azure Data Factory][adf-introduction].
-- Ein kurzes Lernprogramm, finden Sie unter [Erste Schritte mit Azure Data Factory][adfgetstarted].
-- Umfassende Dokumentation finden Sie unter [Azure Data Factory-Dokumentation][adf-documentation-landingpage].
+- Eine Übersicht über Azure Data Factory finden Sie unter [Einführung in Azure Data Factory][adf-introduction].
+- Ein kurzes Lernprogramm finden Sie unter [Erste Schritte mit Azure Data Factory][adfgetstarted].
+- Die umfassende Dokumentation finden Sie in der [Dokumentation zu Azure Data Factory][adf-documentation-landingpage].
 
   
-### F: wie zugreifen Kunden Daten Factory?
+### F: Wie können Kunden auf Data Factory zugreifen?
 
-Kunden erhalten Zugriff auf Daten Factory über die [Azure Preview Portal][azure-preview-portal].
+Kunden können über das [Azure-Vorschauportal][azure-preview-portal] auf Data Factory zugreifen.
 
-### F: Was ist der Daten-Factory Region Verfügbarkeit?
+### F: In welchen Regionen ist Data Factory verfügbar?
 
 Als öffentliche Vorschau wird Data Factory nur in der Region „USA West“ verfügbar sein. Die von Data Factory verwendeten Rechen- und Speicherdienste können in anderen Regionen verfügbar sein.
  
-### F: Was sind die Grenzwerte für die Anzahl der Daten Factorys/Pipelines/Aktivitäten/Datasets? 
+### F: Welche Grenzwerte gelten hinsichtlich der Anzahl von Data Factorys/Pipelines/Aktivitäten/Datasets? 
 
 
-- Anzahl der Daten Factorys innerhalb eines Abonnements: 50
-- Anzahl von Pipelines innerhalb einer Factory Daten: 100
+- Anzahl der Data Factorys innerhalb eines Abonnements: 50
+- Anzahl von Pipelines innerhalb einer Data Factory: 100
 - Anzahl der Aktivitäten in einer Pipeline: 10
-- Anzahl von Datensätzen mit in einer Fabrik Daten: 100
+- Anzahl von Datasets in einer Data Factory: 100
 
-### F: Was ist die Erstellung/Entwicklererfahrung mit Azure Data Factory-Dienst?
+### F: Was sieht die Erstellung-/Entwicklungsumgebung im Azure Data Factory-Dienst aus?
 
 Sie können Data Factorys mithilfe einer der folgenden Methoden erstellen:
 
-- **Azure Preview Portal**. Die Data Factory-Blätter im Azure-Vorschauportal bieten eine umfassende Benutzeroberfläche zum Erstellen von Factorys und zugehöriger Dienste. Die **Data Factory-Editor**, die auch Teil des Portals ist ermöglicht es Ihnen die einfache Erstellung von verknüpften Dienste, Tabellen, Datasets und Pipelines durch Angabe von JSON-Definitionen für diese Artefakte. Finden Sie unter [Data Factory-Editor][data-factory-editor] eine Übersicht über den Editor und [Erste Schritte mit Daten Factory][datafactory-getstarted] für ein Beispiel für das Portal/Editor zum Erstellen und Bereitstellen einer Factory Daten verwenden.   
-- **Azure PowerShell**. Wenn Sie ein PowerShell-Benutzer sind und PowerShell anstelle der Portalbenutzeroberfläche nutzen möchten, können Sie Azure Data Factory-Cmdlets einsetzen, die als Teil von Azure PowerShell zum Erstellen und Bereitstellen von Data Factorys dienen. Finden Sie unter [Erstellen und Überwachen von Azure Data Factory mit Azure PowerShell][create-data-factory-using-powershell] für ein einfaches Beispiel und [Lernprogramm: verschieben und Verarbeiten von Protokolldateien, die mit Daten Factory][adf-tutorial] für erweiterte Beispiel zeigt die Verwendung von PowerShell Cmdles zum Erstellen von Ad eine Factory Daten bereitstellen. Finden Sie unter [Daten Factory-Cmdlet-Referenz][adf-powershell-reference] Content auf der MSDN-Bibliothek für eine umfassende Dokumentation Data Factory-Cmdlets.  
-- **Klassenbibliothek von .NET**. Sie können Daten Factorys mithilfe des Data Factory .NET SDK programmgesteuert erstellen. Finden Sie unter [erstellen, überwachen und Verwalten von Daten Factorys mit .NET SDK][create-factory-using-dotnet-sdk] eine exemplarische Vorgehensweise zum Erstellen einer Daten-Factory, die mit .NET SDK. Finden Sie unter [Daten Factory Class Library Reference][msdn-class-library-reference] für eine umfassende Data Factory .NET SDK-Dokumentation.  
-- **REST-API**. Sie können auch die vom Azure-Data Factory-Dienst verfügbar gemachte REST-API zum Erstellen und Bereitstellen von Data Factorys nutzen. Finden Sie unter [Daten Factory REST-API-Referenz][msdn-rest-api-reference] für eine umfassende Data Factory REST-API-Dokumentation. 
+- **Azure-Vorschauportal** Die Data Factory-Blätter im Azure-Vorschauportal bieten eine umfassende Benutzeroberfläche zum Erstellen von Factorys und zugehöriger Dienste. Der **Data Factory-Editor**, der auch Teil des Portals ist, ermöglicht Ihnen die einfache Erstellung von verknüpften Diensten, Tabellen, Datasets und Pipelines durch Angabe von JSON-Definitionen für diese Artefakte. Unter [Data Factory-Editor][data-factory-editor] finden Sie eine Übersicht über den Editor und unter [Erste Schritte mit Data Factory][datafactory-getstarted] ein Beispiel für das Verwenden des Portals/Editors zum Erstellen und Bereitstellen einer Data Factory.   
+- **Azure PowerShell**. Wenn Sie ein PowerShell-Benutzer sind und PowerShell anstelle der Portalbenutzeroberfläche nutzen möchten, können Sie Azure Data Factory-Cmdlets einsetzen, die als Teil von Azure PowerShell zum Erstellen und Bereitstellen von Data Factorys dienen. Unter [Erstellen und Überwachen von Azure Data Factory mit Azure PowerShell][create-data-factory-using-powershell] finden Sie ein einfaches Beispiel. Unter [Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mithilfe von Data Factory][adf-tutorial] finden Sie ein erweitertes Beispiel der Verwendung von PowerShell-Cmdlets zum Erstellen und Bereitstellen einer Data Factory. In der [Data Factory-Cmdlet-Referenz][adf-powershell-reference] in der MSDN-Bibliothek finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets.  
+- **Klassenbibliothek von .NET**. Sie können Daten Factorys mithilfe des Data Factory .NET SDK programmgesteuert erstellen. Unter [Erstellen, Überwachen und Verwalten von Daten Factorys mit dem .NET SDK][create-factory-using-dotnet-sdk] finden Sie eine exemplarische Vorgehensweise zum Erstellen einer Data Factory mit dem .NET SDK. Unter [Data Factory-Klassenbibliotheksreferenz][msdn-class-library-reference] finden Sie eine umfassende Dokumentation zum Data Factory .NET SDK.  
+- **REST-API**. Sie können auch die vom Azure-Data Factory-Dienst verfügbar gemachte REST-API zum Erstellen und Bereitstellen von Data Factorys nutzen. Unter [Data Factory-REST-API][msdn-rest-api-reference] finden Sie eine umfassende Dokumentation zur Data Factory-REST-API. 
 
-## Aktivitäten – häufig gestellte Fragen
-### F: Was sind die unterstützten Datenquellen und Aktivitäten?
+### F: Können Data Factorys umbenannt werden?
+Nein. Wie bei anderen Azure-Ressourcen auch kann der Name einer Azure Data Factory nicht geändert werden.
 
-- **Unterstützten Datenquellen:** Azure-Speicher (BLOBs und Tabellen), SQL Server, Azure SQL-Datenbank, Dateisystem, Oracle-Datenbank.
-- **Aktivitäten unterstützt:**: Kopie-Aktivität (lokale zur Cloud und die Cloud zu lokalem), HDInsight-Aktivität (Pig, Hive, MapReduce, Hadoop-Streaming Transformationen), Azure Machine Learning Bewertung Aktivität, gespeicherte Prozedur-Aktivität und benutzerdefinierten C#-Aktivitäten.
+## Aktivitäten – Häufig gestellte Fragen
+### F: Welche Datenquellen und Aktivitäten werden unterstützt?
 
-### Wann werden eine Aktivität ausgeführt?
-Die **Verfügbarkeit** Konfigurationseinstellung in der Datentabelle Ausgabe bestimmt, wenn die Aktivität ausgeführt wird. Die Aktivität wird überprüft, ob alle Eingabedaten Abhängigkeiten erfüllt sind (d. h. **bereit** State) vor dem Starten der Ausführung.
+- **Unterstützte Datenquellen**: 
+	- Azure Storage (Blob und Tabellen)
+	- Azure SQL
+	- Azure DocumentDB
+	- Lokaler SQL Server
+	- Lokale Oracle-Datenbank 
+	- Lokales Dateisystem
+	- Lokale MySQL-Datenbank
+	- Lokale DB2-Datenbank
+	- Lokale Teradata-Datenbank
+	- Lokale Sybase-Datenbank
+	- Lokale PostgreSQL-Datenbank  
+- **Unterstützte Aktivitäten**: 
+	- Kopieraktivität (lokal nach Cloud und Cloud nach lokal)
+	- HDInsight-Aktivität (Pig, Hive, MapReduce, Hadoop-Streamingtransformationen)
+	- Azure Machine Learning-Batch-Bewertungsaktivität
+	- Azure SQL-Aktivität "Gespeicherte Prozedur"
+	- Benutzerdefinierte .NET-Aktivitäten
 
-## Kopieren der Aktivität – häufig gestellte Fragen
-### F: unterstützt welche Bereiche werden von der Aktivität kopieren?
+### Wann wird eine Aktivität ausgeführt?
+Die Konfigurationseinstellung **availability** in der Ausgabedatentabelle bestimmt, wann die Aktivität erfolgt. Die Aktivität prüft, ob alle Eingabedatenabhängigkeiten erfüllt sind (den Status **ready** haben), bevor die Ausführung beginnt.
 
-Der Kopie Aktivität unterstützt das Kopieren von Daten in die folgenden Bereiche: Osten der USA OSTEN 2, Westen der USA, zentral-USA, Norden, Süden, Nordeuropa, Westeuropa und Südostasien.
+## Kopieraktivität – Häufig gestellte Fragen
+### F: In welchen Regionen wird die Kopieraktivität unterstützt?
 
-Kopieren von Daten in anderen Regionen wird auch unterstützt mithilfe einer der Regionen über für die Weiterleitung der Daten. Der Kopiervorgang wird auf Basis der Region gemessen, über die die Daten weitergeleitet werden.
+Die Kopieraktivität zum Kopieren von Daten wird in den folgenden Regionen unterstützt: USA (Ost), USA (Ost) 2, USA (West), USA (Mitte), USA (Mitte/Süden), Nordeuropa, Westeuropa und Südostasien.
 
-Bereich des Kopierziel | Region für das routing verwendet
+Das Kopieren von Daten in andere Regionen wird ebenfalls unterstützt, wenn eine der oben genannten fünf Regionen zur Weiterleitung der Daten genutzt wird. Der Kopiervorgang wird auf Basis der Region gemessen, über die die Daten weitergeleitet werden.
+
+Region des Kopierziels | Für die Weiterleitung genutzte Region
 -------------------------- | -----------------------
 Ostasien | Südostasien
 Japan Ost | USA (West)
 Japan West | USA (West)
 Brasilien Süd | USA (Ost) 2
 
-### Wie kann ich auf mehrere Ausgabetabellen kopieren?
-Sie können mehrere Output-Tabellen in einer Pipeline haben, wie im folgenden Beispiel gezeigt:
+### Wie kann ich Daten in mehrere Ausgabetabellen kopieren?
+Wie im folgenden Beispiel gezeigt, kann eine Pipeline mehrere Ausgabetabellen enthalten.
 
 	"outputs":  [ 
 		{ "name": “outputtable1” }, 
 		{ "name": “outputtable2” }  
 	],
  
-### Ist es besser, wenn eine Pipeline mit mehreren Aktivitäten oder eine separate Pipeline für jede Aktivität? 
-Pipelines werden sollte, um verwandte Aktivitäten zu bündeln. Logisch, können Sie die Aktivitäten in einer Pipeline halten, wenn die Tabellen, die diese Verbinden von jede andere Aktivität außerhalb der Pipeline nicht genutzt werden. Auf diese Weise keine Kette Pipeline aktiven Zeitraums müssten Sie aneinander ausgerichtet. Darüber hinaus wird die Datenintegrität in den Tabellen in der Pipeline interne beim Aktualisieren der Pipeline besser beibehalten. Pipeline-Update im Grunde beendet alle Aktivitäten in der Pipeline, entfernt und erneut erstellt. Von der Erstellung der Sicht, kann es auch einfacher, den Fluss der Daten innerhalb der zugehörigen Aktivitäten in einem JSON-Datei für die Pipeline finden Sie unter sein.
+### Ist es besser, eine Pipeline mit mehreren Aktivitäten oder eine separate Pipeline für jede Aktivität einzurichten? 
+Pipelines dienen zum Bündeln verwandter Aktivitäten. Natürlich können Sie die Aktivitäten in einer Pipeline halten, wenn die Tabellen, die diese verbinden, nicht von anderen Aktivitäten außerhalb der Pipeline genutzt werden. Auf diese Weise müssen Sie Pipelineaktivitäten nicht verknüpfen, damit diese sich aneinander ausrichten. Darüber hinaus kann die Datenintegrität in den Tabellen, die für die Pipeline intern sind, beim Aktualisieren der Pipeline besser beibehalten werden. Bei einer Pipelineaktualisierung werden alle Aktivitäten in der Pipeline beendet, entfernt und neu erstellt. Aus Erstellungssicht kann es auch einfacher sein, den Datenfluss innerhalb der zugehörigen Aktivitäten in einer JSON-Datei für die Pipeline nachzuverfolgen.
 
-## HDInsight-Aktivität – häufig gestellte Fragen
+## HDInsight-Aktivität – Häufig gestellte Fragen
 
-### F: unterstützt welche Bereiche werden von HDInsight?
+### F: In welchen Regionen wird HDInsight unterstützt?
 
-Finden Sie im Abschnitt "geografische Verfügbarkeit" im folgenden Artikel: oder [HDInsight-Preisdetails][hdinsight-supported-regions].
+Weitere Informationen finden Sie im Abschnitt zur geografischen Verfügbarkeit des folgenden Artikels oder unter [HDInsight – Preisübersicht][hdinsight-supported-regions].
 
-### F: werden welche Region wird durch ein HDInsight-Cluster bei Bedarf verwendet?
+### F: Welche Region wird von einem bedarfsgesteuerten HDInsight-Cluster verwendet?
 
 Der bedarfsgesteuerte HDInsight-Cluster wird in derselben Region erstellt, in der sich der Speicher befindet, den Sie für die Verwendung mit dem Cluster angegeben haben.
 
-### F: wie weitere Speicherkonten verfügen, um den HDInsight-Cluster verknüpft?
+### F: Wie können weitere Speicherkonten mit Ihrem HDInsight-Cluster verknüpft werden?
 
-Wenn Sie Ihren eigenen HDInsight-Cluster (BYOC - eigenen Cluster zu bringen) verwenden, finden Sie unter den folgenden Themen:
+Wenn Sie Ihren eigenen HDInsight-Cluster (BYOC - Bring Your Own Cluster) verwenden, lesen Sie die folgenden Themen:
 
-- [Verwenden ein HDInsight-Cluster mit alternativen Speicherkonten und Metastores][hdinsight-alternate-storage]
-- [Verwenden Sie zusätzlichen Speicher-Konten mit HDInsight-Struktur][hdinsight-alternate-storage-2]
+- [Verwenden eines HDInsight-Clusters mit alternativen Speicherkonten und Metastores][hdinsight-alternate-storage]
+- [Verwenden zusätzlicher Speicherkonten mit HDInsight Hive][hdinsight-alternate-storage-2]
 
-Wenn Sie einen Anforderungs-Cluster verwenden, der vom Dienst Daten Factory erstellt wird, müssen Sie angeben, dass die zusätzlichen Speicherkonten für das HDInsight Service verknüpft, sodass der Service Factory für die Daten in Ihrem Namen registrieren kann. Verwenden Sie in der JSON-Definition für den verknüpften on Demand-Dienst **AdditionalLinkedServiceNames** -Eigenschaft alternativen Speicherkonten an, wie im folgenden JSON-Ausschnitt gezeigt:
+Wenn Sie einen bedarfsgesteuerten Cluster verwenden, der vom Data Factory-Dienst erstellt wird, müssen Sie zusätzliche Speicherkonten für den verknüpften- HDInsight-Dienst angeben, damit der Data Factory-Dienst diese in Ihrem Auftrag registrieren kann. Verwenden Sie in der JSON-Definition des bedarfsgesteuerten verknüpften Diensts die **additionalLinkedServiceNames**-Eigenschaft, um alternative Speicherkonten anzugeben, wie im folgenden JSON-Codeausschnitt gezeigt:
  
 	{
 	    "name": "MyHDInsightOnDemandLinkedService",
@@ -141,36 +160,36 @@ Wenn Sie einen Anforderungs-Cluster verwenden, der vom Dienst Daten Factory erst
 	    }
 	} 
 
-Im obigen Beispiel darstellen otherLinkedServiceName1 und otherLinkedServiceName2 verknüpften Dienste, deren Definitionen Anmeldeinformationen enthalten, die das HDInsight-Cluster alternative Speicherkonten zugreifen muss.
+Im obigen Beispiel stellen "otherLinkedServiceName1" und "otherLinkedServiceName2" verknüpfte Dienste dar, deren Definitionen Anmeldeinformationen enthalten, die der HDInsight-Cluster für den Zugriff auf alternative Speicherkonten benötigt.
 
-## Gespeicherte Prozedur Aktivität – häufig gestellte Fragen
-### Unterstützt auf welche Datenquellen die gespeicherte Prozedur für die Aktivität?
-Die gespeicherte Prozedur für die Aktivität unterstützt nur SQL Azure-Datenbank zu diesem Zeitpunkt.
+## Aktivität "Gespeicherte Prozedur" – Häufig gestellte Fragen
+### Welche Datenquellen unterstützt die Aktivität "Gespeicherte Prozedur"?
+Die Aktivität "Gespeicherte Prozedur" unterstützt derzeit nur Azure SQL-Datenbank.
 
-## Segmente – häufig gestellte Fragen
+## Slices – Häufig gestellte Fragen
 
-### Wie kann ich ein Segment erneut ausführen?
-Sie können ein Segment erneut ausführen, in einem der folgenden Arten:
+### Wie kann ich einen Slice erneut ausführen?
+Sie können einen Slice auf eine der folgenden Arten erneut ausführen:
 
-- Klicken Sie auf **Ausführen** auf der Befehlsleiste auf die **DATENSLICE** Blade für das Segment im Portal. 
-- Führen Sie **Set AzureDataFactorySliceStatus** Cmdlet mit dem Status festgelegt **PendingExecution** für das Segment.   
+- Klicken Sie im Portal auf der Befehlsleiste für den Slice auf dem Blatt **DATENSLICE** auf **Ausführen**. 
+- Führen Sie das Cmdlet **Set AzureDataFactorySliceStatus** mit auf **PendingExecution** festgelegtem Status für den Slice aus.   
 	
 		Set-AzureDataFactorySliceStatus -Status PendingExecution -ResourceGroupName $ResourceGroup -DataFactoryName $df -TableName $table -StartDateTime "02/26/2015 19:00:00" -EndDateTime "02/26/2015 20:00:00" 
 
-Finden Sie unter [Set AzureDataFactorySliceStatus][set-azure-datafactory-slice-status] ausführliche Informationen über das Cmdlet.
+Unter [Set AzureDataFactorySliceStatus][set-azure-datafactory-slice-status] finden Sie ausführliche Informationen zum Cmdlet.
 
-### Wie lange dauerte es um ein Segment zu verarbeiten?
-1. Klicken Sie auf **Datasets** Kachel auf die **DATA FACTORY** Blade für Ihre Daten-Factory.
-2. Klicken Sie auf das bestimmte Dataset auf die **Datasets** Blade.
-3. Wählen Sie das Segment aus, die Sie von Interesse sind die **aktuelle Slices** auf in der Liste der **Tabelle** Blade.
-4. Klicken Sie auf die Aktivität ausgeführt wird, von der **Aktivität ausgeführt wird** auf in der Liste der **DATENSLICE** Blade. 
-5. Klicken Sie auf **Eigenschaften** Kachel auf die **AKTIVITÄTSDETAILS ausführen** Blade. 
-6. Daraufhin sollte die **Dauer** Feld mit einem Wert. Dies ist die Verarbeitungszeit für das Segment.   
+### Wie lange hat die Verarbeitung eines Slices gedauert?
+1. Klicken Sie auf der Kachel **Datasets** auf das Blatt **DATA FACTORY** für Ihre Data Factory.
+2. Klicken Sie auf dem Blatt **Datasets** auf das gewünschte Dataset.
+3. Wählen Sie auf dem Blatt **TABELLE** in der Liste **Zuletzt verwendete Slices** den gewünschten Slice aus.
+4. Klicken Sie auf dem Blatt **DATENSLICE** in der Liste **Aktivitätsausführungen** auf die Aktivitätsausführung. 
+5. Klicken Sie auf der Kachel **Eigenschaften** auf das Blatt **DETAILS ZUR AKTIVITÄTSAUSFÜHRUNG**. 
+6. Daraufhin sollte das Feld **Dauer** mit einem Wert angezeigt werden. Dies ist die Verarbeitungszeit des Slices.   
 
-### Wie eine laufende Slice beenden?
-Wenn Sie die Pipeline aus der Ausführung beenden müssen, können Sie [Suspend-AzureDataFactoryPipeline](https://msdn.microsoft.com/library/dn834939.aspx) Cmdlet. Derzeit hält das Anhalten der Pipeline nicht die Slice-Ausführungen an, die ausgeführt werden. Wenn die Ausführungen in Bearbeitung fertig sind, wird keine zusätzliche Slice übernommen.
+### Wie wird ein ausgeführter Slice beendet?
+Wenn Sie die Ausführung der Pipeline beenden müssen, können Sie das Cmdlet [Suspend-AzureDataFactoryPipeline](https://msdn.microsoft.com/library/dn834939.aspx) verwenden. Derzeit werden laufende Sliceausführungen bei Anhalten der Pipeline nicht beendet. Sobald die laufenden Ausführungen abgeschlossen sind, wird kein zusätzlicher Slice ausgewählt.
 
-Wenn Sie alle Ausführungen sofort beenden möchten, wäre die einzige Möglichkeit die Pipeline zu löschen und neu erstellen. Wenn Sie die Pipeline löschen, müssen Sie nicht zum Löschen von Tabellen und verknüpften Dienste, die von der Pipeline verwendet.
+Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige Möglichkeit das Löschen und erneute Erstellen der Pipeline. Wenn Sie die Pipeline löschen, müssen Sie keine Tabellen und verknüpften Dienste löschen, die von der Pipeline verwendet werden.
 
 
 
@@ -196,5 +215,6 @@ Wenn Sie alle Ausführungen sofort beenden möchten, wäre die einzige Möglichk
 [hdinsight-supported-regions]: http://azure.microsoft.com/pricing/details/hdinsight/
 [hdinsight-alternate-storage]: http://social.technet.microsoft.com/wiki/contents/articles/23256.using-an-hdinsight-cluster-with-alternate-storage-accounts-and-metastores.aspx
 [hdinsight-alternate-storage-2]: http://blogs.msdn.com/b/cindygross/archive/2014/05/05/use-additional-storage-accounts-with-hdinsight-hive.aspx
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=58_postMigration-->

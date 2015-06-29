@@ -25,7 +25,7 @@ In diesem Thema werden die Diensteinschränkungen für Azure RemoteApp beschrieb
 Alle Sammlungen:
 
 - Sammlungen pro Benutzer: 1
-- Veröffentlichte Apps pro Sammlung: 5.000 
+- Veröffentlichte Apps pro Sammlung: 100 
 
 Testsammlungen:
 
@@ -76,4 +76,6 @@ Um ein Supportticket zu öffnen, gehen Sie folgendermaßen vor:
 8.	Befolgen Sie die Anweisungen auf der nächsten Seite, und geben Sie dann die Details zur benötigten Erhöhung der Einschränkung ein. Wenn Sie beispielsweise Ihren Testzeitraum verlängern möchten, geben Sie ein: "Bitte erweitern Sie meinen Testzeitraum um X Tage". 
 9.	Klicken Sie auf **Submit**, um das Ticket zu öffnen.
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=58_postMigration-->

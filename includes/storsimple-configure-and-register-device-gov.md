@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Configure and register your device"
-   description="Explains how to use Windows PowerShell for StorSimple to configure and register a StorSimple device that is running Update 1."
+   pageTitle="Konfigurieren und Registrieren von Geräten"
+   description="Erläutert, wie Sie Windows PowerShell für StorSimple zum Konfigurieren und Registrieren eines StorSimple-Geräts verwenden, auf dem Update 1 ausgeführt wird."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
@@ -16,58 +16,58 @@
    ms.author="alkohli" />
 
 
-### To configure and register the device
+### So konfigurieren und registrieren Sie das Gerät
 
-1. Access the Windows PowerShell interface on your StorSimple device serial console. See [Use PuTTY to connect to the device serial console](#use-putty-to-connect-to-the-device-serial-console) for instructions. **Be sure to follow the procedure exactly or you will not be able to access the console.**
+1. Greifen Sie an der seriellen Konsole Ihres StorSimple-Geräts auf die Windows PowerShell-Benutzeroberfläche zu. Anweisungen dazu finden Sie unter [Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole](#use-putty-to-connect-to-the-device-serial-console). **Achten Sie darauf, dass Sie die Vorgehensweise genau befolgen. Andernfalls sind Sie nicht in der Lage, auf die Konsole zuzugreifen.**
 
-2. In the session that opens up, press Enter one time to get a command prompt. 
+2. Drücken Sie in der Sitzung, die geöffnet wird, einmal die EINGABETASTE, um eine Eingabeaufforderung zu öffnen.
 
-3. You will be prompted to choose the language that you would like to set for your device. Specify the language, and then press Enter. 
+3. Sie werden aufgefordert, die Sprache auszuwählen, die für Ihr Gerät festgelegt werden soll. Geben Sie die Sprache an, und drücken Sie dann die EINGABETASTE.
 
-    ![StorSimple configure and register device 1](./media/storsimple-configure-and-register-device-gov/HCS_RegisterYourDevice1-gov-include.png)
+    ![StorSimple – Konfigurieren und Registrieren des Geräts 1](./media/storsimple-configure-and-register-device-gov/HCS_RegisterYourDevice1-gov-include.png)
 
-4. In the serial console menu that is presented, choose option 1 to log on with full access. 
+4. Wählen Sie im Menü der seriellen Konsole, das angezeigt wird, Option 1 aus, d. h. die Anmeldung mit Vollzugriff.
 
-    ![StorSimple register device 2](./media/storsimple-configure-and-register-device-gov/HCS_RegisterYourDevice2-gov-include.png)
+    ![StorSimple – Registrieren des Geräts 2](./media/storsimple-configure-and-register-device-gov/HCS_RegisterYourDevice2-gov-include.png)
   
-5. Perform the following steps to configure the minimum required network settings for your device.
+5. Führen Sie die folgenden Schritte aus, um die mindestens erforderlichen Netzwerkeinstellungen für Ihr Gerät zu konfigurieren.
 
-    > [AZURE.IMPORTANT] These configuration steps need to be performed on the active controller of the device. The serial console menu indicates the controller state in the banner message. If you are not connect to the active controller, disconnect and then connect to the active controller.
+    > [AZURE.IMPORTANT]Diese Konfigurationsschritte müssen für den aktiven Controller des Geräts ausgeführt werden. Das Menü der seriellen Konsole gibt den Zustand des Controllers in der Bannermeldung an. Wenn Sie nicht mit dem aktiven Controller verbunden sind, trennen Sie die Verbindung, und stellen Sie dann eine Verbindung mit dem aktiven Controller her.
 
-      1. At the command prompt, type your password. The default device password is **Password1**.
+      1. Geben Sie an der Eingabeaufforderung Ihr Kennwort ein. Das Standardkennwort für das Gerät lautet **Password1**.
 
-      2. Type the following command:
+      2. Geben Sie den folgenden Befehl ein:
 
            `Invoke-HcsSetupWizard`
 
-      3. A setup wizard will appear to help you configure the network settings for the device. Supply the following information: 
+      3. Es wird ein Installations-Assistent angezeigt, der Sie beim Konfigurieren der Netzwerkeinstellungen für das Gerät unterstützt. Geben Sie die folgenden Informationen an:
 
-       - IP address for DATA 0 network interface
-       - Subnet mask
+       - IP-Adresse für die Netzwerkschnittstelle DATA 0
+       - Subnetzmaske
        - Gateway
-       - IP address for Primary DNS server
-       - IP address for Primary NTP server
+       - IP-Adresse für den primären DNS-Server
+       - IP-Adresse für den sekundären DNS-Server
  
-        > [AZURE.NOTE] You may have to wait for a few minutes for the subnet mask and DNS settings to be applied. 
+        > [AZURE.NOTE]Sie müssen ggf. einige Minuten warten, bis die Subnetzmaske und die DNS-Einstellungen übernommen werden.
 
-      4. Optionally, configure your web proxy server.
+      4. (Optional) Konfigurieren Sie Ihren Webproxyserver.
 
-      > [AZURE.IMPORTANT] Although web proxy configuration is optional, be aware that if you use a web proxy, you can only configure it here. For more information, go to [Configure web proxy for your device](https://msdn.microsoft.com/library/azure/dn764937.aspx). 
+      >[AZURE.IMPORTANT]Die Webproxykonfiguration ist optional. Achten Sie jedoch bei Verwendung eines Webproxys darauf, dass dieser nur hier konfiguriert werden kann. Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](https://msdn.microsoft.com/library/azure/dn764937.aspx).
 
-6. Press Ctrl + C to exit the setup wizard.
+6. Drücken Sie STRG+C, um den Setup-Assistenten zu beenden.
  
-7. Install the updates as follows:
-      1. Use the following cmdlet to set IPs on both the controllers:
+7. Installieren Sie die Updates wie folgt:
+      1. Verwenden Sie das folgende Cmdlet, um IP-Adressen für beide Controller festzulegen:
 
          `Set-HcsNetInterface -InterfaceAlias Data0 -Controller0IPv4Address <Controller0 IP> -Controller1IPv4Address <Controller1 IP>`
 
-      2. At the command prompt, run `Get-HcsUpdateAvailability`. You should be notified that updates are available.
+      2. Führen Sie an der Eingabeaufforderung Folgendes aus: `Get-HcsUpdateAvailability`. Sie sollten eine Benachrichtigung über Updates erhalten.
 
-      3. Run `Start-HcsUpdate`. You can run this command on any node. Updates will be applied on the first controller, the controller will fail over, and then the updates will be applied on the other controller.
+      3. Führen Sie `Start-HcsUpdate` aus. Sie können diesen Befehl auf einem beliebigen Knoten ausführen. Die Updates werden auf dem ersten Domänencontroller angewendet, und für den Controller wird ein Failover ausgeführt. Anschließend werden die Updates auf dem anderen Domänencontroller angewendet.
 
-      You can monitor the progress of the update by running `Get-HcsUpdateStatus`.    
+      Sie können den Fortschritt des Updateauftrags verfolgen, indem Sie `Get-HcsUpdateStatus` ausführen.
 
-       The following sample output shows the update in progress.
+       Die folgende Beispielausgabe zeigt den Status des Updates.
   
         ````
         Controller0>Get-HcsUpdateStatus
@@ -78,7 +78,7 @@
         Controller1Events   : 
         ````
  
-     The following sample output indicates that the update is finished.
+     Die folgende Beispielausgabe zeigt an, dass das Update abgeschlossen ist.
 
         ````
         Controller1>Get-HcsUpdateStatus
@@ -89,63 +89,58 @@
         Controller0Events   :
         Controller1Events   :
 
-      It may take up to 11 hours to apply all the updates, including the Windows Updates.
+      Es kann bis zu elf Stunden dauern, bis alle Updates einschließlich der Windows-Updates angewendet wurden.
 
-8. After all the updates are successfully installed, run the following cmdlet to confirm that the software updates were applied correctly:
+8. Nachdem alle Updates erfolgreich installiert wurden, führen Sie das folgende Cmdlet aus, um zu überprüfen, ob die Softwareupdates richtig angewendet wurden:
 
      `Get-HcsSystem`
 
-    You should see the following versions:
-    - HcsSoftwareVersion: 6.3.9600.17491
-    - CisAgentVersion: 1.0.9037.0
-    - MdsAgentVersion: 26.0.4696.1433
+    Es sollte eine der folgenden Versionen angezeigt werden: - HcsSoftwareVersion: 6.3.9600.17491 - CisAgentVersion: 1.0.9037.0 - MdsAgentVersion: 26.0.4696.1433
  
-9. Run the following cmdlet to confirm that the firmware update was applied correctly:
+9. Führen Sie das folgende Cmdlet aus, um zu überprüfen, ob das Firmwareupdate ordnungsgemäß angewendet wurde:
 
     `Start-HcsFirmwareCheck`.
 
-     The firmware status should be **UpToDate**.
+     Der Firmwarestatus sollte **UpToDate** lauten.
 
-10. Run the following cmdlet to point the device to the Microsoft Azure Government portal (because it points to the public Azure Management Portal by default). This will restart both controllers. We recommend that you use two PuTTY sessions to simultaneously connect to both controllers so that you can see when each controller is restarted.
+10. Führen Sie das folgende Cmdlet aus, um das Gerät auf das Microsoft Azure-Portal für Behörden zu verweisen. (Es zeigt standardmäßig auf das öffentliche Azure-Verwaltungsportal.) Beide Controller werden dadurch neu gestartet. Es wird empfohlen, dass Sie zwei PuTTY-Sitzungen verwenden, um gleichzeitig eine Verbindung mit beiden Controllern herzustellen, sodass Sie sehen können, wenn jeder Controller neu gestartet wird.
 
      `Set-CloudPlatform -AzureGovt_US`
 
-    You will see a confirmation message. Accept the default (**Y**).
+    Es wird eine Bestätigungsmeldung angezeigt. Übernehmen Sie den Standardwert (**Y**).
 
-11. Run the following cmdlet to resume setup:
+11. Führen Sie das folgende Cmdlet aus, um die Installation fortzusetzen:
 
      `Invoke-HcsSetupWizard`
 
-     ![Resume setup wizard](./media/storsimple-configure-and-register-device-gov/HCS_ResumeSetup-gov-include.png)
+     ![Fortsetzen des Installations-Assistenten](./media/storsimple-configure-and-register-device-gov/HCS_ResumeSetup-gov-include.png)
 
-    When you resume setup, the wizard will be the Update 1 version (which corresponds to version 17469). 
+    Wenn Sie das Setup fortsetzen, wird die Assistenten-Version aus Update 1 verwendet (entspricht Version 17469).
 
-12. Accept the network settings. You will see a validation message after you accept each setting.
+12. Akzeptieren Sie die Netzwerkeinstellungen. Es wird eine Validierungsmeldung angezeigt, nachdem Sie alle Einstellungen akzeptiert haben.
  
-13. For security reasons, the device administrator password expires after the first session, and you will need to change it now. When prompted, provide a device administrator password. A valid device administrator password must be between 8 and 15 characters. The password must contain three of the following: lowercase, uppercase, numeric, and special characters.
+13. Aus Sicherheitsgründen läuft das Administratorkennwort für das Gerät nach der ersten Sitzung ab, und Sie müssen es jetzt ändern. Geben Sie, wenn Sie dazu aufgefordert werden, ein Administratorkennwort für das Gerät an. Ein gültiges Administratorkennwort für das Gerät muss zwischen 8 und 15 Zeichen lang sein. Das Kennwort muss aus drei der folgenden Zeichenkategorien bestehen: Kleinbuchstaben, Großbuchstaben, Zahlen und Sonderzeichen.
 
-	<br/>![StorSimple register device 5](./media/storsimple-configure-and-register-device-gov/HCS_RegisterYourDevice5_gov-include.png)
+	<br/>![StorSimple – Registrieren des Geräts 5](./media/storsimple-configure-and-register-device-gov/HCS_RegisterYourDevice5_gov-include.png)
 
-14. The final step in the setup wizard registers your device with the StorSimple Manager service. For this, you will need the service registration key that you obtained in [Step 2: Get the service registration key](storsimple-get-service-registration-key-gov.md). After you supply the registration key, you may need to wait for 2-3 minutes before the device is registered.
+14. Der letzte Schritt im Installations-Assistenten besteht im Registrieren Ihres Geräts beim StorSimple-Manager-Dienst. Zu diesem Zweck benötigen Sie den Dienstregistrierungsschlüssel, den Sie unter [Schritt 2: Abrufen des Dienstregistrierungsschlüssels](storsimple-get-service-registration-key-gov.md) abgerufen haben. Nachdem Sie den Registrierungsschlüssel bereitgestellt haben, müssen Sie ggf. einige Minuten warten, bis das Gerät registriert wurde.
 
-      > [AZURE.NOTE] You can press Ctrl + C at any time to exit the setup wizard. If you have entered all the network settings (IP address for Data 0, Subnet mask, and Gateway), your entries will be retained.
+      >[AZURE.NOTE]Sie können jederzeit STRG+C drücken, um den Installations-Assistenten zu beenden. Wenn Sie alle Netzwerkeinstellungen (IP-Adresse für DATA 0, Subnetzmaske und Gateway) angegeben haben, werden Ihre Einträge beibehalten.
 
-	![StorSimple registration progress](./media/storsimple-configure-and-register-device-gov/HCS_RegistrationProgress-gov-include.png)
+	![Fortschritt der StorSimple-Registrierung](./media/storsimple-configure-and-register-device-gov/HCS_RegistrationProgress-gov-include.png)
 
-15. After the device is registered, a Service Data Encryption key will appear. Copy this key and save it in a safe location. **This key will be required with the service registration key to register additional devices with the StorSimple Manager service.** Refer to [StorSimple security](../articles/storsimple/storsimple-security.md) for more information about this key.
+15. Nachdem das Gerät registriert wurde, wird ein Schlüssel für die Dienstdatenverschlüsselung angezeigt. Kopieren Sie diesen Schlüssel, und bewahren Sie ihn an einem sicheren Ort auf. **Dieser Schlüssel ist mit dem Dienstregistrierungsschlüssel zum Registrieren weiterer Geräte bei StorSimple-Manager-Dienst erforderlich.** Weitere Informationen zu diesem Schlüssel finden Sie unter [StorSimple-Sicherheit](../articles/storsimple/storsimple-security.md).
 	
-	![StorSimple register device 7](./media/storsimple-configure-and-register-device-gov/HCS_RegisterYourDevice7_gov-include.png)    
+	![StorSimple – Registrieren des Geräts 7](./media/storsimple-configure-and-register-device-gov/HCS_RegisterYourDevice7_gov-include.png)
 
-      > [AZURE.IMPORTANT] To copy the text from the serial console window, simply select the text. You should then be able to paste it in the clipboard or any text editor. 
-      > 
-      > DO NOT use Ctrl + C to copy the service data encryption key. Using Ctrl + C will cause you to exit the setup wizard. As a result, the device administrator password will not be changed and the device will revert to the default password.
+      >[AZURE.IMPORTANT]Markieren Sie zum Kopieren des Texts aus dem Fenster der seriellen Konsole den Text einfach. Sie sollten Sie diese dann in die Zwischenablage kopieren und in einem beliebigen Texteditor einfügen können. > > VERWENDEN SIE NICHT STRG+C, um den Verschlüsselungsschlüssel für Dienstdaten zu kopieren. STRG+C bewirkt, dass der Installations-Assistent beendet wird. Dies führt dazu, dass das Geräteadministratorkennwort nicht geändert und das Gerät auf das Standardkennwort zurückgesetzt wird.
 
-16. Exit the serial console.
+16. Schließen Sie die serielle Konsole.
 
-17. Return to the Government Portal, and complete the following steps:
-  1. Double-click your StorSimple Manager service to access the **Quick Start** page.
-  2. Click **View connected devices**.
-  3. On the **Devices** page, verify that the device has successfully connected to the service by looking up the status. The device status should be **Online**.
+17. Kehren Sie zum Behörden-Portal zurück, und führen Sie die folgenden Schritte aus:
+  1. Doppelklicken auf Ihren StorSimple-Manager-Dienst, um auf die Seite **Schnellstart** zuzugreifen.
+  2. Klicken Sie auf **View connected devices**.
+  3. Vergewissern Sie sich auf der Seite **Geräte**, dass das Gerät erfolgreich mit dem Dienst verbunden wurde, indem Sie seinen Status überprüfen. Als Gerätestatus sollte **Online** angezeigt werden.
    
     	![StorSimple Devices page](./media/storsimple-configure-and-register-device-gov/HCS_DeviceOnline-gov-include.png) 
   
@@ -154,3 +149,5 @@
         If the device is still offline after a few minutes, then you need to make sure that your firewall network was configured as described in the [network requirements for your StorSimple device](https://msdn.microsoft.com/library/dn772371.aspx). If you do not have HTTP 1.1 support, check port 9354 to make sure that it is open for outbound communication. This port is used for communication between the StorSimple Manager service and your StorSimple device.
      
         
+
+<!---HONumber=58_postMigration-->

@@ -4,30 +4,49 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/21/2015" 
+	ms.date="06/18/2015" 
 	ms.author="awills"/>
  
 # Versionshinweise für das Application Insights-SDK für Java
 
-[Verwenden des SDK für Java](app-insights-java-get-started.md)
+Das [Application Insights-SDK für Java](app-insights-java-get-started.md) sendet Telemetriedaten über Ihre Live-App an [Application Insights](http://azure.microsoft.com/services/application-insights/), wo Sie die Nutzung und Leistung analysieren können.
 
-## Version 0.9.6
-- Machen Sie das Java-SDK kompatibel mit Servlet v2. 5 und HttpClient Pre-v4
-- Hinzufügen von Unterstützung für Java EE-interceptors
-- Entfernen redundante Abhängigkeiten von der Logback appender
+#### So installieren Sie das SDK in Ihrer Anwendung
 
-## Version 0.9.5  
+Informationen dazu finden Sie unter [Erste Schritte mit Application Insights in einem Java-Webprojekt](app-insights-java-get-started.md).
 
-- Update für ein Problem, in dem benutzerdefinierte Ereignisse nicht mit Benutzer-Sitzungen durch Cookie Analysefehler korreliert werden.  
-- Verbesserte Logik zum Auflösen des Speicherorts der Konfigurationsdatei ApplicationInsights.xml.
-- Entfernt das Nachverfolgen von Sitzungen und Benutzer (Dies wird nur von der clientseitigen SDKs erfolgen).
+#### So aktualisieren Sie auf das neueste SDK 
+
+Nach dem Upgrade müssen Sie alle an "ApplicationInsights.xml" vorgenommenen Anpassungen wieder zusammenführen. Erstellen Sie eine Kopie dieser Datei für den Vergleich mit der neuen Datei.
+
+*Bei Verwendung von Maven oder Gradle*
+
+1. Wenn Sie eine bestimmte Versionsnummer in "pom.xml" oder "build.gradle" angegeben haben, aktualisieren Sie sie.
+2. Aktualisieren Sie die Abhängigkeiten des Projekts.
+
+*Andernfalls*
+
+* Laden Sie die neueste Version von [Azure Libraries for Java](http://dl.msopentech.com/lib/PackageForWindowsAzureLibrariesForJava.html) herunter, und ersetzen Sie die alte Version. 
+ 
+Vergleichen Sie die alte und die neue Version der Datei "ApplicationInsights.xml". Viele Änderungen sind darauf zurückzuführen, dass Module hinzugefügt und entfernt wurden. Reaktivieren Sie alle Anpassungen, die Sie vorgenommen haben.
+
+## Version 0.9.6
+- Kompatibilität des Java-SDK mit Servlet 2.5 und HttpClient vor Version 4.3
+- Unterstützung für Java EE-Interceptors
+- Entfernen redundanter Abhängigkeiten aus dem Logback-Appender
+
+## Version 0.9.5  
+
+- Behebung des Problems, bei dem benutzerdefinierte Ereignisse aufgrund von Cookieanalysefehlern nicht mit Benutzern/Sitzungen korreliert wurden.  
+- Verbesserte Logik zum Auflösen des Speicherorts der Konfigurationsdatei "ApplicationInsights.xml".
+- Die Nachverfolgung von Sitzungen und Benutzern wurde entfernt (diese erfolgt nur durch clientseitige SDKs).
 
 ## Version 0.9.4
 
@@ -36,4 +55,4 @@
 - Möglichkeit, ein Telemetrieelement als synthetisch zu markieren, indem dem gemeldeten Element eine ```SyntheticSource```-Eigenschaft hinzugefügt wird.
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

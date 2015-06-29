@@ -4,8 +4,8 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="terrylan" 
-	editor="lisatoft"/>
+	manager="swadhwa" 
+	editor="curtand"/>
 
 <tags 
 	ms.service="active-directory" 
@@ -13,78 +13,85 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/02/2015" 
+	ms.date="05/28/2015" 
 	ms.author="billmath"/>
 
 # Verwalten von Azure AD Connect 
 
-
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/de-de/documentation/articles/active-directory-aadconnect/" title="Worum handelt es sich?" class="current">Worum handelt es sich?</a> <a href="/de-de/documentation/articles/active-directory-aadconnect-how-it-works/" title="Funktionsweise">Funktionsweise</a> <a href="/de-de/documentation/articles/active-directory-aadconnect-get-started/" title="Erste Schritte">Erste Schritte</a> <a href="/de-de/documentation/articles/active-directory-aadconnect-whats-next/" title="Wie geht es weiter?">Wie geht es weiter?</a> <a href="/de-de/documentation/articles/active-directory-aadconnect-learn-more/" title="Weitere Informationen">Weitere Informationen</a>
+<a href="../active-directory-aadconnect/" title="Worum handelt es sich?">Worum handelt es sich?</a> <a href="../active-directory-aadconnect-how-it-works/" title="Funktionsweise">Funktionsweise</a> <a href="../active-directory-aadconnect-get-started/" title="Erste Schritte">Erste Schritte</a> <a href="../active-directory-aadconnect-whats-next/" title="Nächste Schritte" class="current">Nächste Schritte</a> <a href="../active-directory-aadconnect-learn-more/" title="Weitere Informationen">Weitere Informationen</a>
 </div>
 
-Es handelt sich um fortgeschrittene operative Themen, die es Ihnen ermöglichen, Azure Active Directory Connect so anzupassen, dass die Bedürfnisse und Anforderungen Ihrer Organisation erfüllt werden.
+Anhand der Anweisungen in den folgenden weiterführenden Themen können Sie Azure Active Directory Connect entsprechend den Bedürfnissen und Anforderungen Ihrer Organisation anpassen.
 
-## Ändern der Standardkonfiguration
-Die Standardkonfiguration von Azure AD Connect ist in den meisten Fällen ausreichend, um Ihre lokalen Verzeichnisse auf die Cloud zu erweitern. Es gibt jedoch bestimmte Fälle, in denen Sie die Standardeinstellungen ändern und der Geschäftslogik Ihrer Organisation anpassen müssen. In diesen Fällen können Sie die Standardkonfiguration ändern, wobei einige Dinge beachtet werden müssen, bevor Sie dies tun.
+## Zuweisen von Lizenzen für Benutzer von Azure AD Premium und Enterprise Mobility
 
-Wenn Sie von Azure AD Sync oder DirSync aktualisieren oder verschieben, beachten Sie die folgenden Punkte:
+Nachdem Ihre Benutzer in der Cloud synchronisiert wurden, müssen Sie ihnen nun eine Lizenz zuweisen, sodass sie Cloudanwendungen wie z. B. Office 365 verwenden können.
 
-- Nachdem Sie Azure AD Sync auf eine neuere Version aktualisiert haben, werden die meisten Einstellungen auf Standardwerte zurückgesetzt.
-- Änderungen an integrierten Synchronisierungsregeln gehen verloren, nachdem ein Upgrade angewendet wurde.
-- Integrierte Synchronisierungsregeln, die gelöscht wurden, werden bei einem Upgrade auf eine neuere Version neu erstellt.
-- Von Ihnen erstellte benutzerdefinierte Synchronisierungsregeln bleiben unverändert, wenn ein Upgrade auf eine neuere Version angewendet wurde.
-
-Wenn Sie die Standardkonfiguration ändern müssen, führen Sie folgende Schritte aus:
-
-- Wenn Sie einen Attributfluss von einer integrierten Synchronisierungsregel anpassen müssen, verändern Sie diese nicht. Erstellen Sie stattdessen eine neue Synchronisierungsregel mit höherer Priorität (niedrigerem numerischem Werte), die den erforderlichen Attributfluss enthält.
-- Exportieren Sie Ihre benutzerdefinierten Synchronisierungsregeln mit dem Synchronisierungsregel-Editor. Dadurch erhalten Sie ein PowerShell-Skript, mit dem Sie die Regeln bei einem Notfallwiederherstellungsszenario problemlos neu erstellen können.
-- Wenn Sie den Umfang oder die Join-Einstellung einer integrierten Synchronisierungsregel ändern müssen, so dokumentieren Sie dies und wenden Sie die Änderung nach dem Upgrade auf eine neuere Version von Azure AD Connect erneut an.
+### So weisen Sie eine Azure AD Premium- oder Enterprise Mobility Suite-Lizenz zu
+--------------------------------------------------------------------------------
+<ol>
+<li>Melden Sie sich beim Azure-Portal als Administrator an.</li>
+<li>Wählen Sie im linken Bereich **Active Directory** aus.</li>
+<li>Doppelklicken Sie auf der Seite "Active Directory" auf das Verzeichnis mit den Benutzern, die Sie aktivieren möchten.</li>
+<li>Wählen Sie oben auf der Seite des Verzeichnisses die Option **Lizenzen** aus.</li>
+<li>Wählen Sie auf der Seite "Lizenzen" die Option "Active Directory Premium" oder "Enterprise Mobility Suite" aus, und klicken Sie dann auf **Zuweisen**.</li>
+<li>Wählen Sie im Dialogfeld die Benutzer aus, denen Sie Lizenzen zuweisen möchten, und klicken Sie dann auf das Häkchen, um die Änderungen zu speichern.</li>
 
 
+## Überprüfen der geplanten Synchronisierungsaufgabe
+Sie können den Status einer Synchronisierung im Azure-Portal überprüfen.
+
+### So überprüfen Sie die geplante Synchronisierungsaufgabe
+--------------------------------------------------------------------------------
+
+1. Melden Sie sich beim Azure-Portal als Administrator an.
+2. Wählen Sie im linken Bereich **Active Directory** aus.
+3. Doppelklicken Sie auf der Seite "Active Directory" auf das Verzeichnis mit den Benutzern, die Sie aktivieren möchten.
+4. Wählen Sie oben auf der Seite des Verzeichnisses die Option **Verzeichnisintegration** aus.
+5. Prüfen Sie unter "Integration mit lokalem Active Directory" die letzte Synchronisierungszeit.
+
+<center>![Cloud](./media/active-directory-aadconnect-whats-next/verify.png)</center>
+
+## Starten einer geplanten Synchronisierungsaufgabe
+Wenn Sie eine Synchronisierungsaufgabe ausführen möchten, können Sie dazu wieder den Azure AD Connect-Assistenten durchlaufen. Sie müssen Ihre Azure AD-Anmeldeinformationen angeben. Wählen Sie im Assistenten die Aufgabe **Synchronisierungsoptionen anpassen** aus, und klicken Sie in den weiteren Schritten des Assistenten auf "Weiter". Stellen Sie am Ende sicher, dass das Kontrollkästchen **Starten Sie den Synchronisierungsvorgang, sobald die Anfangskonfiguration abgeschlossen wurde** aktiviert ist.
+
+<center>![Cloud](./media/active-directory-aadconnect-whats-next/startsynch.png)</center>
 
 
+
+
+## Weitere verfügbare Aufgaben in Azure AD Connect
+Nach der ersten Installation von Azure AD Connect können Sie den Assistenten über die Azure AD Connect-Startseite oder die Desktopverknüpfung jederzeit erneut starten. Sie werden feststellen, dass beim erneuten Durchlaufen des Assistenten unter "Zusätzliche Aufgaben" einige neue Optionen zur Verfügung stehen.
+
+Die folgende Tabelle enthält eine Zusammenfassung und jeweils eine kurze Beschreibung dieser Aufgaben.
+
+<center>![Verknüpfungsregel](./media/active-directory-aadconnect-whats-next/addtasks.png) </center>
+
+Weitere Aufgabe | Beschreibung 
+------------- | ------------- |
+Ausgewähltes Szenario anzeigen |Hiermit können Sie Ihre aktuelle Azure AD Connect-Lösung anzeigen. Dazu gehören allgemeine Einstellungen, synchronisierte Verzeichnisse, Synchronisierungseinstellungen usw.
+Synchronisierungsoptionen anpassen | Hiermit können Sie die aktuelle Konfiguration ändern, z. B. Hinzufügen weiterer Aktive Directory-Gesamtstrukturen zur Konfiguration oder Aktivieren von Synchronisierungsoptionen wie beispielsweise "Benutzer", "Gruppe", "Gerät" oder "Kennwort zurückschreiben".
+Stagingmodus aktivieren | Hiermit können Sie Informationen bereitstellen, die später synchronisiert, jedoch nicht in Azure AD oder Active Directory exportiert werden. Auf diese Weise können Sie die Synchronisierungen in der Vorschau anzeigen, bevor sie ausgeführt werden.
 
 
  
 
-## Verwenden des Synchronisierungsregel-Editors
-
-In Azure AD Connect können Sie den Objekt- und Attributfluss zwischen Azure AD und Ihren lokalen Verzeichnissen konfigurieren und optimieren, indem Sie Synchronisierungsregeln konfigurieren. Synchronisierungsregeln können mithilfe des Synchronisierungsregel-Editors konfiguriert werden. Der Synchronisierungsregel-Editor wird bei der Installation von Azure AD Connect mit installiert. Um den Editor verwenden zu können, müssen Sie Mitglied der ADSyncAdmins-Gruppe oder der Administratorgruppe sein, die Sie bei der Installation von Azure AD Connect angegeben haben.
-
-Im Screenshot unten sehen Sie alle für Ihre Konfiguration erstellten Synchronisierungsregeln, wenn Sie Azure AD Connect mit der Expressinstallation einrichten. Jede Zeile in der Tabelle stellt eine Synchronisierungsregel dar. Auf der linken Seite werden unter Regeltypen die beiden verschiedenen Arten aufgeführt: eingehend und ausgehend. Eingehend und ausgehend bedeutet aus Sicht vom Metaverse. Das heißt, Informationen aus den Verzeichnissen werden in den Metaverse übertragen. Ausgehend bezieht sich auf Regeln, mit denen Informationen und Attribute an Verzeichnisse wie unser lokales Active Directory oder Azure AD gesendet werden.
-
-<center>![Synch Rules Editor](./media/active-directory-aadconnect-whats-next/Synch_Rule.png) </center>
-
-Um eine neue Regel zu erstellen, wählen Sie „Neue Regel hinzufügen“ und konfigurieren Sie die Regel. Nehmen wir beispielsweise an, dass wir eine Join-Regel erstellen möchten, bei der jeder Benutzer in unserem lokalen Verzeichnis mit dem Metaverse-Objekt verknüpft wird, das über dieselbe Telefonnummer verfügt. Hierzu erstellen Sie die neue Regel und geben das verbundene System an, in unserem Fall "contoso.com", den Objekttyp des verbundenen Systems, die Benutzer, den Metaverse-Objekttyp, die Person und den Join-Verknüpfungstyp.
-
-<center>![Create Sync rule](./media/active-directory-aadconnect-whats-next/synch2.png) </center>
 
 
-Geben Sie dann auf dem Bildschirm „Join-Regeln“ unter Quellattribut und unter Zielattribut „TelephoneNumber“ an. Und das ist schon alles. Sie haben nun erfolgreich eine Join-Regel erstellt.
-
-<center>![Join Rule](./media/active-directory-aadconnect-whats-next/synch3.png) </center>
-
-Sie können den Synchronisierungsregel-Editor dazu verwenden, weitere Geschäftslogiken außerhalb der Standardkonfiguration anzuwenden und sie an die Bedürfnisse Ihrer Organisation anzupassen. Weitere Informationen zum Synchronisierungsregel-Editor finden Sie unter [Grundlagen der Standardkonfiguration](https://msdn.microsoft.com/library/azure/dn800963.aspx).
 
 
-## Verwenden einer deklarativen Bereitstellung 
-Die deklarative Bereitstellung funktioniert „ohne Code“ und kann mit dem Synchronisierungsregel-Editor eingerichtet und konfiguriert werden. Der Editor kann für die Einrichtung und Erstellung eigener Bereitstellungsregeln verwendet werden.
-
-Ein wesentlicher Bestandteil der deklarativen Bereitstellung ist die in den Attributflüssen verwendete Ausdruckssprache. Die verwendete Sprache ist eine Teilmenge von Microsoft ® Visual Basic ® for Applications (VBA). Diese Sprache wird in Microsoft Office verwendet, und Benutzer mit Erfahrungen mit VBScript werden sie wiedererkennen. Die Ausdruckssprache  für die deklarative Bereitstellung verwendet nur Funktionen und ist keine strukturierte Sprache; es gibt keine Methoden oder Anweisungen. Funktionen werden stattdessen verschachtelt, um den Programmablauf auszudrücken.
-
-Weitere Informationen zur Ausdruckssprache finden Sie unter [Grundlagen zu den Ausdrücken für eine deklarative Bereitstellung](https://msdn.microsoft.com/library/azure/dn801048.aspx)
 
 ## Zusätzliche Dokumentation
-Ein Teil der Dokumentation, die für Azure AD Sync erstellte wurde, ist noch immer relevant und gilt für Azure AD Connect. Obwohl jede Anstrengung unternommen wird, diese Dokumentation an Azure.com zu übermitteln, befindet sich ein Teil noch immer in der MSDN-Bibliothek. Zusätzliche Dokumentation finden Sie unter [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) und [Azure AD Sync auf MSDN](https://msdn.microsoft.com/library/azure/dn790204.aspx).
+Zusätzliche Dokumentation zur Verwendung von Azure AD Connect:
 
-**Zusätzliche Ressourcen**
+- [Changing the Azure AD Connect default configuration](active-directory-aadconnect-whats-next-change-default-config.md) (in englischer Sprache)
+- [Using the Azure AD Connect Synchronization Rules Editor](active-directory-aadconnect-whats-next-synch-rules-editor.md) (in englischer Sprache)
+- [Using declarative provisioning](active-directory-aadconnect-whats-next-declarative-prov.md) (in englischer Sprache)
 
-* [Verwenden Sie Ihre lokale Identitätsinfrastruktur in der Cloud](active-directory-aadconnect.md)
-* [Funktionsweise von Azure AD Connect](active-directory-aadconnect-how-it-works.md)
-* [Erste Schritte mit Azure AD Connect](active-directory-aadconnect-get-started.md)
-* [Wie geht es weiter mit Azure AD Connect?](active-directory-aadconnect-whats-next.md)
-* [Weitere Informationen](active-directory-aadconnect-learn-more.md)
-* [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
+Ein Teil der Dokumentation für Azure AD Sync ist noch immer relevant und gilt für Azure AD Connect. Obwohl jede Anstrengung unternommen wird, diese Dokumentation an Azure.com zu übermitteln, befindet sich ein Teil noch immer in der MSDN-Bibliothek. Zusätzliche Dokumentation finden Sie unter [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) und [Azure AD Sync auf MSDN](https://msdn.microsoft.com/library/azure/dn790204.aspx).
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=58_postMigration-->

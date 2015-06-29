@@ -3,7 +3,7 @@
 	description="Erste Schritte mit Azure-Warteschlangenspeicher in einem Cloud-Dienstprojekt in Visual Studio" 
 	services="storage" 
 	documentationCenter="" 
-	authors="kempb" 
+	authors="patshea123" 
 	manager="douge" 
 	editor="tglee"/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/20/2015" 
-	ms.author="kempb"/>
+	ms.author="patshea123"/>
 
 # Erste Schritte mit Azure Storage (Cloud Service-Projekte)
 
@@ -91,7 +91,7 @@ Um eine Nachricht in eine vorhandene Warteschlange einzufügen, erstellen Sie zu
 
 ## Einsehen der nächsten Nachricht
 
-Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die Methode **PeekMessages** aufrufen.
+Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die Methode **PeekMessage** aufrufen.
 
     // Retrieve storage account from connection string
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -252,7 +252,7 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   </ul>
 </li>
 <li>Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter <a href="http://msdn.microsoft.com/library/azure/gg433040.aspx">Speicher</a>.</li>
-<li>Erfahren Sie, wie Sie mithilfe des <a href="../websites-dotnet-webjobs-sdk/">Azure WebJobs SDK den geschriebenen Code so vereinfachen, dass er mit Azure-Speicher funktioniert.</li>
+<li>Erfahren Sie, wie Sie mithilfe des <a href="../websites-dotnet-webjobs-sdk/">Azure WebJobs SDK den geschriebenen Code so vereinfachen, dass er mit Azure Storage funktioniert.</li>
 <li>Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
   <ul>
     <li>Verwenden Sie <a href="/documentation/articles/storage-dotnet-how-to-use-tables/">Tabellenspeicher</a> zum Speichern strukturierter Daten.</li>
@@ -262,15 +262,16 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 </li>
 </ul>
 
-[Download and install the Azure SDK for .NET]: /develop/net/
-[.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-[Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
-[CloudStorageAccount]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.cloudstorageaccount_methods.aspx
-[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
-[Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-[Configuring Connection Strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
-[OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
-[Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
-[Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
+  [Download and install the Azure SDK for .NET]: /develop/net/
+  [.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
+  [Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
+  [CloudStorageAccount]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.cloudstorageaccount_methods.aspx
+  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+  [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Configuring Connection Strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
+  [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
+  [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
+  [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

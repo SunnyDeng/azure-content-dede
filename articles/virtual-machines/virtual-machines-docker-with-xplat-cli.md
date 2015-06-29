@@ -137,5 +137,6 @@ Sie sind nun bereit, das [Docker-Benutzerhandbuch] und Ihren virtuellen Docker-C
 [Gewusst wie: Verwenden der Docker-VM-Erweiterung mit dem Portal]: http://azure.microsoft.com/documentation/articles/virtual-machines-docker-with-portal/
 
 [Docker-Benutzerhandbuch]: https://docs.docker.com/userguide/
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

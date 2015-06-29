@@ -1,27 +1,27 @@
-
-<properties 
-	pageTitle="Verbinden mit und Abfragen der SQL-Datenbank mit C#" 
+<properties
+	pageTitle="Verbinden mit und Abfragen der SQL-Datenbank mit C#"
 	description="Codebeispiel für einen C#-Client mithilfe von ADO.NET zum Herstellen einer Verbindung und Interagieren mit der AdventureWorks-Datenbank im Clouddienst von Azure SQL-Datenbank."
-	services="sql-database" 
-	documentationCenter="" 
-	authors="ckarst" 
-	manager="jeffreyg" 
+	services="sql-database"
+	documentationCenter=""
+	authors="ckarst"
+	manager="jeffreyg"
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="04/14/2015" 
+<tags
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="get-started-article" 
+	ms.date="04/14/2015"
 	ms.author="cakarst"/>
 
 
-# Verbinden mit und Abfragen der SQL-Datenbank mit C# 
+# Verbinden mit der SQL-Datenbank und Abfragen von dieser mit C&#x23;
 
-Dieses Thema enthält ein C#-Codebeispiel, das zum Herstellen einer Verbindung mit einer vorhandenen AdventureWorks-SQL-Datenbank mithilfe von ADO.NET verwendet werden kann. Das Beispiel wird in eine Konsolenanwendung kompiliert, die die Datenbank abfragt und die Ergebnisse angezeigt.
+
+Dieses Thema enthält ein C#-Codebeispiel, das zum Herstellen einer Verbindung mit einer vorhandenen AdventureWorks-SQL-Datenbank mithilfe von ADO.NET verwendet werden kann. Das Beispiel wird in eine Konsolenanwendung kompiliert, die die Datenbank abfragt und das Resultset angezeigt.
 
 
 ## Voraussetzungen
@@ -70,7 +70,7 @@ Fügen Sie diesen Quellcode in die Datei **Program.cs** ein.
 	using System.Text;
 	using System.Threading.Tasks;
 	using System.Data.SqlClient;
-	
+
 	namespace ConnectandQuery_Example
 	{
 		class Program
@@ -114,7 +114,7 @@ Fügen Sie diesen Quellcode in die Datei **Program.cs** ein.
 ## Schritt 3: Ermitteln der Verbindungszeichenfolge für die Datenbank
 
 
-1. Öffnen Sie das [Azure-Portal](http://portal.azure.com/).
+1. Öffnen Sie das [Azure-Vorschauportal](http://portal.azure.com/).
 2. Klicken Sie auf **Durchsuchen** > **SQL-Datenbanken** > **"Adventure Works"-Datenbank** > **Eigenschaften** > **Show Database Connection Strings**.
 
 
@@ -127,7 +127,7 @@ Auf dem Blatt mit den Verbindungszeichenfolgen für Datenbanken werden die entsp
 ## Schritt 4: Einfügen der tatsächlichen Verbindungsinformationen
 
 
-Ersetzen Sie in dem von Ihnen eingefügten Quellcode den Platzhalter *[Your_Connection_String]* durch die Verbindungszeichenfolge und unbedingt auch *Your_password_here* in dieser Zeichenfolge durch Ihr tatsächliches Kennwort.
+- Ersetzen Sie in dem von Ihnen eingefügten Quellcode den Platzhalter *[Your_Connection_String]* durch die Verbindungszeichenfolge und unbedingt auch *Your_password_here* in dieser Zeichenfolge durch Ihr tatsächliches Kennwort.
 
 
 ## Schritt 5: Ausführen der Anwendung
@@ -135,5 +135,6 @@ Ersetzen Sie in dem von Ihnen eingefügten Quellcode den Platzhalter *[Your_Conn
 
 1. Zum Erstellen und Ausführen der Anwendung klicken Sie auf **DEBUGGEN** > **Debuggen starten**.
 2. Das Programm zeigt die Ergebnisse der Abfrage im Konsolenfenster an.
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

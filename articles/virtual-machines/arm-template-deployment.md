@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/27/2015" 
+	ms.date="06/15/2015" 
 	ms.author="davidmu"/>
 
 # Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage
@@ -22,12 +22,12 @@ Durch das Verwenden von Ressourcengruppen und Vorlagen, können Sie alle Ressour
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
-Zum Abschluss dieses Lernprogramms benötigen Sie auch Folgendes:
+Zur Durchführung dieses Lernprogramms benötigen Sie außerdem Folgendes:
 
 - [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
 - [Azure-Speicherkonto](../storage-create-storage-account.md)
 - [Windows Management Framework 3.0 ](http://www.microsoft.com/de-de/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/de-de/download/details.aspx?id=40855)
-- [Azure PowerShell](../install-configure-powershell.md)
+- [Azure PowerShell](../powershell-install-configure.md)
 
 Die Durchführung dieser Schritte dauert etwa 30 Minuten.
 
@@ -320,7 +320,7 @@ NuGet-Pakete sind die einfachste Möglichkeit, um die Bibliotheken zu installier
 
 1.	Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen und anschließend auf **NuGet-Pakete verwalten**.
 
-2.	Geben Sie in das Suchfeld *Active Directory* ein, klicken Sie auf **Installieren** für das Active Directory-Authentifizierungsbibliothek-Paket, und befolgen Sie dann die Anweisungen zum Installieren des Pakets.
+2.	Geben Sie *Active Directory* in das Suchfeld ein, klicken Sie für das Active Directory-Authentifizierungsbibliothek-Paket auf **Installieren**, und befolgen Sie dann die Anweisungen zum Installieren des Pakets.
 
 3.	Wählen Sie am oberen Rand der Seite **Vorabversion einschließen**. Geben Sie *Azure-Ressourcenverwaltung* in das Suchfeld ein, klicken Sie auf **Installieren** für die Microsoft Azure-Ressourcenverwaltungsbibliotheken, und befolgen Sie dann die Anweisungen zum Installieren des Pakets.
 
@@ -381,7 +381,7 @@ Ressourcen werden einer Ressourcengruppe immer aus einer Vorlage bereitgestellt.
 		  }
 		}
 
-2.	Fügen Sie der Main-Methode den folgenden Code hinzu, um  die gerade hinzugefügte Methode aufzurufen:
+2.	Fügen Sie der Main-Methode den folgenden Code hinzu, um die gerade hinzugefügte Methode aufzurufen:
 
 		CreateResourceGroup(credential);
 		Console.ReadLine();
@@ -413,7 +413,7 @@ Ressourcen werden einer Ressourcengruppe immer aus einer Vorlage bereitgestellt.
 
 	Ersetzen Sie {storage-account-name} durch den Namen des Kontos, in dem Sie die Dateien zuvor abgelegt haben.
 
-4.	Fügen Sie der Main-Methode den folgenden Code hinzu, um  die gerade hinzugefügte Methode aufzurufen:
+4.	Fügen Sie der Main-Methode den folgenden Code hinzu, um die gerade hinzugefügte Methode aufzurufen:
 
 		CreateTemplateDeployment(credential);
 		Console.ReadLine();
@@ -433,7 +433,7 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 		  }
 		}
 
-2.	Fügen Sie der Main-Methode den folgenden Code hinzu, um  die gerade hinzugefügte Methode aufzurufen:
+2.	Fügen Sie der Main-Methode den folgenden Code hinzu, um die gerade hinzugefügte Methode aufzurufen:
 
 		DeleteResourceGroup(credential);
 		Console.ReadLine();
@@ -442,12 +442,12 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 1.	Klicken Sie zum Ausführen der Konsolenanwendung in Visual Studio auf **Starten**, und melden Sie sich dann bei Azure AD mit demselben Benutzernamen und Kennwort an, die Sie für Ihr Abonnement verwenden.
 
-2.	Drücken Sie nach der Rückgabe jedes Statuscodes die **EINGABETASTE** zurück, um jede Ressource zu erstellen. Nachdem der virtuelle Computer erstellt wurde, führen Sie den nächsten Schritt aus, bevor Sie die EINGABETASTE drücken, um alle Ressourcen zu löschen.
+2.	Drücken Sie nach der Rückgabe jedes Statuscodes die **EINGABETASTE**, um jede Ressource zu erstellen. Nachdem der virtuelle Computer erstellt wurde, führen Sie den nächsten Schritt aus, bevor Sie die EINGABETASTE drücken, um alle Ressourcen zu löschen.
 
-	Die vollständige Ausführung dieser Konsolenanfang sollte von Anfang bis zum Ende etwa 5 Minuten dauern. Nehmen Sie sich ein paar Minuten Zeit, bevor Sie die EINGABETASTE drücken, um den Löschvorgang der Ressourcen zu starten, um die Erstellung der Ressourcen im Azure-Vorschauportal sicherzustellen, bevor Sie sie löschen.
+	Die vollständige Ausführung dieser Konsolenanwendung von Anfang bis zum Ende sollte etwa 5 Minuten dauern. Bevor Sie die EINGABETASTE drücken, um das Löschen der Ressourcen zu starten, können Sie sich ein paar Minuten Zeit nehmen, um die Erstellung der Ressourcen im Azure-Vorschauportal zu überprüfen, bevor Sie diese löschen.
 
 3. Navigieren Sie im Azure-Vorschauportal zu den Überwachungsprotokollen, um den Status der Ressourcen anzuzeigen:
 
 	![Erstellen einer AD-Anwendung](./media/arm-template-deployment/crpportal.png)
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

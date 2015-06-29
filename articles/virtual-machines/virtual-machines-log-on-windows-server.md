@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="KBDAzure" 
 	manager="timlt" 
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-service-management"/>
 
 <tags 
 	ms.service="virtual-machines" 
@@ -13,14 +14,28 @@
 	ms.tgt_pltfrm="vm-windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/23/2015" 
+	ms.date="06/12/2015" 
 	ms.author="kathydav"/>
 
 
-#Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird#
+# Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird#
 
-Verwenden Sie bei einem virtuellen Computer, auf dem das Betriebssystem Windows Server ausgeführt wird, die Schaltfläche „Verbinden“ im Verwaltungsportal, um sich auf einem virtuellen Computer anzumelden. (Weitere Informationen zu virtuellen Linux-Computern finden Sie unter [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md).)
+Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Portal zum Starten einer Remotedesktopsitzung. (Weitere Informationen zu virtuellen Linux-Computern finden Sie unter [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md).)
+
+## Anmelden
 
 [AZURE.INCLUDE [virtual-machines-log-on-win-server](../../includes/virtual-machines-log-on-win-server.md)]
 
-<!---HONumber=58--> 
+## Tipps zur Problembehandlung
+
+Folgende Dinge können Sie für eine schnelle Behebung Ihres Problems ausprobieren:
+
+Wenn Sie Probleme mit der Remotedesktopverbindung haben, setzen Sie die Konfiguration über das Portal zurück. Klicken Sie im Dashboard des virtuellen Computers unter **Auf einen Blick** auf **Remotekonfiguration zurücksetzen**.
+
+Wenn Sie Probleme mit Ihrem Kennwort haben, setzen Sie es über das Portal zurück. Klicken Sie im Dashboard des virtuellen Computers unter **Auf einen Blick** auf **Kennwort zurücksetzen**.
+
+Wenn diese Tipps nicht helfen, müssen Sie eine ausführlichere Problembehandlung durchführen. Anweisungen finden Sie unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md).
+ 
+ 
+
+<!---HONumber=58_postMigration-->

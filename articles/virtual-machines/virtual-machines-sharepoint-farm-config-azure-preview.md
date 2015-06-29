@@ -134,5 +134,6 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 [SharePoint in Azure-Infrastrukturdiensten](http://msdn.microsoft.com/library/azure/dn275955.aspx)
 
 [Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

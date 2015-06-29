@@ -3,7 +3,7 @@
    description="Erfahren Sie, wie Sie Update 1 der StorSimple 8000 Serie auf Ihrem Gerät installieren."
    services="storsimple"
    documentationCenter="NA"
-   authors="SharS"
+   authors="alkohli"
    manager="adinah"
    editor="tysonn" />
 <tags 
@@ -12,23 +12,47 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="05/27/2015"
-   ms.author="v-sharos" />
+   ms.date="06/18/2015"
+   ms.author="alkohli" />
 
 # Installieren von Update 1 auf dem StorSimple-Gerät
 
 ## Übersicht
 
-In diesem Lernprogramm erfahren Sie, wie Sie Update 1 auf einem StorSimple-Gerät installieren, auf dem eine Version vor Update 1 ausgeführt wird. Auf dem Gerät wird möglicherweise die allgemein verfügbare GA-Version oder Update 0.1-, Update 0.2- bzw. Update 0.3-Software ausgeführt. In diesem Lernprogramm erfahren Sie außerdem, was zu tun ist, wenn ein Gateway für eine andere Netzwerkschnittstelle als DATA 0 auf dem StorSimple-Gerät konfiguriert ist.
+In diesem Lernprogramm erfahren Sie, wie Sie Update 1 auf einem StorSimple-Gerät installieren, auf dem eine Version vor Update 1 ausgeführt wird. Auf dem Gerät wird möglicherweise die allgemein verfügbare GA-Version oder Update 0.1-, Update 0.2- bzw. Update 0.3-Software ausgeführt.
 
-Wenn auf Ihrem Gerät eine Version vor Update 1.0 ausgeführt wird, werden bei dieser Installation Prüfungen auf dem Gerät durchgeführt. Diese Prüfungen ermitteln den Gerätezustand im Hinblick auf Hardwarestatus und Netzwerkkonnektivität.
+Wenn auf Ihrem Gerät eine Version vor Update 1 ausgeführt wird, werden bei dieser Installation Prüfungen auf dem Gerät durchgeführt. Diese Prüfungen ermitteln den Gerätezustand im Hinblick auf Hardwarestatus und Netzwerkkonnektivität.
 
 Sie werden aufgefordert, eine manuelle Vorprüfung durchzuführen, um Folgendes sicherzustellen:
 
 - Die stationären Controller-IP-Adressen sind routbar und können eine Verbindung mit dem Internet herstellen. Diese IP-Adressen werden verwendet, um Ihr StorSimple-Gerät mit Updates zu versorgen. Sie können dies prüfen, indem Sie das folgende Cmdlet auf jedem Controller ausführen:
 
-    `Test-Connection -Source <fixed IP of your device controller> <Destination IP> `
+    `Test-Connection -Source <Fixed IP of your device controller> -Destination <Any IP or computer name outside of datacenter network> `
  
+	**Beispielausgabe für die Testverbindung, wenn feste IP-Adressen eine Verbindung mit dem Internet herstellen können**
+
+	    
+		Controller0>Test-Connection -Source 10.126.173.91 -Destination bing.com
+	    
+	    Source	  Destination 	IPV4Address      IPV6Address
+	    ----------------- -----------  -----------
+	    HCSNODE0  bing.com		204.79.197.200
+	    HCSNODE0  bing.com		204.79.197.200
+	    HCSNODE0  bing.com		204.79.197.200
+	    HCSNODE0  bing.com		204.79.197.200
+	
+		Controller0>Test-Connection -Source 10.126.173.91 -Destination  204.79.197.200
+
+	    Source	  Destination 	  IPV4Address    IPV6Address
+	    ----------------- -----------  -----------
+	    HCSNODE0  204.79.197.200  204.79.197.200
+	    HCSNODE0  204.79.197.200  204.79.197.200
+	    HCSNODE0  204.79.197.200  204.79.197.200
+	    HCSNODE0  204.79.197.200  204.79.197.200
+	    
+	    
+
+
 - Vor der Aktualisierung des Geräts empfehlen wir, eine Cloud-Momentaufnahme der Gerätedaten zu erstellen.
 
 Nachdem Sie die manuellen Prüfungen (siehe oben) überprüft und bestätigt haben, wird eine Reihe von automatischen Prüfungen vor dem Update durchgeführt. Diese umfassen:
@@ -51,41 +75,6 @@ Es wird empfohlen, das Azure-Verwaltungsportal zu verwenden, um ein Gerät zu ak
 
 [AZURE.INCLUDE [storsimple-install-update-via-portal](../../includes/storsimple-install-update-via-portal.md)]
 
-## Installieren von Update 1 auf einem Gerät mit einem Gateway auf einer anderen Netzwerkschnittstelle als DATA 0 
-
-Dieses Verfahren gilt für StorSimple-Geräte mit einer Software-Version vor Update 1.0 und einem Gateway, das auf eine andere Netzwerkschnittstelle als DATA 0 eingestellt ist.
- 
-Wenn Ihr Gerät kein Gateway aufweist, das auf eine andere Netzwerkschnittstelle als DATA 0 eingestellt ist, können Sie das Gerät direkt über das Verwaltungsportal aktualisieren. Siehe [Verwenden des Verwaltungsportals zum Installieren von Update 1](#use-the-management-portal-to-install-update-1).
- 
-> [AZURE.NOTE]Dieses Verfahren muss nur einmal durchgeführt werden, um Update 1.0 anzuwenden. Über das Azure-Verwaltungsportal können Sie nachfolgende Updates anwenden.
- 
-Wenn auf Ihrem Gerät Software vor Update 1.0 ausgeführt wird und ein Gateway für eine andere Netzwerkschnittstelle als DATA 0 eingestellt ist, haben Sie die folgenden beiden Möglichkeiten zum Anwenden von Update 1.0:
-
-- **Option 1**: Laden Sie das Update herunter, und wenden Sie es mithilfe des Cmdlets [Start HcsHotfix](https://technet.microsoft.com/library/dn688134.aspx) in der Windows PowerShell-Schnittstelle des Geräts an. Dies ist die empfohlene Methode.
-
-- **Option 2**: Installieren Sie das Update direkt über das Verwaltungsportal.
- 
-Ausführliche Anweisungen für jede dieser Optionen werden in den folgenden Abschnitten bereitgestellt.
-
-### Option 1: Verwenden von Windows PowerShell für StorSimple zum Anwenden von Update 1
-
-Stellen Sie Folgendes sicher, bevor Sie dieses Verfahren zum Anwenden des Updates verwenden:
-
-- Beide Gerätecontroller sind online.
-
-- DATA 2 und DATA 3 sind deaktiviert. Sie müssen dies nur sicherstellen, wenn auf den Geräten die GA-Version ausgeführt wird. Bei Geräten, auf denen Update 0.2 und 0.3 ausgeführt wird, ist diese Deaktivierung nicht erforderlich. Nachdem das Update abgeschlossen ist, können Sie diese Netzwerkschnittstellen erneut aktivieren.
- 
-Führen Sie die folgenden Schritte aus, um Update 1.0 anzuwenden: Das Update kann einige Stunden dauern.
-
-[AZURE.INCLUDE [storsimple-install-update-option1](../../includes/storsimple-install-update-option1.md)]
-
-### Option 2: Verwenden des Azure-Verwaltungsportals zum Anwenden von Update 1
-
-Das Update kann einige Stunden dauern. Wenn sich Ihre Hosts in unterschiedlichen Subnetzen befinden, kann das Entfernen der Gateway-Konfiguration auf den iSCSI-Schnittstellen zu Ausfallzeiten führen. Es wird empfohlen, DATA 0 für iSCSI-Datenverkehr zu konfigurieren, um Ausfallzeiten zu reduzieren.
- 
-Führen Sie die folgenden Schritte aus, um die Gatewayeinstellung zu löschen, und wenden Sie dann das Update an.
- 
-[AZURE.INCLUDE [storsimple-install-update-option2](../../includes/storsimple-install-update-option2.md)]
 
 ## Problembehandlung bei Update-Fehlern
 
@@ -97,11 +86,11 @@ Wenn eine Vorabprüfung fehlschlägt, beachten Sie unbedingt die ausführliche B
 
 Sie müssen sicherstellen, dass beide Controller fehlerfrei und online sind. Sie müssen außerdem sicherstellen, dass alle Hardwarekomponenten im StorSimple-Gerät auf der Seite "Wartung" als fehlerfrei angezeigt werden. Sie können dann versuchen, Updates zu installieren. Wenn Sie Probleme mit Hardware-Komponenten nicht beheben können, müssen Sie sich an den Microsoft-Support wenden, um die nächsten Schritte durchzuführen.
 
-**Was geschieht, wenn Sie die Fehlermeldung "Updates konnten nicht installiert werden"erhalten und empfohlen wird, die Anleitung zur Update-Problembehandlung hinzuzuziehen, um die Fehlerursache zu bestimmen?**
+**Was geschieht, wenn Sie die Fehlermeldung "Updates konnten nicht installiert werden" erhalten und empfohlen wird, die Anleitung zur Update-Problembehandlung hinzuzuziehen, um die Fehlerursache zu bestimmen?**
 
 Eine wahrscheinliche Ursache könnte sein, dass Sie nicht mit den Microsoft Update-Servern verbunden sind. In diesem Fall muss eine manuelle Überprüfung erfolgen. Wenn die Verbindung mit dem Updateserver unterbrochen wird, schlägt der Aktualisierungsauftrag fehl. Sie können das folgende Cmdlet in der Windows PowerShell-Schnittstelle Ihres StorSimple-Geräts ausführen, um die Konnektivität zu prüfen:
 
- `Test-Connection -Source <Fixed IP of your device controller> <Destination IP>`
+ `Test-Connection -Source <Fixed IP of your device controller> -Destination <Any IP or computer name outside of datacenter>`
 
 Führen Sie das Cmdlet auf beiden Controllern aus.
  
@@ -111,4 +100,4 @@ Wenn Sie sichergestellt haben, dass die Verbindung vorhanden ist, und dieses Pro
 
 Erfahren Sie mehr über [Microsoft Azure StorSimple](storsimple-overview.md)
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

@@ -72,7 +72,7 @@ Wenn Sie einmaliges Anmelden mit dem Clouddienst verwenden möchten, empfehlen w
 
 ### Bearbeiten Sie DNS-Einträge für Ihre Clouddienste
 
-> [AZURE.NOTE]Verwenden Sie Microsoft Intune? Sie brauchen keine DNS-Einträge für den Windows Intune-Clouddienst bearbeiten.
+> [AZURE.NOTE]Verwenden Sie Microsoft Intune? Sie müssen keine DNS-Einträge für den Microsoft Intune-Clouddienst bearbeiten.
 
 Nachdem Sie Ihren benutzerdefinierten Domänennamen hinzugefügt und überprüft haben, besteht der nächste Schritt darin, die DNS-Einträge bei Ihrer Domänenregistrierungsstelle oder Ihrem DNS-Hostinganbieter zu bearbeiten, die Datenverkehr auf den Clouddienst verweisen. Azure AD bietet die DNS-Informationen, die Sie benötigen.
 
@@ -103,7 +103,7 @@ Wenn Sie Microsoft Intune oder das Azure-Kontoportal verwenden:
 
 1. Suchen Sie in der Liste der Domänennamen auf der Seite **Domänen** die Domäne, die Sie überprüfen möchten. Klicken Sie in der Spalte **Status** auf **Klicken Sie zum Überprüfen der Domäne**.
 2. Auf der Seite **Domäne überprüfen** wählen Sie in der Dropdown-Liste **Anweisungen zur Durchführung dieses Schritts mit:** Ihren DNS-Hostinganbieter aus. Wenn Ihr Anbieter nicht in der Liste angezeigt wird, wählen Sie **Allgemeine Anweisungen**.
-3. In der Dropdown-Liste **Bestätigungsmethode wählen:**  wählen Sie **TXT-Eintrag hinzufügen (bevorzugte Methode)** oder **MX-Datensatz hinzufügen (alternative Methode)**.
+3. In der Dropdown-Liste **Bestätigungsmethode wählen:** wählen Sie **TXT-Eintrag hinzufügen (bevorzugte Methode)** oder **MX-Datensatz hinzufügen (alternative Methode)**.
 
     Wenn Ihr DNS-Hostinganbieter das Erstellen von TXT-Datensätzen ermöglicht, empfehlen wir einen TXT-Eintrag zur Überprüfung. Warum? TXT-Einträge lassen sich einfach erstellen und bergen nicht die Gefahr, die E-Mail-Übermittlung zu beeinträchtigen, wenn versehentlich ein falscher Wert eingegeben wird.
 
@@ -208,7 +208,7 @@ Wenn Sie Ihren benutzerdefinierten Domänennamen zum Clouddienst hinzufügen, na
 
 - [Azure AD-Forum](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD)
 - [Stackoverflow](http://stackoverflow.com/questions/tagged/azure)
-- [Als Unternehmen für Azure registrieren](sign-up-organization.md)
-- [Verwalten von Domänen in Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx)
+- [Als Organisation für Azure registrieren](sign-up-organization.md)
+- [Verwalten von Domänen in Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx) 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

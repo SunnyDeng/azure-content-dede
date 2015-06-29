@@ -105,7 +105,7 @@ Globale und lokale Filter verfügen über genau die gleichen Eigenschaften. Der 
 
 ##<a id="scenarios"></a>Allgemeine Szenarios 
 
-Wie bereits zuvor erwähnt, besteht Ihr Ziel bei der Übermittlung Ihrer Inhalte für Kunden (Streaming von Liveereignissen oder Video-on-Demand) darin, qualitativ hochwertige Videos für unterschiedliche Geräte unter verschiedenen Netzwerkbedingungen zu übermitteln. Darüber hinaus haben Sie möglicherweise andere Anforderungen, beispielsweise die Filterung Ihrer Medienobjekte oder die Verwendung **dynamischer Manifeste**. In den folgenden Abschnitten finden Sie eine kurze Übersicht über verschiedene Filterungsszenarios.
+Wie bereits zuvor erwähnt, besteht Ihr Ziel bei der Übermittlung Ihrer Inhalte für Kunden (Streaming von Liveereignissen oder Video-on-Demand) darin, qualitativ hochwertige Videos für unterschiedliche Geräte unter verschiedenen Netzwerkbedingungen zu übermitteln. Darüber hinaus haben Sie möglicherweise andere Anforderungen, beispielsweise die Filterung Ihrer Medienobjekte oder die Verwendung **dynamischer Manifeste**. In den folgenden Abschnitten erhalten Sie einen kurzen Überblick über verschiedene Filterungsszenarios.
 
 - Angeben einer spezifischen Teilmenge von Audio- und Videowiedergaben (anstatt aller mit dem Medienobjekt verknüpften Wiedergaben), die für bestimmte Geräte geeignet sind. 
 - Wiedergeben von nur einem Abschnitt eines Videos (anstelle des gesamten Videos).
@@ -176,7 +176,7 @@ Sie können mehrere Filterregeln in ein und demselben Filter kombinieren. Als Be
 
 Im folgenden Thema werden Media Services-Entitäten beschrieben, die im Zusammenhang mit Filtern stehen. In diesem Thema wird auch erörtert, wie Filter programmgesteuert erstellt werden.
 
-[Erstellen von Filtern mit REST-APIs](media-services-rest-create-filters).
+[Erstellen von Filtern mit REST-APIs](media-services-rest-dynamic-manifest.md).
 
 ##Bekannte Probleme und Einschränkungen
 
@@ -186,6 +186,9 @@ Im folgenden Thema werden Media Services-Entitäten beschrieben, die im Zusammen
 
 
 ##Siehe auch
+
+
+
 [renditions1]: ./media/media-services-dynamic-manifest-overview/media-services-rendition-filter.png
 [renditions2]: ./media/media-services-dynamic-manifest-overview/media-services-rendition-filter2.png
 
@@ -204,5 +207,6 @@ Im folgenden Thema werden Media Services-Entitäten beschrieben, die im Zusammen
 [language_filter]: ./media/media-services-dynamic-manifest-overview/media-services-language-filter.png
 [dvr_filter]: ./media/media-services-dynamic-manifest-overview/media-services-dvr-filter.png
 [skiing]: ./media/media-services-dynamic-manifest-overview/media-services-skiing.png
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

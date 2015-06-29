@@ -77,5 +77,6 @@ Weitere Informationen finden Sie unter [cloud-init documentation for Ubuntu](htt
 [REST-API-Referenz zur Dienstverwaltung mit "Add Role"](http://msdn.microsoft.com/library/azure/jj157186.aspx)
 
 [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=58_postMigration-->

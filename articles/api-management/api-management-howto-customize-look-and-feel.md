@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Anpassen von Aussehen und Verwalten des Entwicklerportals in Azure API Management" 
+	pageTitle="Anpassen des Erscheinungsbilds für das Entwicklerportal in Azure API Management" 
 	description="Anpassen des Erscheinungsbilds für das Entwicklerportal in Azure API Management" 
 	services="api-management" 
 	documentationCenter="" 
@@ -36,7 +36,7 @@ Jede Regel steht für eine Stileigenschaft des ausgewählten Elements. Der ausge
 
 > Falls Sie mit [Bootstrap](http://getbootstrap.com/) vertraut sind, werden Sie feststellen, dass es sich bei diesen Regeln um [LESS-Variablen](http://getbootstrap.com/css/) aus dem Bootstrap-Design für das Entwicklerportal handelt.
 
-Ändern wir nun die Farbe der Überschrift. Wählen Sie den Eintrag im Feld **@headings-color** aus, und geben Sie \#000000 ein. Dies ist der Hexadezimalcode für die Farbe Schwarz. Daraufhin sollte ein rechteckiger Farbindikator am Ende des Textfelds angezeigt werden. Wenn Sie diesen Indikator anklicken, können Sie mit einem Farbwähler eine Farbe auswählen.
+Ändern wir nun die Farbe der Überschrift. Wählen Sie den Eintrag im Feld **@headings-color** aus, und geben Sie #000000 ein. Dies ist der Hexadezimalcode für die Farbe Schwarz. Daraufhin sollte ein rechteckiger Farbindikator am Ende des Textfelds angezeigt werden. Wenn Sie diesen Indikator anklicken, können Sie mit einem Farbwähler eine Farbe auswählen.
 
 ![Farbauswahl][api-management-customization-toolbar-color-picker]
 
@@ -55,4 +55,4 @@ Wenn Sie Ihre Änderungen an den Stilregeln des ausgewählten Elements abgeschlo
 [api-management-customization-toolbar-color-picker]: ./media/api-management-howto-customize-look-and-feel/api-management-customization-toolbar-color-picker.png
 [api-management-customization-toolbar-publish-form]: ./media/api-management-howto-customize-look-and-feel/api-management-customization-toolbar-publish-form.png
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=58_postMigration-->

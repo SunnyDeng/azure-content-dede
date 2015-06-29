@@ -6,7 +6,7 @@ Die meisten Eigenschaften in der Datei *apiapp.json* und die Dateien im Ordner *
 
 ### API-App-ID 
 
-Die `id`-Eigenschaft legt den Namen der API-App fest. Zum Beispiel:
+Die `id`-Eigenschaft legt den Namen der API-App fest. Beispiel:
 
 		"id": "ContactsList",
 
@@ -20,13 +20,13 @@ Legen Sie die `namespace`-Eigenschaft auf die Domäne Ihres Azure Active Directo
 
 ### Dynamische Swagger-API-Definition
 
-Wenn Sie einen URL-Endpunkt für eine dynamische [Swagger](http://swagger.io/)-API-Definition bereitstellen möchten, speichern Sie die relative URL einer von der API-App verfügbar gemachten API in der Eigenschaft `endpoints.apiDefinition`. Die API-App gibt als Antwort auf eine GET-Anforderung eine Swagger 2.0-API-Definition zurück. Beispiel:
+Wenn die API-Anwendung eine dynamische [Swagger](http://swagger.io/)-API-Definition zurückgeben kann, speichern Sie die relative URL für eine GET-Anforderung, die das JSON für die API-Definition in der `endpoints.apiDefinition`-Eigenschaft zurückgibt. Beispiel:
 
 		"endpoints": {
 		    "apiDefinition": "/swagger/docs/v1"
 		}
 
-> **Hinweis:** Wenn Sie Swashbuckle verwenden, um eine Swagger-API-Definition zu generieren, kommt es aufgrund von HTTP-Methodenüberladungen in Ihren Web-API-Controllern zu doppelten Vorgang-IDs. Weitere Informationen finden Sie unter [Anpassen von mit Swashbuckle generierten Vorgangs-IDs](app-service-api-dotnet-swashbuckle-customize.md).
+> **Hinweis:** Wenn Sie Swashbuckle verwenden, um eine Swagger-API-Definition zu generieren, kommt es aufgrund von HTTP-Methodenüberladungen in Ihren Web-API-Controllern zu doppelten Vorgang-IDs. Weitere Informationen finden Sie unter [Anpassen von mit Swashbuckle generierten Vorgangs-IDs](../article/app-service-api/app-service-api-dotnet-swashbuckle-customize.md).
   
 ### Statische Swagger-API-Definition
 
@@ -35,6 +35,5 @@ Wenn Sie eine statische [Swagger](http://swagger.io/) 2.0-API-Definition bereits
 ![](./media/app-service-api-direct-deploy-metadata/apidefinmetadata.png)
 
 Lassen Sie `endpoints.apiDefinition` in der Datei *apiapp.json* weg, oder setzen Sie den zugehörigen Wert auf "null". Wenn Sie sowohl eine `endpoints.apiDefinition`-URL als auch eine Datei *apiDefinition.swagger.json* einschließen, hat die URL Vorrang, und die Datei wird ignoriert.
- 
 
-<!---HONumber=58-->
+<!---HONumber=58_postMigration-->
