@@ -98,7 +98,7 @@ Für die Erstellung mit Maven können Sie die Datei „pom.xml“ auf der oberst
   * Richten Sie den Emulator mit SDK 19 ein.
   * Wechseln Sie zu dem Stammordner, in dem Sie das Repository geklont haben.
   * Führen Sie den folgenden Befehl aus: mvn clean install.
-  * Wechseln Sie in das Verzeichnis mit dem Schnellstartbeispiel: cd samples\\hello.
+  * Wechseln Sie in das Verzeichnis mit dem Schnellstartbeispiel: cd samples\hello.
   * Führen Sie den folgenden Befehl aus: mvn android:deploy android:run.
   * Die App wird gestartet.
   * Geben Sie die Anmeldeinformationen des Testbenutzers ein, um sie auszuprobieren.
@@ -134,7 +134,7 @@ repositories {
         dirs 'libs'
     }
     maven {
-        url "YourLocalMavenRepoPath\.m2\\repository"
+        url "YourLocalMavenRepoPath\.m2\repository"
     }
 }
 dependencies {
@@ -393,7 +393,8 @@ Logger.getInstance().setLogLevel(Logger.LogLevel.Verbose);
 
  ```
   adb logcat > "C:\logmsg\logfile.txt"
- ``` Weitere Beispiele zu adb-Befehlen: https://developer.android.com/tools/debugging/debugging-log.html#startingLogcat
+ ```
+ Weitere Beispiele zu adb-Befehlen: https://developer.android.com/tools/debugging/debugging-log.html#startingLogcat
 
 #### Netzwerkablaufverfolgung
 
