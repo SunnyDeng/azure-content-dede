@@ -27,22 +27,22 @@ Datenträger-E/A-Durchsatz und E/A-Antwortzeiten in Azure können durch RAID erh
 
 Zusätzlich zur Datenträger-E/A verbessert sich die MySQL-Leistung, wenn Sie die RAID-Stufe erhöhen. In [Anhang B](#AppendixB) finden Sie nähere Informationen.
 
-Sie sollten auch die Segmentgröße berücksichtigen. Im Allgemeinen erzielen Sie mit größeren Segmenten niedrigere Gemeinkosten, insbesondere bei großen Schreibvorgängen. Eine zu große Segmentgröße kann jedoch mit zusätzlichen Gemeinkosten verbunden sein, und Sie können die Vorteile des RAID nicht nutzen. Die aktuelle Standardgröße beträgt 512 KB. Diese hat sich für die meisten allgemeinen Produktionsumgebungen als optimal erwiesen. In [Anhang C](#AppendixC) finden Sie nähere Informationen.
+Sie sollten auch die Segmentgröße berücksichtigen. Im Allgemeinen erzielen Sie mit größeren Segmenten niedrigere Gemeinkosten, insbesondere bei großen Schreibvorgängen. Eine zu große Segmentgröße kann jedoch mit zusätzlichen Gemeinkosten verbunden sein, und Sie können die Vorteile des RAID nicht nutzen. Die aktuelle Standardgröße beträgt 512 KB. Diese hat sich für die meisten allgemeinen Produktionsumgebungen als optimal erwiesen. In [Anhang C](#AppendixC) finden Sie nähere Informationen.   
 
-Bitte beachten Sie, dass es hinsichtlich der Anzahl der Festplatten Beschränkungen gibt, die Sie für verschiedene Arten von virtuellen Computern hinzufügen können. Ausführliche Informationen zu diesen Grenzen finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Im RAID-Beispiel in diesem Artikel benötigen Sie 4 angefügte Datenträger; Sie können jedoch auch ein RAID mit weniger Datenträgern einrichten.
+Bitte beachten Sie, dass es hinsichtlich der Anzahl der Festplatten Beschränkungen gibt, die Sie für verschiedene Arten von virtuellen Computern hinzufügen können. Ausführliche Informationen zu diesen Grenzen finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Im RAID-Beispiel in diesem Artikel benötigen Sie 4 angefügte Datenträger; Sie können jedoch auch ein RAID mit weniger Datenträgern einrichten.  
 
 In diesem Artikel wird angenommen, dass Sie bereits einen virtuellen Linux-Computer erstellt und MySQL installiert und konfiguriert haben. Weitere Informationen zu den ersten Schritten finden Sie unter "Installieren von MySQL unter Azure".
   
 ###Einrichtung von RAID unter Azure
-Die folgenden Schritte beschreiben, wie Sie RAID mithilfe des Windows Azure-Verwaltungsportals auf Azure erstellen können. Sie können RAID auch mithilfe von Windows PowerShell-Skripten einrichten. In diesem Beispiel wird RAID 0 mit 4 Datenträgern konfiguriert.
+Die folgenden Schritte beschreiben, wie Sie RAID mithilfe des Windows Azure-Verwaltungsportals auf Azure erstellen können. Sie können RAID auch mithilfe von Windows PowerShell-Skripten einrichten. In diesem Beispiel wird RAID 0 mit 4 Datenträgern konfiguriert.  
 
 ####Schritt 1: Hinzufügen eines Datenträgers zum virtuellen Computer  
 
-Klicken Sie auf der Seite "Virtuelle Computer" im Azure-Verwaltungsportal auf den virtuellen Computer, dem Sie einen Datenträger hinzufügen möchten. In diesem Beispiel wird der virtuelle Computer "mysqlnode1" verwendet.
+Klicken Sie auf der Seite "Virtuelle Computer" im Azure-Verwaltungsportal auf den virtuellen Computer, dem Sie einen Datenträger hinzufügen möchten. In diesem Beispiel wird der virtuelle Computer "mysqlnode1" verwendet.  
 
 ![][1]
 
-Klicken Sie auf der Seite für den virtuellen Computer auf **Dashboard**.
+Klicken Sie auf der Seite für den virtuellen Computer auf **Dashboard**.  
 
 ![][2]
  
@@ -52,6 +52,7 @@ Klicken Sie in der Taskleiste auf **Anfügen**.
 ![][3]
 
 Klicken Sie dann auf **Leeren Datenträger anfügen**.
+
 
 ![][4]
  
@@ -68,7 +69,7 @@ Die detaillierten Schritte zur Einrichtung von RAID finden Sie in diesem Artikel
 
 [http://azure.microsoft.com/documentation/articles/virtual-machines-linux-configure-RAID/](http://azure.microsoft.com/documentation/articles/virtual-machines-linux-configure-RAID/)
 
->[AZURE.NOTE]Führen Sie bei Verwendung des XFS-Dateisystems nach der RAID-Erstellung die nachfolgend aufgeführten Schritte aus:
+>[AZURE.NOTE] Führen Sie bei Verwendung des XFS-Dateisystems nach der RAID-Erstellung die nachfolgend aufgeführten Schritte aus:
 
 Verwenden Sie den folgenden Befehl, um XFS auf Debian, Ubuntu oder Linux Mint zu installieren:
 
@@ -131,7 +132,7 @@ Verwenden Sie die folgenden Befehle:
 	root@mysqlnode1:~# sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash elevator=noop"/g' /etc/default/grub
 	root@mysqlnode1:~# update-grub
 
->[AZURE.NOTE]Nur für /dev/sda ist diese Einstellung nicht sinnvoll. Sie muss auf allen Datenträgern festgelegt werden, auf denen sich die Datenbank befindet.
+>[AZURE.NOTE] Nur für /dev/sda ist diese Einstellung nicht sinnvoll. Sie muss auf allen Datenträgern festgelegt werden, auf denen sich die Datenbank befindet.
 
 Die folgende Ausgabe zeigt an, dass grub.cfg erfolgreich neu erstellt wurde und dass der Standard-Scheduler zu NOOP aktualisiert wurde.
 
@@ -213,7 +214,8 @@ Die folgenden Konfigurationselemente sind die Hauptfaktoren, die die MySQL-Leist
 -	**innodb_buffer_pool_size**: Der Pufferpool enthält gepufferte Daten und den Index. Dies ist normalerweise auf 70 % des physischen Arbeitsspeichers festgelegt.
 -	**innodb_log_file_size**: Dies ist die Größe des Redo-Protokolls. Sie verwenden die redo-Protokolle, um sicherzustellen, dass die Schreibvorgänge nach einem Systemabsturz schnell, zuverlässig und wiederherstellbar sind. Dies ist auf 512 MB festgelegt. Damit verfügen Sie über ausreichend Speicherplatz für die Protokollierung von Schreibvorgängen.
 -	**max_connections**: Manchmal schließen Anwendungen Verbindungen nicht ordnungsgemäß. Mit einem größeren Wert erhält der Server mehr Zeit für die Wiederverwendung von Leerlaufverbindungen. Es sind maximal 10.000 Verbindungen möglich, aber das empfohlene Maximum beträgt 5000 Verbindungen.
--	**Innodb_file_per_table**: Mit dieser Einstellung wird die Fähigkeit von InnoDB zur Speicherung von Tabellen in separaten Dateien aktiviert bzw. deaktiviert. Durch Aktivieren der Option wird sichergestellt, dass mehrere erweiterte Verwaltungsvorgänge effizient angewendet werden können. Vom Leistungsstandpunkt aus betrachtet kann die Übermittlung von Tabellenspeicherplatz hierdurch beschleunigt und die Leistung beim Umgang mit Verschwendung optimiert werden. Daher wird empfohlen, diese Einstellung zu aktivieren.</br> Ab MySQL 5.6 ist diese Option standardmäßig aktiviert. Daher ist keine Aktion erforderlich. Bei den früheren Versionen (vor 5.6) ist die Option standardmäßig deaktiviert. Daher müssen Sie diese aktivieren. Die Option sollte vor dem Laden neuer Daten angewendet werden, weil sie sich nur auf neu erstellte Tabellen auswirkt.
+-	**Innodb_file_per_table**: Mit dieser Einstellung wird die Fähigkeit von InnoDB zur Speicherung von Tabellen in separaten Dateien aktiviert bzw. deaktiviert. Durch Aktivieren der Option wird sichergestellt, dass mehrere erweiterte Verwaltungsvorgänge effizient angewendet werden können. Vom Leistungsstandpunkt aus betrachtet kann die Übermittlung von Tabellenspeicherplatz hierdurch beschleunigt und die Leistung beim Umgang mit Verschwendung optimiert werden. Daher wird empfohlen, diese Einstellung zu aktivieren.</br>
+	Ab MySQL 5.6 ist diese Option standardmäßig aktiviert. Daher ist keine Aktion erforderlich. Bei den früheren Versionen (vor 5.6) ist die Option standardmäßig deaktiviert. Daher müssen Sie diese aktivieren. Die Option sollte vor dem Laden neuer Daten angewendet werden, weil sie sich nur auf neu erstellte Tabellen auswirkt.
 -	**Innodb_flush_log_at_trx_commit**:Der Standardwert ist 1, wobei der Gültigkeitsbereich auf 0~2 gesetzt ist. Der Standardwert ist die am besten geeignete Option für eine eigenständige MySQL-DB. Die Einstellung 2 ermöglicht die höchste Datenintegrität und eignet sich für den Master im MySQL-Cluster. Die Einstellung 0 lässt Datenverluste zu. Dies kann die Zuverlässigkeit beeinträchtigen. In einigen Fällen wird die Leistung verbessert. Daher eignet sich die Einstellung für Slaves im MySQL-Cluster.
 -	**Innodb_log_buffer_size**: Der Protokollpuffer lässt zu, dass Transaktionen ausgeführt werden, ohne dass das Protokoll vor dem Ausführen der Transaktionen auf den Datenträger übertragen werden muss. Wenn jedoch ein großes binäres Objekt oder Textfeld vorhanden ist, wird der Zwischenspeicher sehr schnell aufgebraucht. Dadurch wird eine häufige Datenträger-E/A ausgelöst. Es ist besser, die Puffergröße zu erhöhen, wenn die Zustandsvariable "Innodb_log_waits" nicht 0 ist.
 -	**query_cache_size**: Die beste Möglichkeit ist, diese Einstellung von Anfang an zu deaktivieren. Legen Sie "query_cache_size" auf 0 fest (in MySQL 5.6 ist dies nun die Standardeinstellung), und verwenden Sie andere Methoden zur Beschleunigung von Abfragen.  
@@ -237,7 +239,7 @@ Beachten Sie, dass diese Option standardmäßig nicht aktiviert ist. Die Aktivie
 
 ###Schritt 3: Überprüfen der Wirksamkeit der Einstellung mit dem Befehl "show"
  
-![][7]
+![][7]   
    
 ![][8]
  
@@ -265,13 +267,15 @@ Im folgenden Beispiel werden Leistungstestdaten für eine gezielte Lab-Umgebung 
 <a name="AppendixB"></a>Anhang B: **MySQL-Leistungsvergleich (Durchsatz) bei verschiedenen RAID-Stufen** (XFS-Dateisystem)
 
  
-![][10] ![][11]
+![][10]  
+![][11]
 
 **Testbefehle:**
 
 	mysqlslap -p0ps.123 --concurrency=2 --iterations=1 --number-int-cols=10 --number-char-cols=10 -a --auto-generate-sql-guid-primary --number-of-queries=10000 --auto-generate-sql-load-type=write –engine=innodb
 
-**MySQL-Leistungsvergleich (OLTP) bei verschiedenen RAID-Stufen** ![][12]
+**MySQL-Leistungsvergleich (OLTP) bei verschiedenen RAID-Stufen**  
+![][12]
 
 **Testbefehle:**
 
@@ -282,7 +286,7 @@ Im folgenden Beispiel werden Leistungstestdaten für eine gezielte Lab-Umgebung 
  
 ![][13]
 
-**Testbefehle:**
+**Testbefehle:**  
 
 	fio -filename=/path/test -iodepth=64 -ioengine=libaio -direct=1 -rw=randwrite -bs=4k -size=30G -numjobs=64 -runtime=30 -group_reporting -name=test-randwrite
 	fio -filename=/path/test -iodepth=64 -ioengine=libaio -direct=1 -rw=randwrite -bs=4k -size=1G -numjobs=64 -runtime=30 -group_reporting -name=test-randwrite  
@@ -341,4 +345,4 @@ Weitere und detailliertere Konfigurationsparameter für die Optimierung finden S
 [13]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-13.png
 [14]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-14.png
 
-<!---HONumber=58--> 
+<!----HONumber=58--> 

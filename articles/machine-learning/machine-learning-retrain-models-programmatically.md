@@ -54,7 +54,8 @@ Diagramm 1: Übersicht über den Prozess des erneuten Trainings
 
 	Nach Abschluss der Ausführung des Experiments wird das Bewertungsexperiment durch Klicken auf "Publish Web Service" (Webdienst veröffentlichen) veröffentlicht und ein Standardendpunkt erstellt. Das trainierte Modell in diesem Webdienst ist aktualisierbar, wie unten dargestellt. Die Details für diesen Endpunkt werden dann auf dem Bildschirm angezeigt.  
 3. *Veröffentlichen des Trainingsexperiments als Webdienst*  
-	Damit das trainierte Modell erneut trainiert werden kann, müssen wir das Trainingsexperiment, das wir in Schritt 1 erstellt haben, als Webdienst veröffentlichen. Dieser Webdienst benötigt ein Webdienst-Ausgabemodul, das mit dem Modul [Train Model][train-model] verbunden ist, um neue trainierte Modelle erzeugen zu können. Klicken Sie auf das Symbol für Experimente im linken Bereich, und klicken Sie dann auf das Experiment namens "Census Model", um wieder zum Trainingsexperiment zurückzukehren.  
+	Damit das trainierte Modell erneut trainiert werden kann, müssen wir das Trainingsexperiment, das wir in Schritt 1 erstellt haben, als Webdienst veröffentlichen. Dieser Webdienst benötigt ein Webdienst-Ausgabemodul, das mit dem Modul [Train Model][train-model] verbunden ist, um neue trainierte Modelle erzeugen zu können.
+Klicken Sie auf das Symbol für Experimente im linken Bereich, und klicken Sie dann auf das Experiment namens "Census Model", um wieder zum Trainingsexperiment zurückzukehren.  
 
 	Wir fügen dem Workflow dann ein Webdienst-Eingabemodul und zwei Webdienst-Ausgabemodule hinzu. Die Webdienst-Ausgabe für "Train Model" liefert uns das neue trainierte Modell. Das mit dem Modul "Evaluate Model" verknüpfte Ausgabemodul gibt die Ausgabe dieses Moduls für das Bewertungsmodell zurück.
 
@@ -64,7 +65,8 @@ Diagramm 1: Übersicht über den Prozess des erneuten Trainings
 
 	Wir als Nächstes klicken wir auf die Schaltfläche "Publish Web Service" (Webdienst veröffentlichen) und dann auf "Yes" (Ja). Dadurch wird das Trainingsexperiment als Webdienst veröffentlicht, der trainierte Modelle und Modellbewertungsergebnisse erzeugt. Das Webdienst-Dashboard wird mit dem API-Schlüssel und der API-Hilfeseite für die Batchausführung angezeigt. Beachten Sie, dass nur die Methode Batch Execution (Batchausführung) zum Erstellen von trainierten Modelle verwendet werden kann.  
 4. *Hinzufügen eines neuen Endpunkts*  
-	Der Bewertungswebdienst, den wir oben in Schritt 2 veröffentlicht haben, wurde mit einem Standardendpunkt erstellt. Die Standardendpunkte werden mit dem ursprünglichen Experiment synchronisiert, und daher kann das trainierte Modell, das einem Standardendpunkt zugeordnet ist, nicht ersetzt werden. Zum Erstellen eines aktualisierbaren Endpunkts besuchen Sie das Azure-Portal, und klicken Sie auf "Add Endpoint" (Endpunkt hinzufügen) (nähere Informationen finden Sie [hier](machine-learning-create-endpoint.md)).	
+	Der Bewertungswebdienst, den wir oben in Schritt 2 veröffentlicht haben, wurde mit einem Standardendpunkt erstellt. Die Standardendpunkte werden mit dem ursprünglichen Experiment synchronisiert, und daher kann das trainierte Modell, das einem Standardendpunkt zugeordnet ist, nicht ersetzt werden.
+Zum Erstellen eines aktualisierbaren Endpunkts besuchen Sie das Azure-Portal, und klicken Sie auf "Add Endpoint" (Endpunkt hinzufügen) (nähere Informationen finden Sie [hier](machine-learning-create-endpoint.md)).	
 5. *Erneutes Trainieren des Modells mit neuen Daten und BES*  
 	Zum Aufrufen der Retraining-APIs erstellen wir eine neue C#-Konsolenanwendung in Visual Studio (Neu -> Projekt -> Windows Desktop -> Konsolenanwendung).  
 
@@ -111,4 +113,4 @@ Mithilfe der Retraining-APIs können wir das trainierte Modell eines Vorhersagew
 <!-- Module References -->
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
 
-<!--HONumber=54--> 
+<!---HONumber=54--> 

@@ -350,7 +350,7 @@ Die Ausführung einer gespeicherten Prozedur erfolgt über das Auslösen einer H
 	        console.log("Error");
 	    });
 
-###Unregistering a stored procedure
+###Aufheben der Registrierung einer gespeicherten Prozedur
 Das Aufheben der Registrierung für eine gespeicherte Prozedur erfolgt über das einfache Auslösen einer HTTP DELETE-Methode für eine vorhandene gespeicherte Prozedurressource.   
 
 	client.deleteStoredProcedureAsync(createdStoredProcedure.resource._self)
