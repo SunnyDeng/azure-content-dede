@@ -98,7 +98,8 @@ Die in diesem Schritt ausgegebenen Informationen sehen in etwa folgendermaßen a
 		StartDate             : 12/01/2012 08:00:00 a.m.
 		EndDate               : 12/01/2013 08:00:00 a.m.
 		Usage                 : Verify 
-> [AZURE.NOTE]Sie sollten diese Ausgabe, besonders den generierten symmetrischen Schlüssel, speichern. Dieser Schlüssel wird Ihnen nur während der Erstellung des Dienstprinzipals angezeigt, und Sie können ihn in Zukunft nicht mehr abrufen. Die anderen Werte werden zur Verwendung der Graph-API benötigt, um Informationen im Verzeichnis zu lesen und zu schreiben.
+> [AZURE.NOTE] 
+> Sie sollten diese Ausgabe, besonders den generierten symmetrischen Schlüssel, speichern. Dieser Schlüssel wird Ihnen nur während der Erstellung des Dienstprinzipals angezeigt, und Sie können ihn in Zukunft nicht mehr abrufen. Die anderen Werte werden zur Verwendung der Graph-API benötigt, um Informationen im Verzeichnis zu lesen und zu schreiben.
 
 6. Im letzten Schritt wird die Antwort-URL für Ihre Anwendung eingerichtet. An die Antwort-URL werden Antworten nach Authentifizierungsversuchen gesendet. Geben Sie die folgenden Befehle ein, und drücken Sie die Eingabetaste:
 
@@ -125,7 +126,7 @@ In diesem Schritt erfahren Sie, wie Sie mit Windows Identity Foundation (WIF) un
 		federation.reply=https://localhost/phpSample/index.php 
 
 
-	> [AZURE.NOTE]Den Werten **audienceuris** und **realm** muss die Zeichenfolge "spn:" vorausgehen.
+	> [AZURE.NOTE] Den Werten **audienceuris** und **realm** muss die Zeichenfolge "spn:" vorausgehen.
 
 4. Klicken Sie in Eclipse mit der rechten Maustaste auf das Projekt **phpSample**, und klicken Sie dann auf **Neu** sowie auf **PHP-Datei**.
 
@@ -202,4 +203,4 @@ Ein Beispiel für die Verwendung von Azure Active Directory und des einmaligen A
 [Eclipse PDT 3.0.x All In Ones]: http://www.eclipse.org/pdt/downloads/
 [PHP-Beispielcode für Azure Active Directory]: https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP
 
-<!---HONumber=58--> 
+<!----HONumber=58--> 

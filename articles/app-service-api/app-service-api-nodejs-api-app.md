@@ -28,7 +28,8 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 ## Erstellen einer API-App im Azure-Vorschauportal
 
-> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/pricing/member-offers/msdn-benefits-details/) oder [sich für eine kostenlose Testversion registrieren](/pricing/free-trial/). Sie können auch die kostenlosen [App Service-App-Beispiele](http://tryappservice.azure.com) nutzen.
+> [AZURE.NOTE] Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/pricing/member-offers/msdn-benefits-details/) oder [sich für eine kostenlose Testversion registrieren](/pricing/free-trial/).
+ Sie können auch die kostenlosen [App Service-App-Beispiele](http://tryappservice.azure.com) nutzen.
 
 1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
@@ -68,7 +69,7 @@ Im Portal verwalten Sie die API-App-spezifischen Funktionen im Blatt **API-App**
 
 	![][api-app-host]
 
-2. Suchen Sie im Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf ** 	Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
+2. Suchen Sie im Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf **Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
 
 	![][deployment-part]
 
@@ -116,7 +117,7 @@ In diesem Abschnitt laden Sie im Rahmen des NodeAPIApp-Beispiels Code herunter u
 
 	Beachten Sie die Eigenschaft **apiDefinition**. Der Pfad für diese URL ist relativ zur URL Ihrer API und verweist auf den Swagger 2.0-Endpunkt. Azure App Service verwendet diese Eigenschaft zum Ermitteln der Definition Ihrer API und zum Aktivieren zahlreicher der App Service-API-App-Funktionen.
 
-	> [AZURE.NOTE]Der Endpunkt muss der Swagger 2.0-Spezifikation entsprechen, da ältere Versionen (beispielsweise 1.2) nicht von der Plattform unterstützt werden. Die Beispielanwendung verwendet "swaggerize-express" zum Erstellen eines Endpunkts nach Swagger 2.0-Spezifikation.
+	> [AZURE.NOTE] Der Endpunkt muss der Swagger 2.0-Spezifikation entsprechen, da ältere Versionen (beispielsweise 1.2) nicht von der Plattform unterstützt werden. Die Beispielanwendung verwendet "swaggerize-express" zum Erstellen eines Endpunkts nach Swagger 2.0-Spezifikation.
 
 4. Öffnen Sie die Datei **server.js**, und untersuchen Sie den Code.
 
@@ -134,7 +135,7 @@ In diesem Abschnitt laden Sie im Rahmen des NodeAPIApp-Beispiels Code herunter u
 
 	Die Eigenschaft `docspath` verweist auf den Swagger 2.0-Endpunkt. Diese URL ist relativ zum Basispfad Ihrer API. Der Basispfad wird in der Datei "api.json" deklariert. In unserem Beispiel lautet der Basispfad */api/data*, deshalb lautet der relative Pfad zum Swagger-Endpunkt */api/data/swagger*.
 
-	> [AZURE.NOTE]Da der Basispfad in der Datei *api.json* deklariert ist, führt der Zugriff auf den */swagger*-Endpunkt als relativen Pfad zur API-App-URL zu einem 404-Fehler. Dies ist ein häufiger Fehler beim Versuch des Zugriffs auf den Swagger-Endpunkt.
+	> [AZURE.NOTE] Da der Basispfad in der Datei *api.json* deklariert ist, führt der Zugriff auf den */swagger*-Endpunkt als relativen Pfad zur API-App-URL zu einem 404-Fehler. Dies ist ein häufiger Fehler beim Versuch des Zugriffs auf den Swagger-Endpunkt.
 
 	Die Eigenschaft `handlers` verweist auf den lokalen Ordner, der die Routenhandler für das Express.js-Modul enthält.
 
@@ -220,7 +221,8 @@ Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App-Host** für Ihre API-Ap
 
 ![][browse-api-app-page]
 
-Der Browser zeigt die Startseite an, die Sie zuvor beim lokalen Ausführen der Beispiel-App gesehen haben.
+Der Browser zeigt die Startseite an, die Sie zuvor beim lokalen Ausführen der Beispiel-App gesehen haben. 
+## API-App-Metadaten
 
 [AZURE.INCLUDE [app-service-api-direct-deploy-metadata](../../includes/app-service-api-direct-deploy-metadata.md)]
 
@@ -246,4 +248,4 @@ Sie haben eine Node.js-Web-App bereitgestellt, die ein API-App-Back-End zu Azure
 [browse-api-app-page]: ./media/app-service-api-nodejs-api-app/browse-api-app-page.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!----HONumber=GIT-SubDir_Tue_AM_dede-->
