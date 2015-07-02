@@ -46,7 +46,150 @@ Wir werden die Abschnitte der Vorlage weiter unten in diesem Thema ausführlich 
 
 ## Ausdrücke und Funktionen
 
-Die grundlegende Syntax der Vorlage ist JSON. Allerdings erweitern Ausdrücke und Funktionen die JSON-Anfragen, die in der Vorlage verfügbar sind, und ermöglichen Ihnen das Erstellen von Werten, die keine strikten Literalwerte sind. Ausdrücke werden in Klammern eingeschlossen ([ und ]) und bei der Bereitstellung der Vorlage ausgewertet. Ausdrücke können an beliebiger Stelle in einem JSON-Zeichenfolgenwert auftreten und geben immer einen anderen JSON-Wert zurück. Wenn Sie ein Zeichenfolgenliteral verwenden müssen, das mit einer eckigen Klammer [ beginnt, müssen Sie zwei eckige Klammern verwenden [[. In der Regel verwenden Sie Ausdrücke mit Funktionen, um Vorgänge zum Konfigurieren der Bereitstellung durchzuführen. Genau wie in JavaScript haben Funktionsaufrufe das Format **functionName(arg1,arg2,arg3)**. Auf Eigenschaften verweisen Sie mithilfe der Operatoren Punkt und [Index]. Die folgende Liste enthält häufig verwendete Funktionen. - **parameters(parameterName)** gibt einen Parameterwert zurück, der beim Ausführen der Bereitstellung bereitgestellt wird. -**variables(variableName)** gibt eine Variable zurück, die in der Vorlage definiert ist. - **concat(arg1,arg2,arg3,...)** kombiniert mehrere Zeichenfolgenwerte. Diese Funktion kann eine beliebige Anzahl von Argumenten annehmen. -**base64(inputString)** gibt die base64-Darstellung der Eingabezeichenfolge zurück. -**resourceGroup()** gibt ein strukturiertes Objekt (mit Eigenschaften für ID, Name und Speicherort) zurück, das die aktuelle Ressourcengruppe darstellt. - **resourceId([resourceGroupName], resourceType, resourceName1, [resourceName2]...)** gibt den eindeutigen Bezeichner einer Ressource zurück. Kann zum Abrufen von Ressourcen aus einer anderen Ressourcengruppe verwendet werden. Das folgende Beispiel zeigt, wie Sie beim Erstellen von Werten einige der Funktionen verwenden: "variables": { "location": "[resourceGroup().location]", "usernameAndPassword": "[concat('parameters('username'), ':', parameters('password'))]", "authorizationHeader": "[concat('Basic ', base64(variables('usernameAndPassword')))]" } Jetzt wissen Sie vorerst genug über Ausdrücke und Funktionen, um die Abschnitte der Vorlage zu verstehen. Ausführlichere Informationen zu allen Vorlagenfunktionen einschließlich der Parameter und des Formats der zurückgegebenen Werte finden Sie unter [Funktionen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-template-functions.md). ## Parameter Im Parameterabschnitt der Vorlage geben Sie die Werte an, die ein Benutzer bei der Bereitstellung von Ressourcen eingeben kann. Sie können diese Parameterwerte in der Vorlage zum Festlegen von Werten für die bereitgestellten Ressourcen verwenden. Nur die im Parameterabschnitt deklarierten Parameter können in anderen Abschnitten der Vorlage verwendet werden. Im Parameterabschnitt können Sie mit Parameterwerten keine anderen Parameterwerte erstellen. Diese Art von Vorgang erfolgt i. d. R. im Variablenabschnitt. Sie definieren Parameter mit der folgenden Struktur: "parameters": { "<Parametername>" : { "type" : "<Werttyp-des-Parameters>", "defaultValue": "<optionaler-Standardwert-des-Parameters>", "allowedValues": [ "<optionales-Array-zulässiger-Werte>" ] } } | Elementname | Erforderlich | Beschreibung | :------------: | :------: | :---------- | parameterName | Ja | Name des Parameters. Es muss sich um einen gültigen JavaScript-Bezeichner handeln. | type | Ja | Der Typ des Parameterwerts. Die zulässigen Typen finden Sie in der nachstehenden Liste. | defaultValue | Nein | Der Standardwert für den Parameter, wenn kein Wert angegeben wird. | allowedValues | Nein | Ein Array der zulässigen Werte für den Parameter, um sicherzustellen, dass der richtige Wert angegeben wird. Die zulässigen Typen und Werte sind: - string oder secureString - eine beliebige gültige JSON-Zeichenfolge - int - eine beliebige gültige JSON-Ganzzahl - bool - ein beliebiger gültiger boolescher JSON-Wert - object - ein beliebiges gültiges JSON-Objekt - array - an beliebiges gültiges JSON-Array > [AZURE.NOTE] Für alle Kennwörter, Schlüssel und andere geheime Informationen sollte der Typ **secureString** verwendet werden. Vorlagenparameter des Typs secureString können nach der Bereitstellung der Ressource nicht mehr gelesen werden. Im folgenden Beispiel wird gezeigt, wie Sie Parameter definieren: "parameters": { "siteName": { "type": "string" }, "siteLocation": { "type": "string" }, "hostingPlanName": { "type": "string" }, "hostingPlanSku": { "type": "string", "allowedValues": [ "Free", "Shared", "Basic", "Standard", "Premium" ], "defaultValue": "Free" } } ## Variablen Im Variablenabschnitt erstellen Sie Werte, die zur Vereinfachung der Vorlagenausdrücke verwendet werden können. Diese Variablen basieren i. d. R. auf Werten, die von den Parametern stammen. Im folgenden Beispiel wird gezeigt, wie Sie eine Variable definieren, die aus zwei Parameterwerten erstellt wird: "parameters": { "username": { "type": "string" }, "password": { "type": "secureString" } }, "variables": { "connectionString": "[concat('Name=', parameters('username'), ';Password=', parameters('password'))]" } Im nächsten Beispiel wird eine Variable gezeigt, bei der es sich um einen komplexen JSON-Typ handelt, sowie Variablen, die aus anderen Variablen erstellt werden: "parameters": { "environmentName": { "type": "string", "allowedValues": [ "test", "prod" ] } }, "variables": { "environmentSettings": { "test": { "instancesSize": "Small", "instancesCount": 1 }, "prod": { "instancesSize": "Large", "instancesCount": 4 } }, "currentEnvironmentSettings": "[variables('environmentSettings')[parameters('environmentName')]]", "instancesSize": "[variables('currentEnvironmentSettings').instancesSize", "instancesCount": "[variables('currentEnvironmentSettings').instancesCount" }
+Die grundlegende Syntax der Vorlage ist JSON. Allerdings erweitern Ausdrücke und Funktionen die JSON-Anfragen, die in der Vorlage verfügbar sind, und ermöglichen Ihnen das Erstellen von Werten, die keine strikten Literalwerte sind. Ausdrücke werden in Klammern eingeschlossen ([ und ]) und bei der Bereitstellung der Vorlage ausgewertet. Ausdrücke können an beliebiger Stelle in einem JSON-Zeichenfolgenwert auftreten und geben immer einen anderen JSON-Wert zurück. Wenn Sie ein Zeichenfolgenliteral verwenden müssen, das mit einer eckigen Klammer [ beginnt, müssen Sie zwei eckige Klammern verwenden [[.
+
+In der Regel verwenden Sie Ausdrücke mit Funktionen, um Vorgänge zum Konfigurieren der Bereitstellung durchzuführen. Genau wie in JavaScript haben Funktionsaufrufe das Format **functionName(arg1,arg2,arg3)**. Auf Eigenschaften verweisen Sie mithilfe der Operatoren Punkt und [Index].
+
+Die folgende Liste zeigt häufig verwendete Funktionen.
+
+- **parameters(parameterName)**
+
+    Gibt bei Ausführung der Bereitstellung einen Parameterwert zurück.
+
+- **variables(variableName)**
+
+    Gibt eine Variable zurück, die in der Vorlage definiert ist.
+
+- **concat(arg1,arg2,arg3,...)**
+
+    Kombiniert mehrere Zeichenfolgenwerte. Diese Funktion kann eine beliebige Anzahl an Argumenten entgegennehmen.
+
+- **base64(inputString)**
+
+    Rückkehr zur base64-Darstellung der Eingabezeichenfolge.
+
+- **resourceGroup()**
+
+    Gibt ein strukturiertes Objekt (mit Eigenschaften für ID, Name und Speicherort) zurück, das die aktuellen Ressourcengruppe darstellt.
+
+- **resourceId([resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
+
+    Gibt den eindeutigen Bezeichner einer Ressource zurück. Kann zum Abrufen von Ressourcen aus einer anderen Ressourcengruppe verwendet werden.
+
+Das folgende Beispiel zeigt, wie Sie einige der Funktionen beim Erstellen von Werten verwenden:
+ 
+    "variables": {
+       "location": "[resourceGroup().location]",
+       "usernameAndPassword": "[concat('parameters('username'), ':', parameters('password'))]",
+       "authorizationHeader": "[concat('Basic ', base64(variables('usernameAndPassword')))]"
+    }
+
+Sie wissen jetzt genug über Ausdrücke und Funktionen, um die Abschnitte der Vorlage zu verstehen. Ausführlichere Informationen zu sämtlichen Vorlagenfunktionen – einschließlich von Parametern und des Formats für zurückgegebene Werte – finden Sie unter [Vorlagenfunktionen im Azure-Ressourcen-Manager](./resource-group-template-functions.md).
+
+
+## Parameter
+
+Im Parameterabschnitt der Vorlage geben Sie an, welche Werte ein Benutzer beim Bereitstellen der Ressourcen eingeben kann. Sie können diese Parameterwerte in der Vorlage zum Festlegen von Werten für die bereitgestellten Ressourcen verwenden. Nur die im Parameterabschnitt deklarierten Parameter können in anderen Abschnitten der Vorlage verwendet werden.
+
+Im Parameterabschnitt können Sie mit Parameterwerten keine anderen Parameterwerte erstellen. Diese Art von Vorgang erfolgt i. d. R. im Variablenabschnitt.
+
+Sie definieren Parameter mit der folgenden Struktur:
+
+    "parameters": {
+       "<parameterName>" : {
+         "type" : "<type-of-parameter-value>",
+         "defaultValue": "<optional-default-value-of-parameter>",
+         "allowedValues": [ "<optional-array-of-allowed-values>" ]
+       }
+    }
+
+| Elementname | Erforderlich | Beschreibung
+| :------------: | :------: | :----------
+| parameterName | Ja | Der Name des Parameters. Es muss sich um einen gültigen JavaScript-Bezeichner handeln.
+| Typ | Ja | Der Typ des Parameterwerts. Die nachstehende Liste zeigt die zulässigen Typen.
+| defaultValue | Nein | Der Standardwert für den Parameter, wenn kein Wert für den Parameter angegeben wird.
+| allowedValues | Nein | Ein Array der zulässigen Werte für den Parameter, um sicherzustellen, dass der richtige Wert angegeben wird.
+
+Die zulässigen Typen und Werte lauten folgendermaßen:
+
+- "string" oder "secureString" – eine beliebige gültige JSON-Zeichenfolge
+- "int" – eine gültige JSON-Ganzzahl
+- "bool" – ein gültiger boolescher JSON-Wert
+- "object" – ein gültiges JSON-Objekt
+- "array" – ein gültige JSON-Array
+
+
+>[AZURE.NOTE]Für Kennwörter, Schlüssel und andere geheime Informationen sollte der Typ **secureString** verwendet werden. Vorlagenparameter des Typs secureString können nach der Bereitstellung der Ressource nicht mehr gelesen werden.
+
+Im folgenden Beispiel wird veranschaulicht, wie Sie Parameter definieren:
+
+    "parameters": {
+       "siteName": {
+          "type": "string"
+       },
+       "siteLocation": {
+          "type": "string"
+       },
+       "hostingPlanName": {
+          "type": "string"
+       },  
+       "hostingPlanSku": {
+          "type": "string",
+          "allowedValues": [
+            "Free",
+            "Shared",
+            "Basic",
+            "Standard",
+            "Premium"
+          ],
+          "defaultValue": "Free"
+       }
+    }
+
+## Variablen
+
+Im Variablenabschnitt erstellen Sie Werte, die zum Vereinfachen der Vorlagenausdrücke verwendet werden können. Diese Variablen basieren i. d. R. auf Werten, die von den Parametern stammen.
+
+Das folgende Beispiel zeigt, wie Sie eine Variable definieren, die aus zwei Parameterwerten erstellt wird:
+
+    "parameters": {
+       "username": {
+         "type": "string"
+       },
+       "password": {
+         "type": "secureString"
+       }
+     },
+     "variables": {
+       "connectionString": "[concat('Name=', parameters('username'), ';Password=', parameters('password'))]"
+    }
+
+Das nächste Beispiel zeigt eine Variable mit einem komplexen JSON-Typ sowie Variablen, die aus anderen Variablen erstellt werden:
+
+    "parameters": {
+       "environmentName": {
+         "type": "string",
+         "allowedValues": [
+           "test",
+           "prod"
+         ]
+       }
+    },
+    "variables": {
+       "environmentSettings": {
+         "test": {
+           "instancesSize": "Small",
+           "instancesCount": 1
+         },
+         "prod": {
+           "instancesSize": "Large",
+           "instancesCount": 4
+         }
+       },
+       "currentEnvironmentSettings": "[variables('environmentSettings')[parameters('environmentName')]]",
+       "instancesSize": "[variables('currentEnvironmentSettings').instancesSize",
+       "instancesCount": "[variables('currentEnvironmentSettings').instancesCount"
+    }
 
 ## Ressourcen
 
@@ -253,9 +396,10 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
     }
 
 ## Nächste Schritte
-- [Azure Resource Manager Template Functions](./resource-group-template-functions.md) (Vorlagenfunktionen im Azure-Ressourcen-Manager)
-- [Deploy an application with Azure Resource Manager Template](azure-portal/resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)
-- [Advanced Template Operations](./resource-group-advanced-template.md) (Erweiterte Anwendungen mit Vorlagen)
+- [Vorlagenfunktionen im Azure-Ressourcen-Manager](./resource-group-template-functions.md)
+- [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](./resource-group-template-deploy.md)
+- [Erweiterte Vorlagenvorgänge](./resource-group-advanced-template.md)
 - [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
 
 <!---HONumber=58-->
+

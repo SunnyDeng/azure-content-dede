@@ -20,7 +20,8 @@
 
 Diese Anleitung zeigt, wie der Azure Access Control Service (ACS) im Azure-Plug-In für Eclipse mit Java (von Microsoft Open Technologies) verwendet wird. Weitere Informationen zum ACS finden Sie im Abschnitt [Nächste Schritte](#next_steps).
 
-> [AZURE.NOTE] Der Azure Access Control Service-Filter (von Microsoft Open Technologies) ist eine Technologievorschau für die Community. Als Vorabversion wird diese Software von Microsoft Open Technologies oder Microsoft nicht offiziell unterstützt.
+> [AZURE.NOTE]
+> Der Azure Access Control Service-Filter (von Microsoft Open Technologies) ist eine Technologievorschau für die Community. Als Vorabversion wird diese Software von Microsoft Open Technologies oder Microsoft nicht offiziell unterstützt.
 
 ## Was ist der ACS?
 
@@ -112,7 +113,7 @@ In dieser Aufgabe konfigurieren Sie den ACS zur Erkennung Ihrer Java-Webanwendun
 1.  Klicken Sie im ACS-Verwaltungsportal auf **Relying party applications**.
 2.  Klicken Sie auf der Seite **Relying Party Applications** auf **Hinzufügen**.
 3.  Führen Sie auf der Seite **Add Relying Party Application** die folgenden Aktionen aus:
-    1.  Geben Sie unter **Name** einen Namen für die RP ein. Geben Sie für die Zwecke dieses Lernprogramms **Azure Web 
+    1.  Geben Sie unter **Name** einen Namen für die RP ein. Geben Sie für die Zwecke dieses Lernprogramms **Azure Web
         App** ein.
     2.  Wählen Sie unter **Modus** die Option **Enter settings manually** aus.
     3.  Geben Sie unter **Bereich** den URI ein, für den das vom ACS ausgegebene Sicherheitstoken gilt. Geben Sie **http://localhost:8080/**
@@ -314,4 +315,4 @@ An diesem Punkt wird Ihr Zertifikat in Ihre Bereitstellung aufgenommen. Bitte be
 [add_token_signing_cert]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddTokenSigningCertificate.png
  
 
-<!---HONumber=58_postMigration-->
+<!----HONumber=58_postMigration-->
