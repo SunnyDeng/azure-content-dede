@@ -116,10 +116,10 @@ In dieser Aufgabe konfigurieren Sie den ACS zur Erkennung Ihrer Java-Webanwendun
     1.  Geben Sie unter **Name** einen Namen für die RP ein. Geben Sie für die Zwecke dieses Lernprogramms **Azure Web
         App** ein.
     2.  Wählen Sie unter **Modus** die Option **Enter settings manually** aus.
-    3.  Geben Sie unter **Bereich** den URI ein, für den das vom ACS ausgegebene Sicherheitstoken gilt. Geben Sie **http://localhost:8080/**
-        ![RP-Bereich zur Verwendung im Serveremulator][relying_party_realm_emulator]  für diese Aufgabe ein.
+    3.  Geben Sie unter **Bereich** den URI ein, für den das vom ACS ausgegebene Sicherheitstoken gilt. Geben Sie **http://localhost:8080/** für diese Aufgabe ein
+        ![Relying party realm for use in compute emulator][relying_party_realm_emulator]
     4.  Geben Sie unter **Rückgabe-URL** die URL ein, an die der ACS das Sicherheitstoken zurückgibt. Geben Sie **http://localhost:8080/MyACSHelloWorld/index.jsp**
-        ![Von RP zurückgegebene URL zur Verwendung im Serveremulator][relying_party_return_url_emulator]  für diese Aufgabe ein.
+        ![Relying party return URL for use in compute emulator][relying_party_return_url_emulator].
     5.  Übernehmen Sie in den restlichen Feldern die Standardwerte.
 
 4.  Klicken Sie auf **Speichern**.
@@ -315,4 +315,4 @@ An diesem Punkt wird Ihr Zertifikat in Ihre Bereitstellung aufgenommen. Bitte be
 [add_token_signing_cert]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddTokenSigningCertificate.png
  
 
-<!----HONumber=58_postMigration-->
+<!-----HONumber=58_postMigration-->
