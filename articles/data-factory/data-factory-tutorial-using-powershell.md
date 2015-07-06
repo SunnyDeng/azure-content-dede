@@ -53,7 +53,8 @@ In dieser exemplarischen Vorgehensweise werden Beispielprotokolle gesammelt, ver
 	
 
 ## Übersicht
-Nachfolgend ist der End-to-End-Workflow dargestellt:![Ablauf des Lernprogramms][image-data-factory-tutorial-end-to-end-flow]
+Nachfolgend ist der End-to-End-Workflow dargestellt:
+	![Ablauf des Lernprogramms][image-data-factory-tutorial-end-to-end-flow]
 
 1. **PartitionGameLogsPipeline** liest die Rohdaten der Spielereignisse aus einem Blobspeicher (RawGameEventsTable) und erstellt basierend auf Jahr, Monat und Tag Partitionen (PartitionedGameEventsTable).
 2. **EnrichGameLogsPipeline** verknüpft partitionierte Spielereignisse („PartitionedGameEventsTable“, ausgegeben von „PartitionGameLogsPipeline“) mit Geocode (RefGetoCodeDictionaryTable) und erweitert die Daten mittels IP-Adresszuordnung zum entsprechenden geografischen Standort (EnrichedGameEventsTable).
@@ -193,7 +194,7 @@ In diesem Schritt erstellen Sie eine Azure Data Factory mit dem Namen **LogProce
  
 ## <a name="MainStep3"></a> Schritt 3: Erstellen von verknüpften Diensten
 
-> [AZURE.NOTE]In diesem Artikel wird Azure PowerShell zum Erstellen von verknüpften Diensten, Tabellen und Pipelines verwendet. Wenn Sie dieses Lernprogramm mit dem Azure-Portal (genauer: mit dem Data Factory-Editor) ausführen möchten, lesen Sie unter [Lernprogramm mit Data Factory-Editor][adftutorial-using-editor] weiter.
+> [AZURE.NOTE] In diesem Artikel wird Azure PowerShell zum Erstellen von verknüpften Diensten, Tabellen und Pipelines verwendet. Wenn Sie dieses Lernprogramm mit dem Azure-Portal (genauer: mit dem Data Factory-Editor) ausführen möchten, lesen Sie unter [Lernprogramm mit Data Factory-Editor][adftutorial-using-editor] weiter.
 
 In diesem Schritt werden die folgenden verknüpften Dienste erstellt: „StorageLinkedService“, „AzureSqlLinkedService“, „HDInsightStorageLinkedService“ und „HDInsightLinkedService“.
 
@@ -250,8 +251,8 @@ In diesem Schritt werden die folgenden verknüpften Dienste erstellt: „Storage
 17. Öffnen Sie **HDInsightLinkedService.json** in Ihrem bevorzugten Editor, und beachten Sie, dass der Typ auf **HDInsightOnDemandLinkedService** festgelegt ist.
 
 
-	> [AZURE.NOTE] Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Bedarf und verwendet ihn zum Verarbeiten der Eingabe zum Erzeugen von Ausgabedaten. Sie können auch Ihren eigenen Cluster für den gleichen Zweck verwenden. Wenn Sie den bedarfsgesteuerten HDInsight-Cluster verwenden, wird für jeden Slice ein Cluster erstellt. Bei Verwendung Ihres eigenen HDInsight-Clusters kann der Cluster den Slice jedoch sofort verarbeiten. Aus diesem Grund werden bei Verwendung des bedarfsgesteuerten Clusters die Ausgabedaten möglicherweise nicht so schnell angezeigt wie bei der Verwendung Ihres eigenen Clusters. Für dieses Beispiel verwenden wir einen bedarfsgesteuerten Cluster.
-	> 
+	Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Bedarf und verwendet ihn zum Verarbeiten der Eingabe zum Erzeugen von Ausgabedaten. Sie können auch Ihren eigenen Cluster für den gleichen Zweck verwenden. Wenn Sie den bedarfsgesteuerten HDInsight-Cluster verwenden, wird für jeden Slice ein Cluster erstellt. Bei Verwendung Ihres eigenen HDInsight-Clusters kann der Cluster den Slice jedoch sofort verarbeiten. Aus diesem Grund werden bei Verwendung des bedarfsgesteuerten Clusters die Ausgabedaten möglicherweise nicht so schnell angezeigt wie bei der Verwendung Ihres eigenen Clusters. Für dieses Beispiel verwenden wir einen bedarfsgesteuerten Cluster 
+	
 	„HDInsightLinkedService“ verknüpft einen bedarfsgesteuerten HDInsight-Cluster mit der Data Factory. Wenn Sie Ihren eigenen HDInsight-Cluster verwenden möchten, aktualisieren Sie den Abschnitt „Properties“ der Datei „HDInsightLinkedService.json“ wie folgt (ersetzen Sie „clustername“, „username“ und „password“ durch die entsprechenden Werte):
 	
 		"Properties": 
@@ -560,4 +561,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial-using-powershell/DataFactoryCreateButton.png
 
-<!---HONumber=58_postMigration-->
+<!----HONumber=58_postMigration-->
