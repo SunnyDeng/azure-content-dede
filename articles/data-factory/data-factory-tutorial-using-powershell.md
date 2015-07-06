@@ -156,7 +156,7 @@ Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim
 ## <a name="MainStep2"></a> Schritt 2: Erstellen einer Azure Data Factory
 In diesem Schritt erstellen Sie eine Azure Data Factory mit dem Namen **LogProcessingFactory**.
 
-1.	Klicken Sie nach der Anmeldung beim Azure-Vorschauportal[][azure-preview-portal] links unten auf **NEU** und anschließend auf dem Blatt **Neu** auf **Data Factory**. 
+1.	Klicken Sie nach der Anmeldung beim [Azure-Vorschauporta][azure-preview-portal] links unten auf **NEU** und anschließend auf dem Blatt **Neu** auf **Data Factory**. 
 
 	![Neu -> Data Factory][image-data-factory-new-datafactory-menu]
 	
@@ -472,6 +472,7 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 [download-azure-powershell]: ../powershell-install-configure.md
 
 [azure-preview-portal]: http://portal.azure.com
+[Azure-Vorschauportal]: http://portal.azure.com
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
