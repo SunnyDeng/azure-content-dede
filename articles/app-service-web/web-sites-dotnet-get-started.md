@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen von ASP.NET-Web-Apps in Azure App Service"
+	pageTitle="Erstellen einer ASP.NET-Web-App in Azure App Service"
 	description="In diesem Lernprogramm erfahren Sie, wie Sie ein ASP.NET-Webprojekt in Visual Studio 2013 erstellen und in einer Web-App in Azure App Service bereitstellen. In weniger als 15 Minuten ist eine App betriebsbereit und wird in der Cloud ausgeführt."
 	services="app-service\web"
 	documentationCenter=".net"
@@ -238,7 +238,7 @@ In diesem Abschnitt des Lernprogramms ändern Sie die Überschrift **h1** der St
 
 Das [Azure-Verwaltungsportal](/services/management-portal/) ist eine Weboberfläche, die das Verwalten und Überwachen Ihrer Azure-Dienste ermöglicht, z. B. der soeben erstellten Web-App. In diesem Abschnitt des Lernprogramms erfahren Sie, was Sie im Portal durchführen können.
 
-1. Wechseln Sie in Ihrem Browser zu [https://portal.azure.com](), und melden Sie sich mit Ihrer Azure-Anmeldeinformationen.
+1. Rufen Sie in Ihrem Browser [https://portal.azure.com]() auf, und melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
 
 2. Klicken Sie auf **Durchsuchen > Web-Apps** und dann auf den Namen der Web-App.
 
@@ -316,4 +316,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

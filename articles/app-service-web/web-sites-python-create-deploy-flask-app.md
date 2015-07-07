@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Erstellen von Webanwendungen mit Kolben in Azure" 
-	description="Ein Lernprogramm, in dem Sie eingeführt, eine Python-Webanwendung auf Azure ausgeführt wird." 
+	pageTitle="Erstellen von Web-Apps mit Flask in Azure" 
+	description="In diesem Lernprogramm werden Sie in die Verwendung einer Python-Web-App in Azure eingeführt." 
 	services="app-service\web" 
 	documentationCenter="python" 
 	authors="huguesv" 
@@ -19,11 +19,11 @@
 
 
 
-# Erstellen von Webanwendungen mit Kolben in Azure
+# Erstellen von Web-Apps mit Flask in Azure
 
-In diesem Lernprogramm wird beschrieben, wie für den Einstieg in die Ausführung von Python in [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Web-Apps bietet uneingeschränktes kostenloses Hosting und schnelle Bereitstellung, und Sie können Python verwenden! Wenn die Anwendung größer wird, können Sie zu kostenpflichtigem Hosting wechseln und außerdem alle anderen Azure-Dienste integrieren.
+In diesem Lernprogramm werden die ersten Schritte für die Verwendung von Python in [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) beschrieben. Web-Apps bietet uneingeschränktes kostenloses Hosting und schnelle Bereitstellung, und Sie können Python verwenden! Wenn die Anwendung größer wird, können Sie zu kostenpflichtigem Hosting wechseln und außerdem alle anderen Azure-Dienste integrieren.
 
-Erstellen Sie eine Anwendung mithilfe von Web-Framework Kolben (alternative Versionen dieses Lernprogramms für anzeigen [Django](web-sites-python-create-deploy-django-app.md) und [Flasche](web-sites-python-create-deploy-bottle-app.md)). Sie erstellen die Website aus dem Azure-Katalog, richten die Git-Bereitstellung ein und klonen das Repository lokal. Dann führen Sie die Anwendung lokal aus, nehmen Änderungen vor, führen ein Commit aus und übertragen die Änderungen in Azure. Das Lernprogramm zeigt, wie dies unter Windows oder Mac/Linux erfolgt.
+Sie erstellen eine Anwendung mithilfe des Webframeworks Flask. (Alternativ sind auch Versionen für [Django](web-sites-python-create-deploy-django-app.md) und [Bottle](web-sites-python-create-deploy-bottle-app.md) verfügbar.) Sie erstellen die Website aus dem Azure-Katalog, richten die Git-Bereitstellung ein und klonen das Repository lokal. Dann führen Sie die Anwendung lokal aus, nehmen Änderungen vor, führen ein Commit aus und übertragen die Änderungen in Azure. Das Lernprogramm zeigt, wie dies unter Windows oder Mac/Linux erfolgt.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
@@ -52,15 +52,15 @@ Wir empfehlen auch die Installation von [Python Tools 2.1 für Visual Studio]. D
 Sie sollten Python und Git bereits installiert haben, doch stellen Sie sicher, dass Sie über Python 2.7 oder 3.4 verfügen.
 
 
-## Erstellen von Web-app auf Azure-Verwaltungsportal
+## Web-App-Erstellung im Azure-Portal
 
 Der erste Schritt beim Erstellen einer App ist das Erstellen der Web-App über das [Azure-Portal](https://portal.azure.com).
 
 1. Klicken Sie im Azure-Portal in der unteren linken Ecke auf **NEU**. 
 2. Klicken Sie auf **Web + Mobile** > **Azure Marketplace** > **Web-Apps**.
 3. Geben Sie im Suchfeld "python" ein.
-4. Wählen Sie in den Suchergebnissen **Kolben**, klicken Sie dann auf **Erstellen**.
-5. Konfigurieren Sie die neue Kolben-app, wie z. B. einen neuen App-Service-Plan und eine neue Ressourcengruppe für sie erstellen. Klicken Sie dann auf **Erstellen**.
+4. Wählen Sie in den Suchergebnissen **Flask** aus, und klicken Sie dann auf **Erstellen**.
+5. Konfigurieren Sie die neue Flask-App, indem Sie beispielsweise einen neuen App Service-Plan und eine neue Ressourcengruppe dafür erstellen. Klicken Sie dann auf **Erstellen**.
 6. Konfigurieren von Git-Veröffentlichung für Ihre neu erstellte Webanwendung anhand der Instruktionen unter [fortlaufende Bereitstellung mit GIT in Azure-App-Dienst](web-sites-publish-source-control.md).
 
 
@@ -122,7 +122,7 @@ IIS-Konfigurationsdatei. Wird anhand von "web.x.y.config" bei jeder Bereitstellu
 
     \env\
 
-Virtuelle Umgebung für Python. Während der Bereitstellung erstellt, wenn eine kompatible virtuelle Umgebung für die Anwendung nicht bereits vorhanden ist. Pakete, die in "requirements.txt" aufgeführt sind, werden mit pip installiert. pip überspringt die Installation, wenn die Pakete bereits installiert sind.
+Virtuelle Umgebung für Python. Wird während der Bereitstellung erstellt, sofern nicht bereits eine kompatible virtuelle Umgebung für die App vorhanden ist. Pakete, die in "requirements.txt" aufgeführt sind, werden mit pip installiert. pip überspringt die Installation, wenn die Pakete bereits installiert sind.
 
 In den nächsten 3 Abschnitten wird beschrieben, wie Sie die Web-App-Entwicklung in 3 unterschiedlichen Umgebungen fortsetzen:
 
@@ -370,13 +370,13 @@ Navigieren Sie zur Azure-URL, um die Änderungen anzuzeigen.
 
 Folgen Sie diesen Links, um weitere Informationen zu Flask- und Python Tools für Visual Studio zu erhalten:
  
-- [Kolben-Dokumentation]
+- [Dokumentation zu Flask]
 - [Python Tools für Visual Studio – Dokumentation]
 
 Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 
-- [Gegeben und MongoDB auf Azure mit Python Tools 2.1 für Visual Studio]
-- [Kolben und Azure-Tabellenspeicher in Azure mit Python Tools 2.1 für Visual Studio]
+- [Flask und MongoDB in Azure mit Python Tools 2.1 für Visual Studio]
+- [Flask und Azure Table Storage in Azure mit Python Tools 2.1 für Visual Studio]
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -384,8 +384,8 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 
 
 <!--Link references-->
-[Gegeben und MongoDB auf Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-flask-mongodb.md
-[Kolben und Azure-Tabellenspeicher in Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-flask-table-storage.md
+[Flask und MongoDB in Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-flask-mongodb.md
+[Flask und Azure Table Storage in Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-flask-table-storage.md
 
 <!--External Link references-->
 [Azure SDK für Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
@@ -398,7 +398,7 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 [Visual Studio]: http://www.visualstudio.com/
 [PTVS-Dokumentation]: http://pytools.codeplex.com/documentation
 [Python Tools für Visual Studio – Dokumentation]: http://pytools.codeplex.com/documentation
-[Kolben-Dokumentation]: http://flask.pocoo.org/
+[Dokumentation zu Flask]: http://flask.pocoo.org/
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

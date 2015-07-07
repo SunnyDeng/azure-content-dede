@@ -22,23 +22,23 @@
 
 Stellen sie sicher, dass Ihre Anwendung optimal funktioniert, und stellen Sie Fehler umgehend fest. [Application Insights][start] informiert Sie über alle Leistungsprobleme und Ausnahmefälle. So können Sie die Ursachen schnell ermitteln und diagnostizieren.
 
-Application Insights können ASP.NET-Webanwendungen und WCF-Dienste, lokal gehosteten überwachen oder auf virtuellen Maschinen als auch Microsoft Azure-Websites.
+Application Insights kann sowohl ASP.NET-Webanwendungen und WCF-Dienste, die auf lokalen und virtuellen Computern gehostet werden, als auch Microsoft Azure-Websites überwachen.
 
 
 ## <a name="setup"></a>Einrichten der Leistungsüberwachung
 
 Falls Sie Application Insights Ihrem Projekt noch nicht hinzugefügt haben (d. h., wenn es nicht über ApplicationInsights.config verfügt), gehen Sie nach einer der folgenden Methoden vor, um zu beginnen:
 
-* [Fügen Sie Application Insights dem Projekt in Visual Studio][greenbrown] - empfohlen. Sie können sowohl passive Leistungsüberwachung als auch Diagnoseprotokollierung und Nutzungsverfolgung einsetzen.
+* [Application Insights Ihrem App-Projekt in Visual Studio hinzufügen][greenbrown] – empfohlene Methode. Sie können sowohl passive Leistungsüberwachung als auch Diagnoseprotokollierung und Nutzungsverfolgung einsetzen.
 * [Leistung einer Live-Website jetzt überwachen][redfield] – Bei dieser Methode müssen Sie das App-Projekt nicht aktualisieren bzw. die Webseite nicht erneut bereitstellen.
-* [Für Microsoft Azure-Website](../insights-how-to-customize-monitoring.md) Metriken wird bereits auf der Website überwachungslinse angezeigt. 
+* [Für eine Microsoft Azure-Website](../insights-how-to-customize-monitoring.md) können Sie Metriken bereits im Überwachungsfokus der Website sehen. 
 
-Mithilfe dieser Methoden, sehen Sie schnell Daten auf das Fenster "Übersicht" in Application Insights.
+Durch Verwendung einer dieser Methoden werden schnell Daten auf dem Übersichtsblatt in Application Insights angezeigt.
 
 
-## <a name="view"></a>Durchsuchen von Metriken
+## <a name="view"></a>Erforschen von Metriken
 
-Klicken Sie auf, um weitere Details anzuzeigen und um Ergebnisse für einen längeren Zeitraum anzuzeigen. Klicken Sie beispielsweise auf die Kachel "Requests", und wählen Sie dann einen Zeitraum aus.
+Klicken Sie auf eine beliebige Kachel, um weitere Details und Ergebnisse über einen längeren Zeitraum anzuzeigen. Klicken Sie beispielsweise auf die Kachel "Requests", und wählen Sie dann einen Zeitraum aus.
 
 
 ![Zu mehr Daten durchklicken und einen Zeitraum auswählen](./media/app-insights-web-monitor-performance/appinsights-48metrics.png)
@@ -47,12 +47,12 @@ Klicken Sie auf ein Diagramm, um die anzuzeigenden Metriken auszuwählen, oder f
 
 ![Auf Graph klicken, um Metrik auszuwählen](./media/app-insights-web-monitor-performance/appinsights-61perfchoices.png)
 
-> [AZURE.NOTE]**Deaktivieren Sie alle Metriken** die vollständige Auswahl angezeigt, die verfügbar ist. Die Metriken werden in Gruppen unterteilt. Wenn ein Mitglied einer Gruppe ausgewählt wird, werden nur die weiteren Mitglieder dieser Gruppe angezeigt.
+> [AZURE.NOTE]**Deaktivieren Sie alle Metriken**, um die insgesamt verfügbare Auswahl anzuzeigen. Die Metriken werden in Gruppen unterteilt. Wenn ein Mitglied einer Gruppe ausgewählt wird, werden nur die weiteren Mitglieder dieser Gruppe angezeigt.
 
 
-## <a name="metrics"></a>Was bedeutet das alles? Leistungskacheln und Berichte
+## <a name="metrics"></a>Was bedeutet was? Leistungskacheln und Berichte
 
-Ihnen steht eine Vielzahl von Leistungsmetriken zur Verfügung. Lassen Sie uns mit denen beginnen, die standardmäßig im Anwendungsfenster angezeigt werden.
+Ihnen steht eine Vielzahl von Leistungsmetriken zur Verfügung. Lassen Sie uns mit denen beginnen, die standardmäßig im Anwendungsblatt angezeigt werden.
 
 
 ### Requests
@@ -102,31 +102,31 @@ Um andere verfügbare Metriken aufzurufen, klicken Sie auf einen Graphen und wä
 
 Wenn Sie eine Metrik auswählen, werden alle anderen deaktiviert, die nicht im selben Diagramm angezeigt werden können.
 
-## Weitere Leistungsindikatoren zu erfassen
+## Sammeln weiterer Leistungsindikatoren
 
-Die Metriken stehen einige [Leistungsindikatoren](http://www.codeproject.com/Articles/8590/An-Introduction-To-Performance-Counters). Windows bietet ein breites Spektrum, und Sie können auch eigene definieren.
+Einige der Metriken, aus denen Sie auswählen können, sind [Leistungsindikatoren](http://www.codeproject.com/Articles/8590/An-Introduction-To-Performance-Counters). Windows bietet eine Vielzahl solcher Indikatoren, und Sie können auch eigene definieren.
 
-Die gewünschten Leistungsindikatoren in der Liste nicht, können Sie sie der Gruppe hinzufügen, die das SDK gesammelt werden. Öffnen Sie die Datei "applicationinsights.config", und bearbeiten Sie die Leistung Collector-Direktive:
+Wenn sich die gewünschten Leistungsindikatoren nicht in der Liste befinden, können Sie sie zum SDK-Satz hinzufügen. Öffnen Sie die Datei "ApplicationInsights.config", und bearbeiten Sie die Sammlerdirektive für Leistungsdaten:
 
     <Add Type="Microsoft.ApplicationInsights.Extensibility.PerfCollector.PerformanceCollectorModule, Microsoft.ApplicationInsights.Extensibility.PerfCollector">
       <Counters>
         <Add PerformanceCounter="\Objects\Processes"/>
-        <Add PerformanceCounter="\Sales(electronics)\# Items Sold" ReportAs="Item sales"/>
+        <Add PerformanceCounter="\Sales(electronics)# Items Sold" ReportAs="Item sales"/>
       </Counters>
     </Add>
 
-Das Format ist `\Category(instance)\Counter"` oder für Kategorien, die keine Instanzen haben nur `\Category\Counter`.
+Das Format lautet `\Category(instance)\Counter"` bzw. für Kategorien, die keine Instanzen besitzen, einfach `\Category\Counter`.
 
-`ReportAs` ist erforderlich, damit die Namen der Leistungsindikatoren, die als diese Zeichen enthalten: Buchstaben, runde Klammern, forward Slahes, Bindestriche, Unterstriche, Leerzeichen und Punkte.
+`ReportAs` ist für Leistungsindikatornamen erforderlich, die andere Zeichen als die folgenden enthalten: Buchstaben, runde Klammern, Schrägstriche, Bindestriche, Unterstriche, Leerzeichen und Punkte.
 
-Wenn Sie eine Instanz angeben, werden sie als Eigenschaft "CounterInstanceName" der gemeldeten Metrik gesammelt.
+Wenn Sie eine Instanz angeben, wird sie als "CounterInstanceName"-Eigenschaft der gemeldeten Metrik gesammelt.
 
-Wenn Sie dies bevorzugen, können Sie Code aus, um die gleiche Wirkung hat schreiben:
+Wenn Sie möchten, können Sie den gleichen Effekt auch mit Code erzielen:
 
     var perfCollector = new PerformanceCollectorModule();
     perfCollector.Counters = new List<CustomPerformanceCounterCollectionRquest>();
     perfCollector.Counters.Add(new CustomPerformanceCounterCollectionRquest(
-      @"\Sales(electronics)\# Items Sold", "Items sold"));
+      @"\Sales(electronics)# Items Sold", "Items sold"));
     perfCollector.Initialize(TelemetryConfiguration.Active);
     TelemetryConfiguration.Active.TelemetryModules.Add(perfCollector);
 
@@ -142,7 +142,7 @@ Legen Sie die Ressource vor den anderen Eigenschaften fest. Wählen Sie nicht di
 
 Achten Sie auf die Einheiten, die beim Eingeben des Schwellenwerts gefordert sind.
 
-*ich sehe nicht die Benachrichtigung hinzufügen Schaltfläche.* -ist dies eine Gruppe Konto, dem Sie schreibgeschützten Zugriff haben? Wenden Sie sich an den Kontoadministrator.
+*Ich sehe keine Schaltfläche zum Hinzufügen von Benachrichtigungen.* – Handelt es sich um ein Gruppenkonto, für das Sie nur über schreibgeschützten Zugriff verfügen? Wenden Sie sich an den Kontoadministrator.
 
 ## <a name="diagnosis"></a>Diagnostizieren von Problemen
 
@@ -178,4 +178,4 @@ Im Folgenden finden Sie einige Tipps zum Feststellen und Diagnostizieren von Lei
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

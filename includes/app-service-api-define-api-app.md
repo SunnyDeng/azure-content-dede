@@ -69,6 +69,8 @@ Für API-App-Projekte wird standardmäßig das automatische Generieren von[Swagg
 
 Die API-Testseite wird jedoch durch die Vorlage für neue Azure API-App-Projekte deaktiviert. Wenn Sie Ihr API-Projekt mithilfe der API-App-Projektvorlage erstellt haben, müssen Sie die folgenden Schritte ausführen, um die Testseite zu aktivieren.
 
+**Hinweis:** Wenn Sie die API-App als *Öffentlich (anonym)* und mit aktivierter Swagger-Benutzeroberfläche bereitstellen, kann praktisch jeder die Swagger-Benutzeroberfläche zum Ermitteln und Aufrufen Ihrer APIs verwenden.
+
 1. Öffnen Sie die Datei *App_Start/SwaggerConfig.cs*, und suchen Sie nach **EnableSwaggerUI**:
 
 	![](./media/app-service-api-define-api-app/12-enable-swagger-ui-with-box.png)
@@ -91,8 +93,8 @@ Führen Sie die folgenden Schritte aus, um die API-Testseite anzuzeigen.
 
 	![](./media/app-service-api-define-api-app/14-swagger-ui.png)
 
-2. Klicken Sie auf die Schaltfläche **Testen Sie es**. Sie sehen, dass die API funktioniert und das erwartete Ergebnis zurückgibt.
+2. Klicken Sie auf die Schaltfläche **Try it out**. Sie sehen, dass die API funktioniert und das erwartete Ergebnis zurückgibt.
 
 	![](./media/app-service-api-define-api-app/15-swagger-ui-post-test.png)
 
-<!--HONumber=54-->
+<!---HONumber=62-->

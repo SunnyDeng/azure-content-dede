@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Verwenden von SSH-Schlüsseln mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X | Azure"
-   description="Erfahren Sie, wie Sie SSH-Schlüssel für die Authentifizierung bei Linux-basierten HDInsight-Clustern erstellen und verwenden."
+   pageTitle="Verwenden von SSH-Schlüsseln mit Linux-basiertem Hadoop unter Linux, Unix oder OS X | Microsoft Azure"
+   description="Auf das Linux-basierte HDInsight können Sie über Secure Shell (SSH) zugreifen. Dieses Dokument enthält Informationen zur Verwendung von SSH mit HDInsight auf Linux-, Unix- oder OS X-Clients."
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
@@ -61,12 +61,12 @@ Wenn Sie einen Linux-basierten HDInsight-Cluster erstellen, können Sie sich bei
 
 	Sie werden aufgefordert, die folgenden Informationen bereitzustellen:
 
-	* Speicherort der Datei: Die Standardeinstellung ist "~/.ssh/id_rsa".
+	* Speicherort der Datei: Die Standardeinstellung ist "~/.ssh/id\\_rsa".
 	* Eine Passphrase: Sie werden aufgefordert, diese erneut einzugeben.
 
 		> [AZURE.NOTE]Es wird dringend empfohlen, dass Sie für den Schlüssel eine sichere Passphrase verwenden. Wenn Sie die Passphrase vergessen, besteht jedoch keine Möglichkeit, diese wiederherzustellen.
 
-	Nach Abschluss des Befehls sind zwei neue Dateien verfügbar: der private Schlüssel (z. B. **id_rsa**) und der öffentliche Schlüssel (z. B. **id_rsa.pub**).
+	Nach Abschluss des Befehls sind zwei neue Dateien verfügbar: der private Schlüssel (z. B. **id\\_rsa**) und der öffentliche Schlüssel (z. B. **id\\_rsa.pub**).
 
 ##Erstellen eines Linux-basierten HDInsight-Clusters
 
@@ -273,7 +273,7 @@ Wenn Sie FoxyProxy Standard installiert haben, konfigurieren Sie es folgenderma�
 
 	* **Name des Musters**: **Hauptknoten** – Dies ist lediglich ein Anzeigename für das Muster.
 
-	* **URL-Muster**: ***Hauptknoten*** – Definiert ein Muster, das mit allen URLs übereinstimmt, die das Wort **Hauptknoten** enthalten.
+	* **URL-Muster**: **\\*Hauptknoten\\*** – Definiert ein Muster, das mit allen URLs übereinstimmt, die das Wort **Hauptknoten** enthalten.
 
 	![FoxyProxy-Muster](./media/hdinsight-hadoop-linux-use-ssh-unix/foxypattern.png)
 
@@ -294,5 +294,6 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

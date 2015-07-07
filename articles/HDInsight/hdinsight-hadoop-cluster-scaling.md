@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Clusterskalierung in HDInsight | Azure"
-   description="Ändern Sie die Anzahl der Datenknoten in einem Cluster, der auf HDInsight ausgeführt wird, ohne den Cluster löschen und erneut erstellen zu müssen."
+   pageTitle="Skalieren von Hadoop-, HBase- oder Apache Storm-Clustern in HDInsight | Microsoft Azure"
+   description="Ändern Sie die Anzahl der Datenknoten in einem Hadoop-, HBase- oder Apache Storm-Cluster, der auf HDInsight ausgeführt wird, ohne den Cluster löschen und erneut erstellen zu müssen."
    services="hdinsight"
    documentationCenter=""
    authors="mumian"
@@ -16,7 +16,7 @@
    ms.date="04/02/2015"
    ms.author="jgao"/>
 
-#Clusterskalierung in HDInsight
+#Skalieren von Hadoop-, HBase- oder Apache Storm-Clustern zur Änderung deren Anzahl an Datenknoten in HDInsight 
 
 Mithilfe der Clusterskalierung können Sie die Anzahl der von einem in Azure HDInsight ausgeführten Cluster verwendeten Datenknoten ändern, ohne den Cluster löschen und neu erstellen zu müssen. Der Vorgang kann über Azure PowerShell, das HDInsight SDK oder Azure-Portal erfolgen.
 
@@ -24,7 +24,7 @@ Mithilfe der Clusterskalierung können Sie die Anzahl der von einem in Azure HDI
 In diesem Abschnitt werden die Auswirkungen der Änderung der Anzahl der Datenknoten für die einzelnen Clustertypen beschrieben, die von HDInsight unterstützt werden:
 
 * Hadoop
-* Storm
+* Apache Storm
 * HBase 
 
 ## Hadoop 
@@ -143,5 +143,6 @@ Hier folgt ein Beispielcode, der die Verwendung der synchronen Version dieser Me
 
 
 Weitere Informationen zur Verwendung des HDInsight .NET SDK finden Sie im Abschnitt [Benutzerdefinierte Bereitstellung von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

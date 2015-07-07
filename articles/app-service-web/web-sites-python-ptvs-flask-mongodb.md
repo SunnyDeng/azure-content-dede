@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Flask und MongoDB in Azure mit Python Tools 2.1 für Visual Studio" 
-	description="Enthält Informationen zum Verwenden der Python-Tools für Visual Studio eine Kolben Web-app erstellen, die Daten in einer MongoDB-Datenbankinstanz speichert und für Webanwendungen in Azure-App-Dienst bereitstellen." 
+	description="Erfahren Sie, wie Sie mithilfe der Python-Tools für Visual Studio eine Flask-Web-App erstellen, die Daten in einer MongoDB-Datenbankinstanz speichert, und die Web-App für Azure App Service-Web-Apps bereitstellen." 
 	services="app-service\web" 
 	tags="python"
 	documentationCenter="python" 
@@ -27,7 +27,7 @@ In diesem Lernprogramm erstellen wir mit [Python-Tools für Visual Studio] eine 
 
 Die Umfrage-Web-App definiert für ihr Repository eine Abstraktion. Sie können also einfach zwischen unterschiedlichen Repository-Typen wechseln (In-Memory, Azure-Tabellenspeicher, MongoDB).
 
-Wir erfahren, wie eine gehostete MongoDB-Dienste auf Azure verwenden, konfigurieren die Web-app zur Verwendung von MongoDB und die Webanwendung zu veröffentlichen [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714).
+Wir sehen uns an, wie Sie einen der gehosteten MongoDB-Dienste in Azure verwenden, die Web-App für die Nutzung von MongoDB konfigurieren und sie in [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) veröffentlichen.
 
 Weitere Artikel finden Sie im [Python Developer Center], wo die Entwicklung von Azure App Service-Web-Apps mit PTVS unter Einsatz der Webframeworks Bottle, Flask und Django mithilfe der Datenbankdienste MongoDB, Azure-Tabellenspeicher, MySQL und SQL behandelt wird. Der Schwerpunkt dieses Artikels liegt zwar auf App Service, die Schritte sind jedoch vergleichbar mit der Entwicklung von [Azure Cloud Services].
 
@@ -50,7 +50,7 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
 1.  Wählen Sie in Visual Studio **Datei** -> **Neues Projekt** aus. 
 
-1.  Die Projektvorlagen aus der PTVS-Beispiel-VSIX-Datei stehen unter **Python**, **Beispiele** bereit. Wählen Sie **Umfragen Kolben Webprojekt** und klicken Sie auf OK, um das Projekt zu erstellen.
+1.  Die Projektvorlagen aus der PTVS-Beispiel-VSIX-Datei stehen unter **Python**, **Beispiele** bereit. Wählen Sie **Polls Flask Web Project** aus, und klicken Sie auf „OK“, um das Projekt zu erstellen.
 
   	![Dialogfeld "Neues Projekt"](./media/web-sites-python-ptvs-flask-mongodb/PollsFlaskNewProject.png)
 
@@ -62,7 +62,7 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
   	![Dialogfeld für das Hinzufügen der virtuellen Umgebung](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonAddVirtualEnv.png)
 
-1.  Vergewissern Sie sich, dass die Anwendung durch Drücken von `F5`. Standardmäßig verwendet die Anwendung ein Repository im Arbeitsspeicher, das nicht konfiguriert werden muss. Wird der Server angehalten, gehen alle Daten verloren.
+1.  Drücken Sie `F5`, um sicherzustellen, dass die Anwendung funktioniert. Standardmäßig verwendet die Anwendung ein Repository im Arbeitsspeicher, das nicht konfiguriert werden muss. Wird der Server angehalten, gehen alle Daten verloren.
 
 1.  Klicken Sie auf **Beispielumfragen erstellen**, und klicken Sie dann auf eine Umfrage und Abstimmung.
 
@@ -88,7 +88,7 @@ Mit den folgenden Schritten können Sie einen kostenlosen Test bei MongoLab erst
 
 1.  Geben Sie im Feld "Name" einen Namen für den Datenbankdienst ein.
 
-1.  Wählen Sie eine Region aus, in dem den Datenbankdienst gesucht werden soll. Wenn Sie die Datenbank aus Ihrer Azure-Anwendung verwenden, wählen Sie die Region aus, in der Sie Ihre Anwendung bereitstellen.
+1.  Wählen Sie eine Region aus, in der sich der Datenbankdienst befinden soll. Wenn Sie die Datenbank aus Ihrer Azure-Anwendung verwenden, wählen Sie die Region aus, in der Sie Ihre Anwendung bereitstellen.
 
   	<!-- ![Personalize Add-on Dialog](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonMongoLabAddon2.png) -->
 
@@ -104,7 +104,7 @@ In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass Sie die eben erst
 
   	![Dialogfeld mit Verbindungsinformationen](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonMongoLabConnectionInfo.png)
 
-1.  Klicken Sie in Visual Studio mit der rechten Maustaste auf den Projektknoten im Projektmappen-Explorer, und wählen Sie **Eigenschaften**. Klicken Sie auf die Registerkarte **Debuggen**.
+1.  Klicken Sie in Visual Studio im Projektmappen-Explorer mit der rechten Maustaste auf den Projektknoten, und wählen Sie **Eigenschaften** aus. Klicken Sie auf die Registerkarte **Debuggen**.
 
   	![Debugeinstellungen für das Projekt](./media/web-sites-python-ptvs-flask-mongodb/PollsFlaskMongoDBProjectDebugSettings.png)
 
@@ -120,7 +120,7 @@ In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass Sie die eben erst
 
 1.  Der Code, der das MongoDB-Repository implementiert, befindet sich in **models/mongodb.py**.
 
-1.  Führen Sie die Anwendung mit `F5`. Umfragen, die mit **Beispielumfragen erstellen** erstellt wurden, und die durch die Abstimmung erfassten Daten werden in MongoDB serialisiert.
+1.  Drücken Sie `F5`, um die Anwendung auszuführen. Umfragen, die mit **Beispielumfragen erstellen** erstellt wurden, und die durch die Abstimmung erfassten Daten werden in MongoDB serialisiert.
 
 1.  Navigieren Sie zur Seite **Info**, und überprüfen Sie, ob die App das **MongoDB**-Repository verwendet.
 
@@ -148,9 +148,9 @@ Sie können eine App wie [RoboMongo] verwenden, um Abfragen auszuführen und Än
 
   	![Ergebnisse der RoboMongo-Abfrage](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonRobomongoQuery.png)
 
-## Veröffentlichen Sie die Webanwendung in Azure-App-Dienst
+## Veröffentlichen der Web-App in Azure App Service
 
-PTVS bietet eine einfache Möglichkeit, Ihre Webanwendung auf Azure-App-Dienst bereitstellen.
+PTVS bietet eine einfache Möglichkeit zum Bereitstellen Ihrer Web-App in Azure App Service.
 
 1.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektknoten, und wählen Sie **Veröffentlichen** aus.
 
@@ -207,7 +207,7 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Fl
   - [Webprojekte]
   - [Cloud Service-Projekte]
   - [Remotedebugging in Microsoft Azure]
-- [Kolben-Dokumentation]
+- [Dokumentation zu Flask]
 - [MongoDB]
 - [Dokumentation zu PyMongo]
 - [PyMongo]
@@ -231,7 +231,7 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Fl
 [Python 2.7 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517190
 [Python 3.4 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517191
 [Python Tools für Visual Studio – Dokumentation]: http://pytools.codeplex.com/documentation
-[Kolben-Dokumentation]: http://flask.pocoo.org/
+[Dokumentation zu Flask]: http://flask.pocoo.org/
 [MongoDB]: http://www.mongodb.org/
 [Dokumentation zu PyMongo]: http://api.mongodb.org/python/current/
 [PyMongo]: https://github.com/mongodb/mongo-python-driver
@@ -240,4 +240,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Fl
 [Cloud Service-Projekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

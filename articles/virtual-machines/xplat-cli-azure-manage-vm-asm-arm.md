@@ -17,16 +17,16 @@
 	ms.author="danlep"/>
 
 
-#Befehlsentsprechungen für Ressourcen-Manager und Service Management für VM-Vorgänge mit der Azure CLI für Mac, Linux und Windows
+# Befehlsentsprechungen für Ressourcen-Manager und Service Management für VM-Vorgänge mit der Azure CLI für Mac, Linux und Windows
 In diesem Artikel werden die Entsprechungen für die Befehle der Azure Befehlszeilenschnittstelle (Azure CLI) zum Erstellen und Verwalten von Azure-VMs im ASM- (Service Management) und ARM-Modus (Ressourcen-Manager) beschrieben. Verwenden Sie ihn als eine praktische Anleitung zum Migrieren von Skripts aus einem Befehlsmodus in einen anderen.
 
-* Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht installiert und mit Ihrem Abonnement verbunden haben, finden Sie unter [Install the Azure CLI for Mac, Linux, and Windows](../xplat-cli-install.md) (Installieren der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows, in englischer Sprache) und [Connect to an Azure subscription from the Azure CLI for Mac, Linux, and Windows](../xplat-cli-connect.md) (Verbinden mit einem Azure-Abonnement in der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows, in englischer Sprache) weitere Informationen. Achten Sie bei Verwendung der Befehle im ARM-Modus darauf, dass Sie die Verbindung mit der Anmeldemethode herstellen.
+* Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht installiert und mit Ihrem Abonnement verbunden haben, finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle ](../xplat-cli-install.md) und [Herstellen einer Verbindung mit einem Azure-Abonnement über die Azure-Befehlszeilenschnittstelle](../xplat-cli-connect.md). Achten Sie bei Verwendung der Befehle im ARM-Modus darauf, dass Sie die Verbindung mit der Anmeldemethode herstellen.
 
 * Den Einstieg in den ARM-Modus der Azure-Befehlszeilenschnittstelle und den Wechsel der Befehlsmodi finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md).
 
 * Onlinehilfe zu den Befehlen und Optionen erhalten Sie durch Eingabe von `azure <command> <subcommand> --help` oder `azure help <command> <subcommand>`.
 
-##Szenarien
+## Szenarien
 Im Folgenden finden Sie allgemeine VM-Vorgänge, die Sie mit Befehlen der Azure-Befehlszeilenschnittstelle im ASM- und ARM-Modus ausführen können. Bei vielen Befehlen im ARM-Modus müssen Sie den Namen einer vorhandenen Ressourcengruppe übergeben.
 
 > [AZURE.NOTE]Diese Beispiele umfassen keine vorlagenbasierten Vorgänge im ARM-Modus. Weitere Informationen finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md).
@@ -58,10 +58,10 @@ Auflisten von VM-Images | `azure vm image list [options]` | `azure vm image list
 Anzeigen eines VM-Images | `azure vm image show [options]` | nicht verfügbar
 
 
-##Nächste Schritte
+## Nächste Schritte
 
 * Weitere Informationen zur Verwendung der Azure-Befehlszeilenschnittstelle mit Ressourcen im ARM-Modus finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md) und [Verwalten der rollenbasierten Zugriffssteuerung mit der plattformübergreifenden Befehlszeilenschnittstelle](../role-based-access-control-xplat-cli.md).
-* Weitere Beispiele für die Befehle der Befehlszeilenschnittstelle finden Sie unter [Azure-Befehlszeilentool für Mac und Linux](../virtual-machines-command-line-tools.md) und [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](azure-cli-arm-commands.md) (Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linus und Windows mit dem Azure Ressourcen-Manager, in englischer Sprache).
-
-<!--HONumber=52-->
+* Weitere Beispiele für die Befehle der Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle (Azure-CLI)](../virtual-machines-command-line-tools.md) und [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](azure-cli-arm-commands.md)
  
+
+<!---HONumber=62-->

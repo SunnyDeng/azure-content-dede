@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Anpassen des Entwicklerportals in der Azure API-Verwaltung"
-	description="Anpassen des Entwicklerportals in der Azure API-Verwaltung."
+	pageTitle="Anpassen des Entwicklerportals in Azure API Management"
+	description="Anpassen des Entwicklerportals in Azure API Management."
 	services="api-management"
 	documentationCenter=""
 	authors="steved0x"
@@ -16,15 +16,15 @@
 	ms.date="06/16/2015"
 	ms.author="sdanie"/>
 
-# Anpassen des Entwicklerportals in der Azure API-Verwaltung
+# Anpassen des Entwicklerportals in Azure API Management
 
-Diese Anleitung beschreibt, wie Sie das Erscheinungsbild des Entwicklerportals in der API-Verwaltung an Ihre Marke anpassen können.
+Diese Anleitung beschreibt, wie Sie das Erscheinungsbild des Entwicklerportals in API Management an Ihre Marke anpassen können.
 
-## <a name="change-page-headers"> </a>Text/Logo in der Kopfzeile der Seite zu ändern.
+## <a name="change-page-headers"> </a>Ändern von Text/Logo in der Kopfzeile
 
 Einer der Schlüsselaspekte der Portalanpassung ist die Möglichkeit, den Text am oberen Rand aller Seiten durch Ihren Firmennamen oder Ihr Logo zu ersetzen.
 
-Die Inhalte im Entwicklerportal werden über das Veröffentlichungsportal erstellt und konfiguriert, das im Azure-Verwaltungsportal erreichbar ist. Um die Verleger-API-Portal zu erreichen, klicken Sie auf **verwalten** in Azure-Portal für Ihre API Management-Dienst.
+Die Inhalte im Entwicklerportal werden über das Veröffentlichungsportal erstellt und konfiguriert, das im Azure-Verwaltungsportal erreichbar ist. Um auf das API-Herausgeberportal zuzugreifen, klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**.
 
 ![Herausgeberportal][api-management-management-console]
 
@@ -36,9 +36,9 @@ Sie können den Inhalt der Fußzeile im Feld **Body** bearbeiten. Ändern Sie de
 
 Die neue Kopfzeile sollte nun auf allen Seiten im Entwicklerportal angezeigt werden!
 
-> Um das Entwicklerportal klicken Sie in der Publisher-Portal zu öffnen, klicken Sie auf **-Entwicklerportal** in der oberen Leiste.
+> Klicken Sie in der oberen Leiste auf **Entwicklerportal**, um das Entwicklerportal aus dem Herausgeberportal zu öffnen.
 
-## <a name="change-headers-styling"> </a>Ändern des Designs der Header
+## <a name="change-headers-styling"> </a>Ändern des Stils der Kopfzeilen
 
 Farben, Schriftarten, Schriftgrößen und andere stilverwandte Elemente aller Portalseiten werden durch Stilregeln definiert. Klicken Sie auf **Darstellung** im Menü **Entwicklerportal** im Veröffentlichungsportal, um die Stilregeln zu bearbeiten. Klicken Sie anschließend auf **Anpassung beginnen**, um den Stil-Editor zu aktivieren.
 
@@ -54,7 +54,7 @@ Jede Regel steht für eine Stileigenschaft des ausgewählten Elements. Der ausge
 
 > Falls Sie mit [Bootstrap][] vertraut sind, werden Sie feststellen, dass es sich bei diesen Regeln um [LESS-Variablen][] aus dem Bootstrap-Design für das Entwicklerportal handelt.
 
-Ändern Sie nun die Farbe der Überschrift. Wählen Sie den Eintrag im Feld **@headings-color** aus, und geben Sie \#000000 ein. Dies ist der Hexadezimalcode für die Farbe Schwarz. Daraufhin sollte ein rechteckiger Farbindikator am Ende des Textfelds angezeigt werden. Wenn Sie diesen Indikator anklicken, können Sie mit einem Farbwähler eine Farbe auswählen.
+Ändern Sie nun die Farbe der Überschrift. Wählen Sie den Eintrag im Feld **@headings-color** aus, und geben Sie #000000 ein. Dies ist der Hexadezimalcode für die Farbe Schwarz. Daraufhin sollte ein rechteckiger Farbindikator am Ende des Textfelds angezeigt werden. Wenn Sie diesen Indikator anklicken, können Sie mit einem Farbwähler eine Farbe auswählen.
 
 ![Farbauswahl][api-management-customization-toolbar-color-picker]
 
@@ -64,7 +64,7 @@ Wenn Sie Ihre Änderungen an den Stilregeln des ausgewählten Elements abgeschlo
 
 > Um die Stilregeln der anderen Elemente auf der Seite zu ändern, führen Sie dieselben Schritte wie bei der Änderung der Kopfzeile aus. Klicken Sie auf **Element auswählen** im Stil-Editor, wählen Sie das gewünschte Element aus und ändern Sie die Werte der Stilregeln, die auf dem Bildschirm angezeigt werden.
 
-## <a name="edit-page-contents"> </a>Den Inhalt einer Seite bearbeiten
+## <a name="edit-page-contents"> </a>Bearbeiten der Seiteninhalte
 
 Das Entwicklerportal besteht aus automatisch generierten Seiten wie z. B. APIs, Produkte Anwendungen, Probleme und manuell erstellte Inhalte. Da das Portal auf einem Content Management-System basiert, können Sie diese Inhalte jederzeit erstellen.
 
@@ -99,4 +99,4 @@ Klicken Sie auf die Willkommensseite, um den Inhalt zu bearbeiten, der auf der S
 [bootstrap]: http://getbootstrap.com/
 [LESS-Variablen]: http://getbootstrap.com/css/
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -41,13 +41,13 @@ Wenn alle Ihre Abhängigkeiten im \\wheelhouse-Ordner enthalten sein sollen und 
 
 ### Anpassen der Installation
 
-Sie können das Bereitstellungsskript zum Installieren eines Pakets in der virtuellen Umgebung mithilfe eines alternativen Installationsprogramms, wie z. B. "easy_install", anpassen. Ein auskommentiertes Beispiel finden Sie unter "deploy.cmd". Stellen Sie sicher, dass solche Pakete nicht in requirements.txt aufgelistet sind, um zu verhindern, dass Pip sie installiert.
+Sie können das Bereitstellungsskript zum Installieren eines Pakets in der virtuellen Umgebung mithilfe eines alternativen Installationsprogramms, wie z. B. "easy\\_install", anpassen. Ein auskommentiertes Beispiel finden Sie unter "deploy.cmd". Stellen Sie sicher, dass solche Pakete nicht in requirements.txt aufgelistet sind, um zu verhindern, dass Pip sie installiert.
 
 Fügen Sie Folgendes zum Bereitstellungsskript hinzu:
 
     env\scripts\easy_install somepackage
 
-Sie können "easy_install" möglicherweise auch verwenden, um mithilfe eines EXE-Installers zu installieren (einige sind ZIP-kompatibel und werden daher von "easy_install" unterstützt). Fügen Sie das Installationsprogramm Ihrem Repository hinzu, und rufen Sie "easy_install" auf, indem Sie den Pfad zur ausführbaren Datei übergeben.
+Sie können "easy\\_install" möglicherweise auch verwenden, um mithilfe eines EXE-Installers zu installieren (einige sind ZIP-kompatibel und werden daher von "easy\\_install" unterstützt). Fügen Sie das Installationsprogramm Ihrem Repository hinzu, und rufen Sie "easy\\_install" auf, indem Sie den Pfad zur ausführbaren Datei übergeben.
 
 Fügen Sie Folgendes zum Bereitstellungsskript hinzu:
 
@@ -68,4 +68,4 @@ Es wird empfohlen, dass Sie die vorhandene virtuelle Umgebung auf der App lösch
 [Microsoft Visual C++ Compiler für Python 2.7]: http://aka.ms/vcpython27
 [Microsoft Visual C++ 2010 Express]: http://go.microsoft.com/?linkid=9709949
 
-<!--HONumber=54-->
+<!---HONumber=62-->

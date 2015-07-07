@@ -71,7 +71,7 @@ In diesem Abschnitt werden die erforderlichen Schritte zum Bereitstellen einer A
 
 	![Statusbenachrichtigung im Fenster "Azure App Service-Aktivität"](./media/app-service-dotnet-deploy-api-app/26-5-deployment-success-v4.png)
 
-	Während dieses Bereitstellungsvorgangs Visual Studio automatisch neu gestartet, die *Gateway*. Das Gateway ist eine Webanwendung, die Verwaltungsfunktionen für alle API-apps in einer Ressourcengruppe behandelt, und es muss neu gestartet werden, um API-Änderungen in einer API-Anwendung zu erkennen. Wenn Sie eine andere Methode zum Bereitstellen einer API-app verwenden und die Bereitstellung der API-Änderungen, müssen Sie möglicherweise das Gateway manuell neu zu starten. Informationen dazu, wie Sie das Gateway in das Portal neu zu starten, finden Sie unter [verwalten eine API-Anwendung](app-service-api-manage-in-portal.md).
+	Während dieses Bereitstellungsprozesses startet Visual Studio das *Gateway* automatisch neu. Das Gateway ist eine Web-App, die Verwaltungsfunktionen für alle API-Apps in einer Ressourcengruppe verarbeitet, und muss neu gestartet werden, um API-Änderungen in einer API-App zu erkennen. Wenn Sie eine API-App mithilfe einer anderen Methode bereitstellen und Ihre Bereitstellen die API ändert, müssen Sie das Gateway möglicherweise manuell neu starten. Informationen zum Neustarten des Gateways im Portal finden Sie unter [Verwalten einer API-App](app-service-api-manage-in-portal.md).
 
 ## Anzeigen der App im Azure-Vorschauportal
 
@@ -129,4 +129,4 @@ In diesem Abschnitt navigieren Sie zum Portal, um die grundlegenden Einstellunge
 Sie haben gesehen, wie die Visual Studio-Funktionen für die direkte Bereitstellung die Iteration und Bereitstellung vereinfachen und es Ihnen ermöglichen, die ordnungsgemäße Funktion der API zu testen. Im [nächsten Lernprogramm](../app-service-dotnet-remotely-debug-api-app.md) erfahren Sie, wie Sie die API-App debuggen, während sie in Azure ausgeführt wird.
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

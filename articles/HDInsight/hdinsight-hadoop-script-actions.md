@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/31/2015" 
+	ms.date="06/10/2015" 
 	ms.author="bradsev"/>
 
 # Entwickeln von Skriptaktionen mit HDInsight 
@@ -47,8 +47,8 @@ Benutzer müssen dafür sorgen, dass alle Skripts und anderen Artefakte, die bei
 Sie müssen davon ausgehen, dass für die Knoten eines HDInsight-Clusters während der Nutzungsdauer des Clusters erneut ein Abbild erstellt wird. Das Clusteranpassungsskript wird immer dann ausgeführt, wenn für einen Cluster ein neues Abbild erstellt wird. Dieses Skript muss dahingehend idempotent sein, dass beim Erstellen eines neuen Image sichergestellt wird, dass der Cluster in denselben angepassten Status zurückgesetzt wird, in dem er sich befand, nachdem das Skript erstmals bei der Clustererstellung ausgeführt wurde. Beispiel: Wenn ein benutzerdefiniertes Skript bei der ersten Ausführung eine Anwendung in "D:\\AppLocation" installiert hat, muss das Skript bei nachfolgenden Ausführungen, wenn ein neues Abbild erstellt wird, prüfen, ob die Anwendung am Speicherort "D:\\AppLocation" vorhanden ist, ehe mit anderen Schritten im Skript fortgefahren wird.
 
 
-### <a name="bPS4"></a>Installieren benutzerdefinierter Komponenten am optimalen Speicherort  
-Wenn von Clusterknoten ein neues Image erstellt wird, können das Ressourcenlaufwerk C:\\ und das Systemlaufwerk D:\\ neu formatiert werden, wodurch es zu einem Verlust von Daten und auf diesen Laufwerken installierten Anwendungen kommen kann. Dies kann auch passieren, wenn ein zum Cluster gehörender Azure VM-Knoten ausfällt und durch einen neuen Knoten ersetzt wird. Sie können Komponenten auf Laufwerk D:/ oder im Verzeichnis "C:\\apps" im Cluster installieren. Alle anderen Speicherorte auf Laufwerk C:\\ sind reserviert. Geben Sie den Installationsort für Anwendungen oder Bibliotheken im Clusteranpassungsskript an.
+### <a name="bPS4"></a>Installieren benutzerdefinierter Komponenten am optimalen Speicherort 
+Wenn von Clusterknoten ein neues Image erstellt wird, können das Ressourcenlaufwerk C:\ und das Systemlaufwerk D:\\ neu formatiert werden, wodurch es zu einem Verlust von Daten und auf diesen Laufwerken installierten Anwendungen kommen kann. Dies kann auch passieren, wenn ein zum Cluster gehörender Azure VM-Knoten ausfällt und durch einen neuen Knoten ersetzt wird. Sie können Komponenten auf Laufwerk D:/ oder im Verzeichnis "C:\apps" im Cluster installieren. Alle anderen Speicherorte auf Laufwerk C:\ sind reserviert. Geben Sie den Installationsort für Anwendungen oder Bibliotheken im Clusteranpassungsskript an.
 
 
 ### <a name="bPS5"></a>Sicherstellen einer hohen Verfügbarkeit der Clusterarchitektur
@@ -96,13 +96,15 @@ Bei der Entwicklung von Skriptaktionen müssen häufig Umgebungsvariablen festge
 	Write-HDILog "Starting environment variable setting at: $(Get-Date)";
 	[Environment]::SetEnvironmentVariable('MDS_RUNNER_CUSTOM_CLUSTER', 'true', 'Machine');
 
-Mit dieser Anweisung wird die Umgebungsvariable **MDS_RUNNER_CUSTOM_CLUSTER** auf den Wert "true" und auch der Gültigkeitsbereich dieser Variablen (für den gesamten Computer) festgelegt. Mitunter ist es wichtig, dass Umgebungsvariablen im entsprechenden Bereich (Computer oder Benutzer) festgelegt werden. [Hier](https://msdn.microsoft.com/library/96xafkes(v=vs.110).aspx "hier") finden Sie weitere Informationen zum Festlegen von Umgebungsvariablen.
+Mit dieser Anweisung wird die Umgebungsvariable **MDS_RUNNER_CUSTOM_CLUSTER** auf den Wert "true" und auch der Gültigkeitsbereich dieser Variablen (für den gesamten Computer) festgelegt. Mitunter ist es wichtig, dass Umgebungsvariablen im entsprechenden Bereich (Computer oder Benutzer) festgelegt werden. [Hier][1] finden Sie weitere Informationen zum Festlegen von Umgebungsvariablen.
 
 ### Zugriff auf Speicherorte benutzerdefinierter Skripts
 
 Skripts zur Anpassung eines Clusters müssen entweder im Standardspeicherkonto des Clusters oder in einem öffentlichen schreibgeschützten Container eines anderen Speicherkontos enthalten sein. Wenn Ihr Skript auf externe Ressourcen zugreift, müssen diese öffentlich zugänglich sein (oder mindestens einen öffentlichen Lesezugriff aufweisen). Sie möchten z. B. auf eine Datei zugreifen und sie mithilfe des Befehls "SaveFile-HDI" speichern.
 
 	Save-HDIFile -SrcUri 'https://somestorageaccount.blob.core.windows.net/somecontainer/some-file.jar' -DestFile 'C:\apps\dist\hadoop-2.4.0.2.1.9.0-2196\share\hadoop\mapreduce\some-file.jar'
+
+In diesem Beispiel müssen Sie sicherstellen, dass der Container "somecontainer" im Speicherkonto "somestorageaccount" öffentlich zugänglich ist. Andernfalls löst das Skript die Ausnahme "Nicht gefunden" aus und schlägt fehl.
 
 ### Auslösen einer Ausnahme bei nicht erfolgreicher Clusterbereitstellung
 
@@ -116,6 +118,17 @@ Wenn Sie präzise darüber benachrichtigt werden möchten, dass die Clusteranpas
 	exit
 	}
 
+Wenn die Datei nicht vorhanden ist, würde dieser Codeausschnitt zu einem Status führen, bei dem das Skript ordnungsgemäß nach Ausgabe der Fehlermeldung beendigt wird, und der Cluster würde einen Ausführungsstatus erreichen, sofern der Clusteranpassungsprozess "erfolgreich" abgeschlossen wurde. Wenn Sie genaue Informationen darüber wünschen, dass die Clusteranpassung aufgrund einer fehlenden Datei nicht erwartungsgemäß abgeschlossen werden konnte, sollten Sie stattdessen eine Ausnahme auslösen und den Clusteranpassungsschritt fehlschlagen lassen. Sie müssten dann stattdessen den folgenden Codeausschnitt verwenden.
+
+	If(Test-Path($SomePath)) {
+		#Process file in some way
+	} else {
+		# File does not exist; handle error case
+		# Print error message
+	throw
+	}
+
+
 ## <a name="deployScript"></a>Prüfliste für die Bereitstellung einer Skriptaktion
 Es folgen unsere Schritte bei der Vorbereitung der Bereitstellung dieser Skripts:
 
@@ -123,7 +136,7 @@ Es folgen unsere Schritte bei der Vorbereitung der Bereitstellung dieser Skripts
 2. Fügen Sie Skripts Überprüfungen hinzu, um sicherzustellen, dass sie idempotent ausgeführt werden, damit das Skript mehrmals auf demselben Knoten ausgeführt werden kann.
 3. Verwenden Sie das PowerShell-Cmdlet **Write-Output**, um für eine Ausgabe in STDOUT und STDERR zu sorgen. Verwenden Sie nicht **Write-Host**.
 4. Verwenden Sie einen temporären Dateiordner wie "$env:TEMP", um die heruntergeladene von den Skripts verwendete Dateien aufzubewahren, und leeren Sie den Ordner nach der Ausführung der Skripts.
-5. Installieren Sie benutzerdefinierte Software nur auf "D:" oder in "C:\\apps". Andere Speicherorte auf Laufwerk C:\\ dürfen nicht verwendet werden, da sie reserviert sind. Beachten Sie, dass das Installieren von Dateien auf Laufwerk C:\\ außerhalb des Ordners "C:/apps" beim Erstellen neuer Abbilder des Knotens zu Einrichtungsfehlern führen kann.
+5. Installieren Sie benutzerdefinierte Software nur auf "D:\" oder in "C:\apps". Andere Speicherorte auf Laufwerk C:\ dürfen nicht verwendet werden, da sie reserviert sind. Beachten Sie, dass das Installieren von Dateien auf Laufwerk C:\ außerhalb des Ordners "C:/apps" beim Erstellen neuer Abbilder des Knotens zu Einrichtungsfehlern führen kann.
 6. Wenn sich Einstellungen auf Betriebssystemebene oder Hadoop-Dienstkonfigurationsdateien geändert haben, können Sie bei Bedarf die HDInsight-Dienste neu starten. Diese können dann Einstellungen auf Betriebssystemebene übernehmen, z. B. die in den Skripts festgelegten Umgebungsvariablen.
 
 
@@ -178,7 +191,7 @@ Mitunter kann ein benutzerdefiniertes Skript tatsächlich von HDInsight-Komponen
 
 Die Skriptfehlerprotokolle werden mit anderen Ausgaben im Standardspeicherkonto gespeichert, das Sie für den Cluster bei seiner Erstellung angegeben haben. Die Protokolle befinden sich in einer Tabelle mit dem Namen *u<\\cluster-name-fragment><\\time-stamp>setuplog*. Dabei handelt es sich um zusammengeführte Protokolle mit Aufzeichnungen aller Knoten (Haupt- und Workerknoten), auf denen das Skript im Cluster ausgeführt wurde.
 
-Sie können auch remote auf die Clusterknoten zugreifen, um STDOUT und STDERR für benutzerdefinierte Skripts anzuzeigen. Die Protokolle auf jedem Knoten beziehen sich nur auf diesen Knoten und befinden sich unter **C:\\HDInsightLogs\\DeploymentAgent.log**. In diesen Protokolldateien werden alle Ausgaben aus dem benutzerdefinierten Skript aufgezeichnet. Ein Beispielprotokollauszug einer Spark-Skriptaktion sieht so aus:
+Sie können auch remote auf die Clusterknoten zugreifen, um STDOUT und STDERR für benutzerdefinierte Skripts anzuzeigen. Die Protokolle auf jedem Knoten beziehen sich nur auf diesen Knoten und befinden sich unter **C:\HDInsightLogs\\DeploymentAgent.log**. In diesen Protokolldateien werden alle Ausgaben aus dem benutzerdefinierten Skript aufgezeichnet. Ein Beispielprotokollauszug einer Spark-Skriptaktion sieht so aus:
 
 	Microsoft.Hadoop.Deployment.Engine.CustomPowershellScriptCommand; Details : BEGIN: Invoking powershell script https://configactions.blob.core.windows.net/sparkconfigactions/spark-installer.ps1.; 
 	Version : 2.1.0.0; 
@@ -234,4 +247,8 @@ Bei Auftreten eines Ausführungsfehlers enthält die Protokolldatei auch die bes
 [hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
 [powershell-install-configure]: ../install-configure-powershell/
 
-<!--HONumber=54--> 
+<!--Reference links in article-->
+[1]: https://msdn.microsoft.com/library/96xafkes(v=vs.110).aspx
+ 
+
+<!---HONumber=62-->

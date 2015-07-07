@@ -1,45 +1,39 @@
-## What is Azure File storage?
+## Was ist der Azure-Dateispeicher?
 
-File storage offers shared storage for applications using the standard SMB 2.1 protocol. Microsoft Azure virtual machines and cloud services can share file data across application components via mounted shares, and on-premises applications can access file data in a share via the File storage API.
+Der Dateispeicher bietet einen gemeinsam genutzten Speicher für Anwendungen und verwendet dabei das SMB 2.1-Protokoll. Virtuelle Microsoft Azure-Computer und Clouddienste können Dateidaten in verschiedenen Anwendungskomponenten über eingebundene Freigaben teilen, und lokale Anwendungen können über die Dateispeicher-API auf freigegebene Dateien zugreifen.
 
-Applications running in Azure virtual machines or cloud services can mount a File storage share to access file data, just as a desktop application would mount a typical SMB share. Any number of Azure virtual machines or roles can mount and access the File storage share simultaneously.
+Anwendungen in virtuellen Azure-Computern oder Cloud-Diensten können eine Dateispeicher-Freigabe einbinden, um auf Dateidaten zuzugreifen, ebenso wie eine Desktopanwendung eine typische SMB-Freigabe einbinden würde. Die Dateispeicherfreigabe kann von einer beliebigen Anzahl von virtuellen Azure-Computern oder -Rollen gleichzeitig bereitgestellt und verwendet werden.
 
-Since a File storage share is a standard SMB 2.1 file share, applications running in Azure can access data in the share via file I/O APIs. Developers can therefore leverage their existing code and skills to migrate existing applications. IT Pros can use PowerShell cmdlets to create, mount, and manage File storage shares as part of the administration of Azure applications. This guide will show examples of both.
+Da eine Dateispeicherfreigabe eine standardmäßige SMB 2.1-Dateifreigabe ist, können in Azure ausgeführte Anwendungen über Datei-E/A-APIs auf Daten der Freigabe zugreifen. Entwickler können daher ihren vorhandenen Code und bereits erlernte Fertigkeiten für die Migration vorhandener Anwendungen verwenden. IT-Fachkräfte können PowerShell-Cmdlets verwenden, um Dateispeicher-Freigaben im Rahmen der Administration von Azure-Anwendungen zu erstellen, einzubinden und zu verwalten. Diese Anleitung zeigt jeweils Beispiele dazu.
 
-Common uses of File storage include:
+Dateispeicher werden hauptsächlich für folgende Zwecke verwendet:
 
-- Migrating on-premises applications that rely on file shares to run on Azure virtual machines or cloud services, without expensive rewrites
-- Storing shared application settings, for example in configuration files
-- Storing diagnostic data such as logs, metrics, and crash dumps in a shared location 
-- Storing tools and utilities needed for developing or administering Azure virtual machines or cloud services
+- Migration von lokalen Anwendungen, die Dateifreigaben aus virtuellen Azure-Computern oder Clouddiensten ohne teure Umschreibungen verwenden
+- Speichern von gemeinsam genutzten Anwendungseinstellungen, z. B. in Konfigurationsdateien
+- Speichern von Diagnosedaten wie Protokolle, Metriken und Absturzabbilder an einem freigegebenen Speicherort. 
+- Speichern von Tools und Dienstprogrammen für das Entwickeln und Verwalten von virtuellen Azure-Computern oder Clouddiensten
 
-## File storage concepts
+## Dateispeicherkonzepte
 
-File storage contains the following components:
+Der Dateispeicher umfasst die folgenden Komponenten:
 
 ![files-concepts][files-concepts]
 
--   **Storage Account:** All access to Azure Storage is done
-    through a storage account. See [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/library/azure/dn249410.aspx) for details about storage account capacity.
+-   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/library/azure/dn249410.aspx) (Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher, in englischer Sprache).
 
--   **Share:** A File storage share is an SMB 2.1 file share in Azure. 
-    All directories and files must be created in a parent share. An account can contain an
-    unlimited number of shares, and a share can store an unlimited
-    number of files, up to the capacity limits of the storage account.
+-   **Freigabe:** Eine Dateispeicherfreigabe ist eine SMB 2.1-Dateifreigabe in Azure. Alle Verzeichnisse und Dateien müssen in der übergeordneten Freigabe erstellt werden. Ein Konto kann eine unbegrenzte Anzahl von Freigaben enthalten, und eine Freigabe kann eine unbegrenzte Anzahl von Dateien speichern, bis die Kapazitätsgrenze des Speicherkontos erreicht ist.
 
--   **Directory:** An optional hierarchy of directories. 
+-   **Verzeichnis:** eine optionale Hierarchie von Verzeichnissen.
 
--	**File:** A file in the share. A file may be up to 1 TB in size.
+-	**Datei:** eine Datei in der Freigabe. Die Datei kann bis zu 1 TB groß sein.
 
--   **URL format:** Files are addressable using the following URL
-    format:   
-    https://`<storage
-    account>`.file.core.windows.net/`<share>`/`<directory/directories>`/`<file>`  
+-   **URL-Format:** Dateien sind über das folgende URL-Format adressierbar: https://`<storage
+    account>`.file.core.windows.net/`<share>`/`<directory/directories>`/`<file>`
     
-    The following example URL could be used to address one of the files in the
-    diagram above:  
-    `http://samples.file.core.windows.net/logs/CustomLogs/Log1.txt`
+    Mit der folgenden Beispiel-URL kann eine der Dateien im Diagramm oben adressiert werden: `http://samples.file.core.windows.net/logs/CustomLogs/Log1.txt`
 
-For details about how to name shares, directories, and files, see [Naming and Referencing Shares, Directories, Files, and Metadata](http://msdn.microsoft.com/library/azure/dn167011.aspx).
+Informationen zur Benennung von Freigaben, Verzeichnissen und Dateien finden Sie unter [Benennen und Referenzieren von Freigaben, Verzeichnissen, Dateien und Metadaten](http://msdn.microsoft.com/library/azure/dn167011.aspx).
 
 [files-concepts]: ./media/storage-file-concepts-include/files-concepts.png
+
+<!---HONumber=62-->

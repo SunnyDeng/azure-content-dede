@@ -31,7 +31,7 @@ Wenn Sie den Domänennamen ***.azurewebsites.net** nutzen, der für Ihre Web-App
 
 ### Veröffentlichung von Profilen und Einstellungen
 
-Beim Entwickeln von Anwendungen, Ausführen von Verwaltungsaufgaben oder Automatisieren von Tasks, die mit Dienstprogrammen wie z. B. **Visual Studio**, **Web Matrix**, **Azure PowerShell** oder **Azure-Befehlszeilenschnittstelle (CLI Azure)**, können Sie entweder eine *Veröffentlichungseinstellungen* Datei oder ein *Veröffentlichungsprofil*. Beides authentisiert hat Sie für Azure und sollte geschützt werden, um unautorisierten Zugriff zu verhindern.
+Bei der Entwicklung von Anwendungen, der Durchführung von Verwaltungsaufgaben oder bei der Automatisierung von Aufgaben, die **Visual Studio**, **Web Matrix**, **Azure PowerShell** oder die **Azure-Befehlszeilenschnittstelle (Azure-CLI)** verwenden, können Sie entweder eine Datei mit *Veröffentlichungseinstellungen* oder mit *Veröffentlichungsprofil* nutzen. Beides authentisiert hat Sie für Azure und sollte geschützt werden, um unautorisierten Zugriff zu verhindern.
 
 * Eine Datei mit **Veröffentlichungseinstellungen** enthält
 
@@ -45,14 +45,14 @@ Beim Entwickeln von Anwendungen, Ausführen von Verwaltungsaufgaben oder Automat
 
 Wenn Sie ein Dienstprogramm nutzen, das Veröffentlichungseinstellungen oder ein Veröffentlichungsprofil verwendet, importieren Sie die Datei, die die Veröffentlichungseinstellungen oder das Profil enthält, in das Dienstprogramm und **löschen** Sie anschließend die Datei. Wenn Sie die Datei behalten müssen, beispielsweise um sie mit anderen zu teilen, die an dem Projekt mitarbeiten, speichern Sie sie an einem sicheren Ort, z.B. in einem **verschlüsselten** Verzeichnis mit begrenzten Berechtigungen.
 
-Zusätzlich sollten Sie sicherstellen, dass die importierten Berechtigungsnachweise sicher sind. Beispielsweise **Azure PowerShell** und **Azure-Befehlszeilenschnittstelle (CLI Azure)** sowohl die importierten Informationen in speichern Ihre **Basisverzeichnis** (* ~ * auf Linux und OS X-Systemen und */Users/Benutzername* auf Windows-Systemen.) Als zusätzliche Sicherheit können Sie diese Verzeichnisse mit Verschlüsselungstools **verschlüsseln**, die für Ihr Betriebssystem erhältlich sind.
+Zusätzlich sollten Sie sicherstellen, dass die importierten Berechtigungsnachweise sicher sind. Beispielsweise speichern **Azure PowerShell** und die **Azure-Befehlszeilenschnittstelle** importierte Daten in Ihrem **Basisverzeichnis** (*~* bei Linux- oder OS X-Systemen und */Benutzer/IhrBenutzername* bei Windows-Systemen.) Als zusätzliche Sicherheit können Sie diese Verzeichnisse mit Verschlüsselungstools **verschlüsseln**, die für Ihr Betriebssystem erhältlich sind.
 
 ### Konfigurationseinstellungen und Verbindungszeichenfolgen
 Es ist üblich, Verbindungszeichenfolgen, Berechtigungsnachweise zur Authentisierung und andere sensible Daten in Konfigurationsdateien zu speichern. Leider können sich diese Dateien ungeschützt auf ihrer Website befinden oder in ein öffentliches Repository verschoben werden, wodurch diese Daten gefährdet werden können.
 
 Azure App Service ermöglicht es Ihnen, Konfigurationsdaten als Teil der Laufzeitumgebung von Web-Apps als **App-Einstellungen** und **Verbindungszeichenfolgen** zu speichern. Die Werte werden für Ihre Anwendung zur Laufzeit über *Umgebungsvariablen* für die meisten Programmiersprachen freigegeben. Bei .NET-Anwendungen werden diese Werte in Ihre .NET-Konfiguration zur Laufzeit eingegeben.
 
-**App-Einstellungen** und **Verbindungszeichenfolgen** sind konfigurierbar über die [Azure Portal](http://go.microsoft.com/fwlink/?LinkId=529715) oder Dienstprogrammen wie PowerShell oder der Azure-Befehlszeilenschnittstelle.
+**Anwendungseinstellungen** und **Verbindungszeichenfolgen** können mit dem [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) oder mit Hilfsprogrammen wie PowerShell oder der Azure-Befehlszeilenschnittstelle konfiguriert werden.
 
 Weitere Informationen zu App-Einstellungen und Verbindungszeichenfolgen finden Sie unter [Konfigurieren von Web-Apps](web-sites-configure.md).
 
@@ -78,4 +78,4 @@ Weitere Informationen zum Protokollieren von Informationen für Web-Apps, die si
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

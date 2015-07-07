@@ -20,47 +20,38 @@
 
 Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten.
 
-Mit dem Datei-Connector können Sie Dateien aus dem Dateisystem eines Hostcomputers hochladen, herunterladen oder löschen.
+Mit dem Datei-Connector können Sie Dateien aus dem Dateisystem eines Hostcomputers hochladen, herunterladen oder löschen. Er verwendet den Hybrid Connection Manager für eine Hybridkonnektivität mit dem Hostcomputer.
 
 ## Erstellen eines Datei-Connectors für Ihre Logik-App ##
 Zur Verwendung des Datei-Connectors müssen Sie zunächst eine Instanz der Datei-Connector-API-App erstellen. Gehen Sie dazu folgendermaßen vor:
 
-1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" unten links im Azure-Portal.
-2.	Navigieren Sie zu "Web und Mobile > Azure Marketplace" und suchen Sie nach "Datei-Connector".
+1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" auf der linken Seite im Azure-Portal.
+2.	Navigieren Sie zu "Marketplace > API-Apps" und suchen Sie nach "Datei-Connector".
 3.	Konfigurieren Sie den Datei-Connector wie folgt:
  
 	![][1]
  
-	- **Name** – Geben Sie einen Namen für die Datei-Connector
+	- **Name** – Geben Sie einen Namen für den Datei-Connector ein.
 	- **Paketeinstellungen**
-		- **Stammordner** -Geben Sie den Pfad des Stammordners auf dem Hostcomputer. Z. b. D:\\FileConnectorTest
-		- **Service Bus-Verbindungszeichenfolge** – Geben Sie eine Servicebus-Verbindungszeichenfolge. Stellen Sie sicher, dass der Dienstbus-Namespace vom Typ "Standard" ist und NICHT "Basic".
-	- **App Dienstplan** – wählen oder erstellen Sie einen Plan für die App-Dienst
+		- **Stammordner** - Geben Sie den Pfad des Stammordners auf dem Hostcomputer an. Z. B. D:\\FileConnectorTest
+		- **Service Bus-Verbindungszeichenfolge** - Geben Sie eine Dienstbus-Verbindungszeichenfolge an. Stellen Sie sicher, dass der Service Bus-Namespace vom Typ "Standard" ist und NICHT "Basic", um Service Bus Relays zu ermöglichen. Service Bus Relay wird für die Verbindung mit dem Hybrid Connection Manager verwendet. 
+	- **App Service-Plan** - Wählen oder erstellen Sie einen App Service-Plan.
 	- **Preisstufe** – Wählen Sie eine Preisstufe für den Connector.
 	- **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
 	- **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
 	- **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten.
 
 4. Klicken Sie auf "Erstellen". Ein neuer Datei-Connector wird erstellt.
-5. Sobald die API-App-Instanz erstellt wurde, navigieren Sie zu deren Dashboard. Klicken Sie dazu auf "Durchsuchen" -> "API-Apps", und wählen Sie Ihre Datei-Connector-API-App aus.
-6. Im Datei-Connector-Dashboard sehen Sie, dass der Bereich "Hybridverbindung" unter "On-Premise Setup Incomplete" angezeigt wird. Öffnen Sie zum Abschließen des Hybrid-Setups dieses Dashboard auf dem Hostcomputer, mit dessen Dateisystem eine Verbindung hergestellt werden soll. Klicken Sie anschließend auf den Bereich "Hybridverbindung". Klicken Sie auf dem geöffneten Blatt "Hybridverbindung" auf den Link "Herunterladen und konfigurieren", um den lokalen Hybrid Connection Manager zu installieren.
 
-	![][2]
-
-7. Hierdurch wird ein Installationsprogramm gestartet, in dem die Zeichenfolge "Relay Listen Connection String" angegeben werden muss. Kopieren Sie die Zeichenfolge "Primary Configuration String" aus dem Blatt "Hybridverbindung", und fügen Sie sie ein. Klicken Sie auf "Installieren".
-
-	![][3]
-
-8. Um sicherzustellen, dass die Hybridinstallation erfolgreich war, öffnen Sie erneut das Datei-Connector-Dashboard. Der Hybridverbindungsstatus sollte als "Verbunden" angezeigt werden.
-
-	![][4]
+## Hybrid Connection Manager konfigurieren ##
+Sobald die API-App-Instanz erstellt wurde, navigieren Sie zu deren Dashboard. Klicken Sie dazu auf "Durchsuchen" > "API-Apps" > "Wählen Sie Ihre Datei-Connector-API-App aus". Hier muss der Hybrid Connection Manager konfiguriert werden. Weitere Informationen zum Konfigurieren des Hybrid Connection Managers und zur Problembehebung finden Sie unter [Hybrid Connection Manager verwenden].
 
 ## Verwenden des Datei-Connectors in Logik-Apps ##
 Sobald Ihre API-App erstellt wurde, können Sie den Datei-Connector als Trigger oder Aktion für Ihre Logik-App verwenden. Gehen Sie hierzu wie folgt vor:
 
 1.	Erstellen Sie eine neue Logik-App, und wählen Sie dieselbe Ressourcengruppe aus, in der sich der Datei-Connector befindet. Befolgen Sie die Anweisungen zum [Erstellen einer neuen Logik-App].  	
 	
-2.	Öffnen Sie "Trigger und Aktionen" innerhalb der erstellten Logik-App, um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren.
+2.	Öffnen Sie "Trigger und Aktionen" innerhalb der erstellten Logik-App, um den Logik-App-Designer zu öffnen und den Ablauf zu konfigurieren.
 	
 3.	Der Datei-Connector wird im Abschnitt "API Apps in this resource group" im Katalog auf der rechten Seite angezeigt.
  	
@@ -74,23 +65,24 @@ Sobald Ihre API-App erstellt wurde, können Sie den Datei-Connector als Trigger 
 
 7. Nachdem Sie diese konfiguriert haben, können Sie die Trigger und Aktionen im Datenfluss nutzen. Auf ähnliche Weise können auch andere Aktionen konfiguriert werden.
 
-8. Um den Connector außerhalb einer Logik-App zu verwenden, können Sie die REST-APIs verwenden, die vom Connector verfügbar gemacht werden. Sie können diese API-Definitionen mit "Durchsuchen" -> "API-App" -> "Datei-Connector" anzeigen. Klicken Sie auf den Bereich "API-Definition" unterhalb des Abschnitts "Zusammenfassung", um alle von diesem Connector verfügbar gemachten APIs anzuzeigen.
+> [AZURE.NOTE]Der Datei-Trigger löscht die Datei, nachdem sie erfolgreich aus dem Ordner gelesen wurde.
+
+## Datei-Connector-REST-APIs ##
+Um den Connector außerhalb einer Logik-App zu verwenden, können die vom Connector zur Verfügung gestellten REST-APIs genutzt werden. Sie können diese API-Definitionen mit "Durchsuchen" -> "API-App" -> "Datei-Connector" anzeigen. Klicken Sie jetzt auf die Lupe "API-Definition" im Abschnitt "Zusammenfassung", um alle APIs anzuzeigen, die von diesem Connector zur Verfügung gestellt werden.
 
 	![][7]
 
-9. Details der APIs finden Sie unter [Datei Connector-API-Definition].
+Ausführliche Informationen zu den APIs finden sie unter [File Connector (in englischer Sprache)].
 
 <!-- Image reference -->
 [1]: ./media/app-service-logic-connector-file/img1.PNG
-[2]: ./media/app-service-logic-connector-file/img2.PNG
-[3]: ./media/app-service-logic-connector-file/img3.PNG
-[4]: ./media/app-service-logic-connector-file/img4.PNG
 [5]: ./media/app-service-logic-connector-file/img5.PNG
 [6]: ./media/app-service-logic-connector-file/img6.PNG
 [7]: ./media/app-service-logic-connector-file/img7.PNG
 
 <!-- Links -->
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
-[Datei Connector-API-Definition]: https://msdn.microsoft.com/en-US/library/dn936296.aspx
+[File Connector (in englischer Sprache)]: https://msdn.microsoft.com/de-de/library/dn936296.aspx
+[Hybrid Connection Manager verwenden]: app-service-logic-hybrid-connection-manager.md
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

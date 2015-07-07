@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwenden von Skriptaktionen zum Installieren von Solr in einem Hadoop-Cluster | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie HDInsight-Cluster zum Installieren von Spark anpassen können. Sie verwenden eine Script Action-Konfigurationsoption, um mithilfe eines Skripts Spark zu installieren" 
+	description="Erfahren Sie, wie Sie HDInsight-Cluster mit Spark anpassen. Sie verwenden eine Script Action-Konfigurationsoption, um mithilfe eines Skripts Spark zu installieren." 
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="nitinme" 
@@ -67,9 +67,7 @@ Ein Beispielskript zum Installieren von Spark in einem HDInsight-Cluster steht i
 		<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
 	<tr><td>Parameter</td>
 		<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist. Für das Skript zum Installieren von Spark sind keine Parameter erforderlich, sodass Sie dieses Feld leer lassen können.</td></tr>
-    </table>
-
-Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
+</table>Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
 
 Sie können das Skript auch zum Installieren von Giraph auf HDInsight mit Azure PowerShell oder dem HDInsight .NET SDK verwenden. Anweisungen zu diesen Verfahren finden Sie nachfolgend in diesem Thema.
 
@@ -85,7 +83,7 @@ Führen Sie die folgenden Schritte aus, um Spark-Abfragen über eine interaktive
 
 1. Aktivieren Sie im Azure-Portal Remotedesktop für den Cluster, den Sie mit installiertem Spark erstellt haben, und stellen Sie dann eine Remoteverbindung mit dem Cluster her. Anweisungen hierzu finden Sie unter <a href="http://azure.microsoft.com/documentation/articles/hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung mit HDInsight-Clustern mit RDP</a>.
 
-2. Öffnen Sie in der RDP-Sitzung auf dem Desktop die Hadoop-Befehlszeile, und navigieren Sie zum Speicherort der Installation von Spark, z. B. **C:\\apps\\dist\\spark-1.2.0**.
+2. Öffnen Sie in der RDP-Sitzung auf dem Desktop die Hadoop-Befehlszeile, und navigieren Sie zum Speicherort der Installation von Spark, z. B. **C:\apps\\dist\\spark-1.2.0**.
 
 
 3. Führen Sie den folgenden Befehl aus, um die Spark-Shell zu starten:
@@ -119,7 +117,7 @@ Mit Spark SQL können Sie mit Spark relationale Abfragen (SQL = Structured Query
 
 1. Aktivieren Sie im Azure-Portal Remotedesktop für den Cluster, den Sie mit installiertem Spark erstellt haben, und stellen Sie dann eine Remoteverbindung mit dem Cluster her. Anweisungen hierzu finden Sie unter </a>Herstellen einer Verbindung mit HDInsight-Clustern mit RDP.
 
-2. Öffnen Sie in der RDP-Sitzung auf dem Desktop die Hadoop-Befehlszeile, und navigieren Sie zum Speicherort der Installation von Spark, z. B. **C:\\apps\\dist\\spark-1.2.0**.
+2. Öffnen Sie in der RDP-Sitzung auf dem Desktop die Hadoop-Befehlszeile, und navigieren Sie zum Speicherort der Installation von Spark, z. B. **C:\apps\\dist\\spark-1.2.0**.
 
 
 3. Führen Sie den folgenden Befehl aus, um die Spark-Shell zu starten:
@@ -153,7 +151,7 @@ Mit Spark SQL können Sie mit Spark relationale Abfragen (SQL = Structured Query
 In diesem Abschnitt schreiben wir eine Scala-Anwendung, die die Anzahl der Zeilen mit den Buchstaben "a" und "b" in einer Beispieldatendatei (/example/data/gutenberg/davinci.txt) zählt, die standardmäßig in HDInsight-Clustern verfügbar ist. Zum Schreiben und Verwenden eines eigenständigen Scala-Programms mit einem mit einer Spark-Installation angepassten Cluster müssen Sie die folgenden Schritte ausführen:
 
 - Schreiben eines Scala-Programms
-- Erstellen des  Scala-Programms zum Abrufen der JAR-Datei
+- Erstellen des Scala-Programms zum Abrufen der JAR-Datei
 - Ausführen des Auftrags im Cluster
 
 #### Schreiben eines Scala-Programms
@@ -416,7 +414,7 @@ Geben Sie einen Clusternamen ein, und drücken Sie die EINGABETASTE zum Bereitst
 
 ## Weitere Informationen##
 - Unter [Installieren und Verwenden von R für HDInsight-Cluster][hdinsight-install-r] finden Sie Anweisungen bezüglich der Clusteranpassung zum Installieren und Verwenden von R in HDInsight Hadoop-Clustern. R ist eine Open-Source-Sprache und -Umgebung für statistische Berechnungen. Sie bietet Hunderte integrierter Statistikfunktionen und eine eigene Programmiersprache, die Aspekte der funktionalen und objektorientierten Programmierung kombiniert. Darüber hinaus werden umfangreiche Grafikfunktionen geboten.
-- [Installieren und Verwenden von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md). Verwenden Sie die Clusteranpassung, um Giraph in HDInsight Hadoop-Clustern zu installieren. Giraph ermöglicht Ihnen, mithilfe von Hadoop Graphen zu verarbeiten, und kann mit Azure HDInsight verwendet werden.
+- [Installieren von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md). Verwenden Sie die Clusteranpassung, um Giraph in HDInsight Hadoop-Clustern zu installieren. Giraph ermöglicht Ihnen, mithilfe von Hadoop Graphen zu verarbeiten, und kann mit Azure HDInsight verwendet werden.
 - [Installieren von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md) Verwenden Sie die Clusteranpassung, um Solr in HDInsight Hadoop-Clustern zu installieren. Solr ermöglicht es Ihnen, leistungsstarke Suchvorgänge für gespeicherte Daten durchzuführen.
 
 
@@ -427,5 +425,6 @@ Geben Sie einen Clusternamen ein, und drücken Sie die EINGABETASTE zum Bereitst
 [hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster.md
 [powershell-install-configure]: ../install-configure-powershell.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

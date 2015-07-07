@@ -20,13 +20,13 @@
 
 ### Streamingprotokolle ###
 
-Die [Azure Preview Portal](http://go.microsoft.com/fwlink/?LinkId=529715) bietet ein integriertes Streamingprotokoll, mit dem Sie die Ablaufverfolgung von Ereignissen aus anzeigen kann Ihre [Azure Anwendungsdiensts](http://go.microsoft.com/fwlink/?LinkId=529714) web-apps in Echtzeit.
+Das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) bietet ein integriertes Streamingprotokoll, über das Sie Ablaufverfolgungsereignisse von Ihren Web-Apps in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) in Echtzeit anzeigen können.
 
 Gehen Sie wie folgt vor, um diese Funktion einzurichten:
 
 - Schreiben Sie Ablaufverfolgungen in Ihren Code.
-- Aktivieren Sie Application Diagnostics aus der Azure-Vorschau-Portal
-- Klicken Sie auf den streaming-Protokolle Kachel auf die Web-app-blade
+- Aktivieren Sie die Anwendungsdiagnose über das Azure-Vorschauportal.
+- Klicken Sie auf dem Blatt der Web-App auf die Kachel „Streamingprotokolle“.
 
 ### So schreiben Sie Ablaufverfolgungen in den Code: ###
 
@@ -56,31 +56,31 @@ console.log("My trace statement").
 
 Diagnosen werden pro Web-App aktiviert.
 
-1. Innerhalb der [Azure-vorschauportal](https://portal.azure.com), klicken Sie auf **Durchsuchen** > **Webanwendungen** um die Liste aller Web-Apps zu erreichen.  
+1. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Durchsuchen** > **Web-Apps**, um eine Liste Ihrer Web-Apps anzuzeigen.  
 
 2. Klicken Sie auf den Namen der Web-App, die Sie konfigurieren möchten.
 
-3. Klicken Sie auf **alle Einstellungen** > **Diagnoseprotokolle**, und schalten Sie die **Anwendungsprotokollierung (Dateisystem)** wechseln Sie in der **auf** Einstellung.
+3. Klicken Sie auf **Alle Einstellungen** > **Diagnoseprotokolle**, und legen Sie für **Anwendungsprotokollierung (Dateisystem)** die Einstellung **EIN** fest.
 
 4. Es wird die Option **Schweregrad** angezeigt. Hier können Sie den Schweregrad der festgelegten Ablaufverfolgungen festlegen. Sie sollten hier **Ausführlich** festlegen, wenn es nur darum geht, sich mit der Funktion vertraut zu machen, da so sichergestellt werden kann, dass alle Ablaufverfolgungen protokolliert werden.
 
-5. Klicken Sie auf **Speichern** am oberen Rand der Blade jetzt können Sie Protokolle anzeigen.
+5. Klicken Sie oben auf dem Blatt auf **Speichern**, um die Protokolle anzuzeigen.
 
-6. Anzeigen der Streamingprotokolle aus in das Portal klicken Sie auf die **Streamingprotokolle** Kachel auf die Web-app-Blade. Verzeichnet Ihre App aktiv Ablaufverfolgungsmeldungen, sollten Ihnen diese in Echtzeit im Ergebnisfenster angezeigt werden.
+6. Klicken Sie auf dem Blatt der Web-App auf die Kachel **Streamingprotokolle**, um die Streamingprotokolle im Portal anzuzeigen. Verzeichnet Ihre App aktiv Ablaufverfolgungsmeldungen, sollten Ihnen diese in Echtzeit im Ergebnisfenster angezeigt werden.
 
 ![][StreamingLogsScreenshot]
 
 ## Zugriff auf die Konsole ##
 
-Das Azure Preview Portal bietet Zugriff auf Ihre Webanwendung Konsole. Sie können das Dateisystem Ihrer Web-App untersuchen und PowerShell-/CMD-Skripts ausführen. Sie müssen sich beim Ausführen von Konsolenbefehlen an die gleichen Berechtigungen wie der ausgeführte Web-App-Code halten. Sie können nicht auf geschützte Verzeichnisse zugreifen oder Skripts ausführen, die erhöhte Rechte erfordern.
+Das Azure-Vorschauportal bietet Konsolenzugriff auf Ihre Web-App. Sie können das Dateisystem Ihrer Web-App untersuchen und PowerShell-/CMD-Skripts ausführen. Sie müssen sich beim Ausführen von Konsolenbefehlen an die gleichen Berechtigungen wie der ausgeführte Web-App-Code halten. Sie können nicht auf geschützte Verzeichnisse zugreifen oder Skripts ausführen, die erhöhte Rechte erfordern.
 
-1. Navigieren Sie zu einer Webanwendung Blade wie im vorstehenden Abschnitt beschrieben.
+1. Navigieren Sie wie im vorherigen Abschnitt beschrieben zu dem Blatt einer Web-App.
 
-2. Klicken Sie auf die **Konsole** sowie für die Konsole wird geöffnet.
+2. Klicken Sie auf die Kachel **Konsole**, um sie zu öffnen.
 
 ![][ConsoleScreenshot]
 
-Um mit der Konsole vertraut zu machen, führen Sie grundlegende Befehle wie die folgenden aus:
+Probieren Sie folgende grundlegende Befehle aus, um sich mit der Konsole vertraut zu machen:
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
@@ -92,4 +92,4 @@ Um mit der Konsole vertraut zu machen, führen Sie grundlegende Befehle wie die 
 [ConsoleScreenshot]: ./media/web-sites-streaming-logs-and-console/console.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

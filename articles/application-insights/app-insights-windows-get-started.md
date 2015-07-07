@@ -35,7 +35,7 @@ Sie benötigen Folgendes:
 * Ein Abonnement für [Microsoft Azure][azure]
 * Visual Studio 2013 oder höher
 
-## 1\. Erstellen einer Application Insights-Ressource 
+## 1. Erstellen einer Application Insights-Ressource 
 
 Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource.
 
@@ -50,7 +50,7 @@ Mit diesem Schlüssel wird die Ressource identifiziert. Sie benötigen ihn in K�
 ![Öffnen Sie die Dropdownliste "Essentials", und wählen Sie den Instrumentationsschlüssel aus](./media/app-insights-windows-get-started/02-props.png)
 
 
-## 2\. Hinzufügen des Application Insights SDK zu Ihren Apps
+## 2. Hinzufügen des Application Insights SDK zu Ihren Apps
 
 Fügen Sie in Visual Studio das entsprechende SDK Ihrem Projekt hinzu.
 
@@ -109,13 +109,13 @@ Klicken Sie auf ein beliebiges Diagramm, um weitere Details anzuzeigen.
 ## Wie geht es weiter?
 
 * [Erkennen und Diagnostizieren von Abstürzen in Ihrer App][windowsCrash]
-* [Erfahren Sie mehr über Metriken][metrics]
-* [Erfahren Sie mehr über Diagnose suchen][diagnostic]
+* [Weitere Informationen zu Metriken][metrics]
+* [Weitere Informationen zur Diagnosesuche][diagnostic]
 
 
-## <a name="ide"></a>Automatisierte Installation
+## <a name="ide"></a>Automatisierte Einrichtung
 
-Wenn Sie Visual Studio die Installationsschritte ausführen lassen möchten, erreichen Sie dies mit Windows Phone, Windows Store und vielen andere Arten von Anwendungen.
+Wenn Sie die Einrichtungsschritte lieber in Visual Studio ausführen möchten, ist dies bei Windows Phone-, Windows Store- und vielen andere Arten von Apps möglich.
 
 ###<a name="new"></a> Wenn Sie ein neues Windows-Anwendungsprojekt erstellen...
 
@@ -164,4 +164,4 @@ Fügen Sie Application Insights im Projektmappen-Explorer hinzu.
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

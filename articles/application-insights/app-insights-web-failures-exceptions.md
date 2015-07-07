@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Erkennen und Diagnostizieren von Fehlern und Ausnahmen in Webanwendungen" 
-	description="Erkennen und Diagnostizieren von Fehlern und Ausnahmen in Webanwendungen" 
+	pageTitle="Erkennen und Diagnostizieren von Fehlern und Ausnahmen in Web-Apps" 
+	description="Erkennen und Diagnostizieren von Fehlern und Ausnahmen in Web-Apps" 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -15,37 +15,37 @@
 	ms.date="03/31/2015" 
 	ms.author="awills"/>
  
-# Diagnostizieren von Fehlern und Ausnahmen in Webanwendungen mit Application Insights
+# Diagnostizieren von Fehlern und Ausnahmen in Web-Apps mit Application Insights
 
-[Visual Studio Application Insights][start] ist ein leistungsfähiges Tool zum Erkennen und Diagnostizieren von Fehlern in Anwendungen. Hier konzentrieren wir uns auf Webanwendungen (Sie können jedoch auch Application Insights eine [Vielzahl anderer Plattformen][platforms]).
+[Visual Studio Application Insights][start] ist ein leistungsstarkes Tool zum Erkennen und Diagnostizieren von Fehlern in Anwendungen. An dieser Stelle geht es um Webanwendungen (Sie können Application Insights jedoch auch auf eine [Vielzahl anderer Plattformen][platforms] anwenden.)
 
-## Richten Sie Ihre Anwendung mit Application Insights
+## Einrichten Ihrer App mit Application Insights
 
-Fügen Sie das SDK zum Anwendungsprojekt hinzu. Wenn Ihre app freigegeben und wird ausgeführt, wird das SDK Telemetriedaten über die Leistung der app an Application Insights-Portal senden.
+Fügen Sie das SDK zu Ihrem Anwendungsprojekt hinzu. Wenn Ihre App veröffentlicht wurde und ausgeführt wird, sendet das SDK Telemetriedaten zur Leistung der App an das Application Insights-Portal.
 
-* [Hinzufügen von Application Insights zu ASP.NET-Anwendungen][greenbrown]
-* [Hinzufügen von Application Insights für Java-Anwendungen][java]
+* [Hinzufügen von Application Insights zu ASP.NET-Apps][greenbrown]
+* [Hinzufügen von Application Insights zu Java-Apps][java]
 
-Wenn Ihre Webseiten umfangreiche Skripts haben Sie wahrscheinlich möchten: * [Application Insights zu Webseiten hinzufügen][track]
+Wenn Ihre Webseiten umfangreiche Skripts enthalten, sollten Sie auch dieses Thema lesen: * [Hinzufügen von Application Insights zu Webseiten][track].
 
 
 ## Diagnosesuche
 
 
 
-Öffnen Sie diagnostische suchen, um die Telemetrie angezeigt, die das SDK automatisch gesendet.
+Öffnen Sie die Diagnosesuche, um die Telemetriedaten anzuzeigen, die das SDK automatisch sendet.
 
 ![](./media/app-insights-web-failures-exceptions/appinsights-45diagnostic.png)
 
 ![](./media/app-insights-web-failures-exceptions/appinsights-31search.png)
 
-Die Details, aus einem Typ in einen anderen unterschiedlich. Sie können über jedes einzelne Ereignis, erhalten Sie weitere Informationen klicken.
+Die Details unterscheiden sich je nach Anwendungstyp. Sie können auf jedes einzelne Ereignis klicken, um weitere Informationen zu erhalten.
 
 ##<a name="events"></a>Benutzerdefinierte Ereignisse
 
-Benutzerdefinierte Ereignisse angezeigt werden, werden beide in [diagnostische Suche][diagnostic] und [Metrik Explorer][metrics]. Sie können diese von Geräten, Webseiten und Serveranwendungen senden. Sie können verwendet werden, sowohl für Diagnosezwecke und [Verstehen von Verwendungsmustern][track].
+Benutzerdefinierte Ereignisse werden sowohl in der [Diagnosesuche][diagnostic] als auch im [Metrik-Explorer][metrics] angezeigt. Diese Ereignisse können von Geräten, Webseiten und Serveranwendungen gesendet werden. Sie können für Diagnosezwecke und zum [Verstehen von Nutzungsmustern][track] verwendet werden.
 
-Ein benutzerdefiniertes Ereignis kann hat einen Namen, und auch Eigenschaften, die Sie zusammen mit numerischen, Filtern können.
+Ein benutzerdefiniertes Ereignis hat einen Namen und kann auch Eigenschaften besitzen, nach denen Sie filtern können, sowie über numerische Messwerte verfügen.
 
 JavaScript auf Client
 
@@ -82,30 +82,30 @@ VB auf Server
     ' Send the event:
     telemetry.TrackEvent("WinGame", properties, measurements)
 
-### Ihre Anwendung ausführen und die Ergebnisse anzuzeigen.
+### Führen Sie Ihre App aus, und zeigen Sie die Ergebnisse an.
 
-Öffnen Sie die Diagnose suchen.
+Öffnen Sie die Diagnosesuche.
 
-Wählen Sie benutzerdefiniertes Ereignis aus, und wählen Sie einen bestimmten Ereignisnamen.
+Wählen Sie ein benutzerdefiniertes Ereignis und den Namen eines bestimmten Ereignisses aus.
 
 ![](./media/app-insights-web-failures-exceptions/appinsights-332filterCustom.png)
 
 
-Filtern der Daten erhöhen, indem Sie einen Suchbegriff eingeben, auf einen Eigenschaftswert ab.
+Filtern Sie die Daten genauer, indem Sie einen Suchbegriff für einen Eigenschaftswert eingeben.
 
 ![](./media/app-insights-web-failures-exceptions/appinsights-23-customevents-5.png)
 
-Einen Drilldown in ein einzelnes Ereignis aus, um detaillierten Eigenschaften anzuzeigen.
+Zeigen Sie Detailinformationen zu den Eigenschaften eines einzelnen Ereignisses an.
 
 ![](./media/app-insights-web-failures-exceptions/appinsights-23-customevents-4.png)
 
 
 
-##<a name="trace"></a> Ablaufverfolgung Telemetrie
+##<a name="trace"></a> Verfolgen von Telemetriedaten
 
-Ablaufverfolgung Telemetrie ist Code, den Sie einfügen, insbesondere um die Diagnoseprotokolle erstellen.
+Bei der Ablaufverfolgung von Telemetriedaten handelt es sich um Code, den Sie speziell zum Erstellen von Diagnoseprotokollen einfügen.
 
-Beispielsweise könnten Sie beispielsweise Folgendes aufrufen einfügen:
+Sie können beispielsweise Aufrufe wie die folgenden einfügen:
 
     var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
     telemetry.TrackTrace("Slow response - database01");
@@ -113,7 +113,7 @@ Beispielsweise könnten Sie beispielsweise Folgendes aufrufen einfügen:
 
 ####  Installieren eines Adapters für Ihr Protokollierungsframework
 
-Sie können auch ein Framework für die Protokollierung - generierten Protokolle suchen log4Net, NLog oder System.Diagnostics.Trace.
+Sie können auch Protokolle durchsuchen, die mit einem Protokollierungsframework wie z. B. log4Net, NLog oder System.Diagnostics.Trace generiert wurden.
 
 1. Wenn Sie log4Net oder NLog verwenden möchten, installieren Sie es in Ihrem Projekt. 
 2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie dann **NuGet-Pakete verwalten** aus.
@@ -128,7 +128,7 @@ Sie können auch ein Framework für die Protokollierung - generierten Protokolle
 
 Das NuGet-Paket installiert die erforderlichen Assemblys und ändert auch die Datei "web.config" oder "app.config".
 
-#### <a name="pepper"></a>Aufrufe des Diagnoseprotokolls einfügen
+#### <a name="pepper"></a>Einfügen von Diagnoseprotokollaufrufen
 
 Wenn Sie System.Diagnostics.Trace verwenden, wäre ein typischer Aufruf:
 
@@ -138,15 +138,15 @@ Wenn Sie log4net oder NLog bevorzugen:
 
     logger.Warn("Slow response - database01");
 
-Ihre app im Debugmodus ausgeführt, oder es bereitstellen.
+Führen Sie Ihre App im Debugmodus aus, oder stellen Sie sie bereit.
 
-Sehen Sie die Nachrichten in der Diagnose Suche bei der Auswahl des Ablaufverfolgungsfilters.
+Sie sehen die Nachrichten in der Diagnosesuche, wenn Sie den Ablaufverfolgungsfilter auswählen.
 
 ### <a name="exceptions"></a>Ausnahmen
 
-Abrufen von Berichten für die Ausnahme in Application Insights bietet die leistungsstarke besonders da können Sie fehlgeschlagenen Anforderungen sowie die Ausnahmen zu navigieren und den Ausnahmestapel lesen.
+Das Abrufen von Ausnahmeberichten in Application Insights bietet eine Reihe von Vorteilen, insbesondere, da Sie zwischen den Anforderungen mit Fehlern und den Ausnahmen navigieren und den Ausnahmestapel lesen können.
 
-Sie können den Code zum Senden der Ausnahme Telemetrie schreiben:
+Sie können auch Code zum Senden von Telemetriedaten für Ausnahmen schreiben:
 
 JavaScript
 
@@ -202,32 +202,32 @@ Die Eigenschaften und Messparameter sind optional, sind aber hilfreich zum Filte
 
 #### Anzeigen von Ausnahmen
 
-Sehen Sie eine Zusammenfassung der Ausnahmen, die auf das Fenster "Übersicht", und Sie können durch Klicken, um weitere Details anzuzeigen. Beispiel:
+Auf dem Blatt "Übersicht" sehen Sie eine Zusammenfassung der gemeldeten Ausnahmen, und Sie können auf diese Ausnahmen klicken, um weitere Details anzuzeigen. Zum Beispiel:
 
 
-![](./media/app-insights-web-failures-exceptions/appinsights-039-1exceptions.png)[]
+![](./media/app-insights-web-failures-exceptions/appinsights-039-1exceptions.png)
 
-Klicken Sie auf jeden Ausnahmetyp an bestimmte Instanzen finden Sie unter:
+Klicken Sie auf einen Ausnahmetyp, um die jeweiligen Vorkommen anzuzeigen:
 
-![](./media/app-insights-web-failures-exceptions/appinsights-333facets.png)[]
+![](./media/app-insights-web-failures-exceptions/appinsights-333facets.png)
 
-Sie können auch diagnostische Suche direkt öffnen, auf Ausnahmen filtern, und wählen Sie den Typ der Ausnahme, den Sie anzeigen möchten.
+Sie können auch die Diagnosesuche direkt öffnen, nach Ausnahmen filtern und den Ausnahmetyp auswählen, den Sie anzeigen möchten.
 
-### Nicht behandelte Ausnahmen
+### Berichterstellung für Ausnahmefehler
 
-Application Insights-Berichten nicht behandelte Ausnahmen, wo er kann, von Geräten, [Webbrowser][usage], oder Webserver, ob instrumentiert durch [Statusmonitor][redfield] oder [Application Insights-SDK][greenbrown].
+Application Insights meldet Ausnahmefehler – wann immer es möglich ist – von Geräten, [Webbrowsern][usage] oder Webservern, unabhängig davon, ob diese vom [Statusmonitor][redfield] oder dem [Application Insights SDK][greenbrown] ermittelt wurden.
 
-> [AZURE.NOTE]In einem Webbrowser an. Wenn Sie die Skriptdateien aus CDNs oder andere Domänen angeben, stellen Sie sicher Script-Tag das Attribut hat ```crossorigin="anonymous"``` und der Server sendet die CORS-Header, um eine Stapelüberwachung und Details für nicht behandelte Javascript-Execptions von diesen Ressourcen zu erhalten.
+> [AZURE.NOTE]Für Webbrowser gilt: Wenn Sie Skriptdateien aus CDNs oder anderen Domänen einfügen, stellen Sie sicher, dass das Skripttag das Attribut ```crossorigin="anonymous"``` umfasst und der Server CORS-Header sendet, um Stapelüberwachungsinformationen sowie Details zu JavaScript-Ausnahmefehlern aus diesen Ressourcen abzurufen.
 
-Allerdings ist es nicht immer in einigen Fällen möglich, weil .NET Framework die Ausnahmen abgefangen werden. Stellen Sie sicher, dass Sie alle Ausnahmen angezeigt, müssen Sie daher einen kleinen Ausnahmehandler zu schreiben. Das beste Verfahren variiert mit der Technologie. Finden Sie in [diesen Blog](http://blogs.msdn.com/b/visualstudioalm/archive/2014/12/12/application-insights-exception-telemetry.aspx) Details.
+In einigen Fällen ist dies jedoch nicht möglich, da die Ausnahmen vom .NET Framework aufgefangen werden. Um sicherzustellen, dass Ihnen alle Ausnahmen angezeigt werden, müssen Sie daher einen kleinen Ausnahmehandler schreiben. Welches Verfahren sich am besten eignet, variiert je nach Technologie. Informationen hierzu finden Sie in [diesem Blog](http://blogs.msdn.com/b/visualstudioalm/archive/2014/12/12/application-insights-exception-telemetry.aspx).
 
-### Korrelieren von einem Build
+### Korrelation mit einem Build
 
-Wenn Sie Diagnoseprotokolle lesen, ist es wahrscheinlich, dass der Quellcode geändert werden, da der live-Code bereitgestellt wurde.
+Wenn Sie Diagnoseprotokolle lesen, ist es wahrscheinlich, dass der Quellcode seit Bereitstellung des Livecodes geändert wurde.
 
-Daher ist es hilfreich, die Buildinformationen, z. B. die URL der aktuellen Version, einer Eigenschaft und jede Ausnahme oder Ablaufverfolgung abgelegt.
+Daher ist es sinnvoll, Buildinformationen wie beispielsweise die URL der aktuellen Version sowie alle zu verfolgenden Ausnahmen in eine Eigenschaft einzufügen.
 
-Anstatt die Eigenschaft wird in jedem Aufruf der Ausnahme separat hinzuzufügen, können Sie die Informationen in den Standardkontext festlegen.
+Anstatt diese Eigenschaft separat zu jedem Ausnahmeaufruf hinzuzufügen, können Sie die Informationen im Standardkontext festlegen.
 
     // Telemetry initializer class
     public class MyTelemetryInitializer : IContextInitializer
@@ -247,11 +247,11 @@ Gehen Sie im App-Initialisierer wie z. B. "Global.asax.cs" so vor:
         .Add(new MyTelemetryInitializer());
     }
 
-###<a name="requests"></a> Web-Serveranforderungen
+###<a name="requests"></a> Webanforderungen des Servers
 
-Anfordern der Telemetrie wird automatisch gesendet, wenn Sie [Statusmonitor auf Ihrem Webserver installieren][redfield], oder wenn Sie [Application Insights zum Webprojekt hinzufügen][greenbrown]. Diese feeds auch in den Diagrammen zu Anforderungs- und Antwortnachrichten Zeit im Metrik-Explorer, und klicken Sie auf der Seite "Übersicht".
+Telemetriedaten zu Anforderungen werden automatisch gesendet, wenn Sie [den Statusmonitor auf Ihrem Webserver installieren][redfield] oder [Application Insights zu Ihrem Webprojekt hinzufügen][greenbrown]. Diese Daten werden ebenfalls in die Diagramme zu Anforderungs- und Antwortzeiten im Metrik-Explorer und auf der Übersichtsseite übertragen.
 
-Wenn Sie zusätzliche Ereignisse senden möchten, können Sie die TrackRequest()-API.
+Wenn Sie zusätzliche Ereignisse senden möchten, können Sie die TrackRequest()-API verwenden.
 
 ## <a name="questions"></a>FRAGEN UND ANTWORTEN
 
@@ -290,4 +290,4 @@ Bis zu 500 Ereignisse pro Sekunde für jede Anwendung. Ereignisse werden sieben 
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

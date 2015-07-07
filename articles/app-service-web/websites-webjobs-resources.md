@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure WebJobs-Dokumentationsressourcen" 
+	pageTitle="Dokumentationsressourcen zu Azure WebJobs" 
 	description="Empfohlene Ressourcen zum Erlernen der Verwendung von Azure-Webaufträgen und des Azure-Webaufträge-SDK" 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -16,7 +16,7 @@
 	ms.date="06/07/2015" 
 	ms.author="tdykstra"/>
 
-# Azure WebJobs-Dokumentationsressourcen
+# Dokumentationsressourcen zu Azure WebJobs
 
 ## Übersicht
 
@@ -31,7 +31,7 @@ Das Webauftrags-Dashboard im Azure-Portal bietet leistungsstarke Verwaltungsfunk
 ##<a name="getstarted"></a>Erste Schritte mit Webaufträgen und dem Webaufträge-SDK
 
 * [Einführung in Azure-Webaufträge](http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx)
-* [Azure WebJobs sind großartig, und Sie werden gestartet, mit ihnen jetzt!](http://www.troyhunt.com/2015/01/azure-webjobs-are-awesome-and-you.html) (Blogbeitrag von Troy Hunt).
+* [Azure WebJobs are awesome and you should start using them right now!](http://www.troyhunt.com/2015/01/azure-webjobs-are-awesome-and-you.html) (Setzen Sie ab sofort das großartige Azure WebJobs ein; in englischer Sprache) (Blogbeitrag von Troy Hunt)
 * [Funktionen von Azure-Webaufträgen](/blog/2014/10/22/webjobs-goes-into-full-production/)
 * [Was ist das Webaufträge-SDK?](websites-dotnet-webjobs-sdk.md)
 * [Anleitungen für Hintergrundaufträge von Microsoft Patterns and Practices](https://github.com/mspnp/azure-guidance/blob/master/Background-Jobs.md)
@@ -56,7 +56,7 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von Weba
 * [Bereitstellen von Webaufträgen mithilfe des Azure-Verwaltungsportals](web-sites-create-web-jobs.md)
 * [Aktivieren der befehlszeilengesteuerten oder der kontinuierlichen Bereitstellung von Azure-Webaufträgen](http://azure.microsoft.com/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/)
 * [Git-Bereitstellung einer .NET-Konsolen-App für Azure mithilfe von Webaufträgen](http://blog.amitapple.com/post/73574681678/git-deploy-console-app/)
-* [Ein F\#-WebJob Bereitstellen in Azure.](http://blogs.msdn.com/b/dave_crooks_dev_blog/archive/2015/02/18/deploying-f-web-job-to-azure.aspx)
+* [Deploying an F# WebJob to Azure](http://blogs.msdn.com/b/dave_crooks_dev_blog/archive/2015/02/18/deploying-f-web-job-to-azure.aspx) (Bereitstellen eines F#-Webauftrags in Azure; in englischer Sprache)
 * Videos
 	* [Einführung in Webaufträge-Tools für Visual Studio](http://channel9.msdn.com/Shows/Web+Camps+TV/Introducing-WebJobs-Tooling-for-Visual-Studio-with-Brady-Gaster) 
 	* [Webaufträge-Tools und Remotedebuggen](http://channel9.msdn.com/Shows/Web+Camps+TV/WebJobs-GA-Series-Episode-1-WebJobs-Tooling-with-Brady-Gaster) 
@@ -104,7 +104,7 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von Weba
 ##<a name="additionalsdk"></a>Zusätzliche Ressourcen für das Webaufträge-SDK
 
 * [Quellcode des Webaufträge-SDK](https://github.com/Azure/azure-webjobs-sdk)
-* [Wie funktioniert [BlobTrigger]?](http://blogs.msdn.com/b/jmstall/archive/2014/04/17/how-does-blobinput-work.aspx) 
+* [How does [BlobTrigger] work?](http://blogs.msdn.com/b/jmstall/archive/2014/04/17/how-does-blobinput-work.aspx) (Wie funktioniert [BlobTrigger]?; in englischer Sprache) 
 * [Erweiterte Bindungen mit dem Azure-Webaufträge-SDK](http://victorhurdugaci.com/advanced-bindings-with-the-windows-azure-web-jobs-sdk/)
 * [Webauftrag zum Hochladen von FREB-Dateien in Azure-Speicher mithilfe des Webaufträge-SDK](http://thenextdoorgeek.com/post/WAWS-WebJob-to-upload-FREB-files-to-Azure-Storage-using-the-WebJobs-SDK)
 * [Hosten von Azure-Webaufträgen außerhalb von Azure mit den Protokollierungsvorteilen eines auf Azure geosteten Webauftrags](http://bypassion.dk/?p=510)
@@ -131,12 +131,12 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von Weba
 * [Forum für Azure und ASP.NET](http://forums.asp.net/1247.aspx)
 * [Forum für Azure App Service-Web-Apps](http://social.msdn.microsoft.com/Forums/azure/home?forum=windowsazurewebsitespreview)
 * [User Voice-Website für Azure-Web-Apps](http://feedback.azure.com/forums/169385-websites)
-* [Twitter](http://twitter.com/). Verwenden Sie das Hashtag \#AzureWebJobs
-* [Ein WebJobs-Fehler oder ein Problem melden](https://github.com/projectkudu/kudu/wiki/Reporting-WebJobs-issues)
+* [Twitter](http://twitter.com/). Verwenden Sie das Hashtag #AzureWebJobs
+* [Report a WebJobs bug or issue](https://github.com/projectkudu/kudu/wiki/Reporting-WebJobs-issues) (Melden eines WebJobs-Fehlers oder -Problems; in englischer Sprache)
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

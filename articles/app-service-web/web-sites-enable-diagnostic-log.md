@@ -22,7 +22,7 @@
 
 Azure bietet integrierte Diagnosefunktionen zur Unterstützung beim Debuggen einer Web-App, die in einem [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) gehostet wird. In diesem Artikel erfahren Sie, wie Sie die Diagnoseprotokollierung aktivieren und Ihrer Anwendung Instrumentierung hinzufügen sowie wie Sie die von Azure protokollierten Informationen abrufen.
 
-> [AZURE.NOTE]In diesem Artikel verwendet die [Azure-vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), Azure PowerShell und Azure-Befehlszeilenschnittstelle (CLI Azure) Diagnoseprotokollen. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure in Visual Studio](../troubleshoot-web-sites-in-visual-studio.md).
+> [AZURE.NOTE]In diesem Artikel wird die Verwendung von Diagnoseprotokollen mit dem [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), Azure PowerShell und der Azure-Befehlszeilenschnittstelle (Azure-CLI) beschrieben. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure in Visual Studio](../troubleshoot-web-sites-in-visual-studio.md).
 
 ## <a name="whatisdiag"></a>Webserver- und Anwendungsdiagnose
 
@@ -66,7 +66,7 @@ Bei Aktivierung von **site diagnostics** müssen Sie **storage** oder **file sys
 Die folgenden Einstellungen sind bei der Aktivierung von **application diagnostics** verfügbar:
 
 * **Logging level** - Ermöglicht das Filtern der aufgezeichneten Informationen nach **informational**, **warning** oder **error**. Sie können auch **verbose** auswählen, um alle von der Anwendung erzeugten Informationen zu protokollieren. **Logging level** kann auf **file system**, **table storage** oder **blob storage** eingestellt werden.
-* **Dateisystem** - Speichert die Anwendungsdiagnoseinformationen im Dateisystem der Web-App. Diese Dateien können mithilfe von FTP zugegriffen oder als Zip-Archiv mit Azure PowerShell oder den Azure-Befehlszeilenschnittstelle (CLI Azure) heruntergeladen werden.
+* **Dateisystem** - Speichert die Anwendungsdiagnoseinformationen im Dateisystem der Web-App. Diese Dateien können über FTP aufgerufen werden oder als ZIP-Archiv mit Azure PowerShell oder mit der Azure-Befehlszeilenschnittstelle (Azure-CLI) heruntergeladen werden.
 * **Table storage** - Speichert die Anwendungsdiagnoseinformationen im angegebenen Azure-Speicherkonto unter dem Tabellennamen.
 * **Blob storage** - Speichert die Anwendungsdiagnoseinformationen im angegebenen Azure-Speicherkonto im Blob-Container.
 * **Retention period** - Standardmäßig werden Protokolle nicht automatisch aus dem **blob storage** gelöscht. Falls die Protokolle automatisch gelöscht werden sollen, wählen Sie **set retention** aus, und geben Sie die Anzahl der Tage ein, für die Protokolle aufbewahrt werden sollen.
@@ -77,13 +77,13 @@ Die folgenden Einstellungen sind bei der Aktivierung von **application diagnosti
 
 ##<a name="download"></a> Vorgehensweise: Herunterladen von Blobs
 
-Im Dateisystem der Web-App gespeicherte Diagnoseinformationen können direkt über FTP aufgerufen werden. Es kann auch als Zip-Archiv mit Azure PowerShell oder der Azure-Befehlszeilenschnittstelle heruntergeladen werden.
+Im Dateisystem der Web-App gespeicherte Diagnoseinformationen können direkt über FTP aufgerufen werden. Außerdem können sie als ZIP-Archiv mit Azure PowerShell oder mit der Azure-Befehlszeilenschnittstelle (Azure-CLI) heruntergeladen werden.
 
 Protokolle werden in der folgenden Verzeichnisstruktur gespeichert:
 
 * **Anwendungsprotokolle** - /LogFiles/Application/. Dieser Ordner enthält eine oder mehrere Textdateien mit Informationen, die bei der Anwendungsprotokollierung erzeugt wurden.
 
-* **Protokolle für fehlgeschlagene Anforderungen** - /LogFiles/W3SVC#\#\#\#\#\#\#\#\#/. Dieser Ordner enthält eine XSL-Datei und eine oder mehrere XML-Dateien. Vergewissern Sie sich, dass Sie die XSL-Datei in dasselbe Verzeichnis wie die XML-Datei(en) herunterladen, da die XSL-Datei die Funktionalität zum Formatieren und Filtern des Inhalts der XML-Datei(en) zur Anzeige in Internet Explorer zur Verfügung stellt.
+* **Protokolle für fehlgeschlagene Anforderungen** - /LogFiles/W3SVC#########/. Dieser Ordner enthält eine XSL-Datei und eine oder mehrere XML-Dateien. Vergewissern Sie sich, dass Sie die XSL-Datei in dasselbe Verzeichnis wie die XML-Datei(en) herunterladen, da die XSL-Datei die Funktionalität zum Formatieren und Filtern des Inhalts der XML-Datei(en) zur Anzeige in Internet Explorer zur Verfügung stellt.
 
 * **Detaillierte Fehlerprotokolle** - /LogFiles/DetailedErrors/. Dieser Ordner enthält eine oder mehrere HTM-Dateien, die umfangreiche Informationen zu aufgetretenen HTTP-Fehlern bereitstellen.
 
@@ -107,15 +107,15 @@ Daraufhin werden die Protokolle für die Web-App, die durch den Parameter **-Nam
 
 > [AZURE.NOTE]Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
-### Herunterladen Sie mit Azure-Befehlszeilenschnittstelle
+### Herunterladen mit der Azure-Befehlszeilenschnittstelle
 
-Informationen zum Herunterladen der Protokolldateien mit der Azure-Befehlszeilenschnittstelle öffnen Sie eine neue Eingabeaufforderung, PowerShell, Bash- oder Terminalsitzung, und geben Sie den folgenden Befehl aus:
+Zum Herunterladen der Protokolldateien mit der Azure-Befehlszeilenschnittstelle öffnen Sie eine neue Eingabeaufforderung, PowerShell-, Bash- oder Terminalsitzung, und geben Sie den folgenden Befehl ein:
 
 	azure site log download webappname
 
 Damit werden die Protokolle für die Web-App namens 'webappname' in der Datei **diagnostics.zip** im aktuellen Verzeichnis gespeichert.
 
-> [AZURE.NOTE]Wenn Sie den Azure-Befehlszeilenschnittstelle (CLI Azure) nicht installiert oder nicht konfiguriert, um Ihre Azure-Abonnement verwenden, finden Sie unter [zum Verwenden von Azure-CLI](../xplat-cli.md).
+> [AZURE.NOTE]Wenn Sie die Azure-Befehlszeilenschnittstelle (Azure-CLI) nicht installiert oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle](../xplat-cli.md) weiter.
 
 ## Vorgehensweise: Anzeigen von Protokollen in Application Insights
 
@@ -132,11 +132,11 @@ Visual Studio Application Insights bietet Tools zum Filtern und Suchen von Proto
 
 ##<a name="streamlogs"></a>Vorgehensweise: Streaming von Protokollen
 
-Beim Entwickeln einer Anwendung ist es häufig nützlich, Protokollinformationen nahezu in Echtzeit zu sehen. Dies kann durch das streaming von Protokollinformationen in Ihrer Entwicklungsumgebung mit Azure PowerShell oder der Azure-Befehlszeilenschnittstelle erfolgen.
+Beim Entwickeln einer Anwendung ist es häufig nützlich, Protokollinformationen nahezu in Echtzeit zu sehen. Dies kann durch das Streaming von Protokollinformationen in die Entwicklungsumgebung entweder mit Azure PowerShell oder mit der Azure-Befehlszeilenschnittstelle erfolgen.
 
 > [AZURE.NOTE]Einige Protokolltypen puffern die Schreibvorgänge in die Protokolldatei, was zu Störereignissen im Stream führen kann. Beispielsweise kann ein Anwendungsprotokolleintrag für den Besuch einer Seite im Stream vor dem zugehörigen HTTP-Protokolleintrag für die Seitenanforderung angezeigt werden.
 
-> [AZURE.NOTE]Protokoll-Streaming zeigt auch Informationen an, die in eine Textdatei im Ordner **D:\\home\\LogFiles** geschrieben werden.
+> [AZURE.NOTE]Protokoll-Streaming zeigt auch Informationen an, die in eine Textdatei im Ordner **D:\\home\\LogFiles\** geschrieben werden.
 
 ### Streaming mit Azure PowerShell
 
@@ -158,7 +158,7 @@ Eine Liste der verfügbaren Pfade wird mit dem Parameter "-ListPath" angezeigt.
 
 > [AZURE.NOTE]Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
-### Streaming mit Azure-Befehlszeilenschnittstelle
+### Streaming mit der Azure-Befehlszeilenschnittstelle
 
 Zum Streaming der Protokollinformationen öffnen Sie eine neue Eingabeaufforderung, PowerShell, Bash- oder Terminalsitzung und geben den folgenden Befehl ein:
 
@@ -170,11 +170,11 @@ Um bestimmte Ereignisse wie beispielsweise Fehler zu filtern, verwenden Sie den 
 
 	azure site log tail webappname --filter Error
 
-Um bestimmte Protokolltypen wie HTTP zu filtern, verwenden Sie den Parameter **--Path**. Beispiel:
+Um bestimmte Protokolltypen wie HTTP zu filtern, verwenden Sie den Parameter **--Path**. Zum Beispiel:
 
 	azure site log tail webappname --path http
 
-> [AZURE.NOTE]Wenn Sie den Azure-Befehlszeilenschnittstelle noch nicht installiert haben oder nicht konfiguriert, um Ihre Azure-Abonnement verwenden, finden Sie unter [wie auf verwenden Azure Befehlszeilenschnittstelle](../xplat-cli.md).
+> [AZURE.NOTE]Wenn Sie die Azure-Befehlszeilenschnittstelle nicht installiert oder nicht für Ihr Azure-Abonnement konfiguriert haben, lesen Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle](../xplat-cli.md) weiter.
 
 ##<a name="understandlogs"></a> Vorgehensweise: Verstehen von Diagnoseprotokollen
 
@@ -309,7 +309,7 @@ In einem Blob gespeicherte Daten sehen in etwa wie folgt aus:
 
 ### Verfolgung fehlgeschlagener Anforderungen
 
-Die Verfolgungsprotokolle für fehlgeschlagene Anforderungen werden in XML-Dateien mit Namen __fr\#\#\#\#\#\#.xml__ gespeichert. Um das Anzeigen der protokollierten Informationen zu erleichtern, wird ein XSL-Stylesheet namens __freb.xsl__ im selben Verzeichnis wie die XML-Dateien bereitgestellt. Wenn Sie eine der XML-Dateien in Internet Explorer öffnen, wird das XSL-Stylesheet verwendet, um eine formatierte Ansicht der Verfolgungsinformationen anzuzeigen. Diese sieht in etwa wie folgt aus:
+Die Verfolgungsprotokolle für fehlgeschlagene Anforderungen werden in XML-Dateien mit Namen __fr######.xml__ gespeichert. Um das Anzeigen der protokollierten Informationen zu erleichtern, wird ein XSL-Stylesheet namens __freb.xsl__ im selben Verzeichnis wie die XML-Dateien bereitgestellt. Wenn Sie eine der XML-Dateien in Internet Explorer öffnen, wird das XSL-Stylesheet verwendet, um eine formatierte Ansicht der Verfolgungsinformationen anzuzeigen. Diese sieht in etwa wie folgt aus:
 
 ![Anzeige fehlgeschlagener Anforderungen im Browser](./media/web-sites-enable-diagnostic-log/tws-failedrequestinbrowser.png)
 
@@ -337,4 +337,4 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

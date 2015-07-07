@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Diagnostizieren von Problemen mit Abhängigkeiten in Application Insights" 
-	description="Suchen Sie, Fehler und die Leistung beeinträchtigt, die aufgrund von Abhängigkeiten" 
+	description="Finden von Fehlern und Leistungseinbußen, die von Abhängigkeiten verursacht werden" 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -18,84 +18,84 @@
 # Diagnostizieren von Problemen mit Abhängigkeiten in Application Insights
 
 
-Ein *Abhängigkeit* ist eine externe Komponente, die von der Anwendung aufgerufen wird. Es ist in der Regel einen Dienst mit HTTP oder einer Datenbank oder einem Dateisystem aufgerufen. In Visual Studio Application Insights können Sie leicht erkennen, wie lange die Anwendung Abhängigkeiten wartet und wie oft ein Abhängigkeit Aufruf fehlschlägt.
+Eine *Abhängigkeit* ist eine externe Komponente, die von Ihrer App aufgerufen wird. In der Regel handelt es sich um einen Dienst, der über HTTP oder eine Datenbank oder ein Dateisystem aufgerufen wird. In Visual Studio Application Insights können Sie leicht erkennen, wie lange die Anwendung auf Abhängigkeiten wartet und wie oft ein Abhängigkeitsaufruf nicht funktioniert.
 
-## Wo Sie es verwenden können
+## Einsatzgebiete
 
-Standardmäßig ist die Abhängigkeitsüberwachung für derzeit verfügbar:
+Aktuell steht die integrierte Abhängigkeitsüberwachung für folgende Apps und Dienste zur Verfügung:
 
-* ASP.NET Web-apps und Dienste, die auf einem IIS-Server oder auf Azure ausgeführt.
+* ASP.NET-Web-Apps und Dienste, die auf einem IIS-Server oder auf Azure ausgeführt werden
 
-Für andere Dateitypen, wie Java-Webanwendungen oder Geräte-apps können Sie Ihre eigenen Monitor mithilfe der TrackDependency-API schreiben.
+Für andere Typen wie Java-Web-Apps oder Geräte-Apps können Sie mithilfe der TrackDependency-API Ihre eigene Überwachung schreiben.
 
-Der abhängigkeitsmonitor für die Out-of-the-Box-Berichte derzeit Aufrufe an diese Typen von Abhängigkeiten:
+Der standardmäßig verfügbare Abhängigkeitsmonitor meldet derzeit Aufrufe an diese Abhängigkeitstypen:
 
 * SQL-Datenbanken
-* ASP.NET Web und Wcf-Dienste
-* Lokale oder remote-HTTP-Aufrufe
-* Azure DocumentDb, Tabelle, Blob-Speicher und Warteschlange
+* ASP.NET-Web- und WCF-Dienste
+* Lokale oder Remote-HTTP-Aufrufe
+* Azure DocumentDb, Tabelle, Blobspeicher und Warteschlange
 
-In diesem Fall könnten Sie Ihre eigenen SDK-Aufrufe von anderen Abhängigkeiten zu überwachen schreiben.
+In diesem Fall könnten Sie Ihre eigenen SDK-Aufrufe zum Überwachen anderer Abhängigkeiten schreiben.
 
-## Einrichten einer Abhängigkeitsüberwachung
+## Einrichten der Abhängigkeitsüberwachung
 
-Zum Überwachen der Abhängigkeit zu erhalten, müssen Sie folgende Aktionen durchführen:
+Zum Überwachen der Abhängigkeit müssen Sie folgende Aktionen durchführen:
 
-* Verwenden Sie [Statusmonitor](app-insights-monitor-performance-live-website-now.md) auf dem IIS-Server verwenden, um die Überwachung zu aktivieren.
-* Hinzufügen der [Insights Anwendungserweiterung](../insights-perf-analytics.md) an Ihren Azure Web App oder der VM.
+* Verwenden Sie den [Statusmonitor](app-insights-monitor-performance-live-website-now.md) auf dem IIS-Server, um die Überwachung zu aktivieren.
+* Fügen Sie Ihrer Azure-Web-App oder dem virtuellen Computer die [Application Insights-Erweiterung](../insights-perf-analytics.md) hinzu.
 
-(Für eine Azure-VM entweder können Sie installieren die Erweiterung in der Azure-Systemsteuerung oder installieren, wird der Status-Monitor, so wie Sie, auf jedem Computer.)
+(Für einen virtuellen Azure-Computer können Sie, wie auf jedem anderen Computer, entweder die Erweiterung in der Azure-Systemsteuerung oder den Statusmonitor installieren.)
 
-Sie können die oben genannten Schritte, um eine bereits bereitgestellte Webanwendung tun. Um standard-Abhängigkeit Überwachung zu erhalten, müssen Sie Application Insights-Source-Projekt hinzufügen.
+Sie können die oben genannten Schritte für eine bereits bereitgestellte Web-App durchführen. Um eine standardmäßige Abhängigkeitsüberwachung zu erhalten, müssen Sie Application Insights nicht Ihrem Quellprojekt hinzufügen.
 
 ## Diagnostizieren von Leistungsproblemen der Abhängigkeit
 
-Um die Leistung der Anforderungen an den Server zu bewerten:
+So bewerten Sie die Leistung der Anforderungen an den Server
 
-![Klicken Sie in Ihrer Anwendung in Application Insights auf der Seite "Übersicht" auf der Kachel Leistung](./media/app-insights-dependencies/01-performance.png)
+![Klicken Sie in Ihrer Anwendung in Application Insights auf der Seite "Übersicht" auf die Kachel "Leistung"](./media/app-insights-dependencies/01-performance.png)
 
-Führen Sie einen Bildlauf nach unten zu den Blick auf das Raster der Anforderungen:
+Scrollen Sie nach unten, um das Raster der Anforderungen anzuzeigen:
 
-![Liste der Anforderungen mit Mittelwerten und zählt](./media/app-insights-dependencies/02-reqs.png)
+![Liste der Anforderungen mit Mittelwerten und Anzahlen](./media/app-insights-dependencies/02-reqs.png)
 
-Der oberste Eintrag dauert sehr lange. Sehen Sie, ob wir herausfinden, in denen die Verweildauer können.
+Die zuerst aufgeführte Instanz dauert sehr lange. Mal sehen, ob wir herausfinden, wo die Zeit beansprucht wird.
 
-Klicken Sie auf diese Zeile, um einzelne Ereignisse finden Sie unter:
-
-
-![Liste der Anforderung vorkommen](./media/app-insights-dependencies/03-instances.png)
-
-Klicken Sie auf einer beliebigen Instanz langer, um weiter zu überprüfen.
-
-> [AZURE.NOTE]Scrollen Sie etwas eine Instanz auswählen. Wartezeit in der Pipeline kann dies bedeuten, dass die Daten für die Instanzen der obersten unvollständig ist.
-
-Führen Sie einen Bildlauf nach unten zu den remote-Abhängigkeit Aufrufe im Zusammenhang mit dieser Anforderung:
-
-![Finden Sie Aufrufe von Remote-Abhängigkeiten, identifizieren Sie ungewöhnliche Dauer zu.](./media/app-insights-dependencies/04-dependencies.png)
-
-Sie sieht wie der Großteil der Zeit mit dem verarbeiten, die in einem Aufruf an einen lokalen Dienst diese Anforderung aufgewendet wurde.
-
-Wählen Sie diese Zeile, um weitere Informationen zu erhalten:
+Klicken Sie auf diese Zeile, um einzelne Anforderungsereignisse anzuzeigen:
 
 
-![Klicken Sie auf, über die remote-Abhängigkeit zum Identifizieren der Ursache](./media/app-insights-dependencies/05-detail.png)
+![Liste der Anforderungsinstanzen](./media/app-insights-dependencies/03-instances.png)
 
-Das Detail enthält genügend Informationen, um das Problem zu diagnostizieren.
+Klicken Sie auf eine beliebige Instanz mit langer Ausführungsdauer, um diese näher zu überprüfen.
+
+> [AZURE.NOTE]Scrollen Sie nach unten, um eine Instanz auszuwählen. Durch Wartezeiten in der Pipeline sind die Daten für die zuerst aufgeführten Instanzen möglicherweise unvollständig.
+
+Scrollen Sie nach unten zu den Remoteabhängigkeitsaufrufen im Zusammenhang mit dieser Anforderung:
+
+![Finden von Aufrufen von Remoteabhängigkeiten, Identifizieren ungewöhnlich langer Laufzeiten](./media/app-insights-dependencies/04-dependencies.png)
+
+Der Großteil der Zeit zur Verarbeitung dieser Anforderung wurde für einen Aufruf eines lokalen Diensts aufgewendet.
+
+Wählen Sie diese Zeile aus, um weitere Informationen zu erhalten:
+
+
+![Klicken Sie sich durch diese Remoteabhängigkeit, um die Ursache herauszufinden](./media/app-insights-dependencies/05-detail.png)
+
+Dieses Detail enthält genügend Informationen, um das Problem zu diagnostizieren.
 
 
 
 ## Fehler
 
-Fehlgeschlagene Anforderungen vorhanden sind, klicken Sie auf das Diagramm.
+Wenn Anforderungsfehler vorhanden sind, klicken Sie auf das Diagramm.
 
-![Klicken Sie auf das Diagramm für fehlgeschlagene Anforderungen](./media/app-insights-dependencies/06-fail.png)
+![Klicken Sie auf das Diagramm mit Anforderungsfehlern](./media/app-insights-dependencies/06-fail.png)
 
-Klicken Sie auf eine Anforderungstyp und eine Anforderungsinstanz, um eine fehlerhafte Aufrufe einer remote-Abhängigkeit zu finden.
+Klicken Sie sich durch einen Anforderungstyp und eine Anforderungsinstanz, um einen fehlerhaften Aufruf einer Remoteabhängigkeit zu finden.
 
 
-![Klicken Sie auf den Anforderungstyp, klicken Sie auf die Instanz in eine andere Ansicht der gleichen Instanz abzurufen, klicken Sie auf, um Details der Ausnahme zu erhalten.](./media/app-insights-dependencies/07-faildetail.png)
+![Klicken Sie auf den Anforderungstyp, klicken Sie auf die Instanz, um eine andere Ansicht derselben Instanz abzurufen, und klicken Sie darauf, um Details zur Ausnahme zu erhalten.](./media/app-insights-dependencies/07-faildetail.png)
 
 
 <!--Link references-->
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

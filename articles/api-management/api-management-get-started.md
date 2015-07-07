@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verwalten Sie Ihre erste API in Azure API Management"
-	description="Erfahren Sie mehr über das Erstellen von APIs und Vorgängen sowie über die ersten Schritte mit der API-Verwaltung."
+	pageTitle="Verwalten Ihrer ersten API in Azure API Management"
+	description="Erfahren Sie mehr über das Erstellen von APIs und Vorgängen sowie über die ersten Schritte mit API Management."
 	services="api-management"
 	documentationCenter=""
 	authors="steved0x"
@@ -16,153 +16,153 @@
 	ms.date="06/16/2015"
 	ms.author="sdanie"/>
 
-# Verwalten Sie Ihre erste API in Azure API Management
+# Verwalten Ihrer ersten API in Azure API Management
 
 ## <a name="overview"> </a>Übersicht
 
-Diese Anleitung beschreibt die ersten Schritte mit der API-Verwaltung und Ihren ersten API-Aufruf.
+Diese Anleitung beschreibt die ersten Schritte mit API Management und Ihren ersten API-Aufruf.
 
-## <a name="concepts"> </a>Was Azure API Management ist?
+## <a name="concepts"> </a>Was ist Azure API Management?
 
-Azure können-API Sie alle Back-End-und ein Programm starten, vollwertige API basieren.
+Mithilfe von Azure API Management können Sie ein API-Programm mit vollem Funktionsumfang auf einem beliebigen Back-End starten.
 
-Allgemeine Szenarien:
+Zu den häufigen Szenarios gehören:
 
-* **Sichern von mobilen Infrastruktur** durch gating Zugriff mit API-Schlüssel, verhindern von DOS-Angriffen Drosselung oder mithilfe von Erweiterte Sicherheitsrichtlinien, z. B. die Überprüfung von JWT-token
-* **Aktivieren der ISV-Partner Ökosysteme** bietet schnelle Partner Onboarding über das Entwicklerportal und Erstellen einer Fassade API, von einer internen Implementierungen Partner-Nutzung nicht unbedingt zu entkoppeln.
-* **Eine interne API Programmausführung** durch bietet einen zentralen Ort für die Organisation in Bezug auf die Verfügbarkeit und die neuesten Änderungen an APIs kommunizieren, gating auf der Grundlage der Organisations-Konten basieren alle auf einen sicheren Kanal zwischen den API-Gateway und der Back-End-
+* **Schutz einer mobilen Infrastruktur** durch Einschränkung des Zugriffs mit API-Schlüsseln, das Verhindern von DOS-Angriffen über eine Drosselung oder das Verwenden erweiterter Sicherheitsrichtlinien wie z. B. der JWT-Tokenüberprüfung.
+* **Bereitstellung eines ISV-Partnerökosystems** durch eine schnelle Partnerintegration über das Entwicklerportal und das Erstellen einer API-Fassade zum Entkoppeln interner Implementierungen, die noch nicht für die Partnernutzung geeignet sind.
+* **Ausführung eines internen API-Programms** durch Bereitstellung einer zentralen Stelle innerhalb der Organisation für den Austausch über Verfügbarkeit und neueste Änderungen an APIs, Einschränkung des Zugriffs basierend auf Organisationskonten – all dies basierend auf einem sicheren Kanal zwischen API-Gateway und Back-End.
 
 
-Das System ist erfundenen aus den folgenden Komponenten:
+Das System setzt sich aus den folgenden Komponenten zusammen:
 
-* Die **-API-Gateway** ist der Endpunkt, der:
-  * API-Aufrufe und leitet sie an die Back-Ends akzeptiert
-  * API-Schlüssel, JWT-Tokens, Zertifikate und anderer Anmeldeinformationen überprüft
-  * Erzwingt die Kontingente und Begrenzung der Datenübertragungsrate
-  * Wandelt die API im Handumdrehen ohne Codeänderungen
-  * Back-End-Antworten zwischengespeichert Setupprogramm
-  * Protokolle rufen Sie Metadaten für die Analyse
+* Das **API-Gateway** ist der Endpunkt, der folgende Aufgaben übernimmt:
+  * Akzeptieren von API-Aufrufen und Weiterleiten dieser Aufrufe an Ihre Back-Ends
+  * Überprüfen von API-Schlüsseln, JWT-Token, Zertifikaten und anderen Anmeldeinformationen
+  * Erzwingen von Nutzungskontingenten und Aufruflimits
+  * Dynamisches Transformieren Ihrer API ohne Codeänderungen
+  * Zwischenspeichern von Back-End-Antworten, wobei
+  * Setupprotokolle Metadaten zu Analysezwecken aufrufen
 
-* Die **Publisher Portal** ist die Verwaltungsschnittstelle, in dem Sie Setup API-Programm:
-	* Definieren oder API-Schema importieren
-	* Paket-APIs in Produkte
-	* Einrichtung von Richtlinien wie Kontingente oder Transformationen auf die APIs
-	* erhalten Sie Einblicke aus der Analyse
+* Das **Herausgeberportal** ist die Verwaltungsoberfläche, in der Sie Ihr API-Programm einrichten:
+	* Definieren oder Importieren des API-Schemas
+	* Paketieren von APIs in Produkten
+	* Konfigurieren von Richtlinien wie z. B. Kontingenten oder Transformationen für die APIs
+	* Gewinnen von Erkenntnissen mithilfe von Analysen
 	* Verwalten von Benutzern
 
-* Die **-Entwicklerportal** dient als die wichtigsten Webpräsenz für Entwickler können sie hier:
-	* API-Dokumentation lesen
-	* Probieren Sie eine API über die interaktive Konsole
-	* Erstellen eines Kontos und kostenlos für API-Schlüssel
-	* Analyse der Zugriff auf eigene Verwendung
+* Das **Entwicklerportal** dient als wichtigste Webpräsenz für Entwickler, in der die folgenden Aufgaben ausgeführt werden können:
+	* Lesen der API-Dokumentation
+	* Ausprobieren einer API mithilfe der interaktiven Konsole
+	* Erstellen eines Kontos und Anfordern von API-Schlüsseln
+	* Zugriff auf Nutzungsanalysen
 
 
-## <a name="create-service-instance"> </a>Erstellen Sie eine Instanz der API-Verwaltung
+## <a name="create-service-instance"> </a>Erstellen einer API Management-Instanz
 
 > Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][].
 
-Der erste Schritt bei der Arbeit mit der API-Verwaltung ist die Erstellung einer Dienstinstanz. Melden Sie sich beim [Azure-Verwaltungsportal][] an und klicken Sie auf **Neu**, **App-Dienste**, **API-Verwaltung**, **Erstellen**.
+Der erste Schritt bei der Arbeit mit API Management ist die Erstellung einer Dienstinstanz. Melden Sie sich beim [Azure-Verwaltungsportal][] an und klicken Sie auf **Neu**, **App-Dienste**, **API Management**, **Erstellen**.
 
-![Neue Instanz der API-Verwaltung][api-management-create-instance-menu]
+![Neue API Management-Instanz][api-management-create-instance-menu]
 
 Geben Sie unter **URL** einen eindeutigen Unterdomänennamen für die Dienst-URL ein.
 
-Wählen Sie die gewünschten **Abonnement** und **Region** für die Dienstinstanz. Treffen Sie Ihre Auswahl und klicken Sie auf Weiter.
+Wählen Sie die gewünschten Werte für **Abonnement** und **Region** für Ihre Dienstinstanz aus. Treffen Sie Ihre Auswahl und klicken Sie auf Weiter.
 
-![Neuer API-Verwaltungs-Dienst][api-management-create-instance-step1]
+![Neuer API Management-Dienst][api-management-create-instance-step1]
 
 Geben Sie **Contoso Ltd.** unter **Organisationsname** ein und geben Sie Ihre E-Mail-Adresse in das Feld Administrator-E-Mail ein.
 
->Diese E-Mail-Adresse wird für Benachrichtigungen vom API-Verwaltungssystem verwendet. Weitere Informationen finden Sie unter [Benachrichtigungen konfigurieren][].
+>Diese E-Mail-Adresse wird für Benachrichtigungen vom API Management-System verwendet. Weitere Informationen finden Sie unter [Benachrichtigungen konfigurieren][].
 
-![Neuer API-Verwaltungs-Dienst][api-management-create-instance-step2]
+![Neuer API Management-Dienst][api-management-create-instance-step2]
 
-API Management Service-Instanzen sind in drei Ausführungen verfügbar: Developer, Standard und Premium. Standardmäßig werden neue Dienstinstanzen der API-Verwaltung mit der Entwickler-Stufe erstellt. Überprüfen Sie die Standard- oder Premium-Dienstebene zu aktivieren, die **Erweiterte Einstellungen** Kontrollkästchen, und wählen Sie die gewünschte Ebene auf dem folgenden Bildschirm.
+API Management-Dienstinstanzen stehen in drei Tarifen zur Verfügung: Developer, Standard und Premium. Standardmäßig werden neue API Management-Dienstinstanzen im Developer-Tarif erstellt. Aktivieren Sie zum Auswählen der Tarife "Standard" oder "Premium" das Kontrollkästchen **Erweiterte Einstellungen**, und wählen Sie auf dem folgenden Bildschirm den gewünschten Tarif auf.
 
->Microsoft Azure bietet drei Stufen, in dem Sie Ihre API Management-Dienst ausführen können: Developer, Standard und Premium. Die Entwickler-Stufe ist für Entwicklung, Tests und API-Pilotprogramme konzipiert, bei denen eine hohe Verfügbarkeit nicht relevant ist. In den Standard- und Premium-Ebenen können Sie die Anzahl der reservierten Einheiten um mehr Datenverkehr verarbeiten skalieren. Die Standard- und Premium-Ebene bieten Ihre API Management-Dienst die größte Verarbeitungsleistung und Leistung. In diesem Lernprogramm kann mit einer beliebigen Ebene ausgeführt werden. Weitere Informationen zu API Management-Ebenen, finden Sie unter [API Management Preise][].
+>Microsoft Azure bietet drei Tarife, in denen Sie API Management ausführen können: Developer, Standard und Premium. Der Tarif "Developer" ist für Entwicklung, Tests und API-Pilotprogramme konzipiert, bei denen eine hohe Verfügbarkeit nicht relevant ist. In den Tarifen "Standard" und "Premium" können Sie die Anzahl der reservierten Einheiten skalieren, um mehr Datenverkehr zu verarbeiten. Die Tarife "Standard" und "Premium" bieten für den API Management-Dienst hinsichtlich Verarbeitungsleistung und Durchsatz die besten Ergebnisse. Dieses Lernprogramm kann mit einem beliebigen Tarif ausgeführt werden. Weitere Informationen zu den API Management-Tarifen finden Sie unter [API Management-Preise][].
 
 Aktivieren Sie das Kontrollkästchen, um Ihre Dienstinstanz zu erstellen.
 
-![Neuer API-Verwaltungs-Dienst][api-management-instance-created]
+![Neuer API Management-Dienst][api-management-instance-created]
 
-Nachdem die Instanz erstellt wurde, besteht der nächste Schritt zum Erstellen oder Importieren einer API.
+Nach der Erstellung der Dienstinstanz können Sie eine API erstellen oder importieren.
 
 ## <a name="create-api"> </a>Importieren einer API
 
-Eine API besteht aus einem Satz von Operationen, die von Clientanwendungen aufgerufen werden können. API-Operationen funktionieren als Proxies für existierende Webdienste.
+Eine API besteht aus einem Satz von Operationen, die aus Clientanwendungen aufgerufen werden können. API-Operationen funktionieren als Proxys für vorhandene Webdienste.
 
-APIs können erstellt werden und Vorgänge manuell hinzugefügt oder importiert werden. In diesem Lernprogramm importieren wir eine die API für eine Beispiel-Rechner Web Service von Microsoft bereitgestellt und auf Azure gehostet.
+Sie können eine API manuell erstellen und ihr Operationen hinzufügen, oder Sie importieren eine API. In diesem Lernprogramm wird die API für einen Rechner-Beispielwebdienst importiert, der von Microsoft bereitgestellt und in Azure gehostet wird.
 
->Anweisungen zum Erstellen einer API und Vorgänge manuell hinzufügen, finden Sie unter [APIs erstellen](api-management-howto-create-apis.md) und [zum Hinzufügen von Vorgängen zu einer API](api-management-howto-add-operations.md).
+>Anleitungen zur manuellen Erstellung von APIs und zum Hinzufügen von Operationen finden Sie unter [Erstellen von APIs](api-management-howto-create-apis.md) und [Hinzufügen von Operationen zu einer API](api-management-howto-add-operations.md).
 
-APIs werden vom Verleger API-Portal konfiguriert die über Azure-Verwaltungsportal zugegriffen wird. Um die Verleger-Portal zu erreichen, klicken Sie auf **verwalten** in Azure-Portal für Ihre API Management-Dienst.
+APIs werden im API-Herausgeberportal konfiguriert, das über das Azure-Verwaltungsportal erreichbar ist. Um auf das Herausgeberportal zuzugreifen, klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**.
 
 ![Herausgeberportal][api-management-management-console]
 
-Um den API-Rechner zu importieren, klicken Sie auf **APIs** aus der **API Management** im Menü auf der linken Seite, und klicken Sie dann auf **API importieren**.
+Klicken Sie zum Importieren der Rechner-API im Menü **API Management** auf der linken Seite auf **APIs**, und klicken Sie anschließend auf **API importieren**.
 
-![Schaltfläche "Importieren" API "][api-management-import-api]
+![Schaltfläche "API importieren"][api-management-import-api]
 
 ![Neue API hinzufügen][api-management-import-new-api]
 
-Führen Sie die folgenden Schritte aus, um den Rechner API zu konfigurieren.
+Führen Sie die folgenden Schritte aus, um die Rechner-API zu konfigurieren.
 
-1. Klicken Sie auf **From URL**, geben Sie **http://calcapi.cloudapp.net/calcapi.json** in die **Spezifikation Dokument-URL** Textfeld, und klicken Sie auf die **Swagger** Optionsfeld. 2. Typ **Calc** in den **Web-API-URL-Suffix** Textbox.
-3. Klicken Sie in der **Produkte (optional)** und wählen Sie **Starter**.
-4. Klicken Sie auf **Speichern** die API zu importieren.
+1. Klicken Sie auf **Aus URL**, geben Sie **http://calcapi.cloudapp.net/calcapi.json** in das Textfeld **URL für Spezifikationsdokument** ein, und aktivieren Sie das Optionsfeld **Swagger**. 2. Geben Sie in das Textfeld **URL-Suffix für Web-API** den Wert **calc** ein.
+3. Klicken Sie auf das Feld **Produkte (optional)**, und wählen Sie **Starter**.
+4. Klicken Sie auf **Speichern**, um die API zu importieren.
 
-Nachdem die API importiert wurde, wird die Zusammenfassungsseite für die API im Portal Verleger angezeigt.
+Sobald die API importiert wurde, wird die Zusammenfassungsseite für die API im Herausgeberportal angezeigt.
 
 ![API-Zusammenfassung][api-management-imported-api-summary]
 
-Der API-Abschnitt über mehrere Registerkarten verfügt. Die Registerkarte **Zusammenfassung** enthält verschiedene Metriken und Informationen über die API. Die [Einstellungen](api-management-howto-create-apis.md#configure-api-settings) Registerkarte dient zum Anzeigen und Bearbeiten der Konfiguration einer API. Die [Operations](api-management-howto-add-operations.md) Registerkarte wird verwendet, um die API-Vorgänge zu verwalten. Die **Security** Registerkarte kann verwendet werden, um die Proxy-Authentifizierung für den Back-End-Server mit der Standardauthentifizierung konfigurieren oder [gegenseitige Zertifikatauthentifizierung](api-management-howto-mutual-certificates.md), und so konfigurieren Sie [Benutzerautorisierung mit OAuth 2.0](api-management-howto-oauth2.md). Die dem **Probleme** Registerkarte dient zum Anzeigen der Probleme, die von den Entwicklern, die mithilfe der APIs und die **Produkte** Registerkarte wird verwendet, um die Produkte zu konfigurieren, die diese API enthalten.
+Der API-Bereich umfasst verschiedene Registerkarten. Die Registerkarte **Zusammenfassung** enthält verschiedene Metriken und Informationen über die API. Auf der Registerkarte [Einstellungen](api-management-howto-create-apis.md#configure-api-settings) können Sie die Konfiguration einer API anzeigen und bearbeiten. Mithilfe der Registerkarte [Operationen](api-management-howto-add-operations.md) können Sie die API-Operationen verwalten. Auf der Registerkarte **Sicherheit** können Sie die Proxyauthentifizierung für den Back-End-Server konfigurieren, indem Sie die Standardauthentifizierung oder die [Gegenseitige Zertifikatauthentifizierung](api-management-howto-mutual-certificates.md) festlegen und die [Benutzerautorisierung mithilfe von OAuth 2.0](api-management-howto-oauth2.md) konfigurieren. Auf der Registerkarte **Probleme** können Sie von Entwicklern gemeldete Probleme zu Ihren APIs anzeigen, die Registerkarte **Produkte** wird zum Konfigurieren der Produkte verwendet, die diese API enthalten.
 
-Standardmäßig enthält jede API-Verwaltungsinstanz zwei Beispielprodukte:
+Standardmäßig enthält jede API Management-Instanz zwei Beispielprodukte:
 
 -	**Starter**
 -	**Unbegrenzt**
 
-In diesem Lernprogramm wurde die grundlegende Calculator-API beim Import der API des Starter-Produkts hinzugefügt.
+In diesem Lernprogramm wurde die Basic Calculator-API zum Starter-Produkt hinzugefügt, als die API importiert wurde.
 
-Um eine API aufgerufen werden, müssen Entwickler zunächst ein Produkt abonnieren, die sie auf ihn zugreifen können. Entwickler können Produkte im Entwicklerportal abonnieren oder Administratoren können Entwickler Produkte in der Publisher-Portal anmelden. Sie sind Administrator, da die API Management-Instanz in den vorherigen Schritten im Lernprogramm erstellt werden, damit Sie bereits standardmäßig jedes Produkt abonniert haben.
+Um API-Aufrufe ausführen zu können, müssen Entwickler zunächst das Produkt abonnieren, das Zugriff auf die API bietet. Entwickler können die Produkte im Entwicklerportal abonnieren. Administratoren können Entwickler im Herausgeberportal für Produkte abonnieren. Sie sind standardmäßig als Administrator konfiguriert, da Sie die API Management-Dienstinstanz in den vorherigen Schritten des Lernprogramms erstellt haben. Aus diesem Grund haben Sie alle Produkte bereits standardmäßig abonniert.
 
-## <a name="call-operation"> </a>Aufrufen eines Vorgangs aus dem Entwicklerportal
+## <a name="call-operation"> </a>Aufrufen einer Operation aus dem Entwicklerportal
 
-Operationen können direkt aus dem Entwicklerportal aufgerufen werden. Dies ist ein einfacher Weg, um die Operationen einer API anzuzeigen und zu testen. In diesem Lernprogramm Schritt rufen Sie die **grundlegende Rechner** -APIs **Hinzufügen von zwei Ganzzahlen** Vorgang. Klicken Sie auf **-Entwicklerportal** aus dem Menü oben rechts auf der Publisher-Portal.
+Operationen können direkt aus dem Entwicklerportal aufgerufen werden. Dies ist ein einfacher Weg, um die Operationen einer API anzuzeigen und zu testen. In diesem Schritt des Lernprogramms rufen Sie die Operation **Add two integers** der API **Basic Calculator** auf. Klicken Sie im Herausgeberportal im Menü oben rechts auf **Entwicklerportal**.
 
 ![Entwicklerportal][api-management-developer-portal-menu]
 
-Klicken Sie auf **APIs** aus der oberen Menü, und klicken Sie dann auf **grundlegende Rechner** um die verfügbaren Vorgänge anzuzeigen.
+Klicken Sie im obersten Menü auf **APIs** und anschließend auf **Basic Calculator**, um die verfügbaren Operationen anzuzeigen.
 
 ![Entwicklerportal][api-management-developer-portal-calc-api]
 
-Beachten Sie die Beispiel-Beschreibungen und die Parameter, die importiert wurden, sowie die API und Vorgänge, Bereitstellen von Dokumentation für die Entwickler, die diesen Vorgang verwenden. Diese Beschreibungen können auch hinzugefügt werden, wenn Vorgänge manuell hinzugefügt werden.
+Gemeinsam mit der API und den Operationen wurden Beispielbeschreibungen und -parameter importiert. Diese bieten Entwicklern eine Dokumentation für die Ausführung dieser Operation. Diese Beschreibungen können auch hinzugefügt werden, wenn Operationen manuell eingefügt werden.
 
-Aufrufen der **Hinzufügen von zwei Ganzzahlen** Vorgang, klicken Sie auf **versuchen Sie es**.
+Klicken Sie auf **Try it**, um die Operation **Add two integers** aufzurufen.
 
-![Probieren Sie es][api-management-developer-portal-calc-api-console]
+![Ausprobieren][api-management-developer-portal-calc-api-console]
 
-Sie können einige Werte für die Parameter eingeben oder übernehmen Sie die Standardeinstellungen, und auf **Senden**.
+Sie können Werte für die Parameter eingeben oder die Standardwerte übernehmen. Klicken Sie dann auf **Send**.
 
 ![HTTP Get][api-management-invoke-get]
 
-Nachdem ein Vorgang aufgerufen wird, zeigt das Entwicklerportal der **Antwortstatus**, der **Antwortheader**, und alle **Antwortinhalt**.
+Nach dem Aufruf der Operation zeigt das Entwicklerportal den **Antwortstatus**, die **Antwortheader** sowie den **Antwortinhalt** an.
 
 ![Antwort][api-management-invoke-get-response]
 
-## <a name="view-analytics"> </a>Analysen anzeigen
+## <a name="view-analytics"> </a>Anzeigen von Analysen
 
-Analysen für anzeigen **grundlegende Rechner**, wechseln Sie zurück zum Verleger Portal durch Auswahl **verwalten** aus dem Menü oben rechts neben das Entwicklerportal.
+Um Analysen für den **Basic Calculator** anzuzeigen, wechseln Sie zurück zum Herausgeberportal, indem Sie im Entwicklerportal im Menü oben rechts auf **Verwalten** klicken.
 
 ![Verwalten][api-management-manage-menu]
 
-Die Standardansicht für das Portal Verleger ist die **Dashboard**, die Übersicht über die API Management-Instanz bereitstellt.
+Die Standardansicht für das Herausgeberportal ist das **Dashboard**, das eine Übersicht für Ihre API Management-Instanz enthält.
 
 ![Dashboard][api-management-dashboard]
 
-Richten Sie den Mauszeiger über dem Diagramm für **grundlegende Rechner** die Metriken für die Verwendung der API für einen bestimmten Zeitraum angezeigt.
+Bewegen Sie den Mauszeiger über die Grafik für den **Basic Calculator**, um spezielle Metriken zur Nutzung der API über einen bestimmten Zeitraum anzuzeigen.
 
->Wenn alle Zeilen im Diagramm nicht angezeigt wird, wechseln Sie zurück zum Entwicklerportal einige Aufrufe in der API, warten Sie einige Minuten und kehre dann zum Dashboard.
+>Falls Ihr Diagramm keine Linien enthält, wechseln Sie zurück zum Entwicklerportal, und führen Sie einige Aufrufe an die API aus. Warten Sie einen Moment, und kehren Sie zum Dashboard zurück.
 
 ![Analyse][api-management-mouse-over]
 
@@ -170,11 +170,11 @@ Klicken Sie auf **Details anzeigen**, um die Zusammenfassungsseite für die API 
 
 ![Zusammenfassung][api-management-api-summary-metrics]
 
-Um detaillierte Metriken und Berichte anzuzeigen, klicken Sie auf **Analyse** im Menü **API-Verwaltung** auf der linken Seite.
+Um detaillierte Metriken und Berichte anzuzeigen, klicken Sie auf **Analyse** im Menü **API Management** auf der linken Seite.
 
 ![Übersicht][api-management-analytics-overview]
 
-Der **Analyse**-Bereich enthält die folgenden vier Registerkarten.
+Der Abschnitt **Analyse** enthält die folgenden vier Registerkarten.
 
 -	**Auf einen Blick** enthält Metriken für Nutzung und Integrität sowie eine Liste der aktivsten Entwickler, Produkte, APIs und Operationen.
 -	**Nutzung** enthält detaillierte Ansichten für API-Aufrufe und Bandbreitennutzung inklusive einer geografischen Darstellung.
@@ -203,7 +203,7 @@ Der **Analyse**-Bereich enthält die folgenden vier Registerkarten.
 [Responses]: api-management-howto-add-operations.md#responses
 [How create and publish a product]: api-management-howto-add-products.md
 [Erste Schritte bei der erweiterten API-Konfiguration]: api-management-get-started-advanced.md
-[API Management Preise]: http://azure.microsoft.com/pricing/details/api-management/
+[API Management-Preise]: http://azure.microsoft.com/pricing/details/api-management/
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
@@ -243,4 +243,4 @@ Der **Analyse**-Bereich enthält die folgenden vier Registerkarten.
 [api-management-]: ./media/api-management-get-started/api-management-.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

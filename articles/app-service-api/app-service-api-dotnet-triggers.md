@@ -22,7 +22,7 @@
 
 Dieser Artikel beschreibt die Implementierung von API-App-Triggern und deren Nutzung über eine Logik-App.
 
-Wenn Sie noch [API-apps](app-service-api-apps-why-best-platform.md) in [Azure Anwendungsdiensts](../app-service/app-service-value-prop-what-is.md), es wird empfohlen, beim Lesen der mehrteiligen Reihe auf [API-apps erstellen](app-service-dotnet-create-api-app.md)
+Wenn Sie zum ersten Mal mit [API-Apps](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md) arbeiten, sollten Sie zunächst die mehrteilige Serie zum [Erstellen von API-Apps](app-service-dotnet-create-api-app.md) durcharbeiten.
 
 Darüber hinaus wurden alle Codeausschnitte in diesem Thema aus dem [FileWatcher API-App-Codebeispiel](http://go.microsoft.com/fwlink/?LinkId=534802) kopiert.
 
@@ -32,7 +32,7 @@ Beachten Sie, dass Sie folgendes Nuget-Paket herunterladen müssen, damit Sie de
 
 Es ist ein übliches Szenario, dass eine API-App ein Ereignis auslöst, damit Clients der API-App als Reaktion auf das Ereignis die entsprechende Aktion durchführen können. Der REST-API-basierte Mechanismus, der dieses Szenario unterstützt, wird als API-App-Trigger bezeichnet.
 
-Ein Beispiel: Ihr Clientcode verwendet die [Twitter Connector-API-App](../app-service-logic/app-service-logic-connector-twitter.md) und der Code muss auf eine Aktion basierend auf neuen Tweets ausführen, die bestimmte Wörter enthalten. In diesem Fall können Sie eine Umfrage oder Push-Trigger einrichten, zu diesem Bedürfnis gerecht.
+Ein Beispiel: Ihr Clientcode verwendet die [Twitter Connector-API-App](../app-service-logic/app-service-logic-connector-twitter.md) und der Code muss auf eine Aktion basierend auf neuen Tweets ausführen, die bestimmte Wörter enthalten. In diesem Fall können Sie einen Abfrage- oder Pushtrigger einrichten, um diese Anforderung leichter zu erfüllen.
 
 ## Abfragetrigger im Vergleich zu Pushtriggern
 
@@ -223,7 +223,7 @@ Wenn Sie auf die Schaltfläche **Swagger herunterladen** klicken und die JSON-Da
       }
     }
 
-Mit der Erweiterungseigenschaft **x-ms-scheduler-trigger** werden Trigger in der API-Definition  beschrieben. Diese Eigenschaft wird automatisch vom API-App-Gateway hinzugefügt, wenn Sie die API-Definition über das Gateway anfordern und die Anforderung eines der folgenden Kriterien erfüllt. (Sie können diese Eigenschaft auch manuell hinzufügen.)
+Mit der Erweiterungseigenschaft **x-ms-scheduler-trigger** werden Trigger in der API-Definition beschrieben. Diese Eigenschaft wird automatisch vom API-App-Gateway hinzugefügt, wenn Sie die API-Definition über das Gateway anfordern und die Anforderung eines der folgenden Kriterien erfüllt. (Sie können diese Eigenschaft auch manuell hinzufügen.)
 
 - Abfragetrigger
     - Wenn die HTTP-Methode **GET** lautet.
@@ -236,15 +236,15 @@ Mit der Erweiterungseigenschaft **x-ms-scheduler-trigger** werden Trigger in der
 
 ## Verwenden von API-App-Triggern in Logik-Apps
 
-### Auflisten und Konfigurieren von API-App-Triggern im Logik-App-Designer
+### Auflisten und Konfigurieren von API-App-Triggern im Logik-Apps-Designer
 
 Wenn Sie eine Logik-App in der gleichen Ressourcengruppe wie die API-App erstellen, können Sie die App zum Designerbereich hinzufügen, indem Sie einfach darauf klicken. Die folgenden Abbildungen verdeutlichen dies:
 
-![Trigger im Logik-App-Designer](./media/app-service-api-dotnet-triggers/triggersinlogicappdesigner.PNG)
+![Trigger im Logik-Apps-Designer](./media/app-service-api-dotnet-triggers/triggersinlogicappdesigner.PNG)
 
-![Konfigurieren des Abfragetriggers im Logik-App-Designer](./media/app-service-api-dotnet-triggers/configurepolltriggerinlogicappdesigner.PNG)
+![Konfigurieren des Abfragetriggers im Logik-Apps-Designer](./media/app-service-api-dotnet-triggers/configurepolltriggerinlogicappdesigner.PNG)
 
-![Konfigurieren des Pushtriggers im Logik-App-Designer](./media/app-service-api-dotnet-triggers/configurepushtriggerinlogicappdesigner.PNG)
+![Konfigurieren des Pushtriggers im Logik-Apps-Designer](./media/app-service-api-dotnet-triggers/configurepushtriggerinlogicappdesigner.PNG)
 
 ## Optimieren von API-App-Triggern für Logik-Apps
 
@@ -256,7 +256,7 @@ Beispielsweise sollte der **triggerState**-Parameter für Abfragetrigger auf den
 
 HINWEIS: Eine Erläuterung der in oben stehendem Ausdruck verwendeten Funktionen finden Sie in der Dokumentation zur [Definitionssprache für Logik-App-Workflows](https://msdn.microsoft.com/library/azure/dn948512.aspx).
 
-Benutzer von Logik-Apps müssen bei Verwendung des Triggers den oben stehenden Ausdruck für den **triggerState**-Parameter bereitstellen. Es ist möglich, diesen Wert durch den Logik-App-Designer über die Erweiterungseigenschaft **x-ms-scheduler-recommendation** voreinstellen zu lassen. Die **x-ms-visibility**-Erweiterungseigenschaft kann auf den Wert *internal* festgelegt werden, sodass der Parameter selbst im Designer nicht angezeigt wird. Der folgende Codeausschnitt veranschaulicht dies.
+Benutzer von Logik-Apps müssen bei Verwendung des Triggers den oben stehenden Ausdruck für den **triggerState**-Parameter bereitstellen. Es ist möglich, diesen Wert durch den Logik-Apps-Designer über die Erweiterungseigenschaft **x-ms-scheduler-recommendation** voreinstellen zu lassen. Die **x-ms-visibility**-Erweiterungseigenschaft kann auf den Wert *internal* festgelegt werden, sodass der Parameter selbst im Designer nicht angezeigt wird. Der folgende Codeausschnitt veranschaulicht dies.
 
     "/api/Messages/poll": {
       "get": {
@@ -280,7 +280,7 @@ Bei Pushtriggern muss der **triggerId**-Parameter die Logik-App eindeutig identi
 
     @workflow().name
 
-Mithilfe der Erweiterungseigenschaften **x-ms-scheduler-recommendation** und **x-ms-visibility** in der API-Definition kann die API-App den Logik-App-Designer anweisen, diesen Ausdruck automatisch für den Benutzer festzulegen.
+Mithilfe der Erweiterungseigenschaften **x-ms-scheduler-recommendation** und **x-ms-visibility** in der API-Definition kann die API-App den Logik-Apps-Designer anweisen, diesen Ausdruck automatisch für den Benutzer festzulegen.
 
         "parameters":[  
           {  
@@ -341,4 +341,4 @@ Im Folgenden finden Sie ein Beispiel dafür, wie diese Klasse implementiert werd
     }
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

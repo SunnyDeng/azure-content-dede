@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Preise und Kontingent für Application Insights verwalten" 
-	description="Wählen Sie den Preisplan, den Sie benötigen" 
+	pageTitle="Verwalten von Preisen und Kontingenten für Application Insights" 
+	description="Wählen Sie den benötigten Preisplan aus" 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -15,60 +15,60 @@
 	ms.date="06/09/2015" 
 	ms.author="awills"/>
 
-# Preise und Kontingent für Application Insights verwalten
+# Verwalten von Preisen und Kontingenten für Application Insights
 
 *Application Insights befindet sich in der Vorschau.*
 
-[Preise][pricing] für [Visual Studio Application Insights][start] basiert auf Datenvolumen pro Anwendung. Es gibt eine erhebliche kostenfreie Stufe, in der Sie die meisten Features mit einigen Einschränkungen erhalten.
+[Preise][pricing] für [Visual Studio Application Insights][start] basieren auf dem Datenvolumen pro Anwendung. Es gibt einen grundlegenden Free-Tarif, in dem Sie mit wenigen Einschränkungen die meisten Features nutzen können.
 
-Jede Ressource Application Insights wird als separater Dienst in Rechnung gestellt, und trägt dazu bei, um die Rechnung für Ihre Azure-Abonnement.
+Jede Application Insights-Ressource wird als separater Dienst abgerechnet und auf der Rechnung für Ihr Azure-Abonnement aufgeführt.
 
-[Finden Sie unter den Preisen Schema][pricing].
+[Informationen hierzu finden Sie in der Preisübersicht.][pricing]
 
-## Überprüfen Sie Kontingente und Preis Plan für die Application Insights-Ressource
+## Anzeigen der Kontingente und des Preisplans für Ihre Application Insights-Ressource
 
-Das Kontingent + Preise Blade aus Ihrer Anwendung Ressourceneinstellungen kann geöffnet werden.
+Sie können das Blatt zu Kontingenten und Preisen über die Ressourceneinstellungen Ihrer Anwendung öffnen.
 
-![Wählen Sie Einstellungen, Kontingent + Preisen.](./media/app-insights-pricing/01-pricing.png)
+![Wählen Sie "Einstellungen", "Kontingente + Preise".](./media/app-insights-pricing/01-pricing.png)
 
-## Wie funktioniert das Kontingent?
+## Wie funktionieren Kontingente?
 
-* In jedem Monat Kalender kann die Anwendung auf eine bestimmte Menge an Application Insights Telemetriedaten senden, einrichten. Finden Sie unter der [Preise Schema][pricing] für die tatsächlichen Werte. 
-* Das Kontingent hängt von der Preisstufe, die Sie ausgewählt haben.
-* Das Kontingent wird von Mitternacht UTC am ersten Tag jedes Monats gezählt.
-* Das Daten-Punkt-Diagramm zeigt, wie viel von Ihr Kontingent oben in diesem Monat verwendet wurde.
-* Das Kontingent wird gemessen *Datenpunkte.* Ein einzelnen Datenpunkt ist Aufrufen einer der Methoden verfolgen, ob explizit im Code oder durch eines der standardmäßigen Telemetrie-Module aufgerufen. Jede Zeile im diagnostische Suche angezeigten ist ein Datenpunkt. Jede Messung einer Metrik wie z. B. einen Leistungsindikator ist ein Datenpunkt. 
-* *Sitzungsdaten* wird nicht in das Kontingent gezählt. Dies schließt die Anzahl von Benutzern, Sitzungen, Umgebung und Device-Daten.
+* In jedem Kalendermonat kann Ihre Anwendung maximal eine bestimmte Menge an Telemetriedaten an Application Insights senden. Die genauen Zahlen können Sie der [Preisübersicht][pricing] entnehmen. 
+* Das Kontingent hängt von dem Tarif ab, den Sie ausgewählt haben.
+* Das Kontingent beginnt um Mitternacht UTC am ersten Tag jedes Monats.
+* Das Datenpunktediagramm zeigt, wie viel von Ihrem Kontingent in diesem Monat verwendet wurde.
+* Das Kontingent wird in *Datenpunkten* gemessen. Ein einzelner Datenpunkt ist ein Aufruf einer der Nachverfolgungsmethoden, unabhängig davon, ob sie explizit in Ihrem Code oder durch eines der Standardtelemetriemodule aufgerufen wird. Jede in der Diagnosesuche angezeigte Zeile ist ein Datenpunkt. Jede Messung einer Metrik wie z. B. eines Leistungsindikators ist ein Datenpunkt. 
+* *Sitzungsdaten* werden im Kontingent nicht berücksichtigt. Hierzu zählen die Anzahl von Benutzern oder Sitzungen sowie Umgebungs- und Gerätedaten.
 
 
 ## Overage
 
-Wenn die Anwendung mehr als das monatliche Kontingent sendet, können Sie:
+Wenn die Anwendung mehr als das monatliche Kontingent sendet, haben Sie folgende Möglichkeiten:
 
-* Bezahlen Sie für zusätzliche Daten. Finden Sie unter der [Preise Schema][pricing] Details. Sie können diese Option im Voraus auswählen. Diese Option ist nicht in der Preisstufe frei verfügbar.
-* Aktualisieren Sie Ihre Preisstufe.
-* Nichts Unternehmen. Sitzungsdaten weiterhin aufgezeichnet werden, aber andere Daten erscheinen nicht in diagnostische suchen oder Metriken Explorer.
+* Sie bezahlen für zusätzliche Daten. Informationen hierzu finden Sie in der [Preisübersicht][pricing]. Sie können diese Option im Voraus auswählen. Im Free-Tarif ist diese Option nicht verfügbar.
+* Sie führen ein Upgrade für Ihren Tarif aus.
+* Sie unternehmen nichts. Sitzungsdaten weiterhin aufgezeichnet, aber andere Daten werden in der Diagnosesuche oder im Metrik-Explorer nicht aufgeführt.
 
-## Premium-Testversion
+## Kostenlose Premium-Testversion
 
-Wenn Sie zuerst eine neue Application Insights-Ressource erstellen, wird es in der kostenlosen Stufe gestartet.
+Wenn Sie erstmals eine neue Application Insights-Ressource erstellen, wird diese im Free-Tarif gestartet.
 
-Zu jedem Zeitpunkt können Sie an der 30-Tage-Testversion Premium wechseln. Dies bietet Ihnen die Vorteile der Premium-Ebene. Nach 30 Tagen wird es automatisch, was auch immer Sie Stufen zurückgesetzt wurden zuvor -, sofern Sie explizit eine andere Ebene. Wählen Sie die Ebene, die Sie zu einem beliebigen Zeitpunkt während des Testzeitraums möchten, aber Sie erhalten weiterhin bis zum Ende des Zeitraums 30-Tage-Testversion.
+Sie können jederzeit zur kostenlosen 30-Tage-Testversion des Premium-Tarifs wechseln. Somit erhalten Sie die Vorteile des Premium-Tarifs. Nach 30 Tagen wird dieser automatisch auf den Tarif zurückgesetzt, den Sie zuvor verwendet haben, sofern Sie nicht explizit einen anderen Tarif auswählen. Wählen Sie den gewünschten Tarif zu einem beliebigen Zeitpunkt während des Testzeitraums aus. Sie erhalten weiterhin die kostenlose Testversion bis Ablauf des Zeitraums von 30 Tagen.
 
 
-## Wie wurde mein Quote verwendet?
+## Wie wurde mein Kontingent verwendet?
 
-Das Diagramm am unteren Rand der Preise Blade zeigt Datennutzung Punkt der Anwendung nach Punkt Datentyp gruppiert.
+Das Diagramm im unteren Bereich des Blatts mit der Preisübersicht zeigt die Datenpunktnutzung Ihrer Anwendung gruppiert nach Datenpunkttypen an.
 
-![Am unteren Rand der Preise blade](./media/app-insights-pricing/03-allocation.png)
+![Im unteren Bereich des Blatts mit der Preisübersicht](./media/app-insights-pricing/03-allocation.png)
 
-Klicken Sie auf das Diagramm für weitere Details, oder ziehen Sie für die Details eines Zeitraums.
+Klicken Sie auf das Diagramm, um weitere Details einzublenden, oder ziehen Sie den Mauszeiger darüber, um einen Zeitraum im Detail anzuzeigen.
 
-## Überprüfen Sie die Rechnung für Ihre Azure-Abonnement
+## Anzeigen der Rechnung für Ihr Azure-Abonnement
 
-Ihre Azure-Rechnung werden Gebühren für Application Insights hinzugefügt. Sehen Sie Details zu Ihren Azure Abrechnung im Bereich auf der Azure-Portal in Rechnung stellen die [Abrechnung Azure-Verwaltungsportal](https://account.windowsazure.com/Subscriptions).
+Die Gebühren für Application Insights werden Ihrer Azure-Rechnung hinzugefügt. Sie sehen die Details zu Ihrer Azure-Rechnung im Bereich "Abrechnung" des Azure-Portals oder im [Azure-Abrechnungsportal](https://account.windowsazure.com/Subscriptions).
 
-![Wählen Sie im Menü Seite Abrechnung aus.](./media/app-insights-pricing/02-billing.png)
+![Wählen Sie im seitlichen Menü die Option "Abrechnung".](./media/app-insights-pricing/02-billing.png)
 
 
 
@@ -81,4 +81,4 @@ Ihre Azure-Rechnung werden Gebühren für Application Insights hinzugefügt. Seh
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

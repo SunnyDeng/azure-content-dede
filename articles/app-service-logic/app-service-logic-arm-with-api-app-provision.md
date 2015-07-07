@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Erstellen Sie eine Logik-App mit einer API-Anwendung" 
-	description="Verwenden Sie eine Azure-Ressourcen-Manager-Vorlage, um eine Logik-App und einer API-Anwendung bereitzustellen." 
+	pageTitle="Erstellen einer Logik-App mit einer API-App" 
+	description="Verwenden Sie eine Azure-Ressourcen-Manager-Vorlage, um eine Logik-App und eine API-App bereitzustellen." 
 	services="app-service\logic" 
 	documentationCenter="" 
 	authors="tfitzmac" 
@@ -16,32 +16,32 @@
 	ms.date="06/02/2015" 
 	ms.author="tomfitz"/>
 
-# Erstellen Sie eine Logik App sowie API-app mithilfe einer Vorlage
+# Erstellen einer Logik-App und einer API-App mithilfe einer Vorlage
 
-In diesem Thema erfahren Sie, wie eine Azure-Ressourcen-Manager-Vorlage zum Erstellen einer app, Logik mit einer App-Dienst-API-Anwendung zu erstellen. Sie können die app Logik zum Entwerfen von Workflows, die Absicht, durch einen Trigger und eine Reihe von Schritten, jede die API-Anwendung aufrufen, während die sichere Authentifizierung und best Practices wie dauerhafte Ausführung kümmern formulieren.
+In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, um eine Logik-App mit einer App Service-API-App zu erstellen. Sie können die Logik-App verwenden, um Workflows zu entwerfen, in denen ein beabsichtigter Ablauf mithilfe eines Triggers und einer Reihe von Schritten ausgedrückt wird. Bei jedem Schritt wird eine API-App aufgerufen, und zugleich wird für eine sichere Authentifizierung und beständige Ausführung gesorgt.
 
-Erfahren Sie, wie um zu definieren, welche Ressourcen bereitgestellt werden und wie Sie Parameter definieren, die angegeben, wenn die Bereitstellung ausgeführt wird. Sie können diese Vorlage für Ihre eigenen Bereitstellungen verwenden oder Ihren Anforderungen anpassen.
+Sie erfahren, wie Sie definieren, welche Ressourcen bereitgestellt werden, und wie Sie Parameter definieren, die beim Ausführen der Bereitstellung angegeben werden. Sie können diese Vorlage für Ihre eigenen Bereitstellungen verwenden oder an Ihre Anforderungen anpassen.
 
-Weitere Informationen zu den Anwendungseigenschaften Logik, finden Sie unter [Logik App Workflow-Management-API](https://msdn.microsoft.com/library/azure/dn948513.aspx). Beispiele für die Definition selbst, finden Sie unter [Autor Logik App Definitionen](app-service-logic-author-definitions.md).
+Weitere Informationen zu den Eigenschaften der Logik-App finden Sie unter [API für die Workflowverwaltung einer Logik-App](https://msdn.microsoft.com/library/azure/dn948513.aspx). Beispiele für die Definition selbst finden Sie unter [Schreiben von Logik-App-Definitionen](app-service-logic-author-definitions.md).
 
-Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Authoring Azure Resource Manager Vorlagen](../resource-group-authoring-templates.md).
+Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
-Der vollständige Vorlage finden Sie unter [Logik-Anwendung mit API-app-Vorlage](https://github.com/tfitzmac/AppServiceTemplates/blob/master/LogicAppAndAPIApp.json).
+Die vollständige Vorlage finden Sie unter [Logik-App mit API-App-Vorlage](https://github.com/tfitzmac/AppServiceTemplates/blob/master/LogicAppAndAPIApp.json).
 
 ## Was Sie bereitstellen
 
-Mit dieser Vorlage können Sie Folgendes bereitstellen:
+Mit dieser Vorlage stellen Sie Folgendes bereit:
 
-- Logik App
-- API-Anwendung
+- Logik-App
+- API-App
 
 ## Parameter
 
-[AZURE.INCLUDE [App-Service-Logik-bereitstellen-Parameter](../../includes/app-service-logic-deploy-parameters.md)]
+[AZURE.INCLUDE [app-service-logic-deploy-parameters](../../includes/app-service-logic-deploy-parameters.md)]
 
 ### apiAppName
 
-Der Name der API-app.
+Der Name der API-App.
 
     "apiAppName": {
         "type": "string"
@@ -57,20 +57,20 @@ Der Name des Gateways.
 
 ### gatewayToApiAppSecret
 
-Der geheime Schlüssel für die API-Anwendung.
+Der geheime Schlüssel für die API-App.
 
     "gatewayToApiAppSecret": {
         "defaultValue": "0000000000000000000000000000000000000000000000000000000000000000",
         "type": "securestring"
     }
     
-## Ressourcen zum Bereitstellen
+## Bereitzustellende Ressourcen
 
-### App-Dienstplan
+### App Services-Plan
 
-Erstellt ein Dienstplan app.
+Erstellt einen App Services-Plan.
 
-Verwendet den gleichen Speicherort wie die Ressourcengruppe, die bereitgestellt wird.
+Der Plan verwendet den gleichen Speicherort wie die Ressourcengruppe, in der er bereitgestellt wird.
 
     {
         "apiVersion": "2014-06-01",
@@ -88,9 +88,9 @@ Verwendet den gleichen Speicherort wie die Ressourcengruppe, die bereitgestellt 
         }
     }
 
-### Web-app, die das Gateway hostet.
+### Web-App zum Hosten des Gateways
 
-Erstellt die Webanwendung als host für das Gateway.
+Erstellt die Web-App, die das Gateway hostet.
 
     {
         "type": "Microsoft.Web/sites",
@@ -142,7 +142,7 @@ Erstellt die Webanwendung als host für das Gateway.
 
 ### Gateway
 
-Beachten Sie, dass das Gateway eine untergeordnete Ressource für ein Authentifizierungstoken enthält. Dieses Token wird von der Anwendung Logik zum Aufrufen des Gateways verwendet.
+Beachten Sie, dass das Gateway eine untergeordnete Ressource für ein Authentifizierungstoken enthält. Dieses Token wird von der Logik-App zum Aufrufen des Gateways verwendet.
 
     {
         "type": "Microsoft.AppService/gateways",
@@ -187,7 +187,7 @@ Beachten Sie, dass das Gateway eine untergeordnete Ressource für ein Authentifi
         }
     }
 
-### Webanwendung zum Hosten der API-app
+### Web-App zum Hosten der API-App
 
     {
         "type": "Microsoft.Web/sites",
@@ -256,7 +256,7 @@ Beachten Sie, dass das Gateway eine untergeordnete Ressource für ein Authentifi
         }
     }
 
-### API-Anwendung
+### API-App
 
     {
         "type": "Microsoft.AppService/apiapps",
@@ -296,13 +296,13 @@ Beachten Sie, dass das Gateway eine untergeordnete Ressource für ein Authentifi
         }
     }
 
-### Logik app
+### Logik-App
 
-Erstellt die Anwendung Logik.
+Erstellt die Logik-App.
 
-Eine Logik-app benötigt einen Namen, Speicherort, SKU (diese App Dienstplan zeigt), Definition und optional Parameter.
+Eine Logik-App erfordert einen Namen, einen Speicherort, eine SKU (die auf den App Service-Plan zeigt), eine Definition sowie optional Parameter.
 
-Beachten Sie, dass die Logik app das Token verwendet, um das Gateway aufzurufen.
+Beachten Sie, dass die Logik-App das Token verwendet, um das Gateway aufzurufen.
 
     {
         "type": "Microsoft.Logic/workflows",
@@ -377,7 +377,7 @@ Beachten Sie, dass die Logik app das Token verwendet, um das Gateway aufzurufen.
 
 ## Befehle zum Ausführen der Bereitstellung
 
-[AZURE.INCLUDE [App-Dienst bereitstellen Befehle](../../includes/app-service-deploy-commands.md)]
+[AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
 
@@ -390,4 +390,4 @@ Beachten Sie, dass die Logik app das Token verwendet, um das Gateway aufzurufen.
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

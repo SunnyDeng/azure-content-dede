@@ -137,7 +137,7 @@ Die Diagnose kann weiter angepasst werden, indem Sie Schlüssel/Wert-Paare im Ab
 
 - Das Verzeichnis, in dem die Anwendungsprotokolle gespeichert werden, in Bezug auf das Web-Stammverzeichnis.
 
-- Standardwert: ..\\..\\LogFiles\\Application
+- Standardwert: ..\..\\LogFiles\\Application
 
 **DIAGNOSTICS_TEXTTRACEMAXBUFFERSIZEBYTES**
 
@@ -153,7 +153,7 @@ Die Diagnose kann weiter angepasst werden, indem Sie Schlüssel/Wert-Paare im Ab
 
 ###Herunterladen von Protokolldateien für eine Web-App
 
-Protokolldateien können über FTP, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle heruntergeladen werden.
+Protokolldateien können per FTP, mit Azure PowerShell oder mit der Azure-Befehlszeilenschnittstelle heruntergeladen werden.
 
 **FTP**
 
@@ -194,7 +194,7 @@ Sie können auch einen Live-Stream der Protokollereignisse mit dem folgenden Bef
 
 Daraufhin werden die Protokollinformationen an der Eingabeaufforderung, PowerShell, Bash- oder Terminalsitzung angezeigt, von der der Befehl ausgeführt wird.
 
-> [AZURE.NOTE]Wenn die **Azure** Befehl nicht installiert ist, finden Sie unter [zum Verwenden der Azure-Befehlszeilenschnittstelle](../virtual-machines-command-line-tools.md) Informationen zur Installation und Konfiguration.
+> [AZURE.NOTE]Falls der Befehl **azure** nicht installiert ist, finden Sie Informationen zur Installation und Konfiguration unter [Verwenden der Azure-CLI](../virtual-machines-command-line-tools.md).
 
 ### Lesen der Protokolldateien ###
 
@@ -208,7 +208,7 @@ Die Protokolldateien, die erzeugt werden, nachdem Sie Protokollierung und/oder V
 
 **Protokolldateityp: Ablaufverfolgung für Anforderungsfehler**
 
-- Speicherort: /LogFiles/W3SVC#\#\#\#\#\#\#\#\#/. Dieser Ordner enthält eine XSL-Datei und eine oder mehrere XML-Dateien. Vergewissern Sie sich, dass Sie die XSL-Datei in dasselbe Verzeichnis wie die XML-Datei(en) herunterladen, da die XSL-Datei die Funktionalität zum Formatieren und Filtern des Inhalts der XML-Datei(en) zur Anzeige in Internet Explorer zur Verfügung stellt.
+- Speicherort: /LogFiles/W3SVC#########/. Dieser Ordner enthält eine XSL-Datei und eine oder mehrere XML-Dateien. Vergewissern Sie sich, dass Sie die XSL-Datei in dasselbe Verzeichnis wie die XML-Datei(en) herunterladen, da die XSL-Datei die Funktionalität zum Formatieren und Filtern des Inhalts der XML-Datei(en) zur Anzeige in Internet Explorer zur Verfügung stellt.
 
 - Lesen Sie Dateien mit: Internet Explorer
 
@@ -283,4 +283,4 @@ Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folge
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

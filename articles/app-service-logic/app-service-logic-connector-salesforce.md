@@ -28,7 +28,7 @@ Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werd
 
 Im Rahmen der Connector-Paketeinstellungen kann der Benutzer Entitäten angeben, die der Connector verwalten kann. Aktionen, Eingabe- und Ausgabeparameter werden daraufhin dynamisch aufgefüllt. Im Folgenden werden die verschiedenen im Salesforce-Connector verfügbaren Aktionen aufgeführt.
  
-- Entität erstellen – mit dieser Aktion können Sie eine neue Salesforce-Entität, z. B. Firma, Groß-/Kleinschreibung oder ein benutzerdefiniertes Objekt erstellen
+- Entität erstellen – Verwenden Sie diese Aktion zum Erstellen einer neuen Salesforce-Entität wie z. B. Kunde, Anfrage oder ein benutzerdefiniertes Objekt.
 
 - Entität aktualisieren – Verwenden Sie diese Aktion zum Aktualisieren einer vorhandenen Salesforce-Entität
 
@@ -136,4 +136,4 @@ Lassen Sie uns eine einfache Logik-App erstellen, die einen Kunden in Salesforce
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

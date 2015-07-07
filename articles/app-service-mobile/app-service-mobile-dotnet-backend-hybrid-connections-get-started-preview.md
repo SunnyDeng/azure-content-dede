@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verbinden Sie Ihre Azure-Mobile-Anwendung mit einer lokalen SQL Server-hybridverbindungen" 
-	description="Erfahren Sie, wie mit einer App Service Mobile App hybridverbindungen eine Verbindung mit einer lokalen SQL Server" 
+	pageTitle="Verbinden der Azure Mobile-App mit einer lokalen SQL Server-Instanz über Hybridverbindungen" 
+	description="Erfahren Sie, wie Sie über Hybridverbindungen eine Verbindung mit einer lokalen SQL Server-Instanz von einer mobilen App Service-App aus herstellen können." 
 	services="app-service\mobile" 
 	documentationCenter="" 
 	authors="ggailey777" 
@@ -17,49 +17,49 @@
 	ms.author="glenga"/>
 
   
-# Eine Verbindung mit einer lokalen SQL Server Mobile-Anwendungen hybridverbindungen 
+# Herstellen einer Verbindung mit einem lokalen SQL Server von Mobile Apps mit Hybridverbindungen 
 
-Wenn Ihr Unternehmen Übergänge in die Cloud, Sie alle Ihre Ressourcen sofort zu Azure migrieren möglicherweise nicht. Hybridverbindungen können Mobile-Anwendungen Azure App Dienst sichere Verbindungen mit Ihrer lokalen Ressourcen herstellen. Auf diese Weise können Sie Ihre lokalen Daten Ihre mobilen Clients zugänglich machen, mithilfe von Azure. Unterstützt werden unter anderem alle Ressourcen, die auf einem statischen TCP-Port laufen, inklusive Microsoft SQL Server, MySQL, HTTP Web-APIs und die meisten selbst entwickelten Webdienste. Hybridverbindungen verwenden Sie Shared Access Signature (SAS)-Autorisierung zum Sichern der Verbindungen aus Ihrem mobilen Dienst und den lokalen Hybrid Connection Manager der Hybrid-Verbindung. Weitere Informationen finden Sie unter [Übersicht über Hybridverbindungen](../integration-hybrid-connection-overview.md).
+Wenn Ihr Unternehmen auf die Cloud umstellt, können Sie möglicherweise nicht alle Ihre Ressourcen sofort zu Azure migrieren. Mit Hybridverbindungen können mobile Anwendungen von Azure App Service sichere Verbindungen mit Ihren lokalen Ressourcen herstellen. Auf diese Weise können Sie Ihre lokalen Daten mithilfe von Azure für Ihre mobilen Clients zugänglich machen. Unterstützt werden unter anderem alle Ressourcen, die auf einem statischen TCP-Port laufen, inklusive Microsoft SQL Server, MySQL, HTTP Web-APIs und die meisten selbst entwickelten Webdienste. Hybridverbindungen verwenden SAS-Autorisierung (Shared Access Signature) zum Sichern der Verbindungen vom mobilen Dienst und dem lokalen Hybrid Connection Manager zur Hybridverbindung. Weitere Informationen finden Sie unter [Übersicht über Hybridverbindungen](../integration-hybrid-connection-overview.md).
 
-In diesem Lernprogramm erfahren Sie, wie eine Mobile App .NET Back-End-Verwendung eine lokalen SQL Server-Datenbank statt der standardmäßigen Azure SQL-Datenbank, die mit Ihrem Dienst bereitgestellten geändert werden.
+In diesem Lernprogramm erfahren Sie, wie Sie ein Mobile Apps-.NET-Back-End so anpassen können, dass es eine lokale SQL Server-Datenbank anstatt der standardmäßig mit Ihrem Dienst bereitgestellten Azure SQL-Datenbank verwendet.
 
 ##Voraussetzungen##
 
-In diesem Lernprogramm müssen Sie über Folgendes verfügen:
+Für dieses Lernprogramm müssen Sie über Folgendes verfügen:
 
-- **Einer vorhandenen Mobile App-Back-End-** <br/>Führen Sie die [Schnellstart-Lernprogramm](app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md) erstellen und Herunterladen einer neuen .NET Back-End-Mobile-Anwendung aus der [Azure Portal].
+- **Ein vorhandenes mobiles Apps-Back-End** <br/>Folgen Sie dem [Schnellstart-Lernprogramm](app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md) zum Erstellen und Herunterladen einer neuen mobilen .NET-Back-End-App aus dem [Azure-Portal].
 
-[AZURE.INCLUDE [Hybrid-Verbindungen-Voraussetzungen](../../includes/hybrid-connections-prerequisites.md)]
+[AZURE.INCLUDE [hybrid-connections-prerequisites](../../includes/hybrid-connections-prerequisites.md)]
 
 ## Installieren von SQL Server Express, Aktivieren von TCP/IP und Erstellen einer lokalen SQL Server-Datenbank
 
-[AZURE.INCLUDE [Hybrid-Connections-Create-On-Premises-Database](../../includes/hybrid-connections-create-on-premises-database.md)]
+[AZURE.INCLUDE [hybrid-connections-create-on-premises-database](../../includes/hybrid-connections-create-on-premises-database.md)]
 
 ## Erstellen einer Hybridverbindung
 
-Sie müssen eine neue Hybridverbindung und BizTalk-Dienst für den Codeteil Ihrer mobilen Anwendung Back-End einer Webanwendung handelt.
+Sie müssen eine neue Hybridverbindung und einen neuen BizTalk-Dienst für den Codeteil des mobilen App-Back-Ends (eine Webanwendung) erstellen.
 
-1. In der [Azure Portal], navigieren Sie zu Ihrer Mobile-Anwendung, und klicken Sie auf die Schaltfläche im Web-app-Back-End.
+1. Navigieren Sie im [Azure-Portal] zu Ihrer mobilen App, und klicken Sie auf die Schaltfläche für das Web-App-Back-End.
 
-	![Navigieren Sie zur Webanwendung](./media/app-service-mobile-dotnet-backend-hybrid-connections-get-started-preview/mobile-app-link-to-web-app-backend.png)
+	![Navigieren zur Web-App](./media/app-service-mobile-dotnet-backend-hybrid-connections-get-started-preview/mobile-app-link-to-web-app-backend.png)
 
-	Dadurch gelangen Sie auf die Webanwendung, die implementiert die Back-End-code für die Mobile App, also den Namen der mobilen Anwendung gefolgt von `-code`.
+	Dadurch gelangen Sie zur Web-App, die den Back-End-Code für die mobile App implementiert, also den Namen der mobilen App gefolgt von `-code`.
 
-2. Bildlauf nach unten Blade und klicken Sie auf der Webanwendung **hybridverbindungen**.
+2. Führen Sie im Blatt der Web-App einen Bildlauf nach unten durch, und klicken Sie auf **Hybridverbindungen**.
 	
 	![Hybridverbindungen](./media/app-service-mobile-dotnet-backend-hybrid-connections-get-started-preview/start-hybrid-connection.png)
 	
-2. Klicken Sie auf das Hybrid-Verbindungen-Blade auf **Hinzufügen** dann **neue hybridverbindung**.
+2. Klicken Sie im Blatt "Hybridverbindungen" auf **Hinzufügen** und dann auf **Neue Hybridverbindung**.
 	
-3. Auf der **Erstellen Hybrid Connection Blade**, bieten ein **Name** und **Hostnamen** für die hybridverbindung und **Port** auf `1433`.
+3. Geben Sie im **Blade zum Erstellen einer Hybridverbindung** einen **Name** und einen **Hostnamen** für die Hybridverbindung an, und legen Sie den **Port** auf `1433` fest.
 	
 	![Hybridverbindung erstellen](./media/app-service-mobile-dotnet-backend-hybrid-connections-get-started-preview/create-hybrid-connection.png)
 
-4. Klicken Sie auf **Biz sprechen Service** und geben Sie einen Namen für den BizTalk-Dienst, und klicken Sie auf **OK** zweimal.
+4. Klicken Sie auf **BizTalk-Dienst**, und geben Sie einen Namen für den BizTalk-Dienst ein. Klicken Sie zweimal auf **OK**.
 
 	Dieses Lernprogramm verwendet **mobile1**. Sie müssen einen eindeutigen Namen für Ihren neuen BizTalk Service angeben.
 
-	Nach Abschluss der der **Benachrichtigungen** Bereich blinkt die grüne **Erfolg** und **hybridverbindung** Blade zeigt die neue hybridverbindung mit dem Status als **nicht verbunden**.
+	Nach Abschluss des Prozesses leuchtet im Bereich **Benachrichtigungen** der Text **ERFOLG** in grüner Schrift, und das Blatt **Hybridverbindung** zeigt die neue Hybridverbindung mit dem Status **Nicht verbunden** an.
 	
 	![Eine Hybridverbindung wurde erstellt](./media/app-service-mobile-dotnet-backend-hybrid-connections-get-started-preview/hybrid-connection-created.png)
 	
@@ -67,17 +67,17 @@ An diesem Punkt haben Sie einen wichtigen Teil der Hybridverbindungsinfrastruktu
 
 ## Installieren des lokalen Hybridverbindungs-Managers zum Herstellen der Verbindung
 
-[AZURE.INCLUDE [App-Service-Hybrid-Connections-Manager-Install](../../includes/app-service-hybrid-connections-manager-install.md)]
+[AZURE.INCLUDE [app-service-hybrid-connections-manager-install](../../includes/app-service-hybrid-connections-manager-install.md)]
 
-## Konfigurieren Sie das Mobile App-Back-End-Projekt zum Herstellen einer SQL Server-Datenbank
+## Konfigurieren des mobilen App-Back-End-Projekts zum Herstellen einer zur SQL Server-Datenbank
 
-In diesem Schritt definieren eine Verbindungszeichenfolge für die lokale Datenbank vorhanden sein, und ändern das Mobile App-Back-End für diese Verwendung wird.
+In diesem Schritt definieren Sie eine Verbindungszeichenfolge für die lokale Datenbank und ändern das mobile App-Back-End für diese Verbindung.
 
-1. Öffnen Sie das Projekt, das Ihre Mobile App-Back-End definiert, in Visual Studio 2013. 
+1. Öffnen Sie in Visual Studio 2013 das Projekt, in dem das mobile App-Back-End definiert wird. 
 
-	Weitere Informationen zum Herunterladen von .NET Back-End-Projekt finden Sie unter [Schnellstart-Lernprogramm](app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md).
+	Weitere Informationen zum Herunterladen des .NET Back-End-Projekts finden Sie unter [Schnellstart-Lernprogramm](app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md).
 
-2. Öffnen Sie im Projektmappen-Explorer die Datei "Web.config", suchen Sie die **ConnectionStrings** Abschnitt, fügen Sie einen neuen SqlClient-Eintrag wie folgt aus, die auf der lokalen SQL Server-Datenbank verweist:
+2. Öffnen Sie im Projektmappen-Explorer die Datei "Web.config", suchen Sie den Abschnitt **connectionStrings**, fügen Sie einen neuen SqlClient-Eintrag, der auf die lokale SQL Server-Datenbank verweist, wie folgt hinzu:
 	
 	    <add name="OnPremisesDBConnection" 
          connectionString="Data Source=OnPremisesServer,1433;
@@ -87,15 +87,15 @@ In diesem Schritt definieren eine Verbindungszeichenfolge für die lokale Datenb
          MultipleActiveResultSets=True"
          providerName="System.Data.SqlClient" />
 
-	Denken Sie daran, ersetzen Sie `<**secure_password**>` in dieser Zeichenfolge mit dem Kennwort, das Sie erstellt, für die haben *HbyridConnectionLogin*.
+	Denken Sie daran, `<**secure_password**>` in dieser Zeichenfolge durch das Kennwort zu ersetzen, das Sie für *HbyridConnectionLogin* erstellt haben.
 	
 3. Klicken Sie in Visual Studio auf **Speichern**, um die Datei "Web.config" zu speichern.
 
-	> [AZURE.NOTE]Diese Verbindungseinstellung wird verwendet, wenn auf dem lokalen Computer ausgeführt. In Azure ausgeführt wird, wird diese Einstellung von der Verbindungseinstellung im Portal definiert.
+	> [AZURE.NOTE]Diese Verbindungseinstellung wird bei Ausführung auf dem lokalen Computer verwendet. Bei der Ausführung in Azure wird diese Einstellung durch die Verbindungseinstellung überschrieben, die im Portal definiert wird.
 
-4. Erweitern Sie die **Modelle** Ordner, und öffnen Sie den Modell-Datendatei, die Enden *Context.cs*.
+4. Erweitern Sie im den Ordner **Modelle**, und öffnen Sie die Datenmodelldatei, deren Name mit *Context.cs* endet.
 
-6. Ändern der **DbContext** Instanzkonstruktor übergeben Sie den Wert `OnPremisesDBConnection` auf der Basis **DbContext** Konstruktor, ähnlich wie im folgenden Codeausschnitt:
+6. Ändern Sie den **DbContext**-Instanzkonstruktor zum Übergeben des Werts `OnPremisesDBConnection` an den **DbContext**-Basiskonstruktor (ähnlich wie im folgenden Codeausschnitt):
 
         public class hybridService1Context : DbContext
         {
@@ -105,67 +105,67 @@ In diesem Schritt definieren eine Verbindungszeichenfolge für die lokale Datenb
             }
         }
 
-	Der Dienst wird jetzt die neue Verbindung mit SQL Server-Datenbank verwenden.
+	Der Dienst verwendet jetzt die neue Verbindung zur SQL Server-Datenbank.
  
-##Testen der Verbindung mit der Datenbank lokal
+##Lokales Testen der Datenbankverbindung
 
-Vor dem Veröffentlichen in Azure und die hybridverbindung verwenden, ist es eine gute Idee, sicherzustellen, dass die Datenbankverbindung funktioniert, wenn lokal ausgeführt. Auf diese Weise können leichter diagnostizieren und Verbindungsprobleme zu beheben, bevor Sie erneut veröffentlichen und nutzen Sie die hybridverbindung.
+Vor dem Veröffentlichen in Azure und dem Verwenden der Hybridverbindung sollten Sie sicherstellen, dass die Datenbankverbindung funktioniert, wenn sie lokal ausgeführt wird. Auf diese Weise können Sie leichter Verbindungsprobleme diagnostizieren und beheben, bevor Sie erneut veröffentlichen und die Hybridverbindung verwenden.
 
-[AZURE.INCLUDE [App-Service-Mobile-dotnet-Backend-Test-Local-Service-API-Documentation](../../includes/app-service-mobile-dotnet-backend-test-local-service-api-documentation.md)]
+[AZURE.INCLUDE [app-service-mobile-dotnet-backend-test-local-service-api-documentation](../../includes/app-service-mobile-dotnet-backend-test-local-service-api-documentation.md)]
 
-## Aktualisieren von Azure, um die lokale Verbindungszeichenfolge zu verwenden.
+## Aktualisieren von Azure, um die lokale Verbindungszeichenfolge zu verwenden
 
-Nun, dass Sie die Datenbankverbindung überprüft haben, müssen Sie eine Anwendungseinstellung für diese neue Verbindungszeichenfolge hinzufügen, damit sie von Azure verwendet werden kann.
+Da Sie jetzt die Datenbankverbindung überprüft haben, müssen Sie eine App-Einstellung für diese neue Verbindungszeichenfolge hinzufügen, damit sie von Azure verwendet werden kann.
 
-1. In der [Azure Portal] klicken Sie in der Web app-Back-End-Code für die Mobile Anwendung auf **alle Einstellungen**, dann **Anwendungseinstellungen**. 
+1. Klicken Sie im [Azure-Portal] im Web-App-Back-End-Code für die mobile App auf **Alle Einstellungen** und dann auf **Anwendungseinstellungen**. 
 
-3. In der **Web-app-Einstellungen** Blade, führen Sie einen Bildlauf nach unten zum **Verbindungszeichenfolgen** und Hinzufügen einer neuen **SQL Server** Verbindungszeichenfolge mit dem Namen `OnPremisesDBConnection` mit einem Wert wie `Server=OnPremisesServer,1433;Database=OnPremisesDB;User ID=HybridConnectionsLogin;Password=<**secure_password**>`.
+3. Führen Sie im Blatt **Web-App-Einstellungen** einen Bildlauf nach unten zu **Verbindungszeichenfolgen** durch, und fügen Sie eine neue **SQL Server**-Verbindungszeichenfolge mit dem Namen `OnPremisesDBConnection` mit einem Wert wie `Server=OnPremisesServer,1433;Database=OnPremisesDB;User ID=HybridConnectionsLogin;Password=<**secure_password**>` hinzu.
 
 	Ersetzen Sie `<**secure_password**>` durch das sichere Kennwort für Ihre lokale Datenbank.
 
 	![Verbindungszeichenfolge für die lokale Datenbank](./media/app-service-mobile-dotnet-backend-hybrid-connections-get-started-preview/set-sql-server-database-connection.png)
 
-2. Drücken Sie **Speichern** zum Speichern des hybrides und Verbindung Zeichenfolge Sie gerade erstellt haben.
+2. Klicken Sie auf **Speichern**, um die Hybridverbindung und die soeben erstellte Verbindungszeichenfolge zu speichern.
 
-## Veröffentlichen Sie und Testen Sie das Mobile App-Back-End in Azure 
+## Veröffentlichen und Testen des mobilen App-Back-Ends in Azure 
 
-Abschließend müssen Sie das Mobile App-Back-End auf Azure veröffentlichen, und stellen Sie sicher, dass die hybridverbindung zum Speichern von Daten in der lokalen Datenbank verwendet wird.
+Abschließend müssen Sie das mobile App-Back-End auf Azure veröffentlichen und sicherstellen, dass die Hybridverbindung zum Speichern von Daten in der lokalen Datenbank verwendet wird.
 
-3. Im Visual Studio mit der rechten Maustaste, klicken Sie auf **Veröffentlichen**, klicken Sie dann im **Web veröffentlichen** klicken Sie auf **Microsoft Azure-Websites**. 
+3. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Projekt, klicken Sie auf **Veröffentlichen**, und klicken Sie dann unter **Web veröffentlichen** auf **Microsoft Azure-Websites**. 
 
-	Anstelle von Visual Studio können Sie auch [Verwenden Sie Git zum Veröffentlichen von Ihrem Back-End-](mobile-services-dotnet-backend-store-code-source-control.md).
+	Anstelle von Visual Studio können Sie auch [Git zum Veröffentlichen Ihres Back-Ends verwenden](mobile-services-dotnet-backend-store-code-source-control.md).
 
-2. Melden Sie sich mit Ihrer Azure-Anmeldeinformationen, und wählen Sie den Dienst aus **vorhandene Websites auswählen**.
+2. Melden Sie sich mit Ihren Azure-Anmeldeinformationen an, und wählen Sie den Dienst unter **Vorhandene Websites auswählen** aus.
 
 	Visual Studio lädt die Veröffentlichungseinstellungen direkt von Azure herunter.
 
 3. Klicken Sie abschließend auf **Veröffentlichen**.
 
-	Nach der Veröffentlichung abgeschlossen ist, wird der Dienst neu gestartet wird und die Back-End-Startseite angezeigt.
+	Nach Abschluss der Veröffentlichung wird der Dienst neu gestartet wird und die Back-End-Startseite angezeigt.
 
-4. Verwenden entweder die **Probieren Sie es jetzt** wie zuvor auf der Startseite Schaltfläche oder mithilfe einer Clientanwendung, die mit der Mobile-Anwendung verbunden sind, rufen Sie einige Vorgänge, die Datenbankänderungen generieren.
+4. Verwenden Sie entweder wie zuvor die Schaltfläche **Ausprobieren** auf der Startseite, oder rufen Sie mithilfe einer Clientanwendung, die mit der mobilen App verbunden ist, einige Vorgänge auf, die Datenbankänderungen generieren.
 
-	>[AZURE.NOTE]Bei Verwendung der **jetzt testen** Schaltfläche zum Starten der Hilfe-API-Seiten, denken Sie daran, Ihre Anwendungsschlüssel als das Kennwort (mit einem leeren Benutzernamen) angeben.
+	>[AZURE.NOTE]Bei Verwendung der Schaltfläche **Ausprobieren** zum Starten der Hilfe-API-Seiten, denken Sie daran, Ihren Anwendungsschlüssel als Kennwort (mit einem leeren Benutzernamen) anzugeben.
 
-4. In SQL Server Management Studio eine Verbindung mit SQL Server-Instanz herstellen, öffnen Sie den Objekt-Explorer, erweitern Sie die **OnPremisesDB** Datenbank und erweitern Sie **Tabellen**.
+4. Stellen Sie in SQL Server Management Studio eine Verbindung mit der SQL Server-Instanz her, öffnen Sie den Objekt-Explorer, erweitern Sie die **OnPremisesDB**-Datenbank, und erweitern Sie **Tabellen**.
 
 5. Klicken Sie mit der rechten Maustaste auf die Tabelle **hybridService1.TodoItems** und wählen Sie **Top 1000 Zeilen auswählen** aus, um die Ergebnisse anzuzeigen.
 
-	Beachten Sie, dass Änderungen in Ihrer Clientanwendung generiert durch Ihre Mobile App-Back-End zur lokalen Datenbank unter Verwendung der hybridverbindung gespeichert wurden.
+	Beachten Sie, dass Änderungen in Ihrer Clientanwendung durch Ihr mobiles App-Back-End in der lokalen Datenbank unter Verwendung der Hybridverbindung gespeichert wurden.
 
-##Siehe auch##
+##Weitere Informationen##
  
 + [Website zu Hybridverbindungen](../../services/biztalk-services/)
 + [Überblick über Hybridverbindungen](../integration-hybrid-connection-overview.md)
 + [BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Skalieren", "Konfigurieren" und "Hybridverbindungen"](../biztalk-dashboard-monitor-scale-tabs.md)
-+ [Erläutert, wie Sie Änderungen des Datenmodells an einen mobilen .NET-Back-End-Dienst](../mobile-services-dotnet-backend-how-to-use-code-first-migrations.md)
++ [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts](../mobile-services-dotnet-backend-how-to-use-code-first-migrations.md)
 
 <!-- IMAGES -->
 
 <!-- Links -->
-[Azure Portal]: https://portal.azure.com/
+[Azure-Portal]: https://portal.azure.com/
 [Azure Management Portal]: http://go.microsoft.com/fwlink/p/?linkid=213885
 [Get started with Mobile Services]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

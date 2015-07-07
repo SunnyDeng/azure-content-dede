@@ -34,7 +34,7 @@ Sie benötigen Folgendes:
 * Ein Abonnement für [Microsoft Azure](http://azure.microsoft.com/). (Sie können mit der [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) beginnen.)
 
 
-## 1\. Abrufen eines Application Insights-Instrumentationsschlüssels
+## 1. Abrufen eines Application Insights-Instrumentationsschlüssels
 
 1. Melden Sie sich am [Microsoft Azure-Portal](https://portal.azure.com) an.
 2. Erstellen einer neuen Application Insights-Ressource
@@ -47,7 +47,7 @@ Sie benötigen Folgendes:
 
     ![Klicken Sie in der Übersicht über neue Ressourcen auf "Eigenschaften", und kopieren Sie den Instrumentationsschlüssel](./media/app-insights-java-get-started/03-key.png)
 
-## 2\. Hinzufügen des Application Insights SDK für Java zu Ihrem Projekt
+## 2. Hinzufügen des Application Insights SDK für Java zu Ihrem Projekt
 
 *Wählen Sie die geeignete Methode für Ihr Projekt.*
 
@@ -79,9 +79,9 @@ Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien herun
     </dependencies>
 
 
-* *Build oder Prüfsumme Validierungsfehler?*
- * Versuchen Sie es mit einer bestimmten Version, z. B.: * `<version>0.9.n</version>`. Finden Sie die neueste Version in der [SDK-Versionshinweise](app-insights-release-notes-java.md) oder in unserer [Maven-Artefakte](http://search.maven.org/#search%7Cga%7C1%7Capplicationinsights).
-* *Um ein neues SDK aktualisieren*
+* *Build- oder Prüfsummenvalidierungsfehler?*
+ * Versuchen Sie es mit einer bestimmten Version, z. B.: `<version>0.9.n</version>`. Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md) oder in unseren [Maven-Artefakten](http://search.maven.org/#search%7Cga%7C1%7Capplicationinsights).
+* *So aktualisieren Sie auf ein neues SDK*
  * Aktualisieren Sie die Abhängigkeiten des Projekts.
 
 #### Wenn Sie Gradle verwenden...
@@ -99,8 +99,8 @@ Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien herun
       // or applicationinsights-core for bare API
     }
 
-* *Build- oder Prüfsummenvalidierungsfehler? Versuchen Sie es mit einer bestimmten Version, z. B.:* `version:'0.9.n'`. *Sie finden die neueste Version in der [SDK-Versionshinweise](app-insights-release-notes-java.md).* 
-* *Um ein neues SDK aktualisieren*
+* *Build- oder Prüfsummenvalidierungsfehler? Versuchen Sie es mit einer bestimmten Version, z. B.: * `version:'0.9.n'`. *Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md).* 
+* *So aktualisieren Sie auf ein neues SDK*
  * Aktualisieren Sie die Abhängigkeiten des Projekts.
 
 #### Andernfalls...
@@ -111,7 +111,7 @@ Fügen Sie das SDK manuell hinzu:
 2. Extrahieren Sie die folgenden Binärdateien aus der ZIP-Datei, und fügen Sie sie Ihrem Projekt hinzu:
  * Applicationinsights-core
  * Applicationinsights web
- * Anmerkung-Detektor
+ * annotation-detector
  * Commons codec
  * Commons-e/a
  * Commons-lang
@@ -125,18 +125,18 @@ Fragen...
 
 * *Was ist die Beziehung zwischen den Komponenten `-core` und `-web`?*
 
- * `applicationinsights-core` bietet Ihnen die bare-API mit keine automatische Telemetrie.
- * `applicationinsights-web` erhalten Sie Metriken, die Anzahl der HTTP-Anforderung und Antwortzeiten zu verfolgen. 
+ * `applicationinsights-core` bietet Ihnen die reine API ohne automatische Telemetrie.
+ * Mit `applicationinsights-web` erhalten Sie Metriken zum Verfolgen der Anzahl der HTTP-Anforderungen und der Antwortzeiten. 
 
-* *Um das SDK zu aktualisieren.*
- * Laden Sie das aktuelle [Azure-Bibliotheken für Java](http://dl.msopentech.com/lib/PackageForWindowsAzureLibrariesForJava.html) und Ersetzen Sie die alten.
- * Werden Änderungen beschrieben, der [SDK-Versionshinweise](app-insights-release-notes-java.md).
+* *So aktualisieren Sie das SDK*
+ * Laden Sie die neuesten [Azure-Bibliotheken für Java](http://dl.msopentech.com/lib/PackageForWindowsAzureLibrariesForJava.html) herunter, und ersetzen Sie die alte Version.
+ * Änderungen werden in den [SDK-Versionshinweisen](app-insights-release-notes-java.md) beschrieben.
 
 
 
-## 3\. Hinzufügen der Datei "ApplicationInsights.XML"
+## 3. Hinzufügen der Datei "ApplicationInsights.XML"
 
-Fügen Sie ApplicationInsights.xml Ressourcenordner in Ihrem Projekt hinzu, oder stellen Sie andernfalls sicher, dass Ihr Projekt Bereitstellungspfad-Klasse hinzugefügt wurde. Kopieren Sie sie in den folgenden XML-Code.
+Fügen Sie dem Ressourcenordner in Ihrem Projekt die Datei "ApplicationInsights.xml" hinzu, oder stellen Sie sicher, dass sie dem Bereitstellungsklassenpfad Ihres Projekts hinzugefügt wird. Kopieren Sie sie in den folgenden XML-Code.
 
 Fügen Sie den Instrumentationsschlüssel ein, den Sie aus dem Azure-Portal abgerufen haben.
 
@@ -175,7 +175,7 @@ Fügen Sie den Instrumentationsschlüssel ein, den Sie aus dem Azure-Portal abge
 * Die Komponente "HTTP-Anforderung" ist optional. Sie sendet automatisch Telemetriedaten zu Anforderungen und Antwortzeiten zum Portal.
 * Die Korrelation von Ereignissen ist eine Ergänzung der HTTP-Anforderungskomponente. Sie weist den einzelnen Anforderungen, die vom Server empfangen wurden, einen Bezeichner zu und fügt diesen als Eigenschaft 'Operation.Id' jedem Telemetrieelement hinzu. Diese Eigenschaft ermöglicht das Korrelieren der jeder Anforderung zugeordneten Telemetriedaten, indem in [Diagnosesuche][diagnostic] ein Filter festgelegt wird.
 
-## 4\. Hinzufügen eines HTTP-Filters
+## 4. Hinzufügen eines HTTP-Filters
 
 Der letzte Konfigurationsschritt ermöglicht der HTTP-Anforderungskomponente das Protokollieren jeder Webanforderung. (Nicht erforderlich, wenn nur die bloße API wünschen.)
 
@@ -219,19 +219,19 @@ Fügen Sie dieses Element der Struts-Konfigurationsdatei (die in der Regel "stru
 (Wenn Sie in einem Standardstapel Interceptors definiert haben, kann der Interceptor einfach diesem Stapel hinzugefügt werden.)
 
 
-## 5\. Aktivieren der Sammlung von Leistungsindikatoren
+## 5. Aktivieren der Erfassung von Leistungsindikatoren
 
-Installieren Sie auf dem Servercomputer, wenn es sich um einen Windows-Computer handelt,
+Wenn der Servercomputer unter Windows ausgeführt wird, installieren Sie
 
 * [Microsoft Visual C++ Redistributable](http://www.microsoft.com/download/details.aspx?id=40784)
 
-## 6\. Führen Sie die Anwendung
+## 6. Ausführen der Anwendung
 
-Im Debugmodus führen Sie aus, auf dem Entwicklungscomputer oder auf dem Server veröffentlichen.
+Führen Sie sie entweder im Debugmodus auf dem Entwicklungscomputer aus, oder veröffentlichen Sie sie auf Ihrem Server.
 
-## 7\. Anzeigen Ihrer Telemetriedaten in Application Insights
+## 7. Anzeigen Ihrer Telemetriedaten in Application Insights
 
-Zurück zu der Application Insights-Ressource in [Microsoft Azure-Verwaltungsportal](https://portal.azure.com).
+Kehren Sie zur Application Insights-Ressource im [Microsoft Azure-Portal](https://portal.azure.com) zurück.
 
 HTTP-Anforderungsdaten werden auf dem Blatt "Übersicht" angezeigt. (Wenn sie nicht vorhanden sind, warten Sie einige Sekunden, und klicken Sie dann auf "Aktualisieren".)
 
@@ -261,12 +261,12 @@ Application Insights setzt voraus, dass das Format von HTTP-Anforderungen für M
 
 Dadurch werden aussagekräftige Aggregationen von Anforderungen ermöglicht, z. B. die Anzahl der Anforderungen und die durchschnittliche Ausführungszeit von Anforderungen.
 
-## Nicht behandelte Ausnahmen und Fehler bei der Anforderung
+## Nicht behandelte Ausnahmen und Anforderungsfehler
 
 
 ![](./media/app-insights-java-get-started/21-exceptions.png)
 
-Zum Sammeln von Daten auf andere Ausnahmen, [TrackException Aufrufe in den Code einfügen][apiexceptions].
+Zum Sammeln von Daten zu anderen Ausnahmen [fügen Sie TrackException-Aufrufe in den Code ein][apiexceptions].
 
 
 ## Leistungsindikatoren
@@ -328,12 +328,12 @@ Ihre Leistungsindikatoren werden im [Metrik-Explorer][metrics] als benutzerdefin
 ![](./media/app-insights-java-get-started/12-custom-perfs.png)
 
 
-## Abrufen von Benutzer-und Sitzungsdaten
+## Abrufen von Benutzer- und Sitzungsdaten
 
-OK, senden Sie Telemetrie vom Webserver. Jetzt können zum Abrufen der 360-Grad-Ansicht Ihrer Anwendung Sie weitere Überwachung hinzufügen:
+Sie senden also Telemetriedaten vom Webserver. Um jetzt eine Rundum-Ansicht Ihrer Anwendung zu erhalten, können Sie weitere Überwachungsfunktionen hinzufügen:
 
-* [Telemetriedaten zu Webseiten hinzufügen][usage] Monitor Seitenansichten und Metriken für Benutzer.
-* [Richten Sie Webtests ein][availability], um sicherzustellen, dass die Anwendung online und reaktionsfähig bleibt.
+* [Fügen Sie Ihren Webseiten Telemetrie hinzu][usage], um Seitenaufrufe und Benutzermetriken zu überwachen.
+* [Richten Sie Webtests ein][availability], um sicherzustellen, dass die Anwendung live und reaktionsfähig bleibt.
 
 ## Erfassen von Protokollablaufverfolgungen
 
@@ -370,4 +370,4 @@ Nachdem Sie das SDK installiert haben, können Sie die API verwenden, um eigene 
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

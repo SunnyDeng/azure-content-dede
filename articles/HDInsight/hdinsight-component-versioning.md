@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Neuigkeiten zu den Hadoop-Clusterversionen in HDInsight | Microsoft Azure" 
-	description="HDInsight unterstützt mehrere Hadoop-Clusterversionen, die jederzeit bereitgestellt werden können. Entdecken Sie die unterstützten Versionen von Hadoop und der HortonWorks Data Platform (HDP)." 
-	services="hdinsight" 
-	editor="cgronlun" 
-	manager="paulettm" 
-	authors="bradsev" 
+<properties
+	pageTitle="Neuigkeiten zu den Hadoop-Clusterversionen in HDInsight | Microsoft Azure"
+	description="HDInsight unterstützt mehrere bereitstellbare Hadoop-Clusterversionen. Entdecken Sie die unterstützten Versionen von Hadoop und der HortonWorks Data Platform (HDP)."
+	services="hdinsight"
+	editor="cgronlun"
+	manager="paulettm"
+	authors="bradsev"
 	documentationCenter=""/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="02/18/2015" 
+<tags
+	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="02/18/2015"
 	ms.author="bradsev"/>
 
 
@@ -42,7 +42,7 @@ Azure HDInsight unterstützt mehrere Hadoop-Clusterversionen, die jederzeit bere
 
 **Abrufen von Informationen zur aktuellen Komponentenversion**
 
-Die mit den HDInsight-Clusterversionen verknüpften Komponentenversionen können sich bei künftigen Updates für HDInsight ändern. Eine Möglichkeit, die verfügbaren Komponenten zu bestimmen und zu prüfen, welche Versionen für einen Cluster verwendet werden, ist die Ambari REST-API. Über den **GetComponentInformation**-Befehl können Informationen zu einer Dienstkomponente abgerufen werden. Ausführliche Informationen finden Sie in der [Ambari-Dokumentation][ambari-docs]. Sie können sich auch per Remotedesktop bei einem Cluster anmelden und den Inhalt des Verzeichnisses "C:\\apps\\dist" direkt prüfen, um diese Informationen abzurufen.
+Die mit den HDInsight-Clusterversionen verknüpften Komponentenversionen können sich bei künftigen Updates für HDInsight ändern. Eine Möglichkeit, die verfügbaren Komponenten zu bestimmen und zu prüfen, welche Versionen für einen Cluster verwendet werden, ist die Ambari REST-API. Über den **GetComponentInformation**-Befehl können Informationen zu einer Dienstkomponente abgerufen werden. Ausführliche Informationen finden Sie in der [Ambari-Dokumentation][ambari-docs]. Sie können sich auch per Remotedesktop bei einem Cluster anmelden und den Inhalt des Verzeichnisses "C:\apps\\dist" direkt prüfen, um diese Informationen abzurufen.
 
 
 **Versionshinweise**
@@ -60,7 +60,7 @@ Im Folgenden finden Sie einige der wichtigsten Features der HDInsight-Plattform:
 
 - **Storm** – Storm in Azure HDInsight ist jetzt allgemein verfügbar. Sie können mit nur wenigen Klicks und innerhalb weniger Minuten schnell und einfach Echtzeitanalysen bereitstellen. Apache Storm in Azure HDInsight ist ein Open-Source-Projekt des Apache Hadoop-Systems, das Zugriff auf eine Analyseplattform bietet, die zuverlässig Millionen an Ereignissen verarbeiten kann. Hadoop-Benutzer können nun Einblicke in stattfindende Ereignisse sowie vergangene Ereignisse gewinnen. Microsoft bietet auch eine integrierte Integration in Visual Studio, die die Interaktion von Entwicklern mit Storm erleichtert. Sie können jetzt in Visual Studio Storm-Topologien entwickeln, bereitstellen und debuggen.
 
-- **HDInsight unter Linux (Vorschau)** – Azure HDInsight bietet die Möglichkeit, Hadoop-Cluster bereitzustellen, die auf virtuellen Linux-Computern (Ubuntu) ausgeführt werden. Wählen Sie diese Lösung, wenn Sie mit Linux oder Unix vertraut sind, eine Migration von einer vorhandenen Linux-basierten Hadoop-Lösung durchführen oder wenn Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert wurden. Unter Linux können Sie einen HDInsight-Cluster von einem Clientcomputer mit Windows oder Linux mithilfe des Azure-Portals, der plattformübergreifenden Azure-Befehlszeilenschnittstelle (CLI) oder dem HDInsight .NET SDK (nur Windows) bereitstellen.
+- **HDInsight unter Linux (Vorschau)** – Azure HDInsight bietet die Möglichkeit, Hadoop-Cluster bereitzustellen, die auf virtuellen Linux-Computern (Ubuntu) ausgeführt werden. Wählen Sie diese Lösung, wenn Sie mit Linux oder Unix vertraut sind, eine Migration von einer vorhandenen Linux-basierten Hadoop-Lösung durchführen oder wenn Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert wurden. Unter Linux können Sie einen HDInsight-Cluster von einem Clientcomputer mit Windows oder Linux mithilfe des Azure-Portals, der Befehlszeilenschnittstelle von Azure (Azure-CLI) oder dem HDInsight .NET SDK (nur Windows) bereitstellen.
 
 - **Zusätzliche VM-Größen** – HDInsight-Cluster sind jetzt auf weiteren VM-Arten und -Größen verfügbar. HDInsight-Cluster können jetzt die für allgemeine Zwecke konzipierten Größen A2 bis A7, Knoten der D-Serie mit Solid-State-Laufwerken (SSDs) und mit um 60 % schnelleren Prozessoren sowie die Größen A8 und A9 mit InfiniBand-Unterstützung für schnelle Netzwerkverbindungen verwenden. Kunden von Apache HBase in Azure HDInsight können von den größeren Speicherkonfigurationen der D-Serie profitieren, um Ihre Leistung zu steigern. Kunden von Apache Storm in Azure HDInsight profitieren auch vom zusätzlichen Arbeitsspeicher zum Laden größerer Referenzdatasets sowie von schnelleren CPUs für einen größeren Durchsatz.
 
@@ -95,7 +95,7 @@ Im Folgenden finden Sie einige der wichtigsten Features der HDInsight-Plattform:
 In der folgenden Tabelle werden die derzeit verfügbaren Versionen von HDInsight, die entsprechenden verwendeten Versionen von Hortonworks Data Platform und die zugehörigen Relesasedaten aufgeführt. Sofern bekannt sind auch die jeweiligen Termine angegeben, ab denen der Support abläuft und sie als veraltet gelten. Beachten Sie Folgendes:
 
 * Hochverfügbare Cluster mit zwei Hauptknoten werden standardmäßig für HDInsight 2.1 und höher bereitgestellt. Für HDInsight 1.6-Cluster sind sie nicht verfügbar.
-* Nachdem der Support für eine bestimmte Version abgelaufen ist, steht sie möglicherweise nicht mehr im Azure-Portal zur Verfügung. Die folgende Tabelle zeigt, welche Versionen im Azure-Portal verfügbar sind. Clusterversionen stehen bis zu dem Zeitpunkt, an dem sie veralten, weiterhin über den Parameter `Version` im Windows PowerShell-Befehl [New-AzureHDInsightCluster](http://msdn.microsoft.com/library/dn593744.aspx) und das .NET SDK zur Verfügung. 
+* Nachdem der Support für eine bestimmte Version abgelaufen ist, steht sie möglicherweise nicht mehr im Azure-Portal zur Verfügung. Die folgende Tabelle zeigt, welche Versionen im Azure-Portal verfügbar sind. Clusterversionen stehen bis zu dem Zeitpunkt, an dem sie veralten, weiterhin über den Parameter `Version` im Windows PowerShell-Befehl [New-AzureHDInsightCluster](http://msdn.microsoft.com/library/dn593744.aspx) und das .NET SDK zur Verfügung.
 
 <table border="1"> <tr><th>HDInsight-Version</th><th>HDP-Version</a><th>Hohe Verfügbarkeit</th></th><th>Releasedatum</th><th>Verfügbar im Azure-Portal</th><th>Ablaufdatum für Support</th><th>Veraltet</th></tr> <tr><td>HDI 3.2</td><td>HDP 2.2</td><td>Ja</td><td>18.02.2015</td><td>Ja</td><td></td><td></td></tr> <tr><td>HDI 3.1</td><td>HDP 2.1</td><td>Ja</td><td>24.6.2014</td><td>Ja</td><td></td><td></td></tr> <tr><td>HDI 3.0</td><td>HDP 2.0</td><td>Ja</td><td>11.02.2014</td><td>Ja</td><td>17.09.2014</td><td>30.06.2015</td></tr> <tr><td>HDI 2.1</td><td>HDP 1.3</td><td>Ja</td><td>28.10.2013</td><td>Nein</td><td>12.05.2014</td><td>31.05.2015</td></tr> <tr><td>HDI 1.6</td><td>HDP 1.1</td><td>Nein</td><td>28.10.2013</td><td>Nein</td><td>26.04.2014</td><td>31.05.2015</td></tr> </table><br>
 
@@ -151,5 +151,6 @@ Das Datum **Veraltet ab** ist das Datum, nach dem eine Clusterversion nicht mehr
 [ambari-docs]: https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md
 
 [zookeeper]: http://zookeeper.apache.org/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

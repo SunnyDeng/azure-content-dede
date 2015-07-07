@@ -1,24 +1,24 @@
-<properties 
-   pageTitle="Erlernen von Hadoop in HDInsight mithilfe des Beispielkatalogs | Microsoft Azure" 
-   description="Der HDInsight-Katalog für erste Schritte bietet eine schnelle und einfache Möglichkeit zum Ausführen von Hadoop-Beispielanwendungen in HDInsight. Einige Beispiele enthalten Beispieldaten, oder Sie können eigene Daten angeben." 
-   services="hdinsight" 
-   documentationCenter="" 
-   authors="mumian" 
-   manager="paulettm" 
+<properties
+   pageTitle="Kennenlernen von Hadoop in HDInsight mithilfe der Beispielgalerie | Microsoft Azure"
+   description="Lernen Sie Hadoop schnell durch das Ausführen von Beispielanwendungen aus der HDInsight-Galerie für erste Schritte kennen. Verwenden Sie Beispieldaten, oder stellen Sie eigene Beispieldaten bereit."
+   services="hdinsight"
+   documentationCenter=""
+   authors="mumian"
+   manager="paulettm"
    editor="cgronlun"/>
 
-<tags 
-   ms.service="hdinsight" 
-   ms.workload="big-data" 
-   ms.tgt_pltfrm="na" 
-   ms.devlang="na" 
-   ms.topic="article" 
-   ms.date="03/31/2015" 
+<tags
+   ms.service="hdinsight"
+   ms.workload="big-data"
+   ms.tgt_pltfrm="na"
+   ms.devlang="na"
+   ms.topic="get-started-article" 
+   ms.date="03/31/2015"
    ms.author="jgao"/>
 
-# Kennenlernen von Hadoop mithilfe des HDInsight-Katalogs für erste Schritte
+# Kennenlernen von Hadoop mithilfe der HDInsight-Galerie für erste Schritte
 
-Der HDInsight-Katalog für erste Schritte bietet eine schnelle und einfache Möglichkeit zum Ausführen von Hadoop-Beispielanwendungen in HDInsight. Einige Beispiele verfügen über Beispieldaten. Für die restlichen Beispiele können Sie eigene Daten bereitstellen. Derzeit stehen die folgenden sechs Beispiele bereit (weitere folgen):
+Die HDInsight-Galerie für erste Schritte bietet eine schnelle und einfache Möglichkeit, Hadoop durch das Ausführen von Beispielanwendungen in HDInsight kennenzulernen. Einige Beispiele verfügen über Beispieldaten. Für die restlichen Beispiele können Sie eigene Daten bereitstellen. Derzeit sind die folgenden sechs Beispiele verfügbar (weitere folgen):
 
 - Lösungen mit Ihren Azure-Daten
 	- Microsoft Azure Website-Protokollanalyse
@@ -29,27 +29,27 @@ Der HDInsight-Katalog für erste Schritte bietet eine schnelle und einfache Mög
 	- Analysieren von Website-Protokollen
 	- Mahout-Filmempfehlung
 
-![Die Lösungen für HDInsight Hadoop, Storm und HBase im Katalog für erste Schritte enthalten Beispieldaten.][hdinsight.sample.gallery]
+![Lösungen für HDInsight Hadoop, Storm und HBase-Galerie für erste Schritte enthalten Beispieldaten.][hdinsight.sample.gallery]
 
 Der folgende Videoclip zeigt, wie das Beispiel zur Twitter-Trendanalyse ausgeführt wird:
 
-<center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4</a></center>
+<center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4></a></center>
 
 
-**So führen Sie ein Beispiel im Katalog für erste Schritte aus**
+**So führen Sie ein Beispiel aus der Galerie für erste Schritte aus**
 
 1.	Melden Sie sich beim [Azure-Portal][azure.portal] an.
-2.	Klicken Sie im linken Menü auf **HDInsight**. Es wird eine Liste der vorhandenen HDInsight-Cluster angezeigt, einschließlich der Hadoop-, Storm- und HBase-Cluster. 
+2.	Klicken Sie im linken Menü auf **HDInsight**. Es wird eine Liste der vorhandenen HDInsight-Cluster angezeigt, einschließlich der Hadoop-, Storm- und HBase-Cluster.
 3.	Klicken Sie auf den Cluster, in dem Sie das Beispiel ausführen möchten.
-4.	Wählen Sie am Ende der Seite die Option **QUERY CONSOLE** aus.
+4.	Wählen Sie am Ende der Seite die Option **ABFRAGEKONSOLE** aus.
 5.	Geben Sie den Hadoop-Benutzernamen und das zugehörige Kennwort für den Cluster ein.
-6.	Klicken Sie oben auf **Getting Started Gallery**.
+6.	Klicken Sie oben auf **Erste Schritte mit der Galerie**.
 7.	Klicken Sie auf eines der Beispiele. Jedes Beispiel bietet ausführliche Anweisungen zur Ausführung. Die folgende Abbildung zeigt das Beispiel zur Twitter-Trendanalyse:
 
-	![HDInsight-Beispiel zur Twitter-Trendanalyse][hdinsight.twitter.sample]
+	![HDInsight Twitter-Trendanalysebeispiel][hdinsight.twitter.sample]
 
 ## Nächste Schritte
-Weitere Möglichkeiten zum Erlernen von HDInsight:
+Andere Möglichkeiten zum Kennenlernen von HDInsight:
 
 - [HDInsight-Lernkonzept][hdinsight.learn.map]
 - [HDInsight-Infografik][hdinsight.infographic]
@@ -62,4 +62,6 @@ Weitere Möglichkeiten zum Erlernen von HDInsight:
 [hdinsight.learn.map]: hdinsight-learn-map.md
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 [azure.portal]: https://manage.windowsazure.com
-<!--HONumber=54--> 
+ 
+
+<!---HONumber=62-->

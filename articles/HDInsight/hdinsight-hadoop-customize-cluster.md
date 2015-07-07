@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Anpassen von HDInsight-Clustern mithilfe von Skriptaktion | Azure" 
+	pageTitle="Anpassen von HDInsight-Clustern mit Skriptaktionen | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mit Skriptaktionen HDInsight-Cluster anpassen können." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -70,9 +70,7 @@ Sie können Skriptaktion über das Azure-Verwaltungsportal, PowerShell-Cmdlets o
 		<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
 	<tr><td>Parameter</td>
 		<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist.</td></tr>
-    </table>
-
-Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
+</table>Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
   
 **Verwenden von Azure PowerShell-Cmdlets**
 
@@ -164,5 +162,6 @@ Unter [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight][hdi
 
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Phasen während der Clusterbereitstellung"
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

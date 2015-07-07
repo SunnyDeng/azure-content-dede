@@ -1,6 +1,6 @@
 <properties
    pageTitle="Analysieren und Verarbeiten von JSON-Dokumenten mit der Struktur in HDInsight | Microsoft Azure"
-   description="Informationen zum Verwenden und Analysieren von JSON-Dokumenten mit der Struktur in HDInsight "
+   description="Informationen zum Verwenden und Analysieren von JSON-Dokumenten mit der Struktur in HDInsight"
    services="hdinsight"
    documentationCenter=""
    authors="rashimg"
@@ -21,7 +21,7 @@
 
 JSON gehört zu den meistverwendeten Formaten im Internet. In diesem Lernprogramm erfahren Sie, wie JSON-Dokumente in der Struktur verwendet und dann analysiert werden.
 
-## JSON-Beispiel
+##JSON-Beispiel
 
 Es folgt ein Beispiel. Nehmen wir an, dass wir über das unten gezeigte JSON-Dokument verfügen. Unser Ziel ist es, dieses JSON-Dokument analysieren zu können, um dann Abfragen wie Suchwerte für Schlüssel, Aggregationen usw. ausführen zu können.
 
@@ -60,7 +60,7 @@ Es folgt ein Beispiel. Nehmen wir an, dass wir über das unten gezeigte JSON-Dok
         ] 
       }
 
-## Vereinfachen durch Wertezuordnung (Flattening) bei JSON-Dokumenten (dieser Schritt ist nur bei Pretty JSON erforderlich)
+##Vereinfachen durch Wertezuordnung (Flattening) bei JSON-Dokumenten (dieser Schritt ist nur bei Pretty JSON erforderlich)
 
 Bevor ein Strukturoperator zum Analysieren verwendet wird, muss das JSON-Dokument vorab verarbeitet werden, damit es von der Struktur verwendet werden kann.
 
@@ -97,7 +97,7 @@ Dies ist die Ausgabe dieser Abfrage:
 
 ![Vereinfachen (Flattening) des JSON-Dokuments][image-hdi-hivejson-flatten]
 
-## Analyseoptionen bei JSON-Dokumenten in der Struktur
+##Analyseoptionen bei JSON-Dokumenten in der Struktur
 
 Nun liegt das JSON-Dokument in einer Tabelle mit einer einzelnen Spalte vor, und für diese Daten jetzt mit der Struktur Abfragen ausgeführt werden. In der Struktur sind drei verschiedene Mechanismen zum Ausführen von Abfragen bei JSON-Dokumenten verfügbar:
 
@@ -107,7 +107,7 @@ Nun liegt das JSON-Dokument in einer Tabelle mit einer einzelnen Spalte vor, und
 
 Im Folgenden soll jede Methode genauer betrachtet werden.
 
-## UDF „get_json_object“
+##UDF „get_json_object“
 In der Struktur ist eine integrierte UDF namens [get_json_object](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object) verfügbar, mit der JSON-Abfragen während der Laufzeit ausgeführt werden können. Von dieser Methode werden zwei Argumente akzeptiert: der Tabellenname/Methodenname mit dem vereinfachten JSON-Dokument sowie das JSON-Feld, das analysiert werden muss. An einem Beispiel soll verdeutlicht werden, wie diese UDF funktioniert.
 
 Abrufen der Vor- und Nachnamen aller Studierenden
@@ -121,16 +121,16 @@ Dies ist die Ausgabe, wenn diese Abfrage im Konsolenfenster ausgeführt wurde:
 Bei dieser UDF gibt es einige Einschränkungen.
 
 
-- Zu den wichtigsten Einschränkungen gehört, dass diese UDF weniger leistungsfähig ist, da für jedes Feld in der Abfrage ein erneutes Analysieren der Abfrage erforderlich ist, wodurch die Leistung beeinträchtigt wird. 
-- Zweitens wird von get_json_object() die Zeichenfolgendarstellung eines Arrays zurückgegeben. Zum Umwandeln in ein Strukturarray müssen Sie reguläre Ausdrücke verwenden, um die eckigen Klammern „[“ und „]“ zu ersetzen, und Sie müssen die Funktion „Call Split“ verwenden, um das Array zu erhalten.
+- Zu den wichtigsten Einschränkungen gehört, dass diese UDF weniger leistungsfähig ist, da für jedes Feld in der Abfrage ein erneutes Analysieren der Abfrage erforderlich ist, wodurch die Leistung beeinträchtigt wird.
+- Zweitens wird von get_json_object() die Zeichenfolgendarstellung eines Arrays zurückgegeben. Zum Umwandeln in ein Strukturarray müssen Sie reguläre Ausdrücke verwenden, um die eckigen Klammern '[' und ']' zu ersetzen, und Sie müssen die Funktion "Call Split" verwenden, um das Array zu erhalten.
 
 
 Aus diesem Grund wird vom Strukturwiki empfohlen, die im Folgenden erläuterte UDF „json_tuple“ zu verwenden.
 
 
-## UDF „json_tuple“
+##UDF „json_tuple“
 
-Die andere in der Struktur verfügbare UDF namens [json_tuple](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-json_tuple) ist leistungsfähiger als [get_json_object](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object). Bei dieser Methode wird mit einer einzigen Funktion ein Satz von Schlüsseln sowie eine JSON-Zeichenfolge verwendet, um ein Tupel Werte zurückzugeben.  An einem Beispiel soll verdeutlicht werden, wie diese UDF funktioniert.
+Die andere in der Struktur verfügbare UDF namens [json_tuple](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-json_tuple) ist leistungsfähiger als [get_json_object](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object). Bei dieser Methode wird mit einer einzigen Funktion ein Satz von Schlüsseln sowie eine JSON-Zeichenfolge verwendet, um ein Tupel Werte zurückzugeben. An einem Beispiel soll verdeutlicht werden, wie diese UDF funktioniert.
 
 Nun sollen die Matrikelnummern und Noten aus dem JSON-Dokument abgerufen werden.
 
@@ -147,7 +147,7 @@ Dies ist die Ausgabe des Skripts in der Strukturkonsole:
 
 Zu den größten Nachteilen dieser UDF gehört, dass komplexe JSONs durch die wiederholte Verwendung von LATERAL VIEW schwierig zu handhaben sind. Geschachtelte JSONs können von dieser UDF nicht verarbeitet werden.
 
-## Benutzerdefiniertes Serialisierungs-/Deserialisierungsprogramm (SerDe)
+##Benutzerdefiniertes Serialisierungs-/Deserialisierungsprogramm (SerDe)
 
 Zur Analyse geschachtelter JSON-Dokumente ist SerDe die **beste Wahl**, weil das JSON-Schema definiert werden kann und Abfragen dadurch sehr einfach ausgeführt werden können.
 
@@ -157,11 +157,11 @@ Schritt 1: Stellen Sie sicher, dass das [Java SE Development Kit 7u55 JDK 1.7.0
 
 
 - Wenn Sie die Windows-Bereitstellung von HDInsight verwenden möchten, wählen Sie die x64-Windows-Version des JDK aus.
-- Rufen Sie nach Abschluss der Installation die Systemsteuerung und dann „Umgebungsvariablen hinzufügen“ auf, und fügen Sie eine neue JAVA_HOME-Umgebungsvariable hinzu, von der auf C:\\Programme\\Java\\jdk1.7.0_55 bzw. auf den Speicherort Ihres JDK verwiesen wird. In den folgenden Screenshots sehen Sie, wie die Umgebungsvariable festgelegt wird.
+- Rufen Sie nach Abschluss der Installation die Systemsteuerung und dann „Umgebungsvariablen hinzufügen“ auf, und fügen Sie eine neue JAVA_HOME-Umgebungsvariable hinzu, von der auf C:\Programme\\Java\\jdk1.7.0_55 bzw. auf den Speicherort Ihres JDK verwiesen wird. In den folgenden Screenshots sehen Sie, wie die Umgebungsvariable festgelegt wird.
 
 ![Einrichten der richtigen Konfigurationswerte für JDK][image-hdi-hivejson-jdk]
 
-Schritt 2: Rufen Sie [diesen](http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.zip) Link auf, und laden Sie Maven 3.3.1 herunter. Entpacken Sie das Archiv dort, wo Sie die Binärdateien speichern möchten. Im aktuellen Beispiel werden sie in C:\\Programme\\Maven entpackt. Fügen Sie Ihrem Pfad den BIN-Ordner hinzu, indem Sie die Systemsteuerung, „Systemvariablen für dieses Konto bearbeiten“ und dann „Umgebungsvariablen“ aufrufen. Im folgenden Screenshot sehen Sie, wie Sie vorgehen müssen.
+Schritt 2: Rufen Sie [diesen](http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.zip) Link auf, und laden Sie Maven 3.3.1 herunter. Entpacken Sie das Archiv dort, wo Sie die Binärdateien speichern möchten. Im aktuellen Beispiel werden sie in C:\Programme\\Maven entpackt. Fügen Sie Ihrem Pfad den BIN-Ordner hinzu, indem Sie die Systemsteuerung, „Systemvariablen für dieses Konto bearbeiten“ und dann „Umgebungsvariablen“ aufrufen. Im folgenden Screenshot sehen Sie, wie Sie vorgehen müssen.
 
 ![Einrichten von Maven][image-hdi-hivejson-maven]
 
@@ -171,9 +171,9 @@ Schritt 3: Klonen Sie das Projekt von der GitHub-Site [Hive-JSON-SerDe](https:/
 
 Schritt 4: Öffnen Sie den Ordner, in den Sie das Paket heruntergeladen haben, und geben Sie „mvn package“ ein. Dadurch werden die notwendigen JAR-Dateien erstellt, die Sie dann in den Cluster kopieren können.
 
-Schritt 5: Öffnen Sie als Nächstes den Zielordner im Stammordner, in den Sie das Paket heruntergeladen haben. Laden Sie die Datei „json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar“ zum Hauptknoten Ihres Clusters hoch. Ich speichere diese Datei normalerweise im Strukturbinärordner „C:\\apps\\dist\\hive-0.13.0.2.1.11.0-2316\\bin“ oder ähnlich.
+Schritt 5: Öffnen Sie als Nächstes den Zielordner im Stammordner, in den Sie das Paket heruntergeladen haben. Laden Sie die Datei „json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar“ zum Hauptknoten Ihres Clusters hoch. Ich speichere diese Datei normalerweise im Strukturbinärordner „C:\apps\\dist\\hive-0.13.0.2.1.11.0-2316\\bin“ oder ähnlich.
  
-Schritt 6: Geben Sie in der Struktureingabeaufforderung „add jar /path/to/json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar“ ein. Da sich die JAR-Datei in diesem Fall im Ordner „C:\\apps\\dist\\hive-0.13.x\\bin“ befindet, kann die JAR-Datei mit dem Namen direkt hinzugefügt werden wie unten dargestellt:
+Schritt 6: Geben Sie in der Struktureingabeaufforderung „add jar /path/to/json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar“ ein. Da sich die JAR-Datei in diesem Fall im Ordner „C:\apps\\dist\\hive-0.13.x\\bin“ befindet, kann die JAR-Datei mit dem Namen direkt hinzugefügt werden wie unten dargestellt:
 
     add jar json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar;
 
@@ -237,10 +237,10 @@ Wenn falsch formatiertes JSON übersprungen werden soll, geben Sie entsprechend 
     ALTER TABLE json_table SET SERDEPROPERTIES ( "ignore.malformed.json" = "true");
 
 
-## Weitere Optionen
+##Weitere Optionen
 Zusätzlich zu den nachfolgend aufgeführten Optionen können Sie mithilfe von Python oder anderen Sprachen auch eigenen Code entsprechend Ihrem Szenario erstellen. Wenn Ihr Python-Skript fertiggestellt ist, lesen Sie [diesen Artikel][hdinsight-python] zum Ausführen von eigenem Python-Code mit der Struktur.
 
-## Zusammenfassung
+##Zusammenfassung
 Es lässt sich zusammenfassend feststellen, dass der JSON-Operatortyp in der Struktur, den Sie auswählen, von Ihrem Szenario abhängt. Wenn in einem einfachen JSON-Dokument nur ein einziges Feld durchsucht werden soll, können Sie die Struktur-UDF „get_json_object“ verwenden. Wenn mehrere Suchschlüssel vorliegen, können Sie die UDF „json_tuple“ verwenden. Bei geschachtelten Dokumenten müssen Sie das JSON-SerDe verwenden.
 
 Wir bei HDInsight arbeiten daran, Ihnen das systemeigene Verwenden von weiteren Formaten in der Struktur zu vereinfachen. Dieses Lernprogramm wird mit weiteren Details aktualisiert, sobald diese verfügbar sind.
@@ -258,6 +258,6 @@ Wir bei HDInsight arbeiten daran, Ihnen das systemeigene Verwenden von weiteren 
 [image-hdi-hivejson-serde_query2]: ./media/hdinsight-using-json-in-hive/serde_query2.png
 [image-hdi-hivejson-serde_query3]: ./media/hdinsight-using-json-in-hive/serde_query3.png
 [image-hdi-hivejson-serde_result]: ./media/hdinsight-using-json-in-hive/serde_result.png
-
-<!--HONumber=52-->
  
+
+<!---HONumber=62-->

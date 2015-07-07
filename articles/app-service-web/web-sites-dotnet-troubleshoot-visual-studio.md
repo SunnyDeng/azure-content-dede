@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Problembehandlung von Web-Apps in Azure Web Service in Visual Studio" 
+	pageTitle="Problembehandlung von Web-Apps in Azure App Service in Visual Studio" 
 	description="Erfahren Sie mehr über die Problembehandlung für eine Azure-Web-App mithilfe von Remotedebugging-, Ablaufverfolgungs- und Protokollierungstools, die in Visual Studio 2013 integriert sind." 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -89,7 +89,7 @@ Das `customErrors`-Kennzeichen in der Datei "Web.config" ist bei der Bereitstell
 
 Häufig ist der einfachste Weg für die Suche nach der Fehlerursache die Aktivierung detaillierter Fehlermeldungen. Im ersten der vorherigen Screenshots wird dies erläutert. Dazu ist eine Änderung an der bereitgestellten Web.config-Datei erforderlich. Sie können die *Web.config*-Datei entweder im Projekt bearbeiten und das Projekt neu bereitstellen oder eine [Web.config-Transformation](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations) erstellen und eine Debugversion bereitstellen, aber es gibt noch einen einfacheren Weg: Im **Projektmappen-Explorer** können Sie Dateien in der Remote-Web-App mithilfe der *Remoteansicht*-Funktion direkt anzeigen und bearbeiten.
 
-1. In **Server-Explorer**, erweitern Sie **Azure**, erweitern Sie **App Service**, erweitern Sie die Ressourcengruppe, die Ihre Webanwendung befindet und erweitern Sie dann den Knoten für Ihre Webanwendung.
+1. Erweitern Sie in **Server-Explorer** den Knoten **Azure**, erweitern Sie **App Service**, erweitern Sie die Ressourcengruppe, in der sich Ihre Web-App befindet, und erweitern Sie anschließend den Knoten für Ihre Web-App.
 
 	Daraufhin werden Knoten angezeigt, mit denen Sie Zugriff auf die Inhalts- und Protokolldateien der Web-App erhalten.
 
@@ -97,7 +97,7 @@ Häufig ist der einfachste Weg für die Suche nach der Fehlerursache die Aktivie
 
 	![Öffnen der Datei Web.config](./media/web-sites-dotnet-troubleshoot-visual-studio/webconfig.png)
 
-	Visual Studio öffnet die Datei "Web.config" in der Remote-Web-App und zeigt neben dem Dateinamen in der Titelleiste [Remote] an.
+	Visual Studio öffnet die Datei „Web.config“ in der Remote-Web-App und zeigt den Text „[Remote]“ neben dem Dateinamen in der Titelleiste an.
 
 3. Fügen Sie dem `system.web`-Element die folgende Zeile hinzu:
 
@@ -763,4 +763,4 @@ Informationen darüber, wie Sie statt einer Web-App einen Azure-Cloud-Dienst deb
 [GetStartedWJ]: websites-dotnet-webjobs-sdk.md
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

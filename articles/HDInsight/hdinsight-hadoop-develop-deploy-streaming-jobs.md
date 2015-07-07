@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Entwickeln von C# Hadoop-Streamingprogrammen für HDInsight | Azure" 
+	pageTitle="Entwickeln von C# Hadoop-Streamingprogrammen für HDInsight | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie MapReduce-Programme für Hadoop-Streaming in C# entwickeln und in Azure HDInsight bereitstellen können." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -37,7 +37,7 @@ Dieses Lernprogramm beschreibt Folgendes:
 Bevor Sie mit diesem Lernprogramm beginnen, benötigten Sie Folgendes:
 
 - Installieren Sie den HDInsight-Emulator. Informationen dazu finden Sie unter [Erste Schritte mit dem HDInsight-Emulator][hdinsight-get-started-emulator].
-- Installieren Sie Azure PowerShell auf dem Emulator-Computer. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
+- Installieren Sie Azure PowerShell auf dem Emulator-Computer. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install].
 - Schließen Sie ein Azure-Abonnement ab. Informationen dazu finden Sie unter [Erste Schritte mit Azure][azure-purchase-options], [Spezielle Angebote][azure-member-offers] oder [Kostenlose einmonatige Testversion][azure-free-trial].
 
 
@@ -149,8 +149,8 @@ Diese Wortzähllösung besteht aus zwei Konsolenanwendungsprojekten: Mapper und 
 
 Die ausführbaren Dateien für Mapper und Reducer haben folgende Pfade:
 
-- C:\\Tutorials\\WordCount\\WordCountMapper\\bin\\Debug\\WordCountMapper.exe
-- C:\\Tutorials\\WordCount\\WordCountReducer\\bin\\Debug\\WordCountReducer.exe
+- C:\Tutorials\\WordCount\\WordCountMapper\\bin\\Debug\\WordCountMapper.exe
+- C:\Tutorials\\WordCount\\WordCountReducer\\bin\\Debug\\WordCountReducer.exe
 
 
 ##<a name="test"></a>Testen des Programms im Emulator
@@ -215,7 +215,7 @@ In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop_home% verw
 
 **So führen Sie den MapReduce-Auftrag mit Azure PowerShell aus**
 
-1. Öffnen Sie Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure]. 
+1. Öffnen Sie Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install]. 
 3. Führen Sie die folgenden Befehle aus, um die Variablen festzulegen:
 
 		$clusterName = "http://localhost:50111"
@@ -316,7 +316,7 @@ Azure HDInsight verwendet Azure-Blobspeicher als Standarddateisystem. Sie könne
 		$localFolder = "C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common"
 		$destFolder = "WordCount/Input"
 
-	Beachten Sie: Der lokale Quellordner ist **C:\\hdp\\hadoop-2.4.0.2.1.3.0-1981\\share\\doc\\hadoop\\common**, und der Zielordner ist **WordCount/Input**. Der Quellordner ist der Speicherort der .txt-Dateien im HDInsight-Emulator. Als Ziel wird die Ordnerstruktur verwendet, die im Azure-Blobcontainer abgebildet wird.
+	Beachten Sie: Der lokale Quellordner ist **C:\hdp\\hadoop-2.4.0.2.1.3.0-1981\\share\\doc\\hadoop\\common**, und der Zielordner ist **WordCount/Input**. Der Quellordner ist der Speicherort der .txt-Dateien im HDInsight-Emulator. Als Ziel wird die Ordnerstruktur verwendet, die im Azure-Blobcontainer abgebildet wird.
 
 3. Führen Sie die folgenden Befehle aus, um eine Liste der .txt-Dateien im Quellordner abzurufen:
 
@@ -466,7 +466,7 @@ Dieser Abschnitt enthält ein Azure PowerShell-Skript, das alle zur Ausführung 
 		Write-Host "Delete the storage account" -ForegroundColor Green
 		Remove-AzureStorageAccount -StorageAccountName $storageAccountName_Default
 
-3. Legen Sie die ersten vier Variablen in dem Skript fest. Die Variable **$stringPrefix** wird den angegebenen Zeichenfolgen für die Namen des HDInsight-Clusters, Speicherkontos und Blobspeichercontainers vorangestellt. Da diese Namen 3 bis 24 Zeichen lang sein dürfen, müssen Sie sicherstellen, dass die angegebene Zeichenfolge und die im Skript verwendeten Namen diese Längeneinschränkung nicht überschreiten. Verwenden Sie für **$stringPrefix** nur Kleinbuchstaben.
+3. Legen Sie die ersten vier Variablen in dem Skript fest. Die Variable **$stringPrefix** wird den angegebenen Zeichenfolgen für die Namen des HDInsight-Clusters, Speicherkontos und Blobspeichercontainers vorangestellt. Da diese Namen zwischen 3 und 24 Zeichen enthalten müssen, müssen Sie sicherstellen, dass die angegebene Zeichenfolge und die im Skript verwendeten Namen zusammen diese Längeneinschränkung nicht überschreiten. Verwenden Sie für **$stringPrefix** nur Kleinbuchstaben.
 
 	Die Variablen **$storageAccountName_Data** und **$containerName_Data** sind das Speicherkonto und der Container, das/den Sie in den vorigen Schritten erstellt haben. Geben Sie die entsprechenden Namen an. Diese Komponenten werden zur Speicherung von Datendateien und Anwendungen verwendet. Die Variable **$location** muss mit dem Speicherort des Datenspeicherkontos übereinstimmen.
 
@@ -517,7 +517,7 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Hadoop-Streaming-MapReduce-Auf
 - [Entwickeln von Java MapReduce-Programmen für HDInsight][hdinsight-develop-mapreduce]
 - [Verwenden von Azure-Blobspeicher mit HDInsight][hdinsight-storage]
 - [Verwalten von HDInsight mit Azure PowerShell][hdinsight-admin-powershell]
-- [Hochladen von Daten in HDInsight][hdinsight-upload-data]
+- [Hochladen von Daten zu HDInsight][hdinsight-upload-data]
 - [Verwenden von Hive mit HDInsight][hdinsight-use-hive]
 - [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
 
@@ -540,7 +540,7 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Hadoop-Streaming-MapReduce-Auf
 [hdinsight-power-query]: hdinsight-connect-excel-power-query.md
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-[Powershell-install-configure]: ../powershell-install-configure.md
+[powershell-install]: ../powershell-install-configure.md
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-hadoop-develop-deploy-streaming-jobs/HDI.WordCountDiagram.gif "Anwendungsfluss der MapReduce-Wortzählung"
 
@@ -549,5 +549,6 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Hadoop-Streaming-MapReduce-Auf
 
 
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

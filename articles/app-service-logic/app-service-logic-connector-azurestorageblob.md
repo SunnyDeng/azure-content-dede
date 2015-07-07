@@ -59,7 +59,7 @@ Klicken Sie im rechten Bereich auf "Azure Storage-Blobconnector". Der Connector 
 
 ![Liste der Azure Storage-Blobaktionen][10]
 
-Azure-Speicher-Blob-Connector unterstützt sechs Aktionen. Dies sind:
+Azure Storage-Blob-Connector unterstützt sechs Aktionen. Dies sind:
 
 - **Blob abrufen** – Abrufen eines bestimmten Blobs aus dem Container.
 - **Blob hochladen** – Hochladen eines neuen Blobs oder Aktualisieren eines vorhandenen Blobs.
@@ -108,4 +108,4 @@ Sie können ihn auf einen beliebigen Wert festlegen. Dies ist nur ein Beispiel. 
 [11]: ./media/app-service-logic-connector-azurestorageblob/BasicInputsUploadBlob.PNG
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -20,14 +20,14 @@
 
 Das Erstellen von Web-Apps ist in einer App Service-Umgebung nahezu identisch mit den Schritten in einer regulären Umgebung. Wenn Sie mit der Funktion der App Service-Umgebung nicht vertraut sind, lesen Sie das Dokument [Was ist eine App Service-Umgebung](app-service-app-service-environment-intro.md).
 
-Um eine Web-App in einer App Service-Umgebung erstellen zu können, müssen Sie zunächst über eine App Service-Umgebung verfügen. Weitere Details zum Erstellen einer ASE, lesen Sie das Dokument hier: [Gewusst wie: Erstellen einer App-Service-Umgebung](app-service-web-how-to-create-an-app-service-environment.md).
+Um eine Web-App in einer App Service-Umgebung erstellen zu können, müssen Sie zunächst über eine App Service-Umgebung verfügen. Einzelheiten zum Erstellen einer App Service-Umgebung finden Sie im Dokument [Erstellen einer App Service-Umgebung](app-service-web-how-to-create-an-app-service-environment.md).
 
 Der erste Schritt beim Erstellen einer Web-App ist das Erstellen oder Auswählen eines App Service-Plans (ASP). Um einen ASP in einer App Service-Umgebung zu erstellen, führen Sie zunächst die üblichen Schritte zum Erstellen einer Web-App durch. Wählen Sie dazu "Neu" -> "Web + mobil" -> "Web-App".
 
 ![][1]
 
 
-Bei Verwendung eines App Service-Plans, der in Ihrer App Service-Umgebung bereits erstellt wurde, wählen Sie den gewünschten Plan aus, geben den Namen für Ihre Web-App ein und wählen "Erstellen". Diese Vorgehensweise entspricht den üblichen Schritten zum Erstellen einer Web-App. Der Hauptunterschied liegt darin, dass der Zugriff auf Ihre Web-App über die folgende Adresse erfolgt: 
+Bei Verwendung eines App Service-Plans, der in Ihrer App Service-Umgebung bereits erstellt wurde, wählen Sie den gewünschten Plan aus, geben den Namen für Ihre Web-App ein und wählen "Erstellen". Diese Vorgehensweise entspricht den üblichen Schritten zum Erstellen einer Web-App. Der Hauptunterschied liegt darin, dass der Zugriff auf Ihre Web-App über die folgende Adresse erfolgt:
 
 [*Sitename*].[*Name Ihrer App Service-Umgebung*].p.azurewebsites.net
 
@@ -91,4 +91,4 @@ Nach dem Erstellen der Web-App und des App Service-Plans, sollten Sie eine Skali
 [HowtoConfigureASE]: http://azure.microsoft.com/documentation/articles/app-service-web-configure-an-app-service-environment
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

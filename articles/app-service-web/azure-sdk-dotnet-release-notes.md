@@ -25,7 +25,7 @@ Dieses Thema enthält Links zu Azure SDK für .NET-Versionshinweise.
 
 ##Versionshinweise zu Azure SDK für .NET 2.6
 
-[Azure SDK für .NET 2.6 Anmerkungen zu dieser Version](azure-sdk-dotnet-release-notes-2_6.md)
+[Versionshinweise zu Azure SDK für .NET 2.6](azure-sdk-dotnet-release-notes-2_6.md)
 
 ##Versionshinweise zu Azure SDK für .NET 2.5.1
 
@@ -59,7 +59,7 @@ Dieses Thema enthält Links zu Azure SDK für .NET-Versionshinweise.
 
 [Azure SDK für .NET](http://azure.microsoft.com/downloads/archive-net-downloads/)
 
-[Versionshinweise für Azure SDK auf MSDN](https://msdn.microsoft.com/library/azure/dn627519.aspx)
+[Azure SDK-Versionshinweise auf MSDN](https://msdn.microsoft.com/library/azure/dn627519.aspx)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

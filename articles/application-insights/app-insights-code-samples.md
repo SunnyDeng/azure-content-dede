@@ -19,18 +19,18 @@
 
 *Application Insights befindet sich in der Vorschau.*
 
-Dies ist eine Zusammenstellung von Codebeispielen, die Sie Funktionsweisen [Visual Studio Application Insights](app-insights-get-started.md).
+Dies ist eine Zusammenstellung von Codebeispielen, die die Verwendung von [Visual Studio Application Insights](app-insights-get-started.md) veranschaulichen.
 
 ## Webdienste
 
-* [Telemetrie Azure Web- und Worker-Rollen hinzufügen](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService).
+* [Hinzufügen von Telemetrie zu Azure-Web- und -Workerrollen hinzufügen](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService).
 
-## Fortlaufende exportieren
+## Fortlaufender Export
 
-Zum Analysieren von Telemetriedaten mit Ihren eigenen Tools [exportieren](app-insights-export-telemetry.md) in den Speicher, in dem Sie analysieren und verarbeiten können.
+Zum Analysieren von Telemetriedaten mit Ihren eigenen Tools [exportieren](app-insights-export-telemetry.md) Sie die Daten in den Speicher und analysieren und verarbeiten sie dort.
 
-* [Exportieren Sie in eine Worker-Rolle mit SQL](app-insights-code-sample-export-telemetry-sql-database.md)
-* [Exportieren Sie in SQL mit Streamanalyse](app-insights-code-sample-export-sql-stream-analytics.md)
+* [Exportieren in SQL über eine Workerrolle](app-insights-code-sample-export-telemetry-sql-database.md)
+* [Exportieren in SQL mit Stream Analytics](app-insights-code-sample-export-sql-stream-analytics.md)
 
 
 ## Automatisieren von Aufgaben
@@ -46,4 +46,4 @@ Zum Analysieren von Telemetriedaten mit Ihren eigenen Tools [exportieren](app-in
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

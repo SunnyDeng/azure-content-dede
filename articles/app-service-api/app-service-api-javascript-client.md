@@ -20,7 +20,7 @@
 
 ## Übersicht
 
-Dieser Artikel zeigt, wie Sie einen HTML- und einen JavaScript-Client für eine [API-App](app-service-api-apps-why-best-platform.md) in[ Azure App Service](/documentation/services/app-service/) erstellen. Der Artikel setzt eine praktische Kenntnisse von HTML und JavaScript und verwendet die [AngularJS](https://angularjs.org/) JavaScript-Framework zum Erstellen von REST Aufrufe der API-App.
+Dieser Artikel zeigt, wie Sie einen HTML- und einen JavaScript-Client für eine [API-App](app-service-api-apps-why-best-platform.md) in[ Azure App Service](/documentation/services/app-service/) erstellen. In diesem Artikel wird vorausgesetzt, dass Sie bereits mit der Arbeit in HTML und JavaScript vertraut sind. Zum Durchführen von REST-Aufrufen an die API-App wird das JavaScript-Framework [AngularJS](https://angularjs.org/) verwendet.
 
 Nachfolgend werden einige Artikel aufgeführt, die Sie für einen einfacheren Einstieg vor der Bearbeitung dieses Artikels lesen sollten.
 
@@ -28,7 +28,7 @@ Nachfolgend werden einige Artikel aufgeführt, die Sie für einen einfacheren Ei
 2. In [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) stellen Sie die API-App für Ihr Azure-Abonnement bereit.
 3. In [Debuggen einer API-App](../app-service-dotnet-remotely-debug-api-app.md) verwenden Sie Visual Studio, um ein Remotedebugging des Codes durchzuführen, während dieser in Azure ausgeführt wird.
 
-In diesem Artikel wird auf diesen früheren Artikeln erstellt, durch die Demonstration, wie Ihre HTML-Anwendungen JavaScript auf Ihre Back-End-API-Anwendungen verwenden können.
+Der vorliegende Artikel baut auf den zuvor genannten Artikeln auf und veranschaulicht, wie Ihre HTML-Anwendungen mithilfe von JavaScript auf Ihre Back-End-API-Apps zugreifen können.
 
 ## Aktivieren von CORS
 
@@ -36,9 +36,9 @@ Typischerweise wird CORS (Cross-Origin Resource Sharing) in HTML-Anwendungen ben
 
 ### Aktivieren von CORS für API-App-Gateways
 
-API-App-Gateways kann konfiguriert werden, um CORS über das Azure Preview-Portal zu aktivieren. Durch Hinzufügen von **MS_CrossDomainOrigins** *appSetting* können Sie angeben, welche URLs zum Aufrufen Ihrer API-App berechtigt sind. In diesem Abschnitt wird erläutert, wie Sie *appSetting* zum Aktivieren von CORS auf API-Gatewayebene verwenden.
+API-App-Gateways können mit dem Azure-Vorschauportal zur Aktivierung von CORS konfiguriert werden. Durch Hinzufügen von **MS_CrossDomainOrigins** *appSetting* können Sie angeben, welche URLs zum Aufrufen Ihrer API-App berechtigt sind. In diesem Abschnitt wird erläutert, wie Sie *appSetting* zum Aktivieren von CORS auf API-Gatewayebene verwenden.
 
-1. Navigieren Sie im Azure-Vorschauportal zum Blatt für die API-App, für die Sie CORS aktivieren möchten. Klicken Sie im Blatt auf das Symbol *Gateway* für Ihre API-App. 
+1. Navigieren Sie im Azure-Vorschauportal zum Blatt für die API-App, für die Sie CORS aktivieren möchten. Klicken Sie auf dem Blatt auf das Symbol *Gateway* für Ihre API-App. 
 
 	![Klick auf die Schaltfläche für das API-App-Gateway](./media/app-service-api-javascript-client/19-api-app-blade.png)
 
@@ -143,7 +143,7 @@ Das Vorgehen zum Aktivieren von CORS in Web API wird im ASP.NET-Artikel [Aktivie
 
 In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren AngularJS in der Webanwendung und verknüpfen ein einfaches HTML-Front-End mit der API-App. Sie stellen die Web-App anschließend in Azure App Service bereit. Die HTML-Web-App verfügt über ein Bindung mit der API-App, zeigt die aus der API-App abgerufenen Daten an und stellt für die Benutzer eine einfache Oberfläche für die Contacts-API bereit.
 
-1. Mit der rechten Maustaste in der Lösung, die Sie zuvor erstellt [eine API-App erstellen](app-service-dotnet-create-api-app.md), und wählen Sie **Hinzufügen -> Neues Projekt**
+1. Klicken Sie mit der rechten Maustaste auf das Projekt, das Sie zuvor in [Erstellen einer API-App](app-service-dotnet-create-api-app.md) erstellt haben, und wählen Sie **Hinzufügen -> Neues Projekt**.
 
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/02-add-project.png)
 
@@ -252,13 +252,13 @@ In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren Ang
             </tfoot>
         </table>
 
-1. In der `tbody` und `tfoot` Elemente ersetzen Sie jeden [ mit {und jede ] mit}. (Diese Website ist derzeit keine doppelten geschweiften Klammer Ausdrücke in den Codeblöcken angezeigt.)
+1. Ersetzen Sie in den `tbody`- und `tfoot`-Elementen jedes Vorkommen von [ durch { und jedes Vorkommen von ] durch }. (Aktuell ist es auf dieser Website nicht möglich, Ausdrücke mit doppelten geschweiften Klammern in Codeblöcken anzuzeigen.)
 
-2. Mit der rechten Maustaste die *index.html* Datei, und klicken Sie auf **als Startseite festlegen**.
+2. Klicken Sie mit der rechten Maustaste auf die Datei *index.html*, und klicken Sie auf **Als Startseite festlegen**.
 
-3. Mit der rechten Maustaste die *index.html* Datei, und klicken Sie auf **im Browser anzeigen**.
+3. Klicken Sie mit der rechten Maustaste auf die Datei *index.html*, und klicken Sie auf **In Browser anzeigen**.
 
-	Beachten Sie die Vorlage Handlebars in der HTML-Ausgabe. Sie führen im nächsten Schritt eine Datenbindung für diese HTML-Elemente durch.
+	Beachten Sie die handlebars-Vorlagen in der HTML-Ausgabe. Sie führen im nächsten Schritt eine Datenbindung für diese HTML-Elemente durch.
 
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/09-template-ui.png)
 
@@ -310,15 +310,15 @@ In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren Ang
             $scope.refresh();
         });
 
-1 in den Code, die Sie gerade hinzugefügt, um index.html haben, ersetzen Sie die Portnummer in der Basis-URL (`http://localhost:1578`) mit der tatsächlichen Portnummer für Ihre API-Projekt.
+Ersetzen Sie im Code, den Sie gerade der Datei "index.html" hinzugefügt haben, die Portnummer in der Basis-URL (`http://localhost:1578`) durch die tatsächliche Portnummer für Ihr API-Projekt.
 
 	> **Note** Don't use the port number of the HTML client project. You can right-click the API project and click **Debug > Start New Instance** to get a browser window that shows the port number.
 
-1. Stellen Sie sicher, dass das API-App-Projekt auch ausgeführt wird, wenn Sie HTML-Client oder den JavaScript-HTML-Code nicht ordnungsgemäß funktioniert. Klicken Sie mit der rechten Maustaste auf die Projektmappe, und wählen Sie **Eigenschaften**. Legen Sie anschließend beide Webprojekte auf **Starten ohne Debugging** fest, und geben Sie an, dass das API-Projekt zuerst ausgeführt wird. 
+1. Stellen Sie sicher, dass das API-App-Projekt beim Ausführen des HTML-Clients ebenfalls ausgeführt wird, sonst funktioniert der JavaScript-HTML-Code nicht ordnungsgemäß. Klicken Sie mit der rechten Maustaste auf die Projektmappe, und wählen Sie **Eigenschaften**. Legen Sie anschließend beide Webprojekte auf **Starten ohne Debugging** fest, und geben Sie an, dass das API-Projekt zuerst ausgeführt wird. 
 
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/10-run-both-web-projects.png)
 
-1. Führen Sie die Projektmappe, und der HTML-und JavaScript-Client eine Verbindung mit und zeigt Daten aus der API-App-Projekt.
+1. Führen Sie das Projekt aus. Der HTML/JavaScript-Client stellt eine Verbindung mit dem API-App-Projekt her und zeigt Daten aus diesem an.
 
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/11-web-client-running.png)
 
@@ -328,7 +328,7 @@ In diesem Abschnitt stellen Sie den HTML/JavaScript-Client als eine App Service-
 
 > Hinweis: Im vorliegenden Abschnitt wird vorausgesetzt, dass Sie den Artikel [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) gelesen oder bereits eine eigene API-App bereitgestellt haben.
 
-1. Öffnen Sie das Blatt der API-App im Azure-Vorschauportal. Klicken Sie auf die URL im Blatt, um die API-App in Ihrem Browser zu öffnen. Kopieren Sie nach dem Öffnen die URL der API-App aus der Browseradressleiste. 
+1. Öffnen Sie das Blatt der API-App im Azure-Vorschauportal. Klicken Sie auf die URL auf dem Blatt, um die API-App in Ihrem Browser zu öffnen. Kopieren Sie nach dem Öffnen die URL der API-App aus der Browseradressleiste. 
 
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/12-open-api-app-from-blade.png)
 
@@ -336,7 +336,7 @@ In diesem Abschnitt stellen Sie den HTML/JavaScript-Client als eine App Service-
 
 		$scope.baseUrl = 'https://microsoft-apiappf7e042ba8e5233ab4312021d2aae5d86.azurewebsites.net';
 
-	Beachten Sie, dass die URL HTTPS angibt. Die Verwendung von HTTPS ist nicht optional. HTTP unterstützt-API-Anwendungen nicht.
+	Beachten Sie, dass die URL HTTPS angibt. Die Verwendung von HTTPS ist nicht optional. API-Apps bieten keine Unterstützung für HTTP.
 
 1. Klicken Sie mit der rechten Maustaste auf das HTML/JavaScript-Webprojekt, und wählen Sie den Kontextmenüeintrag **Veröffentlichen**.
 
@@ -366,8 +366,8 @@ In diesem Abschnitt stellen Sie den HTML/JavaScript-Client als eine App Service-
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/18-web-app-visible-in-resource-group.png)
 
 ## Zusammenfassung 
-Das vorliegende Beispiel hat gezeigt, wie Sie AngularJS als JavaScript-Plattform für den Zugriff auf API-App-Back-Ends verwenden können. Sie können die REST-Access-Funktionalität zum anderen JavaScript-Frameworks verwenden ändern.
+Das vorliegende Beispiel hat gezeigt, wie Sie AngularJS als JavaScript-Plattform für den Zugriff auf API-App-Back-Ends verwenden können. Sie können die REST-Zugriffsfunktionalität ändern, um auf ein beliebiges anderes JavaScript-Framework zuzugreifen.
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

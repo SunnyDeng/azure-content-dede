@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Verwenden von SSH-Schlüsseln mit Hadoop für Linux-basiertes HDInsight unter Windows | Azure"
-   description="Erfahren Sie, wie Sie SSH-Schlüssel für die Authentifizierung bei Linux-basierten HDInsight-Clustern erstellen und verwenden."
+   pageTitle="Verwenden von SSH-Schlüsseln mit Hadoop in Linux-basierten Clustern unter Windows | Microsoft Azure"
+   description="Erfahren Sie, wie Sie SSH-Schlüssel für die Authentifizierung bei Linux-basierten HDInsight-Clustern erstellen und verwenden. Verbinden Sie Cluster über Windows-basierte Clients mithilfe des PuTTY-SSH-Clients."
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
@@ -108,7 +108,7 @@ Weitere Informationen zur Verwendung dieses Befehls finden Sie unter <a href="..
 
 3. Wählen Sie in **Category** die Option **Session** aus. Geben Sie auf dem Bildschirm **Basic options for your PuTTY session** die SSH-Adresse Ihres HDInsight-Servers in das Feld **Host name (or IP address)** ein. Die SSH-Adresse ist Ihr Clustername, gefolgt von **-ssh.azurehdinsight.net**. Beispiel: **mycluster-ssh.azurehdinsight.net**.
 
-	![PuTTY-Oberfläche mit eingegebener SSH-Adresse ](./media/hdinsight-hadoop-linux-use-ssh-windows/puttyaddress.png)
+	![PuTTY-Oberfläche mit eingegebener SSH-Adresse](./media/hdinsight-hadoop-linux-use-ssh-windows/puttyaddress.png)
 
 4. Geben Sie zum Speichern der Verbindungsinformationen für die künftige Verwendung einen Namen für diese Verbindung unter **Saved Sessions** ein, und klicken Sie dann auf **Save**. Die Verbindung wird zur Liste der gespeicherten Sitzungen hinzugefügt.
 
@@ -256,7 +256,7 @@ Wenn Sie FoxyProxy Standard installiert haben, konfigurieren Sie es folgenderma�
 
 	* **Name des Musters**: **Hauptknoten** – Dies ist lediglich ein Anzeigename für das Muster.
 
-	* **URL-Muster**: ***Hauptknoten*** – Definiert ein Muster, das mit allen URLs übereinstimmt, die das Wort **Hauptknoten** enthalten.
+	* **URL-Muster**: **\\*Hauptknoten\\*** – Definiert ein Muster, das mit allen URLs übereinstimmt, die das Wort **Hauptknoten** enthalten.
 
 	![FoxyProxy-Muster](./media/hdinsight-hadoop-linux-use-ssh-windows/foxypattern.png)
 
@@ -277,5 +277,6 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

@@ -75,7 +75,7 @@ Sie können jederzeit eine manuelle Sicherung vornehmen.
 <a name="automatedbackups"></a>
 ## Konfigurieren automatischer Sicherungen
 
-1. Legen Sie auf dem Blatt **Sicherungen** die Option **Geplante Sicherung** auf „EIN“ fest.
+1. Legen Sie auf dem Blatt **Sicherungen** die Option **Geplante Sicherung** auf "EIN" fest.
 	
 	![Automatisierte Sicherungen aktivieren][SetAutomatedBackupOn]
 	
@@ -107,53 +107,53 @@ Sie können jederzeit eine manuelle Sicherung vornehmen.
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 <a name="partialbackups"></a>
-## Sicherung nur ein Teil der site
+## Sichern eines Teils Ihrer Website
 
-Manchmal möchten Sie alle Dateien auf Ihrer Website sichern, insbesondere dann, wenn Sie Ihre Website regelmäßig sichern, oder wenn Ihr Standort mehr als 10 GB Inhalt hat (das ist der maximale Betrag, die zu einem Zeitpunkt gesichert werden kann).
+Es kann vorkommen, dass Sie nicht alle Daten Ihrer Website sichern möchten. Dies gilt besonders, wenn Sie Ihre Website regelmäßig sichern oder wenn die Website über Daten von mehr als 10 GB verfügt (maximale Datenmenge, die auf einmal gesichert werden kann).
 
-Beispielsweise empfiehlt nicht, um die Protokolldateien zu sichern. Oder, wenn Sie [setup wöchentliche Sicherungen](https://azure.microsoft.com/de-de/documentation/articles/web-sites-backup/#configure-automated-backups) sollten Sie nicht das Speicherkonto mit statischem Inhalt füllen, niemals Änderungen alte Blogbeiträge oder Bilder wie.
+Beispielsweise möchten Sie wahrscheinlich keine Protokolldateien sichern. Oder wenn Sie [wöchentliche Sicherungen einrichten](https://azure.microsoft.com/de-de/documentation/articles/web-sites-backup/#configure-automated-backups), möchten Sie Ihr Speicherkonto nicht mit statischem Inhalt füllen, der sich niemals ändert, z. B. alten Blogbeiträgen oder Bildern.
 
-Teilsicherungen können Sie genau die Dateien auswählen, die Sie sichern möchten.
+Bei Teilsicherungen können Sie genau auswählen, welche Dateien gesichert werden sollen.
 
-###Geben Sie die Dateien nicht gesichert
-Sie können eine Liste der Dateien und Ordner von der Sicherung ausschließen erstellen.
+###Angeben von Dateien, die nicht gesichert werden sollen
+Sie können eine Liste mit Dateien und Ordnern erstellen, die von der Sicherung ausgeschlossen werden sollen.
 
-Speichern Sie die Liste als eine Textdatei namens _backup.filter im Ordner "Wwwroot" der Website. Eine einfache Möglichkeit, den Zugriff darauf erfolgt über die [Kudu-Konsole](https://github.com/projectkudu/kudu/wiki/Kudu-console) am `http://{yoursite}.scm.azurewebsites.net/DebugConsole`. 
+Speichern Sie die Liste als Textdatei unter dem Namen _„backup.filter“ im Ordner „wwwroot“ Ihrer Website. Eine einfache Zugriffsmöglichkeit ist die [Kudu-Konsole](https://github.com/projectkudu/kudu/wiki/Kudu-console) unter `http://{yoursite}.scm.azurewebsites.net/DebugConsole`. 
 
-Die folgenden Anweisungen verwenden die Kudu-Konsole zum Erstellen der _backup.filter-Datei, aber Sie können Ihre bevorzugte Bereitstellungsmethode verwenden, um die Datei dort ablegen.
+In der folgenden Anleitung wird die Kudu-Konsole zum Erstellen der Datei _„backup.filter“ verwendet, aber Sie können auch Ihre bevorzugte Bereitstellungsmethode nutzen.
 
-###Was zu tun ist
-Ich habe eine Website, die enthält, Protokolldateien und statische Bilder aus vergangenen Jahren, die nie ändern möchten.
+###Vorgehensweise
+Ich habe eine Website mit Protokolldateien und statischen Bildern aus den vorhergehenden Jahren, die sich nicht ändern.
 
-Ich habe bereits eine vollständige Sicherung der Website, die die alte Bilder enthält. Jetzt möchte ich die Website täglich sichern, aber nicht viel Geld für das Speichern von Protokolldateien oder statische Bilddateien, die sich nie ändern soll.
+Ich verfüge bereits über eine vollständige Sicherung der Website, in der die alten Bilder enthalten sind. Jetzt möchte ich die Website täglich sichern, aber ich möchte nicht für die Speicherung von Protokolldateien oder statischen Bilddateien bezahlen, die sich nie ändern.
 
-![Ordner "Protokolle"][LogsFolder] ![Ordner "Bilder"][ImagesFolder]
+![Ordner „Logs“][LogsFolder] ![Ordner „Images“][ImagesFolder]
 	
-Die unten aufgeführten Schritten anzeigen, wie ich diese Dateien aus der Sicherung ausschließen möchten.
+Die unten angegebenen Schritte zeigen, wie ich diese Dateien aus dem Backup ausschließe.
 
-####Identifizieren Sie die Dateien und Ordner, die Sie nicht möchten, Sicherung
-Dies ist einfach. Ich bereits weiß ich will keine Protokolldateien zu sichern, sollten ausgeschlossen `D:\home\site\wwwroot\Logs`.
+####Identifizieren der Dateien und Ordner, die nicht gesichert werden sollen
+Dies ist einfach. Ich weiß bereits, dass ich keine Protokolldateien sichern möchte, und kann `D:\home\site\wwwroot\Logs` daher ausschließen.
 
-Es gibt einen anderen Protokolldateiordner, die alle Azure Web-Apps unter `D:\home\LogFiles`. Lassen Sie uns ausschließen, zu.
+Unter `D:\home\LogFiles` ist ein weiterer Ordner mit Protokolldateien vorhanden, der für alle Azure Web-Apps angelegt wird. Diesen Ordner schließen wir auch aus.
 
-Ich möchte auch die Bilder aus früheren Jahren immer wieder zu sichern. Hinzufügen von lassen `D:\home\site\wwwroot\Images\2013` und `D:\home\site\wwwroot\Images\2014` sowie der Liste.
+Außerdem sollen die Bilder aus den vorherigen Jahren nicht immer wieder gesichert werden. Also fügen wir `D:\home\site\wwwroot\Images\2013` und `D:\home\site\wwwroot\Images\2014` ebenfalls der Liste hinzu.
 
-Abschließend sehen wir keine Sicherung der brand.png-Datei im Ordner "Bilder" entweder, nur um zu zeigen, dass wir auch einzelne Dateien in der schwarzen Liste können. Es befindet sich unter `D:\home\site\wwwroot\Images\brand.png`
+Zuletzt schließen wir auch die Datei „brand.png“ im Ordner „Images“ aus der Sicherung aus, um zu zeigen, dass dies auch für einzelne Dateien möglich ist. Sie befindet sich unter `D:\home\site\wwwroot\Images\brand.png`.
 
-Damit erhalten wir die folgenden Ordner, die wir nicht möchten, um die Sicherung:
+Wir erhalten also die folgenden Ordner, die nicht gesichert werden sollen:
 
 * D:\\home\\site\\wwwroot\\Logs
 * D:\\home\\LogFiles
 * D:\\home\\site\\wwwroot\\Images\\2013
 * D:\\home\\site\\wwwroot\\Images\\2014
-* D:\\home\\site\\wwwroot\\Images\\brand.PNG
+* D:\\home\\site\\wwwroot\\Images\\brand.png
 
 #### Erstellen der Ausschlussliste
-Sie speichern die schwarze Liste von Dateien und Ordnern, die Sie nicht möchten Sicherung in eine Datei namens _backup.filter. Erstellen Sie die Datei, und platzieren Sie es unter `D:\home\site\wwwroot_backup.filter`.
+Sie speichern die Liste mit den Dateien und Ordnern, die nicht gesichert werden sollen, in einer speziellen Datei mit dem Namen _„backup.filter“. Erstellen Sie die Datei, und legen Sie sie unter `D:\home\site\wwwroot_backup.filter` ab.
 
-Listen Sie alle Dateien und Ordner, die Sie nicht möchten backup in der _backup.filter-Datei. Sie fügen den vollständigen Pfad relativ zum D:\\home des Ordners oder der Datei, die Sie aus der Sicherung ein Pfadname pro Zeile ausschließen möchten.
+Listen Sie alle Dateien und Ordner, die nicht gesichert werden sollen, in der Datei _„backup.filter“ auf. Hierzu fügen Sie den vollständigen Pfad relativ zu „D:\\home“ des Ordners bzw. der Datei hinzu, der bzw. die von der Sicherung ausgeschlossen werden soll. Ein Pfad wird jeweils in eine Zeile eingefügt.
 
-Für Meine Website `D:\home\site\wwwroot\Logs` wird `\site\wwwroot\Logs`, `D:\home\LogFiles` wird `\LogFiles`, usw. usw., was in den folgenden Inhalt für meine _backup.filter:
+Für meine Website wird `D:\home\site\wwwroot\Logs` also zu `\site\wwwroot\Logs`, `D:\home\LogFiles` wird zu `\LogFiles` usw. Dies führt zu folgendem Inhalt der Datei _„backup.filter“:
 
     \site\wwwroot\Logs
     \LogFiles
@@ -161,20 +161,20 @@ Für Meine Website `D:\home\site\wwwroot\Logs` wird `\site\wwwroot\Logs`, `D:\ho
     \site\wwwroot\Images\2014
     \site\wwwroot\Images\brand.png
 
-Beachten Sie die Start- `\` am Anfang jeder Zeile. Dies ist wichtig.
+Beachten Sie jeweils das Zeichen `` am Anfang jeder Zeile. Dies ist wichtig.
 
-###Führen Sie eine Sicherung
-Nachdem Sie Sicherungen genauso ausführen können würden Sie normalerweise tun. [Manuell](https://azure.microsoft.com/de-de/documentation/articles/web-sites-backup/#create-a-manual-backup), [automatisch](https://azure.microsoft.com/de-de/documentation/articles/web-sites-backup/#configure-automated-backups), in beiden Fällen ist in Ordnung.
+###Durchführen einer Sicherung
+Nun können Sie die Sicherungen durchführen, wie Sie es gewohnt sind. Dies ist sowohl [manuell](https://azure.microsoft.com/de-de/documentation/articles/web-sites-backup/#create-a-manual-backup) als auch [automatisch](https://azure.microsoft.com/de-de/documentation/articles/web-sites-backup/#configure-automated-backups) möglich.
 
-Alle Dateien und Ordner, die in die Filter in aufgeführten fallen die _backup.filter werden aus der Sicherung ausgeschlossen werden. Dies bedeutet, dass jetzt die Protokolldateien und die Bilddateien 2013 und 2014 nicht mehr gesichert werden soll.
+Alle Dateien und Ordner, die unter die Filter in der Datei _„backup.filter“ fallen, werden von der Sicherung ausgeschlossen. Dies bedeutet, dass die Protokolldateien und die Bilddateien für 2013 und 2014 nicht mehr gesichert werden.
 
 ###Wiederherstellen der gesicherten Website
-Sie wiederherstellen Teilsicherungen Ihrer Website auf die gleiche Weise [eine regelmäßige Sicherung wiederherstellen](https://azure.microsoft.com/de-de/documentation/articles/web-sites-restore/). Sie müssen das richtige tun.
+Sie stellen Teilsicherungen Ihrer Website genauso wieder her, wie Sie eine [normale Sicherung wiederherstellen](https://azure.microsoft.com/de-de/documentation/articles/web-sites-restore/) würden. Der Vorgang wird korrekt ausgeführt.
 
-####Technische details
-Mit voller (nicht teilweise) Sicherungen normalerweise alle Inhalte auf der Website werden mit den in der Sicherung wird ersetzt. Wenn eine Datei auf der Website, aber nicht in der Sicherung gelöscht wird.
+####Technische Details
+Bei vollständigen Sicherungen (keine Teilsicherungen) wird normalerweise der gesamte Inhalt der Website durch den Inhalt der Sicherung ersetzt. Wenn eine Datei auf der Website vorhanden ist, aber nicht in der Sicherung, wird sie gelöscht.
 
-Aber wenn Teilsicherungen wiederherstellen, obwohl jeder, der Inhalt befindet sich in einem Ordner auf schwarzer Liste (z. B. `D:\home\site\wwwroot\images\2014` für meine Site) unverändert ist. Und Schwarz wären einzelne Dateien aufgeführt, dann werde auch gelassen werden nur während der Wiederherstellung.
+Beim Wiederherstellen von Teilsicherungen bleiben alle Inhalte, die sich in einem der ausgeschlossenen Ordner befinden (z. B. `D:\home\site\wwwroot\images\2014` für meine Website) unverändert. Und falls einzelne Dateien ausgeschlossen wurden, bleiben sie bei der Wiederherstellung ebenfalls unverändert.
 
 <a name="aboutbackups"></a>
 ## Speichern von Sicherungen
@@ -187,45 +187,45 @@ Die mit der ZIP-Datei gespeicherte XML-Datei enthält den Datenbank-Dateinamen u
 
 Die Datenbank-Sicherungsdatei selbst ist im Stamm der ZIP-Datei gespeichert. Bei SQL-Datenbanken ist dies eine BACPAC-Datei (ohne Dateierweiterung), die importiert werden kann. Schritte zum Erstellen einer neuen SQL-Datenbank auf Basis des BACPAC-Exports finden Sie im Artikel [Importieren einer BACPAC-Datei zum Erstellen einer neuen Benutzerdatenbank](http://technet.microsoft.com/library/hh710052.aspx).
 
-Informationen zum Wiederherstellen einer Azure-Web-App (einschließlich Datenbanken) mithilfe des Azure-Verwaltungsportals finden Sie unter  [Wiederherstellen einer Web-App in Azure App Service](web-sites-restore.md).
+Informationen zum Wiederherstellen einer Azure-Web-App (einschließlich Datenbanken) mithilfe des Azure-Verwaltungsportals finden Sie unter [Wiederherstellen einer Web-App in Azure App Service](web-sites-restore.md).
 
 > [AZURE.NOTE]Wenn Sie die Dateien im Container **websitebackups** ändern, kann die Sicherung ungültig werden und nicht mehr wiederhergestellt werden.
 
 <a name="bestpractices"></a>
 ##Bewährte Methoden
-Was Sie tun, wenn im Notfall Strikes und Sie müssen der Wiederherstellung Ihres Standorts? Stellen Sie sicher, dass Sie vorbereitet sind.
+Wie gehen Sie vor, wenn ein Notfall eintritt und Sie Ihre Website wiederherstellen müssen? Stellen Sie sicher, dass Sie darauf vorbereitet sind.
 
-Ja, Sie können Teilsicherungen, aber nehmen Sie mindestens eine vollständige Sicherung der Website zunächst so, dass Sie Ihrer Website Inhalte gesichert haben (Dies ist im schlimmsten Fall Szenario planen). Beim Wiederherstellen von Sicherungen können Sie dann zuerst die vollständige Sicherung des Standorts wiederherstellen und dann die neueste Teilsicherung darauf wiederherstellen.
+Sie können Teilsicherungen erstellen, aber Sie sollten zuerst mindestens eine vollständige Sicherung der Website durchführen, damit der gesamte Inhalt Ihrer Website gesichert wird (Planung für das Worst-Case-Szenario). Beim Wiederherstellen von Sicherungen können Sie dann zuerst die vollständige Sicherung der Website wiederherstellen und dann zusätzlich die letzte Teilsicherung wiederherstellen.
 
-Erläuterung: sie verwenden können [Bereitstellungsplätze](https://azure.microsoft.com/de-de/documentation/articles/web-sites-staged-publishing/) zum Testen von wiederhergestellten Sites. Sie können sogar den Wiederherstellungsvorgang testen, ohne je die Produktions-Website. Und das Testen der Wiederherstellungsvorgang ist ein [sehr gut](http://axcient.com/blog/one-thing-can-derail-disaster-recovery-plan/). Man weiß nie beim möglicherweise in einige kleinere Problem, wie ich hier beim Wiederherstellen von meinem Blog ausführen und letztendlich verlieren die Hälfte Ihrer Inhalte.
+Dafür gibt es folgenden Grund: Sie können [Bereitstellungsslots](https://azure.microsoft.com/de-de/documentation/articles/web-sites-staged-publishing/) nutzen, um die wiederhergestellte Website zu testen. Sie können den Wiederherstellungsvorgang sogar testen, ohne dabei die Produktionswebsite einzubeziehen. Und das Testen Ihres Wiederherstellungsvorgangs ist eine [sehr gute Sache](http://axcient.com/blog/one-thing-can-derail-disaster-recovery-plan/). Sie können nie wissen, wann ein kleines Problem auftritt. Dies ist mir passiert, als ich mein Blog wiederherstellen wollte und die Hälfte meiner Daten verloren habe.
 
-###Eine Allan
+###Eine Horror-Story
 
-Mein Blog beruht die [Ghost](https://ghost.org/) blogplattform. Wie eine verantwortlichen Entwickler habe ich eine Sicherung meiner Site erstellt haben, und alles war. Eines Tages erhielt ich dann eine Meldung, dass eine neue Version von Ghost verfügbar war und konnte ich mein Blog zu aktualisieren. Prima.
+Mein Blog basiert auf der Blogplattform [Ghost](https://ghost.org/). Wie jeder verantwortungsvolle Entwickler habe ich eine Sicherung meiner Website erstellt, und alles war in Ordnung. Eines Tages erhielt ich dann eine Nachricht, dass eine neue Version von Ghost verfügbar ist und ich ein Upgrade für mein Blog durchführen kann. Prima.
 
-Ich eine weitere Sicherung meiner Site zum Sichern der neuesten Blogbeiträge erstellt und zum Aktualisieren von Ghost fortgesetzt.
+Ich habe eine weitere Sicherung meiner Website erstellt, um die neuesten Blogbeiträge zu sichern, und habe dann das Ghost-Upgrade durchgeführt.
 
-Auf meinem Produktions-Website.
+Und zwar für meine Produktionswebsite.
 
-Ungültige Fehler.
+Ein schlimmer Fehler.
 
-Ist ein Fehler aufgetreten mit der Aktualisierung meiner Startseite zeigte nur einen leeren Bildschirm. "Kein Problem" Ich dachte, "Ich werde einfach die Sicherung wiederherstellen, die ich einfach habe."
+Während des Upgrades ist ein Fehler aufgetreten, und meine Startseite war nur noch ein leerer Bildschirm. „Kein Problem“, dachte ich. „Ich stelle einfach die eben angelegte Sicherung wieder her.“
 
-Ich das Upgrade wiederhergestellt, gesehen haben alles... außer Blogbeiträge zurückkehren.
+Ich habe das Upgrade wiederhergestellt, und alles war wieder da... mit Ausnahme der Blogbeiträge.
 
-WAS???
+WAS WAR DA LOS?
 
-Stellt sich heraus, in der [Ghost-Upgrade-Hinweise](http://support.ghost.org/how-to-upgrade/) diese Warnung vorhanden ist:
+Es stellte sich heraus, dass in den [Hinweisen zum Ghost-Upgrade](http://support.ghost.org/how-to-upgrade/) die folgende Warnung enthalten ist:
 
-![Können Sie eine Kopie der Datenbank von Content-Daten nutzen, aber Sie sollten keine dies zwar Ghost ausführen. Stoppen Sie es zuerst][GhostUpgradeWarning]
+![Sie können eine Kopie Ihrer Datenbank für Inhalte/Daten erstellen, aber Sie sollten dies nicht tun, während Ghost ausgeführt wird. Beenden Sie zuerst die Anwendung.][GhostUpgradeWarning]
 
-Wenn Sie versuchen, die Daten zu sichern, während Ghost läuft... die Daten nicht tatsächlich gesichert werden.
+Wenn Sie versuchen, die Daten zu sichern, während Ghost ausgeführt wird, ... werden sie nicht gesichert.
 
-Wie schade.
+Dumm gelaufen.
 
-Wenn ich die Wiederherstellung auf einem Test-Steckplatz versucht hätte haben zuerst ich dieses Problem betrachtet und nicht verloren gehen alle meine Beiträge.
+Wenn ich die Wiederherstellung zuerst für einen Testslot durchgeführt hätte, hätte ich dieses Problem erkannt und nicht alle meine Beiträge verloren.
 
-Dies ist die Lebensdauer. Es kann vorkommen [den besten von uns](http://blog.codinghorror.com/international-backup-awareness-day/).
+So ist das Leben. Es kann auch [erfahrenen Benutzern](http://blog.codinghorror.com/international-backup-awareness-day/) passieren.
 
 Testen Sie Ihre Sicherungen.
 
@@ -267,4 +267,4 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

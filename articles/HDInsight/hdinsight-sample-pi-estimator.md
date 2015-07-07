@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Das Pi-Schätzungsbeispiel mit Hadoop in HDInsight | Azure"
-	description="Erfahren Sie, wie Sie ein einfaches Pi-Schätzungsbeispiel in HDInsight ausführen können."
+	pageTitle="Das Pi-Schätzungsbeispiel mit Hadoop in HDInsight | Microsoft Azure"
+	description="Erfahren Sie, wie Sie ein Hadoop MapReduce-Beispiel zu Pi-Schätzung in HDInsight ausführen."
 	editor="cgronlun"
 	manager="paulettm"
 	services="hdinsight"
@@ -18,37 +18,36 @@
 
 # Das Pi-Schätzungsbeispiel mit Hadoop in HDInsight
 
-Dieses Beispiel beschreibt die Ausführung eines einfachen Hadoop MapReduce-Programms in Azure HDInsight, das den Wert der mathematischen Konstante Pi mit Azure PowerShell schätzt. Hier finden Sie außerdem zu Ihrer Information den Java-Code für das MapReduce-Programm, das den Wert von Pi annähert.
+Dieses Beispiel beschreibt, wie Sie ein einfaches MapReduce-Programm mit Hadoop in Azure HDInsight ausführen, das den Wert der mathematischen Konstante Pi mit Azure PowerShell schätzt. Hier finden Sie außerdem den Java-Code für das MapReduce-Programm, das den Wert von Pi annähert, damit Sie ihn überprüfen können.
 
-Das Programm verwendet eine statistische Methode (ähnlich Monte Carlo), um den Wert von Pi zu schätzen. Zufällig platzierte Punkte in einem Einheits-Quadrat liegen mit einer Wahrscheinlichkeit gleich der Kreisoberfläche Pi/4 innerhalb eines Kreises, der sich im Quadrat befindet. Der Wert für Pi kann aus dem Wert 4R ermittelt werden, wobei R das Verhältnis zwischen der Anzahl der Punkte innerhalb des Kreises zur Gesamtanzahl der Punkte innerhalb des Quadrats ist. Je größer die Anzahl der Punkte, desto genauer die Schätzung.
+Das Programm verwendet eine statistische (Quasi-Monte Carlo) Methode, um den Wert von Pi zu schätzen. Zufällig platzierte Punkte in einem Einheitsquadrat liegen mit einer Wahrscheinlichkeit gleich der Kreisoberfläche Pi/4 innerhalb eines Kreises, der sich im Quadrat befindet. Der Wert für Pi kann aus dem Wert 4R ermittelt werden, wobei R das Verhältnis zwischen der Anzahl der Punkte innerhalb des Kreises zur Gesamtanzahl der Punkte innerhalb des Quadrats ist. Je größer die Anzahl der Punkte, desto genauer die Schätzung.
 
-Sie finden den Pi-Schätzungs-Javacode mit den Mapper- und Reducer-Funktionen zu Ihrer Information weiter unten. Das Mapper-Programm generiert eine bestimmte Anzahl Punkte an zufälligen Orten innerhalb eines Einheits-Quadrats und zählt anschließend, wie viele dieser Punkte innerhalb des Kreises liegen. Das Reducer-Programm sammelt die von den Mappern gezählten Punkte und schätzt anschließend den Wert von Pi mit der Formel 4R, wobei R das Verhältnis zwischen der Anzahl der Punkte innerhalb des Kreises zur Gesamtanzahl der Punkte innerhalb des Quadrats ist.
+Sie finden den Javacode zur Pi-Schätzung mit den Mapper- und Reducer-Funktionen zu Ihrer Information weiter unten. Das Mapper-Programm generiert eine bestimmte Anzahl Punkte an zufälligen Orten innerhalb eines Einheits-Quadrats und zählt anschließend, wie viele dieser Punkte innerhalb des Kreises liegen. Das Reducer-Programm sammelt die von den Mappern gezählten Punkte und schätzt anschließend den Wert von Pi mit der Formel 4R, wobei R das Verhältnis zwischen der Anzahl der Punkte innerhalb des Kreises zur Gesamtanzahl der Punkte innerhalb des Quadrats ist.
 
-Das Skript in diesem Beispiel übermittelt einen Hadoop-JAR-Auftrag und wird mit 16 Maps ausgeführt, die gemäß den Parameterwerten jeweils 10 Millionen Beispielpunkte berechnen. Sie können diese Parameterwerte ändern, um die Genauigkeit der Pi-Schätzung zu verbessern. Als Referenz: Die ersten 10 Dezimalstellen von Pi lauten 3,1415926535.
+Das Skript in diesem Beispiel übermittelt einen Hadoop JAR-Auftrag und wird mit 16 Maps ausgeführt, die gemäß der Parameterwerte jeweils 10 Millionen Beispielpunkte berechnen. Sie können diese Parameterwerte ändern, um die Genauigkeit der Pi-Schätzung zu verbessern. Als Referenz: die ersten 10 Dezimalstellen von Pi lauten 3,1415926535.
 
-Die .jar-Datei mit den Dateien, die Hadoop in Azure für die Bereitstellung der Anwendung benötigt, ist eine .zip-Datei und steht zum Download bereit. Sie können diese Datei mit verschiedenen Komprimierungshilfsprogrammen entpacken und den Inhalt anschließend anzeigen.
+Die .jar-Datei mit den Dateien, die Hadoop in Azure für die Bereitstellung der Anwendung benötigt, ist eine .zip-Datei und steht zum Download bereit. Sie können diese Datei mit verschiedenen Komprimierungshilfsprogrammen extrahieren und den Inhalt anschließend anzeigen.
 
-Sie finden weitere Beispiele für die Verwendung von HDInsight für MapReduce-Aufträgen unter [Ausführen der HDInsight-Beispiele][hdinsight-samples] zusammen mit Links zu Anweisungen für deren Ausführung.
+Sie finden weitere Beispiele für die Verwendung von HDInsight für MapReduce-Aufträge unter [Ausführen der HDInsight-Beispiele][hdinsight-samples], zusammen mit Links zu Anweisungen für deren Ausführung.
 
-**Sie erhalten Informationen zu folgenden Themen:**
+**Sie lernen Folgendes**:
 
-* Verwenden der Azure PowerShell zum Ausführen des Pi-Schätzungs-MapReduce-Programms in Azure HDInsight.
+* Verwenden von Azure PowerShell zur Ausführung des MapReduce-Programms zur PI-Schätzung in Azure HDInsight.
 * Wie sieht ein MapReduce-Programm in Java aus.
 
 **Voraussetzungen**:
 
-- Sie benötigen ein Azure-Konto. Hinweise zum Erstellen eines Kontos finden Sie auf der Seite [Einen Monat kostenlos testen](http://azure.microsoft.com/pricing/free-trial/).
-
-- Sie benötigen ein bereitgestelltes HDInsight-Cluster. Anweisungen zu den verschiedenen Optionen beim Erstellen eines solchen Clusters finden Sie unter [Bereitstellung eines HDInsight-Clusters](hdinsight-provision-clusters.md).
-
-- Sie müssen Azure PowerShell installiert und für die Verwendung mit Ihrem Konto konfiguriert haben. Anweisungen zur entsprechenden Vorgehensweise finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- **Einen HDInsight-Cluster**. Anweisungen zu den verschiedenen Optionen beim Erstellen eines solchen Clusters finden Sie unter [Bereitstellung eines HDInsight-Clusters](hdinsight-provision-clusters.md).
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren und Verwenden von Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/).
 
 
-<h2><a id="run-sample"></a>Ausführen des Beispiels mit Azure PowerShell</h2>
 
-**So übermitteln Sie die MapReduce-Aufträge**
+## <a id="run-sample"></a>Ausführen des Beispiels mit Azure PowerShell
 
-1. Öffnen Sie Azure PowerShell. Anweisungen zum Verwenden des Azure PowerShell-Konsolenfensters finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
+**So übermitteln Sie den MapReduce-Auftrag**
+
+1. Öffnen Sie Azure PowerShell. Anweisungen zum Öffnen des Konsolenfensters von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
 2. Legen Sie die zwei Variablen in den folgenden Befehlen fest, und führen Sie die Befehle aus:
 
 		$subscriptionName = "<SubscriptionName>"   # Azure subscription name
@@ -58,7 +57,8 @@ Sie finden weitere Beispiele für die Verwendung von HDInsight für MapReduce-Au
 
 		$piEstimatorJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" -ClassName "pi" -Arguments "16", "10000000"
 
-	Das erste Argument gibt die Anzahl der zu erstellenden Maps an (standardmäßig 16). Das zweite Argument gibt an, wie viele Proben pro Map erstellt werden sollen (standardmäßig 10 Millionen). Dieses Programm verwendet also 16*10 Millionen = 160 Millionen zufällige Punkte, um Pi zu schätzen. Das dritte Argument gibt Speicherort und Name der JAR-Datei an, mit der das Beispiel auf HDInsight-Clustern der Versionen 3.0 und 3.1 ausgeführt wird. (Siehe unten für den Inhalt dieser Datei.)
+
+	Das erste Argument gibt die Anzahl der zu erstellenden Maps an (standardmäßig 16). Das zweite Argument gibt an, wie viele Proben pro Map erstellt werden sollen (standardmäßig 10 Millionen). Dieses Programm verwendet also 16*10 Millionen = 160 Millionen zufälliger Punkte, um Pi zu schätzen. Das dritte Argument gibt den Speicherort und Namen der JAR-Datei an, mit der das Beispiel auf HDInsight-Clustern der Versionen 3.0 und 3.1 ausgeführt wird. (Siehe unten für den Inhalt dieser Datei.)
 
 5. Führen Sie die folgenden Befehle aus, um den MapReduce-Auftrag zu übermitteln und auf den Abschluss des Auftrags zu warten:
 
@@ -69,15 +69,15 @@ Sie finden weitere Beispiele für die Verwendung von HDInsight für MapReduce-Au
 		# Wait for the job to finish  
 		$piJob | Wait-AzureHDInsightJob -Subscription $subscriptionName -WaitTimeoutInSeconds 3600  
 
-6. Führen Sie den folgenden Befehl aus, um die Standardausgabe des MapReduce-Auftrags abzurufen:
+6. Führen Sie den folgenden Befehl aus, um die Standardausgabe des MapReduce-Jobs abzurufen:
 
 		# Print output and standard error file of the MapReduce job
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $piJob.JobId -StandardOutput
 
-	Als Referenz: Die ersten 10 Dezimalstellen von Pi lauten 3,1415926535.
+	Als Referenz: die ersten 10 Dezimalstellen von Pi lauten 3,1415926535.
 
 
-<h2><a id="java-code"></a>Der Java-Code für das Pi-Schätzungs-MapReduce-Programm</h2>
+## <a id="java-code"></a>Der Java-Code für das MapReduce-Programm Pi Estimator
 
 
 
@@ -418,12 +418,11 @@ Sie finden weitere Beispiele für die Verwendung von HDInsight für MapReduce-Au
 	 }
 	 }
 
-
-<h2><a id="summary"></a>Zusammenfassung</h2>
+## <a id="summary"></a>Zusammenfassung
 
 Sie haben gelernt, wie Sie einen MapReduce-Auftrag in HDInsight ausführen und die Monte Carlo-Methoden ausführen können, die große Datensätze entgegennehmen und generieren, die wiederum von diesem Dienst verwaltet werden können.
 
-Hier sehen Sie das komplette Skript für die Ausführung dieses Beispiels in einem HDInsight-Standardcluster der Version 3.1 oder 3.0:
+Hier sehen Sie das komplette Skript für die Ausführung dieses Beispiels in einem HDInsight 3.1- oder 3.0-Standardcluster:
 
 	### Provide the Azure subscription name and the HDInsight cluster name
 	$subscriptionName = "<SubscriptionName>"
@@ -446,12 +445,12 @@ Hier sehen Sie das komplette Skript für die Ausführung dieses Beispiels in ein
 
 
 
-<h2><a id="next-steps"></a>Nächste Schritte</h2>
+## <a id="next-steps"></a>Nächste Schritte
 
-Lernprogramme, in denen das Ausführen anderer Beispiele beschrieben und Anweisungen zum Ausführen von Pig-, Hive- und MapReduce-Aufträgen in Azure HDInsight mit Azure PowerShell bereitgestellt werden, finden Sie in den folgenden Themen:
+Lernprogramme mit der Beschreibung von anderen Beispielen und Anweisungen zur Verwendung von Pig-, Hive- und MapReduce-Aufträgen in Azure HDInsight mit Azure PowerShell finden Sie in den folgenden Themen:
 
 * [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
-* [Beispiel: 10-GB-Graysort][hdinsight-sample-10gb-graysort]
+* [Beispiel: 10-GB-GraySort][hdinsight-sample-10gb-graysort]
 * [Beispiel: Wortzählung][hdinsight-sample-wordcount]
 * [Beispiel: C#-Streaming][hdinsight-sample-csharp-streaming]
 * [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
@@ -460,7 +459,7 @@ Lernprogramme, in denen das Ausführen anderer Beispiele beschrieben und Anweisu
 
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/library/dn479185.aspx
 
-[Powershell-install-configure]: ../install-configure-powershell.md
+[powershell-install-configure]: ../install-configure-powershell.md
 
 [hdinsight-get-started]: ../hdinsight-get-started.md
 
@@ -472,5 +471,6 @@ Lernprogramme, in denen das Ausführen anderer Beispiele beschrieben und Anweisu
 
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

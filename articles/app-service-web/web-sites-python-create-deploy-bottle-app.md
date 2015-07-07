@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Python-Webanwendungen mit Flasche in Azure" 
+	pageTitle="Python-Web-Apps mit Bottle in Azure" 
 	description="In diesem Lernprogramm werden Sie in die Ausführung einer Python-App-Web in Azure App Service-Web-Apps eingeführt." 
 	services="app-service\web" 
 	documentationCenter="python" 
@@ -20,11 +20,11 @@
 
 
 
-# Erstellen von Webanwendungen mit Flasche in Azure
+# Erstellen von Web-Apps mit Bottle in Azure
 
-In diesem Lernprogramm wird beschrieben, wie für den Einstieg in die Ausführung von Python in Azure App Service Web-Apps wird. Web-Apps bietet uneingeschränktes kostenloses Hosting und schnelle Bereitstellung, und Sie können Python verwenden! Wenn die Anwendung größer wird, können Sie zu kostenpflichtigem Hosting wechseln und außerdem alle anderen Azure-Dienste integrieren.
+In diesem Lernprogramm werden die ersten Schritte für die Verwendung von Python in Azure App Service-Web-Apps beschrieben. Web-Apps bietet uneingeschränktes kostenloses Hosting und schnelle Bereitstellung, und Sie können Python verwenden! Wenn die Anwendung größer wird, können Sie zu kostenpflichtigem Hosting wechseln und außerdem alle anderen Azure-Dienste integrieren.
 
-Erstellen Sie eine Webanwendung, die mithilfe des Flasche Web-Framework (alternative Versionen dieses Lernprogramms für anzeigen [Django](web-sites-python-create-deploy-django-app.md) und [Kolben](web-sites-python-create-deploy-flask-app.md)). Sie erstellen die Web-App aus dem Azure Marketplace, richten die Git-Bereitstellung ein und klonen das Repository lokal. Sie werden die Webanwendung lokal ausführen, Änderungen vornehmen, commit und per push an [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Das Lernprogramm zeigt, wie dies unter Windows oder Mac/Linux erfolgt.
+Sie erstellen eine Web-App mithilfe des Webframeworks Bottle. (Alternativ sind auch Versionen für [Django](web-sites-python-create-deploy-django-app.md) und [Flask](web-sites-python-create-deploy-flask-app.md) verfügbar.) Sie erstellen die Web-App aus dem Azure Marketplace, richten die Git-Bereitstellung ein und klonen das Repository lokal. Dann führen Sie die Web-App lokal aus, nehmen Änderungen vor, führen ein Commit aus und übertragen die Änderungen an [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Das Lernprogramm zeigt, wie dies unter Windows oder Mac/Linux erfolgt.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
@@ -53,15 +53,15 @@ Wir empfehlen auch die Installation von [Python Tools 2.1 für Visual Studio]. D
 Sie sollten Python und Git bereits installiert haben, doch stellen Sie sicher, dass Sie über Python 2.7 oder 3.4 verfügen.
 
 
-## Web-app-Erstellung auf Azure Preview-Portals
+## Web-App-Erstellung im Azure-Vorschauportal
 
-Der erste Schritt beim Erstellen einer Anwendung ist die Erstellung die Webanwendung über die [Azure Preview Portal](https://portal.azure.com).
+Der erste Schritt beim Erstellen einer App besteht im Erstellen der Web-App über das [Azure-Vorschauportal](https://portal.azure.com).
 
-1. Melden Sie sich an das Azure Preview Portal, und klicken Sie auf die **Neu** Schaltfläche in der unteren linken Ecke. 
+1. Klicken Sie im Azure-Vorschauportal in der linken unteren Ecke auf **NEU**. 
 2. Klicken Sie auf **Web + Mobile** > **Azure Marketplace** > **Web-Apps**.
 3. Geben Sie im Suchfeld "python" ein.
-4. Wählen Sie in den Suchergebnissen **Flasche**, klicken Sie dann auf **Erstellen**.
-5. Konfigurieren Sie die neue Flasche-app, z. B. einen neuen App-Service-Plan und eine neue Ressourcengruppe für sie erstellen. Klicken Sie dann auf **Erstellen**.
+4. Wählen Sie in den Suchergebnissen **Bottle** aus, und klicken Sie dann auf **Erstellen**.
+5. Konfigurieren Sie die neue Bottle-App, indem Sie beispielsweise einen neuen App Service-Plan und eine neue Ressourcengruppe dafür erstellen. Klicken Sie dann auf **Erstellen**.
 6. Konfigurieren von Git-Veröffentlichung für Ihre neu erstellte Webanwendung anhand der Instruktionen unter [fortlaufende Bereitstellung mit GIT in Azure-App-Dienst](web-sites-publish-source-control.md).
  
 ## Anwendungsübersicht
@@ -130,11 +130,11 @@ In den nächsten 3 Abschnitten wird beschrieben, wie Sie die Web-App-Entwicklung
 - Mac/Linux, über die Befehlszeile
 
 
-## Web-App-Entwicklung – Windows – Python-Tools für Visual Studio
+## Web-App-Entwicklung – Windows – Python Tools für Visual Studio
 
 ### Klonen des Repositorys
 
-Klonen Sie zunächst das Repository mit der Url für das Azure Preview Portal bereitgestellt. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
+Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Vorschauportal angegeben ist. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
 
 Öffnen Sie die Projektmappendatei (.sln), die im Stammverzeichnis des Repositorys enthalten ist.
 
@@ -146,7 +146,7 @@ Jetzt erstellen wir eine virtuelle Umgebung für die lokale Entwicklung. Klicken
 
 - Stellen Sie sicher, dass der Name der Umgebung `env` lautet.
 
-- Wählen Sie den Basisinterpreter. Achten Sie darauf, die gleiche Version von Python, das ausgewählt ist für Ihre Webanwendung verwenden (in runtime.txt oder **Anwendungseinstellungen** Blade Ihrer Webanwendung in Azure Preview-Portal).
+- Wählen Sie den Basisinterpreter. Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in „runtime.txt“ oder auf dem Blatt **Anwendungseinstellungen** Ihrer Web-App im Azure-Vorschauportal).
 
 - Stellen Sie sicher, dass die Option zum Herunterladen und Installieren von Paketen aktiviert ist.
 
@@ -197,11 +197,11 @@ Visual Studio zeigt nicht den Fortschritt der Bereitstellung an. Wenn Sie die Au
 Navigieren Sie zur Azure-URL, um die Änderungen anzuzeigen.
 
 
-## Die Entwicklung von Webanwendungen - Windows - Befehlszeile
+## Web-App-Entwicklung – Windows – Befehlszeile
 
 ### Klonen des Repositorys
 
-Erstens Klonen Sie das Repository mit der URL für das Azure Preview Portal bereitgestellt, und fügen Sie des Azure-Repositorys, als eine Remote. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
+Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Vorschauportal angegeben ist, und fügen Sie das Azure-Repository als Remoterepository hinzu. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -211,7 +211,7 @@ Erstens Klonen Sie das Repository mit der URL für das Azure Preview Portal bere
 
 Wir erstellen eine neue virtuelle Umgebung zu Entwicklungszwecken (die nicht dem Repository hinzugefügt werden darf). Virtuelle Umgebungen in Python sind nicht verschiebbar, sodass jeder Entwickler, der an der Anwendung arbeitet, seine eigene lokal erstellen muss.
 
-Achten Sie darauf, die gleiche Version von Python, das ausgewählt ist (in runtime.txt oder das Fenster "Anwendungseinstellungen" für Ihre Webanwendung in Azure Preview-Portal) für Ihre Webanwendung verwenden
+Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in „runtime.txt“ oder auf dem Blatt „Anwendungseinstellungen“ für Ihre Web-App im Azure-Vorschauportal).
 
 Für Python 2.7:
 
@@ -280,7 +280,7 @@ Navigieren Sie zur Azure-URL, um die Änderungen anzuzeigen.
 
 ### Klonen des Repositorys
 
-Erstens Klonen Sie das Repository mit der URL für das Azure Preview Portal bereitgestellt, und fügen Sie des Azure-Repositorys, als eine Remote. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
+Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Vorschauportal angegeben ist, und fügen Sie das Azure-Repository als Remoterepository hinzu. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -290,7 +290,7 @@ Erstens Klonen Sie das Repository mit der URL für das Azure Preview Portal bere
 
 Wir erstellen eine neue virtuelle Umgebung zu Entwicklungszwecken (die nicht dem Repository hinzugefügt werden darf). Virtuelle Umgebungen in Python sind nicht verschiebbar, sodass jeder Entwickler, der an der Anwendung arbeitet, seine eigene lokal erstellen muss.
 
-Stellen Sie sicher, die gleiche Version von Python, das ausgewählt ist (in runtime.txt oder die Anwendungseinstellungen Blade Ihrer Webanwendung in Azure Preview-Portal) für Ihre Webanwendung verwenden.
+Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in „runtime.txt“ oder auf dem Blatt „Anwendungseinstellungen“ Ihrer Web-App im Azure-Vorschauportal).
 
 Für Python 2.7:
 
@@ -374,8 +374,8 @@ Folgen Sie diesen Links, um weitere Informationen zu Bottle- und Python Tools f�
 
 Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 
-- [Flasche und MongoDB auf Azure mit Python Tools 2.1 für Visual Studio]
-- [Flasche und Azure-Tabellenspeicher in Azure mit Python Tools 2.1 für Visual Studio]
+- [Bottle und MongoDB in Azure mit Python Tools 2.1 für Visual Studio]
+- [Bottle und Azure Table Storage in Azure mit Python Tools 2.1 für Visual Studio]
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -383,8 +383,8 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 
 
 <!--Link references-->
-[Flasche und MongoDB auf Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-bottle-table-storage.md
-[Flasche und Azure-Tabellenspeicher in Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-bottle-mongodb.md
+[Bottle und MongoDB in Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-bottle-table-storage.md
+[Bottle und Azure Table Storage in Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-bottle-mongodb.md
 
 <!--External Link references-->
 [Azure SDK für Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
@@ -400,4 +400,4 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 [Dokumentation zu Bottle]: http://bottlepy.org/docs/dev/index.html
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

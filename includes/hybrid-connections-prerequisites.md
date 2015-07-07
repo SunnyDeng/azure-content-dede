@@ -1,11 +1,13 @@
 
-- **Visual Studio 2013** <br/>This a requirement for using To download a free trial version of Visual Studio 2013, see [Visual Studio Downloads](http://www.visualstudio.com/downloads/download-visual-studio-vs). 
+- **Visual Studio 2013** <br/>Wird vorausgesetzt. Eine kostenlose Testversion von Visual Studio 2013 können Sie unter [Visual Studio-Downloads](http://www.visualstudio.com/downloads/download-visual-studio-vs) herunterladen. 
 
-- **SQL Server 2014 Express with Tools** <br/>Download Microsoft SQL Server Express for free at the [Microsoft SQL Server Express Edition page](http://www.microsoft.com/en-us/server-cloud/Products/sql-server-editions/sql-server-express.aspx). Choose the **Download SQL Server Express** and fill out your profile, choosing **SQL Server 2014 Express with Tools**, then click continue. This starts the download of the installer for both SQL Server Express and the SQL Server Express Management Tools. Save the installer package to your on-premises computer.
+- **SQL Server 2014 Express with Tools** <br/>Laden Sie Microsoft SQL Server Express kostenlos auf der Seite [Microsoft SQL Server Express Edition](http://www.microsoft.com/de-de/server-cloud/Products/sql-server-editions/sql-server-express.aspx) herunter. Wählen Sie die Option **SQL Server Express herunterladen** aus, geben Sie Ihr Profil ein, wählen Sie **SQL Server 2014 Express with Tools** aus, und klicken Sie dann auf "Continue". Damit wird der Download des Installers für SQL Server Express sowie für SQL Server Express Management Tools gestartet. Speichern Sie das Installationspaket auf dem lokalen Computer.
 
-- **An on-premises computer** <br/>You can run the Hybrid Connections Manger on the same on-premises computer as your SQL Server instance, or you can run each on a separate computer. The computer on which the Hybrid Connection Manager runs must meet the following criteria:
+- **Lokaler Computer** <br/>Sie können den Hybrid Connection Manager auf dem gleichen lokalen Computer, auf dem auch die SQL Server-Instanz ausgeführt wird, oder auf einem separaten Computer ausführen. Der Computer, auf dem der Hybrid Connection Manager ausgeführt wird, muss die folgenden Kriterien erfüllen:
 
-	- Be able to connect to Azure over port 5671.
-	- Be able to access the *hostname*:*portnumber* of the computer running your SQL Server instance.  
+	- Möglichkeit der Verbindungsherstellung mit Azure über Port 5671.
+	- Möglichkeit des Zugriffs auf *Hostname*:*Portnummer* des Computers, auf dem die SQL Server-Instanz ausgeführt wird.  
 
-	For more information see [Hybrid Connections Overview](../articles/integration-hybrid-connection-overview.md).
+	Weitere Informationen finden Sie unter [Übersicht über Hybridverbindungen](../articles/integration-hybrid-connection-overview.md).
+
+<!---HONumber=62-->

@@ -1,7 +1,7 @@
 <properties
- pageTitle="Verarbeitung von Fahrzeugsensordaten mit Azure Event Hubs und Apache Storm auf HDInsight"
- description="Erfahren Sie, wie Sie Fahrzeugsensordaten von Azure Event Hubs mit Apache Storm auf HDInsight verarbeiten. Während der Verarbeitung werden die Daten angereichert, indem Fahrzeugmodellinformationen aus DocumentDB nachschlagen werden. Daten werden schließlich in den Azure-Speicher geschrieben."
- services="hdinsight"
+ pageTitle="Verarbeiten von Fahrzeugsensordaten mit Apache Storm auf HDInsight | Microsoft Azure"
+ description="Erfahren Sie, wie Sie Fahrzeugsensordaten von Event Hubs mit Apache Storm auf HDInsight verarbeiten. Fügen Sie Modelldaten aus DocumentDB hinzu, und speichern Sie die Ausgabe im Speicher."
+ services="hdinsight,documentdb,notification-hubs"
  documentationCenter=""
  authors="Blackmist"
  manager="paulettm"
@@ -16,11 +16,11 @@ ms.workload="big-data"
 ms.date="04/28/2015"
 ms.author="larryfr"/>
 
-#Verarbeitung von Sensordaten von Azure Event Hubs mit Apache Storm auf HDInsight
+#Verarbeiten von Fahrzeugsensordaten von Azure Event Hubs mit Apache Storm auf HDInsight
 
-Erfahren Sie, wie Sie Fahrzeugsensordaten von Azure Event Hubs mit Apache Storm auf HDInsight verarbeiten. In diesem Beispiel werden Sensordaten von Azure Event Hubs gelesen, die Daten werden  durch Verweisen auf  in Azure DocumentDB gespeicherte Daten angereichert und schließlich mit Hadoop File System (HDFS) im Azure-Speicher abgespeichert.
+Erfahren Sie, wie Sie Fahrzeugsensordaten von Azure Event Hubs mit Apache Storm auf HDInsight verarbeiten. In diesem Beispiel werden Sensordaten von Azure Event Hubs gelesen, die Daten werden durch Verweisen auf in Azure DocumentDB gespeicherte Daten angereichert und schließlich mit Hadoop File System (HDFS) im Azure-Speicher abgespeichert.
 
-![Architekturdiagramm](./media/hdinsight-storm-iot-eventhub-documentdb/iot.png)
+![Architekturdiagramm für HDInsight und das Internet der Dinge (IoT)](./media/hdinsight-storm-iot-eventhub-documentdb/iot.png)
 
 ##Übersicht
 
@@ -38,7 +38,7 @@ Die in der Storm-Topologie verwendet Komponenten sind:
 
 * **EventHubSpout** - Liest Daten aus den Azure-Event Hubs
 
-* **TypeConversionBolt** - Konvertiert die JSON-Zeichenfolge aus den Event Hubs in ein Tupel, das die individuellen Datenwerte für Motortemperatur, Umgebungstemperatur, Geschwindigkeit, FIN und Zeitstempel enthält. 
+* **TypeConversionBolt** - Konvertiert die JSON-Zeichenfolge aus den Event Hubs in ein Tupel, das die individuellen Datenwerte für Motortemperatur, Umgebungstemperatur, Geschwindigkeit, FIN und Zeitstempel enthält.
 
 * **DataReferencBolt** - Sucht das Fahrzeugmodell über die FIN in DocumentDB
 
@@ -57,6 +57,6 @@ Eine vollständige, automatisierte Lösung für dieses Szenario ist als Teil des
 ## Nächste Schritte
 
 Weitere Beispiel-Storm-Topologien finden Sie unter [Beispieltopologien für Storm auf HDInsight](hdinsight-storm-example-topology.md).
-
-<!--HONumber=52-->
  
+
+<!---HONumber=62-->

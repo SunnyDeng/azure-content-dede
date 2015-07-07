@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Application Insights für Windows-desktop-apps und Dienste" 
+	pageTitle="Application Insights für Windows-Desktop-Apps und -Dienste" 
 	description="Analysieren Sie die Nutzung und Leistung von Windows-Anwendungen mit Application Insights." 
 	services="application-insights" 
     documentationCenter="windows"
@@ -15,7 +15,7 @@
 	ms.date="06/13/2015" 
 	ms.author="awills"/>
 
-# Application Insights auf Windows-Desktop-apps und Dienste
+# Application Insights für Windows-Desktop-Apps und -Dienste
 
 *Application Insights befindet sich in der Vorschau.*
 
@@ -23,20 +23,20 @@
 
 Mit Application Insights können Sie die Nutzung und Leistung Ihrer bereitgestellten Anwendung überwachen:
 
-Unterstützung für Windows-desktop-apps und Dienste werden von den Kern der Application Insights SDK bereitgestellt. Dieses SDK bietet die vollständige API-Unterstützung für alle Telemetriedaten, aber keine Telemetriedaten Auto-Auflistung bereitstellt.
+Unterstützung für Windows-Desktop-Apps und -Dienste wird über das Application Insights Core SDK bereitgestellt. Dieses SDK bietet vollständige API-Unterstützung für alle Telemetriedaten, jedoch keine automatische Sammlung von Telemetriedaten.
 
 
 ## <a name="add"></a> Erstellen einer Application Insights-Ressource
 
 
-1.  Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource. Wählen Sie für den Anwendungstyp Windows Store-app. 
+1.  Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource. Wählen Sie als Anwendungstyp "Windows Store-App" aus. 
 
-    ![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-windows-desktop/01-new.png)
+    ![Klicken Sie auf "Neu > Application Insights".](./media/app-insights-windows-desktop/01-new.png)
 
 
 2.  Erstellen Sie eine Kopie des Instrumentationsschlüssels.
 
-    ![Klicken Sie auf "Eigenschaften", wählen Sie den Schlüssel aus, und drücken Sie STRG+C](./media/app-insights-windows-desktop/02-props.png)
+    ![Klicken Sie auf "Eigenschaften", wählen Sie den Schlüssel aus, und drücken Sie STRG+C.](./media/app-insights-windows-desktop/02-props.png)
 
 ## <a name="sdk"></a>Installieren des SDK in Ihrer Anwendung
 
@@ -45,7 +45,7 @@ Unterstützung für Windows-desktop-apps und Dienste werden von den Kern der App
 
 2. Installieren Sie das Application Insights-API-Paket.
 
-    ![Wählen Sie **Online**, **Vorabversion einschließen** aus, und suchen Sie nach "Application Insights"](./media/app-insights-windows-desktop/04-ai-nuget.png)
+    ![Wählen Sie **Online**, **Vorabversion einschließen** aus, und suchen Sie nach "Application Insights".](./media/app-insights-windows-desktop/04-ai-nuget.png)
 
 3. Bearbeiten Sie die Datei "ApplicationInsights.config" (die bei der NuGet-Installation hinzugefügt wurde). Fügen Sie Folgendes direkt vor dem Endtag ein:
 
@@ -105,9 +105,9 @@ Verwenden Sie eine der [Application Insights-APIs][api], um Telemetriedaten zu s
 * "TrackTrace(logEvent)" für die [Diagnoseprotokollierung][diagnostic]
 * "TrackException(exception)" in Catch-Klauseln
 
-#### Kontext-Initialisierer
+#### Kontextinitialisierer
 
-Als Alternative zur Sitzungsdaten in jeder Instanz TelemetryClient festlegen können Sie eine Kontext-Initialisierung:
+Alternativ zum Festlegen von Sitzungsdaten in jeder TelemetryClient-Instanz können Sie einen Kontextinitialisierer verwenden:
 
 ```C#
     class UserSessionInitializer: IContextInitializer
@@ -175,4 +175,4 @@ Wenn Sie "TrackMetric" oder den Parameter "measurements" von "TrackEvent" verwen
 [CoreNuGet]: https://www.nuget.org/packages/Microsoft.ApplicationInsights
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

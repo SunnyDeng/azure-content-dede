@@ -1,28 +1,30 @@
 
-1. In Visual Studio in Solution Explorer, right click the service project and click **Start new instance** under the **Debug** context menu.
+1. Klicken Sie im Projektmappen-Explorer in Visual Studio mit der rechten Maustaste auf das Dienstprojekt, und klicken Sie im Kontextmenü **Debuggen** auf **Neue Instanz starten**.
 
-    Visual Studio opens the default web page for your service. By default, Visual Studio hosts your mobile app backend locally in IIS Express.
+    Visual Studio öffnet die Standardwebseite für Ihren Dienst. Standardmäßig hostet Visual Studio Ihr mobiles App-Back-End lokal in IIS Express.
 
-2. Right-click the tray icon for IIS Express on the Windows taskbar and verify that your mobile app backend has started.
+2. Klicken Sie mit der rechten Maustaste auf das IIS Express-Symbol in der Windows-Taskleiste, und überprüfen Sie, ob Ihr mobiles App-Back-End gestartet wurde.
 
-	 ![verify the mobile service in the taskbar](./media/mobile-services-dotnet-backend-test-local-service-api-documentation/iis-express-tray.png)
+	 ![Mobilen Dienst in der Taskleiste überprüfen](./media/mobile-services-dotnet-backend-test-local-service-api-documentation/iis-express-tray.png)
 
-3. On the start page of your .NET backend, click **try it out**.
+3. Klicken Sie auf der Startseite Ihres .NET-Back-Ends auf **Try it out**.
 
-    This displays the API documentation page, which you can use to test the Mobile App.
+    Daraufhin wird die API-Dokumentationsseite angezeigt, die Sie zum Testen der mobilen App verwenden können.
 
-	>[AZURE.NOTE]Authentication is not required to access this page when running locally. When running in Azure, you must supply the application key as the password (with no username) to access this page.
+	>[AZURE.NOTE]Für den Zugriff auf diese Seite ist keine Authentifizierung erforderlich, wenn die Ausführung lokal erfolgt. Bei Ausführung in Azure müssen Sie den Anwendungsschlüssel als Kennwort (ohne Benutzernamen) angeben, um auf diese Seite zugreifen zu können.
 
-4. Click the **GET tables/TodoItem** link.
+4. Klicken Sie auf den Link **GET tables/TodoItem**.
 
 	![](./media/mobile-services-dotnet-backend-test-local-service-api-documentation/service-api-documentation-page.png)
    	
-	This displays the GET response page for the API.
+	Daraufhin wird die GET-Antwortseite für die API angezeigt.
 
-5. Click **try this out** and then click **send**.
+5. Klicken Sie auf **Try this out** und dann auf **Send**.
  
 	![](./media/mobile-services-dotnet-backend-test-local-service-api-documentation/service-try-this-out-get-todoitems.png)
 
-	This sends a GET request to the local mobile app backend to return all rows in the TodoItem table. Because the table is seeded by the initializer, two TodoItem objects are returned in the body of the response message. For more information about initializers, see [How to make data model changes to a .NET backend mobile service](../articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations.md).
+	Dadurch wird eine GET-Anforderung an das lokale mobile App-Back-End gesendet, die zur Rückgabe aller Zeilen in der TodoItem-Tabelle auffordert. Da die Tabelle vom Initialisierer mit Startwerten belegt wird, werden im Hauptteil der Antwortnachricht zwei TodoItem-Objekte zurückgegeben. Weitere Informationen zu Initialisierern finden Sie unter [Ändern des Datenmodells eines mobilen .NET-Backend-Diensts](../articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations.md).
 
 	![](./media/mobile-services-dotnet-backend-test-local-service-api-documentation/service-try-this-out-get-response.png)
+
+<!---HONumber=62-->

@@ -69,9 +69,9 @@ Befolgen Sie diese Schritte, um eine Azure-Web-App zu erstellen und dann die Git
 
 > [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A7171371E" target="_blank">Kostenlose Azure-Testversion</a>.
 
-1. Installieren der Azure-Befehlszeilenschnittstelle (CLI Azure) und Herstellen einer Verbindung mit Ihrem Azure-Abonnement. Finden Sie unter [Installieren und konfigurieren die Azure-Befehlszeilenschnittstelle](xplat-cli).
+1. Installieren Sie die Azure-Befehlszeilenschnittstelle (Azure-CLI), und stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her. Weitere Informationen finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](xplat-cli).
 
-2. Wenn Sie zum ersten Mal ein Repository in Azure einrichten, müssen Sie Anmeldeinformationen erstellen. Der Azure-CLI Geben Sie den folgenden Befehl aus:
+2. Wenn Sie zum ersten Mal ein Repository in Azure einrichten, müssen Sie Anmeldeinformationen erstellen. Geben Sie über die Azure-Befehlszeilenschnittstelle den folgenden Befehl ein:
 
 		azure site deployment user set [username] [password]
 
@@ -101,7 +101,7 @@ Befolgen Sie diese Schritte, um eine Azure-Web-App zu erstellen und dann die Git
 
 	Geben Sie den Namen der Web-App ein, wenn Sie dazu aufgefordert werden.
 
-	>[AZURE.NOTE]Die 'Azure Site set -w'-Befehl wird nur bei Version 0.7.4 oder höher von Azure-Befehlszeilenschnittstelle. Sie können die Unterstützung von WebSocket im [Azure-Portal](https://portal.azure.com) aktivieren.
+	>[AZURE.NOTE]Der Befehl „azure site set -w“ funktioniert erst ab Version 0.7.4 der Azure-Befehlszeilenschnittstelle. Sie können die Unterstützung von WebSocket im [Azure-Portal](https://portal.azure.com) aktivieren.
 	>
 	>Um WebSockets mithilfe des Azure-Portals zu aktivieren, klicken Sie auf dem Web-Apps-Blatt auf die Web-App und dann auf **Alle Einstellungen** > ** Anwendungseinstellungen**. Klicken Sie unter **Web Sockets** auf **Ein**. Klicken Sie anschließend auf **Save**.
 
@@ -161,7 +161,7 @@ Nachdem Sie Änderungen an den Server übertragen wurden, können Sie Ihre Websi
 
 	azure site scale instances --instances #
 
-Hierbei steht __\#__ für die Anzahl der zu erstellenden Instanzen.
+Hierbei steht __#__ für die Anzahl der zu erstellenden Instanzen.
 
 Sie können über mehrere Browser oder Computer eine Verbindung mit Ihrer Web-App herstellen, um sicherzustellen, dass Nachrichten korrekt an alle Clients gesendet werden.
 
@@ -283,4 +283,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine Chat-Anwendung erstellt wird
 [pricing]: /pricing/details/web-sites/
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

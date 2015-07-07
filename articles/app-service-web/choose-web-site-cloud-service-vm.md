@@ -50,7 +50,7 @@ Im Folgenden sind einige Anwendungsszenarien mit Empfehlungen zur Auswahl der ge
 
 ### <a id="onprem"></a> Ich benötige ein Web-Front-End mit Hintergrundverarbeitung und Datenbank-Back-End, um Geschäftsanwendungen mit integrierten lokalen Medienobjekten auszuführen.
 
-Azure App Service stellt eine hervorragende Lösung für komplexe Geschäftsanwendungen dar. Mit Azure App Service können Sie Apps entwickeln, die automatisch auf einer Lastenausgleichsplattform skaliert, mit Active Directory geschützt und mit Ihren lokalen Ressourcen verbunden werden können. Das Verwalten dieser Apps wird dank eines erstklassigen Verwaltungsportals und mithilfe von APIs erleichtert. Sie erhalten außerdem mithilfe von App Insight-Tools Einblicke darin, wie Kunden die Apps verwenden. Mit der neuen Funktion [WebJobs][] können Sie Hintergrundprozesse und Aufgaben als Teil der Webebene ausführen, während Hybridkonnektivität und die [VNET-Funktionen](../fundamentals-introduction-to-azure.md#networking/) die Verbindung zurück zu den lokalen Ressourcen ermöglichen. Azure App Service bietet eine SLA mit 99,9 % Verfügbarkeit für Web-Apps und stellt folgende Möglichkeiten bereit: 
+Azure App Service stellt eine hervorragende Lösung für komplexe Geschäftsanwendungen dar. Mit Azure App Service können Sie Apps entwickeln, die automatisch auf einer Lastenausgleichsplattform skaliert, mit Active Directory geschützt und mit Ihren lokalen Ressourcen verbunden werden können. Das Verwalten dieser Apps wird dank eines erstklassigen Verwaltungsportals und mithilfe von APIs erleichtert. Sie erhalten außerdem mithilfe von App Insight-Tools Einblicke darin, wie Kunden die Apps verwenden. Mit der neuen Funktion [WebJobs][] können Sie Hintergrundprozesse und Aufgaben als Teil der Webebene ausführen, während Hybridkonnektivität und die [VNET-Funktionen](../fundamentals-introduction-to-azure.md#networking/) die Verbindung zurück zu den lokalen Ressourcen ermöglichen. Azure App Service bietet eine SLA mit 99,9 % Verfügbarkeit für Web-Apps und stellt folgende Möglichkeiten bereit:
 
 * Zuverlässige Ausführung Ihrer Anwendungen auf einer Cloudplattform mit Selbstreparatur und automatischem Patching.
 * Automatische Skalierung in einem globalen Netzwerk von Datencentern.
@@ -60,7 +60,7 @@ Azure App Service stellt eine hervorragende Lösung für komplexe Geschäftsanwe
 
 ### <a id="corp"></a> Ich benötige eine zuverlässige Möglichkeit zum Hosten meiner Unternehmenswebsites, die eine problemlose Skalierung und einen globalen Einsatz ermöglicht.
 
-Azure App Service stellt eine hervorragende Lösung für das Hosten von Unternehmenswebsites dar. Azure App Service ermöglicht ein rasches und problemloses Skalieren von Web-Apps, um die Anforderungen in einem globalen Netzwerk von Datencentern zu erfüllen. Azure App Service bietet lokalen Zugriff, Fehlertoleranz und eine intelligente Verwaltung des Datenverkehrs. Dies alles auf einer Plattform, die erstklassige Verwaltungstools bereitstellt und es Ihnen ermöglicht, rasch und problemlos Einblicke in den Zustand und das Datenaufkommen der Website zu erhalten. Azure App Service bietet eine SLA mit 99,9 % Verfügbarkeit für Web-Apps und stellt folgende Möglichkeiten bereit: 
+Azure App Service stellt eine hervorragende Lösung für das Hosten von Unternehmenswebsites dar. Azure App Service ermöglicht ein rasches und problemloses Skalieren von Web-Apps, um die Anforderungen in einem globalen Netzwerk von Datencentern zu erfüllen. Azure App Service bietet lokalen Zugriff, Fehlertoleranz und eine intelligente Verwaltung des Datenverkehrs. Dies alles auf einer Plattform, die erstklassige Verwaltungstools bereitstellt und es Ihnen ermöglicht, rasch und problemlos Einblicke in den Zustand und das Datenaufkommen der Website zu erhalten. Azure App Service bietet eine SLA mit 99,9 % Verfügbarkeit für Web-Apps und stellt folgende Möglichkeiten bereit:
 
 * Führen Sie Ihre Websites auf einer Cloudplattform mit Selbstreparatur und automatischem Patching zuverlässig aus.
 * Nutzen Sie eine automatische Skalierung in einem globalen Netzwerk von Datencentern.
@@ -119,7 +119,7 @@ Wenn Ihr Open-Source-Framework in App Service unterstützt wird, werden die von 
 - Richten Sie WordPress, Drupal, Umbraco, DNN und viele weitere Webanwendungen von Drittanbietern ein.
 - Migrieren Sie vorhandene Anwendungen, oder Erstellen Sie neue Anwendungen über den Web-App-Katalog.
 
-Wenn Ihr Open-Source-Framework in App Service nicht unterstützt wird, ist eine Ausführung über eine der weiteren Azure-Webhostingoptionen möglich.  Bei Cloud Services verwenden Sie Startaufgaben für das Installieren und Konfigurieren erforderlicher Open-Source-Software, die unter Windows ausgeführt wird. Mit Virtual Machines können Sie die Software auf dem Image eines virtuellen Computers installieren und konfigurieren. Dieser kann Windows- oder Linux-basiert sein.
+Wenn Ihr Open-Source-Framework in App Service nicht unterstützt wird, ist eine Ausführung über eine der weiteren Azure-Webhostingoptionen möglich. Bei Cloud Services verwenden Sie Startaufgaben für das Installieren und Konfigurieren erforderlicher Open-Source-Software, die unter Windows ausgeführt wird. Mit Virtual Machines können Sie die Software auf dem Image eines virtuellen Computers installieren und konfigurieren. Dieser kann Windows- oder Linux-basiert sein.
 
 ### <a id="lob"></a>Ich verfüge über eine Branchenanwendung, die mit dem Unternehmensnetzwerk verbunden sein muss.
 
@@ -230,7 +230,7 @@ In der folgenden Tabelle werden die Funktionen von App Service, Cloud Services u
    <td valign="middle">X</td>
    <td valign="middle">X</td>
    <td valign="middle">X</td>
-   <td valign="middle">App Service kann problemlos für das Hosten einer REST-API der mittleren Ebene genutzt werden, über die Funktion <a href="http://go.microsoft.com/fwlink/?linkid=390226">WebJobs</a> können Hintergrundverarbeitungsaufträge gehostet werden. Sie können WebJobs auf einer dedizierten Website ausführen, um eine unabhängige Skalierbarkeit für die entsprechende Ebene zu erzielen. Die Vorschau [API-apps] (.. / app-service-api/app-service-api-apps-why-best-platform.md) Feature bietet noch mehr Funktionen zum Hosten von REST-Diensten.</td>
+   <td valign="middle">App Service kann problemlos für das Hosten einer REST-API der mittleren Ebene genutzt werden, über die Funktion <a href="http://go.microsoft.com/fwlink/?linkid=390226">WebJobs</a> können Hintergrundverarbeitungsaufträge gehostet werden. Sie können WebJobs auf einer dedizierten Website ausführen, um eine unabhängige Skalierbarkeit für die entsprechende Ebene zu erzielen. Die Vorschaufunktion [API-Apps](../app-service-api/app-service-api-apps-why-best-platform.md) bietet sogar noch mehr Funktionen für das Hosten von REST-Diensten.</td>
 </tr>
 <tr>
    <td valign="middle"><p>Integrierte Unterstützung von MySQL-as-a-Service</p></td>
@@ -367,4 +367,4 @@ Informationen zum Einstieg in die gewählte(n) Optionen für Ihre Anwendungen fi
   [Storage]: http://www.windowsazure.com/documentation/services/storage/
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

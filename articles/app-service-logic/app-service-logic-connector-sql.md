@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Mithilfe des SQL-Connectors in Microsoft Azure-App-Dienst" 
+   pageTitle="Verwendung des SQL-Connectors in Microsoft Azure App Service" 
    description="Verwenden des SQL-Connectors" 
    services="app-service\logic" 
    documentationCenter=".net,nodejs,java" 
@@ -13,69 +13,69 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="06/14/2015"
+   ms.date="06/17/2015"
    ms.author="sutalasi"/>
 
 
 # Microsoft SQL-Connector
 
-Verbinden Sie mit einer lokalen SQL Server oder einer Azure SQL-Datenbank zum Erstellen und ändern Sie die Informationen oder Daten. Connectors können in Logik Apps abrufen, Prozess oder Verschieben von Daten als Teil einer "Flow" verwendet werden. Bei Verwendung von SQL-Connector in den Fluss erzielen Sie eine Vielzahl von Szenarien. Dazu zählen z. B.:
+Stellen Sie eine Verbindung mit einem lokalen SQL Server oder einer Azure SQL-Datenbank her, um Informationen oder Daten zu erstellen oder zu ändern. Connectors können in Logik-Apps als Teil eines "Workflows" verwendet werden, um Daten abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. Wenn Sie den SQL-Connector im Workflow verwenden, können Sie eine Vielzahl von Szenarios umsetzen. Dazu zählen z. B.:
 
-- Machen Sie einen Teil der Daten in der SQL-Datenbank mit einer mobilen Anwendung oder eine Webanwendung. 
-- Einfügen von Daten in eine SQL-Datenbanktabelle für die Speicherung. Sie können z. B. Mitarbeiterdatensätze eingeben, Aktualisieren von Aufträgen und usw..
-- Abrufen von Daten aus SQL, und verwenden Sie es in einem Geschäftsprozess. Beispielsweise können Sie Kundendatensätze erhalten und die Kundendatensätze in SalesForce aufgenommen. 
+- Machen Sie einen Teil der Daten in der SQL-Datenbank mithilfe einer Web- oder mobilen Anwendung verfügbar. 
+- Einfügen von Daten in eine SQL-Datenbanktabelle zum Speichern. Sie können z. B. Mitarbeiterdatensätze eingeben, Aufträge aktualisieren, usw..
+- Rufen Sie Daten aus SQL ab und verwenden Sie sie in einem Geschäftsprozess. Beispielsweise können Sie Kundendatensätze abrufen und sie in Salesforce übertragen. 
 
 ## Trigger und Aktionen
-*Trigger* Ereignisse, die auftreten, z. B. wenn ein Auftrag aktualisiert wird oder wenn ein neuer Kunde hinzugefügt wird, sind. Ein *Aktion* ist das Ergebnis des Triggers. Wenn ein Auftrag aktualisiert wird, senden Sie eine Warnung an den Verkäufer. Oder, wenn ein neuer Kunde hinzugefügt wird, senden Sie eine e-Mail zur Begrüßung an den neuen Kunden.
+*Trigger* sind Ereignisse, die stattfinden. Z. B. wenn ein Auftrag aktualisiert oder ein neuer Kunde hinzugefügt wird. Eine *Aktion* ist das Ergebnis des Triggers. Z. B. bei Aktualisierung eines Auftrags eine Warnung an den Verkäufer senden. Oder bei Hinzufügen eines neuen Kunden eine E-Mail zur Begrüßung an den neuen Kunden senden.
 
-SQL-Connector kann als ein Trigger oder eine Aktion in einer App Logik und unterstützt Daten in JSON und XML-Format verwendet werden. Für jede Tabelle, die im Paket enthaltenen Einstellungen (mehr dazu weiter unten in diesem Thema), es gibt eine Reihe von JSON-Aktionen und einen Satz von XML-Aktionen.
+Der SQL-Connector kann als ein Trigger oder eine Aktion in einer Logik-App verwendet werden und unterstützt Daten im JSON- und XML-Format. Für jede Tabelle, die in den Paketeinstellungen enthalten ist (mehr dazu weiter unten in diesem Thema), gibt es eine Reihe von JSON-Aktionen und einen Satz von XML-Aktionen.
 
-SQL-Connector hat folgende Trigger und Aktionen zur Verfügung:
+Der SQL-Connector verfügt über folgende Trigger und Aktionen:
 
-Trigger | Aktion
+Trigger | Aktionen
 --- | ---
-Abrufen von Daten | <ul><li>Legen Sie in der Tabelle</li><li>Tabelle aktualisieren</li><li>Wählen Sie aus der Tabelle</li><li>Löschen aus Tabelle</li><li>Aufrufen der gespeicherten Prozedur</li>
+Umfragedaten | <ul><li>In die Tabelle einfügen</li><li>Tabelle aktualisieren</li><li>Aus der Tabelle auswählen</li><li>Aus der Tabelle löschen</li><li>Aufrufen der gespeicherten Prozedur</li>
 
-## Erstellen von SQL-Connector
+## Erstellen des SQL-Connectors
 
-Ein Connector kann innerhalb einer Anwendung Logik erstellt werden oder direkt aus dem Azure Marketplace erstellt werden.
+Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
 
-1. Wählen Sie in der Azure Startmenü **Marketplace**.
-2. Wählen Sie **API-Apps** und suchen Sie nach "SQL-Connector".
-3. Geben Sie den Namen, die App planen, Service und andere Eigenschaften.
-4. Geben Sie die folgenden Einstellungen:
+1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
+2. Wählen Sie **API-Apps** aus und suchen Sie nach "SQL-Connector".
+3. Geben Sie den Namen, die App Service-Plan und andere Eigenschaften ein.
+4. Geben Sie die folgenden Paketeinstellungen ein:
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-Servername | Ja | Geben Sie den SQL Server-Namen. Geben Sie z. B. *SQLserver/Sqlexpress* oder *SQLserver.mydomain.com*.
+Servername | Ja | Geben Sie den SQL Server-Namen ein. Geben Sie z. B. *SQLserver/sqlexpress* oder *SQLserver.mydomain.com* ein.
 Port | Nein | Der Standardwert ist 1433.
-Benutzername | Ja | Geben Sie einen Benutzernamen ein, der sich anmelden, kann in den SQL-Server. Geben Sie "Domäne\\Benutzername", wenn die Verbindung mit einer lokalen SQL Server. 
-Kennwort | Ja | Geben Sie das Benutzernamen, das Kennwort ein.
-Datenbankname | Ja | Geben Sie die Datenbank, die Sie verbinden. Sie können z. B. eingeben *Kunden* oder *Dbo/Bestellungen*.
-Lokal | Ja | Der Standardwert lautet False. Geben Sie False, wenn eine Verbindung mit einer Azure SQL-Datenbank herstellen. Geben Sie True, wenn eine Verbindung zu einer lokalen SQL Server. 
-Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie die lokale Verbindung herstellen, geben Sie die Verbindungszeichenfolge der Service Bus-Relay.<br/><br/>[Mit Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus Preise](http://azure.microsoft.com/pricing/details/service-bus/)
-Name des Partnerservers | Nein | Wenn der primäre Server nicht verfügbar ist, können Sie einem Partnerserver als Alternative oder backup-Server eingeben. 
-Tabellen | Nein | Listen Sie die Datenbanktabellen, die vom Connector aktualisiert werden können. Geben Sie z. B. *OrdersTable* oder *-Tabelle*. Wenn keine Tabellen eingegeben werden, können alle Tabellen verwendet werden. Gültige Tabellen und/oder gespeicherte Prozeduren sind auf diesen Connector als Aktion erforderlich. 
-Gespeicherte Prozeduren | Nein | Geben Sie eine vorhandene gespeicherte Prozedur, die vom Connector aufgerufen werden kann. Geben Sie z. B. *Sp_IsEmployeeEligible* oder *Sp_CalculateOrderDiscount*. Gültige Tabellen und/oder gespeicherte Prozeduren sind auf diesen Connector als Aktion erforderlich. 
-Abfrage zu verfügbaren Daten | Für die Unterstützung für trigger | SQL-Anweisung, um festzustellen, ob alle Daten für das Abrufen einer SQL Server-Datenbanktabelle verfügbar ist. Dies sollte einen numerischen Wert für die Anzahl der Zeilen der verfügbaren Daten zurückgeben. Beispiel: SELECT COUNT(*) from Table_name. 
-Abfrage zu Umfragedaten | Für die Unterstützung für trigger | Die SQL-Anweisung zum Abrufen der SQL Server-Datenbanktabelle. Sie können eine beliebige Anzahl von SQL-Anweisungen, die durch Semikolons getrennt eingeben. Diese Anweisung ist im Hinblick auf Transaktionen ausgeführt und nur übernommen werden, wenn die Daten in Ihrer Anwendung Logik sicher gespeichert werden. Beispiel: SELECT * aus Table_name; DELETE FROM Table_name. <br/><br/>** Hinweis **<br/>müssen Sie eine Umfrage-Anweisung, die eine Endlosschleife durch Löschen vermeidet bereitstellen, verschieben oder aktualisieren die ausgewählte Daten, um sicherzustellen, dass diese Daten ist nicht erneut abgefragt. 
+Benutzername | Ja | Geben Sie einen Benutzernamen ein, mit dem Sie sich bei SQL Server anmelden können. Geben Sie Domäne\\Benutzernamen ein, wenn Sie mit einem lokalen SQL-Server eine Verbindung herstellen. 
+Kennwort | Ja | Geben Sie das Kennwort für den Benutzernamen ein.
+Datenbankname | Ja | Geben Sie die Datenbank ein, mit der Sie eine Verbindung herstellen. Sie können z. B. *Customers* oder *dbo/orders* eingeben.
+Lokal | Ja | Die Standardeinstellung ist "False". Geben Sie "False" ein, wenn Sie eine Verbindung mit einer Azure SQL-Datenbank herstellen. Geben Sie "True" ein, wenn Sie eine Verbindung zu einem lokalen SQL Server herstellen. 
+Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/)
+Name des Partnerservers | Nein | Wenn der primäre Server nicht verfügbar ist, können Sie einen Partnerserver als Alternative oder einen Backup-Server eingeben. 
+Tabellen | Nein | Listen Sie die Datenbanktabellen auf, die vom Connector aktualisiert werden können. Geben Sie z. B. *OrdersTable* oder *EmployeeTable* ein. Wenn keine Tabellen eingegeben werden, können alle Tabellen verwendet werden. Gültige Tabellen und/oder gespeicherte Prozeduren sind erforderlich, um diesen Connector als Aktion zu verwenden. 
+Gespeicherte Prozeduren | Nein | Geben Sie eine vorhandene gespeicherte Prozedur ein, die vom Connector aufgerufen werden kann. Geben Sie z. B. *sp_IsEmployeeEligible* oder *sp{_>_<_}CalculateOrderDiscount* ein. Gültige Tabellen und/oder gespeicherte Prozeduren sind erforderlich, um diesen Connector als Aktion zu verwenden. 
+Abfrage zu verfügbaren Daten | Für Trigger-Support | Die SQL-Anweisung, mit der bestimmt wird, ob Daten zum Abrufen einer SQL Server-Datenbanktabelle verfügbar sind. Dies sollte einen numerischen Wert für die Anzahl der Zeilen der verfügbaren Daten zurückgeben. Beispiel: SELECT COUNT(*) from Table_name. 
+Abfrage zu Umfragedaten | Für Trigger-Support | Die SQL-Anweisung zum Abrufen der SQL Server-Datenbanktabelle. Sie können eine beliebige Anzahl von SQL-Anweisungen durch ein Semikolon getrennt eingeben. Diese Anweisung wird im Hinblick auf Transaktionen ausgeführt und nur übernommen, wenn die Daten in Ihrer Logik-App sicher gespeichert sind. Beispiel: SELECT * aus Table_name; DELETE FROM Table_name. <br/><br/>** Hinweis **<br/>Sie müssen eine Umfrageanweisung bereitstellen, die eine Endlosschleife durch Löschen, Verschieben oder Aktualisieren der ausgewählten Daten vermeidet, um sicherzustellen, dass die gleichen Daten nicht erneut abgefragt werden. 
 
-5. Nach Abschluss des Vorgangs die Paketeinstellungen etwa wie folgt aussehen: <br/> ![][1]
+5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: <br/> ![][1]
 
-## Verwenden Sie den Connector als Trigger
-Betrachten wir nun eine einfache Logik-app, die Daten aus einer SQL-Tabelle abfragt, die Daten in einer anderen Tabelle hinzugefügt und aktualisiert die Daten.
+## Verwenden des Connectors als Trigger
+Betrachten wir eine einfache Logik-App, die Daten aus einer SQL-Tabelle abruft, die Daten dann einer anderen Tabelle hinzufügt und anschließend aktualisiert.
 
-Um den SQL-Connector als Trigger verwenden möchten, geben Sie die **verfügbaren Datenabfrage** und **Abruf Datenabfrage** Werte. **Verfügbaren Datenabfrage** für den eingegebenen Zeitplan ausgeführt wird, und bestimmt, ob alle Daten verfügbar sind. Da diese Abfrage nur einen skalaren Wert zurückgibt, können Sie optimiert und für die regelmäßige Ausführung optimiert werden.
+Um den SQL-Connector als Trigger zu verwenden, geben Sie die Werte für die **Verfügbare Datenabfrage** und den **Abruf der Datenabfrage** ein. Die **Verfügbare Datenabfrage** wird für den eingegebenen Zeitplan ausgeführt, und bestimmt, ob Daten verfügbar sind. Da diese Abfrage nur einen skalaren Wert zurückgibt, können sie verbessert und für die regelmäßige Ausführung optimiert werden.
 
-**Abruf Datenabfrage** wird nur ausgeführt, wenn die Abfrage zur Verfügung gibt an, dass die Daten verfügbar sind. Diese Anweisung innerhalb einer Transaktion ausgeführt wird, und wird nur übernommen, wenn die extrahierten Daten in Ihrem Workflow dauerhaft gespeichert werden. Es ist wichtig, um zu vermeiden, unendlich wieder die gleichen Daten zu extrahieren. Die grundlegenden Merkmale dieser Ausführung kann verwendet werden, löschen oder aktualisieren Sie die Daten, um sicherzustellen, dass es ist nicht das nächste Mal gesammelt, die Daten abgefragt werden.
+Der **Abruf der Datenabfrage** wird nur ausgeführt, wenn die Datenabfrage nach verfügbaren Daten angibt, dass Daten verfügbar sind. Diese Anweisung wird innerhalb einer Transaktion ausgeführt, und wird nur übernommen, wenn die extrahierten Daten in Ihrem Workflow dauerhaft gespeichert werden. Es ist wichtig, das unendliche Extrahieren der gleichen Daten zu vermeiden. Das transaktionale Merkmal dieser Ausführung kann verwendet werden, um Daten zu löschen oder zu aktualisieren, damit sie bei der nächsten Datenabfrage nicht wieder gesammelt werden.
 
-> [AZURE.NOTE]Das Schema, das von dieser Anweisung zurückgegebenen identifiziert die verfügbaren Eigenschaften in den Connector. Alle Spalten müssen benannt werden.
+> [AZURE.NOTE]Das Schema, das von dieser Anweisung zurückgegebenen wird, identifiziert die verfügbaren Eigenschaften im Connector. Alle Spalten müssen benannt werden.
 
-#### Beispiel für Daten verfügbaren Abfrage
+#### Beispiel für eine Abfrage verfügbarer Daten
 
 	SELECT COUNT(*) FROM [Order] WHERE OrderStatus = 'ProcessedForCollection'
 
-#### Daten-Abfragebeispiel abrufen
+#### Beispiel für eine Abfrage zu Umfragedaten
 
 	SELECT *, GetData() as 'PollTime' FROM [Order] 
 		WHERE OrderStatus = 'ProcessedForCollection' 
@@ -84,55 +84,54 @@ Um den SQL-Connector als Trigger verwenden möchten, geben Sie die **verfügbare
 		WHERE Id = 
 		(SELECT Id FROM [Order] WHERE OrderStatus = 'ProcessedForCollection' ORDER BY Id DESC)
 
-### Fügen Sie den Trigger hinzu.
-1. Beim Erstellen oder Bearbeiten einer app Logik, wählen Sie als Auslöser SQL-Connectors, die Sie erstellt haben. Dies führt die verfügbaren Trigger: **Poll-Daten (JSON)** und **Poll-Daten (XML)**: <br/> ![][5] 
+### Den Trigger hinzufügen
+1. Beim Erstellen oder Bearbeiten einer Logik-App wählen Sie den SQL-Connector als Trigger aus. Dadurch werden die verfügbaren Trigger aufgelistet: **Poll Data (JSON)** und **Poll Data (XML)**: <br/>![][5] 
 
-2. Wählen Sie die **Abruf Daten (JSON)** auslösen, geben Sie die Häufigkeit und klicken Sie auf die ✓: <br/> ![][6]
+2. Wählen Sie den Trigger **Poll Data (JSON)** aus, geben Sie die Häufigkeit an, und klicken Sie auf ✓: <br/>![][6]
 
-3. Der Trigger wird nun angezeigt, wie in der Logik app konfiguriert. Die Ausgaben des Triggers vorhanden sein werden angezeigt und können als Eingaben in nachfolgenden Aktionen verwendet werden: <br/> ![][7]
+3. Der Trigger wird jetzt in der Logik-App als konfiguriert angezeigt. Die Ausgaben des Triggers werden angezeigt und können in nachfolgenden Aktionen als Eingabe verwendet werden: <br/> ![][7]
 
-## Verwenden Sie den Connector als Aktion
-Unsere einfache Logik Anwendung, die Daten aus einer SQL-Tabelle abruft, fügt die Daten in einer anderen Tabelle und aktualisiert die Daten.
+## Verwenden des Connectors als Aktion
+Mithilfe unseres einfachen Logik-App-Szenarios, das Daten aus einer SQL-Tabelle abruft, die Daten dann einer anderen Tabelle hinzufügt und anschließend aktualisiert.
 
-Geben Sie den Namen der Tabellen und/oder gespeicherte Prozeduren, die Sie eingegeben haben, wenn Sie den SQL-Connector erstellt haben, für die Verwendung der SQL-Connector als Aktion:
+Für die Verwendung des SQL-Connectors als Aktion geben Sie den Namen der Tabellen und/oder gespeicherte Prozeduren ein, die Sie schon bei der Erstellung des SQL-Connectors eingegeben haben:
 
-1. Nachdem die Trigger (oder wählen Sie "Diese Logik manuell ausführen"), SQL-Connectors, die Sie erstellt, aus dem Katalog haben hinzufügen. Wählen Sie eine der Insert-Aktionen, wie z. B. *(Insert in TempEmployeeDetails, JSON)*: <br/> ![][8] 
+1. Fügen Sie nach dem Trigger (oder wählen Sie "Diese Logik manuell ausführen") den aus dem Katalog erstellten SQL-Connector hinzu. Wählen Sie eine der Einfügeaktionen aus, wie *Insert Into TempEmployeeDetails (JSON)*: <br/>![][8] 
 
-2. Geben Sie die Eingabewerte des Datensatzes eingefügt werden, und klicken auf die ✓: <br/> ![][9]
+2. Geben Sie die einzufügenden Eingabewerte des Datensatzes ein, und klicken Sie auf ✓: <br/> ![][9]
 
-3. Wählen Sie aus dem Katalog erstellten SQL-Connector. Wählen Sie als Aktion, wie z. B. die Update-Aktion für die gleiche Tabelle *Update EmployeeDetails*: <br/> ![][11]
+3. Wählen Sie aus dem Katalog denselben SQL-Connector aus, den Sie erstellt haben. Wählen Sie als Aktion die Aktualisierungsaktion für die gleiche Tabelle aus, z. B. *Update EmployeeDetails*: <br/> ![][11]
 
-4. Geben Sie die Eingabewerte für die Updateaktion, und klicken Sie auf die ✓: <br/> ![][12]
+4. Geben Sie die Eingabewerte für die Aktualisierungsaktion ein, und klicken Sie auf ✓: <br/> ![][12]
 
 Sie können die Logik-App testen, indem Sie in der abgefragten Tabelle einen neuen Datensatz hinzufügen.
 
 ## Hybridkonfiguration (optional)
 
-> [AZURE.NOTE]Dieser Schritt ist erforderlich, nur bei Verwendung von lokalen SQL-Server hinter der Firewall.
+> [AZURE.NOTE]Dieser Schritt ist nur bei lokaler Verwendung von SQL Server hinter Ihrer Firewall erforderlich.
 
-App-Dienst verwendet den Hybrid-Konfigurations-Manager, um sicher auf Ihrem lokalen System zu verbinden. Wenn Sie die Verbindung mithilfe einer lokalen SQL Server sind, ist der Hybrid-Verbindungs-Manager erforderlich.
+App Service verwendet den Hybrid-Konfigurations-Manager, um sicher eine Verbindung auf Ihr lokales System herzustellen. Wenn Ihr Connector SQL Server lokal verwendet, ist der Hybrid Connection Manager erforderlich.
 
-Finden Sie unter [mithilfe der Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md).
+Informationen finden Sie unter [Hybrid Connection Manager konfigurieren](app-service-logic-hybrid-connection-manager.md).
 
 
-## Möchten Sie den Connector
-Der Connector erstellt wird, können Sie es in einen Business-Datenfluss mit einer Anwendung Logik hinzufügen. Finden Sie unter [Was Logik Apps sind?](app-service-logic-what-are-logic-apps.md).
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Sie können auch die Leistung Statistiken und Steuerung der Sicherheit mit dem Connector überprüfen. Finden Sie unter [Verwalten und überwachen-API-apps und Connector](../app-service-api/app-service-api-manage-in-portal.md).
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
 
 
 <!--Image references-->
-[1]: ./media/app-service-logic-connector-sql/Create.jpg
-[5]: ./media/app-service-logic-connector-sql/LogicApp1.jpg
-[6]: ./media/app-service-logic-connector-sql/LogicApp2.jpg
-[7]: ./media/app-service-logic-connector-sql/LogicApp3.jpg
-[8]: ./media/app-service-logic-connector-sql/LogicApp4.jpg
-[9]: ./media/app-service-logic-connector-sql/LogicApp5.jpg
-[10]: ./media/app-service-logic-connector-sql/LogicApp6.jpg
-[11]: ./media/app-service-logic-connector-sql/LogicApp7.jpg
-[12]: ./media/app-service-logic-connector-sql/LogicApp8.jpg
+[1]: ./media/app-service-logic-connector-sql/Create.png
+[5]: ./media/app-service-logic-connector-sql/LogicApp1.png
+[6]: ./media/app-service-logic-connector-sql/LogicApp2.png
+[7]: ./media/app-service-logic-connector-sql/LogicApp3.png
+[8]: ./media/app-service-logic-connector-sql/LogicApp4.png
+[9]: ./media/app-service-logic-connector-sql/LogicApp5.png
+[11]: ./media/app-service-logic-connector-sql/LogicApp7.png
+[12]: ./media/app-service-logic-connector-sql/LogicApp8.png
 
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

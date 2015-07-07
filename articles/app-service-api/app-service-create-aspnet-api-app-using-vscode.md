@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Erstellen einer ASP.NET 5 API-Anwendung in Visual Studio-Code"
-   description="In diesem Lernprogramm wird das Erstellen einer 5-API von ASP.NET app mit Visual Studio-Code veranschaulicht."
+   pageTitle="Erstellen einer ASP.NET 5-API-App mit Visual Studio-Code"
+   description="In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Visual Studio Code eine ASP.NET 5-API-App erstellen."
    services="app-service\api"
    documentationCenter=".net"
    authors="erikre"
@@ -16,7 +16,7 @@
 	ms.date="06/04/2015" 
 	ms.author="erikre"/>
 
-# Erstellen einer ASP.NET 5 API-Anwendung in Visual Studio-Code
+# Erstellen einer ASP.NET 5-API-App mit Visual Studio-Code
 
 > [AZURE.SELECTOR]
 - [Visual Studio 2013](app-service-dotnet-create-api-app.md)
@@ -25,107 +25,107 @@
 
 ## Übersicht
 
-In diesem Lernprogramm wird gezeigt, wie Sie zum Erstellen einer ASP.NET 5-API-app mit [Visual Studio-Code](http://code.visualstudio.com//Docs/whyvscode). ASP.NET 5 ist eine umfangreiche Umgestaltung von ASP.NET. ASP.NET 5 ist ein neues Open-Source- und Multiplattform-Framework zum Erstellen von modernen Cloud-basierte Webanwendungen mithilfe von .NET. Weitere Informationen finden Sie unter [Einführung in ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). Informationen über die API-Anwendungen finden Sie unter [Was API-apps sind?](app-service-api-apps-why-best-platform.md)
+In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von [Visual Studio Code](http://code.visualstudio.com//Docs/whyvscode) eine ASP.NET 5-API-App erstellen. Das Design von ASP.NET wurde für ASP.NET 5 deutlich verändert. ASP.NET 5 ist ein neues plattformübergreifendes Open-Source-Framework zum Erstellen moderner cloudbasierter Webanwendungen mit .NET. Weitere Informationen finden Sie unter [Einführung in ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). Weitere Informationen zu API-Apps finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
 
-> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie nicht über ein Konto verfügen, können Sie [für eine kostenlose Testversion registrieren](/pricing/free-trial/) oder [Aktivieren Sie Ihre MSDN-Abonnementvorteile](/pricing/member-offers/msdn-benefits-details/). Sie können auch kostenlos ausprobieren der [App Service-Appbeispiele](http://tryappservice.azure.com).
+> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [sich für eine kostenlose Testversion registrieren](/pricing/free-trial/) oder [Ihre MSDN-Abonnentenvorteile aktivieren](/pricing/member-offers/msdn-benefits-details/). Sie können auch die kostenlosen [App Service-App-Beispiele](http://tryappservice.azure.com) nutzen.
 
 ## Voraussetzungen  
 
-* Installieren und einrichten [Visual Studio-Code](http://code.visualstudio.com/Docs/setup).
-* Installieren Sie [Node.js](http://nodejs.org/download/). < Br > [Knoten](http://nodejs.org/) ist eine Plattform für die schnelle und skalierbare Serveranwendungen, die mit JavaScript erstellen. Knoten ist die Common Language Runtime (Knoten) und [Npm](http://www.npmjs.com/) ist der Paket-Manager für Knoten Module. Um das Gerüst einer app 5 ASP.NET-API in diesem Lernprogramm verwenden Sie Npm.
+* Installieren Sie [Visual Studio Code](http://code.visualstudio.com/Docs/setup), und richten Sie ihn ein.
+* Installieren Sie [Node.js](http://nodejs.org/download/).<br> [Node](http://nodejs.org/) ist eine Plattform für die Erstellung schneller und skalierbarer Serveranwendungen mit JavaScript. Node ist die Laufzeit (Node), [npm](http://www.npmjs.com/) der Paket-Manager für Node-Module. In diesem Lernprogramm erstellen Sie mithilfe von npm das Gerüst für eine ASP.NET 5-API-App.
 
-## Installieren Sie ASP.NET 5 und DNX
-ASP.NET 5/DNX ist ein schlankes .NET Stapel zum Erstellen von modernen Cloud und Web-apps, die auf OS X, Linux und Windows ausgeführt. Es wurde von Grund auf erstellt wurde, um eine optimierte Entwicklungsframework für Anwendungen bereitzustellen, die in der Cloud bereitgestellt oder lokal ausgeführte. Er besteht aus modulare Komponenten bei minimalem Aufwand so die Flexibilität beim Erstellen Ihrer Lösungen behalten.
+## Installieren von ASP.NET 5 und DNX
+ASP.NET 5/DNX ist ein schlanker .NET-Stapel für die Erstellung moderner Cloud- und Web-Apps für OS X, Linux und Windows. Er wurde von Grund auf neu als optimiertes Entwicklungsframework für Apps konzipiert, die entweder in der Cloud bereitgestellt oder lokal ausgeführt werden. Er besteht aus modularen Komponenten mit minimalem Mehraufwand und ermöglicht Ihnen eine flexible Lösungsentwicklung.
 
-> [AZURE.NOTE]ASP.NET 5 und DNX (.NET Execution Environment) auf OS X und Linux sind in einer frühen Beta-Vorschau-Zustand.
+> [AZURE.NOTE]ASP.NET 5 und DNX (die .NET-Ausführungsumgebung) befinden sich für OS X und Linux noch in einer frühen Beta-/Vorschauphase.
 
-In diesem Lernprogramm dient zum Erstellen von Anwendungen mit den neuesten Versionen der Entwicklung ASP.NET 5 und DNX Einstieg. Auf Wunsch eine Erfahrung stabilere, freigegebene, wechseln Sie zu [http://www.asp.net/vnext](http://www.asp.net/vnext). Die folgenden Anweisungen gelten für Windows zur Verfügung. Ausführliche Installationsanweisungen für OS X, Linux und Windows finden Sie unter [ASP.NET 5 installieren und DNX](https://code.visualstudio.com/Docs/ASPnet5#_installing-aspnet-5-and-dnx).
+Dieses Lernprogramm unterstützt Sie beim Einstieg in die Erstellung von Anwendungen mit den neuesten Entwicklungsversionen von ASP.NET 5 und DNX. Eine stabilere, veröffentlichte Version finden Sie unter [http://www.asp.net/vnext](http://www.asp.net/vnext). Die folgenden Anweisungen beziehen sich explizit auf Windows. Ausführlichere Installationsanweisungen für OS X, Linux und Windows finden Sie unter [Installieren von ASP.NET 5 und DNX](https://code.visualstudio.com/Docs/ASPnet5#_installing-aspnet-5-and-dnx).
 
-1. Um .NET Version Manager (DNVM) in Windows zu installieren, führen Sie den folgenden Befehl im Eingabeaufforderungsfenster ein:
-
-	<pre class="prettyprint">
-@powershell - NoProfile - ExecutionPolicy unrestricted - Befehl "&amp; {$Branch ="Dev"; Iex ((neues Objekt net.webclient). DownloadString ('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))}"
-</pre>Wird das Skript DNVM herunterladen, und fügen Sie sie in Ihrem Benutzerprofil.
-
-2. Sie müssen möglicherweise melden Sie sich nach der Eingabe des obigen Befehls damit die Änderungen an der PATH-Umgebungsvariablen wirksam werden.
-3. Überprüfen Sie den Speicherort des DNVM, indem Sie im Eingabeaufforderungsfenster folgenden Befehl ausführen: 
+1. Wenn Sie .NET Version Manager (DNVM) unter Windows installieren möchten, führen Sie im Befehlsfenster folgenden Befehl aus:
 
 	<pre class="prettyprint">
-wobei Dnvm
-</pre>Das Befehlsfenster wird einen Pfad ähnlich der folgenden angezeigt:
+@powershell -NoProfile -ExecutionPolicy unrestricted -Command "&amp;{$Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))}"
+</pre>Dadurch wird das DNVM-Skript herunterladen und Ihrem Benutzerprofil hinzugefügt.
 
-	![Dnvm-Speicherort](./media/app-service-create-aspnet-api-app-using-vscode/00-where-dnvm.png)
-
-4. Sie DNVM haben, müssen Sie es verwenden, um DNX herunterzuladen, um Ihre Anwendungen auszuführen. Führen Sie den folgenden Befehl im Befehlsfenster ein:
+2. Möglicherweise müssen Sie sich nach Eingabe des oben stehenden Befehls abmelden, damit die Änderung in der PATH-Umgebungsvariablen wirksam wird.
+3. Überprüfen Sie den Speicherort von DNVM, indem Sie im Befehlsfenster folgenden Befehl ausführen: 
 
 	<pre class="prettyprint">
-Dnvm-upgrade
+where dnvm
+</pre>Im Befehlsfenster wird ein Pfad wie der folgende angezeigt:
+
+	![DNVM-Speicherort](./media/app-service-create-aspnet-api-app-using-vscode/00-where-dnvm.png)
+
+4. Nachdem Sie nun über DNVM verfügen, müssen Sie damit DNX herunterladen, um Ihre Anwendungen ausführen zu können. Führen Sie im Befehlsfenster folgenden Befehl aus:
+
+	<pre class="prettyprint">
+dnvm upgrade
 </pre>
 
-5. Überprüfen Sie Ihre DNVM und zeigen Sie die aktive Laufzeit an, indem Sie im Eingabeaufforderungsfenster Folgendes eingeben:
+5. Überprüfen Sie DNVM, und zeigen Sie die aktive Laufzeit an, indem Sie im Befehlsfenster Folgendes eingeben:
 
 	<pre class="prettyprint">
-Dnvm Liste
-</pre>Das Befehlsfenster zeigt die Details der aktiven Laufzeit:
+dnvm list
+</pre>Im Befehlsfenster werden die Details zur aktiven Laufzeit angezeigt.
 
-	![Dnvm-Speicherort](./media/app-service-create-aspnet-api-app-using-vscode/00b-dnvm-list.png)
+	![DNVM-Speicherort](./media/app-service-create-aspnet-api-app-using-vscode/00b-dnvm-list.png)
 
-Ausführliche Installationsanweisungen für OS X, Linux und Windows finden Sie unter [ASP.NET 5 installieren und DNX](https://code.visualstudio.com/Docs/ASPnet5#_installing-aspnet-5-and-dnx).
+Ausführlichere Installationsanweisungen für OS X, Linux und Windows finden Sie unter [Installieren von ASP.NET 5 und DNX](https://code.visualstudio.com/Docs/ASPnet5#_installing-aspnet-5-and-dnx).
 
-## Die API-Anwendung zu erstellen. 
+## Erstellen der API-App 
 
-In diesem Abschnitt wird veranschaulicht, wie eine neue Anwendung ASP.NET-API app ein Gerüst. Verwenden Sie den Node Package Manager (Npm) installieren [Yeoman](http://yeoman.io/), [Leidige](http://gruntjs.com/), und [Bower](http://bower.io/).
+In diesem Abschnitt erfahren Sie, wie Sie das Gerüst für eine neue ASP.NET-API-App erstellen. Sie verwenden npm (Node Package Manager), um [Yeoman](http://yeoman.io/), [Grunt](http://gruntjs.com/) und [Bower](http://bower.io/) zu installieren.
 
-1. Öffnen Sie nach der Installation von Visual Studio-Code und Node.js eine Eingabeaufforderung mit Administratorrechten, und navigieren Sie zum Speicherort, in dem alle Ihre ASP.NET-Projekte mit VSCode gefunden werden sollen.
-2. Geben Sie Folgendes im Eingabeaufforderungsfenster Yeoman und die unterstützenden Tools zu installieren:
+1. Öffnen Sie nach der Installation von Visual Studio Code und Node.js eine Eingabeaufforderung mit Administratorrechten, und navigieren Sie zu dem Speicherort, in dem alle Ihre ASP.NET-Projekte mit VSCode gespeichert werden sollen.
+2. Geben Sie im Befehlsfenster Folgendes ein, um Yeoman und die unterstützenden Tools zu installieren:
 
 	<pre class="prettyprint">
-Npm installieren -g "yo" mühselige Cli Generator Aspnet bower
+npm install -g yo grunt-cli generator-aspnet bower
 </pre>
 
-3. Geben Sie Folgendes im Befehlsfenster erstellen den Projektordner und Gerüst der app:
+3. Geben Sie im Befehlsfenster Folgendes ein, um den Projektordner und das Gerüst für die App zu erstellen:
 
 	<pre class="prettyprint">
-yo Aspnet
+yo aspnet
 </pre>
 
-4. Befolgen Sie die Anweisungen, die vom Generator durch Durchführen eines Bildlaufs und zum Auswählen der **Web-API-Anwendung** Typ.
+4. Befolgen Sie die vom Generator bereitgestellten Anweisungen, indem Sie zum Typ der **Web-API-Anwendung** scrollen und diesen auswählen.
 
-	![Yoman - ASP.NET 5 Generator](./media/app-service-create-aspnet-api-app-using-vscode/01-yo-aspnet.png)
+	![Yeoman – ASP.NET 5-Generator](./media/app-service-create-aspnet-api-app-using-vscode/01-yo-aspnet.png)
 
-5. Legen Sie den Namen der neuen ASP.NET-API Anwendung zu **noch**. Dieser Name wird im Code weiter unten in diesem Lernprogramm verwendet werden. <br> Yoman erstellt einen neuen Ordner mit dem Namen **noch** und die erforderlichen Dateien für Ihre neue Anwendung.
-6. Open **Visual Studio-Code**.<br> Sie können die VSCode im Befehlsfenster öffnen, indem Sie eingeben **Code.**.
-7. Aus der **Datei** klicken Sie im Menü **Ordner öffnen** und wählen Sie den Ordner, in dem Ihre app ASP.NET-API befindet.
+5. Legen Sie den Namen Ihrer neuen ASP.NET-API-App auf **ContactsList** fest. Dieser Name wird in dem Code verwendet, der weiter unten in diesem Lernprogramm bereitgestellt wird. <br> Yeoman erstellt einen neuen Ordner namens **ContactsList** sowie die erforderlichen Dateien für Ihre neue App.
+6. Öffnen Sie **Visual Studio Code**.<br>. Sie können VSCode über das Befehlsfenster öffnen, indem Sie **code .** eingeben.
+7. Wählen Sie im Menü **Datei** die Option **Ordner öffnen**, und wählen Sie den Ordner, in dem Ihre ASP.NET-API-App gespeichert ist.
 
-	![Wählen Sie im Dialogfeld Ordner](./media/app-service-create-aspnet-api-app-using-vscode/02-open-folder.png)
+	![Dialogfeld "Ordner auswählen"](./media/app-service-create-aspnet-api-app-using-vscode/02-open-folder.png)
 
-	VSCode lädt das Projekt und Anzeigen der Daten in der **Durchsuchen** Fenster.
+	VSCode lädt Ihr Projekt und zeigt es im Fenster **Durchsuchen** an.
 
-	![Anzeigen von VSCode Kontakt-Projekt](./media/app-service-create-aspnet-api-app-using-vscode/03-vscode-contacts-project.png)
+	![VSCode mit Projekt "Contact"](./media/app-service-create-aspnet-api-app-using-vscode/03-vscode-contacts-project.png)
 
-8. In **VSCode**, aus der **Ansicht** klicken Sie im Menü **Befehl Palette**.
-9. In der **Befehl Palette** Geben Sie die folgenden Befehle:
+8. Wählen Sie in **VSCode** im Menü **Ansicht** die Option **Befehlspalette** aus.
+9. Geben Sie in der **Befehlspalette** die folgenden Befehle ein:
 
 	<pre class="prettyprint">
-DNX:DNU wiederherstellen – (noch)
-</pre>Wie Sie mit der Eingabe beginnen, sehen Sie die vollständige Befehlszeile aus der Liste.
+dnx:dnu restore - (ContactsList)
+</pre>Wenn Sie mit der Eingabe beginnen, wird die vollständige Befehlszeile aus der Liste angezeigt.
 
-	![RESTORE-Befehl](./media/app-service-create-aspnet-api-app-using-vscode/04-dnu-restore.png)
+	![Befehl "Restore"](./media/app-service-create-aspnet-api-app-using-vscode/04-dnu-restore.png)
 
-	Restore-Befehl installiert die erforderlichen NuGet-Pakete, um die Anwendung auszuführen. Zeigt ein Befehlsfenster **Wiederherstellung abgeschlossen** sobald Sie bereit sind.
+	Der Befehl "Restore" installiert die NuGet-Pakete, die zum Ausführen der Anwendung erforderlich sind. Nach Abschluss des Vorgangs wird ein Befehlsfenster mit dem Hinweis**Wiederherstellung abgeschlossen** angezeigt.
 
-## Ändern Sie die API-Anwendung
+## Ändern der API-App
 
-Ändern Sie jetzt die **noch** app durch Hinzufügen einer **Kontakt** Klasse und ein **ContactsController** Klasse.
+Nun ändern Sie die **ContactsList**-App, indem Sie eine **Contact**- und eine **ContactsController**-Klasse hinzufügen.
 
-1. Platzieren Sie den Cursor über die **noch** Projektname, und fügen Sie einen neuen Ordner mit dem Namen *Modelle* verwenden das Ordnersymbol für neue.
+1. Platzieren Sie den Cursor auf dem Projektnamen **ContactsList**, und fügen Sie mithilfe des Symbols für neue Ordner einen neuen Ordner mit dem Namen *Models* ein.
 
 	![Ordner für neue Modelle](./media/app-service-create-aspnet-api-app-using-vscode/07-new-folder.png)
 
-2. Mit der rechten Maustaste die **Modelle** Ordner eine neue Klassendatei mit dem Namen hinzufügen *Contact.cs* durch den folgenden Code:
+2. Klicken Sie mit der rechten Maustaste auf den Ordner **Models**, um mithilfe des folgenden Codes eine neue Klassendatei namens *Contact.cs* hinzuzufügen:
 
 	<pre class="prettyprint">
-Namespace ContactsList.Models
+namespace ContactsList.Models
 {
     public class Contact
     {
@@ -136,204 +136,204 @@ Namespace ContactsList.Models
 }
 </pre>
 
-3. Mit der rechten Maustaste die **Controller** Ordner und fügen eine *ContactsController.cs* Datei, so dass er wie folgt aussieht:
+3. Klicken Sie mit der rechten Maustaste auf den Ordner **Controllers**, und fügen Sie eine *ContactsController.cs*-Datei hinzu, sodass der Code folgendermaßen aussieht:
 
 	<pre class="prettyprint">
 using System.Collections.Generic;
-Verwenden von Microsoft.AspNet.Mvc;
-Verwenden von ContactsList.Models;
+using Microsoft.AspNet.Mvc;
+using ContactsList.Models;
 
-Namespace ContactsList.Controllers
+namespace ContactsList.Controllers
 {
     [Route("api/[controller]")]
-    public Class ContactsController: Controller
+    public class ContactsController : Controller
     {
-        GET: api/Kontakte
+        // GET: api/Contacts
         [HttpGet]
-        Öffentliche IEnumerable &lt; Contact > Get()
+        public IEnumerable&lt;Contact> Get()
         {
-            Zurückgeben der neuen Kontakt [] {}
-                neuen Kontakt {Id = 1, EmailAddress = "barney@contoso.com" Name = "Barney Polen"},
-                neuen Kontakt {Id = 2, EmailAddress = "lacy@contoso.com" Name = "Lacy Barrera"},
-                neuen Kontakt {Id = 3 "," EmailAddress = "lora@microsoft.com" Name = "Lora Riggs"}
+            return new Contact[]{
+                new Contact { Id = 1, EmailAddress = "barney@contoso.com", Name = "Barney Poland"},
+                new Contact { Id = 2, EmailAddress = "lacy@contoso.com", Name = "Lacy Barrera"},
+                new Contact { Id = 3, EmailAddress = "lora@microsoft.com", Name = "Lora Riggs"}
             };
         }
     }
 }
 </pre>
 
-4. Sicherstellen, dass alle Dateien gespeichert werden, durch Auswahl **Datei** > **alle**.
-5. Aus der **Befehl Palette**, geben Sie Folgendes ein, um die Anwendung lokal ausführen:
+4. Stellen Sie sicher, dass alle Dateien gespeichert wurden, indem Sie **Datei** > **Alle speichern** auswählen.
+5. Geben Sie in der **Befehlspalette** Folgendes ein, um die App lokal auszuführen:
 
 	<pre class="prettyprint">
-DNX: Kestrel - (noch, Microsoft.AspNet.Hosting--Server Kestrel - server.urls Http://localhost:5001
-</pre>Zeigt das Befehlsfenster *gestartet* hinein. Wenn nicht im Befehlsfenster angezeigt *gestartet*, überprüfen Sie die unteren linken corning von VSCode Fehler in Ihrem Projekt.
+dnx: kestrel - (ContactsList, Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5001
+</pre>Im Befehlsfenster wird *Gestartet* angezeigt. Sollte im Befehlsfenster nicht *Gestartet* angezeigt werden, überprüfen Sie, ob links unten in VSCode Fehler für Ihr Projekt angezeigt werden.
 
-5. Öffnen Sie einen Browser, und navigieren Sie zu dem folgenden URL:
+5. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
 	**http://localhost:5001/api/Contacts**
 
-	Sie können dann den Inhalt anzeigen *Contacts.json*. Wenn Sie die Datei anzeigen, sehen Sie den folgenden Inhalt:
+	Anschließend können Sie die Inhalte von *Contacts.json* anzeigen. In dieser Datei wird folgender Inhalt angezeigt:
 
-	![Zurückgegebene Json-Inhalt](./media/app-service-create-aspnet-api-app-using-vscode/08-contacts-json.png)
+	![Zurückgegebene JSON-Inhalte](./media/app-service-create-aspnet-api-app-using-vscode/08-contacts-json.png)
 
-## Ändern Sie die Metadaten für API-app
-Die Metadaten, die kann ein Projekt ASP.NET-API bereitgestellt werden, wie eine API-Anwendung muss, in enthalten sein einem *apiapp.json* Datei im Stammverzeichnis des Projekts.
+## Ändern von API-App-Metadaten
+Die Metadaten, mit denen ein ASP.NET-API-Projekt als API-App bereitgestellt werden kann, müssen in der Datei *apiapp.json* im Stammverzeichnis des Projekts enthalten sein.
 
-1. VSCode, mit der rechten Maustaste die *Wwwroot* Ordner wählen Sie die **neue Datei** Option.
-2. Nennen Sie die neue Datei *apiapp.json*. < Br > Stellen Sie sicher, dass *apiapp.json* befindet sich in der *Wwwroot* Ordner.
-3. Fügen Sie die folgenden Optionen, um die *apiapp.json* Datei:
+1. Klicken Sie in VSCode mit der rechten Maustaste auf den Ordner *wwwroot*, und wählen Sie die Option **Neue Datei** aus.
+2. Nennen Sie die neue Datei *apiapp.json*.<br> Stellen Sie sicher, dass sich *apiapp.json* im Ordner *wwwroot* befindet.
+3. Fügen Sie der Datei *apiapp.json* folgenden Code hinzu:
 
 	<pre class="prettyprint">
 {
     "$schema": "http://json-schema.org/schemas/2014-11-01/apiapp.json#",
-    "Id": "Noch",
-    "Namespace": "microsoft.com",
-    "Gateway": "2015-01-14"
-    "Version": "1.0.0"
-    "Title": "Noch",
-    "Zusammenfassung": "",
-    "Autor": "",
-    "Endpunkte": null
+    "id": "ContactsList",
+    "namespace": "microsoft.com",
+    "gateway": "2015-01-14",
+    "version": "1.0.0",
+    "title": "ContactsList",
+    "summary": "",
+    "author": "",
+    "endpoints": null
 }
 </pre>
 
-In der *apiapp.json* Datei können Sie einen Endpunkt für dynamische Swagger-API-Definition JSON angeben, aber in diesem Lernprogramm verwenden Sie eine statische API-Definitionsdatei. Ein Beispiel für die dynamische Generierung von Swagger finden Sie unter [Konfigurieren Sie ein Web-API-Projekt als app-API-](app-service-dotnet-create-api-app-visual-studio.md).
+In der Datei *apiapp.json* können Sie einen Endpunkt für eine dynamische Swagger-API-Definitionsdatei (JSON) angeben, im Rahmen dieses Lernprogramms verwenden Sie jedoch eine statische API-Definitionsdatei. Ein Beispiel für die dynamische Swagger-Generierung finden Sie unter [Konfigurieren eines Web-API-Projekts als API-App](app-service-dotnet-create-api-app-visual-studio.md).
 
-## Statische Swagger-API-Definition hinzufügen
-Um eine statische Swagger 2.0-API-Definitionsdatei zu gewährleisten, müssen Sie erstellen einen Ordner im Web-Stammverzeichnis und die API-Definitionsdatei versehen.
+## Hinzufügen einer statischen Swagger-API-Definition
+Um eine statische Swagger 2.0-API-Definitionsdatei bereitzustellen, müssen Sie einen Ordner im Webstamm erstellen und die API-Definitionsdatei darin speichern.
 
-1. Erstellen Sie einen Ordner namens in VSCode, *Metadaten* in den *Wwwroot* Ordner.
-2. Mit der rechten Maustaste das neue *Metadaten* Ordner und fügen Sie eine neue Datei namens *apiDefinition.swagger.json*. 
-3. Fügen Sie die folgende Json-Syntax in die neue Datei ein:
+1. Erstellen Sie in VSCode im Ordner *wwwroot* einen Ordner namens *metadata*.
+2. Klicken Sie mit der rechten Maustaste auf den Ordner *metadata*, und fügen Sie eine neue Datei namens *apiDefinition.swagger.json* ein. 
+3. Fügen Sie der neuen Datei folgende JSON-Syntax hinzu:
 
 	<pre class="prettyprint">
 {
-  "swagger": "2.0"
-  "Info": {}
-    "Version": "v1",
-    "Title": "Noch"
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "ContactsList"
   },
-  "Host": "Müssen ersetzen diese mit der HOST-URL",
-  "Schemas": [
-    "Https"
+  "host": "MUST REPLACE THIS WITH YOUR HOST URL",
+  "schemes": [
+    "https"
   ],
-  "Pfade": {}
-    "/ api/Contacts": {}
-      "get": {}
-        "Tags": [
-          "Kontakte"
+  "paths": {
+    "/api/Contacts": {
+      "get": {
+        "tags": [
+          "Contacts"
         ],
-        "Vorgangs-ID": "Contacts_Get",
-        "belegt":]
-        "erstellt": [
-          "Application/Json"
-          "Text/Json"
-          "Application/Xml"
-          "Text/Xml"
+        "operationId": "Contacts_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
-        "Antworten": {}
-          "200": {}
-            "Description": "OK",
-            "Schema": {}
-              "Typ": "Array",
-              "Elemente": {}
-                "$ref": "#, Definitionen, Contact"
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Contact"
               }
             }
           }
         },
-        "veraltet": false
+        "deprecated": false
       },
-      "post": {}
-        "Tags": [
-          "Kontakte"
+      "post": {
+        "tags": [
+          "Contacts"
         ],
-        "Vorgangs-ID": "Contacts_Post",
-        "belegt": [
-          "Application/Json"
-          "Text/Json"
-          "Application/Xml"
+        "operationId": "Contacts_Post",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/xml",
           "text/xml",
-          "Application/X-www-form-urlencoded"
+          "application/x-www-form-urlencoded"
         ],
-        "erstellt": [
-          "Application/Json"
-          "Text/Json"
-          "Application/Xml"
-          "Text/Xml"
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
-        "Parameter": [
+        "parameters": [
           {
-            "Name": "Kontakt"
-            "in": "Text".
-            "required": "true"
-            "Schema": {}
-              "$ref": "#, Definitionen, Contact"
+            "name": "contact",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contact"
             }
           }
         ],
-        "Antworten": {}
-          "200": {}
-            "Description": "OK",
-            "Schema": {}
-              "$ref": "#, Definitionen, Objekt"
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Object"
             }
           }
         },
-        "veraltet": false
+        "deprecated": false
       }
     }
   },
-  "Definition": {}
-    "Contact": {}
-      "Typ": "Object",
-      "Eigenschaften": {}
-        "Id": {}
-          "Format": "int32"
-          "Typ": "Integer"
+  "definitions": {
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "int32",
+          "type": "integer"
         },
-        "Name": {}
-          "Typ": "String"
+        "Name": {
+          "type": "string"
         },
-        "EmailAddress": {}
-          "Typ": "String"
+        "EmailAddress": {
+          "type": "string"
         }
       }
     },
-    "Object": {}
-      "Typ": "Object",
-      "Eigenschaften": {}
+    "Object": {
+      "type": "object",
+      "properties": {}
     }
   }
 }
 </pre>
 
-Später in diesem Lernprogramm wird die oben aufgeführten Host URL Platzhalter-Zeichenfolge mit Ihrer Azure-Host-URL ersetzt, die Sie erstellen und später kopieren.
+Später in diesem Lernprogramm werden Sie die oben stehende URL-Platzhalterzeichenfolge durch die Azure-Host-URL ersetzen, die Sie später erstellen und kopieren.
 
 ## Erstellen einer API-App im Azure-Vorschauportal
 
-> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie nicht über ein Konto verfügen, können Sie [für eine kostenlose Testversion registrieren](/pricing/free-trial/) oder [Aktivieren Sie Ihre MSDN-Abonnementvorteile](/pricing/member-offers/msdn-benefits-details/). Sie können auch kostenlos ausprobieren der [App Service-Appbeispiele](http://tryappservice.azure.com).
+> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [sich für eine kostenlose Testversion registrieren](/pricing/free-trial/) oder [Ihre MSDN-Abonnentenvorteile aktivieren](/pricing/member-offers/msdn-benefits-details/). Sie können auch die kostenlosen [App Service-App-Beispiele](http://tryappservice.azure.com) nutzen.
 
 1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
-2. Klicken Sie auf **Neu** an der Ecke oben links im Portal.
+2. Klicken Sie links oben im Portal auf **NEU**.
 
 3. Klicken Sie auf **Web + Mobil > API-App**.
 
-	![Azure neue API-Anwendung](./media/app-service-create-aspnet-api-app-using-vscode/09-azure-newapiapp.png)
+	![Neue API-App in Azure](./media/app-service-create-aspnet-api-app-using-vscode/09-azure-newapiapp.png)
 
-4. Geben Sie einen Wert für **Name**, wie z. B. noch.
+4. Geben Sie einen Wert für **Name** ein, beispielsweise "ContactsList".
 
 5. Wählen Sie einen App Service-Plan aus, oder erstellen Sie einen neuen. Wenn Sie einen neuen Plan erstellen, wählen Sie Tarif, Standort und weitere Optionen.
 
-	![Azure neue API-App-Blade](./media/app-service-create-aspnet-api-app-using-vscode/10-azure-newappblade.png)
+	![Neues Blatt "API-App" in Azure](./media/app-service-create-aspnet-api-app-using-vscode/10-azure-newappblade.png)
 
 6. Klicken Sie auf **Erstellen**.
 
-	![App-Blade-API](./media/app-service-create-aspnet-api-app-using-vscode/11-azure-apiappblade.png)
+	![Blatt "API-App"](./media/app-service-create-aspnet-api-app-using-vscode/11-azure-apiappblade.png)
 
-	Wenn Sie bleibt die **an Startmenü anheften** das Kontrollkästchen aktiviert, wenn die app erstellen finden Sie problemlos die Anwendung durch Klicken auf **Home** oder **Durchsuchen**. Wenn Sie das Kontrollkästchen deaktiviert haben, klicken Sie auf **Benachrichtigungen** auf der linken Seite finden Sie unter den API-app-Erstellungsstatus und klicken Sie auf die Benachrichtigung an das Fenster für die neue API-Anwendung zu wechseln.
+	Wenn während der Erstellung der App das Kontrollkästchen **An Startmenü anheften** aktiviert war, können Sie die App ganz einfach finden, indem Sie auf **Start** oder **Durchsuchen** klicken. Wenn das Kontrollkästchen deaktiviert war, klicken Sie links auf **Benachrichtigungen**, um den Status der API-App-Erstellung anzuzeigen. Klicken Sie anschließend auf die Benachrichtigung, um zum Blatt für die neue API-App zu wechseln.
 
 7. Klicken Sie auf **Einstellungen > Anwendungseinstellungen**.
 
@@ -341,76 +341,76 @@ Später in diesem Lernprogramm wird die oben aufgeführten Host URL Platzhalter-
 
 9. Klicken Sie auf **Speichern**.
 
-	![Azure-App-Einstellungen](./media/app-service-create-aspnet-api-app-using-vscode/12-azure-appsettings.png)
+	![App-Einstellungen in Azure](./media/app-service-create-aspnet-api-app-using-vscode/12-azure-appsettings.png)
 
-## Aktivieren der Git-Veröffentlichung aus der neuen API-app
+## Aktivieren der Git-Veröffentlichung über die neue API-App
 
 Git ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure-Website bereitstellen können. Sie speichern den Code, den Sie für Ihre API-App geschrieben haben, in einem lokalen Git-Repository. Anschließend stellen Sie Ihren Code in Azure bereit, indem Sie einen Pushvorgang zu einem Remoterepository durchführen. Diese Methode der Bereitstellung ist eine Funktion von App Service-Web-Apps, die Sie in einer API-App nutzen können, da API-Apps auf Web-Apps basieren: Eine API-App in Azure App Service ist eine Web-App mit zusätzlichen Funktionen für das Hosten von Webdiensten.
 
-Im Portal verwalten Sie die API-App-spezifischen Funktionen im Blatt **API-App**. Die Funktionen, die eine API-App mit einer Web-App gemeinsam hat, werden im Blatt **API-App-Host** verwaltet. Sie wechseln daher in diesem Abschnitt zum Blatt **API-App-Host**, um die Git-Bereitstellungsfunktion zu konfigurieren.
+Im Portal verwalten Sie die API-App-spezifischen Funktionen auf dem Blatt **API-App**. Die Funktionen, die eine API-App mit einer Web-App gemeinsam hat, werden auf dem Blatt **API-App-Host** verwaltet. Sie wechseln daher in diesem Abschnitt zum Blatt **API-App-Host**, um die Git-Bereitstellungsfunktion zu konfigurieren.
 
-1. Klicken Sie im Blatt für die API-App auf **API-App-Host**.
+1. Klicken Sie auf dem Blatt für die API-App auf **API-App-Host**.
 
-	![Azure-API-App-Host](./media/app-service-create-aspnet-api-app-using-vscode/13-azure-apiapphost.png)
+	![API-App-Host in Azure](./media/app-service-create-aspnet-api-app-using-vscode/13-azure-apiapphost.png)
 
-2. Suchen Sie im Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf ** 	Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
+2. Suchen Sie auf dem Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf ** Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
 
-	![Azure-API-App-Host](./media/app-service-create-aspnet-api-app-using-vscode/14-azure-deployment.png)
+	![API-App-Host in Azure](./media/app-service-create-aspnet-api-app-using-vscode/14-azure-deployment.png)
 
 3. Klicken Sie auf **Quelle auswählen > Lokales Git-Repository**.
 
 5. Klicken Sie auf **OK**.
 
-	![Azure lokalen Git-Repository](./media/app-service-create-aspnet-api-app-using-vscode/15-azure-localrepository.png)
+	![Lokales Git-Repository in Azure](./media/app-service-create-aspnet-api-app-using-vscode/15-azure-localrepository.png)
 
 6. Wenn Sie noch keine Anmeldeinformationen für das Veröffentlichen einer API-App oder einer anderen App Service-App eingerichtet haben, holen Sie dies nun nach.
 
 	* Klicken Sie auf **Anmeldeinformationen für die Bereitstellung einrichten**.
 
-	* Geben Sie einen Benutzernamen und ein Kennwort ein. Sie benötigen dieses Kennwort später, wenn Sie Git einrichten.
+	* Geben Sie einen Benutzernamen und ein Kennwort ein. Dieses Kennwort benötigen Sie später bei der Git-Einrichtung.
 
 	* Klicken Sie auf **Speichern**.
 
-	![Bereitstellung von Azure-Anmeldeinformationen](./media/app-service-create-aspnet-api-app-using-vscode/16-azure-credentials.png)
+	![Anmeldeinformationen für die Bereitstellung in Azure](./media/app-service-create-aspnet-api-app-using-vscode/16-azure-credentials.png)
 
-7. Klicken Sie im Blatt **API-App-Host** auf **Einstellungen > Eigenschaften**. Die URL des Git-Remoterepositorys, in dem Sie die Bereitstellung durchführen möchten, wird unter "GIT-URL" angezeigt.
+7. Klicken Sie auf dem Blatt **API-App-Host** auf **Einstellungen > Eigenschaften**. Die URL des Git-Remoterepositorys, in dem Sie die Bereitstellung durchführen möchten, wird unter "GIT-URL" angezeigt.
 
-8. Kopieren der **GIT-URL** später im Lernprogramm.
+8. Kopieren Sie die **GIT-URL** zur späteren Verwendung im Lernprogramm.
 
-	![Azure Git-URL](./media/app-service-create-aspnet-api-app-using-vscode/17-azure-giturl.png)
+	![Git-URL in Azure](./media/app-service-create-aspnet-api-app-using-vscode/17-azure-giturl.png)
 
-9. Darüber hinaus wird in der **API-Anwendung** Blade, Kopie der **URL** die Sie verwenden möchten, aktualisieren Sie den Wert "Host" in der *apiDefinition.swagger.json* Datei.
+9. Kopieren Sie außerdem auf dem Blatt **API-App** die **URL**, die Sie zum Aktualisieren des "host"-Werts in der Datei *apiDefinition.swagger.json* verwenden werden.
 
-	![Azure-URL](./media/app-service-create-aspnet-api-app-using-vscode/18-azure-url.png)
+	![URL in Azure](./media/app-service-create-aspnet-api-app-using-vscode/18-azure-url.png)
 
-10. Öffnen Sie in der VSCode, der *apiDefinition.swagger.json* Datei, und Ersetzen Sie den Hostwert "Müssen ersetzen diese mit der HOST-URL" mit den **URL** Sie im vorigen Schritt kopiert haben.
-11. Entfernen Sie außerdem die Zeichen "https://" am Anfang der Hostwert.
-12. Speichern Sie die Änderungen an der *apiDefinition.swagger.json* Datei.
+10. Öffnen Sie in VSCode die Datei *apiDefinition.swagger.json*, und ersetzen Sie den "host"-Wert "MUST REPLACE THIS WITH YOUR HOST URL" durch die **URL**, die Sie im vorherigen Schritt kopiert haben.
+11. Entfernen Sie außerdem die Zeichen "https://" am Anfang des Hostwerts.
+12. Speichern Sie Ihre Änderungen an der Datei *apiDefinition.swagger.json*.
 
-## Ihre API-Anwendung in Azure-App-Dienst veröffentlichen
+## Veröffentlichen Ihrer API-App in Azure App Service
 
 In diesem Abschnitt erstellen Sie ein lokales Git-Repository und führen einen Pushvorgang von diesem Repository zu Azure durch, um Ihre Beispielanwendung in der API-App bereitzustellen, die in Azure App Service ausgeführt wird.
 
-1. Wählen Sie im VSCode auf der linken Navigationsleiste die Git-Option.
-2. Wenn Git nicht bereits installiert ist, installieren Sie es durch Auswahl einer der bereitgestellten Links ([Chocolatey](https://chocolatey.org/packages/git) oder [Git scm.com](http://git-scm.com/downloads)). Wenn Sie Git neu sind, wählen Sie **Git scm.com** und wählen Sie die Option aus, um Git mit GitBash aus der Windows-Eingabeaufforderung verwenden. 
-3. Nach der Installation Git VSCode starten und die Option Git auf dem linken Balken.
-4. Wählen Sie im VSCode, **Initialize Git-Repository** sicherstellen, dass der Arbeitsbereich ist in der Git-Quellcodeverwaltung. 
+1. Wählen Sie in VSCode in der linken Navigationsleiste die Option "Git" aus.
+2. Wenn Git nicht bereits installiert ist, installieren Sie es, indem Sie einen der bereitgestellten Links ([Chocolatey](https://chocolatey.org/packages/git) oder [git-scm.com](http://git-scm.com/downloads)) auswählen. Falls Sie noch keine Erfahrung mit Git haben, entscheiden Sie sich für **git-scm.com**, und wählen Sie die entsprechende Option aus, um Git mit GitBash und über die Windows-Eingabeaufforderung verwenden zu können. 
+3. Sobald Git installiert ist, starten Sie VSCode neu, und wählen Sie die Git-Option in der linken Leiste.
+4. Wählen in VSCode Sie **Git-Repository initialisieren** aus, um sicherzustellen, dass die Git-Quellcodeverwaltung in Ihrem Arbeitsbereich aktiviert ist. 
 
-	![Initialisieren von Git](./media/app-service-create-aspnet-api-app-using-vscode/19-initgit.png)
+	![Git-Initialisierung](./media/app-service-create-aspnet-api-app-using-vscode/19-initgit.png)
 
 5. 
-6. Fügen Sie eine Commit-Nachricht, und wählen Sie die **Commit alle** überprüfen.
+6. Fügen Sie eine Commit-Nachricht hinzu, und aktivieren Sie **Commit für alle**.
 
-	![Git Commit alle](./media/app-service-create-aspnet-api-app-using-vscode/20-git-commit.png)
+	![Git – Commit für alle](./media/app-service-create-aspnet-api-app-using-vscode/20-git-commit.png)
 
-6. Suchen und öffnen Sie **GitBash**. Als Alternative können Sie die Windows-Eingabeaufforderung.
-7. In **GitBash**, wechseln Sie zum Ordner in den Projektordner VSCode. Zum Beispiel:
+6. Suchen und öffnen Sie **GitBash**. Alternativ dazu können Sie auch die Windows-Eingabeaufforderung verwenden.
+7. Wechseln Sie in **GitBash** zu Ihrem VSCode-Projektordner. Beispiel:
 
 	<pre class="prettyprint">
-CD c:\VSCodeProjects\ContactsList
+cd c:\VSCodeProjects\ContactsList
 </pre>
 
-7. Erstellen Sie eine remote-Referenz zum Übertragen von Updates auf die Webanwendung (API-app-Host), die Sie zuvor erstellt haben, mit der Git-URL (".git" endet), die Sie zuvor kopiert haben:
+7. Erstellen Sie einen Remotebezug, um Updates mittels Push an die zuvor erstellte Web-App (API-App-Host) zu übertragen, und verwenden Sie hierbei die zuvor kopierte Git-URL (die auf ".git" endet):
 
 	<pre class="prettyprint">
 git remote add azure [URL for remote repository]
@@ -420,32 +420,32 @@ git remote add azure [URL for remote repository]
 
 	<pre class="prettyprint">
 git push azure master
-</pre>Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben. **Hinweis: Das Kennwort wird nicht angezeigt.**
+</pre>Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben. **Hinweis: Das Kennwort ist nicht sichtbar.**
 
-	Die Ausgabe des obigen Befehls endet mit einer Meldung, dass die Bereitstellung erfolgreich ist:
+	Die Ausgabe des oben stehenden Befehls führt zu einer Meldung, dass die Bereitstellung erfolgreich durchgeführt wurde:
 
 	<pre class="prettyprint">
-Remote: wurde erfolgreich bereitgestellt.
+remote: Deployment successful.
 To https://user@testsite.scm.azurewebsites.net/testsite.git
-[neue Verzweigung] Master-Master >
+[new branch]      master -> master
 </pre>
 
-> [AZURE.NOTE]Wenn Sie Änderungen an Ihrer Anwendung vornehmen, können Sie durch Auswahl veröffentlichen die **alle Commit** VSCode einchecken, und geben Sie dann die **Git Push Azure Master** -Befehl in **GitBash**.
+> [AZURE.NOTE]Wenn Sie Änderungen an Ihrer App vornehmen, können Sie sie erneut veröffentlichen. Aktivieren Sie hierzu in VSCode **Commit für alle**, und geben Sie anschließend in **GitBash** den Befehl **git push azure master** ein.
 
 ## Anzeigen der API-Definition im Azure-Vorschauportal
-Nun, da Sie eine API in Ihrer API-App bereitgestellt haben, können Sie die API-Definition im Azure-Vorschauportal anzeigen. Sie beginnen, durch einen Neustart des Gateways, wodurch Azure erkennt, dass eine API-app-API-Definition geändert wurde. Das Gateway ist eine Web-App, die API-Verwaltung und -Autorisierung für die API-Apps in einer Ressourcengruppe übernimmt.
+Nun, da Sie eine API in Ihrer API-App bereitgestellt haben, können Sie die API-Definition im Azure-Vorschauportal anzeigen. Im ersten Schritt starten Sie das Gateway neu, durch das Azure erkennt, dass die API-Definition einer API-App geändert wurde. Das Gateway ist eine Web-App, die API-Verwaltung und -Autorisierung für die API-Apps in einer Ressourcengruppe übernimmt.
 
-1. Wechseln Sie in das Azure Preview-Portal zu den **API-Anwendung** Blade für die API-Anwendung, die Sie zuvor erstellt haben, und klicken Sie auf die **Gateway** Link.
-2. In der **GATEWAY** Blade, klicken Sie auf **Starten**. Sie können dieses Blatt nun schließen.
-3. In der **API-Anwendung** Blade, klicken Sie auf die **Starten**. 
-4. In der **API-Anwendung** Blade, klicken Sie auf **-API-Definition**.<br> Das Blade-API-Definition werden zwei Methoden veranschaulicht. Wenn Sie die Get- und POST-Methoden nicht sofort sehen, warten Sie einige Sekunden für Azure, um die Anwendung zu aktualisieren. Klicken Sie auf **-API-Definition** in den **API-Anwendung** Blade.
+1. Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App** für die zuvor erstellte API-App, und klicken Sie auf den Link **Gateway**.
+2. Klicken Sie auf dem Blatt **Gateway** auf **Neu starten**. Sie können dieses Blatt nun schließen.
+3. Klicken Sie auf dem Blatt **API-App** auf **Neu starten**. 
+4. Klicken Sie auf dem Blatt **API-App** auf **API-Definition**.<br> Das Blatt "API-Definition" zeigt zwei Methoden an. Wenn Sie die GET- und POST-Methoden nicht sofort sehen, warten Sie einige Sekunden, bis Azure die App aktualisiert hat. Klicken Sie auf dem Blatt **API-App** auf** API-Definition**.
 
-## Führen Sie die Anwendung in Azure
-Wechseln Sie in das Azure Preview-Portal zu den **APP-HOST-API** Blade für Ihre API-Anwendung und auf **Durchsuchen**. Fügen Sie dann **api/Contacts** am Ende der URL zum Anzeigen der Details des Kontakts.
+## Ausführen der App in Azure
+Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App-Host** für Ihre API-App, und klicken Sie auf **Durchsuchen** . Fügen Sie am Ende Ihrer URL die Zeichenfolge **api/Contacts** ein, um die Kontaktinformationen anzuzeigen
 
 
 ## Zusammenfassung
-In diesem Lernprogramm haben Sie gelernt, wie eine API-Anwendung in Visual Studio-Code erstellt wird. Weitere Informationen zu Visual Studio-Code, finden Sie unter [Visual Studio-Code](https://code.visualstudio.com/Docs/). Informationen über die API-Anwendungen finden Sie unter [Was API-apps sind?](app-service-api-apps-why-best-platform.md)
+In diesem Lernprogramm haben Sie erfahren, wie Sie eine API-App in Visual Studio Code erstellen. Weitere Informationen zu Visual Studio Code finden Sie unter [Visual Studio Code](https://code.visualstudio.com/Docs/). Weitere Informationen zu API-Apps finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

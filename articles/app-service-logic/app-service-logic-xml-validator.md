@@ -18,35 +18,35 @@
 
 # BizTalk XML Validator
 
-Connector BizTalk XML überprüfen kann Ihre app, die XML-Daten mit vordefinierten XML-Schemas zu überprüfen. Benutzer können entweder vorhandene Schemas oder Generieren von Schemas, die außerhalb einer Flatfile-Instanz, die JSON-Instanz oder vorhandener Connectors.
+Der BizTalk XML Validate-Connector hilft Ihrer App bei der Validierung von XML-Daten gegen vordefinierte XML-Schemas. Benutzer können entweder vorhandene Schemas verwenden oder Schemas auf Grundlage einer Flatfile-Instanz, JSON-Instanz oder vorhandenen Connectors generieren.
 
-##Verwenden die BizTalk-XML-Bestätigung
-1. Um den XML-Validator BizTalk zu verwenden, müssen Sie zunächst eine Instanz in der BizTalk-XML-Validator-API erstellen. Dies kann entweder Inline beim Erstellen einer app Logik oder durch Auswählen der BizTalk-XML-Validator-API-app aus dem Azure Marketplace erfolgen.
+##BizTalk XML Validator verwenden
+1. Um den BizTalk XML Validator zu verwenden, müssen Sie zunächst eine Instanz der BizTalk XML Validator-API-App erstellen. Dies kann entweder Inline beim Erstellen einer Logik-App oder durch Auswählen der BizTalk XML Validator-API-App aus dem Azure Marketplace erfolgen.
 
-###Konfigurieren der BizTalk-XML-Bestätigung
-BizTalk-XML-Validator nimmt Schemas als Teil seiner Konfiguration. Benutzer kann die API-App-Konfiguration-Blade starten, indem Sie entweder das Starten der App-API direkt von der Azure-Portal oder über durch Doppelklicken auf die App-API auf der Designeroberfläche.
+###BizTalk XML Validator konfigurieren
+BizTalk XML Validator verwendet Schemas als Teil der Konfiguration. Benutzer können das API-App-Konfigurationsblatt entweder durch Starten der API-App direkt aus dem Azure-Portal oder durch Doppelklicken auf die API-App auf der Designeroberfläche starten.
 
-![BizTalk-XML-Validator-Konfiguration][1]
+![BizTalk XML Validator Konfiguration][1]
 
-In der API-App-Blade, kann Benutzer durch Klicken auf Schemas konfigurieren *Schemas* Teil
+Benutzer können im API-App-Blatt Schemas konfigurieren, indem Sie auf den Teil *Schemas* klicken.
 
-![BizTalk-XML-Validator Schemas Teil][2]
+![BizTalk XML Validator Schemas Teil][2]
 
 Benutzer können Schemas von der Festplatte hochladen oder sie aus einer Flatfile-Instanz oder einer JSON-Instanz generieren.
 
-![Bestätigung für die BizTalk-Schemas][3]
+![BizTalk XML Validator Schemas][3]
 
 
 ###Verwenden des BizTalk Flat File Encoder in der Entwurfsoberfläche
-Nach der Konfiguration können Benutzer auf klicken *->* und wählen Sie eine Aktion aus einer Liste von Aktionen.
+Nach der Konfiguration können Benutzer auf *->* klicken, und aus der Liste der Aktionen eine Aktion auswählen.
 
-![BizTalk-XML-Validator-Liste der Aktionen][4]
+![BizTalk XML Validator Liste der Aktionen][4]
 
-####Überprüfen von Xml
+####XML validieren
 
-XML-Aktion überprüfen, ob eine angegebene Xml-Eingabe auf vorkonfigurierte Schemas zu überprüfen.
+Die Aktion "XML validieren" validiert eine vorhandene XML-Eingabe gegen vorkonfigurierte Schemas.
 
-![BizTalk-XML-Bestätigung validieren Xml][5]
+![BizTalk XML Validator XML validieren][5]
 
 <table>
 	<tr>
@@ -57,12 +57,12 @@ XML-Aktion überprüfen, ob eine angegebene Xml-Eingabe auf vorkonfigurierte Sch
 	<tr>
 		<td>Eingabe-XML</td>
 		<td>string</td>
-		<td>Der zu überprüfende XML-Eingabedatei</td>
+		<td>Zu validierende XML</td>
 	</tr>
 </table>
 
 
-Die Aktion wird die Ausgabe als Objekt. Ausgabe enthält das Modell, die Antwort des XML-Bestätigung darstellt. Er besteht aus Ergebnis, Schemaname, Root-Knoten und Fehler Beschreibung.
+Die Aktion gibt die Ausgabe als Objekt zurück. Die Ausgabe enthält das Modell, das die Antwort vom XML Validator darstellt. Es besteht aus Ergebnis, Namen des Schemas, Stammknoten und Fehlerbeschreibung.
 
 ![6]
 
@@ -75,4 +75,4 @@ Die Aktion wird die Ausgabe als Objekt. Ausgabe enthält das Modell, die Antwort
 [6]: ./media/app-service-logic-xml-validator/img1.PNG
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

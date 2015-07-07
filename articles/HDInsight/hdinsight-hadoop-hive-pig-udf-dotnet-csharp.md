@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verwenden von C# mit Hive und Pig in Azure HDInsight"
-	description="Erfahren Sie, wie Sie benutzerdefinierte Funktionen (User-Defined Functions, UDFs) mit Hive- und Pig-Streaming in Azure HDInsight verwenden."
+	pageTitle="Verwenden von C# mit Hive und Pig für Hadoop in HDInsight | Microsoft Azure"
+	description="Erfahren Sie, wie Sie benutzerdefinierte C#-Funktionen (User-Defined Functions, UDFs) mit Hive- und Pig-Streaming in Azure HDInsight verwenden."
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -17,7 +17,7 @@
 	ms.author="larryfr"/>
 
 
-#Verwenden von C# mit Hive und Pig in HDInsight
+#Verwenden benutzerdefinierter C#-Funktionen mit Hive- und Pig-Streaming für Hadoop in HDInsight 
 
 Hive und Pig sind hervorragend für die Arbeit mit Daten in Azure HDInsight geeignet. Manchmal benötigt man aber eine allgemeinere Sprache. Sowohl Hive als auch Pig ermöglichen es Ihnen, externen Code über benutzerdefinierte Funktionen (User-Defined Functions, UDFs) oder per Streaming aufzurufen.
 
@@ -35,7 +35,7 @@ In diesem Dokument erfahren Sie, wie Sie C# mit Hive und Pig verwenden.
 
 	* Visual Studio 2015 Preview
 
-* Hadoop in HDInsight-Cluster – unter [Bereitstellen eines HDInsight-Clusters](hdinsight-provision-clusters.md) werden die Schritte zum Erstellen eines Clusters beschrieben 
+* Hadoop in HDInsight-Cluster – unter [Bereitstellen eines HDInsight-Clusters](hdinsight-provision-clusters.md) werden die Schritte zum Erstellen eines Clusters beschrieben
 
 * Hadoop-Tools für Visual Studio – unter <a href="../hdinsight-hadoop-visual-studio-tools-get-started" target="_blank">Erste Schritte mit HDInsight Hadoop-Tools für Visual Studio</a> werden die Schritte zum Installieren und Konfigurieren der Tools beschrieben
 
@@ -118,7 +118,7 @@ Da Hive und Pig die Anwendung zur Laufzeit aufrufen, sollte die Vorlage **Konsol
 
 5. Erweitern Sie den HDInsight-Cluster, in dem Sie diese Anwendung bereitstellen möchten, und erweitern dann **Standardmäßiges Speicherkonto**.
 
-	![Anzeige des Speicherkontos für den Cluster im Server-Explorer ](./media/hdinsight-hadoop-hive-pig-udf-dotnet-csharp/storage.png)
+	![Anzeige des Speicherkontos für den Cluster im Server-Explorer](./media/hdinsight-hadoop-hive-pig-udf-dotnet-csharp/storage.png)
 
 6. Doppelklicken Sie auf **Standardcontainer** für den Cluster. Es wird ein neues Fenster geöffnet, das die Inhalte des Standardcontainers anzeigt.
 
@@ -239,5 +239,6 @@ Informationen zu anderen Möglichkeiten der Verwendung von Pig und Hive sowie In
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 
 * [Verwenden von MapReduce mit HDInsight](hdinsight-use-mapreduce.md)
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

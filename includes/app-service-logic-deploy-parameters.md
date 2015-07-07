@@ -1,15 +1,12 @@
-With Azure Resource Manager, you define parameters for values you want to specify when the template is deployed. The template includes a section called Parameters that contains all of the parameter values.
-You should define a parameter for those values that will vary based on the project you are deploying or based on the 
-environment you are deploying to. Do not define parameters for values that will always stay the same. Each parameter value is used in the template to define the resources that are deploy. 
+Mit dem Azure-Ressourcen-Manager definieren Sie die Parameter für Werte, die Sie bei der Bereitstellung der Vorlage angeben möchten. Die Vorlage enthält einen Abschnitt namens "Parameters", der alle Parameterwerte enthält. Definieren Sie einen Parameter für die Werte, die basierend auf dem bereitgestellten Projekt oder der bereitgestellten Umgebung variieren. Definieren Sie keine Parameter für Werte, die sich nicht ändern. Jeder Parameterwert wird in der Vorlage verwendet, um die bereitgestellten Ressourcen zu definieren.
 
-When defining parameters, use the **allowedValues** field to specify which values a user can provide during deployment. Use the **defaultValue** field to assign a value to the parameter, if no value is provided 
-during deployment.
+Verwenden Sie beim Definieren von Parametern das Feld **allowedValues**, um anzugeben, welche Werte eine Benutzer während der Bereitstellung angeben kann. Verwenden Sie das Feld **defaultValue**, um dem Parameter einen Wert zuweisen, wenn kein Wert während der Bereitstellung angegeben wird.
 
-We will describe each parameter in the template.
+Nachfolgend wird jeder der in der Vorlage verwendeten Parameter beschrieben.
 
 ### logicAppName
 
-The name of the logic app to create.
+Der Name der zu erstellenden Logik-App.
 
     "logicAppName": {
         "type": "string"
@@ -17,7 +14,7 @@ The name of the logic app to create.
 
 ### svcPlanName
 
-The name of the App Service plan to create for hosting the logic app.
+Der Name des App Service-Plans zum Hosten der Logik-App.
     
     "svcPlanName": {
         "type": "string"
@@ -25,7 +22,7 @@ The name of the App Service plan to create for hosting the logic app.
 
 ### sku
 
-The pricing tier for the logic app.
+Der Tarif für die Logik-App.
 
     "sku": {
         "type": "string",
@@ -38,11 +35,11 @@ The pricing tier for the logic app.
         ]
     }
 
-The template defines the values that are permitted for this parameter (Free, Basic, Standard, or Premium), and assigns a default value (Standard) if no value is specified.
+Die Vorlage definiert die Werte, die für diesen Parameter zulässig sind (Free, Basic, Standard oder Premium), und weist einen Standardwert (Standard) zu, wenn kein Wert angegeben wird.
 
 ### svcPlanSize
 
-The instance size of the app.
+Die Instanzgröße der App.
 
     "svcPlanSize": {
         "defaultValue": "0",
@@ -54,4 +51,6 @@ The instance size of the app.
         ]
     }
 
-The template defines the values that are permitted for this parameter (0, 1, or 2), and assigns a default value (0) if no value is specified. The values correspond to small, medium and large.
+Die Vorlage definiert die Werte, die für diesen Parameter zulässig sind (0, 1 oder 2), und weist einen Standardwert (0) zu, wenn kein Wert angegeben wird. Die Werte entsprechen klein, mittel und groß.
+
+<!---HONumber=62-->

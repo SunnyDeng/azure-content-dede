@@ -20,81 +20,81 @@
 
 Mit der Delegierung können Sie Anmeldung, Registrierung und Produktabonnierung von Entwicklern mit Ihrer vorhandenen Website umsetzen, anstatt die integrierte Funktion im Entwicklerportal zu verwenden. Auf diese Weise besitzt die Website die Benutzerdaten und kann die Prüfung dieser Schritte auf selbst definierte Weise durchführen.
 
-Weitere Informationen zu Delegierung finden Sie im folgende Video.
+Weitere Informationen zum Delegieren finden Sie im folgenden Video.
 
 > [AZURE.VIDEO delegating-user-authentication-and-product-subscription-to-a-3rd-party-site]
 
-## <a name="delegate-signin-up"> </a>Delegieren der Developer-Anmeldung und Registrierung
+## <a name="delegate-signin-up"> </a>Delegieren von Anmeldung und Registrierung für Entwickler
 
-Um die Anmeldung und Registrierung für Entwickler in Ihrer vorhandenen Website zu delegieren, müssen Sie einen speziellen Delegierungsendpunkt in Ihrer Website als Einstiegspunkt für diese aus dem Entwicklerportal für die API-Verwaltung gestellten Anfragen einrichten.
+Um die Anmeldung und Registrierung für Entwickler in Ihrer vorhandenen Website zu delegieren, müssen Sie einen speziellen Delegierungsendpunkt in Ihrer Website als Einstiegspunkt für diese aus dem API Management-Entwicklerportal gestellten Anfragen einrichten.
 
 Der komplette Workflow sieht wie folgt aus:
 
-1. Ein Entwickler klickt auf den Anmeldungs- oder Registrierungslink im Entwicklerportal für die API-Verwaltung
-2. Der Browser wird zum Delegierungsendpunkt weitergeleitet
-3. Der Delegierungsendpunkt leitet den Benutzer wiederum weiter oder zeigt eine Benutzeroberfläche für die Anmeldung bzw. Registrierung an
-4. Im Erfolgsfall wird der Benutzer anschließend wieder auf die Seite im Entwicklerportal für die API-Verwaltung weitergeleitet, von der er ursprünglich gekommen ist
+1. Ein Entwickler klickt auf den Anmeldungs- oder Registrierungslink im API Management-Entwicklerportal.
+2. Der Browser wird zum Delegierungsendpunkt umgeleitet.
+3. Der Delegierungsendpunkt wiederum leitet den Benutzer um oder zeigt eine Benutzeroberfläche für die Anmeldung bzw. Registrierung an.
+4. Im Erfolgsfall wird der Benutzer anschließend wieder auf die Seite im API Management-Entwicklerportal umgeleitet, von der er ursprünglich gekommen ist.
 
 
-Richten Sie zunächst die Weiterleitung von Anfragen über Ihren Delegierungsendpunkt in der API-Verwaltung ein. Klicken Sie im Publisher-API Management-Portal auf **Security** und klicken Sie dann auf die **Delegierung** Registerkarte. Klicken Sie auf das Kontrollkästchen zum Aktivieren von der Delegate-Anmeldung und -Registrierung.
+Richten Sie zunächst in API Management die Weiterleitung von Anfragen über Ihren Delegierungsendpunkt ein. Klicken Sie im API Management-Herausgeberportal auf **Sicherheit** und dann auf die Registerkarte **Delegierung**. Klicken Sie auf das Kontrollkästchen zum Aktivieren von der Delegate-Anmeldung und -Registrierung.
 
 ![Delegierungsseite][api-management-delegation-signin-up]
 
 * Legen Sie die URL für Ihren speziellen Delegierungsendpunkt fest und geben Sie sie in das Feld **Delegierungsendpunkt-URL** ein. 
 
-* Geben Sie im Feld **Schlüssel für delegierte Authentifizierung** einen geheimen Schlüssel ein. Dieser wird zur Erstellung einer Signatur verwendet, mit der sichergestellt wird, dass die Anfrage tatsächlich von der Azure API-Verwaltung stammt. Klicken Sie auf der **generieren** Schaltfläche API Managemnet nach dem Zufallsprinzip ein Schlüssel für Sie generiert haben.
+* Geben Sie im Feld **Schlüssel für delegierte Authentifizierung** einen geheimen Schlüssel ein. Dieser wird zur Erstellung einer Signatur verwendet, mit der sichergestellt wird, dass die Anfrage tatsächlich von Azure API Management stammt. Sie können auf die Schaltfläche **Generieren** klicken, damit API Management nach dem Zufallsprinzip einen Schlüssel für Sie generiert.
 
 Anschließend müssen Sie den **Delegierungsendpunkt** einrichten. Dieser Endpunkt erfüllt mehrere Aufgaben:
 
 1. Empfang einer Anforderung in der folgenden Form:
 
-	> *http://www.yourwebsite.com/apimdelegation?operation=SignIn&returnUrl={URL der Quellseite} & salt = {String} & Sig = {String}*
+	> *http://www.yourwebsite.com/apimdelegation?operation=SignIn&returnUrl={URL der Quellseite}&salt={string}&sig={string}*
 
-	Abfrageparameter für den Fall Anmelde- / Anmeldung:- **Vorgang**: bezeichnet die Art der Anforderung der Delegierung ist - er ist nur möglich **Anmeldung** in diesem Fall - **ReturnUrl**: die URL der Seite, in dem der Benutzer geklickt, auf einen Link anmelden oder Anmeldung hat - **salt**: eine spezielle Saltzeichenfolge zur Berechnung einer Sicherheits Hash - **Sig**: ein berechnete Security-Hash für den Vergleich mit Ihren eigenen verwendet werden berechnete Hash
+	Abfrageparameter für Anmeldung/Registrierung: – **operation**: Gibt an, um welche Art von Delegierungsanforderung es sich handelt; in diesem Fall ist nur **SignIn** möglich – **returnUrl**: Die URL der Seite, auf der der Benutzer auf einen Link für Anmeldung oder Registrierung geklickt hat – **salt**: Eine spezielle salt-Zeichenfolge, mit der ein Sicherheitshash berechnet wird – **sig**: Ein berechneter Sicherheitshash zum Vergleich mit dem von Ihnen generierten Hash
 
-2. Überprüfen, ob die Anfrage von der Azure API-Verwaltung stammt (optional, aus Sicherheitsgründen jedoch dringend empfohlen)
+2. Überprüfen, ob die Anfrage von Azure API Management stammt (optional, aus Sicherheitsgründen jedoch dringend empfohlen)
 
-	* Berechnen einen HMAC-SHA512-Hashwert einer Zeichenfolge auf Grundlage der **ReturnUrl** und **salt** Abfrageparameter ([unten dargestellten Beispielcode]):
+	* Generieren Sie einen HMAC-SHA512-Hash für eine Zeichenfolge basierend auf den Abfrageparametern **returnUrl** und **salt** ([Beispielcode finden Sie unter]):
         > **returnUrl**
 		 
-	* Vergleichen Sie den generierten Hash mit dem Wert des **sig**Abfrageparameters. Fahren Sie mit dem nächsten Schritt fort, wenn die Hashes übereinstimmen. Lehnen Sie die Anfrage andernfalls ab.
+	* Vergleichen Sie den generierten Hash mit dem Wert des **sig**-Abfrageparameters. Fahren Sie mit dem nächsten Schritt fort, wenn die Hashes übereinstimmen. Lehnen Sie die Anfrage andernfalls ab.
 
-2. Stellen Sie sicher, dass Sie eine Anforderung für in Anmeldung/Anmeldung empfangen: die **Vorgang** Query-Parameter werden auf den "** SignIn **".
+2. Überprüfen Sie, ob Sie eine Anfrage zur Anmeldung/Registrierung erhalten haben: Der **operation**-Abfrageparameter wird auf "SignIn" gesetzt.
 
 3. Anzeigen der Benutzeroberfläche für Anmeldung oder Registrierung
 
-4. Falls sich der Benutzer registriert, müssen Sie das entsprechende Konto in der API-Verwaltung erstellen. [Benutzer erstellen] mit der REST-API für die API-Verwaltung. Achten Sie dabei darauf, dass Sie die Benutzer-ID auf den Wert aus Ihrem Benutzerspeicher oder auf einen anderen für Sie nachverfolgbaren Wert setzen.
+4. Falls sich der Benutzer registriert, müssen Sie das entsprechende Konto in API Management erstellen. [Erstellen Sie einen Benutzer] mit der REST-API für API Management. Achten Sie dabei darauf, dass Sie die Benutzer-ID auf den Wert aus Ihrem Benutzerspeicher oder auf einen anderen für Sie nachverfolgbaren Wert setzen.
 
 5. Nach erfolgreicher Authentifizierung des Benutzers:
 
-	* [Anfordern eines Tokens für einmaliges Anmelden (SSO)] mit der REST-API für die API-Verwaltung
+	* [Fordern Sie ein Token für die einmalige Anmeldung an (SSO)]; verwenden Sie hierzu die REST-API von API Management
 
 	* Hängen Sie einen returnUrl-Abfrageparameter an die SSO-URL an, die Sie aus dem obigen API-Aufruf erhalten haben:
 		> z. B. https://customer.portal.azure-api.net/signin-sso?token&returnUrl=/return/url
 
-	* Leiten Sie den Benutzer zu der oben generierten URL weiter
+	* Leiten Sie den Benutzer an die oben generierte URL um.
 
-Zusätzlich zu den **Anmeldung** Sie können auch Vorgang Kontenverwaltung durch die vorherigen Schritte ausführen und dann eine der folgenden Vorgänge.
+Zusätzlich zur **SignIn**-Operation können Sie auch eine Kontoverwaltung durchführen, indem Sie die vorherigen Schritte ausführen und eine der folgenden Operationen auswählen.
 
--	**Kennwort ändern**
+-	**ChangePassword**
 -	**ChangeProfile**
 -	**CloseAccount**
 
-Sie müssen die folgenden Abfrageparameter für Konto Verwaltungsvorgänge übergeben.
+Sie müssen die folgenden Abfrageparameter für Operationen zur Kontoverwaltung übergeben.
 
--	**Vorgang**: bezeichnet die Art der Delegierung-Anforderung ist (ChangePassword, ChangeProfile oder CloseAccount)
--	**Benutzer-ID**: die Benutzer-Id des Kontos verwalten
--	**salt**: eine besondere salt-Zeichenfolge, die zur Berechnung des Hash Sicherheit
--	**Sig**: ein berechnete Security-Hash für den Vergleich mit Ihren eigenen verwendet werden berechnete Hash
+-	**operation**: Gibt an, um welche Art von Delegierungsanforderung es sich handelt ("ChangePassword", "ChangeProfile" oder "CloseAccount")
+-	**userId**: Die Benutzer-ID des Kontos, das verwaltet werden soll
+-	**salt**: Eine spezielle Salt-Zeichenfolge, mit der ein Sicherheitshash generiert wird
+-	**sig**: Ein berechneter Sicherheitshash zum Vergleich mit dem von Ihnen generierten Hash
 
-## <a name="delegate-product-subscription"> </a>Delegieren der Produkt-Abonnements
+## <a name="delegate-product-subscription"> </a>Delegieren der Produktabonnierung
 
 Die Delegierung der Produktabonnierung funktioniert gleich wie die Delegierung der Anmeldung und Registrierung. Der komplette Workflow sieht wie folgt aus:
 
-1. Ein Entwickler wählt ein Produkt im Entwicklerportal für die API-Verwaltung aus und klickt auf die Schaltfläche „Abonnieren“
-2. Der Browser wird zum Delegierungsendpunkt weitergeleitet
-3. Der Delegierungsendpunkt führt die erforderlichen Schritte für die Produktabonnierung aus. Dies ist frei konfigurierbar und kann z. B. eine Weiterleitung auf eine Seite zur Eingabe von Bezahlungsdaten oder zusätzlichen Fragen beinhalten, oder einfach die Speicherung der Daten ohne weiteres Eingreifen des Benutzers.
-4. Im Erfolgsfall wird der Benutzer anschließend wieder auf die Seite im Entwicklerportal für die API-Verwaltung weitergeleitet, von der er ursprünglich gekommen ist
+1. Ein Entwickler wählt ein Produkt im API Management-Entwicklerportal aus und klickt auf die Schaltfläche "Abonnieren".
+2. Der Browser wird zum Delegierungsendpunkt umgeleitet.
+3. Der Delegierungsendpunkt führt die erforderlichen Schritte für die Produktabonnierung aus. Dies ist frei konfigurierbar und kann z. B. eine Umleitung auf eine Seite zur Eingabe von Zahlungsdaten oder zusätzlichen Fragen beinhalten, oder einfach die Speicherung der Daten ohne weiteres Eingreifen des Benutzers.
+4. Im Erfolgsfall wird der Benutzer anschließend wieder auf die Seite im API Management-Entwicklerportal umgeleitet, von der er ursprünglich gekommen ist.
 
 Klicken Sie in der Seite **Delegierung** auf **Produktabonnierung delegieren**, um diese Funktion zu aktivieren.
 
@@ -103,29 +103,29 @@ Konfigurieren Sie anschließend die folgenden Aktionen für den Delegierungsendp
 
 1. Empfang einer Anforderung in der folgenden Form:
 
-	> *http://www.yourwebsite.com/apimdelegation?operation={operation}&productId={product zum Abonnieren} & Benutzer-ID = {User antragstellende} & salt = {String} & Sig = {String}*
+	> *http://www.yourwebsite.com/apimdelegation?operation={operation}&productId={product für Abonnement}&userId={Benutzer, der die Anforderung sendet}&salt={string}&sig={string}*
 
-	Abfrageparameter für den Fall des Produkts Abonnement:- **Vorgang**: identifiziert, welche Art von Delegierung Anforderung ist. Für Produkt Abonnement Anforderungen gültigen Optionen sind:-"Subscribe": eine Anforderung zum Abonnieren des Benutzers auf ein bestimmtes Produkt mit bereitgestellten ID (siehe unten) - "Unsubscribe": eine Anforderung zum Abmelden eines Benutzers von einer Produkt - "Erneuern": ein haben, erneuern ein Abonnements (z. B. die läuft ab) - **ProductId**: die ID des Produkts, die vom Benutzer angeforderte abonnieren - **Benutzer-ID**: die ID des Benutzers, für den die Anforderung erfolgt - **salt**: eine spezielle Saltzeichenfolge zur Berechnung einer Sicherheits Hash - **Sig**: ein berechnete Security-Hash für den Vergleich mit Ihren eigenen verwendet werden berechnete Hash
+	Abfrageparameter für das Abonnieren von Produkten: – **operation**: Gibt an, um welche Art von Delegierungsanforderung es sich handelt. Für Anforderungen zur Produktabonnierung stehen die folgenden Optionen zur Verfügung: – "Subscribe": Eine Anforderung, ein Produkt mit der bereitgestellten ID für einen Benutzer zu abonnieren (siehe unten) – "Unsubscribe": Eine Anforderung, das Produktabonnement für einen Benutzer zu kündigen – "Renew": Eine Anforderung zum Verlängern eines Abonnements (wenn dieses z. B. ausläuft) – **productId**: Die ID des Produkts, das ein Benutzer abonnieren möchte – **userId**: Die ID des Benutzers, für den die Anforderung gesendet wird – **salt**: Eine spezielle salt-Zeichenfolge, mit der ein Sicherheitshash berechnet wird – **sig**: Ein berechneter Sicherheitshash zum Vergleich mit dem von Ihnen generierten Hash
 
 
-2. Überprüfen, ob die Anfrage von der Azure API-Verwaltung stammt (optional, aus Sicherheitsgründen jedoch dringend empfohlen)
+2. Überprüfen, ob die Anfrage von Azure API Management stammt (optional, aus Sicherheitsgründen jedoch dringend empfohlen)
 
 	* Generieren Sie einen HMAC-SHA512-Hash für eine Zeichenfolge aus den Abfrageparametern **productId**, **redirectUrl** und **salt**:
-		> **productId****Benutzer-ID**
+		> **productId****userId**
 		 
 	* Vergleichen Sie den generierten Hash mit dem Wert des **sig**Abfrageparameters. Fahren Sie mit dem nächsten Schritt fort, wenn die Hashes übereinstimmen. Lehnen Sie die Anfrage andernfalls ab.
 	
 3. Führen Sie Ihre für die Produktabonnierung erforderlichen Schritte anhand der im Parameter **operation** angeforderten Operation aus, z. B. Abrechnung, weitere Fragen usw.
 
-4. Nachdem der Benutzer das Produkt auf Ihrer Seite erfolgreich abonniert hat, abonnieren Sie das Produkt in der API-Verwaltung für den Benutzer, indem Sie die [REST-API für die Produktabonnierung] aufrufen.
+4. Nachdem der Benutzer das Produkt auf Ihrer Seite erfolgreich abonniert hat, abonnieren Sie das Produkt in API Management für den Benutzer, indem Sie die [REST-API für die Produktabonnierung] aufrufen.
 
-5. Der Benutzer zurück zum Umleiten der **ReturnUrl** bereitgestellt, wenn die Anforderung empfängt.
+5. Leiten Sie den Benutzer wieder an die im Parameter **returnUrl** der Anforderung angegebene URL um.
 
-## <a name="delegate-example-code"> </a> Beispielcode ##
+## <a name="delegate-example-code"> </a>Beispielcode ##
 
-Diese Codebeispiele zeigen, wie Sie die *Schlüssel für die Überprüfung von Delegierung*, die auf dem Bildschirm Delegierung von API-Verwaltungsportal festgelegt ist, erstellen Sie einen HMAC die dann verwendet wird, um die Signatur zu überprüfen die Gültigkeit der übergebenen ReturnUrl nachweisen. Der gleiche Code funktioniert für "productId" und "userID" mit geringfügigen Änderungen.
+Diese Codebeispiele zeigen, wie Sie mit dem *Überprüfungsschlüssel für die Delegierung*, der im API Management-Portal auf dem Bildschirm für die Delegierung festgelegt wird, einen HMAC erstellen, mit dessen Hilfe anschließend die Signatur überprüft wird, um die Gültigkeit der übergebenen "returnUrl" nachzuweisen. Der gleiche Code funktioniert mit geringfügigen Änderungen auch für "productId" und "userID".
 
-**C#-Code zum Generieren des Hashwerts der returnUrl**
+**C#-Code zum Generieren des Hash von "returnUrl"**
 
     using System.Security.Cryptography;
 
@@ -141,7 +141,7 @@ Diese Codebeispiele zeigen, wie Sie die *Schlüssel für die Überprüfung von D
     }
 
 
-**NodeJS Code ReturnUrl-Hash generiert.**
+**NodeJS-Code zum Generieren des Hash von "returnUrl"**
 
 	var crypto = require('crypto');
 	
@@ -158,12 +158,12 @@ Diese Codebeispiele zeigen, wie Sie die *Schlüssel für die Überprüfung von D
 
 [Delegating developer sign-in and sign-up]: #delegate-signin-up
 [Delegating product subscription]: #delegate-product-subscription
-[Anfordern eines Tokens für einmaliges Anmelden (SSO)]: http://go.microsoft.com/fwlink/?LinkId=507409
-[Benutzer erstellen]: http://go.microsoft.com/fwlink/?LinkId=507655#CreateUser
+[Fordern Sie ein Token für die einmalige Anmeldung an (SSO)]: http://go.microsoft.com/fwlink/?LinkId=507409
+[Erstellen Sie einen Benutzer]: http://go.microsoft.com/fwlink/?LinkId=507655#CreateUser
 [REST-API für die Produktabonnierung]: http://go.microsoft.com/fwlink/?LinkId=507655#SSO
 [Next steps]: #next-steps
-[unten dargestellten Beispielcode]: #delegate-example-code
+[Beispielcode finden Sie unter]: #delegate-example-code
 
 [api-management-delegation-signin-up]: ./media/api-management-howto-setup-delegation/api-management-delegation-signin-up.png
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

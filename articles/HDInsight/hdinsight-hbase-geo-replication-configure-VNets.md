@@ -1,7 +1,7 @@
 <properties 
-   pageTitle="Konfigurieren einer VPN-Verbindung zwischen zwei virtuellen Netzwerken in Azure | Azure" 
-   description="Erfahren Sie, wie Sie VPN-Verbindungen zwischen zwei virtuellen Netzwerken in Azure, die Auflösung des Domänennamens zwischen zwei virtuellen Netzwerke konfigurieren und HBase Georeplikation konfigurieren" 
-   services="hdinsight" 
+   pageTitle="Konfigurieren einer VPN-Verbindung zwischen zwei virtuellen Netzwerken | Microsoft Azure" 
+   description="Erfahren Sie, wie Sie VPN-Verbindungen und die Domänennamenauflösung zwischen zwei virtuellen Azure-Netzwerken sowie die HBase-Georeplikation konfigurieren." 
+   services="hdinsight,virtual-network" 
    documentationCenter="" 
    authors="mumian" 
    manager="paulettm" 
@@ -31,6 +31,10 @@ Die virtuelle Azure-Netzwerk Standort-zu-Standort-Konnektivität verwendet ein V
 
 Weitere Informationen finden Sie unter [Konfiguration einer VNet-zu-VNet-Verbindung](https://msdn.microsoft.com/library/azure/dn690122.aspx).
 
+Video anzeigen:
+
+> [AZURE.VIDEO configure-the-vpn-connectivity-between-two-azure-virtual-networks]
+
 Dieses Lernprogramm ist Teil der [Reihe][hdinsight-hbase-replication] zum Erstellen von HBase Georeplikation.
 
 - Konfigurieren einer VPN-Konnektivität zwischen zwei virtuellen Netzwerken (dieses Lernprogramm)
@@ -45,9 +49,9 @@ Das folgende Diagramm veranschaulicht die beiden virtuellen Netzwerke, die Sie i
 ##Voraussetzungen
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Azure ist eine abonnementbasierte Plattform. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][azure-purchase-options], [Spezielle Angebote][azure-member-offers] oder [Kostenlose Testversion][azure-free-trial].
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-- **Eine Arbeitsstation, auf der Azure PowerShell installiert und konfiguriert ist**. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install].
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren und Verwenden von Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/).
 
 	Stellen Sie vor dem Ausführen von PowerShell-Skripts mithilfe des folgenden Cmdlets sicher, dass Sie mit Ihrem Azure-Abonnement verbunden sind:
 
@@ -58,7 +62,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 		Select-AzureSubscription <AzureSubscriptionName>
 
 
->[AZURE.NOTE]Azure Dienstnamen und die Namen der virtuellen Computer müssen eindeutig sein. Der in diesem Lernprogramm verwendete Name ist Contoso-[Azure Service/VM-Name]-[EU / US]. Contoso-VNet-EU ist z. B. das virtuelle Azure-Netzwerk im Rechenzentrum Nordeuropa; Contoso-DNS-US ist der DNS-Server VM im Datencenter im Osten der USA. Sie müssen sich Ihre eigenen Namen ausdenken.
+>[AZURE.NOTE]Azure Dienstnamen und die Namen der virtuellen Computer müssen eindeutig sein. Der in diesem Lernprogramm verwendete Name ist Contoso-[Azure Service/VM name]-[EU/US]. Contoso-VNet-EU ist z. B. das virtuelle Azure-Netzwerk im Rechenzentrum Nordeuropa; Contoso-DNS-US ist der DNS-Server VM im Datencenter im Osten der USA. Sie müssen sich Ihre eigenen Namen ausdenken.
  
 
 ##Erstellen Sie zwei Azure-VNets
@@ -68,26 +72,26 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 **Zum Erstellen eines virtuellen Netzwerks namens Contoso-VNet-EU in Nordeuropa**
 
 1.	Melden Sie sich auf dem [Azure-Portal][azure-portal] an.
-2.	Klicken Sie auf **NEU**, **NETWORK SERVICES**, **VIRTUELLES NETZWERK**, **BENUTZERDEFINIERT ERSTELLEN**.
+2.	Klicken Sie auf **NEU**, **NETWORK SERVICES**, **VIRTUELLES NETZWERK**, ** BENUTZERDEFINIERT ERSTELLEN**.
 3.	Geben Sie Folgendes ein:
 
 	- **NAME**: Contoso-VNet-EU
 	- **STANDORT**: Nordeuropa
 
-		In diesem Lernprogramm werden die Datencenter in Nordeuropa und im Osten der USA verwendet. Sie können eigene Datencenter auswählen.
+		In diesem Lernprogramm werden Datencenter in Nordeuropa und im Osten der USA verwendet. Sie können Ihr eigenes Datencenter auswählen.
 4.	Geben Sie Folgendes ein:
 
 	- **DNS-SERVER**: (Lassen Sie diese Angabe leer) 
 	
-		Sie benötigen einen eigenen DNS-Server für die Namensauflösung in virtuellen Netzwerken. Weitere Informationen zu Verwendungszwecken für die in Azure bereitgestellte Namensauflösung und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](https://msdn.microsoft.com/library/azure/jj156088.aspx). Anweisungen zur Konfiguration der Namensauflösung zwischen VNets finden Sie unter [Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-dns]
+		Für die Namensauflösung innerhalb virtueller Netzwerke benötigen Sie einen eigenen DNS-Server. Wann die Verwendung der von Azure bereitgestellten Namensauflösung bzw. die Verwendung eines eigenen DNS-Servers angebracht ist, erfahren Sie unter [Namensauflösung (DNS)](https://msdn.microsoft.com/library/azure/jj156088.aspx). Anweisungen zur Konfiguration der Namensauflösung zwischen VNets finden Sie unter [Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-dns].
   
 	- **Punkt-zu-Standort-VPN konfigurieren**: (nicht aktiviert)
 
-		Point-to-site doesn't apply to this scenario.
+		Punkt-zu-Standort ist auf dieses Szenario nicht anwendbar.
 
  	- **Standort-zu-Standort-VPN konfigurieren**: (nicht aktiviert)
  	
-		You will configure the site-to-site VPN connection to the Azure virtual network in the East U.S. datacenter.
+		Die Standort-zu-Standort-VPN-Verbindung mit dem virtuellen Azure-Netzwerk konfigurieren Sie für das Datencenter im Osten der USA.
 5.	Geben Sie Folgendes ein:
 
 	- 	**ADRESSRAUM START-IP**: 10.1.0.0
@@ -146,7 +150,7 @@ Wenn Sie eine VNet-zu-VNet-Konfiguration erstellen, müssen Sie jedes VNet so ko
 	- **NAME**: Contoso-LNet-EU
 	- **IP-ADRESSE DES VPN-GERÄTS**: 192.168.0.1 (diese Adresse wird später aktualisiert)
 
-		Typically, you’d use the actual external IP address for a VPN device. For VNet to VNet configurations, you will use the VPN gateway IP address. Given that you have not created the VPN gateways for the two VNets yet, you enter an arbitary IP address and come back to fix it.
+		Normalerweise verwenden Sie die tatsächliche externe IP-Adresse für ein VPN-Gerät. Für VNet-zu-VNet-Konfigurationen verwenden Sie die IP-Adresse des VPN-Gateways. Angesichts der Tatsache, dass Sie die VPN-Gateways für die beiden VNets noch nicht erstellt haben, geben Sie zunächst eine beliebige IP-Adresse ein, die Sie später korrigieren.
 4.	Geben Sie Folgendes ein:
 
 	- **ADRESSRAUM START-IP:** 10.1.0.0
@@ -266,5 +270,5 @@ In diesem Lernprogramm haben Sie gelernt, eine VPN-Verbindung zwischen zwei virt
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.diagram.png
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png
-<!--HONumber=52-->
- 
+
+<!---HONumber=62-->

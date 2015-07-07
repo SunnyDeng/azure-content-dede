@@ -71,7 +71,7 @@ Die folgenden Dateitypen werden akzeptiert:
 	
 > [AZURE.NOTE]Wenn die Web-App auf mehr als einer Instanz ausgeführt wird, wird auf allen Instanzen ein kontinuierlich ausgeführter Webauftrag ausgeführt. Bedarfsgesteuerte und geplante Webaufträge werden auf einer einzigen Instanz ausgeführt, die für den Lastenausgleich durch Microsoft Azure ausgewählt wurde.
 	
-> Aktivieren Sie für fortlaufende WebJobs zuverlässig und für alle Instanzen ausgeführt werden, die immer auf * Konfigurationseinstellung für die Web-app andernfalls können sie beendet werden, sobald der SCM-Hostwebsite zu lange im Leerlauf ist.
+> Aktivieren Sie für die Web-App die Konfigurationseinstellung „Immer bereit“*, um sicherzustellen, dass fortlaufende Webaufträge auf allen Instanzen zuverlässig ausgeführt werden. Andernfalls wird die Ausführung unter Umständen beendet, wenn sich die SCM-Hostwebsite zu lange im Leerlauf befindet.
 
 ## <a name="CreateScheduled"></a>Erstellen geplanter Webaufträge
 
@@ -155,7 +155,7 @@ Geplante Aufträge können auf den Seiten im Azure Scheduler des [alten Portals]
 	
 	![Protokollausgabe herunterladen][DownloadLogOutput]
 	
-5. Der Link  **Webaufträge** oben auf der Seite stellt eine einfache Möglichkeit dar, eine Liste der Webaufträge im Dashboard mit den Verlaufsdaten anzuzeigen.
+5. Der Link **Webaufträge** oben auf der Seite stellt eine einfache Möglichkeit dar, eine Liste der Webaufträge im Dashboard mit den Verlaufsdaten anzuzeigen.
 	
 	![Link zur Liste der Webaufträge][WebJobsLinkToDashboardList]
 	
@@ -210,4 +210,4 @@ Weitere Informationen finden Sie unter [Azure WebJobs Recommended Resources][Web
 [JobActionPageInScheduler]: ./media/web-sites-create-web-jobs/33JobActionPageInScheduler.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -1,5 +1,5 @@
 <properties
- pageTitle="Entwickeln Sie Scalding-MapReduce-Aufträge mit Maven"
+ pageTitle="Entwickeln von Scalding-MapReduce-Aufträgen mit Maven | Microsoft Azure"
  description="Erfahren Sie, wie Sie Maven verwenden können, um einen Scalding-MapReduce-Auftrag zu erstellen und den Auftrag anschließend in einem Hadoop-Cluster in HDInsight bereitzustellen und auszuführen."
  services="hdinsight"
  documentationCenter=""
@@ -23,13 +23,12 @@ Erfahren Sie in diesem Dokument, wie Maven verwendet wird, um einen einfachen Ma
 
 ## Voraussetzungen
 
-* Ein Azure-Abonnement
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+* **Einen Windows- oder Linux-basierten Hadoop-Cluster in HDInsight**. Weitere Informationen finden Sie unter [Bereitstellung von Linux-basierten Hadoop in HDInsight](hdinsight-hadoop-provision-linux-clusters.md) oder [Bereitstellung von Windows-basierten Hadoop in HDInsight](hdinsight-provision-clusters.md).
 
-* Ein auf Windows oder Linux basierendes Hadoop-Cluster in HDInsight - Siehe [Bereitstellung von Linux-basierten Hadoop in HDInsight](hdinsight-hadoop-provision-linux-clusters.md) oder [Bereitstellung von Windows-basierten Hadoop in HDInsight](hdinsight-provision-clusters.md) für weitere Informationen.
+* **[Maven](http://maven.apache.org/)**
 
-* [Maven](http://maven.apache.org/)
-
-* [Java-Plattform JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 oder höher
+* **[Java-Plattform JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 oder höher**
 
 ## Erstellen Sie das Projekt
 
@@ -76,7 +75,7 @@ Erfahren Sie in diesem Dokument, wie Maven verwendet wird, um einen einfachen Ma
             </dependency>
           </dependencies>
           <build>
-            <sourceDirectory>src/main/scala</sourceDirectory
+            <sourceDirectory>src/main/scala</sourceDirectory>
             <plugins>
               <plugin>
                 <groupId>org.scala-tools</groupId>
@@ -108,7 +107,7 @@ Erfahren Sie in diesem Dokument, wie Maven verwendet wird, um einen einfachen Ma
                       <excludes>
                         <exclude>META-INF/*.SF</exclude>
                         <exclude>META-INF/*.DSA</exclude>
-                        <exclude>META-INF/*.RSA</exclude>y
+                        <exclude>META-INF/*.RSA</exclude>
                       </excludes>
                     </filter>
                   </filters>
@@ -145,9 +144,9 @@ Erfahren Sie in diesem Dokument, wie Maven verwendet wird, um einen einfachen Ma
 
     * **maven-shade-plugin**: Plug-In zum erstellen von Shade-Jars (Fatjars). Dieses Plug-In verwendet Filter und Transformationen, im Besonderen:
 
-        * **filters**: Die angewendeten Filter ändern die in die JAR-Datei eingefügten Metadaten. Zur Vermeidung von Signaturausnahmen zur Laufzeit sind verschiedene Signaturdateien ausgeschlossen, die über Abhängigkeiten eingefügt werden könnten.
+        * **Filter**: Durch die angewendeten Filter ändern sich die in der JAR-Datei enthalten Metainformationen. Um zu verhindern, dass Ausnahmen zur Laufzeit signiert werden, schließen diese Filter verschiedene Signaturdateien aus, die andernfalls mit Abhängigkeiten enthalten wären.
 
-        * **executions**: Die Ausführungskonfiguration für die Paketphase gibt die **com.twitter.scalding.Tool**-Klasse als Hauptklasse für das Paket an. Ohne diese Information müssten Sie "com.twitter.scalding.Tool" sowie die Klasse mit der Anwendungslogik angeben, wen Sie den Auftrag mit dem Hadoop-Befehl ausführen.
+        * **Ausführungen**: Die Ausführungskonfiguration für die Paketierungsphase legt die Klasse **com.twitter.scalding.Tool** als Hauptklasse für das Paket fest. Andernfalls müssten Sie "com.twitter.scalding.Tool" wie auch die Klasse mit der Anwendungslogik bei der Ausführung des Auftrags mit dem Hadoop-Befehl angeben.
 
 3. Löschen Sie das **Src/Test**-Verzeichnis, da Sie keine Tests in diesem Beispiel erstellen.
 
@@ -289,6 +288,6 @@ Nachdem Sie erfahren haben, wie mit Scalding MapReduce-Aufträge für HDInsight 
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
-
-<!--HONumber=52-->
  
+
+<!---HONumber=62-->

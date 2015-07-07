@@ -1,24 +1,24 @@
-<properties 
-	pageTitle="Erste Schritte mit dem Azure-Schlüsseltresor | Übersicht" 
-	description="Verwenden Sie dieses Lernprogramm für den Einstieg in den Azure-Schlüsseltresor, um einen geschützten Container in Azure zu erstellen, in dem Sie kryptografischen Schlüssel und geheime Schlüssel in Azure speichern und verwalten." 
-	services="key-vault" 
-	documentationCenter="" 
-	authors="cabailey" 
+<properties
+	pageTitle="Erste Schritte mit dem Azure-Schlüsseltresor | Übersicht"
+	description="Verwenden Sie dieses Lernprogramm für den Einstieg in den Azure-Schlüsseltresor, um einen geschützten Container in Azure zu erstellen, in dem Sie kryptografischen Schlüssel und geheime Schlüssel in Azure speichern und verwalten."
+	services="key-vault"
+	documentationCenter=""
+	authors="cabailey"
 	manager="mbaldwin"/>
 
-<tags 
-	ms.service="key-vault" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/04/2015" 
+<tags
+	ms.service="key-vault"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="hero-article" 
+	ms.date="05/04/2015"
 	ms.author="cabailey"/>
 
 # Erste Schritte mit dem Azure-Schlüsseltresor #
 
 ## Einführung  
-Verwenden Sie dieses Lernprogramm für den Einstieg in den Azure-Schlüsseltresor – derzeit in der Vorschau –, um einen geschützten Container (einen Tresor) in Azure zu erstellen, in dem Sie kryptografischen Schlüssel und geheime Schlüssel in Azure speichern und verwalten. Sie werden durch den Vorgang der Verwendung von Windows PowerShell zum Erstellen eines Tresors geleitet, der einen Schlüssel oder ein Kennwort enthält, den/das Sie anschließend mit einer Azure-Anwendung verwenden können.  Anschließend wird gezeigt, wie eine Anwendung diesen Schlüssel bzw. das Kennwort verwenden kann.
+Verwenden Sie dieses Lernprogramm für den Einstieg in den Azure-Schlüsseltresor – derzeit in der Vorschau –, um einen geschützten Container (einen Tresor) in Azure zu erstellen, in dem Sie kryptografischen Schlüssel und geheime Schlüssel in Azure speichern und verwalten. Sie werden durch den Vorgang der Verwendung von Windows PowerShell zum Erstellen eines Tresors geleitet, der einen Schlüssel oder ein Kennwort enthält, den/das Sie anschließend mit einer Azure-Anwendung verwenden können. Anschließend wird gezeigt, wie eine Anwendung diesen Schlüssel bzw. das Kennwort verwenden kann.
 
 **Geschätzter Zeitaufwand:** 20 Minuten
 
@@ -28,7 +28,7 @@ Verwenden Sie dieses Lernprogramm für den Einstieg in den Azure-Schlüsseltreso
 
 Eine Übersicht über den Azure-Schlüsseltresor finden Sie unter [Was ist der Azure-Schlüsseltresor?](key-vault-whatis.md)
 
-## Voraussetzungen 
+## Voraussetzungen
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
@@ -73,7 +73,7 @@ Weitere Informationen zum Konfigurieren von Azure PowerShell finden Sie unter [I
 
 ## <a id="switch"></a>Wechseln zum Azure-Ressourcen-Manager ##
 
-Die Schlüsseltresor-Cmdlets erfordern den Azure-Ressourcen-Manager, geben Sie deshalb den folgenden Befehl ein, um in den Azure-Ressourcen-Manager-Modus zu wechseln: 
+Die Schlüsseltresor-Cmdlets erfordern den Azure-Ressourcen-Manager, geben Sie deshalb den folgenden Befehl ein, um in den Azure-Ressourcen-Manager-Modus zu wechseln:
 
 	Switch-AzureMode AzureResourceManager
 
@@ -83,7 +83,7 @@ Wenn Sie den Azure-Ressourcen-Manager verwenden, werden alle zugehörigen Ressou
 
 	New-AzureResourceGroup –Name 'ContosoResourceGroup' –Location 'East Asia'
 
-Verwenden Sie für den Parameter "-Location" den Befehl [Get-AzureLocation](https://msdn.microsoft.com/library/azure/dn654582.aspx), um zu ermitteln, wie Sie einen anderen Speicherort als den in diesem Beispiel verwendeten angeben können.  Wenn Sie weitere Informationen benötigen, geben Sie Folgendes ein: `Get-Help Get-AzureLocation`
+Verwenden Sie für den Parameter "-Location" den Befehl [Get-AzureLocation](https://msdn.microsoft.com/library/azure/dn654582.aspx), um zu ermitteln, wie Sie einen anderen Speicherort als den in diesem Beispiel verwendeten angeben können. Wenn Sie weitere Informationen benötigen, geben Sie Folgendes ein: `Get-Help Get-AzureLocation`
 
 
 ## <a id="vault"></a>Erstellen eines Schlüsseltresors ##
@@ -92,7 +92,7 @@ Verwenden Sie das Cmdlet [New-AzureKeyVault](https://msdn.microsoft.com/library/
 
 Wenn Sie beispielsweise den Tresornamen **ContosoKeyVault**, den Ressourcengruppennamen **ContosoResourceGroup** und den Speicherort **East Asia** verwenden möchten, geben Sie Folgendes ein:
 
-    New-AzureKeyVault -VaultName 'ContosoKeyVault' -ResourceGroupName 'ContosoResourceGroup' -Location 'East Asia' 
+    New-AzureKeyVault -VaultName 'ContosoKeyVault' -ResourceGroupName 'ContosoResourceGroup' -Location 'East Asia'
 
 Die Ausgabe dieses Cmdlets zeigt die Eigenschaften des Schlüsseltresors, den Sie soeben erstellt haben. Die zwei wichtigsten Eigenschaften sind diese:
 
@@ -108,7 +108,7 @@ Wenn Sie mit dem Azure-Schlüsseltresor einen softwaregeschützten Schlüssel er
     $key = Add-AzureKeyVaultKey -VaultName 'ContosoKeyVault' -Name 'ContosoFirstKey' -Destination 'Software'
 
 
-Wenn Sie über einen vorhandenen softwaregeschützten Schlüssel in einer PFX-Datei auf Ihrem Laufwerk "C:" in einer Datei namens "softkey.pfx" verfügen, die Sie in den Azure-Schlüsseltresor hochladen möchten, geben Sie den folgenden Befehl ein. Mit diesem Befehl wird die Variable **securepfxpwd** gesetzt, um das Kennwort **123** für die PFX-Datei festzulegen:
+Wenn Sie über einen vorhandenen softwaregeschützten Schlüssel in einer PFX-Datei auf Ihrem Laufwerk "C:\" in einer Datei namens "softkey.pfx" verfügen, die Sie in den Azure-Schlüsseltresor hochladen möchten, geben Sie den folgenden Befehl ein. Mit diesem Befehl wird die Variable **securepfxpwd** gesetzt, um das Kennwort **123** für die PFX-Datei festzulegen:
 
     $securepfxpwd = ConvertTo-SecureString –String '123' –AsPlainText –Force
 
@@ -117,7 +117,7 @@ Geben Sie anschließend den folgenden Code ein, um den Schlüssel aus der PFX-Da
     $key = Add-AzureKeyVaultKey -VaultName 'ContosoKeyVault' -Name 'ContosoFirstKey' -KeyFilePath 'c:\softkey.pfx' -KeyFilePassword $securepfxpwd
 
 
-Jetzt können Sie mit dem zugehörigen URI auf den erstellten oder in den Azure-Schlüsseltresor hochgeladenen Schlüssel verweisen. Beispiel: **https://ContosoKeyVault.vault.azure.net/Keys/ContosoFirstKey/a10f5336-9d93-44a3-9e26-e86e3488b768** 
+Jetzt können Sie mit dem zugehörigen URI auf den erstellten oder in den Azure-Schlüsseltresor hochgeladenen Schlüssel verweisen. Beispiel: **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** 
 
 Geben Sie zur Anzeige des URI für diesen Schlüssel Folgendes ein:
 
@@ -131,7 +131,7 @@ Geben Sie anschließend Folgendes ein:
 
 	$secret = Set-AzureKeyVaultSecret -VaultName 'ContosoKeyVault' -Name 'SQLPassword' -SecretValue $secretvalue
 
-Jetzt können Sie mit dem zugehörigen URI auf das Kennwort verweisen, das Sie dem Azure-Schlüsseltresor hinzugefügt haben. Beispiel: **https://ContosoVault.vault.azure.net/Secrets/778c3e43-3fdb-4cdf-b58e-7f501eb41d68** 
+Jetzt können Sie mit dem zugehörigen URI auf das Kennwort verweisen, das Sie dem Azure-Schlüsseltresor hinzugefügt haben. Beispiel: **https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**
 
 Geben Sie zur Anzeige des URI für diesen geheimen Schlüssel Folgendes ein:
 
@@ -154,7 +154,7 @@ Dieser Schritt wird üblicherweise durch einen Entwickler auf einem separaten Co
 Anwendungen, die einen Schlüsseltresor verwenden, müssen sich mithilfe eines Azure Active Directory-Tokens authentifizieren. Hierzu muss der Besitzer der Anwendung die Anwendung zunächst in Azure Active Directory registrieren. Zum Abschluss der Registrierung erhält der Anwendungsbesitzer die folgenden Werte:
 
 
-- Eine **Anwendungs-ID** (auch Client-ID genannt) und einen **Authentifizierungsschlüssel** (auch als gemeinsamer geheimer Schlüssel bezeichnet). Die Anwendung muss beide dieser Werte in Azure Active Directory vorlegen, um ein Token zu erhalten.  Wie die Anwendung konfiguriert wird, um dies zu erreichen, richtet sich nach der Anwendung. Bei der Beispielanwendung für den Schlüsseltresor legt der Anwendungsbesitzer diese Werte in der Datei "app.config" fest.
+- Eine **Anwendungs-ID** (auch Client-ID genannt) und einen **Authentifizierungsschlüssel** (auch als gemeinsamer geheimer Schlüssel bezeichnet). Die Anwendung muss beide dieser Werte in Azure Active Directory vorlegen, um ein Token zu erhalten. Wie die Anwendung konfiguriert wird, um dies zu erreichen, richtet sich nach der Anwendung. Bei der Beispielanwendung für den Schlüsseltresor legt der Anwendungsbesitzer diese Werte in der Datei "app.config" fest.
 
 
 
@@ -168,7 +168,7 @@ So registrieren Sie die Anwendungen in Azure Active Directory
 5.	Geben Sie auf der Seite **Erzählen Sie uns von Ihrer App** einen Namen für Ihre Anwendung ein, und wählen Sie **WEBANWENDUNG UND/ODER WEB-API** (die Standardeinstellung). Klicken Sie auf das Symbol "Weiter".
 6.	Geben Sie auf der Seite **App-Eigenschaften** die **ANMELDE-URL** und den **APP-ID-URI** für Ihre Webanwendung an. Wenn Ihre Anwendung über keine solchen Werte verfügt, können Sie in diesem Schritt Pseudowerte verwenden (Sie können beispielsweise in beide Felder den Wert http://test1.contoso.com eingeben). Es spielt keine Rolle, ob diese Websites vorhanden sind. Es ist nur wichtig, dass der App-ID-URI für jede Anwendung in Ihrem Verzeichnis eindeutig ist. Das Verzeichnis verwendet diese Zeichenfolge zur Identifizierung Ihrer App.
 7.	Klicken Sie auf das Symbol "Abschließen", um Ihre Änderungen im Assistenten zu speichern.
-8.	Klicken Sie auf der Seite "Schnellstart" auf **KONFIGURIEREN**. 
+8.	Klicken Sie auf der Seite "Schnellstart" auf **KONFIGURIEREN**.
 9.	Führen Sie einen Bildlauf zum Abschnitt **Schlüssel** durch, wählen Sie die Dauer aus, und klicken Sie dann auf **SPEICHERN**. Die Seite wird aktualisiert und zeigt jetzt einen Schlüsselwert. Sie müssen Ihre Anwendung mit diesem Schlüsselwert und der **CLIENT-ID** konfigurieren. (Die Anweisungen für diese Konfigurationen sind anwendungsspezifisch.)
 10.	Kopieren Sie den Client-ID-Wert von dieser Seite. Sie verwenden ihn im nächsten Schritt, um Berechtigungen für Ihren Tresor festzulegen.
 
@@ -205,7 +205,7 @@ Sie können mit dem folgenden Befehl einen Schlüssel aus einer PFX-Datei auf Ih
 
 	$key = Add-AzureKeyVaultKey -VaultName 'ContosoKeyVaultHSM' -Name 'ContosoFirstHSMKey' -KeyFilePath 'c:\softkey.pfx' -KeyFilePassword $securepfxpwd -Destination 'HSM'
 
-Der nächste Befehl importiert ein BYOK-Paket (Bring Your Own Key). Auf diese Weise können Sie Ihren Schlüssel im lokalen HSM generieren und ihn in HSMs im Schlüsseltresordienst übertragen, ohne dass der Schlüssel die HSM-Grenzen verlässt: 
+Der nächste Befehl importiert ein BYOK-Paket (Bring Your Own Key). Auf diese Weise können Sie Ihren Schlüssel im lokalen HSM generieren und ihn in HSMs im Schlüsseltresordienst übertragen, ohne dass der Schlüssel die HSM-Grenzen verlässt:
 
 	$key = Add-AzureKeyVaultKey -VaultName 'ContosoKeyVaultHSM' -Name 'ContosoFirstHSMKey' -KeyFilePath 'c:\ITByok.byok' -Destination 'HSM'
 
@@ -239,10 +239,11 @@ Die folgenden weiteren Befehle sind möglicherweise ebenfalls für das Verwalten
 
 ## <a id="next"></a>Nächste Schritte ##
 
+Ein Lernprogramm zur Verwendung des Azure-Schlüsseltresors in einer Webanwendung finden Sie unter [Use Azure Key Vault from a Web Application](key-vault-use-from-web-application.md) (in englischer Sprache).
+
 Eine Liste der Windows PowerShell-Cmdlets für den Azure-Schlüsseltresor finden Sie unter [Cmdlets für den Azure-Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn868052.aspx).
 
 Eine Referenz zur Programmierung finden Sie unter [Azure-Schlüsseltresor – REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn903609.aspx) und [Azure-Schlüsseltresor – C# Client-API-Referenz](https://msdn.microsoft.com/library/azure/dn903628.aspx).
+ 
 
-
-
-<!--HONumber=54--> 
+<!---HONumber=62-->

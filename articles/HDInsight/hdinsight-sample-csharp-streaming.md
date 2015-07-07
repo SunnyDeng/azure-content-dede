@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Das C# Streaming-Wortzählungsbeispiel mit Hadoop in HDInsight | Azure"
+	pageTitle="C#-Streamingbeispiel zur Wortzählung in Hadoop | Microsoft Azure"
 	description="Informationen zum Schreiben von MapReduce-Programmen in C#, die die Hadoop-Streaming-Schnittstelle verwenden, sowie zum Ausführen dieser Programme mit PowerShell-Cmdlets in HDInsight."
 	editor="cgronlun"
 	manager="paulettm"
@@ -18,37 +18,36 @@
 
 # Das C#-Streamingbeispiel zur MapReduce-Wortzählung in Hadoop in HDInsight
 
-Hadoop stellt MapReduce eine Streaming-API zur Verfügung, mit der Sie Map- und Reduce-Funktionen in anderen Sprache als Java schreiben können. In diesem Lernprogramm erstellen Sie ein MapReduce-Programm in C# mithilfe der Hadoop-Streamingschnittstelle und führen das Programm mit Azure PowerShell-Cmdlets in Azure HDInsight aus.
+Hadoop stellt eine Streaming-API für MapReduce zur Verfügung, mit der Sie Map- und Reduce-Funktionen in anderen Sprache als Java schreiben können. In diesem Lernprogramm erfahren Sie, wie Sie mithilfe der Hadoop-Streaming-Schnittstelle MapReduce-Programme in C# schreiben und die Programme mithilfe von Azure PowerShell-Cmdlets in Azure HDInsight ausführen.
 
 > [AZURE.NOTE]Die Schritte in diesem Lernprogramm gelten nur für Windows-basierte HDInsight-Cluster. Ein Beispiel für das Streaming bei Linux-basierten HDInsight-Clustern finden Sie unter [Entwickeln von Python-Streamingprogrammen für HDInsight](hdinsight-hadoop-streaming-python.md).
 
-Im Beispiel sind der Mapper und der Reducer ausführbare Dateien, die eine Eingabe aus [stdin][stdin-stdout-stderr] lesen (zeilenweise) und die Ausgabe in [stdout][stdin-stdout-stderr] schreiben. Das Programm zählt alle Wörter im Text.
+In diesem Beispiel sind sowohl Mapper als auch Reducer ausführbare Dateien, die die Eingabe (zeilenweise) von [stdin][stdin-stdout-stderr] lesen und die Ausgabe über [stdout][stdin-stdout-stderr] ausgeben. Das Programm zählt alle Wörter im Text.
 
-Wenn eine ausführbare Datei für **Mapper** angegeben wird, ruft jede Mapper-Task die ausführbare Datei als separaten Prozess auf, wenn der Mapper initialisiert wird. Die Mapper-Task konvertiert ihre Eingabe in Zeilen und übermittelt die Zeilen an den [stdin][stdin-stdout-stderr] des Prozesses.
+Wenn eine ausführbare Datei für **Mapper** angegeben wird, ruft jede Mapper-Task die ausführbare Datei als separaten Prozess auf, wenn der Mapper initialisiert wird. Während der Ausführung der Mapper-Task wird die Eingabe in Zeilen konvertiert, und diese Zeilen werden an die Eingabe ([stdin][stdin-stdout-stderr]) des Prozesses übermittelt.
 
-In der Zwischenzeit sammelt der Mapper die zeilenbasierte Ausgabe aus dem "stdout" des Prozesses. Er konvertiert jede Zeile in ein Schlüssel-Wert-Paar, das als Ausgabe des Mappers gesammelt wird. Standardmäßig ist das Präfix einer Zeile bis zum ersten Tabulatorzeichen der Schlüssel, und der Rest der Zeile (ohne das Tabulatorzeichen) ist der Wert. Wenn die Zeile kein Tabulatorzeichen enthält, wird die gesamte Zeile als Schlüssel betrachtet und der Wert ist null.
+In der Zwischenzeit sammelt der Mapper die zeilenorientierte Ausgabe von der Ausgabe (stdout) des Prozesses. Jede Zeile wird in ein Schlüssel/Wert-Paar konvertiert, das als Ausgabe des Mappers erfasst wird. Standardmäßig ist das Präfix einer Zeile bis zum ersten Tabulatorzeichen der Schlüssel, und der Rest der Zeile (mit Ausnahme des Tabulatorzeichens) ist der Wert. Wenn die Zeile kein Tabulatorzeichen enthält, wird die gesamte Zeile als Schlüssel betrachtet, und der Wert ist NULL.
 
-Wenn eine ausführbare Datei für **Reducer** angegeben wird, ruft jede Reducer-Task die ausführbare Datei als separaten Prozess auf, wenn der Reducer initialisiert wird. Die Reducer-Task konvertiert die Schlüssel-Wert-Eingabepaare in Zeilen und übermittelt die Zeilen an den [stdin][stdin-stdout-stderr] des Prozesses.
+Wenn eine ausführbare Datei für **Reducer** angegeben wird, ruft jede Reducer-Task die ausführbare Datei als separaten Prozess auf, wenn der Reducer initialisiert wird. Während der Ausführung der Reducer-Task werden die eingegebenen Schlüssel/Wert-Paare in Zeilen konvertiert, und diese Zeilen werden an die Eingabe ([stdin][stdin-stdout-stderr]) des Prozesses übermittelt.
 
-In der Zwischenzeit sammelt der Reducer die zeilenbasierte Ausgabe aus dem [stdout][stdin-stdout-stderr] des Prozesses. Er konvertiert jede Zeile in ein Schlüssel-Wert-Paar, das als Ausgabe des Reducers gesammelt wird. Standardmäßig ist das Präfix einer Zeile bis zum ersten Tabulatorzeichen der Schlüssel, und der Rest der Zeile (ohne das Tabulatorzeichen) ist der Wert.
+In der Zwischenzeit sammelt der Reducer die zeilenorientierte Ausgabe von der Ausgabe ([stdout][stdin-stdout-stderr]) des Prozesses. Jede Zeile wird in ein Schlüssel/Wert-Paar konvertiert, das als Ausgabe des Reducers erfasst wird. Standardmäßig ist das Präfix einer Zeile bis zum ersten Tabulatorzeichen der Schlüssel, und der Rest der Zeile (mit Ausnahme des Tabulatorzeichens) ist der Wert.
 
-Weitere Informationen zur Hadoop-Streaming-Schnittstelle finden Sie unter [HadoopStreaming][hadoop-streaming] (in englischer Sprache).
+Weitere Informationen zur Hadoop-Streaming-Schnittstelle finden Sie unter [Hadoop Streaming][hadoop-streaming].
 
 **In diesem Lernprogramm lernen Sie Folgendes:**
 
-* Verwenden von Azure PowerShell zum Ausführen eines C#-Streamingprogramms zum Analysieren von Daten in einer Datei in HDInsight
-* Schreiben von C#-Code, der die Hadoop-Streamingschnittstelle verwendet
+* Ausführen eines C#-Streamingprogramms zur Analyse von Daten in einer Datei in HDInsight mithilfe von Azure PowerShell.
+* Schreiben von C#-Code, der die Hadoop-Streaming-Schnittstelle verwendet.
 
 
 **Voraussetzungen**:
 
-Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
+Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- Ein Azure-Konto. Hinweise zum Erstellen eines Kontos finden Sie auf der Seite [Einen Monat kostenlos testen](http://azure.microsoft.com/pricing/free-trial/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- **Einen HDInsight-Cluster**. Anweisungen zu den verschiedenen Optionen beim Erstellen eines solchen Clusters finden Sie unter [Bereitstellung eines HDInsight-Clusters](hdinsight-provision-clusters.md).
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren und Verwenden von Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/).
 
-- Einen bereitgestellten HDInsight-Cluster. Anweisungen zu den verschiedenen Möglichkeiten zur Erstellung solcher Cluster finden Sie unter [Bereitstellen eines HDInsight-Clusters](hdinsight-provision-clusters.md).
-
-- Azure PowerShell. Diese muss für die Verwendung mit Ihrem Konto konfiguriert werden. Anweisungen zur entsprechenden Vorgehensweise finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
 
 
 ## <a id="run-sample"></a>Ausführen des Beispiels mit Azure PowerShell
@@ -78,7 +77,7 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 		Select-AzureSubscription $subscriptionName
 		$streamingWC | Start-AzureHDInsightJob -Cluster $clustername | Wait-AzureHDInsightJob -WaitTimeoutInSeconds 3600 | Get-AzureHDInsightJobOutput -Cluster $clustername -StandardError
 
-6. Führen Sie die folgenden Befehle aus, um die Ergebnisse der Wortzählung anzuzeigen.
+6. Führen Sie die folgenden Befehle aus, um die Ergebnisse der Wortzählung anzuzeigen:
 
 		$subscriptionName = "<SubscriptionName>"
 		$storageAccountName = "<StorageAccountName>"
@@ -98,9 +97,11 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
 	Beachten Sie, dass die Ausgabedateien eines MapReduce-Jobs nicht geändert werden können. Wenn Sie dieses Beispiel erneut ausführen, müssen Sie daher den Namen der Ausgabedatei ändern.
 
-##<a id="java-code"></a>Der C#-Code für Hadoop-Streaming
 
-Das MapReduce-Programm verwendet die Anwendung "cat.exe" als Mapping-Schnittstelle zum Streamen des Texts in die Konsole und die Anwendung "wc.exe" als Reduce-Schnittstelle zum Zählen der Anzahl von Wörtern, die aus dem Dokument gestreamt werden. Sowohl der Mapper als auch der Reducer lesen Zeichen (zeilenweise) aus dem Standard-Eingabedatenstrom (stdin) und schreiben in den Standard-Ausgabedatenstrom (stdout).
+## <a id="java-code"></a>Der C#-Code für Hadoop-Streaming
+
+
+Das MapReduce-Programm verwendet die Anwendung "cat.exe" als Mapping-Schnittstelle zum Streamen des Texts in die Konsole und die Anwendung "wc.exe" als Reduce-Schnittstelle zum Zählen der Anzahl von Wörtern, die aus dem Dokument übertragen werden. Sowohl der Mapper als auch der Reducer lesen Zeichen zeilenweise aus dem Standard-Eingabedatenstrom (stdin) und schreiben in den Standard-Ausgabedatenstrom (stdout).
 
 
 
@@ -131,7 +132,7 @@ Das MapReduce-Programm verwendet die Anwendung "cat.exe" als Mapping-Schnittstel
 
 
 
-Der Mapper-Code in der Datei "cat.cs" verwendet ein [StreamReader][streamreader]-Objekt, um die Zeichen des eingehenden Datenstroms in die Konsole zu lesen, die dann den Datenstrom mit der statischen [Console.Writeline][console-writeline]-Methode in den Standard-Ausgabedatenstrom schreibt.
+Der Mapper-Code in der Datei "cat.cs" verwendet ein [StreamReader][streamreader]-Objekt, um die Zeichen des eingehenden Datenstroms in die Konsole einzulesen, die ihrerseits den Datenstrom mit der statischen [Console.Writeline][console-writeline]-Methode in den Standard-Ausgabedatenstrom schreibt.
 
 
 	// The source code for wc.exe (Reducer) is:
@@ -162,20 +163,22 @@ Der Mapper-Code in der Datei "cat.cs" verwendet ein [StreamReader][streamreader]
 	}
 
 
-Der Reducer-Code in der Datei "wc.cs" verwendet ein [StreamReader][streamreader]-Objekt zum Lesen von Zeichen aus dem Standard-Eingabedatenstrom, die vom cat.exe-Mapper ausgegeben wurden. Beim Lesen der Zeichen mit der [Console.Writeline][console-writeline]-Methode zählt er die Wörter durch Zählen der Leerzeichen und Zeilenende-Zeichen am Ende jedes Worts. Anschließend schreibt er die Summe mit der [Console.Writeline][console-writeline]-Methode in den Standardausgabestream.
+Der Reducer-Code in der Datei "wc.cs" verwendet ein [StreamReader][streamreader]-Objekt zum Lesen von Zeichen aus dem Standard-Eingabedatenstrom, die vom cat.exe-Mapper ausgegeben wurden. Während des Einlesens der Zeichen mit der [Console.Writeline][console-writeline]-Methode werden die Wörter gezählt, indem die Leerzeichen und Zeilenendezeichen am Ende der einzelnen Wörter gezählt werden. Die Summe wird mit der [Console.Writeline][console-writeline]-Methode in den Standard-Ausgabedatenstrom geschrieben.
 
-##<a id="summary"></a>Zusammenfassung
+
+## <a id="summary"></a>Zusammenfassung
 
 In diesem Lernprogramm haben Sie erfahren, wie ein MapReduce-Auftrag mithilfe von Hadoop-Streaming in HDInsight bereitgestellt wird.
 
-##<a id="next-steps"></a>Nächste Schritte
+## <a id="next-steps"></a>Nächste Schritte
 
-Lernprogramme, in denen andere Beispiele ausgeführt und Anweisungen zum Ausführen von Pig-, Hive- und MapReduce-Aufträgen in Azure HDInsight mit Azure PowerShell bereitgestellt werden, finden Sie in den folgenden Themen:
+
+Lernprogramme mit anderen Beispielen und Anweisungen zur Ausführung von Pig-, Hive- und MapReduce-Aufträgen in Azure HDInsight mit Azure PowerShell finden Sie in den folgenden Artikeln:
 
 * [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
 * [Beispiel: Pi-Schätzung][hdinsight-sample-pi-estimator]
 * [Beispiel: Wortzählung][hdinsight-sample-wordcount]
-* [Beispiel: 10-GB-Graysort][hdinsight-sample-10gb-graysort]
+* [Beispiel: 10-GB-GraySort][hdinsight-sample-10gb-graysort]
 * [Verwenden von Pig mit HDInsight][hdinsight-use-pig]
 * [Verwenden von Hive mit HDInsight][hdinsight-use-hive]
 * [Azure HDInsight SDK-Dokumentation][hdinsight-sdk-documentation]
@@ -199,5 +202,6 @@ Lernprogramme, in denen andere Beispiele ausgeführt und Anweisungen zum Ausfüh
 
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

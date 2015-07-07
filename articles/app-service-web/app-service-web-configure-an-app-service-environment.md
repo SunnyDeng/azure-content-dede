@@ -20,7 +20,7 @@
 
 ## Übersicht ##
 
-App Service-Umgebungen sind eine neue Funktion des Premium-Tarifs, die in der Vorschau angeboten wird. Sie bietet neue Funktionen für die Skalierung und den Netzwerkzugriff. Diese neue Skalierungsfunktion erlaubt das Platzieren einer Instanz des Azure App Service in Ihrem VNET. Wenn Sie mit der Funktion des App-Service-Umgebung (ASE) vertraut sind, lesen Sie das Dokument hier [was eine App-Service-Umgebung ist]/app-service-app-service-environment-intro.md). Informationen zum Erstellen einer App Service-Umgebung finden Sie im Dokument [Erstellen einer App Service-Umgebung](app-service-web-how-to-create-an-app-service-environment.md).
+App Service-Umgebungen sind eine neue Funktion des Premium-Tarifs, die in der Vorschau angeboten wird. Sie bietet neue Funktionen für die Skalierung und den Netzwerkzugriff. Diese neue Skalierungsfunktion erlaubt das Platzieren einer Instanz des Azure App Service in Ihrem VNET. Wenn Sie mit der Funktion der App Service-Umgebung nicht vertraut sind, lesen Sie das Dokument [Was ist eine App Service-Umgebung]/app-service-app-service-environment-intro.md). Informationen zum Erstellen einer App Service-Umgebung finden Sie im Dokument [Erstellen einer App Service-Umgebung](app-service-web-how-to-create-an-app-service-environment.md).
 
 Allgemein besteht eine App Service-Umgebung aus mehreren Hauptkomponenten:
 
@@ -30,7 +30,7 @@ Allgemein besteht eine App Service-Umgebung aus mehreren Hauptkomponenten:
 - Virtual Network mit mindestens einem Subnetz
 - Subnetz mit darin ausgeführtem gehosteten Dienst der Azure App-Umgebung
 
-Zum Verwalten und Überwachen Ihrer App-Umgebungen, die Sie zu diesem Zweck aus durchsuchen Benutzeroberfläche zugreifen können-App-Umgebungen in das Azure Preview Portal >. Die erste Version verfügt über die nötigen Funktionen zum Verwalten des Systems. Sie wird in den kommenden Wochen weiterhin durch zusätzliche Funktionen ergänzt.
+Zum Verwalten und Überwachen Ihrer App Service-Umgebungen können Sie im Azure-Vorschauportal über "Durchsuchen" -> "App Service-Umgebungen" auf eine Benutzeroberfläche zugreifen. Die erste Version verfügt über die nötigen Funktionen zum Verwalten des Systems. Sie wird in den kommenden Wochen weiterhin durch zusätzliche Funktionen ergänzt.
 
 ![][1]
 
@@ -52,7 +52,7 @@ Die Compute-Ressourcen, Storage und Datenbank werden alle durch den Azure App Se
 
 Unabhängig von der Größe der Compute-Ressourcen sind mindestens zwei Front-End-Server und zwei Worker erforderlich. Eine App Service-Umgebung kann für die Verwendung von bis zu 55 Compute-Ressourcen insgesamt konfiguriert werden. Von diesen 55 Compute-Ressourcen können nur 50 zum Hosten von Workloads eingesetzt werden. Dafür gibt es zwei Gründe. Es sind mindestens zwei Front-End-Compute-Ressourcen erforderlich. So bleiben bis zu 53 zur Unterstützung der Workerpoolzuweisung übrig. Um jedoch Fehlertoleranz bereitzustellen, muss nach den folgenden Regeln eine zusätzliche Compute-Ressource zugewiesen werden:
 
-- Jeder Workerpool benötigt mindestens eine weitere Compute-Ressource, der keine Workload zugewiesen  werden kann
+- Jeder Workerpool benötigt mindestens eine weitere Compute-Ressource, der keine Workload zugewiesen werden kann
 - Wenn die Menge von Compute-Ressourcen in einem Pool einen bestimmten Wert überschreitet, ist eine weitere Compute-Ressource erforderlich
 
 Im Rahmen der Fehlertoleranzanforderungen gilt innerhalb eines einzelnen Workerpools Folgendes für einen bestimmten Wert von X Ressourcen, die einem Workerpool zugewiesen sind:
@@ -131,4 +131,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

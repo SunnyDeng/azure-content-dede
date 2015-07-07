@@ -21,7 +21,7 @@
 
 Wenn Ihre App bei den Benutzern abstürzt, möchten Sie davon schnell erfahren und wünschen sich Details dazu, was passiert ist. Mit Application Insights können Sie überwachen, wie häufig Abstürze auftreten, Benachrichtigungen erhalten, wenn sie auftreten, und die Berichte zu den einzelnen Vorfällen untersuchen.
 
-"Absturz" bedeutet, dass die Anwendung aufgrund einer nicht abgefangenen Ausnahme beendet wird. Wenn Ihre Anwendung eine Ausnahme abfängt können Sie Berichte mit den [TrackException API][apiexceptions] jedoch weiter ausgeführt. In diesem Fall wird sie nicht wie ein Absturz protokolliert.
+"Absturz" bedeutet, dass die Anwendung aufgrund einer nicht abgefangenen Ausnahme beendet wird. Wenn Ihre App eine Ausnahme abfängt, können Sie diese mithilfe der [TrackException-API][apiexceptions] melden, die Ausführung jedoch fortsetzen. In diesem Fall wird sie nicht wie ein Absturz protokolliert.
 
 
 ## Überwachen der Häufigkeit von Abstürzen
@@ -99,4 +99,4 @@ Wenn Sie den Build im Freigabemodus erstellen, werden Ereignisse auf dem Gerät 
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

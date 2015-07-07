@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Anmerkungen zu dieser Version: Microsoft HDInsight-Emulator für Azure | Microsoft Azure" 
-	description="Erhalten Sie aktuellste Informationen über die neuesten Versionen des HDInsight Hadoop-Emulators." 
+	description="Erhalten Sie aktuellste Informationen über die neuesten Versionen des HDInsight Hadoop-Emulators, einer Hadoop-Sandbox-Umgebung." 
 	editor="cgronlun" 
 	manager="paulettm" 
 	services="hdinsight" 
@@ -19,7 +19,7 @@
 
 
 
-# Anmerkungen zu dieser Version: Microsoft HDInsight-Emulator für Azure 
+# Anmerkungen zu dieser Version: Microsoft HDInsight-Emulator für Hadoop 
 
 
 
@@ -43,7 +43,7 @@
 
 ### Neuerungen 
  
-* Es wurden Skripts hinzugefügt, um die Einstellung aller Apache Hadoop-Dienste auf automatischen oder manuellen Start zu vereinfachen. Die Standardeinstellung ist wie zuvor "automatic", aber nun können alle Dienste mit den unter "C:\\Hadoop" installierten Skripts "set-onebox-manualstart.cmd" und "set-onebox-autostart.cmd" geändert werden. 
+* Es wurden Skripts hinzugefügt, um die Einstellung aller Apache Hadoop-Dienste auf automatischen oder manuellen Start zu vereinfachen. Die Standardeinstellung ist wie zuvor "automatic", aber nun können alle Dienste mit den unter "C:\Hadoop" installierten Skripts "set-onebox-manualstart.cmd" und "set-onebox-autostart.cmd" geändert werden. 
 
 * Die Anzahl der erforderlichen Installationsabhängigkeiten wurde deutlich reduziert, um schnellere Installationen zu ermöglichen.
 
@@ -110,7 +110,7 @@
 
 	Im Dashboard finden Sie einen lokalen Standard-Cluster namens "local (hdfs)". Wenn Sie Azure-Blobspeicher als Speicher für Ihre lokale Installation wünschen, gehen Sie folgendermaßen vor:
 
-	1. Fügen Sie das Konto-Tag in die Datei core-site.xml unter C:\\Hadoop\\hadoop-1.1.0-SNAPSHOT\\conf ein:       
+	1. Fügen Sie das Konto-Tag in die Datei core-site.xml unter C:\Hadoop\\hadoop-1.1.0-SNAPSHOT\\conf ein:       
 
 			<property>
         		<name>fs.azure.account.key.{AccountName}</name>
@@ -204,7 +204,7 @@
 	* Es wurde einige Male berichtet, dass beim Versuch, das HDInsight-Dashboard zu öffnen, ein Anmeldungsdialog geöffnet wird. In diesem Falle können Sie die Anmeldeinformationen Ihres aktuellen Benutzers eingeben und sollten dann in der Lage sein, zum Dashboard zu navigieren. 
 
 
-## Version 1.0.0.0, veröffentlicht am 23. Oktober 2012 
+## Version 1.0.0.0, veröffentlicht am 23. Oktober 2012
 
 * Erste Version 
 
@@ -245,7 +245,7 @@
 
 * Temp-Verzeichnis
 	
-	Die Datei "hadoop.tmp.dir" verweist auf den falschen Speicherort. Statt auf C:\\hadoop\\hdfs verweist es auf c:\\hdfs. Dieser Fehler wird mit dem nächsten Update von HDP behoben.
+	Die Datei "hadoop.tmp.dir" verweist auf den falschen Speicherort. Statt auf C:\hadoop\\hdfs verweist es auf C:\hdfs. Dieser Fehler wird mit dem nächsten Update von HDP behoben.
 
 * Betriebssystemeinschränkungen
 
@@ -274,5 +274,6 @@
 
 [hdinsight-hadoop-emulator-get-started]: ../hdinsight-get-started-emulator.md
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

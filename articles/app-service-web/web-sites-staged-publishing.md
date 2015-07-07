@@ -195,13 +195,13 @@ Wird ein Bereitstellungs-Steckplatz nicht mehr benötigt, kann dieser mithilfe d
 <!-- ======== Azure CLI =========== -->
 
 <a name="CLI"></a>
-## Azure-Befehlszeilenschnittstelle (CLI Azure)-Befehle für Bereitstellungs-Steckplätze
+## Befehle der Azure-Befehlszeilenschnittstelle (Azure-CLI) für Bereitstellungsslots
 
-Der Azure-Befehlszeilenschnittstelle bietet plattformübergreifende Befehle für die Arbeit mit Azure, einschließlich der Unterstützung für die Verwaltung von Web-App-Bereitstellungs-Steckplätze.
+Die Azure-Befehlszeilenschnittstelle bietet plattformübergreifende Befehle für das Arbeiten mit Azure, einschließlich Unterstützung für die Verwaltung von Web-App-Bereitstellungsslots.
 
-- Anweisungen zur Installation und Konfiguration der Azure-CLI, einschließlich Informationen zum Herstellen einer Azure-Abonnement, Azure-CLI finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli.md).
+- Anweisungen zur Installation und Konfiguration der Azure-Befehlszeilenschnittstelle, einschließlich Informationen zur Verbindung der Azure-Befehlszeilenschnittstelle mit Ihrem Azure-Abonnement, finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli.md).
 
--  Rufen Sie zum Auflisten der verfügbaren Befehle für Azure-App-Dienst in der Azure-CLI `azure site -h`.
+-  Um eine Liste der verfügbaren Befehle für Azure App Service in der Azure-Befehlszeilenschnittstelle zu erhalten, rufen Sie `azure site -h` auf.
 
 ----------
 ### azure site list
@@ -260,4 +260,4 @@ Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie w
 [SlotSettings]: ./media/web-sites-staged-publishing/SlotSetting.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

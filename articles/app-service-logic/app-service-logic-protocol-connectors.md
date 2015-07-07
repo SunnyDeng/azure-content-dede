@@ -105,7 +105,7 @@ Ein Connector kann im Azure-Portal erstellt werden.
 
 Betrachten wir nun die Erstellung eines SMTP-Connectors mithilfe von Azure Marketplace.
 
-1. Melden Sie sich beim Microsoft Azure [vorschauportal](https://portal.azure.com).
+1. Melden Sie sich beim Microsoft Azure-[Vorschauportal](https://portal.azure.com) an.
 2. Wählen Sie **NEU** > **Web und Mobil** > **Azure Marketplace**.
 3. Geben Sie in das **Suchfeld** den Begriff **Protokoll** ein, und drücken Sie die **EINGABETASTE**. Sie können es auch in der Liste auswählen. Nach dem Auswählen wird ein neues Blatt bzw. Fenster geöffnet. Klicken Sie auf **Erstellen**. 
 4. Geben Sie die folgenden Eigenschaften ein:
@@ -157,4 +157,4 @@ Connectors verwenden entweder OAuth oder Benutzernamen und Kennwörter.
 [BizTalk-Integrationsconnectors](app-service-logic-integration-connectors.md) | [Enterprise-Connectors](app-service-logic-enterprise-connectors.md) | [Business-to-Business-Connectors](app-service-logic-b2b-connectors.md) | [Connectors für soziale Netzwerke](app-service-logic-social-connectors.md) | [App und Data Services-Connectors](app-service-logic-data-connectors.md) | [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

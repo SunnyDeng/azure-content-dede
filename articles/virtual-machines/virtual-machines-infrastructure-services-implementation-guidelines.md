@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Implementierungsrichtlinien für Azure-Infrastrukturdienste" 
-	description="Erfahren Sie mehr über die wichtigsten Entwurfs- und Implementierungsrichtlinien für die Bereitstellung einer IT-Arbeitslast in Azure-Infrastrukturdiensten." 
+	description="Erfahren Sie mehr über die wichtigsten Entwurfs- und Implementierungsrichtlinien für die Bereitstellung einer IT-Workload in Azure-Infrastrukturdiensten." 
 	documentationCenter=""
 	services="virtual-machines" 
 	authors="JoeDavies-MSFT" 
@@ -13,28 +13,18 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/05/2015" 
+	ms.date="06/09/2015" 
 	ms.author="josephd"/>
 
 # Implementierungsrichtlinien für Azure-Infrastrukturdienste
  
-Der Schwerpunkt dieser Richtlinien liegt auf den wichtigen Entwurfsentscheidungen und Aufgaben, die vielen Ressourcen zu ermitteln, die in den meisten Azure-Infrastrukturdienst-Implementierungen verwendet werden.
+Azure ist eine hervorragende Plattform zur Implementierung von Konfigurationen für Entwicklung, Tests und Machbarkeitsstudien, da nur geringe Investitionen erforderlich sind, um einen bestimmten Implementierungsansatz für Lösungen zu testen. Sie müssen jedoch zwischen den einfachen Verfahren für Entwicklungs-/Testumgebungen und den schwierigeren und umfangreicheren Methoden für eine voll funktionsfähige, einsatzbereite Implementierung einer IT-Arbeitsauslastung unterscheiden.
 
-Azure ist eine hervorragende Plattform zur Implementierung von Konfigurationen für Machbarkeitsstudien, da nur geringe Investitionen erforderlich sind, um einen bestimmten Implementierungsansatz für Lösungen zu testen. Sie müssen jedoch zwischen den einfachen Verfahren der Machbarkeitsstudien und den schwierigeren ausführlichen Methoden für eine voll funktionsfähige, einsatzbereite Implementierung einer IT-Arbeitsauslastung unterscheiden.
+In diesem Leitfaden werden viele Bereiche behandelt, bei denen Planung der Schlüssel zum Erfolg einer IT-Workload in Azure sind. Darüber hinaus wird eine strukturierte Reihenfolge für die Erstellung der erforderlichen Ressourcen dargestellt. Es gibt zwar eine gewisse Flexibilität, Microsoft empfiehlt jedoch, dass Sie die Struktur in diesem Artikel bei der Planung und Entscheidungsfindung anwenden.
 
-In diesem Leitfaden werden viele Bereiche behandelt, bei denen Planung der Schlüssel zum Erfolg einer IT-Infrastruktur oder Azure-Arbeitslast sind. Darüber hinaus erleichtert der Leitfaden die Implementierung von Lösungen auf der Azure-Plattform durch eine Strukturierung der Erstellung der erforderlichen Ressourcen. Es gibt zwar eine gewisse Flexibilität, Microsoft empfiehlt jedoch, dass Sie diese Struktur bei der Planung und Entscheidungsfindung anwenden.
+Dieser Artikel basiert auf dem Inhalt im Blogbeitrag [Azure Implementation Guidelines](http://blogs.msdn.com/b/thecolorofazure/archive/2014/05/13/azure-implementation-guidelines.aspx) (in englischer Sprache). Vielen Dank an Santiago Cánepa (Application Development Manager bei Microsoft), Hugo Salcedo (Application Development Manager bei Microsoft) und Greg Hinkel (ehemaliger Application Development Manager bei Microsoft) für ihr ursprüngliches Material.
 
-1.	Benennungskonventionen
-2.	Abonnements und Konten
-3.	Speicher
-4.	Virtuelle Netzwerke
-5.	Cloud-Dienste
-6.	Verfügbarkeitsgruppen
-7.	Virtual Machines
-
-Durch das Festlegen einer guten Benennungskonvention sowie das Einhalten einer bestimmten Reihenfolge beim Erstellen von Ressourcen in Azure wird der administrative Aufwand stark reduziert und die Erfolgswahrscheinlichkeit für alle Implementierungsprojekte erhöht.
-
-> [AZURE.NOTE]Affinitätsgruppen werden nicht beschrieben, da deren Verwendung überholt ist. Weitere Informationen finden Sie unter [Informationen zu regionalen VNETs und Affinitätsgruppen](https://msdn.microsoft.com/library/azure/jj156085.aspx).
+> [AZURE.NOTE]Affinitätsgruppen gelten als veraltet, und ihre Verwendung wird hier nicht beschrieben. Weitere Informationen finden Sie unter [Informationen zu regionalen VNETs und Affinitätsgruppen](https://msdn.microsoft.com/library/azure/jj156085.aspx).
 
 ## 1. Benennungskonventionen
 
@@ -66,7 +56,7 @@ Environment | dev, stg, prod | Abhängig von Zweck und Name der jeweiligen Umgeb
 Standort | usw (USA Westen), use (USA Osten 2) | Abhängig von der Region des Datencenters oder der Region der Organisation.
 Azure-Komponente, -Dienst oder -Produkt | Svc für Clouddienst, VNET für virtuelles Netzwerk | Je nach Produkt, das die Ressource unterstützt.
 Rolle | sql, ora, sp, iis | Abhängig von der Rolle des virtuellen Computers.
-Instanz | 01, 02, 03 usw. | Für Ressourcen, die mehr als eine Instanz haben können. Beispielsweise Webserver mit Lastenausgleich in einem Clouddienst.
+Instanz | 01, 02, 03 usw. | Für Ressourcen, die mehr als eine Instanz besitzen. Beispielsweise Webserver mit Lastenausgleich in einem Clouddienst.
 		
 Beim Einrichten der Benennungskonventionen sollten Sie sicherstellen, dass diese eindeutig angeben, welche Affixe für die einzelnen Ressourcentypen verwendet werden sollen und an welcher Position (Präfix und Suffix).
 
@@ -111,7 +101,7 @@ Darüber hinaus können Speicherkonten Container nutzen. Diese müssen den Benen
 
 ### Azure Building Block-Namen
 
-Azure Building Blocks sind Dienste auf Anwendungsebene, die von Azure i. d. R. Anwendungen angeboten werden, die PaaS-Features nutzen, obwohl auch IaaS-Ressourcen einige davon nutzen, wie Azure SQL, Traffic Manager und andere.
+Azure-Bausteine sind Dienste auf Anwendungsebene, die von Azure i. d. R. solchen Anwendungen angeboten werden, die PaaS-Features nutzen, obwohl auch IaaS-Ressourcen einige davon nutzen, wie Azure SQL, Traffic Manager und andere.
 
 Diese Dienste beruhen auf einem Array von Artefakten, die in Azure erstellt und registriert werden. Sie müssen auch in den Benennungskonventionen berücksichtigt werden.
 
@@ -155,7 +145,7 @@ Microsoft stellt ausführliche Abrechnungen in einer herunterladbaren Datei für
 
 Entscheidung:
 
-- Welche Abonnementgruppen und Konten benötigen Sie, um Ihre IT-Arbeitslast oder -Infrastruktur zu hosten?
+- Welche Abonnementgruppen und Konten benötigen Sie, um Ihre IT-Workload oder -Infrastruktur zu hosten?
 
 Aufgabe:
 
@@ -196,7 +186,7 @@ Microsoft empfiehlt, dass Sie mit der Bereitstellung eines virtuellen Computers 
 
 ### Entwurf des Speicherlayouts
 
-Um diese Strategien zum Implementieren des Datenträgersubsystems der virtuellen Computer mit guter Leistung zu implementieren, nutzt eine IT-Arbeitslast oder -Infrastruktur i. d. R. viele Speicherkonten. Dadurch können viele VHD-Blobs gehostet werden. In einigen Fällen ist mehr als ein Blob einem einzelnen Volume auf einem virtuellen Computer zugeordnet.
+Um diese Strategien zum Implementieren des Datenträgersubsystems der virtuellen Computer mit guter Leistung zu implementieren, nutzt eine IT-Workload oder -Infrastruktur i. d. R. viele Speicherkonten. Dadurch können viele VHD-Blobs gehostet werden. In einigen Fällen ist mehr als ein Blob einem einzelnen Volume auf einem virtuellen Computer zugeordnet.
 
 Dies kann die Verwaltungsaufgaben komplexer gestalten. Es ist wichtig, eine solide Strategie für Speicher einschließlich der entsprechenden Namen für die zugrunde liegenden Datenträger und die zugeordneten VHD-Blobs zu entwerfen.
 
@@ -205,8 +195,8 @@ Dies kann die Verwaltungsaufgaben komplexer gestalten. Es ist wichtig, eine soli
 Entscheidungen:
 
 - Benötigen Sie Datenträgerstriping, um Datenträger mit mehr als 500 TB zu erstellen?
-- Benötigen Sie Datenträgerstriping, um optimale Leistung für Ihre Arbeitslast zu erreichen?
-- Welche Speicherkonten benötigen Sie, um Ihre IT-Arbeitslast oder -Infrastruktur zu hosten?
+- Benötigen Sie Datenträgerstriping, um optimale Leistung für Ihre Workload zu erreichen?
+- Welche Speicherkonten benötigen Sie, um Ihre IT-Workload oder -Infrastruktur zu hosten?
 
 Aufgabe:
 
@@ -230,7 +220,7 @@ Azure-Abonnements können maximal 200 Clouddienste unterstützen.
 
 Entscheidung:
 
-- Welche Clouddienste benötigen Sie, um Ihre IT-Arbeitslast oder -Infrastruktur zu hosten? 
+- Welche Clouddienste benötigen Sie, um Ihre IT-Workload oder -Infrastruktur zu hosten? 
 
 Aufgabe:
 
@@ -238,7 +228,7 @@ Aufgabe:
 
 ## 5. Virtuelle Netzwerke
 
-Der nächste logische Schritt ist die Erstellung der virtuellen Netzwerke, die für die Kommunikation zwischen den virtuellen Computern in der Lösung erforderlich sind. Obwohl es möglich ist, mehrere virtuelle Computer einer IT-Arbeitslast in einem Clouddienst zu hosten, werden virtuelle Netzwerke empfohlen.
+Der nächste logische Schritt ist die Erstellung der virtuellen Netzwerke, die für die Kommunikation zwischen den virtuellen Computern in der Lösung erforderlich sind. Obwohl es möglich ist, mehrere virtuelle Computer einer IT-Workload in einem Clouddienst zu hosten, werden virtuelle Netzwerke empfohlen.
 
 Virtuelle Netzwerke sind Container für virtuelle Computer, für die auch Subnetze, benutzerdefinierte Adressierung und DNS-Konfigurationsoptionen festgelegt werden können. Virtuelle Computer können unabhängig davon, welchem Clouddienst sie angehören, direkt mit anderen Computern im gleichen virtuellen Netzwerk kommunizieren. Innerhalb des virtuellen Netzwerks bleibt diese Kommunikation privat, ohne dass sie über die öffentlichen Endpunkte übermittelt werden muss. Diese Kommunikation kann mithilfe der IP-Adresse oder des Namens über einen DNS-Server im virtuellen Netzwerk oder lokal erfolgen, wenn der virtuelle Computer mit dem Unternehmensnetzwerk verbunden ist.
 
@@ -247,7 +237,7 @@ Wenn lokale Benutzer und Computer nicht kontinuierlich mit virtuellen Computern 
 
 ![](./media/virtual-machines-infrastructure-services-implementation-guidelines/vnet01.png)
  
-Dies eignet sich normalerweise für Internetarbeitslasten, wie z. B. Internetwebserver. Sie können diese virtuellen Computer mithilfe von Remotedesktopverbindungen, PowerShell-Remotesitzungen, Secure Shell (SSH)-Verbindungen und Punkt-zu-Standort-VPN-Verbindungen verwalten.
+Dies eignet sich normalerweise für Internetworkloads, wie z. B. Internetwebserver. Sie können diese virtuellen Computer mithilfe von Remotedesktopverbindungen, PowerShell-Remotesitzungen, Secure Shell (SSH)-Verbindungen und Punkt-zu-Standort-VPN-Verbindungen verwalten.
 
 Da sie nicht mit Ihrem lokalen Netzwerk verbunden sind, können ausschließliche Cloudnetzwerke einen beliebigen Teil des privaten IP-Adressbereichs verwenden.
 
@@ -284,7 +274,7 @@ Wenn Sie eine zu geringe Subnetzgröße wählen, müssen Sie die virtuellen Comp
 
 Entscheidungen:
 
-- Welchen virtuellen Netzwerktyp benötigen Sie, um Ihre IT-Arbeitslast oder -Infrastruktur zu hosten (cloudbasiert oder standortübergreifend)?
+- Welchen virtuellen Netzwerktyp benötigen Sie, um Ihre IT-Workload oder -Infrastruktur zu hosten (cloudbasiert oder standortübergreifend)?
 - Wie viel Adressraum benötigen Sie bei standortübergreifenden virtuellen Netzwerken, um die Subnetze und virtuellen Computer jetzt und zukünftig bei einer wahrscheinlichen Erweiterung zu hosten?
 
 Aufgaben:
@@ -306,7 +296,7 @@ Verfügbarkeitsgruppen müssen Teil der Planung für hohe Verfügbarkeit der Lö
 
 Entscheidung:
 
-- Wie viele Verfügbarkeitsgruppen benötigen Sie für die verschiedenen Rollen und Ebenen in Ihrer IT-Arbeitslast oder -Infrastruktur?
+- Wie viele Verfügbarkeitsgruppen benötigen Sie für die verschiedenen Rollen und Ebenen in Ihrer IT-Workload oder -Infrastruktur?
 
 Aufgabe:
 
@@ -326,14 +316,14 @@ Im Allgemeinen ist die Anzahl der Datenträger wesentlich größer als die Anzah
 
 Entscheidung:
 
-- Wie viele virtuelle Computer müssen Sie für die IT-Arbeitslast oder -Infrastruktur bereitstellen?
+- Wie viele virtuelle Computer müssen Sie für die IT-Workload oder -Infrastruktur bereitstellen?
 
 Aufgaben:
 
 - Definieren Sie die Namen der einzelnen virtuellen Computer mit Ihren Benennungskonventionen.
-- Sie können virtuelle Computer über das Azure-Vorschauportal, das Azure-Verwaltungsportal oder das PowerShell-Cmdlet **New-AzureVM** erstellen.
+- Sie können virtuelle Computer über das Azure-Vorschauportal, das Azure-Verwaltungsportal, das PowerShell-Cmdlet **New-AzureVM**, die Azure-Befehlszeilenschnittstelle oder mit Ressourcen-Manager-Vorlagen erstellen.
 
-## Beispiel einer IT-Arbeitslast: Contoso-Finanzanalysemodul
+## Beispiel einer IT-Workload: Contoso-Finanzanalysemodul
 
 Die Contoso Corporation hat ein Finanzanalysemodul der nächsten Generation mit hochmodernen proprietären Algorithmen zum Handel mit Futures entwickelt. Das Unternehmen möchte seinen Kunden dieses Modul als Gruppe von Servern in Azure in folgender Form zur Verfügung stellen:
 
@@ -358,16 +348,16 @@ Der Entwurf muss Folgendes umfassen:
 
 Alle oben aufgeführten Elemente werden anhand der Contoso-Benennungskonventionen benannt:
 
-- Contoso verwendet [IT-Arbeitslast]-[Standort]-[Azure-Ressource] als Präfix. In diesem Beispiel ist "azfae" (Azure-Finanzanalysemodul) der Name der IT-Arbeitslast und "use" (USA Osten 2) der Standort, da sich die meisten Contoso-Kunden an der Ostküste der USA befinden.
-- Speicherkonten verwenden "contosoazfaeusesa[Beschreibung]". Beachten Sie, dass zur Eindeutigkeit Contoso zum Präfix hinzugefügt wurde, und Speicherkontennamen unterstützen keine Bindestriche.
-- Clouddienste verwenden "contoso-azfae-use-cs-[Beschreibung]". Beachten Sie, dass zur Eindeutigkeit Contoso zum Präfix hinzugefügt wurde.
-- Virtuelle Netzwerke verwenden "AZFAE-USE-VN[Anzahl]".
+- Contoso verwendet [IT-Workload]-[Standort]-[Azure-Ressource] als Präfix. In diesem Beispiel ist "azfae" (Azure-Finanzanalysemodul) der Name der IT-Workload und "use" (USA Osten 2) der Standort, da sich die meisten Contoso-Kunden an der Ostküste der USA befinden.
+- Speicherkonten verwenden "contosoazfaeusesa[Beschreibung]". Beachten Sie, dass dem Präfix für mehr Eindeutigkeit "Contoso" hinzugefügt wurde und dass Speicherkontennamen keine Bindestriche unterstützen.
+- Clouddienste verwenden "contoso-azfae-use-cs-[Beschreibung]". Beachten Sie, dassdem Präfix für mehr Eindeutigkeit "Contoso" hinzugefügt wurde.
+- Virtuelle Netzwerke verwenden "AZFAE-USE-VN[Nummer]".
 - Verfügbarkeitsgruppen verwenden "azfae-use-as-[Rolle]".
-- Die Namen der virtuellen Computer folgen der Konvention verwenden "use azfae-use-vm-[VM-Name]".
+- Die Namen der virtuellen Computer folgen der Konvention "use azfae-use-vm-[VM-Name]".
 
 ### Azure-Abonnements und -Konten
 
-Contoso verwendet das Enterprise-Abonnement mit dem Namen Contoso-Enterprise-Abonnement zur Abrechnung dieser IT-Arbeitslast.
+Contoso verwendet das Enterprise-Abonnement mit dem Namen Contoso-Enterprise-Abonnement zur Abrechnung dieser IT-Workload.
 
 ### Speicherkonten
 
@@ -552,4 +542,10 @@ Diese Azure-PowerShell-Befehle erstellen die virtuellen Computer in dieser Konfi
 
 [Skalierbarkeits- und Leistungsziele für Azure-Speicher](../storage-scalability-targets.md)
 
-<!--HONumber=54--> 
+[Cloud Platform Integration Framework (Azure-Architekturmuster)](../azure-architectures-cpif-overview.md)
+
+[Datacenter extension reference architecture diagram](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84) (in englischer Sprache)
+
+ 
+
+<!---HONumber=62-->

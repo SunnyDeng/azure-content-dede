@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Web Apps – Übersicht"
+	pageTitle="Web-Apps – Übersicht"
 	description="Weitere Informationen zu App Service-Web-Apps"
 	services="app-service\web"
 	documentationCenter=""
@@ -45,6 +45,7 @@ Azure App Service-Web-Apps ist eine vollständig verwaltete Plattform, auf der S
 - **Bereitstellungsslots** – Implementieren Sie die [Stagingbereitstellung][Slots], um Ihren Code in einer Präproduktionsumgebung zu überprüfen, die mit Ihrer Webanwendung in der Produktion in Azure App Service identisch ist. Wenn Sie mit dem Ergebnis zufrieden sind, geben Sie durch einen Ersetzungsvorgang eine neue Version der Anwendung ohne Ausfallzeiten frei. 
 - **Test in der Produktion** – Heben Sie Stagingbereitstellungen auf die nächste Stufe, und führen Sie A/B-Tests aus, um Ihren neuen Code mit einem konfigurierbaren Bruchteil Ihres aktiven Datenverkehrs zu überprüfen. 
 - **WebJobs** – Führen Sie Programme oder Skripts auf virtuellen Web-Apps-Computern aus. Führen Sie Aufträge fortlaufend oder gemäß einem Zeitplan aus, und nehmen Sie eine Skalierung zur Ausführung auf mehreren virtuellen Computern vor. Nutzen Sie das Azure [WebJobs SDK][Webjobs] für die Integration in Azure Storage oder Service Bus.
+- **Hybridverbindungen** – Zugriff auf lokale Daten mit [Hybridverbindungen](../integration-hybrid-connection-overview.md) und [VNET](../app-service-web/web-sites-integrate-with-vnet.md).
 
 ## Erste Schritte ##
 Führen Sie zum Einstieg in Web-Apps das Lernprogramm [Erstellen einer ASP.NET-Web-App][create] aus.
@@ -55,7 +56,7 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen im neuen Portal gegenüber dem alten Portal finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 [appservice]: ../app-service/app-service-value-prop-what-is.md
 [create]: web-sites-dotnet-get-started.md
@@ -64,4 +65,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

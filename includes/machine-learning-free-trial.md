@@ -2,4 +2,4 @@
 >
 >Es wird weder Kreditkarte noch ein Azure-Abonnement benötigt. <a href="https://studio.azureml.net/Home" target="_blank">**Jetzt loslegen >**</a>
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

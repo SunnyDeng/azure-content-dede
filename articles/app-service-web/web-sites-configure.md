@@ -45,7 +45,7 @@ Aus technischen Gründen werden durch Aktivierung von Java für Ihre App die Opt
 
 **Websockets**. Legen Sie **EIN** fest, um das WebSocket-Protokoll zu aktivieren, beispielsweise wenn Ihre Website [ASP.NET SignalR](http://www.asp.net/signalr) oder [socket.io](web-sites-nodejs-chat-app-socketio.md) verwendet.
 
-<a name="alwayson"></a> **Immer auf**. Standardmäßig werden Web-Apps entladen, wenn sie einige Zeit im Leerlauf waren. Dadurch spart das System Ressourcen. Im Modus "Basic" oder "Standard" können Sie **Immer aktiviert** aktivieren, sodass die Web-App permanent geladen bleibt. Wenn Ihre App fortlaufende Webaufträge ausführt, sollten Sie **Immer aktiviert** aktivieren. Ansonsten werden fortlaufende Webaufträge unter Umständen nicht zuverlässig ausgeführt.
+<a name="alwayson"></a> **Immer aktiviert**. Standardmäßig werden Web-Apps entladen, wenn sie einige Zeit im Leerlauf waren. Dadurch spart das System Ressourcen. Im Modus "Basic" oder "Standard" können Sie **Immer aktiviert** aktivieren, sodass die Web-App permanent geladen bleibt. Wenn Ihre App fortlaufende Webaufträge ausführt, sollten Sie **Immer aktiviert** aktivieren. Ansonsten werden fortlaufende Webaufträge unter Umständen nicht zuverlässig ausgeführt.
 
 **Verwalteter Pipelinemodus**. Legt den IIS-[Pipelinemodus](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application) fest. Lassen Sie diese Einstellung bei "Integriert" (der Standard), sofern Sie nicht eine ältere App haben, die eine ältere IIS-Version erfordert.
 
@@ -75,7 +75,7 @@ Bei PHP-, Python-, Java- und Node-Anwendungen sind diese Einstellungen als Umgeb
 
 - SQL Server: SQLCONNSTR_
 - MySQL: MYSQLCONNSTR_
-- SQL-Datenbank:  SQLAZURECONNSTR_
+- SQL-Datenbank: SQLAZURECONNSTR_
 - Benutzerdefiniert: CUSTOMCONNSTR_
 
 Wenn beispielsweise eine MySQL-Verbindungszeichenfolge „`connectionstring1`“ heißt, wird sie über die Umgebungsvariable `MYSQLCONNSTR_connectionString1` aufgerufen.
@@ -174,4 +174,4 @@ Weitere Informationen finden Sie unter [Vorgehensweise: Überwachen des Web-Endp
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

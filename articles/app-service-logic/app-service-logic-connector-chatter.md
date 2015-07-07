@@ -30,7 +30,7 @@ Zur Verwendung des Chatter-Connectors müssen Sie zunächst eine Instanz der Cha
 2.	Wechseln Sie zu "Web und Mobil > API-Apps", und suchen Sie nach "Chatter-Connector".
 3.	Konfigurieren Sie den Chatter-Connector wie folgt:
 
-	![][1] - **Speicherort** – Wählen Sie den geografischen Standort, wo sollen die Connectors bereitgestellt werden - **Abonnement** - Wählen Sie ein Abonnement, möchten Sie diese Verbindung erstellt werden sollen – **Ressourcengruppe** – auswählen oder Erstellen einer Ressourcengruppe, in denen der Connector befinden sollte - **Webhosting-Plan** - auswählen oder erstellen Sie einen webhostingplan - **Preise Ebene** – Wählen Sie eine Preisstufe für den Connector - **Name** -Geben Sie einen Namen für den Connector Geschwätz
+	![][1] – **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll – **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll – **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll – **Webhostingplan** – Wählen Sie einen Webhostingplan aus oder erstellen Sie einen – **Tarif** – Wählen Sie einen Tarif für den Connector aus – **Name** – Geben Sie Ihrem Chatter-Connector einen Namen
 
 4.	Klicken Sie auf "Erstellen". Ein neuer Chatter-Connector wird erstellt.
 5.	Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des Chatter-Connectors erstellen.
@@ -50,19 +50,19 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den Chatter-Connector als 
 
 	![][5] ![][6] ![][7]
 5.	Sie können nun den Chatter-Connector im Datenfluss verwenden. Sie können die aus dem Chatter-Trigger ("Neue Nachricht") abgerufene neue Nachricht für andere Aktionen im Datenfluss verwenden. Konfigurieren Sie die Eingabeeigenschaften für den Chatter-Trigger wie folgt:
-	- **Gruppen-ID** -Geben Sie die ID der Gruppe aus der neuen Nachricht abgerufen werden soll. Wenn die Gruppen-ID nicht angegeben wird, werden neue Nachricht aus dem Benutzer-Feed abgerufen.
+	- **Gruppen-ID** -Gibt die ID der Gruppe an, aus der die neue Nachricht abgerufen werden soll. Wenn die Gruppen-ID nicht angegeben wird, werden neue Nachricht aus dem Benutzer-Feed abgerufen.
 
   ![][8] ![][9]
 
 6. Auf ähnliche Weise können Sie die Chatter-Aktion im Datenfluss verwenden, um eine Nachricht bereitzustellen, indem Sie die Aktion "Nachricht bereitstellen" auswählen. Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Nachricht bereitstellen" wie folgt:
-	- **Meldungstext** -Text-Inhalt der Nachricht bereitgestellt wird
-	- **Gruppen-ID** -Geben Sie die ID der Gruppe auf das neue Nachricht gebucht werden soll. Wenn die Gruppen-ID nicht angegeben wird, wird die Nachricht im Benutzer-Feed bereitgestellt.
-	- 	**Dateinamen** -Name der Datei, die mit dieser Nachricht angefügt werden
-	- 	**Inhaltsdaten** -Inhaltsdaten der Anlage
-	- 	**Inhaltstyp** -Inhaltstyp der Anlage
-	- 	**Transfer Inhaltscodierung** -Transfer Inhaltscodierung der Anlage ("none" | " Base64 ")
-	- 	**Erwähnt** -Array des Benutzers den Namen an, der in dieser Nachricht markiert werden
-	- 	**Hashtags** -Array von Hashtags entlang der Nachricht bereitgestellt wird
+	- **Nachrichtentext** - Textinhalt der bereitzustellenden Nachricht.
+	- **Gruppen-ID** - Gibt die ID der Gruppe an, in der die neue Nachricht bereitgestellt werden soll. Wenn die Gruppen-ID nicht angegeben wird, wird die Nachricht im Benutzer-Feed bereitgestellt.
+	- 	**Dateiname** - Name der Datei, die dieser Nachricht angefügt werden soll.
+	- 	**Inhaltsdaten** - Inhaltsdaten der Anlage.
+	- 	**Inhaltstyp** - Inhaltstyp der Anlage.
+	- 	**Codierung für die Inhaltsübertragung** - Codierung für die Inhaltsübertragung der Anlage ("keine"|"base64")
+	- 	**Erwähnungen** - Bereich von Benutzernamen, die in der Nachricht markiert werden sollen.
+	- 	**Hashtags** - Bereich von Hashtags, die mit der Nachricht bereitgestellt werden.
 
 	![][10] ![][11]
 
@@ -80,4 +80,4 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den Chatter-Connector als 
 [11]: ./media/app-service-logic-connector-chatter/img11.PNG
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

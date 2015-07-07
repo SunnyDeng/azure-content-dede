@@ -38,7 +38,7 @@ In diesem Abschnitt wird gezeigt, wie Sie ein vorhandenes Web-API-Projekt als AP
 
 3. Wählen Sie die Vorlage **ASP.NET-Webanwendung**.
 
-4. Stellen Sie sicher, dass die **Fügen Sie Application Insights Projekt** ist das Kontrollkästchen deaktiviert.
+4. Stellen Sie sicher, dass das Kontrollkästchen **Application Insights zu Projekt hinzufügen** deaktiviert ist.
 
 4. Geben Sie dem Projekt den Namen *ContactsList*.
 
@@ -83,4 +83,4 @@ In diesem Abschnitt wird gezeigt, wie Sie ein vorhandenes Web-API-Projekt als AP
 Ihre API-App kann jetzt bereitgestellt werden. Dazu können Sie das Lernprogramm [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

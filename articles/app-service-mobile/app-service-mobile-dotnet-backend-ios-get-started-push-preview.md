@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hinzufügen von Pushbenachrichtigungen zu iOS-App mit Azure-App-Dienst"
+	pageTitle="Hinzufügen von Pushbenachrichtigungen zur iOS-App mit Azure App Service"
 	description="Erfahren Sie, wie Azure App Service zum Senden von Pushbenachrichtigungen an Ihre iOS-App verwendet wird."
 	services="app-service\mobile"
 	documentationCenter="ios"
@@ -17,13 +17,13 @@
 	ms.author="krisragh"/>
 
 
-# Hinzufügen von Pushbenachrichtigungen zu iOS-App
+# Hinzufügen von Pushbenachrichtigungen zur iOS-App
 
 [AZURE.INCLUDE [app-service-mobile-selector-get-started-push-preview](../../includes/app-service-mobile-selector-get-started-push-preview.md)]
 
-In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen an die [schnellstartprojekt](app-service-mobile-dotnet-backend-ios-get-started-preview.md), sodass Sie der mobile Dienst sendet eine Pushbenachrichtigung, die jedes Mal, wenn einen Datensatz eingefügt wird. Führen Sie [Erste Schritte mit Mobile Apps] ersten.
+In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen zum [Schnellstartprojekt](app-service-mobile-dotnet-backend-ios-get-started-preview.md) gezeigt, sodass Ihnen der mobile Dienst eine Pushbenachrichtigung sendet, wenn ein Datensatz eingefügt wird. Sie müssen [Erste Schritte mit Mobile Apps] abschließen.
 
-> [AZURE.NOTE]Die [iOS-Simulator unterstützt keine Push-Benachrichtigungen](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html), daher müssen Sie einen physischen e/a-Gerät verwenden. Sie müssen auch registrieren Sie sich für ein kostenpflichtiges [Apple-Entwicklerprogramm-Mitgliedschaft](https://developer.apple.com/programs/ios/).
+> [AZURE.NOTE]Die [iOS-Simulator unterstützt keine Pushbenachrichtigungen](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html), daher müssen Sie ein physisches iSO-Gerät verwenden. Sie müssen sich außerdem für eine kostenpflichtiges [Apple-Entwicklerprogramm-Mitgliedschaft](https://developer.apple.com/programs/ios/) anmelden.
 
 [AZURE.INCLUDE [Aktivieren von Apple-Pushbenachrichtigungen](../../includes/enable-apple-push-notifications.md)]
 
@@ -31,16 +31,16 @@ In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen an die [schnells
 
 [AZURE.INCLUDE [app-service-mobile-apns-configure-push-preview](../../includes/app-service-mobile-apns-configure-push-preview.md)]
 
-##<a id="update-server"></a>Aktualisieren von Back-End-Code zum Senden von Pushbenachrichtigungen
+##<a id="update-server"></a>Aktualisieren des Back-End-Codes zum Senden von Pushbenachrichtigungen
 
-* Laden Sie Visual Studio-Projekt für den Back-End-Code. Klicken Sie im Portal auf **Durchsuchen** > Anwendungsname > **Client hinzufügen** > **iOS** (Objective-C oder Swift) > **herunterladen und Ausführen des Projekts Server**. Open **Controller** > TodoItemController.cs, und fügen Sie die folgenden using-Anweisungen:
+* Laden Sie das Visual Studio-Projekt für den Back-End-Code herunter. Klicken Sie im Portal auf **Durchsuchen** > App-Name > **Client hinzufügen** > **iOS** (Objective-C oder Swift) > **Serverprojekt herunterladen und ausführen**. Öffnen Sie **Controller** > TodoItemController.cs. Fügen Sie die folgenden using-Anweisungen hinzu:
 
 ```
 			using Microsoft.Azure.Mobile.Server.Config;
 			using Microsoft.Azure.NotificationHubs;
 ```
 
-* Fügen Sie die folgenden `PostTodoItem` nach den `InsertAsync` aufrufen. Wenn ein TODO-Element eingefügt wird, sendet dieser Code eine Pushbenachrichtigung mit dem Text.
+* Fügen Sie `PostTodoItem` nach dem `InsertAsync`-Aufruf Folgendes hinzu: Wenn ein TODO-Element eingefügt wird, sendet dieser Code eine Pushbenachrichtigung mit dem Text.
 
 ```
         // get Notification Hubs credentials associated with this Mobile App
@@ -51,7 +51,7 @@ In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen an die [schnells
         NotificationHubClient Hub = NotificationHubClient.CreateClientFromConnectionString(notificationHubConnection, notificationHubName);
 
         // iOS payload
-        var appleNotificationPayload = "{\"aps\":{\"alert\":\"" + item.Text + "\"}}";
+        var appleNotificationPayload = "{"aps":{"alert":"" + item.Text + ""}}";
 
         await Hub.SendAppleNativeNotificationAsync(appleNotificationPayload);
 ```
@@ -60,9 +60,9 @@ In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen an die [schnells
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service-preview](../../includes/app-service-mobile-dotnet-backend-publish-service-preview.md)]
 
-[AZURE.INCLUDE [Hinzufügen von Pushbenachrichtigungen an App](../../includes/app-service-add-push-notifications-to-app.md)]
+[AZURE.INCLUDE [Hinzufügen von Pushbenachrichtigungen zur App](../../includes/app-service-add-push-notifications-to-app.md)]
 
-[AZURE.INCLUDE [Testen von Pushbenachrichtigungen in der App](../../includes/test-push-notifications-in-app.md)]
+[AZURE.INCLUDE [Testen von Pushbenachrichtigungen in einer App](../../includes/test-push-notifications-in-app.md)]
 
 <!-- Anchors.  -->
 [Generate iOS certificate signing request]: #certificates
@@ -123,4 +123,4 @@ In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen an die [schnells
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

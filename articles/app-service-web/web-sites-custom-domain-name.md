@@ -27,14 +27,14 @@
 
 Wenn Sie eine Web-App erstellen, weist Azure dieser eine Unterdomäne von "azurewebsites.NET" zu. Wenn Ihre Web-App beispielsweise **contoso** heißt, lautet die URL **contoso.azurewebsites.net**. Darüber hinaus weist Azure eine virtuelle IP-Adresse zu.
 
-Bei einer Produktions-Web-App sollten Sie Benutzern einen benutzerdefinierten Domänennamen anzeigen. In diesem Artikel wird erläutert, wie reservieren, oder konfigurieren eine benutzerdefinierte Domäne mit [App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714). (Der Artikel enthält allgemeine Anleitungen für beliebige Domänenregistrierungsstellen. Die Registerkarten im oberen Bereich führen zu einigen Artikeln für spezifische Registrierungsstellen.)
+Bei einer Produktions-Web-App sollten Sie Benutzern einen benutzerdefinierten Domänennamen anzeigen. In diesem Artikel erfahren Sie, wie Sie eine benutzerdefinierte Domäne für [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) reservieren oder konfigurieren. (Der Artikel enthält allgemeine Anleitungen für beliebige Domänenregistrierungsstellen. Die Registerkarten im oberen Bereich führen zu einigen Artikeln für spezifische Registrierungsstellen.)
 
 [AZURE.INCLUDE [introfooter](../../includes/custom-dns-web-site-intro-notes.md)]
 
 
 ## Übersicht
 
-Wenn Sie bereits einen Domänennamen haben, oder Sie reservieren Domäne aus anderen domänenregistrierungsstellen, hier sind die allgemeinen Schritte aus, um einen benutzerdefinierten Domänennamen für Web-app zu bringen:
+Wenn Sie bereits über einen Domänennamen verfügen oder eine Domäne aus anderen Domänenregistrierungsstellen reservieren möchten, führen Sie die folgenden allgemeinen Schritte aus, um einen benutzerdefinierten Domänennamen für Web-App zu verwenden:
 
 1. Reservieren Sie Ihren Domänennamen. Diese Schritte werden in diesem Artikel jedoch nicht erläutert. Es gibt zahlreiche Domänenregistrierungsstellen, unter denen Sie auswählen können. Wenn Sie sich registrieren, werden Sie auf der Website durch die erforderlichen Schritte geführt.
 1. Erstellen Sie DNS-Einträge, die die Domäne Ihrer Azure-Web-App zuordnen.
@@ -44,7 +44,7 @@ In diesem grundlegenden Entwurf sind eine Sonderfälle zu berücksichtigen:
 
 - Zuordnen Ihrer Stammdomäne. Die Stammdomäne ist die Domäne, die Sie bei der Domänenregistrierungsstelle reserviert haben. Beispiel: **contoso.com**.
 - Zuordnen einer Unterdomäne. Beispiel: **blogs.contoso.com**. Sie können verschiedenen Web-Apps verschiedene Unterdomänen zuordnen.
-- Zuordnen eines Platzhalters. Beispielsweise ***. contoso.com**. Ein Platzhaltereintrag gilt für alle Unterdomänen der Domäne.
+- Zuordnen eines Platzhalters. Beispiel: ***.contoso.com**. Ein Platzhaltereintrag gilt für alle Unterdomänen der Domäne.
 
 [AZURE.INCLUDE [Modi](../../includes/custom-dns-web-site-modes.md)]
 
@@ -108,10 +108,10 @@ Wenn der Name Ihrer benutzerdefinierten Domäne z. B. "contoso.com" lautet, wer
 - **contoso.com** mit einer Zuordnung zu 127.0.0.1.
 - **www.contoso.com** mit einer Zuordnung zu **contoso.azurewebsites.net**.
 
->[AZURE.NOTE]Azure DNS können Datensätze des erforderlichen für Ihre Webanwendung zu hosten. Um Ihre benutzerdefinierte Domäne konfigurieren und Ihre Einträge in Azure DNS erstellen, finden Sie unter [benutzerdefinierte DNS-Datensätze für eine Webanwendung erstellen](../dns-web-sites-custom-domain).
+>[AZURE.NOTE]Die erforderlichen Domäneneinträge für Ihre Web-App können mit Azure DNS gehostet werden. Informationen zum Konfigurieren Ihrer benutzerdefinierten Domäne sowie zum Erstellen Ihrer Einträge in Azure DNS finden Sie unter [Erstellen von benutzerdefinierten DNS-Einträgen für eine Web-App](../dns-web-sites-custom-domain).
 
 <a name="awverify" />
-## Erstellen Sie einen Awverify-Datensatz (ein Datensätze)
+## Erstellen eines awverify-Eintrags (nur A-Einträge)
 
 Wenn Sie einen A-Datensatz erstellen, fordert die Web-App auch einen speziellen CNAME-Datensatz an. Über diesen wird sichergestellt, dass Sie der Besitzer der Domäne sind, die Sie verwenden möchten. Der CNAME-Eintrag muss das folgende Format aufweisen.
 
@@ -129,7 +129,7 @@ Besucher Ihrer Web-App sehen die awverify-Unterdomäne nicht. Sie dient nur zum 
 
 ## Nächste Schritte
 
-Weitere Informationen finden Sie unter: [Erste Schritte mit Azure DNS](http://azure.microsoft.com/documentation/articles/dns-getstarted-create-dnszone) und [Delegaten Domäne Azure DNS-](http://azure.microsoft.com/documentation/articles/dns-domain-delegation)
+Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](http://azure.microsoft.com/documentation/articles/dns-getstarted-create-dnszone) sowie unter [Delegieren von Domänen an Azure DNS](http://azure.microsoft.com/documentation/articles/dns-domain-delegation).
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -146,4 +146,4 @@ Weitere Informationen finden Sie unter: [Erste Schritte mit Azure DNS](http://az
 [subdomain]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -8,7 +8,7 @@ Bei der Erstellung einer Web-App in App Service wird der Web-App automatisch ein
 
 Es gibt mehrere Datensatztypen, von denen jeder über eigene Funktionen und Beschränkungen verfügt. Für Web-Apps sind jedoch nur zwei Datensätze interessant: *A* und *CNAME*.
 
-### Adresseintrag (A-Eintrag)
+###Adresseintrag (A-Eintrag)
 
 Ein A-Datensatz weist eine Domäne wie **contoso.com** oder **www.contoso.com** *oder eine Domäne mit Platzhalter* wie ***.contoso.com** einer IP-Adresse zu. Bei einer Web-App in App Service ist das die virtuelle IP-Adresse des Diensts oder eine bestimmte IP-Adresse, die Sie für Ihre Web-App erworben haben.
 
@@ -20,13 +20,13 @@ Die Hauptvorteile eines A-Eintrags gegenüber einem CNAME-Eintrag sind:
 
 > [AZURE.NOTE]Da ein A-Datensatz einer statischen IP-Adresse zugeordnet ist, können Änderungen an der IP-Adresse der Web-App nicht automatisch aufgelöst werden. Sie erhalten eine IP-Adresse zur Verwendung mit A-Datensätzen, wenn Sie benutzerdefinierte Domänennameneinstellungen für Ihre Web-App konfigurieren; dieser Wert kann sich jedoch ändern, wenn Sie Ihre Web-App löschen und neu erstellen oder den Modus des App Service-Plans auf **Free** zurücksetzen.
 
-### Aliaseintrag (CNAME-Eintrag)
+###Aliaseintrag (CNAME-Eintrag)
 
 Ein CNAME-Eintrag weist einen *spezifischen* DNS-Namen, wie zum Beispiel **mail.contoso.com** oder **www.contoso.com**, einem anderen (kanonischen) Domänennamen zu. Im Fall von App Service-Web-Apps ist der kanonische Domänenname der Domänenname **&lt;Web-App-Name>.azurewebsites.net** Ihrer Web-App. Sobald dies angelegt wurde, erstellt der CNAME einen Alias für den Domänennamen **&lt;Web-App-Name>.azurewebsites.net**. Der CNAME-Eintrag wird automatisch in die IP-Adresse Ihres Domänennamens **&lt;Web-App-Name>.azurewebsites.net** aufgelöst, sodass Sie nichts unternehmen müssen, wenn sich die IP-Adresse Ihrer Web-App ändert.
 
 > [AZURE.NOTE]Bei einigen Domänenregistrierungen können Sie Unterdomänen nur mit einem CNAME-Datensatz wie **www.contoso.com** zuweisen und nicht mit einem Stammnamen wie **contoso.com**. Weitere Informationen zu CNAME-Datensätzen finden Sie in der durch Ihre Registrierung zur Verfügung gestellten Dokumentation, <a href="http://en.wikipedia.org/wiki/CNAME_record">im Wikipedia-Eintrag "CNAME Resource Record"</a> oder im Dokument <a href="http://tools.ietf.org/html/rfc1035">IETF Domain Names - Implementation and Specification</a>.
 
-### Web-App-DNS-Besonderheiten
+###Web-App-DNS-Besonderheiten
 
 Bei der Verwendung eines A-Datensatzes für Web-Apps müssen Sie zunächst einen der folgenden CNAME-Datensätze erstellen:
 
@@ -50,5 +50,4 @@ Sie können die IP-Adresse sowie den **awverify**-Namen und die **.azurewebsites
 
 	![](./media/custom-dns-web-site/managecustomdomains.png)
 
-
-<!--HONumber=54-->
+<!---HONumber=62-->

@@ -77,34 +77,34 @@ Klicken Sie im leeren Datenfluss-Designer im Katalogbereich rechts auf den FTP-C
 
 ![Wählen des FTP-Triggers][6]
 
-FTP-Connector wurde ein Trigger - ' Datei verfügbar (löschen Sie dann lesen)'. Dieser Trigger
+Der FTP-Connector hat einen Trigger – "Datei verfügbar (Lesen dann Löschen)". Dieser Trigger
 
 - Fragt den Ordnerpfad nach neuen Dateien ab.
 - Instanziiert den Logikfluss für jede neue Datei.
 - Löscht die Datei aus dem Ordnerpfad, nachdem der Logikfluss instanziiert wurde.
 
-Klicken Sie auf "Datei verfügbar (löschen Sie dann lesen)' Trigger.
+Klicken Sie auf den Trigger "Datei verfügbar (Lesen dann Löschen)".
 
 ![Grundlegende Eingaben – FTP-Trigger][7]
 
 Anhand der Eingaben können Sie einen bestimmten Ordnerpfad konfigurieren, der mit einer geplanten Häufigkeit abgefragt wird. Die grundlegenden Eingaben sind – Häufigkeit – Gibt die Häufigkeit der FTP-Umfrage an – Intervall – Gibt das Intervall für die geplante Häufigkeit an – Ordnerpfad – Gibt den Ordnerpfad auf dem FTP-Server an – Dateityp – Gibt an, ob es sich um eine Text- oder um eine Binärdatei handelt
 
-Klicken auf die Ellipsen '...' zeigt die erweiterten Eingaben.
+Durch Klicken auf die Ellipsen "..." werden die erweiterten Eingaben angezeigt.
 
 ![Grundlegende Eingaben – FTP-Trigger][8]
 
 Die erweiterten Eingaben sind – Dateimaske – Gibt die Dateimaske während der Umfrage an – Dateimaske ausschließen – Gibt die Dateimasken an, die bei der Umfrage ausgeschlossen werden sollen
 
-Geben Sie die Eingaben, und klicken Sie auf das Häkchen, um Eingabe-Konfiguration abzuschließen.
+Stellen Sie die Eingaben bereit, und klicken Sie auf das Häkchen, um die Eingabekonfiguration abzuschließen.
 
 ![Grundlegende Eingaben – FTP-Trigger][9]
 
-Hinweis der konfigurierte FTP-Trigger sowohl angezeigt als auch die Ausgaben konfiguriert für die Eingabeparameter.
+Beachten Sie, dass der konfigurierte FTP-Trigger sowohl die konfigurierten Eingabeparameter als auch die Ausgaben anzeigt.
 
 ####Verwenden der Ausgabe des FTP-Triggers in nachfolgenden Aktionen
 Die Ausgabe des FTP-Triggers kann als Eingabe für einige andere Aktionen im Datenfluss verwendet werden.
 
-Sie können im Dialogfeld "input" Aktion "..." auf und die Ausgabe an, dass FTP direkt aus der Dropdownliste auswählen.
+Sie können im Eingabedialogfeld der Aktion auf '...' klicken und die FTP-Ausgabe direkt aus der Dropdownliste auswählen.
 
 Sie können auch einen Ausdruck direkt in das Eingabefeld der Aktion schreiben. Der Datenflussausdruck für den Verweis auf die Ausgabe des FTP-Triggers wird unten aufgeführt.
 
@@ -120,7 +120,7 @@ Der FTP-Connector unterstützt vier Aktionen. Dies sind:
 - **Datei abrufen** – Ruft den Inhalt einer bestimmten Datei ab.
 - **Datei hochladen** – Lädt eine Datei in den FTP-Ordnerpfad hoch.
 - **Datei löschen** – Löscht eine Datei aus dem FTP-Ordnerpfad.
-- **Dateien** -Listet alle Dateien im FTP-Ordnerpfad
+- **Dateien auflisten** - Listet alle Dateien im FTP-Ordnerpfad auf.
 
 Nehmen wir ein Beispiel - Datei hochladen. Klicken Sie auf "Datei hochladen".
 
@@ -138,14 +138,14 @@ Klicken Sie auf ..., um die erweiterten Eingaben anzuzeigen.
 ![Grundlegende Eingaben der Aktion "Datei hochladen"][12]
 
 
-- **Angefügt werden, wenn vorhanden** - WAHR oder falsch "anfügen, wenn vorhanden". Wenn diese Option aktiviert ist, werden die Daten an die Datei angefügt, falls diese vorhanden ist. Ist die Option deaktiviert, wird die Datei überschrieben, falls sie vorhanden ist.
+- **Anfügen, falls vorhanden** – True oder False "Anfügen, falls vorhanden". Wenn diese Option aktiviert ist, werden die Daten an die Datei angefügt, falls diese vorhanden ist. Ist die Option deaktiviert, wird die Datei überschrieben, falls sie vorhanden ist.
 - **Temporärer Ordner** – Optional. Falls angegeben, lädt der Adapter die Datei in den Pfad des temporären Ordners. Nach Abschluss des Uploads wird die Datei in den "Ordnerpfad" verschoben. Der Pfad des temporären Ordners sollte sich auf dem gleichen physischen Datenträger befinden wie der Ordnerpfad, um sicherzustellen, dass der Verschiebevorgang atomarisch verläuft. Temporäre Ordner können nur verwendet werden, wenn die Eigenschaft "Anfügen, falls vorhanden" deaktiviert ist.
 
-Geben Sie die Eingaben, und klicken Sie auf das Häkchen, um Eingabe-Konfiguration abzuschließen.
+Stellen Sie die Eingaben bereit, und klicken Sie auf das Häkchen, um die Eingabekonfiguration abzuschließen.
 
 ![Konfigurierte Aktion "Datei hochladen"][13]
 
-Der Parameter 'Pfad' festgelegt ist, um
+Der Parameter 'Dateipfad' ist festgelegt auf
 
 	@concat('/Output/',triggers().outputs.body.FileName)
 
@@ -178,4 +178,4 @@ Sie können ihn auf einen beliebigen Wert festlegen. Dies ist nur ein Beispiel. 
 [13]: ./media/app-service-logic-connector-ftp/ConfiguredUploadFile.PNG
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

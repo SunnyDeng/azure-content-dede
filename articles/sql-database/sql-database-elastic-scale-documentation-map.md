@@ -3,7 +3,7 @@
 	description="Dokumentationsstruktur, ein visuelles Inhaltsverzeichnis für das Elastic Scale-Feature von Azure SQL-Datenbank" 
 	services="sql-database" 
 	documentationCenter="" 
-	manager="jhubbard" 
+	manager="jeffreyg" 
 	authors="sidneyh" 
 	editor=""/>
 
@@ -13,14 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/16/2015" 
-	ms.author="sidneyh@microsoft.com"/>
+	ms.date="04/24/2015" 
+	ms.author="sidneyh"/>
 
-# Elastic Scale für Azure SQL-Datenbank - Themen
-Elastic Scale (Vorschauversion) für Azure SQL-Datenbank ermöglicht das Hoch- und Herunterskalieren der Datenebene einer Anwendung über Sharding-Verfahren nach Industriestandard und sorgt zugleich für eine enorme Optimierung der Entwicklung und Verwaltung Ihrer per Sharding bereitgestellten Cloud-Anwendungen. Elastic Scale bietet sowohl Entwickler- als auch Verwaltungsfunktionen, die über einen Satz von .NET-Bibliotheken und über Azure-Dienstvorlagen bereitgestellt werden. Diese Elemente können Sie in Ihrem eigenen Azure-Abonnement hosten, um Ihre hoch skalierbaren Anwendungen zu verwalten. Azure DB Elastic Scale implementiert die Infrastrukturaspekte des Sharding, sodass Sie sich auf die Geschäftslogik Ihrer Anwendung konzentrieren können. 
+# Tools für elastische Datenbanken in Azure SQL-Datenbank
 
-<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/ElasticScaleMapcoded.svg" width="100%" height="100%">
-</object>
+Die elastischen Datenbankfunktionen von Azure SQL-Datenbank dienen vor allem für SaaS-Entwickler (Software-as-a-Service) zur Vereinfachung der Datenebenenentwicklung und -verwaltung, bei denen eine Vielzahl von Datenbanken zur Unterstützung eines dynamischen Endkundenstamms eingesetzt werden.
 
-<!--HONumber=47-->
+Mithilfe von **Tools für elastische Datenbanken** können Sie Anwendungen erstellen und verwalten, die Sharding-Muster zum horizontalen Hochskalieren zwischen zahlreichen Datenbanken nutzen. Enthalten ist die Clientbibliothek für elastische Datenbanken, die die Shard-Verwaltung, das datenabhängige Routing und Shard-übergreifende Abfragefunktionen für ADO.Net unterstützt. Ebenfalls enthalten ist das Split-Merge-Tool, das die Shard-Verwaltung vereinfacht, dadurch dass das Verschieben von Daten (Teilen) zwischen verschiedenen Shards (Zusammenführen) möglich ist. Diese Tools ergänzen die elastischen Datenbankpools, die vorhersagbare Preise mit garantierten Leistungsmerkmalen für jede beliebige Anzahl von Datenbanken ermöglichen. Mit der zugeordneten Auftragsfunktion steht Ihnen ein einfaches und zuverlässiges Tool zum Aktualisieren und Verwalten jeder Datenbank im Pool mit T-SQL-Skripts zur Verfügung.
+
+<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/ElasticScaleMapcoded.svg" width="100%" height="100%"> </object>
  
+
+<!---HONumber=62-->

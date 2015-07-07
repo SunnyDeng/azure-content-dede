@@ -24,8 +24,8 @@
 
 ## Sprachen
 
-+ [C# | VB (.NET)](app-insights-start-monitoring-app-health-usage.md)
-+ [C# | VB (Windows Store)](app-insights-windows-get-started.md)
++ [C#|VB (.NET)](app-insights-start-monitoring-app-health-usage.md)
++ [C#|VB (Windows Store)](app-insights-windows-get-started.md)
 + [C++ (Windows Store)](app-insights-windows-cpp.md)
 + [Java](../app-insights-java.md)
 + [JavaScript-Webseiten](app-insights-web-track-usage.md)
@@ -48,9 +48,9 @@
 + [Joomla](https://github.com/fidmor89/AppInsights-Joomla)
 + [SharePoint](app-insights-sharepoint.md)
 + [WordPress](https://wordpress.org/plugins/application-insights/)
-+ [Windows Store c\# | VB](app-insights-windows-get-started.md)
++ [Windows Store C#|VB](app-insights-windows-get-started.md)
 + [Windows Store C++](app-insights-windows-cpp.md)
-+ [Windows-desktop-Anwendungen und Dienste](app-insights-windows-desktop.md)
++ [Windows-Desktopanwendungen und -Dienste](app-insights-windows-desktop.md)
 + [Alles andere](#projects)
 
 
@@ -60,9 +60,9 @@
 +	[Java, Log4J oder Logback](app-insights-java-trace-logs.md)
 
 
-## <a name="projects"></a> Erstellen Sie Ihre eigenen SDK
+## <a name="projects"></a> Erstellen eines eigenen SDK
 
-Wenn Sie nicht vorhanden ist, noch ein SDK für Ihre Sprache oder Plattform, Sie könnten aber auch um eine zu erstellen. Sehen Sie sich den Code der vorhandenen SDKs aufgeführt, die der [Application Insights-SDK-Projekt auf GitHub](https://github.com/Microsoft/AppInsights-Home)
+Wenn für Ihre Sprache oder Plattform noch kein SDK vorhanden ist, können Sie eins erstellen. Sehen Sie sich den Code der vorhandenen SDKs an, die im [Application Insights-SDK-Projekt auf GitHub](https://github.com/Microsoft/AppInsights-Home) aufgeführt sind.
 
 
 
@@ -73,4 +73,4 @@ Wenn Sie nicht vorhanden ist, noch ein SDK für Ihre Sprache oder Plattform, Sie
 
 <!--Link references-->
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

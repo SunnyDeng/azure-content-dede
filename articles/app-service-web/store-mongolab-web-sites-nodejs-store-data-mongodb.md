@@ -47,7 +47,7 @@ Bevor Sie fortfahren, sollten Sie sicherstellen, dass Sie Folgendes installiert 
 ## Schnellstart
 Wenn Sie den Azure Store bereits kennengelernt haben, finden Sie in diesem Abschnitt einen Schnellstart. Fahren Sie andernfalls mit [Bereitstellen der Datenbank][provision] weiter unten fort.
 
-1. Öffnen Sie durch Klicken auf den Azure Marketplace **Neu** > **Marketplace**.  
+1. Öffnen Sie den Azure Marketplace, indem Sie auf **Neu** > **Marketplace** klicken.  
 <!-- ![Store][button-store] -->
 2. Klicken Sie auf das **MongoLab**-Add-On. ![MongoLab][entry-mongolab]
 3. Klicken Sie in der Liste der Add-Ons auf das **MongoLab**-Add-On und dann auf **Verbindungsinformationen**. ![ConnectionInfoButton][button-connectioninfo]  
@@ -400,21 +400,21 @@ Da Ihre Umgebung und das Gerüst jetzt fertig sind, erweitern wir die grundlegen
 
 Nachdem die Anwendung entwickelt wurde, können Sie die Web-App für das Hosten der Anwendung in Azure App Service erstellen, konfigurieren und den Code bereitstellen. In diesem Abschnitt ist die Verwendung der MongoDB-Verbindungszeichenfolge (URI) ein zentraler Aspekt. Sie werden eine Umgebungsvariable für Ihre Web-App mit diesem URI konfigurieren, um den URI vom Code zu trennen. Sie sollten die URI als vertrauliche Information behandeln, da sie Anmeldeinformationen für die Verbindung zur Datenbank enthält.
 
-Die Schritte in diesem Abschnitt für Mac, Linux und Windows Azure-Befehlszeilenschnittstelle verwenden, erstellen Sie eine neue Webanwendung in Azure-App-Dienst, und verwenden Sie Git, um Ihre Anwendung bereitzustellen. Zur Durchführung dieser Schritte benötigen Sie ein Azure-Abonnement.
+Bei den Schritten in diesem Abschnitt wird die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows zum Erstellen einer neuen Web-App in Azure App Service und dann Git zum Bereitstellen der Anwendung verwendet. Zur Durchführung dieser Schritte benötigen Sie ein Azure-Abonnement.
 
 ### Installieren der Azure-Befehlszeilenschnittstelle
 
-Verwenden Sie zum Installieren der Azure-CLI den folgenden Befehl ein:
+Geben Sie den folgenden Befehl für die Installation der Azure-Befehlszeilenschnittstelle ein:
 
 	npm install azure-cli -g
 
-Wenn Sie bereits installiert haben die <strong>Azure SDK für Node.js</strong> aus der <a href="/develop/nodejs/">Azure Developer Center</a>, der Azure-Befehlszeilenschnittstelle sollte bereits installiert sein. Weitere Informationen finden Sie unter <a href="../virtual-machines-command-line-tools.md">Azure CLI</a>.
+Wenn Sie bereits das <strong>Azure SDK für Node.js</strong> aus dem <a href="/develop/nodejs/">Azure Developer Center</a> installiert haben, sollte auch die Azure-Befehlszeilenschnittstelle bereits installiert sein. Weitere Informationen finden Sie unter <a href="../virtual-machines-command-line-tools.md">Azure-Befehlszeilenschnittstelle</a>.
 
-Während der Azure-CLI-Tools vor allem für Mac und Linux-Benutzer erstellt wurden, werden sie basieren auf Node.js und sollten auf allen Systemen, die Node ausführen funktionieren.
+Obwohl die Tools der Azure-Befehlszeilenschnittstelle vor allem für Mac-und Linux-Benutzer erstellt wurden, basieren sie auf Node.js und sollten auf allen Systemen funktionieren, die Node ausführen können.
 
 ### Importieren von Veröffentlichungseinstellungen
 
-Bevor Sie mit der Azure-Befehlszeilenschnittstelle, müssen Sie zunächst eine Datei mit Informationen zu Ihrem Abonnement herunterladen. Führen Sie die folgenden Schritte aus, um diese Datei herunterzuladen und zu importieren.
+Bevor Sie die Azure-Befehlszeilenschnittstelle verwenden können, müssen Sie zunächst eine Datei mit Informationen zu Ihrem Abonnement herunterladen. Führen Sie die folgenden Schritte aus, um diese Datei herunterzuladen und zu importieren.
 
 1. Geben Sie an der Befehlszeile den folgenden Befehl ein, um den Browser zu starten, und navigieren Sie zur Downloadseite. Melden Sie sich bei Aufforderung mit dem Konto an, dass Ihrem Abonnement zugeordnet ist.
 
@@ -446,11 +446,11 @@ Bevor Sie mit der Azure-Befehlszeilenschnittstelle, müssen Sie zunächst eine D
 Das Erstellen einer Web-App in Azure App Service ist sehr einfach. Wenn dies Ihre erste Azure-Web-App ist, müssen Sie das Portal verwenden. Wenn Sie bereits mindestens eine Website erstellt haben, fahren Sie mit Schritt 7 fort.
 
 1. Klicken Sie im Azure-Portal auf **Neu**. ![Neu][button-new]
-2. Wählen Sie **berechnen > Web app > Schnellerfassung**.
+2. Wählen Sie **Compute > Web-App > Schnellerfassung** aus.
 <!-- ![Create Web App][screen-mongolab-newwebsite] -->
 3. Geben Sie einen URL-Präfix ein. Wählen Sie einen Namen aus, aber denken Sie daran, dass er eindeutig sein muss ("mymongoapp" ist wahrscheinlich nicht verfügbar).
 4. Klicken Sie auf **Web-App erstellen**.
-5. Klicken Sie nach Abschluss der Web-App-Erstellung auf den Namen der Web-App in der Web-App-Liste. Das Web-App-Dashboard zeigt.
+5. Klicken Sie nach Abschluss der Web-App-Erstellung auf den Namen der Web-App in der Web-App-Liste. Das Web-App-Dashboard wird angezeigt.
 <!-- ![Web App Dashboard][screen-mongolab-websitedashboard] -->
 6. Klicken Sie auf **Git-Veröffentlichung einrichten** unter **Schnellansicht**. Geben Sie dann den gewünschten Benutzernamen und das gewünschte Kennwort für Git ein. Sie verwenden dieses Kennwort für Pushvorgänge zu Ihrer Web-App (in Schritt 9).  
 7. Wenn Sie Ihre Web-App mit den oben genannten Schritten erstellt haben, wird der Prozess durch den folgenden Befehl abgeschlossen. Wenn Sie allerdings bereits mehr als eine Azure-Web-App haben, können Sie die oben genannten Schritte überspringen und eine neue Web-App mithilfe des gleichen Befehls erstellen. Im Projektverzeichnis **tasklist**:
@@ -570,4 +570,4 @@ Glückwunsch! Sie haben gerade eine "Node.js"-Anwendung mit einer von MongoLab g
 [mongolab-view]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/mongolab-view.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

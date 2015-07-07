@@ -20,7 +20,7 @@
 
 ## Übersicht
 
-Dieses Lernprogramm zeigt, wie Sie eine API-App schützen, sodass nur authentifizierte Benutzer darauf zugreifen können. Das Lernprogramm zeigt außerdem Code, dass Sie in einer ASP.NET-API zum Abrufen von Informationen über den angemeldeten Benutzer verwenden können.
+Dieses Lernprogramm zeigt, wie Sie eine API-App schützen, sodass nur authentifizierte Benutzer darauf zugreifen können. In diesem Lernprogramm wird außerdem der Code gezeigt, den Sie in einer ASP.NET-API-App zum Abrufen von Informationen über den angemeldeten Benutzer verwenden können.
 
 Sie führen die folgenden Schritte aus:
 
@@ -29,7 +29,7 @@ Sie führen die folgenden Schritte aus:
 - Erneutes Aufrufen der API-App, um sicherzustellen, dass nicht authentifizierte Anforderungen abgelehnt werden
 - Anmelden beim konfigurierten Anbieter
 - Erneutes Aufrufen der API-App, um sicherzustellen, dass der authentifizierte Zugriff funktioniert
-- Schreiben und Testen von Code, die Ansprüche für den angemeldeten Benutzer abruft.
+- Schreiben und testen Sie Code, der Ansprüchen für den angemeldeten Benutzer abruft.
 
 ## Voraussetzungen
 
@@ -47,7 +47,7 @@ Die einfachste Möglichkeit zu prüfen, ob Ihre API-App öffentlich zugänglich 
 
 	![Auswählen einer API](./media/app-service-api-dotnet-add-authentication/select.png)
 
-3. Klicken Sie im Blatt **API-App** auf **URL**, um ein Browserfenster zu öffnen, in dem Ihre API-App aufgerufen wird.
+3. Klicken Sie auf dem Blatt **API-App** auf **URL**, um ein Browserfenster zu öffnen, in dem Ihre API-App aufgerufen wird.
 
 	![Blatt "API-App"](./media/app-service-api-dotnet-add-authentication/chooseapiappurl.png)
 
@@ -87,13 +87,13 @@ Um Ihre API-App so zu konfigurieren, dass nur authentifizierte Anforderungen akz
 
 1. Wechseln Sie zurück zum Blatt **API-App** für die API-App, die Sie schützen möchten.
 
-2. Klicken Sie im Blatt **API-App** auf **Einstellungen** und anschließend auf **Anwendungseinstellungen**.
+2. Klicken Sie auf dem Blatt **API-App** auf **Einstellungen** und anschließend auf **Anwendungseinstellungen**.
 
 	![Klicken Sie auf "Einstellungen"](./media/app-service-api-dotnet-add-authentication/clicksettings.png)
 
 	![Klicken Sie auf "Anwendungseinstellungen"](./media/app-service-api-dotnet-add-authentication/clickbasicsettings.png)
 
-3. Ändern Sie im Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich (authentifiziert)**, und klicken Sie dann auf **Speichern**.
+3. Ändern Sie auf dem Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich (authentifiziert)**, und klicken Sie dann auf **Speichern**.
 
 	![Klicken Sie auf "Grundlegende Einstellungen"](./media/app-service-api-dotnet-add-authentication/setpublicauth.png)
 
@@ -105,7 +105,7 @@ Um Ihre API-App so zu konfigurieren, dass nur authentifizierte Anforderungen akz
 
 	![Klicken Sie auf "Gateway"](./media/app-service-api-dotnet-add-authentication/gateway.png)
 
-7. Klicken Sie im Blatt **Gateway** auf **Einstellungen** und anschließend auf **Identität**.
+7. Klicken Sie auf dem Blatt **Gateway** auf **Einstellungen** und anschließend auf **Identität**.
 
 	![Klicken Sie auf "Einstellungen"](./media/app-service-api-dotnet-add-authentication/clicksettingsingateway.png)
 
@@ -155,17 +155,17 @@ Im Azure-Portal enthält die Registerkarte **Konfiguration** der Anwendung, die 
 
     	http://[gatewayurl]/login/[providername]
 
-	Sie können die Gateway-URL aus dem Blatt **Gateway** im [Azure-Vorschauportal] abrufen. (Sie gelangen zum Blatt **Gateway**, indem Sie im Blatt **Ressourcengruppe** auf das Gateway im angezeigten Diagramm klicken.)
+	Sie können die Gateway-URL aus dem Blatt **Gateway** im [Azure-Vorschauportal] abrufen. (Sie gelangen zum Blatt **Gateway**, indem Sie auf dem Blatt **Ressourcengruppe** auf das Gateway im angezeigten Diagramm klicken.)
 
 	![Gateway-URL](./media/app-service-api-dotnet-add-authentication/gatewayurl.png)
 
-	Die [Providername] muss einer der folgenden Werte sein:
+	Für [providername] muss einer der folgenden Werte verwendet werden:
 	
-	* "Microsoftaccount"
-	* "Facebook"
-	* "Twitter"
-	* "Google"
-	* "Aad"
+	* "microsoftaccount"
+	* "facebook"
+	* "twitter"
+	* "google"
+	* "aad"
 
 	Nachfolgend wird eine beispielhafte Anmelde-URL für Azure Active Directory gezeigt:
 
@@ -237,17 +237,17 @@ Diese Anweisungen zeigen, wie Sie das Postman-Tool im Chrome-Browser verwenden, 
 
 	![403 Verboten-Antwort](./media/app-service-api-dotnet-add-authentication/403forbidden.png)
 
-## Abrufen von Informationen über den angemeldeten Benutzer
+## Abrufen von Informationen zum angemeldeten Benutzer
 
-In diesem Abschnitt ändern Sie den Code in der Anwendung noch-API, abgerufen und die Namen und e-Mail-Adresse des angemeldeten Benutzers zurückgibt.
+In diesem Abschnitt ändern Sie den Code in der API-App "ContactsList" so ab, dass der Name und die E-Mail-Adresse des angemeldeten Benutzers abgerufen und zurückgegeben werden.
 
-1. Öffnen Sie in Visual Studio das API-app-Projekt, die Bereitstellung in [Bereitstellung einer API-Anwendung](app-service-dotnet-deploy-api-app.md) und haben für dieses Lernprogramm aufgerufen wurde.
+1. Öffnen Sie in Visual Studio das API-App-Projekt, das Sie in [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) bereitgestellt und für dieses Lernprogramm aufgerufen haben.
 
-3. Öffnen der Datei apiapp.json, und fügen Sie eine Zeile, die die API-Anwendung gibt Azure Active Directory-Authentifizierung verwendet.
+3. Öffnen Sie die Datei "apiapp.json", und fügen Sie eine Zeile ein um anzugeben, dass die API-App die Azure Active Directory-Authentifizierung verwendet.
 
 		"authentication": [{"type": "aad"}]
 
-	Die letzte apiapp.json-Datei wird im folgende Beispiel ähneln:
+	Die endgültige Version der Datei "apiapp.json" sieht in etwa folgendermaßen aus:
 
 		{
 		    "$schema": "http://json-schema.org/schemas/2014-11-01/apiapp.json#",
@@ -265,15 +265,15 @@ In diesem Abschnitt ändern Sie den Code in der Anwendung noch-API, abgerufen un
 		    "authentication": [{"type": "aad"}]
 		}
 
-	In diesem Lernprogramm verwendet Azure Active Directory als Beispiel. Für andere Anbieter verwenden Sie den entsprechenden Bezeichner. Hier sind die gültigen Anbieter:
+	In diesem Lernprogramm wird Azure Active Directory als Beispiel verwendet. Verwenden Sie für andere Anbieter den geeigneten Bezeichner. Nachfolgend finden Sie die gültigen Anbieterwerte:
 
-	* "Aad"
-	* "Microsoftaccount"
-	* "Google"
-	* "Twitter"
-	* "Facebook". 
+	* "aad"
+	* "microsoftaccount"
+	* "google"
+	* "twitter"
+	* "facebook" 
 
-2. In der *ContactsController.cs* Datei, ersetzen Sie den Code in der `Get` -Methode durch den folgenden Code.
+2. Ersetzen Sie in der Datei *ContactsController.cs* den Code in der `Get`-Methode durch den folgenden Code.
 
 		var runtime = Runtime.FromAppSettings(Request);
 		var user = runtime.CurrentUser;
@@ -285,25 +285,25 @@ In diesem Abschnitt ändern Sie den Code in der Anwendung noch-API, abgerufen un
 		    new Contact { Id = 1, EmailAddress = email, Name = name }
 		};
 
-	Anstatt die drei Beispielkontakte zurückgesetzt Kontaktinformationen für den angemeldeten Benutzer.
+	Anstelle der drei Beispielkontakte gibt der Code Kontaktinformationen zum angemeldeten Benutzer zurück.
 
-	Im Beispielcode wird die Azure Active Directory verwendet. Für andere Anbieter verwenden Sie den entsprechenden Namen und Ansprüche Tokenbezeichner, wie im vorherigen Schritt gezeigt.
+	Im Beispielcode wird Azure Active Directory verwendet. Für andere Anbieter verwenden Sie den geeigneten Tokennamen und Anspruchsbezeichner, wie im vorherigen Schritt gezeigt.
 
-	Weitere Informationen zu Azure Active Directory-Ansprüche, die verfügbar sind, finden Sie unter [Token unterstützt und Anspruchstypen](https://msdn.microsoft.com/library/dn195587.aspx).
+	Informationen zu den verfügbaren Azure Active Directory-Ansprüchen finden Sie unter [Unterstützte Token und Anspruchstypen](https://msdn.microsoft.com/library/dn195587.aspx).
 
-3. Fügen Sie eine using-Anweisung für `Microsoft.Azure.AppService.ApiApps.Service`.
+3. Fügen Sie eine using-Anweisung für `Microsoft.Azure.AppService.ApiApps.Service` hinzu.
 
 		using Microsoft.Azure.AppService.ApiApps.Service;
 
-3. Bereitstellen Sie das Projekt erneut.
+3. Stellen Sie das Projekt erneut bereit.
 
-	Visual Studio speichert die Einstellungen bei der Bereitstellung des Projekts beim folgenden der [Bereitstellen](app-service-dotnet-deploy-api-app.md) Lernprogramm. Mit der rechten Maustaste in des Projekts, klicken Sie auf **Veröffentlichen**, und klicken Sie dann auf **Veröffentlichen** in den **Web veröffentlichen** Dialogfeld.
+	Visual Studio hat die Einstellungen der Bereitstellung des Projekts beim Ausführen des Lernprogramms [Bereitstellung](app-service-dotnet-deploy-api-app.md) gespeichert. Klicken Sie mit der rechten Maustaste auf das Projekt, klicken Sie auf **Veröffentlichen**, und klicken Sie dann im Dialogfeld **Im Web veröffentlichen** auf **Veröffentlichen**.
 
-6. Führen Sie die Prozedur, die Sie zuvor ausgeführt haben, um eine Get-Anforderung an die geschützte API-Anwendung zu senden.
+6. Folgen Sie den vorherigen Anweisungen zum Senden einer Get-Anforderung an die geschützte API-App.
 
-	Die Response-Nachricht zeigt den Namen und die ID der Identität, die Sie zur Anmeldung verwendet.
+	Die Antwortnachricht zeigt den Namen und die ID der Identität, die Sie zur Anmeldung verwendet haben.
 
-	![Response-Nachricht mit der angemeldete Benutzer](./media/app-service-api-dotnet-add-authentication/chromegetuserinfo.png)
+	![Antwortnachricht mit angemeldetem Benutzer](./media/app-service-api-dotnet-add-authentication/chromegetuserinfo.png)
 
 ## Nächste Schritte
 
@@ -315,4 +315,4 @@ Sie haben erfahren, wie Sie eine Azure API-App schützen, indem Sie sie für ein
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

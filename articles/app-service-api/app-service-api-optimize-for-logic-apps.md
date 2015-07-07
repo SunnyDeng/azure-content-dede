@@ -1,7 +1,7 @@
 
 <properties
-	pageTitle="Optimieren Sie Ihre App-API für Logik Apps"
-	description="Dieser Artikel beschreibt, wie Ihre App-API mit Logik Apps Spaltenliste ergänzt"
+	pageTitle="Optimieren Ihrer API-App für Logik-Apps"
+	description="Dieser Artikel zeigt, wie Sie Ihre API-App für die optimale Verwendung mit Logik-Apps anpassen."
 	services="app-service\api"
 	documentationCenter=".net"
 	authors="sameerch"
@@ -17,56 +17,56 @@
 	ms.date="06/09/2015"
 	ms.author="sameerch;guayan;tarcher"/>
 
-# Optimieren Sie Ihre App-API für Logik Apps #
+# Optimieren Ihrer API-App für Logik-Apps #
 
-In diesem Artikel erfahren Sie, wie die API-Definition der API-Anwendung definiert, damit es funktioniert gut mit Logik Apps. Dies wird die Benutzerfreundlichkeit für Ihre API-Anwendung verbessern, wenn es im Designer Logik Apps verwendet wird.
+In diesem Artikel erfahren Sie, wie Sie die API-Definition Ihrer API-App anpassen, sodass sie optimal mit Logik-Apps funktioniert. Auf diese Weise wird die Benutzerfreundlichkeit für Ihre API-App verbessert, wenn sie im Logik-Apps-Designer verwendet wird.
 
 ## Voraussetzungen
 
-Wenn Sie noch [API-apps](app-service-api-apps-why-best-platform.md) in [Azure Anwendungsdiensts](../app-service/app-service-value-prop-what-is.md), es wird empfohlen, beim Lesen der mehrteiligen Reihe auf [API-apps erstellen](app-service-dotnet-create-api-app.md)
+Wenn Sie zum ersten Mal mit [API-Apps](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md) arbeiten, sollten Sie zunächst die mehrteilige Serie zum [Erstellen von API-Apps](app-service-dotnet-create-api-app.md) durcharbeiten.
 
 
 ## Hinzufügen von Anzeigenamen ##
-Der Logik Apps-Designer zeigt die Namen Vorgänge, Felder und Parameter, die Sie möglicherweise manchmal schwierig zu lesen, wie sie programmgesteuert generiert werden. Zur besseren Lesbarkeit anzeigen Designer Logik Apps können, in denen es verfügbar ist, einen besser lesbaren Textwert - bekannt als eine *Anzeigename* – anstatt die Standardnamen Vorgang, Feld- und Parameter. Um dies zu erreichen, scannt der Logik Apps-Designer das Vorhandensein bestimmter Eigenschaften in den Swagger-Metadaten, die von der API-Anwendung bereitgestellt. Die folgenden Eigenschaften dienen als Anzeigenamen:
+Der Logik-Apps-Designer zeigt die Namen von Operationen, Feldern und Parametern an, die mitunter schwierig zu lesen sind, da sie programmgesteuert generiert werden. Zur Verbesserung der Lesbarkeit kann der Logik-Apps-Designer (sofern verfügbar) einen benutzerfreundlicheren Textwert – bezeichnet als *Anzeigename* – anstelle der Standardnamen für Operation, Feld und Parameter anzeigen. Hierzu prüft der Logik-Apps-Designer, ob bestimmte Eigenschaften in der Swagger-Metadatei enthalten sind, die über Ihre API-App bereitgestellt wird. Die folgenden Eigenschaften werden als Anzeigenamen verwendet:
 
-* Vorgänge (Aktion und Trigger) den Wert der **Zusammenfassung** Eigenschaft, falls vorhanden, andernfalls der Wert der **Vorgangs-ID** Eigenschaft. Beachten Sie, das bis zu 120 Zeichen für die Swagger 2.0-Spezifikation ermöglicht die **Zusammenfassung** Eigenschaft.
+* Operationen (Aktionen und Trigger): Der Wert der **summary**-Eigenschaft (sofern vorhanden), andernfalls der Wert der **operationId**-Eigenschaft. Beachten Sie, dass die Swagger 2.0-Spezifikation die Verwendung von bis zu 120 Zeichen für die **summary**-Eigenschaft zulässt.
 
-* Parameter (Eingaben) den Wert des der **X-ms-Zusammenfassung** Extension-Eigenschaft, falls vorhanden, andernfalls den Wert der **Name** Eigenschaft. Die **X-ms-Zusammenfassung** Erweiterungseigenschaft dynamisch im Code festgelegt werden muss. Dieser Prozess wird im Abschnitt "Using Custom Attribute Erweiterungseigenschaften Kommentieren" dieses Themas beschrieben. Die **Name** -Eigenschaft verwenden / / / Kommentare festgelegt werden. Dieser Prozess wird im Abschnitt "Using XML-Kommentare in API-Definition Generation" dieses Themas beschrieben.
+* Parameter (Eingaben): Der Wert der **x-ms-summary**-Erweiterungseigenschaft (sofern vorhanden), andernfalls der Wert der **name**-Eigenschaft. Die **x-ms-summary**-Erweiterungseigenschaft muss dynamisch im Code festgelegt werden. Dieser Vorgang wird im Abschnitt "Verwenden von benutzerdefinierten Attributen zum Kommentieren von Erweiterungseigenschaften" in diesem Thema beschrieben. Die **name**-Eigenschaft kann unter Verwendung von ///-Kommentaren festgelegt werden. Dieser Vorgang wird im Abschnitt "Verwenden von XML-Kommentaren beim Generieren der API-Definition" in diesem Thema beschrieben.
 
-* Schemafelder (Ausgabeantworten) den Wert des der **X-ms-Zusammenfassung** Extension-Eigenschaft, falls vorhanden, andernfalls den Wert der **Name** Eigenschaft. Die **X-ms-Zusammenfassung** Erweiterungseigenschaft dynamisch im Code festgelegt werden muss. Dieser Prozess wird im Abschnitt "Using Custom Attribute Erweiterungseigenschaften Kommentieren" dieses Themas beschrieben. Die **Name** -Eigenschaft verwenden / / / Kommentare festgelegt werden. Dieser Prozess wird im Abschnitt "Using XML-Kommentare in API-Definition Generation" dieses Themas beschrieben.
+* Schemafelder (Ausgabeantworten): Der Wert der **x-ms-summary**-Erweiterungseigenschaft (sofern vorhanden), andernfalls der Wert der **name**-Eigenschaft. Die **x-ms-summary**-Erweiterungseigenschaft muss dynamisch im Code festgelegt werden. Dieser Vorgang wird im Abschnitt "Verwenden von benutzerdefinierten Attributen zum Kommentieren von Erweiterungseigenschaften" in diesem Thema beschrieben. Die **name**-Eigenschaft kann unter Verwendung von ///-Kommentaren festgelegt werden. Dieser Vorgang wird im Abschnitt "Verwenden von XML-Kommentaren beim Generieren der API-Definition" in diesem Thema beschrieben.
 
-**Hinweis:** es wird empfohlen, die Länge von Ihrem Anzeigenamen auf 30 Zeichen zu halten.
+**Hinweis:** Es wird empfohlen, Anzeigenamen mit einer Länge von 30 Zeichen oder weniger zu verwenden.
 
-### Verwenden von XML-Kommentaren in Generieren von API-Definitionen
+### Verwenden von XML-Kommentaren beim Generieren der API-Definition
 
-Für die Entwicklung mit Visual Studio ist es gängige Praxis, kommentieren die API-Controller mit [XML-Kommentare](https://msdn.microsoft.com/library/b2s063f7.aspx). Bei der Kompilierung mit [/doc](https://msdn.microsoft.com/library/3260k4x7.aspx), erstellt der Compiler eine XML-Dokumentationsdatei. Swashbuckle-Toolset, die mit dem API-App-SDK enthalten kann diese Kommentare beim Generieren der Metadaten-API-integrieren, und Sie können Ihre API-Projekt, um dies tun, indem Sie die folgenden Schritte konfigurieren:
+Bei der Entwicklung mit Visual Studio ist es eine bewährte Methode, die API-Controller mithilfe von [XML-Kommentaren](https://msdn.microsoft.com/library/b2s063f7.aspx) mit Anmerkungen zu versehen. Bei der Kompilierung mit [/doc](https://msdn.microsoft.com/library/3260k4x7.aspx) erstellt der Compiler eine XML-Dokumentationsdatei. Das im API-App-SDK enthaltene Swashbuckle-Toolset kann diese Kommentare beim Generieren der API-Metadaten einschließen, und Sie können Ihr API-Projekt hierzu mithilfe der folgenden Schritte konfigurieren:
 
-1. Öffnen Sie das Projekt in Visual Studio.
+1. Öffnen Sie Ihr Projekt in Visual Studio.
 
-2. Aus der **Projektmappen-Explorer**, mit der rechten Maustaste auf das Projekt, und wählen Sie **Eigenschaften**.
+2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Eigenschaften** aus.
 
 	![Projekteigenschaften](./media/app-service-api-optimize-for-logic-apps/project-properties.png)
 
-3. Wenn Eigenschaftenseiten des Projekts angezeigt werden, führen Sie die folgenden Schritte aus:
+3. Führen Sie die folgenden Schritte aus, wenn die Eigenschaftenseiten für das Projekt angezeigt werden:
 
-	- Wählen Sie die **Konfiguration** für die die Einstellungen angewendet werden. In der Regel müssen Sie alle Konfigurationen auswählen, so dass die von Ihnen angegebenen Einstellungen, um sowohl Debug-als anwenden auch im Releasebuild.
+	- Wählen Sie die **Konfiguration**, für die die Einstellungen gelten. Typischerweise wählen Sie "Alle Konfigurationen", sodass die festgelegten Einstellungen sowohl für Debug- als aus für Releasebuilds gelten.
 	
-	- Wählen Sie die **Erstellen** Registerkarte auf der linken Seite
+	- Wählen Sie die Registerkarte **Build** auf der linken Seite aus.
 	
-	- Überprüfen Sie, ob die **XML-Dokumentationsdatei** Option aktiviert ist. Visual Studio stellt ein Standarddateiname basierend auf den Namen des Projekts zur Verfügung. Sie können setzen ihren Wert auf, was Ihren Benennungskonventionen erfordert oder lassen Sie es als-ist.
+	- Vergewissern Sie sich, dass die Option **XML-Dokumentationsdatei** aktiviert ist. Visual Studio gibt einen Standarddateinamen vor, der auf dem Namen Ihres Projekts basiert. Sie können diesen Wert gemäß Ihrer Namenskonventionen ändern oder unverändert beibehalten.
 
-	![Legen Sie XML-Dokument-Eigenschaft](./media/app-service-api-optimize-for-logic-apps/xml-documentation-file-property.png)
+	![Festlegen der XML-Doc-Eigenschaft](./media/app-service-api-optimize-for-logic-apps/xml-documentation-file-property.png)
 
-4. Öffnen der *SwaggerConfig.cs* Datei (im Verzeichnis des Projekts **App_Start** Ordner).
+4. Öffnen Sie die Datei *SwaggerConfig.cs* (diese befindet sich im Ordner **App_Start** des Projekts).
 
-5. Hinzufügen **mit** Direktiven am oberen Rand der *SwaggerConfig.cs* Datei für die **System** und **System.Globalization** Namespaces.
+5. Fügen Sie am Anfang der Datei *SwaggerConfig.cs* **using**-Direktiven für die Namespaces **System** und **System.Globalization** ein.
 
 		using System;
 		using System.Globalization;
  
-6. Suchen Sie die *SwaggerConfig.cs* -Datei für einen Aufruf von **GetXmlCommentsPath**, und kommentieren Sie die Zeile, sodass es ausgeführt wird. Da diese Methode noch nicht implementiert haben, wird Visual Studio den Aufruf von unterstrichen **GetXmlCommentsPath** und anzugeben, dass im aktuellen Kontext nicht definiert ist. Das ist kein Problem. Sie müssen sie im nächsten Schritt implementieren.
+6. Suchen Sie in der Datei *SwaggerConfig.cs* nach einem **GetXmlCommentsPath**-Aufruf, und heben Sie die Auskommentierung der Zeile auf, sodass sie ausgeführt wird. Da Sie diese Methode noch nicht implementiert haben, unterstreicht Visual Studio den **GetXmlCommentsPath**-Aufruf um zu kennzeichnen, dass er im aktuellen Kontext nicht definiert ist. Das ist in Ordnung. Sie führen im nächsten Schritt die Implementierung durch.
 
-7. Fügen Sie die folgende Implementierung von der **GetXmlCommentsPath** -Methode, um die **SwaggerConfig** Klasse (definiert der *SwaggerConfig.cs* Datei). Diese Methode gibt einfach die XML-Dokumentationsdatei zurück, die Sie zuvor in den Einstellungen für das Projekt angegeben.
+7. Fügen Sie der **SwaggerConfig**-Klasse (definiert in der Datei *SwaggerConfig.cs*) die folgende Implementierung der **GetXmlCommentsPath**-Methode hinzu. Diese Methode gibt lediglich die XML-Dokumentationsdatei zurück, die Sie zuvor in den Projekteinstellungen festgelegt haben.
 
         public static string GetXmlCommentsPath()
         {
@@ -75,32 +75,32 @@ Für die Entwicklung mit Visual Studio ist es gängige Praxis, kommentieren die 
 								 AppDomain.CurrentDomain.BaseDirectory);
         }
 
-8. Abschließend geben Sie die XML-Kommentare für die Controllermethoden. Hierzu öffnen Sie die API-app Controller-Dateien aus, und geben Sie / / / auf eine leere Zeile vor eine Controllermethode zu dokumentieren. Visual Studio fügt automatisch einen kommentierten Abschnitt, in dem können Sie eine Methode, die Zusammenfassung als auch Parameter angeben und Rückgabewertinformationen.
+8. Abschließend geben Sie die XML-Kommentare für Ihre Controllermethoden an. Öffnen Sie hierzu eine der API-App-Controllerdateien, und geben Sie in einer leeren Zeile /// sowie eine Controllermethode ein, die Sie dokumentieren möchten. Visual Studio fügt automatisch einen kommentierten Abschnitt ein, in dem Sie eine Methodenzusammenfassung sowie Informationen zu Parametern und Rückgabewerten eingeben können.
 
-Nun, beim Erstellen und veröffentlichen Sie die API-app, sehen Sie, dass die Dokumentationsdatei auch in der Nutzlast ist und mit dem Rest der API-Anwendung hochgeladen.
+Wenn Sie jetzt Ihre API-App erstellen und veröffentlichen, wird die Dokumentationsdatei gemeinsam mit den übrigen Elementen Ihrer API-App erzeugt und hochgeladen.
 
-## Kategorisieren Sie, erweiterte Prozesse und Eigenschaften
+## Kategorisieren von erweiterten Operationen und Eigenschaften
 
-Der Designer Logik Apps beschränkte Platz auf dem Bildschirm für die Anzeige der Vorgänge, Parameter und Eigenschaften. Darüber hinaus kann eine App API einen umfangreichen Satz von Operationen und Eigenschaften definieren. Das Ergebnis so viele Informationen, die angezeigt wird, in einem kleinen Bereich zur Folge haben kann können mithilfe des Designers schwierig für den Endbenutzer.
+Der Logik-Apps-Designer verfügt über einen eingeschränkten Anzeigebereich für Operationen, Parameter und Eigenschaften. Gleichzeitig kann eine API-App einen umfangreichen Satz an Operationen und Eigenschaften definieren. Als Ergebnis wird eine Vielzahl von Informationen auf kleinem Raum angezeigt, was für den Endbenutzer sehr unübersichtlich sein kann.
 
-Um die Übersichtlichkeit zu verringern, ermöglicht der Logik Apps-Designer, Prozesse und Eigenschaften der API-Anwendung in eine benutzerdefinierte Kategorien einzuteilen. Mithilfe einer entsprechenden Kategorisierung der Eigenschaften und Operationen kann eine API-Anwendung präsentieren zuerst die einfachste und nützliche Prozesse und Eigenschaften, um die Benutzerfreundlichkeit verbessern.
+Für eine bessere Übersicht ermöglicht der Logik-Apps-Designer das Gruppieren der API-App-Operationen und Eigenschaften in benutzerdefinierten Kategorien. Durch eine sinnvolle Kategorisierung der Operationen und Eigenschaften kann die Benutzerfreundlichkeit einer API-App gesteigert werden, indem zunächst die wichtigsten Operationen und Eigenschaften angezeigt werden.
 
-Um diese Möglichkeit bereitzustellen, sucht der Logik Apps-Designer das Vorhandensein einer bestimmten benutzerdefinierten Hersteller Extension-Eigenschaft in der Swagger-API-Definition der API-App. Diese Eigenschaft wird mit dem Namen **X-ms-Sichtbarkeit** und kann folgende Werte annehmen:
+Um dies zu ermöglichen, sucht der Logik-Apps-Designer nach einer spezifischen benutzerdefinierten Herstellererweiterungseigenschaft in der Swagger-API-Definition Ihrer API-App. Diese Eigenschaft trägt den Namen **x-ms-visibility** und kann folgende Werte annehmen:
 
-* leer, oder "none", diese Prozesse und Eigenschaften leicht können vom Benutzer angezeigt werden.
+* leer oder "none": Diese Operationen und Eigenschaften sind bereits für den Benutzer sichtbar.
 
-* "advanced", wie diese Prozesse und Eigenschaften erweitert werden, werden sie standardmäßig ausgeblendet. Allerdings kann Benutzer problemlos darauf zugreifen bei Bedarf.
+* "advanced": Da es sich um erweiterte Operationen und Eigenschaften handelt, sind sie standardmäßig ausgeblendet. Der Benutzer kann jedoch bei Bedarf problemlos auf sie zugreifen.
 
-* "Interner" diese Prozesse und Eigenschaften als System- oder internen Eigenschaften behandelt und nicht direkt vom Benutzer verwendet werden soll. Daher sind sie vom Designer ausgeblendet ist und nur in der Codeansicht verfügbar. Für diese Eigenschaften können Sie auch angeben der **X-ms-Scheduler-Empfehlung** Extension-Eigenschaft zum Festlegen des Werts durch den Logik Apps-Designer. Ein Beispiel finden Sie im Artikel auf [Trigger zu einer API-App hinzufügen](app-service-api-dotnet-triggers.md).
+* "intern": Diese Operationen und Eigenschaften werden als Systemeigenschaften oder interne Eigenschaften behandelt und sind nicht für eine direkte Verwendung durch den Benutzer vorgesehen. Deshalb werden sie vom Designer ausgeblendet und stehen nur in der Codeansicht zur Verfügung. Für solche Eigenschaften können Sie die **x-ms-scheduler-recommendation**-Erweiterungseigenschaft angeben, um den Wert über den Logik-Apps-Designer festzulegen. Ein Beispiel finden Sie im Artikel [Hinzufügen von Triggern zu einer API-App](app-service-api-dotnet-triggers.md).
 
 
-## Verwenden benutzerdefinierte Attribute Erweiterungseigenschaften zu kommentieren.
+## Verwenden von benutzerdefinierten Attributen zum Kommentieren von Erweiterungseigenschaften
 
-Wie bereits erwähnt, werden benutzerdefinierte Anbieter Erweiterungseigenschaften verwendet, kommentieren Sie die Metadaten-API-um umfangreichere Informationen bereitzustellen, die der Logik Apps-Designer verwenden können. Wenn Sie statische Metadaten zur Beschreibung der API-app verwenden, können Sie direkt bearbeiten der */metadata/apiDefinition.swagger.json* in Ihrem Projekt die notwendigen Erweiterungseigenschaften manuell hinzufügen.
+Wie zuvor erwähnt, werden benutzerdefinierte Herstellererweiterungseigenschaften verwendet, um die API-Metadaten zu kommentieren und so umfangreichere Informationen bereitzustellen, die im Logik-Apps-Designer verwendet werden können. Wenn Sie statische Metadaten zum Beschreiben Ihrer API-App verwenden, können Sie die Datei */metadata/apiDefinition.swagger.json* direkt in Ihrem Projekt bearbeiten, um die erforderlichen Erweiterungseigenschaften hinzuzufügen.
 
-Für API-apps, dynamische Metadaten verwenden, können Sie mithilfe von benutzerdefinierten Attributen Code mit Anmerkungen versehen. Sie können dann definieren ein Filters Vorgang in der *SwaggerConfig.cs* -Datei für die benutzerdefinierten Attribute zu suchen und Hinzufügen der erforderlichen Vendor-Erweiterung. Dieser Ansatz ist für ausführlich beschrieben unter dynamisch generieren die **X-ms-Zusammenfassung** Extension-Eigenschaft.
+Für API-Apps mit dynamischen Metadaten können Sie benutzerdefinierte Attribute einsetzen, um Ihren Code zu kommentieren. Sie können anschließend einen Operationsfilter in der Datei *SwaggerConfig.cs* definieren, um nach den benutzerdefinierten Attributen zu suchen und die erforderliche Herstellererweiterung hinzufügen. Dieser Ansatz wird für das dynamische Generieren der **x-ms-summary**-Erweiterungseigenschaft nachstehend ausführlich beschrieben.
 
-1. Definieren Sie eine Attributklasse namens **CustomSummaryAttribute** Kommentieren von Code verwendet wird.
+1. Definieren Sie eine Attributklasse namens **CustomSummaryAttribute**, die zum Kommentieren Ihres Codes verwendet wird.
 
 	    [AttributeUsage(AttributeTargets.All)]
 	    public class CustomSummaryAttribute : Attribute
@@ -113,7 +113,7 @@ Für API-apps, dynamische Metadaten verwenden, können Sie mithilfe von benutzer
 	        }
 	    }
 
-2. Definieren Sie einen Vorgang Filter mit dem Namen **AddCustomSummaryFilter** die für dieses benutzerdefinierte Attribut in den Parametern Vorgang sieht.
+2. Definieren Sie einen Operationsfilter namens **AddCustomSummaryFilter**, der in den Operationsparametern nach diesem benutzerdefinierten Attribut sucht.
 
 
 	    using Swashbuckle.Swagger;
@@ -148,7 +148,7 @@ Für API-apps, dynamische Metadaten verwenden, können Sie mithilfe von benutzer
 	        }
 	    }
 
-3. Bearbeiten der *SwaggerConfig.cs* Datei, und fügen Sie die oben definierte Filterklasse.
+3. Bearbeiten Sie die Datei *SwaggerConfig.cs*, und fügen Sie die oben definierte Filterklasse hinzu.
 
 
             GlobalConfiguration.Configuration
@@ -159,7 +159,7 @@ Für API-apps, dynamische Metadaten verwenden, können Sie mithilfe von benutzer
                         ...
                     }
 
-4. Verwenden der **CustomSummaryAttribute** Klasse, um den Code mit Anmerkungen versehen, wie im folgenden Codeausschnitt gezeigt.
+4. Verwenden Sie die **CustomSummaryAttribute**-Klasse, um Ihren Code zu kommentieren, wie im folgenden Codeausschnitt gezeigt.
 
         /// <summary>
         /// Send Message
@@ -173,7 +173,7 @@ Für API-apps, dynamische Metadaten verwenden, können Sie mithilfe von benutzer
              ...
         }
 
-	Wenn Sie die oben genannten API-Anwendung erstellen, generiert es die folgende API-Metadaten:
+	Wenn Sie die oben gezeigte API-App erstellen, werden die folgenden API-Metadaten generiert:
 
 
 			...
@@ -199,7 +199,7 @@ Für API-apps, dynamische Metadaten verwenden, können Sie mithilfe von benutzer
                 ],
                 ...
 
-5. Sie können auf ähnliche Weise SchemaFilter definieren **AddCustomSummarySchemaFilter** automatisch zu kommentieren der **X-ms-Zusammenfassung** Erweiterungseigenschaft für die Schemamodelle, wie im folgenden Beispiel.
+5. Ähnlich können Sie den Schemafilter **AddCustomSummarySchemaFilter** definieren, um die **x-ms-summary**-Erweiterungseigenschaft für Ihre Schemamodelle automatisch zu kommentieren (siehe nächstes Beispiel).
 
 	    public class AddCustomSummarySchemaFilter: ISchemaFilter
 	    {
@@ -232,7 +232,7 @@ Für API-apps, dynamische Metadaten verwenden, können Sie mithilfe von benutzer
 
 ## Zusammenfassung
 
-In diesem Artikel haben gesehen, wie Sie die Benutzerfreundlichkeit der API-Anwendung zu verbessern, wenn es im Designer Logik Apps verwendet wird. Als bewährte Methode empfiehlt es sich, dass Sie richtige Anzeigenamen für alle Vorgänge (Aktionen und Trigger), Parameter und Eigenschaften angeben. Es wird auch empfohlen, dass Sie nicht mehr als fünf grundlegende Vorgänge bereitstellen. Für Eingabeparameter wird empfohlen, die Anzahl der grundlegenden Eigenschaften nicht mehr als 4 einzuschränken, und für Eigenschaften, die Empfehlung lautet, Version 5 oder niedriger. Der Rest der Operationen und Eigenschaften gekennzeichnet werden soll als erweitert.
+In diesem Artikel haben Sie erfahren, wie Sie die Benutzerfreundlichkeit Ihrer API-App verbessern, wenn diese im Logik-Apps-Designer verwendet wird. Als bewährte Methode wird empfohlen, benutzerfreundliche Namen für alle Operationen (Aktionen und Trigger), Parameter und Eigenschaften bereitzustellen. Außerdem wird empfohlen, nicht mehr als 5 grundlegende Operationen bereitzustellen. Für Eingabeparameter lautet die Empfehlung, die Anzahl von grundlegenden Eigenschaften auf maximal 4 zu beschränken, für Eigenschaften liegt die Empfehlung bei 5 oder weniger. Die verbleibenden Operationen und Eigenschaften sollten als erweitert gekennzeichnet werden.
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -20,7 +20,7 @@
 
 [AZURE.INCLUDE [app-service-mobile-selector-get-started-preview](../../includes/app-service-mobile-selector-get-started-preview.md)]
 
-Dieses Lernprogramm erfahren Sie, wie eine Xamarin Android-app mit Azure-Mobile-Anwendungen einen cloudbasierten Backend-Dienst hinzugefügt. In diesem Lernprogramm erstellen Sie einen neuen .NET-Dienst und eine einfache _To-Do-Listen_-App, die App-Daten im .NET-Back-End speichert.
+In diesem Lernprogramm erfahren Sie, wie Sie mit Azure Mobile Apps einen cloudbasierten Back-End-Dienst zu einer Xamarin Android-App hinzufügen. In diesem Lernprogramm erstellen Sie einen neuen .NET-Dienst und eine einfache _To-Do-Listen_-App, die App-Daten im .NET-Back-End speichert.
 
 Unten sehen Sie einen Screenshot aus der fertigen App:
 
@@ -90,7 +90,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	![][10]
 
-	Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden vom mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
+	Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
 
 	> [AZURE.NOTE]Sie können den Code überprüfen, der zum Abfragen und Einfügen von Daten auf das mobile App-Back-End zugreift. Der Code befindet sich in der C#-Datei "ToDoActivity.cs".
 
@@ -110,4 +110,4 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 [Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

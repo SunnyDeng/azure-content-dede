@@ -1,6 +1,6 @@
 <properties
- pageTitle="Schreiben von Daten in Power BI aus Apache Storm"
- description="Ein Beispiel zum Schreiben von Daten in Power BI aus einer C#-Topologie auf einem Apache-Storm-Cluster in HDInsight. Nach dem Schreiben der Daten erfahren Sie, wie Sie einen Bericht und ein Echtzeit-Dashboard mit Power BI erstellen."
+ pageTitle="Schreiben von Daten in Power BI aus Apache Storm | Microsoft Azure"
+ description="Schreiben Sie Daten in Power BI aus einer C#-Topologie auf einem Apache-Storm-Cluster in HDInsight. Erstellen Sie außerdem Berichte und Echtzeit-Dashboards in Power BI."
  services="hdinsight"
  documentationCenter=""
  authors="Blackmist"
@@ -16,7 +16,7 @@
  ms.date="04/28/2015"
  ms.author="larryfr"/>
 
-# Verwenden Sie zur Visualisierung von Daten aus einer Storm-Topologie Power Bi (Vorschau)
+# Verwenden von Power BI (Preview) zur Visualisierung von Daten aus einer Apache Storm-Topologie
 
 Mit der Power BI-Vorschau können Sie Daten visuell als Berichte oder Dashboards anzeigen. Mithilfe der Power BI-REST-API können Sie problemlos Daten aus einer Topologie unter Apache Storm-Cluster in HDInsight auf Power BI verwenden.
 
@@ -24,7 +24,7 @@ In diesem Dokument erfahren Sie, wie Sie mit Power BI aus Daten, die von einer S
 
 ## Voraussetzungen
 
-* Ein Microsoft Azure-Abonnement
+- Ein Azure-Abonnement. Siehe [How to get Azure Free trial for testing Hadoop in HDInsight](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/) (in englischer Sprache).
 
 * Einen Azure Active Directory-Benutzer mit [Power BI](https://powerbi.com)-Zugriff
 
@@ -54,15 +54,15 @@ Die folgenden Dateien in diesem Projekt implementieren die spezifische Power BI-
 
 ## Registrieren einer Power BI-Anwendung
 
-1. Führen Sie die Schritte im [Power BI-Schnellstart](https://msdn.microsoft.com/en-US/library/dn931989.aspx) durch, um sich bei Power BI anzumelden.
+1. Führen Sie die Schritte im [Power BI-Schnellstart](https://msdn.microsoft.com/de-de/library/dn931989.aspx) durch, um sich bei Power BI anzumelden.
 
-2. Führen Sie die Schritte in [Registrieren einer Anwendung](https://msdn.microsoft.com/en-US/library/dn877542.aspx) durch, um eine Anwendungsregistrierung zu erstellen. Diese wird beim Zugriff auf die Power BI-REST-API benötigt.
+2. Führen Sie die Schritte in [Registrieren einer Anwendung](https://msdn.microsoft.com/de-de/library/dn877542.aspx) durch, um eine Anwendungsregistrierung zu erstellen. Diese wird beim Zugriff auf die Power BI-REST-API benötigt.
 
     > [AZURE.IMPORTANT]Speichern Sie die **Client-ID** für die Anwendungsregistrierung.
 
 ## Das Beispiel herunterladen
 
-Herunterladen des [HDInsight c# Storm Power BI-Beispiels](https://github.com/Blackmist/hdinsight-csharp-storm-powerbi). Zum Herunterladen verzweigen/klonen Sie es entweder mit [Git](http://git-scm.com/) oder verwenden Sie den **Download**-Link zum Herunterladen einer ZIP-Datei aus dem Archiv.
+Herunterladen des [HDInsight C# Storm Power BI-Beispiels](https://github.com/Blackmist/hdinsight-csharp-storm-powerbi). Zum Herunterladen verzweigen/klonen Sie es entweder mit [Git](http://git-scm.com/) oder verwenden Sie den **Download**-Link zum Herunterladen einer ZIP-Datei aus dem Archiv.
 
 ## Das Beispiel konfigurieren
 
@@ -137,6 +137,6 @@ Die Topologie wird weiterhin ausgeführt, bis Sie sie beenden oder das Storm-Clu
 In diesem Dokument haben Sie erfahren, wie Daten aus einer Storm-Topologie an Power BI mithilfe von REST gesendet werden. Informationen zum Arbeiten mit anderen Azure-Technologien finden Sie hier:
 
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
-
-<!--HONumber=52-->
  
+
+<!---HONumber=62-->

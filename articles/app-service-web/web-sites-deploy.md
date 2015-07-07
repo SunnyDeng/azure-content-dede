@@ -67,12 +67,12 @@ Mithilfe von Azure werden die für die Bereitstellung durchzuführenden Website-
 * [FTP-Skripte](#ftp2)
 * [Windows PowerShell](#powershell)
 * [.NET-Verwaltungs-API](#api)
-* [Azure-Befehlszeilen-Schnittstelle (Azure-CLI)](#cli)
+* [Installieren der Azure-Befehlszeilenschnittstelle (Azure-CLI)](#cli)
 * [Web Deploy-Befehlszeile](#webdeploy)
  
-###<a name="octopus"></a>Krake bereitstellen.
+###<a name="octopus"></a>Octopus Deploy
 
-[Krake bereitstellen](http://en.wikipedia.org/wiki/Octopus_Deploy) App Service-Webanwendungen verwendet werden können. Weitere Informationen finden Sie unter [Bereitstellen von ASP.NET-Anwendungen in Azure-Websites](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites).
+[Octopus Deploy](http://en.wikipedia.org/wiki/Octopus_Deploy) kann mit App Service-Web-Apps verwendet werden. Weitere Informationen finden Sie unter [Bereitstellen von ASP.NET-Anwendungen für Azure-Websites](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites).
 
 
 ##<a name="vso"></a>Visual Studio Online
@@ -164,7 +164,7 @@ Wenn Sie die [Visual Studio IDE](#vs) für die Entwicklung verwenden, können Si
 Weitere Informationen zur Befehlszeilen-Bereitstellung mithilfe von MSBuild finden Sie in den folgenden Ressourcen:
 
 * [ASP.NET-Webbereitstellung mithilfe von Visual Studio: Befehlszeilenbereitstellung](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/command-line-deployment). Der zehnte Teil in einer Lernprogrammserie, in dem die Bereitstellung in Azure mithilfe von Visual Studio erläutert wird. In diesem Lernprogramm wird gezeigt, wie die Befehlszeile für die Bereitstellung verwendet wird, nachdem Veröffentlichungsprofile in Visual Studio eingerichtet wurden.
-* [Inside the Microsoft Build Engine: Using MSBuild and Team Foundation Build (In der Microsoft Build Engine: Verwenden von MSBuild und Team Foundation Build,  in englischer Sprache)](http://msbuildbook.com/). Buch, in dem Kapitel zur Verwendung von MSBuild für die Bereitstellung enthalten sind.
+* [Inside the Microsoft Build Engine: Using MSBuild and Team Foundation Build (In der Microsoft Build Engine: Verwenden von MSBuild und Team Foundation Build, in englischer Sprache)](http://msbuildbook.com/). Buch, in dem Kapitel zur Verwendung von MSBuild für die Bereitstellung enthalten sind.
 
 ##<a name="ftp2"></a>FTP-Skripte
 
@@ -191,13 +191,13 @@ Weitere Informationen finden Sie in der folgenden Ressource:
 
 * [Automating everything with the Azure Management Libraries and .NET (Automatisierung mithilfe der Azure-Verwaltungsbibliotheken und .NET, in englischer Sprache)](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx). Einführung in die .NET-Verwaltungs-API und Links für die weiterführende Dokumentation.
 
-##<a name="cli"></a>Azure-Befehlszeilen-Schnittstelle (Azure-CLI)
+##<a name="cli"></a>Azure-Befehlszeilenschnittstelle (Azure-CLI)
 
-Die Befehlszeile können in Windows, Macintosh oder Linux-Computer mithilfe von FTP bereitstellen. Wenn Sie dies tun, können Sie auch die Azure-REST-API, die mithilfe der Azure-Befehlszeilenschnittstelle zugreifen.
+Über die Befehlszeile können Sie auf Windows-, Mac- oder Linux-Computern FTP-basierte Bereitstellungen durchführen. In diesem Fall können Sie über die Azure-Befehlszeilenschnittstelle auch auf die Azure-REST-Verwaltungs-API zugreifen.
 
 Weitere Informationen finden Sie in der folgenden Ressource:
 
-* [Befehl der Azure-Befehlszeilentools](/downloads/#cmd-line-tools). Portalseite auf Azure.com mit Informationen zu Befehlszeilentools.
+* [Azure-Befehlszeilentools](/downloads/#cmd-line-tools). Portalseite auf Azure.com mit Informationen zu Befehlszeilentools.
 
 ##<a name="webdeploy"></a>Web Deploy-Befehlszeile
 
@@ -226,4 +226,4 @@ Informationen zu weiteren Bereitstellungsthemen finden Sie in den entsprechenden
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

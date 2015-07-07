@@ -19,9 +19,9 @@
 # Einführung in die App Service-Umgebung
 
 ## Übersicht ##
-Eine App Service-Umgebung ist eine Option des [Premium][PremiumTier]-Tarifs von Azure App Service, die eine vollständig isolierte und dedizierte Umgebung zur sicheren Ausführung all Ihrer Apps bereitstellt. Dies schließt [Webanwendungen][WebApps], [Mobile Apps][MobileApps], [API-Apps][APIApps] und [Logik Apps][LogicApps] mit erweiterten Optionen zum Skalieren.
+Eine App Service-Umgebung ist eine Option des [Premium][PremiumTier]-Tarifs von Azure App Service, die eine vollständig isolierte und dedizierte Umgebung zur sicheren Ausführung all Ihrer Apps bereitstellt. Dazu gehören [Web-Apps][WebApps], [mobile Apps][MobileApps], [API-Apps][APIApps] und [Logik-Apps][LogicApps] mit erweiterten Skalierungsoptionen.
 
-Compute-Ressourcen für eine App Service-Umgebung werden ausschließlich zur Ausführung Ihrer Apps eingesetzt. Eine App Service-Umgebung wird immer in einem regionalen virtuellen Netzwerk erstellt. Dadurch ergeben sich für Ihre Apps neue Optionen für die Netzwerkisolation. Eine App Service-Umgebung unterstützt außerdem zusätzliche Skalierungsoptionen mit bis zu fünfzig (50)  Compute-Ressourcen, die zur Ausführung Ihrer Apps zur Verfügung stehen. Außerhalb einer App Service-Umgebung gilt ein Limit von 20 Compute-Ressourcen für das Hosten Ihrer Apps.
+Compute-Ressourcen für eine App Service-Umgebung werden ausschließlich zur Ausführung Ihrer Apps eingesetzt. Eine App Service-Umgebung wird immer in einem regionalen virtuellen Netzwerk erstellt. Dadurch ergeben sich für Ihre Apps neue Optionen für die Netzwerkisolation. Eine App Service-Umgebung unterstützt außerdem zusätzliche Skalierungsoptionen mit bis zu fünfzig (50) Compute-Ressourcen, die zur Ausführung Ihrer Apps zur Verfügung stehen. Außerhalb einer App Service-Umgebung gilt ein Limit von 20 Compute-Ressourcen für das Hosten Ihrer Apps.
 
 ## Unterstützung für virtuelle Netzwerke ##
 Eine App Service-Umgebung kann entweder in einem bereits vorhandenen oder in einem neuen regionalen virtuellen Netzwerk erstellt werden. ([Hier finden Sie weitere Informationen zu virtuellen Netzwerken.][MoreInfoOnVirtualNetworks]) Da eine App Service-Umgebung sich immer in einem regionalen virtuellen Netzwerk, genauer gesagt in einem Subnetz eines regionalen virtuellen Netzwerks befindet, können Sie die Sicherheitsfunktionen virtueller Netzwerke zum Steuern sowohl der eingehenden als auch der ausgehenden Netzwerkkommunikation nutzen.
@@ -73,4 +73,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 <!-- IMAGES -->
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

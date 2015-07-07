@@ -21,5 +21,8 @@ Der standardmäßige Inhalt der Datei *apiapp.json* sieht etwa wie im folgenden 
 		    }
 		}
 
+Beachten Sie `apiDefinition` endpoint `/swagger/docs/v1`: Bei API-App-Projekten ist die automatische [Swagger](http://swagger.io/)-Metadatengenerierung standardmäßig aktiviert, die Bereitstellung erfolgt durch das NuGet-Paket [Swashbuckle](https://www.nuget.org/packages/Swashbuckle).
+
 Im Rahmen dieses Lernprogramms können Sie die Standardwerte übernehmen. Im Abschnitt [API-App-Metadaten](#api-app-metadata) später in diesem Lernprogramm wird erläutert, wie Sie diese Metadaten anpassen.
-<!--HONumber=54-->
+
+<!---HONumber=62-->

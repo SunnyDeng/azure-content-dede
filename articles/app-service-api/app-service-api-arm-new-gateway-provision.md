@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Bereitstellen einer API-Anwendung, mit der ein neues gateway" 
-	description="Verwenden Sie eine Azure-Ressourcen-Manager-Vorlage, um eine API-Anwendung mit einer neuen Gateway und neue App Dienstplan bereitzustellen." 
+	pageTitle="Bereitstellen einer API-App mit einem neuen Gateway" 
+	description="Verwenden Sie eine Azure-Ressourcen-Manager-Vorlage zum Bereitstellen einer API-App mit einem neuen Gateway und einem neuen App Service-Plan." 
 	services="app-service\api" 
 	documentationCenter="" 
 	authors="tfitzmac" 
@@ -16,41 +16,41 @@
 	ms.date="06/02/2015" 
 	ms.author="tomfitz"/>
 
-# Bereitstellen einer API-Anwendung mit einem neuen gateway
+# Bereitstellen einer API-App mit einem neuen Gateway
 
-In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage zu erstellen, die eine Azure-API-Anwendung und ein Gateway bereitstellt. Erfahren Sie, wie um zu definieren, welche Ressourcen bereitgestellt werden und wie Sie Parameter definieren, die angegeben, wenn die Bereitstellung ausgeführt wird. Sie können diese Vorlage für Ihre eigenen Bereitstellungen verwenden oder Ihren Anforderungen anpassen.
+In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, die eine Azure API-App und ein Gateway bereitstellt. Sie erfahren, wie Sie definieren, welche Ressourcen bereitgestellt werden, und wie Sie Parameter definieren, die beim Ausführen der Bereitstellung angegeben werden. Sie können diese Vorlage für Ihre eigenen Bereitstellungen verwenden oder an Ihre Anforderungen anpassen.
 
-Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Authoring Azure Resource Manager Vorlagen](../resource-group-authoring-templates.md).
+Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
-Der vollständige Vorlage finden Sie unter [API-Anwendung mit neuen Gateway-Vorlage](https://github.com/tfitzmac/AppServiceTemplates/blob/master/new-gateway-new-plan-new-apiapp.json).
+Die vollständige Vorlage finden Sie unter [Vorlage für API-App mit neuem Gateway](https://github.com/tfitzmac/AppServiceTemplates/blob/master/new-gateway-new-plan-new-apiapp.json).
 
 ## Was Sie bereitstellen
 
-In dieser Vorlage können Sie Folgendes bereitstellen:
+In dieser Vorlage stellen Sie Folgendes bereit:
 
-- API-Anwendung
-- Neues gateway
-- neue App hosting Dienstplan
+- Eine API-App
+- Ein neues Gateway
+- Einen neuen App Service-Hostingplan
 
 ## Parameter
 
-[AZURE.INCLUDE [App-Dienst-api-bereitstellen-Parameter](../../includes/app-service-api-deploy-parameters.md)]
+[AZURE.INCLUDE [app-service-api-deploy-parameters](../../includes/app-service-api-deploy-parameters.md)]
     
 ## Variablen
 
-Diese Vorlage definiert eine Variable, die beim Bereitstellen von Ressourcen verwendet wird.
+Diese Vorlage definiert eine Variable, die beim Bereitstellen der Ressourcen verwendet wird.
 
     "variables": {
       "packageId": "Microsoft.ApiApp"
     }
     
-Der Wert wird als unten verwendet **variables('packageId')**.
+Der Wert wird nachstehend als **variables('packageId')** verwendet.
 
-## Ressourcen zum Bereitstellen
+## Bereitzustellende Ressourcen
 
-### Webhosting-plan
+### Hostingplan
 
-Den Plan für die API-app-hosting-Dienst wird erstellt.
+Erstellt den Diensthostingplan für die API-App.
 
     {
       "type": "Microsoft.Web/serverfarms",
@@ -66,11 +66,11 @@ Den Plan für die API-app-hosting-Dienst wird erstellt.
       }
     }
 
-### Web-app, die das Gateway hostet.
+### Web-App zum Hosten des Gateways
 
-Erstellt eine Webanwendung, die das Gateway hostet.
+Erstellt eine Web-App, die das Gateway hostet.
 
-Beachten Sie, dass **Art** minFreeThreads auf **Gateway** der Azure-Portal teilt mit, dass diese Webanwendung einen Gateway gehostet wird. Das Portal wird die Webanwendung aus dem Durchsuchen Web app Blade ausgeblendet. Ein Link wird zwischen der Hostanwendung und dem Gateway definiert. Der Abschnitt für die Anwendungseinstellungen enthält die erforderlichen Werte für das hosting der API-Anwendung.
+Beachten Sie, dass **kind** auf **gateway** festgelegt ist. Hierdurch wird das Azure-Portal darüber informiert, dass diese Web-App ein Gateway hostet. Das Portal blendet die Web-App auf dem Blatt zum Durchsuchen der Web-App aus. Zwischen der hostenden App und dem Gateway wird ein Link definiert. Der Abschnitt mit den App-Einstellungen enthält die erforderlichen Werte zum Hosten der API-App.
 
 
     {
@@ -119,11 +119,11 @@ Beachten Sie, dass **Art** minFreeThreads auf **Gateway** der Azure-Portal teilt
       ]
     }
 
-### Geteway
+### Gateway
 
-Das Gateway wird erstellt.
+Erstellt das Gateway.
 
-Die hostenden Webanwendung wird als Eigenschaft des Gateways definiert.
+Die hostende Web-App ist als eine Eigenschaft des Gateways definiert.
 
     {
       "type": "Microsoft.AppService/gateways",
@@ -153,11 +153,11 @@ Die hostenden Webanwendung wird als Eigenschaft des Gateways definiert.
       }
     }
 
-### Web-app, die die API-Anwendung hostet.
+### Web-App zum Hosten der API-App
 
-Erstellt eine Webanwendung, die die API-Anwendung hostet.
+Erstellt eine Web-App zum Hosten der API-App.
 
-Beachten Sie, dass **Art** minFreeThreads auf **ApiApp** der Azure-Portal teilt mit, dass diese Webanwendung einen Gateway gehostet wird. Das Portal wird die Webanwendung aus dem Durchsuchen Web app Blade ausgeblendet. Die Anwendung enthält eine Erweiterung, um das standardmäßige leere-API app-Paket installieren. Ein Link wird zwischen der API-Anwendung und der hostenden Webanwendung definiert. Der Abschnitt für die Anwendungseinstellungen enthält die erforderlichen Werte für das hosting der API-Anwendung.
+Beachten Sie, dass **kind** auf **apiApp** festgelegt ist. Hierdurch wird das Azure-Portal darüber informiert, dass diese Web-App ein Gateway hostet. Das Portal blendet die Web-App auf dem Blatt zum Durchsuchen der Web-App aus. Die App umfasst eine Erweiterung zum Installieren des leeren API-App-Standardpakets. Zwischen der API-App und der hostenden Web-App wird ein Link definiert. Der Abschnitt mit den App-Einstellungen enthält die erforderlichen Werte zum Hosten der API-App.
 
     {
       "type": "Microsoft.Web/sites",
@@ -223,11 +223,11 @@ Beachten Sie, dass **Art** minFreeThreads auf **ApiApp** der Azure-Portal teilt 
       ]
     }
 
-### API-Anwendung
+### API-App
 
-Erstellt die API-Anwendung.
+Erstellt die API-App.
 
-Beachten Sie, dass die Namen der hostenden Webanwendung und Gateway als Eigenschaften in der API-Anwendung definiert sind.
+Beachten Sie, dass die Namen der hostenden Web-App und des Gateways als Eigenschaften in der API-App definiert sind.
 
     {
       "type": "Microsoft.AppService/apiapps",
@@ -266,7 +266,7 @@ Beachten Sie, dass die Namen der hostenden Webanwendung und Gateway als Eigensch
 
 ## Befehle zum Ausführen der Bereitstellung
 
-[AZURE.INCLUDE [App-Dienst bereitstellen Befehle](../../includes/app-service-deploy-commands.md)]
+[AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
 
@@ -279,4 +279,4 @@ Beachten Sie, dass die Namen der hostenden Webanwendung und Gateway als Eigensch
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

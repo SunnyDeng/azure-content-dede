@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Richtlinienreferenz für die Azure API-Verwaltung" 
+	pageTitle="Richtlinienreferenz für die Azure API Management" 
 	description="Erfahren Sie mehr über die verfügbaren Richtlinien zum Konfigurieren von API Management." 
 	services="api-management" 
 	documentationCenter="" 
@@ -16,90 +16,91 @@
 	ms.date="06/10/2015" 
 	ms.author="sdanie"/>
 
-# Richtlinienreferenz für die Azure API-Verwaltung
+# Richtlinienreferenz für Azure API Management
 
-Dieser Abschnitt enthält einen Index für die Richtlinien in der [API Management Policy Reference][]. Weitere Informationen zum Hinzufügen und Konfigurieren von Richtlinien finden Sie unter [Richtlinien für die API-Verwaltung][].
+Dieser Abschnitt stellt einen Index der Richtlinien bereit, die in der [API Management-Richtlinienreferenz][] enthalten sind. Weitere Informationen zum Hinzufügen und Konfigurieren von Richtlinien finden Sie unter [Richtlinien in API Management][].
 
-Richtlinienausdrücken können als Attributwerten oder Text in der API Management-Richtlinien verwendet werden, die Richtlinie nicht anders angegeben. Einige Richtlinien wie z. B. die [Ablaufsteuerung][] und [Variable festlegen][] Richtlinien basieren auf Richtlinienausdrücken. Weitere Informationen finden Sie unter [Erweiterte Richtlinien][], [Richtlinieausdrücke][], und das folgende Video.
+Richtlinienausdrücke können als Attributwerte oder Textwerte in einer beliebigen API Management-Richtlinie verwendet werden, sofern in der Richtlinie nicht anders angegeben. Einige Richtlinien, beispielsweise [Ablaufsteuerung][] und [Variable festlegen][], basieren auf Richtlinienausdrücken. Weitere Informationen finden Sie unter [Erweiterte Richtlinien][], [Richtlinienausdrücke][] und im folgenden Video.
 
 > [AZURE.VIDEO policy-expressions-in-azure-api-management]
 
-## Richtlinie Referenz-index
+## Richtlinienreferenz
 
--	[Richtlinien für Softwareeinschränkung][]
-	-	[Überprüfen Sie HTTP-Header][] -setzt die Existenz bzw. den Wert eines HTTP-Headers.
-	-	[Limit Aufruf Rate][] -verhindert, dass API-Nutzung durch Aufrufe und/oder die Nutzungsrate Bandbreite einschränken schnellt.
-	-	[Schränken Aufrufer IPS-][] -Filter (ermöglicht/verweigert) Aufrufe von bestimmten IP-Adressen bzw. Adressbereiche.
-	-	[Set nutzungskontingent][] -erneuert oder Lebensdauer Aufruf Volume und/oder Bandbreite Kontingent umsetzen.
-	-	[Überprüfen von JWT][] -erzwingt ein JWT extrahiert eine angegebene HTTP-Header oder einem angegebenen Abfrageparameter als gültig und vorhanden ist.
+-	[Richtlinien für die Zugriffsbeschränkung][]
+	-	[Check HTTP header][] (HTTP-Header überprüfen) – Erfordert das Vorhandensein und/oder einen Wert eines HTTP-Headers.
+	-	[Aufruflimit][] – Begrenzt Aufrufe und/oder Bandbreitennutzung, um API-Lastspitzen zu verhindern.
+	-	[Beschränkung für Aufrufer-IP][] – Filtert (erlaubt/blockiert) Aufrufe von bestimmten IP-Adressen und/oder Adressbereichen.
+	-	[Set usage quota][] (Nutzungskontingent festlegen) – Ermöglicht die Durchsetzung eines erneuerbaren oder für die Lebensdauer gültigen Kontingents für Aufrufe und/oder Bandbreite.
+	-	[JWT überprüfen][] – Erzwingt das Vorhandensein und die Gültigkeit eines JWT, das entweder aus einem angegebenen HTTP-Header oder aus einem angegebenen Abfrageparameter extrahiert wurde.
 -	[Erweiterte Richtlinien][]
-	-	[Ablaufsteuerung][] – bedingt gilt Richtlinienanweisungen anhand der Ergebnisse der Auswertung eines booleschen [Ausdrücke][].
-	-	[Variable festlegen][] -beibehalten ein Werts in einem benannten [Kontext][] Variable zugreifen.
+	-	[Ablaufsteuerung][] – Bedingte Anwendung von Richtlinienanweisungen basierend auf den Ergebnissen der Auswertung von booleschen [Ausdrücken][].
+	-	[Set variable][] (Variable festlegen) – Speichert einen Wert in einer benannten [Kontextvariable][], um später darauf zugreifen zu können.
 -	[Authentifizierungsrichtlinien][]
-	-	[Authentifizieren mit Basic][] -Authentifizierung mit einem Back-End-Dienst unter Verwendung der Standardauthentifizierung.
-	-	[Authentifizieren mit Clientzertifikat][] -Authentifizierung mit einem Back-End-Dienst mit Clientzertifikaten.
--	[Richtlinien für die Zwischenspeicherung][] 
+	-	[Standardauthentifizierung][] – Authentifizierung mit einem Back-End-Dienst unter Verwendung der Standardauthentifizierung.
+	-	[Authentifizierung mit Clientzertifikat][] – Authentifizierung mit einem Back-End-Dienst unter Verwendung von Clientzertifikaten.
+-	[Cachingrichtlinien][] 
 	-	[Aus Cache abrufen][] - Führt eine Cachesuche aus und gibt ggf. eine gültige Antwort aus dem Cache zurück.
-	-	[Store zwischenzuspeicherndes][] -Antwort entsprechend der Konfiguration der angegebenen Cache zwischengespeichert.
--	[Plattformübergreifende Domänenrichtlinien][] 
+	-	[In Cache ablegen][] – Cacheantwort gemäß der angegebenen Konfiguration für die Cachesteuerung.
+-	[Domänenübergreifende Richtlinien][] 
 	-	[Domänenübergreifende Aufrufe zulassen][] - Erlaubt API-Aufrufe aus browserbasierten Clients, die Adobe Flash und Microsoft Silverlight verwenden.
-	-	[CORS][] - Fügt Unterstützung für Cross-Origin Resource Sharing (CORS) zu einer Operation oder einer API hinzu, um domänenübergreifende Aufrufe aus browserbasierten Clients zu ermöglichen.
-	-	[JSONP][] - Fügt Unterstützung für JSON mit Padding (JSONP) zu einer Operation oder einer API hinzu, um domänenübergreifende Aufrufe aus browserbasierten Clients mit JavaScript zu ermöglichen.
--	[Transformation für Richtlinien][] 
-	-	[Konvertieren von JSON und XML][] – konvertiert anfordern oder Antworttext von JSON in XML.
-	-	[Konvertiert XML, JSON][] – konvertiert anfordern oder Antworttext aus XML, JSON.
-	-	[Suchen und Ersetzen Sie die Zeichenfolge im Nachrichtentext][] – sucht nach einer Anforderung oder Antwort Teilzeichenfolge und durch eine andere Teilzeichenfolge ersetzt.
-	-	[Maske URLs im Inhalt][] -schreibt (Masken) im Antworttext und im Location-Header verknüpft werden, so dass sie auf den entsprechenden Link über den Proxy verweisen.
-	-	[Back-End-Dienst][] -ändert den Back-End-Dienst für eine eingehende Anforderung.
-	-	[Nachrichtenkörper festlegen,][] -legt den Nachrichtentext für eingehende und ausgehende Anforderungen.
-	-	[HTTP-Header setzen][] - Weist einem vorhandenen Antwort- und/oder Anforderungsheader einen Wert zu oder fügt einen neuen Antwort- und/oder Anforderungsheader hinzu.
-	-	[Abfrageparameter setzen][] - Fügt Abfrageparameter hinzu, löscht diese oder ersetzt deren Werte.
-	-	[URL rewrite][] -Anforderungs-URL aus seiner öffentlichen Form konvertiert, an das Formular vom Webdienst erwartet.
+	-	[CORS][] – Fügt Unterstützung für Cross-Origin Resource Sharing (CORS) zu einer Operation oder einer API hinzu, um domänenübergreifende Aufrufe aus browserbasierten Clients zu ermöglichen.
+	-	[JSONP][] – Fügt Unterstützung für JSON mit Padding (JSONP) zu einer Operation oder einer API hinzu, um domänenübergreifende Aufrufe aus browserbasierten Clients mit JavaScript zu ermöglichen.
+-	[Transformationsrichtlinien][] 
+	-	[JSON in XML konvertieren][] – Konvertiert den Anforderungs- oder Antworttext von JSON in XML.
+	-	[XML in JSON konvertieren][] – Konvertiert den Anforderungs- oder Antworttext von XML in JSON.
+	-	[Zeichenfolge in Text ersetzen][] – Sucht nach einer Zeichenfolge in Antwort oder Anforderung und ersetzt diese durch eine andere Teilzeichenfolge.
+	-	[URLs in Inhalt maskieren][] – Schreibt Links im Antworttext und im Standortheader um (maskiert), sodass diese über den Proxy auf den äquivalenten Link zeigen.
+	-	[Back-End-Dienst festlegen][] – Ändert den Back-End-Dienst für eine eingehende Anforderung.
+	-	[Text festlegen][] – Legt den Nachrichtentext für eingehende und ausgehende Anforderungen fest.
+	-	[HTTP-Header setzen][] – Weist einem vorhandenen Antwort- und/oder Anforderungsheader einen Wert zu oder fügt einen neuen Antwort- und/oder Anforderungsheader hinzu.
+	-	[Abfrageparameter setzen][] – Fügt Abfrageparameter hinzu, löscht diese oder ersetzt deren Werte.
+	-	[URL umschreiben][] – Konvertiert eine Anforderung-URL von der öffentlichen Form in die vom Webdienst erwartete Form.
 
 
-[Richtlinien für Softwareeinschränkung]: https://msdn.microsoft.com/library/azure/dn894078.aspx
-[Überprüfen Sie HTTP-Header]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#CheckHTTPHeader
-[Limit Aufruf Rate]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#LimitCallRate
-[Schränken Aufrufer IPS-]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#RestrictCallerIPs
-[Set nutzungskontingent]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#SetUsageQuota
-[Überprüfen von JWT]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#ValidateJWT
+[Richtlinien für die Zugriffsbeschränkung]: https://msdn.microsoft.com/library/azure/dn894078.aspx
+[Check HTTP header]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#CheckHTTPHeader
+[Aufruflimit]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#LimitCallRate
+[Beschränkung für Aufrufer-IP]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#RestrictCallerIPs
+[Set usage quota]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#SetUsageQuota
+[JWT überprüfen]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#ValidateJWT
 
 [Erweiterte Richtlinien]: https://msdn.microsoft.com/library/azure/dn894085.aspx
 [Ablaufsteuerung]: https://msdn.microsoft.com/library/azure/dn894085.aspx#choose
+[Set variable]: https://msdn.microsoft.com/library/azure/dn894085.aspx#set_variable
 [Variable festlegen]: https://msdn.microsoft.com/library/azure/dn894085.aspx#set_variable
-[Ausdrücke]: https://msdn.microsoft.com/library/azure/dn910913.aspx
-[Kontext]: https://msdn.microsoft.com/library/azure/ea160028-fc04-4782-aa26-4b8329df3448#ContextVariables
+[Ausdrücken]: https://msdn.microsoft.com/library/azure/dn910913.aspx
+[Kontextvariable]: https://msdn.microsoft.com/library/azure/ea160028-fc04-4782-aa26-4b8329df3448#ContextVariables
 
 [Authentifizierungsrichtlinien]: https://msdn.microsoft.com/library/azure/dn894079.aspx
-[Authentifizieren mit Basic]: https://msdn.microsoft.com/library/azure/061702a7-3a78-472b-a54a-f3b1e332490d#Basic
-[Authentifizieren mit Clientzertifikat]: https://msdn.microsoft.com/library/azure/061702a7-3a78-472b-a54a-f3b1e332490d#ClientCertificate
-[Richtlinien für die Zwischenspeicherung]: https://msdn.microsoft.com/library/azure/dn894086.aspx
+[Standardauthentifizierung]: https://msdn.microsoft.com/library/azure/061702a7-3a78-472b-a54a-f3b1e332490d#Basic
+[Authentifizierung mit Clientzertifikat]: https://msdn.microsoft.com/library/azure/061702a7-3a78-472b-a54a-f3b1e332490d#ClientCertificate
+[Cachingrichtlinien]: https://msdn.microsoft.com/library/azure/dn894086.aspx
 [Aus Cache abrufen]: https://msdn.microsoft.com/library/azure/8147199c-24d8-439f-b2a9-da28a70a890c#GetFromCache
-[Store zwischenzuspeicherndes]: https://msdn.microsoft.com/library/azure/8147199c-24d8-439f-b2a9-da28a70a890c#StoreToCache
+[In Cache ablegen]: https://msdn.microsoft.com/library/azure/8147199c-24d8-439f-b2a9-da28a70a890c#StoreToCache
 
-[Plattformübergreifende Domänenrichtlinien]: https://msdn.microsoft.com/library/azure/dn894084.aspx
+[Domänenübergreifende Richtlinien]: https://msdn.microsoft.com/library/azure/dn894084.aspx
 [Domänenübergreifende Aufrufe zulassen]: https://msdn.microsoft.com/library/azure/7689d277-8abe-472a-a78c-e6d4bd43455d#AllowCrossDomainCalls
 [CORS]: https://msdn.microsoft.com/library/azure/7689d277-8abe-472a-a78c-e6d4bd43455d#CORS
 [JSONP]: https://msdn.microsoft.com/library/azure/7689d277-8abe-472a-a78c-e6d4bd43455d#JSONP
 
-[Transformation für Richtlinien]: https://msdn.microsoft.com/library/azure/dn894083.aspx
-[Konvertieren von JSON und XML]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#ConvertJSONtoXML
-[Konvertiert XML, JSON]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#ConvertXMLtoJSON
-[Suchen und Ersetzen Sie die Zeichenfolge im Nachrichtentext]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#Findandreplacestringinbody
-[Maske URLs im Inhalt]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#MaskURLSContent
-[Back-End-Dienst]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#SetBackendService
-[Nachrichtenkörper festlegen,]: https://msdn.microsoft.com/library/azure/dn894083.aspx#SetBody
+[Transformationsrichtlinien]: https://msdn.microsoft.com/library/azure/dn894083.aspx
+[JSON in XML konvertieren]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#ConvertJSONtoXML
+[XML in JSON konvertieren]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#ConvertXMLtoJSON
+[Zeichenfolge in Text ersetzen]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#Findandreplacestringinbody
+[URLs in Inhalt maskieren]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#MaskURLSContent
+[Back-End-Dienst festlegen]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#SetBackendService
+[Text festlegen]: https://msdn.microsoft.com/library/azure/dn894083.aspx#SetBody
 [HTTP-Header setzen]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#SetHTTPheader
 [Abfrageparameter setzen]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#SetQueryStringParameter
-[URL rewrite]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#RewriteURL
+[URL umschreiben]: https://msdn.microsoft.com/library/azure/7406a8ce-5f9c-4fae-9b0f-e574befb2ee9#RewriteURL
 
 
 
-[Richtlinien für die API-Verwaltung]: api-management-howto-policies.md
-[API Management policy reference]: https://msdn.microsoft.com/library/azure/dn894081.aspx
+[Richtlinien in API Management]: api-management-howto-policies.md
+[API Management-Richtlinienreferenz]: https://msdn.microsoft.com/library/azure/dn894081.aspx
 
-[Richtlinieausdrücke]: https://msdn.microsoft.com/library/azure/dn910913.aspx
+[Richtlinienausdrücke]: https://msdn.microsoft.com/library/azure/dn910913.aspx
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

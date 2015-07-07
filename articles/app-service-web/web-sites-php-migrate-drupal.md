@@ -21,17 +21,17 @@
 
 Da Azure App Service sowohl PHP als auch MySQL unterstützt, ist es relativ unkompliziert, eine Drupal-Website in Azure App Service-Web-Apps zu migrieren. Und da Drupal sowie PHP auf jeder Plattform ausgeführt werden können, sollte das Verschieben von Drupal in Azure App Service-Web-Apps unabhängig von der aktuellen Plattform funktionieren. Da die Drupal-Installationen jedoch sehr unterschiedlich sein können, gibt es möglicherweise einige spezielle Migrationsschritte, die im Folgenden nicht behandelt werden. Beachten Sie, dass das Tool Drush nicht verwendet wird, da es in Azure App Service nicht unterstützt wird.
 
-Wenn Sie eine umfangreiche und komplexe Drupal-Anwendung verschieben, können Sie auch in Erwägung ziehen, Azure-Cloud-Dienste zu verwenden. Weitere Informationen zu den Unterschieden zwischen App-Dienst und Cloud-Dienste finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=310123">Azure App Service, Cloud-Dienste und VMs: bei einem so?</a>. Hilfe zum Verschieben von Drupal nach Clouddienste, finden Sie unter <a href="http://blogs.msdn.com/b/brian_swan/archive/2012/03/19/azure-real-world-migrating-drupal-from-lamp-to-windows-azure.aspx">Migrieren von Drupal-Website von LAMP in Azure</a>.
+Wenn Sie eine umfangreiche und komplexe Drupal-Anwendung verschieben, können Sie auch in Erwägung ziehen, Azure-Cloud-Dienste zu verwenden. Weitere Informationen zu den Unterschieden zwischen App Service und Cloud Services finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=310123">Azure App Service, Cloud Services und Virtual Machines im Vergleich</a>. Hilfe beim Migrieren von Drupal zu Cloud Services finden Sie unter <a href="http://blogs.msdn.com/b/brian_swan/archive/2012/03/19/azure-real-world-migrating-drupal-from-lamp-to-windows-azure.aspx">Migrating a Drupal Site from LAMP to Azure</a> (Migrieren eines Drupal-Standorts von LAMP zu Azure; in englischer Sprache).
  
-## Erstellen einer Web-App und MySQL-Datenbank
+## Erstellen einer Web-App und einer MySQL-Datenbank
 
-Wählen Sie zunächst anhand des Lernprogramms detaillierte Informationen zum Erstellen einer neuen Webanwendung mit MySQL: [eine PHP-MySQL-Webanwendung in Azure-App-Dienst erstellen und Bereitstellen über Git][]. Wenn Sie beabsichtigen, Git zum Veröffentlichen der Drupal-Website zu verwenden, führen Sie die Schritte im Lernprogramm aus, in denen erläutert wird, wie ein Git-Repository konfiguriert wird. Befolgen Sie die Anweisungen im Abschnitt **Get remote MySQL connection information** (Abrufen von MySQL-Remoteverbindungsinformationen), da Sie diese Informationen später benötigen. Für die Bereitstellung Ihrer Drupal-Website können Sie den Rest des Lernprogramm ignorieren. Wenn Sie jedoch noch keine Erfahrung mit Azure App Service (und Git) haben, sind die zusätzlichen Informationen für Sie möglicherweise hilfreich.
+Machen Sie sich zunächst anhand des folgenden Lernprogramms mit der Erstellung einer neuen Web-App mit MySQL vertraut: [Erstellen einer PHP-MySQL-Web-App in Azure App Service und Bereitstellen über Git][]. Wenn Sie beabsichtigen, Git zum Veröffentlichen der Drupal-Website zu verwenden, führen Sie die Schritte im Lernprogramm aus, in denen erläutert wird, wie ein Git-Repository konfiguriert wird. Befolgen Sie die Anweisungen im Abschnitt **Get remote MySQL connection information** (Abrufen von MySQL-Remoteverbindungsinformationen), da Sie diese Informationen später benötigen. Für die Bereitstellung Ihrer Drupal-Website können Sie den Rest des Lernprogramm ignorieren. Wenn Sie jedoch noch keine Erfahrung mit Azure App Service (und Git) haben, sind die zusätzlichen Informationen für Sie möglicherweise hilfreich.
 
 Nach dem Einrichten einer neuen Web-App mit einer MySQL-Datenbank verfügen Sie nun über Ihre MySQL-Datenbankverbindungsinformationen und ein (optionales) Git-Repository. Im nächsten Schritt kopieren Sie die Datenbank in die MySQL-Datenbank der Web-App.
 
 ## Kopieren der Datenbank in die MySQL-Datenbank der Web-App
 
-Es gibt viele Möglichkeiten, eine Datenbank zu Azure zu migrieren. Eine Möglichkeit, eignet sich gut für MySQL-Datenbanken ist die Verwendung der [MySqlDump][] Tool. Der folgende Befehl ist ein Beispiel für das Kopieren von einem lokalen Computer nach Azure:
+Es gibt viele Möglichkeiten, eine Datenbank zu Azure zu migrieren. Ein Verfahren, das sich sehr gut für MySQL-Datenbanken eignet ist das Tool [MySqlDump][]. Der folgende Befehl ist ein Beispiel für das Kopieren von einem lokalen Computer nach Azure:
 
     mysqldump -u local_username --password=local_password  drupal | mysql -h remote_host -u remote_username --password=remote_password remote_db_name
 
@@ -69,7 +69,7 @@ Speichern Sie die Datei **settings.php**. Jetzt können Sie den Code bereitstell
 
 Im letzten Schritt stellen Sie den Code mithilfe von Git oder FTP in der Web-App bereit.
 
-Wenn Sie FTP verwenden, Abrufen der FTP-Hostname und Benutzername von Sie web-app Blade in der [Azure-vorschauportal](https://portal.azure.com). Verwenden Sie anschließend einen beliebigen FTP-Client, um die Drupal-Dateien zum **/site/wwwroot** der Remote-Website hochzuladen.
+Wenn Sie FTP verwenden, ermitteln Sie im [Azure-Vorschauportal](https://portal.azure.com) auf dem Blatt Ihrer Web-App den FTP-Hostnamen und den Benutzernamen. Verwenden Sie anschließend einen beliebigen FTP-Client, um die Drupal-Dateien zum **/site/wwwroot** der Remote-Website hochzuladen.
 
 Wenn Sie Git verwenden, müssen Sie in den vorherigen Schritten ein Git-Repository eingerichtet haben. Sie müssen Git auf dem lokalen Computer installieren. Folgen Sie anschließend den Anweisungen, die Sie nach Erstellen des Repositorys erhalten haben.
 
@@ -81,9 +81,9 @@ Nach der Bereitstellung von Drupal in Web-Apps können Sie weitere Updates über
 
 Weitere Informationen finden Sie in den folgenden Beiträgen und Themen:
 
-- [Azure-App-Dienst-Web-Apps, eine PHP-Perspektive][]
-- [Azure-App-Service, Cloud-Dienste und virtuelle Computer: wann welche verwenden?][]
-- [Konfigurieren von PHP in Azure Anwendungsdiensts Webanwendungen mit. user.ini-Dateien][]
+- [Azure App Service Web Apps, a PHP Perspective][] (Azure App Service-Web-Apps – eine PHP-Perspektive; in englischer Sprache)
+- [Azure App Service, Cloud Services und Virtual Machines im Vergleich][]
+- [Configuring PHP in Azure App Service Web Apps with .user.ini Files][] (Konfigurieren von PHP in Azure App Service-Web-Apps mit Dateien vom Typ „.user.ini“; in englischer Sprache)
 - [Azure-Integrationsmodul](https://drupal.org/project/azure_auth)
 - [Azure-Blob-Speicher-Modul](https://drupal.org/project/azure_blob)
 
@@ -93,12 +93,12 @@ Weitere Informationen finden Sie in den folgenden Beiträgen und Themen:
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des Portals gegenüber dem Vorschauportal finden Sie unter [Referenz zur Navigation im Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
-  [eine PHP-MySQL-Webanwendung in Azure-App-Dienst erstellen und Bereitstellen über Git]: /develop/php/tutorials/website-w-mysql-and-git/
+  [Erstellen einer PHP-MySQL-Web-App in Azure App Service und Bereitstellen über Git]: /develop/php/tutorials/website-w-mysql-and-git/
   
-  [Azure-App-Dienst-Web-Apps, eine PHP-Perspektive]: http://blogs.msdn.com/b/silverlining/archive/2012/06/12/windows-azure-websites-a-php-perspective.aspx
-  [Azure-App-Service, Cloud-Dienste und virtuelle Computer: wann welche verwenden?]: http://go.microsoft.com/fwlink/?LinkId=310123
-  [Konfigurieren von PHP in Azure Anwendungsdiensts Webanwendungen mit. user.ini-Dateien]: http://blogs.msdn.com/b/silverlining/archive/2012/07/10/configuring-php-in-windows-azure-websites-with-user-ini-files.aspx
+  [Azure App Service Web Apps, a PHP Perspective]: http://blogs.msdn.com/b/silverlining/archive/2012/06/12/windows-azure-websites-a-php-perspective.aspx
+  [Azure App Service, Cloud Services und Virtual Machines im Vergleich]: http://go.microsoft.com/fwlink/?LinkId=310123
+  [Configuring PHP in Azure App Service Web Apps with .user.ini Files]: http://blogs.msdn.com/b/silverlining/archive/2012/07/10/configuring-php-in-windows-azure-websites-with-user-ini-files.aspx
   [Azure Integration Module]: http://drupal.org/project/azure
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

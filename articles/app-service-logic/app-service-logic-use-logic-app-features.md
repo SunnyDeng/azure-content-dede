@@ -89,7 +89,7 @@ Der folgende Code aktualisiert die vorhandene Logik-App so, dass Parameter für 
 		    "defaultValue" : "MicrosoftAzure"
 	    }
     
-2. Führen Sie einen Bildlauf zur `twitterconnector`-Aktion durch, suchen Sie den Abfragewert, und ersetzen Sie ihn durch `#@{parameters('topic')}`. Außerdem können Sie die **Concat** Funktion zusammengefügt von zwei oder mehr Zeichenfolgen, z. B.: `@concat('#',parameters('topic'))` ist identisch mit den oben genannten.
+2. Führen Sie einen Bildlauf zur `twitterconnector`-Aktion durch, suchen Sie den Abfragewert, und ersetzen Sie ihn durch `#@{parameters('topic')}`. Außerdem können Sie die **Concat**-Funktion verwenden, um zwei oder mehr Zeichenfolgen zu verknüpfen, z. B. ist `@concat('#',parameters('topic'))` identisch mit der oben genannten.
  
 3. Wechseln Sie abschließend zur Aktion `dropboxconnector`, und fügen Sie den "Topic"-Parameter wie folgt hinzu:
 
@@ -99,7 +99,7 @@ Parameter sind eine gute Möglichkeit, Werte auszuwählen, die Sie wahrscheinlic
 
 Wenn Sie nun auf **Speichern** klicken, werden Ihnen stündlich alle neuen Tweets mit mehr als 5 Retweets in einen Ordner namens **Tweets** in Ihrer Dropbox übermittelt.
 
-Weitere Informationen zu Logik App Definitionen finden Sie unter [Logik App-Definitionen erstellen](app-service-logic-author-definitions.md).
+Mehr Informationen zu Logik-App-Definitionen finden Sie unter [Logik-App-Definitionen erstellen](app-service-logic-author-definitions.md).
 
 ## Starten des Workflows einer Logik-App
 Es gibt mehrere Möglichkeiten zum Starten des Workflows, der in der Logik-App definiert ist. Ein Workflow kann bei Bedarf stets im [Azure-Portal] gestartet werden.
@@ -133,4 +133,4 @@ Um eine Logik-App bei Bedarf zu starten, klicken Sie auf der Befehlsleiste auf d
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [Azure-Portal]: https://portal.azure.com
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

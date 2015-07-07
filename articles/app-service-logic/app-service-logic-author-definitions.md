@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Autor Logik App-Definitionen" 
-	description="Erfahren Sie, wie die JSON-Definition für Logik apps schreiben." 
+	pageTitle="Erstellen von Logik-App-Definitionen" 
+	description="Erfahren Sie, wie die JSON-Definition für Logik-Apps geschrieben wird." 
 	authors="stepsic-microsoft-com" 
 	manager="dwrede" 
 	editor="" 
@@ -16,22 +16,22 @@
 	ms.date="05/23/2015"
 	ms.author="stepsic"/>
 	
-#Autor Logik App-Definitionen
-In diesem Thema veranschaulicht, wie [App Services Logik Apps](app-service-logic-what-are-logic-apps.md) Definitionen, die eine einfache, deklarative JSON-Sprache ist. Wenn dies noch nicht geschehen, sollten Sie sich [zum Erstellen einer neuen Logik app](../app-service-create-a-logic-app.md) ersten. Sie können auch Lesen der [vollständige Referenzmaterial, das von der Definitionssprache auf MSDN](https://msdn.microsoft.com/library/azure/dn948512.aspx).
+#Erstellen von Logik-App-Definitionen
+In diesem Thema wird die Verwendung von Definitionen für [App Service-Logik-Apps](app-service-logic-what-are-logic-apps.md) erläutert. Diese sind in einer einfachen, deklarativen JSON-Sprache verfasst. Machen Sie sich zunächst [mit dem Erstellen neuer Logik-Apps](../app-service-create-a-logic-app.md) vertraut, falls Sie dies noch nicht getan haben. Sie können auch [das umfassende MSDN-Referenzmaterial zur Definitionssprache](https://msdn.microsoft.com/library/azure/dn948512.aspx) lesen.
 
-## Mehrere Schritte, die über eine Liste wiederholen
+## Wiederholt ausgeführte Schritte in einer Liste
 
-Ein gängiges Muster besteht darin, einen Schritt, der eine Liste der Elemente abruft, und haben Sie eine Reihe von zwei oder mehr Aktionen, die in der Liste angezeigt werden soll.
+Häufig wird mit einem Schritt eine Liste mit Elementen abgerufen. Darüber hinaus gibt es noch zwei oder mehr Aktionen, die Sie für die Liste ausführen sollten.
 
-![Wiederholen Sie über Listen](./media/app-service-logic-author-definitions/repeatoverlists.png)
+![Wiederholen über Listen](./media/app-service-logic-author-definitions/repeatoverlists.png)
 
-In diesem Beispiel sind 3 Aktionen:
+Dieses Beispiel umfasst drei Aktionen:
 
-1. Enthält eine Liste von Artikeln. Dies gibt wieder ein Objekt, das ein Array enthält.
+1. Eine Aktion, mit der eine Liste von Artikeln abgerufen wird. Damit wird ein Objekt zurückgegeben, das ein Array enthält.
 
-2. Eine Aktion, die auf eine Linkeigenschaft für jeden Artikel geht die wieder den tatsächlichen Speicherort des Artikels zurückgibt.
+2. Eine Aktion, die zu einer Linkeigenschaft für die einzelnen Artikel wechselt, die den tatsächlichen Speicherort des Artikels zurückgibt.
 
-3. Eine Aktion, die eine Iteration über alle Ergebnisse aus der zweiten Aktion die eigentlichen Artikel herunterladen.
+3. Eine Aktion, die alle Ergebnisse der zweiten Aktion per Iteration durchläuft, um die eigentlichen Artikel herunterzuladen.
 
 ```
 {
@@ -73,13 +73,13 @@ In diesem Beispiel sind 3 Aktionen:
 }
 ```
 
-Wie unter [Logik app Funktionen](app-service-logic-use-logic-app-features.md), Sie mit der ersten Liste durchlaufen die `repeat:` Eigenschaft für die zweite Aktion. Für die dritte Aktion, Sie müssen jedoch wählen die `@actions('readLinks').outputs.repeatItems` -Eigenschaft, da die zweite für jeden Artikel ausgeführt.
+Wie unter [Verwenden von Logik-App-Features](app-service-logic-use-logic-app-features.md) beschrieben, führen Sie eine Iteration für die erste Liste durch, indem Sie die `repeat:`-Eigenschaft für die zweite Aktion verwenden. Für die dritte Aktion müssen Sie jedoch die `@actions('readLinks').outputs.repeatItems`-Eigenschaft auswählen, da die zweite Aktion für jeden Artikel ausgeführt wurde.
 
-Innerhalb der Aktion verwenden Sie entweder den: [`repeatItem()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#repeatItem), der [`repeatOutputs()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#repeatOutputs) oder [`repeatBody()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#repeatBody) Funktionen. In diesem Beispiel, ich möchte die `location` Header, so dass ich verwendet die [`repeatOutputs()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#repeatOutputs) Funktion, um die Ausgaben der Ausführung der Aktion aus der zweiten Aktion abzurufen, die wir jetzt durchlaufen werden.
+In der Aktion können Sie wahlweise die [`repeatItem()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#repeatItem)-, [`repeatOutputs()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#repeatOutputs)- oder [`repeatBody()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#repeatBody)-Funktion verwenden. In diesem Fall wollte ich den `location`-Header abrufen, also habe ich die [`repeatOutputs()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#repeatOutputs)-Funktion verwendet, um die Ausgaben der Aktionsausführung der zweiten Aktion abzurufen, über die nun eine Iteration ausgeführt wird.
 
-## Zuordnen von Elementen in einer Liste zu einige andere Konfiguration
+## Zuordnen von Elementen in einer Liste zu einer anderen Konfiguration
 
-Als Nächstes nehmen wir an, dass völlig unterschiedliche Inhalte abhängig von einem Wert einer Eigenschaft abgerufen werden soll. Wir können eine Zuordnung von Werten an Ziele als Parameter erstellen.
+Nehmen wir als Nächstes an, dass abhängig vom Wert einer Eigenschaft völlig unterschiedliche Inhalte abgerufen werden sollen. Wir können eine Zuordnung von Werten zu Zielen als Parameter erstellen.
 
 ```
 {
@@ -134,15 +134,15 @@ Als Nächstes nehmen wir an, dass völlig unterschiedliche Inhalte abhängig von
 }
 ```
 
-In diesem Fall wir zunächst eine Liste von Artikeln erhalten und dann im zweite Schritt sucht in einer Zuordnung, basierend auf der Kategorie, die als Parameter, welche URL zum Abrufen des Inhalts aus definiert wurde.
+In diesem Fall rufen wir zunächst eine Liste von Artikeln ab. Im zweiten Schritt wird dann in einer Zuordnung abgefragt, von welcher URL der Inhalt abgerufen werden soll, und zwar basierend auf der Kategorie, die als Parameter definiert wurde.
 
-Zwei Elemente hier achten: die [`intersection()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#intersection) Funktion wird verwendet, um zu überprüfen, um festzustellen, ob die Kategorie einer bekannten definierten Kategorien entspricht. Zweitens, nachdem wir die Kategorie abrufen, können, rufen wir das Element von der Karte mithilfe von eckigen Klammern: `parameters[...]`.
+Hierbei sollten Sie auf zwei Dinge achten: Erstens dient die [`intersection()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#intersection)-Funktion dazu, zu überprüfen, ob die Kategorie mit einer der bekannten definierten Kategorien übereinstimmt. Zweitens können wir, sobald wir die Kategorie haben, das Element mithilfe eckiger Klammern aus der Zuordnung abrufen: `parameters[...]`.
 
-## Kette/verschachteln Logik Apps während einer wiederholten
+## Verketten/Verschachteln von Logik-Apps während der Iteration über eine Liste
 
-Es kann häufig einfacher sein, Ihre Apps Logik zu verwalten, wenn sie diskreter sind. Dazu können Sie die Logik in mehrere Definitionen Finanzierung und Ihren Aufruf aus derselben übergeordneten Definition. In diesem Beispiel werden eine übergeordnete-Logik-app, die Aufträge empfängt, und eine untergeordnete Logik-app, die einige Schritte für jeden Auftrag ausgeführt wird.
+Häufig lassen sich Logik-Apps leichter verwalten, wenn sie stärker voneinander abgegrenzt sind. Dies erreichen Sie, indem Sie Ihre Logik in mehrere Definitionen einbeziehen und diese aus derselben übergeordneten Definition aufrufen. In diesem Beispiel gibt es eine übergeordnete Logik-App, die Aufträge empfängt, und eine untergeordnete Logik-App, die einige Schritte für die einzelnen Aufträge ausführt.
 
-In der übergeordneten Logik app:
+Übergeordnete Logik-App:
 
 ```
 {
@@ -201,7 +201,7 @@ In der übergeordneten Logik app:
 }
 ```
 
-Klicken Sie dann in der untergeordneten Logik app verwenden Sie die [`triggerBody()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#triggerBody) Funktion zum Abrufen der Werte, die in den untergeordneten Workflow übergeben wurden. Sie müssen dann die Ausgaben mit den Daten aufzufüllen, die an den übergeordneten Fluss zurückkehren möchten.
+In der untergeordneten Logik-App verwenden Sie dann die [`triggerBody()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#triggerBody)-Funktion, um die Werte abzurufen, die an den untergeordneten Workflow übergeben werden. Anschließend füllen Sie die Ausgaben mit den Daten auf, die Sie an den übergeordneten Workflow zurückgeben möchten.
 
 ```
 {
@@ -234,14 +234,14 @@ Klicken Sie dann in der untergeordneten Logik app verwenden Sie die [`triggerBod
 }
 ```
 
-Sie erhalten Informationen über die [Logik app die Aktion auf der MSDN-](https://msdn.microsoft.com/en-US/library/azure/dn948511.aspx).
+Weitere Informationen zur [Aktion des Typs "Logik-App" finden Sie im MSDN](https://msdn.microsoft.com/de-de/library/azure/dn948511.aspx).
 
->[AZURE.NOTE]Logik Anwendungs-Designer unterstützt keine Logik app Typ Aktionen, daher Sie die Definition manuell bearbeiten müssen.
+>[AZURE.NOTE]Der Logik-Apps-Designer unterstützt keine Aktionen des Typs "Logik-App", daher müssen Sie die Definition manuell bearbeiten.
 
 
-## Ein Schritt Fehlerbehandlungsroutine, wenn etwas schiefgeht
+## Ein Schritt zur Fehlerbehandlung, falls Fehler auftreten
 
-Häufig schreiben möchten eine *Wiederherstellung Schritt* --Logik, die ausführt, wenn Sie **und nur dann, wenn**, ein oder mehrere Anrufe ist fehlgeschlagen. In diesem Beispiel werden wir Abrufen von Daten aus einer Vielzahl von Stellen, wenn der Aufruf fehlschlägt, sollen jedoch zum Übermitteln einer Nachricht an einer beliebigen Stelle, damit ich später Fehler aufspüren können.
+Üblicherweise möchten Sie einen *Korrekturschritt* schreiben können – Logik, die **ausschließlich dann ausgeführt wird**, wenn einer oder mehrere Ihrer Aufrufe fehlschlagen. In diesem Beispiel rufen wir Daten von unterschiedlichen Stellen ab, aber wenn der Aufruf fehlschlägt, soll irgendwo eine Nachricht hinterlassen werden, um den Fehler später ermitteln zu können.
 
 ```
 {
@@ -287,15 +287,15 @@ Häufig schreiben möchten eine *Wiederherstellung Schritt* --Logik, die ausfüh
 }
 ```
 
-Ich verwende zwei Bedingungen, da im ersten Schritt ich über eine Liste wiederholt wird. Wenn Sie nur eine einzelne Aktion haben, benötigen Sie nur eine Bedingung (der erste Vorgang). Beachten Sie auch, mit denen Sie die *Eingaben* auf die fehlgeschlagene Aktion in der Wiederherstellung Schritt – hier ich übergebe die fehlerhafte URL mit dem zweiten Schritt fort.
+Ich verwende zwei Bedingungen, da im ersten Schritt eine Iteration für eine Liste durchgeführt wird. Wenn Sie nur eine Aktion haben, benötigen Sie nur eine Bedingung (die erste). Beachten Sie außerdem, dass Sie die *Eingaben* für die fehlgeschlagene Aktion in Ihrem Korrekturschritt verwenden können – hier übergebe ich die fehlerhafte URL an den zweiten Schritt.
 
-![Wiederherstellung](./media/app-service-logic-author-definitions/remediation.png)
+![Korrektur](./media/app-service-logic-author-definitions/remediation.png)
 
-Schließlich, da Sie nun den Fehler behandelt haben, wir nicht mehr markieren Ausführen als **Fehler**. Wie Sie hier sehen können, ist diese Ausführung **erfolgreich** obwohl Sie einen Schritt fehlgeschlagen, da habe ich die Schritte, um diesen Fehler zu behandeln.
+Nachdem Sie den Fehler nun behoben haben, wird der Lauf nicht länger als **fehlerhaft** gekennzeichnet. Wie Sie hier sehen können, ist dieser Lauf als **Erfolgreich** gekennzeichnet, obwohl ein Schritt fehlgeschlagen ist, da ich den Schritt zur Behebung dieses Fehlers geschrieben habe.
 
-## Zwei (oder mehr) Schritte, die parallel ausgeführt.
+## Zwei (oder mehr) Schritte, die parallel ausgeführt werden
 
-Um mehrere Aktionen Ausführung in parallel und nicht in der Reihenfolge haben, müssen Sie entfernen die `dependsOn` Bedingung, die diese zwei Aktionen miteinander verknüpft. Sobald die Abhängigkeit entfernt wird, werden Aktionen automatisch parallel ausführen, es sei denn, diese Daten voneinander.
+Um mehrere Aktionen Ausführung parallel und nicht nacheinander auszuführen, müssen Sie die `dependsOn`-Bedingung entfernen, die diese beiden Aktionen miteinander verknüpft. Sobald die Abhängigkeit entfernt ist, werden Aktionen automatisch parallel ausgeführt, es sei denn, sie benötigen Daten voneinander.
 
 ![Verzweigungen](./media/app-service-logic-author-definitions/branches.png)
 
@@ -343,17 +343,17 @@ Um mehrere Aktionen Ausführung in parallel und nicht in der Reihenfolge haben, 
 }
 ```
 
-Wie im obigen Beispiel sehen ist, hängt branch1 und branch2 nur den Inhalt von Daten lesen. Daher werden beide dieser Verzweigungen parallel ausgeführt:
+Wie im oben im Beispiel zu sehen ist, hängen "branch1" und "branch2" nur vom Inhalt von "readData" ab. Daher werden beide dieser Verzweigungen parallel ausgeführt:
 
-![Parallele](./media/app-service-logic-author-definitions/parallel.png)
+![Parallel](./media/app-service-logic-author-definitions/parallel.png)
 
-Sie können sehen, dass der Zeitstempel für die beiden Verzweigungen identisch ist.
+Wie Sie sehen, ist der Zeitstempel für die beiden Verzweigungen identisch.
 
-## Verknüpfen von zwei bedingte Verzweigungen der Logik
+## Verknüpfen von zwei bedingten Verzweigungen der Logik
 
-Zwei bedingte Abläufe Logik (, die möglicherweise nicht ausgeführt) zu kombinieren, müssen eine einzelne Aktion, die Daten aus beiden Verzweigungen erfordert.
+Sie können zwei bedingte Logikflüsse (die möglicherweise nicht ausgeführt wurden) mithilfe einer einzelnen Aktion kombinieren, die auf Daten aus beiden Verzweigungen zurückgreift.
 
-Ihre Strategie für diese variiert abhängig, wenn Sie ein Element oder eine Auflistung von Elementen behandeln. Im Fall eines einzelnen Elements, sollten Sie verwenden die [`coalesce()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#coalesce) Funktion:
+Für welche Strategie Sie sich entscheiden, hängt davon ab, ob Sie es mit einem Element oder einer Sammlung von Elementen zu tun haben. Fall es nur um ein einzelnes Element geht, sollten Sie die [`coalesce()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#coalesce)-Funktion verwenden:
 
 ```
 {
@@ -411,7 +411,7 @@ Ihre Strategie für diese variiert abhängig, wenn Sie ein Element oder eine Auf
 }
 ```
  
-Auch wenn die ersten beiden Verzweigungen auf eine Liste mit Bestellungen arbeiten, z. B. werde soll die [`union()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#union) -Funktion verwendet, um die Daten aus beiden Verzweigungen zu kombinieren.
+Wenn die ersten beiden Verzweigungen beispielsweise eine Liste von Aufträgen verarbeiten, können Sie auch die [`union()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#union)-Funktion verwenden, um die Daten aus beiden Verzweigungen zu kombinieren.
 
 ```
 {
@@ -483,9 +483,9 @@ Auch wenn die ersten beiden Verzweigungen auf eine Liste mit Bestellungen arbeit
 ```
 ## Arbeiten mit Zeichenfolgen
 
-Es gibt verschiedene Funktionen, die zu maniplate Zeichenfolge verwendet werden kann. Sehen wir uns ein Beispiel, in dem haben wir einer Zeichenfolge, die an ein System übertragen werden soll, aber wir sind nicht darauf verlassen, dass die Zeichencodierung richtig behandelt werden. Eine Möglichkeit besteht darin, base64 codieren Sie diese Zeichenfolge. Allerdings werden zur Vermeidung von Escapezeichen in einer URL wir einige Zeichen zu ersetzen.
+Es gibt verschiedene Funktionen, die zum Ändern von Zeichenfolgen verwendet werden können. Sehen wir uns ein Beispiel mit einer Zeichenfolge an, die an ein System übergeben werden soll. In diesem Fall sind wir aber nicht sicher, ob die Zeichencodierung ordnungsgemäß verarbeitet wird. Eine Möglichkeit besteht darin, diese Zeichenfolge mit "base64" zu codieren. Allerdings werden zur Vermeidung von Escapezeichen in einer URL einige Zeichen ersetzt.
 
-Wir möchten auch eine Teilzeichenfolge des der des Auftrags werden, da die ersten 5 Zeichen nicht verwendet werden.
+Wir wollen außerdem eine Teilzeichenfolge des Namens des Auftrag, da die ersten fünf Zeichen nicht verwendet werden.
 
 ```
 {
@@ -515,23 +515,23 @@ Wir möchten auch eine Teilzeichenfolge des der des Auftrags werden, da die erst
 }
 ```
 
-Arbeiten von innen heraus:
+Gehen Sie von innen nach außen vor:
 
-1. Abrufen der [`length()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#length) der sortierelement Namens, gibt dies wieder die Gesamtanzahl der Zeichen
+1. Rufen Sie die [`length()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#length) des Namens des Auftraggebers ab. Damit wird die Gesamtanzahl der Zeichen zurückgegeben.
 
-2. Subtrahieren von 5 (da wir eine kürzere Zeichenfolge wollen)
+2. Ziehen Sie fünf ab (da wir eine kürzere Zeichenfolge wollen).
 
-3. Tatsächlich werden die [`substring()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#substring) . Wir beginnen mit Index `5` und den Rest der Zeichenfolge.
+3. Verwenden Sie die [`substring()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#substring) . Beginnen Sie bei Index `5`, und fahren Sie mit dem Rest der Zeichenfolge fort.
 
-4. Diese Teilzeichenfolge Konvertieren einer [`base64()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#base64) Zeichenfolge
+4. Wandeln Sie diese Teilzeichenfolge in eine [`base64()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#base64)-Zeichenfolge um.
 
-5. [`replace()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#replace) alle von der `+` mit Zeichen `-`
+5. [`replace()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#replace) Sie alle der `+`-Zeichen durch `-`.
 
-6. [`replace()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#replace) alle von der `/` mit Zeichen `_`
+6. [`replace()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#replace) Sie alle der `/`-Zeichen durch `_`.
 
 ## Arbeiten mit Zeitangaben
 
-Datum Uhrzeit kann nützlich sein, insbesondere, wenn Sie versuchen, Daten aus einer Datenquelle abrufen, die natürlich nicht unterstützt **Trigger**. Datum Uhrzeit können auch herausfinden, wie lange die verschiedenen Schritte unternommen werden.
+Zeitangaben sind insbesondere dann nützlich, wenn Sie versuchen, Daten aus einer Datenquelle abzurufen, die **Trigger** grundsätzlich nicht unterstützt. Sie können Zeitangaben auch verwenden, um zu ermitteln, wie lange die einzelnen Schritte dauern.
 
 ```
 {
@@ -572,13 +572,13 @@ Datum Uhrzeit kann nützlich sein, insbesondere, wenn Sie versuchen, Daten aus e
 }
 ```
 
-In diesem Beispiel werden wir Extrahieren der `startTime` des vorherigen Schritts. Anschließend werden die aktuelle Uhrzeit abrufen und Subtrahieren von einer Sekunde:[`addseconds(..., -1)`](https://msdn.microsoft.com/library/azure/dn948512.aspx#addseconds) (Sie können andere Zeiteinheiten wie z. B. `minutes` oder `hours`). Schließlich können wir diese zwei Werte vergleichen. Wenn die erste kleiner als die zweite, dann bedeutet dies, dass mehr als eine Sekunde verstrichen ist, da der Auftrag wurde eingefügt.
+In diesem Fall extrahieren wir die `startTime` des vorherigen Schritts. Dann rufen wir die aktuelle Uhrzeit ab und ziehen eine Sekunde ab :[`addseconds(..., -1)`](https://msdn.microsoft.com/library/azure/dn948512.aspx#addseconds) (Sie können auch andere Zeiteinheiten als `minutes` oder `hours` verwenden). Abschließend können wir diese beiden Werte vergleichen. Wenn der erste kleiner ist als der zweite, bedeutet dies, dass mehr als eine Sekunde verstrichen ist, seit der Auftrag erteilt wurde.
 
-Beachten Sie auch, dass wir Zeichenfolge Formatierer zum Formatieren von Datumsangaben verwenden können: in der Abfragezeichenfolge ich verwende [`utcnow('r')`](https://msdn.microsoft.com/library/azure/dn948512.aspx#utcnow) der RFC1123 abgerufen. Alle Datum formatieren [auf MSDN dokumentiert ist](https://msdn.microsoft.com/library/azure/dn948512.aspx#utcnow).
+Beachten Sie außerdem, dass Zeichenfolgenformatierer zum Formatieren von Datumsangaben verwendet werden können: In der Abfragezeichenfolge verwende ich [`utcnow('r')`](https://msdn.microsoft.com/library/azure/dn948512.aspx#utcnow), um das RFC1123-Format zu erhalten. Alle Datumsformate [sind im MSDN dokumentiert](https://msdn.microsoft.com/library/azure/dn948512.aspx#utcnow).
 
-## Übergeben Sie die Werte zur Laufzeit Verhalten zu ändern
+## Übergeben von Werten zur Laufzeit, um Verhalten zu variieren
 
-Nehmen wir an, Sie verfügen über unterschiedliche Verhaltensweisen, die Sie basierend auf einem Wert ausgeführt, die Sie starten aus Ihrer app Logik verwenden möchten. Sie können die [`triggerOutputs()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#triggerOutputs) Funktion zum Abrufen dieser Werte aus, was Sie übergeben:
+Angenommen, Sie verfügen über unterschiedliche Verhalten, die Sie basierend auf einem Wert ausführen möchten, den Sie zum Starten Ihrer Logik-App verwenden. Sie können die [`triggerOutputs()`](https://msdn.microsoft.com/library/azure/dn948512.aspx#triggerOutputs)-Funktion zum Abrufen dieser Werte aus dem verwenden, was Sie übergeben haben:
 
 ```
 {
@@ -610,7 +610,7 @@ Nehmen wir an, Sie verfügen über unterschiedliche Verhaltensweisen, die Sie ba
 }
 ```
 
-Diese Arbeit tatsächlich vornehmen, beim Starten der Ausführung die Eigenschaften übergeben werden sollen (im obigen Beispiel `uriToGet` und `doMoreLogic`). Hier ist der können Sie [Verwenden Sie die Standardauthentifizierung für](https://msdn.microsoft.com/library/azure/dn948513.aspx#basicAuth):
+Damit dies beim Starten des Laufs funktioniert, müssen Sie die gewünschten Eigenschaften übergeben (`uriToGet` und `doMoreLogic` im obigen Beispiel). Hier ist der Aufruf, [für den Sie die Standardauthentifizierung verwenden können](https://msdn.microsoft.com/library/azure/dn948513.aspx#basicAuth):
 
 ```
 POST https://<<Logic app endpoint from the Essentials>>/run?api-version=2015-02-01-preview
@@ -618,7 +618,7 @@ Authorization: Basic <<Based 64 encoded username (default) : password (from the 
 Content-type: application/json
 ```
 
-Mit der folgenden Nutzlast. Beachten Sie, dass Sie mit den Werten jetzt verwenden die Logik app bereitgestellt haben:
+Mit der folgenden Nutzlast. Beachten Sie, dass Sie die Logik-App mit den jetzt zu verwendenden Werten bereitgestellt haben:
 
 ```
 {
@@ -629,15 +629,15 @@ Mit der folgenden Nutzlast. Beachten Sie, dass Sie mit den Werten jetzt verwende
 }
 ``` 
 
-Wenn diese Anwendung Logik ausgeführt wird, aufrufen, den ich übergebenen Uri und dieser zusätzlichen Schritt ausgeführt werden, da ich übergeben `true`. Wenn Sie nur die Parameter zum Zeitpunkt der Bereitstellung variieren möchten (nicht für *jede Ausführung*), verwenden, sollten `parameters` wie genannt, unten.
+Wenn diese Logik-App ausgeführt wird, ruft sie den von mir übergebenen URI auf und führt diesen zusätzlichen Schritt aus, da ich `true` übergeben habe. Wenn Sie nur die Parameter zur Bereitstellungszeit variieren möchten (nicht für *jeden Lauf*), sollten Sie `parameters` wie nachfolgend gezeigt verwenden.
 
-## Verwenden von Parametern für die Bereitstellungszeit für unterschiedliche Umgebungen
+## Verwenden von Parametern zur Bereitstellungszeit für unterschiedliche Umgebungen
 
-Es ist üblich, eine Bereitstellungslebenszyklus vorliegt, bei dem Sie eine Entwicklungsumgebung, einer Stagingumgebung und einer Produktionsumgebung. In allen diesen können Sie dieselbe Definition werden soll, jedoch unterschiedliche Datenbanken verwenden, z. B.. Ebenso sollten Sie dieselbe Definition in vielen verschiedenen Regionen für hohe Verfügbarkeit verwenden, aber jeder Logik app-Instanz in dieser Region-Datenbank kommunizieren soll.
+Üblicherweise verfügen Sie über einen Bereitstellungslebenszyklus mit einer Entwicklungsumgebung, einer Stagingumgebung und einer Produktionsumgebung. In all diesen Umgebungen können Sie dieselbe Definition, aber beispielsweise unterschiedliche Datenbanken verwenden. Ebenso sollten Sie dieselbe Definition übergreifend in vielen verschiedenen Regionen verwenden, um eine hohe Verfügbarkeit zu erzielen. Die einzelnen Logik-App-Instanzen sollten jedoch mit der Datenbank der betreffenden Region kommunizieren.
 
-Beachten Sie, dass dies nicht mit anderen Parametern an *Common Language Runtime*, sollten Sie verwenden die `trigger()` funktionieren wie oben hingewiesen.
+Beachten Sie, dass sich dies von der Verwendung anderer Parameter zur *Laufzeit* unterscheidet. Dazu sollten Sie die `trigger()`-Funktion verwenden, wie oben beschrieben.
 
-Sie können mit einer sehr einfach gehalten wie diese starten:
+Sie können mit einer sehr einfachen Definition wie dieser beginnen:
 
 ```
 {
@@ -662,7 +662,7 @@ Sie können mit einer sehr einfach gehalten wie diese starten:
 }
 ```
 
-Klicken Sie auf den tatsächlichen `PUT` Anforderung für die Anwendung Logik können Sie den Parameter bereitstellen `connection`. Beachten Sie, wie es ist nicht mehr ein Default-Wert, der diesen Parameter in der app-Nutzlast Logik erforderlich ist:
+In der tatsächlichen `PUT`-Anforderung für die Logik-App können Sie dann den `connection`-Parameter angeben. Da es keinen Standardwert mehr gibt, ist dieser Parameter für die Logik-App-Nutzlast erforderlich:
 
 ```
 {
@@ -686,6 +686,6 @@ Klicken Sie auf den tatsächlichen `PUT` Anforderung für die Anwendung Logik k�
 }
 ``` 
 
-In jeder Umgebung können Sie dann einen anderen Wert für Bereitstellen der `connection` Parameter. Siehe die [REST-API-Dokumentation](https://msdn.microsoft.com/library/azure/dn948513.aspx) für alle Optionen, die Sie zum Erstellen und Verwalten von Logik apps verfügen.
+In den einzelnen Umgebungen können Sie dann einen anderen Wert für den `connection`-Parameter angeben. In der [REST-API-Dokumentation](https://msdn.microsoft.com/library/azure/dn948513.aspx) finden Sie Informationen dazu, welche Möglichkeiten Sie zum Erstellen und Verwalten von Logik-Apps haben.
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

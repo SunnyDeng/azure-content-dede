@@ -18,9 +18,9 @@
 
 # Erstellen und Veröffentlichen eines Produkts in Azure API Management
 
-In der Azure-API-Verwaltung enthält ein Produkt eine oder mehrere APIs sowie ein nutzungskontingent und die Nutzungsbedingungen. Nachdem ein Produkt veröffentlicht wurde, können Entwickler das Produkt abonnieren und die APIs des Produkts verwenden. Dieses Thema beschreibt, wie Sie ein Produkt erstellen, eine API hinzufügen und das Produkt für Entwickler veröffentlichen können.
+Produkte in Azure API Management enthalten eine oder mehrere APIs sowie ein Nutzungskontingent und Nutzungsbedingungen. Nachdem ein Produkt veröffentlicht wurde, können Entwickler das Produkt abonnieren und die APIs des Produkts verwenden. Dieses Thema beschreibt, wie Sie ein Produkt erstellen, eine API hinzufügen und das Produkt für Entwickler veröffentlichen können.
 
-Weitere Informationen zum Arbeiten mit Produkten finden Sie im folgende Video.
+Weitere Informationen zum Arbeiten mit Produkten finden Sie im folgenden Video.
 
 > [AZURE.VIDEO using-products]
 
@@ -40,19 +40,19 @@ Klicken Sie auf **Produkte** im Menü auf der linken Seite, um die Seite **Produ
 
 Geben Sie einen beschreibenden Namen für das Produkt in das Feld **Name** und eine Beschreibung in das Feld **Beschreibung** ein.
 
-Produkte in der API-Verwaltung kann **Öffnen** oder **Protected**. Geschützte Produkte müssen abonniert werden, bevor Sie verwendet werden können, während offene Produkte ohne Abonnement genutzt werden können. Überprüfen Sie **erfordern Abonnement** einer geschützten Produkt zu erstellen, ein Abonnement erforderlich ist. Dies ist die Standardeinstellung.
+Produkte in API Management können **Offen** oder **Geschützt** sein. Geschützte Produkte müssen abonniert werden, bevor Sie verwendet werden können, während offene Produkte ohne Abonnement genutzt werden können. Aktivieren Sie **Abonnement erforderlich**, um ein geschütztes Produkt zu erstellen, das abonniert werden muss. Dies ist die Standardeinstellung.
 
 Wenn Sie möchten, dass ein Administrator Abonnements für dieses Produkt prüfen und ablehnen oder akzeptieren muss, markieren Sie die Option **Abonnementgenehmigung erforderlich**. Wenn dieses Feld nicht markiert ist, werden Abonnements automatisch genehmigt. Weitere Informationen zu Abonnements finden Sie unter [Anzeigen von Abonnenten eines Produkts][].
 
-Damit entwicklerkonten mehrmals das Produkt abonnieren können, überprüfen Sie die **mehrere Abonnements zulassen** Kontrollkästchen. Wenn dieses Kontrollkästchen nicht aktiviert ist, kann jede Entwicklerkonto nur ein einziges Mal für das Produkt abonnieren.
+Wenn Sie zulassen möchten, dass Entwicklerkonten das Produkt mehrfach abonnieren, aktivieren Sie das Kontrollkästchen **Mehrere Abonnements zulassen**. Wenn dieses Kontrollkästchen deaktiviert ist, kann das Produkt nur einmalig über jedes Entwicklerkonto abonniert werden.
 
-![Unbegrenzte mehrere Abonnements][api-management-unlimited-multiple-subscriptions]
+![Unbegrenzte Anzahl von Abonnements][api-management-unlimited-multiple-subscriptions]
 
-Um die Anzahl der mehrere gleichzeitige Abonnements zu beschränken, überprüfen Sie die **Beschränken der Anzahl von gleichzeitigen Abonnements für** das Kontrollkästchen, und geben Sie die zulässige Anzahl an. Im folgenden Beispiel sind die gleichzeitige Abonnements auf vier pro Entwicklerkonto beschränkt.
+Wenn Sie die Anzahl von gleichzeitigen Abonnements einschränken möchten, aktivieren Sie das Kontrollkästchen **Anzahl von gleichzeitigen Abonnements beschränken**, und geben Sie ein Abonnementlimit ein. Im folgenden Beispiel sind die gleichzeitigen Abonnements auf vier pro Entwicklerkonto beschränkt.
 
-![Vier mehrere Abonnements][api-management-four-multiple-subscriptions]
+![Vier gleichzeitige Abonnements][api-management-four-multiple-subscriptions]
 
-Sobald alle neuen Produktoptionen konfiguriert sind, klicken Sie auf **Speichern** zum Erstellen des neuen Produkts.
+Nachdem alle Optionen für das neue Produkt konfiguriert wurden, klicken Sie auf **Speichern**, um das neue Produkt zu erstellen.
 
 ![Produkte][api-management-products-page]
 
@@ -60,9 +60,9 @@ Sobald alle neuen Produktoptionen konfiguriert sind, klicken Sie auf **Speichern
 
 Klicken Sie auf den entsprechenden Produktnamen auf der Registerkarte **Produkte**, um ein Produkt zu konfigurieren.
 
-## <a name="add-apis"> </a>APIs zu einem Produkt hinzufügen
+## <a name="add-apis"> </a>Hinzufügen von APIs zu einem Produkt
 
-Die **Produkte** Seite enthält vier Links für die Konfiguration: **Zusammenfassung**, **Einstellungen**, **Sichtbarkeit**, und **Abonnenten**. Die **Zusammenfassung** Registerkarte ist, können APIs hinzufügen und veröffentlichen oder Aufheben der Veröffentlichung eines Produkts.
+Die Seite **Produkte** enthält vier Links für die Konfiguration: **Zusammenfassung**, **Einstellungen**, **Sichtbarkeit** und **Abonnenten**. Auf der Registerkarte **Zusammenfassung** können Sie APIs hinzufügen und die Veröffentlichung von Produkten steuern.
 
 ![Zusammenfassung][api-management-new-product-summary]
 
@@ -72,27 +72,27 @@ Bevor Sie Ihr Produkt veröffentlichen, müssen Sie mindestens eine API hinzufü
 
 Wählen Sie die gewünschten APIs aus und klicken Sie auf **Speichern**.
 
-## <a name="add-description"> </a>Beschreibende Informationen zu einem Produkt hinzufügen
+## <a name="add-description"> </a>Hinzufügen von beschreibenden Informationen zu einem Produkt
 
 Die Registerkarte **Einstellungen** enthält detaillierte Daten über das Produkt wie z. B. dessen Zweck, die bereitgestellten APIs und sonstige nützliche Informationen. Dieser Inhalt richtet sich an die Entwickler, die die API aufrufen, und kann im Nur-Text-Format oder mit HTML-Markup erstellt werden.
 
 ![Produkteinstellungen][api-management-product-settings]
 
-Überprüfen Sie **erfordern Abonnement** einer geschützten Produkt zu erstellen, erfordert ein Abonnement verwendet werden, oder deaktivieren das Kontrollkästchen, um ein open-Produkt zu erstellen, ohne ein Abonnement aufgerufen werden können.
+Aktivieren Sie **Abonnement erforderlich**, um ein geschütztes Produkt zu erstellen, das die Verwendung eines Abonnements erfordert. Oder deaktivieren Sie dieses Kontrollkästchen, um ein offenes Produkt zu erstellen, das ohne Abonnement aufgerufen werden kann.
 
 Markieren Sie die Option **Abonnementgenehmigung erforderlich**, wenn Sie alle Abonnements für dieses Produkt manuell genehmigen möchten. Standardmäßig werden alle Produktabonnements automatisch genehmigt.
 
-Damit entwicklerkonten mehrmals das Produkt abonnieren können, überprüfen Sie die **mehrere Abonnements zulassen** Kontrollkästchen und geben Sie optional einen Grenzwert. Wenn dieses Kontrollkästchen nicht aktiviert ist, kann jede Entwicklerkonto nur ein einziges Mal für das Produkt abonnieren.
+Wenn Sie zulassen möchten, dass Entwicklerkonten das Produkt mehrfach abonnieren, aktivieren Sie das Kontrollkästchen **Mehrere Abonnements zulassen**, und geben Sie optional ein Limit an. Wenn dieses Kontrollkästchen deaktiviert ist, kann das Produkt nur einmalig über jedes Entwicklerkonto abonniert werden.
 
 Füllen Sie Optional das Feld **Nutzungsbedingungen** aus und beschreiben Sie die Bedingungen, denen die Abonnenten zustimmen müssen, um das Produkt verwenden zu können.
 
-## <a name="publish-product"> </a>Veröffentlichen ein Produkts
+## <a name="publish-product"> </a>Veröffentlichen eines Produkts
 
 Bevor die APIs eines Produkts aufgerufen werden können, müssen Sie das Produkt veröffentlichen. Klicken Sie auf der Registerkarte **Zusammenfassung** für das Produkt auf **Veröffentlichen** und anschließend auf **Ja, veröffentlichen**, um Ihre Entscheidung zu bestätigen. Klicken Sie auf **Veröffentlichung aufheben**, um ein bereits veröffentlichtes Produkt privat zu setzen.
 
 ![Veröffentlichen des Produkts][api-management-publish-product]
 
-## <a name="make-visible"> </a>Ein Produkts für Entwickler sichtbar zu machen
+## <a name="make-visible"> </a>Sichtbarmachen eines Produkts für Entwickler
 
 Auf der Registerkarte **Sichtbarkeit** können Sie die Rollen auswählen, die das Produkt im Entwicklerportal sehen und das Produkt abonnieren können.
 
@@ -100,17 +100,17 @@ Auf der Registerkarte **Sichtbarkeit** können Sie die Rollen auswählen, die da
 
 Konfigurieren Sie die Sichtbarkeit eines Produkts für die Entwickler in einer Gruppe über das Kontrollkästchen neben der Gruppe und klicken Sie auf **Speichern**.
 
->Weitere Informationen finden Sie unter [Erstellen und Verwenden von Gruppen für Entwicklerkonten in der Azure API-Verwaltung][].
+>Weitere Informationen finden Sie unter [Erstellen und Verwenden von Gruppen für Entwicklerkonten in Azure API Management][].
 
-## <a name="view-subscribers"> </a>Abonnenten zu einem Produkt anzeigen
+## <a name="view-subscribers"> </a>Anzeigen von Abonnenten eines Produkts
 
-Die **Abonnenten** Registerkarte aufgelistet, die Entwickler, die das Produkt abonniert haben. Klicken Sie auf den Namen des Entwicklers, um dessen Details und Einstellungen anzuzeigen. In diesem Beispiel wurde das Produkt noch von keinem Entwickler abonniert.
+Die Registerkarte **Abonnenten** enthält eine Liste der Entwickler, die das Produkt abonniert haben. Klicken Sie auf den Namen des Entwicklers, um dessen Details und Einstellungen anzuzeigen. In diesem Beispiel wurde das Produkt noch von keinem Entwickler abonniert.
 
 ![Entwickler][api-management-developer-list]
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
-Sobald Sie die gewünschten APIs hinzugefügt und das Produkt veröffentlicht haben, können Entwickler das Produkt abonnieren und die APIs aufrufen. Ein Lernprogramm mit einer Demonstration dieser Punkte und erweiterten Produktkonfigurationen finden Sie unter [Erstellen und Konfigurieren erweiterter Produkteinstellungen in der Azure API-Verwaltung][].
+Sobald Sie die gewünschten APIs hinzugefügt und das Produkt veröffentlicht haben, können Entwickler das Produkt abonnieren und die APIs aufrufen. Ein Lernprogramm mit einer Demonstration dieser Punkte und erweiterten Produktkonfigurationen finden Sie unter [Erstellen und Konfigurieren erweiterter Produkteinstellungen in Azure API Management][].
 
 
 [Create a product]: #create-product
@@ -146,7 +146,7 @@ Sobald Sie die gewünschten APIs hinzugefügt und das Produkt veröffentlicht ha
 [Erste Schritte mit Azure API Management]: api-management-get-started.md
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 [Next steps]: #next-steps
-[Erstellen und Verwenden von Gruppen für Entwicklerkonten in der Azure API-Verwaltung]: api-management-howto-create-groups.md
-[Erstellen und Konfigurieren erweiterter Produkteinstellungen in der Azure API-Verwaltung]: api-management-howto-product-with-rules.md
+[Erstellen und Verwenden von Gruppen für Entwicklerkonten in Azure API Management]: api-management-howto-create-groups.md
+[Erstellen und Konfigurieren erweiterter Produkteinstellungen in Azure API Management]: api-management-howto-product-with-rules.md
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

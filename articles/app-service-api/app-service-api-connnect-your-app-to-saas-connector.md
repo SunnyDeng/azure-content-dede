@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Bereitstellen Sie und konfigurieren Sie eine SaaS-Connector-API-Anwendung" 
+	pageTitle="Bereitstellen und Konfigurieren einer SaaS-Connector-API-App" 
 	description="Erfahren Sie, wie Sie einen SaaS-Connector konfigurieren, den Sie aus dem Azure Marketplace in Ihrem Azure-Abonnement installieren." 
 	services="app-service\api" 
 	documentationCenter=".net" 
@@ -16,7 +16,7 @@
 	ms.date="04/07/2015" 
 	ms.author="tdykstra"/>
 
-# Bereitstellen Sie und konfigurieren Sie eine SaaS-Connector-API-Anwendung in Azure-App-Dienst
+# Bereitstellen und Konfigurieren einer SaaS-Connector-API-App in Azure App Service
 
 ## Übersicht
 
@@ -24,7 +24,7 @@ In diesem Lernprogramm wird gezeigt, wie Sie einen [SaaS-Connector (Software-as-
 
 Wenn Sie beispielsweise HTTP-Anforderungen zum Lesen und Schreiben von Dateien in Ihrem Dropbox-Konto schreiben möchten, ist der Authentifizierungsprozess zum direkten Arbeiten mit Dropbox kompliziert. Ein Dropbox-Connector übernimmt die Authentifizierung, sodass Sie sich darauf konzentrieren können, Ihren geschäftsspezifischen Code zu schreiben.
 
-> [AZURE.NOTE]Die folgenden Anweisungen sind nicht erforderlich, wenn Sie einen SaaS-Connector aus einer Logik app verwenden möchten. Informationen zur Verwendung von SaaS-Connectors in der Logik apps finden Sie unter [Erstellen einer neuen Logik app](../app-service-logic/app-service-logic-create-a-logic-app.md).
+> [AZURE.NOTE]Die hier beschriebenen Anleitungen sind nicht erforderlich, wenn Sie einen SaaS-Connector aus einer Logik-App verwenden möchten. Informationen zur Verwendung eines SaaS-Connectors innerhalb von Logik-Apps finden Sie unter [Erstellen einer neuen Logik-App](../app-service-logic/app-service-logic-create-a-logic-app.md).
  
 Dieses Lernprogramm verwendet einen Dropbox-Connector als Beispiel und leitet Sie durch die folgenden Schritte:
 
@@ -47,7 +47,7 @@ Dieses Lernprogramm verwendet einen Dropbox-Connector als Beispiel und leitet Si
 
 	![Klicken Sie auf "Erstellen"](./media/app-service-api-connnect-your-app-to-saas-connector/clickcreate.png)
  
-5. Geben Sie im Blatt **Dropbox-Connector** unterhalb von **App Service-Plan** auf **Neu erstellen**, und geben Sie im Feld **Neuen App Service-Plan erstellen** den Wert "DropboxPlan" ein.
+5. Geben Sie auf dem Blatt **Dropbox-Connector** unterhalb von **App Service-Plan** auf **Neu erstellen**, und geben Sie im Feld **Neuen App Service-Plan erstellen** den Wert "DropboxPlan" ein.
 
 	Weitere Informationen zu Azure App Service-Plänen finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
@@ -105,17 +105,17 @@ Die folgenden Schritte zeigen das Vorgehen zum Erstellen einer Dropbox-App mithi
 
 ### Kopieren der Dropbox-App-Einstellungen in den Azure-Dropbox-Connector und umgekehrt 
 
-4. Wechseln Sie in einem anderen Browserfenster oder in einer anderen Browserregisterkarte zum [Azure-Vorschauportal]. 
+4. Wechseln Sie in einem anderen Browserfenster oder in einer anderen Browserregisterkarte zum [Azure-Vorschauportal].
 
 3. Wechseln Sie zum Blatt **API-App** für Ihren Dropbox-Connector. (Wenn Sie noch das Blatt **Ressourcengruppe** anzeigen, klicken Sie einfach auf den Dropbox-Connector im Diagramm.)
 
-4. Klicken Sie auf **Einstellungen**, und klicken Sie dann im Blatt **Einstellungen** auf **Authentifizierung**.
+4. Klicken Sie auf **Einstellungen**, und klicken Sie dann auf dem Blatt **Einstellungen** auf **Authentifizierung**.
 
 	![Klicken Sie auf "Einstellungen"](./media/app-service-api-connnect-your-app-to-saas-connector/clicksettings.png)
 
 	![Klicken Sie auf "Authentifizierung"](./media/app-service-api-connnect-your-app-to-saas-connector/clickauth.png)
 
-5. Geben Sie im Blatt "Authentifizierung" die Client-ID und den geheimen Clientschlüssel von der Dropbox-Website ein, und klicken Sie dann auf **Speichern**.
+5. Geben Sie auf dem Blatt "Authentifizierung" die Client-ID und den geheimen Clientschlüssel von der Dropbox-Website ein, und klicken Sie dann auf **Speichern**.
 
 	![Geben Sie Einstellungen ein, und klicken Sie auf "Speichern"](./media/app-service-api-connnect-your-app-to-saas-connector/authblade.png)
 
@@ -139,7 +139,7 @@ Standardmäßig ist die **Zugriffsebene** für den Connector auf **Intern** fest
 
 1. Wechseln Sie zurück zum Blatt **Einstellungen**, und klicken Sie auf **Anwendungseinstellungen**.
 
-2. Ändern Sie im Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich (authentifiziert)**, und klicken Sie dann auf **Speichern**.
+2. Ändern Sie auf dem Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich (authentifiziert)**, und klicken Sie dann auf **Speichern**.
 	
 	![Festlegung auf "Öffentlich (authentifiziert)"](./media/app-service-api-connnect-your-app-to-saas-connector/pubauth.png)
 
@@ -167,11 +167,11 @@ Führen Sie die folgenden Schritte in einem neuen Browserfenster aus. Je nach ge
 
     	http://[gatewayurl]/login/[providername]
 
-	Sie können die Gateway-URL aus dem Blatt **Gateway** im [Azure-Vorschauportal] abrufen. (Sie gelangen zum Blatt **Gateway**, indem Sie im Blatt **Ressourcengruppe** auf das Gateway im angezeigten Diagramm klicken.)
+	Sie können die Gateway-URL aus dem Blatt **Gateway** im [Azure-Vorschauportal] abrufen. (Sie gelangen zum Blatt **Gateway**, indem Sie auf dem Blatt **Ressourcengruppe** auf das Gateway im angezeigten Diagramm klicken.)
 
 	![Gateway-URL](./media/app-service-api-connnect-your-app-to-saas-connector/gatewayurl.png)
 
-	Der Wert [providername] lautet "facebook" für Facebook, "twitter" für Twitter, "aad" für Azure Active Directory usw.
+	Der [providername]-Wert lautet "facebook" für Facebook, "twitter" für Twitter, "aad" für Azure Active Directory usw.
 
 	Nachfolgend wird eine beispielhafte Anmelde-URL für Azure Active Directory gezeigt:
 
@@ -231,9 +231,9 @@ Die HTTP-Post-Anforderung an das Gateway muss das Authentifizierungstoken enthal
 
 	Dropbox ordnet die Benutzeridentität Ihrer Dropbox-API-App zu und leitet den Browser dann an die Umleitungs-URL weiter, die Sie angegeben haben (z. B. das Azure-Vorschauportal, wenn Sie dem Beispiel gefolgt sind und https://portal.azure.com) verwendet haben).
 
-	Da sich Ihre Dropbox-App im Entwicklermodus befindet, wird möglicherweise eine Anmeldeseite von Dropbox angezeigt, bevor der Browser zur Umleitungs-URL wechselt.  Nachdem Sie sich mit Ihren Dropbox-Anmeldeinformationen angemeldet haben, wird die Benutzeridentität, die Sie zur Anmeldung am Gateway verwendet haben, Ihrer Dropbox-App zugeordnet. Zukünftig ist der Schritt der Dropbox-Anmeldung dann für diese Benutzeridentität nicht mehr erforderlich.
+	Da sich Ihre Dropbox-App im Entwicklermodus befindet, wird möglicherweise eine Anmeldeseite von Dropbox angezeigt, bevor der Browser zur Umleitungs-URL wechselt. Nachdem Sie sich mit Ihren Dropbox-Anmeldeinformationen angemeldet haben, wird die Benutzeridentität, die Sie zur Anmeldung am Gateway verwendet haben, Ihrer Dropbox-App zugeordnet. Zukünftig ist der Schritt der Dropbox-Anmeldung dann für diese Benutzeridentität nicht mehr erforderlich.
 
-3. Lassen Sie das Browserfenster geöffnet, da Sie es im nächsten Abschnitt benötigen. 
+3. Lassen Sie das Browserfenster geöffnet, da Sie es im nächsten Abschnitt benötigen.
 
 ### Aufrufen der Dropbox-Connector-API 
 
@@ -278,4 +278,4 @@ Sie haben erfahren Sie wie einen SaaS-Connector installieren, konfigurieren und 
 [Azure-Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

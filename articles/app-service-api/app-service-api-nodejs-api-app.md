@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen und Bereitstellen einer Node.js-API-App in Azure App Service"
-	description="Informationen Sie zum Erstellen einer Node.js-API-app-Paket und auf Azure-App-Dienst bereitgestellt."
+	description="Lernen Sie, wie Sie ein Node.js-API-App-Paket erstellen und in Azure App Service bereitstellen."
 	services="app-service\api"
 	documentationCenter="nodejs"
 	authors="pkefal"
@@ -24,12 +24,11 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 ![][sample-api-app-page]
 
-> [AZURE.NOTE]Visual Studio-Code können auch um eine bereitstellen eine Node.js-API-app in Azure-App-Dienst zu erstellen. Weitere Informationen zu Visual Studio-Code und Node.js, finden Sie unter [Visual Studio-Code](http://code.visualstudio.com/Docs/) und [Node-Anwendungen entwickeln](http://code.visualstudio.com//Docs/nodejs).
+> [AZURE.NOTE]Sie können auch Visual Studio-Code zum Erstellen und Bereitstellen einer Node.js-API-App in Azure App Service verwenden. Weitere Informationen zu Visual Studio-Code und Node.js finden Sie unter [Visual Studio-Code](http://code.visualstudio.com/Docs/) und [Entwickeln von Node-Anwendungen](http://code.visualstudio.com//Docs/nodejs).
 
 ## Erstellen einer API-App im Azure-Vorschauportal
 
-> [AZURE.NOTE] Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/pricing/member-offers/msdn-benefits-details/) oder [sich für eine kostenlose Testversion registrieren](/pricing/free-trial/).
- Sie können auch die kostenlosen [App Service-App-Beispiele](http://tryappservice.azure.com) nutzen.
+> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/pricing/member-offers/msdn-benefits-details/) oder [sich für eine kostenlose Testversion registrieren](/pricing/free-trial/). Sie können auch die kostenlosen [App Service-App-Beispiele](http://tryappservice.azure.com) nutzen.
 
 1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
@@ -63,13 +62,13 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 [Git](http://git-scm.com/%20target="_blank) ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure-Website bereitstellen können. Sie speichern den Code, den Sie für Ihre API-App geschrieben haben, in einem lokalen Git-Repository. Anschließend stellen Sie Ihren Code in Azure bereit, indem Sie einen Pushvorgang zu einem Remoterepository durchführen. Diese Methode der Bereitstellung ist eine Funktion von App Service-Web-Apps, die Sie in einer API-App nutzen können, da API-Apps auf Web-Apps basieren: Eine API-App in Azure App Service ist eine Web-App mit zusätzlichen Funktionen für das Hosten von Webdiensten.
 
-Im Portal verwalten Sie die API-App-spezifischen Funktionen im Blatt **API-App**. Die Funktionen, die eine API-App mit einer Web-App gemeinsam hat, werden im Blatt **API-App-Host** verwaltet. Sie wechseln daher in diesem Abschnitt zum Blatt **API-App-Host**, um die Git-Bereitstellungsfunktion zu konfigurieren.
+Im Portal verwalten Sie die API-App-spezifischen Funktionen auf dem Blatt **API-App**. Die Funktionen, die eine API-App mit einer Web-App gemeinsam hat, werden auf dem Blatt **API-App-Host** verwaltet. Sie wechseln daher in diesem Abschnitt zum Blatt **API-App-Host**, um die Git-Bereitstellungsfunktion zu konfigurieren.
 
-1. Klicken Sie im Blatt für die API-App auf **API-App-Host**.
+1. Klicken Sie auf dem Blatt für die API-App auf **API-App-Host**.
 
 	![][api-app-host]
 
-2. Suchen Sie im Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf **Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
+2. Suchen Sie auf dem Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf ** Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
 
 	![][deployment-part]
 
@@ -89,7 +88,7 @@ Im Portal verwalten Sie die API-App-spezifischen Funktionen im Blatt **API-App**
 
 	![][deployment-credentials]
 
-1. Klicken Sie im Blatt **API-App-Host** auf **Einstellungen > Eigenschaften**. Die URL des Git-Remoterepositorys, in dem Sie die Bereitstellung durchführen möchten, wird unter "GIT-URL" angezeigt.
+1. Klicken Sie auf dem Blatt **API-App-Host** auf **Einstellungen > Eigenschaften**. Die URL des Git-Remoterepositorys, in dem Sie die Bereitstellung durchführen möchten, wird unter "GIT-URL" angezeigt.
 
 2. Kopieren Sie die URL zur späteren Verwendung im Lernprogramm.
 
@@ -97,7 +96,7 @@ Im Portal verwalten Sie die API-App-spezifischen Funktionen im Blatt **API-App**
 
 ## Herunterladen und Prüfen von Code für eine Node.js-API-App
 
-In diesem Abschnitt laden Sie im Rahmen des NodeAPIApp-Beispiels Code herunter und prüfen diesen.
+In diesem Abschnitt laden Sie im Rahmen des NodeAPIApp-Beispiels Code herunter und prüfen diesen.  
 
 
 1. Laden Sie den Code in [diesem GitHub-Repository](http://go.microsoft.com/fwlink/?LinkID=534023&clcid=0x409) herunter. Sie können das Repository entweder klonen oder auf **ZIP herunterladen** klicken, um den Code als ZIP-Datei herunterzuladen. Wenn Sie die ZIP-Datei herunterladen, extrahieren Sie sie auf Ihre lokale Festplatte.
@@ -117,7 +116,7 @@ In diesem Abschnitt laden Sie im Rahmen des NodeAPIApp-Beispiels Code herunter u
 
 	Beachten Sie die Eigenschaft **apiDefinition**. Der Pfad für diese URL ist relativ zur URL Ihrer API und verweist auf den Swagger 2.0-Endpunkt. Azure App Service verwendet diese Eigenschaft zum Ermitteln der Definition Ihrer API und zum Aktivieren zahlreicher der App Service-API-App-Funktionen.
 
-	> [AZURE.NOTE] Der Endpunkt muss der Swagger 2.0-Spezifikation entsprechen, da ältere Versionen (beispielsweise 1.2) nicht von der Plattform unterstützt werden. Die Beispielanwendung verwendet "swaggerize-express" zum Erstellen eines Endpunkts nach Swagger 2.0-Spezifikation.
+	> [AZURE.NOTE]Der Endpunkt muss der Swagger 2.0-Spezifikation entsprechen, da ältere Versionen (beispielsweise 1.2) nicht von der Plattform unterstützt werden. Die Beispielanwendung verwendet "swaggerize-express" zum Erstellen eines Endpunkts nach Swagger 2.0-Spezifikation.
 
 4. Öffnen Sie die Datei **server.js**, und untersuchen Sie den Code.
 
@@ -135,7 +134,7 @@ In diesem Abschnitt laden Sie im Rahmen des NodeAPIApp-Beispiels Code herunter u
 
 	Die Eigenschaft `docspath` verweist auf den Swagger 2.0-Endpunkt. Diese URL ist relativ zum Basispfad Ihrer API. Der Basispfad wird in der Datei "api.json" deklariert. In unserem Beispiel lautet der Basispfad */api/data*, deshalb lautet der relative Pfad zum Swagger-Endpunkt */api/data/swagger*.
 
-	> [AZURE.NOTE] Da der Basispfad in der Datei *api.json* deklariert ist, führt der Zugriff auf den */swagger*-Endpunkt als relativen Pfad zur API-App-URL zu einem 404-Fehler. Dies ist ein häufiger Fehler beim Versuch des Zugriffs auf den Swagger-Endpunkt.
+	> [AZURE.NOTE]Da der Basispfad in der Datei *api.json* deklariert ist, führt der Zugriff auf den */swagger*-Endpunkt als relativen Pfad zur API-App-URL zu einem 404-Fehler. Dies ist ein häufiger Fehler beim Versuch des Zugriffs auf den Swagger-Endpunkt.
 
 	Die Eigenschaft `handlers` verweist auf den lokalen Ordner, der die Routenhandler für das Express.js-Modul enthält.
 
@@ -203,11 +202,11 @@ Nun, da Sie eine API in Ihrer API-App bereitgestellt haben, können Sie die API-
 
 	![](./media/app-service-api-nodejs-api-app/clickgateway.png)
 
-7. Klicken Sie im Blatt **Gateway** auf **Neu starten**. Sie können dieses Blatt nun schließen.
+7. Klicken Sie auf dem Blatt **Gateway** auf **Neu starten**. Sie können dieses Blatt nun schließen.
 
 	![](./media/app-service-api-nodejs-api-app/gatewayrestart.png)
 
-8. Klicken Sie im Blatt **API-App** auf **API-Definition**.
+8. Klicken Sie auf dem Blatt **API-App** auf **API-Definition**.
 
 	![](./media/app-service-api-nodejs-api-app/apidef.png)
 
@@ -221,8 +220,7 @@ Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App-Host** für Ihre API-Ap
 
 ![][browse-api-app-page]
 
-Der Browser zeigt die Startseite an, die Sie zuvor beim lokalen Ausführen der Beispiel-App gesehen haben. 
-## API-App-Metadaten
+Der Browser zeigt die Startseite an, die Sie zuvor beim lokalen Ausführen der Beispiel-App gesehen haben.
 
 [AZURE.INCLUDE [app-service-api-direct-deploy-metadata](../../includes/app-service-api-direct-deploy-metadata.md)]
 
@@ -248,4 +246,4 @@ Sie haben eine Node.js-Web-App bereitgestellt, die ein API-App-Back-End zu Azure
 [browse-api-app-page]: ./media/app-service-api-nodejs-api-app/browse-api-app-page.png
  
 
-<!----HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

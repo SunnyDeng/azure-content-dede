@@ -16,18 +16,18 @@
 	ms.date="05/12/2015"
 	ms.author="mwasson"/>
 
-# Konfigurieren eines benutzerdefinierten Domänennamens in Azure-App-Dienst (Purchased direkt von GoDaddy)
+# Konfigurieren eines benutzerdefinierten (direkt von GoDaddy erworbenen) Domänennamens in Azure App Service
 
 [AZURE.INCLUDE [web-selector](../../includes/websites-custom-domain-selector.md)]
 
 
 [AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
-> [AZURE.NOTE]Wenn Sie Domäne über Azure App Service Web Apps erworben haben, dann finden Sie im letzten Schritt des <a href="/documentation/articles/custom-dns-web-site-buydomains-web-app" title="Web Apps" class="current">kaufen Domäne für Webanwendungen</a> Artikel.
+> [AZURE.NOTE]Wenn Sie eine Domäne über Azure App Service-Web-Apps erworben haben, lesen Sie den letzten Schritt des Artikels zum <a href="/documentation/articles/custom-dns-web-site-buydomains-web-app" title="Web Apps" class="current">Erwerben einer Domäne für Web-Apps</a>.
 
 [AZURE.INCLUDE [Einführung](../../includes/custom-dns-web-site-intro.md)]
 
-Dieser Artikel enthält Anweisungen zur Verwendung eines benutzerdefinierten Domänennamens, die direkt vom gekauft wurde [GoDaddy](https://godaddy.com) mit [App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714).
+Dieser Artikel enthält Anweisungen zur Verwendung eines benutzerdefinierten Domänennamens, der mit [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) direkt bei [GoDaddy](https://godaddy.com) erworben wurde.
 
 [AZURE.INCLUDE [introfooter](../../includes/custom-dns-web-site-intro-notes.md)]
 
@@ -89,4 +89,4 @@ Um Ihre benutzerdefinierte Domäne mit einer Web-App im App Service zu verknüpf
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

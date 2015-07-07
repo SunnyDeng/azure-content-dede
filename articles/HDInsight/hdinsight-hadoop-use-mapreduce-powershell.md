@@ -20,15 +20,15 @@
 
 [AZURE.INCLUDE [mapreduce-selector](../../includes/hdinsight-selector-use-mapreduce.md)]
 
-Dieses Dokument enthält ein Beispiel zur Verwendung von Azure PowerShell zum Ausführen eines MapReduce-Auftrags auf einem Hadoop-Cluster in HDInsight.
+Dieses Dokument enthält ein Beispiel zur Verwendung von Azure PowerShell zum Ausführen eines MapReduce-Auftrags in einem Hadoop-Cluster in HDInsight.
 
 ##<a id="prereq"></a>Voraussetzungen
 
-Um die in diesem Artikel aufgeführten Schritte auszuführen, benötigen Sie Folgendes:
+Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benötigen Sie Folgendes:
 
-* Einen Azure HDInsight-Cluster (Hadoop in HDInsight), der auf Windows oder Linux basiert
+- **Einen Azure HDInsight-Cluster (Hadoop in HDInsight), der auf Windows oder Linux basiert**
 
-* <a href="http://azure.microsoft.com/documentation/articles/install-configure-powershell/" target="_blank">Azure PowerShell</a>
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren und Verwenden von Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/).
 
 ##<a id="powershell"></a>Ausführen eines MapReduce-Auftrags mithilfe von Azure PowerShell
 
@@ -36,19 +36,19 @@ Azure PowerShell stellt *Cmdlets* bereit, mit denen Sie MapReduce-Aufträge in H
 
 Die folgenden Cmdlets werden zum Ausführen der MapReduce-Aufträge in einem HDInsight-Remotecluster verwendet.
 
-* **Add-AzureAccount**: authentifiziert PowerShell für Ihr Azure-Abonnement
+* **Add-AzureAccount**: Authentifiziert PowerShell für Ihr Azure-Abonnement
 
-* **New-AzureHDInsightMapReduceJobDefinition**: erstellt mithilfe der angegebenen MapReduce-Informationen eine neue *Auftragsdefinition*
+* **New-AzureHDInsightMapReduceJobDefinition**: Erstellt aus den angegebenen MapReduce-Informationen eine neue *Auftragsdefinition*.
 
-* **Start-AzureHDInsightJob**: sendet die Auftragsdefinition an HDInsight, startet den Auftrag und gibt ein *Auftrag*sobjekt zurück, mit dem der Status des Auftrags geprüft werden kann
+* **Start-AzureHDInsightJob**: Sendet die Auftragsdefinition an HDInsight, startet den Auftrag und gibt ein *Auftrags*-Objekt zurück, mit dem der Status des Auftrags geprüft werden kann
 
-* **Wait-AzureHDInsightJob**: verwendet das Auftragsobjekt, um den Status des Auftrags zu prüfen. Es wird gewartet, bis der Auftrag abgeschlossen oder die Wartezeit überschritten ist.
+* **Wait-AzureHDInsightJob**: Verwendet das Auftragsobjekt, um den Status des Auftrags zu prüfen Es wird gewartet, bis der Auftrag abgeschlossen oder die Wartezeit überschritten ist.
 
-* **Get-AzureHDInsightJobOutput**: zum Abrufen der Ausgabe des Auftrags
+* **Get-AzureHDInsightJobOutput**: Wird zum Abrufen des Auftrags verwendet
 
-Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines Auftrags im HDInsight-Cluster verwendet werden.
+Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines Auftrags in einem HDInsight-Cluster verwendet werden.
 
-1. Speichern Sie den folgenden Code mithilfe eines Editors als **mapreducejob.ps1**. Ersetzen Sie **CLUSTERNAME** durch den Namen des HDInsight-Clusters.
+1. Speichern Sie den folgenden Code in einem Editor in einer Datei namens **mapreducejob.ps1**. Ersetzen Sie **CLUSTERNAME** durch den Namen des HDInsight-Clusters.
 
 		#Login to your Azure subscription
 		# Is there an active Azure subscription?
@@ -82,7 +82,7 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
 		Write-Host "Display the standard output..." -ForegroundColor Green
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $wordCountJob.JobId -StandardOutput
 
-2. Öffnen Sie eine neue **Azure PowerShell**-Eingabeaufforderung. Navigieren Sie zum Speicherort der Datei **mapreducejob.ps1**, und führen Sie das Skript mit folgendem Befehl aus:
+2. Öffnen Sie eine neue **Azure PowerShell**-Befehlsaufforderung. Navigieren Sie zum Speicherort der Datei **mapreducejob.ps1**, und verwenden Sie folgenden Befehl zum Ausführen des Skripts.
 
 		.\mapreducejob.ps1
 
@@ -100,20 +100,20 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
 
 	Diese Ausgabe gibt an, dass der Auftrag erfolgreich abgeschlossen wurde.
 	
-	> [AZURE.NOTE]Wenn sich für **ExitCode** ein anderer Wert als 0 ergibt, finden Sie weitere Informationen unter [Problembehandlung](#troubleshooting).
+	> [AZURE.NOTE]Wenn sich für **ExitCode** ein anderer Wert als 0 ergibt, finden Sie weitere Informationen unter [Troubleshooting](#troubleshooting).
 
 ##<a id="results"></a>Anzeigen der Auftragsausgabe
 
-Der MapReduce-Auftrag hat die Ergebnisse des Vorgangs im Azure-Blob-Speicher im Pfad **wasb:///example/data/WordCountOutput** gespeichert, der als Argument für den Auftrag angegeben wurde. Sie können über Azure PowerShell auf den Azure-Blob-Speicher zugreifen, aber Sie müssen den Speicherkontonamen, den Schlüssel und den Container kennen, der von Ihrem HDInsight-Cluster verwendet wird, um direkt auf die Dateien zuzugreifen.
+Der MapReduce-Auftrag hat die Ergebnisse des Vorgangs im Azure-Blobspeicher im Pfad **wasb:///example/data/WordCountOutput** gespeichert, der als Argument für den Auftrag angegeben wurde. Sie können über Azure PowerShell auf den Azure-Blobspeicher zugreifen, aber Sie müssen den Speicherkontonamen, den Schlüssel und den Container kennen, der von Ihrem HDInsight-Cluster verwendet wird, um direkt auf die Dateien zuzugreifen.
 
 Glücklicherweise können Sie diese Informationen mithilfe der folgenden Azure PowerShell-Cmdlets abrufen:
 
-* **Get-AzureHDInsightCluster**: gibt Informationen zu einem HDInsight-Cluster zurück, einschließlich aller zugeordneten Speicherkonten. Einem Cluster ist immer ein Standardspeicherkonto zugeordnet.
+* **Get-AzureHDInsightCluster**: Gibt Informationen zu einem HDInsight-Cluster zurück, einschließlich aller zugeordneten Speicherkonten. Einem Cluster ist immer ein Standardspeicherkonto zugeordnet.
 * **New-AzureStorageContext**: Bei gegebenem Speicherkontonamen und Schlüssel, die mithilfe von **Get-AzureHDInsightCluster** abgerufen wurden, wird ein Kontextobjekt zurückgegeben, das für den Zugriff auf das Speicherkonto verwendet werden kann.
 * **Get-AzureStorageBlob**: Bei gegebenem Kontextobjekt und Containernamen wird eine Liste der im Container enthaltenen Blobs zurückgegeben.
-* **Get-AzureStorageBlobContent**: Bei gegebenem Kontextobjekt, Dateipfad und -namen (von **Get-AzureHDinsightCluster** zurückgegeben) wird eine Datei aus dem Azure-Blob-Speicher heruntergeladen.
+* **Get-AzureStorageBlobContent**: Bei gegebenem Kontextobjekt, Dateipfad und -namen (von **Get-AzureHDinsightCluster** zurückgegeben) wird eine Datei aus dem Azure-Blobspeicher heruntergeladen.
 
-Das folgende Beispiel ruft die Speicherinformationen ab und lädt die Ausgabe von **wasb:///example/data/WordCountOutput** herunter. Ersetzen Sie **CLUSTERNAME** durch den Namen Ihres HDInsight-Clusters.
+Im folgenden Beispiel werden die Speicherinformationen abgerufen; anschließend wird die Ausgabe von **wasb:///example/data/WordCountOutput** heruntergeladen. Ersetzen Sie **CLUSTERNAME** durch den Namen Ihres HDInsight-Clusters.
 
 		#Login to your Azure subscription
 		# Is there an active Azure subscription?
@@ -141,15 +141,15 @@ Das folgende Beispiel ruft die Speicherinformationen ab und lädt die Ausgabe vo
 		#Use the -blob switch to filter only blobs contained in example/data/WordCountOutput
 		Get-AzureStorageBlob -Container $storageContainer -Blob example/data/WordCountOutput/* -Context $context | Get-AzureStorageBlobContent -Context $context
 
-> [AZURE.NOTE]In diesem Beispiel werden die heruntergeladenen Dateien im Ordner **example/data/WordCountOutput** in dem Verzeichnis gespeichert, von dem aus Sie das Skript ausführen.
+> [AZURE.NOTE]In diesem Beispiel werden die heruntergeladenen Dateien in Ordner **example/data/WordCountOutput** in dem Verzeichnis gespeichert, von dem aus Sie das Skript ausführen.
 
-Die Ausgabe des MapReduce-Auftrags wird in Dateien mit der Bezeichnung *part-r-#####* gespeichert. Öffnen Sie die Datei **example/data/WordCountOutput/part-r-00000** in einem Text-Editor, um die durch den Auftrag erzeugten Wörter und Zählerstände anzuzeigen.
+Die Ausgabe des MapReduce-Auftrags wird in Dateien mit der Bezeichnung *part-r-#####* gespeichert. Öffnen Sie die Datei **example/data/WordCountOutput/part-r-00000** in einem Texteditor, um die durch den Auftrag erzeugten Wörter und Zählerstände anzuzeigen.
 
 > [AZURE.NOTE]Die Ausgabedateien eines MapReduce-Auftrags sind unveränderlich. Wenn Sie dieses Beispiel erneut ausführen, müssen Sie daher den Namen der Ausgabedatei ändern.
 
 ##<a id="troubleshooting"></a>Problembehandlung
 
-Wenn nach Abschluss des Auftrags keine Informationen zurückgegeben werden, ist während der Verarbeitung möglicherweise ein Fehler aufgetreten. Um Fehlerinformationen für diesen Auftrag anzuzeigen, fügen Sie Folgendes am Ende der Datei **mapreducejob.ps1** hinzu. Anschließend speichern Sie die Datei und führen sie erneut aus.
+Wenn nach Abschluss des Auftrags keine Informationen zurückgegeben werden, ist während der Verarbeitung möglicherweise ein Fehler aufgetreten. Um Fehlerinformationen für diesen Auftrag anzuzeigen, fügen Sie folgenden Befehl am Ende der Datei **mapreducejob.ps1** hinzu. Anschließend speichern Sie die Datei und führen sie erneut aus.
 
 	# Print the output of the WordCount job.
 	Write-Host "Display the standard output ..." -ForegroundColor Green
@@ -172,5 +172,6 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 * [Verwenden von Hive mit Hadoop in HDInsight](hdinsight-use-hive.md)
 
 * [Verwenden von Pig mit Hadoop in HDInsight](hdinsight-use-pig.md)
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

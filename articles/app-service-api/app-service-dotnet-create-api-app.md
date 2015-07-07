@@ -25,7 +25,7 @@
 
 ## Übersicht
 
-In diesem Lernprogramm wird gezeigt, wie Sie zum Erstellen einer ASP.NET Web API-Projekt mit einer Visual Studio 2013-Vorlage, die das Projekt für die Bereitstellung in der Cloud als konfiguriert eine [API-Anwendung](app-service-api-apps-why-best-platform.md) in [Azure Anwendungsdiensts](../app-service/app-service-value-prop-what-is.md). Informationen zum Konfigurieren eines vorhandenen Web-API-Projekts für die Bereitstellung als API-Anwendung finden Sie unter [Konfigurieren Sie ein Web-API-Projekt als app-API-](app-service-dotnet-create-api-app-visual-studio.md).
+In diesem Lernprogramm wird gezeigt, wie Sie ein ASP.NET-Web-API-Projekt erstellen und dazu eine Visual Studio 2013-Vorlage verwenden, die das Projekt zur Bereitstellung in der Cloud als [API-App](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md) konfiguriert. Informationen zum Konfigurieren eines vorhandenen Web-API-Projekts zur Bereitstellung als API-App finden Sie unter [Konfigurieren eines Web-API-Projekts als API-App](app-service-dotnet-create-api-app-visual-studio.md).
 
 Nachfolgende Lernprogramme in dieser Reihe zeigen, wie Sie das in diesem Lernprogramm erstellte API-App-Projekt [bereitstellen](app-service-dotnet-deploy-api-app.md) und [debuggen](../app-service-dotnet-remotely-debug-api-app.md).
 
@@ -41,7 +41,7 @@ Für dieses Lernprogramm ist Version 2.5.1 oder höher des Azure-SDK für .NET e
 
 3. Wählen Sie die Vorlage **ASP.NET-Webanwendung**.
 
-4. Stellen Sie sicher, dass die **Fügen Sie Application Insights Projekt** ist das Kontrollkästchen deaktiviert.
+4. Stellen Sie sicher, dass das Kontrollkästchen **Application Insights zu Projekt hinzufügen** deaktiviert ist.
 
 4. Geben Sie dem Projekt den Namen *ContactsList*.
 
@@ -68,4 +68,4 @@ Visual Studio erstellt ein Web-API-Projekt, das zur Bereitstellung als API-App k
 Ihre API-App kann jetzt bereitgestellt werden. Dazu können Sie das Lernprogramm [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

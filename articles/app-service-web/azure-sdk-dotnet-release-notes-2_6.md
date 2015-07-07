@@ -93,14 +93,14 @@ Das Speicherkonto für die Diagnose kann jetzt in der Dienstkonfigurationsdatei 
 
 - Für das Sammeln von Diagnoseprotokollen im Emulator ist ein 64-Bit-Betriebssystem erforderlich. Bei der Ausführung auf einem 32-Bit-Betriebssystem werden keine Diagnoseprotokolle gesammelt. Dies wirkt sich nicht auf andere Emulatorfunktionen aus. 
 
-- Azure SDK 2.6 auf 4/29/2015 freigegeben wurden zwei Probleme:
+- Azure SDK 2.6, veröffentlicht am 29.04.2015, hatte zwei Probleme:
 
-	- Universelle App können in Visual Studio 2015 konnte nicht geladen werden, wenn Azure SDK 2.6 auf dem Computer installiert wurde.
-	- Debuggen eines Cloud-Dienst-Projekts schlägt fehl, in Visual Studio 2013 und Visual Studio 2015, in dem Visual Studio nicht mehr reagiert und stürzt ab, wenn ein Dialogfeld mit der Meldung "Konfigurieren von Diagnose für den Emulator" angezeigt.
+	- Universal konnte nicht in Visual Studio 2015 geladen werden, wenn Azure SDK 2.6 auf dem Computer installiert war.
+	- Das Debuggen eines Clouddienstprojekts schlägt in Visual Studio 2013 und Visual Studio 2015 fehl. Visual Studio reagiert nicht mehr und stürzt ab, während ein Dialogfeld mit der Meldung "Konfigurieren der Diagnose für den Emulator" angezeigt wird.
 	
-	Es wurde ein Update auf Azure SDK 2.6 auf 5/18/2015 veröffentlicht. Die aktualisierte Version ist 2.6.30508.1601. Es enthält Korrekturen für die beiden oben beschriebenen Probleme. Sie können die Version des SDK über die Systemsteuerung identifizieren Programme und Features -> Microsoft Azure-Tools für Microsoft Visual Studio 2013 – V 2.6. Version dieser Spalte wird die Nummer des Builds angezeigt.
+	Ein Update für Azure SDK 2.6 wurde am 18.05.2015 veröffentlicht. Die aktualisierte Version ist 2.6.30508.1601. Sie enthält Korrekturen für die beiden oben beschriebenen Probleme. Sie können die Version des SDK identifizieren über: Systemsteuerung -> Programme und Funktionen -> Microsoft Azure-Tools für Microsoft Visual Studio 2013 – V 2.6. In der Versionsspalte wird die Nummer des Builds angezeigt.
 
-	Wenn Sie weiterhin die oben genannten Probleme konfrontiert werden, installieren Sie die neueste Version des SDK 2.6 Azure [Visual Studio 2012](http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x409), [VS 2013](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) oder [VS 2015](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409).
+	Wenn Sie weiterhin die oben genannten Probleme haben, installieren Sie die neueste Version des Azure SDK 2.6 für [VS 2012](http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x409), [VS 2013](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) oder [VS 2015](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409).
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

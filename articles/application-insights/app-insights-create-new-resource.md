@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Erstellen einer neuen Application Insights-Ressource" 
-	description="Richten Sie eine neue Anwendung, und erhalten Sie einen neuen instrumentationsschlüssel. Application Insights überwacht die Leistung und Verwendung von live-Anwendungen." 
+	description="Richten Sie eine neue Anwendung ein, und erhalten Sie einen neuen Instrumentationsschlüssel. Application Insights überwacht die Leistung und Verwendung von Live-Anwendungen." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -21,60 +21,60 @@
 
 [AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
 
-Visual Studio Application Insights zeigt Daten über Ihre Anwendung in einer Microsoft Azure *Ressource*. Erstellen einer neuen Ressource ist daher Teil des [Application Insights einrichten, um eine neue Anwendung überwachen][start]. In vielen Fällen hierzu werden automatisch von der IDE, und das ist die empfohlene Methode, sofern diese verfügbar sind. Aber in einigen Fällen eine Ressource manuell erstellt.
+Visual Studio Application Insights zeigt Daten über Ihre Anwendung in einer Microsoft Azure-*Ressource* an. Die Erstellung einer neuen Ressource gehört daher zur [Einrichtung von Application Insights, um eine neue Anwendung zu überwachen][start]. In vielen Fällen kann dies automatisch über die IDE erfolgen. Diese Methode wird nach Möglichkeit empfohlen. In einigen Fällen wird eine Ressource jedoch manuell erstellt.
 
-Nach dem Erstellen der Ressource, die Sie den instrumentationsschlüssel abrufen und verwenden, konfigurieren Sie das SDK in der Anwendung. Die Telemetrie an die Ressource gesendet.
+Nach dem Erstellen der Ressource erhalten Sie den Instrumentationsschlüssel und verwenden ihn zum Konfigurieren des SDK in der Anwendung. Dadurch wird die Telemetrie an die Ressource gesendet.
 
-## Melden Sie sich beim Microsoft Azure
+## Anmelden bei Microsoft Azure
 
-Wenn Sie besitzen eine [Microsoft-Konto, melden Sie sich jetzt](http://live.com). (Wenn Sie Dienste wie Outlook.com, OneDrive, Windows Phone oder XBox Live verwenden, verfügen Sie bereits über ein Microsoft-Konto.)
+Wenn Sie noch kein [Microsoft-Konto besitzen, erstellen Sie jetzt eins](http://live.com). (Wenn Sie Dienste wie Outlook.com, OneDrive, Windows Phone oder XBox Live verwenden, besitzen Sie bereits ein Microsoft-Konto.)
 
-Sie benötigen außerdem ein Abonnement für [Microsoft Azure](http://azure.com). Wenn Ihr Team oder die Organisation ein Azure-Abonnement verfügt, kann der Besitzer Sie hinzufügen, mit Ihrer Windows Live ID
+Außerdem benötigen Sie ein [Microsoft Azure](http://azure.com)-Abonnement. Wenn Ihr Team oder Ihre Organisation über ein Azure-Abonnement verfügt, kann der Besitzer Sie anhand Ihrer Windows Live-ID hinzufügen.
 
-Oder Sie können ein neues Abonnement erstellen. Die kostenlose Testversion können Sie alles in Azure testen. Nachdem der Evaluierungszeitraum abgelaufen ist, finden Sie möglicherweise nutzungsbasierte Abonnements geeignet, wie Sie kostenlose Services in Rechnung gestellt wird nicht.
+Sie können jedoch auch ein neues Abonnement erstellen. Mit der kostenlosen Testversion können Sie alle Funktionen von Azure testen. Nachdem der Testzeitraum abgelaufen ist, finden Sie möglicherweise das Abonnement mit nutzungsbasierter Bezahlung geeignet, da Ihnen kostenlose Dienste nicht in Rechnung gestellt werden.
 
-Wann haben Sie Zugriff auf ein Abonnement, die Anmeldung bei Application Insights unter [http://portal.azure.com](http://portal.azure.com), und verwenden Ihrer Live ID anmelden.
+Wenn Sie Zugang zu einem Abonnement besitzen, melden Sie sich über Ihre Live-ID unter [http://portal.azure.com](http://portal.azure.com) bei Application Insights an.
 
 
 ## Erstellen einer Application Insights-Ressource
   
 
-In der [portal.azure.com](https://portal.azure.com), eine Ressource Application Insights hinzufügen:
+Fügen Sie unter [portal.azure.com](https://portal.azure.com) eine neue Application Insights-Ressource hinzu:
 
 ![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-create-new-resource/01-new.png)
 
 
-* **Anwendungstyp** wirkt sich auf das Fenster "Übersicht" und in die verfügbaren Eigenschaften finden Sie [metrische Explorer][metrics]. Den Typ der app angezeigt wird, wählen Sie die Web-Typ für Webseiten und der Telefon-Typ für andere Geräte.
-* **Ressourcengruppe** ist eine benutzerfreundliche Möglichkeit zum Verwalten von Eigenschaften wie Zugriffssteuerung. Wenn Sie bereits andere Azure-Ressourcen erstellt haben, können Sie auswählen, diese neue Ressource in derselben Gruppe platzieren.
-* **Abonnement** ist Ihr Konto in Azure.
-* **Speicherort** ist, in dem wir Ihre Daten beibehalten. Derzeit kann es nicht geändert werden.
-* **Zum Startmenü hinzufügen** setzt eine Kachel Schnellzugriff für die Ressource auf Ihrer Azure-Homepage. Empfohlen.
+* **Anwendungstyp** bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften. Wenn Ihr App-Typ nicht angezeigt wird, wählen Sie einen der Webtypen für Webseiten und einen der Telefontypen für andere Geräte aus.
+* **Ressourcengruppe** ist eine benutzerfreundliche Möglichkeit zum Verwalten von Eigenschaften wie der Zugriffssteuerung. Wenn Sie bereits andere Azure-Ressourcen erstellt haben, können Sie diese neue Ressource in derselben Gruppe platzieren.
+* **Abonnement** ist Ihr Zahlungskonto in Azure.
+* **Speicherort** ist der Ort, an dem Ihre Daten aufbewahrt werden. Dieser kann derzeit nicht geändert werden.
+* **Zum Startmenü hinzufügen** legt für die Ressource eine Kachel für den Schnellzugriff auf Ihrer Azure-Startseite ab. Empfohlen.
 
-Wenn Ihre Anwendung erstellt wurde, wird kein neuer Blade geöffnet. Dies ist, wo Sie Leistungs- und Nutzungsdaten über Ihre app sehen werden.
+Wenn Ihre App erstellt wurde, wird ein neues Blatt geöffnet. Dort werden die Leistungs- und Nutzungsdaten über Ihre App angezeigt.
 
-Abzurufende zurück zu diesem beim nächsten Mal in Azure, Anmeldung suchen für Ihre app Schnellstart-Kachel im Startmenü Board (Startseite). Oder klicken Sie auf Durchsuchen, um es auszuwählen.
+Um bei der nächsten Anmeldung bei Azure dorthin zurückzugelangen, suchen Sie im Startmenü (Startseite) nach der Schnellstart-Kachel für Ihre App. Klicken Sie alternativ dazu auf "Durchsuchen", um sie zu finden.
 
 
 ## Kopieren Sie den Instrumentationsschlüssel.
 
 
-Sie benötigen diese kurz darauf angewiesen die Daten aus dem SDK in Ihrer Anwendung auf die Ressource, die Sie gerade erstellt haben.
+Sie benötigen diesen in Kürze, um die Daten aus dem SDK in Ihrer App an die soeben erstellte Ressource zu leiten.
 
 ![Klicken Sie auf "Eigenschaften", wählen Sie den Schlüssel aus, und drücken Sie STRG+C](./media/app-insights-create-new-resource/02-props.png)
 
-## Konfigurieren Sie Ihren SDK
+## Konfigurieren Ihres SDK
 
-Verwenden Sie den instrumentationsschlüssel konfigurieren [im SDK, die Sie in Ihrer Anwendung installieren][start].
+Konfigurieren Sie das [SDK, das Sie in Ihrer Anwendung installieren][start] mithilfe des Instrumentationsschlüssels.
 
-Dieser Schritt hängt stark von der Art der Anwendung, mit der Sie arbeiten.
+Dieser Schritt hängt stark von der Art der Anwendung ab, mit der Sie arbeiten.
 
-In einigen Fällen installieren Sie die standard-Module, die Telemetrie zu, ohne dass senden Sie keinen Code schreiben müssen. In allen Fällen können Sie [Verwenden Sie die API][api] eigene Telemetriedaten senden.
+In einigen Fällen installieren Sie Standardmodule, die Telemetrie senden, ohne dass Sie Code schreiben müssen. In jedem Fall können Sie [die API verwenden][api], um eigene Telemetriedaten zu senden.
 
-## <a name="monitor"></a>Siehe Telemetriedaten
+## <a name="monitor"></a>Anzeigen von Telemetriedaten
 
-Schließen Sie das Schnellstart-Blade zurückkehren zu Ihrer Anwendung Blade im Azure-Portal.
+Schließen Sie das Schnellstartblatt, um zum Blatt Ihrer Anwendung im Azure-Portal zurückzukehren.
 
-Klicken Sie auf die Kachel Suche finden Sie unter [diagnostische Suche][diagnostic], wobei die ersten Ereignisse angezeigt werden.
+Klicken Sie auf die Kachel "Search", um die [Diagnosesuche][diagnostic] zu öffnen. Dort werden die ersten Ereignisse angezeigt.
 
 Klicken Sie nach einigen Sekunden auf "Aktualisieren", wenn Sie mehr Daten erwarten.
 
@@ -89,4 +89,4 @@ Klicken Sie nach einigen Sekunden auf "Aktualisieren", wenn Sie mehr Daten erwar
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

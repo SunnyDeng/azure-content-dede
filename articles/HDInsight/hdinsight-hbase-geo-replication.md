@@ -1,7 +1,7 @@
 <properties 
-   pageTitle="Konfiguration von HBase-Replikation zwischen zwei Azure-Rechenzentren | Azure" 
-   description="Erfahren Sie, wie Sie VPN-Verbindungen zwischen zwei virtuellen Netzwerken in Azure, die Auflösung des Domänennamens zwischen zwei virtuellen Netzwerke und HBase Georeplikation konfigurieren" 
-   services="hdinsight" 
+   pageTitle="Konfigurieren der HBase-Replikation zwischen zwei Datencentern | Microsoft Azure" 
+   description="Erfahren Sie, wie Sie die HBase-Replikation zwischen zwei Datencentern konfigurieren, und lernen Sie Anwendungsfälle für die Clusterreplikation kennen." 
+   services="hdinsight,virtual-network" 
    documentationCenter="" 
    authors="mumian" 
    manager="paulettm" 
@@ -42,12 +42,13 @@ Das folgende Diagramm veranschaulicht die beiden virtuellen Netzwerke und die Ne
 
 ![HDInsight HBase Replikation virtuelles Netzwerkdiagramm][img-vnet-diagram]
 
-##<a id="prerequisites"></a>Voraussetzungen
+## <a id="prerequisites"></a>Voraussetzungen
+
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Azure ist eine abonnementbasierte Plattform. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Kaufoptionen][azure-purchase-options], [Spezielle Angebote][azure-member-offers] oder [Kostenlose Testversion][azure-free-trial].
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-- **Eine Arbeitsstation, auf der Azure PowerShell installiert und konfiguriert ist**. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install]. Um PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe [Verwenden des Cmdlet „Set-ExecutionPolicy“][2].
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren und Verwenden von Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/). Um PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe Verwenden des Cmdlet "Set-ExecutionPolicy".
 
 - **Zwei virtuelle Netzwerke in Azure mit VPN-Konnektivität und konfiguriertem DNS**. Anweisungen hierzu finden Sie unter [Konfigurieren einer VPN-Verbindung zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-replication-vnet] und [Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-replication-dns].
 
@@ -62,7 +63,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 
 
-##Bereitstellen von HBase-Clustern in HDInsight
+## Bereitstellen von HBase-Clustern in HDInsight
 
 In [Konfigurieren einer VPN-Verbindung zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-replication-vnet] haben Sie ein virtuelles Netzwerk in einem Rechenzentrum in Europa und ein virtuelles Netzwerks in einem US-Rechenzentrum erstellt. Die beiden virtuellen Netzwerke sind über VPN verbunden. In dieser Sitzung werden Sie einen HBase-Cluster in den einzelnen virtuellen Netzwerken bereitstellen. Später in diesem Lernprogramm erstellen Sie eines der HBase-Cluster, um das andere HBase-Cluster zu replizieren.
 
@@ -147,11 +148,11 @@ Das Azure-Portal unterstützt die Bereitstellung von HDInsight-Clustern mit benu
 
 
 
-# Konfigurieren der bedingten DNS-Weiterleitungen
+## Konfigurieren der bedingten DNS-Weiterleitungen
 
 In [Konfigurieren von DNS für virtuelle Netzwerke][hdinsight-hbase-replication-dns] wurden DNS-Server für zwei Netzwerke konfiguriert. Die HBase-Cluster haben unterschiedliche Domänenendungen. Daher müssen Sie zusätzliche bedingte DNS-Weiterleitungen konfigurieren.
 
-Um bedingte Weiterleitung zu konfigurieren, müssen Sie die Domänenendungen der  beiden HBase-Cluster kennen.
+Um bedingte Weiterleitung zu konfigurieren, müssen Sie die Domänenendungen der beiden HBase-Cluster kennen.
 
 **Finden der Domänenendungen der beiden HBase-Cluster**
 
@@ -171,7 +172,7 @@ Um bedingte Weiterleitung zu konfigurieren, müssen Sie die Domänenendungen der
 4.	Erweitern Sie im linken Fensterbereich **DSN**, **Contoso-DNS-EU**.
 5.	Klicken Sie mit der rechten Maustaste auf **Bedingte Weiterleitungen** und klicken Sie dann auf **Neue bedingte Weiterleitung**. 
 5.	Geben Sie Folgendes ein:
-	- **DNS-Domäne**: Geben Sie das DNS-Suffix von Contoso-HBase-US ein. Zum Beispiel:  Contoso-HBase-US.f5.internal.cloudapp.net.
+	- **DNS-Domäne**: Geben Sie das DNS-Suffix von Contoso-HBase-US ein. Zum Beispiel: Contoso-HBase-US.f5.internal.cloudapp.net.
 	- **IP-Adressen der Masterserver**: Geben Sie 10.2.0.4 ein, dabei handelt es sich um die IP-Adresse von Contoso-DNS-US. Überprüfen Sie die IP. Ihr DNS-Server kann eine andere IP-Adresse haben.
 6.	Klicken Sie auf **ENTER** und dann auf **OK**. Sie können nun die IP-Adresse von Contoso-DNS-US von der von Contoso-DNS-EU auflösen.
 7.	Wiederholen Sie die Schritte zum Hinzufügen einer bedingten DNS-Weiterleitung an den DNS-Dienst auf dem virtuellen Computer von Contoso-DNS-US mit den folgenden Werten:
@@ -193,7 +194,7 @@ Um bedingte Weiterleitung zu konfigurieren, müssen Sie die Domänenendungen der
 
 >[AZURE.IMPORTANT]DNS muss funktionieren, bevor Sie mit den nächsten Schritten fortfahren können.
 
-##Aktivieren der Replikation zwischen HBase-Tabellen
+## Aktivieren der Replikation zwischen HBase-Tabellen
 
 Sie können nun eine HBase-Beispieltabelle erstellen, Replikation aktivieren und dann mit einigen Daten zu testen. Die Beispieltabelle , die Sie verwenden werden, verfügt über zwei Spaltenfamilien: Persönlich und Office.
 
@@ -273,14 +274,14 @@ Sie können dieselbe Datendatei in Ihr HBase Cluster hochladen und von dort Date
 		hbase org.apache.hadoop.hbase.mapreduce.LoadIncrementalHFiles /tmpOutput Contacts
 
 
-##Überprüfen Sie, ob die Datenreplikation stattfindet
+## Überprüfen Sie, ob die Datenreplikation stattfindet
 
 Sie können überprüfen, ob die Replikation erfolgt, indem Sie die Tabellen aus den beiden Clustern mit den folgenden HBase-Shell-Befehlen durchsuchen:
 
 		Scan 'Contacts'
 
 
-##Nächste Schritte
+## Nächste Schritte
 
 In diesem Lernprogramm haben Sie gelernt, HBase-Replikation über zwei Rechenzentren zu konfigurieren. Weitere Informationen zu HDInsight und HBase finden Sie unter:
 
@@ -298,7 +299,7 @@ In diesem Lernprogramm haben Sie gelernt, HBase-Replikation über zwei Rechenzen
 
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication/HDInsight.HBase.Replication.Network.diagram.png
 
-
+[powershell-install]: ../install-configure-powershell.md
 [hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
 [hdinsight-manage-portal]: hdinsight-administer-use-management-portal.md
 [hdinsight-provision]: hdinsight-provision-clusters.md
@@ -310,5 +311,4 @@ In diesem Lernprogramm haben Sie gelernt, HBase-Replikation über zwei Rechenzen
 [hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet.md
 [hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
 
-<!--HONumber=52-->
- 
+<!---HONumber=62-->

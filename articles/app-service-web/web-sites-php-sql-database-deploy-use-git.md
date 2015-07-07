@@ -18,16 +18,16 @@
 
 # Erstellen einer PHP-SQL-Web-App und Bereitstellen in Azure App Service mit Git
 
-In diesem Lernprogramm wird gezeigt, wie Sie zum Erstellen einer PHP-Web-app in [Azure Anwendungsdiensts](http://go.microsoft.com/fwlink/?LinkId=529714) verbindet Azure SQL-Datenbank und über Git bereitstellen. Dieses Lernprogramm setzt voraus, dass auf dem Computer [PHP][install-php], [SQL Server Express][install-SQLExpress], die [Microsoft-Treiber für SQL Server für PHP](http://www.microsoft.com/download/en/details.aspx?id=20098), ein Webserver und [Git][install-git] installiert sind. Nach der Durchführung dieses Lernprogramms verfügen Sie über eine in Azure ausgeführte PHP-SQL-Web-App.
+In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Web-App in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) erstellen, die eine Verbindung mit einer Azure-SQL-Datenbank herstellt, und wie Sie diese über Git bereitstellen. Dieses Lernprogramm setzt voraus, dass auf dem Computer [PHP][install-php], [SQL Server Express][install-SQLExpress], die [Microsoft-Treiber für SQL Server für PHP](http://www.microsoft.com/download/en/details.aspx?id=20098), ein Webserver und [Git][install-git] installiert sind. Nach der Durchführung dieses Lernprogramms verfügen Sie über eine in Azure ausgeführte PHP-SQL-Web-App.
 
 > [AZURE.NOTE]Sie können PHP, SQL Server Express, die Microsoft-Treiber für SQL Server für PHP und Internet Information Services (IIS) mit dem [Microsoft-Webplattform-Installer](http://www.microsoft.com/web/downloads/platform.aspx) installieren und konfigurieren.
 
 Sie erhalten Informationen zu folgenden Themen:
 
-* Gewusst wie: Erstellen einer Azure Web app und einer SQL-Datenbank mithilfe der [Azure-vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715). Da PHP standardmäßig in App Service-Web-Apps aktiviert ist, gelten für die Ausführung Ihres PHP-Codes keine besonderen Voraussetzungen.
+* Erstellen einer Web-App und einer SQL-Datenbank über das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715). Da PHP standardmäßig in App Service-Web-Apps aktiviert ist, gelten für die Ausführung Ihres PHP-Codes keine besonderen Voraussetzungen.
 * Veröffentlichen und erneutes Veröffentlichen Ihrer Anwendung mithilfe von Git in Azure
  
-Mithilfe dieses Lernprogramms erstellen Sie eine einfache Webanwendung für die Registrierung in PHP. Die Anwendung wird auf einer Azure-Website gehostet. Unten finden Sie einen Screenshot der vollständigen Anwendung:
+Mithilfe dieses Lernprogramms erstellen Sie eine einfache Webanwendung für die Registrierung in PHP. Die Anwendung wird auf einer Azure-Website gehostet. Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 ![Azure-PHP-Website](./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png)
 
@@ -37,7 +37,7 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Webanwendung für die 
 
 ##Erstellen einer Azure-Web-App und Einrichten der Git-Veröffentlichung
 
-Führen Sie die folgenden Schritte aus, um eine Azure-Web-App und eine SQL-Datenbank zu erstellen:
+Befolgen Sie diese Schritte, um eine Azure-Web-App und eine SQL-Datenbank zu erstellen:
 
 1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
 
@@ -65,15 +65,15 @@ Führen Sie die folgenden Schritte aus, um eine Azure-Web-App und eine SQL-Daten
 
 	![Ressourcengruppe der Web-App](./media/web-sites-php-sql-database-deploy-use-git/resource-group-blade.png)
 
-5. Klicken Sie auf **fortlaufende Bereitstellung einrichten** > **Quelle auswählen**. Wählen Sie **lokale Repository** und klicken Sie auf **OK**.
+5. Klicken Sie auf **Kontinuierliche Bereitstellung einrichten** > **Quelle auswählen**. Wählen Sie **Lokales Git-Repository** aus, und klicken Sie auf **OK**.
 
 	![Wo befindet sich Ihr Quellcode](./media/web-sites-php-sql-database-deploy-use-git/setup-local-git.png)
 
-	Wenn Sie nicht bereits ein Git-Repository eingerichtet haben, müssen Sei einen Benutzernamen und ein Kennwort angeben. Klicken Sie hierzu auf **Legen Sie die Anmeldeinformationen für die Bereitstellung** in der Web-app-Blade.
+	Wenn Sie nicht bereits ein Git-Repository eingerichtet haben, müssen Sei einen Benutzernamen und ein Kennwort angeben. Klicken Sie dazu auf dem Blatt der Web-App auf **Anmeldeinformationen für die Bereitstellung einrichten**.
 
 	![](./media/web-sites-php-sql-database-deploy-use-git/deployment-credentials.png)
 
-6. **Einrichten der kontinuierlichen Bereitstellung** wird **keine Bereitstellung gefunden**. Klicken Sie darauf, um die Git-Remote-URL anzuzeigen, die Sie später für die Bereitstellung Ihrer PHP-App benötigen.
+6. **Kontinuierliche Bereitstellung einrichten** ändert sich in **Keine Bereitstellung gefunden**. Klicken Sie darauf, um die Git-Remote-URL anzuzeigen, die Sie später für die Bereitstellung Ihrer PHP-App benötigen.
 
 ##Abrufen von SQL-Datenbank-Verbindungsinformationen
 
@@ -130,9 +130,9 @@ Gehen Sie wie unten beschrieben vor, um die Anwendung lokal zu erstellen und aus
 		echo "<h3>Table created.</h3>";
 		?>
 
-	Beachten Sie, dass zum Aktualisieren der Werte für <code>$user</code> und <code>$pwd</code> mit Ihrem lokalen SQL Server-Benutzernamen und Kennwort.
+	Die Werte für <code>$user</code> und <code>$pwd</code> müssen durch den lokalen SQL Server-Benutzernamen und das dazugehörige Kennwort ersetzt werden.
 
-4. Öffnen Sie einen Webbrowser und navigieren Sie zu **http://localhost/registration/createtable.php**. Dadurch entsteht der `registration_tbl` Tabelle in der Datenbank.
+4. Öffnen Sie einen Webbrowser, und navigieren Sie zu **http://localhost/registration/createtable.php**. Dadurch wird die Tabelle `registration_tbl` in der Datenbank erstellt.
 
 5. Öffnen Sie die Datei **index.php** in einem Texteditor oder IDE, und fügen Sie den Basis-HTML- und CSS-Code für die Seite hinzu (der PHP-Code wird in einem späteren Schritt hinzugefügt).
 
@@ -232,7 +232,7 @@ Nun können Sie zu **http://localhost/registration/index.php** navigieren, um di
 
 ##Veröffentlichen der Anwendung
 
-Nachdem Sie Ihre Anwendung lokal getestet haben, können Sie sie über Git in Ihrer App Service-Web-App veröffentlichen. Sie müssen jedoch zuerst die Datenbankverbindungsinformationen in der Anwendung aktualisieren. Verwenden den Datenbank-Verbindungsinformationen, die Sie zuvor erhalten haben (in der **Abrufen von SQL-Datenbank-Verbindungsinformationen** Abschnitt), aktualisieren Sie die folgende Informationen in **beide** der `createdatabase.php` und `index.php` Dateien mit den entsprechenden Werten:
+Nachdem Sie Ihre Anwendung lokal getestet haben, können Sie sie über Git in Ihrer App Service-Web-App veröffentlichen. Sie müssen jedoch zuerst die Datenbankverbindungsinformationen in der Anwendung aktualisieren. Aktualisieren Sie mithilfe der zuvor ermittelten Datenbankverbindungsinformationen (Abschnitt **Abrufen von SQL-Datenbank-Verbindungsinformationen**) die folgenden Informationen in den Dateien `createdatabase.php` **und** `index.php` mit den entsprechenden Werten:
 
 	// DB connection info
 	$host = "tcp:<value of Server>";
@@ -240,15 +240,15 @@ Nachdem Sie Ihre Anwendung lokal getestet haben, können Sie sie über Git in Ih
 	$pwd = "<your password>";
 	$db = "<value of SQL Database>";
 
-> [AZURE.NOTE]In der <code>$host</code>, muss der Wert des Servers vorangestellt werden <code>Tcp:</code>.
+> [AZURE.NOTE]Unter <code>$host</code> muss dem Serverwert die Zeichenfolge <code>tcp:</code> vorangestellt werden.
 
 
 Sie können nun die Git-Veröffentlichung einrichten und die Anwendung veröffentlichen.
 
-> [AZURE.NOTE]Dies sind die gleichen Schritte, die am Ende der **eine Azure Web app erstellen und Einrichten der Git-Veröffentlichung** obigen Abschnitt.
+> [AZURE.NOTE]Hierbei handelt es sich um die gleichen Schritte, die auch weiter oben am Ende des Abschnitts **Erstellen einer Azure-Web-App und Einrichten der Git-Veröffentlichung** aufgeführt sind.
 
 
-1. Öffnen Sie GitBash (oder eine Terminalsitzung, wenn sich Git in Ihrem `PATH`), wechseln Sie zum Stammverzeichnis der Anwendung (die **Registrierung** Directory), und führen Sie die folgenden Befehle:
+1. Öffnen Sie GitBash (oder eine Terminalsitzung, wenn sich Git an Ihrem `PATH` befindet), wechseln Sie zum Stammverzeichnis Ihrer Anwendung (das Verzeichnis **registration**), und führen Sie die folgenden Befehle aus:
 
 		git init
 		git add .
@@ -258,8 +258,8 @@ Sie können nun die Git-Veröffentlichung einrichten und die Anwendung veröffen
 
 	Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben.
 
-2. Navigieren Sie zu **http://[web app name].azurewebsites.net/createtable.php** die SQL-Datenbanktabelle für die Anwendung zu erstellen.
-3. Navigieren Sie zu **http://[web app name].azurewebsites.net/index.php** die die Anwendung verwenden.
+2. Wechseln Sie zu **http://[web-app-name].azurewebsites.net/createtable.php**, um die SQL-Datenbanktabelle für die Anwendung zu erstellen.
+3. Navigieren Sie zu **http://[web-app-name].azurewebsites.net/index.php**, um die Anwendung zu verwenden.
 
 Nach Veröffentlichung Ihrer Anwendung können Sie Änderungen an ihr vornehmen und diese über Git veröffentlichen.
 
@@ -268,7 +268,7 @@ Nach Veröffentlichung Ihrer Anwendung können Sie Änderungen an ihr vornehmen 
 Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffentlichen:
 
 1. Nehmen Sie lokal Änderungen an Ihrer Anwendung vor.
-2. Öffnen Sie GitBash (oder eine Terminalsitzung, sich Git in Ihrem `PATH`), wechseln Sie zum Stammverzeichnis der Anwendung, und führen Sie die folgenden Befehle:
+2. Öffnen Sie GitBash (oder eine Terminalsitzung, wenn sich Git an Ihrem `PATH` befindet), wechseln Sie zum Stammverzeichnis Ihrer Anwendung, und führen Sie die folgenden Befehle aus:
 
 		git add .
 		git commit -m "comment describing changes"
@@ -276,7 +276,7 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 
 	Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben.
 
-3. Navigieren Sie zu **http://[web app name].azurewebsites.net/index.php** um die Änderungen anzuzeigen.
+3. Navigieren Sie zu **http://[web-app-name].azurewebsites.net/index.php**, um die Änderungen anzuzeigen.
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -292,4 +292,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [pdo-sqlsrv]: http://php.net/pdo_sqlsrv
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

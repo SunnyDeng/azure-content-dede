@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Bereitstellung einer API-Anwendung mit einem vorhandenen gateway" 
-	description="Verwenden Sie eine Azure-Ressourcen-Manager-Vorlage, um eine API-Anwendung bereitstellen, die ein vorhandenes Gateway und App-Service-Plan verwendet." 
+	pageTitle="Bereitstellen einer API-App mit einem vorhandenen Gateway" 
+	description="Verwenden Sie eine Azure-Ressourcen-Manager-Vorlage zum Bereitstellen einer API-App, die ein vorhandenes Gateway und einen App Service-Plan verwendet." 
 	services="app-service\api" 
 	documentationCenter="" 
 	authors="tfitzmac" 
@@ -16,25 +16,25 @@
 	ms.date="06/02/2015" 
 	ms.author="tomfitz"/>
 
-# Bereitstellen einer API-Anwendung mit einem vorhandenen gateway
+# Bereitstellen einer API-App mit einem vorhandenen Gateway
 
-In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage zu erstellen, die eine Azure-API-Anwendung und ein vorhandenes Gateway bereitstellt. Erfahren Sie, wie um zu definieren, welche Ressourcen bereitgestellt werden und wie Sie Parameter definieren, die angegeben, wenn die Bereitstellung ausgeführt wird. Sie können diese Vorlage für Ihre eigenen Bereitstellungen verwenden oder Ihren Anforderungen anpassen.
+In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, die eine Azure API-App und ein vorhandenes Gateway bereitstellt. Sie erfahren, wie Sie definieren, welche Ressourcen bereitgestellt werden, und wie Sie Parameter definieren, die beim Ausführen der Bereitstellung angegeben werden. Sie können diese Vorlage für Ihre eigenen Bereitstellungen verwenden oder an Ihre Anforderungen anpassen.
 
-Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Authoring Azure Resource Manager Vorlagen](../resource-group-authoring-templates.md).
+Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
-Der vollständige Vorlage finden Sie unter [API-App mit vorhandenen Gateway-Vorlage](https://github.com/tfitzmac/AppServiceTemplates/blob/master/existing-gateway-existing-plan-new-apiapp.json).
+Die vollständige Vorlage finden Sie unter [Vorlage für API-App mit vorhandenem Gateway](https://github.com/tfitzmac/AppServiceTemplates/blob/master/existing-gateway-existing-plan-new-apiapp.json).
 
 ## Was Sie bereitstellen
 
-In dieser Vorlage werden Sie eine API-Anwendung bereitstellen, die einen vorhandenen hosting Plan und ein vorhandenes Gateway App-Dienst zugeordnet ist.
+In dieser Vorlage stellen Sie eine API-App bereit, die einem vorhandenen App Service-Hostingplan und einem vorhandenen Gateway zugeordnet wird.
 
 ## Parameter
 
-[AZURE.INCLUDE [App-Dienst-api-bereitstellen-Parameter](../../includes/app-service-api-deploy-parameters.md)]
+[AZURE.INCLUDE [app-service-api-deploy-parameters](../../includes/app-service-api-deploy-parameters.md)]
 
 ### hostingPlanId
 
-Der Bezeichner des vorhandenen hosting Plans.
+Der Bezeichner des vorhandenen Hostingplans.
 
     "hostingPlanId": {
       "type": "string"
@@ -42,7 +42,7 @@ Der Bezeichner des vorhandenen hosting Plans.
 
 ### hostingPlanSettings
 
-Die Einstellungen der vorhandenen Hosting planen.
+Die Einstellungen des vorhandenen Hostingplans.
 
     "hostingPlanSettings": {
       "type": "Object",
@@ -53,21 +53,21 @@ Die Einstellungen der vorhandenen Hosting planen.
 
 ## Variablen
 
-Diese Vorlage definiert eine Variable, die beim Bereitstellen von Ressourcen verwendet wird.
+Diese Vorlage definiert eine Variable, die beim Bereitstellen der Ressourcen verwendet wird.
 
     "variables": {
       "packageId": "Microsoft.ApiApp"
     }
     
-Der Wert wird als unten verwendet **variables('packageId')**.
+Der Wert wird nachstehend als **variables('packageId')** verwendet.
 
-## Ressourcen zum Bereitstellen
+## Bereitzustellende Ressourcen
 
-### Web-app an die-API-Hostanwendung
+### Web-App zum Hosten einer API-App
 
-Erstellt eine Webanwendung, die die API-Anwendung hostet.
+Erstellt eine Web-App zum Hosten der API-App.
 
-Beachten Sie, dass **Art** minFreeThreads auf **ApiApp** der Azure-Portal teilt mit, dass diese Webanwendung einen Gateway gehostet wird. Das Portal wird die Webanwendung aus dem Durchsuchen Web app Blade ausgeblendet. Die Anwendung enthält eine Erweiterung, um das standardmäßige leere-API app-Paket installieren. Ein Link wird zwischen der API-Anwendung und der hostenden Webanwendung definiert. Der Abschnitt für die Anwendungseinstellungen enthält die erforderlichen Werte für das hosting der API-Anwendung.
+Beachten Sie, dass **kind** auf **apiApp** festgelegt ist. Hierdurch wird das Azure-Portal darüber informiert, dass diese Web-App ein Gateway hostet. Das Portal blendet die Web-App auf dem Blatt zum Durchsuchen der Web-App aus. Die App umfasst eine Erweiterung zum Installieren des leeren API-App-Standardpakets. Zwischen der API-App und der hostenden Web-App wird ein Link definiert. Der Abschnitt mit den App-Einstellungen enthält die erforderlichen Werte zum Hosten der API-App.
 
     {
       "type": "Microsoft.Web/sites",
@@ -129,11 +129,11 @@ Beachten Sie, dass **Art** minFreeThreads auf **ApiApp** der Azure-Portal teilt 
       }
     }
 
-### API-Anwendung
+### API-App
 
-Die API-Anwendung zu erstellen.
+Erstellt die API-App.
 
-Beachten Sie, dass die Namen der hostenden Webanwendung und Gateway als Eigenschaften in der API-Anwendung definiert sind.
+Beachten Sie, dass die Namen der hostenden Web-App und des Gateways als Eigenschaften in der API-App definiert sind.
 
     {
       "type": "Microsoft.AppService/apiapps",
@@ -172,7 +172,7 @@ Beachten Sie, dass die Namen der hostenden Webanwendung und Gateway als Eigensch
 
 ## Befehle zum Ausführen der Bereitstellung
 
-[AZURE.INCLUDE [App-Dienst bereitstellen Befehle](../../includes/app-service-deploy-commands.md)]
+[AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
 
@@ -185,4 +185,4 @@ Beachten Sie, dass die Namen der hostenden Webanwendung und Gateway als Eigensch
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -18,7 +18,7 @@
 
 # Verwenden von Active Directory für die Authentifizierung in Azure App Service #
 
-[Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) ermöglichen Unternehmensszenarios für Branchenanwendungen, indem unabhängig davon, ob die Benutzer über Ihre lokale Umgebung oder das öffentliche Internet zugreifen, eine einmalige Anmeldung (SSO) unterstützt wird. Für die Authentifizierung und ordnungsgemäße Autorisierung Ihrer internen Active Directory-Benutzer kann eine Integration in  [Azure Active Directory](http://azure.microsoft.com/services/active-directory/) (AAD) oder lokale Dienste für sichere Token, wie beispielsweise Active Directory-Verbunddienste (AD FS), vorgenommen werden.
+[Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) ermöglichen Unternehmensszenarios für Branchenanwendungen, indem unabhängig davon, ob die Benutzer über Ihre lokale Umgebung oder das öffentliche Internet zugreifen, eine einmalige Anmeldung (SSO) unterstützt wird. Für die Authentifizierung und ordnungsgemäße Autorisierung Ihrer internen Active Directory-Benutzer kann eine Integration in [Azure Active Directory](http://azure.microsoft.com/services/active-directory/) (AAD) oder lokale Dienste für sichere Token, wie beispielsweise Active Directory-Verbunddienste (AD FS), vorgenommen werden.
 
 ## Problemlose Authentifizierung und Autorisierung ##
 
@@ -35,7 +35,7 @@ In vielen Szenarien muss das Anwendungsverhalten in Bezug auf Authentifizierung 
 	-	Möglichkeit zur Verwendung eines Identitätsanbieters nur für Azure ohne eine lokale Infrastruktur.
 	-	Die Verzeichnissynchronisierung kann mit einem lokalen AD-Verzeichnis konfiguriert (und lokal verwaltet) werden.
 	-	Azure AD mit Verzeichnissynchronisierung aus der lokalen AD-Domäne ermöglicht ein nahtloses SSO-Erlebnis für Ihre Web-App, wenn AD-Benutzer aus dem Intranet oder über das Internet zugreifen. Aus dem Intranet können AD-Benutzer über die integrierte Authentifizierung automatisch auf die Web-App zugreifen. Über das Internet können sich AD-Benutzer mit ihren Windows-Anmeldeinformationen an der Web-App anmelden.
-	-	Bietet SSO für [alle Anwendungen, die von Azure AD unterstützt](/marketplace/active-directory/), einschließlich Azure, Office 365, Dynamics CRM Online, Microsoft Intune und Tausende von nicht-Microsoft-Cloud-Anwendungen. 
+	-	Bereitstellung von SSO für [alle von Azure AD unterstützten Anwendungen](/marketplace/active-directory/), einschließlich Azure, Office 365, Dynamics CRM Online, Windows Intune sowie Tausende von Cloudanwendungen von Drittanbietern. 
 	-	Azure AD delegiert die Verwaltung von Anwendungen der [vertrauenden Seite](http://en.wikipedia.org/wiki/Relying_party) an Rollen ohne Administratorrechte, während der Anwendungszugriff auf vertrauliche Verzeichnisdaten weiterhin durch globale Administratoren konfiguriert werden muss.
 	-	Sendet einen allgemeinen Satz an Anspruchstypen für alle Anwendungen der vertrauenden Seite. Eine Liste der Anspruchstypen finden Sie unter [Unterstützte Token- und Anspruchstypen](http://msdn.microsoft.com/library/azure/dn195587.aspx). Ansprüche können nicht angepasst werden.
 	-	[Azure AD Graph-API](http://msdn.microsoft.com/library/azure/hh974476.aspx) ermöglicht Anwendungen den Zugriff auf Verzeichnisdaten in Azure AD.
@@ -53,4 +53,4 @@ In vielen Szenarien muss das Anwendungsverhalten in Bezug auf Authentifizierung 
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -18,7 +18,7 @@
 
 # <a name="getting-started"> </a>Was sind mobile Apps?
 
->[AZURE.NOTE]**Mobile Services-Dokumentation ist [hier](http://azure.microsoft.com/documentation/services/mobile-services/).**
+>[AZURE.NOTE]**[Hier](http://azure.microsoft.com/documentation/services/mobile-services/) finden Sie die Mobile Services-Dokumentation.**
 
 Azure App Service ist ein vollständiges PaaS-Angebot (Platform as a Service) für professionelle Entwickler, das einen umfangreichen Satz von Funktionen für Web-, mobile und Integrationsszenarien bereitstellt. *Mobile Apps* in *Azure App Service* bietet eine hochgradig skalierbare, global verfügbare Entwicklungsplattform für mobile Anwendungen für Unternehmensentwickler und Systemintegratoren, die umfassende Funktionen für mobile Apps bereitstellt.
 
@@ -56,4 +56,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [JavaScript backend version]: ../mobile-services-ios-get-started.md
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

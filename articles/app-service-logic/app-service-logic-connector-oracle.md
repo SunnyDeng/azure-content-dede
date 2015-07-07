@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Mithilfe des Oracle-Connectors in Microsoft Azure-App-Dienst" 
+   pageTitle="Verwendung des Oracle-Connectors in Microsoft Azure App Service" 
    description="Verwenden des Oracle-Connectors" 
    services="app-service\logic" 
    documentationCenter=".net,nodejs,java" 
@@ -13,110 +13,109 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="06/14/2015"
+   ms.date="06/17/2015"
    ms.author="sutalasi"/>
 
 
 # Oracle-Datenbankconnector
 
-Verbinden Sie mit einem lokalen Oracle-Datenbank-Server erstellen und ändern die Informationen oder Daten. Connectors können in Logik Apps abrufen, Prozess oder Verschieben von Daten als Teil einer "Flow" verwendet werden. Wenn Sie in den Fluss der Oracle-Connector verwenden, können Sie eine Vielzahl von Szenarien erzielen. Dazu zählen z. B.:
+Stellen Sie eine Verbindung mit einem lokalen Oracle-Datenbankserver her, um Informationen oder Daten zu erstellen oder zu ändern. Connectors können in Logik-Apps als Teil eines "Workflows" verwendet werden, um Daten abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. Wenn Sie den Oracle-Connector im Workflow verwenden, können Sie eine Vielzahl von Szenarios umsetzen. Dazu zählen z. B.:
 
-- Machen Sie einen Teil der Daten in Oracle-Datenbank anhand einer mobilen Anwendung oder eine Webanwendung.
-- Fügen Sie Daten in der Oracle-Datenbanktabelle für die Speicherung. Sie können z. B. Mitarbeiterdatensätze eingeben, Aktualisieren von Aufträgen und usw..
-- Rufen Sie Daten aus Oracle und in einem Geschäftsprozess. Beispielsweise können Sie Kundendatensätze erhalten und die Kundendatensätze in SalesForce aufgenommen. 
+- Machen Sie einen Teil der Daten in der Oracle-Datenbank mithilfe einer Web- oder mobilen Anwendung verfügbar.
+- Einfügen von Daten in die Oracle-Datenbanktabelle zum Speichern. Sie können z. B. Mitarbeiterdatensätze eingeben, Aufträge aktualisieren, usw..
+- Rufen Sie Daten aus Oracle ab und verwenden Sie sie in einem Geschäftsprozess. Beispielsweise können Sie Kundendatensätze abrufen und sie in Salesforce übertragen. 
 
 
 ## Trigger und Aktionen
-*Trigger* Ereignisse, die auftreten, z. B. wenn ein Auftrag aktualisiert wird oder wenn ein neuer Kunde hinzugefügt wird, sind. Ein *Aktion* ist das Ergebnis des Triggers. Wenn ein Auftrag aktualisiert wird, senden Sie eine Warnung an den Verkäufer. Oder, wenn ein neuer Kunde hinzugefügt wird, senden Sie eine e-Mail zur Begrüßung an den neuen Kunden.
+*Trigger* sind Ereignisse, die stattfinden. Z. B. wenn ein Auftrag aktualisiert oder ein neuer Kunde hinzugefügt wird. Eine *Aktion* ist das Ergebnis des Triggers. Z. B. bei Aktualisierung eines Auftrags eine Warnung an den Verkäufer senden. Oder bei Hinzufügen eines neuen Kunden eine E-Mail zur Begrüßung an den neuen Kunden senden.
 
-Der Oracle-Datenbank-Connector kann als ein Trigger oder eine Aktion in einer App Logik und unterstützt Daten in JSON und XML-Format verwendet werden. Für jede Tabelle, die im Paket enthaltenen Einstellungen (mehr dazu weiter unten in diesem Thema), es gibt eine Reihe von JSON-Aktionen und einen Satz von XML-Aktionen. Wenn Sie ein XML-Trigger oder eine Aktion verwenden, können Sie die [Transformieren API-Anwendung](app-service-logic-transform-xml-documents.md) zum Konvertieren von Daten in ein anderes Format von XML-Daten.
+Der Oracle-Datenbank-Connector kann als ein Trigger oder eine Aktion in einer Logik-App verwendet werden und unterstützt Daten im JSON- und XML-Format. Für jede Tabelle, die in den Paketeinstellungen enthalten ist (mehr dazu weiter unten in diesem Thema), gibt es eine Reihe von JSON-Aktionen und einen Satz von XML-Aktionen. Wenn Sie einen XML-Trigger oder eine -Aktion verwenden, können Sie die [Transform-API-App](app-service-logic-transform-xml-documents.md) zum Konvertieren der Daten in ein XML-Datenformat verwenden.
 
-Der Oracle-Datenbank-Connector hat folgende Trigger und Aktionen zur Verfügung:
+Der Oracle-Datenbank-Connector verfügt über folgende Trigger und Aktionen:
 
-Trigger | Aktion
+Trigger | Aktionen
 --- | ---
-Abrufen von Daten | <ul><li>Legen Sie in der Tabelle</li><li>Tabelle aktualisieren</li><li>Wählen Sie aus der Tabelle</li><li>Löschen aus Tabelle</li><li>Aufrufen der gespeicherten Prozedur</li>
+Umfragedaten | <ul><li>In die Tabelle einfügen</li><li>Tabelle aktualisieren</li><li>Aus der Tabelle auswählen</li><li>Aus der Tabelle löschen</li><li>Aufrufen der gespeicherten Prozedur</li>
 
 
-## Erstellen Sie einen Oracle-Datenbank-Connector
+## Oracle-Datenbankconnector erstellen
 
-Ein Connector kann innerhalb einer Anwendung Logik erstellt werden oder direkt aus dem Azure Marketplace erstellt werden.
+Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. Zum Erstellen eines Connectors mithilfe von Azure Marketplace:
 
-1. Wählen Sie in der Azure Startmenü **Marketplace**.
-2. Wählen Sie **API-Apps** und suchen Sie nach "Connector für Oracle-Datenbank".
-3. Geben Sie den Namen, die App planen, Service und andere Eigenschaften.
-4. Geben Sie die folgenden Einstellungen:
+1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
+2. Wählen Sie **API-Apps** aus und suchen Sie nach "Connector für Oracle-Datenbank".
+3. Geben Sie den Namen, die App Service-Plan und andere Eigenschaften ein.
+4. Geben Sie die folgenden Paketeinstellungen ein:
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-Datenquelle | Ja | (Net-Dienst) Datenquellenname, die in der Datei tnsnames.ora auf dem Computer angegeben wird, in der Oracle-Client installiert ist. Informationen zu den Datenquellennamen und tnsnames.ora, finden Sie unter [Konfigurieren des Oracle-Clients](http://msdn.microsoft.com/library/dd787872.aspx).
-Benutzername | Ja | Geben Sie einen Benutzernamen ein, mit dem Oracle-Server herzustellen.
-Kennwort | Ja | Geben Sie das Benutzernamen, das Kennwort ein.
-Service Bus-Verbindungszeichenfolge | Ja | Wenn Sie die lokale Verbindung herstellen, geben Sie die Verbindungszeichenfolge der Service Bus-Relay.<br/><br/>[Mit Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus Preise](http://azure.microsoft.com/pricing/details/service-bus/)
-Tabellen | Nein | Geben Sie die Tabellen in der Datenbank, die vom Connector geändert werden dürfen. Geben Sie z. B. *OrdersTable,-Tabelle*.
-Gespeicherte Prozeduren | Nein | Geben Sie die gespeicherten Prozeduren in der Datenbank, die vom Connector aufgerufen werden kann. Geben Sie z. B. *IsEmployeeEligible, CalculateOrderDiscount*.
-Funktionen | Nein | Geben Sie die Funktionen in der Datenbank, die vom Connector aufgerufen werden kann. Geben Sie z. B. *IsEmployeeEligible, CalculateOrderDiscount*.
-Paket-Entitäten | Nein | Geben Sie die Pakete in der Datenbank, die vom Connector aufgerufen werden kann. Geben Sie z. B. *PackageOrderProcessing.CompleteOrder,PackageOrderProcessing.GenerateBill*.
-Anweisung für verfügbare Daten | Nein | Geben Sie die Anweisung aus, um zu bestimmen, ob alle Daten für den Abruf verfügbar sind. Geben Sie z. B. *Wählen Sie * aus Table_name*.
-Abruftyp | Nein | Geben Sie die Abfragen. Die zulässigen Werte sind "Select", "Procedure", "Function" und "Package".
-Abrufanweisung | Nein | Geben Sie die Anweisung aus, um die Oracle-Datenbank abrufen. Geben Sie z. B. *Wählen Sie * aus Table_name*.
-Anweisung nach Abruf | Nein | Geben Sie die Anweisung nach die Abfrage ausgeführt werden soll. Geben Sie z. B. *Löschen * aus Table_name*.
+Datenquelle | Ja | Datenquellenname (Net-Dienst), der in der Datei "tnsnames.ora" auf dem Computer angegeben wird, auf dem der Oracle-Client installiert ist. Weitere Informationen zu den Datenquellennamen und "tnsnames.ora" finden Sie unter [Konfigurieren des Oracle-Clients](http://msdn.microsoft.com/library/dd787872.aspx).
+Benutzername | Ja | Geben Sie einen gültigen Benutzernamen für die Verbindung mit dem Oracle-Server ein.
+Kennwort | Ja | Geben Sie das Kennwort für den Benutzernamen ein.
+Service Bus-Verbindungszeichenfolge | Ja | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/)
+Tabellen | Nein | Geben Sie die Tabellen in der Datenbank ein, die vom Connector geändert werden dürfen. Geben Sie z. B. *OrdersTable,EmployeeTable* ein.
+Gespeicherte Prozeduren | Nein | Geben Sie die gespeicherten Prozeduren in der Datenbank ein, die vom Connector aufgerufen werden können. Geben Sie z. B. *IsEmployeeEligible,CalculateOrderDiscount* ein.
+Funktionen | Nein | Geben Sie die Funktionen in der Datenbank ein, die vom Connector aufgerufen werden können. Geben Sie z. B. *IsEmployeeEligible,CalculateOrderDiscount* ein.
+Paket-Entitäten | Nein | Geben Sie die Pakete in der Datenbank ein, die vom Connector aufgerufen werden können. Geben Sie z. B. *PackageOrderProcessing.CompleteOrder,PackageOrderProcessing.GenerateBill* ein.
+Anweisung für verfügbare Daten | Nein | Geben Sie die Anweisung ein, um festzustellen, ob Daten für den Abruf verfügbar sind. Geben Sie z. B. *SELECT * from table_name* ein.
+Abruftyp | Nein | Geben Sie den Abruftyp ein. Zulässige Werte sind "Auswählen", "Prozedur", "Funktion" und "Paket".
+Abrufanweisung | Nein | Geben Sie die Anweisung zur Abfrage der Oracle-Datenbank ein. Geben Sie z. B. *SELECT * from table_name* ein.
+Anweisung nach Abruf | Nein | Geben Sie die Anweisung ein, die nach der Abfrage ausgeführt werden soll. Geben Sie z. B. *DELETE * from table_name* ein.
 
-5. Nach Abschluss des Vorgangs die Paketeinstellungen etwa wie folgt aussehen: <br/> ![][1]
+5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: <br/> ![][1]
 
 
-## Verwenden Sie den Connector als Trigger
-Betrachten wir nun eine einfache Logik-app, die Daten aus einer Oracle-Tabelle abfragt, die Daten in einer anderen Tabelle hinzugefügt und aktualisiert die Daten.
+## Verwenden des Connectors als Trigger
+Betrachten wir eine einfache Logik-App, die Daten aus einer Oracle-Tabelle abruft, die Daten dann einer anderen Tabelle hinzufügt und anschließend aktualisiert.
 
-### Fügen Sie den Trigger hinzu.
-1. Beim Erstellen oder Bearbeiten einer app Logik, wählen Sie als Auslöser des Oracle-Connectors, die Sie erstellt haben. Dies führt die verfügbaren Trigger: **Poll-Daten (JSON)** und **Poll-Daten (XML)**: <br/> ![][5] 
+### Den Trigger hinzufügen
+1. Beim Erstellen oder Bearbeiten einer Logik-App wählen Sie den Oracle-Connector als Trigger aus. Dadurch werden die verfügbaren Trigger aufgelistet: **Poll Data (JSON)** und **Poll Data (XML)**: <br/>![][5] 
 
-2. Wählen Sie die **Abruf Daten (JSON)** auslösen, geben Sie die Häufigkeit und klicken Sie auf die ✓: <br/> ![][6]
+2. Wählen Sie den Trigger **Poll Data (JSON)** aus, geben Sie die Häufigkeit an, und klicken Sie auf ✓: <br/>![][6]
 
-3. Der Trigger wird nun angezeigt, wie in der Logik app konfiguriert. Die Ausgaben vorhanden sein, der der Trigger wird angezeigt und können als Eingaben in nachfolgenden Aktionen verwendet werden: <br/> ![][7]
+3. Der Trigger wird jetzt in der Logik-App als konfiguriert angezeigt. Die Ausgaben des Triggers werden angezeigt und können in nachfolgenden Aktionen als Eingabe verwendet werden: <br/> ![][7]
 
-## Verwenden Sie den Connector als Aktion
-Unsere einfache Logik Anwendung, die Daten aus einer Oracle-Tabelle abruft, fügt die Daten in einer anderen Tabelle und aktualisiert die Daten.
+## Verwenden des Connectors als Aktion
+Mithilfe unserer einfachen Logik-App, die Daten aus einer Oracle-Tabelle abruft, die Daten dann einer anderen Tabelle hinzufügt und anschließend aktualisiert.
 
-Geben Sie den Namen der Tabellen und/oder gespeicherte Prozeduren, die Sie eingegeben haben, wenn Sie den Oracle-Connector erstellt haben, für die Verwendung der Oracle-Connector als Aktion:
+Für die Verwendung des Oracle-Connectors als Aktion geben Sie den Namen der Tabellen und/oder gespeicherte Prozeduren ein, die Sie schon bei der Erstellung des Oracle Connectors eingegeben haben:
 
-1. Wählen Sie denselben Oracle-Connector aus dem Katalog als Aktion aus. Wählen Sie eine der Insert-Aktionen, wie z. B. *(Insert in TempEmployeeDetails, JSON)*: <br/> ![][8] 
+1. Wählen Sie denselben Oracle-Connector aus dem Katalog als Aktion aus. Wählen Sie eine der Einfügeaktionen aus, wie *Insert Into TempEmployeeDetails (JSON)*: <br/>![][8] 
 
-2. Geben Sie die Eingabewerte des Datensatzes eingefügt werden, und klicken auf die ✓: <br/> ![][9]
+2. Geben Sie die einzufügenden Eingabewerte des Datensatzes ein, und klicken Sie auf ✓: <br/> ![][9]
 
-3. Wählen Sie aus dem Katalog derselben Oracle-Connector, den Sie erstellt haben. Wählen Sie als Aktion, wie z. B. die Update-Aktion für die gleiche Tabelle *Update TempEmployeeDetails*: <br/> ![][11]
+3. Wählen Sie aus dem Katalog denselben Oracle-Connector aus, den Sie erstellt haben. Wählen Sie als Aktion die Aktualisierungsaktion für die gleiche Tabelle aus, z. B. *Update TempEmployeeDetails*: <br/> ![][11]
 
-4. Geben Sie die Eingabewerte für die Updateaktion, und klicken Sie auf die ✓: <br/> ![][12]
+4. Geben Sie die Eingabewerte für die Aktualisierungsaktion ein, und klicken Sie auf ✓: <br/> ![][12]
 
 Sie können die Logik-App testen, indem Sie in der abgefragten Tabelle einen neuen Datensatz hinzufügen.
 
 ## Hybridkonfiguration
 
-> [AZURE.NOTE]Dieser Schritt ist erforderlich, nur bei Verwendung von lokalen Oracle hinter der Firewall.
+> [AZURE.NOTE]Dieser Schritt ist nur bei lokaler Verwendung von Oracle hinter Ihrer Firewall erforderlich.
 
-App-Dienst verwendet den Hybrid-Konfigurations-Manager, um sicher auf Ihrem lokalen System zu verbinden. Wenn Sie die Verbindung mithilfe einer lokalen Oracle sind, ist der Hybrid-Verbindungs-Manager erforderlich.
+App Service verwendet den Hybrid-Konfigurations-Manager, um sicher eine Verbindung auf Ihr lokales System herzustellen. Wenn Ihr Connector Oracle lokal verwendet, ist der Hybrid Connection Manager erforderlich.
 
-Finden Sie unter [mithilfe der Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md).
+Informationen finden Sie unter [Hybrid Connection Manager konfigurieren](app-service-logic-hybrid-connection-manager.md).
 
-## Möchten Sie den Connector
-Der Connector erstellt wird, können Sie es in einen Business-Datenfluss mit einer Anwendung Logik hinzufügen. Finden Sie unter [Was Logik Apps sind?](app-service-logic-what-are-logic-apps.md).
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Sie können auch die Leistung Statistiken und Steuerung der Sicherheit mit dem Connector überprüfen. Finden Sie unter [Verwalten und überwachen-API-apps und Connector](../app-service-api/app-service-api-manage-in-portal.md).
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
 
 
 <!--Image references-->
-[1]: ./media/app-service-logic-connector-oracle/Create.jpg
-[5]: ./media/app-service-logic-connector-oracle/LogicApp1.jpg
-[6]: ./media/app-service-logic-connector-oracle/LogicApp2.jpg
-[7]: ./media/app-service-logic-connector-oracle/LogicApp3.jpg
-[8]: ./media/app-service-logic-connector-oracle/LogicApp4.jpg
-[9]: ./media/app-service-logic-connector-oracle/LogicApp5.jpg
-[10]: ./media/app-service-logic-connector-oracle/LogicApp6.jpg
-[11]: ./media/app-service-logic-connector-oracle/LogicApp7.jpg
-[12]: ./media/app-service-logic-connector-oracle/LogicApp8.jpg
+[1]: ./media/app-service-logic-connector-oracle/Create.png
+[5]: ./media/app-service-logic-connector-oracle/LogicApp1.png
+[6]: ./media/app-service-logic-connector-oracle/LogicApp2.png
+[7]: ./media/app-service-logic-connector-oracle/LogicApp3.png
+[8]: ./media/app-service-logic-connector-oracle/LogicApp4.png
+[9]: ./media/app-service-logic-connector-oracle/LogicApp5.png
+[11]: ./media/app-service-logic-connector-oracle/LogicApp7.png
+[12]: ./media/app-service-logic-connector-oracle/LogicApp8.png
 
 
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Bereitstellen einer Webanwendung, die eine SQL-Datenbank verwendet." 
-	description="Verwenden Sie eine Azure-Ressourcen-Manager-Vorlage, um eine Webanwendung bereitstellen, die eine SQL-Datenbank enthält." 
+	pageTitle="Bereitstellen einer Web-App, die eine SQL-Datenbank verwendet" 
+	description="Verwenden Sie eine Azure-Ressourcen-Manager-Vorlage, um eine Web-App bereitzustellen, die eine SQL-Datenbank enthält." 
 	services="app-service\web" 
 	documentationCenter="" 
 	authors="tfitzmac" 
@@ -16,32 +16,32 @@
 	ms.date="06/01/2015" 
 	ms.author="tomfitz"/>
 
-# Bereitstellen einer Webanwendung mit einer SQL-Datenbank
+# Bereitstellen einer Web-App mit einer SQL-Datenbank
 
-In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage zu erstellen, die eine Webanwendung und eine SQL-Datenbank bereitstellt. Erfahren Sie, wie um zu definieren, welche Ressourcen bereitgestellt werden und wie Sie Parameter definieren, die angegeben, wenn die Bereitstellung ausgeführt wird. Sie können diese Vorlage für Ihre eigenen Bereitstellungen verwenden oder Ihren Anforderungen anpassen.
+In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, die eine Web-App und eine SQL-Datenbank bereitstellt. Sie erfahren, wie Sie definieren, welche Ressourcen bereitgestellt werden und wie Sie Parameter definieren, die angegeben werden, wenn die Bereitstellung ausgeführt wird. Sie können diese Vorlage für Ihre eigenen Bereitstellungen verwenden oder Ihren Anforderungen anpassen.
 
-Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Authoring Azure Resource Manager Vorlagen](../resource-group-authoring-templates.md).
+Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
-Der vollständige Vorlage finden Sie unter [Web-App mit SQL-Datenbank-Vorlage](https://github.com/tfitzmac/AppServiceTemplates/blob/master/webandsql.json).
+Die vollständige Vorlage finden Sie unter [Web-App mit SQL-Datenbankvorlage](https://github.com/tfitzmac/AppServiceTemplates/blob/master/webandsql.json).
 
 ## Was Sie bereitstellen
 
-In dieser Vorlage können Sie Folgendes bereitstellen:
+In dieser Vorlage stellen Sie Folgendes bereit:
 
-- eine Web-app
+- eine Web-App
 - SQL-Datenbankserver
 - SQL-Datenbank
-- Einstellungen für die automatische Skalierung
+- Einstellungen für automatische Skalierung
 - Warnungsregeln
 - App Insights
 
-## Parameter zur Angabe
+## Anzugebende Parameter
 
-[AZURE.INCLUDE [App-Service-Web-Deploy-Web-Parameters](../../includes/app-service-web-deploy-web-parameters.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../../includes/app-service-web-deploy-web-parameters.md)]
 
 ### serverName
 
-Der Name der dem neuen Datenbankserver zu erstellen.
+Der Name des zu erstellenden neuen Datenbankservers.
 
     "serverName": {
       "type": "string"
@@ -49,15 +49,15 @@ Der Name der dem neuen Datenbankserver zu erstellen.
 
 ### serverLocation
 
-Der Speicherort des Datenbankservers. Für eine optimale Leistung sollte hier den Speicherort der Webanwendung identisch sein.
+Der Speicherort des Datenbankservers. Für eine optimale Leistung sollte dieser Speicherort mit dem der Web-App identisch sein.
 
     "serverLocation": {
       "type": "string"
     }
 
-### Administratoranmeldung
+### administratorLogin
 
-Der Kontoname für den Datenbankserver-Administrator verwendet werden soll.
+Der Kontoname für den Datenbankserveradministrator.
 
     "administratorLogin": {
       "type": "string"
@@ -65,23 +65,23 @@ Der Kontoname für den Datenbankserver-Administrator verwendet werden soll.
 
 ### administratorLoginPassword
 
-Das Kennwort für den Server-Datenbankadministrator.
+Das Kennwort für den Datenbankserveradministrator.
 
     "administratorLoginPassword": {
       "type": "securestring"
     }
 
-### Datenbankname
+### databaseName
 
-Der Name der neuen Datenbank zu erstellen.
+Der Name der zu erstellenden neuen Datenbank.
 
     "databaseName": {
       "type": "string"
     }
 
-### Sortierung
+### collation
 
-Die Datenbanksortierung für die ordnungsgemäße Verwendung von Zeichen.
+Die Datenbanksortierung zum Steuern der ordnungsgemäßen Verwendung von Zeichen.
 
     "collation": {
       "type": "string",
@@ -112,11 +112,11 @@ Der Typ der zu erstellenden Datenbank.
     }
 
 
-## Ressourcen zum Bereitstellen
+## Bereitzustellende Ressourcen
 
-### SQLServer und Datenbank
+### SQL-Server und Datenbank
 
-Erstellt eine neue SQL Server und Datenbank. Der Name des Servers ist angegeben, der **ServerName** Parameter und der angegebenen Position der **ServerLocation** Parameter. Wenn Sie den neuen Server zu erstellen, müssen Sie einen Benutzernamen und ein Kennwort für den Server-Datenbankadministrator bereitstellen.
+Erstellt einen neuen SQL-Server und eine Datenbank. Der Name des Servers wird im **serverName**-Parameter und der Speicherort im **serverLocation**-Parameter angegeben. Wenn Sie den neuen Server erstellen, müssen Sie einen Benutzernamen und ein Kennwort für den Datenbankserveradministrator bereitstellen.
 
     {
       "name": "[parameters('serverName')]",
@@ -160,10 +160,10 @@ Erstellt eine neue SQL Server und Datenbank. Der Name des Servers ist angegeben,
     },
 
 
-[AZURE.INCLUDE [App-Service-Web-Deploy-Web-Host](../../includes/app-service-web-deploy-web-host.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
 
-### Web-app
+### Web-App
 
     {
       "apiVersion": "2014-06-01",
@@ -194,7 +194,7 @@ Erstellt eine neue SQL Server und Datenbank. Der Name des Servers ist angegeben,
       ]
     }
 
-### Automatische Skalierung
+### AutoScale
 
     {
       "apiVersion": "2014-04-01",
@@ -262,7 +262,7 @@ Erstellt eine neue SQL Server und Datenbank. Der Name des Servers ist angegeben,
         }
     }
 
-### Warnregeln für Statuscodes 403 und 500's, hoher CPU-Auslastung und HTTP-Warteschlangenlänge 
+### Warnregeln für Statuscodes 403 und 500er, hohe CPU-Auslastung und HTTP-Warteschlangenlänge 
 
     {
       "apiVersion": "2014-04-01",
@@ -420,7 +420,7 @@ Erstellt eine neue SQL Server und Datenbank. Der Name des Servers ist angegeben,
 
 ## Befehle zum Ausführen der Bereitstellung
 
-[AZURE.INCLUDE [App-Dienst bereitstellen Befehle](../../includes/app-service-deploy-commands.md)]
+[AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
 
@@ -433,4 +433,4 @@ Erstellt eine neue SQL Server und Datenbank. Der Name des Servers ist angegeben,
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

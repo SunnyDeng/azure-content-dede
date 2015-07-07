@@ -153,7 +153,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello Wor
 
 ##Nächste Schritte
 
-Die Schritte in diesem Artikel der Azure-Verwaltungsportal verwenden, um eine Webanwendung zu erstellen, können Sie auch die [Azure-Befehlszeilenschnittstelle](../xplat-cli.md) die gleichen Vorgänge ausführen.
+In diesem Artikel wurde zum Erstellen einer Web-App das Azure-Portal verwendet. Sie können jedoch auch die [Azure-Befehlszeilenschnittstelle](../xplat-cli.md) verwenden, um diese Aufgaben durchzuführen.
 
 Node.js bietet ein vielseitiges Portfolio an Modulen, die von Ihren Anwendungen verwendet werden können. Weitere Informationen darüber, wie Web-Apps mit Modulen zusammenarbeiten, finden Sie unter [Verwenden von Node.js-Modulen mit Azure-Anwendungen](../nodejs-use-node-modules-azure-apps.md).
 
@@ -196,4 +196,4 @@ Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalt
 [git-url]: ./media/web-sites-nodejs-develop-deploy-mac/git-url.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

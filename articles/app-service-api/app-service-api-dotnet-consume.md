@@ -27,7 +27,7 @@ In diesem Lernprogramm wird gezeigt, wie Sie das App Service-SDK zum Schreiben v
 
 Die einzelnen Abschnitte dieses Lernprogramms können unabhängig voneinander bearbeitet werden. Sie können die Anweisungen des zweiten Szenarios befolgen, ohne die Schritte des ersten Szenarios ausgeführt zu haben.
 
-Informationen zum Aufrufen einer **intern** API-Anwendung, finden Sie unter [nutzen eine interne API-Anwendung von einem](app-service-api-dotnet-consume-internal.md).
+Informationen zum Aufrufen einer **internen** API-App finden Sie unter [Nutzen einer internen API-App aus einem .NET-Client](app-service-api-dotnet-consume-internal.md).
 
 ## Voraussetzungen
 
@@ -161,7 +161,7 @@ Azure-API-Apps unterstützen zudem den Clientauthentifizierungsfluss. Ein Szenar
 
 		webBrowser1.Navigate(string.Format(@"{0}login/[authprovider]", GATEWAY_URL));
 
-	Ersetzen Sie "[authprovider]" durch den Code für den Identitätsdienstanbieter, den Sie im Gateway konfiguriert haben. Beispiele sind "aad", "twitter", "google", "microsoftaccount" oder "facebook". Zum Beispiel:
+	Ersetzen Sie "[authprovider]" durch den Code für den Identitätsdienstanbieter, den Sie im Gateway konfiguriert haben. Beispiele sind "aad", "twitter", "google", "microsoftaccount" oder "facebook". Beispiel:
 
 		webBrowser1.Navigate(string.Format(@"{0}login/aad", GATEWAY_URL));
 
@@ -205,4 +205,4 @@ In diesem Artikel haben Sie erfahren, wie Sie API-Apps mit der Zugriffsebene **�
 Um weitere Codebeispiele für den Aufruf einer API-App aus einem .NET-Client zu erhalten, laden Sie die [Azure Cards](https://github.com/Azure-Samples/API-Apps-DotNet-AzureCards-Sample)-Beispielanwendung herunter.
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -178,7 +178,7 @@ An diesem Punkt haben Sie einen wichtigen Teil der Hybridverbindungsinfrastruktu
 <a name="InstallHCM"></a>
 ## D. Installieren des lokalen Hybridverbindungs-Managers zum Herstellen der Verbindung ##
 
-[AZURE.INCLUDE [App-Service-Hybrid-Connections-Manager-Install](../../includes/app-service-hybrid-connections-manager-install.md)]
+[AZURE.INCLUDE [app-service-hybrid-connections-manager-install](../../includes/app-service-hybrid-connections-manager-install.md)]
 
 Nachdem die Hybridverbindungsinfrastruktur jetzt vollständig ist, werden Sie eine Webanwendung erstellen, welche diese verwendet.
 
@@ -378,4 +378,4 @@ Sie haben jetzt eine ASP.NET-Webanwendung erstellt und bereitgestellt, die eine 
 [HCTestShowMemberDb]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F11HCTestShowMemberDb.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

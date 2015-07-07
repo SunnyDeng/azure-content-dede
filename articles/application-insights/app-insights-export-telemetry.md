@@ -19,9 +19,9 @@
 
 Möchten Sie Ihre Telemetriedaten einer angepassten Analyse unterziehen? Oder möchten Sie vielleicht eine E-Mail-Benachrichtigung zu Ereignissen mit bestimmten Eigenschaften erhalten? Der fortlaufende Export eignet sich hierfür ideal. Die Ereignisse, die Sie im Application Insights-Portal sehen, können im JSON-Format in Microsoft Azure-Speicher exportiert werden. Sie können Ihre Daten anschließend herunterladen und den Code schreiben, den Sie zu ihrer Verarbeitung benötigen.
 
-Fortlaufende Export ist verfügbar, in der kostenlosen Testversion und auf die [Standard- und Premium Preisplänen](http://azure.microsoft.com/pricing/details/application-insights/).
+Der fortlaufende Export ist in der kostenlosen Testversion und in den [Standard- und Premium-Preisplänen](http://azure.microsoft.com/pricing/details/application-insights/) verfügbar.
 
-## <a name="setup"></a> Einrichten von fortlaufenden exportieren
+## <a name="setup"></a> Einrichten des fortlaufenden Exports
 
 Öffnen Sie im Application Insights-Portal auf dem Blatt "Übersicht" Ihrer Anwendung "Fortlaufender Export":
 
@@ -60,7 +60,7 @@ Die exportierten Daten sind die rohen Telemetriedaten, die wir von Ihrer Anwendu
 
 Berechnete Metriken sind nicht enthalten. Wir exportieren z. B. nicht die durchschnittliche CPU-Auslastung, doch wir exportieren die rohen Telemetriedaten, anhand derer der Durchschnitt berechnet wird.
 
-## <a name="get"></a> Überprüfen der Daten
+## <a name="get"></a>Untersuchen der Daten
 
 Beim Öffnen Ihres Blobspeichers mit einem Tool wie z. B. [Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx) sehen Sie einen Container mit einer Gruppe von Blobdateien. Der URI der einzelnen Dateien lautet "Anwendung-ID/Telemetrietyp/Datum/Uhrzeit".
 
@@ -85,9 +85,9 @@ Zeiten werden mithilfe von Teilstrichen dargestellt: 10.000 Teilstriche = 1 ms. 
 
 
 
-## Verarbeitung der Daten
+## Verarbeiten der Daten
 
-Im kleinen Rahmen können Sie Code zum Aufteilen Ihrer Daten schreiben, sie in eine Kalkulationstabelle einlesen usw. Beispiel:
+Im kleinen Rahmen können Sie Code zum Aufteilen Ihrer Daten schreiben, sie in eine Kalkulationstabelle einlesen usw. Zum Beispiel:
 
     private IEnumerable<T> DeserializeMany<T>(string folderName)
     {
@@ -106,16 +106,16 @@ Im kleinen Rahmen können Sie Code zum Aufteilen Ihrer Daten schreiben, sie in e
       }
     }
 
-Eine größere Codebeispiel finden Sie unter [eine Worker-Rolle mit][exportasa].
+Ein umfangreicheres Codebeispiel finden Sie unter [Verwenden einer Workerrolle][exportasa].
 
 #### Exportieren in SQL
 
-Eine weitere Option ist das Verschieben von Daten mit einer SQL-Datenbank, in dem Sie leistungsstärkere Analysen durchführen.
+Eine weitere Option ist das Verschieben von Daten in eine SQL-Datenbank, in der Sie leistungsstärkere Analysen durchführen können.
 
-Wir haben zwei alternative Methoden zum Verschieben der Daten aus dem blobspeicher mit einer Datenbank mit Beispielen:
+In Beispielen werden zwei alternative Methoden zum Verschieben der Daten aus dem Blobspeicher in eine Datenbank veranschaulicht:
 
-* [Exportieren Sie in eine Worker-Rolle mit SQL][exportcode]
-* [Exportieren Sie in SQL mit Streamanalyse][exportasa]
+* [Exportieren in SQL über eine Workerrolle][exportcode]
+* [Exportieren in SQL mit Stream Analytics][exportasa]
 
 
 Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/services/hdinsight/)-Hadoop-Cluster in der Cloud erwägen. HDInsight bietet eine Vielzahl von Technologien für die Verwaltung und Analyse riesiger Datenmengen.
@@ -175,4 +175,4 @@ Der fortlaufende Export wird neu gestartet.
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

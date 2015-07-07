@@ -47,7 +47,7 @@ Sobald Sie das mobile Back-End erstellt haben, können Sie einem einfachen Schne
 
 3. Falls noch nicht geschehen, müssen Sie <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a> auf den lokalen oder virtuellen Computer herunterladen und installieren.
 
-4. Laden Sie [Xcode] V. 4.4 oder neuer herunter sowie [Xamarin Studio]. Sie können auch Xamarin für Visual Studio verwenden.
+4. Laden Sie [Xcode] v4.4 oder neuer herunter sowie [Xamarin Studio]. Sie können auch Xamarin für Visual Studio verwenden.
 
 5. Klicken Sie unter **Service in der Cloud herunterladen und veröffentlichen** auf **Herunterladen**.
 
@@ -86,4 +86,4 @@ Sobald Sie das mobile Back-End erstellt haben, können Sie einem einfachen Schne
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->
