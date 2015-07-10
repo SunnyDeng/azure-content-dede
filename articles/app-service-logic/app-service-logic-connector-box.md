@@ -33,79 +33,85 @@ Die Box-Katalog-App bietet Ihnen Aktionen als Mechanismen für die Interaktion m
 	a. *Dateien auflisten:* Dieser Vorgang gibt die Informationen aller Dateien in einem Ordner zurück. Nachfolgend sind die Parameter aufgeführt, die für die Aktion erforderlich sind:
 
 	<table>
-  <tr>
-    <td><b>Parametername</b></td>
-    <td><b>Beschreibung</b></td>
-    <td><b>Erforderlich</b></td>
-  </tr>
-  <tr>
-    <td>Ordnerpfad</td>
-    <td>Pfad des Ordners, für den die Auflistung durchgeführt werden soll.</td>
-    <td>Ja</td>
-  </tr>
-</table< <[AZURE.NOTE]Hierdurch werden keine Dateiinhalte zurückgegeben.
+	  <tr>
+	    <td><b>Parametername</b></td>
+	    <td><b>Beschreibung</b></td>
+	    <td><b>Erforderlich</b></td>
+	  </tr>
+	  <tr>
+	    <td>Ordnerpfad</td>
+	    <td>Pfad des Ordners, für den die Auflistung durchgeführt werden soll.</td>
+	    <td>Ja</td>
+	  </tr>
+	</table>
+
+	>[AZURE.NOTE] Hierdurch werden keine Dateiinhalte zurückgegeben.
 
 
 
     b. *Datei abrufen:* Dieser Vorgang ruft eine Datei mit ihren Inhalten und Eigenschaften ab. Nachfolgend sind die Parameter aufgeführt, die für die Aktion erforderlich sind:
 
 	<table>
-  <tr>
-    <td><b>Parametername</b></td>
-    <td><b>Beschreibung</b></td>
-    <td><b>Erforderlich</b></td>
-  </tr>
-  <tr>
-    <td>Dateipfad</td>
-    <td>Der Pfad des Ordners, in dem die Datei enthalten ist.</td>
-    <td>Ja</td>
-  </tr>
-  <tr>
+	  <tr>
+	    <td><b>Parametername</b></td>
+	    <td><b>Beschreibung</b></td>
+	    <td><b>Erforderlich</b></td>
+	  </tr>
+	  <tr>
+	    <td>Dateipfad</td>
+	    <td>Der Pfad des Ordners, in dem die Datei enthalten ist.</td>
+	    <td>Ja</td>
+	  </tr>
+	  <tr>
     <td>Dateityp</td>
     <td>Gibt an, ob die Datei im Text- oder im Binärformat vorliegt.</td>
     <td>Nein</td>
-  </tr>
-</table< <[AZURE.NOTE]Bei diesem Vorgang wird die Datei nach dem Lesen nicht gelöscht.
+	  </tr>
+	</table>
+	>[AZURE.NOTE] Bei diesem Vorgang wird die Datei nach dem Lesen nicht gelöscht.
 
 
 
     c. Datei hochladen: Wie der Name schon sagt, wird die Datei durch diese Aktion in ein Box-Konto hochgeladen. Wenn die Datei bereits vorhanden ist, wird sie nicht überschrieben, und ein Fehler wird ausgelöst. Nachfolgend sind die Parameter aufgeführt, die für die Aktion erforderlich sind:
 
 	<table>
-  <tr>
-    <td><b>Parametername</b></td>
-    <td><b>Beschreibung</b></td>
-    <td><b>Erforderlich</b></td>
-  </tr>
-  <tr>
-    <td>Dateipfad</td>
-    <td>Pfad zur Datei.</td>
-    <td>Ja</td>
-  </tr>
-  <tr>
-    <td>Inhalt der Datei</td>
-    <td>Dateiinhalt, der hochgeladen werden soll.</td>
-    <td>Ja</td>
-  </tr>
-  <tr>
+	  <tr>
+	    <td><b>Parametername</b></td>
+	    <td><b>Beschreibung</b></td>
+	    <td><b>Erforderlich</b></td>
+	  </tr>
+	  <tr>
+	    <td>Dateipfad</td>
+	    <td>Pfad zur Datei.</td>
+	    <td>Ja</td>
+	  </tr>
+	  <tr>
+	    <td>Inhalt der Datei</td>
+	    <td>Dateiinhalt, der hochgeladen werden soll.</td>
+	    <td>Ja</td>
+	  </tr>
+	  <tr>
     <td>Codierung für die Inhaltsübertragung</td>
     <td>Der Codierungstyp des Inhalts, entweder Base64 oder keine Codierung.</td>
-    <td> </td>
-  </tr>
-</table>d. Datei löschen: Diese Aktion löscht die angegebene Datei aus einem Ordner. Wenn die Datei/der Ordner nicht gefunden wird, wird eine Ausnahme ausgelöst. Nachfolgend sind die Parameter aufgeführt, die für die Aktion erforderlich sind:
+	    <td> </td>
+	    </tr>
+	</table>
+
+
+    d. Datei löschen: Diese Aktion löscht die angegebene Datei aus einem Ordner. Wenn die Datei/der Ordner nicht gefunden wird, wird eine Ausnahme ausgelöst. Nachfolgend sind die Parameter aufgeführt, die für die Aktion erforderlich sind:
 
  	<table>
-  <tr>
-    <td><b>Parametername</b></td>
-    <td><b>Beschreibung</b></td>
-    <td><b>Erforderlich</b></td>
-  </tr>
-  <tr>
-    <td>Dateipfad</td>
-    <td>Vollständiger Dateipfad einschließlich Ordnern.</td>
+	  <tr>
+	    <td><b>Parametername</b></td>
+	    <td><b>Beschreibung</b></td>
+	    <td><b>Erforderlich</b></td>
+	  </tr>
+	  <tr>
+	    <td>Dateipfad</td>
+	    <td>Vollständiger Dateipfad einschließlich Ordnern.</td>
     <td>Ja</td>
-  </tr>
-</table>
+	  </tr>
+	</table>
 
 
 
@@ -160,4 +166,4 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den Box-Connector als Akti
 [4]: ./media/app-service-logic-connector-box/image_3.jpg
 [5]: ./media/app-service-logic-connector-box/image_4.jpg
 
-<!---HONumber=62-->
+<!----HONumber=62-->
