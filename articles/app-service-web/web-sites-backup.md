@@ -127,7 +127,8 @@ Ich habe eine Website mit Protokolldateien und statischen Bildern aus den vorher
 
 Ich verfüge bereits über eine vollständige Sicherung der Website, in der die alten Bilder enthalten sind. Jetzt möchte ich die Website täglich sichern, aber ich möchte nicht für die Speicherung von Protokolldateien oder statischen Bilddateien bezahlen, die sich nie ändern.
 
-![Ordner „Logs“][LogsFolder] ![Ordner „Images“][ImagesFolder]
+![Ordner „Logs“][LogsFolder]
+![Ordner „Images“][ImagesFolder]
 	
 Die unten angegebenen Schritte zeigen, wie ich diese Dateien aus dem Backup ausschließe.
 
@@ -267,4 +268,4 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
  
 
-<!---HONumber=62-->
+<!----HONumber=62-->

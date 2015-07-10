@@ -35,7 +35,9 @@ Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem
 --- | --- | ---
 Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*. Document Library / List Relative URLs | Yes | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
 
-5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: <br/> ![][1]
+5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus:
+<br/>
+![][1]
 
 Sobald Sie fertig sind, können Sie jetzt in derselben Ressourcengruppe eine Logik-App zur Verwendung des SharePoint Online-Connectors erstellen.
 
@@ -56,7 +58,9 @@ Kennwort | Nein | Geben Sie ein gültiges Kennwort zum Verbinden mit einer Share
 Relative URLs zur Dokumentbibliothek/Liste | Ja | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
 Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/)
 
-5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: <br/> ![][2]
+5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus:
+<br/>
+![][2]
 
 Sobald Sie fertig sind, können Sie jetzt in derselben Ressourcengruppe eine Logik-App zur Verwendung des SharePoint Server-Connectors erstellen.
 
@@ -71,13 +75,28 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SharePoint-Connector a
 
 3. Wenn der SharePoint-Connector am Anfang der Logik-App aktiviert ist, fungiert dieser wie ein Trigger. Andernfalls könnte Aktionen auf dem SharePoint-Konto über den Connector ausgeführt werden.
 
-4. Wenn Sie den SharePoint-Online-Connector verwenden, müssen Logik-Apps in Ihrem Namen authentifiziert und autorisiert werden. Zum Starten der Autorisierung klicken Sie im SharePoint-Connector auf **Autorisieren**: <br/>![][3]
+4. Wenn Sie den SharePoint-Online-Connector verwenden, müssen Logik-Apps in Ihrem Namen authentifiziert und autorisiert werden. Zum Starten der Autorisierung klicken Sie im SharePoint-Connector auf **Autorisieren**:
+<br/>
+![][3]
 
-5. Durch das Klicken auf "Autorisieren" wird das Authentifizierungsdialogfeld von SharePoint angezeigt. Geben Sie die Anmeldeinformationen des SharePoint-Kontos an, mit dem Sie die Vorgänge ausführen möchten: <br/> ![][4]
+5. Durch das Klicken auf "Autorisieren" wird das Authentifizierungsdialogfeld von SharePoint angezeigt. Geben Sie die Anmeldeinformationen des SharePoint-Kontos an, mit dem Sie die Vorgänge ausführen möchten:
+<br/>
+![][4]
 
-6. Erteilen Sie den Logik-Apps Zugriff auf Ihr Konto, um Vorgänge in Ihrem Namen auszuführen: <br/>![][5]
+6. Erteilen Sie den Logik-Apps Zugriff auf Ihr Konto, um Vorgänge in Ihrem Namen auszuführen:
+<br/>
+![][5]
 
-7. Wenn der SharePoint-Connector als Trigger konfiguriert ist, werden die Trigger angezeigt. Andernfalls wird eine Liste von Aktionen angezeigt und Sie können die entsprechende Operation wählen, die Sie ausführen möchten: <br/> ![][6] <br/> **Relative URL, die für die Dokumentbibliothek konfiguriert wurde** <br/> ![][7] <br/> **Relative URL, die für die Dokumentliste konfiguriert wurde** <br/>
+7. Wenn der SharePoint-Connector als Trigger konfiguriert ist, werden die Trigger angezeigt. Andernfalls wird eine Liste von Aktionen angezeigt und Sie können die entsprechende Operation wählen, die Sie ausführen möchten:
+<br/>
+![][6]
+<br/>
+**Relative URL, die für die Dokumentbibliothek konfiguriert wurde**
+<br/>
+![][7]
+<br/>
+**Relative URL, die für die Dokumentliste konfiguriert wurde**
+<br/>
 
 > [AZURE.NOTE]Für die unten aufgeführten Trigger wird davon ausgegangen, dass Sie in den Connector-Paketeinstellungen "Freigegebene Dokumente, Listen/Aufgabe" angegeben hat, wobei es sich bei "Freigegebene Dokumente" um eine Dokumentbibliothek und bei "Listen/Aufgabe" um eine Liste handelt.
 
@@ -474,4 +493,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [7]: ./media/app-service-logic-connector-sharepoint/image_6.png
  
 
-<!---HONumber=62-->
+<!----HONumber=62-->
