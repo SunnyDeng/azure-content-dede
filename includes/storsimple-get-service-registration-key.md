@@ -1,21 +1,3 @@
-<properties 
-   pageTitle="Abrufen des Dienstregistrierungsschlüssels"
-   description="Beschreibt das Abrufen des Registrierungsschlüssels, der zum Registrieren aller StorSimple-Geräte verwendet wird."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="04/01/2015"
-   ms.author="v-sharos" />
-
-
 #### So rufen Sie den StorSimple-Dienstregistrierungsschlüssel ab
 
 1. Klicken Sie auf der Seite des Diensts **StorSimple-Manager** auf den Dienst, den Sie erstellt haben. Damit gelangen Sie auf die Seite **Schnellstart**. (Sie können jederzeit über das Schnellstartsymbol ![StorSimple-Schnellstart, Symbol](./media/storsimple-get-service-registration-key/HCS_QuickStartIcon-include.png) auf die Seite **Schnellstart** zugreifen.)

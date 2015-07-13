@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Richtlinienreferenz für die Azure API Management" 
+	pageTitle="Richtlinienreferenz für Azure API Management" 
 	description="Erfahren Sie mehr über die verfügbaren Richtlinien zum Konfigurieren von API Management." 
 	services="api-management" 
 	documentationCenter="" 
@@ -13,36 +13,34 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/10/2015" 
+	ms.date="06/18/2015" 
 	ms.author="sdanie"/>
 
 # Richtlinienreferenz für Azure API Management
 
 Dieser Abschnitt stellt einen Index der Richtlinien bereit, die in der [API Management-Richtlinienreferenz][] enthalten sind. Weitere Informationen zum Hinzufügen und Konfigurieren von Richtlinien finden Sie unter [Richtlinien in API Management][].
 
-Richtlinienausdrücke können als Attributwerte oder Textwerte in einer beliebigen API Management-Richtlinie verwendet werden, sofern in der Richtlinie nicht anders angegeben. Einige Richtlinien, beispielsweise [Ablaufsteuerung][] und [Variable festlegen][], basieren auf Richtlinienausdrücken. Weitere Informationen finden Sie unter [Erweiterte Richtlinien][], [Richtlinienausdrücke][] und im folgenden Video.
+Richtlinienausdrücke können als Attributwerte oder Textwerte in einer beliebigen API Management-Richtlinie verwendet werden, sofern in der Richtlinie nicht anders angegeben. Einige Richtlinien, beispielsweise [Ablaufsteuerung][] und [Variable festlegen][], basieren auf Richtlinienausdrücken. Weitere Informationen finden Sie unter [Erweiterte Richtlinien][] und [Richtlinienausdrücke][].
 
-> [AZURE.VIDEO policy-expressions-in-azure-api-management]
-
-## Richtlinienreferenz
+## Richtlinienreferenz – Index
 
 -	[Richtlinien für die Zugriffsbeschränkung][]
-	-	[Check HTTP header][] (HTTP-Header überprüfen) – Erfordert das Vorhandensein und/oder einen Wert eines HTTP-Headers.
+	-	[HTTP-Header überprüfen][] – Erfordert das Vorhandensein und/oder einen Wert eines HTTP-Headers.
 	-	[Aufruflimit][] – Begrenzt Aufrufe und/oder Bandbreitennutzung, um API-Lastspitzen zu verhindern.
 	-	[Beschränkung für Aufrufer-IP][] – Filtert (erlaubt/blockiert) Aufrufe von bestimmten IP-Adressen und/oder Adressbereichen.
-	-	[Set usage quota][] (Nutzungskontingent festlegen) – Ermöglicht die Durchsetzung eines erneuerbaren oder für die Lebensdauer gültigen Kontingents für Aufrufe und/oder Bandbreite.
+	-	[Nutzungskontingent festlegen][] – Ermöglicht die Durchsetzung eines erneuerbaren oder für die Lebensdauer gültigen Kontingents für Aufrufe und/oder Bandbreite.
 	-	[JWT überprüfen][] – Erzwingt das Vorhandensein und die Gültigkeit eines JWT, das entweder aus einem angegebenen HTTP-Header oder aus einem angegebenen Abfrageparameter extrahiert wurde.
 -	[Erweiterte Richtlinien][]
 	-	[Ablaufsteuerung][] – Bedingte Anwendung von Richtlinienanweisungen basierend auf den Ergebnissen der Auswertung von booleschen [Ausdrücken][].
-	-	[Set variable][] (Variable festlegen) – Speichert einen Wert in einer benannten [Kontextvariable][], um später darauf zugreifen zu können.
+	-	[Variable festlegen][] – Speichert einen Wert in einer benannten [Kontextvariable][], um später darauf zugreifen zu können.
 -	[Authentifizierungsrichtlinien][]
 	-	[Standardauthentifizierung][] – Authentifizierung mit einem Back-End-Dienst unter Verwendung der Standardauthentifizierung.
 	-	[Authentifizierung mit Clientzertifikat][] – Authentifizierung mit einem Back-End-Dienst unter Verwendung von Clientzertifikaten.
 -	[Cachingrichtlinien][] 
-	-	[Aus Cache abrufen][] - Führt eine Cachesuche aus und gibt ggf. eine gültige Antwort aus dem Cache zurück.
+	-	[Aus Cache abrufen][] – Führt eine Cachesuche aus und gibt ggf. eine gültige Antwort aus dem Cache zurück.
 	-	[In Cache ablegen][] – Cacheantwort gemäß der angegebenen Konfiguration für die Cachesteuerung.
 -	[Domänenübergreifende Richtlinien][] 
-	-	[Domänenübergreifende Aufrufe zulassen][] - Erlaubt API-Aufrufe aus browserbasierten Clients, die Adobe Flash und Microsoft Silverlight verwenden.
+	-	[Domänenübergreifende Aufrufe zulassen][] – Erlaubt API-Aufrufe aus browserbasierten Clients, die Adobe Flash und Microsoft Silverlight verwenden.
 	-	[CORS][] – Fügt Unterstützung für Cross-Origin Resource Sharing (CORS) zu einer Operation oder einer API hinzu, um domänenübergreifende Aufrufe aus browserbasierten Clients zu ermöglichen.
 	-	[JSONP][] – Fügt Unterstützung für JSON mit Padding (JSONP) zu einer Operation oder einer API hinzu, um domänenübergreifende Aufrufe aus browserbasierten Clients mit JavaScript zu ermöglichen.
 -	[Transformationsrichtlinien][] 
@@ -56,17 +54,21 @@ Richtlinienausdrücke können als Attributwerte oder Textwerte in einer beliebig
 	-	[Abfrageparameter setzen][] – Fügt Abfrageparameter hinzu, löscht diese oder ersetzt deren Werte.
 	-	[URL umschreiben][] – Konvertiert eine Anforderung-URL von der öffentlichen Form in die vom Webdienst erwartete Form.
 
+## Nächste Schritte
+
+Weitere Informationen zu Richtlinienausdrücken finden Sie im folgenden Video.
+
+> [AZURE.VIDEO policy-expressions-in-azure-api-management]
 
 [Richtlinien für die Zugriffsbeschränkung]: https://msdn.microsoft.com/library/azure/dn894078.aspx
-[Check HTTP header]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#CheckHTTPHeader
+[HTTP-Header überprüfen]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#CheckHTTPHeader
 [Aufruflimit]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#LimitCallRate
 [Beschränkung für Aufrufer-IP]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#RestrictCallerIPs
-[Set usage quota]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#SetUsageQuota
+[Nutzungskontingent festlegen]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#SetUsageQuota
 [JWT überprüfen]: https://msdn.microsoft.com/library/azure/034febe3-465f-4840-9fc6-c448ef520b0f#ValidateJWT
 
 [Erweiterte Richtlinien]: https://msdn.microsoft.com/library/azure/dn894085.aspx
 [Ablaufsteuerung]: https://msdn.microsoft.com/library/azure/dn894085.aspx#choose
-[Set variable]: https://msdn.microsoft.com/library/azure/dn894085.aspx#set_variable
 [Variable festlegen]: https://msdn.microsoft.com/library/azure/dn894085.aspx#set_variable
 [Ausdrücken]: https://msdn.microsoft.com/library/azure/dn910913.aspx
 [Kontextvariable]: https://msdn.microsoft.com/library/azure/ea160028-fc04-4782-aa26-4b8329df3448#ContextVariables

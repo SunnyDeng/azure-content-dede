@@ -5,7 +5,7 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 		compile 'com.android.support:support-v4:21.0.3'
     	compile 'com.google.code.gson:gson:2.2.2'
 	    compile 'com.google.guava:guava:18.0'
-	    compile 'com.microsoft.azure:azure-mobile-services-android-sdk:2.0.2-beta'
+	    compile 'com.microsoft.azure:azure-mobile-services-android-sdk:2.0.2+'
 
 
 2. Jetzt erstellen Sie das Projekt neu, indem Sie auf** Sync Project with Gradle Files** klicken.
@@ -15,11 +15,7 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 		<uses-permission android:name="android.permission.INTERNET" />
 
 
-6. Öffnen Sie die AndroidManifest.xml-Datei und fügen Sie die folgende Zeile hinzu, um der App den Zugriff auf mobile Dienste in Azure zu ermöglichen.
-
-		<uses-permission android:name="android.permission.INTERNET" />
-
-5. Öffnen Sie im Projektexplorer die Datei "TodoActivity.java", die sich im Ordner **GetStartedWithData = > app = > src = > java** befindet, und entfernen Sie die Kommentarzeichen vor den folgenden Codezeilen:
+4. Öffnen Sie im Projektexplorer die Datei "TodoActivity.java", die sich im Ordner **GetStartedWithData = > app = > src = > java** befindet, und entfernen Sie die Kommentarzeichen vor den folgenden Codezeilen:
 
 
 
@@ -165,4 +161,5 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 
 <!-- URLs. -->
 [Mobile Services Android SDK]: http://aka.ms/Iajk6q
-<!--HONumber=54-->
+
+<!---HONumber=62-->

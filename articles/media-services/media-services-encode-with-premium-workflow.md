@@ -13,36 +13,36 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="03/03/2015" 
+	ms.date="05/24/2015" 
 	ms.author="juliako"/>
 
 #Erweiterte Codierung mit dem Media Encoder Premium Workflow (öffentliche Vorschau)
 
-**Hinweis**Der in diesem Thema beschriebene Media Encoder Premium Workflow-Medienprozessor ist in China nicht verfügbar.
+**Hinweis** Der in diesem Thema beschriebene Media Encoder Premium Workflow-Medienprozessor ist in China nicht verfügbar.
 
 ##Übersicht
 
-Microsoft Azure Media Services stellt eine öffentliche Vorschau des **Media Encoder Premium Workflow**-Medienprozessors vor. Dieser Prozessor bietet leistungsstarke Codierungsfunktionen für Ihre bedarfsgesteuerten Premium-Workflows. 
+Microsoft Azure Media Services stellt eine öffentliche Vorschau des **Media Encoder Premium Workflow**-Medienprozessors vor. Dieser Prozessor bietet leistungsstarke Codierungsfunktionen für Ihre bedarfsgesteuerten Premium-Workflows.
 
-Die folgenden Themen stellen nähere Informationen zum **Media Encoder Premium-Workflow** bereit: 
+In den folgenden Themen erhalten Sie nähere Informationen zum **Media Encoder Premium Workflow**:
 
-- [Von Media Encoder Premium Workflow unterstützte Formate](media-services-premium-workflow-encoder-formats.md) - Erläutert die von **Media Encoder Premium Workflow** unterstützten Dateiformate und Codecs.
+- [Von Media Encoder Premium Workflow unterstützte Formate](media-services-premium-workflow-encoder-formats.md): Erläutert die von **Media Encoder Premium Workflow** unterstützten Formate.
 
-- Im Abschnitt [Encoder-Vergleich](media-services-encode-asset.md#compare_encoders) werden die Codierungsfunktionen von**Media Encoder Premium Workflow** und **Azure Media Encoder** verglichen.
+- Im Abschnitt [Vergleich der Encoder](media-services-encode-asset.md#compare_encoders) werden die Codierungsfunktionen von **Media Encoder Premium Workflow** und **Azure Media Encoder** verglichen.
 
-Dieses Thema zeigt die Codierung mit **Media Encoder Premium Workflow** unter Verwendung von .NET.
+Dieses Thema demonstriert die Codierung mit **Media Encoder Premium Workflow** unter Verwendung von .NET.
 
 ##Codieren
 
-Das Codieren von Aufgaben für den **Media Encoder Premium Workflow** erfordert eine separate Konfigurationsdatei, die sogenannte Workflowdatei. Diese Dateien haben die Erweiterung .workflow und werden mit dem [Workflow-Designer](media-services-workflow-designer.md) erstellt.
+Für Codieraufgaben für den **Media Encoder Premium Workflow** ist eine separate Konfigurationsdatei, die sogenannte Workflowdatei, erforderlich. Diese Dateien haben die Erweiterung .workflow und werden mit dem [Workflow Designer](media-services-workflow-designer.md) erstellt.
 
 Sie können die standardmäßigen Workflowdateien [hier](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows) abrufen. Der Ordner enthält auch Beschreibungen dieser Dateien.
 
 Die Workflowdateien müssen als Medienobjekt in Ihr Media Services-Konto hochgeladen und das Medienobjekt muss an die Codierungsaufgabe übergeben werden.
 
-Das folgende Beispiel zeigt, wie Sie mit dem **Media Encoder Premium Workflow** eine Codierung durchführen. 
+Das folgende Beispiel zeigt, wie Sie mit dem **Media Encoder Premium Workflow** eine Codierung durchführen.
 
-Es werden folgende Schritte ausgeführt: 
+Es werden folgende Schritte ausgeführt:
  
 1. Erstellen eines Medienobjekts und Hochladen einer Workflowdatei. 
 2. Erstellen eines Medienobjekts und Hochladen einer Quellmediendatei.
@@ -50,16 +50,15 @@ Es werden folgende Schritte ausgeführt:
 4. Erstellen eines Auftrags und einer Aufgabe.
 5. Hinzufügen von zwei Medienobjekten zur Aufgabe.
 	
-	a. 1. - das Workflow-Medienobjekt
+	a. 1. – das Medienobjekt für den Workflow
 
-	b. 2. - das Videomedienobjekt
+	b. 2. – das Videomedienobjekt
 	
-	**Hinweis**: Das Medienobjekt für den Workflow muss der Aufgabe vor dem Videomedienobjekt hinzugefügt werden. 
-Die Konfigurationszeichenfolge für diese Aufgabe sollte leer sein. 
+	**Hinweis**: Das Medienobjekt für den Workflow muss der Aufgabe vor dem Videomedienobjekt hinzugefügt werden. Die Konfigurationszeichenfolge für diese Aufgabe sollte leer sein.
 
 6. Übermitteln des Codierungsauftrags.
 
-Im folgenden finden Sie ein vollständiges Beispiel. Informationen zur Einrichtung von Media Services für die .NET-Entwicklung finden Sie unter [Media Services-Entwicklung mit .NET](media-services-dotnet-how-to-use.md).
+Im folgenden finden Sie ein vollständiges Beispiel. Informationen zum Einrichten der Media Services-Entwicklung mit .NET finden Sie unter [Media Services-Entwicklung mit .NET](media-services-dotnet-how-to-use.md).
 
 
  	using System; 
@@ -144,39 +143,39 @@ Im folgenden finden Sie ein vollständiges Beispiel. Informationen zur Einrichtu
 	        {
 	            // Declare a new job.
 	            IJob job = _context.Jobs.Create("Premium Workflow encoding job");
-	            // Rufen Sie einen Verweis auf den Medienprozessor ab, und übergeben Sie ihm den Namen des 
-	            // Prozessors für die spezielle Aufgabe.
+	            // Get a media processor reference, and pass to it the name of the 
+	            // processor to use for the specific task.
 	            IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Premium Workflow");
 	
-	            // Erstellen Sie eine Aufgabe mit den Codierungsdetails unter Verwendung einer Voreinstellung.
+	            // Create a task with the encoding details, using a string preset.
 	            ITask task = job.Tasks.AddNew("Premium Workflow encoding task",
 	                processor,
 	                "",
 	                TaskOptions.None);
 	
-	            // Geben Sie das zu codierende Eingabemedienobjekt an.
+	            // Specify the input asset to be encoded.
 	            task.InputAssets.Add(workflow);
-	            task.InputAssets.Add(video); // Fügen Sie ein Medienobjekt hinzu.
-	            // Fügen Sie ein Ausgabemedienobjekt hinzu, das die Ergebnisse des Auftrags enthält. 
-	            // Diese Ausgabe wird als AssetCreationOptions.None, angegeben. Das 
-	            // bedeutet, dass das Ausgabemedienobjekt nicht verschlüsselt ist. 
+	            task.InputAssets.Add(video); // we add one asset
+	            // Add an output asset to contain the results of the job. 
+	            // This output is specified as AssetCreationOptions.None, which 
+	            // means the output asset is not encrypted. 
 	            task.OutputAssets.AddNew("Output asset",
 	                AssetCreationOptions.None);
 	
-	            // Verwenden Sie den folgenden Ereignishandler zum Überprüfen des Auftragsfortschritts.  
+	            // Use the following event handler to check job progress.  
 	            job.StateChanged += new
 	                    EventHandler<JobStateChangedEventArgs>(StateChanged);
 	
-	            // Starten Sie den Auftrag.
+	            // Launch the job.
 	            job.Submit();
 	
-	            // Überprüfen Sie die Auftragsausführung, und warten Sie die Beendigung des Auftrags ab. 
+	            // Check job execution and wait for job to finish. 
 	            Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
 	            progressJobTask.Wait();
 	
-	            // Wenn der Auftragsstatus einem Fehler entspricht, sollte die Event Handling- 
-	            // Methode zum Auftragsfortschritt etwaige Fehler protokollieren.  Hier erfolgt eine Überprüfung 
-	            // auf einen Fehlerstatus. Bei Bedarf wird die Anwendung beendet.
+	            // If job state is Error the event handling 
+	            // method for job progress should log errors.  Here we check 
+	            // for error state and exit if needed.
 	            if (job.State == JobState.Error)
 	            {
 	                throw new Exception("\nExiting method due to job error.");
@@ -266,5 +265,4 @@ Im folgenden finden Sie ein vollständiges Beispiel. Informationen zur Einrichtu
 
 Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjekt trotzdem eine leere TTML-Datei.
 
-
-<!--HONumber=52--> 
+<!---HONumber=62-->

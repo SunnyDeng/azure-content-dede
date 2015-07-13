@@ -60,7 +60,7 @@ Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die entsprechenden App S
 
         // delete await push.RegisterAsync (deviceToken);
         
-        var notificationTemplate = "{\"aps\": {\"alert\":\"$(message)\"}}";
+        var notificationTemplate = "{"aps": {"alert":"$(message)"}}";
 
         JObject templateBody = new JObject();
         templateBody["body"] = notificationTemplate;
@@ -112,4 +112,4 @@ Veröffentlichen Sie erneut Ihr mobiles Back-End-Projekt, und führen Sie eine b
 [Erste Schritte mit Pushbenachrichtigungen]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-push-preview.md
 [Vorlagen]: https://msdn.microsoft.com/de-de/library/dn530748.aspx
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

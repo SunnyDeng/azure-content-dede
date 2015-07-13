@@ -110,7 +110,7 @@ Wenn der Name Ihrer benutzerdefinierten Domäne z. B. "contoso.com" lautet, wer
 
 >[AZURE.NOTE]Die erforderlichen Domäneneinträge für Ihre Web-App können mit Azure DNS gehostet werden. Informationen zum Konfigurieren Ihrer benutzerdefinierten Domäne sowie zum Erstellen Ihrer Einträge in Azure DNS finden Sie unter [Erstellen von benutzerdefinierten DNS-Einträgen für eine Web-App](../dns-web-sites-custom-domain).
 
-<a name="awverify" />
+<a name="awverify" /></a>
 ## Erstellen eines awverify-Eintrags (nur A-Einträge)
 
 Wenn Sie einen A-Datensatz erstellen, fordert die Web-App auch einen speziellen CNAME-Datensatz an. Über diesen wird sichergestellt, dass Sie der Besitzer der Domäne sind, die Sie verwenden möchten. Der CNAME-Eintrag muss das folgende Format aufweisen.
@@ -129,7 +129,7 @@ Besucher Ihrer Web-App sehen die awverify-Unterdomäne nicht. Sie dient nur zum 
 
 ## Nächste Schritte
 
-Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](http://azure.microsoft.com/documentation/articles/dns-getstarted-create-dnszone) sowie unter [Delegieren von Domänen an Azure DNS](http://azure.microsoft.com/documentation/articles/dns-domain-delegation).
+Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](http://azure.microsoft.com/de-de/documentation/articles/dns-getstarted-create-dnszone) sowie unter [Delegieren von Domänen an Azure DNS](http://azure.microsoft.com/de-de/documentation/articles/dns-domain-delegation).
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).

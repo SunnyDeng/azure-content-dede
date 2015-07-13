@@ -22,13 +22,13 @@
 
 Dieser Artikel erläutert, was das WebJobs-SDK ist. In ihm werden einige allgemeine Szenarien beleuchtet, für die es nützlich ist, und er enthält eine Übersicht, wie sie das SDK in Ihrem Code verwenden können.
 
-[WebJobs](web-sites-create-web-jobs.md) ist ein Feature von Azure-App-Dienst, der Ihnen ermöglicht, ein Programm oder Skript im selben Kontext wie einer Webanwendung ausgeführt. Der Zweck des WebJobs-SDKs besteht darin, die Aufgabe für das Schreiben von Code zu vereinfachen, die als ein WebJob ausgeführt wird und mit Azure Storage-Warteschlangen, Blobs und Tabellen sowie Servicebus-Warteschlangen funktioniert.
+[WebJobs](web-sites-create-web-jobs.md) ist ein Feature von Azure App Service, mit dem Sie ein Programm oder Skript im selben Kontext wie eine Web-App ausführen können. Der Zweck des WebJobs-SDKs besteht darin, die Aufgabe für das Schreiben von Code zu vereinfachen, die als ein WebJob ausgeführt wird und mit Azure Storage-Warteschlangen, Blobs und Tabellen sowie Service Bus-Warteschlangen funktioniert.
 
 Das WebJobs-SDK enthält die folgenden Komponenten:
 
 * **NuGet-Pakete**. NuGet-Pakete, die Sie zu einem Visual Studio-Konsolenanwendungsprojekt hinzufügen, bieten ein Framework, das Ihr Code verwendet, um mit dem Azure Storage-Dienst oder Service-Warteschlangen zu interagieren.   
   
-* **Dashboard**. Ein Teil des Webaufträge-SDKs ist in Azure App Service enthalten und bietet eine umfangreiche Überwachung und Diagnose für Programme, die NuGet-Pakete verwenden. Sie müssen keinen Code schreiben, um diese Überwachungs- und Diagnosefeatures zu verwenden.
+* **Dashboard**. Ein Teil des WebJobs-SDKs ist in Azure App Service enthalten und bietet eine umfangreiche Überwachung und Diagnose für Programme, die NuGet-Pakete verwenden. Sie müssen keinen Code schreiben, um diese Überwachungs- und Diagnosefeatures zu verwenden.
 
 ## <a id="scenarios"></a>Szenarien
 
@@ -46,9 +46,9 @@ Im Folgenden finden Sie einige typische Szenarien, die Sie mit dem Azure WebJobs
 
 * Andere lang ausgeführte Aufgaben, die Sie in einem Hintergrundthread ausführen möchten, wie das [Senden von E-Mails](https://github.com/victorhurdugaci/AzureWebJobsSamples/tree/master/SendEmailOnFailure).
 
-## <a id="code"></a> Code-Beispiele
+## <a id="code"></a> Codebeispiele
 
-Der Code für das Verarbeiten typischer Aufgaben, die mit Azure Storage interagieren, ist einfach. In einer Konsolenanwendung schreiben Sie Methoden für die Hintergrundaufgaben, die Sie ausführen möchten, und Sie versehen sie mit Attributen aus dem WebJobs-SDK. Die `Main` -Methode erstellt ein `JobHost` -Objekt, das Aufrufe von Methoden, die Sie schreiben koordiniert. Das WebJobs-SDK-Framework weiß anhand der WebJobs-SDK-Attribute, die Sie in ihnen verwenden, wann es Ihre Methoden aufrufen muss.
+Der Code für das Verarbeiten typischer Aufgaben, die mit Azure Storage interagieren, ist einfach. In einer Konsolenanwendung schreiben Sie Methoden für die Hintergrundaufgaben, die Sie ausführen möchten, und Sie versehen sie mit Attributen aus dem WebJobs-SDK. Die `Main`-Methode erstellt ein `JobHost`-Objekt, das die Aufrufe zu den von Ihnen geschriebenen Methoden koordiniert. Das WebJobs-SDK-Framework weiß anhand der WebJobs-SDK-Attribute, die Sie in ihnen verwenden, wann es Ihre Methoden aufrufen muss.
 
 Im Folgenden finden Sie ein einfaches Programm, das eine Warteschlange abfragt und ein Blob für jede empfangene Warteschlangennachricht erstellt:
 
@@ -64,14 +64,14 @@ Im Folgenden finden Sie ein einfaches Programm, das eine Warteschlange abfragt u
 		    writer.WriteLine(inputText);
 		}
 
-Das `JobHost` Objekt ist ein Container für eine Gruppe von Hintergrundfunktionen. Das `JobHost` Objekt überwacht die Funktionen überwacht Ereignisse, die ausgelöst werden, und führt die Funktionen, treten Ereignisse auszulösen. Rufen Sie eine `JobHost` Methode, um anzugeben, ob den containerprozess auf den aktuellen Thread oder in einem Hintergrundthread ausgeführt werden soll. Im Beispiel ist die `RunAndBlock` Methode führt den Prozess kontinuierlich auf den aktuellen Thread.
+Das `JobHost`-Objekt ist ein Container für eine Reihe von Hintergrundfunktionen. Das `JobHost`-Objekt überwacht die Funktionen, überwacht auf Ereignisse, die sie auslösen, und führt die Funktionen aus, wenn die Trigger auftreten. Sie rufen eine `JobHost`-Methode auf, um anzugeben, ob der Containervorgang auf dem aktuellen Thread oder auf einem Hintergrundthread ausgeführt werden soll. Im Beispiel führt die `RunAndBlock`-Methode den Vorgang fortlaufend auf dem aktuellen Thread aus.
 
-Da die `ProcessQueueMessage` Methode in diesem Beispiel hat ein `QueueTrigger` Attribut, den Trigger für diese Funktion den Empfang einer neuen Nachricht der Warteschlange ist. Das `JobHost` Objekt prüft, ob neue Warteschlangennachrichten für die angegebene Warteschlange (in diesem Beispiel "Webjobsqueue"), und wenn eine gefunden wird, ruft er `ProcessQueueMessage`. Das `QueueTrigger` -Attribut wird auch das Framework zum Binden der `inputText` -Parameter auf den Wert der Nachricht der Warteschlange:
+Da die `ProcessQueueMessage`-Methode in diesem Beispiel ein `QueueTrigger`-Attribut aufweist, ist der Trigger für diese Funktion der Empfang einer neuen Warteschlangennachricht. Das `JobHost`-Objekt überwacht die angegebene Warteschlange auf neue Warteschlangennachrichten (in diesem Beispiel "webjobsqueue"). Wird eine neue Nachricht ermittelt, wird `ProcessQueueMessage` aufgerufen. Das `QueueTrigger`-Attribut benachrichtigt außerdem das Framework, um den `inputText`-Parameter an den Wert der Warteschlangennachricht zu binden:
 
 <pre class="prettyprint">public static void ProcessQueueMessage([QueueTrigger("webjobsqueue")]] <mark>string inputText</mark>, 
     [Blob("containername/blobname")]TextWriter writer)</pre>
 
-Das Framework bindet zudem ein `TextWriter` Objekt in ein Blob mit dem Namen "Blobname" in einem Container mit dem Namen "Containername":
+Das Framework bindet außerdem ein `TextWriter`-Objekt an ein Blob mit dem Namen "blobname" in einem Container mit dem Namen "containername":
 
 <pre class="prettyprint">public static void ProcessQueueMessage([QueueTrigger("webjobsqueue")]] string inputText, 
     <mark>[Blob("containername/blobname")]TextWriter writer</mark>)</pre>
@@ -80,23 +80,23 @@ Die Funktion verwendet dann diese Parameter, um den Wert der Warteschlangennachr
 
 		writer.WriteLine(inputText);
 
-Die Trigger- und Binder-Features des WebJobs-SDKs vereinfachen den Code erheblich, den Sie schreiben müssen, um mit Azure Storage- und Servicebus-Warteschlangen zu arbeiten. Der zum Handhaben der Warteschlangen- und Blobverarbeitung erforderliche Low-Level-Code wird für Sie durch das WebJobs-SDK-Framework erstellt. Das Framework erstellt Warteschlangen, die bisher noch nicht vorhanden sind, öffnet die Warteschlange, lies Warteschlangennachrichten, löscht Warteschlangennachrichten nach fertig gestellter Verarbeitung, erstellt Blobcontainer, die noch nicht vorhanden sind, schreibt in Blobs usw.
+Die Trigger- und Binder-Features des WebJobs-SDKs vereinfachen den Code erheblich, den Sie schreiben müssen, um mit Azure Storage- und Service Bus-Warteschlangen zu arbeiten. Der zum Handhaben der Warteschlangen- und Blobverarbeitung erforderliche Low-Level-Code wird für Sie durch das WebJobs-SDK-Framework erstellt. Das Framework erstellt Warteschlangen, die bisher noch nicht vorhanden sind, öffnet die Warteschlange, lies Warteschlangennachrichten, löscht Warteschlangennachrichten nach fertig gestellter Verarbeitung, erstellt Blobcontainer, die noch nicht vorhanden sind, schreibt in Blobs usw.
 
-Das WebJobs-SDK bietet viele Möglichkeiten für die Arbeit mit Azure Storage. Beispielsweise, wenn der Parameter statten Sie mit dem `QueueTrigger` -Attribut ist ein Byte-Array oder ein benutzerdefinierter Typ, automatisch aus JSON deserialisiert werden kann. Und Sie können ein `BlobTrigger` Attribut, um einen Prozess auszulösen, wenn ein neues Blob in Azure Storage-Konto erstellt wird. (Beachten Sie, dass `QueueTrigger` findet neue Warteschlangennachrichten innerhalb weniger Sekunden `BlobTrigger` können bis zu 20 Minuten dauern erkennen einen neuen Blob. `BlobTrigger` für Blobs scannt bei jedem der `JobHost` beginnt und anschließend in regelmäßigen Abständen überprüft der Azure-Speicher-Protokolle, um neue Blobs zu erkennen.)
+Das WebJobs-SDK bietet viele Möglichkeiten für die Arbeit mit Azure Storage. Wenn beispielsweise der von Ihnen mit dem `QueueTrigger`-Attribut versehene Parameter ein Bytearray oder ein benutzerdefinierter Typ ist, wird er automatisch von JSON deserialisiert. Und Sie können ein `BlobTrigger`-Attribut verwenden, um einen Vorgang auszulösen, sobald ein neues Blob in einem Azure Storage-Konto erstellt wird. (Hinweis: Auch wenn `QueueTrigger` neue Warteschlangennachrichten innerhalb von wenigen Sekunden findet, kann `BlobTrigger` für das Ermitteln neuer Blobs bis zu 20 Minuten benötigen. `BlobTrigger` sucht nach Blobs, sobald der `JobHost` startet, und prüft dann regelmäßig die Azure Storage-Protokolle zum Ermitteln neuer Blobs.)
 
-## <a id="workerrole"></a>Mithilfe des WebJobs-SDK außerhalb von WebJobs
+## <a id="workerrole"></a>Verwenden des WebJobs-SDK außerhalb von WebJobs
 
-Ein das WebJobs-SDK verwendende Programm ist eine standardmäßige Konsolenanwendung und kann überall ausgeführt werden – es muss nicht als ein WebJob ausgeführt werden. Sie können das Programm lokal auf Ihrem Entwicklungscomputer testen, und in der Produktion können Sie es als eine Cloud-Dienst-Workerrolle oder einen Windows-Dienst ausführen, wenn Sie eine dieser Umgebungen bevorzugen.
+Ein das WebJobs-SDK verwendende Programm ist eine standardmäßige Konsolenanwendung und kann überall ausgeführt werden – es muss nicht als ein WebJob ausgeführt werden. Sie können das Programm lokal auf Ihrem Entwicklungscomputer testen, und in der Produktion können Sie es als eine Cloud Services-Workerrolle oder einen Windows-Dienst ausführen, wenn Sie eine dieser Umgebungen bevorzugen.
 
-Das Dashboard steht jedoch nur als eine Erweiterung für eine Azure App Services-Web-App zur Verfügung. Wenn Sie es außerhalb von einem Webauftrag ausführen und das Dashboard weiterhin verwenden möchten, können Sie eine Web-App so konfigurieren, dasselbe Speicherkonto zu verwenden, worauf Ihre Webaufträge-SDK-Dashboardverbindungszeichenfolge verweist, und das Webaufträge-Dashboard dieser Web-App zeigt dann Daten über die Funktionsausführung von Ihrem Programm an, das irgendwo anders ausgeführt wird. Sie können mithilfe der URL für das Dashboard abrufen https://*{webappname}*.scm.azurewebsites.net/azurejobs/#/functions. Weitere Informationen finden Sie unter [Getting a dashboard for local development with the WebJobs SDK](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx) (Abrufen eines Dashboards für die lokale Entwicklung mit dem WebJobs-SDK) (in englischer Sprache). Beachten Sie jedoch, dass im Blogbeitrag ein alter Verbindungszeichenfolgenname gezeigt wird.
+Das Dashboard steht jedoch nur als eine Erweiterung für eine Azure App Services-Web-App zur Verfügung. Wenn Sie es außerhalb von einem Webauftrag ausführen und das Dashboard weiterhin verwenden möchten, können Sie eine Web-App so konfigurieren, dasselbe Speicherkonto zu verwenden, worauf Ihre WebJobs-SDK-Dashboardverbindungszeichenfolge verweist, und das WebJobs-Dashboard dieser Web-App zeigt dann Daten über die Funktionsausführung von Ihrem Programm an, das irgendwo anders ausgeführt wird. Sie können das Dashboard über die URL https://*{webappname}*.scm.azurewebsites.net/azurejobs/#/functions abrufen. Weitere Informationen finden Sie unter [Getting a dashboard for local development with the WebJobs SDK](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx) (Abrufen eines Dashboards für die lokale Entwicklung mit dem WebJobs-SDK) (in englischer Sprache). Beachten Sie jedoch, dass im Blogbeitrag ein alter Verbindungszeichenfolgenname gezeigt wird.
 
-## <a id="nostorage"></a>Mithilfe des WebJobs-SDK zum Aufrufen einer Funktion
+## <a id="nostorage"></a>Verwenden des WebJobs-SDK zum Aufrufen einer beliebigen Funktion
 
-Das WebJobs-SDK bietet verschiedene Vorteile, auch wenn Sie nicht direkt mit Azure Storage-Warteschlangen, -Tabellen oder -Blobs oder mit Servicebus-Warteschlangen arbeiten müssen:
+Das WebJobs-SDK bietet verschiedene Vorteile, auch wenn Sie nicht direkt mit Azure Storage-Warteschlangen, -Tabellen oder -Blobs oder mit Service Bus-Warteschlangen arbeiten müssen:
 
 * Sie können Funktionen im Dashboard aufrufen.
 * Sie können Funktionen im Dashboard wiedergeben.
-* Können Sie Protokolle anzeigen, im Dashboard verknüpft den bestimmten WebJob (Anwendungsprotokolle, schreiben mithilfe von Console.Out, Console.Error übermittelten, Ablaufverfolgung, usw.) oder mit bestimmten Funktionsaufruf, der diese generiert verknüpft (Protokolle geschrieben, die mit einem `TextWriter` -Objekt, das SDK als Parameter an die Funktion übergeben). 
+* Sie können im Dashboard Protokolle anzeigen, die dem jeweiligen Webauftrag zugeordnet (Anwendungsprotokolle, die mit "Console.Out", "Console.Error", "Trace" usw. geschrieben wurden) oder mit dem speziellen Funktionsaufruf verknüpft sind, der sie generiert hat (Protokolle, die mit einem `TextWriter`-Objekt geschrieben wurde, das das SDK als Parameter an die Funktion übergibt). 
 
 * Weitere Informationen finden Sie im Thema über das [Gewusst wie: Manuelle Aufrufen einer Funktion](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#manual) und im Thema über das [Gewusst wie: Schreiben von Protokollen](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#logs)
 
@@ -105,4 +105,4 @@ Das WebJobs-SDK bietet verschiedene Vorteile, auch wenn Sie nicht direkt mit Azu
 Weitere Informationen über das WebJobs-SDK finden Sie im Thema über die [empfohlenen Azure WebJobs-Ressourcen](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

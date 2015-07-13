@@ -160,8 +160,8 @@ Setzen Sie den **MaxCount**-Parameter auf 0 oder eine negative Zahl, um die Ober
 
 ## Verwandte Themen
 * [Batch – Technische Übersicht](batch-technical-overview.md)
-* [Download Azure PowerShell](http://go.microsoft.com/p/?linkid=9811175)
+* [Azure PowerShell herunterladen](http://go.microsoft.com/p/?linkid=9811175)
 * [Referenz zu Azure-Batch-Cmdlets](https://msdn.microsoft.com/library/azure/mt125957.aspx)
 * [Effiziente Listenabfragen](batch-efficient-list-queries.md)
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

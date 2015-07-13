@@ -129,7 +129,7 @@ Erstellt die Web-App, die das Gateway hostet.
                     },
                     {
                         "name": "EmaStorage",
-                        "value": "D:\\home\\data\\apiapps"
+                        "value": "D:\home\data\apiapps"
                     },
                     {
                         "name": "WEBSITE_START_SCM_ON_SITE_CREATION",

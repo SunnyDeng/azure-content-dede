@@ -1,13 +1,11 @@
 
-Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, die erfordert, dass der Client bei jedem Start der App sowohl den Identitätsanbieter als auch Mobile Services kontaktiert. Diese Methode ist nicht skalierbar und ineffizient.
+Im vorherigen Beispiel werden bei jedem Start der App der Identitätsanbieter und der Mobile Service kontaktiert. Sie können jedoch auch das Authentifizierungstoken zwischenspeichern und zunächst versuchen, dieses Token zu verwenden.
 
-Ein besserer Ansatz ist es daher, den von Azure Mobile Services zurückgegebenen Authentifizierungstoken zwischenzuspeichern und vor einer anbieterbasierten Anmeldung zu verwenden.
+* Als Methode zum Verschlüsseln und Speichern von Authentifizierungstokens auf einem iOS-Client wird der iOS-Schlüsselbund empfohlen. Hier wird [SSKeychain](https://github.com/soffes/sskeychain) verwendet – ein einfacher Wrapper für den iOS-Schlüsselbund. Folgen Sie den Anweisungen auf der SSKeychain-Seite und fügen Sie ihn Ihrem Projekt hinzu. Überprüfen Sie, ob die Einstellung für das **Aktivieren der Module** in den **Buildeinstellungen** des Projekts aktiviert ist (Abschnitt **Apple LLVM - Sprachen - Module**.)
 
-1. Als Methode zum Verschlüsseln und Speichern von Authentifizierungstokens auf einem iOS-Client wird der iOS-Schlüsselbund empfohlen. Hier wird [SSKeychain](https://github.com/soffes/sskeychain) verwendet – ein einfacher Wrapper für den iOS-Schlüsselbund. Folgen Sie den Anweisungen auf der SSKeychain-Seite und fügen Sie ihn Ihrem Projekt hinzu. Überprüfen Sie, ob die Einstellung für das **Aktivieren der Module** in den **Buildeinstellungen** des Projekts aktiviert ist (Abschnitt **Apple LLVM - Sprachen - Module**.)
+* Öffnen Sie **QSTodoListViewController.m**, und fügen Sie folgenden Code hinzu:
 
-2. Öffnen Sie **QSTodoListViewController.m**, und fügen Sie folgenden Code hinzu:
-
-
+```
 		- (void) saveAuthInfo {
 				[SSKeychain setPassword:self.todoService.client.currentUser.mobileServiceAuthenticationToken forService:@"AzureMobileServiceTutorial" account:self.todoService.client.currentUser.userId]
 		}
@@ -22,12 +20,18 @@ Ein besserer Ansatz ist es daher, den von Azure Mobile Services zurückgegebenen
 
 		    }
 		}
+```
 
-3. Ändern Sie in der `loginAndGetData`-Methode den Abschlussblock des `loginWithProvider:controller:animated:completion:`-Aufrufs, indem Sie `saveAuthInfo` direkt vor der Zeile `[self refresh]` einen Aufruf hinzufügen. Mit diesem Aufruf werden die Eigenschaften für Benutzer-ID und Token gespeichert:
+* Ändern Sie in `loginAndGetData` den `loginWithProvider:controller:animated:completion:`-completion-Block. Fügen Sie zum Speichern der Benutzer-ID und der Token-Eigenschaften die folgende Zeile direkt vor `[self refresh]` ein:
 
+```
 				[self saveAuthInfo];
+```
 
-4. Sie sollten außerdem die Benutzer-ID und den Token beim Starten der App laden. Fügen Sie in der `viewDidLoad`-Methode in **QSTodoListViewController.m** einen Aufruf von "loadAuthInfo" hinzu, direkt nachdem `self.todoService` initialisiert wurde.
+* Sie sollten die Benutzer-ID und den Token beim Starten der App laden. Fügen Sie dies in `viewDidLoad` von **QSTodoListViewController.m** direkt nach der Initialisierung von `self.todoService` hinzu.
 
+```
 				[self loadAuthInfo];
-<!--HONumber=54-->
+```
+
+<!---HONumber=62-->

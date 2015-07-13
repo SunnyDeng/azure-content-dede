@@ -4,6 +4,4 @@
 
 >* Installieren Sie Node.js auf einem Mac oder unter Linux von <a href="http://nodejs.org">http://nodejs.org</a>. Unter Windows ist Node.js bereits im Installer enthalten.
 
-
-
-<!--HONumber=54-->
+<!---HONumber=62-->

@@ -40,7 +40,7 @@ Zum Schutz Ihrer Anwendung müssen Sie in Ihrem Mandanten zunächst eine Anwendu
 -	Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com) an.
 -	Klicken Sie in der linken Navigationsleiste auf **Active Directory**.
 -	Wählen Sie den Mandanten aus, unter dem die Anwendung registriert werden soll.
--	Klicken Sie auf die Registerkarte **Anwendungen** und dann in der unteren Schublade auf **Hinzufügen**.
+-	Klicken Sie auf die Registerkarte **Anwendungen** und dann unten auf **Hinzufügen**.
 -	Folgen Sie den Bildschirmaufforderungen, und erstellen Sie eine neue **Webanwendung und/oder Web-API**.
     -	Am **Namen** der Anwendung sollten die Endbenutzer die Funktion der Anwendung ablesen können. Geben Sie „To Do List Service“ ein.
     -	Die **Umleitungs-URI** ist eine Kombination aus einem Schema und einer Zeichenfolge, die Azure AD für die Rückgabe der von der Anforderung angeforderten Tokens verwendet. Geben Sie hier `https://localhost:44321/` ein.
@@ -139,5 +139,6 @@ Als Referenz stellen wir [hier](https://github.com/AzureADQuickStarts/WebAPI-Bea
 [Erstellen eines systemeigenen .NET-Clients in Azure AD >>](../active-directory-devquickstarts-native-dotnet.md)
 
 Sehen Sie sich auch die folgenden Ressourcen an: – [AzureAD-Beispiele auf GitHub >>](https://github.com/AzureAdSamples) – [CloudIdentity.com >>](https://cloudidentity.com) – Azure AD-Dokumentation auf [Azure.com >>](http://azure.microsoft.com/documentation/services/active-directory/)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

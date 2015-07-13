@@ -73,4 +73,4 @@ Authentifizieren von Benutzern Ihrer mobilen App mit Azure Active Directory für
 [ios-adal]: ../app-service-mobile-dotnet-backend-xamarin-ios-aad-sso-preview.md
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

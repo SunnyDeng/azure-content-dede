@@ -84,6 +84,6 @@ Die folgenden Beispielbefehle rufen den letzten Auftrag für ein Beispielrunbook
 
 ## Verwandte Artikel
 
-- [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook.md)
+- [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook.md) 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

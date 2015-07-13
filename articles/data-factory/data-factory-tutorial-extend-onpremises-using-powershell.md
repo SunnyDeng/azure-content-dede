@@ -51,7 +51,7 @@ Sie müssen mindestens ein Gateway in Ihrer Unternehmensumgebung installiert hab
 
 Wenn Sie ein vorhandenes Datengateway haben, das Sie verwenden können, überspringen Sie diesen Schritt.
 
-1.	Erstellen eines logischen Datengateways. In der **Azure Preview Portal**, klicken Sie auf **verknüpften Dienste** auf der **DATA FACTORY** Blade.
+1.	Erstellen eines logischen Datengateways. Klicken Sie im **Azure-Vorschauportal** auf dem Blatt **DATA FACTORY** auf **Verknüpfte Dienste**.
 2.	Klicken Sie in der Befehlsleiste auf **(+) Datengateway hinzufügen**.  
 3.	Klicken Sie auf dem Blatt **Neues Datengateway** auf **ERSTELLEN**.
 4.	Geben Sie auf dem Blatt **Erstellen** als **Namen** für das Datengateway **MyGateway**.
@@ -97,46 +97,46 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 
 ### Erstellen des verknüpften Diensts
 
-1.	In der **Azure Preview Portal**, klicken Sie auf **verknüpften Dienste** Kachel auf die **DATA FACTORY** Blade für **LogProcessingFactory**.
-2.	In der **verknüpften Dienste** Blade, klicken Sie auf **Hinzufügen (+) Datenspeicher**.
-3.	In der **neuen Datenspeicher** Blade, geben Sie **OnPremSqlLinkedService** für den **Namen**. 
-4.	Klicken Sie auf **Typ (erforderlichen Einstellungen)** und wählen Sie **SQL Server**. Sollte der **DATA GATEWAY**, **Server**, **Datenbank**, und **Anmeldeinformationen** Einstellungen in der **neuen Datenspeicher** Blade jetzt. 
-5.	Klicken Sie auf **Daten-GATEWAY (Konfigurieren der erforderliche Einstellungen)** und wählen Sie **MyGateway** Sie zuvor erstellt haben. 
-6.	Geben Sie **Name** des Datenbankservers, der hostet die **MarketingCampaigns** Datenbank. 
-7.	Geben Sie **MarketingCampaigns** für die Datenbank. 
-8.	Klicken Sie auf **Anmeldeinformationen**. 
-9.	In der **Anmeldeinformationen** Blade, klicken Sie auf **Klicken Sie hier, um Anmeldeinformationen sicher**.
-10.	Eine One-Click-Anwendung zum ersten Mal installiert und startet den **Festlegen der Anmeldeinformationen **Dialogfeld. 11.	In der **Festlegen der Anmeldeinformationen** Dialogfeld Geben Sie **Benutzername** und **Kennwort**, und klicken Sie auf **OK**. Warten Sie, bis das Dialogfeld geschlossen wird. 
-12.	Klicken Sie auf **OK** in den **neuen Datenspeicher** Blade. 
-13.	In der **verknüpften Dienste** Blade, überprüfen Sie, ob **OnPremSqlLinkedService** wird in der Liste und die **Status** des verknüpften Dienstes ist **gute**.
+1.	Klicken Sie im **Azure-Vorschauportal** auf dem Blatt **DATA FACTORY** auf die Kachel **Verknüpfte Dienste** für **LogProcessingFactory**.
+2.	Klicken Sie auf dem Blatt **Verknüpfte Dienste** auf **(+) Datenspeicher hinzufügen**.
+3.	Geben Sie **OnPremSqlLinkedService** auf dem Blatt **Neuer Datenspeicher** unter **Name** ein. 
+4.	Klicken Sie auf **TYP (Einstellungen erforderlich)**, und wählen Sie **SQL Server** aus. Jetzt sollten die Einstellungen **DATENGATEWAY**, **Server**, **Datenbank** und **ANMELDEINFORMATIONEN** auf dem Blatt **Neuer Datenspeicher** angezeigt werden. 
+5.	Klicken Sie auf **DATENGATEWAY (erforderliche Einstellungen konfigurieren)**,und wählen Sie **MyGateway** aus, das Sie zuvor erstellt haben. 
+6.	Geben Sie den **Namen** des Datenbankservers ein, auf dem die **MarketingCampaigns**-Datenbank gehostet wird. 
+7.	Geben Sie **MarketingCampaigns** als Datenbank ein. 
+8.	Klicken Sie auf **ANMELDEINFORMATIONEN**. 
+9.	Klicken Sie auf dem Blatt **Anmeldeinformationen** auf **Klicken Sie hier, um Anmeldeinformationen auf sichere Weise festzulegen**.
+10.	Daraufhin wird eine 1-Klick-Anwendung zum ersten Mal installiert und das Dialogfeld **Anmeldeinformationen festlegen** geöffnet.11.	Geben Sie im Dialogfeld **Anmeldeinformationen festlegen** den **Benutzernamen** und das **Kennwort** ein, und klicken Sie auf **OK**. Warten Sie, bis das Dialogfeld geschlossen wird. 
+12.	Klicken Sie auf dem Blatt **Neuer Datenspeicher** auf **OK**. 
+13.	Vergewissern Sie sich, dass auf dem Blatt **Verknüpfte Dienste** in der Liste **OnPremSqlLinkedService** angezeigt wird und dass der **Status** des verknüpften Diensts **Gut** lautet.
 
 ## <a name="OnPremStep3"></a> Schritt 3: Erstellen der Tabelle und der Pipeline
 
 ### Erstellen der lokalen logischen Tabelle
 
-1.	In **Azure PowerShell**, wechseln Sie zu den **C:\ADFWalkthrough\OnPremises** Ordner. 
-2.	Verwenden Sie das Cmdlet **neu AzureDataFactoryTable** zum Erstellen von der Tabellen wie folgt für **MarketingCampaignEffectivenessOnPremSQLTable.json**.
+1.	Wechseln Sie in **Azure PowerShell** zum Ordner **C:\ADFWalkthrough\OnPremises**. 
+2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryTable**, um die Tabellen für **MarketingCampaignEffectivenessOnPremSQLTable.json** wie folgt zu erstellen.
 
 			
 		New-AzureDataFactoryTable -ResourceGroupName ADF -DataFactoryName $df –File .\MarketingCampaignEffectivenessOnPremSQLTable.json
 	 
 #### Erstellen der Pipeline zum Kopieren der Daten aus dem Azure-BLOB auf SQL Server
 
-1.	Verwenden Sie das Cmdlet **neu AzureDataFactoryPipeline** beim Erstellen von der Pipeline folgendermaßen für **EgressDataToOnPremPipeline.json**.
+1.	Verwenden Sie das Cmdlet **New-AzureDataFactoryPipeline**, um die Pipeline für **EgressDataToOnPremPipeline.json** wie folgt zu erstellen.
 
 			
 		New-AzureDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName $df –File .\EgressDataToOnPremPipeline.json
 	 
-2. Verwenden Sie das Cmdlet **Set AzureDataFactoryPipelineActivePeriod** an der aktiven Zeitraum für die **EgressDataToOnPremPipeline**.
+2. Verwenden Sie das Cmdlet **Set-AzureDataFactoryPipelineActivePeriod**, um den aktiven Zeitraum für **EgressDataToOnPremPipeline** anzugeben.
 
 			
 		Set-AzureDataFactoryPipelineActivePeriod -ResourceGroupName ADF -DataFactoryName $df -StartDateTime 2014-05-01Z -EndDateTime 2014-05-05Z –Name EgressDataToOnPremPipeline
 
-	Drücken Sie **'Y'** um den Vorgang fortzusetzen.
+	Drücken Sie **J**, um fortzufahren.
 	
 ## <a name="OnPremStep4"></a> Schritt 4: Überwachen der Pipeline und Anzeigen des Ergebnisses
 
-Jetzt können Sie die gleichen Schritte eingeführten [Schritt 6: Überwachen von Tabellen und Pipelines](#MainStep6) zur Überwachung neue Pipeline und die Datensegmente für die neue lokale ADF-Tabelle.
+Jetzt können Sie dieselben Schritte verwenden, die in [Schritt 6: Überwachen von Pipelines und Datenslices](#MainStep6) aufgeführt sind, um die neue Pipeline und die Datenslices für die neue lokale ADF-Tabelle zu überwachen.
  
 Wenn Sie sehen, dass sich der Status eines Slice der Tabelle **MarketingCampaignEffectivenessOnPremSQLTable** in "Bereit" ändert, bedeutet das, dass die Pipeline die Ausführung für den Slice abgeschlossen hat. Um die Ergebnisse anzuzeigen, fragen Sie die Tabelle **MarketingCampaignEffectiveness** in der **MarketingCampaigns**-Datenbank in Ihrem SQL Server ab.
  
@@ -168,4 +168,6 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
 [image-data-factory-datamanagementgateway-configuration-manager]: ./media/data-factory-tutorial-extend-onpremises-using-powershell/DataManagementGatewayConfigurationManager.png
 
-<!---HONumber=GIT-SubDir--> 
+ 
+
+<!---HONumber=62-->

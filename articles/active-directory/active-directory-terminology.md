@@ -44,4 +44,7 @@ Geschäfts- oder Schulkonto | Ein Benutzerkonto, das von einer Organisation (Unt
 - [Verknüpfung von Azure-Abonnements mit Azure AD](active-directory-how-subscriptions-associated-directory.md)
 - [Dienst- und andere Einschränkungen für Azure Active Directory](active-directory-service-limits-restrictions.md)
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=62-->

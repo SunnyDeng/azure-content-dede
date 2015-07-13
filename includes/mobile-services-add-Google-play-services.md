@@ -15,7 +15,7 @@
 
 5. Ändern Sie unter *defaultConfig* den Wert von *minSdkVersion* in 9.
  
-6. Klicken Sie in der Symbolleiste auf die Schaltfläche **Sync Project with Gradle Files**.
+6. Klicken Sie auf der Symbolleiste auf das Symbol **Sync Project with Gradle Files**.
 
 7. Öffnen Sie die Datei **AndroidManifest.xml**, und fügen Sie dem *application*-Tag das folgende Tag hinzu.
 
@@ -23,8 +23,4 @@
             android:value="@integer/google_play_services_version" />
  
 
-
-
-
-
-<!--HONumber=54-->
+<!---HONumber=62-->

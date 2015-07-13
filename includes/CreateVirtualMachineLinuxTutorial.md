@@ -32,8 +32,7 @@ Dieses Tutorial zeigt Ihnen, wie Sie mithilfe des PuTTY-Programms auf den virtue
 
 Möglicherweise muss Ihre Anwendung Daten speichern. Schließen Sie hierzu einen Datenträger an den virtuellen Computer an, den Sie zuvor erstellt haben. Am einfachsten ist es, einen leeren Datenträge an den virtuellen Computer anzuschließen.
 
-**Hinweis: Datenträger und Ressourcendatenträger**  
-Datenträger befinden sich im Azure-Speicher und können zur dauerhaften Speicherung von Dateien und Anwendungsdaten verwendet werden.
+**Hinweis: Datenträger und Ressourcendatenträger** Datenträger befinden sich im Azure-Speicher und können zur dauerhaften Speicherung von Dateien und Anwendungsdaten verwendet werden.
 
 An jeden erstellen virtuellen Computer ist auch ein temporärer lokaler *Ressourcendatenträger* angeschlossen. Da die Daten auf einem Ressourcendatenträger bei Neustarts verloren gehen können, werden Ressourcendatenträger oft von Anwendungen und Prozessen zur vorübergehenden (temporären) Datenspeicherung auf dem virtuellen Computer verwendet. Außerdem dienen sie zur Speicherung von Auslagerungsdateien für das Betriebssystem.
 
@@ -160,8 +159,6 @@ Der gerade von Ihnen an den virtuellen Computer angeschlossene Datenträger ist 
 	Wenn der zweite Befehl zu einem Fehler führt, prüfen Sie die Datei /etc/fstab auf korrekte Syntax.
 
 
-	>[AZURE.NOTE] Wenn Sie später einen Datenträger entfernen, ohne fstab zu bearbeiteten, kann der Start des virtuellen Computers fehlschlagen. Für den Fall, dass dieses Problem häufiger auftritt, bieten die meisten Distributionen die fstab-Optionen `nofail` und/oder `nobootwait`, die einen Systemstart auch dann erlauben, wenn der Datenträger nicht vorhanden ist. Weitere Informationen zu diesen Parametern finden Sie in der Dokumentation zu Ihrer Distribution.
+	>[AZURE.NOTE]Wenn Sie später einen Datenträger entfernen, ohne "fstab" zu bearbeiteten, kann der Start des virtuellen Computers fehlschlagen. Für den Fall, dass dieses Problem häufiger auftritt, bieten die meisten Distributionen die fstab-Optionen `nofail` und/oder `nobootwait`. Diese erlauben einen Systemstart auch dann, wenn der Datenträger nicht vorhanden ist. Weitere Informationen zu diesen Parametern finden Sie in der Dokumentation zu Ihrer Verteilung.
 
-
-
-<!--HONumber=52-->
+<!---HONumber=62-->

@@ -1,34 +1,34 @@
 <properties 
-	pageTitle="Erste Schritte mit Azure Active Directory (.NET-Projekte))" 
+	pageTitle="Erste Schritte mit Azure Active Directory (.NET-Projekte)" 
 	description="Erste Schritte mit Azure Active Directory in Visual Studio" 
 	services="active-directory" 
 	documentationCenter="" 
-	authors="kempb" 
+	authors="patshea123" 
 	manager="douge" 
 	editor="tglee"/>
- 
+  
 <tags 
 	ms.service="active-directory" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/02/2015" 
-	ms.author="kempb"/>
+	ms.date="05/06/2015" 
+	ms.author="patshea123"/>
 
 # Erste Schritte mit Azure Active Directory (.NET-Projekte)
 
 > [AZURE.SELECTOR]
-> - [Erste Schritte](vs-active-directory-dotnet-getting-started.md)
-> - [Was ist passiert?](vs-active-directory-dotnet-what-happened.md)
+> - [Getting Started](vs-active-directory-dotnet-getting-started.md)
+> - [What Happened](vs-active-directory-dotnet-what-happened.md)
  
 #####Erfordern von Authentifizierung für den Zugriff auf Controller 
 
-Alle Controller in Ihrem Projekt wurden mit dem **Authorize**-Attribut versehen. Dieses Attribut erfordert, dass der Benutzer vor dem Zugriff auf diese Controller authentifiziert werden muss. Wenn Sie anonymen Zugriff auf diesen Controller erlauben möchten, entfernen Sie dieses Attribut vom Controller. Wenn Sie die Berechtigungen präziser festlegen möchten, wenden Sie das Attribut auf jede Methode an, die Autorisierung erfordert, anstatt es auf die Controllerklasse anzuwenden.
+Alle Controller in Ihrem Projekt wurden mit dem Attribut **Authorize** versehen. Dieses Attribut erfordert, dass der Benutzer vor dem Zugriff auf diese Controller authentifiziert werden muss. Wenn Sie anonymen Zugriff auf diesen Controller erlauben möchten, entfernen Sie dieses Attribut vom Controller. Wenn Sie die Berechtigungen präziser festlegen möchten, wenden Sie das Attribut auf jede Methode an, die Autorisierung erfordert, anstatt es auf die Controllerklasse anzuwenden.
  
 #####Hinzufügen von SignIn-/SignOut-Steuerelementen 
 
-Wenn Sie Ihrer Ansicht SignIn/SignOut-Steuerelemente hinzufügen möchten, können Sie die Teilansicht **_LoginPartial.cshtml** zum Hinzufügen der Funktion zu einer Ihrer Ansichten verwenden. Das folgende Beispiel zeigt die Funktion, die der Standardansicht **_Layout.cshtml** hinzugefügt wurde. (Beachten Sie das letzte Element in "div" mit der Klasse "navbar-collapse".)
+Wenn Sie Ihrer Ansicht SignIn/SignOut-Steuerelemente hinzufügen möchten, können Sie die Teilansicht **_LoginPartial.cshtml** zum Hinzufügen der Funktion zu einer Ihrer Ansichten verwenden. Das folgende Beispiel zeigt die Funktionalität, die der Standardansicht **_Layout.cshtml** hinzugefügt wurde. (Beachten Sie das letzte Element in "div" mit der navbar-collapse-Klasse):
 
 <PRE class="prettyprint">
     &lt;!DOCTYPE html&gt; 
@@ -77,4 +77,4 @@ Wenn Sie Ihrer Ansicht SignIn/SignOut-Steuerelemente hinzufügen möchten, könn
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
 
-<!--HONumber=49--> 
+<!---HONumber=62-->

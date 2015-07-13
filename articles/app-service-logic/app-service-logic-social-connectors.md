@@ -155,4 +155,4 @@ Connectors verwenden entweder OAuth oder Benutzernamen und Kennwörter.
 [BizTalk-Integrationsconnectors](app-service-logic-integration-connectors.md) | [Enterprise-Connectors](app-service-logic-enterprise-connectors.md) | [Business-to-Business-Connectors](app-service-logic-b2b-connectors.md) | [Protokollconnectors](app-service-logic-protocol-connectors.md) | [App und Data Services-Connectors](app-service-logic-data-connectors.md) | [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

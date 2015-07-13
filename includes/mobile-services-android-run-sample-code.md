@@ -1,4 +1,4 @@
-1. Erweitern Sie im Projektexplorer **app** => **java** => **com.example.GetStartedWithData**, **src** und **.com.example.GetStartedWithData**, und öffnen Sie dann die Datei *ToDoActivity.java*.
+1. Erweitern Sie im Projektexplorer **app** => **src** => **main** => **java** => **com.example.GetStartedWithData**, und öffnen Sie dann die Datei *ToDoActivity.java*.
 
    	![](./media/download-android-sample-code/mobile-services-android-studio-project.png)
 
@@ -24,4 +24,5 @@
    	![](./media/download-android-sample-code/mobile-quickstart-startup-android.png)
 
    	Der gespeicherte Test wird in einer speicherinternen Sammlung gespeichert und in der folgenden Liste angezeigt.
-<!--HONumber=54-->
+
+<!---HONumber=62-->

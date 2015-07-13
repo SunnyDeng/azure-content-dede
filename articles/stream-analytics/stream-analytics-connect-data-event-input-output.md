@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Herstellen von Verbindungen mit Ein- und Ausgaben | Azure" 
+	pageTitle="Herstellen von Verbindungen mit Ein- und Ausgaben | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie eine Verbindung mit Eingabequellen und Ausgabezielen für Stream Analytics-Lösungen herstellen und diese konfigurieren." 
 	documentationCenter="" 
 	services="stream-analytics"
@@ -74,19 +74,21 @@ In diesem Beispiel waren die bereitgestellten Anmeldeinformationen nicht korrekt
 ##Verwenden von Event Hubs
 
 ###Übersicht
+ 
 Event Hubs sind hochgradig skalierbare Ereigniserfasser, die am häufigsten für die Datenerfassung von Stream Analytics verwendet werden. Sie wurden für die Erfassung von Ereignisstreams von einer Reihe unterschiedlicher Geräte und Dienste entwickelt. Event Hubs und Stream Analytics bieten Kunden gemeinsam eine umfassende Lösung für Echtzeitanalysen – mit Event Hubs können Kunden Ereignisse in Azure in Echtzeit weiterleiten, die dann von Stream Analytics ebenfalls in Echtzeit verarbeitet werden. Kunden können z. B. Webklicks, Sensorenmesswerte oder Onlineprotokollereignisse auf Event Hubs veröffentlichen und dann Stream Analytics-Aufträge erstellen, die diese Event Hubs als Eingabedatenstrom für die Filterung, Aggregation und Zusammenführung in Echtzeit verwenden. Event Hubs können auch für den Datenausgang verwendet werden. Die häufigste Verwendung von Event Hubs als Ausgabe erfolgt bei der Ausgabe von Stream Analytics-Aufträgen an die Eingabe eines anderen Streamingauftrags.
 
 ###Verbrauchergruppen
-Jede Eingabe an eine Stream Analytics-Auftrag sollte für eine eigene Event Hub-Verbrauchergruppe konfiguriert werden. Wenn ein Auftrag Selbstverknüpfungen oder mehrere Ausgaben enthält, werden einige Eingaben möglicherweise häufiger gelesen als andere, wodurch die Gesamtzahl der Leser in einer einzelnen Verbrauchergruppe die für den Event Hub geltende Beschränkung auf 5 Leser pro Verbrauchergruppe überschreiten kann. In diesem Fall muss die Abfrage in mehrere Abfragen und Zwischenergebnisse aufgeteilt werden, die dann über zusätzliche Event Hubs weitergeleitet werden. Beachten Sie, dass darüber hinaus ein Limit von 20 Verbrauchergruppen pro Event Hub. Weitere Informationen finden Sie im Event Hubs-Entwicklerhandbuch.
+Jede Eingabe an eine Stream Analytics-Auftrag sollte für eine eigene Event Hub-Verbrauchergruppe konfiguriert werden. Wenn ein Auftrag Selbstverknüpfungen oder mehrere Ausgaben enthält, werden einige Eingaben möglicherweise häufiger gelesen als andere, wodurch die Gesamtzahl der Leser in einer einzelnen Verbrauchergruppe die für den Event Hub geltende Beschränkung auf fünf Leser pro Verbrauchergruppe überschreiten kann. In diesem Fall muss die Abfrage in mehrere Abfragen und Zwischenergebnisse aufgeteilt werden, die dann über zusätzliche Event Hubs weitergeleitet werden. Beachten Sie, dass darüber hinaus ein Limit von 20 Verbrauchergruppen pro Event Hub. Weitere Informationen finden Sie im Event Hubs-Entwicklerhandbuch.
 
- 
+ 
 ###Parameter
+ 
 Es gibt einige Parameter für Event Hub-Datenströme, die Kunden konfigurieren müssen. Diese Parameter gelten für Eingabe- und Ausgabedatenströme von Event Hub, sofern nicht anders angegeben.
 
 1. Service Bus-Namespace: Service Bus-Namespace des Event Hubs. Ein Service Bus-Namespace ist ein Container für einen Satz von Nachrichtenentitäten. Sie haben bei der Erstellung eines neuen Event Hubs auch einen Service Bus-Namespace erstellt. 
 2. Event Hub-Name: Name des Event Hubs. Dies ist der Name, den Sie beim Erstellen des neuen Event Hubs angegeben haben. 
 3. Event Hub-Richtlinienname: Der Name der Richtlinie für den gemeinsamen Zugriff auf den Event Hub. Die Richtlinie für den gemeinsamen Zugriff auf einen Event Hub wird auf der Registerkarte "Konfigurieren" eingerichtet. Jede Richtlinie für den gemeinsamen Zugriff umfasst einen Namen, die von Ihnen festgelegten Berechtigungen und Zugriffsschlüssel.
-4. Event Hub-Richtlinienschlüssel: Der primäre oder sekundäre Schlüssel der Richtlinie für den gemeinsamen Zugriff auf den Event Hub. 
+4. Event Hub-Richtlinienschlüssel: Der primäre oder sekundäre Schlüssel der Richtlinie für den gemeinsamen Zugriff auf den Event Hub.  
 5. Event Hub-Verbrauchergruppe: Optionaler Parameter für Event Hub-Eingaben. Die Verbrauchergruppe für das Erfassen von Daten aus den Event Hub. Wenn nichts angegeben wird, verwenden Stream Analytics-Aufträge die Standardverbrauchergruppe, um Daten vom Event Hub zu erfassen. Es wird die Verwendung einer speziellen Verbrauchergruppe für jeden Stream Analytics-Auftrag empfohlen.
 
 Partitionsschlüsselspalte: Optionaler Parameter für die Event Hub-Ausgabe. Die Datenattributspalte wird als Partitionsschlüssel für die Event Hub-Ausgabe verwendet.
@@ -148,14 +150,14 @@ In diesem Beispiel waren die bereitgestellten Anmeldeinformationen nicht korrekt
 ![Grafik19][graphic19]
 
 ## Hier erhalten Sie Hilfe
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-de/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
 
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
-- [Azure Stream Analytics-Abfragesprachreferenz](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
 
@@ -180,6 +182,6 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic17]: ./media/stream-analytics-connect-data-event-input-output/17-stream-analytics-connect-data-event-input-output.png
 [graphic18]: ./media/stream-analytics-connect-data-event-input-output/18-stream-analytics-connect-data-event-input-output.png
 [graphic19]: ./media/stream-analytics-connect-data-event-input-output/19-stream-analytics-connect-data-event-input-output.png
-
-<!--HONumber=52-->
  
+
+<!---HONumber=62-->

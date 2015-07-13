@@ -65,4 +65,4 @@ In Zukunft können Sie Ihre Logik-App in der Quellcodeverwaltung überarbeiten u
 
 Wenn Sie nicht Visual Studio verwenden, aber dennoch die Werkzeuge zur Verfügung haben möchten, um Ihre Logik-App von der Quellcodesteuerung aus bereitzustellen, können Sie immer die [API](https://msdn.microsoft.com/library/azure/dn948510.aspx) oder [Powershell](../powershell-azure-resource-manager.md) direkt verwenden, um Ihre Bereitstellungen zu automatisieren.
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

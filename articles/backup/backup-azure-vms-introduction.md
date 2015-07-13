@@ -100,7 +100,7 @@ In der folgenden Abbildung sind die Beziehungen zwischen den verschiedenen Azure
 
 7. Durch Klicken auf den Sicherungstresor wird die Seite **Schnellstart** geöffnet, auf der die Anweisungen für die Sicherung von virtuellen Azure-Computern angezeigt werden. ![Anweisungen zur Sicherung von virtuellen Computern auf der Dashboard-Seite](./media/backup-azure-vms-introduction/vmbackup-instructions.png)
 
-    >[AZURE.NOTE]Vergewissern Sie sich nach der Erstellung des Tresors, dass die entsprechende Speicherredundanzoption ausgewählt ist. Weitere Informationen finden Sie unter [Festlegen der Speicherredundanzoption im Sicherungstresor][vault-storage-redundancy].
+    >[AZURE.NOTE]Vergewissern Sie sich nach der Erstellung des Tresors, dass die entsprechende Speicherredundanzoption ausgewählt ist. Weitere Informationen finden Sie unter [Festlegen der Speicherredundanzoption im Sicherungstresor][Speicherredundanz für Tresor].
 
 ### 2. VM-Agent
 Bevor Sie einen virtuellen Azure-Computer sichern können, müssen Sie zunächst sicherstellen, dass der Azure VM-Agent auf dem virtuellen Computer ordnungsgemäß installiert ist. Um den virtuellen Computer zu sichern, wird mit dem Azure Backup-Dienst eine Erweiterung für den VM-Agent installiert. Da es sich beim VM-Agent beim Erstellen des virtuellen Computers um eine optional zu installierende Komponente handelt, müssen Sie sicherstellen, dass das Kontrollkästchen für den VM-Agent aktiviert ist, bevor der virtuelle Computer bereitgestellt wird.
@@ -133,4 +133,7 @@ Informationen für Ihre ersten Schritte mit der Sicherung von virtuellen Compute
 
 + Überwachen der Sicherungsaufträge
 
-<!---HONumber=GIT-SubDir--> 
+
+ 
+
+<!---HONumber=62-->

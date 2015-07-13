@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/07/2015" 
+	ms.date="06/17/2015" 
 	ms.author="awills"/>
  
 # Untersuchen von Metriken in Application Insights
@@ -144,7 +144,7 @@ Um das Blatt erneut zu verwenden, **wechseln Sie zum Blatt "Übersicht"** und ö
 
 ![Wählen Sie "Favoriten" auf dem Blatt "Übersicht" aus](./media/app-insights-metrics-explorer/22-favorite-get.png)
 
-Wenn Sie beim Speichern den Zeitbereich ""Relativ" ausgewählt haben, wird das Fenster mit den neuesten Metriken aktualisiert. Wenn Sie den Zeitraum "Absolut" gewählt haben, werden jedes Mal dieselben Daten gezeigt.
+Wenn Sie beim Speichern den Zeitbereich "Relativ" ausgewählt haben, wird das Fenster mit den neuesten Metriken aktualisiert. Wenn Sie den Zeitraum "Absolut" gewählt haben, werden jedes Mal dieselben Daten gezeigt.
 
 ## Zurücksetzen des Blatts
 
@@ -158,7 +158,28 @@ Fügen Sie eine Benachrichtigung hinzu, wenn Sie per E-Mail über ungewöhnliche
 
 ![Wählen Sie im Metrik-Explorer "Warnungsregeln", "Warnung hinzufügen"](./media/app-insights-metrics-explorer/appinsights-413setMetricAlert.png)
 
-[Weitere Informationen][alerts].
+[Weitere Informationen zu Warnungen][alerts]
+
+## Exportieren in Excel
+
+Sie können im Metrik-Explorer angezeigte Metrikdaten in eine Excel-Datei exportieren. Die exportierten Daten enthalten Daten aus allen Diagrammen und Tabellen, die im Portal angezeigt werden.
+
+
+![Wählen Sie im Metrik-Explorer "Warnungsregeln", "Warnung hinzufügen"](./media/app-insights-metrics-explorer/31-export.png)
+
+Die Daten jedes Diagramms und jeder Tabelle werden in separate Blätter der Excel-Datei exportiert.
+
+Die Dateien, die Ihnen angezeigt werden, werden exportiert. Ändern Sie den Zeitraum oder die Filter, wenn Sie den zu exportierenden Datenbereich ändern möchten. Wenn bei Tabellen der Befehl **Weitere laden** angezeigt wird, können Sie darauf klicken, bevor Sie auf "Exportieren" klicken, um mehr Daten zu exportieren.
+
+*Der Export funktioniert zurzeit nur mit Internet Explorer und Chrome. Unterstützung für weitere Browser wird in Zukunft verfügbar sein.*
+
+Wenn Sie Daten zur externen Verarbeitung fortlaufend exportieren möchten, sollten Sie die Funktion [Fortlaufender Export](app-insights-export-telemetry.md) verwenden.
+
+
+## Nächste Schritte
+
+* [Überwachen der Verwendung mit Application Insights](app-insights-overview-usage.md)
+* [Verwenden der Diagnosesuche](app-insights-diagnostic-search.md)
 
 
 <!--Link references-->
@@ -169,4 +190,4 @@ Fügen Sie eine Benachrichtigung hinzu, wenn Sie per E-Mail über ungewöhnliche
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

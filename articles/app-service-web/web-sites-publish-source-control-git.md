@@ -1,7 +1,7 @@
 <properties 
-	pageTitle="Veröffentlichen mit Git (PHP) - Azure" 
+	pageTitle="Veröffentlichen mit Git (PHP) – Azure" 
 	keywords="publishing Git Azure, publish web app Azure" 
-	description="Erfahren Sie, wie Git zum Veröffentlichen einer Azure Web app und aktivieren Sie die fortlaufende Bereitstellung von GitHub und CodePlex verwenden." 
+	description="Erfahren Sie, wie Sie mithilfe von Git eine Azure-Web-App veröffentlichen und anschließend die kontinuierliche Bereitstellung aus GitHub und CodePlex aktivieren." 
 	services="app-service\web" 
 	documentationCenter="php" 
 	authors="cephalin" 
@@ -17,7 +17,7 @@
 	ms.date="03/24/2015" 
 	ms.author="cephalin"/>
 
-[AZURE.INCLUDE [Veröffentlichen mit Git](../../includes/publishing-with-git.md)]
+[AZURE.INCLUDE [publishing-with-git](../../includes/publishing-with-git.md)]
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

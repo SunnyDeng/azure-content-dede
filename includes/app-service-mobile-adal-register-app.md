@@ -4,7 +4,7 @@
 
    ![](./media/app-service-mobile-adal-register-app/app-service-navigate-aad.png)
 
-3. Wählen Sie Ihr Verzeichnis und anschließend die Registerkarte **Anwendungen** im oberen Bereich aus. Klicken Sie im unteren Bereich auf **ADD**, um eine neue App-Registrierung zu erstellen. 
+3. Wählen Sie Ihr Verzeichnis und anschließend die Registerkarte **Anwendungen** im oberen Bereich aus. Klicken Sie im unteren Bereich auf **HINZUFÜGEN**, um eine neue App-Registrierung zu erstellen. 
 
 4. Klicken Sie auf **Von meiner Organisation entwickelte Anwendung hinzufügen**.
 
@@ -27,4 +27,4 @@ Die Anwendung wird jetzt in AAD so konfiguriert, dass Benutzer über AAD die ein
 [Active Directory]: https://manage.windowsazure.com/
 [Konfigurieren der Mobile App mit Azure Active Directory]: ../articles/app-service-how-to-configure-active-directory-authentication-preview.md
 
-<!--HONumber=54-->
+<!---HONumber=62-->

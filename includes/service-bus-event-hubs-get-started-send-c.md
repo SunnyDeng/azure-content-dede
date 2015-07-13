@@ -1,13 +1,13 @@
 ## Senden von Nachrichten an Ereignis-Hubs
-In diesem Abschnitt schreiben wir eine C-App, um Ereignisse an den Ereignis-Hub zu senden. Wir werden die Proton AMQP-Bibliothek aus dem [Apache Qpid-Projekt](http://qpid.apache.org/) verwenden. Dies entspricht der Verwendung von Servicebuswarteschlangen und -themen mit AMQP aus C, wie [hier](https://code.msdn.microsoft.com/windowsazure/Using-Apache-Qpid-Proton-C-afd76504) gezeigt. Weitere Informationen finden Sie in der [Qpid Proton-Dokumentation](http://qpid.apache.org/proton/index.html).
+In diesem Abschnitt schreiben wir eine C-App, um Ereignisse an den Ereignis-Hub zu senden. Wir verwenden die Proton AMQP-Bibliothek aus dem [Apache Qpid-Projekt](http://qpid.apache.org/). Dies entspricht der Verwendung von Service Bus-Warteschlangen und -Themen mit AMQP aus C, wie [hier](https://code.msdn.microsoft.com/windowsazure/Using-Apache-Qpid-Proton-C-afd76504) beschrieben. Weitere Informationen finden Sie in der [Qpid Proton-Dokumentation](http://qpid.apache.org/proton/index.html).
 
-1. Klicken Sie auf der Seite [Qpid AMQP Messenger](http://qpid.apache.org/components/messenger/index.html) auf den Link **Installing Qpid Proton**, und befolgen Sie die Anweisungen für Ihre Umgebung. Es wird eine Linux-Umgebung vorausgesetzt, z. B. [Azure Linux VM](../articles/virtual-machines/virtual-machines-linux-tutorial.md) mit Ubuntu 14.04.
+1. Klicken Sie auf der Seite [Qpid AMQP Messenger](http://qpid.apache.org/components/messenger/index.html) (in englischer Sprache) auf den Link **Installing Qpid Proton**, und befolgen Sie die Anweisungen für Ihre Umgebung. Wir setzen eine Linux-Umgebung voraus, z. B. [Azure Linux VM](../articles/virtual-machines/virtual-machines-linux-tutorial.md) mit Ubuntu 14.04.
 
 2. Um die Proton-Bibliothek zu kompilieren, installieren Sie die folgenden Pakete:
 
 		sudo apt-get install build-essential cmake uuid-dev openssl libssl-dev
 
-3. Laden Sie die [Qpid Proton-Bibliothek](http://qpid.apache.org/proton/index.html) herunter, und extrahieren Sie sie, z. B.:
+3. Laden Sie die [Qpid Proton-Bibliothek](http://qpid.apache.org/proton/index.html) herunter, und extrahieren Sie sie, z. B.:
 
 		wget http://apache.fastbull.org/qpid/proton/0.7/qpid-proton-0.7.tar.gz
 		tar xvfz qpid-proton-0.7.tar.gz
@@ -20,7 +20,7 @@ In diesem Abschnitt schreiben wir eine C-App, um Ereignisse an den Ereignis-Hub 
 		cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 		sudo make install
 
-5. Erstellen Sie in Ihrem Arbeitsverzeichnis eine Datei namens **sender.c** mit folgendem Inhalt. Vergessen Sie nicht, den Wert für den Namen von Ereignis-Hub und Namespace (letzterer lautet in der Regel `{event hub name}-ns`) zu ersetzen. Sie müssen auch eine URL-codierte Version des Schlüssels für die zuvor erstellte **SendRule** einsetzen. Die URL-Codierung können Sie [hier](http://www.w3schools.com/tags/ref_urlencode.asp) vornehmen.
+5. Erstellen Sie in Ihrem Arbeitsverzeichnis eine Datei namens **sender.c** mit folgendem Inhalt. Vergessen Sie nicht, den Wert für den Namen des Event Hubs und den Namespacenamen (letzterer lautet i. d. R. `{event hub name}-ns`) zu ersetzen. Sie müssen auch eine URL-codierte Version des Schlüssels für die zuvor erstellte **SendRule** eingeben. Die URL-Codierung können Sie [hier](http://www.w3schools.com/tags/ref_urlencode.asp) vornehmen.
 
 		#include "proton/message.h"
 		#include "proton/messenger.h"
@@ -53,14 +53,14 @@ In diesem Abschnitt schreiben wir eine C-App, um Ereignisse an den Ereignis-Hub 
 
 		void die(const char *file, int line, const char *message)
 		{
-		  printf("Tot\n");
+		  printf("Dead\n");
 		  fprintf(stderr, "%s:%i: %s\n", file, line, message);
 		  exit(1);
 		}
 
 		int sendMessage(pn_messenger_t * messenger) {
 			char * address = (char *) "amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.windows.net/{event hub name}";
-			char * msgtext = (char *) "Hallo in C!";
+			char * msgtext = (char *) "Hello from C!";
 
 			pn_message_t * message;
 			pn_data_t * body;
@@ -82,7 +82,7 @@ In diesem Abschnitt schreiben wir eine C-App, um Ereignisse an den Ereignis-Hub 
 		}
 
 		int main(int argc, char** argv) {
-			printf("Drücken Sie STRG+C, um das Senden abzubrechen.\n");
+			printf("Press Ctrl-C to stop the sender process\n");
 
 			pn_messenger_t *messenger = pn_messenger(NULL);
 			pn_messenger_set_outgoing_window(messenger, 1);
@@ -90,11 +90,11 @@ In diesem Abschnitt schreiben wir eine C-App, um Ereignisse an den Ereignis-Hub 
 
 			while(true) {
 				sendMessage(messenger);
-				printf("Nachricht gesendet\n");
+				printf("Sent message\n");
 				sleep(1);
 			}
 
-			// Messenger-Ressourcen freigeben
+			// release messenger resources
 			pn_messenger_stop(messenger);
 			pn_messenger_free(messenger);
 
@@ -105,7 +105,6 @@ In diesem Abschnitt schreiben wir eine C-App, um Ereignisse an den Ereignis-Hub 
 
 		gcc sender.c -o sender -lqpid-proton
 
-> [AZURE.NOTE] Im obigen Code verwenden wir ein Ausgabefenster von 1, um eine sofortige Ausgabe der Meldungen zu erzwingen. Im Allgemeinen sollten Anwendungen Nachrichten stapelweise ausgeben, um den Durchsatz zu erhöhen. Weitere Informationen dazu, wie die Qpid Proton-Bibliothek in dieser und anderen Umgebungen sowie auf Plattformen, für die Bindungen bereitgestellt werden (derzeit Perl, PHP, Python und Ruby)verwendet wird, finden Sie auf der Seite [Qpid AMQP Messenger](http://qpid.apache.org/components/messenger/index.html).
+> [AZURE.NOTE]Im obigen Code verwenden wir ein Ausgabefenster von 1, um eine sofortige Ausgabe der Meldungen zu erzwingen. Im Allgemeinen sollten Anwendungen Nachrichten stapelweise ausgeben, um den Durchsatz zu erhöhen. Weitere Informationen zur Verwendung der Qpid Proton-Bibliothek in dieser und anderen Umgebungen und auf Plattformen, für die Bindungen bereitgestellt werden (derzeit Perl, PHP, Python und Ruby) finden Sie auf der Seite [Qpid AMQP Messenger](http://qpid.apache.org/components/messenger/index.html) (in englischer Sprache).
 
-
-<!--HONumber=52--> 
+<!---HONumber=62-->

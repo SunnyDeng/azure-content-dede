@@ -21,6 +21,21 @@
 
 [Informationen hierzu finden Sie unter "Plattformen"][platforms]
 
+## Ist es kostenlos?
+
+* Ja, wenn Sie sich für den [Tarif](app-insights-pricing.md) "Free" entscheiden. Sie erhalten Zugriff auf die meisten Funktionen sowie ein großzügiges Datenkontingent. 
+* Sie müssen Ihre Kreditkartendaten angeben, um sich bei Microsoft Azure registrieren zu können. Es werden jedoch keinerlei Gebühren abgebucht, sofern Sie keinen kostenpflichtigen Azure-Dienst nutzen oder explizit auf einen kostenpflichtigen Tarif aktualisieren.
+* Wenn Ihre App mehr Daten sendet, als in Ihrem Kontingent für den Free-Tarif enthalten sind, wird die Protokollierung eingestellt. In diesem Fall können Sie zu einem kostenpflichtigen Tarif wechseln oder warten, bis das Kontingent am Monatsende zurückgesetzt wird.
+* Daten für die grundlegende Nutzung sowie Sitzungsdaten unterliegen keinen Kontingenten.
+* Es gibt auch eine kostenlose 30-Tage-Testversion, in der Sie die Premium-Funktionen kostenlos nutzen können.
+* Jede Anwendungsressource verfügt über ein eigenes Kontingent, und Sie können den Tarif für jede Ressource unabhängig von den anderen festlegen.
+
+#### Was beinhalten die kostenpflichtigen Tarife?
+
+* Ein größeres [monatliches Datenkontingent](http://azure.microsoft.com/pricing/details/application-insights/).
+* Eine Option zur "Überschreitung", um weiterhin Daten zu sammeln, obwohl das monatliche Kontingent erreicht ist. Wenn Ihre Daten das Kontingent überschreiten, wird Ihnen die Nutzung pro MB berechnet.
+* [Fortlaufender Export](app-insights-export-telemetry.md)
+
 ## Hinzufügen des SDK
 
 #### <a name="q01"></a>Ich finde keine Option zum Hinzufügen von Application Insights zu meinem Projekt in Visual Studio
@@ -99,7 +114,12 @@ Gehen Sie dazu folgendermaßen vor:
 	    
 	</Target> ```
 4. Speichern Sie die Datei .
-5. Klicken Sie erneut mit der rechten Maustaste auf das Projekt, und wählen Sie *yourProject.csproj* zum erneuten Laden aus.
+5. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie *yourProject.csproj* zum erneuten Laden aus.
+
+## Wie aktualisiere ich von älteren SDK-Versionen?
+
+Informationen hierzu finden Sie in den [Versionshinweisen](app-insights-release-notes.md) für das SDK, das für Ihren Anwendungstyp geeignet ist.
+
 
 ## Keine Daten
 
@@ -131,8 +151,8 @@ Sie müssen einen Proxy einrichten, der HTTPS-POST-Aufrufe an dc.services.visual
 
 #### Zuvor wurden Daten angezeigt, jetzt jedoch nicht mehr.
 
-* Schauen Sie im [Statusblog](http://blogs.msdn.com/b/applicationinsights-status/) nach.
-* Ist Ihr monatliches Kontingent an Datenpunkten erreicht? Öffnen Sie "Einstellungen – Kontingente und Preisübersicht", um es herauszufinden. Wenn dies der Fall ist, können Sie Ihren Plan upgraden oder zusätzliche Kapazität erwerben. Informationen hierzu finden Sie in der [Preisübersicht](http://azure.microsoft.com/pricing/details/application-insights/).
+* Überprüfen Sie den [Statusblog](http://blogs.msdn.com/b/applicationinsights-status/).
+* Ist Ihr monatliches Kontingent an Datenpunkten erreicht? Öffnen Sie "Einstellungen – Kontingente und Preisübersicht", um es herauszufinden. Wenn dies der Fall ist, können Sie Ihren Plan aktualisieren oder zusätzliche Kapazität erwerben. Informationen hierzu finden Sie in der [Preisübersicht](http://azure.microsoft.com/pricing/details/application-insights/).
 
 
 
@@ -197,6 +217,9 @@ Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
 
 Wenn Ihr Webdienst auf einem virtuellen Azure-Computer ausgeführt wird, erhalten Sie dort auch eine [Diagnose][azurediagnostic].
 
+## Automation
+
+Sie können ein [PowerShell-Skript schreiben](app-insights-powershell-script-create-resource.md), um eine Application Insights-Ressource zu erstellen.
 
 
 <!--Link references-->

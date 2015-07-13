@@ -1,95 +1,95 @@
 <properties
-	pageTitle="Azure Backup - Sicherung und Wiederherstellung von einem Windows-Server oder Windows-Client"
-	description="Informationen Sie zum Sichern und Wiederherstellen von einem Windows-Server oder Windows-Client. Der Artikel befasst sich auch Wiederherstellungsmethode"
-	services="backup"
-	documentationCenter=""
-	authors="prvijay"
-	manager="shreeshd"
-	editor=""/>
+   pageTitle="Azure Backup – Sicherung und Wiederherstellung von Windows-Server- oder Windows-Clientcomputern"
+   description="Erfahren Sie, wie Windows-Server- oder Windows-Clientcomputer gesichert und wiederhergestellt werden. Der Artikel befasst sich außerdem mit der Wiederherstellung auf einem anderen Server."
+   services="backup"
+   documentationCenter=""
+   authors="prvijay"
+   manager="shreeshd"
+   editor=""/>
 
 <tags
-	ms.service="backup"
-	ms.workload="storage-backup-recovery"
+   ms.service="backup"
+   ms.workload="storage-backup-recovery"
 	 ms.tgt_pltfrm="na"
 	 ms.devlang="na"
 	 ms.topic="article"
 	 ms.date="04/02/2015"
 	 ms.author="prvijay"/>
 
-# Sicherung und Wiederherstellung von einem Windows-Server oder Windows-Client-Computer
-Dieser Artikel behandelt die erforderlichen Schritte zum Sichern von WindowsServer oder einem Windows-Client-Computer. Dazu gehört auch die erforderlichen Schritte für die gesicherten Dateien auf dem gleichen Computer und die erforderlichen Schritte zum Wiederherstellen der gesicherten Dateien auf einem anderen Computer wiederherstellen.
+# Sicherung und Wiederherstellung von Windows-Server- oder Windows-Clientcomputern
+Dieser Artikel behandelt die erforderlichen Schritte zur Sicherung von Windows-Server- oder Windows-Clientcomputern. Dabei werden auch die Schritte berücksichtigt, die zum Wiederherstellen der gesicherten Dateien auf demselben Computer erforderlich sind, sowie die Schritte zum Wiederherstellen der gesicherten Dateien auf einem anderen Computer.
 
 ## Sichern von Dateien
-1. Sobald der Computer registriert ist, öffnen Sie Microsoft Azure Backup-Mmc-Snap-in. <br/> ![Suchergebnis][1]
+1. Nach der Registrierung des Computers öffnen Sie das Microsoft Azure Backup-MMC-Snap-In. <br/> ![Suchergebnis][1]
 
-2. Klicken Sie auf **Sicherung planen** <br/> ![Sicherung planen][2]
+2. Klicken Sie auf **Sicherung planen**. <br/> ![Planen einer Sicherung][2]
 
-3. Wählen Sie die Elemente, die zu sichern. Azure-Sicherung auf einem Windows Server-Windows-Client (d. h. ohne System Center Data Protection Manager) können Sie Dateien und Ordner zu schützen. <br/> ![Zu sichernde Elemente][3]
+3. Wählen Sie die zu sichernden Elemente aus. Mit Azure Backup können Sie auf einem Windows Server/Windows-Client (ohne System Center Data Protection Manager) Ihre Dateien und Ordner schützen. <br/> ![Zu sichernde Elemente][3]
 
-4. Angeben die Zeitplan und Aufbewahrung Sicherungsrichtlinie die erläutert wird ausführlich in der folgenden [Artikel](backup-azure-backup-cloud-as-tape.md)
+4. Geben Sie den Sicherungszeitplan und die Aufbewahrungsrichtlinie an, die im folgenden [Artikel](backup-azure-backup-cloud-as-tape.md) im Detail erläutert wird.
 
-5. Wählen Sie die Methode zum Senden der ersten Sicherung aus. Gewählter abschließen, das anfängliche seeding hängt die Menge der Daten, die Sie sichern und die Verbindungsgeschwindigkeit Ihrer Internet hochladen möchten. Wenn Sie, backup GB planen / TB Daten über eine mit hoher Latenz und niedriger Bandbreite, empfiehlt es sich, dass Sie die erste Sicherung ausführen, indem Sie einen Datenträger an den nächstgelegenen Azure-Rechenzentrum verwendet werden soll. Dies heißt "Offline Backup" und wird detailliert in dieser [Artikel](https://msdn.microsoft.com/library/azure/dn894419.aspx). Wenn Sie über ausreichende Bandbreite verfügen, wird empfohlen, dass Sie die erste Sicherung über das Netzwerk ausführen. <br/> ![Anfängliche Sicherung][4]
+5. Wählen Sie die Methode zum Senden der ersten Sicherung aus. Ihre Auswahl zum Abschließen des anfänglichen Seedings ist abhängig von der Datenmenge, die Sie sichern möchten, und von der Internetgeschwindigkeit beim Hochladen. Wenn Sie mehrere GB/TB über eine Verbindung mit hoher Latenz und niedriger Bandbreite sichern möchten, empfiehlt es sich, bei der ersten Sicherung einen Datenträger an das nächstgelegene Azure-Datencenter zu senden. Diese Vorgehensweise heißt "Offlinesicherung" und wird detailliert in diesem [Artikel](https://msdn.microsoft.com/library/azure/dn894419.aspx) behandelt. Wenn Sie über eine ausreichende Bandbreite verfügen, wird empfohlen, die erste Sicherung über das Netzwerk auszuführen. <br/> ![Erste Sicherung][4]
 
-6. Sobald der Workflow abgeschlossen ist, wechseln Sie zurück zur Mmc-snap-in, und klicken Sie auf **Jetzt sichern** abgeschlossen, das anfängliche seeding über das Netzwerk. <br/> ![Jetzt sichern][5]
+6. Sobald der Workflow abgeschlossen ist, wechseln Sie zurück zum MMC-Snap-In, und klicken Sie auf **Jetzt sichern**, um das anfängliche Seeding über das Netzwerk abzuschließen. <br/> ![Jetzt sichern][5]
 
-7. Sobald das anfängliche seeding abgeschlossen ist, die **Aufträge** Ansicht in der Azure-Sicherungs-Konsole zeigt den Status an. <br/> ![Vollständige IR][6]
+7. Sobald das anfängliche Seeding abgeschlossen ist, wird der Status in der Azure Backup-Konsole in der Anzeige **Aufträge** angezeigt. <br/> ![Abgeschlossen][6]
 
-## Wiederherstellen von Daten auf dem gleichen Computer
-Wenn Sie versehentlich eine Datei gelöscht und ein Dateisystemvolume auf demselben Computer wiederherstellen (aus dem die Sicherung erstellt wird) werden soll, würde die folgenden Schritte Sie zum Wiederherstellen der Daten unterstützen.
+## Wiederherstellen von Daten auf demselben Computer
+Wenn Sie versehentlich eine Datei gelöscht haben und eine Datei/ein Volume auf demselben Computer wiederherstellen möchten (auf dem die Sicherung erstellt wurde), können Sie die folgenden Schritte zum Wiederherstellen der Daten befolgen.
 
-1. Öffnen der **Microsoft Azure Backup** in ausrichten.
+1. Öffnen Sie das Snap-In **Microsoft Azure Backup**.
 
-2. Klicken Sie auf **Daten wiederherstellen** an den Workflow zu initiieren. <br/> ![Wiederherstellen von Daten][7]
+2. Klicken Sie auf **Daten wiederherstellen**, um den Workflow zu initiieren. <br/> ![Wiederherstellen von Daten][7]
 
-3. Wählen Sie **dieses Servers (* Yourmachinename *)** option, wie Sie die gesicherte Datei auf demselben Computer wiederherstellen möchten. <br/> ![Demselben Computer][8]
+3. Wählen Sie die Option **Dieser Server (*NameIhresComputers*)**, da Sie die gesicherte Datei auf demselben Computer wiederherstellen möchten. <br/> ![Auf demselben Computer][8]
 
-4. Sie können sich entscheiden, um **zu Dateien navigieren** oder **nach Dateien suchen**. Lassen Sie die Standardoption, wenn Sie beabsichtigen, eine oder mehrere Dateien wiederherstellen, deren Pfad bezeichnet wird. Wenn Sie nicht über die Ordnerstruktur sicher sind, aber nach einer Datei suchen möchten, wählen Sie die **nach Dateien suchen** Option. In diesem Abschnitt werden wir die Standardoption fort. <br/> ![Dateien durchsuchen][9]
+4. Sie können sich entscheiden, ob Sie **Dateien durchsuchen** oder **Dateien suchen** möchten. Behalten Sie die Standardoption bei, wenn Sie beabsichtigen, eine oder mehrere Dateien wiederherzustellen, deren Pfad bekannt ist. Wenn Sie die Ordnerstruktur nicht genau kennen und nach einer Datei suchen möchten, wählen Sie die Option **Dateien suchen**. In diesem Abschnitt verwenden wir die Standardoption. <br/> ![Dateien durchsuchen][9]
 
-5. Wählen Sie im nächsten Bildschirm das Volume aus dem Sie die Datei wiederherstellen möchten. Der Bildschirm können, die Sie von einem beliebigen Punkt wiederherstellen. Datumsangaben im erscheinenden **Fett** Geben Sie im Kalender-Steuerelement an die Verfügbarkeit eines Wiederherstellungspunkts. Sobald ein Datum ausgewählt wird, basierend auf Ihren Sicherungszeitplan (und den Erfolg eines Sicherungsvorgangs) Sie können einen Zeitpunkt auswählen aus der **Zeit** Dropdown-Liste. <br/> ![Volume und Datum][10]
+5. Wählen Sie im nächsten Bildschirm das Volume aus, von dem Sie die Datei wiederherstellen möchten. Der Bildschirm ermöglicht Ihnen die Wiederherstellung von einem beliebigen Zeitpunkt. Datumsangaben, die im Kalendersteuerelement **fett** dargestellt werden, geben die Verfügbarkeit eines Wiederherstellungspunkts an. Nachdem Sie ein Datum ausgewählt haben, können Sie basierend auf Ihrem Sicherungszeitplan (und dem Erfolg eines Sicherungsvorgangs) einen Zeitpunkt in der **Zeit**-Dropdownliste auswählen. <br/> ![Volume und Datum][10]
 
-6. Wählen Sie im nächsten Bildschirm die Elemente, die Sie wiederherstellen möchten. Sie können eine Mehrfachauswahl Ordner/Dateien, die Sie wiederherstellen möchten. <br/> ![Ausgewählte Dateien][11]
+6. Wählen Sie im nächsten Bildschirm die Elemente aus, die Sie wiederherstellen möchten. Sie können eine Mehrfachauswahl von Ordnern/Dateien treffen, die Sie wiederherstellen möchten. <br/> ![Auswählen von Dateien][11]
 
-7. Geben Sie im nächsten Bildschirm die Recovery-Parameter. <br/> ![Wiederherstellungsoptionen][12]
-  + Sie können eine Wiederherstellung am ursprünglichen Speicherort (in der Datei oder der Ordner überschrieben werden würden) oder an einen anderen Speicherort auf demselben Computer.
+7. Geben Sie im nächsten Bildschirm die Wiederherstellungsparameter an. <br/> ![Wiederherstellungsoptionen][12]
+  + Sie können eine Wiederherstellung am ursprünglichen Speicherort (bei der die Datei oder der Ordner überschrieben wird) oder an einem anderen Speicherort auf demselben Computer durchführen.
 
-  + Wenn die Datei oder der Ordner die Sie wiederherstellen möchten, die am Zielspeicherort vorhanden ist, haben Sie die Möglichkeit zum Erstellen von Kopien (zwei Versionen derselben Datei), oder die Dateien im Zielverzeichnis überschrieben oder überspringen Sie die Wiederherstellung der Dateien, die im Ziel vorhanden.
+  + Wenn die Datei oder der Ordner für die Wiederherstellung bereits am Zielspeicherort vorhanden ist, können Sie Kopien erstellen (zwei Versionen derselben Datei), die Dateien im Zielverzeichnis überschreiben oder die Wiederherstellung der Dateien überspringen, die am Zielspeicherort vorhanden sind.
 
-  + Es wird empfohlen, die Standardoption wiederherstellen die ACLs auf die Dateien, die wiederhergestellt werden zu lassen.
+  + Es wird dringend empfohlen, die Standardoption beizubehalten und die ACLs für die wiederherzustellenden Dateien ebenfalls wiederherzustellen.
 
-8. Diese Eingaben bereitgestellt werden, wird gestartet und Recovery-Workflow die Dateien auf diesem Computer wiederhergestellt werden können.
+8. Nachdem Sie diese Eingaben bereitgestellt haben, beginnt der Wiederherstellungsworkflow, bei dem die Dateien auf diesem Computer wiederhergestellt werden.
 
-## An einen anderen Computer wiederherstellen
-Wenn der gesamte Server verloren geht, können Sie die Dateisystemvolume auf einem anderen Computer wiederherstellen. Die folgenden Schritte beschreiben den Workflow.
+## Wiederherstellen auf einem anderen Computer
+Wenn der gesamte Server verloren geht, können Sie die Datei/das Volume dennoch auf einem anderen Computer wiederherstellen. Der Workflow wird in den folgenden Schritten beschrieben.
 
-Der Benennungsstandards die Schritte lauten wie folgt: + *Quellcomputer* – der ursprüngliche Computer, von denen die Sicherung erstellt wurde, und die zurzeit nicht verfügbar ist.
+In den Schritten werden folgende Bezeichnungen verwendet: + *Quellcomputer* – Der ursprüngliche Computer, von dem die Sicherung erstellt wurde und der zurzeit nicht verfügbar ist.
 
-  + *Zielcomputer* – den Computer, auf dem die Daten abgerufen werden.
+  + *Zielcomputer* – Der Computer, auf dem die Daten abgerufen werden.
 
-  + *Beispiel Tresor* – der sicherungstresor, der die *Quellcomputer* und *Zielcomputer* registriert sind. <br/>
+  + *Beispieltresor* – Der Sicherungstresor, bei dem der *Quellcomputer* und der *Zielcomputer* registriert sind. <br/>
 
-> [AZURE.NOTE]Sicherungen, die von einem Computer können nicht auf einem Computer wiederhergestellt werden, die eine frühere Version des Betriebssystems ausgeführt wird. Z. B. Wenn Sie Sicherungen auf einem Windows 7-Computer erstellt werden, können sie auf einem Windows 8 oder höher Computer wiederhergestellt werden. Jedoch wird die umgekehrt nicht gegeben sind.
+> [AZURE.NOTE]Sicherungen von einem Computer können nicht auf einem Computer wiederhergestellt werden, auf dem eine frühere Version des Betriebssystems ausgeführt wird. Wenn beispielsweise Sicherungen auf einem Windows 7-Computer erstellt werden, können diese auf einem Computer unter Windows 8 oder höher wiederhergestellt werden. Umgekehrt ist dies jedoch nicht möglich.
 
-1. Öffnen der **Microsoft Azure Backup** ausrichten, in der *Zielcomputer*.
+1. Öffnen Sie das Snap-In **Microsoft Azure Backup** auf dem *Zielcomputer*.
 
-2. Sicherstellen, dass die *Zielcomputer* und *Quellcomputer* dasselbe Depot Sicherung wiederhergestellt werden (in diesem Artikel - *Beispiel Tresor*).
+2. Stellen Sie sicher, dass der *Zielcomputer* und der *Quellcomputer* in demselben Sicherungstresor wiederhergestellt werden (in diesem Artikel *Beispieltresor* genannt).
 
-3. Klicken Sie auf **Daten wiederherstellen** an den Workflow zu initiieren. <br/> ![Wiederherstellen von Daten][7]
+3. Klicken Sie auf **Daten wiederherstellen**, um den Workflow zu initiieren. <br/> ![Wiederherstellen von Daten][7]
 
-4. Wählen Sie **einem anderen Server** <br/> ![Einen anderen Server][13]
+4. Wählen Sie **Anderer Server**. <br/> ![Anderer Server][13]
 
-5. Geben Sie den Tresor Anmeldeinformationen entspricht der *Beispiel Tresor*. Ist der Anmeldeinformationsdatei Tresor ungültig (oder abgelaufen), laden Sie eine neue Tresor Anmeldeinformationen-Datei aus der *Beispiel Tresor* im Azure-Portal. Sobald der Anmeldeinformationsdatei Tresor bereitgestellt wird, wird der sicherungstresor anhand der Anmeldeinformationsdatei Tresor angezeigt.
+5. Geben Sie die Datei mit den Tresoranmeldeinformationen an, die dem *Beispieltresor* entspricht. Wenn die Anmeldeinformationsdatei für den Tresor ungültig (oder abgelaufen) ist, laden Sie eine neue Anmeldeinformationsdatei für den Tresor aus dem *Beispieltresor* im Azure-Portal herunter. Sobald die Anmeldeinformationsdatei für den Tresor bereitgestellt wurde, wird der Sicherungstresor angezeigt, der der Tresor-Anmeldeinformationsdatei entspricht.
 
-6. Wählen Sie die *Quellcomputer* aus der Liste der angezeigten Computern. <br/> ![Liste der Computer][14]
+6. Wählen Sie den *Quellcomputer* aus der Liste der angezeigten Computer aus. <br/> ![Liste der Computer][14]
 
-7. Wählen Sie entweder wie zuvor das **nach Dateien suchen** oder **nach Dateien suchen** Option. In diesem Abschnitt verwenden wir die **nach Dateien suchen** Option. <br/> ![Suchen,][15]
+7. Wie oben beschrieben, wählen Sie entweder **Dateien suchen** oder **Dateien durchsuchen**. In diesem Abschnitt verwenden wir die Option **Dateien suchen**. <br/> ![Suchen,][15]
 
-8. Wählen Sie das Volume und Datum auf dem nächsten Bildschirm. Suchen Sie nach den Namen von Dateien/Ordner die Sie wiederherstellen möchten. <br/> ![Nach Artikeln suchen][16]
+8. Wählen Sie im nächsten Bildschirm das Volume und das Datum aus. Suchen Sie nach den Ordner-/Dateinamen, die Sie wiederherstellen möchten. <br/> ![Elemente suchen][16]
 
-9. Wählen Sie den Speicherort, zu dem die Dateien wiederhergestellt werden muss. <br/> ![Position wiederherstellen][17]
+9. Wählen Sie den Speicherort aus, an dem die Dateien wiederhergestellt werden sollen. <br/> ![Wiederherstellungsspeicherort][17]
 
-10. Geben Sie die verschlüsselungspassphrase, die während der bereitgestellt wurde *des Quellcomputers* Registrierung *Beispiel Tresor*. <br/> ![Verschlüsselung][18]
+10. Geben Sie die Verschlüsselungspassphrase an, die während der Registrierung des *Quellcomputers* beim *Beispieltresor* bereitgestellt wurde. <br/> ![Verschlüsselung][18]
 
-Klicken Sie nach die Eingabe bereitgestellt wird, auf die **Wiederherstellen** Schaltfläche die Wiederherstellung der gesicherten Dateien in das Ziel bereitgestellt löst.
+Klicken Sie nach dem Bereitstellen der Eingabe auf die Schaltfläche **Wiederherstellen**. Die Wiederherstellung der gesicherten Dateien im angegebenen Ziel wird ausgelöst.
 
 <!--Image references-->
 [1]: ./media/backup-azure-backup-and-recover/result.png
@@ -112,5 +112,6 @@ Klicken Sie nach die Eingabe bereitgestellt wird, auf die **Wiederherstellen** S
 [16]: ./media/backup-azure-backup-and-recover/searchitems.png
 [17]: ./media/backup-azure-backup-and-recover/restorelocation.png
 [18]: ./media/backup-azure-backup-and-recover/encryption.png
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

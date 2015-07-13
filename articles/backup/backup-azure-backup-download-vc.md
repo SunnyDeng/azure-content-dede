@@ -1,56 +1,56 @@
 <properties
-	pageTitle="Tresoranmeldedaten in Azure Backup herunterladen"
-	description="Erfahren Sie, wie Vault-Anmeldeinformationen verwenden, um den Computer mit dem sicherungstresor und Azure-Sicherungsdienst zu authentifizieren"
-	services="backup"
-	documentationCenter=""
-	authors="prvijay"
-	manager="shreeshd"
-	editor=""/>
-
+   pageTitle="Herunterladen von Tresoranmeldeinformationen in Azure Backup"
+   description="Erfahren Sie, wie Sie Ihren Computer mit Tresoranmeldeinformationen beim Sicherungstresor und beim Azure Backup-Dienst authentifizieren."
+   services="backup"
+   documentationCenter=""
+   authors="prvijay"
+   manager="shreeshd"
+   editor=""/>
 <tags
-	ms.service="backup"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
-	ms.date="03/27/2015"
-	ms.author="prvijay"/>
+   ms.service="backup"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="storage-backup-recovery"
+   ms.date="03/27/2015"
+   ms.author="prvijay"/>
 
-# Depot-Anmeldeinformationen verwenden zur Authentifizierung mit Azure Backup-Dienst
+# Verwenden von Tresoranmeldeinformationen zur Authentifizierung beim Azure Backup-Dienst
 
-Der lokale Server (Windows-Client oder Server mit Windows Server oder SCDPM) muss mit einem sicherungstresor authentifiziert werden, bevor Daten in Azure gesichert werden kann. Die Authentifizierung erfolgt mithilfe von "Anmeldeinformationen vault". Das Konzept der tresoranmeldedaten ähnelt das Konzept einer "Veröffentlichungseinstellungen" Datei die in Azure PowerShell verwendet wird.
+Der lokale Server (Windows-Client oder Windows Server oder SCDPM-Server) muss bei einem Sicherungstresor authentifiziert werden, bevor Daten in Azure gesichert werden können. Die Authentifizierung erfolgt mithilfe von "Tresoranmeldeinformationen". Das Konzept der Tresoranmeldeinformationen ähnelt dem Konzept einer Datei mit "Veröffentlichungseinstellungen", die in Azure PowerShell verwendet wird.
 
-## Was ist der Anmeldeinformationsdatei Tresor?
+## Was ist die Datei mit Tresoranmeldeinformationen?
 
-Die tresoranmeldedatendatei ist ein Zertifikat, das vom Portal für jede sicherungstresor generiert wird. Das Portal lädt dann den öffentlichen Schlüssel zu der Access Control Service (ACS). Der private Schlüssel des Zertifikats wird dem Benutzer als Teil des Workflows zur Verfügung gestellt als Eingabe in der Registrierung Statuscomputerworkflow erteilt wird. Dies authentifiziert den Computer, um die Sicherungsdaten an einem identifizierten Depot in der Azure-Sicherungsdienst zu senden.
+Die Datei mit Tresoranmeldeinformationen ist ein Zertifikat, das vom Portal für jeden Sicherungstresor generiert wird. Das Portal lädt anschließend den öffentlichen Schlüssel in den Access Control Service (oder ACS) hoch. Der private Schlüssel des Zertifikats wird dem Benutzer während des Workflows zur Verfügung gestellt und dient als Eingabe für den Workflow zur Computerregistrierung. Dadurch wird der Computer zum Senden von Sicherungsdaten an einen identifizierten Tresor im Azure Backup-Dienst authentifiziert.
 
-Lohnt sich aufrufen, dass die Depot-Anmeldeinformationen nur während der Registrierung Workflow verwendet wird. Es ist Aufgabe des Benutzers, um sicherzustellen, dass die tresoranmeldedatendatei nicht beeinträchtigt wird. Fällt in den Händen eines Rogue-Benutzers, kann die tresoranmeldedatendatei verwendet werden, andere Computer mit dem gleichen Tresor zu registrieren. Wie die Sicherungsdaten verschlüsselt ist, verwenden eine Passphrase ein, der an den Kunden gehört, können keine vorhandene Sicherungsdaten beeinträchtigt werden. Um dieses Problem zu verringern, die Depot-Anmeldeinformationen festgelegt ist, der in 48 Std. ablaufen. Können Sie den tresoranmeldedaten von einem sicherungstresor oft – herunterladen kann jedoch nur die neuesten Tresor Anmeldeinformationsdatei während des Workflows für die Registrierung.
+Die Tresoranmeldeinformationen werden übrigens nur während des Registrierungsworkflows verwendet. Es ist Aufgabe des Benutzers sicherzustellen, dass die Datei mit den Tresoranmeldeinformationen sicher aufbewahrt wird. Fällt sie in die Hände eines böswilligen Benutzers, kann dieser die Datei mit den Tresoranmeldeinformationen zur Registrierung weiterer Computer beim selben Tresor verwenden. Da die Sicherungsdaten jedoch durch eine Passphrase verschlüsselt sind, die dem Kunden gehört, sind vorhandene Sicherungsdaten nicht gefährdet. Um dieses Risiko auf ein Mindestmaß zu verringern, laufen die Tresoranmeldeinformationen nach 48 Stunden ab. Sie können die Tresoranmeldeinformationen beliebig oft von einem Sicherungstresor herunterladen – jedoch nur die neueste Datei mit Tresoranmeldeinformationen ist für den Registrierungsworkflow gültig.
 
-## Herunterladen der Anmeldeinformationsdatei Tresor
+## Herunterladen der Datei mit Tresoranmeldeinformationen
 
-Der Anmeldeinformationsdatei Depot wird über einen sicheren Kanal aus dem Azure-Portal heruntergeladen werden. Der Azure-Sicherungsdienst ist keine Kenntnis von den privaten Schlüssel des Zertifikats und des privaten Schlüssels ist in das Portal oder den Dienst nicht beibehalten. Gehen Sie folgendermaßen vor, die Depot-Anmeldeinformationen auf einem lokalen Computer herunterladen.
+Die Datei mit Tresoranmeldeinformationen wird über einen sicheren Kanal aus dem Azure-Portal heruntergeladen. Der Azure Backup-Dienst kennt nicht den privaten Schlüssel des Zertifikats, und der private Schlüssel wird weder im Portal noch im Dienst aufbewahrt. Gehen Sie folgendermaßen vor, um die Tresoranmeldeinformationen auf einen lokalen Computer herunterzuladen.
 
-1.  Melden Sie sich bei der [Verwaltungsportal](https://manage.windowsazure.com/)
-2.  Klicken Sie auf **Recovery Services** im linken Navigationsbereich, und wählen Sie den sicherungstresor, in dem Sie erstellt haben. Klicken Sie auf das cloudsymbol, um die Schnellstart-Ansicht des sicherungstresors zu erreichen. <br/> ![Schnellansicht][1]
+1.  Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com/) an.
+2.  Klicken Sie im linken Navigationsbereich auf **Recovery Services**, und wählen Sie den Sicherungstresor aus, den Sie erstellt haben. Klicken Sie auf das Cloudsymbol, um die Ansicht "Schnellstart" des Sicherungstresors aufzurufen. <br/> ![Schnellansicht][1]
 
-3.  Klicken Sie auf der Seite "Schnellstart" auf **Download-tresoranmeldedaten**. Das Portal generiert der Tresor-Anmeldeinformationsdatei, die zum Download zur Verfügung gestellt wird. <br/> ![Herunterladen][2]
+3.  Klicken Sie auf der Seite "Schnellstart" auf **Tresoranmeldeinformationen herunterladen**. Das Portal generiert die Datei mit den Tresoranmeldeinformationen, die zum Download zur Verfügung gestellt wird. <br/> ![Herunterladen][2]
 
-4.  Das Portal generiert Tresoranmeldeinformationen mit einer Kombination aus dem Tresornamen und dem aktuellen Datum. Klicken Sie auf **Speichern** auf die Depot-Anmeldeinformationen auf dem lokalen Konto-Ordner "Downloads" herunterladen, oder wählen Sie im Menü "Speichern", geben Sie einen Speicherort für die tresoranmeldedaten speichern unter.
+4.  Das Portal generiert Tresoranmeldeinformationen mit einer Kombination aus dem Tresornamen und dem aktuellen Datum. Klicken Sie auf **Speichern**, um die Tresoranmeldeinformationen in den Downloadordner des lokalen Kontos herunterzuladen. Sie können auch im Menü "Speichern" die Option "Speichern unter" auswählen, um einen anderen Speicherort anzugeben.
 
 ## Hinweis
-+ Ab März 2015 Benutzer verfügen nicht über eine programmgesteuerte (z.B.: PowerShell) Möglichkeit tresoranmeldedaten herunterladen.
++ Ab März 2015 Kunden steht Benutzer keine programmgesteuerte Möglichkeit (wie PowerShell) zum Herunterladen der Tresoranmeldeinformationen zur Verfügung.
 
-+ Sicherstellen Sie, dass die Anmeldeinformationen Tresor wird gespeichert, an einem Ort, die von Ihrem Computer zugegriffen werden kann. Wenn sie in einer Freigabe/SMB-Datei gespeichert ist, überprüfen Sie für die Zugriffsberechtigungen.
++ Stellen Sie sicher, dass die Tresoranmeldeinformationen an einem Ort gespeichert werden, der von Ihrem Computer aus zugänglich ist. Wenn sie in einer Dateifreigabe/einem SMB gespeichert sind, überprüfen Sie die Zugriffsberechtigungen.
 
-+ Die tresoranmeldedatendatei ist nur während der Registrierung Workflow verwendet.
++ Die Datei mit den Tresoranmeldeinformationen wird nur während des Registrierungsworkflows verwendet.
 
-+ Die tresoranmeldedatendatei läuft ab nach 48 Std. und über das Portal heruntergeladen werden kann.
++ Die Datei mit den Tresoranmeldeinformationen läuft nach 48 Stunden ab und kann über das Portal heruntergeladen werden.
 
-+ Azure-Sicherung finden Sie unter [– häufig gestellte Fragen](backup-azure-backup-faq.md) Fragen im Workflow.
++ Bei Fragen zum Workflow finden Sie Informationen in den [häufig gestellten Fragen](backup-azure-backup-faq.md) zu Azure Backup.
 
 
 <!--Image references-->
 [1]: ./media/backup-azure-backup-download-vc/quickview.png
 [2]: ./media/backup-azure-backup-download-vc/downloadvc.png
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

@@ -170,9 +170,9 @@
 
 <sup>2</sup>Websites im Modus „Basic“ oder „Standard“ werden auf dedizierten Computern ausgeführt. Die tatsächliche Anzahl der Websites, die Sie auf diesen Computern hosten können, hängt von der Aktivität der Websites, der Größe der Computerinstanzen und der entsprechenden Ressourcenauslastung ab.
 
-<sup>3</sup>Mit Ausnahme des Tarifs "Free" gelten die Beschränkungen für die Webhosting-Pläne pro Ressourcengruppe. Weitere Informationen über das Erstellen und Verwalten von Ressourcengruppen finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen][useresourcegroups].
+<sup>3</sup> Mit Ausnahme des Tarifs "Free" gelten die Beschränkungen für die Webhostingpläne pro Ressourcengruppe. Weitere Informationen zum Erstellen und Verwalten von Ressourcengruppen finden Sie unter [Übersicht über Azure-Ressourcen-Manager](../articles/resource-group-overview.md).
 
-<sup>4</sup>Dedizierte Instanzen können klein, mittelgroß oder groß sein. Auf der Seite [Azure-Preisübersicht][websitespricing] finden Sie weitere Einzelheiten. Zusätzliche Instanzen stehen durch das Eröffnen einer Supportanfrage zur Verfügung.
+<sup>4</sup> Dedizierte Instanzen können klein, mittelgroß oder groß sein. Auf der Seite [Azure-Preisübersicht](http://azure.microsoft.com/pricing/details/web-sites/) finden Sie weitere Einzelheiten. Zusätzliche Instanzen stehen durch das Eröffnen einer Supportanfrage zur Verfügung.
 
 <sup>5</sup>Alle Websites nutzen dieselben Speicherressourcen für den Websiteinhalt. Daher entspricht die Speicherbegrenzung websiteübergreifend der gesamten Größe, und nicht per Website. Speicherbegrenzungen können durch das Eröffnen einer Supportanfrage erhöht werden.
 
@@ -182,12 +182,8 @@
 
 <sup>8</sup>Dieser Wert repräsentiert gleichzeitige Websocketverbindungen pro Websiteinstanz. Wenn Sie beispielsweise eine „Basic“-Website auf zwei Instanzen skaliert haben, würden Sie effektiv über 700 gleichzeitige Verbindungen (350 x 2) verfügen.
 
-<sup>9</sup>Für den Tarif "Basic" gelten die [Standard-SSL-Preise][sslpricing].
+<sup>9</sup>Für den Tarif "Basic" gelten die [Standard-SSL-Preise](http://azure.microsoft.com/pricing/details/web-sites/#ssl-connections).
 
 <sup>10</sup>Führen Sie benutzerdefinierte ausführbare Dateien bzw. Skripts bei Bedarf, plangemäß oder fortwährend als eine Hintergrundaufgabe in Ihrer Websiteinstanz aus. Für die fortlaufende WebJobs-Ausführung ist „Immer bereit“ erforderlich. Für geplante WebJobs ist Azure Scheduler Free oder Standard erforderlich.
 
-[useresourcegroups]: http://azure.microsoft.com/documentation/articles/azure-preview-portal-using-resource-groups/
-[websitespricing]: http://azure.microsoft.com/pricing/details/web-sites/
-[sslpricing]: http://azure.microsoft.com/pricing/details/web-sites/#ssl-connections
-
-<!---HONumber=58-->
+<!---HONumber=62-->

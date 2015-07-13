@@ -28,9 +28,9 @@ Es gibt zahlreiche weitere Möglichkeiten zum Bereitstellen von API-Apps. Eine A
 
 Die Tatsache, dass API-Apps auf Web-Apps basieren, bedeutet auch, dass Sie Code, der für andere Plattformen als ASP.NET geschrieben wurde, in API-Apps bereitstellen können. Ein Beispiel mit Verwendung von Git zum Bereitstellen von Node.js-Code in einer API-App finden Sie unter [Erstellen einer Node.js-API-App in Azure App Service](app-service-api-nodejs-api-app.md).
  
-## Bereitstellen der API-App 
+## <a id="provision"></a>Erstellen einer API-App in Azure 
 
-In diesem Abschnitt werden die erforderlichen Schritte zum Bereitstellen einer API-App in einem Azure-Abonnement gezeigt.
+In diesem Abschnitt verwenden Sie den Visual Studio-Assistenten **Web veröffentlichen** zum Erstellen einer neuen API-App in Azure.
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt (nicht die Projektmappe), und klicken Sie auf **Veröffentlichen...**. 
 
@@ -63,7 +63,11 @@ In diesem Abschnitt werden die erforderlichen Schritte zum Bereitstellen einer A
 
 	![Statusbenachrichtigung über das Fenster "Azure App Service-Aktivität"](./media/app-service-dotnet-deploy-api-app/26-provisioning-success-v3.png)
 
-7. Sobald die API-App bereitgestellt wird, klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie **Veröffentlichen**, um das Dialogfeld für die Veröffentlichung erneut zu öffnen. Das Veröffentlichungsprofil, das Sie im vorherigen Schritt erstellt haben, sollte vorab ausgewählt sein. Klicken Sie auf **Veröffentlichen**, um den Bereitstellungsprozess zu beginnen.
+## <a id="deploy"></a>Bereitstellen des Codes für die neue API-App
+
+In diesem Abschnitt verwenden Sie den Assistenten **Web veröffentlichen**, um Ihren Code bereitzustellen.
+
+7. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Veröffentlichen** aus, um das Dialogfeld für die Veröffentlichung erneut zu öffnen. Das Veröffentlichungsprofil, das Sie im vorherigen Schritt erstellt haben, sollte vorab ausgewählt sein. Klicken Sie auf **Veröffentlichen**, um den Bereitstellungsprozess zu beginnen. 
 
 	![Bereitstellen der API-App](./media/app-service-dotnet-deploy-api-app/26-5-deployment-success-v3.png)
 

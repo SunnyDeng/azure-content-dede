@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="storage-backup-recovery" 
-   ms.date="02/24/2015"
+   ms.date="03/17/2015"
    ms.author="elfish; v-romcal"/>
 
 # Wiederherstellen einer gelöschten Azure SQL-Datenbank mit der REST-API
 
 > [AZURE.SELECTOR]
-- [Wiederherstellen einer gelöschten Datenbank - Portal](http://azure.microsoft.com/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal/)
-- [Wiederherstellen einer gelöschten Datenbank - PowerShell](http://azure.microsoft.com/documentation/articles/sql-database-restore-deleted-database-tutorial-powershell/)
+- [Restore deleted database - portal](sql-database-restore-deleted-database-tutorial-management-portal.md)
+- [Restore deleted database - PowerShell](sql-database-restore-deleted-database-tutorial-powershell.md) 
 
 ## Übersicht
 
@@ -30,7 +30,7 @@ Beim Wiederherstellen einer gelöschten Azure SQL-Datenbank wird eine neue Daten
 
 ## Einschränkungen und Sicherheit
 
-Siehe [Wiederherstellen einer gelöschten Azure SQL-Datenbank im Azure-Portal](http://azure.microsoft.com/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal/).
+Siehe [Wiederherstellen einer gelöschten Azure SQL-Datenbank im Azure-Portal](sql-database-restore-deleted-database-tutorial-management-portal.md).
 
 ## Vorgehensweise: Wiederherstellen einer gelöschten Azure SQL-Datenbank mithilfe der REST-API
 
@@ -46,10 +46,10 @@ Siehe [Wiederherstellen einer gelöschten Azure SQL-Datenbank im Azure-Portal](h
 
 Weitere Informationen finden Sie unter den folgenden Links:
 
-[Azure SQL-Datenbank-Geschäftskontinuität](http://msdn.microsoft.com/library/azure/hh852669.aspx)
+[Geschäftskontinuität in Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/hh852669.aspx)
 
 [Sichern und Wiederherstellen der Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/jj650016.aspx)
 
 [Referenz zur REST-API der Dienstverwaltung](http://msdn.microsoft.com/library/azure/ee460799.aspx)
-<!--HONumber=47-->
- 
+
+<!---HONumber=62-->

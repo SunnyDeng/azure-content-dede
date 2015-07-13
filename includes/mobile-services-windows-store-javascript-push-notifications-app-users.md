@@ -1,15 +1,13 @@
-﻿
-Als Nächstes müssen Sie die Methode zur Registrierung von Push-Benachrichtigungen ändern, um sicherzustellen, dass der Benutzer vor einem Registrierungsversuch authentifiziert wird. Die Client-App wird entsprechend der Methode aktualisiert, mit der Sie Push-Benachrichtigungen implementiert haben.
+
+Als Nächstes müssen Sie die Methode zur Registrierung von Pushbenachrichtigungen ändern. Dadurch stellen Sie sicher, dass der Benutzer vor einem Registrierungsversuch authentifiziert wird. Die Client-App wird entsprechend der Methode aktualisiert, mit der Sie Pushbenachrichtigungen implementiert haben.
 
 ###Verwenden des Assistenten für Pushbenachrichtigungen in Visual Studio 2013 Update 2 oder einer höheren Version
 
 Bei dieser Methode generiert der Assistent neue push.register.js- und service.js-Dateien in Ihrem Projekt.
 
->[AZURE.NOTE]Der Assistent zum Hinzufügen von Pushbenachrichtigungen wird derzeit nur für mobile .NET-Back-End-Dienste unterstützt.
+1. Öffnen Sie in Visual Studio im Projektmappen-Explorer, die Projektdatei "push.register.js", und kommentieren Sie den Aufruf von **addEventListener** aus, oder löschen Sie diesen. 
 
-1. ffnen Sie die Datei " push.register.js" im Projektmappen-Explorer in Visual Studio, und kommentieren Sie den Aufruf der **addEventListener**-Methode aus, oder löschen Sie diesen. 
-
-2. Ersetzen Sie in der Projektdatei "default.js" die vorhandene Funktion **Anmeldung** durch den folgenden Code:
+2. Ersetzen Sie in der Projektdatei "default.js" die vorhandene Funktion **login** durch den folgenden Code:
  
 		// Request authentication from Mobile Services using a Facebook login.
 		var login = function () {
@@ -41,7 +39,7 @@ Bei dieser Methode generiert der Assistent neue push.register.js- und service.js
 
 Bei dieser Methode fügen Sie Registrierungscode aus dem Lernprogramm direkt in die Projektdatei "default.js" ein.
 
-1. Öffnen Sie in Visual Studio im Projektmappen-Explorer die Projektdatei "default.js", und suchen Sie im **onActivated**-Ereignishandler die Codezeile, die die **createPushNotificationChannelForApplicationAsync**-Funktion aufruft, und wie folgt aussieht:
+1. Öffnen Sie in Visual Studio im Projektmappen-Explorer die Projektdatei "default.js", und suchen Sie im Ereignishandler **onActivated** die Codezeile, die die Funktion **createPushNotificationChannelForApplicationAsync** aufruft und wie folgt aussieht:
 
 		// Request a push notification channel.
 		Windows.Networking.PushNotifications
@@ -52,7 +50,7 @@ Bei dieser Methode fügen Sie Registrierungscode aus dem Lernprogramm direkt in 
 		        client.push.registerNative(channel.uri);
 		    }); 
  
-2. Verschieben Sie diese Codezeile in die Funktion **Anmeldung**, direkt vor den Aufruf von **refreshTodoItems**, sodass die Funktion **Anmeldung** wie folgt aussieht:
+2. Verschieben Sie diese Codezeile in die Funktion **login**, direkt vor den Aufruf von **refreshTodoItems**, sodass die Funktion **login** wie folgt aussieht:
  
 		// Request authentication from Mobile Services using a Facebook login.
 		var login = function () {
@@ -80,4 +78,4 @@ Bei dieser Methode fügen Sie Registrierungscode aus dem Lernprogramm direkt in 
 		    });
 		}  
 
-<!--HONumber=42-->
+<!---HONumber=62-->

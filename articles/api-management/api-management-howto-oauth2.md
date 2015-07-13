@@ -120,7 +120,7 @@ Nun können Sie die gewünschten Werte für die restlichen Parameter konfigurier
 
 ## Nächste Schritte
 
-Weitere Informationen zur Verwendung von OAuth 2.0 und API-Verwaltung finden Sie im folgenden Video.
+Weitere Informationen zur Verwendung von OAuth 2.0 und API Management finden Sie im folgenden Video.
 
 > [AZURE.VIDEO protecting-web-api-backend-with-azure-active-directory-and-api-management]
 
@@ -160,4 +160,4 @@ Weitere Informationen zur Verwendung von OAuth 2.0 und API-Verwaltung finden Si
 [Test the OAuth 2.0 user authorization in the Developer Portal]: #step3
 [Next steps]: #next-steps
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

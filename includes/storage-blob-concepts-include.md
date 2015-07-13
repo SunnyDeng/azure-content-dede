@@ -30,5 +30,4 @@ Der BLOB-Dienst umfasst die folgenden Komponenten:
 
 [Blob1]: ./media/storage-blob-concepts-include/blob1.jpg
 
-
-<!--HONumber=52-->
+<!---HONumber=62-->

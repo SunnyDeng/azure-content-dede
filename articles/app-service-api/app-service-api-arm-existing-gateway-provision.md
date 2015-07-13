@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/02/2015" 
+	ms.date="06/22/2015" 
 	ms.author="tomfitz"/>
 
 # Bereitstellen einer API-App mit einem vorhandenen Gateway
@@ -22,7 +22,9 @@ In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage erst
 
 Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
-Die vollständige Vorlage finden Sie unter [Vorlage für API-App mit vorhandenem Gateway](https://github.com/tfitzmac/AppServiceTemplates/blob/master/existing-gateway-existing-plan-new-apiapp.json).
+Weitere Informationen zum Bereitstellen von Apps finden Sie unter [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](../app-service-web/app-service-deploy-complex-application-predictably.md).
+
+Die vollständige Vorlage finden Sie unter [Vorlage für API-App mit vorhandenem Gateway](../../templates/app-service-api-arm-existing-gateway-provision/).
 
 ## Was Sie bereitstellen
 

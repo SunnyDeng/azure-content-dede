@@ -46,15 +46,14 @@ In dieser exemplarischen Vorgehensweise werden Beispielprotokolle gesammelt, ver
  	- **Azure Storage-Konto**: Kontoname und Kontoschlüssel.  
 	- **Azure SQL-Datenbank**: Server, Datenbank, Benutzername und Kennwort.
 	- **Azure HDInsight-Cluster**: Name des HDInsight-Clusters, Benutzername, Kennwort und Kontoname sowie Kontoschlüssel für den mit diesem Cluster verknüpften Azure-Speicher. Wenn Sie anstelle Ihres eigenen HDInsight-Clusters einen bedarfsgesteuerten HDInsight-Cluster verwenden möchten, können Sie diesen Schritt überspringen.  
-8. Starten Sie **Azure PowerShell**, und führen Sie die folgenden Befehle aus. Lassen Sie Azure PowerShell geöffnet. Wenn Sie PowerShell schließen und erneut öffnen, müssen Sie diese Befehle erneut ausführen.
+8. Starten Sie **Azure PowerShell**, und führen Sie die folgenden Befehle aus. Lassen Sie Azure PowerShell geöffnet. Wenn Sie PowerShell schließen und erneut öffnen, müssen Sie die Befehle erneut ausführen.
 	- Führen Sie **Add-AzureAccount** aus, und geben Sie den Benutzernamen und das Kennwort ein, den bzw. das Sie bei der Anmeldung für das Azure-Vorschauportal verwendet haben.  
 	- Führen Sie **Get-AzureSubscription** aus, um alle Abonnements für dieses Konto anzuzeigen.
 	- Führen Sie **Select-AzureSubscription** aus, um das Abonnement auszuwählen, mit dem Sie arbeiten möchten. Dieses Abonnement sollte dasselbe sein, das Sie im Azure-Vorschauportal verwendet haben.
 	
 
 ## Übersicht
-Nachfolgend ist der End-to-End-Workflow dargestellt:
-	![Ablauf des Lernprogramms][image-data-factory-tutorial-end-to-end-flow]
+Nachfolgend ist der End-to-End-Workflow dargestellt:![Ablauf des Lernprogramms][image-data-factory-tutorial-end-to-end-flow]
 
 1. **PartitionGameLogsPipeline** liest die Rohdaten der Spielereignisse aus einem Blobspeicher (RawGameEventsTable) und erstellt basierend auf Jahr, Monat und Tag Partitionen (PartitionedGameEventsTable).
 2. **EnrichGameLogsPipeline** verknüpft partitionierte Spielereignisse („PartitionedGameEventsTable“, ausgegeben von „PartitionGameLogsPipeline“) mit Geocode (RefGetoCodeDictionaryTable) und erweitert die Daten mittels IP-Adresszuordnung zum entsprechenden geografischen Standort (EnrichedGameEventsTable).
@@ -117,7 +116,7 @@ Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim
  
 	Dieses Skript erfordert, dass Sie das sqlcmd-Dienstprogramm auf dem Computer installiert haben. Wenn Sie SQL Server installiert haben, verfügen Sie bereits über das Dienstprogramm. Andernfalls [laden Sie das Dienstprogramm herunter][sqlcmd-install] und installieren es.
 	
-	Sie können auch die Dateien im Ordner "C:\ADFWalkthrough\\Scripts" verwenden, um Pig-/Hive-Skripts und Beispieldateien in den ADFWalkthrough-Container im Blob-Speicher hochzuladen und die Tabelle "MarketingCampaignEffectiveness" in der Azure SQL-Datenbank "MarketingCamapaigns" zu erstellen.
+	Sie können auch die Dateien im Ordner "C:\ADFWalkthrough\Scripts" verwenden, um Pig-/Hive-Skripts und Beispieldateien in den ADFWalkthrough-Container im Blob-Speicher hochzuladen und die Tabelle "MarketingCampaignEffectiveness" in der Azure SQL-Datenbank "MarketingCamapaigns" zu erstellen.
    
 2. Bestätigen Sie, dass der lokale Computer auf die Azure SQL-Datenbank zugreifen darf. Verwenden Sie das Azure-Verwaltungsportal oder **sp_set_firewall_rule** in der Masterdatenbank, um eine Firewallregel für die IP-Adresse auf dem Computer zu erstellen und so den Zugriff zu aktivieren. Es kann bis zu fünf Minuten dauert, bis diese Änderung wirksam wird. Unter [Festlegen von Firewallregeln für Azure SQL][azure-sql-firewall] finden Sie weitere Informationen.
 4. Navigieren Sie in Azure PowerShell zu dem Ordner, in dem Sie die Beispiele extrahiert haben (z. B. **C:\ADFWalkthrough**).
@@ -157,7 +156,7 @@ Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim
 ## <a name="MainStep2"></a> Schritt 2: Erstellen einer Azure Data Factory
 In diesem Schritt erstellen Sie eine Azure Data Factory mit dem Namen **LogProcessingFactory**.
 
-1.	Klicken Sie nach der Anmeldung beim [Azure-Vorschauporta][azure-preview-portal] links unten auf **NEU** und anschließend auf dem Blatt **Neu** auf **Data Factory**. 
+1.	Klicken Sie nach der Anmeldung beim Azure-Vorschauportal[][azure-preview-portal] links unten auf **NEU** und anschließend auf dem Blatt **Neu** auf **Data Factory**. 
 
 	![Neu -> Data Factory][image-data-factory-new-datafactory-menu]
 	
@@ -194,7 +193,7 @@ In diesem Schritt erstellen Sie eine Azure Data Factory mit dem Namen **LogProce
  
 ## <a name="MainStep3"></a> Schritt 3: Erstellen von verknüpften Diensten
 
-> [AZURE.NOTE] In diesem Artikel wird Azure PowerShell zum Erstellen von verknüpften Diensten, Tabellen und Pipelines verwendet. Wenn Sie dieses Lernprogramm mit dem Azure-Portal (genauer: mit dem Data Factory-Editor) ausführen möchten, lesen Sie unter [Lernprogramm mit Data Factory-Editor][adftutorial-using-editor] weiter.
+> [AZURE.NOTE]In diesem Artikel wird Azure PowerShell zum Erstellen von verknüpften Diensten, Tabellen und Pipelines verwendet. Wenn Sie dieses Lernprogramm mit dem Azure-Portal (genauer: mit dem Data Factory-Editor) ausführen möchten, lesen Sie unter [Lernprogramm mit Data Factory-Editor][adftutorial-using-editor] weiter.
 
 In diesem Schritt werden die folgenden verknüpften Dienste erstellt: „StorageLinkedService“, „AzureSqlLinkedService“, „HDInsightStorageLinkedService“ und „HDInsightLinkedService“.
 
@@ -251,7 +250,7 @@ In diesem Schritt werden die folgenden verknüpften Dienste erstellt: „Storage
 17. Öffnen Sie **HDInsightLinkedService.json** in Ihrem bevorzugten Editor, und beachten Sie, dass der Typ auf **HDInsightOnDemandLinkedService** festgelegt ist.
 
 
-	Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Bedarf und verwendet ihn zum Verarbeiten der Eingabe zum Erzeugen von Ausgabedaten. Sie können auch Ihren eigenen Cluster für den gleichen Zweck verwenden. Wenn Sie den bedarfsgesteuerten HDInsight-Cluster verwenden, wird für jeden Slice ein Cluster erstellt. Bei Verwendung Ihres eigenen HDInsight-Clusters kann der Cluster den Slice jedoch sofort verarbeiten. Aus diesem Grund werden bei Verwendung des bedarfsgesteuerten Clusters die Ausgabedaten möglicherweise nicht so schnell angezeigt wie bei der Verwendung Ihres eigenen Clusters. Für dieses Beispiel verwenden wir einen bedarfsgesteuerten Cluster 
+	Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Bedarf und verwendet ihn zum Verarbeiten der Eingabe zum Erzeugen von Ausgabedaten. Sie können auch Ihren eigenen Cluster für den gleichen Zweck verwenden. Wenn Sie den bedarfsgesteuerten HDInsight-Cluster verwenden, wird für jeden Slice ein Cluster erstellt. Bei Verwendung Ihres eigenen HDInsight-Clusters kann der Cluster den Slice jedoch sofort verarbeiten. Aus diesem Grund werden bei Verwendung des bedarfsgesteuerten Clusters die Ausgabedaten möglicherweise nicht so schnell angezeigt wie bei der Verwendung Ihres eigenen Clusters. Für dieses Beispiel verwenden wir einen bedarfsgesteuerten Cluster.
 	
 	„HDInsightLinkedService“ verknüpft einen bedarfsgesteuerten HDInsight-Cluster mit der Data Factory. Wenn Sie Ihren eigenen HDInsight-Cluster verwenden möchten, aktualisieren Sie den Abschnitt „Properties“ der Datei „HDInsightLinkedService.json“ wie folgt (ersetzen Sie „clustername“, „username“ und „password“ durch die entsprechenden Werte):
 	
@@ -297,7 +296,7 @@ Das Erstellen von Datasets/Tabellen wird vom Azure-Verwaltungsportal noch nicht 
 
 ### So erstellen Sie die Tabellen
 
-1.	Navigieren Sie in Azure PowerShell an dem Speicherort, an dem Sie die Beispiele extrahiert haben, zum Ordner **Tables** (**C:\ADFWalkthrough\\Tables\\**). 
+1.	Navigieren Sie in Azure PowerShell an dem Speicherort, an dem Sie die Beispiele extrahiert haben, zum Ordner **Tables** (**C:\ADFWalkthrough\Tables**). 
 2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryTable**, um die Tabellen für **RawGameEventsTable.json** wie folgt zu erstellen.	
 
 
@@ -473,7 +472,6 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 [download-azure-powershell]: ../powershell-install-configure.md
 
 [azure-preview-portal]: http://portal.azure.com
-[Azure-Vorschauportal]: http://portal.azure.com
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
@@ -561,4 +559,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial-using-powershell/DataFactoryCreateButton.png
 
-<!----HONumber=58_postMigration-->
+<!---HONumber=62-->

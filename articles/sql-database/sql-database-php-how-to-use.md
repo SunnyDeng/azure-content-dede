@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von SQL-Datenbank (PHP) - Azure-Featureleitfaden" 
+	pageTitle="Verwenden von SQL-Datenbank (PHP) – Azure-Featureleitfaden" 
 	description="Erfahren Sie, wie Sie eine Azure SQL-Datenbank in PHP erstellen und eine Verbindung zu dieser herstellen." 
 	services="sql-database" 
 	documentationCenter="php" 
@@ -13,67 +13,67 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="PHP" 
 	ms.topic="article" 
-	ms.date="02/12/2015" 
+	ms.date="03/25/2015" 
 	ms.author="tomfitz"/>
 
 #Zugreifen auf Azure SQL-Datenbank aus PHP 
 
-##Übersicht
+## Übersicht
 
-In diesem Leitfaden werden die Grundlagen der Verwendung von SQL-Datenbank aus PHP erläutert. Die Beispiele sind in PHP geschrieben. Die behandelten Szenarien umfassen das **Erstellen einer SQL-Datenbank** und das **Herstellen einer Verbindung zu einer SQL-Datenbank**. Dieser Leitfaden beschreibt das Erstellen einer SQL-Datenbank im [Verwaltungsportal][management-portal]. Informationen zum Durchführen dieser Aufgaben im Produktionsportal finden Sie unter [Erste Schritte mit PHP und SQL-Datenbank][prod-portal-instructions]. Weitere Informationen finden Sie im Abschnitt [Nächste Schritte](#NextSteps) .
+In diesem Leitfaden werden die Grundlagen der Verwendung von SQL-Datenbank aus PHP erläutert. Die Beispiele sind in PHP geschrieben. Die behandelten Szenarien umfassen das **Erstellen einer SQL-Datenbank** und das **Herstellen einer Verbindung zu einer SQL-Datenbank**. Dieser Leitfaden beschreibt das Erstellen einer SQL-Datenbank im [Verwaltungsportal][management-portal]. Informationen zum Durchführen dieser Aufgaben im Produktionsportal finden Sie unter [Erste Schritte mit PHP und SQL-Datenbank][prod-portal-instructions]. Weitere Informationen finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
 
 ##Was ist SQL-Datenbank?
 
 SQL-Datenbank bietet ein Verwaltungssystem für relationale Datenbanken für Azure und basiert auf SQL Server-Technologie. Mit SQL-Datenbank können Sie relationale Datenbanklösungen für die Cloud bereitstellen und implementieren, und Sie profitieren von einem verteilten Datencenter, das Verfügbarkeit, Skalierbarkeit und Sicherheit für Unternehmen mit den Vorteilen von integriertem Datenschutz und Selbstreparatur bietet.
 
 ##<a id="Concepts"></a>Konzepte
-Da SQL-Datenbank auf SQL Server-Technologien basiert, erfolgt der Zugriff auf SQL-Datenbank aus PHP ganz ähnlich wie der Zugriff auf SQL Server aus PHP. Sie können eine Anwendung lokal (mit SQL Server) entwickeln und dann eine Verbindung zu SQL-Datenbank herstellen, indem Sie lediglich die Verbindungszeichenfolge ändern. Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien und Einschränkungen (SQL-Datenbanken)][limitations].
+Da SQL-Datenbank auf SQL Server-Technologien basiert, erfolgt der Zugriff auf SQL-Datenbank aus PHP ganz ähnlich wie der Zugriff auf SQL Server aus PHP. Sie können eine Anwendung lokal (mit SQL Server) entwickeln und dann eine Verbindung zu SQL-Datenbank herstellen, indem Sie lediglich die Verbindungszeichenfolge ändern. Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien für und Einschränkungen (SQL-Datenbanken)][limitations].
 
-Der Zugriff auf SQL-Datenbank aus PHP sollte nach Möglichkeit unter Verwendung der [Microsoft-Treiber für SQL Server für PHP][download-drivers] erfolgen. (In den Beispielen dieses Artikels werden diese Treiber verwendet.) Die Microsoft-Treiber für PHP für SQL Server funktionieren nur unter Windows.
+Der Zugriff auf SQL-Datenbank aus PHP sollte nach Möglichkeit unter Verwendung der [Microsoft-Treiber für PHP für SQL Server][download-drivers] erfolgen. (In den Beispielen dieses Artikels werden diese Treiber verwendet.) Die Microsoft-Treiber für PHP für SQL Server funktionieren nur unter Windows.
 
-##<a id="Setup"></a>Gewusst wie: Einrichten Ihrer Umgebung
+##<a id="Setup"></a>Vorgehensweise: Einrichten Ihrer Umgebung
 
-Empfohlen wird, die Entwicklungsumgebung unter Verwendung von [Microsoft-Webplattform-Installer][wpi-installer] einzurichten. Mit dem Webplattform-Installer können Sie Elemente Ihrer Webentwicklungsplattform auswählen und diese automatisch installieren und konfigurieren. Wenn Sie den Webplattform-Installer herunterladen und WebMatrix, PHP für WebMatrix und SQL Server Express zur Installation auswählen, wird eine vollständige Entwicklungsumgebung für Sie eingerichtet.
+Für die Einrichtung der Entwicklungsumgebung wird die Verwendung des [Microsoft-Webplattform-Installer][wpi-installer] empfohlen. Mit dem Webplattform-Installer können Sie Elemente Ihrer Webentwicklungsplattform auswählen und diese automatisch installieren und konfigurieren. Wenn Sie den Webplattform-Installer herunterladen und WebMatrix, PHP für WebMatrix und SQL Server Express zur Installation auswählen, wird eine vollständige Entwicklungsumgebung für Sie eingerichtet.
 
 Alternativ können Sie die Umgebung auch manuell einrichten:
 
-* Installieren Sie PHP, und konfigurieren Sie IIS: [http://php.net/manual/en/install.windows.iis7.php][manual-config].
-* Laden Sie SQL Server Express herunter, und installieren Sie es: [http://www.microsoft.com/download/details.aspx?id=29062][install-sql-express]
-* Laden Sie die Microsoft-Treiber für PHP für SQL Server herunter, und installieren Sie sie: [http://php.net/manual/en/sqlsrv.requirements.php][install-drivers].
+* Installieren von PHP und Konfigurieren von IIS: [http://php.net/manual/en/install.windows.iis7.php][manual-config].
+* Herunterladen und Installieren von SQL Server Express: [http://www.microsoft.com/download/details.aspx?id=29062][install-sql-express]
+* Laden Sie die [Microsoft-Treiber für PHP für SQL Server][download-drivers] herunter, und installieren Sie diese.
 
-##<a id="CreateServer"></a>Gewusst wie: Erstellen einer SQL-Datenbank
+##<a id="CreateServer"></a>Vorgehensweise: Erstellen einer SQL-Datenbank
 
 Führen Sie folgende Schritte durch, um eine Azure SQL-Datenbank zu erstellen:
 
 1. Melden Sie sich am [Verwaltungsportal][management-portal] an.
 2. Klicken Sie unten links im Portal auf **Neu**.
 
-	![Create New Azure Web Site][new-website]
+	![Neue Azure-Website erstellen][new-website]
 
-3. Klicken Sie auf **DATENDIENSTE**, **SQL-DATENBANK** dann **SCHNELLERFASSUNG**. Geben Sie einen Namen für die Datenbank ein, geben Sie an, ob ein vorhandener oder neuer Datenbankserver verwendet werden soll, und geben Sie eine Region, einen Administratornamen und ein Kennwort ein.
+3. Klicken Sie auf **DATENDIENSTE**, **SQL-DATENBANK** und dann auf **SCHNELLERFASSUNG**. Geben Sie einen Namen für die Datenbank ein, geben Sie an, ob ein vorhandener oder neuer Datenbankserver verwendet werden soll, und geben Sie eine Region, einen Administratornamen und ein Kennwort ein.
 
-	![Custom Create a new SQL Database][quick-create]
+	![Eine neue SQL-Datenbank benutzerdefiniert erstellen][quick-create]
 
 
 Klicken Sie im Verwaltungsportal auf **SQL-Datenbanken**, um Server- und Datenbankinformationen anzuzeigen. Sie können dann auf **DATENBANKEN** oder **SERVER** klicken, um die entsprechenden Informationen anzuzeigen.
 
-![View server and database information][sql-dbs-servers]
+![Server- und Datenbankinformationen anzeigen][sql-dbs-servers]
 
-##<a id="ConnectionInfo"></a>Gewusst wie: Abrufen von SQL-Datenbank-Verbindungsinformationen
+##<a id="ConnectionInfo"></a>Vorgehensweise: Abrufen von SQL-Datenbank-Verbindungsinformationen
 
 Klicken Sie im Portal auf **SQL-DATENBANKEN** und dann auf den Namen der Datenbank, um SQL-Datenbank-Verbindungsinformationen abzurufen.
 
-![View database information][go-to-db-info]
+![Datenbankinformationen anzeigen][go-to-db-info]
 
-Klicken Sie dann auf **SQL-Datenbank-Verbindungszeichenfolgen für ADO .Net, ODBC, PHP und JDBC anzeigen**.
+Klicken Sie anschließend auf **SQL-Datenbank-Verbindungszeichenfolgen für ADO.NET, ODBC, PHP und JDBC anzeigen**.
 
-![Show connection strings][show-connection-string]
+![Verbindungszeichenfolgen anzeigen][show-connection-string]
 
 Notieren Sie im PHP-Abschnitt des Ergebnisfensters die Werte für **SERVER**, **DATENBANK** und **BENUTZERNAME**. Ihr Kennwort ist das Kennwort, das Sie zum Erstellen der SQL-Datenbank verwendet haben.
 
-##<a id="Connect"></a>Gewusst wie: Herstellen einer Verbindung zu einer SQL-Datenbankinstanz
+##<a id="Connect"></a>Vorgehensweise: Herstellen einer Verbindung zu einer SQL-Datenbankinstanz
 
-In den folgenden Beispielen wird gezeigt, wie Sie mit den Erweiterungen **SQLSRV** und **PDO_SQLSRV** eine Verbindung mit einer SQL-Datenbank namens `testdb` herstellen. Informationen zu den **SQLSRV**- und **PDO_SQLSRV**-APIs finden Sie in der [Dokumentation für Microsoft-Treiber für PHP für SQL Server][driver-docs]. Sie benötigen die im vorstehenden Abschnitt abgerufenen Informationen. Ersetzen Sie `SERVER_ID` durch Ihre 10-stellige Server-ID (dies sind die ersten zehn Zeichen des im vorstehenden Abschnitt abgerufenen SERVER-Werts), und weisen Sie den Variablen `$user` und `$pwd` die entsprechenden Werte (Ihren Benutzernamen und Ihr Kennwort) zu.
+In den folgenden Beispielen wird gezeigt, wie Sie mit den Erweiterungen **SQLSRV** und **PDO_SQLSRV** eine Verbindung mit einer SQL-Datenbank namens `testdb` herstellen. Informationen zur **SQLSRV**- und **PDO_SQLSRV**-API finden Sie in der[Dokumentation für Microsoft-Treiber für PHP für SQL Server][driver-docs]. Sie benötigen die im vorstehenden Abschnitt abgerufenen Informationen. Ersetzen Sie `SERVER_ID` durch Ihre 10-stellige Server-ID (dies sind die ersten zehn Zeichen des im vorstehenden Abschnitt abgerufenen SERVER-Werts), und weisen Sie den Variablen `$user` und `$pwd` die entsprechenden Werte (Ihren Benutzernamen und Ihr Kennwort) zu.
 
 #####SQLSRV
 
@@ -105,7 +105,7 @@ In den folgenden Beispielen wird gezeigt, wie Sie mit den Erweiterungen **SQLSRV
 
 
 ##<a id="NextSteps"></a>Nächste Schritte
-Wie bereits erwähnt, ähnelt die Verwendung von SQL-Datenbank sehr der Verwendung von SQL Server. Sobald Sie eine Verbindung mit einer SQL-Datenbank (wie oben gezeigt) hergestellt haben, können Sie die APIs **SQLSRV** oder **PDO_SQLSRV** zum Einfügen, Abrufen, Aktualisieren und Löschen von Daten verwenden.  Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien und Einschränkungen (SQL-Datenbanken)][limitations].
+Wie bereits erwähnt, ähnelt die Verwendung von SQL-Datenbank sehr der Verwendung von SQL Server. Nachdem Sie eine Verbindung zu einer SQL-Datenbank hergestellt haben (wie oben beschrieben), können Sie die **SQLSRV**- oder **PDO_SQLSRV**-API zum Einfügen, Abrufen, Aktualisieren und Löschen von Daten verwenden. Es gibt jedoch einige Unterschiede zwischen SQL-Datenbank und SQL Server, die sich auf Ihre Anwendung auswirken können. Weitere Informationen finden Sie unter [Richtlinien für und Einschränkungen (SQL-Datenbanken)][limitations].
 
 Ein Beispiel, das die Verwendung der SQL-Datenbank mit PHP auf Azure zeigt, ist auf <https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/tasklist-sqlazure> verfügbar.
 
@@ -128,6 +128,6 @@ Ein Beispiel, das die Verwendung der SQL-Datenbank mit PHP auf Azure zeigt, ist 
 [go-to-db-info]: ./media/sql-database-php-how-to-use/go-to-db-info.png
 [show-connection-string]: ./media/sql-database-php-how-to-use/show-connection-string-2.png
 [quick-create]: ./media/sql-database-php-how-to-use/create-new-sql.png
-
-<!--HONumber=47-->
  
+
+<!---HONumber=62-->

@@ -33,7 +33,7 @@
 
 	![Benennen Sie den Auftrag, geben Sie den Code ein, oder fügen Sie ihn ein, und klicken Sie auf "Ausführen".][1]
 2. Geben Sie auf dem Blatt **Auftrag erstellen** einen Namen für den Auftrag ein.
-3. Geben Sie einen Benutzernamen mit dem zugehörigen Kennwort zum Herstellen der Verbindung mit den Zieldatenbanken ein, der über ausreichende Berechtigungen für die Skriptausführung verfügt.
+3. Geben Sie zum Herstellen der Verbindung mit den Zieldatenbanken einen Benutzernamen mit dem zugehörigen Kennwort ein, der über ausreichende Berechtigungen für die Skriptausführung verfügt.
 4. Geben Sie das T-SQL-Skript ein, oder fügen Sie es ein.
 5. Klicken Sie auf **Speichern**, und klicken Sie dann auf **Ausführen**.
 
@@ -110,4 +110,4 @@ Wenn ein Auftrag fehlschlägt, wird ein Protokoll zu seiner Ausführung erstellt
 
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

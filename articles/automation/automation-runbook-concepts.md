@@ -33,7 +33,7 @@ Ein Windows PowerShell-Workflow beginnt mit dem Schlüsselwort **Workflow**, gef
        <Commands>
     }
 
-Um dem Workflow Parameter hinzuzufügen, verwenden Sie das Schlüsselwort **Param**, wie in der folgenden Syntax gezeigt. Das Verwaltungsportal fordert den Benutzer auf, Werte für diese Parameter bereitzustellen, wenn das Runbook gestartet wird.  Das vorliegende Beispiel verwendet das optionale Attribut "Parameter", mit dem angegeben wird, ob der Parameter erforderlich ist oder nicht.
+Um dem Workflow Parameter hinzuzufügen, verwenden Sie das Schlüsselwort **Param**, wie in der folgenden Syntax gezeigt. Das Verwaltungsportal fordert den Benutzer auf, Werte für diese Parameter bereitzustellen, wenn das Runbook gestartet wird. Das vorliegende Beispiel verwendet das optionale Attribut "Parameter", mit dem angegeben wird, ob der Parameter erforderlich ist oder nicht.
 
     Workflow Test-Runbook
     {
@@ -130,7 +130,7 @@ Weitere Informationen zum Anhalten eines Workflows finden Sie unter [Anhalten ei
 
 ## InlineScript
 
-Die Aktivität **InlineScript** führt einen Block mit Befehlen nicht im PowerShell-Workflow, sondern in einem traditionellen PowerShell-Skript aus und gibt die Ausgabe an den Workflow zurück.  Wenngleich die Befehle in einem Workflow zur Verarbeitung an Windows Workflow Foundation gesendet werden, werden die Befehle in einem InlineScript-Block durch Windows PowerShell verarbeitet. Die Aktivität verwendet die standardmäßigen allgemeinen Parameter, darunter **PSCredential**, mit denen Sie angeben können, dass der Codeblock mit alternativen Anmeldeinformationen ausgeführt werden soll.
+Die Aktivität **InlineScript** führt einen Block mit Befehlen nicht im PowerShell-Workflow, sondern in einem traditionellen PowerShell-Skript aus und gibt die Ausgabe an den Workflow zurück. Wenngleich die Befehle in einem Workflow zur Verarbeitung an Windows Workflow Foundation gesendet werden, werden die Befehle in einem InlineScript-Block durch Windows PowerShell verarbeitet. Die Aktivität verwendet die standardmäßigen allgemeinen Parameter, darunter **PSCredential**, mit denen Sie angeben können, dass der Codeblock mit alternativen Anmeldeinformationen ausgeführt werden soll.
 
 Der InlineScript-Block verwendet die nachstehende Syntax.
 
@@ -165,6 +165,6 @@ Ausführliche Informationen zur Verwendung von InlineScript finden Sie unter [Au
 
 ## Verwandte Artikel
 
-- [Erstellen oder Importieren eines Runbooks](http://technet.microsoft.com/library/dn919921.aspx)
+- [Erstellen oder Importieren eines Runbooks](http://technet.microsoft.com/library/dn919921.aspx) 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

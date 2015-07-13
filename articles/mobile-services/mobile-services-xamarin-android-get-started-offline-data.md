@@ -10,10 +10,10 @@
 <tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
-	ms.tgt_pltfrm=""
+	ms.tgt_pltfrm="mobile-xamarin-android"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="04/20/2015"
+	ms.date="06/15/2015"
 	ms.author="donnam"/>
 
 # Verwendung der Offlinedatensynchronisierung in Mobile Services
@@ -46,8 +46,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 ## <a name="review-offline"></a>Überprüfen des Mobile Services-Synchronisierungscodes
 
-Mit der Offlinesynchronisierung von Azure Mobile Services können Endbenutzer mit einer lokalen Datenbank interagieren, wenn das Netzwerk nicht verfügbar ist. Initialisieren Sie `MobileServiceClient.SyncContext` in einem lokalen Speicher, um diese Funktionen in der App zu verwenden. Erstellen Sie dann über die `IMobileServiceSyncTable`-Schnittstelle einen Verweis für die Tabelle.
-In diesem Abschnitt wird der in `ToDoActivity.cs` enthaltene Code für die Offlinesynchronisierung Schritt für Schritt besprochen.
+Mit der Offlinesynchronisierung von Azure Mobile Services können Endbenutzer mit einer lokalen Datenbank interagieren, wenn das Netzwerk nicht verfügbar ist. Initialisieren Sie `MobileServiceClient.SyncContext` in einem lokalen Speicher, um diese Funktionen in der App zu verwenden. Erstellen Sie dann über die `IMobileServiceSyncTable`-Schnittstelle einen Verweis für die Tabelle. In diesem Abschnitt wird der in `ToDoActivity.cs` enthaltene Code für die Offlinesynchronisierung Schritt für Schritt besprochen.
 
 1. Öffnen Sie in Visual Studio oder Xamarin Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services] abgeschlossen haben. Öffnen Sie die Datei `ToDoActivity.cs`.
 
@@ -96,7 +95,7 @@ In diesem Abschnitt wird der in `ToDoActivity.cs` enthaltene Code für die Offli
 
     >[AZURE.NOTE]Um Datensätze aus dem lokalen Speicher des Geräts zu entfernen, wenn sie in der Datenbank des mobilen Diensts gelöscht wurden, aktivieren Sie [Vorläufiges Löschen]. Andernfalls sollte Ihre App in regelmäßigen Abständen `IMobileServiceSyncTable.PurgeAsync()` aufrufen, um den lokalen Speicher zu löschen.
 
-    Beachten Sie, dass die `MobileServicePushFailedException` sowohl für einen Push- als auch für einen Pullvorgang auftreten kann. Im nächsten Lernprogramm, [Behandeln von Konflikten mit der Offlineunterstützung für Mobile Services], wird gezeigt, wie Sie mit diesen synchronisationsbezogenen Ausnahmen umgehen.
+    Beachten Sie, dass die `MobileServicePushFailedException` sowohl für einen Push- als auch für einen Pullvorgang auftreten kann. Im nächsten Lernprogramm, [Behandeln von Konflikten mit der Offlineunterstützung für Mobile Services], wird gezeigt, wie Sie mit solchen synchronisationsbezogenen Ausnahmen umgehen.
 
 5. In der `ToDoActivity`-Klasse wird die `SyncAsync()`-Methode nach den Vorgängen zum Ändern von Daten, `AddItem()` und `CheckItem()`, aufgerufen. Sie wird auch von `OnRefreshItemsSelected()` aufgerufen, sodass Benutzer die aktuellsten Daten abrufen, wenn sie auf die Schaltfläche **Aktualisieren** klicken. Die App führt außerdem eine Synchronisierung beim Start durch, da `ToDoActivity.OnCreate()` einen Aufruf von `OnRefreshItemsSelected()` durchführt.
 
@@ -141,7 +140,7 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 
 5. Überprüfen Sie die Datenbank für Ihren mobilen Dienst, um zu bestätigen, dass die Änderungen synchronisiert wurden.
 
-## Zusammenfassung
+##Zusammenfassung
 
 [AZURE.INCLUDE [mobile-services-offline-summary-csharp](../../includes/mobile-services-offline-summary-csharp.md)]
 
@@ -171,5 +170,6 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 [Xamarin Studio]: http://xamarin.com/download
 [Xamarin-Erweiterung]: http://xamarin.com/visual-studio
 [NuGet Addin for Xamarin]: https://github.com/mrward/monodevelop-nuget-addin
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

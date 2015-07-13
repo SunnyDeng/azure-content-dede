@@ -12,14 +12,16 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/13/2015" 
+	ms.date="06/17/2015" 
 	ms.author="awills"/>
  
 # Exportieren von Telemetriedaten aus Application Insights
 
 Möchten Sie Ihre Telemetriedaten einer angepassten Analyse unterziehen? Oder möchten Sie vielleicht eine E-Mail-Benachrichtigung zu Ereignissen mit bestimmten Eigenschaften erhalten? Der fortlaufende Export eignet sich hierfür ideal. Die Ereignisse, die Sie im Application Insights-Portal sehen, können im JSON-Format in Microsoft Azure-Speicher exportiert werden. Sie können Ihre Daten anschließend herunterladen und den Code schreiben, den Sie zu ihrer Verarbeitung benötigen.
 
-Der fortlaufende Export ist in der kostenlosen Testversion und in den [Standard- und Premium-Preisplänen](http://azure.microsoft.com/pricing/details/application-insights/) verfügbar.
+Der fortlaufende Export ist im kostenlosen Testzeitraum und in den [Standard- und Premium-Preisplänen](http://azure.microsoft.com/pricing/details/application-insights/) verfügbar.
+
+(Wenn Sie die Daten in einem Ihrer Blätter "Metriken" oder "Suchen" nur [einmal exportieren](app-insights-metrics-explorer.md#export-to-excel) möchten, klicken Sie oben im Blatt auf "Export".)
 
 ## <a name="setup"></a> Einrichten des fortlaufenden Exports
 
@@ -62,7 +64,7 @@ Berechnete Metriken sind nicht enthalten. Wir exportieren z. B. nicht die durchs
 
 ## <a name="get"></a>Untersuchen der Daten
 
-Beim Öffnen Ihres Blobspeichers mit einem Tool wie z. B. [Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx) sehen Sie einen Container mit einer Gruppe von Blobdateien. Der URI der einzelnen Dateien lautet "Anwendung-ID/Telemetrietyp/Datum/Uhrzeit".
+Beim Öffnen Ihres Blobspeichers mit einem Tool wie z. B. [Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx) sehen Sie einen Container mit einer Gruppe von Blobdateien. Der URI der einzelnen Dateien lautet "Anwendungs-ID/Telemetrietyp/Datum/Uhrzeit".
 
 ![Überprüfen Sie den Blobspeicher mit einem geeigneten Tool](./media/app-insights-export-telemetry/04-data.png)
 
@@ -72,7 +74,7 @@ Datum und Uhrzeit werden in UTC angegeben und entsprechen dem Zeitpunkt, an dem 
 
 ## <a name="format"></a> Datenformat
 
-* Jedes Blob ist eine Textdatei, die mehrere durch '\\n' getrennte Zeilen enthält.
+* Jedes Blob ist eine Textdatei, die mehrere durch '\n' getrennte Zeilen enthält.
 * Jede Zeile ist ein unformatiertes JSON-Dokument. Wenn Sie sich die Daten anschauen möchten, probieren Sie einen Viewer wie z. B. Notepad ++ mit dem JSON-Plug-In:
 
 ![Zeigen Sie die Telemetriedaten mit einem geeigneten Tool an](./media/app-insights-export-telemetry/06-json.png)
@@ -138,7 +140,7 @@ Der fortlaufende Export wird neu gestartet.
 
 * *Ich möchte aber nur ein Diagramm einmalig herunterladen.*  
  
-    Wir arbeiten separat an dieser Möglichkeit.
+    Das ist kein Problem. Klicken Sie oben im Blatt auf [Daten exportieren](app-insights-metrics-explorer.md#export-to-excel).
 
 * *Ich habe einen Export eingerichtet, aber es sind keine Daten im meinem Speicher.*
 
@@ -152,7 +154,7 @@ Der fortlaufende Export wird neu gestartet.
 
 * *Kann ich Daten direkt in meinen eigenen lokalen Datenspeicher exportieren?*
 
-    Nein, leider nicht. Unser Exportmodul benötigt einen großen geöffneten Eingabekanal, über den die Daten übertragen werden.
+    Nein, leider nicht. Unser Exportmodul funktioniert zurzeit nur mit Azure-Speicher.
 
 * *Gibt es Begrenzung der Menge von Daten, die im Speicher abgelegt werden können?*
 

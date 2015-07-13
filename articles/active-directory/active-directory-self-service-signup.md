@@ -234,4 +234,6 @@ Weitere Informationen und Beispiele zum Verwenden dieser Parameter finden Sie un
 <!--Image references-->
 [1]: ./media/active-directory-self-service-signup/SelfServiceSignUpControls.png
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=62-->

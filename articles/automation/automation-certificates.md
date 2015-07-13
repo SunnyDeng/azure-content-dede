@@ -103,8 +103,8 @@ In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die Send-
 ![](media/automation-certificates/add-certificate.png)
 
 
-## Weitere Informationen
+## Siehe auch
 
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow) 
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

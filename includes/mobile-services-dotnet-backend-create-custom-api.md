@@ -2,7 +2,7 @@
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf den Ordner "Controller", erweitern Sie **Hinzufügen**, und klicken Sie dann auf **Neu erstelltes Element**. Der Dialog "Add Scaffold" wird angezeigt.
 
-2. Erweitern Sie **Azure Mobile Services**, klicken Sie auf **Benutzerdefinierter Controller Azure Mobile Services**, klicken Sie dann auf **Hinzufügen**, geben Sie den **Controllernamen** `CompleteAllController`an, und klicken Sie anschließend erneut auf **Hinzufügen**.
+2. Erweitern Sie **Azure Mobile Services**, klicken Sie auf **Benutzerdefinierter Controller Azure Mobile Services**, klicken Sie dann auf **Hinzufügen**, geben Sie den **Controllernamen`CompleteAllController` ** an, und klicken Sie anschließend erneut auf **Hinzufügen**.
 
 	![Web-API-Dialogfeld "Gerüst hinzufügen"](./media/mobile-services-dotnet-backend-create-custom-api/add-custom-api-controller.png)
 
@@ -54,4 +54,4 @@
 
 	> [AZURE.NOTE]Mit den Standardberechtigungen kann jeder Benutzer mit dem App-Schlüssel die benutzerdefinierte API aufrufen. Der Anwendungsschlüssel wird jedoch nicht verteilt bzw. sicher gespeichert und gilt daher nicht als sichere Anmeldeinformation. Erwägen Sie, den Zugriff nur authentifizierten Benutzern zu gestatten, um die Sicherheit zu erhöhen.
 
-<!--HONumber=54-->
+<!---HONumber=62-->

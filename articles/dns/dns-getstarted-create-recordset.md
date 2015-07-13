@@ -55,7 +55,7 @@ Das folgende Beispiel zeigt, wie Sie eine Datensatzgruppe und Einträge erstelle
 
 Erstellen Sie einen Datensatzeintrag, und weisen Sie ihn der Variablen "$rs" zu.
 
-	PS C:>$rs = New-AzureDnsRecordSet -Name "www" -RecordType "A" -ZoneName "contoso.com" -ResourceGroupName "MyAzureResourceGroup" -Ttl 60
+	PS C:\>$rs = New-AzureDnsRecordSet -Name "www" -RecordType "A" -ZoneName "contoso.com" -ResourceGroupName "MyAzureResourceGroup" -Ttl 60
 
 Die Datensatzgruppe hat den relativen Namen "www" in der DNS-Zone "contoso.com", somit lautet der vollqualifizierte Name der Einträge "www.contoso.com". Der Eintragstyp ist "A", und die Gültigkeitsdauer beträgt 60 Sekunden.
 
@@ -67,8 +67,8 @@ Die Datensatzgruppe ist leer, und wir müssen Einträge hinzufügen, um die neu 
 
 Fügen Sie die IPv4-A-Einträge der www-Datensatzgruppe mithilfe der $rs-Variablen hinzu, die beim Erstellen der Datensatzgruppen in Schritt 1 zugewiesen wurden:
 
-	PS C:> Add-AzureDnsRecordConfig -RecordSet $rs -Ipv4Address 134.170.185.46
-	PS C:> Add-AzureDnsRecordConfig -RecordSet $rs -Ipv4Address 134.170.188.221
+	PS C:\> Add-AzureDnsRecordConfig -RecordSet $rs -Ipv4Address 134.170.185.46
+	PS C:\> Add-AzureDnsRecordConfig -RecordSet $rs -Ipv4Address 134.170.188.221
 
 Das Hinzufügen von Einträgen zu einer Datensatzgruppe mithilfe von AzureDnsRecordConfig ist ein Offline-Vorgang. Nur die lokale Variable "$rs" wird aktualisiert.
 
@@ -81,7 +81,7 @@ Das Hinzufügen von Einträgen zu einer Datensatzgruppe mithilfe von AzureDnsRec
 Damit sind die Änderungen abgeschlossen. Sie können die Datensatzgruppe von Azure DNS mithilfe von Get-AzureDnsRecordSet abrufen:
 
 
-	PS C:> Get-AzureDnsRecordSet –Name www –RecordType A -ZoneName contoso.com -ResourceGroupName MyAzureResourceGroup
+	PS C:\> Get-AzureDnsRecordSet –Name www –RecordType A -ZoneName contoso.com -ResourceGroupName MyAzureResourceGroup
 
 
 	Name              : www
@@ -100,7 +100,7 @@ Sie können auch nslookup oder andere DNS-Tools verwenden, um die neue Datensatz
 >[AZURE.NOTE]Wenn Sie die Domäne noch nicht an die Azure DNS-Namenserver delegiert haben, müssen Sie die Namenserveradresse für die Zone explizit angeben, wie schon beim Erstellen der Zone.
 
 
-	C:> nslookup www.contoso.com ns1-01.azure-dns.com
+	C:\> nslookup www.contoso.com ns1-01.azure-dns.com
 
 	Server: ns1-01.azure-dns.com
 	Address:  208.76.47.1
@@ -119,4 +119,4 @@ Sie können auch nslookup oder andere DNS-Tools verwenden, um die neue Datensatz
 [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

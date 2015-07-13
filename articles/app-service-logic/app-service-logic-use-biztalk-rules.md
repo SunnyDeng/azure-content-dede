@@ -102,14 +102,14 @@ Nach dem Erstellen einer BizTalk-Regel-API-App besteht der nächste Schritt im E
  
    ![Alt text][4]
 
-2\. Klicken Sie als nächstes auf "Vokabulardefinitionen". Der Bildschirm zum Verfassen des Vokabulars wird angezeigt. Klicken Sie auf "Hinzufügen", um neue Vokabulardefinitionen hinzuzufügen. Derzeit werden zwei Arten von Vokabulardefinitionen unterstützt – literal und XML.
+2. Klicken Sie als nächstes auf "Vokabulardefinitionen". Der Bildschirm zum Verfassen des Vokabulars wird angezeigt. Klicken Sie auf "Hinzufügen", um neue Vokabulardefinitionen hinzuzufügen. Derzeit werden zwei Arten von Vokabulardefinitionen unterstützt – literal und XML.
 
 ##Literale Definition
 1.	Nach dem Klicken auf "Hinzufügen" wird ein neues Blatt "Definition hinzufügen" geöffnet. Geben Sie die folgenden Werte ein:
   1.	Name – Es werden nur alphanumerische Zeichen ohne Sonderzeichen erwartet. Dieser Name sollte auch in Ihrer Liste vorhandener Vokabulardefinitionen eindeutig sein.
   2.	Beschreibung – Optionales Feld.
   3.	Typ – Es werden zwei Typen unterstützt. Wählen Sie in diesem Beispiel "Literal".
-  4.	Eingabetyp – Ermöglicht Benutzern das Auswählen des Datentyps der Definition. Derzeit stehen vier Datentypen zur Auswahl: i. String – Diese Werte müssen in doppelte Anführungszeichen (“Beispielzeichenfolge”) eingeschlossen werden. ii. Boolean – Kann entweder "true" oder "false" sein. iii. Number – Kann jede Dezimalzahl sein. iv. DateTime – Die Definition ist vom Typ Datum/Uhrzeit. Daten müssen in diesem Format eingegeben werden: mm/tt/jjjj hh:mm:ss AM\\PM. v. Input – Hier geben Sie den Wert Ihrer Definition ein. Die hier eingegebenen Werte müssen dem ausgewählten Datentyp entsprechen. Der Benutzer kann entweder einen einzelnen Wert, einen durch Kommas getrennten Satz von Werten oder einen Bereich von Werten mit dem Schlüsselwort "to" eingeben. Beispielsweise kann der Benutzer den eindeutigen Wert 1, den Satz 1, 2, 3 oder einen Bereich von 1 bis 5 angeben. Beachten Sie, dass Bereiche nur für Zahlen unterstützt werden.
+  4.	Eingabetyp – Ermöglicht Benutzern das Auswählen des Datentyps der Definition. Derzeit stehen vier Datentypen zur Auswahl: i. String – Diese Werte müssen in doppelte Anführungszeichen (“Beispielzeichenfolge”) eingeschlossen werden. ii. Boolean – Kann entweder "true" oder "false" sein. iii. Number – Kann jede Dezimalzahl sein. iv. DateTime – Die Definition ist vom Typ Datum/Uhrzeit. Daten müssen in diesem Format eingegeben werden: mm/tt/jjjj hh:mm:ss AM\PM. v. Input – Hier geben Sie den Wert Ihrer Definition ein. Die hier eingegebenen Werte müssen dem ausgewählten Datentyp entsprechen. Der Benutzer kann entweder einen einzelnen Wert, einen durch Kommas getrennten Satz von Werten oder einen Bereich von Werten mit dem Schlüsselwort "to" eingeben. Beispielsweise kann der Benutzer den eindeutigen Wert 1, den Satz 1, 2, 3 oder einen Bereich von 1 bis 5 angeben. Beachten Sie, dass Bereiche nur für Zahlen unterstützt werden.
 
 ![Alt text][5]
 ##XML-Definition
@@ -157,7 +157,7 @@ Das folgende Beispiel zeigt, wie diese API in C# verwendet werden könnte.
    			// Constructing the JSON message to use in API call to Rules API App
 
 			// xmlInstance is the XML message instance to be passed as input to our Policy
-            string xmlInstance = "<ns0:Patient xmlns:ns0=\"http://tempuri.org/XMLSchema.xsd\">  <ns0:Name>Name_0</ns0:Name>  <ns0:Email>Email_0</ns0:Email>  <ns0:PatientID>PatientID_0</ns0:PatientID>  <ns0:Age>10.4</ns0:Age>  <ns0:Claim>    <ns0:ClaimDate>2012-05-31T13:20:00.000-05:00</ns0:ClaimDate>    <ns0:ClaimID>10</ns0:ClaimID>    <ns0:TreatmentID>12</ns0:TreatmentID>    <ns0:ClaimAmount>10000.0</ns0:ClaimAmount>    <ns0:ClaimStatus>ClaimStatus_0</ns0:ClaimStatus>    <ns0:ClaimStatusReason>ClaimStatusReason_0</ns0:ClaimStatusReason>  </ns0:Claim></ns0:Patient>";
+            string xmlInstance = "<ns0:Patient xmlns:ns0="http://tempuri.org/XMLSchema.xsd">  <ns0:Name>Name_0</ns0:Name>  <ns0:Email>Email_0</ns0:Email>  <ns0:PatientID>PatientID_0</ns0:PatientID>  <ns0:Age>10.4</ns0:Age>  <ns0:Claim>    <ns0:ClaimDate>2012-05-31T13:20:00.000-05:00</ns0:ClaimDate>    <ns0:ClaimID>10</ns0:ClaimID>    <ns0:TreatmentID>12</ns0:TreatmentID>    <ns0:ClaimAmount>10000.0</ns0:ClaimAmount>    <ns0:ClaimStatus>ClaimStatus_0</ns0:ClaimStatus>    <ns0:ClaimStatusReason>ClaimStatusReason_0</ns0:ClaimStatusReason>  </ns0:Claim></ns0:Patient>";
 
             JObject input = new JObject();
 
@@ -202,4 +202,4 @@ Einer der Hauptvorteile der Verwendung von Geschäftsregeln ist, dass Änderunge
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -4,4 +4,4 @@ Sie können die Assembly `Microsoft.WindowsAzure.Storage.dll` mit NuGet abrufen.
 
 `Microsoft.WindowsAzure.Storage.dll` ist ebenfalls im Azure SDK für .NET enthalten, das Sie im <a href="http://azure.microsoft.com/develop/net/#">.NET Developer Center</a> herunterladen können. Die Assembly wird im Verzeichnis `%Program Files%\Microsoft SDKs\Azure.NET SDK<sdk-version>\ref` installiert.
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

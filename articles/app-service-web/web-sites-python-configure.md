@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Konfigurieren von Python in Azure App Service-Web-Apps" 
-	description="Dieses Lernprogramm beschreibt die Optionen für das Authoring und Konfigurieren einer grundlegenden Web Server Gateway Interface (WSGI)-kompatiblen Python-Anwendung für Azure App Service-Web-Apps." 
+	description="Dieses Lernprogramm beschreibt die Optionen für das Erstellen und Konfigurieren einer grundlegenden WSGI-kompatiblen (Web Server Gateway Interface) Python-Anwendung für Azure App Service-Web-Apps." 
 	services="app-service\web" 
 	documentationCenter="python" 
 	tags="python"
@@ -24,7 +24,7 @@
 
 Dieses Lernprogramm beschreibt die Optionen für das Authoring und Konfigurieren einer grundlegenden Web Server Gateway Interface (WSGI)-kompatiblen Python-Anwendung für [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714).
 
-Außerdem beschrieben werden zusätzliche Funktionen der Git-Bereitstellung, z. B. virtuelle Umgebung und Paketinstallation mithile von "requirements.txt".
+Außerdem beschrieben werden zusätzliche Funktionen der Git-Bereitstellung, z. B. virtuelle Umgebung und Paketinstallation mithilfe von "requirements.txt".
 
 
 ## Bottle, Django oder Flask?
@@ -40,7 +40,7 @@ Der Azure Marketplace enthält Vorlagen für die Frameworks Bottle, Django und F
 
 Für dieses Lernprogramm wird davon ausgegangen, dass Sie über ein Azure-Abonnement verfügen und Zugriff auf das Azure-Vorschauportal haben.
 
-Wenn Sie noch nicht über eine Web-App verfügen, können Sie eine über das [Azure-Vorschauportal](https://portal.azure.com) erstellen. Klicken Sie in der linken unteren Ecke auf „NEU“ und anschließend auf **Web + Mobil** > **Web-App**.
+Wenn Sie noch nicht über eine Web-App verfügen, können Sie eine über das [Azure-Vorschauportal](https://portal.azure.com) erstellen. Klicken Sie in der linken unteren Ecke auf "NEU" und anschließend auf **Web + Mobil** > **Web-App**.
 
 ## Git-Veröffentlichung
 
@@ -88,14 +88,14 @@ Obwohl die obige Beispiel-App keine externen Pakete erfordert, ist es wahrschein
 
 Zur besseren Verwaltung externer Paketabhängigkeiten unterstützt die Azure Git-Bereitstellung die Erstellung virtueller Umgebungen.
 
-Wenn Azure im Stammverzeichnis des Repositorys eine Datei namens „requirements.txt“ erkennt, wird automatisch eine virtuelle Umgebung mit dem Namen `env` erstellt. Dies erfolgt nur bei der ersten Bereitstellung oder bei jeder Bereitstellung, nachdem die ausgewählte Python-Laufzeit geändert wurde.
+Wenn Azure im Stammverzeichnis des Repositorys eine Datei namens "requirements.txt" erkennt, wird automatisch eine virtuelle Umgebung mit dem Namen `env` erstellt. Dies erfolgt nur bei der ersten Bereitstellung oder bei jeder Bereitstellung, nachdem die ausgewählte Python-Laufzeit geändert wurde.
 
 Sie werden wahrscheinlich eine virtuelle Umgebung für die lokale Entwicklung erstellen. Fügen Sie diese jedoch nicht Ihrem Git-Repository hinzu.
 
 
 ## Verwalten von Paketen
 
-In "requirements.txt" aufgeführe Paket werden mit Pip in der virtuellen Umgebung automatisch installiert. Dies erfolgt bei jeder Bereitstellung, doch Pip überspringt die Installation, wenn ein Paket bereits installiert ist.
+In "requirements.txt" aufgeführte Paket werden mit Pip in der virtuellen Umgebung automatisch installiert. Dies erfolgt bei jeder Bereitstellung, doch Pip überspringt die Installation, wenn ein Paket bereits installiert ist.
 
 Beispiel für `requirements.txt`:
 
@@ -228,7 +228,7 @@ Es ist möglich, die Regel `Static Files` so zu konfigurieren, dass Dateien an e
 
 `WSGI_ALT_VIRTUALENV_HANDLER` dient zum Angeben des WSGI-Handlers. In den obigen Beispielen, handelt es sich um `app.wsgi_app`, da der Handler eine Funktion namens `wsgi_app` in `app.py` (im Stammordner) ist.
 
-`PYTHONPATH` kann angepasst werden. Wenn Sie jedoch alle Ihre Abhängigkeiten in der virtuellen Umgebung installieren, indem Sie sie in „requirements.txt“ angeben, sollten keine Änderungen erforderlich sein.
+`PYTHONPATH` kann angepasst werden. Wenn Sie jedoch alle Ihre Abhängigkeiten in der virtuellen Umgebung installieren, indem Sie sie in "requirements.txt" angeben, sollten keine Änderungen erforderlich sein.
 
 
 ## Proxy für die virtuelle Umgebung

@@ -93,4 +93,4 @@ Diese schrittweise Anleitung erläutert die Installation und Ausführung von Mon
 [Image8]: ./media/install-and-run-mongo-on-win2k8-vm/WinVmAddEndpoint2.png
 [Image9]: ./media/install-and-run-mongo-on-win2k8-vm/WinVmAddEndpoint3.png
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

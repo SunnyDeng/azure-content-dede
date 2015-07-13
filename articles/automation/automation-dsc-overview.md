@@ -37,7 +37,7 @@ Nachfolgend werden einige Beispielszenarien gezeigt, in denen Sie integrierte DS
 - Verwalten von Umgebungsvariablen
 - Ausführen von Windows PowerShell-Skripts
 - Korrigieren einer Konfiguration, die vom gewünschten Zustand abweicht
-- Ermitteln des aktuellen Konfigurationsstatus auf einem vorgegebenen Knoten 
+- Ermitteln des aktuellen Konfigurationsstatus auf einem vorgegebenen Knoten
 
 Zusätzlich können Sie benutzerdefinierte Ressourcen erstellen, um den Zustand einer beliebigen Anwendungs- oder Systemeinstellung zu konfigurieren.
 
@@ -206,11 +206,11 @@ Azure Automation DSC stellt für die Verwaltung von DSC-Kompilierungsaufträgen 
 
 - Azure Automation bietet keine Unterstützung für die parallele Verwendung von PowerShell-Modulen. Dies bedeutet, dass alle Konfigurationen innerhalb eines Automation-Kontos mit der neuesten Version eines in dieses Automation-Konto importierten PowerShell-Moduls sowie mit der letzten Version aller PowerShell DSC-Ressourcen arbeiten müssen, die im Modul enthalten sind und von der Konfiguration verwendet werden.
 
-- Der traditionelle PowerShell DSC-Pullserver erwartet, dass Modul-ZIP-Dateien im Format **Modulname_Version.zip** auf dem Pullserver platziert werden.  Azure Automation erwartet, dass PowerShell-Module mit Namen im Format **Modulname.zip** importiert werden. In [diesem Blogbeitrag](http://azure.microsoft.com/blog/2014/12/15/authoring-integration-modules-for-azure-automation/) finden Sie weitere Informationen zum erforderlichen Format von Integrationsmodulen, um diese Module in Azure Automation zu importieren.
+- Der traditionelle PowerShell DSC-Pullserver erwartet, dass Modul-ZIP-Dateien im Format **Modulname_Version.zip** auf dem Pullserver platziert werden. Azure Automation erwartet, dass PowerShell-Module mit Namen im Format **Modulname.zip** importiert werden. In [diesem Blogbeitrag](http://azure.microsoft.com/blog/2014/12/15/authoring-integration-modules-for-azure-automation/) finden Sie weitere Informationen zum erforderlichen Format von Integrationsmodulen, um diese Module in Azure Automation zu importieren.
 
 - PowerShell-Module, die über das Format "Version pro Ordner" parallele DSC-Ressourcen im Modul angeben, können in Azure Automation zurzeit nicht verwendet werden.
 
-- Der Import eines PowerShell-Moduls in Azure Automation über die Cmdlets `New-AzureAutomationModule` oder `Set-AzureAutomationModule` erfolgt asynchron.  Selbst wenn das Cmdlet erfolgreich zurückgegeben wird, bedeutet dies nicht, dass der Modulimport erfolgreich war. Prüfen Sie mit `Get-AzureAutomationModule –Name <ModuleName>` (rufen Sie nur dieses Modul ab, nicht alle Module), ob der Import erfolgreich war, und überprüfen Sie, ob das Feld **ProvisioningState** einen erfolgreichen Status anzeigt.
+- Der Import eines PowerShell-Moduls in Azure Automation über die Cmdlets `New-AzureAutomationModule` oder `Set-AzureAutomationModule` erfolgt asynchron. Selbst wenn das Cmdlet erfolgreich zurückgegeben wird, bedeutet dies nicht, dass der Modulimport erfolgreich war. Prüfen Sie mit `Get-AzureAutomationModule –Name <ModuleName>` (rufen Sie nur dieses Modul ab, nicht alle Module), ob der Import erfolgreich war, und überprüfen Sie, ob das Feld **ProvisioningState** einen erfolgreichen Status anzeigt.
 
 - In Azure Automation importierte PowerShell-Module dürfen keine DOC- oder DOCX-Dateien enthalten. Einige PowerShell-Module mit DSC-Ressourcen enthalten diese Dateien zur Bereitstellung von Hilfeinformationen. Diese Dateien müssen vor dem Import in Azure Automation aus den Modulen entfernt werden.
 
@@ -220,4 +220,6 @@ Azure Automation DSC stellt für die Verwaltung von DSC-Kompilierungsaufträgen 
 
 - Wenn beim Integrieren eines virtuellen Azure-Computers zur Verwaltung mit Azure Automation DSC über `Register-AzureAutomationDscNode`, `Set-AzureAutomationDscExtension` oder die VM-Erweiterung von Azure Automation DSC im Azure-Vorschauportal die Registrierung mit dem Fehler **Der Computername wurde nicht angegeben, und das Konfigurationsverzeichnis enthält keine Konfigurationsdateien** abgebrochen wird, ist dies ein Fehlalarm. Die VM-Registrierung war tatsächlich erfolgreich. Die erfolgreiche Registrierung kann mit dem Cmdlet `Get-AzureAutomationDscNode` überprüft werden.
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=62-->

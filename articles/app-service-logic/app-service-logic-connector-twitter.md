@@ -74,4 +74,4 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den Twitter-Connector als 
 [8]: ./media/app-service-logic-connector-twitter/img8.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

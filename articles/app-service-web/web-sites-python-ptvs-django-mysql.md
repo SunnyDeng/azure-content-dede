@@ -45,7 +45,7 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
 1.  Wählen Sie in Visual Studio **Datei** -> **Neues Projekt** aus.
 
-1.  Die Projektvorlagen aus der PTVS-Beispiel-VSIX-Datei stehen unter **Python**, **Beispiele** bereit. Wählen Sie **Polls Django Web Project** aus, und klicken Sie auf „OK“, um das Projekt zu erstellen.
+1.  Die Projektvorlagen aus der PTVS-Beispiel-VSIX-Datei stehen unter **Python**, **Beispiele** bereit. Wählen Sie **Polls Django Web Project** aus, und klicken Sie auf "OK", um das Projekt zu erstellen.
 
   	![Dialogfeld "Neues Projekt"](./media/web-sites-python-ptvs-django-mysql/PollsDjangoNewProject.png)
 
@@ -99,7 +99,7 @@ Mit den folgenden Schritten können Sie eine Datenbank im Rahmen eines kostenlos
 
   	<!-- ![New Button](./media/web-sites-python-ptvs-django-mysql/PollsCommonAzurePlusNew.png)-->
 
-1.  Geben Sie die Zeichenfolge „**mysql**“ in das Suchfeld ein, klicken Sie auf **MySQL-Datenbank**, und klicken Sie anschließend auf **Erstellen**.
+1.  Geben Sie die Zeichenfolge "**mysql**" in das Suchfeld ein, klicken Sie auf **MySQL-Datenbank**, und klicken Sie anschließend auf **Erstellen**.
 
   	<!-- ![Choose Add-on Dialog](./media/web-sites-python-ptvs-django-mysql/PollsDjangoClearDBAddon1.png) -->
 
@@ -108,13 +108,13 @@ Mit den folgenden Schritten können Sie eine Datenbank im Rahmen eines kostenlos
   	<!-- ![Personalize Add-on Dialog](./media/web-sites-python-ptvs-django-mysql/PollsDjangoClearDBAddon2.png) -->
 
 1.  Klicken Sie nach der Erstellung der MySQL-Datenbank auf dem Datenbankblatt auf **Eigenschaften**.
-2.  Mithilfe der Schaltfläche „Kopieren“ können Sie den Wert für **VERBINDUNGSZEICHENFOLGE** in die Zwischenablage kopieren.
+2.  Mithilfe der Schaltfläche "Kopieren" können Sie den Wert für **VERBINDUNGSZEICHENFOLGE** in die Zwischenablage kopieren.
 
 ## Konfigurieren des Projekts
 
 In diesem Abschnitt konfigurieren wir unsere Web-App, sodass sie die soeben erstellte MySQL-Datenbank verwendet. Wir installieren außerdem weitere Python-Pakete, die für die Verwendung von MySQL-Datenbanken mit Django erforderlich sind. Anschließend führen wir die Web-App lokal aus.
 
-1.  Öffnen Sie in Visual Studio die Datei **settings.py** (im Ordner **Projektname**). Fügen Sie die Verbindungszeichenfolge temporär in den Editor ein. Die Verbindungszeichenfolge ist in folgendem Format:
+1.  Öffnen Sie in Visual Studio die Datei **settings.py** (im Ordner *<Projektname>*). Fügen Sie die Verbindungszeichenfolge temporär in den Editor ein. Die Verbindungszeichenfolge ist in folgendem Format:
 
         Database=<NAME>;Data Source=<HOST>;User Id=<USER>;Password=<PASSWORD>
 
@@ -146,7 +146,7 @@ In diesem Abschnitt konfigurieren wir unsere Web-App, sodass sie die soeben erst
 
 1.  Drücken Sie `F5`, um die Anwendung auszuführen. Die mittels **Beispielumfrage erstellen** erstellten Umfragen sowie die bei der Abstimmung erfassten Daten werden in der MySQL-Datenbank serialisiert.
 
-## Veröffentlichen Ihrer Web-App in Azure App Service
+## Veröffentlichen der Web-App in Azure App Service
 
 Das Azure .NET SDK bietet eine einfache Möglichkeit zum Bereitstellen Ihrer Web-App in Azure App Service.
 

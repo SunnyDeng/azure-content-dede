@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Ausführen von Hintergrundaufgaben mit Webaufträgen" 
+	pageTitle="Ausführen von Hintergrundaufgaben mit WebJobs" 
 	description="Erfahren Sie, wie Sie Hintergrundaufgaben in Azure-Web-Apps ausführen." 
 	services="app-service\web" 
 	documentationCenter="" 
@@ -17,13 +17,13 @@
 	ms.date="03/24/2015" 
 	ms.author="tdykstra"/>
 
-# Ausführen von Hintergrundaufgaben mit Webaufträgen
+# Ausführen von Hintergrundaufgaben mit WebJobs
 
 ## Übersicht
 
-Sie können Programme oder Skripts in Webaufträgen auf drei Arten in Ihrer [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-App ausführen: bei Bedarf, kontinuierlich oder nach einem Zeitplan. Für die Nutzung von Webaufträgen fallen keine zusätzlichen Kosten an.
+Sie können Programme oder Skripts in WebJobs auf drei Arten in Ihrer [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-App ausführen: bei Bedarf, kontinuierlich oder nach einem Zeitplan. Für die Nutzung von WebJobs fallen keine zusätzlichen Kosten an.
 
-Dieser Artikel zeigt, wie Sie Webaufträge mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) bereitstellen. Informationen zum Bereitstellen über Visual Studio oder einen kontinuierlichen Bereitstellungsprozess finden Sie unter [Bereitstellen von Azure-Webaufträgen in Azure-Web-Apps](websites-dotnet-deploy-webjobs.md).
+Dieser Artikel zeigt, wie Sie WebJobs mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) bereitstellen. Informationen zum Bereitstellen über Visual Studio oder einen kontinuierlichen Bereitstellungsprozess finden Sie unter [Bereitstellen von Azure WebJobs in Azure-Web-Apps](websites-dotnet-deploy-webjobs.md).
 
 Das Azure WebJobs-SDK vereinfacht zahlreiche WebJobs-Programmieraufgaben. Weitere Informationen finden Sie unter [Was ist das WebJobs-SDK?](websites-dotnet-webjobs-sdk.md).
 
@@ -41,7 +41,7 @@ Die folgenden Dateitypen werden akzeptiert:
 
 ## <a name="CreateOnDemand"></a>Erstellen eines bedarfsgesteuerten Webauftrags im Portal
 
-1. Klicken Sie auf dem Blatt **Web-App** im [Azure-Portal](http://portal.azure.com) auf **Alle Einstellungen > Webaufträge**, um das Blatt **Webaufträge** anzuzeigen.
+1. Klicken Sie auf dem Blatt **Web-App** im [Azure-Portal](http://portal.azure.com) auf **Alle Einstellungen > WebJobs**, um das Blatt **WebJobs** anzuzeigen.
 	
 	![Webauftrag, Blatt](./media/web-sites-create-web-jobs/wjblade.png)
 	
@@ -57,7 +57,7 @@ Die folgenden Dateitypen werden akzeptiert:
 	
 5. Aktivieren Sie **Erstellen**, um das Skript in Ihre Web-App hochzuladen.
 	
-	Der Name, den Sie dem Webauftrag gegeben haben, wird in der Liste auf dem Blatt **Webaufträge** angezeigt.
+	Der Name, den Sie dem Webauftrag gegeben haben, wird in der Liste auf dem Blatt **WebJobs** angezeigt.
 	
 6. Zum Ausführen des Webauftrags klicken Sie mit der rechten Maustaste in die Liste und klicken dann auf **Ausführen**.
 	
@@ -71,7 +71,7 @@ Die folgenden Dateitypen werden akzeptiert:
 	
 > [AZURE.NOTE]Wenn die Web-App auf mehr als einer Instanz ausgeführt wird, wird auf allen Instanzen ein kontinuierlich ausgeführter Webauftrag ausgeführt. Bedarfsgesteuerte und geplante Webaufträge werden auf einer einzigen Instanz ausgeführt, die für den Lastenausgleich durch Microsoft Azure ausgewählt wurde.
 	
-> Aktivieren Sie für die Web-App die Konfigurationseinstellung „Immer bereit“*, um sicherzustellen, dass fortlaufende Webaufträge auf allen Instanzen zuverlässig ausgeführt werden. Andernfalls wird die Ausführung unter Umständen beendet, wenn sich die SCM-Hostwebsite zu lange im Leerlauf befindet.
+> Aktivieren Sie für die Web-App die Konfigurationseinstellung "Immer bereit"*, um sicherzustellen, dass fortlaufende Webaufträge auf allen Instanzen zuverlässig ausgeführt werden. Andernfalls wird die Ausführung unter Umständen beendet, wenn sich die SCM-Hostwebsite zu lange im Leerlauf befindet.
 
 ## <a name="CreateScheduled"></a>Erstellen geplanter Webaufträge
 
@@ -139,7 +139,7 @@ Geplante Aufträge können auf den Seiten im Azure Scheduler des [alten Portals]
 	
 ## <a name="ViewJobHistory"></a>Anzeigen des Auftragsverlaufs
 
-1. Klicken Sie zum Anzeigen des Ausführungsverlaufs eines Auftrags (einschließlich der mit dem Webaufträge-SDK erstellten Aufträge) auf dem Webauftragsblatt in der Spalte **Protokolle** auf den zugehörigen Link. (Sie können das Zwischenablagesymbol verwenden, um die URL der Protokolldateiseite in die Zwischenablage zu kopieren, wenn Sie dies wünschen.)
+1. Klicken Sie zum Anzeigen des Ausführungsverlaufs eines Auftrags (einschließlich der mit dem WebJobs-SDK erstellten Aufträge) auf dem Webauftragsblatt in der Spalte **Protokolle** auf den zugehörigen Link. (Sie können das Zwischenablagesymbol verwenden, um die URL der Protokolldateiseite in die Zwischenablage zu kopieren, wenn Sie dies wünschen.)
 	
 	![Link "Protokolle"](./media/web-sites-create-web-jobs/wjbladelogslink.png)
 		
@@ -155,7 +155,7 @@ Geplante Aufträge können auf den Seiten im Azure Scheduler des [alten Portals]
 	
 	![Protokollausgabe herunterladen][DownloadLogOutput]
 	
-5. Der Link **Webaufträge** oben auf der Seite stellt eine einfache Möglichkeit dar, eine Liste der Webaufträge im Dashboard mit den Verlaufsdaten anzuzeigen.
+5. Der Link **WebJobs** oben auf der Seite stellt eine einfache Möglichkeit dar, eine Liste der Webaufträge im Dashboard mit den Verlaufsdaten anzuzeigen.
 	
 	![Link zur Liste der Webaufträge][WebJobsLinkToDashboardList]
 	
@@ -176,7 +176,7 @@ Geplante Aufträge können auf den Seiten im Azure Scheduler des [alten Portals]
 
 ## <a name="NextSteps"></a>Nächste Schritte
  
-Weitere Informationen finden Sie unter [Azure WebJobs Recommended Resources][WebJobsRecommendedResources] (in englischer Sprache).
+Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs][WebJobsRecommendedResources].
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).

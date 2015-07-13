@@ -8,7 +8,7 @@ Führen Sie die folgenden Schritte aus, um eine neue mobile App zu erstellen.
 
     Dies zeigt das Blatt **Neue Mobile App** an.
 
-2. Geben Sie einen Namen für die Mobile App ein. Er muss mindestens 8 Zeichen lang sein und die Kleinbuchstaben von a–z enthalten.
+2. Geben Sie einen Namen für die mobile App ein. Er muss mindestens 8 Zeichen lang sein und die Kleinbuchstaben (a bis z) enthalten.
 
 7. Wählen Sie eine Region aus. In diesem Lernprogramm verwenden wir **USA, Süden-Mitte**.
 
@@ -24,9 +24,9 @@ Führen Sie die folgenden Schritte aus, um eine neue mobile App zu erstellen.
 
 6. Erstellen Sie einen neuen Webhostingplan mit demselben Namen wie Ihre mobile App.
 
-    > [AZURE.NOTE]Geben Sie den Namen Ihres Webhostingplans ein, verwenden Sie dazu nicht Kopieren-und-Einfügen. Es erfolgt eine Überprüfung des Namens in diesem Feld, die fehlschlägt, wenn Sie nicht den Namen eingeben. Er muss nicht mit dem Namen der Website übereinstimmen (es müssen jedoch dieselben Regeln befolgt werden).
+    > [AZURE.NOTE]Geben Sie den Namen Ihres Webhostingplans ein. Verwenden Sie hierzu nicht das Kopieren und Einfügen. Es erfolgt eine Überprüfung des Namens in diesem Feld, die fehlschlägt, wenn Sie den Namen nicht eingeben. Er muss nicht mit dem Namen der Website übereinstimmen (es müssen jedoch dieselben Regeln befolgt werden).
 
-8. Wählen Sie eine Preisstufe. In diesem Lernprogramm verwenden wir **Standard 1**.
+8. Wählen Sie einen Tarif. In diesem Lernprogramm verwenden wir **Standard 1**.
 
     Die Einstellungsseite Ihrer neuen mobilen App wird in etwa wie folgt aussehen:
 
@@ -36,7 +36,7 @@ Führen Sie die folgenden Schritte aus, um eine neue mobile App zu erstellen.
 
 Sie haben nun ein neues mobiles App-Back-End erstellt, das Sie mit Ihren mobilen Apps verwenden können.
 
-> [AZURE.NOTE]Nachdem die mobile App erstellt wurde, navigieren Sie im Portal zum gerade erstellten SQL-Server (wählen Sie unbedingt den Server aus, nicht die Azure SQL-Datenbank). Klicken Sie dort auf den Einstellungsabschnitt, erweitern Sie den Firewall-Bereich, und ändern Sie "Allow access to Azure services". Wenn Sie dies nicht tun, funktioniert die App nicht.
+> [AZURE.NOTE]Nachdem die mobile App erstellt wurde, navigieren Sie im Portal zum gerade erstellten SQL-Server (wählen Sie unbedingt den Server aus, nicht die Azure SQL-Datenbank). Klicken Sie dort auf den Einstellungsabschnitt, erweitern Sie den Firewall-Bereich, und ändern Sie "Zugriff auf Azure-Dienste zulassen". Wenn Sie dies nicht tun, funktioniert die App nicht.
 
 <!-- URLs. -->
 [Azure-Portal]: https://portal.azure.com/

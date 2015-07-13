@@ -1,21 +1,3 @@
-<properties 
-   pageTitle="Erstellen eines neuen StorSimple-Manager-Diensts"
-   description="Beschreibt das Erstellen einer neuen Instanz des StorSimple-Manager-Diensts."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="04/28/2015"
-   ms.author="v-sharos" />
-
-
 #### So erstellen Sie einen neuen Dienst
 
 1. Melden Sie sich mit Ihren Microsoft-Kontoanmeldeinformationen beim Verwaltungsportal unter dieser URL an: [http://azure.microsoft.com/](http://azure.microsoft.com/).

@@ -95,8 +95,8 @@ Es ist auch möglich, den Instrumentationsschlüssel im Code festzulegen. Dadurc
 
 ```java
 
-    AppInsights.setup(this, "<YOUR-IKEY-GOES-HERE>");
-    AppInsights.start();
+    ApplicationInsights.setup(this, "<YOUR-IKEY-GOES-HERE>");
+    ApplicationInsights.start();
 ```
 
 
@@ -104,22 +104,22 @@ Es ist auch möglich, den Instrumentationsschlüssel im Code festzulegen. Dadurc
 
 Initialisieren Sie das SDK, und beginnen Sie mit der Nachverfolgung der Telemetrie.
 
-Fügen Sie der Stammaktivität Ihrer App den folgenden Import hinzu.
+Fügen Sie der Stammaktivität Ihrer App den folgenden Import hinzu:
 
 ```java
 
-     import com.microsoft.applicationinsights.TelemetryClient;
+     import com.microsoft.applicationinsights.library.ApplicationInsights;
 ```
 
 Fügen Sie dem `onCreate`-Rückruf der Aktivität Folgendes hinzu:
 
 ```java
 
-    AppInsights.setup(this);
-    AppInsights.start();
+    ApplicationInsights.setup(this.getApplicationContext(), this.getApplication());
+    ApplicationInsights.start();
 ```
 
-Sobald `AppInsights.start()` aufgerufen wird, beginnt das SDK mit dem Nachverfolgen von Android-Lebenszyklusaktivität und unbehandelten Ausnahmen.
+Sobald `ApplicationInsights.start()` aufgerufen wird, beginnt das SDK mit dem Nachverfolgen von Android-Lebenszyklusaktivität und unbehandelten Ausnahmen.
 
 > [AZURE.NOTE]Lebenszyklusereignisse der Anwendung werden nur im Android-SDK, Version 15 und höher (Ice Cream Sandwich+), erfasst.
 
@@ -139,9 +139,9 @@ Ein Beispiel für die Initialisierung und manuelle Telemetrieerfassung folgt.
       @Override
       protected void onCreate(Bundle savedInstanceState) {
         
-        AppInsights.setup(this);
+        ApplicationInsights.setup(this);
         //... other initialization code ...//
-        AppInsights.start();
+        ApplicationInsights.start();
         
         // track telemetry data
         TelemetryClient client = TelemetryClient.getInstance();
@@ -199,4 +199,4 @@ Klicken Sie auf ein beliebiges Diagramm, um weitere Details zu erhalten. Zum Bei
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

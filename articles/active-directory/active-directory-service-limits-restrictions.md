@@ -42,7 +42,7 @@ Derzeit können die Entitäten "User", "Group", "TenantDetail", "Device", "Appli
 - Erweiterungen des Typs "String" sind auf maximal 256 Zeichen begrenzt.
 - Erweiterungen des Typs "Binary" sind auf 256 Bytes beschränkt.
 - 100 Erweiterungswerte (für ALLE Typen und ALLE Anwendungen) können in jedes einzelne Objekt geschrieben werden.
-- Schemaerweiterungen sind nur in der Graph-API-Version "1.21-preview" verfügbar. Der Anwendung muss Schreibzugriff zum Registrieren einer Erweiterung gewährt werden.
+- Schemaerweiterungen sind nur in der Graph API-Version "1.21-preview" verfügbar. Der Anwendung muss Schreibzugriff zum Registrieren einer Erweiterung gewährt werden.
 
 ## Anwendungen
 
@@ -75,4 +75,4 @@ In einem Bericht können maximal 1.000 Zeilen angezeigt oder heruntergeladen wer
 
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

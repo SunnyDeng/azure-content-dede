@@ -42,7 +42,7 @@ Der Anwendungscode für "AzureWebDemo" in diesem Artikel wurde mit dem Azure Jav
 
 ### Erstellen und Konfigurieren von Cloudressourcen in Azure
 
-Zur Durchführung dieser Anleitung müssen Sie über ein aktives Azure-Abonnement verfügen und ein standardmäßiges Active Directory-Verzeichnis (AD) in Azure eingerichtet haben. 
+Zur Durchführung dieser Anleitung müssen Sie über ein aktives Azure-Abonnement verfügen und ein standardmäßiges Active Directory-Verzeichnis (AD) in Azure eingerichtet haben.
 
 
 ### Erstellen eines Active Directory-Verzeichnisses in Azure
@@ -110,7 +110,7 @@ Weitere Informationen finden Sie unter [Erstellen und Hochladen eines Verwaltung
 
 #### Hochladen des Zertifikats
 
-Um ein selbstsigniertes Zertifikat in Azure hochzuladen, wechseln Sie im klassischen Portal zur Seite **Einstellungen** und klicken dann auf die Registerkarte **Verwaltungszertifikate**. Klicken Sie im unteren Bereich der Seite auf **Hochladen**, und navigieren Sie zum Speicherort der CER-Datei, die Sie erstellt haben. 
+Um ein selbstsigniertes Zertifikat in Azure hochzuladen, wechseln Sie im klassischen Portal zur Seite **Einstellungen** und klicken dann auf die Registerkarte **Verwaltungszertifikate**. Klicken Sie im unteren Bereich der Seite auf **Hochladen**, und navigieren Sie zum Speicherort der CER-Datei, die Sie erstellt haben.
 
 
 #### Konvertieren der PFX-Datei in eine JKS-Datei
@@ -461,7 +461,7 @@ So rufen Sie FTP-Verbindungsinformationen aus dem Web-App-Blatt im [Azure-Portal
 
 1. Suchen Sie unter **Grundlegende Informationen** nach **FTP-Hostname**, und kopieren Sie diesen Wert. Es handelt sich um einen URI ähnlich wie `ftp://waws-prod-bay-NNN.ftp.azurewebsites.windows.net`.
 
-2. Suchen Sie unter **Grundlegende Informationen** nach **FTP/Benutzername für Bereitstellung**, und kopieren Sie diesen Wert. Dieser hat die Form *Name_Web-App\\Benutzername_Bereitstellung*, beispielsweise `WebDemoWebApp\deployer77`.
+2. Suchen Sie unter **Grundlegende Informationen** nach **FTP/Benutzername für Bereitstellung**, und kopieren Sie diesen Wert. Dieser hat die Form *Name_Web-App\Benutzername_Bereitstellung*, beispielsweise `WebDemoWebApp\deployer77`.
 
 So rufen Sie FTP-Verbindungsinformationen aus dem Veröffentlichungsprofil ab
 
@@ -542,7 +542,7 @@ Eine zweite Möglichkeit zum Veröffentlichen der Anwendung besteht in der Verwe
 1. Klicken Sie in FileZilla auf **Datei > Servermanager**.
 2. Klicken Sie im **Servermanager** auf **Neuer Server**. Unter **Eintrag auswählen** wird ein neuer, leerer FTP-Server angezeigt, für den Sie einen Namen eingeben müssen. Verwenden Sie in dieser Vorgehensweise `AzureWebDemo-FTP`.
 
-    Legen Sie auf der Registerkarte **Allgemein** die folgenden Einstellungen fest: – **Host:** Geben Sie den Wert für **FTP-Hostname** ein, den Sie aus dem Dashboard kopiert haben. – **Port:** (Lassen Sie dieses Feld leer, da es sich um eine passive Übertragung handelt und der Server den zu verwendenden Port ermittelt.) – **Protokoll:** FTP File Transfer Protocol - **Verschlüsselung:** Unverschlüsseltes FTP verwenden – **Verbindungsart:** Normal - **Benutzer:** Geben Sie den Benutzer für Bereitstellung/FTP ein, den Sie aus dem Dashboard kopiert haben. Dies ist der vollständige FTP-Benutzername in der Form *Name_Web-App\\Benutzername*. – **Kennwort:** Geben Sie das Kennwort ein, das Sie beim Festlegen der Anmeldeinformationen für die Bereitstellung angegeben haben. 
+    Legen Sie auf der Registerkarte **Allgemein** die folgenden Einstellungen fest: – **Host:** Geben Sie den Wert für **FTP-Hostname** ein, den Sie aus dem Dashboard kopiert haben. – **Port:** (Lassen Sie dieses Feld leer, da es sich um eine passive Übertragung handelt und der Server den zu verwendenden Port ermittelt.) – **Protokoll:** FTP File Transfer Protocol - **Verschlüsselung:** Unverschlüsseltes FTP verwenden – **Verbindungsart:** Normal - **Benutzer:** Geben Sie den Benutzer für Bereitstellung/FTP ein, den Sie aus dem Dashboard kopiert haben. Dies ist der vollständige FTP-Benutzername in der Form *Name_Web-App\Benutzername*. – **Kennwort:** Geben Sie das Kennwort ein, das Sie beim Festlegen der Anmeldeinformationen für die Bereitstellung angegeben haben.
 
     Wählen Sie auf der Registerkarte **Übertragungs-Einstellungen** die Option **Passiv**.
 
@@ -590,4 +590,4 @@ In dieser Vorgehensweise wird eine App Service-Web-App erstellt. Die Ressource w
   [10]: ./media/java-create-azure-website-using-java-sdk/kudu-console-jsphello-war-2.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

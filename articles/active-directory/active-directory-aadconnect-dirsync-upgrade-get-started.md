@@ -125,7 +125,7 @@ Bei der Installation von Azure AD Connect auf einem neuen Server wird DirSync ni
 1. Führen Sie den Azure AD Connect-Installer aus (MSI)
 2. Wenn der Bildschirm "Willkommen bei Azure AD Connect" angezeigt wird, beenden Sie den Assistenten durch Klicken auf das "X" in der oberen rechten Ecke des Fensters.
 3. Öffnen Sie eine Eingabeaufforderung.
-4. Führen Sie aus dem Installationsordner von Azure AD Connect (Standard: C:\Program Files\\Microsoft Azure Active Directory Connect) den folgenden Befehl aus:
+4. Führen Sie aus dem Installationsordner von Azure AD Connect (Standard: C:\Program Files\Microsoft Azure Active Directory Connect) den folgenden Befehl aus:
     * AzureADConnect.exe /migrate
 
 Azure AD Connect bietet Ihnen die folgende Benutzeroberfläche:
@@ -205,4 +205,4 @@ Folgendes ist eine Liste der erforderlichen und unterstützenden Komponenten, di
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Tarifempfehlungen für Azure SQL-Datenbank" 
-   description="Beim Ändern von Tarifen im Azure-Portal werden Tarifempfehlungen bereitgestellt, die den Tarif angeben, der für die Ausführung der Arbeitsauslastung einer vorhandenen Azure SQL-Datenbank am besten geeignet ist." 
+   description="Beim Ändern von Tarifen im Azure-Portal werden Tarifempfehlungen bereitgestellt, die den am besten geeigneten Tarif für die Ausführung der Arbeitsauslastung einer vorhandenen Azure SQL-Datenbank empfehlen." 
    services="sql-database" 
    documentationCenter="" 
    authors="stevestein" 
@@ -18,7 +18,7 @@
 
 # Tarifempfehlungen für SQL-Datenbank
 
- Beim Ändern von Tarifen im Azure-Portal werden Tarifempfehlungen bereitgestellt, die den Tarif angeben, der für die Ausführung der Arbeitsauslastung einer vorhandenen Azure SQL-Datenbank am besten geeignet ist.
+ Beim Ändern von Tarifen im Azure-Portal werden Tarifempfehlungen bereitgestellt, die den am besten geeigneten Tarif für die Ausführung der Arbeitsauslastung einer vorhandenen Azure SQL-Datenbank empfehlen.
 
 > [AZURE.NOTE]Tarifempfehlungen sind nur für Web- und Business-Datenbanken und nur im [Azure-Portal](https://portal.azure.com/) verfügbar.
 
@@ -30,8 +30,8 @@ Azure analysiert die aktuellen Leistungs- und Featureanforderungen durch Bewertu
 Diese Informationen werden analysiert, und der Tarif und die Leistungsstufe, die für die Ausführung der typischen Arbeitsauslastung der Datenbank und die Aufrechterhaltung ihrer aktuellen Featuregruppe am besten geeignet sind, werden empfohlen.
 
 - Der Dienst überprüft die historischen Daten der letzten 15 bis 30 Tage (Ressourcennutzung, Datenbankgröße und Datenbankaktivität) und führt einen Vergleich zwischen der Menge der verbrauchten Ressourcen und den tatsächlichen Einschränkungen der aktuell verfügbaren Dienstebenen und Leistungsstufen durch.
-- Daten werden in Intervallen von 15 Sekunden analysiert, und das Resultset jedes Intervalls wird in die vorhandene Dienstebene und Leistungsstufe kategorisiert, welche für die Arbeitsbelastung dieses Resultsets am besten geeignet sind.
-- Diese 15-Sekunden-Beispiele werden dann in die breitere Analyse von 15 bis 30 Tagen aggregiert, und die Dienstebene und Leistungsstufe, die 95 % der historischen Arbeitslast optimal bewältigen können, werden empfohlen.
+- Daten werden in Intervallen von 15 Sekunden analysiert, wobei das Resultset jedes Intervalls in die vorhandene Dienstebene und Leistungsstufe kategorisiert wird, welche für die Handhabung der Arbeitsauslastung dieses Resultsets am besten geeignet sind.
+- Diese 15-Sekunden-Beispiele werden dann in die breitere Analyse von 15 bis 30 Tagen aggregiert, und die Dienstebene und Leistungsstufe, die 95 % der historischen Arbeitsauslastung optimal bewältigen können, werden empfohlen.
 
 ### Recommendations
 
@@ -59,7 +59,7 @@ Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business
     ![Preisstufe][2]
 
 
-7. Nach dem Klicken auf die Kachel **Tarif** wird das Blatt **Empfohlene Tarife** angezeigt. Dort können Sie auf den empfohlenen Tarif klicken und dann auf die Schaltfläche **Auswählen**, um zu diesen Tarif zu wechseln.
+7. Nach dem Klicken auf die Kachel **Tarif** wird das Blatt **Empfohlene Tarife** angezeigt. Dort können Sie auf den empfohlenen Tarif klicken und dann auf die Schaltfläche **Auswählen**, um zu diesem Tarif zu wechseln.
 
     ![Anmelden für die Vorschau][4]
 
@@ -87,4 +87,7 @@ Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung e
 [4]: ./media/sql-database-pricing-tier-recommendations/choose-pricing-tier.png
 [5]: ./media/sql-database-pricing-tier-recommendations/usage-details.png
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=62-->

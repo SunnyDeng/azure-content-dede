@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/06/2015" 
+	ms.date="06/15/2015" 
 	ms.author="spelluru"/>
 
 # Erweiterte Szenarien für die Verwendung der Kopieraktivität in Azure Data Factory 
@@ -236,7 +236,6 @@ Die im Abschnitt "Structure" der Tabellendefinition angegebenen Datentypen werde
 		<ul>
 			<li> <b>TextFormat:</b> Alle Spaltentypen werden als Zeichenfolge behandelt, und für alle Spaltennamen wird "Prop_&lt;0-N>" festgelegt.</li> 
 			<li><b>AvroFormat:</b> Verwendet die integrierten Spaltentypen und -namen in der Avro-Datei.</li> 
-			<li><b>JsonFormat:</b> Alle Spaltentypen werden als Zeichenfolge behandelt und verwenden die integrierten Spaltennamen in der JSON-Datei.</li>
 		</ul>
 		</td>
 	</tr>
@@ -320,13 +319,13 @@ Beim Kopieren von Daten in SQL Server oder Azure SQL-Datenbank konnte eine vom B
 Das Feature der gespeicherten Prozedur nutzt [Tabellenwertparameter][table-valued-parameters].
 
 ## Angeben der Codierung für Textdateien
-Obwohl die UTF-8-Codierung sehr beliebt ist, verwenden Textdateien in Azure-Blob aus historischen Gründen häufig andere Codierungen. Anhand der **encodingName**-Eigenschaft können Sie die Codierung für Tabellen vom Typ "TextFormat" nach Codeseitennamen angeben. Eine Liste der gültigen Codierungsnamen finden Sie unter "Encoding.EncodingName-Eigenschaft". Beispiel: Windows-1250 oder Shift-JIS. Der Standardwert lautet "UTF-8". Gültige Codierungsnamen finden Sie in [Codierungsklasse](https://msdn.microsoft.com/library/system.text.encoding(v=vs.110).aspx).
+Obwohl die UTF-8-Codierung sehr beliebt ist, verwenden Textdateien in Azure-Blob aus historischen Gründen häufig andere Codierungen. Anhand der **encodingName**-Eigenschaft können Sie die Codierung für Tabellen vom Typ "TextFormat" nach Codeseitennamen angeben. Eine Liste der gültigen Codierungsnamen finden Sie unter "Encoding.EncodingName-Eigenschaft". Beispiel: Windows-1250 oder Shift-JIS. Der Standardwert lautet "UTF-8". Gültige Codierungsnamen finden Sie unter [Codierungsklasse](https://msdn.microsoft.com/library/system.text.encoding.aspx).
 
 ## Weitere Informationen
 
 - [Beispiele für die Verwendung der Kopieraktivität][copy-activity-examples]
 - [Kopieren von Daten mit Azure Data Factory][adf-copyactivity]
-- [Kopieraktivität: Referenz zur JSON-Skipterstellung](https://msdn.microsoft.com/library/dn835035.aspx)
+- [Kopieraktivität: Referenz zur JSON-Skripterstellung](https://msdn.microsoft.com/library/dn835035.aspx)
 - [Video: Einführung in die Kopieraktivität mit Azure Data Factory][copy-activity-video]
 
 
@@ -341,10 +340,11 @@ Obwohl die UTF-8-Codierung sehr beliebt ist, verwenden Textdateien in Azure-Blob
 
 [json-script-reference]: http://go.microsoft.com/fwlink/?LinkId=516971
 [cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
-[azure-table-data-type]: https://msdn.microsoft.com/en-us/library/azure/dd179338.aspx
+[azure-table-data-type]: https://msdn.microsoft.com/de-de/library/azure/dd179338.aspx
 
 [image-data-factory-copy-actvity]: ./media/data-factory-copy-activity/VPNTopology.png
 [image-data-factory-column-mapping-1]: ./media/data-factory-copy-activity-advanced/ColumnMappingSample1.png
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity-advanced/ColumnMappingSample2.png
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

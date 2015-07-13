@@ -1,20 +1,3 @@
-<properties 
-   pageTitle="Erstellen einer benutzerdefinierten StorSimple-Sicherungsrichtlinie"
-   description="Erläutert, wie Sie den StorSimple-Manager-Dienst zum Erstellen einer benutzerdefinierten Sicherungsrichtlinie verwenden."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="05/14/2015"
-   ms.author="v-sharos" />
-
 #### So erstellen Sie eine benutzerdefinierte Sicherungsrichtlinie
 
 1. Klicken Sie auf der Seite **Geräte** auf **Sicherungsrichtlinien** und anschließend auf **Hinzufügen**.
@@ -55,4 +38,4 @@
 
     ![Benutzerdefinierte Sicherungsrichtlinie](./media/storsimple-create-custom-backup-policy/HCS_CustomBackupPolicyM-include.png).
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

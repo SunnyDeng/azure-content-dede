@@ -21,11 +21,11 @@ Der Dateispeicher umfasst die folgenden Komponenten:
 
 -   **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/library/azure/dn249410.aspx) (Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher, in englischer Sprache).
 
--   **Freigabe:** Eine Dateispeicherfreigabe ist eine SMB 2.1-Dateifreigabe in Azure. Alle Verzeichnisse und Dateien müssen in der übergeordneten Freigabe erstellt werden. Ein Konto kann eine unbegrenzte Anzahl von Freigaben enthalten, und eine Freigabe kann eine unbegrenzte Anzahl von Dateien speichern, bis die Kapazitätsgrenze des Speicherkontos erreicht ist.
+-   **Freigabe:** Eine Datenspeicherfreigabe ist eine SMB 2.1-Dateifreigabe in Azure. Alle Verzeichnisse und Dateien müssen in der übergeordneten Freigabe erstellt werden. Ein Konto kann eine unbegrenzte Anzahl von Freigaben enthalten, und eine Freigabe kann eine unbegrenzte Anzahl von Dateien speichern, bis die Kapazitätsgrenze des Speicherkontos erreicht ist.
 
--   **Verzeichnis:** eine optionale Hierarchie von Verzeichnissen.
+-   **Verzeichnis:** Eine optionale Hierarchie von Verzeichnissen.
 
--	**Datei:** eine Datei in der Freigabe. Die Datei kann bis zu 1 TB groß sein.
+-	**Datei:** Eine Datei in der Freigabe. Die Datei kann bis zu 1 TB groß sein.
 
 -   **URL-Format:** Dateien sind über das folgende URL-Format adressierbar: https://`<storage
     account>`.file.core.windows.net/`<share>`/`<directory/directories>`/`<file>`

@@ -304,7 +304,7 @@ Es gibt einige [Beschränkungen hinsichtlich der Anzahl von Metriken](#limits), 
 
 In einer Geräte- oder Webseiten-App werden die Telemetriedaten zu den Seitenaufrufen standardmäßig gesendet, wenn die einzelnen Bildschirme oder Seiten geladen werden. Sie können dies jedoch so ändern, dass Seitenaufrufe zu zusätzlichen oder anderen verfolgt werden. Angenommen, Sie möchten in einer App mit Registerkarten oder Blättern eine "Seite" nachverfolgen, sobald der Benutzer ein neues Blatt öffnet.
 
-![Fokus für Nutzung auf dem Blatt "Übersicht"](./media/app-insights-web-track-usage-custom-events-metrics/appinsights-47usage-2.png)
+![Lupe für Nutzung auf dem Blatt "Übersicht"](./media/app-insights-web-track-usage-custom-events-metrics/appinsights-47usage-2.png)
 
 Benutzer- und Sitzungsdaten werden als Eigenschaften zusammen mit Seitenaufrufen gesendet, damit die Benutzer- und Sitzungsdiagramme aktiv werden, sobald Telemetriedaten zu den Seitenaufrufen vorliegen.
 
@@ -441,7 +441,7 @@ Eine typische Verwendung besteht in der Identifikation von Telemetriedaten aus v
     TelemetryConfiguration.getActive().getContextInitializers().add(new MyTelemetryInitializer());
 
 
-Im JavaScript-Webclient gibt es zurzeit keine Möglichkeit, Standardeigenschaften festzulegen.
+Im JavaScript-Webclient können derzeit keine Standardeigenschaften festgelegt werden.
 
 ## <a name="dynamic-ikey"></a>Dynamischer Instrumentationsschlüssel
 

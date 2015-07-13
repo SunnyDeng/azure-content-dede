@@ -18,39 +18,19 @@
 
 # Was sind API-Apps?
 
-API-Apps sind Bestandteil des [Azure App Service](../app-service/app-service-value-prop-what-is.md)-Pakets, das außerdem Web-Apps, mobile Apps und Logik-Apps umfasst.
+API-Apps bieten eine leistungsfähige Plattform sowie ein Ökosystem zum Erstellen, Hosten, Nutzen und Bereitstellen von APIs in der Cloud und in lokalen Systemen. Stellen Sie Ihre API als API-App bereit, und profitieren Sie von einer für Unternehmen geeigneten Sicherheit, einfacher Zugriffssteuerung, hybrider und SaaS-Konnektivität, automatischer SDK-Generierung und nahtloser Integration in [Logik-Apps](../app-service-logic/app-service-logic-what-are-logic-apps.md).
+
+API-Apps sind Teil des [Azure App Service](../app-service/app-service-value-prop-what-is.md), der auch Web-Apps, mobile Apps und Logik-Apps umfasst.
 
 ![](./media/app-service-api-apps-why-best-platform/appservicesuite.png)
 
-Die API-Apps in diesem Paket bieten eine leistungsfähige Plattform sowie ein Ökosystem zum Erstellen, Hosten, Nutzen und Bereitstellen von APIs in der Cloud und in lokalen Systemen.
-
->[AZURE.NOTE] [Azure API Management](/services/api-management/) ist ein separater Dienst, der Features wie Endpunktkonsolidierung und Drosselung bereitstellt. Sie können API Management mit API-Apps einsetzen.
->
->API-Apps befindet sich derzeit in der öffentlichen Vorschau. API-Apps setzen auf [App Service-Web-Apps](../app-service-web/app-service-web-overview.md) auf, einem allgemein verfügbaren Dienst zum Erstellen und Hosten sicherer, unternehmenskritischer Anwendungen weltweit. Wenn Sie jetzt nach einem allgemein verfügbaren Dienst zum Erstellen Ihrer API suchen, ist Web-Apps eine hervorragende Option. Sobald API-Apps allgemein verfügbar ist, wird eine Möglichkeit bereitgestellt, vorhandene Web-Apps zu migrieren und die Funktionen von API-Apps zu nutzen.
-
 ## Warum API-Apps?
 
-Eine API-App ist eine [App Service-Web-App](../app-service-web/app-service-web-overview.md) mit zusätzlichen Funktionen zur Verbesserung von Entwicklung, Bereitstellung, Veröffentlichung, Nutzung, Verwaltung und Vermarktung von RESTful-Web-APIs.
-
-### Web-App-Features für Webdienste
-
-Sie können eine Web-App zum Hosten eines Webdiensts verwenden und erhalten alle Webhostingfeatures der Azure App Service-Plattform:
-
-- Automatisches Betriebssystempatching
-- Sicherheit auf Unternehmensniveau
-- Hohe Verfügbarkeit
-- Automatische Skalierung und Lastenausgleich
-- Verwenden von [WebJobs](../app-service-web/websites-webjobs-resources.md) zur Hintergrundverarbeitung
-- Einfache und schnelle Bereitstellung und [zahlreiche Optionen für die kontinuierliche Bereitstellung](../app-service-web/web-sites-deploy.md)
-- Zugriff auf lokale Daten mit [Hybridverbindungen](../integration-hybrid-connection-overview.md) und [VNET](../app-service-web/web-sites-integrate-with-vnet.md)
-
-### API-Apps-Features, die jetzt in der Vorschau verfügbar sind
-
-Wenn Sie anstelle von Web-Apps API-Apps zum Hosten Ihrer Webdienste verwenden, bietet App Service die folgenden zusätzlichen Funktionen:
+API-Apps bieten Funktionen zum Entwickeln, bereitstellen, veröffentlichen, nutzen und verwalten von RESTful-Web-APIs. App Service stellt die folgenden Funktionen bereit, die heute als öffentliche Vorschau verfügbar sind:
 
 - **Einfache Nutzung** – Die integrierte [Swagger](http://swagger.io/)-Unterstützung ermöglicht es, dass Ihre APIs auf einfache Weise von zahlreichen Clients genutzt werden können. Über das API-Apps SDK kann Clientcode für Ihre APIs in zahlreichen verschiedenen Sprachen generiert werden, darunter C#, Java und Javascript.
 
-- **Einfache Zugriffssteuerung** – Integrierte Authentifizierungsdienste bieten Unterstützung für Azure Active Directory oder Drittanbieterdienste wie z. B. Facebook und Twitter. Sie können eine API-App vor einem nicht authentifizierten Zugriff schützen, ohne Änderungen an Ihrem Code vornehmen zu müssen. Wenn Sie mit den von [Azure Mobile Services](../mobile-services-windows-dotnet-how-to-use-client-library.md#authentication) bereitgestellten Authentifizierungsdiensten vertraut sind: API-Apps baut auf diesem Framework auf und weitet es auf Webdienste aus, die über API-Apps gehostet werden. Mit dem App Service SDK können Sie außerdem eine vereinfachte Syntax für Autorisierungscode verwenden. Weitere Informationen finden Sie unter [Schützen einer API-App](app-service-api-dotnet-add-authentication.md).
+- **Einfache Zugriffssteuerung** – Integrierte Authentifizierungsdienste bieten Unterstützung für Azure Active Directory oder Drittanbieterdienste wie z. B. Facebook und Twitter. Sie können eine API-App vor einem nicht authentifizierten Zugriff schützen, ohne Änderungen an Ihrem Code vornehmen zu müssen. Wenn Sie mit den von [Azure Mobile Services](../mobile-services-windows-dotnet-how-to-use-client-library.md#authentication) bereitgestellten Authentifizierungsdiensten vertraut sind: API-Apps baut auf diesem Framework auf und weitet es auf APIs aus, die über API-Apps gehostet werden. Mit dem App Service SDK können Sie außerdem eine vereinfachte Syntax für Autorisierungscode verwenden. Weitere Informationen finden Sie unter [Schützen einer API-App](app-service-api-dotnet-add-authentication.md).
 
 - **Einfache Verbindung mit SaaS-Plattformen** – Die [Connector-API-Apps](../app-service-logic/app-service-logic-what-are-biztalk-api-apps.md) im Azure Marketplace werden von Microsoft und Drittanbietern bereitgestellt, um den erforderlichen Code zur Interaktion mit SalesForce, Office 365, Twitter, Facebook, Dropbox und vielen weiteren Diensten zu vereinfachen.
 
@@ -58,7 +38,9 @@ Wenn Sie anstelle von Web-Apps API-Apps zum Hosten Ihrer Webdienste verwenden, b
 
 - **Visual Studio-Integration** – Dedizierte Tools in Visual Studio optimieren das [Erstellen](app-service-dotnet-create-api-app.md), [Bereitstellen](app-service-dotnet-deploy-api-app.md), [Debuggen](app-service-dotnet-remotely-debug-api-app) und Verwalten von API-Apps.
 
-Nutzen Sie eigene APIs in unveränderter Form: Es ist nicht erforderlich, den Code vorhandener APIs zu ändern, um all diese Features zu nutzen – stellen Sie lediglich Ihren Code in einer API-App bereit. Verwenden Sie ASP.NET, Java, PHP, Node.js oder Python für Ihre APIs.
+Nutzen Sie eigene APIs in unveränderter Form: Es ist nicht erforderlich, den Code vorhandener APIs zu ändern, um all die API-App-Features zu nutzen – stellen Sie lediglich Ihren Code in einer API-App bereit. Verwenden Sie ASP.NET, Java, PHP, Node.js oder Python für Ihre APIs.
+
+Darüber hinaus enthalten API-Apps [Features von App Service-Web-Apps](../app-service-web/app-service-web-overview.md).
 
 ### API-Apps-Features, die in Zukunft verfügbar sein werden
 
@@ -71,6 +53,10 @@ Bald wird für die API-Apps-Plattform ein umfangreiches Ökosystem an APIs berei
 - **Automatische Updates** – Wenn Sie den Code für ein API-App-Paket aktualisieren, das Sie freigegeben haben, können Sie das Update per Push an alle Benutzer weitergeben, die Ihre API-App installiert haben und ausführen. Dies funktioniert für Änderungen ohne Funktionsbeeinträchtigung (non-breaking) und für Benutzer, die den Empfang von Updates aktiviert haben.
 
 Viele dieser Features, beispielsweise Marketplace und automatische Updates, stehen für die von Microsoft bereitgestellten API-Apps bereits zur Verfügung.
+
+>[AZURE.NOTE] [Azure API Management](/services/api-management/) ist ein separater Dienst, der Features wie Endpunktkonsolidierung und Drosselung bereitstellt. Sie können API Management mit API-Apps einsetzen.
+>
+>API-Apps befindet sich derzeit in der öffentlichen Vorschau. API-Apps setzen auf [App Service-Web-Apps](../app-service-web/app-service-web-overview.md) auf, einem allgemein verfügbaren Dienst zum Erstellen und Hosten sicherer, unternehmenskritischer Anwendungen weltweit. Wenn Sie jetzt nach einem allgemein verfügbaren Dienst zum Erstellen Ihrer API suchen, ist Web-Apps eine hervorragende Option. Sobald API-Apps allgemein verfügbar sind, wird eine Möglichkeit bereitgestellt, vorhandene Web-Apps zu migrieren und die Funktionen von API-Apps zu nutzen.
 
 ## API-Apps – Konzepte ##
 

@@ -1,11 +1,11 @@
 
 1. Falls Sie Ihre Anwendung noch nicht registriert haben, navigieren Sie im Entwicklungscenter für Windows Store-Anwendungen zu [Anwendungsseite senden], melden Sie sich mit Ihrem Microsoft-Konto an und klicken Sie dann auf **Anwendungsname**.
 
-   ![](./media/mobile-services-register-windows-store-app/mobile-services-submit-win8-app.png)
+   	![](./media/mobile-services-register-windows-store-app/mobile-services-submit-win8-app.png)
 
 2. Wählen Sie **Eine neue App erstellen, indem Sie einen eindeutigen Namen reservieren** und klicken Sie auf **Weiter**. Geben Sie dann einen Namen für Ihre App in **App-Name** ein, klicken Sie auf **App-Name reservieren**, und klicken Sie dann auf **Speichern**.
 
-   ![](./media/mobile-services-register-windows-store-app/mobile-services-win8-app-name.png)
+   	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-app-name.png)
 
    	Auf diese Weise wird eine neue Windows Store-Registrierung für Ihre Anwendung erstellt.
 
@@ -25,11 +25,11 @@
 
 6. Klicken Sie auf der Windows-Entwicklungscenter-Seite für Ihre neue Anwendung auf **Dienste**.
 
-   ![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit-app.png)
+   	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit-app.png)
 
 7. Klicken Sie auf der Seite "Dienste" auf **Live-Dienste-Website** unter **Azure Mobile Services**.
 
-![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit2-app.png)
+	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit2-app.png)
 
 8. Klicken Sie auf **API-Einstellungen**, aktivieren Sie das Kontrollkästchen **Mobile oder Desktop-Client-App**, legen Sie die mobile Dienst-URL als **Zieldomäne** fest, geben Sie den Wert `https://<mobile_service>.azure-mobile.net/login/microsoftaccount/` in die **Umleitungs-URL** ein, und klicken Sie anschließend auf **Speichern**.
 
@@ -37,7 +37,7 @@
 
 9. Notieren Sie sich unter **App-Einstellungen** die Werte von **Client-ID**, **Geheimer Clientschlüssel** und **Paket-Sicherheits-ID (SID)**.
 
-   ![](./media/mobile-services-register-windows-store-app/mobile-services-win8-app-push-auth.png)
+   	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-app-push-auth.png)
 
     >[AZURE.NOTE]Der geheime Clientschlüssel und die Paket-SID sind wichtige Sicherheitsanmeldeinformationen. Geben Sie diese Informationen nicht weiter und verteilen Sie sie nicht mit Ihrer Anwendung.
 
@@ -62,4 +62,4 @@ Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verw
 [Anwendungsseite senden]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!--HONumber=54-->
+<!---HONumber=62-->

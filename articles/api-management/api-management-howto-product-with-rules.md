@@ -13,16 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="06/10/2015"
+	ms.date="06/18/2015"
 	ms.author="sdanie"/>
 
 # Schützen Ihrer API mithilfe von Aufruflimits in Azure API Management
 
 In diesem Leitfaden wird gezeigt, wie einfach Sie Ihre Back-End-API schützen können, indem Sie Richtlinien für Aufruflimits und Kontingente mithilfe von API Management konfigurieren.
-
-Weitere Informationen und eine Demo zum Einstellen von Aufruflimits und Kontingenten finden Sie im folgenden Video.
-
-> [AZURE.VIDEO rate-limits-and-quotas]
 
 In diesem Lernprogramm erstellen Sie ein kostenloses API-Testprodukt, das bis zu 10 Aufrufe pro Minute und maximal 200 Aufrufe pro Woche erlaubt. Anschließend veröffentlichen Sie die API und testen die Richtlinie für das Aufruflimit.
 
@@ -240,6 +236,9 @@ Wenn das Aufruflimit von 10 Aufrufen pro Minute aktiv ist, werden nachfolgende A
 ## <a name="next-steps"> </a>Nächste Schritte
 
 -	Lesen Sie die anderen Themen im Lernprogramm [Erste Schritte bei der erweiterten API-Konfiguration][].
+-	Das folgende Video zeige eine Demo zum Festlegen von Aufruflimits und Kontingenten.
+
+> [AZURE.VIDEO rate-limits-and-quotas]
 
 
 [api-management-management-console]: ./media/api-management-howto-product-with-rules/api-management-management-console.png

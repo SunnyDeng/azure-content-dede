@@ -19,28 +19,27 @@
 
 # Herstellen einer Verbindung mit einem Media Services-Konto über die Media Services-REST-API
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
 
 In diesem Thema wird beschrieben, wie bei der Programmierung mit der Media Services-REST-API eine programmgesteuerte Verbindung mit Microsoft Azure Media Services hergestellt wird.
 
-Für den Zugriff auf Microsoft Azure Media Services benötigen Sie: Ein von Azure Access Control Services (ACS) bereitgestelltes Zugriffstoken und den Media Services-URI selbst. Zur Erstellung dieser Anforderungen können Sie eine beliebige Methode verwenden, solange Sie die richtigen Headerwerte angeben und das Zugriffstoken beim Aufruf von Media Services ordnungsgemäß übergeben.
+Für den Zugriff auf Microsoft Azure Media Services benötigen Sie: ein von Azure Access Control Services (ACS) bereitgestelltes Zugriffstoken und den Media Services-URI selbst. Zur Erstellung dieser Anforderungen können Sie eine beliebige Methode verwenden, solange Sie die richtigen Headerwerte angeben und das Zugriffstoken beim Aufruf von Media Services ordnungsgemäß übergeben.
 
 Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der bei der Verbindung mit Media Services über die Media Services-REST-API zur Anwendung kommt:
 
 1. Abrufen eines Zugriffstokens 
 2. Herstellen einer Verbindung mit dem Media Services-URI 
 
-	>[AZURE.NOTE] Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden.
-	Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
+	>[AZURE.NOTE]Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden. Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
 
-3. Senden Sie nachfolgende API-Aufrufe an die neue URL. 
+3. Senden Sie nachfolgende API-Aufrufe an die neue URL.
 
 	Wenn nach einem Verbindungsversuch folgende Meldung angezeigt wird:
 
-		HTTP/1.1 301 Permanent verschoben
-		Standort: https://wamsbayclus001rest-hs.cloudapp.net/api/
+		HTTP/1.1 301 Moved Permanently
+		Location: https://wamsbayclus001rest-hs.cloudapp.net/api/
 
-	Senden Sie nachfolgende API-Aufrufe an https://wamsbayclus001rest-hs.cloudapp.net/api/..
+	Senden Sie nachfolgende API-Aufrufe an https://wamsbayclus001rest-hs.cloudapp.net/api/.
 
 ##Abrufen eines Zugriffstokens
 
@@ -53,7 +52,7 @@ Das folgende Beispiel zeigt den HTTP-Anforderungsheader bzw. -text, die zum Abru
 	POST https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13 HTTP/1.1
 	Content-Type: application/x-www-form-urlencoded
 	Host: wamsprodglobal001acs.accesscontrol.windows.net
-	Inhaltslänge: 120
+	Content-Length: 120
 	Expect: 100-continue
 	Connection: Keep-Alive
 	Accept: application/json
@@ -61,14 +60,14 @@ Das folgende Beispiel zeigt den HTTP-Anforderungsheader bzw. -text, die zum Abru
 	
 **Text**:
 
-Sie müssen den "client_id"-Wert und den "client_secret"-Wert im Text dieser Anforderung überprüfen. Die Werte "client_id" und "client_secret" entsprechen dem "AccountName"-Wert und dem "AccountKey"-Wert. Diese Werte werden Ihnen von Media Services bei der Einrichtung Ihres Kontos bereitgestellt. 
+Sie müssen den "client_id"-Wert und den "client_secret"-Wert im Text dieser Anforderung überprüfen. Die Werte "client_id" und "client_secret" entsprechen dem "AccountName"-Wert und dem "AccountKey"-Wert. Diese Werte werden Ihnen von Media Services bei der Einrichtung Ihres Kontos bereitgestellt.
 
 Beachten Sie, dass der "AccountKey" für Ihr Media Services-Konto URL-codiert sein muss (siehe [Prozentcodierung](http://tools.ietf.org/html/rfc3986#section-2.1)), wenn Sie ihn als "client_secret"-Wert in Ihrer Zugriffstokenanforderung verwenden.
 
 	grant_type=client_credentials&client_id=ams_account_name&client_secret=URL_encoded_ams_account_key&scope=urn%3aWindowsAzureMediaServices
 
 
-Beispiel: 
+Beispiel:
 
 	grant_type=client_credentials&client_id=amstestaccount001&client_secret=wUNbKhNj07oqjqU3Ah9R9f4kqTJ9avPpfe6Pk3YZ7ng%3d&scope=urn%3aWindowsAzureMediaServices
 
@@ -94,8 +93,7 @@ Das folgende Beispiel zeigt die HTTP-Antwort, die das Zugriffstoken im Antwortte
 	}
 	
 
->[AZURE.NOTE]
-Es wird empfohlen, den access_token-Wert und den expires_in-Wert in einem externen Speicher zwischenzuspeichern. Die Tokendaten können später aus dem Speicher abgerufen und in den Media Services-REST-API-Aufrufen wiederverwendet werden. Dies ist besonders in Szenarien sinnvoll, in denen das Token auf sichere Weise von mehreren Prozessen oder Computern gemeinsam verwendet werden kann.
+>[AZURE.NOTE]Es wird empfohlen, den access_token-Wert und den expires_in-Wert in einem externen Speicher zwischenzuspeichern. Die Tokendaten können später aus dem Speicher abgerufen und in den Media Services-REST-API-Aufrufen wiederverwendet werden. Dies ist besonders in Szenarien sinnvoll, in denen das Token auf sichere Weise von mehreren Prozessen oder Computern gemeinsam verwendet werden kann.
 
 Überwachen Sie den expires_in-Wert des Zugriffstokens, und aktualisieren Sie Ihre REST-API-Aufrufe nach Bedarf anhand neuer Token.
 
@@ -105,7 +103,7 @@ Der Stamm-URI für Media Services lautet https://media.windows.net/. Sie sollten
 
 Beachten Sie, dass der Stamm-URI für das Hochladen und Herunterladen von Medienobjektdateien https://yourstorageaccount.blob.core.windows.net/ lautet. Dabei entspricht der Speicherkontoname dem Namen, den Sie bei der Einrichtung des Media Services-Kontos verwendet haben.
 
-Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für Media Services (https://media.windows.net/). Auf die Anforderung wird eine 301 Redirect-Antwort zurückgegeben. Die nachfolgende Anforderung wird mithilfe des neuen URIs (https://wamsbayclus001rest-hs.cloudapp.net/api/) gesendet.     
+Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für Media Services (https://media.windows.net/). Auf die Anforderung wird eine 301 Redirect-Antwort zurückgegeben. Die nachfolgende Anforderung wird mithilfe des neuen URI gesendet (https://wamsbayclus001rest-hs.cloudapp.net/api/).
 
 **HTTP-Anforderung**:
 	
@@ -133,7 +131,7 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 	</body></html>
 
 
-**HTTP-Anforderung** (mit den neuen URI):
+**HTTP-Anforderung** (mit dem neuen URI):
 			
 	GET https://wamsbayclus001rest-hs.cloudapp.net/api/ HTTP/1.1
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f19258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421500579&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=ElVWXOnMVggFQl%2ft9vhdcv1qH1n%2fE8l3hRef4zPmrzg%3d
@@ -161,7 +159,7 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 	 
 
 
->[AZURE.NOTE] Nachdem Sie den neuen URI abgerufen haben, verwenden Sie ihn für die Kommunikation mit Media Services. 
+>[AZURE.NOTE]Nachdem Sie den neuen URI abgerufen haben, verwenden Sie ihn für die Kommunikation mit Media Services.
 
 
 <!-- Anchors. -->
@@ -169,5 +167,4 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 
 <!-- URLs. -->
 
-
-<!--HONumber=52--> 
+<!---HONumber=62-->

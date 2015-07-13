@@ -81,7 +81,7 @@ Wenn Sie im [Azure-Vorschauportal] zum Blatt für die Ressourcengruppe wechseln,
 
 ![Diagramm der Ressourcengruppe](./media/app-service-api-dotnet-add-authentication/rgdiagram.png)
 
-### Konfigurieren der API-App zum Verwenden der Authentifizierung
+### <a id="apiapp"></a>Konfigurieren der API-App zum Verwenden der Authentifizierung
 
 Um Ihre API-App so zu konfigurieren, dass nur authentifizierte Anforderungen akzeptiert werden, legen Sie den Zugriff **Öffentlich (authentifiziert)** fest. Anschließend konfigurieren Sie das Gateway für eine Authentifizierung über einen Anbieter wie Azure Active Directory, Google oder Facebook.
 

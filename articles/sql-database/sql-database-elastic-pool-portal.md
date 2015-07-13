@@ -1,19 +1,19 @@
-<properties
-	pageTitle="Erstellen und Verwalten eines elastischen SQL-Datenbankpools (Vorschau)"
-	description="Erstellen Sie einen einzelnen Pool von Ressourcen, den Sie in einer Gruppe von Azure SQL-Datenbanken übergreifend nutzen können."
-	services="sql-database"
-	documentationCenter=""
-	authors="stevestein"
-	manager="jeffreyg"
+<properties 
+	pageTitle="Erstellen und Verwalten eines elastischen SQL-Datenbankpools (Vorschau)" 
+	description="Erstellen Sie einen einzelnen Pool von Ressourcen, den Sie in einer Gruppe von Azure SQL-Datenbanken übergreifend nutzen können." 
+	services="sql-database" 
+	documentationCenter="" 
+	authors="stevestein" 
+	manager="jeffreyg" 
 	editor=""/>
 
-<tags
+<tags 
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="04/29/2015"
-	ms.author="sstein"
+	ms.date="06/24/2015" 
+	ms.author="sstein" 
 	ms.workload="data-management" 
-	ms.topic="get-started-article"
+	ms.topic="article" 
 	ms.tgt_pltfrm="NA"/>
 
 
@@ -26,11 +26,11 @@
 Dieser Artikel beschreibt, wie Sie einen elastischen Pool mit dem [Azure-Portal](https://portal.azure.com) erstellen.
 
 Elastische Pools vereinfachen die Erstellung, Wartung und Verwaltung von sowohl der Leistung als auch der Kosten für eine große Anzahl von Datenbanken.
-
+ 
 
 > [AZURE.NOTE]Elastische Pools sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar.
 
-
+ 
 
 
 ## Voraussetzungen
@@ -73,14 +73,14 @@ Die Preisgestaltung für elastische Pools ähnelt im Prinzip der für die SQL-Da
 
 ### Hinzufügen von Datenbanken
 
-Sie können zu jedem Zeitpunkt bestimmte Datenbanken auswählen, die in den Pool aufgenommen werden sollen. Wenn Sie einen neuen Pool erstellen, empfiehlt Azure die Datenbanken, die von einem Pool profitieren, und kennzeichnet diese für die Aufnahme. Azure bewertet den Verlauf der Datenbankennutzung und empfiehlt einen elastischen Pool, wenn dies kostengünstiger als die Verwendung von Leistungsstufen für einzelne Datenbanken ist. Wenn ein elastischer Pool empfohlen wird, bietet Azure eine Empfehlung für die Anzahl der Pool-DTUs, Höchst- und Tiefstwerte für DTU-Einstellungen für jede Datenbank im Pool und eine Liste empfohlener Datenbanken. Damit eine Datenbank als Kandidat für den elastischen Pool berücksichtigt wird, muss sie mindestens 14 Tage bestehen und darf nicht im Tarif "Premium" ausgeführt werden (die öffentliche Vorschauversion ist auf "Standard" beschränkt, deshalb gelten Premium-Datenbanken nicht als mögliche Kandidaten). Sie können alle auf dem Server verfügbaren Datenbanken hinzufügen, oder Sie aktivieren oder deaktivieren Datenbanken aus der ursprünglichen Liste nach Bedarf.
+Sie können zu jedem Zeitpunkt bestimmte Datenbanken auswählen, die in den Pool aufgenommen werden sollen. Wenn Sie einen neuen Pool erstellen, empfiehlt Azure die Datenbanken, die von einem Pool profitieren, und kennzeichnet diese für die Aufnahme. Sie können alle auf dem Server verfügbaren Datenbanken hinzufügen, oder Sie aktivieren oder deaktivieren Datenbanken aus der ursprünglichen Liste nach Bedarf.
 
    ![Hinzufügen von Datenbanken][5]
 
 Bei Auswahl einer Datenbank für einen Pool müssen die folgenden Bedingungen erfüllt sein:
 
 - Der Pool muss über ausreichend Speicherplatz für die Datenbank verfügen (darf nicht bereits die maximale Anzahl von Datenbanken enthalten). Genauer gesagt muss der Pool über genügend verfügbare DTUs zur Abdeckung der zugesagten DTUs pro Datenbank verfügen. (Wenn beispielsweise 400 DTUs für die Gruppe und für jede Datenbank 10 DTUs garantiert sind, sind für den Pool maximal 40 Datenbanken erlaubt (400 DTUs/10 DTUs pro DB garantiert = max. 40 Datenbanken.)
-- Die aktuellen Features, die von der Datenbank verwendet werden, müssen im Pool verfügbar sein.
+- Die aktuellen Features, die von der Datenbank verwendet werden, müssen im Pool verfügbar sein. 
 
 
 ### Konfigurieren der Leistung
@@ -93,7 +93,7 @@ Es gibt drei Parameter, die Sie festlegen können und die die Leistung des Pools
 
 | Leistungsparameter | Beschreibung |
 | :--- | :--- |
-| **POOL DTU/GB** – DTU-Garantie für den Pool | Die DTU-Garantie für den Pool ist die zugesagte Anzahl verfügbarer DTUs, die für alle Datenbanken im Pool freigegeben sind. <br> Derzeit können Sie 200, 400, 800 oder 1200 festlegen. <br> Die spezifische Größe der DTU-Garantie für eine Gruppe sollte unter Berücksichtigung des DTU-Nutzungsverlaufs der Gruppe bereitgestellt werden. Wahlweise kann diese Größe durch die gewünschte DTU-Garantie pro Datenbank und Nutzung gleichzeitig aktiver Datenbanken festgelegt werden. Die DTU-Garantie für den Pool korreliert auch mit dem verfügbaren Speicher für den Pool. Für jede DTU, die Sie dem Pool zuordnen, erhalten Sie 1 GB Datenbankspeicher (1 DTU = 1 GB Speicher). <br> **Wie sollte die DTU-Garantie des Pools festgelegt werden?** <br>Sie sollten die DTU-Garantie des Pools mindestens auf das Ergebnis der Formel ([Anzahl Datenbanken] x [durchschnittliche DTU-Auslastung pro Datenbank]) festlegen. |
+| **POOL DTU/GB** – DTU-Garantie für den Pool | Die DTU-Garantie für den Pool ist die zugesagte Anzahl verfügbarer DTUs, die für alle Datenbanken im Pool freigegeben sind. <br> Derzeit können Sie 100, 200, 400, 800 oder 1.200 festlegen. <br> Die spezifische Größe der DTU-Garantie für eine Gruppe sollte unter Berücksichtigung des DTU-Nutzungsverlaufs der Gruppe bereitgestellt werden. Wahlweise kann diese Größe durch die gewünschte DTU-Garantie pro Datenbank und Nutzung gleichzeitig aktiver Datenbanken festgelegt werden. Die DTU-Garantie für den Pool korreliert auch mit dem verfügbaren Speicher für den Pool. Für jede DTU, die Sie dem Pool zuordnen, erhalten Sie 1 GB Datenbankspeicher (1 DTU = 1 GB Speicher). <br> **Wie sollte die DTU-Garantie des Pools festgelegt werden?** <br>Sie sollten die DTU-Garantie des Pools mindestens auf das Ergebnis der Formel ([Anzahl Datenbanken] x [durchschnittliche DTU-Auslastung pro Datenbank]) festlegen. |
 | **DTU MIN**: DTU-Garantie für jede Datenbank | Die DTU-Garantie pro Datenbank ist die minimale Anzahl von DTUs, die einer einzelnen Datenbank im Pool garantiert wird. Derzeit können Sie diese Garantie auf 0, 10, 20 oder 50 DTUs festlegen, oder Sie können auch keine Garantie auf Datenbanken in der Gruppe (DTU MIN = 0) bereitstellen. <br> **Auf welchen Wert sollte die DTU-Garantie pro Datenbank festgelegt werden?** <br> Sie sollten die DTU-Garantie pro Datenbank (DTU MIN) mindestens auf die ([durchschnittliche DTU-Auslastung pro Datenbank]) festlegen. Die DTU-Garantie pro Datenbank ist eine globale Einstellung, die die DTU-Garantie für alle Datenbanken im Pool festlegt. |
 | **DTU MAX**: DTU-Höchstanzahl pro Datenbank | DTU MAX pro Datenbank ist die maximale Anzahl von DTUs, die von einer einzelnen Datenbank im Pool verwendet werden können. Legen Sie die DTU-Grenze pro Datenbank hoch genug fest, um maximale Aktivitätsspitzen, die für Ihre Datenbanken auftreten können, verarbeiten zu können. Sie können diese Obergrenze bis auf den Systembegrenzungswert festlegen, der vom Tarif des Pools (100 DTUs beim Standard-Tarif) abhängig ist. Die spezifische Größe dieser Obergrenze sollte an maximalen Auslastungsmustern der Datenbanken innerhalb der Gruppe ausgerichtet sein. Sie sollten ein gewisses Maß an Mehrlast für die Gruppe einplanen, da für den Pool i. Allg. von Nutzungsmustern starker und schwacher Auslastung ausgegangen wird, bei der jedoch nicht alle Datenbanken gleichzeitig stark ausgelastet sind.<br> **Auf welchen Wert sollte die DTU-Obergrenze pro Datenbank festgelegt werden?** <br> Legen Sie DTU MAX oder die DTU-Obergrenze pro Datenbank auf die ([Spitzenauslastung der Datenbank]) fest. Angenommen, die Spitzenauslastung pro Datenbank beträgt 50 DTUs und nur 20 % der 100 Datenbanken in der Gruppe springen gleichzeitig auf die Spitzenauslastung. Wenn die DTU-Obergrenze pro Datenbank auf 50 DTUs festgelegt ist, ist es sinnvoll, die Gruppe 5mal größer zu dimensionieren und die DTU-Garantie für die Gruppe auf 1.000 DTUs festzulegen. Es ist außerdem erwähnenswert, dass die DTU-Obergrenze keine Ressourcengewährleitung für eine Datenbank darstellt, sondern ein DTU-Grenzwert ist, der ggf. erreicht werden kann. |
 
@@ -161,6 +161,5 @@ Weitere Informationen finden Sie unter [Übersicht über elastische Datenbankauf
 [6]: ./media/sql-database-elastic-pool-portal/metric.png
 [7]: ./media/sql-database-elastic-pool-portal/edit-chart.png
 [8]: ./media/sql-database-elastic-pool-portal/configure-pool.png
- 
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

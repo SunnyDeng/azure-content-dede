@@ -2,11 +2,11 @@
 
 1. Falls Sie Ihre Anwendung noch nicht registriert haben, navigieren Sie im Entwicklungscenter für Windows Store-Anwendungen zu [Anwendungsseite senden], melden Sie sich mit Ihrem Microsoft-Konto an und klicken Sie dann auf **Anwendungsname**.
 
-   ![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-submit-win8-app.png)
+   	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-submit-win8-app.png)
 
 2. Geben Sie einen Namen für Ihre Anwendung unter **Anwendungsname** ein, klicken Sie auf **Anwendungsname reservieren** und dann auf **Speichern**.
 
-   ![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-win8-app-name.png)
+   	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-win8-app-name.png)
 
    	Auf diese Weise wird eine neue Windows Store-Registrierung für Ihre Anwendung erstellt.
 
@@ -14,7 +14,7 @@
 
 4. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Store**, und klicken Sie dann auf **Anwendung dem Store zuordnen**.
 
-  ![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-store-association.png)
+  	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-store-association.png)
 
    	Auf diese Weise wird der Assistent zum **Zuordnen Ihrer Anwendung zum Windows Store** angezeigt.
 
@@ -22,7 +22,7 @@
 
 6. Wählen Sie die Anwendung aus, die Sie in Schritt 2 registriert haben, klicken Sie auf **Weiter** und dann auf **Zuordnen**.
 
-   ![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-select-app-name.png)
+   	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-select-app-name.png)
 
    	Auf diese Weise werden die erforderlichen Windows Store-Registrierungsinformationen zum Anwendungsmanifest hinzugefügt.
 
@@ -30,7 +30,7 @@
 
 8. Klicken Sie auf der Windows-Entwicklungscenter-Seite für Ihre neue Anwendung auf **Dienste**.
 
-   ![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-win8-edit-app.png)
+   	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-win8-edit-app.png)
 
 9. Klicken Sie auf der Seite "Dienste" auf **Live-Dienste-Website** unter **Azure Mobile Services**.
 
@@ -38,13 +38,13 @@
 
 10. Klicken Sie auf **Authentifizieren des Diensts** und notieren Sie sich die Werte von **Geheimer Clientschlüssel** und **Paket-Sicherheits-ID (SID)**.
 
-   ![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-win8-app-push-auth.png)
+   	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-win8-app-push-auth.png)
 
     > [AZURE.NOTE]Der geheime Clientschlüssel und die Paket-SID sind wichtige Sicherheitsanmeldeinformationen. Geben Sie diese Informationen nicht weiter und verteilen Sie sie nicht mit Ihrer Anwendung.
 
 11. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre Anwendung.
 
-   ![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-selection.png)
+   	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-selection.png)
 
 12. Klicken Sie auf die Registerkarte **Push**, und geben Sie die Werte für **Geheimer Clientschlüssel** und **Paket-SID** ein, die Sie von WNS erhalten haben. Klicken Sie dann auf **Speichern**.
 
@@ -59,4 +59,4 @@
 [Anwendungsseite senden]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!--HONumber=54-->
+<!---HONumber=62-->

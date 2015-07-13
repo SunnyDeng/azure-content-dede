@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Azure Search Service REST API Version 2015-02-28-Preview | Microsoft Azure"
-   description="Die Azure Search Service REST API, Version 2015-02-28-Preview, enthält experimentelle Funktionen, wie natürlichsprachliche Analysemodule und moreLikeThis-Suchen." 
+   pageTitle="Azure-Suchdienst-REST-API Version 2015-02-28-Preview | Microsoft Azure"
+   description="Azure-Suchdienst-REST-API Version 2015-02-28-Preview beinhaltet experimentelle Features wie Natural Language-Analyseprogramme und moreLikeThis-Suchvorgänge." 
    services="search" 
    documentationCenter="na" 
    authors="HeidiSteen" 
@@ -13,26 +13,26 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="search" 
-   ms.date="04/20/2015"
+   ms.date="05/25/2015"
    ms.author="heidist"/>
 
-# Azure Search Service REST API: Version 2015-02-28-Preview
+# Azure-Suchdienst-REST-API: Version 2015-02-28-Preview
 
-Dieser Artikel stellt die Referenzdokumentation für  `api-version=2015-02-28-Preview` dar. Diese Vorschau erweitert die aktuelle gesperrte Version, [api-version=2015-02-28](https://msdn.microsoft.com/library/dn798935.aspx), um die folgenden experimentellen Funktionen:
+Dieser Artikel bildet die Referenzdokumentation zu `api-version=2015-02-28-Preview`. In dieser Vorschau wird die aktuell gesperrte Version [api-Version = 2015-02-28](https://msdn.microsoft.com/library/dn798935.aspx) durch die folgenden experimentellen Features erweitert:
 
-- [Natürlichsprachliche Prozessoren](#LanguageSupport) von Microsoft (die gleichen, die von Office und Bing verwendet werden) bieten höhere Genauigkeit über Abfrageergebnisse hinweg sowie mehr Sprachen.
-- `moreLikeThis` ist ein Abfrageparameter, der für [Suchvorgänge] verwendet werden kann(#SearchDocs) und weitere Dokumente findet, die für ein anderes spezifisches Dokument relevant sind.
+- [Natural Language-Prozessoren](#LanguageSupport) von Microsoft (die auch von Office und Bing verwendet werden) bieten gegenüber Abfrageergebnissen mehr Sprachen und eine höhere Genauigkeit.
+- `moreLikeThis` ist ein in [Suchvorgängen](#SearchDocs) verwendeter Abfrageparameter, mit dem zu einem bestimmten Dokument weitere damit verbundene Dokumente ermittelt werden.
 
-Einige zusätzliche Funktionen in `2015-02-28-Preview` werden separat dokumentiert. Diese sind:
+Weitere zusätzliche Features in `2015-02-28-Preview` werden separat dokumentiert. Diese umfassen:
 
-- [Bewertungsprofile](../search-api-scoring-profiles-2015-02-28-preview/)
-- [Indizierer](../search-api-indexers-2015-02-28-Preview/)
+- [Bewertungsprofile](../search-api-scoring-profiles-2015-02-28-preview.md)
+- [Indexer](../search-api-indexers-2015-02-28-preview.md)
 
-Der Azure-Suchdienst ist in mehreren Versionen verfügbar. Details finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+Der Azure-Suchdienst ist in mehreren Versionen verfügbar. Weitere Informationen erhalten Sie im Artikel [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
 ##In diesem Dokument behandelte APIs
 
-Die Azure-Suchdienst-API unterstützt zwei Syntaxen für die Entitätssuche: einfache und alternative OData-Syntax (Details finden Sie unter [Unterstützung für OData (Azure Search-API)](http://msdn.microsoft.com/library/azure/dn798932.aspx)). In der folgenden Liste ist die einfache Syntax dargestellt.
+Die Azure-Suchdienst-API unterstützt für die Entitätssuche zwei Syntaxarten: die einfache und die alternative OData-Syntax (weitere Informationen finden Sie unter [Unterstützung für OData (Azure Search)](http://msdn.microsoft.com/library/azure/dn798932.aspx)). Die folgende Liste zeigt die einfache Syntax.
 
 [Index erstellen](#CreateIndex)
 
@@ -40,51 +40,51 @@ Die Azure-Suchdienst-API unterstützt zwei Syntaxen für die Entitätssuche: ein
 
 [Index aktualisieren](#UpdateIndex)
 
-    PUT /indexes/[indexname]?api-version=2015-02-28-Preview
+    PUT /indexes/[index name]?api-version=2015-02-28-Preview
 
 [Index abrufen](#GetIndex)
 
-    GET /indexes/[indexname]?api-version=2015-02-28-Preview
+    GET /indexes/[index name]?api-version=2015-02-28-Preview
 
 [Indizes auflisten](#ListIndexes)
 
     GET /indexes?api-version=2015-02-28-Preview
 
-[Indexstatistik abrufen](#GetIndexStats)
+[Indexstatistiken abrufen](#GetIndexStats)
 
-    GET /indexes/[indexname]/stats?api-version=2015-02-28-Preview
+    GET /indexes/[index name]/stats?api-version=2015-02-28-Preview
 
 [Index löschen](#DeleteIndex)
 
-    DELETE /indexes/[indexname]?api-version=2015-02-28-Preview
+    DELETE /indexes/[index name]?api-version=2015-02-28-Preview
 
-[Daten in einem Index hinzufügen, löschen und aktualisieren](#AddOrUpdateDocuments)
+[Daten innerhalb eines Index hinzufügen, löschen und aktualisieren](#AddOrUpdateDocuments)
 
-    POST /indexes/[indexname]/docs/index?api-version=2015-02-28-Preview
+    POST /indexes/[index name]/docs/index?api-version=2015-02-28-Preview
 
-[In Dokumenten suchen](#SearchDocs)
+[Dokumente durchsuchen](#SearchDocs)
 
-    GET /indexes/[indexname]/docs?[abfrageparameters]
+    GET /indexes/[index name]/docs?[query parameters]
 
-[Dokument nachschlagen](#LookupAPI)
+[Dokument suchen](#LookupAPI)
 
-     GET /indexes/[indexname]/docs/[key]?[abfrageparameter]
+     GET /indexes/[index name]/docs/[key]?[query parameters]
 
-[Dokumente zählen](#CountDocs)
+[Dokumentenanzahl](#CountDocs)
 
-    GET /indexes/[indexname]/docs/$count?api-version=2015-02-28-Preview
+    GET /indexes/[index name]/docs/$count?api-version=2015-02-28-Preview
 
 [Vorschläge](#Suggestions)
 
-    GET /indexes/[indexname]/docs/suggest?[abfrageparameter]
+    GET /indexes/[index name]/docs/suggest?[query parameters]
 
 ________________________________________
 <a name="IndexOps"></a>
 ## Indexvorgänge
 
-Sie können Indizes im Azure-Suchdienst für eine bestehende Indexressource mithilfe einfacher HTTP-Anforderungen (POST, GET, PUT, DELETE) erstellen und verwalten. Zum Erstellen eines Index veröffentlichen Sie mit POST ein JSON-Dokument, in dem das Indexschema beschrieben ist. Das Schema definiert die Felder des Index, ihre Datentypen und ihre Verwendung (z. B. für Volltext-Suchvorgänge, Filterung, Sortierung oder Facettensuche). Ebenso definiert es Bewertungsprofile, Vorschlagsmodule und weitere Attribute, mit denen das Verhalten des Index konfiguriert wird. 
+Das Erstellen und Verwalten von Indizes in Azure Search erfolgt über einfache HTTP-Anforderungen (POST, GET, PUT, DELETE) für einen bestimmten Index, der als Ressource vorliegt. Um einen Index zu erstellen, stellen Sie zunächst mit POST ein JSON-Dokument bereit, in dem das Indexschema beschrieben wird. Das Schema definiert die Indexfelder sowie deren Datentype und Verwendungsweise (z. B. in Volltextsuchen, zum Filtern, Sortieren oder Facettieren). Zudem definiert es Bewertungsprofile, Vorschläge und anderen Attributen, um das Verhalten des Index zu konfigurieren.
 
-Das folgende Beispiel veranschaulicht ein Schema, das zum Suchen nach Hotelinformationen verwendet wird, und dessen Feld "Beschreibung" in zwei Sprachen definiert ist. Beachten Sie, wie die Verwendung des Felds mithilfe von Attributen gesteuert wird. Beispielsweise wird die  `hotelId` als Dokumentschlüssel verwendet (`"key": true`) und aus Volltext-Suchvorgängen ausgeschlossen (`"searchable": false`).
+Das folgende Beispiel veranschaulicht ein Schema für die Suche von Hotelinformationen, bei dem das Feld "Beschreibung" in zwei Sprachen definiert ist. Beachten Sie, wie die Verwendung des Feldes mithilfe von Attributen gesteuert wird. `hotelId` dient beispielsweise als Dokumentschlüssel (`"key": true`) und wird bei Volltextsuchen ausgeschlossen (`"searchable": false`).
 
     {
     "name": "hotels",  
@@ -111,67 +111,66 @@ Das folgende Beispiel veranschaulicht ein Schema, das zum Suchen nach Hotelinfor
      ] 
     }
  
-Nach der Erstellung des Index laden Sie Dokumente hoch, mit denen der Index aufgefüllt wird. Unter [Dokumente hinzufügen oder aktualisieren](#AddOrUpdateDocuments) finden Sie weitere Informationen zu diesem anschließenden Schritt.
+Nachdem Sie den Index erstellt haben, laden Sie Dokumente hoch, um den Index zu füllen. Diesen nächsten Schritt finden Sie unter [Hinzufügen oder Aktualisieren von Dokumenten](#AddOrUpdateDocuments).
 
-Eine Videoeinführung zur Indizierung in Azure Search finden Sie in der [Channel 9 Cloud Cover-Folge zu Azure Search](http://go.microsoft.com/fwlink/p/?LinkId=511509).
+Eine Videoeinführung zur Indizierung in Azure Search erhalten Sie in der [Channel 9 Cloud Cover-Folge zu Azure Search](http://go.microsoft.com/fwlink/p/?LinkId=511509) (in Englisch).
 
 
 <a name="CreateIndex"></a>
-### Index erstellen
+## Index erstellen
 
-Ein Index stellt das primäre Mittel beim Verwalten und Durchsuchen von Dokumenten Azure Search dar, ähnlich der Strukturierung von Datensätzen einer Datenbank in Tabellen. Jeder Index verfügt über eine Auflistung von Dokumenten, die sämtlich dem Indexschema entsprechen (Feldnamen, Datentypen und Eigenschaften), darüber hinaus legen Indizes jedoch weitere Konstrukte (Vorschlagsmodule, Bewertungsprofile und CORS-Optionen) fest, die andere Verhaltensweise der Suche definieren.
+Ein Index ist das primäre Mittel zum Organisieren und Durchsuchen von Dokumenten in Azure Search. Er ist mit einer Tabelle in einer Datenbank vergleichbar, in der Datensätze organisiert werden. Jeder Index beinhaltet eine Sammlung von Dokumenten, die alle dem Indexschema (Feldnamen, Datentypen und Eigenschaften) entsprechen. Indizes legen jedoch auch zusätzliche Konstrukte (Vorschläge, Bewertungsprofile und CORS-Optionen) fest, mit denen weitere Suchverhalten definiert werden.
 
-Sie können einen neuen Index innerhalb eines Azure-Suchdiensts mithilfe einer HTTP-POST oder -PUT-Anforderung erstellen. Den Textkörper der Anforderung bildet ein JSON-Schema, das den Index und die Konfigurationsinformationen angibt.
+Sie können einen neuen Index innerhalb eines Azure-Suchdienstes mithilfe einer HTTP POST- oder PUT-Anforderung erstellen. Der Text der Anforderung ist ein JSON-Schema, mit dem die Index- und Konfigurationsinformationen angegeben werden.
 
     POST https://[service name].search.windows.net/indexes?api-version=[api-version]
     Content-Type: application/json
-    api-key: [Administratorschlüssel]
+    api-key: [admin key]
 
-Alternativ können Sie PUT verwenden und den Indexnamen im URI angeben. Wenn der Index noch nicht vorhanden ist, wird er erstellt.
+Alternativ können Sie mit PUT den Indexnamen für den URI angeben. Wenn der Index nicht vorhanden ist, wird er erstellt.
 
-    PUT https://[search service url]/indexes/[indexname]?api-version=[api-version]
+    PUT https://[search service url]/indexes/[index name]?api-version=[api-version]
 
-Das Erstellen eines Index bestimmt die Struktur der in Suchvorgängen gespeicherten und verwendeten Dokumente. Das Auffüllen des Index ist ein getrennter Vorgang. Für diesen Schritt können Sie einen [Indizierungsvorgang](https://msdn.microsoft.com/library/azure/mt183328.aspx) (steht für unterstützte Datenquellen zur Verfügung) oder einen Vorgang [Dokumente hinzufügen, aktualisieren oder löschen](https://msdn.microsoft.com/library/azure/dn798930.aspx) verwenden. Der invertierte Index wird beim Veröffentlichen der Dokumente erstellt.
+Beim Erstellen eines Index wird die Struktur der gespeicherten und in Suchvorgängen verwendeten Dokumente bestimmt. Gefüllt wird der Index in einem separaten Vorgang. Sie können für diesen Schritt einen [Indexer](https://msdn.microsoft.com/library/azure/mt183328.aspx) (für unterstützte Datenquellen verfügbar) oder einen Vorgang zum [Hinzufügen, Aktualisieren oder Löschen von Dokumenten](https://msdn.microsoft.com/library/azure/dn798930.aspx) verwenden. Der invertierte Index wird während der Bereitstellung der Dokumente generiert.
 
-**Hinweis**: Die maximale Anzahl der zulässigen Indizes unterscheidet sich je nach Preisstufe. Der kostenlose Dienst erlaubt bis zu 3 Indizes. Der Standarddienst erlaubt 50 Indizes pro Suchdienst. Details finden Sie unter [Limits und Einschränkungen](http://msdn.microsoft.com/library/azure/dn798934.aspx). 
+**Hinweis**: Die maximal zulässige Anzahl von Indizes variiert je nach Preisstufe. Mit dem kostenlosen Dienst sind bis zu drei Indizes möglich. Mit dem Standarddienst sind 50 Indizes pro Suchdienst zulässig. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](http://msdn.microsoft.com/library/azure/dn798934.aspx).
 
 **Anforderung**
 
-HTTPS ist für alle Dienstanforderungen erforderlich. Die Anforderung **Create Index** kann entweder mithilfe einer POST- oder einer PUT-Methode dargestellt werden. Bei der Verwendung von POST muss der Indexname im Text der Anforderung zusammen mit der Indexschemadefinition angegeben werden. Bei PUT bildet der Indexname einen Teil der URL. Wenn der Index nicht vorhanden ist, wird er erstellt. Wenn er bereits vorhanden ist, wird er auf die neue Definition aktualisiert. 
+HTTPS ist für alle Dienstanforderungen erforderlich. Die Anforderung **Index erstellen** kann mit der POST- oder PUT-Methode konstruiert werden. Wenn POST verwendet wird, müssen Sie im Anforderungstext einen Namen und eine Schemadefinition für den Index bereitstellen. Bei Verwendung von PUT ist der Indexname Teil der URL. Wenn der Index nicht vorhanden ist, wird er erstellt. Wenn er bereits vorhanden ist, wird er mit der neuen Definition aktualisiert.
 
-Der Indexname muss aus Kleinbuchstaben bestehen, mit einem Buchstaben oder einer Ziffer beginnen, darf keine Schrägstriche oder Punkte aufweisen und muss kürzer als 128 Zeichen sein. Nach dem Anfangsbuchstaben bzw. der Anfangsziffer kann der Rest des Indexnamens beliebige Buchstaben, Ziffern und Bindestriche enthalten, vorausgesetzt, es folgen keine zwei Bindestriche aufeinander.
+Der Indexname muss in Kleinbuchstaben angegeben werden und mit einem Buchstaben oder einer Zahl beginnen. Er darf keine Schrägstriche oder Punkte enthalten und muss weniger als 128 Zeichen lang sein. Der Rest des Indexnamens (nach dem Buchstaben bzw. der Zahl zu Beginn des Namens) kann beliebige Buchstaben, Zahlen und Bindestriche enthalten, solange die Bindestriche nicht aufeinanderfolgen.
 
-Die  `api-version` ist erforderlich. Die aktuelle Version ist `api-version=2015-02-28`. Details und Informationen finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+`api-version` ist erforderlich. Die aktuelle Version ist `api-version=2015-02-28`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
 **Anforderungsheader**
 
-In der folgenden Liste sind die erforderlichen und optionalen Anforderungsheader beschrieben. 
+In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
-- `Content-Type`: Erforderlich. Legen Sie diesen auf  `application/json` fest.
-- `api-key`: Erforderlich. Der  `api-key` wird verwendet, um 
-- die Anforderung bei Ihrem Suchdienst zu authentifizieren. Es handelt sich um einen Zeichenfolgenwert, der für Ihren Dienst eindeutig ist. Die **Create Index**-Anforderung muss einen  `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (im Gegensatz zu einem Anforderungsschlüssel) festgelegt ist. 
+- `Content-Type`: Erforderlich. Auf `application/json` festlegen.
+- `api-key`: Erforderlich. Mit dem `api-key` wird 
+- die Anforderung für den Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel (keinen Abfrageschlüssel) festgelegt ist. 
  
-Ferner benötigen Sie den Dienstnamen, um die Anforderungs-URL zu erstellen. Sie können den Dienstnamen und den  `api-key` bei Ihrem Dienstdashboard im Azure-Portal abrufen. Hilfe zur Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](../search-create-service-portal/).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
-<a name="RequestData"></a>
-**Syntax des Anforderungstextkörpers**
+<a name="RequestData"></a> **Syntax des Anforderungstextes**
 
-Der Textkörper der Anforderung enthält eine Schemadefinition, die die Liste von Datenfeldern in Dokumenten beinhaltet, mit denen dieser Index gespeist wird, ferner Datentypen, Attribute sowie eine optionale Liste mit Bewertungsprofilen, die zum Bewerten passender Dokumente zur Abfragezeit verwendet werden. 
+Der Anforderungstext enthält eine Schemadefinition. Diese umfasst eine Liste der in Dokumenten enthaltenen Datenfelder, die in diesen Index eingelesen werden, Datentypen, Attributen sowie eine optionale Liste der Bewertungsprofile, mit denen zur Abfragezeit übereinstimmende Dokumente bewertet werden.
 
-Beachten Sie, dass Sie bei einer POST-Anforderung den Indexnamen im Anforderungstextkörper angeben müssen.
+Beachten Sie, dass für eine POST-Anforderung der Indexname im Anforderungstext angegeben sein muss.
 
-Es kann nur ein Schlüsselfeld im Index vorhanden sein. Dabei muss es sich um ein Zeichenfolgenfeld handeln. Dieses Feld stellt die eindeutige ID für jedes im Index gespeicherte Dokument dar. 
+Es kann nur ein Schlüsselfeld im Index vorhanden sein. Dieses muss ein Zeichenfolgefeld sein. Dieses Feld repräsentiert den eindeutigen Bezeichner für jedes Dokument, das im Index gespeichert ist.
 
 Dies sind die Hauptbestandteile eines Index:
 
-- `name`:
-- `fields`, mit denen dieser Index gespeist wird, einschließlich Name, Datentyp und Eigenschaften, die zulässige Aktionen für das jeweilige Feld definieren.
-- `suggesters`, die für AutoAusfüllen oder AutoVervollständigen bei Abfragen verwendet werden.
-- `scoringProfiles`, die für die Punktbewertung bei der benutzerdefinierten Suche verwendet werden. Details finden Sie unter [Hinzufügen von Bewertungsprofilen](https://msdn.microsoft.com/library/azure/dn798928.aspx).
-- `defaultScoringProfile` wird zum Überschreiben des standardmäßigen Bewertungsverhaltens verwendet.
-- `corsOptions`, um ursprungsübergreifende Abfragen auf Ihrem Index zuzulassen.
+- `name`
+- `fields`: Diese werden einschließlich Name, Datentyp und Eigenschaften zum Definieren der für das Feld zulässigen Aktionen in den Index eingelesen.
+- `suggesters`: Diese werden für die automatische Vervollständigung bzw. Eingabevorschläge für Abfragen verwendet.
+- `scoringProfiles`: Hiermit wird die Rangfolge der bewerteten benutzerdefinierten Suchergebnisse festgelegt. Weitere Details finden Sie unter [Hinzufügen von Bewertungsprofilen zu einem Suchindex](https://msdn.microsoft.com/library/azure/dn798928.aspx).
+- `defaultScoringProfile`: Hiermit werden Standardverhalten bei der Bewertung außer Kraft gesetzt.
+- `corsOptions`: Dies ermöglicht ursprungsübergreifende Indexabfragen.
 
-Die Syntax zur Strukturierung des Nutztexts der Anforderung folgt hier. Eine Beispielanforderung steht weiter unten in diesem Thema zur Verfügung.
+Die Syntax für die Strukturierung der Anforderungsnutzlast ist wie folgt. Eine Beispielanforderung wird weiter unten in diesem Thema bereitgestellt.
 
     {
       "name": (optional on PUT; required on POST) "name_of_index",
@@ -240,69 +239,68 @@ Die Syntax zur Strukturierung des Nutztexts der Anforderung folgt hier. Eine Bei
     
 **Indexattribute**
 
-Beim Erstellen eines Index können die folgenden Attribute festgelegt werden. Details zu Bewertung und Bewertungsprofilen finden Sie unter [Hinzufügen von Bewertungsprofilen](https://msdn.microsoft.com/library/azure/dn798928.aspx).
+Beim Erstellen eines Indexes können die folgenden Attribute festgelegt werden. Details zum Bewerten und zu Bewertungsprofilen finden Sie unter [Hinzufügen von Bewertungsprofilen zu einem Suchindex](https://msdn.microsoft.com/library/azure/dn798928.aspx).
 
-`name` - Legt den Namen des Felds fest.
+`name`: Legt den Feldnamen fest.
 
-`type` - Legt den Datentyp des Felds fest. Unter [Unterstützte Datentypen](#DataTypes) finden Sie eine Liste der unterstützten Typen.
+`type`: Legt den Datentyp des Feldes fest. Eine Liste der unterstützten Typen finden Sie unter [Unterstützte Datentypen](#DataTypes).
 
-`searchable` - Kennzeichnet das Feld als bei der Volltextsuche durchsuchbar. Das bedeutet, es wird bei der Indizierung Analyseverfahren wie der Wörtertrennung unterzogen. Wenn Sie ein Feld  `searchable` auf einen Wert wie "schöner Tag" festlegen, wird es intern in die Einzeltoken "schöner" und "Tag" aufgeteilt. Dies ermöglicht die Volltextsuche nach diesen Begriffen. Felder vom Typ  `Edm.String` oder  `Collection(Edm.String)` sind standardmäßig  `searchable`. Felder anderer Typen können nicht  `searchable` sein.
+`searchable`: Markiert das Feld als in die Volltextsuche einbeziehbar. Es wird während der Indizierung somit Analysen wie etwa der Worttrennung unterzogen. Wenn Sie ein Feld vom Typ `searchable` auf einen Wert wie "sonniger Tag" setzen, wird es zunächst in die einzelnen Token "sonniger" und "Tag" unterteilt. Dies ermöglicht die Volltextsuche nach diesen Begriffen. Felder vom Typ `Edm.String` oder `Collection(Edm.String)` haben standardmäßig das Attribut `searchable`. Andere Feldtypen können das Attribut `searchable` nicht haben.
 
-  - **Hinweis**:  `searchable`-Felder belegen zusätzlichen Platz in Ihrem Index, da Azure Search eine zusätzliche Version des Feldwerts mit Token für die Volltextsuche speichert. Wenn Sie Platz im Index sparen möchten, und die Aufnahme eines Felds in Suchvorgänge nicht benötigen, legen Sie  `searchable` auf  `false`fest.
+  - **Hinweis**: `searchable` Felder belegen in Ihrem Index zusätzlichen Platz, da Azure Search eine zusätzliche, mit Token versehene Version des Feldwerts für Volltextsuchen speichert. Wenn Sie Speicherplatz im Index sparen möchten und ein Feld in Suchvorgängen nicht benötigen, setzen Sie `searchable` auf `false`.
 
-`filterable` - Ermöglicht den Verweis auf das Feld in `$filter`-Abfragen.  `filterable` unterscheidet sich von  `searchable` in der Art, wie Zeichenfolgen verarbeitet werden. Felder vom Typ  `Edm.String` oder  `Collection(Edm.String)`, die  `filterable` sind, werden keiner Wörtertrennung unterzogen, daher sind Vergleiche auf genaue Übereinstimmungen beschränkt. Wenn Sie z. B. ein solches Feld auf festlegen, findet  `f` to "sunny day", `$filter=f eq 'sunny'` keine Übereinstimmungen,  `$filter=f eq 'sunny day'`  findet aber Übereinstimmungen. Alle anderen Felder sind standardmäßig `filterable`. 
+`filterable`: Hiermit kann das Feld in `$filter`-Abfragen referenziert werden. Mit `filterable` werden Zeichenfolgen anders als mit `searchable` behandelt. Felder vom Typ `Edm.String` oder `Collection(Edm.String)` mit dem Attribut `filterable` werden keiner Worttrennung unterzogen, sodass nur nach exakten Übereinstimmungen gesucht wird. Beispiel: Wenn Sie ein solches Feld `f` auf "sonniger Tag" setzen, werden mit `$filter=f eq 'sunny'` keine Übereinstimmungen gefunden, während Sie mit `$filter=f eq 'sunny day'` Suchergebnisse erhalten. Standardmäßig haben alle Felder das Attribut `filterable`.
 
-`sortable` - Standardmäßig sortiert das System Ergebnisse nach der Punktzahl, in vielen Bereichen möchten die Benutzer jedoch nach Feldern im Dokument sortieren. Felder vom Typ  `Collection(Edm.String)` können nicht  `sortable` sein. Alle anderen Felder sind standardmäßig  `sortable`.
+`sortable`: Ergebnisse werden standardmäßig nach Bewertung sortiert. Häufig möchten Benutzer die Ergebnisse jedoch nach in den Dokumenten enthaltenen Feldern sortieren. Felder vom Typ `Collection(Edm.String)` können nicht das Attribut `sortable` haben. Alle anderen Felder haben standardmäßig das Attribut `sortable`.
 
-`facetable`- Normalerweise in einer Darstellung von Suchergebnissen verwendet, die die Trefferanzahl nach Kategorie beinhaltet (z. B. bei einer der Suche nach Digitalkameras, die Treffer nach Marke, Megapixeln, Preis usw. ausweist). Diese Option kann nicht für Felder vom Typ  `Edm.GeographyPoint` verwendet werden. Alle anderen Felder sind standardmäßig  `facetable`.
+`facetable`: Wird in der Regel in Anzeigen von Suchergebnissen verwendet, die eine nach Kategorie sortierte Trefferanzahl beinhalten (z. B. werden bei der Suche nach Digitalkameras Treffer nach Marke, Megapixel, Preis usw. angezeigt). Diese Option kann nicht für Felder vom Typ `Edm.GeographyPoint` verwendet werden. Alle anderen Felder haben standardmäßig das Attribut `facetable`.
 
-  - **Hinweis**: Felder vom Typ  `Edm.String`, die  `filterable`,  `sortable` oder  `facetable` sind, dürfen höchstens 32 KB lang sein. Dies hat den Grund, dass solche Felder als einzelner Suchausdruck behandelt werden und die maximale Länge eines Ausdrucks in Azure Search 32 KB beträgt. Wenn Sie mehr Text in einem einzelnen Zeichenfolgenfeld speichern müssen, müssen Sie  `filterable`, `sortable` und  `facetable` in Ihrer Indexdefinition explizit auf  `false` festlegen.
+  - **Hinweis**: Felder vom Typ `Edm.String` mit dem Attribut `filterable`, `sortable` oder `facetable` können maximal 32 KB lang sein. Dies liegt daran, dass diese Felder als ein Suchbegriff behandelt werden und dafür in Azure Search eine maximale Länge von 32 KB gilt. Wenn Sie in einem Zeichenfolgefeld mehr Text speichern möchten, setzen Sie `filterable`, `sortable` und `facetable` in Ihrer Indexdefinition explizit auf `false`.
 
-  - **Hinweis**: Wenn für ein Feld keins der oben angegebenen Attribute (`searchable`,  `filterable`,  `sortable` oder `facetable`) auf  `true` festgelegt ist, ist das Feld effektiv vom invertierten Index ausgeschlossen. Diese Option ist für Felder nützlich, die nicht in Abfragen verwendet werden, aber in Suchergebnissen erforderlich sind. Das Ausschließen solcher Felder aus dem Index verbessert die Leistung.
+  - **Hinweis**: Wenn keines der oben genannten Attribute für ein Feld auf `true` (`searchable`, `filterable`, `sortable` oder `facetable`) gesetzt ist, wird das Feld effektiv aus dem invertierten Index ausgeschlossen. Diese Option ist für Felder nützlich, die nicht in Abfragen verwendet werden, aber in den Suchergebnissen erforderlich sind. Durch das Ausschließen dieser Felder aus dem Index verbessern Sie die Suchleistung.
 
-  - `suggestions` - Frühere Versionen der API enthielten eine Eigenschaft  `suggestions`. Diese boolesche Eigenschaft ist jetzt veraltet und steht in `2015-02-28` oder `2015-02-28-Preview` nicht mehr zur Verfügung. Verwenden Sie die [Vorschlagsmodul-API](#Suggesters) stattdessen. In Version `2014-07-31` wurde die Eigenschaft  `suggestions` verwendet, um anzugeben, ob das Feld für AutoAusfüllen oder AutoVervollständigen für Felder vom Typ  `Edm.String` oder  `Collection(Edm.String)` verwendet werden konnte.  `suggestions` war standardmäßig als  `false` festgelegt, da dafür zusätzlicher Platz in Ihrem Index erforderlich war, wenn es aktiviert wurde. Anweisungen zum Umstieg auf die neue API finden Sie unter [Übergang von der Vorschau zur allgemeinen Version in Azure Search](../search-transition-from-preview/).
+  - `suggestions`: Vorgängerversionen der API beinhalten die Eigenschaft `suggestions`. Diese boolesche Eigenschaft ist mittlerweile veraltet und weder in `2015-02-28` noch in `2015-02-28-Preview` verfügbar. Verwenden Sie stattdessen die [Vorschlags-API](#Suggesters). In der Version `2014-07-31` wurde mit der Eigenschaft `suggestions` festgelegt, ob das Feld für Felder vom Typ `Edm.String` oder `Collection(Edm.String)` für die automatische Vervollständigung bzw. Eingabevorschläge verwendet werden kann. Die Eigenschaft `suggestions` war standardmäßig auf `false` gesetzt, da sie zusätzlichen Platz im Index erforderte. Wenn Sie die Eigenschaft jedoch aktiviert haben, finden Sie unter [Übergang von Preview zu General Release in Azure Search](search-transition-from-preview.md) eine Anleitung zum Übergang auf die neue API.
 
-`key` - Markiert das Feld als eindeutige IDs für im Index enthaltene Dokumente. Es muss genau ein Feld als  `key`-Feld ausgewählt werden, und es muss den Typ  `Edm.String` aufweisen. Schlüsselfelder können für das direkte Nachschlagen von Dokumenten mithilfe der [Nachschlage-API] verwendet werden(#LookupAPI).
+`key`: Gibt an, dass das Feld eindeutige Bezeichner für Dokumente innerhalb des Index enthält. Es kann genau nur ein Feld als `key`-Feld gewählt werden und es muss vom Typ `Edm.String` sein. Mit Schlüsselfeldern können Dokumente direkt über die [Lookup-API](#LookupAPI) gesucht werden.
 
-`retrievable` - Legt fest, ob das Feld in einem Suchergebnis zurückgegeben werden kann.  Dies ist nützlich, wenn Sie ein Feld (z. B. "Rand") als Mechanismus zum Filtern, Sortieren oder Bewerten verwenden möchten, das Feld für den Endbenutzer aber nicht sichtbar sein soll. Dieses Attribut muss für  `key`-Felder  `true` sein.
+`retrievable`: Legt fest, ob das Feld in einem Suchergebnis zurückgegeben werden kann. Dies ist hilfreich, wenn Sie ein Feld (z. B. die Gewinnspanne) zum Filtern, Sortieren oder Bewerten verwenden möchten, das Feld jedoch für den Endbenutzer nicht sichtbar sein soll. Dieses Attribut muss für `key`-Felder auf `true` gesetzt sein.
 
-`analyzer` - Legt den Namen des Textanalysemoduls fest, das für das Feld verwendet werden soll. Informationen zur zulässigen Wertemenge finden Sie unter [Sprachunterstützung](#LanguageSupport). Diese Optionen können nur für  `searchable`-Felder verwendet werden. Sobald das Analysemodul ausgewählt wurde, kann es für das Feld nicht mehr geändert werden. 
+`analyzer`: Legt den Namen der für das Feld zu verwendenden Textanalyse fest. Die zulässigen Werte finden Sie unter [Sprachunterstützung](#LanguageSupport). Diese Option kann nur mit Feldern vom Typ `searchable` verwendet werden. Eine einmal für ein Feld gewählte Analysemethode kann nicht mehr geändert werden.
 
-`sugggesters` - Legt den Suchmodus und Felder fest, die die Quelle für die Inhalte von Vorschlägen bildet. Weitere Informationen stehen unter [Vorschlagsmodule](#Suggesters) zur Verfügung.
+`sugggesters`: Legt den Suchmodus und die Felder fest, die als Quelle für den Inhalt von Vorschlägen dienen. Details finden Sie unter [Vorschläge](#Suggesters).
 
-`scoringProfiles` - Definiert benutzerdefinierte Bewertungsverhalten, mit deren Hilfe Sie Einfluss darauf nehmen können, welche Elemente in Suchergebnissen weiter oben angezeigt werden. Bewertungsprofile bestehen aus gewichteten Feldern und Funktionen. Weitere Informationen über die in Bewertungsprofilen verwendeten Attribute finden Sie unter [Hinzufügen von Bewertungsprofilen](https://msdn.microsoft.com/library/azure/dn798928.aspx).
+`scoringProfiles`: Definiert benutzerdefinierte Bewertungsverhalten, mit denen Sie beeinflussen können, welche Elemente weiter oben in den Suchergebnissen angezeigt werden. Bewertungsprofile bestehen aus Feldgewichtungen und Funktionen. Weitere Informationen zu den in einem Bewertungsprofil verwendeten Attributen finden Sie unter [Hinzufügen von Bewertungsprofilen zu einem Suchindex](https://msdn.microsoft.com/library/azure/dn798928.aspx).
 
 <!-- This is a standalone topic in MSDN -->
-<a name="LanguageSupport"></a>
-**Sprachunterstützung**
+<a name="LanguageSupport"></a> **Sprachunterstützung**
 
-Durchsuchbare Felder werden Analyseverfahren unterzogen, die meistens Wörtertrennung, Textnormalisierung und Ausfilterung von Ausdrücken beinhalten. Standardmäßig werden durchsuchbare Felder in Azure Search mit dem [Apache Lucene-Standardanalysemodul](http://lucene.apache.org/core/4_9_0/analyzers-common/index.html) analysiert, das Text nach den Regeln der ["Unicode-Textsegmentierung"](http://unicode.org/reports/tr29/) in Elemente aufteilt. Darüber hinaus konvertiert das Standardanalysemodul alle Zeichen in Kleinbuchstaben. Sowohl indizierte Dokumente als auch Suchausdrücke werden während der Indizierung und der Abfrageverarbeitung der Analyse unterzogen.
+Durchsuchbare Felder werden einer Analyse unterzogen, die häufig Wörtertrennungen, Textnormalisierungen und das Herausfiltern von Begriffen beinhalten. Standardmäßig werden durchsuchbare Felder in Azure Search mit dem [Standardanalyseprogramm von Apache Lucene](http://lucene.apache.org/core/4_9_0/analyzers-common/index.html) analysiert. Dieses unterteilt Text gemäß den Regeln der [Unicode-Textsegmentierung](http://unicode.org/reports/tr29/) in einzelne Elemente. Darüber hinaus konvertiert das Standardanalyseprogramm alle Zeichen in Kleinbuchstaben. Während der Indizierung und der Abfrageverarbeitung durchlaufen sowohl indizierte Dokumente als auch Suchbegriffe die Analyse.
 
-Azure Search unterstützt die Indizierung von Feldern in einer Vielzahl von Sprachen. Für jede dieser Sprachen ist ein nicht standardmäßiges Textanalysemodul erforderlich, das den Charakteristika einer bestimmten Sprache Rechnung trägt. Azure Search bietet zwei Arten von Analysemodulen: 
+Azure Search unterstützt Indizierungsfelder und unterschiedlichen Sprachen. Für jede Sprache ist eine nicht standardmäßige Textanalyse erforderlich, welche die Eigenschaften einer gegebenen Sprache berücksichtigt. Azure Search bietet zwei Typen von Analysen:
 
-- 28 Analysemodule auf der Grundlage von Lucene.
-- 50 Analysemodule auf der Grundlage von proprietärer Microsoft-Technologie für natürlichsprachliche Verarbeitung, die in Office und Bing verwendet werden. 
+- 28 Analysen, die von Lucene unterstützt werden
+- 50 Analysen, die von Natural Language-Verarbeitungstechnologien von Microsoft unterstützt werden, die in Office und Bing zum Einsatz kommen 
 
-Einige Entwickler ziehen vielleicht die vertrautere, einfache, quelloffene Lösung von Lucene vor. Lucene ist schneller, die Microsoft-Analysemodule verfügen jedoch über erweiterte Funktionen, wie etwa Lemmatisierung. Sie sollten möglichst Vergleiche zwischen dem Microsoft- und dem Lucene-Analysemodul durchführen, um zu entscheiden, welches sich für Sie besser eignet.
+Einige Entwickler bevorzugen möglicherweise die vertrautere, einfachere Open Source-Lösung von Lucene. Lucene ist schneller, während die Microsoft-Analysen erweiterte Funktionen wie die Reduzierung auf die Grundform (Lemmatisierung) bieten. Vergleichen Sie nach Möglichkeit die Analyseprogramme von Microsoft und Lucene, um die für Ihre Anforderungen passendere Lösung zu ermitteln.
 
-***Vergleich der Analysemodule***
+***Der Vergleich***
 
-Das Lucene-Analysemodul für Englisch erweitert das Standardanalysemodul. Es entfernt Possessivformen (schließendes "'s") von Wörtern, wendet die Rückführung auf den Stamm nach dem [Porter Stemming-Algorithmus](http://tartarus.org/~martin/PorterStemmer/) an und entfernt englische [Stoppwörter](http://en.wikipedia.org/wiki/Stop_words). Das Abfragen und Indizieren mit Lucene-Analysemodulen erfolgt sehr schnell. 
+Das Analyseprogramm von Lucene für Englisch ist beispielsweise eine Erweiterung des Standardanalyseprogramms. Es entfernt Possessivformen (nachgestelltes -s) bei Wörtern, wendet gemäß dem [Wortstammerkennungsalgorithmus von Porter](http://tartarus.org/~martin/PorterStemmer/) die Wortstammerkennung an und entfernt englische [Stoppwörter](http://en.wikipedia.org/wiki/Stop_words). Die Abfrage und Indizierung mit dem Analyseprogramm von Lucene erfolgen sehr schnell.
 
-Verglichen damit implementiert das Microsoft-Analysemodul eine umfassende Wortstammerkennung, die zur Abfragezeit alle möglichen Wortformen für jeden Abfrageausdruck erstellt, was zu höherer Genauigkeit der Ergebnisse, aber auch zu längeren Wartezeiten führt. Eine verringerte Abfrageleistung ist bei umfassenden Modulen zur Wortstammerkennung häufig anzutreffen. Die Indizierung mit Microsoft-Analysemodulen erfolgt im Durchschnitt drei Mal langsamer als mit den Lucene-Entsprechungen.
+Im Gegensatz dazu implementiert das Analyseprogramm von Microsoft eine umfangreiche Wortstammerkennung, die während der Abfrage alle möglichen Wortformen jedes Suchbegriffs generiert. Dies führt zu genaueren Ergebnissen, verzögert jedoch auch deren Ausgabe. Dass die Abfrageleistung bei umfangreichen Wortstammerkennungen abnimmt, ist normal. Die Indizierung mit Analyseprogrammen von Microsoft dauert durchschnittlich drei Mal länger als mit entsprechenden Analyseprogrammen von Lucene.
 
 ***Konfiguration***
 
-Für jedes Feld in der Indexdefinition können Sie die  `analyzer`-Eigenschaft auf den Namen eines Analysemoduls festlegen, der die Sprache und den Hersteller angibt. Beispielsweise können Sie separate Felder für englische, französische und spanische Hotelbeschreibungen verwenden, die nebeneinander im gleichen Index vorhanden sind. Die Abfrage gibt an, welche sprachspezifischen Felder in den Suchabfragen zurückgegeben werden sollen. In [In Dokumenten suchen] können Sie Beispielabfragen überprüfen, die die  `analyzer`-Eigenschaft enthalten.(#SearchDocs).
+Sie können für die Eigenschaft `analyzer` jedes Feldes in der Indexdefinition den Namen eines Analyseprogramms angeben, das die zu verwendende Sprache und den Anbieter festlegt. Beispiel: Sie können im selben Index separate Felder für englische, französische und spanische Hotelbeschreibungen verwenden. Die Abfrage gibt an, welches sprachspezifische Feld in Ihren Suchabfragen zurückgegeben werden soll. Beispiele von Abfragen mit der Eigenschaft `analyzer` finden Sie unter [Dokumente durchsuchen](#SearchDocs).
 
-***Liste der Analysemodule***
+***Liste der Analyseprogramme***
 
-Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer kurzen Beschreibung ihrer Funktionen:
+Nachfolgend sind die unterstützten Analyseprogramme mit einer kurzen Beschreibung ihrer Funktionen aufgelistet:
 
 <table style="font-size:12">
     <tr>
 		<th>Sprache</th>
-		<th>Name des Analysemoduls</th>
+		<th>Name des Analyseprogramms</th>
 		<th>Beschreibung</th>
 	</tr>
     <tr>
@@ -310,9 +308,9 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>ar.lucene</td>
 		<td>
 		<ul>
-			<li>Implementiert arabische Rechtschreibnormalisierung</li>
-			<li>Wendet einfache algorithmische Wortstammanalyse an</li>
-			<li>Filtert arabische Stoppwörter aus</li>
+			<li>Normalisiert die arabische Orthografie</li>
+			<li>Wendet eine einfache algorithmische Wortstammerkennung an</li>
+			<li>Filtert arabische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -321,13 +319,23 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>ar.microsoft</td>
 		<td>
 		<ul>		
-			<li>Rückführende Wortstammerkennung</li>
-			<li>Filtert arabische Stoppwörter aus</li>
+			<li>Reduktive Wortstammerkennung</li>
+			<li>Filtert arabische Stoppwörter heraus</li>
 		</ul>
 		</td>
-	</tr>
+	</tr>   
     <tr>
-		<td>Bangla</td>
+    	<td>Armenisch</td>
+    	<td>hy.lucene</td>	
+    	<td>
+    	<ul>
+      		<li>Wendet eine einfache algorithmische Wortstammerkennung an</li>
+    		<li>Filtert armenische Stoppwörter heraus</li>
+	    </ul>
+    	</td>
+  	</tr>
+    <tr>
+		<td>Bengalisch</td>
 		<td>bg.microsoft</td>
 		<td>
 		<ul>
@@ -335,6 +343,26 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		</ul>
 		</td>
 	</tr>
+  	<tr>
+    	<td>Baskisch</td>
+    	<td>eu.lucene</td>
+    	<td>
+    	<ul>
+      		<li>Wendet eine einfache algorithmische Wortstammerkennung an</li>
+    		<li>Filtert baskische Stoppwörter heraus</li>
+	    </ul>
+    	</td>
+    </tr>
+  	<tr>
+ 	   <td>Bulgarisch</td>
+    	<td>bg.lucene</td>
+    	<td>
+    	<ul>
+      		<li>Wendet eine einfache algorithmische Wortstammerkennung an</li>
+    		<li>Filtert bulgarische Stoppwörter heraus</li>
+	    </ul>
+    	</td>
+  	</tr>
     <tr>
 		<td>Bulgarisch</td>
 		<td>bn.microsoft</td>
@@ -344,6 +372,17 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		</ul>
 		</td>
 	</tr>
+  	<tr>
+    	<td>Katalanisch</td>
+    	<td>ca.lucene</td>
+    	<td>
+    	<ul>
+      		<li>Wendet eine einfache algorithmische Wortstammerkennung an</li>
+      		<li>Filtert katalanische Stoppwörter heraus</li>      
+      		<li>Entfernt Auslassungen (Elisionen)</li>
+   		</ul>
+    	</td>
+  	</tr>
     <tr>
 		<td>Katalanisch</td>
 		<td>ca.microsoft</td>
@@ -359,8 +398,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>zh-Hans.lucene</td>
 		<td>
 		<ul>
-			<li>Verwendet probabilistische Wissensmodelle, um die optimale Wortsegmentierung zu ermitteln</li>
-			<li>Filtert chinesische Stoppwörter aus</li>
+			<li>Ermittelt die optimale Wortsegmentierung anhand von probabilistischen Wissensmodellen</li>
+			<li>Filtert chinesische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -369,7 +408,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>zh-Hans.microsoft</td>
 		<td>
 		<ul>
-			<li>Verwendet probabilistische Wissensmodelle, um die optimale Wortsegmentierung zu ermitteln</li>
+			<li>Ermittelt die optimale Wortsegmentierung anhand von probabilistischen Wissensmodellen</li>
 		</ul>
 		</td>
 	</tr>
@@ -378,8 +417,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>zh-Hant.lucene</td>
 		<td>
 		<ul>
-			<li>Indiziert Bigramme (überlappende Gruppen zweier benachbarter chinesischer Zeichen)</li>
-			<li>Normalisiert Unterschiede in der Zeichenbreite</li>
+			<li>Indiziert Bigramme (überlappenden Gruppen von zwei angrenzenden chinesischen Zeichen)</li>
+			<li>Normalisiert unterschiedliche Zeichenbreiten</li>
 		</ul>
 		</td>
 	<tr>
@@ -388,7 +427,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>zh-Hant.microsoft</td>
 		<td>
 		<ul>
-			<li>Verwendet probabilistische Wissensmodelle, um die optimale Wortsegmentierung zu ermitteln</li>
+			<li>Ermittelt die optimale Wortsegmentierung anhand von probabilistischen Wissensmodellen</li>
 		</ul>
 		</td>
 	<tr>
@@ -406,8 +445,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>cs.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert tschechische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert tschechische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -417,7 +456,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert tschechische Stoppwörter aus</li>
+			<li>Filtert tschechische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -426,8 +465,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>da.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert dänische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert dänische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -437,8 +476,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert dänische Stoppwörter aus</li>
-			<li>Kompositazerlegung</li>
+			<li>Filtert dänische Stoppwörter heraus</li>
+			<li>Zerlegung</li>
 		</ul>
 		</td>
 	</tr>
@@ -447,8 +486,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>nl.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert niederländische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert niederländische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -458,30 +497,30 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert niederländische Stoppwörter aus</li>
-			<li>Kompositazerlegung</li>
+			<li>Filtert niederländische Stoppwörter heraus</li>
+			<li>Zerlegung</li>
 			<li>Entfernt diakritische Zeichen</li>
 		</ul>
 		</td>
 	</tr>
     <tr>
-		<td>Deutsch</td>
+		<td>Englisch</td>
 		<td>en.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert englische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert englische Stoppwörter heraus</li>
 			<li>Entfernt Possessivformen</li>
 		</ul>
 		</td>
 	</tr>
     <tr>
-		<td>Deutsch</td>
+		<td>Englisch</td>
 		<td>en.microsoft</td>
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert englische Stoppwörter aus</li>
+			<li>Filtert englische Stoppwörter heraus</li>
 			<li>Entfernt Possessivformen und diakritische Zeichen</li>
 		</ul>
 		</td>
@@ -491,8 +530,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>et.microsoft</td>
 		<td>
 		<ul>
-			<li>Rückführende Wortstammerkennung</li>
-			<li>Kompositazerlegung</li>
+			<li>Reduktive Wortstammerkennung</li>
+			<li>Zerlegung</li>
 		</ul>
 		</td>
 	</tr>
@@ -501,8 +540,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>fi.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert finnische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert finnische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -511,9 +550,9 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>fi.microsoft</td>
 		<td>
 		<ul>
-			<li>Rückführende Wortstammerkennung</li>
-			<li>Filtert finnische Stoppwörter aus</li>
-			<li>Kompositazerlegung</li>
+			<li>Reduktive Wortstammerkennung</li>
+			<li>Filtert finnische Stoppwörter heraus</li>
+			<li>Zerlegung</li>
 		</ul>
 		</td>
 	</tr>	
@@ -522,9 +561,9 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>fr.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert französische Stoppwörter aus</li>
-			<li>Entfernt Auslassungen</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert französische Stoppwörter heraus</li>
+			<li>Entfernt Auslassungen (Elisionen)</li>
 		</ul>
 		</td>
 	</tr>
@@ -534,18 +573,28 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert französische Stoppwörter aus</li>
+			<li>Filtert französische Stoppwörter heraus</li>
 			<li>Entfernt diakritische Zeichen</li>
 		</ul>
 		</td>
 	</tr>
     <tr>
+    	<td>Galizisch</td>
+	    <td>gl.lucene</td>
+    	<td>
+    	<ul>
+    		<li>Wendet eine einfache Wortstammerkennung an</li>
+      		<li>Filtert galizische Stoppwörter heraus</li>      
+    	</ul>
+    	</td>
+  	</tr>
+    <tr>
 		<td>Deutsch</td>
 		<td>de.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert deutsche Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert deutsche Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -555,8 +604,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert deutsche Stoppwörter aus</li>
-			<li>Kompositazerlegung</li>
+			<li>Filtert deutsche Stoppwörter heraus</li>
+			<li>Zerlegung</li>
 			<li>Entfernt diakritische Zeichen</li>
 		</ul>
 		</td>
@@ -566,8 +615,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>el.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert griechische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert griechische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -577,7 +626,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert griechische Stoppwörter aus</li>
+			<li>Filtert griechische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -595,7 +644,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>he.microsoft</td>
 		<td>
 		<ul>
-			<li>Rückführende Wortstammerkennung</li>
+			<li>Reduktive Wortstammerkennung</li>
 		</ul>
 		</td>
 	</tr>
@@ -604,10 +653,10 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>hi.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert Hindi-Stoppwörter aus</li>
-			<li>Entfernt einige Abweichungen durch Rechtschreibvarianten</li>
-			<li>Normalisiert die Unicode-Darstellung von Text in indischen Sprachen.</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert indische Stoppwörter heraus</li>
+			<li>Entfernt diverse unterschiedliche Schreibweisen</li>
+			<li>Normalisiert die Unicode-Darstellung von Text in indischen Sprachen</li>
 		</ul>
 		</td>
 	</tr>
@@ -617,7 +666,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert Hindi-Stoppwörter aus</li>			
+			<li>Filtert indische Stoppwörter heraus</li>			
 		</ul>
 		</td>
 	</tr>
@@ -626,8 +675,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>hu.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert ungarische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert ungarische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -636,9 +685,9 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>hu.microsoft</td>
 		<td>
 		<ul>
-			<li>Rückführende Wortstammerkennung</li>
-			<li>Filtert ungarische Stoppwörter aus</li>
-			<li>Kompositazerlegung</li>
+			<li>Reduktive Wortstammerkennung</li>
+			<li>Filtert ungarische Stoppwörter heraus</li>
+			<li>Zerlegung</li>
 		</ul>
 		</td>
 	</tr>
@@ -656,8 +705,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>id.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert indonesische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert indonesische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -667,18 +716,28 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>		
-			<li>Filtert indonesische Stoppwörter aus</li>
+			<li>Filtert indonesische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
+    <tr>
+    	<td>Irisch</td>
+      	<td>ga.lucene</td>
+      	<td>
+      	<ul>
+        	<li>Wendet eine einfache Wortstammerkennung an</li>
+        	<li>Filtert irische Stoppwörter heraus</li>
+      	</ul>
+      	</td>
+    </tr>
     <tr>
 		<td>Italienisch</td>
 		<td>it.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert italienische Stoppwörter aus</li>
-			<li>Entfernt Auslassungen</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert italienische Stoppwörter heraus</li>
+			<li>Entfernt Auslassungen (Elisionen)</li>
 		</ul>
 		</td>
 	</tr>
@@ -688,7 +747,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert italienische Stoppwörter aus</li>
+			<li>Filtert italienische Stoppwörter heraus</li>
 			<li>Entfernt diakritische Zeichen</li>
 		</ul>
 		</td>
@@ -698,11 +757,11 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>ja.lucene</td>
 		<td>
 		<ul>
-			<li>Verwendet morphologische Analyse</li>
-			<li>Normalisiert häufige Katakana-Rechtschreibvarianten</li>
-			<li>Einfache Entfernung von Stoppwörtern/Stoppzeichen</li>
-			<li>Normalisierung der Zeichenbreite</li>
-			<li>Lemmatisierung - führt gebeugte Adjektive und Verben auf ihre Stammform zurück</li>
+			<li>Verwendet eine morphologische Analyse</li>
+			<li>Normalisiert allgemeine Katakana-Schreibweisen</li>
+			<li>Entfernt einfache Stoppwörter/Stopptags</li>
+			<li>Normalisiert die Zeichenbreite</li>
+			<li>Lemmatisierung - reduziert gebeugte Adjektive und Verben auf ihre Grundform</li>
 		</ul>
 		</td>
 	</tr>
@@ -711,7 +770,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>ja.microsoft</td>
 		<td>
 		<ul>
-			<li>Verwendet morphologische Analyse</li>
+			<li>Verwendet eine morphologische Analyse</li>
 		</ul>
 		</td>
 	</tr>
@@ -729,8 +788,17 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>ko.lucene</td>
 		<td>
 		<ul>
-			<li>Indiziert Bigramme (überlappende Gruppen zweier benachbarter Hangul-Zeichen)</li>
-			<li>Normalisiert Unterschiede in der Zeichenbreite</li>
+			<li>Indiziert Bigramme (überlappenden Gruppen von zwei angrenzenden hangulische Zeichen)</li>
+			<li>Normalisiert unterschiedliche Zeichenbreiten</li>
+		</ul>
+		</td>
+	</tr>
+  	<tr>
+		<td>Koreanisch</td>
+		<td>ko.microsoft</td>
+		<td>
+		<ul>
+			<li>Reduktive Wortstammerkennung (Lemmatisierung)</li>
 		</ul>
 		</td>
 	</tr>
@@ -739,8 +807,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>lv.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert lettische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert lettische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -749,8 +817,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>lv.microsoft</td>
 		<td>
 		<ul>
-			<li>Rückführende Wortstammerkennung</li>
-			<li>Filtert lettische Stoppwörter aus</li>
+			<li>Reduktive Wortstammerkennung</li>
+			<li>Filtert lettische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -759,7 +827,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>lt.microsoft</td>
 		<td>
 		<ul>
-			<li>Rückführende Wortstammerkennung</li>
+			<li>Reduktive Wortstammerkennung</li>
 		</ul>
 		</td>
 	</tr>
@@ -795,8 +863,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>no.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert norwegische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert norwegische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -806,18 +874,29 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert norwegische Stoppwörter aus</li>
-			<li>Kompositazerlegung</li>
+			<li>Filtert norwegische Stoppwörter heraus</li>
+			<li>Zerlegung</li>
 		</ul>
 		</td>
 	</tr>
+  	<tr>
+    	<td>Persisch</td>
+		<td>fa.lucene</td>
+    	<td>
+    	<ul>
+      		<li>Wendet eine algorithmische Wortstammerkennung an</li>
+      		<li>Filtert persische Stoppwörter heraus</li>
+      		<li>Normalisiert die arabische und persische Orthografie</li>
+    	</ul>
+    	</td>
+  	</tr>
     <tr>
 		<td>Polnisch</td>
 		<td>pl.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet algorithmische Wortstammerkennung (Stempel) an</li>
-			<li>Filtert polnische Stoppwörter aus</li>
+			<li>Wendet eine algorithmische Wortstammerkennung an (Stempel)</li>
+			<li>Filtert polnische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -827,7 +906,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert polnische Stoppwörter aus</li>
+			<li>Filtert polnische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -836,8 +915,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>pt-Br.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert brasilianische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert brasilianische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -847,7 +926,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>			
-			<li>Filtert brasilianische Stoppwörter aus</li>
+			<li>Filtert brasilianische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -856,24 +935,24 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>pt-Pt.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert portugiesische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert portugiesische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
     <tr>
 		<td>Portugiesisch (Portugal)</td>
-		<td>pt-Br.microsoft</td>
+		<td>pt-Pt.microsoft</td>
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert portugiesische Stoppwörter aus</li>
+			<li>Filtert portugiesische Stoppwörter heraus</li>
 			<li>Entfernt diakritische Zeichen</li>
 		</ul>
 		</td>
 	</tr>
     <tr>
-		<td>Punjabi</td>
+		<td>Pandschabi</td>
 		<td>pa.microsoft</td>
 		<td>
 		<ul>
@@ -886,8 +965,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>ro.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert rumänische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert rumänische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -897,7 +976,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert rumänische Stoppwörter aus</li>
+			<li>Filtert rumänische Stoppwörter heraus</li>
 			<li>Entfernt diakritische Zeichen</li>
 		</ul>
 		</td>
@@ -907,8 +986,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>ru.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert russische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert russische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -918,7 +997,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert russische Stoppwörter aus</li>
+			<li>Filtert russische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -945,8 +1024,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>sk.microsoft</td>
 		<td>
 		<ul>
-			<li>Rückführende Wortstammerkennung</li>	
-			<li>Kompositazerlegung</li>		
+			<li>Reduktive Wortstammerkennung</li>	
+			<li>Zerlegung</li>		
 		</ul>
 		</td>
 	</tr>
@@ -964,8 +1043,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>es.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert spanische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert spanische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -975,7 +1054,7 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert spanische Stoppwörter aus</li>
+			<li>Filtert spanische Stoppwörter heraus</li>
 			<li>Entfernt diakritische Zeichen</li>
 		</ul>
 		</td>
@@ -985,8 +1064,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>sv.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert schwedische Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert schwedische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -996,13 +1075,13 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>
 		<ul>
 			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert schwedische Stoppwörter aus</li>
-			<li>Kompositazerlegung</li>
+			<li>Filtert schwedische Stoppwörter heraus</li>
+			<li>Zerlegung</li>
 		</ul>
 		</td>
 	</tr>
     <tr>
-		<td>Tamil</td>
+		<td>Tamilisch</td>
 		<td>ta.microsoft</td>
 		<td>
 		<ul>
@@ -1020,21 +1099,21 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		</td>
 	</tr>
     <tr>
-		<td>Thai</td>
+		<td>Thailändisch</td>
 		<td>th.lucene</td>
 		<td>
 		<ul>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert Thai-Stoppwörter aus</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert thailändische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
     <tr>
-		<td>Thai</td>
+		<td>Thailändisch</td>
 		<td>th.microsoft</td>
 		<td>
 		<ul>			
-			<li>Filtert Thai-Stoppwörter aus</li>
+			<li>Filtert thailändische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -1043,9 +1122,9 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>tr.lucene</td>
 		<td>
 		<ul>
-			<li>Entfernt alle Zeichen nach einem Apostroph (einschließlich des Apostrophs selbst)</li>
-			<li>Wendet einfache Stammreduzierung an</li>
-			<li>Filtert türkische Stoppwörter aus</li>
+			<li>Entfernt alle Zeichen nach dem Apostroph (einschließlich des Apostrophs)</li>
+			<li>Wendet eine einfache Wortstammerkennung an</li>
+			<li>Filtert türkische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -1054,8 +1133,8 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		<td>tr.microsoft</td>
 		<td>
 		<ul>
-			<li>Rückführende Wortstammerkennung</li>
-			<li>Filtert türkische Stoppwörter aus</li>
+			<li>Reduktive Wortstammerkennung</li>
+			<li>Filtert türkische Stoppwörter heraus</li>
 		</ul>
 		</td>
 	</tr>
@@ -1086,48 +1165,42 @@ Unten finden Sie die Liste der unterstützten Analysemodule zusammen mit einer k
 		</ul>
 		</td>
 	</tr>
-	<td colspan="3">Außerdem stehen in Azure Search auch sprachneutrale Konfigurationen des Analysemoduls zur Verfügung</td> 
+	<td colspan="3">Mit zusätzlichen sprachunabhängigen Analysekonfigurationen von Azure Search</td> 
     <tr>
-		<td>ASCII-Standardfaltung</td>
-		<td>standardasciifolding.lucene</td>
+		<td>Standardmäßiges ASCII&#160;Folding</td>
+		<td>standardasciifolding.Lucene</td>
 		<td>
 		<ul>
-			<li>Unicode-Textsegmentierung (Standardtokenizer)</li>
-			<li>ASCII-Faltungsfilter - konvertiert Unicodezeichen, die nicht zum Satz der ersten 127 ASCII-Zeichen gehören, in ihre ASCII-Entsprechungen. Dies ist zum Entfernen von diakritischen Zeichen nützlich.</li>
+			<li>Unicode-Textsegmentierung (Standard-Tokenizer)</li>
+			<li>ASCII Folding Filter: Konvertiert Unicode-Zeichen, die nicht zu den ersten 127&#160;ASCII-Zeichen gehören, in ihre ASCII-Entsprechungen. Dies erleichtert das Entfernen diakritischer Zeichen.</li>
 		</ul>
 		</td>
 	</tr>
 </table>
 
-Alle Analysemodule, deren Namen <i>lucene</i> enthalten, basieren auf den [Sprachanalysemodulen von Apache Lucene](http://lucene.apache.org/core/4_9_0/analyzers-common/overview-summary.html). Weitere Informationen zum ASCII-Faltungsfilter finden Sie [hier](http://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/miscellaneous/ASCIIFoldingFilter.html).
+Alle Analyseprogramme mit <i>lucene</i> im Namen werden von den [Sprachanalyseprogrammen von Apache Lucene](http://lucene.apache.org/core/4_9_0/analyzers-common/overview-summary.html) unterstützt. Weitere Informationen über den ASCII Folding Filter finden Sie [hier](http://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/miscellaneous/ASCIIFoldingFilter.html).
+
+**Vorschläge**
+
+Ein `suggester` definiert, welche Felder in einem Index verwendet werden, um in Suchvorgängen automatische Vervollständigung zu unterstützen. In der Regel werden während der Eingabe einer Suchabfrage Teile von Suchzeichenfolgen an die [Vorschlags-API](#Suggestions) gesendet. Diese gibt daraufhin eine Reihe von Vorschlägen zurück. Wenn Sie im Index einen Vorschlag definieren, bestimmt dieser, welche Felder für Eingabevorschläge von Suchbegriffen verwendet werden. Details zur Konfiguration finden Sie unter [Vorschläge](#Suggesters).
+
+**Bewertungsprofile**
+
+Ein `scoringProfile` definiert benutzerdefinierte Bewertungsverhalten, mit denen Sie beeinflussen können, welche Elemente weiter oben in den Suchergebnissen angezeigt werden. Bewertungsprofile bestehen aus Feldgewichtungen und Funktionen. Um sie verwenden zu können, fügen Sie in die Abfragezeichenfolge den Profilnamen ein.
+
+Ein standardmäßiges Bewertungsprofil berechnet im Hintergrund für jedes Element eines Ergebnissatzes eine Suchbewertung. Sie können das interne, unbenannte Bewertungsprofil verwenden. Oder legen Sie für `defaultScoringProfile` ein benutzerdefiniertes Profil fest, das standardmäßig aufgerufen wird, wenn für eine Abfragezeichenfolge kein benutzerdefiniertes Profil angegeben wurde.
+
+Details finden Sie unter [Hinzufügen von Bewertungsprofilen zu einem Suchindex (Azure-Suchdienst-REST-API)](../search-api-scoring-profiles-2015-02-28.md).
 
 **CORS-Optionen**
 
-Clientseitig können mit Javascript standardmäßig keine APIs aufgerufen werden, da der Browser alle ursprungsübergreifenden Anforderungen verhindert. Aktivieren Sie CORS (Cross-Origin Resource Sharing), indem Sie das  `corsOptions`-Attribut so festlegen, dass ursprungsübergreifende Abfragen für Ihren Index zugelassen werden. Beachten Sie, dass aus Sicherheitsgründen CORS nur von Abfrage-APIs unterstützt wird. Die folgenden Optionen können für CORS festgelegt werden:
+Clientseitiger JavaScript-Code kann standardmäßig keine APIs aufrufen, da der Browser jegliche ursprungsübergreifenden Anforderungen verhindert. Aktivieren Sie CORS (Cross-Origin Resource Sharing), indem Sie mit dem Attribut `corsOptions` festlegen, dass ursprungsübergreifende Abfragen für den Index zulässig sind. Beachten Sie, dass CORS aus Sicherheitsgründen nur von Abfrage-APIs unterstützt wird. Die folgenden Optionen können für CORS festgelegt werden:
 
-- `allowedOrigins` (erforderlich): Dies ist eine Liste der Ursprünge, denen Zugriff auf Ihren Index erteilt werden soll. Dies bedeutet, dass von solchen Ursprüngen aus bedientem Javascript-Code das Abfragen Ihres Index gestattet wird (vorausgesetzt, er übergibt den korrekten API-Schlüssel). Jeder Ursprung weist typischerweise die Form  `protocol://fully-qualified-domain-name:port` auf, obwohl der Port oft ausgelassen wird. Weitere Details finden Sie in [diesem Artikel](http://go.microsoft.com/fwlink/?LinkId=330822).
- - Wenn Sie den Zugriff für alle Ursprünge zulassen möchten, schließen Sie `*` als einziges Element in das  `allowedOrigins`-Array ein. Beachten Sie, dass dies ** kein empfohlenes Vorgehen für Suchdienste im produktiven Einsatz ist.** Es kann jedoch in der Entwicklung oder für Debugzwecke nützlich sein.
-- `maxAgeInSeconds` (optional): Browser verwenden diesen Wert, um die Dauer (in Sekunden) zum Zwischenspeichern von Preflight-Reaktionen von CORS zu bestimmen. Es muss sich um eine nicht negative ganze Zahl handeln. Je größer dieser Wert ist, desto besser ist die Leistung, es dauert jedoch länger, bis Änderungen der CORS-Richtlinie wirksam werden. Wenn kein Wert festgelegt ist , wird ein Standardwert von 5 Minuten verwendet.
+- `allowedOrigins` (erforderlich): Dies ist eine Liste der Ursprünge, denen Zugriff auf Ihren Index gewährt wird. Dies bedeutet, dass jeglicher von diesen Ursprüngen bereitgestellte Javascript-Code Indexabfragen durchführen kann (sofern er den richtigen API-Schlüssel angibt). Ursprünge werden in der Regel im Format `protocol://fully-qualified-domain-name:port` angegeben, wobei der Port häufig weggelassen wird. Weitere Informationen finden Sie [in diesem Artikel](http://go.microsoft.com/fwlink/?LinkId=330822).
+ - Wenn Sie den Zugriff auf alle Ursprünge zulassen möchten, beziehen Sie `*` als ein einzelnes Element in das Array `allowedOrigins` ein. **Bei Suchdiensten in der Produktion wird von dieser Methode abgeraten**. Für die Entwicklung und das Debuggen kann sie jedoch nützlich sein.
+- `maxAgeInSeconds` (optional): Von Browsern wird dieser Wert verwendet, um die Dauer (in Sekunden) des Zwischenspeicherns von CORS-Preflight-Antworten zu ermitteln. Dies muss eine positive ganze Zahl sein. Mit dem Wert steigt auch die Leistung, aber es dauert auch länger, bis CORS-Richtlinienänderungen in Kraft treten. Wenn diese Einstellung nicht festgelegt ist, gilt die Standarddauer von 5 Minuten.
 
-<a name="Suggesters"></a>
-**Vorschlagsmodule**
-
-Ein Vorschlagsmodul ermöglicht AutoVervollständigen bei Suchvorgängen. Normalerweise Teilzeichenfolgen für die Suche, die an die [Vorschlagsmodul-API] gesendet werden,(#Suggestions) während der Benutzer eine Suchabfrage eingibt und die API eine Reihe von Vorschlägen zurückgibt. Ein Vorschlagsmodul, das Sie im Index definieren, bestimmt, ob und wie Vorschläge zurückgegeben werden.
-
-Wenn Sie die öffentliche Vorschauversion von Azure Search verwendet haben, ersetzt  `suggesters` eine ältere boolesche Eigenschaft (`"suggestions": false`), die lediglich Präfixvorschläge für kurze Zeichenfolgen (3-25 Zeichen) unterstützte. Ihr Ersatz,  `suggesters`, unterstützt die Infixzuordnung, die übereinstimmende Ausdrücke am Anfang oder in der Mitte von Feldinhalten findet, mit besserer Toleranz für Fehler in Suchzeichenfolgen. Dies ist die einzige Implementierung der Vorschlagsmodul-API. Die Eigenschaft  `suggestions`, die in  `api-version=2014-07-31-Preview` eingeführt wurde, funktioniert auch in dieser Version, jedoch nith in der Version `2015-02-28` von Azure Search.
-
-**Wichtig:** `Suggesters` funktionieren optimal beim Vorschlagen spezifischer Dokumente anstelle unverbundener Ausdrücke/Formulierungen. Die besten Kandidatenfelder sind Titel, Namen und andere relativ kurze Formulierungen, mit denen ein Element identifiziert werden kann. Weniger effektiv sind repetitive Felder, wie Kategorien oder Tags, oder sehr lange Felder, wie Beschreibungs- und Kommentarfelder.
-
-Im Rahmen der Indexdefinition können Sie der  `suggesters`-Auflistung ein einzelnes Vorschlagsmodul hinzufügen. Diese Eigenschaften definieren ein Vorschlagsmodul:
-
-- `name`: Der Name des Vorschlagsmoduls. Sie verwenden den Namen des Vorschlagsmoduls beim Aufrufen der  `suggest`-API.
-- `searchMode`: Die Strategie, die beim Suchen nach Formulierungskandidaten verwendet wird. Nur der Modus  `analyzingInfixMatching`, der flexible Zuordnung von Formulierungen am Satzanfang oder in der Satzmitte ausführt, wird aktuell unterstützt.
-- `sourceFields`: Eine Liste mit mindestens einem Feld, das die Quelle für die Inhalte von Vorschlägen bildet. Nur Felder der Typen  `Edm.String` und  `Collection(Edm.String)` kommen als Quelle für Vorschläge in Frage. Nur Felder, für die kein benutzerdefiniertes Modul zur Sprachanalyse festgelegt ist, können verwendet werden.
-
-Derzeit können Sie in der  `suggesters`-Auflistung in der aktuellen Version der API nur ein Vorschlagsmodul verwenden. 
-
-<a name="CreateUpdateIndexExample"></a>
-**Beispiel für einen Anforderungstextkörper**
+<a name="CreateUpdateIndexExample"></a> **Beispiel für Anforderungstext**
  
     {
       "name": "hotels",  
@@ -1156,49 +1229,94 @@ Derzeit können Sie in der  `suggesters`-Auflistung in der aktuellen Version der
 
 **Antwort**
 
-Für eine erfolgreiche Anforderung: "201 Created". 
+Bei erfolgreicher Anforderung: "201 – Erstellt".
 
-Standardmäßig enthält der Textkörper der Antwort den JSON-Code für die erstellte Indexdefinition. Wenn der  `Prefer`-Anforderungsheader auf  `return=minimal` festgelegt ist, ist der Textkörper der Anforderung leer, und der Erfolgsstatuscode "204 No Content" wird anstelle von "201 Created" zurückgegeben. Dies trifft unabhängig davon zu, ob PUT oder POST zum Erstellen des Index verwendet worden war.
+Standardmäßig enthält der Antworttext die JSON für die erstellte Indexdefinition. Wenn der Anforderungsheader `Prefer` auf `return=minimal` gesetzt wird, bleibt der Antworttext leer und als Erfolgsstatuscode wird anstelle von "201 – Erstellt" der Code "204 Kein Inhalt" ausgegeben. Dies gilt unabhängig davon, ob der Index mit PUT oder POST erstellt wurde.
 
 **Anmerkungen**
 
-Aktuell werden Aktualisierungen des Indexschemas nur eingeschränkt unterstützt. Schemaaktualisierungen, für die eine Neuindizierung erfroderlich ist, werden aktuell nicht unterstützt. Zwar können vorhandene Felder weder geändert noch gelöscht werden, doch können neue Felder einem vorhandenen Index jederzeit hinzugefügt werden. Beim Hinzufügen eines neuen Felds zu einem Index weisen alle vorhandenen Dokumente im Index für das betreffende Feld automatisch den Wert null auf. Es wird kein zusätzlicher Speicherplatz beansprucht, sofern dem Index keine neuen Dokumente hinzugefügt werden.
+Derzeit werden Aktualisierungen des Indexschemas nur begrenzt unterstützt. Nicht unterstützt werden jegliche Schema-Aktualisierungen, die eine erneute Indizierung nach sich ziehen (z. B. Änderungen der Feldtypen). Während sich bestehende Felder nicht ändern oder löschen lassen, können Sie einem vorhandenen Index jederzeit neue Felder hinzufügen. Wenn Sie ein neues Feld hinzufügen, wird allen im Index enthaltenen Dokumenten für dieses Feld automatisch ein Nullwert zugewiesen. Zusätzlicher Speicherplatz wird erst belegt, wenn Sie dem Index neue Dokumente hinzufügen.
+
+<a name="Suggesters"></a>
+##Vorschläge
+
+Das Vorschlags-Feature in Azure Search ist eine Abfragefunktion mit automatischer Vervollständigung bzw. Eingabevorschlägen. Wenn Sie in ein Suchfeld einen Teil einer Zeichenfolge eingeben, wird eine Liste möglicher Suchbegriffe angezeigt. Sie kennen dies vermutlich von kommerziellen Suchmaschinen im Internet: Wenn Sie in Bing ".NET" eingeben, wird eine Liste mit Begriffen für ".NET 4.5", ".NET Framework 3.5" usw. angezeigt. Wenn Sie die Suchdienst-REST-API verwenden, ist für die Implementierung von Vorschlägen in eine benutzerdefinierte Azure Search-Anwendung Folgendes erforderlich:
+
+- Ermöglichen Sie Vorschläge, indem Sie Ihrem Index eine **Vorschlagskonstruktion** hinzufügen, die den Namen, den Suchmodus und eine Liste der Felder beinhaltet, für die Eingabevorschläge angezeigt werden sollen. Beispiel: Wenn Sie als Quellfeld "cityName" festlegen, erhalten Sie bei Eingabe der Zeichenfolge "Sea" als Abfragevorschläge "Seattle", "Seaside" und "Seatac" (allesamt Städtenamen).
+
+- Ermöglichen Sie Vorschläge, indem Sie in Ihrem Anwendungscode die [Vorschlags-API](#Suggestions) aufrufen. In der Regel werden während der Eingabe einer Suchabfrage Teile von Suchzeichenfolgen an die API gesendet. Diese gibt daraufhin eine Reihe von Vorschlägen zurück.
+
+In diesem Artikel wird das Konfigurieren eines **Vorschlags** erläutert. Lesen Sie auch unter [Vorschlags-API](#Suggestions) Einzelheiten darüber, wie Vorschläge verwendet werden.
+
+**Verwendung**
+
+`Suggesters` werden im Index erstellt. Sie funktionieren am besten, wenn damit anstelle von zusammenhangslosen Begriffen oder Ausdrücken spezielle Dokumente vorgeschlagen werden sollen. Als Kandidaten eignen sich am besten Felder für Titel, Namen und sonstige relativ kurze Ausdrücke, anhand derer ein Element identifiziert werden kann. Weniger effektiv sind sich wiederholende Felder, wie etwa Kategorien und Tags, oder extrem lange Felder, etwa für Beschreibungen oder Kommentare.
+
+Sie können der `suggesters`-Sammlung im Rahmen der Indexdefinition einen einzelnen Vorschlag hinzufügen. Zu den Eigenschaften, mit denen ein Vorschlag definiert wird, zählen unter anderem:
+
+- `name`: Der Name des Vorschlags. Den Namen des Vorschlags verwenden Sie zum Aufrufen der `suggest`-API.
+- `searchMode`: Die Strategie, mit der nach möglichen Ausdrücken gesucht wird. Derzeit wird nur der Modus `analyzingInfixMatching` unterstützt. Darin werden Ausdrücke am Anfang oder in der Mitte von Sätzen flexibel verglichen.
+- `sourceFields`: Eine Liste mit einem oder mehreren Feldern, die als Quelle für den Inhalt von Vorschlägen dienen. Als Vorschlagsquellen sind nur Felder vom Typ `Edm.String` und `Collection(Edm.String)` zulässig. Es können nur Felder ohne benutzerdefinierte Sprachanalyse verwendet werden.
+
+**Beispielvorschlag**
+
+Ein Vorschlag ist Teil des Index. In der aktuellen Version kann in der `suggesters`-Sammlung neben der Feldsammlung und `scoringProfiles` nur ein Vorschlag vorhanden sein.
+
+		{
+		  "name": "hotels",
+		  "fields": [
+		     . . . 
+		   ],
+		  "suggesters": [
+		    {
+		    "name": "sg",
+		    "searchMode": "analyzingInfixMatching",
+		    "sourceFields: ["hotelName", "category"]
+		    }
+		  ],
+		  "scoringProfiles": [
+		     . . . 
+		  ]
+		}
+
+> [AZURE.NOTE]Wenn Sie die öffentliche Vorschauversion von Azure Search verwendet haben, ersetzt `suggesters` eine ältere boolesche Eigenschaft (`"suggestions": false`), die nur Präfixvorschläge für kurze Zeichenfolgen (mit 3 bis 25 Zeichen) unterstützt hat. Die Ersatzeigenschaft `suggesters` unterstützt den Infixabgleich, bei dem übereinstimmende Begriffe am Anfang oder in der Mitte von Feldinhalten gesucht werden. Dies verbessert die Fehlertoleranz in Suchzeichenfolgen. Dies ist die einzige Implementierung der Vorschlags-API. Die Eigenschaft `suggestions`, die in `api-version=2014-07-31-Preview` eingeführt wurde, funktioniert in dieser Version weiterhin, jedoch nicht in der Version `2015-02-28` von Azure Search.
+
 
 <a name="UpdateIndex"></a>
-### Index aktualisieren
+## Index aktualisieren
 
-Sie können einen vorhandenen Index in Azure Search mithilfe einer HTTP-PUT-Anforderung aktualisieren. Zu den Aktualisierungen können das Hinzufügen neuer Felder zum vorhandenen Schema, das Ändern der CORS-Optionen und das Ändern von Bewertungsprofilen gehören. Weitere Informationen finden Sie unter [Hinzufügen von Bewertungsprofilen](https://msdn.microsoft.com/library/azure/dn798928.aspx). Sie geben den Namen des zu aktualisierenden Index im Anforderungs-URI an:
+Sie können einen vorhandenen Index in Azure Search mit einer HTTP PUT-Anforderung aktualisieren. Sie haben im Rahmen von Aktualisierungen die Möglichkeit, dem bestehenden Schema neue Felder hinzuzufügen und CORS-Optionen sowie Bewertungsprofile zu ändern. Weitere Informationen finden Sie unter [Hinzufügen von Bewertungsprofilen zu einem Suchindex](https://msdn.microsoft.com/library/azure/dn798928.aspx). Geben Sie den Namen des Index an, der mit dem Anforderungs-URI aktualisiert werden soll:
 
-    PUT https://[search service url]/indexes/[indexname]?api-version=[api-version]
+    PUT https://[search service url]/indexes/[index name]?api-version=[api-version]
     Content-Type: application/json
-    api-key: [Administratorschlüssel]
+    api-key: [admin key]
 
-**Wichtig:** Die Unterstützung für Aktualisierungen des Indexschemas beschränkt sich auf Vorgänge, die keine Neuerstellung des Suchindex erfordern. Schemaupdates, für die eine Neuindizierung erforderlich ist, etwa das Ändern von Feldtypen, werden zurzeit nicht unterstützt. Neue Felder können jederzeit hinzugefügt werden, jedoch können vorhandene Felder weder geändert noch gelöscht werden. Das gleiche gilt für  `suggesters`: Einem Vorschlagsmodul können beim Hinzufügen neu erstellte Felder hinzugefügt werden, Felder können aber nicht aus  `suggesters` entfernt werden, und vorhandene Felder können  `suggesters` nicht hinzugefügt werden.
+**Wichtig:** Die Unterstützung für Aktualisierungen des Indexschemas ist auf Vorgänge beschränkt, die keine Neuerstellung des Suchindex erfordern. Nicht unterstützt werden jegliche Schema-Aktualisierungen, die eine erneute Indizierung nach sich ziehen (z. B. Änderungen der Feldtypen). Während sich bestehende Felder nicht ändern oder löschen lassen, können Sie jederzeit neue Felder hinzufügen. Dies gilt auch für `suggesters`. Neue Felder können einem Vorschlag mit den bestehenden Feldern hinzugefügt werden. Es ist jedoch weder möglich, Felder aus `suggesters` zu entfernen noch bestehende Felder zu `suggesters` hinzuzufügen.
 
-Beim Hinzufügen eines neuen Felds zu einem Index weisen alle vorhandenen Dokumente im Index für das betreffende Feld automatisch den Wert null auf. Es wird kein zusätzlicher Speicherplatz beansprucht, sofern dem Index keine neuen Dokumente hinzugefügt werden.
+Wenn Sie einem Index ein neues Feld hinzufügen, wird allen im Index enthaltenen Dokumenten für dieses Feld automatisch ein Nullwert zugewiesen. Zusätzlicher Speicherplatz wird erst belegt, wenn Sie dem Index neue Dokumente hinzufügen.
 
 **Anforderung**
 
-HTTPS ist für alle Dienstanforderungen erforderlich. Die **Update Index**-Anforderung wird mithilfe von HTTP PUT erstellt. Bei PUT bildet der Indexnamen einen Teil der URL. Wenn der Index nicht vorhanden ist, wird er erstellt. Wenn der Index bereits vorhanden ist, wird er auf die neue Definition aktualisiert. 
+HTTPS ist für alle Dienstanforderungen erforderlich. Die Anforderung **Index aktualisieren** wird mit HTTP PUT erstellt. Bei Verwendung von PUT ist der Indexname Teil der URL. Wenn der Index nicht vorhanden ist, wird er erstellt. Ist der Index bereits vorhanden, wird er auf die neue Definition aktualisiert.
 
-Der Indexname muss aus Kleinbuchstaben bestehen, mit einem Buchstaben oder einer Ziffer beginnen, darf keine Schrägstriche oder Punkte aufweisen und muss kürzer als 128 Zeichen sein. Nach dem Anfangsbuchstaben bzw. der Anfangsziffer kann der Rest des Indexnamens beliebige Buchstaben, Ziffern und Bindestriche enthalten, vorausgesetzt, es folgen keine zwei Bindestriche aufeinander.
+Der Indexname muss in Kleinbuchstaben angegeben werden und mit einem Buchstaben oder einer Zahl beginnen. Er darf keine Schrägstriche oder Punkte enthalten und muss weniger als 128 Zeichen lang sein. Der Rest des Indexnamens (nach dem Buchstaben bzw. der Zahl zu Beginn des Namens) kann beliebige Buchstaben, Zahlen und Bindestriche enthalten, solange die Bindestriche nicht aufeinanderfolgen.
 
-`api-version=[zeichenfolge]` (erforderlich). Die Vorschauversion ist  `api-version=2015-02-28-Preview`. Details und Informationen finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+`api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
 **Anforderungsheader**
 
-In der folgenden Liste sind die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
-- `Content-Type`: Erforderlich. Legen Sie diesen auf  `application/json` fest.
-- `api-key`: Erforderlich. Der  `api-key` wird verwendet, um die Anforderung bei Ihrem Suchdienst zu authentifizieren. Es handelt sich um einen Zeichenfolgenwert, der für Ihren Dienst eindeutig ist. Die Anforderung **Update Index** muss einen  `api-key`-Header beinhalten, der auf Ihren Administratorschlüssel festgelegt ist (statt auf einen Abfrageschlüssel).
+- `Content-Type`: Erforderlich. Auf `application/json` festlegen.
+- `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index aktualisieren** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel (keinen Abfrageschlüssel) festgelegt ist.
  
-Ferner benötigen Sie den Dienstnamen, um die Anforderungs-URL zu erstellen. Sie können den Dienstnamen und den  `api-key` bei Ihrem Dienstdashboard im Azure-Portal abrufen. Hilfe zur Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](../search-create-service-portal/).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
-**Syntax des Anforderungstextkörpers**
+**Syntax des Anforderungstextes**
 
-Beim Aktualisieren eines vorhandenen Index muss der Textkörper die ursprüngliche Schemadefinition und die neu hinzuzufügenden Felder sowie ggf. die geänderten Bewertungsprofile, Vorschlagsmodule und CORS-Optionen enthalten. Wenn Sie die Bewertungsprofile und CORS-Optionen nicht ändern, müssen Sie die ursprünglich bei der Erstellung des Index verwendeten Werte einschließen. Im allgemeinen besteht das beste Muster für Aktualisierungen im Abrufen der Indexdefinition mit einem GET, die dann bearbeitet und mit PUT aktualisiert wird.
+Wenn Sie einen vorhandenen Index aktualisieren, müssen im Text die Definition des ursprünglichen Schemas, die hinzuzufügenden neuen Felder sowie die geänderten Bewertungsprofile, Vorschläge und CORS-Optionen enthalten sein, sofern vorhanden. Wenn Sie die Bewertungsprofile und CORS-Optionen nicht ändern, geben Sie die bei der Indexerstellung verwendeten Originale an. Optimalerweise sollte bei Aktualisierungen die Indexdefinition zunächst mit GET abgerufen, geändert und anschließend mit PUT aktualisiert werden.
 
-Die zum Erstellen eines Index verwendete Schemasyntax wird hier zur besseren Übersicht noch einmal angegeben. Unter [Index erstellen](#CreateIndex) finden Sie weitere Details.
+Die für die Indexerstellung verwendete Schemasyntax ist der Einfachheit halber hier dargestellt. Weitere Details finden Sie unter [Index erstellen](#CreateIndex).
 
     {
       "name": (optional) "name_of_index",
@@ -1268,41 +1386,41 @@ Die zum Erstellen eines Index verwendete Schemasyntax wird hier zur besseren Üb
 
 **Antwort**
 
-Für eine erfolgreiche Anforderung: "204 No Content".
+Bei erfolgreicher Anforderung: "204 Kein Inhalt".
 
-Standardmäßig ist der Textkörper der Antwort leer. Wenn der  `Prefer`-Anforderungsheader jedoch auf  `return=representation` festgelegt ist, enthält der Textkörper der Antwort den JSON-Code für die aktualisierte Indexdefinition. In diesem Fall ist der Erfolgsstatuscode "200 OK".
+Standardmäßig ist der Antworttext leer. Wenn der Anforderungsheader `Prefer` jedoch auf `return=representation` gesetzt ist, enthält der Antworttext die JSON für die aktualisierte Indexdefinition. In diesem Fall wird der Erfolgsstatuscode "200 – OK" ausgegeben.
 
 <a name="ListIndexes"></a>
-### Indizes auflisten ##
+## Indizes auflisten
 
-Der Vorgang **List Indexes** gibt eine Liste der Indizes zurück, die aktuell in Ihrem Azure-Suchdienst vorhanden sind. 
+Mit dem Vorgang **Indizes auflisten** wird eine Liste der aktuell in Ihrem Azure-Suchdienst enthaltenen Indizes zurückgegeben.
 
-    POST https://[dienstname].search.windows.net/indexes?api-version=[api-version]
-    api-key: [Administratorschlüssel]
+    GET https://[service name].search.windows.net/indexes?api-version=[api-version]
+    api-key: [admin key]
 
 **Anforderung**
 
-HTTPS ist für alle Dienstanforderungen erforderlich. Die **List Indexes**-Anforderung kann mithilfe der GET-Methode erstellt werden.
+HTTPS ist für alle Dienstanforderungen erforderlich. Die Anforderung **Index auflisten** kann mit der GET-Methode erstellt werden.
 
-`api-version=[zeichenfolge]` (erforderlich). Die Vorschauversion ist  `api-version=2015-02-28-Preview`. Details und Informationen finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+`api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
 **Anforderungsheader**
 
-In der folgenden Liste sind die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
  
-- `api-key`: Erforderlich. Der  `api-key` wird verwendet, um die Anforderung bei Ihrem Suchdienst zu authentifizieren. Es handelt sich um einen Zeichenfolgenwert, der für Ihren Dienst eindeutig ist. Die **List Indexes**-Anforderung muss einen  `api-key` enthalten, der auf einen Administratorschlüssel (statt auf einen Abfrageschlüssel) festgelegt ist.
+- `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index auflisten** muss einen `api-key` enthalten, der auf einen Admin-Schlüssel (keinen Abfrageschlüssel) festgelegt ist.
  
-Ferner benötigen Sie den Dienstnamen, um die Anforderungs-URL zu erstellen. Sie können den Dienstnamen und den  `api-key` bei Ihrem Dienstdashboard im Azure-Portal abrufen. Hilfe zur Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](../search-create-service-portal/).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen des Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
-**Anforderungstextkörper**
+**Anforderungstext**
 
-Keiner.
+Keine.
 
 **Antwort**
 
-Status Code: "200 OK" wird als Antwort bei Erfolg zurückgegeben.
+Bei erfolgreicher Antwort wird der Statuscode "200 OK" zurückgegeben.
 
-Hier folgt ein Beispiel für einen Antworttextkörper:
+Hier ist ein Beispiel-Antworttext:
 
     {
       "value": [
@@ -1321,11 +1439,11 @@ Hier folgt ein Beispiel für einen Antworttextkörper:
       ]
     }
 
-Beachten Sie, dass Sie die Antwort durch Filtern bis auf die interessierenden Eigenschaften eingrenzen können. Wenn Sie beispielsweise nur eine Liste der Indexnamen wünschen, verwenden Sie die OData-Abfrageoption `$select`:
+Beachten Sie, dass Sie die Antwort filtern können, um nur die Eigenschaften, die Sie interessieren, zu erhalten. Wenn Sie beispielsweise nur eine Liste der Indexnamen erhalten möchten, verwenden Sie die OData-Abfrageoption `$select`:
 
-    GET /indexes?api-version=28.02.2015-Preview&$select=name
+    GET /indexes?api-version=2015-02-28-Preview&$select=name
 
-In diesem Fall würde die Antwort aus dem Beispiel oben in folgender Weise angezeigt: 
+In diesem Fall würde die Antwort aus dem obigen Beispiel wie folgt aussehen:
 
     {
       "value": [
@@ -1335,108 +1453,108 @@ In diesem Fall würde die Antwort aus dem Beispiel oben in folgender Weise angez
       ]
     }
 
-Dies ist eine nützliche Technik, die viel Bandbreite einspart, wenn Ihr Suchdienst über viele Indizes verfügt.
+Dies ist ein nützliches Verfahren, um Bandbreite zu sparen, wenn Ihr Suchdienst zahlreiche Indizes beinhaltet.
 
 <a name="GetIndex"></a>
-### Index abrufen
+## Index abrufen
 
-Der Vorgang **Get Index** ruft die Indexdefinition aus Azure Search ab.
+Mit dem Vorgang **Index abrufen** wird die Indexdefinition in Azure Search abgerufen.
 
-    DELETE https://[dienstname].search.windows.net/indexes/[indexname]?api-version=[api-version]
-    api-key: [Administratorschlüssel]
+    GET https://[service name].search.windows.net/indexes/[index name]?api-version=[api-version]
+    api-key: [admin key]
 
 **Anforderung**
 
-HTTPS ist für Dienstanforderungen erforderlich. Die **Get Index**-Anforderung kann mithilfe der GET-Methode erstellt werden. 
+Für Dienstanforderungen ist HTTPS erforderlich. Die Anforderung **Index abrufen** kann mit der GET-Methode erstellt werden.
  
-Der [indexname] im Anforderungs-URI gibt an, welcher Index aus der Auflistung der Indizes zurückgegeben werden soll.
+Der [Indexname] im Anforderungs-URI gibt an, welcher Index aus der Indexsammlung zurückgegeben werden soll.
 
-`api-version=[zeichenfolge]` (erforderlich). Die Vorschauversion ist  `api-version=2015-02-28-Preview`. Details und Informationen finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+`api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
 **Anforderungsheader**
 
-In der folgenden Liste sind die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
  
-- `api-key`: Der  `api-key` wird verwendet, um die Anforderung bei Ihrem Suchdienst zu authentifizieren. Es handelt sich um einen Zeichenfolgenwert, der für Ihren Dienst eindeutig ist. Die **Get Index**-Anforderung muss einen  `api-key` enthalten, der auf einen Administratorschlüssel (statt auf einen Abfrageschlüssel) festgelegt ist.
+- `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index abrufen** muss einen `api-key` enthalten, der auf einen Admin-Schlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Ferner benötigen Sie den Dienstnamen, um die Anforderungs-URL zu erstellen. Sie können den Dienstnamen und den  `api-key` bei Ihrem Dienstdashboard im Azure-Portal abrufen. Hilfe zur Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](../search-create-service-portal/).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
-**Anforderungstextkörper**
+**Anforderungstext**
 
-Keiner.
+Keine.
 
 **Antwort**
 
-Status Code: "200 OK" wird als Antwort bei Erfolg zurückgegeben.
+Bei erfolgreicher Antwort wird der Statuscode "200 OK" zurückgegeben.
 
-Unter [Erstellen und Aktualisieren eines Index](#CreateUpdateIndexExample) finden Sie JSON-Code als Beispiel für die Nutzdaten einer Antwort.
+Unter [Erstellen und Aktualisieren eines Index](#CreateUpdateIndexExample) wird JSON als Beispiel für die Antwortnutzlast angegeben.
 
 <a name="DeleteIndex"></a>
-### Index löschen
+## Index löschen
 
-Der Vorgang **Delete Index** entfernt einen Index und zugeordnete Dokumente aus Ihrem Azure-Suchdienst. Sie können den Indexnamen im Dienstdashboard im Azure-Portal oder über die API abrufen. Unter [Indizes auflisten](#ListIndexes) zur Verfügung.
+Mit dem Vorgang **Index löschen** wird ein Index samt den damit verknüpften Dokumenten aus Ihrem Azure-Suchdienst entfernt. Sie können den Indexnamen im Dienst-Dashboard im Azure-Portal oder von der API abrufen. Details finden Sie unter [Indizes auflisten](#ListIndexes).
 
-    DELETE https://[service name].search.windows.net/indexes/[indexname]?api-version=[api-version]
-    api-key: [Administratorschlüssel]
+    DELETE https://[service name].search.windows.net/indexes/[index name]?api-version=[api-version]
+    api-key: [admin key]
     
 **Anforderung**
 
-HTTPS ist für Dienstanforderungen erforderlich. Die **Delete Index**-Anforderung  kann mithilfe der DELETE-Methode erstellt werden.
+Für Dienstanforderungen ist HTTPS erforderlich. Die Anforderung **Index löschen** kann mit der DELETE-Methode erstellt werden.
  
-Der [indexname] im Anforderungs-URI gibt an, welcher Index aus der Auflistung der Indizes gelöscht werden soll. 
+Der [Indexname] im Anforderungs-URI gibt an, welcher Index aus der Indexsammlung gelöscht werden soll.
 
-`api-version=[zeichenfolge]` (erforderlich). Die Vorschauversion ist  `api-version=2015-02-28-Preview`. Details und Informationen finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+`api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
 **Anforderungsheader**
 
-In der folgenden Liste sind die erforderlichen und optionalen Anforderungsheader beschrieben. 
+In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
  
-- `api-key`: Erforderlich. Der  `api-key` wird verwendet, um die Anforderung bei Ihrem Suchdienst zu authentifizieren. Es handelt sich um einen Zeichenfolgenwert, der für Ihre Dienst-URL eindeutig ist. Die Anforderung **Delete Index** muss einen  `api-key`-Header beinhalten, der auf Ihren Administratorschlüssel (statt auf einen Abfrageschlüssel) festgelegt ist.
+- `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Die Anforderung **Index löschen** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel (keinen Abfrageschlüssel) festgelegt ist.
  
-Ferner benötigen Sie den Dienstnamen, um die Anforderungs-URL zu erstellen. Sie können den Dienstnamen und den  `api-key` bei Ihrem Dienstdashboard im Azure-Portal abrufen. Hilfe zur Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](../search-create-service-portal/).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
-**Anforderungstextkörper**
+**Anforderungstext**
 
-Keiner.
+Keine.
 
 **Antwort**
 
-Status Code: "204 No Content" wird als Antwort bei Erfolg zurückgegeben.
+Bei erfolgreicher Antwort wird der Statuscode "204 Kein Inhalt" zurückgegeben.
 
 <a name="GetIndexStats"></a>
-### Abrufen der Index-Statistiken
+## Abrufen der Index-Statistiken
 
-Der Vorgang **Get Index Statistics** gibt eine Dokumentanzahl für den aktuellen Index aus Azure Search sowie die Speichernutzung zurück. 
+Mit dem Vorgang **Indexstatistik abrufen** werden von Azure Search Informationen über die Dokumentanzahl für den aktuellen Index sowie die Speicherauslastung zurückgegeben.
 
-	DELETE https://[dienstname].search.windows.net/indexes/[indexname]/stats?api-version=[api-version]
-    api-key: [Administratorschlüssel]
+	GET https://[service name].search.windows.net/indexes/[index name]/stats?api-version=[api-version]
+    api-key: [admin key]
 
 **Anforderung**
 
-HTTPS ist für alle Dienstanforderungen erforderlich. Die Anforderung **Get Index Statistics** kann mithilfe der GET-Methode erstellt werden.
+HTTPS ist für alle Dienstanforderungen erforderlich. Die Anforderung **Indexstatistiken abrufen** kann mit der GET-Methode erstellt werden.
 
-Der [indexname] im Anforderungs-URI weist den Dienst an, Indexstatistiken für den angegebenen Index zurückzuliefern.
+Der [Indexname] im Anforderungs-URI weist den Dienst an, Indexstatistiken für den festgelegten Index zurückzugeben.
 
-`api-version=[zeichenfolge]` (erforderlich). Die Vorschauversion ist  `api-version=2015-02-28-Preview`. Details und Informationen finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+`api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
 
 **Anforderungsheader**
 
-In der folgenden Liste sind die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
  
-- `api-key`: Der  `api-key` wird verwendet, um die Anforderung bei Ihrem Suchdienst zu authentifizieren. Es handelt sich um einen Zeichenfolgenwert, der für Ihren Dienst eindeutig ist. Die **Get Index Statistics**-Anforderung muss einen  `api-key` enthalten, der auf einen Administratorschlüssel (statt auf einen Anforderungsschlüssel) festgelegt ist.
+- `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Indexstatistik abrufen** muss einen `api-key` enthalten, der auf einen Admin-Schlüssel (keinen Abfrageschlüssel) festgelegt ist.
  
-Ferner benötigen Sie den Dienstnamen, um die Anforderungs-URL zu erstellen. Sie können den Dienstnamen und den  `api-key` bei Ihrem Dienstdashboard im Azure-Portal abrufen. Hilfe zur Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](../search-create-service-portal/).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
-**Anforderungstextkörper**
+**Anforderungstext**
 
-Keiner.
+Keine.
 
 **Antwort**
 
-Status Code: "200 OK" wird als Antwort bei Erfolg zurückgegeben.
+Bei erfolgreicher Antwort wird der Statuscode "200 OK" zurückgegeben.
 
-Der Textkörper der Antwort liegt im folgenden Format vor:
+Der Antworttext hat folgendes Format:
 
     {
       "documentCount": number,
@@ -1445,50 +1563,50 @@ Der Textkörper der Antwort liegt im folgenden Format vor:
 
 ________________________________________
 <a name="DocOps"></a>
-## Dokumentvorgänge
+## Dokumentvorgänge #
 
-In Azure Search wird ein Index mithilfe von JSON-Dokumenten aufgefüllt, die Sie auf den Dienst hochladen. Alle Dokumente, die Sie hochladen, bilden den Korpus der Suchdaten. Dokumente enthalten Felder, von denen einige mithilfe von Token beim Hochladen als Suchbegriffe gekennzeichnet werden. Das  `/docs`-URL-Segment in der Azure Search-API stellt die Auflistung der Dokumente in einem Index dar. Alle mit der Auflistung durchgeführten Vorgänge, wie Hochladen, Zusammenführen, Löschen oder Abfragen von Dokumenten, erfolgt im Kontext eines einzelnen Index, sodass die URLs für diese Vorgänge immer mit  `/indexes/[index name]/docs` für einen bestimmten Indexnamen beginnen.
+In Azure Search wird ein Index mit JSON-Dokumenten gefüllt, die Sie zum Dienst hochladen. Die gesamten hochgeladenen Dokumente stellen den Korpus Ihrer Suchdaten dar. Dokumente enthalten Felder, von denen einige beim Hochladen als Suchbegriffe mit Token versehen werden. Das URL-Segment `/docs` in der Azure Search-API stellt die Sammlung von Dokumenten in einem Index dar. Alle an der Sammlung durchgeführten Vorgänge wie das Hochladen, Zusammenführen, Löschen oder Abfragen von Dokumenten findet im Kontext eines einzigen Index statt. Die URLs für diese Vorgänge beginnen daher für einen gegebenen Indexnamen immer mit `/indexes/[index name]/docs`.
 
-Der Code Ihrer Anwendung kann JSON-Dokumente für das Hochladen auf Azure generieren und dazu die Ergebnismenge aus einer relationalen Datenbank oder aus einer beliebigen anderen strukturierten Datenquelle verwenden.
+Ihr Anwendungscode kann JSON-Dokumente generieren, die mithilfe eines Ergebnissatzes aus einer relationalen Datenbank oder einer anderen strukturierten Datenquelle in Azure Search hochgeladen werden.
 
-In der Mehrzahl der Szenarien bei der Anwendungsentwicklung sind Suchdaten getrennt von der Anwendungsdatenschicht und zu dieser extern. Wenn Ihre Anwendung eine lokale Datenbank für das Nachverfolgen des Inventarstatus verwendet, enthalten die dauerhaft in Azure Search vorhandenen Dokumente ähnliche oder sogar identische Datenwerte im Hinblick auf Produktname, Preis und Verfügbarkeit, diese sind jedoch in einem invertierten Index gespeichert, um die Suchvorgänge zu optimieren. 
+In den meisten Szenarien der Anwendungsentwicklung sind die Suchdaten von der Anwendungsdatenebene getrennt und ausgelagert. Wenn Ihre Anwendung zum Verfolgen des Bestandsstatus eine lokale Datenbank verwendet, enthält das in Azure Search persistent gespeicherte Dokument ähnliche oder identische Datenwerte hinsichtlich Produktname, Preis und Verfügbarkeit. Diese werden jedoch zur Optimierung von Suchvorgängen in einem invertierten Index gespeichert.
 
-Sie sollten darauf hinzielen, ein Dokument für jedes Element zu unterhalten, nach dem Sie suchen möchten. Beispielsweise kann eine Anwendung für den Filmverleih ein Dokument pro Film aufweisen, eine Storefrontanwendung kann ein Dokument pro SKU verwenden, eine Anwendung für Onlinecourseware kann ein Dokument pro Kurs verwenden, ein Forschungsunternehmen verwendet vielleicht ein Dokument für jede wissenschaftliche Veröffentlichung in ihrem Repertoire usw.
+Es empfiehlt sich, für jedes zu durchsuchende Element ein Dokument zu haben. Eine Filmverleihanwendung könnte ein Dokument pro Film haben, eine Ladenanwendung ein Dokument pro Artikel, eine Anwendung für Online-Kurse ein Dokument pro Kurs, eine Forschungsfirma ein Dokument pro akademisches Papier in ihrem Repository usw.
 
-Dokumente bestehen aus einem oder mehreren Feldern. Felder können Text enthalten, der mithilfe von Token als durch Azure Search als Suchbegriffe definiert wurde, sowie nicht mit Token versehene oder nicht aus Text bestehende Werte, die in Filtern oder Bewertungsprofilen verwendet werden können. Die Namen, Datentypen und Suchfunktionen, die für die einzelnen Felder unterstützt werden, werden durch das Indexschema bestimmt. Eins der Felder in jedem Indexschema muss als ID ausgewiesen sein, und jedes Dokument muss einen Wert für das ID-Feld aufweisen, die das betreffende Dokument eindeutig im Index identifiziert. Alle anderen Dokumentfelder sind optional und haben null als Standardwert, wenn für sie keine Angabe gemacht wird. Beachten Sie, dass Nullwerte im invertierten Index keinen Platz in Anspruch nehmen. 
+Dokumente bestehen aus einem oder mehreren Feldern. Felder können Text enthalten, der von Azure Search mit Token als Suchbegriffe gekennzeichnet wurde, ebenso wie Werte ohne Token oder Nicht-Text-Werte, die in Filtern oder Bewertungsprofilen verwendet werden können. Die Namen, Datentypen und Suchfunktionen für jedes Feld werden durch das Indexschema bestimmt. Eines der Felder in jedem Indexschema muss als ID ausgewiesen sein. Zudem muss jedes Dokument einen Wert für das ID-Feld haben, der das Dokument im Index eindeutig identifiziert. Alle anderen Felder des Dokuments sind optional und erhalten standardmäßig einen Nullwert, wenn nichts angegeben wird. Nullwerte belegen im invertierten Index keinen Speicherplatz.
 
-Vor dem Hochladen von Dokumenten müssen Sie den Index bereits im Dienst erstellt haben. Unter [Index erstellen](#CreateIndex) finden Sie Details zu diesem ersten Schritt.
+Bevor Sie Dokumente hochladen können, müssen Sie bereits den Index für den Dienst erstellt haben. Details zu diesem ersten Schritt finden Sie unter [Index erstellen](#CreateIndex).
 
 
 <a name="AddOrUpdateDocuments"></a>
-### Hinzufügen, Aktualisieren oder Löschen von Dokumenten
+## Hinzufügen, Aktualisieren oder Löschen von Dokumenten
 
-Sie können Dokumente aus einem angegebenen Index mithilfe von HTTP POST hochladen, zusammenführen, zusammenführen-oder-hochladen oder löschen. Bei einer großen Zahl von Aktualisierungsvorgängen wird das Zusammenfassen von Dokumenten in Batches (bis zu 1000 Dokumente oder ca. 16 MB pro Batch) empfohlen.
+Sie können Dokumente in einem gegebenen Index mit HTTP POST hochladen, zusammenführen, zusammenführen oder hochladen oder löschen. Bei einer großen Anzahl von Updates empfiehlt sich die Batchverarbeitung von Dokumenten (bis zu 1000 Dokumente oder ca. 16 MB pro Batch).
 
-    POST https://[service name].search.windows.net/indexes/[indexname]/docs/index?api-version=[api-version]
+    POST https://[service name].search.windows.net/indexes/[index name]/docs/index?api-version=[api-version]
     Content-Type: application/json
-    api-key: [Administratorschlüssel]
+    api-key: [admin key]
     
 **Anforderung**
 
-HTTPS ist für alle Dienstanforderungen erforderlich. Sie können Dokumente aus einem angegebenen Index mithilfe von HTTP POST hochladen, zusammenführen, zusammenführen-oder-hochladen oder löschen. 
+HTTPS ist für alle Dienstanforderungen erforderlich. Sie können Dokumente in einem gegebenen Index mit HTTP POST hochladen, zusammenführen, zusammenführen oder hochladen oder löschen.
 
-Der Anforderungs-URI beinhaltet [indexname], der angibt, für welchen Index die Dokumente veröffentlicht werden sollen. Dokumente können jeweils nur in einem Index veröffentlicht werden.
+Der Anforderungs-URI enthält den [Indexnamen]. Dieser gibt an, in welchem Index Dokumente bereitgestellt werden sollen. Sie können Dokumente jeweils nur in einem Index bereitstellen.
 
-`api-version=[zeichenfolge]` (erforderlich). Die Vorschauversion ist  `api-version=2015-02-28-Preview`. Details und Informationen finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+`api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
 **Anforderungsheader**
 
-In der folgenden Liste sind die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
-- `Content-Type`: Erforderlich. Legen Sie diesen auf  `application/json` fest.
-- `api-key`: Erforderlich. Der  `api-key` wird verwendet, um die Anforderung bei Ihrem Suchdienst zu authentifizieren. Es handelt sich um einen Zeichenfolgenwert, der für Ihren Dienst eindeutig ist. Die Anforderung **Add Documents** muss einen  `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (statt auf einen Abfrageschlüssel) festgelegt ist.
+- `Content-Type`: Erforderlich. Auf `application/json` festlegen.
+- `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index hinzufügen** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel (keinen Abfrageschlüssel) festgelegt ist.
  
-Ferner benötigen Sie den Dienstnamen, um die Anforderungs-URL zu erstellen. Sie können den Dienstnamen und den  `api-key` bei Ihrem Dienstdashboard im Azure-Portal abrufen. Hilfe zur Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](../search-create-service-portal/).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
-**Anforderungstextkörper**
+**Anforderungstext**
 
-Der Textkörper der Anforderung enthält ein oder mehrere Dokument(e) für die Indizierung. Dokumente werden anhand eines eindeutigen Schlüssels identifiziert. Jedem Dokument ist eine Aktion zugeordnet: Hochladen, Zusammenführen, ZusammenführenOderHochladen oder Löschen. Anforderungen zum Hochladen müssen die Dokumentdaten in Form einer Menge von Schlüssel-/Wertpaaren enthalten. 
+Der Anforderungstext enthält ein oder mehrere zu indizierende Dokumente. Dokumente werden durch einen eindeutigen Schlüssel identifiziert. Jedes Dokument ist mit einer Aktion verknüpft: Hochladen, Zusammenführen, Zusammenführen-oder-Hochladen oder Löschen. Anforderungen zum Hochladen müssen die Dokumentdaten als einen Satz mit Schlüssel-Wert-Paare enthalten.
 
     {
       "value": [
@@ -1504,14 +1622,14 @@ Der Textkörper der Anforderung enthält ein oder mehrere Dokument(e) für die I
     
 **Dokumentaktionen**
 
-- `upload`: Ein Hochladevorgang ist ähnlich einem "upsert", bei dem das Dokument eingefügt wird, wenn es neu ist, und aktualisiert/ersetzt, wenn es bereits vorhanden ist. Beachten Sie, dass im Fall der Aktualisierung alle Felder ersetzt werden.
-- `merge`: Beim Zusammenführen wird ein vorhandenes Dokument mit den angegebenen Feldern aktualisiert. Wenn das Dokument nicht vorhanden ist, tritt bei der Zusammenführung ein Fehler auf. Jedes Feld, das Sie bei einer Zusammenführung angeben, ersetzt das vorhandene Feld im Dokument. Dies schließt Felder vom Typ  `Collection(Edm.String)` ein. Wenn das Dokument beispielsweise ein Feld "tags" mit dem Wert `["budget"]` enthält und Sie eine Zusammenführung mit dem Wert `["economy", "pool"]` für "tags" ausführen, ist der endgültige Wert des Felds "tags" `["economy", "pool"]`. Er lautet **nicht** `["budget", "economy", "pool"]`.
-- `mergeOrUpload`: verhält sich wie  `merge`, wenn ein Dokument mit dem angegebenen Indexschlüssel bereits im Index vorhanden ist. Wenn das Dokument nicht vorhanden ist, verhält es sich wie  `upload` bei einem neuen Dokument.
-- `delete`: "Delete" entfernt das angegebene Dokument aus dem Index. Beachten Sie, dass Sie bei einem  `delete`-Vorgang nur den Wert des Schlüsselfelds angeben können. Der Versuch, andere Felder anzugeben, führt zu einem HTTP 400-Fehler. Wenn Sie ein einzelnes Feld aus einem Dokument entfernen möchten, verwenden Sie stattdessen  `merge`, und legen Sie das Feld einfach explizit auf  `null` fest. 
+- `upload`: Das Hochladen entspricht einer "upsert"-Aktion, bei der neue Dokumente eingefügt und bestehende Dokumente aktualisiert/ersetzt werden. Beachten Sie, dass bei einer Aktualisierung alle Felder ersetzt werden.
+- `merge`: Beim Zusammenführen wird ein bestehendes Dokument mit den angegebenen Feldern aktualisiert. Wenn das Dokument nicht vorhanden ist, schlägt die Zusammenführung fehl. Jedes Feld, das Sie in einer Zusammenführung angeben, ersetzt das vorhandene Feld im Dokument. Dies beinhaltet auch Felder vom Typ `Collection(Edm.String)`. Beispiel: Wenn das Dokument ein Feld namens "tags" mit dem Wert `["budget"]` enthält, und Sie eine Zusammenführung mit dem Wert `["economy", "pool"]` für "tags" durchführen, hat das Feld "tags" am Ende den Wert `["economy", "pool"]`. Der Wert lautet **nicht** `["budget", "economy", "pool"]`.
+- `mergeOrUpload`: Verhält sich wie beim `merge`-Vorgang, wenn im Index bereits ein Dokument mit dem gegebenen Schlüssel vorhanden ist. Wenn das Dokument noch nicht vorhanden ist, verhält es sich wie beim `upload`-Vorgang eines neuen Dokuments.
+- `delete`: Hiermit wird das angegebenen Dokument aus dem Index gelöscht. Sie können für den `delete`-Vorgang nur den Wert für das Schlüsselfeld angeben. Wenn Sie versuchen, andere Felder anzugeben, wird der Fehler "HTTP 400" ausgegeben. Wenn Sie ein einzelnes Feld aus einem Dokument entfernen möchten, verwenden Sie stattdessen `merge` und setzen das Feld explizit auf `null`. 
 
 **Antwort**
 
-Statuscode: "200 OK" wird als Antwort bei Erfolg zurückgegeben, und das bedeutet, dass alle Elemente erfolgreich indiziert wurden (wie durch den Wert "true" für das  'status'-Feld aller Elemente angegeben):
+Für eine erfolgreiche Antwort wird als Statuscode "200 OK" zurückgeben. Dies bedeutet, dass alle Elemente erfolgreich indiziert wurden (dies ist auch am Feld "status" zu erkennen, das für alle Elemente auf "true" gesetzt ist):
 
     {
       "value": [
@@ -1523,7 +1641,7 @@ Statuscode: "200 OK" wird als Antwort bei Erfolg zurückgegeben, und das bedeute
       ]
     }  
 
-Statuscode: "207" wird zurückgegeben, wenn wenigstens ein Element nicht erfolgreich indiziert wurde (was auch durch den Wert "false" für das  'status'-Feld von Elementen angegeben wird, die nicht indiziert wurden):
+Wenn mindestens ein Element erfolgreich indiziert wurde, wird der Statuscode "207" zurückgegeben (dies ist auch am Feld "status" zu erkennen, das für alle nicht indizierten Elemente auf "false" gesetzt ist):
  
     {
       "value": [
@@ -1535,11 +1653,11 @@ Statuscode: "207" wird zurückgegeben, wenn wenigstens ein Element nicht erfolgr
       ]
     }  
 
-Die Eigenschaft  `errorMessage` gibt nach Möglichkeit die Ursache für den Indizierungsfehler an.
+Die Eigenschaft `errorMessage` gibt nach Möglichkeit den Grund für den Indizierfehler an.
 
-**Hinweis**: Wenn bei Ihrem Clientcode häufig die Antwort 207 auftritt, kann eine mögliche Ursache die Auslastung des Systems sein. Sie können dies durch Überprüfen der Eigenschaft  `errorMessage` bestätigen. Wenn dies der Fall ist, empfehlen wir das ***Einschränken von Indizierungsanforderungen***. Andernfalls kann, wenn der Datenverkehr für die Indizierung nicht nachlässt, das System beginnen, alle Anforderungen mit 503-Fehlern abzulehnen.
+**Hinweis**: Wenn der Clientcode als Antwort häufig "207" erhält, kann es daran liegen, dass das System überlastet ist. Sie können dies anhand der Eigenschaft `errorMessage` überprüfen. Wenn dies der Fall ist, sollten ***Indexanforderungen eingeschränkt*** werden. Nimmt der Indizierdatenverkehr nicht ab, kann dies dazu führen, dass alle Anforderungen mit dem Fehler "503" abgelehnt werden.
 
-Statuscode: 429 zeigt an, dass Sie Ihr Kontingent hinsichtlich der Anzahl der Dokumente pro Index überschritten haben. Sie müssen entweder einen neuen Index erstellen oder die Kapazitätsgrenzen durch ein Upgrade heraufsetzen.
+Der Statuscode "429" gibt an, dass Sie Ihr Kontingent hinsichtlich der Anzahl der Dokumente pro Index überschritten haben. Erstellen Sie in diesem Fall entweder einen neuen Index oder aktualisieren Sie auf höhere Kapazitätsgrenzen.
 
 **Beispiel:**
 
@@ -1590,20 +1708,20 @@ Statuscode: 429 zeigt an, dass Sie Ihr Kontingent hinsichtlich der Anzahl der Do
     }
 ________________________________________
 <a name="SearchDocs"></a>
-### In Dokumenten suchen
+## Dokumente durchsuchen
 
-Ein **Suchvorgang** wird als GET-Anforderung ausgegeben, und gibt Abfrageparameter an, die die Kriterien für die Auswahl übereinstimmender Dokumente enthalten. 
+Ein **Suchvorgang** wird als GET-Anforderung ausgegeben. Er gibt Abfrageparameter an, die als Kriterien für die Auswahl übereinstimmender Dokumente dienen.
 
-    GET https://[dienstname].search.windows.net/indexes/[indexname]/docs?[abfrageparameter]
-    api-key: [Administratorschlüssel]
+    GET https://[service name].search.windows.net/indexes/[index name]/docs?[query parameters]
+    api-key: [admin key]
 
 **Anforderung**
 
-HTTPS ist für Dienstanforderungen erforderlich. Die **Suchanforderung** kann mithilfe der Methode GET erstellt werden.
+Für Dienstanforderungen ist HTTPS erforderlich. Die **Suchanforderung** kann mit der GET-Methode erstellt werden.
 
-Der Anforderungs-URI gibt den abzufragenden Index für alle Dokumente an, die mit den Abfrageparametern übereinstimmen.
+Der Anforderungs-URI gibt für alle mit den Abfrageparametern übereinstimmenden Dokumente an, welcher Index abgefragt werden soll.
 
-Merken Sie sich als optimale methode, bestimmte Abfrageparameter beim direkten Aufrufen der REST-API [als URL zu codieren](https://msdn.microsoft.com/library/system.uri.escapedatastring.aspx). Für Vorgänge der Suche in Dokumenten betrifft das:
+Es wird empfohlen, spezielle Abfrageparameter [mit einer URL zu codieren](https://msdn.microsoft.com/library/system.uri.escapedatastring.aspx), wenn die REST-API direkt aufgerufen wird. Für das Durchsuchen von Dokumenten beinhaltet dies:
 
 - `$filter`
 - `facet`
@@ -1612,83 +1730,87 @@ Merken Sie sich als optimale methode, bestimmte Abfrageparameter beim direkten A
 - `search`
 - `moreLikeThis`
 
-Die URL-Codierung wird nur für die oben genannten Abfrageparameter empfohlen. Wenn Sie unbeabsichtigt die gesamte Abfragezeichenfolge als URL codieren (alles hinter dem "?"), tritt ein Fehler bei der Anforderung auf.
+Die URL-Codierung wird nur bei den oben angegebenen Abfrageparametern empfohlen. Wenn Sie versehentlich die gesamte Abfragezeichenfolge mit einer URL-Codierung versehen (alles nach dem ?), schlagen die Anforderungen fehl.
 
-Darüber hinaus ist die URL-Codierung nur bei direktem Aufrufen der REST-API erforderlich. Wenn Sie die [.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) verwenden, übernimmt sie die URL-Codierung für Sie.
+Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API direkt aufrufen. Die [.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) übernimmt die URL-Codierung für Sie.
 
 **Abfrageparameter**
 
-`search=[zeichenfolge]` (optional) - der zu suchende Text. Standardmäßig werden alle  `searchable` Felder durchsuch, sofern nicht  `searchFields` angegeben ist. Beim Durchsuchen von  `searchable`-Feldern liegt der Suchtext selbst in Form von Token vor, sodass mehrere Ausdrücke durch Leerzeichen getrennt werden können (Beispiel: `search=hello world`). Um Übereinstimmungen mit einem der Ausdrücke anzugeben, verwenden Sie `*` (das kann für Boolesche Filterabfragen nützlich sein). Das Auslassen dieses Parameters hat die gleiche Wirkung wie seine Festlegung auf `*`. Einzelheiten zur Suchsyntax finden Sie unten unter "Einfache Abfragesyntax".
+`search=[string]` (optional): Der zu suchenden Text. Alle Felder mit dem Attribut `searchable` werden standardmäßig durchsucht, es sei denn, es wurde `searchFields` angegeben. Beim Durchsuchen von Feldern mit dem Attribut `searchable` wird der zu durchsuchende Text mit Token versehen. Auf diese Weise können mehrere Begriffe durch Leerzeichen getrennt werden (Beispiel: `search=hello world`). Verwenden Sie für die Übereinstimmung mit einem beliebigen Begriff `*` (dies kann bei booleschen Filterabfragen nützlich sein). Das Auslassen dieses Parameters hat dieselbe Wirkung wie das Festlegen auf `*`. Einzelheiten zur Suchsyntax finden Sie nachfolgend unter "Einfache Abfragesyntax".
 
-  - **Hinweis**: Die Ergebnisse können manchmal überraschend sein, wenn  `searchable` Felder abgefragt werden. Der Tokenizer enthält Logik zum Behandeln von Fällen, die im Englischen häufig sind, wie etwa Apostrophe, Kommas in Zahlen usw. So entspricht z. B.  `search=123,456`  dem Einzelausdruck "123,456" anstelle der einzelnen Ausdrücke "123" und "456", da Kommas im Englischen bei großen Zahlen als Tausendertrennzeichen verwendet werden. Daher empfehlen wir die Verwendung von Leerzeichen anstelle von Satzzeichen, um Ausdrücke im  `search`-Parameter zu trennen.
+  - **Hinweis**: Bei Abfragen über Felder mit dem Attribut `searchable` können die Ergebnisse mitunter überraschend sein. Der Tokenizer enthält die Logik zum Behandeln von gängigen Fällen bei englischem Text, wie Apostrophe, Kommas in Zahlen usw. Beispiel: `search=123,456` entspricht dem Begriff "123,456" und nicht zwei separaten Begriffen "123" und "456", da im Englischen bei großen Zahlen Kommas als Tausendertrennzeichen verwendet werden. Aus diesem Grund empfiehlt es sich, Begriffe im Parameter `search` anstatt mit Satzzeichen mit Leerzeichen zu trennen.
 
-`searchMode=any|all` (optional, Standardwert  `any`) - ob einer oder alle Suchbegriffe übereinstimmen müssen, um das Dokument als Treffer zu werten.
+`searchMode=any|all` (optional, Standardwert ist `any`): Gibt an, ob Suchbegriffe teilweise oder vollständig übereinstimmen müssen, damit das Dokument in den Ergebnissen zurückgegeben wird.
 
-`searchFields=[zeichenfolge]` (optional) - die kommagetrennte Liste der Feldnamen, die nach dem angegebenen Text durchsucht werden sollen. Zielfelder müssen als  `searchable` gekennzeichnet sein.
+`searchFields=[string]` (optional): Die Liste der kommagetrennten Feldnamen, die für den angegebenen Text durchsucht werden. Zielfelder müssen als `searchable` gekennzeichnet sein.
 
-`moreLikeThis=[schlüssel]` (optional) **Wichtig:** Diese Funktion steht nur in `2015-02-28-Preview` zur Verfügung. Diese Option kann nicht in Abfragen verwendet werden, die den Textsuchparameter enthalten. Der Parameter  `search=[string]`. The `moreLikeThis` sucht Dokumente, die dem Dokument, das über den Dokumentschlüssel angegeben wurde, ähnlich sind. Wenn eine Suchanforderung mit  `moreLikeThis` eingereicht wird, wird basierend auf der Häufigkeit und Seltenheit von Ausdrücken im Quelldokument eine Liste der Suchausdrücke generiert. Diese Ausdrücke werden anschließend verwendet, um die Anforderung zu erstellen. Standardmäßig wird der Inhalt aller  `searchable`-Felder berücksichtigt, sofern nicht  `searchFields` verwendet wird, um die durchsuchten Felder einzuschränken.  
+`moreLikeThis=[key]` (optional) **Wichtig:** dieses Feature steht nur in `2015-02-28-Preview` zur Verfügung. Diese Option kann nicht in Abfragen verwendet werden, die den Textsuchparameter `search=[string]` enthalten. Der Parameter `moreLikeThis` sucht nach Dokumenten, die mit dem vom Dokumentschlüssel angegebenen Dokument übereinstimmen. Bei Suchanforderung mit `moreLikeThis` wird eine Liste mit Suchbegriffen generiert, die auf der Häufigkeit und Seltenheit der Begriffe im Quelldokument basiert. Diese Begriffe werden dann für die Anforderung verwendet. Standardmäßig wird der Inhalt aller Felder mit dem Attribut `searchable` berücksichtigt, es sei denn, die zu durchsuchenden Felder werden mit `searchFields` eingeschränkt.
 
-`$skip=#` (optional) - die Anzahl der zu überspringenden Suchergebnisse; kann nicht größer als 100.000 sein. Wenn Sie Dokumente der Reihe nach durchsuchen müssen und aufgrund dieser Einschränkung `$skip` nicht verwenden können, erwägen Sie stattdessen die Verwendung von `$orderby` für einen Schlüssel mit totaler Ordnung und `$filter` für eine Bereichsabfrage. 
+`$skip=#` (optional): Die Anzahl der zu überspringenden Suchergebnisse. Darf nicht größer als 100.000 sein. Wenn Sie Dokumente der Reihe nach scannen müssen, `$skip` aber aufgrund dieser Einschränkung nicht zulässig ist, können Sie alternativ für einen Schlüssel für die Gesamtreihenfolge `$orderby` und für eine Bereichsabfrage `$filter` verwenden.
 
-`$top=#` (optional) - die Anzahl der abzurufenden Suchergebnisse. Der Standardwert ist 50. Wenn Sie einen Wert größer als 1000 angeben und mehr als 1000 Ergebnisse vorhanden sind, werden nur die ersten 1000 Ergebnisse zurückgegeben, zusammen mit einem Link zur nächsten Ergebnisseite (siehe auch `@odata.nextLink` im [Beispiel unten](#SearchResponse)).
+`$top=#` (optional): Die Anzahl der abzurufenden Suchergebnisse. Der Standardwert ist 50. Wenn Sie einen Wert über 1000 angeben und mehr als 1000 Ergebnisse vorliegen, werden nur die ersten 1000 Ergebnisse zusammen mit einem Link zur nächsten Ergebnisseite zurückgegeben (siehe `@odata.nextLink` im [nachfolgenden Beispiel](#SearchResponse)).
 
-`$count=true|false` (optional, Standardwert  `false`) - Gibt an, ob die Gesamtzahl der Ergebnisse abgerufen werden soll. Das Festlegen dieses Werts auf  `true` kann die Leistung beeinträchtigen. Beachten Sie, dass der zurückgegebene Wert nur ein Näherungswert ist.
+`$count=true|false` (optional, Standardwert ist `false`): Gibt an, ob alle Ergebnisse abgerufen werden sollen. Wenn Sie diesen Wert auf `true` setzen, kann sich dies auf die Leistung auswirken. Beachten Sie, dass die zurückgegebene Anzahl ein Näherungswert ist.
 
-`$orderby=[zeichenfolge]` (optional) - Eine kommagetrennte Liste von Ausdrücken, nach denen die Ergebnisse sortiert werden sollen. Jeder Ausdruck kann entweder ein Feldname oder ein Aufruf der Funktion  `geo.distance()` sein. Auf jeden Ausdruck kann  `asc` folgen, um aufsteigende Sortierung, oder  `desc`, um absteigende Sortierung anzugeben. Der Standardwert ist die absteigende Sortierung. Bindungen werden durch die Trefferzahlen von Dokumenten durchbrochen. Wenn `$orderby` nicht angegeben wird, ist die standardmäßige Sortierreihenfolge absteigend nach der Trefferzahl der Dokumente. Es gibt ein Limit von 32 Klauseln für `$orderby`.
+`$orderby=[string]` (optional): Eine Liste mit kommagetrennten Ausdrücken, nach denen die Ergebnisse sortiert werden. Jeder Ausdruck kann ein Feldname oder ein Aufruf der Funktion `geo.distance()` sein. Jedem Ausdruck kann für eine aufsteigende Reihenfolge `asc` und für eine absteigende Reihenfolge `desc` nachgestellt sein. Standardmäßig wird in aufsteigender Reihenfolge sortiert. Verknüpfungen werden durch die Ergebnisstände von Dokumenten getrennt. Wenn `$orderby` nicht angegeben ist, werden Dokumente absteigend nach Ergebnisstand sortiert. `$orderby` ist auf 32 Klauseln beschränkt.
 
-`$select=[zeichenfolge]` (optional) - Eine kommagetrennte Liste der abzurufenden Felder. Wenn der Wert nicht angegeben wird, werden alle im Schema als abrufbar gekennzeichneten Felder eingeschlossen. Außerdem können Sie explizit alle Felder anfordern, indem Sie diesen Parameter auf `*` festlegen.
+`$select=[string]` (optional): Eine Liste mit kommagetrennten Feldern, die abgerufen werden sollen. Wenn nicht anders angegeben, werden alle im Schema als abrufbar gekennzeichnete Felder einbezogen. Sie können auch alle Felder explizit anfordern, indem Sie diesen Parameter auf `*` setzen.
 
-`facet=[zeichenfolge]` (null oder mehr) - Ein Feld für die Facettensuche. Optional kann die Zeichenfolge Parameter zum Anpassen der Facettensuche enthalten, die als kommagetrennte  `name:value`-Paare angegeben sind. Dies sind die gültigen Parameter:
+`facet=[string]` (null oder höher): Ein Feld, anhand dessen die Facettenbildung erfolgen soll. Die Zeichenfolge kann optional Parameter enthalten, um die in Form von kommagetrennten `name:value`-Paaren ausgedrückte Facettenbildung anzupassen. Gültige Parameter sind:
 
-- `count` (maximale Anzahl der Facettenausdrücke; der Standardwert ist 10). Es gibt keinen Maximalwert, höhere Werte bringen jedoch eine entsprechende Verschlechterung der Leistung mit sich, insbesondere, wenn die Facettenfelder eine große Anzahl eindeutiger Ausdrücke enthalten.
-  - Beispiel: `facet=category,count:5` ruft die Top 5 der Kategorien bei den Facettenergebnissen ab.  
-  - **Hinweis**: Wenn der  `count`-Parameter kleiner als die Anzahl der eindeutigen Ausdrücke ist, sind die Ergebnisse möglicherweise nicht genau. Dies hängt mit der Weise zusammen, wie Facettenabfragen über Shards verteilt werden. Das Erhöhen von  `count` steigert im allgemeinen die Genauigkeit der Ausdrucksanzahl, jedoch um den Preis eingeschränkter Leistung. 
-- `sort` (ein Element von  `count`, die  *descending* nach der Anzahl sortiert werden, `-count`, um  *ascending* nach der Anzahl zu sortieren,  `value`, um  *ascending* nach dem Wert, oder `-value`, um  *descending* nach dem Wert zu sortieren)
-  - Beispiel:  `facet=category,count:3,sort:count` ruft die drei Top-Kategorien in den Facettenergebnissen in absteigender Reihenfolge nach der Anzahl der Dokumente für die einzelnen Städtenamen ab. Wenn die drei Top-Kategorien z. B. "Budget", "Motel" und "Luxus" sind , und für "Budget" 5, "Motel" 6 und "Luxus" 4 Treffer gefunden wurden, werden die Buckets in der Reihenfolge "Motel, Budget, Luxus" ausgegeben.
-  - Beispiel:  `facet=rating,sort:-value` ergibt Buckets für alle möglichen Bewertungen nach dem Wert in absteigender Reihenfolge. Wenn die Bewertungen beispielsweise von 1 bis 5 reichen, sind die Buckets als "5, 4, 3, 2, 1" sortiert, unabhängig von der Anzahl der Dokumente, die für jede Bewertung vorhanden sind.
-- `values` (durch Pipesymbole getrennte numerische oder  `Edm.DateTimeOffset`-Werte, die eine dynamische Menge von Facetteneintragswerten angeben)
-  - Beispiel: `facet=baseRate,values:10|20` ergibt drei Buckets: Einen für den Basistarif von 0 bis 10 (10 aber ausschließend), einen für Werte von 10 bis 20 (20 ausschließend) und einen für 20 und höhere Werte.
-  - Beispiel: `facet=lastRenovationDate,values:2010-02-01T00:00:00Z` ergibt zwei Buckets: Einen für Hotels, die vor dem Februar 2010 und einen für Hotels, die ab dem 1. Februar 2010 renoviert wurden.
-- `interval` (ganzzahliges Intervall größer als 0 für Zahlen oder  `minute`,  `hour`,  `day`,  `week`, `month`,  `quarter` und  `year` für Datums-/Uhrzeitwerte)
-  - Beispiel: `facet=baseRate,interval:100` ergibt Buckets für Basistarifbereiche mit der Größe 100. Wenn die Basistarife z. B. alle zwischen 60 € und 600 € liegen, gibt es Buckets für "0-100", "100-200", "200-300", "300-400", "400-500" und "500-600".
-  - Beispiel:  `facet=lastRenovationDate,interval:year` ergibt einen Bucket für jedes Jahr, in dem Hotels renoviert wurden.
-- **Hinweis**:  `count` und  `sort` können in der gleichen Facettenspezifikation kombiniert werden, sie können jedoch nicht mit  `interval` oder  `values` zusammen verwendet werden, und  `interval` und  `values` können nicht miteinander kombiniert werden.
+- `count` (max. Anzahl von Facettenbegriffen; Standardwert ist 10). Es gibt keine Obergrenze, höhere Werte führen jedoch zu einem entsprechenden Leistungsabzug, insbesondere wenn das Facettenfeld eine große Anzahl eindeutiger Begriffe enthält.
+  - Beispiel: `facet=category,count:5` ruft die ersten fünf Kategorien der Facettenergebnisse ab.  
+  - **Hinweis**: Wenn der Parameter `count` unter der Anzahl der eindeutigen Begriffe liegt, sind die Ergebnisse möglicherweise nicht exakt. Dies liegt an der Art, wie Facettenabfragen über Shards hinweg verteilt werden. Durch ein Erhöhen von `count` erhöht sich im Allgemeinen auch die Genauigkeit der Begriffsanzahl, jedoch zulasten der Leistung. 
+- `sort` (`count` zum *absteigenden* Sortieren nach Anzahl, `-count` zum *ufsteigenden* Sortieren nach Anzahl, `value` zum *aufsteigenden* Sortieren nach Wert oder `-value` zum *absteigenden* Sortieren nach Wert)
+  - Beispiel: `facet=category,count:3,sort:count` ruft die ersten drei Kategorien in Facettenergebnisse in absteigender Reihenfolge nach der Anzahl der Dokumente mit jedem Ortsname ab. Wenn beispielsweise die ersten drei Kategorien "Budget", "Motel" und "Luxus" sind und für Budget 5 Treffer, für Motel 6 Treffer und für Luxus 4 Treffer vorhanden sind, werden die Bereiche (Buckets) in der Reihenfolge Motel, Budget, Luxus sortiert.
+  - Beispiel: `facet=rating,sort:-value` erstellt Buckets für alle möglichen Bewertungen in absteigender Reihenfolge nach Wert. Wenn die Bewertungen von 1 bis 5 reichen, werden die Buckets ungeachtet der mit jeder Bewertung übereinstimmenden Dokumente in der Reihenfolge 5, 4, 3, 2, 1 sortiert.
+- `values` (durch einen senkrechten Strich (Pipe) getrennte numerische oder `Edm.DateTimeOffset`-Werte, die einen dynamischen Satz von Facettenwerten angeben)
+  - Beispiel: `facet=baseRate,values:10|20` erstellt drei Buckets: einen für den Basistarif 0 bis unter 10, einen für 10 bis unter 20 und einen für 20 und höher.
+  - Beispiel: `facet=lastRenovationDate,values:2010-02-01T00:00:00Z` erstellt zwei Buckets: einen für Hotels, die vor Februar 2010 renoviert wurden, und einen für Hotels die ab dem 1. Februar 2010 renoviert wurden.
+- `interval` (ganzzahliges Intervall größer als 0 für Zahlen oder `minute`, `hour`, `day`, `week`, `month`, `quarter`, `year` für Datum-Uhrzeit-Werte)
+  - Beispiel: `facet=baseRate,interval:100` erstellt Buckets basierend auf Basistarifbereichen von 100. Wenn die Basistarife beispielsweise alle zwischen 60 $ und 600 $ liegen, werden Buckets für 0 – 100, 100 – 200, 200 – 300, 300 – 400, 400 – 500 und 500 – 600 erstellt.
+  - Beispiel: `facet=lastRenovationDate,interval:year` erstellt ein Bucket für jedes Jahr, in dem Hotels renoviert wurden.
+- **Hinweis**: `count` und `sort` können in derselben Facettenspezifikation kombiniert werden. Eine Kombination mit `interval` oder `values` ist jedoch nicht möglich. Ebenso wenig können `interval` und `values` kombiniert werden.
 
-`$filter=[zeichenfolge]` (optional) - Ein strukturierter Suchausdruck in standardmäßiger OData-Syntax. Unter [OData-Ausdruckssyntax](#ODataExpressionSyntax) finden Sie Details zur Teilmenge der OData-Ausdrucksgrammatik, die von Azure Search unterstützt wird.
+`$filter=[string]` (optional): Ein strukturierter Suchbegriff in standardmäßiger OData-Syntax. Details zur Teilmenge der von Azure Search unterstützten Grammatik von OData-Ausdrücken finden Sie unter [OData-Ausdruckssyntax](#ODataExpressionSyntax).
 
-`highlight=[zeichenfolge]` (optional) - Eine Menge durch Kommas getrennter Feldnamen, die für die Hervorhebung von Treffern verwendet wird. Nur  `searchable`-Felder können für die Hervorhebung von Treffern verwendet werden.
+`highlight=[string]` (optional): Ein Satz kommagetrennter Feldnamen für wichtige Treffer. Für wichtige Treffer können nur Felder mit dem Attribut `searchable` verwendet werden.
 
-  `highlightPreTag=[string]` (optional, defaults to `<em>`) - Ein Zeichenfolgentag, das hervorgehobenen Treffern voransteht. Muss mit  `highlightPostTag` festgelegt werden. Reservierte Zeichen in URL müssen prozentcodiert sein (z. B. "%23" anstelle von "#").
+  `highlightPreTag=[string]` (optional, Standardwert ist `<em>`): Dieses Zeichenfolgetag wird wichtigen Treffern vorangestellt. Es muss mit `highlightPostTag` festgelegt werden. In URLs reservierte Zeichen müssen mit dem Prozentzeichen codiert werden (z. B. %23 anstatt nur der Zahl).
 
-  `highlightPostTag=[string]` (optional, defaults to `</em>`) - Ein Zeichenfolgentag, das hervorgehobenen Treffern nachsteht. Muss mit  `highlightPreTag` festgelegt werden. Reservierte Zeichen in URL müssen prozentcodiert sein (z. B. "%23" anstelle von "#").
+  `highlightPostTag=[string]` (optional, Standardwert ist `</em>`): Dieses Zeichenfolgetag wird wichtigen Treffern angehängt. Es muss mit `highlightPreTag` festgelegt werden. In URLs reservierte Zeichen müssen mit dem Prozentzeichen codiert werden (z. B. %23 anstatt nur der Zahl).
 
-`scoringProfile=[zeichenfolge]` (optional) - Der Name eines Bewertungsprofils zum Bewerten von Übereinstimmungspunktzahlen für übereinstimmende Dokumente zum Sortieren der Ergebnisse.
+`scoringProfile=[string]` (optional): Der Name des Bewertungsprofils, mit dem Ergebnisstände übereinstimmender Dokumente zum Sortieren der Ergebnisse bewertet werden.
 
-`scoringParameter=[zeichenfolge]` (null oder mehr) - Zeigt den Wert für jeden in einer Bewertungsfunktion definierten Parameter (z. B.  `referencePointParameter`) im Format Name:Wert an. Wenn z. B. das Bewertungsprofil eine Funktion mit einem Parameter mit dem Namen "meinstandort" definiert, lautet die entsprechende Abfragezeichenfolgenoption "&scoringParameter=meinstandort:-122.2,44.8".
+`scoringParameter=[string]` (Null oder höher): Gibt den Wert für jeden in einer Bewertungsfunktion definierten Parameter (z. B. `referencePointParameter`) im Format "Name:Wert" an. Beispiel: Wenn das Bewertungsprofil eine Funktion mit einem Parameter namens "mylocation" definiert, lautet die Option für die Abfragezeichenfolge "&scoringParameter=mylocation:-122.2,44.8"
 
-`api-version=[zeichenfolge]` (erforderlich). Die Vorschauversion ist  `api-version=2015-02-28-Preview`. Details und Informationen finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+`minimumCoverage` (optional, Standardwert ist 100): Eine Zahl zwischen 0 und 100, die den Prozentsatz des Index angibt, der von einer Suchabfrage abgedeckt werden muss, damit diese als erfolgreich gilt. Standardmäßig muss der gesamte Index verfügbar sein, da `Search` sonst den HTTP-Statuscode "503" zurück gibt. Wenn Sie `minimumCoverage` festlegen und `Search` erfolgreich ist, werden der Statuscode "HTTP 200" und ein Wert für `@search.coverage` in der Antwort zurückgegeben. Letzterer gibt den in Prozentsatz des Index an, der in die Abfrage einbezogen wurde.
 
-Hinweis: Für diesen Vorgang wird die  `api-version` als Abfrageparameter angegeben.
+> [AZURE.NOTE]Es kann hilfreich sein, diesen Parameter auf einen Wert unter 100 zu setzen, um auch die Verfügbarkeit von Diensten mit nur einem Replikat sicherzustellen. Damit sind jedoch möglicherweise nicht alle übereinstimmenden Dokumente in den Suchergebnissen enthalten. Wenn Suchergebnisse für Ihre Anwendung wichtiger sind als die Verfügbarkeit, sollten Sie für `minimumCoverage` den Standardwert von 100 beibehalten.
+
+`api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+
+Hinweis: Bei diesem Vorgang wird die `api-version` als Abfrageparameter angegeben.
 
 **Anforderungsheader**
 
-In der folgenden Liste sind die erforderlichen und optionalen Anforderungsheader beschrieben. 
+In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
-- `api-key`: Der  `api-key` wird verwendet, um die Anforderung bei Ihrem Suchdienst zu authentifizieren. Es handelt sich um einen Zeichenfolgenwert, der für Ihre Dienst-URL eindeutig ist. Die **Suchanforderung** kann für  `api-key` wahlweise einen Administratorschlüssel oder einen Abfrageschlüssel angeben.
+- `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die **Suchanforderung** kann ein Admin-Schlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
  
-Ferner benötigen Sie den Dienstnamen, um die Anforderungs-URL zu erstellen. Sie können den Dienstnamen und den  `api-key` bei Ihrem Dienstdashboard im Azure-Portal abrufen. Hilfe zur Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](../search-create-service-portal/).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
-**Anforderungstextkörper**
+**Anforderungstext**
 
-Keiner.
+Keine.
 
-<a name="SearchResponse"></a>
-**Antwort**
+<a name="SearchResponse"></a> **Antwort**
 
-Status Code: "200 OK" wird als Antwort bei Erfolg zurückgegeben.
+Bei erfolgreicher Antwort wird der Statuscode "200 OK" zurückgegeben.
 
     {
       "@odata.count": # (if $count=true was provided in the query),
+      "@search.coverage": # (if minimumCoverage was provided in the query),
       "@search.facets": { (if faceting was specified in the query)
         "facet_field": [
           {
@@ -1718,112 +1840,112 @@ Status Code: "200 OK" wird als Antwort bei Erfolg zurückgegeben.
     
 **Beispiele:**
 
-Sie finden weitere Beispiele auf der Seite [OData-Ausdruckssyntax für Azure Search](https://msdn.microsoft.com/library/azure/dn798921.aspx).
+Weitere Beispiele erhalten Sie auf der Seite [OData-Ausdruckssyntax für Azure Search](https://msdn.microsoft.com/library/azure/dn798921.aspx).
 
-1)	Durchsuchen des Index mit absteigender Sortierung nach Datum. 
+1) Durchsuchen Sie den absteigend sortierten Index nach Datum.
 
-    GET /indexes/hotels/docs?search=*&$orderby=lastRenovationDate desc&api-version=28.02.2015-Preview
+    GET /indexes/hotels/docs?search=*&$orderby=lastRenovationDate desc&api-version=2015-02-28-Preview
 
-2)	Bei einer Facettensuche wird der Index durchsucht, und es werden Facetten für Kategorien, Bewertungen, Tags sowie Elemente mit "baseRate" in bestimmten Bereichen abgerufen:
+2) Durchsuchen Sie in einer Facettensuche den Index nach Facetten für Kategorien, Bewertungen, Tags sowie Elemente mit "baseRate" in spezifischen Bereichen:
 
     GET /indexes/hotels/docs?search=test&facet=category&facet=rating&facet=tags&facet=baseRate,values:80|150|220&api-version=2015-02-28-Preview
 
-3)	Mithilfe eines Filters werden die vorhergehenden Facettenabfrageergebnisse eingeschränkt, wenn der Benutzer auf die Bewertung "3" und die Kategorie "Motel" klickt:
+3) Grenzen Sie die zurückgegebenen Facettenabfrageergebnisse mit einem Filter ein, wenn der Benutzer auf die Bewertung 3 und die Kategorie "Motel" geklickt hat:
 
     GET /indexes/hotels/docs?search=test&facet=tags&facet=baseRate,values:80|150|220&$filter=rating eq 3 and category eq 'Motel'&api-version=2015-02-28-Preview
 
-4) Legen Sie in einer Facettensuche einen oberen Grenzwert für die in einer Abfrage zurückgegebenen eindeutigen Ausdrücke fest. Der Standardwert ist 10, Sie können diesen Wert jedoch mithilfe des Parameters  `count` für das  `facet`-Attribut herauf- oder heruntersetzen:
+4) Legen Sie bei einer Facettensuche eine Obergrenze für die in einer Abfrage zurückgegebenen eindeutigen Begriffe fest. Der Standardwert ist 10, wobei Sie diesen Wert mithilfe des Parameters `count` im Attribut `facet` erhöhen oder verringern können:
 
     GET /indexes/hotels/docs?search=test&facet=city,count:5&api-version=2015-02-28-Preview
 
-5)	Durchsuchen Sie den Index innerhalb bestimmter Felder; z. B. ein sprachspezifisches Feld:
+5) Durchsuchen Sie den Index innerhalb spezieller Felder, wie etwa einem sprachspezifischen Feld:
 
     GET /indexes/hotels/docs?search=hôtel&searchFields=description_fr&api-version=2015-02-28-Preview
 
-6) Durchsuchen Sie den Index über mehrere Felder hinweg. Beispielsweise können Sie durchsuchbare Felder in mehreren Sprachen speichern und abrufen, alles innerhalb des gleichen Index.  Wenn englische und französische Beschreibungen zugleich im gleichen Dokument vorhanden sind, können Sie in den Abfrageergebnissen alle oder nur bestimmte zurückgeben:
+6) Durchsuchen Sie den Index innerhalb mehrerer Felder. Beispiel: Sie können durchsuchbare Felder innerhalb desselben Index in mehreren Sprachen speichern und abfragen. Wenn ein Dokument sowohl englische als auch französische Beschreibungen enthält, können Sie die Abfrageergebnisse teilweise oder vollständig zurückgeben:
 
 	GET /indexes/hotels/docs?search=hotel&searchFields=description,description_fr&api-version=2015-02-28-Preview
 	
-Beachten Sie, dass Sie jeweils nur einen Index abfragen können. Erstellen Sie nicht mehrere Indizes für jede Sprache, sofern Sie nicht vorhaben, sie jeweils einzeln abzufragen.
+Beachten Sie, dass jeweils nur ein Index abgefragt werden kann. Erstellen Sie für jede Sprache nur einen Index, es sei denn, Sie fragen bei mehreren Indizes jeden einzeln ab.
 
-7)	Paging - Abrufen der ersten Seite von Elementen (die Seitengröße beträgt 10):
+7) Seitenverwaltung: Rufen Sie die erste Seite mit Elementen ab (Seitengröße ist 10):
 
     GET /indexes/hotels/docs?search=*&$skip=0&$top=10&api-version=2015-02-28-Preview
 
-8)	Paging - Abrufen der zweiten Seite von Elementen (die Seitengröße beträgt 10):
+8) Seitenverwaltung: Rufen Sie die zweite Seite mit Elementen ab (Seitengröße ist 10):
 
     GET /indexes/hotels/docs?search=*&$skip=10&$top=10&api-version=2015-02-28-Preview
 
-9)	Abrufen einer bestimmten Zusammenstellung von Feldern:
+9) Rufen Sie einen speziellen Satz von Feldern ab:
 
     GET /indexes/hotels/docs?search=*&$select=hotelName,description&api-version=2015-02-28-Preview
 
-10)  Abrufen von Dokumenten, die einem bestimmten Filterausdruck entsprechen
+10) Rufen Sie Dokumente ab, die einem speziellen Filterausdruck entsprechen.
 
     GET /indexes/hotels/docs?$filter=(baseRate ge 60 and baseRate lt 300) or hotelName eq 'Fancy Stay'&api-version=2015-02-28-Preview
 
-11) Durchsuchen des Index und Rückgabe von Fragmenten mit hervorgehobenen Treffern
+11) Durchsuchen Sie den Index, um Fragmente mit wichtigen Treffern zurückzugeben.
 
     GET /indexes/hotels/docs?search=something&highlight=description&api-version=2015-02-28-Preview
     
-12) Durchsuchen des Index und Rückgabe von Dokumenten, die nach der Entfernung (von näher nach weiter entfernt) von einem Referenzstandort sortiert sind
+12) Durchsuchen Sie den Index, um nach der Entfernung zu einem Referenzstandort sortierte Dokumente zurückzugeben.
 
     GET /indexes/hotels/docs?search=something&$orderby=geo.distance(location, geography'POINT(-122.12315 47.88121)')&api-version=2015-02-28-Preview
 
-13) Durchsuchen des Index unter der Voraussetzung, dass ein Bewertungsprofil mit dem Namen "geo" vorhanden ist, das zwei Bewertungsfunktionen enthält; eine definiert einen Parameter "currentLocation", die andere einen Parameter "lastLocation"
+13) Durchsuchen Sie den Index in der Annahme, dass ein Bewertungsprofil namens "geo" mit zwei Bewertungsfunktionen für die Entfernung vorhanden ist. Dabei definiert die eine Funktion einen Parameter namens "currentLocation" und die andere Funktion einen Parameter namens "lastLocation".
 
     GET /indexes/hotels/docs?search=something&scoringProfile=geo&scoringParameter=currentLocation:-122.123,44.77233&scoringParameter=lastLocation:-121.499,44.2113&api-version=2015-02-28-Preview
 
-14) Suchen von Dokumenten im Index mithilfe einfacher Abfragesyntax. Diese Abfrage gibt Hotels zurück, deren durchsuchbare Felder die Ausdrücke "Komfort" und "Standort", aber nicht "Motel" enthalten:
+14) Suchen Sie Dokumente im Index mithilfe der einfachen Abfragesyntax. Diese Abfrage gibt Hotels zurück, deren durchsuchbare Felder die Begriffe "Komfort" und "Standort" aber nicht "Motel" enthalten:
 
     GET /indexes/hotels/docs?search=comfort +location -motel&searchMode=all&api-version=2015-02-28-Preview
 
-Beachten Sie die Verwendung von  `searchMode=all` im Beispiel oben. Der Einschluss dieses Parameters setzt den Standardwert  `searchMode=any` außer Kraft und stellt sicher, dass `-motel` als "UND NICHT" statt als "ODER NICHT" ausgelegt wird. Ohne  `searchMode=all` erhalten Sie "ODER NICHT", wodurch die Suchergebnisse eher erweitert als eingeschränkt werden, und dies kann für einige Benutzer nicht intuitiv deutlich sein.
+Beachten Sie oben die Verwendung von `searchMode=all`. Durch Einbeziehen dieses Parameters wird der Standardwert für `searchMode=any` außer Kraft gesetzt. Dies stellt sicher, dass `-motel` "AND NOT" und nicht "OR NOT" bedeutet. Ohne `searchMode=all` wird "OR NOT" verwendet, womit Suchergebnisse erweitert anstatt eingeschränkt werden. Dies kann für manche Benutzer widersinnig sein.
 
 
 <a name="LookupAPI"></a>
-### Dokument nachschlagen
+##Dokument suchen
 
-Der Vorgang **Lookup Document** ruft ein Dokument bei Azure Search ab. Dies ist nützlich, wenn ein Benutzer auf ein bestimmtes Suchergebnis klickt und Sie spezifische Details zum Dokument nachschlagen möchten.
+Mit dem Vorgang **Dokument suchen** wird ein Dokument aus Azure Search abgerufen. Dies ist nützlich, wenn ein Benutzer auf ein bestimmtes Suchergebnis klickt und Sie spezifische Details zu diesem Dokument prüfen möchten.
 
-    GET https://[service name].search.windows.net/indexes/[indexname]/docs/[key]?[abfrageparameter] 
-    api-key: [Administratorschlüssel]
+    GET https://[service name].search.windows.net/indexes/[index name]/docs/[key]?[query parameters] 
+    api-key: [admin key]
     
 **Anforderung**
 
-HTTPS ist für Dienstanforderungen erforderlich. Die Anforderung **Lookup Document** kann wie folgt erstellt werden. 
+Für Dienstanforderungen ist HTTPS erforderlich. Die Anforderung **Dokument suchen** kann wie folgt erstellt werden.
 
-    GET /indexes/[indexname]/docs/key?[abfrageparameter] 
+    GET /indexes/[index name]/docs/key?[query parameters] 
 
-Alternativ können Sie die traditionelle OData-Syntax für die Schlüsselsuche verwenden:
+Alternativ können Sie für die Schlüsselsuche die herkömmliche OData-Syntax verwenden:
 
-    GET /indexes('[indexname]')/docs('[key]')?[abfrageparameter]
+    GET /indexes('[index name]')/docs('[key]')?[query parameters]
 
-Der Anforderungs-URI enthält einen [indexname] und einen [key], die angeben, welches Dokument beim Index abgerufen werden soll. Es kann immer nur jeweils ein Dokument abgerufen werden. Verwenden Sie **Search**, um mehrere Dokumente in einer einzelnen Anforderung abzurufen. 
+Der Anforderungs-URI enthält einen [Indexnamen] und einen [Schlüssel]. Diese Angaben legen fest, welches Dokument aus welchem Index abgerufen wird. Sie können jeweils nur ein Dokument abrufen. Mit dem **Suchvorgang** können Sie mehrere Dokumente in einer Anforderung abfragen.
 
 **Abfrageparameter**
 
-`$select=[zeichenfolge]` (optional) - eine kommagetrennte Liste der abzurufenden Felder. Wenn keine Angabe oder die Angabe `*` vorliegt, werden alle im Schema als abrufbar gekennzeichneten Felder in die Projektion aufgenommen.
+`$select=[string]` (optional): Eine Liste mit kommagetrennten Feldern, die abgerufen werden sollen. Wenn nicht anders angegeben oder auf `*` gesetzt, werden alle im Schema als abrufbar gekennzeichnete Felder in die Projektion einbezogen.
 
-`api-version=[zeichenfolge]` (erforderlich). Die Vorschauversion ist  `api-version=2015-02-28-Preview`. Details und Informationen finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+`api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
-Hinweis: Für diesen Vorgang wird die  `api-version` als Abfrageparameter angegeben.
+Hinweis: Bei diesem Vorgang wird die `api-version` als Abfrageparameter angegeben.
 
 **Anforderungsheader**
 
-In der folgenden Liste sind die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
-- `api-key`: Der  `api-key` wird verwendet, um die Anforderung bei Ihrem Suchdienst zu authentifizieren. Es handelt sich um einen Zeichenfolgenwert, der für Ihre Dienst-URL eindeutig ist. Die **Lookup Document**-Anforderung kann entweder einen Administratorschlüssel oder einen Abfrageschlüssel für  `api-key` angeben.
+- `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Dokument suchen** kann ein Admin-Schlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
  
-Ferner benötigen Sie den Dienstnamen, um die Anforderungs-URL zu erstellen. Sie können den Dienstnamen und den  `api-key` bei Ihrem Dienstdashboard im Azure-Portal abrufen. Hilfe zur Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](../search-create-service-portal/).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
-**Anforderungstextkörper**
+**Anforderungstext**
 
-Keiner.
+Keine.
 
 **Antwort**
 
-Status Code: "200 OK" wird als Antwort bei Erfolg zurückgegeben.
+Bei erfolgreicher Antwort wird der Statuscode "200 OK" zurückgegeben.
 
     {
       field_name: field_value (fields matching the default or specified projection)
@@ -1831,121 +1953,126 @@ Status Code: "200 OK" wird als Antwort bei Erfolg zurückgegeben.
     
 **Beispiel**
 
-Suchen Sie das Dokument mit dem Schlüssel '2'
+Suchen Sie das Dokument mit dem Schlüssel "2".
 
-    GET /indexes/hotels/docs/2?api-version=28.02.2015-Preview
+    GET /indexes/hotels/docs/2?api-version=2015-02-28-Preview
 
-Suchen Sie das Dokument mit dem Schlüssel '3', und verwenden Sie dazu OData-Syntax:
+Suchen Sie das Dokument mit dem Schlüssel "3" mithilfe der OData-Syntax:
 
-    GET /indexes('hotels')/docs('3')?api-version=28.02.2015-Preview
+    GET /indexes('hotels')/docs('3')?api-version=2015-02-28-Preview
 
 <a name="CountDocs"></a>
-### Dokumentenanzahl
+##Dokumentenanzahl
 
-Der Vorgang **Count Documents** ruft eine Zahl für die Anzahl der Dokumente in einem Suchindex ab. Die `$count`-Syntax ist Bestandteil des OData-Protokolls.
+Mit dem Vorgang **Dokumentenanzahl** wird die Anzahl der in einem Suchindex enthaltenen Dokumente abgerufen. Die Syntax für `$count` ist Teil des OData-Protokolls.
 
-    GET https://[dienstname].search.windows.net/indexes/[indexname]/docs/$count?api-version=[api-version]
-    Akezptiert: text/unformatiert
-    api-key: [Administratorschlüssel]
+    GET https://[service name].search.windows.net/indexes/[index name]/docs/$count?api-version=[api-version]
+    Accept: text/plain
+    api-key: [admin key]
     
 **Anforderung**
 
-HTTPS ist für Dienstanforderungen erforderlich. Die **Count Documents**-Anforderung kann mithilfe der GET-Methode erstellt werden.
+Für Dienstanforderungen ist HTTPS erforderlich. Die Anforderung **Dokumentanzahl** kann mit der GET-Methode erstellt werden.
 
-Der [indexname] im Anforderungs-URI weist den Dienst an, die Anzahl aller Elemente in der Dokumentauflistung des angegebenen Index zurückzugeben. 
+Der [Indexname] im Anforderungs-URI weist den Dienst an, die Anzahl aller Elemente in der Dokumentensammlung des angegebenen Index zurückzugeben.
 
-`api-version=[zeichenfolge]` (erforderlich). Die Vorschauversion ist  `api-version=2015-02-28-Preview`. Details und Informationen finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+`api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
 **Anforderungsheader**
 
-In der folgenden Liste sind die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
-- `Accept`: Dieser Wert muss auf  `text/plain` festgelegt sein.
-- `api-key`: Der  `api-key` wird verwendet, um die Anforderung bei Ihrem Suchdienst zu authentifizieren. Es handelt sich um einen Zeichenfolgenwert, der für Ihre Dienst-URL eindeutig ist. Die **Count Documents**Anforderung kann wahlweise einen Administratorschlüssel oder einen Abfrageschlüssel für  `api-key` angeben.
+- `Accept`: Dieser Wert muss auf `text/plain` gesetzt werden.
+- `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Dokumentanzahl** kann ein Admin-Schlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
  
-Ferner benötigen Sie den Dienstnamen, um die Anforderungs-URL zu erstellen. Sie können den Dienstnamen und den  `api-key` bei Ihrem Dienstdashboard im Azure-Portal abrufen. Hilfe zur Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](../search-create-service-portal/).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
-**Anforderungstextkörper**
+**Anforderungstext**
 
-Keiner.
+Keine.
 
 **Antwort**
 
-Status Code: "200 OK" wird als Antwort bei Erfolg zurückgegeben.
+Bei erfolgreicher Antwort wird der Statuscode "200 OK" zurückgegeben.
 
-Der Antworttextkörper enthält den Wert für die Anzahl als ganze Zahl im Format "unformatierter Text".
+Die Anzahl ist im Antworttext als ganze Zahl im Nur-Text-Format angegeben.
 
 <a name="Suggestions"></a>
-### Vorschläge
+##Vorschläge
 
-Der Vorgang **Suggestions** ruft Vorschläge auf der Grundlage teilweiser Sucheingaben ab. Er wird normalerweise in Suchfeldern verwendet, um Vorschläge bei der Eingabe zu machen, wenn Benutzer Suchausdrücke eingeben.
+Mit dem Vorgang **Vorschläge** werden Vorschläge basierend auf einer Teilsuche abgerufen. Er wird in der Regel in Suchfeldern verwendet, um während der Eingabe von Suchbegriffen Eingabevorschläge bereitzustellen.
 
-Vorschlagsanforderungen zielen auf das Vorschlagen von Zieldokumenten ab, daher kann der vorgeschlagene Text wiederholt werden, wenn mehrere Kandidatendokumente mit der gleichen Sucheingabe übereinstimmen. Sie können `$select` verwenden, um andere Dokumentfelder (einschließlich des Dokumentschlüssels) abzurufen, sodass Sie unterscheiden können, aus welchen Dokumenten die einzelnen Vorschläge stammen.
+Vorschlagsanforderungen dienen dazu, Zieldokumente vorzuschlagen. Der vorgeschlagene Text kann daher wiederholt werden, wenn mehrere in mögliche Dokumente mit derselben Sucheingabe übereinstimmen. Sie können mit `$select` weitere Dokumentfelder (einschließlich des Dokumentschlüssels) abrufen, um festzustellen, aus welchem Dokument die einzelnen Vorschläge stammen.
 
-    GET https://[dienstname].search.windows.net/indexes/[indexname]/docs/suggest?[abfrageparameter]
-    api-key: [Administratorschlüssel]
+    GET https://[service name].search.windows.net/indexes/[index name]/docs/suggest?[query parameters]
+    api-key: [admin key]
 
 
 **Anforderung**
 
-HTTPS ist für Dienstanforderungen erforderlich. Die **Suggestions**-Anforderung kann mithilfe der GET-Methode erstellt werden.
+Für Dienstanforderungen ist HTTPS erforderlich. Die Anforderung **Vorschläge** kann mit der GET-Methode erstellt werden.
 
-Der Anforderungs-URI gibt den Namen des abzufragenden Index an. Er enthält darüber hinaus den teilweise eingegebenen Suchausdruck in der Abfragezeichenfolge.
+Der Anforderungs-URI gibt den Namen des abzufragenden Index an. Zudem bezieht er den teilweise eingegebenen Suchbegriff in die Abfragezeichenfolge ein.
 
-Merken Sie sich als optimale Methode, bestimmte Abfrageparameter beim direkten Aufrufen der REST-API [als URL zu codieren](https://msdn.microsoft.com/library/system.uri.escapedatastring.aspx). Für Vorschlagsvorgänge sind dies:
+Es wird empfohlen, spezielle Abfrageparameter [mit einer URL zu codieren](https://msdn.microsoft.com/library/system.uri.escapedatastring.aspx), wenn die REST-API direkt aufgerufen wird. Bei Vorschlagsvorgängen beinhaltet dies:
 
 - `$filter`
 - `highlightPreTag`
 - `highlightPostTag`
 - `search`
 
-Die URL-Codierung wird nur für die oben genannten Abfrageparameter empfohlen. Wenn Sie unbeabsichtigt die gesamte Abfragezeichenfolge als URL codieren (alles hinter dem "?"), tritt ein Fehler bei der Anforderung auf.
+Die URL-Codierung wird nur bei den oben angegebenen Abfrageparametern empfohlen. Wenn Sie versehentlich die gesamte Abfragezeichenfolge mit einer URL-Codierung versehen (alles nach dem ?), schlagen die Anforderungen fehl.
 
-Darüber hinaus ist die URL-Codierung nur bei direktem Aufrufen der REST-API erforderlich. Wenn Sie die [.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) verwenden, übernimmt sie die URL-Codierung für Sie.
+Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API direkt aufrufen. Die [.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) übernimmt die URL-Codierung für Sie.
 
 **Abfrageparameter**
 
-`search=[zeichenfolge]` - der Suchtext für das Vorschlagen von Abfragen. Muss mindestens 3 Zeichen und darf höchstens 25 Zeichen lang sein.
+`search=[string]`: Der zum Vorschlagen von Abfragen zu verwendende Suchtext. Er muss zwischen 3 und 25 Zeichen lang sein.
 
-`highlightPreTag=[zeichenfolge]` (optional) - ein Zeichenfolgentag, das Suchtreffern vorangestellt wird. Muss mit  `highlightPostTag` festgelegt werden. Reservierte Zeichen in URL müssen prozentcodiert sein (z. B. "%23" anstelle von "#").
+`highlightPreTag=[string]` (optional): Ein Zeichenfolgetag, das Suchergebnissen vorangestellt wird. Es muss mit `highlightPostTag` festgelegt werden. In URLs reservierte Zeichen müssen mit dem Prozentzeichen codiert werden (z. B. %23 anstatt nur der Zahl).
 
-`highlightPostTag=[zeichenfolge]` (optional) - ein Zeichenfolgentag, das Suchtreffern nachgestellt wird. Muss mit  `highlightPreTag` festgelegt werden. Reservierte Zeichen in URL müssen prozentcodiert sein (z. B. "%23" anstelle von "#").
+`highlightPostTag=[string]` (optional): Ein Zeichenfolgetag, das Suchergebnissen nachgestellt wird. Es muss mit `highlightPreTag` festgelegt werden. In URLs reservierte Zeichen müssen mit dem Prozentzeichen codiert werden (z. B. %23 anstatt nur der Zahl).
 
-`suggesterName=[zeichenfolge]` - Der Name des Vorschlagsmoduls, wie er in der  `suggesters`-Auflistung angegeben ist, die Teil der Indexdefinition ist. Ein  `suggester` bestimmt, welche Felder nach vorgeschlagenen Abfrageausdrücken durchsucht werden. Weitere Informationen stehen unter [Vorschlagsmodule](#Suggesters) zur Verfügung.
+`suggesterName=[string]`: Der Name des Vorschlags, der in der Sammlung `suggesters` angegeben wurde, die Teil der Indexdefinition ist. Ein `suggester` bestimmt, welche Felder für vorgeschlagene Abfragebegriffe gescannt werden. Details finden Sie unter [Vorschläge](#Suggesters).
 
-`fuzzy=[boolean]` (optional, Standardwert = false) - bei der Einstellung auf "true" findet diese API auch dann Vorschläge, wenn ein Zeichen im Suchtext vertauscht wurde oder fehlt. Dies liefert zwar in vielen Szenarien eine bessere Benutzererfahrung, wird aber mit erhöhtem Leistungsaufwand erkauft, da die Suche mit unscharfen Vorschlägen langsamer ist und mehr Ressourcen benötigt.
+`fuzzy=[boolean]` (optional, Standadwert = false): Wenn dieser Wert auf "true" gesetzt ist, findet diese API Vorschläge auch dann, wenn im Suchtext ein Zeichen ersetzt wurde oder fehlt. Dies führt in einigen Szenarien zwar zu besseren Ergebnissen, geht jedoch zulasten der Leistung, da Fuzzysuchen von Vorschlägen langsamer sind und mehr Ressourcen belegen.
 
-`searchFields=[zeichenfolge]` (optional) - die Liste der durch Kommas getrennter Feldnamen für den angegebenen Suchtext. Für Vorschläge müssen Zielfelder aktiviert sein.
+`searchFields=[string]` (optional): Die Liste der kommagetrennten Feldnamen, die für den angegebenen Suchtext durchsucht werden. Zielfelder müssen für Vorschläge aktiviert sein.
 
-`$top=#` (optional, Standardwert = 5) - die Anzahl der abzurufenden Vorschläge. Es muss sich um eine Zahl zwischen 1 und 100 handeln.
+`$top=#` (optional, Standardwert = 5): Die Anzahl der abzurufenden Vorschläge. Dies muss eine Zahl zwischen 1 und 100 sein.
 
-`$filter=[zeichenfolge]` (optional) - ein Ausdruck, der die für Vorschläge berücksichtigten Dokumente filtert.
+`$filter=[string]` (optional): Ein Ausdruck, der die für Vorschläge in Betracht kommenden Dokumente filtert.
 
-`$orderby=[zeichenfolge]` (optional) - eine kommagetrennte Liste von Ausdrücken, nach denen die Ergebnisse sortiert werden sollen. Jeder Ausdruck kann entweder ein Feldname oder ein Aufruf der Funktion  `geo.distance()` sein. Auf jeden Ausdruck kann  `asc` folgen, um aufsteigende Sortierung, oder  `desc`, um absteigende Sortierung anzugeben. Der Standardwert ist die absteigende Sortierung. Es gibt ein Limit von 32 Klauseln für `$orderby`.
+`$orderby=[string]` (optional): Eine Liste mit kommagetrennten Ausdrücken, nach denen die Ergebnisse sortiert werden. Jeder Ausdruck kann ein Feldname oder ein Aufruf der Funktion `geo.distance()` sein. Jedem Ausdruck kann für eine aufsteigende Reihenfolge `asc` und für eine absteigende Reihenfolge `desc` nachgestellt sein. Standardmäßig wird in aufsteigender Reihenfolge sortiert. `$orderby` ist auf 32 Klauseln beschränkt.
 
-`$select=[zeichenfolge]` (optional) - eine kommagetrennte Liste der abzurufenden Felder. Ohne Angabe werden nur der Dokumentschlüssel und der Vorschlagstext zurückgegeben.
+`$select=[string]` (optional): Eine Liste mit kommagetrennten Feldern, die abgerufen werden sollen. Wenn nicht anders angegeben, werden nur der Dokumentschlüssel und der Vorschlagstext zurückgegeben.
 
-`api-version=[zeichenfolge]` (erforderlich). Die Vorschauversion ist  `api-version=2015-02-28-Preview`. Details und Informationen finden Sie unter [Search Service-Versionsverwaltung](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+`minimumCoverage` (optional, Standardwert ist 80): Eine Zahl zwischen 0 und 100, die den Prozentsatz des Index angibt, der von einer Vorschlagsabfrage abgedeckt werden muss, damit diese als erfolgreich gilt. Standardmäßig müssen mindestens 80 % des Index verfügbar sein, da `Suggest` sonst den HTTP-Statuscode "503" zurück gibt. Wenn Sie `minimumCoverage` festlegen und `Suggest` erfolgreich ist, werden der Statuscode "HTTP 200" und ein Wert für `@search.coverage` in der Antwort zurückgegeben. Letzterer gibt den in Prozentsatz des Index an, der in die Abfrage einbezogen wurde.
 
-Hinweis: Für diesen Vorgang wird die  `api-version` als Abfrageparameter angegeben.
+> [AZURE.NOTE]Es kann hilfreich sein, diesen Parameter auf einen Wert unter 100 zu setzen, um auch die Verfügbarkeit von Diensten mit nur einem Replikat sicherzustellen. Damit sind jedoch möglicherweise nicht alle übereinstimmenden Vorschläge in den Ergebnissen enthalten. Wenn Suchergebnisse für Ihre Anwendung wichtiger sind als die Verfügbarkeit, sollten Sie für `minimumCoverage` den Standardwert von 80 nicht unterschreiten.
+
+`api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
+
+Hinweis: Bei diesem Vorgang wird die `api-version` als Abfrageparameter angegeben.
 
 **Anforderungsheader**
 
-In der folgenden Liste sind die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
-- `api-key`: Der  `api-key` wird verwendet, um die Anforderung bei Ihrem Suchdienst zu authentifizieren. Es handelt sich um einen Zeichenfolgenwert, der für Ihre Dienst-URL eindeutig ist. Die **Suggestions**-Anforderung kann wahlweise einen Administratorschlüssel oder einen Abfrageschlüssel als  `api-key` angeben.
+- `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Vorschläge** kann ein Admin-Schlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
 
-  Ferner benötigen Sie den Dienstnamen, um die Anforderungs-URL zu erstellen. Sie können den Dienstnamen und den  `api-key` bei Ihrem Dienstdashboard im Azure-Portal abrufen. Hilfe zur Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](../search-create-service-portal/).
+  Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
-**Anforderungstextkörper**
+**Anforderungstext**
 
-Keiner.
+Keine.
 
 **Antwort**
 
-Status Code: "200 OK" wird als Antwort bei Erfolg zurückgegeben.
+Bei erfolgreicher Antwort wird der Statuscode "200 OK" zurückgegeben.
 
     {
+      "@search.coverage": # (if minimumCoverage was provided in the query),
       "value": [
         {
           "@search.text": "...",
@@ -1955,9 +2082,10 @@ Status Code: "200 OK" wird als Antwort bei Erfolg zurückgegeben.
       ]
     }
 
-Wenn die Projektionsoption zum Abrufen von Feldern verwendet wird, sind sie in jedem Element des Arrays enthalten:
+Wenn zum Abrufen der in jedem Element des Arrays enthaltenen Felder die Projektionsoption verwendet wird:
 
     {
+      "@search.coverage": # (if minimumCoverage was provided in the query),
       "value": [
         {
           "@search.text": "...",
@@ -1970,12 +2098,13 @@ Wenn die Projektionsoption zum Abrufen von Feldern verwendet wird, sind sie in j
 
  **Beispiel**
 
-Frage 5 Vorschläge ab, die diese teilweise Sucheingabe aufweisen:  'lux'.
+Rufen Sie 5 Vorschläge mit der Teilsuche nach "lux" ab.
 
-    GET /indexes/hotels/docs/suggest?search=lux&$top=5&suggesterName=sg&api-version=28.02.2015-Preview
-
-
+    GET /indexes/hotels/docs/suggest?search=lux&$top=5&suggesterName=sg&api-version=2015-02-28-Preview
 
 
 
-<!--HONumber=54--> 
+
+ 
+
+<!---HONumber=62-->

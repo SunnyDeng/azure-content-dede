@@ -1,72 +1,71 @@
 <properties
-	pageTitle="Verwenden Sie Azure-Sicherung auf Band-Infrastruktur ersetzen"
-	description="Hier erfahren Sie, wie Azure-Sicherung Band-ähnliche Semantik können Sie zum Sichern und Wiederherstellen von Daten in Azure"
-	services="backup"
-	documentationCenter=""
-	authors="prvijay"
-	manager="shreeshd"
-	editor=""/>
-
+   pageTitle="Verwenden von Azure Backup als Ersatz für Ihre Bandinfrastruktur"
+   description="Hier erfahren Sie, wie Azure Backup eine Semantik ähnlich wie bei Bändern bereitstellt, damit Sie Ihre Daten in Azure sichern und wiederherstellen können."
+   services="backup"
+   documentationCenter=""
+   authors="prvijay"
+   manager="shreeshd"
+   editor=""/>
 <tags
-	ms.service="backup"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
-	ms.date="03/27/2015"
-	ms.author="prvijay"/>
+   ms.service="backup"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="storage-backup-recovery"
+   ms.date="03/27/2015"
+   ms.author="prvijay"/>
 
-# Verwenden Sie Azure-Sicherung auf Band-Infrastruktur ersetzen
+# Verwenden von Azure Backup als Ersatz für Ihre Bandinfrastruktur
 
-Azure-Sicherung und System Center Data Protection Manager-Kunden können:
+Kunden von Azure Backup und System Center Data Protection Manager haben folgende Möglichkeiten:
 
-+ Backup-Daten in die Zeitpläne, die Anforderungen ihrer Organisation am besten entspricht.
++ Sichern von Daten anhand von Zeitplänen, die den Anforderungen ihrer Organisation ideal entsprechen
 
-+ Die Sicherungsdaten für längere Zeit beibehalten
++ Beibehalten der Sicherungsdaten für längere Zeiträume
 
-+ Stellen Sie Azure ein Teil ihrer langfristigen Aufbewahrung (anstelle von Bändern benötigt).
++ Integrieren von Azure in ihre Anforderungen zur langfristigen Aufbewahrung (anstelle von Bändern)
 
-In diesem Artikel wird erläutert, wie Kunden Sicherungs-und Beibehaltungsrichtlinie aktivieren können. Kunden, die Bänder zu verwenden, um ihre langfristigen-langfristige Speicherung von Adresse müssen jetzt eine leistungsstarke und geeignete Alternative durch die Verfügbarkeit dieses Features haben. Die Funktion in der neuesten Version der Azure-Sicherung aktiviert ist (das [hier](http://aka.ms/azurebackup_agent)). SCDPM Kunden müssten in UR5 verschieben, bevor Sie diese Funktion verwenden.
+In diesem Artikel wird erläutert, wie Kunden Sicherungs- und Aufbewahrungsrichtlinien aktivieren können. Kunden, die für ihre Anforderungen an eine langfristige Aufbewahrung Bänder verwenden, steht jetzt dank dieses Features eine leistungsstarke und geeignete Alternative zur Verfügung. Das Feature ist in der neuesten Version von Azure Backup aktiviert (die [hier](http://aka.ms/azurebackup_agent) erhältlich ist). SCDPM-Kunden müssen zunächst auf UR5 umstellen, bevor sie dieses Feature verwenden können.
 
-## Was ist der Zeitplan für die Sicherung?
-Sicherungszeitplan gibt die Häufigkeit an (oder wie oft) des Sicherungsvorgangs z. B. die Einstellungen in der folgenden Bildschirm zeigt an, dass Sicherungen täglich um 18: 00 Uhr und um Mitternacht ausgeführt werden. <br/>
+## Was ist ein Sicherungszeitplan?
+Der Sicherungszeitplan gibt die Häufigkeit des Sicherungsvorgangs an. Die Einstellungen im folgenden Bildschirm zeigen beispielsweise an, dass Sicherungen täglich um 18:00 Uhr und um Mitternacht ausgeführt werden. <br/>
 
-![Tagesplan][1]
+![Täglicher Zeitplan][1]
 
-Kunden können auch planen, eine wöchentliche Sicherung, z. B. die Einstellungen in der folgenden Bildschirm gibt an, dass Sicherungen alle alternativen Sonntag & Mittwoch 9:30 Uhr und 1 Uhr erstellt werden. <br/>
+Kunden können außerdem eine wöchentliche Sicherung planen. Die Einstellungen im folgenden Bildschirm geben beispielsweise an, dass Sicherungen jeden zweiten Sonntag und Mittwoch um 9:30 Uhr und um 1 Uhr erstellt werden. <br/>
 
 ![Wöchentlicher Zeitplan][2]
 
-## Was ist die Beibehaltungsrichtlinie?
-Beibehaltungsrichtlinie gibt die Dauer, für die die Sicherung gespeichert werden muss. Anstatt nur "flat Policy" für alle backup-Punkte, können Kunden verschiedene Aufbewahrungsrichtlinien basierend darauf, wann die Sicherung angeben. Für z. B. am Ende jedes Quartals getroffen Sicherungsort möglicherweise beibehalten werden für eine längere Zeit zu Überwachungszwecken Sicherungsort täglich ausgeführt (zeigen Sie dient als eine betriebliche Recovery) 90 Tage lang beibehalten werden muss. <br/>
+## Was ist die Aufbewahrungsrichtlinie?
+Die Aufbewahrungsrichtlinie gibt die Dauer an, für die die Sicherung gespeichert werden muss. Anstatt nur eine "flache Richtlinie" für alle Sicherungspunkte anzugeben, können Kunden je nach Sicherungszeitpunkt verschiedene Aufbewahrungsrichtlinien festlegen. Der Sicherungspunkt am Ende jedes Quartals muss für Audits möglicherweise länger aufbewahrt werden als der tägliche Sicherungspunkt (der als Wiederherstellungspunkt für den alltäglichen Betrieb dient), der 90 Tage lang aufbewahrt werden muss. <br/>
 
-![Beibehaltungsrichtlinie][3]
+![Aufbewahrungsrichtlinie][3]
 
-Die Gesamtanzahl der "Retention Punkte" in dieser Richtlinie angegeben ist, 90 (täglich Punkte) + 40 (jeweils 10 Jahren Quartal) = 130.
+Die Gesamtanzahl der in dieser Richtlinie angegebenen "Aufbewahrungspunkte" ist 90 (tägliche Punkte) + 40 (einer pro Quartal für 10 Jahre) = 130.
 
-## Beispiel – sowohl zusammenstellen
+## Beispiel – Kombination aus beidem
 <br/> ![Beispielbildschirm][4]
 
-1. **Tägliche Aufbewahrungsrichtlinie**: Sicherungen täglich, sieben Tage lang gespeichert sind.
-2. **Wöchentlich Aufbewahrungsrichtlinie**: Sicherungen, die alle um Mitternacht und 18: 00 Uhr Samstag, werden vier Wochen beibehalten
-3. **Monatliche Aufbewahrungsrichtlinie**: Sicherungen, die Uhr und 18: 00 Uhr am letzten Samstag jedes Monats werden für 12months beibehalten
-4. **Jährlichen Aufbewahrungsrichtlinie**: Sicherungen, die um Mitternacht am letzten Samstag jeder März werden zehn Jahre lang beibehalten
+1. **Tägliche Aufbewahrungsrichtlinie**: Täglich erstellte Sicherungen werden sieben Tage lang gespeichert.
+2. **Wöchentliche Aufbewahrungsrichtlinie**: Sicherungen, die jeden Samstag um Mitternacht und um 18:00 Uhr erstellt werden, werden vier Wochen lang aufbewahrt.
+3. **Monatliche Aufbewahrungsrichtlinie**: Sicherungen, die am letzten Samstag im Monat um Mitternacht und um 18:00 Uhr erstellt werden, werden zwölf Monate lang aufbewahrt.
+4. **Jährliche Aufbewahrungsrichtlinie**: Sicherungen, die am letzten Samstag im März um Mitternacht erstellt werden, werden zehn Jahre lang aufbewahrt.
 
-Die Gesamtanzahl der "Retention Punkte" (Punkte, von dem ein Kunde kann Daten wiederherstellen) in der obigen Abbildung wird wie folgt berechnet:
+Die Gesamtanzahl der "Aufbewahrungspunkte" (Punkte, von denen ein Kunde Daten wiederherstellen kann) in der obigen Abbildung wird wie folgt berechnet:
 
-+ 2 Punkte pro Tag und 7 Tage = 14 Recovery verweist.
++ 2 Punkte pro Tag für 7 Tage = 14 Wiederherstellungspunkte
 
-+ 2 verweist pro Woche 4 Wochen = 8 Wiederherstellungspunkte
++ 2 Punkte pro Woche für 4 Wochen = 8 Wiederherstellungspunkte
 
-+ 2 verweist pro Monat für 12 Monate = 24 Wiederherstellungspunkte
++ 2 Punkte pro Monat für 12 Monate = 24 Wiederherstellungspunkte
 
-+ 1 Punkt pro Jahr und Wiederherstellung von 10 Jahren = 10 Punkte
++ 1 Punkt pro Jahr für 10 Jahre = 10 Wiederherstellungspunkte
 
 Die Gesamtzahl der Wiederherstellungspunkte beträgt 56.
 
 ## Erweiterte Konfiguration
 
-Durch Klicken auf **Ändern** auf dem Bildschirm oben haben Kunden Flexibilität beim Angeben der Beibehaltungsdauer Zeitpläne noch weiter. <br/>
+Durch Klicken auf **Ändern** im Bildschirm oben können Kunden noch flexiblere Aufbewahrungszeitpläne angeben. <br/>
 
 ![Ändern][5]
 
@@ -77,5 +76,6 @@ Durch Klicken auf **Ändern** auf dem Bildschirm oben haben Kunden Flexibilität
 [3]: ./media/backup-azure-backup-cloud-as-tape/retentionpolicy.png
 [4]: ./media/backup-azure-backup-cloud-as-tape/samplescreen.png
 [5]: ./media/backup-azure-backup-cloud-as-tape/modify.png
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

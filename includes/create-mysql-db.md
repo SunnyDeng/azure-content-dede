@@ -1,14 +1,8 @@
-# Erstellen einer MySQL-Datenbank in Azure
-
 Diese Anleitung zeigt, wie Sie mit [ClearDB] eine MySQL-Datenbank über den [Azure Store] erstellen und wie Sie eine MySQL-Datenbank als verknüpfte Ressource erstellen, wenn Sie eine [Azure-Website][waws] erstellen. [ClearDB] ist ein fehlertoleranter Datenbank-Dienstanbieter, mit dem Sie MySQL-Datenbanken in Azure-Datencentern ausführen und verwalten und aus jeder Anwendung Verbindungen zu diesen herstellen können.
-
-## Inhaltsverzeichnis
-* [Erstellen einer MySQL-Datenbank über den Azure Store](#CreateFromStore)
-* [Erstellen einer MySQL-Datenbank als verknüpfte Ressource für eine Azure-Website](#CreateForWebSite)
 
 > [AZURE.NOTE]Wenn Sie beim Erstellen einer Website eine MySQL-Datenbank erstellen, kann dies nur eine kostenlose sein. Wenn Sie eine MySQL-Datenbank über den Azure Store erstellen, können Sie eine kostenlose Datenbank erstellen oder unter bezahlten Optionen wählen.
 
-<h2><a id="CreateFromStore"></a>Erstellen einer MySQL-Datenbank über den Azure Store</h2>
+## Erstellen einer MySQL-Datenbank über den Azure Store
 
 Gehen Sie folgendermaßen vor, um eine MySQL-Datenbank über den [Azure Store] zu erstellen:
 
@@ -38,7 +32,7 @@ Gehen Sie folgendermaßen vor, um eine MySQL-Datenbank über den [Azure Store] z
 	![MySQL-Verbindungsinformationen](./media/create-mysql-db/mysql-conn-info.png)
 
 
-<h2><a id="CreateForWebSite"></a>Erstellen einer MySQL-Datenbank als verknüpfte Ressource für eine Azure-Website</h2>
+## Erstellen einer MySQL-Datenbank als verknüpfte Ressource für eine Azure-Website
 
 Um beim Erstellen einer [Azure-Website][waws] eine MySQL-Datenbank als verknüpfte Ressource zu erstellen, gehen Sie folgendermaßen vor:
 
@@ -77,6 +71,6 @@ Um beim Erstellen einer [Azure-Website][waws] eine MySQL-Datenbank als verknüpf
 [waws]: /documentation/services/web-sites/
 [Azure Store]: ../articles/store.md
 [portal]: http://manage.windowsazure.com
-[configure]: ../articles/web-sites-configure.md
+[configure]: ../article/app-service-web/web-sites-configure.md
 
-<!--HONumber=52-->
+<!---HONumber=62-->

@@ -25,20 +25,20 @@ In diesem Lernprogramm wird das Hinzufügen der Offlineunterstützung zu einer W
 
 
 
-In diesem Lernprogramm aktualisieren Sie das universelle app-Projekt aus der [Erstellen einer app für Windows] Lernprogramm aus, um die Offlinefunktionen von Azure-Mobile-Anwendungen unterstützen. Anschließend fügen Sie Daten in einem Offlineszenario mit getrennter Verbindung hinzu, synchronisieren diese Elemente mit der Onlinedatenbank und melden sich daraufhin beim Azure-Verwaltungsportal an, um Änderungen an den Daten anzuzeigen, die bei der Ausführung der Anwendung vorgenommen wurden.
+In diesem Lernprogramm aktualisieren Sie das Universal App-Projekt aus dem Lernprogramm [Erstellen einer Windows-App] zur Unterstützung der Offlinefunktionen von mobilen Azure-Apps. Anschließend fügen Sie Daten in einem Offlineszenario mit getrennter Verbindung hinzu, synchronisieren diese Elemente mit der Onlinedatenbank und melden sich daraufhin beim Azure-Verwaltungsportal an, um Änderungen an den Daten anzuzeigen, die bei der Ausführung der Anwendung vorgenommen wurden.
 
 In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 
 1. [Aktualisieren der App für die Unterstützung von Offlinefunktionen]
 2. [Aktualisieren des Synchronisierungsverhaltens der App]
-3. [Aktualisieren der app aus, um Ihre Mobile Apps Back-End-Verbindung]
+3. [Aktualisieren der App zum erneuten Verbinden des mobilen App-Back-Ends]
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-* Visual Studio 2013 für Windows 8.1.
-* Abschluss der [Erstellen einer app für Windows].
-* [Azure Mobile Services SDK, Version 2.0.0 (oder höher)][Azure Mobile App SDK Nuget]
-* [Azure Mobile Services SQLite Store Version 1.0.2 (oder höher)][SQLite store Nuget]
+* Visual Studio 2013 für Windows 8.1.
+* Durchführung des Lernprogramms [Erstellen einer Windows-App].
+* [Azure Mobile Services SDK Version 2.0.0 (oder höher)][Azure Mobile App SDK Nuget]
+* [Azure Mobile Services SQLite Store Version 1.0.2 (oder höher)][SQLite store Nuget]
 * [SQLite für Windows 8.1](www.sqlite.org/downloads)
 
 >[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Kostenlose Azure-Testversion</a>.
@@ -47,14 +47,14 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 Offlinefunktionen der mobilen Azure-App ermöglichen Ihnen die Interaktion mit einer lokalen Datenbank, wenn Sie den Mobile Service offline verwenden. Um diese Funktionen in der App zu verwenden, initialisieren Sie einen `MobileServiceClient.SyncContext` in einem lokalen Speicher. Erstellen Sie dann über die `IMobileServiceSyncTable`-Schnittstelle einen Verweis für die Tabelle. In diesem Lernprogramm verwenden wir SQLite als lokalen Speicher.
 
-1. Installieren Sie die SQLite-Laufzeit für Windows 8.1 und Windows Phone 8.1.
+1. Installieren Sie die SQLite-Laufzeit für Windows 8.1 und Windows Phone 8.1.
 
     * **Windows 8.1-Runtime:** Installieren Sie [SQLite für Windows 8.1].
     * **Windows Phone 8.1:** Installieren Sie [SQLite für Windows Phone 8.1].
 
     >[AZURE.NOTE]Wenn Sie Internet Explorer verwenden und auf den Link für das Herunterladen von SQLite klicken, werden Sie möglicherweise aufgefordert, die VSIX-Datei als ZIP-Datei herunterzuladen. Speichern Sie die Datei mit der Endung .vsix statt.zip an einem Speicherort auf Ihrer Festplatte. Doppelklicken Sie im Windows-Explorer auf die VSIX-Datei, um die Installation auszuführen.
 
-2. Öffnen Sie in Visual Studio das Projekt, das Sie in abgeschlossen die [Erstellen einer app für Windows] Lernprogramm. Installieren Sie das **WindowsAzure.MobileServices.SQLiteStore**-NuGet-Paket für die Windows 8.1-Laufzeit und für Windows Phone 8.1-Projekte.
+2. Öffnen Sie in Visual Studio das Projekt, das Sie in [Erstellen einer Windows-App] abgeschlossen haben. Installieren Sie das **WindowsAzure.MobileServices.SQLiteStore**-NuGet-Paket für die Windows 8.1-Laufzeit und für Windows Phone 8.1-Projekte.
 
     * **Windows 8.1:** Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Windows 8.1-Projekt, und klicken Sie dann auf **NuGet-Pakete verwalten**, um den NuGet-Paket-Manager auszuführen. Suchen Sie nach **SQLiteStore**, um das Paket `WindowsAzure.MobileServices.SQLiteStore` zu installieren.
     * **Windows Phone 8.1:** Klicken Sie mit der rechten Maustaste auf das Windows 8.1-Projekt, und klicken Sie auf **Nuget-Pakete verwalten**, um den NuGet-Paket-Manager auszuführen. Suchen Sie nach **SQLiteStore**, um das Paket `WindowsAzure.MobileServices.SQLiteStore` zu installieren.
@@ -173,7 +173,7 @@ Offlinefunktionen der mobilen Azure-App ermöglichen Ihnen die Interaktion mit e
             }
         }
 
-    In diesem Beispiel werden alle Datensätze in der Remote-`todoTable` abgerufen, Sie können die Datensätze aber auch durch Übergeben einer Abfrage filtern. Der erste Parameter für `PullAsync` ist eine Abfrage-ID für eine inkrementelle Synchronisierung. Diese verwendet den `UpdatedAt`-Zeitstempel, um nur Datensätze abzurufen, die seit der letzten Synchronisierung geändert wurden. Die Abfrage-ID muss eine beschreibende Zeichenfolge sein, die für jede logische Abfrage in Ihrer App eindeutig ist. Um die inkrementelle Synchronisierung zu deaktivieren, übergeben Sie als Abfrage-ID `null`. Dadurch werden in jedem Pullvorgang alle Datensätze abgerufen, was potenziell ineffizient ist.
+    In diesem Beispiel werden alle Datensätze in der Remote-`todoTable` abgerufen, Sie können die Datensätze aber auch durch Übergeben einer Abfrage filtern. Der erste Parameter für `PullAsync` ist eine Abfrage-ID für eine inkrementelle Synchronisierung. Diese verwendet den `UpdatedAt`-Zeitstempel, um nur Datensätze abzurufen, die seit der letzten Synchronisierung geändert wurden. Die Abfrage-ID muss eine beschreibende Zeichenfolge sein, die für jede logische Abfrage in Ihrer App eindeutig ist. Um die inkrementelle Synchronisierung zu deaktivieren, übergeben Sie als Abfrage-ID `null`. Dadurch werden bei jedem Pullvorgang alle Datensätze abgerufen, was potenziell ineffizient ist.
 
     Beachten Sie, dass die `MobileServicePushFailedException` sowohl für einen Push- als auch für einen Pullvorgang auftreten kann. Sie kann für einen Pullvorgang auftreten, weil dieser intern einen Pushvorgang ausführt, um sicherzustellen, dass alle Tabellen und Beziehungen konsistent sind.
 
@@ -185,7 +185,7 @@ In diesem Abschnitt ändern Sie die Anwendung so, dass sie bei Einfüge- und Upd
 
 1. Öffnen Sie "App.xaml.cs" im freigegebenen Projekt. Bearbeiten Sie die Methoden `InsertTodoItem` und `UpdateCheckedTodoItem`, um die Aufrufe von `SyncAsync` auszukommentieren.
 
-2. Bearbeiten Sie "App.xaml.cs" im freigegebenen Projekt. Kommentieren Sie die Initialisierung der **MobileServiceClient** und fügen Sie die folgenden Zeilen, die eine ungültige mobile app-URL verwenden:
+2. Bearbeiten Sie "App.xaml.cs" im freigegebenen Projekt. Kommentieren Sie die Initialisierung von **MobileServiceClient** aus, und fügen Sie die folgenden Zeilen hinzu, die eine ungültige mobile App-URL verwenden:
 
          public static MobileServiceClient MobileService = new MobileServiceClient(
             "https://<your-mobile-service>-code.azurewebsites.fail",
@@ -197,13 +197,13 @@ In diesem Abschnitt ändern Sie die Anwendung so, dass sie bei Einfüge- und Upd
 
 4. Drücken Sie **F5**, um die Anwendung zu erstellen und auszuführen. Geben Sie neue "todoitems" ein, und klicken Sie jeweils auf **Speichern**. Die neuen Todo-Elemente existieren nur im lokalen Speicher, bis sie per Push zum mobilen App-Back-End übertragen werden können. Die Client-App verhält sich so, als ob eine Verbindung zum mobilen App-Back-End vorhanden wäre, und unterstützt alle Erstellungs-, Lese-, Aktualisierungs- und Löschaktionen (CRUD).
 
-5. Schließen Sie die App und starten Sie sie erneut, um zu überprüfen, ob die neuen Elemente dauerhaft im lokalen Speicher gespeichert wurden.
+5. Schließen Sie die App, und starten Sie sie neu, um zu überprüfen, ob die neuen Elemente dauerhaft im lokalen Speicher gespeichert wurden.
 
-## <a name="update-online-app"></a>Aktualisieren der app aus, um Ihre mobile app-Back-End-Verbindung
+## <a name="update-online-app"></a>Aktualisieren der App zum erneuten Verbinden des mobilen App-Back-Ends
 
 In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen App-Back-End. Dies simuliert, dass die App von einem Offlinestatus in einen Onlinestatus mit dem mobilen App-Back-End wechselt. Wenn Sie auf die Schaltfläche "Aktualisieren" klicken, werden Daten mit Ihrem mobilen App-Back-End synchronisiert.
 
-1. Öffnen Sie "App.xaml.cs" im freigegebenen Projekt. Kommentieren Sie die vorherige Initialisierung der `MobileServiceClient` Hinzufügen wieder die richtige mobile app service Back-End-URL, Gateway-URL und app-Schlüssel.
+1. Öffnen Sie "App.xaml.cs" im freigegebenen Projekt. Heben Sie die frühere Auskommentierung von `MobileServiceClient` auf, sodass wieder die richtige Back-End-URL für den Mobile App Service, die richtige Gateway-URL und der richtige App-Schlüssel verwendet werden.
 
 2. Drücken Sie die Taste **F5**, um die App erneut zu erstellen und auszuführen. Beachten Sie, dass die Daten genau wie im Offlineszenario aussehen, obwohl die App jetzt mit dem mobilen App-Back-End verbunden ist. Dies liegt daran, dass die App immer mit `IMobileServiceSyncTable` arbeitet und sich diese Tabelle auf den lokalen Speicher bezieht.
 
@@ -219,7 +219,7 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen App-Back-End. D
 
 5. Klicken Sie in der App auf das Kontrollkästchen neben einigen Elementen, um sie im lokalen Speicher abzuschließen.
 
-6. Klicken Sie erneut auf die Schaltfläche **Aktualisieren**, um `SyncAsync` aufzurufen. `SyncAsync` ruft Push- und Pullvorgänge auf, in diesem Fall hätten wir den Aufruf von `PushAsync` auch entfernen können. Dies liegt daran, dass ein **Pull-Vorgang immer zuerst einen Push-Vorgang ausführt**. Dadurch wird sichergestellt, dass alle Tabellen im lokalen Speicher und die Beziehungen konsistent bleiben.
+6. Klicken Sie erneut auf die Schaltfläche **Aktualisieren**, um `SyncAsync` aufzurufen. `SyncAsync` ruft Push- und Pullvorgänge auf. In diesem Fall hätten wir den Aufruf von `PushAsync` auch entfernen können. Dies liegt daran, dass ein **Pull-Vorgang immer zuerst einen Push-Vorgang ausführt**. Dadurch wird sichergestellt, dass alle Tabellen im lokalen Speicher und die Beziehungen konsistent bleiben.
 
 
 ##Zusammenfassung
@@ -248,13 +248,13 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
     Wenn Sie die inkrementelle Synchronisierung deaktivieren möchten, übergeben Sie `null` als Abfrage-ID. In diesem Fall werden alle Datensätze bei jedem Aufruf von `PullAsync` abgerufen, was möglicherweise ineffizient ist.
 
-* Ihre app sollte in regelmäßigen Abständen aufrufen `IMobileServiceSyncTable.PurgeAsync()` im lokalen Speicher zu löschen.
+* Ihre App sollte in regelmäßigen Abständen `IMobileServiceSyncTable.PurgeAsync()` aufrufen, um den lokalen Speicher zu löschen.
 
 
 <!-- Anchors. -->
 [Aktualisieren der App für die Unterstützung von Offlinefunktionen]: #enable-offline-app
 [Aktualisieren des Synchronisierungsverhaltens der App]: #update-sync
-[Aktualisieren der app aus, um Ihre Mobile Apps Back-End-Verbindung]: #update-online-app
+[Aktualisieren der App zum erneuten Verbinden des mobilen App-Back-Ends]: #update-online-app
 [Next Steps]: #next-steps
 
 <!-- Images -->
@@ -265,7 +265,7 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
 <!-- URLs. -->
 [TodoList Offline Sample]: http://go.microsoft.com/fwlink/?LinkId=394777
-[Erstellen einer app für Windows]: /documentation/articles/app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview/
+[Erstellen einer Windows-App]: /documentation/articles/app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview/
 [SQLite für Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
 [SQLite für Windows Phone 8.1]: http://go.microsoft.com/fwlink/?LinkId=397953
 
@@ -273,4 +273,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.2
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

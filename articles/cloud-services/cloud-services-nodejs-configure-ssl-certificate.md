@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Konfigurieren von SSL für einen Cloud-Dienst (Node.js) – Azure" 
+	pageTitle="Konfigurieren von SSL für einen Clouddienst (Node.js) – Azure" 
 	description="Geben Sie einen HTTPS-Endpunkt für eine Node.js-Webrolle an, und laden Sie ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hoch." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -21,13 +21,13 @@
 
 # Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Webrolle
 
-Secure Socket Layer (SSL)-Verschlüsselung ist die am häufigsten verwendete Methode zur Sicherung von Daten im Internet. Im Folgenden erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Node.js-Anwendung angeben können, die als Azure Cloud-Dienst in einer Webrolle gehostet ist, und wie Sie ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können.
+SSL-Verschlüsselung (Secure Socket Layer) ist die am häufigsten verwendete Methode zur Sicherung von Daten im Internet. Im Folgenden erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Node.js-Anwendung angeben können, die als Azure Clouddienst in einer Webrolle gehostet ist, und wie Sie ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können.
 
-> [AZURE.NOTE]Die Schritte in diesem Beitrag gelten nur für Node-Anwendungen, die als Azure-Cloud-Dienst in einer Webrolle gehostet werden. Weitere Informationen zu Websites finden Sie unter [Configuring an SSL certificate for an Azure website](../web-sites-configure-ssl-certificate.md) (Konfigurieren eines SSL-Zertifikats für eine Azure-Website, in englischer Sprache).
+> [AZURE.NOTE]Die Schritte in diesem Beitrag gelten nur für Node-Anwendungen, die als Azure Cloud Services-Instanz in einer Webrolle gehostet werden. Weitere Informationen zu Websites finden Sie unter [Konfigurieren eines SSL-Zertifikats für eine Azure-Website](../web-sites-configure-ssl-certificate.md).
 
 Diese Aufgabe umfasst die folgenden Schritte:
 
--   [Schritt 1: Erstellen eines Node.js-Diensts und Veröffentlichen des Diensts in der Cloud]
+-   [Schritt 1: Erstellen eines Node.js-Diensts und Veröffentlichen des Diensts in der Cloud]
 -   [Schritt 2: Beziehen eines SSL-Zertifikats]
 -   [Schritt 3: Importieren des SSL-Zertifikats]
 -   [Schritt 4: Ändern der Definitions- und Konfigurationsdateien für den Dienst]
@@ -108,7 +108,7 @@ Ihre Anwendung muss so konfiguriert sein, dass auf das Zertifikat verwiesen wird
         ...
         </WebRole>
 
-    Der Bereich **Certificates** definiert den Namen des Zertifikats, dessen Speicherort sowie den Namen des Speichers. Da das Zertifikat im Benutzerzertifikatspeicher installiert ist, wird der Wert "My" verwendet. Andere Zertifikatspeicherorte können ebenfalls verwendet werden. Weitere Informationen finden Sie unter [Verknüpfen eines Zertifikats (mit einem Dienst)](http://msdn.microsoft.com/library/windowsazure/gg465718.aspx).
+    Der Bereich **Certificates** definiert den Namen des Zertifikats, dessen Speicherort sowie den Namen des Speichers. Da das Zertifikat im Benutzerzertifikatspeicher installiert ist, wird der Wert "My" verwendet. Andere Zertifikatspeicherorte können ebenfalls verwendet werden. Weitere Informationen finden Sie unter [Verknüpfen eines Zertifikats mit einem Dienst].
 
 2.  Aktualisieren Sie in der Dienstdefinitionsdatei im Abschnitt **Endpoints** das **InputEndpoint**-HTTP-Element, um HTTPS zu aktivieren:
 
@@ -123,8 +123,7 @@ Ihre Anwendung muss so konfiguriert sein, dass auf das Zertifikat verwiesen wird
 
     Alle erforderlichen Änderungen an der Dienstdefinitionsdatei sind jetzt abgeschlossen. Sie müssen jedoch noch die Zertifikatinformationen zur Dienstkonfigurationsdatei hinzufügen.
 
-3.  Fügen Sie in Ihren Dienstkonfigurationsdateien (**ServiceConfiguration.Cloud.cscfg** und **ServiceConfiguration.Local.cscfg**) das Zertifikat in den leeren Abschnitt **
-4.  ** innerhalb des Abschnitts **Role** ein. Damit ersetzen Sie den unten angegebenen Beispielfingerabdruckwert durch den Wert Ihres Zertifikats:
+3.  Fügen Sie in Ihren Dienstkonfigurationsdateien (**ServiceConfiguration.Cloud.cscfg** und **ServiceConfiguration.Local.cscfg**) das Zertifikat in den leeren Abschnitt **Certificates** innerhalb des Abschnitts **Role** ein. Damit ersetzen Sie den unten angegebenen Beispielfingerabdruckwert durch den Wert Ihres Zertifikats:
 
         <Role name="WebRole1">
         ...
@@ -144,9 +143,9 @@ Ihre Anwendung muss so konfiguriert sein, dass auf das Zertifikat verwiesen wird
 
 Jetzt wird die Bereitstellung in Azure ausgeführt und Sie können eine HTTPS-Verbindung herstellen.
 
-1.  Wählen Sie im Verwaltungsportal Ihren Cloud-Dienst aus und klicken Sie auf **Dashboard**.
+1.  Wählen Sie im Verwaltungsportal Ihren Clouddienst aus, und klicken Sie auf **Dashboard**.
 
-2. Blättern Sie nach unten und klicken Sie auf den Link, der als **Site URL** angezeigt wird:
+2. Blättern Sie nach unten, und klicken Sie auf den Link, der als **Site URL** angezeigt wird:
 
     ![Website-URL][site-url]
 
@@ -166,23 +165,31 @@ Jetzt wird die Bereitstellung in Azure ausgeführt und Sie können eine HTTPS-Ve
 
 [Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt]
 
-[Schritt 1: Erstellen eines Node.js-Diensts und Veröffentlichen des Diensts in der Cloud]: #step1
-[Schritt 2: Beziehen eines SSL-Zertifikats]: #step2
-[Schritt 3: Importieren des SSL-Zertifikats]: #step3
-[Schritt 4: Ändern der Definitions- und Konfigurationsdateien für den Dienst]: #step4
-[Schritt 5: Herstellen einer Verbindung mit der Rolleninstanz über HTTPS]: #step5
-[**Azure PowerShell**]: http://go.microsoft.com/?linkid=9790229&clcid=0x409
-[1]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-01.png
-[2]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-02.png
-[3]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-03.png
-[Azure Management Portal]: http://manage.windowsazure.com
-[Verknüpfen eines Zertifikats mit einem Dienst]: http://msdn.microsoft.com/library/windowsazure/gg465718.aspx
-[site-url]: ./media/cloud-services-nodejs-configure-ssl-certificate/site-url.png
-[8]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-08.png
-[Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt]: http://msdn.microsoft.com/library/windowsazure/ff795779.aspx
-[powershell-menu]: ./media/cloud-services-nodejs-configure-ssl-certificate/azure-powershell-start.png
-[cert-wizard]: ./media/cloud-services-nodejs-configure-ssl-certificate/certificateimport.png
-[key-protection]: ./media/cloud-services-nodejs-configure-ssl-certificate/exportable.png
-[Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Workerrolle]: /develop/nodejs/common-tasks/enable-ssl-worker-role/
+  [Schritt 1: Erstellen eines Node.js-Diensts und Veröffentlichen des Diensts in der Cloud]: #step1
+  [Schritt 2: Beziehen eines SSL-Zertifikats]: #step2
+  [Schritt 3: Importieren des SSL-Zertifikats]: #step3
+  [Schritt 4: Ändern der Definitions- und Konfigurationsdateien für den Dienst]: #step4
+  [Schritt 5: Herstellen einer Verbindung mit der Rolleninstanz über HTTPS]: #step5
+  [**Azure PowerShell**]: http://go.microsoft.com/?linkid=9790229&clcid=0x409
+  
+  
+  
+  
+  [1]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-01.png
+  [2]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-02.png
+  [3]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-03.png
+  [Azure Management Portal]: http://manage.windowsazure.com
+  
+  
+  [Verknüpfen eines Zertifikats mit einem Dienst]: http://msdn.microsoft.com/library/windowsazure/gg465718.aspx
+  
+  [site-url]: ./media/cloud-services-nodejs-configure-ssl-certificate/site-url.png
+  [8]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-08.png
+  [Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt]: http://msdn.microsoft.com/library/windowsazure/ff795779.aspx
+  [powershell-menu]: ./media/cloud-services-nodejs-configure-ssl-certificate/azure-powershell-start.png
+  [cert-wizard]: ./media/cloud-services-nodejs-configure-ssl-certificate/certificateimport.png
+  [key-protection]: ./media/cloud-services-nodejs-configure-ssl-certificate/exportable.png
+  [Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Workerrolle]: /develop/nodejs/common-tasks/enable-ssl-worker-role/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

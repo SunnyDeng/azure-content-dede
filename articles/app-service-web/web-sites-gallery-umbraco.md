@@ -135,4 +135,4 @@ Fertig! Sie haben in nur wenigen Minuten erfolgreich eine Blog-Web-App mit Umbra
 [17MyPage]: ./media/web-sites-gallery-umbraco/17MyPage.PNG
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

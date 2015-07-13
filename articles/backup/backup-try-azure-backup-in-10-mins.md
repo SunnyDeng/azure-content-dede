@@ -20,11 +20,11 @@
 Die Einrichtung von Azure Backup ist überaus einfach. Die folgenden Videos mit Anleitungen sollen Ihnen den Einsteig erleichtern.
 
 ## Schritt 1: Erhalten eines Azure-Abonnements
-+ Wenn Sie über kein Azure-Abonnement verfügen, können Sie sich für eine kostenlose Testversion anmelden, mit der Sie auf alle Azure-Dienste zugreifen können. Klicken Sie auf diesen Link [http://azure.microsoft.com/de-de/pricing/free-trial/](http://azure.microsoft.com/de-de/pricing/free-trial), um weitere Informationen zu erhalten.
++ Wenn Sie über kein Azure-Abonnement verfügen, können Sie sich für eine kostenlose Testversion anmelden, mit der Sie auf alle Azure-Dienste zugreifen können. Klicken Sie auf diesen Link [http://azure.microsoft.com/en-in/pricing/free-trial/](http://azure.microsoft.com/en-in/pricing/free-trial), um weitere Informationen zu erhalten.
 + Wenn Sie über ein Azure-Abonnement verfügen, können Sie diesen Schritt überspringen.
 
 ## Schritt 2: Konfigurieren des Azure Backup-Diensts
-Sehen Sie sich die Schritte im Video unter [http://azure.microsoft.com/de-de/documentation/videos/getting-started-with-azure-backup-1-of-3-set-up-a-backup-vault-on-azure/](http://azure.microsoft.com/de-de/documentation/videos/getting-started-with-azure-backup-1-of-3-set-up-a-backup-vault-on-azure/) an, um Informationen zu folgenden Vorgängen zu erhalten:
+Sehen Sie sich die Schritte im Video unter [http://azure.microsoft.com/en-in/documentation/videos/getting-started-with-azure-backup-1-of-3-set-up-a-backup-vault-on-azure/](http://azure.microsoft.com/en-in/documentation/videos/getting-started-with-azure-backup-1-of-3-set-up-a-backup-vault-on-azure/) an, um Informationen zu folgenden Vorgängen zu erhalten:
 
 +	Erstellen eines Sicherungstresors
 
@@ -35,7 +35,7 @@ Sehen Sie sich die Schritte im Video unter [http://azure.microsoft.com/de-de/doc
 > [AZURE.VIDEO getting-started-with-azure-backup-1-of-3-set-up-a-backup-vault-on-azure]
 
 ## Schritt 3: Vorbereiten Ihres lokalen Computers
-Sehen Sie sich die Schritte im Video unter [http://azure.microsoft.com/de-de/documentation/videos/getting-started-with-azure-backup-2-of-3-prepare-your-production-server-for-azure-backup/](http://azure.microsoft.com/de-de/documentation/videos/getting-started-with-azure-backup-2-of-3-prepare-your-production-server-for-azure-backup/) an, um Informationen zu folgenden Vorgängen zu erhalten:
+Sehen Sie sich die Schritte im Video unter [http://azure.microsoft.com/en-in/documentation/videos/getting-started-with-azure-backup-2-of-3-prepare-your-production-server-for-azure-backup/](http://azure.microsoft.com/en-in/documentation/videos/getting-started-with-azure-backup-2-of-3-prepare-your-production-server-for-azure-backup/) an, um Informationen zu folgenden Vorgängen zu erhalten:
 
 + Installieren des Azure Backup-Agents auf Ihrem Windows-Server/Client oder DPM-Server.
 
@@ -45,7 +45,7 @@ Sehen Sie sich die Schritte im Video unter [http://azure.microsoft.com/de-de/doc
 > [AZURE.VIDEO getting-started-with-azure-backup-2-of-3-prepare-your-production-server-for-azure-backup]
 
 ## Schritt 4: Sichern und Wiederherstellen von Daten
-Sehen Sie sich die Schritte im Video unter [http://azure.microsoft.com/de-de/documentation/videos/getting-started-with-azure-backup-3-of-3-start-backing-up-your-production-server/](http://azure.microsoft.com/de-de/documentation/videos/getting-started-with-azure-backup-3-of-3-start-backing-up-your-production-server/) an, um Informationen zu folgenden Vorgängen zu erhalten:
+Sehen Sie sich die Schritte im Video unter [http://azure.microsoft.com/en-in/documentation/videos/getting-started-with-azure-backup-3-of-3-start-backing-up-your-production-server/](http://azure.microsoft.com/en-in/documentation/videos/getting-started-with-azure-backup-3-of-3-start-backing-up-your-production-server/) an, um Informationen zu folgenden Vorgängen zu erhalten:
 
 + Sichern von Daten von einem Server
 
@@ -58,4 +58,4 @@ Sehen Sie sich die Schritte im Video unter [http://azure.microsoft.com/de-de/doc
 + Besuchen Sie das [Azure Sicherungs-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

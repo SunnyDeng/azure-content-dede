@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/10/2015"
+	ms.date="06/24/2015"
 	ms.author="klam"/>
 
 # Verwenden von Logik-App-Vorlagen
@@ -37,7 +37,7 @@ Automatisierte Prozesse zur Verarbeitung von allgemeinen Azure-Prozeduren, die S
 ### Vorlagen für die Endbenutzer-Cloud
 Einfache Vorlagen für die Integration in soziale Netzwerkdienste, wie z. B. Twitter, Yammer und E-Mail. Dies können ausgezeichnete Produktivitäts-Anwendungen sein, die fortwährend auf Aktualisierungen überwachen und Aktionen ausführen, wenn neue Elemente verfügbar sind.
 
-Nachdem Sie eine der Vorlagen ausgewählt haben, führen Sie die Bereitstellungsschritte durch, wie Sie es bei Ihrer eigenen Logik-App auch tun würden. Finden Sie in [Erstellen einer App Logik](app-service-logic-create-a-logic-app.md).
+Nachdem Sie eine der Vorlagen ausgewählt haben, führen Sie die Bereitstellungsschritte durch, wie Sie es bei Ihrer eigenen Logik-App auch tun würden. Weitere Informationen finden Sie unter [Erstellen einer Logik-App](app-service-logic-create-a-logic-app.md).
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

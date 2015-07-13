@@ -1,7 +1,10 @@
 
+Um die Endgeräte zu schützen, müssen Sie den Zugriff auf authentifizierte Clients einschränken.
 
-1. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten**, und klicken Sie dann auf die Tabelle _TodoItem_.
+1. Navigieren Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) zu Ihren Mobile Services und klicken Sie auf **Daten** > den Tabellenname (**TodoItem**) > **Berechtigungen**. 
 
-2. Klicken Sie auf die Registerkarte **Berechtigungen**, legen Sie für alle Berechtigungen **Only authenticated users** fest, und klicken Sie dann auf **Speichern**. Dadurch wird sichergestellt, dass alle Vorgänge für die Tabelle _TodoItem_ einen authentifizierten Benutzer erfordern.
+2. Legen Sie alle Berechtigungen für Tabellenvorgänge auf **Nur authentifizierte Benutzer** fest.
 
-<!--HONumber=54-->
+	 Dadurch wird sichergestellt, dass alle Vorgänge für die Tabelle einen authentifizierten Benutzer erfordern. Die Einstellung ist auch für dieses Lernprogramm erforderlich. Um Ihr spezifisches Szenario zu unterstützen, können Sie für jeden Vorgang verschiedene Berechtigungen einstellen.
+
+<!---HONumber=62-->

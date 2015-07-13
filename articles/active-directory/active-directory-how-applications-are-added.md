@@ -145,5 +145,6 @@ Holen Sie weitere Informationen zum Hinzufügen von Anwendungen in Azure AD und 
 <!--Image references-->
 [apps_service_principals_directory]: media/active-directory-how-applications-are-added/HowAppsAreAddedToAAD.jpg
 [app_settings]: media/active-directory-how-applications-are-added/IntegratedAppSettings.jpg
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

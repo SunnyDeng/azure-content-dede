@@ -19,4 +19,5 @@ Dieses Lernprogramm basiert auf der Android-App **GetStartedWithData**. Die GUI 
 
 <!-- URLs. -->
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkID=282122
-<!--HONumber=54-->
+
+<!---HONumber=62-->

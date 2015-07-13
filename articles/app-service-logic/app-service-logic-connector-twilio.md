@@ -45,7 +45,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den Twilio-Connector als Aktion 
 2.	Öffnen Sie "Trigger und Aktionen", um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren. 
  
 	![][3]
-3.	Der Twilio-Connector wird im Abschnitt "API Apps in this resource group" im Katalog auf der rechten Seite angezeigt.
+3.	Der Twilio-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt.
  
 	![][4]
 4. Sie können die Twilio-Connector-API-App im Editor bearbeiten, indem Sie auf "Twilio-Connector" klicken.

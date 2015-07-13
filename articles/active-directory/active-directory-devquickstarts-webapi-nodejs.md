@@ -1178,4 +1178,4 @@ Klonen Sie einfach hinunter zu Ihrem Entwicklungscomputer und führen Sie die Ko
 [ADAL für .Net](http://msdn.microsoft.com/library/windowsazure/jj573266.aspx)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

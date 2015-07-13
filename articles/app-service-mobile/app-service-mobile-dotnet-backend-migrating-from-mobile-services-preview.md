@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="03/22/2015" 
+	ms.date="06/23/2015" 
 	ms.author="mahender"/>
 
 # Migrieren vorhandener Azure Mobile Services in eine mobile Azure App Service-App
@@ -115,4 +115,4 @@ Sobald Ihre Kunden diese Updates erhalten haben, können Sie die Mobile Services
 [WebJob]: ../app-service-web/websites-webjobs-resources.md
 [Senden von plattformübergreifenden Pushbenachrichtigungen]: app-service-mobile-dotnet-backend-xamarin-ios-push-notifications-to-user-preview.md
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/10/2015" 
+	ms.date="06/08/2015" 
 	ms.author="juliako"/>
 
 
@@ -21,14 +21,13 @@
 
 ##Übersicht
 
-In diesem Thema werden die Schritte eines typischen Azure Media Services-VoD-Workflows (Video on Demand) beschrieben. Jeder Schritt enthält Links zu relevanten Themen. Für Aufgaben, die mithilfe verschiedener Technologien erledigt werden können, stehen Schaltflächen zur Technologie Ihrer Wahl (z. B. .NET oder REST) zur Verfügung.   
+In diesem Thema werden die Schritte eines typischen Azure Media Services-VoD-Workflows (Video on Demand) beschrieben. Jeder Schritt enthält Links zu relevanten Themen. Für Aufgaben, die mithilfe verschiedener Technologien erledigt werden können, stehen Schaltflächen zur Technologie Ihrer Wahl (z. B. .NET oder REST) zur Verfügung.
 
-Beachten Sie, dass Sie Media Services in Ihre vorhandenen Tools und Prozesse integrieren können. Codieren Sie Inhalte z. B. am Standort, und laden Sie sie danach zu Media Services hoch, um sie in mehreren Formaten zu transcodieren und über das Azure CDN oder ein Drittanbieter-CDN zu übermitteln. 
+Beachten Sie, dass Sie Media Services in Ihre vorhandenen Tools und Prozesse integrieren können. Codieren Sie Inhalte z. B. am Standort, und laden Sie sie danach zu Media Services hoch, um sie in mehreren Formaten zu transcodieren und über das Azure CDN oder ein Drittanbieter-CDN zu übermitteln.
 
-Das folgende Diagramm zeigt die Hauptbestandteile der Media Services-Plattform, die am Video on Demand-Workflow beteiligt sind.
-![VoD-Workflow][vod-overview]
+Das folgende Diagramm zeigt die Hauptbestandteile der Media Services-Plattform, die am Video-on-Demand-Workflow beteiligt sind. ![VoD-Workflow][vod-overview]
 
-##<a id="vod_scenarios"></a>Häufige Szenarios Bereitstellen von Medien-On-Demand. 
+##<a id="vod_scenarios"></a>Allgemeine Szenarien: Bereitstellen von Medien-On-Demand. 
 
 ###Schützen von Inhalte im Speicher und Übermitteln von Streamingmedien ohne Verschlüsselung
 
@@ -39,9 +38,9 @@ Das folgende Diagramm zeigt die Hauptbestandteile der Media Services-Plattform, 
 
 	Es wird empfohlen, eine Speicherverschlüsselung das Ausgabemedienobjekt anzuwenden, um Ihre Inhalte während der Speicherung zu schützen.
 	
-1. Konfigurieren Sie eine Übermittlungsrichtlinie für Medienobjekte (wird zur dynamischen Paketerstellung verwendet). 
+1. Konfigurieren Sie eine Übermittlungsrichtlinie für Medienobjekte (wird zur dynamischen Paketerstellung verwendet).
 	
-	Wenn Ihr Medienobjekt speicherverschlüsselt ist, **müssen** Sie die Übermittlungsrichtlinien für Medienobjekte konfigurieren. 
+	Wenn Ihr Medienobjekt speicherverschlüsselt ist, **müssen** Sie die Übermittlungsrichtlinien für Medienobjekte konfigurieren.
 
 1. Veröffentlichen Sie das Medienobjekt durch Erstellen eines OnDemand-Locators.
 
@@ -66,7 +65,7 @@ Damit Sie die dynamische Verschlüsselung verwenden können, müssen Sie zunäch
 1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Medienobjekt hoch.
 1. Indizieren Sie die Inhalte.
 
-	Der Indizierungsauftrag erstellt Dateien, die bei der Videowiedergabe als Untertitel (Closed Captions, CC) verwendet werden können. Er generiert außerdem die Dateien, mit denen Sie im Video suchen und an den genauen Zeitpunkt im Video springen können.	
+	Der Indizierungsauftrag erstellt Dateien, die bei der Videowiedergabe als Untertitel (Closed Captions, CC) verwendet werden können. Er generiert außerdem die Dateien, mit denen Sie im Video suchen und an den genauen Zeitpunkt im Video springen können.
 
 1. Nutzen Sie die indizierten Inhalte.
 
@@ -88,116 +87,137 @@ Dieser Artikel enthält Links zu Themen, in denen das Einrichten der Entwicklung
 
 ##Konzepte
 
-Konzepte im Zusammenhang mit der Übermittlung von Inhalten On-Demand finden Sie unter [Media Services - Konzepte](media-services-concepts.md).
+Konzepte im Zusammenhang mit der Übermittlung von Inhalten On-Demand finden Sie unter [Media Services – Konzepte](media-services-concepts.md).
 
-##Erstellen eines Media Services-Kontos
+##Allgemeine Aufgaben: Bereitstellen von Medien-On-Demand.
 
-Verwenden Sie das **Azure-Verwaltungsportal** zum [Erstellen eines Azure Media Services-Kontos](media-services-create-account.md). 
+###Erstellen eines Media Services-Kontos
 
-##Einrichten der Entwicklungsumgebung  
+Verwenden Sie das **Azure-Verwaltungsportal** zum [Erstellen eines Azure Media Services-Kontos](media-services-create-account.md).
 
-Wählen Sie **.NET** oder **REST-API** für Ihre Entwicklungsumgebung.
+###Einrichten der Entwicklungsumgebung  
+
+Wählen Sie **.NET** oder **REST API** für Ihre Entwicklungsumgebung.
 
 [AZURE.INCLUDE [media-services-selector-setup](../../includes/media-services-selector-setup.md)]
 
-##Programmgesteuertes Verbinden  
+###Programmgesteuerte Verbindung  
 
-Wählen Sie **.NET** oder **REST-API**, um eine programmgesteuerte Verbindung mit Azure Media Services herzustellen.
+Wählen Sie **.NET** oder **REST API**, um eine programmgesteuerte Verbindung mit Azure Media Services herzustellen.
 
 [AZURE.INCLUDE [media-services-selector-connect](../../includes/media-services-selector-connect.md)]
 
 
-##Konfigurieren von Streamingendpunkten
+###Konfigurieren von Streamingendpunkten
 
 Eine Übersicht über Streamingendpunkte sowie Informationen zu deren Verwaltung finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md).
 
-##Hochladen von Medien 
+###Hochladen von Medien 
 
-Laden Sie Ihre Dateien mithilfe von **Azure-Verwaltungsportal**, **.NET** oder **REST-API** hoch.
+Laden Sie Ihre Dateien mithilfe des **Azure-Verwaltungsportals**, mithilfe von **.NET** oder **REST-API** hoch.
 
 [AZURE.INCLUDE [media-services-selector-upload-files](../../includes/media-services-selector-upload-files.md)]
 
-##Erstellen von Aufträgen\Aufgaben
+###Erstellen von Aufträgen\Aufgaben
 
-Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthält (z. B. Codierung oder Indizierung). Jede Aufgabe führt einen unteilbaren Vorgang für das (oder die) Eingangsmedienobjekt(e) durch. Ein Beispiel zum Erstellen von Codierungsaufträgen finden Sie hier:
+Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthält (z. B. Codierung oder Indizierung). Jede Aufgabe führt einen unteilbaren Vorgang für das (oder die) Eingangsmedienobjekt(e) durch. Ein Beispiel zum Erstellen von Codierungsaufträgen finden Sie hier:
 
 Eine Übersicht finden Sie unter [Arbeiten mit Azure Media Services-Aufträgen](media-services-jobs.md).
 
-Rufen Sie mit **.NET** oder der **REST-API** einen für Ihre Aufgabe geeigneten Medienprozessor ab.
+Rufen Sie mit **.NET** oder der **REST API** einen für Ihre Aufgabe geeigneten Medienprozessor ab.
 
 [AZURE.INCLUDE [media-services-selector-get-media-processor](../../includes/media-services-selector-get-media-processor.md)]
 
-In den folgenden Beispielen werden Codierungsaufträge mit dem **Azure-Verwaltungsportal**, **.NET** bzw. der **REST-API** erstellt.
+In den folgenden Beispielen werden Codierungsaufträge mit dem **Azure-Verwaltungsportal**, **.NET** oder der **REST-API** erstellt.
 
 [AZURE.INCLUDE [media-services-selector-encode](../../includes/media-services-selector-encode.md)]
 
-##Indizieren
+####Indizieren
 
 [AZURE.INCLUDE [media-services-selector-index-content](../../includes/media-services-selector-index-content.md)]
 
-##Codieren 
+####Codieren 
 
-**Übersicht**: [Codieren von On-Demand-Inhalten mit Azure Media Services](media-services-encode-asset.md).
+**Übersicht**:
 
-Erweiterte Codierung mit dem **Media Encoder Premium Workflow** mit **.NET** 
+- [Dynamische Paketerstellung – Übersicht](media-services-dynamic-packaging-overview.md)
+- [Codieren von On-Demand-Inhalten mit Azure Media Services](media-services-encode-asset.md)
 
-[AZURE.INCLUDE [media-services-selector-advanced-encoding](../../includes/media-services-selector-advanced-encoding.md)]
-
-Codieren Sie mit dem **Azure Media Encoder** unter Verwendung von **Azure-Verwaltungsportal**, **.NET** oder **REST-API**.
+Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des **Azure-Verwaltungsportals**, mithilfe von **.NET**, oder **REST-API** aus.
  
 [AZURE.INCLUDE [media-services-selector-encode](../../includes/media-services-selector-encode.md)]
 
-##Überwachen des Auftragsfortschritts
+Erweiterte Codierung mit dem **Media Encoder Premium Workflow** mit **.NET**.
 
-Überwachen Sie den Auftragsfortschritt mithilfe von **Azure-Verwaltungsportal**, **.NET** oder **REST-API**.
+[AZURE.INCLUDE [media-services-selector-advanced-encoding](../../includes/media-services-selector-advanced-encoding.md)]
+
+####Überwachen des Auftragsfortschritts
+
+Überwachen Sie den Auftragsfortschritt mit dem **Azure-Verwaltungsportal**, **.NET** oder der **REST-API**.
 
 [AZURE.INCLUDE [media-services-selector-job-progress](../../includes/media-services-selector-job-progress.md)]
 
-##Erstellen von Inhaltsschlüsseln
+###Schützen von Inhalten 
 
-Erstellen Sie einen Inhaltsschlüssel für das Verschlüsseln Ihres Medienobjekts mit **.NET** oder **REST-API**.
+**Übersicht**:
+
+[Inhaltsschutz – Übersicht](media-services-content-protection-overview.md)
+
+Wenn Sie ein Medienobjekt mit AES (Advanced Encryption Standard, mit 128-Bit-Verschlüsselungsschlüsseln) oder PlayReady-DRM verschlüsseln möchten, müssen Sie einen Inhaltsschlüssel erstellen.
+
+Verwenden Sie **.NET** oder **REST API**, um Schlüssel zu erstellen.
 
 [AZURE.INCLUDE [media-services-selector-create-contentkey](../../includes/media-services-selector-create-contentkey.md)]
 
-##Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel 
-
-Konfigurieren Sie Inhaltsschutz und Autorisierungsrichtlinien für Inhaltsschlüssel mithilfe von **.NET** oder **REST-API**.
+Nach dem Erstellen des Inhaltsschlüssels können Sie die Autorisierungsrichtlinie für Schlüssel mithilfe von **.NET** oder **REST API** konfigurieren.
 
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
 
-##Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
 
 Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte mithilfe von **.NET** oder **REST-API**.
 
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
 
-##Veröffentlichen und Bereitstellen von Medienobjekten
 
-**Übersicht**: [Bereitstellen von Inhalten für Kunden - Übersicht](media-services-deliver-content-overview.md)
+####Integrieren in Partneranwendungen
+
+[Übermitteln von DRM-Lizenzen an Azure Media Services mithilfe von castLabs](media-services-castlabs-integration.md)
+
+###Veröffentlichen und Bereitstellen von Medienobjekten
+
+Dynamische Paketerstellung – Übersicht
+
+> [AZURE.SELECTOR]
+- [Overview](media-services-dynamic-packaging-overview.md)
 
 
-Veröffentlichen Sie Medienobjekte (durch Locator-Erstellung) mithilfe des **Azure-Verwaltungsportals** oder mit **.NET**.
+Bereitstellen von Inhalten – Übersicht
+
+> [AZURE.SELECTOR]
+- [Overview](media-services-deliver-content-overview.md)
+
+Veröffentlichen Sie Medienobjekte (durch Locator-Erstellung) mit dem **Azure-Verwaltungsportal**, **.NET** oder der **REST-API**.
 
 [AZURE.INCLUDE [media-services-selector-publish](../../includes/media-services-selector-publish.md)]
 
-##Aktivieren von Azure CDN
+###Aktivieren von Azure CDN
 
-Media Services unterstützt die Integration in Azure CDN. Informationen zum Aktivieren von Azure CDN finden Sie unter [Verwalten von Streamingendpunkten in Media Services-Konten](media-services-manage-origins.md#enable_cdn).
+Von Media Services wird die Integration mit Azure CDN unterstützt. Informationen zum Aktivieren von Azure CDN finden Sie unter [Verwalten von Streamingendpunkten in Media Services-Konten](media-services-manage-origins.md#enable_cdn).
 
-##Skalieren eines Media Services-Kontos
+###Skalieren eines Media Services-Kontos
 
-Sie können **Media Services** skalieren, indem Sie die Anzahl **reservierter Einheiten für das Streaming ** und die Anzahl **reservierter Einheiten für die Codierung** angeben, die für Ihr Konto bereitgestellt werden soll. 
+Sie können **Media Services** skalieren, indem Sie die Anzahl **reservierter Einheiten für das Streaming** und die Anzahl **reservierter Einheiten für die Codierung** angeben, die für Ihr Konto bereitgestellt werden soll.
 
-Außerdem können Sie Ihr Media Services-Konto skalieren, indem Sie Speicherkonten hinzufügen. Jedes Speicherkonto ist auf 500 TB beschränkt. Um den Speicher über die Standardbeschränkungen hinaus zu erweitern, können Sie mehrere Speicherkonten mit einem einzelnen Media Services-Konto verknüpfen.
+Außerdem können Sie Ihr Media Services-Konto skalieren, indem Sie Speicherkonten hinzufügen. Jedes Speicherkonto ist auf 500 TB beschränkt. Um den Speicher über die Standardbeschränkungen hinaus zu erweitern, können Sie mehrere Speicherkonten mit einem einzelnen Media Services-Konto verknüpfen.
 
 [Dieses](media-services-how-to-scale.md) Thema enthält Links zu relevanten Themen.
 
-##Wiedergabe Ihrer Inhalte mit vorhandenen Playern
+###Wiedergabe Ihrer Inhalte mit vorhandenen Playern
 
 Weitere Informationen finden Sie unter [Wiedergabe Ihrer Inhalte mit vorhandenen Playern](media-services-playback-content-with-existing-players.md).
 
 
 [vod-overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
+ 
 
-
-<!--HONumber=52--> 
+<!---HONumber=62-->

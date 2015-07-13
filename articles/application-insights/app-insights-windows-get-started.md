@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter="windows"
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/12/2015" 
+	ms.date="06/16/2015" 
 	ms.author="awills"/>
 
 # Application Insights für Windows Phone- und Windows Store-Apps
@@ -60,13 +60,13 @@ Wenn es sich um eine universelle Windows App handelt, wiederholen Sie die Schrit
 
     ![](./media/app-insights-windows-get-started/03-nuget.png)
 
-2. Wählen Sie **Online**, **Vorabversion einschließen** aus, und suchen Sie nach "Application Insights".
+2. Suchen Sie nach "Application Insights".
 
     ![](./media/app-insights-windows-get-started/04-ai-nuget.png)
 
-3. Wählen Sie **Application Insights für Windows-Anwendungen**
+3. Wählen Sie **Application Insights für .NET Windows-Anwendungen**.
 
-4. Bearbeiten Sie die Datei "ApplicationInsights.config" (die bei der NuGet-Installation hinzugefügt wurde). Fügen Sie Folgendes direkt vor dem Endtag ein:
+4. Bearbeiten Sie die Datei "ApplicationInsights.config" (die durch die NuGet-Installation hinzugefügt wurde). Fügen Sie Folgendes direkt vor dem Endtag ein:
 
     `<InstrumentationKey>`*den kopierten Schlüssel*`</InstrumentationKey>`
 
@@ -132,6 +132,10 @@ Fügen Sie Application Insights im Projektmappen-Explorer hinzu.
 
 
 ![](./media/app-insights-windows-get-started/appinsights-d22-add.png)
+
+## So aktualisieren Sie auf eine neue SDK-Version
+
+Gehen Sie bei [Veröffentlichung einer neuen SDK-Version](app-insights-release-notes-windows.md) folgendermaßen vor: Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie "NuGet-Pakete verwalten". Wählen Sie die installierten Application Insights-Pakete und dann die Aktion "Upgrade" aus.
 
 
 ## <a name="usage"></a>Nächste Schritte

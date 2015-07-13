@@ -34,8 +34,8 @@ Fragen zu oder Probleme mit [Visual Studio Application Insights in Windows][wind
 
 #### Zuvor wurden Daten angezeigt, jetzt jedoch nicht mehr.
 
-* Schauen Sie im [Statusblog](http://blogs.msdn.com/b/applicationinsights-status/) nach.
-* Ist Ihr monatliches Kontingent an Datenpunkten erreicht? Öffnen Sie "Settings/Quota and Pricing", um es herauszufinden. Sie können in diesem Fall Ihren Plan aktualisieren oder zusätzliche Kapazität erwerben. Informationen hierzu finden Sie in der [Preisübersicht](http://azure.microsoft.com/pricing/details/application-insights/).
+* Überprüfen Sie den [Statusblog](http://blogs.msdn.com/b/applicationinsights-status/).
+* Ist Ihr monatliches Kontingent an Datenpunkten erreicht? Öffnen Sie "Einstellungen – Kontingente und Preisübersicht", um es herauszufinden. Sie können in diesem Fall Ihren Plan aktualisieren oder zusätzliche Kapazität erwerben. Informationen hierzu finden Sie in der [Preisübersicht](http://azure.microsoft.com/pricing/details/application-insights/).
 
 
 ## Wie füge ich Application Insights einer universellen App hinzu?
@@ -120,4 +120,4 @@ Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
 
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

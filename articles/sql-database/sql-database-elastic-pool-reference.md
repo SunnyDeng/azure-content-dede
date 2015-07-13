@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="04/29/2015" 
+	ms.date="06/24/2015" 
 	ms.author="sstein" 
 	ms.workload="data-management" 
 	ms.topic="article" 
@@ -89,14 +89,12 @@ Die Speicherbegrenzung des Pools wird durch die Menge der DTUs des Pools bestimm
 
 | -Eigenschaft | Standardwert | Gültige Werte |
 | :-- | :-- | :-- |
-| Dtu | 200 | 200, 400, 800, 1200 |
+| Dtu | 100 | 100, 200, 400, 800, 1.200 |
 | databaseDtuMax | 100 | 10, 20, 50, 100 |
 | databaseDtuMin | 0 | 0, 10, 20, 50 |
-| storageMB | 200 GB* | 200 GB, 400 GB, 800 GB, 1200 GB |
+| storageMB | 100 GB* | 100 GB, 200 GB, 400 GB, 800 GB, 1.200 GB |
 
 *Einheiten der API sind MB nicht GB
-
-Wenn das Speicherlimit eines Pools überschritten wird, werden alle Datenbanken im Pool schreibgeschützt. In diesem Fall erhöhen Sie die DTUs oder den Speicherplatz des Pools selbst, oder Sie verschieben eine oder mehrere Datenbanken aus dem Pool. Damit Sie erkennen und verhindern können, wenn die Speicherbegrenzung eines Pools überschritten wird, erstellen Sie eine Warnung im Portal, die ausgelöst wird, wenn die Speicherauslastung des Pools einen vordefinierten Wert überschreitet.
 
 ## Grenzwerte für Worker und Sitzung
 
@@ -104,6 +102,7 @@ Die maximale Anzahl von gleichzeitigen Workern und gleichzeitigen Sitzungen, die
 
 | DTUs | Max. gleichzeitige Worker | Max. gleichzeitige Sitzungen |
 | :-- | :-- | :-- |
+| 100 | 200 | 2.400 |
 | 200 | 400 | 4.800 |
 | 400 | 800 | 9.600 |
 | 800 | 1.600 | 19.200 |
@@ -193,8 +192,4 @@ Der DTU-Einzelpreis für einen elastischen Anwendungspool ist höher als der DTU
 | 40891 | EX_USER | Die Mindestanzahl von DTUs pro Datenbank (%d) darf die Höchstanzahl von DTUs pro Datenbank (%d) nicht überschreiten. | DTU-Mindestanzahl pro Datenbank; DTU-Höchstanzahl pro Datenbank. | Es wurde versucht, die DTU-Mindestanzahl pro Datenbank höher festzulegen, als die maximale DTU-Anzahl pro Datenbank. | Stellen Sie sicher, dass die Mindestanzahl von DTUs pro Datenbank nicht die Höchstanzahl von DTUs pro Datenbank überschreitet. |
 | TBD | EX_USER | Die Speichergröße für eine einzelne Datenbank in einem elastischen Pool darf die maximal zulässige Größe für die Dienstebene des elastischen Pools "%.*ls" nicht überschreiten. | Dienstebene des elastischen Pools | Die maximale Größe der Datenbank überschreitet die maximale Größe, die von der Dienstebene des elastische Pools zugelassen wird. | Legen Sie die maximale Größe der Datenbank höchstens auf die maximal zulässige Größe der Dienstebene des elastische Pools fest. |
 
-
-
- 
-
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

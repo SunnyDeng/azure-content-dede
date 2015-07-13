@@ -20,12 +20,9 @@
         </receiver>
 
 
-4. Fügen Sie diese Zeilen in der Datei **build.gradle** im Verzeichnis "app" unter *dependencies* hinzu:
+4. Fügen Sie diese Zeile unter *Abhängigkeiten* in der Datei **build.gradle** im Anwendungsverzeichnis ein, und synchronisieren Sie Gradle erneut mit dem Projekt:
 
-	    compile 'com.google.guava:guava:18.0'
-	    compile 'com.microsoft.azure:azure-mobile-services-android-sdk:2.0-beta'
 	    compile(group: 'com.microsoft.azure', name: 'azure-notifications-handler', version: '1.0.1', ext: 'jar')
-   		compile 'com.google.android.gms:play-services-base:6.5.87'
 
 
 5. Öffnen Sie die Datei *ToDoItemActivity.java*, und fügen Sie den folgenden Import-Ausdruck ein:
@@ -43,7 +40,7 @@
 
 
 
-8. Als Nächstes müssen wir eine neue Klasse zum Behandeln von Benachrichtigungen hinzufügen. Suchen Sie im Projektexplorer den Knoten `src`, öffnen Sie ihn, und klicken Sie mit der rechten Maustaste auf den Paketnamenknoten: Klicken Sie auf **Neu** und dann auf **Java-Klasse**.
+8. Als Nächstes müssen wir eine neue Klasse zum Behandeln von Benachrichtigungen hinzufügen. Öffnen Sie im Projektexplorer den **src** => **main** => **java**-Knoten, und klicken Sie mit der rechten Maustaste auf den Paketnamenknoten: Klicken Sie auf **Neu** und dann auf **Java-Klasse**.
 
 9. Geben Sie in **Name** die Zeichenfolge `MyHandler` ein, und klicken Sie dann auf **OK**.
 
@@ -138,4 +135,4 @@
 <!-- URLs. -->
 [Mobile Services Android SDK]: http://aka.ms/Iajk6q
 
-<!--HONumber=54-->
+<!---HONumber=62-->

@@ -21,7 +21,7 @@ Ein Automation-Verbindungsobjekt enthält die Informationen, die zur Verbindungs
 
 Wenn Sie eine Verbindung erstellen, müssen Sie einen *Verbindungstyp* angeben. Der Verbindungstyp ist eine Vorlage, die einen Satz von Eigenschaften definiert. Die Verbindung definiert Werte für jede der Eigenschaften, die im zugehörigen Verbindungstyp definiert sind. Verbindungstypen werden in Integrationsmodulen zu Azure Automation hinzugefügt oder mit der [ Azure Automation-API](http://msdn.microsoft.com/library/azure/mt163818.aspx) erstellt. Es stehen beim Erstellen einer Verbindung nur die Verbindungstypen zur Verfügung, die in Ihrem Automation-Konto installiert sind.
 
->[AZURE.NOTE]Zu den sicheren Objekten in Azure Automation gehören Anmeldeinformationen, Zertifikate, Verbindungen und verschlüsselte Variablen. Diese Objekte werden mithilfe eines eindeutigen Schlüssels verschlüsselt und in Azure Automation gespeichert, der für jedes Automation-Konto generiert wird.  Dieser Schlüssel wird mit einem Masterzertifikat verschlüsselt und in Azure Automation gespeichert. Vor dem Speichern eines sicheren Objekts wird der Schlüssel für das Automation-Konto mit dem Masterzertifikat verschlüsselt und anschließend zum Verschlüsseln des Objekts verwendet.
+>[AZURE.NOTE]Zu den sicheren Objekten in Azure Automation gehören Anmeldeinformationen, Zertifikate, Verbindungen und verschlüsselte Variablen. Diese Objekte werden mithilfe eines eindeutigen Schlüssels verschlüsselt und in Azure Automation gespeichert, der für jedes Automation-Konto generiert wird. Dieser Schlüssel wird mit einem Masterzertifikat verschlüsselt und in Azure Automation gespeichert. Vor dem Speichern eines sicheren Objekts wird der Schlüssel für das Automation-Konto mit dem Masterzertifikat verschlüsselt und anschließend zum Verschlüsseln des Objekts verwendet.
 
 ## Windows PowerShell-Cmdlets
 
@@ -67,7 +67,7 @@ Die Aktivitäten in der folgenden Tabelle werden für den Zugriff auf Verbindung
 
 ### So erstellen Sie eine neue Verbindung mit Windows PowerShell
 
-Erstellen Sie mit dem Windows PowerShell-Cmdlet [New-AzureAutomationConnection](http://msdn.microsoft.com/library/dn921825.aspx) eine neue Verbindung. Dieses Cmdlet verfügt über den Parameter **ConnectionFieldValues**, der eine [Hashtabelle](http://technet.microsoft.com/library/hh847780.aspx) erwartet, mit deren Hilfe die Werte für jede der im Verbindungstyp definierten Eigenschaften festgelegt werden.
+Erstellen Sie mit dem Windows PowerShell-Cmdlet [New-AzureAutomationConnection](http://msdn.microsoft.com/library/dn921825.aspx) eine neue Verbindung. Dieses Cmdlet verfügt über den Parameter **ConnectionFieldValues**, der eine [Hashtabelle](http://technet.microsoft.com/de-de/library/hh847780.aspx) erwartet, mit deren Hilfe die Werte für jede der im Verbindungstyp definierten Eigenschaften festgelegt werden.
 
 
 Die folgenden Beispielbefehle erstellen eine neue Verbindung für [Twilio](http://www.twilio.com), einem Telefoniedienst, der Ihnen das Senden und Empfangen von Textnachrichten ermöglicht. Ein Beispiel für ein Integrationsmodul, das einen Twilio-Verbindungstyp enthält, steht im [Script Center](http://gallery.technet.microsoft.com/scriptcenter/Twilio-PowerShell-Module-8a8bfef8) zur Verfügung. Dieser Verbindungstyp definiert Eigenschaften für Konto-SID und Autorisierungstoken, die zum Prüfen Ihres Kontos bei der Verbindungsherstellung mit Twilio erforderlich sind. Sie müssen [dieses Modul herunterladen](http://gallery.technet.microsoft.com/scriptcenter/Twilio-PowerShell-Module-8a8bfef8) und in Ihrem Automation-Konto installieren, damit der Beispielcode funktioniert.
@@ -118,5 +118,6 @@ Die folgende Abbildung zeigt das obige Beispiel, verwendet jedoch den Parameters
 ## Verwandte Artikel
 
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

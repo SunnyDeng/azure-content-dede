@@ -56,7 +56,7 @@ Die Aktion "XML validieren" validiert eine vorhandene XML-Eingabe gegen vorkonfi
 	</tr>
 	<tr>
 		<td>Eingabe-XML</td>
-		<td>string</td>
+		<td>Zeichenfolge</td>
 		<td>Zu validierende XML</td>
 	</tr>
 </table>

@@ -1,12 +1,3 @@
-<properties pageTitle="Erstellen einer manuellen Sicherung" description="Erläutert das Starten einer manuellen Sicherung nach Bedarf." services="storsimple" documentationCenter="NA" authors="SharS" manager="adinah" edito**r="tysonn" /> <tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="04/01/2015"
-   ms.author="v-sharos" />
-
 #### So erstellen Sie eine manuelle Sicherung
 
 1. Navigieren Sie auf der Seite **Geräte** zu der Registerkarte **Sicherungsrichtlinien**. Auf dieser Registerkarte werden alle Sicherungsrichtlinien in einem Tabellenformat aufgelistet, darunter auch die Richtlinie für das Volume, das Sie sichern möchten.
@@ -29,4 +20,4 @@
 
   Die Sicherung sollte in der Liste der Sicherungssätze enthalten sein, die im Katalog angezeigt wird.
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

@@ -1,10 +1,10 @@
-﻿In diesem Abschnitt ändern wir das Modell unserer Datenbank, indem wir ein neues Zeitstempelfeld namens **CompleteDate** hinzufügen. In diesem Feld wird die Zeit aufgezeichnet, zu der das todo-Element zuletzt abgeschlossen wurde. Entity Framework aktualisiert die Datenbank auf Grundlage unserer Modelländerung mittels einer von [DropCreateDatabaseIfModelChanges](http://go.microsoft.com/fwlink/?LinkId=394621) abgeleiteten Standard-Datenbankinitialisiererklasse. 
+In diesem Abschnitt ändern wir das Modell unserer Datenbank, indem wir ein neues Zeitstempelfeld namens **CompleteDate** hinzufügen. In diesem Feld wird die Zeit aufgezeichnet, zu der das todo-Element zuletzt abgeschlossen wurde. Entity Framework aktualisiert die Datenbank auf Grundlage unserer Modelländerung mittels einer von [DropCreateDatabaseIfModelChanges](http://go.microsoft.com/fwlink/?LinkId=394621) abgeleiteten Standard-Datenbankinitialisiererklasse.
 
-1. Erweitern Sie im Projektmappen-Explorer von Visual Studio im Aufgabenlistenserviceprojekt den Ordner **App_Start**. Öffnen Sie die Datei WebApiConfig.cs.
+1. Erweitern Sie im Projektmappen-Explorer für Visual Studio den Ordner **App_Start** im Aufgabenlistenserviceprojekt. Öffnen Sie die Datei "WebApiConfig.cs".
 
-2. Beachten Sie bei der WebApiConfig.cs-Datei, dass die Standard-Datenbankinitialisiererklasse von der  `DropCreateDatabaseIfModelChanges`-Klasse abgeleitet wird. Dies bedeutet, dass jede Änderung am Modell dazu führt, dass die Tabelle gelöscht und dem neuen Modell entsprechend erneut erstellt wird. Die Daten in der Tabelle gehen also verloren, und es wird ein erneutes Seeding für die Tabelle ausgeführt. Ändern Sie die Seed-Methode des Datenbankinitialisierers so, dass die Seed-Daten wie folgt sind, und speichern Sie die WebApiConfig.cs-Datei.
+2. Beachten Sie in der Datei "WebApiConfig.cs", dass die Standard-Datenbankinitialisiererklasse von der `DropCreateDatabaseIfModelChanges`-Klasse abgeleitet wird. Dies bedeutet, dass jede Änderung am Modell dazu führt, dass die Tabelle gelöscht und dem neuen Modell entsprechend erneut erstellt wird. Die Daten in der Tabelle gehen also verloren, und es wird ein erneutes Seeding für die Tabelle ausgeführt. Ändern Sie die Seed-Methode des Datenbankinitialisierers so, dass die Seed-Daten wie folgt sind, und speichern Sie die Datei "WebApiConfig.cs".
 
-    >[AZURE.NOTE] Bei Verwendung des Standard-Datenbankinitialisierers löscht Entity Framework die Datenbank und erstellt sie erneut, sobald es eine Datenmodelländerung in der Code First-Modelldefinition erkennt. Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie Code First-Migrationen verwenden. Weitere Informationen finden Sie unter [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells](mobile-services-dotnet-backend-how-to-use-code-first-migrations.md).
+    >[AZURE.NOTE]Bei Verwendung des Standard-Datenbankinitialisierers löscht Entity Framework die Datenbank und erstellt sie erneut, sobald es eine Datenmodelländerung in der Code First-Modelldefinition erkennt. Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie Code First-Migrationen verwenden. Weitere Informationen finden Sie unter [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells](../articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations.md).
 
         List<TodoItem> todoItems = new List<TodoItem>
         {
@@ -13,7 +13,7 @@
         };
      
 
-3. Erweitern Sie im Projektmappen-Explorer von Visual Studio im Aufgabenlistenserviceprojekt den Ordner **DataObjects**. Öffnen Sie die Datei TodoItem.cs, und aktualisieren Sie die TodoItem-Klasse so, dass das Feld CompleteDate enthalten ist, wie folgt. Speichern Sie dann die TodoItem.cs-Datei.
+3. Erweitern Sie im Projektmappen-Explorer für Visual Studio den Ordner **DataObjects** im Aufgabenlistenserviceprojekt. Öffnen Sie die Datei TodoItem.cs, und aktualisieren Sie die TodoItem-Klasse so, dass das Feld CompleteDate enthalten ist, wie folgt. Speichern Sie dann die TodoItem.cs-Datei.
 
         public class TodoItem : EntityData
         {
@@ -22,7 +22,7 @@
           public System.DateTime? CompleteDate { get; set; }
         }
 
-4. Erweitern Sie im Projektmappen-Explorer von Visual Studio im Aufgabenlistenserviceprojekt den Ordner **Controller**. Öffnen Sie die Datei "TodoItemController.cs", und aktualisieren Sie die  `PatchTodoItem`-Methode, so dass **CompleteDate** festgelegt wird, wenn sich die Eigenschaft **Abgeschlossen** von "False" zu "True" ändert. Speichern Sie dann die TodoItemController.cs-Datei.
+4. Erweitern Sie im Projektmappen-Explorer für Visual Studio den Ordner **Controller** im Aufgabenlistenserviceprojekt. Öffnen Sie die Datei "TodoItemController.cs", und aktualisieren Sie die `PatchTodoItem`-Methode, sodass **CompleteDate** festgelegt wird, wenn sich die Eigenschaft **Complete** von "False" zu "True" ändert. Speichern Sie dann die Datei "TodoItemController.cs".
 
         public Task<TodoItem> PatchTodoItem(string id, Delta<TodoItem> patch)
         {
@@ -36,9 +36,8 @@
         }
 
 
-5. Erstellen Sie das Aufgabenlisten-.NET-Backend-Serviceprojekt erneut, und vergewissern Sie sich, dass keine Buildfehler vorliegen. 
+5. Erstellen Sie das Aufgabenlisten-.NET-Backend-Serviceprojekt erneut, und vergewissern Sie sich, dass keine Buildfehler vorliegen.
 
-Aktualisieren Sie dann die Client-App, um die neuen **CompleteDate**-Daten anzuzeigen.
+Als Nächstes aktualisieren Sie die Client-App, um die neuen **CompleteDate**-Daten anzuzeigen.
 
-
-<!--HONumber=42-->
+<!---HONumber=62-->

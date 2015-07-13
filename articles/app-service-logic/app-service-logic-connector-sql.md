@@ -13,13 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="06/17/2015"
+   ms.date="06/22/2015"
    ms.author="sutalasi"/>
 
 
 # Microsoft SQL-Connector
 
-Stellen Sie eine Verbindung mit einem lokalen SQL Server oder einer Azure SQL-Datenbank her, um Informationen oder Daten zu erstellen oder zu ändern. Connectors können in Logik-Apps als Teil eines "Workflows" verwendet werden, um Daten abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. Wenn Sie den SQL-Connector im Workflow verwenden, können Sie eine Vielzahl von Szenarios umsetzen. Dazu zählen z. B.:
+Stellen Sie eine Verbindung mit einem lokalen SQL Server oder einer Azure SQL-Datenbank her, um Informationen oder Daten zu erstellen oder zu ändern. Connectors können in Logik-Apps als Teil eines "Workflows" verwendet werden, um Daten abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. Wenn Sie den SQL-Connector im Workflow verwenden, können Sie eine Vielzahl von Szenarios umsetzen. Dazu zählen z. B.:
 
 - Machen Sie einen Teil der Daten in der SQL-Datenbank mithilfe einer Web- oder mobilen Anwendung verfügbar. 
 - Einfügen von Daten in eine SQL-Datenbanktabelle zum Speichern. Sie können z. B. Mitarbeiterdatensätze eingeben, Aufträge aktualisieren, usw..
@@ -49,7 +49,7 @@ Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem
 --- | --- | ---
 Servername | Ja | Geben Sie den SQL Server-Namen ein. Geben Sie z. B. *SQLserver/sqlexpress* oder *SQLserver.mydomain.com* ein.
 Port | Nein | Der Standardwert ist 1433.
-Benutzername | Ja | Geben Sie einen Benutzernamen ein, mit dem Sie sich bei SQL Server anmelden können. Geben Sie Domäne\\Benutzernamen ein, wenn Sie mit einem lokalen SQL-Server eine Verbindung herstellen. 
+Benutzername | Ja | Geben Sie einen Benutzernamen ein, mit dem Sie sich bei SQL Server anmelden können. Geben Sie Domäne\Benutzernamen ein, wenn Sie mit einem lokalen SQL-Server eine Verbindung herstellen. 
 Kennwort | Ja | Geben Sie das Kennwort für den Benutzernamen ein.
 Datenbankname | Ja | Geben Sie die Datenbank ein, mit der Sie eine Verbindung herstellen. Sie können z. B. *Customers* oder *dbo/orders* eingeben.
 Lokal | Ja | Die Standardeinstellung ist "False". Geben Sie "False" ein, wenn Sie eine Verbindung mit einer Azure SQL-Datenbank herstellen. Geben Sie "True" ein, wenn Sie eine Verbindung zu einem lokalen SQL Server herstellen. 
@@ -128,6 +128,7 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [7]: ./media/app-service-logic-connector-sql/LogicApp3.png
 [8]: ./media/app-service-logic-connector-sql/LogicApp4.png
 [9]: ./media/app-service-logic-connector-sql/LogicApp5.png
+[10]: ./media/app-service-logic-connector-sql/LogicApp6.png
 [11]: ./media/app-service-logic-connector-sql/LogicApp7.png
 [12]: ./media/app-service-logic-connector-sql/LogicApp8.png
 

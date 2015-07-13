@@ -67,7 +67,7 @@ So führen Sie die bedarfsabhängige Sicherung eines virtuellen Computers aus:
 Mit den folgenden Optionen können Sie künftige Sicherungen eines virtuellen Computers beenden:
 
 - Sicherungsdaten beibehalten, die dem virtuellen Computer im Azure Backup-Tresor zugeordnet sind
-- Sicherungsdaten löschen, die dem virtuellen Computer zugeordnet sind
+- Sicherungsdaten löschen, die dem virtuellen Computer zugeordnet sind Sicherungsdaten löschen, die dem virtuellen Computer zugeordnet sind
 
 Bei Wahl der ersten Option können Sie die Sicherungsdaten zum Wiederherstellen des virtuellen Computers nutzen. Klicken Sie [hier](http://azure.microsoft.com/pricing/details/backup/), um die Preisübersicht für virtuelle Computer anzuzeigen.
 
@@ -160,4 +160,4 @@ Auf der Seite **Dashboard** können Sie Informationen zu virtuellen Computern in
   ![Dashboard](./media/backup-azure-manage-vms/dashboard-protectedvms.png)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

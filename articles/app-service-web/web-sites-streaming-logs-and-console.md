@@ -26,7 +26,7 @@ Gehen Sie wie folgt vor, um diese Funktion einzurichten:
 
 - Schreiben Sie Ablaufverfolgungen in Ihren Code.
 - Aktivieren Sie die Anwendungsdiagnose über das Azure-Vorschauportal.
-- Klicken Sie auf dem Blatt der Web-App auf die Kachel „Streamingprotokolle“.
+- Klicken Sie auf dem Blatt der Web-App auf die Kachel "Streamingprotokolle".
 
 ### So schreiben Sie Ablaufverfolgungen in den Code: ###
 

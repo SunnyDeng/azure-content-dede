@@ -56,10 +56,12 @@ Die Kopieraktivität unterstützt folgende Datenbewegungen:
 		<th>Azure SQL-Datenbank</th>
 		<th>Lokaler SQL Server</th>
 		<th>SQL Server unter IaaS</th>
+		<th>Azure DocumentDB</th>
 	</tr>	
 
 	<tr>
 		<td><b>Azure Blob</b></td>
+		<td>X</td>
 		<td>X</td>
 		<td>X</td>
 		<td>X</td>
@@ -74,10 +76,12 @@ Die Kopieraktivität unterstützt folgende Datenbewegungen:
 		<td>X</td>
 		<td></td>
 		<td></td>
+		<td>X</td>
 	</tr>	
 
 	<tr>
 		<td><b>Azure SQL-Datenbank</b></td>
+		<td>X</td>
 		<td>X</td>
 		<td>X</td>
 		<td>X</td>
@@ -93,6 +97,7 @@ Die Kopieraktivität unterstützt folgende Datenbewegungen:
 		<td>X</td>
 		<td></td>
 		<td></td>
+		<td></td>
 	</tr>
 
 	<tr>
@@ -102,11 +107,13 @@ Die Kopieraktivität unterstützt folgende Datenbewegungen:
 		<td>X</td>
 		<td></td>
 		<td></td>
+		<td></td>
 	</tr>
 
 	<tr>
 		<td><b>Lokales Dateisystem</b></td>
 		<td>X</td>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -120,13 +127,85 @@ Die Kopieraktivität unterstützt folgende Datenbewegungen:
 		<td></td>
 		<td></td>
 		<td></td>
+		<td></td>
 	</tr>
 
+	<tr>
+		<td><b>Lokales Dateisystem</b></td>
+		<td>X</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+	<tr>
+		<td><b>Lokale MySQL-Datenbank</b></td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+	<tr>
+		<td><b>Lokale DB2-Datenbank</b></td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+	<tr>
+		<td><b>Lokale Teradata-Datenbank</b></td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+	<tr>
+		<td><b>Lokale Sybase-Datenbank</b></td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+	<tr>
+		<td><b>Lokale PostgreSQL-Datenbank</b></td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+	<tr>
+		<td><b>Azure DocumentDB</b></td>
+		<td>X</td>
+		<td>X</td>
+		<td>X</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
 
 </table>
 
+Weitere Informationen finden Sie im Thema [Unterstützte Datenquellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) in der MSDN Library.
+
 ### SQL unter IaaS (Infrastructure-as-a-Service)
-SQL Server unter IaaS wird auch als Quelle und Empfänger unterstützt. Data Management Gateway ist erforderlich, beim Erstellen von verknüpften Diensts zu SQL Server auf IaaS. Sie sollten erwägen, installieren das Datenverwaltungsgateway auf einem virtuellen Computer als ein hosting SQL-Server zur Vermeidung von Leistungseinbußen aufgrund von SQL Server und das Gateway Ressourcen konkurrieren. Weitere Informationen zum Datenverwaltungsgateway finden Sie unter [Aktivieren von Pipelines für den Zugriff auf lokale Daten][use-onpremises-datasources].
+SQL Server unter IaaS wird auch als Quelle und Senke unterstützt. Ein Datenverwaltungsgateway ist beim Erstellen eines verknüpften Diensts für SQL Server unter IaaS erforderlich. Sie sollten erwägen, das Datenverwaltungsgateway auf einem virtuellen Computer statt auf dem Computer mit SQL Server zu installieren. Dadurch können Leistungsabfälle vermieden werden, die entstehen, wenn SQL Server und das Gateway versuchen, die gleichen Ressourcen für sich zu beanspruchen. Weitere Informationen zum Datenverwaltungsgateway finden Sie unter [Aktivieren von Pipelines für den Zugriff auf lokale Daten][use-onpremises-datasources].
 
 1.	VM mit öffentlichem DNS-Namen und statischem, öffentlichen Port: private Portzuordnung
 2.	VM mit öffentlichem DNS-Namen ohne bereitgestellten SQL-Endpunkt
@@ -146,7 +225,7 @@ Die Kopieraktivität enthält die folgenden Komponenten:
 Eine Kopieraktivität kann eine **Eingabetabelle** und eine **Ausgabetabelle** besitzen.
 
 ## <a name="CopyActivityJSONSchema"></a>JSON für Kopieraktivität
-Eine Pipeline besteht aus mindestens einer Aktivität. Aktivitäten in den Pipelines werden über den Abschnitt **Aktivitäten []** definiert. Der JSON-Wert für eine Pipeline sieht folgendermaßen aus:
+Eine Pipeline besteht aus mindestens einer Aktivität. Aktivitäten in den Pipelines werden über den Abschnitt **Aktivitäten** definiert. Der JSON-Wert für eine Pipeline sieht folgendermaßen aus:
          
 	{
 		"name": "PipelineName",
@@ -236,7 +315,7 @@ Die folgende Tabelle beschreibt die Tags, die in einem Aktivitätsabschnitt verw
 Ausführliche Informationen zu JSON-Eigenschaften/-Tags finden Sie in der [JSON-Skriptreferenz][json-script-reference].
 
 ### Quellen- und Senktypen
-Die Liste der Quell- und Senktypen und den Eigenschaften, die von diesen Typen unterstützt werden, finden Sie unter dem Thema [Unterstützte Quellen und Senken][msdn-supported-sources-sinks] in der MSDN Library.
+Die Liste der Quell- und Senktypen und den Eigenschaften, die von diesen Typen unterstützt werden, finden Sie im Thema [Unterstützte Quellen und Senken][msdn-supported-sources-sinks] in der MSDN Library.
 
 ## Kopieraktivität – Beispiel
 In diesem Beispiel werden eine Eingabe- und eine Ausgabetabelle definiert. Die Tabellen werden in einer Kopieraktivität in einer Pipeline verwendet, die Daten aus einer lokalen SQL Server-Datenbank in ein Azure-BLOB kopiert.
@@ -364,12 +443,12 @@ Für Datenspeicher mit HTTPS-Verbindung wählen Sie die HTTPS-Verbindung für di
 
 Für die **Azure SQL-Datenbank** fordern Sie explizit eine verschlüsselte Verbindung an und vertrauen nicht den Serverzertifikaten, um einen Man-in-the-Middle-Angriff zu vermeiden. Um dies zu erreichen, verwenden Sie **Encrypt = True** und **TrustServerCertificate = False** in der Verbindungszeichenfolge. Weitere Informationen finden Sie unter [Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](https://msdn.microsoft.com/library/azure/ff394108.aspx)
 
-Für traditionelle Datenbanken, wie z. B. **SQL Server**, insbesondere wenn die Instanzen in einer Azure Virtual Machine sind, ist die verschlüsselte Verbindungsoption durch Konfigurieren eines signierten Zertifikats möglich, mit **Encrypt = True** und **TrustServerCertificate = False** in der Verbindungszeichenfolge. Weitere Informationen finden Sie unter [Aktivieren von verschlüsselten Verbindungen zum Datenbankmodul](https://msdn.microsoft.com/library/ms191192(v=sql.110).aspx) und [Verbindungszeichenfolgensyntax.](https://msdn.microsoft.com/library/ms254500.aspx).
+Für traditionelle Datenbanken, wie z. B. **SQL Server**, insbesondere wenn die Instanzen in einer Azure Virtual Machine sind, ist die verschlüsselte Verbindungsoption durch Konfigurieren eines signierten Zertifikats möglich, mit **Encrypt = True** und **TrustServerCertificate = False** in der Verbindungszeichenfolge. Weitere Informationen finden Sie unter [Aktivieren von verschlüsselten Verbindungen zum Datenbankmodul](https://msdn.microsoft.com/library/ms191192(v=sql.110).aspx) und [Verbindungszeichenfolgensyntax](https://msdn.microsoft.com/library/ms254500.aspx).
 
 ## Erweiterte Szenarien
 - **Strukturdefinition verwendende Spaltenfilterung**. Je nach Typ der Tabelle ist es möglich, eine Teilmenge der Spalten aus der Datenquelle anzugeben, indem in der **Structure**-Definition der Tabellendefinition weniger Spalten angegeben werden, als in der zugrunde liegenden Datenquelle vorhanden sind.
 - **Transformationsregeln - Spaltenzuordnung**. Die Spaltenzuordnung kann zur Angabe verwendet werden, wie Spalten in Quelltabellen zu Spalten in Senkentabellen zugeordnet werden.
-- **Datentypbehandlung durch die Kopieraktivität**. Erklärt, in welchem Fall die im Abschnitt „Struktur“ angegebenen Datentypen der Tabellendefinition berücksichtigt/ignoriert werden.
+- **Datentypbehandlung durch die Kopieraktivität**. Erklärt, in welchem Fall die im Abschnitt "Struktur" angegebenen Datentypen der Tabellendefinition berücksichtigt/ignoriert werden.
 - **Aufrufen der gespeicherten Prozedur für SQL-Senke**. Beim Kopieren von Daten in den SQL Server oder die Azure SQL-Datenbank konnte eine benutzerspezifische gespeicherte Prozedur konfiguriert und aufgerufen werden.
 
 Im Artikel [Erweiterte Szenarien für die Verwendung der Kopieraktivität mit Azure Data Factory][copy-activity-advanced] finden Sie weitere Informationen zu diesen Szenarien.
@@ -382,7 +461,7 @@ Unter [Aktivieren von Pipelines für die Arbeit mit lokalen Daten][use-onpremise
 ## Weitere Informationen
 - [Kopieraktivität – Beispiele][copy-activity-examples]
 - Video: [Einführung in die Kopieraktivität mit Azure Data Factory][copy-activity-video]
-- [Thema „Kopieraktivität“ in der MSDN Library][msdn-copy-activity]
+- [Thema "Kopieraktivität" in der MSDN Library][msdn-copy-activity]
 - [Erweiterte Szenarien für die Verwendung der Kopieraktivität mit Azure Data Factory][copy-activity-advanced]
 
 [msdn-copy-activity]: https://msdn.microsoft.com/library/dn835035.aspx
@@ -405,5 +484,6 @@ Unter [Aktivieren von Pipelines für die Arbeit mit lokalen Daten][use-onpremise
 [image-data-factory-copy-actvity]: ./media/data-factory-copy-activity/VPNTopology.png
 [image-data-factory-column-mapping-1]: ./media/data-factory-copy-activity/ColumnMappingSample1.png
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity/ColumnMappingSample2.png
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

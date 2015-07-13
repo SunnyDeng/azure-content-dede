@@ -134,4 +134,4 @@ Wenn Sie in Ihrer App die BizTalk-API-Apps im Katalog auswählen, werden sie aut
 ## Weitere Connectors
 [Enterprise-Connectors](app-service-logic-enterprise-connectors.md)<br/> [Business-to-Business-Connectors](app-service-logic-b2b-connectors.md)<br/> [Connectors für soziale Netzwerke](app-service-logic-social-connectors.md)<br/> [Protokollconnectors](app-service-logic-protocol-connectors.md)<br/> [App und Data Services-Connectors](app-service-logic-data-connectors.md)<br/> [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -41,7 +41,7 @@ Zunächst müssen Sie die beiden Connectors erstellen, die Sie verwenden möchte
 
 	>[AZURE.NOTE]Die Schritte in diesem Abschnitt setzen voraus, dass Sie einen neuen App Service-Plan erstellen. Wenn Sie einen vorhandenen App Service-Plan verwenden, klicken Sie auf **Vorhandenen auswählen**, wählen Ihren vorhandenen Plan aus und fahren mit dem letzten Schritt in diesem Abschnitt fort. Sie benötigen einen Plan, um all Ihre Apps zu hosten.
 
-4.  Wählen Sie eine **Preisstufe** für den neuen Plan.
+4.  Wählen Sie einen **Tarif** für den neuen Plan.
 
 	>[AZURE.NOTE]Standardmäßig werden nur für Logik-Apps empfohlene Pläne angezeigt. Klicken Sie auf **Alle anzeigen**, um alle verfügbaren Pläne anzuzeigen. Bei Ausführen einer Logik-App auf der Stufe "Kostenlos" sind nur eine einmalige Ausführung pro Stunde und maximal 1000 Aktionen pro Monat möglich.
 

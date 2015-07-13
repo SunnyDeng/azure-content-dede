@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Beispiele für die Verwendung der Kopie-Aktivität in Azure Data Factory" 
-	description="Beispiele für Usin eine Kopie Aktivität in einer Factory Azure Daten an." 
+	pageTitle="Beispiele für die Verwendung der Kopieraktivität in Azure Data Factory" 
+	description="Beispiele für das Verwenden einer Kopieraktivität in einer Azure Data Factory" 
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
@@ -16,21 +16,21 @@
 	ms.date="04/14/2015" 
 	ms.author="spelluru"/>
 
-# Beispiele für die Verwendung der Kopie-Aktivität in Azure Data Factory
-Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer Quelle an eine Senke (Ziel) in einem Batch kopieren. Dieses Thema enthält einige Beispiele für die Verwendung der Kopie-Aktivität in einer Pipeline Data Factory. Eine ausführliche Übersicht über die Kopieraktivität und wichtige Szenarien, die davon unterstützt werden, finden Sie unter [Kopieren von Daten mit Azure Data Factory][adf-copyactivity].
+# Beispiele für die Verwendung der Kopieraktivität in Azure Data Factory
+Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer Quelle an eine Senke (Ziel) in einem Batch kopieren. Dieses Thema enthält einige Beispiele für die Verwendung der Kopieraktivität in einer Data Factory-Pipeline. Eine ausführliche Übersicht über die Kopieraktivität und wichtige Szenarien, die davon unterstützt werden, finden Sie unter [Kopieren von Daten mit Azure Data Factory][adf-copyactivity].
 
-## Kopieren von Daten aus einer lokalen SQL Server-Datenbank in eine Azure-blob
+## Kopieren von Daten aus einer lokalen SQL Server-Datenbank in ein Azure-Blob
 In diesem Beispiel werden eine Eingabe- und eine Ausgabetabelle definiert. Die Tabellen werden in einer Kopieraktivität in einer Pipeline verwendet, die Daten aus einer lokalen SQL Server-Datenbank in ein Azure-BLOB kopiert.
 
 ### Annahmen
-In diesem Beispiel wird davon ausgegangen, dass Sie bereits die folgenden Azure Data Factory Artefakte:
+In diesem Beispiel wird davon ausgegangen, dass Sie bereits über die folgenden Azure Data Factory-Artefakte verfügen:
 
 * Ressourcengruppe namens **ADF**.
 * Eine Azure Data Factory namens **CopyFactory**.
-* Mit dem Namen Data Management Gateway **Mygateway** wird erstellt und online ist.  
+* Ein Gateway zur Datenverwaltung mit dem Namen **mygateway** wird erstellt und online geschaltet.  
 
-### Erstellen Sie einen verknüpften Dienst für die lokale SQL Server-Quelldatenbank
-In diesem Schritt erstellen Sie einen verknüpften Dienst namens **MyOnPremisesSQLDB** die auf einer lokalen SQL Server-Datenbank verweist.
+### Erstellen eines mit der lokalen SQL Server-Quelldatenbank verknüpften Diensts
+In diesem Schritt erstellen Sie einen verknüpften Dienst namens **MyOnPremisesSQLDB**, der auf eine lokale SQL Server-Datenbank verweist.
 
 	{
 	    "name": "MyOnPremisesSQLDB",
@@ -44,14 +44,14 @@ In diesem Schritt erstellen Sie einen verknüpften Dienst namens **MyOnPremisesS
 
 Beachten Sie Folgendes:
 
-- **Typ** minFreeThreads auf **OnPremisesSqlLinkedService**.
-- **ConnectionString** auf die Verbindungszeichenfolge für eine SQL Server-Datenbank festgelegt ist. 
-- **GatewayName** auf den Namen des Datenverwaltungsgateways auf dem lokalen Computer installiert und registriert den Azure Data Factory-Service-Portal festgelegt ist. 
+- **type** ist auf **OnPremisesSqlLinkedService** festgelegt.
+- **connectionString** ist auf die Verbindungszeichenfolge einer SQL Server-Datenbank festgelegt. 
+- **gatewayName** ist auf den Namen des Datenverwaltungsgateways festgelegt, das Sie auf dem lokalen Computer installiert haben, und beim Azure Data Factory-Dienstportal registriert. 
 
-Finden Sie unter [verknüpften lokalen SQL-Dienst](https://msdn.microsoft.com/library/dn893523.aspx) ausführliche Informationen zu JSON Elemente zum Definieren einer lokalen SQL Service verknüpft.
+Unter [Lokaler verknüpfter SQL-Dienst](https://msdn.microsoft.com/library/dn893523.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren eines lokalen verknüpften SQL-Diensts.
  
-### Erstellen Sie einen verknüpften Dienst für das Azure-Blob-Ziel
-In diesem Schritt erstellen Sie einen verknüpften Dienst namens **MyAzureStorage** Azure Blob-Speicher verweist.
+### Erstellen eines verknüpften Dienst für das Azure-Ziel-Blob
+In diesem Schritt erstellen Sie einen verknüpften Dienst namens **MyAzureStorage**, der auf einen Azure-Blob-Speicher verweist.
 
 	{
 	    "name": "MyAzureStorage",
@@ -64,10 +64,10 @@ In diesem Schritt erstellen Sie einen verknüpften Dienst namens **MyAzureStorag
 
 Beachten Sie Folgendes:
 
-- **Typ** minFreeThreads auf **AzureStorageLinkedService**.
-- **ConnectionString** - Kontonamen und Kennwort für den Azure-Speicher.
+- **type** ist auf **AzureStorageLinkedService** festgelegt.
+- **connectionString** – Geben Sie den Kontonamen und -schlüssel für den Azure-Speicher an.
 
-Finden Sie unter [verknüpfte Azure-Speicherdienst](https://msdn.microsoft.com/library/dn893522.aspx) ausführliche Informationen zu JSON-Elemente zum Definieren einer Azure-Speicher verknüpft Service.
+Unter [Mit Azure-Speicher verknüpfter Dienst](https://msdn.microsoft.com/library/dn893522.aspx) finden Sie Details zu JSON-Elementen zum Definieren eines mit Azure-Speicher verknüpften Diensts.
 
 ### JSON für Eingabetabelle
 Das folgende JSON-Skript definiert eine Eingabetabelle, die auf eine SQL-Tabelle verweist: **MyTable** in einer lokalen SQL Server-Datenbank, die den verknüpften Dienst **MyOnPremisesSQLDB** definiert. Beachten Sie, dass **Name** der Name der Azure Data Factory-Tabelle und **Tabellenname** der Name der SQL-Tabelle in einer SQL Server-Datenbank ist.
@@ -93,14 +93,14 @@ Das folgende JSON-Skript definiert eine Eingabetabelle, die auf eine SQL-Tabelle
 
 Beachten Sie Folgendes:
 
-- **Typ** minFreeThreads auf **OnPremisesSqlServerTableLocation**.
-- **TableName** minFreeThreads auf **MyTable**, die die Quelldaten enthält. 
-- **LinkedServiceName** minFreeThreads auf **MyOnPremisesSQLDB**, die verknüpft, den Sie für den lokalen SQL-Datenbank erstellt haben.
+- **type** ist auf **OnPremisesSqlServerTableLocation** festgelegt.
+- **tableName** ist auf **MyTable** festgelegt, die die Quelldaten enthält. 
+- **linkedServiceName** ist auf **MyOnPremisesSQLDB** festgelegt. Dies ist der verknüpfte Dienst, den Sie für die lokale SQL-Datenbank erstellt haben.
 
-Finden Sie unter [lokale SQL Standorteigenschaften](https://msdn.microsoft.com/library/dn894089.aspx#OnPremSQL) ausführliche Informationen zu JSON-Elemente zum Definieren einer Data Factory-Tabelle, die auf einer SQL Server-Tabelle verweist.
+Unter [Eigenschaften des lokalen SQL-Speicherorts](https://msdn.microsoft.com/library/dn894089.aspx#OnPremSQL) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf eine SQL Server-Tabelle verweist.
 
 ### JSON für Ausgabetabelle
-Das folgende JSON-Skript definiert eine Ausgabetabelle: **MyAzureBlob**, die auf ein Azure-Blob verweist: **Meinblob** in den Blob-Ordner: **MySubFolder** im Blob-Container: **MyContainer**.
+Das folgende JSON-Skript definiert die Ausgabetabelle **MyAzureBlob**, die auf das Azure-Blob **MyBlob** im Blob-Ordner **MySubFolder** im Blob-Container **MyContainer** verweist.
          
 	{
    		"name": "MyAzureBlob",
@@ -131,12 +131,12 @@ Das folgende JSON-Skript definiert eine Ausgabetabelle: **MyAzureBlob**, die auf
 
 Beachten Sie Folgendes:
  
-- **Typ** minFreeThreads auf **AzureBlobLocation**.
-- **FolderPath** minFreeThreads auf **MyContainer/MySubFolder**, enthält das Blob, das die kopierten Daten enthält. 
-- **Dateiname** minFreeThreads auf **Meinblob**, das Blob, das die Ausgabedaten enthalten wird.
-- **LinkedServiceName** minFreeThreads auf **MyAzureStorge**, die verknüpft, den Sie für den Azure-Speicher erstellt haben.    
+- **type** ist auf **AzureBlobLocation** festgelegt.
+- **folderPath** ist auf **MyContainer/MySubFolder** festgelegt, den Speicherort des Blobs mit den kopierten Daten. 
+- **fileName** ist auf **MyBlob** festgelegt, das Blob mit den Ausgabedaten.
+- **linkedServiceName** ist auf **MyAzureStorge** festgelegt, den verknüpften Dienst, den Sie für den Azure-Speicher erstellt haben.    
 
-Finden Sie unter [Azure-Blob-Eigenschaften für Empfangsspeicherort](https://msdn.microsoft.com/library/dn894089.aspx#AzureBlob) ausführliche Informationen zu JSON-Elemente zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
+Unter [Eigenschaften des Azure-Blob-Speicherorts](https://msdn.microsoft.com/library/dn894089.aspx#AzureBlob) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
 
 ### JSON für Pipeline (mit Kopieraktivität)
 In diesem Beispiel, eine Pipeline: **CopyActivityPipeline** ist mit den folgenden Eigenschaften definiert:
@@ -144,7 +144,7 @@ In diesem Beispiel, eine Pipeline: **CopyActivityPipeline** ist mit den folgende
 - Die **type**-Eigenschaft wird auf **CopyActivity** festgelegt.
 - **MyOnPremTable** wird als Eingabe angegeben (**Eingaben**-Tag).
 - **MyAzureBlob** wird als Ausgabe angegeben (**Ausgaben**-Tag)
-- Der Abschnitt **Transformation** enthält zwei Unterabschnitte: **Quelle** und **Senke**. Für den Typ der Quelle wird **SqlSource** und für den Typ der Senke **BlobSink** festgelegt. **sqlReaderQuery** definiert die Transformation (Projektion), die für die Quelle ausgeführt werden soll. Weitere Informationen zu allen Eigenschaften finden Sie in der [JSON-Skriptreferenz][json-script-reference].
+- Der Abschnitt **Transformation** enthält zwei Unterabschnitte: **Quelle** und **Senke**. Für den Typ der Quelle wird **SqlSource** und für den Typ der Senke **BlobSink** festgelegt. **sqlReaderQuery** definiert die Transformation (Projektion), die für die Quelle ausgeführt werden soll. Ausführliche Informationen zu allen Eigenschaften finden Sie in der [JSON-Skriptreferenz][json-script-reference].
 
          
 		{
@@ -177,19 +177,19 @@ In diesem Beispiel, eine Pipeline: **CopyActivityPipeline** ist mit den folgende
     		}
 		}
 
-Finden Sie unter [Pipeline JSON-Verweis](https://msdn.microsoft.com/library/dn834988.aspx) ausführliche Informationen zu JSON-Elemente zum Definieren einer Pipeline Data Factory und [unterstützt Ereignisquellen und-senken](https://msdn.microsoft.com/library/dn894007.aspx) für Eigenschaften von SQLSource aus (z. B.: **SqlReaderQuery **im Beispiel) und BlobSink. 
+Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Pipeline. Unter [Unterstützte Quellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) finden Sie Eigenschaften von "SqlSource" (z. B. **sqlReaderQuery**) und "BlobSink".
 
 
-## Kopieren von Daten aus einem lokalen Dateisystem in eine Azure-blob
-Copy-Aktivität können Dateien von einem lokalen Dateisystem (Windows-/Linux-Netzwerkfreigaben oder lokalen Windows-Host) in Azure-Blob zu kopieren. Der Host kann entweder Windows oder Linux mit Samba konfiguriert sein. Data Management Gateway sollte auf einem Windows-Computer installiert werden, die auf dem Host zugreifen können.
+## Kopieren von Daten aus einem lokalen Dateisystem in ein Azure-Blob
+Mithilfe der Kopieraktivität können Sie Dateien aus einem lokalen Dateisystem (Windows-/Linux-Netzwerkfreigaben oder lokaler Windows-Host) in ein Azure-Blob kopieren. Der Host kann entweder ein Windows- oder Linux-Host sein, für den Samba konfiguriert ist. Das Datenverwaltungsgateway muss auf einem Windows-Computer installiert werden, der eine Verbindung mit dem Host herstellen kann.
 
 ### Annahmen
-In diesem Beispiel wird Folgendes vorausgesetzt:
+Bei diesem Beispiel wird Folgendes vorausgesetzt:
 
-- **Host** -Namen des Servers, auf dem das Dateisystem gehostet wird: **\contoso**.
-- **Ordner** -ist der Name des Ordners, der die Eingabedateien enthält: **Marketingcampaign\regionaldata\ {Slice}, in dem Dateien in einem Ordner mit dem Namen {Slice}, wie z. B. 2014121112 (Jahr 2014, 12 Monat, Tag 11, 12 Stunden) partitioniert werden. 
-### Erstellen Sie eine lokale Datei verknüpften Systemdienst
-Im folgenden Beispiel JSON kann zum Erstellen von verknüpften Diensts namens **FolderDataStore** des Typs **OnPremisesFileSystemLinkedService**.
+- **Host** – Name des Servers, auf dem das Dateisystem gehostet wird: **\contoso**.
+- **Ordner** – Name des Ordners mit den Eingabedateien: **"marketingcampaign\regionaldata\{slice}". Hier sind Dateien in einem Ordner mit dem Namen "{slice}" aufgeteilt, wie z. B. 2014121112 (2014, 12. Monat, 11. Tag , 12. Stunde). 
+### Erstellen eines mit dem lokalen Dateisystem verknüpften Diensts
+Im folgenden Beispiel kann JSON zum Erstellen eines verknüpften Diensts namens **FolderDataStore** vom Typ **OnPremisesFileSystemLinkedService** verwendet werden.
 
 	{
 	    "name": "FolderDataStore",
@@ -202,12 +202,12 @@ Im folgenden Beispiel JSON kann zum Erstellen von verknüpften Diensts namens **
 	    }
 	}
 
-> [AZURE.NOTE]Denken Sie daran, das Escapezeichen verwendet "für den Host und die Ordnernamen in JSON-Dateien. Für **\Contoso**, verwenden Sie **\\Contoso**.
+> [AZURE.NOTE]Denken Sie daran, für Host- und Ordnernamen in JSON-Dateien das Escapezeichen "\" zu verwenden. Für **\Contoso** verwenden Sie **\\Contoso**.
 
-Finden Sie unter [lokale Datei verknüpften Systemdienst](https://msdn.microsoft.com/library/dn930836.aspx) ausführliche Informationen zu JSON-Elemente zum Definieren von einem lokalen Dateisystem verknüpft Service.
+Unter [Mit dem lokalen Dateisystem verknüpfter Dienst](https://msdn.microsoft.com/library/dn930836.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren eines mit dem lokalen Dateisystem verknüpften Diensts.
 
-### Erstellen Sie einen verknüpften Dienst für das Azure-Blob-Ziel
-Im folgenden Beispiel JSON kann zum Erstellen von verknüpften Diensts namens **MyAzureStorage** des Typs **AzureStorageLinkedSerivce**.
+### Erstellen eines verknüpften Dienst für das Azure-Ziel-Blob
+Im folgenden Beispiel kann JSON zum Erstellen eines verknüpften Diensts namens **MyAzureStorage** mit dem Typ **AzureStorageLinkedService** verwendet werden.
 
 	{
 	    "name": "MyAzureStorage",
@@ -218,10 +218,10 @@ Im folgenden Beispiel JSON kann zum Erstellen von verknüpften Diensts namens **
 	    }
 	}
 
-Finden Sie unter [verknüpfte Azure-Speicherdienst](https://msdn.microsoft.com/library/dn893522.aspx) ausführliche Informationen zu JSON-Elemente zum Definieren einer Azure-Speicher verknüpft Service.
+Unter [Mit Azure-Speicher verknüpfter Dienst](https://msdn.microsoft.com/library/dn893522.aspx) finden Sie Details zu JSON-Elementen zum Definieren eines mit Azure-Speicher verknüpften Diensts.
 
-### Erstellen Sie die Eingabetabelle
-Das folgende JSON-Skript definiert eine Eingabetabelle, die auf einer lokalen Datei verknüpften Systemdienst, den Sie zuvor erstellt haben.
+### Erstellen der Eingabetabelle
+Das folgende JSON-Skript definiert eine Eingabetabelle, die auf einen mit dem lokalen Dateisystem verknüpften Dienst verweist, den Sie zuvor erstellt haben.
 
 	{
 	    "name": "OnPremFileSource",
@@ -242,10 +242,10 @@ Das folgende JSON-Skript definiert eine Eingabetabelle, die auf einer lokalen Da
 	    }
 	}
 
-Finden Sie unter [lokalen Dateisystem Standorteigenschaften](https://msdn.microsoft.com/library/dn894089.aspx#OnPremFileSystem) ausführliche Informationen zu JSON-Elemente zum Definieren einer Data Factory-Tabelle, die auf einem lokalen Dateisystem verweist.
+Unter [Eigenschaften des Speicherorts des lokalen Dateisystems](https://msdn.microsoft.com/library/dn894089.aspx#OnPremFileSystem) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf ein lokales Dateisystem verweist.
 
-### Die Ausgabe kann erstellen
-Das folgende JSON-Skript definiert eine Ausgabetabelle: **AzureBlobDest**, die auf ein Azure-Blob verweist: **Meinblob** in den Blob-Ordner: **MySubFolder** im Blob-Container: **MyContainer**.
+### Erstellen der Ausgabetabelle
+Das folgende JSON-Skript definiert die Ausgabetabelle **AzureBlobDest**, die auf das Azure-Blob **MyBlob** im Blob-Ordner **MySubFolder** im Blob-Container **MyContainer** verweist.
          
 	{
    		"name": "AzureBlobDest",
@@ -274,10 +274,10 @@ Das folgende JSON-Skript definiert eine Ausgabetabelle: **AzureBlobDest**, die a
    		}
 	}
 
-Finden Sie unter [Azure-Blob-Eigenschaften für Empfangsspeicherort](https://msdn.microsoft.com/library/dn894089.aspx#AzureBlob) ausführliche Informationen zu JSON-Elemente zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
+Unter [Eigenschaften des Azure-Blob-Speicherorts](https://msdn.microsoft.com/library/dn894089.aspx#AzureBlob) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
 
-### Erstellen der pipeline
-Die folgende JSON-Pipeline definiert eine Pipeline mit einer Kopie-Aktivität, die Daten aus dem lokalen Dateisystem in das Azure-Blob-Ziel kopiert.
+### Erstellen der Pipeline
+Die folgende JSON-Pipeline definiert eine Pipeline mit einer Kopieraktivität, die Daten aus dem lokalen Dateisystem in das Azure-Ziel-Blob kopiert.
  
 	{
 	    "name": "CopyFileToBlobPipeline",
@@ -305,16 +305,16 @@ Die folgende JSON-Pipeline definiert eine Pipeline mit einer Kopie-Aktivität, d
 	    }
 	}
 
-Die Pipeline in diesem Beispiel kopiert den Inhalt als Binär, ohne Analyse oder irgendwelche Transformationen auszuführen. Beachten Sie, die Sie nutzen können **Parallelität** Slices Dateien parallel zu kopieren. Dies ist hilfreich, wenn verschieben, dass die Segmente in der Vergangenheit bereits geschehen soll.
+Die Pipeline in diesem Beispiel kopiert den Inhalt im Binärformat, ohne dass Analysen oder Transformationen erfolgen. Beachten Sie, dass Sie die **Parallelität** nutzen können, um Slices von Dateien parallel zu kopieren. Dies ist hilfreich, wenn Sie die Slices verschieben möchten, die bereits in der Vergangenheit liegen.
 
-> [AZURE.NOTE]Parallele Kopien Aktivitäten mit dem gleichen Host über UNC-Pfad mit unterschiedlichen Benutzerkonten können zu Fehlern führen, z. B. "mehrere Verbindungen zu einem Server oder einer freigegebenen Ressource von demselben Benutzer mit mehr als einen Benutzernamen, sind nicht zulässig". Dies ist die Einschränkung des Betriebssystems aus Sicherheitsgründen. Der Kopie Aktivitäten mit verschiedenen Gateways, oder installieren Sie das Gateway in den Host, und verwenden Sie "Localhost" oder "local" anstelle der UNC-Pfad.
+> [AZURE.NOTE]Parallele Kopieraktivitäten mit dem gleichen Host über einen UNC-Pfad mit unterschiedlichen Benutzerkonten können zur folgenden Fehlermeldungen führen: "Mehrfache Verbindungen zu einem Server oder einer freigegebenen Ressource von demselben Benutzer unter Verwendung mehrerer Benutzernamen sind nicht zulässig". Diese Einschränkung des Betriebssystems gilt aus Sicherheitsgründen. Planen Sie die Kopieraktivitäten mit verschiedenen Gateways, oder installieren Sie das Gateway im Host, und verwenden Sie "localhost" oder "local" anstelle des UNC-Pfads.
 
-Finden Sie unter [Pipeline JSON-Verweis](https://msdn.microsoft.com/library/dn834988.aspx) ausführliche Informationen zu JSON-Elemente zum Definieren einer Pipeline Data Factory und [unterstützt Ereignisquellen und-senken](https://msdn.microsoft.com/library/dn894007.aspx) für Eigenschaften von FileSystemSource und BlobSink.
+Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Pipeline. Unter [Unterstützte Quellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) finden Sie Eigenschaften von "FileSystemSource" und "BlobSink".
 
-### Zusätzliche Szenarien für die Verwendung von File System-Tabellen
+### Weitere Szenarien für die Verwendung von Dateisystemtabellen
 
-#### Kopieren Sie alle Dateien in einem bestimmten Ordner
-Beachten Sie, dass nur **FolderPath** in das JSON-Beispiel angegeben ist.
+#### Kopieren aller Dateien in einen bestimmten Ordner
+Beachten Sie, dass nur **folderPath** im JSON-Beispiel angegeben ist.
 
 	{
 	    "name": "OnPremFileSource",
@@ -328,8 +328,8 @@ Beachten Sie, dass nur **FolderPath** in das JSON-Beispiel angegeben ist.
 	    }
 	}
  
-#### Kopieren Sie alle CSV-Dateien unter dem Ordner
-Beachten Sie, dass die **FileFilter** minFreeThreads auf ***CSV**.
+#### Kopieren aller CSV-Dateien in einem bestimmten Ordner
+Beachten Sie, dass **fileFilter** auf ***.csv** festgelegt ist.
 
 	{
 	    "name": "OnPremFileSource",
@@ -345,7 +345,7 @@ Beachten Sie, dass die **FileFilter** minFreeThreads auf ***CSV**.
 	}
 
 #### Kopieren einer bestimmten Datei
-Beachten Sie, dass die **FileFiter** für eine bestimmte Datei festgelegt ist: **201501.csv**.
+Beachten Sie, dass **fileFiter** auf eine bestimmte Datei festgelegt ist: **201501.csv**.
 
 	{
 	    "name": "OnPremFileSource",
@@ -360,11 +360,11 @@ Beachten Sie, dass die **FileFiter** für eine bestimmte Datei festgelegt ist: *
 	    }
 	}
 
-## Kopieren von Daten aus einer lokalen Oracle-Datenbank in ein Azure-blob
-Kopie-Aktivität können Dateien von einer lokalen lokalen Oracle-Datenbank in ein Azure-Blob zu kopieren.
+## Kopieren von Daten aus einer lokalen Oracle-Datenbank in ein Azure-Blob
+Mithilfe der Kopieraktivität können Sie Dateien aus einer lokalen Oracle-Datenbank in ein Azure-Blob kopieren.
 
-### Erstellen Sie einen verknüpften Dienst für eine lokale Oracle-Datenbank
-Die folgende JSON kann verwendet werden, einen verknüpften Dienst zu erstellen, der auf einer lokalen Oracle-Datenbank verweist. Beachten Sie, dass die **Typ** minFreeThreads auf **OnPremisesOracleLinkedService**.
+### Erstellen eines verknüpften Diensts für eine lokale Oracle-Datenbank
+Der folgende JSON-Code kann verwendet werden, um einen verknüpften Dienst zu erstellen, der auf eine lokale Oracle-Datenbank verweist. Beachten Sie, dass **type** auf **OnPremisesOracleLinkedService** festgelegt ist.
 
 	{
 	    "name": "OnPremOracleSource",
@@ -375,10 +375,10 @@ Die folgende JSON kann verwendet werden, einen verknüpften Dienst zu erstellen,
 	    }
 	}
 
-Finden Sie unter [verknüpften lokalen Oracle-Dienst](https://msdn.microsoft.com/library/dn948537.aspx) ausführliche Informationen zu JSON-Elemente zum Definieren einer lokalen Oracle verknüpft Service.
+Unter [Mit lokaler Oracle-Datenbank verknüpfter Dienst](https://msdn.microsoft.com/library/dn948537.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren eines mit einer lokalen Oracle-Datenbank verknüpften Diensts.
 
-### Erstellen Sie einen verknüpften Dienst für das Azure-Blob-Ziel
-Im folgenden Beispiel JSON kann zum Erstellen von verknüpften Diensts namens **MyAzureStorage** des Typs **AzureStorageLinkedSerivce**.
+### Erstellen eines verknüpften Dienst für das Azure-Ziel-Blob
+Im folgenden Beispiel kann JSON zum Erstellen eines verknüpften Diensts namens **MyAzureStorage** mit dem Typ **AzureStorageLinkedService** verwendet werden.
 
 	{
 	    "name": "AzureBlobDest",
@@ -389,10 +389,10 @@ Im folgenden Beispiel JSON kann zum Erstellen von verknüpften Diensts namens **
 	    }
 	}
 
-Finden Sie unter [verknüpfte Azure-Speicherdienst](https://msdn.microsoft.com/library/dn893522.aspx) ausführliche Informationen zu JSON-Elemente zum Definieren einer Azure-Speicher verknüpft Service.
+Unter [Mit Azure-Speicher verknüpfter Dienst](https://msdn.microsoft.com/library/dn893522.aspx) finden Sie Details zu JSON-Elementen zum Definieren eines mit Azure-Speicher verknüpften Diensts.
 
-### Erstellen Sie die Eingabetabelle
-Im folgende Beispiel JSON kann verwendet werden, um ein Azure Data Factory-Tabelle zu erstellen, die auf eine Tabelle in einer lokalen Oracle-Datenbank verweist. Beachten Sie, dass die **Speicherorttyp** minFreeThreads auf **OnPremisesOracleTableLocation**.
+### Erstellen der Eingabetabelle
+Im folgende Beispiel kann JSON zum Erstellen einer Azure Data Factory-Tabelle verwendet werden, die auf eine Tabelle in einer lokalen Oracle-Datenbank verweist. Beachten Sie, dass **location: type** auf **OnPremisesOracleTableLocation** festgelegt ist.
 
 	{
 	    "name": "TableOracle",
@@ -411,10 +411,10 @@ Im folgende Beispiel JSON kann verwendet werden, um ein Azure Data Factory-Tabel
 	    }
 	} 
 
-Finden Sie unter [lokalen Oracle Standorteigenschaften](https://msdn.microsoft.com/library/dn894089.aspx#Oracle) ausführliche Informationen zu JSON-Elemente zum Definieren einer Data Factory-Tabelle, die auf eine Tabelle in einer lokalen Oracle-Datenbank verweist.
+Unter [Eigenschaften des Speicherorts der lokalen Oracle-Datenbank](https://msdn.microsoft.com/library/dn894089.aspx#Oracle) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf eine lokale Oracle-Datenbank verweist.
 
-### Erstellen Sie die Ausgabetabelle
-Das folgende JSON-Skript definiert eine Ausgabetabelle: **MyAzureBlob**, die auf ein Azure-Blob verweist: **Meinblob** in den Blob-Ordner: **MySubFolder** im Blob-Container: **MyContainer**.
+### Erstellen der Ausgabetabelle
+Das folgende JSON-Skript definiert die Ausgabetabelle **MyAzureBlob**, die auf das Azure-Blob **MyBlob** im Blob-Ordner **MySubFolder** im Blob-Container **MyContainer** verweist.
          
 	{
    		"name": "MyAzureBlob",
@@ -443,10 +443,10 @@ Das folgende JSON-Skript definiert eine Ausgabetabelle: **MyAzureBlob**, die auf
    		}
 	}
 
-Finden Sie unter [Azure-Blob-Eigenschaften für Empfangsspeicherort](https://msdn.microsoft.com/library/dn894089.aspx#AzureBlob) ausführliche Informationen zu JSON-Elemente zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
+Unter [Eigenschaften des Azure-Blob-Speicherorts](https://msdn.microsoft.com/library/dn894089.aspx#AzureBlob) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
 
-### Erstellen der pipeline
-Die folgende Beispiel-Pipeline verfügt über eine Kopie-Aktivität, die Daten aus einer Oracle-Datenbank-Tabelle in ein Azure-Speicher-Blob kopiert.
+### Erstellen der Pipeline
+Die folgende Beispielpipeline enthält eine Kopieraktivität, die Daten aus einer Oracle-Datenbanktabelle in ein Azure-Speicher-Blob kopiert.
 
 	{
 	    "name": "PipelineCopyOracleToBlob",
@@ -479,16 +479,16 @@ Die folgende Beispiel-Pipeline verfügt über eine Kopie-Aktivität, die Daten a
 	    }
 	}
 
-Finden Sie unter [Pipeline JSON-Verweis](https://msdn.microsoft.com/library/dn834988.aspx) ausführliche Informationen zu JSON-Elemente zum Definieren einer Pipeline Data Factory und [unterstützt Ereignisquellen und-senken](https://msdn.microsoft.com/library/dn894007.aspx) für Eigenschaften von OracleSource und BlobSink.
+Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Pipeline. Unter [Unterstützte Quellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) finden Sie Eigenschaften von "OracleSource" und "BlobSink".
 
 ## Siehe auch
 
 - [Kopieren von Daten mit Azure Data Factory][adf-copyactivity]
-- [Kopieraktivität: Referenz zur JSON-Skipterstellung](https://msdn.microsoft.com/library/dn835035.aspx)
+- [Kopieraktivität: Referenz zur JSON-Skripterstellung](https://msdn.microsoft.com/library/dn835035.aspx)
 - [Video: Einführung in die Kopieraktivität mit Azure Data Factory][copy-activity-video]
 
 
 [adf-copyactivity]: data-factory-copy-activity.md
 [copy-activity-video]: http://azure.microsoft.com/documentation/videos/introducing-azure-data-factory-copy-activity/
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

@@ -2,8 +2,8 @@
 
 Die Azure-Speicherclientbibliothek für .NET unterstützt die Verwendung einer Speicherverbindungszeichenfolge zum Konfigurieren von Endpunkten und Anmeldeinformationen für den Zugriff auf Speicherdienste. Es wird empfohlen, dass Sie Ihre Speicherverbindungszeichenfolge in einer Konfigurationsdatei ablegen, statt sie fest in Code zu programmieren. Zum Speichern der Verbindungszeichenfolge stehen Ihnen zwei Optionen zur Verfügung:
 
-- Wenn Ihre Anwendung in einem Azure-Clouddienst ausgeführt wird, speichern Sie die Verbindungszeichenfolge mithilfe des Azure-Dienstkonfigurationssystems (`*.csdef`- und `*.cscfg`-Dateien).
-- Wenn Ihre Anwendung auf virtuellen Azure-Computern ausgeführt wird oder Sie .NET-Anwendungen erstellen, die außerhalb von Azure ausgeführt werden, speichern Sie die Verbindungszeichenfolge mithilfe des .NET-Konfigurationssystems (z. B.  `web.config`- oder  `app.config`-Dateien).
+- Wenn Ihre Anwendung in einem Azure-Clouddienst ausgeführt wird, speichern Sie die Verbindungszeichenfolge mithilfe des Azure-Dienstkonfigurationssystems (`*.csdef`- und `*.cscfg`-Dateien). Weitere Informationen zur Azure-Clouddienstkonfiguration finden Sie unter [Erstellen und Bereitstellen eines Clouddiensts](../articles/cloud-services/cloud-services-how-to-create-deploy.md).
+- Wenn Ihre Anwendung auf virtuellen Azure-Computern ausgeführt wird oder Sie .NET-Anwendungen erstellen, die außerhalb von Azure ausgeführt werden, speichern Sie die Verbindungszeichenfolge mithilfe des .NET-Konfigurationssystems (z. B. `web.config`- oder `app.config`-Dateien).
 
 Weiter unten in diesem Leitfaden erfahren Sie, wie Sie die Verbindungszeichenfolge aus Ihrem Code abrufen können.
 
@@ -13,43 +13,31 @@ Die Dienstkonfiguration ist in Azure-Clouddiensten eindeutig und ermöglicht es 
 
 So konfigurieren Sie die Verbindungszeichenfolge in der Azure-Dienstkonfiguration:
 
-1.  Klicken Sie im Projektmappen-Explorer von Visual Studio im Ordner **Rollen**
-    des Azure-Bereitstellungsprojekts mit der rechten Maustaste auf die
-    Webrolle oder Workerrolle, und klicken Sie dann auf **Eigenschaften**.  
-    ![Auswählen von Eigenschaften für eine Clouddienstrolle in Visual Studio][connection-string1]
+1.  Klicken Sie im Projektmappen-Explorer von Visual Studio im Ordner **Rollen** des Azure-Bereitstellungsprojekts mit der rechten Maustaste auf Ihre Webrolle oder Workerrolle, und klicken Sie dann auf **Eigenschaften**. ![Eigenschaften für eine Clouddienstrolle in Visual Studio auswählen][connection-string1]
 
-2.  Klicken Sie auf die Registerkarte **Settings** und anschließend auf die Schaltfläche **Add Setting**.  
-    ![Hinzufügen von Clouddiensteinstellungen in Visual Studio][connection-string2]
+2.  Klicken Sie auf die Registerkarte **Einstellungen** und anschließend auf die Schaltfläche **Einstellung hinzufügen**. ![Clouddiensteinstellung in Visual Studio hinzufügen][connection-string2]
 
     In der Einstellungstabelle wird daraufhin der neue Eintrag **Setting1** angezeigt.
 
-3.  Wählen Sie in der Dropdownliste **Type** des neuen Eintrags **Setting1** die Option
-    **Connection String** aus.  
-    ![Festlegen des Typs der Verbindungszeichenfolge][connection-string3]
+3.  Wählen Sie in der Dropdownliste **Typ** des neuen Eintrags **Setting1** die Option **Verbindungszeichenfolge** aus. ![Festlegen des Typs der Verbindungszeichenfolge][connection-string3]
 
-4.  Klicken Sie auf die Schaltfläche **...** rechts neben dem Eintrag **Setting1**.
-    Daraufhin öffnet sich der Dialogfeld **Storage Account Connection String**.
+4.  Klicken Sie auf die Schaltfläche **...** rechts neben dem Eintrag **Setting1**. Das Dialogfeld **Verbindungszeichenfolge für das Speicherkonto** wird geöffnet.
 
-5.  Wählen Sie aus, ob als Ziel der Speicheremulator (Windows
-    Azure-Speicher, simuliert auf Ihrem lokalen Computer) oder ein Speicherkonto
-    in der Cloud verwendet werden soll. Der Code in diesem Leitfaden kann mit beiden Optionen verwendet
-    werden. 
+5.  Wählen Sie aus, ob das Ziel der Speicheremulator (simulierter Microsoft Azure-Speicher auf dem lokalen Computer) oder ein Speicherkonto in der Cloud sein soll. Der Code in diesem Leitfaden kann mit beiden Optionen verwendet werden.
 
-	> [AZURE.NOTE] Sie können auf den Speicheremulator zielen, um jegliche Kosten im Zusammenhang mit Windows Azure Storage zu vermeiden. Wenn jedoch ein Azure-Speicherkonto in der Cloud das Ziel sein soll, sind die Kosten für das Ausführen dieses Lernprogramms vernachlässigbar.
+	> [AZURE.NOTE]Sie können den Speicheremulator als Ziel festlegen, um jegliche Kosten im Zusammenhang mit Azure Storage zu vermeiden. Wenn jedoch ein Azure-Speicherkonto in der Cloud das Ziel sein soll, sind die Kosten für das Ausführen dieses Lernprogramms vernachlässigbar.
 
-	Wenn Sie ein Speicherkonto in der Cloud als Ziel verwenden, geben Sie den primären Zugriffsschlüssel für dieses Speicherkonto ein. Informationen zum Kopieren des Primärschlüssels über das Azure-Verwaltungsportal finden Sie unter 	
-	[Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](http://azure.microsoft.com/documentation/articles/storage-create-storage-account/#view-copy-and-regenerate-storage-access-keys).
+	Wenn Sie ein Speicherkonto in der Cloud als Ziel verwenden, geben Sie den primären Zugriffsschlüssel für dieses Speicherkonto ein. Informationen zum Kopieren des primären Zugriffsschlüssels über das Azure-Verwaltungsportal finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+
+	> [AZURE.NOTE]Ihr Speicherkontoschlüssel ähnelt dem Stammkennwort für das Speicherkonto. Achten Sie darauf, Ihren Schlüssel zu schützen. Geben Sie ihn nicht an andere Benutzer weiter, und speichern Sie ihn nicht in einer Nur-Text-Datei, auf die andere Benutzer zugreifen können. Generieren Sie Ihren Schlüssel mithilfe des Verwaltungsportals erneut, wenn Sie der Meinung sind, dass er nicht mehr sicher ist.
 	
-    ![Auswählen der Zielumgebung][connection-string4]
+    ![Zielumgebung auswählen][connection-string4]
 
-6.  Ändern Sie den Eintrag **Name** von **Setting1** in einen benutzerfreundlicheren Namen
-    wie **StorageConnectionString**. Sie werden später
-    in diesem Leitfaden auf diese Verbindungszeichenfolge verweisen.  
-    ![Ändern des Namens der Verbindungszeichenfolge][connection-string5]
+6.  Ändern Sie den Eintrag **Name** von **Setting1** in einen benutzerfreundlicheren Namen wie **StorageConnectionString**. Sie werden später in diesem Leitfaden auf diese Verbindungszeichenfolge verweisen. ![Ändern des Namens der Verbindungszeichenfolge][connection-string5]
 	
 ### Konfigurieren der Verbindungszeichenfolge in der .NET-Konfiguration
 
-Wenn Sie eine Anwendung schreiben, bei der es sich nicht um einen Azure-Clouddienst handelt (siehe vorheriger Abschnitt), empfiehlt es sich, das .NET-Konfigurationssystem zu verwenden (z. B. `web.config` oder `app.config`). Dies umfasst Azure-Websites oder virtuelle Azure-Computer sowie Anwendungen, die für die Ausführung außerhalb von Azure konzipiert sind. Sie speichern die Verbindungszeichenfolge mit dem "<appSettings>"-Element wie folgt. Ersetzen Sie `account-name` durch den Namen Ihres Speicherkontos und `account-key` durch den Zugriffsschlüssel des Kontos:
+Wenn Sie eine Anwendung schreiben, bei der es sich nicht um einen Azure-Clouddienst handelt (siehe vorheriger Abschnitt), empfiehlt es sich, das .NET-Konfigurationssystem zu verwenden (z. B. `web.config` oder `app.config`). Dies umfasst Azure-Websites oder virtuelle Azure-Computer sowie Anwendungen, die für die Ausführung außerhalb von Azure konzipiert sind. Sie speichern die Verbindungszeichenfolge mit dem `<appSettings>`-Element: Ersetzen Sie `account-name` durch den Namen Ihres Speicherkontos und `account-key` durch den Zugriffsschlüssel des Kontos:
 
 	<configuration>
   		<appSettings>
@@ -73,6 +61,6 @@ Sie sind nun bereit für die Gewusst-wie-Aufgaben in diesem Leitfaden.
 [connection-string4]: ./media/storage-configure-connection-string-include/connection-string4.png
 [connection-string5]: ./media/storage-configure-connection-string-include/connection-string5.png
 
-[Konfigurieren von Verbindungszeichenfolgen]: http://msdn.microsoft.com/library/azure/ee758697.aspx
+[Configuring Connection Strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
 
-<!--HONumber=49-->
+<!---HONumber=62-->

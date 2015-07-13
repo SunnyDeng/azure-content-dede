@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter="windows"
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/28/2015" 
+	ms.date="06/19/2015" 
 	ms.author="awills"/>
 
 #  Überwachen der Nutzung in Windows Store- und Windows Phone-Apps mit Application Insights
@@ -87,9 +87,38 @@ Klicken Sie auf ein Vorkommen, um seine detaillierten Eigenschaften einschließl
 
 In der [API-Referenz][api] finden Sie weitere Informationen zu benutzerdefinierten Ereignissen.
 
+## Sitzungen
+
+Sitzungen sind ein grundlegendes Konzept in Application Insights, um jedes Telemetrieereignis – wie z. B. Abstürze oder benutzerdefinierte Ereignisse, die Sie selbst codieren – einer bestimmten Benutzersitzung zuzuordnen.
+
+Für jede Sitzung werden umfangreiche Kontextinformationen gesammelt, wie etwa Geräteeigenschaften, geografischer Standort, Betriebssystem usw.
+
+Bei der [Problemdiagnose][diagnostic] erhalten Sie alle Telemetriedaten zu der Sitzung, bei der ein Problem aufgetreten ist, einschließlich sämtlicher Anforderungen sowie protokollierter Ereignisse, Ausnahmen oder Ablaufverfolgungen.
+
+Sitzungen ermöglichen eine ziemlich genaue Messung der Beliebtheit von Kontexten wie z. B. Gerät, Betriebssystem oder Standort. Indem Sie beispielsweise die Anzahl der Sitzungen für jedes Gerät anzeigen, erhalten Sie eine genauere Messung, wie häufig Ihre App auf diesem Gerät verwendet wird, als durch Zählung der Seitenansichten. Dies sind nützliche Informationen, um gerätespezifische Probleme zu untersuchen.
 
 
-## <a name="debug"></a>Debug- im Vergleich zum Freigabemodus
+#### Was ist eine Sitzung?
+
+Eine Sitzung repräsentiert eine einmalige Verwendung der App durch einen Benutzer. In der einfachsten Form beginnt eine Sitzung, wenn ein Benutzer die App startet, und endet, wenn er sie verlässt. Bei mobilen Apps wird eine Sitzung beendet, wenn die App-Verwendung länger als 20 Sekunden angehalten (in den Hintergrund verschoben) wird. Wenn die Anwendung fortgesetzt wird, wird eine neue Sitzung gestartet. Naturgemäß kann ein Benutzer mehrere Sitzungen pro Tag oder sogar innerhalb einer Stunde starten.
+
+**Sitzungsdauer** ist eine Metrik, die die Zeitspanne zwischen den ersten und letzten Telemetrieelementen einer Sitzung darstellt. (Der Timeoutzeitraum ist darin nicht enthalten.)
+
+
+**Sitzungsanzahl** innerhalb eines bestimmten Intervalls ist als Anzahl eindeutiger Sitzungen mit Aktivität während dieses Intervalls definiert. Wenn Sie einen langen Zeitraum betrachten, wie z. B. die Anzahl der täglichen Sitzungen der vergangenen Woche, entspricht diese Anzahl üblicherweise der Gesamtanzahl von Sitzungen.
+
+Wenn Sie jedoch kürzere Zeiträume untersuchen – beispielsweise auf Stundenbasis –, wird eine lange, mehrstündige Sitzung pro Stunde gezählt, in der die Sitzung aktiv ist.
+
+## Benutzer und Benutzeranzahlen
+
+Jede Benutzersitzung wird mit einer eindeutigen Benutzer-ID verknüpft, anhand der App-Verwendung generiert und im lokalen Gerätespeicher gespeichert. Ein Benutzer, der mehrere Browser oder Geräte verwendet, wird mehr als einmal gezählt.
+
+Die Metrik **Benutzeranzahl** innerhalb eines bestimmten Intervalls ist als Anzahl eindeutiger Benutzer mit aufgezeichneter Aktivität während dieses Intervalls definiert. Aus diesem Grund werden Benutzer mit langen Sitzungen möglicherweise mehrfach gezählt, wenn Sie einen Zeitraum von weniger als einer Stunde untersuchen.
+
+**Neue Benutzer** zählt die Benutzer, deren erste Sitzungen mit der App während dieses Intervalls aufgezeichnet wurden.
+
+
+## <a name="debug"></a>Debugmodus im Vergleich zum Freigabemodus
 
 #### Debuggen
 
@@ -114,11 +143,14 @@ Wenn Sie den Build im Freigabemodus erstellen, werden Ereignisse auf dem Gerät 
 <!--Link references-->
 
 [api]: app-insights-api-custom-events-metrics.md
+[diagnostic]: app-insights-diagnostic-search.md
 [knowUsers]: app-insights-overview-usage.md
 [metrics]: app-insights-metrics-explorer.md
+[portal]: http://portal.azure.com/
 [qna]: app-insights-troubleshoot-faq.md
 [windows]: app-insights-windows-get-started.md
 
+
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

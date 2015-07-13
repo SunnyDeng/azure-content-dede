@@ -42,7 +42,7 @@ Das folgende Beispiel für "applicationHost.xdt" zeigt, wie einer Web-App, die P
 	</configuration>
 
 
-Im FTP-Stammverzeichnis finden Sie unter LogFiles\\Transform eine Protokolldatei mit Transformationsstatus und -details.
+Im FTP-Stammverzeichnis finden Sie unter LogFiles\Transform eine Protokolldatei mit Transformationsstatus und -details.
 
 Weitere Beispiele finden Sie unter [https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions).
 
@@ -81,7 +81,7 @@ Die PHP-Manager-Erweiterung wurde mit der ASP.NET MVC 4-Webanwendungsvorlage von
 
 ![Website transformieren - Projektmappen-Explorer][TransformSiteSolEx]
 
-Die einzige spezielle Logik, die für die Datei-E/A benötigt wird, ist die Angabe des Speicherorts für das Verzeichnis "wwwroot" der Web-App. Wie das folgende Codebeispiel zeigt, gibt die Umgebungsvariable "HOME" den Stammpfad der Web-App an, und der Pfad für "wwwroot" kann durch Anhängen von "site\\wwwroot" gebildet werden:
+Die einzige spezielle Logik, die für die Datei-E/A benötigt wird, ist die Angabe des Speicherorts für das Verzeichnis "wwwroot" der Web-App. Wie das folgende Codebeispiel zeigt, gibt die Umgebungsvariable "HOME" den Stammpfad der Web-App an, und der Pfad für "wwwroot" kann durch Anhängen von "site\wwwroot" gebildet werden:
 
 	/// <summary>
 	/// Gives the location of the .user.ini file, even if one doesn't exist yet
@@ -93,7 +93,7 @@ Die einzige spezielle Logik, die für die Datei-E/A benötigt wird, ist die Anga
     		{
         		rootPath = System.IO.Path.GetTempPath(); // For testing purposes
     		};
-    		var userSettingsFile = Path.Combine(rootPath, @"site\wwwroot\.user.ini");
+    		var userSettingsFile = Path.Combine(rootPath, @"site\wwwroot.user.ini");
     		return userSettingsFile;
 	}
 
@@ -112,7 +112,7 @@ Sie können diese Anforderung umgehen, indem Sie in Ihrer Webanwendung entweder 
 
 ####<a id="XDT"></a> Die Datei "applicationHost.xdt"
 
-Der Code für Ihre Web-App-Erweiterung wird unter "%HOME%\\SiteExtensions[Name-der-Erweiterung]" abgelegt. Dies wird als Erweiterungsstamm bezeichnet.
+Der Code für Ihre Web-App-Erweiterung wird unter "%HOME%\SiteExtensions[Name-der-Erweiterung]" abgelegt. Dies wird als Erweiterungsstamm bezeichnet.
 
 Um die Web-App-Erweiterung in der Datei "applicationHost.config" zu registrieren, müssen Sie im Erweiterungsstamm eine Datei namens "ApplicationHost.xdt" ablegen. Die Datei "ApplicationHost.xdt" muss folgenden Inhalt haben:
 
@@ -167,7 +167,7 @@ Die Web-App-Erweiterung sollte unter folgender Adresse angezeigt werden:
 
 Sie sehen, dass die URL der URL für Ihre Web-App entspricht, bis auf die Tatsache, dass HTTPS verwendet wird und die Adresse ".scm" enthält.
 
-Es ist möglich, alle privaten (nicht vorinstallierten) Erweiterungen für Ihre Web-App bei Entwicklungs- und Untersuchungsvorgängen zu deaktivieren, indem Sie eine App-Einstellung mit dem Schlüssel `WEBSITE_PRIVATE_EXTENSIONS` und dem Wert `0` hinzufügen 
+Es ist möglich, alle privaten (nicht vorinstallierten) Erweiterungen für Ihre Web-App bei Entwicklungs- und Untersuchungsvorgängen zu deaktivieren, indem Sie eine App-Einstellung mit dem Schlüssel `WEBSITE_PRIVATE_EXTENSIONS` und dem Wert `0` hinzufügen
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -180,4 +180,4 @@ Es ist möglich, alle privaten (nicht vorinstallierten) Erweiterungen für Ihre 
 [TransformSiteSolEx]: ./media/web-sites-transform-extend/TransformSiteSolEx.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -1,8 +1,6 @@
+* Öffnen Sie **QSTodoListViewController.m**, und fügen Sie folgende Methode hinzu. Ändern Sie _Facebook_ zu _MicrosoftAccount_, _Twitter_, _Google_ oder _WindowsAzureActiveDirectory_, wenn Sie Facebook nicht als Identitätsanbieter nutzen.
 
-
-1. Öffnen Sie **QSTodoListViewController.m**, und fügen Sie folgende Methode hinzu:
-
-
+```
         - (void) loginAndGetData
         {
             MSClient *client = self.todoService.client;
@@ -14,15 +12,14 @@
                 [self refresh];
             }];
         }
+```
 
+* Ersetzen Sie `[self refresh]` in `viewDidLoad` durch Folgendes:
 
-    > [AZURE.NOTE]Wenn Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an **loginWithProvider** übergebenen Wert. Folgende Werte werden unterstützt: _microsoftaccount_, _facebook_, _twitter_, _google_ oder _windowsazureactivedirectory_.
-
-
-2. Ändern Sie `viewDidLoad`, indem Sie `[self refresh]` am Ende durch Folgendes ersetzen:
-
+```
         [self loginAndGetData];
+```
 
-3. Klicken Sie auf **Ausführen**, um die App zu starten, und melden Sie sich dann mit dem ausgewählten Identitätsanbieter an. Nach der Anmeldung sollten Sie die Todo-Liste anzeigen und Änderungen vornehmen können.
+* Klicken Sie **Ausführen**, um die App zu starten und melden Sie sich an. Nach der Anmeldung sollten Sie die Todo-Liste anzeigen und Änderungen vornehmen können.
 
-<!--HONumber=54-->
+<!---HONumber=62-->

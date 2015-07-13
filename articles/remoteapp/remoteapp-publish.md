@@ -27,4 +27,4 @@ Klicken Sie im Portal auf der Registerkarte **Veröffentlichung** auf **Veröffe
 > [AZURE.NOTE]Wenn Sie die App aus dem Startmenü hinzufügen möchten, müssen Sie diese *App im Vorlagenimage dem Startmenü hinzugefügt haben*. Andernfalls wird in RemoteApp nur angezeigt, was sich *im* Startmenü befindet, was zu Verwechslungen führen kann. Wenn Sie beim Erstellen der Vorlage vergessen haben, die App dem **Startmenü** hinzufügen, fügen Sie der App den Pfad hinzu. (Oder erstellen Sie Ihr Vorlagenimage neu. Dies bedeutet allerdings einen etwas höheren Arbeitsaufwand.)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

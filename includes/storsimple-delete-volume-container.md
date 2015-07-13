@@ -1,27 +1,11 @@
-<properties 
-   pageTitle="Delete a StorSimple volume container"
-   description="Explains how you can use the StorSimple Manager service volume containers page to delete a volume container."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="05/13/2015"
-   ms.author="v-sharos" />
+#### So löschen Sie einen Volumecontainer
 
+1. Wählen Sie auf der Seite **Geräte** das Gerät aus, doppelklicken Sie darauf, und klicken Sie dann auf die Registerkarte **Volumecontainer**.
 
-#### To delete a volume container
+2. Wählen Sie den Volumecontainer aus, den Sie löschen möchten.
 
-1. On the **Devices** page, select the device, double-click it, and then click the **Volume containers** tab.
+3. Wenn einem Volumecontainer keine Volumes zugeordnet sind, kann er gelöscht werden. Klicken Sie unten auf der Seite auf **Löschen**, um diesen Container zu löschen. Wenn Sie zur Bestätigung aufgefordert werden, klicken Sie auf **Ja**. Der Volumecontainer wird gelöscht.
 
-2. Select the volume container you want to delete.
+Wenn dem Volumecontainer Volumes zugeordnet sind, müssen Sie zuerst diese Volumes offline schalten. Führen Sie dazu die Schritte unter [Offlineschalten von Volumes](../articles/storsimple/storsimple-manage-volumes.md#take-a-volume-offline) aus. Wenn die Volumes offline sind, können Sie sie löschen. Wenn dem Volumecontainer keine Volumes zugeordnet sind, löschen Sie den Volumecontainer wie oben beschrieben.
 
-3. If a volume container has no associated volumes, then it can be deleted. Click **Delete** at the bottom of the page to delete this container. When prompted for confirmation, click **Yes**. This will delete the volume container.
-
-If the volume container has associated volumes, you will first need to take those volumes offline by following the steps in [Take a volume offline](../articles/storsimple/storsimple-manage-volumes.md#take-a-volume-offline). After the volumes are offline, you can delete them. When the volume container has no associated volumes, delete the volume container as described above.
+<!---HONumber=62-->

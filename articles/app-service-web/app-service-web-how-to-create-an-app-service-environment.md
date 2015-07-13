@@ -38,7 +38,7 @@ Es gibt zwei Möglichkeiten, auf die Benutzeroberfläche zur Erstellung der App 
 ### Schnellerfassung ###
 Nach dem Aufrufen der Benutzeroberfläche zur Erstellung können Sie durch die Eingabe eines Namens für die Bereitstellung schnell eine App Service-Umgebung erstellen. Dadurch werden wiederum ein VNET mit 512 Adressen, ein Subnetz mit 256 Adressen in diesem VNET sowie eine App Service-Umgebung mit zwei Front-Ends und zwei Workern im Workerpool 1 erstellt. Achten Sie darauf, den Standort, an dem sich das System befinden soll, sowie das zugehörige Abonnement auszuwählen. Die einzigen Konten, die die App Service-Umgebung zum Hosten von Inhalten verwenden können, müssen in dem Abonnement enthalten sein, das zur Erstellung verwendet wurde.
 
-Der Name, der für die App Service-Umgebung angegeben wurde, wird für die in der App Service-Umgebung erstellten Web-Apps verwendet. Wenn der Name der App Service-Umgebung "appsvcenvdemo" ist, lautet der Domänenname ".*appsvcenvdemo.p.azurewebsites.net*". Wenn Sie also eine Web-App mit dem Namen "mytestapp" erstellt haben, wäre diese unter der Adresse  *mytestapp.appsvcenvdemo.p.azurewebsites.net* aufrufbar. Sie können im Namen keine Leerzeichen verwenden. Bei Verwendung von Großbuchstaben im Namen wird der entsprechende Domänenname dennoch vollständig in Kleinbuchstaben geschrieben.
+Der Name, der für die App Service-Umgebung angegeben wurde, wird für die in der App Service-Umgebung erstellten Web-Apps verwendet. Wenn der Name der App Service-Umgebung "appsvcenvdemo" ist, lautet der Domänenname ".*appsvcenvdemo.p.azurewebsites.net*". Wenn Sie also eine Web-App mit dem Namen "mytestapp" erstellt haben, wäre diese unter der Adresse *mytestapp.appsvcenvdemo.p.azurewebsites.net* aufrufbar. Sie können im Namen keine Leerzeichen verwenden. Bei Verwendung von Großbuchstaben im Namen wird der entsprechende Domänenname dennoch vollständig in Kleinbuchstaben geschrieben.
 
 
 ![][1]
@@ -55,7 +55,7 @@ Wenn Sie über eine große Anzahl von Anforderungen für einfache Web-Apps verf�
 
 Unabhängig von der Größe der Compute-Ressourcen sind mindestens zwei Front-End-Server und zwei Worker erforderlich. Eine App Service-Umgebung kann für die Verwendung von bis zu 55 Compute-Ressourcen insgesamt konfiguriert werden. Von diesen 55 Compute-Ressourcen können nur 50 zum Hosten von Workloads eingesetzt werden. Dafür gibt es zwei Gründe. Es sind mindestens zwei Front-End-Compute-Ressourcen erforderlich. So bleiben bis zu 53 zur Unterstützung der Workerpoolzuweisung übrig. Um jedoch Fehlertoleranz bereitzustellen, muss nach den folgenden Regeln eine zusätzliche Compute-Ressource zugewiesen werden:
 
-- Jeder Workerpool benötigt mindestens eine weitere Compute-Ressource, der keine Workload zugewiesen  werden kann
+- Jeder Workerpool benötigt mindestens eine weitere Compute-Ressource, der keine Workload zugewiesen werden kann
 - Wenn die Menge von Compute-Ressourcen in einem Pool einen bestimmten Wert überschreitet, ist eine weitere Compute-Ressource erforderlich
 
 Im Rahmen der Fehlertoleranzanforderungen gilt innerhalb eines einzelnen Workerpools Folgendes für einen bestimmten Wert von X Ressourcen, die einem Workerpool zugewiesen sind:
@@ -142,4 +142,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AppServicePricing]: http://azure.microsoft.com/pricing/details/app-service/
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

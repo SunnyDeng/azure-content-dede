@@ -45,4 +45,4 @@ Azure AD bietet Administratoren eine Reihe von Berichten. Die kostenpflichtigen 
 * [Azure-Identität](fundamentals-identity.md)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

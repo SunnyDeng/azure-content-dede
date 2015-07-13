@@ -52,4 +52,4 @@ Azure Active Directory (Azure AD) bietet Ihrem Unternehmen eine einfache Mögli
 [1]: ./media/active-directory-whatis/Azure_Active_Directory.png
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

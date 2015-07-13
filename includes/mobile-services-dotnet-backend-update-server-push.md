@@ -32,6 +32,4 @@
 
 2. das Projekt für den mobilen Service erneut auf Azure veröffentlichen.
 
-
-
-<!--HONumber=54-->
+<!---HONumber=62-->

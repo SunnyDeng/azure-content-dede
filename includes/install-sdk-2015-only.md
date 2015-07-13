@@ -4,6 +4,6 @@ Richten Sie zu Beginn Ihre Entwicklungsumgebung ein, indem Sie das [Azure SDK f�
 
 Wenn Visual Studio nicht installiert ist, wird zusammen mit dem SDK Visual Studio Express f체r das Web installiert.
 
->[AZURE.NOTE] Abh채ngig von der Anzahl an bereits bestehenden SDK-Abh채ngigkeiten auf Ihrem Computer kann der Installationsvorgang des SDK von mehreren Minuten bis hin zu einer halben Stunde oder l채nger dauern.
+>[AZURE.NOTE]Abh채ngig von der Anzahl an bereits bestehenden SDK-Abh채ngigkeiten auf Ihrem Computer kann der Installationsvorgang des SDK von mehreren Minuten bis hin zu einer halben Stunde oder l채nger dauern.
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

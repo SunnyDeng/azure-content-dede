@@ -171,4 +171,4 @@ Kehren Sie zum [Azure-Portal][portal] zurück, und navigieren Sie zur Applicatio
 [start]: app-insights-get-started.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

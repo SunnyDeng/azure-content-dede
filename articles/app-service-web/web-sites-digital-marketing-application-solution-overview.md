@@ -65,13 +65,13 @@ Zeigen Sie globale Präsenz durch die Bereitstellung regionaler Websites mit Azu
 
 Bieten Sie globalen Kunden ein bestmögliches Benutzererlebnis, indem Sie Websitebesucher mithilfe von [Azure Traffic Manager] auf eine regionale Website umleiten und so eine optimale Leistung gewährleisten. Sie können auch die Websitelast gleichmäßig auf mehrere Kopien Ihrer Web-App verteilen, die in verschiedenen Regionen gehostet werden.
 
-Stellen Sie durch die [Integration Ihrer Web-App in Azure CDN] statische Inhalte blitzschnell weltweit für Ihre Benutzer bereit. Azure CDN speichert statische Inhalte in dem [CDN-Knoten] zwischen, der dem Benutzer am nächsten ist. Auf diese Weise werden Latenz und Verbindungen mit Ihrer Web-App minimiert.
+Stellen Sie durch das [Integrieren Ihrer Web-App in Azure CDN] statische Inhalte blitzschnell weltweit für Ihre Benutzer bereit. Azure CDN speichert statische Inhalte in dem [CDN-Knoten] zwischen, der dem Benutzer am nächsten ist. Auf diese Weise werden Latenz und Verbindungen mit Ihrer Web-App minimiert.
 
 ## Optimierung
 
-Optimieren Sie Ihre Web-App über eine automatische Skalierung mit "Autoskalierung", eine Zwischenspeicherung mit Azure-Redis-Cache und die Ausführung von Hintergrundaufgaben mithilfe von Webaufträgen, und sorgen Sie mit Azure Traffic Manager für eine gleichbleibend hohe Verfügbarkeit.
+Optimieren Sie Ihre Web-App über eine automatische Skalierung mit "Autoskalierung", eine Zwischenspeicherung mit Azure Redis Cache und die Ausführung von Hintergrundaufgaben mithilfe von WebJobs, und sorgen Sie mit Azure Traffic Manager für eine gleichbleibend hohe Verfügbarkeit.
 
-Die Fähigkeit von App Service-Web-Apps, eine [flexible Skalierung] zu ermöglichen, ist perfekt für unvorhersehbare Workloads wie bei digitalen Marketingkampagnen geeignet. Skalieren Sie Ihre Web-App manuell über das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), programmgesteuert über die [Dienstverwaltungs-API] oder über [PowerShell-Skripts] oder automatisch über die Funktion „Autoskalierung“. Im Modus **Standard** können Sie eine Web-App mithilfe von „Autoskalierung“ basierend auf der CPU-Auslastung automatisch horizontal hochskalieren. Diese Funktion ermöglicht maximale Flexibilität bei minimalen Kosten, da die Web-App nur dann skaliert wird, wenn dies basierend auf der Benutzeraktivität erforderlich ist. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
+Die Fähigkeit von App Service-Web-Apps, eine [flexible Skalierung] zu ermöglichen, ist perfekt für unvorhersehbare Workloads wie bei digitalen Marketingkampagnen geeignet. Skalieren Sie Ihre Web-App manuell über das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), programmgesteuert über die [Dienstverwaltungs-API] oder über [PowerShell-Skripts] oder automatisch über die Funktion "Autoskalierung". Im Modus **Standard** können Sie eine Web-App mithilfe von "Autoskalierung" basierend auf der CPU-Auslastung automatisch horizontal hochskalieren. Diese Funktion ermöglicht maximale Flexibilität bei minimalen Kosten, da die Web-App nur dann skaliert wird, wenn dies basierend auf der Benutzeraktivität erforderlich ist. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
 
 Erhöhen Sie die Reaktionsfähigkeit Ihrer Web-App mit [Azure Redis Cache]. Nutzen Sie diese Funktion zum Zwischenspeichern von Daten aus Back-End-Datenbanken und anderen Daten, beispielsweise [ASP.NET-Sitzungszustand] und [Ausgabecache].
 
@@ -119,7 +119,7 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 [Notification Hub]: ../mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users.md
 
 [Azure Traffic Manager]: http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[Integration Ihrer Web-App in Azure CDN]: cdn-websites-with-cdn.md
+[Integrieren Ihrer Web-App in Azure CDN]: cdn-websites-with-cdn.md
 [CDN-Knoten]: https://msdn.microsoft.com/library/azure/gg680302.aspx
 
 [flexible Skalierung]: /manage/services/web-sites/how-to-scale-websites/

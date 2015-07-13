@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen einer App mit einem mobilen und einem Webclient in Azure App Service"
-	description="Erstellen einer Multichannel-App mit einem Website- und einem mobilen Client in Azure App Service."
+	description="Erstellen Sie eine Multichannel-App mit einem Website- und einem mobilen Client in Azure App Service."
 	services="app-service\web"
 	documentationCenter=".net"
 	authors="lindydonna"

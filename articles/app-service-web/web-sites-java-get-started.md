@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen einer Java-Web-App in Azure App Service"
+	pageTitle="Erstellen einer Java Web-App in Azure App Service"
 	description="In diesem Lernprogramm wird gezeigt, wie Sie eine Java-Web-App in Azure App Service bereitstellen."
 	services="app-service\web"
 	documentationCenter="java"
@@ -86,4 +86,4 @@ Sie führen nun Ihren Java-Anwendungsserver als Ihre Java-Web-App auf Azure aus.
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

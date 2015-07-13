@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verwenden von Azure-Blob-Speicher mit dem Webaufträge-SDK" 
-	description="Erfahren Sie, wie Sie Azure-BLOB-Speicher mit dem Webaufträge-SDK nutzen. Lösen Sie einen Prozess aus, wenn einem Container ein neues BLOB hinzugefügt wird, und informieren Sie sich über den Umgang mit nicht verarbeitbaren BLOBs." 
+	pageTitle="Verwenden von Azure-Blobspeicher mit dem WebJobs-SDK" 
+	description="Erfahren Sie, wie Sie Azure-Blobspeicher mit dem WebJobs-SDK nutzen. Lösen Sie einen Prozess aus, wenn einem Container ein neues Blobs hinzugefügt wird, und informieren Sie sich über den Umgang mit nicht verarbeitbaren Blobs." 
 	services="app-service\web, storage" 
 	documentationCenter=".net" 
 	authors="tdykstra" 
@@ -16,25 +16,25 @@
 	ms.date="06/08/2015" 
 	ms.author="tdykstra"/>
 
-# Verwenden von Azure-Blob-Speicher mit dem Webaufträge-SDK
+# Verwenden von Azure-Blobspeicher mit dem WebJobs-SDK
 
 ## Übersicht
 
-Dieser Leitfaden enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-BLOB erstellt oder aktualisiert wird. In den Codebeispielen wird Version 1.x des [Webaufträge-SDK](websites-dotnet-webjobs-sdk.md) verwendet.
+Dieser Leitfaden enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-Blob erstellt oder aktualisiert wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet.
 
-Codebeispiele, die zeigen, wie BLOBs erstellt werden, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md).
+Codebeispiele, die zeigen, wie Blobs erstellt werden, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md).
 		
 Im Handbuch wird davon ausgegangen, dass Sie wissen, [wie ein Webauftrags-Projekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto verweisen](websites-dotnet-webjobs-sdk-get-started.md).
 
-## <a id="trigger"></a> Auslösen einer Funktion beim Erstellen oder Aktualisieren eines BLOBs
+## <a id="trigger"></a> Auslösen einer Funktion beim Erstellen oder Aktualisieren eines Blobs
 
 Dieser Abschnitt beschreibt die Verwendung des `BlobTrigger`-Attributs.
 
-> **Hinweis:** Das Webaufträge-SDK durchsucht Protokolldateien nach neuen oder geänderten BLOBs. Dieser Vorgang ist naturgemäß recht langsam. Eine Funktion wird unter Umständen erst mehrere Minuten nach der BLOB-Erstellung (oder noch später) ausgelöst. Wenn Ihre Anwendung BLOBs sofort verarbeiten muss, empfiehlt es sich, zusammen mit dem BLOB eine Warteschlangennachricht zu erstellen, und für die Funktion, die das BLOB verarbeitet, anstelle des `BlobTrigger`-Attributs das [QueueTrigger](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#trigger)-Attribut zu verwenden.
+> **Hinweis:** Das WebJobs-SDK durchsucht Protokolldateien nach neuen oder geänderten Blobs. Dieser Vorgang ist naturgemäß recht langsam. Eine Funktion wird unter Umständen erst mehrere Minuten nach der Bloberstellung (oder noch später) ausgelöst. Wenn Ihre Anwendung Blobs sofort verarbeiten muss, empfiehlt es sich, zusammen mit dem Blob eine Warteschlangennachricht zu erstellen, und für die Funktion, die das Blob verarbeitet, anstelle des `BlobTrigger`-Attributs das [QueueTrigger](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#trigger)-Attribut zu verwenden.
 
-### Einzelner Platzhalter für BLOB-Namen mit Erweiterung  
+### Einzelner Platzhalter für Blobnamen mit Erweiterung  
 
-Das folgende Codebeispiel kopiert Text-BLOBs aus dem Container *input* in den Container *output*:
+Das folgende Codebeispiel kopiert Text-Blobs aus dem Container *input* in den Container *output*:
 
 		public static void CopyBlob([BlobTrigger("input/{name}")] TextReader input,
 		    [Blob("output/{name}")] out string output)
@@ -42,9 +42,9 @@ Das folgende Codebeispiel kopiert Text-BLOBs aus dem Container *input* in den Co
 		    output = input.ReadToEnd();
 		}
 
-Der Attributkonstruktor verwendet einen Zeichenfolgenparameter, der den Containernamen und einen Platzhalter für den BLOB-Namen angibt. Wenn in diesem Beispiel im Container *input* ein BLOB mit dem Namen *Blob1.txt* erstellt wird, erstellt die Funktion ein BLOB mit dem Namen *Blob1.txt* im Container *output*.
+Der Attributkonstruktor verwendet einen Zeichenfolgenparameter, der den Containernamen und einen Platzhalter für den Blobnamen angibt. Wenn in diesem Beispiel im Container *input* ein Blob mit dem Namen *Blob1.txt* erstellt wird, erstellt die Funktion ein Blob mit dem Namen *Blob1.txt* im Container *output*.
 
-Sie können mit dem BLOB-Namenplatzhalter ein Namensmuster angeben, wie im folgenden Codebeispiel gezeigt:
+Sie können mit dem Platzhalter für Blobnamen ein Namensmuster angeben, wie im folgenden Codebeispiel gezeigt:
 
 		public static void CopyBlob([BlobTrigger("input/original-{name}")] TextReader input,
 		    [Blob("output/copy-{name}")] out string output)
@@ -52,9 +52,9 @@ Sie können mit dem BLOB-Namenplatzhalter ein Namensmuster angeben, wie im folge
 		    output = input.ReadToEnd();
 		}
 
-Dieser Code kopiert nur BLOBs, deren Namen mit "original-" beginnt. So wird beispielsweise *original-Blob1.txt* aus dem Container *input* als *copy-Blob1.txt* in den Container *output* kopiert.
+Dieser Code kopiert nur Blob, deren Namen mit "original-" beginnt. So wird beispielsweise *original-Blob1.txt* aus dem Container *input* als *copy-Blob1.txt* in den Container *output* kopiert.
 
-Wenn Sie ein Namensmuster für BLOB-Namen angeben müssen, die geschweifte Klammern enthalten, verdoppeln Sie die geschweiften Klammern. Wenn Sie beispielsweise BLOBs im Container *images* suchen, deren Namen wie folgt lauten:
+Wenn Sie ein Namensmuster für Blobnamen angeben müssen, die geschweifte Klammern enthalten, verdoppeln Sie die geschweiften Klammern. Wenn Sie beispielsweise Blob im Container *images* suchen, deren Namen wie folgt lauten:
 
 		{20140101}-soundfile.mp3
 
@@ -64,9 +64,9 @@ verwenden Sie dies für das Muster:
 
 In diesem Beispiel lautet der Platzhalterwert *name* wie folgt: *soundfile.mp3*.
 
-### Separate Platzhalter für BLOB-Namen und Erweiterung
+### Separate Platzhalter für Blobnamen und Erweiterung
 
-Im folgenden Beispiel ändert sich die Dateierweiterung, wenn BLOBs aus dem Container *input* in den Container *output* kopiert werden. Der Code protokolliert die Erweiterung des BLOBs vom Typ *input* und legt die Erweiterung des BLOBs vom Typ *output* auf *.txt* fest.
+Im folgenden Beispiel ändert sich die Dateierweiterung, wenn Blob aus dem Container *input* in den Container *output* kopiert werden. Der Code protokolliert die Erweiterung des Blobs vom Typ *input* und legt die Erweiterung des Blobs vom Typ *output* auf *.txt* fest.
 
 		public static void CopyBlobToTxtFile([BlobTrigger("input/{name}.{ext}")] TextReader input,
 		    [Blob("output/{name}.txt")] out string output,
@@ -79,7 +79,7 @@ Im folgenden Beispiel ändert sich die Dateierweiterung, wenn BLOBs aus dem Cont
 		    output = input.ReadToEnd();
 		}
 
-## <a id="types"></a> Typen, die Sie an BLOBs binden können
+## <a id="types"></a> Typen, die Sie an Blobs binden können
 
 Sie können das `BlobTrigger`-Attribut für die folgenden Typen verwenden:
 
@@ -93,9 +93,9 @@ Sie können das `BlobTrigger`-Attribut für die folgenden Typen verwenden:
 
 Wenn Sie direkt mit dem Azure-Speicherkonto arbeiten möchten, können Sie der Methodensignatur auch einen `CloudStorageAccount`-Parameter hinzufügen.
 
-## <a id="string"></a> Abrufen von BLOB-Textinhalt durch Bindung an eine Zeichenfolge
+## <a id="string"></a> Abrufen von Blobtextinhalt durch Bindung an eine Zeichenfolge
 
-Wenn Text-BLOBs erwartet werden, kann `BlobTrigger` auf einen `string`-Parameter angewendet werden. Im folgenden Beispiel wird ein Text-BLOB an einen `string`-Parameter mit dem Namen `logMessage` gebunden. Die Funktion verwendet diesen Parameter, um den Inhalt des BLOBs in das Dashboard des Webaufträge-SDK zu schreiben.
+Wenn Textblobs erwartet werden, kann `BlobTrigger` auf einen `string`-Parameter angewendet werden. Im folgenden Beispiel wird ein Textblob an einen `string`-Parameter mit dem Namen `logMessage` gebunden. Die Funktion verwendet diesen Parameter, um den Inhalt des Blobs in das Dashboard des WebJobs-SDK zu schreiben.
  
 		public static void WriteLog([BlobTrigger("input/{name}")] string logMessage,
 		    string name, 
@@ -106,9 +106,9 @@ Wenn Text-BLOBs erwartet werden, kann `BlobTrigger` auf einen `string`-Parameter
 		     logger.WriteLine(logMessage);
 		}
 
-## <a id="icbsb"></a> Abrufen serialisierter BLOB-Inhalte mithilfe von ICloudBlobStreamBinder
+## <a id="icbsb"></a> Abrufen serialisierter Blobinhalte mithilfe von ICloudBlobStreamBinder
 
-Im folgenden Codebeispiel wird eine Klasse verwendet, die `ICloudBlobStreamBinder` implementiert, um das `BlobTrigger`-Attribut für das Binden eines BLOBs an den `WebImage`-Typ zu aktivieren.
+Im folgenden Codebeispiel wird eine Klasse verwendet, die `ICloudBlobStreamBinder` implementiert, um das `BlobTrigger`-Attribut für das Binden eines Blobs an den `WebImage`-Typ zu aktivieren.
 
 		public static void WaterMark(
 		    [BlobTrigger("images3/{name}")] WebImage input,
@@ -144,21 +144,21 @@ Der `WebImage`-Bindungscode wird in einer `WebImageBinder`-Klasse bereitgestellt
 		    }
 		}
 
-## <a id="poison"></a> Behandlung von nicht verarbeitbaren BLOBs
+## <a id="poison"></a> Behandlung von nicht verarbeitbaren Blobs
 
-Wenn bei einer `BlobTrigger`-Funktion ein Fehler auftritt, wird sie für den Fall, dass es sich um einen vorübergehenden Fehler handelt, erneut aufgerufen. Wenn der Inhalt des BLOBs den Fehler verursacht hat, missling die Funktion bei jedem Versuch, das BLOB zu verarbeiten. Standardmäßig ruft das SDK eine Funktion bis zu 5 Mal für ein angegebenes BLOB auf. Ist auch der fünfte Versuch nicht erfolgreich, fügt das SDK einer Warteschlange namens *webjobs-blobtrigger-poison* eine Nachricht hinzu.
+Wenn bei einer `BlobTrigger`-Funktion ein Fehler auftritt, wird sie für den Fall, dass es sich um einen vorübergehenden Fehler handelt, erneut aufgerufen. Wenn der Inhalt des Blobs den Fehler verursacht hat, misslingt die Funktion bei jedem Versuch, das Blob zu verarbeiten. Standardmäßig ruft das SDK eine Funktion bis zu 5 Mal für ein angegebenes Blob auf. Ist auch der fünfte Versuch nicht erfolgreich, fügt das SDK einer Warteschlange namens *webjobs-blobtrigger-poison* eine Nachricht hinzu.
 
-Die maximale Anzahl von Wiederholungen ist konfigurierbar. Für die Verarbeitung nicht verarbeitbarer BLOBs und der dazugehörigen Nachrichtenwarteschlange wird die gleiche [MaxDequeueCount](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#configqueue)-Einstellung verwendet.
+Die maximale Anzahl von Wiederholungen ist konfigurierbar. Für die Verarbeitung nicht verarbeitbarer Blobs und der dazugehörigen Nachrichtenwarteschlange wird die gleiche [MaxDequeueCount](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#configqueue)-Einstellung verwendet.
 
-Die Warteschlangennachricht für nicht verarbeitbare BLOBs ist ein JSON-Objekt, das die folgenden Eigenschaften enthält:
+Die Warteschlangennachricht für nicht verarbeitbare Blobs ist ein JSON-Objekt, das die folgenden Eigenschaften enthält:
 
 * FunctionId (im Format *{Webauftragsname}*.Functions.*{Funktionsname}*; Beispiel: WebJob1.Functions.CopyBlob)
-* BlobType ("BlockBlob" or "PageBlob")
+* BlobType ("BlockBlob" oder "PageBlob")
 * ContainerName
 * BlobName
-* ETag (eine BLOB-Versions-ID. Beispiel: 0x8D1DC6E70A277EF)
+* ETag (eine Blobversions-ID. Beispiel: 0x8D1DC6E70A277EF)
 
-Im folgenden Codebeispiel enthält die `CopyBlob`-Funktion Code, der bewirkt, dass bei jedem Aufruf ein Fehler auftritt. Nachdem das SDK die Funktion mit der maximalen Anzahl von Wiederholungen aufgerufen hat, wird in der Warteschlange für nicht verarbeitbare BLOBs eine Nachricht erstellt. Diese Nachricht wird von der `LogPoisonBlob`-Funktion verarbeitet.
+Im folgenden Codebeispiel enthält die `CopyBlob`-Funktion Code, der bewirkt, dass bei jedem Aufruf ein Fehler auftritt. Nachdem das SDK die Funktion mit der maximalen Anzahl von Wiederholungen aufgerufen hat, wird in der Warteschlange für nicht verarbeitbare Blobs eine Nachricht erstellt. Diese Nachricht wird von der `LogPoisonBlob`-Funktion verarbeitet.
 
 		public static void CopyBlob([BlobTrigger("input/{name}")] TextReader input,
 		    [Blob("textblobs/output-{name}")] out string output)
@@ -189,47 +189,47 @@ Das SDK deserialisiert die JSON-Nachricht automatisch. Hier sehen Sie die `Poiso
 		    public string ETag { get; set; }
 		}
 
-### <a id="polling"></a> BLOB-Abrufalgorithmus
+### <a id="polling"></a> Blobabrufalgorithmus
 
-Das Webaufträge-SDK durchsucht beim Start der Anwendung alle vom `BlobTrigger`-Attribut angegebenen Container. Bei einem großen Speicherkonto kann diese Überprüfung durchaus länger dauern. Daher kann etwas Zeit vergehen, bis neue BLOBs gefunden und `BlobTrigger`-Funktionen ausgeführt werden.
+Das WebJobs-SDK durchsucht beim Start der Anwendung alle vom `BlobTrigger`-Attribut angegebenen Container. Bei einem großen Speicherkonto kann diese Überprüfung durchaus länger dauern. Daher kann etwas Zeit vergehen, bis neue Blobs gefunden und `BlobTrigger`-Funktionen ausgeführt werden.
 
-Um neue oder geänderte BLOBs nach dem Start der Anwendung zu erkennen, liest das SDK in regelmäßigen Abständen die BLOB-Speicherprotokolle. Die BLOB-Protokolle werden gepuffert und nur etwa alle 10 Minuten physisch geschrieben. Daher kann, nachdem ein BLOB erstellt oder aktualisiert wurde, möglicherweise eine erhebliche Verzögerung eintreten, ehe die entsprechende `BlobTrigger`-Funktion ausgeführt wird.
+Um neue oder geänderte Blobs nach dem Start der Anwendung zu erkennen, liest das SDK in regelmäßigen Abständen die Blobspeicherprotokolle. Die Blobprotokolle werden gepuffert und nur etwa alle 10 Minuten physisch geschrieben. Daher kann, nachdem ein Blob erstellt oder aktualisiert wurde, möglicherweise eine erhebliche Verzögerung eintreten, ehe die entsprechende `BlobTrigger`-Funktion ausgeführt wird.
 
-Für BLOBs, die Sie mit dem `Blob`-Attribut erstellen, gibt es eine Ausnahme. Wenn das Webaufträge-SDK ein neues BLOB erstellt, übergibt es dieses sofort an alle entsprechenden `BlobTrigger`-Funktionen. Wenn Sie also eine Kette von BLOB-Ein- und Ausgaben haben, kann das SDK sie effizient verarbeiten. Wenn es Ihnen bei Ihren BLOB-Verarbeitungsfunktionen für anderweitig erstellte oder aktualisierte BLOBs allerdings auf eine geringe Latenz ankommt, empfiehlt sich die Verwendung von `QueueTrigger` anstelle von `BlobTrigger`.
+Für Blobs, die Sie mit dem `Blob`-Attribut erstellen, gibt es eine Ausnahme. Wenn das WebJobs-SDK ein neues Blob erstellt, übergibt es dieses sofort an alle entsprechenden `BlobTrigger`-Funktionen. Wenn Sie also eine Kette von Ein- und Ausgaben von Blobs haben, kann das SDK sie effizient verarbeiten. Wenn es Ihnen bei Ihren Blobverarbeitungsfunktionen für anderweitig erstellte oder aktualisierte Blobs allerdings auf eine geringe Latenz ankommt, empfiehlt sich die Verwendung von `QueueTrigger` anstelle von `BlobTrigger`.
 
-### <a id="receipts"></a> BLOB-Zugänge
+### <a id="receipts"></a> Blobbelege
 
-Das Webaufträge-SDK stellt sicher, dass `BlobTrigger`-Funktionen für ein neues oder aktualisiertes BLOB nicht mehrmals aufgerufen werden. Zu diesem Zweck wird mittels Verwaltung der *BLOB-Zugänge* bestimmt, ob eine bestimmte BLOB-Version verarbeitet wurde.
+Das WebJobs-SDK stellt sicher, dass `BlobTrigger`-Funktionen für ein neues oder aktualisiertes Blob nicht mehrmals aufgerufen werden. Zu diesem Zweck wird mittels Verwaltung der *Blobbelege* bestimmt, ob eine bestimmte Blobversion verarbeitet wurde.
 
-BLOB-Zugänge werden in einem Container mit dem Namen *azure-webjobs-hosts* in dem Azure-Speicherkonto gespeichert, das in der Verbindungszeichenfolge „AzureWebJobsStorage“ angegeben ist. Ein BLOB-Zugang hat die folgende Informationen:
+Blobbelege werden in einem Container mit dem Namen *azure-webjobs-hosts* in dem Azure-Speicherkonto gespeichert, das in der Verbindungszeichenfolge "AzureWebJobsStorage" angegeben ist. Ein Blobbeleg enthält die folgenden Informationen:
 
-* Die Funktion, die für das BLOB aufgerufen wurde ("*{Webauftragsname}*.Functions.*{Funktionsname}*"; Beispiel: "WebJob1.Functions.CopyBlob")
+* Die Funktion, die für das Blob aufgerufen wurde ("*{Webauftragsname}*.Functions.*{Funktionsname}*"; Beispiel: "WebJob1.Functions.CopyBlob")
 * Der Containername
-* Der BLOB-Typ ("BlockBlob" oder "PageBlob")
-* Der BLOB-Name
-* Das ETag (eine BLOB-Versions-ID. Beispiel: 0x8D1DC6E70A277EF)
+* Blobtyp ("BlockBlob" oder "PageBlob")
+* Blobname
+* ETag (eine Blobversions-ID. Beispiel: 0x8D1DC6E70A277EF)
 
-Wenn Sie eine erneute Verarbeitung eines BLOBs erzwingen möchten, können Sie den BLOB-Zugang für dieses BLOB manuell aus dem Container *azure-webjobs-hosts* löschen.
+Wenn Sie eine erneute Verarbeitung eines Blobs erzwingen möchten, können Sie den Blobbeleg für dieses Blob manuell aus dem Container *azure-webjobs-hosts* löschen.
 
 ## <a id="queues"></a>Verwandte Themen aus dem Artikel zu Warteschlangen
 
-Informationen zur Handhabung der BLOB-Verarbeitung, die durch eine Warteschlangennachricht ausgelöst wird, oder zu Szenarien für das Webaufträge-SDK, die sich nicht speziell auf die BLOB-Verarbeitung beziehen, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md).
+Informationen zur Handhabung der Blobverarbeitung, die durch eine Warteschlangennachricht ausgelöst wird, oder zu Szenarien für das WebJobs-SDK, die sich nicht speziell auf die Blobverarbeitung beziehen, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md).
 
 In diesem Artikel werden u. a. die folgenden Themen behandelt:
 
 * Asynchrone Funktionen
 * Mehrere Instanzen
 * Ordnungsgemäßes Herunterfahren
-* Verwenden von Webaufträge-SDK-Attributen im Hauptteil einer Funktion
+* Verwenden von WebJobs-SDK-Attributen im Hauptteil einer Funktion
 * Festlegen der SDK-Verbindungszeichenfolgen im Code
 * Festlegen von Werten für WebJobs SDK-Konstruktorparametern im Code
-* Konfigurieren von `MaxDequeueCount` für die Behandlung nicht verarbeitbarer BLOBs
+* Konfigurieren von `MaxDequeueCount` für die Behandlung nicht verarbeitbarer Blobs
 * Manuelles Auslösen einer Funktion
 * Schreiben von Protokollen
 
 ## <a id="nextsteps"></a> Nächste Schritte
 
-In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-BLOBs behandelt werden. Weitere Informationen zur Verwendung von Azure-Webaufträgen und dem Webaufträge-SDK finden Sie unter [Ressourcen für Azure-Webaufträge](http://go.microsoft.com/fwlink/?linkid=390226).
+In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Blobs behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
 <!---HONumber=62-->

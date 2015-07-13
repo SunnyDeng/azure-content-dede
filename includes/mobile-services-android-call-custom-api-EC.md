@@ -1,9 +1,9 @@
-﻿
+
 ##<a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
-1. Wir fügen neben der vorhandenen Schaltfläche eine Schaltfläche namens "Complete All" ein und verschieben beide Schaltflächen um eine Zeile nach unten. Öffnen Sie in Eclipse die Datei *res\layout\activity_to_do.xml* in Ihrem Schnellstartprojekt, und suchen Sie das **LinearLayout**-Element, das das **Button**-Element namens `buttonAddToDo` enthält. Kopieren Sie das **LinearLayout**, und fügen Sie es direkt nach dem ursprünglichen ein. Löschen Sie das **Button**-Element aus dem ersten **LinearLayout**.
+1. Wir fügen neben der vorhandenen Schaltfläche eine Schaltfläche namens "Complete All" ein und verschieben beide Schaltflächen um eine Zeile nach unten. Öffnen Sie in Eclipse die Datei *res\layout\activity_to_do.xml* in Ihrem Schnellstartprojekt, suchen Sie das Element **LinearLayout**, das das **Button**-Element namens `buttonAddToDo` enthält. Kopieren Sie das **LinearLayout**, und fügen Sie es direkt nach dem ursprünglichen ein. Löschen Sie das Element **Button** vom ersten **LinearLayout**.
 
-2. Löschen Sie im zweiten **LinearLayout** das **EditText**-Element, und fügen Sie den folgenden Code direkt nach dem vorhandenen **Button**-Element hinzu: 
+2. Im zweiten **LinearLayout** löschen Sie das Element **EditText**, und fügen Sie den folgenden Code direkt nach dem vorhandenen **Button**-Element hinzu:
 
         <Button
             android:id="@+id/buttonCompleteItem"
@@ -42,7 +42,7 @@
 
 
 
-5. Klicken Sie im Paket-Explorer mit der rechten Maustaste auf den Projektnamen im  *src*-Ordner (com.example.{IhrProjektname}), wählen Sie **Neu** und dann **Klasse**. Im Dialog geben Sie **MarkAllResult** in das Klassennamensfeld ein, wählen Sie "OK", und ersetzen Sie die resultierende Klassendefinition durch den folgenden Code:
+5. Klicken Sie im Paket-Explorer mit der rechten Maustaste auf den Projektnamen im *src*-Ordner (`com.example.{your projects name}`), und wählen Sie **Neu** und dann **Klasse**. Im Dialog geben Sie **MarkAllResult** in das Klassennamensfeld ein, wählen Sie OK, und ersetzen Sie die resultierende Klassendefinition durch den folgenden Code:
 
 		import com.google.gson.annotations.SerializedName;
 		
@@ -59,9 +59,9 @@
 			}
 		}
 
-	Diese Klasse dient zur Aufnahme des von der benutzerdefinierten API zurückgegebenen Zeilenanzahlwerts. 
+	Diese Klasse dient zur Aufnahme des von der benutzerdefinierten API zurückgegebenen Zeilenanzahlwerts.
 
-6. Suchen Sie die **refreshItemsFromTable**-Methode in der Datei **ToDoActivity.java**, und stellen Sie sicher, dass die erste Codezeile im `try`-Block wie folgt beginnt:
+6. Suchen Sie die **refreshItemsFromTable**-Methode in der Datei **ToDoActivity.java**, und stellen Sie sicher, dass die erste Codezeile im `try`-Block wie folgt aussieht:
 
         final MobileServiceList<ToDoItem> result = mToDoTable.where().field("complete").eq(false).execute().get();
 
@@ -93,7 +93,7 @@
 	    	});
 	    }
 	
-	Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die **invokeApi**-Methode wird auf dem Client aufgerufen, wodurch eine POST-Anfrage an die neue benutzerdefinierte API gesendet wird. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
+	Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die **invokeApi**-Methode wird beim Client aufgerufen, der eine POST-Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
 
 ## Testen der App
 
@@ -112,5 +112,4 @@
 
 	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
 
-
-<!--HONumber=52-->
+<!---HONumber=62-->

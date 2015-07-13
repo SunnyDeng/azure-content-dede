@@ -73,4 +73,4 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie ein grundlegendes Verst√
 [2]: ./media/app-service-logic-create-a-b2b-process/Tracking.jpg
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

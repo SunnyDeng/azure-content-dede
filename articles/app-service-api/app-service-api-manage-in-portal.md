@@ -82,7 +82,7 @@ Die Blätter "Gateway" und "Gateway-Host" nutzen die Benutzeroberfläche in glei
 
 Sie verwenden das Blatt **Gatewayhost** für alle Aufgaben, die Sie für eine beliebige Web-App ausführen würden. Weitere Informationen finden Sie unter [Verwalten von Web-Apps im Portal](web-sites-manage.md).
 
-## Navigation zu den Blättern "API-App" und "Gateway" 
+## <a id="navigate"></a>Navigation zu den Blättern „API-App“ und „Gateway“ 
 
 Eine Möglichkeit, zum Blatt **API-App** zu wechseln besteht darin, die Suchfunktion im Azure-Portal zu verwenden. Klicken Sie auf der Startseite des Portals auf **Durchsuchen > API-Apps**, um alle API-Apps anzuzeigen, die Sie verwalten können.
 

@@ -17,11 +17,11 @@ ms.author="heidist" />
 
 #Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)
 
-> [AZURE.NOTE] Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](../search-api-2015-02-28-preview.md). Derzeit besteht der einzige Unterschied zwischen Version `2015-02-28` (dokumentiert in [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173)) und der hier beschriebenen Version `2015-02-28-Preview` darin, dass die Preview-Version die Funktion *fieldMappings* enthält, die unter [Indexer erstellen](#CreateIndexer) beschrieben ist.
+> [AZURE.NOTE]Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](../search-api-2015-02-28-preview.md). Derzeit besteht der einzige Unterschied zwischen Version `2015-02-28` (dokumentiert in [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173)) und der hier beschriebenen Version `2015-02-28-Preview` darin, dass die Preview-Version die Funktion *fieldMappings* enthält, die unter [Indexer erstellen](#CreateIndexer) beschrieben ist.
 
 ## Übersicht
 
-Azure Search kann direkt mit einigen allgemeinen Datenquellen integrieren. Das Schreiben von Code zum Indizieren Ihrer Daten ist somit überflüssig. Um diese Funktion einzurichten, rufen Sie die Azure Search-API zum Erstellen und Verwalten mehrerer **Indexer** und **Datenquellen** auf.
+Azure Search kann direkt mit einigen allgemeinen Datenquellen integrieren. Das Schreiben von Code zum Indizieren Ihrer Daten ist somit überflüssig. Um diese Funktion einzurichten, rufen Sie die Azure Search-API zum Erstellen und Verwalten mehrerer**Indexer** und **Datenquellen** auf.
 
 Ein **Indexer** ist die Ressource, die Datenquellen mit Zielsuchindizes verbindet. Ein Indexer kann folgendermaßen verwendet werden:
 
@@ -96,7 +96,7 @@ Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstelle
 
 <a name="CreateDataSourceRequestSyntax"></a> **Syntax des Anforderungstextes**
 
-Der Anforderungstext enthält eine Datenquellendefinition, einschließlich Datenquellentyp,  Anmeldeinformationen zum Lesen der Daten sowie optionale Richtlinien zur Erkennung von Datenänderungen und Datenlöschungen. Diese Richtlinien werden verwendet, um geänderte und gelöschte Daten in der Datenquelle effizient zu identifizieren, wenn ein regelmäßig geplanter Indexer verwendet wird.
+Der Anforderungstext enthält eine Datenquellendefinition, einschließlich Datenquellentyp, Anmeldeinformationen zum Lesen der Daten sowie optionale Richtlinien zur Erkennung von Datenänderungen und Datenlöschungen. Diese Richtlinien werden verwendet, um geänderte und gelöschte Daten in der Datenquelle effizient zu identifizieren, wenn ein regelmäßig geplanter Indexer verwendet wird.
 
 
 Die Syntax für die Strukturierung der Anforderungsnutzlast ist wie folgt. Eine Beispielanforderung wird weiter unten in diesem Thema bereitgestellt.
@@ -440,7 +440,7 @@ Die Syntax des Anforderungstexts ist mit der für [Anforderungen "Indexer erstel
 
 **Antwort**
 
-Bei erfolgreicher Anforderung: "201 Erstellt",  wenn ein neuer Indexer erstellt wurde; "204 Kein Inhalt", wenn eine vorhandener Indexer aktualisiert wurde. 
+Bei erfolgreicher Anforderung: "201 Erstellt", wenn ein neuer Indexer erstellt wurde; "204 Kein Inhalt", wenn eine vorhandener Indexer aktualisiert wurde.
 
 
 <a name="ListIndexers"></a>
@@ -774,4 +774,5 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 <td>Nicht unterstützt; Azure Search unterstützt derzeit nur primitive Typen und Zeichenfolgensammlungen</td>
 </tr>
 </table>
-<!--HONumber=54--> 
+
+<!---HONumber=62-->

@@ -36,7 +36,7 @@ Zum Erstellen der vollständigen funktionierenden Anwendung ist Folgendes erford
 3. Installieren Sie die ADAL, und konfigurieren Sie die einseitige Anwendung (SPA).
 5. Verwenden Sie die ADAL, um Seiten in der einseitigen Anwendung zu schützen.
 
-Beginnen Sie, indem Sie [das Anwendungsgerüst herunterladen](https://github.com/AzureADQuickStarts/SinglePageApp-AngularJS-DotNet/archive/skeleton.zip) oder [das vollständige Beispiel herunterladen](https://github.com/AzureADQuickStarts/SinglePageApp-AngularJS-DotNet/archive/complete.zip). Außerdem benötigen Sie einen Azure AD-Mandanten, unter dem Sie Benutzer erstellen und Ihre Anwendung registrieren können. Wenn Sie noch nicht über einen Mandanten verfügen, können Sie hier [erfahren, wie Sie einen erhalten](active-directory-howto-tenant.md).
+Beginnen Sie, indem Sie [das Anwendungsgerüst herunterladen](https://github.com/AzureADQuickStarts/SinglePageApp-AngularJS-DotNet/archive/skeleton.zip) oder [das vollständige Beispiel herunterladen](https://github.com/AzureADQuickStarts/SinglePageApp-AngularJS-DotNet/archive/complete.zip). Außerdem benötigen Sie einen Azure AD-Mandanten, unter dem Sie Benutzer erstellen und Ihre Anwendung registrieren können. Wenn Sie über noch keinen Mandanten verfügen, [erfahren Sie hier, wie Sie einen erhalten](active-directory-howto-tenant.md).
 
 ## *1. Registrieren der Anwendung DirectorySearcher*
 Sie müssen die App zuerst in Ihrem Azure AD-Mandanten registrieren, um damit Benutzer authentifizieren und Token abrufen zu können:
@@ -148,5 +148,6 @@ Als Referenz stellen wir [hier](https://github.com/AzureADQuickStarts/SinglePage
 [Aufrufen einer CORS Web-API aus einer einseitigen Anwendung >>](https://github.com/AzureAdSamples/SinglePageApp-WebAPI-AngularJS-DotNet)
 
 Sehen Sie sich auch die folgenden Ressourcen an: – [AzureAD-Beispiele auf GitHub >>](https://github.com/AzureAdSamples) – [CloudIdentity.com >>](https://cloudidentity.com) – Azure AD-Dokumentation auf [Azure.com >>](http://azure.microsoft.com/documentation/services/active-directory/)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

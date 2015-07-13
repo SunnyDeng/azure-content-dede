@@ -1,15 +1,15 @@
 #####Erstellen eines Containers
 Dateien werden in Ordnern gespeichert, Speicher-BLOBs analog dazu in Containern. Sie können ein **CloudBlobClient**-Objekt zum Verweisen auf einen vorhandenen Container verwenden, oder Sie können die Methode CreateCloudBlobClient() zum Erstellen eines neuen Containers aufrufen.
 
-Der folgende Code zeigt, wie ein neuer BLOB-Speichercontainer erstellt wird. Der Code erstellt zuerst ein **BlobClient**-Objekt, damit Sie auf die Funktionen des Objekts zugreifen können, z. B. zum Erstellen eines Speichercontainers. Der Code versucht dann, auf einen Speichercontainer namens "mycontainer" zu verweisen. Wird kein Container mit diesem Namen gefunden, wird der Container erstellt.
+Der folgende Code zeigt, wie ein neuer BLOB-Speichercontainer erstellt wird. Der Code erstellt zuerst ein **BlobClient**-Objekt, damit Sie auf die Funktionen des Objekts zugreifen können, z. B. zum Erstellen eines Speichercontainers. Der Code versucht dann, auf einen Speichercontainer namens "mycontainer" zu verweisen. Wird kein Container mit diesem Namen gefunden, wird der Container erstellt.
 
 	// Create a blob client.
 	CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 
-	// Get a reference to a container named "mycontainer."
+	// Get a reference to a container named “mycontainer.”
 	CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
 
-	// If "mycontainer" doesn't exist, create it.
+	// If “mycontainer” doesn’t exist, create it.
 	container.CreateIfNotExists();
 
 Standardmäßig ist der neue Container privat, und Sie müssen Ihren Speicherzugriffsschlüssel angeben, um Blobs aus diesem Container herunterzuladen. Wenn Sie die Dateien im Container für alle Benutzer zur Verfügung stellen möchten, können Sie den Container mithilfe des folgenden Codes als öffentlich festlegen.
@@ -19,7 +19,7 @@ Standardmäßig ist der neue Container privat, und Sie müssen Ihren Speicherzug
 	    BlobContainerPublicAccessType.Blob }); 
 
 
-**HINWEIS:** Verwenden Sie diesen Codeblock vor dem Code in den folgenden Abschnitten.
+**HINWEIS:** Verwenden Sie diesen Codeblock vor dem Code in den folgenden Abschnitten:
 
 #####Hochladen eines Blobs in einen Container
 Rufen Sie einen Containerverweis ab, und verwenden Sie diesen dann zum Abrufen eines BLOB-Verweises, um eine BLOB-Datei in einen Container hochzuladen. Sobald Sie über einen BLOB-Verweis verfügen, können Sie jeden Datenstrom in diesen hochladen, indem Sie die Methode **UploadFromStream()** aufrufen. Dieser Vorgang erstellt den BLOB, wenn dieser noch nicht vorhanden ist, oder überschreibt ihn, wenn er vorhanden ist. Im folgenden Beispiel wird gezeigt, wie ein Blob in einen bereits erstellten Container hochgeladen wird.
@@ -28,7 +28,7 @@ Rufen Sie einen Containerverweis ab, und verwenden Sie diesen dann zum Abrufen e
 	CloudBlockBlob blockBlob = container.GetBlockBlobReference("myblob");
 	
 	// Create or overwrite the "myblob" blob with the contents of a local file
-	// named "myfile".
+	// named “myfile”.
 	using (var fileStream = System.IO.File.OpenRead(@"path\myfile"))
 	{
     	blockBlob.UploadFromStream(fileStream);
@@ -66,7 +66,7 @@ Um die Blobs in einem Container aufzuführen, müssen Sie zuerst einen Container
     	}
 	}
 
-Es gibt auch andere Möglichkeiten, den Inhalt eines BLOB-Containers aufzulisten. Weitere Informationen finden Sie unter [Verwenden von BLOB-Speicher aus .NET](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#list-blob).
+Es gibt auch andere Möglichkeiten, den Inhalt eines BLOB-Containers aufzulisten. Weitere Informationen finden Sie unter [Verwenden von BLOB-Speicher aus .NET](../articles/storage/storage-dotnet-how-to-use-blobs.md/#list-blob).
 
 #####Herunterladen eines Blobs
 Wenn Sie einen BLOB herunterladen möchten, rufen Sie zuerst einen Verweis auf den BLOB ab, und rufen Sie dann die Methode DownloadToStream() auf. Im folgenden Beispiel wird die Methode DownloadToStream() verwendet, um den Inhalt des BLOBs in ein Datenstromobjekt zu übertragen, das anschließend als eine lokale Datei gespeichert werden kann.
@@ -74,13 +74,13 @@ Wenn Sie einen BLOB herunterladen möchten, rufen Sie zuerst einen Verweis auf d
 	// Get a reference to a blob named "photo1.jpg".
 	CloudBlockBlob blockBlob = container.GetBlockBlobReference("photo1.jpg");
 
-	// Save the blob contents to a file named "myfile".
+	// Save the blob contents to a file named “myfile”.
 	using (var fileStream = System.IO.File.OpenWrite(@"path\myfile"))
 	{
     	blockBlob.DownloadToStream(fileStream);
 	}
 
-Es gibt auch andere Möglichkeiten zum Speichern von BLOBs als Dateien. Weitere Informationen finden Sie unter [Verwenden von BLOB-Speicher aus .NET](http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#download-blobs).
+Es gibt auch andere Möglichkeiten zum Speichern von BLOBs als Dateien. Weitere Informationen finden Sie unter [Verwenden von BLOB-Speicher aus .NET](../articles/storage/storage-dotnet-how-to-use-blobs.md/#download-blobs).
 
 #####Löschen eines Blobs
 Wenn Sie einen BLOB löschen möchten, rufen Sie zuerst einen Verweis auf den BLOB ab, und rufen Sie dann die Methode Delete() für den Verweis auf.
@@ -91,8 +91,6 @@ Wenn Sie einen BLOB löschen möchten, rufen Sie zuerst einen Verweis auf den BL
 	// Delete the blob.
 	blockBlob.Delete();
 
-[Weitere Informationen zu Azure Storage](http://azure.microsoft.com/documentation/services/storage/)
-Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx).
+[Weitere Informationen zu Azure Storage](http://azure.microsoft.com/documentation/services/storage/) Siehe auch [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx).
 
-
-<!--HONumber=42-->
+<!---HONumber=62-->

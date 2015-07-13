@@ -2,7 +2,7 @@
 
 Sie müssen Ihre App bei einem Identitätsanbieter registrieren, damit Sie Benutzer authentifizieren können. Sie müssen dann den vom Anbieter generierten geheimen Clientschlüssel bei Ihrem App Service registrieren.
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Durchsuchen**, **Ressourcengruppe**, und wählen Sie dann die Ressourcengruppe der mobilen App aus.
+1. Melden Sie sich beim [Azure-Vorschauportal] an, klicken Sie auf **Durchsuchen** und **Ressourcengruppe**, und wählen Sie dann die Ressourcengruppe der mobilen App aus.
 
 2. Wählen Sie das Gateway aus, und notieren Sie den Wert der **URL** unter **Eigenschaften**. Möglicherweise müssen Sie diesen Wert an den Identitätsanbieter übermitteln, wenn Sie Ihre App registrieren.
 
@@ -21,6 +21,6 @@ Sie müssen Ihre App bei einem Identitätsanbieter registrieren, damit Sie Benut
 4. (Optional) Wiederholen Sie den vorherigen Schritt zum Konfigurieren weiterer Identitätsanbieter, die Ihre App unterstützen soll. 
 
 <!-- URLs. -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Azure-Vorschauportal]: https://portal.azure.com/
 
-<!--HONumber=54-->
+<!---HONumber=62-->

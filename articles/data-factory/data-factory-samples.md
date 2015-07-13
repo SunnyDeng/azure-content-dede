@@ -1,6 +1,6 @@
 <properties 	
-	pageTitle="Azure Data Factory - Beispiele" 
-	description="Bietet Informationen zu Beispielen, die ausgeliefert mit dem Azure Data Factory-Dienst." 
+	pageTitle="Azure Data Factory Editor – Beispiele" 
+	description="Bietet Informationen zu Beispielen, die zum Funktionsumfang des Azure Data Factory-Diensts gehören." 
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
@@ -16,44 +16,44 @@
 	ms.date="04/25/2015" 
 	ms.author="spelluru"/>
 
-# Azure Data Factory - Beispiele
+# Azure Data Factory Editor – Beispiele
 
-## Beispiele in Azure-Portal
-Sie können schnell bereitstellen, überprüfen und Testen einer Azure Data Factory Beispiel mithilfe der **Pipelines (Beispiel)** Blade im Azure-Portal.
+## Beispiele im Azure-Portal
+Auf dem Blatt **Beispielpipelines** im Azure-Portal können Sie ein Azure Data Factory-Beispiel schnell bereitstellen, überprüfen und testen.
 
-1. Erstellen Sie eine neue Data Factory, oder öffnen Sie eine Factory für die vorhandenen Daten. Finden Sie unter [Erste Schritte mit Azure Data Factory][data-factory-get-started] Schritte zum Erstellen einer Factory Daten.
-2. In der **DATA FACTORY** Blade für die Factory Daten klicken Sie auf die **Beispiel-Pipelines** Kachel.
+1. Erstellen Sie eine neue Data Factory, oder öffnen Sie eine vorhandene Data Factory. Unter [Erste Schritte mit Azure Data Factory][data-factory-get-started] finden Sie Schritte zum Erstellen einer Data Factory.
+2. Klicken Sie auf dem Blatt **DATA FACTORY** für die Data Factory auf die Kachel **Beispielpipelines**.
 
-	![Beispiel-Pipelines-Kachel](./media/data-factory-samples/SamplePipelinesTile.png)
+	![Kachel "Beispielpipelines"](./media/data-factory-samples/SamplePipelinesTile.png)
 
-2. In der **Beispiel-Pipelines** Blade, klicken Sie auf die **Beispiel** die Sie bereitstellen möchten.
+2. Klicken Sie auf dem Blatt **Beispielpipelines** auf das **Beispiel**, das Sie bereitstellen möchten.
 	
-	![Beispiele für Pipelines blade](./media/data-factory-samples/SampleTile.png)
+	![Blatt "Beispielpipelines"](./media/data-factory-samples/SampleTile.png)
 
-3. Geben Sie die Konfigurationseinstellungen für das Beispiel. Beispielsweise Ihre Azure-Speicher und Konto Zugriffsschlüssel, Azure SQL-Servername, Datenbank, Benutzer-ID und Kennwort usw....
+3. Geben Sie die Konfigurationseinstellungen für das Beispiel an. Hierzu zählen beispielsweise Ihr Azure-Speicherkonto und Ihre Kontoschlüssel, der Azure SQL-Servername, die Datenbank, die Benutzer-ID, das Kennwort usw.
 
-	![Beispiel-blade](./media/data-factory-samples/SampleBlade.png)
+	![Blatt "Beispiel"](./media/data-factory-samples/SampleBlade.png)
 
-4. Wenn Sie fertig sind, mit die Konfigurationseinstellungen angeben, klicken Sie auf **Erstellen** Erstellen/der Beispiel-Pipelines und verknüpfte von Pipelines verwendeten Dienste/Tabellen bereitstellen.
-5. Sehen Sie den Status der Bereitstellung auf der Beispielkachel geklickt haben weiter oben auf der **Beispiel-Pipelines** Blade.
+4. Wenn Sie mit den Konfigurationseinstellungen fertig sind, klicken Sie auf **Erstellen**, um die von den Pipelines verwendeten Beispielpipelines und verknüpften Dienste/Tabellen zu erstellen bzw. bereitstellen.
+5. Auf dem Blatt **Beispielpipelines** sehen Sie auf der Kachel "Beispiel", auf die Sie zuvor geklickt haben, den Status der Bereitstellung.
 
 	![Bereitstellungsstatus](./media/data-factory-samples/DeploymentStatus.png)
 
-6. Wenn angezeigt wird, die **Bereitstellung erfolgreich** Nachricht auf der Kachel für das Beispiel schließen die **Beispiel-Pipelines** Blade.
-5. Auf **DATA FACTORY** Blade, werden Sie feststellen, dass verknüpften Dienste, Datasets und Pipelines Ihrer Factory Daten hinzugefügt werden.  
+6. Wenn die Meldung **Bereitstellung erfolgreich** auf der Kachel für das Beispiel angezeigt wird, schließen Sie das Blatt **Beispielpipelines**.
+5. Auf dem Blatt **DATA FACTORY** erkennen Sie, dass Ihrer Data Factory verknüpfte Dienste, Datasets und Pipelines hinzugefügt wurden.  
 
-	![Daten-Factory-blade](./media/data-factory-samples/DataFactoryBladeAfter.png)
+	![Blatt "Data Factory"](./media/data-factory-samples/DataFactoryBladeAfter.png)
    
 
-Die folgende Tabelle enthält eine kurze Beschreibung der Beispiele zur Verfügung, in dem **Beispiel-Pipelines** Kachel.
+Die folgende Tabelle enthält eine kurze Beschreibung der Beispiele, die auf der Kachel **Beispielpipelines** zur Verfügung stehen.
 
 Name des Beispiels | description
 ----------- | -----------
-Gaming-Kunden, die Profilerstellung | Contoso ist ein Spiele-Unternehmen, das Spielen für mehrere Plattformen erstellt: game-Konsolen, tragbare Geräte und Computer (PCs). Jedes dieser Spiele erzeugt Unmengen von Protokollen. Contoso Ziel besteht darin, erfassen und Analysieren der durch diese Spiele erhalten Informationen zur Verwendung, Up-Selling und Cross-Selling-Möglichkeiten identifizieren, entwickeln neue überzeugende Features usw. erzeugten Protokolle... Verbesserung der geschäftlichen und Kunden eine bessere Benutzerfreundlichkeit bieten. In diesem Beispiel erfasst Beispielprotokolle, Prozesse und erweitert diese mit Verweisdaten und transformiert die Daten, um die Wirksamkeit einer Marketingkampagne zu evaluieren, die Contoso zuletzt gestartet wurde.
+Erstellen der Profile von Kunden eines Spieleherstellers | Contoso ist ein Spielehersteller, der Spiele für mehrere Plattformen entwickelt: Spielekonsolen, mobile Geräte und PCs. Jedes dieser Spiele erzeugt Unmengen von Protokollen. Ziel von Contoso ist es, die von diesen Spielen generierten Protokolle zu erfassen und zu analysieren, um Nutzungsinformationen zu erhalten, Up-Selling- und Cross-Selling-Möglichkeiten zu ermitteln, neue spannende Features zu entwickeln usw. Der Hersteller möchte auf diese Weise sein Geschäft und die Kundenerfahrung verbessern. Bei diesem Beispiel werden Beispielprotokolle gesammelt, verarbeitet und durch Verweisdaten ergänzt. Die Daten werden zur Bewertung der Effektivität einer vor Kurzem von Contoso gestarteten Marketingkampagne transformiert.
  
 ## Beispiele für GitHub
-Die [GitHub Azure-DataFactory Repository](https://github.com/azure/azure-datafactory) enthält mehrere Beispiele, mit denen Sie schnell auf dem neuesten Stand mit Azure Data Factory-Dienst (oder) ändern Sie die Skripts und in eigenen Anwendung verwenden. Der Ordner Samples\JSON enthält JSON-Ausschnitte für gängige Szenarios.
+Das [Azure-DataFactory-Repository auf GitHub](https://github.com/azure/azure-datafactory) enthält mehrere Beispiele, mit deren Hilfe Sie den Azure Data Factory-Dienst rasch in Betrieb nehmen können. Sie können die Skripts auch ändern, um sie in eigenen Anwendungen zu verwenden. Der Ordner "Samples\JSON" enthält JSON-Codeausschnitte für gängige Szenarien.
 
 [data-factory-get-started]: data-factory-get-started.md#CreateDataFactory
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

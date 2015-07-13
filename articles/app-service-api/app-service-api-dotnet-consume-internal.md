@@ -45,7 +45,7 @@ Für dieses Lernprogramm ist die Version 2.6 des Azure-SDK für .NET erforderlic
 
 1. Wenn Sie die erforderlichen Schritte noch nicht ausgeführt haben, befolgen Sie die Anweisungen des Lernprogramms [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md), um das Beispielprojekt "ContactsList" für eine API-App in Ihrem Azure-Abonnement bereitzustellen.
 
-2. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/)auf dem Blatt **API-App** für die API-App "ContactsList", die Sie zuvor bereitgestellt haben, auf **Einstellungen > Anwendungseinstellungen**, und legen Sie für **Zugriffsebene** die Option **Intern** fest. Klicken Sie anschließend auf  **Speichern**.
+2. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/)auf dem Blatt **API-App** für die API-App "ContactsList", die Sie zuvor bereitgestellt haben, auf **Einstellungen > Anwendungseinstellungen**, und legen Sie für **Zugriffsebene** die Option **Intern** fest. Klicken Sie anschließend auf **Speichern**.
 
 	![](./media/app-service-api-dotnet-consume-internal/setinternal.png)
  
@@ -263,4 +263,4 @@ In diesem Artikel haben Sie gelernt, wie Sie eine interne API-App aus einem .NET
 Um weitere Codebeispiele für den Aufruf einer API-App aus einem .NET-Client zu erhalten, laden Sie die [Azure Cards](https://github.com/Azure-Samples/API-Apps-DotNet-AzureCards-Sample)-Beispielanwendung herunter.
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

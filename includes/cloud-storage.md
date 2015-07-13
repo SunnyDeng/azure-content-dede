@@ -1,8 +1,8 @@
-# Datenverwaltung und Business Analytics
+#Datenverwaltung und Business Analytics
 
 Daten in der Cloud zu verwalten und zu analysieren, ist ebenso wichtig wie das Verwalten und Analysieren von Daten in anderen Zusammenhängen. Azure stellt Ihnen dafür eine Reihe von Technologien zum Arbeiten mit relationalen und nichtrelationalen Daten zur Verfügung. In diesem Artikel werden die verschiedenen Optionen vorgestellt.
 
-## Inhaltsverzeichnis      
+##Inhaltsverzeichnis      
 
 - [Blob-Speicher](#blob)
 - [Ausführen eines DBMS auf einem virtuellen Computer](#dbinvm)
@@ -108,7 +108,7 @@ Sobald eine Datenbank Daten enthält, gibt es wahrscheinlich das Bestreben, Beri
  
 **Abbildung 5: SQL Server Reporting Services in Azure Virtual Machines stellen Berichtsdienste für Daten in SQL-Datenbank bereit.**
 
-Bevor ein Benutzer einen Bericht sieht, wird festgelegt, wie der Bericht aussehen soll (Schritt 1). Mit SSRS auf einem virtuellen Computer kann dies mithilfe von zwei Tools geschehen: mit SQL Server Data Tools, Teil von SQL Server 2012, oder mit dessen Vorläufer Business Intelligence (BI) Development Studio.  Wie bei SSRS werden diese Berichtsdefinitionen in der Berichtsdefinitionssprache (Report Definition Language, RDL) geschrieben. Nachdem die RDL-Dateien für einen Bericht erstellt wurden, werden sie zu einem virtuellen Computer in der Cloud hochgeladen (Schritt 2). Die Berichtsdefinition kann jetzt verwendet werden.
+Bevor ein Benutzer einen Bericht sieht, wird festgelegt, wie der Bericht aussehen soll (Schritt 1). Mit SSRS auf einem virtuellen Computer kann dies mithilfe von zwei Tools geschehen: mit SQL Server Data Tools, Teil von SQL Server 2012, oder mit dessen Vorläufer Business Intelligence (BI) Development Studio. Wie bei SSRS werden diese Berichtsdefinitionen in der Berichtsdefinitionssprache (Report Definition Language, RDL) geschrieben. Nachdem die RDL-Dateien für einen Bericht erstellt wurden, werden sie zu einem virtuellen Computer in der Cloud hochgeladen (Schritt 2). Die Berichtsdefinition kann jetzt verwendet werden.
 
 Anschließend greift ein Benutzer der Anwendung auf den Bericht zu (Schritt 3). Die Anwendung gibt diese Anforderung an den virtuellen SSRS-Computer weiter (Schritt 4), der SQL-Datenbank oder andere Datenquellen kontaktiert, um die benötigten Daten abzurufen (Schritt 5). SSRS verwendet diese Daten und die entsprechenden RDL-Dateien, um den Bericht zu generieren (Schritt 6), und sendet den Bericht danach zur Anwendung zurück (Schritt 7), die ihn dem Benutzer anzeigt (Schritt 8).
 
@@ -181,4 +181,4 @@ Da generell gesehen alle Arten von Daten wichtig sind, enthält Azure verschiede
 [SQL-tblstor]: ./media/cloud-storage/Data_06_TblStorage.png
 [hadoop]: ./media/cloud-storage/Data_07_Hadoop.png
 
-<!--HONumber=52-->
+<!---HONumber=62-->

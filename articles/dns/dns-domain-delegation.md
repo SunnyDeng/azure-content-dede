@@ -28,7 +28,7 @@ Azure DNS ist ein Hostingdienst für DNS-Domänen. Damit DNS-Abfragen für eine 
 
 Eine Domäne ist ein eindeutiger Name im Domain Name System, z. B. "contoso.com". Eine Domänenregistrierungsstelle ist ein Unternehmen, das Internetdomänennamen anbieten kann. Das Unternehmen überprüft, ob die Internetdomäne, die Sie verwenden möchten, noch verfügbar ist, und ermöglicht es Ihnen, sie zu erwerben. Sobald der Domänenname registriert wurde, sind Sie der rechtmäßige Besitzer des Domänennamens. Wenn Sie bereits über eine Internetdomäne verfügen, verwenden Sie für die Delegierung an Azure DNS die aktuelle Domänenregistrierungsstelle.
 
->[AZURE.NOTE]Weitere Informationen zum Besitzer eines bestimmten Domänennamens oder zum Kaufen einer Domäne finden Sie unter Domänenregistrierungsstellen, Suchen und Kaufen einer Domäne.
+>[AZURE.NOTE]Weitere Informationen dazu, wer der Besitzer eines bestimmten Domänennamens ist, oder Informationen zum Kauf einer Domäne finden Sie im Thema zur [Verwaltung von Internetdomänen in Azure AD](https://msdn.microsoft.com/library/azure/hh969248.aspx).
 
 Eine DNS-Zone wird zum Hosten der DNS-Einträge für eine bestimmte Domäne verwendet. Die Domäne "contoso.com" kann beispielsweise mehrere DNS-Einträge, wie z. B. "mail.contoso.com" (für einen E-Mail-Server) und "www.contoso.com" (für eine Website), enthalten.
 
@@ -72,8 +72,8 @@ Zum Einrichten der Delegierung müssen Sie den Namenserver für die Zone kennen.
 
 Mithilfe von Azure PowerShell können die autoritativen NS-Einträge folgendermaßen abgerufen werden. (Der Eintragsname "@" wird verwendet, um auf Einträge an der Spitze der Zone zu verweisen.):
 
-	PS C:> $zone = New-AzureDnsZone –Name contoso.com –ResourceGroupName MyAzureResourceGroup
-	PS C:> Get-AzureDnsRecordSet –Name “@” –RecordType NS –Zone $zone
+	PS C:\> $zone = New-AzureDnsZone –Name contoso.com –ResourceGroupName MyAzureResourceGroup
+	PS C:\> Get-AzureDnsRecordSet –Name “@” –RecordType NS –Zone $zone
 
 	Name              : @
 	ZoneName          : contoso.com
@@ -93,7 +93,7 @@ Nach Abschluss der Delegierung können Sie überprüfen, ob die Namensauflösung
 
 Beachten Sie, dass Sie nicht die Azure DNS-Namenserver angeben müssen, da der normale DNS-Auflösungsvorgang die Namenserver automatisch findet, wenn die Delegierung ordnungsgemäß eingerichtet wurde.
 
-	PS C:> nslookup –type=SOA contoso.com
+	PS C:\> nslookup –type=SOA contoso.com
 
 	Server: ns1-04.azure-dns.com
 	Address: 208.76.47.4
@@ -119,22 +119,22 @@ Der einzige Unterschied besteht darin, dass in Schritt 3 die NS-Datensätze in 
 
 Das folgende PowerShell-Beispiel dient als Veranschaulichung. Wir erstellen zuerst die übergeordnete und die untergeordnete Zone, die sich in der gleichen Ressourcengruppe oder in unterschiedlichen Ressourcengruppen befinden können:
 
-	PS C:> $parent = New-AzureDnsZone -Name contoso.com -ResourceGroupName RG1
-	PS C:> $child = New-AzureDnsZone -Name partners.contoso.com -ResourceGroupName RG1
+	PS C:\> $parent = New-AzureDnsZone -Name contoso.com -ResourceGroupName RG1
+	PS C:\> $child = New-AzureDnsZone -Name partners.contoso.com -ResourceGroupName RG1
 
 Dann rufen wir die autoritativen NS-Datensätze aus der untergeordneten Zone ab:
 
-	PS C:> $child_ns_recordset = Get-AzureDnsRecordSet -Zone $child -Name "@" -RecordType NS
+	PS C:\> $child_ns_recordset = Get-AzureDnsRecordSet -Zone $child -Name "@" -RecordType NS
 
 Schließlich erstellen wir den entsprechenden NS-Datensatz in der übergeordneten Zone, um die Delegierung abzuschließen (Beachten Sie, dass der Name des Datensatzes in der übergeordneten Zone mit dem Namen in der untergeordneten Zone übereinstimmt, in diesem Fall "partners"):
 
-	PS C:> $parent_ns_recordset = New-AzureDnsRecordSet -Zone $parent -Name "partners" -RecordType NS -Ttl 3600
-	PS C:> $parent_ns_recordset.Records = $child_ns_recordset.Records
-	PS C:> Set-AzureDnsRecordSet -RecordSet $parent_ns_recordset 
+	PS C:\> $parent_ns_recordset = New-AzureDnsRecordSet -Zone $parent -Name "partners" -RecordType NS -Ttl 3600
+	PS C:\> $parent_ns_recordset.Records = $child_ns_recordset.Records
+	PS C:\> Set-AzureDnsRecordSet -RecordSet $parent_ns_recordset 
 
 Wie beim Delegieren mithilfe einer Registrierungsstelle können wir überprüfen, ob alles ordnungsgemäß eingerichtet ist, indem wir den SOA-Datensatz der untergeordneten Zone suchen:
 
-	PS C:> nslookup –type=SOA partners.contoso.com
+	PS C:\> nslookup –type=SOA partners.contoso.com
 	
 	Server: ns1-08.azure-dns.com
 	Address: 208.76.47.8
@@ -161,4 +161,4 @@ Wie beim Delegieren mithilfe einer Registrierungsstelle können wir überprüfen
 [REST-API-Referenz für Azure DNS](https://msdn.microsoft.com/library/azure/mt163862.aspx)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

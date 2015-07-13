@@ -1,35 +1,36 @@
 
 
->[AZURE.NOTE]To complete this procedure, you must have a Google account that has a verified email address. To create a new Google account, go to <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>.
+>[AZURE.NOTE]Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um diesen Vorgang abzuschließen. Besuchen Sie die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>, um ein neues Google-Konto zu erstellen.
 
 
-1. Navigate to the <a href="http://cloud.google.com/console" target="_blank">Google Cloud Console</a> website, sign-in with your Google account credentials, and then click **Create Project**.
+1. Navigieren Sie zur Website <a href="http://cloud.google.com/console" target="_blank">Google Cloud Console</a>, melden Sie sich mit den Anmeldeinformationen für Ihr Google-Konto an, und klicken Sie dann auf **Create Project**.
 
-   	![](./media/notification-hubs-android-get-started/mobile-services-google-new-project.png)   
+   	![](./media/notification-hubs-android-get-started/mobile-services-google-new-project.png)
 
-	>[AZURE.NOTE]When you already have an existing project, you are directed to the <strong>Projects</strong> page after login. To create a new project from the Dashboard, expand <strong>API Project</strong>, click <strong>Create...</strong> under <strong>Other projects</strong>, then enter a project name and click <strong>Create project</strong>.
+	>[AZURE.NOTE]Wenn Sie bereits über ein Projekt verfügen, werden Sie nach der Anmeldung zur Seite <strong>Projects</strong> weitergeleitet. Wenn Sie über das Dashboard ein neues Projekt erstellen möchten, erweitern Sie <strong>API Project</strong>, klicken Sie unter <strong>Other projects</strong> auf <strong>Create...</strong>, geben Sie einen Projektnamen ein, und klicken Sie auf <strong>Create project</strong>.
 
-2. Enter a project name, accept the terms of service, and click **Create**. If requested, carry out the SMS Verification, and click **Create** again.
+2. Geben Sie einen Projektnamen ein, akzeptieren Sie die Nutzungsbedingungen, und klicken Sie auf **Create**. Führen, falls angefordert, die SMS-Verifizierung aus, und klicken Sie erneut auf **Create**.
 
-3. Make a note of the project number in the **Projects** section. 
+3. Notieren Sie sich die Projektnummer im Abschnitt **Projects**.
 
-	Later in the tutorial you set this value as the PROJECT_ID variable in the client.
+	Zu einem späteren Zeitpunkt im Lernprogramm legen Sie diesen Wert im Client als PROJECT_ID-Variable fest.
 
-4. In the left column, expand **APIs & auth**, click **APIs** then scroll down and click the toggle to enable **Google Cloud Messaging for Android** and accept the terms of service. 
+4. Erweitern Sie in der linken Spalte **APIs & auth**, klicken Sie auf **APIs**, scrollen Sie anschließend nach unten, klicken Sie auf die Umschaltfläche, um **Google Cloud Messaging for Android** zu aktivieren, und akzeptieren Sie die Nutzungsbedingungen.
 
 	![](./media/notification-hubs-android-get-started/mobile-services-google-enable-GCM.png)
 
-5. Click **Credentials**, and then click **Create new Key** 
+5. Klicken Sie auf **Credentials** und anschließend auf **Create new Key**.
 
    	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key.png)
 
-6. In **Create a new key**, click **Server key**. In the next window click **Create**.
+6. Klicken Sie in **Create a new key** auf **Server key**. Klicken Sie im nächsten Fenster auf **Create**.
 
    	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key2.png)
 
-7. Make a note of the **API KEY** value.
+7. Notieren Sie sich den **API KEY**-Wert.
 
-   	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key3.png) 
+   	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key3.png)
 
-	You will use this API key value to enable Azure to authenticate with GCM and send push notifications on behalf of your app.
+	Mit diesem API-Schlüsselwert geben Sie Azure die Möglichkeit, sich bei GCM zu authentifizieren und Pushbenachrichtigungen im Auftrag Ihrer App zu verschicken.
 
+<!---HONumber=62-->

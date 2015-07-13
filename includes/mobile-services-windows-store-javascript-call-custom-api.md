@@ -1,13 +1,13 @@
-﻿
+
 ##<a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
-1. Öffnen Sie die Datei "default.html" in Ihrem Schnellstartprojekt in Visual Studio, suchen Sie die **Schaltfläche** Element mit dem Namen `buttonRefresh`, und fügen Sie das folgende neue Element direkt dahinter: 
+1. Öffnen Sie die Datei "default.html" in Ihrem Schnellstartprojekt in Visual Studio, suchen Sie das **Schaltflächen**-Element mit dem Namen `buttonRefresh`, und fügen Sie das folgende neue Element direkt dahinter: 
 
 		<button id="buttonCompleteAll" style="margin-left: 5px">Complete All</button>
 
-	Auf diese Weise wird eine neue Schaltfläche zur Seite hinzugefügt. 
+	Auf diese Weise wird eine neue Schaltfläche zur Seite hinzugefügt.
 
-2. Öffnen Sie die Codedatei "default.js" im Projektordner  `js`, suchen Sie die **refreshTodoItems**-Funktion, und stellen Sie sicher, dass diese Funktion den folgenden Code enthält:
+2. Öffnen Sie die Codedatei "default.js" im `js`-Projektordner , suchen Sie die** refreshTodoItems**-Funktion, und stellen Sie sicher, dass diese Funktion den folgenden Code enthält:
 
 	    todoTable.where({ complete: false })
 	       .read()
@@ -18,7 +18,7 @@
 
 	Hierdurch werden die Elemente so gefiltert, dass abgeschlossene Elemente von der Abfrage nicht zurückgegeben werden.
 
-3. Nach der **refreshTodoItems**-Funktion fügen Sie den folgenden Code hinzu:
+3. Nach der Funktion **refreshTodoItems** fügen Sie den folgenden Code ein:
 
 		var completeAllTodoItems = function () {
 		    var okCommand = new Windows.UI.Popups.UICommand("OK");
@@ -46,13 +46,13 @@
             completeAllTodoItems();
         });
 
-	Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die **InvokeApiAsync**-Methode wird auf dem Client aufgerufen und sendet eine POST-Anforderung an die neue benutzerdefinierte API. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
+	Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die **InvokeApiAsync**-Methode wird beim Client aufgerufen, der eine POST-Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
 
 ## <a name="test-app"></a>Testen der App
 
-1. Drücken Sie in Visual Studio die **F5**-Taste, um das Projekt neu zu erstellen, und starten Sie die App.
+1. Drücken Sie in Visual Studio die **F5**-Taste, um das Projekt neu zu erstellen und die App zu starten.
 
-2. Geben Sie in der App einen Text in **Insert a TodoItem** ein, und klicken Sie dann auf **Speichern**.
+2. Geben Sie in der App in **Insert a TodoItem** Text ein, und klicken Sie dann auf **Save**.
 
 3. Wiederholen Sie den vorherigen Schritt, bis Sie der Liste mehrere todo-Einträge hinzugefügt haben.
 
@@ -62,5 +62,4 @@
 
 	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
 
-
-<!--HONumber=52-->
+<!---HONumber=62-->

@@ -1,5 +1,5 @@
 
-##<a name="storage-client-server"></a>Installieren des Speicherclients im Projekt für den mobilen Dienst 
+##<a name="storage-client-server"></a>Installieren des Speicherclients im Projekt für den mobilen Dienst
 
 Um eine SAS für das Hochladen von Bildern in den Blob-Speicher generieren zu können, müssen Sie zuerst das NuGet-Paket hinzufügen, das die Speicherclientbibliothek für Windows Store-Apps installiert.
 
@@ -11,7 +11,7 @@ Um eine SAS für das Hochladen von Bildern in den Blob-Speicher generieren zu k�
 
   	Die Clientbibliothek für Azure-Speicherdienste wird dem Projekt für den mobilen Dienst hinzugefügt.
 
-##<a name="update-data-model"></a>Aktualisieren der TodoItem-Definition im Datenmodell 
+##<a name="update-data-model"></a>Aktualisieren der TodoItem-Definition im Datenmodell
 
 Die TodoItem-Klasse definiert das Datenobjekt, und Sie müssen dieser Klasse dieselben Eigenschaften hinzufügen, die Sie dem Client hinzugefügt haben.
 
@@ -127,20 +127,9 @@ Als Nächstes aktualisieren Sie die Quickstart-App, um unter Verwendung der beim
 <!-- Anchors. -->
 
 <!-- Images. -->
-[0]: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-account.png
-[1]: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-account-keys.png
-
-[3]: ./media/mobile-services-configure-blob-storage/mobile-portal-data-tables.png
-[4]: ./media/mobile-services-configure-blob-storage/mobile-insert-script-blob.png
-
-
-
-
-
-[10]: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-app-settings.png
 
 <!-- URLs. -->
-[So erstellen Sie ein Speicherkonto]: /manage/services/storage/how-to-create-a-storage-account
+[So erstellen Sie ein Speicherkonto]: ../articles/storage/storage-create-storage-account.md
 [App-Einstellungen]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!--HONumber=54-->
+<!---HONumber=62-->

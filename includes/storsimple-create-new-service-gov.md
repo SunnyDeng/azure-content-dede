@@ -1,21 +1,3 @@
-<properties 
-   pageTitle="Erstellen eines neuen StorSimple-Manager-Diensts"
-   description="Beschreibt das Erstellen einer neuen Instanz des StorSimple-Manager-Diensts mithilfe des Azure-Behördenportals."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="05/20/2015"
-   ms.author="v-sharos" />
-
-
 #### So erstellen Sie einen neuen Dienst
 
 1. Melden Sie sich mithilfe Ihrer Microsoft-Kontoanmeldeinformationen beim [Microsoft Azure-Behördenportal](https://manage.windowsazure.us/) an.
@@ -35,4 +17,4 @@
  
        ![Diensterstellung](./media/storsimple-create-new-service-gov/HCS_StorSimpleManagerServicePage-gov-include.png)
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

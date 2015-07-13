@@ -1,28 +1,24 @@
-<properties writer="kathydav" editor="tysonn" manager="timlt" />
+#Trennen eines Datenträgers von einem virtuellen Computer mithilfe der CLI
+
+Wenn Sie einen Datenträger, der an einen virtuellen Computer angefügt ist, nicht mehr benötigen, können Sie ihn leicht trennen. Dadurch wird der Datenträger von dem virtuellen Computer entfernt, aber nicht aus dem Speicher. Wenn Sie die vorhandenen Daten erneut auf dem Datenträger verwenden möchten, können Sie ihn erneut an denselben virtuellen Computer oder an einen anderen anfügen.
+
+> [AZURE.NOTE]Ein virtueller Computer in Azure verwendet verschiedene Arten von Datenträgern wie Betriebssystemfestplatten, lokale temporäre Festplatten und optionale Datenträger. Datenträger sind die empfohlene Möglichkeit zum Speichern von Daten für einen virtuellen Computer. Unter [Datenträger und Images verwalten](http://go.microsoft.com/fwlink/p/?LinkId=263439) finden Sie Details in Bezug auf Datenträger. Es ist derzeit nicht möglich, eine Betriebssystemfestplatte zu trennen.
 
 
-
-#How to Detach a Data Disk from a Virtual Machine with the CLI
-
-When you no longer need a data disk that is attached to a virtual machine, you can easily detach it. This removes the disk from the virtual machine, but doesn't remove it from storage. If you want to use the existing data on the disk again, you can reattach it to the same virtual machine, or another one.
-
-> [AZURE.NOTE] A virtual machine in Azure uses different types of disks: an operating system disk, a local temporary disk, and optional data disks. Data disks are the recommended way to store data for a virtual machine. For details about disks, see [About disks and images](http://go.microsoft.com/fwlink/p/?LinkId=263439). It is not currently possible to detach an operating system disk.
-
-
-1. Get the list of disks attached to your VM:
+1. Rufen Sie die Liste der Datenträger ab, die an Ihren virtuellen Computer angefügt sind:
 
         vm disk list <vm-name>
 
-    If you omit `<vm-name>`, you will get a list of all disks in your subscription.
+    Wenn Sie `<vm-name>` weglassen, erhalten Sie eine Liste aller Datenträger in Ihrem Abonnement.
 
 
-2. Detach a disk:
+2. Trennen eines Datenträgers:
 
         vm disk detach <vm-name> <lun>
 
-    `lun` identifies the disk to be detached, and will be a number which can be found in your VM's disk list.
+    `lun` identifiziert den zu trennenden Datenträger und wird in Form einer Nummer angegeben, die Sie in der Datenträgerliste für Ihren virtuellen Computer finden.
 
-Sample walkthrough including terminal output:
+Exemplarische Vorgehensweise einschließlich Terminalausgabe:
 
     ~$ azure vm disk list kmlinux
     info:    Executing command vm disk list
@@ -50,3 +46,5 @@ Sample walkthrough including terminal output:
     data:         30        kmlinux-kmlinux-2015-02-05.vhd          Linux
     data:    1    5         kmlinux-f8ef0006ab182209.vhd
     info:    vm disk list command OK
+
+<!---HONumber=62-->

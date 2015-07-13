@@ -204,9 +204,9 @@ Die Azure-Befehlszeilenschnittstelle erstellt einen virtuellen Computer mit Stan
 
 	>[AZURE.NOTE]Falls Sie die Vorlage ändern, überprüfen Sie sie anschließend mit dem Befehl `azure group template validate`, bevor Sie damit eine Ressourcengruppe erstellen oder eine bereits vorhandene Ressourcengruppe ändern.
 
-4. Um die Ressourcengruppenvorlage für Ihre Verwendung zu konfigurieren, öffnen Sie die Vorlagendatei in einem Text-Editor. Beachten Sie die JSON-Parametersammlung am oberen Rand. Diese enthält eine Liste der Parameter, die diese Vorlage erwartet, um die von der Vorlage beschriebenen Ressourcen zu erstellen. Einige Parameter besitzen unter Umständen Standardwerte, andere geben dagegen die Art des Werts oder einen zulässigen Wertebereich an.
+4. Um die Ressourcengruppenvorlage für Ihre Verwendung zu konfigurieren, öffnen Sie die Vorlagendatei in einem Text-Editor. Beachten Sie die **JSON-Parametersammlung** am oberen Rand. Diese enthält eine Liste der Parameter, die diese Vorlage erwartet, um die von der Vorlage beschriebenen Ressourcen zu erstellen. Einige Parameter besitzen unter Umständen Standardwerte, andere geben dagegen die Art des Werts oder einen zulässigen Wertebereich an.
 
-	Wenn Sie eine Vorlage verwenden, können Sie Parameter als Teil der Befehlszeilenparameter bereitstellen oder eine Datei angeben, die die Parameterwerte enthält. Wertfelder können zwar auch direkt in den Parameterabschnitt der Vorlage geschrieben werden, dadurch wird die Vorlage allerdings stark an eine bestimmte Bereitstellung gebunden und lässt sich nicht mehr ohne Weiteres wiederverwenden. In beiden Fällen müssen die Parameter im JSON-Format sein und Sie müssen Ihre eigenen Werte für solche Schlüssel angeben, die nicht über Standardwerte verfügen.
+	Wenn Sie eine Vorlage verwenden, können Sie Parameter als Teil der Befehlszeilenparameter bereitstellen oder eine Datei angeben, die die Parameterwerte enthält. Wertfelder** können** zwar auch direkt in den **Parameterabschnitt** der Vorlage geschrieben werden, dadurch wird die Vorlage allerdings stark an eine bestimmte Bereitstellung gebunden und lässt sich nicht mehr ohne Weiteres wiederverwenden. In beiden Fällen müssen die Parameter im JSON-Format sein und Sie müssen Ihre eigenen Werte für solche Schlüssel angeben, die nicht über Standardwerte verfügen.
 
 	Wenn Sie also beispielsweise eine Datei mit den Parametern für die Vorlage **CoreOS.CoreOSStable.0.2.40-preview** erstellen möchten, können Sie auf der Grundlage der folgenden Daten eine Datei namens **params.json** erstellen. Ersetzen Sie die Werte in diesem Beispiel durch Ihre eigenen Werte. Geben Sie für **Location** eine Azure-Region in Ihrer Nähe an (beispielsweise **North Europe** oder **South Central US**). In diesem Beispiel wird **West US** verwendet.
 
@@ -313,7 +313,7 @@ Auch wenn Vorlagen es Ihnen ermöglichen, gruppenweite Änderungen an der Konfig
 
 		azure resource show "testRG" "testHost" Microsoft.ClassicCompute/virtualMachines -o "2014-06-01" --json
 
-	>[AZURE.NOTE]Sie können die JSON-Daten in einer Datei speichern. Verwenden Sie dazu das Zeichen „ &gt;“, um die Ausgabe in die Datei zu leiten. Zum Beispiel:
+	>[AZURE.NOTE]Sie können die JSON-Daten in einer Datei speichern. Verwenden Sie dazu das Zeichen „ &gt;“, um die Ausgabe in die Datei zu leiten. Beispiel:
 	>
 	> `azure resource show "testRG" "testHost" Microsoft.ClassicCompute/virtualMachines -o "2014-06-01" --json > myfile.json`
 

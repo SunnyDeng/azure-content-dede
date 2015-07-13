@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/02/2015" 
+	ms.date="06/16/2015"
 	ms.author="adegeo"/>
 
 
@@ -152,5 +152,6 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 
 > [AZURE.NOTE]Wenn für den Cloud-Dienst die ausführliche Überwachung konfiguriert ist, löscht Azure die Überwachungsdaten aus Ihrem Speicherkonto nicht, wenn Sie den Cloud-Dienst löschen. Sie müssen die Daten manuell löschen. Informationen zum Speicherort der Metriktabellen finden Sie unter "Zugreifen auf ausführliche Überwachungsdaten außerhalb des Verwaltungsportals" in <a href="http://azure.microsoft.com/documentation/articles/cloud-services-how-to-monitor/">Überwachen von Clouddiensten</a>.
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

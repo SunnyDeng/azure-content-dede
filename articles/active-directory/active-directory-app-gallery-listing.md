@@ -51,10 +51,11 @@ Nach Abschluss der Tests kann die Anwendung im Azure Active Directory-Anwendungs
 >
 > Wählen Sie bis zu drei Kategorien, unter denen Ihre Anwendung aufgelistet wird (verfügbare Kategorien finden Sie im [Azure Active Directory Marketplace](http://go.microsoft.com/fwlink/?LinkId=327881)):
 >
-> Kleines Anwendungssymbol einfügen (PNG-Datei, 45 px mal 45 px,  Volltonfarbe für den Hintergrund):
+> Kleines Anwendungssymbol einfügen (PNG-Datei, 45 px mal 45 px, Volltonfarbe für den Hintergrund):
 >
-> Großes Anwendungssymbol einfügen (PNG-Datei, 215 px mal 215 px,  Volltonfarbe für den Hintergrund):
+> Großes Anwendungssymbol einfügen (PNG-Datei, 215 px mal 215 px, Volltonfarbe für den Hintergrund):
 >
 > Logo einfügen (PNG-Datei, 150 px mal 122 px, transparente Hintergrundfarbe):
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

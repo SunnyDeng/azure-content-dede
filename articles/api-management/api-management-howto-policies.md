@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/16/2015" 
+	ms.date="06/24/2015" 
 	ms.author="sdanie"/>
 
 
@@ -25,9 +25,7 @@ In der [Richtlinienreferenz][] finden Sie eine komplette Liste der Richtlinienan
 
 Richtlinien werden im Proxy angewendet, der sich zwischen API-Consumer und der verwalteten API befindet. Der Proxy empfängt alle Anfragen und leitet diese normalerweise unverändert an die zugrunde liegende API weiter. Richtlinien können jedoch Änderungen an der eingehenden Anfrage und an der ausgehenden Antwort vornehmen.
 
-Richtlinienausdrücke können als Attributwerte oder Textwerte in einer beliebigen API Management-Richtlinie verwendet werden, sofern in der Richtlinie nicht anders angegeben. Einige Richtlinien, beispielsweise [Ablaufsteuerung][] und [Variable festlegen][], basieren auf Richtlinienausdrücken. Weitere Informationen finden Sie unter [Erweiterte Richtlinien][], [Richtlinienausdrücke][] und im folgenden Video.
-
-> [AZURE.VIDEO policy-expressions-in-azure-api-management]
+Richtlinienausdrücke können als Attributwerte oder Textwerte in einer beliebigen API Management-Richtlinie verwendet werden, sofern in der Richtlinie nicht anders angegeben. Einige Richtlinien, beispielsweise [Ablaufsteuerung][] und [Variable festlegen][], basieren auf Richtlinienausdrücken. Weitere Informationen finden Sie unter [Erweiterte Richtlinien][] und [Richtlinienausdrücke][].
 
 ## <a name="scopes"> </a>Konfigurieren von Richtlinien
 Richtlinien können entweder global oder im Geltungsbereich eines [Produkts][], einer [API][] oder einer [Operation][] konfiguriert werden. Um Richtlinien zu konfigurieren, navigieren Sie zum Richtlinien-Editor im Veröffentlichungsportal.
@@ -105,6 +103,12 @@ Wenn Sie z. B. eine Richtlinie auf der globalen Ebene und eine Richtlinie für e
 In der obigen Beispiel-Richtliniendefinition würde die domänenübergreifende Anweisung vor allen übergeordneten Richtlinien ausgeführt, die wiederum von der "Suchen und ersetzen"-Richtlinie gefolgt werden.
 
 Hinweis: Eine globale Richtlinie besitzt keine übergeordnete Richtlinie, und die Verwendung des `<base>`-Elements in der Richtlinie hat keinerlei Auswirkung.
+
+## Nächste Schritte
+
+Sehen Sie sich das folgende Video zu Richtlinienausdrücken an.
+
+> [AZURE.VIDEO policy-expressions-in-azure-api-management]
 
 [Richtlinienreferenz]: api-management-policy-reference.md
 [Produkts]: api-management-howto-add-products.md

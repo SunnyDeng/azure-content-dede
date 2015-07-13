@@ -53,11 +53,11 @@ Sobald Ihre API-App erstellt wurde, können Sie den Yammer-Connector als Trigger
  
 ![][3]
  
-3.	Der Yammer-Connector wird im Abschnitt "API Apps in this resource group" im Katalog auf der rechten Seite angezeigt.
+3.	Der Yammer-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt.
  
 ![][4]
  
-4. Sie können die Yammer-Connector-API-App im Editor bearbeiten, indem Sie auf "Yammer-Connector" klicken. Klicken Sie auf die Schaltfläche "Autorisieren". Geben Sie Ihre Yammer-Anmeldeinformationen an. Klicken Sie auf "Zulassen".
+4. Sie können die Yammer-Connector-API-App im Editor bearbeiten, indem Sie auf den "Yammer-Connector" klicken. Klicken Sie auf die Schaltfläche "Autorisieren". Geben Sie Ihre Yammer-Anmeldeinformationen an. Klicken Sie auf "Zulassen".
 
 ![][5]
  
@@ -71,7 +71,7 @@ Sie können nun den Yammer-Connector im Datenfluss verwenden.
 
 1.	 Sie können die aus dem Yammer-Trigger ("Neue Nachricht") abgerufene neue Nachricht für andere Aktionen im Datenfluss verwenden. Konfigurieren Sie die Eingabeeigenschaften des Yammer-Triggers wie folgt:
 
-	- **Gruppen-ID** - die ID der Gruppe, aus der die neue Nachricht abgerufen werden soll. Wenn die Gruppen-ID nicht angegeben wird, wird die Nachricht aus dem folgenden Feed abgerufen. Die Gruppen-ID kann von der Gruppen-URL in Yammer abgerufen werden. Beispiel: Die Gruppen-ID in der folgenden URL lautet "5453203" https://www.yammer.com/microsoft.com/#/threads/inGroup?type=in_group&feedId=5453203
+	- **Gruppen-ID** - die ID der Gruppe, aus der die neue Nachricht abgerufen werden soll. Wenn die Gruppen-ID nicht angegeben wird, wird die Nachricht aus dem folgenden Feed abgerufen. Die Gruppen-ID kann aus der Gruppen-URL in Yammer abgerufen werden. Beispiel: Die Gruppen-ID in der folgenden URL lautet "5453203" https://www.yammer.com/microsoft.com/#/threads/inGroup?type=in_group&feedId=5453203
 
 	![][8]
  
@@ -82,7 +82,7 @@ Sie können nun den Yammer-Connector im Datenfluss verwenden.
 6.	Sie können den Yammer-Connector auch als Aktion in Ihren Logik-Apps verwenden. Zunächst geben Sie einen Trigger für Ihre Logik-App an oder Sie aktivieren "Diese Logik manuell ausführen" (siehe unten). Fügen Sie den Yammer-Connector hinzu, autorisieren Sie ihn nach Bedarf, und wählen Sie die Aktion "Nachricht bereitstellen". Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Nachricht bereitstellen" wie folgt:
 
 	- **Nachrichtentext** - Textinhalt der bereitzustellenden Nachricht.
-	- **Gruppen-ID** - Gibt die ID der Gruppe an, in der die neue Nachricht bereitgestellt werden soll. Wenn die Gruppen-ID nicht angegeben wird, wird die Nachricht im Feed für das gesamte Unternehmen bereitgestellt. Die Gruppen-ID kann von der Gruppen-URL in Yammer abgerufen werden. Beispiel: Die Gruppen-ID in der folgenden URL lautet "5453203" https://www.yammer.com/microsoft.com/#/threads/inGroup?type=in_group&feedId=5453203
+	- **Gruppen-ID** - Gibt die ID der Gruppe an, in der die neue Nachricht bereitgestellt werden soll. Wenn die Gruppen-ID nicht angegeben wird, wird die Nachricht im Feed für das gesamte Unternehmen bereitgestellt. Die Gruppen-ID kann aus der Gruppen-URL in Yammer abgerufen werden. Beispiel: Die Gruppen-ID in der folgenden URL lautet "5453203" https://www.yammer.com/microsoft.com/#/threads/inGroup?type=in_group&feedId=5453203
 	- 	**Tag Users** - Ein Bereich von Netzwerkbenutzernamen, die in der Nachricht markiert werden müssen. 
 
 	![][10]

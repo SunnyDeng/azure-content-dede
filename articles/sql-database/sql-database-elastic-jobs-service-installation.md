@@ -40,7 +40,7 @@ Wechseln Sie zunächst zum [Azure-Vorschauportal](https://ms.portal.azure.com/#)
 5. Geben Sie einen Benutzernamen und ein Kennwort für einen Datenbankadministrator ein. Wenn bereits ein allgemeiner Benutzer für die Skriptausführung in jeder Datenbank im elastischen Datenbankpool vorhanden ist, sollten Sie möglicherweise diesen Benutzer verwenden, um die Anforderung aufzuheben, dass jeder Datenbank für die Skriptausführung ein neuer Benutzer hinzugefügt werden muss. Im Rahmen der Installation wird ein neuer Azure SQL-Datenbank-Server erstellt. Auf diesem neuen Server wird eine neue Datenbank erstellt, die als Verwaltungsdatenbank bezeichnet wird und die Metadaten für elastische Datenbankaufträge enthält. Den Benutzernamen und das Kennwort, die hier erstellt wurden, werden für zwei Zwecke verwendet: (1) zur Anmeldung bei der Verwaltungsdatenbank und (2) zur Anmeldung bei den einzelnen Datenbanken im elastischen Pool, wenn Sie einen Auftrag für die Skriptausführung durchführen.
  
 	![Erstellen von Benutzername und Kennwort][2]
-6. Klicken Sie auf die Schaltfläche "OK". Die Komponenten werden in wenigen Minuten in einer neuen [Ressourcengruppe](../resource-group-portal.md) erstellt. Die neue Ressourcengruppe wird an das Startmenü angeheftet, wie unten dargestellt. Nach der Erstellung werden alle elastischen Datenbankaufträge (Cloud Service, SQL-Datenbank, Service Bus und Storage) in der Gruppe erstellt.
+6. Klicken Sie auf die Schaltfläche "OK". Die Komponenten werden in wenigen Minuten in einer neuen [Ressourcengruppe](../resource-group-portal.md) erstellt. Die neue Ressourcengruppe wird an Start angeheftet, wie unten dargestellt. Nach der Erstellung werden alle elastischen Datenbankaufträge (Cloud Service, SQL-Datenbank, Service Bus und Storage) in der Gruppe erstellt.
 
 	![Ressourcengruppe unter Start][3]
 
@@ -61,5 +61,6 @@ Wenn neue Anmeldeinformationen bei der Installation der elastischen Datenbankauf
 [2]: ./media/sql-database-elastic-jobs-service-installation/credentials.png
 [3]: ./media/sql-database-elastic-jobs-service-installation/start-board.png
 [4]: ./media/sql-database-elastic-jobs-service-installation/incomplete.png
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

@@ -37,32 +37,32 @@ Wenn Sie den Batch-Dienst verwenden, nutzen Sie die folgenden Ressourcen:
 
 - [Konto](#account)
 
-- [TVM](#taskvm)
+- [Virtueller Aufgabencomputer](#taskvm)
 
 - [Pool](#pool)
 
-- [WorkItem](#workitem)
+- [Arbeitselement](#workitem)
 
-- [Auftrag](#job)
+- [Job](#job)
 
-- [Task](#task)
+- [Aufgabe](#task)
 
-	- [Aufgabe starten](#starttask)
+	- [Startaufgabe](#starttask)
 	
-	- [Auftrag ManagerTask](#jobmanagertask)
+	- [Auftrags-Manager-Aufgabe](#jobmanagertask)
 
 ### <a name="account"></a>Konto
 
-Ein Batch-Konto ist eine eindeutig identifizierte Entität innerhalb des Batch-Diensts. Die gesamte Verarbeitung erfolgt über ein Batch-Konto. Beim Ausführen von Operationen mit dem Batch-Dienst benötigen Sie den Kontonamen und den Schlüssel für das Konto. Zum Erstellen einer Batch-Kontos finden Sie im Batch Kontoabschnitt [Übersicht über die Azure-Batch][].
+Ein Batch-Konto ist eine eindeutig identifizierte Entität innerhalb des Batch-Diensts. Die gesamte Verarbeitung erfolgt über ein Batch-Konto. Beim Ausführen von Operationen mit dem Batch-Dienst benötigen Sie den Kontonamen und den Schlüssel für das Konto. Informationen zum Erstellen eines Batch-Kontos finden Sie unter [Azure Batch – Technische Übersicht][] im Abschnitt „Batch-Konto“.
 
 
-### <a name="taskvm"></a>TVM
+### <a name="taskvm"></a>Virtueller Aufgabencomputer
 
-Ein virtueller Aufgabencomputer (Virtual Task Machine, TVM) ist ein virtueller Azure-Computer, der für Ihre Anwendung für eine bestimmte Arbeitsauslastung vorgesehen ist. Die Größe eines virtuellen Aufgabencomputers bestimmt die Anzahl der CPU-Kerne, die Speicherkapazität und die lokale Dateisystemgröße, die dem virtuellen Aufgabencomputer zugeordnet werden. Eine TVM kann klein und Groß oder extralarge VM sein [Größen virtueller Computer und Cloud-Dienst für Azure](http://msdn.microsoft.com/library/dn197896.aspx).
+Ein virtueller Aufgabencomputer (Virtual Task Machine, TVM) ist ein virtueller Azure-Computer, der für Ihre Anwendung für eine bestimmte Workload vorgesehen ist. Die Größe eines virtuellen Aufgabencomputers bestimmt die Anzahl der CPU-Kerne, die Speicherkapazität und die lokale Dateisystemgröße, die dem virtuellen Aufgabencomputer zugeordnet werden. Ein virtueller Aufgabencomputer kann ein kleiner, großer oder sehr großer virtueller Computer sein, wie unter [Größen virtueller Computer und Cloud-Dienste für Azure](http://msdn.microsoft.com/library/dn197896.aspx) beschrieben.
 
 Die von einem virtuellen Aufgabencomputer ausführbaren Programme umfassen ausführbare Dateien (EXE), Befehlsdateien (CMD), Batchdateien (BAT) und Skriptdateien. Ein virtueller Aufgabencomputer verfügt außerdem über die folgenden Attribute:
 
-- Dateisystemordner aufgabenspezifischen und freigegeben sind. Eine Ordner-Struktur und die Umgebungsvariablen werden auf jeder Pool virtueller Computer erstellt. Die folgende Ordnerstruktur wird mit "Freigabe" für Anwendungen und Daten, die gemeinsam von Aufgaben sowie einen Ordner für jede Aufgabe erstellt.
+- Aufgabenspezifische und freigegebene Dateisystemordner. Ordnerstruktur und Umgebungsvariablen werden auf jedem virtuellen Poolcomputer erstellt. Die folgende Ordnerstruktur wird mit einem freigegebenen Ordner für gemeinsam genutzte Anwendungen und Daten sowie mit jeweils einem Ordner pro Aufgabe erstellt:
 
 ![][1]
 
@@ -74,14 +74,14 @@ Die von einem virtuellen Aufgabencomputer ausführbaren Programme umfassen ausf�
 
 >Zugriff auf virtuelle Computer
 >
->Wenn Zugriff auf einen virtuellen Computer z. B. Debuggen erforderlich ist, kann die RDP-Datei der dann verwendet werden kann, auf den virtuellen Computer über Remotedesktop abgerufen werden.
+>Wenn beispielsweise zum Debuggen auf einen virtuellen Computer zugegriffen werden muss, kann die RDP-Datei abgerufen werden, um per Remotedesktop auf den virtuellen Computer zuzugreifen.
 
 
 ### <a name="pool"></a>Pool
 
 Ein Pool besteht aus einer Sammlung von virtuellen Aufgabencomputern, auf denen Ihre Anwendung ausgeführt wird. Der Pool kann von Ihnen oder automatisch vom Batch-Dienst erstellt werden, wenn Sie die zu erbringende Arbeitsleistung angeben. Sie können einen Pool erstellen und verwalten, der den Anforderungen Ihrer Anwendung entspricht. Ein Pool kann nur von dem Batch-Konto verwendet werden, in dem er erstellt wurde. Ein Batch-Konto kann über mehrere Pools verfügen.
 
-Neben der Azure Compute Azure Batch-Pools zu erstellen; Batch-Pools bieten umfangreiche Zuordnung, Anwendung und Installation von Data, Datenverschiebung, Systemüberwachung und flexible Skalierung des virtuellen Computers.
+Azure Batch-Pools basieren auf der grundlegenden Azure-Computingplattform und bieten Funktionen für umfangreiche Zuordnungen, für die Anwendungs- und Dateninstallation, für die Datenverschiebung sowie für die Systemüberwachung und die flexible Skalierung virtueller Computer.
 
 Jedem virtuellen Aufgabencomputer (TVM), der einem Pool hinzugefügt wird, ist ein eindeutiger Name und eine zugehörige IP-Adresse zugewiesen. Wenn ein virtueller Aufgabencomputer aus einem Pool entfernt wird, gehen die am Betriebssystem, an den lokalen Dateien, seinem Namen und seiner IP-Adresse vorgenommenen Änderungen verloren. Wenn eine TVM einen Pool verlässt, endet ihre Lebensdauer.
 
@@ -89,44 +89,44 @@ Sie können einen Pool derart konfigurieren, dass die Kommunikation zwischen den
 
 Wenn Sie einen Pool erstellen, können Sie die folgenden Attribute angeben:
 
-- Die **von VMs** im Pool.
-	- Die entsprechende VM-Größe muss ausgewählt werden, abhängig von den Eigenschaften und die Anforderungen der Anwendung oder Anwendungen, die auf dem virtuellen Computer verwendet werden. Normalerweise wird die VM-Größe vorausgesetzt, dass eine Aufgabe gleichzeitig auf dem virtuellen Computer ausgeführt wird, entnommen werden; beispielsweise, ob die Anwendung Multithread ist und wie viel Arbeitsspeicher dafür erforderlichen Größe des virtuellen Computers am geeignete und kostengünstige bestimmt wird. Es ist möglich, mehrere Vorgänge zugewiesen sind und mehrere Anwendungsinstanzen, werden parallel ausgeführt werden, in diesem Fall eine umfangreichere VM in der Regel ausgewählt werden – finden Sie weiter unten auf "maximale Vorgänge pro VM". 
-	- Aller virtuellen Computer in einem Pool müssen die gleiche Größe aufweisen. Wenn andere Anwendungen sind mit anderen Systemanforderungen und/oder verschiedene Load ausgeführt werden, sollten separate Pools erstellt werden.
-	- Alle Größen für Cloud-Dienst können für einen Pool, mit Ausnahme von A0 konfiguriert werden.
+- Die **Größe der virtuellen Computer** im Pool.
+	- Bei der Wahl der entsprechenden Größe des virtuellen Computers müssen die Eigenschaften und Anforderungen der Anwendungen berücksichtigt werden, die auf dem virtuellen Computer verwendet werden sollen. Normalerweise wird bei der Wahl der Größe des virtuellen Computers davon ausgegangen, dass auf dem virtuellen Computer jeweils eine Aufgabe ausgeführt wird. Die optimale und kostengünstigste Größe des virtuellen Computers ist beispielsweise abhängig davon, ob es sich um eine Multithread-Anwendung handelt und wie viel Arbeitsspeicher die Anwendung beansprucht. Es ist möglich, mehrere Aufgaben zuzuweisen und mehrere Anwendungsinstanzen parallel auszuführen. In diesem Fall wird üblicherweise ein größerer virtueller Computer verwendet. Weitere Informationen finden Sie weiter unten. 
+	- Aller virtuellen Computer in einem Pool müssen die gleiche Größe besitzen. Wenn verschiedene Anwendungen mit unterschiedlichen Systemanforderungen und/oder unterschiedlicher Last ausgeführt werden, erstellen Sie separate Pools.
+	- Alle Clouddienst-VM-Größen können für einen Pool konfiguriert werden. Einzige Ausnahme: A0.
 
-- Die Betriebssystemfamilie und die Version, die auf den virtuellen Computern ausgeführt wird.
-	- Wie bei der Worker-Rollen können die Betriebssystemfamilie und die Version des Betriebssystems konfiguriert werden.
-	- Die Betriebssystemfamilie bestimmt auch, welche Versionen von .NET mit dem Betriebssystem installiert werden.
-	- Wie mit Worker-Rollen für die Betriebssystemversion, sollten "*" verwendet werden, damit der VMs werden automatisch aktualisiert und es keine Arbeit erforderlich, um neue Versionen gerecht wird. Für eine bestimmte Betriebssystemversion Entnahme der wichtigsten Anwendungsfall wird sichergestellt, dass die Anwendungskompatibilität geführte so Abwärtskompatibilität Tests ausgeführt werden, bevor Sie die Version aktualisiert werden. Sobald überprüft die Version des Betriebssystems für den Pool aktualisiert werden kann und das neue Betriebssystemabbild installiert – alle ausgeführten Tasks unterbrochen und wieder in die Warteschlange gestellt.
+- Die Betriebssystemfamilie und -version, die auf den virtuellen Computern ausgeführt wird.
+	- Betriebssystemfamilie und -version können genau wie bei Workerrollen konfiguriert werden.
+	- Die Betriebssystemfamilie bestimmt auch, welche Versionen von .NET mit dem Betriebssystem installiert sind.
+	- Genau wie bei Workerrollen empfiehlt sich auch bei der Betriebssystemversion die Verwendung von „*“, damit die virtuellen Computer automatisch aktualisiert werden und für neue Versionen kein Zusatzaufwand entsteht. Mit der Wahl einer bestimmten Betriebssystemversion wird in erster Linie die Anwendungskompatibilität sichergestellt. Hierzu wird die Überprüfung der Abwärtskompatibilität vor der Versionsaktualisierung ermöglicht. Nach der Überprüfung kann die Betriebssystemversion für den Pool aktualisiert und das neue Betriebssystemimage installiert werden. Dabei werden alle ausgeführten Aufgaben unterbrochen und wieder der Warteschlange hinzugefügt.
 
-- Die vorgegebene Anzahl virtueller Computer, die für den Pool verfügbar sein sollen.
+- Die vorgegebene Anzahl virtueller Computer, die für den Pool verfügbar sein soll.
 
-- Die Skalierungsrichtlinie für den Pool. Neben der Anzahl der virtuellen Computer können Sie auch eine automatische Skalierung Formel für jeden Pool angeben. Batch-Dienst führt die Formel ein, um die Anzahl der virtuellen Computer basierend auf den Pool und das Workitem-Statistiken anzupassen.
+- Die Skalierungsrichtlinie für den Pool. Neben der Anzahl virtueller Computer können Sie für jeden Pool auch eine Formel für die automatische Skalierung angeben. Der Batch-Dienst führt die Formel aus, um die Anzahl der virtuellen Computer auf der Grundlage der Pool- und Arbeitselementstatistik anzupassen.
 
-- Planen der Konfiguration
-	- Die Standardkonfiguration ist für einen Vorgang zu einem beliebigen Zeitpunkt auf einen Pool virtueller Computer ausgeführt werden, aber es gibt Szenarien, in denen es vorteilhaft ist, haben mehrere Tasks gleichzeitig auf einem virtuellen Computer ausgeführt werden kann. Ein Beispiel ist die VM-Nutzung zu erhöhen, wenn eine Anwendung für e/a warten muss. mehr als eine Anwendung ausführen, erhöhen Sie CPU-Auslastung. Ein weiteres Beispiel ist zum Reduzieren der Anzahl der VM im Pool. Dies könnte für große Verweis Datasets erforderlichen Datenkopien reduzieren. Wenn ein A1 die richtige Größe für die Anwendung würde, könnte ein A4 ausgewählt werden und legen Sie dann die Konfiguration bis zu 8 Aufgaben gleichzeitig ausführen jeder Nutzung einen Kern.
-	- Die Konfiguration "Max. Aufgaben pro virtueller Maschine" bestimmt die maximale Anzahl von Tasks, die parallel ausgeführt werden können.
-	- "Fill Richtlinie" können auch angegeben werden die bestimmt, ob Batch füllt erste des virtuellen Computers oder gibt an, ob Aufgaben auf alle virtuellen Computer verteilt sind.
+- Konfigurieren des Zeitplans
+	- In der Standardkonfiguration werden auf einem virtuellen Computer immer nur einzelne Aufgaben ausgeführt. Es sind aber auch Szenarien denkbar, in denen die gleichzeitige Ausführung mehrerer Aufgaben auf einem virtuellen Computer von Vorteil ist. Ein Beispiel wäre etwa die Steigerung der Auslastung des virtuellen Computers, wenn eine Anwendung auf E/A warten muss: Durch die Ausführung mehrerer Anwendungen erhöht sich die CPU-Auslastung. Ein weiteres Beispiel wäre die Verringerung der Anzahl von virtuellen Computern im Pool: Dadurch lässt sich ggf. die Menge an erforderlichen Datenkopien für umfangreiche Datasets verringern. Wäre also „A1“ die korrekte Größe für die Anwendung, könnte „A4“ ausgewählt und für die gleichzeitige Ausführung von acht Aufgaben konfiguriert werden, wobei jeweils ein Kern genutzt würde.
+	- Die Konfiguration der maximalen Aufgaben pro virtuellem Computer bestimmt die maximale Anzahl von Aufgaben, die parallel ausgeführt werden können.
+	- Darüber hinaus können Sie durch Angabe einer Füllrichtlinie bestimmen, ob virtuelle Computer gefüllt oder ob die Aufgaben auf alle virtuellen Computer verteilt werden sollen.
  
 - Der Kommunikationsstatus der virtuellen Computer im Pool.
- 	- In ein großer Teil des Szenarios Aufgaben unabhängig voneinander betrieben werden und müssen nicht für die Kommunikation mit anderen Aufgaben, aber es sind einige Anwendungen, in denen Aufgaben (z. B. Anwendungen, die mit MPI) kommuniziert.
-	- Dient zum Konfigurieren der zugrunde liegenden Infrastruktur und Auswirkungen Platzierung von VM Konfiguration, die steuert, ob der VMs zu kommunizieren, können ist.
+ 	- In vielen Szenarien werden Aufgaben unabhängig ausgeführt und müssen nicht mit anderen Aufgaben kommunizieren. Es gibt jedoch auch Anwendungen mit Aufgabenkommunikation (beispielsweise Anwendungen mit MPI).
+	- Sie können konfigurieren, ob die virtuellen Computer kommunizieren können. Dies hat Auswirkungen auf die zugrunde liegende Infrastruktur sowie auf die Platzierung der virtuellen Computer.
 
 - Die Startaufgabe für virtuelle Aufgabencomputer im Pool.
 
-Wenn Sie einen Pool erstellen, können Sie das Speicherkonto angeben, das dem Pool zugewiesen werden soll. Der Batch-Dienst ordnet virtuelle Aufgabencomputer der Rechenzentren mit besserer Netzwerkkonnektivität und Bandbreitenkapazität dem angegebenen Speicherkonto zu. Dadurch können Arbeitslasten effizienter auf Daten zugreifen.
+Wenn Sie einen Pool erstellen, können Sie das Speicherkonto angeben, das dem Pool zugewiesen werden soll. Der Batch-Dienst ordnet virtuelle Aufgabencomputer der Rechenzentren mit besserer Netzwerkkonnektivität und Bandbreitenkapazität dem angegebenen Speicherkonto zu. Dadurch können Workloads effizienter auf Daten zugreifen.
 
-### <a name="workitem"></a>WorkItem
+### <a name="workitem"></a>Arbeitselement
 
 Ein Arbeitselement gibt an, wie die Berechnung auf den virtuellen Aufgabencomputern in einem Pool ausgeführt wird.
 
-- Eine Arbeitsaufgabe kann einen oder mehrere Aufträge zugeordnet haben. Ein optionaler Zeitplan kann für eine Arbeitsaufgabe angegeben werden, in diesem Fall ein Auftrag erstellt wird, für jedes Vorkommen des Zeitplans. Wenn kein Zeitplan, für die Arbeit auf Anforderung angegeben ist wird ein Auftrag sofort erstellt.
-- Die Arbeitsaufgabe gibt den Pool, auf dem die Arbeit ausgeführt wird. Der Pool kann eine vorhandene, bereits erstellte Pool, die viele Arbeitsaufgaben verwendet jedoch ein Pool kann auch erstellt werden, für jeden Auftrag, der die Arbeitsaufgabe zugeordnet oder für alle Aufträge, die der Arbeitsaufgabe zugeordnet.
-- Eine optionale Priorität kann angegeben werden. Wenn eine Arbeitsaufgabe mit einer höheren Priorität als anderen Arbeitsaufgaben noch in Bearbeitung gesendet wird, erhalten die höheren Priorität Arbeitsaufgaben in die Warteschlange vor der niedrigeren Priorität Arbeitsaufgaben eingefügt. Bereits ausgeführte Tasks mit niedrigerer Priorität werden nicht erlaubt.
-- Einschränkungen können angegeben werden, die auf den zugeordneten Auftrag oder die Aufträge angewendet werden.
-	- Für die Aufträge kann eine maximale Wallclock Zeit festgelegt werden. Wenn die Aufträge, die länger als die angegebene maximale Wallclock Zeit ausgeführt wird, werden das Projekt und alle zugehörigen Aufgaben beendet werden.
-	- Azure-Batch kann Aufgaben erkennen, die fehlschlagen und die Tasks zu wiederholen. Die Standardeinstellung, die maximale Anzahl von Wiederholungen der Aufgabe als Einschränkung angegeben werden kann, wie z. B. angeben, der eine Aufgabe immer wiederholt oder nie wiederholt. Wiederholen einer Aufgabe bedeutet, dass die Aufgabe erneut in der Warteschlange und erneut ausgeführt werden wird.
-- Aufgaben für die Arbeit Element Auftrag ausgeführt werden können angegeben werden vom Client auf die gleiche Weise, die die Arbeitsaufgabe erstellt wurde, aber eine Auftrags-Manager-Aufgabe kann auch angegeben werden. Der Task eine Auftrags-Manager verwendet die Batch-API und enthält den Code zum Erstellen der erforderlichen Aufgaben für einen Auftrag mit der Aufgabe eines des Pools virtueller Computer ausgeführt wird. Die Auftrags-Manager-Aufgaben behandelt, insbesondere durch Batch – es in die Warteschlange gestellt werden, sobald der Auftrag erstellt wird und neu gestartet wird, wenn aus irgendeinem Grund ein Fehler auftritt. Auftrags-Manager ist für Arbeitsaufgaben mit einer zugeordneten Zeitplan erforderlich, wie es ist die einzige Möglichkeit, die Tasks zu definieren, bevor der Auftrag instanziiert wird.
+- Einem Arbeitselement können einzelne oder mehrere Aufträge zugeordnet sein. Für Arbeitselemente kann ein optionaler Zeitplan angegeben werden. In diesem Fall wird dann für jedes Vorkommen des Zeitplans ein Auftrag erstellt. Ohne Angabe eines Zeitplans (also bei bedarfsbasierten Aufgaben) wird sofort ein Auftrag erstellt.
+- Das Arbeitselement gibt den Pool an, für den die Aufgabe ausgeführt wird. Der Pool kann ein vorhandener, bereits erstellter Pool sein, der von vielen Arbeitselementen verwendet wird. Alternativ kann auch ein Pool erstellt werden – entweder für jeden dem Arbeitselement zugeordneten Auftrag oder für alle dem Arbeitselement zugeordnete Aufträge.
+- Eine optionale Priorität kann angegeben werden. Wenn ein Arbeitselement übermittelt wird, das eine höhere Priorität besitzt als andere, bereits in Bearbeitung befindliche Arbeitselemente, werden die Aufgaben des Arbeitselements mit der höheren Priorität vor den Aufgaben der Arbeitselemente mit niedrigerer Priorität in die Warteschlange eingefügt. Bereits ausgeführte Aufgaben mit niedrigerer Priorität werden nicht nach hinten verschoben.
+- Sie können Einschränkungen angeben, die dann auf die zugeordneten Aufträge angewendet werden.
+	- Für die Aufträge kann eine maximale Wanduhrzeit festgelegt werden. Wenn die Ausführungsdauer der Aufträge die angegebene maximale Wanduhrzeit übersteigt, werden der Auftrag und alle dazugehörigen Aufgaben beendet.
+	- Azure Batch kann nicht erfolgreich ausgeführte Aufgaben erkennen und wiederholen. Der Standardwert für die maximale Anzahl von Aufgabenwiederholungen kann als Einschränkung angegeben werden. Hierbei können Sie auch angeben, ob eine Aufgabe immer oder niemals wiederholt werden soll. Bei der Wiederholung einer Aufgabe wird diese nochmals der Warteschlange hinzugefügt und erneut ausgeführt.
+- Die Aufgaben, die für den Arbeitselementauftrag ausgeführt werden sollen, können vom Client auf die gleiche Weise angegeben werden, mit der auch das Arbeitselement erstellt wurde. Alternativ kann aber auch eine Auftrags-Manager-Aufgabe angegeben werden. Eine Auftrags-Manager-Aufgabe verwendet die Batch-API und enthält den Code zum Erstellen der erforderlichen Aufgaben für einen Auftrag, wobei die Aufgabe auf einem der virtueller Poolcomputer ausgeführt wird. Die Auftrags-Manager-Aufgabe wird speziell von Batch behandelt: Sie wird sofort nach der Auftragserstellung der Warteschlange hinzugefügt und erneut gestartet, falls sie nicht erfolgreich ausgeführt werden konnte. Ein Auftrags-Manager wird für Arbeitselemente mit zugeordnetem Zeitplan benötigt, da sich nur so Aufgaben vor der Auftragsinstanziierung definieren lassen.
 
 ### <a name="job"></a>Auftrag
 
@@ -134,7 +134,7 @@ Ein Auftrag ist eine aktive Instanz eines Arbeitselements und besteht aus einer 
 
 ### <a name="task"></a>Aufgabe
 
-Eine Aufgabe ist eine Einheit der Berechnung, die einem Auftrag zugeordnet ist und auf einem virtuellen Aufgabencomputer ausgeführt wird. Aufgaben, die mit einem virtuellen Computer für die Ausführung zugewiesen sind, oder werden in Warteschlangen eingereiht, bis ein virtueller Computer wieder verfügbar ist. Eine Aufgabe verwendet die folgenden Ressourcen:
+Eine Aufgabe ist eine Einheit der Berechnung, die einem Auftrag zugeordnet ist und auf einem virtuellen Aufgabencomputer ausgeführt wird. Aufgaben werden einem virtuellen Computer zur Ausführung zugewiesen oder der Warteschlange hinzugefügt, bis ein virtueller Computer verfügbar wird. Eine Aufgabe verwendet die folgenden Ressourcen:
 
 - Das Programm, das im Arbeitselement angegeben wurde.
 
@@ -146,23 +146,23 @@ Eine Aufgabe ist eine Einheit der Berechnung, die einem Auftrag zugeordnet ist u
 
 Zusätzlich zu Aufgaben, die Sie zur Berechnung auf einem virtuellen Aufgabencomputer definieren können, stehen die folgenden speziellen Aufgaben zur Verfügung, die vom Batch-Dienst bereitgestellt werden:
 
-- [Aufgabe starten](#starttask)
+- [Startaufgabe](#starttask)
 
 - [Auftrags-Manager-Aufgabe](#jobmanagertask)
 
-#### <a name="starttask"></a>Aufgabe starten
+#### <a name="starttask"></a>Startaufgabe
 
-Der Pool eine Startaufgabe zuordnen, um das Betriebssystem der virtuellen Computer in einem Pool zu konfigurieren. Das Installieren der Software und das Starten von Hintergrundprozessen sind einige der Aktionen, die von Startaufgaben ausgeführt werden können. Die Start-Aufgabe ausgeführt wird, jedes Mal, wenn ein virtueller Computer startet, solange es im Pool befindet.
+Sie können das Betriebssystem von virtuellen Computern in einem Pool konfigurieren, indem Sie dem Pool eine Startaufgabe zuordnen. Das Installieren der Software und das Starten von Hintergrundprozessen sind einige der Aktionen, die von Startaufgaben ausgeführt werden können. Die Startaufgabe wird jedes Mal ausgeführt, wenn ein virtueller Computer gestartet wird und sich im Pool befindet.
 
-Als kann bei jeder Aufgabe im Batch eine Liste der Dateien im Azure-Speicher zusätzlich zu einer Befehlszeile angegeben werden, die als Batch ausgeführt wird. Azure-Batch wird zuerst kopieren Sie die Dateien aus dem Azure-Speicher, und führen Sie die Befehlszeile. Für einen Pool Start Task kann die Dateiliste enthält i. d. r. die Anwendungsdateien oder das Paket, jedoch auch auf Verweisdaten, die durch alle Aufgaben, die auf des Pools virtueller Computer verwendet werden. Die Befehlszeile konnte PowerShell-Skript oder Robocopy, z. B. zum Kopieren von Anwendungsdateien in den Ordner "freigegeben" ausgeführt werden; Es kann auch eine MSI-Datei ausgeführt.
+Wie bei jeder anderen Batch-Aufgabe kann zusätzlich zu einer Befehlszeile, die von Batch ausgeführt wird, eine Liste mit Dateien in Azure Storage angegeben werden. Azure Batch kopiert zunächst die Dateien aus Azure Storage und führt dann die Befehlszeile aus. Bei einer poolbezogenen Startaufgabe enthält die Dateiliste üblicherweise die Anwendungsdateien oder das Anwendungspaket. Sie kann aber auch Referenzdaten für alle Aufgaben enthalten, die auf den virtuellen Poolcomputern ausgeführt werden. Die Befehlszeile kann ein PowerShell-Skript oder einen Robocopy-Vorgang ausführen, um beispielsweise Anwendungsdateien in den freigegebenen Ordner zu kopieren. Aber auch eine MSI-Datei kann ausgeführt werden.
 
-Normalerweise ist es wünschenswert, dass Batch an, dass der Start Task abgeschlossen, und gehen Sie dann den virtuellen Computer kann Aufgaben zugewiesen werden, dies ist jedoch konfigurierbar.
+In der Regel ist es wünschenswert, dass Batch auf den Abschluss der Startaufgabe wartet und dann davon ausgeht, dass der virtuelle Computer nun für die Aufgabenzuweisung bereit ist. Dieses Verhalten ist jedoch konfigurierbar.
 
-Fällt eine Startaufgabe für einen Pool virtueller Computer, der Status des virtuellen Computers aktualisiert den Fehler an, und der virtuelle Computer wird nicht für Aufgaben zugewiesen werden. Ein Start-Task kann fehlschlagen, wenn es ein Problem mit dem Kopieren der Dateien für die Startaufgabe angegeben oder des Task-Startvorgangs ungleich NULL zurück.
+Kann eine Startaufgabe für einen virtuellen Poolcomputer nicht erfolgreich ausgeführt werden, wird der Zustand des virtuellen Computers entsprechend aktualisiert, und der virtuelle Computer steht für die Aufgabenzuweisung nicht zur Verfügung. Bei einer Startaufgabe kann ein Fehler auftreten, wenn die für die Startaufgabe angegebenen Dateien nicht kopiert werden können oder für den Startaufgabenprozess ein anderer Wert als Null zurückgegeben wird.
 
-Die Tatsache, dass alle Informationen zum Konfigurieren des virtuellen Computers und installieren Sie die Anwendungen deklariert ist bedeutet, dass es sich bei Erhöhen der Anzahl von virtuellen Computern in einem Pool so einfach wie die Angabe der neuen erforderlich ist. Stapel enthält alle Informationen, die erforderlich sind, konfigurieren Sie die VM und Aufgaben zu akzeptieren.
+Da alle Informationen zum Konfigurieren des virtuellen Computers und zum Installieren der Anwendungen deklariert werden, muss zum Erhöhen der Anzahl virtueller Computer in einem Pool lediglich die benötigte Anzahl angegeben werden. Batch verfügt über sämtliche Informationen, die erforderlich sind, um die virtuellen Computer zu konfigurieren und für die Aufgabenannahme vorzubereiten.
 
-Start-Aufgabe wird durch eine JSON-Abschnitt der Anforderungstext für den Pool hinzufügen-Vorgang hinzufügen definiert. Das folgende Beispiel zeigt eine Basisdefinition einer Startaufgabe:
+Eine Startaufgabe wird durch Hinzufügen eines JSON-Abschnitts zum Anforderungstext für den Vorgang „Pool hinzufügen“ definiert. Das folgende Beispiel zeigt eine Basisdefinition einer Startaufgabe:
 
 	{
 		“commandLine”:”mypoolsetup.exe”,
@@ -238,65 +238,65 @@ Eine Auftrags-Manager-Aufgabe in einem Auftrag besitzt keine höhere Priorität 
 
 Sie benötigen ein Batch-Konto, um den Batch-Dienst verwenden zu können, und Sie verwenden mehrere Ressourcen des Diensts zur Planung der Berechnungen. Sie verwenden den folgenden einfachen Workflow bei der Erstellung eines verteilten Rechenszenarios mit dem Batch-Dienst:
 
-1. Hochladen der Dateien, die Sie in Ihrem verteilten rechenszenario auf Azure-Speicherkonten verwenden möchten. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Der Batch-Dienst lädt sie beim Ausführen der Aufgabe in eine TVM.
+1. Laden Sie die Dateien, die Sie in Ihrem verteilten Rechenszenario verwenden möchten, an ein Azure-Speicherkonto hoch. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Der Batch-Dienst lädt sie beim Ausführen der Aufgabe in eine TVM.
 
-2. Laden die abhängigen Binärdateien in das Speicherkonto hoch. Die Binärdateien enthalten das Programm, das durch die Aufgabe und die abhängigen Assemblys ausgeführt wird. Auf diese Dateien muss auch aus dem Speicher zugegriffen werden und sie werden auf die TVM geladen.
+2. Laden Sie die abhängigen Binärdateien an das Speicherkonto hoch. Die Binärdateien enthalten das Programm, das durch die Aufgabe und die abhängigen Assemblys ausgeführt wird. Auf diese Dateien muss auch aus dem Speicher zugegriffen werden und sie werden auf die TVM geladen.
 
-3. erstellen Sie 3. einen Pool von TVMs. Sie können die Größe des zu verwendenden virtuellen Aufgabencomputers bei der Erstellung eines Pools zuweisen. Wenn eine Aufgabe ausgeführt wird, wird ihr eine TVM aus diesem Pool zugewiesen.
+3. Erstellen Sie einen Pool mit virtuellen Aufgabencomputern. Sie können die Größe des zu verwendenden virtuellen Aufgabencomputers bei der Erstellung eines Pools zuweisen. Wenn eine Aufgabe ausgeführt wird, wird ihr eine TVM aus diesem Pool zugewiesen.
 
-4. Erstellen eines WorkItems. Beim Erstellen eines Arbeitselements wird automatisch ein Auftrag erstellt. Mit einem Arbeitselement können Sie einen Auftrag von Aufgaben verwalten.
+4. Erstellen Sie ein Arbeitselement. Beim Erstellen eines Arbeitselements wird automatisch ein Auftrag erstellt. Mit einem Arbeitselement können Sie einen Auftrag von Aufgaben verwalten.
 
-5. das Workitem Aufgaben hinzugefügt. Jede Aufgabe verwendet das von Ihnen hochgeladene Programm, um Informationen aus einer Datei zu verarbeiten, die Sie ebenfalls hochgeladen haben.
+5. Fügen Sie dem Arbeitselement Aufgaben hinzu. Jede Aufgabe verwendet das von Ihnen hochgeladene Programm, um Informationen aus einer Datei zu verarbeiten, die Sie ebenfalls hochgeladen haben.
 
-6. überwachen Sie 6. die Ergebnisse der Ausgabe.
+6. Überwachen Sie die Ergebnisse der Ausgabe.
 
 ## <a name="files"></a>Dateien und Verzeichnisse
 
 Jede Aufgabe verfügt über ein Arbeitsverzeichnis, unter dem null oder mehr Verzeichnisse und Dateien für das Speichern des von einer Aufgabe ausgeführten Programms, der von einer Aufgabe verarbeiteten Daten und der Ausgabe der von einer Aufgabe ausgeführten Verarbeitung erstellt werden. Diese Verzeichnisse und Dateien sind dann während der Ausführung eines Auftrags für andere Aufgaben verfügbar. Alle Aufgaben, Dateien und Verzeichnisse auf einer TVM gehören einem einzelnen Benutzerkonto.
 
-Der Batch-Dienst stellt einen Teil des Dateisystems auf einem virtuellen Aufgabencomputer als Stammverzeichnis bereit. Das Stammverzeichnis der TVM ist Aufgabe über die Umgebungsvariable WATASK_TVM_ROOT_DIR verfügbar. Weitere Informationen zur Verwendung von Umgebungsvariablen finden Sie unter den Umgebungseinstellungen für Aufgaben.
+Der Batch-Dienst stellt einen Teil des Dateisystems auf einem virtuellen Aufgabencomputer als Stammverzeichnis bereit. Das Stammverzeichnis des virtuellen Aufgabencomputers steht einer Aufgabe über die Umgebungsvariable „WATASK_TVM_ROOT_DIR“ zur Verfügung. Weitere Informationen zur Verwendung von Umgebungsvariablen finden Sie unter den Umgebungseinstellungen für Aufgaben.
 
 Das Stammverzeichnis enthält die folgenden Unterverzeichnisse:
 
-- **Aufgaben** – Hier werden alle Dateien gespeichert, die zu Aufgaben gehören, die auf die TVM ausgeführt. Für jede Aufgabe erstellt der Batch-Dienst ein Arbeitsverzeichnis, mit der eindeutige Pfad in Form von % WATASK_TVM_ROOT_DIR%/tasks/workitemName/jobName/taskName/. Dieses Verzeichnis bietet Lese-/Schreibzugriff auf die Aufgabe. Die Aufgabe kann Dateien unter diesem Verzeichnis erstellen, lesen, aktualisieren und löschen, und dieses Verzeichnis bleibt auf Basis der für diese Aufgabe angegebenen "RetentionTime"-Einschränkung erhalten.
+- **Aufgaben**: Hier werden alle Dateien gespeichert, die zu den auf dem virtuellen Aufgabencomputer ausgeführten Aufgaben gehören. Der Batch-Dienst erstellt für jede Aufgabe ein Arbeitsverzeichnis mit einem eindeutigen Pfad im folgenden Format: %WATASK_TVM_ROOT_DIR%/tasks/Arbeitselementname/Auftragsname/Aufgabenname/. Dieses Verzeichnis bietet Lese-/Schreibzugriff auf die Aufgabe. Die Aufgabe kann Dateien unter diesem Verzeichnis erstellen, lesen, aktualisieren und löschen, und dieses Verzeichnis bleibt auf Basis der für diese Aufgabe angegebenen "RetentionTime"-Einschränkung erhalten.
 
-- **Shared** – hier ist ein freigegebenes Verzeichnis für alle Aufgaben unter dem Konto. Auf die TVM ist das freigegebene Verzeichnis % WATASK_TVM_ROOT_DIR%/shared. Dieses Verzeichnis bietet Lese-/Schreibzugriff auf die Aufgabe. Die Aufgabe kann Dateien unter diesem Verzeichnis erstellen, lesen, aktualisieren und löschen.
+- **Shared**: Bei diesem Speicherort handelt es sich um ein freigegebenes Verzeichnis für alle Aufgaben des Kontos. Auf dem virtuellen Aufgabencomputer befindet sich das freigegebene Verzeichnis unter „%WATASK_TVM_ROOT_DIR%/shared“. Dieses Verzeichnis bietet Lese-/Schreibzugriff auf die Aufgabe. Die Aufgabe kann Dateien unter diesem Verzeichnis erstellen, lesen, aktualisieren und löschen.
 
-- **Start** – dieser Speicherort wird von einem Start Task als Arbeitsverzeichnis verwendet. Alle Dateien, die vom Batch-Dienst heruntergeladen werden, um die Startaufgabe zu starten, werden ebenfalls unter diesem Verzeichnis gespeichert. Auf die TVM ist das Startverzeichnis % WATASK_TVM_ROOT_DIR%/start. Die Aufgabe kann Dateien unter diesem Verzeichnis erstellen, lesen, aktualisieren und löschen, und dieses Verzeichnis kann von Startaufgaben dazu verwendet werden, das Betriebssystem zu konfigurieren.
+- **Start**: Dieser Speicherort wird von einer Startaufgabe als Arbeitsverzeichnis verwendet. Alle Dateien, die vom Batch-Dienst heruntergeladen werden, um die Startaufgabe zu starten, werden ebenfalls unter diesem Verzeichnis gespeichert. Auf dem virtuellen Aufgabencomputer befindet sich das Startverzeichnis unter „%WATASK_TVM_ROOT_DIR%/start“. Die Aufgabe kann Dateien unter diesem Verzeichnis erstellen, lesen, aktualisieren und löschen, und dieses Verzeichnis kann von Startaufgaben dazu verwendet werden, das Betriebssystem zu konfigurieren.
 
 Wenn ein virtueller Aufgabencomputer aus einem Pool entfernt wird, werden alle auf dem virtuellen Aufgabencomputer gespeicherten Dateien entfernt.
 
-## <a name="lifetime"></a>Pool und VM-Lebensdauer
+## <a name="lifetime"></a>Pool und Lebensdauer virtueller Computer
 
-Eine grundlegende Entwurfsentscheidung ist bei der Erstellung von Pools und wie lange die VMs verfügbar gehalten werden.
+Zu den grundlegenden Entscheidung zählt die Frage, wann Pools erstellt und wie lange virtuelle Computer vorgehalten werden sollen.
 
-Eine extrem konnte ein Pool für jeden Auftrag erstellt werden, wenn der Auftrag gesendet wird, und des virtuellen Computers entfernt, während der Ausführung von Aufgaben. Dies maximiert Auslastung des virtuellen Computers werden nur zugeordnet, wenn absolut notwendig und Herunterfahren, sobald diese werden im Leerlauf befindet. Es bedeutet, dass der Auftrag warten muss, belegt der VMs zugeordnet werden, es ist wichtig zu beachten, dass Aufgaben an die VMs geplant werden, sobald sie einzeln zur Verfügung stehen, und die Start-Aufgabe abgeschlossen wurde. d. h. wartet Batch nicht, bis alle virtuellen Computer in einem Pool verfügbar sind, wie die, die zu einer schlechten Auslastung führen würde.
+Im Extremfall könnte beispielsweise für jeden Auftrag ein Pool erstellt werden, wenn der Auftrag übermittelt wird, und die virtuellen Computers könnten nach jeder abgeschlossenen Aufgabe wieder entfernt werden. Dadurch maximiert sich die Auslastung: Die virtuellen Computer werden nur genutzt, wenn dies unbedingt notwendig ist, und sofort heruntergefahren, wenn sie sich im Leerlauf befinden. Das bedeutet, dass der Auftrag bis zur Zuteilung der virtuellen Computer warten muss. Dabei ist aber wichtig zu erwähnen, dass Aufgaben jeweils für virtuelle Computer geplant werden, sobald diese verfügbar sind, zugeteilt wurden und die Startaufgabe abgeschlossen ist. Mit anderen Worten: Batch wartet NICHT, bis alle virtuellen Computer in einem Pool verfügbar sind, da dies eine schlechte Auslastung zur Folge hätte.
 
-Wenn Aufträge starten ist sofort ausführen die Priorität, ein Pool erstellt werden soll, und vor dem Senden des Auftrags, der VM zur Verfügung. Die Aufgaben können sofort starten jedoch des virtuellen Computers im Leerlauf, warten auf Aufgaben, je nach Auslastung werden konnte.
+Wenn die sofortige Ausführung von Aufträgen Priorität hat, muss vor der Übermittlung des Auftrags ein Pool erstellt werden, und die virtuellen Computer müssen verfügbar sein. Die Aufgaben können zwar umgehend starten, je nach Auslastung befinden sich dann aber virtuelle Computer im Leerlauf und warten auf Auftragsaufgaben.
 
-Eine gemeinsame Muster für, wenn vorhanden ist, dass eine Variable Menge an laufenden Auslastungstest besteht darin, einen Pool, der mehrere Aufträge, aber Skalierung nach oben oder unten die Anzahl der virtuellen Computer entsprechend gesendet werden; dazu können reaktiv oder proaktiv Load vorausgesagt werden kann.
+Bei variabler Last wird häufig ein Pool verwendet, an den mehrere Aufträge übermittelt werden, wobei die Anzahl der virtuellen Computer lastabhängig skaliert wird. Hierzu kann ein reaktives Modell verwendet werden (oder auch ein proaktives, sofern die Auslastung vorhersehbar ist).
 
 ## <a name="scaling"></a>Skalieren von Anwendungen
 
-Die Größe Ihrer Anwendung kann problemlos automatisch erhöht oder verringert werden, um der erforderlichen Berechnung zu entsprechen. Sie können die Anzahl der virtuellen Aufgabencomputer in einem Pool entsprechend der aktuellen Statistik zur Arbeitsauslastung und Ressourcennutzung dynamisch anpassen. Sie können auch die Gesamtkosten für die Ausführung Ihrer Anwendung optimieren, indem Sie für sie die automatische Skalierung festlegen. Sie können die Skalierungseinstellungen für einen Pool bei dessen Erstellung angeben und die Konfiguration jederzeit aktualisieren.
+Die Größe Ihrer Anwendung kann problemlos automatisch erhöht oder verringert werden, um der erforderlichen Berechnung zu entsprechen. Sie können die Anzahl der virtuellen Aufgabencomputer in einem Pool entsprechend der aktuellen Statistik zur Workload und Ressourcennutzung dynamisch anpassen. Sie können auch die Gesamtkosten für die Ausführung Ihrer Anwendung optimieren, indem Sie für sie die automatische Skalierung festlegen. Sie können die Skalierungseinstellungen für einen Pool bei dessen Erstellung angeben und die Konfiguration jederzeit aktualisieren.
 
-Eine Verringerung der Anzahl von VMs möglicherweise Tasks auf VMs, die berücksichtigt werden müssen. Eine Richtlinie für die Aufhebung der Zuordnung wird angegeben, die bestimmt, ob die ausgeführte Aufgaben beendet wurden, entfernen Sie sofort die VM oder die Zulässigkeit Aufgaben abgeschlossen sind, bevor der VMs entfernt werden. Festlegen des virtuellen Computers nach unten, um der vorgegebene Anzahl 0 (null) am Ende eines Auftrags jedoch ermöglicht ausgeführten Tasks zu beenden, Maximierung der Nutzung.
+Bei einer Verringerung der Anzahl virtueller Computer müssen unter Umständen auf virtuellen Computern ausgeführte Aufgaben berücksichtigt werden. Mittels einer Richtlinie für die Aufhebung der Zuordnung wird festgelegt, ob ausgeführte Aufgaben beendet werden sollen, um den virtuellen Computer umgehend zu entfernen, oder ob die Aufgaben vor dem Entfernen des virtuellen Computers abgeschlossen werden sollen. Legen Sie die vorgegebene Anzahl virtueller Computer am Ende eines Auftrags auf Null fest, und lassen Sie das Abschließen ausgeführter Aufgaben zu, um die Auslastung zu maximieren.
 
-Sie geben die automatische Skalierung einer Anwendung mithilfe einer Reihe von Skalierungsformeln an. Die Formeln, die zum Ermitteln der Anzahl der virtuellen Aufgabencomputer verwendet werden können, die sich für das nächste Skalierungsintervall im Pool befinden. Sie müssen z. B. eine große Anzahl von Aufgaben übermitteln, die für einen Pool geplant werden. Sie können dem Pool eine Skalierungsformel zuweisen, die die Größe des Pools auf Basis der aktuellen Anzahl der ausstehenden Aufgaben und der Beendigungsrate der Aufgaben angibt. Der Batch-Dienst wertet die Formel in regelmäßigen Abständen aus und ändert die Größe des Pools auf Basis der Arbeitsauslastung.
+Sie geben die automatische Skalierung einer Anwendung mithilfe einer Reihe von Skalierungsformeln an. Die Formeln, die zum Ermitteln der Anzahl der virtuellen Aufgabencomputer verwendet werden können, die sich für das nächste Skalierungsintervall im Pool befinden. Sie müssen z. B. eine große Anzahl von Aufgaben übermitteln, die für einen Pool geplant werden. Sie können dem Pool eine Skalierungsformel zuweisen, die die Größe des Pools auf Basis der aktuellen Anzahl der ausstehenden Aufgaben und der Beendigungsrate der Aufgaben angibt. Der Batch-Dienst wertet die Formel in regelmäßigen Abständen aus und ändert die Größe des Pools auf Basis der Workload.
 
 Eine Formel kann auf den folgenden Metriken basieren:
 
-- **Zeitmetriken** – basierend auf fünf Minuten in die angegebene Anzahl von Stunden erfasst.
+- **Zeitmetriken**: Basieren auf Statistiken, die alle fünf Minuten für die angegebene Anzahl von Stunden erfasst werden.
 
-- **Ressourcenmetriken** – basierend auf der CPU-Nutzung, Bandbreitennutzung, Speicherauslastung und Anzahl von TVMs.
+- **Ressourcenmetriken**: Basieren auf CPU-Auslastung, Bandbreitenauslastung, Speicherauslastung und der Anzahl virtueller Aufgabencomputer.
 
-- **Aufgabe Metriken** – basierend auf den Status von Aufgaben, wie z. B. aktiv, Ausstehend, und abgeschlossen.
+- **Aufgabenmetriken**: Basieren auf dem Aufgabenstatus (wie etwa „Aktiv“, „Ausstehend“ oder „Abgeschlossen“).
 
 Weitere Informationen zum automatischen Skalieren einer Anwendung finden Sie unter "Konfigurieren der automatischen Skalierung von virtuellen Aufgabencomputern".
 
->Löschen des virtuellen Computers
+>Löschen virtueller Computer
 >
->Es ist nicht oft erforderlich, aber es ist möglich, einzelne VM aus einem Pool entfernen angeben. Es ist ein virtueller Computer, der Verdacht auf kleiner konnte zuverlässige es, z. B. entfernt werden.
+>Einzelne virtuelle Computer können aus einem Pool entfernt werden, dies ist jedoch nur sehr selten erforderlich. So können Sie beispielsweise einen virtuellen Computer entfernen, der nicht mehr zuverlässig funktioniert.
 
 ## <a name="cert"></a>Zertifikate für Anwendungen
 
@@ -395,39 +395,39 @@ Sie können den Wert von Umgebungseinstellungen mithilfe des Vorgangs "Aufgabe a
 
 ## <a name="errorhandling"></a>Fehlerbehandlung
 
-###Task-Fehlerbehandlung
-Taskfehler fallen in die folgenden Kategorien:
+###Behandeln von Aufgabenfehlern
+Bei Aufgabenfehlern wird zwischen folgenden Kategorien unterschieden:
 
-- Planen von Fehlern:
-	- Wenn Dateien für den Vorgang angegeben werden, kann die Kopie von einer oder mehreren Dateien fehlschlagen. Mögliche Gründe hierfür sind die Dateien verschoben haben, das Speicherkonto, das nicht mehr usw. zur Verfügung.
-	- In diesem Fall wird "Scheduling Fehler" für den Vorgang festgelegt.
+- Planungsfehler:
+	- Wenn Dateien für die Aufgabe angegeben werden, kann beim Kopieren der Dateien ein Fehler auftreten. Mögliche Gründe: Die Dateien wurden verschoben, das Speicherkonto ist nicht mehr verfügbar, und Ähnliches.
+	- In diesem Fall wird für die Aufgabe ein Planungsfehler ausgegeben.
 - Anwendungsfehler:
-	- In der Befehlszeile angegebene Task Prozess kann auch fehlschlagen. Der Prozess gilt als fehlgeschlagen gilt, wenn ein NULL-Exitcode zurückgegeben wird.
-	- Für Anwendungsfehler ist es möglich, Batch, um den Vorgang bis zu einer angegebenen Anzahl fehlgeschlagener automatisch erneut zu konfigurieren. 
-- Fehler bei der Einschränkung:
-	- Eine Einschränkung kann für die maximale Zeitspanne angegeben werden, die für ein Projekt oder eine Aufgabe ausführen kann. Das kann hilfreich sein, eine Aufgabe zu beenden, die nicht reagiert hat.
-	- Wenn die maximale Zeitspanne wurde überschritten, die Aufgabe als abgeschlossen gekennzeichnet aber die Exit-Code wird wird als markiert `0xC000013A` und SchedulingError-Feld wird als gekennzeichnet `{ category:“ServerError”, code=“TaskEnded”}`.
+	- Ein Fehler kann auch beim in der Befehlszeile angegebenen Aufgabenprozess auftreten. Der Prozess gilt als nicht erfolgreich, wenn der zurückgegebene Exitcode nicht Null ist.
+	- Batch kann so konfiguriert werden, dass die Aufgabe im Falle eines Anwendungsfehlers automatisch mit einer bestimmten Häufigkeit wiederholt wird. 
+- Einschränkungsfehler:
+	- Eine Einschränkung kann für die maximal zulässige Ausführungsdauer eines Auftrags oder einer Aufgabe angegeben werden. Dies kann hilfreich sein, um eine nicht reagierende Aufgabe zu beenden.
+	- Wenn die maximal zulässige Zeitspanne überschritten wurde, wird die Aufgabe als abgeschlossen gekennzeichnet. Als Exitcode wird jedoch `0xC000013A` zurückgegeben, und das Feld „SchedulingError“ wird mit `{ category:“ServerError”, code=“TaskEnded”}` markiert.
 
 ###Debuggen von Anwendungsfehlern
 
-Diagnose der Problembehandlung verwendet werden kann, kann eine Anwendung generieren. Häufig Anwendungen werden Informationen in Stdout und Stderr Dateien oder Ausgabe für benutzerdefinierte Dateien schreiben. In diesen Fällen ist eine API bereitgestellt, um die Dateien, durch Angeben der Task oder die VM erhalten.
+Eine Anwendung generiert unter Umständen Diagnosedaten für die Problembehandlung. Oftmals werden Informationen in StdOut- und StdErr-Dateien oder in benutzerdefinierte Dateien geschrieben. In diesen Fällen steht eine API zur Verfügung, um die Dateien unter Angabe der Aufgabe oder des virtuellen Computers abzurufen.
 
-Es ist auch möglich, an den Pool virtueller Computer anmelden. Eine API gibt die RDP-Datei für eine virtuelle Maschine, die dann verwendet werden, können zur Anmeldung auf dem virtuellen Computer.
+Auch eine Anmeldung bei virtuellen Poolcomputern ist möglich. Eine API gibt die RDP-Datei für einen virtuellen Computer zurück, die dann für die Anmeldung verwendet werden kann.
 
-###Taskfehler und Probleme damit problemlos
+###Umgang mit Aufgabenfehlern und Problemen
 
-Vorgänge können fehlschlagen oder Gründen unterbrochen werden. Die Taskanwendung selbst schlägt möglicherweise fehl, der virtuellen Computer, auf dem der Task ausgeführt wird, ruft gestartet oder des virtuellen Computers wird durch einen Pool-Größe mit der Richtlinieneinstellung Aufhebung der Zuordnung des virtuellen Computers sofort zu entfernen, ohne warten auf den Abschluss der Aufgabe entfernt. In allen Fällen wird der Vorgang kann automatisch erneut in der Warteschlange als Batch und auf einem anderen virtuellen Computer ausführen.
+Aufgaben können aus verschiedenen Gründen nicht erfolgreich sein oder unterbrochen werden: Es tritt ein Fehler in der Anwendung auf, der virtuelle Computer, auf dem die Aufgabe ausgeführt wird, wird neu gestartet, oder der virtuelle Computer wird aufgrund einer Änderung der Poolgröße entfernt, und die Richtlinie für die Aufhebung der Zuordnung des virtuellen Computers ist so konfiguriert, dass der virtuelle Computer sofort entfernt wird, ohne auf den Abschluss der Aufgabe zu warten. In diesen Fällen kann der Vorgang automatisch wieder der Warteschlange hinzugefügt und auf einem anderen virtuellen Computer ausgeführt werden.
 
-Es ist auch möglich, für ein intermittierender Fehler verursachen eine Aufgabe Einfrieren bzw. deren Ausführung zu lange dauern. Die maximale Ausführungszeit kann für einen Vorgang festgelegt und überschrittenen Batch die Aufgabe Anwendung unterbrochen wird. Derzeit, automatische erneute queuing ist nicht möglich, für diesen Fall, aber die Groß-/Kleinschreibung vom Client eine neue Aufgabe vor kann erkannt werden kann.
+Außerdem können zeitweilig Probleme auftreten, die dazu führen, dass eine Aufgabe nicht mehr reagiert oder zu lange dauert. Hierzu kann für die Aufgabe eine maximal zulässige Ausführungszeit festgelegt werden. Wird dieser Wert überschritten, unterbricht Batch die Aufgabeanwendung. In diesem Szenario kann die Aufgabe derzeit nicht automatisch erneut der Warteschlange hinzugefügt werden. Das Problem wird aber vom Client erkannt, der dann eine neue Aufgabe übermitteln kann.
 
-###Damit problemlos "Schlechten" VM
+###Umgang mit fehlerhaften virtuellen Computern
 
-Jeder virtuelle Computer in einem Pool erhält einen eindeutigen Namen und die VM auf dem eine Aufgabe ausgeführt wird, die in den Task-Metadaten enthalten. In dem Fall, in dem es eine virtuellen Maschine, die aus irgendeinem Grund Aufgaben Fehler verursacht, dann ist dies kann bestimmt werden, vom Client und verdächtigen VM aus dem Pool gelöscht. Wenn ein Task auf dem virtuellen Computer ausgeführt wurde, das gelöscht wurde, wird dann automatisch wieder in die Warteschlange gestellt und auf einem anderen virtuellen Computer ausgeführt.
+Jeder virtuelle Computer in einem Pool erhält einen eindeutigen Namen, und der virtuelle Computer, auf dem eine Aufgabe ausgeführt wird, ist in den Metadaten der Aufgabe angegeben. Falls es bei Aufgaben aufgrund eines virtuellen Computers zu Problemen kommt, kann der Client dies erkennen und verdächtige virtuelle Computer aus dem Pool löschen. Wurde auf dem gelöschten virtuellen Computer eine Aufgabe ausgeführt, wird diese automatisch wieder der Warteschlange hinzugefügt und auf einem anderen virtuellen Computer ausgeführt.
 
 
 <!--Image references-->
 [1]: ./media/batch-api-basics/batch-api-basics-01.png
 
-[Übersicht über die Azure-Batch]: batch-technical-overview.md
+[Azure Batch – Technische Übersicht]: batch-technical-overview.md
 
-<!---HONumber=GIT-SubDir-->
+<!---HONumber=62-->

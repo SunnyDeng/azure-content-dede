@@ -1,6 +1,6 @@
-﻿
 
-1. Öffnen Sie die Projektdatei "default.js", und ersetzen Sie in der **app.OnActivated**-Methodenüberladung den letzten Aufruf der **refreshTodoItems**-Methode durch den folgenden Code: 
+
+1. Öffnen Sie die Projektdatei "default.js", und ersetzen Sie in der Methodenüberladung **app.OnActivated** den letzten Aufruf der **refreshTodoItems**-Methode durch den folgenden Code: 
 
         // Define a member variable for storing the signed-in user.
         var userId = null;
@@ -32,17 +32,16 @@
             authenticate();
         });
 
-	Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an die <strong>login</strong>-Methode übergebenen Wert in einen der folgenden Werte: _microsoftaccount_, _twitter_, _google_ oder _windowsazureactivedirectory_.
+	Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an die <strong>login</strong>-Methode übergebenen Wert auf einen der folgenden Werte: _microsoftaccount_, _twitter_, _google_, oder _windowsazureactivedirectory_.
 
-    >[AZURE.NOTE]Wenn Sie Ihre Windows Store-App-Paketinformationen mit Mobile Services registriert haben, sollten Sie die Methode <a href="http://go.microsoft.com/fwlink/p/?LinkId=322050" target="_blank">login</a> aufrufen, indem Sie für <em>useSingleSignOn</em> den Wert <strong>Wahr</strong> angeben. Wenn Sie dies nicht tun, werden Ihre Benutzer jedes Mal zur Anmeldung aufgefordert, wenn diese Anmeldemethode aufgerufen wird.
+    >[AZURE.NOTE]Wenn Sie Ihre Windows Store-App-Paketinformationen mit Mobile Services registriert haben, sollten Sie die <a href="http://go.microsoft.com/fwlink/p/?LinkId=322050" target="_blank">login</a>-Methode aufrufen, indem Sie für den <em>useSingleSignOn</em>-Parameter den Wert <strong>true</strong> angeben. Wenn Sie dies nicht tun, werden Ihre Benutzer jedes Mal zur Anmeldung aufgefordert, wenn diese Anmeldemethode aufgerufen wird.
 
-2. Öffnen Sie im Windows Store-App-Projekt die Projektdatei "default.html", und fügen Sie unmittelbar vor dem Element, das die Schaltfläche **Speichern** definiert, folgendes **Button**-Element hinzu:
+2. Öffnen Sie im Windows Store-App-Projekt die Projektdatei "default.html", und fügen Sie unmittelbar vor dem Element, das die Schaltfläche **Save** definiert, folgendes **Button**-Element hinzu:
 
       	<button id="buttonLogin" style="margin-left: 5px">Sign in</button>
 
-3. Drücken Sie F5, um die App auszuführen und sich mit dem von Ihnen ausgewählten Identitätsanbieter bei der App anzumelden. 
+3. Drücken Sie F5, um die App auszuführen und sich mit dem von Ihnen ausgewählten Identitätsanbieter bei der App anzumelden.
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
-
-<!--HONumber=52-->
+<!---HONumber=62-->

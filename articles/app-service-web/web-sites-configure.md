@@ -78,7 +78,7 @@ Bei PHP-, Python-, Java- und Node-Anwendungen sind diese Einstellungen als Umgeb
 - SQL-Datenbank: SQLAZURECONNSTR_
 - Benutzerdefiniert: CUSTOMCONNSTR_
 
-Wenn beispielsweise eine MySQL-Verbindungszeichenfolge „`connectionstring1`“ heißt, wird sie über die Umgebungsvariable `MYSQLCONNSTR_connectionString1` aufgerufen.
+Wenn beispielsweise eine MySQL-Verbindungszeichenfolge "`connectionstring1`" heißt, wird sie über die Umgebungsvariable `MYSQLCONNSTR_connectionString1` aufgerufen.
 
 ### Standarddokumente
 
@@ -128,7 +128,7 @@ Zum Anzeigen der Protokolldateien müssen Sie die FTP-Anmeldeinformationen wie f
 ![](./media/web-sites-configure/configure03.png)
 
 
-Der vollständige FTP-Benutzername lautet „App\\Benutzername“. Dabei ist *App* der Name Ihrer Web-App. Den Benutzernamen finden Sie auf dem Blatt der Web-App unter **Essentials**.
+Der vollständige FTP-Benutzername lautet "App\Benutzername". Dabei ist *App* der Name Ihrer Web-App. Den Benutzernamen finden Sie auf dem Blatt der Web-App unter **Essentials**.
 
 ![](./media/web-sites-configure/configure02.png)
 

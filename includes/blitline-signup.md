@@ -1,5 +1,5 @@
 
-###So registrieren Sie ein Blitline-Konto
+### So registrieren Sie ein Blitline-Konto
 
 1. Melden Sie sich im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an.
 
@@ -28,7 +28,7 @@
 
 Um Blitline verwenden zu können, benötigen Sie Ihre Anwendungs-ID.
 
-###So finden Sie Ihre Blitline-Anwendungs-ID ###
+### So finden Sie Ihre Blitline-Anwendungs-ID ###
 
 1. Klicken Sie auf **Verbindungsinformationen**.
 
@@ -46,5 +46,4 @@ Um Blitline verwenden zu können, benötigen Sie Ihre Anwendungs-ID.
 [blitline-connection-info-button]: ./media/blitline-signup/blitline_connection_info_button.png
 [blitline-connection-info]: ./media/blitline-signup/blitline_connection_info_screen.jpeg
 
-
-<!--HONumber=52-->
+<!---HONumber=62-->

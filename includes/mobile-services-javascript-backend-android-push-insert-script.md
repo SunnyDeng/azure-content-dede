@@ -1,9 +1,9 @@
-﻿
+
 1. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**. 
  
-2. Klicken Sie in **todoitem** auf die Registerkarte **Skript**, und wählen Sie **Einfügen** aus.
+2. Klicken Sie unter **todoitem** auf die Registerkarte **Skript**, und wählen Sie **Einfügen** aus.
    
-   	Auf diese Weise wird die Funktion angezeigt, die aufgerufen wird, wenn in der Tabelle **TodoItem** eine Einfügung erfolgt.
+   	Daraufhin wird die Funktion angezeigt, die aufgerufen wird, wenn etwas in die Tabelle **TodoItem** eingefügt wird.
 
 3. Ersetzen Sie die Einfügefunktion durch den folgenden Code. Klicken Sie dann auf **Speichern**:
 
@@ -35,7 +35,6 @@
 		  });
 		}
 
-   	Damit wird ein neues Einfügeskript registriert, das nach dem erfolgreichen Einfügen über das [gcm-Objekt](http://go.microsoft.com/fwlink/p/?LinkId=282645) eine Pushbenachrichtigung an alle registrierten Geräte sendet. 
+   	Daraufhin wird ein neues Einfügeskript registriert, das das [gcm-Objekt](http://go.microsoft.com/fwlink/p/?LinkId=282645) zum Senden einer Pushbenachrichtigung an alle registrierten Geräte verwendet, nachdem der Einfügevorgang erfolgreich war.
 
-
-<!--HONumber=52-->
+<!---HONumber=62-->

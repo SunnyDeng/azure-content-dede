@@ -178,7 +178,7 @@ Dadurch wird die folgende Ausgabe zurückgegeben.
 
 ### Arrays
 
-Wenn es sich bei dem Parameter um ein Array wie beispielsweise [array] oder [string[]] handelt, können Sie das folgende JSON-Format verwenden, um eine Liste von Werten an den Parameter zu senden: *[Wert1,Wert2,Wert3]*. Bei den Werten muss es sich um einfache Typen handeln.
+Wenn es sich bei dem Parameter um ein Array wie beispielsweise [array] oder [string] handelt, können Sie das folgende JSON-Format verwenden, um eine Liste von Werten an den Parameter zu senden: *[Wert1,Wert2,Wert3]*. Bei den Werten muss es sich um einfache Typen handeln.
 
 Betrachten Sie das folgende Testrunbook, das einen Parameter namens *user* akzeptiert.
 
@@ -230,6 +230,6 @@ Wenn der Benutzernamen in den Anmeldeinformationen *jsmith* lautet, erhalten Sie
 
 ## Verwandte Artikel
 
-- [Starten eines Runbooks aus einem anderen Runbook](http://msdn.microsoft.com/library/azure/dn857355.aspx)
+- [Starten eines Runbooks aus einem anderen Runbook](http://msdn.microsoft.com/library/azure/dn857355.aspx) 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

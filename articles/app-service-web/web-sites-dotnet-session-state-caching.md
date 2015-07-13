@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Sitzungsstatus mit Azure-Redis-Cache in Azure App Service" 
+	pageTitle="Sitzungsstatus mit Azure Redis Cache in Azure App Service" 
 	description="Erfahren Sie, wie Sie den Azure Cache Service zur Unterstützung des ASP.NET-Sitzungszustand-Caching verwenden." 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -20,7 +20,7 @@
 # Sitzungsstatus mit Azure Redis Cache in Azure App Service
 
 
-In diesem Thema wird erläutert, wie Sie den Azure-Redis-Cache-Dienst für den Sitzungszustand verwenden.
+In diesem Thema wird erläutert, wie Sie den Azure Redis Cache-Dienst für den Sitzungszustand verwenden.
 
 Falls Ihre ASP.NET-Web-App den Sitzungszustand verwendet, müssen Sie einen externen Sitzungszustandsanbieter (entweder den Redis Cache Service oder einen SQL Server-Sitzungszustandsanbieter) konfigurieren. Wird der Sitzungszustand ohne einen externen Anbieter verwendet, sind Sie auf eine Instanz Ihrer Web-App beschränkt. Der Redis Cache Service lässt sich am schnellsten und einfachsten aktivieren.
 
@@ -41,34 +41,34 @@ Das NuGet-Paket fügt nicht nur Assemblyverweise für Cache, sondern auch Stub-E
 
 1. Öffnen Sie *web.config*, und suchen Sie das Element **sessionState**.
 
-1. Geben Sie die Werte für `host`, `accessKey`, `port` (der SSL-Port sollte 6380 lauten) ein, und legen Sie `SSL` auf `true` fest. Diese Werte finden Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) auf dem Blatt für Ihre Cacheinstanz. Weitere Informationen finden Sie unter [Verbinden mit dem Cache](../cache-dotnet-how-to-use-azure-redis-cache.md#connect-to-cache). Beachten Sie, dass der Nicht-SSL-Port für neue Caches standardmäßig deaktiviert ist. Weitere Informationen zum Aktivieren des Nicht-SSL-Ports finden Sie im Abschnitt [Zugriffsports](https://msdn.microsoft.com/library/azure/dn793612.aspx#AccessPorts) zum Thema [Konfigurieren eines Caches in Azure-Redis-Cache](https://msdn.microsoft.com/library/azure/dn793612.aspx). Das folgende Markup zeigt die Änderungen an der Datei *web.config*.
+1. Geben Sie die Werte für `host`, `accessKey`, `port` (der SSL-Port sollte 6380 lauten) ein, und legen Sie `SSL` auf `true` fest. Diese Werte finden Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) auf dem Blatt für Ihre Cacheinstanz. Weitere Informationen finden Sie unter [Verbinden mit dem Cache](../cache-dotnet-how-to-use-azure-redis-cache.md#connect-to-cache). Beachten Sie, dass der Nicht-SSL-Port für neue Caches standardmäßig deaktiviert ist. Weitere Informationen zum Aktivieren des Nicht-SSL-Ports finden Sie im Abschnitt [Zugriffsports](https://msdn.microsoft.com/library/azure/dn793612.aspx#AccessPorts) zum Thema [Konfigurieren eines Caches in Azure Redis Cache](https://msdn.microsoft.com/library/azure/dn793612.aspx). Das folgende Markup zeigt die Änderungen an der Datei *web.config*.
 
 
   <pre class="prettyprint">  
     &lt;system.web>
-    &lt; CustomErrors Mode = "Off" / >
-    &lt; Authentication Mode = "None" / >
+    &lt;customErrors mode="Off" />
+    &lt;authentication mode="None" />
     &lt;compilation debug="true" targetFramework="4.5" />
     &lt;httpRuntime targetFramework="4.5" />
-  &lt; SessionState-Modus = "Custom" CustomProvider = "RedisSessionProvider" >
-      &lt; Providers >  
-          &lt;!--&lt; hinzufügen Name = "RedisSessionProvider" 
-            Host = "127.0.0.1" [Zeichenfolge]
-            Port = "" [Zahl]
-            AccessKey = "" [Zeichenfolge]
-            SSL = "False" [True|false]
-            ThrowOnError = "True" [True|false]
-            RetryTimeoutInMilliseconds = "0" [Zahl]
-            DatabaseId = "0" [Zahl]
-            ApplicationName = "" [Zeichenfolge]
-          / >-->
-         &lt; hinzufügen Name = "RedisSessionProvider" 
-              Type="Microsoft.Web.Redis.RedisSessionStateProvider" 
-              <mark>Port = "6380"
-              Host = "movie2.redis.cache.windows.net" 
-              AccessKey = "m7PNV60CrvKpLqMUxosC3dSe6kx9nQ6jP5del8TmADk =" 
-              SSL = "true"</mark> / >
-      &lt;!--&lt; hinzufügen Name = "MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider" Host = "127.0.0.1" AccessKey = "" Ssl = "false" / >-->
+  &lt;sessionState mode="Custom" customProvider="RedisSessionProvider">
+      &lt;providers>  
+          &lt;!--&lt;add name="RedisSessionProvider" 
+            host = "127.0.0.1" [String]
+            port = "" [number]
+            accessKey = "" [String]
+            ssl = "false" [true|false]
+            throwOnError = "true" [true|false]
+            retryTimeoutInMilliseconds = "0" [number]
+            databaseId = "0" [number]
+            applicationName = "" [String]
+          />-->
+         &lt;add name="RedisSessionProvider" 
+              type="Microsoft.Web.Redis.RedisSessionStateProvider" 
+              <mark>port="6380"
+              host="movie2.redis.cache.windows.net" 
+              accessKey="m7PNV60CrvKpLqMUxosC3dSe6kx9nQ6jP5del8TmADk=" 
+              ssl="true"</mark> />
+      &lt;!--&lt;add name="MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider" host="127.0.0.1" accessKey="" ssl="false" />-->
       &lt;/providers>
     &lt;/sessionState>
   &lt;/system.web></pre>
@@ -109,4 +109,4 @@ Sie können den Redis Cache auch zum Zwischenspeichern von Objekten in Ihrer Web
   [ManageKeys]: ./media/web-sites-dotnet-session-state-caching/CachingScreenshot_ManageAccessKeys.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

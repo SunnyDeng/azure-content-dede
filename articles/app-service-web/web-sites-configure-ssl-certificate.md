@@ -17,7 +17,7 @@
 	ms.author="cephalin"/>
 
 
-[AZURE.INCLUDE [Konfigurieren von-Ssl-Website](../../includes/configure-ssl-web-site.md)]
+[AZURE.INCLUDE [configure-ssl-web-site](../../includes/configure-ssl-web-site.md)]
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

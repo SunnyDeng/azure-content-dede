@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/01/2015" 
+	ms.date="06/19/2015" 
 	ms.author="awills"/>
  
 # Aktualisieren der alten Visual Studio Online-Version von Application Insights
@@ -32,9 +32,18 @@ Oder sehen Sie sich Ihr Projekt im Projektmappen-Explorer von Visual Studio an, 
 1. Öffnen Sie das Projekt in Visual Studio 2013 Update 3 oder höher.
 2. Löschen Sie "ApplicationInsights.config". 
 3. Entfernen Sie die Application Insights NuGet-Pakete aus dem Projekt. Klicken Sie hierzu im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie "NuGet-Pakete verwalten" aus.
+
+    ![](./media/app-insights-upgrade-vso-azure/nuget.png)
+4. Löschen Sie den Ordner "AppInsightsAgent" und die darin enthaltenen Dateien.
+
+    ![](./media/app-insights-upgrade-vso-azure/folder.png)
+
+5. Entfernen Sie alle "Microsoft.AppInsights"-Einstellungsnamen und -werte aus "ServiceDefinition.csdef" und "ServiceConfiguration.csfg".
+
+    ![](./media/app-insights-upgrade-vso-azure/csdef.png)
 4. SDK: Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie [Application Insights hinzufügen][greenbrown]. Hierdurch wird das SDK zum Projekt hinzugefügt und außerdem eine neue Application Insights-Ressource in Azure erstellt.
 5. Protokollierung: Wenn Ihr Code Aufrufe an die alte API wie z. B. "LogEvent()" enthält, werden Sie diese finden, wenn Sie versuchen, die Projektmappe zu erstellen. Aktualisieren Sie sie für das [Verwenden der neuen API][track].
-6. Webseiten: Wenn Ihr Projekt Webseiten enthält, ersetzen Sie die Skripts in den Abschnitten <head>. Es gibt in der Regel nur eine Kopie auf einer Masterseite, z. B. "Views\\Shared_Layout.cshtml". [Rufen Sie das neue Skript vom Blatt "Schnellstart" in Ihrer Application Insights-Ressource in Azure ab][usage]. Wenn Ihre Webseiten im Text Telemetrieaufrufe wie z. B. "logEvent" oder "logPage" enthalten, [aktualisieren Sie sie für die Verwendung der neuen API][track].
+6. Webseiten: Wenn Ihr Projekt Webseiten enthält, ersetzen Sie die Skripts in den Abschnitten <head>. Es gibt in der Regel nur eine Kopie auf einer Masterseite, z. B. "Views\Shared_Layout.cshtml". [Rufen Sie das neue Skript vom Blatt "Schnellstart" in Ihrer Application Insights-Ressource in Azure ab][usage]. Wenn Ihre Webseiten im Text Telemetrieaufrufe wie z. B. "logEvent" oder "logPage" enthalten, [aktualisieren Sie sie für die Verwendung der neuen API][api].
 7. Servermonitor: Wenn Ihre App ein in IIS ausgeführter Dienst ist, deinstallieren Sie Microsoft Monitoring Agent vom Server, und [installieren dann den Application Insights-Statusmonitor][redfield].
 8. Webtests: Wenn Sie mit Webverfügbarkeitstests gearbeitet haben, [erstellen Sie diese im neuen Portal samt ihren Warnungen neu][availability].
 9. Warnungen: Richten Sie [Warnungen zu Metriken][alerts] im Azure-Portal ein.
@@ -54,6 +63,7 @@ Oder sehen Sie sich Ihr Projekt im Projektmappen-Explorer von Visual Studio an, 
 <!--Link references-->
 
 [alerts]: app-insights-alerts.md
+[api]: app-insights-api-custom-events-metrics.md
 [availability]: app-insights-monitor-web-app-availability.md
 [greenbrown]: app-insights-start-monitoring-app-health-usage.md
 [java]: app-insights-java-get-started.md
@@ -63,4 +73,4 @@ Oder sehen Sie sich Ihr Projekt im Projektmappen-Explorer von Visual Studio an, 
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

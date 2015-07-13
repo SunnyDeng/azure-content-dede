@@ -31,4 +31,5 @@
     Dieser Code sendet eine Pushbenachrichtigung (mit dem Text des eingefügten Eintrags), nachdem ein todo-Eintrag eingefügt wurde. Falls ein Fehler auftritt, wird vom Code ein Fehlerprotokolleintrag hinzugefügt, der auf der Registerkarte **Protokolle** des mobilen Diensts im Verwaltungsportal angezeigt werden kann.
 
 3. Veröffentlichen Sie das Projekt für den mobilen Service erneut auf Azure.
-<!--HONumber=54-->
+
+<!---HONumber=62-->

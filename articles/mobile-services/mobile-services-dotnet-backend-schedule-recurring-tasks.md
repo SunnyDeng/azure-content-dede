@@ -4,17 +4,16 @@
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="ggailey777" 
-	writer="" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="mobile-multiple" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="2/26/2015" 
+	ms.date="05/20/2015" 
 	ms.author="glenga"/>
 
 # Planen von periodischen Aufträgen in Mobile Services 
@@ -29,16 +28,9 @@ In diesem Thema erfahren Sie, wie Sie die Auftragsplanerfunktion im Verwaltungsp
 + Anfordern und Speichern von externen Daten, wie etwa Tweets, RSS-Einträgen oder Standortinformationen.
 + Verarbeiten oder Anpassen der Größe von gespeicherten Images.
 
-In diesem Lernprogramm werden die Schritte bezüglich der Verwendung des Auftragsplaners behandelt, um mit diesem einen geplanten Auftrag zu erstellen, welcher Tweet-Daten von Twitter anfordert und die Tweets in einer neuen Aktualisierungstabelle speichert:
+In diesem Lernprogramm wird die Verwendung des Auftragsplaners erläutert, um mit diesem einen geplanten Auftrag zu erstellen, welcher Tweet-Daten von Twitter anfordert und die Tweets in einer neuen Aktualisierungstabelle speichert.
 
-1. [Registrieren für Twitter-Zugang und Speichern der Anmeldeinformationen]
-2. [Herunterladen und Installieren der LINQtoTwitter-Bibliothek]
-3. [Erstellen der neuen Updates-Tabelle]
-4. [Erstellen eines neuen geplanten Auftrags]
-5. [Lokales Testen des geplanten Auftrags]
-6. [Veröffentlichen des Diensts und Registrieren des Auftrags]
-
->[AZURE.NOTE]In diesem Lernprogramm wird die Drittanbieterbibliothek LINQ to-Twitter verwendet, um den OAuth 2.0-Zugriff auf Twitter v1.1- APIs zu vereinfachen. Sie müssen das LINQtoTwitter-NuGet-Paket herunterladen und installieren, um dieses Lernprogramm durchführen zu können. Weitere Informationen finden Sie unter [LINQtoTwitter-CodePlex-Projekt].
+>[AZURE.NOTE]In diesem Lernprogramm wird die Drittanbieter-LINQtoTwitter-Bibliothek verwendet, um den OAuth 2.0-Zugriff auf Twitter v1.1- APIs zu vereinfachen. Sie müssen das LINQtoTwitter-NuGet-Paket herunterladen und installieren, um dieses Lernprogramm durchführen zu können. Weitere Informationen finden Sie unter [LINQtoTwitter-CodePlex-Projekt].
 
 ##<a name="get-oauth-credentials"></a>Registrieren für Zugriff auf Twitter v1.1-APIs und Speichern von Anmeldeinformationen
 
@@ -262,7 +254,7 @@ Der Auftrag muss auf der Registerkarte **Scheduler** registriert werden, sodass 
 
 3. Geben Sie im Scheduler-Dialogfeld die Zeichenfolge _Sample_ für **Auftragsname** ein. Legen Sie das Planintervall und die Planeinheiten fest, und klicken Sie anschließend auf das Häkchen.
    
-   ![][4]
+   	![][4]
 
    	Dadurch wird ein neuer Auftrag mit dem Namen **Sample** erstellt.
 
@@ -283,12 +275,12 @@ Der Auftrag muss auf der Registerkarte **Scheduler** registriert werden, sodass 
 Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobilen Dienst erstellt. Dieser Auftrag wird wie geplant ausgeführt, bis Sie ihn deaktivieren oder modifizieren.
 
 <!-- Anchors. -->
-[Registrieren für Twitter-Zugang und Speichern der Anmeldeinformationen]: #get-oauth-credentials
-[Herunterladen und Installieren der LINQtoTwitter-Bibliothek]: #install-linq2twitter
-[Erstellen der neuen Updates-Tabelle]: #create-table
-[Erstellen eines neuen geplanten Auftrags]: #add-job
-[Lokales Testen des geplanten Auftrags]: #run-job-locally
-[Veröffentlichen des Diensts und Registrieren des Auftrags]: #register-job
+[Register for Twitter access and store credentials]: #get-oauth-credentials
+[Download and install the LINQ to Twitter library]: #install-linq2twitter
+[Create the new Updates table]: #create-table
+[Create a new scheduled job]: #add-job
+[Test the scheduled job locally]: #run-job-locally
+[Publish the service and register the job]: #register-job
 [Next steps]: #next-steps
 
 <!-- Images. -->
@@ -308,4 +300,5 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 [LINQtoTwitter-CodePlex-Projekt]: http://linqtotwitter.codeplex.com/
-<!--HONumber=54--> 
+
+<!---HONumber=62-->

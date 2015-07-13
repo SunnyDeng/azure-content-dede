@@ -36,39 +36,35 @@ So erstellen Sie eine benutzerdefinierte Aktivität:
 
 4. Aktualisieren Sie die Klasse mit der Implementierung der **IDotNetActivity**-Schnittstelle.
 	<ol type='a'>
-		<li>
-			Leiten Sie die Klasse von <b>IDotNetActivity</b> ab.
-			<br/>
-			Beispiel: <br/>
-			public class <b>MyDotNetActivity : IDotNetActivity</b>
-		</li>
+	<li>
+		Leiten Sie die Klasse von <b>IDotNetActivity</b> ab.
+		<br/>
+		Beispiel: <br/>
+		public class <b>MyDotNetActivity : IDotNetActivity</b>
+	</li>
 
-		<li>
-			Implementieren Sie die <b>Execute</b>-Methode der <b>IDotNetActivity</b>-Schnittstelle.
-		</li>
+	<li>
+		Implementieren Sie die <b>Execute</b>-Methode der <b>IDotNetActivity</b>-Schnittstelle.
+	</li>
 
-	</ol>
+</ol>
 5. Kompilieren Sie das Projekt.
 
 
 ## Verwenden der benutzerdefinierten Aktivität in einer Pipeline
 So verwenden Sie die benutzerdefinierte Aktivität in einer Pipeline
 
-1.	**Komprimieren** Sie alle Binärdateien aus den Ausgabeordnern **bin\\debug** oder **bin\\release** für das Projekt. 
+1.	**Komprimieren** Sie alle Binärdateien aus den Ausgabeordnern **bin\debug** oder **bin\release** für das Projekt. 
 2.	Führen Sie das **Hochladen der ZIP-Datei** als Blob in Ihren **Azure-Blobspeicher** durch. 
 3.	Aktualisieren Sie die **JSON-Datei der Pipeline**, um auf die ZIP-Datei, die benutzerdefinierte Aktivitäts-DLL, die "activity"-Klasse und den Blob, der die ZIP-Datei im JSON-Code für die Pipeline enthält, zu verweisen. In der JSON-Datei:
 	<ol type ="a">
-		<li><b>Activity type</b> muss auf <b>CustomActivity</b> festgelegt werden.</li>
-		<li><b>AssemblyName</b> ist der Name der Ausgabe-DLL aus dem Visual Studio-Projekt.</li>
-		<li><b>EntryPoint</b> gibt den <b>Namespace</b> und den <b>Namen</b> der <b>Klasse</b> an, die die <b>ICustomActivity</b>-Schnittstelle implementiert.</li>
-		<li><b>PackageLinkedService</b> ist der verknüpfte Dienst, der auf das Blob mit der ZIP-Datei verweist. </li>
-		<li><b>PackageFile</b> gibt den Speicherort und den Namen der ZIP-Datei an, die in den Azure-Blobspeicher hochgeladen wurde.</li>
-		<li><b>LinkedServiceName</b> ist der Name des verknüpften Diensts, der einen (bedarfsgesteuerten oder eigenen) HDInsight-Cluster mit einer Data Factory verknüpft. Die benutzerdefinierte Aktivität wird als Nur-Zuordnungs-Auftrag für den angegebenen HDInsight-Cluster ausgeführt.</li>
-	</ol>
-
-	
-
-	**Ausschnitt aus einem JSON-Beispiel**
+	<li><b>Activity type</b> muss auf <b>CustomActivity</b> festgelegt werden.</li>
+	<li><b>AssemblyName</b> ist der Name der Ausgabe-DLL aus dem Visual Studio-Projekt.</li>
+	<li><b>EntryPoint</b> gibt den <b>Namespace</b> und den <b>Namen</b> der <b>Klasse</b> an, die die <b>ICustomActivity</b>-Schnittstelle implementiert.</li>
+	<li><b>PackageLinkedService</b> ist der verknüpfte Dienst, der auf das Blob mit der ZIP-Datei verweist. </li>
+	<li><b>PackageFile</b> gibt den Speicherort und den Namen der ZIP-Datei an, die in den Azure-Blobspeicher hochgeladen wurde.</li>
+	<li><b>LinkedServiceName</b> ist der Name des verknüpften Diensts, der einen (bedarfsgesteuerten oder eigenen) HDInsight-Cluster mit einer Data Factory verknüpft. Die benutzerdefinierte Aktivität wird als Nur-Zuordnungs-Auftrag für den angegebenen HDInsight-Cluster ausgeführt.</li>
+</ol>**Ausschnitt aus einem JSON-Beispiel**
 
 		"Name": "MyDotNetActivity",
     	"Type": "DotNetActivity",
@@ -101,14 +97,14 @@ Diese exemplarische Vorgehensweise bietet Schritt-für-Schritt-Anleitungen zum E
 
 1.	Erstellen Sie ein .NET-Klassenbibliotheksprojekt.
 	<ol type="a">
-		<li>Starten Sie <b>Visual Studio&#160;2012</b> oder <b>Visual Studio&#160;2013</b>.</li>
-		<li>Klicken Sie auf <b>Datei</b>, zeigen Sie auf <b>Neu</b>, und klicken Sie auf <b>Projekt</b>.</li> 
-		<li>Erweitern Sie <b>Vorlagen</b>, und wählen Sie <b>Visual C#</b> aus. In dieser exemplarischen Vorgehensweise verwenden Sie C#, Sie können jedoch jede .NET-Sprache verwenden, um benutzerdefinierte Aktivität zu entwickeln.</li> 
-		<li>Wählen Sie in der Liste mit den Projekttypen auf der rechten Seite den Eintrag <b>Klassenbibliothek</b> aus.</li>
-		<li>Geben Sie <b>MyDotNetActivity</b> als <b>Namen</b> ein.</li> 
-		<li>Wählen Sie <b>C:\ADFGetStarted</b> als <b>Speicherort</b>.</li>
-		<li>Klicken Sie auf <b>OK</b>, um das Projekt zu erstellen.</li>
-	</ol>
+	<li>Starten Sie <b>Visual Studio&#160;2012</b> oder <b>Visual Studio&#160;2013</b>.</li>
+	<li>Klicken Sie auf <b>Datei</b>, zeigen Sie auf <b>Neu</b>, und klicken Sie auf <b>Projekt</b>.</li> 
+	<li>Erweitern Sie <b>Vorlagen</b>, und wählen Sie <b>Visual C#</b> aus. In dieser exemplarischen Vorgehensweise verwenden Sie C#, Sie können jedoch jede .NET-Sprache verwenden, um benutzerdefinierte Aktivität zu entwickeln.</li> 
+	<li>Wählen Sie in der Liste mit den Projekttypen auf der rechten Seite den Eintrag <b>Klassenbibliothek</b> aus.</li>
+	<li>Geben Sie <b>MyDotNetActivity</b> als <b>Namen</b> ein.</li> 
+	<li>Wählen Sie <b>C:\ADFGetStarted</b> als <b>Speicherort</b>.</li>
+	<li>Klicken Sie auf <b>OK</b>, um das Projekt zu erstellen.</li>
+</ol>
 2.  Klicken Sie auf <b>Extras</b>, zeigen Sie auf <b>NuGet-Paket-Manager</b>, und klicken Sie auf <b>Paket-Manager-Konsole</b>.
 3.	Führen Sie in der <b>Paket-Manager-Konsole</b> den folgenden Befehl zum Importieren von <b>Microsoft.Azure.Management.DataFactories</b> aus. 
 
@@ -144,7 +140,7 @@ Diese exemplarische Vorgehensweise bietet Schritt-für-Schritt-Anleitungen zum E
 
 8. Implementieren bzw. fügen Sie die **Execute**-Methode der **IDotNetActivity**-Schnittstelle der **MyDotNetActivity**-Klasse hinzu, und kopieren Sie den folgenden Beispielcode in die Methode.
 
-	Die Parameter **inputTables** und **outputTables** stellen Eingabe- und Ausgabetabellen für die Aktivität dar. Sie können protokollierte Meldungen unter Verwendung des **logger**-Objekts in der Protokolldatei anzeigen, die Sie aus dem Azure-Portal oder mithilfe von Cmdlets herunterladen können. Das **extendedProperties**-Wörterbuch enthält die Liste mit den erweiterten Eigenschaften und deren Werte, die Sie in der JSON-Datei für die Aktivität angeben. 
+	Die Parameter **inputTables** und **outputTables** stellen Eingabe- und Ausgabetabellen für die Aktivität dar. Sie können protokollierte Meldungen unter Verwendung des **logger**-Objekts in der Protokolldatei anzeigen, die Sie aus dem Azure-Portal oder mithilfe von Cmdlets herunterladen können. Das **extendedProperties**-Wörterbuch enthält die Liste mit den erweiterten Eigenschaften und deren Werte, die Sie in der JSON-Datei für die Aktivität angeben.
 
 	Im folgenden Beispielcode wird die Anzahl der Zeilen im Eingabeblob gezählt und der folgende Inhalt im Ausgabeblob erzeugt: Pfad zum Blob, die Anzahl der Zeilen im Blob, der Computer, auf dem die Aktivität ausgeführt wurde, und das aktuelle Datum samt Uhrzeit.
 
@@ -290,8 +286,8 @@ Diese exemplarische Vorgehensweise bietet Schritt-für-Schritt-Anleitungen zum E
 
 
 10. Kompilieren Sie das Projekt. Klicken Sie im Menü auf **Erstellen** und dann auf **Projektmappe erstellen**.
-11. Starten Sie **Windows-Explorer**, und navigieren Sie je nach Buildtyp zum Ordner **bin\\debug** oder **bin\\release**.
-12. Erstellen Sie die ZIP-Datei **MyDotNetActivity.zip**, die alle Binärdateien im Ordner "<project folder>\\bin\\Debug" enthält.
+11. Starten Sie **Windows-Explorer**, und navigieren Sie je nach Buildtyp zum Ordner **bin\debug** oder **bin\release**.
+12. Erstellen Sie die ZIP-Datei **MyDotNetActivity.zip**, die alle Binärdateien im Ordner "<project folder>\bin\Debug" enthält.
 13. Laden Sie **MyDotNetActivity.zip** als Blob in den Blobcontainer **customactivitycontainer** im Azure-Blobspeicher hoch, den der verknüpfte Dienst **MyBlobStore** in der **ADFTutorialDataFactory** verwendet. Erstellen Sie den Blobcontainer **blobcustomactivitycontainer**, sofern er noch nicht vorhanden ist. 
 
 
@@ -527,4 +523,4 @@ Es folgen die allgemeinen Schritte zur Verwendung des mit Azure Batch verknüpft
 [image-data-factory-azure-batch-tasks]: ./media/data-factory-use-custom-activities/AzureBatchTasks.png
  
 
-<!----HONumber=58_postMigration-->
+<!---HONumber=62-->

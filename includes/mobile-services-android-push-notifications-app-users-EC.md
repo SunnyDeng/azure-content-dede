@@ -1,4 +1,4 @@
-﻿
+
 Als Nächstes müssen Sie den Zeitpunkt für die Benachrichtigungsregistrierung ändern, um sicherzustellen, dass der Benutzer vor dem Registrierungsversuch authentifiziert wird.
 
 
@@ -26,6 +26,4 @@ Als Nächstes müssen Sie den Zeitpunkt für die Benachrichtigungsregistrierung 
             refreshItemsFromTable();
         }	
 
-
-
-<!--HONumber=52-->
+<!---HONumber=62-->

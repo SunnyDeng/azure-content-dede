@@ -358,47 +358,48 @@ Wenn Sie die ACS-Funktionalität genauer erforschen und mit anderen Szenarien ex
 
 
 
-[What is ACS?]: #what-is
-[Concepts]: #concepts
-[Prerequisites]: #pre
-[Create an ASP.NET MVC Application]: #create-web-app
-[Create an Access Control Namespace]: #create-namespace
-[Integrate your Web Application with ACS]: #Identity-Access
-[Test the Integration with ACS]: #Test-ACS
-[View the Application in the ACS Management Portal]: acs-portal
-[Add an Identity Provider]: #add-IP
-[What's Next]: #whats-next
-[vcsb]: #bkmk_viewClaims
-[vpp]: #bkmk_VP
+  [What is ACS?]: #what-is
+  [Concepts]: #concepts
+  [Prerequisites]: #pre
+  [Create an ASP.NET MVC Application]: #create-web-app
+  [Create an Access Control Namespace]: #create-namespace
+  [Integrate your Web Application with ACS]: #Identity-Access
+  [Test the Integration with ACS]: #Test-ACS
+  [View the Application in the ACS Management Portal]: acs-portal
+  [Add an Identity Provider]: #add-IP
+  [What's Next]: #whats-next
+  [vcsb]: #bkmk_viewClaims
+  [vpp]: #bkmk_VP
 
-[Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
-[Identitäts- und Zugriffstool]: http://go.microsoft.com/fwlink/?LinkID=245849
-[Azure-Verwaltungsportal]: http://manage.WindowsAzure.com
+  [Access Control Service 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
+  [Identitäts- und Zugriffstool]: http://go.microsoft.com/fwlink/?LinkID=245849
+  [Azure-Verwaltungsportal]: http://manage.WindowsAzure.com
 
-[0]: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
-[1]: ./media/active-directory-dotnet-how-to-use-access-control/acsCreateNamespace.png
-[2]: ./media/active-directory-dotnet-how-to-use-access-control/acsQuickCreate.png
-[3]: ./media/active-directory-dotnet-how-to-use-access-control/rzMvc.png
-[4]: ./media/active-directory-dotnet-how-to-use-access-control/rzIA.png
+  [0]: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
+  [1]: ./media/active-directory-dotnet-how-to-use-access-control/acsCreateNamespace.png
+  [2]: ./media/active-directory-dotnet-how-to-use-access-control/acsQuickCreate.png
+  [3]: ./media/active-directory-dotnet-how-to-use-access-control/rzMvc.png
+  [4]: ./media/active-directory-dotnet-how-to-use-access-control/rzIA.png
 [44]: ./media/active-directory-dotnet-how-to-use-access-control/rzPT.png
-[444]: ./media/active-directory-dotnet-how-to-use-access-control/rzC.png
-[5]: ./media/active-directory-dotnet-how-to-use-access-control/acsIdAndAccess1.png
-[6]: ./media/active-directory-dotnet-how-to-use-access-control/acsMSFTAcct.png
-[66]: ./media/active-directory-dotnet-how-to-use-access-control/rzAv.png
-[666]: ./media/active-directory-dotnet-how-to-use-access-control/rzCl.png
-[7]: ./media/active-directory-dotnet-how-to-use-access-control/acsSignIn.png
-[8]: ./media/active-directory-dotnet-how-to-use-access-control/acsClickManage.png
-[9]: ./media/active-directory-dotnet-how-to-use-access-control/acsACSPortal.png
-[10]: ./media/active-directory-dotnet-how-to-use-access-control/acsRPPage.png
-[11]: ./media/active-directory-dotnet-how-to-use-access-control/acsEdit-RP.png
-[12]: ./media/active-directory-dotnet-how-to-use-access-control/acsEdit-RP2.png
-[13]: ./media/active-directory-dotnet-how-to-use-access-control/acsAdd-Idp.png
-[14]: ./media/active-directory-dotnet-how-to-use-access-control/acsAdd-Google.png
-[15]: ./media/active-directory-dotnet-how-to-use-access-control/acsSave-Google.png
-[16]: ./media/active-directory-dotnet-how-to-use-access-control/acsIdAndA-after.png
-[17]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace.png
-[18]: ./media/active-directory-dotnet-how-to-use-access-control/acsManagementService.png
-[19]: ./media/active-directory-dotnet-how-to-use-access-control/acsShowKey.png
-[20]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace2.png
+ [444]: ./media/active-directory-dotnet-how-to-use-access-control/rzC.png
+  [5]: ./media/active-directory-dotnet-how-to-use-access-control/acsIdAndAccess1.png
+  [6]: ./media/active-directory-dotnet-how-to-use-access-control/acsMSFTAcct.png
+  [66]: ./media/active-directory-dotnet-how-to-use-access-control/rzAv.png
+  [666]: ./media/active-directory-dotnet-how-to-use-access-control/rzCl.png
+  [7]: ./media/active-directory-dotnet-how-to-use-access-control/acsSignIn.png
+  [8]: ./media/active-directory-dotnet-how-to-use-access-control/acsClickManage.png
+  [9]: ./media/active-directory-dotnet-how-to-use-access-control/acsACSPortal.png
+  [10]: ./media/active-directory-dotnet-how-to-use-access-control/acsRPPage.png
+  [11]: ./media/active-directory-dotnet-how-to-use-access-control/acsEdit-RP.png
+  [12]: ./media/active-directory-dotnet-how-to-use-access-control/acsEdit-RP2.png
+  [13]: ./media/active-directory-dotnet-how-to-use-access-control/acsAdd-Idp.png
+  [14]: ./media/active-directory-dotnet-how-to-use-access-control/acsAdd-Google.png
+  [15]: ./media/active-directory-dotnet-how-to-use-access-control/acsSave-Google.png
+  [16]: ./media/active-directory-dotnet-how-to-use-access-control/acsIdAndA-after.png
+  [17]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace.png
+  [18]: ./media/active-directory-dotnet-how-to-use-access-control/acsManagementService.png
+  [19]: ./media/active-directory-dotnet-how-to-use-access-control/acsShowKey.png
+  [20]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace2.png
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

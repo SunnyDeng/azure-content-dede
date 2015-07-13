@@ -1,9 +1,10 @@
 <properties 
-	pageTitle="Verwenden des Azure Stream Analytics Management .NET SDK | Azure" 
-	description="Enthält Informationen zum Verwenden des Stream Analytics Management .NET SDK" 
+	pageTitle="Erfahren Sie, wie Sie das Stream Analytics Management .NET SDK verwenden | Microsoft Azure" 
+	description="Führen Sie erste Schritte mit dem Stream Analytics Management .NET SDK durch. Erfahren Sie, wie Sie Analyseaufträge einrichten und ausführen: Erstellen Sie ein Projekt, Eingaben, Ausgaben und Transformationen." 
+	keywords=".net skd,analytics jobs,event hub"
 	services="stream-analytics" 
 	documentationCenter="" 
-	authors="mumian" 
+	authors="jeffstokes72" 
 	manager="paulettm" 
 	editor="cgronlun"/>
 
@@ -13,44 +14,46 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="03/05/2015" 
-	ms.author="jgao"/>
+	ms.date="06/17/2015" 
+	ms.author="jeffstok"/>
 
 
-# Verwenden des Azure Stream Analytics Management .NET SDK
+# Einrichten und Ausführen von Analyseaufträgen mit dem Azure Stream Analytics Management .NET SDK
 
-[Dies ist die Vorabdokumentation und kann in zukünftigen Versionen geändert werden.]
+Erfahren Sie, wie Sie mit dem Azure Stream Analytics Management .NET SDK Analyseaufträge einrichten und ausführen. Richten Sie ein Projekt ein, erstellen Sie Eingabe- und Ausgabequellen sowie Transformationen, und starten und beenden Sie Aufträge. Für Ihre Analyseaufträge können Sie Daten aus dem Blob-Speicher oder einem Event Hub streamen.
 
-Azure Stream Analytics ist ein vollständig verwalteter Dienst, der eine geringe Latenz, Hochverfügbarkeit und eine skalierbare komplexe Ereignisverarbeitung durch das Streaming von Daten in der Cloud bietet. Die Vorabversion von Stream Analytics ermöglicht Kunden die Einrichtung von Streamingaufträgen, um Datenströme zu analysieren und um eine Analyse in nahezu Echtzeit durchzuführen.  
+Azure Stream Analytics ist ein vollständig verwalteter Dienst, der eine geringe Latenz, Hochverfügbarkeit und eine skalierbare komplexe Ereignisverarbeitung durch das Streaming von Daten in der Cloud bietet. Stream Analytics ermöglicht Kunden, Streaming-Aufträge zur Analyse von Datenströmen einzurichten und Analysen nahezu in Echtzeit durchzuführen.
 
-In diesem Artikel wird veranschaulicht, wie das Azure Stream Analytics Management .NET SDK verwendet wird.
+Informationen zur .NET API-Referenz finden Sie unter [Stream Analytics Management .NET SDK](https://msdn.microsoft.com/library/azure/dn889315.aspx).
 
 
 ## Voraussetzungen
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
 - Installieren Sie Visual Studio 2012 oder 2013.
-- Laden Sie das [Microsoft Azure .NET SDK](http://azure.microsoft.com/downloads/) herunter, und installieren Sie es. 
-- Erstellen Sie in Ihrem Abonnement eine Azure-Ressourcengruppe. Nachfolgend ist ein Azure PowerShell-Beispielskript aufgeführt. Informationen zur Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md);  
+- Laden Sie das [Azure .NET SDK](http://azure.microsoft.com/downloads/) herunter, und installieren Sie es. 
+- Erstellen Sie in Ihrem Abonnement eine Azure-Ressourcengruppe. Nachfolgend ist ein Azure PowerShell-Beispielskript aufgeführt. Informationen zu Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).  
 
 
-		# Konfigurieren der Azure PowerShell-Sitzung für den Zugriff auf den Azure-Ressourcen-Manager
+		# Configure the Azure PowerShell session to access Azure Resource Manager
 		Switch-AzureMode AzureResourceManager
 
-		# Anmelden beim Azure-Konto
+		# Log in to your Azure account
 		Add-AzureAccount
 
-		# Auswählen des Azure-Abonnements, das Sie zum Erstellen der Ressourcengruppe verwenden möchten
-		Select-AzureSubscription -SubscriptionName <Abonnementname>
+		# Select the Azure subscription you want to use to create the resource group
+		Select-AzureSubscription -SubscriptionName <subscription name>
 
-		# Erstellen einer Azure-Ressourcengruppe	
-		New-AzureResourceGroup -Name <NAME IHRER RESSOURCENGRUPPE> -Location <STANDORT>
+		# Create an Azure resource group	
+		New-AzureResourceGroup -Name <YOUR RESORUCE GROUP NAME> -Location <LOCATION>
 
 
 -	Richten Sie eine Eingabequelle und ein Ausgabeziel ein. Informationen zum Einrichten einer Beispieleingabe und/oder -ausgabe zur Verwendung durch diesen Artikel finden Sie unter [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md).
 
 
 ## Einrichten eines Projekts
+
+Um einen Analyseauftrag zu erstellen, müssen Sie zunächst das Projekt einrichten.
 
 1. Erstellen Sie eine Visual Studio C# .NET-Konsolenanwendung.
 2. Führen Sie in der Paket-Manager-Konsole die folgenden Befehle zum Installieren der NuGet-Pakete aus. Das erste ist das Azure Stream Analytics Management .NET SDK. Das zweite ist der Azure Active Directory-Client, der für die Authentifizierung verwendet wird.
@@ -67,12 +70,12 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 		  <add key="WindowsManagementUri" value="https://management.core.windows.net/" />
 		  <add key="AsaClientId" value="1950a258-227b-4e31-a9cf-717495945fc2" />
 		  <add key="RedirectUri" value="urn:ietf:wg:oauth:2.0:oob" />
-		  <add key="SubscriptionId" value="<IHR AZURE-ABONNEMENT>" />
-		  <add key="ActiveDirectoryTenantId" value="<IHRE MANDANTEN-ID>" />
+		  <add key="SubscriptionId" value="<YOUR AZURE SUBSCRIPTION>" />
+		  <add key="ActiveDirectoryTenantId" value="<YOU TENANT ID>" />
 		</appSettings>
 
 
-	Ersetzen Sie die Werte für **SubscriptionId** und **ActiveDirectoryTenantId** durch Ihre Azure-Abonnement- und Mandanten-ID. Sie können diese Werte durch Ausführen des folgenden Azure PowerShell-Cmdlets abrufen:
+	Ersetzen Sie die Werte für **SubscriptionId** und **ActiveDirectoryTenantId** durch Ihre Abonnement- und Mandanten-ID für Azure. Sie können diese Werte durch Ausführen des folgenden Azure PowerShell-Cmdlets abrufen:
 
 		Get-AzureAccount
 
@@ -125,42 +128,42 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 		}  
 
 
-## Erstellen Sie einen Stream Analytics-Verwaltungsclient
+## Erstellen eines Stream Analytics-Verwaltungsclients
 
-Mithilfe eines Objekts **StreamAnalyticsManagementClient** können Sie den Auftrag und die Auftragskomponenten wie Eingabe, Ausgabe und Transformation verwalten. 
+Mithilfe eines **StreamAnalyticsManagementClient**-Objekts können Sie den Auftrag und die Auftragskomponenten wie Eingabe, Ausgabe und Transformation verwalten.
 
-Fügen Sie den folgenden Code am Anfang der Methode **Main** hinzu: 
+Fügen Sie den folgenden Code am Anfang der Methode **Main** hinzu:
 
-	string resourceGroupName = "<NAME IHRER AZURE-RESSOURCENGRUPPE>";
-	string streamAnalyticsJobName = "<NAME IHRES STREAM ANALYTICS-AUFTRAGS>";
-	string streamAnalyticsInputName = "<NAME DER AUFTRAGSEINGABE>";
-	string streamAnalyticsOutputName = "<NAME DER AUFTRAGSAUSGABE>";
-	string streamAnalyticsTransformationName = "<NAME DER AUFTRAGSTRANSFORMATION>";
+	string resourceGroupName = "<YOUR AZURE RESOURCE GROUP NAME>";
+	string streamAnalyticsJobName = "<YOUR STREAM ANALYTICS JOB NAME>";
+	string streamAnalyticsInputName = "<YOUR JOB INPUT NAME>";
+	string streamAnalyticsOutputName = "<YOUR JOB OUTPUT NAME>";
+	string streamAnalyticsTransformationName = "<YOUR JOB TRANSFORMATION NAME>";
 	
-	// Abrufen eines Authentifizierungstokens
+	// Get authentication token
 	TokenCloudCredentials aadTokenCredentials =
 	    new TokenCloudCredentials(
 	        ConfigurationManager.AppSettings["SubscriptionId"],
 	        GetAuthorizationHeader());
 	
-	// Erstellen eines Stream Analytics-Verwaltungsclients
+	// Create Stream Analytics management client
 	StreamAnalyticsManagementClient client = new StreamAnalyticsManagementClient(aadTokenCredentials);
 
-Der Wert der Variablen **resourceGroupName** sollte mit dem Namen der Ressourcengruppe übereinstimmen, die Sie in den Vorbereitungsschritten erstellt oder ausgewählt haben.
+Der Wert der Variablen**resourceGroupName** sollte mit dem Namen der Ressourcengruppe übereinstimmen, die Sie in den Vorbereitungsschritten erstellt oder ausgewählt haben.
 
-In den verbleibenden Abschnitten dieses Artikels wird davon ausgegangen, dass dieser Code am Anfang der Methode **Main** enthalten ist.
+In den verbleibenden Abschnitten dieses Artikels wird davon ausgegangen, dass dieser Code am Anfang der Methode**Main** enthalten ist.
 
 ## Erstellen eines Stream Analytics-Auftrags
 
 Der folgende Code erstellt einen Stream Analytics-Auftrag unter der Ressourcengruppe, die Sie definiert haben. Sie fügen dem Auftrag später eine Eingabe, Ausgabe und Transformation hinzu.
 
-	// Erstellen eines Stream Analytics-Auftrags
+	// Create a Stream Analytics job
 	JobCreateOrUpdateParameters jobCreateParameters = new JobCreateOrUpdateParameters()
 	{
 	    Job = new Job()
 	    {
 	        Name = streamAnalyticsJobName,
-	        Location = "<STANDORT>",
+	        Location = "<LOCATION>",
 	        Properties = new JobProperties()
 	        {
 	            EventsOutOfOrderPolicy = EventsOutOfOrderPolicy.Adjust,
@@ -179,7 +182,7 @@ Der folgende Code erstellt einen Stream Analytics-Auftrag unter der Ressourcengr
 
 Der folgende Code erstellt eine Stream Analytics-Eingabequelle mit dem Blob-Eingabequellentyp und mit CSV-Serialisierung. Verwenden Sie zum Erstellen einer Event Hub-Eingabequelle **EventHubStreamInputDataSource** anstelle von **BlobStreamInputDataSource**. In ähnlicher Weise können Sie den Serialisierungstyp der Eingabequelle anpassen.
 
-	// Erstellen einer Stream Analytics-Eingabequelle
+	// Create a Stream Analytics input source
 	InputCreateOrUpdateParameters jobInputCreateParameters = new InputCreateOrUpdateParameters()
 	{
 	    Input = new Input()
@@ -203,8 +206,8 @@ Der folgende Code erstellt eine Stream Analytics-Eingabequelle mit dem Blob-Eing
 	                    {
 	                        new StorageAccount()
 	                        {
-	                            AccountName = "<NAME IHRES STORAGE-KONTOS>",
-	                            AccountKey = "<SCHLÜSSEL DES STORAGE-KONTOS>"
+	                            AccountName = "<YOUR STORAGE ACCOUNT NAME>",
+	                            AccountKey = "<YOUR STORAGE ACCOUNT KEY>"
 	                        }
 	                    },
 	                    Container = "samples",
@@ -218,14 +221,14 @@ Der folgende Code erstellt eine Stream Analytics-Eingabequelle mit dem Blob-Eing
 	InputCreateOrUpdateResponse inputCreateResponse = 
 		client.Inputs.CreateOrUpdate(resourceGroupName, streamAnalyticsJobName, jobInputCreateParameters);
 
-Eingabequellen sind an einen bestimmten Auftrag gebunden. Um die gleiche Eingabequelle für verschiedene Aufträge zu verwenden, müssen Sie die Methode erneut aufrufen und einen anderen Auftragsnamen angeben.
+Eingabequellen, gleichgültig ob vom Blob-Speicher oder einem Event Hub, sind an einen bestimmten Auftrag gebunden. Um die gleiche Eingabequelle für verschiedene Aufträge zu verwenden, müssen Sie die Methode erneut aufrufen und einen anderen Auftragsnamen angeben.
 
 
 ## Testen einer Stream Analytics-Eingabequelle
 
 Die Methode **TestConnection** überprüft, ob der Stream Analytics-Auftrag sich mit der Eingabequelle verbinden kann. Ferner werden andere Aspekte getestet, die für der Eingabequelle spezifisch sind. Beispielsweise überprüft die Methode in der Blob-Eingabequelle, die Sie in einem früheren Schritt erstellt haben, ob das Paar aus dem Namen des Storage-Kontos und dem Schlüssel verwendet werden kann, um eine Verbindung mit dem Storage-Konto herzustellen. Zudem wird überprüft, ob der angegebene Container vorhanden ist.
 
-	// Testen der Eingabequellenverbindung
+	// Test input source connection
 	DataSourceTestConnectionResponse inputTestResponse = 
 		client.Inputs.TestConnection(resourceGroupName, streamAnalyticsJobName, streamAnalyticsInputName);
 
@@ -235,7 +238,7 @@ Das Erstellen eines Ausgabeziels ähnelt stark dem Erstellen einer Stream Analyt
 
 Der folgende Code erstellt ein Ausgabeziel (Azure SQL-Datenbank). Sie können den Datentyp des Ausgabeziels und/oder den Serialisierungstyp anpassen.
 
-	// Erstellen eines Stream Analytics-Ausgabeziels
+	// Create a Stream Analytics output target
 	OutputCreateOrUpdateParameters jobOutputCreateParameters = new OutputCreateOrUpdateParameters()
 	{
 	    Output = new Output()
@@ -247,11 +250,11 @@ Der folgende Code erstellt ein Ausgabeziel (Azure SQL-Datenbank). Sie können de
 	            {
 	                Properties = new SqlAzureOutputDataSourceProperties()
 	                {
-	                    Server = "<NAME IHRES DATENBANKSERVERS>",
-	                    Database = "<NAME IHRER DATENBANK>",
-	                    User = "<ANMELDUNG IHRER DATENBANK>",
-	                    Password = "<KENNWORT ZUR DATENBANKANMELDUNG>",
-	                    Table = "<NAME IHRER DATENBANKTABELLE>"
+	                    Server = "<YOUR DATABASE SERVER NAME>",
+	                    Database = "<YOUR DATABASE NAME>",
+	                    User = "<YOUR DATABASE LOGIN>",
+	                    Password = "<YOUR DATABASE LOGIN PASSWORD>",
+	                    Table = "<YOUR DATABASE TABLE NAME>"
 	                }
 	            }
 	        }
@@ -265,16 +268,16 @@ Der folgende Code erstellt ein Ausgabeziel (Azure SQL-Datenbank). Sie können de
 
 Ein Stream Analytics-Ausgabeziel verfügt auch über die Methode **TestConnection** zum Testen von Verbindungen.
 
-	// Testen der Ausgabezielverbindung
+	// Test output target connection
 	DataSourceTestConnectionResponse outputTestResponse = 
 		client.Outputs.TestConnection(resourceGroupName, streamAnalyticsJobName, streamAnalyticsOutputName);
 
 ## Erstellen einer Stream Analytics-Transformation
 
-Der folgende Code erstellt eine Stream Analytics-Transformation mit der Abfrage "select * from Input" und gibt an, dass eine Streamingeinheit für den Stream Analytics-Auftrag zuordnet werden soll. Weitere Informationen zum Anpassen von Streamingeinheiten finden Sie unter [Skalieren von Azure Stream Analytics-Aufträgen](../stream-Analytics-scale-jobs.md).
+Der folgende Code erstellt eine Stream Analytics-Transformation mit der Abfrage "select * from Input" und gibt an, dass eine Streamingeinheit für den Stream Analytics-Auftrag zuordnet werden soll. Weitere Informationen zum Anpassen von Streamingeinheiten finden Sie unter [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md).
 
 
-	// Erstellen einer Stream Analytics-Transformation
+	// Create a Stream Analytics transformation
 	TransformationCreateOrUpdateParameters transformationCreateParameters = new TransformationCreateOrUpdateParameters()
 	{
 	    Transformation = new Transformation()
@@ -294,11 +297,11 @@ Der folgende Code erstellt eine Stream Analytics-Transformation mit der Abfrage 
 Wie Eingabe und Ausgabe ist auch eine Transformation an den jeweiligen Streaming Analytics-Auftrag gebunden, unter dem Sie erstellt wurde.
 
 ## Starten eines Stream Analytics-Auftrags
-Nach dem Erstellen eines Stream Analytics-Auftrags und seiner Eingabe(n), Ausgabe(n) und Transformation können Sie den Auftrag durch Aufrufen der **Start**-Methode starten. 
+Nach dem Erstellen eines Stream Analytics-Auftrags und seiner Eingabe(n), Ausgabe(n) und Transformation können Sie den Auftrag durch Aufrufen der Methode **Start** starten.
 
 Der folgende Beispielcode startet einen Stream Analytics-Auftrag mit der benutzerdefinierten Ausgabestartzeit "12. Dezember 2012, 12:12:12 UTC":
 
-	// Starten eines Stream Analytics-Auftrags
+	// Start a Stream Analytics job
 	JobStartParameters jobStartParameters = new JobStartParameters
 	{
 	    OutputStartMode = OutputStartMode.CustomTime,
@@ -312,25 +315,30 @@ Der folgende Beispielcode startet einen Stream Analytics-Auftrag mit der benutze
 ## Beenden eines Stream Analytics-Auftrags
 Sie können einen laufenden Stream Analytics-Auftrag beenden, indem Sie die Methode **Stop** aufrufen.
 
-	// Beenden eines Stream Analytics-Auftrags
+	// Stop a Stream Analytics job
 	LongRunningOperationResponse jobStopResponse = client.StreamingJobs.Stop(resourceGroupName, streamAnalyticsJobName);
 
 ## Löschen eines Stream Analytics-Auftrags
 Die Methode **Delete** löscht den Auftrag sowie die zugrunde liegenden Unterressourcen, einschließlich Eingabe(n), Ausgabe(n) und Transformation des Auftrags.
 
-	// Löschen eines Stream Analytics-Auftrags
+	// Delete a Stream Analytics job
 	LongRunningOperationResponse jobDeleteResponse = client.StreamingJobs.Delete(resourceGroupName, streamAnalyticsJobName);
+
+
+## Support
+Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-de/home?forum=AzureStreamAnalytics).
 
 
 ## Nächste Schritte
 
-- [Einführung in Azure Stream Analytics][stream.analytics.introduction]
-- [Erste Schritte mit Azure Stream Analytics][stream.analytics.get.started]
-- [Skalieren von Azure Stream Analytics-Aufträgen][stream.analytics.scale.jobs]
-- [Einschränkungen und bekannte Probleme von Azure Stream Analytics][stream.analytics.limitations]
-- [Azure Stream Analytics-Abfragesprachreferenz][stream.analytics.query.language.reference]
-- [Azure Stream Analytics Management REST-API-Referenz][stream.analytics.rest.api.reference] 
+Sie haben nun die Grundlagen der Verwendung eines .NET SDK zum Erstellen und Ausführen von Analyseaufträgen kennengelernt. Weitere Informationen finden Sie in den folgenden Artikeln:
 
+- [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
+- [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
+- [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
+- [Verwenden des Azure Stream Analytics Management .NET SDK](https://msdn.microsoft.com/library/azure/dn889315.aspx).
+- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
 
 <!--Image references-->
@@ -353,9 +361,8 @@ Die Methode **Delete** löscht den Auftrag sowie die zugrunde liegenden Unterres
 [stream.analytics.get.started]: stream-analytics-get-started.md
 [stream.analytics.developer.guide]: ../stream-analytics-developer-guide.md
 [stream.analytics.scale.jobs]: stream-analytics-scale-jobs.md
-[stream.analytics.limitations]: ../stream-analytics-limitations.md
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
+ 
 
-
-<!--HONumber=52--> 
+<!---HONumber=62-->

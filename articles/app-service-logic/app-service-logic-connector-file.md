@@ -33,10 +33,10 @@ Zur Verwendung des Datei-Connectors müssen Sie zunächst eine Instanz der Datei
  
 	- **Name** – Geben Sie einen Namen für den Datei-Connector ein.
 	- **Paketeinstellungen**
-		- **Stammordner** - Geben Sie den Pfad des Stammordners auf dem Hostcomputer an. Z. B. D:\\FileConnectorTest
+		- **Stammordner** - Geben Sie den Pfad des Stammordners auf dem Hostcomputer an. Z. B. D:\FileConnectorTest
 		- **Service Bus-Verbindungszeichenfolge** - Geben Sie eine Dienstbus-Verbindungszeichenfolge an. Stellen Sie sicher, dass der Service Bus-Namespace vom Typ "Standard" ist und NICHT "Basic", um Service Bus Relays zu ermöglichen. Service Bus Relay wird für die Verbindung mit dem Hybrid Connection Manager verwendet. 
 	- **App Service-Plan** - Wählen oder erstellen Sie einen App Service-Plan.
-	- **Preisstufe** – Wählen Sie eine Preisstufe für den Connector.
+	- **Tarif** – Wählen Sie einen Tarif für den Connector.
 	- **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
 	- **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
 	- **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten.
@@ -53,7 +53,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den Datei-Connector als Trigger 
 	
 2.	Öffnen Sie "Trigger und Aktionen" innerhalb der erstellten Logik-App, um den Logik-App-Designer zu öffnen und den Ablauf zu konfigurieren.
 	
-3.	Der Datei-Connector wird im Abschnitt "API Apps in this resource group" im Katalog auf der rechten Seite angezeigt.
+3.	Der Datei-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt.
  	
 4.	Sie können die Datei-Connector-API-App im Editor bearbeiten, indem Sie auf "Datei-Connector" klicken. Der Datei-Connector macht einen Trigger und vier Aktionen verfügbar.
  

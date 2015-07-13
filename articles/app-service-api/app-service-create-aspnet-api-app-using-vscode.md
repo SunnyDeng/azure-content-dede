@@ -347,13 +347,13 @@ Später in diesem Lernprogramm werden Sie die oben stehende URL-Platzhalterzeich
 
 Git ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure-Website bereitstellen können. Sie speichern den Code, den Sie für Ihre API-App geschrieben haben, in einem lokalen Git-Repository. Anschließend stellen Sie Ihren Code in Azure bereit, indem Sie einen Pushvorgang zu einem Remoterepository durchführen. Diese Methode der Bereitstellung ist eine Funktion von App Service-Web-Apps, die Sie in einer API-App nutzen können, da API-Apps auf Web-Apps basieren: Eine API-App in Azure App Service ist eine Web-App mit zusätzlichen Funktionen für das Hosten von Webdiensten.
 
-Im Portal verwalten Sie die API-App-spezifischen Funktionen auf dem Blatt **API-App**. Die Funktionen, die eine API-App mit einer Web-App gemeinsam hat, werden auf dem Blatt **API-App-Host** verwaltet. Sie wechseln daher in diesem Abschnitt zum Blatt **API-App-Host**, um die Git-Bereitstellungsfunktion zu konfigurieren.
+Im Portal verwalten Sie die API-App-spezifischen Funktionen im Blatt **API-App**. Die Funktionen, die eine API-App mit einer Web-App gemeinsam hat, werden im Blatt **API-App-Host** verwaltet. Sie wechseln daher in diesem Abschnitt zum Blatt **API-App-Host**, um die Git-Bereitstellungsfunktion zu konfigurieren.
 
-1. Klicken Sie auf dem Blatt für die API-App auf **API-App-Host**.
+1. Klicken Sie im Blatt für die API-App auf **API-App-Host**.
 
 	![API-App-Host in Azure](./media/app-service-create-aspnet-api-app-using-vscode/13-azure-apiapphost.png)
 
-2. Suchen Sie auf dem Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf ** Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
+2. Suchen Sie im Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf ** Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
 
 	![API-App-Host in Azure](./media/app-service-create-aspnet-api-app-using-vscode/14-azure-deployment.png)
 
@@ -373,7 +373,7 @@ Im Portal verwalten Sie die API-App-spezifischen Funktionen auf dem Blatt **API-
 
 	![Anmeldeinformationen für die Bereitstellung in Azure](./media/app-service-create-aspnet-api-app-using-vscode/16-azure-credentials.png)
 
-7. Klicken Sie auf dem Blatt **API-App-Host** auf **Einstellungen > Eigenschaften**. Die URL des Git-Remoterepositorys, in dem Sie die Bereitstellung durchführen möchten, wird unter "GIT-URL" angezeigt.
+7. Klicken Sie im Blatt **API-App-Host** auf **Einstellungen > Eigenschaften**. Die URL des Git-Remoterepositorys, in dem Sie die Bereitstellung durchführen möchten, wird unter "GIT-URL" angezeigt.
 
 8. Kopieren Sie die **GIT-URL** zur späteren Verwendung im Lernprogramm.
 

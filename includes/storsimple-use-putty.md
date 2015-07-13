@@ -1,20 +1,3 @@
-<properties 
-   pageTitle="Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole"
-   description="Erläutert, wie die PuTTY-Terminalemulationssoftware für das Herstellen einer Verbindung zum StorSimple-Gerät verwendet wird."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="04/01/2015"
-   ms.author="v-sharos" />
-
 #### So stellen Sie über die serielle Konsole eine Verbindung her
 
 1. Schließen Sie das serielle Kabel (direkt oder über einen seriellen USB-Adapter) an das Gerät an.
@@ -45,4 +28,4 @@
 7. Klicken Sie auf **Öffnen**, um eine serielle Sitzung zu starten.
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

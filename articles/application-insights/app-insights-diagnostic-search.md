@@ -97,7 +97,7 @@ Klicken Sie auf eine Ausnahme, um deren Details anzuzeigen.
 
 Suchen Sie alle Elemente mit dem gleichen Eigenschaftswert:
 
-![Klicken Sie mit der rechten Maustaste auf eine Eigenschaft ](./media/app-insights-diagnostic-search/12-samevalue.png)
+![Klicken Sie mit der rechten Maustaste auf eine Eigenschaft](./media/app-insights-diagnostic-search/12-samevalue.png)
 
 ## Suchen nach metrischem Wert
 
@@ -192,4 +192,4 @@ POST-Daten werden nicht automatisch protokolliert. Sie können jedoch ["TrackTra
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

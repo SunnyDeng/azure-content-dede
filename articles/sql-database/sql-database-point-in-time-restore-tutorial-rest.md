@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="storage-backup-recovery" 
-   ms.date="02/24/2015"
+   ms.date="03/17/2015"
    ms.author="elfish; v-romcal"/>
 
 # Wiederherstellen einer Azure SQL-Datenbank mithilfe der Zeitpunktwiederherstellung und REST-API
 
 > [AZURE.SELECTOR]
-- [Zeitpunktwiederherstellung - Portal](http://azure.microsoft.com/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal/)
-- [Zeitpunktwiederherstellung - PowerShell](http://azure.microsoft.com/documentation/articles/sql-database-point-in-time-restore-tutorial-powershell/)
+- [Point in Time Restore - portal](sql-database-point-in-time-restore-tutorial-management-portal.md)
+- [Point in Time Restore - PowerShell](sql-database-point-in-time-restore-tutorial-powershell.md) 
 
 ## Übersicht
 
@@ -30,27 +30,27 @@ Bei einer Zeitpunktwiederherstellung wird eine neue Datenbank erstellt. Der Dien
 
 ## Einschränkungen und Sicherheit
 
-Siehe [Wiederherstellen einer Azure SQL-Datenbank mithilfe der Zeitpunktwiederherstellung im Azure-Portal](http://azure.microsoft.com/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal/).
+Siehe [Wiederherstellen einer Azure SQL-Datenbank mithilfe der Zeitpunktwiederherstellung im Azure-Portal](sql-database-point-in-time-restore-tutorial-management-portal.md).
 
 ## Vorgehensweise: Wiederherstellen einer Azure SQL-Datenbank mithilfe der REST-API
 
 1.	Rufen Sie die Datenbank, die wiederhergestellt werden soll, mithilfe des Vorgangs [Datenbank abrufen](http://msdn.microsoft.com/library/azure/dn505708.aspx) ab.
 
-2.	Erstellen Sie die Wiederherstellungsanforderung mithilfe des Vorgangs [ Datenbankwiederherstellungsanforderung erstellen](http://msdn.microsoft.com/library/azure/dn509571.aspx).
+2.	Erstellen Sie die Wiederherstellungsanforderung mithilfe des Vorgangs [Datenbankwiederherstellungsanforderung erstellen](http://msdn.microsoft.com/library/azure/dn509571.aspx).
 	
-3.	Verfolgen Sie den Status der Wiederherstellung mithilfe des Vorgangs [Datenbank-Betriebsstatus](http://msdn.microsoft.com/library/azure/dn720371.aspx) nach.
+3.	Verfolgen Sie die Wiederherstellungsanforderung mithilfe des Vorgangs [Datenbank-Betriebsstatus](http://msdn.microsoft.com/library/azure/dn720371.aspx) nach.
 
 ## Nächste Schritte
 
-Weitere Informationen finden Sie unter den folgenden Links: 
+Weitere Informationen finden Sie unter den folgenden Links:
 
-[Azure SQL-Datenbank-Geschäftskontinuität](http://msdn.microsoft.com/library/azure/hh852669.aspx)
+[Geschäftskontinuität in Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/hh852669.aspx)
 
 [Sichern und Wiederherstellen der Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/jj650016.aspx)
 
-[Azure SQL-Datenbank - Zeitpunktwiederherstellung (Blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore/)
+[Azure SQL-Datenbank – Zeitpunktwiederherstellung (Blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore/)
 
 [Referenz zur REST-API der Dienstverwaltung](https://msdn.microsoft.com/library/azure/ee460799.aspx)
-
-<!--HONumber=47-->
  
+
+<!---HONumber=62-->

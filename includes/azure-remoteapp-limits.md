@@ -1,3 +1,5 @@
-For Azure RemoteApp, please see the following topic:
+Informationen zur Azure RemoteApp finden Sie im folgenden Thema:
 
-- [RemoteApp service limits and default values](../articles/remoteapp/remoteapp-servicelimits.md)
+- [Diensteinschränkungen und Standardwerte für RemoteApp](../articles/remoteapp/remoteapp-servicelimits.md)
+
+<!---HONumber=62-->

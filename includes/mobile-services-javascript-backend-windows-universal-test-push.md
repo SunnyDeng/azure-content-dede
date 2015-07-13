@@ -1,5 +1,5 @@
-﻿
-1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Windows Store-Projekt, klicken Sie auf **Als Startprojekt festlegen** und drücken Sie dann F5, um die Windows Store-App ausführen.
+
+1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Windows Store-Projekt, klicken Sie auf **Als Startprojekt festlegen**, und drücken Sie dann F5, um die Windows Store-App auszuführen.
 	
 	Nach dem Start der App ist das Gerät für Pushbenachrichtigungen registriert.
 
@@ -7,7 +7,7 @@
 
 	Nun sind beide Geräte für den Empfang von Pushbenachrichtigungen registriert.
 
-3. Führen Sie die Windows Store-App erneut aus, tippen Sie einen Text in **Ein TodoItem einfügen** ein, und klicken Sie anschließend auf **Speichern**.
+3. Starten Sie die Windows Store-App erneut, geben Sie unter **Insert a TodoItem** Text ein, und klicken Sie dann auf **Save**.
 
    	![](./media/mobile-services-javascript-backend-windows-universal-test-push/mobile-quickstart-push1.png)
 
@@ -19,5 +19,4 @@
 
    	![](./media/mobile-services-javascript-backend-windows-universal-test-push/mobile-quickstart-push5-wp8.png)
 
-
-<!--HONumber=42-->
+<!---HONumber=62-->

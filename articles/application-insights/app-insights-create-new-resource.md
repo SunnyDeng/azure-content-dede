@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/13/2015" 
+	ms.date="06/19/2015" 
 	ms.author="awills"/>
 
 # Erstellen einer neuen Application Insights-Ressource
@@ -41,7 +41,7 @@ Wenn Sie Zugang zu einem Abonnement besitzen, melden Sie sich über Ihre Live-ID
 
 Fügen Sie unter [portal.azure.com](https://portal.azure.com) eine neue Application Insights-Ressource hinzu:
 
-![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-create-new-resource/01-new.png)
+![Klicken Sie auf "Neu > Application Insights".](./media/app-insights-create-new-resource/01-new.png)
 
 
 * **Anwendungstyp** bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften. Wenn Ihr App-Typ nicht angezeigt wird, wählen Sie einen der Webtypen für Webseiten und einen der Telefontypen für andere Geräte aus.
@@ -60,7 +60,7 @@ Um bei der nächsten Anmeldung bei Azure dorthin zurückzugelangen, suchen Sie i
 
 Sie benötigen diesen in Kürze, um die Daten aus dem SDK in Ihrer App an die soeben erstellte Ressource zu leiten.
 
-![Klicken Sie auf "Eigenschaften", wählen Sie den Schlüssel aus, und drücken Sie STRG+C](./media/app-insights-create-new-resource/02-props.png)
+![Klicken Sie auf "Eigenschaften", wählen Sie den Schlüssel aus, und drücken Sie STRG+C.](./media/app-insights-create-new-resource/02-props.png)
 
 ## Konfigurieren Ihres SDK
 
@@ -78,6 +78,9 @@ Klicken Sie auf die Kachel "Search", um die [Diagnosesuche][diagnostic] zu öffn
 
 Klicken Sie nach einigen Sekunden auf "Aktualisieren", wenn Sie mehr Daten erwarten.
 
+## Automatisches Erstellen einer Ressource
+
+Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resource.md) schreiben, um eine Ressource automatisch zu erstellen.
 
 
 <!--Link references-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Bereitstellen einer API-App in Azure App Service" 
+	pageTitle="Bereitstellen einer Azure App Service-API-App" 
 	description="Erfahren Sie, wie Sie ein API-App-Projekt für Ihr Azure-Abonnement bereitstellen." 
 	services="app-service\api" 
 	documentationCenter=".net" 
@@ -60,8 +60,8 @@ Im Rahmen des Bereitstellungsprozesses werden die Ressourcengruppe und die API-A
 
 ![Statusbenachrichtigung über das Fenster "Azure App Service-Aktivität"](./media/app-service-dotnet-publish-api-app/26-provisioning-success-v3.png)
 
-Sobald die API-App bereitgestellt wird, klicken Sie mit der rechten Maustaste auf das Projekt im Projektmappen-Explorer, und wählen Sie **Veröffentlichen**, um das Dialogfeld für die Veröffentlichung erneut zu öffnen.
- Das Veröffentlichungsprofil, das Sie im vorherigen Schritt erstellt haben, sollte vorausgewählt sein. Klicken Sie auf **Veröffentlichen**, um den Bereitstellungsprozess zu beginnen.
+Sobald die API-App bereitgestellt wird, klicken Sie mit der rechten Maustaste auf das Projekt im Projektmappen-Explorer, und wählen Sie **Veröffentlichen**, um das Dialogfeld für die Veröffentlichung erneut zu öffnen.  
+Das Veröffentlichungsprofil, das Sie im vorherigen Schritt erstellt haben, sollte vorausgewählt sein. Klicken Sie auf **Veröffentlichen**, um den Bereitstellungsprozess zu beginnen.
 
 ![Bereitstellen der API-App](./media/app-service-dotnet-publish-api-app/26-5-deployment-success-v3.png)
 
@@ -123,4 +123,4 @@ Sie haben gesehen, wie die Visual Studio-Funktionen für die direkte Bereitstell
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

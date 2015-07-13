@@ -32,7 +32,7 @@ Data Factory Editor wird wie in der folgenden Abbildung dargestellt angezeigt:
 Es gibt vier Schaltflächen auf der Symbolleiste, mit denen Sie Azure Data Factory-Entitäten erstellen können.
  
 - **Neuer Datenspeicher** zum Erstellen eines verknüpften Datenspeicherdiensts. Wenn Sie auf diese Schaltfläche klicken, wird Ihnen ein Menü mit den folgenden Optionen angezeigt: Azure Storage, Azure SQL-Datenbank, Lokale SQL Server-Datenbank.
-- **Neue Compute-Ressource** zum Erstellen eines verknüpfter Compute-Diensts. Wenn Sie auf diese Schaltfläche klicken, wird Ihnen ein Menü mit den folgenden Optionen angezeigt: On-Demand-HDInsight-Cluster, HDInsight-Cluster, Verknüpfter AzureML-Dienst.      
+- **Neue Computeressource** zum Erstellen eines verknüpfter Computediensts. Wenn Sie auf diese Schaltfläche klicken, wird Ihnen ein Menü mit den folgenden Optionen angezeigt: On-Demand-HDInsight-Cluster, HDInsight-Cluster, Verknüpfter AzureML-Dienst.      
 - **Neues Dataset** zum Erstellen eines Datasets. Wenn Sie auf diese Schaltfläche klicken, werden Ihnen die folgenden Optionen angezeigt: Blobtabelle, Azure SQL-Tabelle, Lokale Tabelle.  
 - **Neue Pipeline** zum Erstellen einer Pipeline. Klicken Sie auf **... (drei Punkte)** auf der Symbolleiste, wenn diese Schaltfläche nicht auf der Symbolleiste angezeigt wird.
  
@@ -55,11 +55,11 @@ Es gibt vier Schaltflächen auf der Symbolleiste, mit denen Sie Azure Data Facto
   
 	![StorageLinkedService in Strukturansicht][storagelinkedservice-in-treview]
 
-### So erstellen Sie einen verknüpften Compute-Dienst
-1. Klicken Sie auf **Neue Compute-Ressource**, und klicken Sie auf eine der Optionen im Menü.
+### So erstellen Sie einen verknüpften Computedienst
+1. Klicken Sie auf **Neue Computeressource**, und klicken Sie auf eine der Optionen im Menü.
  
-	![Menü "Neue Compute-Ressource"][new-compute-menu] 
-2. Die JSON-Vorlage zum Erstellen eines verknüpften Compute-Diensts wird im Editor-Arbeitsbereich rechts angezeigt. Gehen Sie wie folgt vor:
+	![Menü "Neue Computeressource"][new-compute-menu] 
+2. Die JSON-Vorlage zum Erstellen eines verknüpften Computediensts wird im Editor-Arbeitsbereich rechts angezeigt. Gehen Sie wie folgt vor:
 	1. Geben Sie für **On-Demand-HDInsight-Cluster** Werte für die folgenden Eigenschaften ein: 
 		1. Für die **clusterSize**-Eigenschaft geben Sie die Größe des HDInsight-Clusters ein, den der Data Factory-Dienst zur Laufzeit erstellen soll. 
 		2. Für die **jobsContainer**-Eigenschaft geben Sie den Namen des Standard-Blobcontainers an, in dem die Clusterprotokolle gespeichert werden sollen.
@@ -145,7 +145,7 @@ Die Aktivitätsdefinition kann einer JSON-Pipeline hinzugefügt werden, indem Si
 
 ![Optionen zu "Aktivität hinzufügen"][add-activity-options]
 
-Wenn Sie Daten aus einer Azure SQL-Datenbank in Azure Blobspeicher kopieren und die Daten im Blobspeicher über Pig-Skript auf einem HDInsight-Cluster verarbeiten möchten, fügen Sie der Pipeline zuerst eine **Kopieraktivität** und dann eine **Pig-Aktivität** hinzu. Dadurch werden im Abschnitt [activities] der Pipeline-JSON zwei Abschnitte erstellt. Bei Pig-Aktivität handelt es sich lediglich um HDInsight-Aktivität mit Pig-Transformation.
+Wenn Sie Daten aus einer Azure SQL-Datenbank in Azure Blobspeicher kopieren und die Daten im Blobspeicher über Pig-Skript auf einem HDInsight-Cluster verarbeiten möchten, fügen Sie der Pipeline zuerst eine **Kopieraktivität** und dann eine **Pig-Aktivität** hinzu. Hierdurch werden zwei Abschnitte im Aktivitätsabschnitt der Pipeline-JSON erstellt. Bei Pig-Aktivität handelt es sich lediglich um HDInsight-Aktivität mit Pig-Transformation.
 
 	"activities": [
     	{
@@ -221,4 +221,4 @@ Schrittanleitungen zum Erstellen einer Azure Data Factory mit Data Factory Edito
 [clone-datafactory-entity]: ./media/data-factory-editor/clone-datafactory-entity.png
 [add-activity-options]: ./media/data-factory-editor/add-activity-options.png
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

@@ -237,6 +237,4 @@ In diesem Abschnitt definieren Sie einen ServiceFilter, der einen HTTP-Statuscod
 
        In diesem Code wird `RefreshTokenCacheFilter` zusätzlich zu `ProgressFilter` verwendet. Der Tokencache soll auch während `onCreate` geladen werden. Daher wird `false` an die `authenticate`-Methode übergeben.
 
-
-
-<!--HONumber=54-->
+<!---HONumber=62-->

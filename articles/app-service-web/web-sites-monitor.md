@@ -137,7 +137,7 @@ Die Diagnose kann weiter angepasst werden, indem Sie Schlüssel/Wert-Paare im Ab
 
 - Das Verzeichnis, in dem die Anwendungsprotokolle gespeichert werden, in Bezug auf das Web-Stammverzeichnis.
 
-- Standardwert: ..\..\\LogFiles\\Application
+- Standardwert: ..\..\LogFiles\Application
 
 **DIAGNOSTICS_TEXTTRACEMAXBUFFERSIZEBYTES**
 

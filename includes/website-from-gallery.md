@@ -78,4 +78,4 @@ Sie erstellen einen WordPress-Blog unter Verwendung einer Standardvorlage. In de
 [resourcegroup]: ./media/website-from-gallery/showgroup.png
 [browse]: ./media/website-from-gallery/browse.png
 
-<!--HONumber=54-->
+<!---HONumber=62-->

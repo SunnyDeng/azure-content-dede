@@ -149,7 +149,7 @@ Abschließend müssen Sie das mobile App-Back-End auf Azure veröffentlichen und
 
 4. Stellen Sie in SQL Server Management Studio eine Verbindung mit der SQL Server-Instanz her, öffnen Sie den Objekt-Explorer, erweitern Sie die **OnPremisesDB**-Datenbank, und erweitern Sie **Tabellen**.
 
-5. Klicken Sie mit der rechten Maustaste auf die Tabelle **hybridService1.TodoItems** und wählen Sie **Top 1000 Zeilen auswählen** aus, um die Ergebnisse anzuzeigen.
+5. Klicken Sie mit der rechten Maustaste auf die Tabelle **hybridService1.TodoItems**, und wählen Sie **Top 1000 Zeilen auswählen** aus, um die Ergebnisse anzuzeigen.
 
 	Beachten Sie, dass Änderungen in Ihrer Clientanwendung durch Ihr mobiles App-Back-End in der lokalen Datenbank unter Verwendung der Hybridverbindung gespeichert wurden.
 

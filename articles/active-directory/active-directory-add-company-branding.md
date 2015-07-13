@@ -21,13 +21,13 @@
 > [AZURE.NOTE]
 > 
 - Unternehmensbranding ist ein Feature, das nur verfügbar ist, wenn Sie Ihr Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
-- Die Azure Active Directory Premium und Basic Editions stehen für Kunden in China zur Verfügung, die mit der weltweit verfügbaren Instanz von Azure Active Directory arbeiten. Allerdings werden die Azure Active Directory Premium und Basic Editions derzeit durch den in China von 21Vianet betriebenen Microsoft Azure-Dienst nicht unterstützt. Wenn Sie weitere Informationen benötigen, kontaktieren Sie uns im [Azure Active Directory-Forum](http://feedback.azure.com/forums/169401-azure-active-directory).
+- Die Azure Active Directory Premium und Basic Editions stehen für Kunden in China zur Verfügung, die mit der weltweit verfügbaren Instanz von Azure Active Directory arbeiten. Allerdings werden die Azure Active Directory-Editionen Premium und Basic derzeit durch den in China von 21Vianet betriebenen Microsoft Azure-Dienst nicht unterstützt. Wenn Sie weitere Informationen benötigen, kontaktieren Sie uns im [Azure Active Directory-Forum](http://feedback.azure.com/forums/169401-azure-active-directory).
 
 Viele Unternehmen streben ein einheitliches Erscheinungsbild für all ihre verwalteten Websites und Dienste an, damit ihre Endbenutzer beim Besuch dieser Websites nicht verwirrt werden. Azure Active Directory ermöglicht dies, indem Sie die Anpassung der Darstellung folgender Websites für Endbenutzer vornehmen können, sodass Firmenlogo und Farbschemas enthalten sind:
 
 - **Anmeldeseite** – Auf diese Seite werden Benutzer weitergeleitet, wenn sie sich bei Office 365 oder anderen webbasierten, modernen Anwendungen anmelden, die Azure AD als Identitätsanbieter verwenden. Die meisten Benutzer interagieren mit dieser Seite entweder beim Durchlaufen der Startbereichserkennung, was dem System das Umleiten von Verbundbenutzern auf ihren lokalen STS (z. B. AD FS) ermöglicht, oder bei der Eingabe ihrer Anmeldeinformationen.
 
-- **Seite "Zugriffsbereich"** –  Der Zugriffsbereich ist ein webbasiertes Portal, das einem Endbenutzer die Arbeit mit einem Geschäfts- oder Schulkonto in einem Azure AD-Verzeichnis ermöglicht, um cloudbasierte Anwendungen anzuzeigen und zu starten, zu denen sie vom Azure AD-Administrator Zugriff erhalten haben. Der Zugriffsbereich ist für alle Benutzer in Ihrer Organisation über myapps.microsoft.com zugänglich.
+- **Seite "Zugriffsbereich"** – Der Zugriffsbereich ist ein webbasiertes Portal, das einem Endbenutzer die Arbeit mit einem Geschäfts- oder Schulkonto in einem Azure AD-Verzeichnis ermöglicht, um cloudbasierte Anwendungen anzuzeigen und zu starten, zu denen sie vom Azure AD-Administrator Zugriff erhalten haben. Der Zugriffsbereich ist für alle Benutzer in Ihrer Organisation über myapps.microsoft.com zugänglich.
 
 ## Anpassung der Anmeldeseite
 
@@ -185,4 +185,6 @@ Hintergrundfarbe auf der Anmeldeseite | Die Hintergrundfarbe auf der Anmeldeseit
 [7]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_croppedtop.png
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=62-->

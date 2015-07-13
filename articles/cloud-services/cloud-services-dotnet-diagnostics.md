@@ -95,7 +95,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie über ein Azure-Abonnement ve
 1.	Starten Sie **Visual Studio 2013**.
 2.	Erstellen Sie ein neues **Azure Cloud Service**-Projekt mithilfe der **Cloudvorlage** für .NET Framework 4.5. Geben Sie dem Projekt den Namen "WadExample", und klicken Sie auf "OK".
 3.	Wählen Sie **Workerrolle** aus, und klicken Sie auf "OK". Das Projekt wird erstellt. 
-4.	Doppelklicken Sie im **Projektmappen-Explorer** auf die Eigenschaftendatei **WorkerRole1**.
+4.	Doppelklicken Sie im Projektmappen-Explorer auf die Eigenschaftendatei **WorkerRole1**.
 5.	Deaktivieren Sie auf der Registerkarte **Konfiguration** die Option **Diagnose aktivieren**, um Diagnose 1.0 (Azure SDK 2.4 und niedriger) zu deaktivieren.
 6.	Erstellen Sie die Projektmappe, um zu überprüfen, ob Fehler vorliegen.
 
@@ -202,12 +202,12 @@ Ersetzen Sie den Inhalt von "WorkerRole.cs" durch den folgenden Code. Die von de
 3.	Ordnen Sie die Datei "WadConfig.xsd" der Konfigurationsdatei zu. Stellen Sie sicher, dass das Editorfenster mit "WadExample.xml" das aktive Fenster ist. Drücken Sie die Taste **F4**, um das Fenster **Eigenschaften** zu öffnen. Klicken Sie im Fenster **Eigenschaften** auf die Eigenschaft **Schemas**. Klicken Sie in der Eigenschaft **Schemas** auf **…**. Klicken Sie auf die Schaltfläche **Hinzufügen…**, navigieren Sie zum Speicherort der XSD-Datei, und wählen Sie die Datei "WadConfig.xsd" aus. Klicken Sie auf **OK**.
 4.	Ersetzen Sie den Inhalt der Konfigurationsdatei "WadExample.xml" durch den folgenden XML-Code, und speichern Sie die Datei. Diese Konfigurationsdatei definiert ein Paar zu erfassender Leistungsindikatoren: einen für die CPU-Auslastung und einen für die Speicherauslastung. Außerdem werden in der Konfiguration vier Ereignisse definiert, die den Methoden in der SampleEventSourceWriter-Klasse entsprechen.
 
-        <?xml version="1.0" encoding="utf-8"?>
-        <PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
-             <WadCfg>
+		<?xml version="1.0" encoding="utf-8"?>
+		<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
+  			<WadCfg>
     			<DiagnosticMonitorConfiguration overallQuotaInMB="25000">
       			<PerformanceCounters scheduledTransferPeriod="PT1M">
-        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)% Processor Time" sampleRate="PT1M" unit="percent" />
+        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Processor Time" sampleRate="PT1M" unit="percent" />
         			<PerformanceCounterConfiguration counterSpecifier="\Memory\Committed Bytes" sampleRate="PT1M" unit="bytes"/>
       				</PerformanceCounters>
       				<EtwProviders>
@@ -238,7 +238,7 @@ Für die Verwaltung von Diagnose in einer Web- oder Workerrolle werden folgende 
 
 
 ### Schritt 6: Betrachten der Telemetriedaten
-Navigieren Sie in Visual Studio im **Server-Explorer** zum Speicherkonto "wadexample". Wenn der Cloud-Dienst etwa fünf Minuten lang ausgeführt worden ist, sollten die Tabellen **WADEnumsTable**, **WADHighFreqTable**, **WADMessageTable**, **WADPerformanceCountersTable** und **WADSetOtherTable** angezeigt werden. Doppelklicken Sie auf eine der Tabellen, um die erfassten Telemetriedaten anzuzeigen. ![CloudServices_diag_tables](./media/cloud-services-dotnet-diagnostics/WadExampleTables.png)
+Navigieren Sie in Visual Studio im Server-Explorer zum Speicherkonto "wadexample". Wenn der Cloud-Dienst etwa fünf Minuten lang ausgeführt worden ist, sollten die Tabellen **WADEnumsTable**, **WADHighFreqTable**, **WADMessageTable**, **WADPerformanceCountersTable** und **WADSetOtherTable** angezeigt werden. Doppelklicken Sie auf eine der Tabellen, um die erfassten Telemetriedaten anzuzeigen. ![CloudServices_diag_tables](./media/cloud-services-dotnet-diagnostics/WadExampleTables.png)
 
 ## Aktivieren der Diagnose auf einem virtuellen Computer
 
@@ -327,13 +327,13 @@ In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement 
 		}
 
 
-4.	Speichern Sie die Datei, und wählen Sie im Menü **Build** die Option **Projektmappe** erstellen aus, um den Code zu erstellen.
+4.	Speichern Sie die Datei, und wählen Sie im Menü **Build** die Option **Projektmappe erstellen** aus, um den Code zu erstellen.
 
 
 ### Schritt 3. Bereitstellen der Anwendung
 1.	Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **WadExampleVM**, und wählen Sie **Ordner in Datei-Explorer öffnen** aus.
-2.	Navigieren Sie zum Ordner *bin\\Debug*, und kopieren Sie alle Dateien (WadExampleVM.*).
-3.	Klicken Sie im **Server-Explorer** mit der rechten Maustaste auf den virtuellen Computer, und wählen Sie **Per Remotedesktop verbinden** aus.
+2.	Navigieren Sie zum Ordner *bin\Debug*, und kopieren Sie alle Dateien (WadExampleVM.*).
+3.	Klicken Sie im Server-Explorer mit der rechten Maustaste auf den virtuellen Computer, und wählen Sie **Per Remotedesktop verbinden** aus.
 4.	Sobald die Verbindung mit dem virtuellen Computer hergestellt ist, erstellen Sie einen Ordner mit dem Namen "WadExampleVM", und fügen Sie Ihre Anwendungsdateien in diesen Ordner ein.
 5.	Starten Sie die Anwendung WadExampleVM.exe. Es sollte ein leeres Konsolenfenster angezeigt werden.
 
@@ -351,7 +351,7 @@ In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement 
   			<WadCfg>
     			<DiagnosticMonitorConfiguration overallQuotaInMB="25000">
       			<PerformanceCounters scheduledTransferPeriod="PT1M">
-        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)% Processor Time" sampleRate="PT1M" unit="percent" />
+        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Processor Time" sampleRate="PT1M" unit="percent" />
         			<PerformanceCounterConfiguration counterSpecifier="\Memory\Committed Bytes" sampleRate="PT1M" unit="bytes"/>
       				</PerformanceCounters>
       				<EtwProviders>
@@ -386,7 +386,7 @@ Für die Verwaltung von Diagnose auf einem virtuellen Computer werden folgende P
 
 
 ### Schritt 6: Betrachten der Telemetriedaten
-Navigieren Sie in Visual Studio im **Server-Explorer** zum Speicherkonto "wadexample". Wenn der virtuelle Computer etwa fünf Minuten lang ausgeführt worden ist, sollten die Tabellen **WADEnumsTable**, **WADHighFreqTable**, **WADMessageTable**, **WADPerformanceCountersTable** und **WADSetOtherTable** angezeigt werden. Doppelklicken Sie auf eine der Tabellen, um die erfassten Telemetriedaten anzuzeigen. ![CloudServices_diag_wadexamplevm_tables](./media/cloud-services-dotnet-diagnostics/WadExampleVMTables.png)
+Navigieren Sie in Visual Studio im Server-Explorer zum Speicherkonto "wadexample". Wenn der virtuelle Computer etwa fünf Minuten lang ausgeführt worden ist, sollten die Tabellen **WADEnumsTable**, **WADHighFreqTable**, **WADMessageTable**, **WADPerformanceCountersTable** und **WADSetOtherTable** angezeigt werden. Doppelklicken Sie auf eine der Tabellen, um die erfassten Telemetriedaten anzuzeigen. ![CloudServices_diag_wadexamplevm_tables](./media/cloud-services-dotnet-diagnostics/WadExampleVMTables.png)
 
 ## Schema der Konfigurationsdatei
 
@@ -397,7 +397,7 @@ Die Diagnosekonfigurationsdatei definiert Werte, die verwendet werden, um beim S
 ### Die Azure-Diagnose wird nicht gestartet.
 Diagnose besteht aus zwei Komponenten: einem Gast-Agent-Plug-in und Monitoring Agent. Die Protokolldateien für das Gast-Agent-Plug-In befinden sich in folgender Datei:
 
-*%Systemlaufwerk%\\WindowsAzure\\Logs\\Plugins\\Microsoft.Azure.Diagnostics.PaaSDiagnostics*\\CommandExecution.log
+*%Systemlaufwerk%\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics*\CommandExecution.log
 
 Die folgenden Fehlercodes werden von dem Plug-In zurückgegeben:
 
@@ -586,10 +586,11 @@ Damit werden vier Tabellen generiert:
 			<td>WADdest2</td>			
 	</tr>
 	
-</tbody>
-</table>
 
-### Vergleich von Azure-Diagnose-Versionen
+</table>
+</tbody>
+
+## Vergleich von Azure-Diagnose-Versionen
 
 In der folgenden Tabelle werden die Features gegenübergestellt, die von den Versionen 1.0 und 1.1/1.2/1.3 der Azure-Diagnose jeweils unterstützt werden:
 
@@ -763,6 +764,7 @@ In der folgenden Tabelle werden die Features gegenübergestellt, die von den Ver
 [Vergleich der Azure-Diagnose-Versionen]: #comparing
 [Additional Resources]: #additional
 [EventSource-Klasse]: http://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx
+  
 [Konfigurieren von Diagnose für Azure Cloud Services und Virtual Machines]: http://msdn.microsoft.com/library/windowsazure/dn186185.aspx
 [Debuggen von Clouddiensten]: http://msdn.microsoft.com/library/windowsazure/ee405479.aspx
 [Sammeln von Protokollierungsdaten mit Azure-Diagnose]: http://msdn.microsoft.com/library/windowsazure/gg433048.aspx
@@ -774,5 +776,6 @@ In der folgenden Tabelle werden die Features gegenübergestellt, die von den Ver
 [Set-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/library/dn495270.aspx
 [Get-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/library/dn495145.aspx
 [Remove-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/library/dn495168.aspx
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

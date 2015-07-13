@@ -182,7 +182,7 @@ Sie können auch [Data Factory-Funktionen ](https://msdn.microsoft.com/library/d
 
 	transformation: {
     	webServiceParameters: {
-    	   "Database query": "$$Text.Format('SELECT * FROM myTable WHERE timeColumn = \'{0:yyyy-MM-dd HH:mm:ss}\'', Time.AddHours(SliceStart, 0))"
+    	   "Database query": "$$Text.Format('SELECT * FROM myTable WHERE timeColumn = '{0:yyyy-MM-dd HH:mm:ss}'', Time.AddHours(SliceStart, 0))"
     	}
   	}
  
@@ -324,4 +324,4 @@ Artikel | Beschreibung
 
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

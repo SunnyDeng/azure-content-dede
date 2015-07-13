@@ -1,4 +1,4 @@
-﻿Wenn Sie die Bereitstellungsausgabe überprüfen müssen, einschließlich der Ausgabe des Skripts für die benutzerdefinierte Bereitstellung, navigieren Sie im Azure-Portal zur Seite **Bereitstellungen**.
+Wenn Sie die Bereitstellungsausgabe überprüfen müssen, einschließlich der Ausgabe des benutzerdefinierten Bereitstellungsskripts, navigieren Sie im Azure-Portal zur Seite **BEREITSTELLUNGEN**.
 
 Erweitern Sie die gewünschte Bereitstellung:
 
@@ -8,5 +8,4 @@ Klicken Sie auf **Protokoll anzeigen**, um die Ausgabe des benutzerdefinierten B
 
 ![](./media/web-sites-python-troubleshoot-deployment/portal-deployment-log.png)
 
-
-<!--HONumber=52--> 
+<!---HONumber=62-->

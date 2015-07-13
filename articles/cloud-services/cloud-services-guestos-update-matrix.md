@@ -3,8 +3,8 @@
    description="Die neueste Releaseneuigkeiten und SDK-Kompatibilität für das Azure Cloud Services-Gastbetriebssystem." 
    services="cloud-services" 
    documentationCenter="na" 
-   authors="Thraka" 
-   manager="timlt" 
+   authors="yuemlu" 
+   manager="markkie" 
    editor=""/>
 
 <tags
@@ -13,21 +13,29 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="04/17/2015"
-   ms.author="adegeo"/>
+   ms.date="05/20/2015"
+   ms.author="yuemlu"/>
 
 # Azure-Gastbetriebssystemreleases und SDK-Kompatibilitätsmatrix
 Bietet Ihnen aktuelle Informationen zu den neuesten Azure-Gastbetriebssystemreleases für Cloud Services. Anhand dieser Informationen können Sie Ihren Upgradepfad planen, bevor ein Gastbetriebssystem wird.
 
-> [AZURE.IMPORTANT] Diese Seite bezieht sich auf die Cloud Services-Web- und Workerrollen, die zusätzlich zu einem Gastbetriebssystem ausgeführt werden. Sie gilt nicht für IaaS Virtual Machines. Wenn Sie die Rollen so konfigurieren, dass die automatischen Gastbetriebssystemupdates, wie unter [Updateeinstellungen für Azure-Gastbetriebssysteme][] beschrieben, verwendet werden, müssen Sie diese Seite nicht unbedingt lesen.
+> [AZURE.IMPORTANT]Diese Seite bezieht sich auf die Cloud Services-Web- und Workerrollen, die zusätzlich zu einem Gastbetriebssystem ausgeführt werden. Sie gilt nicht für IaaS Virtual Machines. Wenn Sie die Rollen so konfigurieren, dass die automatischen Gastbetriebssystemupdates, wie unter [Updateeinstellungen für Azure-Gastbetriebssysteme][] beschrieben, verwendet werden, müssen Sie diese Seite nicht unbedingt lesen.
 
 <!-- -->
 <br />
 
-> [AZURE.TIP] Abonnieren Sie den [RSS-Feed zu Gastbetriebssystemupdates][rss], um immer sofort über alle Gastbetriebssystemänderungen benachrichtigt zu werden. Die in diesem Feed genannten Änderungen werden etwa einmal pro Woche in diese Seite integriert.
+> [AZURE.TIP]Abonnieren Sie den [RSS-Feed zu Gastbetriebssystemupdates][rss], um immer sofort über alle Gastbetriebssystemänderungen benachrichtigt zu werden. Die in diesem Feed genannten Änderungen werden etwa einmal pro Woche in diese Seite integriert.
 
 
 ## Neuigkeiten
+
+###### **15. Juni 2015**
+Die Bereitstellung des Gastbetriebssystems Juni begann am 15. Juni 2015 und soll voraussichtlich am 9. Juli 2015 freigegeben werden.
+
+Gastbetriebssystemversionen 4.20, 3.27, 2.39 wurden am 12. Juni 2015 veröffentlicht.
+
+###### **20. Mai 2015**
+Die Bereitstellung des Gastbetriebssystems Mai begann am 20. Mai 2015 und sollte voraussichtlich am 12. Juni 2015 freigegeben werden.
 
 ###### **17. April 2015**
 Gastbetriebssystemversionen 4.19, 3.26, 2.38 wurden heute veröffentlicht.
@@ -65,16 +73,6 @@ Wie [zuvor angekündigt][ssl3 announcement], wird durch das Januar-Sicherheitsup
 Die Gastbetriebssystemversion vom Dezember startet voraussichtlich am oder nach dem 9. Januar 2015.
 
 
-###### **11. November 2014**
-
-Das November-Release (4.14, 3.21 und 2.33) wurde am 11. November eingeführt. Dieses Update wurde früher herausgegeben, da es das MSRC-Update [Microsoft Security Bulletin MS14-066 - Kritisch][MS14-066] enthält. Ihre Web- und Workerrollen, für die automatische Updates aktiviert sind, sollten in den folgenden Tagen einmal neu gestartet werden, um diese Korrektur zu erhalten.
-
-###### **10. November 2014**
-Das Deaktivierungsdatum des Oktober-Release (4.13, 3.20 und 2.32) wurde aufgrund von Kundenfeedback aktualisiert. Das Deaktivierungsdatum liegt immer mindestens zwei Monate nach dem Veröffentlichungsdatum.
-
-###### **4. November 2014**
-Das Oktober-Release (4.13, 3.20 und 2.32) wurde am 4. November 2014 eingeführt. Sie enthält den MSRC-Patch, der Probleme mit den August- und September-Releases verursacht hat. Um dieses Problem zu umgehen, sind im Oktober-Release .NET 3.5 und 3.5.1 vorinstalliert, aber deaktiviert. Skripts, die eine Installation von .NET 3.5 oder 3.5.1 versuchen, aktivieren dieses effektiv erneut und geben für die .NET-Installation "Erfolgreich" zurück, vermeiden aber auch das Problem der vollständigen Installation, das durch den MSRC-Patch hervorgerufen wurde.
-
 
 
 ## Informationen zu den Gastbetriebssystemreleases
@@ -83,7 +81,7 @@ In diesem Abschnitt werden die derzeit unterstützten Versionen des Gastbetriebs
 
 Microsoft unterstützt mindestens zwei aktuelle Versionen jeder unterstützten Gastbetriebssystemfamilie. Das Deaktivierungsdatum einer vorhandenen Gastbetriebssystemversion kann auf ein späteres Datum verschoben werden, um sicherzustellen, dass mindestens zwei Versionen für die Bereitstellung aktiviert bleiben.
 
-> [AZURE.WARNING] Die Deaktivierung der Gastbetriebssystemfamilie 1 begann am 1. Juni 2013 und wird voraussichtlich in Kürze abgeschlossen sein. Erstellen Sie mit dieser Gastbetriebssystemfamilie keine neuen Installationen, und führen Sie für ältere Systeme, die diese Gastbetriebssystemfamilie verwenden, ein Upgrade durch. Weitere Informationen finden Sie in den [Deaktivierungsinformationen zur Azure-Gastbetriebssystemfamilie 1][fam1retire].
+> [AZURE.WARNING]Die Deaktivierung der Gastbetriebssystemfamilie 1 begann am 1. Juni 2013 und wird voraussichtlich in Kürze abgeschlossen sein. Erstellen Sie mit dieser Gastbetriebssystemfamilie keine neuen Installationen, und führen Sie für ältere Systeme, die diese Gastbetriebssystemfamilie verwenden, ein Upgrade durch. Weitere Informationen finden Sie in den [Deaktivierungsinformationen zur Azure-Gastbetriebssystemfamilie 1][fam1retire].
 
 Das Gastbetriebssystem umfasst eine Konfiguration, die sich von den Standardeinstellungen von Windows Server unterscheidet. Weitere Informationen finden Sie unter [Unterschiede zwischen dem Azure-Gastbetriebssystem und Windows Server (Standardinstallation)][server and gos].
 
@@ -113,8 +111,10 @@ Unterstützt .NET 4.0, 4.5, 4.5.1, 4.5.2 (Hinweis 2)
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
+| 4.21 | WA-GUEST-OS-4.21_201506-01 | Voraussichtlich: 9. Juli 2015 | Wird bei Veröffentlichung von 4.23 aktualisiert | TBD |
+| 4.20 | WA-GUEST-OS-4.20_201505-02 | 12. Juni 2015 | Wird bei Veröffentlichung von 4.22 aktualisiert | TBD |
 | 4.19 | WA-GUEST-OS-4.19_201504-01 | 17. April 2015 | Wird bei Veröffentlichung von 4.21 aktualisiert | TBD |
-| 4.18 | WA-GUEST-OS-4.18_201503-01 | 2. April 2015 | Wird bei Veröffentlichung von 4.20 aktualisiert | TBD |
+| 4.18 | WA-GUEST-OS-4.18_201503-01 | 2. April 2015 | 12. Juli 2015 | TBD |
 | 4.17 | WA-GUEST-OS-4.17_201502-01 | 9. März 2015 | 17. Mai 2015 | TBD |
 | 4.16 | WA-GUEST-OS-4.16_201501-01 | 29. Januar 2015 | 2. Mai 2015 | TBD |
 | 4.15 | WA-GUEST-OS-4.15_201412-01 | 14. Januar 2015 | 9. April 2015 | TBD |
@@ -134,8 +134,10 @@ Unterstützt .NET 4.0, 4.5
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
+| 3.28 | WA-GUEST-OS-3.28_201506-01 | Voraussichtlich: 9. Juli 2015 | Wird bei Veröffentlichung von 3.30 aktualisiert | TBD |
+| 3.27 | WA-GUEST-OS-3.27_201505-02 | 12. Juni 2015 | Wird bei Veröffentlichung von 3.29 aktualisiert | TBD |
 | 3.26 | WA-GUEST-OS-3.26_201504-01 | 17. April 2015 | Wird bei Veröffentlichung von 3.28 aktualisiert | TBD |
-| 3.25 | WA-GUEST-OS-3.25_201503-01 | 2. April 2015 | Wird bei Veröffentlichung von 3.27 aktualisiert | TBD |
+| 3.25 | WA-GUEST-OS-3.25_201503-01 | 2. April 2015 | 12. Juli 2015 | TBD |
 | 3.24 | WA-GUEST-OS-3.24_201502-01 | 9. März 2015 | 17. Mai 2015 | TBD |
 | 3.23 | WA-GUEST-OS-3.23_201501-01 | 29. Januar 2015 | 2. Mai 2015 | TBD |
 | 3.22 | WA-GUEST-OS-3.22_201412-01 | 14. Januar 2015 | 9. April 2015 | TBD |
@@ -156,8 +158,10 @@ Unterstützt .NET 3.5, 4.0
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
+| 2.40 | WA-GUEST-OS-2.40_201506-01 | Voraussichtlich: 9. Juli 2015 | Wird bei Veröffentlichung von 2.42 aktualisiert | TBD |
+| 2.39 | WA-GUEST-OS-2.39_201505-02 | 12. Juni 2015 | Wird bei Veröffentlichung von 2.41 aktualisiert | TBD |
 | 2.38 | WA-GUEST-OS-2.38_201504-01 | 17. April 2015 | Wird bei Veröffentlichung von 2.40 aktualisiert | TBD |
-| 2.37 | WA-GUEST-OS-2.37_201503-01 | 2. April 2015 | Wird bei Veröffentlichung von 2.39 aktualisiert | TBD |
+| 2.37 | WA-GUEST-OS-2.37_201503-01 | 2. April 2015 | 12. Juli 2015 | TBD |
 | 2.36 | WA-GUEST-OS-2.36_201502-01 | 9. März 2015 | 17. Mai 2015 | TBD |
 | 2.35 | WA-GUEST-OS-2.35_201501-01 | 29. Januar 2015 | 2. Mai 2015 | TBD |
 | 2.34 | WA-GUEST-OS-2.34_201412-01 | 14. Januar 2015 | 9. April 2015 | TBD |
@@ -181,7 +185,7 @@ Releases von August und September 2014 wurden nur teilweise eingeführt aufgrund
 #### Hinweis 2
 Ab dem 19. September 2014 wurde .NET 4.5.2 nicht speziell auf dem Azure-Gastbetriebssystem getestet. Das Gastbetriebssystem ist jedoch im Wesentlichen identisch mit Windows Server. Die gleichen Regeln für die Anwendungskompatibilität, die für das Windows Server-Produkt gelten, gelten daher auch für die entsprechenden Gastbetriebssystemfamilien. Wenn Sie eine Ausnahme von dieser Richtlinie feststellen, wenden Sie sich an den [Azure-Support][azuresupport]. Microsoft betreibt einen angemessenen Aufwand zur Lösung des Problems. [Manuelles Installationspaket für .NET 4.5.2][net install pkg].
 
-### Im Gastbetriebssystem enthaltene MSRC-Updates
+## Im Gastbetriebssystem enthaltene MSRC-Updates
 Die Liste der Patches, die in den einzelnen monatlichen Gastbetriebssystemreleases enthalten sind, steht [hier][patches] zur Verfügung.
 
 ## SDK-Unterstützung
@@ -214,6 +218,16 @@ Wenn Sie Ihr Gastbetriebssystem manuell aktualisieren, lesen Sie bitte die [Deak
 Die Unterstützungs- und Deaktivierungsrichtlinie für Gastbetriebssysteme wird [hier][retirepolicy] erläutert.
  
 ## Nachrichtenarchiv
+
+###### **11. November 2014**
+
+Das November-Release (4.14, 3.21 und 2.33) wurde am 11. November eingeführt. Dieses Update wurde früher herausgegeben, da es das MSRC-Update [Microsoft Security Bulletin MS14-066 - Kritisch][MS14-066] enthält. Ihre Web- und Workerrollen, für die automatische Updates aktiviert sind, sollten in den folgenden Tagen einmal neu gestartet werden, um diese Korrektur zu erhalten.
+
+###### **10. November 2014**
+Das Deaktivierungsdatum des Oktober-Release (4.13, 3.20 und 2.32) wurde aufgrund von Kundenfeedback aktualisiert. Das Deaktivierungsdatum liegt immer mindestens zwei Monate nach dem Veröffentlichungsdatum.
+
+###### **4. November 2014**
+Das Oktober-Release (4.13, 3.20 und 2.32) wurde am 4. November 2014 eingeführt. Sie enthält den MSRC-Patch, der Probleme mit den August- und September-Releases verursacht hat. Um dieses Problem zu umgehen, sind im Oktober-Release .NET 3.5 und 3.5.1 vorinstalliert, aber deaktiviert. Skripts, die eine Installation von .NET 3.5 oder 3.5.1 versuchen, aktivieren dieses effektiv erneut und geben für die .NET-Installation "Erfolgreich" zurück, vermeiden aber auch das Problem der vollständigen Installation, das durch den MSRC-Patch hervorgerufen wurde.
 
 **20. Oktober 2014 Aktualisiert am 4. November 2014** - Das September-Release (4.12, 3.19, 2.31 und 1.39) wurde aufgrund von[MSRC-Patch MS14-046][MS14-046] teilweise eingeführt. Dieser Patch führte bei Benutzern zu Fehlern, die versucht haben, .NET 3.5 oder 3.5.1 in Familie 3 oder 4 zu installieren. .NET 3.5.x wird in keiner der beiden Familie offiziell unterstützt. Microsoft reagiert jedoch auf diese Verhaltensänderung, da Installationen für bestimmte Kunden darauf basieren und die Änderung nicht angekündigt wurde. Die Datumsangaben für die Deaktivierung vorheriger Gastbetriebssysteme (Juni und Juli) werden entsprechend verzögert, damit mindestens zwei vollständig veröffentlichte Gastbetriebssysteme unterstützt werden und verfügbar sind. Eine Lösung für das .NET-Installationsproblem wurde im Release vom Oktober 2014 veröffentlicht.
 
@@ -283,6 +297,8 @@ Aufgrund der partiellen Einführung der letzten beiden Releases können Personen
 | 2.20 | WA-GUEST-OS-2.20_201310-01 | 29. Oktober 2013 | N/V | 14. Mai 2014 |
 | 2.19 rel3 | WA-GUEST-OS-2.19_201309-03 | 9. Oktober 2013 | N/V | 14. Mai 2014 |
 | 2.19 rel1 | WA-GUEST-OS-2.19_201309-01 | 23. September 2013 | N/V | 14. Mai 2014 |
+
+
 [Updateeinstellungen für Azure-Gastbetriebssysteme]: https://msdn.microsoft.com/library/azure/ff729420.aspx
 [rss]: http://sxp.microsoft.com/feeds/3.0/msdntn/WindowsAzureOSUpdates
 [ssl3 announcement]: http://azure.microsoft.com/blog/2014/12/09/azure-security-ssl-3-0-update/
@@ -301,5 +317,6 @@ Aufgrund der partiellen Einführung der letzten beiden Releases können Personen
 [patches]: cloud-services-guestos-msrc-releases.md
 [retirepolicy]: cloud-services-guestos-retirement-policy.md
 [fam1retire]: cloud-services-guestos-family1-retirement.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

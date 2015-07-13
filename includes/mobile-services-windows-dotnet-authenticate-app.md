@@ -1,5 +1,5 @@
-﻿
-1. Öffnen Sie die Projektdatei "MainPage.xaml.cs", und fügen Sie den folgenden Ausdruck ein:
+
+1. Öffnen Sie die Projektdatei "MainPage.xaml.cs", und fügen Sie die folgende using-Anweisung ein:
 
         using Windows.UI.Popups;
 
@@ -29,9 +29,9 @@
             }
         }
 
-    Auf diese Weise wird eine Membervariable zum Speichern des aktuellen Benutzers sowie eine Methode zur Verarbeitung des Authentifizierungsprozesses erstellt. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert. Wenn Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den Wert für **MobileServiceAuthenticationProvider** oben entsprechend Ihrem Anbieter.
+    Auf diese Weise wird eine Membervariable zum Speichern des aktuellen Benutzers erstellt und eine Methode zur Verarbeitung des Authentifizierungsprozesses. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert. Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den Wert für **MobileServiceAuthenticationProvider** oben entsprechend Ihrem Anbieter.
 
-3. Ersetzen Sie die vorhandene Methodenüberschreibung **OnNavigatedTo** durch die folgende Methode, welche die neue **Authentifizieren**-Methode aufruft:
+3. Ersetzen Sie die vorhandene Methodenüberschreibung **OnNavigatedTo** mit der folgenden Methode, die die neue Methode **Authentifizieren** aufruft:
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -39,9 +39,8 @@
             RefreshTodoItems();
         }
 		
-4. Drücken Sie F5, um die App auszuführen und sich mit dem von Ihnen ausgewählten Identitätsanbieter bei der App anzumelden. 
+4. Drücken Sie F5, um die App auszuführen und sich mit dem von Ihnen ausgewählten Identitätsanbieter bei der App anzumelden.
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
-
-<!--HONumber=42-->
+<!---HONumber=62-->

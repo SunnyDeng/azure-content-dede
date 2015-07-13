@@ -27,7 +27,7 @@ Sie erhalten Informationen zu folgenden Themen:
 * Erstellen einer Web-App und einer SQL-Datenbank über das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715). Da PHP standardmäßig in App Service-Web-Apps aktiviert ist, gelten für die Ausführung Ihres PHP-Codes keine besonderen Voraussetzungen.
 * Veröffentlichen und erneutes Veröffentlichen Ihrer Anwendung mithilfe von Git in Azure
  
-Mithilfe dieses Lernprogramms erstellen Sie eine einfache Webanwendung für die Registrierung in PHP. Die Anwendung wird auf einer Azure-Website gehostet. Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
+Mithilfe dieses Lernprogramms erstellen Sie eine einfache Webanwendung für die Registrierung in PHP. Die Anwendung wird auf einer Azure-Website gehostet. Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 ![Azure-PHP-Website](./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png)
 

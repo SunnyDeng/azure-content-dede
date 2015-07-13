@@ -85,4 +85,4 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den Facebook-Connector als
 [11]: ./media/app-service-logic-connector-facebook/img11.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -15,8 +15,7 @@ Der Tabellenspeicherdienst umfasst die folgenden Komponenten:
 
 ![Table1][Table1]
 
--   **URL-Format:** Der Code adressiert Tabellen in einem Konto mithilfe dieses Adressformats: 
-	http://`<storage account>`.table.core.windows.net/`<table>\`  
+-   **URL-Format:** Der Code adressiert Tabellen in einem Konto mithilfe dieses Adressformats: http://`<storage account>`.table.core.windows.net/`<table>`  
       
     Über diese Adresse können Azure-Tabellen direkt mit dem OData-Protokoll adressiert werden. Weitere Informationen finden Sie unter [OData.org][]
 
@@ -30,7 +29,7 @@ Der Tabellenspeicherdienst umfasst die folgenden Komponenten:
 
 
   
-[Table1]: ./media/storage-table-concepts-include/table1.png
-[OData.org]: http://www.odata.org/
+  [Table1]: ./media/storage-table-concepts-include/table1.png
+  [OData.org]: http://www.odata.org/
 
-<!--HONumber=52-->
+<!---HONumber=62-->

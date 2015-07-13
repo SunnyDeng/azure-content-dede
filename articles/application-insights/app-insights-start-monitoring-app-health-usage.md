@@ -92,7 +92,7 @@ In Visual Studio sehen Sie eine Anzahl der gesendeten Ereignisse.
 Kehren Sie zum [Azure-Portal][portal] zurück, und navigieren Sie zur Application Insights-Ressource.
 
 
-Suchen Sie nach Daten in der Übersichtsdiagrammen. Zuerst sehen Sie lediglich einen oder zwei Punkte. Beispiel:
+Suchen Sie nach Daten in der Übersichtsdiagrammen. Zuerst sehen Sie lediglich einen oder zwei Punkte. Zum Beispiel:
 
 ![Klicken Sie, um weitere Daten anzuzeigen](./media/app-insights-start-monitoring-app-health-usage/12-first-perf.png)
 
@@ -196,4 +196,4 @@ Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithi
 
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

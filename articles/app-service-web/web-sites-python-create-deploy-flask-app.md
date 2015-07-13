@@ -155,7 +155,7 @@ Jetzt erstellen wir eine virtuelle Umgebung für die lokale Entwicklung. Klicken
 
 Klicken Sie auf **Erstellen**. Dadurch wird die virtuelle Umgebung erstellt, und die in "requirements.txt" aufgelisteten Abhängigkeiten werden installiert.
 
-### Ausführen mithilfe des Entwicklungssservers
+### Ausführen mithilfe des Entwicklungsservers
 
 Drücken Sie F5, um mit dem Debuggen beginnen. Ihr Webbrowser wird automatisch auf der Seite geöffnet, die lokal ausgeführt.
 
@@ -226,7 +226,7 @@ Installieren Sie alle externen Pakete, die Ihre Anwendung benötigt. Sie können
 
     env\scripts\pip install -r requirements.txt
 
-### Ausführen mithilfe des Entwicklungssservers
+### Ausführen mithilfe des Entwicklungsservers
 
 Sie können die Anwendung unter einem Entwicklungsserver mit dem folgenden Befehl starten:
 
@@ -305,7 +305,7 @@ Installieren Sie alle externen Pakete, die Ihre Anwendung benötigt. Sie können
 
     env/bin/pip install -r requirements.txt
 
-### Ausführen mithilfe des Entwicklungssservers
+### Ausführen mithilfe des Entwicklungsservers
 
 Sie können die Anwendung unter einem Entwicklungsserver mit dem folgenden Befehl starten:
 

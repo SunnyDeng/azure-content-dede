@@ -170,5 +170,6 @@ Um die Liste der bereitgestellten Azure-Ressourcengruppen abzurufen, verwenden S
 Führen Sie den folgenden Befehl aus, um die generierten Ereignisse anzuzeigen:
 
 	Get-AzureResourceGroupLog –Name $ResourceGroup -All | Where-Object EventSource -eq "Microsoft.DataFactory"
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

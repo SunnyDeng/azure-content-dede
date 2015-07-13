@@ -38,7 +38,7 @@ Mit dieser Vorlage stellen Sie eine Logik-App bereit.
 
      "testUri": {
         "type": "string",
-        "defaultValue": "http://azure.microsoft.com/status/feed/"
+        "defaultValue": "http://azure.microsoft.com/de-de/status/feed/"
       }
     
 ## Bereitzustellende Ressourcen

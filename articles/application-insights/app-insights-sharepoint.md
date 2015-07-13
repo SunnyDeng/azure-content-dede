@@ -41,7 +41,7 @@ Rufen Sie im Schnellstart das Skript für Webseiten ab:
 
 ![](./media/app-insights-sharepoint/02-monitor-web-page.png)
 
-Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie nachverfolgen möchten. Wenn Ihre Website über eine Masterseite verfügt, können Sie das Skript dort ablegen. Beispielsweise würden Sie es in einem ASP.NET MVC-Projekt unter "View\\Shared_Layout.cshtml" ablegen.
+Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie nachverfolgen möchten. Wenn Ihre Website über eine Masterseite verfügt, können Sie das Skript dort ablegen. Beispielsweise würden Sie es in einem ASP.NET MVC-Projekt unter "View\Shared_Layout.cshtml" ablegen.
 
 Das Skript enthält den Instrumentationsschlüssel, der die Telemetriedaten an Ihre Application Insights-Ressource leitet.
 
@@ -106,4 +106,4 @@ Klicken Sie durch die Benutzer, um Informationen über neue Benutzer und deren S
 
 <!--Link references-->
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

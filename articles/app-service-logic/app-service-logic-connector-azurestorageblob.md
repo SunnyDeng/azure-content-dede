@@ -59,7 +59,7 @@ Klicken Sie im rechten Bereich auf "Azure Storage-Blobconnector". Der Connector 
 
 ![Liste der Azure Storage-Blobaktionen][10]
 
-Azure Storage-Blob-Connector unterstützt sechs Aktionen. Dies sind:
+Der Azure Storage-Blob-Connector unterstützt sechs Aktionen. Dies sind:
 
 - **Blob abrufen** – Abrufen eines bestimmten Blobs aus dem Container.
 - **Blob hochladen** – Hochladen eines neuen Blobs oder Aktualisieren eines vorhandenen Blobs.

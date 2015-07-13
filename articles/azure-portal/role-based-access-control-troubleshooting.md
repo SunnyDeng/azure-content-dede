@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Rollenbasierte Zugriffssteuerung - Problembehandlung" 
-	description="Arbeiten mit unterschiedlichen Ressourcentypen für die rollenbasierte Zugriffssteuerung." 
+	pageTitle="Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung" 
+	description="Arbeiten mit unterschiedlichen Ressourcentypen bei der rollenbasierten Zugriffssteuerung." 
 	services="azure-portal"
 	documentationCenter="na" 
 	authors="stepsic-microsoft-com" 
@@ -17,37 +17,34 @@
 	ms.date="04/25/2015" 
 	ms.author="stepsic"/>
 
-# Rollenbasierte Zugriffssteuerung - Problembehandlung
+# Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung
 
 ## Einführung
 
-[Rollenbasierte Zugriffssteuerung](../role-based-access-control-configure.md) ist ein leistungsstarkes Feature, welches das Delegieren eines differenzierten Zugriffs auf Ressourcen in Azure ermöglicht. Gewähren Sie einem bestimmten Benutzer einfach und sicher Zugriff auf genau die Ressourcen, die er benötigt. Mitunter kann das Ressourcenmodell für Azure-Ressourcen jedoch kompliziert sein, weshalb es nicht immer leicht ersichtlich ist, wofür genau Sie Berechtigungen erteilen.
+Die [rollenbasierte Zugriffssteuerung](../role-based-access-control-configure.md) ist eine leistungsstarke Funktion, mit der Sie Zugriffsberechtigungen für Azure-Ressourcen differenziert steuern können. Gewähren Sie einem bestimmten Benutzer einfach und sicher Zugriff auf genau die Ressourcen, die er benötigt. In einigen Fällen kann das Ressourcen-Modell für Azure-Ressourcen jedoch kompliziert sein, und es ist nicht immer leicht ersichtlich, wofür Sie Berechtigungen vergeben.
 
-In diesem Dokument erhalten Sie ausführliche Informationen zur Nutzung einiger der neuen Rollen im Azure-Portal.  Diese Version von Azure umfasst drei integrierte Rollen:
-* Besitzer
-* Mitwirkender
-* Leser
+In diesem Dokument erhalten Sie ausführliche Informationen über die Nutzung einiger der neuen Rollen im Azure-Portal. Diese Version umfasst drei integrierte Rollen: Besitzer, Mitwirkender und Leser
 
-Besitzer und Mitwirkende haben Vollzugriff auf alle Verwaltungsfunktionen, mit dem Unterschied, dass Mitwirkende anderen Benutzern oder Gruppen keinen Zugriff gewähren können. Die Leserolle werden wir aufgrund ihrer umfassenden Eigenschaften ausführlicher beschreiben. [In diesem Artikel](../role-based-access-control-configure.md) finden Sie genaue Informationen zum Gewähren des Zugriffs.
+Besitzer und Mitwirkende haben Vollzugriff auf alle Verwaltungsfunktionen, mit dem Unterschied, dass Mitwirkende anderen Benutzern oder Gruppen keinen Zugriff gewähren können. Die Leserolle werden wir aufgrund ihrer umfassenden Eigenschaften ausführlicher beschreiben. [In diesem Artikel](../role-based-access-control-configure.md) finden Sie genaue Informationen zum Gewähren von Zugriffen.
 
-## App Services-Arbeitsauslastungen
+## App Service-Workloads
 
 ### Nur Lesezugriff 
 
-Wenn Sie selbst nur über Lesezugriff auf eine einzelne Web-App verfügen oder einem Benutzer nur Lesezugriff darauf gewähren, sind eventuell einige Features für Sie unerwarteterweise deaktiviert. Die folgenden Verwaltungsfunktionen erfordern **Schreibzugriff** auf eine Web-App (entweder als Mitwirkender oder Besitzer) und stehen nicht zur Verfügung, wenn der Benutzer nur über Lesezugriff verfügt. 
+Wenn Sie selbst nur über Lesezugriff auf eine Web-App verfügen oder einem Benutzer nur Lesezugriff auf eine Web-App gewähren, sind eventuell einige Funktionen für Sie unerwartet deaktiviert. Die folgenden Verwaltungsfunktionen erfordern **Schreibzugriff** auf eine Web-App (entweder als Mitwirkender oder Besitzer) und stehen nicht zur Verfügung, wenn der Benutzer nur über Lesezugriff für die Web-App verfügt.
  
-1. Befehle (z. B. Starten, Anhalten usw.)
-2. Änderung von Einstellungen wie allgemeine Konfigurations-, Skalierungs-, Sicherungs- und Überwachungseinstellungen
-3. Zugriff auf Anmeldedaten für die Veröffentlichung oder andere geheime Schlüssel wie App-Einstellungen und Verbindungszeichenfolgen
+1. Befehle (z. B. starten, anhalten)
+2. Änderung von Einstellungen, wie allgemeine Konfigurationen, Skalierungseinstellungen, Sicherungseinstellungen und Überwachungseinstellungen
+3. Zugriff auf Anmeldedaten für die Veröffentlichung oder andere geheime Schlüssel wie App- und Verbindungseinstellungen
 4. Streamingprotokolle
 5. Konfiguration von Diagnoseprotokollen
 6. Konsole (Eingabeaufforderung)
-7. Aktive und kürzlich vorgenommene Bereitstellungen (für die lokale fortlaufende Git-Bereitstellung)
+7. Aktive und kürzlich vorgenommene Bereitstellungen (für fortlaufende Bereitstellungen lokaler Gits)
 8. Geschätzte Ausgaben
 9. Webtests
 10. Virtuelles Netzwerk (für Leser nur sichtbar, wenn ein virtuelles Netzwerk zuvor von einem Benutzer mit Schreibzugriff konfiguriert wurde)
  
-Wenn Sie auf keine dieser Kacheln zugreifen können, benötigen Sie Zugriff als Mitwirkender auf die Web-App. 
+Wenn Sie auf keine dieser Kacheln zugreifen können, benötigen Sie Zugriff als Mitwirkender auf diese Web-App.
 
 ### Umgang mit zugehörigen Ressourcen
  
@@ -55,39 +52,35 @@ Web-Apps können aufgrund verschiedener miteinander verknüpfter Ressourcen komp
 
 ![Web-App-Ressourcengruppe](./media/role-based-access-control-troubleshooting/Website-resource-model.png)
 
-Wenn Sie daher lediglich auf die Website Zugriff gewähren, sind viele Funktionen des Blatts "Website" vollständig deaktiviert. 
+Wenn Sie daher lediglich auf die Website Zugriff gewähren, sind viele Funktionen des Blatts "Website" vollständig deaktiviert.
  
-1. Diese Elemente erfordern Zugriff auf die **App-Diensteeinstellungen**, die Ihrer Website entsprechen:  
-    * Anzeigen des Tarifs der Web-App (z. B. Kostenlos oder Standard)
-    * Skalierungskonfiguration (d. h. Anzahl der Instanzen, Größe der virtuellen Computer, Einstellungen für automatische Skalierung)
-    * Kontingente (z. B. Speicher, Bandbreite, CPU)
-2. Die folgenden Elemente erfordern Zugriff auf die gesamte **Ressourcengruppe**, die Ihre Website umfasst:  
-    * SSL-Zertifikate und Bindungen (Der Grund dafür ist, dass SSL-Zertifikate von Websites derselben Ressourcengruppe und desselben geografischen Standorts gemeinsam genutzt werden können).
-    * Warnungsregeln
+1. Die folgenden Elemente erfordern Zugriff auf den **App Service-Plan** für Ihre Website:  
+    * Anzeigen des Tarifs für die Web-App (z. B. Free oder Standard)
+    * Skalierungskonfiguration (d. h. Anzahl der Instanzen, Größe des virtuellen Computers, Einstellungen für automatische Skalierung)
+    * Kontingente (z. B. Speicher, Bandbreite, CPU)
+2. Die folgenden Elemente erfordern Zugriff auf die gesamte **Ressourcengruppe**, die Ihre Website umfasst.  
+    * SSL-Zertifikate und -Bindungen (Der Grund dafür ist, dass SSL-Zertifikate von Websites derselben Ressourcengruppe und desselben geografischen Standorts gemeinsam genutzt werden können).
+    * Warnregeln
     * Einstellungen für automatische Skalierung
     * Application Insights-Komponenten
     * Webtests
 
-## Arbeitsauslastungen virtueller Computer
+## Workloads virtueller Computer
 
-Ähnlich wie bei Web-Apps erfordern einige Features auf dem Blatt "Virtueller Computer" Schreibzugriff auf den virtuellen Computer oder auf andere Ressourcen in der Ressourcengruppe.
+Ähnlich wie bei Web-Apps erfordern einige Funktionen auf dem Blatt "Virtueller Computer" Schreibzugriff auf den virtuellen Computer oder auf andere Ressourcen in der Ressourcengruppe.
 
-Virtuelle Computer verfügen über folgende zugehörige Ressourcen:
-* Domänennamen
-* Virtuelle Netzwerke
-* Speicherkonten
-* Warnungsregeln
+Für virtuelle Computer gibt es diese verwandten Ressourcen: Domänennamen, virtuelle Netzwerke, Speicherkonten und Warnungsregeln
 
 1. Die folgenden Elemente erfordern **Schreibzugriff** auf den virtuellen Computer:  
     * Endpunkte
     * IP-Adressen
     * Datenträger
     * Erweiterungen
-2. Die folgenden Elemente erfordern Schreibzugriff auf den virtuellen Computer und die **Ressourcengruppe** (neben dem Domänennamen), in der sich der virtuelle Computer befindet:  
+2. Die folgenden Elemente erfordern Schreibzugriff auf den virtuellen Computer und die **Ressourcengruppe** (zusammen mit dem Domänennamen), in der sich der virtuelle Computer befindet:  
     * Verfügbarkeitsgruppe
-    * Lastenausgleichsgruppe
+    * Satz mit Lastenausgleich
     * Warnungsregeln
     
-Wenn Sie auf keine dieser Kacheln zugreifen können, bitten Sie den Administrator um den Zugriff als Mitwirkender auf die Ressourcengruppe.
+Wenn Sie auf keine dieser Kacheln zugreifen können, fragen Sie den Administrator nach Zugriff als Mitwirkender auf diese Ressourcengruppe.
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

@@ -1,20 +1,3 @@
-<properties 
-   pageTitle="Erstellen von Sicherungen"
-   description="Beschreibt das Definieren einer StorSimple-Sicherungsrichtlinie."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="04/01/2015"
-   ms.author="v-sharos" />
-
 ### So erstellen Sie eine Sicherung
 
 1. Klicken Sie auf der Seite **Schnellstart** des Geräts auf **Sicherungsrichtlinie hinzufügen**. Damit wird der Assistent zum Hinzufügen einer Sicherungsrichtlinie gestartet. 
@@ -40,4 +23,4 @@
 
 Sie haben die Gerätekonfiguration abgeschlossen.
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

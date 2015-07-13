@@ -1,1 +1,3 @@
-The dataset contains approximately 228K ratings for movies, extracted from well-structured tweets on Twitter. Each instance represents a tweet and is a tuple: user ID, IMDB movie ID, rating, and timestamp. The dataset was introduced in the paper "S. Dooms, T. De Pessemier and L. Martens. MovieTweetings: a Movie Rating Dataset Collected From Twitter. Workshop on Crowdsourcing and Human Computation for Recommender Systems, CrowdRec at RecSys 2013."
+Das DataSet enthält ca. 228.000 Filmbewertungen, extrahiert aus gut strukturierten Tweets auf Twitter. Jede Instanz ist ein Tupel, das einen Tweet darstellt: Benutzer-ID, Film-ID in der IMDB, Bewertung und Zeitstempel. Das Dataset wurde in dem Dokument „S. Dooms, T. De Pessemier und L. Martens. MovieTweetings: a Movie Rating Dataset Collected From Twitter. Workshop on Crowdsourcing and Human Computation for Recommender Systems, CrowdRec at RecSys 2013“ eingeführt.
+
+<!---HONumber=62-->

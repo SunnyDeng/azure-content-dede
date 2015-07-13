@@ -87,13 +87,13 @@ Klicken Sie auf den Trigger "Datei verfügbar (Lesen dann Löschen)".
 
 ![Grundlegende Eingaben – FTP-Trigger][7]
 
-Anhand der Eingaben können Sie einen bestimmten Ordnerpfad konfigurieren, der mit einer geplanten Häufigkeit abgefragt wird. Die grundlegenden Eingaben sind – Häufigkeit – Gibt die Häufigkeit der FTP-Umfrage an – Intervall – Gibt das Intervall für die geplante Häufigkeit an – Ordnerpfad – Gibt den Ordnerpfad auf dem FTP-Server an – Dateityp – Gibt an, ob es sich um eine Text- oder um eine Binärdatei handelt
+Anhand der Eingaben können Sie einen bestimmten Ordnerpfad konfigurieren, der mit einer geplanten Häufigkeit abgefragt wird. Die grundlegenden Eingaben sind: – Häufigkeit – Gibt die Häufigkeit der FTP-Umfrage an- – Intervall – Gibt das Intervall für die geplante Häufigkeit an. – Ordnerpfad – Gibt den Ordnerpfad auf dem FTP-Server an. – Dateityp – Gibt an, ob es sich um eine Text- oder um eine Binärdatei handelt.
 
 Durch Klicken auf die Ellipsen "..." werden die erweiterten Eingaben angezeigt.
 
 ![Grundlegende Eingaben – FTP-Trigger][8]
 
-Die erweiterten Eingaben sind – Dateimaske – Gibt die Dateimaske während der Umfrage an – Dateimaske ausschließen – Gibt die Dateimasken an, die bei der Umfrage ausgeschlossen werden sollen
+Die erweiterten Eingaben sind: – Dateimaske – Gibt die Dateimaske während der Umfrage an. – Dateimaske ausschließen – Gibt die Dateimasken an, die bei der Umfrage ausgeschlossen werden sollen.
 
 Stellen Sie die Eingaben bereit, und klicken Sie auf das Häkchen, um die Eingabekonfiguration abzuschließen.
 
@@ -102,7 +102,7 @@ Stellen Sie die Eingaben bereit, und klicken Sie auf das Häkchen, um die Eingab
 Beachten Sie, dass der konfigurierte FTP-Trigger sowohl die konfigurierten Eingabeparameter als auch die Ausgaben anzeigt.
 
 ####Verwenden der Ausgabe des FTP-Triggers in nachfolgenden Aktionen
-Die Ausgabe des FTP-Triggers kann als Eingabe für einige andere Aktionen im Datenfluss verwendet werden.
+Die Ausgabe des FTP-Connectors kann als Eingabe für einige andere Aktionen im Datenfluss verwendet werden.
 
 Sie können im Eingabedialogfeld der Aktion auf '...' klicken und die FTP-Ausgabe direkt aus der Dropdownliste auswählen.
 
@@ -122,7 +122,7 @@ Der FTP-Connector unterstützt vier Aktionen. Dies sind:
 - **Datei löschen** – Löscht eine Datei aus dem FTP-Ordnerpfad.
 - **Dateien auflisten** - Listet alle Dateien im FTP-Ordnerpfad auf.
 
-Nehmen wir ein Beispiel - Datei hochladen. Klicken Sie auf "Datei hochladen".
+Nehmen wir ein Beispiel: Datei hochladen. Klicken Sie auf "Datei hochladen".
 
 Die grundlegenden Eingaben werden zuerst angezeigt.
 

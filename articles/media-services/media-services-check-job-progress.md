@@ -13,18 +13,18 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/10/2015" 
+	ms.date="05/25/2015" 
 	ms.author="juliako"/>
 
-#Gewusst wie: Prüfen des Auftragsfortschritts
+#Vorgehensweise: Prüfen des Auftragsfortschritts
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) . 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).
 
-Beim Ausführen von Aufträgen ist es nützlich, deren Fortschritt verfolgen zu können. Sie können den Fortschritt überprüfen, indem Sie [einen "StateChanged"-Ereignishandler definieren](#statechange_event_handler) oder indem Sie mit [Azure-Warteschlangenspeicher die Media Services-Auftragsbenachrichtigungen überwachen](#check_progress_with_queues). Beide Methoden werden in diesem Thema beschrieben. 
+Beim Ausführen von Aufträgen ist es nützlich, deren Fortschritt verfolgen zu können. Sie können den Status überprüfen, indem Sie [einen StateChanged-Ereignishandler definieren](#statechange_event_handler) oder [Azure-Warteschlangenspeicher zur Überwachung von Media Services-Auftragsbenachrichtigungen verwenden](#check_progress_with_queues). Beide Methoden werden in diesem Thema beschrieben.
 
 ##<a id="statechange_event_handler"></a>Definieren eines StateChanged-Ereignishandlers zum Überwachen des Auftragsfortschritts
 
-Das folgende Codebeispiel definiert den StateChanged-Ereignishandler. Dieser Ereignishandler verfolgt den Auftragsfortschritt und liefert Statusupdates je nach Auftragsfortschritt. Der Code definiert außerdem die LogJobStop-Methode. Diese Helfermethode protokolliert Fehlerdetails.
+Das folgende Codebeispiel definiert den StateChanged-Ereignishandler. Dieser Ereignishandler verfolgt den Auftragsfortschritt und liefert Statusupdates je nach Auftragsstatus. Der Code definiert außerdem die LogJobStop-Methode. Diese Helfermethode protokolliert Fehlerdetails.
 
 	private static void StateChanged(object sender, JobStateChangedEventArgs e)
 	{
@@ -105,20 +105,20 @@ Das folgende Codebeispiel definiert den StateChanged-Ereignishandler. Dieser Ere
 
 ##<a id="check_progress_with_queues"></a>Verwenden von Azure-Warteschlangenspeicher zum Überwachen von Media Services-Auftragsbenachrichtigungen
 
-Microsoft Azure Media Services bietet die Möglichkeit, Benachrichtigungen an den [Azure-Warteschlangenspeicher](../storage-dotnet-how-to-use-queues.md#what-is) zu übermitteln, während Medienaufträge verarbeitet werden. In diesem Thema wird gezeigt, wie Sie diese Benachrichtigungen aus dem Warteschlangenspeicher abrufen.
+Microsoft Azure Media Services bietet bei der Verarbeitung von Medienaufträgen die Möglichkeit, Benachrichtigungen an den [Azure-Warteschlangenspeicher](../storage-dotnet-how-to-use-queues.md#what-is) zu übermitteln. In diesem Thema wird gezeigt, wie Sie diese Benachrichtigungen aus dem Warteschlangenspeicher abrufen.
 
-Auf die an den Warteschlangenspeicher übermittelten Nachrichten kann von überall auf der Welt aus zugegriffen werden. Die Benachrichtigungsarchitektur für Azure-Warteschlangen ist zuverlässig und hochgradig skalierbar. Das Abrufen des Warteschlangenspeichers wird gegenüber anderen Methoden empfohlen. 
+Auf die an den Warteschlangenspeicher übermittelten Nachrichten kann von überall auf der Welt aus zugegriffen werden. Die Benachrichtigungsarchitektur für Azure-Warteschlangen ist zuverlässig und hochgradig skalierbar. Das Abrufen des Warteschlangenspeichers wird gegenüber anderen Methoden empfohlen.
 
-Häufig werden Media Services-Benachrichtigungen überwacht, wenn Sie ein Content Management System entwickeln, das nach Abschluss der Codierung eines Auftrags einige zusätzliche Aufgaben durchführen soll (z. B. den nächsten Schritt in einem Workflow auslösen oder Inhalte veröffentlichen). 
+Häufig werden Media Services-Benachrichtigungen überwacht, wenn Sie ein Content Management System entwickeln, das nach Abschluss der Codierung eines Auftrags einige zusätzliche Aufgaben durchführen soll (z. B. den nächsten Schritt in einem Workflow auslösen oder Inhalte veröffentlichen).
 
 ###Überlegungen
 
 Beachten Sie Folgendes beim Entwickeln von Media Services-Anwendungen, die die Azure-Speicherwarteschlange verwenden.
 
-- Der Warteschlangendienst bietet keine Garantie, dass die Übermittlung nach First-in-First-out (FIFO) sortiert erfolgt. Weitere Informationen finden sie unter [Azure-Warteschlangen und Azure Service Bus-Warteschlangen - Vergleich und Gegenüberstellung](https://msdn.microsoft.com/library/azure/hh767287.aspx).
+- Der Warteschlangendienst bietet keine Garantie, dass die Übermittlung nach First-in-First-out (FIFO) sortiert erfolgt. Weitere Informationen finden sie unter [Azure-Warteschlangen und Azure Service Bus-Warteschlangen – Vergleich und Gegenüberstellung](https://msdn.microsoft.com/library/azure/hh767287.aspx).
 - Azure-Speicherwarteschlangen sind kein Push-Dienst. Sie müssen die Warteschlange abfragen. 
 - Sie können eine beliebige Anzahl von Warteschlangen verwenden. Weitere Informationen finden Sie unter [REST-API des Warteschlangendiensts](https://msdn.microsoft.com/library/azure/dd179363.aspx).
-- Azure-Speicherwarteschlangen weisen einige Einschränkungen und Besonderheiten auf, die im folgenden Artikel beschrieben werden: [Azure-Warteschlangen und Azure Service Bus-Warteschlangen - Vergleich und Gegenüberstellung](https://msdn.microsoft.com/library/azure/hh767287.aspx).
+- Azure-Speicherwarteschlangen weisen einige Einschränkungen und Besonderheiten auf, die im folgenden Artikel beschrieben werden: [Azure-Warteschlangen und Azure Service Bus-Warteschlangen – Vergleich und Gegenüberstellung](https://msdn.microsoft.com/library/azure/hh767287.aspx).
 
 ###Codebeispiel
 
@@ -129,7 +129,7 @@ Das Codebeispiel in diesem Abschnitt erfüllt die folgenden Aufgaben:
 1. Erstellt die Warteschlange, die Benachrichtigungen zum Codierungsauftrag empfangen soll.
 1. Erstellt den Endpunkt für Benachrichtigungen, der der Warteschlange zugeordnet ist.
 1. Fügt den Endpunkt für die Benachrichtigung an den Auftrag an und übermittelt den Codierungsauftrag. Sie können mehrere Benachrichtigungsendpunkte an einen Auftrag anfügen.
-1. In diesem Beispiel interessieren uns nur die Endphasen der Auftragsverarbeitung, deshalb übergeben wir **NotificationJobState.FinalStatesOnly** an die **AddNew**-Methode. 
+1. In diesem Beispiel interessieren uns nur die Endphasen der Auftragsverarbeitung, daher übergeben wir **NotificationJobState.FinalStatesOnly** an die **AddNew**-Methode. 
 		
 		job.JobNotificationSubscriptions.AddNew(NotificationJobState.FinalStatesOnly, _notificationEndPoint);
 1. Wenn Sie NotificationJobState.All übergeben, sollten Sie damit alle Benachrichtigungen über Statusänderungen empfangen: In der Warteschlange -> Geplant -> In Verarbeitung -> Abgeschlossen. Wie aber bereits erwähnt, garantiert der Azure Storage-Warteschlangendienst keine geordneten Übermittlung. Sie können die "Timestamp"-Eigenschaft (im Beispiel unten im Typ "EncodingJobMessage" definiert) zum Ordnen der Nachrichten verwenden. Es ist möglich, dass Sie Benachrichtigungen doppelt erhalten. Mithilfe der "ETag"-Eigenschaft (im Typ "EncodingJobMessage" definiert) können Sie nach Duplikaten suchen. Beachten Sie, dass es auch möglich ist, dass einige Statusänderungsbenachrichtigungen übersprungen werden. 
@@ -138,7 +138,7 @@ Das Codebeispiel in diesem Abschnitt erfüllt die folgenden Aufgaben:
 
 >[AZURE.NOTE]Die empfohlene Methode zum Überwachen des Auftragsstatus ist das Überwachen von Benachrichtigungen, wie im folgenden Beispiel gezeigt.
 >
->Sie können aber auch den Status eines Auftrags mithilfe der **IJob.State**-Eigenschaft überprüfen.  Beachten Sie, dass eine Benachrichtigung über den Abschluss eines Auftrags eintreffen kann, bevor der Zustand von **IJob** auf **minFreeThreads** gesetzt wurde. Die **IJob.State**-Eigenschaft gibt den genauen Status mit einer geringfügigen Verzögerung an.
+>Sie können aber auch den Status eines Auftrags mithilfe der **IJob.State**-Eigenschaft überprüfen. Beachten Sie, dass eine Benachrichtigung über den Abschluss eines Auftrags eintreffen kann, bevor der Zustand von **IJob** auf **Abgeschlossen** gesetzt wurde. Die **IJob.State**-Eigenschaft gibt den genauen Status mit einer geringfügigen Verzögerung an.
 
 	
 	using System;
@@ -425,6 +425,6 @@ Das Beispiel oben generiert die folgende Ausgabe. Die Werte können variieren.
 	job with Id: nb:jid:UUID:526291de-f166-be47-b62a-11ffe6d4be54 reached expected 
 	State: Finished
 	
+ 
 
-
-<!--HONumber=52--> 
+<!---HONumber=62-->

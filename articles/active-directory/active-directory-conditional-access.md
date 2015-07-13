@@ -43,5 +43,6 @@ In den folgenden Themen werden die unterschiedlichen Mechanismen beschrieben, di
 
 <!--Image references-->
 [1]: ./media/active-directory-conditional-access/condaccoverviewvsdx1.png
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

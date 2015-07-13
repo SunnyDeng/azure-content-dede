@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/28/2015"
+	ms.date="06/24/2015"
 	ms.author="danlep"/>
 
 
@@ -26,11 +26,11 @@ Dieses Lernprogramm zeigt einen gelegentlich als Cloud-Bursting bezeichneten Ans
 
 In diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit Serverclustern oder HPC Pack haben. Es soll Ihnen lediglich helfen, ein Hybrid-Rechencluster für Demonstrationszwecke schnell bereitzustellen. Welche Überlegungen und Schritte zur Bereitstellung eines größeren Hybrid-Clusters mit HPC-Pack in einer Produktionsumgebung anzustellen bzw. auszuführen sind, ist in der [ausführlichen Anleitung](http://go.microsoft.com/fwlink/p/?LinkID=200493) beschrieben. Wenn Sie ein HPC Pack-Cluster vollständig in Azure einrichten möchten, finden Sie weitere Informationen unter [Microsoft HPC Pack in Azure-VMs](http://go.microsoft.com/fwlink/p/?linkid=330375).
 
->[AZURE.NOTE] Azure bietet für unterschiedliche Workloads Compute-Ressourcen [unterschiedlicher Größen](http://go.microsoft.com/fwlink/p/?LinkId=389844) an. Die Instanzen A8 und A9 kombinieren beispielweise hohe Leistung und Zugang zu einem Anwendungsnetz mit niedrigen Latenzzeiten und hohem Durchsatz, was für bestimmte HPC-Anwendungen benötigt wird. Einzelheiten finden Sie unter [Informationen zu den rechenintensiven A8-, A9, A10- und A11-Instanzen](http://go.microsoft.com/fwlink/p/?Linkid=328042).
+>[AZURE.NOTE]Azure bietet für unterschiedliche Workloads Compute-Ressourcen [unterschiedlicher Größen](../virtual-machines/virtual-machines-size-specs.md) an. Die Instanzen A8 und A9 kombinieren beispielweise hohe Leistung und Zugang zu einem Anwendungsnetz mit niedrigen Latenzzeiten und hohem Durchsatz, was für bestimmte HPC-Anwendungen benötigt wird. Siehe [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](../virtual-machines/virtual-machines-a8-a9-a10-a11-specs.md).
 
 ## Voraussetzungen
 
->[AZURE.NOTE] Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)](http://azure.microsoft.com/develop/php/tutorials/create-a-windows-azure-account/).
+>[AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)](http://azure.microsoft.com/develop/php/tutorials/create-a-windows-azure-account/).
 
 Darüber hinaus benötigen Sie für dieses Lernprogramm Folgendes:
 
@@ -44,7 +44,7 @@ Darüber hinaus benötigen Sie für dieses Lernprogramm Folgendes:
 
 	* Stellen Sie sicher, dass wichtige und kritische Updates installiert wurden.
 
-* Installationsdateien für HPC Pack 2012 R2. Diese stehen kostenlos zur Verfügung. Die neueste Version ist HPC Pack 2012 R2 Update 1. Das komplette Installationspaket müssen Sie [herunterladen](http://go.microsoft.com/fwlink/p/?linkid=328024) und die Dateien auf den Hauptknoten-Computer oder auf einen Speicherort im Netzwerk kopieren. Wählen Sie Installationsdateien in derselben Sprache aus wie für die Installation von Windows Server.
+* Installationsdateien für HPC Pack 2012 R2. Diese stehen kostenlos zur Verfügung. [Laden](http://go.microsoft.com/fwlink/p/?linkid=328024) Sie die aktuelle Version herunter, und kopieren Sie die Dateien auf den Hauptknotencomputer oder an einen Netzwerkspeicherort. Wählen Sie Installationsdateien in derselben Sprache aus wie für die Installation von Windows Server.
 
 * Ein Domänenkonto mit lokalen Administratorrechten auf dem Hauptknoten.
 
@@ -93,7 +93,7 @@ Führen Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) nachfo
 
 - Erstellen eines Azure-Speicherkontos
 
-	>[AZURE.NOTE] Notieren Sie auch Ihre Azure-Abonnement-ID, die Sie später noch brauchen werden. Sie finden diese Kennung in den Azure-<a href="[https://account.windowsazure.com/Subscriptions">Kontoinformationen</a>.
+	>[AZURE.NOTE]Notieren Sie auch Ihre Azure-Abonnement-ID, die Sie später noch brauchen werden. Sie finden diese Kennung in den Azure-<a href="[https://account.windowsazure.com/Subscriptions">Kontoinformationen</a>.
 
 ### <a>Hochladen des Standard-Verwaltungszertifikats</a>
 HPC Pack installiert im Hauptknoten ein selbstsigniertes Zertifikat mit dem Namen Default Microsoft HPC Azure Management, das Sie als ein Azure-Verwaltungszertifikat hochladen können. Dieses Zertifikat wird für Testzwecke und Machbarkeitsstudien bereitgestellt.
@@ -106,7 +106,7 @@ HPC Pack installiert im Hauptknoten ein selbstsigniertes Zertifikat mit dem Name
 
 	![Zertifikateinstellungen][upload_cert1]
 
-4. Suchen Sie im Hauptknoten nach der Datei C:\\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer. Klicken Sie dann auf die Schaltfläche mit dem **Häkchen**.
+4. Suchen Sie im Hauptknoten nach der Datei C:\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer. Klicken Sie dann auf die Schaltfläche mit dem **Häkchen**.
 
 	![Hochladen des Zertifikats][install_hpc10]
 
@@ -114,7 +114,7 @@ In der Liste der Verwaltungszertifikate sehen Sie **Default HPC Azure Management
 
 ### <a>Erstellen eines Azure-Clouddiensts</a>
 
->[AZURE.NOTE] Erstellen Sie den Clouddienst und das Speicherkonto zur Optimierung der Leistung in derselben geografischen Region.
+>[AZURE.NOTE]Erstellen Sie den Clouddienst und das Speicherkonto zur Optimierung der Leistung in derselben geografischen Region.
 
 1. Klicken Sie im Portal in der Befehlsleiste auf **Neu**.
 
@@ -148,7 +148,7 @@ Bevor Sie mit HPC Cluster Manager Azure-Knoten bereitstellen und Aufträge über
 
 	![Topologie 5][config_hpc3]
 
-	>[AZURE.NOTE] Dies ist die einfachste Konfiguration für Demonstrationszwecke, da der Hauptknoten für die Verbindung zu Active Directory und zum Internet nur einen einzigen Netzwerkadapter braucht. Clusterkonfigurationen, die mehrere Netzwerke benötigen, werden in diesem Lernprogramm nicht behandelt.
+	>[AZURE.NOTE]Dies ist die einfachste Konfiguration für Demonstrationszwecke, da der Hauptknoten für die Verbindung zu Active Directory und zum Internet nur einen einzigen Netzwerkadapter braucht. Clusterkonfigurationen, die mehrere Netzwerke benötigen, werden in diesem Lernprogramm nicht behandelt.
 
 4. Klicken Sie auf **Next**, und akzeptieren Sie auf den verbleibenden Seiten des Assistenten die Standardwerte. Klicken Sie in der Registerkarte **Review** auf **Configure**, um die Netzwerkkonfiguration abzuschließen.
 
@@ -158,7 +158,7 @@ Bevor Sie mit HPC Cluster Manager Azure-Knoten bereitstellen und Aufträge über
 
 	![Installations-Anmeldeinformationen][config_hpc6]
 
-	>[AZURE.NOTE] HPC Pack-Dienste verwenden Installationsanmeldeinformationen nur für die Bereitstellung mit der Domäne verknüpfter Compute-Knoten. Die Azure-Knoten, die Sie in diesem Lernprogramm hinzufügen, sind nicht mit der Domäne verknüpft.
+	>[AZURE.NOTE]HPC Pack-Dienste verwenden Installationsanmeldeinformationen nur für die Bereitstellung mit der Domäne verknüpfter Compute-Knoten. Die Azure-Knoten, die Sie in diesem Lernprogramm hinzufügen, sind nicht mit der Domäne verknüpft.
 
 7. Klicken Sie in der **Deployment To-do List** auf **Configure the naming of new nodes**.
 
@@ -166,7 +166,7 @@ Bevor Sie mit HPC Cluster Manager Azure-Knoten bereitstellen und Aufträge über
 
 	![Knotenbenennung][config_hpc8]
 
-	>[AZURE.NOTE] Die Benennungsreihe erzeugt nur Namen für Serverknoten, die in die Domäne eingebunden sind. Azure-Knoten werden automatisch benannt.
+	>[AZURE.NOTE]Die Benennungsreihe erzeugt nur Namen für Serverknoten, die in die Domäne eingebunden sind. Azure-Knoten werden automatisch benannt.
 
 9. Klicken Sie in der **Deployment To-do List** auf **Create a node template**. Sie brauchen die Knotenvorlage, um Azure-Knoten zum Cluster hinzuzufügen.
 
@@ -188,7 +188,7 @@ Bevor Sie mit HPC Cluster Manager Azure-Knoten bereitstellen und Aufträge über
 
 	e. Klicken Sie auf **Next**, und akzeptieren Sie auf den verbleibenden Seiten des Assistenten die Standardwerte. Klicken Sie dann in der Registerkarte **Review** auf **Create**, um die Knotenvorlage anzulegen.
 
-	>[AZURE.NOTE] Standardmäßig enthält die Azure-Knotenvorlage unter anderem Einstellungen, mit denen Sie Knoten manuell starten (bereitstellen) und anhalten können. Sie können auch einen Zeitplan für das automatische Starten und Stoppen der Azure-Knoten konfigurieren.
+	>[AZURE.NOTE]Standardmäßig enthält die Azure-Knotenvorlage unter anderem Einstellungen, mit denen Sie Knoten manuell starten (bereitstellen) und anhalten können. Sie können auch einen Zeitplan für das automatische Starten und Stoppen der Azure-Knoten konfigurieren.
 
 ## Hinzufügen von Azure-Knoten zum Cluster
 
@@ -307,8 +307,7 @@ Nachdem Sie das Cluster ausprobiert haben, können Sie mit HPC Cluster Manager d
 * [HPC Pack 2012 R2 und HPC Pack 2012](http://go.microsoft.com/fwlink/p/?LinkID=263697)
 * [Erweiterung auf Azure mit Microsoft HPC Pack](http://go.microsoft.com/fwlink/p/?LinkID=200493)
 * [Microsoft HPC Pack in Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?linkid=330375)
-* [Azure Big Compute: HPC und Batch](http://azure.microsoft.com/solutions/big-compute/)
-* [Azure Big Compute: Technische Dokumentation zu HPC und Batch](http://msdn.microsoft.com/library/azure/dn482128.aspx)
+* [Big Compute in Azure: technische Ressourcen für Batch und HPC (High Performance Computing)](big-compute-resources.md)
 
 
 [Overview]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/hybrid_cluster_overview.png
@@ -348,4 +347,4 @@ Nachdem Sie das Cluster ausprobiert haben, können Sie mit HPC Cluster Manager d
 [stop_node4]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/stop_node4.png
 [view_instances2]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/view_instances2.png
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

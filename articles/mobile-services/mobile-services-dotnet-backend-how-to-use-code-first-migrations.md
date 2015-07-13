@@ -11,27 +11,33 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="NA" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="02/27/2015" 
+	ms.date="06/04/2015" 
 	ms.author="glenga"/>
 
 # Ändern des Datenmodells eines mobilen .NET-Backend-Dienstes
 
-In diesem Thema wird erläutert, wie Sie Entity Framework Code First-Migrationen zum Ändern des Datenmodells einer vorhandenen Azure SQL-Datenbank verwenden, um den Verlust vorhandener Daten zu vermeiden. Bei diesem Verfahren wird vorausgesetzt, dass Sie Ihr Mobildienstprojekt bereits in Azure veröffentlicht haben, dass ihre Datenbank Daten enthält und dass das remote und das lokale Datenmodell noch synchron sind. Außerdem werden in diesem Thema die standardmäßigen von Azure Mobile Services implementierten Code First-Initialisierer beschrieben, die während der Entwicklung verwendet werden. Mit diesem Initialisierern können Sie einfach Schemaänderungen ohne Verwendung von Code First-Migrationen ausführen, wenn keine vorhandenen Daten beibehalten werden müssen.
+In diesem Thema wird erläutert, wie Sie Entity Framework Code First-Migrationen zum Ändern des Datenmodells einer vorhandenen Azure SQL-Datenbank verwenden, um den Verlust vorhandener Daten zu vermeiden. Bei diesem Verfahren wird vorausgesetzt, dass Sie Ihr Mobildienstprojekt bereits in Azure veröffentlicht haben, dass ihre Datenbank Daten enthält und dass das remote und das lokale Datenmodell noch synchron sind. Außerdem werden in diesem Thema die standardmäßigen von Azure Mobile Services implementierten Code First-Initialisierer beschrieben, die während der Entwicklung verwendet werden. Mit diesen Initialisierern können Sie einfach Schemaänderungen ohne Verwendung von Code First-Migrationen ausführen, wenn keine vorhandenen Daten beibehalten werden müssen.
 
->[AZURE.NOTE]Der Schemaname, der als Präfix für Ihre Tabellen in der SQL-Datenbank verwendet wird, wird in der Datei „web.config“ durch die Anwendungseinstellung <strong>MS_MobileServiceName</strong> definiert. Wenn Sie das Startprojekt aus dem Portal herunterladen, ist dieser Wert bereits auf den Namen des mobilen Diensts festgelegt. Wenn der Schemaname mit dem des mobilen Diensts übereinstimmt, können mehrere mobile Dienste problemlos dieselbe Datenbankinstanz nutzen.
+>[AZURE.NOTE]Der Schemaname, der als Präfix für Ihre Tabellen in der SQL-Datenbank verwendet wird, wird in der Datei "web.config" durch die Anwendungseinstellung "MS_MobileServiceName" definiert. Wenn Sie das Startprojekt aus dem Portal herunterladen, ist dieser Wert bereits auf den Namen des mobilen Diensts festgelegt. Wenn der Schemaname mit dem des mobilen Diensts übereinstimmt, können mehrere mobile Dienste problemlos dieselbe Datenbankinstanz nutzen.
+
+## Aktualisieren des Datenmodells
+
+Mit neuen Funktionen fügen Sie Ihrem mobilen .NET-Back-End-Dienst auch Controller hinzu, um in Ihrer API neue Endpunkte bereitzustellen. Erstellen Sie eine neue API als einen benutzerdefinierten Controller oder einen Tabellen-Controller. Ein [TableController<TEntity>] stellt einen Datentyp bereit, der Informationen von [EntityData] übernimmt. Damit Daten in der Datenbank gespeichert werden können, muss dieser Datentyp dem Datenmodell auch als neues [DbSet<T>] im [DbContext] hinzugefügt werden. Weitere Informationen zu Code First im Entity Framework finden Sie unter [Erstellen eines Modells mit Code First](https://msdn.microsoft.com/data/ee712907#codefirst).
+
+Visual Studio erleichtert das Erstellen eines neuen Tabellen-Controllers, um einen neuen Datentyp für Clientanwendungen bereitzustellen. Weitere Informationen finden Sie unter [Verwenden von Controllern für den Zugriff auf Daten in Mobile Services](https://msdn.microsoft.com/library/windows/apps/xaml/dn614132.aspx).
 
 ## Datenmodellinitialisierer
 
-Mobile Services unterstützen in einem Projekt für mobile .NET-Back-End-Dienste zwei Basisklassen für Datenmodellinitialisierer. Von beiden Initialisierern werden Tabellen in der Datenbank gelöscht und neu erstellt, sobald Entity Framework eine Datenmodelländerung im [DbContext] erkennt. Die Initialisierer funktionieren sowohl bei Ausführung des mobilen Diensts auf einem lokalen Computer als auch beim Hosting des mobilen Diensts in Azure.
+Mobile Services stellt in einem Projekt für mobile .NET-Back-End-Dienste zwei Basisklassen für Datenmodellinitialisierer bereit. Von beiden Initialisierern werden Tabellen in der Datenbank gelöscht und neu erstellt, sobald Entity Framework eine Datenmodelländerung im [DbContext] erkennt. Die Initialisierer funktionieren sowohl bei Ausführung des mobilen Diensts auf einem lokalen Computer als auch beim Hosting des mobilen Diensts in Azure.
 
 >[AZURE.NOTE]Wenn Sie einen mobilen .NET Back-End-Dienst veröffentlichen, wird der Initialisierer erst ausgeführt, wenn ein Datenzugriffsvorgang erfolgt ist. Das bedeutet, dass die für einen neu veröffentlichte Dienst zum Speichern verwendeten Datentabellen erst erstellt werden, wenn ein Datenzugriffsvorgang, z. B. eine Abfrage, vom Client angefordert wird.
 >
 >Sie können auch einen Datenzugriffsvorgang mithilfe der integrierten API-Hilfefunktionen ausführen, auf die Sie über den Link **Ausprobieren** auf der Startseite zugreifen. Weitere Informationen zur Verwendung der API-Webseiten zum Testen Ihres mobilen Diensts finden Sie im Abschnitt „Lokales Testen des Projekt des mobilen Diensts“ unter [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data.md#test-the-service-locally).
 
-Durch beide Initialisiererbasisklassen werden alle Tabellen, Sichten, Funktionen und Prozeduren in dem vom mobilen Dienst verwendeten Schema aus der Datenbank gelöscht.
+Durch beide Initialisierer werden alle Tabellen, Sichten, Funktionen und Prozeduren in dem vom mobilen Dienst verwendeten Schema aus der Datenbank gelöscht.
 
 + **ClearDatabaseSchemaIfModelChanges** <br/> Schemaobjekte werden nur gelöscht, wenn Code First eine Änderung im Datenmodell erkennt. Der Standardinitialisierer in einem .NET-Back-End-Projekt, das vom [Azure-Verwaltungsportal] heruntergeladen wurde, erbt von dieser Basisklasse.
  
@@ -159,5 +165,9 @@ Dieser Code ruft die Hilfserweiterungsmethode [AddOrUpdate] auf, um Seed-Daten i
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [DbContext]: http://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.113).aspx
 [AddOrUpdate]: http://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx
+[TableController<TEntity>]: https://msdn.microsoft.com/library/azure/dn643359.aspx
+[EntityData]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.entitydata.aspx
+[DbSet<T>]: https://msdn.microsoft.com/library/azure/gg696460.aspx
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

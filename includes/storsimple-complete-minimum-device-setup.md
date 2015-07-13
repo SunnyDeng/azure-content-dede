@@ -1,21 +1,4 @@
-<properties 
-   pageTitle="Abschließen der minimalen Gerätekonfiguration"
-   description="Beschreibt das Abschließen der minimalen Konfiguration von StorSimple-Geräten."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="04/01/2015"
-   ms.author="v-sharos" />
-
-###So führen Sie die mindestens erforderliche Gerätekonfiguration aus
+#### So führen Sie die mindestens erforderliche StorSimple-Gerätekonfiguration aus
 
 1. Wählen Sie das Gerät aus, und klicken Sie dann auf **Schnellstart**. Klicken Sie auf **Complete device setup**, um den Assistenten zum Konfigurieren von Geräten zu starten.
 
@@ -27,7 +10,7 @@
  
       ![Grundlegende Einstellungen für die minimale Konfiguration von StorSimple-Geräten](./media/storsimple-complete-minimum-device-setup/HCS_MinDeviceSetupBasicSettings1-include.png)
 
-3. Klicken Sie auf das Pfeilsymbol. ![StorSimple, Pfeilsymbol](./media/storsimple-complete-minimum-device-setup/HCS_ArrowIcon-include.png)
+3. Klicken Sie auf das Pfeilsymbol ![StorSimple, Pfeilsymbol](./media/storsimple-complete-minimum-device-setup/HCS_ArrowIcon-include.png).
 
 4. Geben Sie im Dialogfeld **Netzwerkschnittstellen** die festen IP-Adressen für Controller 0 und Controller 1 an. **Die festen IP-Adressen des Controllers müssen freie IP-Adressen in dem Subnetz sein, auf das die IP-Adresse des Geräts zugreifen kann.** Wenn die DATA 0-Schnittstelle für IPv4 konfiguriert wurde, müssen die festen IP-Adressen im IPv4-Format angegeben werden. Wenn Sie ein Präfix für die IPv6-Konfiguration angegeben haben, werden die festen IP-Adressen in diesen Feldern automatisch mit Daten aufgefüllt.
 
@@ -39,4 +22,4 @@
 
  >[AZURE.NOTE]Alle anderen Geräteeinstellungen können über die Seite **Konfigurieren** geändert werden.
 
-<!--HONumber=52-->
+<!---HONumber=62-->

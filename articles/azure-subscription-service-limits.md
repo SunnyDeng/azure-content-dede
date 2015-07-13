@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Microsoft Azure-Abonnements und Diensteinschränkungen, Kontingente und Einschränkungen" 
+<properties
+	pageTitle="Microsoft Azure-Abonnements und Diensteinschränkungen, Kontingente und Einschränkungen"
 	description="Stellt eine Liste allgemeiner Azure-Abonnements und Diensteinschränkungen, Kontingenten und Einschränkungen bereit. Dies umfasst Informationen zum Erhöhen von Einschränkungen und Höchstwerten."
-	services="" 
-	documentationCenter="" 
-	authors="rothja" 
-	manager="jeffreyg" 
+	services=""
+	documentationCenter=""
+	authors="rothja"
+	manager="jeffreyg"
 	editor="mollybos"/>
 
-<tags 
-	ms.service="multiple" 
-	ms.workload="multiple" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="02/20/2015" 
+<tags
+	ms.service="multiple"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/07/2015"
 	ms.author="jroth"/>
 
 # Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen
@@ -22,313 +22,147 @@
 
 Dieses Dokument beschreibt einige der wichtigsten Einschränkungen in Microsoft Azure. Beachten Sie, dass dieses Dokument nicht alle Azure-Dienste behandelt. Mit der Zeit wird diese Liste der Einschränkungen erweitert, um größere Teile der Plattform abzudecken.
 
-> [AZURE.NOTE] Falls Sie ein Limit über das **Standardlimit** anheben möchten, können Sie eine [gebührenfreie Online-Kundensupport-Anforderung öffnen][azurelimitsblogpost]. Die Limits können nicht über die Werte unter **Maximales Limit** in der folgenden Tabelle angehoben werden. Falls keine Spalte **Maximales Limit** existiert, bedeutet dies, dass für die entsprechende Ressource keine änderbaren Limits existieren.
+> [AZURE.NOTE]Falls Sie einen Grenzwert über den **Standardgrenzwert** anheben möchten, können Sie [eine gebührenfreie Onlinekundensupport-Anforderung öffnen](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). Die Limits können nicht über die Werte unter **Maximales Limit** in der folgenden Tabelle angehoben werden. Falls keine Spalte **Maximales Limit** existiert, bedeutet dies, dass für die entsprechende Ressource keine änderbaren Limits existieren.
+
+## Grenzwerte und der Azure-Ressourcen-Manager
+
+Es ist jetzt möglich, mehrere Azure-Ressourcen in einer einzigen Azure-Ressourcengruppe zu kombinieren. Bei der Verwendung von Ressourcengruppen werden Grenzwerte, die bisher global waren, auf einer regionalen Ebene mit dem Azure-Ressourcen-Manager verwaltet. Weitere Informationen zu Azure- Ressourcengruppen finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](resource-group-portal.md).
+
+In den folgenden Grenzwerten wurde eine neue Tabelle hinzugefügt, um alle abweichenden Grenzwerte bei Verwendung des Azure-Ressourcen-Managers aufzuzeigen. Es gibt beispielsweise eine Tabelle **Einschränkungen für Abonnements** und eine Tabelle **Abonnementgrenzwerte - Azure-Ressourcen-Manager**. Wenn ein Grenzwert für beide Szenarien gilt, wird er nur in der ersten Tabelle angezeigt. Sofern nicht anders angegeben, gelten Grenzwerte global für alle Regionen.
+
+> [AZURE.NOTE]Wichtig ist, dass Kontingente für Ressourcen in Azure-Ressourcengruppen pro Region über Ihr Abonnement zugänglich sind, und nicht wie die Dienstverwaltungskontingente pro Abonnement. Verwenden wir Kernspeicherkontingente als Beispiel. Wenn Sie eine Erhöhung des Kontingents mit Unterstützung für Kernspeicher anfordern müssen, müssen Sie entscheiden, wie viel Kernspeicher Sie in den einzelnen Regionen verwenden möchten, und anschließend eine spezifische Anforderung für Azure-Ressourcengruppen-Kernspeicherkontingente für die gewünschten Beträge und Regionen vornehmen. Wenn Sie für die Ausführung Ihrer Anwendung 30 Kerne in Westeuropa benötigen, sollten Sie daher 30 Kerne in Westeuropa anfordern. In anderen Regionen erfolgt jedoch keine Erhöhung des Kernspeicherkontingents. Das Kontingent von 30 Kernen gilt nur für Westeuropa. <!-- --> Daher sollten Sie ggf. überlegen, wie hoch Ihre Azure-Ressourcengruppenkontingente für Ihre Workload in jeder Region sein müssen, und diesen Betrag in jeder Region anfordern, in der Sie eine Bereitstellung in Betracht ziehen. Weitere Informationen zum Ermitteln Ihrer aktuellen Kontingente für bestimmte Regionen finden Sie unter [Problembehandlung bei der Bereitstellung](resource-group-deploy-debug.md##authentication-subscription-role-and-quota-issues).
 
 ## Einschränkungen für Abonnements
 
-<table cellspacing="0" border="1">
-<tr>
-   <th align="left" valign="middle">Ressource</th>
-   <th align="left" valign="middle">Standardlimit</th>
-   <th align="left" valign="middle">Maximales Limit</th>
-</tr>
-<tr>
-   <td valign="middle"><p>Prozessorkerne pro <a href="http://msdn.microsoft.com/library/azure/hh531793.aspx">Abonnement</a><sup>1</sup></p></td>
-   <td valign="middle"><p>20</p></td>
-   <td valign="middle"><p>10.000</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/azure/gg456328.aspx">Co-Administratoren</a> pro Abonnement</p></td>
-   <td valign="middle"><p>200</p></td>
-   <td valign="middle"><p>200</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/storage-create-storage-account/">Speicherkonten</a> pro Abonnement</p></td>
-   <td valign="middle"><p>100</p></td>
-   <td valign="middle"><p>100</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/cloud-services-what-is/">Cloud-Dienste</a> pro Abonnement</p></td>
-   <td valign="middle"><p>20</p></td>
-   <td valign="middle"><p>200</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/azure/jj156007.aspx">Virtuelle Netzwerke</a> pro Abonnement<sup>2</sup></p></td>
-   <td valign="middle"><p>10</p></td>
-   <td valign="middle"><p>100</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/jj157100.aspx">Lokale Netzwerke</a> pro Abonnement</p></td>
-   <td valign="middle"><p>10</p></td>
-   <td valign="middle"><p>100</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>SQL-Datenbankserver pro Abonnement</p></td>
-   <td valign="middle"><p>6</p></td>
-   <td valign="middle"><p>150</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>SQL-Datenbanken pro Server</p></td>
-   <td valign="middle"><p>150</p></td>
-   <td valign="middle"><p>500</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>DNS-Server pro Abonnement</p></td>
-   <td valign="middle"><p>9</p></td>
-   <td valign="middle"><p>100</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Reservierte IPs pro Abonnement</p></td>
-   <td valign="middle"><p>5</p></td>
-   <td valign="middle"><p>100</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Zertifikate für gehostete Dienste pro Abonnement</p></td>
-   <td valign="middle"><p>400</p></td>
-   <td valign="middle"><p>400</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/azure/jj156085.aspx">Affinitätsgruppen</a> pro Abonnement</p></td>
-   <td valign="middle"><p>256</p></td>
-   <td valign="middle"><p>256</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/azure-preview-portal-using-resource-groups/">Ressourcengruppen</a> pro Abonnement</p></td>
-   <td valign="middle"><p>300</p></td>
-   <td valign="middle"><p>300</p></td>
-</tr>
+[AZURE.INCLUDE [azure-subscription-limits](../includes/azure-subscription-limits.md)]
 
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/services/batch/">Batch-Vorschau</a>-Konten pro Region pro Abonnement</p></td>
-   <td valign="middle"><p>1</p></td>
-   <td valign="middle"><p>50</p></td>   
-</tr>
-</table>
 
-<sup>1</sup>Zusätzliche kleine Instanzen zählen als ganzer Prozessorkern im Sinn des Limits, obwohl nur ein Teil eines Kerns verwendet wird.
+## Abonnementgrenzwerte - Azure-Ressourcen-Manager 
 
-<sup>2</sup>Jedes virtuelle Netzwerk unterstützt ein einziges virtuelles Netzwerkgateway.
+Die folgenden Grenzwerte gelten bei Verwendung des Azure-Ressourcen-Managers und der Azure-Ressourcengruppen. Grenzwerte, die durch die Einführung des Azure-Ressourcen-Managers nicht geändert wurden, sind im Folgenden nicht aufgeführt. Diese Grenzwerte finden Sie in der vorherigen Tabelle.
 
-## Cloud-Diensteinschränkungen
+[AZURE.INCLUDE [azure-subscription-limits-azure-resource-manager](../includes/azure-subscription-limits-azure-resource-manager.md)]
 
-<table cellspacing="0" border="1">
-<tr>
-   <th align="left" valign="middle">Ressource</th>
-   <th align="left" valign="middle">Standardlimit</th>
-   <th align="left" valign="middle">Maximales Limit</th>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/cloud-services-what-is/">Web-/Workerrollen pro Bereitstellung<sup>1</sup></a></p></td>
-   <td valign="middle"><p>25</p></td>
-   <td valign="middle"><p>25</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/gg557552.aspx#InstanceInputEndpoint">Instanz-Eingabeendpunkte</a> pro Bereitstellung</p></td>
-   <td valign="middle"><p>25</p></td>
-   <td valign="middle"><p>25</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/gg557552.aspx#InputEndpoint">Eingabeendpunkte</a> pro Bereitstellung</p></td>
-   <td valign="middle"><p>25</p></td>
-   <td valign="middle"><p>25</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/gg557552.aspx#InternalEndpoint">Interne Endpunkte</a> pro Bereitstellung</p></td>
-   <td valign="middle"><p>25</p></td>
-   <td valign="middle"><p>25</p></td>
-</tr>
-</table>
 
-<sup>1</sup>Jeder Cloud-Dienst mit Web-/Workerrollen kann zwei Bereitstellungen haben: je eine für Produktions- und Stagingumgebung. Beachten Sie außerdem, dass sich dieses Limit auf die Anzahl der individuellen Rollen (Konfiguration) und nicht auf die Anzahl der Instanzen pro Rolle (Skalierung) bezieht. 
+## Grenzwerte für Ressourcengruppen
 
-## Einschränkungen für virtuelle Computer
+[AZURE.INCLUDE [azure-resource-groups-limits](../includes/azure-resource-groups-limits.md)]
 
-<table cellspacing="0" border="1">
-<tr>
-   <th align="left" valign="middle">Ressource</th>
-   <th align="left" valign="middle">Standardlimit</th>
-   <th align="left" valign="middle">Maximales Limit</th>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/services/virtual-machines/">Virtuelle Computer</a> pro Cloud-Dienst<sup>1</sup></p></td>
-   <td valign="middle"><p>50</p></td>
-   <td valign="middle"><p>50</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Eingabeendpunkte pro Cloud-Dienst<sup>2</sup></p></td>
-   <td valign="middle"><p>150</p></td>
-   <td valign="middle"><p>150</p></td>
-</tr>
-</table>
 
-<sup>1</sup>Wenn Sie einen virtuellen Computer erstellen, wird automatisch auch ein Cloud-Dienst erzeugt, der diesen Computer enthält. Sie können anschließend mehrere virtuelle Computer in diesem Cloud-Dienst hinzufügen.
+## Grenzwerte für virtuelle Computer
 
-<sup>2</sup>Eingabeendpunkte dienen zur Kommunikation mit virtuellen Computern außerhalb des aktuellen Cloud-Diensts. Virtuelle Computer innerhalb des gleichen Cloud-Diensts erlauben automatisch die Kommunikation zwischen allen UDP- und TCP-Ports für die interne Kommunikation.
+[AZURE.INCLUDE [azure-virtual-machines-limits](../includes/azure-virtual-machines-limits.md)]
 
-## Website-Einschränkungen
 
-[AZURE.INCLUDE [azure-websites-limits](../includes/azure-websites-limits.md)]
+## Grenzwerte für virtuelle Computer - Azure-Ressourcen-Manager
+
+Die folgenden Grenzwerte gelten bei Verwendung des Azure-Ressourcen-Managers und der Azure-Ressourcengruppen. Grenzwerte, die durch den Azure-Ressourcen-Manager nicht geändert wurden, sind im Folgenden nicht aufgeführt. Diese Grenzwerte finden Sie in der vorherigen Tabelle.
+
+[AZURE.INCLUDE [azure-virtual-machines-limits-azure-resource-manager](../includes/azure-virtual-machines-limits-azure-resource-manager.md)]
+
 
 ## Netzwerkeinschränkungen
 
+[AZURE.INCLUDE [azure-virtual-network-limits](../includes/azure-virtual-network-limits.md)]
+
+
+## Netzwerkgrenzwerte - Azure-Ressourcen-Manager
+
+Die folgenden Grenzwerte gelten bei Verwendung des Azure-Ressourcen-Managers und der Azure-Ressourcengruppen. Grenzwerte, die durch den Azure-Ressourcen-Manager nicht geändert wurden, sind im Folgenden nicht aufgeführt. Diese Grenzwerte finden Sie in der vorherigen Tabelle.
+
+[AZURE.INCLUDE [azure-virtual-network-limits-azure-resource-manager](../includes/azure-virtual-network-limits-azure-resource-manager.md)]
+
+
+## Standardmäßige Speichergrenzwerte
+
+[AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
+
+## Storage Premium-Grenzwerte
+
 <table cellspacing="0" border="1">
 <tr>
    <th align="left" valign="middle">Ressource</th>
    <th align="left" valign="middle">Standardlimit</th>
-   <th align="left" valign="middle">Maximales Limit</th>
 </tr>
 <tr>
-   <td valign="middle"><p>Gesamtanzahl der Computer<sup>1</sup> pro <a href="http://msdn.microsoft.com/library/azure/jj156007.aspx">virtuellem Netzwerk</a><sup>2</sup></p></td>
-   <td valign="middle"><p>2048</p></td>
-   <td valign="middle"><p>2048</p></td>
+   <td valign="middle"><p>Datenträgerkapazität insgesamt pro Konto</p></td>
+   <td valign="middle"><p>35&#160;TB</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Parallele TCP-Verbindungen für einen virtuellen Computer bzw. eine Rolleninstanz</p></td>
-   <td valign="middle"><p>500K</p></td>
-   <td valign="middle"><p>500K</p></td>
+   <td valign="middle"><p>Kapazität für Momentaufnahmen insgesamt pro Konto</p></td>
+   <td valign="middle"><p>10&#160;TB</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Zugriffssteuerungslisten (ACLs) pro Endpunkt<sup>3</sup></p></td>
-   <td valign="middle"><p>50</p></td>
-   <td valign="middle"><p>50</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Lokale Netzwerkstandorte pro virtuellem Netzwerk</p></td>
-   <td valign="middle"><p>10</p></td>
-   <td valign="middle"><p>10</p></td>
+   <td valign="middle"><p>Max. Bandbreite pro Konto (ein- und ausgehend)</p></td>
+   <td valign="middle"><p>50&#160;GBit/s</p></td>
 </tr>
 </table>
 
-<sup>1</sup>Die Gesamtzahl der Computer beinhaltet virtuelle Computer und Web-/Workerrolleninstanzen.
 
-<sup>2</sup>Jedes virtuelle Netzwerk unterstützt ein einziges [virtuelles Netzwerkgateway][gateway].
+## Speichergrenzwerte - Azure-Ressourcen-Manager
 
-<sup>3</sup>ACL wird auf Eingabeendpunkten für virtuelle Computer unterstützt. Für Web-/Workerrollen wird ACL auf Eingabe- und Instanz-Eingabeendpunkte unterstützt.
+Die folgenden Grenzwerte gelten bei Verwendung des Azure-Ressourcen-Managers und der Azure-Ressourcengruppen. Grenzwerte, die durch den Azure-Ressourcen-Manager nicht geändert wurden, sind im Folgenden nicht aufgeführt. Diese Grenzwerte finden Sie in der vorherigen Tabelle.
 
-## Speichereinschränkungen
+[AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
 
-<table cellspacing="0" border="1">
-<tr>
-   <th align="left" valign="middle">Ressource<sup>1</sup></th>
-   <th align="left" valign="middle">Standardlimit</th>
-</tr>
-<tr>
-   <td valign="middle"><p>TB pro Speicherkonto</p></td>
-   <td valign="middle"><p>500 TB</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximale Größe eines einzelnen Blob-Containers, einer Tabelle oder einer Warteschlange</p></td>
-   <td valign="middle"><p>500 TB</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximale Anzahl an Blob-Containern, Blobs, Dateifreigaben, Tabellen, Warteschlangen, Entitäten oder Meldungen pro Speicherkonto</p></td>
-   <td valign="middle"><p>Die einzige Einschränkung besteht in der Speicherkontokapazität von 500 TB.</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximale Größe einer Dateifreigabe</p></td>
-   <td valign="middle"><p>5 TB</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximale Anzahl an Dateien in einer Dateifreigabe</p></td>
-   <td valign="middle"><p>Die einzige Einschränkung besteht in der Gesamtkapazität der Dateifreigabe von 5 TB.</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximal 8 KB IOPS pro persistentem Laufwerk (Basisstufe)</p></td>
-   <td valign="middle"><p>300<sup>2</sup></p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximal 8 KB IOPS pro persistentem Laufwerk (Standardstufe)</p></td>
-   <td valign="middle"><p>500<sup>2</sup></p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Gesamtanfragerate (ausgehend von einer Objektgröße von 1 KB) pro Speicherkonto</p></td>
-   <td valign="middle"><p>Bis zu 20.000 Entitäten oder Meldungen pro Sekunde</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Zieldurchsatz bei Einzel-Blob</p></td>
-   <td valign="middle"><p>Bis zu 60 MB pro Sekunde, oder bis zu 500 Anforderungen pro Sekunde</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Zieldurchsatz bei Einzelwarteschlange (Meldungen mit 1 KB)</p></td>
-   <td valign="middle"><p>Bis zu 2000 Meldungen pro Sekunde</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Zieldurchsatz bei einzelner Tabellenpartition (Entitäten mit 1 KB)</p></td>
-   <td valign="middle"><p>Bis zu 2000 Entitäten pro Sekunde</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Max. Eingang pro Speicherkonto (US-Regionen)</p></td>
-   <td valign="middle"><p>10 GBit/s, wenn GRS<sup>3</sup> aktiviert ist, 20 GBit/s für LRS</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Max. Ausgang pro Speicherkonto (US-Regionen)</p></td>
-   <td valign="middle"><p>20 GBit/s, wenn GRS<sup>3</sup> aktiviert ist, 30 GBit/s für LRS</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Max. Eingang pro Speicherkonto (Europa- und Asien-Regionen)</p></td>
-   <td valign="middle"><p>5 GBit/s, wenn GRS<sup>3</sup> aktiviert ist, 10 GBit/s für LRS</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Max. Ausgang pro Speicherkonto (Europa- und Asien-Regionen)</p></td>
-   <td valign="middle"><p>10 GBit/s, wenn GRS<sup>3</sup> aktiviert ist, 15 GBit/s für LRS</p></td>
-</tr>
-</table>
 
-<sup>1</sup>Weitere Informationen zu diesen Einschränkungen finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure-Speicher][storagelimits]. 
+## Grenzwerte für Clouddienste
 
-<sup>2</sup>Legen Sie bei virtuellen Computern auf der Basisstufe nicht mehr als 66 stark benutzte VHDs in einem Speicherkonto ab, um ein Erreichen der Grenze von 20.000 bei der Gesamtanfragerate (20.000/300) zu verhindern. Legen Sie bei virtuellen Computern auf der Standardstufe nicht mehr als 40 stark benutzte VHDs in einem Speicherkonto ab (20.000/500). Weitere Informationen finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Azure][vmsizes]. 
+[AZURE.INCLUDE [azure-cloud-services-limits](../includes/azure-cloud-services-limits.md)]
 
-<sup>3</sup>GRS stellt einen [georedundanten Speicher][georedundantstorage] dar. LRS stellt einen [lokal redundanten Speicher][locallyredundantstorage] dar. Beachten Sie, dass GRS ebenfalls lokal redundant ist.
+
+## Grenzwerte für Web-Apps (Websites)
+
+[AZURE.INCLUDE [azure-websites-limits](../includes/azure-websites-limits.md)]
+
 
 ## Einschränkungen für die Batch-Vorschau
 
 [AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
 
-## DocumentDB-Vorschau-Einschränkungen
+
+## DocumentDB-Grenzwerte
 
 [AZURE.INCLUDE [azure-documentdb-limits](../includes/azure-documentdb-limits.md)]
 
+
+## Mobile Engagement-Grenzwerte
+
+[AZURE.INCLUDE [azure-mobile-engagement-limits](../includes/azure-mobile-engagement-limits.md)]
+
+
 ## Einschränkungen für SQL-Datenbanken
 
-Weitere Informationen zu Einschränkungen für SQL-Datenbanken finden Sie in den folgenden Themen:
+[AZURE.INCLUDE [azure-sql-database-limits](../includes/azure-sql-database-limits.md)]
 
- - [Dienstebenen für Azure SQL-Datenbanken (Editionen)][sqltiers]
- - [Dienst- und Leistungsebenen für Azure SQL-Datenbanken][sqltiersperflevels]
- - [Kontingente der Datenbankdurchsatzeinheit (DTU = Database Throughput Unit)][sqlDTU]
- - [Ressourceneinschränkungen für SQL-Datenbanken][sqldblimits]
 
 ## Media Services-Einschränkungen
 
 [AZURE.INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
 
+
 ## Servicebus-Einschränkungen
 
 [AZURE.INCLUDE [azure-servicebus-limits](../includes/azure-servicebus-limits.md)]
 
+
 ## Active Directory-Einschränkungen
 
-Informationen zu Azure Active Directory (AD) finden Sie unter dem folgenden Thema:
+[AZURE.INCLUDE [azure-active-directory-limits](../includes/azure-active-directory-limits.md)]
 
- - [Dienstlimits und -einschränkungen für Azure Active Directory][adlimitsandrestrictions]
 
-## Siehe auch
+## RemoteApp-Grenzwerte
 
-[Grundlegendes zu Azure-Einschränkungen und -Steigerungen][azurelimitsblogpost]
+[AZURE.INCLUDE [azure-remoteapp-limits](../includes/azure-remoteapp-limits.md)]
 
-[Größen virtueller Computer und Cloud-Dienste für Azure][vmsizes]
+## StorSimple-Systemgrenzwerte
 
-[customersupportfaq]: http://azure.microsoft.com/support/faq/
-[azurelimitsblogpost]: http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/
-[gateway]: http://msdn.microsoft.com/library/azure/jj156210.aspx 
-[storagelimits]: http://msdn.microsoft.com/library/azure/dn249410.aspx
-[georedundantstorage]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/introducing-geo-replication-for-windows-azure-storage.aspx
-[sqldblimits]: http://msdn.microsoft.com/library/azure/dn338081.aspx
-[sqltiers]: http://msdn.microsoft.com/library/azure/dn741340.aspx
-[sqltiersperflevels]: http://msdn.microsoft.com/library/azure/dn741336.aspx
-[sqlDTU]: http://msdn.microsoft.com/library/azure/ee336245.aspx#DTUs
-[vmsizes]: http://msdn.microsoft.com/library/azure/dn197896.aspx
-[georedundantstorage]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/introducing-geo-replication-for-windows-azure-storage.aspx
-  [locallyredundantstorage]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/08/introducing-locally-redundant-storage-for-windows-azure-storage.aspx
-  [adlimitsandrestrictions]: http://msdn.microsoft.com/library/azure/dn764971.aspx
+[AZURE.INCLUDE [storsimple-limits-table](../includes/storsimple-limits-table.md)]
+ 
+## Weitere Informationen
 
-<!--HONumber=47-->
+[Grundlegendes zu Azure-Einschränkungen und -Steigerungen](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
+
+[Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx)
+
+<!---HONumber=62-->

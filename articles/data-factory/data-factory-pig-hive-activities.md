@@ -140,7 +140,7 @@ Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Beda
 		                        "Month":"$$Text.Format('{0:%M}',SliceStart)",
 		                        "Day":"$$Text.Format('{0:%d}',SliceStart)"
 		                    },
-		                    "scriptpath": "adftutorial\\hivequery.hql",
+		                    "scriptpath": "adftutorial\hivequery.hql",
 						    "scriptLinkedService": "StorageLinkedService"
 						},
 						"policy":
@@ -258,7 +258,7 @@ Das folgende JSON-Beispiel für eine Beispielpipeline verwendet eine Hive-Aktivi
 					"transformation":
 					{
     					"type": "Hive",
-    					"scriptpath": "adfwalkthrough\\scripts\\transformdata.hql",    		
+    					"scriptpath": "adfwalkthrough\scripts\transformdata.hql",    		
 						"scriptLinkedService": "StorageLinkedService", 
 						"extendedProperties":
 						{
@@ -320,7 +320,7 @@ Das folgende Beispiel veranschaulicht das Angeben von Parametern für ein Hive-S
 		}
 
 
-## Weitere Informationen
+## Siehe auch
 
 Artikel | Beschreibung
 ------ | ---------------
@@ -353,4 +353,4 @@ Artikel | Beschreibung
 [Azure Portal]: http://portal.azure.com
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

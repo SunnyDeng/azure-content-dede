@@ -83,9 +83,9 @@ Weitere Informationen finden Sie in den folgenden Beiträgen und Themen:
 
 - [Azure App Service Web Apps, a PHP Perspective][] (Azure App Service-Web-Apps – eine PHP-Perspektive; in englischer Sprache)
 - [Azure App Service, Cloud Services und Virtual Machines im Vergleich][]
-- [Configuring PHP in Azure App Service Web Apps with .user.ini Files][] (Konfigurieren von PHP in Azure App Service-Web-Apps mit Dateien vom Typ „.user.ini“; in englischer Sprache)
+- [Configuring PHP in Azure App Service Web Apps with .user.ini Files][] (Konfigurieren von PHP in Azure App Service-Web-Apps mit Dateien vom Typ ".user.ini"; in englischer Sprache)
 - [Azure-Integrationsmodul](https://drupal.org/project/azure_auth)
-- [Azure-Blob-Speicher-Modul](https://drupal.org/project/azure_blob)
+- [Azure-Blobspeichermodul](https://drupal.org/project/azure_blob)
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 

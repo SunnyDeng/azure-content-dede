@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="02/03/2015" 
-	ms.author="ricksal,glenga"/>
+	ms.date="06/01/2015" 
+	ms.author="ricksal"/>
 
 # Aufrufen einer benutzerdefinierten API aus dem Client
 
@@ -23,14 +23,14 @@
 
 In diesem Thema wird gezeigt, wie Sie eine benutzerdefinierte API aus einer Android-App aufrufen. Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte definieren, die Serverfunktionen zur Verfügung stellen, welche keinem Einfüge-, Aktualisierungs-, Lösch- oder Lesevorgang zugeordnet sind. Durch die Verwendung einer benutzerdefinierten API erhalten Sie mehr Kontrolle über das Messaging, einschließlich Lesen und Einstellen der HTTP-Nachrichten-Header sowie Definieren eines von JSON abweichenden Nachrichtentextformats.
 
-Mit der im Rahmen dieses Themas erstellten benutzerdefinierten API können Sie eine einzelne POST-Anforderung senden, die das *completed*-Kennzeichen für sämtliche todo-Elemente in der Tabelle Ihres mobilen Diensts auf `true` setzt. Ohne diese benutzerdefinierte API müsste der Client einzelne Anforderungen senden, um das Kennzeichen für jeden einzelnen todo-Eintrag in der Tabelle zu aktualisieren.
+Mit der im Rahmen dieses Themas erstellten benutzerdefinierten API können Sie eine einzelne POST-Anforderung senden, die das *completed*-Kennzeichen für sämtliche todo-Einträge in der Tabelle Ihres mobilen Diensts auf `true` festlegen. Ohne diese benutzerdefinierte API müsste der Client einzelne Anforderungen senden, um das Kennzeichen für jeden einzelnen todo-Eintrag in der Tabelle zu aktualisieren.
 
-Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder des Lernprogramms [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] erstellen. 
+Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder des Lernprogramms [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] erstellen.
 
 
->[AZURE.NOTE] Wenn Sie den Quellcode der fertigen App anzeigen möchten, wechseln Sie <a href="https://github.com/RickSaling/mobile-services-samples/tree/futures/CallCustomApi/Android" target="_blank">hier</a> herunter.
+>[AZURE.NOTE]Den Quellcode der fertig gestellten App finden Sie <a href="https://github.com/RickSaling/mobile-services-samples/tree/futures/CallCustomApi/Android" target="_blank">hier</a>.
 
-## Voraussetzungen
+##Voraussetzungen
 
 [AZURE.INCLUDE [mobile-services-android-prerequisites](../../includes/mobile-services-android-prerequisites.md)]
 
@@ -39,37 +39,35 @@ Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder
 [AZURE.INCLUDE [mobile-services-create-custom-api](../../includes/mobile-services-create-custom-api.md)]
 
 
-[AZURE.INCLUDE [mobile-services-android-call-custom-api](mobile-services-android-call-custom-api.md)]
+[AZURE.INCLUDE [mobile-services-android-call-custom-api](../../includes/mobile-services-android-call-custom-api.md)]
 
 
 ## Nächste Schritte
 
-Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre Android-App aufgerufen haben, können Sie weitere Einzelheiten über die folgenden Mobile Services-Themen erfahren:
+In diesem Thema wurde gezeigt, wie Sie mithilfe der **InvokeApi**-Methode eine relativ einfache benutzerdefinierte API Ihrer Android-App aufrufen. Weitere Informationen zum Verwenden der **InvokeApi**-Methode finden Sie im Beitrag [Custom API in Azure Mobile Services](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx) (in englischer Sprache).
 
+Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 
+* [Mobile Services: Serverskriptreferenz] <br/>Erfahren Sie mehr über das Erstellen von benutzerdefinierten APIs.
 
-* [Mobile Services: Serverskriptreferenz]
-  <br/>Erfahren Sie mehr zum Erstellen benutzerdefinierter APIs.
-
-* [Speichern von Serverskripts in der Quellcodeverwaltung]
-  <br/> Erfahren Sie, wie Sie die Quellcodeverwaltungsfunktion nutzen können, um benutzerdefinierten API-Skript-Code einfacher und sicherer zu entwickeln und zu veröffentlichen.
+* [Speichern von Serverskripts in der Quellcodeverwaltung] <br/> Erfahren Sie, wie Sie die Quellcodeverwaltungsfunktion nutzen können, um benutzerdefinierten API-Skript-Code einfacher und sicherer zu entwickeln und zu veröffentlichen.
 
 <!-- Anchors. -->
-[Definieren der benutzerdefinierten API]: #define-custom-api
-[Aktualisieren der App zum Aufruf der benutzerdefinierten API]: #update-app
-[Testen der App]: #test-app
-[Nächste Schritte]: #next-steps
+[Define the custom API]: #define-custom-api
+[Update the app to call the custom API]: #update-app
+[Test the app]: #test-app
+[Next Steps]: #next-steps
 
 <!-- URLs. -->
 [Mobile Services Android SDK]: http://go.microsoft.com/fwlink/p/?LinkID=280126
 [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293
-[Meine Apps-Dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
-[Erste Schritte mit Mobile Services]: /documentation/articles/mobile-services-android-get-started/
-[Erste Schritte mit Daten]: /documentation/articles/mobile-services-android-get-started-data/
-[Erste Schritte mit Authentifizierung]: /documentation/articles/mobile-services-android-get-started-users/
-[Erste Schritte mit Pushbenachrichtigungen]: /documentation/articles/mobile-services-android-get-started-push/
+[My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
+[Erste Schritte mit Mobile Services]: mobile-services-android-get-started.md
+[Erste Schritte mit Daten]: mobile-services-android-get-started-data.md
+[Get started with authentication]: mobile-services-android-get-started-users.md
+[Get started with push notifications]: ../mobile-services-android-get-started-push.md
 
-[Speichern von Serverskripts in der Quellcodeverwaltung]: /documentation/articles/mobile-services-store-scripts-source-control
-
-<!--HONumber=47-->
+[Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
  
+
+<!---HONumber=62-->

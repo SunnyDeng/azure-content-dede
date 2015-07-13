@@ -78,15 +78,16 @@ Sie haben nun eine Bereitstellung in Staging getestet und eine Produktionsbereit
 - [Bereitstellen eines Dienstupgrades in der Produktionsumgebung durch Austausch der VIPs in Azure]
 - [Übersicht über das Verwalten von Bereitstellungen in Azure]
 
-[Schritt 1: Staging einer Anwendung]: #step1
-[Step 2: Deploy an Application to Production by Swapping VIPs]: #step2
-[Schritt 2: Bereitstellen eine Anwendung in der Produktionsumgebung durch Austausch der VIPs]: #step2
-[Azure-Verwaltungsportal]: http://manage.windowsazure.com
+  [Schritt 1: Staging einer Anwendung]: #step1
+  [Step 2: Deploy an Application to Production by Swapping VIPs]: #step2
+  [Schritt 2: Bereitstellen eine Anwendung in der Produktionsumgebung durch Austausch der VIPs]: #step2
+  [Azure-Verwaltungsportal]: http://manage.windowsazure.com
 [cloud-service]: ./media/cloud-services-nodejs-stage-application/staging-cloud-service-running.png
 [cloud-service-dashboard]: ./media/cloud-services-nodejs-stage-application/cloud-service-dashboard-staging.png
-[cloud-service-staging-url]: ./media/cloud-services-nodejs-stage-application/cloud-service-staging-url.png
-[vip-swap-dialog]: ./media/cloud-services-nodejs-stage-application/vip-swap-dialog.png
-[Bereitstellen eines Dienstupgrades in der Produktionsumgebung durch Austausch der VIPs in Azure]: http://msdn.microsoft.com/library/windowsazure/ee517253.aspx
-[Übersicht über das Verwalten von Bereitstellungen in Azure]: http://msdn.microsoft.com/library/windowsazure/hh386336.aspx
+  [cloud-service-staging-url]: ./media/cloud-services-nodejs-stage-application/cloud-service-staging-url.png
+  [vip-swap-dialog]: ./media/cloud-services-nodejs-stage-application/vip-swap-dialog.png
+  [Bereitstellen eines Dienstupgrades in der Produktionsumgebung durch Austausch der VIPs in Azure]: http://msdn.microsoft.com/library/windowsazure/ee517253.aspx
+  [Übersicht über das Verwalten von Bereitstellungen in Azure]: http://msdn.microsoft.com/library/windowsazure/hh386336.aspx
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

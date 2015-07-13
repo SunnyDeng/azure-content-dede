@@ -3,7 +3,7 @@
 	description="Der Verbindungs-Assistent für Active Directory hat einen inkompatiblen Authentifizierungstyp erkannt." 
 	services="active-directory" 
 	documentationCenter="" 
-	authors="kempb" 
+	authors="patshea123" 
 	manager="douge" 
 	editor="tglee"/>
   
@@ -13,22 +13,24 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/02/2015" 
-	ms.author="kempb"/>
+	ms.date="05/06/2015" 
+	ms.author="patshea123"/>
 
 # Fehler während der Authentifizierungserkennung
 
-Beim Erkennen des vorherigen Authentifizierungscodes hat der Assistent einen nicht kompatiblen Authentifizierungstyp erkannt.   
+Beim Erkennen des vorherigen Authentifizierungscodes hat der Assistent einen nicht kompatiblen Authentifizierungstyp erkannt.
 
 ###Was wird überprüft?
 
+**Hinweis:** Um vorherigen Authentifizierungscode in einem Projekt ordnungsgemäß erkennen zu können, muss das Projekt erstellt werden. Wenn dieser Fehler auftritt und in Ihrem Projekt kein vorheriger Authentifizierungscode enthalten ist, erstellen Sie Ihr Projekt neu, und versuchen Sie es nochmals.
+
 ####Projekttypen
 
-Der Assistent überprüft, welche Art von Projekt Sie entwickeln, um die richtige Authentifizierungslogik in das Projekt einzufügen.  Bei einem Domänencontroller, der im Projekt von `ApiController` abgeleitet wird, gilt es als WebAPI-Projekt.  Wenn nur Domänencontroller vorhanden sind, die im Projekt von `MVC.Controller` abgeleitet sind, wird es als MVC-Projekt betrachtet.  Alles andere wird vom Assistenten als nicht unterstützt betrachtet.  WebForms-Projekte werden derzeit nicht unterstützt.
+Der Assistent überprüft, welche Art von Projekt Sie entwickeln, um die richtige Authentifizierungslogik in das Projekt einzufügen. Bei einem Domänencontroller, der im Projekt von `ApiController` abgeleitet wird, gilt es als WebAPI-Projekt. Wenn nur Domänencontroller vorhanden sind, die im Projekt von `MVC.Controller` abgeleitet sind, wird es als MVC-Projekt betrachtet. Alles andere wird vom Assistenten als nicht unterstützt betrachtet. WebForms-Projekte werden derzeit nicht unterstützt.
 
 #####Kompatibler Authentifizierungscode
 
-Der Assistent überprüft auch Authentifizierungseinstellungen, die zuvor mit dem Assistenten konfiguriert wurden oder mit dem Assistenten kompatibel sind.  Wenn alle Einstellungen vorhanden sind, gilt dies als eintrittsinvarianter Fall, und der Assistent wird geöffnet und zeigt die Einstellungen an.  Wenn nur einige der Einstellungen vorhanden sind, wird es als Fehlerfall betrachtet.
+Der Assistent überprüft auch Authentifizierungseinstellungen, die zuvor mit dem Assistenten konfiguriert wurden oder mit dem Assistenten kompatibel sind. Wenn alle Einstellungen vorhanden sind, gilt dies als eintrittsinvarianter Fall, und der Assistent wird geöffnet und zeigt die Einstellungen an. Wenn nur einige der Einstellungen vorhanden sind, wird es als Fehlerfall betrachtet.
 
 In einem MVC-Projekt überprüft der Assistent die folgenden Einstellungen, die aus der vorherigen Verwendung des Assistenten resultieren:
 
@@ -62,7 +64,7 @@ Zum Erkennen der Windows-Authentifizierung in einem MVC-Projekt sucht der Assist
 	&lt;/configuration&gt;
 </pre>
 
-Zum Erkennen der Windows-Authentifizierung in einem Web-API-Projekt sucht der Assistent nach dem `IISExpressWindowsAuthentication`-Element aus der Datei **.csproj** Ihres Projekts:
+Zum Erkennen der Windows-Authentifizierung in einem Web-API-Projekt sucht der Assistent nach dem `IISExpressWindowsAuthentication`-Element aus der **CSPROJ**-Datei Ihres Projekts:
 
 <PRE class="prettyprint">
 	&lt;Project&gt;
@@ -80,10 +82,10 @@ Zum Erkennen der Authentifizierung einzelner Benutzerkonten sucht der Assistent 
 	&lt;/packages&gt;
 </PRE>
 
-Zum Erkennen der alten Form der Organisationskontoauthentifizierung sucht der Assistent in der Datei **web.config** nach dem folgenden Element:
+Zum Erkennen der alten Form von Organisationskontoauthentifizierung sucht der Assistent nach dem folgenden Element aus der Datei **web.config**:
 
 <PRE class="prettyprint">
-	&lt;configuration*gt;
+	&lt;configuration&gt;
 	    &lt;appSettings&gt;
 	        <span style="background-color: yellow">&lt;add key="ida:Realm" value="***" /&gt;</span>
 	    &lt;/appSettings&gt;
@@ -92,6 +94,7 @@ Zum Erkennen der alten Form der Organisationskontoauthentifizierung sucht der As
 
 Wenn Sie den Authentifizierungstyp ändern möchten, entfernen Sie den inkompatiblen Authentifizierungstyp, und führen Sie den Assistenten dann erneut aus.
 
-Weitere Informationen finden Sie unter [Authentifizierungsszenarios für Azure AD](http://msdn.microsoft.com/library/azure/dn499820.aspx).
+Weitere Informationen finden Sie unter [Authentifizierungsszenarien für Azure AD](active-directory-authentication-scenarios.md).
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=62-->

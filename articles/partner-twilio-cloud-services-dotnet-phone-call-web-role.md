@@ -34,7 +34,7 @@ Sie benötigen Folgendes, um den Code in diesem Artikel ausführen zu können:
 
 Sie sollten mit der Erstellung einer einfachen Webrolle in Azure vertraut sein.
 
-<h2><a name="howtocreateform"></a>Erstellen von Webformularen für einen Anruf</h2>
+<h2><a name="howtocreateform">Erstellen von Webformularen für einen Anruf</a></h2>
 
 <h3><a id="use_nuget"></a>So fügen Sie dem Webrollenprojekt die Twilio-Bibliotheken hinzu</h3>
 
@@ -69,7 +69,7 @@ Der folgende Code erstellt ein Web-Formular zur Eingabe der Benutzerdaten für d
         </div>
     </asp:Content>
 
-<h2><a id="howtocreatecode"></a>Erstellen des Codes für den Anruf</h2>
+<h2><a id="howtocreatecode">Erstellen des Codes für den Anruf</a></h2>
 Der folgende Code wird aufgerufen wenn der Benutzer das Formular abschließt und generiert die Anrufnachricht und führt den Anruf aus. In diesem Beispiel wird der Code im oncklick-Ereignishandler der Schaltfläche im Formular ausgeführt. (Ersetzen Sie die Platzhalterwerte **accountSID** und **authToken** im folgenden Code durch Ihr Twilio-Konto und Ihr Authentifizierungs-Token.)
 
     using System;
@@ -163,7 +163,7 @@ Dieser Code demonstriert die allgemeinen Funktionen für die Verwendung von Twil
 * Lesen Sie die Twilio-Sicherheitsrichtlinien unter [https://www.twilio.com/docs/security][twilio_docs_security].
 * Weitere Informationen zu Twilio finden Sie unter [https://www.twilio.com/docs][twilio_docs].
 
-## <a name="seealso"></a>Weitere Informationen
+##<a name="seealso"></a>Weitere Informationen
 * [Verwenden von Twilio für Telefonie- und SMS-Funktionen aus Azure](twilio-dotnet-how-to-use-for-voice-sms.md)
 
 [twilio_pricing]: http://www.twilio.com/pricing
@@ -192,4 +192,4 @@ Dieser Code demonstriert die allgemeinen Funktionen für die Verwendung von Twil
 
 [azure_runtime_ref_dotnet]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
 
-<!--HONumber=54-->
+<!---HONumber=62-->

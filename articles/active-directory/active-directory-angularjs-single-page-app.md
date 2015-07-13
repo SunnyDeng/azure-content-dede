@@ -178,5 +178,6 @@ Nachfolgend sind einige zusätzliche Ressourcen aufgeführt, die Sie bei der Ver
 
 + [Azure Active Directory-Codebeispiele](https://msdn.microsoft.com/library/azure/dn646737.aspx)
 + [Authentifizierungsszenarios für Azure AD](https://msdn.microsoft.com/library/azure/dn499820.aspx)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

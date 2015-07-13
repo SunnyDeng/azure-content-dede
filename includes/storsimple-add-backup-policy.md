@@ -1,20 +1,3 @@
-<properties 
-   pageTitle="Hinzufügen von StorSimple-Sicherungsrichtlinien"
-   description="Beschreibt, wie Sie den StorSimple-Manager-Dienst zum Erstellen einer Sicherungsrichtlinie verwenden können."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="05/22/2015"
-   ms.author="alkohli" />
-
 #### So fügen Sie eine StorSimple-Sicherungsrichtlinie hinzu
 
 1. Klicken Sie auf der Seite **Schnellstart** des Geräts auf die Registerkarte **Sicherungsrichtlinien**. Dadurch gelangen Sie auf die Seite **Sicherungsrichtlinien**.
@@ -30,4 +13,4 @@
 Die neu hinzugefügte Richtlinie wird in der Tabellenansicht auf der Seite **Sicherungsrichtlinien** angezeigt.
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

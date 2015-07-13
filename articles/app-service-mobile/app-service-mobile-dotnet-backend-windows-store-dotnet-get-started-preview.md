@@ -88,4 +88,4 @@ Nachdem das mobile App-Back-End veröffentlicht wurde und der Client mit dem in 
 [Azure Portal]: https://portal.azure.com/
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

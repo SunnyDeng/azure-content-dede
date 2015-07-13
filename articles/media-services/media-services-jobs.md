@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/10/2015" 
+	ms.date="05/24/2015" 
 	ms.author="juliako"/>
 
 #Arbeiten mit Azure Media Services-Aufträgen
@@ -29,13 +29,13 @@ In diesem Abschnitt werden Links zu gängigen Aufgaben im Zusammenhang mit Auftr
 
 ##Abrufen eines Medienprozessors
 
-Rufen Sie mithilfe von **.NET** oder **REST-API** einen Medienprozessor ab.
+Rufen Sie mithilfe von **.NET** oder **REST API** einen Medienprozessor ab.
 
 [AZURE.INCLUDE [media-services-selector-get-media-processor](../../includes/media-services-selector-get-media-processor.md)]
 
 ##Erstellen von Aufträgen 
 
-Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthält (z. B. Codierung oder Indizierung). Jede Aufgabe führt einen unteilbaren Vorgang für das (oder die) Eingangsmedienobjekt(e) durch. Ein Beispiel zum Erstellen von Codierungsaufträgen finden Sie hier:
+Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthält (z. B. Codierung oder Indizierung). Jede Aufgabe führt einen unteilbaren Vorgang für das (oder die) Eingangsmedienobjekt(e) durch. Ein Beispiel zum Erstellen von Codierungsaufträgen finden Sie hier:
 
 [AZURE.INCLUDE [media-services-selector-encode](../../includes/media-services-selector-encode.md)]
 
@@ -45,19 +45,19 @@ Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthäl
 
 ##Codieren 
 
-Codieren Sie mit dem **Azure Media Encoder** unter Verwendung von **Azure-Verwaltungsportal**, **.NET** oder **REST-API**.
+Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des **Azure-Verwaltungsportals**, mithilfe von **.NET**, oder **REST-API** aus.
  
 [AZURE.INCLUDE [media-services-selector-encode](../../includes/media-services-selector-encode.md)]
 
 ##Überwachen des Auftragsfortschritts
 
-Überwachen Sie den Auftragsfortschritt mithilfe von **Azure-Verwaltungsportal**, **.NET** oder **REST-API**.
+Überwachen Sie den Auftragsfortschritt mit dem **Azure-Verwaltungsportal**, **.NET** oder der **REST-API**.
 
 [AZURE.INCLUDE [media-services-selector-job-progress](../../includes/media-services-selector-job-progress.md)]
 
 ##Verwandte Links
 
-[Kontingente und Einschränkungen](../Media-Services-Kontingente-und-limitations.md) - beschreibt verwendete Kontingente und Einschränkungen von Media Services-Encoder
+[Kontingente und Einschränkungen](media-services-quotas-and-limitations.md): Beschreibt verwendete Kontingente und Einschränkungen für den Media Services Encoder
+ 
 
-
-<!--HONumber=52--> 
+<!---HONumber=62-->

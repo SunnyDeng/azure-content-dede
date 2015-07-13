@@ -1,9 +1,5 @@
 
-1. Öffnen Sie die gemeinsam genutzte Projektdatei "MainPage.cs", und fügen Sie die folgende using-Anweisung hinzu:
-
-        using Windows.UI.Popups;
-
-2. Fügen Sie den folgenden Codeausschnitt zur MainPage-Klasse hinzu:
+1. Öffnen Sie die freigegebene Projektdatei "MainPage.cs", und fügen Sie der MainPage-Klasse den folgenden Codeausschnitt hinzu:
 	
 		// Define a member variable for storing the signed-in user. 
         private MobileServiceUser user;
@@ -60,7 +56,10 @@
 		<Button Name="ButtonLogin" Click="ButtonLogin_Click" 
                         Visibility="Visible">Sign in</Button>
 
-6. Führen Sie den obigen Schritt für das Windows Phone Store-App-Projekt erneut aus, fügen Sie das **Button**-Element diesmal jedoch im **TitlePanel** nach dem **TextBlock**-Element ein.
+6. Öffnen Sie im Windows Phone-App-Projekt die folgenden **Button**-Elemente unmittelbar vor dem Element hinzu, das die Schaltfläche **Speichern** definiert:
+
+		<Button Grid.Row ="1" Grid.Column="1" Name="ButtonLogin" Click="ButtonLogin_Click" 
+                        Visibility="Visible">Sign in</Button> 
 
 5. Öffnen Sie die gemeinsam genutzte Projektdatei "App.xaml.cs", und fügen Sie die folgende using-Anweisung hinzu, sofern sie nicht bereits vorhanden ist:
 
@@ -90,4 +89,5 @@
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
 9. Klicken Sie mit der rechten Maustaste auf das Windows Phone Store-App-Projekt, klicken Sie auf **Als Startprojekt festlegen**, und führen Sie dann den obigen Schritt erneut aus, um sicherzustellen, dass die Windows Phone Store-App ebenfalls ordnungsgemäß ausgeführt wird.
-<!--HONumber=54-->
+
+<!---HONumber=62-->

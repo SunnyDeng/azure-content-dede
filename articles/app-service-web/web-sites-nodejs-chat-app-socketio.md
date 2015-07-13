@@ -21,7 +21,7 @@
 
 # Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in Azure App Service
 
-Socket.IO ermöglicht die Echtzeitkommunikation zwischen Ihrem Node.js-Server und Clients über WebSockets. Außerdem unterstützt es Fallback auf andere Transportmechanismen (wie Long Polling), die mit älteren Browsern funktionieren. In diesem Lernprogramm werden das Hosten einer Socket.IO-basierten Chat-Anwendung als Azure-Web-App erläutert und die [Skalierung](#scale-out) der Anwendung mit [Azure-Redis-Cache gezeigt](http://azure.microsoft.com/documentation/services/cache). Weitere Informationen über Socket.IO finden Sie unter [http://socket.io/][socketio].
+Socket.IO ermöglicht die Echtzeitkommunikation zwischen Ihrem Node.js-Server und Clients über WebSockets. Außerdem unterstützt es Fallback auf andere Transportmechanismen (wie Long Polling), die mit älteren Browsern funktionieren. In diesem Lernprogramm werden das Hosten einer Socket.IO-basierten Chat-Anwendung als Azure-Web-App erläutert und die [Skalierung](#scale-out) der Anwendung mit [Azure Redis Cache gezeigt](http://azure.microsoft.com/documentation/services/cache). Weitere Informationen über Socket.IO finden Sie unter [http://socket.io/][socketio].
 
 > [AZURE.NOTE]Die Verfahren in dieser Aufgabe gelten für [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Die Verfahren für Cloud-Dienste finden Sie unter <a href="http://www.windowsazure.com/develop/nodejs/tutorials/app-using-socketio/">Erstellen einer Node.js-Chat-Anwendung mit Socket.IO in einem Azure-Cloud-Dienst</a>.
 
@@ -33,7 +33,7 @@ Für dieses Projekt verwenden wir das Chat-Beispiel aus dem [Socket.IO GitHub-Re
 1.  Laden Sie eine [archivierte ZIP- oder GZ-Version][release] des Socket.IO-Projekts herunter (für dieses Dokument wurde Version 1.3.5 verwendet).
 
 
-3.  Extrahieren Sie das Archiv, und kopieren Sie das Verzeichnis **examples\\chat** in ein neues Verzeichnis. Beispiel: **\\node\\chat**.
+3.  Extrahieren Sie das Archiv, und kopieren Sie das Verzeichnis **examples\chat** in ein neues Verzeichnis. Beispiel: **\node\chat**.
 
 ## Ändern von "app.js" und Installieren von Modulen
 
@@ -57,7 +57,7 @@ Für dieses Projekt verwenden wir das Chat-Beispiel aus dem [Socket.IO GitHub-Re
 		  "socket.io": "1.3.5"
 		}
 
-4. Wechseln Sie über die Befehlszeile in das Verzeichnis **\\node\\chat**, und verwenden Sie npm, um die von dieser Anwendung benötigten Module zu installieren:
+4. Wechseln Sie über die Befehlszeile in das Verzeichnis **\node\chat**, und verwenden Sie npm, um die von dieser Anwendung benötigten Module zu installieren:
 
         npm install
 
@@ -76,7 +76,7 @@ Befolgen Sie diese Schritte, um eine Azure-Web-App zu erstellen und dann die Git
 		azure site deployment user set [username] [password]
 
 
-3. Wechseln Sie zum Verzeichnis **\\node\\chat**, und erstellen Sie mit dem folgenden Befehl eine neue Azure-Web-App und ein lokales Git-Repository. Mit dem Befehl wird auch ein Git-Remoterepository namens 'azure' erstellt.
+3. Wechseln Sie zum Verzeichnis **\node\chat**, und erstellen Sie mit dem folgenden Befehl eine neue Azure-Web-App und ein lokales Git-Repository. Mit dem Befehl wird auch ein Git-Remoterepository namens 'azure' erstellt.
 
 		azure site create mysitename --git
 
@@ -101,7 +101,7 @@ Befolgen Sie diese Schritte, um eine Azure-Web-App zu erstellen und dann die Git
 
 	Geben Sie den Namen der Web-App ein, wenn Sie dazu aufgefordert werden.
 
-	>[AZURE.NOTE]Der Befehl „azure site set -w“ funktioniert erst ab Version 0.7.4 der Azure-Befehlszeilenschnittstelle. Sie können die Unterstützung von WebSocket im [Azure-Portal](https://portal.azure.com) aktivieren.
+	>[AZURE.NOTE]Der Befehl "azure site set -w" funktioniert erst ab Version 0.7.4 der Azure-Befehlszeilenschnittstelle. Sie können die Unterstützung von WebSocket im [Azure-Portal](https://portal.azure.com) aktivieren.
 	>
 	>Um WebSockets mithilfe des Azure-Portals zu aktivieren, klicken Sie auf dem Web-Apps-Blatt auf die Web-App und dann auf **Alle Einstellungen** > ** Anwendungseinstellungen**. Klicken Sie unter **Web Sockets** auf **Ein**. Klicken Sie anschließend auf **Save**.
 
@@ -113,7 +113,7 @@ Ihre App wird jetzt in Azure ausgeführt und kann Chat-Nachrichten zwischen vers
 
 ##Horizontales Skalieren
 
-Socket.IO-Anwendungen können über einen __Adapter__ horizontal skaliert werden, um Nachrichten und Ereignisse unter mehreren Anwendungsinstanzen zu verteilen. Es stehen zwar mehrere Adapter zur Verfügung, allerdings empfiehlt sich der Adapter [socket.io-redis](https://github.com/automattic/socket.io-redis), da sich dieser einfach mit der Azure-Redis-Cache-Funktion verwenden lässt.
+Socket.IO-Anwendungen können über einen __Adapter__ horizontal skaliert werden, um Nachrichten und Ereignisse unter mehreren Anwendungsinstanzen zu verteilen. Es stehen zwar mehrere Adapter zur Verfügung, allerdings empfiehlt sich der Adapter [socket.io-redis](https://github.com/automattic/socket.io-redis), da sich dieser einfach mit der Azure Redis Cache-Funktion verwenden lässt.
 
 > [AZURE.NOTE]Eine weitere Anforderung für das horizontale Skalieren einer Socket.IO-Lösung ist die Unterstützung persistenter Sitzungen. Persistente Sitzungen sind für Azure-Web-Apps standardmäßig über das Azure-Anforderungsrouting aktiviert. Weitere Informationen finden Sie unter [Instance Affinity in Azure Web Sites](http://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/) (Instanzaffinität in Azure-Websites, in englischer Sprache).
 
@@ -125,7 +125,7 @@ Führen Sie die Schritte unter [Einen Cache erstellen in Azure Redis Cache](http
 
 ###Hinzufügen der Module "redis" und "socket.io-redis"
 
-1. Wechseln Sie über die Befehlszeile in das Verzeichnis __\\node\\chat__, und führen Sie folgenden Befehl aus:
+1. Wechseln Sie über die Befehlszeile in das Verzeichnis __\node\chat__, und führen Sie folgenden Befehl aus:
 
 		npm install socket.io-redis@0.1.4 redis@0.12.1 --save
 
@@ -143,15 +143,15 @@ Führen Sie die Schritte unter [Einen Cache erstellen in Azure Redis Cache](http
 
 	Damit wird ein Veröffentlichungs-/Abonnementclient für den zuvor erstellten Redis-Cache erstellt. Die Clients werden dann mit dem Adapter verwendet, um Socket.IO für die Verwendung des Redis-Caches zum Übergeben von Nachrichten und Ereignissen zwischen Instanzen Ihrer Anwendung zu konfigurieren.
 
-	> [AZURE.NOTE]Obwohl der Adapter __socket.io-redis__ direkt mit Redis kommunizieren kann, unterstützt die aktuelle Version die vom Azure-Redis-Cache benötigte Authentifizierung nicht. Daher wird die Erstverbindung über das Modul __redis__ hergestellt und der Client dann an den Adapter __socket.io-redis__ übergeben.
+	> [AZURE.NOTE]Obwohl der Adapter __socket.io-redis__ direkt mit Redis kommunizieren kann, unterstützt die aktuelle Version die vom Azure Redis Cache benötigte Authentifizierung nicht. Daher wird die Erstverbindung über das Modul __redis__ hergestellt und der Client dann an den Adapter __socket.io-redis__ übergeben.
 	>
-	> Der Azure-Redis-Cache unterstützt zwar sichere Verbindungen über Port 6380, die in diesem Beispiel verwendeten Module jedoch nicht (Stand 14.7.2014). Im obigen Code wird daher der unsichere Standardport 6380 verwendet.
+	> Der Azure Redis Cache unterstützt zwar sichere Verbindungen über Port 6380, die in diesem Beispiel verwendeten Module jedoch nicht (Stand 14.7.2014). Im obigen Code wird daher der unsichere Standardport 6380 verwendet.
 
 3. Speichern Sie die geänderte Datei __app.js__.
 
 ###Übergeben der Änderungen und erneutes Bereitstellen
 
-Verwenden Sie in der Befehlszeile im Verzeichnis __\\node\\chat__ die folgenden Befehle, um die Änderungen zu übergeben und die Anwendung erneut bereitzustellen.
+Verwenden Sie in der Befehlszeile im Verzeichnis __\node\chat__ die folgenden Befehle, um die Änderungen zu übergeben und die Anwendung erneut bereitzustellen.
 
 	git add .
 	git commit -m "implementing scale out"

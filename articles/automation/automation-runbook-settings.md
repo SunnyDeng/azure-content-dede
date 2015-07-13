@@ -58,6 +58,6 @@ Die folgenden Beispielbefehle zeigen, wie Sie die Eigenschaften für ein Runbook
 
 ## Verwandte Artikel
 - [Runbookausgabe und Meldungen](../automation-runbook-output-and-messages) 
-- [Erstellen oder Importieren eines Runbooks](https://msdn.microsoft.com/library/dn643637.aspx)
+- [Erstellen oder Importieren eines Runbooks](https://msdn.microsoft.com/library/dn643637.aspx) 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

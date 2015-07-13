@@ -1,20 +1,3 @@
-<properties 
-   pageTitle="Hinzufügen oder Ändern eines StorSimple-Sicherungszeitplans"
-   description="Beschreibt, wie Sie den StorSimple-Manager-Dienst zum Erstellen und Bearbeiten von Sicherungszeitplänen verwenden können."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="05/13/2015"
-   ms.author="v-sharos" />
-
 #### So können sie einen StorSimple-Sicherungszeitplan hinzufügen oder ändern
 
 1. Klicken Sie auf der Seite **Schnellstart** des Geräts auf die Registerkarte **Sicherungsrichtlinien**. Dadurch gelangen Sie auf die Seite **Sicherungsrichtlinien**.
@@ -44,4 +27,4 @@
 Die Seite **Sicherungsrichtlinien** wird aktualisiert, um die Änderungen an der Richtlinie zu speichern.
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

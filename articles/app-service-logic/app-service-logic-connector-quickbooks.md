@@ -22,11 +22,11 @@
 Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Mit dem QuickBooks-Connector können Sie unterschiedliche QuickBooks-Entitäten erstellen und bearbeiten. Im Folgenden finden Sie eine Liste der QuickBooks-Entitäten, die vom QuickBooks-Connector unterstützt werden.
 
 <Table>
-<TR><TD><B>Entitäten</TD><TD><B>Beschreibung</TR> <TR> <TD> Konto </TD> <TD> Konto ist eine Komponente von einem Diagramm Konten und ist Teil einer Finanzbuchhaltung. Zum Erfassen von insgesamt Geldbetrag zugeordnet, die für einen bestimmten Verwendungszweck verwendet </TD> </TR> <TR> <TD> CreditMemo </TD> <TD> der CreditMemo ist eine finanzielle Transaktion, die eine Rückerstattung oder Gutschrift Zahlung oder Teil einer Zahlung für Waren oder Dienstleistungen, die verkauft wurden. </TD> </TR> <TR> <TD> Kunden </TD> <TD> ein Kunden ist ein Consumer des Dienstes oder Produkts, das Ihr Unternehmen bietet. </TD> </TR> <TR> <TD> Geschätzte </TD> <TD> der Schätzung stellt einen Vorschlag für eine finanzielle Transaktion von einem Unternehmen eines Kunden für Waren oder Dienstleistungen verkauft werden vorgeschlagen, einschließlich vorgeschlagenen Preise. </TD> </TR> <TR> <TD> Rechnung </TD> <TD> einer Rechnung stellt eine sales Form, in denen der Kunde für ein Produkt oder Dienst später zahlt. Weitere Informationen zur Verwendung des Rechnungsdatenmodells finden Sie hier. </TD> </TR> <TR> <TD> Artikel </TD> <TD> ein Elements ist eine Sache, die Ihr Unternehmen kauft, verkauft oder verkauft, z. B. Produkte, Versand- und Bearbeitungsgebühren Kosten, Rabatten und Mehrwertsteuer (falls zutreffend). Ein Artikel wird als Position in einer Rechnung oder einem Verkaufsformular angezeigt. </TD> </TR> <TR> <TD> SalesReceipt </TD> <TD> dieser Entität darstellt, die sales-Empfangsbestätigung an einen Kunden erhält. </TD> </TR> </Table>
+<TR><TD><B>Entitäten</TD><TD><B>Beschreibung</TR> <TR> <TD> Account (Konto) </TD> <TD> Das Konto ist eine Komponente eines Kontenplans und Teil eines Sachkontos. Es wird zum Aufzeichnen eines Gesamtgeldbetrags verwendet, der einer bestimmten Verwendung zugeordnet ist. </TD> </TR> <TR> <TD> CreditMemo (Gutschrift) </TD> <TD> CreditMemo ist eine finanzielle Transaktion, die für eine Rückerstattung oder Gutschrift einer Zahlung oder für einen Zahlungsanteil an verkauften Waren oder Dienstleistungen steht. </TD> </TR> <TR> <TD> Customer (Kunde) </TD> <TD> Ein Kunde ist der Konsument der Dienstleistung oder des Produkts, das Ihr Unternehmen anbietet. </TD> </TR> <TR> <TD> Estimate (Schätzung) </TD> <TD> Die Schätzung stellt einen Vorschlag einschließlich Preisangebot für Waren oder Dienstleistungen bei einer finanziellen Transaktion zwischen einem Unternehmen und einem Kunden dar. </TD> </TR> <TR> <TD> Invoice (Rechnung) </TD> <TD> Eine Rechnung ist ein Verkaufsverfahren, bei dem der Kunde später für ein Produkt oder einen Dienst bezahlt. Weitere Informationen zur Verwendung des Rechnungsdatenmodells finden Sie hier. </TD> </TR> <TR> <TD> Item (Artikel) </TD> <TD> Ein Artikel ist etwas, das Ihr Unternehmen kauft, verkauft oder weiterverkauft, z. B. Produkte, Versand- und Bearbeitungsgebühren, Rabatte und Mehrwertsteuer (falls zutreffend). Ein Artikel wird als Position in einer Rechnung oder einem Verkaufsformular angezeigt. </TD> </TR> <TR> <TD> SalesReceipt (Verkaufsbestätigung) </TD> <TD> Diese Entität repräsentiert die Verkaufsbestätigung, die einem Kunden zugewiesen wird. </TD> </TR> </Table>
 
 
 ##QuickBooks-Aktionen ##
-Im Folgenden werden die verschiedenen im QuickBooks-Connector verfügbaren Aktionen aufgeführt. <table> <tbody> <tr><td> <strong>Aktion</strong> </td> <td> <strong>Beschreibung</strong> </td> </tr> <tr> <td> Lesen Entität </td> <td> Lesen Entitätsobjekt. </td> </tr> <tr> <td> Erstellen oder Aktualisieren von Entitäten </td> <td> Entity-Objekt erstellen oder aktualisieren. Objekt wird aktualisiert, wenn es vorhanden ist, andernfalls wird ein neues Objekt erstellt. </td> </tr> <tr> <td> Löschen Sie </td> <td> Diese Aktion löscht das angegebene Objekt aus der ausgewählten Entität. </td> </tr> <tr> <td> Abfrage </td> <td> Abfragevorgang ist die Methode für eine angeleitete Abfrage für eine Entität erstellen. </td> </tr> </tbody> </table>
+Im Folgenden werden die verschiedenen im QuickBooks-Connector verfügbaren Aktionen aufgeführt. <table> <tbody> <tr><td> <strong>Aktion</strong> </td> <td> <strong>Beschreibung</strong> </td> </tr> <tr> <td> Entität lesen </td> <td> Das Entitätsobjekt wird gelesen. </td> </tr> <tr> <td> Entität erstellen oder aktualisieren </td> <td> Das Entitätsobjekt wird erstellt oder aktualisiert. Das Objekt wird aktualisiert, wenn es vorhanden ist. Andernfalls wird ein neues Objekt erstellt. </td> </tr> <tr> <td> Löschen </td> <td> Durch diese Aktion wird das angegebene Objekt aus der ausgewählten Entität gelöscht. </td> </tr> <tr> <td> Abfragen </td> <td> Der Abfragevorgang stellt die Methode zum Erstellen einer angeleiteten Abfrage für eine Entität dar. </td> </tr> </tbody> </table>
 
 ##Erstellen einer QuickBooks-Connector-API-App##
 1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" unten rechts im Azure-Portal.
@@ -34,13 +34,13 @@ Im Folgenden werden die verschiedenen im QuickBooks-Connector verfügbaren Aktio
 3.	Konfigurieren Sie den QuickBooks-Connector, indem Sie die Informationen für den Webhosting-Plan und die Ressourcengruppe angeben und einen Namen für die API-App wählen.
 
 	![][13]
-4. Konfigurieren Sie die QuickBooks-Entitäten, die Sie beim Lesen/Schreiben in die Paketeinstellungen interessiert sind.
+4. Konfigurieren Sie die QuickBooks-Entitäten, die Sie lesen/schreiben möchten, in den "Paketeinstellungen".
 
 Mit diesen Informationen können Sie jetzt eine QuickBooks-Connector-API-App erstellen.
 
 
 ##Erstellen einer Logik-App##
-Lassen Sie uns erstellen Sie eine einfache Logik app, die ein Konto in QuickBooks erstellt und aktualisieren Sie 'Kategorietyp' das gleiche Konto.
+Wir erstellen eine einfache Logik-App, die ein Konto in QuickBooks erstellt, und aktualisieren den Kategorietyp desselben Kontos.
 
 1.	Melden Sie sich beim Azure-Portal an, und klicken Sie auf "Neu -> Web + Mobil -> Logik-App"
 
@@ -57,7 +57,7 @@ Lassen Sie uns erstellen Sie eine einfache Logik app, die ein Konto in QuickBook
 4.	Wählen Sie "Diese Logik manuell ausführen", sodass diese Logik-App nur manuell aufgerufen werden kann.
 
 
-5.	Erweitern Sie "API-Apps in dieser Ressourcengruppe" im Katalog, um alle verfügbaren API-Apps anzuzeigen. Wählen Sie "QuickBooks-Connector" aus der Galerie und der QuickBooks Connector Ruft den Fluss hinzugefügt.
+5.	Erweitern Sie "API-Apps in dieser Ressourcengruppe" im Katalog, um alle verfügbaren API-Apps anzuzeigen. Wählen Sie "QuickBooks-Connector" aus dem Katalog aus. Der "QuickBooks-Connector" wird dem Datenfluss hinzugefügt.
 
 
 6.	Wenn Sie QuickBooks online verwenden, müssen Logik-Apps in Ihrem Namen authentifiziert und autorisiert werden. Zum Starten der Autorisierung klicken Sie im QuickBooks-Connector auf "Autorisieren".
@@ -76,21 +76,21 @@ Lassen Sie uns erstellen Sie eine einfache Logik app, die ein Konto in QuickBook
 
 	![][7]
 
-10.	Aktionstyp auswählen 'Erstellen oder Konto aktualisieren' und die Eingabeparameter werden angezeigt.
+10.	Wählen Sie "Konto erstellen oder aktualisieren" aus, sodass die Eingabeparameter angezeigt werden.
 
 	![][8]
 
-11.	Geben Sie 'Name' und 'Kontotyp', und klicken Sie auf ✓.
+11.	Geben Sie "Name" und "Kontotyp" ein, und klicken Sie auf ✓.
 
 	![][9]
 
-12.	Wählen Sie "QuickBooks-Connector" aus dem Abschnitt "Zuletzt verwendete" in der Galerie und eine neue QuickBooks Aktion hinzugefügt wird.
+12.	Wählen Sie "QuickBooks-Connector" aus dem Abschnitt "Zuletzt verwendet" im Katalog aus. Eine neue QuickBooks-Aktion wird hinzugefügt.
 
-13.	Wählen Sie aus der Liste der Aktionen und die Eingabe "Erstellen oder Konto aktualisieren" werden die Parameter der Aktion angezeigt.
+13.	Wählen Sie "Konto erstellen oder aktualisieren" aus der Liste der Aktionen aus. Die Eingabeparameter der Aktion werden angezeigt.
 
 	![][10]
 
-14.	Klicken Sie auf "+" neben "Id", wählen Sie den Id-Wert aus der Ausgabe einer Aktion für Konto erstellen.
+14.	Klicken Sie neben ID auf "+", um den "ID"-Wert aus der Ausgabe der Aktion "Konto erstellen" auszuwählen.
 
 	![][11]
 
@@ -102,7 +102,7 @@ Lassen Sie uns erstellen Sie eine einfache Logik app, die ein Konto in QuickBook
 
 17. Sehen Sie sich die neu erstellte Logik-App an, und klicken Sie auf "Ausführen", um eine Ausführung zu initiieren.
 
-18. Sie können überprüfen, dass ein neues Konto mit Namen "Contoso" in Ihrem Konto QuickBooks erstellt wird.
+18. Sie können überprüfen, ob ein neues Konto mit dem Namen "Contoso" in Ihrem QuickBooks-Konto erstellt wird.
 
 <!--Image references-->
 [1]: ./media/app-service-logic-connector-quickbooks/1_New_Logic_App.png
@@ -122,4 +122,4 @@ Lassen Sie uns erstellen Sie eine einfache Logik app, die ein Konto in QuickBook
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

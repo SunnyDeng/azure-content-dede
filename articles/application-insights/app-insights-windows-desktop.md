@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Application Insights für Windows-Desktop-Apps und -Dienste" 
-	description="Analysieren Sie die Nutzung und Leistung von Windows-Anwendungen mit Application Insights." 
+	description="Analysieren Sie die Nutzung und Leistung Ihrer Windows-Desktop-Apps mit Application Insights." 
 	services="application-insights" 
     documentationCenter="windows"
 	authors="alancameronwills" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/13/2015" 
+	ms.date="06/18/2015" 
 	ms.author="awills"/>
 
 # Application Insights für Windows-Desktop-Apps und -Dienste
@@ -33,6 +33,7 @@ Unterstützung für Windows-Desktop-Apps und -Dienste wird über das Application
 
     ![Klicken Sie auf "Neu > Application Insights".](./media/app-insights-windows-desktop/01-new.png)
 
+    (Die Auswahl des Anwendungstyps bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften.)
 
 2.  Erstellen Sie eine Kopie des Instrumentationsschlüssels.
 
@@ -45,11 +46,11 @@ Unterstützung für Windows-Desktop-Apps und -Dienste wird über das Application
 
 2. Installieren Sie das Application Insights-API-Paket.
 
-    ![Wählen Sie **Online**, **Vorabversion einschließen** aus, und suchen Sie nach "Application Insights".](./media/app-insights-windows-desktop/04-ai-nuget.png)
+    ![Suchen Sie nach "Application Insights".](./media/app-insights-windows-desktop/04-core-nuget.png)
 
-3. Bearbeiten Sie die Datei "ApplicationInsights.config" (die bei der NuGet-Installation hinzugefügt wurde). Fügen Sie Folgendes direkt vor dem Endtag ein:
+3. Bearbeiten Sie die Datei "ApplicationInsights.config" (die durch die NuGet-Installation hinzugefügt wurde). Fügen Sie Folgendes direkt vor dem Endtag ein:
 
-    &lt;InstrumentationKey&gt;*den kopierten Schlüssel*&lt;/InstrumentationKey&gt;
+    `<InstrumentationKey>*the key you copied*</InstrumentationKey>`
 
     Alternativ können Sie denselben Effekt mit folgendem Code erzielen:
     
@@ -60,7 +61,7 @@ Unterstützung für Windows-Desktop-Apps und -Dienste wird über das Application
 
 Erstellen Sie eine `TelemetryClient`-Instanz und [nutzen Sie sie anschließend, um Telemetriedaten zu senden][api].
 
-Verwenden Sie `TelemetryClient.Flush` zum Senden von Nachrichten vor dem Schließen der App. (Dies wird nicht für andere Arten von Apps empfohlen.)
+Verwenden Sie `TelemetryClient.Flush()` zum Senden von Nachrichten vor dem Schließen der App. Das Core SDK verwendet einen arbeitsspeicherinternen Puffer. Die Löschmethode stellt sicher, dass dieser Puffer geleert wird, damit beim Beenden des Prozesses keine Daten verloren gehen. (Dies wird für andere Arten von Apps nicht empfohlen. Die Plattform-SDKs implementieren dieses Verhalten automatisch.)
 
 Beispielsweise können Sie in einer Windows Forms-Anwendung Folgendes schreiben:
 
@@ -107,9 +108,10 @@ Verwenden Sie eine der [Application Insights-APIs][api], um Telemetriedaten zu s
 
 #### Kontextinitialisierer
 
-Alternativ zum Festlegen von Sitzungsdaten in jeder TelemetryClient-Instanz können Sie einen Kontextinitialisierer verwenden:
+Um die Anzahl von Benutzern und Sitzungen anzuzeigen, können Sie die Werte für jede `TelemetryClient`-Instanz festlegen. Alternativ dazu können Sie einen Kontextinitialisierer verwenden, um dies für alle Clients hinzuzufügen:
 
 ```C#
+
     class UserSessionInitializer: IContextInitializer
     {
         public void Initialize(TelemetryContext context)
@@ -127,6 +129,7 @@ Alternativ zum Festlegen von Sitzungsdaten in jeder TelemetryClient-Instanz kön
             TelemetryConfiguration.Active.ContextInitializers.Add(
                 new UserSessionInitializer());
             ...
+
 ```
 
 

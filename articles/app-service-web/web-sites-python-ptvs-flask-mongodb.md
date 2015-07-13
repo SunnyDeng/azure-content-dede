@@ -50,7 +50,7 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
 1.  Wählen Sie in Visual Studio **Datei** -> **Neues Projekt** aus. 
 
-1.  Die Projektvorlagen aus der PTVS-Beispiel-VSIX-Datei stehen unter **Python**, **Beispiele** bereit. Wählen Sie **Polls Flask Web Project** aus, und klicken Sie auf „OK“, um das Projekt zu erstellen.
+1.  Die Projektvorlagen aus der PTVS-Beispiel-VSIX-Datei stehen unter **Python**, **Beispiele** bereit. Wählen Sie **Polls Flask Web Project** aus, und klicken Sie auf "OK", um das Projekt zu erstellen.
 
   	![Dialogfeld "Neues Projekt"](./media/web-sites-python-ptvs-flask-mongodb/PollsFlaskNewProject.png)
 
@@ -100,7 +100,7 @@ In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass Sie die eben erst
 
 1.  Klicken Sie im [Azure-Verwaltungsportal] auf **MARKETPLACE** und dann auf den im Vorfeld erstellten MongoLab-Dienst.
 
-1.  Klicken Sie auf **VERBINDUNGSINFORMATIONEN**. Sie können die Schaltfläche „Kopieren“ verwenden, um den Wert von **MONGOLAB_URI** in der Zwischenablage abzulegen.
+1.  Klicken Sie auf **VERBINDUNGSINFORMATIONEN**. Sie können die Schaltfläche "Kopieren" verwenden, um den Wert von **MONGOLAB_URI** in der Zwischenablage abzulegen.
 
   	![Dialogfeld mit Verbindungsinformationen](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonMongoLabConnectionInfo.png)
 
@@ -136,11 +136,11 @@ Sie können eine App wie [RoboMongo] verwenden, um Abfragen auszuführen und Än
 
     Der Name entspricht dem Namen, den Sie beim Erstellen des Diensts in Azure eingegeben haben. Er wird sowohl für den Datenbanknamen als auch den Benutzernamen verwendet.
 
-1.  Legen Sie auf der Seite „Verbindung“ für **Name** einen beliebigen Namen fest, den Sie für die Verbindung verwenden möchten. Geben Sie außerdem in den Feldern **Adresse** und **Port** die Werte von *address* und *port* aus **MONGOLAB_URI** ein.
+1.  Legen Sie auf der Seite "Verbindung" für **Name** einen beliebigen Namen fest, den Sie für die Verbindung verwenden möchten. Geben Sie außerdem in den Feldern **Adresse** und **Port** die Werte von *address* und *port* aus **MONGOLAB_URI** ein.
 
   	![Dialogfeld mit Verbindungseinstellungen](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonRobomongoCreateConnection1.png)
 
-1.  Geben Sie auf der Seite „Authentifizierung“ die **Datenbank** und den **Benutzernamen** von *name* aus **MONGOLAB_URI** ein. Geben Sie schließlich bei **Kennwort** den Wert von *password* aus **MONGOLAB_URI** ein.
+1.  Geben Sie auf der Seite "Authentifizierung" die **Datenbank** und den **Benutzernamen** von *name* aus **MONGOLAB_URI** ein. Geben Sie schließlich bei **Kennwort** den Wert von *password* aus **MONGOLAB_URI** ein.
 
   	![Dialogfeld mit Verbindungseinstellungen](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonRobomongoCreateConnection2.png)
 
@@ -171,7 +171,7 @@ PTVS bietet eine einfache Möglichkeit zum Bereitstellen Ihrer Web-App in Azure 
 
 1.  Übernehmen Sie alle anderen Standardwerte, und klicken Sie auf **Veröffentlichen**.
 
-1.  Ihr Webbrowser öffnet automatisch mit der veröffentlichten Web-App. Wenn Sie zur Seite „Info“ navigieren , sehen Sie, dass **In-Memory** als Repository verwendet wird und nicht **MongoDB**.
+1.  Ihr Webbrowser öffnet automatisch mit der veröffentlichten Web-App. Wenn Sie zur Seite "Info" navigieren , sehen Sie, dass **In-Memory** als Repository verwendet wird und nicht **MongoDB**.
 
     Das liegt daran, dass die Umgebungsvariablen nicht für die Web-Apps-Instanz in Azure App Service festgelegt wurden. Daher werden die in **settings.py** festgelegten Standardwerte verwendet.
 

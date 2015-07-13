@@ -1,4 +1,4 @@
-In diesem Thema wird das Erstellen einer App mit sowohl einem mobilen als auch einem Webclient veranschaulicht. Sie erstellen eine mobile App und eine Web-App und verwenden für beide dieselbe zugrunde liegende Datenbank.
+In diesem Thema wird das Erstellen einer App sowohl mit einem mobilen Client als auch mit einem Webclient veranschaulicht. Sie erstellen eine mobile App und eine Web-App und verwenden für beide dieselbe zugrunde liegende Datenbank.
 
 Zunächst erstellen Sie ein neues mobiles App-Back-End und eine einfache *To-do-List*-App, die App-Daten im neuen mobilen App-Back-End speichert. Das mobile App-Back-End verwendet die unterstützten .NET-Sprachen für die serverseitige Geschäftslogik. Die Client-App kann alle von der mobilen App unterstützten Clientplattformen nutzen, einschließlich iOS, Windows, Xamarin iOS und Xamarin Android.
 
@@ -26,7 +26,7 @@ In diesem Abschnitt erstellen Sie eine neue Web-App mithilfe einer Beispiellösu
 
         modelBuilder.HasDefaultSchema("your_mobile_app"); // your service name, replacing dashes with underscore
 
-4. Anschließend erhalten Sie aus dem Azure-Portal der mobilen App:
+4. Als Nächstes rufen wir die Verbindungszeichenfolge der mobilen App aus dem Azure-Portal ab:
 
     - Wählen Sie Ihre mobile App im Portal aus, und klicken Sie auf den Abschnitt mit der Bezeichnung **Benutzercode**.
 
@@ -40,7 +40,7 @@ In diesem Abschnitt erstellen Sie eine neue Web-App mithilfe einer Beispiellösu
 
 7. Sobald Ihre Web-API erfolgreich in Azure veröffentlicht wurde, wird eine Bestätigungsseite angezeigt. Kopieren Sie die URL für den veröffentlichten Dienst.
 
-## Veröffentlichen einer Benutzeroberfläche für einen TodoList-Webclients aus Visual Studio
+## Veröffentlichen einer Benutzeroberfläche für einen TodoList-Webclient aus Visual Studio
 
 In diesem Abschnitt verwenden Sie eine Beispiel-Webclient-App, die mit AngularJS implementiert wird. Anschließend veröffentlichen Sie das Projekt mit Visual Studio in einer neuen gehosteten App Service-Web-App in Azure.
 
@@ -56,11 +56,11 @@ In diesem Abschnitt verwenden Sie eine Beispiel-Webclient-App, die mit AngularJS
 
 ## Testen von mobilen und Web-Apps
 
-1. Fügen Sie in der Webbenutzeroberfläche Aufgaben hinzu oder bearbeiten Sie einige.
+1. Fügen Sie in der Webbenutzeroberfläche Aufgaben hinzu, oder bearbeiten Sie einige.
 
     ![Ansicht der Web-App im Browser](./media/app-service-mobile-dotnet-backend-web-and-mobile/web-app-in-browser.png)
 
-2. Führen Sie die im Lernprogramm [Erstellen einer mobilen App] erstellte mobile App aus. Sie sehen dieselben Aufgaben-Elemente wie in der Web-App.
+2. Führen Sie die im Lernprogramm [Erstellen einer mobilen App] erstellte mobile App aus. Sie sehen dieselben Aufgabenelemente wie in der Web-App.
 
     ![Ansicht der mobilen Xamarin-App](./media/app-service-mobile-dotnet-backend-web-and-mobile/xamarin-ios-quickstart-device.png)
 

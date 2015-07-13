@@ -72,4 +72,4 @@ Diese schrittweise Anleitung erläutert die Installation und Ausführung von Mon
 [Image7]: ./media/install-and-run-mongo-on-centos-vm/LinuxVmAddEndpoint.png
 [Image8]: ./media/install-and-run-mongo-on-centos-vm/LinuxVmAddEndpoint2.png
 
-<!--HONumber=52-->
+<!---HONumber=62-->

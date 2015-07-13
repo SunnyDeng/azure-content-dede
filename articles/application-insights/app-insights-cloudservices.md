@@ -122,12 +122,12 @@ Hier ein Beispiel für die Ansicht im Application Insights-Portal:
 
 Die folgenden Leistungsindikatoren werden standardmäßig erfasst:
 
-    * \Process(??APP_WIN32_PROC??)% Processor Time
+    * \Process(??APP_WIN32_PROC??)\% Processor Time
 	* \Memory\Available Bytes
 	* .NET CLR Exceptions(??APP_CLR_PROC??)# of Exceps Thrown / sec
 	* \Process(??APP_WIN32_PROC??)\Private Bytes
 	* \Process(??APP_WIN32_PROC??)\IO Data Bytes/sec
-	* \Processor(_Total)% Processor Time
+	* \Processor(_Total)\% Processor Time
 
 Darüber hinaus werden die folgenden Leistungsindikatoren für Webrollen gesammelt:
 
@@ -196,4 +196,4 @@ Um die vollständige 360-Grad-Ansicht Ihrer Anwendung zu erhalten, sollten Sie e
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-get-started.md
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

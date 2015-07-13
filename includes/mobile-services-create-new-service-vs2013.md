@@ -21,10 +21,11 @@ Mit den folgenden Schritten wird ein neuer mobiler Dienst in Azure erstellt und 
 
   	![neuen mobilen Dienst in VS 2013 erstellen](./media/mobile-services-create-new-service-vs2013/mobile-create-service-from-vs2013-2.png)
 
+
 	> [AZURE.NOTE]Als Teil dieses Lernprogramms erstellen Sie eine neue freie SQL-Datenbankinstanz und einen entsprechenden Server. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Sie können jeweils nur eine freie Datenbankinstanz haben. Wenn Sie bereits eine Datenbank in der Region des neuen mobilen Dienstes haben, können Sie stattdessen die vorhandene Datenbank auswählen. Wenn Sie eine vorhandene Datenbank auswählen, stellen Sie sicher, dass Sie die richtigen Anmeldeinformationen angeben. Falls Sie falsche Anmeldeinformationen angeben, wird der mobile Dienst in einem fehlerhaften Zustand erstellt.
 
 7. Wählen Sie den neu erstellten mobilen Dienst in der Liste im Dienst-Manager aus, nachdem er erstellt wurde, und klicken Sie auf **OK**.
 
 	Nach Abschluss des Assistenten werden die erforderlichen NuGet-Pakete installiert, und es wird ein Verweis auf die Clientbibliothek für mobile Dienste zum Projekt hinzugefügt. Außerdem wird der Projektquellcode aktualisiert.
 
-<!--HONumber=54-->
+<!---HONumber=62-->

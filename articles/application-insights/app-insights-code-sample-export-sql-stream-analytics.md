@@ -48,12 +48,16 @@ Erste Schritte:
 
     Wenn Ihr App-Typ nicht aufgeführt ist, sehen Sie sich die Seite [Erste Schritte][start] an.
 
-4. In diesem Beispiel überwachen wir eine Web-App. Daher können wir die Azure-Tools in Visual Studio verwenden, um das SDK zu installieren. Geben Sie den Namen unserer Application Insights-Ressource an:
+4. In diesem Beispiel überwachen wir eine Web-App und können daher die Azure-Tools in Visual Studio verwenden, um das SDK zu installieren. Geben Sie den Namen Ihrer Application Insights-Ressource an:
 
-    ![Aktivieren Sie in Visual Studio im Dialogfeld "Neues Projekt" die Option "Application Insights hinzufügen", und wählen Sie unter "Telemetrie senden an", ob eine neue Anwendung erstellt oder eine vorhandene verwendet werden soll.](./media/app-insights-code-sample-export-sql-stream-analytics/030-new-project.png)
+    ![Klicken Sie im Visual Studio Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie "Application Insights hinzufügen" aus. Erstellen Sie bei "Telemetriedaten senden an" eine neue Ressource, oder verwenden Sie eine vorhandene Ressource.](./media/app-insights-code-sample-export-sql-stream-analytics/appinsights-d012-addbrown.png)
+
+5. Veröffentlichen Sie Ihre App, und beobachten Sie die Telemetriedaten, die in Ihrer Application Insights-Ressource angezeigt werden.
 
 
 ## Erstellen von Speicher in Azure
+
+Durch fortlaufende Exportaktivitäten werden Daten an ein Azure-Speicherkonto übertragen, daher müssen Sie zuerst Speicher erstellen.
 
 1. Erstellen Sie ein Speicherkonto in Ihrem Abonnement im [Azure-Portal][portal].
 
@@ -95,7 +99,7 @@ Außerdem werden die Daten in den Speicher exportiert, in dem Sie den Inhalt üb
 
 ![Öffnen Sie in Visual Studio den "Server-Browser", "Azure" und "Storage".](./media/app-insights-code-sample-export-sql-stream-analytics/087-explorer.png)
 
-Die Ereignisse werden in Blobdateien im JSON-Format geschrieben. Jede Datei kann ein oder mehrere Ereignisse enthalten. Daher schreiben wir Code zum Lesen der Ereignisdaten und zum Herausfiltern der gewünschten Felder. Es gibt viele verschiedene Möglichkeiten zur Nutzung der Daten, aber unser Plan besteht darin, Code zum Verschieben der Daten in eine SQL-Datenbank zu verfassen. Auf diese Weise können wir ganz einfach viele interessante Abfragen ausführen.
+Die Ereignisse werden in Blobdateien im JSON-Format geschrieben. Jede Datei kann ein oder mehrere Ereignisse enthalten. Daher möchten wir die Ereignisdaten lesen und die gewünschten Felder herausfiltern. Es gibt viele verschiedene Möglichkeiten zur Nutzung der Daten, aber unser Plan besteht darin, Stream Analytics zu verwenden, um die Daten in eine SQL-Datenbank zu verschieben. Auf diese Weise können wir ganz einfach viele interessante Abfragen ausführen.
 
 ## Erstellen einer Azure-SQL-Datenbank
 

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Kontinuierliche Bereitstellung mit GIT in Azure App Service" 
-	description="Informationen Sie zum Verwenden von Git zum Veröffentlichen einer Azure Web app und aktivieren Sie die fortlaufende Bereitstellung von Bitbucket, CodePlex, Dropbox, GitHub oder Mercurial." 
+	description="Erfahren Sie, wie Sie mithilfe von Git eine Azure-Web-App veröffentlichen und anschließend die kontinuierliche Bereitstellung aus Bitbucket, CodePlex, Dropbox, GitHub oder Mercurial aktivieren." 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -18,7 +18,7 @@
 
 
 
-[AZURE.INCLUDE [Veröffentlichen mit Git](../../includes/publishing-with-git.md)]
+[AZURE.INCLUDE [publishing-with-git](../../includes/publishing-with-git.md)]
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

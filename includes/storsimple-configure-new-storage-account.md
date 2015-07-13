@@ -1,21 +1,4 @@
-<properties 
-   pageTitle="Optional: Konfigurieren eines neuen Speicherkontos für den Dienst"
-   description="Erläutert das Konfigurieren eines Speicherkontos für den StorSimple-Dienst."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="04/01/2015"
-   ms.author="v-sharos" />
-
-###So konfigurieren Sie ein neues Speicherkonto
+#### So fügen Sie ein neues Speicherkonto in der StorSimple-Version (GA) hinzu
 
 1. Wählen Sie auf der StorSimple-Manager-Dienst-Startseite Ihren Dienst aus, und doppelklicken Sie dann darauf. Damit gelangen Sie auf die Seite **Schnellstart**. Wählen Sie die Seite **Konfigurieren** aus.
 
@@ -33,4 +16,4 @@
 
 4. Das neu erstellte Speicherkonto wird auf der Seite **Konfigurieren** unter **Speicherkonten** angezeigt. Klicken Sie auf **Speichern**, um das neu erstellte Speicherkonto zu speichern. Klicken Sie auf **OK**, wenn Sie zur Bestätigung aufgefordert werden.
 
-<!--HONumber=52-->
+<!---HONumber=62-->

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="SMTP-Connector-API-Anwendung" 
+   pageTitle="SMTP-Connector-API-App" 
    description="Verwenden des SMTP-Connectors" 
    services="app-service\logic" 
    documentationCenter=".net,nodejs,java" 
@@ -43,7 +43,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den SMTP-Connector als Aktion f�
 2.	Öffnen Sie "Trigger und Aktionen", um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren. 
  
 	![][3]
-3.	Der SMTP-Connector wird im Abschnitt "API Apps in this resource group" im Katalog auf der rechten Seite angezeigt. Wählen Sie ihn aus.
+3.	Der SMTP-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt. Wählen Sie ihn aus.
  
 	![][4]
 4.	Sie können die SMTP-Connector-API-App im Editor bearbeiten, indem Sie auf den "SMTP-Connector" klicken. 

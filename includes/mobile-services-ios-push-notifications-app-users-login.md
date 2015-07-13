@@ -11,4 +11,4 @@ Als Nächstes müssen Sie die Methode zur Registrierung von Pushbenachrichtigung
 UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
 ```
 
-<!--HONumber=54-->
+<!---HONumber=62-->

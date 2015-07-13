@@ -13,16 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/10/2015" 
+	ms.date="06/18/2015" 
 	ms.author="sdanie"/>
 
 # Erstellen und Veröffentlichen eines Produkts in Azure API Management
 
 Produkte in Azure API Management enthalten eine oder mehrere APIs sowie ein Nutzungskontingent und Nutzungsbedingungen. Nachdem ein Produkt veröffentlicht wurde, können Entwickler das Produkt abonnieren und die APIs des Produkts verwenden. Dieses Thema beschreibt, wie Sie ein Produkt erstellen, eine API hinzufügen und das Produkt für Entwickler veröffentlichen können.
-
-Weitere Informationen zum Arbeiten mit Produkten finden Sie im folgenden Video.
-
-> [AZURE.VIDEO using-products]
 
 ## <a name="create-product"> </a>Erstellen eines Produkts
 
@@ -112,6 +108,9 @@ Die Registerkarte **Abonnenten** enthält eine Liste der Entwickler, die das Pro
 
 Sobald Sie die gewünschten APIs hinzugefügt und das Produkt veröffentlicht haben, können Entwickler das Produkt abonnieren und die APIs aufrufen. Ein Lernprogramm mit einer Demonstration dieser Punkte und erweiterten Produktkonfigurationen finden Sie unter [Erstellen und Konfigurieren erweiterter Produkteinstellungen in Azure API Management][].
 
+Weitere Informationen zum Arbeiten mit Produkten finden Sie im folgenden Video.
+
+> [AZURE.VIDEO using-products]
 
 [Create a product]: #create-product
 [Add APIs to a product]: #add-apis

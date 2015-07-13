@@ -27,7 +27,7 @@ Sie erhalten Informationen zu folgenden Themen:
 * Erstellen eines Azure-Speicherkontos und Einrichten der Anwendung, damit sie dieses nutzt
 * Erstellen einer Azure-Web-App und Bereitstellen von Inhalten mit Git
  
-Sie erstellen eine einfache Tasklist-Webanwendung in PHP. Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
+Sie erstellen eine einfache Tasklist-Webanwendung in PHP. Unten finden Sie einen Screenshot der vollständigen Anwendung:
 
 ![Azure PHP-Web-App][ws-storage-app]
 
@@ -404,7 +404,7 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 3. Navigieren Sie zu **http://[your web app domain]/index.php**, um die Änderungen anzuzeigen.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
 

@@ -1,10 +1,10 @@
-<properties 
-   pageTitle="Azure Active Directory-Überwachungsberichtsereignisse" 
-   description="Überwachte Ereignisse, die zum Anzeigen und Herunterladen aus Azure Active Directory verfügbar sind" 
-   services="active-directory" 
-   documentationCenter="" 
-   authors="kenhoff" 
-   manager="mbaldwin" 
+<properties
+   pageTitle="Azure Active Directory-Überwachungsberichtsereignisse"
+   description="Überwachte Ereignisse, die zum Anzeigen und Herunterladen aus Azure Active Directory verfügbar sind"
+   services="active-directory"
+   documentationCenter=""
+   authors="kenhoff"
+   manager="mbaldwin"
    editor=""/>
 
 <tags
@@ -12,18 +12,24 @@
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="identity" 
-   ms.date="04/13/2015"
+   ms.workload="identity"
+   ms.date="06/18/2015"
    ms.author="kenhoff"/>
 
 # Azure Active Directory-Überwachungsberichtsereignisse
 
-Der Azure Active Directory-Überwachungsbericht hilft Kunden, privilegierte Aktionen zu bestimmen, die in ihrem Azure Active Directory aufgetreten sind. Privilegierte Aktionen umfassen Änderungen zur Rechteerweiterung (z. B. das Erstellen von Rollen oder Zurücksetzen von Kennwörtern), das Ändern von Richtlinienkonfigurationen (z. B. Kennwortrichtlinien) oder Änderungen an der Verzeichniskonfiguration (z. B. Änderungen an Domänenverbundeinstellungen). Die Berichte enthalten den Überwachungsdatensatz für den Ereignisnamen, den Akteur, der die Aktion ausgeführt hat, die von der Änderung betroffene Zielressource sowie Datum und Uhrzeit (in UTC). Kunden können die Liste der Überwachungsereignisse für ihr Azure Active Directory über das [Azure-Verwaltungsportal](https://manage.windowsazure.com/) abrufen.
+Der Azure Active Directory-Überwachungsbericht hilft Kunden, privilegierte Aktionen zu bestimmen, die in ihrem Azure Active Directory aufgetreten sind. Privilegierte Aktionen umfassen Änderungen zur Rechteerweiterung (z. B. das Erstellen von Rollen oder Zurücksetzen von Kennwörtern), das Ändern von Richtlinienkonfigurationen (z. B. Kennwortrichtlinien) oder Änderungen an der Verzeichniskonfiguration (z. B. Änderungen an Domänenverbundeinstellungen). Die Berichte enthalten den Überwachungsdatensatz für den Ereignisnamen, den Akteur, der die Aktion ausgeführt hat, die von der Änderung betroffene Zielressource sowie Datum und Uhrzeit (in UTC). Kunden können die Liste der Überwachungsereignisse für ihr Azure Active Directory über das [Azure-Verwaltungsportal](https://manage.windowsazure.com/) abrufen, wie beschrieben unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
+
+## Aufbewahrung von Überwachungsberichten
+
+Ereignisse im Azure AD-Überwachungsbericht werden für 180 Tage beibehalten. Weitere Informationen zur Aufbewahrung von Berichten finden Sie unter [Aufbewahrungsrichtlinien für Azure Active Directory-Berichte](active-directory-reporting-retention.md).
+
+Kunden, die ihre Überwachungsereignisse für längere Zeit speichern möchten, können mithilfe der Reporting-API regelmäßig Überwachungsereignisse in einen separaten Datenspeicher abrufen. Ausführliche Informationen finden Sie unter [Erste Schritte mit der Azure AD Reporting-API](active-directory-reporting-api-getting-started.md).
 
 ## In jedem Überwachungsereignis enthaltene Eigenschaften
 
 | Eigenschaft | Beschreibung |
-| ------	| ------								|		
+| ------	| ------								|
 | Datum und Uhrzeit | Datum und Uhrzeit des Auftretens des Überwachungsereignisses |
 | Akteur | Der Benutzer oder Dienstprinzipal, der die Aktion ausgeführt hat |
 | Aktion | Die Aktion, die ausgeführt wurde |
@@ -66,7 +72,7 @@ Der Azure Active Directory-Überwachungsbericht hilft Kunden, privilegierte Akti
 | Unternehmensinformationen festlegen | Informationen auf Unternehmensebene aktualisiert. Im Artikel zum PowerShell-Cmdlet [Get-MsolCompanyInformation](https://msdn.microsoft.com/library/azure/dn194126.aspx) finden Sie weitere Details. |
 | Änderung des Benutzerkennworts erzwingen | Eigenschaft festgelegt, die einen Benutzer zwingt, sein Kennwort bei der Anmeldung zu ändern. |
 
-<!--- 
+<!---
 
 List of events that still need descriptions:
 
@@ -95,5 +101,6 @@ Das Überwachungsereignis "Benutzer aktualisieren" enthält Informationen dazu, 
 | TelephoneNumber | Die Telefonnummer des Benutzers. |
 
 Überwachungsdatensätze sind ein erforderliches Steuerelement in vielen Richtlinien zur Einhaltung von Vorschriften. Kunden, die den Azure Active Directory-Überwachungsbericht zum Erfüllen dieser Vorschriften nutzen, wird empfohlen, der Kopie des exportierten Überwachungsberichts eine Kopie dieses Hilfethemas hinzuzufügen, das die Berichtsdetails erläutert. Wenn der Prüfer die Richtlinien zur Vorschrifteneinhaltung bestimmen möchte, die Azure derzeit erfüllt, leiten Sie ihn zur [Seite "Compliance"](http://azure.microsoft.com/support/trust-center/compliance/) im Microsoft Azure Trust Center.
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

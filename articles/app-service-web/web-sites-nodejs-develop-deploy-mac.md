@@ -22,7 +22,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine [Node][nodejs.org]-Anwendung e
 
 Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
-![Ein Browser, in dem die Nachricht „Hello World“ angezeigt wird.][helloworld-completed]
+![Ein Browser, in dem die Nachricht "Hello World" angezeigt wird.][helloworld-completed]
 
 ##Erstellen einer Web-App und Aktivieren der Git-Veröffentlichung
 
@@ -87,9 +87,9 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello Wor
 
         node server.js
 
-4. Öffnen Sie Ihren Browser, und navigieren Sie zu http://localhost:1337. Eine Website mit „Hello World“ wird wie im folgenden Screenshot angezeigt:
+4. Öffnen Sie Ihren Browser, und navigieren Sie zu http://localhost:1337. Eine Website mit "Hello World" wird wie im folgenden Screenshot angezeigt:
 
-    ![Ein Browser, in dem die Nachricht „Hello World“ angezeigt wird.][helloworld-localhost]
+    ![Ein Browser, in dem die Nachricht "Hello World" angezeigt wird.][helloworld-localhost]
 
 ##Veröffentlichen der Anwendung
 
@@ -134,7 +134,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello Wor
 
 ##Veröffentlichen von Änderungen an der Anwendung
 
-1. Öffnen Sie die Datei **server.js** in einem Texteditor, und ändern Sie „Hello World\\n“ in „Hello Azure\\n“. Speichern Sie die Datei.
+1. Öffnen Sie die Datei **server.js** in einem Texteditor, und ändern Sie "Hello World\n" in "Hello Azure\n". Speichern Sie die Datei.
 2. Wechseln Sie über die Befehlszeile ins Verzeichnis **helloworld**, und führen Sie die folgenden Befehle aus:
 
 		git add .
@@ -145,7 +145,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello Wor
 
 3. Wählen Sie über die Schaltfläche **Durchsuchen** Ihre App aus, und beachten Sie, dass die Aktualisierungen angewendet wurden.
 
-	![Eine Webseite, die „Hello Azure“ anzeigt][helloworld-completed]
+	![Eine Webseite, die "Hello Azure" anzeigt][helloworld-completed]
 
 4. Sie können die vorherige Bereitstellung wiederherstellen, indem Sie sie unter **Bereitstellungen** auswählen.
 

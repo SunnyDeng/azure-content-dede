@@ -268,12 +268,12 @@ Die nächste Aufgabe besteht darin, das Feature Code First-Migrationen zu aktivi
 2. Geben Sie im Fenster Paket-Manager-Konsole den folgenden Befehl ein:  
 	<pre class="prettyprint">
 enable-migrations
-</pre>Mit dem Befehl „enable-migrations“ wird der Ordner *Migrations* erstellt und die Datei *Configuration.cs* darin abgelegt. Sie können diese Datei bearbeiten, um ein Seeding für die Datenbank auszuführen und Datenmigrationen zu konfigurieren.  
+</pre>Mit dem Befehl "enable-migrations" wird der Ordner *Migrations* erstellt und die Datei *Configuration.cs* darin abgelegt. Sie können diese Datei bearbeiten, um ein Seeding für die Datenbank auszuführen und Datenmigrationen zu konfigurieren.  
 3. Geben Sie im Fenster **Paket-Manager-Konsole** den folgenden Befehl ein:  
 	<pre class="prettyprint">
 add-migration Initial
-</pre>Der `add-migration Initial`-Befehl generiert eine Datei namens „<date_stamp>Initial“ im Ordner *Migrations*, mit dem die Datenbank erstellt wird. Der erste Parameter (Initial) ist willkürlich und wird zum Erstellen des Dateinamens verwendet. Sie können die neue Klasse im **Projektmappen-Explorer** anzeigen. In der `Initial`-Klasse wird mit der `Up`-Methode die Tabelle `Contact` erstellt und mit der `Down`-Methode (wird verwendet, wenn Sie zum vorherigen Status zurückkehren möchten) wieder verworfen.  
-4. Öffnen Sie die Datei *Migrations\\Configuration.cs*. 
+</pre>Der `add-migration Initial`-Befehl generiert eine Datei namens "<date_stamp>Initial" im Ordner *Migrations*, mit dem die Datenbank erstellt wird. Der erste Parameter (Initial) ist willkürlich und wird zum Erstellen des Dateinamens verwendet. Sie können die neue Klasse im **Projektmappen-Explorer** anzeigen. In der `Initial`-Klasse wird mit der `Up`-Methode die Tabelle `Contact` erstellt und mit der `Down`-Methode (wird verwendet, wenn Sie zum vorherigen Status zurückkehren möchten) wieder verworfen.  
+4. Öffnen Sie die Datei *Migrations\Configuration.cs*. 
 5. Fügen Sie den folgenden Namespace hinzu:  
 	<pre class="prettyprint">
 using ContactManager.Models;
@@ -376,7 +376,7 @@ Abgesehen von der Authentifizierung werden in diesem Lernprogramm auch Rollen ve
 
 Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter hinzufügen.
 
-1. Öffnen Sie die Datei *App_Start\\Startup.Auth.cs*. 
+1. Öffnen Sie die Datei *App_Start\Startup.Auth.cs*. 
 2. Entfernen Sie die Kommentarzeichen aus der `app.UseGoogleAuthentication()`-Methode, sodass sie wie folgt aussieht:  
 	<pre class="prettyprint">
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
@@ -415,16 +415,16 @@ namespace ContactManager
 {
     public partial class Startup {
 
-        // Weitere Informationen zum Konfigurieren der Authentifizierung finden Sie unter „http://go.microsoft.com/fwlink/?LinkId=301883“.
+        // Weitere Informationen zum Konfigurieren der Authentifizierung finden Sie unter "http://go.microsoft.com/fwlink/?LinkId=301883".
         public void ConfigureAuth(IAppBuilder app)
         {
             // DB-Kontext und Benutzer-Manager für die Verwendung einer einzelnen Instanz pro Anforderung konfigurieren
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
 
-            // Anwendung kann Cookie zum Speichern von Infos für angemeldeten Benutzer
+            // Anwendung kann Cookie zum Speichern von Informationen zum angemeldeten Benutzer
             // sowie ein Cookie verwenden, um Informationen zu einem über einen externen Anmeldeanbieter angemeldeten Benutzer temporär zu speichern.
-            // Anmelde-Cookie konfigurieren
+            // Anmeldecookie konfigurieren
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
@@ -469,7 +469,7 @@ namespace ContactManager
 17. Sie können zwar den lokalen E-Mail-Registrierungsnamen in Ihr Gmail-Konto ändern, im Allgemeinen sollten Sie jedoch den Standard-E-Mail-Aliasnamen beibehalten (den Sie für die Authentifizierung verwendet haben). Klicken Sie auf **Log in**.
 
 ##Verwenden der Mitgliedschafts-API zum Beschränken des Zugriffs 
-ASP.NET Identity ist das Mitgliedschaftssystem, das beim Erstellen einer ASP.NET-Webanwendung für die Authentifizierung verwendet wird. Damit ist es einfacher, benutzerspezifische Profildaten in die Anwendungsdaten zu integrieren. Außerdem können Sie im ASP.NET Identity das Persistenzmodell für die Benutzerprofile in Ihrer Anwendung auswählen. Sie können die Daten in einer SQL Server-Datenbank oder einem anderen Datenspeicher speichern, darunter auch *NoSQL*-Datenspeicher wie Azure-Speichertabellen.
+ASP.NET Identity ist das Mitgliedschaftssystem, das beim Erstellen einer ASP.NET-Webanwendung für die Authentifizierung verwendet wird. Damit ist es einfacher, benutzerspezifische Profildaten in die Anwendungsdaten zu integrieren. Außerdem können Sie im ASP.NET Identity das Persistenzmodell für die Benutzerprofile in Ihrer Anwendung auswählen. Sie können die Daten in einer SQL Server-Datenbank oder einem anderen Datenspeicher speichern, darunter auch *NoSQL*-Datenspeicher wie Azure Storage-Tabellen.
 
 Bei Verwendung der ASP.NET Web Forms-Standardvorlage haben Sie eine integrierte Mitgliedschaftsfunktion, die Sie sofort verwenden können, wenn die Anwendung ausgeführt wird. Sie verwenden ASP.NET Identity, um eine Administratorrolle hinzuzufügen und dieser Rolle einen Benutzer zuzuweisen. Anschließend erfahren Sie, wie Sie den Zugriff auf den Administrationsordner beschränken und welche Seiten in diesem Ordner verwendet werden, um die Kontaktdaten zu ändern.
 
@@ -536,7 +536,7 @@ Sie erstellen einen Ordner namens *Admin*, auf den nur Benutzer, die der Rolle "
 	- *Delete.aspx *und* Delete.aspx.cs*
 	- *Edit.aspx *und* Edit.aspx.cs*
 	- *Insert.aspx *und* Insert.aspx.cs*
-3. Aktualisieren Sie die Linkverweise unter *Contacts/Default.aspx*, indem Sie „Admin/“ vor den Seitenverweisen hinzufügen, die auf *Insert.aspx*, *Edit.aspx* und *Delete.aspx* verweisen:  
+3. Aktualisieren Sie die Linkverweise unter *Contacts/Default.aspx*, indem Sie "Admin/" vor den Seitenverweisen hinzufügen, die auf *Insert.aspx*, *Edit.aspx* und *Delete.aspx* verweisen:  
 	<pre class="prettyprint">
 &lt;%@ Page Title="ContactsList" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Default.aspx.cs" Inherits="ContactManager.Contacts.Default" ViewStateMode="Disabled" %>
 &lt;%@ Register TagPrefix="FriendlyUrls" Namespace="Microsoft.AspNet.FriendlyUrls" %>

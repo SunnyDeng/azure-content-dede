@@ -23,7 +23,7 @@ Dieser Artikel beschreibt, wie Sie eine PHP-Web-App in [Azure App Service] mithi
 
 Im Allgemeinen unterscheidet sich die Erstellung einer PHP-Web-App *nicht* von der Erstellung einer anderen Web-App in Azure App Service. PHP ist standardmäßig für alle Web-Apps aktiviert. Informationen zur Konfiguration von PHP (oder zur Bereitstellung Ihrer eigenen benutzerdefinierten PHP-Laufzeit) finden Sie unter [Konfigurieren von PHP in Azure App Service-Web-Apps].
 
-Jede unten beschriebene Option zeigt, wie Sie eine Web-App in einer freigegebenen Hostingumgebung kostenlos erstellen, jedoch mit eingeschränkter CPU-Auslastung und Bandbreitennutzung. Weitere Informationen finden Sie unter [App Service-Preisdetails]. Weitere Informationen zum Aktualisieren und Skalieren Ihrer Web-App in App Service finden Sie unter [Skalieren einer Web-App in Azure App Service].
+Jede unten beschriebene Option zeigt, wie Sie eine Web-App in einer freigegebenen Hostingumgebung kostenlos erstellen, jedoch mit eingeschränkter CPU-Auslastung und Bandbreitennutzung. Weitere Informationen finden Sie in der [App Service-Preisübersicht]. Weitere Informationen zum Aktualisieren und Skalieren Ihrer Web-App in App Service finden Sie unter [Skalieren einer Web-App in Azure App Service].
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -51,7 +51,7 @@ Die URL für die neu erstellte Web-App lautet `http://MyWebAppName.azurewebsites
 
 Beachten Sie, dass Sie den Befehl `azure site create` mit einer der folgenden Optionen ausführen können:
 
-* `--location [location name]`. Mit dieser Option geben Sie den Standort des Rechenzentrums an, in dem Ihre Web-App erstellt wird (z. B. "USA, Westen"). Wenn Sie diese Option auslassen, werden Sie aufgefordert, einen Standort auszuwählen.
+* `--location [location name]`. Mit dieser Option geben Sie den Standort des Datencenters an, in dem Ihre Web-App erstellt wird (z. B. "USA, Westen"). Wenn Sie diese Option auslassen, werden Sie aufgefordert, einen Standort auszuwählen.
 * `--hostname [custom host name]`. Mithilfe dieser Option können Sie einen benutzerdefinierten Hostnamen für Ihre Web-App auswählen.
 * `--git`. Mithilfe dieser Option können Sie Git zur Veröffentlichung Ihrer Web-App verwenden, indem Sie Git-Repositorys sowohl in Ihrem lokalen Anwendungsverzeichnis als auch im Rechenzentrum Ihrer Web-App erstellen. Falls Ihr lokaler Ordner bereits ein Git-Repository ist, fügt der Befehl ein neues Remoterepository zu dem bereits vorhandenen Repository hinzu, das auf das Repository im Rechenzentrum Ihrer Web-App verweist.
 
@@ -71,7 +71,7 @@ Die URL für die neu erstellte Web-App lautet `http://MyWebAppName.azurewebsites
 
 Beachten Sie, dass Sie den Befehl `New-AzureWebsite` mit einer der folgenden Optionen ausführen können:
 
-* `-Location [location name]`. Mit dieser Option geben Sie den Standort des Rechenzentrums an, in dem Ihre Web-App erstellt wird (z. B. "USA, Westen"). Wenn Sie diese Option auslassen, werden Sie aufgefordert, einen Standort auszuwählen.
+* `-Location [location name]`. Mit dieser Option geben Sie den Standort des Datencenters an, in dem Ihre Web-App erstellt wird (z. B. "USA, Westen"). Wenn Sie diese Option auslassen, werden Sie aufgefordert, einen Standort auszuwählen.
 * `-Hostname [custom host name]`. Mithilfe dieser Option können Sie einen benutzerdefinierten Hostnamen für Ihre Web-App auswählen.
 * `-Git`. Mithilfe dieser Option können Sie Git zur Veröffentlichung Ihrer Web-App verwenden, indem Sie Git-Repositorys sowohl in Ihrem lokalen Anwendungsverzeichnis als auch im Rechenzentrum Ihrer Web-App erstellen. Falls Ihr lokaler Ordner bereits ein Git-Repository ist, fügt der Befehl ein neues Remoterepository zu dem bereits vorhandenen Repository hinzu, das auf das Repository im Rechenzentrum Ihrer Web-App verweist.
 
@@ -99,7 +99,7 @@ Lernprogramme von Entwicklern für Entwickler finden Sie auf der Seite [Lernprog
 [Konfigurieren von PHP in Azure App Service-Web-Apps]: web-sites-php-configure.md
 [Erstellen einer PHP-MySQL-Web-App in Azure App Service und Bereitstellen über Git]: web-sites-php-mysql-deploy-use-git.md
 [Erstellen einer WordPress-Web-App in Azure App Service]: web-sites-php-web-site-gallery.md
-[App Service-Preisdetails]: /pricing/details/app-service/
+[App Service-Preisübersicht]: /pricing/details/app-service/
 [Skalieren einer Web-App in Azure App Service]: web-sites-scale.md
  
 

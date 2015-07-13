@@ -1,21 +1,3 @@
-<properties 
-   pageTitle="Konfigurieren und Registrieren von Geräten"
-   description="Erläutert, wie Sie Windows PowerShell für StorSimple zum Konfigurieren und Registrieren Ihres Geräts mit Update 1 verwenden."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="05/26/2015"
-   ms.author="alkohli" />
-
-
 ### So konfigurieren und registrieren Sie das Gerät
 
 1. Greifen Sie an der seriellen Konsole Ihres StorSimple-Geräts auf die Windows PowerShell-Benutzeroberfläche zu. Anweisungen dazu finden Sie unter [Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole](#use-putty-to-connect-to-the-device-serial-console). **Achten Sie darauf, dass Sie die Vorgehensweise genau befolgen. Andernfalls sind Sie nicht in der Lage, auf die Konsole zuzugreifen.**
@@ -42,7 +24,7 @@
    - Gateway
    - IP-Adresse für den primären DNS-Server
     
-		Beachten Sie, dass das System nach jedem Prozessschritt die Netzwerkeinstellungen überprüft.
+		Note that the system is validating network settings after each step in the process.
    
       >[AZURE.NOTE]Sie müssen ggf. einige Minuten warten, bis die Subnetzmaske und die DNS-Einstellungen übernommen werden. Wenn die Fehlermeldung "Überprüfen Sie die Netzwerkverbindung mit DATA 0" angezeigt wird, überprüfen Sie die physische Netzwerkverbindung für die Netzwerkschnittstelle DATA 0 Ihres aktiven Controllers.
 
@@ -75,10 +57,10 @@
    
     	![StorSimple Devices page](./media/storsimple-configure-and-register-device-u1/HCS_DevicesPageM_U1-include.png) 
   
-       Wenn der Gerätestatus **Offline** ist, warten Sie einige Minuten, bis das Gerät online geschaltet wird  . 
+        If the device status is **Offline**, wait for a couple of minutes for the device to come online. 
       
-        Ist das Gerät nach einigen Minuten immer noch offline, vergewissern Sie sich, dass Ihr Firewallnetzwerk gemäß der Beschreibung in den [Netzwerkanforderungen für Ihr StorSimple-Gerät] (https://msdn.microsoft.com/library/dn772371.aspx) konfiguriert wurde. Wenn HTTP 1.1 nicht unterstützt wird, überprüfen Sie Port 9354, um sicherzustellen, dass er für ausgehende Kommunikation geöffnet ist. Dieser Port wird für die Kommunikation zwischen dem StorSimple Manager-Dienst und Ihrem StorSimple-Gerät verwendet. 
+        If the device is still offline after a few minutes, then you need to make sure that your firewall network was configured as described in the [network requirements for your StorSimple device](https://msdn.microsoft.com/library/dn772371.aspx). If you do not have HTTP 1.1 support, check port 9354 to make sure that it is open for outbound communication. This port is used for communication between the StorSimple Manager service and your StorSimple device.
      
        
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

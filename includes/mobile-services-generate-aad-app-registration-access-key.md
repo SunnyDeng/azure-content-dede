@@ -17,6 +17,8 @@
 
     <table border="1"> <tr> <th>Name der App-Einstellung</th><th>Beschreibung</th> </tr> <tr> <td>AAD_CLIENT_ID</td><td>Die Client-ID, die Sie in den vorhergehenden Schritten aus der integrierten App kopiert haben.</td> </tr> <tr> <td>AAD_CLIENT_KEY</td><td>Der App-Schlüssel, den Sie in den vorhergehenden Schritten in der AAD-integrierten App generiert haben.</td> </tr> <tr> <td>AAD_TENANT_DOMAIN</td><td>Ihr AAD-Domänenname. Dieser sollte "mydomain.onmicrosoft.com" entsprechen.</td> </tr> </table><br/>
 
+ 
     ![](./media/mobile-services-generate-aad-app-registration-access-key/aad-app-settings.png)
   
-<!--HONumber=54-->
+
+<!---HONumber=62-->

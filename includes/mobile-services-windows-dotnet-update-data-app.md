@@ -69,4 +69,5 @@
 	Damit wird eine Eintragsaktualisierung an den mobilen Dienst gesendet.
 
 Nachdem nun die App für die Verwendung von Mobile Services als Back-End-Speicher aktualisiert ist, können Sie die App mit Mobile Services testen.
-<!--HONumber=54-->
+
+<!---HONumber=62-->

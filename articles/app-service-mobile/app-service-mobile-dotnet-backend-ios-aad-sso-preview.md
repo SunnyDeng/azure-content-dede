@@ -35,7 +35,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 ## <a name="require-authentication"></a>Konfigurieren der Anwendung zur Verwendung der Authentifizierung
 
-[AZURE.INCLUDE [app-service-mobile-restrict-permissions-dotnet-backend](../../includes/app-service-mobile-restrict-permissions-dotnet-backend.md)] 
+[AZURE.INCLUDE [app-service-mobile-restrict-permissions-dotnet-backend](../../includes/app-service-mobile-restrict-permissions-dotnet-backend.md)]
 
 ## <a name="add-adal"></a>Hinzufügen eines Verweises auf die Active Directory-Authentifizierungsbibliothek
 
@@ -117,4 +117,4 @@ Jetzt können Sie auf die Active Directory-Authentifizierungsbibliothek in Ihrem
  [Erste Schritte mit mobilen Apps]: app-service-mobile-dotnet-backend-ios-get-started-preview.md
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="03/23/2015"
+   ms.date="06/24/2015"
    ms.author="rajram"/>
 
 
@@ -109,4 +109,4 @@ Jedes Mal, wenn jemand eine Nachricht an den HTTP-Endpunkt sendet, wird die App 
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

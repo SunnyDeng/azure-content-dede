@@ -31,7 +31,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine ASP.NET 5-Web-App mit [Visual
 * Installieren Sie Git (entweder über [Chocolatey](https://chocolatey.org/packages/git) oder über [git-scm.com](http://git-scm.com/downloads)). Falls Sie noch keine Erfahrung mit Git haben, entscheiden Sie sich für [git-scm.com](http://git-scm.com/downloads), und wählen Sie die passende Option aus, um Git mit GitBash und über die Windows-Eingabeaufforderung verwenden zu können. Legen Sie nach der Installation von Git den Git-Benutzernamen und die dazugehörige E-Mail-Adresse fest, da diese Angaben später in diesem Lernprogramm (beim Ausführen eines Commits in VS Code) benötigt werden.  
 
 ## Installieren von ASP.NET 5 und DNX
-ASP.NET 5/DNX ist ein schlanker .NET-Stapel für die Erstellung moderner Cloud- und Web-Apps für OS X, Linux und Windows. Er ist von Grund auf als optimiertes Entwicklungsframework für Apps konzipiert, die entweder in der Cloud bereitgestellt oder lokal ausgeführt werden. Er setzt sich aus modularen Komponenten mit minimalem Mehraufwand zusammen und ermöglicht eine flexible Lösungsentwicklung.
+ASP.NET 5/DNX ist ein schlanker .NET-Stapel für die Erstellung moderner Cloud- und Web-Apps für OS X, Linux und Windows. Er wurde von Grund auf neu als optimiertes Entwicklungsframework für Apps konzipiert, die entweder in der Cloud bereitgestellt oder lokal ausgeführt werden. Er besteht aus modularen Komponenten mit minimalem Mehraufwand und ermöglicht Ihnen eine flexible Lösungsentwicklung.
 
 > [AZURE.NOTE]ASP.NET 5 und DNX (die .NET-Ausführungsumgebung) befinden sich für OS X und Linux noch in einer frühen Beta-/Vorschauphase.
 
@@ -97,11 +97,11 @@ In diesem Abschnitt erfahren Sie, wie Sie das Gerüst für eine neue ASP.NET-Web
 
 7. Wählen Sie in VS Code **Datei > Ordner öffnen** und anschließend den Ordner mit Ihrer ASP.NET-Web-App aus.
 
-	![Dialogfeld „Ordner auswählen“](./media/web-sites-create-web-app-using-vscode/02-open-folder.png)
+	![Dialogfeld "Ordner auswählen"](./media/web-sites-create-web-app-using-vscode/02-open-folder.png)
 
 	VS Code lädt Ihr Projekt und zeigt die Dateien im Fenster **Durchsuchen** an.
 
-	![Anzeige des Projekts „SampleWebApp“ in VS Code](./media/web-sites-create-web-app-using-vscode/03-vscode-project.png)
+	![Anzeige des Projekts "SampleWebApp" in VS Code](./media/web-sites-create-web-app-using-vscode/03-vscode-project.png)
 
 8. Wählen Sie **Ansicht > Befehlspalette**.
 
@@ -111,9 +111,9 @@ In diesem Abschnitt erfahren Sie, wie Sie das Gerüst für eine neue ASP.NET-Web
 
 	Wenn Sie mit der Eingabe beginnen, erscheint die vollständige Befehlszeile aus der Liste.
 
-	![Befehl „Restore“](./media/web-sites-create-web-app-using-vscode/04-dnu-restore.png)
+	![Befehl "Restore"](./media/web-sites-create-web-app-using-vscode/04-dnu-restore.png)
 
-	Der Befehl „Restore“ installiert die NuGet-Pakete, die zum Ausführen der Anwendung erforderlich sind. Nach Abschluss des Vorgangs wird eine Eingabeaufforderung mit einem entsprechenden Hinweis angezeigt.
+	Der Befehl "Restore" installiert die NuGet-Pakete, die zum Ausführen der Anwendung erforderlich sind. Nach Abschluss des Vorgangs wird eine Eingabeaufforderung mit einem entsprechenden Hinweis angezeigt.
 
 ## Ausführen der Web-App (lokal)
 
@@ -185,7 +185,7 @@ Git ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure App Serv
 
 	* Klicken Sie auf **Speichern**.
 
-	![Azure – Anmeldeinformationen für die Bereitstellung](./media/web-sites-create-web-app-using-vscode/16-azure-credentials.png)
+	![Anmeldeinformationen für die Bereitstellung in Azure](./media/web-sites-create-web-app-using-vscode/16-azure-credentials.png)
 
 9. Klicken Sie auf dem Blatt der Web-App auf **Einstellungen > Eigenschaften**. Die URL des Git-Remoterepositorys für die Bereitstellung wird unter **
 10.  URL** angezeigt.
@@ -216,7 +216,7 @@ In diesem Abschnitt erfahren Sie, wie Sie ein lokales Repository erstellen und e
 
 5. Öffnen Sie eine Eingabeaufforderung, und wechseln Sie zum Verzeichnis mit Ihrer Web-App.
 
-6. Erstellen Sie einen Remotebezug, um Updates mittels Push an Ihre Web-App zu übertragen. Verwenden Sie hierbei die zuvor kopierte (auf „.git“ endende) Git-URL:
+6. Erstellen Sie einen Remotebezug, um Updates mittels Push an Ihre Web-App zu übertragen. Verwenden Sie hierbei die zuvor kopierte (auf ".git" endende) Git-URL:
 
 		git remote add azure [URL for remote repository]
 

@@ -17,90 +17,90 @@
 	ms.author="spelluru"/>
 
 # Überwachen von Azure Data Factory mit dem Azure-Vorschauportal
-Dieser Artikel beschreibt verschiedene Szenarien für die Verwendung von Azure-Vorschauportal überwachen und Verwalten von Azure Data-Factory.
+In diesem Artikel werden verschiedene Szenarien für die Verwendung des Azure-Vorschauportals zum Überwachen und Verwalten von Azure Data Factory beschrieben.
 
-## <a name="AllDataFactories"></a> Anzeigen von Factorys für alle Daten in einem Azure-Abonnement
+## <a name="AllDataFactories"></a> Anzeigen aller Data Factorys in einem Azure-Abonnement
 
-- Melden Sie sich bei der [Azure Preview Portal][azure-preview-portal].
-- Klicken Sie auf **Durchsuchen** Hub auf der linken Seite, und klicken Sie auf **Daten Factorys**.  
+- Melden Sie sich beim [Azure-Vorschauportal][azure-preview-portal] an.
+- Klicken Sie links auf den Hub **DURCHSUCHEN** und dann auf **Data Factorys**.  
 
-	![Durchsuchen von Hub-Daten Factorys >][image-data-factory-browse-datafactories]
+	![Hub DURCHSUCHEN -> Data Factorys][image-data-factory-browse-datafactories]
 
-	Wenn Sie nicht sehen, **Daten Factorys**, klicken Sie auf **Alles** und klicken Sie dann auf **Daten Factorries** in den **Durchsuchen** Blade.
+	Wenn keine **Data Factorys** angezeigt werden, klicken Sie auf **Alles** und dann auf dem Blatt **Durchsuchen** auf **Data Factorys**.
 
-	![Alles durchsuchen Hub ->][image-data-factory-browse-everything]
+	![Hub DURCHSUCHEN -> Alles][image-data-factory-browse-everything]
 
-- Daraufhin sollte alle Factorys für die Daten in der **Daten Factorys** Blade.
+- Auf dem Blatt **Data Factorys** sollten alle Data Factorys angezeigt sein.
 
-	![Daten-Factorys-blade][image-data-factory-datafactories-blade]
+	![Blatt "Data Factorys"][image-data-factory-datafactories-blade]
 
     
-## <a name="DataFactoryDetails"></a> Anzeigen von Details zu einem Daten-factory
+## <a name="DataFactoryDetails"></a> Anzeigen von Details zu einer Data Factory
 
 Führen Sie einen der folgenden Schritte aus, um die Details zu einer Data Factory anzuzeigen:
 
 
-- Klicken Sie auf eine Factory für Daten in der **Daten Factorys** Blade oben gezeigten.
-- Klicken Sie auf den Link für die Factory Daten auf den **Startboard**. **Startboard** wird im Fenster angezeigt, wenn Sie in das Azure Preview Portal anmelden. Wenn Sie ausgewählt hatten **zum Startmenü hinzufügen** beim Erstellen einer Factory Daten (Standardoption), sollte die Factory Daten auf das Startmenü eine Verknüpfung, wie in der folgenden Abbildung dargestellt. In diesem Beispiel **ADFTutorialDataFactory**, **ADFTutorialDataFactoryDF** und **LogProcessingFactory** Factory Datenverbindungen stehen auf der **Startboard**.
+- Klicken Sie auf dem oben gezeigten Blatt **Data Factorys** auf eine Data Factory.
+- Klicken Sie im **Startmenü** auf den Link der Data Factory. Das **Startmenü** ist das Blatt, das angezeigt wird, wenn Sie sich beim Azure-Vorschauportal anmelden. Wenn Sie während der Erstellung einer Data Factory **Zum Startmenü hinzufügen ** ausgewählt haben (Standardoption), wird der Data Factory-Link im Startmenü wie in der folgenden Abbildung angezeigt. In diesem Beispiel stehen im **Startmenü** die Data Factory-Links **ADFTutorialDataFactory**, **ADFTutorialDataFactoryDF** und **LogProcessingFactory** zur Verfügung.
 
 
-!["Data Factory" aus dem Startmenü][image-data-factory-datafactory-from-startboard]
+!["Data Factory" im Startmenü][image-data-factory-datafactory-from-startboard]
 
-In beiden Fällen sehen Sie die **DATA FACTORY** Blade für die ausgewählten Daten-Factory, wie im folgenden Bild gezeigt.
+Es wird auf jeden Fall das Blatt **Data Factory** für die ausgewählte Data Factory angezeigt (siehe folgende Abbildung).
 
- ![Daten-Factory-Homepage][image-data-factory-datafactory-home-page]
+ ![Data Factory-Startseite][image-data-factory-datafactory-home-page]
  
-## <a name="DataFactoryDiagram"></a> Diagrammansicht der Factory Daten anzeigen
-In der **DATA FACTORY** Blade für die Factory Daten klicken Sie auf **Diagramm** Kachel aus, um die Diagrammansicht der Factory Daten finden Sie unter.
+## <a name="DataFactoryDiagram"></a> Anzeigen der Diagrammansicht der Data Factory
+Klicken Sie auf dem Blatt **Data Factory** für die Data Factory auf die Kachel **Diagramm**, um die Diagrammansicht der Data Factory anzuzeigen.
 
-![Daten-Factory-Diagrammansicht][image-data-factory-diagram-view]
+![Data Factory-Diagrammansicht][image-data-factory-diagram-view]
  
-### Öffnen Sie eine Pipeline in der Diagrammansicht
-Sie können alle Aktivitäten in einer Pipeline anzeigen, indem Sie mit der rechten Maustaste in der Pipeline in der Diagrammansicht und auf **offene Pipeline**. Die Aktivitäten in der Pipeline sowie Eingabe- und Datasets für die Aktivitäten sollte angezeigt werden. ![Offene pipeline](./media/data-factory-monitor-manage-using-management-portal/DiagramView-OpenPipeline.png)
+### Öffnen einer Pipeline in der Diagrammansicht
+Sie können alle Aktivitäten in einer Pipeline anzeigen, indem Sie in der Diagrammansicht mit der rechten Maustaste auf die Pipeline klicken und dann auf **Pipeline öffnen** klicken. Es sollten die Aktivitäten in der Pipeline sowie Ein- und Ausgabedatasets für die Aktivitäten angezeigt werden.![Pipeline öffnen](./media/data-factory-monitor-manage-using-management-portal/DiagramView-OpenPipeline.png)
 
-Klicken Sie auf **Data Factory** in die Breadcrumb-Leiste in der oberen linken Ecke, um die Diagrammansicht zurückzukehren. Die Diagrammansicht zeigt alle Leitungen. In diesem Beispiel haben Sie nur eine Pipeline erstellt.
+Klicken Sie auf der Breadcrumb-Leiste links oben auf **Data Factory**, um zur Diagrammansicht zurückzukehren. In der Diagrammansicht werden alle Pipelines angezeigt. In diesem Beispiel haben Sie nur eine Pipeline erstellt.
 
-## <a name="DataFactoryLinkedServices"></a> Anzeigen von verknüpften Dienste in einer Fabrik Daten
-In der **DATA FACTORY** Blade für die Factory Daten klicken Sie auf **verknüpften Dienste** Kachel aus, um alle verknüpften Dienste in einer Liste angezeigt werden.
+## <a name="DataFactoryLinkedServices"></a> Anzeigen von verknüpften Diensten in einer Data Factory
+Klicken Sie auf dem Blatt **DATA FACTORY** für die Data Factory auf die Kachel **Verknüpfte Dienste**, um alle verknüpften Dienste in einer Liste anzuzeigen.
 
-![Verknüpfte Dienste Blade][image-data-factory-linked-services]
+![Blatt "Verknüpfte Dienste"][image-data-factory-linked-services]
 
 ## <a name="DataFactoryLinkedService"></a> Anzeigen von Details zu einem verknüpften Dienst
-In der **verknüpften Dienste** Blade, klicken Sie auf der verknüpfte Dienst aus der Liste finden details zu.
+Klicken Sie auf dem Blatt **VERKNÜPFTE DIENSTE** in der Liste auf den verknüpften Dienst, zu dem Sie Details anzeigen möchten.
 
-![Verknüpfte Service-Karte][image-data-factory-linked-service]
+![Blatt "Verknüpfter Dienst"][image-data-factory-linked-service]
 
-## <a name="DataFactoryDatasets"></a> Datasets in einer Fabrik Daten anzeigen 
-In der **DATA FACTORY** Blade für die Factory Daten klicken Sie auf **Datasets** Kachel aus, um alle Tabellen in der Factory Daten anzuzeigen.
+## <a name="DataFactoryDatasets"></a> Anzeigen von Datasets in einer Data Factory 
+Klicken Sie auf dem Blatt **DATA FACTORY** für die Data Factory auf die Kachel **Datasets**, um alle Tabellen in der Data Factory anzuzeigen.
 
-![Datasets Blade][image-data-factory-datasets]
+![Blatt "Datasets"][image-data-factory-datasets]
 
-## <a name="DataFactoryDataset"></a> Anzeigen von Details zu einem dataset
+## <a name="DataFactoryDataset"></a> Anzeigen von Details zu einem Dataset
 Klicken Sie in der Liste von Datasets im Fenster "DATASETS" auf das Dataset, um Details zu dem Dataset anzuzeigen. Beachten Sie, dass eine Tabelle ein rechteckiges Dataset mit einem Schema ist. Dies ist die einzige Art von Datasets, die derzeit unterstützt werden.
 
-![Tabelle Blade][image-data-factory-table]
+![Blatt "Tabelle"][image-data-factory-table]
 
-In der **Tabelle** Blade über beide **kürzlich aktualisierte Segmente** und **Slices einer vor kurzem fehlschlug** Listen sortiert die **Zeit der letzten Aktualisierung**. Der Zeitpunkt des Updates eines Segments wird in den folgenden Situationen geändert.
+Auf dem Blatt **TABELLE** werden die Listen **Letzte aktualisierte Slices** und **Letzte fehlerhafte Slices** anhand der **UHRZEIT DER LETZTEN AKTUALISIERUNG** sortiert. Der Zeitpunkt der Aktualisierung eines Slices wird in den folgenden Situationen geändert.
 
--  Sie den Status eines Segments manuell aktualisieren, z. B. mit der **Set AzureDataFactorySliceStatus** (oder), indem Sie auf **Ausführen** auf der **SLICE** Blade für das Segment.
--  Das Segment ändert sich der Status aufgrund einer Ausführung (z. B. eine Ausführung gestartet, eine Ausführung beendet wurde und fehlgeschlagen ist, eine Ausführung beendet wurde und erfolgreich war, usw.).
+-  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set AzureDataFactorySliceStatus** oder durch Klicken auf **Ausführen** auf dem Blatt **SLICE** des Slices.
+-  Der Status des Slices ändert sich aufgrund einer Ausführung (z. B. Ausführung gestartet, Ausführung mit Fehler beendet, Ausführung erfolgreich beendet usw.).
  
 	
-Klicken Sie zum Anzeigen der Datenslices sortiert nach den Slice Start-/Endzeiten stattdessen **Datenslices (von Slice-Zeit)** Kachel.
+Zum Anzeigen der nach Start-/Endzeit sortierten Datenslices klicken Sie auf die Kachel **Datenslices (nach Slicezeit)**.
  
-![Datenslices Slice Zeit][DataSlicesBySliceTime]
+![Datenslices nach Slicezeit][DataSlicesBySliceTime]
 
-Klicken Sie auf den Titel der Listen oder **... (Ellipsen)** die Liste die größere Segmente anzeigen zu können.
+Klicken Sie auf den Titel der Listen oder auf **...** (Auslassungspunkte), um eine umfangreichere Liste mit Slices anzuzeigen.
 
-![Alle Segmente einer Tabelle][image-data-factory-all-slices]
+![Alle Slices einer Tabelle][image-data-factory-all-slices]
 
-Auf der **Datenslices** Blade, klicken Sie auf die **Filter** Schaltfläche finden Sie unter der **Filter** Blade, dessen kann **Filter** Segmente auf die Segmente, die Sie überprüfen möchten, finden Sie unter. Blades ähnlich der folgenden wird angezeigt, wenn Sie auf **Filter** auf der **Datenslices** Blade mit Slices **sortiert nach Aktualisierungszeitpunkt**.
+Klicken Sie auf dem Blatt **Datenslices** auf die Schaltfläche **Filter**, um das Blatt **Filter** anzuzeigen, auf dem Sie Datenslices **filtern** können, um die zu überprüfenden Datenslices anzuzeigen. Blätter wie das folgende werden angezeigt, wenn Sie auf dem Blatt **Datenslices** mit **nach Aktualisierungszeitpunkt sortierten** Slices auf **Filter** klicken.
 
-![Filter-Blade][image-data-factory-filter-blade]
+![Blatt "Filter"][image-data-factory-filter-blade]
 
-Die **Filter** Blade können Sie filtern auf der Grundlage **Zeitpunkt des letzten Updates** und **slice Status**. Die folgende Tabelle beschreibt alle Slice-Status und der zugehörigen Beschreibung.
+Das Blatt **Filter** ermöglicht Ihnen das Filtern auf Grundlage des **Zeitpunkts der letzten Aktualisierung** und des **Slicestatus**. In der folgende Tabelle finden Sie alle Slicestatus samt Beschreibung.
  
-Slice-status | Beschreibung
+Slicestatus | Beschreibung
 ------------ | ------------
 Ausstehende Ausführung | Die Datenverarbeitung wurde noch nicht gestartet.
 In Bearbeitung | Die Datenverarbeitung wird ausgeführt.
@@ -110,68 +110,68 @@ Fehler | Fehler bei der Ausführung, die den Slice erstellt.
 Wiederholen | Erneuter Versuch der Ausführung, die den Slice erstellt.
 Zeitüberschreitung | Zeitüberschreitung bei der Datenverarbeitung des Slices.
 Ausstehende Überprüfung | Der Datenslice wartet auf Überprüfung im Hinblick auf Überprüfungsrichtlinien, bevor es verarbeitet wird.
-RetryValidation | Wiederholen die Überprüfung des Segments.
+RetryValidation | Die Überprüfung des Slices wird wiederholt.
 FailedValidation | Fehler beim Überprüfen des Slices.
 Lange Wiederholung | Ein Slice weist diesen Status auf, wenn „Lange Wiederholung“ in der JSON-Tabelle angegeben wird und reguläre Wiederholungen für den Slice fehlgeschlagen sind.
 Überprüfung wird ausgeführt | Überprüfung des Slices (basierend auf den in der JSON-Tabelle definierten Richtlinien) wird ausgeführt.
 
-Beim Klicken auf **Filter** auf auf die **Datenslices** Blade mit Slices **sortiert nach der Zeit Slice**, sehen Sie eine andere Art von **Filter** Blade.
+Wenn Sie auf dem Blatt **Datenslices** mit **nach Slicezeit sortierten** Slices auf **Filter** klicken, wird ein anderer Typ des Blatts **Filter** angezeigt.
 
-![Filter-Blade 2][image-data-factory-filter-blade-2]
+![2. Blatt "Filter"][image-data-factory-filter-blade-2]
 
 
-Wenn Sie starten die **Filter** Blade, der **auf** Feld wird automatisch festgelegt, um den letzten Zeitpunkt (gerundet), um die Anzahl der zurückgegebenen Datensätze beschränken. Die **von** Feld wird ebenfalls automatisch festgelegt. Sie können ändern, die **aus** Datum, indem Sie auf die **Kalender** Schaltfläche. Die  Datum wird automatisch geändert, wenn Sie ändern die **von** Datum.
+Wenn Sie das Blatt **Filter** öffnen, wird für das Feld **Bis** automatisch (gerundet) der aktuellste Zeitpunkt festgelegt, um die Anzahl der zurückgegebenen Datensätze einzuschränken. Das Feld **Von** wird ebenfalls automatisch festgelegt. Sie können das Datum für **Von** ändern, indem Sie auf die Schaltfläche **Kalender** klicken. Das Datum für **Bis** wird automatisch geändert, wenn Sie das Datum für **Von** ändern.
 
-Klicken Sie auf **vorherige**/ ** weiter ** Schaltflächen anzeigen slices in der vorherigen Periode/nächsten Zeitraum. Der Zeitraum für **vorherige** und **Weiter** Schaltflächen festgelegt werden, auf die Slice-Häufigkeit und das Intervall, wie in der folgenden Tabelle dargestellt.
+Sie können auf die Schaltflächen **Zurück/Weiter** klicken, um Slices im vorherigen/nächsten Zeitraum anzuzeigen. Der Zeitraum für die Schaltflächen **Zurück** und **Weiter** wird auf Basis der Häufigkeit und des Intervalls für den Datenslice festgelegt, wie in der folgenden Tabelle gezeigt.
 
-Häufigkeit | Intervall Wertebereich | Resultierende Uhrzeit-Block
+Häufigkeit | Wertebereich des Intervalls | Resultierender Zeitraum
 ----------| -------------------- | --------------------
-Minute | 1 bis 4 | 6 Stunden
-Minute | 5 bis 29 | 1 Tag
-Minute | 30 – 180 | 7 Tage
-Minute | 180 + | 28 Tage (ungefähre. Kalendermonats)
-Stunde | 1 bis 3 | 7 Tage
-Stunde | 4-11 | 28 Tage (ungefähre. Kalendermonats)
-Stunde | 12 bis 72 | 182 Tage (ca.. 6 Monate
-Stunde | 73 + | 1 Jahr
-Tag | 1 bis 6 | 1 Jahr
-Tag | 7-20 | fünf Jahre
-Tag | 21 + | 10 Jahre
-Woche | 1 bis 3 | fünf Jahre
-Woche | 4 + | 10 Jahre
-Monat | alle | 10 Jahre
+Minute | 1-4 | 6 Stunden
+Minute | 5-29 | 1 Tag
+Minute | 30-180 | 7 Tage
+Minute | Über 180 | 28 Tage (ungefähr ein Kalendermonat)
+Stunde | 1-3 | 7 Tage
+Stunde | 4-11 | 28 Tage (ungefähr ein Kalendermonat)
+Stunde | 12-72 | 182 Tage (ungefähr 6 Monate
+Stunde | Über 73 | 1 Jahr
+Tag | 1-6 | 1 Jahr
+Tag | 7-20 | 5 Jahre
+Tag | Über 21 | 10 Jahre
+Woche | 1-3 | 5 Jahre
+Woche | Über 4 | 10 Jahre
+Monat | beliebig | 10 Jahre
  
-Angenommen, Sie definieren **Häufigkeit** als **Stunde** und **Intervall** von **2**, klicken Sie auf die **Weiter**/ ** zurück ** Schaltflächen Verschieben des Zeitbereichs **7 Tage** in beide Richtungen. Diese Logik gilt unabhängig davon für das Fenster "Filter", ob Sie alle Slices, die letzten Slices bzw. Problemslices anzeigen.
+Wenn Sie für **Häufigkeit** z. B. **Stunde** und für **Intervall** den Wert **2** festlegen, wird durch Klicken auf die Schaltflächen **Weiter/Zurück** der Zeitbereich um **7 Tage** in die jeweilige Richtung verschoben. Diese Logik gilt unabhängig davon für das Fenster "Filter", ob Sie alle Slices, die letzten Slices bzw. Problemslices anzeigen.
 
 
 
 
-## <a name="DataFactorySlice"></a> Anzeigen von Details zu einem slice
-Klicken Sie auf ein Segment in der Liste der Segmente entweder auf die **Tabelle** Blade oder **Datenslices** Blade über dieses Segment angezeigt.
+## <a name="DataFactorySlice"></a> Anzeigen von Details zu einem Slice
+Klicken Sie in der Sliceliste auf dem Blatt **TABELLE** oder auf dem Blatt **Datenslices** auf einen Slice, um Details dazu anzuzeigen.
 
-![Datenslices][image-data-factory-dataslice]
+![Datenslice][image-data-factory-dataslice]
 
-Wenn das Segment nicht in die **bereit** Status, sehen Sie die upstream Segmente, die nicht bereit sind, und blockieren das aktuelle Segment in Ausführen der **Upstream-Segmente, die nicht bereit sind** Liste.
+Wenn der Slice nicht den Status **Bereit** hat, sehen Sie die vorgelagerten Slices, die nicht bereit sind und das Ausführen des aktuellen Slices blockieren, in der Liste **Vorgelagerte Slices, die nicht bereit sind**.
 
-### <a name="DataFactoryActivtyRuns"></a> Ansicht für alle Aktivitäten für ein Segment ausgeführt wird.
-Für einen Slice kann es mehrere Ausführungen geben. Wenn bei einem Slice beispielsweise ein Fehler auftritt, kann der Dienst die Ausführung einige Male wiederholen. Sie können einen Slice, bei dem alle Wiederholungsversuche fehlgeschlagen sind, auch erneut ausführen. Sehen Sie alle die Aktivität ausgeführt wird, auf die ** Data Slice ** Blades in der Liste unten.
+### <a name="DataFactoryActivtyRuns"></a> Anzeigen aller Aktivitätsausführungen für einen Slice
+Für einen Slice kann es mehrere Ausführungen geben. Wenn bei einem Slice beispielsweise ein Fehler auftritt, kann der Dienst die Ausführung einige Male wiederholen. Sie können einen Slice, bei dem alle Wiederholungsversuche fehlgeschlagen sind, auch erneut ausführen. Auf dem Blatt **Datenslice** können Sie in der Liste unten alle Aktivitätsausführungen sehen.
 
-## <a name="DataFactoryActivtyRunDetails"></a> Anzeigen von Details zu einer Aktivität ausführen
-Klicken Sie auf eine Aktivität, führen Sie aus der Liste der ausgeführt wird, auf die **Datenslice** Blade Anzeigen von Details zur Aktivität ausführen.
+## <a name="DataFactoryActivtyRunDetails"></a> Anzeigen von Details zu einer Aktivitätsausführung
+Klicken Sie auf dem Blatt **Datenslice** in der Liste der Ausführungen auf eine Aktivitätsausführung, um Details zu der Aktivitätsausführung anzuzeigen.
 
-![Aktivität auszuführen, Details][image-data-factory-activity-run-details]
+![Aktivitätsauszuführung – Details][image-data-factory-activity-run-details]
 
-## <a name="EventsInThePastweek"></a> Vorgänge Linse - Ereignisse in der letzten Woche
-In der **DATA FACTORY** Blade (oder Startseite) für die Factory Daten klicken Sie auf **Ereignisse in der letzten Woche** in **Operations** objektiv die Ereignisse in der Vorwoche anzuzeigen. Dadurch erhalten einen allgemeinen Überblick über die Vorgänge, die von der Data Factory in der letzten Woche ausgeführt wurden. Außerdem können Sie so auch Fehler im Zusammenhang mit der Datenverarbeitung/-verschiebung beheben.
+## <a name="EventsInThePastweek"></a> Bereich "Vorgänge" – Ereignisse der letzten Woche
+Klicken Sie auf dem Blatt **DATA FACTORY** (oder auf der Startseite) der Data Factory im Fokus **Vorgänge** auf **Ereignisse der letzten Woche **, um die Ereignisse der letzten Woche anzuzeigen. Dadurch erhalten einen allgemeinen Überblick über die Vorgänge, die von der Data Factory in der letzten Woche ausgeführt wurden. Außerdem können Sie so auch Fehler im Zusammenhang mit der Datenverarbeitung/-verschiebung beheben.
 
-![Daten-Factory-Ereignisse][image-data-factory-events]
+![Data Factory-Editor][image-data-factory-events]
 
 
 ## Siehe auch
 
 Artikel | Beschreibung
 ------ | ---------------
-[Überwachen und Verwalten von Azure Data Factory mit PowerShell][monitor-manage-using-powershell] | Dieser Artikel beschreibt, wie ein Azure Data-Factory mit Azure-PowerShell-Cmdlets zu überwachen. 
+[Überwachen und Verwalten von Azure Data Factory mit Azure PowerShell][monitor-manage-using-powershell] | In diesem Artikel wird beschrieben, wie eine Azure Data Factory mithilfe von Azure PowerShell-Cmdlets überwacht wird. 
 
 
 [use-onpremises-datasources]: data-factory-use-onpremises-datasources.md
@@ -221,4 +221,4 @@ Artikel | Beschreibung
 [image-data-factory-events]: ./media/data-factory-monitor-manage-using-management-portal/Events.png
 [DataSlicesBySliceTime]: ./media/data-factory-monitor-manage-using-management-portal/DataSlicesBySliceTime.png
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

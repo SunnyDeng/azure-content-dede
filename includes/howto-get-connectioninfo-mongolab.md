@@ -4,15 +4,10 @@ Wenn Sie eine MongoLab-Datenbank bereitstellen, sendet MongoLab einen Verbindung
 
 Gehen Sie folgendermaßen vor, um diesen URI im Azure-Portal abzurufen:
 
-1. Klicken Sie auf **Add-Ons**.  
-![AddonsButton][button-addons]
-1. Suchen Sie in Ihrer Add-On-Liste nach Ihrem MongoLab-Dienst.  
-![MongolabEntry][entry-mongolabaddon]
+1. Klicken Sie auf **Add-Ons**. ![AddonsButton][button-addons]
+1. Suchen Sie in Ihrer Add-On-Liste nach Ihrem MongoLab-Dienst. ![MongolabEntry][entry-mongolabaddon]
 1. Klicken Sie auf den Namen Ihres Add-Ons, um auf die Add-On-Seite zu gelangen.
-1. Klicken Sie auf **Verbindungsinformationen**.  
-![ConnectionInfoButton][button-connectioninfo]  
-Ihr MongoLab-URI wird angezeigt:  
-![ConnectionInfoScreen][screen-connectioninfo]  
+1. Klicken Sie auf **Verbindungsinformationen**. ![ConnectionInfoButton][button-connectioninfo] Ihr MongoLab-URI wird angezeigt: ![ConnectionInfoScreen][screen-connectioninfo]  
 1.  Klicken Sie auf die Schaltfläche rechts neben dem Wert MONGOLAB_URI, um den vollständigen Wert in die Zwischenablage zu kopieren.
 
 [entry-mongolabaddon]: ./media/howto-get-connectioninfo-mongolab/entry-mongolabaddon.png
@@ -20,4 +15,4 @@ Ihr MongoLab-URI wird angezeigt:
 [screen-connectioninfo]: ./media/howto-get-connectioninfo-mongolab/dialog-mongolab_connectioninfo.png
 [button-addons]: ./media/howto-get-connectioninfo-mongolab/button-addons.png
 
-<!----HONumber=62-->
+<!---HONumber=62-->

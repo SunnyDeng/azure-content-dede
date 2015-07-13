@@ -60,4 +60,5 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
 [Management Portal]: https://manage.windowsazure.com/
-<!--HONumber=54-->
+
+<!---HONumber=62-->

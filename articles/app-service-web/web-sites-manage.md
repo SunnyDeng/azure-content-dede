@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwalten von Web-Apps mithilfe des Azure-Portals" 
+	pageTitle="Verwalten von Web-Apps über das Azure-Portal" 
 	description="Übersicht über die Web-App-Verwaltungsaufgaben in Microsoft Azure mithilfe des Azure-Portals." 
 	services="app-service\web" 
 	documentationCenter="" 
@@ -94,4 +94,4 @@ Um eine Warnungsregel hinzuzufügen, klicken Sie auf das Diagramm und dann auf *
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

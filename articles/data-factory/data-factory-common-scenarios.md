@@ -72,4 +72,8 @@ Informationen zur Nutzung von Daten mithilfe von Power Query finden Sie in den f
 
 [image-data-factory-introduction-secenario2-operationalize-infoproduction]: ./media/data-factory-common-scenarios/Scenario2-OperationalizeInformationProduction.png
 
-<!---HONumber=GIT-SubDir--> 
+
+
+ 
+
+<!---HONumber=62-->

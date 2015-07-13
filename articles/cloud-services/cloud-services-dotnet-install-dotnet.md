@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Installieren von .NET auf einer Cloud-Dienst-Rolle"
-   description="Dieser Artikel beschreibt die manuelle Installation eines .NET Frameworks auf Cloud-Dienst-Web- und Workerrollen."
+   pageTitle="Installieren von .NET in einer Clouddienstrolle"
+   description="Dieser Artikel beschreibt die manuelle Installation eines .NET Frameworks in Clouddienstweb- und Workerrollen."
    services="cloud-services"
    documentationCenter=".net"
    authors="sbtron"
@@ -16,21 +16,21 @@
    ms.date="04/23/2015"
    ms.author="saurabh"/>
 
-# Installieren von .NET auf einer Cloud-Dienst-Rolle 
+# Installieren von .NET in einer Clouddienstrolle 
 
-Dieser Artikel beschreibt die Installation eines .NET Frameworks auf Cloud-Dienst-Web- und Workerrollen. Mit diesen Schritten können Sie eine Version von .NET Framework installieren, die auf dem  Azure Gast-BS nicht standardmäßig vorhanden ist. Neueste Informationen zu Gast-BS-Versionen finden Sie unter [Azure Gast-BS-Versionen und SDK-Kompatibilitätsmatrix](cloud-services-guestos-update-matrix.md).
+Dieser Artikel beschreibt die Installation eines .NET Frameworks auf Clouddienst-Web- und Workerrollen. Mit diesen Schritte können Sie .NET Framework 4.5.2 auf der Azure-Gastbetriebssystemfamilie 4 installieren. Neueste Informationen zu Gast-BS-Versionen finden Sie unter [Azure Gast-BS-Versionen und SDK-Kompatibilitätsmatrix](cloud-services-guestos-update-matrix.md).
 
-Die Installation von .NET auf ihren Web- und Workerrollen schließt die Erfassung des .NET Installationspakets als Teil Ihres Cloud-Projekts und außerdem das Starten des Installationsprogramms als Teil der Startaufgaben der Rolle ein.
+Die Installation von .NET auf ihren Web- und Workerrollen schließt die Erfassung des .NET Installationspakets als Teil Ihres Cloudprojekts und außerdem das Starten des Installationsprogramms als Teil der Startaufgaben der Rolle ein.
 
 ## Das Installationsprogramm für .NET zu Ihrem Projekt hinzufügen
 1. Laden Sie den [.NET 4.5.2 Webinstaller](http://www.microsoft.com/de-de/download/details.aspx?id=42643) herunter.
 2. Für eine Webrolle
-  1. Klicken Sie im **Projektmappen-Explorer** unter **Rollen** im Cloud-Dienst-Projekt mit der rechten Maustaste auf Ihre Rolle und wählen Sie  **Hinzufügen > Neuer Ordner** aus. Erstellen Sie einen Ordner mit dem Namen  *bin*.
-  2. Klicken Sie mit der rechten Maustaste auf den Ordner **bin** und wählen Sie **Hinzufügen > Vorhandenes Element** aus. Wählen Sie das Installationsprogramm für .NET aus und fügen Sie es dem Ordner „Bin“ hinzu.
+  1. Klicken Sie im **Projektmappen-Explorer** unter **Rollen** im Clouddienstprojekt mit der rechten Maustaste auf Ihre Rolle, und wählen Sie **Hinzufügen > Neuer Ordner** aus. Erstellen Sie einen Ordner mit dem Namen *bin*.
+  2. Klicken Sie mit der rechten Maustaste auf den Ordner **bin**, und wählen Sie **Hinzufügen > Vorhandenes Element** aus. Wählen Sie das Installationsprogramm für .NET aus und fügen Sie es dem Ordner "Bin" hinzu.
 3. Für eine Workerrolle
-  1. Klicken Sie mit der rechten Maustaste auf Ihre Rolle und wählen Sie **Hinzufügen > Vorhandenes Element** aus. Wählen Sie das Installationsprogramm für .NET aus und fügen Sie zur Rolle hinzu. 
+  1. Klicken Sie mit der rechten Maustaste auf Ihre Rolle, und wählen Sie **Hinzufügen > Vorhandenes Element** aus. Wählen Sie das Installationsprogramm für .NET aus und fügen Sie zur Rolle hinzu. 
 
-Dateien, die auf diese Weise dem Inhaltsordner „Rolle“ hinzugefügt werden, werden automatisch dem Cloud-Dienstpaket hinzugefügt und an einem einheitlichen Ort auf dem virtuellen Computer bereitgestellt. Wiederholen Sie diesen Vorgang für alle Web- und Workerrollen in Ihrem Cloud-Dienst, sodass alle Rollen über eine Kopie des Installationsprogramms verfügen.
+Dateien, die auf diese Weise dem Inhaltsordner "Rolle" hinzugefügt werden, werden automatisch dem Clouddienstpaket hinzugefügt und an einem einheitlichen Ort auf dem virtuellen Computer bereitgestellt. Wiederholen Sie diesen Vorgang für alle Web- und Workerrollen in Ihrem Clouddienst, sodass alle Rollen über eine Kopie des Installationsprogramms verfügen.
 
 ![Inhalte der Rolle mit Installer-Dateien][1]
 
@@ -76,14 +76,14 @@ Mit Startaufgaben können Sie Vorgänge ausführen, bevor eine Rolle gestartet w
 
 	Das Installationsskript überprüft, ob .NET 4.5.2 bereits auf dem Computer installiert ist, indem die Registrierungsdatenbank abgefragt wird. Wenn .NET 4.5.2 nicht installiert ist, wird der .NET Webinstaller gestartet. Zur Unterstützung bei der Problembehandlung protokolliert das Skript alle Aktivitäten in einer Datei mit dem Namen *startuptasklog-(currentdatetime).txt*, die unter *InstallLogs* im lokalen Speicher abgelegt ist.
 
-	> [AZURE.NOTE]Verwenden Sie einen einfachen Texteditor wie Notepad, um diese Datei zu erstellen. Wenn Sie Visual Studio verwenden, um eine Textdatei erstellen und diese dann in  „.cmd“ umbenennen, enthält die Datei möglicherweise weiterhin eine UTF-8-Bytereihenfolge-Markierung und das Ausführen der ersten Zeile des Skripts führt zu einem Fehler. Verwenden Sie Visual Studio, um die Datei zu erstellen, fügen Sie eine REM (Anmerkung) zur ersten Zeile der Datei hinzu, damit diese bei der Ausführung ignoriert wird.
+	> [AZURE.NOTE]Verwenden Sie einen einfachen Texteditor wie Notepad, um diese Datei zu erstellen. Wenn Sie Visual Studio verwenden, um eine Textdatei erstellen und diese dann in ".cmd" umbenennen, enthält die Datei möglicherweise weiterhin eine UTF-8-Bytereihenfolge-Markierung und das Ausführen der ersten Zeile des Skripts führt zu einem Fehler. Verwenden Sie Visual Studio, um die Datei zu erstellen, fügen Sie eine REM (Anmerkung) zur ersten Zeile der Datei hinzu, damit diese bei der Ausführung ignoriert wird.
       
-3. Fügen Sie die Datei „install.cmd“ allen Rollen hinzu, indem Sie einen Rechtsklick auf die Rolle machen und **Hinzufügen > Vorhandenes Element...** auswählen. Nun sollten alle Rollen über die .NET Installerdateien sowie die Datei install.cmd verfügen.
+3. Fügen Sie die Datei "install.cmd" allen Rollen hinzu, indem Sie einen Rechtsklick auf die Rolle machen und **Hinzufügen > Vorhandenes Element...** auswählen. Nun sollten alle Rollen über die .NET Installerdateien sowie die Datei install.cmd verfügen.
 	
 	![Inhalte der Rolle mit allen Dateien][2]
 
-## Konfigurieren der Diagnose zur Übertragung der Startaufgaben-Protokolle in den Blob-Speicher (optional)
-Optional können Sie die Azure-Diagnose so konfigurieren, dass alle Protokolldateien, die durch das Startskript oder das Installationsprogramm für .NET erstellt wurden, in den Blob-Speicher übertragen werden. Bei diesem Ansatz können Sie die Protokolle anzeigen, indem Sie einfach die Protokolldateien aus dem Blob-Speicher herunterladen, anstatt sich über Remote Desktop mit der Rolle anzumelden.
+## Konfigurieren der Diagnose zur Übertragung der Startaufgaben-Protokolle in den Blobspeicher (optional)
+Optional können Sie die Azure-Diagnose so konfigurieren, dass alle Protokolldateien, die durch das Startskript oder das Installationsprogramm für .NET erstellt wurden, in den Blobspeicher übertragen werden. Bei diesem Ansatz können Sie die Protokolle anzeigen, indem Sie einfach die Protokolldateien aus dem Blobspeicher herunterladen, anstatt sich per Remotedesktop mit der Rolle anzumelden.
 
 Öffnen Sie zur Konfiguration der Diagnose *diagnostics.wadcfgx* und fügen Sie Folgendes unter dem *<Directories>* Knoten hinzu:
 
@@ -95,7 +95,7 @@ Optional können Sie die Azure-Diagnose so konfigurieren, dass alle Protokolldat
 </DataSources>
 ```
 
-Dadurch wird Azure-Diagnose zur Übertragung aller Dateien der Ressource *InstallLogs* in das Diagnose-Speicherkonto im *netfx-install* Blob-Container konfiguriert.
+Dadurch wird Azure-Diagnose zur Übertragung aller Dateien der Ressource *InstallLogs* in das Diagnose-Speicherkonto im *netfx-install*-Blobcontainer konfiguriert.
 
 ## Ihren Dienst bereitstellen 
 Wenn Sie Ihren Dienst bereitstellen, wird die Startaufgabe ausgeführt und das .NET Framework installiert, sofern es nicht bereits installiert ist. Ihre Rollen befinden sich im Status "Beschäftigt", während das Framework installiert wird und werden möglicherweise sogar neu gestartet, wenn die Framework-Installation dies erforderlich macht.
@@ -115,6 +115,6 @@ Wenn Sie Ihren Dienst bereitstellen, wird die Startaufgabe ausgeführt und das .
 [1]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithinstallerfiles.png
 [2]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithallfiles.png
 
-
-<!--HONumber=52-->
  
+
+<!---HONumber=62-->

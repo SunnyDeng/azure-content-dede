@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden des E-Mail-Diensts SendGrid (.NET) – Azure" 
+	pageTitle="Gewusst wie: Verwenden des E-Mail-Diensts SendGrid (.NET) – Azure" 
 	description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure senden. Die Codebeispiele wurden in C# geschrieben und verwenden die .NET-API." 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -196,7 +196,7 @@ Die folgenden Beispiele veranschaulichen die Filter für die Fußzeile und die K
     myMessage.AddTo("anna@example.com");
     myMessage.From = new MailAddress("john@example.com", "John Smith");
     myMessage.Subject = "Testing the SendGrid Library";
-    myMessage.Html = "<p><a href=\"http://www.example.com\">Hello World Link!</a></p>";
+    myMessage.Html = "<p><a href="http://www.example.com">Hello World Link!</a></p>";
     myMessage.Text = "Hello World!";
     
     // true indicates that links in plain text portions of the email 
@@ -240,4 +240,4 @@ Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, f
   [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

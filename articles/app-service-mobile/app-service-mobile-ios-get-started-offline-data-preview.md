@@ -212,9 +212,9 @@ In diesem Abschnitt werden Sie im Simulator Wi-Fi deaktivieren, um ein Offlinesz
 
 Um die Offlinesynchronisierungsfunktion zu unterstützen, wurde die Schnittstelle `MSSyncTable` verwendet und `MSClient.syncContext` mit einem lokalen Speicher initialisiert. In diesem Fall war der lokale Speicher eine auf Core-Daten basierende Datenbank.
 
-Wenn Sie einen lokalen Core-Datenspeicher verwenden, müssen Sie mehrere Tabellen mit [korrekten Systemeigenschaften][Review the Core Data model] definieren.
+Wenn Sie einen lokalen Core-Datenspeicher verwenden, müssen Sie mehrere Tabellen mit [korrekten Systemeigenschaften definieren][Überprüfen des Core-Datenmodells].
 
-Die normalen CRUD-Operationen für Mobile Apps funktionieren so, als ob die App immer noch verbunden wäre. Alle Operationen werden jedoch nur im lokalen Speicher ausgeführt.
+Die normalen CRUD-Vorgänge für mobile Apps funktionieren so, als ob die App immer noch verbunden wäre. Alle Vorgänge werden jedoch nur im lokalen Speicher ausgeführt.
 
 Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden `MSSyncTable.pullWithQuery` und `MSClient.syncContext.pushWithCompletion` verwendet.
 
@@ -275,7 +275,7 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [Soft Delete]: ../mobile-services-using-soft-delete.md
 
 [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
-[Azure Friday: Offlinefähige Apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
+[Azure Friday: Offlinefähige Apps in Azure Mobile Services]: http://azure.microsoft.com/de-de/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

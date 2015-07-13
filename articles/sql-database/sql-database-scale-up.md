@@ -31,6 +31,8 @@ Beachten Sie beim Wechseln zwischen Dienstebenen Folgendes: – Stellen Sie vor 
 
 - Für ein Downgrade einer Datenbank sollte die Datenbank kleiner als die in der Zieldienstebene maximal zulässige Größe sein. Weitere Informationen zu den zulässigen Größe für jede Dienstebene finden Sie in der Tabelle mit den Dienstebenen und Datenbankgrößen weiter unten in diesem Abschnitt.
 
+- Beim Aktualisieren einer Datenbank, für die die Option für [standardmäßige Georeplikation](https://msdn.microsoft.com/library/azure/dn758204.aspx) oder [aktive Georeplikation](https://msdn.microsoft.com/library/azure/dn741339.aspx) aktiviert ist, müssen Sie vor der Aktualisierung der primären Datenbank zunächst die zugehörigen sekundären Datenbanken auf die gewünschte Leistungsstufe aktualisieren.
+
 - Beim Downgrade von einer Premium-Dienstebene müssen Sie zuerst alle geografischen Replikationsbeziehungen beenden. Sie können die im Thema [Beenden einer fortlaufenden Kopierbeziehung](https://msdn.microsoft.com/library/azure/dn741323.aspx) beschriebenen Schritte verwenden, um den Replikationsprozess zwischen der primären und aktiven sekundären Datenbank zu beenden.
 
 - Die Angebote des Wiederherstellungsdienstes variieren für die verschiedenen Dienstebenen. Wenn Sie ein Downgrade durchführen, verlieren Sie eventuell die Möglichkeit einer Zeitpunktwiederherstellung, oder der Aufbewahrungszeitraum für Sicherungen verkürzt sich. Weitere Informationen finden Sie unter [Sichern und Wiederherstellen der Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/jj650016.aspx).
@@ -225,5 +227,6 @@ Erstellen Sie den Serverkontext mithilfe von**New-AzureSqlDatabaseServerContext*
 [New-AzureSqlDatabase](http://go.microsoft.com/fwlink/?LinkId=391027)
 
 [Set-AzureSqlDatabase](http://go.microsoft.com/fwlink/?LinkId=391412)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

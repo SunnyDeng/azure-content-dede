@@ -1,37 +1,25 @@
 ## <a name="what-is"></a>Was ist Mobile Services
 
-Mobile Services ist ein Dienstangebot von Azure, um die Erstellung hochfunktioneller mobiler Apps mit Azure zu vereinfachen. Mobile Services vereint verschiedene Azure-Dienste, die Backendfunktionen für Ihre Apps unterstützen. Mobile Services stellen die folgenden Funktionen zur Unterstützung Ihrer Apps bereit:
+Azure Mobile Services ist eine hochgradig skalierbare mobile Anwendungsentwicklungsplattform, mit der Sie Ihren mobilen Anwendungen mithilfe von Azure erweiterte Funktionalität hinzufügen können.
 
-+ Einfache Bereitstellung und Verwaltung von Tabellen zum Speichern von App-Daten 
-+ Integration mit Benachrichtigungsdiensten zum Übermitteln von Pushbenachrichtigungen an Ihre App
-+ Integration mit bekannten Identitätsanbietern für Authentifizierungszwecke
-+ Präzise Steuerung zur Autorisierung des Tabellenzugriffs
-+ Benutzerdefinierte Geschäftslogik auf dem Server
-+ Integration mit anderen Clouddiensten
-+ Unterstützt die Skalierung einer mobilen Dienstinstanz
-+ Dienstüberwachung und -protokollierung
+Mit Mobile Services haben Sie folgende Möglichkeiten:
 
-Mobile Services stellt eine Clientbibliothek für jede unterstützte Plattform bereit, was die Entwicklung von Apps auf einer Plattform, die Mobile Services nutzt, vereinfacht.
++ **Systemeigene und plattformübergreifende Apps erstellen**: Verbinden Sie Ihre iOS-, Android-, Windows- oder plattformübergreifenden Xamarin- oder Cordova-Apps (Phonegap) mithilfe der systemeigenen SDKs mit dem mobilen Back-End-Dienst.  
++ **Push-Benachrichtigungen an Ihre Benutzer senden:** Senden Sie Push-Benachrichtigungen an die Benutzer Ihrer App.
++ **Benutzer authentifizieren:** Nutzen Sie beliebte Identitätsanbieter wie Facebook und Twitter, um Ihre App-Benutzer zu authentifizieren.
++ **Daten in der Cloud speichern:** Speichern Sie Benutzerdaten in einer SQL-Datenbank (Standard) oder in Mongo DB, DocumentDB, Azure-Tabellen oder Azure-Blobs. 
++ **Offline-Ready-Anwendungen mit Synchronisierung erstellen:** Machen Sie Ihre Apps im Offlinemodus verfügbar, und verwenden Sie Mobile Services, um Daten im Hintergrund zu synchronisieren.
++ **Apps überwachen und skalieren:** Überwachen Sie die App-Verwendung, und skalieren Sie Ihr Back-End bei wachsendem Bedarf. 
 
-## <a name="concepts"> </a>Konzepte
+## <a name="concepts"> </a>Mobile Services-Konzepte
 
 Mobile Services umfasst folgende wichtige Funktionen und basiert auf den folgenden Konzepten:
 
-<!--![1][1]-->
-
-+ **.NET backend:** Diese Art des mobilen Dienstes wird als ASP.NET Web API-Projekt implementiert. Backend-Code wird als WebAPI-Controller implementiert.
-+ **Anwendungsschlüssel:** Ein eindeutiger Wert, der von Mobile Services generiert, mit Ihrer App verteilt und in vom Client generierten Anforderungen präsentiert wird. Der Schlüssel ist zwar sehr nützlich, um den Zugriff auf Ihren mobilen Dienst von beliebigen Clients aus einzuschränken, er ist allerdings nicht sicher und sollte daher nicht verwendet werden, um die Benutzer Ihrer App zu authentifizieren.    
-+ **Authentifizierungstoken:** Das Zugriffstoken, das von Mobile Services generiert wird, nachdem ein Benutzer authentifiziert wurde.
-+ **Identitätsanbieter:** Externer Dienst, z. B. Facebook, Twitter, Google, ein Microsoft-Konto oder Azure Active Directory, der verwendet wird, um Benutzer Ihres mobilen Diensts zu authentifizieren.
-+ **JavaScript-Back-End:** Diese Art des mobilen Dienstes wird als node.js implementiert. Backend-Code wird in JavaScript geschrieben.
-+ **Berechtigung:** Die minimale Authentifizierungsebene, die zum Aufrufen eines Tabellenvorgangs oder einer benutzerdefinierten API erforderlich ist.  
++ **Anwendungsschlüssel:** ein eindeutiger Wert, der zum Einschränken des Zugriffs von zufälligen Clients auf den mobilen Dienst verwendet wird. Dieser "Schlüssel" ist kein Sicherheitstoken und wird nicht zum Authentifizieren von Benutzern der Anwendung verwendet.    
++ **Back-End:** die Instanz des mobilen Diensts, die Ihre App unterstützt. Ein mobiler Dienst wird entweder als ASP.NET-Web-API-Projekt (*.NET-Back-End*) oder als Node.js-Projekt (*JavaScript-Back-End*) implementiert.
++ **Identitätsanbieter:** ein externer Dienst mit Mobile Services-Vertrauensstellung, der Ihre App-Benutzer authentifiziert. Folgende Anbieter werden unterstützt: Facebook, Twitter, Google, Microsoft-Konto und Azure Active Directory. 
 + **Pushbenachrichtigung:** Vom Dienst initiierte Nachricht, die über Azure Notification Hubs an ein registriertes Gerät oder einen registrierten Benutzer gesendet wird.
 + **Skalierung:** Die Möglichkeit, gegen eine Zusatzgebühr mehr Rechenleistung, Performance und Speicher hinzuzukaufen, wenn Ihre App am Popularität gewinnt.
 + **Geplanter Auftrag:** Benutzerdefinierter Code, der anhand eines vorab geplanten Termins oder auf Anforderung ausgeführt wird.
-+ **Serverskript:** Benutzerdefinierter Code mit Geschäftslogik in einem mobilen Dienst mit JavaScript-Back-End. Dieser Code wird für einen Tabellenvorgang (Lesen, Einfügen, Aktualisieren, Löschen) oder einen geplanten Auftrag registriert.
-+ **Tabelle:** Benutzerdaten werden in Tabellen in einer SQL-Datenbank gespeichert. Sie können diese Tabellen im Verwaltungsportal erstellen.
 
-
-<!-- Images. -->
-
-<!--HONumber=54-->
+<!---HONumber=62-->

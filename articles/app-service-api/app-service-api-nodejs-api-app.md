@@ -4,8 +4,8 @@
 	services="app-service\api"
 	documentationCenter="nodejs"
 	authors="pkefal"
-	manager=""
-	editor=""/>
+  manager="" 
+  editor=""/>
 
 <tags
 	ms.service="app-service-api"
@@ -62,13 +62,13 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 [Git](http://git-scm.com/%20target="_blank) ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure-Website bereitstellen können. Sie speichern den Code, den Sie für Ihre API-App geschrieben haben, in einem lokalen Git-Repository. Anschließend stellen Sie Ihren Code in Azure bereit, indem Sie einen Pushvorgang zu einem Remoterepository durchführen. Diese Methode der Bereitstellung ist eine Funktion von App Service-Web-Apps, die Sie in einer API-App nutzen können, da API-Apps auf Web-Apps basieren: Eine API-App in Azure App Service ist eine Web-App mit zusätzlichen Funktionen für das Hosten von Webdiensten.
 
-Im Portal verwalten Sie die API-App-spezifischen Funktionen auf dem Blatt **API-App**. Die Funktionen, die eine API-App mit einer Web-App gemeinsam hat, werden auf dem Blatt **API-App-Host** verwaltet. Sie wechseln daher in diesem Abschnitt zum Blatt **API-App-Host**, um die Git-Bereitstellungsfunktion zu konfigurieren.
+Im Portal verwalten Sie die API-App-spezifischen Funktionen im Blatt **API-App**. Die Funktionen, die eine API-App mit einer Web-App gemeinsam hat, werden im Blatt **API-App-Host** verwaltet. Sie wechseln daher in diesem Abschnitt zum Blatt **API-App-Host**, um die Git-Bereitstellungsfunktion zu konfigurieren.
 
-1. Klicken Sie auf dem Blatt für die API-App auf **API-App-Host**.
+1. Klicken Sie im Blatt für die API-App auf **API-App-Host**.
 
 	![][api-app-host]
 
-2. Suchen Sie auf dem Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf ** Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
+2. Suchen Sie im Blatt **API-App** nach dem Abschnitt **Bereitstellung**, und klicken Sie auf ** Kontinuierliche Bereitstellung einrichten**. Sie müssen möglicherweise einen Bildlauf nach unten durchführen, um diesen Teil des Blatts anzuzeigen.
 
 	![][deployment-part]
 
@@ -88,7 +88,7 @@ Im Portal verwalten Sie die API-App-spezifischen Funktionen auf dem Blatt **API-
 
 	![][deployment-credentials]
 
-1. Klicken Sie auf dem Blatt **API-App-Host** auf **Einstellungen > Eigenschaften**. Die URL des Git-Remoterepositorys, in dem Sie die Bereitstellung durchführen möchten, wird unter "GIT-URL" angezeigt.
+1. Klicken Sie im Blatt **API-App-Host** auf **Einstellungen > Eigenschaften**. Die URL des Git-Remoterepositorys, in dem Sie die Bereitstellung durchführen möchten, wird unter "GIT-URL" angezeigt.
 
 2. Kopieren Sie die URL zur späteren Verwendung im Lernprogramm.
 
@@ -202,11 +202,11 @@ Nun, da Sie eine API in Ihrer API-App bereitgestellt haben, können Sie die API-
 
 	![](./media/app-service-api-nodejs-api-app/clickgateway.png)
 
-7. Klicken Sie auf dem Blatt **Gateway** auf **Neu starten**. Sie können dieses Blatt nun schließen.
+7. Klicken Sie im Blatt **Gateway** auf **Neu starten**. Sie können dieses Blatt nun schließen.
 
 	![](./media/app-service-api-nodejs-api-app/gatewayrestart.png)
 
-8. Klicken Sie auf dem Blatt **API-App** auf **API-Definition**.
+8. Klicken Sie im Blatt **API-App** auf **API-Definition**.
 
 	![](./media/app-service-api-nodejs-api-app/apidef.png)
 

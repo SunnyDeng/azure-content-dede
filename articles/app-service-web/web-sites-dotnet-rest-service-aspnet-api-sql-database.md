@@ -66,19 +66,19 @@ Wenn Sie sich noch nicht in Azure angemeldet haben, werden Sie dazu aufgefordert
 1. Der Konfigurationsassistent einen eindeutigen Namen schlägt basierend auf *ContactManager* vor (siehe Bild unten). Wählen Sie eine Region in Ihrer Nähe. Über [azurespeed.com](http://www.azurespeed.com/ "AzureSpeed.com") können Sie das Rechenzentrum mit der niedrigsten Latenz suchen. 
 2. Wenn Sie zuvor noch keinen Datenbankserver erstellt haben, wählen Sie **Neuen Server erstellen** aus, und geben Sie einen Namen und ein Kennwort für den Datenbankbenutzer ein.
 
-	![Konfigurieren der Azure-Website](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configAz.PNG)
+	![Konfigurieren von Azure Websites](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configAz.PNG)
 
 Wenn Sie über einen Datenbankserver verfügen, verwenden Sie diesen, um eine neue Datenbank zu erstellen. Datenbankserver sind wertvolle Ressourcen, und Sie möchten in der Regel zwecks Test und Entwicklung mehrere Datenbanken auf demselben Server erstellen, anstatt einen Datenbankserver pro Datenbank zu erstellen. Vergewissern Sie sich, dass sich Website und Datenbank in derselben Region befinden.
 
-![Konfigurieren der Azure-Website](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configWithDB.PNG)
+![Konfigurieren von Azure Websites](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configWithDB.PNG)
 
 ### Einrichten der Seitenkopf- und -fußzeile
 
 
-1. Erweitern Sie im **Projektmappen-Explorer** den Ordner *Views\\Shared*, und öffnen Sie die Datei *_Layout.cshtml*. .
+1. Erweitern Sie im **Projektmappen-Explorer** den Ordner *Views\Shared*, und öffnen Sie die Datei *_Layout.cshtml*. .
 	![_Layout.cshtml im Projektmappen-Explorer][newapp004]
 
-1. Ersetzen Sie den Inhalt der Datei *Views\\Shared_Layout.cshtml* durch den folgenden Code.
+1. Ersetzen Sie den Inhalt der Datei *Views\Shared_Layout.cshtml* durch den folgenden Code.
 
 
 		<!DOCTYPE html>
@@ -197,11 +197,11 @@ Mit dem ASP.NET MVC-Gerüstfeature kann automatisch Code generiert werden, der E
 
 3. Erstellen Sie das Projekt **(STRG+UMSCHALT+B)**. (Sie müssen das Projekt vor der Verwendung des Gerüstmechanismus erstellen.)
 
-4. Klicken Sie mit der rechten Maustaste auf den Ordner "Controllers" und klicken Sie anschließend auf **Hinzufügen** und **Controller**.
+4. Klicken Sie mit der rechten Maustaste auf den Ordner "Controllers", und klicken Sie anschließend auf **Hinzufügen** und **Controller**.
 
 	![Controller hinzufügen im Kontextmenü des Ordners "Controllers"][addcode001]
 
-1. Wählen Sie im Dialogfeld **Add Scaffold** die Option **MVC Controller with views, using Entity Framework** aus, und klicken Sie dann auf **Hinzufügen**.
+1. Wählen Sie im Dialogfeld **Gerüst hinzufügen** die Option **MVC-Controller mit Ansichten mithilfe von Entity Framework** aus, und klicken Sie dann auf **Hinzufügen**.
 
  ![Controller hinzufügen](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rrAC.PNG)
 
@@ -235,7 +235,7 @@ Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen](http://
 
 	In der **Initial**-Klasse wird mit der **Up**-Methode die Tabelle **Contacts** erstellt und mit der Down-Methode (wird verwendet, wenn Sie zum vorherigen Status zurückkehren möchten) wieder verworfen.
 
-3. Öffnen Sie die Datei *Migrations\\Configuration.cs*.
+3. Öffnen Sie die Datei *Migrations\Configuration.cs*.
 
 4. Fügen Sie die folgenden Namespaces hinzu.
 
@@ -318,7 +318,7 @@ In der Anwendung werden die Seeddaten angezeigt und Links zum Bearbeiten und Lö
 
 <h2><a name="bkmk_addview"></a>Bearbeiten der Anzeige</h2>
 
-1. Öffnen Sie die Datei *Views\\Home\\Index.cshtml*. Im nächsten Schritt ersetzen wir das generierte Markup mit Code, der [jQuery](http://jquery.com/) und [Knockout.js](http://knockoutjs.com/) verwendet. Dieser neue Code ruft die Liste der Kontakte mithilfe von Web API und JSON ab und bindet die Kontaktdaten mithilfe von knockout.js an das UI. Weitere Informationen finden Sie unter [Nächste Schritte](#nextsteps) am Ende dieses Lernprogramms. 
+1. Öffnen Sie die Datei *Views\Home\Index.cshtml*. Im nächsten Schritt ersetzen wir das generierte Markup mit Code, der [jQuery](http://jquery.com/) und [Knockout.js](http://knockoutjs.com/) verwendet. Dieser neue Code ruft die Liste der Kontakte mithilfe von Web API und JSON ab und bindet die Kontaktdaten mithilfe von knockout.js an das UI. Weitere Informationen finden Sie unter [Nächste Schritte](#nextsteps) am Ende dieses Lernprogramms. 
 
 
 2. Ersetzen Sie den Inhalt der Datei durch den folgenden Code.
@@ -411,11 +411,11 @@ In der Anwendung werden die Seeddaten angezeigt und Links zum Bearbeiten und Lö
 		    </fieldset>
 		</form>
 
-3. Klicken Sie mit der rechten Maustaste auf den Ordner "Content" und klicken Sie anschließend auf **Hinzufügen** und **Neues Element**.
+3. Klicken Sie mit der rechten Maustaste auf den Ordner "Content", und klicken Sie anschließend auf **Hinzufügen** und **Neues Element**.
 
 	![Hinzufügen eines Stylesheets im Ordner "Content" im Kontextmenü][addcode005]
 
-4. Geben Sie im Dialogfeld **Neues Element hinzufügen** im Suchfeld oben rechts  **Style** ein, und wählen Sie anschließend **Stylesheet** aus. ![Dialogfeld "Neues Element hinzufügen"][rxStyle]
+4. Geben Sie im Dialogfeld **Neues Element hinzufügen** im Suchfeld oben rechts **Style** ein, und wählen Sie anschließend **Stylesheet** aus. ![Dialogfeld "Neues Element hinzufügen"][rxStyle]
 
 5. Nennen Sie die Datei *Contacts.css* und klicken Sie auf **Hinzufügen**. Ersetzen Sie den Inhalt der Datei durch den folgenden Code.
     
@@ -475,7 +475,7 @@ In der Anwendung werden die Seeddaten angezeigt und Links zum Bearbeiten und Lö
 
 	Wir verwenden dieses Stylesheet für das Layout, die Farben und die Stile, die in der App "Content Manager" verwendet werden.
 
-6. Öffnen Sie die Datei *App_Start\\BundleConfig.cs*.
+6. Öffnen Sie die Datei *App_Start\BundleConfig.cs*.
 
 
 7. Fügen Sie den folgenden Code hinzu, um das [Knockout](http://knockoutjs.com/index.html "KO")-Plugin zu registrieren.
@@ -548,9 +548,9 @@ Bei der websiteübergreifenden Anforderungsfälschung (auch bekannt als XSRF ode
 
 Ein XSRF-Angriff unterscheidet sich von einem Phishing-Angriff. Bei Phishing-Angriffen ist die Beihilfe des Opfers erforderlich. Bei Phishing-Angriffen wird die Zielwebsite durch eine schädliche Website imitiert und dazu gebracht, geheime Daten an den Angreifer zu übermitteln. Bei einem XSRF-Angriff ist häufig keinerlei Aktion des Opfers erforderlich. Der Angreifer geht davon aus, dass der Browser automatisch alle relevanten Cookies an die Zielwebsite sendet.
 
-Weitere Informationen finden Sie unter [Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page) (OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
+Weitere Informationen finden Sie unter [Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page) (OWASP) XSRF(https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
 
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Contact Manager**, und klicken Sie dann auf **Hinzufügen** > **Klasse**.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **ContactManager**, und klicken Sie dann auf **Hinzufügen** > **Klasse**.
 
 2. Geben Sie der Datei den Namen *ValidateHttpAntiForgeryTokenAttribute.cs*, und fügen Sie den folgenden Code hinzu:
 
@@ -622,7 +622,7 @@ Weitere Informationen finden Sie unter [Open Web Application Security Project](h
             }
         }
 
-1. Fügen Sie die folgende *using*-Anweisung zum "Contracts Controller" hinzu, damit Sie Zugriff auf das Attribut **[ValidateHttpAntiForgeryToken]** haben.
+1. Fügen Sie den folgenden *Benutzervermerk* zum "Contracts Controller" hinzu, damit Sie Zugriff auf **[ValidateHttpAntiForgeryToken]** haben.
 
 	using ContactManager.Filters;
 
@@ -630,7 +630,7 @@ Weitere Informationen finden Sie unter [Open Web Application Security Project](h
 
 	[ValidateHttpAntiForgeryToken] public IHttpActionResult PutContact(int id, Contact contact) {
 
-1. Aktualisieren Sie den Abschnitt *Skripts* der Datei *Views\\Home\\Index.cshtml*, um Code für die XSRF-Tokens zu erhalten.
+1. Aktualisieren Sie den Abschnitt *Skripts* der Datei *Views\Home\Index.cshtml*, um Code für die XSRF-Tokens zu erhalten.
 
          @section Scripts {
             @Scripts.Render("~/bundles/knockout")
@@ -811,4 +811,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Aufrufen eines MapReduce-Programms über Azure Data Factory" 
-	description="Erfahren Sie, wie Daten durch Ausführen von MapReduce-Programme auf einem Azure HDInsight-Cluster aus einem Azure Data-Factory zu verarbeiten." 
+	description="Erfahren Sie, wie Sie Daten verarbeiten, indem Sie MapReduce-Programme mithilfe einer Azure Data Factory auf einen Azure HDInsight-Cluster anwenden." 
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
@@ -17,23 +17,23 @@
 	ms.author="spelluru"/>
 
 # Aufrufen von MapReduce-Programmen über Data Factory
-In diesem Artikel wird beschrieben, wie das Aufrufen einer **MapReduce** Programm aus einem Azure Data Factory-Pipeline mithilfe der **HDInsight-Aktivität** mit **MapReduce-Transformation**.
+In diesem Artikel wird beschrieben, wie ein **MapReduce-Programm** mithilfe der **HDInsight**-Aktivität mit **MapReduce-Transformation** aus einer Azure Data Factory-Pipeline aufgerufen wird.
 
 ## Einführung 
 Eine Pipeline in einer Azure Data Factory verarbeitet Daten in verknüpften Speicherdiensten mithilfe verknüpfter Compute Services. Sie enthält eine Abfolge von Aktivitäten, wobei jede Aktivität einen bestimmten Verarbeitungsvorgang ausführt. In diesem Artikel wird die Verwendung der MapReduce-Transformation der HDInsight-Aktivität beschrieben.
  
-Finden Sie unter [Verwendung Pig und Hive Data Factory][data-factory-pig-hive-activities] ausführliche Informationen zum Ausführen von Pig-Hive cluster Skripts auf einem HDInsight von einer Azure Data Factory-Pipeline mit Pig-Hive-Transformationen der HDInsight-Aktivität.
+Weitere Informationen zum Anwenden von Pig/Hive-Skripts auf einen HDInsight-Cluster über eine Azure Data Factory-Pipeline mithilfe von Pig/Hive-Transformationen der HDInsight-Aktivität finden Sie unter [Verwenden von Pig und Hive mit Data Factory][data-factory-pig-hive-activities].
 
-## JSON für HDInsight-Aktivität mit MapReduce-transformation 
+## JSON für HDInsight-Aktivität mit MapReduce-Transformation 
 
-In der JSON-Definition für die HDInsight-Aktivität:
+Gehen Sie für die JSON-Definition der HDInsight-Aktivität so vor:
  
-1. Legen Sie die **Typ** von der **Aktivität** auf **HDInsightActivity**.
-2. Legen Sie die **Typ** von der **Transformation** auf **MapReduce**.
-3. Geben Sie den Namen der Klasse für **Klassenname** Eigenschaft.
-4. Geben Sie den Pfad, einschließlich des Dateinamens für die JAR-Datei **JarFilePath** Eigenschaft.
-5. Geben Sie den verknüpften Dienst, der auf den Azure-Blob-Speicher verweist, enthält die JAR-Datei für **JarLinkedService** Eigenschaft.   
-6. Geben Sie Argumente für das MapReduce-Programm in die **Argumente** Abschnitt. 
+1. Legen Sie den **Typ** der **Aktivität** auf **HDInsightActivity** fest.
+2. Legen Sie den **Typ** der **Transformation** auf **MapReduce** fest.
+3. Geben Sie für die Eigenschaft **className** den Namen der Klasse an.
+4. Geben Sie den Pfad zur JAR-Datei an, einschließlich des Dateinamens für die Eigenschaft **jarFilePath**.
+5. Geben Sie den verknüpften Dienst an, der auf den Azure-Blobspeicher verweist, der die JAR-Datei für die Eigenschaft **jarLinkedService** enthält.   
+6. Geben Sie im Abschnitt **arguments** Argumente für das MapReduce-Programm an. 
 
    
  
@@ -90,14 +90,14 @@ In der JSON-Definition für die HDInsight-Aktivität:
 Sie können die "MapReduce"-Transformation zum Ausführen beliebiger MapReduce-JAR-Dateien auf einem HDInsight-Cluster verwenden. In der folgenden JSON-Beispieldefinition einer Pipeline wird die HDInsight-Aktivität für die Ausführung einer Mahout-JAR-Datei konfiguriert.
 
 ## Beispiel
-Sie können ein Beispiel für die Verwendung der HDInsight-Aktivität mit MapReduce-Transformation von herunterladen: [Daten Factory-Beispielen auf GitHub][data-factory-samples].
+Sie können ein Beispiel zur Verwendung der HDInsight-Aktivität mit MapReduce-Transformation aus den [Data Factory-Beispielen auf GitHub][data-factory-samples] herunterladen.
 
 ## Siehe auch
 
 Artikel | Beschreibung
 ------ | ---------------
-[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien, die mit Daten-Factory][adf-tutorial] | Dieser Artikel bietet eine End-to-End-exemplarische zum Implementieren von near Real World-Szenario mit Azure Data Factory zum Transformieren von Daten aus den Protokolldateien Einblicke in. In diesem Lernprogramm verwenden Sie beide Pig und Hive-Transformationen, um Daten zu verarbeiten. 
-[Azure Data Factory-Entwicklerreferenz][developer-reference] | Entwicklerreferenz hat die umfassendes Referenzmaterial für die Cmdlets, JSON-Skripts, Funktionen usw.... 
+[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][adf-tutorial] | In diesem Artikel wird in einer umfassenden exemplarischen Vorgehensweise die Implementierung eines nahezu realen Szenarios mithilfe von Azure Data Factory veranschaulicht, um mithilfe von Protokolldateien nützliche Einblicke zu gewinnen. In diesem Lernprogramm verwenden Sie sowohl Pig- als auch Hive-Transformationen, um Daten zu verarbeiten. 
+[Azure Data Factory-Entwicklerreferenz][developer-reference] | Die Entwicklerreferenz enthält umfassende Referenzinformationen für Cmdlets, JSON-Skripts, Funktionen usw. 
 
 
 [data-factory-samples]: http://go.microsoft.com/fwlink/?LinkId=516907
@@ -121,5 +121,6 @@ Artikel | Beschreibung
 
 [Developer Reference]: http://go.microsoft.com/fwlink/?LinkId=516908
 [Azure Portal]: http://portal.azure.com
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

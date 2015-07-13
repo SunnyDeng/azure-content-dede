@@ -1,7 +1,7 @@
-﻿#####Erstellen einer Tabelle
-Mit einem **CloudTableClient**-Objekt können Sie Referenzobjekte für Tabellen und Entitäten abrufen. Der folgende Code erstellt ein **CloudTableClient**-Objekt und verwendet das Objekt für die Erstellung einer neuen Tabelle. Der Code versucht, auf eine Tabelle namens "people" zu verweisen. Wird keine Tabelle mit diesem Namen gefunden, wird die Tabelle erstellt.
+#####Erstellen einer Tabelle
+Mit einem **CloudTableClient**-Objekt können Sie Referenzobjekte für Tabellen und Entitäten abrufen. Durch den folgenden Code wird ein **CloudTableClient**-Objekt erstellt und verwendet, um eine neue Tabelle zu erstellen. Der Code versucht, auf eine Tabelle namens "people" zu verweisen. Wird keine Tabelle mit diesem Namen gefunden, wird die Tabelle erstellt.
 
-**HINWEIS:** Bei allem Code in diesem Leitfaden wird davon ausgegangen, dass es sich bei der erstellten Anwendung um ein Azure-Clouddienstprojekt handelt und eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge verwendet wird.
+**HINWEIS:** Bei dem gesamten Code in diesem Leitfaden wird davon ausgegangen, dass es sich bei der erstellten Anwendung um ein Azure-Cloud-Dienstprojekt handelt und eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge verwendet wird.
 
 	// Create the table client.
 	CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
@@ -11,7 +11,7 @@ Mit einem **CloudTableClient**-Objekt können Sie Referenzobjekte für Tabellen 
 	table.CreateIfNotExists();
 
 #####Hinzufügen einer Entität zu einer Tabelle
-Sie erstellen eine Klasse, mit der die Eigenschaften der Entität definiert werden, um einer Tabelle eine Entität hinzuzufügen. Der folgende Code definiert eine Entitätsklasse namens **CustomerEntity**, die den Vornamen des Kunden als Zeilenschlüssel und den Nachnamen als Partitionsschlüssel verwendet.
+Sie erstellen eine Klasse, mit der die Eigenschaften der Entität definiert werden, um einer Tabelle eine Entität hinzuzufügen. Der folgenden Code definiert eine Entitätsklasse namens **CustomerEntity**, die den Vornamen des Kunden als Zeilenschlüssel und den Nachnamen als Partitionsschlüssel verwendet.
 
 	public class CustomerEntity : TableEntity
 	{
@@ -28,7 +28,7 @@ Sie erstellen eine Klasse, mit der die Eigenschaften der Entität definiert werd
 	    public string PhoneNumber { get; set; }
 	}
 
-Tabellenvorgänge, die Entitäten umfassen, werden mit dem **CloudTable**-Objekt ausgeführt, das Sie zuvor unter "Erstellen einer Tabelle" erstellt haben. Das **TableOperation**-Objekt stellt den auszuführenden Vorgang dar. Das folgende Codebeispiel zeigt das Erstellen eines **CloudTable**-Objekts und eines **CustomerEntity**-Objekts. Als Vorbereitung für den Vorgang wird ein **TableOperation**-Objekt erstellt, um die Kundenentität in die Tabelle einzufügen. Schließlich wird der Vorgang durch den Aufruf von CloudTable.Execute ausgeführt.
+Tabellenvorgänge, die Entitäten umfassen, werden mit dem **CloudTable**-Objekt ausgeführt, das Sie zuvor unter "Erstellen einer Tabelle" erstellt haben. Das **TableOperation**-Objekt stellt den auszuführenden Vorgang dar. Das folgende Codebeispiel zeigt das Erstellen eines **CloudTable**-Objekts und eines **CustomerEntity**-Objekts. Um den Vorgang vorzubereiten, wird eine **TableOperation** zum Einfügen der Kundenentität in die Tabelle erstellt. Schließlich wird der Vorgang durch einen Aufruf von CloudTable.Execute ausgeführt.
 
 	// Create the CloudTable object that represents the "people" table.
 	CloudTable table = tableClient.GetTableReference("people");
@@ -45,7 +45,7 @@ Tabellenvorgänge, die Entitäten umfassen, werden mit dem **CloudTable**-Objekt
 	table.Execute(insertOperation);
 
 #####Einfügen eines Entitätsbatchs
-Sie können mehrere Entitäten mit einem Schreibvorgang in eine Tabelle einfügen. Das folgende Codebeispiel erstellt zwei Entitätsobjekte ("Jeff Smith" und "Ben Smith"), fügt diese mithilfe der Insert-Methode einem **TableBatchOperation**-Objekt hinzu und startet den Vorgang dann durch einen Aufruf von CloudTable.Execute.
+Sie können mehrere Entitäten mit einem Schreibvorgang in eine Tabelle einfügen. Das folgende Codebeispiel erstellt zwei Entitätsobjekte ("Jeff Smith" und "Ben Smith"), fügt diese mithilfe der Methode **Insert** einem TableBatchOperation-Objekt hinzu und startet den Vorgang dann durch einen Aufruf von CloudTable.Execute.
 
 	// Create the CloudTable object that represents the "people" table.
 	CloudTable table = tableClient.GetTableReference("people");
@@ -71,7 +71,7 @@ Sie können mehrere Entitäten mit einem Schreibvorgang in eine Tabelle einfüge
 	table.ExecuteBatch(batchOperation);
 
 #####Abrufen aller Entitäten in einer Partition
-Verwenden Sie ein **TableQuery**-Objekt, um eine Tabelle nach allen Entitäten in einer Partition abzufragen. Im folgenden Codebeispiel wird ein Filter für Entitäten erstellt, wobei 'Smith' der Partitionsschlüssel ist. In diesem Beispiel werden die Felder der einzelnen Entitäten in den Abfrageergebnissen an die Konsole ausgegeben.
+Verwenden Sie ein **TableQuery**-Objekt, um eine Tabelle nach allen Entitäten in einer Partition abzufragen. Im folgenden Codebeispiel wird ein Filter für Entitäten erstellt, wobei "Smith" der Partitionsschlüssel ist. In diesem Beispiel werden die Felder der einzelnen Entitäten in den Abfrageergebnissen an die Konsole ausgegeben.
 
 	// Create the CloudTable object that represents the "people" table.
 	CloudTable table = tableClient.GetTableReference("people");
@@ -87,7 +87,7 @@ Verwenden Sie ein **TableQuery**-Objekt, um eine Tabelle nach allen Entitäten i
 	}
 
 #####Abrufen einer einzelnen Entität
-Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Der folgende Code verwendet ein **TableOperation**-Objekt, um einen Kunden namens 'Ben Smith' anzugeben. Diese Methode gibt nur eine Entität anstelle einer Sammlung zurück, und bei dem zurückgegebenen Wert in TableResult.Result handelt es sich um ein **CustomerEntity**-Objekt. Die Angabe beider Schlüssel, Partition und Zeile, in einer Abfrage ist die schnellste Möglichkeit, um eine einzelne Entität aus dem **Tabellendienst** abzurufen.
+Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Der folgende Code verwendet ein **TableOperation**-Objekt, um einen Kunden namens "Ben Smith" anzugeben. Diese Methode gibt nur eine Entität anstelle einer Sammlung zurück, und bei dem zurückgegebenen Wert in TableResult.Result handelt es sich um ein **CustomerEntity**-Objekt. Das Angeben der Partitions- und Zeilenschlüssel in einer Abfrage ist die schnellste Möglichkeit, um eine einzelne Entität aus dem Tabellendienst abzurufen.
 
 	// Create the CloudTable object that represents the "people" table.
 	CloudTable table = tableClient.GetTableReference("people");
@@ -133,8 +133,6 @@ Sie können eine Entität nach dem Abrufen löschen. Der folgende Code sucht nac
 	else
 	   Console.WriteLine("Couldn't delete the entity.");
 
-[Weitere Informationen zu Azure Storage](http://azure.microsoft.com/documentation/services/storage/)
-Weitere Informationen finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx).
+[Weitere Informationen zu Azure Storage](http://azure.microsoft.com/documentation/services/storage/) Siehe auch [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx).
 
-
-<!--HONumber=42-->
+<!---HONumber=62-->

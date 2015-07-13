@@ -1,5 +1,3 @@
-<properties title="Create a Virtual Machine Running Windows Server" pageTitle="Gewusst wie: Erstellen eines virtuellen Windows Server-Computers" description="Beschreibt, wie ein virtueller Windows-Computer erstellt wird, ein Datenträger hinzugefügt wird und die Fernanmeldung erfolgt." metaKeywords="" services="virtual machines" solutions="" documentationCenter="" authors="kathydav" videoId="" scriptId="" />
-
 # Erstellen eines virtuellen Windows Server-Computers #
 
 In diesem Lernprogramm erfahren Sie, wie Sie mithilfe der Imagegalerie im Windows Azure-Verwaltungsportal ganz einfach einen virtuellen Azure-Computer mit Windows Server erstellen. Die Image-Galerie bietet verschiedene Images, unter anderem von Windows-Betriebssystemen, Linux-basierten Betriebssystemen sowie Anwendungs-Images.
@@ -15,7 +13,7 @@ In diesem Lernprogramm wird Folgendes erläutert:
 Wenn Sie ausführlichere Informationen wünschen, rufen Sie [Virtuelle Computer](http://go.microsoft.com/fwlink/p/?LinkID=271224) auf.
 
 
-## <a id="createvirtualmachine"> </a>Erstellen eines virtuellen Computers##
+##<a id="createvirtualmachine"> </a>Erstellen eines virtuellen Computers##
 
 In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** im Verwaltungsportal verwenden, um einen virtuellen Computer zu erstellen. Mit dieser Option erhalten Sie mehr Konfigurationsoptionen als mit **Schnellerfassung**. Wenn Sie beispielsweise einen virtuellen Computer mit einem virtuellen Netzwerk verbinden möchten, sollten Sie die Option **Aus Galerie** verwenden.
 
@@ -109,7 +107,7 @@ In diesem Abschnitt erfahren Sie, wie Sie einen leeren Datenträge an den virtue
 
 	Der Datenträger ist nun online und betriebsbereit mit einem neuen Laufwerksbuchstaben.
 	
-## Nächste Schritte 
+##Nächste Schritte 
 
 Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azure finden Sie in den folgenden Artikeln:
 
@@ -127,6 +125,4 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
 [How to attach a data disk to the new virtual machine]: #attachdisk
 [How to set up communication with the virtual machine]: #endpoints
 
-
-
-<!--HONumber=52-->
+<!---HONumber=62-->

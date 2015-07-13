@@ -78,7 +78,7 @@ Darüber hinaus können Sie zusätzlichen Text bereitstellen, damit Endbenutzer 
 ![Anwendungstypen und -szenarien](./media/active-directory-branding-guidelines/work-account-with-explaination.png)
  
 ## Brandingempfehlungen
-****Verwenden Sie „Geschäfts- oder Schulkonto“ in Kombination mit dem Microsoft-Logo, um auf Anmeldungen mit Azure AD hinzuweisen. Bei begrenztem Platzangebot kann „Geschäftskonto“ verwendet werden. Verwenden Sie aber **keine anderen Begriffe** wie „Unternehmenskonto“, „Business-Konto“ oder „Firmenkonto“.
+Verwenden Sie „Geschäfts- oder Schulkonto“ in Kombination mit dem Microsoft-Logo, um auf Anmeldungen mit Azure AD hinzuweisen. Bei begrenztem Platzangebot kann „Geschäftskonto“ verwendet werden. Verwenden Sie aber **keine anderen Begriffe** wie „Unternehmenskonto“, „Business-Konto“ oder „Firmenkonto“.
 
 „Office 365-ID“ und „Azure-ID“ dürfen **nicht** verwendet werden. Office 365 ist auch der Name eines Verbraucherangebots von Microsoft, bei dem Azure AD nicht für die Authentifizierung verwendet wird.
 
@@ -88,10 +88,12 @@ Endbenutzer sollen **nicht** mit den Marken Azure und Active Directory in Berüh
 
 ## Navigationsempfehlungen
 
-****Stellen Sie den Benutzern eine Funktion zur Verfügung, über die sie sich abmelden und das Benutzerkonto wechseln können. Die meisten Benutzer besitzen zwar nur ein einzelnes persönliches Konto von Microsoft/Facebook/Google/Twitter, gehören aber häufig mehreren Organisationen an. Die Unterstützung mehrerer angemeldeter Benutzer folgt in Kürze.
+Stellen Sie den Benutzern eine Funktion zur Verfügung, über die sie sich abmelden und das Benutzerkonto wechseln können. Die meisten Benutzer besitzen zwar nur ein einzelnes persönliches Konto von Microsoft/Facebook/Google/Twitter, gehören aber häufig mehreren Organisationen an. Die Unterstützung mehrerer angemeldeter Benutzer folgt in Kürze.
 
 ## Unterstützen von Azure AD- und Microsoft-Konten in Ihrer App
 
 Wenn Ihre App sowohl Azure AD- als auch Microsoft-Konten unterstützt, müssen Sie in Ihrer App zwei separate Schaltflächen bereitstellen. Wir arbeiten derzeit an einem Update, durch das Sie nach einmaliger Integration sowohl persönliche Konten als auch Geschäftskonten von Microsoft unterstützen können. Nach dem Update können Sie in Ihrer App eine einzelne Microsoft-Anmeldeschaltfläche verwenden.
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=62-->

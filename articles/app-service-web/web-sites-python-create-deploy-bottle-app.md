@@ -146,7 +146,7 @@ Jetzt erstellen wir eine virtuelle Umgebung für die lokale Entwicklung. Klicken
 
 - Stellen Sie sicher, dass der Name der Umgebung `env` lautet.
 
-- Wählen Sie den Basisinterpreter. Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in „runtime.txt“ oder auf dem Blatt **Anwendungseinstellungen** Ihrer Web-App im Azure-Vorschauportal).
+- Wählen Sie den Basisinterpreter. Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in "runtime.txt" oder auf dem Blatt **Anwendungseinstellungen** Ihrer Web-App im Azure-Vorschauportal).
 
 - Stellen Sie sicher, dass die Option zum Herunterladen und Installieren von Paketen aktiviert ist.
 
@@ -154,7 +154,7 @@ Jetzt erstellen wir eine virtuelle Umgebung für die lokale Entwicklung. Klicken
 
 Klicken Sie auf **Erstellen**. Dadurch wird die virtuelle Umgebung erstellt, und die in "requirements.txt" aufgelisteten Abhängigkeiten werden installiert.
 
-### Ausführen mithilfe des Entwicklungssservers
+### Ausführen mithilfe des Entwicklungsservers
 
 Drücken Sie F5, um mit dem Debuggen beginnen. Ihr Webbrowser wird automatisch auf der Seite geöffnet, die lokal ausgeführt.
 
@@ -211,7 +211,7 @@ Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Vorschauporta
 
 Wir erstellen eine neue virtuelle Umgebung zu Entwicklungszwecken (die nicht dem Repository hinzugefügt werden darf). Virtuelle Umgebungen in Python sind nicht verschiebbar, sodass jeder Entwickler, der an der Anwendung arbeitet, seine eigene lokal erstellen muss.
 
-Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in „runtime.txt“ oder auf dem Blatt „Anwendungseinstellungen“ für Ihre Web-App im Azure-Vorschauportal).
+Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in "runtime.txt" oder auf dem Blatt "Anwendungseinstellungen" für Ihre Web-App im Azure-Vorschauportal).
 
 Für Python 2.7:
 
@@ -225,7 +225,7 @@ Installieren Sie alle externen Pakete, die Ihre Anwendung benötigt. Sie können
 
     env\scripts\pip install -r requirements.txt
 
-### Ausführen mithilfe des Entwicklungssservers
+### Ausführen mithilfe des Entwicklungsservers
 
 Sie können die Anwendung unter einem Entwicklungsserver mit dem folgenden Befehl starten:
 
@@ -290,7 +290,7 @@ Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Vorschauporta
 
 Wir erstellen eine neue virtuelle Umgebung zu Entwicklungszwecken (die nicht dem Repository hinzugefügt werden darf). Virtuelle Umgebungen in Python sind nicht verschiebbar, sodass jeder Entwickler, der an der Anwendung arbeitet, seine eigene lokal erstellen muss.
 
-Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in „runtime.txt“ oder auf dem Blatt „Anwendungseinstellungen“ Ihrer Web-App im Azure-Vorschauportal).
+Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in "runtime.txt" oder auf dem Blatt "Anwendungseinstellungen" Ihrer Web-App im Azure-Vorschauportal).
 
 Für Python 2.7:
 
@@ -304,7 +304,7 @@ Installieren Sie alle externen Pakete, die Ihre Anwendung benötigt. Sie können
 
     env/bin/pip install -r requirements.txt
 
-### Ausführen mithilfe des Entwicklungssservers
+### Ausführen mithilfe des Entwicklungsservers
 
 Sie können die Anwendung unter einem Entwicklungsserver mit dem folgenden Befehl starten:
 

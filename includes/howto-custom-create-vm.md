@@ -1,6 +1,4 @@
-<properties authors="kathydav" editor="tysonn" manager="jeffreyg" />
-
-# Erstellen eines benutzerdefinierten virtuellen Computers
+#Erstellen eines benutzerdefinierten virtuellen Computers
 
 Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den Sie mit der Option **Aus Katalog** erstellen, da Sie Ihnen durch diese Option mehr Konfigurationsoptionen zur Verfügung stehen als durch die Methode **Schnellerfassung**. Die Optionen umfassen:
 
@@ -53,14 +51,12 @@ Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den S
 17. Klicken Sie auf den Pfeil, um den virtuellen Computer zu erstellen.
 
 
-    ![Custom virtual machine creation successful](./media/howto-custom-create-vm/VMSuccessWindows.png)
+	![Benutzerdefinierter virtueller Computer erfolgreich erstellt](./media/howto-custom-create-vm/VMSuccessWindows.png)
 
-## Nächste Schritte##
+##Nächste Schritte##
 Nachdem der virtuelle Computer erstellt wurde, wird er automatisch gestartet. Wenn im Portal der Status "Wird ausgeführt" angezeigt wird, können Sie sich beim virtuellen Computer anmelden. Weitere Anweisungen finden Sie in den folgenden Artikeln:
 
 - [Anmelden bei einem mit Linux betriebenen virtuellen Computer](../articles/virtual-machines/virtual-machines-linux-how-to-log-on.md)
 - [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](../articles/virtual-machines/virtual-machines-log-on-windows-server.md)
 
-
-
-<!--HONumber=52-->
+<!---HONumber=62-->

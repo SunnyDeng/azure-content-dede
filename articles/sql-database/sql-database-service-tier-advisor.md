@@ -25,20 +25,20 @@
 
 ## Übersicht
 
-Azure analysiert die aktuellen Leistungs- und Funktionsanforderungen durch Bewertung der historischen Ressourcennutzung einer SQL-Datenbank. Darüber hinaus wird der minimal zulässige Tarif basierend auf der Größe der Datenbank und aktivierten Funktionen für die [Geschäftskontinuität](https://msdn.microsoft.com/library/azure/hh852669.aspx) festgelegt.
+Azure analysiert die aktuellen Leistungs- und Featureanforderungen durch Bewertung der historischen Ressourcennutzung für eine SQL-Datenbank. Darüber hinaus wird der minimal zulässige Tarif basierend auf der Größe der Datenbank und der aktivierten Funktionen für die [Geschäftskontinuität](https://msdn.microsoft.com/library/azure/hh852669.aspx) bestimmt.
 
 Diese Informationen werden analysiert, und der Tarif und die Leistungsstufe, die für die Ausführung der typischen Arbeitsauslastung der Datenbank und die Aufrechterhaltung ihrer aktuellen Featuregruppe am besten geeignet sind, werden empfohlen.
 
-- Der Dienst überprüft die historischen Daten der letzten 15 bis 30 Tage (Ressourcennutzung, Datenbankgröße und Datenbankaktivität) und führt einen Vergleich zwischen der Menge der verbrauchten Ressourcen und den tatsächlichen Beschränkungen der aktuell verfügbaren Dienstebenen und Leistungsstufen durch.
+- Der Dienst überprüft die historischen Daten der letzten 15 bis 30 Tage (Ressourcennutzung, Datenbankgröße und Datenbankaktivität) und führt einen Vergleich zwischen der Menge der verbrauchten Ressourcen und den tatsächlichen Einschränkungen der aktuell verfügbaren Dienstebenen und Leistungsstufen durch.
 - Daten werden in Intervallen von 15 Sekunden analysiert, wobei das Resultset jedes Intervalls in die vorhandene Dienstebene und Leistungsstufe kategorisiert wird, welche für die Handhabung der Arbeitsauslastung dieses Resultsets am besten geeignet sind.
 - Diese 15-Sekunden-Beispiele werden dann in die breitere Analyse von 15 bis 30 Tagen aggregiert, und die Dienstebene und Leistungsstufe, die 95 % der historischen Arbeitsauslastung optimal bewältigen können, werden empfohlen.
 
-### Empfehlungen
+### Recommendations
 
 Basierend auf Ihrer Datenbanknutzung können derzeit 2 Kategorien von Empfehlungen auftreten:
 
 
-| Empfehlung | Beschreibung |
+| Empfehlungen | Beschreibung |
 | :--- | :--- |
 | Upgrade | Führen Sie ein Upgrade auf eine neue Ebene durch. |
 | Nicht verfügbar | Eine Datenbank erfordert eine minimale Arbeitsauslastung oder ungefähr 14 Tage Aktivität. Es sind nicht genügend Daten vorhanden, um eine gültige Empfehlung abzugeben. |
@@ -56,7 +56,7 @@ Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business
 
 5. Wählen Sie im Blatt "Datenbank" die Kachel **Tarif** aus.
 
-    ![Tarif][2]
+    ![Preisstufe][2]
 
 
 7. Nach dem Klicken auf die Kachel **Tarif** wird das Blatt **Empfohlene Tarife** angezeigt. Dort können Sie auf den empfohlenen Tarif klicken und dann auf die Schaltfläche **Auswählen**, um zu diesem Tarif zu wechseln.
@@ -87,4 +87,7 @@ Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung e
 [4]: ./media/sql-database-service-tier-advisor/choose-pricing-tier.png
 [5]: ./media/sql-database-service-tier-advisor/usage-details.png
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=62-->

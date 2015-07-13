@@ -17,7 +17,7 @@
 	ms.author="aashishr"/>
 
 
-# Sichern von Azure Virtual machines
+# Sichern von virtuellen Azure-Computern
 
 Dieser Artikel ist der Hauptleitfaden zur Sicherung virtueller Azure-Computer. Bevor Sie fortfahren, stellen Sie sicher, dass alle [Voraussetzungen](backup-azure-vms-introduction.md#prerequisites) erfüllt werden.
 
@@ -25,8 +25,8 @@ Zur Sicherung virtueller Azure-Computer gehören drei Hauptschritte:
 
 ![Drei Schritte zum Sichern eines virtuellen Azure-Computers](./media/backup-azure-vms/3-steps-for-backup.png)
 
-## Virtuelle Computer in Azure zu ermitteln.
-Ermittlung Prozess Abfragen Azure für die Liste der virtuellen Computer im Abonnement, zusammen mit weiteren Informationen wie den Namen des Cloud-Dienst und die Region.
+## Ermitteln von virtuellen Azure-Computern
+Beim Ermittlungsvorgang wird Azure nach der Liste virtueller Computer im Abonnement abgefragt. Außerdem werden zusätzliche Informationen wie der Clouddienstname und die Region erfasst.
 
 > [AZURE.NOTE]Der Ermittlungsvorgang sollte immer als erster Schritt ausgeführt werden. Dadurch wird sichergestellt, dass alle neuen virtuellen Computer, die dem Abonnement hinzugefügt wurden, identifiziert werden.
 
@@ -36,35 +36,35 @@ Gehen Sie zum Auslösen des Ermittlungsvorgangs folgendermaßen vor:
 
 2. Wählen Sie im Dropdownmenü als Art des Workloads **Azure Virtual Machine** aus, und klicken Sie auf die Schaltfläche **Auswählen**. ![Workload auswählen](./media/backup-azure-vms/discovery-select-workload.png)
 
-3. Klicken Sie auf die **DISCOVER** am unteren Rand der Seite. ![Schaltfläche "Ermitteln"](./media/backup-azure-vms/discover-button.png)
+3. Klicken Sie unten auf der Seite auf die Schaltfläche **ERMITTELN**. ![Schaltfläche "Ermitteln"](./media/backup-azure-vms/discover-button.png)
 
 4. Der Ermittlungsvorgang kann einige Minuten andauern, während die virtuellen Computer in einer Tabelle aufgeführt werden. Am unteren Bildschirmrand wird eine Popupbenachrichtigung angezeigt, während der Ermittlungsvorgang ausgeführt wird. ![VMs ermitteln](./media/backup-azure-vms/discovering-vms.png)
 
 5. Sobald der Ermittlungsvorgang abgeschlossen ist, wird eine Popupbenachrichtigung angezeigt. ![Ermitteln abgeschlossen](./media/backup-azure-vms/discovery-complete.png)
 
 
-## Registrieren von virtuellen Computern in Azure
-Bevor Sie ein virtuellen Computer geschützt werden können, muss bei Azure Backup-Dienst registriert werden. Der Registrierungsvorgang hat zwei Hauptziele:
+## Registrieren von virtuellen Azure-Computern
+Bevor ein virtueller Computer geschützt werden kann, muss er beim Azure Backup-Dienst registriert werden. Der Registrierungsvorgang hat zwei Hauptziele:
 
 1. Aktivieren der Sicherungserweiterung im VM-Agent auf dem virtuellen Computer
 
-2. Die virtuelle Maschine mit der Azure-Sicherungsdienst zuordnen
+2. Zuordnen des virtuellen Computers zum Azure Backup-Dienst
 
 Die Registrierung ist in der Regel eine einmalige Angelegenheit. Der Azure Backup-Dienst verarbeitet nahtlos das Upgrade und Patching der Sicherungserweiterung, ohne dass ein Benutzereingriff erforderlich wäre. Dies erspart dem Benutzer den Agent-Verwaltungsaufwand, der in der Regel mit Backup-Produkten verbunden ist.
 
-### Zum Registrieren von virtuellen Maschinen
+### So registrieren Sie virtuelle Computer
 
-1. Navigieren Sie in den sicherungstresor, das sich unter **Recovery Services** in der Azure-Portal, und klicken Sie auf die **Elemente registriert** Registerkarte
+1. Navigieren Sie zum Sicherungstresor, der sich im Azure-Portal unter **Recovery Services** befindet, und klicken Sie auf die Registerkarte **Registrierte Elemente**.
 
-2. Wählen Sie die Art der Arbeitslast in dem Dropdown-Menü als **Azure Virtual Machine** und klicken Sie auf die Schaltfläche auswählen. ![Workload auswählen](./media/backup-azure-vms/discovery-select-workload.png)
+2. Wählen Sie im Dropdownmenü als Workloadtyp **Azure Virtual Machine** aus, und klicken Sie auf die Schaltfläche "Auswählen". ![Workload auswählen](./media/backup-azure-vms/discovery-select-workload.png)
 
-3. Klicken Sie auf die **registrieren** am unteren Rand der Seite. ![Schaltfläche "Registrieren"](./media/backup-azure-vms/register-button.png)
+3. Klicken Sie unten auf der Seite auf die Schaltfläche **REGISTRIEREN**. ![Schaltfläche "Registrieren"](./media/backup-azure-vms/register-button.png)
 
-4. Wählen Sie im Popupfenster **Elemente registrieren** die virtuellen Computer aus, die Sie registrieren möchten. Treten verwenden zwei oder mehr virtuelle Computer mit dem gleichen Namen den Cloud-Dienst zur Unterscheidung zwischen den virtuellen Computern.
+4. Wählen Sie im Popupfenster **Elemente registrieren** die virtuellen Computer aus, die Sie registrieren möchten. Wenn zwei oder mehr virtuelle Computer denselben Namen aufweisen, verwenden Sie den Clouddienst zur Unterscheidung zwischen den virtuellen Computern.
 
     Der Vorgang **Registrieren** kann skaliert werden. Das bedeutet, dass mehrere virtuelle Computer gleichzeitig für die Registrierung ausgewählt werden können. Dadurch wird der einmalige Aufwand zur Vorbereitung des virtuellen Computers für die Sicherung erheblich reduziert.
 
-    >[AZURE.NOTE]Die virtuellen Computer, die nicht registriert sind und in der gleichen Region wie den sicherungstresor wird angezeigt.
+    >[AZURE.NOTE]Es werden nur die virtuellen Computer angezeigt, die nicht registriert sind und sich in derselben Region befinden wie der Sicherungstresor.
 
 5. Für jeden virtuellen Computer, der registriert werden soll, wird ein Auftrag erstellt. Die Popupbenachrichtigung zeigt den Status dieser Aktivität an. Klicken Sie auf **Auftrag anzeigen**, um zur Seite **Aufträge** zu wechseln. ![Registrierungsauftrag](./media/backup-azure-vms/register-create-job.png)
 
@@ -72,15 +72,15 @@ Die Registrierung ist in der Regel eine einmalige Angelegenheit. Der Azure Backu
 
 7. Sobald der Vorgang abgeschlossen ist, ändert sich der Status im Portal dem registrierten Status entsprechend. ![Registrierungsstatus 2](./media/backup-azure-vms/register-status02.png)
 
-## Sichern von Azure Virtual machines
+## Sichern von virtuellen Azure-Computern
 Dieser Schritt umfasst das Einrichten einer Sicherungs- und Beibehaltungsrichtlinie für den virtuellen Computer. Um einen virtuellen Computer zu schützen, führen Sie die folgenden Schritte aus:
 
 1. Navigieren Sie zum Sicherungstresor, der sich im Azure-Portal unter **Recovery Services** befindet, und klicken Sie auf die Registerkarte **Registrierte Elemente**.
 2. Wählen Sie im Dropdownmenü als Art des Workloads **Azure Virtual Machine** aus, und klicken Sie auf die Schaltfläche **Auswählen**. ![Workload im Portal auswählen](./media/backup-azure-vms/select-workload.png)
 
-3. Klicken Sie auf die **schützen** am unteren Rand der Seite.
+3. Klicken Sie unten auf der Seite auf die Schaltfläche **SCHÜTZEN**.
 
-4. Hierdurch wird ein Assistent **Elemente schützen** geöffnet, in dem die zu schützenden virtuellen Computer ausgewählt werden können. Treten verwenden zwei oder mehr virtuelle Computer mit dem gleichen Namen den Cloud-Dienst zur Unterscheidung zwischen den virtuellen Computern.
+4. Hierdurch wird ein Assistent **Elemente schützen** geöffnet, in dem die zu schützenden virtuellen Computer ausgewählt werden können. Wenn zwei oder mehr virtuelle Computer denselben Namen aufweisen, verwenden Sie den Clouddienst zur Unterscheidung zwischen den virtuellen Computern.
 
     Der Vorgang **Schützen** kann skaliert werden. Das bedeutet, dass mehrere virtuelle Computer gleichzeitig für die Registrierung ausgewählt werden können. Dadurch wird der Aufwand zum Schützen des virtuellen Computers erheblich reduziert.
 
@@ -103,69 +103,68 @@ Dieser Schritt umfasst das Einrichten einer Sicherungs- und Beibehaltungsrichtli
 
 9. Zum Abschluss des Vorgangs wird der Schutzstatus des virtuellen Computers auf der Registerkarte **Geschützte Elemente** als *Geschützt* angezeigt. ![Virtueller Computer wird mit Wiederherstellungspunkt gesichert](./media/backup-azure-vms/protect-backedupvm.png)
 
-## Anzeigen von Sicherungsstatus und details
+## Anzeigen von Status und Details der Sicherung
 Sobald der Schutz eingerichtet ist, steigt die Anzahl der virtuellen Computer auch auf der **Dashboard**-Zusammenfassungsseite. Darüber hinaus zeigt die Dashboard-Seite die Anzahl der Aufträge in den letzten 24 Stunden an, die erfolgreich waren, Fehler hervorgerufen haben oder noch ausgeführt werden. Durch Klicken auf jede Kategorie wird auf der Seite **Aufträge** ein Drilldown in diese Kategorie durchgeführt. ![Status der Sicherung auf der Dashboard-Seite](./media/backup-azure-vms/dashboard-protectedvms.png)
 
 ## Problembehandlung
-Behandeln Sie Fehler, die beim Verwenden von Azure-Sicherung mit Informationen in der folgenden Tabelle aufgeführt ist.
+Sie können die Problembehandlung für Fehler, die beim Verwenden von Azure Backup auftreten, mit den Informationen in der unten angegebenen Tabelle durchführen.
 
 | Sicherungsvorgang | Fehlerdetails | Problemumgehung |
 | -------- | -------- | -------|
 | Ermittlung | Fehler beim Entdecken neuer Elemente – Microsoft Azure Backup hat einen internen Fehler festgestellt. Warten Sie einige Minuten, und versuchen Sie es dann erneut. | Wiederholen Sie den Ermittlungsvorgang nach 15 Minuten.
 | Ermittlung | Fehler beim Entdecken neuer Elemente – Ein anderer Ermittlungsvorgang wird bereits ausgeführt. Bitte warten Sie, bis der aktuelle Ermittlungsvorgang abgeschlossen ist. | Keine |
 | Registrieren | Die Azure VM-Rolle befindet sich nicht im Zustand zum Installieren der Erweiterung – Prüfen Sie, ob der virtuelle Computer den Zustand "Wird ausgeführt" aufweist. Für die Azure Recovery Services-Erweiterung muss der virtuelle Computer ausgeführt werden. | Starten Sie den virtuellen Computer, und wiederholen Sie den Registrierungsvorgang, wenn der Computer den Zustand "Wird ausgeführt" aufweist.|
-| Registrieren | Anzahl an Datenträgern, die mit dem virtuellen Computer angefügt wurde das unterstützte Limit überschritten – bitte einige Datenträger auf diesem virtuellen Computer trennen, und wiederholen Sie den Vorgang. Azure-Sicherung unterstützt bis zu fünf Datenträger angefügt wird, einen virtuellen Computer in Azure für die Sicherung | Keine |
-| Registrieren | Microsoft Azure-Sicherung: internen Fehler - warten Sie einige Minuten und versuchen Sie dann den Vorgang erneut aus. Wenn das Problem weiterhin besteht, wenden Sie sich an den Microsoft Support. | Sie können diese Fehlermeldung aufgrund einer der folgenden nicht unterstützten Konfigurationen: <ol><li>Premium LRS <li>Multi-NIC <li>Lastenausgleich </ol> |
-| Registrieren | VM Gast-Agent-Zertifikat wurde nicht gefunden. | Befolgen Sie diese Anweisungen, um den Fehler zu beheben: <ol><li>Downloaden Sie die neueste Version von der VM-Agent aus [hier](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Stellen Sie sicher, dass die Version des heruntergeladenen Agenten 2.6.1198.718 oder höher. <li>Installieren Sie VM-Agent auf dem virtuellen Computer.</ol> [Erfahren Sie mehr](#validating-vm-agent-installation) so überprüfen die Version des VM-Agents. |
-| Registrieren | Fehler bei der Registrierung mit Timeout des Vorgangs Agent installieren | Überprüfen Sie, ob die Betriebssystemversion des virtuellen Computers unterstützt wird. |
-| Registrieren | Befehl fehlgeschlagen - läuft ein anderer Vorgang für diesen Artikel. Warten Sie, bis der vorherige Vorgang abgeschlossen ist | Keine |
-| Sicherung | Kopieren von VHDs aus sicherungstresor Timeout - wiederholen Sie den Vorgang in einigen Minuten. Wenn das Problem weiterhin besteht, wenden Sie sich an den Microsoft Support. | Dies passiert, wenn zu viele Daten kopiert werden. Überprüfen Sie, wenn Sie weniger als 6 Datenträger verfügen. |
-| Sicherung | Snapshot-VM-Sub-Task ein Timeout - wiederholen Sie den Vorgang in einigen Minuten. Wenn das Problem weiterhin besteht, wenden Sie sich an den Microsoft-Support | Dieser Fehler wird immer dann ausgelöst, wenn ein mit der VM-Agent Problem oder Netzwerkzugriff auf Azure-Infrastruktur in irgendeiner Weise blockiert. <ul><li>Erfahren Sie mehr über [VM-Agent Debugprobleme](#Troubleshooting-vm-agent-related-issues) <li>erfahren Sie mehr über [Debuggen Netzwerkprobleme](#troubleshooting-networking-issues) </ul> |
-| Sicherung | Fehler bei der Sicherung interner Fehler: Wiederholen Sie den Vorgang in einigen Minuten. Wenn das Problem weiterhin besteht, wenden Sie sich an den Microsoft-Support | Sie können diesen Fehler erhalten, zwei Gründen: <ol><li> zu viele Daten kopiert werden. Überprüfen Sie, wenn Sie weniger als 6 Laufwerke. <li>Der ursprüngliche virtuellen Computer gelöscht wurde und daher die Sicherung nicht ausgeführt werden kann. Um die Sicherungsdaten für einen gelöschten virtuellen Computer beibehalten, aber Beenden der Sicherung Fehler, Aufheben des Schutzes des virtuellen Computers, und wählen Sie die Option zum Beibehalten der Daten. Dies beendet den Sicherungszeitplan und auch die regelmäßige Fehlermeldungen. |
-| Sicherung | Fehler beim Installieren von Azure Recovery Services ist die Erweiterung auf dem ausgewählten Element - VM-Agent eine Voraussetzung für Azure Recovery Services-Erweiterung. Installieren Sie den Azure-VM-Agent und die Registrierung des Neustarts | <ol> <li>Überprüfen, ob der VM-Agent ordnungsgemäß installiert wurde. <li>Stellen Sie sicher, dass das Flag für die VM-Konfiguration ordnungsgemäß festgelegt ist.</ol> [Weitere](#validating-vm-agent-installation) über VM-Agent-Installation, und überprüfen Sie die VM-Agent-Installation. |
-| Sicherung | Befehl fehlgeschlagen - läuft ein anderer Vorgang derzeit für diesen Artikel. Warten Sie, bis der vorherige Vorgang abgeschlossen ist, und wiederholen Sie dann | Eine vorhandene Sicherungs- oder Wiederherstellungsauftrag für den virtuellen Computer ausgeführt wird, und ein neuer Auftrag kann nicht gestartet werden, während der vorhandene Auftrag ausgeführt wird. <br><br>Wenn Sie die Option aus, um einen fortlaufenden Auftrag abbrechen möchten, fügen Sie Ihre Stimme zu den [Feedback von Azure-Forum](http://feedback.azure.com/forums/258995-azure-backup-and-scdpm/suggestions/7941501-add-feature-to-allow-cancellation-of-backup-restor). |
+| Registrieren | Für die Anzahl von Datenträgern für Daten, die dem virtuellen Computer zugeordnet sind, wurde die unterstützte Obergrenze überschritten. Trennen Sie einige Datenträger für Daten von diesem virtuellen Computer, und wiederholen Sie den Vorgang. Azure Backup unterstützt bis zu fünf Datenträger für Daten, die für die Sicherung an einen virtuellen Azure-Computer angeschlossen sind. | Keine |
+| Registrieren | Für Microsoft Azure Backup ist ein interner Fehler aufgetreten. Warten Sie einige Minuten, und wiederholen Sie anschließend den Vorgang. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dieser Fehler kann aufgrund einer der folgenden nicht unterstützten Konfigurationen auftreten: <ol><li>Premium LRS <li>Multi-NIC <li>Load Balancer </ol> |
+| Registrieren | Zertifikat für VM-Gast-Agent wurde nicht gefunden | Befolgen Sie diese Anweisungen, um den Fehler zu beheben: <ol><li>Laden Sie [hier](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409) die aktuelle Version des VM-Agents herunter. Stellen Sie sicher, dass die Version des heruntergeladenen Agents 2.6.1198.718 oder höher ist. <li>Installieren Sie den VM-Agent auf dem virtuellen Computer.</ol> [Erfahren Sie mehr](#validating-vm-agent-installation) darüber, wie Sie die Version des VM-Agents überprüfen. |
+| Registrieren | Fehler bei der Registrierung aufgrund einer Zeitüberschreitung beim Installieren des Agents | Überprüfen Sie, ob die Betriebssystemversion des virtuellen Computers unterstützt wird. |
+| Registrieren | Fehler beim Ausführen des Befehls – Für dieses Element wird ein anderer Vorgang ausgeführt. Warten Sie, bis der aktuelle Vorgang abgeschlossen ist. | Keine |
+| Sicherung | Zeitüberschreitung beim Kopieren von VHDs aus dem Sicherungstresor – Versuchen Sie, den Vorgang nach einigen Minuten zu wiederholen. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dies passiert, wenn zu viele zu kopierende Daten vorhanden sind. Vergewissern Sie sich, dass Sie weniger als sechs Datenträger verwenden. |
+| Sicherung | Zeitüberschreitung bei Momentaufnahme für VM-Unteraufgabe – Versuchen Sie, den Vorgang nach einigen Minuten zu wiederholen. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dieser Fehler wird ausgelöst, wenn ein Problem mit dem VM-Agent besteht oder der Netzwerkzugriff auf die Azure-Infrastruktur blockiert ist. <ul><li>Weitere Informationen [zum Debuggen von Problemen mit dem VM-Agent](#Troubleshooting-vm-agent-related-issues) <li>Weitere Informationen [zum Debuggen von Netzwerkproblemen](#troubleshooting-networking-issues) </ul> |
+| Sicherung | Interner Fehler bei der Sicherung – Versuchen Sie, den Vorgang nach einigen Minuten zu wiederholen. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dieser Fehler kann aus zwei Gründen auftreten: <ol><li> Es sind zu viele zu kopierende Daten vorhanden. Vergewissern Sie sich, dass Sie weniger als sechs Datenträger verwenden. <li>Der ursprüngliche virtuelle Computer wurde gelöscht, sodass keine Sicherung erstellt werden kann. Um die Sicherungsdaten für einen gelöschten virtuellen Computer beizubehalten und gleichzeitig die Sicherungsfehler zu vermeiden, heben Sie den Schutz für den virtuellen Computer auf und wählen die Option zum Beibehalten der Daten. So werden der Sicherungszeitplan und die wiederkehrenden Fehlermeldungen vermieden. |
+| Sicherung | Fehler beim Installieren der Azure Recovery Services-Erweiterung auf dem ausgewählten Element – Der VM-Agent ist eine Voraussetzung für die Azure Recovery Services-Erweiterung. Installieren Sie den Azure-VM-Agent, und starten Sie den Registrierungsvorgang erneut. | <ol> <li>Überprüfen Sie, ob der VM-Agent richtig installiert wurde. <li>Stellen Sie sicher, dass das Flag für die VM-Konfiguration richtig festgelegt wurde.</ol> [Erfahren Sie mehr](#validating-vm-agent-installation) über die VM-Agent-Installation und die dazugehörige Überprüfung. |
+| Sicherung | Fehler bei der Ausführung des Befehls – Für dieses Element wird ein anderer Vorgang ausgeführt. Warten Sie, bis der aktuelle Vorgang abgeschlossen ist, und wiederholen Sie anschließend Ihren Vorgang. | Ein vorhandener Sicherungs- oder Wiederherstellungsauftrag wird für den virtuellen Computer ausgeführt. Ein neuer Auftrag kann erst gestartet werden, wenn die Ausführung des aktuellen Auftrags abgeschlossen ist. <br><br>Falls Sie sich eine Option zum Abbrechen eines laufenden Auftrags wünschen, können Sie Ihre Stimme für diese Option im [Azure-Feedbackforum](http://feedback.azure.com/forums/258995-azure-backup-and-scdpm/suggestions/7941501-add-feature-to-allow-cancellation-of-backup-restor) abgeben. |
 
 ### Problembehandlung bei VM-Agent-Problemen
 
-#### Einrichten der VM-Agent
-In der Regel ist der VM-Agent bereits vorhanden in virtuellen Computern, die von der Azure-Katalog erstellt werden. Virtuelle Computer, die von lokalen Rechenzentren migriert werden müssen jedoch nicht der VM-Agent installiert. Für eine solche virtuelle Computer muss die VM-Agent explizit installiert werden. Erfahren Sie mehr über [installieren den VM-Agent auf einem vorhandenen virtuellen Computer](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx).
+#### Einrichten des VM-Agents
+Normalerweise ist der VM-Agent auf virtuellen Computern, die über den Azure-Katalog erstellt werden, bereits vorhanden. Auf virtuellen Computern, die aus lokalen Rechenzentren migriert werden, ist der VM-Agent aber nicht installiert. Für diese virtuellen Computer muss der VM-Agent explizit installiert werden. Erfahren Sie mehr über das [Installieren des VM-Agents auf einem vorhandenen virtuellen Computer](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx).
 
-Für Windows-VMs:
+Für virtuelle Windows-Computer:
 
-- Herunterladen und Installieren der [-Agent-MSI](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Sie benötigen Administratorberechtigungen, um die Installation abzuschließen.
-- [Aktualisieren Sie die VM-Eigenschaft](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx) um anzugeben, dass der Agent installiert ist.
+- Laden Sie den [Agent-MSI](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409) herunter, und installieren Sie ihn. Zum Durchführen der Installation benötigen Sie Administratorberechtigungen.
+- [Aktualisieren Sie die VM-Eigenschaft](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx), um anzugeben, dass der Agent installiert wurde.
 
 
 #### Aktualisieren des VM-Agents
-Aktualisieren der VM-Agent ist so einfach wie die Neuinstallation der [VM-Agent-Binärdateien](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Allerdings müssen Sie sicherstellen, dass kein backup-Vorgang ausgeführt wird, während der VM-Agent aktualisiert wird.
+Das Aktualisieren des VM-Agents ist so einfach wie das Neuinstallieren der [Binärdateien für den VM-Agent](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Allerdings müssen Sie sicherstellen, dass kein Sicherungsvorgang ausgeführt wird, während der VM-Agent aktualisiert wird.
 
 
-#### VM-Agent-Installation wird überprüft.
-So überprüfen Sie für die VM-Agent-Version auf Windows-VMs
+#### Überprüfen der VM-Agent-Installation
+So überprüfen Sie die Version des VM-Agents auf virtuellen Windows-Computern
 
-- Die Anmeldeinformationen in der Azure-VM, und navigieren Sie zu dem Ordner *C:\WindowsAzure\Packages*.
-- Finden Sie die Datei WaAppAgent.exe vorhanden.
-- Mit der rechten Maustaste auf die Datei, wechseln Sie zur **Eigenschaften**, und wählen Sie dann die **Details** Registerkarte.
-- Das Feld Produktversion sollte 2.6.1198.718 oder höher
+- Melden Sie sich am virtuellen Azure-Computer an, und navigieren Sie zum Ordner *C:\WindowsAzure\Packages*.
+- Dieser Ordner enthält die Datei "WaAppAgent.exe".
+- Klicken Sie mit der rechten Maustaste auf die Datei, wechseln Sie zu **Eigenschaften**, und wählen Sie dann die Registerkarte **Details**.
+- Im Feld mit der Produktversion sollte 2.6.1198.718 oder eine höhere Version angegeben sein.
 
 ### Problembehandlung bei Netzwerkproblemen
-Benötigen Zugriff auf das öffentliche Internet funktioniert, wie alle Erweiterungen Backup-Erweiterung. Keinen Zugriff auf das öffentliche Internet kann sich auf vielfältige Weise darstellen:
+Wie bei allen Erweiterungen ist für die Backup-Erweiterung der Zugriff auf das öffentliche Internet erforderlich, damit sie funktioniert. Wenn kein Zugriff auf das öffentliche Internet besteht, kann dies zu unterschiedlichen Ergebnissen führen:
 
-- Die Erweiterungsinstallation kann fehlschlagen.
-- Der backup-Vorgänge (z. B. Datenträger Snapshot) können fehlschlagen.
-- Anzeigen des Status des Sicherungsvorgangs kann fehlschlagen.
+- Beim Installieren der Erweiterung kann ein Fehler auftreten.
+- Bei den Sicherungsvorgängen (z. B. Datenträger-Momentaufnahme) kann ein Fehler auftreten.
+- Beim Anzeigen des Status für den Sicherungsvorgang kann ein Fehler auftreten.
 
-Wurde die Notwendigkeit einer öffentlichen Internet-Adressen auflösen formuliert wurde [hier](http://blogs.msdn.com/b/mast/archive/2014/06/18/azure-vm-provisioning-stuck-on-quot-installing-extensions-on-virtual-machine-quot.aspx). Sie benötigen, überprüfen Sie die DNS-Konfigurationen für die VNET, und stellen Sie sicher, dass die Azure-URIs aufgelöst werden kann.
+Die Notwendigkeit zur Auflösung von öffentlichen Internetadressen wird [hier](http://blogs.msdn.com/b/mast/archive/2014/06/18/azure-vm-provisioning-stuck-on-quot-installing-extensions-on-virtual-machine-quot.aspx) beschrieben. Sie müssen die DNS-Konfigurationen für das VNET überprüfen und sicherstellen, dass die Azure-URIs aufgelöst werden können.
 
-Nachdem die Namensauflösung ordnungsgemäß erfolgt ist, muss Zugriff auf den Azure-IP-Adressen auch bereitgestellt werden. Gehen Sie folgendermaßen vor, um den Zugriff auf den Azure-Infrastruktur zu entsperren:
+Nachdem die Namensauflösung richtig eingerichtet wurde, muss auch der Zugriff auf die Azure-IP-Adressen bereitgestellt werden. Führen Sie die folgenden Schritte aus, um die Blockierung des Zugriffs auf die Azure-Infrastruktur aufzuheben:
 
-1. Ruft die Liste der [Azure-Rechenzentrum IPs]()https://msdn.microsoft.com/
-2. / library/azure/dn175718.aspx) auf die weiße Liste aufgenommen werden.
-2. Zulassen der IP-Adressen mit der [neu-NetRoute](https://technet.microsoft.com/library/hh826148.aspx) Commandlet. Führen Sie dieses Cmdlet in der Azure-VM in einem erhöhten PowerShell-Fenster (als Administrator ausführen).
+1. Beschaffen Sie sich die Liste mit den [IP-Adressen des Azure-Rechenzentrums](https://msdn.microsoft.com/library/azure/dn175718.aspx), die auf der Positivliste stehen sollen.
+2. Heben Sie Blockierung für die IP-Adressen mit dem [New-NetRoute](https://technet.microsoft.com/library/hh826148.aspx)-Cmdlet auf. Führen Sie dieses Cmdlet auf dem virtuellen Azure-Computer in einem PowerShell-Fenster mit erhöhten Rechten aus (Als Administrator ausführen).
 
 
 ## Konsistenz der Wiederherstellungspunkte
-Beim Umgang mit backup-Daten sorgen Kunden über das Verhalten des virtuellen Computers, nachdem es wiederhergestellt wurde. Typische Kundenfragen sind:
+Beim Umgang mit Sicherungsdaten machen sich Kunden Gedanken über das Verhalten des virtuellen Computers nach der Wiederherstellung. Typische Kundenfragen sind:
 
 - Kann der virtuelle Computer gestartet werden?
 - Stehen Daten auf dem Datenträger zur Verfügung (oder) gibt es Datenverluste?
@@ -184,6 +183,7 @@ In der folgenden Tabelle werden die Arten der Konsistenz aufgeführt, die bei de
 Weitere Informationen zum Einstieg in Azure Backup finden Sie unter:
 
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
-- [Verwalten von virtuellen Computern](backup-azure-manage-vms)
+- [Verwalten virtueller Computer](backup-azure-manage-vms)
+ 
 
-<!---HONumber=GIT-SubDir--> 
+<!---HONumber=62-->

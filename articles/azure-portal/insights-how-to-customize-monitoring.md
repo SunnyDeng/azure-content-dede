@@ -1,72 +1,77 @@
 <properties 
-	pageTitle="Anpassen der Überwachung" 
-	description="Erfahren Sie, wie Sie Überwachungsdiagramme in Azure anpassen."
-	authors="alancameronwills" 
-	manager="kamrani" 
+	pageTitle="Überwachen von Dienstmetriken" 
+	description="Erfahren Sie, wie Sie Überwachungsdiagramme in Azure anpassen." 
+	authors="stepsic-microsoft-com" 
+	manager="ronmart" 
 	editor="" 
-	services="application-insights" 
-	documentationCenter=""/>
+	services="azure-portal"
+documentationCenter=""/>
 
 <tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
+	ms.service="azure-portal" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="2014-11-04" 
-	ms.author="awills"/>
+	ms.date="04/28/2015" 
+	ms.author="stepsic"/>
 
-# Anpassen der Überwachung
+# Überwachen von Dienstmetriken
 
-Die Azure-Anwendung verfügt über eine Vielzahl von Metriken, die Sie überwachen können, und Sie können sie über einen Zeitraum im gewählten Diagramm anzeigen.
+Alle Azure-Dienste verfolgen wichtige Metriken, die Ihnen das Überwachen der Integrität, Leistung, Verfügbarkeit und Nutzung Ihrer Dienste ermöglichen. Sie können diese Metriken im Azure-Portal anzeigen, und Sie können darüber hinaus mithilfe von [REST-API](https://msdn.microsoft.com/library/azure/dn931930.aspx) oder [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) programmgesteuert auf sämtliche Metriken zugreifen.
 
-1. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf **Durchsuchen** und dann auf eine Ressource, die Sie überwachen möchten..
-2. Der Bereich **Überwachen** enthält die wichtigsten Metriken zu jeder Azure-Ressource. Zu Websites finden Sie dort beispielsweise Anforderungen, Fehler, [Webtests](http://go.microsoft.com/fwlink/?LinkID=394528&clcid=0x409) und [Analysen](http://go.microsoft.com/fwlink/?LinkID=394529&clcid=0x409). Wenn Sie auf **Anforderungen und Fehler heute** klicken, wird das Fenster **Metrik** geöffnet.  
-    ![Monitoring lens](./media/insights-how-to-customize-monitoring/Insights_MonitoringChart.png)
-3. Das Fenster **Metrik** enthält Details zu den ausgewählten Metriken. Im oberen Teil des Fensters erscheint ein Diagramm und unmittelbar darunter eine Tabelle mit einer Aggregation diese Metriken, also beispielsweise Durchschnitt, Minimum und Maximum. Darunter wiederum werden die Warnungen angezeigt, die Sie definiert haben. Diese Warnungen sind entsprechend den Metriken in diesem Fenster gefiltert worden. Dadurch ist sichergestellt, dass Sie auch bei zahlreichen Warnungen immer nur die an dieser Stelle relevanten sehen. Natürlich können Sie auch alle Warnungen für Ihre Website aufrufen, indem Sie auf den Teilbereich **Warnungs-Regeln** im Fenster **Website** klicken.  
-    ![Metric blade](./media/insights-how-to-customize-monitoring/Insights_MetricBlade.png)
-4. Zur Anpassung der angezeigten Metriken klicken Sie mit der rechten Maustaste auf das Diagramm und wählen **Abfrage bearbeiten** aus:  
-    ![Edit Query](./media/insights-how-to-customize-monitoring/Insights_MetricMenu.png)
-5. Im Fenster "Abfrage bearbeiten" können Sie Folgendes tun: den Zeitbereich ändern und andere Metriken auswählen.  
-    ![Edit Query](./media/insights-how-to-customize-monitoring/Insights_EditQuery.png)
-6. Die Änderung des Zeitbereichs ist so einfach wie einen anderen Bereich auszuwählen (wie beispielsweise **letzte Stunde**). Klicken Sie dann unten im Fenster auf **Speichern**. Im Vorschauportal können Sie jetzt die Option **Benutzerdefiniert** auswählen:  
-    ![Custom time range](./media/insights-how-to-customize-monitoring/Insights_CustomTime.png)
-7. Über diese Option können Sie einen beliebigen Zeitraum innerhalb der letzten 2 Wochen auswählen, also beispielsweise die gesamten zwei Wochen einsehen oder auch nur 1 Stunde des Vortags. Geben Sie in das Textfeld eine andere Stunde ein.
-8. Unterhalb des Zeitbereichs können Sie beliebig viele Metriken auswählen, die in dem Diagramm angezeigt werden sollen. Sie werden auch einigen neuen Metriken begegnen: **Speicher-Arbeitsset** und **Durchshnittliches Speicher-Arbeitsset**.
+Für einige Dienste müssen Sie möglicherweise die Diagnose aktivieren, um Metriken anzeigen zu können. Für andere Dienste, z. B. virtuelle Computer, wird ein grundlegender Satz an Metriken bereitgestellt, die Hochfrequenzmetriken müssen jedoch aktiviert werden. Weitere Informationen erhalten Sie unter [Aktivieren von Überwachung und Diagnose](insights-how-to-use-diagnostics.md).
 
-9. Wenn Sie auf "Save" klicken, bleiben Ihre Änderungen erhalten, bis Sie das Fenster "Web site" verlassen. Wenn Sie später zurückkehren, werden wieder die ursprünglichen Metriken und der ursprüngliche Zeitbereich angezeigt.
+## Verwenden von Überwachungsdiagrammen 
 
-## Überwachung für neue Ressourcen
+Sie können für beliebige Metriken und einen gewählten Zeitraum ein Diagramm erstellen.
 
-Neu im Azure-Vorschauportal ist die Möglichkeit, Leistungsmetriken für eine Reihe von neuen Ressourcen zu überwachen, darunter:
-- Webhostingpläne
-- Redis-Cache
-- DocumentDB-Konto
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com/) auf **Durchsuchen** und anschließend auf eine Ressource, die Sie überwachen möchten.
 
-Webhostingpläne sind etwas komplizierter als andere Ressourcen, da sie die Leistung der Instanzen darstellen, auf denen Ihre **Websites** ausgeführt werden. Sie rufen die Metriken von Webhostingplänen auf, indem Sie auf das Symbol für den Webhostingplan im Bereich "Summary" für Ihre Website klicken.
+2. Der Bereich **Überwachen** enthält die wichtigsten Metriken zu jeder Azure-Ressource. Für eine Web-App ist dies beispielsweise **Anforderungen und Fehler**, während für einen virtuellen Computer **CPU-Prozentsatz** und **Lese- und Schreibvorgänge auf dem Datenträger** angezeigt wird: ![Überwachungsfokus](./media/insights-how-to-customize-monitoring/Insights_MonitoringChart.png)
 
-![Web hosting plan](./media/insights-how-to-customize-monitoring/Insights_WHPSelect.png)
+3. Wenn Sie auf eines dieser Diagramme klicken, wird das Blatt **Metrik** geöffnet. Auf diesem Blatt wird neben dem Diagramm eine Tabelle angezeigt, die Aggregationen der Metriken enthält (z. B. Durchschnitt, Mindest- und Maximalwert für den gewählten Zeitraum). Darunter werden die Warnregeln für die Ressource angezeigt. ![Fenster mit Metriken](./media/insights-how-to-customize-monitoring/Insights_MetricBlade.png)
 
-Dort sehen Sie im Bereich **Überwachung** ein Diagramm, das sich genauso verhält wie das Diagramm im Fenster "Website", nur dass an dieser Stelle neue Metriken angezeigt werden:
+4. Zum Anpassen der angezeigten Zeilen klicken Sie auf die Schaltfläche **Bearbeiten** im Diagramm, oder klicken Sie auf den Befehl **Bearbeiten** auf dem Blatt "Metrik".
 
-- CPU-Prozentsatz
-- Arbeitsspeicherprozentsatz
-- HTTP-Warteschlangenlänge
-- Warteschlangenlänge des Datenträgers
+5. Auf dem Blatt "Abfrage bearbeiten" haben Sie drei Möglichkeiten:
+    - Ändern des Zeitraums
+    - Wechseln zwischen der Darstellung "Balken" und "Linie"
+    - Auswählen anderer Metriken ![Abfrage bearbeiten](./media/insights-how-to-customize-monitoring/Insights_EditQuery.png)
 
-## Erstellen nebeneinander liegender Diagramme
+6. Die Änderung des Zeitbereichs ist denkbar einfach: Sie wählen einen anderen Bereich aus (beispielsweise **Letzte Stunde**) und klicken unten im Fenster auf **Speichern**. Mit der Einstellung **Benutzerdefiniert** können Sie einen beliebigen Zeitraum in den letzten zwei Wochen auswählen. Beispielsweise können Sie die gesamten letzten zwei Wochen oder lediglich eine Stunde gestern anzeigen. Geben Sie in das Textfeld eine andere Uhrzeit ein. ![Benutzerdefinierter Zeitbereich](./media/insights-how-to-customize-monitoring/Insights_CustomTime.png)
 
-Mit den leistungsstarken Anpassungsfunktionen des Azure-Vorschauportals können Sie Diagramme auch nebeneinander platzieren.
+7. Unterhalb des Zeitbereichs können Sie beliebig viele Metriken auswählen, die in dem Diagramm angezeigt werden sollen.
 
-1. Klicken Sie zuerst mit der rechten Maustaste auf das Diagramm, mit dem Sie beginnen wollen, und wählen Sie **Anpassen**   aus.
-    ![Customize chart](./media/insights-how-to-customize-monitoring/Insights_Customize.png)
-2. Klicken Sie dann auf **Klonen** im Menü **...**, um den Teil zu kopieren.  
-    ![Clone part](./media/insights-how-to-customize-monitoring/Insights_ClonePart.png)
-3. Klicken Sie abschließend in der Symbolliste oben im Bildschirm auf **Fertig**. In diesem Teilbereich können Sie nun wie gewohnt Metriken anzeigen lassen. Wenn Sie mit der rechten Maustaste klicken und die angezeigte Metrik ändern, werden zwei verschiedene Metriken gleichzeitig nebeneinander angezeigt:  
-    ![Two metrics Side by Side](./media/insights-how-to-customize-monitoring/Insights_SideBySide.png)
+8. Wenn Sie auf "Speichern" klicken, werden Ihre Änderungen für die jeweilige Ressource gespeichert. Wenn Sie beispielsweise über zwei virtuelle Computer verfügen und ein Diagramm für einen der virtuellen Computer ändern, hat dies keine Auswirkungen auf den zweiten virtuellen Computer.
 
-Hinweis: Der Zeitbereich des Diagramms und die ausgewählten Metriken werden zurückgesetzt, wenn Sie das Portal verlassen.
+## Erstellen nebeneinander angezeigter Diagramme
 
+Dank der umfangreichen Anpassungsmöglichkeiten im Portal können Sie so viele Diagramme hinzufügen, wie Sie möchten.
 
-<!--HONumber=46--> 
+1. Klicken Sie im oberen Bereich des Blatts im Menü **...** auf **Kacheln hinzufügen**: ![Menü "Hinzufügen"  
+](./media/insights-how-to-customize-monitoring/Insights_AddMenu.png)
+2. Anschließend können Sie ein Diagramm aus dem **Katalog** auf der rechten Bildschirmseite auswählen: ![Katalog](./media/insights-how-to-customize-monitoring/Insights_Gallery.png)
+3. Wenn die gewünschte Metrik nicht angezeigt wird, können Sie einfach eine der voreingestellten Metriken hinzufügen und durch **Bearbeiten** des Diagramms die Metrik anzeigen, die Sie benötigen. 
+
+## Überwachen mithilfe von Kontingenten
+
+Die meisten Metriken zeigen Trends im Zeitverlauf an, für bestimmte Daten – beispielsweise für Nutzungskontingente – werden jedoch Informationen zu einem bestimmten Zeitpunkt mit einem Schwellenwert angezeigt.
+
+Für Ressourcen mit Kontingenten können Sie Nutzungskontingente auch auf dem Blatt für Ressourcen anzeigen:
+
+![Verwendung](./media/insights-how-to-customize-monitoring/Insights_UsageChart.png)
+
+Wie bei den Metriken können Sie mithilfe von [REST-API](https://msdn.microsoft.com/library/azure/dn931963.aspx) oder [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) programmgesteuert auf den vollständigen Satz an Nutzungskontingenten zugreifen.
+
+## Nächste Schritte
+
+* [Empfangen von Warnbenachrichtigungen](insights-receive-alert-notifications.md), wenn eine Metrik einen Schwellenwert überschreitet.
+* [Aktivieren von Überwachung und Diagnose](insights-how-to-use-diagnostics.md), um detaillierte Hochfrequenzmetriken zu Ihrem Dienst zu sammeln.
+* [Automatisches Skalieren der Instanzenanzahl](insights-how-to-scale.md), um sicherzustellen, dass Ihr Dienst verfügbar und reaktionsfähig ist.
+* [Überwachen der Anwendungsleistung](insights-perf-analytics.md), um präzise Informationen zur Leistung Ihres Codes in der Cloud zu ermitteln.
+* Verwenden von [Application Insights für JavaScript-Apps und Webseiten](../app-insights-web-track-usage.md), um eine Clientanalyse über die Browser zu erhalten, mit denen auf eine Webseite zugegriffen wird.
+* [Überwachen der Verfügbarkeit und Reaktionsfähigkeit einer beliebigen Webseite](../app-insights-monitor-web-app-availability.md) mit Application Insights, um zu ermitteln, ob eine Seite offline ist.
  
+
+<!---HONumber=62-->

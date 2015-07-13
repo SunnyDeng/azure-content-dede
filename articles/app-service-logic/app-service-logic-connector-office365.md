@@ -29,7 +29,7 @@ Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werd
 - Ereignis senden
 - Kontakt hinzufügen
 
-##Erstellen der O365-Connector-API-Anwendung ##
+##Erstellen der O365-Connector-API-Anwendung##
 Um die O365-Connector-API-Anwendung zu erstellen, führen Sie die folgenden Schritte aus:
 
 1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" unten rechts im Azure-Portal.
@@ -160,4 +160,4 @@ Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

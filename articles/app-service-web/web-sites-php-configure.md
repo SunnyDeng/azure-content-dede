@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="article"
-	ms.date="03/24/2015"
+	ms.date="06/24/2015"
 	ms.author="tomfitz"/>
 
 #Konfigurieren von PHP in Azure App Service-Web-Apps
@@ -54,7 +54,7 @@ PHP 5.5 und PHP 5.6 sind ebenfalls verfügbar, aber nicht standardmäßig aktivi
 
 ### Azure-Befehlszeilen-Schnittstelle (Linux, Mac, Windows)
 
->[Azure.Note]Der Verwendung der Azure-Befehlszeilenschnittstelle erfordert die Installation von **Node.js** auf Ihrem Computer.
+Um die Azure-Befehlszeilenschnittstelle verwenden zu können, muss **Node.js** auf Ihrem Computer installiert sein.
 
 1. Öffnen Sie das Terminal.
 2. Geben Sie `azure site set --php-version [5.4 | 5.5] [site-name]` ein, und drücken Sie anschließend die EINGABETASTE.
@@ -176,4 +176,4 @@ Anstelle der PHP-Standardlaufzeit können App Service-Web-Apps auch eine PHP-Lau
 [GETPHPVERPS]: ./media/web-sites-php-configure/ShowPHPVersion-PS.png
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -34,6 +34,6 @@ Die folgende Tabelle zeigt die Aufbewahrungsrichtlinie für unterschiedliche Res
 Die Datenaufbewahrungsrichtlinie gilt für alle Benutzer und kann zurzeit nicht angepasst werden.
 
 ## Verwandte Artikel
-- [Sichern von Azure Automation](https://msdn.microsoft.com/library/dn643635.aspx)
+- [Sichern von Azure Automation](https://msdn.microsoft.com/library/dn643635.aspx) 
 
-<!---HONumber=58--> 
+<!---HONumber=62-->

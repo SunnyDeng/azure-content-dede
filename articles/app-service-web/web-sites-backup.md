@@ -118,17 +118,16 @@ Bei Teilsicherungen können Sie genau auswählen, welche Dateien gesichert werde
 ###Angeben von Dateien, die nicht gesichert werden sollen
 Sie können eine Liste mit Dateien und Ordnern erstellen, die von der Sicherung ausgeschlossen werden sollen.
 
-Speichern Sie die Liste als Textdatei unter dem Namen _„backup.filter“ im Ordner „wwwroot“ Ihrer Website. Eine einfache Zugriffsmöglichkeit ist die [Kudu-Konsole](https://github.com/projectkudu/kudu/wiki/Kudu-console) unter `http://{yoursite}.scm.azurewebsites.net/DebugConsole`. 
+Speichern Sie die Liste als Textdatei unter dem Namen _"backup.filter" im Ordner "wwwroot" Ihrer Website. Eine einfache Zugriffsmöglichkeit ist die [Kudu-Konsole](https://github.com/projectkudu/kudu/wiki/Kudu-console) unter `http://{yoursite}.scm.azurewebsites.net/DebugConsole`. 
 
-In der folgenden Anleitung wird die Kudu-Konsole zum Erstellen der Datei _„backup.filter“ verwendet, aber Sie können auch Ihre bevorzugte Bereitstellungsmethode nutzen.
+In der folgenden Anleitung wird die Kudu-Konsole zum Erstellen der Datei _"backup.filter" verwendet, aber Sie können auch Ihre bevorzugte Bereitstellungsmethode nutzen.
 
 ###Vorgehensweise
 Ich habe eine Website mit Protokolldateien und statischen Bildern aus den vorhergehenden Jahren, die sich nicht ändern.
 
 Ich verfüge bereits über eine vollständige Sicherung der Website, in der die alten Bilder enthalten sind. Jetzt möchte ich die Website täglich sichern, aber ich möchte nicht für die Speicherung von Protokolldateien oder statischen Bilddateien bezahlen, die sich nie ändern.
 
-![Ordner „Logs“][LogsFolder]
-![Ordner „Images“][ImagesFolder]
+![Ordner "Logs"][LogsFolder] ![Ordner "Images"][ImagesFolder]
 	
 Die unten angegebenen Schritte zeigen, wie ich diese Dateien aus dem Backup ausschließe.
 
@@ -139,22 +138,22 @@ Unter `D:\home\LogFiles` ist ein weiterer Ordner mit Protokolldateien vorhanden,
 
 Außerdem sollen die Bilder aus den vorherigen Jahren nicht immer wieder gesichert werden. Also fügen wir `D:\home\site\wwwroot\Images\2013` und `D:\home\site\wwwroot\Images\2014` ebenfalls der Liste hinzu.
 
-Zuletzt schließen wir auch die Datei „brand.png“ im Ordner „Images“ aus der Sicherung aus, um zu zeigen, dass dies auch für einzelne Dateien möglich ist. Sie befindet sich unter `D:\home\site\wwwroot\Images\brand.png`.
+Zuletzt schließen wir auch die Datei "brand.png" im Ordner "Images" aus der Sicherung aus, um zu zeigen, dass dies auch für einzelne Dateien möglich ist. Sie befindet sich unter `D:\home\site\wwwroot\Images\brand.png`.
 
 Wir erhalten also die folgenden Ordner, die nicht gesichert werden sollen:
 
-* D:\\home\\site\\wwwroot\\Logs
-* D:\\home\\LogFiles
-* D:\\home\\site\\wwwroot\\Images\\2013
-* D:\\home\\site\\wwwroot\\Images\\2014
-* D:\\home\\site\\wwwroot\\Images\\brand.png
+* D:\home\site\wwwroot\Logs
+* D:\home\LogFiles
+* D:\home\site\wwwroot\Images\2013
+* D:\home\site\wwwroot\Images\2014
+* D:\home\site\wwwroot\Images\brand.png
 
 #### Erstellen der Ausschlussliste
-Sie speichern die Liste mit den Dateien und Ordnern, die nicht gesichert werden sollen, in einer speziellen Datei mit dem Namen _„backup.filter“. Erstellen Sie die Datei, und legen Sie sie unter `D:\home\site\wwwroot_backup.filter` ab.
+Sie speichern die Liste mit den Dateien und Ordnern, die nicht gesichert werden sollen, in einer speziellen Datei mit dem Namen _"backup.filter". Erstellen Sie die Datei, und legen Sie sie unter `D:\home\site\wwwroot_backup.filter` ab.
 
-Listen Sie alle Dateien und Ordner, die nicht gesichert werden sollen, in der Datei _„backup.filter“ auf. Hierzu fügen Sie den vollständigen Pfad relativ zu „D:\\home“ des Ordners bzw. der Datei hinzu, der bzw. die von der Sicherung ausgeschlossen werden soll. Ein Pfad wird jeweils in eine Zeile eingefügt.
+Listen Sie alle Dateien und Ordner, die nicht gesichert werden sollen, in der Datei _"backup.filter" auf. Hierzu fügen Sie den vollständigen Pfad relativ zu "D:\home" des Ordners bzw. der Datei hinzu, der bzw. die von der Sicherung ausgeschlossen werden soll. Ein Pfad wird jeweils in eine Zeile eingefügt.
 
-Für meine Website wird `D:\home\site\wwwroot\Logs` also zu `\site\wwwroot\Logs`, `D:\home\LogFiles` wird zu `\LogFiles` usw. Dies führt zu folgendem Inhalt der Datei _„backup.filter“:
+Für meine Website wird `D:\home\site\wwwroot\Logs` also zu `\site\wwwroot\Logs`, `D:\home\LogFiles` wird zu `\LogFiles` usw. Dies führt zu folgendem Inhalt der Datei _"backup.filter":
 
     \site\wwwroot\Logs
     \LogFiles
@@ -167,7 +166,7 @@ Beachten Sie jeweils das Zeichen `` am Anfang jeder Zeile. Dies ist wichtig.
 ###Durchführen einer Sicherung
 Nun können Sie die Sicherungen durchführen, wie Sie es gewohnt sind. Dies ist sowohl [manuell](https://azure.microsoft.com/de-de/documentation/articles/web-sites-backup/#create-a-manual-backup) als auch [automatisch](https://azure.microsoft.com/de-de/documentation/articles/web-sites-backup/#configure-automated-backups) möglich.
 
-Alle Dateien und Ordner, die unter die Filter in der Datei _„backup.filter“ fallen, werden von der Sicherung ausgeschlossen. Dies bedeutet, dass die Protokolldateien und die Bilddateien für 2013 und 2014 nicht mehr gesichert werden.
+Alle Dateien und Ordner, die unter die Filter in der Datei _"backup.filter" fallen, werden von der Sicherung ausgeschlossen. Dies bedeutet, dass die Protokolldateien und die Bilddateien für 2013 und 2014 nicht mehr gesichert werden.
 
 ###Wiederherstellen der gesicherten Website
 Sie stellen Teilsicherungen Ihrer Website genauso wieder her, wie Sie eine [normale Sicherung wiederherstellen](https://azure.microsoft.com/de-de/documentation/articles/web-sites-restore/) würden. Der Vorgang wird korrekt ausgeführt.
@@ -210,7 +209,7 @@ Und zwar für meine Produktionswebsite.
 
 Ein schlimmer Fehler.
 
-Während des Upgrades ist ein Fehler aufgetreten, und meine Startseite war nur noch ein leerer Bildschirm. „Kein Problem“, dachte ich. „Ich stelle einfach die eben angelegte Sicherung wieder her.“
+Während des Upgrades ist ein Fehler aufgetreten, und meine Startseite war nur noch ein leerer Bildschirm. "Kein Problem", dachte ich. "Ich stelle einfach die eben angelegte Sicherung wieder her."
 
 Ich habe das Upgrade wiederhergestellt, und alles war wieder da... mit Ausnahme der Blogbeiträge.
 
@@ -268,4 +267,4 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
  
 
-<!----HONumber=62-->
+<!---HONumber=62-->

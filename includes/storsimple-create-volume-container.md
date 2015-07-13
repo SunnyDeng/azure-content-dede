@@ -1,20 +1,3 @@
-<properties 
-   pageTitle="Erstellen eines Volumecontainers"
-   description="Beschreibt, wie Sie einen Volumecontainer auf einem StorSimple-Gerät erstellen."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="04/01/2015"
-   ms.author="v-sharos" />
-
 #### So erstellen Sie einen Volumecontainer
 
 1. Klicken Sie auf der Seite **Schnellstart** auf **Volumecontainer hinzufügen**. Das Dialogfeld **Volumecontainer erstellen** wird angezeigt.
@@ -31,4 +14,4 @@
 
   Der neu erstellte Volumecontainer wird auf der Seite **Volumecontainer** aufgeführt.
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

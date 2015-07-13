@@ -37,14 +37,14 @@ Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass 
 
 		public List<ToDoItem> toDoItemList = new ArrayList<ToDoItem>();
 
-8. Speichern Sie die Datei, und daraufhin zeigt das Projekt Buildfehler an. Suchen Sie nach den verbleibenden drei Orten, an denen die Variable `toDoItemList` verwendet wird, und kennzeichnen Sie die entsprechenden Abschnitte als Kommentar. Nun haben Sie die speicherinterne Liste vollständig entfernt.
+8. Speichern Sie die Datei, und daraufhin zeigt das Projekt Buildfehler an. Suchen Sie nach den verbleibenden drei Stellen, an denen die Variable `toDoItemList` verwendet wird, und stellen Sie die entsprechenden Abschnitte Kommentarzeichen voran. Nun haben Sie die speicherinterne Liste vollständig entfernt.
 
 9. Wir werden nun den mobilen Dienst hinzufügen. Entfernen Sie die Kommentare in den folgenden Codezeilen:
 
 		private MobileServiceClient mClient;
 		private private MobileServiceTable<ToDoItem> mToDoTable;
 
-10. Suchen Sie die *ProgressFilter*-Klasse am Ende der Datei, und entfernen Sie auch hier die Kommentarzeichen. Diese Klasse zeigt den Hinweis 'loading' an, wenn der *MobileServiceClient* Netzwerkvorgänge ausführt.
+10. Suchen Sie die* ProgressFilter*-Klasse am Ende der Datei und entfernen Sie die Kommentarzeichen. Diese Klasse zeigt einen Hinweis an, wenn der *MobileServiceClient* Netzwerkvorgänge ausführt.
 
 
 11. Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
@@ -156,4 +156,5 @@ Ihr mobiler Dienst ist nun bereit und Sie können die App aktualisieren, sodass 
 
 <!-- URLs. -->
 [Android-SDK für mobile Dienste]: http://aka.ms/Iajk6q
-<!--HONumber=54-->
+
+<!---HONumber=62-->

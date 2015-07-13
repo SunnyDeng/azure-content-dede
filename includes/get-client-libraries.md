@@ -1,4 +1,4 @@
-### Installation mithilfe von Composer
+###Installation mithilfe von Composer
 
 1. [Git installieren][install-git]. 
 
@@ -29,7 +29,7 @@
 
 		php composer.phar install
 
-### Manuelle Installation
+###Manuelle Installation
 
 Gehen Sie folgendermaßen vor, um die PHP-Client-Bibliotheken für Azure manuell herunterzuladen:
 
@@ -49,4 +49,4 @@ Weitere Informationen zur Installation der PHP-Client-Bibliotheken für Azure (e
 [download-SDK-PHP]: ../articles/php-download-sdk.md
 [composer-phar]: http://getcomposer.org/composer.phar
 
-<!--HONumber=54-->
+<!---HONumber=62-->

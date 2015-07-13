@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="BizTalk Services: Dienststatusübersicht | Azure" 
-	description="Zulässige Aktionen/Operationen in verschiedenen MABS-Status: Beenden, Starten, Neustarten, Anhalten, Fortsetzen, Löschen, Skalieren, Konfiguration aktualisieren und Sichern" 
+	pageTitle="In verschiedenen Status in BizTalk Services zulässige Aufgaben | Azure" 
+	description="Zulässige Aktionen/Vorgänge in verschiedenen MABS-Status: Beenden, Starten, Neustarten, Anhalten, Wiederaufnehmen, Löschen, Skalieren, Aktualisieren der Konfiguration und Sichern" 
 	services="biztalk-services" 
 	documentationCenter="" 
 	authors="MandiOhlinger" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/01/2015" 
+	ms.date="06/07/2015" 
 	ms.author="mandia"/>
 
 
@@ -27,12 +27,12 @@ Sie stellen beispielsweise einen neuen BizTalk-Dienst im Azure-Verwaltungsportal
 
 Informationen zum Bereitstellen eines BizTalk Service finden Sie unter [BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280).
 
-Die folgenden Tabellen listen jene Vorgänge auf, die ausgeführt werden können, wenn sich der BizTalk-Dienst in einem spezifischen Status befindet. Ein Kreuz bedeutet dabei, dass der Vorgang ausgeführt werden kann, wenn der betreffende Status zutrifft. Ein leerer Eintrag bedeutet dagegen, dass der Vorgang nicht ausgeführt werden kann, wenn der betreffende Status zutrifft.
+In den folgenden Tabellen sind diejenigen Vorgänge oder Aktionen aufgelistet, die ausgeführt werden können, wenn sich der BizTalk Service in einem spezifischen Status befindet. Ein Häkchen bedeutet dabei, dass der Vorgang zulässig ist, wenn der betreffende Status zutrifft. Ein leerer Eintrag bedeutet dagegen, dass der Vorgang nicht ausgeführt werden kann, wenn der betreffende Status zutrifft.
 
-#### Start-, Stopp-, Neustart-, Unterbrechungs-, Wiederaufnahme- und Lösch-Vorgänge
+## Vorgänge zum Starten, Beenden, Neustarten, Anhalten, Wiederaufnehmen und Löschen
 <table border="1">
 <tr>
-        <th colspan="15">Vorgang</th>
+        <th colspan="15">Vorgang oder Aktion</th>
 </tr>
 
 <tr>
@@ -40,10 +40,10 @@ Die folgenden Tabellen listen jene Vorgänge auf, die ausgeführt werden können
 </tr>
 <tr bgcolor="FAF9F9">
         <th> </th>
-        <th>Hier</th>
+        <th>Starten</th>
         <th>Beenden</th>
         <th>Neu starten</th>
-        <th>Unterbrechen</th>
+        <th>Anhalten</th>
         <th>Wiederaufnehmen</th>
         <th>Löschen</th>
 </tr>
@@ -66,7 +66,7 @@ Die folgenden Tabellen listen jene Vorgänge auf, die ausgeführt werden können
 <td><center>x</center></td>
 </tr>
 <tr>
-<td bgcolor="FAF9F9"><b>Unterbrochen</b></td>
+<td bgcolor="FAF9F9"><b>Angehalten</b></td>
 <td> </td>
 <td> </td>
 <td> </td>
@@ -84,7 +84,7 @@ Die folgenden Tabellen listen jene Vorgänge auf, die ausgeführt werden können
 <td><center>x</center></td>
 </tr>
 <tr>
-<td bgcolor="FAF9F9"><b>Dienst-Update fehlgeschlagen</b></td>
+<td bgcolor="FAF9F9"><b>Fehler beim Dienstupdate</b></td>
 <td> </td>
 <td> </td>
 <td> </td>
@@ -162,10 +162,10 @@ RestoreFailed<br/></b></td>
 </table>
 <br/>
 
-####Skalierungs-, Konfigurations-Update- und Sicherungs-Vorgänge
+## Vorgänge zum Skalieren, Aktualisieren der Konfiguration und Sichern
 <table border="1">
 <tr>
-        <th colspan="15">Vorgang</th>
+        <th colspan="15">Vorgang oder Aktion</th>
 </tr>
 
 <tr>
@@ -190,7 +190,7 @@ RestoreFailed<br/></b></td>
 <td> </td>
 </tr>
 <tr>
-<td bgcolor="FAF9F9"><b>Unterbrochen</b></td>
+<td bgcolor="FAF9F9"><b>Angehalten</b></td>
 <td> </td>
 <td> </td>
 <td><center>x</center></td>
@@ -202,7 +202,7 @@ RestoreFailed<br/></b></td>
 <td><center>x</center></td>
 </tr>
 <tr>
-<td bgcolor="FAF9F9"><b>Dienst-Update fehlgeschlagen</b></td>
+<td bgcolor="FAF9F9"><b>Fehler beim Dienstupdate</b></td>
 <td> </td>
 <td> </td>
 <td> </td>
@@ -256,15 +256,15 @@ RestoreFailed<br/></b></td>
 </table>
 
 ## Weitere Informationen
-- [BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
+- [BizTalk Services: Erstellen eines BizTalk Service im Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
 - [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"](http://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
-- [BizTalk Services: Übersicht über Developer, Basic, Standard und Premium Edition](http://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
+- [BizTalk Services: Editionsübersicht](http://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
 - [BizTalk Services: Sichern und Wiederherstellen](http://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
 - [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
 - [BizTalk Services: Name und Schlüssel des Ausstellers](http://go.microsoft.com/fwlink/p/?LinkID=303941)<br/>
-- [Wie verwende ich das Azure BizTalk Services SDK](http://go.microsoft.com/fwlink/p/?LinkID=302335)
+- [Wie verwende ich das Azure BizTalk Services SDK?](http://go.microsoft.com/fwlink/p/?LinkID=302335)
 
 
-
-<!--HONumber=46--> 
  
+
+<!---HONumber=62-->

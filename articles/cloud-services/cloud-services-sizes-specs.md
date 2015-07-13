@@ -1,6 +1,6 @@
 <properties 
- pageTitle="Größen für Cloud Services" 
- description="Führt die verschiedenen Größen für Web-und Workerrollen in Azure Cloud Service auf." 
+ pageTitle="Größen für Clouddienste" 
+ description="Führt die verschiedenen Größen für Web-und Workerrollen von Azure-Clouddiensten auf." 
  services="cloud-services" 
  documentationCenter="" 
  authors="Thraka" 
@@ -15,7 +15,7 @@
  ms.date="06/04/2015" 
  ms.author="adegeo"/>
  
-# Größen für Cloud Services
+# Größen für Clouddienste
 
 In diesem Thema werden die verfügbaren Größen und Optionen für Cloud Service-Rolleninstanzen (Web- und Workerrollen) beschrieben. Darüber hinaus werden Überlegungen zur Bereitstellung angestellt, die Sie berücksichtigen sollten, wenn Sie eine Verwendung dieser Ressourcen planen.
 
@@ -41,8 +41,8 @@ Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe
 
 |Größe|CPU-<br>Kerne|Arbeitsspeicher|Datenträgergrößen|
 |---|---|---|---|
-|Sehr klein|1|768 MB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 19 GB<br/>Apps = ca. 1,5 GB|
-|Klein|1|1,75 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 224 GB<br/>Apps = ca. 1,5 GB|
+|Sehr klein|1|768 MB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 19 GB<br/>Apps = etwa 1,5 GB|
+|Klein|1|1,75 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 224 GB<br/>Apps = etwa 1,5 GB|
 |Mittel|2|3,5 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 489 GB<br/>Apps = ca. 1,5 GB|
 |Groß|4|7 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 999 GB<br/>Apps = ca. 1,5 GB|
 |Extragroß|8|14 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 2039 GB<br/>Apps = ca. 1,5 GB|
@@ -64,6 +64,6 @@ Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe
 
 ## Nächste Schritte
 
-[Einrichten eines Cloud-Diensts für Azure](https://msdn.microsoft.com/library/hh124108) [Konfigurieren von Größen für Cloud-Dienste](https://msdn.microsoft.com/library/ee814754)
+[Einrichten eines Clouddiensts für Azure](https://msdn.microsoft.com/library/hh124108) [Konfigurieren von Größen für Clouddienste](https://msdn.microsoft.com/library/ee814754)
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

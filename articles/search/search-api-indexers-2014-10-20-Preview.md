@@ -4,7 +4,7 @@
 
 #Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)
 
-> [AZURE.NOTE] Dieser Artikel beschreibt den Prototyp einer neuen Funktion, die nicht in der veröffentlichten Version der API enthalten ist. Weitere Informationen zu Versionen und Unterstützungsmöglichkeiten finden Sie unter [Versionsverwaltung für den Azure Search-Dienst](http://msdn.microsoft.com/library/azure/dn864560.aspx) auf MSDN. Weitere Informationen zu anderen Funktionen in dieser Vorschau-API finden Sie unter [Azure Search-Dienst REST API-Version: 2014-10-20-Preview](../search-api-2014-10-20-preview/).
+> [AZURE.NOTE]Dieser Artikel beschreibt den Prototyp einer neuen Funktion, die nicht in der veröffentlichten Version der API enthalten ist. Weitere Informationen zu Versionen und Unterstützungsmöglichkeiten finden Sie unter[Versionsverwaltung für den Azure Search-Dienst](http://msdn.microsoft.com/library/azure/dn864560.aspx) auf MSDN. Weitere Informationen zu anderen Funktionen in dieser Vorschau-API finden Sie unter [Azure Search-Dienst REST API-Version: 2014-10-20-Preview](../search-api-2014-10-20-preview/).
 
 ## Übersicht
 
@@ -84,7 +84,7 @@ Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstelle
 
 <a name="CreateDataSourceRequestSyntax"></a> **Syntax des Anforderungstextes**
 
-Der Anforderungstext enthält eine Datenquellendefinition, einschließlich Datenquellentyp,  Anmeldeinformationen zum Lesen der Daten sowie optionale Richtlinien zur Erkennung von Datenänderungen und Datenlöschungen. Diese Richtlinien werden verwendet, um geänderte und gelöschte Daten in der Datenquelle effizient zu identifizieren, wenn ein regelmäßig geplanter Indexer verwendet wird.
+Der Anforderungstext enthält eine Datenquellendefinition, einschließlich Datenquellentyp, Anmeldeinformationen zum Lesen der Daten sowie optionale Richtlinien zur Erkennung von Datenänderungen und Datenlöschungen. Diese Richtlinien werden verwendet, um geänderte und gelöschte Daten in der Datenquelle effizient zu identifizieren, wenn ein regelmäßig geplanter Indexer verwendet wird.
 
 
 Die Syntax für die Strukturierung der Anforderungsnutzlast ist wie folgt. Eine Beispielanforderung wird weiter unten in diesem Thema bereitgestellt.
@@ -135,7 +135,7 @@ Diese Richtlinie kann wie folgt angegeben werden:
 
 ***Richtlinie für die integrierte SQL-Erkennung von Änderungen***
 
-Wenn die SQL-Datenbank die [integrierte SQL-Änderungsnachverfolgung] unterstützt (http://technet.microsoft.com/library/cc280462(v=SQL.105).aspx)), wird empfohlen, die Richtlinie für die integrierte SQL-Änderungsnachverfolgung zu verwenden. Diese Richtlinie ermöglicht die effizienteste Änderungsnachverfolgung und sorgt dafür, dass Azure Search gelöschte Zeilen identifiziert, ohne dass Sie eine explizite "Vorläufig löschen"-Spalte in Ihrem Schema angeben müssen.
+Wenn die SQL-Datenbank die [integrierte SQL-Änderungsnachverfolgung](http://technet.microsoft.com/library/cc280462(v=SQL.105).aspx) unterstützt, wird empfohlen, die Richtlinie für die integrierte SQL-Änderungsnachverfolgung zu verwenden. Diese Richtlinie ermöglicht die effizienteste Änderungsnachverfolgung und sorgt dafür, dass Azure Search gelöschte Zeilen identifiziert, ohne dass Sie eine explizite "Vorläufig löschen"-Spalte in Ihrem Schema angeben müssen.
 
 Die integrierte SQL-Änderungsnachverfolgung wird beginnend mit den folgenden SQL-Datenbank-Versionen unterstützt: - SQL Server 2008 R2, wenn Sie SQL IaaS-VMs verwenden – Azure SQL-Datenbank V12, wenn Sie Azure SQL verwenden.
 
@@ -365,7 +365,7 @@ Die Syntax des Anforderungstexts ist mit der für [Anforderungen "Indexer erstel
 
 **Antwort**
 
-Bei erfolgreicher Anforderung: "201 Erstellt",  wenn ein neuer Indexer erstellt wurde; "204 Kein Inhalt", wenn eine vorhandener Indexer aktualisiert wurde. 
+Bei erfolgreicher Anforderung: "201 Erstellt", wenn ein neuer Indexer erstellt wurde; "204 Kein Inhalt", wenn eine vorhandener Indexer aktualisiert wurde.
 
 ### Indexer auflisten
 
@@ -656,4 +656,5 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 <td>Nicht unterstützt; Azure Search unterstützt derzeit nur primitive Typen und Zeichenfolgensammlungen</td>
 </tr>
 </table>
-<!--HONumber=54--> 
+
+<!---HONumber=62-->

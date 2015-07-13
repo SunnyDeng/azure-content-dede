@@ -164,4 +164,4 @@ Nachdem Sie die Operationen zur API hinzugefügt haben, können Sie die API zu e
 [Erstellen und Veröffentlichen eines Produkts]: api-management-howto-add-products.md
 [Zwischenspeichern von Operationsergebnissen in Azure API Management]: api-management-howto-cache.md
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

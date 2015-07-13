@@ -19,4 +19,4 @@ Führen Sie die folgenden Schritte aus, um einen neuen mobilen Dienst zu erstell
 
 Sie haben nun einen neuen mobilen Dienst erstellt, der von Ihren mobilen Apps verwendet werden kann.
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

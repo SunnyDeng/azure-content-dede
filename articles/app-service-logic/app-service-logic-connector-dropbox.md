@@ -25,13 +25,13 @@ Mit dem Dropbox-Connector können Sie Dateien in ein Dropbox-Konto hochladen bzw
 ## Erstellen eines Dropbox-Connectors für Ihre Logik-App ##
 Zur Verwendung des Dropbox-Connectors müssen Sie zunächst eine Instanz der Dropbox-Connector-API-App erstellen. Gehen Sie dazu folgendermaßen vor:
 
-1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" unten links im Azure-Portal.
-2.	Navigieren Sie zu "Web und Mobile --> Azure Marketplace", und suchen Sie nach "Dropbox-Connector".
+1.	Öffnen Sie den Azure Marketplace mit der Option „+NEU“ unten links im Azure-Portal.
+2.	Navigieren Sie zu „Web und Mobil --> Azure Marketplace“, und suchen Sie nach „Dropbox-Connector“.
 3.	Konfigurieren Sie den Dropbox-Connector wie folgt:
  
-	![][1] – **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll – **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll – **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll – **App Service-Plan** – Wählen Sie einen Webhostingplan aus oder erstellen Sie einen – **Tarif** – Wählen Sie einen Tarif für den Connector aus – **Name** – Geben Sie Ihrem Dropbox-Connector einen Namen
-4. Klicken Sie auf "Erstellen". Ein neuer Dropbox-Connector wird erstellt.
-5. Sobald die Dropbox-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des Dropbox-Connectors erstellen.
+	![][1] – **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll. – **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll. – **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll. – **App Service-Plan** – Wählen Sie einen Webhostingplan aus, oder erstellen Sie einen. – **Tarif** – Wählen Sie einen Tarif für den Connector aus. – **Name** – Geben Sie Ihrem Dropbox-Connector einen Namen.
+4. Klicken Sie auf „Erstellen“. Ein neuer Dropbox-Connector wird erstellt.
+5. Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des Dropbox-Connectors erstellen.
 
 ## Verwenden des Dropbox-Connectors in Logik-Apps ##
 Sobald Ihre API-App erstellt wurde, können Sie den Dropbox-Connector als Aktion für Ihre Logik-App verwenden. Gehen Sie hierzu wie folgt vor:
@@ -42,22 +42,22 @@ Sobald Ihre API-App erstellt wurde, können Sie den Dropbox-Connector als Aktion
 2.	Öffnen Sie "Trigger und Aktionen", um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren. 
  	
 	![][3]
-3.	Der Dropbox-Connector wird im Abschnitt "API Apps in this resource group" im Katalog auf der rechten Seite angezeigt.
+3.	Der Dropbox-Connector wird im Katalog auf der rechten Seite im Abschnitt „API-Apps in dieser Ressourcengruppe“ angezeigt.
  
 	![][4]
-4.	Sie können die Dropbox-Connector-API-App im Editor bearbeiten, indem Sie auf "Dropbox-Connector" klicken. Klicken Sie auf die Schaltfläche "Autorisieren". Geben Sie Ihre Dropbox-Anmeldeinformationen ein. Klicken Sie auf "Zulassen".
+4.	Sie können die Dropbox-Connector-API-App im Editor bearbeiten, indem Sie auf „Dropbox-Connector“ klicken. Klicken Sie auf die Schaltfläche „Autorisieren“. Geben Sie Ihre Dropbox-Anmeldeinformationen ein. Klicken Sie auf „Zulassen“.
  
 	![][5] ![][6] ![][7]
-6.	Sie können nun den Dropbox-Connector im Datenfluss verwenden. Sie können die Dropbox-Aktion "Datei hochladen" zum Hochladen einer Datei in Ihr Dropbox-Konto verwenden.
+6.	Sie können nun den Dropbox-Connector im Datenfluss verwenden. Sie können die Dropbox-Aktion „Datei hochladen“ zum Hochladen einer Datei in Ihr Dropbox-Konto verwenden.
  
 	![][8] ![][9]
 
-Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Datei hochladen" wie folgt:
+Konfigurieren Sie die Eingabeeigenschaften für die Aktion „Datei hochladen“ wie folgt:
 
-- **Dateipfad** - Gibt den Dropbox-Zieldateipfad der Datei an, die hochgeladen werden soll. Beispiel: Photos/image.png
-- **Inhalt** - Gibt den Inhalt der Datei an, die hochgeladen werden soll. Dies stammt häufig von einem vorherigen Schritt in Ihrer Logik-App.
-- **Codierung für die Inhaltsübertragung** - Geben Sie keine oder base64 an.
-- **Überschreiben** - Legen Sie dies auf "True" fest, um die Datei ggf. zu überschreiben.
+- **Dateipfad** – Gibt den Dropbox-Zieldateipfad der Datei an, die hochgeladen werden soll. Beispiel: Photos/image.png
+- **Inhalt** – Gibt den Inhalt der Datei an, die hochgeladen werden soll. Dies stammt häufig aus einem vorherigen Schritt in Ihrer Logik-App.
+- **Codierung für die Inhaltsübertragung** – Geben Sie „none“ oder „base64“ an.
+- **Überschreiben** – Legen Sie hierfür „True“ fest, um die Datei ggf. zu überschreiben.
 
 
 <!-- Image reference -->

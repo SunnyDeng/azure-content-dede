@@ -387,7 +387,7 @@ Beispiele mit mehr Praxisnähe und eine ausführlichere Erörterung von **invoke
 
 ##<a name="caching"></a>Gewusst wie: Authentifizieren von Benutzern
 
-Mobile Services unterstützt Authentifizierung und Autorisierung von Anwendungsbenutzern mit einer Vielzahl externer Identitätsanbieter: Facebook, Google, Microsoft-Konto und Twitter. Sie können Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Außerdem können Sie die Identität authentifizierter Benutzer verwenden, um Autorisierungsregeln in Serverskripts zu implementieren. Weitere Informationen finden Sie im Lernprogramm [Erste Schritte mit der Authentifizierung].
+Mobile Services unterstützt Authentifizierung und Autorisierung von Anwendungsbenutzern mit einer Vielzahl externer Identitätsanbieter: Facebook, Google, Microsoft-Konto und Twitter. Sie können Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Außerdem können Sie die Identität authentifizierter Benutzer verwenden, um Autorisierungsregeln in Serverskripts zu implementieren. Weitere Informationen finden Sie im Lernprogramm "Erste Schritte mit der Authentifizierung".
 
 >[AZURE.NOTE]Wenn Sie Authentifizierung in einer PhoneGap- oder Cordova-App verwenden, müssen Sie dem Projekt auch die folgenden Plug-Ins hinzufügen:
 >
@@ -444,7 +444,7 @@ Wenn Sie die Facebook- oder Google-APIs für die Clientauthentifizierung verwend
 	     alert("Error: " + err);
 	});
 
-Dieses Beispiel geht davon aus, dass das vom jeweiligen Anbieter gelieferte Token in der `token`-Variable gespeichert wird. Clientauthentifizierung für Twitter ist derzeit nicht möglich.
+Dieses Beispiel geht davon aus, dass das vom jeweiligen Anbieter gelieferte Token in der `token`-Variable gespeichert wird. Clientauthentifizierung für Twitter ist derzeit nicht möglich. Microsoft Azure Active Directory kann derzeit nicht mit JavaScript-Back-Ends für die Clientauthentifizierung verwendet werden.
 
 ###Zwischenspeichern des Authentifizierungstokens
 Manche Aufrufe der Anmeldemethode lassen sich vermeiden, nachdem sich der Benutzer authentifiziert hat. Sie können entweder [sessionStorage] oder [localStorage] verwenden, um die Identität des aktuellen Benutzers bei der ersten Anmeldung zwischenzuspeichern und später bei Bedarf prüfen, ob Sie die Benutzeridentität bereits im Speicher haben. Falls der Zwischenspeicher leer ist oder ein Aufruf fehlschlägt (d. h. die aktuelle Anmeldesitzung abgelaufen ist), müssen wir dennoch den Anmeldeprozess durchlaufen.
@@ -606,5 +606,6 @@ Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforde
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [Referenz zu OData-Systemabfrageoptionen]: http://go.microsoft.com/fwlink/p/?LinkId=444502
 [Aufrufen einer benutzerdefinierten API aus dem Client]: mobile-services-html-call-custom-api.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

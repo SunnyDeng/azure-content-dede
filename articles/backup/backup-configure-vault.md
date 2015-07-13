@@ -16,17 +16,19 @@
 	ms.date="06/03/2015" 
 	ms.author="markgal"/>
 
+
+
 #Konfigurieren von Azure Backup Services für eine schnelle und einfache Sicherung von Windows Server
 
 Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. In diesem Lernprogramm erfahren Sie, wie Sie das Feature Azure Backup aktivieren.
 >[AZURE.NOTE]Früher mussten Sie ein X.509 v3-Zertifikat erstellen oder beziehen, um Ihren Sicherungsserver zu registrieren. Zertifikate werden weiterhin unterstützt, aber jetzt können Sie direkt auf der Seite "Schnellstart" Tresoranmeldeinformationen generieren, wodurch der Azure-Tresor einfacher bei einem Server registriert werden kann. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 
-Sie müssen einen Sicherungstresor in Ihrer geografischen Region erstellen, in dem die Daten gespeichert werden sollen, um Dateien und Daten von Windows Server in Azure zu sichern. Dieses Lernprogramm führt Sie durch:
+Sie müssen einen Sicherungstresor in Ihrer geografischen Region erstellen, in dem die Daten gespeichert werden sollen, um Dateien und Daten von Windows Server in Azure zu sichern. In diesem Lernprogramm wird Folgendes erläutert:
 
-- die Erstellung des Tresors verwenden Sie zum Speichern von Sicherungen
-- Herunterladen von Anmeldeinformationen Tresor
-- die Installation eines Sicherungs-Agents
-- eine Übersicht über die Sicherung Verwaltungsaufgaben über das Verwaltungsportal
+- Erstellen des Tresors, in dem Sie Sicherungen speichern
+- Herunterladen von Tresoranmeldeinformationen
+- Installieren eines Sicherungs-Agents
+- Übersicht der Sicherungsverwaltungsaufgaben, die über das Verwaltungsportal verfügbar sind
 
 ##Erstellen eines Sicherungstresors
 
@@ -39,7 +41,7 @@ Sie müssen einen Sicherungstresor in Ihrer geografischen Region erstellen, in d
 
 5. Klicken Sie auf **Tresor erstellen**.
 
-    Es kann eine Weile dauern, bis der Sicherungstresor fertiggestellt wird. Sie können die Benachrichtigungen unten im Portal überwachen, um den Status zu überprüfen. Nachdem der sicherungstresor erstellt wurde, eine Nachricht teilt Ihnen der Tresor erfolgreich erstellt und werden Wiederherstellungsdienste als in den Ressourcen aufgeführt werden **Active**.
+    Es kann eine Weile dauern, bis der Sicherungstresor fertiggestellt wird. Sie können die Benachrichtigungen unten im Portal überwachen, um den Status zu überprüfen. Nach dem Erstellen des Sicherungstresors erhalten Sie eine Nachricht mit dem Hinweis, dass der Tresor erfolgreich erstellt wurde. Er wird anschließend in den Ressourcen der Recovery Services als **Aktiv** angezeigt.
 
     ![Erstellung eines Sicherungstresors](./media/backup-configure-vault/RS_backupvaultcreation.png)
 
@@ -51,7 +53,7 @@ Tresoranmeldeinformationen werden nun anstelle von Zertifikaten verwendet, um ei
 
 1. Melden Sie sich im [Verwaltungsportal](https://manage.windowsazure.com) an.
 2. Klicken Sie auf **Wiederherstellungsdienste**, und wählen Sie den Sicherungstresor aus, den Sie bei einem Server registrieren möchten. Die Seite "Schnellstart" für diesen Sicherungstresor wird angezeigt.
-3. Auf der **Seite "Schnellstart"**, klicken Sie auf **Download-tresoranmeldedaten** fordert das Portal zu generieren und die tresoranmeldedaten Sie zum Registrieren Ihres Servers beim sicherungstresor verwenden herunterladen.
+3. Klicken Sie auf der Seite **Schnellstart** auf **Tresoranmeldeinformationen herunterladen**, damit die Tresoranmeldeinformationen, mit denen Sie Ihren Server beim Sicherungstresor registrieren, generiert und heruntergeladen werden.
 
     Das Portal generiert Tresoranmeldeinformationen mit einer Kombination aus dem Tresornamen und dem aktuellen Datum.
 
@@ -63,8 +65,8 @@ Tresoranmeldeinformationen werden nun anstelle von Zertifikaten verwendet, um ei
 2. Klicken Sie auf **Wiederherstellungsdienste**, und wählen Sie einen Sicherungstresor aus, um die zugehörige Seite "Schnellstart" anzuzeigen.
 3. Wählen Sie auf der Seite "Schnellstart" den Agent aus, den Sie herunterladen möchten. Sie können **Azure-Sicherungs-Agent herunterladen**, **Windows Server und System Center Data Protection Manager** oder **Windows Server Essentials** auswählen. Weitere Informationen finden Sie unter:
 
-	* [Installieren von Azure Backup-Agent für WindowsServer 2012 und System Center 2012 SP1 – Data Protection Manager](http://technet.microsoft.com/library/hh831761.aspx#BKMK_installagent)
-	* [Installieren von Azure Backup Agent für Windows Server 2012 Essentials](http://technet.microsoft.com/library/jj884318.aspx)
+	* [Installieren des Azure-Sicherungs-Agents für Windows Server 2012 und System Center 2012 SP1 – Data Protection Manager](http://technet.microsoft.com/library/hh831761.aspx#BKMK_installagent)
+	* [Installieren des Azure-Sicherungs-Agents für Windows Server 2012 Essentials](http://technet.microsoft.com/library/jj884318.aspx)
 
 Wenn Sie den Agent installiert haben, können Sie die passende lokale Verwaltungsschnittstelle verwenden (wie das Microsoft Management Console-Snap-In, die Data Protection Manager-Konsole in Systemcenter oder das Windows Server Essentials-Dashboard), um die Sicherungsrichtlinie für den Server festzulegen.
 
@@ -94,4 +96,7 @@ Wenn Sie den Agent installiert haben, können Sie die passende lokale Verwaltung
 - Weitere Informationen zur Azure-Sicherung finden Sie unter [Übersicht über die Windows Azure-Sicherung](http://go.microsoft.com/fwlink/p/?LinkId=222425). 
 - Besuchen Sie das [Azure Sicherungs-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=GIT-SubDir--> 
+
+ 
+
+<!---HONumber=62-->

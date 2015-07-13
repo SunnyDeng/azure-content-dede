@@ -1,3 +1,3 @@
 Rezensionen zu Büchern bei Amazon, die von Forschern der University of Pennsylvania (<a href="http://www.cs.jhu.edu/~mdredze/datasets/sentiment/">sentiment</a>) von der Website "amazon.com" übernommen wurden. Weitere Informationen finden Sie im Forschungsbericht "Biographies, Bollywood, Boom-boxes and Blenders: Domain Adaptation for Sentiment Classification" von John Blitzer, Mark Dredze und Fernando Pereira; Association of Computational Linguistics (ACL), 2007.<p> </p>Das ursprüngliche DataSet umfasst 975.000 Bewertungen mit den Einstufungen 1, 2, 3, 4 oder 5. Die Bewertungen wurden in Englisch verfasst und stammen aus dem Zeitraum 1997-2007. Dieses DataSet wurde auf 10.000 Bewertungen reduziert.
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

@@ -1,6 +1,6 @@
 
 
-In der Back-End-Anwendung müssen Sie jetzt Vorlagenbenachrichtigungen statt systemeigener Nutzlasten senden. Auf diese Weise wird der Back-End-Code vereinfacht, da Sie nicht mehrere Nutzlasten für die verschiedenen Plattformen senden müssen.
+In Ihrer Back-End-Anwendung müssen Sie jetzt Vorlagenbenachrichtigungen anstatt systemeigene Nutzlasten senden. Auf diese Weise wird der Back-End-Code vereinfacht, da Sie nicht mehrere Nutzlasten für die verschiedenen Plattformen senden müssen.
 
 Wenn Sie Vorlagenbenachrichtigungen senden, müssen Sie nur eine Reihe von Eigenschaften angeben. In unserem Fall senden wir die Eigenschaften, die beispielsweise die lokalisierte Version der aktuellen Nachrichten enthalten:
 
@@ -22,7 +22,7 @@ Der enthaltene Code wird an Windows Store- und iOS-Geräte übertragen, da das B
 
 ## Senden von Benachrichtigungen mit einer C#-Konsolenanwendung ##
 
-Wir ändern einfach die *SendNotificationAsync*-Methode durch Senden einer einzelnen Vorlagenbenachrichtigung.
+Wir ändern einfach Ihre *SendNotificationAsync*-Methode durch Senden einer einzelnen Vorlagenbenachrichtigung.
 
 	var hub = NotificationHubClient.CreateClientFromConnectionString("<connection string>", "<hub name>");
     var notification = new Dictionary<string, string>() {
@@ -52,4 +52,4 @@ Beachten Sie, dass dieser einfache Aufruf die korrekten lokalisierten Nachrichte
 	
 Beachten Sie, dass es in diesem Fall nicht erforderlich ist, mehrere Benachrichtigungen für verschiedene Gebietsschemas und Plattformen zu senden.
 
-<!--HONumber=49-->
+<!---HONumber=62-->

@@ -59,7 +59,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den Pufferconnector als Aktion f
 	Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Nachricht bereitstellen" wie folgt:
 
  - **Text** – Geben Sie den Text der bereitzustellenden Nachricht ein.
- - **Kanalname** – Geben Sie den Pufferkanal an, in den diese Nachricht hochgeladen werden soll. Wenn dieser nicht angegeben wird, wird die Nachricht in \#general bereitgestellt.
+ - **Kanalname** – Geben Sie den Pufferkanal an, in den diese Nachricht hochgeladen werden soll. Wenn dieser nicht angegeben wird, wird die Nachricht in #general bereitgestellt.
 
  	**Erweiterte Eigenschaften** – **Bot-Benutzername** – Name des Bots, der für diese Nachricht verwendet werden soll. Die Nachricht wird als "Bot" bereitgestellt, wenn diese Angabe nicht gemacht wird. – **Symbol-URL** – URL zu einem Bild, das als Symbol für diese Nachricht verwendet werden soll – **Emoticon** – Emoticon, das als Symbol für diese Nachricht verwendet werden soll. Setzt die Symbol-URL außer Kraft.
  
@@ -85,4 +85,4 @@ Sobald Ihre API-App erstellt wurde, können Sie den Pufferconnector als Aktion f
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [Puffer-API-Definition]: https://msdn.microsoft.com/de-de/library/dn708020.aspx
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

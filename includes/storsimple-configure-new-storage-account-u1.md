@@ -1,20 +1,3 @@
-<properties 
-   pageTitle="Optional: Konfigurieren eines neuen Speicherkontos für den Dienst"
-   description="Erläutert, wie Sie ein Speicherkonto für den StorSimple-Manager-Dienst mit Update 1 konfigurieren."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="05/18/2015"
-   ms.author="alkohli" />
-
 #### So fügen Sie ein Speicherkonto zur StorSimple 8000-Serie mit Update 1.0 hinzu
 
 1. Wählen Sie auf der StorSimple-Manager-Dienst-Startseite Ihren Dienst aus, und doppelklicken Sie dann darauf. Damit gelangen Sie auf die Seite **Schnellstart**. Wählen Sie die Seite **Konfigurieren** aus.
@@ -50,7 +33,7 @@
 	  		
  - Wenn Sie **OpenStack** als Clouddienstanbieter ausgewählt haben, geben Sie einen **Hostnamen**, den **Zugriffsschlüssel** und den **geheimen Schlüssel** an.
 
-        > [AZURE.NOTE] Für alle Clouddienstanbieter mit Ausnahme von Azure ist ein Anzeigename zulässig. Sie können verschiedene Anzeigenamen verwenden und mehrere Speicherkonten mit denselben Anmeldeinformationen erstellen.
+        > [AZURE.NOTE] For all the cloud service providers, excluding Azure, a friendly name is allowed. You can use different friendly names and create more than one storage account with the same set of credentials.
 
         ![Add Openstack storage account](./media/storsimple-configure-new-storage-account-u1/AddOpenstackStorageaccount-include.png)
 
@@ -62,4 +45,4 @@
 
 7. Das neu erstellte Speicherkonto wird auf der Seite **Konfigurieren** unter **Speicherkonten** angezeigt. Klicken Sie auf **Speichern**, um das neue Speicherkonto zu speichern. Klicken Sie auf **OK**, wenn Sie zur Bestätigung aufgefordert werden.
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=62-->

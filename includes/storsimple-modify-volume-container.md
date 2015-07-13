@@ -1,46 +1,27 @@
-<properties 
-   pageTitle="Modify a volume container"
-   description="Explains how you can use the StorSimple Manager service volume containers page to modify a volume container."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="05/13/2015"
-   ms.author="v-sharos" />
+#### So ändern Sie einen Volumecontainer
 
+1. Wählen Sie auf der Seite **Geräte** das Gerät aus, doppelklicken Sie darauf, und klicken Sie dann auf die Registerkarte **Volumecontainer**.
 
-#### To modify a volume container
+2. Wählen Sie in der tabellarischen Auflistung der Volumecontainer die Einstellung aus, die Sie ändern möchten, und klicken Sie auf **Ändern**.
 
-1. On the **Devices** page, select the device, double-click it, and then click the **Volume containers** tab.
+3. Führen Sie im Dialogfeld **Volumecontainer ändern** die folgenden Schritte aus:
 
-2. In the tabular listing of the volume containers, select the setting that you want to modify, and click **Modify**.
+    1. Ändern Sie den Namen des Volumecontainers, passen Sie die zugeordnete Bandbreite an, und geben Sie an, ob die Daten in der Cloud verschlüsselt werden müssen.
 
-3. In the **Modify Volume container** dialog box, do the following:
+        ![Ändern eines Volumecontainers mit Bandbreitenvorlage 1](./media/storsimple-modify-volume-container/HCS_ModifyVCBT1-include.png)
 
-    1. Change the name of the volume container, modify the associated bandwidth, and specify whether or not the data residing in the cloud needs to be encrypted.
+    2. Der Verschlüsselungsschlüssel und das Speicherkonto können nicht geändert werden, nachdem sie einmal angegeben wurden. Wenn Sie **Bandbreitenvorlage auswählen** angegeben haben, klicken Sie auf den Pfeil, um zur nächsten Seite zu gelangen.
 
-        ![Modify Volume Container with Bandwidth Template 1](./media/storsimple-modify-volume-container/HCS_ModifyVCBT1-include.png)
+4. Auf der nächsten Seite des Dialogfelds **Volumecontainer ändern**:
 
-    2. The encryption key and storage account cannot be changed after they are specified. If you specified **Select a bandwidth template**, click the arrow to proceed to the next page.
+    1. Wählen Sie in der Dropdownliste eine vorhandene Bandbreitenvorlage aus.
 
-4. In the next page of the **Modify Volume Container** dialog box:
+    2. Überprüfen Sie die Zeitplaneinstellungen für die angegebene Bandbreitenvorlage.
 
-    1. From the drop-down list, choose an existing bandwidth template.
+        ![Ändern eines Volumecontainers mit Bandbreitenvorlage 2](./media/storsimple-modify-volume-container/HCS_ModifyVCBT2-include.png)
 
-    2. Review the schedule settings for the specified bandwidth template.
-
-        ![Modify Volume Container with Bandwidth Template 2](./media/storsimple-modify-volume-container/HCS_ModifyVCBT2-include.png)
-
-    3. Click the check icon ![check icon](./media/storsimple-modify-volume-container/HCS_CheckIcon-include.png) to save the updated settings. The **Volume containers** page will be updated to reflect the changes.
+    3. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-modify-volume-container/HCS_CheckIcon-include.png), um die aktualisierten Einstellungen zu speichern. Die Seite **Volumecontainer** wird den Änderungen entsprechend aktualisiert.
 
  
 
-
-
+<!---HONumber=62-->

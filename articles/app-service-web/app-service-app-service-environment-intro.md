@@ -21,7 +21,7 @@
 ## Übersicht ##
 Eine App Service-Umgebung ist eine Option des [Premium][PremiumTier]-Tarifs von Azure App Service, die eine vollständig isolierte und dedizierte Umgebung zur sicheren Ausführung all Ihrer Apps bereitstellt. Dazu gehören [Web-Apps][WebApps], [mobile Apps][MobileApps], [API-Apps][APIApps] und [Logik-Apps][LogicApps] mit erweiterten Skalierungsoptionen.
 
-Compute-Ressourcen für eine App Service-Umgebung werden ausschließlich zur Ausführung Ihrer Apps eingesetzt. Eine App Service-Umgebung wird immer in einem regionalen virtuellen Netzwerk erstellt. Dadurch ergeben sich für Ihre Apps neue Optionen für die Netzwerkisolation. Eine App Service-Umgebung unterstützt außerdem zusätzliche Skalierungsoptionen mit bis zu fünfzig (50) Compute-Ressourcen, die zur Ausführung Ihrer Apps zur Verfügung stehen. Außerhalb einer App Service-Umgebung gilt ein Limit von 20 Compute-Ressourcen für das Hosten Ihrer Apps.
+Computeressourcen für eine App Service-Umgebung werden ausschließlich zur Ausführung Ihrer Apps eingesetzt. Eine App Service-Umgebung wird immer in einem regionalen virtuellen Netzwerk erstellt. Dadurch ergeben sich für Ihre Apps neue Optionen für die Netzwerkisolation. Eine App Service-Umgebung unterstützt außerdem zusätzliche Skalierungsoptionen mit bis zu fünfzig (50) Computeressourcen, die zur Ausführung Ihrer Apps zur Verfügung stehen. Außerhalb einer App Service-Umgebung gilt ein Limit von 20 Computeressourcen für das Hosten Ihrer Apps.
 
 ## Unterstützung für virtuelle Netzwerke ##
 Eine App Service-Umgebung kann entweder in einem bereits vorhandenen oder in einem neuen regionalen virtuellen Netzwerk erstellt werden. ([Hier finden Sie weitere Informationen zu virtuellen Netzwerken.][MoreInfoOnVirtualNetworks]) Da eine App Service-Umgebung sich immer in einem regionalen virtuellen Netzwerk, genauer gesagt in einem Subnetz eines regionalen virtuellen Netzwerks befindet, können Sie die Sicherheitsfunktionen virtueller Netzwerke zum Steuern sowohl der eingehenden als auch der ausgehenden Netzwerkkommunikation nutzen.
@@ -30,18 +30,18 @@ Mithilfe von [Netzwerksicherheitsgruppen][NetworkSecurityGroups] können Sie die
 
 Apps müssen häufig auch auf Unternehmensressourcen wie interne Datenbanken und Webdienste zugreifen. Ein gängiger Ansatz besteht darin, diese Endpunkte nur für internen Netzwerkdatenverkehr verfügbar zu machen, der innerhalb eines virtuellen Azure-Netzwerks fließt. Sobald eine App Service-Umgebung demselben virtuellen Netzwerk angeschlossen wird wie die internen Dienste, können die in der Umgebung ausgeführten Apps auf diese zugreifen. Dies gilt auch für Endpunkte, die über [Site-to-Site-][SiteToSite] und [Azure ExpressRoute][ExpressRoute]-Verbindungen erreichbar sind.
 
-## Dedizierte Compute-Ressourcen ##
-Alle Compute-Ressourcen in einer App Service-Umgebung sind ausschließlich für ein einzelnes Abonnement vorgesehen. Eine App Service-Umgebung besteht aus einem einzelnen Front-End-Compute-Ressourcenpool sowie ein bis drei Worker-Compute-Ressourcenpools.
+## Dedizierte Computeressourcen ##
+Alle Computeressourcen in einer App Service-Umgebung sind ausschließlich für ein einzelnes Abonnement vorgesehen. Eine App Service-Umgebung besteht aus einem einzelnen Front-End-Computeressourcenpool sowie ein bis drei Worker-Computeressourcenpools.
 
-Der Front-End-Pool enthält Compute-Ressourcen, die für die SSL-Beendigung sowie für den automatischen Lastenausgleich von App-Anforderungen in einer App Service-Umgebung zuständig sind.
+Der Front-End-Pool enthält Computeressourcen, die für die SSL-Beendigung sowie für den automatischen Lastenausgleich von App-Anforderungen in einer App Service-Umgebung zuständig sind.
 
-Jeder Workerpool enthält Compute-Ressourcen, die [App Service-Plänen][AppServicePlan] zugeordnet sind, die wiederum eine oder mehrere Azure App Service-Apps enthalten. Da in einer App Service-Umgebung bis zu drei verschiedenen Workerpools vorhanden sein können, können Sie flexibel verschiedene Compute-Ressourcen für jeden Workerpool auswählen.
+Jeder Workerpool enthält Computeressourcen, die [App Service-Plänen][AppServicePlan] zugeordnet sind, die wiederum eine oder mehrere Azure App Service-Apps enthalten. Da in einer App Service-Umgebung bis zu drei verschiedenen Workerpools vorhanden sein können, können Sie flexibel verschiedene Computeressourcen für jeden Workerpool auswählen.
 
-Beispielsweise können Sie einen Workerpool mit weniger leistungsfähigen Compute-Ressourcen für App Service-Pläne erstellen, die für Entwicklungs- oder Test-Apps vorgesehen sind. Ein zweiter (oder sogar dritter) Workerpool kann leistungsfähigere Compute-Ressourcen für App Service-Pläne nutzen, die für Produktions-Apps ausgeführt werden.
+Beispielsweise können Sie einen Workerpool mit weniger leistungsfähigen Computeressourcen für App Service-Pläne erstellen, die für Entwicklungs- oder Test-Apps vorgesehen sind. Ein zweiter (oder sogar dritter) Workerpool kann leistungsfähigere Computeressourcen für App Service-Pläne nutzen, die für Produktions-Apps ausgeführt werden.
 
-Eine App Service-Umgebung kann mit bis zu fünfzig (50) Compute-Ressourcen in einem einzelnen Workerpool konfiguriert werden. Ausführliche Informationen über die Menge von Compute-Ressourcen, die den Front-End- und Workerpools zur Verfügung stehen, finden Sie unter [Konfigurieren einer App Service-Umgebung][HowToConfigureanAppServiceEnvironment].
+Eine App Service-Umgebung kann mit bis zu fünfzig (50) Computeressourcen in einem einzelnen Workerpool konfiguriert werden. Ausführliche Informationen über die Menge von Computeressourcen, die den Front-End- und Workerpools zur Verfügung stehen, finden Sie unter [Konfigurieren einer App Service-Umgebung][HowToConfigureanAppServiceEnvironment].
 
-Weitere Informationen zu den verfügbaren Compute-Ressourcengrößen, die in einer App Service-Umgebung unterstützt werden, finden Sie auf der Seite [App Service-Preise][AppServicePricing]. Sehen Sie sich die verfügbaren Optionen für App Service-Umgebungen im Premium-Tarif an.
+Weitere Informationen zu den verfügbaren Computeressourcengrößen, die in einer App Service-Umgebung unterstützt werden, finden Sie auf der Seite [App Service-Preise][AppServicePricing]. Sehen Sie sich die verfügbaren Optionen für App Service-Umgebungen im Premium-Tarif an.
 
 
 ## Erste Schritte

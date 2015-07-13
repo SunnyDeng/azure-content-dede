@@ -1,6 +1,7 @@
 <properties
 	pageTitle="Erste Schritte mit Azure Stream Analytics: Betrugserkennung in Echtzeit | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit Stream Analytics eine Betrugserkennung in Echtzeit für die generierten Telekommunikationsdaten erstellen."
+	description="Erfahren Sie, wie Sie mit Stream Analytics eine Lösung zur Betrugserkennung in Echtzeit erstellen können. Verwenden Sie einen Event Hub für die Ereignisverarbeitung in Echtzeit."
+	keywords="event hub,fraud detection,real-time,real-time processing"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -10,7 +11,7 @@
 <tags
 	ms.service="stream-analytics"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
 	ms.date="04/28/2015"
@@ -20,13 +21,16 @@
 
 # Erste Schritte mit Azure Stream Analytics: Betrugserkennung in Echtzeit
 
-Azure Stream Analytics ist ein vollständig verwalteter Dienst, der eine geringe Latenz, hohe Verfügbarkeit und eine skalierbare komplexe Ereignisverarbeitung durch das Streaming von Daten in der Cloud bietet. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md).
-
 Erfahren Sie, wie Sie mit Stream Analytics eine End-to-End-Lösung zur Betrugserkennung in Echtzeit erstellen können. Binden Sie Ereignisse in Azure Event Hubs ein, schreiben Sie Stream Analytics-Abfragen für das Erfassen von Daten oder für Warnungen, und senden Sie das Ergebnis an eine Ausgabesenke, um in Echtzeit einen Dateneinblick zu erhalten.
 
-## Szenario: Telekommunikation und SIM-Betrug
+Azure Stream Analytics ist ein vollständig verwalteter Dienst, der eine geringe Latenz, hohe Verfügbarkeit und eine skalierbare komplexe Ereignisverarbeitung durch das Streaming von Daten in der Cloud bietet. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md).
 
-Ein Telekommunikationsunternehmen hat eine große Datenmenge durch eingehende Anrufe. Diese Daten sollen auf eine verwaltbare Menge reduziert werden, und es sollen Erkenntnisse über die Kundennutzung anhand der geografischen Regionen und der Zeit gewonnen werden. Zudem möchte das Unternehmen SIM-Betrug (mehrere mehr oder weniger gleichzeitige Anrufe derselben Person von geografisch unterschiedlichen Standorten) in Echtzeit erkennen, damit es problemlos reagieren und die Kunden benachrichtigen oder den Dienst einstellen kann. Hierbei handelt es sich um typische, an das Internet der Dinge erinnernde Szenarios, in denen unzählige Telemetrie- oder Sensordaten generiert werden, die die Kunden erfassen möchten oder über die bei Abweichungen Benachrichtigungen erstellt werden sollen.
+
+## Szenario: Telekommunikation und SIM-Betrugserkennung in Echtzeit
+
+Ein Telekommunikationsunternehmen hat eine große Datenmenge durch eingehende Anrufe. Im Hinblick auf diese Daten ist für das Unternehmen Folgendes wichtig: * Die Daten sollen auf eine verwaltbare Menge reduziert werden, und es sollen Erkenntnisse über die Kundennutzung anhand der geografischen Regionen und der Zeit gewonnen werden. * Zudem möchte das Unternehmen SIM-Betrug (mehrere mehr oder weniger gleichzeitige Anrufe derselben Person von geografisch unterschiedlichen Standorten) in Echtzeit erkennen, damit es problemlos reagieren und die Kunden benachrichtigen oder den Dienst einstellen kann.
+
+In typischen Szenarien des Internet der Dinge (IoT) werden unzählige Telemetrie- oder Sensordaten generiert, die die Kunden erfassen möchten oder über die bei Abweichungen Benachrichtigungen in Echtzeit erstellt werden sollen.
 
 ## Voraussetzungen
 
@@ -34,7 +38,7 @@ Für dieses Szenario wird ein Ereignisgenerator verwendet, der sich auf GitHub b
 
 ## Erstellen einer Event Hub-Eingabe und einer Verbrauchergruppe
 
-Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hub-Instanz. Service Bus Event Hubs sind in Stream Analytics die bevorzugte Methode für das Ereignis "Ingestion". Weitere Informationen zu den Event Hubs finden Sie in der [Azure Service Bus-Dokumentation](/documentation/services/service-bus/).
+Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hub-Instanz für die Echtzeitverarbeitung. Service Bus Event Hubs sind in Stream Analytics die bevorzugte Methode für das Ereignis "Ingestion". Weitere Informationen zu den Event Hubs finden Sie in der [Azure Service Bus-Dokumentation](/documentation/services/service-bus/).
 
 Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
 
@@ -63,7 +67,7 @@ Im folgende Beispiel werden im Lauf von zwei Stunden 1.000 Ereignisse mit einer
 
     TelcoDataGen.exe 1000 .2 2
 
-Sie sehen, dass Datensätze an Ihren Event Hub gesendet werden. Einige wichtige Felder dieser Anwendung werden hier definiert:
+Sie sehen, dass Datensätze an Ihren Event Hub gesendet werden. Einige wichtige Felder dieser Anwendung zur Betrugserkennung in Echtzeit werden hier definiert:
 
 | Datensatz | Definition |
 | ------------- | ------------- |
@@ -120,7 +124,7 @@ Nun, da wir einen Datenstrom von Telekommunikationsereignissen haben, können wi
 
 ### Festlegen der Auftragsabfrage
 
-Stream Analytics unterstützt ein einfaches, deklaratives Abfragemodell zum Beschreiben der Transformationen. Weitere Informationen zur Sprache finden Sie in der [Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/dn834998.aspx) (in englischer Sprache). Dieses Lernprogramm hilft Ihnen beim Erstellen und Testen mehrerer Abfragen über Ihren Anrufdatenstrom.
+Stream Analytics unterstützt ein einfaches, deklaratives Abfragemodell zum Beschreiben der Transformationen für Echtzeitverarbeitung. Weitere Informationen zur Sprache finden Sie in der [Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/dn834998.aspx) (in englischer Sprache). Dieses Lernprogramm hilft Ihnen beim Erstellen und Testen mehrerer Abfragen über Ihren Anrufdatenstrom in Echtzeit.
 
 #### Optional: Beispieleingabedaten
 Um die Abfrage mit den tatsächlichen Auftragsdaten zu überprüfen, können Sie die **Beispieldaten**-Funktion verwenden, um Ereignisse aus Ihrem Datenstrom zu extrahieren und eine JSON-Datei der Ereignisse zum Testen zu erstellen. Die folgenden Schritte veranschaulichen die Vorgehensweise. Zudem finden Sie die Beispieldatei [Telco.json](https://github.com/Azure/azure-stream-analytics/blob/master/Sample%20Data/telco.json) für Testzwecke.
@@ -180,7 +184,7 @@ Um die Anzahl der eingehenden Anrufe pro Region zu vergleichen, rufen wir alle f
 
 	![Abfrageergebnisse für "Timestamp By"](./media/stream-analytics-get-started/stream-ananlytics-query-editor-rerun.png)
 
-### Identifizieren von SIM-Betrug mithilfe einer Selbstverknüpfung
+### SIM-Betrugserkennung mit einem Self-Join
 
 Um eine potenziell betrügerische Verwendung erkennen zu können, betrachten wir Anrufe, die in weniger als fünf Sekunden von einem Benutzer von unterschiedlichen Standorten aus eingegangen sind. Wir [verknüpfen](https://msdn.microsoft.com/library/azure/dn835026.aspx) den Strom der Anrufereignisse mit sich selbst, um diese Fälle zu überprüfen.
 
@@ -228,21 +232,21 @@ Befolgen Sie die nachstehenden Schritte, um (sofern noch nicht erfolgt) einen Co
 
 6.	Klicken Sie auf das Häkchen, um diese Quelle hinzuzufügen und zu überprüfen, ob Stream Analytics erfolgreich mit dem Speicherkonto verbunden werden kann.
 
-## Auftrag starten
+## Starten des Auftrags für Echtzeitverarbeitung
 
-Nachdem wir Eingabe, Abfrage und Ausgabe für den Auftrag angegeben haben, können wir den Stream Analytics-Auftrag starten.
+Nachdem wir Eingabe, Abfrage und Ausgabe für den Auftrag angegeben haben, können wir den Stream Analytics-Auftrag für die Betrugserkennung in Echtzeit starten.
 
 1.	Klicken Sie im **DASHBOARD** des Auftrags auf **STARTEN** am unteren Rand der Seite.
 2.	Wählen Sie im daraufhin angezeigten Dialogfeld **AUFTRAGSSTARTZEIT** aus, und klicken Sie dann auf das Häkchen am unteren Rand des Dialogfelds. Der Status ändert sich in **Starten** und wechselt nach kurzer Zeit zu **Ausführen**.
 
-## Anzeigen der Ausgabe
+## Anzeigen der Ausgabe zur Betrugserkennung
 
-Verwenden Sie ein Tool wie [Azure Storage Explorer](https://azurestorageexplorer.codeplex.com/) oder [Azure Explorer](http://www.cerebrata.com/products/azure-explorer/introduction), um betrügerische Ereignisse beim Schreiben in die Ausgabe in Echtzeit anzuzeigen.
+Verwenden Sie ein Tool wie [Azure-Speicher-Explorer](https://azurestorageexplorer.codeplex.com/) oder [Azure Explorer](http://www.cerebrata.com/products/azure-explorer/introduction), um betrügerische Ereignisse beim Schreiben in die Ausgabe in Echtzeit anzuzeigen.
 
-![Echtzeitanzeige betrügerischer Ereignisse](./media/stream-analytics-get-started/stream-ananlytics-view-real-time-fraudent-events.png)
+![Betrugserkennung: Echtzeitanzeige von betrügerischen Ereignissen](./media/stream-analytics-get-started/stream-ananlytics-view-real-time-fraudent-events.png)
 
 ## Support
-Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-de/home?forum=AzureStreamAnalytics).
 
 
 ## Nächste Schritte
@@ -251,6 +255,7 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx) 
+- [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=62-->

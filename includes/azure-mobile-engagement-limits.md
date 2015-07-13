@@ -1,39 +1,40 @@
 <table cellspacing="0" border="1">
 <tr>
-   <th align="left" valign="middle">Resource</th>
-   <th align="left" valign="middle">Maximum Limit</th>
+   <th align="left" valign="middle">Ressource</th>
+   <th align="left" valign="middle">Maximales Limit</th>
 </tr>
 <tr>
-   <td valign="middle"><p>App Collection Users</p></td>
-   <td valign="middle"><p>5 per App Collection</p></td>
+   <td valign="middle"><p>Benutzer der App-Sammlung</p></td>
+   <td valign="middle"><p>5 pro App-Sammlung</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Average Data points</p></td>
-   <td valign="middle"><p>200 per Active User/Day</p></td>
+   <td valign="middle"><p>Durchschnittliche Datenpunkte</p></td>
+   <td valign="middle"><p>200 pro aktivem Benutzer/Tag</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Average App-Info set</p></td>
-   <td valign="middle"><p>50 per Active User/Day</p></td>
+   <td valign="middle"><p>Durchschnittlich festgelegte App-Informationen</p></td>
+   <td valign="middle"><p>50 pro aktivem Benutzer/Tag</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Average Messages pushed</p></td>
-   <td valign="middle"><p>20 per Active User/Day</p></td>
+   <td valign="middle"><p>Durchschnittliche übertragene Nachrichten</p></td>
+   <td valign="middle"><p>20 pro aktivem Benutzer/Tag</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Segments</p></td>
-   <td valign="middle"><p>100 per app</p></td>
+   <td valign="middle"><p>Segmente</p></td>
+   <td valign="middle"><p>100 pro App</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Criteria per segment</p></td>
+   <td valign="middle"><p>Kriterien pro Segment</p></td>
    <td valign="middle"><p>10</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Active Push Campaigns</p></td>
-   <td valign="middle"><p>50 per app</p></td>
+   <td valign="middle"><p>Aktive Pushkampagnen</p></td>
+   <td valign="middle"><p>50 pro App</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Total Push Campaigns (includes Active & Completed)</p></td>
-   <td valign="middle"><p>1000 per app</p></td>
+   <td valign="middle"><p>Pushkampagnen insgesamt (einschließlich aktiv und abgeschlossen)</p></td>
+   <td valign="middle"><p>1.000 pro App</p></td>
 </tr>
 </table>
 
+<!---HONumber=62-->

@@ -67,4 +67,4 @@ Sie können nun Twitter für die Authentifizierung in Ihrer App verwenden.
 [xamarin]: ../app-services-mobile-app-dotnet-backend-xamarin-ios-get-started-users-preview.md
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

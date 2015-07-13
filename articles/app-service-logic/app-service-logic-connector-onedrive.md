@@ -41,7 +41,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den OneDrive-Connector als Aktio
 
 2.	Öffnen Sie "Trigger und Aktionen" innerhalb der erstellten Logik-App, um den Logik-App-Designer zu öffnen und den Ablauf zu konfigurieren.
 
-3.	Der OneDrive-Connector wird im Abschnitt "API Apps in this resource group" im Katalog auf der rechten Seite angezeigt.
+3.	Der OneDrive-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt.
 
 	![][2]
 4.	Sie können die OneDrive-Connector-API-App im Editor bearbeiten, indem Sie auf den "OneDrive-Connector" klicken. Klicken Sie auf die Schaltfläche "Autorisieren". Geben Sie Ihre Microsoft-Anmeldeinformationen an (falls Sie nicht automatisch angemeldet werden). Klicken Sie auf "Ja", um den Zugriff zuzulassen.
@@ -52,7 +52,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den OneDrive-Connector als Aktio
 
 	![][5]
 
-6.	Für dieses Beispiel verwenden eine Aktion "Datei hochladen". Sie können die OneDrive-Aktion "Datei hochladen" zum Hochladen einer Datei in Ihr OneDrive-Konto verwenden.
+6.	Für dieses Beispiel verwenden wir die Aktion "Datei hochladen". Sie können die OneDrive-Aktion "Datei hochladen" zum Hochladen einer Datei in Ihr OneDrive-Konto verwenden.
 
 	![][6]
 
@@ -60,7 +60,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den OneDrive-Connector als Aktio
 
  - **Dateipfad** - Gibt den Dateipfad der Datei an, die hochgeladen werden soll.
  - **Inhalt** – Gibt den Inhalt der Datei an, die hochgeladen werden soll.
- - **Codierung für die Inhaltsübertragung** – Geben Sie keine oder base64 an.
+ - **Codierung für die Inhaltsübertragung** – Geben Sie "Keine" oder "base64" an.
  - **Überschreiben** - Legen Sie dies auf "True" fest, um die Datei ggf. zu überschreiben. Dies ist eine erweiterte Eigenschaft.
 
 7. Nach der Konfiguration ist die Aktion "Datei hochladen" konfiguriert und kann im Datenfluss verwendet werden. Auf ähnliche Weise können auch andere Aktionen konfiguriert werden.

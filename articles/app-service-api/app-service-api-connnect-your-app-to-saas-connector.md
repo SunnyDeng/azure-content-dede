@@ -79,7 +79,7 @@ Dieses Lernprogramm verwendet einen Dropbox-Connector als Beispiel und leitet Si
 
 Um den API-Zugriff für Ihr Dropbox-Konto zu aktivieren, müssen Sie auf der Dropbox-Entwicklersite eine Dropbox-App erstellen. Kopieren Sie anschließend die Client-ID und den geheimen Clientschlüssel aus der Dropbox-App in Ihren Dropbox-Connector, und konfigurieren Sie den Connector so, dass nur authentifizierte Anforderungen akzeptiert werden.
 
-### Erstellen einer Dropbox-App
+### <a id="createdbapp"></a>Erstellen einer Dropbox-App
 
 Die folgenden Schritte zeigen das Vorgehen zum Erstellen einer Dropbox-App mithilfe der Website "Dropbox.com". Da die Website "Dropbox.com" ohne vorherige Ankündigung geändert werden kann, unterscheiden sich die tatsächlichen Benutzeroberflächenelemente möglicherweise von den hier gezeigten.
 
@@ -103,7 +103,7 @@ Die folgenden Schritte zeigen das Vorgehen zum Erstellen einer Dropbox-App mithi
 
 	![Erstellen einer Dropbox-App](./media/app-service-api-connnect-your-app-to-saas-connector/dbappsettings.png)
 
-### Kopieren der Dropbox-App-Einstellungen in den Azure-Dropbox-Connector und umgekehrt 
+### <a id="copysettings"></a>Kopieren der Dropbox-App-Einstellungen in den Azure-Dropbox-Connector und umgekehrt 
 
 4. Wechseln Sie in einem anderen Browserfenster oder in einer anderen Browserregisterkarte zum [Azure-Vorschauportal].
 

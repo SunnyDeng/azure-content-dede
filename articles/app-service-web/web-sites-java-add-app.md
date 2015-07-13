@@ -22,8 +22,8 @@ Nachdem Sie Ihre Java Web-App in [Azure App Service](http://go.microsoft.com/fwl
 
 iiDer Navigationspfad zum Ordner **webapps** hängt davon ab, wie Sie Ihre Web-Apps-Instanz einrichten.
 
-- Wenn Sie Ihre Web-App mithilfe von Azure Marketplace einrichten, hat der Pfad zum Ordner **webapps** das Format **d:\\home\\site\\wwwroot\\bin\\application_server\\webapps**, wobei **application_server** für den Namen des Anwendungsservers steht, der für Ihre Web-Apps-Instanz verwendet wird. 
-- Wenn Sie Ihre Web-App über die Azure-Konfigurationsbenutzeroberfläche einrichten, hat der Pfad zum Ordner **webapps** das Format **d:\\home\\site\\wwwroot\\webapps**. 
+- Wenn Sie Ihre Web-App mithilfe von Azure Marketplace einrichten, hat der Pfad zum Ordner **webapps** das Format **d:\home\site\wwwroot\bin\application_server\webapps**, wobei **application_server** für den Namen des Anwendungsservers steht, der für Ihre Web-Apps-Instanz verwendet wird. 
+- Wenn Sie Ihre Web-App über die Azure-Konfigurationsbenutzeroberfläche einrichten, hat der Pfad zum Ordner **webapps** das Format **d:\home\site\wwwroot\webapps**. 
 
 Beachten Sie, dass Sie die Quellcodeverwaltung zum Hochladen Ihrer Anwendung oder Webseiten verwenden können, auch in Szenarien mit fortlaufender Integration. Anweisungen zur Verwendung der Quellcodeverwaltung mit Ihrer Web-App finden Sie unter [Fortlaufende Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md). FTP stellt ebenfalls eine Möglichkeit zum Hochladen Ihrer Anwendung oder Webseiten dar.
 
@@ -35,4 +35,4 @@ Hinweis für Tomcat-Web-Apps: Nachdem Sie Ihre WAR-Datei in den Ordner **webapps
  
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

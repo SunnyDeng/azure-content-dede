@@ -46,7 +46,7 @@ Jedes Azure-Abonnement weist eine Vertrauensstellung mit einer Azure AD-Instanz 
 
 Diese Vertrauensstellung, die ein Abonnement mit einem Verzeichnis aufweist, unterscheidet sich von der Beziehung, die ein Abonnement mit allen anderen Ressourcen in Azure (Websites, Datenbanken usw.) hat. Diese ähneln eher den untergeordneten Ressourcen eines Abonnements. Wenn ein Abonnement abläuft, wird der Zugriff auf die anderen Ressourcen, die dem Abonnement zugeordnet sind, ebenfalls beendet. Das Verzeichnis verbleibt jedoch in Azure, und Sie können ihm ein anderes Abonnement zuordnen und weiterhin die Benutzer des Verzeichnisses verwalten.
 
-Die Azure AD-Erweiterung, die in Ihrem Abonnement angezeigt wird, funktioniert ebenfalls nicht wie die anderen Erweiterungen im Azure-Verwaltungsportal.  Andere Erweiterungen im Verwaltungsportal sind auf das Azure-Abonnement beschränkt. Die Anzeige in der AD-Erweiterung ändert sich nicht basierend auf dem Abonnement – es werden nur Verzeichnisse basierend auf dem angemeldeten Benutzer angezeigt.
+Die Azure AD-Erweiterung, die in Ihrem Abonnement angezeigt wird, funktioniert ebenfalls nicht wie die anderen Erweiterungen im Azure-Verwaltungsportal. Andere Erweiterungen im Verwaltungsportal sind auf das Azure-Abonnement beschränkt. Die Anzeige in der AD-Erweiterung ändert sich nicht basierend auf dem Abonnement – es werden nur Verzeichnisse basierend auf dem angemeldeten Benutzer angezeigt.
 
 Alle Benutzer verfügen über ein Basisverzeichnis, das ihre Authentifizierung ausführt. Sie können jedoch auch Gäste in anderen Verzeichnissen sein. In der AD-Erweiterung wird jedes Verzeichnis angezeigt, dessen Mitglied Ihr Benutzerkonto ist. Alle Verzeichnisse, in denen Ihr Konto kein Mitglied ist, werden nicht angezeigt. Ein Verzeichnis kann Token für die Benutzer von Geschäfts- oder Schulkonten oder von Microsoft-Konten ausstellen (da Azure AD einen Verbund mit dem Microsoft-Kontosystem bildet).
 
@@ -88,7 +88,7 @@ Wenn Sie in der Vergangenheit ein Microsoft-Privatnutzerkonto mithilfe Ihrer ges
 
 ![][3]
 
-Sie haben Benutzerkonten mit dem gleichen Namen – ein Konto in Azure AD und ein anderes im Privatnutzerkontosystem von Microsoft. Sie müssen das Konto wählen, das dem Azure-Abonnement zugeordnet ist, das Sie verwenden möchten. Wenn ein Fehler ausgegeben wird, der besagt, dass für diesen Benutzer kein Abonnement vorhanden ist, haben Sie wahrscheinlich die falsche Option gewählt. Melden Sie sich ab, und versuchen Sie es erneut. Weitere Informationen zu Fehlern, die eine Anmeldung verhindern können, finden Sie unter[ Problembehandlung von Fehlern des Typs "Es wurden keine Abonnements gefunden, die Ihrem Konto zugeordnet sind"](https://social.msdn.microsoft.com/Forums/en-US/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement).
+Sie haben Benutzerkonten mit dem gleichen Namen – ein Konto in Azure AD und ein anderes im Privatnutzerkontosystem von Microsoft. Sie müssen das Konto wählen, das dem Azure-Abonnement zugeordnet ist, das Sie verwenden möchten. Wenn ein Fehler ausgegeben wird, der besagt, dass für diesen Benutzer kein Abonnement vorhanden ist, haben Sie wahrscheinlich die falsche Option gewählt. Melden Sie sich ab, und versuchen Sie es erneut. Weitere Informationen zu Fehlern, die eine Anmeldung verhindern können, finden Sie unter[ Problembehandlung von Fehlern des Typs "Es wurden keine Abonnements gefunden, die Ihrem Konto zugeordnet sind"](https://social.msdn.microsoft.com/Forums/de-de/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement).
 
 ## Verwalten des Verzeichnisses für Ihr Office 365-Abonnement in Azure
 
@@ -124,4 +124,6 @@ Führen Sie diese Schritte aus, um beide Verzeichnisse im Verwaltungsportal zu v
 [2]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_OrgAccountSubscription.png
 [3]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_SignInDisambiguation.PNG
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=62-->

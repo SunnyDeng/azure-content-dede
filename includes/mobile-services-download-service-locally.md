@@ -1,30 +1,11 @@
-﻿1. Klicken Sie im [Azure-Verwaltungsportal] auf den neuen Mobile Service oder auf die Registerkarte mit dem Cloudsymbol, um zur Übersichtsseite zu gelangen.
+1. Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934) oder eine neuere Version herunter, und installieren Sie diese.
+ 
+2. Klicken Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) auf den neuen Mobile Service. Klicken Sie auf der Schnellstart-Seite auf **Android**-Plattform und erweitern Sie **Erstellen einer neuen Android-App** unter **Erste Schritte**.
 
-    ![](./media/mobile-services-dotnet-backend-android-get-started-data/mobile-portal-quickstart-android.png)
+    ![](./media/mobile-services-download-service-locally/download-service-project.png)
 
-2. Klicken Sie auf die **Android**-Plattform. Unter dem Abschnitt **Erste Schritte**, und erweitern Sie **Neue Android-App erstellen**. 
-
-    ![](./media/mobile-services-dotnet-backend-android-get-started-data/download-service-project.png)
-
-3. Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934) oder eine neuere Version herunter, und installieren Sie diese.
-
-4. Klicken Sie unter **Service herunterladen und in der Cloud veröffentlichen** auf **Herunterladen**.
+4. Klicken Sie unter **Service in der Cloud herunterladen und veröffentlichen** auf **Herunterladen**.
 
 	Dadurch wird das Visual Studio-Projekt, das den mobilen Dienst implementiert, heruntergeladen. Speichern Sie die komprimierte Projektdatei auf Ihrem lokalen Computer, und notieren Sie sich den Speicherort.
 
-
-5. Scrollen Sie nach unten zum Ende des Abschnitts **Erste Schritte** zum Schritt mit dem Namen **Service in der Cloud herunterladen und veröffentlichen**. Klicken Sie auf den im Screenshot gezeigten Link, um eine Veröffentlichungsprofildatei für den soeben heruntergeladenen mobilen Dienst herunterzuladen. 
-
-    > [AZURE.NOTE] Speichern Sie die Datei an einem sicheren Ort, da sie vertrauliche Daten zu Ihrem Azure-Konto enthält. Sie löschen diese Datei später in diesem Lernprogramm, nachdem Sie den mobilen Dienst veröffentlicht haben. 
-
-    ![](./media/mobile-services-dotnet-backend-android-get-started-data/download-publish-profile.png)
-
-
-
-
-
-<!-- URLs. -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-[Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
-
-<!--HONumber=49-->
+<!---HONumber=62-->

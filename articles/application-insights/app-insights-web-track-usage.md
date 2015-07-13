@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,27 +12,44 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/27/2015" 
+	ms.date="06/19/2015" 
 	ms.author="awills"/>
  
 # Verwendungsanalyse für Webanwendungen mit Application Insights
 
-Wenn Sie wissen, wie Benutzer Ihre Anwendung verwenden, können Sie Ihre Entwicklungsarbeit auf die Szenarien konzentrieren, die für sie am wichtigsten sind. Außerdem verschaffen Sie sich Einsichten in die Ziele, die für sie einfacher oder schwieriger zu erreichen sind.
+Wenn Sie wissen, wie Benutzer Ihre Anwendung verwenden, können Sie Ihre Entwicklungsarbeit auf die Szenarien konzentrieren, die für die Benutzer am wichtigsten sind. Außerdem verschaffen Sie sich Einblick in die Ziele, die für Benutzer einfacher oder schwieriger zu erreichen sind.
 
-Visual Studio Application Insights kann Ihnen ein klares Bild von der Nutzung Ihrer Anwendung bieten und Sie dabei unterstützen, die Benutzererfahrung zu verbessern und Ihre geschäftlichen Ziele zu erreichen.
+Visual Studio Application Insights bietet Nutzungsverfolgung auf zwei Ebenen:
 
-Sie können die Verwendungsanalyse in Ihren devOps-Lebenszyklus planen, sodass Sie beim Entwerfen einer neuen User Story auch planen, welche Telemetrie erforderlich ist, um den Erfolg zu bewerten.
+* **Benutzer-und Sitzungsdaten** – direkt bereitgestellt.  
+* **Benutzerdefinierte Telemetrie** – Sie [schreiben Code][api], um die Nutzung Ihrer App zu verfolgen. 
 
 ## Einrichten
 
-Verwendungsdaten aus einer Webanwendung können sowohl vom Server- als auch vom Clientende stammen. Die besten Daten erhalten Sie durch Installieren des Application Insights SDK an beiden Enden; Sie können jedoch nur eins verwenden.
+Nutzungsdaten aus einer Webanwendung werden vom Clientbrowser gesendet.
 
-Folgen Sie diesen Links, um die Server- und Clientenden einzurichten:
+#### Einrichten einer Application Insights-Ressource 
 
-* [Serverseitiges SDK][greenbrown] bietet Benutzer-und Sitzungsdaten. Sie können benutzerdefinierte Telemetrie schreiben, um Geschäftsereignisse, z. B. ein Benutzer, der eine Bestellung aufgibt, zu protokollieren. 
-* Clientseitiges SDK in einer [Webseite][client] oder einem [Gerät][windows] bietet Seitenansicht und Plattformdaten. Sie können auch benutzerdefinierte Telemetrie schreiben, um ausführlichere Benutzeraktionen nachzuverfolgen. 
+Mithilfe einer Application Insights-Ressource werden in Microsoft Azure Telemetriedaten aus Ihrer App analysiert und angezeigt. Möglicherweise haben Sie bereits eine solche Ressource eingerichtet, um serverseitige Daten Ihrer App in [ASP.NET][greenbrown] oder [J2EE][java] anzuzeigen. Andernfalls wäre jetzt ein guter Zeitpunkt dafür.
 
-Verwenden Sie die gleiche Anwendungsressource für Client- und Serverdaten. Sie sollten über den gleichen Instrumentationsschlüssel in der Datei "ApplicationInsights.config" und im Skript in den Webseiten verfügen. Die Daten aus den beiden Datenquellen werden in das Portal integriert.
+Es empfiehlt sich üblicherweise, die Nutzungsdaten vom Webclient in der gleichen Ressource anzuzeigen wie die Daten vom Server. Auf diese Weise können Sie Diagnosedaten und Metriken beider Seiten korrelieren. Wenn Sie bereits eine Ressource eingerichtet haben, fahren Sie mit dem nächsten Schritt fort.
+
+Wenn Sie jedoch eine eigene Ressource für Nutzungsdaten verwenden möchten, melden Sie sich einfach beim [Azure-Portal][portal] an, und erstellen Sie sie:
+
+![](./media/app-insights-web-track-usage/01-create.png)
+
+#### Einfügen von Code in Webseiten
+
+Öffnen Sie "Schnellstart" in Ihrer Ressource im [Azure-Portal][portal], und rufen Sie den Codeausschnitt zur Überwachung von Webseiten ab.
+
+![](./media/app-insights-web-track-usage/02-monitor-web-page.png)
+
+Fügen Sie den Code in eine Masterseite wie z. B. (in .NET) _Layout.cshtml oder in eine Includedatei ein, um sicherzustellen, dass er in all Ihren Seiten eingefügt wird.
+
+Der Codeausschnitt enthält den Instrumentationsschlüssel (iKey), der Ihre Ressource identifiziert. Um Daten an eine andere Ressource zu senden – beispielsweise zum Testen –, müssen Sie nur den iKey ersetzen.
+
+Veröffentlichen Sie Ihre Webseiten, oder verwenden Sie sie im Debugmodus, um Telemetriedaten zu generieren.
+
 
 ## Wie beliebt ist meine Webanwendung?
 
@@ -45,6 +62,7 @@ Melden Sie sich beim [Azure-Portal][portal] an, navigieren Sie zur Anwendungsres
 * **Seitenaufrufe:** Zählt die Anzahl der Aufrufe von trackPageView(), was in der Regel einmal auf jeder Webseite aufgerufen wird.
 
 Klicken Sie auf ein Diagramm, um weitere Details anzuzeigen. Beachten Sie, dass Sie den Zeitraum der Diagramme ändern können.
+
 
 ### Welche Seiten werden am häufigsten gelesen?
 
@@ -89,6 +107,59 @@ Gruppieren (Segmentieren) Sie Daten anhand einer Eigenschaft, z. B. Browser, Bet
 
 ![Wählen Sie ein Diagramm mit einer einzelnen Metrik, schalten Sie "Gruppierung" ein, und wählen Sie eine Eigenschaft](./media/app-insights-web-track-usage/03-browsers.png)
 
+
+## Sitzungen
+
+Sitzungen sind ein grundlegendes Konzept in Application Insights, um jedes Telemetrieereignis – wie z. B. Anforderungen, Seitenaufrufe, Ausnahmen oder benutzerdefinierte Ereignisse, die Sie selbst codieren – einer bestimmten Benutzersitzung zuzuordnen.
+
+Für jede Sitzung werden umfangreiche Kontextinformationen gesammelt, wie etwa Geräteeigenschaften, geografischer Standort, Betriebssystem usw.
+
+Wenn Sie sowohl Client als auch Server ([ASP.NET][greenbrown] oder [J2EE][java]) instrumentieren, geben die SDKs die Sitzungs-ID zwischen Client und Server weiter, sodass Ereignisse auf beiden Seiten korreliert werden können.
+
+Bei der [Problemdiagnose][diagnostic] erhalten Sie alle Telemetriedaten zu der Sitzung, bei der ein Problem aufgetreten ist, einschließlich sämtlicher Anforderungen sowie protokollierter Ereignisse, Ausnahmen oder Ablaufverfolgungen.
+
+Sitzungen ermöglichen eine ziemlich genaue Messung der Beliebtheit von Kontexten wie z. B. Gerät, Betriebssystem oder Standort. Indem Sie beispielsweise die Anzahl der Sitzungen für jedes Gerät anzeigen, erhalten Sie eine genauere Messung, wie häufig Ihre App auf diesem Gerät verwendet wird, als durch Zählung der Seitenansichten. Dies sind nützliche Informationen, um gerätespezifische Probleme zu untersuchen.
+
+
+#### Was ist eine Sitzung?
+
+Eine Sitzung repräsentiert eine einmalige Verwendung der App durch einen Benutzer. In der einfachsten Form beginnt eine Sitzung, wenn ein Benutzer die App startet, und endet, wenn er sie verlässt. Web-App-Sitzungen werden standardmäßig nach 30 Minuten Inaktivität bzw. nach 24 Stunden Aktivität beendet.
+
+Sie können diese Standardeinstellungen ändern, indem Sie den Codeausschnitt bearbeiten.
+
+    <script type="text/javascript">
+        var appInsights= ... { ... }({
+            instrumentationKey: "...",
+            sessionRenewalMs: 3600000,
+            sessionExpirationMs: 172800000
+        });
+
+* `sessionRenewalMs` : Der Zeitraum in Millisekunden, nach dem die Sitzung aufgrund der Inaktivität des Benutzers beendet wird. Standardwert: 30 Minuten.
+* `sessionExpirationMs` : Die maximale Sitzungslänge in Millisekunden. Wenn der Benutzer nach Ablauf dieses Zeitraums noch aktiv ist, zählt dies als weitere Sitzung. Standardwert: 24 Stunden.
+
+**Sitzungsdauer** ist eine [Metrik][metrics], die die Zeitspanne zwischen den ersten und letzten Telemetrieelementen einer Sitzung aufzeichnet. (Der Timeoutzeitraum ist darin nicht enthalten.)
+
+**Sitzungsanzahl** innerhalb eines bestimmten Intervalls ist als Anzahl eindeutiger Sitzungen mit Aktivität während dieses Intervalls definiert. Wenn Sie einen langen Zeitraum betrachten, wie z. B. die Anzahl der täglichen Sitzungen der vergangenen Woche, entspricht diese Anzahl üblicherweise der Gesamtanzahl von Sitzungen.
+
+Wenn Sie jedoch kürzere Zeiträume untersuchen – beispielsweise auf Stundenbasis –, wird eine lange, mehrstündige Sitzung pro Stunde gezählt, in der die Sitzung aktiv ist.
+
+## Benutzer und Benutzeranzahlen
+
+Jeder Benutzersitzung ist eine eindeutige Benutzer-ID zugeordnet.
+
+Standardmäßig werden Benutzer durch Platzieren eines Cookies identifiziert. In diesem Fall wird ein Benutzer, der mehrere Browser oder Geräte verwendet, mehr als einmal gezählt.
+
+Die Metrik **Benutzeranzahl** innerhalb eines bestimmten Intervalls ist als Anzahl eindeutiger Benutzer mit aufgezeichneter Aktivität während dieses Intervalls definiert. Aus diesem Grund werden Benutzer mit langen Sitzungen möglicherweise mehrfach gezählt, wenn Sie einen Zeitraum von weniger als einer Stunde untersuchen.
+
+**Neue Benutzer** zählt die Benutzer, deren erste Sitzungen mit der App während dieses Intervalls aufgezeichnet wurden. Wenn die Standardmethode der Benutzerzählung anhand von Cookies verwendet wird, werden hierbei auch Benutzer gezählt, die ihre Cookies gelöscht haben oder ein neues Gerät oder einen neuen Browser verwenden und damit zum ersten Mal auf Ihre App zugreifen.
+
+## Synthetischer Datenverkehr
+
+Synthetischer Datenverkehr umfasst Anforderungen aus Verfügbarkeits- und Auslastungstests, Suchmaschinencrawlern und anderen Agents.
+
+Application Insights versucht, synthetischen Datenverkehr automatisch zu ermitteln, zu klassifizieren und entsprechend zu markieren. In den meisten Fällen ruft synthetischer Datenverkehr das JavaScript-SDK nicht auf, daher wird diese Aktivität in der Benutzer- und Sitzungszählung nicht eingeschlossen.
+
+Für Application Insights-[Webtests][availability] hingegen wird die Benutzer-ID automatisch basierend auf dem POP-Standort und die Sitzungs-ID basierend auf der Testlauf-ID festgelegt. In Standardberichten wird synthetischer Datenverkehr standardmäßig herausgefiltert, sodass diese Benutzer und Sitzungen ausgeschlossen werden. Wenn jedoch synthetischer Datenverkehr eingeschlossen wird, kann dies zu einer geringfügigen Erhöhung der Gesamtanzahl von Benutzern und Sitzungen führen.
  
 ## Seitennutzung
 
@@ -294,11 +365,16 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 
 <!--Link references-->
 
+[api]: app-insights-api-custom-events-metrics.md
+[availability]: app-insights-monitor-web-app-availability.md
 [client]: app-insights-javascript.md
+[diagnostic]: app-insights-diagnostic-search.md
 [greenbrown]: app-insights-start-monitoring-app-health-usage.md
+[java]: app-insights-java-get-started.md
+[metrics]: app-insights-metrics-explorer.md
 [portal]: http://portal.azure.com/
 [windows]: app-insights-windows-get-started.md
 
  
 
-<!---HONumber=GIT-SubDir_Tue_AM_dede-->
+<!---HONumber=62-->

@@ -46,7 +46,7 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
 1.  Wählen Sie in Visual Studio **Datei** -> **Neues Projekt** aus.
 
-1.  Die Projektvorlagen aus der PTVS-Beispiel-VSIX-Datei stehen unter **Python**, **Beispiele** bereit. Wählen Sie **Polls Django Web Project** aus, und klicken Sie auf „OK“, um das Projekt zu erstellen.
+1.  Die Projektvorlagen aus der PTVS-Beispiel-VSIX-Datei stehen unter **Python**, **Beispiele** bereit. Wählen Sie **Polls Django Web Project** aus, und klicken Sie auf "OK", um das Projekt zu erstellen.
 
   	![Dialogfeld "Neues Projekt"](./media/web-sites-python-ptvs-django-sql/PollsDjangoNewProject.png)
 
@@ -104,13 +104,13 @@ Mit den folgenden Schritten können Sie eine Datenbank erstellen.
 
 1.  Klicken Sie nach der Erstellung der SQL-Datenbank auf dem Datenbankblatt auf **In Visual Studio öffnen**.
 2.  Klicken Sie auf **Firewall konfigurieren**.
-3.  Fügen Sie auf dem Blatt mit den Firewalleinstellungen eine Firewall-Regel hinzu, und konfigurieren Sie sie mit der **START-IP** und **END-IP** der öffentlichen IP-Adresse Ihres Entwicklungscomputers. Klicken Sie auf **Speichern**.
+3.  Fügen Sie auf dem Blatt **Firewalleinstellungen** eine Firewall-Regel hinzu, und konfigurieren Sie sie mit der **START-IP** und **END-IP** der öffentlichen IP-Adresse Ihres Entwicklungscomputers. Klicken Sie auf **Speichern**.
 
 	Damit sind Verbindungen von Ihrem Entwicklungsrechner zum Datenbankserver möglich.
 
 4.  Klicken Sie auf dem Datenbankblatt auf **Eigenschaften** und dann auf **Verbindungszeichenfolgen anzeigen**.
 
-2.  Mithilfe der Schaltfläche „Kopieren“ können Sie den Wert für **ADO.NET** in die Zwischenablage kopieren.
+2.  Mithilfe der Schaltfläche "Kopieren" können Sie den Wert für **ADO.NET** in die Zwischenablage kopieren.
 
 ## Konfigurieren des Projekts
 
