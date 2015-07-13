@@ -42,7 +42,7 @@
    - Gateway
    - IP-Adresse für den primären DNS-Server
     
-		Note that the system is validating network settings after each step in the process.
+		Beachten Sie, dass das System nach jedem Prozessschritt die Netzwerkeinstellungen überprüft.
    
       >[AZURE.NOTE]Sie müssen ggf. einige Minuten warten, bis die Subnetzmaske und die DNS-Einstellungen übernommen werden. Wenn die Fehlermeldung "Überprüfen Sie die Netzwerkverbindung mit DATA 0" angezeigt wird, überprüfen Sie die physische Netzwerkverbindung für die Netzwerkschnittstelle DATA 0 Ihres aktiven Controllers.
 
@@ -75,9 +75,9 @@
    
     	![StorSimple Devices page](./media/storsimple-configure-and-register-device-u1/HCS_DevicesPageM_U1-include.png) 
   
-        If the device status is **Offline**, wait for a couple of minutes for the device to come online. 
+       Wenn der Gerätestatus **Offline** ist, warten Sie einige Minuten, bis das Gerät online geschaltet wird  . 
       
-        If the device is still offline after a few minutes, then you need to make sure that your firewall network was configured as described in the [network requirements for your StorSimple device](https://msdn.microsoft.com/library/dn772371.aspx). If you do not have HTTP 1.1 support, check port 9354 to make sure that it is open for outbound communication. This port is used for communication between the StorSimple Manager service and your StorSimple device.
+        Ist das Gerät nach einigen Minuten immer noch offline, vergewissern Sie sich, dass Ihr Firewallnetzwerk gemäß der Beschreibung in den [Netzwerkanforderungen für Ihr StorSimple-Gerät] (https://msdn.microsoft.com/library/dn772371.aspx) konfiguriert wurde. Wenn HTTP 1.1 nicht unterstützt wird, überprüfen Sie Port 9354, um sicherzustellen, dass er für ausgehende Kommunikation geöffnet ist. Dieser Port wird für die Kommunikation zwischen dem StorSimple Manager-Dienst und Ihrem StorSimple-Gerät verwendet. 
      
        
 

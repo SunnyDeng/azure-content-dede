@@ -95,7 +95,10 @@
 
      `Get-HcsSystem`
 
-    Es sollte eine der folgenden Versionen angezeigt werden: - HcsSoftwareVersion: 6.3.9600.17491 - CisAgentVersion: 1.0.9037.0 - MdsAgentVersion: 26.0.4696.1433
+    Es sollte eine der folgenden Versionen angezeigt werden:
+    - HcsSoftwareVersion: 6.3.9600.17491
+    - CisAgentVersion: 1.0.9037.0
+    - MdsAgentVersion: 26.0.4696.1433
  
 9. Führen Sie das folgende Cmdlet aus, um zu überprüfen, ob das Firmwareupdate ordnungsgemäß angewendet wurde:
 
@@ -133,7 +136,9 @@
 	
 	![StorSimple – Registrieren des Geräts 7](./media/storsimple-configure-and-register-device-gov/HCS_RegisterYourDevice7_gov-include.png)
 
-      >[AZURE.IMPORTANT]Markieren Sie zum Kopieren des Texts aus dem Fenster der seriellen Konsole den Text einfach. Sie sollten Sie diese dann in die Zwischenablage kopieren und in einem beliebigen Texteditor einfügen können. > > VERWENDEN SIE NICHT STRG+C, um den Verschlüsselungsschlüssel für Dienstdaten zu kopieren. STRG+C bewirkt, dass der Installations-Assistent beendet wird. Dies führt dazu, dass das Geräteadministratorkennwort nicht geändert und das Gerät auf das Standardkennwort zurückgesetzt wird.
+      >[AZURE.IMPORTANT]Markieren Sie zum Kopieren des Texts aus dem Fenster der seriellen Konsole den Text einfach. Sie sollten Sie diese dann in die Zwischenablage kopieren und in einem beliebigen Texteditor einfügen können. 
+      >
+      > VERWENDEN SIE NICHT STRG+C, um den Verschlüsselungsschlüssel für Dienstdaten zu kopieren. STRG+C bewirkt, dass der Installations-Assistent beendet wird. Dies führt dazu, dass das Geräteadministratorkennwort nicht geändert und das Gerät auf das Standardkennwort zurückgesetzt wird.
 
 16. Schließen Sie die serielle Konsole.
 
@@ -144,9 +149,9 @@
    
     	![StorSimple Devices page](./media/storsimple-configure-and-register-device-gov/HCS_DeviceOnline-gov-include.png) 
   
-        If the device status is **Offline**, wait for a couple of minutes for the device to come online. 
+        Wenn der Gerätestatus **Offline** ist, warten Sie einige Minuten, bis das Gerät online geschaltet wird. 
       
-        If the device is still offline after a few minutes, then you need to make sure that your firewall network was configured as described in the [network requirements for your StorSimple device](https://msdn.microsoft.com/library/dn772371.aspx). If you do not have HTTP 1.1 support, check port 9354 to make sure that it is open for outbound communication. This port is used for communication between the StorSimple Manager service and your StorSimple device.
+        Ist das Gerät nach einigen Minuten immer noch offline, vergewissern Sie sich, dass Ihr Firewallnetzwerk gemäß der Beschreibung in den [Netzwerkanforderungen für Ihr StorSimple-Gerät] (https://msdn.microsoft.com/library/dn772371.aspx) konfiguriert wurde. Wenn HTTP 1.1 nicht unterstützt wird, überprüfen Sie Port 9354, um sicherzustellen, dass er für ausgehende Kommunikation geöffnet ist. Dieser Port wird für die Kommunikation zwischen dem StorSimple Manager-Dienst und Ihrem StorSimple-Gerät verwendet. Beachten Sie, dass das System nach jedem Prozessschritt die Netzwerkeinstellungen überprüft.
      
         
 
