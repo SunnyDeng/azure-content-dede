@@ -13,37 +13,37 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/10/2015" 
+	ms.date="06/05/2015" 
 	ms.author="juliako"/>
 
 
 
-#Dynamische Verschlüsselung: Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel 
-[AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)] 
+#Dynamische Verschlüsselung: Konfigurieren von Autorisierungsrichtlinien für Inhaltsschlüssel 
+[AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on- Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
 
 ##Übersicht
 
-Mit Microsoft Azure Media Services können Sie Inhalte (dynamisch) verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und PlayReady-DRM. Media Services umfasst auch einen Dienst für die Übermittlung von Schlüsseln und PlayReady-Lizenzen an autorisierte Clients. 
+Mit Microsoft Azure Media Services können Sie Inhalte (dynamisch) verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und PlayReady-DRM. Media Services umfasst auch einen Dienst für die Übermittlung von Schlüsseln und PlayReady-Lizenzen an autorisierte Clients.
 
-Wenn ein Medienobjekt durch Media Services verschlüsselt werden soll, müssen Sie ihm einen Verschlüsselungsschlüssel (**CommonEncryption** oder **EnvelopeEncryption**) zuordnen (wie [hier](media-services-rest-create-contentkey.md) beschrieben) und zusätzlich Autorisierungsrichtlinien für den Schlüssel konfigurieren (wie in diesem Artikel beschrieben). 
+Wenn ein Medienobjekt durch Media Services verschlüsselt werden soll, müssen Sie ihm einen Verschlüsselungsschlüssel (**CommonEncryption** oder **EnvelopeEncryption**) zuordnen (wie [hier](media-services-rest-create-contentkey.md) beschrieben) und zusätzlich Autorisierungsrichtlinien für den Schlüssel konfigurieren (wie in diesem Artikel beschrieben).
 
-Derzeit können Sie die folgenden Streamingformate verschlüsseln: HLS, MPEG-DASH und Smooth Streaming. Das HDS-Streamingformat oder progressive Downloads können nicht verschlüsselt werden.
+Zur Zeit können Sie die folgenden Streamingformate verschlüsseln: HLS, MPEG DASH und Smooth Streaming. Das HDS-Streamingformat oder progressive Downloads können nicht verschlüsselt werden.
 
 Wenn ein Player einen Stream anfordert, verwendet Media Services den angegebenen Schlüssel, um Ihren Inhalt mit AES- oder PlayReady-Verschlüsselung dynamisch zu verschlüsseln. Um den Stream zu entschlüsseln, fordert der Player den Schlüssel vom Schlüsselübermittlungsdienst an. Um zu entscheiden, ob der Benutzer berechtigt ist, den Schlüssel zu erhalten, wertet der Dienst die Autorisierungsrichtlinien aus, die Sie für den Schlüssel angegeben haben.
 
-Media Services unterstützt mehrere Möglichkeiten zur Authentifizierung von Benutzern, die Schlüssel anfordern. Die Autorisierungsrichtlinie für Inhaltsschlüssel kann eine oder mehrere Autorisierungseinschränkungen aufweisen: **Die Open**-, **Token**- oder **IP**-Einschränkung. Die durch Token eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem Secure Token Service (STS) ausgestellt wurde. Media Services unterstützt Token im **Simple Web Tokens**-Format ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2)) und **JSON Web Token**-Format (JWT).  
+Media Services unterstützt mehrere Möglichkeiten zur Authentifizierung von Benutzern, die Schlüssel anfordern. Die Autorisierungsrichtlinie für Inhaltsschlüssel kann eine oder mehrere Autorisierungseinschränkungen aufweisen: **offen**, **Tokeneinschränkung** oder **IP-Einschränkung**. Die durch Token eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem Secure Token Service (STS) ausgestellt wurde. Media Services unterstützt Tokens im **Simple Web Tokens**-Format ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2)) und **JSON Web Token-Format **(JWT). 
 
 Secure Token Services werden von Media Services nicht bereitgestellt. Sie können einen benutzerdefinierten STS erstellen oder Microsoft Azure ACS zum Ausstellen von Token nutzen. Der STS muss für die Erstellung eines mit dem angegebenen Schlüssel signierten Tokens und die Ausgabe von Ansprüchen konfiguriert sein, die Sie in der Konfiguration der Token-Einschränkung angegeben haben (wie in diesem Artikel beschrieben). Der Schlüsselübermittlungsdienst von Media Services gibt den Verschlüsselungsschlüssel an den Client zurück, wenn das Token gültig ist und die Ansprüche im Token mit den für den Inhaltsschlüssel konfigurierten Ansprüchen übereinstimmen.
 
-Weitere Informationen finden Sie unter 
+Weitere Informationen finden Sie unter
 
 [JWT-Tokenauthentifizierung](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/)
 
 [Integrieren einer Azure Media Services-OWIN MVC-basierten App in Azure Active Directory und Einschränken der Übermittlung von Inhaltsschlüsseln auf Grundlage von JWT-Ansprüchen](http://www.gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/)
 
-[Ausstellen von Token mithilfe von Azure ACS ](http://mingfeiy.com/acs-with-key-services)
+[Ausstellen von Token mithilfe von Azure ACS](http://mingfeiy.com/acs-with-key-services)
 
 ###Folgende Überlegungen sollten berücksichtigt werden:
 
@@ -51,17 +51,17 @@ Weitere Informationen finden Sie unter
 - Ihr Medienobjekt muss einen Satz von MP4-Dateien bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten. Weitere Informationen finden Sie unter [Codieren von Medienobjekten](media-services-encode-asset.md).  
 - Zum Hochladen und Codieren Ihrer Medienobjekte verwenden Sie die Option **AssetCreationOptions.StorageEncrypted**.
 - Wenn Sie mehrere Inhaltsschlüssel verwenden möchten, die dieselbe Richtlinienkonfiguration erfordern, wird empfohlen, eine einzelne Autorisierungsrichtlinie zu erstellen und für mehrere Inhaltsschlüssel wiederzuverwenden.
-- ContentKeyAuthorizationPolicy und die zugehörigen Objekte (Richtlinienoptionen und Einschränkungen) werden vom Schlüsselübermittlungsdienst für 15 Minuten zwischengespeichert.  Wenn Sie ContentKeyAuthorizationPolicy erstellen und angeben, dass eine "Token"-Einschränkung verwendet werden soll, diese anschließend testen und dann die Richtlinie auf eine "Open"-Einschränkung aktualisieren, dauert es ungefähr 15 Minuten, bis die Richtlinie zur "Open"-Version der Richtlinie wechselt.
+- ContentKeyAuthorizationPolicy und die zugehörigen Objekte (Richtlinienoptionen und Einschränkungen) werden vom Schlüsselübermittlungsdienst für 15 Minuten zwischengespeichert. Wenn Sie ContentKeyAuthorizationPolicy erstellen und angeben, dass eine "Token"-Einschränkung verwendet werden soll, diese anschließend testen und dann die Richtlinie auf eine "Open"-Einschränkung aktualisieren, dauert es ungefähr 15 Minuten, bis die Richtlinie zur "Open"-Version der Richtlinie wechselt.
 - Wenn Sie die Übermittlungsrichtlinie eines Medienobjekts hinzufügen oder aktualisieren, müssen Sie einen vorhandenen Locator (sofern vorhanden) löschen und einen neuen Locator erstellen.
 
 
 ##Dynamische AES-128-Verschlüsselung 
 
->[AZURE.NOTE] Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
+>[AZURE.NOTE]Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
 >
->Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services-REST-API](media-services-rest-how-to-use.md).
+>Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Installation für die Entwicklung mit der Media Services-REST-API](media-services-rest-how-to-use.md).
 
->Nach der erfolgreichen Verbindung mit "https://media.windows.net" erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](media-services-rest-connect_programmatically.md) beschrieben müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
+>Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Entsprechend der Beschreibung unter [Herstellen einer Verbindung mit einem Media Services-Konto über die Media Services-REST-API](media-services-rest-connect_programmatically.md) müssen Sie nachfolgende Aufrufe an den neuen URI senden.
 
 
 ###Open-Einschränkung
@@ -80,10 +80,8 @@ Anforderung:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423578086&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=lZlyQ2%2bvH73qtJsb42%2fH3xF7r7EvQFR3UXyezuDENFU%3d
-	x-ms-version: 2.8
-	UserAgent: Azure Media Services .NET SDK v3.1.0.1
+	x-ms-version: 2.11
 	x-ms-client-request-id: d732dbfa-54fc-474c-99d6-9b46a006f389
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 36
@@ -119,17 +117,15 @@ Anforderung:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423580006&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=Ref3EsonGF7fUKCwGwGgiMnZitzIzsDOvvMTeVrVVPg%3d
-	x-ms-version: 2.8
-	UserAgent: Azure Media Services .NET SDK v3.1.0.1
+	x-ms-version: 2.11
 	x-ms-client-request-id: d225e357-e60e-4f42-add8-9d93aba1409a
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 168
 	
 	{"Name":"policy","KeyDeliveryType":2,"KeyDeliveryConfiguration":"","Restrictions":[{"Name":"HLS Open Authorization Policy","KeyRestrictionType":0,"Requirements":null}]}
 
-Antwort:	
+Antwort:
 	
 	HTTP/1.1 201 Created
 	Cache-Control: no-cache
@@ -158,10 +154,8 @@ Anforderung:
 	Accept: application/json
 	Accept-Charset: UTF-8
 	Content-Type: application/json
-	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=zbbef702-2233-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423580006&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=Ref3EsonGF7fUKCwGwGgiMnZitzIzsDOvvMTeVrVVPg%3d
-	x-ms-version: 2.8
-	UserAgent: Azure Media Services .NET SDK v3.1.0.1
+	x-ms-version: 2.11
 	x-ms-client-request-id: 9847f705-f2ca-4e95-a478-8f823dbbaa29
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 154
@@ -182,10 +176,8 @@ Anforderung:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=zbbef702-2233-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423581565&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=JiNSG3w6r2C0nIyfKvTZj1uPJGjuitD%2b0sbfZ%2b2JDZI%3d
-	x-ms-version: 2.8
-	UserAgent: Azure Media Services .NET SDK v3.1.0.1
+	x-ms-version: 2.11
 	x-ms-client-request-id: e613efff-cb6a-41b4-984a-f4f8fb6e76a4
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 78
@@ -251,13 +243,13 @@ Zur Konfiguration der Token-Einschränkungsoption müssen die Autorisierungsanfo
 	  <xs:element name="SymmetricVerificationKey" nillable="true" type="tns:SymmetricVerificationKey" />
 	</xs:schema>
 
-Bei der Konfiguration der Richtlinie mit **Token**-Einschränkung müssen die Parameter **PrimaryVerificationKey**, **Issuer** und **Audience** angegeben werden. **PrimaryVerificationKey** enthält den Schlüssel, mit dem das Token signiert wurde, und **Issuer** ist der STS (Secure Token Service), von dem das Token ausgestellt wurde. **Audience** (manchmal auch **Scope**) beschreibt den Verwendungszweck des Tokens oder die Ressource, auf die durch das Token Zugriff gewährt wird. Der Schlüsselübermittlungsdienst von Media Services überprüft, ob die Werte im Token mit den Werten in der Vorlage übereinstimmen. 
+Bei der Konfiguration der Richtlinie mit **token**-Einschränkung müssen die Parameter "primary **verification key**", **issuer** und **audience** angegeben werden. Der **primary verification key **enthält den Schlüssel, mit dem das Token signiert wurde, und **issuer** ist der STS (Secure Token Service), von dem das Token ausgestellt wurde. **audience** (manchmal auch **scope**) beschreibt den Verwendungszweck des Tokens oder die Ressource, auf die durch das Token Zugriff gewährt wird. Der Schlüsselübermittlungsdienst von Media Services überprüft, ob die Werte im Token mit den Werten in der Vorlage übereinstimmen. 
 
 Im folgenden Beispiel wird eine Autorisierungsrichtlinie mit einer Token-Einschränkung erstellt. In diesem Beispiel müsste der Client ein Token vorlegen, das einen Signaturschlüssel (VerificationKey), einen Tokenherausgeber und erforderliche Ansprüche enthält.
 	
 ###Erstellen von ContentKeyAuthorizationPolicies
 
-Erstellen der durch Token eingeschränkten Richtlinie, wie [hier](#ContentKeyAuthorizationPolicies).
+Erstellen der Token-Einschränkungsrichtlinie, wie [hier](#ContentKeyAuthorizationPolicies) gezeigt.
 
 
 ###Erstellen von ContentKeyAuthorizationPolicyOptions
@@ -270,17 +262,15 @@ Anforderung:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423580720&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=5LsNu%2b0D4eD3UOP3BviTLDkUjaErdUx0ekJ8402xidQ%3d
-	x-ms-version: 2.8
-	UserAgent: Azure Media Services .NET SDK v3.1.0.1
+	x-ms-version: 2.11
 	x-ms-client-request-id: 2643d836-bfe7-438e-9ba2-bc6ff28e4a53
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 1079
 	
 	{"Name":"Token option for HLS","KeyDeliveryType":2,"KeyDeliveryConfiguration":null,"Restrictions":[{"Name":"Token Authorization Policy","KeyRestrictionType":1,"Requirements":"<TokenRestrictionTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/TokenRestrictionTemplate/v1"><AlternateVerificationKeys><TokenVerificationKey i:type="SymmetricVerificationKey"><KeyValue>BklyAFiPTQsuJNKriQJBZHYaKM2CkCTDQX2bw9sMYuvEC9sjW0W7GUIBygQL/+POEeUqCYPnmEU2g0o1GW2Oqg==</KeyValue></TokenVerificationKey></AlternateVerificationKeys><Audience>urn:test</Audience><Issuer>http://testacs.com/</Issuer><PrimaryVerificationKey i:type="SymmetricVerificationKey"><KeyValue>E5BUHiN4vBdzUzdP0IWaHFMMU3D1uRZgF16TOhSfwwHGSw+Kbf0XqsHzEIYk11M372viB9vbiacsdcQksA0ftw==</KeyValue></PrimaryVerificationKey><RequiredClaims><TokenClaim><ClaimType>urn:microsoft:azure:mediaservices:contentkeyidentifier</ClaimType><ClaimValue i:nil="true" /></TokenClaim></RequiredClaims><TokenType>SWT</TokenType></TokenRestrictionTemplate>"}]}
 
-Antwort:	
+Antwort:
 	
 	HTTP/1.1 201 Created
 	Cache-Control: no-cache
@@ -301,18 +291,18 @@ Antwort:
 	
 ####Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen
 
-Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen wie [hier](#ContentKeyAuthorizationPolicies).
+Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen, wie [hier](#ContentKeyAuthorizationPolicies) gezeigt.
 
 ####Hinzufügen der Autorisierungsrichtlinie zum Inhaltsschlüssel
 
-Hinzufügen der AuthorizationPolicy zum ContentKey wie [hier](#AddAuthorizationPolicyToKey).
+Hinzufügen der AuthorizationPolicy zum ContentKey, wie [hier](#AddAuthorizationPolicyToKey) gezeigt.
 
 
 ##Dynamische PlayReady-Verschlüsselung 
 
-Mithilfe von Media Services können Sie die Rechte und Einschränkungen konfigurieren, die für die PlayReady-DRM-Laufzeit erzwungen werden sollen, wenn ein Benutzer versucht, geschützte Inhalte wiederzugeben. 
+Mithilfe von Media Services können Sie die Rechte und Einschränkungen konfigurieren, die für die PlayReady-DRM-Laufzeit erzwungen werden sollen, wenn ein Benutzer versucht, geschützte Inhalte wiederzugeben.
 
-Wenn Sie Inhalte mit PlayReady schützen, müssen Sie in Ihrer Autorisierungsrichtlinie u. a. eine XML-Zeichenfolge zur Definition der [PlayReady-Lizenzvorlage](https://msdn.microsoft.com/library/azure/dn783459.aspx) angeben. 
+Wenn Sie Inhalte mit PlayReady schützen, müssen Sie in Ihrer Autorisierungsrichtlinie u. a. eine XML-Zeichenfolge zur Definition der [PlayReady-Lizenzvorlage](https://msdn.microsoft.com/library/azure/dn783459.aspx) angeben.
 
 ###Open-Einschränkung
 	
@@ -330,17 +320,15 @@ Anforderung:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=bbef702-2233-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423581565&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=JiNSG3w6r2C0nIyfKvTZj1uPJGjuitD%2b0sbfZ%2b2JDZI%3d
-	x-ms-version: 2.8
-	UserAgent: Azure Media Services .NET SDK v3.1.0.1
+	x-ms-version: 2.11
 	x-ms-client-request-id: 9e7fa407-f84e-43aa-8f05-9790b46e279b
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 58
 	
 	{"Name":"Deliver Common Content Key"}
 	
-Response:
+Antwort:
 	
 	HTTP/1.1 201 Created
 	Cache-Control: no-cache
@@ -370,10 +358,8 @@ Anforderung:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=zbbef702-2233-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423581565&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=JiNSG3w6r2C0nIyfKvTZj1uPJGjuitD%2b0sbfZ%2b2JDZI%3d
-	x-ms-version: 2.8
-	UserAgent: Azure Media Services .NET SDK v3.1.0.1
+	x-ms-version: 2.11
 	x-ms-client-request-id: f160ad25-b457-4bc6-8197-315604c5e585
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 593
@@ -401,20 +387,20 @@ Antwort:
 
 ####Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen
 
-Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen wie [hier](#ContentKeyAuthorizationPolicies).
+Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen, wie [hier](#ContentKeyAuthorizationPolicies) gezeigt.
 
 ####Hinzufügen der Autorisierungsrichtlinie zum Inhaltsschlüssel
 
-Hinzufügen der AuthorizationPolicy zum ContentKey wie [hier](#AddAuthorizationPolicyToKey).
+Hinzufügen der AuthorizationPolicy zum ContentKey, wie [hier](#AddAuthorizationPolicyToKey) gezeigt.
 
 
 ###Token-Einschränkung
 
-Zur Konfiguration der Token-Einschränkungsoption müssen die Autorisierungsanforderungen des Tokens in XML beschrieben werden. Die XML für die Konfiguration der Token-Einschränkung muss dem in [diesem] Abschnitt beschriebenen XML-Schema entsprechen(#schema) wechseln.
+Zur Konfiguration der Token-Einschränkungsoption müssen die Autorisierungsanforderungen des Tokens in XML beschrieben werden. Der XML-Code für die Konfiguration der Token-Einschränkung muss dem in [diesem Abschnitt](#schema) beschriebenen XML-Schema entsprechen.
 	
 ####Erstellen von ContentKeyAuthorizationPolicies
 	
-Erstellen von ContentKeyAuthorizationPolicies wie [hier](#ContentKeyAuthorizationPolicies2).
+Erstellen von ContentKeyAuthorizationPolicies, wie [hier](#ContentKeyAuthorizationPolicies2) gezeigt.
 
 ####Erstellen von ContentKeyAuthorizationPolicyOptions
 	
@@ -426,10 +412,8 @@ Anforderung:
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=zbbef702-2233-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423583561&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=5eZnkOsSv%2fLLEKmS%2bWObBlsNYyee8BQlp%2bUYbjugcJg%3d
-	x-ms-version: 2.8
-	UserAgent: Azure Media Services .NET SDK v3.1.0.1
+	x-ms-version: 2.11
 	x-ms-client-request-id: ab079b0e-2ba9-4cf1-b549-a97bfa6cd2d3
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 1525
@@ -457,11 +441,11 @@ Antwort:
 
 ####Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen
 
-Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen wie [hier](#ContentKeyAuthorizationPolicies).
+Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen, wie [hier](#ContentKeyAuthorizationPolicies) gezeigt.
 
 ####Hinzufügen der Autorisierungsrichtlinie zum Inhaltsschlüssel
 
-Hinzufügen der AuthorizationPolicy zum ContentKey wie [hier](#AddAuthorizationPolicyToKey).
+Hinzufügen der AuthorizationPolicy zum ContentKey, wie [hier](#AddAuthorizationPolicyToKey) gezeigt.
 
 
 ##<a id="types"></a>Beim Definieren von ContentKeyAuthorizationPolicy verwendete Typen
@@ -488,6 +472,6 @@ Hinzufügen der AuthorizationPolicy zum ContentKey wie [hier](#AddAuthorizationP
 ##Nächste Schritte
 Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Konfigurieren einer Übermittlungsrichtlinie für Medienobjekte](media-services-rest-configure-asset-delivery-policy.md) fort.
 
+ 
 
-
-<!--HONumber=52--> 
+<!---HONumber=July15_HO1-->

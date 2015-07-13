@@ -1,43 +1,55 @@
-<properties 
-	pageTitle="Operational Insights-Funktionsleitfaden" 
-	description="Operational Insights ist ein Analyse-Dienst, der IT-Administratoren einen tiefen Einblick in lokale und Cloud-Umgebungen gewährt. Die Interaktion mit Echtzeit- und historischen Computerdaten sorgt für die schnelle Entwicklung benutzerdefinierter Einblicke; bereitgestellt werden außerdem Muster für die Datenanalyse, die von Microsoft und der Community entwickelt wurden." 
-	services="operational-insights" 
-	documentationCenter="" 
-	authors="bandersmsft" 
-	manager="jwhit" 
+<properties
+	pageTitle="Operational Insights-Funktionsleitfaden"
+	description="Operational Insights ist ein Analyse-Dienst, der IT-Administratoren einen tiefen Einblick in lokale und Cloud-Umgebungen gewährt. Die Interaktion mit Echtzeit- und historischen Computerdaten sorgt für die schnelle Entwicklung benutzerdefinierter Einblicke; bereitgestellt werden außerdem Muster für die Datenanalyse, die von Microsoft und der Community entwickelt wurden."
+	services="operational-insights"
+	documentationCenter=""
+	authors="bandersmsft"
+	manager="jwhit"
 	editor=""/>
 
-<tags 
-	ms.service="operational-insights" 
-	ms.workload="appservices" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="11/06/2014" 
+<tags
+	ms.service="operational-insights"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="05/11/2015"
 	ms.author="banders"/>
 
-<h1>Operational Insights-Funktionsleitfaden</h1>
+# Operational Insights-Funktionsleitfaden
 
-In diesem Leitfaden wird erläutert, welche Probleme Sie mithilfe von Operational Insights lösen können, aus welchen Elementen die Operational Insights-Umgebung besteht und wie Sie ein Operational Insights-Konto erstellen und sich beim Dienst anmelden.
+[AZURE.INCLUDE [operational-insights-note-moms](../../includes/operational-insights-note-moms.md)]
 
-<h2 id="whatisaad">Was ist Operational Insights?</h2>
+In diesem Artikel wird erläutert, welche Probleme Sie mithilfe von Operational Insights lösen können, aus welchen Elementen die Operational Insights-Umgebung besteht und wie Sie ein Operational Insights-Konto erstellen und sich beim Dienst anmelden.
+
+## Transformieren von Computerdaten
 
 Operational Insights ist ein Analyse-Dienst, der IT-Administratoren einen tiefen Einblick in lokale und Cloud-Umgebungen gewährt. Die Interaktion mit Echtzeit- und historischen Computerdaten sorgt für die schnelle Entwicklung benutzerdefinierter Einblicke; bereitgestellt werden außerdem Muster für die Datenanalyse, die von Microsoft und der Community entwickelt wurden.
 
-Mit Operational Insights können Sie Computerdaten in betriebliche Intelligenz umwandeln. Sie haben folgende Möglichkeiten:
+Mit Operational Insights können Sie mithilfe der folgenden Funktionen Computerdaten in operative Informationen umwandeln.
 
-- Verwalten der Kapazität Ihrer Serverinfrastruktur
-- Aktualisieren von Servern durch Systemupdates
-- Verstehen der Beziehungen zwischen Daten in Serverprotokolldateien
-- Schützen von Servern mit Antischadsoftware
-- Verwalten von Sicherheitsrisiken mit Sicherheitsgarantie
-- Nachverfolgen von Änderungen an der Konfiguration Ihrer Server
-- Optimieren von SQL Server
-- Durchsuchen von Ereignis- und IIS-Protokollen
-- Installieren von Agents auf virtuellen Maschinen von Microsoft Azure (IaaS)
-- Verwenden von Operational Insights ohne Operations Manager  
 
-<h2 id="">Operational Insights-Umgebung</h2>
+|**Symbol** | **Funktion** | **Funktionsbeschreibung**|
+|---|---|---|
+|![](./media/operational-insights-feature-guide/cap-plan.png) | [Capacity Planning](operational-insights-capacity.md) | Mit der Lösung "Capacity Planning" in Microsoft Azure Operational Insights können Sie die Kapazität Ihrer Serverinfrastruktur analysieren. |
+| ![](./media/operational-insights-feature-guide/update.png) | [System Update Assessment](operational-insights-updates.md) | Mithilfe der Lösung "System Updates" in Microsoft Azure Operational Insights können Sie fehlende Updates auf Server in Ihrer Infrastruktur anwenden. |
+| ![](./media/operational-insights-feature-guide/log-mgt.png) | [Log Management](operational-insights-search.md) | Sie verwenden die Lösung "Log Management" zum Erfassen von Ereignis- und IIS-Protokollen für Protokollsuchvorgänge in Operational Insights. |
+| ![](./media/operational-insights-feature-guide/malware.png) | [Malware Assessment](operational-insights-antimalware.md) | Mit der Antischadsoftware-Lösung in Microsoft Azure Operational Insights können Sie die Server in Ihrer Infrastruktur vor Schadsoftware schützen. |
+| ![](./media/operational-insights-feature-guide/sec-audit.png) | [Security and Audit](operational-insights-security-audit.md) | Mit der Lösung "Security and Audit" erhalten Sie mit integrierten Suchabfragen für relevante Probleme, die Ihre Aufmerksamkeit erfordern, einen umfassenden Einblick in die Lage der IT-Sicherheit Ihres Unternehmens. |
+| ![](./media/operational-insights-feature-guide/assessment.png) | [Active Directory and SQL Assessment](operational-insights-assessment.md) | Mit den Assessment-Lösungen bewerten Sie in regelmäßigen Abständen die Risiken und die Integrität Ihrer Serverumgebungen. |
+| ![](./media/operational-insights-feature-guide/alert.png) | [Alert Management](operational-insights-alerts.md) | Die Lösung "Alert Management" können Sie zum Verwalten von Warnungen von Servern verwenden, die mit Operations Manager überwacht werden. |
+
+
+Weitere Funktionen:
+
+- **Senden von Computerdaten an das System mit oder ohne Verwendung eines Agents oder in Verbindung mit System Center Operations Manager**. Weitere Informationen finden Sie unter:
+	- [Verbinden mit Operational Insights von System Center Operations Manager aus](operational-insights-connect-scom.md)
+	- [Direktes Verbinden von Computern mit Operational Insights](operational-insights-direct-agent.md)
+	- [Analysieren der Daten von Servern in Microsoft Azure](operational-insights-analyze-data-azure.md)
+- **Ausführen aller oben genannten Funktionen mit der mobilen Anwendung von unterwegs**
+	- Weitere Informationen über die Windows Phone-Anwendung finden Sie unter [Operational Insights Mobile app](http://www.windowsphone.com/de-de/store/app/operational-insights/4823b935-83ce-466c-82bb-bd0a3f58d865) (in englischer Sprache).
+
+## Operational Insights-Umgebung
 
 Die Operational Insights-Umgebung besteht aus folgenden Komponenten:
 
@@ -47,37 +59,18 @@ Die Operational Insights-Umgebung besteht aus folgenden Komponenten:
 - oder ein Dienst, der an System Center Operations Manager angefügt ist (nicht unbedingt erforderlich)
 
 
-
-
 Falls Sie die vorherige Version von Operationel Insights, genannt System Center Advisor, verwenden, ist möglicherweise Advisor-Software in Ihrer lokalen Umgebung installiert. Advisor-Software wird jedoch mit Operational Insights nicht unterstützt.
 
-Wenn Sie Operational Insights-Software als Operations Manager-Dienst verwenden, enthält die Umgebung mindestens eine Verwaltungsgruppe und mindestens einen Agent pro Verwaltungsgruppe. Die Operations Manager-Agents sammeln Daten von Ihren Servern und analysieren diese mithilfe von Intelligence Packs (vergleichbar den Management Packs in System Center Operations Manager). Die analysierten Daten werden regelmäßig von Operations Manager an den Operational Insights-Webdienst gesendet. Dazu wird ein Proxyserver verwendet, sodass die anderen Server umgangen und nicht zusätzlich belastet werden.
+Wenn Sie Operational Insights-Software als Operations Manager-Dienst verwenden, enthält die Umgebung mindestens eine Verwaltungsgruppe und mindestens einen Agent pro Verwaltungsgruppe. Die Operations Manager-Agents sammeln Daten von Ihren Servern und analysieren diese mithilfe von Lösungen (vergleichbar den Management Packs in System Center Operations Manager). Die Daten werden regelmäßig von Operations Manager an den Operational Insights-Webdienst gesendet (ggf. über einen Proxyserver), ohne dass sie in der Operations Manager-Datenbanken gespeichert werden. Die Datenbanken müssen also keine zusätzlichen Lasten aufnehmen.
 
 Auf ähnliche Weise können die auf den einzelnen Computern installierten Agents eine direkte Verbindung zum Webdienst herstellen, um die gesammelten Daten zur Verarbeitung zu senden.
 
-Die Daten in den einzelnen Intelligence Packs werden analysiert und im Operational Insights-Portal dargestellt. Sie können alle Warnungen und die entsprechenden Abhilfemaßnahmen, Konfigurationsbewertungen, Kapazitätsprobleme der Infrastruktur, Status der Systemupdates, Antischadsoftware-Warnungen und Protokolldaten anzeigen. Sie können auch detaillierte Suchvorgänge ausführen.
+Die Daten in den einzelnen Lösungen werden analysiert, indiziert und im Operational Insights-Portal dargestellt. Sie können alle Warnungen und die entsprechenden Abhilfemaßnahmen, Konfigurationsbewertungen, Kapazitätsprobleme der Infrastruktur, Status der Systemupdates, Antischadsoftware-Warnungen und Protokolldaten anzeigen. Sie können auch detaillierte Ad-hoc-Protokollsuchvorgänge und Untersuchungen ausführen.
 
-<h2 id="">Erstellen eines Operational Insights-Kontos und Anmelden</h2>
+![Bild des Operational Insights-Übersichtsdiagramms](./media/operational-insights-feature-guide/environment.png)
 
-Richten Sie anhand der folgenden Informationen ein Konto ein, das mit Microsoft Azure Operational Insights verwendet werden soll, und melden Sie sich bei Operational Insights an.
-
-
-
-<h3>Abrufen eines Organisations- oder Microsoft-Kontos</h3>
-
-Wenn Sie ein Organisationskonto erstellen möchten, melden Sie sich bei <a href="http://go.microsoft.com/fwlink/?LinkId=396866" target="_blank">"Microsoft-Konto für Organisationen" an</a>. Anschließend müssen Sie Ihrem Organisationskonto Zugriff auf Operational Insights in <a href="http://aka.ms/Mr1dtz" target="_blank">Windows Azure Active Directory gewähren</a>.
-
-
-Wenn Sie ein Microsoft-Konto (früher "Windows Live ID" genannt) erhalten möchten, melden Sie sich bei <a href="http://go.microsoft.com/fwlink/?LinkId=396868" target="_blank">"Registrieren - Microsoft-Konto" an</a>. Mit einem Microsoft-Konto wird Operational Insights automatisch Zugriff gewährt.
-
-
-<h3>Anmelden bei Operational Insights</h3>
-
-1. Wechseln Sie zu <a href="preview.opinsights.azure.com" target="_blank">Microsoft Azure Operational Insights,</a>  und wählen Sie "Anmeldung" am oberen Rand der Seite aus.
-2. Wählen Sie **Microsoft-Konto** oder **Organisationskonto** aus, und **melden Sie sich mit Ihren Anmeldeinformationen an**.
-3. Erstellen Sie, wenn Sie dazu aufgefordert werden, ein Operational Insights-Konto, mit dem Ihre Anmeldeinformationen verknüpft werden.
-4. Wählen Sie, wenn Sie dazu aufgefordert werden, **Vorschau testen** aus, um die zu verwendende Version von Operational Insights auszuwählen.
-5. Geben Sie, wenn Sie dazu aufgefordert werden, Ihren Einladungscode ein, und klicken Sie auf **Übernehmen**, um die Vorschau zu verknüpfen. Wenn Sie keinen Einladungscode haben, geben Sie am unteren Bildschirmrand Ihre Daten ein, um einen Code abrufen.
-
-<!--HONumber=45--> 
+### Wo ist Operational Insights verfügbar?
+Microsoft Azure Operational Insights wird in den USA gehostet. Obwohl die Sprache von Operational Insights Englisch ist, ist der Dienst auf einer Reihe weiterer Märkte verfügbar. Weitere Informationen finden Sie unter [Internationale Verfügbarkeit](http://go.microsoft.com/fwlink/?LinkId=229842).
  
+
+<!---HONumber=July15_HO1-->

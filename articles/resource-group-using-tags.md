@@ -3,8 +3,7 @@
 	description="" 
 	services="" 
 	documentationCenter="" 
-	authors="flanakin" 
-	writer="" 
+	authors="tfitzmac"
 	manager="wpickett" 
 	editor=""/>
 
@@ -14,8 +13,8 @@
 	ms.tgt_pltfrm="AzurePortal" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/28/2015" 
-	ms.author="micflan"/>
+	ms.date="06/24/2015" 
+	ms.author="tomfitz"/>
 
 
 # Verwenden von Tags zum Organisieren von Azure-Ressourcen
@@ -89,6 +88,16 @@ Fixieren Sie die wichtigsten Tags für den schnellen Zugriff auf dem Startboard,
 
 ![Anheften von Markierungen am das Startmenü](./media/resource-group-using-tags/pin-tags.png)
 
+## Tags und Abrechnung
+
+Abrechnungsdaten können für unterstützte Dienste mithilfe von Tags gruppiert werden. So können Sie beispielsweise mithilfe von [in den Azure-Ressourcen-Manager integrierten virtuellen Computern](/virtual-machines/virtual-machines-azurerm-versus-azuresm.md) Tags definieren und anwenden, um die Abrechnung für virtuelle Computer zu organisieren. Wenn Sie mehrere virtuelle Computer für verschiedene Organisationen betreiben, können Sie die Nutzung mithilfe von Tags nach Kostenstelle gruppieren. Mit Tags können Sie auch Kosten nach Laufzeitumgebung kategorisieren (beispielsweise zur Abrechnung der Nutzung virtueller Computer in der Produktionsumgebung).
+
+Informationen zu Tags können über die [Nutzungs-API](billing-usage-rate-card-overview.md) oder aus der Nutzungsdatei im CSV-Format abgerufen werden, die Sie aus dem [Azure-Kontenportal](https://account.windowsazure.com/) oder aus dem [EA-Portal](https://ea.azure.com) herunterladen können.
+
+Wenn Sie die CSV-Nutzungsdatei für Dienste herunterladen, die die Verwendung von Tags für die Abrechnung unterstützen, sind die Tags in der Spalte **Tags** enthalten. Ausführlichere Informationen finden Sie unter [Informationen zu Ihrer Rechnung für Microsoft Azure](billing-understand-your-bill.md).
+
+![Anzeigen von Tags in der Abrechnung](./media/resource-group-using-tags/billing_csv.png)
+
 ## Nächste Schritte
 Erste Schritte
 
@@ -112,4 +121,4 @@ Zugriffsverwaltung und -überwachung
 - [Erstellen neuer Azure-Dienstprinzipale mit dem Azure-Portal](./resource-group-create-service-principal-portal.md)  
   
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

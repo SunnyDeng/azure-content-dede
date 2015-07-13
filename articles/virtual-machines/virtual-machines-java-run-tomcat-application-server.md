@@ -160,4 +160,4 @@ An diesem Punkt sollte die Tomcat-Website unter Verwendung einer URL im Format *
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

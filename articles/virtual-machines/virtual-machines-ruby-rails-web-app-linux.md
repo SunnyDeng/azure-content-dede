@@ -172,4 +172,4 @@ Informationen zum Verwenden von Azure-Diensten in der Ruby-Anwendung finden Sie 
 [new-endpoint1]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint1.png
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

@@ -61,4 +61,4 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 [Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

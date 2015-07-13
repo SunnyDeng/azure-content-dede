@@ -29,16 +29,22 @@ Bei dieser Methode generiert der Assistent eine neue push.register.cs-Datei in I
 
 	Damit wird sichergestellt, dass die Registrierung mithilfe derselben Clientinstanz erfolgt, die über die authentifizierten Benutzeranmeldeinformationen verfügt. Ansonsten verläuft die Registrierung mit einem 401-Fehler vom Typ "Nicht autorisiert" erfolglos.
 
-3. Öffnen Sie die Projektdatei "MainPage.xaml.cs", und ersetzen Sie die Methodenüberschreibung **OnNavigatedTo** durch Folgendes:
+3. Öffnen Sie die freigegebene Projektdatei „MainPage.cs“, und ersetzen den Ereignishandler **ButtonLogin_Click** durch Folgendes:
 
-	    protected override async void OnNavigatedTo(NavigationEventArgs e)
+        private async void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            await AuthenticateAsync();            
-            todolistPush.UploadChannel();
-            RefreshTodoItems();
+            // Login the user and then load data from the mobile service.
+            await AuthenticateAsync();
+			todolistPush.UploadChannel();
+
+            // Hide the login button and load items from the mobile service.
+            this.ButtonLogin.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            await RefreshTodoItems();
         }
 
-	In diesem Code müssen Sie den generierten Push-Klassennamen (`todolistPush`) durch den Namen der Klasse ersetzen, die vom Assistenten generiert wurde, meist im Format <code><em>mobile_service</em>Push</code>.
+	Dadurch wird sichergestellt, dass vor der Push-Registrierung eine Authentifizierung erfolgt.
+
+4. 	Ersetzen Sie den generierten Push-Klassennamen (`todolistPush`) im vorigen Code durch den Namen der Klasse, die vom Assistenten generiert wurde (üblicherweise im Format <code><em>mobile_service</em>Push</code>).
 
 ###Manuell aktivierte Pushbenachrichtigungen		
 
@@ -48,13 +54,19 @@ Bei dieser Methode fügen Sie Registrierungscode aus dem Lernprogramm direkt in 
  
 2. Ändern Sie den Zugriff auf die **InitNotificationsAsync**-Methode von `private` in `public`, und fügen Sie den `static`-Modifizierer hinzu.
 
-3. Öffnen Sie die Projektdatei "MainPage.xaml.cs", und ersetzen Sie die Methodenüberschreibung **OnNavigatedTo** durch Folgendes:
+3. Öffnen Sie die freigegebene Projektdatei „MainPage.cs“, und ersetzen den Ereignishandler **ButtonLogin_Click** durch Folgendes:
 
-	    protected override async void OnNavigatedTo(NavigationEventArgs e)
+        private async void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            await AuthenticateAsync();            
-            App.InitNotificationsAsync();
-            RefreshTodoItems();
-        }
+            // Login the user and then load data from the mobile service.
+            await AuthenticateAsync();
+			App.InitNotificationsAsync();
 
-<!---HONumber=62-->
+            // Hide the login button and load items from the mobile service.
+            this.ButtonLogin.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            await RefreshTodoItems();
+        }
+	
+	Dadurch wird sichergestellt, dass vor der Push-Registrierung eine Authentifizierung erfolgt.
+
+<!---HONumber=July15_HO1-->

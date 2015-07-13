@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/28/2015"
-   ms.author="tomfitz;ilygre"/>
+   ms.date="06/22/2015"
+   ms.author="tomfitz"/>
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen
 
@@ -397,9 +397,9 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
 
 ## Nächste Schritte
 - [Vorlagenfunktionen im Azure-Ressourcen-Manager](./resource-group-template-functions.md)
-- [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](./resource-group-template-deploy.md)
+- [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md)
 - [Erweiterte Vorlagenvorgänge](./resource-group-advanced-template.md)
+- [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-web/app-service-deploy-complex-application-predictably.md)
 - [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
 
-<!---HONumber=58-->
-
+<!---HONumber=July15_HO1-->

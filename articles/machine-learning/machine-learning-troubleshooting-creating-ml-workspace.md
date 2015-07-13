@@ -77,4 +77,4 @@ Es ist unser Ziel, die Machine Learning-Erfahrung so glatt und nahtlos wie mögl
 [screen6]: media/machine-learning-troubleshooting-creating-ml-workspace/screen6.png
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

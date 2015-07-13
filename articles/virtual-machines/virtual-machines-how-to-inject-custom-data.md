@@ -79,4 +79,4 @@ Weitere Informationen finden Sie unter [cloud-init documentation for Ubuntu](htt
 [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

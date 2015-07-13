@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Trennen eines Datenträgers von einem virtuellen Linux-Computer in Azure" 
-	description="Learn how to detach a data disk from an Azure virtual machine." 
+	description="Erfahren Sie, wie Sie einen Datenträger von einem virtuellen Azure-Computer trennen." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="KBDAzure" 
@@ -13,13 +13,17 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/10/2015" 
+	ms.date="05/27/2015" 
 	ms.author="kathydav"/>
 
-
+# Trennen eines Datenträgers von einem virtuellen Linux-Computer
 
 
 [AZURE.INCLUDE [howto-detach-disk-windows-linux](../../includes/howto-detach-disk-windows-linux.md)]
 
-<!--HONumber=45--> 
+## Zusätzliche Ressourcen
+
+[Vorgehensweise: Anfügen eines Datenträgers an einen virtuellen Linux-Computer](virtual-machines-linux-how-to-attach-disk.md)
  
+
+<!---HONumber=July15_HO1-->

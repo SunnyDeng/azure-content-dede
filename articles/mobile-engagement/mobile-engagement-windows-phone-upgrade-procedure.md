@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Windows Phone Silverlight SDK – Upgradeverfahren" 
-	description="Windows Phone Silverlight SDK für Azure Mobile Engagement – Upgradeverfahren"
+	description="Windows Phone Silverlight SDK für Azure Mobile Engagement – Upgradeverfahren" 					
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="piyushjo" 
@@ -11,7 +11,7 @@
 	ms.service="mobile-engagement" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="C#" 
+	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/07/2015" 
 	ms.author="piyushjo" />
@@ -140,5 +140,6 @@ Beachten Sie, dass sich die Umbenennung auch auf überschriebene Methoden auswir
 
 
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

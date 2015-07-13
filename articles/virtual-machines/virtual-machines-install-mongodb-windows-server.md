@@ -56,4 +56,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen virtuellen Windows Serv
 [AzureManagementPortal]: http://manage.windowsazure.com
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

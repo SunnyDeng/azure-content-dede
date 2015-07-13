@@ -34,4 +34,4 @@ Im vorherigen Beispiel werden bei jedem Start der App der Identitätsanbieter un
 				[self loadAuthInfo];
 ```
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

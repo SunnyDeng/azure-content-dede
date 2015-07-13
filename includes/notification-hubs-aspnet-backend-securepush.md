@@ -84,4 +84,4 @@ Beachten Sie, dass die `Post`-Methode jetzt keine Popupbenachrichtigung sendet. 
 
 24. Wählen Sie die Azure-Website als Ihr Veröffentlichungsziel aus. Melden Sie sich mit Ihrem Azure-Konto an, und wählen Sie eine vorhandene oder neue Website, und notieren Sie sich die **Ziel-URL**-Eigenschaft auf der Registerkarte **Verbindung**. Diese URL wird später in diesem Lernprogramm als *Back-End-Endpunkt* bezeichnet. Klicken Sie auf **Veröffentlichen**.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

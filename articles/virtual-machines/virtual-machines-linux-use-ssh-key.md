@@ -174,5 +174,6 @@ Es gibt eine Reihe von Dienstprogrammen, die `openssl`-Client für Windows entha
 	![linuxputtyprivatekey](./media/virtual-machines-linux-use-ssh-key/linuxputtyprivatekey.png)
 
 5.	Klicken Sie auf **Öffnen**, um die Verbindung mit Ihrem virtuellen Computer herzustellen.
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO1-->

@@ -1,6 +1,6 @@
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-- ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/de-de/pricing/free-trial/?WT.mc_id=AED8DE357" target="_blank">Kostenlose Azure-Testversion</a>.
+- ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AED8DE357" target="_blank">Kostenlose Azure-Testversion</a>.
 
 
 - das [Azure Mobile Services Android SDK](http://aka.ms/Iajk6q);
@@ -14,4 +14,4 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 [Erste Schritte mit Mobile Services]: ../articles/mobile-services/mobile-services-android-get-started.md
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: ../articles/mobile-services/mobile-services-android-get-started-data.md
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

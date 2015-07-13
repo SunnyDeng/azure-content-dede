@@ -6,4 +6,4 @@ Um die Ressourcen in Azure bereitzustellen, müssen Sie bei Ihrem Azure-Konto an
 
 Bei den unten stehenden Beispielen wird davon ausgegangen, dass Sie in Ihrem Konto bereits über eine Ressourcengruppe mit dem angegebenen Namen verfügen.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

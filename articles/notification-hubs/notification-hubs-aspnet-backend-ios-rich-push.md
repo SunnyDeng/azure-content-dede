@@ -1,4 +1,11 @@
-<properties pageTitle="Azure Notification Hubs - Umfassende Pushbenachrichtigungen" description="Erfahren Sie mehr über das Senden umfassender Pushbenachrichtigungen an eine iOS-App von Azure. Die Codebeispiele wurden in Objekctive-C und C# geschrieben." documentationCenter="ios" services="notification-hubs" authors="wesmc7777" manager="dwrede" editor=""/>
+<properties
+	pageTitle="Azure Notification Hubs – Umfassende Pushbenachrichtigungen"
+	description="Erfahren Sie mehr über das Senden umfassender Pushbenachrichtigungen an eine iOS-App von Azure. Die Codebeispiele wurden in Objekctive-C und C# geschrieben."
+	documentationCenter="ios"
+	services="notification-hubs"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""/>
 
 <tags 
 	ms.service="notification-hubs" 
@@ -6,10 +13,10 @@
 	ms.tgt_pltfrm="ios" 
 	ms.devlang="objective-c" 
 	ms.topic="article" 
-	ms.date="02/26/2015" 
+	ms.date="06/02/2015" 
 	ms.author="wesmc"/>
 
-#Azure Notification Hubs - Umfassende Pushbenachrichtigungen
+#Azure Notification Hubs – Umfassende Pushbenachrichtigungen
 
 <div class="dev-center-tutorial-selector sublanding">
         <a href="/documentation/articles/notification-hubs-aspnet-backend-ios-rich-push/" title="iOS" class="current">iOS</a>
@@ -17,10 +24,9 @@
 
 ##Übersicht
 
-Um Benutzer augenblicklich mit umfassenden Inhalten zu versorgen, kann eine Anwendung Pushbenachrichtigungen senden. Diese Benachrichtigungen fördern Benutzerinteraktionen und bieten Inhalte wie URLs, Audio, Bilder/Coupons und mehr. Dieses Lernprogramm baut auf dem Thema [Benachrichtigen von Benutzern](notification-hubs-aspnet-backend-ios-notify-users.md) auf und veranschaulicht das Senden von Pushbenachrichtigungen mit Nutzlasten (z. B. ein Bild).
+Um Benutzer augenblicklich mit umfassenden Inhalten zu versorgen, kann eine Anwendung Pushbenachrichtigungen senden. Diese Benachrichtigungen fördern Benutzerinteraktionen und bieten Inhalte wie URLs, Audio, Bilder/Coupons und mehr. Dieses Lernprogramm baut auf dem Thema [Benachrichtigen von Benutzern](notification-hubs-aspnet-backend-ios-notify-users.md) auf und veranschaulicht das Senden von Pushbenachrichtigungen mit Nutzlasten (z. B. ein Bild).
 
-Dieses Lernprogramm ist zu iOS 7 und 8 kompatibel.
-    ![][IOS1]
+Dieses Lernprogramm ist mit iOS 7 und 8 kompatibel. ![][IOS1]
 
 Allgemeines:
 
@@ -45,7 +51,7 @@ Allgemeines:
 
         using System.Reflection;
 
-6. Aktualisieren Sie die gesamte Klasse **Benachrichtigungen** mit dem folgenden Code. Ersetzen Sie die Platzhalter durch Ihre Benachrichtigungshub-Anmeldedaten und den Namen der Bilddatei.
+6. Aktualisieren Sie die gesamte **Notifications**-Klasse durch den folgenden Code. Ersetzen Sie die Platzhalter durch Ihre Benachrichtigungshub-Anmeldedaten und den Namen der Bilddatei.
 
         public class Notification {
             public int Id { get; set; }
@@ -90,7 +96,7 @@ Allgemeines:
             }
         }
 
-> [AZURE.NOTE]  (Optional) Weitere Informationen zum Hinzufügen und Abrufen von Projektressourcen finden Sie unter [Einbetten von und Zugreifen auf Ressourcen mithilfe von Visual C#](http://support.microsoft.com/kb/319292).
+> [AZURE.NOTE](optional) Weitere Informationen zum Hinzufügen und Abrufen von Projektressourcen finden Sie unter [Einbetten von und Zugreifen auf Ressourcen mithilfe von Visual C#](http://support.microsoft.com/kb/319292).
 
 7. Definieren Sie **NotificationsController** in **NotificationsController.cs** mit den folgenden Codeausschnitten neu. Dadurch wird eine erste stille (silent) umfassende Benachrichtigungs-ID an das Gerät gesendet und der clientseitige Abruf des Bilds ermöglicht:
 
@@ -128,11 +134,11 @@ Allgemeines:
 
 ## Ändern des iOS-Projekts
 
-Nachdem Sie das Back-End nun so geändert haben, dass nur die *ID* einer Benachrichtigung geendet wird, ändern Sie die iOS-App so, dass sie mit dieser ID umgehen und die umfassende Nachricht von Ihrem Back-End abrufen kann.
+Nachdem Sie das Back-End nun so geändert haben, dass nur die *ID* einer Benachrichtigung gesendet wird, ändern Sie die iOS-App so, dass sie mit dieser ID umgehen und die umfassende Nachricht von Ihrem Back-End abrufen kann.
 
 1. Öffnen Sie das iOS-Projekt, und aktivieren Sie Remotebenachrichtigungen, indem Sie zu dem Haupt-App-Ziel im Abschnitt **Targets** navigieren.
 
-2. Klicken Sie auf **Capabilities**, aktivieren Sie **Background Modes**, und aktivieren Sie das Kontrollkästchen **Remote notifications** (Remotebenachrichtigungen).
+2. Klicken Sie auf **Capabilities** (Funktionen), aktivieren Sie **Background Modes** (Hintergrundmodi), und aktivieren Sie das Kontrollkästchen **Remote notifications** (Remotebenachrichtigungen).
 
     ![][IOS3]
 
@@ -144,7 +150,7 @@ Nachdem Sie das Back-End nun so geändert haben, dass nur die *ID* einer Benachr
 
     ![][IOS4]
 
-6. Klicken Sie im Storyboard auf den **Home View Controller**, und stellen Sie sicher, dass für den Controller die Klasse **homeViewController** als dessen benutzerdefinierte Klasse (**Custom Class**) sowie **Storyboard ID** unter dem "Identity inspector" angegeben ist.
+6. Klicken Sie im Storyboard auf den **Home View Controller**, und stellen Sie sicher, dass für den Controller die Klasse **homeViewController** als dessen benutzerdefinierte Klasse (**Custom Class**) sowie **Storyboard ID** unter dem "Identity Inspector" angegeben ist.
 
 7. Gehen Sie für Image View Controller als **imageViewController** gleichermaßen vor.
 
@@ -155,7 +161,7 @@ Nachdem Sie das Back-End nun so geändert haben, dass nur die *ID* einer Benachr
         @property (weak, nonatomic) IBOutlet UIImageView *myImage;
         @property (strong) UIImage* imagePayload;
 
-10. Fügen Sie in **imageViewController.m** Folgendes am Ende von **viewDidload** hinzu:
+10. Fügen Sie **in imageViewController.m** Folgendes am Ende von **viewDidload** hinzu:
 
         // Display the UI Image in UI Image View
         [self.myImage setImage:self.imagePayload];
@@ -374,5 +380,6 @@ Nachdem Sie das Back-End nun so geändert haben, dass nur die *ID* einer Benachr
 [IOS2]: ./media/notification-hubs-aspnet-backend-ios-rich-push/rich-push-ios-2.png
 [IOS3]: ./media/notification-hubs-aspnet-backend-ios-rich-push/rich-push-ios-3.png
 [IOS4]: ./media/notification-hubs-aspnet-backend-ios-rich-push/rich-push-ios-4.png
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO1-->

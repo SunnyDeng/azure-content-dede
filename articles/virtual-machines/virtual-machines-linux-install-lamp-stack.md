@@ -123,5 +123,6 @@ Angenommen, Sie möchten diese Schritte automatisieren, um Anwendungen für remo
 Es gibt zahlreiche weitere Ressourcen für die Einrichtung eines LAMP-Stacks in Ubuntu.
 
 - [https://help.ubuntu.com/community/ApacheMySQLPHP](https://help.ubuntu.com/community/ApacheMySQLPHP)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO1-->

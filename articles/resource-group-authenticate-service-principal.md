@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="04/28/2015"
+   ms.date="05/15/2015"
    ms.author="tomfitz"/>
 
 # Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager
@@ -23,7 +23,7 @@ In diesem Thema erfahren Sie, wie Sie einem Dienstprinzipal (z. B. einem automat
 
 ## Konzepte
 1. Azure Active Directory (AAD): Dies ist ein Clouddienst zur Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [What is Azure Active Directory?](active-directory/active-directory-whatis.md) (Was ist Azure Active Directory?).
-2. Dienstprinzipal: Dies ist eine Anwendungsinstanz in einem Verzeichnis.
+2. Dienstprinzipal: Eine Instanz einer Anwendung in einem Verzeichnis, für die auf andere Ressourcen zugegriffen werden muss.
 3. AD-Anwendung: Dies ist ein Verzeichnisdatensatz, von dem eine Anwendung bei AAD identifiziert wird. Weitere Informationen finden Sie unter [Grundlagen der Authentifizierung im Azure AD](https://msdn.microsoft.com/library/azure/874839d9-6de6-43aa-9a5c-613b0c93247e#BKMK_Auth).
 
 ## Authentifizieren eines Dienstprinzipals und Gewähren von Zugriffsrechten mithilfe von PowerShell
@@ -34,9 +34,9 @@ Zunächst wird ein Dienstprinzipal erstellt. Dazu muss im Verzeichnis eine Anwen
 
 1. Erstellen Sie eine neue AAD-Anwendung, indem Sie den Befehl **New-AzureADApplication** ausführen. Geben Sie einen Anzeigenamen für die Anwendung an, außerdem die URI zu einer Seite mit einer Beschreibung der Anwendung (der Link wird nicht geprüft), die URIs, von denen die Anwendung identifiziert wird, und das Kennwort für Ihre Anwendungsidentität.
 
-        PS C:> $azureAdApplication = New-AzureADApplication -DisplayName "<Your Application Display Name>" -HomePage "<https://YourApplicationHomePage>" -IdentifierUris "<https://YouApplicationUri>" -Password "<Your_Password>"
+        PS C:\> $azureAdApplication = New-AzureADApplication -DisplayName "<Your Application Display Name>" -HomePage "<https://YourApplicationHomePage>" -IdentifierUris "<https://YouApplicationUri>" -Password "<Your_Password>"
 
-   Die Azure AD-Anwendung wird zurückgegeben.
+     Die Azure AD-Anwendung wird zurückgegeben. Die Eigenschaft **ApplicationId** wird benötigt, um Dienstprinzipale zu erstellen, Rollenzuweisungen vorzunehmen und JWT-Token abzurufen. Speichern Sie die Ausgabe, oder erfassen Sie sie in einer Variablen.
 
         Type                    : Application
         ApplicationId           : a41acfda-d588-47c9-8166-d659a335a865
@@ -66,90 +66,118 @@ Zunächst wird ein Dienstprinzipal erstellt. Dazu muss im Verzeichnis eine Anwen
                           }}
 
 
->[AZURE.NOTE]Die Eigenschaft **ApplicationId** wird benötigt, um Dienstprinzipale zu erstellen, Rollenzuweisungen vorzunehmen und JWT-Token abzurufen. Speichern Sie die Ausgabe, oder erfassen Sie sie in einer Variablen.
+2. Erstellen Sie einen Dienstprinzipal für Ihre Anwendung.
 
-3. Erstellen Sie einen Dienstprinzipal für Ihre Anwendung.
+        PS C:\> New-AzureADServicePrincipal -ApplicationId $azureAdApplication.ApplicationId
 
-        PS C:> New-AzureADServicePrincipal -ApplicationId $azureAdApplication.ApplicationId
+     Sie haben nun einen Dienstprinzipal im Verzeichnis erstellt. Dieser Dienstprinzipal verfügt jedoch noch nicht über Berechtigungen, und ihm wurde auch noch kein Bereich zugewiesen. Sie müssen dem Dienstprinzipal ausdrücklich die Berechtigungen zum Ausführen von Aktionen in einem bestimmten Bereich gewähren.
 
-   Sie haben nun einen Dienstprinzipal im Verzeichnis erstellt. Dieser Dienstprinzipal verfügt jedoch noch nicht über Berechtigungen, und ihm wurde auch noch kein Bereich zugewiesen. Sie müssen dem Dienstprinzipal ausdrücklich die Berechtigungen zum Ausführen von Aktionen in einem bestimmten Bereich gewähren.
+3. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim Parameter **ServicePrincipalName** entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](azure-portal/resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
 
-4. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim Parameter **ServicePrincipalName** entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](azure-portal/resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
+        PS C:\> New-AzureRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
-        PS C:> New-AzureRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
+4. Rufen Sie das Abonnement ab, in dem die Rollenzuweisung erstellt wurde. Dieses Abonnement wird später verwendet, um die **TenantId** des Mandanten abzurufen, in dem sich die Rollenzuweisung des Dienstprinzipals befindet.
 
-5. Rufen Sie das Abonnement ab, in dem die Rollenzuweisung erstellt wurde. Dieses Abonnement wird später verwendet, um die **TenantId** des Mandanten abzurufen, in dem sich die Rollenzuweisung des Dienstprinzipals befindet.
+        PS C:\> $subscription = Get-AzureSubscription | where { $_.IsCurrent }
 
-        PS C:> $subscription = Get-AzureSubscription | where { $_.IsCurrent }
+     Wenn die Rollenzuweisung in einem anderen Abonnement als dem aktuell ausgewählten erstellt wurde, können Sie einen der Parameter **SubscriptoinId** oder **SubscriptionName** angeben, um ein anderes Abonnement abzurufen.
 
-   Wenn die Rollenzuweisung in einem anderen Abonnement als dem aktuell ausgewählten erstellt wurde, können Sie einen der Parameter **SubscriptoinId** oder **SubscriptionName** angeben, um ein anderes Abonnement abzurufen.
+5. Erstellen Sie ein neues **PSCredential**-Objekt, das Ihre Anmeldeinformationen enthält, indem Sie den Befehl **Get-Credential** ausführen.
 
-6. Erstellen Sie ein neues **PSCredential**-Objekt, das Ihre Anmeldeinformationen enthält, indem Sie den Befehl **Get-Credential** ausführen.
+        PS C:\> $creds = Get-Credential
 
-        PS C:> $creds = Get-Credential
+     Sie werden zum Eingeben Ihrer Anmeldeinformationen aufgefordert.
 
-   Sie werden zum Eingeben Ihrer Anmeldeinformationen aufgefordert.
+     ![][1]
 
-   ![][1]
+     Verwenden Sie als Benutzernamen die **ApplicationId** oder die **IdentifierUris**, die Sie beim Erstellen der Anwendung verwendet haben. Verwenden Sie das Kennwort, das Sie beim Erstellen des Kontos angegeben haben.
 
-   Verwenden Sie als Benutzernamen die **ApplicationId** oder die **IdentifierUris**, die Sie beim Erstellen der Anwendung verwendet haben. Verwenden Sie das Kennwort, das Sie beim Erstellen des Kontos angegeben haben.
+6. Verwenden Sie die Anmeldeinformationen, die Sie als Eingabe für das Cmdlet **Add-AzureAccount** verwendet haben, von welchem der Dienstprinzipal angemeldet wird:
 
-7. Verwenden Sie die Anmeldeinformationen, die Sie als Eingabe für das Cmdlet **Add-AzureAccount** verwendet haben, von welchem der Dienstprinzipal angemeldet wird:
+        PS C:\> Add-AzureAccount -Credential $creds -ServicePrincipal -Tenant $subscription.TenantId
 
-        PS C:> Add-AzureAccount -Credential $creds -ServicePrincipal -Tenant $subscription.TenantId
-
-   Die Authentifizierung des Dienstprinzipals für die ADD-Anwendung, die Sie erstellt haben, ist hiermit abgeschlossen.
+     Die Authentifizierung des Dienstprinzipals für die ADD-Anwendung, die Sie erstellt haben, ist hiermit abgeschlossen.
 
 
-## Authentifizieren eines Dienstprinzipals und Gewähren von Zugriffsrechten mithilfe der Azure-Befehlszeilenschnittstelle 
+## Authentifizieren eines Dienstprinzipals und Gewähren von Zugriffsrechten mithilfe der Azure-Befehlszeilenschnittstelle
 
 Wenn noch keine Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows installiert ist, lesen [Install and Configure the Azure CLI](xplat-cli-install.md) (Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle).
 
-Sie müssen bereits über eine AD-Anwendung und einen Dienstprinzipal verfügen, um die folgenden Schritte ausführen zu können. Informationen zum Einrichten einer AD-Anwendung und eines Dienstprinzipals mithilfe des klassischen Azure-Portals finden Sie unter [Create a new Azure Service Principal using the Azure classic portal](./resource-group-create-service-principal-portal.md) (Erstellen eines neuen Azure- Dienstprinzipals mithilfe des klassischen Azure-Portals).
+1. Erstellen Sie eine neue AAD-Anwendung, indem Sie den Befehl **azure ad app create** ausführen. Geben Sie einen Anzeigenamen für die Anwendung an, außerdem die URI zu einer Seite mit einer Beschreibung der Anwendung (der Link wird nicht geprüft), die URIs, von denen die Anwendung identifiziert wird, und das Kennwort für Ihre Anwendungsidentität.
 
-1. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim Parameter **ServicePrincipalName** entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](azure-portal/resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
+        azure ad app create --name "<Your Application Display Name>" --home-page "<https://YourApplicationHomePage>" --identifier-uris "<https://YouApplicationUri>" --password <Your_Password>
+        
+    Die Azure AD-Anwendung wird zurückgegeben. Die ApplicationId-Eigenschaft wird benötigt, um Dienstprinzipale und Rollenzuweisungen zu erstellen und JWT-Token abzurufen.
 
-        azure role assignment create --objectId {service-principal-object-id} -o Reader -c /subscriptions/{subscriptionId}/
+        info:    Executing command ad app create
+        + Creating application exampleapp                                                
+        data:    Application Id:          b57dd71d-036c-4840-865e-23b71d8098ec
+        data:    Application Object Id:   d5c519e2-6149-447e-b323-88d2c4ea27de
+        data:    Application Permissions:  
+        data:                             claimValue:  user_impersonation
+        data:                             description:  Allow the application to access exampleapp on behalf of the signed-in user.
+        ...
+        info:    ad app create command OK
 
-2. Ermitteln Sie die **TenantId** des Mandanten, der die Rollenzuweisung des Dienstprinzipals enthält, indem Sie die Konten auflisten und in der Ausgabe nach der Eigenschaft **TenantId** suchen.
+2. Erstellen Sie einen Dienstprinzipal für Ihre Anwendung. Stellen Sie die Anwendungs-ID bereit, die im vorherigen Schritt zurückgegeben wurde.
+
+        azure ad sp create b57dd71d-036c-4840-865e-23b71d8098ec
+        
+    Der neue Dienstprinzipal wird zurückgegeben. Die Objekt-ID wird beim Gewähren von Berechtigungen benötigt.
+    
+        info:    Executing command ad sp create
+        + Creating service principal for application b57dd71d-036c-4840-865e-23b71d8098ec
+        data:    Object Id:               47193a0a-63e4-46bd-9bee-6a9f6f9c03cb
+        data:    Display Name:            exampleapp
+        ...
+        info:    ad sp create command OK
+
+    Sie haben nun einen Dienstprinzipal im Verzeichnis erstellt. Dieser Dienstprinzipal verfügt jedoch noch nicht über Berechtigungen, und ihm wurde auch noch kein Bereich zugewiesen. Sie müssen dem Dienstprinzipal ausdrücklich die Berechtigungen zum Ausführen von Aktionen in einem bestimmten Bereich gewähren.
+
+3. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim Parameter **ServicePrincipalName** entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](azure-portal/resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
+
+        azure role assignment create --objectId 47193a0a-63e4-46bd-9bee-6a9f6f9c03cb -o Reader -c /subscriptions/{subscriptionId}/
+
+4. Ermitteln Sie die **TenantId** des Mandanten, der die Rollenzuweisung des Dienstprinzipals enthält, indem Sie die Konten auflisten und in der Ausgabe nach der Eigenschaft **TenantId** suchen.
 
         azure account list
 
-3. Melden Sie sich an, und verwenden Sie dabei den Dienstprinzipal als Identität. Verwenden Sie als Benutzernamen die **ApplicationId**, die Sie beim Erstellen der Anwendung verwendet haben. Verwenden Sie das Kennwort, das Sie beim Erstellen des Kontos angegeben haben.
+5. Melden Sie sich an, und verwenden Sie dabei den Dienstprinzipal als Identität. Verwenden Sie als Benutzernamen die **ApplicationId**, die Sie beim Erstellen der Anwendung verwendet haben. Verwenden Sie das Kennwort, das Sie beim Erstellen des Kontos angegeben haben.
 
         azure login -u "<ApplicationId>" -p "<password>" --service-principal --tenant "<TenantId>"
 
-  Die Authentifizierung des Dienstprinzipals für die ADD-Anwendung, die Sie erstellt haben, ist hiermit abgeschlossen.
+    Die Authentifizierung des Dienstprinzipals für die ADD-Anwendung, die Sie erstellt haben, ist hiermit abgeschlossen.
 
 ## Nächste Schritte
 Erste Schritte
 
-- [Azure Resource Manager Overview](./resource-group-overview.md)(Übersicht über den Azure-Ressourcen-Manager)  
+- [Azure Resource Manager Overview](./resource-group-overview.md) (Übersicht über den Azure-Ressourcen-Manager)  
 - [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](./powershell-azure-resource-manager.md)
 - [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](virtual-machines/xplat-cli-azure-resource-manager.md)  
-- [Using the Azure Portal to manage your Azure resources](azure-portal/resource-group-portal.md)(Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen)  
+- [Using the Azure Portal to manage your Azure resources](azure-portal/resource-group-portal.md) (Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen)
+
   
 Erstellen und Bereitstellen von Anwendungen
   
-- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md)(Erstellen von Vorlagen im Azure-Ressourcen-Manager)  
-- [Deploy an application with Azure Resource Manager Template](azure-portal/resource-group-template-deploy.md)(Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)  
-- [Troubleshooting Resource Group Deployments in Azure](virtual-machines/resource-group-deploy-debug.md)(Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)  
-- [Azure Resource Manager Template Functions](./resource-group-template-functions.md)(Vorlagenfunktionen im Azure-Ressourcen-Manager)  
-- [Advanced Template Operations](./resource-group-advanced-template.md)(Erweiterte Anwendungen mit Vorlagen)  
-- [Deploy Azure Resources Using .NET Libraries and a Template](virtual-machines/arm-template-deployment.md)(Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage)
+- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) (Erstellen von Vorlagen im Azure-Ressourcen-Manager)  
+- [Deploy an application with Azure Resource Manager Template](azure-portal/resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)  
+- [Troubleshooting Resource Group Deployments in Azure](virtual-machines/resource-group-deploy-debug.md) (Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)  
+- [Azure Resource Manager Template Functions](./resource-group-template-functions.md) (Vorlagenfunktionen im Azure-Ressourcen-Manager)  
+- [Advanced Template Operations](./resource-group-advanced-template.md) (Erweiterte Anwendungen mit Vorlagen)  
+- [Deploy Azure Resources Using .NET Libraries and a Template](virtual-machines/arm-template-deployment.md) (Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage)
   
 Organisieren von Ressourcen
   
-- [Using tags to organize your Azure resources](./resource-group-using-tags.md)(Verwenden von Tags zum Organisieren von Azure-Ressourcen)  
+- [Using tags to organize your Azure resources](./resource-group-using-tags.md) (Verwenden von Tags zum Organisieren von Azure-Ressourcen)  
   
 Zugriffsverwaltung und -überwachung
   
-- [Managing and Auditing Access to Resources](azure-portal/resource-group-rbac.md)(Verwalten und Überwachen des Zugriffs auf Ressourcen)  
-- [Create a new Azure Service Principal using the Azure portal](./resource-group-create-service-principal-portal.md)(Erstellen eines neuen Azure-Dienstprinzipals mithilfe des Azure-Portals)  
+- [Managing and Auditing Access to Resources](azure-portal/resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen)  
+- [Create a new Azure Service Principal using the Azure portal](./resource-group-create-service-principal-portal.md) (Erstellen eines neuen Azure-Dienstprinzipals mithilfe des Azure-Portals)  
   
 
 
 <!-- Images. -->
 [1]: ./media/resource-group-authenticate-service-principal/arm-get-credential.png
 
-<!--HONumber=52-->
+<!---HONumber=July15_HO1-->

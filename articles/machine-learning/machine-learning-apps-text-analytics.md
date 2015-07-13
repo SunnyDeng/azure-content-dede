@@ -201,4 +201,4 @@ In der folgenden Antwort erhalten Sie die Schlüsselwortliste im Zusammenhang mi
 Die ins System eingegebenen IDs werden von diesem zurückgegeben. Der Webdienst überprüft nicht, ob die IDs eindeutig sind. Es ist die Verantwortung des Aufrufers, deren Eindeutigkeit zu prüfen.
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

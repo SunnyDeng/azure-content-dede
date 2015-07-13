@@ -1,6 +1,6 @@
 <properties
    pageTitle="Funktionen von Azure Resource Manager-Vorlagen"
-   description="Beschreibt die in einer Azure Resource Manager-Vorlage zu verwendenden Funktionen, um Azure Anwendungen bereitzustellen."
+   description="Es werden die Funktionen beschrieben, die in einer Azure-Ressourcen-Manager-Vorlage zum Abrufen von Werten, Formatieren von Zeichenfolgen und Abrufen von Bereitstellungsinformationen verwendet werden."
    services="na"
    documentationCenter="na"
    authors="tfitzmac"
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/28/2015"
-   ms.author="tomfitz;ilygre"/>
+   ms.date="06/08/2015"
+   ms.author="tomfitz"/>
 
 # Funktionen von Azure Resource Manager-Vorlagen
 
@@ -41,7 +41,7 @@ Das folgende Beispiel zeigt die Funktionsweise der base64-Funktion.
 
 **concat (arg1, arg2, arg3, ...)**
 
-Kombiniert mehrere Zeichenfolgewerte und gibt den resultierenden Zeichenfolgewert zurück. Diese Funktion kann eine beliebige Anzahl an Argumenten entgegennehmen. 
+Kombiniert mehrere Zeichenfolgewerte und gibt den resultierenden Zeichenfolgewert zurück. Diese Funktion kann eine beliebige Anzahl an Argumenten entgegennehmen.
 
 Das folgende Beispiel zeigt die Kombinationsweise mehrerer Werte, um einen Wert zurückzugeben.
 
@@ -50,6 +50,33 @@ Das folgende Beispiel zeigt die Kombinationsweise mehrerer Werte, um einen Wert 
           "type": "string",
           "value": "[concat('http://',reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
         }
+    }
+
+## deployment
+
+**deployment()**
+
+Gibt Informationen zum aktuellen Bereitstellungsvorgang zurück.
+
+Die Informationen zur Bereitstellung werden als Objekt mit den folgenden Eigenschaften zurückgegeben:
+
+    {
+      "name": "",
+      "properties": {
+        "template": {},
+        "parameters": {},
+        "mode": "",
+        "provisioningState": ""
+      }
+    }
+
+Im folgenden Beispiel wird veranschaulicht, wie Bereitstellungsinformationen im Abschnitt „outputs“ zurückgegeben werden.
+
+    "outputs": {
+      "exampleOutput": {
+        "value": "[deployment()]",
+        "type" : "object"
+      }
     }
 
 ## listKeys
@@ -72,7 +99,29 @@ Das folgende Beispiel zeigt, wie die Schlüssel von einem Speicherkonto in die A
       } 
     } 
 
-## angeben
+## padLeft
+
+**padLeft(stringToPad, totalLength, paddingCharacter)**
+
+Gibt eine rechtsbündig ausgerichtete Zeichenfolge zurück, indem links Zeichen hinzugefügt werden, bis die angegebene Gesamtlänge erreicht ist.
+  
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| stringToPad | Ja | Die Zeichenfolge, die rechtsbündig ausgerichtet werden soll.
+| totalLength | Ja | Die Gesamtzahl der Zeichen in der zurückgegebenen Zeichenfolge.
+| paddingCharacter | Ja | Das Zeichen, das für das Auffüllen auf der linken Seite verwendet werden soll, bis die Gesamtlänge erreicht ist.
+
+Im folgenden Beispiel wird veranschaulicht, wie Sie den vom Benutzer angegebenen Parameterwert auffüllen, indem Sie das Nullzeichen hinzufügen, bis die Zeichenfolge zehn Zeichen lang ist. Wenn der ursprüngliche Parameterwert länger als zehn Zeichen ist, werden keine Zeichen hinzugefügt.
+
+    "parameters": {
+        "appName": { "type": "string" }
+    },
+    "variables": { 
+        "paddedAppName": "[padLeft(parameters('appName'),10,'0')]"
+    }
+
+
+## parameters
 
 **Parameter (parameterName)**
 
@@ -100,7 +149,7 @@ Die folgenden Beispiele zeigen eine vereinfachte Nutzungsweise der Parameterfunk
 
 ## Anbieter
 
-**Anbieter (providerNamespace, [resourceType])**
+**provider (providerNamespace, [resourceType])**
 
 Rückgabe von Informationen über einen Ressourcenanbieter und die von ihm unterstützten Ressourcentypen. Wenn kein Typ angegeben wird, werden alle unterstützten Typen zurückgegeben.
 
@@ -128,7 +177,7 @@ Das folgende Beispiel zeigt die Nutzungsweise der Anbieterfunktion:
 
 ## Referenz
 
-**Referenz (resourceName oder resourceIdentifier, [apiVersion])**
+**reference (resourceName oder resourceIdentifier, [apiVersion])**
 
 Aktiviert einen Ausdruck, um seinen Wert vom Laufzeitstatus einer anderen Ressource abzuleiten.
 
@@ -139,13 +188,34 @@ Aktiviert einen Ausdruck, um seinen Wert vom Laufzeitstatus einer anderen Ressou
 
 Die **Referenz**-Funktion leitet ihren Wert von einem Laufzeitstatus ab und kann somit nicht im Variablen-Abschnitt verwendet werden. Sie kann in Ausgabeabschnitten einer Vorlage verwendet werden.
 
-Mithilfe des Referenzausdrucks können Sie deklarieren, dass eine Ressource von einer anderen abhängt, wenn die verwiesene Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird. 
+Mithilfe des Referenzausdrucks können Sie deklarieren, dass eine Ressource von einer anderen abhängt, wenn die verwiesene Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird.
 
     "outputs": {
       "siteUri": {
           "type": "string",
           "value": "[concat('http://',reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
       }
+    }
+
+## replace
+
+**replace(originalString, oldCharacter, newCharacter)**
+
+Gibt eine neue Zeichenfolge zurück, in der alle Instanzen eines Zeichens in der angegebenen Zeichenfolge durch ein anderes Zeichen ersetzt wurden.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| originalString | Ja | Die Zeichenfolge, für die alle Instanzen eines Zeichens durch ein anderes Zeichen ersetzt werden sollen.
+| oldCharacter | Ja | Das Zeichen, das aus der ursprünglichen Zeichenfolge entfernt werden soll.
+| newCharacter | Ja | Das Zeichen, das für das entfernte Zeichen eingefügt werden soll.
+
+Im folgenden Beispiel wird veranschaulicht, wie Sie alle Bindestriche aus einer vom Benutzer angegebenen Zeichenfolge entfernen.
+
+    "parameters": {
+        "identifier": { "type": "string" }
+    },
+    "variables": { 
+        "newidentifier": "[replace(parameters('identifier'),'-','')]"
     }
 
 ## Ressourcengruppe
@@ -174,7 +244,7 @@ Das folgende Beispiel nutzt den Speicherort der Ressourcengruppe, um einer Websi
 
 ## Ressourcen-ID
 
-**Ressourcen-ID ([resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
+**resourceId ([resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
 
 Gibt den eindeutigen Bezeichner einer Ressource zurück. Diese Funktion wird verwendet, wenn der Ressourcenname zweideutig ist oder nicht innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Der Bezeichner wird im folgenden Format zurückgeben:
 
@@ -256,6 +326,45 @@ Das folgende Beispiel zeigt ein Abrufen der Abonnement-Funktion im Ausgabeabschn
       } 
     } 
 
+## toLower
+
+**toLower(stringToChange)**
+
+Konvertiert die angegebene Zeichenfolge in Kleinbuchstaben.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| stringToChange | Ja | Die Zeichenfolge, die in Kleinbuchstaben konvertiert werden soll.
+
+Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in Kleinbuchstaben konvertiert.
+
+    "parameters": {
+        "appName": { "type": "string" }
+    },
+    "variables": { 
+        "lowerCaseAppName": "[toLower(parameters('appName'))]"
+    }
+
+## toUpper
+
+**toUpper(stringToChange)**
+
+Konvertiert die angegebene Zeichenfolge in Großbuchstaben.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| stringToChange | Ja | Die Zeichenfolge, die in Großbuchstaben konvertiert werden soll.
+
+Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in Großbuchstaben konvertiert.
+
+    "parameters": {
+        "appName": { "type": "string" }
+    },
+    "variables": { 
+        "upperCaseAppName": "[toUpper(parameters('appName'))]"
+    }
+
+
 ## Variablen
 
 **Variablen (variableName)**
@@ -270,7 +379,7 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 ## Nächste Schritte
 - [Erstellen von Resource Manager-Vorlagen](./resource-group-authoring-templates.md)
 - [Erweiterte Vorlagenvorgänge](./resource-group-advanced-template.md)
-- [Bereitstellen einer Anwendung mit einer Azure Resource Manager-Vorlage](./resouce-group-template-deploy.md)
-- [Azure Resource Manager Cmdlets](./resource-group-overview.md):
+- [Bereitstellen einer Anwendung mit einer Azure Resource Manager-Vorlage](azure-portal/resource-group-template-deploy.md)
+- [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
 
-<!--HONumber=52-->
+<!---HONumber=July15_HO1-->

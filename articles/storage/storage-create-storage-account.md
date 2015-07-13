@@ -163,4 +163,4 @@ Um ein nicht mehr verwendetes Speicherkonto zu entfernen, verwenden Sie **Lösch
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

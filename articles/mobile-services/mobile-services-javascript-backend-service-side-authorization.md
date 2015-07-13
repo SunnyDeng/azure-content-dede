@@ -2,6 +2,7 @@
 	pageTitle="Dienstseitige Autorisierung von Benutzern in Mobile Services mit JavaScript-Back-End | Mobile Dev Center"
 	description="Erfahren Sie, wie Sie Benutzer im JavaScript-Back-End von Azure Mobile Services autorisieren."
 	services="mobile-services"
+	documentationCenter=""
 	authors="krisragh"
 	manager="dwrede"
 	editor=""/>
@@ -9,9 +10,10 @@
 <tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
-	ms.tgt_pltfrm=""
+	ms.tgt_pltfrm="mobile-multiple"
 	ms.topic="article"
-	ms.date="2/18/2015"
+	ms.devlang="javascript"
+	ms.date="05/20/2015"
 	ms.author="krisragh"/>
 
 # Dienstseitige Autorisierung von Benutzern in Mobile Services
@@ -20,7 +22,7 @@
 - [(Any | .NET)](mobile-services-dotnet-backend-service-side-authorization.md)
 - [(Any | Javascript)](mobile-services-javascript-backend-service-side-authorization.md)
 
-In diesem Thema wird veranschaulicht, wie serverseitige Skripts verwendet werden können, um Benutzer zu autorisieren. In diesem Lernprogramm registrieren Sie Skripts für Azure Mobile Services, filtern Sie Abfragen anhand von Benutzer-IDs, und gewähren Sie Benutzern nur Zugriff auf deren eigene Daten.
+In diesem Thema wird veranschaulicht, wie serverseitige Skripts verwendet werden können, um Benutzer zu autorisieren. In diesem Lernprogramm registrieren Sie Skripts für Azure Mobile Services, filtern Sie Abfragen anhand von Benutzer-IDs, und gewähren Sie Benutzern nur Zugriff auf deren eigene Daten. Das Filtern der Abfrageergebnisse eines Benutzers anhand der Benutzer-ID ist die einfachste Form der Autorisierung. Je nach Szenario möchten Sie vielleicht auch Benutzer oder Rollentabellen erstellen, um ausführlichere Berechtigungsinformationen für Benutzer zu verfolgen, beispielsweise auf welche Endpunkte ein angegebener Benutzer zugreifen darf.
 
 Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem Lernprogramm [Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App] auf. Bearbeiten Sie zunächst [Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App].
 
@@ -28,29 +30,23 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst. Klicken Sie auf die Registerkarte **Data**, dann auf die Tabelle **TodoItem**.
 
-2. Klicken Sie auf **Skript** und wählen Sie die **Einfügen**-Operation aus.
-
-   ![][2]
-
-3. Ersetzen Sie das vorhandene Skript durch die folgende Funktion, und klicken Sie dann auf **Save**. Dieses Skript fügt dem Element vor dem Einfügen die Benutzer-ID des authentifizierten Benutzers hinzu.
+2. Klicken Sie auf **Skript**, wählen Sie den Vorgang **Einfügen**, ersetzen Sie das vorhandene Skript durch die folgende Funktion, und klicken Sie dann auf **Save**.
 
         function insert(item, user, request) {
           item.userId = user.userId;
           request.execute();
         }
 
+	Dieses Skript fügt dem Element vor dem Einfügen die Benutzer-ID des authentifizierten Benutzers hinzu.
 
-   > [AZURE.NOTE] [Dynamic schema must be enabled](https://msdn.microsoft.com/library/azure/jj193175.aspx) zu diesem Zweck. Diese Einstellung ist für neue mobile Dienste standardmäßig aktiviert.
+    >[AZURE.NOTE]Stellen Sie sicher, dass das [dynamische Schema](https://msdn.microsoft.com/library/azure/jj193175.aspx) aktiviert ist. Andernfalls wird die Spalte *userID* nicht automatisch hinzugefügt. Diese Einstellung ist für einen neuen mobilen Dienst standardmäßig aktiviert.
 
-5. Ersetzen Sie auf gleiche Weise den vorhandenen **Read**-Vorgang durch die folgende Funktion: Dieses Skript filtert die zurückgegebenen TodoItem-Objekte, sodass ein Benutzer nur die Elemente empfängt, die er selbst eingefügt hat.
+3. Ersetzen Sie auf gleiche Weise den vorhandenen **Read**-Vorgang durch die folgende Funktion: Dieses Skript filtert die zurückgegebenen TodoItem-Objekte, sodass ein Benutzer nur die Elemente empfängt, die er selbst eingefügt hat.
 
         function read(query, user, request) {
            query.where({ userId: user.userId });
            request.execute();
         }
-
-
-
 
 ## <a name="test-app"></a>Testen der App
 
@@ -63,21 +59,15 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 [Next Steps]: #next-steps
 
 <!-- Images. -->
-[0]: ./media/mobile-services-ios-authorize-users-in-scripts/mobile-services-selection.png
-[1]: ./media/mobile-services-ios-authorize-users-in-scripts/mobile-portal-data-tables.png
-[2]: ./media/mobile-services-javascript-backend-service-side-authorization/mobile-insert-script-users.png
-[3]: ./media/mobile-services-ios-authorize-users-in-scripts/mobile-quickstart-startup-ios.png
 
 <!-- URLs. -->
 
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/p/?LinkID=257677
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/p/?LinkId=262293
 [My Apps dashboard]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
-[Add Mobile Services to Existing App]: /develop/mobile/tutorials/get-started-with-data-ios
 [Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App]: /develop/mobile/tutorials/get-started-with-users-ios
-[Add Push Notifications to Existing App]: /develop/mobile/tutorials/get-started-with-push-ios
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

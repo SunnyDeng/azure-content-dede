@@ -18,19 +18,17 @@
 
 
 
-# Verwaltung der Anwendungsleistung mit New Relic auf Azure
+#Verwaltung der Anwendungsleistung mit New Relic auf Azure
 
 In diesem Leitfaden wird beschrieben, wie Sie Ihren auf Azure gehosteten Anwendungen die erstklassige Leistungsüberwachung von New Relic hinzufügen. Wir erläutern das schnelle und einfache Verfahren zum Hinzufügen von New Relic zu Anwendungen und stellen einige der Funktionen von New Relic vor. Weitere Informationen zum Arbeiten mit New Relic finden Sie unter [Verwenden von New Relic](#using-new-relic).
 
-Was ist New Relic? 
---
+Was ist New Relic? --
 
 New Relic ist ein für Entwickler konzipiertes Tool, mit dem Produktionsanwendungen überwacht und detaillierte Informationen zu deren Leistung und Zuverlässigkeit abgerufen werden können. Es beschleunigt die Identifizierung und Diagnostizierung von Leistungsproblemen und gibt Ihnen die benötigten Informationen an die Hand, um diese Probleme zu lösen.
 
 New Relic verfolgt die Ladezeit und den Durchsatz von Webtransaktionen, sowohl vom Server als auch von den Browsern der Benutzer. Das Tool zeigt, wie viel Zeit Sie in der Datenbank verbracht haben, analysiert langsame Abfragen und Webanforderungen, bietet Verfügbarkeitsüberwachung und Warnfunktionen, verfolgt Anwendungsausnahmen und vieles mehr.
 
-Sonderpreis für New Relic im Azure Store 
---
+Sonderpreis für New Relic im Azure Store --
 
 New Relic Standard ist für Azure-Benutzer kostenlos; New Relic Pro wird basierend auf der Instanzgröße für Azure-Clouddienste angeboten
 
@@ -40,8 +38,7 @@ Preisinformationen finden Sie auf der [New Relic-Seite im Azure Store](http://az
 
 Azure-Kunden erhalten bei Bereitstellung des New Relic-Agenten ein zweiwöchiges Testabonnement von New Relic Pro.
 
-Anmelden bei New Relic über den Azure Store 
---
+Anmelden bei New Relic über den Azure Store --
 
 New Relic kann nahtlos in Azure-Web- und -Workerrollen integriert werden.
 
@@ -77,7 +74,8 @@ Um sich direkt im Azure Store bei New Relic anmelden, führen Sie diese drei ein
 
 	![Paket-Manager-Konsole](./media/store-new-relic-cloud-services-dotnet-application-performce-management/NewRelicAzureNuget04.png)
 
-4. Geben Sie an der Eingabeaufforderung des Paket-Managers `Install-PackageNewRelicWindowsAzure` ein, und drücken Sie die **EINGABETASTE**.
+4. Geben Sie an der Eingabeaufforderung des Paket-Managers `Install-Package
+   NewRelicWindowsAzure` ein, und drücken Sie die **EINGABETASTE**.
 
 	![Installieren im Paket-Manager](./media/store-new-relic-cloud-services-dotnet-application-performce-management/NewRelicAzureNuget06.png)
 
@@ -144,7 +142,7 @@ Neben der <a href="https://newrelic.com/docs/site/the-new-relic-ui#functions">st
     </tr>
     <tr>
        <td>Anzeigen des Dashboards <a href="https://newrelic.com/docs/site/errors" target="_blank">Errors</a></td>
-       <td>Klicken Sie im Dashboard "Overview" der Anwendung auf den Titel des Fehlerratendiagramms.<br /><b>Tipp:</b> Sie können das Dashboard "Errors" auch über <b>Applications</b> > (Ihre App) > Events > Errors anzeigen.</td>
+       <td>Klicken Sie im Dashboard "Overview" der Anwendung auf den Titel des Fehlerratendiagramms.<br /><b>Tipp:</b> Sie können das Dashboard "Errors" auch über <b>Applications > (Ihre App) > Events > Errors</b> anzeigen.</td>
     </tr>
     <tr>
        <td>Anzeigen von Details zum App-Server</td>
@@ -175,4 +173,4 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
  * [Real User Monitoring](https://newrelic.com/docs/features/real-user-monitoring): Überblick darüber, wie mit RUM (Real User Monitoring) die Zeit gemessen wird, die das Laden Ihrer Webseiten in den Browsern von Benutzern dauert, woher diese Benutzer stammen und welche Browser sie verwenden
  * [Finding Help](https://newrelic.com/docs/site/finding-help): Über das Online-Hilfecenter von New Relic aufrufbare Ressourcen
 
-<!--HONumber=54-->
+<!---HONumber=July15_HO1-->

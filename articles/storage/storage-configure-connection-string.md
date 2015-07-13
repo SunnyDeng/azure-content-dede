@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Konfigurieren von Azure-Verbindungszeichenfolgen" 
-	description="Erfahren Sie, wie Sie Verbindungszeichenfolgen zum Speicherkonto in Azure konfigurieren." 
+	pageTitle="Konfigurieren einer Verbindungszeichenfolge für Azure Storage | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie eine Verbindungszeichenfolge für ein Azure-Speicherkonto erstellen. Eine Verbindungszeichenfolge enthält die erforderlichen Informationen zum Authentifizieren des programmgesteuerten Zugriffs auf Ressourcen in einem Speicherkonto. Die Verbindungszeichenfolge kann Ihre Zugriffsschlüssel für ein Konto kapseln, das Sie besitzen, oder sie kann eine SAS für den Zugriff auf Ressourcen in einem Konto ohne den Zugriffsschlüssel enthalten." 
 	services="storage" 
 	documentationCenter="" 
 	authors="tamram" 
@@ -13,34 +13,49 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/20/2015" 
+	ms.date="06/15/2015" 
 	ms.author="tamram"/>
 
 # Konfigurieren von Azure Storage-Verbindungszeichenfolgen
 
 ## Übersicht
 
-Eine Verbindungszeichenfolge enthält die Informationen, die für den programmgesteuerten Zugriff auf Ihr Speicherkonto in Azure erforderlich sind. Sie können eine Verbindungszeichenfolge zum Herstellen einer Verbindung mit Azure Storage folgendermaßen konfigurieren:
+Eine Verbindungszeichenfolge enthält die Informationen, die für den programmgesteuerten Zugriff auf Azure Storage-Ressourcen erforderlich sind. Die Anwendung verwendet die Verbindungszeichenfolge, um für Azure Storage die Informationen zum Authentifizieren des Zugriffs bereitzustellen.
+
+Sie können eine Verbindungszeichenfolge konfigurieren, um Folgendes zu tun:
 
 - Stellen Sie eine Verbindung mit dem Azure-Speicheremulator her, während Sie Ihren Dienst oder eine Anwendung lokal testen.
+- Verbinden Sie sich über die Standardendpunkte für die Speicherdienste mit einem Speicherkonto in Azure oder über explizite Endpunkte, die Sie definiert haben.
+- Greifen Sie über eine SAS auf Ressourcen in einem Speicherkonto zu.
 
-- Verbinden Sie sich über die Standardendpunkte für die Speicherdienste mit einem Speicherkonto in Azure.
+## Speichern der Verbindungszeichenfolge
 
-- Verbinden Sie sich über explizite Endpunkte für die Speicherdienste mit einem Speicherkonto in Azure.
+Die Anwendung muss die Verbindungszeichenfolge speichern, um den Zugriff auf Azure Storage während der Ausführung zu authentifizieren. Es gibt mehrere Möglichkeiten, die Verbindungszeichenfolge zu speichern:
 
-Wenn es sich bei Ihrer Anwendung um einen in Azure ausgeführten Cloud-Dienst handelt, speichern Sie die Verbindungszeichenfolge zumeist im [Azure-Dienstkonfigurationsschema (einer CSCFG-Datei)](https://msdn.microsoft.com/library/ee758710.aspx). Wenn Ihre Anwendung in einer anderen Umgebung ausgeführt wird (z. B. auf dem Desktop), speichern Sie die Verbindungszeichenfolge in der Regel in einer APP.CONFIG-Datei oder einer anderen Konfigurationsdatei. Über die Azure-Klasse  `CloudConfigurationManager` können Sie zur Laufzeit auf die Verbindungszeichenfolge zugreifen, unabhängig davon, wo sie ausgeführt wird.
+- Für eine Anwendung, die auf dem Desktop oder auf einem Gerät ausgeführt wird, können Sie die Verbindungszeichenfolge in einer app.config-Datei oder einer anderen Konfigurationsdatei speichern. Wenn Sie eine app.config-Datei verwenden, fügen Sie die Verbindungszeichenfolge zum Abschnitt **AppSettings** hinzu.
+- Wenn Ihre Anwendung in einem Clouddienst in Azure ausgeführt wird, speichern Sie die Verbindungszeichenfolge zumeist im [Azure-Dienstkonfigurationsschema (CSCFG-Datei)](https://msdn.microsoft.com/library/ee758710.aspx). Fügen Sie die Verbindungszeichenfolge zum Abschnitt **ConfigurationSettings** der Dienstkonfigurationsdatei hinzu.
+
+Das Speichern der Verbindungszeichenfolge in der Konfigurationsdatei erleichtert die Aktualisierung der Verbindungszeichenfolge, um zwischen dem Speicheremulator und einem Azure-Speicherkonto in der Cloud zu wechseln. Sie müssen die Verbindungszeichenfolge nur so bearbeiten, dass sie auf Ihr Speicherkonto verweist.
+
+Über die Azure-Klasse [CloudConfigurationManager](https://msdn.microsoft.com/library/microsoft.windowsazure.cloudconfigurationmanager.aspx) können Sie zur Laufzeit auf die Verbindungszeichenfolge zugreifen, unabhängig davon, wo Ihre Anwendung ausgeführt wird.
 
 ## Erstellen einer Verbindungszeichenfolge mit dem Speicheremulator
 
-Der Speicheremulator ist ein lokales Konto mit einem bekannten Namen und Schlüssel. Da der Kontoname und der Schlüssel für alle Benutzer identisch sind, können Sie ein verkürztes Zeichenfolgenformat verwenden, um innerhalb einer Verbindungszeichenfolge auf den Speicheremulator zu verweisen. Legen Sie den Wert der Verbindungszeichenfolge auf  `UseDevelopmentStorage=true` fest.
+Das Speicheremulatorkonto ist ein lokales Konto mit einem bekannten Namen und Schlüssel. Sie können ein verkürztes Zeichenfolgenformat verwenden – `UseDevelopmentStorage=true`, um in einer Verbindungszeichenfolge auf den Speicheremulator zu verweisen. Eine Verbindungszeichenfolge, die auf den Speicheremulator in einer App.config-Datei verweist, kann beispielsweise wie folgt aussehen:
 
-Sie können auch einen HTTP-Proxy angeben, der beim Testen des Dienstes anhand des Speicheremulators verwendet werden soll. Dies kann zum Beobachten von HTTP-Anforderungen und -Antworten nützlich sein, während Sie Vorgänge anhand der Speicherdienste debuggen. Fügen Sie der Verbindungszeichenfolge die Option  `DevelopmentStorageProxyUri` hinzu, um einen Proxy anzugeben, und legen Sie ihren Wert auf den Proxy-URI fest. Hier sehen Sie beispielsweise eine Verbindungszeichenfolge, die auf den Speicheremulator verweist und einen HTTP-Proxy konfiguriert:
+    <appSettings>
+      <add key="StorageConnectionString" value="UseDevelopmentStorage=true" />
+    </appSettings>
+
+Sie können auch einen HTTP-Proxy angeben, der beim Testen des Dienstes anhand des Speicheremulators verwendet werden soll. Dies kann zum Beobachten von HTTP-Anforderungen und -Antworten nützlich sein, während Sie Vorgänge anhand der Speicherdienste debuggen. Fügen Sie der Verbindungszeichenfolge die Option `DevelopmentStorageProxyUri` hinzu, um einen Proxy anzugeben, und legen Sie ihren Wert auf den Proxy-URI fest. Hier sehen Sie beispielsweise eine Verbindungszeichenfolge, die auf den Speicheremulator verweist und einen HTTP-Proxy konfiguriert:
 
     UseDevelopmentStorage=true;DevelopmentStorageProxyUri=http://myProxyUri
 
+Unter [Einsatz des Azure-Speicheremulators für Entwicklung und Tests](storage-use-emulator.md) finden Sie weitere Informationen zum Speicheremulator.
+
 ## Erstellen einer Verbindungszeichenfolge für ein Azure-Speicherkonto
 
-Um eine Verbindungszeichenfolge für Ihr Azure-Speicherkonto zu erstellen, verwenden Sie das nachstehende Format der Verbindungszeichenfolge. Geben Sie an, ob Sie über HTTP oder HTTPS (empfohlen) eine Verbindung mit dem Speicherkonto herstellen möchten, ersetzen Sie  `myAccountName` durch den Namen Ihres Speicherkontos, und ersetzen Sie  `myAccountKey` durch Ihren Kontozugriffsschlüssel:
+Um eine Verbindungszeichenfolge für Ihr Azure-Speicherkonto zu erstellen, verwenden Sie das nachstehende Format der Verbindungszeichenfolge. Geben Sie an, ob Sie über HTTP oder HTTPS (empfohlen) eine Verbindung mit dem Speicherkonto herstellen möchten, ersetzen Sie `myAccountName` durch den Namen Ihres Speicherkontos, und ersetzen Sie `myAccountKey` durch Ihren Kontozugriffsschlüssel:
 
     DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey
 
@@ -49,7 +64,7 @@ Ihre Verbindungszeichenfolge sollte der folgenden Beispiel-Verbindungszeichenfol
 ```        DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=KWPLd0rpW2T0U7K2pVpF8rYr1BgYtB7wYQw33AYiXeUoquiaY6o0TWqduxmPHlqeCNZ3LU0DHptbeIAy5l/Yhg==
 ```
 
-> [AZURE.NOTE] Azure Storage unterstützt sowohl HTTP als auch HTTPS. Die Verwendung von HTTPS wird jedoch ausdrücklich empfohlen.
+> [AZURE.NOTE]Azure Storage unterstützt sowohl HTTP als auch HTTPS. Die Verwendung von HTTPS wird jedoch ausdrücklich empfohlen.
     
 ## Erstellen einer Verbindungszeichenfolge für einen bestimmten Speicherendpunkt
 
@@ -61,19 +76,19 @@ Sie können die Dienstendpunkte in Ihrer Verbindungszeichenfolge explizit angebe
 Um eine Verbindungszeichenfolge zu erstellen, die einen expliziten Blob-Endpunkt festlegt, geben Sie für jeden Dienst den vollständigen Dienstendpunkt einschließlich Protokollspezifikation (HTTP oder HTTPS) im folgenden Format an:
 
 ``` 
-BlobEndpoint=myBlobEndpoint;QueueEndpoint=myQueueEndpoint;TableEndpoint=myTableEndpoint;FileEndpoint=myFileEndpoint;[Anmeldeinformationen]
+BlobEndpoint=myBlobEndpoint;QueueEndpoint=myQueueEndpoint;TableEndpoint=myTableEndpoint;FileEndpoint=myFileEndpoint;[credentials]
 ```
 
 Sie müssen mindestens einen, jedoch nicht unbedingt alle Dienstendpunkte angeben. Wenn Sie beispielsweise eine Verbindungszeichenfolge zur Verwendung mit einem benutzerdefinierten BLOB-Endpunkt erstellen, ist die Angabe der Endpunkte für Warteschlange und Tabelle optional. Wenn Sie die Endpunkte für Warteschlange und Tabelle in der Verbindungszeichenfolge auslassen, beachten Sie, dass Sie anhand dieser Verbindungszeichenfolge nicht von Ihrem Code aus auf die Warteschlangen- und Tabellendienste zugreifen können.
 
-Wenn Sie Dienstendpunkte explizit angeben, haben Sie zwei Möglichkeiten zum Angeben von  `credentials`.
+Wenn Sie in der Verbindungszeichenfolge Dienstendpunkte explizit angeben, haben Sie zwei Möglichkeiten zum Angeben von `credentials`.
 
 - Sie können den Kontonamen und -schlüssel angeben: `AccountName=myAccountName;AccountKey=myAccountKey` 
-- Sie können eine SAS (Shared Access Signature) angeben: `SharedAccessSignature=base64Signature`
+- Sie können eine SAS angeben: `SharedAccessSignature=base64Signature`
 
 ### Angeben eines Blob-Endpunkts mit einem benutzerdefinierten Domänennamen 
 
-Wenn Sie einen benutzerdefinierten Domänennamen für die Verwendung mit dem Blob-Dienst registriert haben, möchten Sie den Blob-Endpunkt möglicherweise explizit in der Verbindungszeichenfolge konfigurieren. Der in der Verbindungszeichenfolge aufgeführte Endpunktwert wird verwendet, um die Anforderungs-URIs für den BLOB-Dienst zu erstellen. Ferner gibt er die Form aller URIs vor, die dem Code zurückgegeben werden. 
+Wenn Sie einen benutzerdefinierten Domänennamen für die Verwendung mit dem Blob-Dienst registriert haben, möchten Sie den Blob-Endpunkt möglicherweise explizit in der Verbindungszeichenfolge konfigurieren. Der in der Verbindungszeichenfolge aufgeführte Endpunktwert wird verwendet, um die Anforderungs-URIs für den BLOB-Dienst zu erstellen. Ferner gibt er die Form aller URIs vor, die dem Code zurückgegeben werden.
 
 Eine Verbindungszeichenfolge für einen Blob-Endpunkt für eine benutzerdefinierte Domäne lautet ungefähr wie folgt:
 
@@ -93,7 +108,7 @@ Der Endpunkt kann entweder dem Standarddienstendpunkt oder einem benutzerdefinie
 
 ### Erstellen einer Verbindungszeichenfolge mit einem Endpunktsuffix
 
-Zum Erstellen einer Verbindungszeichenfolge für den Speicherdienst in Regionen oder Instanzen mit anderen Endpunktsuffixen, z. B. für Azure China oder Azure Governance, verwenden Sie das folgende Format der Verbindungszeichenfolge. Geben Sie an, ob Sie über HTTP oder HTTPS (empfohlen) eine Verbindung mit dem Speicherkonto herstellen möchten, ersetzen Sie  `myAccountName` durch den Namen Ihres Speicherkontos und  `myAccountKey` durch Ihren Kontozugriffsschlüssel und  `mySuffix` durch das URI-Suffix:
+Zum Erstellen einer Verbindungszeichenfolge für den Speicherdienst in Regionen oder Instanzen mit anderen Endpunktsuffixen, z. B. für Azure China oder Azure Governance, verwenden Sie das folgende Format der Verbindungszeichenfolge. Geben Sie an, ob Sie über HTTP oder HTTPS (empfohlen) eine Verbindung mit dem Speicherkonto herstellen möchten, ersetzen Sie `myAccountName` durch den Namen Ihres Speicherkontos, `myAccountKey` durch Ihren Kontozugriffsschlüssel und `mySuffix` durch das URI-Suffix:
 
 
 	DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=mySuffix;
@@ -103,6 +118,6 @@ Ihre Verbindungszeichenfolge sollte der folgenden Beispiel-Verbindungszeichenfol
 
 	DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=KWPLd0rpW2T0U7K2pVpF8rYr1BgYtR7wYQk33AYiXeUoquiaY6o0TWqduxmPHlqeCNZ3LU0DHptbeIHy5l/Yhg==;EndpointSuffix=core.chinacloudapi.cn;
 
+ 
 
-
-<!--HONumber=52--> 
+<!---HONumber=July15_HO1-->

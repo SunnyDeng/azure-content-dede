@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe einer Web-API - Notification Hubs" 
+	pageTitle="Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe einer Web-API – Notification Hubs" 
 	description="Erfahren Sie, wie Sie eine Pushbenachrichtigungsregistrierung in einer iOS-App mit Azure Notification Hubs anfordern, wenn die Registrierung von der ASP.NET-Web-API durchgeführt wird." 
 	services="notification-hubs" 
 	documentationCenter="ios" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="ios" 
 	ms.devlang="objective-c" 
 	ms.topic="article" 
-	ms.date="02/26/2015" 
+	ms.date="06/02/2015" 
 	ms.author="wesmc"/>
 # Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mit ASP.NET
 
@@ -23,17 +23,17 @@
 
 ##Übersicht
 
-In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mit Azure Notification Hubs anfordern können, wenn die Registrierung von einer ASP.NET-Web-API durchgeführt wird. Dieses Thema baut auf dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs] auf. Sie müssen zuvor die Schritte in diesem Lernprogramm abgeschlossen haben, in denen der authentifizierte Mobile Service erstellt wird. Weitere Informationen zum Benachrichtigen von Benutzern finden Sie unter [Benachrichtigen von Benutzern mit Notification Hubs].
+In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mit Azure Notification Hubs anfordern können, wenn die Registrierung von einer ASP.NET-Web-API durchgeführt wird. Dieses Lernprogramm baut auf dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs] auf. Sie müssen zuvor die Schritte in diesem Lernprogramm abgeschlossen haben, in denen der authentifizierte Mobile Service erstellt wird. Weitere Informationen zum Benachrichtigen von Benutzern finden Sie unter [Benachrichtigen von Benutzern mit Notification Hubs].
 
 ##Aktualisieren Ihrer App  
 
 1. Fügen Sie die folgenden Komponenten aus der Objektbibliothek zu MainStoryboard_iPhone.storyboard hinzu:
 
-	+ **Bezeichnung**: "Push to User with Notification Hubs"
-	+ **Bezeichnung**: "InstallationId"
-	+ **Bezeichnung**: "User"
+	+ **Beschriftung**: "Push to User with Notification Hubs"
+	+ **Beschriftung**: "InstallationId"
+	+ **Beschriftung**: "User"
 	+ **Textfeld**: "User"
-	+ **Bezeichnung**: "Password"
+	+ **Beschriftung**: "Password"
 	+ **Textfeld**: "Password"
 	+ **Schaltfläche**: "Login"
 
@@ -53,7 +53,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 
 		- (IBAction)login:(id)sender;
 
-5. Erstellen Sie eine Klasse **DeviceInfo**, und kopieren Sie den folgenden Code in den Schnittstellenbereich der Datei "DeviceInfo.h":
+5. Erstellen Sie eine Klasse **DeviceInfo** und kopieren Sie den folgenden Code in den Schnittstellenbereich der Datei DeviceInfo.h:
 
 		@property (readonly, nonatomic) NSString* installationId;
 		@property (nonatomic) NSData* deviceToken;
@@ -94,7 +94,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 
 		@property (strong, nonatomic) DeviceInfo* deviceInfo;
 
-8. Fügen Sie in der **didFinishLaunchingWithOptions**-Methode in "PushToUserAppDelegate.m" den folgenden Code hinzu:
+8. Fügen Sie in der **didFinishLaunchingWithOptions**-Methode in PushToUserAppDelegate.m den folgenden Code hinzu:
 
 		self.deviceInfo = [[DeviceInfo alloc] init];
 
@@ -102,13 +102,13 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 
 	Die erste Zeile initialisiert den **DeviceInfo**-Singleton. Die zweite Zeile startet die Registrierung für Pushbenachrichtigungen, die bereits vorhanden ist, wenn Sie das Lernprogramm [Erste Schritte mit Notification Hubs] abgeschlossen haben.
 
-9. Implementieren Sie in "PushToUserAppDelegate.m" die Methode **didRegisterForRemoteNotificationsWithDeviceToken** in Ihrem AppDelegate, und fügen Sie den folgenden Code ein:
+9. Implementieren Sie in PushToUserAppDelegate.m die Methode **didRegisterForRemoteNotificationsWithDeviceToken** in Ihrem AppDelegate und fügen Sie den folgenden Code ein:
 
 		self.deviceInfo.deviceToken = deviceToken;
 
 	Dieser Code legt das Geräte-Token für die Anfrage fest.
 
-	> [AZURE.NOTE] Die Methode sollte nun keinen weiteren Code mehr enthalten. Falls Sie bereits einen Aufruf der **registerNativeWithDeviceToken**-Methode aus dem Lernprogramm [Erste Schritte mit Notification Hubs](/manage/services/notification-hubs/get-started-notification-hubs-ios/%20target="_blank") haben, müssen Sie diesen Aufruf auskommentieren oder entfernen.
+	> [AZURE.NOTE]Die Methode sollte nun keinen weiteren Code mehr enthalten. Falls Sie bereits einen Aufruf der **registerNativeWithDeviceToken**-Methode aus dem Lernprogramm [Erste Schritte mit Notification Hubs](/manage/services/notification-hubs/get-started-notification-hubs-ios/%20target="_blank") haben, müssen Sie diesen Aufruf auskommentieren oder entfernen.
 
 10.	Fügen Sie in der Datei PushToUserAppDelegate.m die folgende Handlermethode hinzu:
 
@@ -131,7 +131,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 		    return YES;
 		}
 
-9. Initialisieren Sie das installationId-Label in der **viewDidLoad**-Methode in der Datei "PushToUserViewController.m" wie folgt:
+9. Initialisieren Sie das installationId-Label in der **viewDidLoad**-Methode in PushToUserViewController.m file wie folgt:
 
 		DeviceInfo* deviceInfo = [(PushToUserAppDelegate*)[[UIApplication sharedApplication]delegate] deviceInfo];
 		Self.installationId.text = deviceInfo.installationId;
@@ -232,7 +232,8 @@ Nun haben Sie die Client-App aktualisiert und können zum Thema [Benachrichtigen
 <!-- URLs. -->
 [Benachrichtigen von Benutzern mit Notification Hubs]: /manage/services/notification-hubs/notify-users-aspnet
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.com/
 [Erste Schritte mit Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO1-->

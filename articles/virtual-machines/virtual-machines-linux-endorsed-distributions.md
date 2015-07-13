@@ -124,4 +124,4 @@ SUSE Linux Enterprise Server unter Azure ist eine bewährte Plattform, die hervo
 
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

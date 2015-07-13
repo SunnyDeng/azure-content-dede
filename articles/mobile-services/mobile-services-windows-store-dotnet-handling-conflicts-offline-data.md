@@ -10,18 +10,18 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/23/2015" 
+	ms.date="06/15/2015" 
 	ms.author="wesmc"/>
 
 
 # Behandeln von Konflikten bei der Synchronisierung von Offlinedaten in Mobile Services
 
-[WACOM.INCLUDE [mobile-services-selector-offline-conflicts](../../includes/mobile-services-selector-offline-conflicts.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../../includes/mobile-services-selector-offline-conflicts.md)]
 
-## Übersicht
+##Übersicht
 
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
@@ -36,12 +36,12 @@ In diesem Lernprogramm werden Sie eine Windows Universal C#-Lösung für eine Ap
 Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Offlinedaten]. Bevor Sie mit diesem Lernprogramm beginnen, sollten Sie zunächst [Erste Schritte mit Offlinedaten] abschließen.
 
 
-## Voraussetzungen
+##Voraussetzungen
 
 In diesem Lernprogramm wird Visual Studio 2013 für Windows 8.1 verwendet.
 
 
-## Herunterladen des Beispielprojekts
+##Herunterladen des Beispielprojekts
 
 ![][0]
 
@@ -51,7 +51,7 @@ In diesem Lernprogramm wird exemplarisch gezeigt, wie das [Todo Offline-Beispiel
 
 2. Wenn Sie SQLite für Windows 8.1 und Windows Phone 8.1 nicht bereits wie im Lernprogramm [Erste Schritte mit Offlinedaten] beschrieben installiert haben, installieren Sie beide Runtimes.
 
-3. Öffnen Sie in Visual Studio 2013 die Projektmappendatei *mobile-services-samples\\TodoOffline\\WindowsUniversal\\TodoOffline-Universal.sln*. Drücken Sie die Taste **F5**, um das Projekt erneut zu erstellen und auszuführen. Überprüfen Sie, ob die NuGet-Pakete wiederhergestellt wurden und die Verweise korrekt sind.
+3. Öffnen Sie in Visual Studio 2013 die Projektmappendatei *mobile-services-samples\TodoOffline\WindowsUniversal\TodoOffline-Universal.sln*. Drücken Sie die Taste **F5**, um das Projekt erneut zu erstellen und auszuführen. Überprüfen Sie, ob die NuGet-Pakete wiederhergestellt wurden und die Verweise korrekt sind.
 
     >[AZURE.NOTE]Möglicherweise müssen Sie alte Verweise auf die SQLite-Laufzeit löschen und wie im Lernprogramm [Erste Schritte mit Offlinedaten] beschrieben durch den aktualisierten Verweis ersetzen.
 
@@ -62,7 +62,7 @@ Beachten Sie, dass noch keine Verbindung zwischen der App und einem mobilen Dien
 
 
 
-## Testen der App mit dem mobilen Dienst
+##Testen der App mit dem mobilen Dienst
 
 Testen Sie jetzt die App mit Mobile Services.
 
@@ -80,7 +80,7 @@ Testen Sie jetzt die App mit Mobile Services.
     ![][0]
 
 
-## Aktualisieren der Daten im Backend zum Erzeugen eines Konflikts
+##Aktualisieren der Daten im Backend zum Erzeugen eines Konflikts
 
 In einem realen Szenario würde ein Synchronisierungskonflikt auftreten, wenn eine App Aktualisierungen per Push-Vorgang auf einen Datensatz in der Datenbank überträgt und dann eine andere App versucht, eine Aktualisierung per Push-Vorgang auf denselben Datensatz zu übertragen, jedoch basierend auf einem veralteten Versionsfeld dieses Datensatzes. Wie Sie in [Erste Schritte mit Offlinedaten] gesehen haben, ist die "version"-Systemeigenschaft zur Unterstützung der Offlinesynchronisierungsfunktionen erforderlich. Diese Versionsinformationen werden bei jeder Datenbankaktualisierung überprüft. Wenn eine Instanz der App versucht, einen Datensatz mit einer veralteten Version zu aktualisieren, tritt ein Konflikt auf, der als `MobileServicePreconditionFailedException` in der App erfasst wird. Wenn die App die `MobileServicePreconditionFailedException` nicht erfasst, wird eine `MobileServicePushFailedException` ausgelöst, die die Anzahl der gefundenen Synchronisierungsfehler beschreibt.
 
@@ -111,7 +111,7 @@ In den folgenden Schritten wird gezeigt, wie die Windows Phone 8.1- und Windows 
 
 
 
-## Prüfen des Codes zur Behebung von Synchronisierungskonflikten
+##Prüfen des Codes zur Behebung von Synchronisierungskonflikten
 
 Um die Offlinefunktionen für Mobile Services verwenden zu können, müssen Sie die Versionsspalte in die lokale Datenbank und das Datenübertragungsobjekt aufnehmen. Dies geschieht durch Aktualisieren des folgenden Elements der `TodoItem`-Klasse:
 
@@ -164,5 +164,6 @@ Wenn ein Pushvorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePush
 [Handling Database Conflicts]: mobile-services-windows-store-dotnet-handle-database-conflicts.md#test-app
 [GitHub-Repository mit Mobile Services-Beispielen]: http://go.microsoft.com/fwlink/?LinkId=512865
 [Todo Offline-Beispiel für Mobile Services]: http://go.microsoft.com/fwlink/?LinkId=512866
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

@@ -10,29 +10,25 @@
 <tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
-	ms.tgt_pltfrm=""
+	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="2/16/2015"
+	ms.date="05/28/2015"
 	ms.author="krisragh"/>
 
-# Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App
+# Hinzufügen von Authentifizierung zu einer vorhandenen App
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
 
-In diesem Lernprogramm fügen Sie dem Schnellstartprojekt mithilfe eines unterstützten Identitätsanbieters eine Authentifizierung hinzu.
+In diesem Lernprogramm fügen Sie dem [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"] mithilfe eines unterstützten Identitätsanbieters eine Authentifizierung hinzu. Sie müssen zuerst das [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"] abschließen.
 
-Dieses Lernprogramm baut auf dem Schnellstartlernprogramm [Erste Schritte mit Mobile Services] auf, das Sie zuerst abschließen müssen.
-
-##<a name="register"></a>Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services
+##<a name="register"></a>Registrieren der App für die Authentifizierung
 
 [AZURE.INCLUDE [mobile-services-register-authentication](../../includes/mobile-services-register-authentication.md)]
 
-##<a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
+##<a name="permissions"></a>Einschränken von Datenberechtigungen für authentifizierte Benutzer
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../../includes/mobile-services-restrict-permissions-javascript-backend.md)]
-
-Öffnen Sie das Projekt in Xcode. Klicken Sie auf die Schaltfläche **Ausführen**, um die App zu starten. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) ausgelöst wird. Dies liegt daran, dass die App als nicht authentifizierter Benutzer auf Mobile Services zugreift und die _TodoItem_-Tabelle nun eine Authentifizierung verlangt.
 
 ##<a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
@@ -44,7 +40,7 @@ Dieses Lernprogramm baut auf dem Schnellstartlernprogramm [Erste Schritte mit Mo
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Im nächsten Lernprogramm, [Dienstseitige Autorisierung von Benutzern in Mobile Services], werden Sie den Benutzer-ID-Wert verwenden, um zurückgegebene Daten zu filtern.
+Als Nächstes erfahren Sie, [wie der Benutzer-ID-Wert zum Filtern der zurückgegebenen Daten verwendet wird](mobile-services-javascript-backend-service-side-authorization.md).
 
 <!-- Anchors. -->
 [Register your app for authentication and configure Mobile Services]: #register
@@ -73,17 +69,18 @@ Im nächsten Lernprogramm, [Dienstseitige Autorisierung von Benutzern in Mobile 
 
 
 <!-- URLs. -->
-[Dienstseitige Autorisierung von Benutzern in Mobile Services]: mobile-services-javascript-backend-service-side-authorization.md
+[Service-side authorization of Mobile Services users]: mobile-services-javascript-backend-service-side-authorization.md
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Single sign-on for Windows Store apps by using Live Connect]: /develop/mobile/tutorials/single-sign-on-windows-8-dotnet
-[Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started-ios
+[Schnellstartlernprogramm "Erste Schritte mit Mobile Services"]: /develop/mobile/tutorials/get-started-ios
 [Get started with data]: /develop/mobile/tutorials/get-started-with-data-ios
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-ios
 [Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-ios
 [Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-ios
 
 [Azure Management Portal]: https://manage.windowsazure.com/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

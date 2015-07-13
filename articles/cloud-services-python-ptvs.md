@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Python-Web- und Workerrollen mit Python-Tools 2.1 für Visual Studio" 
-	description="Übersicht über die Verwendung von Python-Tools für Visual Studio für die Erstellung von Azure-Cloud-Diensten, einschließlich Webrollen und Workerrollen." 
-	services="" 
-	documentationCenter="python" 
-	authors="huguesv" 
-	manager="wpickett" 
+<properties
+	pageTitle="Python-Web- und Workerrollen mit Python-Tools 2.1 für Visual Studio"
+	description="Übersicht über die Verwendung von Python-Tools für Visual Studio für die Erstellung von Azure-Cloud-Diensten, einschließlich Webrollen und Workerrollen."
+	services=""
+	documentationCenter="python"
+	authors="huguesv"
+	manager="wpickett"
 	editor=""/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="02/09/2015" 
+<tags
+	ms.service="cloud-services"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="get-started-article" 
+	ms.date="02/09/2015"
 	ms.author="huvalo"/>
 
 
@@ -34,7 +34,7 @@ Dieser Leitfaden bietet eine Übersicht über die Verwendung von Python-Web- und
 
 ## Was sind Python-Web- und Workerrollen?
 
-Azure bietet drei Computingmodelle für das Ausführen von Anwendungen: [Azure Websites][execution model-web sites], [Azure Virtual Machines][execution model-vms] und [Azure Cloud Services][execution model-cloud services].  Alle drei Modelle unterstützen Python. Cloud Services, welche Web- und Workerrollen enthalten, bieten *Platform as a Service (PaaS)*. In einem Cloud-Dienst bietet eine Webrolle einen speziellen IIS-Webserver (Internet Information Services), um Front-End-Webanwendungen zu hosten, während eine Workerrolle asynchrone, langfristige oder fortwährende Aufgaben ausführen kann, die unabhängig von einer Benutzerinteraktion oder -eingabe sind.
+Azure bietet drei Computingmodelle für das Ausführen von Anwendungen: [Azure Websites][execution model-web sites], [Azure Virtual Machines][execution model-vms] und [Azure Cloud Services][execution model-cloud services]. Alle drei Modelle unterstützen Python. Cloud Services, welche Web- und Workerrollen enthalten, bieten *Platform as a Service (PaaS)*. In einem Cloud-Dienst bietet eine Webrolle einen speziellen IIS-Webserver (Internet Information Services), um Front-End-Webanwendungen zu hosten, während eine Workerrolle asynchrone, langfristige oder fortwährende Aufgaben ausführen kann, die unabhängig von einer Benutzerinteraktion oder -eingabe sind.
 
 Weitere Informationen finden Sie unter [Was ist ein Cloud-Dienst?].
 
@@ -104,7 +104,7 @@ Genauere Informationen zur Arbeit mit Web- und Workerrollen in Python-Tools für
 - [Cloud Service-Projekte][]
 
 Weitere Details zur Verwendung von Azure-Diensten Ihrer Web- und Workerrollen, etwa zur Verwendung von Azure-Speicher oder Servicebus, finden Sie in folgenden Anleitungen:
- 
+
 - [Blobdienst][]
 - [Tabellendienst][]
 - [Warteschlangendienst][]
@@ -139,4 +139,4 @@ Weitere Details zur Verwendung von Azure-Diensten Ihrer Web- und Workerrollen, e
 [Python 2.7 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517190
 [Python 3.4 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517191
 
-<!--HONumber=54-->
+<!---HONumber=July15_HO1-->

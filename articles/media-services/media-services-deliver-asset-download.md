@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Bereitstellen von Medieninhalten - Azure" 
+	pageTitle="Bereitstellen von Medienobjekten" 
 	description="Entdecken Sie Optionen zum Bereitstellen von Medienobjekten, die in Media Services in Azure hochgeladen wurden. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,16 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/15/2015" 
+	ms.date="05/24/2015" 
 	ms.author="juliako"/>
 
 #Gewusst wie: Bereitstellen eines Medienobjekts durch Herunterladen
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) .  
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).
 
 Dieser Artikel beschreibt Optionen zur Bereitstellung von Medienobjekten, die in Media Services hochgeladen wurden. Sie können Media Services-Inhalte in verschiedenen Anwendungsszenarien bereitstellen. Sie können Medienobjekte herunterladen oder über einen Locator abrufen. Sie können Medieninhalte an andere Anwendungen oder andere Inhaltsanbieter senden. Für verbesserte Leistung und Skalierbarkeit können Sie Inhalte auch über ein Netzwerk für die Inhaltsübermittlung (Content Delivery Network, CDN) anbieten.
 
-Dieses Beispiel zeigt, wie Sie Medienobjekte von Media Services auf Ihren lokalen Computer herunterladen können. Der Code fragt die Aufträge des Media Services-Kontos nach Job-ID ab und greift auf die **OutputMediaAssets**-Sammlung zu (eine Sammlung mit einem oder mehreren Ausgabe-Medienobjekten als Ergebnis einer Jobausführung). Dieses Beispiel zeigt, wie Sie Ausgabemedienobjekte eines Auftrags herunterladen können. Dieser Ansatz funktioniert jedoch auch für den Download anderer Medienobjekte.
+Dieses Beispiel zeigt, wie Sie Medienobjekte von Media Services auf Ihren lokalen Computer herunterladen können. Der Code fragt die Jobs des Media Services-Kontos nach Job-ID ab und greift auf die **OutputMediaAssets**-Sammlung zu (eine Sammlung mit einem oder mehreren Ausgabe-Medienobjekten als Ergebnis einer Jobausführung). Dieses Beispiel zeigt, wie Sie Ausgabemedienobjekte eines Auftrags herunterladen können. Dieser Ansatz funktioniert jedoch auch für den Download anderer Medienobjekte.
 
 	
 	// Download the output asset of the specified job to a local folder.
@@ -73,7 +73,6 @@ Dieses Beispiel zeigt, wie Sie Medienobjekte von Media Services auf Ihren lokale
 	{
 	    Console.WriteLine(string.Format("{0} % download progress. ", e.Progress));
 	}
-  
+   
 
-
-<!--HONumber=52--> 
+<!---HONumber=July15_HO1-->

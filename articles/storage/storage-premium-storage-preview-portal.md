@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern"
+	pageTitle="Storage Premium: Hochleistungsspeicher für Azure Virtual Machine-Workloads | Microsoft Azure"
 	description="Erfahren Sie mehr über den Azure Premium-Speicher für Datenträger. Erfahren Sie, wie Sie ein Premium-Speicherkonto erstellen."
 	services="storage"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/11/2015"
+	ms.date="06/30/2015"
 	ms.author="tamram;selcint"/>
 
 
@@ -130,7 +130,7 @@ Damit Sie die Vorteile des Premium-Speichers nutzen können, erstellen Sie zuers
 </tbody>
 </table>
 
-	Aktuelle Informationen finden Sie unter „[Größen virtueller Computer und Cloud-Dienste für Windows Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx)“. Informationen zu Premium Storage-Datenträgern und deren IOPs und Durchsatzlimits finden Sie in diesem Artikel im Abschnitt „[Premium Storage“ unter „Skalierbarkeits- und Leistungsziele für Azure Storage](#scalability-and-performance-targets-whde-deing-premium-storage)“ in der Tabelle.
+	For the most up-to-date information, see [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). To learn about the Premium storage disks and their IOPs and throughput limits, see the table in the [Scalability and Performance Targets when using Premium Storage](#scalability-and-performance-targets-whde-deing-premium-storage) section in this article.
 
 > [AZURE.NOTE]Cachetreffer werden durch die zugeordneten IOPS-/Durchsatzwerte des Datenträgers nicht eingeschränkt. Das heißt, bei Verwendung eines Datenträgers mit der Cacheeinstellung „ReadOnly“ für einen virtuellen Computer der DS-Serie unterliegen Lesevorgänge, die vom Cache verarbeitet werden, nicht den Einschränkungen für Premium-Speicherdatenträger. Daher können Sie einen sehr hohen Durchsatz mit einem Datenträger erzielen, wenn die Arbeitsauslastung vorwiegend aus Lesevorgängen besteht. Beachten Sie, dass für den Cache separate IOPS-/Durchsatzlimits auf Ebene des virtuellen Computers basierend auf der Größe des virtuellen Computers gelten. Virtuelle Computer der DS-Serie bieten etwa 4.000 IOPS und 33 MB pro Sekunde und Kern für E/A von Caches und lokalen SSDs.
 
@@ -262,56 +262,8 @@ Nachfolgend finden Sie wichtige Anweisungen zum Konfigurieren virtueller Linux-C
 
 - Bei Premium-Speicherdatenträgern mit der Cacheeinstellung „ReadWrite“ müssen Sperren aktiviert werden, um die Beständigkeit von Schreibvorgängen zu gewährleisten.
 
-Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher überprüft wurden. Es wird empfohlen, dass Sie Ihre virtuellen Computer auf mindestens eine dieser Versionen (oder eine höhere Version) aktualisieren, um eine bessere Leistung und Stabilität mit Premium-Speicher zu erzielen. Außerdem erfordern einige Versionen die neuesten LIS (Linux-Integrationsdienste v4.0 für Microsoft Azure). Der Download und die Installation sind über folgenden Link möglich: Wir fügen der Liste mehr Images hinzu, wenn weitere Überprüfungen ausgeführt wurden. Beachten Sie, dass unsere Überprüfungen ergaben, dass die Leistung für diese Images variiert. Sie hängt auch von den Arbeitsauslastungsmerkmalen und -einstellungen der Images ab. Verschiedene Images werden für verschiedene Arten von Arbeitsauslastung optimiert. 
-<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;"> 
-<tbody> 
-<tr>
-	<td><strong>Verteilung</strong></td> 
-	<td><strong>Version</strong></td> 
-	<td><strong>Unterstützter Kernel</strong></td> 
-	<td><strong>Unterstütztes Image</strong></td> 
-</tr> 
-<tr> 
-	<td rowspan="4"><strong>Ubuntu</strong></td> 
-	<td>12.04</td> <td>3.2.0-75.110</td> 
-	<td>Ubuntu-12_04_5-LTS-amd64-server-20150119-de-de-30GB</td> 
-</tr> 
-<tr> 
-	<td>14.04</td> 
-	<td>3.13.0-44.73</td> 
-	<td>Ubuntu-14_04_1-LTS-amd64-server-20150123-de-de-30GB</td> 
-</tr> 
-<tr> 
-	<td>14.10</td> 
-	<td>3.16.0-29.39</td> 
-	<td>Ubuntu-14_10-amd64-server-20150202-de-de-30GB</td> 
-</tr> 
-<tr> 
-	<td>15.04</td> 
-	<td>3.19.0-15</td> 
-	<td>Ubuntu-15_04-amd64-server-20150422-de-de-30GB</td> 
-</tr> 
-<tr> 
-	<td><strong>SUSE</strong></td> 
-	<td>SLES 12</td> <td>3.12.36-38.1</td> 
-	<td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td> 
-</tr> 
-<tr> 
-	<td><strong>CoreOS</strong></td> 
-	<td>584.0.0</td> <td>3.18.4</td> 
-	<td>CoreOS 584.0.0</td> 
-</tr> 
-<tr> 
-	<td rowspan="2"><strong>CentOS</strong></td> 
-	<td>6.5, 6.6, 7.0</td> 
-	<td></td> 
-	<td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 erforderlich</a></td> 
-</tr> 
-<tr> 
-	<td>7.1</td> 
-	<td>3.10.0-229.1.2.el7</td> 
-	<td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 empfohlen </a></td> 
-</tr>
+Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher überprüft wurden. Es wird empfohlen, dass Sie Ihre virtuellen Computer auf mindestens eine dieser Versionen (oder eine höhere Version) aktualisieren, um eine bessere Leistung und Stabilität mit Premium-Speicher zu erzielen. Außerdem erfordern einige Versionen die neuesten LIS (Linux-Integrationsdienste v4.0 für Microsoft Azure). Der Download und die Installation sind über folgenden Link möglich: Wir fügen der Liste mehr Images hinzu, wenn weitere Überprüfungen ausgeführt wurden. Beachten Sie, dass unsere Überprüfungen ergaben, dass die Leistung für diese Images variiert. Sie hängt auch von den Arbeitsauslastungsmerkmalen und -einstellungen der Images ab. Verschiedene Images werden für verschiedene Arten von Arbeitsauslastung optimiert. <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;"> <tbody> <tr> <td><strong>Verteilung</strong></td> <td><strong>Version</strong></td> <td><strong>Unterstützter Kernel</strong></td> <td><strong>Unterstütztes Image</strong></td> </tr> <tr> <td rowspan="4"><strong>Ubuntu</strong></td> <td>12.04</td> <td>3.2.0-75.110</td> <td>Ubuntu-12_04_5-LTS-amd64-server-20150119-de-de-30GB</td> </tr> <tr> <td>14.04</td> <td>3.13.0-44.73</td> <td>Ubuntu-14_04_1-LTS-amd64-server-20150123-de-de-30GB</td> </tr> <tr> <td>14.10</td> <td>3.16.0-29.39</td> <td>Ubuntu-14_10-amd64-server-20150202-de-de-30GB</td> </tr> <tr> <td>15.04</td> <td>3.19.0-15</td> <td>Ubuntu-15_04-amd64-server-20150422-de-de-30GB</td> </tr> <tr> <td><strong>SUSE</strong></td> <td>SLES 12</td> <td>3.12.36-38.1</td> <td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td> </tr> <tr> <td><strong>CoreOS</strong></td> <td>584.0.0</td> <td>3.18.4</td> <td>CoreOS 584.0.0</td> </tr> <tr> <td rowspan="2"><strong>CentOS</strong></td> <td>6.5, 6.6, 7.0</td> <td></td> <td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 erforderlich</a></td> </tr> <tr> <td>7.1</td> <td>3.10.0-229.1.2.el7</td> <td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 empfohlen </a></td> </tr>
+
 <tr>
 	<td rowspan="2"><strong>Oracle</strong></td>
 	<td>6.4.</td>
@@ -323,8 +275,7 @@ Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher
 	<td></td>
 	<td>Ausführliche Informationen erhalten Sie vom Support.</td>
 </tr>
-</tbody> 
-</table>
+</tbody> </table>
 
 
 ## Preisgestaltung und Abrechnung bei der Verwendung des Premium-Speichers
@@ -440,4 +391,4 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

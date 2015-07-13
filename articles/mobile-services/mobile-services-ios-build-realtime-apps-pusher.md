@@ -10,10 +10,10 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="ios" 
 	ms.devlang="objective-c" 
 	ms.topic="article" 
-	ms.date="10/10/2014" 
+	ms.date="06/05/2015" 
 	ms.author="donnam"/>
 
 
@@ -272,7 +272,7 @@ Die App kann nun Ereignisse vom Pusher empfangen und die lokale Todo-Liste entsp
 
 
 
-<h2><a name="install-scripts"></a>Installieren von Serverskripts</h2>
+##<a name="install-scripts"></a>Installieren von Serverskripts
 
 
 
@@ -290,6 +290,7 @@ Mit den verbliebenen Objekten werden die Serverskripts eingerichtet. Ein Skript 
 
 
 3. Klicken Sie unter **TodoItem** auf die Registerkarte **Skript**, und wählen Sie **Einfügen** aus.
+
 
 	![][2]
 
@@ -384,7 +385,7 @@ Mit den verbliebenen Objekten werden die Serverskripts eingerichtet. Ein Skript 
 
 
 
-<h2><a name="test-app"></a>Testen Ihrer App</h2>
+##<a name="test-app"></a>Testen Ihrer App
 
 
 
@@ -410,7 +411,7 @@ Glückwunsch! Sie haben Ihre Mobile Service-App erfolgreich konfiguriert, um fü
 
 ## <a name="nextsteps"> </a>Nächste Schritte
 
-Nachdem Sie nun gelernt haben, wie einfach die Verwendung des Pusher-Dienstes mit Mobile Services ist, finden Sie unter den folgenden Links weitere Informationen über Pusher.
+Nachdem Sie nun gelernt haben, wie einfach die Verwendung des Pusher-Diensts mit Mobile Services ist, finden Sie unter den folgenden Links weitere Informationen über Pusher.
 
 -   Pusher API-Dokumentation: <http://pusher.com/docs>
 -   Pusher-Lernprogramme: <http://pusher.com/tutorials>
@@ -441,5 +442,6 @@ Weitere Informationen zu Registrierung und Verwendung von Serverskripts finden S
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
 [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/p/?LinkId=262293
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

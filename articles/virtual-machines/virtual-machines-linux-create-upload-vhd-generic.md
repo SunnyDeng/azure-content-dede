@@ -192,4 +192,4 @@ Der [Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md) (waagent) is
 
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

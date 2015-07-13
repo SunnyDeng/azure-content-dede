@@ -72,25 +72,25 @@ Geben Sie in den Formularfeldern die base64-codierten Versionen Ihres ZS-Zertifi
 
 ![](./media/virtual-machines-docker-with-portal/AddExtensionFormFilled.png)
 
-> [AZURE.NOTE]Beachten Sie (analog zur vorherigen Abbildung), dass 4243 standardmäßig aufgefüllt wird. Sie können hier einen beliebigen Endpunkt eingeben. Der nächste Schritt ist jedoch für den übereinstimmenden Endpunkt gedacht. Wenn Sie den Standardwert ändern, müssen Sie die Erschließung des übereinstimmenden Endpunkts im nächsten Schritt sicherstellen.
+> [AZURE.NOTE]Beachten Sie (analog zur vorherigen Abbildung), dass 2376 standardmäßig aufgefüllt wird. Sie können hier einen beliebigen Endpunkt eingeben. Der nächste Schritt ist jedoch für den übereinstimmenden Endpunkt gedacht. Wenn Sie den Standardwert ändern, müssen Sie die Erschließung des übereinstimmenden Endpunkts im nächsten Schritt sicherstellen.
 
 ## Hinzufügen des Docker-Kommunikationsendpunkts
 Führen Sie beim Anzeigen Ihres virtuellen Computers in der von Ihnen erstellten Ressourcengruppe einen Bildlauf durch, um auf **Endpunkte** zu klicken, um die Endpunkte auf dem virtuellen Computer analog zur hier aufgeführten Darstellung anzuzeigen.
 
 ![](./media/virtual-machines-docker-with-portal/AddingEndpoint.png)
 
-Klicken Sie zum Hinzufügen eines anderen Endpunkts auf **+ Hinzufügen**. Und geben Sie im standardmäßigen Fall einen Namen für den Endpunkt (in diesem Fall **docker**) und „4243“ die privaten und öffentlichen Ports ein. Belassen Sie den Protokollwert bei **TCP**, und klicken Sie auf **OK**, um den Endpunkt zu erstellen.
+Klicken Sie zum Hinzufügen eines anderen Endpunkts auf **+ Hinzufügen**, und geben Sie im Standardfall einen Namen für den Endpunkt (in diesem Fall **docker**) und „2376“ für den privaten und öffentlichen Port ein. Belassen Sie den Protokollwert bei **TCP**, und klicken Sie auf **OK**, um den Endpunkt zu erstellen.
 
 ![](./media/virtual-machines-docker-with-portal/AddEndpointFormFilledOut.png)
 
 
 ## Testen des Docker-Clients und des Azure Docker-Hosts
-Suchen und kopieren Sie den Namen der Domäne Ihres virtuellen Computers. Geben Sie zudem an der Befehlszeile Ihres Clientcomputers `docker --tls -H tcp://`*dockerextension*`.cloudapp.net:4243 info` ein (wobei *dockerextension* durch die Unterdomäne für Ihren virtuellen Computer ersetzt wird).
+Suchen und kopieren Sie den Namen der Domäne Ihres virtuellen Computers. Geben Sie zudem an der Befehlszeile Ihres Clientcomputers `docker --tls -H tcp://`*dockerextension*`.cloudapp.net:2376 info` ein (wobei *dockerextension* durch die Unterdomäne für Ihren virtuellen Computer ersetzt wird).
 
 Das Ergebnis sollte in etwa so aussehen:
 
 ```
-$ docker --tls -H tcp://dockerextension.cloudapp.net:4243 info
+$ docker --tls -H tcp://dockerextension.cloudapp.net:2376 info
 Containers: 0
 Images: 0
 Storage Driver: devicemapper
@@ -144,4 +144,4 @@ Sie sind nun bereit, das [Docker-Benutzerhandbuch] und Ihren virtuellen Docker-C
 [Docker-Benutzerhandbuch]: https://docs.docker.com/userguide/
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

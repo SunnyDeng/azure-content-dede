@@ -1,11 +1,10 @@
 <properties 
-	pageTitle="Verarbeiten von Daten in  Azure Blob" 
-	description="Verarbeiten von Daten in Azure-Blobs" 
-	metaKeywords="" 
-	services="machine-learning" 
+	pageTitle="Verarbeiten von Azure-Blobdaten mit erweiterter Analyse | Microsoft Azure" 
+	description="Verarbeiten von Daten im Azure-Blobspeicher" 
+	services="machine-learning,storage" 
 	solutions="" 
 	documentationCenter="" 
-	authors="sunliangms,fashah,msolhab" 
+	authors="msolhab" 
 	manager="paulettm" 
 	editor="cgronlun" />
 
@@ -15,14 +14,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/18/2015" 
-	ms.author="sunliangms,fashah,msolhab,garye" /> 
+	ms.date="05/29/2015" 
+	ms.author="sunliangms;fashah;msolhab;garye;bradsev" />
 
-#<a name="heading"></a>Verarbeiten von Azure-Blob-Daten in einer Data Science-Umgebung
+#<a name="heading"></a>Verarbeiten von Azure-Blobdaten mit erweiterter Analyse
 
-In diesem Dokument werden das Durchsuchen von Daten und das Generieren von Funktionen aus Daten in einem Azure-Blob beschrieben. Zu diesem Zweck müssen Daten aus der Blob-Quelle in eine lokale Datei heruntergeladen werden, die dann zum Durchsuchen und Bearbeiten in ein Pandas-DataFrame geladen werden kann. Befolgen Sie dazu die folgenden Schritte:
+In diesem Dokument werden das Durchsuchen von Daten und Generieren von Funktionen aus Daten in einem Azure-Blobspeicher beschrieben. Zu diesem Zweck müssen Daten aus der Blobquelle in eine lokale Datei heruntergeladen werden, die dann zum Durchsuchen und Bearbeiten in ein Pandas-DataFrame geladen werden kann. Befolgen Sie dazu die folgenden Schritte:
 
-1. Laden Sie die Daten mithilfe des Blob-Diensts und folgenden Python-Beispielcodes aus dem Azure-Blob herunter. Ersetzen Sie die Variablen im Code durch die für Ihre Umgebung geltenden Werte: 
+1. Laden Sie die Daten mithilfe des Blobdiensts und folgenden Python-Beispielcodes aus dem Azure-Blob herunter. Ersetzen Sie die Variablen im Code durch die für Ihre Umgebung geltenden Werte: 
 
 	    from azure.storage import BlobService
     	import tables
@@ -48,7 +47,7 @@ In diesem Dokument werden das Durchsuchen von Daten und das Generieren von Funkt
 
 Sie können nun die Daten durchsuchen und Funktionen mit diesem DataSet generieren.
 
-####<a name="blob-dataexploration"></a>Durchsuchen von Daten
+##<a name="blob-dataexploration"></a>Durchsuchen von Daten
 
 Hier sind einige Beispiele für Möglichkeiten zum Durchsuchen von Daten mithilfe von Pandas:
 
@@ -62,7 +61,7 @@ Hier sind einige Beispiele für Möglichkeiten zum Durchsuchen von Daten mithilf
 		
 		dataframe_blobdata.tail(10)
 
-3. Überprüfen des Datentyp der einzelnen importierten Spalten:
+3. Überprüfen des Datentyps der einzelnen importierten Spalten:
  	
 		for col in dataframe_blobdata.columns:
 		    print dataframe_blobdata[col].name, ':\t', dataframe_blobdata[col].dtype
@@ -89,7 +88,7 @@ Hier sind einige Beispiele für Möglichkeiten zum Durchsuchen von Daten mithilf
 	
 		dataframe_blobdata_mode = dataframe_blobdata.fillna({'<column_name>':dataframe_blobdata['<column_name>'].mode()[0]})		
 
-8. Erstellen eines Histogramms mithilfe der Variablenanzahl von Klassen zur Darstellung der Verteilung einer Variablen:	
+8. Erstellen eines Histogramms mithilfe der Variablenanzahl von Gruppen zur Darstellung der Verteilung einer Variablen:
 	
 		dataframe_blobdata['<column_name>'].value_counts().plot(kind='bar')
 		
@@ -104,11 +103,11 @@ Hier sind einige Beispiele für Möglichkeiten zum Durchsuchen von Daten mithilf
 		dataframe_blobdata[['<column_a>', '<column_b>']].corr()
 	
 	
-####<a name="blob-featuregen"></a>Generieren von Funktionen
+##<a name="blob-featuregen"></a>Generieren von Funktionen
 	
 Sie können Funktionen wie folgt mithilfe von Python generieren:
 
-#####<a name="blob-countfeature"></a>Indikatorwertbasierte Funktionsgenerierung
+###<a name="blob-countfeature"></a>Indikatorwertbasiertes Generieren von Funktionen
 
 Kategorische Funktionen können wie folgt erstellt werden:
 
@@ -121,7 +120,7 @@ Kategorische Funktionen können wie folgt erstellt werden:
 		#generate the indicator column
 		dataframe_blobdata_identity = pd.get_dummies(dataframe_blobdata['<categorical_column>'], prefix='<categorical_column>_identity')
 
-3. Führen Sie die Indikatorspalte mit dem ursprünglichen DataFrame zusammen: 
+3. Führen Sie die Indikatorspalte mit dem ursprünglichen DataFrame zusammen:
  
 			#Join the dummy variables back to the original data frame
 			dataframe_blobdata_with_identity = dataframe_blobdata.join(dataframe_blobdata_identity)
@@ -131,7 +130,7 @@ Kategorische Funktionen können wie folgt erstellt werden:
 		#Remove the original column rate_code in df1_with_dummy
 		dataframe_blobdata_with_identity.drop('<categorical_column>', axis=1, inplace=True)
 	
-#####<a name="blob-binningfeature"></a>Klassenbasierte Funktionsgenerierung
+###<a name="blob-binningfeature"></a>Gruppenbasierte Funktionsgenerierung
 
 Zum Generieren von klassifizierten Funktionen gehen Sie wie folgt vor:
 
@@ -148,11 +147,9 @@ Zum Generieren von klassifizierten Funktionen gehen Sie wie folgt vor:
 
 		dataframe_blobdata_with_bin_bool = dataframe_blobdata.join(dataframe_blobdata_bin_bool)	
 
-####<a name="sql-featuregen"></a>Zurückschreiben von Daten in das Azure-Blob und Verarbeiten in Azure ML
+##<a name="sql-featuregen"></a>Zurückschreiben von Daten in das Azure-Blob und Verwenden in Azure Machine Learning
 
-Nachdem Sie die Daten untersucht und die erforderlichen Funktionen erstellt haben, können Sie die Daten (als Stichproben oder Funktionen) anhand der folgenden Schritte in ein Azure-Blob hochladen und in Azure ML verarbeiten:
-Beachten Sie, dass in Azure ML Studio zusätzliche Funktionen erstellt werden können. 
-1. Schreiben Sie den DataFrame in eine lokale Datei:
+Nachdem Sie die Daten untersucht und die erforderlichen Funktionen erstellt haben, können Sie die Daten (als Stichproben oder über Funktionen) mithilfe der folgenden Schritte in ein Azure-Blob hochladen und in Azure Machine Learning verwenden. Beachten Sie, dass in Azure Machine Learning Studio ebenfalls weitere Funktionen erstellt werden können. 1. Schreiben Sie den DataFrame in eine lokale Datei:
 
 		dataframe.to_csv(os.path.join(os.getcwd(),LOCALFILENAME), sep='\t', encoding='utf-8', index=False)
 
@@ -178,10 +175,15 @@ Beachten Sie, dass in Azure ML Studio zusätzliche Funktionen erstellt werden k�
 	    except:	        
 		    print ("Something went wrong with uploading blob:"+BLOBNAME)
 
-3. Die Daten können nun wie im folgenden Screenshot gezeigt mit dem *Reader*-Modul von Azure ML aus dem Blob gelesen werden:
+3. Die Daten können nun wie im folgenden Screenshot gezeigt mit dem [Reader][reader]-Modul von Azure Machine Learning aus dem Blob gelesen werden:
  
-![reader blob][1]
+![Reader-Blob][1]
 
 [1]: ./media/machine-learning-data-science-process-data-blob/reader_blob.png
 
-<!--HONumber=49--> 
+
+<!-- Module References -->
+[reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
+ 
+
+<!---HONumber=July15_HO1-->

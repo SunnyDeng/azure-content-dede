@@ -1,127 +1,143 @@
-<properties 
-	pageTitle="Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mithilfe von DocumentDB-Dokument-Explorer | Azure" 
-	description="Informationen zum DocumentDB-Dokument-Explorer, einem Azure-Vorschauportaltool zum Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mit DocumentDB." 
-	services="documentdb" 
-	authors="stephbaron" 
-	manager="johnmac" 
-	editor="monicar" 
+<properties
+	pageTitle="Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mithilfe von DocumentDB-Dokument-Explorer | Azure"
+	description="Informationen zum DocumentDB-Dokument-Explorer, einem Azure-Vorschauportaltool zum Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mit DocumentDB."
+	services="documentdb"
+	authors="stephbaron"
+	manager="johnmac"
+	editor="monicar"
 	documentationCenter=""/>
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="02/13/2015" 
+<tags
+	ms.service="documentdb"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article" 
+	ms.date="06/10/2015"
 	ms.author="stbaro"/>
 
 # Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mithilfe von DocumentDB-Dokument-Explorer #
 
-Dieser Artikel bietet eine Übersicht zum [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/)-Dokument-Explorer, einem Azure-Vorschauportaltool zum Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mit DocumentDB. 
+Dieser Artikel bietet eine Übersicht über den [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/)-Dokument-Explorer, ein Azure-Vorschauportaltool zum Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mit DocumentDB.
 
-Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:  
+Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:
 
 -	Wie kann ich einzelne DocumentDB-Dokumente über einen Webbrowser erstellen, anzeigen, bearbeiten und löschen?
 -	Wie kann ich die Systemeigenschaften eines DocumentDB-Dokuments über einen Webbrowser anzeigen?
 -	Wie kann ich eine Sammelerfassung von Dokumenten in DocumentDB über einen Webbrowser durchführen?
 
-##<a id="Launch"></a>Starten von und Navigieren in Dokument-Explorer##
+##<a id="Launch"></a>Starten von und Navigieren im Dokument-Explorer##
 
-Dokument-Explorer kann über jedes Blatt von DocumentDB-Konto, -Datenbank und -Auflistung gestartet werden.  
+Dokument-Explorer kann über jedes DocumentDB-Blatt "Konto", "Datenbank" und "Sammlung" gestartet werden.
 
-1. Am unteren Rand von jedem Blatt ist ein Bereich **Entwicklertools** mit dem Bereich **Dokument-Explorer** enthalten.
+1. Klicken Sie einfach oben auf dem Blatt des DocumentDB-Kontos oder der Datenbank auf den Befehl **Dokument-Explorer**.
 
-	![Screenshot of the Document Explorer part](./media/documentdb-view-JSON-document-explorer/documentexplorerpart.png) 
+	![Screenshot des Dokument-Explorer-Befehls](./media/documentdb-view-JSON-document-explorer/documentexplorercommand.png)
+ 
+2. Alternativ dazu befindet sich am unteren Rand jedes Blatts der Fokus **Entwicklertools**, der das Detail **Dokument-Explorer** enthält.
+
+	![Screenshot des Dokument-Explorer-Details](./media/documentdb-view-JSON-document-explorer/documentexplorerpart.png)
 
 2. Klicken Sie zum Starten von Dokument-Explorer einfach auf die Kachel.
 
-	<p>Die DropdownListenfelder **Datenbank** und **Sammlung** werden basierend auf dem Kontext, in dem Sie Dokument-Explorer starten, im Voraus ausgefüllt.  Wenn Sie diesen z. B. aus einem Datenbankblatt starten, sind die Felder der aktuellen Datenbank bereits ausgefüllt.  Wenn Sie diesen aus einem Auflistungsblatt starten, sind die Felder der aktuellen Auflistung ausgefüllt.
+	<p>Die Dropdownlistenfelder **Datenbank** und **Sammlung** werden basierend auf dem Kontext, in dem Sie den Dokument-Explorer starten, automatisch ausgefüllt. Wenn Sie diesen z. B. aus einem Datenbankblatt starten, sind die Felder der aktuellen Datenbank bereits ausgefüllt. Wenn Sie diesen aus einem Blatt "Sammlung" starten, sind die Felder der aktuellen Sammlung ausgefüllt.
 
-	![Screenshot of Document Explorer](./media/documentdb-view-JSON-document-explorer/documentexplorerinitial.png)
+	![Screenshot des Dokument-Explorers](./media/documentdb-view-JSON-document-explorer/documentexplorerinitial.png)
 
-3. Dokument-Explorer lädt maximal 100 ersten Dokumente der ausgewählten Sammlung.  Sie können weitere Dokumente (in Batches von 100) laden, indem Sie die Option **Mehr laden** am unteren Rand des Dokument-Explorer-Blatts wählen.  
+3. Standardmäßig lädt der Dokument-Explorer die ersten 100 Dokumente in die ausgewählte Sammlung, sortiert nach Erstellungsdatum, vom ältesten bis zum neuesten. Sie können weitere Dokumente (in Batches von je 100) laden, indem Sie die Option **Mehr laden** am unteren Rand des Dokument-Explorer-Blatts wählen. Sie können das Standardverhalten ändern, indem Sie oben im Dokument-Explorer-Blatt auf den Befehl "Einstellungen" klicken.
 
-4. MIt den Dropdownlistenfelden **Datenbank** und **Sammlung** können Sie die Sammlung, aus der aktuell Dokumente angezeigt werden, auf einfache Weise ändern, ohne Dokument-Explorer beenden oder neustarten zu müssen.  
+	![Screenshot des Dokument-Explorers – Blatt "Einstellungen"](./media/documentdb-view-JSON-document-explorer/documentexplorersettings.png)
 
-5. Dokument-Explorer unterstützt auch das Filtern des aktuell geladenen Dokumentensets nach der id-Eigenschaft.  Geben Sie diese einfach im Filterfeld ein.
 
-	![Screenshot of Document Explorer with filter highlighted](./media/documentdb-view-JSON-document-explorer/documentexplorerfilter.png) 
+4. Auf dem Blatt "Einstellungen" können Sie die Anzahl der pro Seite zurückgegebenen Elemente ändern sowie eine WHERE-Klausel bereitstellen, um passende Dokumente in das Dokument-Explorer-Raster zu laden. Weitere Informationen über die DocumentDB-SQL-Grammatik erhalten Sie [hier](documentdb-sql-query.md).
+
+	![Screenshot des Dokument-Explorers – Blatt "Einstellungen"](./media/documentdb-view-JSON-document-explorer/documentexplorersettings2.png)
+
+	> [AZURE.NOTE]Nach dem Ändern der Dokument-Explorer-Einstellungen müssen Sie auf den Befehl **Aktualisieren** klicken, um die neuen Einstellungen anzuwenden. Diese Einstellungen gelten nur für die aktuelle Browsersitzung.
+	
+5. Mit den Dropdownlistenfeldern **Datenbank** und **Sammlung** können Sie die Sammlung, aus der aktuell Dokumente angezeigt werden, ganz einfach ändern, ohne den Dokument-Explorer schließen und neu starten zu müssen.
+
+5. Dokument-Explorer unterstützt auch das Filtern des aktuell geladenen Dokumentensets nach der id-Eigenschaft. Geben Sie diese einfach im Filterfeld ein.
+
+	![Screenshot der Dokument-Explorers mit hervorgehobenem Filter](./media/documentdb-view-JSON-document-explorer/documentexplorerfilter.png)
 
 	Die Ergebnisse in der Dokument-Explorer-Liste sind nun basierend auf den angegebenen Kriterien gefiltert.
 
-	![Screenshot of Document Explorer with filtered results](./media/documentdb-view-JSON-document-explorer/documentexplorerfilterresults.png)
+	![Screenshot der Dokument-Explorers mit gefilterten Ergebnissen](./media/documentdb-view-JSON-document-explorer/documentexplorerfilterresults.png)
 
 
-	> [AZURE.IMPORTANT] Die Filterfunktion von Dokument-Explorer filtert nur aus dem ***aktuell*** geladenen Satz an Dokumenten und führt keine Abfragen für die aktuell ausgewählte Sammlung aus.
+	> [AZURE.IMPORTANT]Die Filterfunktion des Dokument-Explorers filtert nur aus dem ***aktuell*** geladenen Dokumentensatz und führt keine Abfrage für die aktuell ausgewählte Sammlung aus.
 
-6. Zum Aktualisieren der von Dokument-Explorer geladenen Dokumentenliste klicken Sie einfach auf den Begehl **Aktualisieren** im oberen Bereich des Blatts.
+6. Zum Aktualisieren der vom Dokument-Explorer geladenen Dokumentenliste klicken Sie einfach auf den Befehl **Aktualisieren** im oberen Bereich des Blatts.
 
-	![Screenshot of Document Explorer refresh command](./media/documentdb-view-JSON-document-explorer/documentexplorerrefresh.png)
+	![Screenshot des Dokument-Explorers – Befehl "Aktualisieren"](./media/documentdb-view-JSON-document-explorer/documentexplorerrefresh.png)
 
 
-##<a id="Create"></a>Anzeigen, Erstellen und Bearbeiten von Dokumenten mit Dokument-Explorer##
+##<a id="Create"></a>Anzeigen, Erstellen und Bearbeiten von Dokumenten mit dem Dokument-Explorer##
 
-Mit Dokument-Explorer können Sie problemlos Dokumente erstellen, bearbeiten und löschen.  
+Mit Dokument-Explorer können Sie problemlos Dokumente erstellen, bearbeiten und löschen.
 
-- Klicken Sie zum Erstellen eines Dokuments auf den Befehl **Dokument erstellen**, und es wird ein minimaler JSON-Ausschnitt bereitgestellt.
+- Klicken Sie zum Erstellen eines Dokuments einfach auf den Befehl **Dokument erstellen**, und es wird ein minimaler JSON-Codeausschnitt bereitgestellt.
 
-	![Screenshot of Document Explorer create document experience](./media/documentdb-view-JSON-document-explorer/createdocument.png) 
+	![Screenshot des Dokument-Explorers – Erstellen von Dokumenten](./media/documentdb-view-JSON-document-explorer/createdocument.png)
 
-- Geben Sie den JSON-Inhalt des Dokuments ein, das Sie erstellen möchten, oder fügen Sie ihn ein, und klicken Sie auf den Befehl **Speichern**, um das Dokument zu übernehmen.
+- Geben oder fügen Sie den JSON-Inhalt des Dokuments ein, das Sie erstellen möchten, und klicken Sie auf den Befehl **Speichern**, um das Dokument zu übernehmen.
 
-	![Screenshot of Document Explorer save command](./media/documentdb-view-JSON-document-explorer/savedocument1.png)
+	![Screenshot des Dokument-Explorers – Befehl "Speichern"](./media/documentdb-view-JSON-document-explorer/savedocument1.png)
 
-	> [AZURE.NOTE] Wenn Sie keine "id"-Eigenschaft angegebn, fügt Dokument-Explorer automatisch eine id-Eigenschaft hinzu und generiert eine GUID als id-Wert. 
+	> [AZURE.NOTE]Wenn Sie keine "id"-Eigenschaft angegebn, fügt Dokument-Explorer automatisch eine id-Eigenschaft hinzu und generiert eine GUID als id-Wert.
 
-- Wählen Sie zum Bearbeiten eines vorhandenen Dokuments dieses im Dokument-Explorer aus, bearbeiten Sie es wie gewünscht, und klicken Sie auf **Speichern**.
+- Wenn Sie bereits über Daten aus JSON-Dateien, MongoDB, SQL Server, CSV-Dateien, Azure-Tabellenspeichern oder anderen DocumentDB-Sammlungen verfügen, können Sie das [Datenmigrationstool](documentdb-import-data.md) von DocumentDB verwenden, um Ihre Daten schnell zu importieren.
 
-	![Screenshot of Document Explorer edit document functionality](./media/documentdb-view-JSON-document-explorer/editdocument.png)
+- Um ein vorhandenes Dokument zu bearbeiten, wählen Sie das Dokument im Dokument-Explorer aus, bearbeiten Sie es wie gewünscht, und klicken Sie auf **Speichern**.
+
+	![Screenshot des Dokument-Explorers – Funktion zum Bearbeiten von Dokumenten](./media/documentdb-view-JSON-document-explorer/editdocument.png)
 
 - Wenn Sie ein Dokument bearbeiten und dann die Änderungen verwerfen möchten, klicken Sie auf den Befehl "Verwerfen", bestätigen Sie die Aktion "Verwerfen", und die vorherige Version des Dokuments wird neu geladen.
 
-	![Screenshot of Document Explorer discard command](./media/documentdb-view-JSON-document-explorer/discardedit.png)
+	![Screenshot des Dokument-Explorers – Befehl "Verwerfen"](./media/documentdb-view-JSON-document-explorer/discardedit.png)
 
-- Sie können ein Dokument löschen, indem Sie **Löschen** auswählen und dann den Löschvorgang bestätigen. Nach Bestätigung wird das Dokument sofort aus der Liste im Dokument-Explorer entfernt:
+- Sie können ein Dokument löschen, indem Sie auf den Befehl **Löschen** klicken und dann den Löschvorgang bestätigen. Nach Bestätigung wird das Dokument sofort aus der Liste im Dokument-Explorer entfernt:
 
-	![Screenshot of Document Explorer delete command](./media/documentdb-view-JSON-document-explorer/deletedocument.png)
+	![Screenshot des Dokument-Explorers – Befehl "Löschen"](./media/documentdb-view-JSON-document-explorer/deletedocument.png)
 
-- Beachten Sie, dass Dokument-Explorer überprüft, ob alle neuen oder bearbeiteten Dokumente gültiges JSON enthalten.  Sie können sogar mit der Maus auf den falschen Bereich zeigen, um Details zum Validierungsfehler anzuzeigen.
+- Beachten Sie, dass Dokument-Explorer überprüft, ob alle neuen oder bearbeiteten Dokumente gültiges JSON enthalten. Sie können sogar mit der Maus auf den falschen Bereich zeigen, um Details zum Validierungsfehler anzuzeigen.
 
-	![Screenshot of Document Explorer invalid JSON highlighting](./media/documentdb-view-JSON-document-explorer/invalidjson1.png)
+	![Screenshot der Dokument-Explorers – ungültiges JSON hervorgehoben](./media/documentdb-view-JSON-document-explorer/invalidjson1.png)
 
 - Dokument-Explorer verhindert auch das Speichern eines Dokuments mit ungültigem JSON.
 
-	![Screenshot of Document Explorer invalid JSON save error](./media/documentdb-view-JSON-document-explorer/invalidjson2.png)
+	![Screenshot der Dokument-Explorers – Fehler beim Speichern von ungültigem JSON](./media/documentdb-view-JSON-document-explorer/invalidjson2.png)
 
-- Mit Dokument-Explorer können problemlos die Systemeigenschaften des aktuell geladenen Dokuments durch Klicken auf den Befehl **Eigenschaften** angezeigt werden.
+- Mit dem Dokument-Explorer können Sie ganz einfach die Systemeigenschaften des aktuell geladenen Dokuments anzeigen, indem Sie auf Befehl **Eigenschaften** klicken.
 
-	![Screenshot of Document Explorer document properties view](./media/documentdb-view-JSON-document-explorer/documentproperties.png)
+	![Screenshot des Dokument-Explorers – Ansicht der Dokumenteigenschaften](./media/documentdb-view-JSON-document-explorer/documentproperties.png)
 
-	> [AZURE.NOTE] Die Zeitstempeleigenschaft (_ts) wird intern als Epochenzeit dargestellt, im Dokument-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
+	> [AZURE.NOTE]Die Zeitstempeleigenschaft (_ts) wird intern als Epochenzeit dargestellt, im Dokument-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
 
-##<a id="BulkAdd"></a>Massenhinzufügung von Dokumenten mit Dokument-Explorer##
+##<a id="BulkAdd"></a>Massenhinzufügen von Dokumenten mit dem Dokument-Explorer##
 
-Dokument-Explorer unterstützt die Sammelerfassung von vorhandenen JSON-Dokumenten.  
+Dokument-Explorer unterstützt die Sammelerfassung von vorhandenen JSON-Dokumenten.
 
-1. Klicken Sie zum Starten des Hochladeprozesses auf den Befehl **Dokument hinzufügen**.
-	
-	![Screenshot of Document Explorer bulk ingestion functionality](./media/documentdb-view-JSON-document-explorer/adddocument1.png)
+1. Klicken Sie zum Starten des Uploadprozesses auf den Befehl **Dokument hinzufügen**.
 
-2. Ein neues Blatt wird geöffnet.  Klicken Sie auf die Schaltfläche "Durchsuchen", um ein Datei-Explorer-Fenster zu öffnen, und wählen Sie die JSON-Dokumente aus, die hochgeladen werden sollen.
+	![Screenshot des Dokument-Explorers – Sammelerfassungsfunktion](./media/documentdb-view-JSON-document-explorer/adddocument1.png)
 
-	![Screenshot of Document Explorer bulk ingestion process](./media/documentdb-view-JSON-document-explorer/adddocument2.png)
+2. Ein neues Blatt wird geöffnet. Klicken Sie auf die Schaltfläche "Durchsuchen", um ein Datei-Explorer-Fenster zu öffnen, und wählen Sie die JSON-Dokumente aus, die hochgeladen werden sollen.
 
-	> [AZURE.NOTE] Dokument-Explorer unterstützt derzeit bis zu 100 JSON-Dokumente pro einzelnen Hochladevorgang.
+	![Screenshot des Dokument-Explorers – Sammelerfassungsprozess](./media/documentdb-view-JSON-document-explorer/adddocument2.png)
 
-3. Sobald Sie mit der Auswahl fertig sind, klicken Sie auf die Schaltfläche **Hochladen**.  Die Dokumente werden automatisch zum Dokument-Explorer-Raster hinzugefügt, und die Hochladeergebnisse werden angezeigt, während der Prozess weiterläuft. Importfehler werden für einzelne Dateien gemeldet.
+	> [AZURE.NOTE]Dokument-Explorer unterstützt derzeit bis zu 100 JSON-Dokumente pro einzelnen Hochladevorgang.
 
-	![Screenshot of Document Explorer bulk ingestion results](./media/documentdb-view-JSON-document-explorer/adddocument3.png)
+3. Sobald Sie mit der Auswahl fertig sind, klicken Sie auf die Schaltfläche **Hochladen**. Die Dokumente werden automatisch zum Dokument-Explorer-Raster hinzugefügt, und die Hochladeergebnisse werden angezeigt, während der Prozess weiterläuft. Importfehler werden für einzelne Dateien gemeldet.
+
+	![Screenshot des Dokument-Explorers – Sammelerfassungsergebnisse](./media/documentdb-view-JSON-document-explorer/adddocument3.png)
 
 4. Sobald der Vorgang abgeschlossen ist, können Sie bis zu 100 weitere Dokumente auswählen, die Sie hochladen möchten.
 
 ##<a name="NextSteps"></a>Nächste Schritte
 
-Weitere Informationen zu DocumentDB finden Sie [hier](http://azure.com/docdb).
+Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO1-->

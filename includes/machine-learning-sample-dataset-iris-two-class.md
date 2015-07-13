@@ -1,3 +1,3 @@
 Dies ist wahrscheinlich die bekannteste Datenbank, die in der Literatur zur Mustererkennung gefunden werden kann. Das DataSet ist relativ klein und enthält 50 Proben, die jeweils Blütenblatteinstufungen von drei Unterarten der Schwertlilie enthalten.<p> </p><b>Verwendung:</b> Vorhersage der Schwertlilienart aus diesen Einstufungen. <p> </p><b>Zugehörige Untersuchungen:</b> Fisher, R. A. (1988). UCI Machine Learning Repository <a href="http://archive.ics.uci.edu/ml">http://archive.ics.uci.edu/ml</a>. Irvine, CA: University of California, School of Information and Computer Science
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

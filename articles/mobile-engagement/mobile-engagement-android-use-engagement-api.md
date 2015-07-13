@@ -11,12 +11,12 @@
 	ms.service="mobile-engagement" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="" 
+	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="01/24/2015" 
 	ms.author="kapiteir" />
 
-# Verwenden der Engagement-API unter Android
+#Verwenden der Engagement-API unter Android
 
 Dieses Dokument ist ein Add-On zum Dokument [So integrieren Sie Engagement auf Android](mobile-engagement-android-integrate-engagement.md). Es bietet detaillierte Informationen zur Verwendung der Engagement-API zur Bereitstellung von Anwendungsstatistiken.
 
@@ -26,7 +26,7 @@ Wenn Sie darüber hinaus noch mehr Meldungen wünschen, z. B. wenn Sie anwendung
 
 Die Engagement-API wird von der `EngagementAgent`-Klasse zur Verfügung gestellt. Eine Instanz dieser Klasse kann durch Aufruf der `EngagementAgent.getInstance(Context)` statischen Methode abgerufen werden (beachten Sie, dass das zurückgegebene `EngagementAgent`-Objekt ein Singleton-Objekt ist).
 
-## Engagement-Konzepte
+##Engagement-Konzepte
 
 In den folgenden Abschnitten werden die [Mobile Engagement-Konzepte](mobile-engagement-concepts.md) für die Android-Plattform genauer dargestellt.
 
@@ -38,7 +38,7 @@ Eine *Aktivität* ist üblicherweise mit einem Bildschirm einer Anwendung verkn�
 
 Aber *Aktivitäten* können auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann ein vorhandener Bildschirm in mehrere Unterabschnitte geteilt werden, um mehr Details über die Verwendung des Bildschirms zu erhalten (um beispielsweise zu erfahren, wie häufig und wie lange Dialoge in diesem Bildschirm verwendet werden).
 
-## Berichterstellung für Aktivitäten
+##Berichterstellung für Aktivitäten
 
 > [AZURE.IMPORTANT]Wenn Sie die `EngagementActivity`-Klasse und ihre Varianten, wie unter „Integrieren von Engagement unter Android“ beschrieben, verwenden, müssen Sie die Aktivitäten nicht gemäß der Beschreibung in diesem Abschnitt melden.
 
@@ -59,7 +59,7 @@ Sie müssen `endActivity()` mindestens einmal aufrufen, wenn der Benutzer seine 
 
 Der beste Ort zum Aufrufen dieser Funktion ist die `onPause`-Rückruffunktion der einzelnen Aktivitäten.
 
-## Berichterstellung für Ereignisse
+##Berichterstellung für Ereignisse
 
 ### Sitzungsereignisse
 
@@ -107,7 +107,7 @@ Angenommen, Sie möchten Ereignisse melden, die beim Auslösen eines Übertragun
 			  [...]
 			}
 
-## Melden von Fehlern
+##Melden von Fehlern
 
 ### Sitzungsfehler
 
@@ -143,7 +143,7 @@ Das folgende Beispiel veranschaulicht die Meldung eines Fehlers, sobald auf dem 
 			  }
 			}
 
-## Berichterstellung für Aufträge
+##Berichterstellung für Aufträge
 
 ### Beispiel
 
@@ -173,9 +173,8 @@ Fehler können mit einem ausgeführten Auftrag in Zusammenhang stehen anstatt mi
 
 Angenommen, Sie möchten einen Fehler während des Anmeldeprozesses melden:
 
-			[...]
-			public void signIn(Context context, ...) {
-			
+[...] public void signIn(Context context, ...) {
+
 			  /* We need an Android context to call the Engagement API, if you are extending Activity, Service, you can pass "this" */
 			  EngagementAgent engagementAgent = EngagementAgent.getInstance(context);
 			
@@ -228,7 +227,7 @@ Der Benutzer kann Nachrichten von Freunden empfangen, hierbei handelt es sich um
 			}
 			[...]
 
-## Zusätzliche Parameter
+##Zusätzliche Parameter
 
 Ereignissen, Fehlern, Aktivitäten und Aufträgen können beliebige Daten zugeordnet werden.
 
@@ -263,7 +262,7 @@ Im vorherigen Beispiel enthält die an den Server gesendete JSON 58 Zeichen:
 
 			{"ref_click":"http://foobar.com/blog","video_id":"123"}
 
-## Informationen zur Berichterstellung
+##Informationen zur Berichterstellung
 
 Sie können Berichte zur Nachverfolgung (oder zu anderen anwendungsspezifischen Informationen) mithilfe der `sendAppInfo()`-Funktion manuell erstellen.
 
@@ -297,5 +296,6 @@ Anwendungsinformationen sind auf **1024** Zeichen pro Aufruf begrenzt (nach der 
 Im vorherigen Beispiel enthält die an den Server gesendete JSON 44 Zeichen:
 
 			{"expiration":"2016-12-07","status":"premium"}
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

@@ -60,8 +60,7 @@ Hier wird erklärt, wie ein neues Dienstprinzipal mithilfe des Azure-Portals ers
 
    ![Anwendung benennen][9]
 
-7. Tragen Sie die Eigenschaften Ihrer Anwendung ein. Geben Sie für die **ANMELDE-URL** die URI einer Website an, die Ihre Anwendung beschreibt. Das Vorhandensein der Website wird nicht überprüft. 
-Geben Sie für die **APP-ID URI** die URI an, die Ihre Anwendung identifiziert. Die Eindeutigkeit oder das Vorhandensein des Endpunktes wird nicht überprüft. Klicken Sie auf **Abschließen**, um Ihre AAD-Anwendung zu erstellen. 
+7. Tragen Sie die Eigenschaften Ihrer Anwendung ein. Geben Sie für die **ANMELDE-URL** die URI einer Website an, die Ihre Anwendung beschreibt. Das Vorhandensein der Website wird nicht überprüft. Geben Sie für die **APP-ID URI ** die URI an, die Ihre Anwendung identifiziert. Die Eindeutigkeit oder das Vorhandensein des Endpunktes wird nicht überprüft. Klicken Sie auf **Abschließen**, um Ihre AAD-Anwendung zu erstellen.
 
    ![Anwendungseigenschaften][4]
 
@@ -84,7 +83,7 @@ Das Portal sollte nun Ihre Anwendung ausgewählt haben.
 
    ![gespeicherter Schlüssel][8]
 
-4. Sie können nun Ihren Schlüssel zur Authentifizierung als Dienstprinzipal verwenden. Neben Ihrem  **SCHLÜSSEL** benötigen Sie zur Anmeldung Ihre **CLIENT-ID**. Gehen Sie zu **CLIENT-ID** und kopieren Sie diese.
+4. Sie können nun Ihren Schlüssel zur Authentifizierung als Dienstprinzipal verwenden. Neben Ihrem **SCHLÜSSEL** benötigen Sie zur Anmeldung Ihre **CLIENT-ID**. Gehen Sie zu **CLIENT-ID** und kopieren Sie diese.
   
    ![Client-ID][5]
 
@@ -97,23 +96,23 @@ Ihre Anwendung ist nun bereit und das Dienstprinzipal in Ihrem Mandanten erstell
 ## Nächste Schritte
 Erste Schritte
 
-- [Übersicht des Azure Resource Manager](./resource-group-overview.md)  
-- [Verwenden von Azure PowerShell mit Azure Resource Manager](./powershell-azure-resource-manager.md)
-- [Verwenden der Azure CLI für Mac, Linux und Windows mit Azure Resource Management](virtual-machines/xplat-cli-azure-resource-manager.md)  
-- [Verwenden des Azure-Portals zur Verwaltung Ihrer Azure-Ressourcen](azure-portal/resource-group-portal.md)  
+- [Azure Resource Manager Overview](./resource-group-overview.md) (Übersicht über den Azure-Ressourcen-Manager)  
+- [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](./powershell-azure-resource-manager.md)
+- [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](virtual-machines/xplat-cli-azure-resource-manager.md)  
+- [Using the Azure Portal to manage your Azure resources](azure-portal/resource-group-portal.md) (Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen)  
   
-Erstellen und Einsetzen von Anwendungen
+Erstellen und Bereitstellen von Anwendungen
   
-- [Erstellen von Azure Resource Manager-Vorlagen](./resource-group-authoring-templates.md)  
-- [Bereitstellen einer Anwendung mit einer Azure Resource Manager-Vorlage](azure-portal/resource-group-template-deploy.md)  
-- [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](virtual-machines/resource-group-deploy-debug.md)  
-- [Funktionen von Azure Resource Manager-Vorlagen](./resource-group-template-functions.md)  
-- [Erweiterte Vorlagenanwendung](./resource-group-advanced-template.md)  
-- [Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage](virtual-machines/arm-template-deployment.md)
+- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) (Erstellen von Vorlagen im Azure-Ressourcen-Manager)  
+- [Deploy an application with Azure Resource Manager Template](azure-portal/resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)  
+- [Troubleshooting Resource Group Deployments in Azure](virtual-machines/resource-group-deploy-debug.md) (Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)  
+- [Azure Resource Manager Template Functions](./resource-group-template-functions.md) (Vorlagenfunktionen im Azure-Ressourcen-Manager)  
+- [Advanced Template Operations](./resource-group-advanced-template.md) (Erweiterte Anwendungen mit Vorlagen)  
+- [Deploy Azure Resources Using .NET Libraries and a Template](virtual-machines/arm-template-deployment.md) (Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage)
   
 Organisieren von Ressourcen
   
-- [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)  
+- [Using tags to organize your Azure resources](./resource-group-using-tags.md) (Verwenden von Tags zum Organisieren von Azure-Ressourcen)  
   
 Zugriffsverwaltung und -überwachung
   
@@ -135,4 +134,4 @@ Zugriffsverwaltung und -überwachung
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!--HONumber=52-->
+<!---HONumber=July15_HO1-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Blitline zur Bildverarbeitung - Leitfaden zu Azure-Features" 
+	pageTitle="Gewusst wie: Verwenden von Blitline zur Bildverarbeitung - Leitfaden zu Azure-Features" 
 	description="Erfahren Sie mehr über die Verwendung des Blitline-Dienstes zum Verarbeiten von Bildern in einer Azure-Anwendung." 
 	services="" 
 	documentationCenter=".net" 
@@ -27,12 +27,7 @@ Dieser Leitfaden erläutert den Zugriff auf Blitline-Dienste und das Übertragen
 
 ## Inhaltsverzeichnis
 
-[Was ist Blitline?][] 
-[Was ist Blitline NICHT][] 
-[Erstellen eines Blitline-Kontos][] 
-[Erstellen eines Blitline-Jobs][] 
-[Speichern eines Bilds in Azure Storage][] 
-[Nächste Schritte][]
+[Was ist Blitline?][] [Was ist Blitline NICHT][] [Erstellen eines Blitline-Kontos][] [Erstellen eines Blitline-Jobs][] [Speichern eines Bilds in Azure Storage][] [Nächste Schritte][]
 
 ## <a id="whatis"></a>Was ist Blitline?
 
@@ -148,12 +143,11 @@ Besuchen Sie "blitline.com", um Informationen zu allen anderen Funktionen zu erh
 * Drittanbieter-NuGet-Bibliothek ahttp://nuget.org/packages/Blitline.Net>
 
 
-[Nächste Schritte]: #nextsteps
-[Was ist Blitline?]: #whatis
-[Was ist Blitline NICHT]: #whatisnot
-[Erstellen eines Blitline-Kontos]: #createaccount
-[Erstellen eines Blitline-Jobs]: #createjob
-[Speichern eines Bilds in Azure Storage]: #saveazure
+  [Nächste Schritte]: #nextsteps
+  [Was ist Blitline?]: #whatis
+  [Was ist Blitline NICHT]: #whatisnot
+  [Erstellen eines Blitline-Kontos]: #createaccount
+  [Erstellen eines Blitline-Jobs]: #createjob
+  [Speichern eines Bilds in Azure Storage]: #saveazure
 
-
-<!--HONumber=52-->
+<!---HONumber=July15_HO1-->

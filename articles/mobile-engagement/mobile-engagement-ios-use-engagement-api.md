@@ -11,7 +11,7 @@
 	ms.service="mobile-engagement" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-ios" 
-	ms.devlang="" 
+	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="01/24/2015" 
 	ms.author="kapiteir" />
@@ -283,5 +283,6 @@ Im vorherigen Beispiel enthält das an den Server gesendete JSON 44 Zeichen:
 
 			{"birthdate":"1983-12-07","gender":"female"}
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

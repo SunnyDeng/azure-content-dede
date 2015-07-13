@@ -10,10 +10,10 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="mobile-multiple" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/20/2015" 
+	ms.date="06/09/2015" 
 	ms.author="wesmc"/>
 
 # Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory
@@ -22,9 +22,9 @@
 
 ##Übersicht
 
-Unter rollenbasierter Zugriffssteuerung (RBAC) wird das Zuweisen von Berechtigungen für Rollen, die Benutzer innehaben können, verstanden. Damit werden gut Grenzen bezüglich dessen definiert, was bestimmte Klassen von Benutzern tun können und was nicht. In diesem Lernprogramm wird erläutert, wie Sie Azure Mobile Services eine einfache rollenbasierte Zugriffssteuerung  hinzufügen.
+Unter rollenbasierter Zugriffssteuerung (RBAC) wird das Zuweisen von Berechtigungen für Rollen, die Benutzer innehaben können, verstanden. Damit werden gut Grenzen bezüglich dessen definiert, was bestimmte Klassen von Benutzern tun können und was nicht. In diesem Lernprogramm wird erläutert, wie Sie Azure Mobile Services eine einfache rollenbasierte Zugriffssteuerung hinzufügen.
 
-In diesem Lernprogramm wird die rollenbasierte Zugriffssteuerung erläutert, welche die Mitgliedschaft der einzelnen Benutzer in der Gruppe „Sales“ prüft, die in Azure Active Directory (AAD) definiert ist. Die Zugriffsprüfung erfolgt mit dem Mobile Services .NET-Back-End unter Verwendung der [Graph REST API] für Azure Active Directory. Nur Benutzer, die der Gruppe „Sales“ angehören, dürfen Daten abfragen.
+In diesem Lernprogramm wird die rollenbasierte Zugriffssteuerung erläutert, welche die Mitgliedschaft der einzelnen Benutzer in der Gruppe "Sales" prüft, die in Azure Active Directory (AAD) definiert ist. Die Zugriffsprüfung erfolgt mit dem Mobile Services .NET-Back-End unter Verwendung der [Graph REST API] für Azure Active Directory. Nur Benutzer, die der Gruppe "Sales" angehören, dürfen Daten abfragen.
 
 
 >[AZURE.NOTE]Dieses Lernprogramm ist dazu vorgesehen, Ihre Kenntnisse bezüglich der Authentifizierung um Autorisierungsmethoden zu erweitern. Es wird davon ausgegangen, dass Sie zunächst das Lernprogramm [Hinzufügen von Authentifizierung zur App] unter Verwendung des Azure Active Directory-Authentifizierungsanbieters bearbeiten. In diesem Lernprogramm wird die Anwendung TodoItem weiter aktualisiert, die im Lernprogramm [Hinzufügen von Authentifizierung zur App] verwendet wurde.
@@ -50,7 +50,7 @@ Wenn Sie das Lernprogramm [Zugriff auf Azure Active Directory Graph-Informatione
 
 
 
-##Erstellen der Gruppe „Sales“ mit Mitgliedschaften
+##Erstellen der Gruppe "Sales" mit Mitgliedschaften
 
 [AZURE.INCLUDE [mobile-services-aad-rbac-create-sales-group](../../includes/mobile-services-aad-rbac-create-sales-group.md)]
 
@@ -62,7 +62,7 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Projekt für den mobilen Dienst mit .NET-Backend, und klicken Sie auf **NuGet-Pakete verwalten**.
 
-2. Geben Sie im Dialogfeld „NuGet-Paket-Manager“ **ADAL** in das Suchfeld ein, um die **Active Directory-Authentifizierungsbibliothek** für Ihren mobilen Dienst zu suchen und zu installieren. Dieses Lernprogramm wurde zuletzt mit der Version 3.0.110281957-alpha (Vorabversion) des ADAL-Pakets getestet.
+2. Geben Sie im Dialogfeld "NuGet-Paket-Manager" **ADAL** in das Suchfeld ein, um die **Active Directory-Authentifizierungsbibliothek** für Ihren mobilen Dienst zu suchen und zu installieren. Dieses Lernprogramm wurde zuletzt mit der Version 3.3.205061641-alpha (Vorabversion) des ADAL-Pakets getestet.
 
 3. Klicken Sie in Visual Studio mit der rechten Maustaste auf das mobile Dienstprojekt, und wählen Sie **Hinzufügen**, **Neuer Ordner** aus. Nennen Sie den neuen Ordner **Utilities**.
 
@@ -84,7 +84,7 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 		using System.Globalization;
 		using System.IO;
 
-6. Fügen Sie in der Datei „AuthorizeAadRole.cs“ den folgenden Aufzählungstyp zum Utilities-Namespace hinzu. In diesem Beispiel arbeiten wir nur mit der Rolle **Sales**. Die anderen sind lediglich Beispiele für Gruppen, die Sie verwenden könnten.
+6. Fügen Sie in der Datei "AuthorizeAadRole.cs" den folgenden Aufzählungstyp zum Utilities-Namespace hinzu. In diesem Beispiel arbeiten wir nur mit der Rolle **Sales**. Die anderen sind lediglich Beispiele für Gruppen, die Sie verwenden könnten.
 
         public enum AadRoles
         {
@@ -174,11 +174,12 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
         }
 
 
-9. Aktualisieren Sie in der Datei „AuthorizeAadRole.cs“ die `GetAADToken`-Methode in der `AuthorizeAadRole`-Klasse. Diese Methode verwendet die Anwendungseinstellungen, die im Mobile Service gespeichert sind, um ein Zugriffstoken für AAD aus ADAL abzurufen.
+9. Aktualisieren Sie in der Datei "AuthorizeAadRole.cs" die `GetAADToken`-Methode in der `AuthorizeAadRole`-Klasse. Diese Methode verwendet die Anwendungseinstellungen, die im Mobile Service gespeichert sind, um ein Zugriffstoken für AAD aus ADAL abzurufen.
 
     >[AZURE.NOTE]ADAL für .NET umfasst standardmäßig einen speicherinternen Tokencache, um zusätzlichen Netzwerkverkehr mit Active Directory zu verringern. Allerdings können Sie auch eine eigene Cacheimplementierung schreiben oder die Zwischenspeicherung vollständig deaktivieren. Weitere Informationen hierzu finden Sie unter [ADAL für .NET].
 
-        private string GetAADToken()
+        // Use ADAL and the authentication app settings from the Mobile Service to get an AAD access token
+        private async Task<string> GetAADToken()
         {
             // Try to get the required AAD authentication app settings from the mobile service.  
             if (!(services.Settings.TryGetValue("AAD_CLIENT_ID", out clientid) &
@@ -192,8 +193,8 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
             ClientCredential clientCred = new ClientCredential(clientid, clientkey);
             string authority = String.Format(CultureInfo.InvariantCulture, AadInstance, tenantdomain);
             AuthenticationContext authContext = new AuthenticationContext(authority);
-            AuthenticationResult result = authContext.AcquireTokenAsync(GraphResourceId, clientCred).Result;
 
+            AuthenticationResult result = await authContext.AcquireTokenAsync(GraphResourceId, clientCred);
             if (result != null)
                 token = result.AccessToken;
             else
@@ -202,7 +203,7 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
             return token;
         }
 
-10. Aktualisieren Sie in der Datei „AuthorizeAadRole.cs“ die `CheckMembership`-Methode in der `AuthorizeAadRole`-Klasse. Diese Methode empfängt die Objekt-Id des Benutzers. Anschließend wird mithilfe der AAD Graph-REST-API die Objekt-ID überprüft, um festzustellen, ob es eine Element-ID für die Gruppe ist, die der in der `AuthorizeAadRole`-Klasse ausgewählten Rolle zugeordnet ist.
+10. Aktualisieren Sie in der Datei "AuthorizeAadRole.cs" die `CheckMembership`-Methode in der `AuthorizeAadRole`-Klasse. Diese Methode empfängt die Objekt-Id des Benutzers. Anschließend wird mithilfe der AAD Graph-REST-API die Objekt-ID überprüft, um festzustellen, ob es eine Element-ID für die Gruppe ist, die der in der `AuthorizeAadRole`-Klasse ausgewählten Rolle zugeordnet ist.
 
         private bool CheckMembership(string memberId)
         {
@@ -239,7 +240,7 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
         }
 
 
-11. Aktualisieren Sie in der Datei „AuthorizeAadRole.cs“ die `OnAuthorization`-Methode in der `AuthorizeAadRole`-Klasse mit dem folgenden Code. Dieser Code erwartet, dass der Benutzer, der den mobilen Dienst aufruft, von der AAD authentifiziert wurde. Anschließend wird die AAD-Objekt-IID des Benutzers abgerufen und die Mitgliedschaft in der Active Directory-Gruppe überprüft, die der Rolle entspricht.
+11. Aktualisieren Sie in der Datei "AuthorizeAadRole.cs" die `OnAuthorization`-Methode in der `AuthorizeAadRole`-Klasse mit dem folgenden Code. Dieser Code erwartet, dass der Benutzer, der den mobilen Dienst aufruft, von der AAD authentifiziert wurde. Anschließend wird die AAD-Objekt-IID des Benutzers abgerufen und die Mitgliedschaft in der Active Directory-Gruppe überprüft, die der Rolle entspricht.
 
     >[AZURE.NOTE]Die Active Directory-Gruppe kann nach dem Namen gesucht werden. In vielen Fällen ist es jedoch empfehlenswert, die Gruppen-ID als App-Einstellung des mobilen Diensts zu speichern. Der Gruppenname kann sich ändern, die ID bleibt dagegen immer gleich.
 
@@ -322,17 +323,17 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
             }
         }
 
-12. Speichern Sie die Änderungen an der Datei „AuthorizeAadRole.cs“.
+12. Speichern Sie die Änderungen an der Datei "AuthorizeAadRole.cs".
 
 ##Hinzufügen einer rollenbasierten Zugriffsprüfung für Datenbankvorgänge
 
-1. Erweitern Sie in Visual Studio den Ordner **Controllers** im mobilen Dienstprojekt. Öffnen Sie „TodoItemController.cs“.
+1. Erweitern Sie in Visual Studio den Ordner **Controllers** im mobilen Dienstprojekt. Öffnen Sie "TodoItemController.cs".
 
-2. Fügen Sie in „TodoItemController.cs“ eine `using`-Anweisung für den Utilities-Namespace hinzu, der das benutzerdefinierte Autorisierungsattribut enthält.
+2. Fügen Sie in "TodoItemController.cs" eine `using`-Anweisung für den Utilities-Namespace hinzu, der das benutzerdefinierte Autorisierungsattribut enthält.
 
         using todolistService.Utilities;
 
-3. In „TodoItemController.cs“ können Sie das Attribut zu Ihrer Controllerklasse oder einzelnen Methoden hinzufügen, je nachdem, wie der Zugriff geprüft werden soll. Wenn die Zugriffsprüfung für alle Controllervorgänge basierend auf derselben Rolle erfolgen soll, fügen Sie das Attribut einfach zur Klasse hinzu. Für den Test in diesem Lernprogramm fügen Sie das Attribut wie folgt zur Klasse hinzu.
+3. In "TodoItemController.cs" können Sie das Attribut zu Ihrer Controllerklasse oder einzelnen Methoden hinzufügen, je nachdem, wie der Zugriff geprüft werden soll. Wenn die Zugriffsprüfung für alle Controllervorgänge basierend auf derselben Rolle erfolgen soll, fügen Sie das Attribut einfach zur Klasse hinzu. Für den Test in diesem Lernprogramm fügen Sie das Attribut wie folgt zur Klasse hinzu.
 
         [AuthorizeAadRole(AadGroups.Sales)]
         public class TodoItemController : TableController<TodoItem>
@@ -362,7 +363,7 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
         }
 
 
-4. Speichern Sie „TodoItemController.cs“, und erstellen Sie den mobilen Dienst, um sicherzustellen, dass keine Syntaxfehler vorhanden sind.
+4. Speichern Sie "TodoItemController.cs", und erstellen Sie den mobilen Dienst, um sicherzustellen, dass keine Syntaxfehler vorhanden sind.
 5. Veröffentlichen Sie den mobilen Dienst in Ihrem Azure-Konto.
 
 
@@ -390,4 +391,5 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 [IsMemberOf]: http://msdn.microsoft.com/library/azure/dn151601.aspx
 [Zugriff auf Azure Active Directory Graph-Informationen]: mobile-services-dotnet-backend-windows-store-dotnet-aad-graph-info.md
 [ADAL für .NET]: https://msdn.microsoft.com/library/azure/jj573266.aspx
-<!--HONumber=54--> 
+
+<!---HONumber=July15_HO1-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="02/13/2015" 
+	ms.date="05/13/2015" 
 	ms.author="ricksal"/>
 
 
@@ -56,10 +56,6 @@ Da Sie nun den mobilen Dienst erstellt haben, können Sie Ihr personalisiertes M
 
 	Dadurch wird das Visual Studio-Projekt, das den mobilen Dienst implementiert, heruntergeladen. Speichern Sie die komprimierte Projektdatei auf Ihrem lokalen Computer, und notieren Sie sich den Speicherort.
 
-<!--
-4. Also, download your publish profile, save the downloaded file to your local computer, and make a note of where you save it.
--->
-
 ## Testen des mobilen Diensts
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service](../../includes/mobile-services-dotnet-backend-test-local-service.md)]
@@ -86,12 +82,10 @@ In diesem Abschnitt erstellen Sie eine neue Android-App, die mit Ihrem Mobile Se
 
 ## Ausführen Ihrer Android-App
 
-[WACOM.INCLUDE [mobile-services-run-your-app](mobile-services-android-get-started.md)]
+[AZURE.INCLUDE [mobile-services-run-your-app](../../includes/mobile-services-android-get-started.md)]
 
 ## <a name="next-steps"> </a>Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
-
-* [Erste Schritte mit Daten] <br/>Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
 * [Erste Schritte mit der Authentifizierung] <br/>Informationen zur Authentifizierung von Benutzern Ihrer App bei einem Identitätsanbieter.
 
@@ -124,7 +118,7 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 <!-- URLs. -->
 [Erste Schritte (Eclipse)]: mobile-services-dotnet-backend-android-get-started-EC.md
-[Erste Schritte mit Daten]: mobile-services-dotnet-backend-android-get-started-data.md
+[Get started with data]: mobile-services-dotnet-backend-android-get-started-data.md
 [Erste Schritte mit der Authentifizierung]: mobile-services-dotnet-backend-android-get-started-users.md
 [Erste Schritte mit Pushbenachrichtigungen]: mobile-services-dotnet-backend-android-get-started-push.md
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
@@ -133,5 +127,6 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Beheben von Problemen bei einem Mobile Services .NET-Back-End]: mobile-services-dotnet-backend-how-to-troubleshoot.md
 
 [Verwaltungsportal]: https://manage.windowsazure.com/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

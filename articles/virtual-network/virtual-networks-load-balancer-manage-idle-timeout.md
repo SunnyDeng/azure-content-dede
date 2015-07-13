@@ -58,7 +58,7 @@ Laden Sie die neueste [Azure PowerShell-Version](https://github.com/Azure/azure-
 
 ### Abrufen Ihrer Leerlauftimeout-Konfiguration
 
-    PS C:> Get-AzureVM –ServiceName “MyService” –Name “MyVM” | Get-AzureEndpoint
+    PS C:\> Get-AzureVM –ServiceName “MyService” –Name “MyVM” | Get-AzureEndpoint
     
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
     LBSetName : MyLoadBalancedSet
@@ -152,4 +152,4 @@ Der Wert von "LoadBalancerDistribution" kann "sourceIP" (2-Tupel-Affinität) ode
     </LoadBalancedEndpointList>
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

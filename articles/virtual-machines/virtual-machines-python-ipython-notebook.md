@@ -276,4 +276,4 @@ Die Kernfunktionen von IPython sind auch in Visual Studio unter [Python Tools fo
 [OpenSSL]: http://slproweb.com/products/Win32OpenSSL.html
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

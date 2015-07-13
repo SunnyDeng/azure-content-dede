@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verbinden virtueller Computer in einem 	Azure-Cloud-Dienst" 
+	pageTitle="Verbinden virtueller Computer in einem Azure-Cloud-Dienst" 
 	description="Erfahren Sie, wie Sie einen virtuellen Computer mit einem Azure-Cloud-Dienst verbinden." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="vm-multiple" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/10/2015" 
+	ms.date="05/28/2015" 
 	ms.author="kathydav"/>
 
 
-
+# Verbinden virtueller Computer mit einem virtuellen Netzwerk oder einem Clouddienst
 
 [AZURE.INCLUDE [howto-connect-vm-cloud-service](../../includes/howto-connect-vm-cloud-service.md)]
-
-<!--HONumber=45--> 
  
+
+<!---HONumber=July15_HO1-->

@@ -10,28 +10,19 @@
 <tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
-	ms.tgt_pltfrm=""
-	ms.devlang="Java"
+	ms.tgt_pltfrm="mobile-xamarin-ios"
+	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="3/10/2015"
+	ms.date="05/13/2015"
 	ms.author="yuaxu"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
+##Übersicht
+
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services Pushbenachrichtigungen an eine Xamarin.iOS 8-App senden. In diesem Lernprogramm fügen Sie mithilfe des Apple Push Notification Services (APNS) Pushbenachrichtigungen zum Projekt [Erste Schritte mit Mobile Services] hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
-
-In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivierung von Pushbenachrichtigungen behandelt:
-
-1. [Erstellen der Zertifikatsignieranforderung]
-2. [Registrieren der App und Aktivieren von Pushbenachrichtigungen]
-3. [Erstellen eines Bereitstellungsprofils für die App]
-4. [Konfigurieren von Mobile Services]
-5. [Konfigurieren der Xamarin.iOS-App]
-6. [Hinzufügen von Pushbenachrichtigungen zur App]
-7. [Aktualisieren von Skripts zum Senden von Pushbenachrichtigungen]
-8. [Einfügen von Daten zum Empfangen von Benachrichtigungen]
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
@@ -40,9 +31,9 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + [Xamarin.iOS Studio]
 + [Azure Mobile Services-Komponente]
 
-   >[AZURE.NOTE]Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
+>[AZURE.IMPORTANT]Pushbenachrichtigungen müssen aufgrund von APNS-Anforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
 
-Der Apple Push Notification Service (APNS) verwendet Zertifikate zur Authentifizierung Ihres mobilen Dienstes. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen auf Ihren mobilen Dienst. Die offizielle Dokumentation der APNS-Merkmale finden Sie unter [Apple Push Notification Service].
+APNS verwendet Zertifikate zur Authentifizierung Ihres mobilen Diensts. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen auf Ihren mobilen Dienst. Die offizielle Dokumentation der APNS-Merkmale finden Sie unter [Apple Push Notification Service].
 
 ## <a name="certificates"></a>Erstellen der Zertifikatsignieranforderungsdatei
 
@@ -314,7 +305,7 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
     Auf diese Weise wird ein neues Einfügeskript registriert, das über das [apns-Objekt] eine Pushbenachrichtigung (den eingefügten Text) zum in der Einfügeanforderung angegebenen Gerät sendet.
 
-   > [AZURE.NOTE] Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
+   >[AZURE.NOTE]Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
 
 ## <a name="test"></a>Testen von Pushbenachrichtigungen in der App
 
@@ -322,7 +313,7 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
     ![][23]
 
-   > [AZURE.NOTE] Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
+   >[AZURE.NOTE]Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
 
 2. Geben Sie in der App einen aussagekräftigen Text ein, beispielsweise _Neue Mobile Services-Aufgabe_, und klicken Sie dann auf das Plussymbol (**+**).
 
@@ -339,14 +330,14 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
 <!-- Anchors. -->
-[Erstellen der Zertifikatsignieranforderung]: #certificates
-[Registrieren der App und Aktivieren von Pushbenachrichtigungen]: #register
-[Erstellen eines Bereitstellungsprofils für die App]: #profile
-[Konfigurieren von Mobile Services]: #configure-mobileServices
-[Konfigurieren der Xamarin.iOS-App]: #configure-app
-[Aktualisieren von Skripts zum Senden von Pushbenachrichtigungen]: #update-scripts
-[Hinzufügen von Pushbenachrichtigungen zur App]: #add-push
-[Einfügen von Daten zum Empfangen von Benachrichtigungen]: #test
+[Generate the certificate signing request]: #certificates
+[Register your app and enable push notifications]: #register
+[Create a provisioning profile for the app]: #profile
+[Configure Mobile Services]: #configure-mobileServices
+[Configure the Xamarin.iOS App]: #configure-app
+[Update scripts to send push notifications]: #update-scripts
+[Add push notifications to the app]: #add-push
+[Insert data to receive notifications]: #test
 
 <!-- Images. -->
 
@@ -396,12 +387,8 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-[Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started-xamarin-ios
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios
-[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-xamarin-ios
-[Push notifications to app users]: /develop/mobile/tutorials/push-notifications-to-users-ios
-[Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios
+[Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
+
 [Xamarin Device Provisioning]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
 
@@ -410,5 +397,6 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 [Azure Mobile Services-Komponente]: http://components.xamarin.com/view/azure-mobile-services/
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303
 [Xamarin.iOS]: http://xamarin.com/download
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

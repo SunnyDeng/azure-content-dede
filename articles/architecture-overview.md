@@ -1,5 +1,5 @@
-﻿<properties 
-	pageTitle="Architektur" 
+<properties 
+	pageTitle="Anwendungsarchitektur in Microsoft Azure" 
 	description="Übersicht über die Architektur, die allgemeine Entwurfsmuster abdeckt." 
 	services="" 
 	documentationCenter="" 
@@ -13,41 +13,44 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/25/2014" 
+	ms.date="05/15/2015" 
 	ms.author="robb"/>
 
-# Architektur
+#Anwendungsarchitektur in Microsoft Azure
 Ressourcen zum Erstellen von Anwendungen, die Microsoft Azure verwenden.
 
-## Microsoft-Architekturpläne
+##Microsoft-Architekturpläne
 
-Microsoft veröffentlicht jetzt eine Reihe von allgemeinen Architekturplänen, die veranschaulichen, wie bestimmte Systemtypen mit Microsoft Azure-Diensten erstellt werden. Jeder Plan umfasst eine auf Visio-basierte 2D-Datei, die Sie herunterladen und bearbeiten können, eine anschaulichere 3D-PDF-Datei, um eine Einführung zum Plan und ein Video bereitzustellen, das durch die 3D-PDF-Datei führt. Informationen zum Erstellen finden Sie in 
-[Microsoft-Architekturpläne](http://msdn.microsoft.com/dn630664).
+Microsoft veröffentlicht eine Reihe von allgemeinen Architekturplänen, die veranschaulichen, wie bestimmte Systemtypen mit Microsoft-Produkten und Microsoft Azure-Diensten erstellt werden. Jeder Plan umfasst eine Visio-basierte 2D-Datei, die Sie herunterladen und bearbeiten können, eine lebendigere 3D-PDF-Datei zur Einführung sowie ein Video, das durch die 3D-Version führt. Siehe [Microsoft-Architekturpläne](http://msdn.microsoft.com/dn630664).
 
-![Microsoft Architecture Blueprint 3D diagram][BluePrint]
+Die 2D-Plandiagramme verwenden den nachstehend genannten Cloud- und Enterprise-Symbolsatz.
 
-## Symbolsatz für Azure
+Die 3D-PDF-Plandateien wurden in einem Nicht-Microsoft-Tool erstellt, eine Visio-Vorlage befindet sich jedoch in Entwicklung. Weitere Informationen finden Sie im [Trainingsvideo zur BETA-Vorlage](https://www.youtube.com/watch?v=MXDzcb5HNtM). Wenn Sie die 3D-Visio-Vorlage (Beta) erhalten möchten, senden Sie eine E-Mail an [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com).
 
-[Laden Sie den Symbolsatz für Azure herunter](http://www.microsoft.com/download/details.aspx?id=41937), um technisches Informationsmaterial im Stil von Azure zu erstellen, beispielsweise Architekturdiagramme, Schulungsmaterialien, Präsentationen, Datenblätter, Infografiken und Whitepaper. Sie können die Symbole in den Formaten PPT, Visio oder PNG herunterladen. Ihr Feedback ist uns sehr wichtig. Daher ist im Download eine Feedback-Anleitung enthalten.
+![Microsoft-Architekturpläne – 3D-Diagramm][BluePrint]
 
-Die 2D-Diagramme der [Microsoft Architekturpläne](http://msdn.microsoft.com/dn630664) verwenden diese Symbole. 
+##Cloud- und Enterprise-Symbolsatz
 
-Der Symbolsatz wird erweitert, um Cloud- und Enterprise-Symbole in der nächsten Version einzuschließen. Häufig werden neue Azure-Dienste veröffentlicht, bevor der Download aktualisiert wurde. Wenn Sie eine Vorschau auf den neuen Satz oder neue Symbole für neue Azure-Dienste anzeigen möchten, senden Sie eine E-Mail an [AzureSymbols@microsoft.com](mailto:AzureSymbols@microsoft.com).  
+[Laden Sie den Cloud- und Enterprise-Symbolsatz herunter](http://www.microsoft.com/download/details.aspx?id=41937), um technische Materialien zu erstellen, die Azure, Windows Server, SQL Server und andere Microsoft-Produkte beschreiben. Sie können diese in Architekturdiagrammen, Trainingsmaterialien, Präsentationen, Datenblättern, Infografiken, Whitepapers und sogar in Büchern von Drittanbietern verwenden, wenn diese Schulungsinformationen für die Verwendung von Microsoft-Produkten enthalten. Die Symbole liegen in Visio- und PNG-Formaten vor. Anweisungen zur Verwendung der PNG-Dateien in PowerPoint sind enthalten.
 
-Wenn Sie die Symbole verwendet haben, stellen Sie sicher, dass Sie die fünf Fragen umfassende kurze [Umfrage](http://aka.ms/azuresymbolssurveyv1) ausfüllen, um uns wissen zu lassen, ob diese nützlich sind und wie sie verwendet werden.   
+Der Symbolsatz wird vierteljährlich herausgegeben und aktualisiert, wenn neue Dienste erscheinen. Wenn Sie eine Vorschau der neuesten Version anzeigen möchten, die möglicherweise zusätzliche Azure-Dienste einschließt, senden Sie eine E-Mail an [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com).
 
-![Azure Symbol/Icon set][azure_symbols]
+Ihr Feedback ist uns sehr wichtig. Daher ist im Download eine Feedback-Anleitung enthalten. Wenn Sie die Symbole verwendet haben, beantworten Sie die fünf Fragen unserer [Umfrage](http://aka.ms/azuresymbolssurveyv2) um uns mitzuteilen, ob die Symbole für Sie nützlich sind und wie Sie sie verwenden.
 
-## Entwurfsmuster
-Microsoft Patterns and Practices hat das Buch zu [Cloud-Entwurfsmustern](http://msdn.microsoft.com/library/dn568099.aspx) veröffentlicht, das sowohl auf MSDN und als PDF-Download erhältlich ist. Es ist zudem ein großformatiges Poster verfügbar, auf dem alle Muster aufgelistet sind. 
+Zusätzliche Symbole stehen in der [Microsoft Office Visio-Schablone](http://www.microsoft.com/de-de/download/details.aspx?id=35772) zur Verfügung, allerdings sind diese nicht wie der CnE-Satz für Architekturdiagramme optimiert.
 
-![Patterns and Practices Cloud Patterns Poster][PnPPoster]
+![Symbolsatz für Azure][azure_symbols]
 
-## Infografiken zur Architektur
-Microsoft veröffentlicht mehrere architekturbezogene Poster/Infografiken. Dazu zählen [Erstellen echter Cloud-Anwendungen](http://azure.microsoft.com/documentation/infographics/building-real-world-cloud-apps/) und [Skalieren mit Cloud-Diensten](http://azure.microsoft.com/documentation/infographics/cloud-services/). 
+##Entwurfsmuster
+Microsoft Patterns and Practices hat das Buch zu [Cloudentwurfsmustern](http://msdn.microsoft.com/library/dn568099.aspx) veröffentlicht, das sowohl auf MSDN als auch als PDF-Download erhältlich ist. Es ist zudem ein großformatiges Poster verfügbar, auf dem alle Muster aufgelistet sind.
+
+![Patterns und Practices – Poster zu Cloudmustern][PnPPoster]
+
+##Infografiken zur Architektur
+Microsoft veröffentlicht mehrere architekturbezogene Poster/Infografiken. Dazu zählen [Erstellen echter Cloudanwendungen](http://azure.microsoft.com/documentation/infographics/building-real-world-cloud-apps/) und [Skalieren mit Cloud Services](http://azure.microsoft.com/documentation/infographics/cloud-services/).
 
 
-![Azure Architecture Infographics][AzureInfographic]
+![Infografiken zur Azure-Architektur][AzureInfographic]
 
 
 
@@ -56,4 +59,4 @@ Microsoft veröffentlicht mehrere architekturbezogene Poster/Infografiken. Dazu 
 [PnPPoster]: ./media/architecture-overview/PnPPatternPosterThumb.png
 [AzureInfographic]: ./media/architecture-overview/AzureArchInfographicThumb.png
 
-<!--HONumber=47-->
+<!---HONumber=July15_HO1-->

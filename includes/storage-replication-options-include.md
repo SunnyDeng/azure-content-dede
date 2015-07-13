@@ -9,14 +9,16 @@ Die Daten in Ihrem Microsoft Azure-Speicherkonto werden stets repliziert, um Bes
 
 	ZRS liefert eine höhere Stabilität als LRS. Für maximale Stabilität empfehlen wir jedoch, dass Sie georedundanten Speicher (nachfolgend beschrieben) verwenden.
 
-	> [AZURE.NOTE]ZRS ist derzeit nur für Blockblobs verfügbar. Sobald Sie Ihr Speicherkonto erstellt und die zonenredundante Replikation ausgewählt haben, ist die Wahl eines anderen Replikationstyps nicht mehr möglich.
+	> [AZURE.NOTE]ZRS ist derzeit nur für Blockblobs verfügbar.
+	> 
+	> Sobald Sie Ihr Speicherkonto erstellt und die ZRS ausgewählt haben, ist die Wahl eines anderen Replikationstyps nicht mehr möglich.
 
 - **Georedundanter Speicher (GRS)**. Nach der Erstellung Ihres Speicherkontos ist geografisch redundanter Speicher standardmäßig aktiviert. GRS bewahrt sechs Kopien Ihrer Daten auf. Mit GRS werden Ihre Daten dreimal innerhalb der primären Region und dreimal in einer sekundären Region hunderte von Kilometern von der primären Region entfernt repliziert, wodurch höchste Stabilität erreicht wird. Im Falle eines Ausfalls in der primären Region führt Azure Storage ein Failover auf die sekundäre Region aus. Durch GRS wird sichergestellt, dass Ihre Daten in zwei separaten Regionen stabil sind.
 
 
 - **Georedundanter Speicher mit Lesezugriff (RA-GRS)** Georedundanter Speicher mit Lesezugriff repliziert Ihre Daten an einem sekundären geografischen Standort und stellt Lesezugriff auf die Daten am sekundären Standort bereit. Mithilfe von georedundantem Speicher mit Lesezugriff können Sie entweder vom primären oder vom sekundären Speicherort aus auf Ihre Daten zugreifen, falls einer der Speicherorte nicht verfügbar ist.
 
-	> [AZURE.IMPORTANT]Sie können ändern, wie Ihre Daten nach Erstellen des Speicherkontos repliziert werden, aber beachten Sie, dass zusätzliche Kosten für eine einmalige Datenübertragung anfallen können, wenn Sie von LRS zu GRS oder RA-GRS wechseln. Wenn Sie beim Erstellen des Kontos GRS auswählen, können Sie anschließend nicht zu einem anderen Typ von Replikation wechseln.
+	> [AZURE.IMPORTANT]Die Art der Datenreplikation kann nach der Speicherkontoerstellung geändert werden, sofern bei der Kontoerstellung nicht die ZRS-Option angegeben wurde. Beachten Sie jedoch, dass unter Umständen zusätzlich einmalige Datenübertragungskosten anfallen, wenn Sie von LRS zu GRS oder RA-GRS wechseln.
  
 Weitere Details zu den Speicherreplikationsoptionen finden Sie unter [Azure-Speicherreplikation](../articles/storage/storage-redundancy.md).
 
@@ -24,4 +26,4 @@ Preisinformationen für die Speicherkontoreplikation finden Sie unter [Preise f�
 
 Architekturdetails zur Beständigkeit von Azure Storage finden Sie im [SOSP-Dokument zu Azure Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

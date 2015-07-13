@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen von Datenstichproben aus SQL Server in Azure | Azure" 
+	pageTitle="Erstellen von Datenstichproben aus SQL Server in Azure | Microsoft Azure" 
 	description="Erstellen von Datenstichproben aus SQL Server in Azure" 
 	services="machine-learning" 
 	documentationCenter="" 
@@ -13,20 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/18/2015" 
-	ms.author="fashah,garye" /> 
+	ms.date="05/29/2015" 
+	ms.author="fashah;garye;bradsev" />
 
 #<a name="heading"></a>Erstellen von Datenstichproben aus SQL Server in Azure
 
-In diesem Dokument wird das Erstellen von Datenstichproben aus SQL Server in Azure anhand der folgenden Methoden beschrieben:
+Dieses Dokument beschreibt die Erstellung von Stichproben für SQL Server-Daten in Azure unter Verwendung von SQL und der Programmiersprache Python.
 
-1. [Mit SQL](#sql)
-2. [Mit der Programmiersprache Python](#python) 
+>[AZURE.NOTE]Beim SQL-Beispielcode in diesem Dokument wird davon ausgegangen, dass die Daten auf einem SQL Server in Azure gespeichert sind. Wenn dies nicht der Fall ist, finden Sie im Thema [Verschieben von Daten nach SQL Server in Azure](machine-learning-data-science-move-sql-server-virtual-machine.md) im [Leitfaden: Erweiterte Datenverarbeitung in Azure](machine-learning-data-science-advanced-data-processing.md) Anweisungen zum Verschieben von Daten auf einen SQL Server in Azure .
 
-**Hinweis**
->Beim SQL-Beispielcode in diesem Dokument wird davon ausgegangen, dass die Daten auf einem SQL Server in Azure gespeichert sind. Wenn dies nicht der Fall ist, finden Sie im Cloud Data Science-Ablauf Anweisungen zum Verschieben der Daten auf einen SQL-Server in Azure.
-
-###<a name="SQL"></a>Mit SQL
+##<a name="SQL"></a>Mit SQL
 
 In diesem Abschnitt werden verschiedene Methoden beschrieben, um mit SQL einfache Stichproben der Daten in der Datenbank zu extrahieren. Wählen Sie eine Methode, die für Ihre Datengröße und -verteilung geeignet ist.
 
@@ -37,7 +33,7 @@ Die beiden Beispiele unten zeigen, wie Sie mit "newid" in SQL Server eine Stichp
 	    select  * from <table_name> where <primary_key> in 
     	(select top 10 percent <primary_key> from <table_name> order by newid())
 
-2. Beispiel mit höherer Randomisierung 
+2. Beispiel mit höherer Randomisierung
 
 	    SELECT * FROM <table_name>
     	WHERE 0.1 >= CAST(CHECKSUM(NEWID(), <primary_key>) & 0x7fffffff AS float)/ CAST (0x7fffffff AS int)
@@ -52,32 +48,32 @@ Sie können auch mit TABLESAMPLE eine Stichprobe erstellen, wie unten veranschau
 > Sie können Funktionen aus diesen Stichprobendaten durchsuchen und generieren, indem Sie sie in einer neuen Tabelle speichern.
 
 
-####<a name="sql-aml"></a>Herstellen einer Verbindung mit Azure Machine Learning
+###<a name="sql-aml"></a>Herstellen einer Verbindung mit Azure Machine Learning
 
 Sie können die Beispielabfragen oben direkt im Reader-Modul von Azure ML verwenden, um Stichproben aus den Daten dynamisch zu erstellen und in einem Azure ML-Experiment zu verwenden. Dies ist ein Screenshot der Verwendung des Reader-Moduls zum Lesen der erfassten Daten:
    
 ![reader sql][1]
 
-###<a name="python"></a>Mit der Programmiersprache Python 
+##<a name="python"></a>Mit der Programmiersprache Python 
 
-In diesem Abschnitt wird veranschaulicht, wie die pyodbc-Bibliothek in Python für das Herstellen einer Verbindung mit einer SQL Server-Datenbank verwendet wird. Die Datenbank-Verbindungszeichenfolge lautet wie folgt: (Ersetzen Sie "servername", "dbname", "username" und "password" gemäß Ihrer Konfiguration.):
+In diesem Abschnitt wird veranschaulicht, wie die pyodbc-Bibliothek in Python für das Herstellen einer Verbindung mit einer SQL Server-Datenbank verwendet wird. Die Datenbankverbindungszeichenfolge lautet wie folgt (ersetzen Sie "servername", "dbname", "username" und "password" durch die entsprechenden Werte Ihrer Konfiguration):
 
 	#Set up the SQL Azure connection
 	import pyodbc	
 	conn = pyodbc.connect('DRIVER={SQL Server};SERVER=<servername>;DATABASE=<dbname>;UID=<username>;PWD=<password>')
 
-Die [Pandas](http://pandas.pydata.org/)-Bibliothek in Python bietet eine Vielzahl an Datenstrukturen und Datenanalysetools für die Datenbearbeitung durch Python-Programmierung. Der folgende Code liest eine Datenstichprobe von 0,1 % aus einer Tabelle in einer Azure SQL-Datenbank in ein Pandas-DataFrame:
+Die [Pandas](http://pandas.pydata.org/)-Bibliothek in Python bietet eine Vielzahl an Datenstrukturen und Datenanalysetools für die Datenbearbeitung durch Python-Programmierung. Der folgende Code liest eine Datenstichprobe von 0,1 % aus einer Tabelle in einer Azure SQL-Datenbank in ein Pandas-DataFrame:
 
 	import pandas as pd
 
 	# Query database and load the returned results in pandas data frame
 	data_frame = pd.read_sql('''select column1, cloumn2... from <table_name> tablesample (0.1 percent)''', conn)
 
-Sie können jetzt mit den erfassten Daten im Pandas-DataFrame arbeiten. 
+Sie können jetzt mit den erfassten Daten im Pandas-DataFrame arbeiten.
 
-####<a name="python-aml"></a>Herstellen einer Verbindung mit Azure Machine Learning
+###<a name="python-aml"></a>Herstellen einer Verbindung mit Azure Machine Learning
 
-Mit dem folgenden Beispielcode können Sie die Stichprobendaten in einer Datei speichern und in ein Azure-Blob hochladen. Die Daten im Blob können mit dem *Reader*-Modul direkt in ein Azure ML-Experiment gelesen werden. Die Schritte lauten wie folgt: 
+Mit dem folgenden Beispielcode können Sie die Stichprobendaten in einer Datei speichern und in ein Azure-Blob hochladen. Die Daten im Blob können mit dem *Reader-Modul* direkt in ein Azure ML-Experiment gelesen werden. Die Schritte lauten wie folgt:
 
 1. Schreiben Sie den Pandas-DataFrame in eine lokale Datei:
 
@@ -105,16 +101,17 @@ Mit dem folgenden Beispielcode können Sie die Stichprobendaten in einer Datei s
 	    except:	        
 		    print ("Something went wrong with uploading blob:"+BLOBNAME)
 
-3. Lesen Sie die Daten wie in der folgenden Abbildung dargestellt mit dem *Reader*-Modul in Azure ML aus dem Azure-Blob aus:
+3. Lesen Sie die Daten wie in der folgenden Abbildung dargestellt mit dem Azure ML-*Reader*-Modul aus dem Azure-Blob aus:
  
-![reader blob][2]
+![Reader-Blob][2]
 
-### Beispiel für Azure Data Science in Aktion
+## Advanced Analytics Process and Technology (ADAPT) in Aktion – Beispiel
 
-Ein umfassendes Beispiel für den Azure Data Science-Ablauf anhand eines öffentlichen DataSets finden Sie unter [Azure Data Science in Aktion](machine-learning-data-science-process-sql-walkthrough.md).
+Eine umfassende exemplarische Vorgehensweise zur Verwendung der Advanced Analytics Process and Technology (ADAPT) mit einem öffentlichen DataSet finden Sie unter [Azure Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server](machine-learning-data-science-process-sql-walkthrough.md).
 
 [1]: ./media/machine-learning-data-science-sample-sql-server-virtual-machine/reader_database.png
 [2]: ./media/machine-learning-data-science-sample-sql-server-virtual-machine/reader_blob.png
 
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO1-->

@@ -137,4 +137,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Management Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

@@ -40,7 +40,7 @@ In diesem Fall wird der Benutzer zur Eingabe eines Kennworts aufgefordert. Nachd
 Sie können sudo auch ohne Kennwort aktivieren, indem Sie die Datei `/etc/sudoers.d/waagent` bearbeiten, zum Beispiel:
 
 	#/etc/sudoers.d/waagent
-	azureuser (ALL) = (ALL) NOPASSWD: ALL
+	azureuser ALL = (ALL) NOPASSWD: ALL
 
 Diese Änderung ermöglicht das Ausführen von sudo ohne Kennwort durch den Benutzer "azureuser".
 
@@ -52,4 +52,6 @@ Melden Sie sich beim virtuellen Linux-Computer mit dem SSH-Schlüssel an, und f�
 
 In diesem Fall wird der Benutzer **nicht** zur Eingabe eines Kennworts aufgefordert. Nachdem Sie `<enter>` gedrückt haben, wird der Befehl von `sudo` mit `root`-Berechtigungen ausgeführt.
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=July15_HO1-->

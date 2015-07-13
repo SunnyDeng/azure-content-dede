@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
 	ms.date="03/16/2015" 
@@ -29,7 +29,7 @@ Dieses Lernprogramm führt Sie durch die folgenden Schritte:
 
 Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst aus einem der Lernprogramme [Erste Schritte mit Mobile Services] bzw. [Erste Schritte mit Daten] erstellt haben.
 
-## <a name="sign-up"></a>Anmelden bei New Relic über den Azure Store
+##<a name="sign-up"></a>Anmelden bei New Relic über den Azure Store
 
 Der erste Schritt besteht im Kauf des New Relic-Diensts. Diese Lernprogramm demonstriert den Kauf dieses Diensts im Azure Store. Mobile Services unterstützt New Relic-Abonnements, die außerhalb des Azure Store erworben wurden.
 
@@ -53,7 +53,7 @@ Der erste Schritt besteht im Kauf des New Relic-Diensts. Diese Lernprogramm demo
 
 11. Nachdem Sie auf **Kaufen** geklickt haben, wird mit der Erstellung Ihres neuen New Relic-Kontos begonnen. Sie können den Status im Azure-Verwaltungsportal überwachen.
 
-## <a name="install-module"></a>Installieren des New Relic-Moduls.
+##<a name="install-module"></a>Installieren des New Relic-Moduls.
 
 Nachdem Sie sich für den New Relic-Dienst angemeldet haben, müssen Sie das New Relic-Modul "Node.js" in Ihrem mobilen Dienst installieren. Um dieses Modul hochladen zu können, muss die Quellcodeverwaltung für Ihren mobilen Dienst aktiviert sein.
 
@@ -75,7 +75,7 @@ Nachdem Sie sich für den New Relic-Dienst angemeldet haben, müssen Sie das New
 
 Danach aktivieren Sie die New Relic-Überwachung Ihres mobilen Diensts im [Verwaltungsportal][Azure Management Portal].
 
-## <a name="enable-service"></a>Aktivieren der New Relic-Entwickleranalyse für den mobilen Dienst
+##<a name="enable-service"></a>Aktivieren der New Relic-Entwickleranalyse für den mobilen Dienst
 
 1. Wählen Sie im [Verwaltungsportal][Azure Management Portal] Ihren mobilen Dienst aus. Klicken Sie dann auf die Registerkarte **Konfigurieren**.
 
@@ -101,7 +101,7 @@ Danach aktivieren Sie die New Relic-Überwachung Ihres mobilen Diensts im [Verwa
 
 	![][3]
 
-## <a name="monitor"></a>Überwachen des mobilen Diensts im New Relic-Dashboard.
+##<a name="monitor"></a>Überwachen des mobilen Diensts im New Relic-Dashboard.
 
 1. Führen Sie die Client-App aus, um Lese-, Erstellen-, Aktualisieren- und Löschanforderungen an Ihren mobilen Dienst zu erzeugen.
 
@@ -117,7 +117,7 @@ Danach aktivieren Sie die New Relic-Überwachung Ihres mobilen Diensts im [Verwa
 
 	![][5]
 
-## <a name="next-steps"> </a>Nächste Schritte
+##<a name="next-steps"> </a>Nächste Schritte
 
 + Informationen zum Optimieren der Leistung der mobilen **iOS**- bzw. **Android**-App finden Sie unter [New Relic Mobile].
 + Preisinformationen finden Sie auf der [New Relic-Seite im Azure Store].
@@ -152,5 +152,6 @@ Danach aktivieren Sie die New Relic-Überwachung Ihres mobilen Diensts im [Verwa
 [Erste Schritte mit Daten]: /develop/mobile/tutorials/get-started-with-data-dotnet
 [New Relic Mobile]: http://newrelic.com/mobile-monitoring
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

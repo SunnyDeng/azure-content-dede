@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwendung der Engagement-API auf Windows Phone" 
-	description="Verwendung der Engagement-API auf Windows Phone"
+	description="Verwendung der Engagement-API auf Windows Phone"	
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="piyushjo" 
@@ -11,7 +11,7 @@
 	ms.service="mobile-engagement" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="C#" 
+	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/07/2015" 
 	ms.author="piyushjo" />
@@ -34,9 +34,9 @@ In den folgenden Abschnitten werden die Mobile Engagement-Konzepte für die Wind
 
 ### `Session` und `Activity`
 
-Eine *Aktivität* ist normalerweise  einer Seite der Anwendung zugeordnet, d. h. die *Aktivität* beginnt, wenn die Seite angezeigt wird, und wird beendet, wenn die Seite geschlossen wird: Dies ist der Fall, wenn das Engagement-SDK unter Verwendung der `EngagementPage`-Klasse integriert worden ist.
+Eine *Aktivität* ist normalerweise einer Seite der Anwendung zugeordnet, d. h. die *Aktivität* beginnt, wenn die Seite angezeigt wird, und wird beendet, wenn die Seite geschlossen wird: Dies ist der Fall, wenn das Engagement-SDK unter Verwendung der `EngagementPage`-Klasse integriert worden ist.
 
- *Aktivitäten* können aber auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann eine bestimmte Seite in mehrere Teile unterteilt werden, um weitere Informationen über die Verwendung dieser Seite zu erhalten (z. B. um zu erfahren, wie oft und wie lange Dialoge innerhalb dieser Seite verwendet werden).
+*Aktivitäten* können aber auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann eine bestimmte Seite in mehrere Teile unterteilt werden, um weitere Informationen über die Verwendung dieser Seite zu erhalten (z. B. um zu erfahren, wie oft und wie lange Dialoge innerhalb dieser Seite verwendet werden).
 
 ##Berichterstellung für Aktivitäten
 
@@ -377,5 +377,6 @@ Anwendungsinformationen sind beschränkt auf **1024** Zeichen pro Aufruf.
 Im vorherigen Beispiel enthält das an den Server gesendete JSON 44 Zeichen:
 
 			{"subscription":"2013-12-07","premium":"true"}
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

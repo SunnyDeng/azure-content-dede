@@ -48,4 +48,4 @@ Nachdem Sie einen virtuellen Computer erstellt haben, empfiehlt es sich, einen D
 
 [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](../articles/virtual-machines/storage-windows-attach-disk.md)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

@@ -1,11 +1,11 @@
-﻿<properties 
+<properties 
 	pageTitle="Python Konto erstellen" 
 	description="Erstellen eines Kontos in Azure" 
 	documentationCenter="python" 
 	services="" 
 	authors="huguesv" 
 	manager="wpickett" 
-	editor=""/>
+	editor="jimbe"/>
 
 <tags 
 	ms.service="multiple" 
@@ -13,9 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="02/05/2015" 
+    ms.date="06/03/2015"
 	ms.author="huvalo"/>
 
-[WACOM.INCLUDE [create-an-azure-account](../includes/create-an-azure-account.md)]
+# Erstellen eines Azure-Kontos und Aktivieren von Vorschaufeatures
 
-<!--HONumber=46--> 
+[AZURE.INCLUDE [create-an-azure-account](../includes/create-an-azure-account.md)]
+
+<!---HONumber=July15_HO1-->

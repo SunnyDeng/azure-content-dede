@@ -1,3 +1,3 @@
 DataSet vom KDD Cup 1999 Knowledge Discovery and Data Mining Tools Competition (<a href="http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html">kddcup99.html</a>).<p> </p>Der Datensatz wurde heruntergeladen und im Azure-Blob-Speicher abgelegt (<a href="https://azuremlsampleexperiments.blob.core.windows.net/datasets/network_intrusion_detection.csv">network_intrusion_detection.csv</a>) und enthält Schulungs- und Testdatensätze. Der Schulungsdatensatz enthält ca. 126.000 Zeilen und 43 Spalten, inklusive Überschriften; 3 Spalten sind Teil der Überschrifteninformationen, und die anderen 40 Spalten bestehen aus numerischen und Zeichenfolgen-/Kategoriefeatures, sind verfügbar, um das Modell anzulernen. Die Testdaten enthalten ca. 22.500 Testbeispiele, die die gleichen 43 Spalten wie die Schulungsdaten enthalten.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

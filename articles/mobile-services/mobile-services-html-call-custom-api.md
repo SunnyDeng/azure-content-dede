@@ -3,18 +3,17 @@
 	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer HTML-App aufrufen, die Azure Mobile Services verwendet." 
 	services="mobile-services" 
 	documentationCenter="" 
-	authors="ggailey777" 
-	writer="jparrel" 
+	authors="bureado"  
 	manager="dwrede" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="mobile-html" 
 	ms.devlang="javascript" 
 	ms.topic="article" 
-	ms.date="02/26/2015" 
+	ms.date="06/04/2015" 
 	ms.author="glenga"/>
 
 # Aufrufen einer benutzerdefinierten API aus einer HTML-Anwendung
@@ -25,19 +24,13 @@ In diesem Thema wird beschrieben, wie Sie eine benutzerdefinierte API aus einer 
 
 Über die im Rahmen dieses Themas erstellte benutzerdefinierte API erhalten Sie die Möglichkeit, eine einzelne POST-Anforderung zu senden, die das Erledigt-Kennzeichen für sämtliche todo-Einträge in der Tabelle auf `true` festlegt. Ohne diese benutzerdefinierte API müsste der Client einzelne Anforderungen senden, um das Kennzeichen für jeden einzelnen todo-Eintrag in der Tabelle zu aktualisieren.
 
-Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder des Lernprogramms [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] erstellen. Dafür führen Sie die folgenden Schritte aus:
-
-1. [Definieren der benutzerdefinierten API]
-2. [Aktualisieren der App zum Aufruf der benutzerdefinierten API]
-3. [Testen der App] 
-
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] abschließen.
 
 ## <a name="define-custom-api"></a>Definieren der benutzerdefinierten API
 
 [AZURE.INCLUDE [mobile-services-create-custom-api](../../includes/mobile-services-create-custom-api.md)]
 
-<h2><a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API</h2>
+##<a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
 1. Öffnen Sie die Datei index.html in Ihrem Text-Editor, suchen Sie das **button**-Element mit dem Namen `buttonRefresh`, und fügen Sie das folgende neue Element direkt im Anschluss ein: 
 
@@ -79,19 +72,24 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 ## Nächste Schritte
 
-Sie haben eine benutzerdefinierte API erstellt und diese über Ihre HTML-App aufgerufen und können nun weitere Einzelheiten über die folgenden Mobile Services-Themen erfahren:
+In diesem Thema wurde gezeigt, wie Sie mithilfe der **invokeApi**-Funktion eine relativ einfache benutzerdefinierte API Ihrer HTML/JavaScript-App aufrufen. Weitere Informationen zum Verwenden der **invokeApi**-Funktion finden Sie im Beitrag [Custom API in Azure Mobile Services](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx) (in englischer Sprache).
+
+Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 
 * [Mobile Services: Serverskriptreferenz] <br/>Erfahren Sie mehr über das Erstellen von benutzerdefinierten APIs.
 
+* [Speichern von Serverskripts in der Quellcodeverwaltung] <br/> Erfahren Sie, wie Sie die Quellcodeverwaltungsfunktion nutzen können, um benutzerdefinierten API-Skript-Code einfacher und sicherer zu entwickeln und zu veröffentlichen.
+
 <!-- Anchors. -->
-[Definieren der benutzerdefinierten API]: #define-custom-api
-[Aktualisieren der App zum Aufruf der benutzerdefinierten API]: #update-app
-[Testen der App]: #test-app
+[Define the custom API]: #define-custom-api
+[Update the app to call the custom API]: #update-app
+[Test the app]: #test-app
 [Next Steps]: #next-steps
 
 <!-- URLs. -->
 [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293
-[My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
 [Erste Schritte mit Mobile Services]: mobile-services-html-get-started.md
-[Erste Schritte mit Daten]: mobile-services-html-get-started-data.md
-<!--HONumber=54--> 
+[Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-html-get-started-data.md
+[Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
+
+<!---HONumber=July15_HO1-->

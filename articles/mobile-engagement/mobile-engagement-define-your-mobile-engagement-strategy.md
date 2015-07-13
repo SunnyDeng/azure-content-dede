@@ -1,22 +1,22 @@
-<properties 
-	pageTitle="Definieren der Mobile Engagement-Strategie" 
-	description="Erfahren Sie mehr über die Integration und Optimierung von Mobile Engagement mit Analysefunktionen und Pushbenachrichtigungen." 
-	services="mobile-engagement" 
-	documentationCenter="Mobile" 
-	authors="kpiteira" 
-	manager="dwrede" 
+<properties
+	pageTitle="Definieren der Mobile Engagement-Strategie"
+	description="Erfahren Sie mehr über die Integration und Optimierung von Mobile Engagement mit Analysefunktionen und Pushbenachrichtigungen."
+	services="mobile-engagement"
+	documentationCenter="Mobile"
+	authors="kpiteira"
+	manager="dwrede"
 	editor="" />
 
-<tags 
-	ms.service="mobile-engagement" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
-	ms.devlang="" 
-	ms.topic="article" 
-	ms.date="02/10/2015" 
+<tags
+	ms.service="mobile-engagement"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="02/10/2015"
 	ms.author="kapiteir" />
 
-# Definieren der Mobile Engagement-Strategie
+#Definieren der Mobile Engagement-Strategie
 
 Sie haben Ihre Anwendung aus einem bestimmten Grund geschrieben: damit sie von Ihren Benutzern genutzt wird!
 
@@ -26,7 +26,7 @@ Unser Ansatz zur Optimierung der Beibehaltung und Nutzung basiert auf der Beteil
 
 Dazu müssen Sie jedoch **Ihre Benutzer verstehen**, dann Gruppen auf Basis ihres Verhaltens oder ihrer Merkmale (diese werden als Segmente bezeichnet) erstellen und anschließend relevante Kommunikationsmittel für die einzelnen Segmente erzeugen.
 
-## Mobile Engagement dient Ihren Zielen
+##Mobile Engagement dient Ihren Zielen
 
 *Wir haben uns über Beibehaltung, Nutzung unterhalten. Aber wozu?*
 
@@ -47,14 +47,14 @@ Nach der Definition von Anwendungsfällen und Segmenten erhalten Sie eine Anleit
 
 Nach der Veröffentlichung von Anwendungen können Sie Ihre Analysen als Vermarkter auf Basis der Integration in Echtzeit anzeigen, Ihre Zielgruppe segmentieren und dann mit dem Senden intelligent ausgerichteter Pushbenachrichtigungen beginnen, um sich mit Endbenutzern innerhalb und außerhalb der App zu beschäftigen.
 
-### Erste Anwendungsfälle
-1. Begrüßungsstrategie: Erstellen Sie verschiedene Pushbenachrichtigungskampagnen, die auf dem Verhalten der Endbenutzer beim Anwendungsstart basieren, um nach der ersten Sitzung am „D+2/5/10/15“ erneut Kontakt aufzunehmen und die Beibehaltung für die erste Ausführung zu erhöhen.	
-2. Preisen Sie neue Inhalte an (Feature, Artikel/Video, Produkt usw.), die auf dem Verhalten der Endbenutzer basieren, damit die Informationen nur an Benutzer gesendet werden, bei denen die Wahrscheinlichkeit der Inanspruchnahme höher ist.	
-3. Bewerten Sie die Anwendung: Richten Sie diesen Vorgang auf weniger als 1 % der Benutzerbasis aus, die Ihre App im Store wahrscheinlich mit fünf Sternen bewerten wird.	
+###Erste Anwendungsfälle
+1. Begrüßungsstrategie: Erstellen Sie verschiedene Pushbenachrichtigungskampagnen, die auf dem Verhalten der Endbenutzer beim Anwendungsstart basieren, um nach der ersten Sitzung am „D+2/5/10/15“ erneut Kontakt aufzunehmen und die Beibehaltung für die erste Ausführung zu erhöhen.
+2. Preisen Sie neue Inhalte an (Feature, Artikel/Video, Produkt usw.), die auf dem Verhalten der Endbenutzer basieren, damit die Informationen nur an Benutzer gesendet werden, bei denen die Wahrscheinlichkeit der Inanspruchnahme höher ist.
+3. Bewerten Sie die Anwendung: Richten Sie diesen Vorgang auf weniger als 1 % der Benutzerbasis aus, die Ihre App im Store wahrscheinlich mit fünf Sternen bewerten wird.
 4. Ankurbeln der Abonnements: Bewerben Sie nützliche Inhalte bei Endbenutzern, denen diese bisher noch nicht bekannt sind, um die Anzahl der Abonnements zu steigern.
 5. Lernprogramm: Vermeiden Sie obligatorische Lernprogramme. Erstellen Sie doch einfach großartige In-App-Lernprogramme, und lösen Sie diese durch In-App-Nachrichten aus, wenn ein Benutzer z. B. ein Feature nicht verwendet oder er Probleme bei der Verwendung hat.
 
-## Warum benötigen Sie Analysen für die Erfassung?
+##Warum benötigen Sie Analysen für die Erfassung?
 
 Wie Sie an diesem Punkt möglicherweise erkennen, ist die reine Übertragung einer Pushbenachrichtigung nicht ausreichend. Das Hauptkonzept von Mobile Engagement besteht darin, Vermarkter und Entwickler dabei zu unterstützen, mit den richtigen Endbenutzern zum richtigen Zeitpunkt und am richtigen Ort Kontakt aufzunehmen. Mit Kenntnis dieser drei Hauptkonzepte ist es entscheidend, die Analysen von Ihrer Anwendung zu erfassen und sie dann zum Segmentieren Ihrer Zielgruppe zu verwenden. Diese Vorgehensweise ist noch wirksamer, wenn Verhaltenssegmente die Daten aus Ihrer anderen Datenbank, Ihrem CRM oder aus einer kanalübergreifenden Maßnahme ergänzen. Mobile Engagement ermöglicht das Abrufen von Daten aus beliebigen Quellen und verwendet dann diese Daten, um sie auf die richtige Zielgruppe auszurichten.
 
@@ -62,36 +62,36 @@ Damit Sie bei der Kontaktaufnahme zu Ihrer Zielgruppe möglichst kontextbezogen 
 
 >[AZURE.NOTE]Denken Sie an Folgendes: Zu viele Daten sind der Daten Tod!
 
-### Anwendungsfälle und bewährte Methoden
+###Anwendungsfälle und bewährte Methoden
 
 Nachfolgend werden einige wichtige Anwendungsfälle kurz beschrieben, die Ihnen bei Ihren ersten Schritten helfen können.
 
-#### Medien
+####Medien
 
 Erfassen Sie die Art von Inhalten, die vom Endbenutzer konsumiert wird, und segmentieren Sie dann die Zielgruppe auf Grundlage dieses Verhaltens, um bestimmte Arten von Inhalten nur auf eine Zielgruppe auszurichten, bei der die Wahrscheinlichkeit höher ist, dass sie diese Inhalte auch konsumiert. Dadurch wird vermieden, dass eine große Benutzerbasis mit unerwünschten Informationen belästigt wird. Zudem wird eine verbesserte Beibehaltung gewährleistet.
 
-#### M-Commerce
+####M-Commerce
 
 Erfassen Sie die innerhalb der Anwendung und der Zielgruppe am häufigsten besuchten Produktkategorien, um einen Rabatt oder ein neues Produkt in dieser Kategorie zu bewerben, bei der die Wahrscheinlichkeit für den Endbenutzer höher ist, dass dieser einen Kauf tätigt. Streben Sie höhere Umsätze an. Ziel ist es auch hier wieder, den Benutzer nicht mit unerwünschten Informationen zu belästigen!
 
-#### Spiele
+####Spiele
 
 Erfassen Sie die Spielstufe eines Endbenutzers und die in einem bestimmten Zeitraum mit einem Spiel verbrachte Zeit, um die Zielgruppe zu ermitteln, die möglicherweise stockt und durch ein Bonusangebot wahrscheinlich eher zum Wechsel auf das nächste Level angeregt werden kann.
 
 Kommunizieren Sie bestimmte Ereignisse mit einem Anreiz für die Benutzer, die einige Zeit nicht gespielt haben, um zu versuchen, diese zurückzugewinnen.
 
-#### Einzelhandel
+####Einzelhandel
 
 Ermitteln Sie, welche Produkte oder Marken von einer Zielgruppe auf Basis von Vorlieben oder dem Verhalten eher konsumiert werden, und führen Sie die Zielgruppe zum Store, um die Umsätze zu erhöhen.
 
-#### Konten
+####Konten
 
 Ermitteln Sie, ob Endbenutzer beim ersten Start der Anwendung ein Konto erstellt haben. Streben Sie die Bereitstellung einer Begrüßungsstrategie mit gezielten Pushbenachrichtigungen an, und erhöhen Sie die Anzahl von Kontoabonnements.
 
-### Vorgehensweise zum Erstellen eines geeigneten Markierungsplans?
+###Vorgehensweise zum Erstellen eines geeigneten Markierungsplans?
 
 Ein Markierungsplan muss wie eine Beschreibung des Benutzerpfades oder eine Art von Workflow der Anwendung sein und alle erforderlichen Anzeichen (Daten) aufweisen, die erfasst werden müssen, damit ausreichend Analysen verfügbar sind, um das Benutzerverhalten zu verstehen und die Benutzerbasis entsprechend zu segmentieren. Dies ist kein technischer Prozess. Daher sind die Vermarkter in der Lage, die auf Basis Ihrer Mobile Engagement-Strategie zu erfassenden Daten anzugeben.
- 
+
 Zumindest sollten alle Bildschirme (in Mobile Engagement auch als `Activities` bezeichnet) einer Anwendung gekennzeichnet werden. Dies ermöglicht es Ihnen, den Benutzerpfad zu verstehen.
 
 Eine Aktivität kann `Events` einbetten, die Aktionsinformationen sammeln (z. B. das Aktivieren einer Schaltfläche). Dies ermöglicht die Erfassung von Interaktionen innerhalb der Anwendung. Daher wissen die Vermarkter, welche Bildschirme die Benutzer besuchen und was sie dabei tun.
@@ -104,7 +104,7 @@ Zu sämtlichen Datentypen können Parameter hinzugefügt werden (`extra-informat
 
 `App-information` sind Daten, die in Echtzeit den Status der Anwendung oder des Benutzers vermitteln. Diese sind auch für die Kategorisierung einer Zielgruppenbasis und die schnelle Ausrichtung auf diese Basis nützlich. Es kann sich dabei z. B. um den Status „true“ oder „false“ für die Frage handeln, ob sich der Benutzer anmeldet bzw. um das Ablaufdatum seines Abonnements.
 
-#### Beispiele für Kennzeichen
+####Beispiele für Kennzeichen
 
 *Anwendungsfall: Segmentieren Sie das Zielverhalten, um den richtigen Endbenutzer mit den richtigen Inhalten der Pushbenachrichtigung zu erfassen*
 
@@ -113,9 +113,7 @@ Zu sämtlichen Datentypen können Parameter hinzugefügt werden (`extra-informat
 
 	![][1]
 
-*Anwendungsfall: Deklarative Daten* 
-1. Alarmmeldungen segmentieren: Erfassen Sie deklarative Daten, um die Zielgruppe auf Basis ihrer Präferenzen zu segmentieren. Es können Pushbenachrichtigungen zu einem bestimmten Thema gesendet werden, das für eine bestimmte Zielgruppe von großem Interesse ist. 
-2. Segmentieren Sie die Zielgruppe auf Basis des Anmeldestatus. Erfassen Sie entsprechende Daten, um zu erfahren, ob ein Benutzer verbunden ist oder er ein Konto erstellt hat. Helfen Sie bei der Ausrichtung auf Endbenutzer, die sich noch nicht angemeldet haben, und senden Sie eine Pushbenachrichtigung, um den Benutzer zur Konvertierung zu motivieren.![][2]
+*Anwendungsfall: Deklarative Daten* 1. Alarmmeldungen segmentieren: Erfassen Sie deklarative Daten, um die Zielgruppe auf Basis ihrer Präferenzen zu segmentieren. Es können Pushbenachrichtigungen zu einem bestimmten Thema gesendet werden, das für eine bestimmte Zielgruppe von großem Interesse ist. 2. Segmentieren Sie die Zielgruppe auf Basis des Anmeldestatus. Erfassen Sie entsprechende Daten, um zu erfahren, ob ein Benutzer verbunden ist oder er ein Konto erstellt hat. Helfen Sie bei der Ausrichtung auf Endbenutzer, die sich noch nicht angemeldet haben, und senden Sie eine Pushbenachrichtigung, um den Benutzer zur Konvertierung zu motivieren.![][2]
 
 ### Nächste Schritte
 - Weitere Informationen zu den grundlegenden Konzepten von Mobile Engagement finden Sie unter [Mobile Engagement-Konzepte].
@@ -128,5 +126,6 @@ Zu sämtlichen Datentypen können Parameter hinzugefügt werden (`extra-informat
 <!-- URLs. -->
 [Mobile Engagement-Konzepte]: http://azure.microsoft.com/documentation/articles/mobile-engagement-concepts/
 [Lernprogramme]: http://azure.microsoft.com/documentation/articles/mobile-engagement-ios-get-started/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Windows Phone Silverlight SDK – Versionshinweise" 
-	description="Azure Mobile Engagement – Versionshinweise für das Windows Phone Silverlight SDK"
+	description="Azure Mobile Engagement – Versionshinweise für das Windows Phone Silverlight SDK" 					
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="piyushjo" 
@@ -11,7 +11,7 @@
 	ms.service="mobile-engagement" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="C#" 
+	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/07/2015" 
 	ms.author="piyushjo" />
@@ -29,5 +29,6 @@
 -   Erste Version von Azure Mobile Engagement.
 -   appId/sdkKey-Konfiguration wird durch die Konfiguration einer Verbindungszeichenfolge ersetzt.
 -   Verbesserungen der Sicherheit
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

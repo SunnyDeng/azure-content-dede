@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwalten von Medienobjekten in Media Services - Azure" 
+	pageTitle="Verwalten von Medienobjekten in Media Services" 
 	description="Erfahren Sie, wie Sie Inhalte in Media Services verwalten können. Sie können außerdem Jobs, Aufgaben, Zugriffsrichtlinien, Locators usw. verwalten. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,18 +13,18 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/15/2015" 
+	ms.date="05/24/2015" 
 	ms.author="juliako"/>
 
 
 #Gewusst wie: Verwalten von Medienobjekten im Speicher
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on- Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).  
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
 
 
 Nachdem Sie Medienobjekte erstellt haben, können Sie auf dem Server auf Medienobjekte zugreifen und sie dort verwalten. Sie können auch andere Objekte auf dem Server verwalten, die Teil von Media Services sind, darunter Aufträge, Aufgaben, Zugriffsrichtlinien, Locators usw.
 
-Das folgende Beispiel zeigt das Abfragen eines Medienobjekts nach assetid. 
+Das folgende Beispiel zeigt das Abfragen eines Medienobjekts nach assetid.
 
 	static IAsset GetAsset(string assetId)
 	{
@@ -84,6 +84,6 @@ Der folgende Codeausschnitt löscht alle Medienobjekte aus dem Media Services-Ko
 	    asset.Delete();
 	}
 
+ 
 
-
-<!--HONumber=52--> 
+<!---HONumber=July15_HO1-->

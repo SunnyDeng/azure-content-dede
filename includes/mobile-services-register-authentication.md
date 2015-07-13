@@ -19,4 +19,4 @@ Nach der Konfiguration der Anwendung und des Mobile Service zur Unterstützung e
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

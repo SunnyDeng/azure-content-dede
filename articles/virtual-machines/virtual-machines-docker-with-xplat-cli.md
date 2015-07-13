@@ -87,7 +87,7 @@ War die Eingabe erfolgreich, sollte Ihnen in etwa das Folgende angezeigt werden,
 
 Um den virtuellen Docker-Computer, den Sie in Azure erstellt haben, zu testen, geben Sie Folgendes ein:
 
-`docker --tls -H tcp://<vm-name-you-used>.cloudapp.net:4243 info`
+`docker --tls -H tcp://<vm-name-you-used>.cloudapp.net:2376 info`
 
 *<vm-name-you-used>* ist der Name des virtuellen Computers, den Sie in Ihrem Aufruf von `azure vm docker create` verwendet haben. Es sollte etwas angezeigt werden, das in etwa dem Folgenden entspricht, welches angibt, dass Ihr virtueller Docker-Hostcomputer betriebsbereit ist, in Azure ausgeführt wird und auf Ihre Befehle wartet.
 
@@ -96,10 +96,10 @@ Um den virtuellen Docker-Computer, den Sie in Azure erstellt haben, zu testen, g
 ### Authentifizierung des virtuellen Docker-Hostcomputers
 Neben dem virtuellen Docker-Computer erstellt der Befehl `azure vm docker create` automatisch auch die nötigen Zertifikate, um Ihrem Docker-Clientcomputer über HTTPS die Verbindung mit dem Azure-Containerhost zu ermöglichen. Die Zertifikate werden auf dem Client- und dem Hostcomputer gespeichert. Bei den nachfolgenden Ausführungen werden die Zertifikate erneut verwendet und an den neuen Host freigegeben.
 
-Standardmäßig werden die Zertifikate unter `~/.docker` abgelegt, und Docker wird für die Ausführung auf Port **4243** konfiguriert. Wenn Sie einen anderen Port oder ein anderes Verzeichnis verwenden möchten, können Sie eine der folgenden Befehlszeilenoptionen `azure vm docker create` verwenden, damit der virtuelle Docker-Containerhost einen anderen Port oder andere Zertifikate verwendet, um eine Verbindung mit Clients herzustellen:
+Standardmäßig werden die Zertifikate unter `~/.docker` abgelegt, und Docker wird für die Ausführung an Port **2376** konfiguriert. Wenn Sie einen anderen Port oder ein anderes Verzeichnis verwenden möchten, können Sie eine der folgenden Befehlszeilenoptionen `azure vm docker create` verwenden, damit der virtuelle Docker-Containerhost einen anderen Port oder andere Zertifikate verwendet, um eine Verbindung mit Clients herzustellen:
 
 ```
--dp, --docker-port [port]              Port to use for docker [4243]
+-dp, --docker-port [port]              Port to use for docker [2376]
 -dc, --docker-cert-dir [dir]           Directory containing docker certs [.docker/]
 ```
 
@@ -139,4 +139,4 @@ Sie sind nun bereit, das [Docker-Benutzerhandbuch] und Ihren virtuellen Docker-C
 [Docker-Benutzerhandbuch]: https://docs.docker.com/userguide/
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

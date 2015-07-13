@@ -15,25 +15,23 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="02/03/2015" 
+	ms.date="06/01/2015" 
 	ms.author="ricksal"/>
 
 
-# Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
+# Hinzufügen von Pushbenachrichtigungen zur Mobile Services-Android-App
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
 ## Zusammenfassung
 
-In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pushbenachrichtigung per Google Cloud Messaging (GCM) an Ihre Android-App senden. In diesem Lernprogramm fügen Sie Pushbenachrichtigungen mithilfe von Azure-Benachrichtigungshubs zum Schnellstartprojekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
+In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pushbenachrichtigung per Google Cloud Messaging ("GCM") an Ihre Android-App senden. Sie fügen Pushbenachrichtigungen dem Schnellstart-Projekt hinzu, das eine Voraussetzung für dieses Lernprogramm ist. Pushbenachrichtigungen werden mithilfe des Azure Notification Hub aktiviert, der in Ihrem mobilen Dienst enthalten ist. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
 
 <!-- [AZURE.NOTE] If you would like to see the source code of the completed app, go <a href="https://github.com/RickSaling/mobile-services-samples/tree/androidStudio/GettingStartedWithPush/AndroidStudio" target="_blank">here</a>.
 -->
 
-> [AZURE.NOTE]Die Eclipse-Version dieses Lernprogramms finden Sie unter [Erste Schritte mit Pushbenachrichtigungen (Eclipse)].
 
-
-##Voraussetzungen
+## Voraussetzungen
 
 [AZURE.INCLUDE [mobile-services-android-prerequisites](../../includes/mobile-services-android-prerequisites.md)]
 
@@ -47,9 +45,7 @@ In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pu
 
 ##<a id="add-push"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
-###Prüfen der Version des Android-SDK
 
-[AZURE.INCLUDE [Prüfen des SDK](../../includes/mobile-services-verify-android-sdk-version.md)]
 
 Als Nächstes installieren Sie Google Play Services. Google Cloud Messaging verfügt über einige Mindestanforderungen an den API-Level für Entwicklung und Tests, denen die Eigenschaft **minSdkVersion** im Manifest entsprechen muss.
 
@@ -77,34 +73,44 @@ Sie können die App testen, indem Sie ein Android-Telefon direkt mit einem USB-K
 
 Wenn Sie diese App im Emulator ausführen, stellen Sie sicher, dass Sie ein Android Virtual Device (AVD) verwenden, das Google-APIs unterstützt.
 
-1. Starten Sie Eclipse neu, und klicken Sie dann im Paket-Explorer mit der rechten Maustaste auf das Projekt. Klicken Sie auf **Eigenschaften**, dann auf **Android**, überprüfen Sie **Google APIs**, und klicken Sie dann auf **OK**.
-
-	![](./media/mobile-services-javascript-backend-android-get-started-push/mobile-services-import-android-properties.png)
-
-  	Dies gibt das Projekt für die Google-APIs vor.
-
-2. Wählen Sie unter **Fenster** **Android Virtual Device Manager**, wählen Sie Ihr Gerät aus, und klicken Sie auf **Bearbeiten**.
+1. Wählen Sie am rechten Ende der Symbolleiste den Android Virtual Device Manager, wählen Sie Ihr Gerät aus, und klicken Sie auf das Symbol "Bearbeiten" auf der rechten Seite.
 
 	![](./media/mobile-services-javascript-backend-android-get-started-push/mobile-services-android-virtual-device-manager.png)
 
-3. Wählen Sie **Google APIs** in **Ziel** aus, und klicken Sie auf OK.
+2. Wählen Sie auf der Gerätebeschreibungszeile **Ändern**, wählen Sie **Google-APIs**, und klicken Sie auf "OK".
 
-   ![](./media/mobile-services-javascript-backend-android-get-started-push/mobile-services-android-virtual-device-manager-edit.png)
+   	![](./media/mobile-services-javascript-backend-android-get-started-push/mobile-services-android-virtual-device-manager-edit.png)
 
 	Dies gibt das AVD zur Verwendung von Google-APIs vor.
 
 ###Ausführen des Tests
 
-1. Klicken Sie in Eclipse im Menü **Run** auf **Run**, um die App zu starten.
+1. Klicken Sie im Menü **Ausführen** auf **App ausführen**, um das Projekt zu starten.
 
 2. Geben Sie in der App einen sinnvollen Text ein, beispielsweise _Eine neue Mobile Services-Aufgabe hinzufügen_, und klicken Sie dann auf die Schaltfläche **Hinzufügen**.
 
   	![](./media/mobile-services-javascript-backend-android-get-started-push/mobile-quickstart-push1-android.png)
 
-3. Führen Sie eine Streifbewegung vom oberen Bildschirmrand aus, um das Notification Center des Geräts zu öffnen, sodass die Benachrichtigung angezeigt wird.
+3. Führen Sie eine Streifbewegung vom oberen Bildschirmrand aus, um die Benachrichtigungsleiste des Geräts zu öffnen, sodass die Benachrichtigung angezeigt wird.
 
 
 Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
+
+## Problembehandlung
+
+### Prüfen der Version des Android-SDK
+
+[AZURE.INCLUDE [Prüfen des SDK](../../includes/mobile-services-verify-android-sdk-version.md)]
+
+
+## Ältere Codeversionen
+
+Die Eclipse-Version dieses Lernprogramms finden Sie unter [Erste Schritte mit Pushbenachrichtigungen (Eclipse)].
+
+
+<!--
+To see a completed version of the source code in an Eclipse project, go <a href="https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithData/Android">here</a>.
+-->
 
 
 ## <a name="next-steps"> </a>Nächste Schritte
@@ -171,5 +177,6 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Was sind Notification Hubs?]: ../notification-hubs-overview.md
 [Send broadcast notifications to subscribers]: ../notification-hubs-android-send-breaking-news.md
 [Send template-based notifications to subscribers]: ../notification-hubs-android-send-localized-breaking-news.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

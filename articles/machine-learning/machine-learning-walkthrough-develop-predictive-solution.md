@@ -42,4 +42,4 @@ Um eine Lösung zur Kreditrisikobewertung zu erstellen, müssen wir die folgende
 Diese Anleitung basiert auf einer vereinfachten Version des in Machine Learning Studio enthaltenen Artikels [Experiment zur Kreditrisiko-Vorhersage](../machine-learning-sample-credit-risk-prediction.md).
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Erste Schritte mit SQL Database-Auditing | Azure" 
-	description="Erste Schritte mit SQL Database-Auditing" 
+	pageTitle="Erste Schritte bei der Überwachung von SQL-Datenbank | Azure" 
+	description="Erste Schritte bei der Überwachung von SQL-Datenbank" 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="jeffgoll" 
@@ -13,134 +13,137 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/23/2015" 
+	ms.date="06/01/2015" 
 	ms.author="jeffreyg"/>
  
-# Erste Schritte mit SQL Database-Auditing 
-<p> Azure SQL Database-Auditing erfasst Datenbankereignisse und trägt die überwachten Ereignisse in ein Überwachungsprotokoll in Ihrem Azure Storage-Konto ein. Auditing ist im Allgemeinen für die Dienstebenen Basic, Standard und Premium verfügbar.
+# Erste Schritte bei der Überwachung von SQL- Datenbank 
+<p> Bei der Azure SQL-Datenbank-Überwachung werden Datenbankereignisse erfasst und die überwachten Ereignisse in einem Überwachungsprotokoll in Ihrem Azure Storage-Konto protokolliert. Die Überwachung ist in den Tarifen Basic, Standard und Premium allgemein verfügbar.
 
-Auditing kann Ihnen helfen, gesetzliche Bestimmungen einzuhalten, die Datenbankaktivität zu verstehen und Diskrepanzen sowie Anomalien zu erkennen, die Hinweis auf geschäftliche Probleme oder mutmaßliche Sicherheitsverletzungen sein können. 
+Die Überwachung kann Ihnen dabei helfen, die gesetzlichen Bestimmungen einzuhalten, die Datenbankaktivität zu verstehen und Einblicke in Abweichungen und Anomalien zu erhalten, die auf geschäftsspezifische Bedenken oder mutmaßliche Sicherheitsverstöße hinweisen können.
 
-Auditingtools ermöglichen und erleichtern die Einhaltung von Normen, garantieren diese jedoch nicht. Weitere Informationen zu Azure-Programmen, die die Einhaltung von Standards unterstützen, stehen im <a href="http://azure.microsoft.com/support/trust-center/compliance/" target="_blank">Azure-Vertrauenscenter</a>.
+Überwachungstools ermöglichen und erleichtern die Einhaltung von Normen, garantieren diese jedoch nicht. Weitere Informationen über Azure-Programme, die die Einhaltung von Normen unterstützen, finden Sie im <a href="http://azure.microsoft.com/support/trust-center/compliance/" target="_blank">Azure Trust Center</a>.
 
 + [Grundlagen zur Überwachung von Azure SQL-Datenbank] 
 + [Einrichten der Überwachung für Ihre Datenbank]
 + [Analysieren von Überwachungsprotokollen und -berichten]
 
-## <a id="subheading-1"></a>Grundlagen des Azure SQL Database-Auditings
+##<a id="subheading-1"></a>Grundlagen zur Überwachung von Azure SQL-Datenbank
 
-Das Auditing wird im Azure-Vorschauportal eingerichtet; es spielt jedoch keine Rolle, ob Sie die Datenbank mit dem Azure-Portal oder mit dem Azure-Vorschauportal erstellt haben. Das SQL Database-Auditing bietet folgende Möglichkeiten:
+In den folgenden Abschnitten wird die Konfiguration der Überwachung mit dem Azure-Vorschauportal beschrieben. Alternativ können Sie das klassische Portal verwenden, siehe [Einrichten der Überwachung für Ihre Datenbank über das klassische Azure-Portal].
 
-- **Beibehalten** eines Überwachungspfads von ausgewählten Ereignissen. Definieren Sie Kategorien für zu protokollierende Datenbankaktionen und -ereignisse.
-- **Melden** von Datenbankaktivitäten. Verwenden Sie vorkonfigurierte Berichte und ein Dashboard, um schnell mit der Berichterstattung über Aktivitäten und Ereignisse zu beginnen.
-- **Analysieren** von Berichten. Suchen Sie verdächtige Ereignisse, ungewöhnliche Aktivitäten und Trends.
+Die Überwachung von SQL-Datenbank bietet folgende Möglichkeiten:
 
-Sie können die folgenden Aktivitäten und Ereignisse überwachen:
+- **Beibehalten** eines Überwachungspfads von ausgewählten Ereignissen. Sie können Kategorien für zu protokollierende Datenbankaktionen und -ereignisse konfigurieren.
+- **Melden** von Datenbankaktivitäten. Sie können vorkonfigurierte Berichte und ein Dashboard verwenden, um schnell mit der Berichterstattung über Aktivitäten und Ereignisse zu beginnen.
+- **Analysieren** von Berichten. Sie können nach verdächtigen Ereignissen, ungewöhnliche Aktivitäten und Trends suchen.
+
+Sie können eine Überwachung für die folgenden Ereigniskategorien einrichten:
+
+**Einfaches SQL** und **Parametrisiertes SQL**, wobei die erfassten Überwachungsprotokolle folgendermaßen klassifiziert werden:
 
 - **Datenzugriffe**
 - **Schemaänderungen (DDL)**
 - **Datenänderungen (DML)**
 - **Konten, Rollen und Berechtigungen (DCL)**
-- **Sicherheitsausnahmen**
 
-Weitere Informationen zu den protokollierten Aktivitäten und Ereignissen stehen unter <a href="http://go.microsoft.com/fwlink/?LinkId=506733" target="_blank">Referenz zu Überwachungsprotokollformaten (Dokumentdateidownload)</a>. 
+**Gespeicherte Prozeduren**, **Anmeldung** und **Transaktionsverwaltung**.
 
-Außerdem können Sie das Speicherkonto wählen, in dem Überwachungsprotokolle gespeichert werden.
+Für jede Ereigniskategorie wird die Überwachung auf **Erfolg** und **Fehler** getrennt voneinander konfiguriert.
 
-### Verbindungszeichenfolge mit aktivierter Sicherheit
-Beim Einrichten des Auditings stellt Azure für die Datenbank eine Verbindungszeichenfolge mit aktivierter Sicherheit bereit. Aktivitäten und Ereignisse werden nur für Clientanwendungen protokolliert, die diese Verbindungszeichenfolge verwenden. Sie müssen vorhandene Clientanwendungen also aktualisieren, damit sie das neue Zeichenfolgenformat verwenden.
+Weitere Einzelheiten zu den überwachten Aktivitäten und Ereignissen finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=506733" target="_blank">Referenz zu Überwachungsprotokollformaten (DOC-Datei zum Herunterladen)</a>.
 
-Herkömmliches Format für die Verbindungszeichenfolge: <*Servername*>.database.windows.net
+Überwachungsprotokolle werden in Ihrem Azure-Speicherkonto gespeichert. Sie können eine Aufbewahrungsdauer für ein Überwachungsprotokoll definieren.
 
-Verbindungszeichenfolge mit aktivierter Sicherheit: <*Servername*>.database.**secure**.windows.net
+Eine Überwachungsrichtlinie kann für eine spezifische Datenbank oder als Standardserverrichtlinie definiert werden. Eine Standardrichtlinie für die Serverüberwachung wird auf alle Datenbanken auf einem Server angewendet, für die keine Datenbanküberwachungsrichtlinie definiert wurde, die Vorrang hat.
+
+Überprüfen Sie vor der Einrichtung der Überwachung, ob Sie einen [kompatiblen Client](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md) verwenden.
 
 
-## <a id="subheading-2"></a>Einrichten des Auditings für Ihre Datenbank
+##<a id="subheading-2"></a>Einrichten der Überwachung für Ihre Datenbank
 
 1. Starten Sie das <a href="https://portal.azure.com" target="_blank">Azure-Vorschauportal</a> unter https://portal.azure.com. Alternativ können Sie auch das <a href= "https://manage.windowsazure.com/" target="_bank">klassische Azure-Portal</a> unter https://manage.windowsazure.com/ starten. Details finden Sie weiter unten.
-2. Navigieren Sie zum Konfigurationsfenster der Datenbank, die Sie überwachen möchten. Blättern Sie nach unten zum Abschnitt **Vorgänge**, und klicken Sie dann auf **Überwachung**, um die Überwachung zu aktivieren und das Fenster für die Überwachungskonfiguration zu starten.
+
+2. Navigieren Sie zum Blatt "Konfiguration" der SQL-Datenbank / der SQL Server-Instanz, die Sie überwachen möchten. Klicken Sie oben auf die Schaltfläche **Einstellungen**, und wählen Sie auf dem Blatt "Einstellungen" die Option **Überwachung**.
 
 	![][1]
 
-3. Wählen Sie im Fenster zur Konfiguration des Auditings das Azure-Speicherkonto aus, in dem die Protokolle gespeichert werden sollen. **Tipp:** Verwenden Sie für alle überwachten Datenbanken dasselbe Speicherkonto, um die vorkonfigurierten Berichtsvorlagen optimal einzusetzen.
+3. Wählen Sie auf dem Blatt für die Überwachungskonfiguration SPEICHERDETAILS, um das Blatt "Überwachungsprotokolle" für den Speicher zu öffnen. Wählen Sie im Fenster zur Konfiguration der Überwachung das Azure-Speicherkonto aus, in dem die Protokolle gespeichert werden sollen, und geben Sie die Aufbewahrungsdauer an. **Tipp:** Verwenden Sie für alle überwachten Datenbanken dasselbe Speicherkonto, um die vorkonfigurierten Berichtvorlagen optimal einzusetzen.
 
 	![][2]
 
-4. Klicken Sie unter **Überwachungsoptionen** auf **Alle**, um alle Ereignisse zu protokollieren, oder wählen Sie einzelne Ereignistypen aus.
+4. Klicken Sie unterhalb von **PROTOKOLLIERUNG NACH EREIGNIS** auf **ERFOLG** und **FEHLER**, um alle Ereignisse zu protokollieren, oder wählen Sie einzelne Ereigniskategorien.
 
-	![][3]
 
-5. Aktivieren Sie die Option **Diese Konfiguration als Standard speichern**, wenn diese Einstellungen auf alle zukünftigen Datenbanken auf dem Server sowie auf alle Datenbank angewendet werden sollen, für die die Überwachung bereits eingerichtet ist. Mit den gleichen Schritten können Sie die Einstellungen später für jede Datenbank außer Kraft setzen. 
+5. Wenn Sie die Überwachung für eine SQL-Datenbank konfigurieren, klicken Sie auf **Damit die Überwachung durchgesetzt wird, klicken Sie hier...**, und wählen Sie für **SICHERHEITSAKTIVIERTER ZUGRIFF** die Einstellung **ERFORDERLICH**. Wenn Sie die Überwachung für eine SQL Server-Instanz konfigurieren, haben Sie zwei Optionen: (a) Navigieren Sie nach Schritt 6 zu jeder SQL-Datenbank auf dem Server, und wenden Sie diesen Schritt an, oder (2) [ändern Sie den Server-FQDN in der Verbindungszeichenfolge](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
 
-6. Klicken Sie auf **Datenbankverbindungszeichenfolge anzeigen**, und kopieren oder notieren Sie dann die entsprechende sicherheitsaktivierte Verbindungszeichenfolge für Ihre Anwendung. Verwenden Sie diese Zeichenfolge für alle Clientanwendungen, deren Aktivität Sie überwachen möchten.
 
 	![][5]
 
-7. Klicken Sie auf **OK**.
+6. Klicken Sie auf **OK**.
 
 
 
-## <a id="subheading-3">Analysieren von Überwachungsprotokollen und -berichten</a>
+##<a id="subheading-3">Analysieren von Überwachungsprotokollen und -berichten</a>
 
-Überwachungsprotokolle werden im Azure-Speicherkonto, das Sie während der Einrichtung ausgewählt haben, in einer einzelnen Azure-Speichertabelle namens **AuditLogs** zusammengefasst. Sie können Protokolldateien mit einem Tool wie <a href="http://azurestorageexplorer.codeplex.com/" target="_blank">Azure-Speicher-Explorer</a>anzeigen.
+Überwachungsprotokolle werden im Azure-Speicherkonto, das Sie während der Einrichtung ausgewählt haben, in einer einzelnen Azure-Speichertabelle mit dem Präfix **SQLDBAuditLogs** zusammengefasst. Sie können Protokolldateien mit einem Tool wie <a href="http://azurestorageexplorer.codeplex.com/" target="_blank">Azure Storage-Explorer</a> anzeigen.
 
-Eine vorkonfigurierte Dashboard-Berichtsvorlage steht als <a href="http://go.microsoft.com/fwlink/?LinkId=403540" target="_blank">herunterladbare Excel-Arbeitsmappe</a> zur Verfügung, um Sie bei der schnellen Analyse von Protokolldaten zu unterstützen. Damit Sie die Vorlage für Ihre Überwachungsprotokolle verwenden können, benötigen Sie Excel 2013 oder höher und Power Query, das <a href="http://www.microsoft.com/download/details.aspx?id=39379">hier</a>herunter. 
+Eine vorkonfigurierte Dashboardberichtvorlage steht als <a href="http://go.microsoft.com/fwlink/?LinkId=403540" target="_blank">herunterladbares Excel-Arbeitsblatt</a> zur Verfügung, mit dem Sie Protokolldaten schnell analysieren können. Um die Vorlage in Ihren Überwachungsprotokollen verwenden zu können, benötigen Sie Excel 2013 oder höher und Power Query, das Sie <a href="http://www.microsoft.com/download/details.aspx?id=39379">hier</a> herunterladen können.
 
-Die Vorlage enthält fiktionale Beispieldaten, und Sie können Power Query so einrichten, dass das Überwachungsprotokoll direkt aus Ihrem Azure-Speicherkonto importiert wird. 
+Die Vorlage enthält fiktionale Beispieldaten, und Sie können Power Query so einrichten, dass das Überwachungsprotokoll direkt aus Ihrem Azure-Speicherkonto importiert wird.
 
-Ausführlichere Anweisungen zur Arbeit mit der Berichtsvorlage stehen unter <a href="http://go.microsoft.com/fwlink/?LinkId=506731">Vorgehensweise (Dokumentdownload)</a>.
+Ausführlichere Anweisungen zum Arbeiten mit der Berichtvorlage finden Sie unter <a href="http://go.microsoft.com/fwlink/?LinkId=506731">Vorgehensweise (Dokumentdownload)</a>.
 
 ![][6]
 
 
-## <a id="subheading-4"></a>Einrichten der Überwachung für Ihre Datenbank über das klassische Azure-Portal
+##<a id="subheading-4"></a>Einrichten der Überwachung für Ihre Datenbank über das klassische Azure-Portal
 
-1. Starten Sie das <a href= "https://manage.windowsazure.com/" target="_bank">klassische Azure-Portal</a> unter https://manage.windowsazure.com/ starten. 
-2. Klicken Sie auf die Datenbank, die Sie überwachen möchten, und dann auf die Registerkarte **Überwachung und Sicherheitsvorschau**.
-3. Klicken Sie im Überwachungsabschnitt auf "Aktivieren".
+1. Starten Sie das <a href= "https://manage.windowsazure.com/" target="_bank">klassische Azure-Portal</a> unter https://manage.windowsazure.com/.
+ 
+2.   Klicken Sie auf die SQL-Datenbank / SQL Server-Instanz, die Sie überwachen möchten, und klicken Sie dann auf die Registerkarte **ÜBERWACHUNG & SICHERHEIT**.
 
-![][7]
+3.   Wenn Sie die Überwachung für eine SQL-Datenbank konfigurieren, wählen Sie für **SICHERHEITSAKTIVIERTER ZUGRIFF** die Einstellung **ERFORDERLICH**. Wenn Sie die Überwachung für eine SQL Server-Instanz konfigurieren, haben Sie zwei Optionen: (a) Navigieren Sie nach Schritt 7 zu jeder SQL-Datenbank auf dem Server, und wenden Sie diesen Schritt an, oder (2) [ändern Sie den Server-FQDN in der Verbindungszeichenfolge](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).
 
-4. Bearbeiten Sie den **EREIGNISTYP** nach Bedarf.
-
-![][8]
-
-5. Wählen Sie ein **SPEICHERKONTO** aus.
-6. Klicken Sie auf **Speichern**.
-7. Klicken Sie für die Verbindungszeichenfolge auf **Gesicherte Verbindungszeichenfolge anzeigen**.
+4. Klicken Sie im Überwachungsabschnitt auf **AKTIVIERT**.
 
 
-## <a id="subheading-3">Methoden zur Verwendung in der Produktion</a>
-Die Beschreibung in diesem Abschnitt bezieht sich auf die obigen Bildschirmaufnahmen. Sie können das <a href="https://portal.azure.com" target="_blank">Azure-Vorschauportal</a> oder <a href= "https://manage.windowsazure.com/" target="_bank">klassische Azure-Portal</a> verwenden.
+	![][7]
+
+5. Bearbeiten Sie **PROTOKOLLIERUNG NACH EREIGNIS** nach Ihren Anforderungen.
+
+	![][8]
+
+6. Wählen Sie ein **SPEICHERKONTO**, und konfigurieren Sie die **AUFBEWAHRUNG**.
+
+	![][11]
+
+7. Klicken Sie auf **SPEICHERN**.
+
+
+
+
+##<a id="subheading-3">Methoden zur Verwendung in der Produktion</a>
+Die Beschreibung in diesem Abschnitt bezieht sich auf die obigen Screenshots. Sie können entweder das <a href="https://portal.azure.com" target="_blank">Azure-Vorschauportal</a> oder das <a href= "https://manage.windowsazure.com/" target="_bank">klassische Azure-Portal</a> verwenden.
  
 
-## <a id="subheading-4"></a>Sicherheitsaktivierter Zugriff
+##<a id="subheading-4"></a>Erneute Speicherschlüsselgenerierung
 
-In der Produktion werden Sie wahrscheinlich fordern, dass der gesamte Datenverkehr von der Datenbank zu allen Anwendungen und Tools überwacht wird. Ändern Sie dafür die Option **Sicherheitsaktivierter Zugriff** von *Optional* in *Required*, und speichern Sie die Richtlinie. Nachdem *Required* konfiguriert ist, gibt es keine Option für den Zugriff auf die Datenbank über die ursprüngliche Verbindungszeichenfolge, sondern nur über die sicherheitsaktivierte Verbindungszeichenfolge.
-
-
-![][9]
+In der Produktion werden Sie wahrscheinlich Ihre Speicherschlüssel regelmäßig aktualisieren. Sie müssen beim Aktualisieren Ihrer Schlüssel die Richtlinie erneut speichern. Dieser Prozess verläuft wie folgt:
 
 
-## <a id="subheading-4"></a>Erneute Speicherschlüsselgenerierung
+1. Wechseln Sie auf dem Blatt für die Überwachungskonfiguration (oben im Abschnitt zur Einrichtung der Überwachung beschrieben) die Einstellung **Speicherzugriffsschlüssel** von *Primär* in *Sekundär*, und klicken Sie auf **SPEICHERN**. ![][10]
+2. Wechseln Sie zum Blatt für die Speicherkonfiguration, und **generieren Sie erneut** den *primären Zugriffsschlüssel*.
 
-In der Produktion werden Sie wahrscheinlich Ihre Speicherschlüssel regelmäßig aktualisieren. Der Überwachungsdienst behält Ihre Speicherkontoschlüssel nicht bei. Beim Speichern wird ein schreibgeschützter SAS-Schlüssel (Shared Access Signature) für die Überwachungstabelle produziert (nur der Kunde kann die Überwachungsprotokolle lesen). Für diesen Zweck müssen Sie beim Aktualisieren Ihrer Schlüssel die Richtlinie erneut speichern. Dieser Prozess verläuft wie folgt:
+3. Wechseln Sie zurück zum Blatt für die Überwachungskonfiguration, ändern Sie den **Speicherzugriffsschlüssel** von *Sekundär* in *Primär*, und klicken Sie auf **SPEICHERN**.
 
-
-1. Ändern Sie im Fenster für die Überwachungskonfiguration (oben im Abschnitt zur Einrichtung der Überwachung beschrieben) die Einstellung **Speicherzugriffsschlüssel** von *Primary* in *Secondary*, und wählen Sie **SPEICHERN**.
-![][10]
-2. Wechseln Sie zum Fenster für die Speicherkonfiguration, und wählen Sie für *Primary Access Key* die Option **Neu generieren** aus.
-
-3. Wechseln Sie zurück zum Fenster für die Überwachungskonfiguration, und ändern Sie die Einstellung für den **Speicherzugriffsschlüssel** von *Secondary* in *Primary*, und drücken Sie **SPEICHERN**.
-
-4. Wechseln Sie zurück zur Speicherbenutzeroberfläche, und wählen Sie für *Secondary Access Key* die Option **Neu generieren** aus (als Vorbereitung für den nächsten Schlüsselaktualisierungszyklus).
+4. Wechseln Sie zurück zur Speicherbenutzeroberfläche, und **generieren Sie erneut** den *sekundären Zugriffsschlüssel* (als Vorbereitung auf den nächsten Schlüsselaktualisierungszyklus).
   
-## <a id="subheading-4"></a>Automation
-Es gibt mehrere PowerShell-Cmdlets, die Sie zum Konfigurieren der Überwachung in Azure SQL-Datenbank verwenden können. Für den Zugriff auf die Cmdlets zur Überwachung muss PowerShell im Azure Resource Manager-Modus ausgeführt werden.
+##<a id="subheading-4"></a>Automatisierung
+Es gibt mehrere PowerShell-Cmdlets, die Sie zum Konfigurieren der Überwachung in Azure SQL-Datenbank verwenden können. Für den Zugriff auf die Cmdlets zur Überwachung muss PowerShell im Azure-Ressourcen-Manager-Modus ausgeführt werden.
 
-> [AZURE.NOTE] Das "AzureResourceManager"-Modul befindet sich derzeit in der Vorschauphase. Möglicherweise stellt es nicht die gleichen Verwaltungsfunktionen wie das Azure-Modul bereit.
+> [AZURE.NOTE]Das [Azure-Ressourcen-Manager](https://msdn.microsoft.com/library/dn654592.aspx)-Modul befindet sich derzeit in der Vorschau. Möglicherweise stellt es nicht die gleichen Verwaltungsfunktionen wie das Azure-Modul bereit.
 
- Der Zugriff auf den [Azure Resource Manager](https://msdn.microsoft.com/library/dn654592.aspx)-Modus erfolgt durch Ausführen des "Switch-AzureMode"-Cmdlets (`Switch-AzureMode AzureResourceManager`). Wenn Sie im Azure Resource Manager-Modus sind, führen Sie `Get-Command *AzureSql*` aus, um die verfügbaren Cmdlets aufzulisten.
+Wenn Sie im Azure-Ressourcen-Manager-Modus arbeiten, führen Sie `Get-Command *AzureSql*` aus, um die verfügbaren Cmdlets aufzulisten.
 
 
 
@@ -165,6 +168,7 @@ Es gibt mehrere PowerShell-Cmdlets, die Sie zum Konfigurieren der Überwachung i
 [8]: ./media/sql-database-auditing-get-started/sql-database-auditing-classic-portal-configure.png
 [9]: ./media/sql-database-auditing-get-started/sql-database-auditing-security-enabled-access.png
 [10]: ./media/sql-database-auditing-get-started/sql-database-auditing-storage-account.png
+[11]: ./media/sql-database-auditing-get-started/sql-database-auditing-classic-portal-configure-storage.png
 
 
 
@@ -172,10 +176,10 @@ Es gibt mehrere PowerShell-Cmdlets, die Sie zum Konfigurieren der Überwachung i
 
 
 <!--Link references-->
-[Link 1 zu einem anderen Thema der azure.microsoft.com-Dokumentation]: ../virtual-machines-windows-tutorial/
-[Link 2 zu einem anderen azure.microsoft.com-Dokumentationsthema]: ../web-sites-custom-domain-name/
-[Link 3 zu einem anderen azure.microsoft.com-Dokumentationsthema]: ../storage-whatis-account/
+[Link 1 to another azure.microsoft.com documentation topic]: ../virtual-machines-windows-tutorial.md
+[Link 2 to another azure.microsoft.com documentation topic]: ../web-sites-custom-domain-name.md
+[Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
 
-
-<!--HONumber=47-->
  
+
+<!---HONumber=July15_HO1-->

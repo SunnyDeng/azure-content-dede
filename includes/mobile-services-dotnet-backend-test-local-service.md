@@ -6,4 +6,4 @@ Das Projekt für mobile Dienste ermöglicht es Ihnen, Ihren neuen mobilen Dienst
 
 2. Drücken Sie die **F5**-Taste, um das Projekt neu zu erstellen und den mobilen Dienst lokal zu starten. Nachdem der mobile Dienst erfolgreich erstellt wurde, wird eine Webseite angezeigt.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

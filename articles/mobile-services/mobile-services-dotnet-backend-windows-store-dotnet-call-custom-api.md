@@ -4,17 +4,16 @@
 	services="mobile-services" 
 	documentationCenter="windows" 
 	authors="ggailey777" 
-	writer="glenga" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/26/2015" 
+	ms.date="06/04/2015" 
 	ms.author="glenga"/>
 
 # Aufrufen einer benutzerdefinierten API aus dem Client
@@ -25,24 +24,20 @@ In diesem Thema wird gezeigt, wie Sie eine benutzerdefinierte API aus einer Wind
 
 Über die im Rahmen dieses Themas erstellte benutzerdefinierte API erhalten Sie die Möglichkeit, eine einzelne POST-Anforderung zu senden, die das Erledigt-Kennzeichen für sämtliche todo-Einträge in der Tabelle auf `true` festlegt. Ohne diese benutzerdefinierte API müsste der Client einzelne Anforderungen senden, um das Kennzeichen für jeden einzelnen todo-Eintrag in der Tabelle zu aktualisieren.
 
-Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder des Lernprogramms [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] erstellen. Dafür führen Sie die folgenden Schritte aus:
-
-1. [Definieren der benutzerdefinierten API]
-2. [Aktualisieren der App zum Aufruf der benutzerdefinierten API]
-3. [Testen der App] 
-
-Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zuerst [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] abschließen, bevor Sie mit diesem Lernprogramm beginnen.
+Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] abschließen.
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-create-custom-api](../../includes/mobile-services-dotnet-backend-create-custom-api.md)]
 
 ## <a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
-[AZURE.INCLUDE [mobile-services-windows-store-dotnet-call-custom-api](mobile-services-windows-store-dotnet-call-custom-api.md)]
+[AZURE.INCLUDE [mobile-services-windows-store-dotnet-call-custom-api](../../includes/mobile-services-windows-store-dotnet-call-custom-api.md)]
 
 
 ## Nächste Schritte
 
-Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre Windows Store-App aufgerufen haben, können Sie weitere Einzelheiten über die folgenden Mobile Services-Themen erfahren:
+In diesem Thema wurde gezeigt, wie Sie mithilfe der **InvokeApiAsync**-Methode eine relativ einfache benutzerdefinierte API Ihrer Windows Store-App aufrufen. Weitere Informationen zum Verwenden der **InvokeApiAsync**-Methode finden Sie im Beitrag [Custom API in Azure Mobile Services](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx) (in englischer Sprache).
+
+Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 
 * [Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen] <br/>Erfahren Sie, wie Sie eine benutzerdefinierte API verwenden, um periodische Benachrichtigungen in einer Windows Store-App zu unterstützen. Durch die Aktivierung von periodischen Benachrichtigungen greift Windows periodisch auf Ihren benutzerdefinierten API-Endpunkt zu und verwendet die zurückgegebene XML, in einem kachelspezifischen Format, um die App-Kachel im Startmenü zu aktualisieren.
 
@@ -51,21 +46,20 @@ Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre Windows Sto
 * [Speichern von Serverskripts in der Quellcodeverwaltung] <br/> Erfahren Sie, wie Sie die Quellcodeverwaltungsfunktion nutzen können, um benutzerdefinierten API-Skript-Code einfacher und sicherer zu entwickeln und zu veröffentlichen.
 
 <!-- Anchors. -->
-[Definieren der benutzerdefinierten API]: #define-custom-api
-[Aktualisieren der App zum Aufruf der benutzerdefinierten API]: #update-app
-[Testen der App]: #test-app
+[Define the custom API]: #define-custom-api
+[Update the app to call the custom API]: #update-app
+[Test the app]: #test-app
 [Next Steps]: #next-steps
 
 <!-- Images. -->
 
 <!-- URLs. -->
 [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/?LinkId=262293
-[Erste Schritte mit Mobile Services]: ../mobile-services-windows-store-get-started.md
-[Erste Schritte mit Daten]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md
-[Get started with authentication]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-users.md
-[Get started with push notifications]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md
+[Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
+[Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data.md
 
 [Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen]: mobile-services-windows-store-dotnet-create-pull-notifications.md
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

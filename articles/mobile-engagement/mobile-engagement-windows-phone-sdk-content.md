@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Windows Phone Silverlight SDK-Inhalt" 
-	description="Erfahren Sie mehr über den Inhalt des Windows Phone Silverlight SDK für Azure Mobile Engagement"
+	description="Erfahren Sie mehr über den Inhalt des Windows Phone Silverlight SDK für Azure Mobile Engagement" 					
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="piyushjo" 
@@ -11,7 +11,7 @@
 	ms.service="mobile-engagement" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="C#" 
+	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/07/2015" 
 	ms.author="piyushjo" />
@@ -35,5 +35,6 @@ Dieser Ordner enthält alle von Mobile Engagement benötigten Ressourcen. Sie k�
 - `EngagementIconCloseDark.png` : Das Symbol „Schließen“ der Reichweitenbenachrichtigung von Engagement für Windows Phone, dunkles Design.
 
 - `EngagementConfiguration.xml` : Die Konfigurationsdatei von Mobile Engagement, hier können Sie Engagement-Einstellungen (Engagement-Verbindungszeichenfolge, Absturzberichte...) anpassen.
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

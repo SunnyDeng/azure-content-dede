@@ -1,9 +1,9 @@
 <properties 
-	pageTitle="Erstellen von Datenstichproben im Azure-Blob-Speicher | Azure" 
-	description="Erstellen von Datenstichproben im Azure-Blob-Speicher" 
-	services="machine-learning" 
+	pageTitle="Erstellen von Datenstichproben im Azure-Blobspeicher | Microsoft Azure" 
+	description="Erstellen von Datenstichproben im Azure-Blobspeicher" 
+	services="machine-learning,storage" 
 	documentationCenter="" 
-	authors="sunliangms,fashah,msolhab" 
+	authors="msolhab" 
 	manager="paulettm" 
 	editor="cgronlun" />
 
@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/18/2015" 
-	ms.author="sunliangms,fashah,msolhab,garye" /> 
+	ms.date="05/29/2015" 
+	ms.author="sunliangms;fashah;msolhab;garye;bradsev" />
 
-#<a name="heading"></a>Erstellen von Datenstichproben im Azure-Blob-Speicher
+#<a name="heading"></a>Datensampling im Azure-Blobspeicher
 
-Dieses Dokument behandelt das Erstellen von Stichproben aus Daten im Azure Blob-Speicher durch programmgesteuertes Herunterladen, um dann mit Python-Code Stichproben zu erstellen. Befolgen Sie dazu die folgenden Schritte:
+Dieses Dokument behandelt das Erstellen von Stichproben aus Daten im Azure Blobspeicher durch programmgesteuertes Herunterladen, um dann mit Python-Code Stichproben zu erstellen. Befolgen Sie dazu die folgenden Schritte:
 
-1. Laden Sie die Daten aus dem Azure-Blob-Speicher mithilfe des Blob-Diensts aus dem folgenden Python-Beispielcode herunter: 
+1. Laden Sie die Daten aus dem Azure-Blobspeicher mithilfe des Blobdiensts aus dem folgenden Python-Beispielcode herunter: 
 
 	    from azure.storage import BlobService
     	import tables
@@ -45,7 +45,7 @@ Dieses Dokument behandelt das Erstellen von Stichproben aus Daten im Azure Blob-
 	    #directly ready from file on disk
     	dataframe_blobdata = pd.read_csv(LOCALFILE)
 
-3. Erstellen Sie mit `random.choice` aus  `numpy` wie folgt Stichproben:
+3. Erstellen Sie mit der `numpy`-Funktion `random.choice` wie folgt Stichproben:
 
 	    # A 1 percent sample
     	sample_ratio = 0.01 
@@ -85,10 +85,15 @@ Mit dem folgenden Beispielcode können Sie ein Downsampling der Daten durchführ
 	    except:	        
 		    print ("Something went wrong with uploading to the blob:"+ BLOBNAME)
 
-3. Lesen Sie die Daten wie in der folgenden Abbildung dargestellt mit dem *Reader Module* in Azure ML aus dem Azure-Blob aus:
+3. Lesen Sie die Daten wie in der folgenden Abbildung dargestellt mit dem in Azure ML-[Reader](https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/) aus dem Azure-Blob aus:
  
-![reader blob][1]
+![Reader-Blob][1]
 
 [1]: ./media/machine-learning-data-science-sample-data-blob/reader_blob.png
 
-<!--HONumber=49--> 
+
+<!-- Module References -->
+[reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
+ 
+
+<!---HONumber=July15_HO1-->

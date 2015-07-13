@@ -95,4 +95,4 @@ In diesem Abschnitt schreiben wir eine Java-Konsolenanwendung, um Ereignisse an 
 <!-- Images -->
 [8]: ./media/service-bus-event-hubs-getstarted/create-sender-java1.png
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

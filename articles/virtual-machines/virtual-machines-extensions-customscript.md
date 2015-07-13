@@ -16,7 +16,6 @@
    ms.date="02/19/2015"
    ms.author="kundanap"/>
 
-
 # CustomScript-Erweiterung für Windows
 
 Der vorliegende Artikel bietet einen Überblick über die Verwendung der CustomScript-Erweiterung unter Windows mithilfe von Azure Powershell-Cmdlets.
@@ -79,5 +78,6 @@ In Kürze werden benutzerdefinierte Skripts für Linux sowie Beispiele hinzugef�
 
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO1-->

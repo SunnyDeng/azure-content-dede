@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="10/08/2014" 
+	ms.date="06/18/2015" 
 	ms.author="tamram"/>
 
 # Aktivieren der Speichermetriken und Anzeigen von Metrikdaten
 
-Standardmäßig sind für Ihre Speicherdienste keine Speichermetriken aktiviert. Sie können die Überwachung mithilfe des Azure-Verwaltungsportals, mithilfe von Windows PowerShell oder programmgesteuert über eine Speicher-API aktivieren.
+Standardmäßig sind für Ihre Speicherdienste keine Speichermetriken aktiviert. Sie können die Überwachung mithilfe des Azure-Verwaltungsportals, über Windows PowerShell oder programmgesteuert über eine Speicher-API aktivieren.
 
 Wenn Sie Speichermetriken aktivieren, müssen Sie einen Aufbewahrungszeitraum für die Daten auswählen: Dieser Zeitraum bestimmt, wie lange der Speicherdienst die Metriken beibehält und Speicherplatz abgerechnet wird, der für ihre Speicherung erforderlich ist. Normalerweise sollten Sie einen kürzeren Aufbewahrungszeitraum für minütliche Metriken als für stündliche Metriken auswählen, weil für minütliche Metriken eine erhebliche Menge an zusätzlichem Speicherplatz erforderlich ist. Sie sollten den Aufbewahrungszeitraum so auswählen, dass ausreichend Zeit zum Analysieren der Daten und zum Herunterladen von Metriken verfügbar ist, die Sie für die Offlineanalyse oder zur Berichterstellung verwenden möchten. Denken Sie daran, dass auch für das Herunterladen von Metrikdaten aus Ihrem Speicherkonto Kosten anfallen.
 
@@ -27,11 +27,11 @@ Wenn Sie Speichermetriken aktivieren, müssen Sie einen Aufbewahrungszeitraum f�
 Im Azure-Verwaltungsportal verwenden Sie die Seite "Konfigurieren" für ein Speicherkonto, um die Speichermetriken zu steuern. Für die Überwachung können Sie für Blobs, Tabellen und Warteschlangen jeweils eine Stufe sowie einen Aufbewahrungszeitraum in Tagen festlegen. In jedem Fall sind die folgenden Stufen verfügbar:
 
 
-- Aus - Es werden keine Metriken erfasst.
+- Aus – Es werden keine Metriken erfasst.
 
-- Minimal - Die Speichermetriken erfassen eine Gruppe von Basismetriken, etwa Eingang/Ausgang, Verfügbarkeit, Latenz und Erfolg in Prozent, die für die Blob-, Tabellen- und Warteschlangendienste aggregiert werden.
+- Minimal – Die Speichermetriken erfassen eine Gruppe von Basismetriken, etwa Eingang/Ausgang, Verfügbarkeit, Latenz und Erfolg in Prozent, die für die Blob-, Tabellen- und Warteschlangendienste aggregiert werden.
 
-- Ausführlich - Die Speichermetriken erfassen einen vollständigen Satz an Metriken, die zusätzlich zu den Metriken auf Dienstebene die gleichen Metriken für jeden API-Speichervorgang umfasst. Ausführliche Metriken ermöglichen eine genauere Analyse von Problemen, die bei Anwendungsvorgängen auftreten.
+- Ausführlich – Die Speichermetriken erfassen einen vollständigen Satz an Metriken, die zusätzlich zu den Metriken auf Dienstebene die gleichen Metriken für jeden API-Speichervorgang umfasst. Ausführliche Metriken ermöglichen eine genauere Analyse von Problemen, die bei Anwendungsvorgängen auftreten.
 
 Beachten Sie, dass das Verwaltungsportal zurzeit die Konfiguration von minütlichen Metriken in Ihrem Speicherkonto nicht unterstützt. Sie müssen minütliche Metriken mithilfe von PowerShell oder programmgesteuert aktivieren.
 
@@ -42,11 +42,11 @@ Sie können PowerShell auf Ihrem lokalen Computer zum Konfigurieren der Speicher
 
 Die Cmdlets zur Steuerung der Speichermetriken verwenden die folgenden Parameter:
 
-- MetricsType - Mögliche Werte sind Hour und Minute.
+- MetricsType – Mögliche Werte sind Hour und Minute.
 
-- ServiceType - Mögliche Werte sind Blob, Queue und Table.
+- ServiceType – Mögliche Werte sind Blob, Queue und Table.
 
-- MetricsLevel - Mögliche Werte sind None (identisch mit "Aus" im Verwaltungsportal), Service (identisch mit "Minimal" im Verwaltungsportal) und "ServiceAndApi" (identisch mit "Ausführlich" im Verwaltungsportal).
+- MetricsLevel – Mögliche Werte sind None (identisch mit "Aus" im Verwaltungsportal), Service (identisch mit "Minimal" im Verwaltungsportal) und "ServiceAndApi" (identisch mit "Ausführlich" im Verwaltungsportal).
 
 Der folgende Befehl aktiviert z. B. minütliche Metriken für den Blob-Dienst in Ihrem Standardspeicherkonto mit einem Aufbewahrungszeitraum, der auf fünf Tage festgelegt ist:
 
@@ -56,7 +56,7 @@ Der folgende Befehl ruft die aktuelle stündliche Metrikstufe und die Aufbewahru
 
 `Get-AzureStorageServiceMetricsProperty -MetricsType Hour -ServiceType Blob`
 
-Weitere Informationen zum Konfigurieren der Azure PowerShell-Cmdlets für Ihr Azure-Abonnement sowie zum Auswählen des zu verwendenden Standardspeicherkontos finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](http://azure.microsoft.com/documentation/articles/install-configure-powershell/).
+Informationen zum Konfigurieren der Azure PowerShell-Cmdlets für Ihr Azure-Abonnement sowie zum Auswählen des zu verwendenden Standardspeicherkontos finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
 
 ## Programmgesteuertes Aktivieren von Speichermetriken
 
@@ -106,12 +106,12 @@ Wenn Sie die Metriken zur langfristigen Speicherung oder für eine lokale Analys
 
 Die vollständigen Details der Schemas für diese Tabellen finden Sie unter [Schema der Tabellen für Speicheranalysemetriken](https://msdn.microsoft.com/library/azure/hh343264.aspx). Die Beispielzeilen unten zeigen nur eine Teilmenge der verfügbaren Spalten. Sie zeigen jedoch einige wichtige Funktionen, wie die Speichermetriken diese Metriken speichern:
 
-| Partitionsschlüssel  |       Zeilenschlüssel       |                    Timestamp | TotalRequests | TotalBillableRequests | TotalIngress | TotalEgress | Availability | AverageE2ELatency | AverageServerLatency | PercentSuccess |
+| Partitionsschlüssel | Zeilenschlüssel | Timestamp | TotalRequests | TotalBillableRequests | TotalIngress | TotalEgress | Availability | AverageE2ELatency | AverageServerLatency | PercentSuccess |
 |---------------|:------------------:|-----------------------------:|---------------|-----------------------|--------------|-------------|--------------|-------------------|----------------------|----------------|
-| 20140522T1100 |      user;All      | 2014-05-22T11:01:16.7650250Z | 7             | 7                     | 4003         | 46801       | 100          | 104.4286          | 6.857143             | 100            |
-| 20140522T1100 | user;QueryEntities | 2014-05-22T11:01:16.7640250Z | 5             | 5                     | 2694         | 45951       | 100          | 143.8             | 7.8                  | 100            |
-| 20140522T1100 |  user;QueryEntity  | 2014-05-22T11:01:16.7650250Z | 1             | 1                     | 538          | 633         | 100          | 3                 | 3                    | 100            |
-| 20140522T1100 | user;UpdateEntity  | 2014-05-22T11:01:16.7650250Z | 1             | 1                     | 771          | 217         | 100          | 9                 | 6                    | 100               |
+| 20140522T1100 | user;All | 2014-05-22T11:01:16.7650250Z | 7 | 7 | 4003 | 46801 | 100 | 104,4286 | 6,857143 | 100 |
+| 20140522T1100 | user;QueryEntities | 2014-05-22T11:01:16.7640250Z | 5 | 5 | 2694 | 45951 | 100 | 143,8 | 7,8 | 100 |
+| 20140522T1100 | user;QueryEntity | 2014-05-22T11:01:16.7650250Z | 1 | 1 | 538 | 633 | 100 | 3 | 3 | 100 |
+| 20140522T1100 | user;UpdateEntity | 2014-05-22T11:01:16.7650250Z | 1 | 1 | 771 | 217 | 100 | 9 | 6 | 100 |
 
 In diesen minütlichen Metrikbeispieldaten verwendet der Partitionsschlüssel die Auflösung "Uhrzeit zur Minute". Der Zeilenschlüssel identifiziert den Informationstyp, der in der Zeile gespeichert ist. Dieser besteht aus zwei Informationseinheiten: dem Zugriffstyp und dem Anforderungstyp:
 
@@ -122,7 +122,7 @@ In diesen minütlichen Metrikbeispieldaten verwendet der Partitionsschlüssel di
 
 Die Beispieldaten oben zeigen alle Datensätze für eine einzelne Minute (Beginn um 11:00 Uhr). Die Anzahl der QueryEntities-Anforderungen zuzüglich der Anzahl der QueryEntity-Anforderungen zuzüglich der Anzahl der UpdateEntity-Anforderungen ergibt daher den Wert 7. Dies ist die Gesamtsumme, die in der Zeile "user:All" angezeigt wird. Analog können Sie die durchschnittliche End-to-End-Latenz 104,4286 für die Zeile "user:All" ableiten, indem Sie die Berechnung ((143,8 * 5) + 3 + 9)/7 ausführen.
 
-Sie sollten in Betracht ziehen, im Verwaltungsportal auf der Seite "Überwachen" Benachrichtigungen einzurichten, damit die Speichermetriken Sie automatisch bei wichtigen Änderungen im Verhalten Ihrer Speicherdienste benachrichtigen können. Wenn Sie ein Speicher-Explorer-Tool zum Herunterladen dieser Metrikdaten in einem Format mit Trennzeichen verwenden, kann Microsoft Excel zum Analysieren der Daten verwendet werden.  Im Blogbeitrag [Microsoft Azure Storage Explorers](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) finden Sie eine Liste der verfügbaren Speicher-Explorer-Tools.
+Sie sollten in Betracht ziehen, im Verwaltungsportal auf der Seite "Überwachen" Benachrichtigungen einzurichten, damit die Speichermetriken Sie automatisch bei wichtigen Änderungen im Verhalten Ihrer Speicherdienste benachrichtigen können. Wenn Sie ein Speicher-Explorer-Tool zum Herunterladen dieser Metrikdaten in einem Format mit Trennzeichen verwenden, kann Microsoft Excel zum Analysieren der Daten verwendet werden. Im Blogbeitrag [Microsoft Azure Storage Explorers](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) finden Sie eine Liste der verfügbaren Speicher-Explorer-Tools.
 
 
 
@@ -190,6 +190,6 @@ Die von den Metriktabellen verwendete Kapazität ist ebenfalls kostenpflichtig: 
 
 ## Nächste Schritte:
 [Aktivieren der Speicherprotokollierung und Zugreifen auf Protokolldaten](https://msdn.microsoft.com/library/dn782840.aspx)
-
-<!--HONumber=47-->
  
+
+<!---HONumber=July15_HO1-->

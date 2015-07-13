@@ -11,7 +11,7 @@ Sie können Push-Benachrichtigungen wahlweise testen, wobei der mobile Dienst au
 
 	![](./media/mobile-services-dotnet-backend-configure-local-push/notification-hub-page.png)
 
-3. Kopieren Sie im Dialogfeld **Access connection information**, die Verbindungszeichenfolge **DefaultFullSharedAccessSignature**.
+3. Kopieren Sie im Dialogfeld **Access connection information**, copy the **DefaultFullSharedAccessSignature** connection string.
 
 	![](./media/mobile-services-dotnet-backend-configure-local-push/notification-hub-connection-string.png)
 
@@ -21,4 +21,4 @@ Sie können Push-Benachrichtigungen wahlweise testen, wobei der mobile Dienst au
 
 Ihr mobiles Dienstprojekt ist so konfiguriert, dass eine Verbindung mit dem Benachrichtigungs-Hub in Azure hergestellt wird, wenn es lokal ausgeführt wird. Beachten Sie, dass Sie den gleichen Benachrichtigungs-Hubnamen und die gleiche Verbindungszeichenfolge wie im Portal verwenden müssen, weil diese Web.config-Projekteinstellungen bei der Ausführung in Azure überschrieben werden.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

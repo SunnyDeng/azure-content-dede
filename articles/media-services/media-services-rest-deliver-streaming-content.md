@@ -13,24 +13,24 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/17/2015" 
+	ms.date="05/24/2015" 
 	ms.author="juliako"/>
 
 
 #Gewusst wie: Bereitstellen von Streaminginhalten
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on- Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).  
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
 
 ##Übersicht
 
 
-Sie können einen MP4-Satz mit adaptiver Bitrate streamen, indem Sie einen OnDemand-Streaminglocator und eine Streaming-URL erstellen. Im Thema [Codieren eines Medienobjekts](media-services-rest-encode-asset.md) wird die Codierung in einen MP4-Satz mit adaptiver Bitrate erläutert. Bevor Sie einen Locator erstellen, sollten Sie eine Übermittlungsrichtlinie für Medienobjekte konfigurieren, wie in [diesem](media-services-rest-configure-asset-delivery-policy.md) Thema beschrieben. 
+Sie können einen MP4-Satz mit adaptiver Bitrate streamen, indem Sie einen OnDemand-Streaminglocator und eine Streaming-URL erstellen. Im Thema [Codieren eines Medienobjekts](media-services-rest-encode-asset.md) wird die Codierung in einen MP4-Satz mit adaptiver Bitrate erläutert. Bevor Sie einen Locator erstellen, sollten Sie eine Übermittlungsrichtlinie für Medienobjekte konfigurieren, wie in [diesem](media-services-rest-configure-asset-delivery-policy.md) Thema beschrieben.
 
-Sie können auch einen OnDemand-Streaminglocator zum Erstellen von URLs verwenden, die auf MP4-Dateien verweisen, die progressiv heruntergeladen werden können.  
+Sie können auch einen OnDemand-Streaminglocator zum Erstellen von URLs verwenden, die auf MP4-Dateien verweisen, die progressiv heruntergeladen werden können.
 
 In diesem Thema wird erläutert, wie Sie einen OnDemand-Streaminglocator erstellen, um Ihr Medienobjekt zu veröffentlichen und Smooth-, MPEG-DASH- sowie HLS-Streaming-URLs zu erstellen. Außerdem wird veranschaulicht, wie Sie URLs für progressive Downloads erstellen.
 
-Im [folgenden](#types) Abschnitt finden Sie die Enumerationstypen, deren Werte in REST-Aufrufen verwendet werden.   
+Im [folgenden](#types) Abschnitt finden Sie die Enumerationstypen, deren Werte in REST-Aufrufen verwendet werden.
   
 ##Erstellen eines OnDemand-Streaminglocators
 
@@ -63,7 +63,7 @@ Anforderung:
 	
 	{"Name":"access policy","DurationInMinutes":43200.0,"Permissions":1}
 	
-Response:
+Antwort:
 	
 	HTTP/1.1 201 Created
 	Cache-Control: no-cache
@@ -102,7 +102,7 @@ Anforderung:
 	
 	{"AccessPolicyId":"nb:pid:UUID:1480030d-c481-430a-9687-535c6a5cb272","AssetId":"nb:cid:UUID:cc1e445d-1500-80bd-538e-f1e4b71b465e","StartTime":"2015-02-18T06:34:47.267872Z","Type":2}
 
-Response:
+Antwort:
 	
 	HTTP/1.1 201 Created
 	Cache-Control: no-cache
@@ -123,7 +123,7 @@ Response:
 
 ###Erstellen von Streaming-URLs
 
-Verwenden Sie den nach der Locator-Erstellung zurückgegebenen **Path**-Wert, um die Smooth-, HLS- und MPEG DASH-URLs zu erstellen. 
+Verwenden Sie den nach der Locator-Erstellung zurückgegebenen **Path**-Wert, um die Smooth-, HLS- und MPEG DASH-URLs zu erstellen.
 
 Smooth Streaming: **Path** + Manifestdateiname + "/manifest"
 
@@ -131,14 +131,14 @@ Beispiel:
 
 	http://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny.ism/manifest
 
-HLS: **Path** + Manifestdateiname + "/ manifest(format=m3u8-aapl)"
+HLS: **Path** + Manifestdateiname + "/manifest(format=m3u8-aapl)"
 
 Beispiel:
 
 	http://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny.ism/manifest(format=m3u8-aapl)
 
 
-DASH: **Path** + Manifestdateiname + "/ manifest(format=mpd-time-csf)"
+DASH: **Path** + Manifestdateiname + "/manifest(format=mpd-time-csf)"
 
 
 Beispiel:
@@ -148,15 +148,15 @@ Beispiel:
 
 ###Erstellen von URLs für progressive Downloads
 
-Verwenden Sie den nach der Locator-Erstellung zurückgegebenen **Path**-Wert, um die URL für progressive Downloads zu generieren.   
+Verwenden Sie den nach der Locator-Erstellung zurückgegebenen **Path**-Wert, um die URL für progressive Downloads zu generieren.
 
-URL: **Path** + Name der mp4-Medienobjektdatei
+URL: **Path** + Name der MP4-Medienobjektdatei
 
 Beispiel:
 
 	http://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny_H264_650kbps_AAC_und_ch2_96kbps.mp4
 
-##<a id="types"></a>Enum-Typen
+##<a id="types"></a>Enumerationstypen
 
     [Flags]
     public enum AccessPermissions
@@ -173,7 +173,6 @@ Beispiel:
         None = 0,
         Sas = 1,
         OnDemandOrigin = 2,
-    }
+    } 
 
-
-<!--HONumber=52--> 
+<!---HONumber=July15_HO1-->

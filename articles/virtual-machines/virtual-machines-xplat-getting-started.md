@@ -1,9 +1,9 @@
 <properties
-   pageTitle="Erstellen eines virtuellen Azure-Computers mit der xplat-cli"
-   description="In diesem Thema wird beschrieben, wie Sie die xplat-cli auf einer beliebigen Plattform installieren, diese zur Verbindungsherstellung mit Ihrem Azure-Konto verwenden und eine VM aus der xplat-cli erstellen."
+   pageTitle="Erstellen eines virtuellen Azure-Computers mit der Azure-Befehlszeilenschnittstelle | Microsoft Azure"
+   description="In diesem Thema erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle auf einer beliebigen Plattform installieren, eine Verbindung mit Ihrem Azure-Konto herstellen und über die Azure-Befehlszeilenschnittstelle einen virtuellen Computer erstellen."
    services="virtual-machines"
    documentationCenter="virtual-machines"
-   authors="squillace"
+   authors="dlepow"
    manager="timlt"
    editor="tysonn"/>
 
@@ -13,27 +13,27 @@
    ms.topic="article"
    ms.tgt_pltfrm="command-line-interface"
    ms.workload="infrastructure-services"
-   ms.date="02/20/2015"
-   ms.author="rasquill"/>
+   ms.date="06/09/2015"
+   ms.author="danlep"/>
 
-# Erstellen einer VM mit der plattformübergreifenden Azure-Befehlszeilenschnittstelle (xplat-cli)
-Die plattformübergreifende Azure-Befehlszeilenschnittstelle (xplat-cli) ist eine hervorragende Methode, um Ihre Azure-Infrastruktur von einer beliebigen Plattform aus zu verwalten.
+# Erstellen eines virtuellen Computers mithilfe der Azure-Befehlszeilenschnittstelle
+Die Azure-Befehlszeilenschnittstelle ist eine hervorragende Methode, um Ihre Azure-Infrastruktur von einer beliebigen Plattform aus zu verwalten.
 
-Sie müssen lediglich die xplat-cli installieren und über ein Azure-Abonnement verfügen, um sofort eine VM zu erstellen. Führen wir diese Schritte also aus. Wenn Sie noch kein Azure-Konto besitzen, erwerben Sie ein [kostenloses Abonnement](http://azure.microsoft.com/pricing/free-trial/).
+Wenn Sie die Azure-Befehlszeilenschnittstelle installiert haben und über ein Azure-Abonnement verfügen, können Sie sofort einen virtuellen Computer erstellen. Führen wir diese Schritte also aus. Wenn Sie noch kein Azure-Konto besitzen, erhalten Sie [hier](http://azure.microsoft.com/pricing/free-trial/) ein kostenloses Abonnement.
 
-## Installieren der xplat-cli
+## Installieren der Azure-Befehlszeilenschnittstelle
 
-Folgen Sie diesen Anweisungen, um die [xplat-cli](http://azure.microsoft.com/documentation/articles/xplat-cli/#install) zu installieren.
+Führen Sie [diese Schritte](../xplat-cli.md#install) aus, um die Azure-Befehlszeilenschnittstelle zu installieren.
 
-## Verbindungsherstellung mit Azure über die xplat-cli
+## Herstellen einer Verbindung mit Azure über die Azure-Befehlszeilenschnittstelle
 
-Sie können Ihre xplat-cli-Installation mit einem persönlichen Azure-Konto oder einem Arbeits- oder Schulkonto für Azure verbinden. Die Unterschiede zwischen diesen Konten werden unter [Verbinden mit Ihrem Azure-Abonnement](http://azure.microsoft.com/documentation/articles/xplat-cli/#configure) erläutert.
+Sie können die Installation der Azure-Befehlszeilenschnittstelle mit einem persönlichen Azure-Konto oder einem Arbeits- oder Schulkonto für Azure verbinden. Die Unterschiede zwischen diesen Konten werden unter [Verbinden mit Ihrem Azure-Abonnement](../xplat-cli.md#configure) erläutert.
 
 ## Erstellen einer VM und Verbinden mit Azure
 
-Das Erstellen einer VM beginnt mit der Auswahl (oder dem Hochladen) eines Images und der Verwendung des `azure vm create`-Befehls.
+Das Erstellen eines virtuellen Computers beginnt mit der Auswahl (oder dem Hochladen) eines Image und der Verwendung des Befehls `azure vm create`.
 
-1. Um ein Image über die Befehlszeile auszuwählen, können Sie die verfügbaren VM-Images mit dem Befehl `azure vm image list` auflisten. Da es sehr viele Images gibt, sollten Sie die Ergebnisse mithilfe von `more` in Seiten einteilen oder über `grep` (Linux) oder `findstr` (Windows) filtern. Wenn Sie beispielsweise nach Ubuntu-Images unter Linux suchen, verwenden Sie einen Befehl wie diesen:
+1. Beim Auswählen eines Image über die Befehlszeile können Sie mithilfe des Befehls `azure vm image list` die verfügbaren VM-Images auflisten. Da sehr viele Images zur Auswahl stehen, sollten Sie die Ergebnisse mithilfe von `more` in Seiten unterteilen oder über `grep` (Linux) oder `findstr` (Windows) filtern. Wenn Sie beispielsweise nach Ubuntu-Images unter Linux suchen, verwenden Sie einen Befehl wie diesen:
 
         azure vm image list | grep Ubuntu
 
@@ -51,30 +51,30 @@ Das Erstellen einer VM beginnt mit der Auswahl (oder dem Hochladen) eines Images
 
         vm create --help
 
-    Gemeinsam mit dem Image aus Schritt 1 sind die wichtigsten Argumente zum Erstellen einer VM der Speicherort, der DNS-Name und der Benutzername.
+    Gemeinsam mit dem Image aus Schritt 1 sind die wichtigsten Argumente zum Erstellen einer VM der Speicherort, der DNS-Name und der Benutzername.
 
-    Für die Authentifizierung können Sie ein Kennwort angeben (an der Befehlszeile oder interaktiv) oder die Authentifizierung mit einem Zertifikat durchführen. Wenn Sie sich für ein Kennwort entscheiden, muss dieses mindestens 8 Zeichen umfassen, sowohl Groß- als auch Kleinbuchstaben sowie ein Sonderzeichen (d. h. eines dieser Zeichen: !@#$%^&+=) enthalten. Das Kennwort sollte in Anführungszeichen gesetzt und Sonderzeichen mit Escapezeichen versehen werden, wenn Sie es an der Befehlszeile übergeben.
+    Für die Authentifizierung können Sie ein Kennwort angeben (an der Befehlszeile oder interaktiv) oder die Authentifizierung mit einem Zertifikat durchführen. Wenn Sie sich für ein Kennwort entscheiden, muss dieses mindestens 8 Zeichen umfassen, sowohl Groß- als auch Kleinbuchstaben sowie ein Sonderzeichen (d. h. eines dieser Zeichen: !@#$%^&+=) enthalten. Das Kennwort sollte in Anführungszeichen gesetzt und Sonderzeichen mit Escapezeichen versehen werden, wenn Sie es an der Befehlszeile übergeben.
 
-    Um sich für einen Speicherort zu entscheiden, können Sie mit dem Befehl `vm location list` eine Region in Ihrer Nähe auswählen.
+    Bei der Wahl eines geeigneten Speicherorts können Sie mit dem Befehl `vm location list` eine Region in Ihrer Nähe auswählen.
 
-  Der gewählte DNS-Name muss eindeutig sein (er wird  `dnsname.cloudapp.net` zugeordnet) und entspricht dem Namen des virtuellen Computers, wenn Sie an der Befehlszeile keinen separaten VM-Namen eingeben.  
+  Der gewählte DNS-Name muss eindeutig sein (er wird `dnsname.cloudapp.net` zugeordnet) und entspricht dem Namen des virtuellen Computers, wenn Sie an der Befehlszeile keinen separaten VM-Namen eingeben.
 
-    Im nachstehenden Linux-Beispiel wird eine VM in der Region "West US" erstellt, der SSH-Standardport 22 geöffnet (Argument "-e") und ein Benutzer namens `myadminuser` erstellt:
+    The Linux example below creates a VM in West US, opens the default SSH port 22 (the -e argument), and creates a user called `myadminuser`:
 
         azure vm create -e -l "West US"  my-new-cli-vm b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-de-de-30GB "myadminuser" "myAdm1n@passwd"
 
 ## Nächste Schritte
 
-Führen wir nun einige Aufgaben mit Ihrer VM aus. 
+Führen wir nun einige Aufgaben mit Ihrer VM aus.
 
 Da im obigen Beispiel der SSH-Standardport geöffnet wurde, kann auf einfache Weise eine Verbindung mit der VM hergestellt und deren ordnungsgemäßer Betrieb überprüft werden. Von einer Linux-Befehlszeile:
 
     ssh myadminuser@my-new-cli-vm.cloudapp.net
 
-Weitere Beispiele zur Verwendung der xplat-cli zum Verwalten Ihrer Azure-Infrastruktur finden Sie unter [Azure-Befehlszeilentool für Mac und Linux](http://azure.microsoft.com/documentation/articles/virtual-machines-command-line-tools/)
+Weitere Beispiele zur Verwendung der Azure-Befehlszeilenschnittstelle zum Verwalten Ihrer Azure-Infrastruktur finden Sie auf der [Befehlsreferenzseite für die Azure-Befehlszeilenschnittstelle](../virtual-machines-command-line-tools.md).
 
 <!--Image references-->
 [5]: ./media/markdown-template-for-new-articles/octocats.png
-
-<!--HONumber=47-->
  
+
+<!---HONumber=July15_HO1-->

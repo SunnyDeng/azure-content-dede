@@ -1,10 +1,10 @@
 <properties 
-	pageTitle="Verwalten des Zugriffs auf Azure Storage-Ressourcen" 
-	description="Erfahren Sie mehr zu den verschiedenen Möglichkeiten, den Zugriff auf Azure Storage-Ressourcen zu verwalten." 
+	pageTitle="Verwalten des Zugriffs auf Azure Storage-Ressourcen | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie den Zugriff von Benutzern auf Ihre Azure Storage-Ressourcen verwalten." 
 	services="storage" 
 	documentationCenter="" 
-	authors="micurd,tamram" 
-	manager="jahogg" 
+	authors="tamram" 
+	manager="jdial" 
 	editor=""/>
 
 <tags 
@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/20/2015" 
-	ms.author="micurd"/>
+	ms.date="05/28/2015" 
+	ms.author="micurd;tamram"/>
 
 # Verwalten des Zugriffs auf Azure Storage-Ressourcen
 
 ## Übersicht
 
-Standardmäßig kann nur der Besitzer eines Speicherkontos auf Blobs, Tabellen und Warteschlangen in diesem Konto zugreifen. Wenn Ihr Dienst oder Ihre Anwendung diese Ressourcen für andere Clients zur Verfügung stellen muss, ohne den Zugriffsschlüssel freizugeben, stehen folgende Optionen zum Ermöglichen des Zugriffs zur Verfügung:
+Standardmäßig kann nur der Besitzer eines Speicherkontos auf Speicherressourcen in diesem Konto zugreifen. Wenn Ihr Dienst oder Ihre Anwendung diese Ressourcen für andere Clients zur Verfügung stellen muss, ohne den Zugriffsschlüssel freizugeben, stehen folgende Optionen zum Ermöglichen des Zugriffs zur Verfügung:
 
 - Sie können die Berechtigungen eines Containers festlegen, um anonymen Lesezugriff auf den Container und seine Blobs zuzulassen. Dies ist für Tabellen oder Warteschlangen nicht zulässig.
 
@@ -34,49 +34,49 @@ Standardmäßig kann nur der Besitzer eines Speicherkontos auf einen Container u
 
 Container stellen die folgenden Optionen zum Verwalten des Containerzugriffs bereit:
 
-- Vollständiger öffentlicher Lesezugriff: Container- und Blob-Daten können über anonyme Anforderungen gelesen werden. Clients können Blobs innerhalb des Containers über eine anonyme Anforderung aufzählen, können aber keine Container innerhalb des Speicherkontos aufzählen.
+- **Vollständiger öffentlicher Lesezugriff:** Container- und Blobdaten können über anonyme Anforderungen gelesen werden. Clients können Blobs innerhalb des Containers über eine anonyme Anforderung aufzählen, können aber keine Container innerhalb des Speicherkontos aufzählen.
 
-- Öffentlicher Lesezugriff nur für Blobs: Blob-Daten innerhalb dieses Containers können über anonyme Anforderungen gelesen werden, Containerdaten sind aber nicht verfügbar. Clients können keine Blobs innerhalb des Containers über anonyme Anforderungen aufzählen.
+- **Öffentlicher Lesezugriff nur für Blobs:** Blobdaten innerhalb dieses Containers können über anonyme Anforderungen gelesen werden, Containerdaten sind aber nicht verfügbar. Clients können keine Blobs innerhalb des Containers über anonyme Anforderungen aufzählen.
 
-- Kein öffentlicher Lesezugriff: Container- und Blob-Daten können nur vom Kontobesitzer gelesen werden.
+- **Kein öffentlicher Lesezugriff:** Container- und Blobdaten können nur vom Kontobesitzer gelesen werden.
 
->[AZURE.NOTE] Wenn Sie für Ihren Dienst eine genauere Kontrolle über die Blob-Ressourcen benötigen, oder wenn Sie Berechtigungen für andere Vorgänge als Lesevorgänge angeben möchten, verwenden Sie eine SAS, um eine Ressource für Benutzer zugänglich zu machen. 
+>[AZURE.NOTE]Wenn Sie für Ihren Dienst eine genauere Kontrolle über die Blob-Ressourcen benötigen, oder wenn Sie Berechtigungen für andere Vorgänge als Lesevorgänge angeben möchten, verwenden Sie eine SAS, um eine Ressource für Benutzer zugänglich zu machen.
 
 ### Für anonyme Benutzer verfügbare Funktionen
 Die folgende Tabelle zeigt, welche Vorgänge von anonymen Benutzern aufgerufen werden können, wenn der öffentliche Zugriff in der Zugriffssteuerungsliste (Access Control List, ACL) eines Containers gestattet wurde.
 
-| REST-Vorgang                                    | Berechtigung mit vollständigem öffentlichen Lesezugriff                                    | Berechtigung mit öffentlichem Lesezugriff nur für Blobs |
+| REST-Vorgang | Berechtigung mit vollständigem öffentlichen Lesezugriff | Berechtigung mit öffentlichem Lesezugriff nur für Blobs |
 |--------------------------------------------------------|-----------------------------------------|---------------------------------------------------|
-| Container auflisten                                        | Nur Besitzer                              | Nur Besitzer                                        |
-| Container erstellen                                       | Nur Besitzer                              | Nur Besitzer                                        |
-| Containereigenschaften abrufen                               | Alle                                     | Nur Besitzer                                        |
-| Containermetadaten abrufen                                 | Alle                                     | Nur Besitzer                                        |
-| Containermetadaten festlegen                                 | Nur Besitzer                              | Nur Besitzer                                        |
-| Container-ACL abrufen                                 | Nur Besitzer                              | Nur Besitzer                                        |
-| Container-ACL festlegen                                      | Nur Besitzer                              | Nur Besitzer                                        |
-| Container löschen                                       | Nur Besitzer                              | Nur Besitzer                                        |
-| Blobs auflisten                                             | All                                     | Nur Besitzer                                        |
-| Blob ablegen                                               | Nur Besitzer                              | Nur Besitzer                                        |
-| Blob abrufen                                               | Alle                                     | Alle                                               |
-| Blob-Eigenschaften abrufen                                    | Alle                                     | Alle                                               |
-| Blob-Eigenschaften festlegen                                    | Nur Besitzer                              | Nur Besitzer                                        |
-| Blob-Metadaten abrufen                                      | Alle                                     | Alle                                               |
-| Blob-Metadaten festlegen                                      | Nur Besitzer                              | Nur Besitzer                                        |
-| Block ablegen                                              | Nur Besitzer                              | Nur Besitzer                                        |
-| Sperrliste abrufen (nur Blöcke mit ausgeführtem Commit)                 | Alle                                     | Alle                                               |
-| Blockliste abrufen (nur Blöcke mit nicht ausgeführtem Commit oder alle Blöcke) | Nur Besitzer                              | Nur Besitzer                                        |
-| Blockliste ablegen                                         | Nur Besitzer                              | Nur Besitzer                                        |
-| Blob löschen                                            | Nur Besitzer                              | Nur Besitzer                                        |
-| Blob kopieren                                            | Nur Besitzer                              | Nur Besitzer                                        |
-| Momentaufnahme für Blob erstellen                                          | Nur Besitzer                              | Nur Besitzer                                        |
-| Lease für Blob                                             | Nur Besitzer                              | Nur Besitzer                                        |
-| Seite ablegen                                         | Nur Besitzer                              | Nur Besitzer                                        |
-| Seitenbereiche abrufen                                        | Alle                                     | Alle                                                  |
+| List Containers | Nur Besitzer | Nur Besitzer |
+| Create Container | Nur Besitzer | Nur Besitzer |
+| Get Container Properties | Alle | Nur Besitzer |
+| Get Container Metadata | Alle | Nur Besitzer |
+| Set Container Metadata | Nur Besitzer | Nur Besitzer |
+| Get Container ACL | Nur Besitzer | Nur Besitzer |
+| Set Container ACL | Nur Besitzer | Nur Besitzer |
+| Delete Container | Nur Besitzer | Nur Besitzer |
+| List Blobs | Alle | Nur Besitzer |
+| Put Blob | Nur Besitzer | Nur Besitzer |
+| Get Blob | Alle | Alle |
+| Get Blob Properties | Alle | Alle |
+| Set Blob Properties | Nur Besitzer | Nur Besitzer |
+| Get Blob Metadata | Alle | Alle |
+| Set Blob Metadata | Nur Besitzer | Nur Besitzer |
+| Put Block | Nur Besitzer | Nur Besitzer |
+| Get Block List (nur Blöcke mit ausgeführtem Commit) | Alle | Alle |
+| Get Block List (nur Blöcke ohne ausgeführten Commit oder alle Blöcke) | Nur Besitzer | Nur Besitzer |
+| Put Block List | Nur Besitzer | Nur Besitzer |
+| Delete Blob | Nur Besitzer | Nur Besitzer |
+| Kopieren von Blobs | Nur Besitzer | Nur Besitzer |
+| Snapshot Blob | Nur Besitzer | Nur Besitzer |
+| Lease Blob | Nur Besitzer | Nur Besitzer |
+| Put Page | Nur Besitzer | Nur Besitzer |
+| Get Page Ranges | Alle | Alle |
 
 ## Erstellen und Verwenden einer SAS (Shared Access Signature)
 Eine SAS (Shared Access Signature) ist ein URI, der eingeschränkte Zugriffsrechte auf Container, Blobs, Warteschlangen und Tabellen für die Dauer eines bestimmten Zeitintervalls gewährt. Indem Sie einem Client eine SAS bereitstellen, können Sie diesem ermöglichen, auf Ressourcen in Ihrem Speicherkonto zuzugreifen, ohne dass Sie den Kontoschlüssel freigeben müssen.
 
->[AZURE.NOTE] Eine ausführliche Konzeptübersicht und ein Lernprogramm zu SAS finden Sie unter [Shared Access Signatures](storage-dotnet-shared-access-signature-part-1.md).
+>[AZURE.NOTE]Eine ausführliche Konzeptübersicht und ein Lernprogramm zu SAS finden Sie unter [SAS (Shared Access Signatures)](storage-dotnet-shared-access-signature-part-1.md).
 
 Zu den unterstützten Vorgängen mithilfe von SAS gehören Folgende:
 
@@ -94,7 +94,7 @@ Zu den unterstützten Vorgängen mithilfe von SAS gehören Folgende:
 
 Die Abfrageparameter des SAS-URI enthalten alle Informationen, die erforderlich sind, um gesteuerten Zugriff auf eine Speicherressource zu gewähren. Die URI-Abfrageparameter geben das Zeitintervall an, in dem die SAS gültig ist, die gewährten Berechtigungen, die Ressource, die bereitgestellt werden soll, und die Signatur, die die Speicherdienste verwenden sollen, um die Anforderung zu authentifizieren.
 
-Darüber hinaus kann der URI der SAS auf eine gespeicherte Zugriffsrichtlinie verweisen, die ein höheres Maß an Kontrolle für eine Gruppe von Signaturen bietet, einschließlich der Möglichkeit, den Zugriff auf die Ressource ggf. zu ändern oder aufzuheben. 
+Darüber hinaus kann der URI der SAS auf eine gespeicherte Zugriffsrichtlinie verweisen, die ein höheres Maß an Kontrolle für eine Gruppe von Signaturen bietet, einschließlich der Möglichkeit, den Zugriff auf die Ressource ggf. zu ändern oder aufzuheben.
 
 Weitere Informationen zum URI-Format einer SAS finden Sie unter [Delegieren des Zugriffs mit einer SAS (Shared Access Signature)](https://msdn.microsoft.com/library/ee395415.aspx).
 
@@ -103,7 +103,7 @@ Eine SAS erlaubt den Zugriff auf die durch die gewährten Berechtigungen des URI
 
 Wenn eine SAS Zugriff gewährt, der nicht für die Öffentlichkeit vorgesehen ist, sollte sie mit möglichst wenigen Berechtigungen erstellt werden. Darüber hinaus sollte eine SAS über eine sichere Verbindung an Clients verteilt werden, einer gespeicherten Zugriffsrichtlinie zugeordnet werden, um sie aufheben zu können, und die kürzest mögliche Lebensdauer der Signatur angeben.
 
->[AZURE.NOTE] Ein SAS-URI wird dem Kontoschlüssel, mit dem die Signatur erstellt wurde, und der zugehörigen gespeicherten Zugriffsrichtlinie (sofern vorhanden) zugeordnet. Wenn keine gespeicherte Zugriffsrichtlinie angegeben wird, kann eine SAS nur durch Änderung des Kontoschlüssels aufgehoben werden. 
+>[AZURE.NOTE]Ein SAS-URI wird dem Kontoschlüssel, mit dem die Signatur erstellt wurde, und der zugehörigen gespeicherten Zugriffsrichtlinie (sofern vorhanden) zugeordnet. Wenn keine gespeicherte Zugriffsrichtlinie angegeben wird, kann eine SAS nur durch Änderung des Kontoschlüssels aufgehoben werden.
 
 ### Erstellen einer SAS
 Im folgenden Codebeispiel wird eine Zugriffsrichtlinie für einen Container erstellt. Anschließend wird eine SAS für den Container generiert. Diese SAS kann dann an Clients verteilt werden:
@@ -138,7 +138,7 @@ Im folgenden Codebeispiel wird eine Zugriffsrichtlinie für einen Container erst
     // read/write access to the container for 10 hours.
     blobPermissions.SharedAccessPolicies.Add("mypolicy", new SharedAccessBlobPolicy()
     {
-       // To ensure SAS is valid immediately, don't set start time.
+       // To ensure SAS is valid immediately, don’t set start time.
        // This way, you can avoid failures caused by small clock differences.
        SharedAccessExpiryTime = DateTime.UtcNow.AddHours(10),
        Permissions = SharedAccessBlobPermissions.Write |
@@ -182,14 +182,14 @@ Eine gespeicherte Zugriffsrichtlinie bietet größere Kontrolle über die von Ih
 
 Angenommen, Sie haben eine SAS ausgegeben, die einer gespeicherten Zugriffsrichtlinie zugeordnet ist. Wenn Sie die Ablaufzeit in der gespeicherten Zugriffsrichtlinie angegeben haben, können Sie die Zugriffsrichtlinie ändern, um die Lebensdauer der Signatur zu verlängern, ohne eine neue Signatur ausgeben zu müssen.
 
-Als bewährte Methode wird empfohlen, eine gespeicherte Zugriffsrichtlinie für jede signierte Ressource anzugeben, für die Sie eine SAS ausgeben, da die gespeicherte Richtlinie verwendet werden kann, um die Signatur nach dem Ausgeben zu ändern oder zu widerrufen. Wenn Sie keine gespeicherte Richtlinie angeben, wird empfohlen, die Lebensdauer der Signatur zu begrenzen, um mögliche Risiken für die Speicherkontoressourcen zu minimieren. 
+Als bewährte Methode wird empfohlen, eine gespeicherte Zugriffsrichtlinie für jede signierte Ressource anzugeben, für die Sie eine SAS ausgeben, da die gespeicherte Richtlinie verwendet werden kann, um die Signatur nach dem Ausgeben zu ändern oder zu widerrufen. Wenn Sie keine gespeicherte Richtlinie angeben, wird empfohlen, die Lebensdauer der Signatur zu begrenzen, um mögliche Risiken für die Speicherkontoressourcen zu minimieren.
 
 ### Zuordnen einer SAS zu einer gespeicherten Zugriffsrichtlinie
-Eine gespeicherte Zugriffsrichtlinie beinhaltet einen Namen mit einer Länge von bis zu 64 Zeichen, der innerhalb des Containers, der Warteschlange oder der Tabelle eindeutig ist. Um eine SAS einer gespeicherten Zugriffsrichtlinie zuzuordnen, geben Sie nun diesen Bezeichner beim Erstellen der SAS an. Im URI der SAS gibt das Feld *signedidentifier* den Bezeichner der gespeicherten Zugriffsrichtlinie an.
+Eine gespeicherte Zugriffsrichtlinie beinhaltet einen Namen mit einer Länge von bis zu 64 Zeichen, der innerhalb des Containers, der Warteschlange oder der Tabelle eindeutig ist. Um eine SAS einer gespeicherten Zugriffsrichtlinie zuzuordnen, geben Sie nun diesen Bezeichner beim Erstellen der SAS an. Im URI der SAS gibt das Feld *signedidentifier* den Bezeichner der gespeicherten Zugriffsrichtlinie an.
 
 Ein Container, eine Warteschlange oder eine Tabelle kann bis zu 5 gespeicherte Zugriffsrichtlinien enthalten. Richtlinie kann von einer beliebigen Anzahl von freigegebenen Zugriffssignaturen verwendet werden.
 
->[AZURE.NOTE] Wenn Sie eine gespeicherte Zugriffsrichtlinie für einen Container, eine Warteschlange oder eine Tabelle einrichten, kann es bis zu 30 Sekunden dauern, bis die Richtlinie angewendet wird. Während dieses Intervalls tritt bei einer SAS, die der gespeicherten Zugriffsrichtlinie zugeordnet ist, so lange ein Fehler mit dem Statuscode 403 (Unzulässig) auf, bis die Zugriffsrichtlinie aktiv ist.
+>[AZURE.NOTE]Wenn Sie eine gespeicherte Zugriffsrichtlinie für einen Container, eine Warteschlange oder eine Tabelle einrichten, kann es bis zu 30 Sekunden dauern, bis die Richtlinie angewendet wird. Während dieses Intervalls tritt bei einer SAS, die der gespeicherten Zugriffsrichtlinie zugeordnet ist, so lange ein Fehler mit dem Statuscode 403 (Unzulässig) auf, bis die Zugriffsrichtlinie aktiv ist.
 
 ### Angeben von Zugriffsrichtlinienparametern für eine SAS
 In der gespeicherten Zugriffsrichtlinie können die folgenden Zugriffsrichtlinienparameter für die zugeordneten Signaturen angegeben werden:
@@ -208,5 +208,10 @@ Die SAS und die gespeicherte Zugriffsrichtlinie müssen zusammen alle Felder ent
 
 Um den Zugriff auf SAS aufzuheben, die dieselbe gespeicherte Zugriffsrichtlinie verwenden, entfernen Sie die gespeicherte Richtlinie aus der Speicherressource, indem Sie die Liste der gespeicherten Richtlinien durch eine neue Liste überschreiben, in der der betreffende Richtlinienname nicht enthalten ist. Wenn Sie die Zugriffseinstellungen für eine gespeicherte Zugriffsrichtlinie ändern möchten, überschreiben Sie die Liste der gespeicherten Richtlinien durch eine neue Liste, die eine Richtlinie mit demselben Namen enthält, die über neue Zugriffssteuerungsdetails verfügt.
 
+## Siehe auch
 
-<!--HONumber=52--> 
+- [Authentifizierung für Azure Storage-Dienste](https://msdn.microsoft.com/library/azure/dd179428.aspx)
+- [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md)
+- [Delegieren des Zugriffs mit einer Shared Access Signature](https://msdn.microsoft.com/library/azure/ee395415.aspx) 
+
+<!---HONumber=July15_HO1-->

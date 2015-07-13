@@ -32,7 +32,7 @@ Das folgende Diagramm zeigt die allgemeine Chef-Architektur.
 
 ![][2]
 
-Chef weist drei Hauptkomponenten auf.  **Chef-Server, Chef-Client (Knoten)** und **Chef-Arbeitsstation.**
+Chef weist drei Hauptkomponenten auf. **Chef-Server, Chef-Client (Knoten)** und **Chef-Arbeitsstation.**
 
 Der **Chef-Server** ist unser Verwaltungspunkt, für den es zwei Optionen gibt: eine gehostete oder eine lokale Lösung. Wir werden eine gehostete Lösung verwenden.
 
@@ -238,4 +238,4 @@ Ich hoffe, diese Informationen waren hilfreich. Starten Sie noch heute mit Azure
 
 <!--Link references-->
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO1-->

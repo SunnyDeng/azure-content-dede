@@ -37,4 +37,4 @@
 
    	Daraufhin wird ein neues Einfügeskript registriert, das das [gcm-Objekt](http://go.microsoft.com/fwlink/p/?LinkId=282645) zum Senden einer Pushbenachrichtigung an alle registrierten Geräte verwendet, nachdem der Einfügevorgang erfolgreich war.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

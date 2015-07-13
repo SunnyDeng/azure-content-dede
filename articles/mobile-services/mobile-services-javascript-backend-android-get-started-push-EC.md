@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="02/06/2015" 
+	ms.date="06/03/2015" 
 	ms.author="ricksal"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
@@ -129,7 +129,7 @@ Wenn Sie diese App im Emulator ausführen, stellen Sie sicher, dass Sie ein Andr
 
 3. Wählen Sie **Google APIs** in **Ziel** aus, und klicken Sie auf OK.
 
-   ![](./media/mobile-services-javascript-backend-android-get-started-push-EC/mobile-services-android-virtual-device-manager-edit.png)
+   	![](./media/mobile-services-javascript-backend-android-get-started-push-EC/mobile-services-android-virtual-device-manager-edit.png)
 
 	Dies gibt das AVD zur Verwendung von Google-APIs vor.
 
@@ -139,7 +139,7 @@ Wenn Sie diese App im Emulator ausführen, stellen Sie sicher, dass Sie ein Andr
 
 2. Geben Sie in der App einen sinnvollen Text ein, beispielsweise _Eine neue Mobile Services-Aufgabe hinzufügen_, und klicken Sie dann auf die Schaltfläche **Hinzufügen**.
 
-  ![](./media/mobile-services-javascript-backend-android-get-started-push-EC/mobile-quickstart-push1-android.png)
+  	![](./media/mobile-services-javascript-backend-android-get-started-push-EC/mobile-quickstart-push1-android.png)
 
 3. Führen Sie eine Streifbewegung vom oberen Bildschirmrand aus, um das Notification Center des Geräts zu öffnen, sodass die Benachrichtigung angezeigt wird.
 
@@ -211,5 +211,6 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Was sind Notification Hubs?]: ../notification-hubs-overview.md
 [Send broadcast notifications to subscribers]: ../notification-hubs-android-send-breaking-news.md
 [Send template-based notifications to subscribers]: ../notification-hubs-android-send-localized-breaking-news.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

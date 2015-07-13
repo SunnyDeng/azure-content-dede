@@ -43,4 +43,4 @@ In diesem Lernprogramm haben Sie gelernt, einen virtuellen Computer mit OpenSUSE
 [AzurePortal]: http://manage.windowsazure.com
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO1-->

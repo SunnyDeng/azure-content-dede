@@ -5,20 +5,19 @@
 	documentationCenter="" 
 	authors="ggailey777" 
 	manager="dwrede" 
-	editor="mollybos"/> 
-
+	editor="mollybos"/>
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="mobile-multiple" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="02/25/2015" 
+	ms.date="06/04/2015" 
 	ms.author="glenga"/>
 
 # Unterstützen mehrerer Geräteplattformen durch einen einzelnen mobilen Dienst
  
-Einer der Hauptvorteile von Azure Mobile Services bei der Entwicklung mobiler Apps ist die Möglichkeit, mit einem einzigen Back-End-Dienst eine App auf verschiedenen Clientplattformen zu unterstützen. Mobile Services bieten systemeigene Clientbibliotheken für alle großen Geräteplattformen. Dies ermöglicht die einfache App-Entwicklung mit nur einem Back-End-Dienst und plattformübergreifenden Entwicklertools. In diesem Thema werden Aspekte erörtert, wie Sie mithilfe eines einzelnen mobilen Dienst-Back-Ends Ihre App auf mehreren Clientplattformen ausführen können. Allgemeinere Informationen zu Mobile Services finden Sie im [Mobile Services-Entwicklungscenter](/documentation/services/mobile-services/).
+Einer der Hauptvorteile von Azure Mobile Services bei der Entwicklung mobiler Apps ist die Möglichkeit, mit einem einzigen Back-End-Dienst eine App auf verschiedenen Clientplattformen zu unterstützen. Mobile Services bieten systemeigene Clientbibliotheken für alle großen Geräteplattformen. Dies ermöglicht die einfache App-Entwicklung mit nur einem Back-End-Dienst und plattformübergreifenden Entwicklertools. In diesem Thema werden Aspekte erörtert, wie Sie mithilfe eines einzelnen mobilen Dienst-Back-Ends Ihre App auf mehreren Clientplattformen ausführen können.
 
 ##<a id="push"></a>Plattformübergreifende Pushbenachrichtigungen
 
@@ -207,5 +206,6 @@ Die .NET-Clientbibliothek von Mobile Services unterstützt sowohl Windows Phone 
 [Nächste Schritte für Windows Phone 8-Entwickler]: http://msdn.microsoft.com/library/windows/apps/dn655121(v=vs.105).aspx
 [Erstellen universeller Windows-Apps für alle Windows-Geräte]: http://go.microsoft.com/fwlink/p/?LinkId=509905
 [Projekt für eine universelle Windows-App für Azure Mobile Services unter Verwendung von MVVM]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

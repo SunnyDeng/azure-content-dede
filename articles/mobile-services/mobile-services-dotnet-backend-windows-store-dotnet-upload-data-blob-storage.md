@@ -1,9 +1,8 @@
 <properties 
-	pageTitle="Verwenden von Mobile Services zum Hochladen von Daten in Blob-Speicher (Windows Store) | Mobile Services" 
-	description="Erfahren Sie, wie Sie Mobile Services zum Hochladen von Bildern in den Azure Blob-Speicher verwenden." 
+	pageTitle="Verwenden von Mobile Services zum Hochladen von Daten in Blobspeicher (Windows Store) | Mobile Services" 
+	description="Erfahren Sie, wie Sie Mobile Services zum Hochladen von Bildern in den Azure-Blobspeicher verwenden." 
 	documentationCenter="windows" 
 	authors="ggailey777" 
-	writer="glenga" 
 	services="mobile-services,storage" 
 	manager="dwrede" 
 	editor=""/>
@@ -11,28 +10,24 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/26/2015" 
+	ms.date="06/04/2015" 
 	ms.author="glenga"/>
 
 # Verwenden von Mobile Services zum Hochladen von Bildern in Azure Storage
 
 [AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
-In diesem Thema wird erläutert, wie Sie Azure Mobile Services dazu verwenden können, Ihre App für das Hochladen und Speichern von durch Benutzer erzeugten Bildern in Azure Storage zu aktivieren. Mobile Services verwendet zur Datenspeicherung eine SQL-Datenbank. BLOB (Binary Large Object)-Daten lassen sich allerdings effizienter im Azure-Blob-Speicherdienst speichern.
+##Übersicht
+In diesem Thema wird erläutert, wie Sie Azure Mobile Services dazu verwenden können, Ihre App für das Hochladen und Speichern von durch Benutzer erzeugten Bildern in Azure Storage zu aktivieren. Mobile Services verwendet zur Datenspeicherung eine SQL-Datenbank. Blobdaten (Binary Large Object) lassen sich allerdings effizienter im Azure-Blobspeicherdienst speichern.
 
-Die Anmeldeinformationen zum sicheren Hochladen von Daten in den Blob-Speicherdienst können mit der Client-App nicht sicher zugewiesen werden. Stattdessen müssen Sie diese Anmeldeinformationen in Ihrem mobilen Dienst speichern und dazu verwenden, eine Shared Access Signature (SAS) zu erstellen, die dann zum Hochladen eines neuen Bildes verwendet wird. Die SAS, eine Anmeldeinformation mit einer kurzen Laufzeit &mdash; in diesem Falle 5 Minuten –, wird durch Mobile Services sicher an die Client-App zurückgegeben. Anschließend nutzt die App diese temporäre Anmeldeinformation zum Hochladen des Bildes. In diesem Beispiel sind Downloads vom Blob-Dienst öffentlich.
+Die Anmeldeinformationen zum sicheren Hochladen von Daten in den Blobspeicherdienst können mit der Client-App nicht sicher zugewiesen werden. Stattdessen müssen Sie diese Anmeldeinformationen in Ihrem mobilen Dienst speichern und dazu verwenden, eine Shared Access Signature (SAS) zu erstellen, die dann zum Hochladen eines neuen Bildes verwendet wird. Die SAS, eine Anmeldeinformation mit einer kurzen Laufzeit &mdash; in diesem Falle 5 Minuten –, wird durch Mobile Services sicher an die Client-App zurückgegeben. Anschließend nutzt die App diese temporäre Anmeldeinformation zum Hochladen des Bildes. In diesem Beispiel sind Downloads vom Blobdienst öffentlich.
 
-In diesem Lernprogramm fügen Sie dem Mobile Services-Schnellstart Funktionen zur Aufnahme von Bildern und zum Hochladen dieser Bilder unter Verwendung einer von Mobile Services erzeugten SAS in Azure hinzu. Dieses Lernprogramm führt Sie durch die folgenden grundlegenden Schritte zur Aktualisierung des Mobile Services-Schnellstarts für das Hochladen von Bildern in den Blob-Speicherdienst:
+In diesem Lernprogramm fügen Sie der Mobile Services-Schnellstartapp Funktionen zum Aufnehmen von Bildern und Hochladen dieser Bilder unter Verwendung einer von Mobile Services erzeugten SAS in Azure hinzu.
 
-1. [Installieren der Speicherclientbibliothek]
-2. [Aktualisieren der Client-App zur Aufnahme von Bildern]
-3. [Den Speicherclient im Projekt für den mobilen Dienst installieren]
-4. [TodoItem-Definition im Datenmodell aktualisieren]
-5. [Aktualisierung des Tabellen-Controllers zur Erzeugung einer SAS]
-6. [Hochladen von Bildern zum Testen der App]
+##Voraussetzungen
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
@@ -46,13 +41,13 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 ##<a name="install-storage-client"></a>Installieren des Speicherclients für Windows Store-Apps
 
-Um eine SAS für das Hochladen von Bildern aus Ihrer App in den Blob-Speicher verwenden zu können, müssen Sie zuerst das NuGet-Paket hinzufügen, das die Speicherclientbibliothek für Windows Store-Apps installiert.
+Um eine SAS für das Hochladen von Bildern aus Ihrer App in den Blobspeicher verwenden zu können, müssen Sie zuerst das NuGet-Paket hinzufügen, das die Speicherclientbibliothek für Windows Store-Apps installiert.
 
 1. Klicken Sie im **Projektmappen-Explorer** in Visual Studio mit der rechten Maustaste auf das Client-App-Projekt und wählen Sie **NuGet-Pakete verwalten** aus.
 
 2. Wählen Sie im linken Bereich die Kategorie **Online** und **Include Prerelease** aus, suchen Sie nach **WindowsAzure.Storage-Preview**, klicken Sie auf **Installieren** im Paket **Azure Storage**, und stimmen Sie dem Lizenzvertrag zu.
 
-  	![][2]
+  	![Hinzufügen von Azure Storage NuGet](./media/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage/mobile-add-storage-nuget-package-dotnet.png)
 
   	Die Clientbibliothek für Azure-Speicherdienste wird zum Projekt hinzugefügt.
 
@@ -62,16 +57,15 @@ Als Nächstes aktualisieren Sie die Schnellstart-App zum Aufnehmen und Hochladen
 
  
 <!-- Anchors. -->
-[Installieren der Speicherclientbibliothek]: #install-storage-client
-[Aktualisieren der Client-App zur Aufnahme von Bildern]: #add-select-images
-[Den Speicherclient im Projekt für den mobilen Dienst installieren]: #storage-client-server
-[TodoItem-Definition im Datenmodell aktualisieren]: #update-data-model
-[Aktualisierung des Tabellen-Controllers zur Erzeugung einer SAS]: #update-scripts
-[Hochladen von Bildern zum Testen der App]: #test
+[Install the Storage Client library]: #install-storage-client
+[Update the client app to capture images]: #add-select-images
+[Install the storage client in the mobile service project]: #storage-client-server
+[Update the TodoItem definition in the data model]: #update-data-model
+[Update the table controller to generate an SAS]: #update-scripts
+[Upload images to test the app]: #test
 [Next Steps]: #next-steps
 
 <!-- Images. -->
-[2]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage/mobile-add-storage-nuget-package-dotnet.png
 
 <!-- URLs. -->
 [Send email from Mobile Services with SendGrid]: store-sendgrid-mobile-services-send-email-scripts.md
@@ -85,5 +79,6 @@ Als Nächstes aktualisieren Sie die Schnellstart-App zum Aufnehmen und Hochladen
 [Windows Phone SDK 8.0]: http://www.microsoft.com/download/details.aspx?id=35471
 
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

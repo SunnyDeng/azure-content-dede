@@ -1,11 +1,11 @@
-﻿<properties 
+<properties 
 	pageTitle="JavaDocs - Azure-Ressourcen" 
-	description="Javadoc-API-Referenz für das Azure SDK für Java"
+	description="Javadoc-API-Referenz für das Azure SDK für Java" 
 	services="" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="mollybos"/>
+	editor="jimbe"/>
 
 <tags 
 	ms.service="multiple" 
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="09/25/2014" 
+	ms.date="06/03/2015" 
 	ms.author="robmcm"/>
 
 # Javadoc-Inhalte
 
 Die Javadoc-Inhalte für die Azure-Bibliotheken zu Java können unter http://dl.windowsazure.com/javadoc eingesehen werden.
 
-<!--HONumber=46--> 
+<!---HONumber=July15_HO1-->

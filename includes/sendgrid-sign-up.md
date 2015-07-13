@@ -76,4 +76,4 @@ Kunden von Azure können monatlich 25.000 kostenlose E-Mails freischalten. Mit d
 [SendGrid-Bereitstellungsvorgang]: https://support.sendgrid.com/hc/articles/200181628-Why-is-my-account-being-provisioned-
 [sämtliche APIs]: https://sendgrid.com/docs/API_Reference/index.html
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO1-->

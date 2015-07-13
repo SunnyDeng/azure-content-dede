@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/30/2014" 
+	ms.date="06/17/2015" 
 	ms.author="juliako"/>
 
 
@@ -21,6 +21,8 @@
 # Verwenden des Microsoft Smooth Streaming-Plug-Ins für das Adobe Open Source Media-Framework #
 
 ##Übersicht ##
+
+
 Das Microsoft Smooth Streaming-Plug-In für das Open Source Media-Framework 2.0 (SS für OSMF) erweitert die OSMF-Standardfunktionen und bietet Abspielfunktionen für Microsoft Smooth Streaming-Inhalte für neue und existierende OSMF-Player. Das Plug-In bietet außerdem Smooth Streaming-Wiedergabefähigkeiten für Strobe Media Playback (SMP).
 
 SS für OSMF enthält zwei Versionen des Plug-Ins:
@@ -43,21 +45,13 @@ Das Plug-In unterstützt Laden und Wiedergabe von bedarfsgesteuerten Smooth Stre
 - Umschalten zwischen mehreren Audiosprachen mit eingebauten OSMF-APIs
 - Auswahl der maximalen Wiedergabequalität mit eingebauten OSMF-APIs
 - Sidecar-Untertitel mit OSMF-Untertitel-Plug-In
-- Adobe&reg; Flash&reg; Player 10.2 oder höher.
+- Adobe&reg; Flash&reg; Player 11.4 oder höher.
 - Diese Version unterstützt nur OSMF 2.0.
 
-Die folgenden Features werden nicht unterstützt:
+## Unterstützte Funktionen und bekannte Probleme
 
-- VC-1- und WMA-Codecs
-- Inhaltsschutz (PlayReady)
-- Text und Sparse Tracks
-- Spezialwiedergabe (Zeitlupe, Vorlauf und Rücklauf)
+Eine vollständige Liste der unterstützten Funktionen, der nicht unterstützten Funktionen und der bekannten Probleme finden Sie in [diesem Dokument](http://download.microsoft.com/download/3/1/B/31B63D97-574E-4A8D-BF8D-170744181724/Smooth_Streaming_Plugin_for_OSMF.pdf).
 
-Es folgt eine Liste der bekannten Probleme:
-
-- Bei der Wiedergabe von Smooth Streaming-Inhalten mit 48KHz-Audiospuren treten Probleme auf. In der Flash-Runtime existiert ein bekanntes Problem mit dem Rendering von 48KHz-Audioinhalten. Aufgrund dieses Problems kann es sein, dass Smooth Streaming-Inhalte mit 48KHz-Einstellungen nicht wie gewünscht funktionieren. Siehe auch: [Verwenden von Flash Player](http://forums.adobe.com/message/4483498#4483498) und [Adobe Flash Player 11.3 - Bug 3210964](https://bugbase.adobe.com/index.cfm?event=bug&id=3210964) für weitere Informationen.
-- Bei der Wiedergabe mehrerer Smooth Streaming-Inhalte auf einer Seite können Probleme auftreten. Dies ist ein bekanntes Problem mit OSMF.
-- Bei der Wiedergabe von Stage Video können Probleme auftreten, und auf manchen Maschinen wird kein Video angezeigt. Sie können Hardwarebeschleunigung oder Stage Video deaktivieren, um dieses Problem zu umgehen.
 
 ## Laden des Plug-Ins
 OSMF-Plug-Ins können statisch (zur Kompilierzeit) oder dynamisch (zur Laufzeit) geladen werden. Die Downloadversion des Smooth Streaming-Plug-Ins für OSMF enthält sowohl die statische als auch die dynamische Version.
@@ -181,7 +175,7 @@ package
 		
 		private function onPlayerFailed(event:MediaErrorEvent) : void
 		{
-			// Media Player ist fehlgeschlagen.           
+			// Fehler bei der Ausführung von Media Player.           
 		}
 		
 		private function loadMediaSource(sourceURL : String):void 
@@ -321,7 +315,7 @@ package
 		
 		private function onPlayerFailed(event:MediaErrorEvent) : void
 		{
-			// Media Player ist fehlgeschlagen.           
+			// Fehler bei der Ausführung von Media Player.           
 		}
 		
 		private function loadMediaSource(sourceURL : String):void 
@@ -404,4 +398,9 @@ Das dynamische Smooth Streaming für OSMF-Plug-In unterstützt [Strobe Media Pla
 
 Weitere allgemeine Informationen zu OSMF-Entwicklung finden Sie auf der offiziellen [OSMF-Entwicklungswebsite](http://osmf.org/resources.html).
 
-<!--HONumber=54--> 
+
+##Siehe auch
+
+[Microsoft Adaptive Streaming Plugin for OSMF Update (in englischer Sprache)](http://azure.microsoft.com/blog/2014/10/27/microsoft-adaptive-streaming-plugin-for-osmf-update/)
+
+<!---HONumber=July15_HO1-->

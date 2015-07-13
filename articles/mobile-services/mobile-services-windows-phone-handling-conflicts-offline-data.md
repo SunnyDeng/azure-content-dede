@@ -10,35 +10,34 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="" 
+	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/23/2015" 
+	ms.date="06/15/2015" 
 	ms.author="wesmc"/>
 
 
 # Behandeln von Konflikten bei der Synchronisierung von Offlinedaten in Mobile Services
 
-[WACOM.INCLUDE [mobile-services-selector-offline-conflicts](../../includes/mobile-services-selector-offline-conflicts.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../../includes/mobile-services-selector-offline-conflicts.md)]
 
-## Übersicht
+##Übersicht
 
 In diesem Thema erfahren Sie, wie Sie Daten synchronisieren und Konflikte behandeln können, wenn Sie die Offlinefunktionen von Azure Mobile Services verwenden. In diesem Lernprogramm laden Sie eine App herunter, die Offline- und Onlinedaten unterstützt, integrieren den mobilen Dienst mit der App und melden sich anschließend im Azure-Verwaltungsportal an, um die Datenbank beim Ausführen der App anzuzeigen und zu aktualisieren.
 
 Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Offlinedaten]. Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie zunächst [Erste Schritte mit Offlinedaten] abschließen.
 
 
-## Voraussetzungen
+##Voraussetzungen
 
 Dieses Lernprogramm erfordert Visual Studio 2012 und das [Windows Phone 8 SDK].
 
 
-## Herunterladen des Beispielprojekts
+##Herunterladen des Beispielprojekts
 
 
 
-Dieses Lernprogramm baut auf dem [Handling conflicts code sample] (Codebeispiel zur Behandlung von Konflikten, in englischer Sprache) auf. Dabei handelt es sich um ein Windows Phone 8-Projekt für Visual Studio 2012.  
-Die Benutzeroberfläche für diese App ähnelt der App im Lernprogramm [Erste Schritte mit Offlinedaten]. Der Unterschied besteht darin, dass für jedes TodoItem eine neue Datumsspalte vorhanden ist.
+Dieses Lernprogramm baut auf dem [Handling conflicts code sample] (Codebeispiel zur Behandlung von Konflikten, in englischer Sprache) auf. Dabei handelt es sich um ein Windows Phone 8-Projekt für Visual Studio 2012. Die Benutzeroberfläche für diese App ähnelt der App im Lernprogramm [Erste Schritte mit Offlinedaten]. Der Unterschied besteht darin, dass für jedes TodoItem eine neue Datumsspalte vorhanden ist.
 
 ![][0]
 
@@ -57,7 +56,7 @@ Die Benutzeroberfläche für diese App ähnelt der App im Lernprogramm [Erste Sc
 Beachten Sie, dass noch keine Verbindung zwischen der App und einem mobilen Dienst besteht, daher erzeugen die Schaltflächen **Push** und **Pull** Ausnahmefehler.
 
 
-## Hinzufügen einer Spalte zum Datenmodell
+##Hinzufügen einer Spalte zum Datenmodell
 
 In diesem Abschnitt aktualisieren Sie die Datenbank für Ihren mobilen Dienst so, dass eine TodoItem-Tabelle mit einer Spalte für das Fälligkeitsdatum enthalten ist. In der App können Sie das Fälligkeitsdatum für ein Element in der Laufzeit ändern, sodass Sie in einem späteren Abschnitt diese Lernprogramms Synchronisierungskonflikte generieren können.
 
@@ -67,7 +66,7 @@ Die `TodoItem`-Klasse im Beispiel ist in "MainPage.xaml.cs" definiert. Beachten 
 
 Aktualisieren Sie die Datenbank so, dass diese Tabelle enthalten ist.
 
-### <a name="dotnet-backend"></a>Aktualisieren der Datenbank für Mobile Services mit .NET-Backend 
+###<a name="dotnet-backend"></a>Aktualisieren der Datenbank für Mobile Services mit .NET-Backend 
 
 Wenn Sie für Ihren mobilen Dienst das .NET-Backend verwenden, führen Sie diese Schritte aus, um das Schema für die Datenbank zu aktualisieren.
 
@@ -113,7 +112,7 @@ Für mobile Dienste mit JavaScript-Backend fügen Sie eine neue Tabelle mit dem 
   3. Klicken Sie unten auf der Seite auf **Erstellen**, und erstellen Sie eine neue Tabelle mit dem Namen **TodoWithDate**.
 
 
-## Testen der App mit dem mobilen Dienst
+##Testen der App mit dem mobilen Dienst
 
 Testen Sie jetzt die App mit Mobile Services.
 
@@ -154,7 +153,7 @@ Testen Sie jetzt die App mit Mobile Services.
 
 9. Lassen Sie **Emulator WVGA 512 MB** für den nächsten Abschnitt laufen. Sie werden die App nun in zwei Emulatoren ausführen, um einen Konflikt zu generieren.
 
-## Aktualisieren der Daten im Backend zum Erzeugen eines Konflikts
+##Aktualisieren der Daten im Backend zum Erzeugen eines Konflikts
 
 In einem realen Szenario würde ein Synchronisierungskonflikt auftreten, wenn eine App Aktualisierungen per Push-Vorgang auf einen Datensatz in der Datenbank überträgt und dann eine andere App versucht, eine Änderung per Push-Vorgang auf denselben Datensatz zu übertragen, jedoch basierend auf einem veralteten Versionsfeld dieses Datensatzes. Wenn eine Instanz der App versucht, denselben Datensatz zu aktualisieren, ohne den aktualisierten Datensatz per Pull-Vorgang abzurufen, tritt ein Konflikt auf. Dieser wird in der App als `MobileServicePreconditionFailedException` erfasst.
 
@@ -186,7 +185,7 @@ In diesem Abschnitt führen Sie zwei Instanzen der App gleichzeitig aus, um eine
 
     ![][8]
 
-## Prüfen des Codes zur Behebung von Synchronisierungskonflikten
+##Prüfen des Codes zur Behebung von Synchronisierungskonflikten
 
 Sie müssen eine Versionsspalte in die lokale Datenbank und das Datenübertragungsobjekt einfügen, damit die Offlinefunktion Konflikte erkennt. Die `TodoItem`-Klasse enthält den folgenden Member:
 
@@ -240,5 +239,6 @@ Wenn ein Pushvorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePush
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
 [SQLite für Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
 [Get started with data]: mobile-services-windows-phone-get-started-data.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->

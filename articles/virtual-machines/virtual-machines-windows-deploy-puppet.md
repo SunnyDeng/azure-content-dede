@@ -43,4 +43,7 @@ Wenn Sie eine Anleitung benötigen, laden Sie „Erste Schritte“ herunter, zu 
 [Anmelden bei einem mit Linux betriebenen virtuellen Computer]: virtual-machines-linux-how-to-log-on.md
 [Azure VM Extensions and Features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=July15_HO1-->

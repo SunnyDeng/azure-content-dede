@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Integration von Windows Phone Silverlight Reach-SDK" 
-	description="Integrieren von Azure Mobile Engagement Reach in Windows Phone Silverlight-Apps"
+	description="Integrieren von Azure Mobile Engagement Reach in Windows Phone Silverlight-Apps" 					
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="piyushjo" 
@@ -11,7 +11,7 @@
 	ms.service="mobile-engagement" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="C#" 
+	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/07/2015" 
 	ms.author="piyushjo" />
@@ -264,5 +264,6 @@ Sie können den Rückruf in der `Application_Launching`-Methode der Datei `App.x
 [Anwendungsrichtlinien]: http://msdn.microsoft.com/library/windows/apps/hh184841(v=vs.105).aspx
 [Content Policies]: http://msdn.microsoft.com/library/windows/apps/hh184842(v=vs.105).aspx
 [zusätzlichen Anforderungen für bestimmte Anwendungstypen]: http://msdn.microsoft.com/library/windows/apps/hh184838(v=vs.105).aspx
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO1-->
