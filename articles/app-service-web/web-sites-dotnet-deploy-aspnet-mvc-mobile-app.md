@@ -262,7 +262,7 @@ Der Bootstrap-Stil [linked list group][] ermöglicht es, dass für jeden Link da
 
 ![][AllSpeakersFixedDesktop]
 
-Obwohl die Ansicht des mobilen Browsers optimiert wurde, ist es schwierig, zur langen Speaker-Liste zu navigieren. Bootstrap bietet standardmäßig keine Suchfilterfunktion. Sie können diese jedoch durch wenige Codezeilen hinzufügen. Zunächst fügen Sie der Ansicht ein Suchfeld hinzu und binden dann den JavaScript-Code für die Filterfunktion ein. Fügen Sie in *Views\Home\AllSpeakers.cshtml* direkt nach dem <h2>-Tag ein <form>-Tag hinzu, wie unten dargestellt:
+Obwohl die Ansicht des mobilen Browsers optimiert wurde, ist es schwierig, zur langen Speaker-Liste zu navigieren. Bootstrap bietet standardmäßig keine Suchfilterfunktion. Sie können diese jedoch durch wenige Codezeilen hinzufügen. Zunächst fügen Sie der Ansicht ein Suchfeld hinzu und binden dann den JavaScript-Code für die Filterfunktion ein. Fügen Sie in *Views\Home\AllSpeakers.cshtml* direkt nach dem \<h2\> Tag ein \<form\> Tag hinzu, wie unten dargestellt:
 
     @model IEnumerable<string>
 
