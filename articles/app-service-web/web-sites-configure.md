@@ -36,7 +36,8 @@ Das Blatt **Anwendungseinstellungen** enthält Einstellungen, die unter verschie
 **Frameworkversionen**. Legen Sie diese Optionen fest, falls Ihre App von einem der folgenden Frameworks Gebrauch macht:
 
 - **.NET Framework**: Legen Sie die .NET Framework-Version fest. 
-- **PHP**: Legen Sie die PHP-Version fest, oder wählen Sie **AUS** aus, um PHP zu deaktivieren. - **Java**: Wählen Sie die Java-Version oder **AUS**, um Java zu deaktivieren. Über die Option **Webcontainer** können Sie zwischen Tomcat und Jetty wählen.
+- **PHP**: Legen Sie die PHP-Version fest, oder wählen Sie **AUS** aus, um PHP zu deaktivieren.
+- **Java**: Wählen Sie die Java-Version oder **AUS**, um Java zu deaktivieren. Über die Option **Webcontainer** können Sie zwischen Tomcat und Jetty wählen.
 - **Python**: Legen Sie die Python-Version fest, oder wählen Sie **AUS** aus, um Python zu deaktivieren.
 
 Aus technischen Gründen werden durch Aktivierung von Java für Ihre App die Optionen für .NET, PHP und Python deaktiviert.
@@ -78,7 +79,7 @@ Bei PHP-, Python-, Java- und Node-Anwendungen sind diese Einstellungen als Umgeb
 - SQL-Datenbank: SQLAZURECONNSTR_
 - Benutzerdefiniert: CUSTOMCONNSTR_
 
-Wenn beispielsweise eine MySQL-Verbindungszeichenfolge "`connectionstring1`" heißt, wird sie über die Umgebungsvariable `MYSQLCONNSTR_connectionString1` aufgerufen.
+Wenn beispielsweise eine MySQL-Verbindungszeichenfolge „`connectionstring1`“ heißt, wird sie über die Umgebungsvariable `MYSQLCONNSTR_connectionString1` aufgerufen.
 
 ### Standarddokumente
 
@@ -128,7 +129,7 @@ Zum Anzeigen der Protokolldateien müssen Sie die FTP-Anmeldeinformationen wie f
 ![](./media/web-sites-configure/configure03.png)
 
 
-Der vollständige FTP-Benutzername lautet "App\Benutzername". Dabei ist *App* der Name Ihrer Web-App. Den Benutzernamen finden Sie auf dem Blatt der Web-App unter **Essentials**.
+Der vollständige FTP-Benutzername lautet „App\\Benutzername“. Dabei ist *App* der Name Ihrer Web-App. Den Benutzernamen finden Sie auf dem Blatt der Web-App unter **Essentials**.
 
 ![](./media/web-sites-configure/configure02.png)
 
@@ -174,4 +175,4 @@ Weitere Informationen finden Sie unter [Vorgehensweise: Überwachen des Web-Endp
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=62-->
+<!----HONumber=62-->

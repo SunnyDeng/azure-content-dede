@@ -10,13 +10,13 @@ Es gibt mehrere Datensatztypen, von denen jeder über eigene Funktionen und Besc
 
 ###Adresseintrag (A-Eintrag)
 
-Ein A-Datensatz weist eine Domäne wie **contoso.com** oder **www.contoso.com** *oder eine Domäne mit Platzhalter* wie ***.contoso.com** einer IP-Adresse zu. Bei einer Web-App in App Service ist das die virtuelle IP-Adresse des Diensts oder eine bestimmte IP-Adresse, die Sie für Ihre Web-App erworben haben.
+Ein A-Datensatz weist eine Domäne wie **contoso.com** oder **www.contoso.com** *oder eine Domäne mit Platzhalter* wie **\*.contoso.com** einer IP-Adresse zu. Bei einer Web-App in App Service ist das die virtuelle IP-Adresse des Diensts oder eine bestimmte IP-Adresse, die Sie für Ihre Web-App erworben haben.
 
 Die Hauptvorteile eines A-Eintrags gegenüber einem CNAME-Eintrag sind:
 
 * Sie können eine Stammdomäne wie **contoso.com** einer IP-Adresse zuweisen; viele Registrierungsstellen gestatten dies nur bei Verwendung von A-Einträgen
 
-* Sie können einen Eintrag mit einem Platzhalter verwenden, wie ***.contoso.com**, der Anfragen für mehrere Unterdomänen verarbeiten kann, z. B. **mail.contoso.com**, **blogs.contoso.com** oder **www.contso.com**.
+* Sie können einen Eintrag mit einem Platzhalter verwenden, wie **\*.contoso.com**, der Anfragen für mehrere Unterdomänen verarbeiten kann, z. B. **mail.contoso.com**, **blogs.contoso.com** oder **www.contso.com**.
 
 > [AZURE.NOTE]Da ein A-Datensatz einer statischen IP-Adresse zugeordnet ist, können Änderungen an der IP-Adresse der Web-App nicht automatisch aufgelöst werden. Sie erhalten eine IP-Adresse zur Verwendung mit A-Datensätzen, wenn Sie benutzerdefinierte Domänennameneinstellungen für Ihre Web-App konfigurieren; dieser Wert kann sich jedoch ändern, wenn Sie Ihre Web-App löschen und neu erstellen oder den Modus des App Service-Plans auf **Free** zurücksetzen.
 

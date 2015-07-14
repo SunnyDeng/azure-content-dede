@@ -58,7 +58,16 @@ Die verfügbaren Optionen umfassen:
 
 | Option | Details | Standard |
 | ---- | ----- | ----- |
-| /q | Unbeaufsichtigte Installation | - | | /p: "location" | Der Pfad zum Installationsordner für den Azure Backup-Agent. | C:\Program Files\\Microsoft Azure Recovery Services Agent || /s: "Location" | Der Pfad zum Cacheordner für den Azure Backup-Agent. | C:\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch || /m | Microsoft Update abonnieren | - | | /nu | Nach Abschluss der Installation nicht nach Updates suchen | - | | /d | Microsoft Azure Recovery Services Agent wird deinstalliert | - | | /ph | Proxyhostadresse | - | | /po | Proxyhost-Portnummer | - | | /pu | Proxyhost-Benutzername | - | | /pw | Proxykennwort | - |
+| /q | Unbeaufsichtigte Installation | - |
+| /p:"location" | Der Pfad zum Installationsordner für den Azure Backup-Agent. | C:\Program Files\\Microsoft Azure Recovery Services Agent |
+| /s:"Location" | Der Pfad zum Cacheordner für den Azure Backup-Agent. | C:\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch |
+| /m | Microsoft Update abonnieren | - |
+| /nu | Nach Abschluss der Installation nicht nach Updates suchen | - |
+| /d | Microsoft Azure Recovery Services Agent wird deinstalliert | - |
+| /ph | Proxyhostadresse | - |
+| /po | Proxyhost-Portnummer | - |
+| /pu | Proxyhost-Benutzername | - |
+| /pw | Proxykennwort | - |
 
 ### Registrieren beim Azure Backup-Dienst
 Vor der Registrierung beim Azure Backup-Dienst müssen Sie sicherstellen, dass die [Voraussetzungen](backup-azure-dpm-introduction.md) erfüllt sind. Die Voraussetzungen lauten wie folgt:

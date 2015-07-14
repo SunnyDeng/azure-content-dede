@@ -68,7 +68,7 @@ Wenn Sie den Azure Store bereits kennengelernt haben, finden Sie in diesem Absch
  		...
  		mongoose.connect(connectionString);
 
-Hinweis: Azure fügt das Präfix **CUSTOMCONNSTR_** zur ursprünglich deklarierten Verbindungszeichenfolge hinzu. Darum wird im Code auf **CUSTOMCONNSTR_MONGOLAB_URI.** und nicht auf **MONGOLAB_URI** verwiesen.
+Hinweis: Azure fügt das Präfix **CUSTOMCONNSTR\\_** zur ursprünglich deklarierten Verbindungszeichenfolge hinzu. Darum wird im Code auf **CUSTOMCONNSTR\\_MONGOLAB\\_URI.** und nicht auf **MONGOLAB\\_URI** verwiesen.
 
 Nun folgt das vollständige Lernprogramm ...
 
@@ -91,7 +91,7 @@ In diesem Abschnitt richten Sie Ihre Entwicklungsumgebung ein und erstellen den 
 
 		npm install express -g
 
-	￼￼￼`-g` gibt den globalen Modus an, in dem das <strong>express</strong>-Modul ohne Angabe eines Verzeichnispfads verfügbar ist. Wenn <strong>Fehler: EPERM, chmod '/usr/local/bin/express'</strong> angezeigt wird, verwenden Sie <strong>sudo</strong>, um npm auf einer höheren Berechtigungsstufe auszuführen.
+	`-g` gibt den globalen Modus an, in dem das <strong>express</strong>-Modul ohne Angabe eines Verzeichnispfads verfügbar ist. Wenn <strong>Fehler: EPERM, chmod '/usr/local/bin/express'</strong> angezeigt wird, verwenden Sie <strong>sudo</strong>, um npm auf einer höheren Berechtigungsstufe auszuführen.
 
     Die Ausgabe dieses Befehls sollte ungefähr wie folgt aussehen:
 

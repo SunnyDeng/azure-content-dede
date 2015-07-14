@@ -67,7 +67,7 @@ Die frühzeitige Migration steht Kunden mit Supportvertrag offen. Gehen Sie wie 
 
 	**Neuer Wert:** <VirtualNetworkSitename="VNetUSWest" Location="West US">
 
-1. Speichern Sie die Änderungen, und importieren[](../virtual-networks-using-network-configuration-file/) Sie die Netzwerkkonfiguration in Azure.
+1. Speichern Sie die Änderungen, und [importieren](../virtual-networks-using-network-configuration-file/) Sie die Netzwerkkonfiguration in Azure.
 
 ## Affinitätsgruppen und virtuelle Computer
 
