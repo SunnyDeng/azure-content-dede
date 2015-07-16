@@ -118,7 +118,7 @@ Zuordnen einer NSG zu einem Subnetz: Bei der Zuordnung zu einem Subnetz werden d
 
 Zuordnen einer NSG zu einem Subnetz und zu einem virtuellen Computer: Sie haben die Möglichkeit, eine NSG einem virtuellen Computer und eine andere NSG dem Subnetz zuzuordnen, in dem sich der virtuelle Computer befindet. In diesem unterstützten Fall ist der virtuelle Computer auf zwei Ebenen geschützt. Bei eingehendem Datenverkehr durchläuft das Paket die im Subnetz angegebenen Zugriffsregeln und anschließend die Regeln auf dem virtuellen Computer. Bei ausgehendem Datenverkehr durchläuft das Paket zuerst die Regeln auf dem virtuellen Computer und anschließend die im Subnetz angegebenen Regeln (siehe Diagramm weiter unten).
 
-![NSG-ACLs](./media/virtual-networks-nsg/IC757774.png)
+![NSG ACLs](./media/virtual-networks-nsg/figure1.png)
 
 Die Zuordnung einer NSG zu einem virtuellen Computer oder zu einem Subnetz macht die Netzwerkzugriffsregeln äußerst explizit. Die Plattform fügt keine implizite Regel ein, um eingehenden Datenverkehr für einen bestimmten Port zuzulassen. In diesem Fall gilt: Wenn Sie einen Endpunkt für den virtuellen Computer erstellen, müssen Sie auch eine Regel erstellen , die Datenverkehr aus dem Internet zulässt. Andernfalls kann von außen nicht auf die VIP-Adresse<Port> zugegriffen werden.
 
