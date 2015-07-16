@@ -58,8 +58,8 @@ Zum Sichern Ihrer virtuellen Azure-Computer müssen Sie zunächst einen Sicherun
 2. Klicken Sie auf **Neu** > **Data Services** > **Recovery Services** > **Sicherungstresor** > **Schnellerfassung**. Wenn mit Ihrem Organisationskonto mehrere Abonnements verknüpft sind, wählen Sie das Abonnement aus, das mit dem Sicherungstresor verknüpft werden soll. In jedem Azure-Abonnement können Sie mehrere Sicherungstresore für die zu schützenden Daten erstellen.
 3. Geben Sie unter **Name** einen Anzeigenamen ein, über den der Tresor identifiziert wird. Dieser muss für jedes Abonnement eindeutig sein.
 4. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Beachten Sie, dass die Region des Tresors mit der Region der zu schützenden virtuellen Computer übereinstimmen muss. Wenn Sie über virtuelle Computer in verschiedenen Regionen verfügen, müssen Sie einen Tresor in jeder dieser Regionen erstellen. Es müssen keine Speicherkonten zum Speichern der Sicherungsdaten angegeben werden. Dies erfolgt automatisch über den Sicherungstresor und den Azure Backup-Dienst.
-    > [AZURE.NOTE][unterstützte Regionen](http://azure.microsoft.com/regions/#services)
-
+    > [AZURE.NOTE] Die Sicherung virtueller Computer mithilfe des Azure Backup-Dienstes wird nur in bestimmten [Regionen unterstützt](http://azure.microsoft.com/regions/#services). Sehen Sie in der Liste der unterstützten Regionen nach. Falls die gesuchte Region aktuell nicht unterstützt wird, erscheint sie während der Erstellung des Tresors nicht in der Dropdownliste.
+ 
 5. Geben Sie unter **Abonnement** das Azure-Abonnement ein, mit dem Sie den Sicherungstresor verwenden möchten.
 6. Klicken Sie auf **Tresor erstellen**.
 
@@ -101,7 +101,7 @@ Sie laden die Agent-Installationsdatei herunter und führen sie auf jedem DPM-Se
 9. Geben Sie auf der Seite **Verschlüsselungseinstellung** Passphrasedetails an, oder generieren Sie eine Passphrase automatisch.
 10. Klicken Sie auf "Passphrase generieren" gefolgt von "In Zwischenablage kopieren". Sie erhalten eine Meldung, dass Ihre Passphrase in die Zwischenablage kopiert wurde. Sie sollten Editor öffnen und die Passphrase aus der Zwischenablage einfügen. Speichern Sie die Datei, drucken Sie sie, und bewahren Sie sie an einem sicheren Ort auf. Klicken Sie auf "Registrieren", um den DPM-Server im Sicherungstresor zu registrieren.
 
-    > [AZURE.TIP]
+    > [AZURE.TIP] Vergessen Sie bei dem Schritt „Verschlüsselungseinstellung“ nicht, die Passphrase in die Zwischenablage zu kopieren.
 11. Klicken Sie auf **Registrieren**.
 
     Nachdem die Registrierung abgeschlossen ist, zeigt die DPM-Konsole die Verfügbarkeit von Azure Backup.
