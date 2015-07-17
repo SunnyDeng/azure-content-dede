@@ -61,7 +61,8 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den Twitter-Connector als 
 	![][6]
 7.	Auf ähnliche Weise können Sie die Twitter-Aktionen im Datenfluss verwenden. Wählen Sie eine Twitter-Aktion aus, und konfigurieren Sie die Eingaben für die jeweilige Aktion.
 
-	![][7] ![][8]
+	![][7]
+	![][8]
 
 	<!--Image references-->
 [1]: ./media/app-service-logic-connector-twitter/img1.png
@@ -74,4 +75,4 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den Twitter-Connector als 
 [8]: ./media/app-service-logic-connector-twitter/img8.png
  
 
-<!---HONumber=62-->
+<!----HONumber=62-->

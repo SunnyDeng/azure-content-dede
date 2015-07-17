@@ -29,7 +29,13 @@ Um den Pufferconnector zu verwenden, müssen Sie zunächst eine Instanz der Puff
 2.	Navigieren Sie zu "Web und Mobile > Azure Marketplace", und suchen Sie nach "Pufferconnector".
 3.	Konfigurieren Sie den Pufferconnector wie folgt:
  
-	![][1] – **Name** – Geben Sie einen Namen für den Pufferconnector an – **App Service-Plan** – Wählen Sie einen App Service-Plan aus, oder erstellen Sie einen – **Tarif** – Wählen Sie einen Tarif für den Connector aus – **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll – **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll – **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll
+	![][1]
+	- **Name** – Geben Sie einen Namen für den Pufferconnector an
+	- **App Service-Plan** - Wählen Sie einen App Service-Plan aus, oder erstellen Sie einen
+	- **Tarif** – Wählen Sie einen Tarif für den Connector aus
+	- **Ressourcengruppe** - Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll
+	- **Abonnement** - Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll
+	- **Standort** - Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll
 
 4. Klicken Sie auf "Erstellen". Ein neuer Pufferconnector wird erstellt.
 5. Sobald die API-App-Instanz erstellt wurde, können Sie eine Logik-App in derselben Ressourcengruppe erstellen, die den Pufferconnector verwenden soll.
@@ -46,7 +52,10 @@ Sobald Ihre API-App erstellt wurde, können Sie den Pufferconnector als Aktion f
 	![][2]
 4.	Die Pufferconnector-API-App kann durch Klicken auf den "Pufferconnector" in den Editor gezogen werden. Klicken Sie auf die Schaltfläche "Autorisieren". Geben Sie Ihre Microsoft-Anmeldeinformationen an (falls Sie nicht automatisch angemeldet werden). Melden Sie sich durch Befolgen der Schritte bei Ihrem Pufferkonto an. Am Ende werden Sie aufgefordert, dem Connector die Zugriffsberechtigung für Ihr Pufferkonto zu erteilen. Klicken Sie auf "Autorisieren".
  
-	![][3] ![][4] ![][5] ![][6]
+	![][3]
+	![][4]
+	![][5]
+	![][6]
 	
 5.	Jetzt können den Pufferconnector im Ablauf verwenden. Trigger sind derzeit nicht im Pufferconnector verfügbar. Die verfügbaren Aktionen sind – Nachricht bereitstellen
  
@@ -85,4 +94,4 @@ Sobald Ihre API-App erstellt wurde, können Sie den Pufferconnector als Aktion f
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [Puffer-API-Definition]: https://msdn.microsoft.com/de-de/library/dn708020.aspx
 
-<!---HONumber=62-->
+<!----HONumber=62-->

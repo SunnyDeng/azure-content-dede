@@ -47,10 +47,13 @@ Sobald Ihre API-App erstellt wurde, können Sie den Dropbox-Connector als Aktion
 	![][4]
 4.	Sie können die Dropbox-Connector-API-App im Editor bearbeiten, indem Sie auf „Dropbox-Connector“ klicken. Klicken Sie auf die Schaltfläche „Autorisieren“. Geben Sie Ihre Dropbox-Anmeldeinformationen ein. Klicken Sie auf „Zulassen“.
  
-	![][5] ![][6] ![][7]
+	![][5]
+	![][6]
+	![][7]
 6.	Sie können nun den Dropbox-Connector im Datenfluss verwenden. Sie können die Dropbox-Aktion „Datei hochladen“ zum Hochladen einer Datei in Ihr Dropbox-Konto verwenden.
  
-	![][8] ![][9]
+	![][8]
+	![][9]
 
 Konfigurieren Sie die Eingabeeigenschaften für die Aktion „Datei hochladen“ wie folgt:
 
@@ -72,4 +75,4 @@ Konfigurieren Sie die Eingabeeigenschaften für die Aktion „Datei hochladen“
 [9]: ./media/app-service-logic-connector-dropbox/img9.PNG
  
 
-<!---HONumber=62-->
+<!----HONumber=62-->

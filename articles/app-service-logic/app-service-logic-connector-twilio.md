@@ -30,7 +30,16 @@ Zur Verwendung des Twilio-Connectors müssen Sie zunächst eine Instanz der Twil
 2.	Wechseln Sie zu "API-Apps", und suchen Sie nach "Twilio-Connector".
 3.	Konfigurieren Sie den Twilio-Connector wie folgt:
  
-	![][1] – **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll – **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll – **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll – **Webhostingplan** – Wählen Sie einen Webhostingplan aus oder erstellen Sie einen – **Tarif** – Wählen Sie einen Tarif für den Connector aus – **Name** – Geben Sie Ihrem Twilio-Connector einen Namen – **Paketeinstellungen** – **Konto-SID** – Der eindeutige Bezeichner des Kontos. Konto-SID für Ihr Konto kann abgerufen werden aus <https://www.twilio.com/user/account/settings> - **Auth Token** -Authentifizierungstoken, das dem Konto zugeordnet ist. Das Autorisierungstoken für Ihr Konto kann unter <https://www.twilio.com/user/account/settings> abgerufen werden.
+	![][1]
+	- **Standort** - Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll
+	- **Abonnement** - Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll
+	- **Ressourcengruppe** - Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll
+	- **Webhostingplan** - Wählen Sie einen Webhostingplan aus oder erstellen Sie einen
+	- **Tarif** - Wählen Sie einen Tarif für den Connector aus
+	- **Name** - Geben Sie Ihrem Twilio-Connector einen Namen
+	- **Paketeinstellungen**
+		- **Konto-SID** - Der eindeutige Bezeichner des Kontos. Konto-SID für Ihr Konto kann abgerufen werden aus <https://www.twilio.com/user/account/settings>
+		- **Auth Token** -Authentifizierungstoken, das dem Konto zugeordnet ist. Das Autorisierungstoken für Ihr Konto kann unter <https://www.twilio.com/user/account/settings> abgerufen werden.
 
 
 4.	Klicken Sie auf "Erstellen". Ein neuer Twilio-Connector wird erstellt.
@@ -55,7 +64,8 @@ Sobald Ihre API-App erstellt wurde, können Sie den Twilio-Connector als Aktion 
 	- **Zu-Telefonnummer** - Die Zieltelefonnummer. Das akzeptierte Format lautet: + gefolgt vom Ländercode und der Telefonnummer. Beispiel: +16175551212 Wenn Sie das + weglassen, verwendet Twilio den Ländercode, den Sie für die Absendertelefonnummer in 'Von' angegeben haben.
 	- **Text** - Der zu sendende Nachrichtentext.
  
-	![][5] ![][6]
+	![][5]
+	![][6]
 
 
 
@@ -68,4 +78,4 @@ Sobald Ihre API-App erstellt wurde, können Sie den Twilio-Connector als Aktion 
 [6]: ./media/app-service-logic-connector-twilio/img6.PNG
  
 
-<!---HONumber=62-->
+<!----HONumber=62-->

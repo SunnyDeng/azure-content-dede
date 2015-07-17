@@ -126,7 +126,8 @@ Wählen Sie als Ausgabe "Tabellenspeicher" aus.
 Geben Sie auf der nächsten Seite die Informationen zur Azure-Tabelle ein. Der Ausgabealias ist der Name, den Sie in Ihrer Abfrage zum Weiterleiten der Abfrageausgabe an diese Tabelle verwenden können.
 
 
-![Grafik14][graphic14] ![Grafik15][graphic15]
+![Grafik14][graphic14]
+![Grafik15][graphic15]
 
 Die Batchgröße ist die Anzahl der Datensätze für einen Batchvorgang. Behalten Sie den Standardwert bei, wenn Sie nicht damit vertraut sind. Weitere Informationen finden Sie unter [https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx).
 

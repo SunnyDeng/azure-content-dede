@@ -58,7 +58,8 @@ Wenn Sie den Azure Store bereits kennengelernt haben, finden Sie in diesem Absch
 
 	>[AZURE.NOTE]Dieser URI enthält Ihren Benutzernamen und Ihr Kennwort für die Datenbank. Behandeln Sie diese Informationen als vertraulich, und geben Sie sie nicht weiter.
 
-5. Fügen Sie den Wert der Liste mit den **Verbindungszeichenfolgen** im **Konfigurationsmenü** Ihrer Web-App im Azure App Service hinzu: ![WebAppConnectionStrings][focus-website-connectinfo]
+5. Fügen Sie den Wert der Liste mit den **Verbindungszeichenfolgen** im **Konfigurationsmenü** Ihrer Web-App im Azure App Service hinzu: 
+![WebAppConnectionStrings][focus-website-connectinfo]
 6. Geben Sie unter **Name** **MONGOLAB_URI** ein.
 7. Fügen Sie unter **Wert** die Verbindungszeichenfolge ein, die wir im vorhergehenden Abschnitt erzeugt haben.
 8. Wählen Sie im Dropdownfeld für den Typ die Option **Benutzerdefiniert** aus (anstelle des Standards **SQLAzure**).
@@ -448,13 +449,14 @@ Bevor Sie die Azure-Befehlszeilenschnittstelle verwenden können, müssen Sie zu
 
 Das Erstellen einer Web-App in Azure App Service ist sehr einfach. Wenn dies Ihre erste Azure-Web-App ist, müssen Sie das Portal verwenden. Wenn Sie bereits mindestens eine Website erstellt haben, fahren Sie mit Schritt 7 fort.
 
-1. Klicken Sie im Azure-Portal auf **Neu**. ![Neu][button-new]
-2. Wählen Sie **Compute > Web-App > Schnellerfassung** aus.
-<!--- ![Create Web App][screen-mongolab-newwebsite] -->
+1. Klicken Sie im Azure-Portal auf **Neu**.  
+	![Neu][button-new]
+2. Wählen Sie **Compute > Web-App > Schnellerfassung** aus.  
+	<!-- ![Create Web App][screen-mongolab-newwebsite] -->
 3. Geben Sie einen URL-Präfix ein. Wählen Sie einen Namen aus, aber denken Sie daran, dass er eindeutig sein muss ("mymongoapp" ist wahrscheinlich nicht verfügbar).
 4. Klicken Sie auf **Web-App erstellen**.
-5. Klicken Sie nach Abschluss der Web-App-Erstellung auf den Namen der Web-App in der Web-App-Liste. Das Web-App-Dashboard wird angezeigt.
-<!--- ![Web App Dashboard][screen-mongolab-websitedashboard] -->
+5. Klicken Sie nach Abschluss der Web-App-Erstellung auf den Namen der Web-App in der Web-App-Liste. Das Web-App-Dashboard wird angezeigt.  
+	<!--- ![Web App Dashboard][screen-mongolab-websitedashboard] -->
 6. Klicken Sie auf **Git-Veröffentlichung einrichten** unter **Schnellansicht**. Geben Sie dann den gewünschten Benutzernamen und das gewünschte Kennwort für Git ein. Sie verwenden dieses Kennwort für Pushvorgänge zu Ihrer Web-App (in Schritt 9).  
 7. Wenn Sie Ihre Web-App mit den oben genannten Schritten erstellt haben, wird der Prozess durch den folgenden Befehl abgeschlossen. Wenn Sie allerdings bereits mehr als eine Azure-Web-App haben, können Sie die oben genannten Schritte überspringen und eine neue Web-App mithilfe des gleichen Befehls erstellen. Im Projektverzeichnis **tasklist**:
 
@@ -573,4 +575,4 @@ Glückwunsch! Sie haben gerade eine "Node.js"-Anwendung mit einer von MongoLab g
 [mongolab-view]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/mongolab-view.png
  
 
-<!----HONumber=62-->
+<!-----HONumber=62-->
