@@ -63,4 +63,4 @@ Sie sind nun bereit für die Gewusst-wie-Aufgaben in diesem Leitfaden.
 
 [Configuring Connection Strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

@@ -1,3 +1,4 @@
+
 Virtuelle Computer sind immer mit einem Clouddienst verbunden, der als Container fungiert und einen eindeutigen öffentlichen DNS-Namen, eine öffentliche IP-Adresse und einen Satz von Endpunkten bereitstellt, um auf den virtuellen Computer über das Internet zugreifen zu können. Der Clouddienst kann optional auch in einem virtuellen Netzwerk sein.
 
 Befindet sich ein Clouddienst nicht in einem virtuellen Netzwerk, handelt es sich um einen *eigenständigen* Clouddienst. Die virtuellen Computer in diesem Clouddienst können mit anderen virtuellen Computern nur über die öffentlichen DNS-Namen der anderen virtuellen Computer kommunizieren. Dieser Datenverkehr läuft über das Internet. Wenn ein Clouddienst mit einem virtuellen Netzwerk verbunden ist, können die virtuellen Computer in diesem Clouddienst mit allen anderen virtuellen Computern in dem virtuellen Netzwerk kommunizieren, ohne dass Daten über das Internet gesendet werden.
@@ -48,4 +49,4 @@ Nachdem Sie einen virtuellen Computer erstellt haben, empfiehlt es sich, einen D
 
 [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](../articles/virtual-machines/storage-windows-attach-disk.md)
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO2-->

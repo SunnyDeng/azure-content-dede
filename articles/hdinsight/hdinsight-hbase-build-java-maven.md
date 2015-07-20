@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen von HBase-Anwendungen mit Maven | Microsoft Azure"
+	pageTitle="Erstellen einer HBase-Anwendung mit Maven | Microsoft Azure"
 	description="Erfahren Sie, wie Sie mit Apache Maven eine Java-basierte Apache HBase-Anwendung erstellen und anschließend in Azure HDInsight bereitstellen können."
 	services="hdinsight"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/31/2014"
+	ms.date="07/06/2014"
 	ms.author="larryfr"/>
 
 #Verwenden von Maven zur Entwicklung von Java-Anwendungen, die HBase mit HDInsight (Hadoop) nutzen
@@ -24,31 +24,31 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 ##Anforderungen
 
-* [Java-Plattform JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 oder höher
+* [Java-Plattform JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 oder höher
 
 * [Maven](http://maven.apache.org/)
 
-* [Azure HDInsight-Cluster mit HBase](../hdinsight-hbase-get-started.md#create-hbase-cluster)
+* [Ein Azure HDInsight-Cluster mit HBase](hdinsight-hbase-get-started.md#create-hbase-cluster)
 
 ##Erstellen des Projekts
 
-1. Ändern Sie an der Befehlszeile Ihrer Entwicklungsumgebung die Verzeichnisse in den Speicherort, an dem Sie das Projekt anlegen möchten, z. B. `cd code\hdinsight`.
+1. Ändern Sie an der Befehlszeile Ihrer Entwicklungsumgebung die Verzeichnisse auf den Speicherort, an dem Sie das Projekt erstellen möchten, beispielsweise `cd code\hdinsight`.
 
 2. Verwenden Sie den Befehl __mvn__, der mit Maven installiert wird, um das Gerüst für das Projekt zu erstellen.
 
 		mvn archetype:generate -DgroupId=com.microsoft.examples -DartifactId=hbaseapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
-	Damit wird ein neues Verzeichnis im aktuellen Verzeichnis angelegt, das den Namen trägt, der vom __artifactID__-Parameter (**hbaseapp** in diesem Beispiel) festgelegt wurde. Dieses Verzeichnis enthält die folgenden Elemente:
+	Damit wird ein neues Verzeichnis im aktuellen erstellt, das den Namen trägt, der vom Parameter __artifactID__ (in diesem Beispiel **hbaseapp**) festgelegt wurde. Dieses Verzeichnis enthält die folgenden Elemente:
 
 	* __pom.xml__: Das Projektobjektmodell ([POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)) enthält Informationen und Konfigurationsdetails für das Erstellen des Projekts.
 
-	* __src__: Das Verzeichnis, das das Verzeichnis __main\\java\\com\\microsoft\\examples__ enthält; hier schreiben Sie die Anwendung.
+	* __src__: Das Verzeichnis, das das Verzeichnis __main\\java\\com\\microsoft\\examples__ enthält, in dem Sie die Anwendung erstellen.
 
-3. Löschen Sie die Datei __src\\test\\java\\com\\microsoft\\examples\\apptest.java__, die in diesem Beispiel nicht verwendet wird.
+3. Löschen Sie die Datei __src\\test\\java\\com\\microsoft\\examples\\apptest.java__, da sie in diesem Beispiel nicht verwendet wird.
 
-##Aktualisieren des Projekt-Objektmodells
+##Aktualisieren des Projektobjektmodells
 
-1. Bearbeiten Sie die Datei __pom.xml__, und fügen Sie folgenden Code im Abschnitt `<dependencies>` ein:
+1. Bearbeiten Sie die Datei __pom.xml__, und fügen Sie folgenden Code im Abschnitt `<dependencies>` ein.
 
 		<dependency>
       	  <groupId>org.apache.hbase</groupId>
@@ -56,9 +56,9 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
           <version>0.98.4-hadoop2</version>
         </dependency>
 
-	Damit wird Maven informiert, dass das Projekt den __hbase-Client__ in der Version __0.98.4-hadoop2__ benötigt. Beim Kompilieren wird er aus dem standardmäßigen Maven-Repository heruntergeladen. Sie können die [Suche des Maven Central Repository](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar) verwenden, wenn Sie weitere Informationen zu dieser Abhängigkeit erhalten möchten.
+	Damit wird Maven informiert, dass das Projekt den __hbase-Client__ in der Version __0.98.4-hadoop2__ benötigt. Beim Kompilieren wird er aus dem standardmäßigen Maven-Repository heruntergeladen. Sie können die [Suche im zentralen Maven-Repository](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar) verwenden, wenn Sie weitere Informationen zu dieser Abhängigkeit erhalten möchten.
 
-2. Fügen Sie der Datei __pom.xml__ folgenden Code hinzu. Dieser muss sich in der Datei innerhalb der `<project>...</project>`-Tags befinden, z. B. zwischen `</dependencies>` und `</project>`.
+2. Fügen Sie der Datei __pom.xml__ folgenden Code hinzu: Dieser muss sich in den `<project>...</project>`-Tags in der Datei befinden, z. B. zwischen `</dependencies>` und `</project>`.
 
 		<build>
 		  <sourceDirectory>src</sourceDirectory>
@@ -103,17 +103,17 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 		  </plugins>
 		</build>
 
-	Damit wird eine Ressource konfiguriert (__conf\\hbase-site.xml__), die die Konfigurationsinformationen für HBase enthält.
+	Damit wird eine Ressource (__conf\\hbase-site.xml__,) konfiguriert, die die Konfigurationsinformationen für HBase enthält.
 
-	> [AZURE.NOTE]Sie können die Konfigurationswerte auch per Code festlegen. Wie Sie das tun, erfahren Sie in den Kommentaren im Beispiel __CreateTable__ unten.
+	> [AZURE.NOTE]Sie können die Konfigurationswerte auch per Code festlegen. Wie Sie das tun, erfahren Sie in den Kommentaren im Beispiel __CreateTable__ weiter unten.
 
-	Damit werden auch das [Maven Compiler-Plug-In](http://maven.apache.org/plugins/maven-compiler-plugin/) und das [Maven Shade-Plug-In](http://maven.apache.org/plugins/maven-shade-plugin/) konfiguriert. Das Compiler-Plug-In wird zum Kompilieren der Topologie verwendet. Das Shade-Plug-In wird verwendet, um die Lizenzduplizierung in dem von Maven erstellten JAR-Paket zu verhindern. Es wird deshalb verwendet, weil die doppelten Lizenzdateien bei der Laufzeit einen Fehler auf dem HDInsight-Cluster verursachen. Sie können diesen Fehler verhindern, indem Sie das Maven Shade-Plug-In mit der `ApacheLicenseResourceTransformer`-Implementierung verwenden.
+	Damit werden auch das [Maven Compiler-Plug-In](http://maven.apache.org/plugins/maven-compiler-plugin/) und das [Maven Shade-Plug-In](http://maven.apache.org/plugins/maven-shade-plugin/) konfiguriert. Das Compiler-Plug-In wird zum Kompilieren der Topologie verwendet. Das Shade-Plug-In wird verwendet, um die Lizenzduplizierung in dem von Maven erstellten JAR-Paket zu verhindern. Es wird deshalb verwendet, weil die doppelten Lizenzdateien bei der Laufzeit einen Fehler auf dem HDInsight-Cluster verursachen. Wird maven-shade-plugin mit der `ApacheLicenseResourceTransformer`-Implementierung verwendet, so wird dieser Fehler verhindert.
 
-	Das Maven Shade-Plug-In generiert außerdem ein uberjar (oder fatjar), das alle Abhängigkeiten enthält, die von der Anwendung benötigt werden.
+	Das maven-shade-plugin erzeugt außerdem ein Uberjar (oder Fatjar), das alle Abhängigkeiten enthält, die von der Anwendung benötigt werden.
 
 3. Speichern Sie die Datei __pom.xml__.
 
-4. Erstellen Sie ein neues Verzeichnis namens __conf__ im Verzeichnis __hbaseapp__. Erstellen Sie im Verzeichnis __conf__ eine neue Datei namens __hbase-site.xml__, und verwenden Sie folgenden Code als Inhalt:
+4. Erstellen Sie ein neues Verzeichnis namens __conf__ im Verzeichnis __hbaseapp__. Erstellen Sie im Verzeichnis __conf__ eine neue Datei namens __hbase-site.xml__, und verwenden Sie Folgendes als Inhalt.
 
 		<?xml version="1.0"?>
 		<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
@@ -155,7 +155,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 	Diese Datei wird zum Laden der HBase-Konfiguration für einen HDInsight-Cluster verwendet.
 
-	> [AZURE.NOTE]Dies ist eine sehr minimale Datei vom Typ "hbase-site.xml", die lediglich die Mindesteinstellungen für den HDInsight-Cluster enthält. Eine Vollversion der von HDInsight verwendeten Konfigurationsdatei "hbase-site.xml" finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-management-portal.md#rdp). Die Datei "hbase-site.xml" befindet sich im Verzeichnis "C:\\apps\\dist\\hbase-&lt;Versionsnummer>-hadoop2\\conf". Der Dateiteil mit der Versionsnummer des Dateipfads ändert sich, wenn HBase auf dem Cluster aktualisiert wird.
+	> [AZURE.NOTE]Das ist eine sehr minimale Datei vom Typ "hbase-site.xml", und sie enthält Mindesteinstellungen für den HDInsight-Cluster. Eine vollständige Version der Konfigurationsdatei "hbase-site.xml", die von HDInsight verwendet wird, finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-management-portal.md#rdp). Die Datei "hbase-site.xml" befindet sich im Verzeichnis "C:\\apps\\dist\\hbase-&lt;Versionsnummer>-hadoop2\\conf". Der Dateiteil mit der Versionsnummer des Dateipfads ändert sich, wenn HBase auf dem Cluster aktualisiert wird.
 
 3. Speichern Sie die Datei __hbase-site.xml__.
 
@@ -163,7 +163,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 1. Wechseln Sie zum Verzeichnis __hbaseapp\\src\\main\\java\\com\\microsoft\\examples__, und benennen Sie die Datei "app.java" in __CreateTable.java__ um.
 
-2. Öffnen Sie die Datei __CreateTable.java__, und ersetzen Sie die vorhandenen Inhalte mit folgendem Code:
+2. Öffnen Sie die Datei __CreateTable.java__, und ersetzen Sie die vorhandenen Inhalte mit Folgendem:
 
 		package com.microsoft.examples;
 		import java.io.IOException;
@@ -227,11 +227,11 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 		  }
 		}
 
-	Dies ist die __CreateTable__-Klasse, die eine Tabelle namens __people__ erzeugt und sie mit einigen vordefinierten Benutzern füllt.
+	Das ist die Klasse __CreateTable__, die eine Tabelle namens __people__ erzeugt und sie mit einigen vordefinierten Benutzern füllt.
 
 3. Speichern Sie die Datei __CreateTable.java__.
 
-4. Erstellen Sie im Verzeichnis __hbaseapp\\src\\main\\java\\com\\microsoft\\examples__ eine neue Datei mit dem Namen __SearchByEmail.java__. Fügen Sie folgenden Code als Inhalt der Datei hinzu:
+4. Erstellen Sie im Verzeichnis __hbaseapp\\src\\main\\java\\com\\microsoft\\examples__ eine Datei mit dem Namen __SearchByEmail.java__. Fügen Sie Folgendes als Inhalt der Datei hinzu:
 
 		package com.microsoft.examples;
 		import java.io.IOException;
@@ -304,11 +304,11 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 		  }
 		}
 
-	Die Klasse __SearchByEmail__ kann zur Abfrage von Zeilen nach E-Mail-Adresse verwendet werden. Da sie einen Filter für reguläre Ausdrücke verwendet, können Sie bei Verwendung der Klasse entweder eine Zeichenfolge oder einen regulären Ausdruck angeben.
+	Die Klasse __SearchByEmail__ kann zur Abfrage von Zeilen nach E-Mail-Adresse verwendet werden. Da sie einen Filter für reguläre Ausdrücke verwendet, können Sie beim Einsatz der Klasse entweder eine Zeichenfolge angeben oder einen regulären Ausdruck.
 
 5. Speichern Sie die Datei __SearchByEmail.java__.
 
-6. Erstellen Sie im Verzeichnis __hbaseapp\\src\\main\\hava\\com\\microsoft\\examples__ eine Datei mit dem Namen __DeleteTable.java__. Fügen Sie folgenden Code als Inhalt der Datei hinzu:
+6. Erstellen Sie im Verzeichnis __hbaseapp\\src\\main\\hava\\com\\microsoft\\examples__ eine Datei mit dem Namen __DeleteTable.java__. Fügen Sie Folgendes als Inhalt der Datei hinzu:
 
 		package com.microsoft.examples;
 		import java.io.IOException;
@@ -330,7 +330,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 		  }
 		}
 
-	Diese Klasse dient nur zum Bereinigen dieses Beispiels. Sie deaktiviert zunächst die von der __CreateTable__-Klasse erstellte Tabelle und löscht sie dann.
+	Diese Klasse dient zum Aufräumen dieses Beispiels. Sie deaktiviert die von der Klasse __CreateTable__ erstellte Tabelle und verwirft sie.
 
 7. Speichern Sie die Datei __DeleteTable.java__.
 
@@ -338,21 +338,21 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 1. Öffnen Sie eine Eingabeaufforderung, und ändern Sie das Verzeichnis in __hbaseapp__.
 
-2. Verwenden Sie den folgenden Befehl, um eine JAR-Datei mit der Anwendung zu erstellen:
+2. Verwenden Sie den folgenden Befehl, um eine JAR-Datei zu erstellen, die die Anwendung enthält:
 
 		mvn clean package
 
-	Damit werden etwaige frühere Buildartefakte entfernt, alle noch nicht installierten Abhängigkeiten heruntergeladen und die Anwendung erstellt und verpackt.
+	Damit werden etwaige frühere Erstellungsartefakte entfernt, alle noch nicht installierten Abhängigkeiten heruntergeladen und dann die Anwendung erstellt und gepackt.
 
 3. Nachdem dieser Befehl ausgeführt wurde, enthält das Verzeichnis __hbaseapp\\target__ eine Datei namens __hbaseapp-1.0-SNAPSHOT.jar__.
 
-	> [AZURE.NOTE]Die Datei __hbaseapp-1.0-SNAPSHOT.jar__ ist eine Uberjar-Datei (manchmal auch Fatjar genannt), die alle Abhängigkeiten enthält, die zum Ausführen der Datei erforderlich sind.
+	> [AZURE.NOTE]Die Datei __hbaseapp-1.0-SNAPSHOT.jar__ ist ein Uberjar (manchmal auch Fatjar genannt) mit allen Abhängigkeiten, die für das Ausführen der Anwendung erforderlich sind.
 
-##Hochladen der JAR-Datei und Starten des Auftrags
+##Hochladen der JAR-Datei und Starten eines Auftrags
 
-> [AZURE.NOTE]Es gibt viele Möglichkeiten, eine Datei in einen HDInsight-Cluster hochzuladen (siehe [Hochladen von Daten für Hadoop-Aufträge in HDInsight](hdinsight-upload-data.md)). Bei den folgenden Schritten wird [Azure PowerShell](../install-configure-powershell.md) verwendet.
+> [AZURE.NOTE]Es gibt viele Möglichkeiten, eine Datei in einen HDInsight-Cluster hochzuladen, wie unter [Hochladen von Daten für Hadoop-Aufträge in HDInsight](hdinsight-upload-data.md) beschrieben. Die folgenden Schritte geschehen mithilfe von [Azure PowerShell](../install-configure-powershell.md).
 
-1. Nachdem Sie Azure PowerShell installiert und konfiguriert haben, erstellen Sie eine neue Datei mit dem Namen __hbase-runner.psm1__. Fügen Sie folgenden Code als Inhalt der Datei hinzu:
+1. Nachdem Sie Azure PowerShell installiert und konfiguriert haben, erstellen Sie eine neue Datei namens __hbase-runner.psm1__. Fügen Sie Folgendes als Inhalt der Datei hinzu:
 
 		<#
 		.SYNOPSIS
@@ -544,7 +544,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 		PS C:\ Import-Module c:\path\to\hbase-runner.psm1
 
-	Ändern Sie den Pfad auf den Speicherort der früher erstellten Datei __hbase-runner.psm1__. Damit wird das Modul für diese Azure PowerShell-Sitzung registriert.
+	Ändern Sie den Pfad auf den Speicherort der früher erstellten Datei __hbase-runner.psm1__. Dadurch wird das Modul für diese Azure PowerShell-Sitzung registriert.
 
 2. Verwenden Sie den folgenden Befehl zu Hochladen von __hbaseapp-1.0-SNAPSHOT.jar__ zum HDInsight-Cluster.
 
@@ -558,15 +558,15 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 	Ersetzen Sie __hdinsightclustername__ durch den Namen Ihres HDInsight-Clusters.
 
-	Dieser Befehl erstellt eine neue Tabelle mit dem Namen __people__ im HDInsight-Cluster. Bei diesem Befehl erfolgt keine Ausgabe im Konsolenfenster.
+	Dieser Befehl erstellt eine neue Tabelle namens __people__ im HDInsight-Cluster. Bei diesem Befehl erfolgt keine Ausgabe im Konsolenfenster.
 
-2. Verwenden Sie den folgenden Befehl, um nach Einträgen in der Tabelle zu suchen:
+2. Verwenden Sie den folgenden Befehl, um nach Einträgen in die Tabelle zu suchen:
 
 		Start-HBaseExample -className com.microsoft.examples.SearchByEmail -clusterName hdinsightclustername -emailRegex contoso.com
 
 	Ersetzen Sie __hdinsightclustername__ durch den Namen Ihres HDInsight-Clusters.
 
-	Mit diesem Befehl wird die **SearchByEmail**-Klasse für die Suche nach etwaigen Zeilen verwendet, in denen die Spaltenfamilie __contactinformation__ und die Spalte __email__ die Zeichenfolge __contoso.com__ enthalten. Daraufhin sollte Sie folgende Ergebnisse erhalten:
+	Dieser Befehl verwendet die Klasse **SearchByEmail** Klasse, um nach allen Zeilen zu suchen, in denen die Spaltenfamilie __contactinformation__ und die Spalte __email__ die Zeichenfolge __contoso.com__ enthält. Daraufhin sollten Sie folgende Ergebnisse erhalten:
 
 		Franklin Holtz - ID: 2
 		Franklin Holtz - franklin@contoso.com - ID: 2
@@ -575,11 +575,11 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 		Gabriela Ingram - ID: 6
 		Gabriela Ingram - gabriela@contoso.com - ID: 6
 
-	Wenn __fabrikam.com__ als `-emailRegex`-Wert verwendet wird, werden Benutzer zurückgegeben, bei denen im Feld "E-Mail" __fabrikam.com__ vorkommt. Da diese Suche mithilfe eines auf regulären Ausdrücken basierenden Filters implementiert wurde, können Sie auch reguläre Ausdrücke wie etwa __^r__ eingeben, die Einträge zurückgeben, deren E-Mail-Adresse mit dem Buchstaben "r" beginnt.
+	Wird __fabrikam.com__ als `-emailRegex`-Wert verwendet, werden Benutzer zurückgegeben, die __fabrikam.com__ im Feld "E-Mail" aufweisen. Da diese Suche mithilfe eines auf regulären Ausdrücken basierenden Filters implementiert wurde, können Sie auch reguläre Ausdrücke wie etwa __^r__ eingeben, womit Einträge zurückgegeben werden, bei denen die E-Mail-Adresse mit dem Buchstaben "r" beginnt.
 
 ##Löschen der Tabelle
 
-Wenn Sie mit dem Beispiel fertig sind, verwenden Sie den folgenden Befehl aus der Azure PowerShell-Sitzung zum Löschen der Tabelle __people__, die in diesem Beispiel verwendet wurde:
+Wenn Sie mit dem Beispiel fertig sind, verwenden Sie den folgenden Befehl aus der Azure PowerShell-Sitzung zum Löschen der Tabelle __people__, die in diesem Beispiel verwendet wurde.
 
 	Start-HBaseExample -className com.microsoft.examples.DeleteTable -clusterName hdinsightclustername
 
@@ -589,6 +589,6 @@ Ersetzen Sie __hdinsightclustername__ durch den Namen Ihres HDInsight-Clusters.
 
 ###Keine oder unerwartete Ergebnisse bei Verwenden von "Start-HBaseExample"
 
-Verwenden Sie den `-showErr`-Parameter, wenn Sie den Standardfehler (STDERR) sehen möchten, der während der Ausführung des Auftrags generiert wurde.
+Verwenden Sie den Parameter `-showErr`, wenn Sie den Standardfehler (STDERR) sehen möchten, der während der Ausführung des Auftrags erzeugt wurde.
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

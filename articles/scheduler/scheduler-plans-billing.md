@@ -1,0 +1,90 @@
+<properties 
+ pageTitle="Pläne und Abrechnung in Azure Scheduler" 
+ description="" 
+ services="scheduler" 
+ documentationCenter=".NET" 
+ authors="krisragh" 
+ manager="dwrede" 
+ editor=""/>
+<tags 
+ ms.service="scheduler" 
+ ms.workload="infrastructure-services" 
+ ms.tgt_pltfrm="na" 
+ ms.devlang="dotnet" 
+ ms.topic="article" 
+ ms.date="05/12/2015" 
+ ms.author="krisragh"/>
+ 
+# Pläne und Abrechnung in Azure Scheduler
+
+## Pläne für Auftragssammlungen
+
+In Azure Scheduler wird nach Auftragssammlungen abgerechnet. Auftragssammlungen enthalten eine Reihe von Aufträgen und sind in drei Plänen (Free, Standard und Premium) verfügbar.
+
+|**Auftragssammlungsplan**|**Max. Anzahl von Aufträgen pro Auftragssammlung**|**Max. Wiederholungen**|**Max. Auftragssammlungen pro Abonnement**|**Einschränkungen**|
+|:---|:---|:---|:---|:---|
+|**Free**|Fünf Aufträge pro Auftragssammlung|Einmal pro Stunde. Aufträge können maximal einmal pro Stunde ausgeführt werden.|Ein Abonnement kann maximal eine Auftragssammlung vom Typ „Free“ enthalten.|Das [HTTP-Objekt für die ausgehende Autorisierung](scheduler-outbound-authentication.md) kann nicht verwendet werden.
+|**Standard**|50 Aufträge pro Auftragssammlung|Einmal pro Minute. Aufträge können maximal einmal pro Minute ausgeführt werden.|Ein Abonnement kann maximal 100 Auftragssammlungen vom Typ „Standard“ enthalten.|Zugriff auf sämtliche Scheduler-Features|
+|**Premium**|50 Aufträge pro Auftragssammlung|Einmal pro Minute. Aufträge können maximal einmal pro Minute ausgeführt werden.|Ein Abonnement kann eine unbegrenzte Anzahl von Auftragssammlungen des Typs „Premium“ enthalten.|Zugriff auf sämtliche Scheduler-Features|
+
+## Upgrades und Downgrades für Auftragssammlungspläne
+
+Sie können bei Ihren Auftragssammlungsplänen jederzeit zwischen „Free“, „Standard“ und „Premium“ wechseln. Beim Herabstufen einer Auftragssammlung zu „Free“ kann jedoch aus folgenden Gründen ein Fehler auftreten:
+
+- Im Abonnement ist bereits eine Auftragssammlung vom Typ „Free“ vorhanden.
+- Ein Auftrag in der Auftragssammlung hat eine höhere Wiederholungsrate als für Aufträge in Auftragssammlungen vom Typ „Free“ zulässig. In Auftragssammlungen vom Typ „Free“ ist maximal eine Wiederholung pro Stunde zulässig.
+- Die Auftragssammlung enthält mehr als fünf Aufträge.
+- Ein Auftrag in der Auftragssammlung besitzt eine HTTP- oder HTTPS-Aktion, die ein [HTTP-Objekt für die ausgehende Autorisierung](scheduler-outbound-authentication.md) verwendet.
+
+## Abrechnung und Azure-Pläne
+
+Für Auftragssammlungen vom Typ „Free“ fallen in Abonnements keine Kosten an. Bei mehr als 100 Standard-Auftragssammlungen (entspricht zehn Standard-Abrechnungseinheiten) lohnt sich die Verlagerung der Auftragssammlungen in der Premium-Plan.
+
+Wenn Sie eine Auftragssammlung vom Typ „Standard“ und eine vom Typ „Premium“ besitzen, werden Ihnen eine Standard-Abrechnungseinheit _und_ eine Premium-Abrechnungseinheit in Rechnung gestellt. Die Abrechnung des Scheduler-Diensts basiert auf der Anzahl aktiver Auftragssammlungen vom Typ „Standard“ oder „Premium“. Dies wird in den beiden folgenden Abschnitten ausführlicher erläutert.
+
+## Standard-Abrechnungseinheiten
+
+Eine Standard-Abrechnungseinheit kann bis zu zehn Standard-Auftragssammlungen enthalten. Da eine Standard-Auftragssammlung bis zu 50 Aufträge enthalten kann, kann ein Abonnement mit einer Standard-Abrechnungseinheit bis zu 500 Aufträge (und nahezu 22 Millionen Auftragsausführungen pro Monat) umfassen.
+
+Bis zu einer Anzahl von zehn Standard-Auftragssammlungen wird eine einzelne Standard-Abrechnungseinheit berechnet. Wenn Sie zwischen elf und 20 Standard-Auftragssammlungen besitzen, werden zwei Standard-Abrechnungseinheiten berechnet. Wenn Sie zwischen 21 und 30 Standard-Auftragssammlungen besitzen, werden drei Standard-Abrechnungseinheiten berechnet, usw.
+
+## Premium-Abrechnungseinheiten
+
+Eine Premium-Abrechnungseinheit kann bis zu 10.000 Premium-Auftragssammlungen enthalten. Da eine Premium-Auftragssammlung bis zu 50 Aufträge enthalten kann, kann ein Abonnement mit einer Premium-Abrechnungseinheit bis zu 500,000 Aufträge (und nahezu 22 Milliarden Auftragsausführungen pro Monat) umfassen.
+
+Bis zu einer Anzahl von 10.000 Premium-Auftragssammlungen wird eine einzelne Premium-Abrechnungseinheit berechnet. Wenn Sie zwischen 10.001 und 20.000 Premium-Auftragssammlungen besitzen, werden zwei Premium-Abrechnungseinheiten berechnet, usw.
+
+Premium-Auftragssammlungen haben den gleichen Funktionsumfang wie Standard-Auftragssammlungen, sind preislich aber interessanter, wenn Ihre Anwendung besonders viele Auftragssammlungen benötigt.
+
+## Abrechnung und aktiver Status
+
+Auftragssammlungen sind immer aktiv, es sei denn, Ihr gesamtes Abonnement wurde aufgrund von Problemen bei der Abrechnung vorübergehend deaktiviert. Wenn Sie sichergehen möchten, dass eine Auftragssammlung nicht in Rechnung gestellt wird, müssen Sie sie entweder mit dem Plan _Free_ versehen oder die Auftragssammlung löschen.
+
+Sie können zwar mit einem einzelnen Vorgang alle Aufträge innerhalb einer Auftragssammlung deaktivieren, dies hat jedoch keine Auswirkungen auf deren Abrechnungsstatus. Mit anderen Worten: Die Auftragssammlung wird _weiterhin in Rechnung gestellt_. Darüber hinaus gelten auch leere Auftragssammlungen als aktiv und werden berechnet.
+
+## Preise
+
+Ausführliche Informationen finden Sie unter [Scheduler Preise](http://azure.microsoft.com/pricing/details/scheduler/).
+
+## Siehe auch
+ 
+ [Was ist Azure Scheduler?](scheduler-intro.md)
+ 
+ [Scheduler Concepts, Terminology, and Entity Hierarchy](scheduler-concepts-terms.md) (in englischer Sprache)
+
+ [Get Started Using Scheduler in the Management Portal](scheduler-get-started-portal.md) (in englischer Sprache)
+
+ [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](scheduler-advanced-complexity.md) (in englischer Sprache)
+
+ [Zeitplanungsmodul-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+
+ [Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
+ 
+ [Scheduler High-Availability and Reliability](scheduler-high-availability-reliability.md) (in englischer Sprache)
+
+ [Scheduler Limits, Defaults, and Error Codes](scheduler-limits-defaults-errors.md) (in englischer Sprache)
+
+ [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
+  
+
+<!---HONumber=July15_HO2-->

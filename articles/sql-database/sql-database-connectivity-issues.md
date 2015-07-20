@@ -70,4 +70,6 @@ Der oben genannte Supportartikel bietet Hilfe bei folgenden Verbindungsproblemen
 
 - Zugriff auf Metriken von Datenbank-Konnektivitätsereignissen erhalten Sie durch Abfragen mit der Sicht [**sys.database_connection_stats (Azure SQL-Datenbank)**](https://msdn.microsoft.com/library/dn269986.aspx).
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=July15_HO2-->

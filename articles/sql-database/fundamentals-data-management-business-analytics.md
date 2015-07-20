@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Datenverwaltung und Business Analytics - Azure" 
+	pageTitle="Datenverwaltung und Business Analytics – Azure" 
 	description="Eine Einführung zur Verwaltung und Analyse von Daten in Azure. Für die Arbeit mit relationalen und nicht relationalen Daten stehen zahlreiche Optionen zur Verfügung." 
 	services="sql-database, storage" 
 	documentationCenter=".net" 
@@ -19,7 +19,10 @@
 
 
 
-[WACOM.INCLUDE [cloud-storage](../../includes/cloud-storage.md)]
 
-<!--HONumber=35.2-->
+
+
+[AZURE.INCLUDE [cloud-storage](../../includes/cloud-storage.md)]
  
+
+<!---HONumber=July15_HO2-->

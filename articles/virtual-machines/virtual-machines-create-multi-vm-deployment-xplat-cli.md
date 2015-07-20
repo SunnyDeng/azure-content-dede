@@ -65,5 +65,6 @@ Während Sie weitere Informationen zu jedem der Azure-CLI-Befehle mithilfe der O
 
 * [Linux und Open-Source-Computing auf Azure](virtual-machines-linux-opensource.md)
 * [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO2-->

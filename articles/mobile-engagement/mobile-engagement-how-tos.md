@@ -3,7 +3,7 @@
    description="Übersicht über die Benutzeroberfläche von Azure Mobile Engagement" 
    services="mobile-engagement" 
    documentationCenter="" 
-   authors="v-micada" 
+   authors="piyushjo" 
    manager="dwrede" 
    editor=""/>
 
@@ -13,14 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="02/17/2015"
-   ms.author="v-micada"/>
+   ms.date="05/12/2015"
+   ms.author="piyushjo"/>
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="../mobile-engagement-user-interface" title="Einführung">Einführung</a> <a href="../mobile-engagement-user-interface-navigation" title="Navigation">Navigation</a> <a href="../mobile-engagement-user-interface-home/" title="Home">Home</a> <a href="../mobile-engagement-user-interface-my-account" title="Mein Konto">Mein Konto</a> <a href="../mobile-engagement-user-interface-analytics" title="Analysen">Analysen</a> <a href="../mobile-engagement-user-interface-monitor" title="Monitor">Monitor</a> <a href="../mobile-engagement-user-interface-reach" title="Erreichen">Erreichen</a> <a href="../mobile-engagement-user-interface-reach-campaign" title="Reichweitenkampagne">Reichweitenkampagne</a> <a href="../mobile-engagement-user-interface-reach-criterion" title="Reichweitenkriterium">Reichweitenkriterium</a> <a href="../mobile-engagement-user-interface-reach-content" title="Reichweiteninhalt">Reichweiteninhalt</a> <a href="../mobile-engagement-how-tos" title="Vorgehensweise Reichweite">Vorgehensweise Reichweite</a> <a href="../mobile-engagement-user-interface-segments" title="Segmente">Segmente</a> <a href="../mobile-engagement-user-interface-dashboard" title="Dashboard">Dashboard</a> <a href="../mobile-engagement-user-interface-settings" title="Einstellungen">Einstellungen</a>
-</div>
+# Erste Schritte bei der Verwendung und Verwaltung von Push-Vorgängen, um Ihre Endbenutzern zu erreichen.
 
-# Erste Schritte bei der  Verwendung und Verwaltung von Push-Vorgängen, um Ihre Endbenutzern zu erreichen.
 Sobald das SDK vollständig in Ihrer App integriert ist, können Sie erste Schritte mit dem Abschnitt „Reichweite“ der Benutzeroberfläche machen, um Pushbenachrichtigungen an die Benutzer Ihrer App zu senden.
 
 ## Ausführen der ersten Pushbenachrichtigungskampagne
@@ -115,7 +112,7 @@ Die Personalisierung funktioniert durch Ersetzen einer Markierung durch ein App-
 Der Übermittlungsmodus für „Nur außerhalb App“ stellt Pushbenachrichtigungen bereit, wenn die Anwendung geschlossen ist. Dies ist die Standard-Pushbenachrichtigung. Wenn Sie die Option für „Nur außerhalb App“ auswählen, müssen Sie bereits die Zertifikate von der Plattform bereitgestellt haben, auf der Ihre Anwendung aufsetzt (APNS oder GCM).
 
 ### Weitere Informationen
--  [Apple-Pushbenachrichtigungsdienst – Zertifikate](http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9), [Google Cloud Messaging – Zertifikate](http://developer.android.com/google/gcm/index.html) 
+-  [Apple-Pushbenachrichtigungsdienst – Zertifikate](http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9), Google Cloud Messaging – Zertifikate](http://developer.android.com/google/gcm/index.html) 
 
 ### Übermittlungsmodus für „Nur in App“
 ![Differenzieren3][17]
@@ -129,16 +126,12 @@ Sie können den Übermittlungsmodus für „Immer“ auswählen, um sicherzustel
 ### Planen des Kampagnenstarts
 ![Planen1][18]
 
-Angenommen, es ist der 21. März und Sie haben eine Ankündigung zu machen, die für den 22. März um Mitternacht geplant ist. Sie müssen für eine Pushbenachrichtigung nicht direkt vor dem Gerät sitzen! Sie können die genaue Uhrzeit vorplanen, zu der die Benachrichtigungen gesendet werden. 
--    Deaktivieren Sie das Kontrollkästchen „Keine“. 
--    Wählen Sie Datum und Uhrzeit für den Start der Push-Kampagne aus.
+Angenommen, es ist der 21. März und Sie haben eine Ankündigung zu machen, die für den 22. März um Mitternacht geplant ist. Sie müssen für eine Pushbenachrichtigung nicht direkt vor dem Gerät sitzen! Sie können die genaue Uhrzeit vorplanen, zu der die Benachrichtigungen gesendet werden. - Deaktivieren Sie das Kontrollkästchen „Keine“. - Wählen Sie Datum und Uhrzeit für den Start der Push-Kampagne aus.
 
 ### Planen des Kampagnenendes
 ![Planen2][19]
 
-Sie möchten, dass die Kampagne am 25. März um 15 Uhr beendet wird, aber Sie wissen schon, dass Sie zu diesem Zeitpunkt nicht vor Ort sind, um diesen Vorgang auszuführen. Sie müssen für eine Pushbenachrichtigung nicht direkt vor dem Gerät sitzen! Sie können die genaue Uhrzeit vorplanen, zu der die Kampagne beendet wird. 
--    Deaktivieren Sie das Kontrollkästchen „Keine“. 
--    Wählen Sie Datum und Uhrzeit für die Beendung der Push-Kampagne aus.
+Sie möchten, dass die Kampagne am 25. März um 15 Uhr beendet wird, aber Sie wissen schon, dass Sie zu diesem Zeitpunkt nicht vor Ort sind, um diesen Vorgang auszuführen. Sie müssen für eine Pushbenachrichtigung nicht direkt vor dem Gerät sitzen! Sie können die genaue Uhrzeit vorplanen, zu der die Kampagne beendet wird. -Deaktivieren Sie das Kontrollkästchen „Keine“. Wählen Sie Datum und Uhrzeit für die Beendung der Push-Kampagne aus.
 
 ### Manuelles Beenden einer Kampagne
 ![Planen3][20]
@@ -298,5 +291,6 @@ Eine Webansicht ist ein Popupfenster mit Webinhalt. Dieses Popupfenster wird ang
 [Link 31]: ../mobile-engagement-how-tos-schedule-campaign.md
 [Link 32]: ../mobile-engagement-how-tos-text-view.md
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

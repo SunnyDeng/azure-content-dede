@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/08/2014" 
+	ms.date="06/29/2015" 
 	ms.author="jeannt"/>
 
 
@@ -79,16 +79,16 @@ Mit der folgenden Anweisung wird beispielsweise eine Konstante **x** definiert:
 
     Const X = 28;  
 
-Um zwei oder mehr Konstanten gleichzeitig zu definieren, schließen Sie die Bezeichnernamen und -werte in geschweifte Klammern ein, und verwenden Sie Semikolons als Trennzeichen, wie in diesem Beispiel gezeigt:
+Um zwei oder mehr Konstanten gleichzeitig zu definieren, schließen Sie die Bezeichnernamen und -werte in geschweifte Klammern ein, und verwenden Sie Semikolons als Trennzeichen. Beispiel:
 
     Const { X = 28; Y = 4; }  
 
-Bei der rechten Seite eines Zuweisungsausdrucks kann es sich um eine ganze Zahl, eine reelle Zahl, einen booleschen Wert (True/False) oder einen mathematischen Ausdruck handeln. Beispiel:
+Bei der rechten Seite eines Zuweisungsausdrucks kann es sich um eine ganze Zahl, eine reelle Zahl, einen booleschen Wert (True oder False) oder einen mathematischen Ausdruck handeln. Beispiel:
 
 	Const { X = 17 * 2; Y = true; }  
 
 ##Schichtdeklaration
-Die Schichtdeklaration ist erforderlich. Sie definiert die Größe und die Quelle der Schicht, einschließlich ihrer Verbindungsbündel und Attribute. Die Deklarationsanweisung beginnt mit den Namen der Schicht ("input", "hidden" oder "output"), gefolgt von den Dimensionen der Schicht (ein Tupel positiver ganzer Zahlen). Beispiel:
+Die Schichtdeklaration ist erforderlich. Sie definiert die Größe und die Quelle der Schicht, einschließlich ihrer Verbindungsbündel und Attribute. Die Deklarationsanweisung beginnt mit den Namen der Schicht (input, hidden oder output), gefolgt von den Dimensionen der Schicht (ein Tupel positiver ganzer Zahlen). Beispiel:
 
 	input Data[784];
 	hidden Hidden[5,20] from Data all;
@@ -150,12 +150,12 @@ Die Spezifikation eines gefilterten Verbindungsbündels enthält ein Prädikat, 
 	hidden ByRow[10, 12] from Pixels where (s,d) => s[0] == d[0];
 	hidden ByCol[5, 20] from Pixels where (s,d) => abs(s[1] - d[1]) <= 1;  
 
--	Im Prädikat für "ByRow" ist **s** ein Parameter, der einen Index in das rechteckige Knotenarray der Eingabeschicht "Pixels" darstellt, und **d** ist ein Parameter, der einen Index in das Knotenarray der verdeckten Schicht "ByRow" darstellt. Der Typ von **s** und **d** ist jeweils ein Tupel ganzer Zahlen der Länge zwei. Konzeptionell erstreckt sich **s** über alle Paare von ganzen Zahlen mit 0 <= s[0] < 10 und 0 <= s[1] < 20, während **d** sich über alle Paare von ganzen Zahlen mit 0 <= d[0] < 10 und 0 <= d[1] < 12 erstreckt. 
+-	Im Prädikat für "ByRow" ist **s** ein Parameter, der einen Index in das rechteckige Knotenarray der Eingabeschicht "Pixels" darstellt, und **d** ist ein Parameter, der einen Index in das Knotenarray der verdeckten Schicht "ByRow" darstellt. Der Typ von **s** und **d** ist jeweils ein Tupel ganzer Zahlen der Länge zwei. Konzeptionell erstreckt sich **s** über alle Paare von ganzen Zahlen mit _0 <= s[0] < 10_ und _0 <= s[1] < 20_, während **d**sich über alle Paare von ganzen Zahlen mit _0 <= d[0] < 10_ und _0 <= d[1] < 12_ erstreckt. 
 -	Auf der rechten Seite des Prädikatausdrucks befindet sich eine Bedingung. In diesem Beispiel gibt es für jeden Wert von **s** und **d**, bei dem die Bedingung "true" ist, eine Kante vom Quellschichtknoten zum Zielschichtknoten. Der Filterausdruck gibt somit an, dass das Bündel immer dann, wenn s[0] gleich d[0] ist, eine Verbindung von dem durch **s** definierten Knoten zu dem durch **d** definierten Knoten enthält.  
 
 Optional können Sie einen Satz Gewichtungen für ein gefiltertes Bündel angeben. Der Wert für das Attribut **Weights** muss ein Tupel von Gleitkommawerten sein, dessen Länge der Anzahl der vom Bündel definierten Verbindungen entspricht. Standardmäßig werden Gewichtungen nach dem Zufallsprinzip generiert.
 
-Gewichtungswerte werden nach dem Zielknotenindex gruppiert. Das heißt, wenn der erste Zielknoten mit K Quellknoten verbunden ist, sind die ersten K Elemente des Tupels **Weights** die Gewichtungen für den ersten Zielknoten in der Reihenfolge des Quellindex. Gleiches gilt für die restlichen Zielknoten.
+Gewichtungswerte werden nach dem Zielknotenindex gruppiert. Das heißt, wenn der erste Zielknoten mit K Quellknoten verbunden ist, sind die ersten _K_ Elemente des Tupels **Weights** die Gewichtungen für den ersten Zielknoten in der Reihenfolge des Quellindex. Gleiches gilt für die restlichen Zielknoten.
 
 ##Konvolutionsbündel
 Wenn die Trainingsdaten eine homogene Struktur aufweisen, werden Konvolutionsverbindungen üblicherweise eingesetzt, um übergeordnete Merkmale der Daten zu ermitteln. So kann beispielsweise in Bild-, Audio- oder Videodaten die räumliche oder zeitliche Dimensionalität ziemlich einheitlich sein.
@@ -170,14 +170,19 @@ Die Form und Positionen der Kernel können mit den Attributen **KernelShape**, *
 
 -	**KernelShape** (erforderlich): definiert die Dimensionalität jedes Kernels für das Konvolutionsbündel. Der Wert muss ein Tupel positiver ganzer Zahlen sein, dessen Länge der Arität des Bündels entspricht. Jede Komponente dieses Tupels darf nicht größer sein als die entsprechende Komponente von **InputShape**. 
 -	**Stride** (optional): definiert die gleitenden Schrittgrößen der Konvolution (eine Schrittgröße für jede Dimension), d. h. den Abstand zwischen den zentralen Knoten. Der Wert muss ein Tupel positiver ganzer Zahlen sein, dessen Länge der Arität des Bündels entspricht. Jede Komponente dieses Tupels darf nicht größer sein als die entsprechende Komponente von **KernelShape**. Der Standardwert ist ein Tupel, in dem alle Komponenten gleich eins sind. 
--	**Padding** (optional): legt fest, ob die Eingabe unter Verwendung des Standardauffüllungsschemas aufgefüllt werden soll. Der Wert kann ein einzelner boolescher Wert oder ein Tupel boolescher Werte sein, dessen Länge der Arität des Bündels entspricht. Ein einzelner boolescher Wert wird zu einem Tupel der richtigen Länge erweitert, in dem alle Komponenten gleich dem angegebenen Wert sind. Wenn der Wert einer Dimension "True" ist, wird die Quelle in dieser Dimension logisch mit Nullwertzellen aufgefüllt, um zusätzliche Kernelanwendungen zu unterstützen, sodass die zentralen Knoten des ersten und letzten Kernels in dieser Dimension den ersten und letzten Knoten in dieser Dimension in der Zielschicht darstellen. Die Anzahl von „Dummy“-Knoten in jeder Dimension wird somit automatisch bestimmt, um genau (InputShape[d] - 1) / Stride[d] + 1 Kernel in die aufgefüllte Quellschicht aufzunehmen. Wenn der Wert einer Dimension "False" ist, werden die Kernel so definiert, dass die Anzahl der ausgelassenen Knoten auf jeder Seite gleich ist (bis zu einer Differenz von 1). Der Standardwert dieses Attributs ist ein Tupel, in dem alle Komponenten "False" sind.
--	**UpperPad** und **LowerPad** (optional): ermöglichen die Steuerung der zu verwendenden Auffüllungsmenge. Diese Attribute können nur dann definiert werden, wenn **Padding** ***nicht*** definiert wurde. Die Werte sollten Tupel ganzer Zahlen sein, deren Längen der Arität des Bündels entsprechen. Wenn diese Attribute angegeben werden, werden am unteren und oberen Ende jeder Dimension der Eingabeschicht „Dummy“-Knoten hinzugefügt. Die Anzahl der Knoten, die dem unteren und oberen Ende der Dimension hinzugefügt werden, wird durch **LowerPad**[i] bzw. **UpperPad**[i] festgelegt. Um sicherzustellen, dass Kernel nur "realen" Knoten und nicht "Dummy"-Knoten entsprechen, müssen die folgenden Bedingungen erfüllt sein:
-	-	Jede Komponente von **LowerPad** muss kleiner als (aber nicht gleich) KernelShape[d]/2 sein. 
-	-	Jede Komponente von **UpperPad** darf nicht größer sein als KernelShape[d]/2. 
-	-	Der Standardwert dieser Attribute ist ein Tupel, in dem alle Komponenten gleich 0 sind. 
 -	**Sharing** (optional): definiert die gemeinsame Nutzung von Gewichtungen für jede Dimension der Konvolution. Der Wert kann ein einzelner boolescher Wert oder ein Tupel boolescher Werte sein, dessen Länge der Arität des Bündels entspricht. Ein einzelner boolescher Wert wird zu einem Tupel der richtigen Länge erweitert, in dem alle Komponenten gleich dem angegebenen Wert sind. Der Standardwert ist ein Tupel, in dem alle Werte "True" sind. 
 -	**MapCount** (optional): definiert die Anzahl der Featurezuordnungen für das Konvolutionsbündel. Der Wert kann eine einzelne positive ganze Zahl oder ein Tupel positiver ganzer Zahlen sein, dessen Länge der Arität des Bündels entspricht. Ein einzelner ganzzahliger Wert wird zu einem Tupel der richtigen Länge erweitert, in dem die ersten Komponenten gleich dem angegebenen Wert und alle übrigen Komponenten gleich eins sind. Der Standardwert ist eins. Die Gesamtanzahl an Featurezuordnungen ist das Produkt der Komponenten des Tupels. Die Faktorisierung dieser Gesamtanzahl über alle Komponenten legt fest, wie die Featurezuordnungswerte in den Zielknoten gruppiert werden. 
 -	**Weights** (optional): definiert die anfänglichen Gewichtungen für das Bündel. Der Wert muss ein Tupel von Gleitkommawerten sein, dessen Länge der Anzahl der Kernel mal der Anzahl der Gewichtungen pro Kernel entspricht, wie weiter unten in diesem Artikel definiert. Die Standardgewichtungen werden nach dem Zufallsprinzip generiert.  
+
+Es gibt zwei Gruppen von Eigenschaften zum Steuern der Auffüllung, die sich gegenseitig ausschließen:
+
+-	**Padding** (optional): Legt fest, ob die Eingabe unter Verwendung eines **Standardauffüllungsschemas** aufgefüllt werden soll. Der Wert kann ein einzelner boolescher Wert oder ein Tupel boolescher Werte sein, dessen Länge der Arität des Bündels entspricht. Ein einzelner boolescher Wert wird zu einem Tupel der richtigen Länge erweitert, in dem alle Komponenten gleich dem angegebenen Wert sind. Wenn der Wert einer Dimension "True" ist, wird die Quelle in dieser Dimension logisch mit Nullwertzellen aufgefüllt, um zusätzliche Kernelanwendungen zu unterstützen, sodass die zentralen Knoten des ersten und letzten Kernels in dieser Dimension den ersten und letzten Knoten in dieser Dimension in der Zielschicht darstellen. Die Anzahl von "Dummy"-Knoten in jeder Dimension wird somit automatisch bestimmt, um genau (_(InputShape[d] - 1) / Stride[d] + 1_ Kernel in die aufgefüllte Quellschicht aufzunehmen. Wenn der Wert einer Dimension "False" ist, werden die Kernel so definiert, dass die Anzahl der ausgelassenen Knoten auf jeder Seite gleich ist (bis zu einer Differenz von 1). Der Standardwert dieses Attributs ist ein Tupel, in dem alle Komponenten "False" sind.
+-	**UpperPad** und **LowerPad** (optional): Ermöglichen eine bessere Steuerung des zu verwendenden Umfangs der Auffüllung. **Wichtig:** Diese Attribute können nur dann definiert werden, wenn die **Padding**-Eigenschaft oben ***nicht*** definiert wurde. Die Werte sollten Tupel ganzer Zahlen sein, deren Längen der Arität des Bündels entsprechen. Wenn diese Attribute angegeben werden, werden am unteren und oberen Ende jeder Dimension der Eingabeschicht „Dummy“-Knoten hinzugefügt. Die Anzahl der Knoten, die dem unteren und oberen Ende der Dimension hinzugefügt werden, wird durch **LowerPad**[i] bzw. **UpperPad**[i] festgelegt. Um sicherzustellen, dass Kernel nur "realen" Knoten und nicht "Dummy"-Knoten entsprechen, müssen die folgenden Bedingungen erfüllt sein:
+	-	Jede Komponente von **LowerPad** muss kleiner als (aber nicht gleich) KernelShape[d]/2 sein. 
+	-	Jede Komponente von **UpperPad** darf nicht größer sein als KernelShape[d]/2. 
+	-	Der Standardwert dieser Attribute ist ein Tupel, in dem alle Komponenten gleich 0 sind. 
+
+Die Einstellung **Padding** = "true" lässt so viel Auffüllung wie nötig zu, um das "Zentrum" des Kernels innerhalb der "tatsächlichen" Eingabe zu halten. Dadurch wird die Formel für die Berechnung der Ausgabegröße etwas geändert. In der Regel wird die Ausgabegröße _D_ berechnet als _D = (I - K) / S + 1_, wobei _I_ die Eingabegröße, _K_ die Kernelgröße, _S_ "STRIDE" und _/_ die Division ganzer Zahlen (Runden in Richtung Null) ist. Wenn Sie UpperPad = [1, 1] festlegen, ist die Eingabegröße _I_ tatsächlich 29, weshalb gilt _D = (29-5) / 2 + 1 = 13_. Wenn jedoch **Padding** = "true" ist, wird _I_ tatsächlich durch _K - 1_ erhöht. Daher gilt _D = ((28 + 4) - 5) / 2 + 1 = 27 / 2 + 1 = 13 + 1 = 14_. Durch Angeben von Werten für **UpperPad** und **LowerPad** erhalten Sie wesentlich mehr Kontrolle über die Auffüllung, als wenn nur **Padding** = True festgelegt wird.
 
 Weitere Informationen zu Konvolutionsnetzwerken und ihren Anwendungsmöglichkeiten finden Sie in den folgenden Artikeln (in englischer Sprache):
 
@@ -200,9 +205,9 @@ Im folgenden Beispiel wird ein Poolingbündel veranschaulicht:
 	  }  
 
 -	Die Arität des Bündels ist 3 (die Länge der Tupel **InputShape**, **KernelShape** und **Stride**). 
--	Die Anzahl der Knoten in der Quellschicht beträgt 5 * 24 * 24 = 2880. 
+-	Die Anzahl der Knoten in der Quellschicht beträgt _5 * 24 * 24 = 2880_. 
 -	Dies ist eine herkömmliche lokale Poolingschicht, da **KernelShape** und **Stride** gleich sind. 
--	Die Anzahl der Knoten in der Zielschicht beträgt 5 * 12 * 12 = 1440.  
+-	Die Anzahl der Knoten in der Zielschicht beträgt _5 * 12 * 12 = 1440_.  
 	
 Weitere Informationen zu Poolingschichten finden Sie in den folgenden Artikeln (in englischer Sprache):
 
@@ -222,7 +227,7 @@ Antwortnormalisierungsbündel unterstützen alle Konvolutionsattribute mit Ausna
 
 Da Antwortnormalisierungsbündel zur Bestimmung des Zielknotenwerts eine vordefinierte Funktion auf Quellknotenwerte anwenden, haben sie keinen trainierbaren Zustand (Gewichtungen oder Biase).
 
-**Alert**: Die Knoten in der Zielschicht entsprechen Neuronen, die die zentralen Knoten der Kernel darstellen. Beispiel: Wenn KernelShape[d] ungerade ist, entspricht KernelShape[d]/2 dem zentralen Kernelknoten. Wenn KernelShape[d] gerade ist, befindet sich der zentrale Knoten bei KernelShape[d]/2–1. Wenn **Padding**[d] "False" ist, haben der erste und der letzte Knoten für KernelShape[d]/2 daher keinen entsprechenden Knoten in der Zielschicht. Um diese Situation zu vermeiden, definieren Sie **Padding** als [true, true, …, true].
+**Alert**: Die Knoten in der Zielschicht entsprechen Neuronen, die die zentralen Knoten der Kernel darstellen. Beispiel: Wenn KernelShape[d] ungerade ist, entspricht _KernelShape[d]/2_ dem zentralen Kernelknoten. Wenn _KernelShape[d]_ gerade ist, befindet sich der zentrale Knoten bei _KernelShape[d]/2 - 1_. Wenn **Padding**[d] "False" ist, haben der erste und der letzte Knoten für _KernelShape[d]/2_ daher keinen entsprechenden Knoten in der Zielschicht. Um diese Situation zu vermeiden, definieren Sie **Padding** als [true, true, …, true].
 
 Zusätzlich zu den vier weiter oben beschriebenen Attributen unterstützen Antwortnormalisierungsbündel auch die folgenden Attribute:
 
@@ -385,15 +390,15 @@ Die Definition des folgenden Netzwerks zur Erkennung von Ziffern veranschaulicht
 -	Das Netzwerk hat eine dritte verdeckte Schicht, „Hid3“; diese ist vollständig mit der zweiten verdeckten Schicht „Conv2“ verbunden.
 -	Die Ausgabeschicht „Digit“ ist nur mit der dritten verdeckten Schicht (Hid3) verbunden. Das Schlüsselwort **all** gibt an, dass die Ausgabeschicht vollständig mit „Hid3“ verbunden ist.
 -	Die Arität der Konvolution ist drei (die Länge der Tupel **InputShape**, **KernelShape**, **Stride** und **Sharing**). 
--	Die Anzahl der Gewichtungen pro Kernel ist 1 + **KernelShape**[0] * **KernelShape**\[1] * **KernelShape**[2] = 1 + 1 * 5 * 5 = 26. Oder 26 * 50 = 1.300.
+-	Die Anzahl der Gewichtungen pro Kernel ist _1 + **KernelShape**[0] * **KernelShape**[1] * **KernelShape**[2] = 1 + 1 * 5 * 5 = 26. Oder 26 * 50 = 1300_.
 -	Sie können die Knoten in jeder verdeckten Schicht wie folgt berechnen:
 	-	**NodeCount**[0] = (5 - 1) / 1 + 1 = 5.
-	-	**NodeCount**\[1] = (13–5)/2+1 = 5. 
+	-	**NodeCount**[1] = (13–5)/2+1 = 5. 
 	-	**NodeCount**[2] = (13 - 5) / 2 + 1 = 5. 
--	Die Gesamtanzahl der Knoten kann anhand der deklarierten Dimensionalität der Schicht [50, 5, 5] wie folgt berechnet werden: **MapCount** * **NodeCount**[0] * **NodeCount**\[1] * **NodeCount**[2] = 10 * 5 * 5 * 5
--	Da **Sharing**[d] nur für d == 0 "False" ist, beträgt die Anzahl der Kernel **MapCount** * **NodeCount**[0] = 10 * 5 = 50. 
+-	Die Gesamtanzahl der Knoten kann anhand der deklarierten Dimensionalität der Schicht [50, 5, 5] wie folgt berechnet werden: _**MapCount** * **NodeCount**[0] * **NodeCount**[1] * **NodeCount**[2] = 10 * 5 * 5 * 5_
+-	Da **Sharing**[d] nur für _d == 0_ "False" ist, beträgt die Anzahl der Kernel _**MapCount** * **NodeCount**[0] = 10 * 5 = 50_. 
 
 [1]: ./media/machine-learning-azure-ml-netsharp-reference-guide/formula_large.gif
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

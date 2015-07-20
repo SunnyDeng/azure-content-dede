@@ -1,3 +1,4 @@
+
 #### So installieren Sie regelmäßige Hotfixes über Windows PowerShell für StorSimple
 
 1. Stellen Sie eine Verbindung mit der seriellen Gerätekonsole her. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit der seriellen Konsole](#connect-to-the-serial-console).
@@ -14,4 +15,4 @@
 
 5. Sie werden aufgefordert, diesen Schritt zu bestätigen. Geben Sie **J** ein, um mit der Installation des Hotfixes fortzufahren.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

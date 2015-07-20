@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="CREATE ASSEMBLY in Azure SQL-Datenbank mit CSharp"
-	description="C#-Quellcode zum Ausführen von CREATE ASSEMBLY in Azure SQL-Datenbank nach dem Codieren einer DLL-Datei in einer Zeichenfolge, die eine lange Hexadezimalzahl enthält." 
+	description="C#-Quellcode zum Ausführen von &quot;CREATE ASSEMBLY&quot; in Azure SQL-Datenbank nach dem Codieren einer DLL-Datei in einer Zeichenfolge, die eine lange Hexadezimalzahl enthält." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.workload="sql-database" 
+	ms.workload="data-management" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/25/2015" 
+	ms.date="04/17/2015" 
 	ms.author="genemi"/>
 
 
@@ -26,7 +26,7 @@ Converting plain text "CREATE ASSEMBLY" into a link to the MSDN topic, ms189524.
 -->
 
 
-In diesem Thema wird ein C#-Codebeispiel erläutert, mit dem Sie eine [CREATE ASSEMBLY](http://msdn.microsoft.com/library/ms189524.aspx)-Anweisung in einer Azure SQL-Datenbank ausführen können. Be einer SQL-Datenbank kann die FROM-Klausel das einfache Format eines Pfads auf dem lokalen Computer, der die Datenbank hostet, nicht übernehmen. Als Alternative können zunächst die Binärbits der Assembly-DLL in einer langen Zeichenfolge codiert werden, die eine Hexadezimalzahl enthält. In diesem Fall wird die Zeichenfolge als Wert für die FROM-Klausel angegeben.
+In diesem Thema wird ein C#-Codebeispiel erläutert, mit dem Sie eine [CREATE ASSEMBLY](http://msdn.microsoft.com/library/ms189524.aspx)-Anweisung in Azure SQL-Datenbank ausführen können. Be einer SQL-Datenbank kann die FROM-Klausel das einfache Format eines Pfads auf dem lokalen Computer, der die Datenbank hostet, nicht übernehmen. Als Alternative können zunächst die Binärbits der Assembly-DLL in einer langen Zeichenfolge codiert werden, die eine Hexadezimalzahl enthält. In diesem Fall wird die Zeichenfolge als Wert für die FROM-Klausel angegeben.
 
 
 ### Voraussetzungen
@@ -35,10 +35,10 @@ In diesem Thema wird ein C#-Codebeispiel erläutert, mit dem Sie eine [CREATE AS
 Zum besseren Verständnis dieses Themas sollten Sie sich bereits mit dem folgenden Thema beschäftigt haben:
 
 
-- [CLR-Tabellenwertfunktionen](http://msdn.microsoft.com/library/ms131103.aspx)<br/>Erläutert, wie die Transact-SQL-Anweisung "CREATE ASSEMBLY" mit anderen Anweisungen für den lokalen Microsoft SQL Server ausgeführt wird.
+- [CLR-Tabellenwertfunktionen](http://msdn.microsoft.com/library/ms131103.aspx)<br/>Erläutert, wie die Transact-SQL-Anweisung "CREATE ASSEMBLY" mit anderen Anweisungen für den lokalen Microsoft SQL Server ausgeführt wird.
 
 
-## A. Allgemeines Verfahren
+## A: Allgemeines Verfahren
 
 
 1. Führen Sie ggf. DROP FUNCTION und DROP ASSEMBLY zum Bereinigen einer vorherigen Ausführung aus.
@@ -50,9 +50,7 @@ Zum besseren Verständnis dieses Themas sollten Sie sich bereits mit dem folgend
 5. Verwenden Sie die T-SQL-Anweisung "SELECT" zum Aufrufen und Testen der Funktion.
 
 
-In dieser Liste wird Folgendes nicht erwähnt ...<br/>
-**execute sp_configure 'clr enabled', 1;**<br/>
-... da dies zwar für Microsoft SQL Server, aber nicht für eine Azure SQL-Datenbank erforderlich ist.
+In dieser Liste wird Folgendes nicht erwähnt ...<br/> **execute sp_configure 'clr enabled', 1;**<br/> ... da dies zwar für Microsoft SQL Server, aber nicht für Azure SQL-Datenbank erforderlich ist.
 
 
 Wenn dies für erneute Ausführungen notwendig ist, lautet der T-SQL-Code zum Löschen der Funktion und der Assembly wie folgt:
@@ -90,7 +88,7 @@ Dieses Codebeispiel enthält die **CompareCaseSensitiveNet**-Methode, auf die sp
 	}
 
 
-## C. C&#x23;-Codebeispiel für die EXE-Datei zum Ausführen von CREATE ASSEMBLY
+## C. C&#x23;-Codebeispiel für die EXE-Datei zum Ausführen von "CREATE ASSEMBLY"
 
 
 Wenn Sie die mit diesem C#-Beispiel erstellte EXE-Datei ausführen, ergibt sich die folgende Codesequenz:
@@ -260,9 +258,9 @@ Wenn Sie die mit diesem C#-Beispiel erstellte EXE-Datei ausführen, ergibt sich 
 Zum Kompilieren und Testen des Beispielcodes für das EXE-Tool wurde Folgendes verwendet:
 
 
-- Visual Studio 2013, Update 4
+- Visual Studio 2013, Update 4
  - Als Projektvorlagentyp diente die einfache Konsolenanwendung.
-- .NET Framework 4.5
+- .NET Framework 4.5
 
 
 Das Visual Studio-Projekt verwies für die Kompilierung auf die folgenden Assemblys:
@@ -330,5 +328,4 @@ Dieser Transact-SQL-Codeblock endet mit einer SELECT-Anweisung, die die neue Fun
 
 <!-- EndOfFile -->
 
-
-<!--HONumber=49--> 
+<!---HONumber=July15_HO2-->

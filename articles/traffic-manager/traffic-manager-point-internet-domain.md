@@ -3,17 +3,17 @@
    description="In diesem Artikel erfahren Sie, wie Sie mit Ihrem Unternehmensdomänennamen auf einen Traffic Manager-Domänennamen verweisen."
    services="traffic-manager"
    documentationCenter=""
-   authors="cherylmc"
+   authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-<tags 
+<tags
    ms.service="traffic-manager"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/27/2015"
-   ms.author="cherylmc" />
+   ms.date="05/27/2015"
+   ms.author="joaoma;cherylmc" />
 
 # Verweisen einer Unternehmens-Internetdomäne auf eine Traffic Manager-Domäne
 
@@ -21,7 +21,7 @@ Um mit Ihrem Unternehmensdomänennamen auf einen Traffic Manager-Domänennamen z
 
 Um beispielsweise mit dem Unternehmens-Domänennamen **www.contoso.com** auf den Traffic Manager-Domänennamen **contoso.trafficmanager.net** zu verweisen, ändern Sie den DNS-Ressourceneintrag wie folgt:
 
-    www.contoso.com IN CNAME contoso.trafficmanager.net 
+    www.contoso.com IN CNAME contoso.trafficmanager.net
 
 Alle Datenverkehrsanforderungen an *www.contoso.com* werden jetzt an *contoso.trafficmanager.net* umgeleitet.
 
@@ -33,6 +33,7 @@ Alle Datenverkehrsanforderungen an *www.contoso.com* werden jetzt an *contoso.tr
 
 [Traffic Manager-Konfigurationsaufgaben](https://msdn.microsoft.com/library/azure/hh744830.aspx)
 
-[Traffic Manager - Übersicht](traffic-manager-overview.md)
+[Traffic Manager – Übersicht](traffic-manager-overview.md)
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO2-->

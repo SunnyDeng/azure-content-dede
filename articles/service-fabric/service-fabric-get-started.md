@@ -93,4 +93,4 @@ Ihre Entwicklungsumgebung ist nun eingerichtet, und Sie können mit der Entwickl
 [4]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI-Link"
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

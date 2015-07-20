@@ -13,21 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="04/13/2015" 
+	ms.date="05/20/2015" 
 	ms.author="glenga"/>
 
 
 # Erstellen eines Diensts mithilfe einer vorhandenen SQL-Datenbank mit dem Mobile Services .NET-Backend
 
 Das Mobile Services .NET-Backend macht die Nutzung vorhandener Objekte beim Erstellen eines mobilen Diensts ganz einfach. Ein besonders interessantes Szenario ist die Verwendung einer vorhandenen SQL-Datenbank (entweder lokal oder in der Cloud), die bereits von anderen Anwendungen verwendet wird, um die vorhandenen Daten auch für mobile Clients nutzbar zu machen. In diesem Fall ist es erforderlich, dass das Datenbankmodell (oder *Schema*) unverändert bleibt, damit die vorhandenen Lösungen weiter damit arbeiten können.
-
-Dieses Lernprogramm umfasst die folgenden Abschnitte:
-
-1. [Erkunden des vorhandenen Datenbankmodells](#ExistingModel)
-2. [Erstellen von Datentransferobjekten (DTOs) für Ihre mobilen Dienste](#DTOs)
-3. [Erstellen einer Zuordnung zwischen DTOs und Modell](#Mapping)
-4. [Implementieren einer domänenspezifischen Logik](#DomainManager)
-5. [Implementieren eines TableControllers mithilfe von DTOs](#Controller)
 
 <a name="ExistingModel"></a>
 ## Erkunden des vorhandenen Datenbankmodells
@@ -158,7 +150,7 @@ Das Datenmodell, welches Sie mit Ihrem mobilen Dienst verwenden möchten, ist m�
         using System.ComponentModel.DataAnnotations;
         using System;
 
-    Anschließend fügen Sie diese zusätzlichen Eigenschaften in die Klassen ein:
+4. Anschließend fügen Sie diese zusätzlichen Eigenschaften in jede der Klassen ein:
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Index]
@@ -187,7 +179,7 @@ Das Datenmodell, welches Sie mit Ihrem mobilen Dienst verwenden möchten, ist m�
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
         using System.Linq;
 
-    Anschließend überschreiben Sie im Text von **ExistingContext** den Eintrag [**OnModelCreating**](http://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating.aspx):
+5. Überschreiben Sie [**OnModelCreating**](http://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating.aspx) im Text von **ExistingContext**:
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -621,5 +613,6 @@ Beachten Sie, dass beide Controllerimplementierungen die DTOs **MobileCustomer**
 
     }
 
-Als nächsten Schritt können Sie nun die Client-App erstellen, um auf den Dienst zuzugreifen.
-<!--HONumber=54--> 
+Als nächsten Schritt können Sie nun die Client-App erstellen, um auf den Dienst zuzugreifen. Weitere Informationen finden Sie unter [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data.md#update-the-app-to-use-the-mobile-service).
+
+<!---HONumber=July15_HO2-->

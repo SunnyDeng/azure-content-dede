@@ -1,3 +1,4 @@
+
 #### So wechseln Sie in den Wartungsmodus
 
 1. Wählen Sie im Menü der seriellen Konsole Option 1 aus, d. h. die** Anmeldung mit Vollzugriff**.
@@ -12,4 +13,4 @@
 
     Beide Controller werden neu gestartet. Wenn der Neustart abgeschlossen ist, wird eine andere Meldung angezeigt, die besagt, dass das Gerät in den Wartungsmodus versetzt wird.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

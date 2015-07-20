@@ -385,4 +385,4 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 Erfahren Sie, wie Sie eine [Wiederherstellung aus einem Sicherungssatz durchführen](../storsimple-restore-from-backupset.md).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

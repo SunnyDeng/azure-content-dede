@@ -10,10 +10,10 @@
 <tags
    ms.service="remoteapp"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="04/14/2015"
+   ms.date="05/28/2015"
    ms.author="elizapo"/>
 
 # Mit RemoteApp jede Anwendung auf jedem Gerät ausführen
@@ -35,7 +35,7 @@ Zunächst erstellen Sie eine Sammlung. Die Sammlung fungiert als Container für 
 2. Klicken Sie auf **Erstellen einer RemoteApp-Sammlung**.
 3. Klicken Sie auf **Schnellerfassung** und geben Sie einen Namen für die Sammlung ein.
 4. Wählen Sie die Region, die Sie verwenden möchten, um Ihre Sammlung zu erstellen. Wählen Sie für optimale Ergebnisse die Region, die dem Standort geografisch am nächsten ist, an dem die Benutzer auf die Anwendung zugreifen. In diesem Lernprogramm befinden sich die Benutzer beispielsweise in Redmond, Washington. Die nächstgelegene Azure-Region ist **West US**.
-5. Wählen Sie den Abrechnungsplan aus, den Sie verwenden möchten. Der grundlegende Abrechnungsplan sieht 16 Benutzer auf einer großen Azure-VM voraus, während der standardmäßige Abrechnungsplan 10 Benutzer auf eine große Azure-VM vorsieht. Als allgemeines Beispiel funktioniert der Standardplan gut bei einem Dateneintrags-Workflow. Bei einer Produktivitätsanwendung wie Office sollten Sie den Standardplan nehmen. 
+5. Wählen Sie den Abrechnungsplan aus, den Sie verwenden möchten. Der grundlegende Abrechnungsplan sieht 16 Benutzer auf einer großen Azure-VM voraus, während der standardmäßige Abrechnungsplan 10 Benutzer auf eine große Azure-VM vorsieht. Als allgemeines Beispiel funktioniert der Standardplan gut bei einem Dateneintrags-Workflow. Bei einer Produktivitätsanwendung wie Office sollten Sie den Standardplan nehmen.
 6. Wählen Sie abschließend das Office 2013 Professional-Image. Dieses Image enthält Office 2013-Anwendungen.  
 7. Klicken Sie nun auf **RemoteApp-Sammlung erstellen**.
 
@@ -64,22 +64,22 @@ Wenn Sie während der Sammlungserstellung vom Azure-RemoteApp-Knoten weg navigie
 
 ## Konfigurieren Sie den Zugriff auf Access
 
-Einige Anwendungen benötigen eine zusätzliche Konfiguration, nachdem Sie sie über RemoteApp bereitgestellt haben. Wir werden speziell für Access eine Dateifreigabe auf Azure erstellen, auf die jeder Benutzer zugreifen kann. (Wenn Sie dies nicht tun möchten, können Sie eine [Hybrid-Sammlung](remoteapp-create-hybrid-deployment.md) [ anstelle unserer Cloud-Sammlung] erstellen, mit der die Benutzer Zugriff auf Dateien und Informationen in Ihrem lokalen Netzwerk erhalten.) Anschließend sollen die Benutzer dem Azure-Dateisystem ein lokales Laufwerk auf ihrem Computer zuordnen.
+Einige Anwendungen benötigen eine zusätzliche Konfiguration, nachdem Sie sie über RemoteApp bereitgestellt haben. Wir werden speziell für Access eine Dateifreigabe auf Azure erstellen, auf die jeder Benutzer zugreifen kann. (Wenn Sie dies nicht tun möchten, können Sie eine [Hybrid-Sammlung](remoteapp-create-hybrid-deployment.md) [anstelle unserer Cloud-Sammlung] erstellen, mit der die Benutzer Zugriff auf Dateien und Informationen in Ihrem lokalen Netzwerk erhalten.) Anschließend sollen die Benutzer dem Azure-Dateisystem ein lokales Laufwerk auf ihrem Computer zuordnen.
 
 Den ersten Teil führen Sie als Administrator aus. Dann müssen Ihre Benutzer einige Schritte durchführen.
 
 1. Legen Sie los, indem Sie die Befehlszeilenschnittstelle (cmd.exe) veröffentlichen. Wählen Sie in der Registerkarte **Veröffentlichen** **Cmd** aus und klicken Sie dann auf **Veröffentlichen > Programm mit Pfad veröffentlichen**.
 2. Geben Sie den Namen der Anwendung und den Pfad ein. Verwenden Sie zu diesem Zweck "File Explorer" als Name und "% SYSTEMDRIVE%\\windows\\explorer.exe" als Pfad. ![Veröffentlichen Sie die Datei cmd.exe.](./media/remoteapp-anyapp/ra-publishcmd.png)
 3. Nun müssen Sie ein Azure-[Speicherkonto](../storage-create-storage-account.md) erstellen. Wir haben unseres "accessstorage" genannt. Wählen Sie einen Namen, der für Sie von Bedeutung ist (es kann nur ein "accessstorage" geben). ![Unser Azure-Speicherkonto.](./media/remoteapp-anyapp/ra-anyappazurestorage.png)
-4. Kehren Sie zurück zu Ihrem Dashboard, sodass Sie den Pfad zu Ihrem Speicherort (Endpunkt) abrufen können. Da Sie diesen gleich benötigen, kopieren Sie ihn irgendwo hin. ![Der Speicherkontopfad](./media/remoteapp-anyapp/ra-anyappstoragelocation.png)
-5. Nachdem das Speicherkonto erstellt wurde, benötigen Sie als Nächstes den primären Zugriffsschlüssel. Klicken Sie auf **Zugriffstasten verwalten** und kopieren Sie dann den primären Zugriffsschlüssel.
-6. Nun legen Sie den Kontext des Speicherkontos fest und erstellen eine neue Dateifreigabe für Access. Führen Sie die folgenden Cmdlets in einem Windows PowerShell-Fenster mit erhöhten Rechten aus:
-   
+4. Kehren Sie zurück zu Ihrem Dashboard, sodass Sie den Pfad zu Ihrem Speicherort (Endpunkt) abrufen können. Da Sie den Pfad in Kürze benötigen, sollten Sie ihn kopieren und aufbewahren.
+
+![Der Speicherkontopfad](./media/remoteapp-anyapp/ra-anyappstoragelocation.png) 5. Nachdem das Speicherkonto erstellt wurde, benötigen Sie als Nächstes den primären Zugriffsschlüssel. Klicken Sie auf **Zugriffstasten verwalten** und kopieren Sie dann den primären Zugriffsschlüssel. 6. Nun legen Sie den Kontext des Speicherkontos fest und erstellen eine neue Dateifreigabe für Access. Führen Sie die folgenden Cmdlets in einem Windows PowerShell-Fenster mit erhöhten Rechten aus:
+
         $ctx=New-AzureStorageContext <account name> <account key>
     	$s = New-AzureStorageShare <share name> -Context $ctx
 
-	Für uns sind dies die Cmdlets, die wir ausführen:
-    
+	So for our share, these are the cmdlets we run:
+
 	    $ctx=New-AzureStorageContext accessstorage <key>
     	$s = New-AzureStorageShare <share name> -Context $ctx
 
@@ -87,7 +87,11 @@ Den ersten Teil führen Sie als Administrator aus. Dann müssen Ihre Benutzer ei
 Jetzt ist der Benutzer an der Reihe. Erstens müssen Ihre Benutzer einen [RemoteApp-Client](remoteapp-clients.md) installieren. Als Nächstes müssen die Benutzer ein Laufwerk von ihrem Konto zu dieser von Ihnen erstellten Azure-Dateifreigabe zuordnen und ihre Access-Dateien hinzufügen. So wird es gemacht:
 
 1. Greifen Sie im RemoteApp-Client auf die veröffentlichten Anwendungen zu. Starten Sie das cmd.exe-Programm.
-2. Führen Sie den folgenden Befehl zum Zuordnen eines Laufwerks von Ihrem Computer zu der Dateifreigabe aus: net use z: <accountname>.file.core.windows.net<share name> /u:<user name> <account key>
+2. Führen Sie den folgenden Befehl zum Zuordnen eines Laufwerks Ihres Computers zur Dateifreigabe aus:
+
+		net use z: \<accountname>.file.core.windows.net<share name> /u:<user name> <account key>
+
+	Wenn Sie den Parameter **/persistent** auf „yes“ festlegen, wird das zugeordnete Laufwerk sitzungsübergreifend beibehalten.
 1. Starten Sie jetzt die Datei-Explorer-Anwendung von RemoteApp. Kopieren Sie alle Access-Dateien, die Sie in der freigegebenen Anwendung für die Dateifreigabe verwenden möchten. ![Access-Dateien in eine Azure-Freigabe einstellen](./media/remoteapp-anyapp/ra-anyappuseraccess.png)
 1. Öffnen Sie zum Schluss Access, und öffnen Sie dann die Datenbank, die Sie soeben freigegeben haben. Ihre ausgeführten Access-Daten sollten nun in der Cloud angezeigt werden. ![Eine echte Access-Datenbank, die in der Cloud ausgeführt wird](./media/remoteapp-anyapp/ra-anyapprunningaccess.png)
 
@@ -100,5 +104,4 @@ Nun, da Sie eine Sammlung erstellen können, versuchen Sie das Erstellen einer [
 
 <!--Image references-->
 
-<!--HONumber=52-->
- 
+<!---HONumber=July15_HO2-->

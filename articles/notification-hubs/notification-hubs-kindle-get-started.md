@@ -1,37 +1,37 @@
-<properties 
-	pageTitle="Erste Schritte mit Azure-Benachrichtigungs-Hubs" 
-	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen." 
-	services="notification-hubs" 
-	documentationCenter="" 
-	authors="wesmc7777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Erste Schritte mit Azure-Benachrichtigungs-Hubs"
+	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen."
+	services="notification-hubs"
+	documentationCenter=""
+	authors="wesmc7777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-kindle" 
-	ms.devlang="Java" 
-	ms.topic="hero-article" 
-	ms.date="03/16/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-kindle"
+	ms.devlang="Java"
+	ms.topic="get-started-article" 
+	ms.date="06/16/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs
 
 [AZURE.INCLUDE [Notification-Hubs-Auswahl-Erste-Schritte](../../includes/notification-hubs-selector-get-started.md)]
 
-## Übersicht
+##Übersicht
 
 In diesem Thema wird gezeigt, wie Sie mit Azure Benachrichtigungshubs Pushbenachrichtigungen an eine Kindle-Anwendung senden können. In diesem Lernprogramm erstellen Sie eine leere Kindle-App, die Pushbenachrichtigungen über Amazon Device Messaging (ADM) empfängt.
 
-## Voraussetzungen
+##Voraussetzungen
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + Das Android-SDK (es wird davon ausgegangen, dass Sie Eclipse verwenden), das Sie <a href="http://go.microsoft.com/fwlink/?LinkId=389797">hier</a> herunterladen können.
 + Befolgen Sie <a href="https://developer.amazon.com/appsandservices/resources/development-tools/ide-tools/tech-docs/01-setting-up-your-development-environment">diese</a> Schritte zum Einrichten Ihrer Entwicklungsumgebung für Kindle.
 
-## Hinzufügen einer neuen App zum Entwicklerportal
+##Hinzufügen einer neuen App zum Entwicklerportal
 
 1. Erstellen Sie zuerst eine App im [Entwicklerportal].
 
@@ -79,8 +79,7 @@ Geben Sie im Portal den geheimen Clientschlüssel und die Client-ID in die Regis
 Fügen Sie die ADM-Bibliotheken zum Eclipse-Projekt hinzu.
 
 1. Um die ADM-Bibliothek zu erhalten, [laden Sie das SDK herunter]. Extrahieren Sie die SDK-ZIP-Datei.
-2. Klicken Sie in Eclipse mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Properties**. Wählen Sie den **Java Build Path** auf der linken Seite, und klicken Sie oben auf die Registerkarte **Libraries**. Klicken Sie auf **Add External Jar**, und wählen Sie die Datei `\SDK\Android\DeviceMessaging\lib\amazon-device-messaging-*.jar` aus dem Verzeichnis aus, in das Sie das Amazon-SDK extrahiert haben.
-3. Laden Sie das NotificationHubs Android-SDK (Link) herunter.
+2. Klicken Sie in Eclipse mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Properties**. Wählen Sie den **Java Build Path** auf der linken Seite, und klicken Sie oben auf die Registerkarte **Libraries**. Klicken Sie auf **Add External Jar**, und wählen Sie die Datei `\SDK\Android\DeviceMessaging\lib\amazon-device-messaging-*.jar` aus dem Verzeichnis aus, in das Sie das Amazon-SDK extrahiert haben. 3. Laden Sie das NotificationHubs Android-SDK (Link) herunter.
 4. Entpacken Sie das Paket, und ziehen Sie die Datei `notification-hubs-sdk.jar` in den Ordner `libs ` in Eclipse.
 
 Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
@@ -90,7 +89,7 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 
 		xmlns:amazon="http://schemas.amazon.com/apk/res/android"
 
-2. Fügen Sie Berechtigungen als erstes Element unter dem Manifestelement hinzu. Ersetzen Sie **[IHR PAKETNAME]** durch das Paket, das Sie zum Erstellen der App verwendet haben. 
+2. Fügen Sie Berechtigungen als erstes Element unter dem Manifestelement hinzu. Ersetzen Sie **[IHR PAKETNAME]** durch das Paket, das Sie zum Erstellen der App verwendet haben.
 
 		<permission
 	     android:name="[YOUR PACKAGE NAME].permission.RECEIVE_ADM_MESSAGE"
@@ -99,11 +98,11 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 		<uses-permission android:name="android.permission.INTERNET"/>
 
 		<uses-permission android:name="[YOUR PACKAGE NAME].permission.RECEIVE_ADM_MESSAGE" />
- 
+
 		<!-- This permission allows your app access to receive push notifications
 		from ADM. -->
 		<uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE" />
- 
+
 		<!-- ADM uses WAKE_LOCK to keep the processor from sleeping when a message is received. -->
 		<uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -115,18 +114,18 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 		<service
 		    android:name="[YOUR SERVICE NAME]"
 		    android:exported="false" />
-		 
+
 		<receiver
 		    android:name="[YOUR SERVICE NAME]$Receiver"
-		 
+
 		    <!-- This permission ensures that only ADM can send your app registration broadcasts. -->
 		    android:permission="com.amazon.device.messaging.permission.SEND" >
-		 
+
 		    <!-- To interact with ADM, your app must listen for the following intents. -->
 		    <intent-filter>
 		  <action android:name="com.amazon.device.messaging.intent.REGISTRATION" />
 		  <action android:name="com.amazon.device.messaging.intent.RECEIVE" />
-		 
+
 		  <!-- Replace the name in the category tag with your app's package name. -->
 		  <category android:name="[YOUR PACKAGE NAME]" />
 		    </intent-filter>
@@ -165,7 +164,7 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 		public MyADMMessageHandler() {
 				super("MyADMMessageHandler");
 			}
-	
+
 			public static class Receiver extends ADMMessageReceiver
     		{
         		public Receiver()
@@ -173,10 +172,10 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
             		super(MyADMMessageHandler.class);
         		}
     		}
-	
+
 			private void sendNotification(String msg) {
 				Context ctx = getApplicationContext();
-		
+
 	   		 mNotificationManager = (NotificationManager)
 	    			ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -196,10 +195,10 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 		}
 
 4. Fügen Sie den folgenden Code in die Methode `OnMessage()` ein:
-	
+
 		String nhMessage = intent.getExtras().getString("msg");
 		sendNotification(nhMessage);
- 
+
 5. Fügen Sie den folgenden Code in die Methode `OnRegistered` ein:
 
 			try {
@@ -218,7 +217,7 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 
 7. Fügen Sie anschließend in der Methode `MainActivity` die folgende Import-Anweisung ein:
 
-		import com.amazon.device.messaging.ADM;				
+		import com.amazon.device.messaging.ADM;
 
 8. Fügen Sie nun am Ende der Methode `OnCreate` folgenden Code hinzu:
 
@@ -280,6 +279,6 @@ So senden Sie eine Nachricht mit .NET:
 [5]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-cmd-window.png
 [6]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-new-java-class.png
 [7]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-notification.png
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

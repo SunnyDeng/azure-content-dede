@@ -1,3 +1,4 @@
+
 #### So erstellen Sie einen neuen Dienst
 
 1. Melden Sie sich mit Ihren Microsoft-Kontoanmeldeinformationen beim Verwaltungsportal unter dieser URL an: [http://azure.microsoft.com/](http://azure.microsoft.com/).
@@ -17,4 +18,4 @@
  
        ![Diensterstellung](./media/storsimple-create-new-service/HCS_StorSimpleManagerServicePage-include.png)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

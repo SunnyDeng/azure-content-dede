@@ -1,3 +1,4 @@
+
 #### So installieren Sie Update 1 über das Azure-Verwaltungsportal
 
 1. Wechseln Sie im Verwaltungsportal zur Seite **Geräte**, und wählen Sie Ihr Gerät aus.
@@ -14,4 +15,4 @@
 
 7. Sie können nun [das Verwaltungsportal zum Installieren von Update 1 verwenden](#use-the-management-portal-to-install-update-1).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

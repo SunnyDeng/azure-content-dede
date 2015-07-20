@@ -31,6 +31,6 @@ Ein *benutzerdefinierter* virtueller Computer ist einfach ein virtueller Compute
 [AZURE.INCLUDE [Virtueller-Computer-erstellen-LinuxVM](../../includes/virtual-machines-create-LinuxVM.md)]
 
 
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

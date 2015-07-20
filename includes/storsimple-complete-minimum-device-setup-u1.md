@@ -1,3 +1,4 @@
+
 #### So führen Sie die mindestens erforderliche StorSimple-Gerätekonfiguration aus
 
 1. Wählen Sie das Gerät aus, und klicken Sie dann auf **Schnellstart**. Klicken Sie auf **Complete device setup**, um den Assistenten zum Konfigurieren von Geräten zu starten.
@@ -28,4 +29,4 @@
 <!--Link reference-->
 [Test]: https://technet.microsoft.com/library/dn715782(v=wps.630).aspx
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

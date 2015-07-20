@@ -29,5 +29,6 @@ Beim Entwerfen des Anwendungsaktualisierungsvorgangs sollte das wichtigste Ziel 
 
 Wenn die Anwendung vorübergehend im schreibgeschützten Modus betrieben werden kann, ist es möglich, den Aktualisierungsablauf so zu entwerfen, dass Ausfallzeiten effektiv vermieden werden können. Ausführliche Informationen zum Implementieren des Aktualisierungsablaufs in Ihrer spezifischen Anwendungstopologie finden Sie unter [Minimale Unterbrechung für Azure SQL-Datenbank bei parallelen Anwendungsupgrades](https://msdn.microsoft.com/library/azure/dn790385.aspx)
  
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO2-->

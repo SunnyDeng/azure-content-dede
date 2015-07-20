@@ -1,47 +1,16 @@
 
 # Verwalten einer Azure SQL-Datenbank mit SQL Server Management Studio 
 
-Sie könnnen das Azure SQL-Datenbank-Verwaltunsportal oder die SQL Server Management Studio (SSMS)-Clientanwendung zur Verwaltung Ihrer SQL-Datenbankabonnements verwenden und zugeordnete logische Server und Datenbanken erstellen und verwalten. Die folgende Anleitung beschreibt, wie Sie mit Management Studio die logischen Server und Datenbanken der SQL-Datenbank verwalten.
+Sie können SQL Server Management Studio (SSMS) verwenden, um logische Server und Datenbanken der Azure SQL-Datenbank zu verwalten. Dieses Thema enthält Anleitungen für häufige Aufgaben mit SSMS. Sie sollten bereits einen logischen Server und eine logische Datenbank in der Azure SQL-Datenbank erstellt haben, bevor Sie beginnen. Um zu beginnen, lesen Sie [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md) und kehren dann zurück.
 
->[AZURE.NOTE]Verwenden Sie SQL Server 2014 Management Studio, und installieren Sie die neuesten Updates (CU5 oder höher), um Azure SQL-Datenbank zu verwalten, einschließlich des neuesten SQL-Datebankupdates V12. Sie können auch SQL Server 2012 oder SQL Server 2008 R2-Version von SSMS verwenden. Frühere Versionen werden nicht unterstützt.
+Es wird empfohlen, dass Sie die neueste Version von SSMS verwenden, wenn Sie mit der Azure SQL-Datenbank arbeiten. Klicken Sie hierfür auf [Herunterladen von SQL Server Management Studio](https://msdn.microsoft.com/de-de/library/mt238290.aspx).
 
-Dieses Thema umfasst die folgenden Schritte:
 
--   [Schritt 1: Installieren von SQL Server 2014 Management Studio][]
--   [Schritt 2: Verbinden mit der SQL-Datenbank][]
--   [Schritt 3: Erstellen und Verwalten von Datenbanken][]
--   [Schritt 4: Erstellen und Verwalten von Anmeldungen][]
--   [Schritt 5: Überwachen der SQL-Datenbank mit dynamischen Verwaltungssichten][]
-
-<h2><a id="Step1" name="Step1"> </a>Schritt&#160;1: Installieren von SQL Server&#160;2014 Management Studio</h2>
-
-Management Studio ist eine integrierte Umgebung zur Verwaltung von SQL-Datenbanken. Wenn Sie Datenbanken über Azure verwalten, können Sie die mit SQL Server installierte Management Studio-Anwendung verwenden oder das kostenlose SQL Server 2014 Management Studio (SSMS) herunterladen. Die folgenden Schritte beschreiben die Installation von SSMS:
-
-1.  Klicken Sie auf der Seite [Microsoft SQL Server 2014 Express][] auf **Herunterladen**, um die Dateiauswahl zu öffnen.
-
-2.  Wählen Sie **MgmtStudio 32BIT\SQLManagementStudio_x86_ENU.exe** aus, wenn Sie ein 32-Bit-Betriebssystem verwenden, oder **MgmtStudio 64BIT\SQLManagementStudio_x64_ENU.exe**,wenn Sie ein 64-Bit-Betriebssystem verwenden.
-
-3.  Klicken Sie auf **Weiter**, und führen Sie nach der entsprechenden Aufforderung das Setup aus.
-
-2.  Klicken Sie auf **Neue eigenständige SQL Server-Installation oder Hinzufügen von Features zu einer vorhandenen Installation** und klicken Sie auf **OK**.
-
-3.  Akzeptieren Sie die Lizenzbedingungen, und klicken Sie auf **Weiter**.
-
-4. Klicken Sie auf **Installieren**, um die vom SQL Server-Setup benötigten Dateien zu installieren.
-
-5.  Im Bildschirm **Featureauswahl** sind die Optionen **Verwaltungstools - Einfach** und **Verwaltungstools - Vollständig** bereits ausgewählt. Klicken Sie auf **Weiter**.
-
-6.  Auf dem Bildschirm **Fehlerberichterstattung** können Sie optional wählen, Fehlerberichte an Microsoft zu senden.
-
-7.  Nach Abschluss der Installation wird die Seite **Abgeschlossen** angezeigt. Klicken Sie auf **Schließen**.
-
-8. Installieren Sie die neuesten Updates von der Seite [Kumulatives Updatepaket 5 für SQL Server 2014][].
-
-<h2><a id="Step2" name="Step2"> </a>Schritt&#160;2: Verbinden mit der SQL-Datenbank</h2>
+## Herstellen einer Verbindung mit einem logischen SQL-Datenbankserver
 
 Um eine Verbindung mit der SQL-Datenbank herstellen zu können, müssen Sie den Servernamen auf Azure kennen. Eventuell müssen Sie sich beim Portal anmelden, um diese Information zu erhalten.
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
 
 2.  Klicken Sie im linken Bereich auf **SQL-Datenbanken**.
 
@@ -77,15 +46,15 @@ Um eine Verbindung mit der SQL-Datenbank herstellen zu können, müssen Sie den 
 
 8.  Klicken Sie auf **Verbinden**, um die Verbindung herzustellen.
 
-SQL Server 2014 SSMS mit den neuesten Updates bietet erweiterte Unterstützung für Aufgaben wie etwa das Erstellen und Ändern von Azure SQL-Datenbanken. Darüber hinaus können Sie für diese Aufgaben auch Transact-SQL-Anweisungen verwenden. Die folgenden Schritte enthalten Beispiele für derartige Anweisungen. Weitere Informationen zur Verwendung von Transact-SQL mit SQL-Datenbank einschließlich detaillierter Angaben zu unterstützten Befehlen finden Sie unter [Transact-SQL-Referenz (SQL-Datenbank)][].
+SQL Server 2014 SSMS mit den neuesten Updates bietet erweiterte Unterstützung für Aufgaben wie etwa das Erstellen und Ändern von Azure SQL-Datenbanken. Darüber hinaus können Sie für diese Aufgaben auch Transact-SQL-Anweisungen verwenden. Die folgenden Schritte enthalten Beispiele für derartige Anweisungen. Weitere Informationen zur Verwendung von Transact-SQL mit SQL-Datenbank einschließlich detaillierter Angaben zu unterstützten Befehlen finden Sie unter [Transact-SQL-Referenz (SQL-Datenbank)](http://msdn.microsoft.com/library/bb510741.aspx).
 
-<h2><a id="Step3" name="Step3"> </a>Schritt&#160;3: Erstellen und Verwalten von Datenbanken</h2>
+## Erstellen und Verwalten von Azure SQL-Datenbanken
 
 Während Sie mit der **Master**-Datenbank verbunden sind, können Sie neue Datenbanken auf dem Server erstellen und bestehende Datenbanken modifizieren oder löschen. Die folgenden Schritte beschreiben, wie Sie eine Reihe häufiger Aufgaben der Datenbankverwaltung über Management Studio erledigen können. Vergewissern Sie sich zur Durchführung dieser Aufgaben, dass Sie mit der **Master**-Datenbank verbunden sind, und zwar mit dem Hauptbenutzernamen auf Serverebene, den Sie bei der Einrichtung des Servers erstellt haben.
 
 Öffnen Sie den Ordner „Datenbanken“, erweitern Sie den Ordner **System Databases**, klicken Sie mit der rechten Maustaste auf **master**, und klicken Sie anschließend auf **Neue Abfrage**, um ein Abfragefenster in Management Studio zu öffnen.
 
--   Verwenden Sie die Anweisung **CREATE DATABASE**, um eine neue Datenbank zu erstellen. Weitere Informationen finden Sie unter [CREATE DATABASE (SQL-Datenbank)][]. Die folgende Anweisung erstellt eine neue Datenbank mit dem Namen **myTestDB** und gibt an, dass es sich um eine Datenbank der Standard S0-Edition mit einer maximalen Standardgröße von 250 GB handelt.
+-   Verwenden Sie die Anweisung **CREATE DATABASE**, um eine neue Datenbank zu erstellen. Weitere Informationen finden Sie unter [CREATE DATABASE (SQL-Datenbank)](https://msdn.microsoft.com/library/dn268335.aspx). Die folgende Anweisung erstellt eine neue Datenbank mit dem Namen **myTestDB** und gibt an, dass es sich um eine Datenbank der Standard S0-Edition mit einer maximalen Standardgröße von 250 GB handelt.
 
         CREATE DATABASE myTestDB
         (EDITION='Standard',
@@ -93,13 +62,13 @@ Während Sie mit der **Master**-Datenbank verbunden sind, können Sie neue Daten
 
 Klicken Sie auf **Ausführen**, um die Abfrage durchzuführen.
 
--   Mit der Anweisung **ALTER DATABASE** können Sie eine vorhandene Datenbank anpassen und beispielsweise den Namen oder die Edition der Datenbank ändern. Weitere Informationen finden Sie unter [ALTER DATABASE (SQL-Datenbank)][]. Die folgende Anweisung ändert die im vorherigen Schritt erstellte Datenbank und legt die Edition auf „Standard S1“ fest.
+-   Mit der Anweisung **ALTER DATABASE** können Sie eine vorhandene Datenbank anpassen und beispielsweise den Namen oder die Edition der Datenbank ändern. Weitere Informationen finden Sie unter [ALTER DATABASE (SQL-Datenbank)](https://msdn.microsoft.com/library/ms174269.aspx). Die folgende Anweisung ändert die im vorherigen Schritt erstellte Datenbank und legt die Edition auf „Standard S1“ fest.
 
         ALTER DATABASE myTestDB
         MODIFY
         (SERVICE_OBJECTIVE='S1');
 
--   Mit der Anweisung **DROP DATABASE** können Sie eine bestehende Datenbank löschen. Weitere Informationen finden Sie unter [DROP DATABASE (SQL-Datenbank)][]. Mit der folgenden Anweisung löschen Sie die Datenbank **myTestDB**; führen Sie dies jedoch jetzt noch nicht durch, da Sie für sie im nächsten Schritt Anmeldungen erstellen werden.
+-   Mit der Anweisung **DROP DATABASE** können Sie eine bestehende Datenbank löschen. Weitere Informationen finden Sie unter [DROP DATABASE (SQL-Datenbank)](https://msdn.microsoft.com/library/ms178613.aspx). Mit der folgenden Anweisung löschen Sie die Datenbank **myTestDB**; führen Sie dies jedoch jetzt noch nicht durch, da Sie für sie im nächsten Schritt Anmeldungen erstellen werden.
 
         DROP DATABASE myTestBase;
 
@@ -111,22 +80,22 @@ Klicken Sie auf **Ausführen**, um die Abfrage durchzuführen.
 
 >[AZURE.NOTE]Viele der Transact-SQL-Anweisungen, die eine Datenbank erstellen oder modifizieren, müssen in ihrem eigenen Batch ausgeführt werden und können nicht mit anderen Transact-SQL-Anweisungen gruppiert werden. Weitere Informationen finden Sie in den anweisungsspezifischen Artikeln, die über die oben aufgeführten Links verfügbar sind.
 
-<h2><a id="Step4" name="Step4"> </a>Schritt&#160;4: Erstellen und Verwalten von Anmeldungen</h2>
+## Erstellen und Verwalten von Anmeldungen
 
-Die Datenbank vom Typ **master** überwacht alle Anmeldungen und verfolgt, welche Anmeldungen zum Erstellen von Datenbanken oder anderen Anmeldungen berechtigt sind. Stellen Sie zur Verwaltung von Anmeldungen eine Verbindung zur **Master**-Datenbank her, und zwar mit der Hauptanmeldung auf Serverebene, die Sie beim Einrichten des Servers erstellt haben. Mit den Anweisungen **CREATE LOGIN**, **ALTER LOGIN** oder **DROP LOGIN** können Sie Abfragen an die Master-Datenbank ausführen, die die Anmeldungen für den gesamten Server verwalten. Weitere Informationen finden Sie unter [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank][].
+Die Datenbank vom Typ **master** überwacht alle Anmeldungen und verfolgt, welche Anmeldungen zum Erstellen von Datenbanken oder anderen Anmeldungen berechtigt sind. Stellen Sie zur Verwaltung von Anmeldungen eine Verbindung zur **Master**-Datenbank her, und zwar mit der Hauptanmeldung auf Serverebene, die Sie beim Einrichten des Servers erstellt haben. Mit den Anweisungen **CREATE LOGIN**, **ALTER LOGIN** oder **DROP LOGIN** können Sie Abfragen an die Master-Datenbank ausführen, die die Anmeldungen für den gesamten Server verwalten. Weitere Informationen finden Sie unter [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/ee336235.aspx).
 
 
--   Verwenden Sie die Anweisung **CREATE LOGIN**, um eine neue Anmeldung auf Serverebene zu erstellen. Weitere Informationen finden Sie unter [CREATE LOGIN (SQL-Datenbank)][]. Die folgende Anweisung erstellt eine neue Anmeldung mit dem Namen **login1**. Ersetzen Sie **password1** durch ein Kennwort Ihrer Wahl.
+-   Verwenden Sie die Anweisung **CREATE LOGIN**, um eine neue Anmeldung auf Serverebene zu erstellen. Weitere Informationen finden Sie unter [CREATE LOGIN (SQL-Datenbank)](https://msdn.microsoft.com/library/ms189751.aspx). Die folgende Anweisung erstellt eine neue Anmeldung mit dem Namen **login1**. Ersetzen Sie **password1** durch ein Kennwort Ihrer Wahl.
 
         CREATE LOGIN login1 WITH password='password1';
 
--   Mit der Anweisung **CREATE USER** erteilen Sie Berechtigungen auf Datenbank-Ebene. Alle Anmeldungen müssen in der **Master**-Datenbank erstellt werden; damit eine Anmeldung jedoch auf eine andere Datenbank zugreifen kann, müssen Sie ihr Berechtigungen auf Datenbank-Ebene zuweisen, indem Sie die Anweisung **CREATE USER** für diese Datenbank ausführen. Weitere Informationen finden Sie unter [CREATE USER (SQL-Datenbank)][].
+-   Mit der Anweisung **CREATE USER** erteilen Sie Berechtigungen auf Datenbank-Ebene. Alle Anmeldungen müssen in der **Master**-Datenbank erstellt werden; damit eine Anmeldung jedoch auf eine andere Datenbank zugreifen kann, müssen Sie ihr Berechtigungen auf Datenbank-Ebene zuweisen, indem Sie die Anweisung **CREATE USER** für diese Datenbank ausführen. Weitere Informationen finden Sie unter [CREATE USER (SQL-Datenbank)](https://msdn.microsoft.com/library/ms173463.aspx).
 
 -   Gehen Sie folgendermaßen vor, um "login1" die Zugriffsberechtigung auf eine Datenbank mit dem Namen **myTestDB** zu erteilen:
 
  1.  Um den Objekt-Explorer zur Anzeige der gerade erstellten Datenbank **myTestDB** zu aktualisieren, klicken Sie im Objekt-Explorer mit der rechten Maustaste auf den Servernamen und dann mit der linken auf **Aktualisieren**.  
 
-     Wenn Sie die Verbindung geschlossen haben, können Sie sie im Menü **Datei** mit dem Befehl Objekt-Explorer verbinden wieder öffnen. Führen Sie die Anweisungen unter [Schritt 2: Verbinden mit der SQL-Datenbank][] erneut aus, um eine Verbindung mit der Datenbank herzustellen.
+     Wenn Sie die Verbindung geschlossen haben, können Sie sie im Menü **Datei** mit dem Befehl Objekt-Explorer verbinden wieder öffnen.
 
  2. Klicken Sie mit der rechten Maustaste auf die Datenbank **myTestDB** und wählen Sie **Neue Abfrage**.
 
@@ -134,11 +103,11 @@ Die Datenbank vom Typ **master** überwacht alle Anmeldungen und verfolgt, welch
 
             CREATE USER login1User FROM LOGIN login1;
 
--   Nutzen Sie die gespeicherte Prozedur **sp_addrolemember**, um das Benutzerkonto mit geeigneten Berechtigungen für die Datenbank auszustatten. Weitere Informationen finden Sie unter [sp_addrolemember (Transact-SQL)][]. Die folgende Anweisung erteilt **login1User** Lesezugriff auf die Datenbank, indem sie **login1User** der Rolle **db_datareader** hinzufügt.
+-   Nutzen Sie die gespeicherte Prozedur **sp_addrolemember**, um das Benutzerkonto mit geeigneten Berechtigungen für die Datenbank auszustatten. Weitere Informationen finden Sie unter [sp_addrolemember (Transact-SQL)](http://msdn.microsoft.com/library/ms187750.aspx). Die folgende Anweisung erteilt **login1User** Lesezugriff auf die Datenbank, indem sie **login1User** der Rolle **db_datareader** hinzufügt.
 
         exec sp_addrolemember 'db_datareader', 'login1User';    
 
--   Verwenden Sie die Anweisung **ALTER LOGIN**, um eine bestehende Anmeldung zu modifizieren, etwa wenn sie das zugehörige Kennwort ändern möchten. Weitere Informationen finden Sie unter [ALTER LOGIN (SQL-Datenbank)][]. Die Anweisung **ALTER LOGIN** sollte bezogen auf die **Master**-Datenbank ausgeführt werden. Wechseln Sie wieder zurück zu dem Abfragefenster, das mit dieser Datenbank verbunden ist.
+-   Verwenden Sie die Anweisung **ALTER LOGIN**, um eine bestehende Anmeldung zu modifizieren, etwa wenn sie das zugehörige Kennwort ändern möchten. Weitere Informationen finden Sie unter [ALTER LOGIN (SQL-Datenbank)](https://msdn.microsoft.com/library/ms189828.aspx). Die Anweisung **ALTER LOGIN** sollte bezogen auf die **Master**-Datenbank ausgeführt werden. Wechseln Sie wieder zurück zu dem Abfragefenster, das mit dieser Datenbank verbunden ist.
 
     Die folgende Anweisung modifiziert die Anmeldung **login1**, um das Kennwort zurückzusetzen. Ersetzen Sie **newPassword** durch ein Kennwort Ihrer Wahl, und **oldPassword** durch das aktuelle Kennwort der Anmeldung.
 
@@ -146,7 +115,7 @@ Die Datenbank vom Typ **master** überwacht alle Anmeldungen und verfolgt, welch
         WITH PASSWORD = 'newPassword'
         OLD_PASSWORD = 'oldPassword';
 
--   Mit der Anweisung **DROP LOGIN** können Sie eine bestehende Anmeldung löschen. Wenn Sie eine Anmeldung auf Serverebene löschen, werden auch alle zugehörigen Konten von Datenbankbenutzern gelöscht. Weitere Informationen finden Sie unter [DROP DATABASE (SQL-Datenbank)][]. Die Anweisung **DROP LOGIN** sollte bezogen auf die **Master**-Datenbank ausgeführt werden. Die folgende Anweisung löscht die Anmeldung **login1**.
+-   Mit der Anweisung **DROP LOGIN** können Sie eine bestehende Anmeldung löschen. Wenn Sie eine Anmeldung auf Serverebene löschen, werden auch alle zugehörigen Konten von Datenbankbenutzern gelöscht. Weitere Informationen finden Sie unter [DROP DATABASE (SQL-Datenbank)](https://msdn.microsoft.com/library/ms178613.aspx). Die Anweisung **DROP LOGIN** sollte bezogen auf die **Master**-Datenbank ausgeführt werden. Die folgende Anweisung löscht die Anmeldung **login1**.
 
         DROP LOGIN login1;
 
@@ -154,9 +123,9 @@ Die Datenbank vom Typ **master** überwacht alle Anmeldungen und verfolgt, welch
 
         SELECT * FROM sys.sql_logins;
 
-<h2><a id="Step5" name="Step5"> </a>Schritt&#160;5: Überwachen der SQL-Datenbank mit dynamischen Verwaltungssichten</h2>
+## Überwachen von SQL-Datenbanken mit dynamischen Verwaltungssichten</h2>
 
-SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine einzelne Datenbank überwachen können. Im Folgenden finden Sie einige wenige Beispiele für die Art Überwachungsdaten, die Sie mit diesen Ansichten abrufen können. Umfassende Details und weitere Anwendungsbeispiele finden Sie unter [Überwachen der Azure SQL-Datenbank mit dynamischen Verwaltungssichten][].
+SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine einzelne Datenbank überwachen können. Im Folgenden finden Sie einige wenige Beispiele für die Art Überwachungsdaten, die Sie mit diesen Ansichten abrufen können. Umfassende Details und weitere Anwendungsbeispiele finden Sie unter [Überwachen der Azure SQL-Datenbank mit dynamischen Verwaltungssichten](https://msdn.microsoft.com/library/azure/ff394114.aspx).
 
 -   Die Abfrage einer dynamischen Verwaltungsansicht erfordert die Berechtigung **VIEW DATABASE STATE**. Wenn Sie einem bestimmten Benutzer die Berechtigung **VIEW DATABASE STATE** zuweisen möchten, stellen Sie mit Ihrer Hauptanmeldung für die Serverebene eine Verbindung zu der Datenbank her, die Sie verwalten möchten, und führen Sie bezogen auf sie die folgende Anweisung aus:
 
@@ -197,41 +166,4 @@ SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine 
         GROUP BY query_stats.query_hash
         ORDER BY 2 DESC;
 
-<h2>Zusätzliche Ressourcen</h2>
-
-* [Einführung in die SQL-Datenbank][]   
-* [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank][]   
-* [Überwachen der SQL-Datenbank mit dynamischen Verwaltungssichten][]   
-* [Transact-SQL-Referenz (SQL-Datenbank)][]
-
-  [How to use Azure SQL Database]: http://www.windowsazure.com/develop/net/how-to-guides/sql-azure/
-  [Schritt 1: Installieren von SQL Server 2014 Management Studio]: #Step1
-  [Schritt 2: Verbinden mit der SQL-Datenbank]: #Step2
-  [Schritt 3: Erstellen und Verwalten von Datenbanken]: #Step3
-  [Schritt 4: Erstellen und Verwalten von Anmeldungen]: #Step4
-  [Schritt 5: Überwachen der SQL-Datenbank mit dynamischen Verwaltungssichten]: #Step5
-  [Microsoft SQL Server 2014 Express]: http://www.microsoft.com/download/details.aspx?id=42299
-  [Kumulatives Updatepaket 5 für SQL Server 2014]: http://support2.microsoft.com/kb/3011055
-  [SSMS Installer - Select installation type]: /media/installer_installation_type.png
-  [SSMS Installer - Select features]: /media/installer_feature_selection.png
-  [SSMS Installer - Installation complete]: /media/installer_completed.png
-  [Azure-Verwaltungsportal]: http://manage.windowsazure.com/
-  [Get SQL Database server name from Management Portal]: /media/portal_get_database_name.png
-  [Connect to SSMS]: /media/ssms_connect.png
-  [Connect to SSMS -- properties]: /media/ssms_connect_properties.png
-  [Transact-SQL-Referenz (SQL-Datenbank)]: http://msdn.microsoft.com/library/bb510741(v=sql.120).aspx
-  [CREATE DATABASE (SQL-Datenbank)]: https://msdn.microsoft.com/library/dn268335.aspx
-  [ALTER DATABASE (SQL-Datenbank)]: https://msdn.microsoft.com/library/ms174269.aspx
-  [DROP DATABASE (SQL-Datenbank)]: https://msdn.microsoft.com/library/ms178613.aspx
-  [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank]: http://msdn.microsoft.com/library/windowsazure/ee336235.aspx
-  [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank]: http://msdn.microsoft.com/library/windowsazure/ee336235.aspx
-  [CREATE LOGIN (SQL-Datenbank)]: https://msdn.microsoft.com/library/ms189751.aspx
-  [CREATE USER (SQL-Datenbank)]: https://msdn.microsoft.com/library/ms173463.aspx
-  [sp_addrolemember (Transact-SQL)]: http://msdn.microsoft.com/library/ms187750.aspx
-  [ALTER LOGIN (SQL-Datenbank)]: https://msdn.microsoft.com/library/ms189828.aspx
-  [Überwachen der SQL-Datenbank mit dynamischen Verwaltungssichten]: http://msdn.microsoft.com/library/windowsazure/ff394114.aspx
-  [Überwachen der Azure SQL-Datenbank mit dynamischen Verwaltungssichten]: http://msdn.microsoft.com/library/windowsazure/ff394114.aspx
-  [Einführung in die SQL-Datenbank]: http://azure.microsoft.com/services/sql-database/
- 
-
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer" 
-	description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte" 
+	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer (Universal Windows 8.1) | Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie mit Azure Mobile Services Pushbenachrichtigungen an einen bestimmten authentifizierten Benutzer senden können, auf dessen Gerät Ihre universelle Windows 8.1-App ausgeführt wird." 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
 	authors="ggailey777" 
@@ -13,20 +13,16 @@
 	ms.tgt_pltfrm="mobile-windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="03/23/2015" 
+	ms.date="07/01/2015" 
 	ms.author="glenga"/>
 
 # Senden von Pushbenachrichtigungen an authentifizierte Benutzer
 
 [AZURE.INCLUDE [mobile-services-selector-push-users](../../includes/mobile-services-selector-push-users.md)]
 
-In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen an authentifizierte Benutzer auf einem beliebigen registrierten Gerät senden. Im Gegensatz zum vorherigen Lernprogramm für [Pushbenachrichtigungen][Get started with push notifications] wird in diesem Lernprogramm der mobile Dienst geändert, sodass sich Benutzer authentifizieren müssen, bevor sich der Client beim Notification Hub für Pushbenachrichtigungen registrieren kann. Außerdem wird die Registrierung geändert, um einen Tag basierend auf der zugewiesenen Benutzer-ID hinzuzufügen. Schließlich wird der Servercode so geändert, dass die Benachrichtigung nur an den authentifizierten Benutzer statt an alle Registrierungen gesendet wird.
+##Übersicht
 
-In diesem Lernprogramm werden Sie durch den folgenden Prozess geführt:
-
-+ [Aktualisieren des Diensts zur Verwendung von Authentifizierung für die Registrierung]
-+ [Aktualisieren der App zum Anmelden vor der Registrierung]
-+ [Testen der App]
+In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen an authentifizierte Benutzer auf einem beliebigen registrierten Gerät senden. Im Gegensatz zum vorherigen Lernprogramm für [Pushbenachrichtigungen][Get started with push notifications] wird in diesem Lernprogramm der mobile Dienst geändert, sodass sich Benutzer authentifizieren müssen, bevor sich der Client beim Notification Hub für Pushbenachrichtigungen registrieren kann. Außerdem wird die Registrierung geändert, um einen Tag basierend auf der zugewiesenen Benutzer-ID hinzuzufügen. Abschließend wird der Servercode aktualisiert, um die Benachrichtigung nur an den authentifizierten Benutzer anstatt an alle Registrierungen zu senden.
  
 Dieses Lernprogramm unterstützt Apps für Windows Store und Windows Phone Store.
 
@@ -42,24 +38,22 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
 ##<a name="register"></a>Aktualisieren des Diensts zur Verwendung der Authentifizierung für die Registrierung
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-push-notifications-app-users](../../includes/mobile-services-dotnet-backend-push-notifications-app-users.md)] 
+[AZURE.INCLUDE [mobile-services-dotnet-backend-push-notifications-app-users](../../includes/mobile-services-dotnet-backend-push-notifications-app-users.md)]
 
 ##<a name="update-app"></a>Aktualisieren der App zum Anmelden vor der Registrierung
 
-[AZURE.INCLUDE [mobile-services-windows-store-dotnet-push-notifications-app-users](../../includes/mobile-services-windows-store-dotnet-push-notifications-app-users.md)] 
+[AZURE.INCLUDE [mobile-services-windows-store-dotnet-push-notifications-app-users](../../includes/mobile-services-windows-store-dotnet-push-notifications-app-users.md)]
 
 ##<a name="test"></a>Testen der App
 
-[AZURE.INCLUDE [mobile-services-windows-test-push-users](../../includes/mobile-services-windows-test-push-users.md)] 
+[AZURE.INCLUDE [mobile-services-windows-test-push-users](../../includes/mobile-services-windows-test-push-users.md)]
 
-<!---## <a name="next-steps"> </a>Next steps
 
-In the next tutorial, [Service-side authorization of Mobile Services users][Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. Learn more about how to use Mobile Services with .NET in [Mobile Services .NET How-to Conceptual Reference]-->
 
 <!-- Anchors. -->
-[Aktualisieren des Diensts zur Verwendung von Authentifizierung für die Registrierung]: #register
-[Aktualisieren der App zum Anmelden vor der Registrierung]: #update-app
-[Testen der App]: #test
+[Updating the service to require authentication for registration]: #register
+[Updating the app to log in before registration]: #update-app
+[Testing the app]: #test
 [Next Steps]: #next-steps
 
 
@@ -69,6 +63,7 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [Erste Schritte mit Pushbenachrichtigungen]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md
 
 [Azure Management Portal]: https://manage.windowsazure.com/
-[Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library
 
-<!--HONumber=54--> 
+ 
+
+<!---HONumber=July15_HO2-->

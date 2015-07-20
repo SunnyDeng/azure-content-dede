@@ -1,23 +1,23 @@
 <properties 
-    pageTitle="Problembehandlung mit den Überwachungsindikatoren"
+    pageTitle="StorSimple-Überwachungsindikatoren"
     description="Beschreibt die LEDs und Alarme zum Überwachen des Status des StorSimple-Geräts."
     services="storsimple"
     documentationCenter="NA"
     authors="SharS"
     manager="adinah"
     editor="tysonn" />
-<tags 
+ <tags 
     ms.service="storsimple"
     ms.devlang="NA"
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="TBD"
-    ms.date="04/07/2015"
+    ms.date="06/11/2015"
     ms.author="v-sharos" />
 
-#Problembehandlung mit den Überwachungsindikatoren   
+# StorSimple-Überwachungsindikatoren   
 
-##Übersicht
+## Übersicht
 
 Ihr StorSimple-Gerät bietet LEDs (Light-Emitting Diodes) und Alarme, mit denen Sie die Module und den Gesamtstatus des StorSimple-Geräts überwachen können. Die Überwachungsindikatoren befinden sich in den Hardwarekomponenten des primären Gehäuses des Geräts und des EBOD-Gehäuses. Die Überwachungsindikatoren können LEDs oder akustische Alarme sein.
 
@@ -29,11 +29,13 @@ Es gibt drei LED-Statusanzeigen, mit denen der Status eines Moduls gekennzeichne
 
 In den folgenden Abschnitten finden Sie Informationen zu den verschiedenen Überwachungsindikator-LEDs, zu deren Positionen am StorSimple-Gerät, zum Gerätestatus für die jeweilige LED-Statusanzeige sowie zu den zugehörigen akustischen Alarmen.
 
-##Indikator-LEDs des vorderen Bedienfelds
+## Indikator-LEDs des vorderen Bedienfelds
 
 Das vordere *Bedienfeld* oder *OPS-Bedienfeld* zeigt sämtliche Statusangaben zu allen Modulen im System an. Das vordere Bedienfeld ist bei StorSimple-Gerät und EBOD-Gehäuse identisch, wie nachfolgend dargestellt.
 
    ![][1]
+
+**Abbildung 1: Vorderes Bedienfeld des Geräts**
  
 Das vordere Bedienfeld enthält die folgenden Indikatoren:
 
@@ -45,7 +47,7 @@ Das vordere Bedienfeld enthält die folgenden Indikatoren:
 
 Der Hauptunterschied zwischen den LEDs des vorderen Bedienfelds am Gerät und am EBOD-Gehäuse ist die **Systemeinheit-ID**, die auf der LED-Anzeige dargestellt wird. Die auf dem Gerät angezeigte Standard-ID der Einheit ist **00**, während die auf dem EBOD-Gehäuse angezeigte Standard-ID der Einheit **01** ist. Auf diese Weise können Sie schnell zwischen dem Gerät und dem EBOD-Gehäuse unterscheiden, wenn das Gerät eingeschaltet wird. Wenn Ihr Gerät ausgeschaltet ist, verwenden Sie die unter dem Thema [Einschalten eines neuen Geräts](https://msdn.microsoft.com/library/azure/dn772378.aspx) bereitgestellten Informationen, um das Gerät vom EBOD-Gehäuse zu unterscheiden.
 
-##LED-Status am vorderen Bedienfeld  
+## LED-Status am vorderen Bedienfeld  
 
 Anhand der folgenden Tabelle können Sie den Status, der über die LEDs auf dem vorderen Bedienfeld für das Gerät oder das EBOD-Gehäuse angezeigt wird, ermitteln.
 
@@ -59,19 +61,22 @@ Anhand der folgenden Tabelle können Sie den Status, der über die LEDs auf dem 
 | Grün | ON | N/V | N/V | Gehäuselogikfehler|
 | Grün | Blinken | N/V | Modulstatus-LED am Controllermodul. PCM-Fehler-LEDs, Lüfterfehler-LEDs | Unbekannter Controllermodultyp installiert, I2C-Busfehler, Konfigurationsfehler bei wichtigen Produktdaten des Controllermoduls |
 
-##Indikator-LEDs der Stromversorgungs- und Kühleinheit   
+## Indikator-LEDs der Stromversorgungs- und Kühleinheit   
 
 Die Indikator-LEDs der Stromversorgungs- und Kühleinheit (PCM) befinden sich auf der Rückseite des primären Gehäuses oder EBOD-Gehäuses der einzelnen PCM-Module. In diesem Thema wird die Verwendung der folgenden LEDs zur Überwachung der Zustände Ihres StorSimple-Geräts beschrieben.
 
 - LEDs der Stromversorgungs- und Kühleinheit (PCM) für das primäre Gehäuse
 - LEDs der Stromversorgungs- und Kühleinheit (PCM) für das EBOD-Gehäuse
 
-##LEDs der Stromversorgungs- und Kühleinheit (PCM) für das primäre Gehäuse  
+## LEDs der Stromversorgungs- und Kühleinheit (PCM) für das primäre Gehäuse  
+
 Das StorSimple-Gerät verfügt über ein 764-W-PCM-Modul mit zusätzlichem Akku. In der folgenden Abbildung wird das LED-Bedienfeld für das Gerät dargestellt.
 
    ![][2]
+
+**Abbildung 2: LEDs der Stromversorgungs- und Kühleinheit (PCM) am primären Gehäuse**
  
-**LED-Legende**
+LED-Legende:
 
 1. Stromausfall
 2. Lüfterfehler
@@ -82,7 +87,7 @@ Das StorSimple-Gerät verfügt über ein 764-W-PCM-Modul mit zusätzlichem Akku.
 
 Der Status der Stromversorgungs- und Kühleinheit (PCM) wird auf dem LED-Bedienfeld angezeigt. Das LED-Bedienfeld der Stromversorgungs- und Kühleinheit des Geräts verfügt über sechs LEDs. Vier dieser LEDs zeigen den Status der Stromversorgung und des Lüfters an. Die beiden anderen LEDs zeigen den Status des Notfallakkus in der Stromversorgungs- und Kühleinheit an. Sie können den Status der PCM anhand der folgenden Tabellen ermitteln.
 
-###PCM-Indikator-LEDs für die Stromversorgung und den Lüfter
+### PCM-Indikator-LEDs für die Stromversorgung und den Lüfter
 | Status | PCM OK (grün) | Stromausfall (bernsteinfarben) | Lüfterfehler (bernsteinfarben) | Gleichstromfehler (bernsteinfarben) |
 |--------|----------------|-----------------------|------------------|----------------------|
 | Keine Stromversorgung (am Gehäuse) | OFF | OFF | OFF | OFF|
@@ -94,7 +99,7 @@ Der Status der Stromversorgungs- und Kühleinheit (PCM) wird auf dem LED-Bedienf
 | Standby-Modus | Blinken | OFF | OFF | OFF |
 | PCM-Firmwaredownload | OFF | Blinken | Blinken | Blinken |
 
-###PCM-Indikator-LEDs für Notfallakku  
+### PCM-Indikator-LEDs für Notfallakku  
 
 | Status | Akku OK (grün) | Akkufehler (bernsteinfarben) |
 |--------|----------------------|-----------------------|
@@ -105,11 +110,13 @@ Der Status der Stromversorgungs- und Kühleinheit (PCM) wird auf dem LED-Bedienf
 | "Schwerer" Akkufehler (nicht wiederherstellbar) | OFF | ON |
 | Akku deaktiviert | Blinken | OFF |
 
-##LEDs der Stromversorgungs- und Kühleinheit (PCM) für das EBOD-Gehäuse  
+## LEDs der Stromversorgungs- und Kühleinheit (PCM) für das EBOD-Gehäuse  
 
 Das EBOD-Gehäuse verfügt über eine 580-W-PCM ohne zusätzlichen Akku. Das PCM-Bedienfeld für das EBOD-Gehäuse besitzt nur für die Stromversorgung und den Lüfter Indikator-LEDs. Diese LEDs werden in der folgenden Abbildung dargestellt.
 
    ![][3]
+
+**Abbildung 3: LEDs der Stromversorgungs- und Kühleinheit (PCM) am EBOD-Gehäuse**
  
 Sie können den Status der PCM anhand der folgenden Tabelle ermitteln.
 
@@ -124,18 +131,20 @@ Sie können den Status der PCM anhand der folgenden Tabelle ermitteln.
 | Standby-Modus | Blinken | OFF | OFF | OFF |
 | PCM-Firmwaredownload | OFF | Blinken | Blinken | Blinken |
 
-##Indikator-LEDs des Controllermoduls  
+## Indikator-LEDs des Controllermoduls  
 
 Das StorSimple-Gerät besitzt LEDs für den primären Controller und die EBOD-Controllermodule.
 
-###Indikator-LEDs für den primären Controller
+### Indikator-LEDs für den primären Controller
 Die folgende Abbildung unterstützt Sie bei der Identifizierung der LEDs für den primären Controller. (Zur einfacheren Orientierung werden alle Komponenten aufgelistet.)
 
    ![][4]
  
+**Abbildung 4: Indikator-LEDs – primärer Controller**
+
 Anhand der folgenden Tabelle können Sie ermitteln, ob das Controllermodul ordnungsgemäß funktioniert.
 
-###Indikator-LEDs des Controllers  
+### Indikator-LEDs des Controllers  
 
 | LED | Beschreibung                                                                            
 |---- | ----------- |
@@ -149,31 +158,35 @@ Anhand der folgenden Tabelle können Sie ermitteln, ob das Controllermodul ordnu
 >[AZURE.IMPORTANT]Wenn die Fehler-LED leuchtet, besteht ein Problem mit dem Controllermodul, das eventuell durch einen Neustart des Controllers behoben werden kann. Wenden Sie sich an den Microsoft-Support, wenn dieses Problem nicht durch einen Neustart des Controllers behoben werden kann.
 
 
-###Indikator-LEDs für EBOD (EBOD-Gehäuse)  
+### Indikator-LEDs für EBOD (EBOD-Gehäuse)  
 
 Jeder der sechs GBit/s-SAS-EBOD-Controller verfügt über LEDs, die den Status wie in der folgenden Abbildung dargestellt anzeigen.
 
   ![][5]
+
+**Abbildung 5: Indikator-LEDs – EBOD-Gehäuse**
  
 Anhand der folgenden Tabelle können Sie ermitteln, ob das EBOD-Controllermodul ordnungsgemäß funktioniert.
 
-###Indikator-LEDs des EBOD-Controllermoduls  
+### Indikator-LEDs des EBOD-Controllermoduls  
 
 |Status | E/A-Modul OK (grün) | E/A-Modulfehler (bernsteinfarben) | Aktivität am Hostport (grün) |
 |-------|----------------------|-------------------------------|----------------------------|
 | Controllermodul OK | EIN | AUS | - | | Controllermodulfehler | AUS | EIN | - | | Keine externe Hostportverbindung | - | - | AUS | | Externe Hostportverbindung – keine Aktivität | - | - | EIN | | Externe Hostportverbindung – Aktivität | - | - | Blinken | | Metadatenfehler des Controllermoduls | Blinken | - | - |
 
-##Indikator-LEDs des Datenträgerlaufwerks am primären und am EBOD-Gehäuse
+## Indikator-LEDs des Datenträgerlaufwerks am primären und am EBOD-Gehäuse
 
 Das StorSimple-Gerät verfügt über Datenträgerlaufwerke am primären Gehäuse und am EBOD-Gehäuse. Jedes Datenträgerlaufwerk enthält Überwachungsindikator-LEDs, die in diesem Abschnitt beschrieben werden.
 
 Für die Datenträgerlaufwerke wird der Laufwerkstatus durch eine grüne LED und eine rot-bernsteinfarbene LED angezeigt, die an der Vorderseite jedes Laufwerkträgermoduls angebracht ist. Diese LEDs werden in der folgenden Abbildung dargestellt.
 
   ![][6]
+
+**Abbildung 6: LEDs des Datenträgerlaufwerks**
  
 Anhand der folgenden Tabelle können Sie den Status der einzelnen Datenträgerlaufwerke bestimmen, der sich wiederum auf den LED-Status der gesamten Vorderseite auswirkt.
 
-###Indikator-LEDs des Datenträgerlaufwerks am EBOD-Gehäuse  
+### Indikator-LEDs des Datenträgerlaufwerks am EBOD-Gehäuse  
 
 | Status | Aktivität OK-LED (grün) | Fehler-LED (rot-bernsteinfarben) | Zugehörige LED des Bedienfelds |
 |-------|--------------------------|----------------------|-------------------------|
@@ -183,7 +196,7 @@ Anhand der folgenden Tabelle können Sie den Status der einzelnen Datenträgerla
 | Fehlerbit des SES-Geräts festgelegt | ON | ON | Logischer Fehler (rot) |
 | Fehler des Energiesteuerungs-Schaltkreises | OFF | ON | Modulfehler (rot) |
 
-##Akustische Alarme  
+## Akustische Alarme  
 
 Ein StorSimple-Gerät enthält akustische Alarme, die dem primären Gehäuse und dem EBOD-Gehäuse zugeordnet sind. Der akustische Alarm befindet sich auf dem vorderen Bedienfeld (auch als OPS-Bedienfeld bezeichnet) der beiden Gehäuse. Der akustische Alarm gibt an, dass eine Fehlerbedingung vorhanden ist. Die folgenden Bedingungen aktivieren den Alarm:
 
@@ -198,7 +211,7 @@ Ein StorSimple-Gerät enthält akustische Alarme, die dem primären Gehäuse und
 
 Die verschiedenen Alarmzustände werden in der folgenden Tabelle beschrieben.
 
-###Alarmzustände  
+### Alarmzustände  
 
 | Alarmzustand | Aktion | Aktion mit gedrückter Stummtaste |
 |------------|---------|---------------------------------|
@@ -208,7 +221,7 @@ Die verschiedenen Alarmzustände werden in der folgenden Tabelle beschrieben.
 | S3 | Stummgeschalteter Modus: lautlos | Keine |
 | S4 | Kritischer Fehlermodus: Daueralarm | Nicht verfügbar: Stummschaltung nicht aktiv |
 
-> [AZURE.NOTE] 
+> [AZURE.NOTE]
 
 >  - Wenn Sie im Alarmzustand S1 die Stummschalttaste nicht innerhalb von zwei Minuten drücken, erfolgt automatisch ein Übergang in den Zustand S2 oder S3.  
 >  - Die Alarmzustände S1 bis S4 kehren zu S0 zurück, sobald die Fehlerbedingung behoben wurde.  
@@ -218,7 +231,7 @@ Der akustische Alarm kann durch Drücken der Stummschalttaste auf dem OPS-Bedien
 
 Die verschiedenen Alarmbedingungen werden in der folgenden Tabelle beschrieben.
 
-###Alarmbedingungen  
+### Alarmbedingungen  
 
 | Status | Schweregrad | Alarm | LED des Bedienfelds |
 |--------|---------|--------|----------------|
@@ -249,6 +262,6 @@ Die verschiedenen Alarmbedingungen werden in der folgenden Tabelle beschrieben.
 [5]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE05.png
 [6]: ./media/storsimple-monitoring-indicators/storsimple-monitoring-indicators-IMAGE06.png
 
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

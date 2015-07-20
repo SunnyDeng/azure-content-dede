@@ -1,3 +1,4 @@
+
 #### So fügen Sie ein Speicherkonto zur StorSimple 8000-Serie mit Update 1.0 hinzu
 
 1. Wählen Sie auf der StorSimple-Manager-Dienst-Startseite Ihren Dienst aus, und doppelklicken Sie dann darauf. Damit gelangen Sie auf die Seite **Schnellstart**. Wählen Sie die Seite **Konfigurieren** aus.
@@ -45,4 +46,4 @@
 
 7. Das neu erstellte Speicherkonto wird auf der Seite **Konfigurieren** unter **Speicherkonten** angezeigt. Klicken Sie auf **Speichern**, um das neue Speicherkonto zu speichern. Klicken Sie auf **OK**, wenn Sie zur Bestätigung aufgefordert werden.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

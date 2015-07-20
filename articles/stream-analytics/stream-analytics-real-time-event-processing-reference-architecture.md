@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Echtzeitereignisverarbeitung mit Stream Analytics | Azure" 
+	pageTitle="Echtzeitereignisverarbeitung mit Stream Analytics | Microsoft Azure" 
 	description="Erfahren Sie, wie durch die Interaktion einer Reihe von Azure-Diensten Echtzeitereignisverarbeitung und Analysen ermöglicht werden." 
 	services="stream-analytics,event-hubs,storage,sql-database" 
 	documentationCenter="" 
@@ -57,8 +57,9 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
-- [Azure Stream Analytics-Abfragesprachereferenz](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

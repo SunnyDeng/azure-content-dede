@@ -1,3 +1,4 @@
+
 | Begrenzungsbezeichner | Begrenzung | Kommentare |
 |----------------- | ------|--------- |
 | Maximale Anzahl von Anmeldeinformationen für das Speicherkonto | 64 | |
@@ -5,7 +6,7 @@
 | Maximale Anzahl von Volumes | 255 | |
 | Maximale Anzahl von Bandbreitenvorlagen | 25 | |
 | Maximale Anzahl von Zeitplänen pro Bandbreitenvorlage | 168 | Einen Zeitplan für jede Stunde, jeden Tag der Woche (24 * 7). |
-| Maximale Größe eines Volumes | 64 TB | Die empfohlene Größe für NTFS-Volumes beträgt 64 TB. |
+| Maximale Größe eines Volumes | 64 TB | |
 | Maximale Anzahl von iSCSI-Verbindungen | 512 | |
 | Maximale Anzahl von iSCSI-Verbindungen von Initiatoren | 512 | |
 | Maximale Anzahl von Zugriffssteuerungsdatensätzen pro Gerät | 64 | |
@@ -23,4 +24,4 @@
 
 & #42; Der maximale Durchsatz pro E/A-Typ wurde mit 100 %-Lese- und 100 %-Schreibszenarien gemessen. Der tatsächliche Durchsatz kann geringer sein und hängt von der E/A-Mischung und den Netzwerkbedingungen ab.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

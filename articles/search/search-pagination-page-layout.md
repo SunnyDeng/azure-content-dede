@@ -13,16 +13,16 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="04/16/2015" 
+	ms.date="07/08/2015" 
 	ms.author="heidist"/>
 
 #Anordnen von Suchergebnissen auf Seiten in Azure Search#
 
 Dieser Artikel enthält Anleitungen dazu, wie die REST-API für den Azure-Suchdienst zum Implementieren von Standardelementen einer Seite mit Suchergebnissen, z. B. Gesamtanzahl, Dokumentabruf, Sortierreihenfolge und Navigation, verwendet wird.
  
-In jedem der unten genannten Fälle werden die seitenbezogenen Optionen, die Daten oder Informationen zu der Seite mit den Suchergebnissen beitragen, über die  [Dokument durchsuchen](http://msdn.microsoft.com/library/azure/dn798927.aspx)-Anforderungen angegeben, die an den Azure-Suchdienst gesendet werden. Anforderungen enthalten einen GET-Befehl, Pfad- und Abfrageparameter, denen der Dienst entnimmt, was angefordert wird und wie die Antwort zu formulieren ist.
+In jedem der unten genannten Fälle werden die seitenbezogenen Optionen, die Daten oder Informationen zu der Seite mit den Suchergebnissen beitragen, über die [Dokument durchsuchen](http://msdn.microsoft.com/library/azure/dn798927.aspx)-Anforderungen angegeben, die an den Azure-Suchdienst gesendet werden. Anforderungen enthalten einen GET-Befehl, Pfad- und Abfrageparameter, denen der Dienst entnimmt, was angefordert wird und wie die Antwort zu formulieren ist.
 
-> [AZURE.NOTE] Eine gültige Anforderung umfasst eine Reihe von Elementen, z. B. Dienst-URL und  Pfad, HTTP-Verb, `api-version` und so weiter. Aus Platzgründen wurden die Beispiele verkürzt, um nur die Syntax hervorzuheben, die für die Paginierung wichtig sind. Weitere Einzelheiten zur Anforderungssyntax finden Sie in der Dokumentation zur [REST-API für Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn798935.aspx) .
+> [AZURE.NOTE]Eine gültige Anforderung umfasst eine Reihe von Elementen, z. B. Dienst-URL und Pfad, HTTP-Verb, `api-version` und so weiter. Aus Platzgründen wurden die Beispiele verkürzt, um nur die Syntax hervorzuheben, die für die Paginierung wichtig sind. Weitere Einzelheiten zur Anforderungssyntax finden Sie in der Dokumentation zur [REST-API für Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn798935.aspx) .
 
 ## Gesamtanzahl der Treffer und die Seitenanzahl ##
 
@@ -46,7 +46,7 @@ Zur Paginierung der Ergebnisse sind sowohl `$top` als auch `$skip` erforderlich,
 
     	GET /indexes/onlineCatalog/docs?search=*$top=15&$skip=30&$count=true
 
-## Layout   ##
+## Layout  ##
 
 Auf einer Seite mit Suchergebnissen empfiehlt es sich, eine Miniaturansicht, eine Teilmenge von Feldern und einen Link zu einer vollständigen Produktseite anzuzeigen.
 
@@ -82,7 +82,7 @@ Sie erstellen dann eine Methode, die die ausgewählten Sortieroption als Eingabe
 
  ![][5]
  
-> [AZURE.NOTE] Die Standardbewertung ist zwar für viele Szenarien ausreichend ist, aber es wird empfohlen, stattdessen die Relevanz anhand eines benutzerdefinierten Bewertungsprofil zu ermitteln. Ein benutzerdefiniertes Bewertungsprofil bietet Ihnen eine Möglichkeit, Elementen, die für Ihr Unternehmen sinnvoller sind, eine höhere Priorität zuzuordnen. Weitere Informationen finden Sie unter [Hinzufügen eines Bewertungsprofil](http://msdn.microsoft.com/library/azure/dn798928.aspx).
+> [AZURE.NOTE]Die Standardbewertung ist zwar für viele Szenarien ausreichend ist, aber es wird empfohlen, stattdessen die Relevanz anhand eines benutzerdefinierten Bewertungsprofil zu ermitteln. Ein benutzerdefiniertes Bewertungsprofil bietet Ihnen eine Möglichkeit, Elementen, die für Ihr Unternehmen sinnvoller sind, eine höhere Priorität zuzuordnen. Weitere Informationen finden Sie unter [Hinzufügen eines Bewertungsprofil](http://msdn.microsoft.com/library/azure/dn798928.aspx).
 
 ## Facettennavigation ##
 
@@ -113,4 +113,5 @@ Weitere Informationen zu `$filter`-Ausdrücken finden Sie unter [Dokumente durch
 [3]: ./media/search-pagination-page-layout/Pages-3-SortBy.png
 [4]: ./media/search-pagination-page-layout/Pages-4-SortbyRelevance.png
 [5]: ./media/search-pagination-page-layout/Pages-5-BuildSort.png
-<!--HONumber=54--> 
+
+<!---HONumber=July15_HO2-->

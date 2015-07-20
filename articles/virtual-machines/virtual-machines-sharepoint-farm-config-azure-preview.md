@@ -10,10 +10,10 @@
 <tags 
 	ms.service="virtual-machines" 
 	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-sharepoint" 
+	ms.tgt_pltfrm="vm-windows-sharepoint" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/09/2015" 
+	ms.date="07/07/2015" 
 	ms.author="josephd"/>
 
 
@@ -41,7 +41,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 -	Speicherkonto: Wird während der anfänglichen Konfiguration angegeben.
 -	Virtuelles Netzwerk 	
 	-   Typ: Nur Cloud	
-    -	Adressraum: 192.168.16.0/26    
+    -	Adressraum: 10.0.0.0/26    
 
 - Virtuelle Computer
 	-	*HostNamePrefix*-DC (AD DS-Domänencontroller)
@@ -62,14 +62,14 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 	-	Größe: A5 (Standard)
 	-	Kontoname für den Datenbankzugriff: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kennwort für das Datenbankzugriffskonto: Wird während der anfänglichen Konfiguration angegeben.
-	-	Kontoname für den SQL Server-Dienst: Wird während der anfänglichen Konfiguration angegeben.
+	-	Kontoname für den SQL Server-Dienst: sqlservice (Standard)
 	-	Kennwort für das SQL Server-Dienstkonto: Wird während der anfänglichen Konfiguration angegeben.
 
 - SharePoint-Server
 	-	Virtual Machine-Abbild: SharePoint Server 2013-Testversion.
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A2 (Standard)
-	-	Kontoname für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
+	-	Kontoname für die SharePoint-Farm: sp_farm (Standard)
 	-	Kontokennwort für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
 	-	Passphrase für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
 
@@ -87,7 +87,7 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 -	Speicherkonto: Wird während der anfänglichen Konfiguration angegeben.
 -	Virtuelles Netzwerk	
 	-	Typ: Nur Cloud
-	-	Adressraum: 192.168.16.0/26	
+	-	Adressraum: 10.0.0.0/26	
 
 -	Virtuelle Computer
 	-	*HostNamePrefix*-DC1 (AD DS-Domänencontroller)
@@ -111,21 +111,25 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 -	SQL Server
 	-	Virtual Machine-Abbild: SQL Server 2014 RTM Enterprise unter Windows Server 2012 R2
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
-	-	Größe: A5 (Standard)
+	-	Größe: A5 (Standard) für SQL Server, A0 (Standard) für den Dateifreigabenzeugen
 	-	Kontoname für den Datenbankzugriff: Wird während der anfänglichen Konfiguration angegeben.
 	-	Kennwort für das Datenbankzugriffskonto: Wird während der anfänglichen Konfiguration angegeben.
-	-	Kontoname für den SQL Server-Dienst: Wird während der anfänglichen Konfiguration angegeben.
+	-	Kontoname für den SQL Server-Dienst: sqlservice (Standard)
 	-	Kennwort für das SQL Server-Dienstkonto: Wird während der anfänglichen Konfiguration angegeben.
 
 -	SharePoint-Server
 	-	Virtual Machine-Abbild: SharePoint Server 2013-Testversion.
 	-	Hostnamenspräfix: Wird während der anfänglichen Konfiguration angegeben.
 	-	Größe: A2 (Standard)
-	-	Kontoname für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
-	-	Kontokennwort für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.		
+	-	Kontoname für die SharePoint-Farm: sp_farm (Standard)
+	-	Kontokennwort für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.	
 	-	Passphrase für die SharePoint-Farm: Wird während der anfänglichen Konfiguration angegeben.
 
 > [AZURE.NOTE]Die SharePoint-Server werden aus dem SharePoint Server 2013-Testversion-Image erstellt. Um den virtuellen Computer nach dem Ablauf der Testversion weiterhin verwenden zu können, müssen Sie die Installation so abändern, dass sie einen Lizenzschlüssel einer Verkaufsversion oder einer Volumenlizenz für die Standard oder Enterprise Edition von SharePoint Server 2013 verwendet.
+
+## Azure Resource Manager
+
+Die SharePoint-Serverfarm-Funktion des Azure-Vorschauportals erstellt virtuelle Computer in der Dienstverwaltung. Weitere Informationen zum Erstellen von SharePoint Server 2013-Farmen im Ressourcen-Manager finden Sie unter [Bereitstellen von SharePoint-Farmen mit Azure-Ressourcen-Manager-Vorlagen](virtual-machines-workload-template-sharepoint.md).
 
 ## Zusätzliche Ressourcen
 
@@ -136,4 +140,4 @@ Im Folgenden finden Sie die Konfigurationsdetails:
 [Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

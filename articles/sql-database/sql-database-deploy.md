@@ -1,9 +1,9 @@
 <properties 
-	pageTitle="Bereitstellen einer SQL-Datenbank - Azure" 
-	description="Erfahren Sie, wie eine SQL Server-Datenbank für Azure bereitstellen. Sie verwenden den Assistenten für die Bereitstellung einer Datenbank an SQL-Datenbank, um eine Beispieldatenbank hochzuladen." 
+	pageTitle="Bereitstellen einer SQL-Datenbank auf SQL Azure" 
+	description="Stellen Sie eine SQL Server-Datenbank mit dem Assistenten in SQL Server 2016 Management Studio unter Azure SQL-Datenbank bereit." 
 	services="sql-database" 
 	documentationCenter="" 
-	authors="jeffgoll" 
+	authors="sidneyh" 
 	manager="jeffreyg" 
 	editor=""/>
 
@@ -13,32 +13,35 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/25/2015" 
-	ms.author="jeffreyg"/>
+	ms.date="07/01/2015" 
+	ms.author="sidneyh"/>
 
 
+# So stellen Sie eine SQL Server-Datenbank für Azure SQL-Datenbank bereit
 
+In diesem Artikel verwenden Sie den **Assistenten zum Bereitstellen einer Datenbank auf Azure SQL-Datenbank**, um eine Beispieldatenbank auf Azure SQL-Datenbank hochzuladen. Für dieses Lernprogramm müssen Sie **SQL Server 2016 Management Studio (CTP-Version 2.1)** herunterladen.
 
+Geschätzte Zeit bis zum Abschluss: 15 Minuten (einschließlich Downloadzeit)
 
+> [AZURE.NOTE]Diese Anleitung verwendet eine Schuldatenbank als Beispiel, die bewusst einfach aufgebaut ist; alle Objekte sind mit Azure SQL-Datenbank kompatibel, sodass Sie die Datenbank nicht für die Migration ändern oder vorbereiten müssen. Wenn Sie eine komplexere vorhandene Datenbank migrieren, ist es möglicherweise auch sinnvoll, den [SQL-Datenbankmigrations](http://sqlazuremw.codeplex.com/)-Assistenten zu nutzen und diese [Übersicht](sql-database-cloud-migrate.md) zu lesen.
 
-<h1><a id="howtodeploySQLdb"></a>Bereitstellen einer Datenbank auf Azure</h1>
+## Voraussetzungen
 
-Es gibt verschiedene Methoden, um eine lokale SQL Server-Datenbank nach Azure zu verschieben. In dieser Aufgabe verwenden Sie den Assistenten zum Bereitstellen einer Datenbank für SQL Database, um eine Beispieldatenbank hochzuladen.
+Ein **Microsoft Azure-Konto**. Eine kostenlose Testversion finden Sie in diesem [Angebot](http://azure.microsoft.com/pricing/free-trial/).
 
-Die Schul-Beispieldatenbank ist dank ihrer Einfachheit gut geeignet; alle Objekte sind mit SQL Database kompatibel, sodass Sie keine Datenbank für die Migration ändern oder vorbereiten müssen. Stellen Sie als neuer Administrator zuerst eine einfache Datenbank bereit, um die einzelnen Schritte zu verstehen, bevor Sie Ihre eigenen Datenbanken verwenden. 
+Laden Sie [**SQL Server Management Studio**](https://msdn.microsoft.com/library/mt238290.aspx) herunter. (Weitere Informationen zu diesem Tool finden Sie unter [SQL Server Management Studio - June 2015 Release Notes](https://msdn.microsoft.com/library/mt238486.aspx) (in englischer Sprache).)
 
-**Hinweis:** Im Migrationshandbuch zu SQL-Datenbank finden Sie ausführliche Anweisungen zum Vorbereiten einer lokalen Datenbank für die Migration zu Azure. Sie sollten auch das Azure-Trainingskit herunterladen. Es enthält eine Übung, in der eine alternative Methode zum Migrieren einer lokalen Datenbank veranschaulicht wird.
+Ein vorhandener Server auf Azure SQL-Datenbank. Anweisungen zum Erstellen einer neuen Datenbank (auf einem neuen Server) finden Sie unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md).
 
+## Erstellen der Schuldatenbank auf einem lokalen Server
 
-<h2><a id="schooldb"></a>Gewusst wie: Erstellen der Schuldatenbank auf einem lokalen Server</h2>
+Führen Sie diese Skripte in SQL Management Studio (SSMS) aus, um eine lokale Version der Schuldatenbank zu erstellen.
 
-Skripts zum Erstellen dieser Datenbank finden Sie unter [Erste Schritte mit der Administration von SQL-Datenbank][]. In dieser Anleitung führen Sie diese Skripte in Management Studio aus, um eine lokale Version der Schuldatenbank zu erstellen.
+1. Stellen Sie in SSMS eine Verbindung mit einem lokalen Server her. Klicken Sie mit der rechten Maustaste auf **Databases**, klicken Sie anschließend auf **New Database** und geben Sie *school* ein.
 
-1. Stellen Sie in Management Studio eine Verbindung zu einem lokalen Server her. Klicken Sie mit der rechten Maustaste auf **Datenbanken**, klicken Sie auf **Neue Datenbank**, und geben Sie *school* ein.
+2. Klicken Sie mit der rechten Maustaste auf *school* und klicken Sie auf **New Query**.
 
-2. Klicken Sie mit der rechten Maustaste auf *school*, und klicken Sie auf **Neue Abfrage**. 
-
-3. Kopieren Sie das Skript "Create Schema" aus dem Lernprogramm, und führen Sie es aus. 
+3. Kopieren Sie folgendes Skript, und führen Sie es aus:
 
 <div style="width:auto; height:300px; overflow:auto"><pre>
 	-- Create the Department table.
@@ -452,17 +455,17 @@ Kopieren Sie dann das Skript "Insert Data", und führen Sie es aus.
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (2021, 2, 4);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (2030, 2, 3.5);
+	VALUES (2030, 2, 3,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (2021, 3, 3);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (2030, 3, 4);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (2021, 6, 2.5);
+	VALUES (2021, 6, 2,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (2042, 6, 3.5);
+	VALUES (2042, 6, 3,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (2021, 7, 3.5);
+	VALUES (2021, 7, 3,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (2042, 7, 4);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
@@ -470,11 +473,11 @@ Kopieren Sie dann das Skript "Insert Data", und führen Sie es aus.
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (2042, 8, 3);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (4041, 9, 3.5);
+	VALUES (4041, 9, 3,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (4041, 10, null);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (4041, 11, 2.5);
+	VALUES (4041, 11, 2,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (4041, 12, null);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
@@ -488,13 +491,13 @@ Kopieren Sie dann das Skript "Insert Data", und führen Sie es aus.
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (4041, 14, 3);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (4022, 15, 2.5);
+	VALUES (4022, 15, 2,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (4022, 16, 2);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (4022, 17, null);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (4022, 19, 3.5);
+	VALUES (4022, 19, 3,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (4061, 20, 4);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
@@ -502,97 +505,92 @@ Kopieren Sie dann das Skript "Insert Data", und führen Sie es aus.
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (4022, 22, 3);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (4041, 22, 3.5);
+	VALUES (4041, 22, 3,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (4061, 22, 2.5);
+	VALUES (4061, 22, 2,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (4022, 23, 3);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (1045, 23, 1.5);
+	VALUES (1045, 23, 1,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (1061, 24, 4);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (1061, 25, 3);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (1050, 26, 3.5);
+	VALUES (1050, 26, 3,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (1061, 26, 3);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (1061, 27, 3);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (1045, 28, 2.5);
+	VALUES (1045, 28, 2,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (1050, 28, 3.5);
+	VALUES (1050, 28, 3,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (1061, 29, 4);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
-	VALUES (1050, 30, 3.5);
+	VALUES (1050, 30, 3,5);
 	INSERT INTO dbo.StudentGrade (CourseID, StudentID, Grade)
 	VALUES (1061, 30, 4);
 	GO
 </pre></div>
+Jetzt haben Sie eine lokale Datenbank, die Sie nach Azure exportieren können. Führen Sie als Nächstes einen Assistenten aus, mit dem eine BACPAC-Datei erstellt wird, die dann in Azure geladen und in SQL Database importiert wird.
 
-   Jetzt haben Sie eine lokale Datenbank, die Sie nach Azure exportieren können. Führen Sie als Nächstes einen Assistenten aus, mit dem eine BACPAC-Datei erstellt wird, die dann in Azure geladen und in SQL Database importiert wird.
+	
+## Bereitstellen der Datenbank in Azure SQL 
+	
+1. Klicken Sie in Management Studio mit der rechten Maustaste auf die Schuldatenbank, die Sie gerade erstellt haben, zeigen Sie auf **Tasks**, und klicken Sie auf **Deploy Database to Microsoft Azure SQL Database**.
+2. Geben Sie unter **Bereitstellungseinstellungen** einen Namen für die Datenbank ein, z. B. *Schule*.
+5. Klicken Sie auf **Verbinden**. Um Probleme mit der Konnektivität zu beheben, lesen Sie [diesen Ratgeber](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1).
+6. Geben Sie unter **Servername** einen Servernamen bestehend aus 10 Zeichen, gefolgt von **.database.windows.net** ein.
+7. Wählen Sie unter **Authentication** die Option**SQL Server Authentication** aus.
+8. Geben Sie den Anmeldenamen und das Kennwort des Administrators ein, die Sie beim Erstellen des logischen SQL Database-Servers angegeben haben.
+9. Klicken Sie auf **Options**.
+10. Geben Sie bei den Verbindungseigenschaften unter **Mit Datenbank verbinden** **master** ein.
 
+	**Hinweis:** Sie müssen stets eine Verbindung mit der **master**-Datenbank herstellen, wenn Sie eine Datenbank auf dem Azure SQL-Datenbank-Server erstellen möchten. 
+11. Klicken Sie auf **Verbinden**. Mit diesem Schritt schließen Sie die Verbindungsspezifikation ab und kehren zurück zum Assistenten.
+12. Klicken Sie auf **Next** und dann auf **Finish**, um den Assistenten auszuführen.
 
-<h2><a id="deploydb"></a>Gewusst wie: Bereitstellen in SQL-Datenbank</h2>
+	
+## So überprüfen Sie die Datenbankbereitstellung
+	
+1. Klicken Sie in Management Studio unter **Objekt-Explorer** auf das Symbol **Verbinden**.
+2. Geben Sie im Feld **Servername** den Namen des Azure SQL-Servers, gefolgt von **.database.windows.net** ein.
+3. Wählen Sie unter **Authentifizierung** die Option **SQL Server-Authentifizierung** aus.
+4. Geben Sie den Anmeldenamen und das Kennwort des Administrators ein, die Sie beim Erstellen des Servers angegeben haben. 
+5. Klicken Sie auf die Schaltfläche **Optionen**.
+6. Klicken Sie auf die Dropdownliste **Mit Datenbank verbinden**, und klicken Sie auf **Server durchsuchen**. Klicken Sie im nachfolgenden Dialogfeld auf **Ja**, um das Durchsuchen des Servers zu erlauben.
+7. Klicken Sie auf die **school**-Datenbank, um diese auszuwählen, und klicken Sie dann auf **OK**. 
+8. Klicken Sie dann auf **Verbinden**. Um Probleme mit der Konnektivität zu beheben, lesen Sie [diesen Ratgeber](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1).
+2. Erweitern Sie den Ordner **Databases**. In der Liste sollte die Datenbank **Schule** aufgeführt werden.
 
-1. Stellen Sie in Management Studio eine Verbindung zu einer lokalen SQL Server-Instanz her, die über eine Datenbank verfügt, die Sie migrieren möchten.
-
-2. Klicken Sie mit der rechten Maustaste auf die Schuldatenbank, die Sie gerade erstellt haben, zeigen Sie auf **Aufgaben**, und klicken Sie auf **Datenbank in SQL Azure bereitstellen**.
-
-3. Geben Sie in den Bereitstellungseinstellungen einen Namen für die Datenbank ein, z. B. *school*. 
-
-4. Klicken Sie auf **Verbinden**.
-
-5. Geben Sie unter "Servername" einen Servernamen bestehend aus 10 Zeichen, gefolgt von ".database.windows.net" ein.
-
-6. Wählen Sie unter "Authentifizierung" die Option **SQL Server-Authentifizierung** aus.
-
-7. Geben Sie den Anmeldenamen und das Kennwort des Administrators ein, die Sie beim Erstellen des logischen SQL Database-Servers angegeben haben.
-
-8. Klicken Sie auf **Optionen**.
-
-9. Geben Sie bei den Verbindungseigenschaften unter **Mit Datenbank verbinden** **Master** ein.
-
-10. Klicken Sie auf **Verbinden**. Mit diesem Schritt schließen Sie die Verbindungsspezifikation ab und kehren zurück zum Assistenten.
-
-
-11. Klicken Sie auf **Weiter** und dann auf **Fertig stellen**, um den Assistenten auszuführen.
-
-
-<h2><a id="verify"></a>Gewusst wie: Überprüfen der Datenbankbereitstellung</h2>
-
-1. Aktualisieren Sie in Management Studio im Objekt-Explorer die Datenbanken, um die gerade neu erstellte anzuzeigen.
-
-2. Erweitern Sie den Ordner **Datenbanken**. In der Liste sollte die Datenbank **school** aufgeführt werden.
-
-3. Klicken Sie mit der rechten Maustaste auf die Schuldatenbank, und klicken Sie dann auf **Neue Abfrage**.
-
+	**Hinweis:** Sie müssen die Verbindung mit der Datenbank herstellen, die Sie abfragen möchten. 
+3. Klicken Sie mit der rechten Maustaste auf **school**, und klicken Sie auf **Neue Abfrage**.
 4. Führen Sie die folgende Abfrage aus, um den Zugriff auf die Daten zu überprüfen.
 
-<div style="width:auto; height:auto; overflow:auto"><pre>
-	SELECT
-		Course.Title as "Course Title"
-  		,Department.Name as "Department"
-  		,Person.LastName as "Instructor"
-  		,OnsiteCourse.Location as "Location"
-  		,OnsiteCourse.Days as "Days"
-  		,OnsiteCourse.Time as "Time"
-	FROM
- 	 Course
- 	 INNER JOIN Department
-  	  ON Course.DepartmentID = Department.DepartmentID
- 	 INNER JOIN CourseInstructor
- 	   ON Course.CourseID = CourseInstructor.CourseID
- 	 INNER JOIN Person
- 	   ON CourseInstructor.PersonID = Person.PersonID
- 	 INNER JOIN OnsiteCourse
+		SELECT
+			Course.Title as "Course Title"
+				,Department.Name as "Department"
+				,Person.LastName as "Instructor"
+				,OnsiteCourse.Location as "Location"
+				,OnsiteCourse.Days as "Days"
+				,OnsiteCourse.Time as "Time"
+		FROM
+			 Course
+			 INNER JOIN Department
+			  ON Course.DepartmentID = Department.DepartmentID
+			 INNER JOIN CourseInstructor
+			   ON Course.CourseID = CourseInstructor.CourseID
+			 INNER JOIN Person
+			   ON CourseInstructor.PersonID = Person.PersonID
+			 INNER JOIN OnsiteCourse
 		ON OnsiteCourse.CourseID = CourseInstructor.CourseID;
-</pre></div>
+		
+## Nächste Schritte
 
-[Erste Schritte mit der Administration von SQL-Datenbank]: /manage/services/sql-databases/getting-started-w-sql-databases/  
+Ein Lernprogramm zum Erstellen einer neuen Azure SQL-Datenbank finden Sie unter [Erste Schritte mit der Administration von SQL-Datenbank](sql-database-get-started.md). Die Grundlagen der Verbindung mit einer Azure SQL-Datenbank aus einer C#-Anwendung finden Sie unter [Verbinden mit und Abfragen der SQL-Datenbank mit C#](sql-database-connect-query.md). Weitere Lernprogramme für die Verbindung von verschiedenen Plattformen (z. B. PHP) finden Sie unter [Azure SQL-Datenbankentwicklung: Themen zur Vorgehensweise](https://msdn.microsoft.com/library/azure/ee621787.aspx).
 
-
-<!--HONumber=47-->
  
+
+<!---HONumber=July15_HO2-->

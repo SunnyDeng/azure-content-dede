@@ -43,7 +43,7 @@ Der entsprechende typisierte clientseitige .NET-Typ sieht wie folgt aus:
 	
 Wenn das dynamische Schema aktiviert ist, generieren die mobilen Azure-Dienste automatisch neue Spalten auf der Grundlage des Objekts in der Einfüge- oder Updateanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema](http://go.microsoft.com/fwlink/?LinkId=296271).
 
-## <a name="create-client"></a>Erstellen des Mobile Services-Clients
+## <a name="create-client"></a>Gewusst wie: Erstellen des Mobile Services-Clients
 
 Der folgende Code erstellt das `MobileServiceClient`-Objekt, das für den Zugriff auf Ihren mobilen Dienst verwendet wird.
 			
@@ -115,7 +115,7 @@ Beide Methoden sind äquivalent und können frei austauschbar verwendet werden. 
 
 Die `where`-Klausel unterstützt Vorgänge, die in die OData-Teilmenge für Mobile Services übersetzt werden können. Dazu gehören relationale Operatoren (==, !=, <, <=, >, >=), arithmetische Operatoren (+, -, /, *, %), Zahlengenauigkeit (Math.Floor, Math.Ceiling), Zeichenfolgenfunktionen (Length, Substring, Replace, IndexOf, StartsWith, EndsWith), Datumseigenschaften (Year, Month, Day, Hour, Minute, Second), Zugriffseigenschaften von Objekten und Ausdrücke mit Kombinationen dieser Typen.
 
-### <a name="sorting"></a>Sortieren zurückgegebener Daten
+### <a name="sorting"></a>Gewusst wie: Sortieren zurückgegebener Daten
 
 Der folgende Code zeigt, wie Sie Daten mithilfe einer `OrderBy`- oder `OrderByDescending`-Funktion in der Abfrage sortieren können. Die Abfrage gibt Elemente aus der Tabelle `todoTable` aufsteigend sortiert nach dem `Text`-Feld zurück. Standardmäßig gibt der Server nur die ersten 50 Elemente zurück.
 
@@ -156,7 +156,7 @@ Mit der [IncludeTotalCount](http://msdn.microsoft.com/library/windowsazure/jj730
 
 In diesem vereinfachten Szenario werden hartcodierte Pagingwerte an die `Take`-Methode und die `Skip`-Methode übergeben. Tatsächliche Anwendungen können ähnliche Abfragen mit einem Pagersteuerelement oder einer ähnlichen Benutzersteuerung ausführen, um zur vorherigen bzw. nächsten Seite zu navigieren.
 
-### <a name="selecting"></a>Auswählen bestimmter Spalten
+### <a name="selecting"></a>Gewusst wie: Auswählen bestimmter Spalten
 
 Sie können angeben, welche Eigenschaften in den Ergebnissen enthalten sein sollen, indem Sie der Abfrage eine `Select`-Klausel hinzufügen. Der folgende Code zeigt, wie Sie nur ein Feld auswählen oder auch mehrere Felder auswählen und formatieren können:
 
@@ -179,7 +179,7 @@ Alle bisher beschriebenen Funktionen sind additiv, d. h. wir können sie immer w
 					.Take(3);
 	List<string> items = await query.ToListAsync();
 	
-### <a name="lookingup"></a>Abrufen von Daten nach ID
+### <a name="lookingup"></a>Gewusst wie: Abrufen von Daten nach ID
 
 Die `LookupAsync`-Funktion kann verwendet werden, um Objekte mit einer bestimmten ID in der Datenbank zu suchen.
 
@@ -394,7 +394,7 @@ Der Client der Xamarin-Komponente wurde für stark typisierte Szenarien entwicke
 
 Sie erhalten JSON-Werte zurück, die Sie wie einen Eigenschaftenbehälter verwenden können. Weitere Informationen zu JToken und Json.NET finden Sie unter [Json.NET](http://json.codeplex.com/)
 
-## <a name="unit-testing"></a>Design von Komponententests
+## <a name="unit-testing"></a>Gewusst wie: Design von Komponententests
 
 Der von `MobileServiceClient.GetTable` zurückgegebene Wert und die Abfragen sind Schnittstellen. Daher lassen sich diese Komponenten leicht zu Testzwecken "nachbilden". Sie könnten z. B. `MyMockTable : IMobileServiceTable<TodoItem>` zur Implementierung Ihrer Testlogik erstellen.
 
@@ -402,23 +402,17 @@ Der von `MobileServiceClient.GetTable` zurückgegebene Wert und die Abfragen sin
 
 Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wichtigen Aufgaben in mobilen Diensten im Detail widmen:
 
-* Erste Schritte mit mobilen Diensten ([Xamarin.iOS][Get started with Mobile Services iOS]/[Xamarin.Android][Get started with Mobile Services Android])
-  <br/>Lernen Sie die Grundlagen für den Einsatz von mobilen Diensten.
+* Erste Schritte mit mobilen Diensten ([Xamarin.iOS][Get started with Mobile Services iOS]/[Xamarin.Android][Get started with Mobile Services Android]) <br/>Lernen Sie die Grundlagen für den Einsatz von mobilen Diensten.
 
-* Erste Schritte mit Daten ([Xamarin.iOS][Get started with data iOS]/[Xamarin.Android][Get started with data Android])
-  <br/>Erhalten Sie weitere Informationen zum Speichern und Abfragen von Daten mithilfe von Mobile Services.
+* Erste Schritte mit Daten ([Xamarin.iOS][Get started with data iOS]/[Xamarin.Android][Get started with data Android]) <br/>Erhalten Sie weitere Informationen zum Speichern und Abfragen von Daten mithilfe von Mobile Services.
 
-* Erste Schritte mit der Authentifizierung ([Xamarin.iOS][Get started with authentication iOS]/[Xamarin.Android][Get started with authentication Android])
-  <br/>Erhalten Sie Informationen zum Authentifizieren von Benutzern der App mit einem Identitätsanbieter.
+* Erste Schritte mit der Authentifizierung ([Xamarin.iOS][Get started with authentication iOS]/[Xamarin.Android][Get started with authentication Android]) <br/>Erhalten Sie Informationen zum Authentifizieren von Benutzern der App mit einem Identitätsanbieter.
 
-* Prüfen und Ändern von Daten mit Skripten ([Xamarin.iOS][Validate and modify data with scripts ios]/[Xamarin.Android][Validate and modify data with scripts android])
-  <br/>Informationen zur Verwendung von Serverskripts in Mobile Services, um von Ihrer App gesendete Daten zu prüfen und zu ändern.
+* Prüfen und Ändern von Daten mit Skripten ([Xamarin.iOS][Validate and modify data with scripts ios]/[Xamarin.Android][Validate and modify data with scripts android]) <br/>Informationen zur Verwendung von Serverskripts in Mobile Services, um von Ihrer App gesendete Daten zu prüfen und zu ändern.
 
-* Optimieren von Abfragen mittels Paging ([Xamarin.iOS][Refine queries with paging iOS]/[Xamarin.Android][Refine queries with paging Android])
-  <br/>Informationen zur Verwendung von Paging in Abfragen, um die in einer einzelnen Anforderung behandelte Datenmenge zu steuern.
+* Optimieren von Abfragen mittels Paging ([Xamarin.iOS][Refine queries with paging iOS]/[Xamarin.Android][Refine queries with paging Android]) <br/>Informationen zur Verwendung von Paging in Abfragen, um die in einer einzelnen Anforderung behandelte Datenmenge zu steuern.
 
-* Autorisieren von Benutzern mit Skripts ([Xamarin.iOS][Authorize users with scripts iOS]/[Xamarin.Android][Authorize users with scripts Android])
-  <br/>Verwenden Sie die vom mobilen Dienst für einen authentifizierten Benutzer gelieferte Benutzer-ID zum Filtern von zurückgegebenen Daten.
+* Autorisieren von Benutzern mit Skripts ([Xamarin.iOS][Authorize users with scripts iOS]/[Xamarin.Android][Authorize users with scripts Android]) <br/>Verwenden Sie die vom mobilen Dienst für einen authentifizierten Benutzer gelieferte Benutzer-ID zum Filtern von zurückgegebenen Daten.
 
 <!-- Anchors. -->
 [What is Mobile Services]: #what-is
@@ -476,5 +470,6 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 [MobileServiceUser]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.aspx
 [UserID]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
 [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

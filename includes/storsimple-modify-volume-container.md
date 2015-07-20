@@ -1,3 +1,4 @@
+
 #### So ändern Sie einen Volumecontainer
 
 1. Wählen Sie auf der Seite **Geräte** das Gerät aus, doppelklicken Sie darauf, und klicken Sie dann auf die Registerkarte **Volumecontainer**.
@@ -24,4 +25,4 @@
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

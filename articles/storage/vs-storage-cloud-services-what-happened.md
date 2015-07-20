@@ -1,9 +1,9 @@
 <properties 
 	pageTitle="Erste Schritte mit Azure Storage" 
-	description="Beschreibt, was beim Erstellen eines Azure-Speichers in einem Visual Studio-Cloud-Dienstprojekts passiert ist"
+	description="Beschreibt, was beim Erstellen eines Azure-Speichers in einem Visual Studio-Cloud-Dienstprojekts passiert ist" 
 	services="storage" 
 	documentationCenter="" 
-	authors="kempb" 
+	authors="patshea123" 
 	manager="douge" 
 	editor="tglee"/>
 
@@ -13,19 +13,20 @@
 	ms.tgt_pltfrm="vs-what-happened" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/02/2015" 
-	ms.author="kempb"/>
+	ms.date="04/20/2015" 
+	ms.author="patshea123"/>
+
+# Was ist mit meinem Projekt passiert?
 
 > [AZURE.SELECTOR]
-> - [Erste Schritte](vs-storage-cloud-services-getting-started-blobs.md)
-> - [Was ist passiert?](vs-storage-cloud-services-what-happened.md)
+> - [Getting Started](vs-storage-cloud-services-getting-started-blobs.md)
+> - [What Happened](vs-storage-cloud-services-what-happened.md)
 
 ###<span id="whathappened">Was ist mit meinem Projekt passiert?</span>
 
 ###### Verweise wurden hinzugefügt
 
-Das Azure Storage NuGet-Paket wurde zu Ihrem Visual Studio-Projekt hinzugefügt.  
-Dieses Paket fügt die folgenden .NET-Verweise hinzu:
+Das Azure Storage NuGet-Paket wurde zu Ihrem Visual Studio-Projekt hinzugefügt. Dieses Paket fügt die folgenden .NET-Verweise hinzu:
 
 - `Microsoft.Data.Edm`
 - `Microsoft.Data.OData`
@@ -43,6 +44,6 @@ Elemente mit der Verbindungszeichenfolge und dem Schlüssel des ausgewählten Sp
 - `ServiceConfiguration.Cloud.cscfg`
 - `ServiceConfiguration.Local.cscfg`
 
-
-<!--HONumber=46--> 
  
+
+<!---HONumber=July15_HO2-->

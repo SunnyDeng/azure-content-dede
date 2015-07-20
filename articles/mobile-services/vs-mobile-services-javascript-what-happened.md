@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="NA" 
 	ms.devlang="JavaScript" 
 	ms.topic="article" 
-	ms.date="05/06/2015" 
+	ms.date="07/02/2015" 
 	ms.author="patshea123"/>
 
 # Was ist mit meinem Projekt passiert?
@@ -22,14 +22,28 @@
 > - [Getting Started](vs-mobile-services-javascript-getting-started.md)
 > - [What Happened](vs-mobile-services-javascript-what-happened.md)
 
-### <span id="whathappened">Was ist mit meinem Projekt passiert?</id>
+###<span id="whathappened">Was ist mit meinem Projekt passiert?</id>
 
-##### Verweise wurden hinzugefügt
+#####NuGet-Paket hinzugefügt
 
-Die Azure Mobile Service-Bibliothek wurde Ihrem Projekt in Form einer **MobileServices.js**-Datei hinzugefügt.
+Das NuGet-Paket **WindowsAzure.MobileServices.WinJS** wurde installiert, einschließlich der Azure Mobile Service-Bibliothek in der Datei `js\MobileServices.js`.
   
-##### Werte für die Verbindungszeichenfolge für Mobile Services 
+#####Werte für die Verbindungszeichenfolge für Mobile Services 
 
 Im Ordner `services\mobileServices\settings` wurde eine neue JavaScript-Datei (JS-Datei) mit einem **MobileServiceClient** generiert. Sie enthält die Anwendungs-URL des ausgewählten mobilen Diensts sowie seinen Anwendungsschlüssel.
 
-<!--HONumber=54--> 
+
+#####Verweise zu "default.html" hinzugefügt
+
+Verweise auf `MobileServices.js` und die Einstellungsdatei wurden `default.html` hinzugefügt.
+
+
+#####Dateien für verbundene Dienste hinzugefügt
+
+Im Ordner "Dienste" wurden Konfigurationsdateien für verbundene Dienste hinzugefügt.
+
+
+
+ 
+
+<!---HONumber=July15_HO2-->

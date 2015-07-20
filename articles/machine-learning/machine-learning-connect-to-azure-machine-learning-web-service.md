@@ -1,11 +1,11 @@
 <properties 
-	pageTitle="Herstellen einer Verbindung mit einem Azure Machine Learning-Webdienst | Azure" 
+	pageTitle="Verbindung mit einem Machine Learning-Webdienst | Microsoft Azure" 
 	description="Stellen Sie mit C# oder Python mithilfe eines Autorisierungsschlüssels eine Verbindung mit einem Azure Machine Learning-Webdienst her." 
 	services="machine-learning" 
 	documentationCenter="" 
-	authors="derrickv" 
+	authors="garyericson" 
 	manager="paulettm" 
-	editor="cgronlun"/>
+	editor="cgronlun" />
 
 <tags 
 	ms.service="machine-learning" 
@@ -13,19 +13,21 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/12/2015" 
-	ms.author="derrickv"/>
+	ms.date="04/07/2015" 
+	ms.author="derrickv" />
 
 
 # Herstellen einer Verbindung mit einem Azure Machine Learning-Webdienst 
-Die Azure Machine Learning-Entwicklungsumgebung ist eine Webdienst-API zum Erstellen von Vorhersagen aus Eingabedaten in Echtzeit oder im Stapelmodus. Sie verwenden Azure Machine Learning Studio (ML Studio) zum Erstellen von Vorhersagen und Veröffentlichen eines Azure ML-Webdiensts. 
+Die Azure Machine Learning-Entwicklungsumgebung ist eine Webdienst-API zum Erstellen von Vorhersagen aus Eingabedaten in Echtzeit oder im Stapelmodus. Sie verwenden Azure Machine Learning Studio zum Erstellen von Vorhersagen und zum Veröffentlichen eines Azure Machine Learning-Webdienstes.
 
-Informationen zum Erstellen und Veröffentlichen eines Azure Machine Learning-Webdiensts mit ML Studio finden Sie unter:
+[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
-- [Übersicht über den Azure ML-Prozess](../machine-learning-overview-of-azure-ml-process.md)
+Informationen zum Erstellen und Veröffentlichen eines Azure Machine Learning-Webdiensts mit Studio finden Sie unter:
+
+- [Veröffentlichen eines Machine Learning-Webdiensts](machine-learning-publish-a-machine-learning-web-service.md)
 - [Erste Schritte mit ML Studio](http://azure.microsoft.com/documentation/videos/getting-started-with-ml-studio/)
-- [Azure-Computer Learning-Vorschau](https://studio.azureml.net/)
-- [Machine Learning Center](http://azure.microsoft.com/documentation/services/machine-learning/)
+- [Azure-Machine Learning-Vorschau](https://studio.azureml.net/)
+- [Machine Learning Dokumentationscenter](http://azure.microsoft.com/documentation/services/machine-learning/)
 
 ## Azure Machine Learning-Webdienst ##
 
@@ -34,15 +36,15 @@ Mit dem Azure Machine Learning (ML)-Webdienst kommunizieren externe Anwendungen 
 Azure Machine Learning verfügt über zwei Arten von Diensten:
 
 - Request-Response Service (RRS) - ein hochskalierbarer Webdienst mit niedriger Latenz, der eine Schnittstelle für zustandslose Modelle bereitstellt, die in ML Studio erstellt und veröffentlicht wurden.
-- Batch Execution Service (BES) - ein asynchroner Dienst für die Bewertung eines Stapels für Datensätze.
+- Batch Execution Service (BES) – ein asynchroner Dienst für die Bewertung eines Stapels für Datensätze.
 
-Weitere Informationen zu Azure Machine Learning-Webdiensten finden Sie unter [Übersicht über den Azure ML-Prozess](../machine-learning-overview-of-azure-ml-process.md).
+Weitere Informationen zu Azure Machine Learning-Webdiensten finden Sie unter [Veröffentlichen von Azure Machine Learning-Webdiensten](machine-learning-publish-a-machine-learning-web-service.md).
 
 ## Abrufen eines Autorisierungsschlüssels für Azure Machine Learning ##
 Sie erhalten einen Webdienst-API-Schlüssel von einem ML-Webdienst. Sie können ihn über Microsoft Azure Machine Learning Studio oder über das Azure-Verwaltungsportal abrufen.
 ### Microsoft Azure Machine Learning Studio ###
 1. Klicken Sie in Microsoft Azure Machine Learning Studio links auf **WEB SERVICES**.
-2. Klicken Sie auf einen Webdienst. "API KEY" befindet sich auf der Registerkarte **DASHBOARD**.
+2. Klicken Sie auf einen Webdienst. Der "API Key" befindet sich auf der Registerkarte **DASHBOARD**.
 
 ### Azure-Verwaltungsportal ###
 
@@ -60,21 +62,19 @@ Sie können mit jeder Programmiersprache, die HTTP-Anforderungen und -Antworten 
 Wenn Sie einen Webdienst veröffentlichen, wird eine Azure ML-API-Hilfeseite erstellt. Weitere Informationen finden Sie unter [Azure Machine Learning - exemplarische Vorgehensweise - Veröffentlichen eines Webdiensts](machine-learning-walkthrough-5-publish-web-service.md).
 
 
-**So zeigen Sie eine Azure ML-API-Hilfeseite an**
-In Microsoft Azure Machine Learning Studio:
+**Anzeigen einer Azure ML-API-Hilfeseite** in Microsoft Azure Machine Learning Studio:
 
 1. Wählen Sie **WEB SERVICES** aus.
 2. Wählen Sie einen Webdienst aus.
 3. Wählen Sie **API help page** - **REQUEST/RESPONSE** oder **BATCH EXECUTION** aus.
 
 
-**Azure ML-API-Hilfeseite**
-Die Die Azure ML-API-Hilfeseite enthält Details zu einem Vorhersage-Webdienst, darunter:
+**Azure ML-API-Hilfeseite** Die Azure ML-API-Hilfeseite enthält Details zu einem Vorhersage-Webdienst, darunter:
 
 
 <table>
 	<tr>
-		<td>&nbsp;</td>
+		<td>&#160;</td>
 		<td>Beispiel </td>
 	</tr>
 	<tr>
@@ -86,16 +86,16 @@ Die Die Azure ML-API-Hilfeseite enthält Details zu einem Vorhersage-Webdienst, 
 	<tr>
 		<td>Beispiel für eine Anforderung </td>
 		<td>{ <br/> 
-			&nbsp;&nbsp; "Id": "score00001",   <br/>
-			&nbsp;&nbsp; "Instance": <br/>
-			&nbsp;&nbsp;&nbsp;&nbsp; {  <br/>  
- 			&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; "FeatureVector": { <br/>
-			&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  "Col1": "0", <br/>      
-			&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  "Col2": "0", <br/>      
-			&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  "Col3": "0", <br/>  
-			&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  ...     },   <br/>
-			&nbsp;&nbsp;&nbsp;&nbsp;   "GlobalParameters": {}   <br/>
-			&nbsp;&nbsp;&nbsp;&nbsp; } <br/>
+			&#160;&#160; "ID“: “score00001",   <br/>
+			&#160;&#160; "Instance": <br/>
+			&#160;&#160;&#160;&#160; {  <br/>  
+ 			&#160;&#160;&#160;&#160; &#160;&#160; "FeatureVector": { <br/>
+			&#160;&#160;&#160;&#160; &#160;&#160;  "Col1": "0", <br/>      
+			&#160;&#160;&#160;&#160; &#160;&#160;  "Col2": "0", <br/>      
+			&#160;&#160;&#160;&#160; &#160;&#160;  "Col3": "0", <br/>  
+			&#160;&#160;&#160;&#160; &#160;&#160;  ... },   <br/>
+			&#160;&#160;&#160;&#160;   "GlobalParameters": {}   <br/>
+			&#160;&#160;&#160;&#160; } <br/>
 		}</td>
 	</tr>
 	<tr>
@@ -105,7 +105,7 @@ Die Die Azure ML-API-Hilfeseite enthält Details zu einem Vorhersage-Webdienst, 
 
 			<tr>
 				<td><B>Name</B></td>
-				<td><B>Data Type</B></td>
+				<td><B>Datentyp</B></td>
 			</tr>
 	
 			<tr>
@@ -129,31 +129,31 @@ Die Die Azure ML-API-Hilfeseite enthält Details zu einem Vorhersage-Webdienst, 
 	</tr>
 	<tr>
 		<td>Beispiel für eine Antwort </td>
-		<td>[&quot;Col1&quot;,&quot;1&quot;,&quot;1&quot;,...] </td>
+		<td>["Col1","1","1",…] </td>
 	</tr>
 	<tr>
-		<td>Beispielcode: </td>
+		<td>Beispielcode </td>
 		<td>(Beispielcode in C#, Python und R) </td>
 	</tr>
 </table>
 
-**HINWEIS:** Die Beispiele entstammen Beispiel 1: "Download dataset from UCI: Adult 2 class dataset", einem Teil der Azure ML-Beispielsammlung.
+**HINWEIS:** Die Beispielen stammen von „Sample 1: Download dataset from UCI: Adult 2 class dataset“, Teil der Azure-ML-Beispiel-Auflistung.
 
 ### C#-Beispiel ###
 
-Verwenden Sie zum Verbinden mit einem Azure ML-Webdienst einen **HttpClient** durch Übergeben von ScoreData. ScoreData enthält einen FeatureVector, einen n-dimensionalen  Vektor von numerischen Funktionen, der ScoreData darstellt. Sie authentifizieren sich mit einem API-Schlüssel beim Azure ML-Dienst.
+Verwenden Sie zum Verbinden mit einem Azure ML-Webdienst einen **HttpClient** durch Übergeben von ScoreData. ScoreData enthält ein FeatureVector, ein n-dimensionaler Vektor von numerischen Funktionen, die die ScoreData darstellen. Sie authentifizieren sich mit einem API-Schlüssel beim Azure ML-Dienst.
 
-Für die Verbindung zu einem ML-Webdienst muss das Nuget-Paket **Microsoft.AspNet.WebApi.Client** installiert sein.
+Für die Verbindung zu einem ML-Webdienst muss das NuGet-Paket **Microsoft.AspNet.WebApi.Client** installiert sein.
 
-**Installieren von Microsoft.AspNet.WebApi.Client Nuget in Visual Studio**
+**Installieren von Microsoft.AspNet.WebApi.Client NuGet in Visual Studio**
 
-1. Veröffentlichen Sie den "Download dataset from UCI: Adult 2 class dataset"-Webdienst.
-2. Klicken Sie auf **Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**.
-2. Wählen Sie **Install-Package Microsoft.AspNet.WebApi.Client** aus.
+1. Veröffentlichen Sie das Dataset Download von Webdienst „UCI: Adult 2 class dataset“.
+2. Klicken Sie auf **Tools** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**.
+2. Wählen Sie **Install-Package Microsoft.AspNet.WebApi.Client aus**.
 
 **So führen Sie das Codebeispiel aus**
 
-1. Veröffentlichen Sie Beispiel 1: "Download dataset from UCI: Adult 2 class dataset"-Experiment, einen Teil der Azure ML-Beispielsammlung.
+1. Veröffentlichen Sie das Experiment „Sample 1: Download dataset from UCI: Adult 2 class dataset“, Teil der Azure ML-Beispielauflistung.
 2. Weisen Sie "apiKey" den Schlüssel von einem Webdienst zu. Weitere Informationen finden Sie unter "Abrufen eines Autorisierungsschlüssels für Azure ML".
 3. Weisen Sie "serviceUri" die Anforderungs-URI zu. Weitere Informationen finden Sie unter "Abrufen einer Anforderungs-URI".
 
@@ -256,12 +256,12 @@ Für die Verbindung zu einem ML-Webdienst muss das Nuget-Paket **Microsoft.AspNe
 
 ### Python-Beispiel ###
 
-Verwenden Sie zum Verbinden mit einem Azure ML-Webdienst die **urllib2**-Bibliothek, durch Übergeben von ScoreData. ScoreData enthält einen FeatureVector, einen n-dimensionalen  Vektor von numerischen Funktionen, der ScoreData darstellt. Sie authentifizieren sich mit einem API-Schlüssel beim Azure ML-Dienst.
+Verwenden Sie zum Verbinden mit einem Azure ML-Webdienst die **urllib2**-Bibliothek, durch Übergeben von ScoreData. ScoreData enthält ein FeatureVector, ein n-dimensionaler Vektor von numerischen Funktionen, die die ScoreData darstellen. Sie authentifizieren sich mit einem API-Schlüssel beim Azure ML-Dienst.
 
 
 **So führen Sie das Codebeispiel aus**
 
-1. Veröffentlichen Sie Beispiel 1: "Download dataset from UCI: Adult 2 class dataset"-Experiment, einen Teil der Azure ML-Beispielsammlung.
+1. Veröffentlichen Sie das Experiment „Sample 1: Download dataset from UCI: Adult 2 class dataset“, Teil der Azure ML-Beispielauflistung.
 2. Weisen Sie "apiKey" den Schlüssel von einem Webdienst zu. Weitere Informationen finden Sie unter "Abrufen eines Autorisierungsschlüssels für Azure ML".
 3. Weisen Sie "serviceUri" die Anforderungs-URI zu. Weitere Informationen finden Sie unter "Abrufen einer Anforderungs-URI".
 
@@ -312,5 +312,6 @@ Verwenden Sie zum Verbinden mit einem Azure ML-Webdienst die **urllib2**-Bibliot
 	
 		result = response.read()
 		print(result) 
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO2-->

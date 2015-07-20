@@ -15,4 +15,4 @@
 
 Das Einrichten der Hybridverbindung ist nun abgeschlossen.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

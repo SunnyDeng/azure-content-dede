@@ -107,7 +107,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 1. Klicken Sie im Menü „Produkt“ auf „Run“, um die App zu starten.
 2. Sie werden aufgefordert, sich bei Ihrem Azure Active Directory anzumelden.  
-3. Die App authentifiziert sich und gibt die TodoItems zurück.
+3. Die App wird authentifiziert sich und gibt die TodoItem-Elemente zurück.
 
    ![](./media/mobile-services-dotnet-backend-ios-adal-sso-authentication/mobile-services-app-run.png)
 
@@ -119,5 +119,6 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 [Registrieren in Azure Active Directory]: mobile-services-how-to-register-active-directory-authentication.md
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Active Directory-Authentifizierungsbibliothek für iOS]: https://github.com/MSOpenTech/azure-activedirectory-library-for-ios
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

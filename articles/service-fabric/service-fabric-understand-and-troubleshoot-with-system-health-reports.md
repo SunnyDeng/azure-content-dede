@@ -530,4 +530,4 @@ System.Hosting gibt die Meldung „Error“ aus, wenn die Überprüfung während
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

@@ -18,7 +18,7 @@
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-data](../../includes/mobile-services-selector-get-started-data.md)] 
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../../includes/mobile-services-selector-get-started-data.md)]
 
 Dieses Thema beschreibt den Einsatz von Azure Mobile Services für die Nutzung von Daten in Xamarin.Android-Apps. In diesem Lernprogramm laden Sie eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App und melden sich dann beim Azure-Verwaltungsportal an, um Datenänderungen beim Ausführen der App anzuzeigen.
 
@@ -32,11 +32,11 @@ In diesem Lernprogramm werden die grundlegenden Schritte erläutert:
 4. [Aktualisieren von Apps zur Verwendung von Mobile Services]
 5. [Testen von Apps mit Mobile Services]
 
-> [AZURE.IMPORTANT]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A9C9624B5"%20target="_blank).
+> [AZURE.IMPORTANT]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A9C9624B5"%20target="_blank).
 
-Dieses Lernprogramm benötigt [Azure Mobile Services Component], [Xamarin.Android] und das Android SDK 4.2 oder eine neuere Version.
+Dieses Lernprogramm benötigt [Azure Mobile Services Component], [Xamarin.Android] und das Android SDK 4.2 oder eine neuere Version.
 
-> [AZURE.NOTE]Das heruntergeladene GetStartedWithData-Projekt benötigt Android 4.2 oder eine neuere Version als Ziel. Das SDK für mobile Dienste benötigt dagegen nur Android 2.2 oder eine neuere Version.
+> [AZURE.NOTE]Das heruntergeladene GetStartedWithData-Projekt benötigt Android 4.2 oder eine höhere Version als Ziel. Das SDK für mobile Dienste benötigt dagegen nur Android 2.2 oder eine neuere Version.
 
 ## <a name="download-app"></a>Herunterladen des GetStartedWithData-Projekts
 
@@ -72,7 +72,7 @@ Um App-Daten im neuen mobilen Dienst speichern zu können, müssen Sie zuerst ei
 
 1. Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
-2. Klicken Sie auf die Registerkarte **Daten** und anschließend auf **+Erstellen**.
+2. Klicken Sie auf die Registerkarte **Daten** und dann auf **+Erstellen**.
 
    	![][5]
 
@@ -234,19 +234,15 @@ In diesem Lernprogramm wurden die Grundlagen für die Integration von Daten in X
 
 Als Nächstes können Sie eines der folgenden Lernprogramme ausführen, das auf der GetStartedWithData-App aufbaut, die Sie in diesem Lernprogramm erstellt haben:
 
-* [Prüfen und Ändern von Daten mit Skripten]
-  Informationen zur Verwendung von Serverskripts in mobilen Diensten, um von Ihrer App gesendete Daten zu prüfen und zu ändern.
+* [Prüfen und Ändern von Daten mit Skripten] Informationen zur Verwendung von Serverskripts in mobilen Diensten, um von Ihrer App gesendete Daten zu prüfen und zu ändern.
 
-* [Optimieren von Abfragen mittels Paging]
-  Informationen zur Verwendung von Paging in Abfragen, um die in einer einzelnen Anforderung behandelte Datenmenge zu steuern.
+* [Optimieren von Abfragen mittels Paging] Informationen zur Verwendung von Paging in Abfragen, um die in einer einzelnen Anforderung behandelte Datenmenge zu steuern.
 
 Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren Xamarin.Android-Lernprogramme ausprobieren:
 
-* [Erste Schritte mit der Authentifizierung]
-  Informationen zur Authentifizierung von Benutzern Ihrer App.
+* [Erste Schritte mit der Authentifizierung] Informationen zur Authentifizierung von Benutzern Ihrer App.
 
-* [Erste Schritte mit Pushbenachrichtigungen]
-  Verschicken Sie mit Mobile Services eine einfache Pushbenachrichtigung an Ihre App.
+* [Erste Schritte mit Pushbenachrichtigungen] Verschicken Sie mit Mobile Services eine einfache Pushbenachrichtigung an Ihre App.
 
 <!-- Anchors. -->
 
@@ -285,5 +281,6 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 
 [abgeschlossene Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331302
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

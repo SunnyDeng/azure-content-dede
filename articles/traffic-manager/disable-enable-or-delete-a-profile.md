@@ -3,7 +3,7 @@
    description="In diesem Artikel wird erläutert, wie Sie mit Traffic Manager-Profilen arbeiten."
    services="traffic-manager"
    documentationCenter="na"
-   authors="cherylmc"
+   authors="joaoma"
    manager="adinah"
    editor="tysonn" />
 <tags 
@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/23/2015"
-   ms.author="cherylmc" />
+   ms.date="05/27/2015"
+   ms.author="joaoma;cherylmc" />
 
 # Deaktivieren, Aktivieren oder Löschen eines Profils
 
@@ -32,7 +32,7 @@ Sie können ein vorhandenes Traffic Manager-Profil so deaktivieren, dass keine B
 
 1. Wählen Sie das Profil aus, das Sie aktivieren möchten. Um das Profil auszuwählen, markieren Sie das Profil auf der Seite "Traffic Manager" durch Klicken auf die Spalte neben dem Profilnamen. Klicken Sie nicht auf den Namen des Profils oder den Pfeil neben dem Namen, da Sie dadurch zur Einstellungsseite für das Profil gelangen.
 1. Klicken Sie nach Auswahl des Profils am unteren Rand der Seite auf "Aktivieren".
-1. Ändern Sie den DNS-Ressourceneintrag auf dem Internet-DNS-Server so, dass der mit CNAME-Eintragstyp verwendet wird, der den Domänennamen Ihres Unternehmens dem Domänennamen Ihres Traffic Manager-Profils zuordnet. Weitere Informationen finden Sie unter [Verweisen auf eine Traffic Manager-Domäne mit der Internetdomäne eines Unternehmens] (point-a-company-internet-domain-to-a-traffic-manager-domain.md).
+1. Ändern Sie den DNS-Ressourceneintrag auf dem Internet-DNS-Server so, dass der mit CNAME-Eintragstyp verwendet wird, der den Domänennamen Ihres Unternehmens dem Domänennamen Ihres Traffic Manager-Profils zuordnet. Weitere Informationen dazu finden Sie unter [Verweisen einer Unternehmens-Internetdomäne auf eine Traffic Manager-Domäne](../point-a-company-internet-domain-to-a-traffic-manager-domain.md).
 1. Der Datenverkehr wird wieder an die Endpunkte weitergeleitet.
 
 ## Löschen eines Profils
@@ -52,5 +52,6 @@ Sie können ein vorhandenes Traffic Manager-Profil so deaktivieren, dass keine B
 [Traffic Manager-Konfigurationsaufgaben](https://msdn.microsoft.com/library/azure/hh744830.aspx)
 
 
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO2-->

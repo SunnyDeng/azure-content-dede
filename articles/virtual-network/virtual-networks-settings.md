@@ -96,8 +96,8 @@ Nach der Bereitstellung des virtuellen Netzwerks können nur bestimmte Einstellu
 
 [Gewusst wie: Verwalten von DNS-Servern, die von einem virtuellen Netzwerk (VNet) verwendet werden](../virtual-networks-manage-dns-in-vnet)
 
-[Gewusst wie: Verwenden von öffentlichen IP-Adressen in einem virtuellen Netzwerk](../virtual-networks-public-ip-within-vnet)
+[Verwenden von öffentlichen IP-Adressen in einem virtuellen Netzwerk](../virtual-networks-public-ip-within-vnet)
 
 [Gewusst wie: Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

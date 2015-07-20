@@ -84,4 +84,4 @@ Führen Sie die folgenden Schritte im Verwaltungsportal aus, um eine benutzerdef
 
 Erfahren Sie, wie Sie StorSimple-Sicherungen mit dem [StorSimple-Momentaufnahme-Manager](https://msdn.microsoft.com/library/azure/dn772365.aspx) verwalten.
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

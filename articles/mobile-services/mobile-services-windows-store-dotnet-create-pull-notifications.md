@@ -100,7 +100,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen zu verschicken, die das Live Tile durch Anfragen an die neue benutzerdefinierte API aktualisiert.
 
-## <a name="update-app"></a>Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen
+##<a name="update-app"></a>Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen
 
 1. Drücken Sie in Visual Studio die Taste F5, um die Schnellstart-App aus dem vorherigen Lernprogramm auszuführen.
 
@@ -117,7 +117,7 @@ Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen 
             PeriodicUpdateRecurrence.Hour
         );
 
-	Dieser Code aktiviert periodische Benachrichtigungen zur Abfrage von Tile-Vorlagendaten aus der neuen **tiles**-API. Wählen Sie einen passenden [PeriodicUpdateRecurrance]-Wert für das Aktualisierungsintervall Ihrer Daten aus.
+	Dieser Code aktiviert periodische Benachrichtigungen zur Abfrage von Tile-Vorlagendaten aus der neuen **tiles**-API. Wählen Sie einen passenden Wert unter [PeriodicUpdateRecurrance] für das Aktualisierungsintervall Ihrer Daten aus.
 
 ## <a name="test-app"></a>Testen der App
 
@@ -165,5 +165,6 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
 
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: mobile-services-windows-dotnet-how-to-use-client-library.md
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

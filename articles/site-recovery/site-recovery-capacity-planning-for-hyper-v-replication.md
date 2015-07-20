@@ -239,4 +239,4 @@ So stellen Sie ASR bereit:
 - [Einrichten von Schutz mit einem einzelnen VMM-Server](site-recovery-single-vmm)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

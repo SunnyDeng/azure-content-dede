@@ -204,4 +204,4 @@ Lernprogramme mit anderen Beispielen und Anweisungen zur Ausführung von Pig-, H
 [hdinsight-use-pig]: hdinsight-use-pig.md
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

@@ -99,7 +99,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen zu verschicken, die das Live Tile durch Anfragen an die neue benutzerdefinierte API aktualisiert.
 
-## <a name="update-app"></a>Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen
+##<a name="update-app"></a>Aktualisieren der App zum Aktivieren periodischer Benachrichtigungen
 
 1. Drücken Sie in Visual Studio die Taste F5, um die Schnellstart-App aus dem vorherigen Lernprogramm auszuführen.
 
@@ -129,11 +129,9 @@ Als Nächstes ändern Sie die Quickstart-App, um periodische Benachrichtigungen 
 
 Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere Einzelheiten über die folgenden Mobile Services-Themen erfahren:
 
-* [Erste Schritte mit Pushbenachrichtigungen]
-	<br/>Periodische Benachrichtigungen werden von Windows verwaltet und erfolgen nach einem vordefinierten Zeitplan. Pushbenachrichtigungen können bedarfsgesteuert vom mobilen Dienst gesendet werden und vom Typ Popup, Tile oder reine Benachrichtigungen sein.
+* [Erste Schritte mit Pushbenachrichtigungen] <br/>Periodische Benachrichtigungen werden von Windows verwaltet und erfolgen nach einem vordefinierten Zeitplan. Pushbenachrichtigungen können bedarfsgesteuert vom mobilen Dienst gesendet werden und vom Typ Popup, Tile oder reine Benachrichtigungen sein.
 
-* [Mobile Services: Serverskriptreferenz]
-	<br/>Erfahren Sie mehr über das Erstellen von benutzerdefinierten APIs.
+* [Mobile Services: Serverskriptreferenz] <br/>Erfahren Sie mehr über das Erstellen von benutzerdefinierten APIs.
 
 <!-- Anchors. -->
 [Definieren der benutzerdefinierten API]: #define-custom-api
@@ -159,5 +157,6 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Periodische Benachrichtigungen]: http://msdn.microsoft.com/library/windows/apps/jj150587.aspx
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

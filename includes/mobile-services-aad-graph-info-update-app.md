@@ -65,4 +65,4 @@ Die nachfolgenden Anweisungen gelten für das Aktualisieren einer Windows Store-
 
 4. Speichern Sie die Änderungen, und erstellen Sie den Dienst, um ihn auf Syntaxfehler zu überprüfen.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

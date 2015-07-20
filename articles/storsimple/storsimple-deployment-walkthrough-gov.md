@@ -37,7 +37,7 @@ Die folgende Vorinstallationsprüfliste enthält die Informationen, die Sie vor 
 
 | | Anforderungen | Details | Werte |
 |---| --------------------- | ---------------------- | ------------- |
-| 1 | Netzwerkeinstellungen <ol><li>Netzwerkschnittstellen, 4 x 1 GbE, 2 x 10 GbE</li><li>Feste Controller-IP-Adresse</li><li>Subnetzmasken</li><li>Gateway</li></ol> | Erforderliche Gesamtanzahl von IP-Adressen: 8 <ol><li>Eine pro aktivierter Netzwerkschnittstelle, insgesamt 6</li><li>Eine pro Controller, insgesamt 2, für die Verbindung mit dem Internet für Dienstupdates</li><li>Eine für jede IP-Adresse</li><li>Eine pro Gerät</li></ol> | |
+| 1 | Netzwerkeinstellungen <ol><li>Netzwerkschnittstellen, 4 x 1 GbE, 2 x 10 GbE</li><li>Feste Controller-IP-Adresse</li><li>Subnetzmasken</li><li>Gateway</li></ol> | Erforderliche Gesamtanzahl von IP-Adressen: 8 <ol><li>Eine pro aktivierter Netzwerkschnittstelle, insgesamt 6</li><li>Eine pro Controller, insgesamt 2, für die Verbindung mit dem Internet für Dienstupdates</li><li>Eine für jede IP-Adresse</li><li>Eine pro Gerät</li></ol> | |
 | 2 | Serieller Zugriff | Anfängliche Gerätekonfiguration | Ja/Nein |
 | 3 | IP-Adressen der DNS-Server | Erforderlich für die Verbindung mit Microsoft Azure: insgesamt 2 erforderlich für hohe Verfügbarkeit | |
 | 4 | IP-Adressen der NTP-Server | Erforderlich zur Zeitsynchronisierung mit Azure: 1 erforderlich, 1 optional | |
@@ -211,4 +211,4 @@ Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
 Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

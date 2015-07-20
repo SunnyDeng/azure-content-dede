@@ -164,4 +164,4 @@ Unter [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight][hdi
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Phasen während der Clusterbereitstellung"
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

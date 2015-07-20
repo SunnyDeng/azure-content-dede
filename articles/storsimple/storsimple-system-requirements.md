@@ -192,4 +192,4 @@ Befolgen Sie zusätzlich zu den oben genannten Netzwerkanforderungen die folgend
 - [Bereitstellen der StorSimple-Lösung](storsimple-deployment-walkthrough.md)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

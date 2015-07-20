@@ -40,4 +40,7 @@ Mit Netzwerk-Zugriffssteuerungslisten (Access Control Lists, ACLs) können Sie d
 ##Zusätzliche Ressourcen
 [Ressourcen](http://azure.microsoft.com/support/trust-center/resources/) im Microsoft Azure-Vertrauenscenter
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=July15_HO2-->

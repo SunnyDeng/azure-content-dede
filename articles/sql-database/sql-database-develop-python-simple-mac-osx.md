@@ -31,7 +31,8 @@ Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird a
 
 
 - [Python 2.7.6](https://www.python.org/download/releases/2.7.6/).
-
+- [FreeTDS](https://github.com/brianb/FreeTDS)
+- [Pymssql](https://github.com/pymssql/pymssql)
 
 ### Installieren der erforderlichen Module
 
@@ -117,4 +118,4 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

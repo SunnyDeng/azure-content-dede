@@ -83,7 +83,7 @@ Befolgen Sie diese Schritte, um die Community-Version von MySQL Server zu instal
 
 	![](./media/virtual-machines-mysql-windows-server-2008r2/MySQL_CommandPrompt.png)
  
-19.	Sie können mit Einträgen in der Datei **C:\Program Files (x86)\\MySQL\\MySQL Server 5.6\\my-default.ini** auch Standardeinstellungen für die Serverkonfiguration konfigurieren, wie die Basis- und Datenverzeichnisse und -laufwerke. Weitere Informationen finden Sie unter [5.1.2 Serverkonfiguration: Standardeinstellungen](http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html).
+19.	Sie können mit Einträgen in der Datei **C:\\Program Files (x86)\\MySQL\\MySQL Server 5.6\\my-default.ini** auch Standardeinstellungen für die Serverkonfiguration konfigurieren, wie die Basis- und Datenverzeichnisse und -laufwerke. Weitere Informationen finden Sie unter [5.1.2 Serverkonfiguration: Standardeinstellungen](http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html).
 
 
 Wenn der MySQL Server-Dienst für die MySQL-Clientcomputer im Internet verfügbar sein soll, müssen Sie einen Endpunkt für den TCP-Port konfigurieren, auf dem der MySQL Server-Dienst lauscht, und eine zusätzliche Windows-Firewallregel erstellen. Dies ist der TCP-Port 3306, es sei denn, Sie haben einen anderen Port auf der Seite "Typ und Netzwerke" (Schritt 10 des vorherigen Verfahrens) angegeben.
@@ -127,4 +127,4 @@ Informationen zu MySQL finden Sie in der [MySQL-Dokumentation](http://dev.mysql.
 
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

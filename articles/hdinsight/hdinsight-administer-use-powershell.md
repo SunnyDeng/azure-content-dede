@@ -279,4 +279,4 @@ Informationen finden Sie im Abschnitt [Übermitteln von MapReduce-Aufträgen](#m
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

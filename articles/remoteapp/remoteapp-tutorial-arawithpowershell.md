@@ -13,22 +13,24 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="04/14/2015"
-   ms.author="guscatal;spatnaik"/>
+   ms.date="07/07/2015"
+   ms.author="guscatal;spatnaik;elizapo"/>
 
 
 
-Erste Schritte in Azure RemoteApp mit Powershell
+# Erste Schritte in Azure RemoteApp mit Powershell
 =====================================
 
 
-So bekommen Sie die Cmdlets: Zunächst müssen Sie [hier](http://go.microsoft.com/?linkid=9811175) Azure Powershell-Cmdlets herunterladen. Die RemoteApp-Befehle sind darin enthalten.
+## Abrufen der Cmdlets 
+-------------
+Zunächst müssen Sie [hier](http://go.microsoft.com/?linkid=9811175) die Azure PowerShell-Cmdlets herunterladen. Die RemoteApp-Befehle sind darin enthalten.
 
-Konfigurieren Sie Azure-Cmdlets, um Ihr Abonnement zu verwenden
+## Konfigurieren Sie Azure-Cmdlets, um Ihr Abonnement zu verwenden
 ------------------
 Folgen Sie den Anweisungen [dieses Handbuchs](../powershell-install-configure.md), sodass Sie die Cmdlets für Ihr Azure-Abonnement verwenden können.
 
-Erstellen einer Cloud-Sammlung
+## Erstellen einer Cloud-Sammlung
 --------------------
 Es ist ganz leicht. Führen Sie den folgenden Befehl aus:
 
@@ -47,6 +49,7 @@ Nach Abschluss der Sammlung können Sie Benutzer mit dem folgenden Befehl hinzuf
 
 Und Sie haben es geschafft! Dieser Benutzer sollte eine Verbindung zur Anwendung mit dem Azure RemoteApp-Client herstellen können, der sich [hier](https://www.remoteapp.windowsazure.com/) befindet.
 
+## Verfügbare Cmdlets
 Es gibt viele weitere Befehle, für die es in Kürze eine Dokumentation gibt:
 
 Grundlegende Sammlungs-Cmdlets für die RemoteApp:
@@ -94,6 +97,6 @@ Andere RemoteApp-Cmdlets:
 - Get-AzureRemoteAppWorkspace
 - Set-AzureRemoteAppWorkspace
 - Get-AzureRemoteAppOperationResult
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

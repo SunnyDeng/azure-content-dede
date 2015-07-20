@@ -1,3 +1,4 @@
+
 #### Hinzufügen eines Volumecontainers
 
 1. Wählen Sie auf der Seite **Geräte** das Gerät aus, doppelklicken Sie darauf, und klicken Sie dann auf die Registerkarte **Volumecontainer**.
@@ -20,4 +21,4 @@
 Der Volumecontainer wird gespeichert, und der neu erstellte Volumecontainer wird auf der Seite **Volumecontainer** aufgeführt.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

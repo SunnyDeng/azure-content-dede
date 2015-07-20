@@ -16,7 +16,7 @@
 	ms.date="02/12/2015" 
 	ms.author="kapiteir" />
 
-# Integrieren von Mobile Engagement unter Android
+#Integrieren von Mobile Engagement unter Android
 
 > [AZURE.SELECTOR] 
 - [Windows Universal](mobile-engagement-windows-store-integrate-engagement.md) 
@@ -30,12 +30,11 @@ In diesem Verfahren wird die einfachste Art der Aktivierung der Analyse- und Üb
  
 Mithilfe der folgenden Schritte kann der Protokollbericht aktiviert werden, der zum Berechnen aller Statistiken zu Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Informationen erforderlich ist. Der Bericht von Protokollen, die zur Berechnung anderer Statistiken wie Ereignisse, Fehler und Aufträge erforderlich ist, muss manuell mithilfe der Engagement-API erfolgen (siehe [So verwenden Sie die erweiterte Mobile Engagement API für Tags in Ihrer Android-App](mobile-engagement-android-use-engagement-api.md)), da diese Statistiken von der Anwendung abhängig sind.
 
-## Einbetten des Engagement-SDKs und des Diensts in Ihr Android-Projekt
+##Einbetten des Engagement-SDKs und des Diensts in Ihr Android-Projekt
 
-Rufen Sie `mobile-engagement-VERSION.jar` ab, und fügen Sie dies zum Ordner `libs` des Android-Projekts hinzu (erstellen Sie den Ordner „libs“, sofern dieser noch nicht vorhanden ist).
+Laden Sie das Android-SDK [hier](http://go.microsoft.com/?linkid=9863935&clcid=0x409) herunter. Rufen Sie `mobile-engagement-VERSION.jar` ab, und fügen Sie dies zum `libs`-Ordner des Android-Projekts hinzu (erstellen Sie den Ordner "libs", sofern dieser noch nicht vorhanden ist).
 
-> [AZURE.IMPORTANT]
-> Wenn Sie das Anwendungspaket mithilfe von ProGuard erstellen, müssen Sie einige Klassen behalten. Sie können den folgenden Codeausschnitt der Konfiguration verwenden:
+> [AZURE.IMPORTANT]Wenn Sie das Anwendungspaket mithilfe von ProGuard erstellen, müssen Sie einige Klassen behalten. Sie können den folgenden Codeausschnitt der Konfiguration verwenden:
 >
 > 
 			-keep public class * extends android.os.IInterface
@@ -90,7 +89,7 @@ Sie können dieselben Schritte für `Application.onTerminate()`, `Application.on
 
 Sie können auch `EngagementApplication` anstelle von `Application` erweitern: Die Rückruffunktion `Application.onCreate()` übernimmt die Prozessprüfung und ruft `Application.onApplicationProcessCreate()` nur auf, wenn es sich bei dem aktuellen Prozess nicht um den Prozess handelt, der den Engagement-Dienst hostet. Dieselben Regeln gelten für die anderen Rückruffunktionen.
 
-## Grundlegende Berichterstellung
+##Grundlegende Berichterstellung
 
 ### Empfohlene Methode: Überladen der `Activity`-Klassen
 
@@ -164,13 +163,13 @@ Beispiel:
 
 Dieses Beispiel ähnelt der `EngagementActivity`-Klasse und ihrer Varianten, deren Quellcode im Ordner `src` bereitgestellt wird.
 
-## Test
+##Test
 
-Überprüfen Sie jetzt Ihre Integration, indem Sie den Abschnitt „Testen der Engagement-Integration unter Android“ lesen.
+Überprüfen Sie jetzt die Integration, indem Sie die mobile App in einem Emulator oder auf einem Gerät ausführen und sicherstellen, dass auf der Registerkarte "Überwachen" eine Sitzung registriert wird.
 
 Die nächsten Abschnitte sind optional.
 
-## Speicherortberichte
+##Speicherortberichte
 
 Wenn Sie die Speicherorte melden möchten, müssen Sie einige Zeilen zur Konfiguration hinzufügen (zwischen den Tags `<application>` und `</application>`).
 
@@ -233,13 +232,13 @@ Sie müssen auch die folgende Berechtigung hinzufügen, sofern diese noch nicht 
 
 			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-## Erweiterte Berichterstellung
+##Erweiterte Berichterstellung
 
 Wenn Sie anwendungsspezifische Ereignisse, Fehler und Aufträge optional melden möchten, müssen Sie die Engagement-API über die Methoden der `EngagementAgent`-Klasse verwenden. Ein Objekt dieser Klasse kann durch Aufrufen der statischen `EngagementAgent.getInstance()`-Methode abgerufen werden.
 
 Die Engagement-API ermöglicht es, alle erweiterten Funktionen von Engagement zu verwenden. Ausführliche Informationen finden Sie unter „Verwenden der Engagement-API unter Android (sowie in der technischen Dokumentation der `EngagementAgent`-Klasse).
 
-## Erweiterte Konfiguration (in „AndroidManifest.xml“)
+##Erweiterte Konfiguration (in „AndroidManifest.xml“)
 
 Wenn Sie sicherstellen möchten, dass Statistiken bei der Verwendung von WLAN-Verbindungen oder bei Deaktiviertem Bildschirm in Echtzeit gesendet werden, fügen Sie die folgende optionale Berechtigung hinzu:
 
@@ -263,7 +262,7 @@ Eine Sitzung wird standardmäßig 10 Sekunden nach dem Ende ihrer letzten Aktivi
 
 			<meta-data android:name="engagement:sessionTimeout" android:value="<session timeout (in milliseconds)>"/>
 
-## Deaktivieren der Protokollberichterstellung
+##Deaktivieren der Protokollberichterstellung
 
 ### Verwenden eines Methodenaufrufs
 
@@ -310,5 +309,6 @@ Dann können Sie `CheckBoxPreference` wie folgt im Einstellungslayout hinzufüge
 
 <!-- URLs. -->
 [Geräte-API]: http://go.microsoft.com/?linkid=9876094
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

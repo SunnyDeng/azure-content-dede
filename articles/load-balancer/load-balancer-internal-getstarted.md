@@ -102,6 +102,10 @@ Um diese Befehle zu verwenden, geben Sie die Werte ein und entfernen die Symbole
 
 Notieren Sie aus der Anzeige des Befehls "Get-AzureInternalLoadBalancer" die IP-Adresse, und nehmen Sie die erforderlichen Änderungen an Ihren Servern oder DNS-Datensätzen vor, um sicherzustellen, dass der Datenverkehr an die VIP-Adresse gesendet wird.
 
+>[AZURE.IMPORTANT]Die Microsoft Azure-Plattform nutzt eine statische, öffenlich routingfähige IPv4-Adresse für eine Vielzahl von administrativen Szenarien. Die IP-Adresse lautet 168.63.129.16. Diese IP-Adresse sollte nicht durch Firewalls blockiert werden, da dies zu unerwartetem Verhalten führen kann. In Bezug auf den Azure-ILB wird diese IP-Adresse durch die Überwachung der Prüfpunkte aus dem Lastenausgleich verwendet, um den Integritätsstatus von VMs in einem Lastenausgleichsatz zu bestimmen. Eine Netzwerk-Sicherheitsgruppe wird verwendet, um den Datenverkehr auf Virtual Machines in einem internen Lastenausgleichsatz einzuschränken, oder wird einem Virtual Network-Subnetz zugewiesen, um sicherzustellen, dass eine Netzwerksicherheitsregel hinzugefügt wird, um Datenverkehr von 168.63.129.16 zuzulassen.
+
+
+
 ## End-to-End-Beispiele für internen Lastenausgleich
 
 Schrittweise Anleitungen für die End-to-End-Prozesse zum Erstellen eines Lastenausgleichs für zwei Beispielkonfigurationen finden Sie in den folgenden Abschnitten.
@@ -282,4 +286,4 @@ Um weitere Informationen zu ILB-Cmdlets zu erhalten, führen Sie die folgenden B
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

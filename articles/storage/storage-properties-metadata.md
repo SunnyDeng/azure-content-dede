@@ -1,21 +1,21 @@
 
 <properties 
-	pageTitle="Festlegen und Abrufen von Eigenschaften und Metadaten für Blob-Speicher | Microsoft Azure"
-	description="Erfahren Sie, wie Sie Eigenschaften und Metadaten für Azure-Speichercontainer- und -Blobs festlegen und abrufen." 
-	services="storage" 
-	documentationCenter="" 
-	authors="tamram"
-	manager="adinah" 
-	editor=""/>
+  pageTitle="Festlegen und Abrufen von Eigenschaften und Metadaten für den Blob-Speicher | Microsoft Azure" 
+  description="Erfahren Sie, wie Sie Eigenschaften und Metadaten für Azure Storage-Container und -Blobs festlegen und abrufen können." 
+  services="storage" 
+  documentationCenter="" 
+  authors="tamram" 
+  manager="adinah" 
+  editor=""/>
 
 <tags 
-	ms.service="storage" 
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/21/2015" 
-	ms.author="tamram"/>
+  ms.service="storage" 
+  ms.workload="storage" 
+  ms.tgt_pltfrm="na" 
+  ms.devlang="na" 
+  ms.topic="article" 
+  ms.date="04/21/2015" 
+  ms.author="tamram"/>
 
 
 # Festlegen und Abrufen von Eigenschaften und Metadaten #
@@ -159,6 +159,6 @@ Im folgenden Codebeispiel wird ein neuer Container erstellt, und es werden Metad
 
 - [Azure Storage Client Library Reference](http://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx) (in englischer Sprache)
 - [Get Started with the Blob Storage for .NET](storage-dotnet-how-to-use-blobs.md) (in englischer Sprache)  
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

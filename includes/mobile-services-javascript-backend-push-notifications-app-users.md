@@ -42,4 +42,4 @@
 
 4. Klicken Sie nacheinander auf den Pfeil für "Zurück", auf die Registerkarte **Daten**, auf **TodoItem** und auf **Skript**. Wählen Sie anschließend **Einfügen** aus.
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO2-->

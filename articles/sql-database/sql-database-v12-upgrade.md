@@ -34,6 +34,7 @@
 | 4. Wählen Sie den Server aus, den Sie auf einen neuen Server kopieren möchten, auf dem das SQL-Datenbankupdate aktiviert ist. | ![Zeigt eine Liste der SQL-Server an][4] |
 | 5. Klicken Sie auf **Einstellungen** oder **Serverversion**, um den Server auf Version 12 zu aktualisieren. | ![Aktuelles Vorschaufeature][5] |
 | 6. Klicken Sie auf **UPGRADE FÜR DIESEN SERVER AUSFÜHREN**. | ![SQL Server-Upgrade auf die Preview][6] |
+| 7. Nach dem Klicken auf **UPGRADE FÜR DEN SERVER AUSFÜHREN** wird der Upgradevorgang initiiert. Unter **Serverversion** ändert sich die Benachrichtigung von **V2** in **Upgrade scheduled...**. Wenn Sie auf die Benachrichtigung **Upgrade scheduled...** klicken, wird ein Blatt geöffnet, das die Schaltfläche **Upgrade abbrechen** enthält. Klicken Sie auf **Upgrade abbrechen**, wenn Sie sich gegen ein Upgrade für den Server entscheiden. **Hinweis:** Ein Abbruch des Vorgangs gegen Ende des Upgradevorgangs ist nicht möglich, das Upgrade wird in diesem Fall normal abgeschlossen.|![Upgrade abbrechen][9] 
 
 
 > [AZURE.NOTE]Nachdem Sie die Upgradeoption ausgewählt haben, werden die Funktionen der SQL-Datenbank V12 für den Server und die Datenbanken auf diesem Server aktiviert. Dieser Vorgang kann nicht rückgängig gemacht werden. Damit für Server ein Upgrade auf SQL-Datenbank V12 durchgeführt werden kann, ist die Dienstebene „Basic“, „Standard“ oder „Premium“ erforderlich. Weitere Informationen zu den Dienstebenen finden Sie unter [Upgrade von Web-/Businessdatenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md).
@@ -48,8 +49,8 @@ Nachdem Sie auf die Option **UPGRADE FÜR DIESEN SERVER AUSFÜHREN** geklickt ha
 - Der Überprüfungsvorgang überprüft die Dienstebene Ihrer Datenbank und ermittelt, ob Georeplikation aktiviert ist. In diesem Bereich werden auch die Ergebnisse angezeigt, nachdem die Überprüfung abgeschlossen ist. 
 - Nachdem der Überprüfungsvorgang abgeschlossen wurde, wird eine Liste der Datenbanknamen angezeigt, für die Aktionen erforderlich sind, um die Anforderungen eines Upgrades auf SQL-Datenbank V12 zu erfüllen.
  - **Sie müssen diese Aktionen für jede dieser Datenbanken durchführen, damit ein Upgrade auf SQL-Datenbank V12 erfolgen kann**.
-- Wenn Sie auf die einzelnen Datenbanknamen klicken, stellt ein neuer Bereich Empfehlungen für Dienstpreisstufen basierend auf Ihrer aktuellen Nutzung zur Verfügung. Sie können auch verschiedene Preisstufen durchsuchen und die Stufe auswählen, die am besten für Ihre Umgebung geeignet ist. Alle Datenbanken, die für Georeplikation eingerichtet sind, müssen so neu konfiguriert werden, dass die Replikation beendet wird. 
-- Beachten Sie, dass keine Empfehlung für die Preisstufe angezeigt wird, wenn nicht genügend Daten gefunden wurden. 
+- Wenn Sie auf die einzelnen Datenbanknamen klicken, stellt ein neuer Bereich Empfehlungen für Diensttarife basierend auf Ihrer aktuellen Nutzung zur Verfügung. Sie können auch verschiedene Tarife durchsuchen und die Stufe auswählen, die am besten für Ihre Umgebung geeignet ist. Alle Datenbanken, die für Georeplikation eingerichtet sind, müssen so neu konfiguriert werden, dass die Replikation beendet wird. 
+- Beachten Sie, dass keine Empfehlung für den Tarif angezeigt wird, wenn nicht genügend Daten gefunden wurden. 
 
 
 | Aktion | Screenshot |
@@ -90,6 +91,7 @@ Mit dem Cmdlet „Stop-“ wird der Vorgang abgebrochen, nicht angehalten. Ein U
 [6]: ./media/sql-database-v12-upgrade/upgrade.png
 [7]: ./media/sql-database-v12-upgrade/typeservername.png
 [8]: ./media/sql-database-v12-upgrade/enabled.png
+[9]: ./media/sql-database-v12-upgrade/cancel.PNG
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

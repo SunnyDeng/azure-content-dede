@@ -1,3 +1,4 @@
+
 #### So löschen Sie eine StorSimple-Sicherungsrichtlinie
 
 1. Klicken Sie auf der Seite **Schnellstart** des Geräts auf die Registerkarte **Sicherungsrichtlinien**. Dadurch gelangen Sie auf die Seite **Sicherungsrichtlinien**.
@@ -9,4 +10,4 @@
 Die Seite **Sicherungsrichtlinien** wird aktualisiert, um die neue Liste der Richtlinien anzuzeigen.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

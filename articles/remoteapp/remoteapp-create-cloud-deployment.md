@@ -13,15 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/08/2015" 
+	ms.date="05/26/2015" 
 	ms.author="elizapo"/>
 
-# Erstellen einer Cloud-Sammlung von RemoteApp
+# Erstellen einer Cloud-Sammlung von Azure RemoteApp
 
-Es gibt zwei Arten von RemoteApp-Sammlungen:
+Es gibt zwei Arten von Azure RemoteApp-Sammlungen:
 
 - Cloud: befindet sich vollständig in Azure und wird mithilfe der Option **Schnellerfassung** im Azure-Verwaltungsportal erstellt.  
-- Hybrid: enthält ein virtuelles Netzwerk für den lokalen Zugriff und wird mithilfe der Option **Mit VPN erstellen** im Verwaltungsportal erstellt.
+- Hybrid: enthält ein virtuelles Netzwerk für den lokalen Zugriff und wird mithilfe der Option **Create with VNET** im Verwaltungsportal erstellt.
 
 Dieses Lernprogramm beschreibt die Schritte zur Erstellung einer Cloud-Sammlung. Es sind vier Schritte notwendig:
 
@@ -91,5 +91,6 @@ Nach dem Erstellen der RemoteApp-Sammlung müssen Sie nun die Benutzer hinzufüg
 
 Geschafft - Sie haben Ihre Cloud-Sammlung in RemoteApp erfolgreich erstellt und bereitgestellt. Als Nächstes müssen die Benutzer den Remotedesktopclient herunterladen und installieren. Die URL für den Client finden Sie auf der RemoteApp-Schnellstartseite. Die Benutzer müssen sich nun beim Client anmelden und können dann auf die veröffentlichten Apps zugreifen.
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

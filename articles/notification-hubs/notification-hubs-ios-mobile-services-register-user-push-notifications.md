@@ -120,5 +120,6 @@ Nun haben Sie die Client-App aktualisiert und können zum Thema [Benachrichtigen
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Get Started with Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

@@ -3,7 +3,7 @@
    description="Diese Artikel erläutern Ihnen die verschiedenen Lastenausgleichsmethoden von Traffic Manager"
    services="traffic-manager"
    documentationCenter=""
-   authors="cherylmc"
+   authors="joaoma"
    manager="adinah"
    editor="tysonn" />
 <tags 
@@ -12,30 +12,30 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/27/2015"
-   ms.author="cherylmc" />
+   ms.date="07/01/2015"
+   ms.author="joaoma" />
 
-# Lastenausgleichsmethoden von Traffic Manager
+# Traffic Manager-Routingmethoden
 
-Drei Lastenausgleichsmethoden sind in Traffic Manager verfügbar. Jedes Traffic Manager-Profil kann immer nur eine Lastenausgleichsmethode verwenden. Sie können jedoch jederzeit eine andere Lastenausgleichsmethode für Ihr Profil auswählen.
+Drei Routingmethoden sind in Traffic Manager verfügbar. Jedes Traffic Manager-Profil kann immer nur eine Routingmethode verwenden. Sie können jedoch jederzeit eine andere Routingmethode für Ihr Profil auswählen.
 
-Beachten Sie unbedingt, dass alle Lastenausgleichsmethoden eine Endpunktüberwachung beinhalten. Nachdem Sie bei der Konfiguration des Traffic Manager-Profils die Lastenausgleichsmethode angegeben haben, die Ihre Anforderungen am besten erfüllt, konfigurieren Sie die Überwachungseinstellungen. Wenn die Überwachung ordnungsgemäß konfiguriert ist, überwacht Traffic Manager den Status Ihrer Endpunkte, die aus Cloud-Diensten und Websites bestehen, und sendet keinen Datenverkehr an Endpunkte, die wahrscheinlich nicht verfügbar sind. Weitere Informationen zur Traffic Manager-Überwachung finden Sie unter [Informationen zur Traffic Manager-Überwachung](traffic-manager-monitoring.md). 
+Beachten Sie unbedingt, dass alle Routingmethoden eine Endpunktüberwachung beinhalten. Nachdem Sie bei der Konfiguration des Traffic Manager-Profils die Routingmethode angegeben haben, die Ihre Anforderungen am besten erfüllt, konfigurieren Sie die Überwachungseinstellungen. Wenn die Überwachung ordnungsgemäß konfiguriert ist, überwacht Traffic Manager den Status Ihrer Endpunkte, die aus Cloud-Diensten und Websites bestehen, und sendet keinen Datenverkehr an Endpunkte, die wahrscheinlich nicht verfügbar sind. Informationen zur Traffic Manager-Überwachung finden Sie unter [Traffic Manager-Überwachung](traffic-manager-monitoring.md).
 
-Die drei folgenden Traffic Manager-Lastenausgleichsmethoden stehen zur Verfügung:
+Die drei folgenden Traffic Manager-Routingmethoden stehen zur Verfügung:
 
 - **Failover**: Wählen Sie "Failover" aus, wenn sich Endpunkte in demselben oder in verschiedenen Azure-Datencentern (im Verwaltungsportal als "Regionen" bezeichnet) befinden und Sie einen primären Endpunkt für den gesamten Datenverkehr verwenden, jedoch Sicherungen für den Fall bereitstellen möchten, dass die primären oder Sicherungsendpunkte nicht verfügbar sind. Weitere Informationen finden Sie unter [Lastenausgleichsmethode "Failover"](#failover-load-balancing-method).
 
-- **Roundrobin**: Wählen Sie "Roundrobin" aus, wenn Sie die Last auf eine Reihe von Endpunkten in demselben oder in verschiedenen Datencentern verteilen möchten. Weitere Informationen finden Sie unter [Lastenausgleichsmethode "Roundrobin"](#round-robin-load-balancing-method).
+- **Round Robin**: Wählen Sie "Roundrobin" aus, wenn Sie die Last auf eine Reihe von Endpunkten in demselben oder in verschiedenen Datencentern verteilen möchten. Weitere Informationen finden Sie unter [Lastenausgleichsmethode "Roundrobin"](#round-robin-load-balancing-method).
 
 - **Leistung**: Wählen Sie Leistung aus, wenn sich die Endpunkte an unterschiedlichen geografischen Standorten befinden und anfordernde Clients den "nächstgelegenen" Endpunkt (im Hinblick auf die geringste Wartezeit) verwenden sollen. Weitere Informationen finden Sie unter [Lastenausgleichsmethode "Leistung"](#performance-load-balancing-method).
 
 Beachten Sie, dass Azure Websites bereits Failover- und Roundrobin-Lastenausgleichsfunktionen für Websites in einem Datencenter unabhängig vom Websitemodus zur Verfügung stellen. Traffic Manager ermöglicht das Angeben des Failover- und Roundrobin-Lastenausgleichs für Websites in verschiedenen Datencentern.
 
->[AZURE.NOTE] Die DNS-Gültigkeitsdauer (TTL) informiert DNS-Clients und -Resolver auf DNS-Servern, wie lange die aufgelösten Namen zwischengespeichert werden sollen. Clients verwenden weiterhin einen bestimmten Endpunkt beim Auflösen des Domänennamens, bis der lokale DNS-Cacheeintrag für den Namen abläuft.
+>[AZURE.NOTE]Die DNS-Gültigkeitsdauer (TTL) informiert DNS-Clients und -Resolver auf DNS-Servern, wie lange die aufgelösten Namen zwischengespeichert werden sollen. Clients verwenden weiterhin einen bestimmten Endpunkt beim Auflösen des Domänennamens, bis der lokale DNS-Cacheeintrag für den Namen abläuft.
 
 ### Lastenausgleichsmethode "Failover"
 
-Häufig möchte ein Unternehmen die Zuverlässigkeit seiner Dienste gewährleisten. Dazu werden Sicherungsdienste bereitgestellt, falls der primäre Dienst ausfällt. Der Failover-Lastenausgleich für Dienste wird häufig implementiert, indem eine Reihe identischer Endpunkte bereitgestellt und Datenverkehr an einen primären Dienst gesendet wird. Dabei wird eine Liste mit mindestens einer Sicherung verwendet. Wenn der primäre Dienst nicht verfügbar ist, werden anfordernde Clients an den nächsten Dienst in der Reihenfolge verwiesen. Wenn der erste und der zweite aufgeführte Dienst nicht verfügbar sind, wird der Datenverkehr an den dritten Dienst gesendet usw.
+Organisationen möchten häufig sicherstellen, dass ihre Dienste zuverlässig funktionieren. Dazu stellen sie Sicherungsprogramme für den Fall bereit, dass der primäre Dienst ausfällt. Der Failover-Lastenausgleich für Dienste wird häufig implementiert, indem eine Reihe identischer Endpunkte bereitgestellt und Datenverkehr an einen primären Dienst gesendet wird. Dabei wird eine Liste mit mindestens einer Sicherung verwendet. Wenn der primäre Dienst nicht verfügbar ist, werden anfordernde Clients an den nächsten Dienst in der Reihenfolge verwiesen. Wenn der erste und der zweite aufgeführte Dienst nicht verfügbar sind, wird der Datenverkehr an den dritten Dienst gesendet usw.
 
 Wenn Sie die Lastenausgleichsmethode "Failover" konfigurieren, ist die Reihenfolge der ausgewählten Endpunkte von Bedeutung. Mithilfe des Verwaltungsportals können Sie die Failoverreihenfolge auf der Seite "Konfiguration" für das Profil konfigurieren.
 
@@ -43,9 +43,9 @@ Abbildung 1 zeigt ein Beispiel für die Failover-Lastenausgleichsmethode für ei
 
 ![Traffic Manager-Failoverlastenausgleich](./media/traffic-manager-load-balancing-methods/IC750592.jpg)
 
-**Figure 1**
+**Abbildung 1**
 
-Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 1.
+Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 1.
 
 1. Traffic Manager empfängt eine eingehende Anforderung von einem Client über DNS und sucht nach dem Profil.
 2. Das Profil enthält eine sortierte Liste mit Endpunkten. Traffic Manager überprüft, welcher Endpunkt der erste in der Liste ist. Wenn der Endpunkt (basierend auf der aktuellen Endpunktüberwachung) online ist, wird der DNS-Name dieses Endpunkts in der DNS-Antwort an den Client angegeben. Wenn der Endpunkt offline ist, ermittelt Traffic Manager den nächsten Onlineendpunkt in der Liste. In diesem Beispiel ist CS-A offline (nicht verfügbar), CS-B ist jedoch online (verfügbar).
@@ -58,11 +58,11 @@ Ein gängiges Lastenausgleichsmuster besteht darin, eine Reihe identischer Endpu
 
 Abbildung 2 zeigt ein Beispiel für die Lastenausgleichsmethode "Roundrobin" für eine Reihe von Endpunkten.
 
-![Traffic Manager-Lastenausgleich mit Roundrobin](./media/traffic-manager-load-balancing-methods/IC750593.jpg)
+![Traffic Manager-Lastenausgleichsmethode "Roundrobin"](./media/traffic-manager-load-balancing-methods/IC750593.jpg)
 
 **Abbildung 2**
 
-Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 2.
+Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 2.
 
 1. Traffic Manager empfängt eine eingehende Anforderung von einem Client und sucht nach dem Profil.
 2. Das Profil enthält eine Liste von Endpunkten. Traffic Manager wählt einen zufälligen Endpunkt aus dieser Liste aus. Dabei werden alle Offlineendpunkte (nicht verfügbare Endpunkte), die von der Traffic Manager-Endpunktüberwachung ermittelt wurden, ausgeschlossen. In diesem Beispiel ist dies der Endpunkt CS-B.
@@ -73,7 +73,7 @@ Die Lastenausgleichsmethode "Roundrobin" unterstützt auch die gewichtete Vertei
 
 ![Gewichteter Roundrobin-Lastenausgleich](./media/traffic-manager-load-balancing-methods/IC750594.png)
 
-**Abbildung 3**
+**Abbildung 3**
 
 Gewichteter Roundrobin-Lastenausgleich ermöglicht das Verteilen der Last auf verschiedene Endpunkte basierend auf einem zugewiesenen "Gewichtungswert" jedes Endpunkts. Je höher die Gewichtung ist, desto häufiger wird ein Endpunkt zurückgegeben. In den folgenden Szenarien kann diese Methode sinnvoll sein:
 
@@ -99,9 +99,9 @@ Abbildung 4 zeigt ein Beispiel für die Lastenausgleichsmethode "Leistung" für 
 
 ![Traffic Manager-Leistungslastenausgleich](./media/traffic-manager-load-balancing-methods/IC753237.jpg)
 
-**Abbildung 4**
+**Abbildung 4**
 
-Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 4.
+Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 4.
 
 1. Traffic Manager erstellt die Internetlatenztabelle in regelmäßigen Abständen. Die Traffic Manager-Infrastruktur führt Tests aus, um die Roundtripzeiten zwischen verschiedenen Punkten weltweit und den Azure-Datencentern zu bestimmen, in denen Endpunkte gehostet werden.
 2. Traffic Manager empfängt eine eingehende Anforderung von einem Client über den lokalen DNS-Server und sucht nach dem Profil.
@@ -123,7 +123,7 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
 ## Siehe auch
 
-[Traffic Manager-Übersicht](traffic-manager-overview.md)
+[Traffic Manager – Übersicht](traffic-manager-overview.md)
 
 [Traffic Manager-Überwachung](traffic-manager-monitoring.md)
 
@@ -135,5 +135,6 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
 
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO2-->

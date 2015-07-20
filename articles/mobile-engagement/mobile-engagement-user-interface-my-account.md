@@ -41,7 +41,7 @@ Zum Verwenden der Push-API oder Device-API müssen Sie die eindeutige Geräteken
  
 1. In Ihrem Back-End können Sie die "Get"-Funktion der Device-API verwenden, um eine vollständige Liste der Geräte-IDs zu erhalten.
 2. In Ihrer App können Sie zum Abruf das SDK nutzen. (Rufen Sie für Android die "getDeviceID()"-Funktion der "Agent"-Klasse und für iOS die "deviceid-Eigenschaft" der "Agent"-Klasse auf.)
-3. Wenn bei einer Reach-Ankündigung die der Ankündigung zugeordnete Aktions-URL das {deviceid}-Muster enthält, wird es automatisch durch die ID des Geräts ersetzt, das die Aktion auslöst. http://<example>.com/registeruser?deviceid={deviceid}&otherparam=myparamdata wird ersetzt durch:  http://<example>.com/registeruser?deviceid=XXXXXXXXXXXXXXXX&otherparam=myparamdata 
+3. Wenn bei einer Reach-Ankündigung die der Ankündigung zugeordnete Aktions-URL das {deviceid}-Muster enthält, wird es automatisch durch die ID des Geräts ersetzt, das die Aktion auslöst. http://<example>.com/registeruser?deviceid={deviceid}&otherparam=myparamdata wird ersetzt durch: http://<example>.com/registeruser?deviceid=XXXXXXXXXXXXXXXX&otherparam=myparamdata 
 4. Wenn bei einer Reach-Webankündigung der HTML-Code der Ankündigung das {deviceid}-Muster enthält, wird es automatisch durch die ID des Geräts ersetzt, das die Webankündigung auslöst. Hier ist meine Geräte-ID: {deviceid} wird ersetzt durch: Hier ist meine Geräte-ID: XXXXXXXXXXXXXXXX
 5.  Öffnen Sie die Anwendung auf Ihrem Gerät, und lösen Sie ein Ereignis in Ihrer App aus, das mit einem Tag versehen wurde. In "Benutzeroberfläche - Ihre App - Überwachen - Ereignisse - Details" finden Sie das ausgelöste Ereignis in der Liste. Klicken Sie im Abschnitt "Überwachen" auf dieses Ereignis. Ihre Geräte-ID sollte in der Liste der Geräte vorhanden sein, auf denen dieses Ereignis erfolgt ist. Anschließend können Sie diese Geräte-ID kopieren und in "Benutzeroberfläche - Mein Konto - Geräte - Neues Gerät - Geräteplattform auswählen" registrieren.
 >
@@ -141,4 +141,8 @@ Zum Verwenden der Push-API oder Device-API müssen Sie die eindeutige Geräteken
 [Link 32]: ../mobile-engagement-how-tos-text-view.md
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
 
-<!--HONumber=54--> 
+
+ 
+ 
+
+<!---HONumber=July15_HO2-->

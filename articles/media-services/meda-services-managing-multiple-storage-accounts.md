@@ -35,7 +35,7 @@ Wenn Sie Ihrem Media Services-Konto mehrere Speicherkonten zuordnen, gelten die 
 
 Weitere Überlegungen:
 
-Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den Wert der **IAssetFile.Name**-Eigenschaft (z. B. http://{WAMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.). Aus diesem Grund ist die Prozentcodierung nicht zulässig. Der Wert der Name-Eigenschaft darf keines der folgenden [für die Prozentcodierung reservierten Zeichen enthalten](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#"[]. Darüber hinaus wird für die Dateinamenerweiterung nur ein Punkt (.) unterstützt.
+Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den Wert der **IAssetFile.Name**-Eigenschaft (z. B. http://{WAMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.). Aus diesem Grund ist die Prozentcodierung nicht zulässig. Der Wert der Name-Eigenschaft darf keines der folgenden [für die Prozentcodierung reservierten Zeichen enthalten](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#". Darüber hinaus wird für die Dateinamenerweiterung nur ein Punkt (.) unterstützt.
 
 ##So fügen Sie ein Speicherkonto mit der Azure-Dienstverwaltungs-REST-API an
 
@@ -53,7 +53,7 @@ Im folgenden Code werden mit dem aktuellen Media Services-SDK die folgenden Aufg
 
 	using Microsoft.WindowsAzure.MediaServices.Client; using System; using System.Collections.Generic; using System.Configuration; using System.IO; using System.Linq; using System.Text; using System.Threading; using System.Threading.Tasks;
 	
-	namespace MultipleStorageAccounts { class Program { // Location of the media file that you want to encode. private static readonly string _singleInputFilePath = Path.GetFullPath(@"../..\supportFiles\multifile\interview2.wmv");
+	namespace MultipleStorageAccounts { class Program { // Location of the media file that you want to encode. private static readonly string _singleInputFilePath = Path.GetFullPath(@"../..\\supportFiles\\multifile\\interview2.wmv");
 	
 	        private static readonly string MediaServicesAccountName = 
 	            ConfigurationManager.AppSettings["MediaServicesAccountName"];
@@ -234,5 +234,6 @@ Im folgenden Code werden mit dem aktuellen Media Services-SDK die folgenden Aufg
 	        }
 	    }
 	}
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO2-->

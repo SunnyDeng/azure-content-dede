@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Überlegungen zu Operations Manager mit Operational Insights"
    description="Wenn Sie Microsoft Azure Operational Insights mit Operations Manager verwenden, basiert Ihre Konfiguration auf einer Verteilung von Operations Manager-Agents und Verwaltungsgruppen, um Daten zu sammeln und zur Analyse an den Operational Insights-Dienst zu senden"
    services="operational-insights"
@@ -6,18 +6,22 @@
    authors="bandersmsft"
    manager="jwhit"
    editor="tysonn" />
-<tags 
+<tags
    ms.service="operational-insights"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="03/20/2015"
+   ms.date="07/02/2015"
    ms.author="banders" />
 
 # Überlegungen zu Operations Manager mit Operational Insights
 
+[AZURE.INCLUDE [operational-insights-note-moms](../../includes/operational-insights-note-moms.md)]
+
 Wenn Sie Microsoft Azure Operational Insights mit Operations Manager verwenden, basiert Ihre Konfiguration auf einer Verteilung von Operations Manager-Agents und Verwaltungsgruppen, um Daten zu sammeln und zur Analyse an den Operational Insights-Dienst zu senden. Wenn Sie jedoch Agents verwenden, die sich direkt mit dem Webdienst verbinden, ist Operations Manager nicht notwendig. Berücksichtigen Sie die folgenden Probleme bei Ihrer Verwendung von Operational Insights mit Operations Manager.
+
+Darüber hinaus müssen Sie die Anmeldeinformationen für die Ausführung der Workloads angeben, die von Operations Manager an Operational Insights überwacht werden.
 
 ## Funktionen und Anforderungen der Operational Insights-Software
 
@@ -39,9 +43,9 @@ Operational Insights kann den Integritätsdienst von System Center zum Sammeln u
 
 ## Koexistenz mit Operations Manager
 
-Bei Verwendung von Operations Manager wird Operational Insights nur mit dem Operations Manager-Agent in System Center Operations Manager 2012 R2 oder System Center Operations Manager 2012 SP1 unterstützt. Es wird nicht mit früheren Versionen von System Center Operations Manager unterstützt. Da der Operations Manager-Agent zum Sammeln von Daten eingesetzt wird, verwendet er bestimmte Anmeldeinformationen (Aktionskonten oder ausführende Konten) zur Unterstützung einiger der analysierten Arbeitsauslastungen, z. B. SharePoint 2012.
+Bei Verwendung von Operations Manager wird Operational Insights nur mit dem Operations Manager-Agent in System Center Operations Manager 2012 R2 oder System Center Operations Manager 2012 SP1 unterstützt. Es wird nicht mit früheren Versionen von System Center Operations Manager unterstützt. Da der Operations Manager-Agent zum Sammeln von Daten eingesetzt wird, verwendet er bestimmte Anmeldeinformationen (Aktionskonten oder ausführende Konten) zur Unterstützung einiger der analysierten Workloads, z. B. SharePoint 2012.
 
-## Operational Insights und SQL Server 2012
+## Operational Insights und SQL Server 2012
 
 Wenn Sie Operations Manager verwenden, wird der Integritätsdienst von System Center unter dem lokalen Systemkonto ausgeführt. In SQL Server-Versionen vor SQL Server 2008 R2 war das lokale Systemkonto standardmäßig aktiviert und Mitglied der Systemadministrator-Serverrolle. In SQL Server 2012 ist die lokale Systemanmeldung nicht Teil der Systemadministrator-Serverrolle. Daher kann bei Verwendung von Operational Insights die SQL Server 2012-Instanz nicht vollständig überwacht werden, und nicht alle Regeln können Warnungen generieren.
 
@@ -85,20 +89,143 @@ Wenn Sie beispielsweise von einer täglichen Uploadgröße von 100 KB pro Agent 
     </tr>
     <tr align="left" valign="top">
 		<td>5</td>
-		<td>~2,5 MB (5 Agents x 100 KB Daten/Tag x 5 Tage = 2.500 KB)</td>
+		<td>~2,5&#160;MB (5 Agents x 100&#160;KB Daten/Tag x 5 Tage =&#160;2.500&#160;KB)</td>
     </tr>
     <tr align="left" valign="top">
 		<td>50</td>
-		<td>~25 MB (50 Agents x 100 KB Daten/Tag x 5 Tage = 25.000 KB)</td>
+		<td>~25&#160;MB (50 Agents x 100&#160;KB Daten/Tag x 5 Tage =&#160;25.000&#160;KB)</td>
     </tr>
 
     </tbody>
     </table>
 
+## Ausführende Operations Manager-Konten für Operational Insights
+
+Operational Insights verwendet den Operations Manager-Agent und die Verwaltungsgruppe zum Erfassen und Senden von Daten an den Operational Insights-Dienst. Operational Insights beruht auf Management Packs für Arbeitsauslastungen, um Dienste bereitzustellen, die einen Mehrwert schaffen. Jede Arbeitsauslastung erfordert spezifische Berechtigungen zum Ausführen von Management Packs in einem anderen Sicherheitskontext, z. B. ein Domänenkonto. Sie müssen Anmeldeinformationen angeben, indem Sie ein ausführendes Operations Manager-Konto konfigurieren.
+
+In den folgenden Abschnitten wird beschrieben, wie ausführende Operations Manager-Konten für die folgenden Arbeitsauslastungen festgelegt werden:
+
+- SQL Assessment
+- Virtual Machine Manager
+- Lync Server
+- SharePoint
+
+### Festlegen des ausführenden Kontos für SQL Assessment
+
+ Wenn Sie bereits das SQL Server Management Pack verwenden, sollten Sie das entsprechende ausführende Konto verwenden.
+
+#### So konfigurieren Sie das ausführende SQL-Konto in der Betriebskonsole
+
+1. Öffnen Sie in Operations Manager die Betriebskonsole, und klicken Sie dann auf **Verwaltung**.
+
+2. Klicken Sie unter **Ausführen als Konfiguration** auf **Profile**, und öffnen Sie **Ausführen als Profil für Operational Insights SQL Assessment**.
+
+3. Klicken Sie auf der Seite **Ausführende Konten** auf **Hinzufügen**.
+
+4. Wählen Sie ein ausführendes Windows-Konto aus, das die Anmeldeinformationen für SQL Server enthält, oder klicken Sie auf **Neu**, um eines zu erstellen.
+	>[AZURE.NOTE]Der Typ des ausführenden Kontos muss "Windows" sein. Das ausführende Konto muss auch Teil der lokalen Administratorengruppe auf allen Windows-Servern sein, auf denen SQL Server-Instanzen gehostet werden.
+
+5. Klicken Sie auf **Speichern**.
+
+6. Ändern und führen Sie dann das folgende T-SQL-Beispiel auf jeder SQL Server-Instanz aus, um dem ausführenden Konto die erforderlichen Mindestberechtigungen zum Ausführen von SQL Assessment zu erteilen. Dies ist jedoch nicht erforderlich, wenn ein ausführendes Konto bereits Teil der Serverrolle "sysadmin" auf SQL Server-Instanzen ist.
+
+```
+---
+    -- Replace <UserName> with the actual user name being used as Run As Account.
+    USE master
+
+    -- Create login for the user, comment this line if login is already created.
+    CREATE LOGIN [<UserName>] FROM WINDOWS
+
+    -- Grant permissions to user.
+    GRANT VIEW SERVER STATE TO [<UserName>]
+    GRANT VIEW ANY DEFINITION TO [<UserName>]
+    GRANT VIEW ANY DATABASE TO [<UserName>]
+
+    -- Add database user for all the databases on SQL Server Instance, this is required for connecting to individual databases.
+    -- NOTE: This command must be run anytime new databases are added to SQL Server instances.
+    EXEC sp_msforeachdb N'USE [?]; CREATE USER [<UserName>] FOR LOGIN [<UserName>];'
+
+```
+#### To configure the SQL Run As account using Windows PowerShell
+
+Open a PowerShell window and run the following script after you’ve updated it with your information:
+
+```
+
+    import-module OperationsManager
+    New-SCOMManagementGroupConnection "<your management group name>"
+     
+    $profile = Get-SCOMRunAsProfile -DisplayName "Operational Insights SQL Assessment Run As Profile"
+    $account = Get-SCOMrunAsAccount | Where-Object {$_.Name -eq "<your run as account name>"}
+    Set-SCOMRunAsProfile -Action "Add" -Profile $Profile -Account $Account
+```
+
+
+### Festlegen des ausführenden Kontos für Virtual Machine Manager
+
+Stellen Sie sicher, dass das ausführende Konto Berechtigungen für die folgenden Aktionen besitzt:
+
+- Verwenden des VMM Windows PowerShell-Moduls
+
+- Abfragen der VMM-Datenbank
+
+- Remoteverwaltung der VMM-Agents, die auf Virtualisierungshosts ausgeführt werden
+
+Führen Sie die folgenden Schritte aus, um das Konto festzulegen, wenn Sie Operational Insights mit Operations Manager verbinden.
+
+#### So legen Sie Anmeldeinformationen für VMM fest
+
+1. Öffnen Sie in Operations Manager die Betriebskonsole, und klicken Sie dann auf **Verwaltung**.
+
+2. Klicken Sie unter **Ausführen als Konfiguration** auf **Profile**, und öffnen Sie **Ausführen als Konto für Operational Insights VMM**.
+
+3. Klicken Sie auf der Seite **Ausführende Konten** auf **Hinzufügen**.
+
+4. Wählen Sie ein ausführendes Windows-Konto aus, das die Anmeldeinformationen für VMM enthält, oder klicken Sie auf **Neu**, um eines zu erstellen.
+	>[AZURE.NOTE]Der Typ des ausführenden Kontos muss "Windows" sein.
+
+5. Klicken Sie auf **Speichern**.
+
+
+### Festlegen des ausführenden Kontos für Lync Server
+
+ Das ausführende Konto muss ein Mitglied sowohl der lokalen Administratorengruppe als auch der Lync-Sicherheitsgruppe RTCUniversalUserAdmins sein.
+
+#### So legen Sie die Anmeldeinformationen für ein Lync-Konto fest
+
+1. Öffnen Sie in Operations Manager die Betriebskonsole, und klicken Sie dann auf **Verwaltung**.
+
+2. Klicken Sie unter **Ausführen als Konfiguration** auf **Profile**, und öffnen Sie **Ausführen als Konto für Operational Insights Lync**.
+
+3. Klicken Sie auf der Seite **Ausführende Konten** auf **Hinzufügen**.
+
+4. Wählen Sie ein ausführendes Konto aus, das sowohl ein Mitglied der lokalen Administratorengruppe als auch der Lync-Sicherheitsgruppe RTCUniversalUserAdmins ist.
+	>[AZURE.NOTE]Der Typ des ausführenden Kontos muss "Windows" sein.
+
+5. Klicken Sie auf **Speichern**.
+
+
+### Festlegen des ausführenden Kontos für SharePoint
+
+
+#### So legen Sie die Anmeldeinformationen für ein SharePoint-Konto fest
+
+1. Öffnen Sie in Operations Manager die Betriebskonsole, und klicken Sie dann auf **Verwaltung**.
+
+2. Klicken Sie unter **Ausführen als Konfiguration** auf **Profile**, und öffnen Sie **Ausführen als Konto für Operational Insights SharePoint**.
+
+3. Klicken Sie auf der Seite **Ausführende Konten** auf **Hinzufügen**.
+
+4. Wählen Sie ein ausführendes Windows-Konto aus, das die Anmeldeinformationen für SharePoint enthält, oder klicken Sie auf **Neu**, um eines zu erstellen.
+	>[AZURE.NOTE]Der Typ des ausführenden Kontos muss "Windows" sein.
+
+5. Klicken Sie auf **Speichern**.
+
+
+
 ## Geografische Standorte
 
 Wenn Sie Daten von Servern an unterschiedlichen geografischen Standorten analysieren möchten, sollten Sie die Verwendung einer Verwaltungsgruppe pro Standort in Betracht ziehen. Dadurch können Sie die Leistung der Datenübertragung vom Agent an die Verwaltungsgruppe verbessern.
 
-
-
-<!--HONumber=52--> 
+<!---HONumber=July15_HO2-->

@@ -68,7 +68,7 @@ Eine der Schlüsselfunktionen des .NET-Back-Ends ist die Möglichkeit, den Diens
 
     ![Konfigurieren des Ladens von Symbolen][SymbolLoading]
 
-3. Wählen Sie links den Knoten **Symbole** aus, und fügen Sie einen Verweis auf (SymbolSource)[[http://symbolsource.org]]-Server unter Verwendung des URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) hinzu. Symbole für das Mobile Services .NET-Back-End werden dort mit jeder neuen Version verfügbar gemacht.
+3. Wählen Sie den Knoten **Symbole** links, und fügen Sie eine Referenz zum (SymbolSource)[http://symbolsource.org]-Server mithilfe der URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) hinzu. Symbole für das Mobile Services .NET-Back-End werden dort mit jeder neuen Version verfügbar gemacht.
  
     ![Konfigurieren des Symbolservers][SymbolServer]
 
@@ -153,4 +153,5 @@ Migrationen können komplex sein und erfordern, dass der Zustand der Datenbank s
 [LogsServerExplorer]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/12.png
 [LogsPortal]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/13.png
 [HelpConflict]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/14.png
-<!--HONumber=54--> 
+
+<!---HONumber=July15_HO2-->

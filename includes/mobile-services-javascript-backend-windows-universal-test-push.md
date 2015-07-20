@@ -7,7 +7,7 @@
 
 	Nun sind beide Geräte für den Empfang von Pushbenachrichtigungen registriert.
 
-3. Starten Sie die Windows Store-App erneut, geben Sie unter **Insert a TodoItem** Text ein, und klicken Sie dann auf **Save**.
+3. Starten Sie die Windows Store-App erneut, geben Sie unter **Aufgabenelement einfügen** Text ein, und klicken Sie dann auf **Speichern**.
 
    	![](./media/mobile-services-javascript-backend-windows-universal-test-push/mobile-quickstart-push1.png)
 
@@ -19,4 +19,4 @@
 
    	![](./media/mobile-services-javascript-backend-windows-universal-test-push/mobile-quickstart-push5-wp8.png)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

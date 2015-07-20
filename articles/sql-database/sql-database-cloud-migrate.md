@@ -78,4 +78,7 @@ Sie müssen die neueste Version der Azure SQL-Datenbank-Tools für Visual Studio
 | Von Microsoft unterstütztes Tool. | Von der Community unterstütztes, von CodePlex heruntergeladenes Tool. | Von Microsoft unterstützte Tools mit optionaler Verwendung eines von der Community unterstützten, von CodePlex heruntergeladenen Tools. |
 | Einfach zu konfigurierender Prozess mit ein oder zwei Schritten. | Schematransformationen sowie Generierung und Bereitstellung in der Cloud werden über einen einzigen benutzerfreundlichen Assistenten koordiniert. | Komplexerer Prozess mit mehreren Schritten (einfacher, wenn nur ein Schema bereitgestellt wird). |
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=July15_HO2-->

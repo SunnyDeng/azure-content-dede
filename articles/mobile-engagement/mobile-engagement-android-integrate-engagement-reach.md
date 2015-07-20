@@ -16,11 +16,11 @@
 	ms.date="02/12/2015" 
 	ms.author="kapiteir" />
 
-# Integrieren von Engagement Reach unter Android
+#Integrieren von Engagement Reach unter Android
 
 > [AZURE.IMPORTANT]Bevor Sie dieser Anleitung folgen, müssen Sie das unter „Integrieren von Mobile Engagement unter Android“ beschriebene Integrationsverfahren befolgen.
 
-## Standardintegration
+##Standardintegration
 
 Das Reach SDK erfordert **Android Support-Bibliothek (Version 4)**.
 
@@ -57,16 +57,25 @@ Bearbeiten Sie Ihre `AndroidManifest.xml`-Datei:
 			    <category android:name="android.intent.category.DEFAULT" />
 			  </intent-filter>
 			</activity>
-			<receiver android:name="com.microsoft.azure.engagement.reach.EngagementReachReceiver"
-			  android:exported="false">
+			<activity android:name="com.microsoft.azure.engagement.reach.activity.EngagementLoadingActivity" android:theme="@android:style/Theme.Dialog">
+			  <intent-filter>
+			    <action android:name="com.microsoft.azure.engagement.reach.intent.action.LOADING"/>
+			    <category android:name="android.intent.category.DEFAULT"/>
+			  </intent-filter>
+			</activity>
+			<receiver android:name="com.microsoft.azure.engagement.reach.EngagementReachReceiver" android:exported="false">
 			  <intent-filter>
 			    <action android:name="android.intent.action.BOOT_COMPLETED"/>
 			    <action android:name="com.microsoft.azure.engagement.intent.action.AGENT_CREATED"/>
 			    <action android:name="com.microsoft.azure.engagement.intent.action.MESSAGE"/>
 			    <action android:name="com.microsoft.azure.engagement.reach.intent.action.ACTION_NOTIFICATION"/>
 			    <action android:name="com.microsoft.azure.engagement.reach.intent.action.EXIT_NOTIFICATION"/>
-			    <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
 			    <action android:name="com.microsoft.azure.engagement.reach.intent.action.DOWNLOAD_TIMEOUT"/>
+			  </intent-filter>
+			</receiver>
+			<receiver android:name="com.microsoft.azure.engagement.reach.EngagementReachDownloadReceiver">
+			  <intent-filter>
+			    <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
 			  </intent-filter>
 			</receiver>
 
@@ -96,9 +105,22 @@ Bearbeiten Sie Ihre `AndroidManifest.xml`-Datei:
 			-dontwarn android.**
 			-keep class android.support.v4.** { *; }
 
+## Systemeigener Push
+
+Nachdem Sie das Reach-Modul konfiguriert haben, müssen Sie den systemeigenen Push konfigurieren, um Kampagnen auf dem Gerät empfangen zu können.
+
+Für Android werden zwei Dienste unterstützt:
+
+  - Google Play-Geräte: Verwenden Sie [Google Cloud Messaging], indem Sie die [Anleitung unter Integrieren von GCM mit Engagement](mobile-engagement-android-gcm-integrate.md) befolgen.
+  - Amazon-Geräte: Verwenden Sie [Amazon Device Messaging], indem Sie die [Anleitung unter Integrieren von ADM mit Engagement](mobile-engagement-android-adm-integrate.md) befolgen
+
+Wenn Sie Ihre Vorgehensweise auf Amazon- und Google Play-Geräte ausrichten möchten, ist es möglich, für die Entwicklung alles in eine „AndroidManifest.xml/APK“ zu verpacken. Bei der Übermittlung an Amazon wird die Anwendung möglicherweise zurückgewiesen, wenn der GCM-Code erkannt wird.
+
+In diesem Fall sollten Sie mehrere APK-Dateien verwenden.
+
 **Ihre Anwendung ist jetzt bereit zum Empfangen und Anzeigen von Reichweitenkampagnen!**
 
-## Behandeln des Datenpush
+##Behandeln des Datenpush
 
 ### Integration
 
@@ -149,20 +171,7 @@ Der Rückgabetyp wird nur für Reach-Statistiken verwendet:
 -   `Replied` wird erhöht, wenn einer der Übertragungsempfänger entweder `true` oder `false` zurückgegeben hat.
 -   `Actioned` wird nur erhöht, wenn einer der Übertragungsempfänger `true` zurückgegeben hat.
 
-## Empfangen von Kampagnen zu beliebigen Zeiten
-
-Wenn das obige Integrationsverfahren befolgt wird, stellt der Engagement-Dienst nur eine Verbindung zu den Engagement-Servern her, wenn die Statistiken gemeldet werden müssen (zuzüglich einer Zeitüberschreitung von einer Minute). Folglich **können Reichweitenkampagnen nur während einer Benutzersitzung empfangen werden**. Erfreulicherweise kann Engagement so konfiguriert werden, dass es **Ihrer Anwendung gestattet wird, jederzeit Reichweitenkampagnen zu empfangen**, auch wenn sich das Gerät im Ruhemodus befindet (das Gerät muss natürlich über eine aktive Netzwerkverbindung verfügen, da Nachrichten verzögert werden, wenn das Gerät offline ist).
-
-Damit Sie die „jederzeit mögliche“ Pushübertragung nutzen können, müssen Sie in Abhängigkeit von den Zielgeräten mindestens einen systemeigenen Pushdienst verwenden:
-
-  - Google Play-Geräte: Verwenden Sie [Google Cloud Messaging], indem Sie die [Anleitung unter Integrieren von GCM mit Engagement](mobile-engagement-android-gcm-integrate.md) befolgen.
-  - Amazon-Geräte: Verwenden Sie [Amazon Device Messaging], indem Sie die [Anleitung unter Integrieren von ADM mit Engagement](mobile-engagement-android-adm-integrate.md) befolgen
-
-Wenn Sie Ihre Vorgehensweise auf Amazon- und Google Play-Geräte ausrichten möchten, ist es möglich, für die Entwicklung alles in eine „AndroidManifest.xml/APK“ zu verpacken. Bei der Übermittlung an Amazon wird die Anwendung möglicherweise zurückgewiesen, wenn der GCM-Code erkannt wird.
-
-In diesem Fall sollten Sie mehrere APK-Dateien verwenden.
-
-## Anpassen von Kampagnen
+##Anpassen von Kampagnen
 
 Sie können die im Reach-SDK bereitgestellten Layouts ändern, um Kampagnen anzupassen.
 
@@ -182,7 +191,7 @@ Eine In-App-Benachrichtigung ist standardmäßig eine Ansicht, die dank der Andr
 
 Sie können einfach die Datei `engagement_notification_area.xml` nach Belieben ändern, um das Aussehen der Benachrichtigungsüberlagerungen zu modifizieren.
 
-> [AZURE.NOTE]Die Datei  `engagement_notification_overlay.xml` ist die Datei, die zum Erstellen einer Benachrichtigungsüberlagerung verwendet wird. Sie enthält die Datei `engagement_notification_area.xml`. Sie können die Datei auch anpassen, um sie gemäß Ihren Anforderungen zu ändern (z. B. zur Positionierung des Benachrichtigungsbereichs innerhalb der Überlagerung).
+> [AZURE.NOTE]Die Datei `engagement_notification_overlay.xml` ist die Datei, die zum Erstellen einer Benachrichtigungsüberlagerung verwendet wird. Sie enthält die Datei `engagement_notification_area.xml`. Sie können die Datei auch anpassen, um sie gemäß Ihren Anforderungen zu ändern (z. B. zur Positionierung des Benachrichtigungsbereichs innerhalb der Überlagerung).
 
 ##### Einbeziehen des Benachrichtigungslayouts im Rahmen einer Aktivitätsüberlagerung
 
@@ -309,7 +318,7 @@ Wenn Sie für eine bestimmte Kategorie alternative Layouts verwenden möchten, k
 			  }
 			}
 
-**Beispiel für `my_notification_overlay.xml`:**
+**Beispiel für `my_notification_overlay.xml`: **
 
 			<?xml version="1.0" encoding="utf-8"?>
 			<RelativeLayout
@@ -324,7 +333,7 @@ Wenn Sie für eine bestimmte Kategorie alternative Layouts verwenden möchten, k
 
 Wie Sie sehen können, unterscheidet sich der Bezeichner für die Überlagerungsansicht vom Standardbezeichner. Es ist wichtig, dass jedes Layout einen eindeutigen Bezeichner für Überlagerungen verwendet.
 
-**Beispiel für `my_notification_area.xml`:**
+**Beispiel für `my_notification_area.xml`: **
 
 			<?xml version="1.0" encoding="utf-8"?>
 			<merge
@@ -629,12 +638,13 @@ Hier folgt der interessante Teil der Implementierung:
 
 Wenn Sie aufgerufen `actionContent(this)` und dann die Aktivität beendet haben, kann `exitContent(this)` ohne Auswirkungen sicher aufgerufen werden.
 
-## Test
+##Test
 
 Überprüfen Sie jetzt Ihre Integration, indem Sie den Abschnitt „Testen der Engagement-Integration unter Android“ lesen.
 
 [hier]: http://developer.android.com/tools/extras/support-library.html#Downloading
 [Google Cloud Messaging]: http://developer.android.com/guide/google/gcm/index.html
 [Amazon Device Messaging]: https://developer.amazon.com/sdk/adm.html
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

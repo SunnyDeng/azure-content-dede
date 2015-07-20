@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Azure Machine Learning-Webdienstparametern | Azure" 
+	pageTitle="Verwenden von Azure Machine Learning-Webdienstparametern | Microsoft Azure" 
 	description="Anleitung: Verwenden von Azure Machine Learning Webdienstparametern, um das Verhalten des Modells beim Zugriff auf den Webdienst zu ändern." 
 	services="machine-learning" 
 	documentationCenter="" 
@@ -13,18 +13,18 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/22/2015" 
+	ms.date="06/29/2015" 
 	ms.author="raymondl;garye"/>
 
 #Verwenden von Azure Machine Learning-Webdienstparametern
 
 Ein Azure Machine Learning-Webdienst wird erstellt, indem ein Experiment veröffentlicht wird, das Module mit konfigurierbaren Parametern enthält. In einigen Fällen kann es vielleicht erforderlich sein, das Verhalten des Moduls zu ändern, während der Webdienst ausgeführt wird. *Webdienstparameter* erlauben Ihnen, dies zu tun.
 
-Ein typisches Beispiel ist das Einrichten des [Reader][reader]-Moduls, damit die Benutzer des veröffentlichten Webdiensts beim Zugreifen auf den Webdienst eine andere Datenquelle angeben können. Ein weiteres Beispiel ist die Konfiguration des [Writer][writer]-Moduls, damit ein anderes Ziel angegeben werden kann. Zu weiteren Beispielen zählen die Änderung der Anzahl von Bits für das Modul [Feature Hashing][feature-hashing] oder der Anzahl der gewünschten Funktionen für das Modul  [Filter-Based Feature Selection][filter-based-feature-selection].
+Ein typisches Beispiel ist das Einrichten des [Reader][reader]-Moduls, damit die Benutzer des veröffentlichten Webdiensts beim Zugreifen auf den Webdienst eine andere Datenquelle angeben können. Ein weiteres Beispiel ist die Konfiguration des [Writer][writer]-Moduls, damit ein anderes Ziel angegeben werden kann. Zu weiteren Beispielen zählen die Änderung der Anzahl von Bits für das Modul [Feature Hashing][feature-hashing] oder der Anzahl der gewünschten Funktionen für das Modul [Filter-Based Feature Selection][filter-based-feature-selection].
 
-Sie können Webdienstparameter definieren und einem oder mehreren Modulparametern zuordnen, und Sie können angeben, ob diese Parameter erforderlich oder optional sind. Der Benutzer des Webdiensts kann dann beim Zugreifen auf den Dienst Werte für diese Parameter angeben. Das Verhalten des Moduls wird dann entsprechend angepasst.
+Sie können Web Service-Parameter definieren und einem oder mehreren Modulparametern zuordnen, und Sie können angeben, ob diese erforderlich oder optional sind. Der Benutzer des Webdiensts kann dann Werte für diese Parameter für den Zugriff auf den Dienst angeben, und die Aktionen des Moduls werden zur Laufzeit angepasst.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
 
 ##Festlegen und Verwenden von Webdienstparametern
@@ -48,7 +48,8 @@ Nehmen wir beispielsweise an, wir hätten ein Experiment mit einem [Writer][writ
 
     - Wählen Sie unter **Please specify data destination** (Datenziel angeben) das Ziel "Azure Blob Storage" (Azure-Blob-Speicher" aus.
     - Wählen Sie unter **Please specify authentication type** (Authentifizierungstyp angeben) die Option "Account" (Konto) aus.
-    - Geben Sie die Kontoinformationen für den Azure-Blob-Speicher ein. <p />
+    - Geben Sie die Kontoinformationen für den Azure-Blobspeicher ein. 
+    <p />
 
 3.	Klicken Sie auf das Symbol rechts neben **Path to blob beginning with container parameter** (Blob-Pfad beginnt mit Containerparameter). Es sieht folgendermaßen aus:
 
@@ -88,5 +89,6 @@ Weitere Informationen zum Zugreifen auf einen Machine Learning-Webdienst finden 
 [filter-based-feature-selection]: https://msdn.microsoft.com/library/azure/918b356b-045c-412b-aa12-94a1d2dad90f/
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 [writer]: https://msdn.microsoft.com/library/azure/7a391181-b6a7-4ad4-b82d-e419c0d6522c/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

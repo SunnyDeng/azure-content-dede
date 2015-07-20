@@ -88,4 +88,4 @@ Als Nächstes aktualisieren Sie die Quickstart-App, um unter Verwendung der beim
 [So erstellen Sie ein Speicherkonto]: /manage/services/storage/how-to-create-a-storage-account
 [App-Einstellungen]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO2-->

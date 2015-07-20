@@ -16,7 +16,9 @@
 	ms.date="04/13/2015" 
 	ms.author="glenga"/>
 
-#Registrieren Ihrer App für die Twitter-Anmeldung mit Mobile Services
+#Registrieren Ihrer Apps für die Twitter-Anmeldung mit Mobile Services
+
+[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../../includes/mobile-services-selector-register-identity-provider.md)]
 
 In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Twitter zur Authentifizierung mit Azure Mobile Services zu verwenden.
 
@@ -67,5 +69,6 @@ Sie können nun ein Twitter-Login für die Authentifizierung in Ihrer App verwen
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet/
 
 [Azure Management Portal]: https://manage.windowsazure.com/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

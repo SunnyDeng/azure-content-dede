@@ -1,3 +1,4 @@
+
 #### So installieren Sie Wartungsmodus-Hotfixes über Windows PowerShell für StorSimple
 
 > [AZURE.IMPORTANT]Im Wartungsmodus müssen Sie den Hotfix zunächst auf einem und dann auf dem anderen Controller anwenden.
@@ -16,4 +17,4 @@
 
 6. Nachdem alle Hotfixes angewendet wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [Beenden des Wartungsmodus](#exit-maintenance-mode).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

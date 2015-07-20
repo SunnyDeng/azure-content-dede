@@ -336,4 +336,4 @@ Das Integritätsmodell wird hauptsächlich für Überwachung und Diagnose, Evalu
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

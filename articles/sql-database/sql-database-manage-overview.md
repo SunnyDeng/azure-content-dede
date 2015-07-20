@@ -42,5 +42,6 @@ Weitere Informationen zum Verwalten von Azure SQL-Datenbanken mit SSMS und SSDT 
 Sie können Befehlszeilentools wie z. B. PowerShell zur Verwaltung und zur Automatisierung von Azure SQL-Datenbanken und Azure-Ressourcen-Bereitstellungen verwenden. Microsoft empfiehlt, dieses Tool zur Verwaltung einer großen Anzahl von Azure SQL-Datenbanken und zum Bereitstellen von Ressourcenänderungen in einer Produktionsumgebung zu verwenden.
 
 Für weitere Informationen zum Verwalten von Azure SQL-Datenbanken mit Befehlszeilentools [klicken Sie hier](sql-database-command-line-tools.md)
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO2-->

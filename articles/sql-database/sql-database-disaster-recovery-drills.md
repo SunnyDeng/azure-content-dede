@@ -51,7 +51,7 @@ Eine Datenbank, die durch die standardmäßige Georeplikation geschützt ist, ka
 
 ####Simulieren von Ausfällen
 
-- Simulieren Sie die Workloads auf der primären Datenbank. Wenn die primäre Datenbank zum Zeitpunkt der Beendigung aktiv ist, können Datenverluste auftreten, die das Verfahren realistischer machen.
+- Simulieren Sie die Arbeitsauslastung auf der primären Datenbank. Wenn die primäre Datenbank zum Zeitpunkt der Beendigung aktiv ist, können Datenverluste auftreten, die das Verfahren realistischer machen.
 - Löschen Sie die primäre Datenbank, oder [erzwingen Sie das Beenden](sql-database-disaster-recovery.md) der Verbindung ausgehend von der sekundären Datenbank.
 
 ####Wiederherstellen
@@ -81,4 +81,6 @@ Die Notfallwiederherstellungsverfahren werden unter Verwendung eines parallelen 
 
 - Führen Sie das Verfahren aus, indem Sie die Anwendungsintegrität nach der Wiederherstellung sicherstellen (Verbindungszeichenfolgen, Anmeldungen, grundlegende Funktionstests oder andere Überprüfungen, die Teil der Standardabmeldeverfahren von Anwendungen sind).
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=July15_HO2-->

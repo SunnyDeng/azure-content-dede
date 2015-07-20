@@ -44,7 +44,7 @@ Gehen Sie wie folgt vor, um ein auf DataStax basierendes Apache Cassandra-Cluste
 
 ### Schritt 1-a: Herunterladen der Vorlagendateien mithilfe von PowerShell
 
-Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\Azure\\Vorlagen\\DataStax").
+Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\\Azure\\Vorlagen\\DataStax").
 
 Fügen Sie dabei den Namen Ihres lokalen Ordners ein, und führen Sie damit die folgenden Befehle aus:
 
@@ -84,7 +84,7 @@ Klonen Sie das komplette Vorlagen-Repository mithilfe eines Git-Clients Ihrer Wa
 
 	git clone https://github.com/Azure/azure-quickstart-templates C:\Azure\Templates
 
-Ermitteln Sie anschließend unter "C:\Azure\\Vorlagen" den Ordner **datastax-on-ubuntu**.
+Ermitteln Sie anschließend unter "C:\\Azure\\Vorlagen" den Ordner **datastax-on-ubuntu**.
 
 ### Schritt 2 (optional): Erlernen der Vorlagenparameter
 
@@ -482,4 +482,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

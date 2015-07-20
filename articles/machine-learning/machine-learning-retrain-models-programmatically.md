@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Programmgesteuertes erneutes Trainieren von Machine Learning-Modellen | Azure" 
+	pageTitle="Programmgesteuertes erneutes Trainieren von Machine Learning-Modellen | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie ein Modell programmgesteuert erneut trainieren und den Webdienst aktualisieren, sodass er das neu trainierte Modell in Azure Azure Machine Learning verwendet." 
 	services="machine-learning" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/22/2015"
+	ms.date="06/29/2015"
 	ms.author="raymondl;garye"/>
 
 
@@ -25,7 +25,7 @@ Häufig müssen Sie das Modell, das Sie im ersten Schritt erstellt haben, mit de
 
 In diesem Dokument wird der obige Prozess beschrieben und gezeigt, wie Sie die Retraining-APIs verwenden.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)] 
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
  
 
 ##Warum erneut trainieren: Problemdefinition  
@@ -40,8 +40,7 @@ Der Prozess beinhaltet die folgenden Komponenten: ein Trainingsexperiment und ei
  
 Diagramm 1: Übersicht über den Prozess des erneuten Trainings
 
-1. *Erstellen eines Trainingsexperiments*  
-	Wir verwenden hier das Experiment "Sample 5 (Train, Test, Evaluate for Binary Classification: Adult Dataset)" aus den Azure-ML-Beispielexperimenten als Beispiel. Wie Sie unten sehen können, haben ich das Beispiel etwas vereinfacht, indem ich einige Module entfernt habe. Zudem habe ich das Experiment "Census Model" genannt.
+1. *Erstellen eines Trainingsexperiments* Wir verwenden hier das Experiment "Sample 5 (Train, Test, Evaluate for Binary Classification: Adult Dataset)" aus den Azure-ML-Beispielexperimenten als Beispiel. Wie Sie unten sehen können, haben ich das Beispiel etwas vereinfacht, indem ich einige Module entfernt habe. Zudem habe ich das Experiment "Census Model" genannt.
 
  	![][2]
 
@@ -53,9 +52,7 @@ Diagramm 1: Übersicht über den Prozess des erneuten Trainings
 	Nachdem die Ausführung des Experiments beendet ist, klicken wir auf "Create Scoring Experiment" (Bewertungsexperiment erstellen). Wie unten dargestellt, wird daraufhin ein Bewertungsexperiment erstellt. Das Modell wird als trainiertes Modell gespeichert, und es werden Ein- und Ausgabemodule für den Webdienst hinzugefügt. Als Nächstes klicken wir auf "Run" (Ausführen).
 
 	Nach Abschluss der Ausführung des Experiments wird das Bewertungsexperiment durch Klicken auf "Publish Web Service" (Webdienst veröffentlichen) veröffentlicht und ein Standardendpunkt erstellt. Das trainierte Modell in diesem Webdienst ist aktualisierbar, wie unten dargestellt. Die Details für diesen Endpunkt werden dann auf dem Bildschirm angezeigt.  
-3. *Veröffentlichen des Trainingsexperiments als Webdienst*  
-	Damit das trainierte Modell erneut trainiert werden kann, müssen wir das Trainingsexperiment, das wir in Schritt 1 erstellt haben, als Webdienst veröffentlichen. Dieser Webdienst benötigt ein Webdienst-Ausgabemodul, das mit dem Modul [Train Model][train-model] verbunden ist, um neue trainierte Modelle erzeugen zu können.
-Klicken Sie auf das Symbol für Experimente im linken Bereich, und klicken Sie dann auf das Experiment namens "Census Model", um wieder zum Trainingsexperiment zurückzukehren.  
+3. *Veröffentlichen des Trainingsexperiments als Webdienst* Damit das trainierte Modell erneut trainiert werden kann, müssen wir das Trainingsexperiment, das wir in Schritt 1 erstellt haben, als Webdienst veröffentlichen. Dieser Webdienst benötigt ein Webdienst-Ausgabemodul, das mit dem Modul [Train Model][train-model] verbunden ist, um neue trainierte Modelle erzeugen zu können. Klicken Sie auf das Symbol für Experimente im linken Bereich, und klicken Sie dann auf das Experiment namens "Census Model", um wieder zum Trainingsexperiment zurückzukehren.  
 
 	Wir fügen dem Workflow dann ein Webdienst-Eingabemodul und zwei Webdienst-Ausgabemodule hinzu. Die Webdienst-Ausgabe für "Train Model" liefert uns das neue trainierte Modell. Das mit dem Modul "Evaluate Model" verknüpfte Ausgabemodul gibt die Ausgabe dieses Moduls für das Bewertungsmodell zurück.
 
@@ -63,32 +60,28 @@ Klicken Sie auf das Symbol für Experimente im linken Bereich, und klicken Sie d
  
 	![][4]
 
-	Wir als Nächstes klicken wir auf die Schaltfläche "Publish Web Service" (Webdienst veröffentlichen) und dann auf "Yes" (Ja). Dadurch wird das Trainingsexperiment als Webdienst veröffentlicht, der trainierte Modelle und Modellbewertungsergebnisse erzeugt. Das Webdienst-Dashboard wird mit dem API-Schlüssel und der API-Hilfeseite für die Batchausführung angezeigt. Beachten Sie, dass nur die Methode Batch Execution (Batchausführung) zum Erstellen von trainierten Modelle verwendet werden kann.  
-4. *Hinzufügen eines neuen Endpunkts*  
-	Der Bewertungswebdienst, den wir oben in Schritt 2 veröffentlicht haben, wurde mit einem Standardendpunkt erstellt. Die Standardendpunkte werden mit dem ursprünglichen Experiment synchronisiert, und daher kann das trainierte Modell, das einem Standardendpunkt zugeordnet ist, nicht ersetzt werden.
-Zum Erstellen eines aktualisierbaren Endpunkts besuchen Sie das Azure-Portal, und klicken Sie auf "Add Endpoint" (Endpunkt hinzufügen) (nähere Informationen finden Sie [hier](machine-learning-create-endpoint.md)).	
-5. *Erneutes Trainieren des Modells mit neuen Daten und BES*  
-	Zum Aufrufen der Retraining-APIs erstellen wir eine neue C#-Konsolenanwendung in Visual Studio (Neu -> Projekt -> Windows Desktop -> Konsolenanwendung).  
+	Als Nächstes klicken wir auf die Schaltfläche "Publish Web Service" (Webdienst veröffentlichen) und dann auf "Yes" (Ja). Dadurch wird das Trainingsexperiment als Webdienst veröffentlicht, der ein trainiertes Modell und Modellauswertungsergebnisse erzeugt. Das Webdienst-Dashboard wird mit dem API-Schlüssel und der API-Hilfeseite für die Batchausführung angezeigt. Beachten Sie, dass nur die Methode Batch Execution (Batchausführung) zum Erstellen von trainierten Modelle verwendet werden kann.  
+4. *Hinzufügen eines neuen Endpunkts* Der Bewertungswebdienst, den wir oben in Schritt 2 veröffentlicht haben, wurde mit einem Standardendpunkt erstellt. Die Standardendpunkte werden mit dem ursprünglichen Trainings- und Bewertungsexperiment synchronisiert, daher kann ein trainiertes Modell, das einem Standardendpunkt zugeordnet ist, nicht ausgetauscht werden. Zum Erstellen eines aktualisierbaren Endpunkts besuchen Sie das Azure-Portal, und klicken Sie auf "Add Endpoint" (Endpunkt hinzufügen) (nähere Informationen finden Sie [hier](machine-learning-create-endpoint.md)).	
+
+5. *Erneutes Trainieren des Modells mit neuen Daten und BES* Zum Aufrufen der Retraining-APIs erstellen wir eine neue C#-Konsolenanwendung in Visual Studio (Neu -> Projekt -> Windows Desktop -> Konsolenanwendung).
 
 	Dann kopieren wir den C#-Beispielcode aus der Hilfeseite des Trainingswebdiensts-API für die Batchausführung (der in Schritt 3 oben erstellt wurde) und fügen ihn in die Datei "Program.cs" ein, wobei wir sicherstellen, dass der Namespace intakt bleibt.
 
-	Beachten Sie, dass der Beispielcode Kommentare enthält, welche auf die Teile des Codes hinweisen, die aktualisiert werden müssen.
+	Beachten Sie, dass der Beispielcode Kommentare enthält, welche auf die Teile des Codes hinweisen, die aktualisiert werden müssen. Darüber hinaus muss bei Angabe des Speicherorts "output1" in der Nutzlast der Anforderung die Dateierweiterung von "RelativeLocation" zu ".ileaner" geändert werden, wie in "Outputs" vorgegeben: {Global Parameters ... { "output1": { "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=mystorageacct;AccountKey=Dx9WbMIThAvXRQWap/aLnxT9LV5txxw==", "RelativeLocation": "mycontainer/output1results.ilearner"}}.
 
 	1. Bereitstellen von Azure-Speicherinformationen Der Beispielcode für BES lädt eine Datei von einem lokalen Laufwerk (z. B. "C:\\temp\\CensusIpnput.csv") in den Azure-Speicher zur Verarbeitung hoch und schreibt die Ergebnisse wieder in den Azure-Speicher.  
 
 		Dazu müssen Sie Informationen zum Namen, Schlüssel und Container des Speicherkontos aus dem Azure-Verwaltungsportal für Ihr Speicherkonto abrufen und den vorliegenden Code entsprechend aktualisieren. Sie müssen auch sicherstellen, dass die Eingabedatei an dem im Code angegebenen Speicherort verfügbar ist.
 
-		Da wir dieses Trainingsexperiment mit zwei Ausgabemodulen einrichten mussten, müssen auch die Ergebnisse Speicherortinformationen für beide enthalten (siehe  unten). "output1" ist die Ausgabe des trainierten Modells, und "output2" ist die Ausgabe des Bewertungsmodells.
+		Da wir dieses Trainingsexperiment mit zwei Ausgabemodulen einrichten mussten, müssen auch die Ergebnisse Speicherortinformationen für beide enthalten (siehe unten). "output1" ist die Ausgabe des trainierten Modells, und "output2" ist die Ausgabe des Bewertungsmodells. Beachten Sie auch, dass die Dateierweiterung des Ergebnisses für das trainierte Modul (Output1) ".linear" lautet, nicht ".csv".
 
 		![][6]
  
-6. *Auswerten der Ergebnisse des erneuten Trainings*  
-	Unter Verwendung der Kombination von BaseLocation, RelativeLocaiton und SasBlobToken aus den oben genannten Ausgabeergebnissen für "output2" können wir die Ergebnisse des erneut trainierten Modells anzeigen, indem wir die vollständige URL in die Adressleiste des Browsers einfügen.
+6. *Auswerten der Ergebnisse des erneuten Trainings* Unter Verwendung der Kombination von BaseLocation, RelativeLocaiton und SasBlobToken aus den oben genannten Ausgabeergebnissen für "output2" können wir die Ergebnisse des erneut trainierten Modells anzeigen, indem wir die vollständige URL in die Adressleiste des Browsers einfügen.
 
 	Daran können wir erkennen, ob das neu trainierte Modell gut genug ist, um das vorhandene Modell zu ersetzen.
 
-7. *Aktualisieren des trainierten Modells für den hinzugefügten Endpunkt*  
-	Um den Prozess abzuschließen, müssen wir das trainierte Modell des oben in Schritt 4 erstellten Bewertungsendpunkts aktualisieren.
+7. *Aktualisieren des trainierten Modells für den hinzugefügten Endpunkt* Um den Prozess abzuschließen, müssen wir das trainierte Modell des oben in Schritt 4 erstellten Bewertungsendpunkts aktualisieren.
 
 	Die oben genannten BES-Ausgabe zeigt die Informationen für das Ergebnis des erneuten Trainings für "output1", das die Speicherortinformationen für das erneut trainierte Modell enthält. Nun müssen dieses trainierte Modell nehmen und den Bewertungsendpunkt (der in Schritt 4 erstellt wurde) aktualisieren.
 
@@ -112,5 +105,6 @@ Mithilfe der Retraining-APIs können wir das trainierte Modell eines Vorhersagew
 
 <!-- Module References -->
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
+ 
 
-<!---HONumber=54--> 
+<!---HONumber=July15_HO2-->

@@ -235,7 +235,7 @@ Mahout-Aufträge entfernen keine temporären Daten, die bei der Verarbeitung des
 
 ##Nächste Schritte
 
-Nachdem Sie sich mit Mahout vertraut gemacht haben, können Sie sich andere Methoden der Datenverarbeitung in HDInsight zuwenden:
+Nachdem Sie sich mit Mahout vertraut gemacht haben, können Sie sich anderen Methoden der Datenverarbeitung in HDInsight zuwenden:
 
 * [Hive mit HDInsight](../hadoop-use-hive.md)
 * [Pig mit HDInsight](../hadoop-use-pig.md)
@@ -255,4 +255,4 @@ Nachdem Sie sich mit Mahout vertraut gemacht haben, können Sie sich andere Meth
 [tools]: https://github.com/Blackmist/hdinsight-tools
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

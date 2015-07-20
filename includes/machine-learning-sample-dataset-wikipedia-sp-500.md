@@ -1,3 +1,3 @@
 Die Daten stammen aus Wikipedia (<a href="http://www.wikipedia.org/">http://www.wikipedia.org/</a>) und basieren auf Artikeln der einzelnen S&P-500-Unternehmen, die als XML-Daten gespeichert wurden.<p> </p>Das DataSet wurde vor dem Hochladen in Azure ML Studio wie folgt verarbeitet:<ul><li>Extrahieren der Textinhalte für die einzelnen Unternehmen</li><li>Entfernen der Wiki-Formatierung</li><li>Entfernen aller nicht alphanumerischen Zeichen</li><li>Konvertieren sämtlicher Texte in Kleinbuchstaben</li><li>Hinzufügen bekannter Firmenkategorien</li></ul><p> </p>Beachten Sie, dass für einige Unternehmen keine Artikel gefunden werden konnten, daher ist die Anzahl der Datensätze kleiner als 500.
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO2-->

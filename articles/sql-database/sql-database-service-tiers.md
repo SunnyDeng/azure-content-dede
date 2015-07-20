@@ -87,5 +87,6 @@ Die Dienstebene "Premium" ist für unternehmenskritische Anwendungen ausgelegt. 
 Erfahren Sie mehr über die Preise für diese Ebenen unter [SQL-Datenbank Preise](http://azure.microsoft.com/pricing/details/sql-database/).
 
 Nachdem Sie jetzt die Ebenen der SQL-Datenbank kennen, können Sie sie mit einer [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) ausprobieren und sich mit der [Erstellung Ihrer ersten SQL-Datenbank](sql-database-get-started.md) befassen!
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO2-->

@@ -19,4 +19,4 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
    	![](./media/mobile-services-javascript-backend-run-app/mobile-data-browse.png)
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO2-->

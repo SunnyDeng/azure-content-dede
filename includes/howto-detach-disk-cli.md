@@ -1,3 +1,4 @@
+
 #Trennen eines Datenträgers von einem virtuellen Computer mithilfe der CLI
 
 Wenn Sie einen Datenträger, der an einen virtuellen Computer angefügt ist, nicht mehr benötigen, können Sie ihn leicht trennen. Dadurch wird der Datenträger von dem virtuellen Computer entfernt, aber nicht aus dem Speicher. Wenn Sie die vorhandenen Daten erneut auf dem Datenträger verwenden möchten, können Sie ihn erneut an denselben virtuellen Computer oder an einen anderen anfügen.
@@ -47,4 +48,4 @@ Exemplarische Vorgehensweise einschließlich Terminalausgabe:
     data:    1    5         kmlinux-f8ef0006ab182209.vhd
     info:    vm disk list command OK
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

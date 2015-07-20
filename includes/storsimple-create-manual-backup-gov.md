@@ -1,3 +1,4 @@
+
 #### So erstellen Sie eine manuelle Sicherung
 
 1. Navigieren Sie auf der Seite **Geräte** zu der Registerkarte **Sicherungsrichtlinien**. Auf dieser Registerkarte werden alle Sicherungsrichtlinien in einem Tabellenformat aufgelistet, darunter auch die Richtlinie für das Volume, das Sie sichern möchten.
@@ -20,4 +21,4 @@
 
   Die Sicherung sollte in der Liste der Sicherungssätze enthalten sein, die im Katalog angezeigt wird.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

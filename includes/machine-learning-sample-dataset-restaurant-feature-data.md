@@ -1,3 +1,3 @@
 Eine Sammlung von Metadaten zu Restaurants und ihren Merkmalen wie Speisetyp, Stil und Lage.<p> </p><b>Verwendung:</b> Verwendung dieses DataSets in Kombination mit den anderen beiden Restaurant-DataSets, um ein Empfehlungssystem zu trainieren und zu testen. <p> </p><b>Zugehörige Untersuchungen:</b> Bache, K. und Lichman, M. (2013). UCI Machine Learning Repository <a href="http://archive.ics.uci.edu/ml">http://archive.ics.uci.edu/ml</a>. Irvine, C. A.: University of California, School of Information and Computer Science.
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO2-->

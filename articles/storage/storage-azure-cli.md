@@ -214,4 +214,4 @@ In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen zum Az
 [Image1]: ./media/storage-azure-cli/azure_command.png
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

@@ -20,7 +20,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-adal-sso](../../includes/mobile-services-selector-adal-sso.md)]
 
-## Übersicht
+##Übersicht
 
 In diesem Lernprogramm fügen Sie dem Schnellstartprojekt mithilfe der Active Directory-Authentifizierungsbibliothek Authentifizierung hinzu, um vom [Client angewiesene Anmeldevorgänge](http://msdn.microsoft.com/library/azure/jj710106.aspx) mit Azure Active Directory zu unterstützen. Zur Unterstützung von [dienstangewiesenen Anmeldevorgängen](http://msdn.microsoft.com/library/azure/dn283952.aspx) mit Azure Active Directory, beginnen Sie mit dem Lernprogramm zum [Hinzufügen von Authentifizierung zu Mobile Services-Apps](../mobile-services-dotnet-backend-windows-store-dotnet-get-started-users.md).
 
@@ -30,7 +30,7 @@ Um Benutzer authentifizieren zu können, müssen Sie Ihre Anwendung in Azure Act
 >[AZURE.NOTE]In diesem Lernprogramm erfahren Sie, wie Sie die Authentifizierung per einmaliger Anmeldung in Azure Active Directory für Windows Store-Apps mithilfe eines [vom Client angewiesenen Anmeldevorgangs](http://msdn.microsoft.com/library/azure/jj710106.aspx) durchführen. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
 
 
-## Voraussetzungen
+##Voraussetzungen
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
@@ -41,12 +41,12 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 [AZURE.INCLUDE [mobile-services-dotnet-adal-register-service](../../includes/mobile-services-dotnet-adal-register-service.md)]
 
-## Registrieren Ihre App beim Azure Active Directory
+##Registrieren Ihre App beim Azure Active Directory
 
 Um Ihre App bei Azure Active Directory zu registrieren, müssen Sie die App im Windows Store zuweisen und benötigen eine Paket-Sicherheits-ID (SID) für die App. Die Paket-SID wird mit den systemeigenen Anwendungseinstellungen in Azure Active Directory registriert.
 
 
-### Zuordnen der App mit einem neuen Store-App-Namen
+###Zuordnen der App mit einem neuen Store-App-Namen
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Client-App-Projekt und klicken Sie auf **Store** und **App dem Store zuordnen**
 
@@ -63,7 +63,7 @@ Um Ihre App bei Azure Active Directory zu registrieren, müssen Sie die App im W
 5. Klicken Sie auf **Zuordnen**, um die App zum Store-Namen zuzuordnen.
 
 
-### Rufen Sie die Paket-SID für Ihre App ab.
+###Rufen Sie die Paket-SID für Ihre App ab.
 
 Nun müssen Sie die Paket-SID abrufen, die in den systemeigenen App-Einstellungen konfiguriert ist.
 
@@ -83,7 +83,7 @@ Nun müssen Sie die Paket-SID abrufen, die in den systemeigenen App-Einstellunge
 
     ![][6]
 
-### Erstellen der systemeigenen App-Registrierung
+###Erstellen der systemeigenen App-Registrierung
 
 1. Navigieren Sie im **Azure-Verwaltungsportal** zu [Active Directory], und klicken Sie dann auf Ihr Verzeichnis.
 
@@ -115,11 +115,11 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
 
 
 
-## Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung
+##Konfigurieren des mobilen Diensts zur Verwendung von Authentifizierung
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
-## Hinzufügen des Authentifizierungscodes zur Client-App
+##Hinzufügen des Authentifizierungscodes zur Client-App
 
 1. Öffnen Sie Ihr Windows Store-Client-App-Projekt in Visual Studio.
 
@@ -181,11 +181,11 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
         }
 
 
-## Testen des Clients mit Authentifizierung
+##Testen des Clients mit Authentifizierung
 
 1. Führen Sie die Client-App in Visual Studio aus.
 2. Sie werden aufgefordert, sich bei Ihrem Azure Active Directory anzumelden.  
-3. Die App authentifiziert sich und gibt die TodoItems zurück.
+3. Die App wird authentifiziert sich und gibt die TodoItem-Elemente zurück.
 
     ![][15]
 
@@ -216,4 +216,5 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
 [Erste Schritte mit Daten]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 [Windows Dev Center-Dashboard]: http://go.microsoft.com/fwlink/p/?LinkID=266734
-<!--HONumber=54--> 
+
+<!---HONumber=July15_HO2-->

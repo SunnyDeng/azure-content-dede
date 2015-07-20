@@ -57,7 +57,7 @@ Nachdem Sie Ihr VNet erstellt haben, können Sie ihm neue VMs hinzufügen. Es is
 
 ## Nächste Schritte
 
-[ Verwalten der Eigenschaften eines virtuellen Netzwerks (VNet)](../virtual-networks-settings)
+[Verwalten der Eigenschaften eines virtuellen Netzwerks (VNet)](../virtual-networks-settings)
 
 [ Verwalten von DNS-Servern, die von einem virtuellen Netzwerk (VNet) verwendet werden](../virtual-networks-manage-dns-in-vnet)
 
@@ -66,4 +66,4 @@ Nachdem Sie Ihr VNet erstellt haben, können Sie ihm neue VMs hinzufügen. Es is
 [Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

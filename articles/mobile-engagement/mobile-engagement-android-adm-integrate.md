@@ -17,13 +17,13 @@
 	ms.author="kapiteir" />
 
 
-# So integrieren Sie ADM in Engagement
+#So integrieren Sie ADM in Engagement
 
 > [AZURE.IMPORTANT]Bevor Sie dieser Anleitung folgen, müssen Sie das unter „Integrieren von Mobile Engagement unter Android“ beschriebene Integrationsverfahren befolgen.
 >
 > Das vorliegende Dokument ist nur hilfreich, wenn Sie das Reach-Modul für die jederzeitige Kampagnenunterstützung integriert haben. Lesen Sie zunächst das Dokument "So integrieren Sie Engagement Reach auf Android", um Informationen zum Integrieren von Reach-Kampagnen zu erhalten.
 
-## Einführung
+##Einführung
 
 Durch die Integration von ADM kann Ihre Anwendung selbst dann Pushnachrichten empfangen, wenn sie nicht ausgeführt wird.
 
@@ -31,7 +31,7 @@ Durch die Integration von ADM kann Ihre Anwendung selbst dann Pushnachrichten em
 
 > [AZURE.IMPORTANT]Von Amazon Device Messaging werden nur Amazon Kindle-Geräte mit Android 4.0.3 oder höher unterstützt, dieser Code kann jedoch ohne Sicherheitsbedenken auf anderen Geräten integriert werden. Wenn die Anwendung nicht per ADM aktiviert werden kann, wird die Engagement-Benachrichtigung beim nächsten Anwendungsstart empfangen.
 
-## Anmelden bei ADM
+##Anmelden bei ADM
 
 Sofern nicht bereits geschehen, müssen Sie ADM über Ihr Amazon-Konto aktivieren.
 
@@ -42,7 +42,7 @@ Nach Abschluss des Verfahrens erhalten Sie:
 -   OAuth-Anmeldeinformationen(eine Client-ID und einen Clientschlüssel) für Engagement, um Pushnachrichten an Ihre Geräte zu senden.
 -   Einen API-Schlüsse, der in Ihre Anwendung integriert werden muss.
 
-## SDK-Integration
+##SDK-Integration
 
 ### Verwalten von Geräteregistrierungen
 
@@ -100,7 +100,7 @@ Stellen Sie sicher, dass Sie die folgenden Berechtigungen in der Datei `AndroidM
 		<uses-permission android:name="<your_package_name>.permission.RECEIVE_ADM_MESSAGE"/>
 		<permission android:name="<your_package_name>.permission.RECEIVE_ADM_MESSAGE" android:protectionLevel="signature"/>
 
-## Gewähren von OAuth-Anmeldeinformationen für Engagement
+##Gewähren von OAuth-Anmeldeinformationen für Engagement
 
 Übermitteln Sie Ihre OAuth-Anmeldeinformationen (Client-ID und Clientschlüssel) an $/#application/YOUR_APPID/native-push.
 
@@ -111,5 +111,6 @@ Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Opti
 [ADM-Clientbibliothek]: https://developer.amazon.com/sdk/adm/setup.html
 [ADM-Integration]: https://developer.amazon.com/sdk/adm/integrating-app.html
 [dieses Verfahren]: https://developer.amazon.com/sdk/adm/integrating-app.html#Asset
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

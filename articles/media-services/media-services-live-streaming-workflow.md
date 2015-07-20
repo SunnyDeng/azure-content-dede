@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Bereitstellen von Livestreaming mit Azure Media Services" 
-	description="In diesem Thema werden die Schritte eines typischen Media Services-Livestreaming-Workflows beschrieben." 
+	description="Dieses Thema bietet einen Überblick über die beim Livestreaming beteiligten Hauptkomponenten." 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -13,105 +13,76 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/10/2015" 
+	ms.date="05/26/2015" 
 	ms.author="juliako"/>
 
 
-#Bereitstellen von Livestreaming mit Azure Media Services
+#Bereitstellen von Livestreamingereignissen mit Azure Media Services
 
 ##Übersicht
 
-In diesem Thema werden die Schritte eines typischen Azure Media Services (AMS)-Livestreaming-Workflows beschrieben. Jeder Schritt enthält Links zu relevanten Themen. Für Aufgaben, die mithilfe verschiedener Technologien erledigt werden können, stehen Schaltflächen zur Technologie Ihrer Wahl (z. B. .NET oder REST) zur Verfügung.   
+Beim Arbeiten mit Livestreaming werden normalerweise die folgenden Komponenten verwendet:
 
-Beachten Sie, dass Sie Media Services in Ihre vorhandenen Tools und Prozesse integrieren können. Codieren Sie Inhalte z. B. am Standort, und laden Sie sie danach zu Media Services hoch, um sie in mehreren Formaten zu transcodieren und über ein Azure-CDN oder ein Drittanbieter-CDN zu übermitteln. 
+- Eine Kamera, mit der ein Ereignis übertragen wird.
+- Ein Live-Video-Encoder, der Signale von der Kamera in Datenströme konvertiert, die an einen Livestreaming-Dienst gesendet werden. 
+  
+	Optional mehrere Live-Encoder. Für bestimmte kritische Liveereignisse, die eine sehr hohe Verfügbarkeit und Quality of Experience erfordern, wird der Einsatz redundanter Aktiv-Aktiv-Encoder empfohlen, um ein nahtloses Failover ohne Datenverlust zu erreichen.
+- Ein Livestreaming-Dienst, der Ihnen Folgendes ermöglicht: 
+	- Erfassen von Liveinhalten über verschiedene Livestreaming-Protokolle (z. B. RTMP oder Smooth Streaming) 
+	- Codieren des Datenstroms in einen Datenstrom mit adaptiver Bitrate
+	- Vorschau des Livestreams
+	- Speichern des erfassten Inhalts für ein späteres Streaming (Video-on-Demand)
+	- Übermitteln der Inhalte über häufig verwendete Streaming-Protokolle (z. B. MPEG DASH, Smooth, HLS, HDS) direkt an die Kunden oder an ein Content Delivery Network (CDN) zur weiteren Verteilung 
+	
+		
+Mit **Microsoft Azure Media Services** (AMS) können Sie Livestreaming-Inhalte erfassen, codieren, in der Vorschau anzeigen, speichern und bereitstellen.
 
-Das folgende Diagramm zeigt die Hauptbestandteile der Media Services-Plattform, die am Livestreaming-Workflow beteiligt sind.
+Bei der Übermittlung Ihrer Inhalte für Kunden besteht Ihr Ziel darin, qualitativ hochwertige Videos für unterschiedliche Geräte unter verschiedenen Netzwerkbedingungen bereitzustellen. Damit Qualität und Netzwerkbedingungen sichergestellt werden, codieren Sie den Datenstrom mit Live-Encodern in einen Videodatenstrom mit mehreren Bitraten (adaptive Bitrate). Verwenden Sie die [dynamische Paketerstellung](media-services-dynamic-packaging-overview.md) von Media Services, um den Datenstrom dynamisch erneut in verschiedene Protokolle zu packen. Media Services unterstützt die Übermittlung der folgenden Streamingtechnologien mit adaptiver Bitrate: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
-![Live-Workflow][live-overview]
+in Azure Media Services verarbeiten die **Kanäle**, **Programme** und **Streamingendpunkte** alle Livestreaming-Funktionen, einschließlich Erfassung, Formatierung, DVR, Sicherheit, Skalierbarkeit und Redundanz.
 
-In diesem Thema werden die Konzepte im Zusammenhang mit Livestreaming beschrieben und Links zu Themen mit Anleitungen zur Durchführung von Livestreaming-Aufgaben bereitgestellt.
-
-##Konzepte
-
-Konzepte im Zusammenhang mit Livestreaming finden Sie unter [Media Services - Konzepte](media-services-concepts.md).
-
-##Erstellen eines Media Services-Kontos
-
-Verwenden Sie das **Azure-Verwaltungsportal** zum [Erstellen eines Azure Media Services-Kontos](media-services-create-account.md).
-
-##Konfigurieren von Streamingendpunkten
-
-Eine Übersicht über Streamingendpunkte sowie Informationen zu deren Verwaltung finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md)
-
-##Einrichten der Entwicklungsumgebung  
-
-Wählen Sie **.NET** oder **REST-API** für Ihre Entwicklungsumgebung.
-
-[AZURE.INCLUDE [media-services-selector-setup](../../includes/media-services-selector-setup.md)]
-
-##Programmgesteuertes Verbinden  
-
-Wählen Sie **.NET** oder **REST-API**, um eine programmgesteuerte Verbindung mit Azure Media Services herzustellen.
-
-[AZURE.INCLUDE [media-services-selector-connect](../../includes/media-services-selector-connect.md)]
+Ein **Kanal** stellt eine Pipeline zum Verarbeiten von Livestreaming-Inhalten dar. Derzeit kann ein Kanal Live-Eingabedatenströme auf folgende Weise empfangen:
 
 
-##Verwenden lokaler Live-Encoder für die Ausgabe von Streams mit variabler Bitrate an einen Kanal
+- Ein lokaler Liveencoder sendet einen Single-Bitrate-Datenstrom an den Kanal, der zum Ausführen von Livecodierung mit Media Services in einem der folgenden Formate aktiviert wurde: RTP (MPEG-TS), RTMP oder Smooth Streaming (fragmentiertes MP4). Vom Kanal wird dann eine Livecodierung des Single-Bitrate-Eingabedatenstroms in einen Multi-Bitrate-Videodatenstrom (adaptiv) ausgeführt. Auf Anforderung wird der Datenstrom den Kunden von Media Services bereitgestellt.
 
-##Arbeiten mit Live-Transcodern von Drittanbietern
-
-Weitere Informationen finden Sie unter [Verwenden von Drittanbieter-Liveencodern mit Azure Media Services](https://msdn.microsoft.com/library/azure/dn783464.aspx).
-
-##Verwalten von Kanälen, Programmen und Medienobjekten
-
-**Übersicht**: [Verwalten von Kanälen und Programmen - Übersicht](media-services-manage-channels-overview.md).
-
-Wählen Sie **Portal**, **.NET** oder **REST-API**, um Beispiele anzuzeigen.
-
-[AZURE.INCLUDE [media-services-selector-manage-channels](../../includes/media-services-selector-manage-channels.md)]
-
-##Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
-
-Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte mithilfe von **.NET** oder **REST-API**.
-
-[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
-
-##Erstellen von Inhaltsschlüsseln
-
-Erstellen Sie einen Inhaltsschlüssel für das Verschlüsseln Ihres Medienobjekts mit **.NET** oder **REST-API**.
-
-[AZURE.INCLUDE [media-services-selector-create-contentkey](../../includes/media-services-selector-create-contentkey.md)]
-
-##Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel 
-
-Konfigurieren Sie Inhaltsschutz und Autorisierungsrichtlinien für Inhaltsschlüssel mithilfe von **.NET** oder **REST-API**.
-
-[AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
+	Die Codierung eines Livedatenstroms mit Media Services befindet sich in der **Vorschau**.
+- Von einem lokalen Live-Encoder wird Multi-Bitrate-**RTMP** oder -**Smooth Streaming** (fragmentiertes MP4) an den Kanal gesendet. Sie können die folgenden Liveencoder verwenden, von denen Multi-Bitrate-Smooth Streaming ausgegeben werden kann: Elemental, Envivio, Cisco. Von den folgenden Liveencodern wird RTMP ausgegeben: Adobe Flash Live, Telestream Wirecast und Tricaster-Transcoder. Die aufgenommenen Datenströme werden ohne weitere Verarbeitung durch die **Kanäle** geleitet. Ihr Liveencoder kann auch einen Single-Bitrate-Datenstrom an einen Kanal senden, der nicht für die Live-Codierung aktiviert ist. Dies wird jedoch nicht empfohlen. Auf Anforderung wird der Datenstrom den Kunden von Media Services bereitgestellt.
 
 
-##Veröffentlichen und Bereitstellen von Medienobjekten
-
-**Übersicht**: [Bereitstellen von Inhalten für Kunden - Übersicht](media-services-deliver-content-overview.md)
-
-Veröffentlichen Sie Medienobjekte (durch Locator-Erstellung) mithilfe des **Azure-Verwaltungsportals** oder mit **.NET**.
-
-[AZURE.INCLUDE [media-services-selector-publish](../../includes/media-services-selector-publish.md)]
+##Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden
 
 
-##Aktivieren von Azure CDN
+Das folgende Diagramm zeigt die Hauptkomponenten der AMS-Plattform, die in Livestreaming-Workflows beteiligt sind, wenn ein Kanal zum Ausführen der Livecodierung mit Media Services aktiviert ist.
 
-Media Services unterstützt die Integration in Azure CDN. Informationen zum Aktivieren von Azure CDN finden Sie unter [Verwalten von Streamingendpunkten in Media Services-Konten](media-services-manage-origins.md#enable_cdn).
+![Liveworkflow][live-overview1]
 
-##Skalieren eines Media Services-Kontos
+Weitere Informationen finden Sie unter [Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden](media-services-manage-live-encoder-enabled-channels.md).
 
-Sie können **Media Services** skalieren, indem Sie die Anzahl der **reservierten Einheiten für das Streaming** angeben, die für Ihr Konto bereitgestellt werden sollen. 
 
-Informationen zum Skalieren von Streamingeinheiten finden Sie unter: [Skalieren von Streamingeinheiten](media-services-manage-origins.md#scale_streaming_endpoints.md).
+##Arbeiten mit Kanälen, die Livedatenströme mit mehreren Bitraten von lokalen Encodern empfangen
+
+
+Das folgende Diagramm zeigt die Hauptkomponenten der AMS-Plattform, die am Livestreaming-Workflow beteiligt sind.
+
+![Liveworkflow][live-overview2]
+
+Weitere Informationen finden Sie unter [Arbeiten mit Kanälen, die Livedatenströme mit mehreren Bitraten von lokalen Encodern empfangen](media-services-manage-channels-overview.md).
+
+
+##Verwandte Themen
+
+[Media Services-Konzepte](media-services-concepts.md)
+
+[Spezifikation der Fragmented MP4-Echtzeiterfassung für Azure Media Services](media-services-fmp4-live-ingest-overview.md)
 
 
 
 
-[live-overview]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
 
+[live-overview1]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-new.png
 
-<!--HONumber=52--> 
+[live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
+ 
+
+<!---HONumber=July15_HO2-->

@@ -10,10 +10,10 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="multiple" 
+	ms.tgt_pltfrm="mobile-multiple" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="05/04/2015" 
+	ms.date="06/09/2015" 
 	ms.author="wesmc"/>
 
 # Zugriff auf Azure Active Directory Graph-Informationen
@@ -59,7 +59,7 @@ In diesem Abschnitt erstellen Sie die benutzerdefinierte API „GetUserInfo“, 
 Falls Sie noch nie benutzerdefinierte APIs mit Mobile Services verwendet haben, informieren Sie sich im [Benutzerdefinierte API – Lernprogramm], bevor Sie diesen Abschnitt abschließen.
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Projekt für den mobilen Dienst mit .NET-Backend, und klicken Sie auf **NuGet-Pakete verwalten**.
-2. Geben Sie im Dialogfeld „NuGet-Paket-Manager“ **ADAL** in das Suchfeld ein, um die **Active Directory-Authentifizierungsbibliothek** für Ihren mobilen Dienst zu suchen und zu installieren. Dieses Lernprogramm wurde zuletzt mit der Version 3.0.110281957-alpha (Vorabversion) des ADAL-Pakets getestet.
+2. Geben Sie im Dialogfeld "NuGet-Paket-Manager" **ADAL** in das Suchfeld ein, um die **Active Directory-Authentifizierungsbibliothek** für Ihren mobilen Dienst zu suchen und zu installieren. Dieses Lernprogramm wurde zuletzt mit der Version 3.3.205061641-alpha (Vorabversion) des ADAL-Pakets getestet.
 
 
 3. Klicken Sie in Visual Studio mit der rechten Maustaste auf den Ordner **Controllers** für das mobile Dienstprojekt und dann auf **Hinzufügen**, um einen neuen **Microsoft Azure Mobile Services benutzerdefinierten Controller** namens `GetUserInfoController` hinzuzufügen. Der Client ruft diese API auf, um Benutzerinformationen aus Active Directory abzurufen.
@@ -252,5 +252,6 @@ Im nächsten Lernprogramm, [Rollenbasierte Zugriffssteuerung mit AAD in Mobile S
 [Azure Active Directory Graph-Teamblog]: http://go.microsoft.com/fwlink/?LinkId=510536
 [Get User]: http://msdn.microsoft.com/library/azure/dn151678.aspx
 [Rollenbasierte Zugriffssteuerung mit AAD in Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-aad-rbac.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

@@ -13,7 +13,7 @@
    ms.workload="search"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.date="04/17/2015"
+   ms.date="07/08/2015"
    ms.author="brjohnst"/>
 
 # Verwenden von Azure Search aus einer .NET-Anwendung #
@@ -29,9 +29,9 @@ Die Clientbibliothek definiert Klassen wie `Index`, `Field` und `Document` sowie
 - [Microsoft.Azure.Search](https://msdn.microsoft.com/library/azure/microsoft.azure.search.aspx)
 - [Microsoft.Azure.Search.Models](https://msdn.microsoft.com/library/azure/microsoft.azure.search.models.aspx)
 
-Die aktuelle Version des Azure Search-.NET-SDK ist `0.10.0-preview`. Dies ist eine Vorabversion des SDK. Wir freuen uns sehr über Ihr Feedback, das wir versuchen, in der ersten stabilen Version des Programms zu berücksichtigen. Sie können uns dieses über die [Seite „Feedback“](http://feedback.azure.com/forums/263029-azure-search) bereitstellen.
+Die aktuelle Version des Azure Search-.NET-SDK ist eine Vorabversion. Wir freuen uns sehr über Ihr Feedback, das wir versuchen, in der ersten stabilen Version des Programms zu berücksichtigen. Sie können uns dieses über die [Seite „Feedback“](http://feedback.azure.com/forums/263029-azure-search) bereitstellen.
 
-Das .NET-SDK unterstützt Version `2015-02-28` der Azure Search-REST-API, die auf [MSDN](https://msdn.microsoft.com/library/azure/dn798935.aspx) dokumentiert ist. Neue Funktionen, die *nicht* Teil dieser Version sind, wie die Unterstützung für die Natural Language-Prozessoren von Microsoft oder der Suchparameter `moreLikeThis`, befinden sich noch im [Preview](../search-api-2015-02-28-preview/)-Stadium und stehen im SDK noch nicht zur Verfügung. Statusaktualisierungen zu diesen Funktionen finden Sie in den Abschnitten [Search service versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) (+++Versionsverwaltung für Suchdienst) oder [Latest updates to Azure Search](../search-latest-updates/) (+++Neueste Aktualisierungen in Azure Search).
+Das .NET-SDK unterstützt Version `2015-02-28` der Azure Search-REST-API, die auf [MSDN](https://msdn.microsoft.com/library/azure/dn798935.aspx) dokumentiert ist. Neue Funktionen, die *nicht* Teil dieser Version sind, wie die Unterstützung für die Natural Language-Prozessoren von Microsoft oder der Suchparameter `moreLikeThis`, befinden sich noch im [Preview](search-api-2015-02-28-preview.md)-Stadium und stehen im SDK noch nicht zur Verfügung. Statusaktualisierungen zu diesen Funktionen finden Sie in den Abschnitten [Search service versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) (+++Versionsverwaltung für Suchdienst) oder [Latest updates to Azure Search](search-latest-updates.md) (+++Neueste Aktualisierungen in Azure Search).
 
 Folgende Funktionen werden in diesem SDK nicht unterstützt:
 
@@ -41,7 +41,7 @@ Folgende Funktionen werden in diesem SDK nicht unterstützt:
 
 1. Visual Studio 2013 oder eine neuere Version.
 
-2. Ihr eigener Azure Search-Dienst. Zur Verwendung des SDK benötigen Sie den Namen Ihres Dienstes und mindestens einen API-Schlüssel. Informationen zu diesen Schritten finden Sie im Abschnitt [Create a service in the portal](../search-create-service-portal/) (+++Erstellen eines Dienstes im Portal).
+2. Ihr eigener Azure Search-Dienst. Zur Verwendung des SDK benötigen Sie den Namen Ihres Dienstes und mindestens einen API-Schlüssel. Informationen zu diesen Schritten finden Sie im Abschnitt [Create a service in the portal](search-create-service-portal.md) (+++Erstellen eines Dienstes im Portal).
 
 3. Laden Sie das [NuGet-Paket](http://www.nuget.org/packages/Microsoft.Azure.Search) mit dem Azure Search-.NET-SDK in Visual Studio mithilfe von „NuGet-Pakete verwalten“ herunter. Suchen Sie unter NuGet.org nach dem Paketnamen `Microsoft.Azure.Search`. Vergewissern Sie sich, dass „Vorabversion einschließen“ aktiviert ist, um sicherzustellen, dass das SDK der Vorabversion in den Suchergebnissen angezeigt wird.
 
@@ -105,7 +105,7 @@ Dieses gehen wir nun Schritt für Schritt durch. Zunächst muss das Objekt `Sear
 
         SearchServiceClient serviceClient = new SearchServiceClient(searchServiceName, new SearchCredentials(apiKey));
 
-> [AZURE.NOTE] Wenn Sie einen falschen Schlüssel angeben (z. B. einen Abfrageschlüssel, statt eines Admin-Schlüssels), gibt `SearchServiceClient` beim ersten Aufruf einer Operationsmethode (z. B. eines `Indexes.Create`) eine `CloudException` mit der Fehlermeldung „Forbidden“ (Unzulässig) aus. Überprüfen Sie in diesem Fall unsere API-Schlüssel.
+> [AZURE.NOTE]Wenn Sie einen falschen Schlüssel angeben (z. B. einen Abfrageschlüssel, statt eines Admin-Schlüssels), gibt `SearchServiceClient` beim ersten Aufruf einer Operationsmethode (z. B. eines `Indexes.Create`) eine `CloudException` mit der Fehlermeldung „Forbidden“ (Unzulässig) aus. Überprüfen Sie in diesem Fall unsere API-Schlüssel.
 
 Durch die nächsten Zeilen werden Methoden zum Erstellen eines Index mit dem Namen „hotels“ erstellt, wobei dieser, sofern er bereits vorhanden ist, zuerst gelöscht wird. Auf diese Methoden gehen wir später ein.
 
@@ -119,7 +119,7 @@ Danach muss der Index gefüllt werden. Dazu benötigen wir einen `SearchIndexCli
 
         SearchIndexClient indexClient = serviceClient.Indexes.GetClient("hotels");
 
-> [AZURE.NOTE] In einer typischen Suchanwendung erfolgen Verwaltung und Füllung des Index getrennt von Suchabfragen. `Indexes.GetClient` ist zum Füllen eines Index recht praktisch, da Sie kein weiteres `SearchCredentials` bereitstellen müssen. Vielmehr wird der Admin-Schlüssel, den Sie zum Erstellen des Objekts `SearchServiceClient` verwendet haben, auf das neue `SearchIndexClient`-Objekt übertragen. In dem Teil der Anwendung, in dem Abfragen ausgeführt werden, sollte das Objekt `SearchIndexClient` hingegen direkt erstellt werden, damit anstelle des Admin-Schlüssels ein Abfrageschlüssel übergeben werden kann. Dies entspricht dem Prinzip der geringsten Rechte und trägt dazu bei, die Anwendung sicherer zu machen. Weitere Informationen zu Admin- und Abfrageschlüsseln erhalten Sie [hier](https://msdn.microsoft.com/library/azure/dn798935.aspx).
+> [AZURE.NOTE]In einer typischen Suchanwendung erfolgen Verwaltung und Füllung des Index getrennt von Suchabfragen. `Indexes.GetClient` ist zum Füllen eines Index recht praktisch, da Sie kein weiteres `SearchCredentials` bereitstellen müssen. Vielmehr wird der Admin-Schlüssel, den Sie zum Erstellen des Objekts `SearchServiceClient` verwendet haben, auf das neue `SearchIndexClient`-Objekt übertragen. In dem Teil der Anwendung, in dem Abfragen ausgeführt werden, sollte das Objekt `SearchIndexClient` hingegen direkt erstellt werden, damit anstelle des Admin-Schlüssels ein Abfrageschlüssel übergeben werden kann. Dies entspricht dem Prinzip der geringsten Rechte und trägt dazu bei, die Anwendung sicherer zu machen. Weitere Informationen zu Admin- und Abfrageschlüsseln erhalten Sie [hier](https://msdn.microsoft.com/library/azure/dn798935.aspx).
 
 Nachdem das Objekt `SearchIndexClient` erstellt ist, kann der Index gefüllt werden. Dies erfolgt durch eine weitere Methode, die wir später besprechen.
 
@@ -174,7 +174,7 @@ Nachdem das Objekt `SearchServiceClient` erstellt ist, löscht `Main` den Index 
 
 Diese Methode verwendet das bereitgestellte Objekt `SearchServiceClient`, um zu überprüfen, ob der Index vorhanden ist, und löscht ihn gegebenenfalls.
 
-> [AZURE.NOTE] Der Beispielcode in diesem Artikel verwendet der Einfachheit halber die synchronen Methoden des Azure Search-.NET-SDK. Für Ihre eigenen Anwendungen empfehlen wir aus Gründen der Skalierbarkeit und Reaktionsfähigkeit die asynchronen Methoden. In der oben gezeigten Methode können Sie `Exists` und `Delete` zum Beispiel auch durch `ExistsAsync` und `DeleteAsync` ersetzen.
+> [AZURE.NOTE]Der Beispielcode in diesem Artikel verwendet der Einfachheit halber die synchronen Methoden des Azure Search-.NET-SDK. Für Ihre eigenen Anwendungen empfehlen wir aus Gründen der Skalierbarkeit und Reaktionsfähigkeit die asynchronen Methoden. In der oben gezeigten Methode können Sie `Exists` und `Delete` zum Beispiel auch durch `ExistsAsync` und `DeleteAsync` ersetzen.
 
 Als Nächstes ruft `Main` die folgende Methode auf, um einen neuen Index mit dem Namen „hotels“ zu erstellen:
 
@@ -291,7 +291,7 @@ Diese Methode besteht aus vier Teilen. Im ersten Teil wird ein `Hotel`-Objektarr
 
 Im zweiten Teil wird für jedes `Hotel` ein `IndexAction` erstellt. Diese werden dann in einem neuen `IndexBatch` zusammengefasst. Der Batch wird dann durch die Methode `Documents.Index` in den Azure Search-Index hochgeladen.
 
-> [AZURE.NOTE] In diesem Beispiel werden nur Dokumente hochgeladen. Wenn Sie Änderungen mit einem vorhandenen Dokument zusammenführen oder ein Dokument löschen wollten, können Sie eine `IndexAction` mit dem entsprechenden `IndexActionType` erstellen. `IndexActionType` muss in diesem Beispiel nicht angegeben werden, da der Standardwert `Upload` ist.
+> [AZURE.NOTE]In diesem Beispiel werden nur Dokumente hochgeladen. Wenn Sie Änderungen mit einem vorhandenen Dokument zusammenführen oder ein Dokument löschen wollten, können Sie eine `IndexAction` mit dem entsprechenden `IndexActionType` erstellen. `IndexActionType` muss in diesem Beispiel nicht angegeben werden, da der Standardwert `Upload` ist.
 
 Der dritte Teil dieser Methode ist ein Catch-Block, der einen wichtigen Fehlerfall bei der Indizierung abfängt. Falls der Azure Search-Dienst Dokumente des Batch nicht indizieren kann, löst `Documents.Index` eine `IndexBatchException` aus. Dies kann bei der Indizierung von Dokumenten geschehen, wenn der Dienst stark ausgelastet ist. **Es wird dringend empfohlen, einen solchen Fall in Ihrem Code explizit zu behandeln.** Zum Beispiel kann die Indizierung der zuvor nicht indizierten Dokumente nach einer Weile wieder aufgenommen werden oder der Vorgang kann, wie im Beispiel gezeigt, nach der Aufzeichnung des Fehlers fortgeführt werden. Je nach Datenkonsistenzanforderungen Ihrer Anwendung sind aber auch andere Lösungen möglich.
 
@@ -339,7 +339,7 @@ Ebenso bemerkenswert an der Klasse `Hotel` sind die Datentypen der öffentlichen
 
 Diese Möglichkeit, eigene Klassen als Dokumente zu verwenden, funktioniert in beide Richtungen. Denn ebenso können Sie das SDK, wie im nächsten Abschnitt gezeigt, beim Abrufen von Suchergebnissen anweisen, diese automatisch in einen Typ Ihrer Wahl zu deserialisieren.
 
-> [AZURE.NOTE] Das Azure Search-.NET-SDK unterstützt durch die Klasse `Document`, einer Schlüssel-/Wertzuordnung von Feldnamen zu Feldwerten, auch dynamisch typisierte Dokumente. Diese Art der Typisierung eignet sich für Szenarien, in denen Sie bei der Entwicklung noch nicht wissen, wie das Indexschema aussehen soll, oder in denen eine Bindung an bestimmte Modellklassen unpassend ist. Alle Methoden des SDK, die Dokumente verarbeiten, verfügen über Überladungen, welche die Klasse `Document` verwenden, wie auch stark typisierte Überladungen, die einen generischen Typparameter verwenden. Nur letztere Art von Überladung wird im Beispielcode dieses Lernprogramms verwendet. Weitere Informationen zur Klasse `Document` erhalten Sie [hier](https://msdn.microsoft.com/library/azure/microsoft.azure.search.models.document.aspx).
+> [AZURE.NOTE]Das Azure Search-.NET-SDK unterstützt durch die Klasse `Document`, einer Schlüssel-/Wertzuordnung von Feldnamen zu Feldwerten, auch dynamisch typisierte Dokumente. Diese Art der Typisierung eignet sich für Szenarien, in denen Sie bei der Entwicklung noch nicht wissen, wie das Indexschema aussehen soll, oder in denen eine Bindung an bestimmte Modellklassen unpassend ist. Alle Methoden des SDK, die Dokumente verarbeiten, verfügen über Überladungen, welche die Klasse `Document` verwenden, wie auch stark typisierte Überladungen, die einen generischen Typparameter verwenden. Nur letztere Art von Überladung wird im Beispielcode dieses Lernprogramms verwendet. Weitere Informationen zur Klasse `Document` erhalten Sie [hier](https://msdn.microsoft.com/library/azure/microsoft.azure.search.models.document.aspx).
 
 ### Suche nach Dokumenten im Index ###
 
@@ -623,5 +623,6 @@ Hotel.cs:
             }
         }
     }
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

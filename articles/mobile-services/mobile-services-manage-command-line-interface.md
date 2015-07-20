@@ -190,5 +190,6 @@ Weitere Informationen über das Registrieren von Skripts finden Sie unter [Mobil
 [reference-docs]: http://azure.microsoft.com/documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
 [Installation der Azure-Befehlszeilentools für Mac und Linux]: http://go.microsoft.com/fwlink/p/?LinkId=275795
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

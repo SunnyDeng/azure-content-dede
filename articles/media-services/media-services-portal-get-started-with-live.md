@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Erstellen Sie mit dem Verwaltungsportal Kanäle, die Livestreams mit mehreren Bitraten von lokalen Encodern empfangen" 
-	description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren von grundlegenden Media Services-Anwendungen zum Livestreamen, in denen ein Kanal einen Livestream mit mehreren Bitraten von lokalen Encodern empfängt." 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
+<properties
+	pageTitle="Erstellen Sie mit dem Verwaltungsportal Kanäle, die Livestreams mit mehreren Bitraten von lokalen Encodern empfangen"
+	description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren von grundlegenden Media Services-Anwendungen zum Livestreamen, in denen ein Kanal einen Livestream mit mehreren Bitraten von lokalen Encodern empfängt."
+	services="media-services"
+	documentationCenter=""
+	authors="Juliako"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
-	ms.topic="article" 
-	ms.date="04/16/2015" 
+<tags
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="ne"
+	ms.topic="get-started-article" 
+	ms.date="04/16/2015"
 	ms.author="juliako"/>
 
 
@@ -31,7 +31,7 @@ In diesem Lernprogramm wird das Azure-Verwaltungsportal verwendet, um die folgen
 1.  Konfigurieren Sie einen Live-Encoder und nehmen Sie Live-Datenströme in den Kanal auf (bei diesem Schritt wird Wirecast verwendet)
 1.  Erstellen eines Programms (und eines Medienobjekts)
 1.  Veröffentlichen des Medienobjekts und Abrufen von Streaming-URLs  
-1.  Wiedergeben Ihrer Inhalte 
+1.  Wiedergeben Ihrer Inhalte
 2.  Bereinigen
 
 ##Voraussetzungen
@@ -41,7 +41,7 @@ Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt 
 - Media Services-Konto. Informationen zum Erstellen eines Media Services-Kontos finden Sie unter [Konto erstellen](media-services-create-account.md).
 - Sie benötigen eine Webcam und einen Encoder, von dem ein Multi-Bitrate-Livedatenstrom gesendet wird.
 
-	 
+
 ##Konfigurieren von Streamingendpunkten mithilfe des Portals
 
 Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarien darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Mit adaptivem Bitrate-Streaming kann der Client während der Videodarstellung auf einen höheren oder niedrigeren Bitraten-Stream wechseln, basierend auf der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
@@ -64,7 +64,7 @@ Um die Anzahl der Einheiten zu ändern, die für das Streaming reserviert sind, 
 
 	Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
 
-	 
+
 	>[AZURE.NOTE]Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
 	>
 	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Media Services Pricing Details](http://go.microsoft.com/fwlink/?LinkId=275107).
@@ -91,7 +91,7 @@ Wenn der Kanal erstellt wurde, können Sie Erfassungs-URLs abrufen, die Sie dem 
 
 Weitere Informationen über Erfassungs-URLs finden Sie unter [Verwenden von lokalen Encodern zum Senden von Livestreams mit mehreren Bitraten an einen Kanal](../media-services-channels-overview.md).
 
-##Konfigurieren Sie einen Live-Encoder und erfassen Sie Livedatenströme 
+##Konfigurieren Sie einen Live-Encoder und erfassen Sie Livedatenströme
 
 >[AZURE.NOTE]Dieser Schritt erfordert die Erfassungs-URL des Kanals, die im vorherigen Schritt erwähnt wurde.
 
@@ -131,11 +131,11 @@ Es gibt zwei Möglichkeiten, das Ereignis zu starten:
 1. Klicken Sie auf der Seite **KANAL** auf **HINZUFÜGEN**, um ein neues Programm hinzuzufügen.
 
 	Geben Sie Folgendes an: Name des Programms, Name des Medienobjekts, Archivfenster, Verschlüsselungsoption.
-	
+
 	![createprogram](./media/media-services-portal-get-started-with-live/media-services-create-program.png)
-	
+
 	Wenn Sie das Kontrollkästchen **Dieses Programm jetzt veröffentlichen** aktiviert gelassen haben, werden das Programm und die VERÖFFENTLICHUNGS-URLs erstellt.
-	
+
 	Wenn das Streaming des Programms gestartet werden soll, klicken Sie auf **START**.
 
 	Wenn Sie das Programm gestartet haben, können Sie auf WIEDERGABE klicken, um die Wiedergabe der Inhalte zu starten.
@@ -210,5 +210,4 @@ Erfahren Sie mehr über das Erstellen von Livestreaming-Anwendungen [Livestreami
 
 <!-- Images -->
 
-<!--HONumber=52-->
- 
+<!---HONumber=July15_HO2-->

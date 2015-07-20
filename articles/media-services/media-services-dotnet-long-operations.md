@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/16/2015" 
+	ms.date="05/24/2015" 
 	ms.author="juliako"/>
 
 
@@ -23,14 +23,13 @@
 
 Microsoft Azure Media Services bietet APIs, die Anforderungen zum Starten von Vorgängen an Media Services senden (beispielsweise zum Erstellen, Starten, Beenden oder Löschen eines Kanals). Diese Vorgänge haben eine lange Laufzeit.
 
-Das Media Services .NET SDK stellt APIs bereit, die die Anforderung senden und auf den Abschluss des Vorgangs warten (intern fragen die APIs in regelmäßigen Intervallen den Vorgangsfortschritt ab). Wenn Sie beispielsweise "channel.Start()" aufrufen, wird die Methode nach dem Start des Kanals zurückgegeben. Sie können auch die asynchrone Version verwenden: await channel.StartAsync() (Informationen zu aufgabenbasierten asynchronen Mustern finden Sie unter [TAP](https://msdn.microsoft.com/library/hh873175(v=vs.110).aspx)). APIs, die eine Vorgangsanforderung senden und den Status abfragen, bis der Vorgang abgeschlossen ist, werden als "Abfragemethoden" bezeichnet. Diese Methoden (insbesondere die asynchrone Version) werden für Rich Client-Anwendungen und/oder für zustandsbehaftete Dienste empfohlen.
+Das Media Services .NET SDK stellt APIs bereit, die die Anforderung senden und auf den Abschluss des Vorgangs warten (intern fragen die APIs in regelmäßigen Intervallen den Vorgangsfortschritt ab). Wenn Sie beispielsweise "channel.Start()" aufrufen, wird die Methode nach dem Start des Kanals zurückgegeben. Sie können auch die asynchrone Version "await channel.StartAsync()" verwenden. (Informationen zu aufgabenbasierten asynchronen Mustern finden Sie unter [TAP].)https://msdn.microsoft.com/library/hh873175(v=vs.110).aspx)) APIs, die eine Vorgangsanforderung senden und den Status abfragen, bis der Vorgang abgeschlossen ist, werden als "Abfragemethoden" bezeichnet. Diese Methoden (insbesondere die asynchrone Version) werden für Rich Client-Anwendungen und/oder für zustandsbehaftete Dienste empfohlen.
 
-Es gibt Szenarien, in denen eine Anwendung nicht auf eine HTTP-Anforderung mit langer Laufzeit warten kann und der Vorgangsfortschritt manuell abgerufen werden soll. Ein typisches Beispiel wäre die Interaktion mit einem zustandsloser Webdienst: Wenn der Browser die Erstellung eines Kanals anfordert, startet der Webdienst einen Vorgang mit langer Laufzeit und gibt die Vorgangs-ID an den Browser zurück. Der Browser kann dann beim Webdienst den Abruf des Vorgangsstatus basierend auf der ID anfordern. Das Media Services .NET SDK stellt APIs bereit, die für dieses Szenario von Nutzen sind. Diese APIs werden als "Methoden ohne Abfrage" bezeichnet.
-Methoden ohne Abfrage weisen das folgende Namensmuster auf: Send*NameVorgang*Operation(z. B. SendCreateOperation). Send*NameVorgang*Operation-Methoden geben das **IOperation**-Objekt zurück. Das zurückgegebene Objekt enthält Informationen, die zum Nachverfolgen des Vorgangs verwendet werden können. Send*NameVorgang*OperationAsync-Methoden geben **Task<IOperation>** zurück.
+Es gibt Szenarien, in denen eine Anwendung nicht auf eine HTTP-Anforderung mit langer Laufzeit warten kann und der Vorgangsfortschritt manuell abgerufen werden soll. Ein typisches Beispiel wäre die Interaktion mit einem zustandsloser Webdienst: Wenn der Browser die Erstellung eines Kanals anfordert, startet der Webdienst einen Vorgang mit langer Laufzeit und gibt die Vorgangs-ID an den Browser zurück. Der Browser kann dann beim Webdienst den Abruf des Vorgangsstatus basierend auf der ID anfordern. Das Media Services .NET SDK stellt APIs bereit, die für dieses Szenario von Nutzen sind. Diese APIs werden als "Methoden ohne Abfrage" bezeichnet. Methoden ohne Abfrage weisen das folgende Namensmuster auf: Send*Vorgangsname*Operation (z. B. SendCreateOperation). Send*Vorgangsname*Operation-Methoden geben das **IOperation**-Objekt zurück. Das zurückgegebene Objekt enthält Informationen, die zum Nachverfolgen des Vorgangs verwendet werden können. Die Send*Vorgangsname*OperationAsync-Methoden geben **Task<IOperation>** zurück.
 
-Aktuell unterstützen die folgenden Klassen Methoden ohne Abfrage:  **Channel**, **StreamingEndpoint** und **Program**.
+Derzeit unterstützen die folgenden Klassen Methoden ohne Abfrage: **Channel**, **StreamingEndpoint** und **Program**.
 
-Verwenden Sie zum Abfragen des Vorgangsstatus die **GetOperation**-Methode in der **OperationBaseCollection**-Klasse. Verwenden Sie die folgenden Intervalle, um den Vorgangsstatus abzufragen: für **Channel**- und **StreamingEndpoint**-Vorgänge 30 Sekunden, für **Program**-Vorgänge 10 Sekunden.
+Verwenden Sie zum Abfragen des Vorgangsstatus die **GetOperation**-Methode in der **OperationBaseCollection**-Klasse. Verwenden Sie die folgenden Intervalle, um den Vorgangsstatus abzufragen: für **Channel**- und **StreamingEndpoint**-Vorgänge 30 Sekunden, für **Program**-Vorgänge 10 Sekunden.
 
 
 ##Beispiel
@@ -43,7 +42,7 @@ Das Beispiel zeigt außerdem, wie der Client diese Klasse verwenden kann.
 
 	/// <summary> 
 	/// The ChannelOperations class only implements 
-	/// the Channel's creation operation. 
+	/// the Channel’s creation operation. 
 	/// </summary> 
 	public class ChannelOperations
 	{
@@ -185,6 +184,6 @@ Das Beispiel zeigt außerdem, wie der Client diese Klasse verwenden kann.
 	
 	// If we got here, we should have the newly created channel id.
 	Console.WriteLine(channelId);
+ 
 
-
-<!--HONumber=52--> 
+<!---HONumber=July15_HO2-->

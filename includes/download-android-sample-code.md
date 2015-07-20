@@ -15,4 +15,4 @@ Dieses Lernprogramm basiert auf der Android-App **GetStartedWithData**. Die GUI 
 	Das Projekt ist jetzt einsatzbereit.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="NA" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="05/06/2015" 
+	ms.date="07/02/2015" 
 	ms.author="patshea123"/>
 
 # Was ist mit meinem Projekt passiert?
@@ -22,9 +22,9 @@
 > - [Getting Started](vs-mobile-services-dotnet-getting-started.md)
 > - [What Happened](vs-mobile-services-dotnet-what-happened.md)
 
-### <span id="whathappened">Was ist mit meinem Projekt passiert?</span>
+###<span id="whathappened">Was ist mit meinem Projekt passiert?</span>
 
-##### Verweise wurden hinzugefügt
+#####Verweise wurden hinzugefügt
 
 Das NuGet-Paket für Azure Mobile Services wurde Ihrem Projekt hinzugefügt. Die folgenden .NET-Verweise wurde Ihrem Projekt hinzugefügt:
 
@@ -34,9 +34,15 @@ Das NuGet-Paket für Azure Mobile Services wurde Ihrem Projekt hinzugefügt. Die
 - `System.Net.Http.Extensions`
 - `System.Net.Http.Primitives` 
 
-##### Werte für die Verbindungszeichenfolge für Mobile Services
+#####Werte für die Verbindungszeichenfolge für Mobile Services
 
 In Ihrer Datei **App.xaml.cs** wurde ein MobileServiceClient-Objekt mit der Anwendungs-URL des ausgewählten mobilen Diensts und seinem Anwendungsschlüssel erstellt.
 
+####Mobile Services-Projekt hinzugefügt
+
+Wenn ein .NET Mobile Service im Anbieter für verbundene Dienste erstellt wird, wird ein Mobile Services-Projekt erstellt und der Projektmappe hinzugefügt.
+
+
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
-<!--HONumber=54--> 
+
+<!---HONumber=July15_HO2-->

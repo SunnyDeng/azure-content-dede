@@ -13,7 +13,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="05/21/2015"
+   ms.date="06/25/2015"
    ms.author="cherylmc"/>
 
 #  Konfigurieren eines virtuellen Netzwerks für ExpressRoute
@@ -39,6 +39,8 @@
 	- **Name** – Der Name, den Sie Ihrem lokalen Netzwerkstandort geben möchten.
 	- **Adressraum** – Umfasst Start-IP und CIDR (Anzahl der Adressen). Sie können einen beliebigen Adressbereich angeben, solange er sich nicht mit dem Adressbereich Ihres virtuellen Netzwerks überschneidet.
 	- **Adressraum hinzufügen** – Diese Einstellung ist für ExpressRoute nicht relevant.
+	- 
+**Hinweis:** Sie müssen für ExpressRoute eine lokale Netzwerk-Website erstellen. Die Adresspräfixe, die für die lokale Netzwerk-Website angegeben sind, werden ignoriert. Adresse-Präfixe, die an Microsoft über die ExpressRoute-Verbindung angekündigt werden, werden zu Routingzwecken verwendet.
 
 6. Geben Sie auf der Seite **Virtual Network Address Spaces** die folgenden Informationen ein, und klicken Sie dann in der unteren rechten Ecke auf das Häkchen, um das Netzwerk zu konfigurieren. Es sind einige Regeln für den Adressraum des virtuellen Netzwerks zu beachten. Aus diesem Grund sollten Sie sich die weiteren Informationen auf der Seite [Adressräume des virtuellen Netzwerks](https://msdn.microsoft.com/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNET_ADDRESS) ansehen.
 
@@ -72,4 +74,4 @@ Weitere Informationen zu virtuellen Netzwerken finden Sie unter [Häufig gestell
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

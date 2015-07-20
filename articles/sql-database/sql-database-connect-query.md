@@ -137,4 +137,4 @@ Auf dem Blatt mit den Verbindungszeichenfolgen für Datenbanken werden die entsp
 2. Das Programm zeigt die Ergebnisse der Abfrage im Konsolenfenster an.
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

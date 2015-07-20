@@ -3,7 +3,7 @@
 	description="Beschreibt, was beim Erstellen eines Azure-Speichers in einem Visual Studio ASP.NET-Projekts passiert ist." 
 	services="storage" 
 	documentationCenter="" 
-	authors="kempb" 
+	authors="patshea123" 
 	manager="douge" 
 	editor="tglee"/>
 
@@ -13,19 +13,20 @@
 	ms.tgt_pltfrm="vs-what-happened" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/02/2015" 
-	ms.author="kempb"/>
+	ms.date="04/20/2015" 
+	ms.author="patshea123"/>
+
+# Was ist mit meinem Projekt passiert?
 
 > [AZURE.SELECTOR]
-> - [Erste Schritte](vs-storage-aspnet-getting-started-blobs.md)
-> - [Was ist passiert?](vs-storage-aspnet-what-happened.md)
+> - [Getting Started](vs-storage-aspnet-getting-started-blobs.md)
+> - [What Happened](vs-storage-aspnet-what-happened.md)
 
 ###<span id="whathappened">Was ist mit meinem Projekt passiert?</span>
 
 ##### Verweise wurden hinzugefügt
 
-Das Azure Storage NuGet-Paket wurde zu Ihrem Visual Studio-Projekt hinzugefügt.  
-Dieses Paket fügt die folgenden .NET-Verweise hinzu:
+Das Azure Storage NuGet-Paket wurde zu Ihrem Visual Studio-Projekt hinzugefügt. Dieses Paket fügt die folgenden .NET-Verweise hinzu:
 
 - `Microsoft.Data.Edm`
 - `Microsoft.Data.OData`
@@ -37,8 +38,8 @@ Dieses Paket fügt die folgenden .NET-Verweise hinzu:
 - `System.Spatial`
 
 #####Die Verbindungszeichenfolge für Azure Storage wurde hinzugefügt 
-In der Datei "web.config" Ihres Projekts wurde ein Element mit der Verbindungszeichenfolge und dem Schlüssel des ausgewählten Speicherkontos erstellt.
+In der Datei web.config Ihres Projekts wurde ein Element mit der Verbindungszeichenfolge und dem Schlüssel des ausgewählten Speicherkontos erstellt.
 
 Weitere Informationen finden Sie unter [ASP.NET](http://www.asp.net).
-<!--HONumber=47-->
- 
+
+<!---HONumber=July15_HO2-->

@@ -1,3 +1,4 @@
+
 #### So stellen Sie über die serielle Konsole eine Verbindung her
 
 1. Schließen Sie das serielle Kabel (direkt oder über einen seriellen USB-Adapter) an das Gerät an.
@@ -28,4 +29,4 @@
 7. Klicken Sie auf **Öffnen**, um eine serielle Sitzung zu starten.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

@@ -25,5 +25,6 @@ Sie können die SQL-Datenbank für Tausende von Datenbanken [nach oben skalieren
 Für die SQL-Datenbank sind die [Dienstebenen](sql-database-service-tiers.md) Basic, Standard und Premium verfügbar. Sie unterstützen geringe bis hohe Arbeitsauslastungen, sodass Sie zwischen den verschiedenen Ebenen wechseln oder diese mischen können, um innovative Anwendungsdesigns zu erhalten. Mit der Leistungsstärke und Reichweite von Azure können Sie Azure-Dienste mit der SQL-Datenbank kombinieren, um Ihre individuellen Anforderungen an modernes App-Design zu erfüllen, Kosten- und Ressourceneffizienz zu fördern und neue Geschäftsmöglichkeiten zu erschließen.
 
 Beginnen Sie mit einer [ kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/), und lernen Sie die Schritte zum [Erstellen Ihrer ersten SQL-Datenbank](sql-database-get-started.md) kennen!
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO2-->

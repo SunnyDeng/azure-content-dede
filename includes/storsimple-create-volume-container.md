@@ -1,3 +1,4 @@
+
 #### So erstellen Sie einen Volumecontainer
 
 1. Klicken Sie auf der Seite **Schnellstart** auf **Volumecontainer hinzufügen**. Das Dialogfeld **Volumecontainer erstellen** wird angezeigt.
@@ -14,4 +15,4 @@
 
   Der neu erstellte Volumecontainer wird auf der Seite **Volumecontainer** aufgeführt.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

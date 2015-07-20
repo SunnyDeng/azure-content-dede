@@ -18,18 +18,11 @@
 
 # Speichern von Projektcode in der Quellcodeverwaltung
 
-<div class="dev-center-tutorial-subselector">
-	<a href="/documentation/articles/mobile-services-dotnet-backend-store-code-source-control/" title=".NET-Back-End">.NET-Back-End</a> | <a href="/documentation/articles/mobile-services-store-scripts-source-control/"  title="JavaScript-Back-End" class="current">JavaScript-Back-End</a>
-</div>
+> [AZURE.SELECTOR-LIST (Platform | Backend)]
+- [(Any | .NET)](mobile-services-dotnet-backend-store-code-source-control.md)
+- [(Any | Javascript)](mobile-services-store-scripts-source-control.md)
 
-In diesem Thema erfahren Sie, wie Sie die von Azure Mobile Services bereitgestellte Quellcodeverwaltung verwenden, um Ihre Serverskripts zu speichern. Sie können Skripts und andere JavaScript-Back-End-Codedateien aus Ihrem lokalen Git-Repository in Ihre Produktionsumgebung im mobilen Dienst befördern. Außerdem erfahren Sie, wie Sie freigegebenen Code definieren, der möglicherweise für mehrere Skripts erforderlich ist, und wie Sie die Datei "package.json" verwenden, um Ihrem mobilen Dienst Node.js-Module hinzuzufügen.
-
-Dieses Lernprogramm führt Sie durch die folgenden Schritte:
-
-1. [Aktivieren der Quellcodeverwaltung für Ihren mobilen Dienst].
-2. [Installieren von Git und Erstellen des lokalen Repositorys].
-3. [Bereitstellen geänderter Skriptdateien in Ihrem mobilen Dienst].
-4. [Verwenden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts].
+In diesem Thema erfahren Sie, wie Sie die von Azure Mobile Services bereitgestellte Quellcodeverwaltung verwenden, um Ihre Serverskripts zu speichern. Sie können Skripts und andere JavaScript-Back-End-Codedateien aus Ihrem lokalen Git-Repository in Ihre Produktionsumgebung im mobilen Dienst befördern. Außerdem erfahren Sie, wie Sie freigegebenen Code definieren, der möglicherweise für mehrere Skripts erforderlich ist, und wie Sie die Datei „package.jason“ verwenden, um Ihrem mobilen Dienst Node.js-Module hinzuzufügen.
 
 Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst durch Bearbeiten eines der Lernprogramme [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] erstellt haben.
 
@@ -100,31 +93,21 @@ Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Servers
 	
 	Daraufhin wird eine Reihe von Ausgaben für die Bereitstellung des Commits im mobilen Dienst angezeigt.
 
-6. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
-
-	![][5]
-
-3. Klicken Sie auf **Skript** und wählen Sie die **Einfügen**-Operation aus.
-
-	![][6]
-
+6. Kehren Sie zurück zum Verwaltungsportal, klicken Sie auf die Registerkarte **Daten**, klicken Sie auf die Tabelle **TodoItem**, klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen** aus.
+7. 
 	Beachten Sie, dass das angezeigte Skript für die Einfügen-Operation denselben JavaScript-Code enthält, den Sie soeben in Ihr Repository hochgeladen haben.
 
 ##<a name="use-npm"></a>Verwenden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts.
 
-Mobile Services bietet Zugang zum kompletten Umfang der Node.js-Basismodule, und Sie können diese Module in Ihrem Code mit der **require**-Funktion einbinden. Außerdem kann Ihr mobiler Dienst Node.js-Module verwenden, die nicht Teil des Node.js-Standardpakets sind, und Sie können sogar eigenen freigegebenen Code als Node.js-Modul definieren. Weitere Informationen zur Erstellung von Modulen finden Sie unter [Module][Node.js API Documentation: Modules] in der Referenzdokumentation der Node.js-API.
+Mobile Services bietet Zugang zum kompletten Umfang der Node.js-Basismodule, und Sie können diese Module in Ihrem Code mit der **require**-Funktion einbinden. Außerdem kann Ihr mobiler Dienst Node.js-Module verwenden, die nicht Teil des Node.js-Standardpakets sind, und Sie können sogar eigenen freigegebenen Code als Node.js-Modul definieren. Weitere Informationen zur Erstellung von Modulen finden Sie unter [Module] in der Referenzdokumentation der Node.js-API.
 
 Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobilen Dienst besteht darin, Referenzen zur package.json-Datei des Diensts hinzuzufügen. Als Nächstes fügen Sie das Node.js-Modul [node-uuid] zu Ihrem mobilen Dienst hinzu, indem Sie die package.json-Datei aktualisieren. Wenn die Aktualisierung mithilfe von Push an Azure übertragen wird, wird der mobile Dienst neu gestartet, und das Modul wird installiert. Mit diesem Modul können Sie nun neue GUID-Werte für die **uuid**-Eigenschaft in eingefügten Elementen generieren.
 
-2. Wechseln Sie zum `.\service`-Ordner Ihres lokalen Git-Repositorys, und öffnen Sie die package.json-Datei in einem Text-Editor.
+2. Wechseln Sie zum Ordner `.\service` Ihres lokalen Git-Repositorys, und öffnen Sie die Datei "package.json" in einem Text-Editor. Fügen Sie im Objekt **dependencies** das folgende Feld hinzu:
 
-3. Suchen Sie nach
+		"node-uuid": "~1.4.3"
 
-		npm install node-uuid
-
-	NPM erstellt das Verzeichnis `node_modules` am aktuellen Ort und installiert das Modul [node-uuid] im Unterverzeichnis `\node-uuid`.
-
-	> [AZURE.NOTE]Falls `node_modules` bereits in der Verzeichnishierarchie existiert, erstellt NPM das Unterverzeichnis `\node-uuid` dort, anstatt ein neues Verzeichnis `node_modules` im Repository anzulegen. In diesem Fall können Sie das existierende Verzeichnis `node_modules` löschen.
+	>[AZURE.NOTE]Durch diese Änderung in der Datei "package.json" wird nach dem Commit-Push ein Neustart in Ihrem mobilen Dienst ausgelöst.
 
 4. Öffnen Sie nun das Unterverzeichnis .\\service\\table, öffnen Sie die Datei todoitem.insert.js und ändern Sie den Code wie folgt:
 
@@ -154,10 +137,10 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
 + [Aufrufen einer benutzerdefinierten API vom Client] <br/> Zeigt, wie benutzerdefinierte APIs erstellt werden, die vom Client aufgerufen werden können.
 
 <!-- Anchors. -->
-[Aktivieren der Quellcodeverwaltung für Ihren mobilen Dienst]: #enable-source-control
-[Installieren von Git und Erstellen des lokalen Repositorys]: #clone-repo
-[Bereitstellen geänderter Skriptdateien in Ihrem mobilen Dienst]: #deploy-scripts
-[Verwenden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts]: #use-npm
+[Enable source control in your mobile service]: #enable-source-control
+[Install Git and create the local repository]: #clone-repo
+[Deploy updated script files to your mobile service]: #deploy-scripts
+[Leverage shared code and Node.js modules in your server scripts]: #use-npm
 
 <!-- Images. -->
 [4]: ./media/mobile-services-store-scripts-source-control/mobile-source-local-repo.png
@@ -173,7 +156,8 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
 [Arbeiten mit Serverskripts in Mobile Services]: mobile-services-how-to-use-server-scripts.md
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Aufrufen einer benutzerdefinierten API vom Client]: mobile-services-ios-call-custom-api.md
-[Node.js API Documentation: Modules]: http://nodejs.org/api/modules.html
+[Module]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

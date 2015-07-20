@@ -1,3 +1,4 @@
+
 #### So führen Sie die mindestens erforderliche StorSimple-Gerätekonfiguration aus
 
 1. Wählen Sie das Gerät aus, und klicken Sie dann auf **Schnellstart**. Klicken Sie auf **Complete device setup**, um den Assistenten zum Konfigurieren von Geräten zu starten.
@@ -22,4 +23,4 @@
 
  >[AZURE.NOTE]Alle anderen Geräteeinstellungen können über die Seite **Konfigurieren** geändert werden.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

@@ -32,10 +32,9 @@ So erstellen Sie einen Dienstnamespace
 
 	![][6]
 
-
 ## Abrufen der Standard-Anmeldeinformationen für den Namespace
 
-Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung eines Themas oder Abonnements im neuen Namespace, müssen Sie die Anmeldeinformationen für den Namespace abrufen. Sie finden diese Anmeldeinformationen entweder im Azure Verwaltungsportal oder im Server-Explorer von Visual Studio.
+Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung eines Themas oder Abonnements im neuen Namespace, müssen Sie die Anmeldeinformationen für den Namespace abrufen. Sie finden diese Anmeldeinformationen entweder im Azure-Verwaltungsportal oder im Server-Explorer von Visual Studio.
 
 ### So rufen Sie die Anmeldeinformationen im Verwaltungsportal ab
 
@@ -49,7 +48,7 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung eines T
 
 ### So rufen Sie die Anmeldeinformationen im Server-Explorer ab
 
-Führen Sie die [hier](http://http://msdn.microsoft.com/library/windowsazure/ff687127.aspx) im Abschnitt **Verbindungsherstellung mit Azure aus Visual Studio** beschriebenen Schritte aus, um Verbindungsinformationen nicht aus dem Verwaltungsportal, sondern über Visual Studio abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Azure**-Struktur im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen.
+Führen Sie die [hier](http://msdn.microsoft.com/library/azure/ff687127.aspx) im Abschnitt **Verbindungsherstellung mit Azure aus Visual Studio** beschriebenen Schritte aus, um Verbindungsinformationen nicht aus dem Verwaltungsportal, sondern über Visual Studio abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Azure**-Struktur im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen.
 
 Notieren Sie den Wert **SharedAccessKey** oder kopieren Sie ihn in die Zwischenablage:
 
@@ -65,4 +64,4 @@ Notieren Sie den Wert **SharedAccessKey** oder kopieren Sie ihn in die Zwischena
   [6]: ./media/howto-service-bus-topics/getting-started-multi-tier-27.png
   [34]: ./media/howto-service-bus-topics/VSProperties.png
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

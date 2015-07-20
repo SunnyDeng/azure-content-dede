@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden eines Azure Machine Learning-Webdiensts aus Excel | Azure" 
+	pageTitle="Verwenden eines Machine Learning-Webdiensts aus Excel | Microsoft Azure" 
 	description="Verwenden eines Azure Machine Learning-Webdiensts aus Excel" 
 	services="machine-learning" 
 	documentationCenter="" 
@@ -13,27 +13,27 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/18/2015" 
-	ms.author="luisca"/>
+	ms.date="05/18/2015" 
+	ms.author="tedway"/>
 
 
 # Verwenden eines Azure Machine Learning-Webdiensts aus Excel #
 
- Azure Machine Learning Studio erleichtert das Verwenden von Bewertungswebdiensten direkt aus Excel, ohne Code schreiben zu müssen. 
+ Mit Azure Machine Learning Studio können Webdienste auf einfache Weise direkt von Excel aus aufgerufen werden, ohne einen Code schreiben zu müssen.
 
-[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)] 
+[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
 ## Schritte
 
-1. Veröffentlichen eines Webdiensts. [Auf dieser Seite](machine-learning-walkthrough-5-publish-web-service.md) wird dies erläutert. Die Excel-Arbeitsmappenfunktion wird derzeit nur für Antwort-/Anfrage-Dienste unterstützt, die eine einzelne Ausgabe aufweisen (d. h. eine einzelne Bewertungsbezeichnung). 
+1. Veröffentlichen eines Webdiensts. Auf [dieser Seite](machine-learning-walkthrough-5-publish-web-service.md) wird dies erläutert. Die Excel-Arbeitsmappenfunktion wird derzeit nur für Antwort-/Anfrage-Dienste unterstützt, die eine einzelne Ausgabe aufweisen (d. h. eine einzelne Bewertungsbezeichnung). 
  
-2. Wenn Sie einen Webdienst haben, klicken Sie auf den Bereich **WEB SERVICES** der linken Seite in Studio, und wählen Sie den aus Excel zu verwendenden Webdienst aus. 
+2. Wenn Sie einen Webdienst haben, klicken Sie auf den Bereich **WEB SERVICES** der linken Seite in Studio und wählen Sie den aus Excel zu verwendenden Webdienst aus.
 
 3. Auf der Registerkarte **DASHBOARD** für den Webdienst befindet sich die Zeile **REQUEST/RESPONSE** für den Antwort-/Anfrage-Dienst. Wenn dieser Dienst eine einzelne Ausgabe hat, sollte sich in dieser Zeile der Link **Download Excel Workbook** befinden.
 
 	![][1]
  
-4. Klicken Sie auf **Download Excel Workbook**, und öffnen Sie die Arbeitsmappe in Excel.
+4. Klicken Sie auf **Download Excel Workbook** und öffnen Sie die Arbeitsmappe in Excel.
 
 5. Es wird eine Sicherheitswarnung angezeigt. Klicken Sie auf die Schaltfläche **Bearbeitung aktivieren**.
 
@@ -41,15 +41,15 @@
 
 6. Es wird eine Sicherheitswarnung angezeigt. Klicken Sie auf die Schaltfläche **Inhalt aktivieren** zum Ausführen von Makros im Arbeitsblatt.
 
-	![][3] 
+	![][3]
  
-7. Sobald Makros aktiviert sind, wird eine Tabelle generiert. Spalten in Blau sind als Eingabe für den RRS-Webdienst oder als **PARAMETER** erforderlich. Beachten Sie die Ausgaben des RRS-Diensts, **PREDICTED VALUES**, in Grün. Wenn alle Spalten für eine bestimmte Zeile gefüllt wurden, ruft die Arbeitsmappe automatisch die Bewertungs-API auf und zeigt die bewerteten Ergebnisse an. 
+7. Sobald Makros aktiviert sind, wird eine Tabelle generiert. Spalten in Blau sind als Eingabe für den RRS-Webdienst oder als **PARAMETER** erforderlich. Beachten Sie die Ausgaben des RRS-Diensts **PREDICTED VALUES** in Grün. Wenn alle Spalten für eine bestimmte Zeile gefüllt wurden, ruft die Arbeitsmappe automatisch die Bewertungs-API auf und zeigt die bewerteten Ergebnisse an.
 
 	![][4]
 
 7. Um mehr als eine Zeile zu bewerten, geben Sie in der zweiten Zeile Daten ein. Daraufhin werden die Vorhersagewerte erzeugt. Sie können auch gleichzeitig mehrere Zeilen einfügen.
 
-8. Verwenden Sie nun die Excel-Funktionen (Diagramme, Power Map, bedingte Formatierungen usw.) mit den Vorhersagewerten!    
+8. Verwenden Sie nun die Excel-Funktionen (Diagramme, Power Map, bedingte Formatierungen usw.) mit den Vorhersagewerten!
 
 
 ## Freigeben Ihrer Arbeitsmappe
@@ -68,5 +68,6 @@ RRS-Aufrufe werden in diesen beiden Situationen ausgeführt:
 [2]: ./media/machine-learning-consuming-from-excel/enableeditting.png
 [3]: ./media/machine-learning-consuming-from-excel/enablecontent.png
 [4]: ./media/machine-learning-consuming-from-excel/sampletable.png
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO2-->

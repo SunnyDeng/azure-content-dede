@@ -82,6 +82,10 @@ Die standardmäßige Georeplikation ist nur für Standard- und Premium-Datenbank
 
 ###Aktive Georeplikation
 
-Die aktive Georeplikation ist für Premium-Datenbanken verfügbar. Sie wurde für schreibintensive Anwendungen mit den umfassendsten Wiederherstellungsanforderungen entwickelt. Bei der aktiven Georeplikation können Sie bis zu vier lesbare sekundäre Replikate auf Servern in verschiedenen Regionen erstellen. Sie können auf die gleiche Weise wie bei der standardmäßigen Georeplikation ein Failover auf eines der sekundären Replikate initiieren. Darüber hinaus kann die aktive Georeplikation verwendet werden, um Anwendungsupgrades oder die räumliche Verlegung von Anwendungen zu unterstützen, sowie als Lastenausgleich für schreibgeschützte Workloads. Informationen zur Konfiguration der Georeplikation finden Sie unter [Entwerfen für Geschäftskontinuität](sql-database-business-continuity-design.md) und Details zu einem Failover zu einer sekundären Datenbank unter [Wiederherstellen nach einem Ausfall](sql-database-disaster-recovery.md). Details zur Implementierung von Anwendungsupgrades ohne Ausfallzeit finden Sie unter [Anwendungsupgrades ohne Ausfallzeiten](sql-database-business-continuity-application-upgrade.md).
+Die aktive Georeplikation ist für Premium-Datenbanken verfügbar. Sie wurde für schreibintensive Anwendungen mit den umfassendsten Wiederherstellungsanforderungen entwickelt. Bei der aktiven Georeplikation können Sie bis zu vier lesbare sekundäre Replikate auf Servern in verschiedenen Regionen erstellen. Sie können auf die gleiche Weise wie bei der standardmäßigen Georeplikation ein Failover auf eines der sekundären Replikate initiieren. Darüber hinaus kann die aktive Georeplikation verwendet werden, um Anwendungsupgrades oder die räumliche Verlegung von Anwendungen zu unterstützen, sowie als Lastenausgleich für schreibgeschützte Arbeitsauslastungen. Informationen zur Konfiguration der Georeplikation finden Sie unter [Entwerfen für Geschäftskontinuität](sql-database-business-continuity-design.md) und Details zu einem Failover zu einer sekundären Datenbank unter [Wiederherstellen nach einem Ausfall](sql-database-disaster-recovery.md). Details zur Implementierung von Anwendungsupgrades ohne Ausfallzeit finden Sie unter [Anwendungsupgrades ohne Ausfallzeiten](sql-database-business-continuity-application-upgrade.md).
 
-<!---HONumber=58--> 
+
+
+ 
+
+<!---HONumber=July15_HO2-->

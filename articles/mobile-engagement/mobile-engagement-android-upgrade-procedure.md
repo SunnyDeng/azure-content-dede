@@ -17,33 +17,94 @@
 	ms.author="kapiteir" />
 
 
-# Upgrade-Verfahren
+#Upgrade-Verfahren
 
 Wenn Sie bereits eine ältere Version unseres SDK in Ihrer Anwendung integriert haben, müssen Sie die folgenden Punkte beim Aktualisieren des SDK beachten.
 
 Möglicherweise müssen Sie mehrere Verfahren befolgen, wenn Sie mehrere Versionen des SDK verpasst haben. Wenn Sie beispielsweise von 1.4.0 zu 1.6.0 migrieren, müssen Sie zunächst den Vorgang „von 1.4.0 zu 1.5.0“ ausführen und anschließend den Vorgang „1.5.0 zu 1.6.0“.
 
-Unabhängig von der Version, für die Sie das Upgrade ausführen, müssen Sie alle `mobile-engagement-VERSION.jar` durch die neuen Versionen ersetzen.
+Unabhängig von der Version, für die Sie das Upgrade ausführen, müssen Sie die `mobile-engagement-VERSION.jar` durch die neue Version ersetzen.
 
-### Von 2.4.0 zu 3.0.0
+##Von 3.0.0 zu 4.0.0
 
-Im Folgenden wird beschrieben, wie Sie die Migration einer SDK-Integration vom Capptain-Dienst, der von Capptain-SAS angeboten wird, in eine App von Azure Mobile Engagement durchführen.
+### Systemeigener Push
 
->[AZURE.IMPORTANT]Capptain und Mobile Engagement sind nicht dieselben Dienste, und die unten beschriebene Vorgehensweise hebt nur hervor, wie die Migration der Clientapp durchzuführen ist. Bei der Migration des SDK in die App werden Ihre Daten NICHT von den Capptain-Servern zu den Mobile Engagement-Servern migriert
+Ein systemeigener Push (GCM/ADM) wird jetzt auch für In-App-Benachrichtigungen verwendet, Sie müssen daher die Anmeldeinformationen für den systemeigenen Push für jeden Push-Kampagnentyp konfigurieren.
 
-Wenn Sie von einer früheren Version migrieren, sehen Sie auf der Capptain-Website nach, wie eine Migration auf Version 2.4 durchgeführt wird. Führen Sie anschließend das folgende Verfahren aus.
+Wenn Sie die Schritte noch nicht ausgeführt haben, führen Sie [diese Anweisungen](mobile-engagement-android-integrate-engagement-reach.md#native-push) aus.
 
-#### JAR-Datei
+### AndroidManifest.xml
 
-Ersetzen Sie `capptain.jar` durch `mobile-engagement-VERSION.jar` (im Ordner `libs`).
+Die Reach-Integration wurde in ``AndroidManifest.xml`` geändert.
 
-#### Ressourcendateien
+Ersetzen:
+
+    <receiver
+      android:name="com.microsoft.azure.engagement.reach.EngagementReachReceiver"
+      android:exported="false">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        <action android:name="com.microsoft.azure.engagement.intent.action.AGENT_CREATED"/>
+        <action android:name="com.microsoft.azure.engagement.intent.action.MESSAGE"/>
+        <action android:name="com.microsoft.azure.engagement.reach.intent.action.ACTION_NOTIFICATION"/>
+        <action android:name="com.microsoft.azure.engagement.reach.intent.action.EXIT_NOTIFICATION"/>
+        <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+        <action android:name="com.microsoft.azure.engagement.reach.intent.action.DOWNLOAD_TIMEOUT"/>
+      </intent-filter>
+    </receiver>
+
+nach
+
+    <receiver
+      android:name="com.microsoft.azure.engagement.reach.EngagementReachReceiver"
+      android:exported="false">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        <action android:name="com.microsoft.azure.engagement.intent.action.AGENT_CREATED"/>
+        <action android:name="com.microsoft.azure.engagement.intent.action.MESSAGE"/>
+        <action android:name="com.microsoft.azure.engagement.reach.intent.action.ACTION_NOTIFICATION"/>
+        <action android:name="com.microsoft.azure.engagement.reach.intent.action.EXIT_NOTIFICATION"/>
+        <action android:name="com.microsoft.azure.engagement.reach.intent.action.DOWNLOAD_TIMEOUT"/>
+      </intent-filter>
+    </receiver>
+    <receiver android:name="com.microsoft.azure.engagement.reach.EngagementReachDownloadReceiver">
+      <intent-filter>
+        <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+      </intent-filter>
+    </receiver>
+
+Möglicherweise wird jetzt ein Ladebildschirm angezeigt, wenn Sie auf eine Ankündigung (mit Text/Webinhalten) oder eine Umfrage klicken. Sie müssen dies hinzufügen, damit diese Kampagnen in 4.0.0 verwendet werden können:
+
+    <activity
+      android:name="com.microsoft.azure.engagement.reach.activity.EngagementLoadingActivity"
+      android:theme="@android:style/Theme.Dialog">
+      <intent-filter>
+        <action android:name="com.microsoft.azure.engagement.reach.intent.action.LOADING"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
+    </activity>
+
+### Ressourcen
+
+Betten Sie die neue `res/layout/engagement_loading.xml`-Datei in Ihr Projekt ein.
+
+##Von 2.4.0 zu 3.0.0
+
+Im Folgenden wird beschrieben, wie Sie die Migration einer SDK-Integration vom Capptain-Dienst, der von Capptain-SAS angeboten wird, in eine App von Azure Mobile Engagement durchführen. Wenn Sie von einer früheren Version migrieren, sehen Sie auf der Capptain-Website nach, wie eine Migration auf Version 2.4.0 durchgeführt wird. Führen Sie anschließend das folgende Verfahren aus.
+
+>[AZURE.IMPORTANT]Capptain und Mobile Engagement sind nicht dieselben Dienste, und die unten beschriebene Vorgehensweise hebt nur hervor, wie die Migration der Clientapp durchzuführen ist. Bei der Migration des SDK in die App werden Ihre Daten NICHT von den Capptain-Servern zu den Mobile Engagement-Servern migriert.
+
+### JAR-Datei
+
+Ersetzen Sie `capptain.jar`durch `mobile-engagement-VERSION.jar` (im Ordner `libs`).
+
+### Ressourcendateien
 
 Jede von uns bereitgestellte Ressourcendatei (mit Präfix `capptain_`) muss durch die neuen Dateien ersetzt werden (Präfix `engagement_`).
 
 Wenn Sie diese Dateien angepasst haben, müssen Sie Ihre Anpassungen auf die neuen Dateien erneut anwenden. Zudem müssen **alle Bezeichner in den Ressourcendateien umbenannt werden**.
 
-#### Anwendungs-ID
+### Anwendungs-ID
 
 Engagement verwendet jetzt eine Verbindungszeichenfolge zum Konfigurieren der SDK-Bezeichner wie dem Anwendungsbezeichner.
 
@@ -63,7 +124,7 @@ Entfernen Sie diesen Abschnitt aus der Datei `AndroidManifest.xml`, wenn diese v
 
 			<meta-data android:name="capptain:appId" android:value="<YOUR_APPID>"/>
 
-#### Java-API
+### Java-API
 
 Jeder Aufruf einer beliebigen Java-Klasse des SDKs muss umbenannt werden, z. B. muss `CapptainAgent.getInstance(this)` in `EngagementAgent.getInstance(this)` sowie `extends CapptainActivity` in `extends EngagementActivity` umbenannt werden usw.
 
@@ -71,7 +132,7 @@ Wenn die Integration mit den Standardeinstellungsdateien des Agent erfolgt ist, 
 
 Für die Erstellung von Webankündigungen wird jetzt die JavaScript-Bindung `engagementReachContent` verwendet.
 
-#### AndroidManifest.xml
+### AndroidManifest.xml
 
 Hier wurden eine Reihe von Änderungen vorgenommen. Der Dienst wird nicht mehr freigegeben und viele Empfänger können nicht länger exportiert werden.
 
@@ -79,7 +140,7 @@ Die Dienstdeklaration wurde vereinfacht, der Zielfilter und alle darin enthalten
 
 Es ist eine umfassende Umbenennung zur Verwendung von Engagement erfolgt.
 
-Es muss jetzt wie folgt aussehen:
+Es sieht jetzt wie folgt aus:
 
 			<service
 			  android:name="com.microsoft.azure.engagement.service.EngagementService"
@@ -289,7 +350,7 @@ und
 
 			sendXMPPMessage(android.os.Bundle msg)
 
-#### Proguard
+### Proguard
 
 Die Umbenennung kann sich auf die Proguard-Konfiguration auswirken. Die Regeln sehen jetzt wie folgt aus:
 
@@ -300,5 +361,6 @@ Die Umbenennung kann sich auf die Proguard-Konfiguration auswirken. Die Regeln s
 			-keep class com.microsoft.azure.engagement.reach.activity.EngagementWebAnnouncementActivity$EngagementReachContentJS {
 			  <methods>;
 			}
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

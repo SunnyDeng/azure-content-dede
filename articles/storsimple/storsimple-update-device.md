@@ -12,12 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="04/27/2015"
+   ms.date="06/15/2015"
    ms.author="v-sharos" />
 
-#Aktualisieren von StorSimple-Geräten
+# Aktualisieren von StorSimple-Geräten
 
-##Übersicht
+## Übersicht
 
 Mit den Updatefunktionen von StorSimple können Sie Ihr StorSimple-Gerät ganz einfach auf dem neuesten Stand halten. Je nach Updatetyp können Sie Updates über das Microsoft Azure-Verwaltungsportal oder über die Windows PowerShell-Benutzeroberfläche auf dem Gerät anwenden. In diesem Lernprogramm werden die Updatetypen und deren Installation beschrieben.
 
@@ -30,7 +30,7 @@ Sie können regelmäßige Updates über das Verwaltungsportal oder über Windows
 
 Sämtliche Updatetypen werden im Folgenden einzeln beschrieben.
 
-###Regelmäßige Updates
+### Regelmäßige Updates
 
 Regelmäßige Updates können ohne Unterbrechung des normalen Betriebs auf dem Gerät installiert werden, wenn das Gerät im normalen Modus ausgeführt wird. Diese Updates werden über die Microsoft Update-Website auf jedem Gerätecontroller angewendet.
 
@@ -40,54 +40,66 @@ Regelmäßige Updates können ohne Unterbrechung des normalen Betriebs auf dem G
 
 - Sie können normale Updates über Windows PowerShell für StorSimple installieren. Ausführliche Informationen finden Sie unter [Installieren von regelmäßigen Updates über Windows PowerShell für StorSimple](#install-regular-updates-via-windows-powershell-for-storsimple).
 
-###Wartungsmodus-Updates
+### Wartungsmodus-Updates
 
-Für Wartungsmodus-Updates muss der Betrieb unterbrochen werden. Dazu gehören z. B. Firmwareupgrades für Datenträger oder USM-Firmwareupgrades. Für diese Updates muss das Gerät in den Wartungsmodus versetzt werden. Einzelheiten finden Sie unter [Ändern des Gerätemodus](#change-device-modes). Sie können Wartungsmodus-Updates nicht über das Verwaltungsportal installieren. Sie müssen stattdessen Windows PowerShell für StorSimple verwenden.
+Für Wartungsmodus-Updates muss der Betrieb unterbrochen werden. Dazu gehören z. B. Firmwareupgrades für Datenträger oder USM-Firmwareupgrades. Für diese Updates muss das Gerät in den Wartungsmodus versetzt werden. Einzelheiten dazu finden Sie hier: [Schritt 2: Wechseln in den Wartungsmodus](#to-enter-maintenance-mode). Sie können Wartungsmodus-Updates nicht über das Verwaltungsportal installieren. Sie müssen stattdessen Windows PowerShell für StorSimple verwenden.
 
 Weitere Informationen zum Installieren von Wartungsmodus-Updates finden Sie unter [Installieren von Wartungsmodus-Updates über Windows PowerShell für StorSimple](#install-maintenance-mode-updates-via-windows-powershell-for-storsimple).
 
 > [AZURE.IMPORTANT]Wartungsmodus-Updates müssen separat auf jedem Controller angewendet werden.
 
-##Installieren regelmäßiger Updates im Verwaltungsportal
+## Installieren regelmäßiger Updates im Verwaltungsportal
 
 Sie können Updates über das Verwaltungsportal auf Ihr StorSimple-Gerät anwenden.
 
+
 [AZURE.INCLUDE [storsimple-install-updates-manually](../../includes/storsimple-install-updates-manually.md)]
 
-##Installieren von regelmäßigen Updates über Windows PowerShell für StorSimple
+## Installieren von regelmäßigen Updates über Windows PowerShell für StorSimple
 
 Sie können aber auch Windows PowerShell für StorSimple für das Anwenden regelmäßiger Updates (normaler Modus) verwenden.
 
+> [AZURE.IMPORTANT]Obwohl Sie regelmäßige Updates die mithilfe von Windows PowerShell für StorSimple installieren können, wird dringend empfohlen, regelmäßige Updates über das Verwaltungsportal zu installieren. Beim Starten von Update 1 werden vor der Installation von Updates aus dem Portal Vorabprüfungen ausgeführt, die Fehlern vorbeugen und ein reibungsloseres Arbeiten sicherstellen.
+
 [AZURE.INCLUDE [storsimple-install-regular-updates-powershell](../../includes/storsimple-install-regular-updates-powershell.md)]
 
-##Installieren von Wartungsmodus-Updates über Windows PowerShell für StorSimple
+## Installieren von Wartungsmodus-Updates über Windows PowerShell für StorSimple
 
 Sie verwenden Windows PowerShell für StorSimple, um Wartungsmodus-Updates auf Ihr StorSimple-Gerät anzuwenden. Alle E/A-Anforderungen werden in diesem Modus angehalten. Auch werden die Dienste wie der NVRAM- (Non-Volatile Random Access Memory) oder der Clusterdienst beendet. Beide Controller werden neu gestartet, wenn Sie diesen Modus starten oder beenden. Wenn Sie diesen Modus beenden, werden alle Dienste fortgesetzt und sollten fehlerfrei funktionieren. (Dies kann einige Minuten dauern.)
 
-Wenn Sie Wartungsmodus-Updates anwenden müssen, erhalten Sie über das Verwaltungsportal eine Warnung, dass Updates vorliegen, die installiert werden müssen. Diese Warnung enthält Anweisungen zur Verwendung von Windows PowerShell für StorSimple für die Installation dieser Updates. Nachdem Sie Ihr Gerät aktualisiert haben, versetzen Sie das Gerät auf dieselbe Weise wieder in den normalen Modus. Schrittweise Anweisungen finden Sie unter [So beenden Sie den Wartungsmodus](#to-exit-maintenance-mode).
+Wenn Sie Wartungsmodus-Updates anwenden müssen, erhalten Sie über das Verwaltungsportal eine Warnung, dass Updates vorliegen, die installiert werden müssen. Diese Warnung enthält Anweisungen zur Verwendung von Windows PowerShell für StorSimple für die Installation dieser Updates. Nachdem Sie Ihr Gerät aktualisiert haben, versetzen Sie das Gerät auf dieselbe Weise wieder in den normalen Modus. Schrittweise Anweisungen finden Sie unter [Schritt 4: Beenden des Wartungsmodus](#to-exit-maintenance-mode).
 
-> [AZURE.IMPORTANT] 
+> [AZURE.IMPORTANT]
 > 
 > - Vergewissern Sie sich vor dem Starten des Wartungsmodus, dass beide Gerätecontroller fehlerfrei funktionieren, indem Sie den **Hardwarestatus** auf der Seite **Wartung** im Verwaltungsportal überprüfen. Wenn der Controller nicht fehlerfrei funktioniert, wenden Sie sich für die nächsten Schritte an Microsoft-Support. Für weitere Informationen kontaktieren Sie den Microsoft-Support. 
 > - Im Wartungsmodus müssen Sie das Update zunächst auf einem und dann auf dem anderen Controller anwenden.
+
+### Schritt 1: Stellen Sie eine Verbindung mit der seriellen Konsole her.
 
 Verwenden Sie eine Anwendung wie PuTTY, um auf die serielle Konsole zuzugreifen. Die folgende Vorgehensweise erläutert, wie Sie PuTTY für die Verbindung mit der seriellen Konsole verwenden.
 
 [AZURE.INCLUDE [storsimple-use-putty](../../includes/storsimple-use-putty.md)]
 
+### Schritt 2: Wechseln in den Wartungsmodus
+
 Nachdem Sie eine Verbindung mit der Konsole hergestellt haben, bestimmen Sie, ob Updates installiert werden müssen. Wechseln Sie dann in den Wartungsmodus, um sie zu installieren.
 
 [AZURE.INCLUDE [storsimple-enter-maintenance-mode](../../includes/storsimple-enter-maintenance-mode.md)]
+
+### Schritt 3: Installieren Sie die Updates.
 
 Installieren Sie anschließend die Updates.
 
 [AZURE.INCLUDE [storsimple-install-maintenance-mode-updates](../../includes/storsimple-install-maintenance-mode-updates.md)]
 
+    
+### Schritt 4: Beenden des Wartungsmodus
+
 Beenden Sie zum Schluss den Wartungsmodus.
 
 [AZURE.INCLUDE [storsimple-exit-maintenance-mode](../../includes/storsimple-exit-maintenance-mode.md)]
 
-##Installieren von Hotfixes über Windows PowerShell für StorSimple
+## Installieren von Hotfixes über Windows PowerShell für StorSimple
 
 Im Gegensatz zu Updates für Microsoft Azure StorSimple werden die Hotfixes aus einem freigegebenen Ordner installiert. Wie bei Updates gibt es auch zwei Arten von Hotfixes:
 
@@ -100,13 +112,13 @@ Die folgenden Vorgehensweisen erläutern, wie Sie mit Windows PowerShell für St
 
 [AZURE.INCLUDE [storsimple-install-maintenance-mode-hotfixes](../../includes/storsimple-install-maintenance-mode-hotfixes.md)]
 
-##Was geschieht mit Updates, wenn Sie das Gerät auf die Werkseinstellungen zurücksetzen?
+## Was geschieht mit Updates, wenn Sie das Gerät auf die Werkseinstellungen zurücksetzen?
 
 Wenn ein Gerät auf die Werkseinstellungen zurückgesetzt wird, gehen alle Updates verloren. Nach dem Registrieren und Konfigurieren des auf Werkseinstellungen zurückgesetzten Geräts müssen Sie die Updates manuell über das Verwaltungsportal und/oder Windows PowerShell für StorSimple installieren. Weitere Informationen zum Zurücksetzen auf Werkseinstellungen finden Sie unter [Zurücksetzen des Geräts auf die Standardwerkseinstellungen](https://msdn.microsoft.com/library/azure/dn772373.aspx).
 
-##Nächste Schritte
+## Nächste Schritte
 
-Erfahren Sie mehr über [Windows PowerShell für StorSimple](https://https://msdn.microsoft.com/library/azure/dn772425.aspx).
-
-<!--HONumber=52-->
+Erfahren Sie mehr über [Windows PowerShell für StorSimple](https://msdn.microsoft.com/library/azure/dn772425.aspx).
  
+
+<!---HONumber=July15_HO2-->

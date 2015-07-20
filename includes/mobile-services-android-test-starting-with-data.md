@@ -23,4 +23,4 @@ Die App verwendet nun mobile Dienste als Back-End-Speicher, und Sie können sie 
 
 Damit ist das Android-Lernprogramm **Erste Schritte mit Daten** abgeschlossen.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

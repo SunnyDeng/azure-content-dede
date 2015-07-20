@@ -4,8 +4,8 @@
 	services="storage" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
-	manager="adinah" 
-	editor=""/>
+	manager="wpickett" 
+	editor="jimbe"/>
 
 <tags 
 	ms.service="storage" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="03/11/2015" 
+	ms.date="06/03/2015" 
 	ms.author="robmcm"/>
 
 # Verwenden des Blob-Speichers mit Java
@@ -22,9 +22,9 @@
 
 ## Übersicht
 
-In diesem Leitfaden wird die Durchführung gängiger Szenarien mit dem Microsoft Azure-Blobspeicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Die behandelten Szenarien umfassen **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#NextSteps) .
+In diesem Leitfaden wird die Durchführung gängiger Szenarien mit dem Microsoft Azure-Blobspeicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
 
-> [AZURE.NOTE] Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf Android-Geräten verwenden. Weitere Informationen finden Sie unter [Azure Storage-SDK für Android][]. 
+> [AZURE.NOTE]Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf Android-Geräten verwenden. Weitere Informationen finden Sie unter [Azure Storage-SDK für Android][].
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
@@ -46,8 +46,7 @@ Fügen Sie die folgenden "import"-Anweisungen am Anfang der Java-Datei hinzu, um
 
 ## Einrichten einer Azure-Speicherverbindungszeichenfolge
 
-Ein Azure-Speicherclient verwendet eine Speicherverbindungszeichenfolge
-zum Speichern von Endpunkten und Anmeldeinformationen für den Zugriff auf Datenverwaltungsdienste. Bei der Ausführung in einer Clientanwendung muss die Speicherverbindungszeichenfolge in dem unten gezeigten Format angegeben werden. Dabei müssen der Name Ihres Speicherkontos und der primäre Zugriffsschlüssel für das im Verwaltungsportal aufgeführte Speicherkonto als  *AccountName*- und  *AccountKey*-Werte eingegeben werden. Dieses Beispiel zeigt, wie Sie ein statisches Feld für die Verbindungszeichenfolge deklarieren:
+Ein Azure-Speicherclient verwendet eine Speicherverbindungszeichenfolge zum Speichern von Endpunkten und Anmeldeinformationen für den Zugriff auf Datenverwaltungsdienste. Bei der Ausführung in einer Clientanwendung muss die Speicherverbindungszeichenfolge in dem unten gezeigten Format angegeben werden. Dabei müssen der Name Ihres Speicherkontos und der primäre Zugriffsschlüssel für das im Verwaltungsportal aufgeführte Speicherkonto als *AccountName-* und *AccountKey-* Werte eingegeben werden. Dieses Beispiel zeigt, wie Sie ein statisches Feld für die Verbindungszeichenfolge deklarieren:
 
     // Define the connection-string with your values
     public static final String storageConnectionString = 
@@ -55,7 +54,7 @@ zum Speichern von Endpunkten und Anmeldeinformationen für den Zugriff auf Daten
         "AccountName=your_storage_account;" + 
         "AccountKey=your_storage_account_key";
 
-In einer Anwendung, die in einer Microsoft Azure-Rolle ausgeführt wird, kann diese Zeichenfolge in der Dienstkonfigurationsdatei, *ServiceConfiguration.cscfg*, gespeichert werden. Der Zugriff darauf kann dann durch Aufruf der Methode **RoleEnvironment.getConfigurationSettings** erfolgen. Dieses Beispiel zeigt, wie die Verbindungszeichenfolge von einem **Setting**-Element mit der Bezeichnung  *StorageConnectionString* in der Dienstkonfigurationsdatei abgerufen wird:
+In einer Anwendung, die in einer Microsoft Azure-Rolle ausgeführt wird, kann diese Zeichenfolge in der Dienstkonfigurationsdatei *ServiceConfiguration.cscfg* gespeichert werden. Der Zugriff darauf kann dann durch Aufruf der Methode **RoleEnvironment.getConfigurationSettings** erfolgen. Dieses Beispiel zeigt, wie die Verbindungszeichenfolge von einem **Setting**-Element mit der Bezeichnung *StorageConnectionString* in der Dienstkonfigurationsdatei abgerufen wird:
 
     // Retrieve storage account from connection-string.
     String storageConnectionString = 
@@ -63,11 +62,13 @@ In einer Anwendung, die in einer Microsoft Azure-Rolle ausgeführt wird, kann di
 
 In den folgenden Beispielen wird davon ausgegangen, dass Sie eine dieser zwei Methoden verwendet haben, um die Speicherverbindungszeichenfolge abzurufen.
 
-## Gewusst wie: Erstellen eines Containers
+## Erstellen von Containern
 
 Ein CloudBlobClient-Objekt ermöglicht den Abruf von Referenzobjekten für Container und Blobs. Mit dem folgenden Code wird ein **CloudBlobClient**-Objekt erstellt. (Hinweis: Es gibt zusätzliche Möglichkeiten zum Erstellen von **CloudStorageAccount**-Objekten. Weitere Informationen finden Sie unter **CloudStorageAccount** in der [Azure Storage-Client-SDK-Referenz].)
 
-Alle Blobs befinden sich in einem Container. Mithilfe des **CloudBlobClient**-Objekts können Sie einen Verweis auf den Container abrufen, den Sie verwenden möchten. Falls der Container nicht vorhanden ist, können Sie ihn mit der **createIfNotExists**-Methode erstellen. Andernfalls gibt die Methode den vorhandenen Container zurück. Standardmäßig ist der neue Container privat, sodass Sie Ihren Speicherzugriffsschlüssel wie zuvor angeben müssen, um Blobs aus diesem Container herunterzuladen.
+[AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
+
+Mithilfe des **CloudBlobClient**-Objekts können Sie einen Verweis auf den Container abrufen, den Sie verwenden möchten. Falls der Container nicht vorhanden ist, können Sie ihn mit der **createIfNotExists**-Methode erstellen. Andernfalls gibt die Methode den vorhandenen Container zurück. Standardmäßig ist der neue Container privat, sodass Sie Ihren Speicherzugriffsschlüssel wie zuvor angeben müssen, um Blobs aus diesem Container herunterzuladen.
 
 	try
     {
@@ -103,7 +104,7 @@ Die Berechtigungen eines Containers werden standardmäßig für den privaten Zug
     // Set the permissions on the container.
     container.uploadPermissions(containerPermissions);
 
-## Gewusst wie: Hochladen eines Blobs in einen Container
+## Hochladen von Blobs in einen Container
 
 Rufen Sie einen Containerverweis ab und verwenden Sie diesen zum Abrufen eines Blob-Verweises, um eine Datei in ein Blob hochzuladen. Sobald Sie über einen Blob-Verweis verfügen, können Sie jeden Datenstrom hochladen, indem Sie die upload-Methode für den Blob-Verweis aufrufen. Bei diesem Vorgang wird das Blob erstellt, falls es nicht vorhanden ist, oder überschrieben, falls es vorhanden ist. Dieses Codebeispiel zeigt diesen Vorgang. Dabei wird davon ausgegangen, dass der Container bereits erstellt wurde.
 
@@ -132,7 +133,7 @@ Rufen Sie einen Containerverweis ab und verwenden Sie diesen zum Abrufen eines B
         e.printStackTrace();
     }
 
-## Gewusst wie: Auflisten der Blobs in einem Container
+## Auflisten der Blobs in einem Container
 
 Um die Blobs in einem Container aufzulisten, müssen Sie zuerst einen Containerverweis abrufen, ebenso wie beim Hochladen eines Blobs. Sie können die **listBlobs**-Methode des Containers mit einer **for**-Schleife verwenden. Der folgende Code gibt den URI der einzelnen Blobs in einem Container in der Konsole aus.
 
@@ -162,14 +163,11 @@ Beim Blob-Dienst wird ebenfalls das Konzept von Verzeichnissen in Containern ang
 
 Beispiel: Sie verfügen über einen Container mit der Bezeichnung "photos", in den Sie Blobs mit der Bezeichnung "rootphoto1", "2010/photo1", "2010/photo2" und "2011/photo1" hochladen. Hierdurch werden die virtuellen Verzeichnisse "2010" und "2011" im Container "photos" erstellt. Wenn Sie **listBlobs** für den Container "photos" aufrufen, enthält die zurückgegebene Sammlung **CloudBlobDirectory**- und **CloudBlob**-Objekte, die die Verzeichnisse und Blobs auf der obersten Ebene darstellen. In diesem Fall werden die Verzeichnisse "2010" und "2011" sowie das Foto "rootphoto1" zurückgegeben. Mit dem **instanceof**-Operator können Sie diese Objekte unterscheiden.
 
-Optional können Sie Parameter an die **listBlobs**-Methode übergeben, indem Sie
-den **useFlatBlobListing**-Parameter auf "true" festlegen. Dies führt dazu,
-dass jedes Blob unabhängig vom Verzeichnis zurückgegeben wird. Weitere
-Informationen finden Sie unter **CloudBlobContainer.listBlobs** in der [Azure Storage-Client-SDK-Referenz].
+Optional können Sie Parameter an die **listBlobs**-Methode übergeben, indem Sie den **useFlatBlobListing**-Parameter auf "true" festlegen. Dies führt dazu, dass jedes Blob unabhängig vom Verzeichnis zurückgegeben wird. Weitere Informationen finden Sie unter **CloudBlobContainer.listBlobs** in der [Azure Storage-Client-SDK-Referenz].
 
-## Gewusst wie: Herunterladen eines Blobs
+## Herunterladen eines Blobs
 
-Führen Sie zum Herunterladen von Blobs die gleichen Schritte wie zum Hochladen eines Blobs aus, um einen Blob-Verweis abzurufen. Im Uploadbeispiel haben Sie die upload-Methode für das Blob-Objekt aufgerufen. Im folgenden Beispiel rufen Sie die download-Methode auf, um den Blob-Inhalt an ein Datenstromobjekt wie z. B. **FileOutputStream** zu übertragen, das Sie verwenden können, um das Blob in einer lokalen Datei zu speichern.
+Führen Sie zum Herunterladen von Blobs die gleichen Schritte wie zum Hochladen eines Blobs aus, um einen Blob-Verweis abzurufen. Im Uploadbeispiel haben Sie die upload-Methode für das Blob-Objekt aufgerufen. Im folgenden Beispiel rufen Sie die download-Methode auf, um den Blob-Inhalt an ein Datenstromobjekt wie z. B. **FileOutputStream** zu übertragen, das Sie verwenden können, um das Blob in einer lokalen Datei zu speichern.
 
     try
     {
@@ -188,7 +186,7 @@ Führen Sie zum Herunterladen von Blobs die gleichen Schritte wie zum Hochladen 
 	       if (blobItem instanceof CloudBlob) {
 	           // Download the item and save it to a file with the same name.
     	        CloudBlob blob = (CloudBlob) blobItem;
-    	        blob.download(new FileOutputStream("C:\\mydownloads" + blob.getName()));
+    	        blob.download(new FileOutputStream("C:\\mydownloads\" + blob.getName()));
     	    }
     	}
     }
@@ -198,9 +196,9 @@ Führen Sie zum Herunterladen von Blobs die gleichen Schritte wie zum Hochladen 
         e.printStackTrace();
     }
 
-## Gewusst wie: Löschen eines Blobs
+## Löschen eines Blobs
 
-Zum Löschen eines Blobs rufen Sie einen Blob-Verweis ab und rufen dann **deleteIfExists** auf.
+Zum Löschen eines Blobs rufen Sie einen Blobverweis ab und rufen dann **deleteIfExists** auf.
 
     try
     {
@@ -225,10 +223,9 @@ Zum Löschen eines Blobs rufen Sie einen Blob-Verweis ab und rufen dann **delete
         e.printStackTrace();
     }
 
-## Gewusst wie: Löschen eines Blob-Containers
+## Löschen eines Blob-Containers
 
-Zum Löschen eines Blob-Containers rufen Sie einen Blob-Containerverweis ab und
-rufen **deleteIfExists** auf.
+Zum Löschen eines Blob-Containers rufen Sie einen Blob-Containerverweis ab und dann **deleteIfExists** auf.
 
     try
     {
@@ -255,15 +252,17 @@ rufen **deleteIfExists** auf.
 Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
 - [Azure Storage-SDK für Java]
-- [Azure Storage-Client-SDK-Referenz]
+- [Referenz für Azure Storage-Client-SDKs]
 - [Azure Storage-REST-API]
-- [Blog des Azure-Speicherteams]
+- [Azure Storage-Teamblog]
 
-[Azure-SDK für Java]: http://azure.microsoft.com/develop/java/
+[Azure SDK for Java]: http://azure.microsoft.com/develop/java/
 [Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
 [Azure Storage-SDK für Android]: https://github.com/azure/azure-storage-android
 [Azure Storage-Client-SDK-Referenz]: http://dl.windowsazure.com/storage/javadoc/
+[Referenz für Azure Storage-Client-SDKs]: http://dl.windowsazure.com/storage/javadoc/
 [Azure Storage-REST-API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
-[Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
+[Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO2-->

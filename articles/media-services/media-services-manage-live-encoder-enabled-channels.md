@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="04/29/2015" 
+	ms.date="05/27/2015" 
 	ms.author="juliako"/>
 
 #Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden (Vorschau)
@@ -40,6 +40,16 @@ Mit Media Services-Version 2.10 können Sie beim Erstellen eines Kanals angeben,
 Im folgenden Diagramm ist ein Livedatenstrom-Workflow dargestellt, bei dem ein Single-Bitrate-Datenstrom empfangen (in einem der folgenden Protokolle: RTMP, Smooth Streaming oder RTP (MPEG-TS)) und dann in einen Multi-Bitrate-Datenstrom codiert wird.
 
 ![Liveworkflow][live-overview]
+
+>[AZURE.NOTE]Nicht alle Rechenzentren unterstützen die Livecodierung mit Azure Media Services.
+>
+>Wenn Sie zum Erstellen von Kanälen das Azure-Verwaltungsportal verwenden, stehen zwei Optionen für den Kanalcodierungstyp zur Verfügung: **Keine** und **Standard**. Wenn nur die Option **Keine** angezeigt wird, bedeutet dies, dass Ihr Rechenzentrum die Livecodierung mit AMS nicht unterstützt.
+>
+>Wenn Sie .NET SDK oder REST-API verwenden, gehen Sie zum Überprüfen wie folgt vor:
+>
+>1. Versuchen Sie, einen Kanal zu erstellen und dabei den Codierungstyp auf "Standard" festzulegen. 
+>2. Wenn der HTTP-Fehlercode 412 (Vorbedingung nicht erfüllt) mit der Meldung *"Livecodierung wird für diese Region nicht unterstützt; der Codierungstyp muss auf 'Keine' festgelegt werden"* zurückgegeben wird, unterstützt Ihr Rechenzentrum die Livecodierung nicht.
+
 
 ##In diesem Thema
 
@@ -69,7 +79,7 @@ Im folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreamin
 
 	Im Azure-Verwaltungsportal wird beim Erstellen eines Programms auch ein Medienobjekt erstellt.
 
-	Wenn Sie hingegen .NET SDK oder REST verwenden, müssen Sie beim Erstellen eines Programms ein Medienobjekt erstellen und angeben, dass es verwendet werden soll.
+	Wenn Sie hingegen .NET SDK oder REST verwenden, müssen Sie beim Erstellen eines Programms ein Medienobjekt erstellen und angeben, dass es verwendet werden soll. 
 1. Veröffentlichen Sie das mit dem Programm verknüpfte Medienobjekt.   
 
 	Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
@@ -111,23 +121,23 @@ Professionelle Sendeanstalten arbeiten in der Regel mit lokalen High-End-Liveenc
 		- High Profile (4:2:0, 4:2:2)
 		- 422 Profile (4:2:0, 4:2:2)
 
-	- MPEG-4 AVC/H.264-Video  
+	- MPEG-4 AVC/H.264-Video
 	
-		- Baseline, Main, High Profile (8-bit 4:2:0)
-		- High 10 Profile (10-bit 4:2:0)
-		- High 422 Profile (10-bit 4:2:2)
+		- Baseline, Main, High Profile (8-Bit 4:2:0)
+		- High 10 Profile (10-Bit 4:2:0)
+		- High 422 Profile (10-Bit 4:2:2)
 
 
-	- MPEG-2 AAC-LC Audio 
+	- MPEG-2 AAC-LC-Audio
 	
 		- Mono, Stereo, Surround (5.1, 7.1)
-		- MPEG-2 style ADTS packaging
+		- ADTS Paketerstellung im MPEG-2-Format
 
-	- Dolby Digital (AC-3) Audio 
+	- Dolby Digital-Audio (AC-3)
 
 		- Mono, Stereo, Surround (5.1, 7.1)
 
-	- MPEG Audio (Layer II and III) 
+	- MPEG-Audio (Layer II und III)
 			
 		- Mono, Stereo
 
@@ -158,15 +168,15 @@ Professionelle Sendeanstalten arbeiten in der Regel mit lokalen High-End-Liveenc
 
 	- MPEG-4 AVC/H.264-Video  
 	
-		- Baseline, Main, High Profile (8-bit 4:2:0)
-		- High 10 Profile (10-bit 4:2:0)
-		- High 422 Profile (10-bit 4:2:2)
+		- Baseline, Main, High Profile (8-Bit 4:2:0)
+		- High 10 Profile (10-Bit 4:2:0)
+		- High 422 Profile (10-Bit 4:2:2)
 
 	- MPEG-2 AAC-LC-Audio
 
 		- Mono, Stereo, Surround (5.1, 7.1)
-		- 44.1 kHz sampling rate
-		- MPEG-2 style ADTS packaging
+		- 44,1 kHz-Samplingrate
+		- ADTS Paketerstellung im MPEG-2-Format
 	
 - Zu den empfohlenen Encodern gehören:
 
@@ -241,7 +251,7 @@ Optional. Hier wird der Eingabe-Videodatenstrom beschrieben. Wird dieses Feld fr
 
 ####Index
 
-Mit diesem nullbasierten Index wird angegeben, welcher Eingabe-Videodatenstrom vom Liveencoder im Kanal verarbeitet werden soll. Die Einstellung gilt nur, wenn das Erfassungsstreamingprotokoll die Einstellung „RTP (MPEG-TS)“ aufweist. 
+Mit diesem nullbasierten Index wird angegeben, welcher Eingabe-Videodatenstrom vom Liveencoder im Kanal verarbeitet werden soll. Die Einstellung gilt nur, wenn das Erfassungsstreamingprotokoll die Einstellung „RTP (MPEG-TS)“ aufweist.
 
 Der Standardwert lautet null. Es wird empfohlen, als Eingabe einen Single-Program-Transportdatenstrom (SPTS) zu verwenden. Wenn der Eingabedatenstrom mehrere Programme enthält, wird die Programmkartentabelle (PMT) in der Eingabe vom Liveencoder analysiert. Eingaben, welche die Datenstrom-Typnamen „MPEG-2-Video“ oder „H.264“ aufweisen, werden identifiziert und in der Reihenfolge angeordnet, die in der PMT angegeben ist. Der nullbasierte Index wird zum Abrufen des n-ten Eintrags in dieser Anordnung verwendet.
 
@@ -304,9 +314,10 @@ Dies ist der eindeutige Bezeichner einer Werbepause, der von nachgeschalteten An
 
 ###Show slate (Slate anzeigen)
 
-Optional. Hierdurch wird dem Liveencoder signalisiert, bei Werbepausen zum Standardslatebild zu wechseln und den eingehenden Videodatenstrom auszublenden. Im Slatezustand wird auch die Audioausgabe stummgeschaltet. Die Standardeinstellung lautet **false**.
+Optional. Hierdurch wird dem Liveencoder signalisiert, bei Werbepausen zum [Standard-Slate-Bild](media-services-manage-live-encoder-enabled-channels.md#default_slate) zu wechseln und den eingehenden Videodatenstrom auszublenden. Im Slatezustand wird auch die Audioausgabe stummgeschaltet. Die Standardeinstellung lautet **false**.
  
-Das zu verwendende Bild wird zum Zeitpunkt der Kanalerstellung über die Eigenschaft „Default slate asset Id“ angegeben. Das Slate wird gestreckt, um es an die Anzeigebildgröße anzupassen.
+Das zu verwendende Bild wird zum Zeitpunkt der Kanalerstellung über die Eigenschaft „Default slate asset Id“ angegeben. Das Slate-Bild wird gestreckt, um es an die Anzeigebildgröße anzupassen.
+
 
 ##Einfügen von Slatebildern
 
@@ -322,14 +333,17 @@ Dies ist die Dauer des Slates in Sekunden. Es muss sich um einen positiven Wert 
 
 Wenn für diese Einstellung der Wert „true“ festgelegt ist, wird der Liveencoder zum Einfügen eines Slatebilds während Werbepausen konfiguriert. Der Standardwert lautet „true“.
 
-###Default slate Asset Id (ID des Slate-Standardmedienobjekts)
+###<a id="default_slate"></a>Default slate Asset Id (ID des Slate-Standardmedienobjekts)
 
 Optional. Hier wird die ID des Media Services-Medienobjekts angegeben, welches das Slatebild enthält. Der Standardwert lautet null.
 
-**Hinweis**: Vor dem Erstellen des Kanals muss das Slatebild im JPEG-Format mit einer maximalen Auflösung von 1920 x 1080 und einer maximalen Größe von 3 MB als dediziertes Medienobjekt hochgeladen werden (in diesem Medienobjekt dürfen sich keine anderen Dateien befinden). Der Dateiname muss die Erweiterung „*.jpg“ aufweisen. Diese Medienobjektdatei muss als primäre Datei für das Medienobjekt gekennzeichnet werden. Bei diesem Medienobjekt ist keine Speicherverschlüsselung möglich.
+**Hinweis**: Vor dem Erstellen des Kanals muss das Slate-Bild mit den folgenden Einschränkungen als dediziertes Medienobjekt hochgeladen werden (in diesem Medienobjekt dürfen sich keine anderen Dateien befinden).
+
+- Auflösung von höchstens 1920 x 1080
+- Größe von maximal 3 MB
+- Der Dateinamen muss die Erweiterung *JPG aufweisen.- Das Bild muss als einzige AssetFile in ein Medienobjekt hochgeladen werden. Diese AssetFile sollte als primäre Datei gekennzeichnet werden. Bei dem Medienobjekt ist keine Speicherverschlüsselung möglich.
 
 Wird keine **default slate Asset Id** (ID des Slate-Standardmedienobjekts) angegeben, und die Option **insert slate on ad marker** (Slate bei AD-Marker einfügen) weist die Einstellung **true** auf, so wird ein Standardbild von Azure Media Services verwendet, um den eingehenden Videodatenstrom zu verdecken. Im Slatezustand wird auch die Audioausgabe stummgeschaltet.
-
 
 
 ##Kanalprogramme
@@ -342,13 +356,13 @@ Jedem Programm ist ein Medienobjekt zugeordnet, von welchem die gestreamten Inha
 
 Von einem Kanal können bis zu drei Programme gleichzeitig ausgeführt werden, sodass Sie von einem eingehenden Datenstrom mehrere Archive erstellen können. Auf diese Weise können Sie verschiedene Teile eines Ereignisses nach Bedarf veröffentlichen und archivieren. Beispielsweise könnte Ihre Geschäftsanforderung darin bestehen, 6 Stunden eines Programms zu archivieren, jedoch nur die letzten 10 Minuten zu senden. Dazu müssen Sie zwei Programme erstellen, die gleichzeitig ausgeführt werden. Ein Programm wird auf die Archivierung von 6 Stunden des Ereignisses festgelegt. Dieses Programm wird jedoch nicht veröffentlicht. Das andere Programm wird auf die Archivierung von 10 Minuten festgelegt. Dieses Programm wird veröffentlicht.
 
-Verwenden Sie vorhandene Programme nicht erneut für nachfolgende Ereignisse. Erstellen und starten Sie stattdessen für jedes Ereignis ein neues Programm wie im Abschnitt „Programmieren von Livestreaming-Anwendungen“ beschrieben.
+Verwenden Sie vorhandene Programme nicht erneut für nachfolgende Ereignisse. Erstellen und starten Sie stattdessen für jedes Ereignis ein neues Programm wie im Abschnitt „Programmieren von Livestreaminganwendungen“ beschrieben.
 
 Wenn Sie zum Starten von Streaming und Archivierung bereit sind, starten Sie das Programm. Sie können das Programm und damit das Streaming und die Archivierung des Ereignisses jederzeit beenden.
 
 Zum Löschen von archivierten Inhalten beenden und löschen Sie das Programm und löschen anschließend das zugehörige Medienobjekt. Medienobjekte können nicht gelöscht werden, wenn sie von Programmen verwendet werden. Zuerst muss das betreffende Programm gelöscht werden.
 
-Auch nach dem Beenden und Löschen des Programms können die Benutzer archivierte Inhalte als Video on Demand streamen, solange das Medienobjekt nicht gelöscht wurde.
+Auch nach dem Beenden und Löschen des Programms können die Benutzer archivierte Inhalte als bedarfsgesteuertes Video streamen, solange das Medienobjekt nicht gelöscht wurde.
 
 Wenn Sie die archivierten Inhalte beibehalten möchten, diese aber nicht für das Streaming verfügbar sein sollen, löschen Sie den Streaming-Locator.
 
@@ -378,8 +392,7 @@ In der folgenden Tabelle ist die Zuordnung der Kanalstatus mit den Abrechnungsmo
 </table>
 
 
->[AZURE.NOTE]Derzeit kann der Kanalstart in der Vorschau bis zu 30 Minuten dauern. Das Zurücksetzen des Kanals kann bis zu 5 Minuten dauern.
-
+>[AZURE.NOTE]Derzeit kann der Kanalstart in der Vorschau 20 Minuten und länger dauern. Das Zurücksetzen des Kanals kann bis zu 5 Minuten dauern.
 
 
 ##<a id="Considerations"></a>Überlegungen
@@ -390,6 +403,12 @@ In der folgenden Tabelle ist die Zuordnung der Kanalstatus mit den Abrechnungsmo
 - In der Standardeinstellung können Sie Ihrem Media Services-Konto nicht mehr als 5 Livekanäle hinzufügen. Hierbei handelt es sich um eine weiche Kontingentgrenze bei allen neuen Konten. Weitere Informationen finden Sie unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md).
 - Sie können das Eingabeprotokoll nicht ändern, während der Kanal oder seine zugehörigen Programme ausgeführt werden. Wenn Sie andere Protokolle benötigen, erstellen Sie für jedes Eingabeprotokoll einen separaten Kanal.
 - Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [￼diesem Abschnitt](media-services-manage-live-encoder-enabled-channels.md#states).
+
+##Bekannte Probleme
+
+- Der Kanalstart kann 20 Minuten und länger dauern.
+- Die RTP-Unterstützung zielt auf professionelle Sendeanstalten ab. Bitte lesen Sie die Hinweise zu RTP in [diesem](http://azure.microsoft.com/blog/2015/04/13/an-introduction-to-live-encoding-with-azure-media-services/) Blog.
+- Die Slate-Bilder sollten den [hier](media-services-manage-live-encoder-enabled-channels.md#default_slate) beschriebenen Einschränkungen entsprechen. Wenn Sie versuchen, einen Kanal mit einem Standard-Slate-Bild zu erstellen, das größer ist als 1920 x 1080, tritt bei der Anforderung ein Fehler auf.
 
 
 ##<a id="tasks"></a>Aufgaben im Zusammenhang mit Livestreaming
@@ -420,10 +439,14 @@ Wählen Sie **Portal**, **.NET** oder **REST API**, um auf Informationen zum Ers
 
 > [AZURE.SELECTOR]
 - [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
-- [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
-- [REST](https://msdn.microsoft.com/library/azure/dn783458.aspx
+- [.NET SDK](media-services-dotnet-creating-live-encoder-enabled-channel.md)
+- [REST API](https://msdn.microsoft.com/library/azure/dn783458.aspx)
 
 ###Schutz der Medienobjekte
+
+**Übersicht**:
+
+[Inhaltsschutz – Übersicht](media-services-content-protection-overview.md)
 
 Wenn Sie Medienobjekt, das mit einem Programm verknüpft ist, mit AES (Advanced Encryption Standard, mit 128-Bit-Verschlüsselungsschlüsseln) oder PlayReady-DRM verschlüsseln möchten, müssen Sie einen Inhaltsschlüssel erstellen.
 
@@ -435,21 +458,31 @@ Nach dem Erstellen des Inhaltsschlüssels können Sie die Autorisierungsrichtlin
 
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
 
+####Integrieren in Partneranwendungen
+
+[Übermitteln von DRM-Lizenzen an Azure Media Services mithilfe von castLabs](media-services-castlabs-integration.md)
+
+
 ###Veröffentlichen und Bereitstellen von Medienobjekten
 
 **Übersicht**:
 
 - [Dynamische Paketerstellung – Übersicht](../media-services-dynamic-overview.md)
-- [Bereitstellen von Inhalten für Kunden – Übersicht](media-services-deliver-content-overview.md)
 
-Verwenden Sie **.NET** oder **REST API**, um eine Übermittlungsrichtlinie für Medienobjekte zu erstellen.
+
+Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte mithilfe von **.NET** oder **REST-API**.
 
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
 
-Veröffentlichen Sie Medienobjekte (durch Locator-Erstellung) mithilfe des **Azure-Verwaltungsportals** oder mit **.NET**.
+Veröffentlichen von Medienobjekten (durch Locator-Erstellung) mithilfe des **Azure-Verwaltungsportals** oder mithilfe von **.NET**.
 
 [AZURE.INCLUDE [media-services-selector-publish](../../includes/media-services-selector-publish.md)]
 
+
+Bereitstellen von Inhalten
+
+> [AZURE.SELECTOR]
+- [Overview](media-services-deliver-content-overview.md)
 
 ###Aktivieren von Azure CDN
 
@@ -467,8 +500,9 @@ Informationen zum Skalieren von Streamingeinheiten finden Sie unter [Skalieren v
 
 [Media Services-Konzepte](media-services-concepts.md)
 
+[Spezifikation der Fragmented MP4-Echtzeiterfassung für Azure Media Services](media-services-fmp4-live-ingest-overview.md)
 
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

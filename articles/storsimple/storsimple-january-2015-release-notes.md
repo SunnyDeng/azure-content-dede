@@ -1,44 +1,44 @@
 <properties 
-    pageTitle="StorSimple – Versionshinweise – Januar 2015"
+    pageTitle="Versionsanmerkungen zu Update 0.2 der StorSimple 8000-Serie – Januar 2015"
     description="Beschreibt die neuen Features, Probleme und Problemumgehungen für die Microsoft Azure StorSimple-Version vom Januar 2015."
     services="storsimple"
     documentationCenter="NA"
     authors="SharS"
     manager="adinah"
     editor="tysonn" />
-<tags 
+ <tags 
     ms.service="storsimple"
     ms.devlang="NA"
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="TBD"
-    ms.date="04/13/2015"
+    ms.date="06/02/2015"
     ms.author="v-sharos" />
 
 
-#StorSimple – Versionshinweise – Januar 2015
+# Versionsanmerkungen zu Update 0.2 der StorSimple 8000-Serie – Januar 2015
 
-##Übersicht
+## Übersicht
 
-Dieses Dokument beschreibt die wichtigsten offenen Fragen für die Microsoft Azure StorSimple-Version von Januar 2015. Es enthält auch eine Liste der StorSimple-Software- und -Firmware-Updates, die in dieser Version enthalten sind. Dies ist die zweite Version nach der allgemeinen Verfügbarkeit von Microsoft Azure StorSimple (General Availability, GA).
+Dieses Dokument beschreibt die wichtigsten offenen Fragen für die Microsoft Azure StorSimple-Version von Januar 2015. Es enthält auch eine Liste der StorSimple-Software- und -Firmware-Updates, die in dieser Version enthalten sind. Dies ist die zweite Version, nachdem die Freigabeversion der StorSimple 8000-Serie im Juli 2014 allgemein verfügbar gemacht wurde.
   
 Dieses Update ändert die Softwareversion des physischen Geräts nach dem Oktober-Update nicht. Es bleibt weiterhin Version 6.3.9600.17312. Das vom Image des virtuellen Geräts verwendete Image wurde in dieser Version geändert. Daher wird für alle neuen nach dem 20.01.2015 erstellten virtuellen Geräte die Version 6.3.9600.17361 angezeigt.
 
 Lesen Sie die folgenden Informationen in den Versionshinweisen für das Update vom Januar 2015.
 
-> [AZURE.IMPORTANT] 
+> [AZURE.IMPORTANT]
 
 - Dieses Update ist nicht über Windows Update verfügbar und kann nicht wie andere Updates installiert werden. Ihr Gerät erhält dieses Update selbst dann nicht, wenn Sie die Updates über das Verwaltungsportals angewendet haben. Dieses Update gilt nur für virtuelle Geräte, die nach dem 20. Januar 2015 erstellt wurden. 
  
 - Die Januar-Version von StorSimple enthält keine Updates des physischen StorSimple-Geräts. Sie können weiterhin alle verfügbaren Windows-Updates für das virtuelle Gerät, einschließlich der neuesten Sicherheitsupdates, anwenden, es wird aber keine Änderung der Version für das physische StorSimple-Gerät angezeigt.
 
-##Neuigkeiten in der Januar-Version
+## Neuigkeiten in der Januar-Version
 
 Dieses Update behebt ein Problem, durch das die Volumes auf dem virtuellen Gerät offline geschaltet werden. (Siehe [In dieser Version behobene Probleme](#issues-fixed-in-the-january-release).)
 
 Das Update enthält keine neuen Features oder Funktionen.
 
-##In der Januar-Version behobene Probleme
+## In der Januar-Version behobene Probleme
 
 Die folgende Tabelle beschreibt das Problem, das in diesem Update behoben wurde.
 
@@ -46,7 +46,7 @@ Die folgende Tabelle beschreibt das Problem, das in diesem Update behoben wurde.
 |---|-------|-----|--------------------------|-------------------------
 |1|Wechsel von Volumes in den Offlinemodus|Wenn Cloud-Latenzen für mehrere Minuten andauern, wechseln die Volumes des virtuellen StorSimple-Geräts auf den Hosts in den Offlinemodus. Dieses Update erhöht den Schwellenwert für die Cloud-Latenzen und minimiert dadurch die Situationen, in denen die Volumes auf Hosts offline gehen.|Nein|Ja  
 
-##Bekannte Probleme in der Januar-Version
+## Bekannte Probleme in der Januar-Version
 
 Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in dieser Version.
  
@@ -64,18 +64,18 @@ Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in die
 |10|Webproxy|	Wenn Sie den Webproxy für ein registriertes Gerät konfigurieren und aktivieren, müssen Sie den aktiven Controller auf Ihrem Gerät neu starten.||	Ja |Nein
 |11|Hohe Cloud-Latenzen und hohe E/A-Arbeitsauslastung|Wenn Ihr StorSimple-Gerät mit einer Kombination aus sehr hohen Cloud-Latenzen (mehrere Sekunden) und hoher E/A-Arbeitsauslastung konfrontiert wird, verschlechtert sich die Leistung der Gerätevolumes, und es tritt ggf. der E/A-Fehler "Gerät nicht bereit" auf.|Sie müssen die Gerätecontroller manuell neu starten oder ein Gerätefailover ausführen, um dieses Problem zu beheben.|Ja|Nein
 
-##Updates für das physische Gerät in der Januar-Version
+## Updates für das physische Gerät in der Januar-Version
 
 Dieses Update enthält keine anderen Änderungen am StorSimple-Gerät.
 
-##Updates des SAS-Controllers (Serial Attached SCSI) und der Firmware in der Januar-Version
+## Updates des SAS-Controllers (Serial Attached SCSI) und der Firmware in der Januar-Version
 
 Diese Version enthält keine Updates für den SAS-Controller (Serial Attached SCSI) oder die Firmware. Das Treiberupdate wurde in der Version vom Oktober 2014 durchgeführt.
 
-##Updates für das virtuelle Gerät in der Januar-Version
+## Updates für das virtuelle Gerät in der Januar-Version
 
 Diese Version enthält ein aktualisiertes Image für das virtuelle Gerät. Für alle nach dem 20.01.2015 erstellten virtuellen Geräte wird die Version 6.3.9600.17361 angezeigt.
 
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

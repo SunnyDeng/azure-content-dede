@@ -33,11 +33,11 @@ Sie sollten den integrierten Schutz verwenden, wenn Ihre Anwendung die folgenden
 2. Die Häufigkeit von Datenänderungen ist niedrig (z. B. Transaktionen pro Stunde). Ein RPO-Wert von einer Stunde führt nicht zu erheblichen Datenverlusten.
 3. Bei der Anwendung muss sehr auf die Kosten geachtet werden, sodass keine zusätzlichen Kosten für die Georeplikation möglich sind. 
 
-> [AZURE.NOTE]Bei der geografischen Wiederherstellung wird keine Rechenkapazität in bestimmten Regionen im Voraus reserviert, um aktive Datenbanken nach einem Ausfall aus einer Sicherungskopie wiederherzustellen. Der Dienst verwaltet die Workload im Zusammenhang mit "geo-restore"-Anforderungen so, dass die Auswirkungen auf vorhandene Datenbanken in dieser Region minimiert werden und deren Kapazitätsanforderungen Priorität haben. Daher hängt die Wiederherstellungszeit der Datenbank davon ab, wie viele andere Datenbanken in derselben Region zur gleichen Zeit wiederhergestellt werden.
+> [AZURE.NOTE]Bei der geografischen Wiederherstellung wird keine Rechenkapazität in bestimmten Regionen im Voraus reserviert, um aktive Datenbanken nach einem Ausfall aus einer Sicherungskopie wiederherzustellen. Der Dienst verwaltet die Arbeitsauslastung im Zusammenhang mit "geo-restore"-Anforderungen so, dass die Auswirkungen auf vorhandene Datenbanken in dieser Region minimiert werden und deren Kapazitätsanforderungen Priorität haben. Daher hängt die Wiederherstellungszeit der Datenbank davon ab, wie viele andere Datenbanken in derselben Region zur gleichen Zeit wiederhergestellt werden.
 
 ##Gründe für das Verwenden der Georeplikation
 
-Bei der Georeplikation wird eine replizierte (sekundäre) Datenbank in einer anderen Region als die primäre Datenbank erstellt. Damit wird sichergestellt, dass die erforderlichen Daten und Rechenressourcen zur Unterstützung der Workload der Anwendung nach der Wiederherstellung für die Datenbank zur Verfügung stehen. Im Abschnitt [Wiederherstellen nach einem Ausfall](sql-database-disaster-recovery.md) finden Sie Informationen zum Verwenden eines Failovers zum Wiederherstellen der Anwendung.
+Bei der Georeplikation wird eine replizierte (sekundäre) Datenbank in einer anderen Region als die primäre Datenbank erstellt. Damit wird sichergestellt, dass die erforderlichen Daten und Rechenressourcen zur Unterstützung der Arbeitsauslastung der Anwendung nach der Wiederherstellung für die Datenbank zur Verfügung stehen. Im Abschnitt [Wiederherstellen nach einem Ausfall](sql-database-disaster-recovery.md) finden Sie Informationen zum Verwenden eines Failovers zum Wiederherstellen der Anwendung.
 
 Sie sollten die Georeplikation verwenden, wenn Ihre Anwendung die folgenden Kriterien erfüllt:
 
@@ -51,7 +51,7 @@ Sie sollten die Georeplikation verwenden, wenn Ihre Anwendung die folgenden Krit
 
 Für Datenbanken der Standard-Ebene kann keine aktive Georeplikation verwendet werden. Wenn die Anwendung also die Datenbanken der Standardebene verwendet und die oben genannten Kriterien erfüllt, sollten Sie die standardmäßige Georeplikation aktivieren. Für Premium-Datenbanken können hingegen beide Optionen ausgewählt werden. Die standardmäßige Georeplikation wurde als einfachere und kostengünstigere Lösung für die Notfallwiederherstellung entworfen und ist damit besonders für Anwendungen geeignet, die nur vor ungeplanten Ereignissen wie Ausfällen geschützt werden sollen. Mit der standardmäßigen Georeplikation können Sie nur die gekoppelte Region für die Wiederherstellung verwenden und haben nicht die Möglichkeit, mehr als eine sekundäre Datenbank zu erstellen. Dieses letztere Feature ist wichtig für Upgradeszenarios für die Anwendung. Wenn dieses Szenario also für die Anwendung wichtig ist, sollten Sie stattdessen die aktive Georeplikation aktivieren. Weitere Informationen finden Sie unter [Aktualisieren von Anwendungen ohne Ausfallzeit](sql-database-business-continuity-application-upgrade.md).
 
-> [AZURE.NOTE]Die aktive Georeplikation unterstützt auch schreibgeschützten Zugriff auf die sekundäre Datenbank, wodurch zusätzliche Kapazität für die schreibgeschützten Workloads bereitgestellt wird.
+> [AZURE.NOTE]Die aktive Georeplikation unterstützt auch schreibgeschützten Zugriff auf die sekundäre Datenbank, wodurch zusätzliche Kapazität für die schreibgeschützten Arbeitsauslastungen bereitgestellt wird.
 
 ##Aktivieren der Georeplikation
 
@@ -96,4 +96,7 @@ Diese API ist asynchron. Verwenden Sie nach der Rückgabe die [Get Database Copy
 
 Sie sollten beim Entwerfen der Anwendung für die Geschäftskontinuität verschiedene Konfigurationsoptionen berücksichtigen. Die Auswahl hängt von der Bereitstellungstopologie für die Anwendung ab und davon, welche Teile der Anwendungen am anfälligsten für einen Ausfall sind. Anleitungen finden Sie unter [Entwerfen von Cloud-Lösungen für die Notfallwiederherstellung mithilfe der aktiven Georeplikation](https://msdn.microsoft.com/library/azure/dn741328.aspx).
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=July15_HO2-->

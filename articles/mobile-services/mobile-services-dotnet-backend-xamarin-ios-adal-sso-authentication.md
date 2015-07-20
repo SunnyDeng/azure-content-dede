@@ -4,7 +4,7 @@
 	documentationCenter="xamarin" 
 	authors="mattchenderson" 
 	manager="dwrede" 
-	editor="" 
+	editor="dwrede" 
 	services="mobile-services"/>
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/25/2015" 
+	ms.date="06/19/2015" 
 	ms.author="mahender"/>
 
 # Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden
@@ -126,7 +126,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 1. Klicken Sie im Menü „Run” auf „Run”, um die App zu starten. 
 2. Sie werden aufgefordert, sich bei Ihrem Azure Active Directory anzumelden.  
-3. Die App authentifiziert sich und gibt die TodoItems zurück.
+3. Die App wird authentifiziert sich und gibt die TodoItem-Elemente zurück.
 
    ![](./media/mobile-services-dotnet-backend-xamarin-ios-adal-sso-authentication/mobile-services-app-run.png)
 
@@ -140,4 +140,5 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 [Xamarin-Bindung für die Active Directory-Authentifizierungsbibliothek für iOS]: https://github.com/AzureADSamples/NativeClient-Xamarin-iOS
 [Xamarin]: http://xamarin.com/visual-studio
 [Xamarin Studio]: http://xamarin.com/download
-<!--HONumber=54--> 
+
+<!---HONumber=July15_HO2-->

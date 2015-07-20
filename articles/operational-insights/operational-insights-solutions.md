@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="NA"
 	ms.devlang="NA"
 	ms.topic="article"
-	ms.date="05/20/2015"
+	ms.date="07/02/2015"
 	ms.author="alfran"/>
 
 # Lösungen in Operational Insights
@@ -128,6 +128,5 @@ Zu den Serversuchergebnissen gehören:
 - Methode zur automatischen Updateaktivierung
 - Tage seit dem letzten Update
 - Version des Windows Update-Agents
- 
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

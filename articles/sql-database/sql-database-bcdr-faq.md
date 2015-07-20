@@ -60,4 +60,9 @@ Für aktive Georeplikation können alle sekundären Datenbanken (bis zu vier sek
 
 Die Georeplikation verwendet fortlaufende Kopien. Verwenden Sie daher die dynamische Verwaltungsansicht (DMV) [sys.dm_continuous_copy_status](https://msdn.microsoft.com/library/azure/dn741329.aspx), um den Zeitpunkt der letzten Replikation und andere Informationen zu erhalten.
 
-<!---HONumber=58--> 
+
+
+
+ 
+
+<!---HONumber=July15_HO2-->

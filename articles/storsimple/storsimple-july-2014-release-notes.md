@@ -1,29 +1,29 @@
 <properties 
-    pageTitle="StorSimple – Versionshinweise – Juli 2014"
+    pageTitle="Versionsanmerkungen zur Freigabeversion der StorSimple 8000-Serie – Juli 2014"
     description="Beschreibt die neuen Features, Probleme und Problemumgehungen für die Microsoft Azure StorSimple-Version vom Juli 2014."
     services="storsimple"
     documentationCenter="NA"
     authors="SharS"
     manager="adinah"
     editor="tysonn" />
-<tags 
+ <tags 
     ms.service="storsimple"
     ms.devlang="NA"
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="TBD"
-    ms.date="04/28/2015"
+    ms.date="05/27/2015"
     ms.author="v-sharos" />
 
-#StorSimple – Versionshinweise – Juli 2014 
+# Versionsanmerkungen zur Freigabeversion der StorSimple 8000-Serie – Juli 2014 
 
-##Übersicht
+## Übersicht
 
-Die folgenden Anmerkungen zu dieser Version enthalten die kritischen offenen Probleme der Version Juli 2014 General Availability (GA) von Microsoft Azure StorSimple. Diese Version bezieht sich auf Softwareversion 6.3.9600.17215.
+Die folgenden Versionsanmerkungen enthalten die kritischen offenen Probleme der StorSimple 8000-Serie von Microsoft Azure StorSimple in der Version von Juli 2014 für die allgemeine Verfügbarkeit. Diese Version bezieht sich auf Softwareversion 6.3.9600.17215.
 
 Sofern nicht anders angegeben, gelten diese Versionshinweise für alle Modelle des StorSimple-Geräts. Die Anmerkungen zu dieser Version werden fortlaufend aktualisiert. Wenn schwerwiegende Probleme festgestellt werden, die eine Problemumgehung erfordern, werden sie hinzugefügt. Bevor Sie Ihre Microsoft Azure StorSimple-Lösung bereitstellen, sollten Sie die folgenden Informationen beachten.
 
-##Bekannte Probleme in dieser Version
+## Bekannte Probleme in dieser Version
 Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in dieser Version.
  
 | Nr. | Funktion | Problem | Kommentare/Problemumgehung | Gilt für das physische Gerät | Gilt für das virtuelle Gerät |
@@ -40,6 +40,6 @@ Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in die
 | 10 | Netzwerkschnittstellen | Die Netzwerkschnittstellen DATA 2 und DATA 3 wurden in der Software ausgetauscht. | Wenden Sie sich an den Microsoft-Support, wenn Sie diese Schnittstellen konfigurieren müssen. | Ja | Nein |
 
 
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

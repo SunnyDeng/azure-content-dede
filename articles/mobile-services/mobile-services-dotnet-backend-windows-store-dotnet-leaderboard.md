@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Erstellen einer Bestenlisten-App mit Azure Mobile Services .NET-Back-End" 
-	description="Erfahren Sie, wie Sie eine Windows Store-App mithilfe von Azure Mobile Services mit einem .NET-Back-End erstellen." 
+	pageTitle="Erstellen einer Windows Store-Bestenlisten-App mit .NET-Back-End | Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie eine Windows Store-Bestenlisten-App mithilfe von Azure Mobile Services mit einem .NET-Back-End erstellen." 
 	documentationCenter="windows" 
 	authors="MikeWasson" 
 	manager="dwrede" 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="02/23/2015" 
-	ms.author="mwasson"/>
+	ms.date="06/24/2015" 
+	ms.author="glenga"/>
 
 # Erstellen einer Bestenlisten-App mit Azure Mobile Services .NET-Back-End
 
@@ -111,9 +111,9 @@ Fügen Sie eine weitere Klasse namens `PlayerRank` hinzu.
 
 Beide Klassen erben von der **EntityData**-Klasse. Durch das Ableiten von **EntityData** wird die Nutzung der Daten für die App erleichtert. Es wird die plattformübergreifende Clientbibliothek für Azure Mobile Services verwendet. **EntityData** macht außerdem das [Behandeln von Datenbank-Schreibkonflikten](mobile-services-windows-store-dotnet-handle-database-conflicts.md) leichter für die App.
 
-Die `PlayerRank`-Klasse verfügt über eine ￼[Navigationseigenschaft](http://msdn.microsoft.com/data/jj713564.aspx)￼, die auf die zugehörige `Player`￼￼￼-Entität verweist. Am **[ForeignKey]**-Attribut erkennt EF, dass die `Player`-Eigenschaft einen Fremdschlüssel darstellt.
+Die `PlayerRank`-Klasse verfügt über eine ￼[Navigationseigenschaft](http://msdn.microsoft.com/data/jj713564.aspx)￼, die auf die zugehörige `Player`￼￼￼-Entität verweist. Das **[ForeignKey]**-Attribut teilt EF mit, das die `Player`-Eigenschaft einen Fremdschlüssel darstellt.
 
-# Hinzufügen von Web-API-Controllern
+## Hinzufügen von Web-API-Controllern
 
 Als Nächstes fügen Sie Web-API-Controller für `Player` und `PlayerRank` hinzu. Statt einfacher Web-API-Controller verwenden Sie einen speziellen Controller, den so genannten *Tabellen-Controller*, der speziell für Azure Mobile Services konzipiert wurde.
 
@@ -760,5 +760,6 @@ Wenn Sie nun die App ausführen, kommuniziert diese mit dem echten Dienst.
 [Hinzufügen von Pushbenachrichtigungen]: ../notification-hubs-windows-store-dotnet-get-started.md
 [Erste Schritte mit der Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-dotnet
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

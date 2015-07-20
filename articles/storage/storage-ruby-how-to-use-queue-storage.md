@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Abrufen und Löschen von Nachrichten verwenden. Die Beispiele wurden in Ruby geschrieben." 
 	services="storage" 
 	documentationCenter="ruby" 
-	authors="tfitzmac,tamram" 
+	authors="tfitzmac" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -23,9 +23,7 @@
 
 ## Übersicht
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem
-Azure-Warteschlangendienst demonstriert. Die Beispiele wurden mit der Ruby Azure-API erstellt.
-Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**.
+In diesem Leitfaden wird die Durchführung häufiger Szenarios mit dem Microsoft Azure-Warteschlangendienst erläutert. Die Beispiele wurden mit der Ruby Azure-API erstellt. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**.
 
 [AZURE.INCLUDE [storage-queue-concepts-include](../../includes/storage-queue-concepts-include.md)]
 
@@ -33,7 +31,7 @@ Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Lö
 
 ## Erstellen einer Ruby-Anwendung
 
-Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie im Thema zum [Erstellen einer Ruby-Anwendung in Azure](/develop/ruby/tutorials/web-app-with-linux-vm/).
+Erstellen Sie eine Ruby-Anwendung. Anweisungen finden Sie unter [Erstellen einer Ruby-Anwendung in Azure](/develop/ruby/tutorials/web-app-with-linux-vm/).
 
 ## Konfigurieren der Anwendung für den Speicherzugriff
 
@@ -53,19 +51,19 @@ Fügen Sie mit Ihrem bevorzugten Texteditor Folgendes oben in die Ruby-Datei an 
 
 ## Einrichten einer Azure-Speicherverbindung
 
-Das Azure-Modul entnimmt den Umgebungsvariablen **AZURE_STORAGE_ACCOUNT** und **AZURE_STORAGE_ACCESS_KEY** die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt werden, müssen Sie die Kontoinformationen vor dem Verwenden von **Azure::QueueService** mit dem folgenden Code angeben:
+Das Azure-Modul liest die Umgebungsvariablen **AZURE_STORAGE_ACCOUNT** und **AZURE_STORAGE_ACCESS_KEY** nach Informationen aus, die erforderlich sind, um eine Verbindung zum Azure-Speicherkonto herzustellen. Wenn diese Umgebungsvariablen nicht festgelegt werden, müssen Sie die Kontoinformationen vor dem Verwenden von **Azure::QueueService** mit dem folgenden Code angeben:
 
 	Azure.config.storage_account_name = "<your azure storage account>"
 	Azure.config.storage_access_key = "<your Azure storage access key>"
 
 So rufen Sie diese Werte ab:
 
-1. Melden Sie sich am [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an.
+1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an.
 2. Navigieren Sie zum Speicherkonto, das Sie verwenden möchten.
-3. Klicken Sie unten im Navigationsbereich auf **SCHLÜSSEL VERWALTEN**.
-4. Im eingeblendeten Dialog werden der Name des Speicherkontos, der primäre Zugriffsschlüssel und der sekundäre Zugriffsschlüssel angezeigt. Wählen Sie den primären oder sekundären Zugriffsschlüssel aus.
+3. Klicken Sie unten im Navigationsbereich auf **MANAGE KEYS**.
+4. Im eingeblendeten Dialog wird der Name des Speicherkontos, der primäre Zugriffsschlüssel und der sekundäre Zugriffsschlüssel angezeigt. Wählen Sie den primären oder sekundären Zugriffsschlüssel aus.
 
-## Vorgehensweise: Erstellen einer Warteschlange
+## Erstellen einer Warteschlange
 
 Der folgende Code erstellt ein **Azure::QueueService**-Objekt, das Ihnen das Arbeiten mit Warteschlangen ermöglicht.
 
@@ -79,20 +77,20 @@ Mit der **create_queue()**-Methode können Sie eine Warteschlange mit dem angege
 	  puts $!
 	end
 
-## Vorgehensweise: Einfügen einer Nachricht in eine Warteschlange
+## Einfügen einer Nachricht in eine Warteschlange
 
 Mit der **create_message()**-Methode können Sie eine neue Nachricht erstellen und zur Warteschlange hinzufügen.
 
 	azure_queue_service.create_message("test-queue", "test message")
 
-## Vorgehensweise: Einsehen der nächsten Nachricht
+## Einsehen der nächsten Nachricht
 
-Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die Methode **peek_messages()** aufrufen. Standardmäßig wird mit **peek_messages()** nur eine einzige Nachricht eingesehen. Sie können jedoch auch angeben, wie viele Nachrichten Sie abrufen möchten.
+Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die Methode **peek_messages()** aufrufen. Standardmäßig ruft **peek_messages()** nur eine einzige Nachricht ab. Sie können jedoch auch angeben, wie viele Nachrichten Sie abrufen möchten.
 
 	result = azure_queue_service.peek_messages("test-queue",
 	  {:number_of_messages => 10})
 
-## Vorgehensweise: Entfernen der nächsten Nachricht aus der Warteschlange
+## Entfernen der nächsten Nachricht aus der Warteschlange
 
 Sie können eine Nachricht in zwei Schritten aus der Warteschlange entfernen.
 
@@ -100,13 +98,13 @@ Sie können eine Nachricht in zwei Schritten aus der Warteschlange entfernen.
 
 2. Um die Nachricht endgültig aus der Warteschlange zu entfernen, müssen Sie außerdem **delete_message()** aufrufen.
 
-Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass eine andere Codeinstanz dieselbe Nachricht erneut abrufen kann, falls die Verarbeitung aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. Der Code ruft **delete_message()** direkt nach der Verarbeitung der Nachricht auf.
+Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass eine andere Codeinstanz dieselbe Nachricht erneut abrufen kann, falls die Verarbeitung aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. Ihr Code ruft **delete_message()** direkt nach der Verarbeitung der Nachricht auf.
 
 	messages = azure_queue_service.list_messages("test-queue", 30)
 	azure_queue_service.delete_message("test-queue", 
 	  messages[0].id, messages[0].pop_receipt)
 
-## Vorgehensweise: Ändern des Inhalts von Nachrichten in der Warteschlange
+## Ändern des Inhalts von Nachrichten in der Warteschlange
 
 Sie können den Inhalt einer Nachricht vor Ort in der Warteschlange ändern. Der folgende Code verwendet die **update_message()**-Methode zum Aktualisieren einer Nachricht. Der Code gibt ein Tupel zurück, das den Pop-Beleg der Warteschlangennachricht und einen Datums-/Uhrzeitwert in UTC zurück, der angibt, wann die Nachricht in der Warteschlange sichtbar sein wird.
 
@@ -115,7 +113,7 @@ Sie können den Inhalt einer Nachricht vor Ort in der Warteschlange ändern. Der
 	  "test-queue", message.id, message.pop_receipt, "updated test message", 
 	  30)
 
-## Vorgehensweise: Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange
+## Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange
 
 Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Warteschlange anpassen können.
 
@@ -123,7 +121,7 @@ Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Wartesc
 
 2. Außerdem können Sie das Unsichtbarkeits-Zeitlimit verkürzen oder verlängern, sodass der Code mehr oder weniger Zeit zur vollständigen Verarbeitung jeder Nachricht benötigt.
 
-Im folgenden Codebeispiel wird die Methode **list_messages()** verwendet, um 15 Nachrichten mit einem Aufruf abzurufen. Anschließend werden die Nachrichten ausgegeben und gelöscht. Außerdem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten pro Nachricht festgelegt.
+Das folgende Codebeispiel verwendet **list_messages()**, um 15 Nachrichten mit einem Aufruf abzurufen. Anschließend werden die Nachrichten ausgegeben und gelöscht. Außerdem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten pro Nachricht festgelegt.
 
 	azure_queue_service.list_messages("test-queue", 300
 	  {:number_of_messages => 15}).each do |m|
@@ -131,16 +129,16 @@ Im folgenden Codebeispiel wird die Methode **list_messages()** verwendet, um 15 
 	  azure_queue_service.delete_message("test-queue", m.id, m.pop_receipt)
 	end
 
-## Vorgehensweise: Abrufen der Warteschlangenlänge
+## Abrufen der Warteschlangenlänge
 
 Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. Die Methode **get_queue_metadata()** ruft eine ungefähre Nachrichtenanzahl und Metadaten zur Warteschlange vom Warteschlangendienst ab.
 
 	message_count, metadata = azure_queue_service.get_queue_metadata(
 	  "test-queue")
 
-## Vorgehensweise: Löschen einer Warteschlange
+## Löschen von Warteschlangen
 
-Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen Sie die **delete_queue()**-Methode für das Warteschlangenobjekt auf.
+Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen Sie die Methode **delete_queue()** für das Warteschlangenobjekt auf.
 
 	azure_queue_service.delete_queue("test-queue")
 
@@ -148,10 +146,11 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
 
 Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
-- Weitere Informationen finden Sie in der MSDN-Referenz: [Azure Storage](http://msdn.microsoft.com/library/azure/gg433040.aspx)
-- Besuchen Sie den [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/).
-- Besuchen Sie das [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub.
+- Weitere Informationen finden Sie in der MSDN-Referenz: [Azure-Speicher](http://msdn.microsoft.com/library/azure/gg433040.aspx).
+- Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/)
+- Besuchen Sie das [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
 
-Einen Vergleich zwischen dem in diesem Artikel besprochenen Azure-Warteschlangendienst und den unter [Verwenden von Service Bus-Warteschlangen](/develop/ruby/how-to-guides/service-bus-queuesbesprochenen Azure Service Bus-Warteschlangen finden sie unter [Azure-Warteschlangen und Azure Service Bus-Warteschlangen - Vergleich und Gegenüberstellung](http://msdn.microsoft.com/library/azure/hh767287.aspx).
+Einen Vergleich zwischen dem in diesem Artikel besprochenen Azure-Warteschlangendienst und den unter [Verwenden von Servicebus-Warteschlangen](/develop/ruby/how-to-guides/service-bus-queues/) besprochenen Azure Servicebus-Warteschlangen finden sie unter [Azure-Warteschlangen und Azure Servicevus-Warteschlangen - Vergleich und Gegenüberstellung](http://msdn.microsoft.com/library/azure/hh767287.aspx)
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO2-->

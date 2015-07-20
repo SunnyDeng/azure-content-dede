@@ -13,26 +13,30 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/14/2015" 
+	ms.date="06/16/2015" 
 	ms.author="juliako"/>
 
 
 #Verwalten von Azure Media Services-Konten mit PowerShell
 
+> [AZURE.SELECTOR]
+- [Portal](media-services-create-account.md)
+- [PowerShell](media-services-manage-with-powershell.md)
+- [REST](https://msdn.microsoft.com/library/azure/dn167014.aspx)
+
 ##Übersicht 
 
 Dieser Artikel veranschaulicht, wie Sie mithilfe von PowerShell-Cmdlets Azure Media Services-Konten verwalten.
 
->[AZURE.NOTE]
-> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">1 Monat kostenlose Testversion</a>.
+>[AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Kostenlose Azure-Testversion</a>.
 
 ##Installieren von Microsoft Azure PowerShell-Cmdlets
 
-Informationen zum Installieren der neuesten Azure PowerShell-Cmdlets finden Sie unter [How to install and configure Azure PowerShell](in englischer Sprache). (powershell-install-configure.md)
+Informationen zum Installieren der neuesten Azure PowerShell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 ##Auswählen eines Azure-Abonnements
 
-Wenn Sie PowerShell-Cmdlets installieren und konfigurieren, sollten Sie angeben, welches Abonnement Sie verwenden möchten. 
+Wenn Sie PowerShell-Cmdlets installieren und konfigurieren, sollten Sie angeben, welches Abonnement Sie verwenden möchten.
 
 Führen Sie das folgende Cmdlet aus, um eine Liste der verfügbaren Abonnements aufzurufen:
 
@@ -45,11 +49,11 @@ Wählen Sie dann wie folgt ein Abonnement aus:
  
 ##Abrufen des Speicherkontonamens
 
-Azure Media Services verwendet den Azure-Speicher zum Speichern von Medieninhalten. Wenn Sie ein neues Media Services-Konto erstellen, müssen Sie es einem Speicherkonto zuordnen. Das Speicherkonto muss zu dem Abonnement gehören, das Sie auch für Ihr Media Services-Konto verwenden möchten. 
+Azure Media Services verwendet den Azure-Speicher zum Speichern von Medieninhalten. Wenn Sie ein neues Media Services-Konto erstellen, müssen Sie es einem Speicherkonto zuordnen. Das Speicherkonto muss zu dem Abonnement gehören, das Sie auch für Ihr Media Services-Konto verwenden möchten.
 
 In diesem Beispiel wird ein vorhandenes Speicherkonto verwendet. Das Cmdlet [Get-AzureStorageAccount](https://msdn.microsoft.com/library/azure/dn495134.aspx) ruft Speicherkonten im aktuellen Abonnement ab. Rufen Sie den Namen (StorageAccountName) des Speicherkontos ab, dem Sie Ihr Media Services-Konto zuordnen möchten.
 
-	StorageAccountDescription :
+	StorageAccountDescription : 
 	AffinityGroup             :
 	Location                  : East US
 	GeoReplicationEnabled     : True
@@ -70,7 +74,7 @@ In diesem Beispiel wird ein vorhandenes Speicherkonto verwendet. Das Cmdlet [Get
 
 ##Erstellen eines neuen Media Services-Kontos
 
-Verwenden Sie zum Erstellen eines neuen Azure Media Services-Kontos das Cmdlet [New-AzureMediaServicesAccount](https://msdn.microsoft.com/library/azure/dn495286.aspx), und geben Sie den Namen des Media Services-Kontos, den Speicherort im Data Center, in dem es erstellt wird, und den Namen des Speicherkontos an. 
+Verwenden Sie zum Erstellen eines neuen Azure Media Services-Kontos das Cmdlet [New-AzureMediaServicesAccount](https://msdn.microsoft.com/library/azure/dn495286.aspx), und geben Sie den Namen des Media Services-Kontos, den Speicherort im Rechenzentrum, in dem es erstellt wird, und den Namen des Speicherkontos an.
 
 
 	PS C:> New-AzureMediaServicesAccount -Name "amstestaccount001" -StorageAccountName "storagetest001" -Location "East US"
@@ -92,8 +96,7 @@ Durch Angabe des "Name"-Parameters erhalten Sie ausführlichere Informationen, d
 
 ##Neugenerieren der Media Services-Zugriffsschlüssel
 
-Wenn Sie primäre oder sekundäre Media Services-Zugriffsschlüssel aktualisieren möchten, können Sie [New-AzureMediaServicesKey](https://msdn.microsoft.com/library/azure/dn495215.aspx) verwenden. 
-Sie müssen den Kontonamen angeben und festlegen, welcher Schlüssel neu generiert werden soll (primärer oder sekundärer Schlüssel). 
+Wenn Sie primäre oder sekundäre Media Services-Zugriffsschlüssel aktualisieren möchten, können Sie [New-AzureMediaServicesKey](https://msdn.microsoft.com/library/azure/dn495215.aspx) verwenden. Sie müssen den Kontonamen angeben und festlegen, welcher Schlüssel neu generiert werden soll (primärer oder sekundärer Schlüssel).
 
 Geben Sie einen "-Force"-Schalter an, wenn in der PowerShell keine Aufforderungen zur Bestätigung angezeigt werden sollen.
 
@@ -105,6 +108,6 @@ Wenn Sie das Azure Media Services-Konto löschen möchten, verwenden Sie [Remove
 
 	PS C:> Remove-AzureMediaServicesAccount -Name "amstestaccount001" -Force
 
+ 
 
-
-<!--HONumber=52--> 
+<!---HONumber=July15_HO2-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwalten von Experimentiterationen in Azure Machine Learning-Studio | Azure" 
+	pageTitle="Verwalten von Experimentiterationen in Azure Machine Learning-Studio | Microsoft Azure" 
 	description="Anleitung: Verwalten von Experimentiterationen in Azure Machine Learning-Studio" 
 	services="machine-learning" 
 	documentationCenter="" 
@@ -20,11 +20,11 @@
 
 Das Entwickeln eines solchen Vorhersageanalysemodells ist ein iterativer Prozess: Sie ändern die verschiedenen Funktionen und Parameter des Experiments, und die Ergebnisse nähern sich solange an, bis Sie der Ansicht sind, ein trainiertes, effektives Modell erreicht zu haben. Wichtig für diesen Prozess ist das Verfolgen der verschiedenen Iterationen der Experimentparameter und -konfigurationen.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
-Sie können die vorherigen Testläufe der Experimente zu jedem beliebigen Zeitpunkt noch einmal überprüfen, um die vorherigen Annahmen infrage zu stellen, neu aufzugreifen und letztendlich entweder zu bestätigen oder zu verfeinern. Wenn Sie ein Experiment ausführen, speichert ML Studio den Verlauf des Testlaufs, einschließlich Datasets, Modul sowie Portverbindungen und Parameter. In diesem Verlauf werden auch Ergebnisse, Laufzeitinformationen, z. B. Start- und Endzeiten, Protokollmeldungen und der Ausführungsstatus aufgezeichnet. Sie können jeden dieser Testläufe jederzeit überprüfen, um die Chronologie des Experiments und die Zwischenergebnisse  zu betrachten. Ein vorheriger Testlauf des Experiment kann sogar den Ausgangspunkt einer neuen Untersuchungsphase auf dem Weg zur Erstellung einfacher, komplexer oder mehrfacher Modellierungslösungen bilden.
+Sie können die vorherigen Testläufe der Experimente zu jedem beliebigen Zeitpunkt noch einmal überprüfen, um die vorherigen Annahmen infrage zu stellen, neu aufzugreifen und letztendlich entweder zu bestätigen oder zu verfeinern. Wenn Sie ein Experiment ausführen, speichert ML Studio den Verlauf des Testlaufs, einschließlich Datasets, Modul sowie Portverbindungen und Parameter. In diesem Verlauf werden auch Ergebnisse, Laufzeitinformationen, z. B. Start- und Endzeiten, Protokollmeldungen und der Ausführungsstatus aufgezeichnet. Sie können jeden dieser Testläufe jederzeit überprüfen, um die Chronologie des Experiments und die Zwischenergebnisse zu betrachten. Ein vorheriger Testlauf des Experiment kann sogar den Ausgangspunkt einer neuen Untersuchungsphase auf dem Weg zur Erstellung einfacher, komplexer oder mehrfacher Modellierungslösungen bilden.
 
-> [AZURE.NOTE] Wenn Sie einen vorherigen Testlauf des Experiments anzeigen, wird diese Version des Experiments gesperrt und kann daher nicht bearbeitet werden. Sie können jedoch eine Kopie speichern, indem Sie auf **SAVE AS** (SPEICHERN UNTER) klicken und einen neuen Namen für die Kopie eingeben. ML Studio öffnet die neue Kopie, die Sie dann bearbeiten und ausführen können. Diese Kopie des Experiments steht in der Liste **EXPERIMENTS** (EXPERIMENTE) zusammen mit allen anderen Experimenten zur Verfügung.
+> [AZURE.NOTE]Wenn Sie einen vorherigen Testlauf des Experiments anzeigen, wird diese Version des Experiments gesperrt und kann daher nicht bearbeitet werden. Sie können jedoch eine Kopie speichern, indem Sie auf **SAVE AS** (SPEICHERN UNTER) klicken und einen neuen Namen für die Kopie eingeben. ML Studio öffnet die neue Kopie, die Sie dann bearbeiten und ausführen können. Diese Kopie des Experiments steht in der Liste **EXPERIMENTS** (EXPERIMENTE) zusammen mit allen anderen Experimenten zur Verfügung.
 
 ##Anzeigen des vorherigen Testlaufs
 
@@ -61,7 +61,7 @@ Wenn Sie auf **Prior Run** (Vorheriger Testlauf) oder **VIEW RUN HISTORY** (AUSF
 
 Wenn Sie ausgehend von der Konfiguration eines vorherigen Testlaufs eine Iteration des Experiments beginnen möchten, können Sie dazu den Testlauf öffnen und auf **SAVE AS** (SPEICHERN UNTER) klicken. Damit wird ein neues Experiment mit einem neuen Titel, einem leeren Ausführungsverlauf sowie allen Komponenten und Parameterwerten des vorherigen Testlaufs erstellt. Dieses neue Experiment wird auf der Registerkarte **EXPERIMENTS** (EXPERIMTENTE) auf der Startseite von ML Studio aufgeführt. Sie können es ändern und ausführen, und dadurch einen neuen Ausführungsverlauf für diese Iteration des Experiments anlegen.
 
-Nehmen wir beispielsweise an, Sie haben den Ausführungsverlauf des Experiments aus dem vorherigen Abschnitt. Sie möchten sehen, was geschieht, wenn Sie den Parameter **Learning rate** (Lernrate) auf 0,4 festlegen und verschiedene Werte für den Parameter  **Number of training epochs** (Anzahl der Trainingsperioden) ausprobieren.
+Nehmen wir beispielsweise an, Sie haben den Ausführungsverlauf des Experiments aus dem vorherigen Abschnitt. Sie möchten sehen, was geschieht, wenn Sie den Parameter **Learning rate** (Lernrate) auf 0,4 festlegen und verschiedene Werte für den Parameter **Number of training epochs** (Anzahl der Trainingsperioden) ausprobieren.
 
 
 1. Klicken Sie auf **VIEW RUN HISTORY** (AUSFÜHRUNGSVERLAUF ANZEIGEN), und öffnen Sie die Iteration des Experiments, die Sie um 16:28:36 Uhr ausgeführt haben (in der Sie den Parameterwert 0,4 festgelegt haben). 
@@ -74,7 +74,7 @@ Nehmen wir beispielsweise an, Sie haben den Ausführungsverlauf des Experiments 
 
 5. Klicken Sie auf **RUN ** (AUSFÜHREN).
 
-Sie können diese Version  des Experiments nun weiterhin ändern und ausführen, wobei ein neuer Ausführungsverlauf zur Dokumentation Ihrer Arbeit erstellt wird.
+Sie können diese Version des Experiments nun weiterhin ändern und ausführen, wobei ein neuer Ausführungsverlauf zur Dokumentation Ihrer Arbeit erstellt wird.
 
 
 <!-- Images -->
@@ -83,5 +83,6 @@ Sie können diese Version  des Experiments nun weiterhin ändern und ausführen,
 
 <!-- Module References -->
 [linear-regression]: https://msdn.microsoft.com/library/azure/31960a6f-789b-4cf7-88d6-2e1152c0bd1a/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

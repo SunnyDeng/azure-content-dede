@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Programmgesteuerter Zugriff auf YARN-Anwendungsprotokolle in HDInsight | Microsoft Azure" 
-	description="Greifen Sie programmgesteuert auf HDInsight-Anwendungsprotokolle zu." 
+	pageTitle="Programmgesteuerter Zugriff auf YARN-Anwendungsprotokolle in Hadoop | Microsoft Azure" 
+	description="Greifen Sie programmgesteuert auf Anwendungsprotokolle auf einem Hadoop-Cluster in HDInsight zu." 
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="bradsev" 
@@ -16,7 +16,7 @@
 	ms.date="03/31/2015" 
 	ms.author="bradsev"/>
 
-# Programmgesteuerter Zugriff auf YARN-Anwendungsprotokolle in HDInsight
+# Programmgesteuerter Zugriff auf YARN-Anwendungsprotokolle in Hadoop in HDInsight
 
 In diesem Thema wird erläutert, wie Sie YARN-Anwendungen (Yet Another Resource Negotiator) aufzählen können, die in einem Hadoop-Cluster in Azure HDInsight abgeschlossen wurden. Außerdem wird erklärt, wie Sie programmgesteuert auf die Anwendungsprotokolle zugreifen können, ohne über das Remotedesktopprotokoll (RDP) eine Verbindung mit Ihren Clustern herstellen zu müssen. Insbesondere wurden eine neue Komponente und eine neue API hinzugefügt:
 
@@ -163,10 +163,14 @@ Bei Bedarf können Sie auch Protokolle für jeden Container (oder einen bestimmt
 	{
 	    appHistoryClient.DownloadApplicationLogs(container, downloadLocation);
 	}
+
+
+
 [YARN-timeline-server]: http://hadoop.apache.org/docs/r2.4.0/hadoop-yarn/hadoop-yarn-site/TimelineServer.html
 [log-aggregation]: http://hortonworks.com/blog/simplifying-user-logs-management-and-access-in-yarn/
 [T-file]: https://issues.apache.org/jira/secure/attachment/12396286/TFile%20Specification%2020081217.pdf
 [binary-format]: https://issues.apache.org/jira/browse/HADOOP-3315
 [YARN-concepts]: http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

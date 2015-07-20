@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Kurzanleitung für die Machine Learning Empfehlungen API | Azure" 
+	pageTitle="Schnellstartanleitung für die Machine Learning-Empfehlungs-API | Microsoft Azure" 
 	description="Azure Machine Learning-Empfehlungen – Erste Schritte" 
 	services="machine-learning" 
 	documentationCenter="" 
@@ -13,17 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/15/2015" 
-	ms.author="jaymathe"/>
+	ms.date="07/06/2015" 
+	ms.author="luisca"/>
 
 # Kurzanleitung für die Machine Learning Empfehlungen-API
 
-Version: 1.0<br>
-Die aktuelle Version finden Sie [hier](machine-learning-recommendation-api-quick-start-guide.md)
+Version: 1.0<br> Die aktuelle Version finden Sie [hier](machine-learning-recommendation-api-quick-start-guide.md)
 
 Dieses Dokument stellt wie zu integrierten Dienstes oder einer Anwendung auf Azure ML Empfehlungen zu verwenden.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
 ##Allgemeine Übersicht
 
@@ -50,7 +49,7 @@ Die oben aufgeführten Schritte erfolgen über die Azure ML Empfehlungen-API.
 ##Integration
 
 ###Authentifizierung
-Befolgen Sie die Microsoft Azure Marketplace-Richtlinien in Bezug auf die Authentifizierung. Der Marketplace unterstützt Basic- oder OAuth-Authentifizierungsmethoden.
+Befolgen Sie die Microsoft Azure Marketplace-Richtlinien in Bezug auf die Authentifizierung. Der Marketplace unterstützt sowohl die Standard- als auch die OAuth-Authentifizierungsmethode.
 
 ###Dienst-URI 
 Die Dienststamm-URIs für jede der APIs für Azure ML-Empfehlungen finden Sie [hier](https://api.datamarket.azure.com/amla/recommendations/v1/).
@@ -70,9 +69,8 @@ Erstellen eine Anforderung "Modell erstellen":
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelName |	Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) zulässig.<br>Max. Länge: 20 |
-|	apiVersion | 1,0 |
-|||
-| Anforderungstext | KEINER |
+|	apiVersion | 1.0 |
+||| | ||| | Request Body | KEINER |
 
 
 **Antwort**:
@@ -124,9 +122,8 @@ Wenn Sie mehrere Katalogdateien mit demselben Modell durch mehrere Aufrufe Hochl
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells |
 | filename | Dies ist ein Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) zulässig.<br>Max. Länge: 50 |
-|	apiVersion | 1,0 |
-|||
-| Anforderungstext | Die Katalogdaten. Format:<br>`<Item Id>,<Item Name>,<Item Category>[,<description>]`<br><br><table><tr><th>Name</th><th>Obligatorisch</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>Element-Id</td><td>Ja</td><td>Alphanumerisch, Max. Länge 50</td><td>Eindeutiger Bezeichner eines Elements</td></tr><tr><td>Elementname</td><td>Ja</td><td>Alphanumerisch, Max. Länge 255</td><td>Der Elementname</td></tr><tr><td>Elementkategorie</td><td>Ja</td><td>Alphanumerisch, Max. Länge 255</td><td>Die Kategorie, zu der dieser Artikel gehört (z. B. Kochbücher, Drama...\)</td></tr><tr><td>Beschreibung</td><td>Nr.</td><td>Alphanumerisch, Max. Länge 4000</td><td>Eine Beschreibung des Elements</td></tr></table><br>Maximale Dateigröße 200 MB<br><br>Beispiel:<br><pre>2406e770-769c-4189-89de-1c9283f93a96, Clara Callan, Buch<br>21bf8088-b6c0-4509-870c-e1c7ac78304a, The Forgetting Room: A Fiction (Byzantium Book), Buch<br>3bb5cb44-d143-4bdd-a55c-443964bf4b23, Spadework, Buch<br>552a1940-21e4-4399-82bb-594b46d7ed54, Die Herren der Zäune, Buch</pre> |
+|	apiVersion | 1.0 |
+||| | Request Body| Die Katalogdaten. Format:<br>`<Item Id>,<Item Name>,<Item Category>[,<description>]`<br><br><table><tr><th>Name</th><th>Obligatorisch</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>Element-ID</td><td>Ja</td><td>Alphanumerisch, Max. Länge 50</td><td>Eindeutiger Bezeichner eines Elements</td></tr><tr><td>Elementname</td><td>Ja</td><td>Alphanumerisch, Max. Länge 255</td><td>Der Elementname</td></tr><tr><td>Elementkategorie</td><td>Ja</td><td>Alphanumerisch, Max. Länge 255</td><td>Die Kategorie, zu der dieser Artikel gehört (z. B. Kochbücher, Drama...)</td></tr><tr><td>Beschreibung</td><td>Nr.</td><td>Alphanumerisch, Max. Länge 4000</td><td>Eine Beschreibung des Elements</td></tr></table><br>Maximale Dateigröße 200MB<br><br>Beispiel:<br><pre>2406e770-769c-4189-89de-1c9283f93a96, Clara Callan, Buch<br>21bf8088-b6c0-4509-870c-e1c7ac78304a, The Forgetting Room: A Fiction (Byzantium Book), Buch<br>3bb5cb44-d143-4bdd-a55c-443964bf4b23, Spadework, Buch<br>552a1940-21e4-4399-82bb-594b46d7ed54, Die Herren der Zäune, Buch</pre> |
 
 
 **Antwort**:
@@ -173,9 +170,8 @@ In diesem Abschnitt wird gezeigt, wie Verwendungsdaten mithilfe einer Datei hoch
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells |
 | filename | Dies ist ein Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) zulässig.<br>Max. Länge: 50 |
-|	apiVersion | 1,0 |
-|||
-| Anforderungstext | Die Nutzungsdaten. Format:<br>`<User Id>,<Item Id>[,<Time>,<Event>]`<br><br><table><tr><th>Name</th><th>Erforderlich</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>User ID</td><td>Ja</td><td>Alphanumerisch</td><td>Eindeutiger Bezeichner eines Benutzers</td></tr><tr><td>Element-ID</td><td>Ja</td><td>Alphanumerisch, Max. Länge 50</td><td>Eindeutiger Bezeichner eines Elements</td></tr><tr><td>Zeit</td><td>Nein </td><td>Datum im Format YYYY/MM/DDTHH:MM:SS (z. B. 2013/06/20T10:00:00)</td><td>Zeitpunkt der Datenerhebung</td></tr><tr><td>Event</td><td>Nein; falls angegeben, muss auch ein Datum angegeben werden</td><td>Eines der folgenden:<br>• Click<br>• RecommendationClick<br>• AddShopCart<br>• RemoveShopCart<br>• Purchase</td><td></td></tr></table><br>Maximale Dateigröße: 200MB<br><br>Beispiel:<br><pre>149452,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>6360,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>50321,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>71285,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>224450,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>236645,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>107951,1b3d95e2-84e4-414c-bb38-be9cf461c347</pre> |
+|	apiVersion | 1.0 |
+||| | Request Body | Die Nutzungsdaten. Format:<br>`<User Id>,<Item Id>[,<Time>,<Event>]`<br><br><table><tr><th>Name</th><th>Erforderlich</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>User ID</td><td>Ja</td><td>Alphanumerisch</td><td>Eindeutiger Bezeichner eines Benutzers</td></tr><tr><td>Element-ID</td><td>Ja</td><td>Alphanumerisch, Max. Länge 50</td><td>Eindeutiger Bezeichner eines Elements</td></tr><tr><td>Zeit</td><td>Nein </td><td>Datum im Format YYYY/MM/DDTHH:MM:SS (z. B. 2013/06/20T10:00:00)</td><td>Zeitpunkt der Datenerhebung</td></tr><tr><td>Event</td><td>Nein; falls angegeben, muss auch ein Datum angegeben werden</td><td>Eines der folgenden:<br>• Click<br>• RecommendationClick<br>• AddShopCart<br>• RemoveShopCart<br>• Purchase</td><td></td></tr></table><br>Maximale Dateigröße: 200MB<br><br>Beispiel:<br><pre>149452,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>6360,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>50321,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>71285,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>224450,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>236645,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>107951,1b3d95e2-84e4-414c-bb38-be9cf461c347</pre> |
 
 **Antwort**:
 
@@ -220,7 +216,7 @@ In diesem Abschnitt wird gezeigt, wie Ereignisse in Echtzeit an Azure ML Empfehl
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
-|	apiVersion | 1,0 |
+|	apiVersion | 1.0 |
 
 Anforderungstext
 
@@ -313,8 +309,7 @@ Anforderungstext
   	</EventData>
 	</Event>
 
-**Antwort**:
-HTTP-Statuscode: 200
+**Antwort**: HTTP-Statuscode: 200
 
 ###Erstellen eines Empfehlungsmodells
 
@@ -326,9 +321,8 @@ HTTP-Statuscode: 200
 |:--------			|:--------								|
 | modelId |	Der eindeutige Bezeichner des Modells |
 | userDescription | Dies ist der Textbezeichner des Katalogs. Beachten Sie, dass Sie bei Verwendung von Leerzeichen diese stattdessen mit "%20" codieren müssen. Siehe Beispiel oben. <br>Max. Länge: 50 |
-| apiVersion | 1,0 |
-|||
-| Anforderungstext | KEINER |
+| apiVersion | 1.0 |
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -399,7 +393,7 @@ HTTP-Statuscode: 200
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells |
 |	onlyLastBuild |	Hier wird angegeben, ob der gesamte Buildverlauf des Modells oder nur der Status des letzten Builds zurückgegeben werden soll. |
-|	apiVersion |	1,0 |
+|	apiVersion |	1.0 |
 
 
 **Antwort**:
@@ -464,7 +458,7 @@ HTTP-Statuscode: 200
 | itemIds | Durch Trennzeichen getrennte Liste der Elemente, für die Empfehlungen erstellt werden sollen.<br>Max. Länge: 200 |
 | numberOfResults | Die Anzahl der erforderlichen Ergebnisse. |
 | includeMetatadata | Zur zukünftigen Verwendung, immer auf "false" festlegen. |
-| apiVersion | 1,0 |
+| apiVersion | 1.0 |
 
 **Antwort:**
 
@@ -627,8 +621,7 @@ HTTP-Statuscode: 200
 	</feed>
 
 ###Modell aktualisieren
-Sie können die Modellbeschreibung oder der aktive Build-ID aktualisieren. 
-*Aktive Build-ID*: Jeder Build für jedes Modell weist eine "Build-ID" auf. Die aktive "Build-ID" ist der erste erfolgreich erstellt Build für alle neuen Modelle. Sobald Sie eine aktive Build-ID haben und Sie zusätzliche Builds für das gleiche Modell machen, müssen Sie sie explizit es als Standard-Build-ID festlegen, wenn Sie möchten. Wenn Sie Empfehlungen nutzen und den zu verwendenden Build nicht definieren, wird automatisch der Standard-Build verwendet.
+Sie können die Modellbeschreibung oder der aktive Build-ID aktualisieren. *Aktive Build-ID*: Jeder Build für jedes Modell weist eine "Build-ID" auf. Die aktive "Build-ID" ist der erste erfolgreich erstellt Build für alle neuen Modelle. Sobald Sie eine aktive Build-ID haben und Sie zusätzliche Builds für das gleiche Modell machen, müssen Sie sie explizit es als Standard-Build-ID festlegen, wenn Sie möchten. Wenn Sie Empfehlungen nutzen und den zu verwendenden Build nicht definieren, wird automatisch der Standard-Build verwendet.
 
 Mit diesem Mechanismus können Sie, wenn Sie ein Empfehlungsmodell haben, neue Modelle erstellen und diese testen, bevor Sie sie produktiv setzen.
 
@@ -640,9 +633,8 @@ Mit diesem Mechanismus können Sie, wenn Sie ein Empfehlungsmodell haben, neue M
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 | id | Der eindeutige Bezeichner des Modells |
-| apiVersion | 1,0 |
-|||
-| Anforderungstext | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`   <Description>New Description</Description>`<br>`          <ActiveBuildId>-1</ActiveBuildId>`<br>`</ModelUpdateParams>`<br><br> Beachten Sie, dass die XML-Tags "Description" und "ActiveBuildId" optional sind. Wenn Sie weder eine Beschreibung noch eine aktive Build-ID festlegen möchten, entfernen Sie jeweils das gesamte Tag. |
+| apiVersion | 1.0 |
+||| | Request Body | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`   <Description>New Description</Description>`<br>`          <ActiveBuildId>-1</ActiveBuildId>`<br>`</ModelUpdateParams>`<br><br> Beachten Sie, dass die XML-Tags "Description" und "ActiveBuildId" optional sind. Wenn Sie weder eine Beschreibung noch eine aktive Build-ID festlegen möchten, entfernen Sie jeweils das gesamte Tag. |
 
 **Antwort**:
 
@@ -659,9 +651,7 @@ HTTP-Statuscode: 200
 	</feed>
 
 ##Rechtliches
-Dieses Dokument wird bereitgestellt "wie-es- ist". Informationen und Stellungnahmen, die in diesem Dokument enthalten sind, einschließlich URLs und anderer Verweise auf Internetwebsites, können ohne vorherige Ankündigung geändert werden. 
-Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Keine Ähnlichkeit oder Verbindung ist beabsichtigt und ist rein zufällig. 
-Dieses Dokument gibt keine Rechte an geistigem Eigentum an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden. 
-© 2014 Microsoft. Alle Rechte vorbehalten.
+Dieses Dokument wird bereitgestellt "wie-es- ist". Informationen und Stellungnahmen, die in diesem Dokument enthalten sind, einschließlich URLs und anderer Verweise auf Internetwebsites, können ohne vorherige Ankündigung geändert werden. Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Keine Ähnlichkeit oder Verbindung ist beabsichtigt und ist rein zufällig. Dieses Dokument gibt keine Rechte an geistigem Eigentum an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden. © 2014 Microsoft. Alle Rechte vorbehalten.
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

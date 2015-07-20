@@ -99,4 +99,4 @@ Führen Sie den folgenden Befehl aus, um dem virtuellen Computer, der mit dem ob
 [Reservierte IP-REST-APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

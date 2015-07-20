@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Prognose - Autoregressiver, integrierter gleitender Durchschnitt (Autoregressive Integrated Moving Average, ARIMA) | Azure" 
-	description="Prognose - Autoregressiver, integrierter gleitender Durchschnitt (Autoregressive Integrated Moving Average, ARIMA)" 
+	pageTitle="Prognose – ARIMA (Autoregressive Integrated Moving Average, autoregressiver integrierter gleitender Mittelwert) | Microsoft Azure" 
+	description="Prognose – ARIMA (Autoregressive Integrated Moving Average, autoregressiver integrierter gleitender Mittelwert)" 
 	services="machine-learning" 
 	documentationCenter="" 
 	authors="jaymathe" 
@@ -13,43 +13,40 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/11/2015" 
-	ms.author="jaymathe"/> 
+	ms.date="06/24/2015" 
+	ms.author="jaymathe"/>
 
  
-#Prognose - Autoregressiver, integrierter gleitender Durchschnitt (Autoregressive Integrated Moving Average, ARIMA)
- 
+#Prognose – ARIMA (Autoregressive Integrated Moving Average, autoregressiver integrierter gleitender Mittelwert)
+
+Dieser [Dienst](https://datamarket.azure.com/dataset/aml_labs/arima) implementiert ARIMA (Autoregressive Integrated Moving Average, autoregressiver integrierter gleitender Mittelwert), um Vorhersagen basierend auf den vom Benutzer bereitgestellten Verlaufsdaten zu erzeugen. Erhöht sich der Bedarf für ein bestimmtes Produkt in diesem Jahr? Kann ich meine Produktverkäufe für die Weihnachtssaison vorhersagen, damit ich meine Inventur effektiv planen kann? Planungsmodelle sind für solche Fragen die passende Lösung. Angesichts der letzten Daten, untersuchen diese Modelle versteckte Trends und Saisonabhängigkeit, um zukünftige Trends vorherzusagen.
 
 
-Dieser [Dienst]( https://datamarket.azure.com/dataset/aml_labs/arima) implementiert autoregressiven, integrierten gleitenden Durchschnitt (ARIMA) zum Erstellen von Vorhersagen auf Grundlage der Verlaufsdaten, die vom Benutzer bereitgestellt werden. Erhöht sich der Bedarf für ein bestimmtes Produkt in diesem Jahr? Kann ich meine Produktverkäufe für die Weihnachtssaison vorhersagen, damit ich meine Inventur effektiv planen kann? Planungsmodelle sind für solche Fragen die passende Lösung. Angesichts der letzten Daten, untersuchen diese Modelle versteckte Trends und Saisonabhängigkeit, um zukünftige Trends vorherzusagen.  
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
->Dieser Webdienst kann von Benutzern verwendet werden - möglicherweise mit einer mobilen App, Website oder z. B. sogar auf einem lokalen Computer. Der Zweck des Webdiensts ist auch, als Beispiel dafür zu dienen, wie Sie mit Azure ML Webdienste auf R-Code-Basis erstellen können. Mit nur wenigen Codezeilen R-Code und einigen Klicks in Azure ML Studio können Sie ein Experiment mit R-Code erstellen und als Webdienst veröffentlichen. Der Webdienst kann dann im Azure Marketplace veröffentlicht und von Benutzern und Geräten auf der ganzen Welt genutzt werden, ohne Einrichtung einer Infrastruktur durch den Autor des Webdiensts.
+>Dieser Webdienst kann von Benutzern verwendet werden – beispielsweise über eine mobile App, eine Website oder sogar über einen lokalen Computer. Dieser Webdienst ist jedoch auch ein gutes Beispiel dafür, wie Azure Machine Learning zum Erstellen von Webdiensten basierend auf R-Code verwendet werden kann. Mit nur wenigen Codezeilen R-Code und einigen Klicks in Azure Machine Learning Studio können Sie ein Experiment mit R-Code erstellen und als Webdienst veröffentlichen. Der Webdienst kann dann im Azure Marketplace veröffentlicht und von Benutzern und Geräten auf der ganzen Welt genutzt werden – ohne Einrichtung einer Infrastruktur durch den Autor des Webdiensts.
 
 ##Nutzung des Webdiensts 
 
-Dieser Dienst akzeptiert 4 Argumente und berechnet die ARIMA-Prognosen.
-Die Eingabeargumente sind:
+Dieser Dienst akzeptiert 4 Argumente und berechnet die ARIMA-Prognosen. Die Eingabeargumente sind:
 
-* Häufigkeit: Gibt die Häufigkeit der Rohdaten an (täglich/wöchentlich/monatlich/vierteljährlich/jährlich)
-* Horizont: Zeitrahmen der zukünftigen Prognose
-* Datum: Hinzufügen der neuen Zeitreihendaten für Zeit
-* Wert: Hinzufügen der neuen Zeitreihendaten für Datenwerte
+* Frequency – Gibt die Häufigkeit der Rohdaten an (täglich/wöchentlich/monatlich/vierteljährlich/jährlich)
+* Horizon – Zeitrahmen der zukünftigen Prognose
+* Date – Hinzufügen der neuen Zeitreihendaten für Zeit
+* Value – Hinzufügen der neuen Zeitreihendaten für Datenwerte
 
-Die Ausgabe des Dienstes sind die berechneten Werte für die Prognose. 
+Die Ausgabe des Dienstes sind die berechneten Werte für die Prognose.
 
-Eine Beispieleingabe wäre: 
+Eine Beispieleingabe wäre:
 
-* Häufigkeit: 12
-* Horizont: 12
-* Datum: 1/15/2012; 2/15/2012; 3/15/2012, 4/15/2012, 5/15/2012; 6/15/2012; 7/15/2012, 8 /15/2012, 9/15/2012, 10/15/2012, 11/15/2012, 12/15/2012;
-1/15/2013;2/15/2013;3/15/2013;4/15/2013;5/15/2013;6/15/2013;7/15/2013;8/15/2013;9/15/2013;10/15/2013;11/15/2013;12/15/2013;
-1/15/2014;2/15/2014;3/15/2014;4/15/2014;5/15/2014;6/15/2014;7/15/2014;8/15/2014;9/15/2014
-* Wert: 3.479;3.68;3.832;3.941;3.797;3.586;3.508;3.731;3.915;3.844;3.634;3.549;3.557;3.785;3.782;3.601;3.544;3.556;3.65;3.709;3.682;3.511;
-3.429;3.51;3.523;3.525;3.626;3.695;3.711;3.711;3.693;3.571;3.509
+* Frequency – 12
+* Horizon – 12
+* Date – 1/15/2012;2/15/2012;3/15/2012;4/15/2012;5/15/2012;6/15/2012;7/15/2012;8/15/2012;9/15/2012;10/15/2012;11/15/2012;12/15/2012; 1/15/2013;2/15/2013;3/15/2013;4/15/2013;5/15/2013;6/15/2013;7/15/2013;8/15/2013;9/15/2013;10/15/2013;11/15/2013;12/15/2013; 1/15/2014;2/15/2014;3/15/2014;4/15/2014;5/15/2014;6/15/2014;7/15/2014;8/15/2014;9/15/2014
+* Value – 3.479;3.68;3.832;3.941;3.797;3.586;3.508;3.731;3.915;3.844;3.634;3.549;3.557;3.785;3.782;3.601;3.544;3.556;3.65;3.709;3.682;3.511; 3.429;3.51;3.523;3.525;3.626;3.695;3.711;3.711;3.693;3.571;3.509
  
->Dieser Dienst, gehostet auf Microsoft Azure Marketplace, ist ein OData-Dienst. Diese können durch POST- oder GET-Methoden aufgerufen werden. 
+>Dieser Dienst, der im Azure Marketplace gehostet wird, ist ein OData-Dienst. Diese Dienste können durch POST- oder GET-Methoden aufgerufen werden.
 
-Es gibt mehrere Möglichkeiten der Nutzung des Diensts auf automatisierte Weise. ([Hier](http://microsoftazuremachinelearning.azurewebsites.net/ArimaForecasting.aspx) finden Sie eine Beispiel-App).
+Es gibt mehrere Möglichkeiten, den Dienst auf automatisierte Weise zu nutzen ([hier](http://microsoftazuremachinelearning.azurewebsites.net/ArimaForecasting.aspx) finden Sie eine Beispiel-App).
 
 ###Starten von C#-Code für Webdienstnutzung:
 
@@ -84,18 +81,18 @@ Es gibt mehrere Möglichkeiten der Nutzung des Diensts auf automatisierte Weise.
 
 ##Erstellen des Webdiensts 
 
->Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
+>Dieser Webdienst wurde mithilfe von Azure Machine Learning erstellt. Eine kostenlose Testversion sowie Einführungsvideos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](machine-learning-publish-a-machine-learning-web-service.md) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
 
-Aus Azure ML wurde ein neues leeres Experiment erstellt. Beispieleingabedaten wurden mit einem vordefinierten Datenschema hochgeladen. Mit dem Schema verknüpft ist ein "R-Skript ausführen"-Modul, welches das ARIMA-Prognmoseodell mithilfe der 'auto.arima'- und 'forecast'-Funktionen von R generiert. 
+In Azure Machine Learning wurde ein neues leeres Experiment erstellt. Stichprobeneingabedaten wurden mit einem vordefinierten Datenschema hochgeladen. Mit dem Schema ist ein [Execute R Script][execute-r-script]-Modul verknüpft, welches das ARIMA-Prognosemodell mithilfe der auto.arima- und forecast-Funktionen von R generiert.
 
 ###Experimentablauf:
 
-![Create workspace][2]
+![Arbeitsbereich erstellen][2]
 
 ####Modul 1:
  
-	Hinzufügen der CSV-Datei mit den Daten im unten gezeigten Format 
-![Create workspace][3]	
+	# Add in the CSV file with the data in the format shown below 
+![Arbeitsbereich erstellen][3]
 
 ####Modul 2:
 	# data input
@@ -116,7 +113,7 @@ Aus Azure ML wurde ein neues leeres Experiment erstellt. Beispieleingabedaten wu
 	train_model <- forecast(fit1, h = data$horizon)
 	plot(train_model)
 	
-	# produce forcasting
+	# produce forecasting
 	train_pred <- round(train_model$mean,2)
 	data.forecast <- as.data.frame(t(train_pred))
 	colnames(data.forecast) <- paste("Forecast", 1:data$horizon, sep="")
@@ -127,14 +124,18 @@ Aus Azure ML wurde ein neues leeres Experiment erstellt. Beispieleingabedaten wu
 
 ##Einschränkungen 
 
-Dies ist ein sehr einfaches Beispiel für die Prognose mit ARIMA. Wie aus den oben stehenden Beispielcode ersichtlich ist, wird kein Abfangen von Fehlern implementiert und der Dienst geht davon aus, dass alle Variablen kontinuierliche/positive Werte sind und die Häufigkeit sollte eine ganze Zahl größer als 1 sein. Die Länge der Vektoren Datum und Wert sollte identisch sein. Die Variable für das Datum muss dem Format "mm/tt/jjjj" entsprechen.
+Dies ist ein sehr einfaches Beispiel für die Prognose mit ARIMA. Wie aus dem oben stehenden Beispielcode ersichtlich ist, wird kein Abfangen von Fehlern implementiert, und der Dienst geht davon aus, dass alle Variablen kontinuierliche/positive Werte sind und die Häufigkeit eine ganze Zahl größer als 1 sein sollte. Die Länge der Vektoren Datum und Wert sollte identisch sein. Die Variable für das Datum muss dem Format "mm/tt/jjjj" entsprechen.
 
 ##Häufig gestellte Fragen
-Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/documentation/articles/machine-learning-marketplace-faq).
+Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im Marketplace finden Sie [hier](machine-learning-marketplace-faq.md).
 
 [1]: ./media/machine-learning-r-csharp-arima/arima-img1.png
 [2]: ./media/machine-learning-r-csharp-arima/arima-img2.png
 [3]: ./media/machine-learning-r-csharp-arima/arima-img3.png
 
-<!--HONumber=46--> 
+
+<!-- Module References -->
+[execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
  
+
+<!---HONumber=July15_HO2-->

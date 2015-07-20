@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/06/2015" 
+	ms.date="07/07/2015" 
 	ms.author="piyushjo" />
 
 #Windows Universal-Apps Reach SDK-Integration
@@ -28,9 +28,9 @@ Sie müssen nichts hinzufügen. `EngagementReach`-Referenzen und -Ressourcen sin
 
 ##Aktivieren des Windows-Benachrichtigungsdienstes
 
-Um den **Windows-Benachrichtigungsdienst** (auch als WNS, Windows Notification Service, bezeichnet) in Ihrer `Package.appxmanifest`-Datei in `Application UI` zu verwenden, klicken Sie auf `All Image Assets` im linken Feld. Rechts neben dem Feld i `Notifications`, ändern Sie `toast capable` von `(not set)` zu `Yes`.
+Um den **Windows-Benachrichtigungsdienst** (auch als WNS, Windows Notification Service, bezeichnet) in Ihrer `Package.appxmanifest`-Datei in `Application UI` zu verwenden, klicken Sie auf `All Image Assets` im linken Feld. Rechts neben dem Feld i `Notifications`, ändern Sie `toast capable` von `(not set)` zu `(Yes)`.
 
-Darüber hinaus müssen Sie Ihre App mit Ihrem Microsoft-Konto und der Engagement-Plattform synchronisieren. Gehen Sie im Engagement-Front-End zur Ihren App-Einstellungen unter `native push` und fügen Sie Ihre Anmeldedaten ein. Danach klicken Sie mit der rechten Maustaste auf das Projekt, wählen `store` und `Associate App with the Store...`.
+Darüber hinaus müssen Sie Ihre App mit Ihrem Microsoft-Konto und der Engagement-Plattform synchronisieren. Zu diesem Zweck müssen Sie ein Konto erstellen oder sich beim [Windows Dev Center](https://dev.windows.com) anmelden. Erstellen Sie anschließend eine neue Anwendung, und suchen Sie die SID sowie den geheimen Schlüssel. Gehen Sie im Engagement-Front-End zur Ihren App-Einstellungen unter `native push` und fügen Sie Ihre Anmeldedaten ein. Danach klicken Sie mit der rechten Maustaste auf das Projekt, wählen `store` und `Associate App with the Store...`. Sie müssen lediglich die von Ihnen erstellte Anwendung auswählen, bevor Sie sie synchronisieren.
 
 ##Initialisieren des Engagement-Reichweiten-SDK
 
@@ -48,7 +48,7 @@ Darüber hinaus müssen Sie Ihre App mit Ihrem Microsoft-Konto und der Engagemen
 		  EngagementReach.Instance.Init(args);
 		}
 
--   Wenn Sie bei aktivierter App Engagement-Reichweite starten möchten, überschreiben Sie die `OnActivated`-Methode:
+-   Wenn Sie beim Aktivieren der App durch einen Befehl, durch eine andere Anwendung oder durch ein benutzerdefiniertes Schema Engagement Reach aktivieren möchten, überschreiben Sie die `OnActivated`-Methode:
 
 		protected override void OnActivated(IActivatedEventArgs args)
 		{
@@ -64,17 +64,17 @@ Darüber hinaus müssen Sie Ihre App mit Ihrem Microsoft-Konto und der Engagemen
 
 Engagement bietet zwei Möglichkeiten zur Implementierung von Reach-Benachrichtigungen und -Ankündigungen: die Overlay-Integration und die Webansicht-Integration.
 
-Windows-sdk-engagement-overlay-integration erfordert nicht viel Code für Ihre Anwendung. Sie müssen lediglich Ihre Seiten, XAML- und CS-Dateien mit EngagementPageOverlay kennzeichnen. Wenn Sie außerdem die Standardansicht von Engagement anpassen, wird diese Anpassung mit allen gekennzeichneten Seiten geteilt und nur einmal definiert. Wenn Ihre Seiten jedoch von einem anderen Objekt als EngagementPageOverlay erben müssen, müssen Sie die Webansicht-Integration verwenden.
+Die Overlay-Integration erfordert nicht viel Code für Ihre Anwendung. Sie müssen lediglich Ihre Seiten, XAML- und CS-Dateien mit EngagementPageOverlay kennzeichnen. Wenn Sie außerdem die Standardansicht von Engagement anpassen, wird diese Anpassung mit allen gekennzeichneten Seiten geteilt und nur einmal definiert. Wenn Ihre Seiten jedoch von einem anderen Objekt als EngagementPageOverlay erben müssen, müssen Sie die Webansicht-Integration verwenden.
 
-windows-sdk-engagement-webview-integration ist komplizierter zu implementieren. Aber wenn Ihre App-Seiten von einem anderen Objekt als „Seite“ geerbt werden, müssen Sie die Webansicht und ihr Verhalten integrieren.
+Die Webansicht-Integration ist komplizierter zu implementieren. Aber wenn Ihre App-Seiten von einem anderen Objekt als „Seite“ geerbt werden, müssen Sie die Webansicht und ihr Verhalten integrieren.
 
-> [AZURE.TIP]Sie sollten zunächst ein `<Grid></Grid>`-Element auf erster Ebene hinzufügen, um allen Seiteninhalt zu umgeben. Fügen Sie zur Webansicht-Integration einfach Webansicht als untergeordnetes Element dieses Rasters. Wenn die Engagement-Komponente an anderer Stelle eingerichtet werden muss, denken Sie daran, dass Sie die Anzeigengröße selbst einstellen müssen.
+> [AZURE.TIP]Sie sollten zunächst ein `<Grid></Grid>`-Element auf Stammebene hinzufügen, um allen Seiteninhalt zu umgeben. Fügen Sie zur Webansicht-Integration einfach Webansicht als untergeordnetes Element dieses Rasters. Wenn die Engagement-Komponente an anderer Stelle eingerichtet werden muss, denken Sie daran, dass Sie die Anzeigengröße selbst einstellen müssen.
 
 ### Überlagerungsintegration
 
 Engagement bietet eine Überlagerung für die Anzeige von Benachrichtigungen und Ankündigungen.
 
-Wenn Sie Engagement verwenden möchten, verwenden Sie nicht windows-sdk-engagement-webview-integration.
+Wenn Sie Engagement verwenden möchten, verwenden Sie nicht die Webansicht-Integration.
 
 Ändern Sie in der XAML-Datei den EngagementPage-Verweis auf EngagementPageOverlay.
 
@@ -157,7 +157,7 @@ Sie können die Überlagerungsbenachrichtigung und Ankündigung direkt in ihren 
 
 ### Webansicht-Integration
 
-Wenn Sie diese verwenden möchten, verwenden Sie nicht windows-sdk-engagement-overlay-integration.
+Wenn Sie die Webansicht-Integration verwenden möchten, verwenden Sie nicht die Überlagerungsintegration.
 
 Zum Anzeigen des Engagement-Inhalts müssen Sie die beiden XAML-Webansichten auf jeder Seite integrieren und Benachrichtigungen und Ankündigungen anzeigen. Also fügen Sie diesen Code in Ihrer XAML-Datei hinzu:
 
@@ -408,5 +408,6 @@ Um dieses Protokoll nun zu verwenden, bearbeiten Sie `App.xaml.cs` mit der `OnAc
 			    }
 			  }
 			  #endregion
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

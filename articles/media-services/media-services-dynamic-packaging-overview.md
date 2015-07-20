@@ -38,7 +38,7 @@ Im folgenden Diagramm wird der Workflow zur dynamischen Paketerstellung dargeste
 
 ##Allgemeines Szenario
 
-1. Laden Sie eine Eingabedatei (auch Mezzaninedatei genannt) hoch. Beispielformate: H.264, MP4 oder WMV (eine Liste unterstützter Formate finden Sie unter Von Media Services Encoder unterstützte Formate“).
+1. Laden Sie eine Eingabedatei (auch Mezzaninedatei genannt) hoch. Beispielformate: H.264, MP4 oder WMV (eine Liste unterstützter Formate finden Sie unter „Von Media Services Encoder unterstützte Formate“).
  
 1. Codieren Sie Ihre Mezzaninedatei zu H.264-MP4-Sätzen mit adaptiver Bitrate.
  
@@ -97,5 +97,4 @@ Die folgenden Quelldateiformate werden von der dynamischen Paketerstellung nicht
 - Dolby Digital mit MP4-Dateien
 - Dolby Digital mit Smooth-Dateien 
 
-
-<!---HONumber=52-->
+<!---HONumber=July15_HO2-->

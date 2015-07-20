@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/28/2015" 
+	ms.date="06/30/2015" 
 	ms.author="elizapo"/>
 
 # Azure RemoteApp – Häufig gestellte Fragen
@@ -27,11 +27,12 @@ Folgende Fragen wurden zu Azure RemoteApp an uns gestellt. Haben Sie weitere Fra
 
 ## Unterstützte Konfigurationen ##
 
-
+- **Was sind die Dienstgrenzwerte?** Wir haben ein neues Thema hinzugefügt, in dem alle [Dienstgrenzwerte und Standardwerte](remoteapp-servicelimits.md) beschrieben werden. Sie können sich gern an uns wenden, wenn Sie weitere Fragen haben.
+- **Wie viele Benutzer benötige ich?** Es sind mindestens 20 Benutzer erforderlich. Ich wiederhole dies noch einmal, damit es klar verständlich ist: das MINIMUM beträgt 20. Ihnen werden 20 Benutzer berechnet. Weitere Benutzergrenzwerte und Standardwerte finden Sie [hier](remoteapp-servicelimits.md).
 - **Werden benutzerdefinierte Line-of-Business-Anwendungen (LOB) unterstützt?** Ja. Zum Verwenden einer benutzerdefinierten Anwendung in Azure RemoteApp müssen Sie ein [benutzerdefiniertes Vorlagenimage](remoteapp-create-custom-image.md) erstellen und anschließend in die RemoteApp-Sammlung hochladen.
 - **Kann ich meine benutzerdefinierte LOB-Anwendung in Azure RemoteApp ausführen?** Dies lässt sich am besten im Rahmen eines Tests ermitteln. Überprüfen Sie die [Anforderungen an die Anwendungskompatibilität](http://www.microsoft.com/download/details.aspx?id=18704), und informieren Sie sich im [RD-Kompatibilitätscenter](http://www.rdcompatibility.com/compatibility/default.aspx).
 - **Welche Bereitstellungsmethode (Cloud oder Hybrid) eignet sich am besten für mein Unternehmen?** Hybrid-Sammlungen sind die umfassendste Lösung, wenn Sie eine vollständige Integration mit einmaligem Anmelden und einer sicheren lokalen Netzwerkverbindung anstreben. Cloud-Sammlungen sind eine flexible und einfache Möglichkeit, Ihre Bereitstellung mithilfe mehrerer Authentifizierungsmethoden zu isolieren. Erfahren Sie mehr über die [Bereitstellungsoptionen](remoteapp-whatis.md).
-- **Für die Hybrid-Sammlung ist ein virtuelles Netzwerk (VNET) erforderlich. Können wir unser vorhandenes Netzwerk verwenden?** Derzeit noch nicht, aber wir wissen, dass das wünschenswert ist. Wir arbeiten daran. In der Zwischenzeit können Sie Ihr vorhandenes VNET mit dem Azure RemoteApp-VNET verbinden, indem Sie [diese Anweisungen](http://blogs.msdn.com/b/rds/archive/2014/07/21/how-to-link-azure-remoteapp-to-an-existing-vnet.aspx) ausführen.
+- **Für die Hybrid-Sammlung ist ein virtuelles Netzwerk (VNET) erforderlich. Können wir unser vorhandenes VNET verwenden?** Das ist möglich, wenn das vorhandene VNET ein Azure VNET ist. Weitere Informationen finden Sie unter „Schritt 1: Einrichten des virtuellen Netzwerks“ in den [Anweisungen zur Hybrid-Sammlung](remoteapp-create-hybrid-deployment.md).
 - **Kann ich eine Cloud oder die vorhandenen virtuellen Computer als Vorlage für meine RemoteApp-Sammlung verwenden?** Ja. Sie können beruhend auf einem virtuellen Azure-Computer ein Image erstellen, eines der im Abonnement enthaltenen Images verwenden oder ein benutzerdefiniertes Image erstellen. Beachten Sie die [RemoteApp-Image-Optionen](remoteapp-imageoptions.md).
 - **Wir haben eine SQL- oder andere Datenbank entweder lokal oder in Azure. Welchen Bereitstellungstyp sollten wir verwenden?** Das hängt davon ab, wo sich Ihre SQL- oder Back-End-Datenbank befindet. Befindet sich die Datenbank in einem privaten Netzwerk, sollten Sie die Hybrid-Sammlung verwenden. Wenn die Datenbank über das Internet verfügbar ist und Clientverbindungen zulässt, können Sie die Cloud-Sammlung verwenden.
 - **Wie sieht es mit der Laufwerkzuordnung, USB und seriellen Ports, der Freigabe der Zwischenablage und der Druckerumleitung aus?** Alle diese Funktionen werden in Azure RemoteApp unterstützt. Die Freigabe der Zwischenablage und die Druckerumleitung sind standardmäßig aktiviert. [Hier](remoteapp-redirection.md) erfahren Sie mehr über die Umleitung. 
@@ -53,7 +54,7 @@ Folgende Fragen wurden zu Azure RemoteApp an uns gestellt. Haben Sie weitere Fra
 
 - **Welche Version von Windows Server wird für den Remotedesktop-Sitzungshost (RDSH) unterstützt?** Windows Server 2012 R2
 
-## Support und Feedback
+##Support und Feedback
 
 - **Kann ich diesen Dienst kostenlos testen?** Ja. Es ist eine kostenlose Testversion für 30 Tage verfügbar. Nach Ablauf des Testzeitraums können Sie auf ein gebührenpflichtiges Konto (für die Produktionsumgebung) umstellen oder den Dienst beenden. Starten Sie die kostenlose Testversion unter [manage.windowsazure.com](http://manage.windowsazure.com), und erstellen Sie eine neue Instanz von RemoteApp. Mit der kostenlosen Testversion können Sie zwei Instanzen von RemoteApp mit 10 Benutzern pro Instanz erstellen. Beachten Sie, dass diese Testversion nur für 30 Tage gilt.
 - **Wie lautet der Support-Plan für RemoteApp?** Der Support für die Abrechnungs- und Abonnementverwaltung wird kostenlos bereitgestellt. Der technische Support ist über die [Azure-Servicepläne](../../../support/plans/) verfügbar. Über unser [Azure-Diskussionsforum](http://social.msdn.microsoft.com/Forums/windowsazure/home?forum=AzureRemoteApp) erhalten Sie zudem eine kostenlose Unterstützung durch die Community. 
@@ -79,5 +80,6 @@ Folgende Fragen wurden zu Azure RemoteApp an uns gestellt. Haben Sie weitere Fra
 
 	Videos! Wir haben auch eine Reihe von Videos zu RemoteApp. Einige enthalten eine Einführung ([Einführung in Azure RemoteApp](http://azure.microsoft.com/documentation/videos/cloud-cover-ep-150-azure-remote-app-with-thomas-willingham-and-nihar-namjoshi/)), während andere die Bereitstellung erläutern ([Cloud-Bereitstellung](https://www.youtube.com/watch?v=3NAv2iwZtGc&feature=youtu.be) und [Hybrid-Bereitstellung](https://www.youtube.com/watch?v=GCIMxPUvg0c&feature=youtu.be)). Schauen Sie sie an!
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

@@ -43,9 +43,9 @@ Ersetzen Sie **Capptain.WindowsPhone** durch das NuGet-Paket **MicrosoftAzure.Mo
 
 Im SDK wird der Begriff `Engagement` verwendet. Sie müssen Ihr Projekt entsprechend dieser Änderung aktualisieren.
 
-Sie müssen Ihr aktuelles Capptain-Nuget-Paket deinstallieren. Bedenken Sie, dass dadurch alle Änderungen, die Sie im Capptain-Ressourcenordner vorgenommen haben, entfernt werden. Wenn Sie diese Dateien beibehalten möchten, erstellen Sie eine Kopie davon.
+Sie müssen Ihr aktuelles Capptain-NuGet-Paket deinstallieren. Bedenken Sie, dass dadurch alle Änderungen, die Sie im Capptain-Ressourcenordner vorgenommen haben, entfernt werden. Wenn Sie diese Dateien beibehalten möchten, erstellen Sie eine Kopie davon.
 
-Danach installieren Sie das neue Microsoft Azure Engagement-Nuget-Paket für Ihr Projekt. Sie finden es direkt auf der [Nuget-Website] oder im Index. Durch diese Aktion werden alle Ressourcendateien, die von Engagement verwendet werden, ersetzt und die neue Engagement-DLL Ihren Projektverweisen hinzugefügt.
+Danach installieren Sie das neue Microsoft Azure Engagement-NuGet-Paket für Ihr Projekt. Sie finden es direkt auf der [NuGet-Website] oder im Index. Durch diese Aktion werden alle Ressourcendateien, die von Engagement verwendet werden, ersetzt und die neue Engagement-DLL Ihren Projektverweisen hinzugefügt.
 
 Sie müssen Ihre Projektverweise bereinigen, indem Sie die Capptain-DLL-Verweise löschen. Wenn Sie dies nicht tun, kommt es zu Konflikten mit der Capptain-Version und Fehlern.
 
@@ -167,5 +167,6 @@ Beispiele für häufig verwendete Capptain-Elemente:
 
 Beachten Sie, dass sich die Umbenennung auch auf überschriebene Methoden auswirkt.
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

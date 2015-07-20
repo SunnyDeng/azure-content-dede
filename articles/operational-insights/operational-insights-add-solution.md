@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="05/11/2015"
+    ms.date="07/02/2015"
     ms.author="banders"/>
 
 # Operational Insights-Lösungen
@@ -42,11 +42,15 @@ Zurzeit können Server, die über Microsoft Monitoring Agent direkt mit Microsof
 
 - [SQL and Active Directory Assessment](operational-insights-assessment.md)
 
-Die folgenden Lösungen werden hingegen *nicht* mit Microsoft Monitoring Agent unterstützt:
+Die folgenden Lösungen werden hingegen *nicht* mit Microsoft Monitoring Agent unterstützt und erfordern System Center Operation Manager (SCOM).
 
 - [Capacity Management](operational-insights-capacity.md)
 
-- [Configuration Assessment](../operational-insights-configuration-assessment.md)
+- [Alert Management](operational-insights-alerts.md)
+
+- [Configuration Assessment](operational-insights-solutions.md#configuration-assessment)
+
+Lesen Sie [Überlegungen zu Operations Manager mit Operational Insights](operational-insights-operations-manager.md) für Anleitungen zur Verwendung dieser Lösungen mit Operations Manager.
 
 Die Erfassung von IIS-Protokollen wird auf Computern mit folgenden Betriebssystemen unterstützt:
 
@@ -85,6 +89,5 @@ Die Erfassung von IIS-Protokollen wird auf Computern mit folgenden Betriebssyste
 
 
 3. Klicken Sie auf der Bestätigungsseite auf **Ja**, um die Lösung zu entfernen.
- 
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

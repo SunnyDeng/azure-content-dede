@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwenden des Tabellenspeichers mit Python | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Tabellenspeicherdienst mit Python zum Erstellen und Löschen von Tabellen sowie zum Einfügen und Abfragen von Tabellendaten verwenden." 
+	description="Erfahren Sie, wie Sie den Tabellendienst aus Python zum Erstellen und Löschen von Tabellen sowie zum Einfügen und Abfragen in der Tabelle verwenden." 
 	services="storage" 
 	documentationCenter="python" 
 	authors="huguesv" 
@@ -29,7 +29,7 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Tab
 
 [AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
-[AZURE.NOTE] Informationen zur Installation von Python bzw. des [Python Azure-Pakets][] finden Sie im [Python-Installationshandbuch](../python-how-to-install.md).
+[AZURE.NOTE]Informationen zur Installation von Python bzw. des [Python Azure-Pakets][] finden Sie im [Python-Installationshandbuch](../python-how-to-install.md).
 
 
 ## Erstellen einer Tabelle
@@ -38,7 +38,7 @@ Das **TableService**-Objekt ermöglicht Ihnen das Arbeiten mit Tabellenspeicherd
 
 	from azure.storage import TableService, Entity
 
-Der folgende Code erstellt ein **TableService**-Objekt unter Verwendung des Speicherkontonamens und Kontoschlüssels.  Ersetzen Sie  'myaccount' und  'mykey' durch das tatsächliche Konto und den tatsächlichen Schlüssel.
+Der folgende Code erstellt ein **TableService**-Objekt unter Verwendung des Speicherkontonamens und Kontoschlüssels. Ersetzen Sie 'myaccount' und 'mykey' durch das tatsächliche Konto und den tatsächlichen Schlüssel.
 
 	table_service = TableService(account_name='myaccount', account_key='mykey')
 
@@ -46,9 +46,7 @@ Der folgende Code erstellt ein **TableService**-Objekt unter Verwendung des Spei
 
 ## Hinzufügen einer Entität zu einer Tabelle
 
-Um eine Entität hinzuzufügen, erstellen Sie zunächst ein Wörterbuch, das die Eigenschaftsnamen der Entität und deren Werte definiert. Beachten Sie, dass Sie für jede Entität **PartitionKey** und **RowKey** angeben müssen. Hierbei handelt es sich um die eindeutigen Bezeichner der Entität und Werte, die viel schneller abgerufen werden können als andere Eigenschaften. Das System verwendet **PartitionKey**, um die Entitäten der Tabelle automatisch über viele Speicherknoten zu verteilen.
-Entitäten mit dem gleichen **PartitionKey** werden auf dem gleichen Knoten gespeichert. Der
-**RowKey**-Wert ist eine eindeutige ID der Entität innerhalb der Partition, zu der sie gehört.
+Um eine Entität hinzuzufügen, erstellen Sie zunächst ein Wörterbuch, das die Eigenschaftsnamen der Entität und deren Werte definiert. Beachten Sie, dass Sie für jede Entität **PartitionKey** und **RowKey** angeben müssen. Hierbei handelt es sich um die eindeutigen Bezeichner der Entität und Werte, die viel schneller abgerufen werden können als andere Eigenschaften. Das System verwendet **PartitionKey**, um die Entitäten der Tabelle automatisch über viele Speicherknoten zu verteilen. Entitäten mit dem gleichen **PartitionKey** werden auf dem gleichen Knoten gespeichert. Der **RowKey**-Wert ist eine eindeutige ID der Entität innerhalb der Partition, zu der sie gehört.
 
 Um eine Entität zu Ihrer Tabelle hinzuzufügen, übergeben Sie das Wörterbuchobjekt an die **insert_entity**-Methode.
 
@@ -71,8 +69,7 @@ Dieser Code zeigt, wie Sie die alte Version einer existierenden Entität durch e
 	task = {'description' : 'Take out the garbage', 'priority' : 250}
 	table_service.update_entity('tasktable', 'tasksSeattle', '1', task)
 
-Der Aktualisierungsvorgang schlägt fehl, wenn die zu aktualisierende Entität nicht existiert. Daher sollten Sie **insert_or_replace_entity**verwenden, wenn Sie eine Entität unabhängig davon speichern möchten, ob diese bereits vorhanden ist. 
-Der erste Aufruf im folgenden Beispiel ersetzt die existierende Entität. Der zweite Aufruf fügt eine neue Entität ein, da keine Entität mit dem angegebenen **PartitionKey** und **RowKey** in der Tabelle vorhanden ist.
+Der Aktualisierungsvorgang schlägt fehl, wenn die zu aktualisierende Entität nicht existiert. Daher sollten Sie **insert_or_replace_entity** verwenden, wenn Sie eine Entität unabhängig davon speichern möchten, ob diese bereits vorhanden ist. Der erste Aufruf im folgenden Beispiel ersetzt die existierende Entität. Der zweite Aufruf fügt eine neue Entität ein, da keine Entität mit dem angegebenen **PartitionKey** und **RowKey** in der Tabelle existiert.
 
 	task = {'description' : 'Take out the garbage again', 'priority' : 250}
 	table_service.insert_or_replace_entity('tasktable', 'tasksSeattle', '1', task)
@@ -93,7 +90,7 @@ Gelegentlich ist es sinnvoll, mehrere Vorgänge zusammen in einem Stapel zu send
 
 ## Abfragen einer Entität
 
-Um eine Entität in einer Tabelle abzufragen, verwenden Sie die **get_entity**-Methode und übergeben den **PartitionKey** und **RowKey** an sie.
+Um eine Entität in einer Tabelle abzufragen, verwenden Sie die **get_entity**-Methode und übergeben ihr **PartitionKey** und **RowKey**.
 
 	task = table_service.get_entity('tasktable', 'tasksSeattle', '1')
 	print(task.description)
@@ -110,19 +107,17 @@ Dieses Beispiel fragt alle Aufgaben in Seattle anhand des **PartitionKey**-Werts
 
 ## Abfragen einer Teilmenge von Entitätseigenschaften
 
-Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer Entität aufgerufen werden.
-Bei dieser Methode, der so genannten  *projection*, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Verwenden Sie den **select**-Parameter, und übergeben Sie die Namen der Eigenschaften, die an den Client übermittelt werden sollen.
+Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer Entität aufgerufen werden. Diese Technik namens *Projektion* reduziert die Bandbreite und kann die Abfrageleistung, besonders für große Entitäten, verbessern. Verwenden Sie den **select**-Parameter und übergeben Sie die Namen der Eigenschaften, die an den Client übermittelt werden sollen.
 
 Mit der Abfrage im folgenden Code werden nur die Beschreibungen von Entitäten in der Tabelle zurückgegeben.
 
-Beachten Sie, dass der folgende Codeausschnitt nur mit dem Cloud-Speicherdienst funktioniert, da diese Funktion vom Speicheremulator
-nicht unterstützt wird.*
+*Beachten Sie, dass der folgende Codeausschnitt nur mit dem Cloud-Speicherdienst funktioniert, da diese Funktion vom Speicheremulator nicht unterstützt wird.*
 
 	tasks = table_service.query_entities('tasktable', "PartitionKey eq 'tasksSeattle'", 'description')
 	for task in tasks:
 		print(task.description)
 
-## Löschen einer Entität
+## Zum Löschen einer Entität
 
 Sie können eine Entität unter Verwendung ihres Partitions- und Zeilenschlüssels löschen.
 
@@ -138,11 +133,13 @@ Mit dem folgenden Code wird eine Tabelle aus einem Speicherkonto gelöscht.
 
 Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern von und Zugreifen auf Daten in Azure][]
--   [Besuchen Sie den Azure Storage-Teamblog][].
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][].
+-   [Besuchen Sie den Blog des Azure-Speicherteams][].
 
-[Speichern von und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
-[Besuchen Sie den Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
-[Python Azure-Pakets]: https://pypi.python.org/pypi/azure  
+[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Besuchen Sie den Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
+[Python Azure-Paket]: https://pypi.python.org/pypi/azure
+[Python Azure-Pakets]: https://pypi.python.org/pypi/azure
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO2-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Zugriff auf Datasets von Python mithilfe der Machine Learning Python-Clientbibliothek | Azure" 
+	pageTitle="Zugriff auf Datasets mit der Machine Learning-Python-Clientbibliothek | Microsoft Azure" 
 	description="Installieren und verwenden Sie die Python-Clientbibliothek und verwalten Sie Azure Machine Learning-Daten sicher aus einer lokalen Python-Umgebung." 
 	services="machine-learning" 
 	documentationCenter="python" 
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/21/2015" 
+	ms.date="07/07/2015" 
 	ms.author="huvalo;bradsev" />
 
 
-#Zugriff auf Datasets mit Python mithilfe der Azure Machine Learning Python-Clientbibliothek 
+#Zugriff auf Datasets mit Python mithilfe der Azure Machine Learning-Python-Clientbibliothek 
 
 Die Vorschau von Microsoft Azure Machine Learning Python-Clientbibliothek kann einen sicheren Zugriff auf Ihre Azure Machine Learning Datasets aus einer lokalen Python-Umgebung aktivieren und ermöglicht die Erstellung und Verwaltung von Datasets im Arbeitsbereich.
 
@@ -44,7 +44,7 @@ Es besteht eine Abhängigkeit von folgenden Paketen:
  - Python-dateutil
  - pandas
 
-Es empfiehlt sich, eine Python-Distribution wie z. B. [Anaconda](http://continuum.io/downloads#all) oder [Canopy](https://store.enthought.com/downloads/) zu verwenden, die mit Python, IPython stammen und den drei oben aufgeführten  Pakete geliefert wird. Obwohl IPython nicht unbedingt erforderlich ist, ist es eine optimale Umgebung für die interaktive Bearbeitung und Visualisierung von Daten.
+Es empfiehlt sich, eine Python-Distribution wie z. B. [Anaconda](http://continuum.io/downloads#all) oder [Canopy](https://store.enthought.com/downloads/) zu verwenden, die mit Python, IPython stammen und den drei oben aufgeführten Pakete geliefert wird. Obwohl IPython nicht unbedingt erforderlich ist, ist es eine optimale Umgebung für die interaktive Bearbeitung und Visualisierung von Daten.
 
 
 ###<a name="installation"></a>Installation der Azure Machine Learning Python-Clientbibliothek
@@ -53,7 +53,7 @@ Außerdem muss die Azure Machine Learning Python-Clientbibliothek zum Ausführen
 
     pip install azureml
 
-Alternativ können Sie von den Quellen auf [Github](https://github.com/Azure/Azure-MachineLearning-ClientLibrary-Python) herunterladen und installieren. 
+Alternativ können Sie von den Quellen auf [Github](https://github.com/Azure/Azure-MachineLearning-ClientLibrary-Python) herunterladen und installieren.
 
     python setup.py install
 
@@ -80,18 +80,21 @@ Wenn Ihre Rolle nicht als **Besitzer** festgelegt ist, können Sie darum bitten,
 
 Um das Autorisierungstoken zu erhalten, führen Sie eine der folgenden Aktionen durch:
 
-1. Fragen Sie bei einem Besitzer nach einem Token. Besitzer können auf ihren Autorisierungstoken auf der Seite „Einstellungen“ von ihrem Arbeitsbereich im Studio zugreifen. Wählen Sie im linken Bereich auf **Einstellungen** und klicken Sie auf **AUTORISIERUNGSTOKEN**, um die primären und sekundären Token zu sehen. ![](http://i.imgur.com/h33GoZX.jpg) Obwohl die primären oder sekundären Autorisierungstoken im Codeausschnitt verwendet werden können, empfiehlt es sich, dass der Besitzer nur die sekundären Autorisierungstoken freigibt.
+1. Fragen Sie bei einem Besitzer nach einem Token. Besitzer können auf ihren Autorisierungstoken auf der Seite „Einstellungen“ von ihrem Arbeitsbereich im Studio zugreifen. Wählen Sie im linken Bereich auf **Einstellungen** und klicken Sie auf **AUTORISIERUNGSTOKEN**, um die primären und sekundären Token zu sehen. Im Codebeispiel können zwar entweder das primäre oder das sekundäre Autorisierungstoken verwendet werden, es empfiehlt sich jedoch, dass Besitzer nur das sekundäre Autorisierungstoken freigeben.
+
+    ![](http://i.imgur.com/h33GoZX.jpg)
+
 2. Bitten Sie darum, zur Rolle „Besitzer“ hochgestuft zu werden. Zu diesem Zweck muss ein aktueller Besitzer des Arbeitsbereichs Sie zuerst aus dem Arbeitsbereich entfernen und dann erneut als Besitzer einladen.
 
 Wenn Entwickler die Arbeitsplatz-ID und das Autorisierungstoken abgerufen haben, können Sie auf den Arbeitsbereich mithilfe des Codeausschnitts unabhängig von ihrer Rolle zugreifen.
 
-Autorisierungstoken werden auf der Seite **AUTORISIERUNGSTOKEN** unter **EINSTELLUNGEN** verwaltet. Sie können Sie erneut generieren, aber dieses Verfahren hebt den Zugriff auf das  vorherige Token auf.
+Autorisierungstoken werden auf der Seite **AUTORISIERUNGSTOKEN** unter **EINSTELLUNGEN** verwaltet. Sie können Sie erneut generieren, aber dieses Verfahren hebt den Zugriff auf das vorherige Token auf.
 
 ### <a name="accessingDatasets"></a>Zugriff auf Datasets aus einer lokalen Python-Anwendung
 
 1. Klicken Sie in Machine Learning Studio in der Navigationsleiste auf der linken Seite auf **DATASETS**.
 
-2. Wählen Sie das Dataset, auf das Sie zugreifen möchten. Wählen Sie eines der Datasets aus der Liste **MEINE DATASETS** oder aus der Liste  **BEISPIELE** aus.
+2. Wählen Sie das Dataset, auf das Sie zugreifen möchten. Wählen Sie eines der Datasets aus der Liste **MEINE DATASETS** oder aus der Liste **BEISPIELE** aus.
 
 3. Klicken Sie in der unteren Symbolleiste auf **Datenzugriffscode generieren**. Beachten Sie, dass diese Schaltfläche deaktiviert wird, wenn die Daten ein mit der Python-Clientbibliothek nicht kompatibles Format haben.
 
@@ -218,7 +221,7 @@ Siehe `SourceDataset` -Klasse für weitere Informationen zu verfügbaren Metadat
 
 ### Inhalte lesen
 
-Die von Machine Learning Studio automatisch bereitgestellten Codeausschnitte werden automatisch herunterladen und deserialisieren das Dataset zu einem Pandas DataFrame-Objekt. Dies erfolgt  mit der `to_dataframe`-Methode:
+Die von Machine Learning Studio automatisch bereitgestellten Codeausschnitte werden automatisch herunterladen und deserialisieren das Dataset zu einem Pandas DataFrame-Objekt. Dies erfolgt mit der `to_dataframe`-Methode:
 
     frame = ds.to_dataframe()
 
@@ -362,5 +365,6 @@ Wenn Ihre Daten bereits serialisiert sind, verwenden Sie `update_from_raw_data` 
 <!-- Module References -->
 [convert-to-csv]: https://msdn.microsoft.com/library/azure/faa6ba63-383c-4086-ba58-7abf26b85814/
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

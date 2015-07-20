@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Azure Mobile Engagement - Handbuch zur Problembehandlung - APIs" 
-   description="Handbücher zur Problembehandlung für Azure Mobile Engagement" 
+   pageTitle="Azure Mobile Engagement – Handbuch zur Problembehandlung – APIs" 
+   description="Handbücher zur Problembehandlung für Azure Mobile Engagement – APIs" 
    services="mobile-engagement" 
    documentationCenter="" 
    authors="piyushjo" 
@@ -13,29 +13,30 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="02/17/2015"
+   ms.date="06/18/2015"
    ms.author="piyushjo"/>
 
-# Handbuch zur Behandlung von API-Problemen
+# Handbuch zur Problembehandlung bei APIs
 
-Im Folgenden finden Sie mögliche Probleme, die hinsichtlich der Art, in der Administratoren mit Azure Mobile Engagement über die APIs interagieren, auftreten können.
+Im Folgenden finden Sie mögliche Probleme, die auftreten können, wenn Administratoren über die APIs mit Azure Mobile Engagement interagieren.
 
 ## Syntaxfehler
 
 ### Problem
 - Syntaxfelder bei Verwendung der API (oder unerwartetes Verhalten).
 
-### Ursachen:
+### Ursachen
 
 - Syntaxfehler:
     - Stellen Sie durch Prüfen der Syntax der jeweiligen API sicher, dass die Option zur Verfügung steht.
     - Ein häufiger Fehler bei der API-Verwendung besteht darin, dass Reach-API und Push-API verwechselt werden (die meisten Aufgaben sollten nicht mit der Push-API, sondern mit der Reach-API ausgeführt werden). 
     - Ein weiterer häufiger Fehler bei der SDK-Integration und der API-Verwendung ist der, dass SDK- und API-Schlüssel verwechselt werden.
-    - Skripts, die eine Verbindung zu den APIs herstellen, müssen mindestens alle 10 Minuten Daten senden, ansonsten kommt es zu einer Zeitüberschreitung (besonders häufig in API-Überwachungsskripts, die auf Daten prüfen). Um Zeitüberschreitungen zu verhindern, sollte Ihr Skript alle 10 Minuten ein XMPP-Pingsignal senden, um die Verbindung mit dem Server aufrechtzuerhalten.
+    - Skripts, die eine Verbindung zu den APIs herstellen, müssen mindestens alle 10 Minuten Daten senden, ansonsten kommt es zu einer Zeitüberschreitung (besonders häufig in API-Überwachungsskripts, die auf Daten prüfen). Um Zeitüberschreitungen zu verhindern, sollte Ihr Skript alle 10 Minuten ein XMPP-Pingsignal senden, um die Verbindung mit dem Server aufrechtzuerhalten.
 
 ### Weitere Informationen
  
-- [Konzepte - Glossar][Link 6], [API-Dokumentation][Link 4], [XMPP-Protokollinformationen](http://xmpp.org/extensions/xep-0199.html)
+- [API-Dokumentation][Link 4]
+- [Informationen zum XMPP-Protokoll](http://xmpp.org/extensions/xep-0199.html)
  
 ## Keine Möglichkeit zur Verwendung der API zur Durchführung derselben Aktion, die auch in der Azure Mobile Engagement-Benutzeroberfläche verfügbar ist
 
@@ -59,29 +60,29 @@ Im Folgenden finden Sie mögliche Probleme, die hinsichtlich der Art, in der Adm
 
 - Nachfolgend finden Sie eine Zusammenstellung häufiger API-Statuscodes als Referenz und zur ersten Problembehandlung:
 
-        200        Erfolg.
-        200        Konto aktualisiert: Gerät registriert, zugeordnet, aktualisiert oder aus dem aktuellen Konto entfernt.
-        200        Gibt eine Liste mit Projekten als JSON-Objekt zurück oder ein Authentifizierungstoken, das im Nachrichtentext der Antwort generiert und zurückgegeben wird.
-        201        Konto erstellt.
-        400        Ungültiger Parameter oder Überprüfungsausnahme (überprüfen Sie die Nutzlast auf Einzelheiten). Die der API oder dem Dienst bereitgestellten Parameter sind ungültig. In diesem Fall sind in der HTTP-Antwort weitere Details enthalten. Stellen Sie sicher, dass Sie den MIME-Typ der Antwort überprüfen, da die Nutzlast unformatierter Text oder ein JSON-Objekt sein kann.
-        401        Authentifizierungsfehler. Zurzeit ist kein Benutzer authentifiziert oder verbunden (überprüfen Sie die AppID und den SDK-Schlüssel).
-        402        Abrechnungssperre. Die Anwendung hat entweder ihre Kontingente überschritten, oder sie befindet sich im Moment in einem fehlerhaften Abrechnungszustand.
-        403        Die Anwendung ist nicht aktiviert ist, oder die spezifische API ist für diese Anwendung deaktiviert.
-        403        Nicht autorisierter Zugriff auf das Projekt oder die Anwendung, ungültiger Schlüsselzugriff (der Schlüssel muss mit dem bei der Erstellung zur Verfügung gestellten übereinstimmen).
-        403        Kampagnenspezifische Fehler: Die Kampagne muss fertig gestellt sein (oder wurde bereits aktiviert), die Anhaltenaktion kann nur bei einer geplanten Kampagne ausgeführt werden, eine Kampagne, die aktuell nicht den Status "In Bearbeitung" hat, kann nicht fertig gestellt werden, die Kampagne muss "In Bearbeitung" und die Eigenschaft der Kampagne benannt sein, manuelles Push muss auf "true" festgelegt sein.
-        403        Die E-Mail-Adresse ist bereits einem anderen Konto zugeordnet (z. B. einem Administrator). Es wird kein Authentifizierungstoken generiert.
-        404        Anwendungs-, Geräte-, Kampagnen- oder Projektbezeichner nicht gefunden.
-        404        Ein Abfrageparameter ist ungültiges JSON oder hat ein Feld mit einem unerwarteten Wert.
-        404        Die E-Mail-Adresse ist keinem Konto zugeordnet. Erstellen Sie zuerst das Konto, oder aktualisieren Sie es.
-        405        Ungültige HTTP-Methode (GET, POST usw.) oder Versuch der Bearbeitung eines schreibgeschützten Segments (d. h. Hinzufügen, Aktualisieren oder Löschen eines Kriteriums). Ein Segment wird erst schreibgeschützt, nachdem es zum ersten Mal berechnet wurde.
-        409        Der Name ist bereits einer anderen Geräte-ID oder Kampagne zugeordnet.
-        413        Zu viele Gerätebezeichner (aktueller Grenzwert ist 1.000), POST URL-codierte Entität ist größer als 2 MB, oder der Zeitraum ist zur Anzeige zu groß (der Server hat die Analyse nicht abgerufen, weil sich die Benutzeranforderung auf einen zu großen Zeitraum bezieht).
-        503        Analyse noch nicht verfügbar (die angeforderten Informationen sind für eine Anwendung noch nicht berechnet).
-        504         Der Server konnte Ihre Anforderung nicht in angemessener Zeit verarbeiten (wenn Sie mehrere Aufrufe an eine API sehr schnell vornehmen, versuchen Sie, immer nur einen Aufruf zu senden und die Aufrufe über einen Zeitraum zu verteilen).
+        200        Success.
+        200        Account updated: device registered, associated, updated, or removed from the current account.
+        200        Returns a list of projects as a JSON object or an authentication token generated and returned in the response’s body.
+        201        Account created.
+        400        Invalid parameter or validation exception (check payload for details). The parameters provided to the API or service are invalid. In this case, the HTTP response will embed more details. Make sure to test for the MIME type of the response as the payload can either be plain text or a JSON object.
+        401        Authentication error. No user is currently authenticated or connected (check the AppID and SDK key).
+        402        Billing lock. The application is either off its quotas or is currently in a bad billing state.
+        403        The application is not enabled or the specific API is disabled for this application.
+        403        Unauthorized access to the project or application, invalid access key (the key must match the one provided when created).
+        403        Campaign specific errors: campaign must be finished (or has already been activated), the suspend action can only be performed on an scheduled campaign, cannot finish a campaign that is not currently “in progress”, campaign must be “in progress” and the campaign’s property named, manual Push must be set to true.
+        403        The email address is already associated to another account (a super user for instance). No authentication token will be generated.
+        404        Application, device, campaign, or project identifier not found.
+        404        Query parameter is invalid JSON or has a field with an unexpected value.
+        404        The email address is not associated with an account. Please create or update the account first.
+        405        Invalid HTTP method (GET, POST, etc.) or trying to edit a read only segment (i.e. add or update or delete a criterion). A segment becomes read only after it has been computed for the first time.
+        409        Name already associated to a different device ID or campaign.
+        413        Too many device identifiers (current limit is 1,000), POST URL encoded entity is over 2MB, or the period is too large to be displayed (the server didn’t retrieve the analytics because the user request is for a period that is too large).
+        503        Analytics not available yet (the requested information is not computed yet for an application).
+        504        The server was not able to handle your request in a reasonable time (if you make multiple calls to an API very quickly, try to make one call at a time and spread the calls out over time).
 
 ### Weitere Informationen
 
-- [API-Dokumentation - detaillierte Fehlerinformationen zu jeder angegebenen API][Link 4]
+- [API-Dokumentation – detaillierte Fehlerinformationen zu jeder API][Link 4]
  
 ## Verborgene ("stille") Fehler
 
@@ -95,7 +96,7 @@ Im Folgenden finden Sie mögliche Probleme, die hinsichtlich der Art, in der Adm
 
 ### Weitere Informationen
 
-- [Handbuch zur Problembehandlung - SDK][Link 25], [SDK-Dokumentation][Link 5]
+- [Handbuch zur Problembehandlung – SDK][Link 25]
  
 <!--Link references-->
 [Link 1]: mobile-engagement-user-interface.md
@@ -127,5 +128,6 @@ Im Folgenden finden Sie mögliche Probleme, die hinsichtlich der Art, in der Adm
 [Link 27]: mobile-engagement-user-interface-reach-campaign.md
 [Link 28]: mobile-engagement-user-interface-reach-criterion.md
 [Link 29]: mobile-engagement-user-interface-reach-content.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

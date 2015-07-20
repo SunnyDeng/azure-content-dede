@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Veröffentlichen eines Machine Learning-Webdiensts | Azure" 
-	description="Wie Sie ein Trainingsexperiment in ein Bewertungsexperiment konvertieren, auf die Veröffentlichung vorbereitet und dann als  Azure Machine Learning-Webdienst veröffentlichen." 
+	pageTitle="Veröffentlichen eines Machine Learning-Webdiensts | Microsoft Azure" 
+	description="Wie Sie ein Trainingsexperiment in ein Bewertungsexperiment konvertieren, auf die Veröffentlichung vorbereitet und dann als Azure Machine Learning-Webdienst veröffentlichen." 
 	services="machine-learning" 
 	documentationCenter="" 
 	authors="garyericson" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/04/2015" 
+	ms.date="05/27/2015" 
 	ms.author="garye"/>
 
 #Veröffentlichen eines Azure Machine Learning-Webdiensts
@@ -26,7 +26,7 @@ Allgemein betrachtet, geschieht dies in drei Schritten:
 - **[Konvertieren in ein Bewertungsexperiment]** – Sobald Ihr Modell mit vorhandenen Daten trainiert wurde, können Sie es verwenden, um neue Daten zu bewerten. Sie bereiten das Experiment auf die Bewertung vor und optimieren es.
 - **[Als Webdienst veröffentlichen]** – Mit nur einem Klick können Sie nun das Bewertungsexperiment als Azure Webdienst veröffentlichen. Die Benutzer Daten an Ihr Modell senden und die Vorhersagen Ihres Modells empfangen.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
 Nachdem Sie den Webdienst veröffentlicht haben, können Sie Folgendes tun:
 
@@ -44,7 +44,7 @@ Nachdem Sie den Webdienst veröffentlicht haben, können Sie Folgendes tun:
 
 ##Erstellen eines Trainingsexperiments
 
-Zum Trainieren eines Vorhersageanalysemodells erstellen Sie in Azure Machine Learning Studio ein Trainingsexperiment, in das Sie verschiedene Module zum Laden der Trainingsdaten, zum ggf. erforderlichen Vorbereiten der Daten, Anwenden von Lernalgorithmen und Auswerten der Ergebnisse einbinden. Sie können ein Experiment iterieren und unterschiedliche Lernalgorithmen zum Vergleichen und Bewerten der Ergebnisse ausprobieren.
+Zum Trainieren eines Vorhersageanalysemodells erstellen Sie in Azure Machine Learning Studio ein Trainingsexperiment, in das Sie verschiedene Module zum Laden der Trainingsdaten, zum ggf. erforderlichen Vorbereiten der Daten, Anwenden von Lernalgorithmen und Auswerten der Ergebnisse einbinden. Sie können ein Experiment iterieren und unterschiedliche Lernalgorithmen zum Vergleichen und Auswerten der Ergebnisse ausprobieren.
 
 Der Prozess der Erstellung und Verwaltung von Trainingsexperimenten an anderer Stelle ausführlicher behandelt. Weitere Informationen und Beispiele finden Sie in diesen Artikeln:
 
@@ -55,8 +55,7 @@ Der Prozess der Erstellung und Verwaltung von Trainingsexperimenten an anderer S
 
 ##Konvertieren des Trainingsexperiments in ein Bewertungsexperiment
 
-Nachdem Sie das Modell trainiert haben, können Sie es verwenden, um neue Daten zu bewerten. Hierzu konvertieren Sie das Trainingsexperiment in ein Bewertungsexperiment. 
-Durch die Konvertierung in ein Bewertungssystem wird das trainierte Modell darauf vorbereitet, als Bewertungswebdienst veröffentlicht zu werden. Benutzer des Webdiensts senden Eingabedaten an das Modell, und das Modell sendet Vorhersageergebnisse zurück. Während der Konvertierung in ein Bewertungsexperiment sollten Sie daher berücksichtigen, wie das Modell aus Ihrer Sicht erwartungsgemäß von anderen Benutzern verwendet wird.
+Nachdem Sie das Modell trainiert haben, können Sie es verwenden, um neue Daten zu bewerten. Hierzu konvertieren Sie das Trainingsexperiment in ein Bewertungsexperiment. Durch die Konvertierung in ein Bewertungssystem wird das trainierte Modell darauf vorbereitet, als Bewertungswebdienst veröffentlicht zu werden. Benutzer des Webdiensts senden Eingabedaten an das Modell, und das Modell sendet Vorhersageergebnisse zurück. Während der Konvertierung in ein Bewertungsexperiment sollten Sie daher berücksichtigen, wie das Modell aus Ihrer Sicht erwartungsgemäß von anderen Benutzern verwendet wird.
 
 ![Konvertieren in ein Bewertungsexperiment](./media/machine-learning-publish-a-machine-learning-web-service/figure-1.png)
 
@@ -67,7 +66,7 @@ Weitere Informationen zum Ausführen dieser Konvertierung finden Sie unter [Konv
 
 Nachdem das Bewertungsexperiment ausreichend vorbereitet wurde, können Sie es als Azure-Webdienst veröffentlichen. Mithilfe des Webdiensts können Benutzer Daten an das Modell senden, und das Modell gibt seine Vorhersagen zurück.
 
-Um das Bewertungsexperiment zu veröffentlichen, klicken Sie auf  am unteren Rand des Experiment-Canvas auf **Run** (Ausführen) und anschließend auf **PUBLISH WEB SERVICE** (WEBDIENST VERÖFFENTLICHEN). Der Webdienst wird eingerichtet, und Sie werden zum Webdienst-Dashboard weitergeleitet.
+Um das Bewertungsexperiment zu veröffentlichen, klicken Sie auf am unteren Rand des Experiment-Canvas auf **Run** (Ausführen) und anschließend auf **PUBLISH WEB SERVICE** (WEBDIENST VERÖFFENTLICHEN). Der Webdienst wird eingerichtet, und Sie werden zum Webdienst-Dashboard weitergeleitet.
 
 ![Veröffentlichen des Webdiensts](./media/machine-learning-publish-a-machine-learning-web-service/figure-2.png)
 
@@ -94,8 +93,7 @@ Weitere Informationen zum Zugreifen auf einen Machine Learning-Webdienst finden 
 
 Im Azure-Verwaltungsportal können Sie Ihre Webdienste verwalten, indem Sie auf den Dienst **Machine Learning** klicken, den Machine Learning-Arbeitsbereich öffnen und anschließend auf der Registerkarte **Webdienste** den Webdienst öffnen. Auf dieser Seite aus können Sie den Webdienst überwachen, aktualisieren und löschen. Sie können auch zusätzlich zu dem Standardendpunkt, der beim Veröffentlichen erstellt wird, einen zweiten Endpunkt für den Webdienst hinzufügen.
 
-Weitere Informationen finden Sie unter [Verwalten eines Machine Learning-Arbeitsbereichs](machine-learning-manage-workspace.md).
-<!-- When this article gets published, fix the link and uncomment
+Weitere Informationen finden Sie unter [Verwalten eines Machine Learning-Arbeitsbereichs](machine-learning-manage-workspace.md).<!-- When this article gets published, fix the link and uncomment
 For more information on how to manage Azure Machine Learning web service endpoints using the REST API, see **Azure machine learning web service endpoints**. 
 -->
 
@@ -104,9 +102,10 @@ For more information on how to manage Azure Machine Learning web service endpoin
 
 Sie können Änderungen am Webdienst vornehmen, z. B. das Modell mit zusätzlichen Trainingsdaten aktualisieren, und ihn dann erneut veröffentlichen, wobei der ursprüngliche Webdienst überschrieben wird.
 
-Um den Webdienst zu aktualisieren, öffnen Sie das ursprüngliche Bewertungsexperiment, das Sie zum Veröffentlichen des ursprünglichen Webdiensts verwendet habe, und klicken Sie auf **SAVE AS** (SPEICHERN UNTER), um eine bearbeitbare Kopie zu erstellen. Nehmen Sie die gewünschten Änderungen vor, und klicken Sie dann auf **PUBLISH WEB SERVICE** (WEBDIENST VERÖFFENTLICHEN). Da Sie dieses Experiment zuvor bereits veröffentlicht hatten, werden Sie von Machine Learning Studio gefragt, ob Sie den vorhandenen Dienst überschreiben möchten. Wenn Sie auf **YES** (JA) klicken, wird der vorhandenen Webdienst beendet, und das neue Bewertungsexperiment wird an seiner Stelle veröffentlicht.
+Um den Webdienst zu aktualisieren, öffnen Sie das ursprüngliche Bewertungsexperiment, das Sie zum Veröffentlichen des ursprünglichen Webdiensts verwendet habe, und klicken Sie auf **SAVE AS** (SPEICHERN UNTER), um eine bearbeitbare Kopie zu erstellen. Nehmen Sie die gewünschten Änderungen vor, und klicken Sie dann auf **PUBLISH WEB SERVICE** WEBDIENST VERÖFFENTLICHEN. Da Sie dieses Experiment zuvor bereits veröffentlicht hatten, werden Sie von Machine Learning Studio gefragt, ob Sie den vorhandenen Dienst überschreiben möchten. Wenn Sie auf **YES** (JA) klicken, wird der vorhandenen Webdienst beendet, und das neue Bewertungsexperiment wird an seiner Stelle veröffentlicht.
 
 > [AZURE.NOTE]Wenn Sie Konfigurationsänderungen im ursprünglichen Webdienst vorgenommen haben, z. B. einen anderen Anzeigenamen oder eine andere Beschreibung eingegeben haben, dann müssen Sie diese Werte erneut eingeben.
 
+Eine Option zum Aktualisieren des Webdiensts ist das programmgesteuerte erneute Trainieren des Modells. Weitere Informationen finden Sie unter [Programmgesteuertes erneutes Trainieren von Machine Learning-Modellen](machine-learning-retrain-models-programmatically.md).
 
-<!---HONumber=54--> 
+<!---HONumber=July15_HO2-->

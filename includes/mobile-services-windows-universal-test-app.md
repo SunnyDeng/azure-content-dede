@@ -1,7 +1,7 @@
 
 1. Drücken Sie die F5-Taste, um das Projekt neu zu erstellen und die Windows Store-App zu starten.
 
-2. Geben Sie in der App einen beschreibenden Text ein, zum Beispiel *Lernprogramm abschließen*, unter **TodoItem einfügen**. Klicken Sie dann auf **Speichern**.
+2. Geben Sie in der App einen beschreibenden Text ein, zum Beispiel *Lernprogramm abschließen*, unter **Insert a TodoItem**. Klicken Sie dann auf **Save**.
 
 	![](./media/mobile-services-windows-universal-test-app/mobile-quickstart-startup.png)
 
@@ -13,4 +13,4 @@
 	
 	Beachten Sie, dass nach dem Starten der App im vorhergehenden Schritt gespeicherte Daten aus dem mobilen Dienst geladen werden.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

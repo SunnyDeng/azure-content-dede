@@ -13,24 +13,24 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/01/2014" 
+	ms.date="06/30/2015" 
 	ms.author="MikeWasson"/>
 
 
 
 
 
-<h1><a id = ""></a>Ausführen von Cassandra mit Linux auf Azure und Zugreifen darauf mit Node.js </h1>
+# Ausführen von Cassandra mit Linux auf Azure und Zugreifen aus Node.js 
 
-##<a id="overview"> </a>Übersicht ##
+## Übersicht
 Microsoft Azure ist eine offene Cloudplattform, die sowohl Microsoft- als auch Nicht-Microsoft-Software ausführt. Dies schließt Betriebssysteme, Anwendungsserver, Messaging-Middleware sowie SQL- und NoSQL-Datenbanken aus kommerziellen und Open-Source-Modellen ein. Das Erstellen von robusten Diensten für öffentliche Clouds einschließlich Azure erfordert eine sorgfältige Planung und eine wohl überlegte Architektur für Anwendungsserver und Speicherebenen. Die verteilte Speicherarchitektur von Cassandra unterstützt auf natürliche Weise das Erstellen von Systemen mit hoher Verfügbarkeit, die bei Clusterfehlern fehlertolerant sind. Cassandra ist eine NoSQL-Datenbank der Cloud-Größenordnung, die von der Apache Software Foundation unter "cassandra.apache.org" verwaltet wird. Cassandra ist in Java geschrieben und kann daher auf Windows- und auf Linux-Plattformen ausgeführt werden.
 
 Dieser Artikel soll schwerpunktmäßig die Cassandra-Bereitstellung unter Ubuntu als Cluster in einem oder in mehreren Rechenzentren unter Nutzung von Microsoft Azure Virtual Machines und Virtual Networks zeigen. Die Clusterbereitstellung für produktionsoptimierte Arbeitsauslastungen ist nicht Gegenstand dieses Artikels, weil Knotenkonfigurationen mit mehreren Datenträgern, ein geeigneter Ringtopologie-Entwurf und Datenmodellierung zur Unterstützung der Anforderungen an die Replikation, die Datenkonsistenz, den Durchsatz und die hohe Verfügbarkeit erforderlich sind.
 
 Dieser Artikel zeigt grundlegende Vorgehensweisen, um zu zeigen, welche Schritte zum Erstellen des Cassandra-Clusters im Vergleich zu Docker, Chef oder Puppet erforderlich sind. Dies kann die Bereitstellung der Infrastruktur entscheidend vereinfachen.
 
-##<a id="depmodels"> </a>Die Bereitstellungsmodelle ##
-Windows Azure-Netzwerke ermöglichen die Bereitstellung von isolierten privaten Clustern. Der Zugriff auf diese kann eingeschränkt werden, um differenzierte Netzwerksicherheit zu erzielen. Da in diesem Artikel die Cassandra-Bereitstellung auf einer grundlegenden Ebene gezeigt wird, werden die Konsistenzebene und der optimale Speicherentwurf für den Durchsatz nicht behandelt. Die folgende Liste nennt die Netzwerkanforderungen für unseren hypothetischen Cluster:
+## Bereitstellungsmodelle 
+Microsoft Azure-Netzwerke ermöglichen die Bereitstellung von isolierten privaten Clustern. Der Zugriff auf diese kann eingeschränkt werden, um differenzierte Netzwerksicherheit zu erzielen. Da in diesem Artikel die Cassandra-Bereitstellung auf einer grundlegenden Ebene gezeigt wird, werden die Konsistenzebene und der optimale Speicherentwurf für den Durchsatz nicht behandelt. Die folgende Liste nennt die Netzwerkanforderungen für unseren hypothetischen Cluster:
 
 - Externe Systeme können nicht von innerhalb oder außerhalb von Azure auf die Cassandra-Datenbank zugreifen.
 - Der Cassandra-Cluster muss sich hinter einem Lastenausgleichsmodul für Thrift-Datenverkehr befinden.
@@ -42,7 +42,7 @@ Windows Azure-Netzwerke ermöglichen die Bereitstellung von isolierten privaten 
 Cassandra kann in einer einzelnen Azure-Region oder in mehreren Regionen basierend auf der dezentralen Natur der Arbeitsauslastung bereitgestellt werden. Das Bereitstellungsmodell für mehrere Regionen kann genutzt werden, um Endbenutzer in geringerer Entfernung zu einem bestimmten geografischen Ort über die gleiche Cassandra-Infrastruktur zu bedienen. Die in Cassandra integrierte Knotenreplikation übernimmt die Synchronisierung von mehreren Masterschreibvorgängen, die aus mehreren Rechenzentren stammen, und stellt Anwendungen eine konsistente Sicht der Daten zur Verfügung. Die Bereitstellung für mehrere Regionen kann auch die Risikominimierung von weit reichenden Azure-Dienstausfällen unterstützen. Die optimierbare Konsistenz- und Replikationstopologie von Cassandra kann verschiedene RPO-Anforderungen von Anwendungen erfüllen.
 
 
-###<a id="oneregion"> </a>Bereitstellung in einer einzelnen Region ###
+### Bereitstellung in einer Region
 Wir beginnen mit der Bereitstellung in einer Region und nutzen dann die gewonnenen Erfahrungen beim Erstellen eines Modells für mehrere Regionen. Virtuelle Azure-Netzwerke werden zum Erstellen isolierter Subnetze verwendet, damit die oben genannten Anforderungen an die Netzwerksicherheit erfüllt werden können. Der Vorgang, der zum Erstellen der Bereitstellung in einer Region beschrieben wird, verwendet Ubuntu 14.04 LTS und Cassandra 2.08. Der Vorgang kann jedoch problemlos für andere Linux-Varianten übernommen werden. Die folgenden systemischen Merkmale gelten für eine Bereitstellung in einer Region.
 
 **Hohe Verfügbarkeit:** Die in Abbildung 1 gezeigten Cassandra-Knoten werden für zwei Verfügbarkeitsgruppen bereitgestellt, sodass die Knoten auf mehrere Fehlerdomänen verteilt sind und eine hohe Verfügbarkeit gewährleisten. Virtuelle Computer, die mit Anmerkungen zu jeder Verfügbarkeitsgruppe versehen sind, werden zwei Fehlerdomänen zugeordnet. Microsoft Azure verwendet das Konzept der Fehlerdomäne zum Verwalten ungeplanter Ausfallzeiten (z. B. Hardware- oder Softwarefehler) und das Konzept der Upgradedomäne (z. B. Host- oder Gastbetriebssystem-Patches und -Upgrades bzw. Anwendungsupgrades) zum Verwalten geplanter Ausfallzeiten. Welche Rolle Fehler- und Upgradedomänen beim Erreichen einer hohen Verfügbarkeit spielen, lesen Sie unter [Notfallwiederherstellung und hohe Verfügbarkeit für Azure-Anwendungen](http://msdn.microsoft.com/library/dn251004.aspx).
@@ -65,23 +65,21 @@ Der oben dargestellte Cluster mit 8 Knoten, einem Replikationsfaktor von 3 und Q
 
 Cassandra-Clusterkonfiguration mit einer Region:
 
-<table>
-<tr>
+| Clusterparameter | Wert | Anmerkungen |
+| ----------------- | ----- | ------- |
+| Anzahl der Knoten (N) | 8 | Gesamtzahl der Knoten im Cluster |
+| Replikationsfaktor (RF) | 3 |	Die Anzahl der Replikate einer angegebenen Zeile |
+| Konsistenzebene (Schreiben) | QUORUM [(RF/2) +1= 2] Das Ergebnis der Formel wird abgerundet | Schreibt höchstens zwei Replikate, bevor die Antwort an den Aufrufer gesendet wird. Das dritte Replikat wird als mit Eventual Consistency geschrieben. |
+| Konsistenzebene (Lesen) | QUORUM [(RF/2) +1= 2] Das Ergebnis der Formel wird abgerundet] | Liest 2 Replikate vor dem Senden der Antwort an den Aufrufer. |
+| Replikationsstrategie | NetworkTopologyStrategy Weitere Informationen finden Sie unter [Datenreplikation](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureDataDistributeReplication_c.html) in der Cassandra-Dokumentation. | Verstehen der Bereitstellungstopologie und Platzieren von Replikaten auf Knoten, damit sich letztlich nicht alle Replikate im gleichen Rack befinden. |
+| Snitch | GossipingPropertyFileSnitch Weitere Informationen finden Sie unter [Snitches](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureSnitchesAbout_c.html) in der Cassandra-Dokumentation. | NetworkTopologyStrategy verwendet ein Snitch-Konzept, um die Topologie zu verstehen. GossipingPropertyFileSnitch bietet eine bessere Steuerung bei der Zuordnung der einzelnen Knoten zum Rechenzentrum und Rack. Der Cluster verwendet dann gossip, um diese Informationen zu verteilen. Dies ist viel einfacher in einer dynamischen IP-Einstellung im Vergleich zu PropertyFileSnitch. |
 
-<th>Clusterparameter</th><th>Wert</th><th>Anmerkungen</th></tr>
-<tr><td>Anzahl der Knoten (N) </td><td>8</td><td>Gesamtzahl der Knoten im Cluster</td></tr>
-<tr><td>Replikationsfaktor (RF)</td><td>	3 </td><td>	Die Anzahl der Replikate einer angegebenen Zeile </td></tr>
-<tr><td>Konsistenzebene (Schreiben)</td><td>	QUORUM[(RF/2) +1) = 2] [Das Ergebnis der Formel wird abgerundet] </td><td> Schreibt höchstens zwei Replikate, bevor die Antwort an den Aufrufer gesendet wird. Das dritte Replikat wird als mit Eventual Consistency geschrieben. </td></tr>
-<tr><td>Konsistenzebene (Lesen)	</td><td>QUORUM [(RF/2) +1= 2] [Das Ergebnis der Formel wird abgerundet]</td><td>	Liest 2 Replikate vor dem Senden der Antwort an den Aufrufer.</td></tr>
-<tr><td>Replikationsstrategie </td><td>	NetworkTopologyStrategy [weitere Informationen finden Sie in der Cassandra-Dokumentation unter [Datenreplikation](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureDataDistributeReplication_c.html)]</td><td>	Verstehen der Bereitstellungstopologie und Platzieren von Replikaten auf Knoten, damit sich letztlich nicht alle Replikate im gleichen Rack befinden.</td></tr>
-<tr><td>Snitch	</td><td>GossipingPropertyFileSnitch [weitere Informationen finden Sie in der Cassandra-Dokumentation unter [Snitches](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureSnitchesAbout_c.html)]</td><td>	NetworkTopologyStrategy verwendet ein Snitch-Konzept, um die Topologie zu verstehen. GossipingPropertyFileSnitch bietet eine bessere Steuerung bei der Zuordnung der einzelnen Knoten zum Rechenzentrum und Rack. Der Cluster verwendet dann gossip, um diese Informationen zu verteilen. Dies ist viel einfacher in einer dynamischen IP-Einstellung im Vergleich zu PropertyFileSnitch. </td></tr>
-</TABLE>
 
 **Azure-Überlegungen zum Cassandra-Cluster:** Microsoft Azure Virtual Machines verwendet Azure-Blob-Speicher für die Datenträgerdauerhaftigkeit. Azure Storage speichert drei Replikate der Datenträger für hohe Dauerhaftigkeit. Dies bedeutet, dass jede Zeile mit Daten, die in eine Cassandra-Tabelle eingefügt wird, bereits in drei Replikaten gespeichert ist und somit die Datenkonsistenz bereits sichergestellt wurde, selbst wenn der Replikationsfaktor (RF) 1 ist. Das Hauptproblem beim Replikationsfaktor 1 besteht darin, dass bei der Anwendung bereits Ausfallzeiten auftreten, wenn nur ein Cassandra-Knoten ausfällt. Wenn ein Knoten jedoch aufgrund von durch Azure Fabric Controller erkannten Problemen (z. B. Hardware- oder Systemsoftwarefehlern) ausfällt, wird ein neuer Knoten an seiner Stelle mithilfe der gleichen Speicherlaufwerke bereitgestellt. Die Bereitstellung eines neuen Knotens zum Ersetzen des alten Knotens kann einige Minuten in Anspruch nehmen. Für geplante Wartungsaktivitäten (z. B. Änderungen am Gastbetriebssystem, Cassandra-Upgrades und Anwendungsänderungen) führt Azure Fabric Controller parallele Upgrades der Knoten im Cluster aus. Durch parallele Upgrades können ebenfalls mehrere Knoten gleichzeitig ausfallen. Der Cluster kann daher kurzzeitig für mehrere Partitionen ausfallen. Die Daten gehen jedoch durch die integrierte Redundanz von Azure Storage nicht verloren.
 
 Für Systeme, die in Azure bereitgestellt werden und keine hohe Verfügbarkeit benötigen (z. B. ungefähr 99,9 % – entspricht 8,76 Stunden/Jahr, Details finden Sie unter [Hohe Verfügbarkeit](http://en.wikipedia.org/wiki/High_availability)), können Sie für die Ausführung ggf. RF=1 und Konsistenzebene=ONE verwenden. Für Anwendungen mit Anforderungen für hohe Verfügbarkeit können RF=3 und Konsistenzebene=QUORUM den Ausfall eines der Knoten für eines der Replikate tolerieren. RF=1 in herkömmlichen Bereitstellungen (z. B. lokal) kann aufgrund möglicher Datenverluste nicht verwendet werden, die durch Probleme wie etwa Datenträgerfehler verursacht werden.
 
-## Bereitstellung in mehreren Regionen ##
+## Bereitstellung in mehreren Regionen
 Das oben beschriebene auf das Rechenzentrum ausgelegte Replikations- und Konsistenzmodell von Cassandra unterstützt die integrierte Bereitstellung in mehreren Regionen ohne externe Tools. Dies unterscheidet sich wesentlich von den herkömmlichen relationalen Datenbanken, in denen die Einrichtung der Datenbankspiegelung für Multimasterschreibvorgänge sehr komplex sein kann. Die Einrichtung von Cassandra in mehreren Regionen kann z. B. die folgenden Nutzungsszenarien unterstützen:
 
 **Ortsnahe Bereitstellung:** Mehrinstanzenfähige Anwendungen mit einer klaren Zuordnung von Mandantenbenutzern zu einer Region können von den geringen Latenzzeiten des Clusters in mehreren Regionen profitieren. Ein Ausbildungsverwaltungssystem für Bildungseinrichtungen kann beispielsweise einen verteilten Cluster in den Regionen USA (Ost) und USA (West) bereitstellen, um für die entsprechenden Universitäten Transaktionen und Analysen zur Verfügung zu stellen. Die Daten können für Lese- und Schreibvorgänge lokal konsistent sein und "Eventual Consistency" für beide Regionen aufweisen. Es gibt auch andere Beispiele, wie Medienverteilung, E-Commerce und alle anderen Szenarien, die sich auf eine geokonzentrierte Benutzerbasis beziehen. Dies sind gute Anwendungsbeispiele für dieses Bereitstellungsmodell.
@@ -94,25 +92,26 @@ Das oben beschriebene auf das Rechenzentrum ausgelegte Replikations- und Konsist
 
 Abbildung 2: Cassandra-Bereitstellung in mehreren Regionen
 
-### Netzwerkintegration ###
+### Netzwerkintegration
 Gruppen von virtuellen Computern, die in privaten Netzwerken in zwei Regionen bereitgestellt werden, kommunizieren miteinander über einen VPN-Tunnel. Der VPN-Tunnel verbindet zwei Softwaregateways, die während des Netzwerkbereitstellungsvorgangs bereitgestellt werden. Beide Regionen weisen eine ähnliche Netzwerkarchitektur in Bezug auf die Subnetze für "Web" und "Daten" auf. Azure-Netzwerke ermöglichen das Erstellen einer beliebigen Anzahl von Subnetzen nach Bedarf sowie das Anwenden von ACLs gemäß der Netzwerksicherheit. Beim Entwerfen der Clustertopologie müssen die Kommunikationslatenz zwischen Rechenzentren und die wirtschaftlichen Auswirkungen des Netzwerkdatenverkehrs berücksichtigt werden.
 
-### Datenkonsistenz für eine Bereitstellung in mehreren Rechenzentren ###
+### Datenkonsistenz für eine Bereitstellung in mehreren Rechenzentren
 Verteilte Bereitstellungen müssen die Auswirkungen der Clustertopologie auf den Durchsatz und die hohe Verfügbarkeit berücksichtigen. Der RF und die Konsistenzebene müssen so gewählt werden, dass die Quorumressource nicht von der Verfügbarkeit aller Rechenzentren abhängig ist. Bei einem System, das hohe Konsistenz benötigt, stellt ein LOCAL_QUORUM als Konsistenzebene (für Lese- und Schreibvorgänge) sicher, dass die lokalen Lese- und Schreibvorgänge von den lokalen Knoten ausgeführt werden, während Daten asynchron in Remoterechenzentren repliziert werden. In Tabelle 2 werden die Konfigurationsdetails für den Cluster in mehreren Regionen zusammengefasst, die weiter unten in diesem Dokument beschrieben werden.
 
 **Cassandra-Clusterkonfiguration in zwei Regionen**
 
-<table>
-<tr><th>Clusterparameter </th><th>Wert	</th><th>Anmerkungen </th></tr>
-<tr><td>Anzahl der Knoten (N) </td><td>	8 + 8	</td><td> Gesamtzahl der Knoten im Cluster </td></tr>
-<tr><td>Replikationsfaktor (RF)</td><td>	3 	</td><td>Anzahl der Replikate einer angegebenen Zeile </td></tr>
-<tr><td>Konsistenzebene (Schreiben)	</td><td>LOCAL_QUORUM [(Summe(RF)/2) +1) = 4] [Das Ergebnis der Formel wird abgerundet]	</td><td>Zwei Knoten werden synchron in das erste Rechenzentrum geschrieben. Die weiteren zwei Knoten, die für das Quorum benötigt werden, werden asynchron in das zweite Rechenzentrum geschrieben. </td></tr>
-<tr><td>Konsistenzebene (Lesen)</td><td>	LOCAL_QUORUM [((RF/2) +1) = 2] [Das Ergebnis der Formel wird abgerundet]	</td><td>Leseanforderungen werden nur von einer Region erfüllt. Zwei Knoten werden gelesen, bevor die Antwort zurück an den Client gesendet wird.  </td></tr>
-<tr><td>Replikationsstrategie </td><td>	NetworkTopologyStrategy [weitere Informationen finden Sie in der Cassandra-Dokumentation unter [Datenreplikation](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureDataDistributeReplication_c.html)] </td><td>	Verstehen der Bereitstellungstopologie und Platzieren von Replikaten auf Knoten, damit sich letztlich nicht alle Replikate im gleichen Rack befinden.  </td></tr>
-<tr><td>Snitch</td><td> GossipingPropertyFileSnitch [weitere Informationen finden Sie in der Cassandra-Dokumentation unter [Snitches](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureSnitchesAbout_c.html)] </td><td>NetworkTopologyStrategy verwendet ein Snitch-Konzept, um die Topologie zu verstehen. GossipingPropertyFileSnitch bietet eine bessere Steuerung bei der Zuordnung der einzelnen Knoten zum Rechenzentrum und Rack. Der Cluster verwendet dann gossip, um diese Informationen zu verteilen. Dies ist viel einfacher in einer dynamischen IP-Einstellung im Vergleich zu PropertyFileSnitch. </td></tr> 
-</table>
 
-##SOFTWAREKONFIGURATION##
+| Clusterparameter | Wert | Anmerkungen |
+| ----------------- | ----- | ------- |
+| Anzahl der Knoten (N) | 8 + 8 | Gesamtzahl der Knoten im Cluster |
+| Replikationsfaktor (RF) | 3 | Die Anzahl der Replikate einer angegebenen Zeile |
+| Konsistenzebene (Schreiben) | LOCAL_QUORUM [(Summe(RF)/2) +1) = 4] Das Ergebnis der Formel wird abgerundet | Zwei Knoten werden synchron in das erste Rechenzentrum geschrieben. Die weiteren zwei Knoten, die für das Quorum benötigt werden, werden asynchron in das zweite Rechenzentrum geschrieben. |
+| Konsistenzebene (Lesen) | LOCAL_QUORUM ((RF/2) + 1) = 2 Das Ergebnis der Formel wird abgerundet. | Leseanforderungen werden nur von einer Region erfüllt. Zwei Knoten werden gelesen, bevor die Antwort zurück an den Client gesendet wird. |
+| Replikationsstrategie | NetworkTopologyStrategy Weitere Informationen finden Sie unter [Datenreplikation](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureDataDistributeReplication_c.html) in der Cassandra-Dokumentation. | Verstehen der Bereitstellungstopologie und Platzieren von Replikaten auf Knoten, damit sich letztlich nicht alle Replikate im gleichen Rack befinden. |
+| Snitch | GossipingPropertyFileSnitch Weitere Informationen finden Sie unter [Snitches](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureSnitchesAbout_c.html) in der Cassandra-Dokumentation. | NetworkTopologyStrategy verwendet ein Snitch-Konzept, um die Topologie zu verstehen. GossipingPropertyFileSnitch bietet eine bessere Steuerung bei der Zuordnung der einzelnen Knoten zum Rechenzentrum und Rack. Der Cluster verwendet dann gossip, um diese Informationen zu verteilen. Dies ist viel einfacher in einer dynamischen IP-Einstellung im Vergleich zu PropertyFileSnitch. | 
+ 
+
+##SOFTWAREKONFIGURATION
 Die folgenden Softwareversionen werden während der Bereitstellung verwendet:
 
 <table>
@@ -127,12 +126,12 @@ Da für das Herunterladen von JRE eine manuelle Zustimmung zur Oracle-Lizenz erf
 
 Laden Sie die oben aufgeführte Software in ein bekanntes Downloadverzeichnis (z. B. "%TEMP%/downloads" unter Windows oder "~/downloads" unter Linux oder Mac) auf den lokalen Desktop herunter.
 
-### ERSTELLEN DES VIRTUELLEN UBUNTU-COMPUTERS ###
+### ERSTELLEN DES VIRTUELLEN UBUNTU-COMPUTERS
 In diesem Schritt des Vorgangs wird das Ubuntu-Image mit der erforderlichen Software erstellt, damit das Image für die Bereitstellung von mehreren Cassandra-Knoten wiederverwendet werden kann.
-####Schritt 1: Generieren eines SSH-Schlüsselpaars####
+####Schritt 1: Generieren eines SSH-Schlüsselpaars
 Azure benötigt einen öffentlichen X509-Schlüssel, der bei seiner Bereitstellung PEM- oder DER-codiert ist. Erstellen Sie ein öffentlich/privates Schlüsselpaar, indem Sie die Anleitungen unter "Verwenden von SSH mit Linux in Azure" befolgen. Wenn Sie "putty.exe" als SSH-Client unter Windows oder Linux verwenden möchten, müssen Sie den PEM-codierten privaten RSA-Schlüssel mithilfe von "puttygen.exe" in das PPK-Format konvertieren. Anleitungen dazu finden Sie auf der oben genannten Webseite.
 
-####Schritt 2: Erstellen des virtuellen Ubuntu-Vorlagencomputers####
+####Schritt 2: Erstellen des virtuellen Ubuntu-Vorlagencomputers
 Melden Sie sich zum Erstellen des virtuellen Vorlagencomputers am azure.microsoft.com-Portal an, und verwenden Sie dann die folgenden Schritte: Klicken Sie auf NEU, SERVER, VIRTUELLER COMPUTER, AUS KATALOG, UBUNTU, Ubuntu Server 14.04. LTS und dann auf den Pfeil nach rechts. Ein Lernprogramm, das die Erstellung eines virtuellen Linux-Computers beschreibt, finden Sie unter "Erstellen eines virtuellen Linux-Computers".
 
 Geben Sie die folgenden Informationen auf dem Bildschirm Nr. 1 "Konfiguration des virtuellen Computers" ein:
@@ -164,15 +163,15 @@ Geben Sie die folgenden Informationen im Bildschirm Nr. 2 "Konfiguration des vi
 
 Klicken Sie auf den Pfeil nach rechts, behalten Sie die Standardwerte auf dem Bildschirm Nr. 3 bei, und klicken Sie dann auf die Schaltfläche mit dem Häkchen, um den Bereitstellungsvorgang für den virtuellen Computer abzuschließen. Nach einigen Minuten sollte der virtuelle Computer mit dem Namen "ubuntu-template" den Status "Wird ausgeführt" aufweisen.
 
-###INSTALLIEREN DER ERFORDERLICHEN SOFTWARE###
-####Schritt 1: Hochladen von Tarballs ####
+###INSTALLIEREN DER ERFORDERLICHEN SOFTWARE
+####Schritt 1: Hochladen von Tarballs 
 Kopieren Sie die zuvor heruntergeladene Software mit scp oder pscp mithilfe des folgenden Befehlsformats in das Verzeichnis "~/downloads":
 
-#####pscp server-jre-8u5-linux-x64.tar.gz localadmin@hk-cas-template.cloudapp.net:/home/localadmin/downloads/server-jre-8u5-linux-x64.tar.gz #####
+#####pscp server-jre-8u5-linux-x64.tar.gz localadmin@hk-cas-template.cloudapp.net:/home/localadmin/downloads/server-jre-8u5-linux-x64.tar.gz
 
 Wiederholen Sie den oben angegebenen Befehl für JRE sowie für die Cassandra-Komponenten.
 
-####Schritt 2: Vorbereiten der Verzeichnisstruktur und Extrahieren der Archive####
+####Schritt 2: Vorbereiten der Verzeichnisstruktur und Extrahieren der Archive
 Melden Sie sich am virtuellen Computer an, und erstellen Sie die Verzeichnisstruktur. Extrahieren Sie die Software als Superuser mit dem unten gezeigten Bash-Skript:
 
 	#!/bin/bash
@@ -251,11 +250,11 @@ Melden Sie sich am virtuellen Computer an, und erstellen Sie die Verzeichnisstru
 	echo "installation is complete"
 
 
-Wenn Sie dieses Skript in das vim-Fenster einfügen, stellen Sie sicher, dass Sie den Wagenrücklauf ("\r") mithilfe des folgenden Befehls entfernen:
+Wenn Sie dieses Skript in das vim-Fenster einfügen, stellen Sie sicher, dass Sie den Wagenrücklauf ("\\r") mithilfe des folgenden Befehls entfernen:
 
 	tr -d '\r' <infile.sh >outfile.sh
 
-####Schritt 3: Bearbeiten von "etc/profile"####
+####Schritt 3: Bearbeiten von "etc/profile"
 Fügen Sie Folgendes am Ende an:
 
 	JAVA_HOME=/opt/java/jdk1.8.0_05 
@@ -265,8 +264,8 @@ Fügen Sie Folgendes am Ende an:
 	export CASS_HOME
 	export PATH
 
-####Schritt 4: Installieren von JNA für die Produktionssysteme####
-Verwenden Sie die folgende Befehlssequenz: Der Befehl installiert jna-3.2.7.jar und jna-platform-3.2.7.jar im Verzeichnis /usr/share.java   sudo apt-get install libjna-java
+####Schritt 4: Installieren von JNA für die Produktionssysteme
+Verwenden Sie die folgende Befehlssequenz: Der Befehl installiert jna-3.2.7.jar und jna-platform-3.2.7.jar im Verzeichnis /usr/share.java sudo apt-get install libjna-java
 
 Erstellen Sie symbolische Links im Verzeichnis "$CASS_HOME/lib", damit das Cassandra-Startskript diese JAR-Dateien finden kann:
 
@@ -274,7 +273,7 @@ Erstellen Sie symbolische Links im Verzeichnis "$CASS_HOME/lib", damit das Cassa
 
 	ln -s /usr/share/java/jna-platform-3.2.7.jar $CASS_HOME/lib/jna-platform.jar
 
-####Schritt 5: Konfigurieren von "cassandra.yaml"####
+####Schritt 5: Konfigurieren von "cassandra.yaml"
 Bearbeiten Sie "cassandra.yaml" für jeden virtuellen Computer entsprechend der Konfiguration, die von allen virtuellen Computern benötigt wird. [Wir werden dies während der eigentlichen Bereitstellung optimieren]:
 
 <table>
@@ -286,23 +285,23 @@ Bearbeiten Sie "cassandra.yaml" für jeden virtuellen Computer entsprechend der 
 <tr><td>endpoint_snitch </td><td> org.apache.cassandra.locator.GossipingPropertyFileSnitch </td><td> Wird von NetworkTopologyStrategy zum Ableiten des Rechenzentrums und Racks des virtuellen Computers verwendet.</td></tr>
 </table>
 
-####Schritt 6: Erfassen des Images des virtuellen Computers####
+####Schritt 6: Erfassen des Images des virtuellen Computers
 Melden Sie sich am virtuellen Computer mit dem Hostnamen ("hk-cas-template.cloudapp.net") und dem zuvor erstellten privaten SSH-Schlüssel an. Ausführliche Anleitungen zum Anmelden mit dem Befehl "ssh" oder mit "putty.exe" finden Sie unter "Verwenden von SSH mit Linux in Azure".
 
 Führen Sie die folgende Aktionssequenz aus, um das Image zu erfassen:
-#####1. Aufheben der Bereitstellung#####
+#####1. Aufheben der Bereitstellung
 Verwenden Sie den Befehl "sudo waagent –deprovision+user", um Informationen zu entfernen, die für die Instanz des virtuellen Computers spezifisch sind. Weitere Details zur Image-Erfassung finden Sie unter [Gewusst wie: Erfassen eines virtuellen Linux-Computers, um ihn als Vorlage zu verwenden](virtual-machines-linux-capture-image.md).
 
-#####2: Herunterfahren des virtuellen Computers#####
+#####2: Herunterfahren des virtuellen Computers
 Stellen Sie sicher, dass der virtuelle Computer markiert ist, und klicken Sie dann unten auf der Befehlsleiste auf den Link "HERUNTERFAHREN".
 
-#####3: Erfassen des Image#####
+#####3: Erfassen des Image
 Stellen Sie sicher, dass der virtuelle Computer markiert ist, und klicken Sie dann unten auf der Befehlsleiste auf den Link "AUFNEHMEN". Geben Sie im nächsten Bildschirm einen IMAGENAMEN (z. B. "hk-cas-2-08-ub-14-04-2014071") und eine geeignete IMAGEBESCHREIBUNG an, und klicken Sie dann auf das Häkchen, um den ERFASSUNGSVORGANG zu beenden.
 
 Nach einigen Sekunden sollte das Image im Abschnitt "EIGENE IMAGES" des Image-Katalogs verfügbar sein. Der virtuelle Quellcomputer wird automatisch gelöscht, nachdem das Image erfolgreich erfasst wurde.
 
-##Bereitstellungsvorgang in einer Region##
-**Schritt 1: Erstellen des virtuellen Netzwerks** Melden Sie sich am Verwaltungsportal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter  [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](http://msdn.microsoft.com/library/azure/dn631643.aspx).
+##Bereitstellungsvorgang in einer Region
+**Schritt 1: Erstellen des virtuellen Netzwerks** Melden Sie sich am Verwaltungsportal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](http://msdn.microsoft.com/library/azure/dn631643.aspx).
 
 <table>
 <tr><th>Attributname des virtuellen Computers</th><th>Wert</th><th>Anmerkungen</th></tr>
@@ -438,7 +437,7 @@ Die Anzeige sollte für einen Cluster mit acht Knoten ähnlich der Abbildung unt
 <tr><th>UN	</td><td>10.1.2.11 	</td><td>55.29 KB	</td><td>256	</td><td>68,8&#160;%	</td><td>GUID (entfernt)</td><td>rack4</td></tr>
 </table>
 
-##<a id="testone"> </a>Testen des Clusters in einer Region##
+## Testen des Clusters in einer Region
 Verwenden Sie die folgenden Schritte zum Testen des Clusters:
 
 1.    Rufen Sie die IP-Adresse des internen Lastenausgleichsmoduls mithilfe des PowerShell-Cmdlets "Get-AzureInternalLoadbalancer" ab (z. B. "10.1.2.101"). Die Syntax des Befehls wird unten gezeigt: Get-AzureLoadbalancer -ServiceName "hk-c-svc-west-us" [zeigt die Details des internen Lastenausgleichsmoduls zusammen mit seiner IP-Adresse an].
@@ -464,11 +463,11 @@ Die Anzeige sollte der Abbildung unten ähneln:
 
 Bitte beachten Sie, dass der in Schritt 4 erstellte Keyspace SimpleStrategy mit einem Replikationsfaktor von 3 verwendet. SimpleStrategy wird für eine einzelne Rechenzentrumsbereitstellungen empfohlen, während NetworkTopologyStrategy für Bereitstellungen in mehreren Rechenzentren empfohlen wird. Ein Replikationsfaktor von 3 toleriert Knotenausfälle.
 
-##<a id="tworegion"> </a>Bereitstellung für mehrere Regionen##
+##<a id="tworegion"> </a>Bereitstellung für mehrere Regionen
 Bei diesem Verfahren wird die abgeschlossene Bereitstellung in einer Region genutzt und der gleiche Vorgang für die Installation in der zweiten Region wiederholt. Der Hauptunterschied zwischen einer Bereitstellung in einer Region und in mehreren Regionen besteht in der Einrichtung des VPN-Tunnels für die Kommunikation zwischen den Regionen. Wir beginnen mit der Netzwerkinstallation, stellen die virtuellen Computer bereit und konfigurieren dann Cassandra.
 
-###Schritt 1: Erstellen des virtuellen Netzwerks in der zweiten Region###
-Melden Sie sich am Verwaltungsportal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter  [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](http://msdn.microsoft.com/library/azure/dn631643.aspx).
+###Schritt 1: Erstellen des virtuellen Netzwerks in der zweiten Region
+Melden Sie sich am Verwaltungsportal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](http://msdn.microsoft.com/library/azure/dn631643.aspx).
 
 <table>
 <tr><th>Attributname    </th><th>Wert	</th><th>Anmerkungen</th></tr>
@@ -485,28 +484,28 @@ Melden Sie sich am Verwaltungsportal an, und erstellen Sie ein virtuelles Netzwe
 Fügen Sie die folgenden Subnetze hinzu: <table> <tr><th>Name </th><th>Start-IP </th><th>CIDR </th><th>Anmerkungen</th></tr> <tr><td>web </td><td>10.2.1.0 </td><td>/24 (251) </td><td>Subnetz für die Webfarm</td></tr> <tr><td>data </td><td>10.2.2.0 </td><td>/24 (251) </td><td>Subnetz für die Datenbankknoten</td></tr> </table>
 
 
-###Schritt 2: Erstellen lokaler Netzwerke###
+###Schritt 2: Erstellen lokaler Netzwerke
 Ein lokales Netzwerk in virtuellen Azure-Netzwerken ist ein Proxyadressraum, der einem Remotestandort (einschließlich einer privaten Cloud) oder einer anderen Azure-Region zugeordnet ist. Dieser Proxyadressraum ist an ein Remotegateway für das Routing des Netzwerks an die richtigen Netzwerkziele gebunden. Anleitungen zum Einrichten einer VNET-zu-VNET-Verbindung finden Sie unter [Konfigurieren einer VNet-zu-VNet-Verbindung](http://msdn.microsoft.com/library/azure/dn690122.aspx).
 
 Erstellen Sie zwei lokale Netzwerke mit den folgenden Details:
 
-<table>
-<tr><th>Netzwerkname          </th><th>Adresse des VPN-Gateways	</th><th>Adressraum	</th><th>Anmerkungen</th></tr>
-<tr><td>hk-lnet-map-to-east-us</td><td>	23.1.1.1	</td><td>10.2.0.0/16	</td><td>Geben Sie beim Erstellen des lokalen Netzwerks eine Platzhalter-Gatewayadresse an. Die tatsächliche Gatewayadresse wird angegeben, nachdem das Gateway erstellt wurde. Stellen Sie sicher, dass der Adressraum mit dem entsprechenden Remote-VNET genau übereinstimmt. In diesem Fall wird das VNET in der Region "USA (Ost)" erstellt.</td></tr>
-<tr><td>hk-lnet-map-to-west-us	</td><td>23.2.2.2	</td><td>10.1.0.0/16	</td><td>Geben Sie beim Erstellen des lokalen Netzwerks eine Platzhalter-Gatewayadresse an. Die tatsächliche Gatewayadresse wird angegeben, nachdem das Gateway erstellt wurde. Stellen Sie sicher, dass der Adressraum mit dem entsprechenden Remote-VNET genau übereinstimmt. In diesem Fall wird das VNET in der Region "USA West" erstellt.</td></tr>
-</table>
+| Netzwerkname | Adresse des VPN-Gateways | Adressraum | Anmerkungen |
+| ------------ | ------------------- | ------------- | ------- |
+| hk-lnet-map-to-east-us | 23.1.1.1 | 10.2.0.0/16 | Geben Sie beim Erstellen des lokalen Netzwerks eine Platzhalter-Gatewayadresse an. Die tatsächliche Gatewayadresse wird angegeben, nachdem das Gateway erstellt wurde. Stellen Sie sicher, dass der Adressraum mit dem entsprechenden Remote-VNET genau übereinstimmt. In diesem Fall wird das VNET in der Region "USA (Ost)" erstellt. |
+| hk-lnet-map-to-west-us | 23.2.2.2 | 10.1.0.0/16 | Geben Sie beim Erstellen des lokalen Netzwerks eine Platzhalter-Gatewayadresse an. Die tatsächliche Gatewayadresse wird angegeben, nachdem das Gateway erstellt wurde. Stellen Sie sicher, dass der Adressraum mit dem entsprechenden Remote-VNET genau übereinstimmt. In diesem Fall wird das VNET in der Region "USA West" erstellt. |
 
 
-###Schritt 3: Zuordnen des "lokalen" Netzwerks zu den entsprechenden VNETs###
+###Schritt 3: Zuordnen des "lokalen" Netzwerks zu den entsprechenden VNETs
 Wählen Sie im Service Management Portal jedes VNet aus, klicken Sie auf "Konfigurieren", aktivieren Sie "Eine Verbindung mit dem lokalen Netzwerk herstellen", und wählen Sie dann die lokalen Netzwerke mit den folgenden Details aus:
 
-<table>
-<tr><th>Virtuelles Netzwerk </th><th>Lokales Netzwerk</th></tr>
-<tr><td>hk-vnet-west-us	</td><td>hk-lnet-map-to-east-us</td></tr>
-<tr><td>hk-vnet-east-us	</td><td>hk-lnet-map-to-west-us</td></tr>
-</table>
 
-###Schritt 4: Erstellen von Gateways für VNET1 und VNET2###
+| Virtuelles Netzwerk | Lokales Netzwerk |
+| --------------- | ------------- |
+| hk-vnet-west-us | hk-lnet-map-to-east-us |
+| hk-vnet-east-us | hk-lnet-map-to-west-us |
+
+
+###Schritt 4: Erstellen von Gateways für VNET1 und VNET2
 Klicken Sie im Dashboard beider virtueller Netzwerke auf "GATEWAY ERSTELLEN". Auf diese Weise wird der VPN-Gatewaybereitstellungsvorgang ausgelöst. Nach einigen Minuten sollte das Dashboard jedes virtuellen Netzwerks die tatsächliche Gatewayadresse anzeigen.
 ###Schritt 5: Aktualisieren der "lokalen" Netzwerke mit den entsprechenden "Gatewayadressen"###
 Bearbeiten Sie die lokalen Netzwerke, um die IP-Platzhalteradressen der Gateways durch die tatsächlichen IP-Adressen der soeben bereitgestellten Gateways zu ersetzen. Verwenden Sie die folgende Zuordnung:
@@ -517,46 +516,47 @@ Bearbeiten Sie die lokalen Netzwerke, um die IP-Platzhalteradressen der Gateways
 <tr><td>hk-lnet-map-to-west-us </td><td>Gateway für "hk-vnet-east-us".</td></tr>
 </table>
 
-###Schritt 6: Aktualisieren des gemeinsam verwendeten Schlüssels###
+###Schritt 6: Aktualisieren des gemeinsam verwendeten Schlüssels
 Verwenden Sie das folgende PowerShell-Skript zum Aktualisieren des IPSec-Schlüssels jedes VPN-Gateways. [Verwenden Sie den gleichen Schlüssel für beide Gateways]: Set-AzureVNetGatewayKey -VNetName hk-vnet-east-us -LocalNetworkSiteName hk-lnet-map-to-west-us -SharedKey D9E76BKK Set-AzureVNetGatewayKey -VNetName hk-vnet-west-us -LocalNetworkSiteName hk-lnet-map-to-east-us -SharedKey D9E76BKK
 
-###Schritt 6: Einrichten der VNET-zu-VNET-Verbindung###
+###Schritt 6: Einrichten der VNET-zu-VNET-Verbindung
 Verwenden Sie im Azure-Verwaltungsportal das Menü "DASHBOARD" der beiden virtuellen Netzwerke, um die Gateway-zu-Gateway-Verbindung herzustellen. Verwenden Sie die Menüelemente "VERBINDEN" in der unteren Symbolleiste. Nach einigen Minuten sollte das Dashboard die Verbindungsdetails in grafischer Form anzeigen.
 
-###Schritt 7: Erstellen der virtuellen Computer in der Region Nr. 2 ###
+###Schritt 7: Erstellen der virtuellen Computer in der Region Nr. 2 
 Erstellen Sie das Ubuntu-Image wie für die Bereitstellung in der Region Nr. 1 beschrieben, indem Sie die gleichen Schritte ausführen, oder kopieren Sie die VHD-Imagedatei in das Azure-Speicherkonto in der Region Nr. 2, und erstellen Sie dann das Image. Verwenden Sie dieses Image, und erstellen Sie die folgende Liste virtueller Computer in einem neuen Clouddienst "hk-c-svc-east-us":
 
-<table>
-<tr></th>Computername </th><th>Subnetz</th><th>IP-Adresse</th><th>Verfügbarkeitsgruppe</th><th>DC/Rack</th><th>Ausgangswert?</th></tr>
-<tr><td>hk-c1-east-us	</td><td>data	</td><td>10.2.2.4	</td><td>hk-c-aset-1	</td><td>dc =EASTUS rack =rack1	</td><td>Ja</td></tr>
-<tr><td>hk-c2-east-us	</td><td>data	</td><td>10.2.2.5	</td><td>hk-c-aset-1	</td><td>dc =EASTUS rack =rack1	</td><td>Nein </td></tr>
-<tr><td>hk-c3-east-us	</td><td>data	</td><td>10.2.2.6	</td><td>hk-c-aset-1	</td><td>dc =EASTUS rack =rack2	</td><td>Ja</td></tr>
-<tr><td>hk-c5-east-us	</td><td>data	</td><td>10.2.2.8	</td><td>hk-c-aset-2	</td><td>dc =EASTUS rack =rack3	</td><td>Ja</td></tr>
-<tr><td>hk-c6-east-us	</td><td>data	</td><td>10.2.2.9	</td><td>hk-c-aset-2	</td><td>dc =EASTUS rack =rack3	</td><td>Nein </td></tr>
-<tr><td>hk-c7-east-us  </td><td>data	</td><td>10.2.2.10	</td><td>hk-c-aset-2	</td><td>dc =EASTUS rack =rack4	</td><td>Ja</td></tr>
-<tr><td>hk-c8-east-us	</td><td>data	</td><td>10.2.2.11	</td><td>hk-c-aset-2	</td><td>dc =EASTUS rack =rack4	</td><td>Nein </td></tr>
-<tr><td>hk-w1-east-us	</td><td>web	</td><td>10.2.1.4	</td><td>hk-w-aset-1	</td><td>	–</td><td>–</td></tr>
-<tr><td>hk-w2-east-us	</td><td>web	</td><td>10.2.1.5	</td><td>hk-w-aset-1	</td><td>	–</td><td>–</td></tr>
-</table>
+
+| Computername | Subnetz | IP-Adresse | Verfügbarkeitsgruppe | DC/Rack | Ausgangswert? |
+| ------------ | ------ | ---------- | ---------------- | ------- | ----- |
+| hk-c1-east-us | data | 10.2.2.4 | hk-c-aset-1 | dc =EASTUS rack =rack1 | Ja |
+| hk-c2-east-us | data | 10.2.2.5 | hk-c-aset-1 | dc =EASTUS rack =rack1 | Nein |
+| hk-c3-east-us | data | 10.2.2.6 | hk-c-aset-1 | dc =EASTUS rack =rack2 | Ja |
+| hk-c5-east-us | data | 10.2.2.8 | hk-c-aset-2 | dc =EASTUS rack =rack3 | Ja |
+| hk-c6-east-us | data | 10.2.2.9 | hk-c-aset-2 | dc =EASTUS rack =rack3 | Nein |
+| hk-c7-east-us | data | 10.2.2.10 | hk-c-aset-2 | dc =EASTUS rack =rack4 | Ja |
+| hk-c8-east-us | data | 10.2.2.11 | hk-c-aset-2 | dc =EASTUS rack =rack4 | Nein |
+| hk-w1-east-us | web | 10.2.1.4 | hk-w-aset-1 | – | – |
+| hk-w2-east-us | web | 10.2.1.5 | hk-w-aset-1 | – | – |
+
 
 Führen Sie die gleichen Schritte wie für die Region Nr. 1 aus, verwenden Sie jedoch den Adressraum "10.2.xxx.xxx".
-###Schritt 8: Konfigurieren von Cassandra auf jedem virtuellen Computer###
+###Schritt 8: Konfigurieren von Cassandra auf jedem virtuellen Computer
 Melden Sie sich am virtuellen Computer an, und gehen Sie dann wie folgt vor:
 
 1. Bearbeiten Sie "$CASS_HOME/conf/cassandra-rackdc.properties", um die Rechenzentrums- und Rackeigenschaften im folgenden Format anzugeben: dc =EASTUS rack =rack1
 2. Bearbeiten Sie "cassandra.yaml", um die Seed-Knoten zu konfigurieren: Seeds: "10.1.2.4,10.1.2.6,10.1.2.8,10.1.2.10,10.2.2.4,10.2.2.6,10.2.2.8,10.2.2.10"
-###Schritt 9: Starten von Cassandra###
+###Schritt 9: Starten von Cassandra
 Melden Sie sich an jedem virtuellen Computer an, und starten Sie Cassandra im Hintergrund, indem Sie den folgenden Befehl ausführen: $CASS_HOME/bin/cassandra
 
-##<a id="testtwo"> </a>Testen des Clusters in mehreren Regionen##
+## Testen des Clusters in mehreren Regionen
 Inzwischen wurde Cassandra auf 16 Knoten mit acht Knoten in jeder Azure-Region bereitgestellt. Diese Knoten befinden sich aufgrund des gemeinsamen Clusternamens und der Seedknotenkonfiguration im gleichen Cluster. Verwenden Sie die folgenden Schritte zum Testen des Clusters:
-###Schritt 1: Abrufen der IP-Adresse des internen Lastenausgleichsmoduls für beide Regionen mithilfe von PowerShell### 
+###Schritt 1: Abrufen der IP-Adresse des internen Lastenausgleichsmoduls für beide Regionen mithilfe von PowerShell
 - Get-AzureInternalLoadbalancer -ServiceName "hk-c-svc-west-us"
 - Get-AzureInternalLoadbalancer -ServiceName "hk-c-svc-east-us"  
 
     Beachten Sie die IP-Adressen, die angezeigt werden (z. B. "west - 10.1.2.101", "east - 10.2.2.101").
 
-###Schritt 2: Ausführen der folgenden Befehle in der Region "West" nach der Anmeldung bei "hk-w1-west-us"###
+###Schritt 2: Ausführen der folgenden Befehle in der Region "West" nach der Anmeldung bei "hk-w1-west-us"
 1.    Führen Sie "$CASS_HOME/bin/cqlsh 10.1.2.101 9160" aus. 
 2.	Führen Sie die folgenden CQL-Befehle aus:
 
@@ -570,13 +570,13 @@ Inzwischen wurde Cassandra auf 16 Knoten mit acht Knoten in jeder Azure-Region b
 
 Die Anzeige sollte der Abbildung unten ähneln:
 
-<table>
-<tr><th>customer_id </th><th>firstname</th><th>Lastname</th></tr>
-<tr><td>1</td><td>John</td><td>Doe</td></tr>
-<tr><td>2</td><td>Jane</td><td>Doe</td></tr>
-</table>
+| customer_id | firstname | Lastname |
+| ----------- | --------- | -------- |
+| 1 | John | Doe |
+| 2 | Jane | Doe |
 
-###Schritt 3: Ausführen der folgenden Befehle in der Region "Ost" nach der Anmeldung bei "hk-w1-east-us"###
+
+###Schritt 3: Ausführen der folgenden Befehle in der Region "Ost" nach der Anmeldung bei "hk-w1-east-us"
 1.    Führen Sie "$CASS_HOME/bin/cqlsh 10.2.2.101 9160" aus. 
 2.	Führen Sie die folgenden CQL-Befehle aus:
 
@@ -588,15 +588,16 @@ Die Anzeige sollte der Abbildung unten ähneln:
 
 Sie sollten die gleiche Anzeige wie für die Region "West" erhalten:
 
-<table>
-<tr><th>customer_id </th><th>firstname</th><th>Lastname</th></tr>
-<tr><td>1</td><td>John</td><td>Doe</td></tr>
-<tr><td>2</td><td>Jane</td><td>Doe</td></tr>
-</table>
+
+| customer_id | firstname | Lastname |
+|------------ | --------- | ---------- |
+| 1 | John | Doe |
+| 2 | Jane | Doe |
+
 
 Führen Sie weitere Einfügevorgänge aus, und beobachten Sie, dass diese in die Region "USA (West)" des Clusters repliziert werden.
 
-##<a id="testnode"> </a>Testen des Cassandra-Clusters aus Node.js##
+## Testen des Cassandra-Clusters aus Node.js
 Mithilfe eines der zuvor in der Ebene "web" erstellten virtuellen Linux-Computers führen wir nun ein einfaches Node.js-Skript zum Lesen der zuvor eingefügten Daten aus.
 
 **Schritt 1: Installieren von Node.js und des Cassandra-Clients**
@@ -689,20 +690,14 @@ Mithilfe eines der zuvor in der Ebene "web" erstellten virtuellen Linux-Computer
 		readCustomer(ksConOptions)
 
 
-##<a id="conclusion"> </a>Zusammenfassung##
+## Zusammenfassung 
 Microsoft Azure ist eine flexible Plattform, die das Ausführen von Microsoft- sowie von Open Source-Software ermöglicht, wie in dieser Übung gezeigt wurde. Cassandra-Cluster mit hoher Verfügbarkeit können in einem Rechenzentrum über die Verteilung der Clusterknoten auf mehrere Fehlerdomänen bereitgestellt werden. Cassandra-Cluster können auch in mehreren geografisch entfernten Azure-Regionen bereitgestellt werden, damit die Systeme vor Katastrophen geschützt sind. Azure und Cassandra in Kombination ermöglichen das Erstellen hochgradig skalierbarer Clouddienste mit hoher Verfügbarkeit, die nach einem Notfall wiederhergestellt werden können. Heutige Dienste mit Internetskalierung benötigen solche Systeme.
-
-[Overview]: #overview
-[Single Region Deployment]: #oneregion
-[Test Single Region Cassandra Cluster]: #testone
-[Multi-Region Deployment]: #tworegion
-[Test Multi-Region Cassandra Cluster]: #testtwo
-[Test Cassandra Cluster from Node.js]: #testnode
-[Conclusion]: #conclusion
 
 ##Referenzen##
 - [http://cassandra.apache.org](http://cassandra.apache.org)
 - [http://www.datastax.com](http://www.datastax.com) 
 - [http://www.nodejs.org](http://www.nodejs.org) 
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=July15_HO2-->

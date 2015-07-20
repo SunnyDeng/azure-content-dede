@@ -15,9 +15,9 @@
    ms.date="04/13/2015"
    ms.author="v-sharos" />
 
-#Verwalten von StorSimple-Volumes
+# Verwalten von StorSimple-Volumes
 
-##Übersicht
+## Übersicht
 
 In diesem Lernprogramm wird erläutert, wie Sie den StorSimple-Manager-Dienst zum Erstellen und Verwalten von Volumes auf dem StorSimple-Gerät und dem virtuellen StorSimple-Gerät verwenden können.
 
@@ -27,7 +27,7 @@ Der StorSimple-Manager-Dienst ist eine Erweiterung des Azure-Verwaltungsportals,
 >
 > Die Bereitstellung nach Bedarf ist eine Virtualisierungstechnologie, bei der der verfügbare Speicher scheinbar die physischen Ressourcen überschreitet. Anstatt vorab ausreichend Speicherplatz zu reservieren, ordnet Azure StorSimple bei der Bereitstellung nach Bedarf nur den für die aktuellen Anforderungen erforderlichen Speicherplatz zu. Die Flexibilität der Cloud-Speicherung ermöglicht diesen Ansatz, da Azure StorSimple diesen Cloud-Speicher erhöhen oder verringern kann, um die veränderten Anforderungen zu erfüllen.
 
-##Die Seite "Volumes"
+## Die Seite "Volumes"
 
 Auf der Seite **Volumes** können Sie die Speichervolumes verwalten, die auf dem Microsoft Azure StorSimple-Gerät für die Initiatoren (Server) bereitgestellt werden. Auf der Seite wird eine Liste der Volumes auf dem StorSimple-Gerät angezeigt.
 
@@ -53,11 +53,11 @@ Die häufigsten Aufgaben im Zusammenhang mit einem Volume sind:
 - Offlineschalten von Volumes 
 - Überwachen von Volumes 
 
-##Hinzufügen eines Volumes
+## Hinzufügen eines Volumes
 
 Sie haben beim Bereitstellen der StorSimple-Lösung [ein Volume erstellt](storsimple-deployment-walkthrough.md#step-6:-create-a-volume). Das Hinzufügen eines Volumes ist ein ähnliches Verfahren.
 
-###So fügen Sie ein Volume hinzu
+### So fügen Sie ein Volume hinzu
 
 1. Wählen Sie auf der Seite **Geräte** das Gerät aus, doppelklicken Sie darauf, und klicken Sie dann auf die Registerkarte **Volumecontainer**.
 
@@ -84,14 +84,14 @@ Sie haben beim Bereitstellen der StorSimple-Lösung [ein Volume erstellt](storsi
 
 Das neue Volume kann nun verwendet werden.
 
-##Ändern von Volumes
+## Ändern von Volumes
 
 Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, die auf das Volume zugreifen.
 
 > [AZURE.IMPORTANT]Wenn Sie die Größe des Volumes auf dem Gerät ändern, muss auch die Größe des Volumes auf dem Host geändert werden. Beachten Sie beim Ändern des Volumes auf dem Host die Anweisungen zu Ihrem Hostbetriebssystem.
 
 
-###So ändern Sie ein Volume
+### So ändern Sie ein Volume
 
 1. Wählen Sie auf der Seite **Geräte** das Gerät aus, doppelklicken Sie darauf, und klicken Sie dann auf die Registerkarte **Volumecontainer**. Auf dieser Seite werden die dem Gerät zugeordneten Volumecontainer in Tabellenform aufgeführt.
 
@@ -115,11 +115,11 @@ Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, d
 
 6. Speichern Sie die Änderungen, indem Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-manage-volumes/HCS_CheckIcon.png) klicken.
 
-##Offlineschalten von Volumes
+## Offlineschalten von Volumes
 
 Möglicherweise müssen Sie ein Volume offline schalten, wenn Sie dieses ändern oder löschen möchten. Wenn ein Volume offline ist, ist es nicht für den Lese-/ Schreibzugriff verfügbar. Sie müssen das Volume sowohl auf dem Host als auch auf dem Gerät offline schalten. Führen Sie die folgenden Schritte durch, um ein Volume offline zu schalten.
 
-###So schalten Sie ein Volume offline
+### So schalten Sie ein Volume offline
 
 1. Stellen Sie vor dem Offlineschalten sicher, dass das betreffende Volume nicht verwendet wird.
 
@@ -136,13 +136,13 @@ Möglicherweise müssen Sie ein Volume offline schalten, wenn Sie dieses ändern
 
 > [AZURE.NOTE]Mit dem Befehl **Offline schalten** wird eine Anforderung an das Gerät gesendet, das Volume offline zu schalten. Wenn das Volume weiterhin von Hosts verwendet wird, führt dies zur Unterbrechung von Verbindungen, das Offlineschalten des Volumes schlägt jedoch nicht fehl.
 
-##Löschen von Volumes
+## Löschen von Volumes
 
 > [AZURE.IMPORTANT]Sie können ein Volume nur löschen, wenn dieses offline ist.
 
 Führen Sie die folgenden Schritte durch, um ein Volume zu löschen.
 
-###So löschen Sie ein Volume
+### So löschen Sie ein Volume
 
 1. Wählen Sie auf der Seite **Geräte** das Gerät aus, doppelklicken Sie darauf, und klicken Sie dann auf die Registerkarte **Volumecontainer**.
 
@@ -154,13 +154,13 @@ Führen Sie die folgenden Schritte durch, um ein Volume zu löschen.
 
 5. Wenn Sie zur Bestätigung aufgefordert werden, klicken Sie auf **Ja**. Das Volume wird nun gelöscht. Auf der Seite **Volumes** wird die aktualisierte Liste der Volumes innerhalb des Containers angezeigt.
 
-##Überwachen von Volumes
+## Überwachen von Volumes
 
 Mit der Volumeüberwachung können Sie E/A-bezogene Statistiken für ein Volume erfassen. Die Überwachung wird standardmäßig für die ersten 32 von Ihnen erstellten Volumes aktiviert. Die Überwachung der zusätzlichen Volumes ist in der Standardeinstellung deaktiviert. Die Überwachung geklonter Volumes ist standardmäßig deaktiviert.
 
 Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu aktivieren oder zu deaktivieren.
 
-###So aktivieren oder deaktivieren Sie die Volumeüberwachung
+### So aktivieren oder deaktivieren Sie die Volumeüberwachung
 
 1. Wählen Sie auf der Seite **Geräte** das Gerät aus, doppelklicken Sie darauf, und klicken Sie dann auf die Registerkarte **Volumecontainer**.
 
@@ -174,11 +174,11 @@ Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu a
 
     ![Überwachen von Volumes](./media/storsimple-manage-volumes/HCS_MonitorVolumeM.png)
 
-##Nächste Schritte
+## Nächste Schritte
 
 Erfahren Sie, wie Sie ein [StorSimple-Volume klonen](storsimple-clone-volume.md).
 
 
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

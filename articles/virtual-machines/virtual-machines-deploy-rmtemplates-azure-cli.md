@@ -1281,7 +1281,9 @@ Führen Sie den folgenden Befehl aus:
 
 ## <a id="start-a-virtual-machine"></a>AUFGABE: Starten eines virtuellen Computers
 
-Führen Sie diesen Befehl aus: Azure Resource Manager Overview azure vm start <group name> <virtual machine name>
+Führen Sie den folgenden Befehl aus:
+
+    azure vm start <group name> <virtual machine name>
 
 ## <a id="attach-a-data-disk"></a>AUFGABE: Anfügen eines Datenträgers
 
@@ -1313,4 +1315,4 @@ Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.micr
 
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

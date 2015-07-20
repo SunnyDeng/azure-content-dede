@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="04/02/2015"
+   ms.date="06/30/2015"
    ms.author="jgao"/>
 
 #Skalieren von Hadoop-, HBase- oder Apache Storm-Clustern zur Änderung deren Anzahl an Datenknoten in HDInsight 
@@ -145,4 +145,4 @@ Hier folgt ein Beispielcode, der die Verwendung der synchronen Version dieser Me
 Weitere Informationen zur Verwendung des HDInsight .NET SDK finden Sie im Abschnitt [Benutzerdefinierte Bereitstellung von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

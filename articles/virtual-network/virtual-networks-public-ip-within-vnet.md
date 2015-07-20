@@ -51,4 +51,4 @@ Es gibt einige IP-Adressbereiche, die nicht zulässig sind:
 
 [Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

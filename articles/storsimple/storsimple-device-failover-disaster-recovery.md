@@ -12,21 +12,21 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/17/2015"
+   ms.date="05/29/2015"
    ms.author="alkohli" />
 
-#Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät
+# Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät
 
-##Übersicht
+## Übersicht
 
 In diesem Lernprogramm werden die erforderlichen Schritte für das Ausführen eines Failovers bei einem Notfall auf einem StorSimple-Gerät beschrieben. Ein Failover ermöglicht das Migrieren Ihrer Daten von einem Quellgerät im Datencenter auf ein anderes physisches oder sogar ein virtuelles Gerät an dem gleichen oder einem anderen geografischen Standort. Ein Gerätefailover wird über das Feature der Notfallwiederherstellung koordiniert und auf der Seite "Geräte" initiiert. Auf dieser Seite werden alle StorSimple-Geräte aufgeführt, die mit dem StorSimple-Manager-Dienst verbunden sind. Für jedes Gerät werden Anzeigename, Status, bereitgestellte und maximale Kapazität, Typ und Modell angezeigt.
 
 ![Seite "Geräte"](./media/storsimple-device-failover-disaster-recovery/IC740972.png)
 
-##Notfallwiederherstellung und Gerätefailover
+## Notfallwiederherstellung und Gerätefailover
 Bei einer Notfallwiederherstellung funktioniert das primäre Gerät nicht mehr. In diesem Fall können Sie die dem ausgefallenen Gerät zugeordneten Clouddaten auf ein anderes Gerät verschieben und dabei das primäre Gerät als *Quelle* und ein anderes Gerät als *Ziel* angeben. Sie können einen oder mehrere Volumecontainer für das Migrieren auf das Zielgerät auswählen. Dieser Vorgang wird als *Failover* bezeichnet. Während des Failovers wechseln die Volumecontainer vom Quellgerät den Eigentümer und werden auf das Zielgerät übertragen.
 
-##Überlegungen zum Gerätefailover
+## Überlegungen zum Gerätefailover
 Bei einem Notfall können Sie als Failoverziel für Ihr StorSimple-Gerät Folgendes auswählen:
 
 - Ein physisches Gerät 
@@ -39,7 +39,7 @@ Bedenken Sie bei jedem Gerätefailover Folgendes:
 - Die verfügbaren Zielgeräte für die Notfallwiederherstellung sind Geräte, die über ausreichenden Speicherplatz zur Aufnahme der ausgewählten Volumecontainer verfügen. 
 - Geräte, die mit dem Dienst verbunden sind, aber das Speicherplatzkriterium nicht erfüllen, stehen als Zielgeräte nicht zur Verfügung.
 
-##Failover auf ein anderes physisches Gerät
+## Failover auf ein anderes physisches Gerät
 
 Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem physischen Zielgerät wiederherzustellen.
 
@@ -57,7 +57,7 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem physischen Zielg
 
 	1. Wählen Sie in der Liste der Volumecontainer die Volumecontainer aus, für die ein Failover durchgeführt werden soll.
 
-		>[AZURE.NOTE] **Es werden nur Volumecontainer mit zugehörigen Cloud-Momentaufnahmen und Offline-Volumes angezeigt.**
+		>[AZURE.NOTE]**Nur die Volumecontainer mit zugeordneten Cloud-Momentaufnahmen und Offlinevolumes werden angezeigt.**
 
 	1. Wählen Sie unter **Choose a target device for the volumes in the selected containers** ein Zielgerät aus der Dropdownliste der verfügbaren Geräte aus. Nur die Geräte, die über die verfügbare Kapazität verfügen, werden in der Dropdownliste angezeigt.
 
@@ -69,7 +69,7 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem physischen Zielg
 
 	1. Wechseln Sie zur Seite **Volumecontainer**. Es sollten alle Volumecontainer und die Volumes des alten Geräts aufgeführt werden.
 
-##Failover mit einem einzelnen Gerät
+## Failover mit einem einzelnen Gerät
 
 Führen Sie die folgenden Schritte aus, wenn Sie nur über ein einzelnes Gerät verfügen und ein Failover durchführen müssen.
 
@@ -91,7 +91,7 @@ Führen Sie die folgenden Schritte aus, wenn Sie nur über ein einzelnes Gerät 
 
 1. Greifen Sie, nachdem der Auftrag erfolgreich abgeschlossen wurde, auf das neue Gerät zu, und navigieren Sie zur Seite **Volumecontainer**. Alle Volumecontainer vom alten Gerät sollten auf das neue Gerät migriert worden sein.
 
-##Failover auf ein virtuelles StorSimple-Gerät
+## Failover auf ein virtuelles StorSimple-Gerät
 
 Sie müssen zunächst ein virtuelles StorSimple-Gerät erstellen und konfigurieren, bevor Sie dieses Verfahren ausführen können.
  
@@ -111,11 +111,13 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorS
 
 1. Führen Sie im angezeigten Assistenten unter **Choose volume container to failover** folgende Schritte durch:
 													
-	1. Wählen Sie in der Liste der Volumecontainer die Volumecontainer aus, für die ein Failover durchgeführt werden soll.
+	a. Wählen Sie in der Liste der Volumecontainer die Volumecontainer aus, für die ein Failover durchgeführt werden soll.
 
-		>[AZURE.NOTE] **Es werden nur Volumecontainer mit zugehörigen Cloud-Momentaufnahmen und Offline-Volumes angezeigt.**
+	>[AZURE.NOTE]**Nur die Volumecontainer mit zugeordneten Cloud-Momentaufnahmen und Offlinevolumes werden angezeigt.**
 
-1. Wählen Sie unter **Choose a target device for the volumes in the selected containers** das virtuelle StorSimple-Gerät aus der Dropdownliste der verfügbaren Geräte aus. Nur die Geräte, die über ausreichende Kapazität verfügen, werden in der Dropdownliste angezeigt.
+	b. Wählen Sie unter **Choose a target device for the volumes in the selected containers** das virtuelle StorSimple-Gerät aus der Dropdownliste der verfügbaren Geräte aus. Nur die Geräte, die über ausreichende Kapazität verfügen, werden in der Dropdownliste angezeigt.
+	
+	>[AZURE.NOTE]**Wenn auf dem physische Gerät Update 1 ausgeführt wird, können Sie ein Failover auf ein virtuelles Gerät durchführen, das nur Update 1 ausführt. Wenn auf dem virtuellen Zielgerät eine niedrigere Softwareversion ausgeführt wird, sehen Sie einen Fehler, der besagt, dass Ihre Zielgerätesoftware aktualisiert werden muss.**
 
 1. Überprüfen Sie abschließend die Failover-Einstellungen unter "Failover bestätigen". Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-device-failover-disaster-recovery/IC740895.png).
 
@@ -126,7 +128,7 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorS
 	b. Wechseln Sie zur Seite **Volumecontainer**. Es sollten jetzt alle Volumecontainer und die Volumes des alten Geräts aufgeführt werden.
 
 
-##Weitere Informationen
+## Weitere Informationen
 Nachdem Sie das Failover ausgeführt haben, müssen Sie möglicherweise noch Folgendes durchführen:
 
 - [Deaktivieren des StorSimple-Geräts](https://msdn.microsoft.com/library/azure/dn772379.aspx#deactivate)
@@ -136,6 +138,6 @@ Informationen zum Verwalten Ihres Geräts mit dem StorSimple-Manager-Dienst find
 
 - [Administratorhandbuch](https://msdn.microsoft.com/library/dn772401.aspx)
 
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

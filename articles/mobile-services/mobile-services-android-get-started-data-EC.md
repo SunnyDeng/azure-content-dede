@@ -43,7 +43,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 <!-- -->
 
-> [AZURE.NOTE]Dieses Lernprogramm verwendet die neueste Version des Mobile Services SDK. Aus Gründen der Abwärtskompatibilität finden Sie  <a href="http://go.microsoft.com/fwlink/p/?LinkID=280126">hier</a> eine frühere Version des SDK. Der in diesen Lernprogrammen enthaltene Code funktioniert damit jedoch nicht.
+> [AZURE.NOTE]Dieses Lernprogramm verwendet die neueste Version des Mobile Services SDK. Aus Gründen der Abwärtskompatibilität finden Sie <a href="http://go.microsoft.com/fwlink/p/?LinkID=280126">hier</a> eine frühere Version des SDK. Der in diesen Lernprogrammen enthaltene Code funktioniert damit jedoch nicht.
 
 ##<a name="download-app"></a>Herunterladen des GetStartedWithData-Projekts
 
@@ -94,7 +94,7 @@ Die App verwendet nun mobile Dienste als Back-End-Speicher, und Sie können sie 
 
 Damit ist das Android-Lernprogramm **Erste Schritte mit Daten** abgeschlossen.
 
-## <a name="next-steps"></a>Nächste Schritte
+## <a name="next-steps"> </a>Nächste Schritte
 
 Dieses Lernprogramm zeigt die Grundlagen für die Integration von Daten in mobilen Diensten in Android-Apps.
 
@@ -130,5 +130,6 @@ Als Nächstes können Sie diese anderen Android-Lernprogramme ausführen:
 [Mobile Services Android SDK]: http://aka.ms/Iajk6q
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

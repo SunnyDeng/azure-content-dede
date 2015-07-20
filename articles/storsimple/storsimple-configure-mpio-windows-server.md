@@ -15,7 +15,7 @@
    ms.date="04/07/2015"
    ms.author="alkohli" />
 
-#Konfigurieren von MPIO für Ihr StorSimple-Gerät
+# Konfigurieren von MPIO für Ihr StorSimple-Gerät
 
 Die Unterstützung für Multipfad-E/A (Multipath I/O, MPIO) in Windows Server soll Ihnen beim Erstellen hoch verfügbarer, fehlertoleranter SAN-Konfigurationen helfen. MPIO verwendet redundante physische Pfadkomponenten (Adapter, Kabel und Switches), um logische Pfade zwischen dem Server und dem Speichergerät zu erstellen. Wenn bei einer Komponente ein Fehler auftritt, durch den ein logischer Pfad fehlschlägt, verwendet die Multipfad-Logik einen anderen Pfad für E/A, sodass Anwendungen weiterhin auf ihre Daten zugreifen können. Darüber hinaus kann MPIO abhängig von Ihrer Konfiguration auch die Leistung durch ein Umverteilen der Lasten auf alle Pfade verbessern. Weitere Informationen finden Sie unter [Multipfad-E/A (Übersicht)](https://technet.microsoft.com/library/cc725907.aspx "MPIO – Übersicht und Features").
 
@@ -36,11 +36,11 @@ Führen Sie die folgenden Schritte aus, um MPIO auf Ihrem StorSimple-Gerät zu k
 - Schritt 4: Konfigurieren von MPIO für hohe Verfügbarkeit und Lastenausgleich
 
 Jeder der oben genannten Schritte wird in den folgenden Abschnitten erläutert.
-##Schritt 1: Installieren von MPIO auf dem Windows Server-Host
+## Schritt 1: Installieren von MPIO auf dem Windows Server-Host
 
 Gehen Sie folgendermaßen vor, um dieses Feature auf Ihrem Windows Server-Host zu installieren.
 
-###So installieren Sie MPIO auf dem Host
+### So installieren Sie MPIO auf dem Host
 
 1. Öffnen Sie den Server-Manager auf Ihrem Windows Server-Host. Der Server-Manager wird standardmäßig gestartet, wenn sich ein Mitglied der Gruppe "Administratoren" an einem Computer unter Windows Server 2012 R2 oder Windows Server 2012 anmeldet. Wenn der Server-Manager nicht bereits geöffnet ist, klicken Sie auf **Start > Server-Manager**. ![Server-Manager](./media/storsimple-configure-mpio-windows-server/IC740997.png)
 2. Klicken Sie auf **Server-Manager > Dashboard > Rollen und Features hinzufügen**. Dadurch wird der Assistent **Rollen und Features hinzufügen** gestartet. ![Hinzufügen von Rollen und Features – Assistent 1](./media/storsimple-configure-mpio-windows-server/IC740998.png)
@@ -54,11 +54,11 @@ Gehen Sie folgendermaßen vor, um dieses Feature auf Ihrem Windows Server-Host z
 	- Bestätigen Sie auf der Seite **Installationsauswahl bestätigen** Ihre Auswahl, und wählen Sie dann wie unten gezeigt **Zielserver bei Bedarf automatisch neu starten aus**. Klicken Sie auf **Installieren**.![Hinzufügen von Rollen und Features – Assistent 8](./media/storsimple-configure-mpio-windows-server/IC741001.png)
 	- Nachdem die Installation abgeschlossen wurde, erhalten Sie eine Benachrichtigung. Klicken Sie auf **Schließen**, um den Assistenten zu schließen.![Hinzufügen von Rollen und Features – Assistent 9](./media/storsimple-configure-mpio-windows-server/IC741002.png)
 
-##Schritt 2: Konfigurieren von MPIO für StorSimple-Volumes
+## Schritt 2: Konfigurieren von MPIO für StorSimple-Volumes
 
 MPIO muss konfiguriert werden, um StorSimple-Volumes zu erkennen. Führen Sie zum Konfigurieren von MPIO für die Erkennung von StorSimple-Geräten die folgenden Schritte aus.
 
-###So konfigurieren Sie MPIO für StorSimple-Volumes
+### So konfigurieren Sie MPIO für StorSimple-Volumes
 
 1. Öffnen Sie die **MPIO-Konfiguration**. Klicken Sie auf **Server-Manager > Dashboard > Tools > MPIO**.
 
@@ -71,11 +71,11 @@ MPIO muss konfiguriert werden, um StorSimple-Volumes zu erkennen. Führen Sie zu
 6. Geben Sie im Dialogfeld **MPIO-Unterstützung hinzufügen** unter **Gerätehardware-ID** die Seriennummer des Geräts ein. Sie können die Seriennummer des Geräts abrufen, indem Sie auf den StorSimple-Manager-Dienst zugreifen und dann zu **Geräte > Dashboard** navigieren. Die Seriennummer des Geräts wird im rechten Bereich **Auf einen Blick** des Gerätedashboards angezeigt. </br>![Hinzufügen von MPIO-Unterstützung](./media/storsimple-configure-mpio-windows-server/IC741005.png)
 7. Starten Sie den Server neu, wenn Sie dazu aufgefordert werden.
 
-##Schritt 3: Bereitstellen von StorSimple-Volumes auf dem Host
+## Schritt 3: Bereitstellen von StorSimple-Volumes auf dem Host
 
 Nachdem MPIO unter Windows Server konfiguriert wurde, können auf dem StorSimple-Gerät erstellte Volumes bereitgestellt werden und anschließend MPIO für Redundanz nutzen. Führen Sie die folgenden Schritte aus, um ein Volume bereitzustellen.
 
-###So stellen Sie Volumes auf dem Host bereit
+### So stellen Sie Volumes auf dem Host bereit
 
 1. Öffnen Sie das Fenster **Eigenschaften des iSCSI-Initiators** auf dem Windows Server-Host. Klicken Sie auf **Server-Manager > Dashboard > Tools > iSCSI-Initiator**.
 2. Klicken Sie im Dialogfeld **Eigenschaften des iSCSI-Initiators** auf die Registerkarte "Erkennung", und klicken Sie dann auf **Zielportal ermitteln**.
@@ -122,7 +122,7 @@ Nachdem MPIO unter Windows Server konfiguriert wurde, können auf dem StorSimple
 
 >[AZURE.NOTE]**Ändern Sie die Standardparameter nicht.**
 
-##Schritt 4: Konfigurieren von MPIO für hohe Verfügbarkeit und Lastenausgleich
+## Schritt 4: Konfigurieren von MPIO für hohe Verfügbarkeit und Lastenausgleich
 
 Für auf Multipfad basierende hohe Verfügbarkeit und Lastenausgleich müssen mehrere Sitzungen manuell hinzugefügt werden, um die verschiedenen verfügbaren Pfade zu deklarieren. Wenn beispielsweise der Host und das Gerät jeweils zwei Schnittstellen haben, die mit dem SAN verbunden sind, benötigen Sie vier Sitzungen, die mit den richtigen Pfadpermutationen konfiguriert sein müssen (wenn sich jede DATA- und Host-Schnittstelle in einem anderen IP-Subnetz befindet und nicht routingfähig ist, sind nur zwei Sitzungen erforderlich).
 
@@ -130,7 +130,7 @@ Für auf Multipfad basierende hohe Verfügbarkeit und Lastenausgleich müssen me
 
 Das folgende Verfahren beschreibt, wie Sitzungen hinzugefügt werden, wenn ein StorSimple-Gerät mit zwei Netzwerkschnittstellen mit einem Host mit zwei Netzwerkschnittstellen verbunden ist.
 
-###So konfigurieren Sie MPIO für hohe Verfügbarkeit und Lastenausgleich
+### So konfigurieren Sie MPIO für hohe Verfügbarkeit und Lastenausgleich
 
 1. Führen Sie eine Ermittlung des Ziels aus: Klicken Sie im Dialogfeld **Eigenschaften des iSCSI-Initiators** auf der Registerkarte **Erkennung** auf **Portal ermitteln**.
 2. Geben Sie im Dialogfeld **Mit Ziel verbinden** die IP-Adresse einer Netzwerkschnittstelle des Geräts ein.
@@ -166,6 +166,6 @@ Das folgende Verfahren beschreibt, wie Sitzungen hinzugefügt werden, wenn ein S
 
 12. Wenn Sie Geräte in den Sitzungen anzeigen möchten, wählen Sie die Registerkarte **Geräte** aus. Klicken Sie zum Konfigurieren der MPIO-Richtlinie für ein ausgewähltes Gerät auf **MPIO**. Das Dialogfeld **Gerätedetails** wird angezeigt. Auf der Registerkarte **MPIO** können Sie die entsprechenden Einstellungen für die **Lastenausgleichsrichtlinie** auswählen. Sie können auch den Pfadtyp **Aktiv** oder **Standby** anzeigen.
 
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

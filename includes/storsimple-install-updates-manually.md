@@ -1,3 +1,4 @@
+
 #### So installieren Sie regelmäßige Updates im Verwaltungsportal
 
 1. Wählen Sie auf der Seite **Geräte** das Gerät aus, für das Sie Updates installieren möchten.
@@ -10,4 +11,4 @@
 
     Sie werden benachrichtigt, wenn das Update erfolgreich installiert wurde.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

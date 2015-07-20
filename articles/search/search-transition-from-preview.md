@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="03/05/2015" 
+	ms.date="07/08/2015" 
 	ms.author="heidist"/>
 
 #Umstellung von der Vorschau-API-Version = 2014* auf API-Version = 2015 *#
@@ -22,12 +22,12 @@ Die folgende Anleitung ist für Kunden vorgesehen, die benutzerdefinierte Anwend
 
 Als Benutzer einer Vorschauversion haben Sie möglicherweise eine dieser älteren Vorschauversionen verwendet:
 
-- [2014-07-31-Preview](../search-api-2014-07-31-preview.md)
+- [2014-07-31-Preview](search-api-2014-07-31-preview.md)
 - [2014-10-20-Preview](search-api-2014-10-20-preview.md)
 
-Da Azure Search jetzt allgemein verfügbar ist, empfehlen wir die Umstellung auf neuere Versionen: 2015-02-28 ist die offizielle API-Version der allgemein verfügbaren Version von Azure Search. Diese Version ist auf [MSDN](https://msdn.microsoft.com/de-de/library/azure/dn798933.aspx) dokumentiert.
+Da Azure Search jetzt allgemein verfügbar ist, empfehlen wir die Umstellung auf neuere Versionen: 2015-02-28 ist die offizielle API-Version der allgemein verfügbaren Version von Azure Search. Diese Version ist auf [MSDN](https://msdn.microsoft.com/library/azure/dn798933.aspx) dokumentiert.
 
-Zudem führen wir gerade die nächste Vorschauversion [2015-02-28-Preview](../search-api-2015-02-28-preview.md) mit Funktionen ein, die sich noch in der Entwicklungsphase befinden. Wir bitten Sie, uns in den [Azure Search-Foren](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=azuresearch) oder auf unserer [Feedback-Seite](http://feedback.azure.com/forums/263029-azure-search) Feedback zu geben.
+Zudem führen wir gerade die nächste Vorschauversion [2015-02-28-Preview](search-api-2015-02-28-preview.md) mit Funktionen ein, die sich noch in der Entwicklungsphase befinden. Sie können uns entweder in den [Azure Search-Foren](https://social.msdn.microsoft.com/forums/azure/home?forum=azuresearch) oder auf unserer [Feedback-Seite](http://feedback.azure.com/forums/263029-azure-search) Feedback zur Vorschauversion der API geben.
 
 ###Checkliste für die Migration###
 
@@ -41,7 +41,7 @@ Zudem führen wir gerade die nächste Vorschauversion [2015-02-28-Preview](../se
 
 Die erste Version der API enthielt ein Feature für die automatische Vervollständigung bzw. für Eingabevorschläge. Es war zwar nützlich, aber begrenzt auf den Präfixabgleich, wobei nur nach den ersten Zeichen im Suchbegriff gesucht und der Abgleich weiterer Zeichen im Feld nicht unterstützt wurde. Dies wurde durch eine boolesche Eigenschaft namens `suggestions` implementiert, die auf `true` festgelegt wurde, wenn der Präfixabgleich für ein bestimmtes Feld aktiviert werden sollte.
 
-Diese ursprüngliche Implementierung ist jetzt veraltet, da sie durch ein neues `Suggesters`-Konstrukt ersetzt wurde, das in der [Index](https://msdn.microsoft.com/de-de/library/azure/dn798941.aspx)-Funktion definiert ist und die Infix- und Fuzzyabgleich bereitstellt. Wie die Namen bereits andeuten, bieten Infix- und Fuzzyabgleich eine viel breitere Palette von Vergleichsfunktionen. Der Infixabgleich umfasst das Präfix, weil auch hier die Anfangszeichen verglichen werden. Der Abgleich wird jedoch auf die restliche Zeichenfolge ausgeweitet.
+Diese ursprüngliche Implementierung ist jetzt veraltet, da sie durch ein neues `Suggesters`-Konstrukt ersetzt wurde, das in der [Index](https://msdn.microsoft.com/library/azure/dn798941.aspx)-Funktion definiert ist und die Infix- und Fuzzyabgleich bereitstellt. Wie die Namen bereits andeuten, bieten Infix- und Fuzzyabgleich eine viel breitere Palette von Vergleichsfunktionen. Der Infixabgleich umfasst das Präfix, weil auch hier die Anfangszeichen verglichen werden. Der Abgleich wird jedoch auf die restliche Zeichenfolge ausgeweitet.
 
 Wir entschieden uns dafür, die vorherige Implementierung (die boolesche Eigenschaft) einzustellen. Das bedeutet, dass sie in beiden 2015-Versionen nicht mehr verfügbar ist und dass keine Abwärtskompatibilität besteht, damit sie von Kunden, die neuere Lösungen erstellen, nicht versehentlich verwendet werden kann. Bei Verwendung von `2015-02-28` oder `2015-02-28-Preview` müssen Sie das neue `Suggesters` -Konstrukt verwenden, um Abfragen zu Eingabevorschlägen zu aktivieren.
 
@@ -135,12 +135,13 @@ In der migrierten Schemadefinition wird die `Suggestions`-Eigenschaft weggelasse
 Nachdem Sie die Lösung portiert und sichergestellt haben, dass sie wie erwartet ausgeführt wird, können Sie diese Links verwenden, um sich über die neuen Features zu informieren.
 
 - [Azure Search ist allgemein verfügbar (Blogbeitrag)](http://go.microsoft.com/fwlink/p/?LinkId=528211)
-- [Neuerungen im aktuellen Update für Azure Search](../search-latest-updates/)
-- [Azure Search – Übersicht)](https://msdn.microsoft.com/de-de/library/azure/dn798933.aspx)
+- [Neuerungen im aktuellen Update für Azure Search](search-latest-updates.md)
+- [Was ist Azure Search?](search-what-is-azure-search.md)
 
-##Abrufen von Hilfe##
+##Hier erhalten Sie Hilfe##
 
-Die API-Version `2015-02-28` unterliegt einer Vereinbarung zum Servicelevel (SLA). Verwenden Sie die Support-Optionen und Links auf [dieser Seite](http://azure.microsoft.com/support/options/), um ein Support-Ticket anzulegen.
+Die API-Version `2015-02-28` unterliegt einer Vereinbarung zum Servicelevel (SLA). Verwenden Sie die Support-Optionen und Links auf [dieser Seite](../support/options/), um ein Support-Ticket anzulegen.
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

@@ -38,11 +38,11 @@ In der folgenden schematischen Darstellung ist die allgemeine Architektur des Li
 
 ##Bitstromformat – ISO 14496-12 Fragmented MP4
 
-Das in diesem Dokument beschriebene Übertragungsformat zur Erfassung des Live-Streamings basiert auf [ISO-14496-12]. Eine ausführliche Erläuterung des Fragmented MP4-Formats und der Erweiterungen für Video-on-Demand-Dateien und die Erfassung des Live-Streamings finden Sie unter [[MS-SSTR]](https://msdn.microsoft.com/library/ff469518.aspx) (in englischer Sprache).
+Das in diesem Dokument beschriebene Übertragungsformat zur Erfassung des Livestreamings basiert auf [ISO-14496-12]. Eine ausführliche Erläuterung des Fragmented MP4-Formats und der Erweiterungen für Video-on-Demand-Dateien und die Erfassung des Live-Streamings finden Sie unter [[MS-SSTR]](https://msdn.microsoft.com/library/ff469518.aspx) (in englischer Sprache).
 
 Es folgt eine Liste der speziellen Formatdefinitionen, die für die Echtzeiterfassung in Microsoft Azure Media Services gelten:
 
-1. Die Felder "ftyp", "LiveServerManifestBox" und "moov" MÜSSEN mit jeder Anforderung (HTTP POST) gesendet werden. Sie MÜSSEN am Anfang des Streams und immer dann gesendet werden, wenn der Encoder erneut eine Verbindung herstellen muss, um die Stream-Erfassung fortzusetzen. Weitere Informationen finden Sie in Abschnitt 6 in [1].
+1. Die Felder "ftyp", "LiveServerManifestBox" und "moov" MÜSSEN mit jeder Anforderung (HTTP POST) gesendet werden. Sie MÜSSEN am Anfang des Streams und immer dann gesendet werden, wenn der Encoder erneut eine Verbindung herstellen muss, um die Stream-Erfassung fortzusetzen. Weitere Informationen finden Sie im Abschnitt 6 in [1].
 2. Im Abschnitt 3.3.2 in [1] wird ein optionales Feld mit dem Namen "StreamManifestBox" für die Echtzeiterfassung definiert. Aufgrund der Routinglogik des Microsoft Azure-Lastenausgleichsmoduls ist die Verwendung dieses Felds veraltet. Es SOLLTE bei der Erfassung in Microsoft Azure Media Services NICHT vorhanden sein. Wenn dieses Feld vorhanden ist, wird es in Azure Media Services ohne Meldung ignoriert.
 3. Das in Abschnitt 3.2.3.2 in [1] definierte Feld "TrackFragmentExtendedHeaderBox" MUSS für jedes Fragment vorhanden sein.
 4. Version 2 von TrackFragmentExtendedHeaderBox SOLLTE verwendet werden, um Mediensegmente mit identischen URLs in mehreren Rechenzentren zu generieren. Das Fragmentindexfeld ist ERFORDERLICH für das rechenzentrenübergreifende Failover indexbasierter Streaming-Formate wie z. B. Apple HTTP Live Streaming (HLS) und indexbasiertes MPEG-DASH. Zum Aktivieren des rechenzentrenübergreifenden Failovers MUSS der Fragmentindex zwischen mehreren Encodern synchronisiert und für jedes folgende Medienfragment jeweils um 1 erhöht werden, auch bei Neustarts und Fehlern der Encoder.
@@ -204,4 +204,6 @@ Es folgt eine empfohlene Implementierung für redundante Audiospuren:
 [image6]: ./media/media-services-fmp4-live-ingest-overview/media-services-image6.png
 [image7]: ./media/media-services-fmp4-live-ingest-overview/media-services-image7.png
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=July15_HO2-->

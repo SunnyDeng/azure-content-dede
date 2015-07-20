@@ -4,15 +4,15 @@
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="06/09/2015"
+   ms.date="07/08/2015"
    ms.author="v-sharos" />
 
 # Installieren des StorSimple 8100-Geräts
@@ -45,9 +45,9 @@ Führen Sie dann die folgenden Schritte aus, um das Gerät auszupacken.
 
 2. Packen Sie den Karton aus. Die folgende Abbildung zeigt das ausgepackte Azure StorSimple-Gerät.
 
-    **Abbildung 1: Das ausgepackte Speichergerät**
-
      ![Auspacken des Speichergeräts](./media/storsimple-8100-hardware-installation/HCSUnpackyour2Udevice.png)
+
+    **Abbildung 1: Das ausgepackte Speichergerät**
 
      Bezeichnung | Beschreibung 
      ----- | -------------
@@ -113,14 +113,14 @@ Im Lieferumfang ist ein Satz Montageschienen für die Verwendung mit einem 19-Zo
 
 2. In der Regel sind die Schienen bereits werkseitig installiert. Ist dies nicht der Fall, bringen Sie die linke und die rechte Gleitschiene an den Seiten des Gehäuses an. Sie werden auf jeder Seite mit sechs metrischen Schrauben befestigt. Als Hilfe bei der Ausrichtung sind die Gleitschienen mit **LH – Front** (Vorne links) und **RH – Front** (Vorne rechts) gekennzeichnet. Darüber hinaus weisen die Schienen jeweils an dem Ende, das in Richtung der Rückseite des Gehäuses befestigt wird, eine Verjüngung auf.<br/>
 
-    **Abbildung 2: Befestigen der Gleitschienen an den Seiten des Gehäuses**
-
     ![Befestigen von Gleitschienen am Gehäuse](./media/storsimple-8100-hardware-installation/HCSAttachingRailSlidestoEnclosureChassis.png)
 
-    Bezeichnung | Beschreibung
+   **Abbildung 2: Befestigen der Gleitschienen an den Seiten des Gehäuses**
+
+    Label | Description
     ----- | -----------
-    1 | Rundkopfschrauben M3 x 4
-    2 | Gehäusegleitschiene
+    1     | M 3x4 button-head screws
+    2     | Chassis slides
 
 3. Befestigen Sie die linke und die rechte Schienenbaugruppe an den vertikalen Blechwinkeln des Rackschranks. Die Halterungen sind mit **LH** (Links), **RH** (Rechts) und **This side up** (Diese Seite nach oben) gekennzeichnet, um Sie bei der richtigen Ausrichtung zu unterstützen.
 
@@ -130,9 +130,9 @@ Im Lieferumfang ist ein Satz Montageschienen für die Verwendung mit einem 19-Zo
 
 6. Wiederholen Sie diese Schritte für die andere Schienenbaugruppe.<br/>
 
-    **Abbildung 3: Befestigen der Schienenbaugruppen am Rack**
-
      ![Befestigen von Gleitschienen am Rackschrank](./media/storsimple-8100-hardware-installation/HCSAttachingRailSlidestoRackCabinet.png)
+
+    **Abbildung 3: Befestigen der Schienenbaugruppen am Rack**
 
      Bezeichnung | Beschreibung
      ----- | -----------
@@ -152,18 +152,18 @@ Führen Sie die folgenden Schritte aus, um das Gerät unter Verwendung der soebe
 
 2. Führen Sie das Gerät sorgfältig in die Schienen ein, und schieben Sie es dann vollständig in den Rackschrank hinein.<br/>
 
-    **Abbildung 4: Einbauen des Geräts in das Rack**
-
     ![Einführen des Geräts in das Rack](./media/storsimple-8100-hardware-installation/HCSInsertingDeviceintheRack.png)
+
+    **Abbildung 4: Einbauen des Geräts in das Rack**
 
 3. Sichern Sie das Gehäuse im Rack am linken und am rechten Flansch mit je einer der mitgelieferten Kreuzschlitzschrauben.
 
 4. Bringen Sie die Flanschkappen an, indem Sie diese an der vorgesehenen Position andrücken und einrasten lassen.<br/>
 
-    **Abbildung 5: Anbringen der Flanschkappen**
-
      ![Anbringen der Flanschkappen](./media/storsimple-8100-hardware-installation/HCSInstallingFlangeCaps.png)
  
+    **Abbildung 5: Anbringen der Flanschkappen**
+
      Bezeichnung | Beschreibung
      ----- | -----------
      1 | Befestigungsschraube für Gehäuse
@@ -213,10 +213,9 @@ Führen Sie die folgenden Schritte aus, um das Gerät für die Stromversorgung z
 
     >[AZURE.NOTE]Damit eine hohe Verfügbarkeit des Systems sichergestellt ist, sollten Sie sich unbedingt an das im folgenden Diagramm dargestellte Stromverkabelungsschema halten.
 
+    ![Stromverkabelung des 2 HE-Geräts](./media/storsimple-8100-hardware-installation/HCSCableYour2UDeviceforPower.png)
 
     **Abbildung 6: Stromverkabelung des Geräts**
-
-     ![Stromverkabelung des 2 HE-Geräts](./media/storsimple-8100-hardware-installation/HCSCableYour2UDeviceforPower.png)
 
      Bezeichnung | Beschreibung
      ----- | -----------
@@ -236,9 +235,9 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
 
 1. Das Gerät verfügt über sechs Netzwerkschnittstellen an jedem Controller: vier Ethernet-Anschlüsse mit 1 GBit/s und zwei Ethernet-Anschlüsse mit 10 GBit/s. Identifizieren Sie die verschiedenen Datenanschlüsse an der Rückwand des Geräts.
 
-    **Abbildung 7: Rückseite des Geräts mit Datenanschlüssen**
-
     ![Rückwand des 8100-Geräts](./media/storsimple-8100-hardware-installation/HCSBackplaneof2UDevicewithPortsLabeled.jpg)
+
+    **Abbildung 7: Rückseite des Geräts mit Datenanschlüssen**
  
      Bezeichnung | Beschreibung
      ------- | -----------
@@ -255,21 +254,21 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
     2. Verbinden Sie die Schnittstellen an jedem Controller mit mindestens zwei unterschiedlichen Switches, um die Verfügbarkeit bei einem Switchfehler sicherzustellen.
     3. Verbinden Sie den DATA 0-Anschluss mit dem primären LAN (Netzwerk mit Internetzugriff). Die anderen Datenanschlüsse können in Abhängigkeit von der vorgesehenen Rolle mit dem SAN/iSCSI-LAN (VLAN)-Segment des Netzwerks verbunden werden.
 
-   Konfigurieren Sie mindestens eine Netzwerkschnittstelle für den Cloudzugriff und eine für iSCSI. Konfigurieren Sie für hohe Verfügbarkeit und Leistung zwei Paare von Netzwerkschnittstellen auf jedem Controller. Die Netzwerkverkabelung ist im folgenden Diagramm dargestellt. (Die Mindestkonfiguration des Netzwerks ist durch durchgängige blaue Linien gekennzeichnet. Die für hohe Verfügbarkeit und Leistung zusätzlich erforderliche Konfiguration wird durch die gepunkteten Linien dargestellt.)
+    Konfigurieren Sie mindestens eine Netzwerkschnittstelle für den Cloudzugriff und eine für iSCSI. Konfigurieren Sie für hohe Verfügbarkeit und Leistung zwei Paare von Netzwerkschnittstellen auf jedem Controller. Die Netzwerkverkabelung ist im folgenden Diagramm dargestellt. (Die Mindestkonfiguration des Netzwerks ist durch durchgängige blaue Linien gekennzeichnet. Die für hohe Verfügbarkeit und Leistung zusätzlich erforderliche Konfiguration wird durch die gepunkteten Linien dargestellt.)
 
-   **Abbildung 8: Netzwerkverkabelung des Geräts**
+    ![Netzwerkverkabelung des 2 HE-Geräts](./media/storsimple-8100-hardware-installation/HCSCableYour2UDeviceforNetwork.png)
 
-   ![Netzwerkverkabelung des 2 HE-Geräts](./media/storsimple-8100-hardware-installation/HCSCableYour2UDeviceforNetwork.png)
+    **Abbildung 8: Netzwerkverkabelung des Geräts**
 
-    Label | Description
+    Bezeichnung | Beschreibung
     ----- | -----------
-     A    | LAN with Internet access
-     B    | Controller 0
-     C    | PCM 0
-     D    | Controller 1
-     E    | PCM 1
-     F,G  | Hosts
-     0-5  | Network interfaces
+     Eine Datei | LAN mit Internetzugriff
+     B | Controller 0
+     C | PCM 0
+     D | Controller 1
+     E | PCM 1
+     F, G | Host
+     0-5 | Netzwerkschnittstellen
    
 ### Verkabelung des seriellen Anschlusses
 
@@ -298,4 +297,4 @@ Das Gerät ist jetzt für Stromversorgung, Netzwerkzugriff und serielle Konnekti
 Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

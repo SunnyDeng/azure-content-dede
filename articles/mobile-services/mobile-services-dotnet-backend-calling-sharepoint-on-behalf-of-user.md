@@ -71,7 +71,7 @@ Um einen Aufruf an SharePoint zu richten, müssen Sie die Endpunkte festlegen, m
 
 4. Legen Sie SP_Authority als Autoritätsendpunkt für das AAD-Mandat fest. Das sollte derselbe Autoritätsendpunkt sein, den Sie auch für die Client-App verwendet haben. Er hat das Format https://login.windows.net/contoso.onmicrosoft.com.
 
-5. Legen Sie bei SP_ClientSecret den geheimen Clientwert fest, den Sie vorhin bezogen haben.
+5. Legen Sie bei SP_ClientSecret den geheimen Clientwert fest, den Sie zuvor abgerufen haben.
 
 6. Legen Sie bei SP_SharePointURL die URL für Ihre SharePoint-Website fest. Sie hat das Format https://contoso-my.sharepoint.com.
 
@@ -192,7 +192,7 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 
 2. Navigieren Sie zu Ihrer SharePoint-Website, und melden Sie sich mit demselben Benutzer an.
 
-3. Wählen Sie die Registerkarte „OneDrive“. Unter dem Dokumentenordner sollten Sie ein Word-Dokument mit einem GUID-Titel sehen. Wenn Sie es öffnen, sollten Sie den Text für Ihr TodoItem finden.
+3. Wählen Sie die Registerkarte "OneDrive". Unter dem Dokumentenordner sollten Sie ein Word-Dokument mit einem GUID-Titel sehen. Wenn Sie es öffnen, sollten Sie den Text für Ihr TodoItem finden.
 
     ![][4]
 
@@ -217,5 +217,6 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 [Azure-Verwaltungsportals]: https://manage.windowsazure.com/
 [SharePoint Online]: http://office.microsoft.com/sharepoint/
 [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden]: http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

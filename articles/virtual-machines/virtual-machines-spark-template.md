@@ -57,7 +57,7 @@ Gehen Sie folgendermaßen vor, um mit Azure PowerShell oder über die Azure-Befe
 
 ### Schritt 1-a: Herunterladen der Vorlagendateien mithilfe von PowerShell
 
-Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\Azure\\Vorlagen\\Spark").
+Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\\Azure\\Vorlagen\\Spark").
 
 Fügen Sie dabei den Namen Ihres lokalen Ordners ein, und führen Sie damit die folgenden Befehle aus:
 
@@ -91,7 +91,7 @@ Klonen Sie das komplette Vorlagen-Repository mithilfe eines Git-Clients Ihrer Wa
 
 	git clone https://github.com/Azure/azure-quickstart-templates C:\Azure\Templates
 
-Suchen Sie anschließend unter "C:\Azure\\Vorlagen" den Ordner **spark-on-ubuntu**.
+Suchen Sie anschließend unter "C:\\Azure\\Vorlagen" den Ordner **spark-on-ubuntu**.
 
 ### Schritt 2 (optional): Erlernen der Vorlagenparameter
 
@@ -416,7 +416,7 @@ In diesem Diagramm werden die Beziehungen zwischen allen Dateien beschrieben, di
 
 Dieser Abschnitt führt Sie schrittweise durch die Struktur der Datei **azuredeploy.json** für den Spark-Cluster.
 
-Wenn Sie nicht bereits eine Kopie der Vorlagendatei heruntergeladen haben, legen Sie einen lokalen Ordner als Speicherort für die Datei fest, und erstellen Sie ihn (z. B. "C:\Azure\\Vorlagen\\Spark"). Geben Sie den Ordnernamen an, und führen Sie die folgenden Befehle aus:
+Wenn Sie nicht bereits eine Kopie der Vorlagendatei heruntergeladen haben, legen Sie einen lokalen Ordner als Speicherort für die Datei fest, und erstellen Sie ihn (z. B. "C:\\Azure\\Vorlagen\\Spark"). Geben Sie den Ordnernamen an, und führen Sie die folgenden Befehle aus:
 
 ```powershell
 $folderName="<folder name, such as C:\Azure\Templates\Spark>"
@@ -844,4 +844,4 @@ Entdecken Sie weitere [Anwendungsframeworks](virtual-machines-app-frameworks.md)
 [Problembehandlung bei Vorlagenbereitstellungen](resource-group-deploy-debug.md).
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

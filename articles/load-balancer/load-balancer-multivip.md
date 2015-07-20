@@ -156,4 +156,4 @@ Sie können den Lastenausgleich auch zur Verwendung einer anderen VIP aktualisie
 [Reservierte IP-REST-APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

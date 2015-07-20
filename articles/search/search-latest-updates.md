@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="04/09/2015" 
+	ms.date="07/08/2015" 
 	ms.author="heidist"/>
 
 #Neuerungen im aktuellen Update zu Azure Search#
@@ -86,9 +86,9 @@ Besuchen Sie auch den Artikel [Azure Search is now Generally Available](http://g
 
 Diese Version war die öffentliche Preview-Version für Azure Search. Sie enthielt die folgenden zentralen Features:
 
-- REST-API für Index- und Dokumentoperationen. Der größte Teil der Features dieser API-Version ist in Version 2015-02-28 nach wie vor vorhanden. Die Dokumentation für Version `2014-07-31-Preview` finden Sie unter [Azure Search Service REST API Version 2014-07-31](../search-api-2014-07-31-preview.md) (+++REST-API des Azure Search-Dienstes Version 2014-07-31).
+- REST-API für Index- und Dokumentoperationen. Der größte Teil der Features dieser API-Version ist in Version 2015-02-28 nach wie vor vorhanden. Die Dokumentation für Version `2014-07-31-Preview` finden Sie unter [Azure Search Service REST API Version 2014-07-31](search-api-2014-07-31-preview.md) (+++REST-API des Azure Search-Dienstes Version 2014-07-31).
 
-- Wertungsprofile für die Optimierung der Suchergebnisse. Ein Wertungsprofil fügt Kriterien zum Berechnen der Suchergebnisse hinzu. Die Dokumentation für dieses Feature finden Sie unter [Azure Search Service Scoring Profiles REST API Version 2014-07-31](../search-api-scoring-profiles-2014-07-31-preview.md) (+++Wertungsprofil-REST-API des Azure Search-Dienstes Version 2014-07-31).
+- Wertungsprofile für die Optimierung der Suchergebnisse. Ein Wertungsprofil fügt Kriterien zum Berechnen der Suchergebnisse hinzu. Die Dokumentation für dieses Feature finden Sie unter [Azure Search Service Scoring Profiles REST API Version 2014-07-31](search-api-scoring-profiles-2014-07-31-preview.md) (+++Wertungsprofil-REST-API des Azure Search-Dienstes Version 2014-07-31).
 
 - Geospatial-Unterstützung wurde als fester Bestandteil von Azure Search seit seiner Einführung durch den Datentyp `Edm.GeographyPoint` bereitgestellt.
 
@@ -102,8 +102,9 @@ Diese Version war die öffentliche Preview-Version für Azure Search. Sie enthie
 ##Management-API Version 2014-07-31-Preview
 **Veröffentlicht im Oktober 2014**
 
-Zur Unterstützung der programmgesteuerten Dienstverwaltung wurde die Preview-Version von [Management-REST-API](../search-management-api-2014-07-31-preview.md) hinzugefügt. Ihre Versionierung ist unabhängig von der Versionierung der REST-API des Diensts.
+Zur Unterstützung der programmgesteuerten Dienstverwaltung wurde die Preview-Version von [Management-REST-API](search-management-api-2014-07-31-preview.md) hinzugefügt. Ihre Versionierung ist unabhängig von der Versionierung der REST-API des Diensts.
 
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

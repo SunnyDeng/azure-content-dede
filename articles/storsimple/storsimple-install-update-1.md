@@ -100,4 +100,4 @@ Wenn Sie sichergestellt haben, dass die Verbindung vorhanden ist, und dieses Pro
 
 Erfahren Sie mehr über [Microsoft Azure StorSimple](storsimple-overview.md)
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

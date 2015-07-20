@@ -16,13 +16,13 @@
 	ms.date="05/04/2015" 
 	ms.author="piyushjo" />
 
-# iOS SDK für Azure Mobile Engagement
+#iOS SDK für Azure Mobile Engagement
 
 Beginnen Sie hier, um alle Details zur Integration von Azure Mobile Engagement in eine iOS-App zu erhalten. Wenn Sie es zunächst nur probieren möchten, stellen Sie sicher, dass Sie das [15-Minuten-Lernprogramm](mobile-engagement-ios-get-started.md) durchführen
 
 Klicken Sie, um den [SDK-Inhalt](mobile-engagement-ios-sdk-content.md) anzuzeigen
 
-## Integrationsverfahren
+##Integrationsverfahren
 1. Beginnen Sie hier: [Integration von Mobile Engagement in Ihre iOS-App](mobile-engagement-ios-integrate-engagement.md)
 
 2. Für Benachrichtigungen: [Integration von Reach (Benachrichtigungen) in Ihre iOS-App](mobile-engagement-ios-integrate-engagement-reach.md)
@@ -30,26 +30,24 @@ Klicken Sie, um den [SDK-Inhalt](mobile-engagement-ios-sdk-content.md) anzuzeige
 3. Tag-Plan-Implementierung: [Verwenden der erweiterten Mobile Engagement-Tagging-API in Ihrer iOS-App](mobile-engagement-ios-use-engagement-api.md)
 
 
-## Versionshinweise
+##Versionshinweise
 
-### 2.1.0 (24.04.2015)
+###2.2.0 (21.05.2015)
 
--   Hinzufügen der Swift-Kompatibilität.
--   Wenn Sie auf eine Benachrichtigung klicken, wird die Aktions-URL nun direkt nach dem Öffnen der Anwendung ausgeführt.
--   Fehlende Headerdatei im SDK-Paket hinzugefügt.
--   Behebung eine Fehlers, wenn der Mobile Engagement-Absturzmelder deaktiviert wurde.
+-   Die Mobile Engagement-Geräte-ID für Geräte mit einer früheren Version als iOS 6 basiert jetzt auf einer während der Installation generierten GUID.
 
 Eine frühere Version finden Sie unter [Vollständige Versionshinweise](mobile-engagement-ios-release-notes.md)
 
-## Upgrade-Verfahren
+##Upgrade-Verfahren
 
-Wenn Sie bereits eine ältere Version von Engagement in Ihrer Anwendung integriert haben, müssen Sie die folgenden Punkte beim Aktualisieren des SDK beachten.
+Wenn Sie bereits eine ältere Version von Engagement in Ihre Anwendung integriert haben, müssen Sie die folgenden Punkte beim Aktualisieren des SDK beachten.
 
 Möglicherweise müssen Sie mehrere Verfahren ausführen, wenn Sie mehrere SDK-Versionen übersprungen haben. Siehe [Upgradeverfahren](mobile-engagement-ios-upgrade-procedure.md) für vollständige Informationen
 
 Für jede neue SDK-Version müssen Sie zunächst die Ordner "EngagementSDK" und "EngagementReach" ersetzen (entfernen und in Xcode neu importieren).
 
-### Version 2.0.0 bis 2.1.0
+###Version 2.0.0 bis 2.1.0
 Keiner.
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

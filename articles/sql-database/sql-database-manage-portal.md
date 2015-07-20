@@ -21,7 +21,7 @@
 
 Das [Azure-Verwaltungsportal][Management Portal] ermöglicht das Erstellen, Überwachen und Verwalten von Azure SQL-Datenbanken und -Servern. In diesem Artikel werden die Datenbankvorgänge erläutert, die mit dem Verwaltungsportal ausgeführt werden können. Weitere Informationen zu den anderen Azure SQL-Datenbank-Verwaltungstools finden Sie [hier][AzureDb management overview].
 
->[AZURE.NOTE]Wenn Ihnen das Azure-Verwaltungsportal nicht vertraut ist, erhalten Sie in diesem [Video][Azure Portal Tour] (in englischer Sprache) eine kurze Übersicht über die allgemeinen Funktionen und Konzepte.
+>[AZURE.NOTE]Wenn Ihnen das Azure-Verwaltungsportal nicht vertraut ist, erhalten Sie in diesem [Video][Azure Portal Tour] (in englischer Sprache) einen kurzen Überblick über die allgemeinen Funktionen und Konzepte.
 
 ![Datenbankübersicht](./media/sql-database-manage-portal/sqldatabase_annotated.png)
 
@@ -55,16 +55,19 @@ Azure SQL-Datenbanken können konfiguriert werden, um bereits übergebene Transa
 * [Überwachen der SQL-Datenbank mit dynamischen Verwaltungssichten][]   
 * [Transact-SQL-Referenz (SQL-Datenbank)][]
   
-[Azure Portal Tour]: https://go.microsoft.com/fwlink/?LinkID=522341
-[Management Portal]: https://portal.azure.com
-[Azure part monitoring]: ../documentdb-monitor-accounts.md
-[AzureDb management overview]: http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database/
-[Einführung in die SQL-Datenbank]: http://azure.microsoft.com/services/sql-database
-[Database geo-replication]: http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication/
-[Verwalten von Azure SQL-Datenbank mit SQL Server Management Studio]: sql-database-manage-azure-ssms.md
-[Überwachen der SQL-Datenbank mit dynamischen Verwaltungssichten]: http://msdn.microsoft.com/library/windowsazure/ff394114.aspx
-[Transact-SQL-Referenz (SQL-Datenbank)]: http://msdn.microsoft.com/library/bb510741(v=sql.120).aspx
-[AzureDb Auditing]: http://azure.microsoft.com/documentation/articles/sql-database-auditing-get-started/
-[AzureDb datamasking]: http://azure.microsoft.com/documentation/articles/sql-database-dynamic-data-masking-get-started/
+  [Azure Portal Tour]: https://go.microsoft.com/fwlink/?LinkID=522341
+  [Management Portal]: https://portal.azure.com
+  [Azure part monitoring]: ../documentdb-monitor-accounts.md
+  [AzureDb management overview]: http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database/
+  [Einführung in die SQL-Datenbank]: http://azure.microsoft.com/services/sql-database
+  [Database geo-replication]: http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication/
+  [Verwalten von Azure SQL-Datenbank mit SQL Server Management Studio]: sql-database-manage-azure-ssms.md
+  [Überwachen der SQL-Datenbank mit dynamischen Verwaltungssichten]: http://msdn.microsoft.com/library/windowsazure/ff394114.aspx
+  [Transact-SQL-Referenz (SQL-Datenbank)]: http://msdn.microsoft.com/library/bb510741(v=sql.120).aspx
+  [AzureDb Auditing]: http://azure.microsoft.com/documentation/articles/sql-database-auditing-get-started/
+  [AzureDb datamasking]: http://azure.microsoft.com/documentation/articles/sql-database-dynamic-data-masking-get-started/
 
-<!---HONumber=58--> 
+ 
+ 
+
+<!---HONumber=July15_HO2-->

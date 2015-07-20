@@ -1,3 +1,4 @@
+
 #### So installieren Sie Update 1 über Windows PowerShell für StorSimple
 
 1. Führen Sie die folgenden Schritte aus, um das Softwareupdate herunterzuladen.
@@ -36,7 +37,7 @@
     Nachfolgend sehen Sie eine Beispielausgabe.
 
         ````
-        Controller0>Start-HcsHotfix -Path \10.100.100.100\share
+        Controller0>Start-HcsHotfix -Path \\10.100.100.100\share
         \hcsmdssoftwareupdate.exe -Credential contoso\John
       
         Confirm
@@ -96,4 +97,4 @@
 
     Der Firmwarestatus sollte **UpToDate** lauten.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

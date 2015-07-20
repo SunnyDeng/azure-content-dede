@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="05/27/2015" 
+	ms.date="06/27/2015" 
 	ms.author="glenga"/>
 
 # Registrieren Ihrer App für die Facebook-Authentifizierung mit Mobile Services
@@ -28,27 +28,19 @@ Sie benötigen ein Facebook-Konto mit verifizierter E-Mail-Adresse und einer Mob
 
 1. Navigieren Sie zur Website für <a href="http://go.microsoft.com/fwlink/p/?LinkId=268286" target="_blank">Facebook-Entwickler</a>￼, und melden Sie sich mit den Anmeldeinformationen für Ihr Facebook-Konto an.
 
-2. (Optional) Falls Sie sich noch nicht registriert haben, klicken Sie auf **Apps** und dann auf **Register as a Developer**, akzeptieren Sie die Richtlinie, und führen Sie die Registrierungsschritte durch.
+2. (Optional) Wenn Sie sich noch nicht registriert haben, klicken Sie auf **My Apps**, klicken Sie auf **Register as a Developer**, akzeptieren Sie die Richtlinien, und folgen Sie dann den Anweisungen für die Registrierung.
 
-   	![][0]
+3. Klicken Sie auf **My Apps** > **Add a New App** > **Advanced setup**.
 
-3. Klicken Sie auf **Apps** und dann auf **Create a New App**.
+4. Geben Sie in **Display name** einen eindeutigen Anzeigenamen für Ihre App ein, wählen Sie unter **Category** die Option **Apps for Pages** aus, klicken Sie auf **Create App ID**, und schließen Sie die Schritte für die Sicherheitsüberprüfung ab.
 
-   	![][1]
+	Damit wird eine neue Facebook App ID erstellt.
 
-4. Wählen Sie einen eindeutigen Namen für Ihre App, wählen Sie **Apps for Pages**, klicken Sie auf **Create App**, und beantworten Sie die Sicherheitsfrage.
-
-   	![][2]
-
-	Daraufhin wird die App bei Facebook registriert.
-
-5. Klicken Sie auf **Settings**, und geben Sie unter **App Domains** die Domäne Ihres mobilen Diensts ein. Geben Sie unter **Contact Email** auch Ihre Kontakt-E-Mail ein, klicken Sie auf **Add Platform**, und wählen Sie **Website** aus.
+5. Klicken Sie auf **Settings**, geben Sie unter **App Domains** die Domäne Ihres mobilen Dienstes ein , geben Sie optional unter **Contact Email** einen E-Mail-Kontakt ein, klicken Sie auf **Add Platform**, und wählen Sie dann **Website** aus.
 
    	![][3]
 
 6. Geben Sie die URL Ihres Mobile Service unter **Site URL** ein, und klicken Sie auf **Änderungen speichern**.
-
-	![][4]
 
 7. Klicken Sie auf **Anzeigen**, geben Sie falls erforderlich Ihr Kennwort an, und notieren Sie sich die Werte von **App-ID** und **App-Schlüssel**.
 
@@ -60,12 +52,10 @@ Sie benötigen ein Facebook-Konto mit verifizierter E-Mail-Adresse und einer Mob
 
      >[AZURE.NOTE]Für einen mit Visual Studio in Azure veröffentlichten mobilen .NET-Back-End-Dienst ist die Umleitungs-URL die URL Ihres mobilen Diensts mit dem Pfadsuffix _signin-facebook_ für Ihren mobilen Dienst als .NET-Dienst, z. B `https://todolist.azure-mobile.net/signin-facebook`.
        
-	&nbsp;![][7]
 
-9. Das Facebook-Konto, für das die neue App definiert wurde, verfügt über Administratorrechte und über Administratorzugriff für die App. Zur Authentifizierung anderer Facebook-Konten benötigen diese Zugriff auf die App. Dieser Schritt gewährleistet den allgemeinen öffentlichen Zugriff, sodass die App andere Facebook-Konten authentifizieren kann. Klicken Sie auf **Status & Review**. Klicken Sie dann auf **Ja**, um den allgemeinen öffentlichen Zugriff zu aktivieren.
+9. Klicken Sie auf **Status & Review** > **Yes**, um den allgemeinen öffentlichen Zugriff auf Ihre App zu aktivieren.
 
-    ![][6]
-
+	Das Facebook-Konto, mit dem die neue App registriert wurde, verfügt über Administratorrechte und über Administratorzugriff auf die App. Mit diesem Schritt wird der allgemeine öffentliche Zugriff gewährt, sodass die App andere Facebook-Konten für die Authentifizierung verwenden kann.
 
 
 Sie können nun ein Facebook-Login für die Authentifizierung in Ihrer App verwenden, indem Sie die App-ID und den App-Schlüssel für Mobile Services bereitstellen.
@@ -73,14 +63,8 @@ Sie können nun ein Facebook-Login für die Authentifizierung in Ihrer App verwe
 <!-- Anchors. -->
 
 <!-- Images. -->
-[0]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-developer-register.png
-[1]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-add-app.png
-[2]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-new-app-dialog.png
 [3]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-configure-app.png
-[4]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-configure-app-2.png
 [5]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-completed.png
-[6]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-configure-app-general-public.png
-[7]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-configure-app-3.png
 
 <!-- URLs. -->
 [Facebook Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268286
@@ -89,4 +73,4 @@ Sie können nun ein Facebook-Login für die Authentifizierung in Ihrer App verwe
 [Azure Mobile Services]: http://azure.microsoft.com/services/mobile-services/
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

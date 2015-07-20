@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Schritt 5: Veröffentlichen des Machine Learning-Webdiensts | Azure" 
-	description="Exemplarische Vorgehensweise Schritt 5: Veröffentlichen eines Bewertungsexperiments in Azure Machine Learning Studio als Azure Machine Learning-Webdienst" 
+	pageTitle="Schritt 5: Veröffentlichen des Machine Learning-Webdiensts | Microsoft Azure" 
+	description="Exemplarische Vorgehensweise zum Entwickeln einer Vorhersagelösung – Schritt 5: Veröffentlichen eines Bewertungsexperiments als Webdienst in Machine Learning Studio." 
 	services="machine-learning" 
 	documentationCenter="" 
 	authors="garyericson" 
@@ -13,151 +13,116 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/29/2015" 
+	ms.date="04/22/2015" 
 	ms.author="garye"/>
 
 
-Dies ist der fünfte Teil der exemplarischen Vorgehensweise [Entwickeln einer Vorhersagelösung mit Azure ML][Entwickeln]:
+# Exemplarische Vorgehensweise, Schritt 5: Veröffentlichen des Azure Machine Learning-Webdiensts
 
-[Entwickeln]: ../machine-learning-walkthrough-develop-predictive-solution/
+Dies ist der fünfte Schritt der exemplarischen Vorgehensweise zum [Entwickeln einer Vorhersagelösung mit Azure Machine Learning](machine-learning-walkthrough-develop-predictive-solution.md).
 
 
-1.	[Erstellen einer ML-Arbeitsumgebung][Arbeitsumgebung erstellen]
-2.	[Hochladen von vorhandenen Daten][Daten hochladen]
-3.	[Erstellen eines neuen Experiments][Neu erstellen]
-4.	[Trainieren und Bewerten des Modells][Modells trainieren]
+1.	[Erstellen eines Machine Learning-Arbeitsbereichs](machine-learning-walkthrough-1-create-ml-workspace.md)
+2.	[Hochladen vorhandener Daten](machine-learning-walkthrough-2-upload-data.md)
+3.	[Erstellen eines neuen Experiments](machine-learning-walkthrough-3-create-new-experiment.md)
+4.	[Trainieren und Auswerten der Modelle](machine-learning-walkthrough-4-train-and-evaluate-models.md)
 5.	**Veröffentlichen des Webdiensts**
-6.	[Zugreifen auf den Webdienst][access-ws]
-
-[create-workspace]: ../machine-learning-walkthrough-1-create-ml-workspace/
-[upload-data]: ../machine-learning-walkthrough-2-upload-data/
-[create-new]: ../machine-learning-walkthrough-3-create-new-experiment/
-[train-models]: ../machine-learning-walkthrough-4-train-and-evaluate-models/
-[publish]: ../machine-learning-walkthrough-5-publish-web-service/
-[access-ws]: ../machine-learning-walkthrough-6-access-web-service/
+6.	[Zugreifen auf den Webdienst](machine-learning-walkthrough-6-access-web-service.md)
 
 ----------
 
-# Schritt 5: Veröffentlichen des Azure Machine Learning-Webdiensts
+Damit das Vorhersagemodell für Dritte von Nutzen sein kann, wird es als Webdienst in Azure veröffentlicht.
 
-Damit das Vorhersagemodell für Dritte von Nutzen sein kann, wird es als Webdienst in Azure veröffentlicht. Ein Benutzer kann eine Reihe von Kreditantragsdaten an den Dienst senden, und der Dienst gibt die Vorhersage des Kreditrisikos zurück.  
+Bis jetzt haben Sie mit dem Trainieren des Modells experimentiert. Der veröffentlichte Dienst hat jedoch nichts mehr mit Training zu tun – er bewertet die Benutzereingaben. Nun werden wir einige vorbereitende Aufgaben ausführen und dieses Experiment dann als funktionierenden Webdienst veröffentlichen, auf den Benutzer zugreifen können. Ein Benutzer kann einen Satz Kreditantragsdaten an den Dienst senden, und der Dienst gibt die Vorhersage des Kreditrisikos zurück.
 
-Gehen Sie hierzu wie folgt vor:  
+Gehen Sie hierzu wie folgt vor:
 
--	Bereiten Sie das Experiment auf die Veröffentlichung vor.
--	Veröffentlichen Sie es auf einem Staging-Server, wo es getestet werden kann.
--	Stufen Sie es auf den Live-Server hoch, wenn es dafür bereit ist.  
+- Konvertieren des *Trainingsexperiments* in ein *Bewertungsexperiment*
+- Veröffentlichen des Bewertungsexperiments als Webdienst
 
-Bevor Sie fortfahren, sollten Sie eine Kopie dieses Experiments erstellen, um sie zu bearbeiten. So können Sie jederzeit wieder zum Trainingsexperiment zurückkehren, wenn Sie weiter mit den Modellen arbeiten möchten.  
+Zunächst muss das Experiment optimiert werden. Zurzeit enthält das Experiment zwei verschiedene Modelle, nun müssen Sie ein Modell auswählen,das veröffentlicht werden soll. In unserem Beispiel entscheiden wir, dass das Boosted Tree-Modell sich besser zur Verwendung eignet. Als Erstes müssen Sie nun das Modul [Two-Class Support Vector Machine][two-class-support-vector-machine] sowie die Module entfernen, mit denen dieses Modul trainiert wurde. Am besten erstellen Sie zunächst eine Kopie des Experiments, indem Sie unten in der Canvas des Experiments auf **Save As** klicken.
 
-1.	Klicken Sie unter dem Zeichenbereich auf **Speichern unter**.
-2.	Geben Sie der Experimentkopie einen aussagekräftigen Namen. Standardmäßig wird dem Originalnamen des Experiments "- Kopie" angehängt. Wählen Sie in diesem Beispiel den Namen "Kreditrisikovorhersage - Bewertungsexperiment".
-3.	Klicken Sie auf **OK**.  
+Folgende Module müssen gelöscht werden:
+
+1.	[Two-Class Support Vector Machine][two-class-support-vector-machine]
+2.	Die damit verbundenen Module [Train Model][train-model] und [Score Model][score-model]
+3.	[Normalize Data][normalize-data] (beide)
+4.	[Evaluate Model][evaluate-model]
+
+Jetzt ist das Modell bereit für die Veröffentlichung.
+
+##Konvertieren des Trainingsexperiments in ein Bewertungsexperiment
+
+Die Konvertierung in ein Bewertungsexperiment umfasst drei Schritte:
+
+1. Speichern des trainierten Modells und Ersetzen der Trainingsmodule durch das Modell
+2. Optimieren des Experiments, um Module zu entfernen, die nur zu Trainingszwecken benötigt wurden
+3. Definieren, wo sich Eingabe- und Ausgabeknoten des Webdiensts befinden sollen
+
+Glücklicherweise können alle drei Schritte ausgeführt werden, indem Sie einfach unten in der Canvas des Experiments auf **Create Scoring Experiment** klicken.
+
+Wenn Sie auf **Create Scoring Experiment** klicken, werden verschiedene Vorgänge ausgeführt:
+
+- Das trainierte Modell wird als **Trained Model**-Modul in der Modulpalette gespeichert, die sich links neben der Experimentcanvas befindet (Sie finden die Palette unter **Trained Models**).
+- Module, die zum Training verwendet wurden, werden entfernt. Dies gilt insbesondere in folgenden Fällen:
+  - [Two-Class Boosted Decision Tree][two-class-boosted-decision-tree]
+  - [Train Model][train-model] 
+  - [Split][split]
+  - das zweite [Execute R Script][execute-r-script]-Modul, das für die Testdaten verwendet wurde
+- Das gespeicherte trainierte Modell wird zum Experiment hinzugefügt.
+- Die Module **Web Service Input** und **Web Service Output** werden hinzugefügt.
+
+> [AZURE.NOTE]Das Experiment wurde in zwei Teilen gespeichert: das ursprüngliche Trainingsexperiment und das neue Bewertungsexperiment. Sie können auf beide Teile über die Registerkarten oberhalb der Experimentcanvas zugreifen.
+
+Für das vorliegende Experiment muss nun noch ein zusätzlicher Schritt ausgeführt werden. Machine Learning Studio hat beim Entfernen des [Split][split]-Moduls das eine der [Execute R Script][execute-r-script]-Module entfernt, das andere [Execute R Script][execute-r-script]-Modul jedoch nicht. Da dieses Modul nur zum Trainieren und Testen verwendet wurde (es hat eine Gewichtungsfunktion für die Stichprobendaten bereitgestellt), können Sie es nun entfernen und den [Metadata Editor][metadata-editor] mit dem Modul [Score Model][score-model] verbinden.
+
+Unser Experiment sollte nun wie folgt aussehen:
+
+![Bewerten des trainierten Modells][4]
 
 
-Sie können jetzt sowohl das Originalexperiment als auch die Kopie in der Liste EXPERIMENTE von ML Studio anzeigen.  
+Sie fragen sich vielleicht, warum das Dataset "UCI German Credit Card Data" im Bewertungsexperiment verblieben ist. Der Dienst verwendet die Daten des Benutzers, nicht das Originaldataset. Weshalb also die Verbindung belassen?
 
-![Experiments list][1]
- 
-##Vorbereiten des Bewertungsexperiments
-Zwei Vorgänge sind nötig, um das Modell auf die Veröffentlichung als Webdienst vorzubereiten.  
+Es stimmt zwar, dass der Dienst die Originalkreditkartendaten nicht benötigt. Er benötigt aber das Schema für diese Daten, darunter Angaben zur Anzahl der vorhandenen Spalten, und welche Spalten numerisch sind. Diese Schemainformationen sind erforderlich, um die Benutzerdaten zu interpretieren. Wir lassen diese Komponenten verbunden, damit das Bewertungsmodul über das Datasetschema verfügt, wenn der Dienst ausgeführt wird. Es werden nicht die Daten verwendet, sondern nur das Schema.
 
-Zuerst muss das Experiment von einem *Trainingsexperiment* in ein *Bewertungsexperiment* konvertiert werden. Bis zu diesem Zeitpunkt wurde mit dem Trainieren des Modells experimentiert. Der veröffentlichte Dienst hat jedoch nichts mehr mit Training zu tun - er bewertet die Benutzereingaben. Daher speichern wir eine Kopie des trainierten Modells und löschen dann alle Komponenten des Experiments, die mit dem Training zusammenhängen.  
-
-Zweitens akzeptiert der Azure ML-Webdienst Eingaben des Benutzers und gibt ein Ergebnis zurück. Also müssen diese Eingabe- und Ausgabepunkte in unserem Experiment identifiziert werden.  
-
-###Konvertieren von einem Trainingsexperiment in ein Bewertungsexperiment
-In unserem Beispiel entscheiden wir, dass das Boosted Tree-Modell sich besser zur Verwendung eignet. Als erstes werden also die SVM-Trainingsmodelle entfernt.  
-
-1.	Löschen Sie **Zweiklassige Support Vector Machine**
-2.	Löschen Sie die damit verbundenen Module **Modell trainieren** und Modell bewerten.
-3.	Löschen Sie das Modul **Daten durch Skalierung transformieren**.  
-
-Jetzt wird das trainierte Boosted Tree-Modell gespeichert. Anschließend können die verbleibenden Module im Experiment, die zum Trainieren verwendet wurden, gelöscht und mit dem trainierten Modell ersetzt werden.  
-
-1.	Klicken Sie mit der rechten Maustaste auf den Ausgabeport des verbleibenden Moduls **Modell trainieren**, und wählen Sie  **Als trainiertes Modell speichern** aus.
-2.	Geben Sie einen Namen und eine Beschreibung für das trainierte Modell ein. In diesem Beispiel erhält es den Namen "Vorhersage des Kreditrisikos".
-
-	>**Hinweis**: Nach dem Speichern des trainierten Modells wird es in der Modulpalette angezeigt und steht für andere Experimente zur Verfügung.
-
-3.	Suchen Sie dieses Modell in der Modulpalette, indem Sie "Kreditrisiko" im Feld **Suche** eingeben, und ziehen Sie dann das trainierte Modell **Vorhersage des Kreditrisikos** in den Experimentbereich.
-4.	Löschen Sie die Module **Zweiklassiger Boosted Decision Tree** und **Modell trainieren**.
-5.	Verbinden Sie die Ausgabe des Modells **Vorhersage des Kreditrisikos** mit der linken Eingabe des Moduls **Modell bewerten**.   
-
-Jetzt liegt eine gespeicherte, trainierte Version des Modells in unserem Experiment anstelle der ursprünglichen Trainingsmodule vor.  
-
-Das Experiment enthält noch weitere Komponenten, die nur zu Trainingszwecken und zum Evaluieren der beiden Modellalgorithmen hinzugefügt wurden. Sie können ebenfalls entfernt werden:  
-
--	**Aufteilen**
--	Beide Module **R-Skript ausführen**
--	**Modell evaluieren**  
-
-Noch etwas: Dies betrifft die Originalkreditkartendaten in der Spalte "Kreditrisiko". Diese Spalte wurde durch das Modul **Modell trainieren** verarbeitet, um das Modell für die Vorhersage dieser Werte zu trainieren. Nachdem das Modell jetzt trainiert ist, soll diese Spalte aber nicht mehr verarbeitet werden - dieser Wert wird jetzt vom trainierten Modell vorhergesagt. Um die Spalte aus dem Datenfluss zu entfernen, wird das Modul **Projektspalte** verwendet.  
-
-1.	Ziehen Sie das Modul **Projektspalte** in den Bereich.
-2.	Verbinden Sie dieses Modul mit der Ausgabe des Moduls **Metadaten-Editor** (nachdem jetzt die Module **Aufteilen** und **R-Skript ausführen** entfernt wurden).
-3.	Wählen Sie das Modul **Projektspalten** aus, und klicken Sie auf **Spaltenauswahl starten**.
-4.	Belassen Sie "Alle Spalten" in der Dropdown-Liste.
-5.	Klicken Sie auf das Pluszeichen (+), um wird eine neue Dropdown-Zeile zu erstellen.
-6.	Wählen Sie in dieser neuen Dropdown-Liste die Option "Spaltennamen ausschließen", und geben Sie "Kreditrisiko" in das Textfeld ein (Sie können die Spalte auch durch ihre Spaltennummer, 21, angeben).
-7.	Klicken Sie auf **OK**.
-
-	>Tipp: Die Spaltenauswahl folgt der Logik der Dropdown-Listen in der Reihenfolge ihrer Anzeige. In diesem Fall wurde das Modul **Projektspalten** angewiesen, alle Spalten außer der Spalte "Kreditrisiko" zu verarbeiten. Hätten wir die erste Dropdown-Liste ausgelassen, würde das Modul gar keine Spalte verarbeiten.
-
-8.	Verbinden Sie die Ausgabe des Moduls **Projektspalten**  mit der rechten Eingabe des Moduls **Modell bewerten**.  
-
-Unser Experiment sollte nun wie folgt aussehen:  
-
-![Scoring the trained model][2]  
-
-###Auswählen der Eingabe und Ausgabe des Diensts
-Im Originalmodell wurden die zu bewertenden Daten am rechten Eingabeport ("Dataset") des Moduls **Modell bewerten** eingegeben, und das bewertete Ergebnis wurde am Ausgabeport angezeigt ("Bewertetes Dataset"). Wenn der Dienst ausgeführt wird, sollen für die Benutzerdaten und die Ergebnisse die gleichen Ports verwendet werden.  
-
-1.	Klicken Sie mit der rechten Maustaste auf den rechten Eingabeport des Moduls **Modell bewerten**, und wählen Sie **Als Veröffentlichungseingabe festlegen** aus. Die Benutzerdaten müssen alle Daten des Funktionsvektors enthalten.
-
-	>**Tipp**: Wenn Sie die Benutzerdaten bearbeiten müssen, bevor sie in das Bewertungsmodul eingegeben werden (vergleichbar mit der Art und Weise, wie das Modul **Daten durch Skalierung transformieren** zum Vorbereiten der Daten für das SVM-Modell verwendet wurde), belassen Sie das Modul einfach im Webdienst, und legen Sie den Diensteingang auf den Eingangsport dieses Moduls fest.
-
-2.	Klicken Sie mit der rechten Maustaste auf den Ausgabeport, und wählen Sie **Als Veröffentlichungsausgabe festlegen** aus. Die Ausgabe des Moduls "Modell bewerten" wird vom Dienst zurückgegeben. Dazu gehören der Funktionsvektor sowie die Kreditrisikovorhersage und der Bewertungswahrscheinlichkeitswert.
-
-	>**Tipp**: Wenn der Webdienst nur einen Teil dieser Daten zurückgeben soll - wenn Sie z. B. nicht den ganzen Funktionsvektor zurückgeben möchten - können Sie ein Modul **Projektspalten** nach dem Modul **Modell bewerten** hinzufügen, es so konfigurieren, dass die nicht gewünschten Spalten ausgeschlossen werden, und dann die Ausgabe des Moduls **Projektspalten** auf die Webdienstausgabe festlegen.  
-  
-
->**Hinweis**: Vielleicht fragen Sie sich, weshalb das Dataset "UCI German Credit Card Data" und seine zugeordneten Module in Verbindung mit dem Modul **Modell bewerten** belassen haben. Der Dienst verwendet die Daten des Benutzers, nicht das Originaldataset. Weshalb also die Verbindung belassen?
-
-Es stimmt zwar, dass der Dienst die Originalkreditkartendaten nicht benötigt. Er benötigt aber das Schema für diese Daten, darunter Angaben zur Anzahl der vorhandenen Spalten, und welche Spalten numerisch sind. Diese Schemainformationen sind erforderlich, um die Benutzerdaten zu interpretieren. Wir lassen diese Komponenten verbunden, damit das Bewertungsmodul über das Datasetschema verfügt, wenn der Dienst ausgeführt wird. Es werden nicht die Daten verwendet, sondern nur das Schema.  
-
-	Führen Sie das Experiment ein letztes Mal aus (klicken Sie auf **AUSFÜHREN**). Wenn Sie überprüfen möchten, ob das Modell noch funktioniert, klicken Sie mit der rechten Maustaste auf die Ausgabe des Moduls **Modell bewerten**, und wählen Sie **Visualisieren** aus. Sie sehen, dass die Originaldaten zusammen mit dem Wert für das Kreditrisiko ("Bewertete Beschriftungen")' und dem Bewertungswahrscheinlichkeitswert ("Bewertete Wahrscheinlichkeiten") angezeigt werden.  
+Führen Sie das Experiment ein letztes Mal aus (klicken Sie auf **AUSFÜHREN**). Wenn Sie überprüfen möchten, ob das Modell noch funktioniert, klicken Sie mit der rechten Maustaste auf die Ausgabe des Moduls [Modell bewerten][score-model], und wählen Sie **Visualisieren** aus. Sie sehen, dass die Originaldaten zusammen mit dem Wert für das Kreditrisiko („Bewertete Beschriftungen“)' und dem Bewertungswahrscheinlichkeitswert („Bewertete Wahrscheinlichkeiten“) angezeigt werden.
 
 ##Veröffentlichen des Webdiensts
-Um einen aus dem Experiment abgeleiteten Webdienst zu veröffentlichen, klicken Sie auf **WEBDIENST VERÖFFENTLICHEN** unter dem Bereich, und klicken Sie bei Aufforderung auf **JA**. ML Studio veröffentlicht das Experiment als Webdienst auf dem ML-Staging-Server und führt Sie zum Dienst-Dashboard.   
 
->**Tipp**: Sie können den Webdienst nach der Veröffentlichung aktualisieren. Wenn Sie zum Beispiel das Modell ändern möchten, bearbeiten Sie einfach das zuvor gespeicherte Trainingsexperiment, passen Sie die Modellparameter an und speichern Sie das trainierte Modell (wodurch das zuvor gespeicherte Modell überschrieben wird). Wenn Sie das Bewertungsexperiment noch einmal öffnen, wird ein Hinweis angezeigt, dass etwas geändert wurde (Ihr Trainingsmodell), und Sie können das Experiment aktualisieren. Wenn Sie das Experiment erneut veröffentlichen, wird der Webdienst ersetzt und das aktualisierte Modell verwendet.  
+Um einen aus dem Experiment abgeleiteten Webdienst zu veröffentlichen, klicken Sie auf **WEBDIENST VERÖFFENTLICHEN** unter dem Bereich, und klicken Sie bei Aufforderung auf **JA**. Machine Learning Studio veröffentlicht das Experiment als Webdienst auf dem Machine Learning-Stagingserver und leitet Sie zum Dienstdashboard weiter.
 
-	Sie können den Dienst konfigurieren, indem Sie auf die Registerkarte **KONFIGURATION** klicken. Hier können Sie den Dienstnamen ändern (er erhält standardmäßig den Namen des Experiments) und eine Beschreibung hinzufügen. Sie können auch benutzerfreundlichere Beschriftungen für die Eingabe- und Ausgabespalten festlegen.  
+> [AZURE.TIP]Sie können den Webdienst nach der Veröffentlichung aktualisieren. Wenn Sie das Modell ändern möchten, bearbeiten Sie einfach die Modellparameter im Trainingsexperiment, und klicken Sie auf **UPDATE SCORING EXPERIMENT**. Wenn Sie das Experiment erneut veröffentlichen, wird der Webdienst ersetzt und das aktualisierte Modell verwendet.
 
-Der Switch **BEREIT FÜR DIE PRODUKTION?** wird weiter unten besprochen.  
+Sie können den Dienst konfigurieren, indem Sie auf die Registerkarte **KONFIGURATION** klicken. Hier können Sie den Dienstnamen ändern (er erhält standardmäßig den Namen des Experiments) und eine Beschreibung hinzufügen. Sie können auch benutzerfreundlichere Beschriftungen für die Eingabe- und Ausgabespalten festlegen.
 
 ##Testen des Webdiensts
-Klicken Sie auf der Seite **DASHBOARD** auf den Link **Test** unter **Staging-Dienste**. Ein Dialogfeld wird geöffnet, das nach den Eingabedaten für den Dienst fragt. Dies sind die gleichen Spalten, die im Originaldataset "German Credit Risk" angezeigt wurden.  
+Klicken Sie auf der Seite **DASHBOARD** auf den Link **Test** unter **Standardendpunkt**. Ein Dialogfeld wird geöffnet, in dem Sie nach den Eingabedaten für den Dienst gefragt werden. Dies sind die gleichen Spalten, die im Originaldataset „German Credit Risk“ angezeigt wurden.
 
-Geben Sie eine Reihe von Daten ein, und klicken Sie auf **OK**.  
+Geben Sie eine Reihe von Daten ein, und klicken Sie auf **OK**.
 
-Die vom Webdienst generierten Ergebnisse werden jetzt unten im Dashboard angezeigt. So, wie der Dienst konfiguriert wurde, werden die angezeigten Ergebnisse vom Bewertungsmodul generiert.   
+Die vom Webdienst generierten Ergebnisse werden jetzt unten im Dashboard angezeigt. So, wie der Dienst konfiguriert wurde, werden die angezeigten Ergebnisse vom Bewertungsmodul generiert.
 
-##Hochstufen des Webdiensts auf den Live-Server
-Bis jetzt wurde der Dienst auf dem ML-Staging-Server ausgeführt. Wenn er live gehen soll, können Sie anfordern, dass er auf den Live-Server hochgestuft wird.  
-
-Klicken Sie auf der Registerkarte **KONFIGURATION** auf "Ja" neben **BEREIT FÜR DIE PRODUKTION?** Damit wird eine Benachrichtigung an den IT-Administrator gesendet, dass dieser Webdienst für den Live-Server bereit ist. Der Administrator kann ihn dann auf den Live-Server hochstufen.
-
-![Promoting the service to the live environment][3]  
 
 ----------
 
-**Nächster Schritt: [Zugreifen auf den Webdienst][access-ws]**
+**Nächster Schritt: [Zugreifen auf den Webdienst](machine-learning-walkthrough-6-access-web-service.md)**
 
 [1]: ./media/machine-learning-walkthrough-5-publish-web-service/publish1.png
 [2]: ./media/machine-learning-walkthrough-5-publish-web-service/publish2.png
 [3]: ./media/machine-learning-walkthrough-5-publish-web-service/publish3.png
+[4]: ./media/machine-learning-walkthrough-5-publish-web-service/publish4.png
 
-<!--HONumber=46--> 
+
+<!-- Module References -->
+[evaluate-model]: https://msdn.microsoft.com/library/azure/927d65ac-3b50-4694-9903-20f6c1672089/
+[execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
+[metadata-editor]: https://msdn.microsoft.com/library/azure/370b6676-c11c-486f-bf73-35349f842a66/
+[normalize-data]: https://msdn.microsoft.com/library/azure/986df333-6748-4b85-923d-871df70d6aaf/
+[score-model]: https://msdn.microsoft.com/library/azure/401b4f92-e724-4d5a-be81-d5b0ff9bdb33/
+[split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
+[train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
+[two-class-boosted-decision-tree]: https://msdn.microsoft.com/library/azure/e3c522f8-53d9-4829-8ea4-5c6a6b75330c/
+[two-class-support-vector-machine]: https://msdn.microsoft.com/library/azure/12d8479b-74b4-4e67-b8de-d32867380e20/
  
+
+<!---HONumber=July15_HO2-->

@@ -13,22 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="04/13/2015" 
+	ms.date="05/20/2015" 
 	ms.author="glenga"/>
-
-<div class="dev-center-tutorial-subselector">
-	<a href="/documentation/articles/mobile-services-dotnet-backend-store-code-source-control/" title=".NET-Back-End" class="current">.NET-Back-End</a> | <a href="/documentation/articles/mobile-services-store-scripts-source-control/"  title="JavaScript-Back-End">JavaScript-Back-End</a>
-</div>
 
 # Speichern von Projektcode in der Quellcodeverwaltung
 
+> [AZURE.SELECTOR-LIST (Platform | Backend)]
+- [(Any | .NET)](mobile-services-dotnet-backend-store-code-source-control.md)
+- [(Any | Javascript)](mobile-services-store-scripts-source-control.md)
+
 In diesem Thema erfahren Sie, wie Sie die von Azure Mobile Services bereitgestellte Quellcodeverwaltung verwenden, um ein .NET-Back-End-Dienstprojekt zu speichern. Ihr Projekt kann veröffentlicht werden, indem Sie es einfach aus Ihrem lokalen Git-Repository in Ihren mobilen Dienst in der Produktionsumgebung hochladen.
-
-Dieses Lernprogramm führt Sie durch die folgenden Schritte:
-
-1. [Aktivieren der Quellcodeverwaltung für Ihren mobilen Dienst].
-2. [Installieren von Git und Erstellen des lokalen Repositorys].
-3. [Veröffentlichen Ihres Projekts mithilfe von Git]
 
 Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst durch Bearbeiten eines der Lernprogramme [Erste Schritte mit Mobile Services] oder [Hinzufügen von Mobile Services zu einer vorhandenen App] erstellt haben.
 
@@ -93,18 +87,7 @@ Nachdem Sie nun Ihr lokales Repository erstellt haben, können Sie Ihr .NET-Back
 
 Ihr mobiles Dienstprojekt wird jetzt in der Quellcodeverwaltung verwaltet, und Sie können Dienstaktualisierungen veröffentlichen, indem Sie einfach Aktualisierungen aus Ihrem lokalen Repository per Push bereitstellen. Informationen zum Vornehmen von Änderungen am Datenmodell in einem mobilen .NET-Back-End-Dienst, der eine SQL-Datenbank verwendet, finden Sie unter [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts].
 
-## <a name="next-steps"> </a>Nächste Schritte
-
-Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer Quellcodeverwaltung zu speichern. Erfahren Sie mehr über Mobile Services :
-
-+ [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts] <br/> In diesem Thema wird erläutert, wie Sie Entity Framework Code First-Migrationen zum Ändern des Datenmodells einer vorhandenen Azure SQL-Datenbank verwenden, um den Verlust vorhandener Daten zu vermeiden. 	
-
-+ [Aufrufen einer benutzerdefinierten API vom Client] <br/> Zeigt, wie benutzerdefinierte APIs erstellt werden, die vom Client aufgerufen werden können.
-
 <!-- Anchors. -->
-[Aktivieren der Quellcodeverwaltung für Ihren mobilen Dienst]: #enable-source-control
-[Installieren von Git und Erstellen des lokalen Repositorys]: #clone-repo
-[Veröffentlichen Ihres Projekts mithilfe von Git]: #deploy-scripts
 
 <!-- Images. -->
 
@@ -115,7 +98,8 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-data.md
 [Azure Management Portal]: https://manage.windowsazure.com/
-[Aufrufen einer benutzerdefinierten API vom Client]: mobile-services-dotnet-backend-ios-call-custom-api.md
+[Call a custom API from the client]: mobile-services-dotnet-backend-ios-call-custom-api.md
 [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts]: mobile-services-dotnet-backend-how-to-use-code-first-migrations.md
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

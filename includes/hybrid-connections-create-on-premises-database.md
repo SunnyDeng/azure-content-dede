@@ -78,4 +78,4 @@ Schließlich erstellen Sie eine neue SQL Server-Anmeldung mit eingeschränkten B
 
 4. **Führen** Sie die Abfrage aus, um die neue Anmeldung zu erstellen und die erforderlichen Berechtigungen für die lokale Datenbank zu erteilen.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

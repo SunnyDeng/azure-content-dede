@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwenden der Engagement-API auf der universellen Windows-Plattform" 
-	description="Verwenden der Engagement-API auf der universellen Windows-Plattform"
+	description="Verwenden der Engagement-API auf der universellen Windows-Plattform"			
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="piyushjo" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/07/2015" 
+	ms.date="07/07/2015" 
 	ms.author="piyushjo" />
 
 #Verwenden der Engagement-API auf der universellen Windows-Plattform
@@ -34,9 +34,9 @@ In den folgenden Abschnitten werden die [Mobile Engagement-Konzepte](../mobile-e
 
 ### `Session` und `Activity`
 
-Eine *Aktivität* ist normalerweise  einer Seite der Anwendung zugeordnet, d. h. die *Aktivität* beginnt, wenn die Seite angezeigt wird, und wird beendet, wenn die Seite geschlossen wird: Dies ist der Fall, wenn das Engagement-SDK unter Verwendung der `EngagementPage`-Klasse integriert worden ist.
+Eine *Aktivität* ist normalerweise einer Seite der Anwendung zugeordnet, d. h. die *Aktivität* beginnt, wenn die Seite angezeigt wird, und wird beendet, wenn die Seite geschlossen wird: Dies ist der Fall, wenn das Engagement-SDK unter Verwendung der `EngagementPage`-Klasse integriert worden ist.
 
- *Aktivitäten* können aber auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann eine bestimmte Seite in mehrere Teile unterteilt werden, um weitere Informationen über die Verwendung dieser Seite zu erhalten (z. B. um zu erfahren, wie oft und wie lange Dialoge innerhalb dieser Seite verwendet werden).
+*Aktivitäten* können aber auch manuell mithilfe der Engagement-API gesteuert werden. Auf diese Weise kann eine bestimmte Seite in mehrere Teile unterteilt werden, um weitere Informationen über die Verwendung dieser Seite zu erhalten (z. B. um zu erfahren, wie oft und wie lange Dialoge innerhalb dieser Seite verwendet werden).
 
 ##Berichterstellung für Aktivitäten
 
@@ -168,7 +168,7 @@ Es gibt drei Arten von Fehlern:
 
 ### Eigenständige Fehler
 
-#### Verweis
+#### Referenz-
 
 			void SendError(string name, Dictionary<object, object> extras = null)
 
@@ -192,7 +192,7 @@ Sitzungsfehler werden normalerweise zum Melden der Fehler verwendet, die Auswirk
 
 ### Auftragsfehler
 
-#### Verweis
+#### Referenz-
 
 			void SendJobError(string errorName, string jobName, Dictionary<object, object> extras = null)
 
@@ -305,7 +305,7 @@ Fügen Sie anschließend eine `Person`-Instanz zu einem Extra hinzu.
 			
 			EngagementAgent.Instance.SendEvent("Event", extras);
 
-> [AZURE.WARNING] Wenn Sie andere Objekttypen einfügen, stellen Sie sicher, dass deren ToString()-Methode implementiert wird, sodass eine visuell lesbare Zeichenfolge zurückgegeben wird.
+> [AZURE.WARNING]Wenn Sie andere Objekttypen einfügen, stellen Sie sicher, dass deren ToString()-Methode implementiert wird, sodass eine visuell lesbare Zeichenfolge zurückgegeben wird.
 
 ### Grenzen
 
@@ -323,7 +323,7 @@ Extras sind beschränkt auf **1024** Zeichen pro Aufruf.
 
 ##Informationen zur Berichterstellung für Anwendungen
 
-### Verweis
+### Referenz-
 
 			void SendAppInfo(Dictionary<object, object> appInfos)
 
@@ -358,5 +358,6 @@ Anwendungsinformationen sind beschränkt auf **1024** Zeichen pro Aufruf.
 Im vorherigen Beispiel enthält das an den Server gesendete JSON 44 Zeichen:
 
 			{"birthdate":"1983-12-07","gender":"female"}
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

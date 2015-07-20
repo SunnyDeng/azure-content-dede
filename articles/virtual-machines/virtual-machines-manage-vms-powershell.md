@@ -13,56 +13,84 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
-   ms.date="02/20/2015"
+   ms.date="06/24/2015"
    ms.author="kasing"/>
 
 # Verwalten Ihrer virtuellen Computer mit Azure PowerShell
 
-Bevor Sie beginnen, müssen Sie sicherstellen, dass Azure PowerShell installiert ist. Besuchen Sie hierzu [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
+Viele Aufgaben, die Sie jeden Tag zur Verwaltung der virtuellen Computer ausführen, können mithilfe von Azure PowerShell-Cmdlets automatisiert werden. In diesem Artikel finden Sie Beispiele für Befehle für einfachere Aufgaben und Links zu Artikeln, die die Befehle für komplexere Aufgaben behandeln.
 
-## Abrufen eines Images
+>[AZURE.NOTE]Wenn Sie Azure PowerShell noch nicht installiert und konfiguriert haben, finden Sie [hier](../install-configure-powershell.md) Anweisungen dazu.
 
-Vor dem Erstellen einer VM müssen Sie entscheiden, **welches Image verwendet werden soll**. Sie können mit dem folgenden Cmdlet eine Liste der Images abrufen:
+## So verwenden Sie die Beispielbefehle
+Sie müssen einen Teil des Texts in den Befehlen durch Text ersetzen, der für Ihre Umgebung geeignet ist. Die < and >-Symbole zeigen Text an, der ersetzt werden muss. Wenn Sie den Text ersetzen, entfernen Sie die Symbole, behalten jedoch die Anführungszeichen bei.
 
-      Get-AzureVMImage
+## Abrufen eines virtuellen Computers
+Dies ist eine einfache Aufgabe, die Sie häufig verwenden. Verwenden Sie sie zum Abrufen von Informationen zu einem virtuellen Computer, Ausführen von Aufgaben auf diesem oder Abrufen von Ausgaben zur Speicherung in einer Variablen.
 
-Dieses Cmdlet gibt eine Liste aller in Azure verfügbaren Images zurück. Es handelt sich um eine sehr lange Liste, und es kann schwierig sein, genau das Image zu finden, das Sie verwenden möchten. Im nachstehenden Beispiel werden andere PowerShell-Cmdlets verwendet, um die Liste der zurückgegebenen Images zu verkürzen. Es werden ausschließlich Images angezeigt, die auf **Windows Server 2012 R2 Datacenter** basieren. Zusätzlich wird nur das neueste Image abgerufen, indem für das zurückgegebene Image-Array [-1] angegeben wird.
+Um Informationen über den virtuellen Computer zu erhalten, führen Sie diesen Befehl aus und ersetzen allen Text in Anführungszeichen einschließlich der < and >-Zeichen:
 
-    $img = (Get-AzureVMImage | Select -Property ImageName, Label | where {$_.Label -like '*Windows Server 2012 R2 Datacenter*'})[-1]
+     Get-AzureVM -ServiceName "<cloud service name>" -Name "<virtual machine name>"
 
-## Erstellen einer VM
+Führen Sie zum Speichern der Ausgabe in eine $vm-Variable folgenden Code aus:
 
-Das Erstellen einer VM beginnt mit dem Cmdlet **New-AzureVMConfig**. Hier geben Sie über **name** den Namen Ihrer VM, mit **size** die Größe Ihrer VM und schließlich das für die VM verwendete **image** an. Dieses Cmdlet erstellt ein lokales VM-Objekt **$myVM**, das später mithilfe anderer Azure PowerShell-Cmdlets in diesen Anweisungen geändert wird.
+    $vm = Get-AzureVM -ServiceName "<cloud service name>" -Name "<virtual machine name>"
 
-      $myVM = New-AzureVMConfig -Name "testvm" -InstanceSize "Small" -ImageName $img.ImageName
+## Anmelden bei einem virtuellen Computer auf Windows-Basis
 
-Als Nächstes müssen Sie **Benutzername** und **Kennwort** für Ihre VM angeben. Hierzu verwenden Sie das Cmdlet **Add-AzureProvisioningConfig**. Über dieses Cmdlet erhält Azure Info darüber, welches Betriebssystem für die VM verwendet wird. Beachten Sie, dass Sie weiterhin Änderungen am lokalen **$myVM**-Objekt vornehmen.
+Führen Sie diese Befehle aus.
 
-    $user = "azureuser"
-    $pass = "&Azure1^Pass@"
-    $myVM = Add-AzureProvisioningConfig -Windows -AdminUsername $user -Password $pass
+>[AZURE.NOTE]Sie erhalten den Namen des virtuellen Computers und Clouddiensts über die Anzeige des **Get-AzureVM** Befehls.
+>
+	$svcName="<cloud service name>"
+	$vmName="<virtual machine name>"
+	$localPath="<drive and folder location to store the downloaded RDP file, example: c:\temp >"
+	$localFile=$localPath + "" + $vmname + ".rdp"
+	Get-AzureRemoteDesktopFile -ServiceName $svcName -Name $vmName -LocalPath $localFile -Launch
 
-Jetzt können Sie Ihre VM in Azure erstellen. Hierzu verwenden Sie das Cmdlet **New-AzureVM**.
+## Anhalten eines virtuellen Computers
 
-> [AZURE.NOTE] Sie müssen den Cloud-Dienst konfigurieren, bevor Sie Ihre VM erstellen können. Es gibt hierbei zwei Möglichkeiten.
-* Erstellen Sie den Cloud-Dienst mit dem Cmdlet "New-AzureService". Wenn Sie diese Methode wählen, müssen Sie sicherstellen, dass der im Cmdlet "New-AzureVM" festgelegte Speicherort dem Ihres Cloud-Diensts entspricht, andernfalls tritt bei der Ausführung des Cmdlets "New-AzureVM" ein Fehler auf.
-* Überlassen Sie diese Aufgabe dem Cmdlet "New-AzureVM". Sie müssen sicherstellen, dass der Dienstname eindeutig ist, andernfalls tritt bei der Ausführung des Cmdlets "New-AzureVM" ein Fehler auf.
+Führen Sie den folgenden Befehl aus:
 
-    New-AzureVM -ServiceName "mytestserv" -VMs $myVM -Location "West US"
+    Stop-AzureVM -ServiceName "<cloud service name>" -Name "<virtual machine name>"
 
-**OPTIONAL**
+>[AZURE.IMPORTANT]Verwenden Sie diesen Parameter, um die virtuelle IP-Adresse des Clouddiensts beizubehalten, falls es sich um den letzten virtuellen Computer in diesem Clouddienst handelt. <br><br> Wenn Sie diesen Parameter verwenden, wird der virtuelle Computer dennoch in Rechnung gestellt.
 
-Sie können weitere Cmdlets, z. B.**Add-AzureDataDisk** oder **Add-AzureEndpoint** verwenden, um zusätzliche Optionen für Ihre VM zu konfigurieren.
+## Starten eines virtuellen Computers
 
-## Abrufen einer VM
-Nun, da Sie eine VM auf Azure erstellt haben, möchten Sie sicherlich sehen, wie sie funktioniert. Verwenden Sie hierzu das nachstehend gezeigte Cmdlet **Get-AzureVM**:
+Führen Sie den folgenden Befehl aus:
 
-    Get-AzureVM -ServiceName "mytestserv" -Name "testvm"
+    Start-AzureVM -ServiceName "<cloud service name>" -Name "<virtual machine name>"
 
+## Anfügen eines Datenträgers
+Diese Aufgabe erfordert einige Schritte. Zunächst verwenden Sie das Cmdlet ****Add-AzureDataDisk****, um dem $vm-Objekt den Datenträger hinzuzufügen, anschließend aktualisieren Sie die Konfiguration des virtuellen Computers mit dem Cmdlet "Update-AzureVM".
 
-## Nächste Schritte
-[Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH](https://msdn.microsoft.com/library/azure/dn535788.aspx)<br>
-[Virtuelle Azure-Computer - häufig gestellte Fragen](https://msdn.microsoft.com/library/azure/dn683781.aspx)
+Sie müssen auch entscheiden, ob Sie einen neuen Datenträger anfügen oder einen, der Daten enthält. Für einen neuen Datenträger erstellt der Befehl die VHD-Datei und fügt sie im selben Befehl an.
 
-<!--HONumber=47-->
- 
+Um einen neuen Datenträger anzufügen, führen Sie den folgenden Befehl aus:
+
+    Add-AzureDataDisk -CreateNew -DiskSizeInGB 128 -DiskLabel "<main>" -LUN <0> -VM <$vm> `
+              | Update-AzureVM
+
+Um einen vorhandenen Datenträger anzufügen, führen Sie den folgenden Befehl aus:
+
+    Add-AzureDataDisk -Import -DiskName "<MyExistingDisk>" -LUN <0> `
+              | Update-AzureVM
+
+Führen Sie den folgenden Befehl zum Anfügen von Datenträgern aus einer vorhandenen VHD-Datei im Blob-Speicher aus:
+
+    Add-AzureDataDisk -ImportFrom -MediaLocation `
+              "<https://mystorage.blob.core.windows.net/mycontainer/MyExistingDisk.vhd>" `
+              -DiskLabel "<main>" -LUN <0> `
+              | Update-AzureVM
+
+## Erstellen eines virtuellen Windows-Computers
+
+Zum Erstellen eines auf Windows basierenden virtuellen Computers in Azure folgen Sie den Anweisungen unter [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md). In diesem Thema wird schrittweise erläutert, wie Sie einen PowerShell-Befehlssatz erstellen, mit dem Sie einen virtuellen Windows-Computer generieren, der mit folgenden Optionen vorkonfiguriert werden kann:
+
+- Mitgliedschaft in einer Active Directory-Domäne
+- Zusätzliche Datenträger
+- Mitgliedschaft in einer vorhandenen Lastenausgleichsgruppe
+- Statische IP-Adresse
+
+<!---HONumber=July15_HO2-->

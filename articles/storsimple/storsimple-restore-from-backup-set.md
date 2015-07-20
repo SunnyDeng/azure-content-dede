@@ -1,23 +1,15 @@
-<properties 
-   pageTitle="Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz"
-   description="Erläutert, wie Sie den Sicherungskatalog zum Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz verwenden."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
+<properties pageTitle="Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz" | Microsoft Azure description="Erläutert, wie Sie den Sicherungskatalog zum Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz verwenden." services="storsimple" documentationCenter="NA" authors="SharS" manager="Carolz" editor ="" /> <tags 
    ms.service="storsimple"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="04/13/2015"
+   ms.date="06/25/2015"
    ms.author="v-sharos" />
 
-#Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz
+# Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz
 
-##Übersicht
+## Übersicht
 
 Auf der Seite **Sicherungskatalog** werden alle Sicherungssätze angezeigt, die mithilfe manueller oder automatisierter Sicherungen erstellt wurden. Sie können auf dieser Seite alle Sicherungen für eine Sicherungsrichtlinie oder ein Volume auflisten, Sicherungen auswählen oder löschen oder eine Sicherung zum Wiederherstellen oder Klonen eines Volumes verwenden.
 
@@ -25,7 +17,7 @@ Auf der Seite **Sicherungskatalog** werden alle Sicherungssätze angezeigt, die 
 
 In diesem Lernprogramm erfahren Sie, wie Sie Ihr Gerät mithilfe der Seite **Sicherungskatalog** aus einem Sicherungssatz wiederherstellen.
 
-##So verwenden Sie den Sicherungskatalog 
+## So verwenden Sie den Sicherungskatalog 
 
 Die Seite **Sicherungskatalog** bietet eine Abfrage, mit der Sie die Auswahl der Sicherungssätze einschränken können. Sie können die abgerufenen Sicherungssätze anhand der folgenden Parameter filtern:
 
@@ -41,14 +33,14 @@ Die gefilterten Sicherungssätze werden dann basierend auf den folgenden Attribu
 - **Typ** – Sicherungssätze können lokale Momentaufnahmen oder Cloud-Momentaufnahmen sein. Eine lokale Momentaufnahme ist eine Sicherung aller Volumedaten, die auf dem lokalen Gerät gespeichert ist, während die Sicherung von Volumedaten in der Cloud als Cloud-Momentaufnahme bezeichnet wird. Lokale Momentaufnahmen bieten schnelleren Zugriff, während Cloud-Momentaufnahmen für Datenstabilität ausgewählt werden.
 - **Initiiert von** – die Sicherungen können automatisch nach einem Zeitplan oder manuell durch einen Benutzer initiiert werden. (Sie können eine Sicherungsrichtlinie verwenden, um Sicherungen zu planen. Es ist aber auch möglich, mithilfe der Option **Sicherung erstellen** eine interaktive Sicherung durchzuführen.)
 
-##Wiederherstellen von Geräten aus einer Sicherung
+## Wiederherstellen von Geräten aus einer Sicherung
 
 Sie können Ihr Gerät mithilfe der Seite **Sicherungskatalog** aus einem bestimmten Sicherungssatz wiederherstellen. Beachten Sie dabei, dass das Volume durch die Wiederherstellung auf den Zustand zum Zeitpunkt der Sicherung zurückgesetzt wird. Alle Daten, die nach dem Sicherungsvorgang hinzugefügt wurden, gehen verloren.
 
 > [AZURE.WARNING]Beim Wiederherstellen aus einer Sicherung werden die vorhandenen Volumes durch die Sicherung ersetzt. Dadurch können Daten verloren gehen, die nach dem Erstellen der Sicherung geschrieben wurden.
 
 
-###So führen Sie eine Wiederherstellung aus einem Sicherungssatz durch
+### So führen Sie eine Wiederherstellung aus einem Sicherungssatz durch
 
 1. Klicken Sie auf der Seite des StorSimple-Manager-Diensts auf die Registerkarte **Sicherungskatalog**.
 
@@ -78,8 +70,8 @@ Sie können Ihr Gerät mithilfe der Seite **Sicherungskatalog** aus einem bestim
 
 8. Nachdem die Wiederherstellung abgeschlossen ist, können Sie überprüfen, ob die Inhalte der Volumes durch die aus der Sicherung ersetzt wurden.
 
-##Nächste Schritte
+## Nächste Schritte
 
 Erfahren Sie, wie Sie [StorSimple-Volumes verwalten](storsimple-manage-volumes.md).
-<!--HONumber=52-->
- 
+
+<!---HONumber=July15_HO2-->

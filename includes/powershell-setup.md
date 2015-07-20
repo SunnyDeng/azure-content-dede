@@ -1,3 +1,4 @@
+
 ## Einrichten von PowerShell
 
 Bevor Sie Azure PowerShell verwenden können, müssen Sie die folgenden Schritte durchführen.
@@ -67,4 +68,4 @@ Sie können das aktuelle Azure-Abonnement durch Ausführen dieser Befehle in der
 
 Weitere Informationen zu Azure-Abonnements und -Konten finden Sie unter [Verbindung mit Ihrem Abonnement](powershell-install-configure.md#Connect).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

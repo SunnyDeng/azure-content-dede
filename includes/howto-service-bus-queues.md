@@ -1,4 +1,3 @@
-<a id="what-are-service-bus-queues"></a>
 ## Was sind Service Bus-Warteschlangen?
 
 Service Bus-Warteschlangen unterstützen ein Kommunikationsmodell namens **Brokermessaging**. Bei der Verwendung von Warteschlangen kommunizieren die Komponenten einer verteilten Anwendung nicht direkt miteinander, sondern tauschen Nachrichten über eine Warteschlange aus, die als Zwischenstufe (Broker) fungiert. Ein Nachrichtenproducer (Absender) übergibt eine Nachricht an die Warteschlange und setzt seine Funktion fort. Ein Nachrichtenconsumer (Empfänger) ruft die Nachricht asynchron aus der Warteschlange ab und verarbeitet sie. Der Producer muss nicht auf eine Antwort vom Consumer warten, um seine Funktion fortzusetzen und weitere Nachrichten zu schicken. Warteschlangen liefern die Nachrichten im **First In, First Out (FIFO)**-Verfahren an einen oder mehrere Consumer. Die Nachrichten werden also normalerweise in der gleichen Reihenfolge von den Consumern empfangen und verarbeitet, wie sie in die Warteschlange übergeben wurden, und jede Nachricht wird nur von einem Consumer verarbeitet.
@@ -53,10 +52,9 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer W
 
 	![](./media/howto-service-bus-queues/multi-web-45.png)
     
+5.  Notieren Sie den Schlüssel oder kopieren Sie ihn in die Zwischenablage.
 
-4.  Notieren Sie den Schlüssel oder kopieren Sie ihn in die Zwischenablage.
-
-###So rufen Sie die Anmeldeinformationen im Server-Explorer ab
+### So rufen Sie die Anmeldeinformationen im Server-Explorer ab
 
 Führen Sie die [hier](http://msdn.microsoft.com/library/ff687127.aspx) im Abschnitt **Verbindungsherstellung mit Azure aus Visual Studio** beschriebenen Schritte aus, um Verbindungsinformationen nicht aus dem Verwaltungsportal, sondern über Visual Studio abzurufen. Wenn Sie sich bei Azure anmelden, wird der Knoten **Service Bus** unterhalb der **Azure**-Struktur im Server-Explorer automatisch mit allen Namespaces ausgefüllt, die Sie bereits erstellt haben. Klicken Sie mit der rechten Maustaste auf einen Namespace und klicken Sie anschließend auf **Eigenschaften**, um Verbindungszeichenfolge und andere Metadaten dieses Namespace im Bereich **Eigenschaften** in Visual Studio anzuzeigen.
 
@@ -69,4 +67,4 @@ Notieren Sie den Wert **SharedAccessKey** oder kopieren Sie ihn in die Zwischena
 
   [34]: ./media/howto-service-bus-queues/VSProperties.png
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

@@ -1,27 +1,27 @@
 <properties 
-    pageTitle="StorSimple – Versionshinweise – Oktober 2014"
+    pageTitle="Versionsanmerkungen zu Update 0.1 der StorSimple 8000-Serie – Oktober 2014"
     description="Beschreibt die neuen Features, Probleme und Problemumgehungen für die StorSimple-Version vom Oktober 2014."
     services="storsimple"
     documentationCenter="NA"
     authors="SharS"
     manager="adinah"
     editor="tysonn" />
-<tags 
+ <tags 
     ms.service="storsimple"
     ms.devlang="NA"
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="TBD"
-    ms.date="04/13/2015"
+    ms.date="05/27/2015"
     ms.author="v-sharos" />
 
-#StorSimple – Versionshinweise – Oktober 2014  
+# Versionsanmerkungen zu Update 0.1 der StorSimple 8000-Serie – Oktober 2014  
 
-##Übersicht
+## Übersicht
 
-Dieses Dokument enthält Anmerkungen zu dieser Version und beschreibt die wichtigsten offenen Fragen für die Microsoft Azure StorSimple-Version von Oktober 2014. Es enthält auch eine Liste der StorSimple-Software- und -Firmware-Updates, die in dieser Version enthalten sind. Dies ist die erste Version nach der allgemeinen Verfügbarkeit von Microsoft Azure StorSimple (General Availability, GA) und entspricht der Softwareversion 6.3.9600.17312.
+Die folgenden Versionsanmerkungen weisen auf wichtige offene Punkte bei Update 0.1 der StorSimple 8000-Serie von Oktober 2014 hin. Es enthält auch eine Liste der StorSimple-Software- und -Firmware-Updates, die in dieser Version enthalten sind. Dies ist die erste Version, nachdem die Freigabeversion der StorSimple 8000-Serie im Juli 2014 allgemein verfügbar gemacht wurde. Sie entspricht der Softwareversion 6.3.9600.17312.
 
-Es wird empfohlen, dass Sie sofort nach der Installation des Geräts nach allen verfügbaren Updates suchen und diese installieren. Sie können auch automatische Updates aktivieren, um Updates mit hoher Priorität von Microsoft herunterzuladen und zu installieren, sobald diese verfügbar sind.  Weitere Informationen finden Sie im Thema zum Installieren von [Updates](https://msdn.microsoft.com/library/azure/1a2cd7de-706b-4d3c-8efb-02e322d3ae73#BKMK_Updates).
+Es wird empfohlen, dass Sie sofort nach der Installation des Geräts nach allen verfügbaren Updates suchen und diese installieren. Sie können auch automatische Updates aktivieren, um Updates mit hoher Priorität von Microsoft herunterzuladen und zu installieren, sobald diese verfügbar sind. Weitere Informationen finden Sie im Thema zum Installieren von [Updates](https://msdn.microsoft.com/library/azure/1a2cd7de-706b-4d3c-8efb-02e322d3ae73#BKMK_Updates).
 
 Lesen Sie vor der Bereitstellung der Updates in Ihrer StorSimple-Lösung die Informationen in den Versionsanmerkungen sorgfältig durch.
 
@@ -38,7 +38,7 @@ Bevor Ihr StorSimple-Gerät aktualisiert wird, sollten folgende Voraussetzungen 
 - Stellen Sie sicher, dass die Ports 80 und 443 auf Ihrem StorSimple-Gerät für die ausgehende Kommunikation verfügbar sind. Weitere Informationen finden Sie unter [Netzwerkanforderungen für das StorSimple-Gerät](https://msdn.microsoft.com/library/azure/dn772371.aspx).  
 - Deaktivieren Sie die Ports "Data 2" und "Data 3", sofern sie aktiviert sind, wenn die Softwareversion des Geräts älter als 6.3.9600.17312 (Oktober 2014-Update) ist, bevor Sie mit dem Update beginnen. Wenn Sie die Ports "Data 2" und "Data 3" aktiviert lassen, während Sie das Update anwenden, kann dies dazu führen, dass Ihr Gerätecontroller in den Wiederherstellungsmodus wechselt. Beachten Sie, dass beim Deaktivieren der Netzwerkschnittstellen alle zugehörigen Volumes offline geschaltet und ihre E/As für die Dauer des Updates unterbrochen werden.  
 
-##Neuigkeiten in der Oktober-Version
+## Neuigkeiten in der Oktober-Version
 
 Dieses Update umfasst die folgenden Verbesserungen:
 
@@ -46,7 +46,7 @@ Dieses Update umfasst die folgenden Verbesserungen:
 - Sie können die WAN-Bandbreitenzuordnung als Kombination von Wochentag und Uhrzeit planen. Dadurch erzielen Sie eine bessere Nutzung der WAN-Bandbreite in Spitzenzeiten. Verschiedene Bandbreitenvorlagen sind für verschiedene Volumecontainer zulässig. Weitere Informationen finden Sie unter [Bandbreitenvorlagen](https://msdn.microsoft.com/library/azure/1747f56e-858a-4cfe-a020-949d7db23b8b#bt).  
 - Sie können E-Mail-Benachrichtigungen konfigurieren, um die Administratoren und andere Personen proaktiv über vorhandene oder möglicherweise bevorstehende Probleme zu benachrichtigen. Weitere Informationen finden Sie unter [Konfigurieren von Warnungseinstellungen](https://msdn.microsoft.com/library/azure/02f1412f-e196-4a88-8eda-2113247ea47c#sec_11).  
 
-##In der Oktober-Version behobene Probleme
+## In der Oktober-Version behobene Probleme
 
 
 Die folgende Tabelle enthält eine Zusammenfassung der Probleme, die in diesem Update behoben wurden.
@@ -65,7 +65,7 @@ Die folgende Tabelle enthält eine Zusammenfassung der Probleme, die in diesem U
 | 10 | Speicherkonten-Schlüsselrotation | Das Cmdlet **Invoke-HcsmServiceDataEncryptionKeyChange** zum Rotieren der Speicherkontoschlüssel fordert den Benutzer nun zur Eingabe des Verschlüsselungsschlüssels für Dienstdaten auf. Dies ist eine Änderung gegenüber der vorherigen Version, in der der Verschlüsselungsschlüssel für Dienstdaten als ein Inlineparameter übergeben wurde. | Ja | Nein |
 | 11 | Failback innerhalb von 24 Stunden | Während der Notfallwiederherstellung wurde die Bereinigung auf dem Quellgerät nicht ordnungsgemäß ausgeführt, was zu einem Fehler beim Failback geführt hat. Dies wurde in dieser Version behoben. | Ja | Nein |
 
-##Bekannte Probleme in der Oktober-Version
+## Bekannte Probleme in der Oktober-Version
 
 Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in dieser Version.
 
@@ -84,19 +84,19 @@ Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in die
 | 11 | Webproxy | Wenn Sie den Webproxy für ein registriertes Gerät konfigurieren und aktivieren, müssen Sie den aktiven Controller auf Ihrem Gerät neu starten. | | Ja | Nein |
 | 12 | Hohe Cloud-Latenzen und hohe E/A-Arbeitsauslastung | Wenn Ihr StorSimple-Gerät mit einer Kombination aus sehr hohen Cloud-Latenzen (mehrere Sekunden) und hoher E/A-Arbeitsauslastung konfrontiert wird, verschlechtert sich die Leistung der Gerätevolumes, und es tritt ggf. der E/A-Fehler "Gerät nicht bereit" auf. | Sie müssen die Gerätecontroller manuell neu starten oder ein Gerätefailover ausführen, um dieses Problem zu beheben. | Ja | Nein |
 
-##Updates für das physische Gerät in der Oktober-Version
+## Updates für das physische Gerät in der Oktober-Version
 
 Wenn diese Updates auf ein physisches Gerät angewendet werden, ändert sich die Version der Software in 6.3.9600.17312. Sofern nicht anders angegeben, gelten diese Versionshinweise für alle Modelle des StorSimple-Geräts. Weitere Informationen zu diesen Updates finden Sie unter den Hinweisen zum [Softwareupdate vom Oktober 2014 für physikalische Geräte mit der Microsoft Azure StorSimple Appliance](http://support.microsoft.com/kb/2986997).
 
-##Updates des SAS-Controllers (Serial Attached SCSI) und der Firmware in der Oktober-Version
+## Updates des SAS-Controllers (Serial Attached SCSI) und der Firmware in der Oktober-Version
 
 Diese Version aktualisiert die Treiber und die Firmware für den SAS-Controller Ihres physischen Geräts. Weitere Informationen zum SAS-Controllerupdate finden Sie unter [Update vom Oktober 2014 für die LSI-SAS-Controller in der Microsoft Azure StorSimple Appliance](http://support.microsoft.com/kb/2987020).
 
 Diese Version wendet auch ein kumulatives Firmwareupdate zur Behebung von Zuverlässigkeitsproblemen mit den Hardwarekomponenten des Geräts an. Weitere Informationen zum Firmwareupdate finden Sie unter [Firmwareupdate vom Oktober 2014 für die Microsoft Azure StorSimple Appliance](http://support.microsoft.com/kb/2987015).
 
-##Updates für das virtuelle Gerät in der Oktober-Version
+## Updates für das virtuelle Gerät in der Oktober-Version
 
 Diese Version enthält keine Updates für das virtuelle Gerät. Durch die Installation des Updates ändert sich die Softwareversion des virtuellen Geräts nicht.
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

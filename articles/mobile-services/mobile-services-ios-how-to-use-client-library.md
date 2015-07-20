@@ -13,11 +13,8 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="03/18/2015"
+	ms.date="07/01/2015"
 	ms.author="krisragh"/>
-
-
-
 
 # Verwenden der iOS-Clientbibliothek für Azure Mobile Services
 
@@ -100,7 +97,7 @@ Mit `MSQuery` können Sie verschiedene Abfrageeigenschaften steuern, darunter di
 
 ## <a name="sorting"></a>Gewusst wie: Sortieren von Daten mit MSQuery
 
-Um die Ergebnisse zu sortieren, sehen wir uns ein Beispiel an. Um zuerst aufsteigend nach Feld `text` und dann absteigend nach  Feld `completion` zu sortieren, rufen Sie `MSQuery` wie folgt auf:
+Um die Ergebnisse zu sortieren, sehen wir uns ein Beispiel an. Um zuerst aufsteigend nach Feld `text` und dann absteigend nach Feld `completion` zu sortieren, rufen Sie `MSQuery` wie folgt auf:
 
 ```
 [query orderByAscending:@"text"];
@@ -329,4 +326,4 @@ Die Datei [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/az
 [CLI to manage Mobile Services tables]: ../virtual-machines-command-line-tools.md#Mobile_Tables
 [Konflikthandler]: mobile-services-ios-handling-conflicts-offline-data.md#add-conflict-handling
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

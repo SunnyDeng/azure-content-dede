@@ -237,5 +237,6 @@ Wir verwenden Ubuntu 14.04 LTS als Beispiel für diesen Artikel.
     Führen Sie den folgenden Befehl aus, um das System so einzurichten, dass beim Start MySQL gestartet wird:
 
            #mysql-test:~ # insserv mysql
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO2-->

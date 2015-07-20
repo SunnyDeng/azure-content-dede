@@ -4,15 +4,15 @@
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="06/09/2015"
+   ms.date="07/08/2015"
    ms.author="v-sharos" />
 
 # Installieren des StorSimple 8600-Geräts
@@ -41,10 +41,10 @@ Führen Sie dann die folgenden Schritte aus, um das Gerät auszupacken.
 1. Überprüfen Sie die Kartons und das Verpackungsmaterial auf Risse, Schnitte, Wasserschäden oder anderweitige offensichtliche Beschädigungen. Wenn der Karton oder die Verpackung stark beschädigt sind, öffnen Sie den Karton nicht. Wenden Sie sich an den Microsoft Support, um zu ermitteln, ob sich das Gerät in funktionsfähigem Zustand befindet.
 
 2. Öffnen Sie die beiden Kartons, und packen Sie das primäre Gehäuse und das EBOD-Gehäuse aus. Die folgende Abbildung zeigt das ausgepackte Speichergerät.
- 
-    **Abbildung 1: Das ausgepackte Speichergerät**
 
     ![Auspacken des Speichergeräts](./media/storsimple-8600-hardware-installation/HCSUnpackyour4Udevice.png)
+ 
+    **Abbildung 1: Das ausgepackte Speichergerät**
 
      Bezeichnung | Beschreibung 
      ----- | -------------
@@ -112,9 +112,9 @@ Im Lieferumfang ist ein Satz Montageschienen für die Verwendung mit einem 19-Zo
 
 2. In der Regel sind die Schienen bereits werkseitig installiert. Ist dies nicht der Fall, bringen Sie die linke und die rechte Gleitschiene an den Seiten des Gehäuses an. Sie werden auf jeder Seite mit sechs metrischen Schrauben befestigt. Als Hilfe bei der Ausrichtung sind die Gleitschienen mit **LH – Front** (Vorne links) und **RH – Front** (Vorne rechts) gekennzeichnet. Darüber hinaus weisen die Schienen jeweils an dem Ende, das in Richtung der Rückseite des Gehäuses befestigt wird, eine Verjüngung auf.
 
-    **Abbildung 2: Befestigen der Gleitschienen an den Seiten des Gehäuses**
-
     ![Befestigen von Gleitschienen am Gehäuse](./media/storsimple-8600-hardware-installation/HCSAttachingRailSlidestoEnclosureChassis.png)
+
+    **Abbildung 2: Befestigen der Gleitschienen an den Seiten des Gehäuses**
 
     Bezeichnung | Beschreibung
     ----- | -----------
@@ -129,9 +129,9 @@ Im Lieferumfang ist ein Satz Montageschienen für die Verwendung mit einem 19-Zo
 
 6. Wiederholen Sie diese Schritte für die andere Schienenbaugruppe.
 
-    **Abbildung 3: Befestigen der Schienenbaugruppen am Rack**
-
      ![Befestigen von Gleitschienen am Rackschrank](./media/storsimple-8600-hardware-installation/HCSAttachingRailSlidestoRackCabinet.png)
+
+    **Abbildung 3: Befestigen der Schienenbaugruppen am Rack**
 
      Bezeichnung | Beschreibung
      ----- | -----------
@@ -151,17 +151,17 @@ Führen Sie die folgenden Schritte aus, um das EBOD-Gehäuse unter Verwendung de
 
 2. Führen Sie das Gehäuse sorgfältig in die Schienen ein, und schieben Sie es dann vollständig in den Rackschrank hinein.
 
-    **Abbildung 4: Einbauen des Gehäuses in das Rack**
-
     ![Einführen des Geräts in das Rack](./media/storsimple-8600-hardware-installation/HCSInsertingDeviceintheRack.png)
+
+    **Abbildung 4: Einbauen des Gehäuses in das Rack**
 
 3. Sichern Sie das Gehäuse im Rack am linken und am rechten Flansch mit je einer der mitgelieferten Kreuzschlitzschrauben.
 
 4. Bringen Sie die Flanschkappen an, indem Sie diese an der vorgesehenen Position andrücken und einrasten lassen.
 
-    **Abbildung 5: Anbringen der Flanschkappen**
-
      ![Anbringen der Flanschkappen](./media/storsimple-8600-hardware-installation/HCSInstallingFlangeCaps.png)
+
+    **Abbildung 5: Anbringen der Flanschkappen**
  
      Bezeichnung | Beschreibung
      ----- | -----------
@@ -208,9 +208,9 @@ Im nächsten Schritt identifizieren Sie das primäre Gehäuse und das EBOD-Gehä
 
 1. Identifizieren Sie das primäre Gehäuse und das EBOD-Gehäuse. Sehen Sie sich dazu die Rückwand des jeweiligen Gehäuses an. Die folgende Abbildung bietet eine Orientierung.
 
-    **Abbildung 6: Rückseite des primären Gehäuses und des EBOD-Gehäuses**
-
     ![Primäres Gehäuse und EBOD-Gehäuse](./media/storsimple-8600-hardware-installation/HCSBackplaneofprimaryandEBODenclosure.png)
+
+    **Abbildung 6: Rückseite des primären Gehäuses und des EBOD-Gehäuses**
 
      Bezeichnung | Beschreibung
      ----- | -----------
@@ -220,9 +220,9 @@ Im nächsten Schritt identifizieren Sie das primäre Gehäuse und das EBOD-Gehä
 
 2. Suchen Sie am primären Gehäuse und am EBOD-Gehäuse nach der jeweiligen Seriennumer. Der Aufkleber mit der Seriennummer befindet sich jeweils an der hinteren Lasche des Gehäuses. Die Seriennummern beider Gehäuse müssen identisch sein. Wenn die Seriennummern nicht übereinstimmen, wenden Sie sich umgehend an den Microsoft Support. Die folgende Abbildung zeigt die Position der Seriennummern.
 
-    **Abbildung 7: Rückansicht des Gehäuses mit Position der Seriennummer**
-
     ![Position der Seriennummer](./media/storsimple-8600-hardware-installation/HCSRearviewofenclosureindicatinglocationofserialnumbersticker.png)
+
+    **Abbildung 7: Rückansicht des Gehäuses mit Position der Seriennummer**
 
      Bezeichnung | Beschreibung
      ----- | -----------
@@ -235,9 +235,9 @@ Im nächsten Schritt verwenden Sie die mitgelieferten SAS-Kabel, um das EBOD-Geh
 
 1. Identifizieren Sie die vier SAS (Serial Attached SCSI)-Anschlüsse am primären Gehäuse und am EBOD-Gehäuse. Die SAS-Anschlüsse sind am primären Gehäuse mit "EBOD" und am EBOD-Gehäuse mit "CTRL" beschriftet, wie in Abbildung 8 dargestellt.
 
-    **Abbildung 8: Position der SAS-Anschlüsse am primären Gehäuse und am EBOD-Gehäuse**
-
     ![Position der SAS-Anschlüsse](./media/storsimple-8600-hardware-installation/HCSSAScablingforyourdevice.png)
+
+    **Abbildung 8: Position der SAS-Anschlüsse am primären Gehäuse und am EBOD-Gehäuse**
 
      Bezeichnung | Beschreibung
      ----- | -----------
@@ -284,9 +284,9 @@ Führen Sie die folgenden Schritte aus, um das Gerät für die Stromversorgung z
 
 > [AZURE.IMPORTANT]Damit eine hohe Verfügbarkeit des Systems sichergestellt ist, sollten Sie sich unbedingt an das im folgenden Diagramm dargestellte Stromverkabelungsschema halten.
 
-   **Abbildung 9: Stromverkabelung des Geräts**
-
    ![Diagramm für die Stromverkabelung](./media/storsimple-8600-hardware-installation/HCSCableYour4UDeviceforPower.png)
+
+   **Abbildung 9: Stromverkabelung des Geräts**
 
      Label | Description
      ----- | -----------
@@ -311,9 +311,9 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
 
 1. Das Gerät verfügt über sechs Netzwerkschnittstellen an jedem Controller: vier Ethernet-Anschlüsse mit 1 GBit/s und zwei Ethernet-Anschlüsse mit 10 GBit/s. Mithilfe der folgenden Abbildung können Sie die Datenanschlüsse an der Rückwand des Geräts identifizieren.
 
-    **Abbildung 10: Rückseite des Geräts mit Datenanschlüssen**
-
      ![Rückwand des 8600-Geräts](./media/storsimple-8600-hardware-installation/HCSBackplaneof2UDevicewithPortsLabeled.jpg)
+
+    **Abbildung 10: Rückseite des Geräts mit Datenanschlüssen**
  
      Bezeichnung | Beschreibung
      ------- | -----------
@@ -332,9 +332,9 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
 
 Konfigurieren Sie mindestens eine Netzwerkschnittstelle für den Cloudzugriff und eine für iSCSI. Konfigurieren Sie für hohe Verfügbarkeit und Leistung zwei Paare von Netzwerkschnittstellen auf jedem Controller. Die Netzwerkverkabelung ist im folgenden Diagramm dargestellt. (Die Mindestkonfiguration des Netzwerks ist durch durchgängige blaue Linien gekennzeichnet. Die für hohe Verfügbarkeit und Leistung zusätzlich erforderliche Konfiguration wird durch die gepunkteten Linien dargestellt.)
 
-**Abbildung 11: Netzwerkverkabelung des Geräts**
-
 ![Netzwerkverkabelung des 4 HE-Geräts](./media/storsimple-8600-hardware-installation/HCSCableYour4UDeviceforNetwork.png)
+
+**Abbildung 11: Netzwerkverkabelung des Geräts**
 
 Bezeichnung | Beschreibung
 ----- | -----------
@@ -382,4 +382,4 @@ Das Gerät ist nun für Stromversorgung, Netzwerkzugriff und serielle Verbindung
 Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

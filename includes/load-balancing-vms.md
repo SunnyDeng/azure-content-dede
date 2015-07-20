@@ -1,3 +1,4 @@
+
 #Lastenausgleich für Azure-Infrastrukturdienste#
 
 Für Azure-Infrastrukturdienste kann Lastenausgleich auf zwei Ebenen genutzt werden:
@@ -60,4 +61,4 @@ Weitere Informationen finden Sie unter [Interner Lastenausgleich](http://msdn.mi
 
 <!-- LINKS -->
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

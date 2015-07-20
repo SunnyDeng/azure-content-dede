@@ -16,29 +16,29 @@
 	ms.date="02/12/2015" 
 	ms.author="kapiteir" />
 
-# SDK-Inhalt
+#SDK-Inhalt
 
-In diesem Dokument werden die Inhalte des SDK-Archivs aufgeführt und beschrieben.
+Dieses Dokument enthält eine Liste und beschreibt den Inhalt des SDK-Archivs.
 
 `mobile-engagement-VERSION.jar`
 
 > Klassendateien des Engagement-SDKs.
 
-Ordner `res`
+Ordner "`res`"
 
 > Engagement Reach SDK-Ressourcen (ziehbare Dateien und Layoutdateien, die in Ihre Anwendung einbezogen werden können).
 
-Ordner `src`
+Ordner "`src`"
 
 > Quellcode des Engagement-SDKs.
 >
-> Beachten Sie, dass die Quellen für den Dienst nicht enthalten sind (`com.microsoft.azure.engagement.service.EngagementService` und die zugehörigen Quelldateien).
+> Beachten Sie, dass die Quellen für den Dienst nicht eingeschlossen sind (`com.microsoft.azure.engagement.service.EngagementService` und die zugehörigen Quelldateien).
 
 `documentation.html`
 
 > Eine Verknüpfung mit der Dokumentwebsite, die der heruntergeladenen Version des SDKs entspricht.
 
 Andere Dateien sind Kopien der Softwarelizenzen.
-
-<!--HONumber=47-->
  
+
+<!---HONumber=July15_HO2-->

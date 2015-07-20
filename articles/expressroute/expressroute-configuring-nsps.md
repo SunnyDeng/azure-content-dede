@@ -13,7 +13,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="04/29/2015"
+   ms.date="06/29/2015"
    ms.author="cherylmc"/>
 
 #  Konfigurieren einer ExpressRoute-Verbindung über einen Netzwerkdienstanbieter
@@ -89,7 +89,7 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 		Verizon              Silicon Valley,Washington DC   10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000
 		
 
-3. **Fordern Sie einen Dienstschlüssel an, und übergeben Sie ihn an den Exchange-Anbieter.**
+3. **Fordern Sie einen Dienstschlüssel an übergeben Sie ihn an Ihren Netzwerkdienstanbieter.**
 
 	Für diese Anforderung verwenden Sie ein PowerShell-Cmdlet. In diesem Beispiel verwenden Sie AT&T Netbond als Dienstanbieter und geben eine 50-Mbps-ExpressRoute-Verbindung in Silicon Valley an. Wenn Sie einen anderen Anbieter und andere Einstellungen verwenden, ersetzen Sie bei Ihrer Anforderung die entsprechenden Informationen.
 
@@ -150,4 +150,4 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 		
 		Provisioned 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

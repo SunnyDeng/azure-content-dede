@@ -106,4 +106,4 @@ Zeigen Sie zur Wiedergabe eines Videos in Ihrem Browser auf die Datei "basicPlay
 
 [dash.js-Repository von GitHub](https://github.com/Dash-Industry-Forum/dash.js) (in englischer Sprache)
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO2-->

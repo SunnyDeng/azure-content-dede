@@ -1,3 +1,4 @@
+
 #### So installieren Sie Wartungsmodus-Updates über Windows PowerShell für StorSimple
 
 1. Wenn Sie dies noch nicht getan haben, greifen Sie auf die serielle Konsole des Geräts zu, und wählen Sie Option 1, d. h. die **Anmeldung mti Vollzugriff**. 
@@ -24,4 +25,4 @@
 
 8. Nachdem beide Controller aktualisiert wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [Beenden des Wartungsmodus](#exit-maintenance-mode).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

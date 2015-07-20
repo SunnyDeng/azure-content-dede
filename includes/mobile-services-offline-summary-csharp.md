@@ -24,4 +24,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
 * Um Datensätze aus dem lokalen Speicher des Geräts zu entfernen, wenn sie in der Datenbank des mobilen Diensts gelöscht wurden, aktivieren Sie "Vorläufiges Löschen". Andernfalls sollte Ihre App in regelmäßigen Abständen `IMobileServiceSyncTable.PurgeAsync()` aufrufen, um den lokalen Speicher zu löschen.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

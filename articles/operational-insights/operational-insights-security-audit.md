@@ -1,24 +1,25 @@
-<properties 
+<properties
    pageTitle="Entdecken Sie die Sicherheits- und Überwachungsdaten in Operational Insights"
-   description="Erfahren Sie, wie Sie mit dem Sicherheits- und Überwachungspack mit integrierten Suchabfragen für relevante Probleme, die Ihre Aufmerksamkeit erfordern, einen umfassenden Einblick in die Lage der IT-Sicherheit Ihres Unternehmens bekommen."
+   description="Sie erfahren, wie Sie mit der Sicherheits- und Überwachungslösung anhand von integrierten Suchabfragen für relevante Probleme, die Ihre Aufmerksamkeit erfordern, einen umfassenden Einblick in die Lage der IT-Sicherheit Ihres Unternehmens erhalten."
    services="operational-insights"
    documentationCenter=""
    authors="bandersmsft"
    manager="jwhit"
-   editor="tysonn" /> <tags 
+   editor="tysonn" />
+<tags
    ms.service="operational-insights"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/30/2015"
+   ms.date="07/02/2015"
    ms.author="banders" />
 
 # Entdecken Sie die Sicherheits- und Überwachungsdaten in Operational Insights
 
 [AZURE.INCLUDE [operational-insights-note-moms](../../includes/operational-insights-note-moms.md)]
 
-Das Sicherheits- und Überwachungspack von Operational Insights bietet mit integrierten Suchabfragen für relevante Probleme, die Ihre Aufmerksamkeit erfordern, einen umfassenden Einblick in die Lage der IT-Sicherheit Ihres Unternehmens.
+Die Sicherheits- und Überwachungslösung von Operational Insights bietet mit integrierten Suchabfragen für relevante Probleme, die Ihre Aufmerksamkeit erfordern, einen umfassenden Einblick in die Lage der IT-Sicherheit Ihres Unternehmens.
 
 Folgendes wird in diesem Artikel beschrieben:
 
@@ -30,10 +31,10 @@ Folgendes wird in diesem Artikel beschrieben:
 ## Einfache Untersuchung einer verdächtigen ausführbaren Datei
 
 1. Anmelden bei Operational Insights.
-2. Prüfen Sie auf der Seite **Übersicht**  die Informationen in der Kachel **Sicherheit und Überwachung** und klicken Sie sie an. ![Bild der Seite "Übersicht"](./media/operational-insights-security-audit/sec-audit-dash02.png)
+2. Prüfen Sie auf der Seite **Übersicht** die Informationen in der Kachel **Sicherheit und Überwachung** und klicken Sie sie an. ![Bild der Seite "Übersicht"](./media/operational-insights-security-audit/sec-audit-dash02.png)
 3. Prüfen Sie auf der Seite **Sicherheit und Überwachung** die Informationen auf dem Blatt **RELEVANTE PROBLEME**. Im Beispielbild sehen Sie 6 relevante Probleme für heute, 2 von gestern. In diesem Beispiel gibt es 1 verdächtige ausführbare Datei. Klicken Sie im Blatt **RELEVANTE PROBLEME** auf **Verdächtige ausführbare Dateien**. ![Bild der Seite "Sicherheit und Überwachung"](./media/operational-insights-security-audit/sec-audit-dash03.png)
-4. In der Suche werden die Abfrage sowie die Ergebnisse für die verdächtige ausführbare Datei, auf die Sie geklickt haben, angezeigt. Im Beispiel gibt es 1 Ergebnis, der Dateihash wird angezeigt. Klicken Sie auf die **DATEIHASH**-ID. ![Bild der Suchergebnisse "Dateihash"](./media/operational-insights-security-audit/sec-audit-search01.png) 
-5. In der Suche werden nun weitere Informationen über die ausführbare Datei angezeigt, u.a. der Dateipfad und der Prozessname. Klicken Sie auf **Prozess &lt;Dateiname&gt;**. In diesem Beispiel ist das HEXEDIT.EXE. ![Bild der Suchergebnisse "Prozess"](./media/operational-insights-security-audit/sec-audit-search02.png) 
+4. In der Suche werden die Abfrage sowie die Ergebnisse für die verdächtige ausführbare Datei, auf die Sie geklickt haben, angezeigt. Im Beispiel gibt es 1 Ergebnis, der Dateihash wird angezeigt. Klicken Sie auf die **DATEIHASH**-ID. ![Bild der Suchergebnisse "Dateihash"](./media/operational-insights-security-audit/sec-audit-search01.png)
+5. In der Suche werden nun weitere Informationen über die ausführbare Datei angezeigt, u.a. der Dateipfad und der Prozessname. Klicken Sie auf **Prozess &lt;Dateiname&gt;**. In diesem Beispiel ist das HEXEDIT.EXE. ![Bild der Suchergebnisse "Prozess"](./media/operational-insights-security-audit/sec-audit-search02.png)
 6. In der Suche wird die Abfrage um den Prozessnamen in Anführungszeichen ergänzt. In diesem Beispiel "**HEXEDIT.EXE"**. ![Bild der Suchabfrage](./media/operational-insights-security-audit/sec-audit-search03.png)
 7. Lassen Sie im Feld für die Suchabfrage nur den Prozessnamen und die Anführungszeichen stehen und klicken Sie dann auf das Suchsymbol. ![Bild der detaillierten Suchinformationen](./media/operational-insights-security-audit/sec-audit-search04.png)
 8. In der Suche werden ausführliche Informationen über den Prozess angezeigt, u.a. der oder die Computer, wo der Prozess lief, das entsprechende Benutzerkonto sowie Datum und Uhrzeit, zu der das Ereignis für den Prozess erstellt wurde.
@@ -43,13 +44,13 @@ Folgendes wird in diesem Artikel beschrieben:
 
 **Spurensuche**
 
-Wenn Sie mithilfe des Sicherheits- und Überwachungspacks eine forensische Analyse durchführen, suchen Sie nach Spuren, die potenziell böswillige Benutzer hinterlassen. Unabhängig davon, was Benutzer in ihrer IT-Umgebung tun, generieren viele ihrer Aktivitäten Sicherheitsartefakte. Beachten Sie, dass Angreifer den Inhalt der Protokolle oft löschen. Dies ist meist der erste Schritt, mit dem sie ihre Spur verwischen wollen.
+Wenn Sie mithilfe der Sicherheits- und Überwachungslösung eine forensische Analyse durchführen, suchen Sie nach Spuren, die potenziell böswillige Benutzer hinterlassen. Unabhängig davon, was Benutzer in ihrer IT-Umgebung tun, generieren viele ihrer Aktivitäten Sicherheitsartefakte. Beachten Sie, dass Angreifer den Inhalt der Protokolle oft löschen. Dies ist meist der erste Schritt, mit dem sie ihre Spur verwischen wollen.
 
 Ganz gleich, ob die Benutzer direkt oder per Remote auf ihre Computer zugreifen, der Zugriff wird in Ereignisprotokollen gespeichert. Operational Insights sammelt diese Artefakte *sobald sie auftreten*, noch bevor sie jemand manipulieren kann, und ermöglicht Ihnen, mittels Datenkorrelation über mehrere Computer verschiedene Analysen durchzuführen.
 
 **Grundlegendes zum Konfigurieren und Erfassen von Überwachungsereignissen**
 
-Um das Sicherheits- und Überwachungspack optimal zu nutzen, sollten Sie mithilfe der folgenden Ressourcen die Ebene der von Ihrer Windows-Umgebung erhobenen Überwachungsereignisse konfigurieren, so dass sie Ihren Anforderungen am besten entspricht.
+Um die Sicherheits- und Überwachungslösung optimal zu nutzen, sollten Sie mithilfe der folgenden Ressourcen die Ebene der von Ihrer Windows-Umgebung erhobenen Überwachungsereignisse konfigurieren, so dass sie Ihren Anforderungen am besten entspricht.
 
 - [Konfigurieren der Sicherheitsrichtlinieneinstellungen](https://technet.microsoft.com/library/dn135243(v=ws.10).aspx)
 
@@ -71,7 +72,7 @@ Die Windows-Umgebung ermöglicht Ihnen, den Umfang der sicherheitsrelevanten Auf
 
 **Untersuchung ungewöhnlicher Aktivitätsmuster**
 
-Sicherheitsverletzungen sind gewöhnlich auf legitime Anmeldedaten zurückzuführen und erfordern, dass ein böswilliger Benutzer versucht, durch Angriffe erhöhte Rechte zu erlangen. Der Schwerpunkt des Sicherheits- und Überwachungspacks liegt nicht auf der Angriffserkennung, die Funktion "relevante Probleme" hilft Ihnen jedoch dabei, Muster ungewöhnlicher Aktivitäten zu entdecken und zu untersuchen. So sollten Sie folgende und alle weiteren ungewöhnlichen Aktivitäten unter **Relevante Probleme** untersuchen.
+Sicherheitsverletzungen sind gewöhnlich auf legitime Anmeldedaten zurückzuführen und erfordern, dass ein böswilliger Benutzer versucht, durch Angriffe erhöhte Rechte zu erlangen. Der Schwerpunkt der Sicherheits- und Überwachungslösung liegt nicht auf der Angriffserkennung, aber die Funktion „Relevante Probleme“ hilft Ihnen dabei, Muster ungewöhnlicher Aktivitäten zu entdecken und zu untersuchen. So sollten Sie folgende und alle weiteren ungewöhnlichen Aktivitäten unter **Relevante Probleme** untersuchen.
 
 - ungewöhnliche Anmeldungen an einem Computer, den der Benutzer normalerweise nicht verwendet
 
@@ -87,7 +88,7 @@ Sicherheitsverletzungen sind gewöhnlich auf legitime Anmeldedaten zurückzufüh
 
 Sie müssen wahrscheinlich Computer- und Netzwerkkompatibilitätsrichtlinien und -vorschriften Ihres Unternehmens einhalten, die umfassende Überwachungsaufzeichnungen erfordern. Ein Finanzunternehmen zum Beispiel muss wahrscheinlich Aufzeichnungen machen, mit denen sich zu jedem Zeitpunkt nachweisen lässt, welcher Benutzer einen bestimmten Vorgang im Netzwerk durchgeführt hat. Es könnte auch nötig sein, detaillierte Berichte über die Aktivitäten eines bestimmten Benutzers oder ausgewählter Server nach Bedarf zu erstellen – und das zum Teil über viele Monate, manchmal sogar Jahre zurück.
 
-Verwenden Sie das Sicherheits- und Überwachungspack, um Überwachungsdaten Ihrer gesamten IT-Umgebung zu erfassen, gleich, ob von lokalen Computern oder aus der Cloud. Alle Überwachungsdaten werden gespeichert und indiziert. Beim Operational Insights Premium-Abonnement werden alle Daten unbegrenzt gespeichert. Sie können die Überwachungsdaten ansehen, Suchvorgänge ausführen und zwischen verschiedenen Datentypen und Computern korrelieren, um umfassende Ergebnisse für jedes Zeitintervall seit Beginn der Datensammlung zu erhalten.
+Verwenden Sie die Sicherheits- und Überwachungslösung, um Überwachungsdaten Ihrer gesamten IT-Umgebung zu erfassen – ob von lokalen Computern oder aus der Cloud. Alle Überwachungsdaten werden gemäß Ihrem Abonnement gespeichert, indiziert und beibehalten. Bei einem Premium-Abonnement von Operational Insights wird eine unbegrenzte Menge an Daten ein Jahr lang gespeichert. Sie können die Überwachungsdaten ansehen, Suchvorgänge ausführen und zwischen verschiedenen Datentypen und Computern korrelieren, um umfassende Ergebnisse für jedes Zeitintervall seit Beginn der Datensammlung zu erhalten.
 
 **Verwenden von Gruppenrichtlinien zur Erfassung von Überwachungsdaten**
 
@@ -97,4 +98,4 @@ Alle Überwachungsdaten, die Sie erfassen und an Operational Insights senden mö
 
 Wenn Sie zusätzlich zu den lokalen Richtlinieneinstellungen AppLocker zur Erfassung der Überwachungsdaten verwenden, wird Operational Insights diese Daten erfassen und dann können Sie sie ansehen.
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

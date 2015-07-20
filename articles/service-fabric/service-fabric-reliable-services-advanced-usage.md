@@ -62,4 +62,4 @@ Erweiterte Themen im Zusammenhang mit Service Fabric finden Sie in den folgenden
 - [Sicherer Replikationsdatenverkehr zustandsbehafteter Dienste in Azure Service Fabric](../service-fabric/service-fabric-replication-security.md)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

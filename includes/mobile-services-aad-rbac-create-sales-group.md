@@ -33,8 +33,8 @@ In diesem Abschnitt fügen Sie Ihrem Verzeichnis zwei neue Benutzer und die neue
    
     ![](./media/mobile-services-aad-rbac-create-sales-group/sales-group-id.png)
 
-4. Navigieren Sie zurück zu Konfigurationsseite von Mobile Services, und fügen Sie die Objekt-ID als App-Einstellung mit dem Namen **AAD\_SALES\_GROUP\_ID** hinzu. In diesem Lernprogramm wird die Objekt-ID der Gruppe als App-Einstellung verwendet, sodass die ID nicht anhand des Gruppennamens gesucht werden muss. Der Gruppenname kann sich ändern, die ID bleibt dagegen immer gleich.
+4. Navigieren Sie zurück zu Konfigurationsseite von Mobile Services, und fügen Sie die Objekt-ID als App-Einstellung mit dem Namen **AAD\\_SALES\\_GROUP\\_ID** hinzu. In diesem Lernprogramm wird die Objekt-ID der Gruppe als App-Einstellung verwendet, sodass die ID nicht anhand des Gruppennamens gesucht werden muss. Der Gruppenname kann sich ändern, die ID bleibt dagegen immer gleich.
 
     ![](./media/mobile-services-aad-rbac-create-sales-group/sales-group-id-app-setting.png)
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO2-->

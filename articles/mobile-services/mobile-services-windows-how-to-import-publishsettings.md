@@ -60,5 +60,6 @@ Bevor Sie den mobilen Dienst erstellen können, müssen Sie die .publishsettings
 [JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-users-js/
 
 [Azure Management Portal]: https://manage.windowsazure.com/
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

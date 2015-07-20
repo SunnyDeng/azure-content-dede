@@ -23,7 +23,7 @@
    	
 	Daraufhin wird die GET-Antwortseite für die API angezeigt.
 
-5. Klicken Sie auf **Try this out** und dann auf **Send**.
+5. Klicken Sie auf **Ausprobieren** und dann auf **Senden**.
  
 	![](./media/mobile-services-dotnet-backend-test-local-service-api-documentation/service-try-this-out-get-todoitems.png)
 
@@ -31,4 +31,4 @@
 
 	![](./media/mobile-services-dotnet-backend-test-local-service-api-documentation/service-try-this-out-get-response.png)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

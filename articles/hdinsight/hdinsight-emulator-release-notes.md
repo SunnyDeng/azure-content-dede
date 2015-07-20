@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/31/2015" 
+	ms.date="06/30/2015" 
 	ms.author="jgao"/>
 
 
@@ -43,7 +43,7 @@
 
 ### Neuerungen 
  
-* Es wurden Skripts hinzugefügt, um die Einstellung aller Apache Hadoop-Dienste auf automatischen oder manuellen Start zu vereinfachen. Die Standardeinstellung ist wie zuvor "automatic", aber nun können alle Dienste mit den unter "C:\Hadoop" installierten Skripts "set-onebox-manualstart.cmd" und "set-onebox-autostart.cmd" geändert werden. 
+* Es wurden Skripts hinzugefügt, um die Einstellung aller Apache Hadoop-Dienste auf automatischen oder manuellen Start zu vereinfachen. Die Standardeinstellung ist wie zuvor "automatic", aber nun können alle Dienste mit den unter "C:\\Hadoop" installierten Skripts "set-onebox-manualstart.cmd" und "set-onebox-autostart.cmd" geändert werden. 
 
 * Die Anzahl der erforderlichen Installationsabhängigkeiten wurde deutlich reduziert, um schnellere Installationen zu ermöglichen.
 
@@ -110,7 +110,7 @@
 
 	Im Dashboard finden Sie einen lokalen Standard-Cluster namens "local (hdfs)". Wenn Sie Azure-Blobspeicher als Speicher für Ihre lokale Installation wünschen, gehen Sie folgendermaßen vor:
 
-	1. Fügen Sie das Konto-Tag in die Datei core-site.xml unter C:\Hadoop\\hadoop-1.1.0-SNAPSHOT\\conf ein:       
+	1. Fügen Sie das Konto-Tag in die Datei core-site.xml unter C:\\Hadoop\\hadoop-1.1.0-SNAPSHOT\\conf ein:       
 
 			<property>
         		<name>fs.azure.account.key.{AccountName}</name>
@@ -245,7 +245,7 @@
 
 * Temp-Verzeichnis
 	
-	Die Datei "hadoop.tmp.dir" verweist auf den falschen Speicherort. Statt auf C:\hadoop\\hdfs verweist es auf C:\hdfs. Dieser Fehler wird mit dem nächsten Update von HDP behoben.
+	Die Datei "hadoop.tmp.dir" verweist auf den falschen Speicherort. Statt auf C:\\hadoop\\hdfs verweist es auf c:\\hdfs. Dieser Fehler wird mit dem nächsten Update von HDP behoben.
 
 * Betriebssystemeinschränkungen
 
@@ -276,4 +276,4 @@
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

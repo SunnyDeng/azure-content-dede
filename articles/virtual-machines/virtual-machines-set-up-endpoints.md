@@ -95,4 +95,7 @@ Informationen dazu, wie Sie ein Azure PowerShell-Cmdlet verwenden, um dies einzu
 
 [Informationen zu Netzwerk-Sicherheitsgruppen](https://msdn.microsoft.com/library/azure/dn848316.aspx)
 
-<!---HONumber=58--> 
+
+ 
+
+<!---HONumber=July15_HO2-->

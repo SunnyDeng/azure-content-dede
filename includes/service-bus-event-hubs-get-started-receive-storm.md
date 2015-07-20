@@ -6,7 +6,7 @@ Weitere Informationen zu Empfangsmustern von Event Hubs finden Sie unter [Event 
 
 In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in der der Event Hubs-Spout bereits verfügbar ist.
 
-1. Gehen Sie wie unter [HDInsight Storm – Erste Schritte](../articles/hdinsight-storm-getting-started.md) beschrieben vor, um einen neuen HDInsight-Cluster zu erstellen und über Remotedesktop eine Verbindung mit diesem herzustellen.
+1. Gehen Sie wie unter [HDInsight Storm – Erste Schritte](../hdinsight/hdinsight-storm-overview.md) beschrieben vor, um einen neuen HDInsight-Cluster zu erstellen und über Remotedesktop eine Verbindung mit diesem herzustellen.
 
 2. Kopieren Sie die Datei `%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar` in Ihre lokale Entwicklungsumgebung. Sie enthält events-storm-spout.
 
@@ -220,9 +220,9 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 	Diese Klasse erstellt einen neuen Ereignis-Hubs-Spout, und verwendet die Eigenschaften in der Konfigurationsdatei zum Instanziieren. Beachten Sie unbedingt, dass in diesem Beispiel eine der Anzahl der Partitionen auf dem Ereignis-Hub entsprechende die Anzahl von Spout-Aufgaben erstellt wird, um die maximale für diesen Ereignis-Hub zulässige Parallelität zulässig zu verwenden.
 
 <!-- Links -->
-[Event Hubs – Übersicht]: http://msdn.microsoft.com/library/azure/dn836025.aspx
-[HDInsight Storm]: http://azure.microsoft.com/documentation/articles/hdinsight-storm-overview/
-[Lernprogramm zur HDInsight-Sensoranalyse]: http://azure.microsoft.com/documentation/articles/hdinsight-storm-sensor-data-analysis/
+[Event Hubs – Übersicht]: event-hubs-overview.md
+[HDInsight Storm]: ../hdinsight/hdinsight-storm-overview.md
+[Lernprogramm zur HDInsight-Sensoranalyse]: ../hdinsight/hdinsight-storm-sensor-data-analysis.md
 
 <!-- Images -->
 
@@ -230,4 +230,4 @@ In diesem Lernprogramm wird eine [HDInsight Storm]-Installation verwendet, in de
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO2-->

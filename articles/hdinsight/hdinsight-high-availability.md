@@ -83,4 +83,4 @@ Das Verfahren für das SDK ist ähnlich. Die Erstellung und Bereitstellung eines
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

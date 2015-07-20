@@ -32,4 +32,4 @@
 
 3. Veröffentlichen Sie das Projekt für den mobilen Service erneut auf Azure.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

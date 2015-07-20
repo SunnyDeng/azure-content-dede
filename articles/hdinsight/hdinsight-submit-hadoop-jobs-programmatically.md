@@ -111,7 +111,7 @@ Eines dieser Beispiele dient zum Zählen von Worthäufigkeiten in Quelldateien. 
 
 	Der Ordner *example/data/WordCountOutput* ist der angegebene Ausgabeordner für die Ausführung des MapReduce-Aufrags. *part-r-00000* ist der Standarddateiname für MapReduce-Auftragsausgaben. Die Datei wird in dieselbe Ordnerstruktur im lokalen Ordner heruntergeladen. Im folgenden Screenshot ist der aktuelle Ordner der Stammordner "C:". Die Datei wird in folgenden Ordner heruntergeladen:
 
-*C:\example\\data\\WordCountOutput* 
+*C:\\example\\data\\WordCountOutput* 
 
 5. Führen Sie den folgenden Befehl aus, um die MapReduce-Auftragsausgabedatei auszudrucken:
 
@@ -729,4 +729,4 @@ In diesem Artikel haben Sie mehrere Möglichkeiten zu Bereitstellung von HDInsig
 [apache-hive]: http://hive.apache.org/
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

@@ -1,33 +1,33 @@
 <properties 
-    pageTitle="StorSimple – Versionshinweise – Februar 2015"
+    pageTitle="Versionsanmerkungen zu Update 0.3 der StorSimple 8000-Serie – Februar 2015"
     description="Beschreibt die neuen Features, Probleme und Problemumgehungen für die StorSimple-Version vom Februar 2015."
     services="storsimple"
     documentationCenter="NA"
     authors="SharS"
     manager="adinah"
     editor="tysonn" />
-<tags 
+ <tags 
     ms.service="storsimple"
     ms.devlang="NA"
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="TBD"
-    ms.date="04/13/2015"
+    ms.date="05/27/2015"
     ms.author="v-sharos" />
 
-#StorSimple – Versionshinweise – Februar 2015
+# Versionsanmerkungen zu Update 0.3 der StorSimple 8000-Serie – Februar 2015
 
-##Übersicht
+## Übersicht
 
-Dieses Dokument beschreibt die wichtigsten offenen Fragen für die Microsoft Azure StorSimple-Version von Februar 2015. Es enthält auch eine Liste der StorSimple-Software- und -Firmware-Updates, die in dieser Version enthalten sind. Dies ist die dritte Version nach der allgemeinen Verfügbarkeit von Microsoft Azure StorSimple (General Availability, GA).
+Die folgenden Versionsanmerkungen weisen auf wichtige offene Punkte bei Update 0.3 der StorSimple 8000-Serie von Februar 2015 hin. Es enthält auch eine Liste der StorSimple-Software- und -Firmware-Updates, die in dieser Version enthalten sind. Dies ist die dritte Version, nachdem die Freigabeversion der StorSimple 8000-Serie im Juli 2014 allgemein verfügbar gemacht wurde.
   
 Dieses Update ändert die Softwareversion des Geräts nach dem Januar-Update nicht. Es bleibt weiterhin Version 6.3.9600.17312. Sie können überprüfen, ob das Update installiert wurde, indem Sie das Datum für **Letzte Aktualisierung** prüfen. Wenn das Datum nach dem 10.02.2015 liegt, wurde das Update erfolgreich installiert.
 
-Es wird empfohlen, dass Sie sofort nach der Installation des StorSimple-Geräts nach allen verfügbaren Updates suchen und diese installieren. Sie können auch automatische Updates aktivieren, um Updates mit hoher Priorität von Microsoft herunterzuladen und zu installieren, sobald diese verfügbar sind.  Weitere Informationen finden Sie im Thema zum Installieren von [Updates](https://msdn.microsoft.com/library/azure/1a2cd7de-706b-4d3c-8efb-02e322d3ae73#BKMK_Updates).
+Es wird empfohlen, dass Sie sofort nach der Installation des StorSimple-Geräts nach allen verfügbaren Updates suchen und diese installieren. Sie können auch automatische Updates aktivieren, um Updates mit hoher Priorität von Microsoft herunterzuladen und zu installieren, sobald diese verfügbar sind. Weitere Informationen finden Sie im Thema zum Installieren von [Updates](https://msdn.microsoft.com/library/azure/1a2cd7de-706b-4d3c-8efb-02e322d3ae73#BKMK_Updates).
 
 Lesen Sie vor der Bereitstellung des Updates in Ihrer StorSimple-Lösung die Informationen in den Versionsanmerkungen sorgfältig durch.
 
->[AZURE.IMPORTANT] 
+>[AZURE.IMPORTANT]
 >
 > - Verwenden Sie den StorSimple-Manager-Dienst und nicht die Windows PowerShell für StorSimple, um die Februar-Updates zu installieren.   
 > - Es dauert ungefähr eine Stunde, dieses Update zu installieren. Wenn Sie jedoch kumulative Updates installieren, kann dieser Vorgang ungefähr drei Stunden dauern.  
@@ -40,13 +40,13 @@ Bevor Ihr StorSimple-Gerät aktualisiert wird, sollten folgende Voraussetzungen 
 - Stellen Sie sicher, dass die Ports 80 und 443 auf Ihrem StorSimple-Gerät für die ausgehende Kommunikation verfügbar sind. Weitere Informationen finden Sie unter [Netzwerkanforderungen für das StorSimple-Gerät](https://msdn.microsoft.com/library/azure/dn772371.aspx).
 - Deaktivieren Sie die Ports "Data 2" und "Data 3", sofern sie aktiviert sind, wenn die Softwareversion des Geräts älter als 6.3.9600.17312 (Oktober 2014-Update) ist, bevor Sie mit dem Update beginnen. Wenn Sie die Ports "Data 2" und "Data 3" aktiviert lassen, während Sie das Update anwenden, kann dies dazu führen, dass Ihr Gerätecontroller in den Wiederherstellungsmodus wechselt. Beachten Sie, dass beim Deaktivieren der Netzwerkschnittstellen alle zugehörigen Volumes offline geschaltet und ihre E/As für die Dauer des Updates unterbrochen werden.  
   
-##Neuigkeiten in der Februar-Version
+## Neuigkeiten in der Februar-Version
 
 Dieses Update enthält eine Korrektur des Problems beim Zurücksetzen auf die Werkseinstellungen auf Geräten, deren GA-Version mit der Version vom Oktober 2014 aktualisiert wurde. Weitere Informationen finden Sie unter [In dieser Version behobene Probleme](#issues-fixed-in-the-february-release).
 
 Dieses Update enthält keine neuen Features oder Funktionen.
 
-##In der Februar-Version behobene Probleme
+## In der Februar-Version behobene Probleme
 
 Die folgende Tabelle beschreibt das Problem, das in diesem Update behoben wurde.
  
@@ -55,7 +55,7 @@ Die folgende Tabelle beschreibt das Problem, das in diesem Update behoben wurde.
 | 1 | Zurücksetzen auf Werkseinstellungen | Sie versuchen ein Zurücksetzen auf die Werkseinstellungen auf einem Gerät, auf dem ursprünglich die GA-Version (Version 6.3.9600.17215) installiert war, das aber auf die Version vom Oktober (Version 6.3.9600.17312) aktualisiert wurde. Das Zurücksetzen auf die Werkseinstellungen misslingt, und das Gerät wird instabil. | Ja | Nein |
 
 
-##Bekannte Probleme in der Februar-Version
+## Bekannte Probleme in der Februar-Version
 
 Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in dieser Version.
  
@@ -73,17 +73,17 @@ Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in die
 | 10 | Webproxy | Wenn Sie den Webproxy für ein registriertes Gerät konfigurieren und aktivieren, müssen Sie den aktiven Controller auf Ihrem Gerät neu starten. | | Ja | Nein |
 | 11 | Hohe Cloud-Latenzen und hohe E/A-Arbeitsauslastung | Wenn Ihr StorSimple-Gerät mit einer Kombination aus sehr hohen Cloud-Latenzen (mehrere Sekunden) und hoher E/A-Arbeitsauslastung konfrontiert wird, verschlechtert sich die Leistung der Gerätevolumes, und es tritt ggf. der E/A-Fehler "Gerät nicht bereit" auf. | Sie müssen die Gerätecontroller manuell neu starten oder ein Gerätefailover ausführen, um dieses Problem zu beheben. | Ja | Nein |
 
-##Updates für das physische Gerät in der Februar-Version
+## Updates für das physische Gerät in der Februar-Version
 
 Dieses Update enthält eine Korrektur des Problems beim Zurücksetzen auf die Werkseinstellungen auf Geräten, deren GA-Version mit der Version vom Oktober 2014 aktualisiert wurde. Es enthält keine anderen Updates für das StorSimple-Gerät.
 
-##Updates des SAS-Controllers (Serial Attached SCSI) und der Firmware in der Februar-Version
+## Updates des SAS-Controllers (Serial Attached SCSI) und der Firmware in der Februar-Version
 
 Diese Version enthält keine Updates für den SAS-Controller (Serial Attached SCSI) oder die Firmware. Das Treiberupdate wurde in der Version vom Oktober 2014 durchgeführt.
 
-##Updates für das virtuelle Gerät in der Februar-Version
+## Updates für das virtuelle Gerät in der Februar-Version
 
 Diese Version enthält keine Updates für das virtuelle Gerät. Durch die Installation des Updates ändert sich die Softwareversion des virtuellen Geräts nicht.
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

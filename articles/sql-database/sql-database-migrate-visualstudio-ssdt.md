@@ -85,7 +85,7 @@ Nach Abschluss der Migration empfiehlt es sich, das Schema in der migrierten Dat
 
 2.	Klicken Sie mit der rechten Maustaste auf die Datenbank, und wählen Sie **Schemavergleich...** aus. Dadurch wird auf der linken Seite ein neuer Schemavergleich mit der Azure-Datenbank als Quelle geöffnet. Verwenden Sie die Dropdownliste "Ziel auswählen" auf der rechten Seite, um die Zieldatenbank oder die Momentaufnahmedatei für den Vergleich auszuwählen.
 
-3.	Klicken Sie, wenn Quelle und Ziel ausgewählt sind, auf "Vergleichen", um den Vergleich auszulösen. Das Laden des Schemas aus einer komplexen Datenbank in der Azure SQL-Datenbank kann eine beträchtliche Zeit dauern. Das Laden des Schemas und die Ausführung anderer Metadatenaufgaben auf einer Azure SQL-Datenbank geht mit einem höheren Tarif schneller.
+3.	Klicken Sie, wenn Quelle und Ziel ausgewählt sind, auf "Vergleichen", um den Vergleich auszulösen. Das Laden des Schemas aus einer komplexen Datenbank in der Azure SQL-Datenbank kann eine beträchtliche Zeit dauern. Das Laden des Schemas und die Ausführung anderer Metadatenaufgaben auf einer Azure SQL-Datenbank geht mit einer höheren Preisstufe schneller.
 
 4.	Überprüfen Sie die Unterschiede, wenn der Vergleich abgeschlossen ist. Sie sollten grundsätzlich keine Änderungen an einem Schema anwenden, sofern Sie keine Beanstandungen haben.
 
@@ -93,4 +93,6 @@ Im Schemavergleich unten wird die Adventure Works 2014-Datenbank in Azure SQL-D
 
 ![alt text](./media/sql-database-migrate-visualstudio-ssdt/13MigrateSSDT.png)
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=July15_HO2-->

@@ -48,7 +48,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 <tr><td>HDInsight-Clustername</td><td>$clusterName</td><td></td><td>Der Name des HDInsight-Clusters.</td></tr>
 <tr><td>Cluster-Benutzername</td><td>$clusterUsername</td><td></td><td>Der bei der Bereitstellung angegebene Cluster-Benutzername.</td></tr>
 <tr><td>Cluster-Kennwort</td><td>$clusterPassword</td><td></td><td>Das Benutzerkennwort für den Cluster.</td></tr>
-</table> >[AZURE.NOTE]Tragen Sie die Werte in die Tabelle ein. Dies ist beim Durcharbeiten dieses Lernprogramms hilfreich.
+</table>> [AZURE.NOTE]Tragen Sie die Werte in die Tabelle ein. Dies ist beim Durcharbeiten dieses Lernprogramms hilfreich.
 
 
 
@@ -176,4 +176,4 @@ Sie haben erfahren, wie Ambari-Überwachungs-API-Aufrufe verwendet werden. Weite
 [img-jobtracker-output]: ./media/hdinsight-monitor-use-ambari-api/hdi.ambari.monitor.jobtracker.output.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

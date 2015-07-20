@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Windows Universal SDK – Übersicht" 
-	description="Übersicht über das Windows Universal SDK für Azure Mobile Engagement" 
+	description="Übersicht über das Windows Universal SDK für Azure Mobile Engagement" 									
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="piyushjo" 
@@ -32,9 +32,9 @@ Klicken Sie, um den [SDK-Inhalt](mobile-engagement-windows-store-sdk-content.md)
 
 ##Versionshinweise
 
-###3.0.1 (29.04.2015)
+###3.1.0 (21.05.2015)
 
--   Es wurde ein Fehler behoben, der sich auf die SDK-Initialisierung in einigen Windows Phone WinRT-Apps auswirkt.
+-   Die Mobile Engagement-Geräte-ID basiert jetzt auf einer während der Installation generierten GUID.
 
 Eine frühere Version finden Sie unter [Vollständige Versionshinweise](mobile-engagement-windows-store-release-notes.md)
 
@@ -52,4 +52,5 @@ Dieser Schritt betrifft nur angepasste Ressourcen. Wenn Sie die Ressourcen, die 
 ### Upgrade von älteren Versionen
 
 Siehe [Upgrade-Verfahren](mobile-engagement-windows-store-upgrade-procedure/)
-<!--HONumber=54--> 
+
+<!---HONumber=July15_HO2-->

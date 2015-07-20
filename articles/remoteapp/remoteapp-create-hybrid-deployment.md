@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen einer Hybridsammlung für RemoteApp" 
+	pageTitle="Erstellen einer Hybrid-Sammlung für Azure RemoteApp" 
 	description="Erfahren Sie, wie Sie eine Bereitstellung von RemoteApp erstellen, die eine Verbindung mit Ihrem internen Netzwerk herstellt." 
 	services="remoteapp" 
 	documentationCenter="" 
@@ -13,19 +13,19 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/28/2015" 
+	ms.date="05/28/2015" 
 	ms.author="elizapo"/>
 
-# Erstellen einer Hybridsammlung für RemoteApp
+# Erstellen einer Hybrid-Sammlung für Azure RemoteApp
 
 Es gibt zwei Arten von RemoteApp-Sammlungen:
 
 - Cloud: befindet sich vollständig in Azure und wird mithilfe der Option **Schnellerfassung** im Azure-Verwaltungsportal erstellt.  
 - Hybrid: enthält ein virtuelles Netzwerk für den lokalen Zugriff und wird mithilfe der Option **Create with VNET** im Verwaltungsportal erstellt.
 
-Dieses Lernprogramm führt Sie durch den Prozess für das Erstellen einer Hybrid-Sammlung. Es besteht aus sieben Schritten:
+Dieses Lernprogramm führt Sie durch den Prozess für das Erstellen einer Hybrid-Sammlung. Der Vorgang umfasst acht Schritte:
 
-1.	Erstellen Sie ein [benutzerdefiniertes Vorlagenimage für RemoteApp](remoteapp-imageoptions.md), oder wählen Sie eines der in Ihrem Abonnement enthaltenen Images aus.
+1.	Entscheiden Sie, welches [Image](remoteapp-imageoptions.md) Sie für Ihre Sammlung verwenden möchten. Sie können ein benutzerdefiniertes Image erstellen oder ein Microsoft-Image erstellen, das in Ihrem Abonnement enthalten ist.
 2. Richten Sie Ihr virtuelles Netzwerk ein.
 2.	Erstellen einer RemoteApp-Sammlung.
 2.	Verknüpfen Sie die Sammlung mit Ihrem virtuellen Netzwerk.
@@ -42,8 +42,8 @@ Bevor Sie mit der Erstellung der Sammlung beginnen, benötigen Sie Folgendes:
 - Erstellen Sie ein Benutzerkonto in Active Directory, das als Konto für den RemoteApp-Dienst dient. Beschränken Sie die Berechtigungen für dieses Konto, sodass es nur Computer in die Domäne einbinden kann.
 - Sammeln Sie Informationen zu Ihrem lokalen Netzwerk: IP-Adressdaten und Details zum VPN-Gerät.
 - Installieren Sie das [Azure PowerShell](../install-configure-powershell.md)-Modul.
-- Sammeln Sie Informationen zu den Benutzern, denen Sie Zugriff gewähren möchten. Dies können Informationen zu Microsoft-Konten oder Active Directory-Geschäftskonten sein.
-- Erstellen Sie Ihr Vorlagenimage. Ein RemoteApp-Vorlagenimage enthält die Apps und Programme, die Sie für Ihre Benutzer veröffentlichen möchten. Weitere Informationen finden Sie unter [Erstellen eines RemoteApp-Images](remoteapp-imageoptions.md). 
+- Sammeln Sie Informationen zu den Benutzern, denen Sie Zugriff gewähren möchten. Sie benötigen den Azure Active Directory-Benutzerprinzipalnamen (z. B. name@contoso.com) für jeden Benutzer.
+- Wählen Sie Ihr Vorlagenimage aus. Ein RemoteApp-Vorlagenimage enthält die Apps und Programme, die Sie für Ihre Benutzer veröffentlichen möchten. Weitere Informationen finden Sie unter [RemoteApp-Imageoptionen](remoteapp-imageoptions.md). 
 - [Konfigurieren von Active Directory für RemoteApp](remoteapp-ad.md)
 
 
@@ -134,5 +134,6 @@ Nach dem Erstellen der RemoteApp-Sammlung müssen Sie nun die Benutzer hinzufüg
 Das war alles: Sie haben die RemoteApp-Hybrid-Sammlung nun erfolgreich erstellt und bereitgestellt. Als Nächstes müssen die Benutzer den Remotedesktopclient herunterladen und installieren. Die URL für den Client finden Sie auf der RemoteApp-Schnellstartseite. Die Benutzer müssen sich nun beim Client anmelden und können dann auf die veröffentlichten Apps zugreifen.
 
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

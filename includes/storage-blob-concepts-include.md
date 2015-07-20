@@ -22,12 +22,45 @@ Der BLOB-Dienst umfasst die folgenden Komponenten:
 
 -   **Blob:** Eine Datei von beliebiger Art und Größe. Es gibt zwei Arten von Blobs, die im Azure-Speicher gespeichert werden können: Block- und Seitenblobs. Die meisten Dateien sind Block-BLOBs. Ein einzelner Block-Blob kann bis zu 200 GB groß sein. In diesem Tutorial werden Block-BLOBs verwendet. Der andere Blob-Typ, Seiten-Blobs, kann bis zu 1 TB groß sein und ist effizienter, wenn Byte-Bereiche in einer Datei häufig geändert werden. Weitere Informationen über BLOBs finden Sie unter [Grundlegendes zu Block-BLOBs und Seiten-BLOBs](https://msdn.microsoft.com/library/azure/ee691964.aspx).
 
--   **URL-Format:** Blobs sind über das folgende URL-Format adressierbar: http://`<storage
-    account>`.blob.core.windows.net/`<container>`/`<blob>`
+## Benennen von Containern und Blobs und verweisen auf diese
+
+Sie können einen Blob im Speicherkonto über das folgende URL-Format adresssieren:
+   
+    http://<storage-account-name>.blob.core.windows.net/<container-name>/<blob-name>  
       
-    Zur Adressierung eines der Blobs im Diagramm oben sollte die folgende Beispiel-URL verwendet werden:`http://sally.blob.core.windows.net/movies/MOV1.AVI`
+Hier ist ein Beispiel für eine URL, die einen der Blobs im Diagramm oben adressiert:
+
+    http://sally.blob.core.windows.net/movies/MOV1.AVI
+
+### Benennungsregeln für Container
+
+Ein Containername muss ein gültiger DNS-Name sein und den folgenden Regeln entsprechen:
+
+- Der Containername muss aus Kleinbuchstaben bestehen.
+- Containernamen müssen mit einem Buchstaben oder einer Zahl beginnen und dürfen nur Buchstaben, Zahlen und Bindestriche (-) enthalten.
+- Jedem Bindestrich (-) muss unmittelbar ein Buchstabe oder eine Zahl vorangehen und folgen von einem Buchstaben oder einer Zahl; zudem dürfen nicht mehrere Bindestriche direkt aufeinander folgen.
+- Containernamen müssen zwischen 3 und 63 Zeichen lang sein.
+
+### Benennungsregeln für Blobs
+
+Ein Blob-Name muss den folgenden Regeln entsprechen:
+
+- Ein Blob-Name kann jede Kombination von Zeichen enthalten.
+- Ein Blob-Name muss mindestens ein Zeichen lang sein und darf nicht mehr als 1024 Zeichen lang sein.
+- Bei Blob-Namen wird Groß-/Kleinschreibung unterschieden.
+- Reservierte URL-Zeichen müssen angemessen durch ein Escapezeichen geschützt werden.
+- Die Anzahl der Pfadsegmente, die den Blob-Namen enthalten, darf 254 nicht überschreiten. Ein Pfadsegment ist die Zeichenfolge zwischen aufeinander folgenden Trennzeichen (* z. B.*, einen Schrägstrich "/"), die dem Namen eines virtuellen Verzeichnisses entspricht.
+
+Der Blob-Dienst basiert auf einem flachen Speicherschema. Sie können eine virtuelle Hierarchie erstellen, indem Sie ein Zeichen- oder Zeichenfolgentrennzeichen im Blob-Namen angeben, um eine virtuelle Hierarchie zu erstellen. Die folgende Liste zeigt einige Beispiele für einen gültigen und eindeutigen Blob-Namen:
+
+	/a
+	/a.txt
+	/a/b
+	/a/b.txt
+
+Sie können das Trennzeichen verwenden, um Blobs hierarchisch aufzulisten.
 
 
 [Blob1]: ./media/storage-blob-concepts-include/blob1.jpg
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

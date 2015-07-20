@@ -24,4 +24,4 @@ Mit der folgenden URL kann eine der Warteschlangen im Diagramm adressiert werden
 
 - **Nachricht:** Eine Nachricht in einem beliebigen Format und mit einer Größe von bis zu 64 KB.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

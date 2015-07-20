@@ -29,7 +29,7 @@ Führen Sie die folgenden Schritte durch, um ein Gerät für die Initialisierung
 
     ![Ändern des Dienstverschlüsselungsschlüssels](./media/storsimple-change-data-encryption-key/HCS_ChangeServiceDataEncryptionKey-include.png)
 
-2. Wählen Sie im **Verschlüsselungsschlüssel für Dienstdaten ändern**-Dialogfeld ein Gerät und autorisieren Sie dieses, um die Änderung des Verschlüsselungsschlüssels für Dienstdaten zu initiieren. Die Dropdownliste enthält alle für die Autorisierung zur Verfügung stehenden Geräte.
+2. Wählen Sie im **Verschlüsselungsschlüssel für Dienstdaten ändern**-Dialogfeld ein Gerät und autorisieren Sie dieses, um die Änderung des Verschlüsselungsschlüssels für Dienstdaten zu initiieren. Die Dropdown-Liste enthält alle für die Autorisierung zur Verfügung stehenden Geräte.
 
 3. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-change-data-encryption-key/HCS_CheckIcon-include.png).
 
@@ -73,4 +73,4 @@ Führen Sie die folgenden Schritte aus, um den Verschlüsselungsschlüssel für 
 
 3. Geben Sie den Verschlüsselungsschlüssel für Dienstdaten ein, den Sie in [Schritt2: Verwenden Sie Windows PowerShell für StorSimple, um die Änderung des Verschlüsselungsschlüssels für Dienstdaten zu initialisieren.](##to-initiate-the-service-data-encryption-key-change) erhalten haben.
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO2-->

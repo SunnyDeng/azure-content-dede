@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Unterschied im Anteilstest | Azure" 
+	pageTitle="Unterschied im Anteilstest | Microsoft Azure" 
 	description="Unterschied im Anteilstest" 
 	services="machine-learning" 
 	documentationCenter="" 
@@ -13,20 +13,21 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/11/2015" 
-	ms.author="jaymathe"/> 
+	ms.date="06/24/2015" 
+	ms.author="jaymathe"/>
 
 
 #Unterschied im Anteilstest
 
 
+Unterscheiden sich zwei Anteile statistisch? Angenommen, ein Benutzer möchte zwei Filme vergleichen, um zu bestimmen, ob ein Film einen wesentlich höheren Anteil an "Likes" im Vergleich zum anderen hat. Mit einer umfangreichen Stichprobe kann sich eine statistisch relevante Abweichung zwischen den Anteilen 0,50 und 0,51 ergeben. Mit einer kleinen Stichprobe sind möglicherweise nicht genügend Daten vorhanden, um zu bestimmen, ob sich diese Anteile tatsächlich unterscheiden.
 
 
-Unterscheiden sich zwei Anteile statistisch? Angenommen, ein Benutzer möchte zwei Filme vergleichen, um zu bestimmen, ob ein Film einen wesentlich höheren Anteil an "Likes" im Vergleich zum anderen hat. Bei einem großen Beispiel kann es einen statistisch signifikanten Unterschied zwischen dem Anteil 0,50 und 0,51 geben, während es in einem kleinen Beispiel möglicherweise nicht genügend Daten gibt, um zu bestimmen, ob diese Anteile tatsächlich verschieden sind. 
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
-Dieser [Webdienst]( https://datamarket.azure.com/dataset/aml_labs/prop_test) führt einen Hypothesentest des Unterschieds zweier Anteile duch, auf Grundlage der Benutzereingabe der Anzahl der Erfolge und der Gesamtzahl der Versuche für die zwei Vergleichsgruppen. Ein Szenario wäre, dass dieser Webdienst aus einer Filmvergleichsapp den Benutzer anhand von Bewertungen darüber informiert, ob einer der Filme tatsächlich mehr positive Bewertungen als der andere erhalten hat.
+Dieser [Webdienst](https://datamarket.azure.com/dataset/aml_labs/prop_test) führt auf Grundlage der Benutzereingabe der Anzahl von Erfolgen und der Gesamtanzahl von Versuchen für die zwei Vergleichsgruppen einen Hypothesentest des Unterschieds zweier Anteile durch. Ein Szenario wäre, dass dieser Webdienst aus einer Filmvergleichs-App aufgerufen wird und den Benutzer anhand von Bewertungen darüber informiert, ob einer der Filme tatsächlich mehr "Likes" als der andere erhalten hat.
 
->Dieser Webdienst kann von Benutzern verwendet werden - möglicherweise mit einer mobilen App, Website oder z. B. sogar auf einem lokalen Computer. Der Zweck des Webdiensts ist auch, als Beispiel dafür zu dienen, wie Sie mit Azure ML Webdienste auf R-Code-Basis erstellen können. Mit nur wenigen Codezeilen R-Code und einigen Klicks in Azure ML Studio können Sie ein Experiment mit R-Code erstellen und als Webdienst veröffentlichen. Der Webdienst kann dann im Azure Marketplace veröffentlicht und von Benutzern und Geräten auf der ganzen Welt genutzt werden, ohne Einrichtung einer Infrastruktur durch den Autor des Webdiensts.
+>Dieser Webdienst kann von Benutzern verwendet werden – beispielsweise über eine mobile App, eine Website oder sogar über einen lokalen Computer. Dieser Webdienst ist jedoch auch ein gutes Beispiel dafür, wie Azure Machine Learning zum Erstellen von Webdiensten basierend auf R-Code verwendet werden kann. Mit nur wenigen Codezeilen R-Code und einigen Klicks in Azure Machine Learning Studio können Sie ein Experiment mit R-Code erstellen und als Webdienst veröffentlichen. Der Webdienst kann dann im Azure Marketplace veröffentlicht und von Benutzern und Geräten auf der ganzen Welt genutzt werden – ohne Einrichtung einer Infrastruktur durch den Autor des Webdiensts.
 
 
 ##Nutzung des Webdiensts
@@ -35,59 +36,59 @@ Dieser Dienst akzeptiert vier Argumente und testet eine Hypothese zu den Anteile
 
 Die Eingabeargumente sind:
 
-* Successes1: Anzahl der Erfolgsereignisse in Beispiel 1
-* Successes2: Anzahl der Erfolgsereignisse in Beispiel 2
-* Total1: Größe des Beispiels 1
-* Total2: Größe des Beispiels 2
+* Successes1 – Anzahl von Erfolgsereignissen in Stichprobe 1
+* Successes2 – Anzahl von Erfolgsereignissen in Stichprobe 2
+* Total1 – Größe von Stichprobe 1
+* Total2 – Größe von Stichprobe 2
 
-Die Ausgabe des Diensts ist das Ergebnis des Hypothesentests zusammen mit der Chi-Quadrat Statistik, df, p-Wert Anteil in Beispiel 1/2 und Vertrauensbereichgrenzen.
+Die Ausgabe des Diensts ist das Ergebnis des Hypothesentests, gemeinsam mit Chi-Quadrat-Statistik, df, p-Wert und Anteil in Stichprobe 1/2 und Vertrauensbereichsgrenzen.
 
->Dieser Dienst, gehostet auf Microsoft Azure Marketplace, ist ein OData-Dienst. Diese können durch POST- oder GET-Methoden aufgerufen werden. 
+>Dieser Dienst, der im Azure Marketplace gehostet wird, ist ein OData-Dienst. Diese Dienste können durch POST- oder GET-Methoden aufgerufen werden.
 
-Es gibt mehrere Möglichkeiten der Nutzung des Diensts auf automatisierte Weise. ([Hier](http://microsoftazuremachinelearning.azurewebsites.net/DifferenceInProportionsTest.aspx ) finden Sie eine Beispiel-App).
+Es gibt mehrere Möglichkeiten, den Dienst auf automatisierte Weise zu nutzen ([hier](http://microsoftazuremachinelearning.azurewebsites.net/DifferenceInProportionsTest.aspx) finden Sie eine Beispiel-App).
 
 ###Starten von C#-Code für Webdienstnutzung:
 
-	public class Input{
-	public double Recency;
-	public double Frequency;
-	public double Monetary;
-	public double Time;
-	public double Class;
+	public class Input
+	{
+	        public string successes1;
+	        public string successes2;
+	        public string total1;
+	        public string total2;
+	}
+	
+    public AuthenticationHeaderValue CreateBasicHeader(string username, string password)
+	{
+	        byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(username + ":" + password);
+	        return new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
 	}
 
-	public AuthenticationHeaderValue CreateBasicHeader(string username, string password)
-    {
-        byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(username + ":" + password);
-        System.Diagnostics.Debug.WriteLine("AuthenticationHeaderValue" + new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray)));
-        return new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
-    }
-       
 	void Main()
 	{
-  	var input = new Input(){Recency =1, Frequency=0,Monetary=0,Time=1, Class= 0};
-	var json = JsonConvert.SerializeObject(input);
-	var acitionUri =  "PutAPIURLHere,e.g.https://api.datamarket.azure.com/..../v1/Score";
-       
-  	var httpClient = new HttpClient();
-   	httpClient.DefaultRequestHeaders.Authorization = CreateBasicHeader("PutEmailAddressHere","ChangeToAPIKey");
-   	httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-  	var query = httpClient.PostAsync(acitionUri,new StringContent(json));
-  	var result = query.Result.Content;
-  	var scoreResult = result.ReadAsStringAsync().Result;
-  	scoreResult.Dump();
+	        var input = new Input() { successes1 = TextBox1.Text, successes2 = TextBox2.Text, total1 = TextBox3.Text, total2 = TextBox4.Text };
+	        var json = JsonConvert.SerializeObject(input);
+	        var acitionUri = "PutAPIURLHere,e.g.https://api.datamarket.azure.com/..../v1/Score";
+	        var httpClient = new HttpClient();
+	
+	        httpClient.DefaultRequestHeaders.Authorization = CreateBasicHeader("PutEmailAddressHere", "ChangeToAPIKey");
+	        httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+	
+	        var response = httpClient.PostAsync(acitionUri, new StringContent(json));
+	        var result = response.Result.Content;
+	    	var scoreResult = result.ReadAsStringAsync().Result;
 	}
+
 
 ##Erstellen des Webdiensts
 
->Dieser Webdienst wurde mithilfe von Azure ML erstellt. Eine kostenlose Testversion sowie einführende Videos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](http://azure.microsoft.com/documentation/articles/machine-learning-publish-web-service-to-azure-marketplace/) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
+>Dieser Webdienst wurde mithilfe von Azure Machine Learning erstellt. Eine kostenlose Testversion sowie Einführungsvideos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](machine-learning-publish-a-machine-learning-web-service.md) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
 
-Aus Azure ML wurde ein neues leeres Experiment mit zwei "R Skript ausführen"-Modulen erstellt. Im ersten Modul wird das Schema definiert, während das zweite Modul den prop.test-Befehl in R verwendet, um die Hypothese für 2 Anteile zu testen. 
+In Azure Machine Learning wurde ein neues leeres Experiment mit zwei [Execute R Script][execute-r-script]-Modulen erstellt. Im ersten Modul wird das Schema definiert, während das zweite Modul den prop.test-Befehl in R verwendet, um die Hypothese für zwei Anteile zu testen.
 
 
 ###Experimentablauf:
 
-![Experiment flow][2]
+![Experimentablauf][2]
 
 
 ####Modul 1:
@@ -116,13 +117,17 @@ Aus Azure ML wurde ein neues leeres Experiment mit zwei "R Skript ausführen"-Mo
 
 ##Einschränkungen 
 
-Dies ist ein sehr einfaches Beispiel für das Testen des Unterschieds bei 2 Anteilen. Wie aus den oben stehenden Beispielcode ersichtlich ist, wird kein Abfangen von Fehlern implementiert und der Dienst geht davon aus, dass alle Variablen kontinuierlich sind.
+Dies ist ein sehr einfaches Beispiel für das Testen des Unterschieds bei zwei Anteilen. Wie aus den oben stehenden Beispielcode ersichtlich ist, wird kein Abfangen von Fehlern implementiert und der Dienst geht davon aus, dass alle Variablen kontinuierlich sind.
 
 ##Häufig gestellte Fragen
-Häufig gestellte Fragen zur Nutzung des Webdiensts oder Veröffentlichung im Marketplace finden Sie [hier](http://azure.microsoft.com/documentation/articles/machine-learning-marketplace-faq).
+Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im Azure Marketplace finden Sie [hier](machine-learning-marketplace-faq.md).
 
 [1]: ./media/machine-learning-r-csharp-difference-in-two-proportions/hyptest-img1.png
 [2]: ./media/machine-learning-r-csharp-difference-in-two-proportions/hyptest-img2.png
 
-<!--HONumber=46--> 
+
+<!-- Module References -->
+[execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
  
+
+<!---HONumber=July15_HO2-->

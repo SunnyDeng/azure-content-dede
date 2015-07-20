@@ -16,13 +16,13 @@
 	ms.date="02/12/2015" 
 	ms.author="kapiteir" />
 
-# Integrieren von GCM mit Mobile Engagement
+#Integrieren von GCM mit Mobile Engagement
 
 > [AZURE.IMPORTANT]Bevor Sie dieser Anleitung folgen, müssen Sie das unter „Integrieren von Mobile Engagement unter Android“ beschriebene Integrationsverfahren befolgen.
 >
 > Das vorliegende Dokument ist nur hilfreich, wenn Sie das Reach-Modul für die jederzeitige Kampagnenunterstützung integriert haben. Lesen Sie zunächst das Dokument "So integrieren Sie Engagement Reach auf Android", um Informationen zum Integrieren von Reach-Kampagnen zu erhalten.
 
-## Einführung
+##Einführung
 
 Durch die Integration von GCM kann Ihre Anwendung selbst dann Pushnachrichten empfangen, wenn sie nicht ausgeführt wird.
 
@@ -35,7 +35,7 @@ Engagement verwendet ausschließlich [Send-to-Sync]-Nachrichten mit dem `engagem
 
 > [AZURE.WARNING]Wenn Ihr eigener Clientcode C2DM-Registrierungs-IDs nutzt und das Engagement-SDK zur Verwendung von GCM konfiguriert ist, tritt ein Konflikt bei den Registrierungs-IDs auf. Verwenden Sie GCM nur dann in Engagement, wenn Ihr eigener Code nicht C2DM verwendet.
 
-## Anmelden bei GCM und Aktivieren des GCM-Diensts
+##Anmelden bei GCM und Aktivieren des GCM-Diensts
 
 Sofern nicht bereits geschehen, müssen Sie den GCM-Dienst über Ihr Google-Konto aktivieren.
 
@@ -47,7 +47,7 @@ Im Verfahren wird erläutert, dass der Wert für **Project Number** (Projektnumm
 
 > [AZURE.IMPORTANT]**Project Number** (Projektnummer) darf nicht mit **Project ID** (Projekt-ID) verwechselt werden. Die Projekt-ID kann abweichen (es handelt sich um einen Namen für neue Projekte). Sie benötigen zur Integration im Engagement-SDK den Wert für **Project Number** (Projektnummer). Dieser wird im Menü **Overview** (Übersicht) in der [Google Developers Console] angezeigt.
 
-## SDK-Integration
+##SDK-Integration
 
 ### Verwalten von Geräteregistrierungen
 
@@ -89,7 +89,7 @@ Stellen Sie sicher, dass Sie die folgenden Berechtigungen in der Datei `AndroidM
 			<uses-permission android:name="<your_package_name>.permission.C2D_MESSAGE" />
 			<permission android:name="<your_package_name>.permission.C2D_MESSAGE" android:protectionLevel="signature" />
 
-## Erteilen von Engagement-Zugriff auf einen Server-API-Schlüssel
+##Erteilen von Engagement-Zugriff auf einen Server-API-Schlüssel
 
 Sofern nicht bereits geschehen, erstellen Sie einen **Server API-Schlüssel** in der [Google Developers Console].
 
@@ -99,7 +99,7 @@ Zum Zeitpunkt der Erstellung dieses Dokuments (5. Februar 2014) stand das folgen
 
 -   Öffnen Sie die [Google Developers Console].
 -   Wählen Sie dasselbe Projekt aus wie in früheren Schritten des Verfahrens (das Projekt mit dem Wert für **Project Number** (Projektnummer), den Sie in `AndroidManifest.xml` integriert haben).
--   Wechseln Sie zu "APIs & auth -> Credentials" (APIs & Authentifizierung -> Anmeldeinformationen), und klicken Sie im Abschnitt "Public API access" (Öffentlicher API-Zugriff) auf "CREATE NEW KEY" (Neuen Schlüssel erstellen).
+-   Wechseln Sie zu "APIs & auth -> Credentials" (APIs & Authentifizierung -\\> Anmeldeinformationen), und klicken Sie im Abschnitt "Public API access" (Öffentlicher API-Zugriff) auf "CREATE NEW KEY" (Neuen Schlüssel erstellen).
 -   Wählen Sie "Server key" (Serverschlüssel).
 -   Lassen Sie den nächsten Bildschirm leer **(no IP restriction)** (keine IP-Einschränkung), und klicken Sie dann auf "Create" (Erstellen).
 -   Kopieren Sie den generierten **API-Schlüssel**.
@@ -110,7 +110,7 @@ Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Opti
 
 > [AZURE.IMPORTANT]Engagement benötigt tatsächlich einen **Serverschlüssel**, ein Android-Schlüssel kann von den Engagement-Servern nicht verwendet werden.
 
-## Test
+##Test
 
 Überprüfen Sie jetzt Ihre Integration, indem Sie den Abschnitt „Testen der Engagement-Integration unter Android“ lesen.
 
@@ -121,5 +121,6 @@ Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Opti
 [GCM-Clientbibliothek]: http://developer.android.com/guide/google/gcm/gs.html#libs
 [Google Developers Console]: https://cloud.google.com/console
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

@@ -13,18 +13,18 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/10/2015" 
+	ms.date="05/12/2015" 
 	ms.author="juliako"/>
 
 
 #Gewusst wie: Abrufen einer Media Processor-Instanz
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md). 
+Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).
 
 
 ##Übersicht
 
-Der Medienprozessor in Media Services ist für bestimmte Verarbeitungsaufgaben wie z. B. Codierung, Formatumwandlungen, Verschlüsselung oder Entschlüsselung von Medieninhalten zuständig. Normalerweise erstellen Sie einen Medienprozessor, wenn Sie eine Aufgabe zur Codierung, Verschlüsselung oder Formatumwandlung von Medieninhalten erstellen.
+Der Medienprozessor in Media Services ist für bestimmte Verarbeitungsaufgaben wie z. B. Codierung, Formatumwandlungen, Verschlüsselung oder Entschlüsselung von Medieninhalten zuständig. Normalerweise erstellen Sie einen Medienprozessor, wenn Sie eine Aufgabe zur Codierung, Verschlüsselung oder Formatumwandlung von Medieninhalten erstellen.
 
 Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienprozessoren.
 
@@ -45,7 +45,7 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
     <tr>
        <td>Media Encoder Premium Workflow</td>
        <td>Zur Ausführung von Codieraufgaben mit dem Media Encoder Premium Workflow.</td>
-       <td><a href="http://azure.microsoft.com/documentation/articles/media-services-encode-with-premium-workflow/">Codierung mit dem Media Encoder Premium Workflow</a></td>
+       <td><a href="http://azure.microsoft.com/documentation/articles/media-services-encode-with-premium-workflow/">Codierung mit dem Medienencoder-Premium-Workflow</a></td>
     </tr>    
 	<tr>
         <td>Azure Media Indexer</td>
@@ -60,12 +60,17 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
     <tr>
         <td>Azure Media Encryptor</td>
         <td>Verschlüsselt Medienobjekte mit dem PlayReady-Schutz.</td>
-        <td><a href="http://msdn.microsoft.com/library/hh973610.aspx">Aufgabenvoreinstellungen für den Azure Media Packager</a></td>
+        <td><a href=" http://go.microsoft.com/fwlink/?LinkId=613274">Aufgabenvoreinstellungen für den Azure Media Packager</a></td>
     </tr>
+	<tr>
+		<td>Azure Media Hyperlapse (Vorschau)</td>
+		<td>Ermöglicht es Ihnen, die "Unregelmäßigkeiten" in Ihrem Video mithilfe von Videostabilisierung auszugleichen. Darüber hinaus können Sie Ihre Inhalte beschleunigen, um einen verwendbaren Clip zu erhalten.</td>
+		<td><a href="http://azure.microsoft.com/blog/?p=286281&preview=1&_ppp=61e1a0b3db">Azure Media Hyperlapse</a></td>
+	</tr>
     <tr>
         <td>Storage Decryption</td>
         <td>Entschlüsselt Medienobjekte, die mit der Speicherverschlüsselung verschlüsselt wurden.</td>
-		<td>-</td>
+		<td>–</td>
     </tr>  </tbody>
 </table>
 
@@ -73,15 +78,15 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
 
 ##Abrufen von MediaProcessor
 
->[AZURE.NOTE] Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
+>[AZURE.NOTE]Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
 >
->Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Setup für die Entwicklung mit der Media Services-REST-API](media-services-rest-how-to-use.md).
+>Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Installation für die Entwicklung mit der Media Services-REST-API](media-services-rest-how-to-use.md).
 
->Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Wie in [Herstellen einer Verbindung mit Media Services mit der REST-API](media-services-rest-connect_programmatically.md) beschrieben müssen Sie nachfolgende Aufrufe an den neuen URI senden. 
+>Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Entsprechend der Beschreibung unter [Herstellen einer Verbindung mit einem Media Services-Konto über die Media Services-REST-API](media-services-rest-connect_programmatically.md) müssen Sie nachfolgende Aufrufe an den neuen URI senden.
 
 
 
-Der folgende REST-Aufruf zeigt, wie Sie eine Medienprozessorinstanz nach Namen (in diesem Fall **Azure Media Encoder**) abrufen. 
+Der folgende REST-Aufruf zeigt, wie Sie eine Medienprozessorinstanz nach Namen (in diesem Fall **Azure Media Encoder**) abrufen.
 
 	
 Anforderung:
@@ -116,11 +121,10 @@ Antwort:
 
 
 ##Nächste Schritte
-Sie sind nun in der Lage, eine Medienprozessorinstanz abzurufen, und können mit dem Thema [Codieren von Medienobjekten][] fortfahren. Dort lernen Sie, wie Sie Medienobjekte mit dem Azure Media Encoder codieren können.
+Sie sind nun in der Lage, eine Medienprozessor-Instanz zu erstellen, und können mit dem Thema [Gewusst wie: Codieren von Medienobjekten][] fortfahren. Dort lernen Sie, wie Sie Medienobjekte mit dem Azure Media Encoder codieren können.
 
-[Codieren von Medienobjekten]: media-services-rest-encode-asset.md
-[Aufgabenvoreinstellungen für den Azure Media Encoder]: http://msdn.microsoft.com/library/jj129582.aspx
-[Vorgehensweise: Programmgesteuertes Verbinden mit Mediendiensten]: ../media-services-rest-connect_programmatically/
+[Gewusst wie: Codieren von Medienobjekten]: media-services-rest-encode-asset.md
+[Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/library/jj129582.aspx
+[How to: Connect to Media Services Programmatically]: ../media-services-rest-connect_programmatically/
 
-
-<!--HONumber=52--> 
+<!---HONumber=July15_HO2-->

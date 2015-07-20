@@ -1,3 +1,4 @@
+
 #### So installieren Sie regelmäßige Updates über Windows PowerShell für StorSimple
 
 1. Öffnen Sie die serielle Konsole des Geräts, und wählen Sie Option 1, **Anmeldung mit Vollzugriff**, aus. Geben Sie das Kennwort ein. Das Standardkennwort lautet *Password1*. 
@@ -19,4 +20,4 @@
 > - Dieser Befehl gilt nur für regelmäßige Updates. Dieser Befehl muss nur auf einem Controller ausgeführt werden, es werden jedoch beide Controller aktualisiert. 
 > - Möglicherweise werden Sie während des Updatevorgangs ein Failover des Controllers bemerken. Dieses Failover wirkt sich jedoch nicht auf die Systemverfügbarkeit oder den Betrieb aus.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

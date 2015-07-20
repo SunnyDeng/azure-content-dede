@@ -24,7 +24,7 @@
 
 ### Einbetten des Engagement Reach-SDK in Ihr iOS-Projekt
 
--   Fügen Sie das Reach-SDK in Ihr Xcode-Projekt ein. Wechseln Sie in Xcode zur **Project > Add to project**, und wählen Sie den Ordner `EngagementReach`.
+-   Fügen Sie das Reach-SDK in Ihr Xcode-Projekt ein. Wechseln Sie in Xcode zur **Project \\> Add to project**, und wählen Sie den Ordner `EngagementReach`.
 
 ### Ändern des Anwendungsdelegaten
 
@@ -213,7 +213,7 @@ Systembenachrichtigungen werden von iOS verarbeitet und können nicht angepasst 
 
 Anwendungsinterne Benachrichtigungen bestehen aus einer Ansicht, die dynamisch in das aktuelle Anwendungsfenster eingefügt wird. Dies wird als Benachrichtigungsüberlagerung bezeichnet. Benachrichtigungsoverlays eignen sich besonders für eine schnelle Integration, da für sie keine Änderung von Ansichten in Ihrer Anwendung erforderlich ist.
 
-#### Layout 
+#### Layout
 
 Um das Layout Ihrer anwendungsinternen Benachrichtigungen zu ändern, können Sie einfach die Datei `AENotificationView.xib` an Ihre Anforderungen anpassen. Sie müssen hierbei jedoch darauf achten, dass die Tagwerte und -typen der vorhandenen Unteransichten beibehalten werden.
 
@@ -456,5 +456,6 @@ Wie bei der erweiterten Benachrichtigungsanpassung wird empfohlen, sich den Quel
 			}
 			
 			@end
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

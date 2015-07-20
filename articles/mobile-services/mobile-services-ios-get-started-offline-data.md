@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="03/19/2015"
+	ms.date="07/01/2015"
 	ms.author="krisragh;donnam"/>
 
 # Erste Schritte mit der Synchronisierung von Offlinedaten in Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
 
-Die Offlinesynchronisierung ermöglicht Ihnen, Daten in einer mobilen Anwendung anzuzeigen und Daten hinzuzufügen oder zu ändern, auch wenn keine Netzwerkverbindung verfügbar ist. In diesem Lernprogramm erfahren Sie, wie Sie Ihre  App so konfigurieren, dass Änderungen automatisch in einer lokalen Offlinedatenbank gespeichert werden und die Daten synchronisiert werden, sobald die App wieder online ist.
+Die Offlinesynchronisierung ermöglicht Ihnen, Daten in einer mobilen Anwendung anzuzeigen und Daten hinzuzufügen oder zu ändern, auch wenn keine Netzwerkverbindung verfügbar ist. In diesem Lernprogramm erfahren Sie, wie Sie Ihre App so konfigurieren, dass Änderungen automatisch in einer lokalen Offlinedatenbank gespeichert werden und die Daten synchronisiert werden, sobald die App wieder online ist.
 
 Die Offlinesynchronisierung bietet mehrere Vorteile:
 
@@ -30,7 +30,7 @@ Die Offlinesynchronisierung bietet mehrere Vorteile:
 * Synchronisiert Daten auf mehreren Geräten
 * Erkennt Konflikte, wenn derselbe Datensatz von zwei Geräten geändert wird
 
-> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](http://azure.microsoft.com/pricing/details/mobile-services/). Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28target=“_blank“).
+> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](http://azure.microsoft.com/pricing/details/mobile-services/). Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28 target="_blank").
 
 Dieses Lernprogramm baut auf dem Schnellstartlernprogramm [Erste Schritte mit Mobile Services] auf, das Sie zuerst abschließen müssen. Sehen sich zunächst den Code im Zusammenhang mit der Offlinesynchronisierung aus dem Schnellstart an.
 
@@ -73,7 +73,7 @@ In diesem Beispiel ist der Pushvorgang nicht unbedingt notwendig. Wenn im Synchr
 
 ```
 
-* Als nächstes werden in **QSTodoService.m** mit `pullData`  neue Daten abgerufen, die einer Abfrage entsprechen. `pullData` ruft `MSSyncTable.pullWithQuery` auf, um Remotedaten abzurufen und lokal zu speichern. `pullWithQuery` ermöglicht Ihnen zudem, eine Abfrage zum Filtern der Datensätze anzugeben, die Sie abrufen möchten. In diesem Beispiel ruft die Abfrage einfach alle Datensätze in der Remotetabelle `TodoItem` ab.
+* Als nächstes werden in **QSTodoService.m** mit `pullData` neue Daten abgerufen, die einer Abfrage entsprechen. `pullData` ruft `MSSyncTable.pullWithQuery` auf, um Remotedaten abzurufen und lokal zu speichern. `pullWithQuery` ermöglicht Ihnen zudem, eine Abfrage zum Filtern der Datensätze anzugeben, die Sie abrufen möchten. In diesem Beispiel ruft die Abfrage einfach alle Datensätze in der Remotetabelle `TodoItem` ab.
 
 Der zweite Parameter für `pullWithQuery` ist eine Abfrage-ID, für die _inkrementelle Synchronisierung_. Die inkrementelle Synchronisierung ruft nur die Datensätze ab, die seit der letzten Synchronisierung geändert wurden. Dafür wird der Zeitstempel `UpdatedAt` (im lokalen Speicher `ms_updatedAt`) des Datensatzes verwendet. Die Abfrage-ID ist eine beschreibende Zeichenfolge sein, die für jede logische Abfrage in Ihrer App eindeutig ist. Um die inkrementelle Synchronisierung zu deaktivieren, übergeben Sie als Abfrage-ID `nil`. Dies ist ineffizient, da hierdurch alle Datensätze bei jedem Pullvorgang abgerufen werden.
 
@@ -123,7 +123,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
 
     #### MS_TableOperations
 
-| Attribut | Typ |
+    | Attribut | Typ |
     |----------- |   ------    |
     | id | Integer 64 |
     | itemId | String |
@@ -133,7 +133,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
 
     #### MS_TableOperationErrors
 
-| Attribut | Typ |
+    | Attribut | Typ |
     |------------ | ----------  |
     | id | String |
     | operationId | Integer 64 |
@@ -143,7 +143,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
     #### MS_TableConfig
 
 
-| Attribut | Typ |
+    | Attribut | Typ |
     |----------- | ----------  |
     | id | String |
     | key | String |
@@ -155,7 +155,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
 
     #### TodoItem
 
-| Attribut | Typ |
+    | Attribut | Typ |
     |-----------   |  ------ |
     | id | String |
     | complete | Boolean |
@@ -272,4 +272,4 @@ Um den lokalen Speicher mit dem Server zu synchronisieren, wurden `MSSyncTable.p
 
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

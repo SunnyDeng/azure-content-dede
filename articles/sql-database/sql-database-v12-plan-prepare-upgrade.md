@@ -14,17 +14,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/15/2015"
+	ms.date="07/07/2015"
 	ms.author="genemi"/>
 
 
 # Planen und Vorbereiten des Upgrades auf die SQL-Datenbank V12
-
-
-<!-- What is being changed this time?:
-GeneMi , 2015-May-15 14:31pm
-Powershell cmdlets.
--->
 
 
 In diesem Thema werden die Planungen und Vorbereitungen beschrieben, die Sie ausführen müssen, um das Upgrade Ihrer Azure SQL-Datenbanken von Version V11 auf V12 vorzunehmen ([in einigen Regionen im Vorschaustatus](sql-database-v12-whats-new.md#V12AzureSqlDbPreviewGaTable)).
@@ -54,9 +48,9 @@ In den folgenden Unterabschnitten werden die Lern- und Entscheidungsvorgänge be
 Dieses Dokument beschäftigt sich mit dem Upgrade von Microsoft Azure SQL-Datenbank von Version V11 auf V12. Formal ähneln die Versionsnummern den folgenden beiden Werten, die mithilfe der Transact-SQL-Anweisung **SELECT @@version;** abgerufen werden:
 
 
-- 11.0.9228.18 *(V11)*
 - 12.0.2000.8 *(oder etwas höher, V12)*
-
+- 11.0.9228.18 *(V11)*
+ - V11 wurde zum Teil auch als SAWA V2 bezeichnet.
 
 ### Planung der Dienstebene
 
@@ -92,10 +86,10 @@ Ausführliche Beschreibungen der endgültigen Upgradephase sind in den Hilfethem
 ### Dienstebenenaktionen
 
 
-Die Preisstufe des Web- und Business-Diensts wird unter V12 nicht unterstützt.
+Der Tarif des Web- und Business-Diensts wird unter V12 nicht unterstützt.
 
 
-Wenn Ihre V11 Azure SQL-Datenbank eine Web- oder Business-Datenbank ist, bietet Ihnen der Upgradevorgang an, Ihre Datenbank in eine unterstützte Ebene umzuschalten. Das Upgrade empfiehlt eine Ebene, die dem Arbeitsauslastungsverlauf Ihrer Datenbank entspricht. Sie können jedoch jede gewünschte Ebene auswählen, die unterstützt wird.
+Wenn Ihre V11 Azure SQL-Datenbank eine Web- oder Business-Datenbank ist, bietet Ihnen der Upgradevorgang an, Ihre Datenbank in eine unterstützte Ebene umzuschalten. Das Upgrade empfiehlt eine Ebene, die dem Workloadverlauf Ihrer Datenbank entspricht. Sie können jedoch jede gewünschte Ebene auswählen, die unterstützt wird.
 
 
 Sie können die Schritte verringern, die während des Upgrades erforderlich sind, indem Sie Ihre V11-Datenbank von der Web- und Business-Ebene abkoppeln, bevor Sie mit dem Upgrade beginnen. Dies kann mithilfe des neuen [Azure-Vorschauportals](http://portal.azure.com/) erfolgen.
@@ -156,9 +150,12 @@ Als weitere Alternative können Sie SQL Server Management Studio (SSMS) 2014 mit
 ### Einschränkung *während* Upgrades auf V12
 
 
+Während des Upgrades auf V12 kann weiterhin auf Daten in V11-Datenbanken zugegriffen werden. Es gibt jedoch einige Einschränkungen zu beachten.
+
+
 | Einschränkung | Beschreibung |
 | :--- | :--- |
-| Dauer des Upgrades | Die Dauer des Upgrades, hängt von der Größe, der Edition und der Anzahl der Datenbanken auf dem Server ab. Der Upgradevorgang kann Stunden bis Tage dauern, insbesondere bei Servern mit Datenbanken:<br/><br/>* Größer als 50 GB oder <br/>* Bei einer anderen Dienstebene als Premium<br/><br/>Auch die Erstellung neuer Datenbanken auf dem Server während des Upgrades kann die Upgrade-Dauer erhöhen. |
+| Dauer des Upgrades | Die Dauer des Upgrades, hängt von der Größe, der Edition und der Anzahl der Datenbanken auf dem Server ab. Der Upgradevorgang kann Stunden bis Tage dauern, insbesondere bei Servern mit Datenbanken mit den folgenden Eigenschaften:<br/><br/>* Größer als 50 GB oder <br/>* Andere Dienstebene als Premium<br/><br/>Auch die Erstellung neuer Datenbanken auf dem Server während des Upgrades kann die Upgradedauer erhöhen. |
 | Keine Georeplikation | Georeplikation wird auf einem V12-Server nicht unterstützt, für den aktuell ein Upgrade aus V11 ausgeführt wird. |
 
 
@@ -169,7 +166,7 @@ Als weitere Alternative können Sie SQL Server Management Studio (SSMS) 2014 mit
 | :--- | :--- |
 | Keine Zurücksetzung auf V11 | Nachdem das Upgrade abgeschlossen wurde, kann das Ergebnis nicht mehr zurückgesetzt oder rückgängig gemacht werden. |
 | Web- oder Business-Ebene | Sobald das Upgrade gestartet wurde, kann der Server für die neue V12-Datenbank die Web- oder Business-Dienstebene nicht mehr erkennen oder akzeptieren. |
-| Der 50 %ige Rabatt ist aus den im Azure-Portal angegebenen Preisstufen nicht ersichtlich | Im Zeitraum der Preview gilt für Datenbanken, die für die aktuelle Preview des Azure SQL-Datenbankupdates (V12) registriert sind, ein Previewrabatt von 50 %*. Auch wenn der Rabatt nicht im Vorschauportal auf dem Blatt "Diensttarif" angezeigt wird, gilt er dennoch.<br/><br/> Der 50 %ige Rabatt ist in allen geografischen Regionen bis zum **31. März 2015** gültig. Danach läuft er für alle Regionen ab. Der Rabatt ist auch in Regionen wirksam, für die der Status der allgemeinen Verfügbarkeit bekannt gegeben wurde.<br/><br/> (* Die Nutzung des neuesten Azure SQL-Datenbankupdates V12 unterliegt den Preview-Bedingungen in Ihrem Lizenzvertrag (z. B. Enterprise Agreement, Microsoft Azure-Vertrag oder Microsoft Online-Abonnementvertrag) sowie etwaigen gültigen [ergänzenden Nutzungsbedingungen für Microsoft Azure Previews](http://azure.microsoft.com/support/legal/preview-supplemental-terms/). Für die Dauer der Preview berechnet Microsoft alle für diese Preview registrierten Datenbanken zur Hälfte des GA (General Availability)-Tarifs und gewährt Ihnen (oder ggf. Ihrem Händler) einen 50 %igen Rabatt. 30 Tage vor Ablauf des Preview-Zeitraums und des reduzierten Preview-Tarifs werden Sie von Microsoft per E-Mail benachrichtigt.) |
+| Der 50 %ige Rabatt ist aus den im Azure-Portal angegebenen Tarifen nicht ersichtlich | Im Zeitraum der Preview gilt für Datenbanken, die für die aktuelle Preview des Azure SQL-Datenbankupdates (V12) registriert sind, ein Previewrabatt von 50 %*. Auch wenn der Rabatt nicht im Vorschauportal auf dem Blatt "Diensttarif" angezeigt wird, gilt er dennoch.<br/><br/> Der 50 %ige Rabatt ist in allen geografischen Regionen bis zum **31. März 2015** gültig. Danach läuft er für alle Regionen ab. Der Rabatt ist auch in Regionen wirksam, für die der Status der allgemeinen Verfügbarkeit bekannt gegeben wurde.<br/><br/> (* Die Nutzung des neuesten Azure SQL-Datenbankupdates V12 unterliegt den Preview-Bedingungen in Ihrem Lizenzvertrag (z. B. Enterprise Agreement, Microsoft Azure-Vertrag oder Microsoft Online-Abonnementvertrag) sowie etwaigen gültigen [ergänzenden Nutzungsbedingungen für Microsoft Azure Previews](http://azure.microsoft.com/support/legal/preview-supplemental-terms/). Für die Dauer der Preview berechnet Microsoft alle für diese Preview registrierten Datenbanken zur Hälfte des GA (General Availability)-Tarifs und gewährt Ihnen (oder ggf. Ihrem Händler) einen 50 %igen Rabatt. 30 Tage vor Ablauf des Preview-Zeitraums und des reduzierten Preview-Tarifs werden Sie von Microsoft per E-Mail benachrichtigt.) |
 
 
 ### Exportieren und Importieren *nach* Upgrades auf V12
@@ -214,7 +211,7 @@ Im folgenden Szenario wird erläutert, dass eine gelöschte V11 Azure SQL-Datenb
 ### Powershell-Cmdlets
 
 
-Powershell-Cmdlets sind verfügbar, um ein Upgrade auf Azure SQL-Datenbank V12 von V11 oder einer anderen Version niedriger als V12 zu starten, zu beenden oder zu überwachen.
+Powershell-Cmdlets sind verfügbar, um ein Upgrade auf Azure SQL-Datenbank V12 von V11 oder einer anderen niedrigeren Version als V12 zu starten, zu beenden oder zu überwachen.
 
 
 Referenzdokumentation zu diesen Powershell-Cmdlets finden Sie unter:
@@ -225,7 +222,7 @@ Referenzdokumentation zu diesen Powershell-Cmdlets finden Sie unter:
 - [Stop-AzureSqlServerUpgrade](http://msdn.microsoft.com/library/mt143622.aspx)
 
 
-Mit dem Cmdlet "Stop-" wird der Vorgang abgebrochen, nicht angehalten. Es ist nicht möglich, ein Upgrade nach einem Abbruch fortzusetzen, sondern es muss wieder von vorne begonnen werden. Das Cmdlet "Stop-" bereinigt und setzt alle entsprechenden Ressourcen frei.
+Mit dem Cmdlet „Stop-“ wird der Vorgang abgebrochen, nicht angehalten. Ein Upgrade kann nach einem Abbruch nicht fortgesetzt werden, es muss wieder von vorne begonnen werden. Das Cmdlet "Stop-" bereinigt und setzt alle entsprechenden Ressourcen frei.
 
 
 ## Fehlerbehebung
@@ -245,5 +242,6 @@ Wenn aus einem bestimmten Grund ein Upgradefehler auftritt, bleibt Ihre V11-Date
 
 <!--Anchors-->
 [Subheading 1]: #subheading-1
+ 
 
-<!---HONumber=58--> 
+<!---HONumber=July15_HO2-->
