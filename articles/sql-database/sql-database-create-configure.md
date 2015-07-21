@@ -63,7 +63,7 @@ Im nächsten Schritt konfigurieren Sie die Firewall, sodass Verbindungen von Anw
 
 ## So wird‘s gemacht: Konfigurieren der Firewall für den logischen Server
 
-1. Klicken Sie im Verwaltungsportal[](http://manage.windowsazure.com) auf **SQL-Datenbanken** und anschließend auf **Server**.
+1. Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com) auf **SQL-Datenbanken** und anschließend auf **Server**.
 
 	![Klicken Sie auf „Server“.][4]
 2. Klicken Sie in der Liste auf den soeben erstellten Server.

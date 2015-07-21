@@ -106,19 +106,22 @@ HDInsight-Cluster verwenden als Standarddateisystem einen Azure-Blobspeichercont
 		<td>Wählen Sie <b>Ubuntu 12.04 LTS Preview</b> aus, um einen HDInsight-Cluster unter Linux bereitzustellen. Informationen zum Bereitstellen eines Windows-Clusters finden Sie unter <a href="http://azure.microsoft.com/documentation/articles/hdinsight-provision-clusters/" target="_blank">Bereitstellen von Hadoop-Clustern unter Windows in HDInsight</a>.</td></tr>
 	<tr><td>HDInsight-Version</td>
 		<td>Wählen Sie die Version aus. Für HDInsight unter Linux ist HDInsight Version 3.2 die Standardversion, die Hadoop Version 2.6 verwendet.</td></tr>
-	</table>Geben Sie die Werte wie in der Tabelle gezeigt ein, und klicken Sie auf den Pfeil nach rechts.
+	</table>
+	Geben Sie die Werte wie in der Tabelle gezeigt ein, und klicken Sie auf den Pfeil nach rechts.
 
 4. Geben Sie auf der Seite **Cluster konfigurieren** die folgenden Daten ein:
 
 	![Bereitstellen von Hadoop HDInsight-Clustern – Details](./media/hdinsight-hadoop-provision-linux-clusters/HDI.CustomProvision.Page2.png)
 
 	<table border="1">
-<tr><th>Name</th><th>Wert</th></tr>
-<tr><td>Datenknoten</td><td>Die Anzahl der Datenknoten, die Sie bereitstellen möchten. Erstellen Sie zu Testzwecken einen Cluster mit nur einem Knoten. <br />Die Größenbegrenzung für die Cluster variiert in Azure-Abonnements. Wenden Sie sich an das Azure-Abrechnungssupportteam, um diese Begrenzung zu erhöhen.</td></tr>
-<tr><td>Region/virtuelles Netzwerk</td><td><p>Wählen Sie dieselbe Region wie für das Speicherkonto, das Sie zuvor erstellt haben. HDInsight-Cluster verlangen, dass sich das Speicherkonto in derselben Region befindet. Später in dieser Konfiguration können Sie nur ein Speicherkonto wählen, das sich in der hier angegebenen Region befindet.</p></td></tr>
-<tr><td>Größe des Hauptknotens</td><td><p>Wählen Sie eine VM-Größe für den Hauptknoten aus.</p></td></tr>
-<tr><td>Datenknotengröße</td><td><p>Wählen Sie eine VM-Größe für die Datenknoten aus.</p></td></tr>
-</table>>[AZURE.NOTE]Je nach Wahl der VMs können Ihre Kosten variieren. HDInsight verwendet für Clusterknoten VMs mit Standardtarif. Informationen über die Auswirkungen der VM-Größe auf Ihre Kosten finden Sie unter <a href="http://azure.microsoft.com/pricing/details/hdinsight/" target="_blank">HDInsight-Preise</a>.
+	<tr><th>Name</th><th>Wert</th></tr>
+	<tr><td>Datenknoten</td><td>Die Anzahl der Datenknoten, die Sie bereitstellen möchten. Erstellen Sie zu Testzwecken einen Cluster mit nur einem Knoten. <br />Die Größenbegrenzung für die Cluster variiert in Azure-Abonnements. Wenden Sie sich an das Azure-Abrechnungssupportteam, um diese Begrenzung zu erhöhen.</td></tr>
+	<tr><td>Region/virtuelles Netzwerk</td><td><p>Wählen Sie dieselbe Region wie für das Speicherkonto, das Sie zuvor erstellt haben. HDInsight-Cluster verlangen, dass sich das Speicherkonto in derselben Region befindet. Später in dieser Konfiguration können Sie nur ein Speicherkonto wählen, das sich in der hier angegebenen Region befindet.</p></td></tr>
+	<tr><td>Größe des Hauptknotens</td><td><p>Wählen Sie eine VM-Größe für den Hauptknoten aus.</p></td></tr>
+	<tr><td>Datenknotengröße</td><td><p>Wählen Sie eine VM-Größe für die Datenknoten aus.</p></td></tr>
+	</table>
+
+	>[AZURE.NOTE]Je nach Wahl der VMs können Ihre Kosten variieren. HDInsight verwendet für Clusterknoten VMs mit Standardtarif. Informationen über die Auswirkungen der VM-Größe auf Ihre Kosten finden Sie unter <a href="http://azure.microsoft.com/pricing/details/hdinsight/" target="_blank">HDInsight-Preise</a>.
 
 
 5. Geben Sie auf der Seite **Clusterbenutzer konfigurieren** die folgenden Daten ein:
@@ -142,7 +145,9 @@ HDInsight-Cluster verwenden als Standarddateisystem einen Azure-Blobspeichercont
 	<tr><td>Hive-/Oozie-Metastore eingeben</td>
 		<td>Aktivieren Sie dieses Kontrollkästchen, um eine SQL-Datenbank im gleichen Datencenter wie der Cluster für die Verwendung als Hive-/Oozie-Metastore anzugeben. Wenn Sie dieses Kontrollkästchen aktivieren, müssen Sie auf den nachfolgenden Seiten des Assistenten Details zur Azure SQL-Datenbank angeben. Dies ist praktisch, wenn Sie die Metadaten von Hive-/Oozie-Jobs behalten möchten, nachdem der Cluster gelöscht wurde.</td></tr>
 	</td></tr>
-	</table>> [AZURE.NOTE]Es wird empfohlen, die Authentifizierung mit einem öffentlichen SSH-Schlüssel zu verwenden, da diese sicherer ist als die Kennwortauthentifizierung.
+	</table>
+
+	> [AZURE.NOTE]Es wird empfohlen, die Authentifizierung mit einem öffentlichen SSH-Schlüssel zu verwenden, da diese sicherer ist als die Kennwortauthentifizierung.
 
 	Klicken Sie auf den Pfeil nach rechts.
 
@@ -185,7 +190,8 @@ HDInsight-Cluster verwenden als Standarddateisystem einen Azure-Blobspeichercont
     </td></tr>
 	<tr><td>Zusätzliche Speicherkonten</td>
 		<td>HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Speicherkonto wird dem Assistenten eine zusätzliche Seite <strong>Speicherkonto</strong> hinzugefügt, in der Sie die Kontoinformationen angeben können. Im obigen Bildschirmfoto wurde z. B. ein zusätzliches Speicherkonto ausgewählt, weshalb Seite 5 dem Dialogfeld hinzugefügt wurde.</td></tr>
-</table>Klicken Sie auf den Pfeil nach rechts.
+	</table>
+	Klicken Sie auf den Pfeil nach rechts.
 
 7. Wenn Sie für den Cluster zusätzlichen Speicher konfigurieren möchten, geben Sie auf der Seite **Speicherkonto** die Kontoinformationen für das zusätzliche Speicherkonto ein:
 
@@ -297,7 +303,8 @@ Sie können die Azure-Befehlszeilenschnittstelle entweder über NPM oder Windows
 
 **So installieren Sie die Azure-Befehlszeilenschnittstelle mit Windows Installer**
 
-1.	Navigieren Sie zu **http://azure.microsoft.com/downloads/**. 2.	Führen Sie einen Bildlauf nach unten zum Abschnitt **Befehlszeilentools** durch, und klicken Sie dann auf **Azure-Befehlszeilenschnittstelle**, und führen Sie den Assistenten für den Webplattform-Installer aus.
+1.	Navigieren Sie zu **http://azure.microsoft.com/downloads/**. 
+2.	Führen Sie einen Bildlauf nach unten zum Abschnitt **Befehlszeilentools** durch, und klicken Sie dann auf **Azure-Befehlszeilenschnittstelle**, und führen Sie den Assistenten für den Webplattform-Installer aus.
 
 **Herunterladen und Importieren der Veröffentlichungseinstellungen**
 

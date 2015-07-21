@@ -23,7 +23,7 @@
 
 Sie können Visual Studio Online-Teamprojekte verwenden, um ein Git-Repository für Quellcode zu hosten und dies automatisch zu erstellen und für Azure-Web-Apps oder -Clouddiensten bereitzustellen, wenn Sie ein Commit zum Repository mithilfe von Push übertragen.
 
-Sie müssen Visual Studio 2013 und das Azure-SDK installiert haben. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite **www.visualstudio.com** auf den Link [Starten Sie kostenlos](http://www.visualstudio.com) klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540) aus.
+Sie müssen Visual Studio 2013 und das Azure-SDK installiert haben. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite [www.visualstudio.com](http://www.visualstudio.com) auf den Link **Starten Sie kostenlos** klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540) aus.
 
 
 > [AZURE.NOTE]Sie benötigen ein Visual Studio Online-Konto, um dieses Lernprogramm durchführen zu können. Sie können [ein Visual Studio Online-Konto kostenlos eröffnen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
@@ -134,11 +134,13 @@ Geben Sie Werte für die Eigenschaften ein, wenn Sie andere Werte als die Standa
 	<table>
 <tr><td><b>Eigenschaft</b></td><td><b>Standardwert</b></td></tr>
 ><tr><td>Nicht vertrauenswürdige Zertifikate zulassen</td><td>Wenn dies "false" ist, müssen SSL-Zertifikate von einer Stammzertifizierungsstelle signiert sein.</td></tr>
-<tr><td>Upgrade zulassen</td><td>Ermöglicht einer Bereitstellung, eine vorhandene Bereitstellung zu aktualisieren, anstatt eine neue zu erstellen. Behält die IP-Adresse bei.</td></tr><tr><td>Nicht löschen</td><td>Wenn dies "true" ist, wird keine vorhandene, nicht verbundene Bereitstellung überschrieben (Upgrade ist zulässig).</td></tr>
+<tr><td>Upgrade zulassen</td><td>Ermöglicht einer Bereitstellung, eine vorhandene Bereitstellung zu aktualisieren, anstatt eine neue zu erstellen. Behält die IP-Adresse bei.</td></tr>
+><tr><td>Nicht löschen</td><td>Wenn dies "true" ist, wird keine vorhandene, nicht verbundene Bereitstellung überschrieben (Upgrade ist zulässig).</td></tr>
 <tr><td>Pfad zu Bereitstellungseinstellungen</td><td>Der Pfad zu Ihrer PUBXML-Datei für eine Web-App, entsprechend dem Stammordner des Repositorys. Wird für Clouddienste ignoriert.</td></tr>
 <tr><td>Sharepoint-Bereitstellungsumgebung</td><td>Entspricht dem Dienstnamen</td></tr>
 <tr><td>Azure-Bereitstellungsumgebung</td><td>Der Name der Web-App oder des Clouddiensts</td></tr>
-</table> <br/>
+</table>
+<br/>
 
 11. An diesem Punkt sollte Ihr Build erfolgreich abgeschlossen sein.<br/>
 ![][28]

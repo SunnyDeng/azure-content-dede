@@ -87,7 +87,7 @@ Ein elastischer Pool ist eine ARM-Ressource vom Typ "ElasticPool" in Microsoft A
 
 Die Speicherbegrenzung des Pools wird durch die Menge der DTUs des Pools bestimmt; jede DTU = 1 GB Speicher. Beispielsweise hat ein 200-DTU-Pool einen Grenzwert von 200 GB.
 
-| -Eigenschaft | Standardwert | Gültige Werte |
+| Eigenschaft | Standardwert | Gültige Werte |
 | :-- | :-- | :-- |
 | Dtu | 100 | 100, 200, 400, 800, 1.200 |
 | databaseDtuMax | 100 | 10, 20, 50, 100 |

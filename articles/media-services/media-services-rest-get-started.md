@@ -84,7 +84,7 @@ Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der 
 	
 	>[AZURE.NOTE]Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden.
 	> 
-	> 
+	> Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
 3. Senden nachfolgender API-Aufrufe an die neue URL. 
 	
 	Wenn nach einem Verbindungsversuch folgende Meldung angezeigt wird:
@@ -497,7 +497,8 @@ Nachdem Sie Ihre Datei nun hochgeladen haben, sollten Sie die FileAsset-Größe 
 
 **HTTP-Antwort**
 
-Im Erfolgsfall wird Folgendes zurückgegeben: "HTTP/1.1 204 Kein Inhalt"
+Im Erfolgsfall wird Folgendes zurückgegeben: 
+	"HTTP/1.1 204 Kein Inhalt"
 
 ## Löschen von AccessPolicy und Locator 
 
@@ -548,7 +549,8 @@ Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Date
 
 Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
 
-- Abrufen von mindestens einer Streamingeinheit für den **Streamingendpunkt, **von dem aus Sie die Bereitstellung Ihrer Inhalte (wie in diesem Abschnitt beschrieben) planen.- Codieren oder Transcodieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm veranschaulicht).  
+- Abrufen von mindestens einer Streamingeinheit für den **Streamingendpunkt, **von dem aus Sie die Bereitstellung Ihrer Inhalte (wie in diesem Abschnitt beschrieben) planen.
+- Codieren oder Transcodieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm veranschaulicht).  
 
 Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
 
@@ -1153,7 +1155,8 @@ Im Erfolgsfall wird die folgende Antwort zurückgegeben:
 
 Die zurückgegebene **Path**-Eigenschaft enthält die SAS-URL.
 
->[AZURE.NOTE]Wenn Sie speicherverschlüsselten Inhalt herunterladen, müssen Sie ihn vor dem Rendern manuell entschlüsseln. Alternativ können Sie den MediaProcessor für die Speicherverschlüsselung in einer Verarbeitungsaufgabe verwenden, um verarbeitete Dateien unverschlüsselt an ein OutputAsset auszugeben und dann von diesem Medienobjekt herunterzuladen. Weitere Informationen zur Verarbeitung finden Sie unter „Erstellen und Verschlüsseln von Aufträgen mit der Media Services-REST-API“. Nachdem die SAS URL-Locators erstellt wurden, können sie nicht mehr aktualisiert werden. Beispielsweise kann derselbe Locator nicht mit einem aktualisierten StartTime-Wert wiederverwendet werden. Dies liegt an der Art, wie SAS-URLs erstellt werden. Wenn ein Locator abgelaufen ist und Sie auf ein Medienobjekt zugreifen möchten, um es herunterzuladen, müssen Sie einen neuen Locator mit einem neuen StartTime-Wert erstellen.
+>[AZURE.NOTE]
+>Wenn Sie speicherverschlüsselten Inhalt herunterladen, müssen Sie ihn vor dem Rendern manuell entschlüsseln. Alternativ können Sie den MediaProcessor für die Speicherverschlüsselung in einer Verarbeitungsaufgabe verwenden, um verarbeitete Dateien unverschlüsselt an ein OutputAsset auszugeben und dann von diesem Medienobjekt herunterzuladen. Weitere Informationen zur Verarbeitung finden Sie unter „Erstellen und Verschlüsseln von Aufträgen mit der Media Services-REST-API“. Nachdem die SAS URL-Locators erstellt wurden, können sie nicht mehr aktualisiert werden. Beispielsweise kann derselbe Locator nicht mit einem aktualisierten StartTime-Wert wiederverwendet werden. Dies liegt an der Art, wie SAS-URLs erstellt werden. Wenn ein Locator abgelaufen ist und Sie auf ein Medienobjekt zugreifen möchten, um es herunterzuladen, müssen Sie einen neuen Locator mit einem neuen StartTime-Wert erstellen.
 
 ###Herunterladen von Dateien
 

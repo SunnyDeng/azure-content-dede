@@ -11,8 +11,10 @@ Diese Technologie bietet zwei leicht abweichende Optionen für VM: Auf Instanzen
 
 Eine beliebige Kombination dieser zwei leicht unterschiedlichen VM Hostingoptionen sind in einem Clouddienst verfügbar:
 
-* **Webrolle** Führt Windows Server mit Ihrer Web-App aus, die automatisch auf IIS bereitgestellt wird.
-* **Workerrolle** Führt Windows-Server ohne IIS aus.
+* **Webrolle**  
+  Führt Windows Server mit Ihrer Web-App aus, die automatisch auf IIS bereitgestellt wird.
+* **Workerrolle**  
+  Führt Windows-Server ohne IIS aus.
 
 Einfache Anwendungen verwenden z. B. nur eine Webrolle, während komplexere Anwendungen eine Webrolle für die Verarbeitung eingehender Benutzeranforderungen verwenden und die aus diesen Anforderungen entstandene Arbeit an Workerrollen abgeben. (Diese Kommunikation erfolgt über einen [Service Bus](../articles/service-bus/fundamentals-service-bus-hybrid-solutions.md) oder über [Azure-Warteschlangen](../articles/storage/storage-introduction.md).)
 
