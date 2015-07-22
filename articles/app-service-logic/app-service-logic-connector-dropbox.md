@@ -29,7 +29,13 @@ Zur Verwendung des Dropbox-Connectors müssen Sie zunächst eine Instanz der Dro
 2.	Navigieren Sie zu „Web und Mobil --> Azure Marketplace“, und suchen Sie nach „Dropbox-Connector“.
 3.	Konfigurieren Sie den Dropbox-Connector wie folgt:
  
-	![][1] – **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll. – **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll. – **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll. – **App Service-Plan** – Wählen Sie einen Webhostingplan aus, oder erstellen Sie einen. – **Tarif** – Wählen Sie einen Tarif für den Connector aus. – **Name** – Geben Sie Ihrem Dropbox-Connector einen Namen.
+	![][1]
+	- **Standort** - Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll.
+	- **Abonnement** - Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
+	- **Ressourcengruppe** - Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
+	- **App Service-Plan** - Wählen Sie einen Webhostingplan aus, oder erstellen Sie einen.
+	- **Tarif** - Wählen Sie einen Tarif für den Connector aus.
+	- **Name** - Geben Sie Ihrem Dropbox-Connector einen Namen.
 4. Klicken Sie auf „Erstellen“. Ein neuer Dropbox-Connector wird erstellt.
 5. Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des Dropbox-Connectors erstellen.
 
@@ -75,4 +81,4 @@ Konfigurieren Sie die Eingabeeigenschaften für die Aktion „Datei hochladen“
 [9]: ./media/app-service-logic-connector-dropbox/img9.PNG
  
 
-<!----HONumber=62-->
+<!-----HONumber=62--->
