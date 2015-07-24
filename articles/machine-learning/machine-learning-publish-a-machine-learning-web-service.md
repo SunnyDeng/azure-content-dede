@@ -93,7 +93,8 @@ Weitere Informationen zum Zugreifen auf einen Machine Learning-Webdienst finden 
 
 Im Azure-Verwaltungsportal können Sie Ihre Webdienste verwalten, indem Sie auf den Dienst **Machine Learning** klicken, den Machine Learning-Arbeitsbereich öffnen und anschließend auf der Registerkarte **Webdienste** den Webdienst öffnen. Auf dieser Seite aus können Sie den Webdienst überwachen, aktualisieren und löschen. Sie können auch zusätzlich zu dem Standardendpunkt, der beim Veröffentlichen erstellt wird, einen zweiten Endpunkt für den Webdienst hinzufügen.
 
-Weitere Informationen finden Sie unter [Verwalten eines Machine Learning-Arbeitsbereichs](machine-learning-manage-workspace.md).<!-- When this article gets published, fix the link and uncomment
+Weitere Informationen finden Sie unter [Verwalten eines Machine Learning-Arbeitsbereichs](machine-learning-manage-workspace.md).
+<!-- When this article gets published, fix the link and uncomment
 For more information on how to manage Azure Machine Learning web service endpoints using the REST API, see **Azure machine learning web service endpoints**. 
 -->
 
@@ -108,4 +109,4 @@ Um den Webdienst zu aktualisieren, öffnen Sie das ursprüngliche Bewertungsexpe
 
 Eine Option zum Aktualisieren des Webdiensts ist das programmgesteuerte erneute Trainieren des Modells. Weitere Informationen finden Sie unter [Programmgesteuertes erneutes Trainieren von Machine Learning-Modellen](machine-learning-retrain-models-programmatically.md).
 
-<!---HONumber=July15_HO2-->
+<!----HONumber=July15_HO2-->
