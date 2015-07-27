@@ -39,7 +39,7 @@ In diesem Thema werden folgende Themen behandelt:
 ##<a id="scenario"></a>Allgemeines Livestreamingszenario
 Die folgenden Schritte beschreiben die Aufgaben zum Erstellen von gebräuchlichen Livestreaminganwendungen.
 
-1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Live-Encoder, der einen RTMP- oder Fragmented MP4-Stream (Smooth Streaming) mit mehreren Bitraten ausgibt. Weitere Informationen finden Sie unter [￼Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
+1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Live-Encoder, der einen RTMP- oder Fragmented MP4-Stream (Smooth Streaming) mit mehreren Bitraten ausgibt. Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 	
 	Dieser Schritt kann auch nach der Erstellung des Kanals ausgeführt werden.
 
@@ -237,7 +237,7 @@ Weitere Aspekte im Zusammenhang mit der Arbeit mit Kanälen und zugehörigen Kom
 - Ein Kanal kann nur beendet werden, wenn er den Status „Wird ausgeführt“ aufweist und alle Programme im Kanal beendet wurden.
 - In der Standardeinstellung können Sie Ihrem Media Services-Konto nur fünf Kanäle hinzufügen. Weitere Informationen finden Sie unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md).
 - Sie können das Eingabeprotokoll nicht ändern, während der Kanal oder seine zugehörigen Programme ausgeführt werden. Wenn Sie andere Protokolle benötigen, erstellen Sie für jedes Eingabeprotokoll einen separaten Kanal. 
-- Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [￼diesem Abschnitt](media-services-manage-channels-overview.md#states).
+- Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [diesem Abschnitt](media-services-manage-channels-overview.md#states).
 
 ##<a id="tasks"></a>Aufgaben im Zusammenhang mit Livestreaming
 
@@ -331,4 +331,4 @@ Informationen zum Skalieren von Streamingeinheiten finden Sie unter [Skalieren v
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
  
 
-<!---HONumber=July15_HO2-->
+<!----HONumber=July15_HO2-->

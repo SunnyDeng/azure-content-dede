@@ -58,21 +58,21 @@ Zuerst muss das Microsoft HPC Pack auf einem lokalen Computer mit Windows Server
 
 2. Starten Sie den Installations-Assistenten von HPC Pack, indem Sie die in den HPC Pack-Installationsdateien enthaltene Datei Setup.exe ausführen.
 
-3. Klicken Sie im **HPC Pack 2012 R2 Setup**-Bildschirm auf **New installation or add new features to an existing installation**.
+3. Klicken Sie im **HPC Pack 2012 R2 Setup**-Bildschirm auf **Neue Installation oder Hinzufügen neuer Funktionen zu einer vorhandenen Installation**.
 
 	![HPC Pack 2012 Setup][install_hpc1]
 
-4. Klicken Sie auf der **Seite mit dem Vertrag für Benutzer von Microsoft-Software ** auf **Next**.
+4. Klicken Sie auf der **Seite mit dem Vertrag für Benutzer von Microsoft-Software ** auf **Weiter**.
 
-5. Klicken Sie auf der Seite **Select Installation Type** auf **Create a new HPC cluster by creating a head node** und dann auf **Next**.
+5. Klicken Sie auf der Seite **Installationstyp wählen** auf **Ein neues HPC-Cluster durch Erstellen einer... erstellen** und dann auf **Weiter**.
 
 	![Installationstyp auswählen][install_hpc2]
 
-6. Der Installations-Assistent führt vor der Installation verschiedene Tests durch. Klicken Sie auf **Next** auf der Seite **Installation Rules**, wenn alle Tests erfolgreich durchgeführt worden sind. Lesen Sie andernfalls die bereitgestellten Informationen, und nehmen Sie eventuell notwendige Änderungen in Ihrer Umgebung vor. Führen Sie dann die Tests nochmals aus, oder starten Sie gegebenenfalls den Installations-Assistenten erneut.
+6. Der Installations-Assistent führt vor der Installation verschiedene Tests durch. Klicken Sie auf **Weiter** auf der Seite **Installationsregeln**, wenn alle Tests erfolgreich durchgeführt worden sind. Lesen Sie andernfalls die bereitgestellten Informationen, und nehmen Sie eventuell notwendige Änderungen in Ihrer Umgebung vor. Führen Sie dann die Tests nochmals aus, oder starten Sie gegebenenfalls den Installations-Assistenten erneut.
 
 	![Installationsregeln][install_hpc3]
 
-7. Vergewissern Sie sich, dass auf der Seite **HPC DB Configuration** der **Hauptknoten** für alle HPC-Datenbanken ausgewählt ist, und klicken Sie dann auf **Next**.
+7. Vergewissern Sie sich, dass auf der Seite **HPC DB Configuration** der **Hauptknoten** für alle HPC-Datenbanken ausgewählt ist, und klicken Sie dann auf **Weiter**.
 
 	![DB-Konfiguration][install_hpc4]
 
@@ -80,7 +80,7 @@ Zuerst muss das Microsoft HPC Pack auf einem lokalen Computer mit Windows Server
 
 	![Installieren][install_hpc6]
 
-9. Wenn die Installation abgeschlossen ist, deaktivieren Sie **Start HPC Cluster Manager** und klicken dann auf **Finish**. (Sie werden HPC Cluster Manager in einem späteren Schritt starten, um die Konfiguration des Hauptknotens abzuschließen.)
+9. Wenn die Installation abgeschlossen ist, deaktivieren Sie **HPC-Cluster-Manager starten** und klicken dann auf **Beenden**. (Sie werden HPC Cluster Manager in einem späteren Schritt starten, um die Konfiguration des Hauptknotens abzuschließen.)
 
 	![Fertig stellen][install_hpc7]
 
@@ -106,7 +106,7 @@ HPC Pack installiert im Hauptknoten ein selbstsigniertes Zertifikat mit dem Name
 
 	![Zertifikateinstellungen][upload_cert1]
 
-4. Suchen Sie im Hauptknoten nach der Datei C:\\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer. Klicken Sie dann auf die Schaltfläche mit dem **Häkchen**.
+4. Suchen Sie im Hauptknoten nach der Datei C:\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer. Klicken Sie dann auf die Schaltfläche mit dem **Häkchen**.
 
 	![Hochladen des Zertifikats][install_hpc10]
 
@@ -150,9 +150,9 @@ Bevor Sie mit HPC Cluster Manager Azure-Knoten bereitstellen und Aufträge über
 
 	>[AZURE.NOTE]Dies ist die einfachste Konfiguration für Demonstrationszwecke, da der Hauptknoten für die Verbindung zu Active Directory und zum Internet nur einen einzigen Netzwerkadapter braucht. Clusterkonfigurationen, die mehrere Netzwerke benötigen, werden in diesem Lernprogramm nicht behandelt.
 
-4. Klicken Sie auf **Next**, und akzeptieren Sie auf den verbleibenden Seiten des Assistenten die Standardwerte. Klicken Sie in der Registerkarte **Review** auf **Configure**, um die Netzwerkkonfiguration abzuschließen.
+4. Klicken Sie auf **Weiter**, und akzeptieren Sie auf den verbleibenden Seiten des Assistenten die Standardwerte. Klicken Sie in der Registerkarte **Review** auf **Configure**, um die Netzwerkkonfiguration abzuschließen.
 
-5. Klicken Sie in der **Deployment To-do List** auf **Provide installation credentials**.
+5. Klicken Sie in der **Deployment To-do List** auf **Anmeldeinformationen für die Installation bereitstellen**.
 
 6. Geben Sie in das Dialogfeld **Installation Credentials** die Anmeldedaten des Domänenkontos ein, das Sie für die Installation von HPC Pack verwendet haben. Klicken Sie dann auf **OK**.
 
@@ -168,25 +168,25 @@ Bevor Sie mit HPC Cluster Manager Azure-Knoten bereitstellen und Aufträge über
 
 	>[AZURE.NOTE]Die Benennungsreihe erzeugt nur Namen für Serverknoten, die in die Domäne eingebunden sind. Azure-Knoten werden automatisch benannt.
 
-9. Klicken Sie in der **Deployment To-do List** auf **Create a node template**. Sie brauchen die Knotenvorlage, um Azure-Knoten zum Cluster hinzuzufügen.
+9. Klicken Sie in der **Deployment To-do List** auf **Eine Knotenvorlage erstellen**. Sie brauchen die Knotenvorlage, um Azure-Knoten zum Cluster hinzuzufügen.
 
 10. Führen Sie im Create Node Template Wizard, folgende Schritte aus:
 
-	a. Klicken Sie auf der Seite **Choose Node Template Type** auf **Azure Node Template** und dann auf **Next**.
+	a. Klicken Sie auf der Seite **Choose Node Template Type** auf **Azure Node Template** und dann auf **Weiter**.
 
 	![Knotenvorlage][config_hpc10]
 
-	b. Klicken Sie auf **Next**, um den Standardvorlagennamen zu akzeptieren.
+	b. Klicken Sie auf **Weiter**, um den Standardvorlagennamen zu akzeptieren.
 
-	c. Geben Sie auf der Seite **Provide Subscription Information** Ihre Azure-Abonnement-ID ein (zu finden in den Azure-<a href="[https://account.windowsazure.com/Subscriptions">Kontoinformationen</a>). Klicken Sie dann neben **Verwaltungszertifikat** auf **Browse**, und wählen Sie **Default HPC Azure Management.** Klicken Sie auf **Next**.
+	c. Geben Sie auf der Seite **Provide Subscription Information** Ihre Azure-Abonnement-ID ein (zu finden in den Azure-<a href="[https://account.windowsazure.com/Subscriptions">Kontoinformationen</a>). Klicken Sie dann neben **Verwaltungszertifikat** auf **Browse**, und wählen Sie **Default HPC Azure Management.** Klicken Sie auf **Weiter**.
 
 	![Knotenvorlage][config_hpc12]
 
-	d. Wählen Sie auf der Seite **Provide Service Information** den Clouddienst und das Speicherkonto aus, den bzw. das Sie in einem vorherigen Schritt erstellt haben. Klicken Sie auf **Next**.
+	d. Wählen Sie auf der Seite **Provide Service Information** den Clouddienst und das Speicherkonto aus, den bzw. das Sie in einem vorherigen Schritt erstellt haben. Klicken Sie auf **Weiter**.
 
 	![Knotenvorlage][config_hpc13]
 
-	e. Klicken Sie auf **Next**, und akzeptieren Sie auf den verbleibenden Seiten des Assistenten die Standardwerte. Klicken Sie dann in der Registerkarte **Review** auf **Create**, um die Knotenvorlage anzulegen.
+	e. Klicken Sie auf **Weiter**, und akzeptieren Sie auf den verbleibenden Seiten des Assistenten die Standardwerte. Klicken Sie dann in der Registerkarte **Review** auf **Create**, um die Knotenvorlage anzulegen.
 
 	>[AZURE.NOTE]Standardmäßig enthält die Azure-Knotenvorlage unter anderem Einstellungen, mit denen Sie Knoten manuell starten (bereitstellen) und anhalten können. Sie können auch einen Zeitplan für das automatische Starten und Stoppen der Azure-Knoten konfigurieren.
 
@@ -200,11 +200,11 @@ In diesem Lernprogramm werden Sie zwei kleine Knoten hinzufügen.
 
 	![Hinzufügen von Knoten][add_node1]
 
-2. Klicken Sie im Add Node Wizard auf der Seite **Select Deployment Method** auf **Add Azure nodes** und dann auf **Next**.
+2. Klicken Sie im Add Node Wizard auf der Seite **Select Deployment Method** auf **Add Azure nodes** und dann auf **Weiter**.
 
 	![Hinzufügen eines Azure-Knotens][add_node1_1]
 
-3. Wählen Sie auf der Seite **Specify New Nodes** die Azure-Knotenvorlage aus, die Sie zuvor angelegt haben (Standardname **Default AzureNode Template**). Spezifizieren Sie dann **2** Knoten der Größe **Small**, und klicken Sie anschließend auf **Next**.
+3. Wählen Sie auf der Seite **Specify New Nodes** die Azure-Knotenvorlage aus, die Sie zuvor angelegt haben (Standardname **Default AzureNode Template**). Spezifizieren Sie dann **2** Knoten der Größe **Small**, und klicken Sie anschließend auf **Weiter**.
 
 	![Spezifikation von Knoten][add_node2]
 
@@ -347,4 +347,4 @@ Nachdem Sie das Cluster ausprobiert haben, können Sie mit HPC Cluster Manager d
 [stop_node4]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/stop_node4.png
 [view_instances2]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/view_instances2.png
 
-<!---HONumber=July15_HO3-->
+<!----HONumber=July15_HO3-->

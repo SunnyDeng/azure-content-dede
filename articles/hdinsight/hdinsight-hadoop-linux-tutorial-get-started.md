@@ -76,7 +76,7 @@ Zur Vereinfachung dieses Lernprogramms werden nur der standardmäßige Blobconta
 7. Notieren Sie sich den **NAMEN DES SPEICHERKONTOS** und den **PRIMÄREN ZUGRIFFSSCHLÜSSEL** (oder den **SEKUNDÄREN ZUGRIFFSSCHLÜSSEL** – beide Schlüssel funktionieren). Sie werden diese später im Lernprogramm benötigen.
 
 
-Weitere Informationen finden Sie unter [￼Erstellen eines Speicherkontos](../storage-create-storage-account.md) und [Verwenden von Azure-Blobspeicher mit HDInsight](../hdinsight-use-blob-storage.md).
+Weitere Informationen finden Sie unter [Erstellen eines Speicherkontos](../storage-create-storage-account.md) und [Verwenden von Azure-Blobspeicher mit HDInsight](../hdinsight-use-blob-storage.md).
 
 ## <a name="provision"></a>Bereitstellen eines HDInsight-Clusters unter Linux
 
@@ -271,4 +271,4 @@ In diesem Linux-Lernprogramm haben Sie erfahren, wie Sie einen Hadoop-Cluster un
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData2.png
  
 
-<!---HONumber=July15_HO2-->
+<!----HONumber=July15_HO2-->

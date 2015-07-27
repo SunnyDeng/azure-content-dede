@@ -26,14 +26,14 @@
 - [Azure Portal](cloud-services-how-to-manage.md)
 - [Azure Preview Portal](cloud-services-how-to-manage-portal.md)
 
-Im Bereich **Cloud Services** des Azure-Portals können Sie eine Dienstrolle oder eine Bereitstellung aktualisieren, eine Bereitstellung zur Produktion heraufstufen, Ressourcen mit Ihrem Clouddienst verknüpfen, sodass Sie die Ressourcenabhängigkeiten sehen und die Ressourcen zusammen skalieren können, und einen Clouddienst oder eine Bereitstellung löschen.
+Im Bereich **Clouddienste** des Azure-Verwaltungsportals können Sie eine Dienstrolle oder eine Bereitstellung aktualisieren, eine Bereitstellung zur Produktion heraufstufen, Ressourcen mit Ihrem Clouddienst verknüpfen, sodass Sie die Ressourcenabhängigkeiten sehen und die Ressourcen zusammen skalieren können, und einen Clouddienst oder eine Bereitstellung löschen.
 
 
 ## Aktualisieren einer Clouddienstrolle oder -bereitstellung
 
 Wenn Sie den Anwendungscode für Ihren Cloud-Dienst aktualisieren müssen, verwenden Sie **Aktualisieren** im Dashboard auf der Seite **Cloud-Dienste** oder auf der Seite **Instanzen**. Sie können eine oder alle Rollen aktualisieren. Sie müssen ein neues Dienstpaket und eine neue Dienstkonfigurationsdatei hochladen.
 
-1. Klicken Sie im [Azure-Portal](https://manage.windowsazure.com/) auf dem Dashboard auf der Seite **Cloud Services** oder auf der Seite **Instanzen** auf **Aktualisieren**.
+1. Klicken Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) auf dem Dashboard auf der Seite **Cloud-Dienste** oder auf der Seite **Instanzen** auf **Aktualisieren**.
 
 	![Bereitstellung aktualisieren](./media/cloud-services-how-to-manage/CloudServices_UpdateDeployment.png)
 
@@ -49,7 +49,7 @@ Wenn Sie den Anwendungscode für Ihren Cloud-Dienst aktualisieren müssen, verwe
 
 	Wenn Sie die Größe einer Rolle (d. h. die Größe eines virtuellen Computers, der eine Rolleninstanz hostet) oder die Anzahl der Rollen ändern, denken Sie daran, dass für jede Rolleninstanz (virtueller Computer) ein neues Image erstellt werden muss und dass lokale Daten verloren gehen.
 
-7. Wenn Dienstrollen nur eine Rolleninstanz haben, aktivieren Sie das Kontrollkästchen **Update even if one or more role contain a single instance**, damit das Update fortgesetzt werden kann.
+7. Wenn Dienstrollen nur eine Rolleninstanz haben, aktivieren Sie das Kontrollkästchen **Aktualisieren, auch wenn eine oder mehrere Rollen über eine einzelne Instanz verfügen**, damit das Update fortgesetzt werden kann.
 
 	Azure kann während des Updates eines Clouddiensts nur dann eine Dienstverfügbarkeit von 99,95 Prozent garantieren, wenn jede Rolle mindestens zwei Rolleninstanzen (virtuelle Computer) hat. In diesem Fall kann ein virtueller Computer Clientanforderungen verarbeiten, während der andere aktualisiert wird.
 
@@ -107,7 +107,7 @@ Im Folgenden wird beschrieben, wie eine neue SQL-Datenbankinstanz, die auf einem
 
 	![Verknüpfen, Seite 1](./media/cloud-services-how-to-manage/CloudServices_LinkedResources_LinkPage1.png)
 
-4. Klicken Sie auf **Create a new resource** oder auf **Link an existing resource**.
+4. Klicken Sie auf **Eine neue Ressource erstellen** oder auf **Eine vorhandene Ressource verknüpfen**.
 
 5. Wählen Sie den Typ der zu verknüpfenden Ressource. Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com/) auf **SQL-Datenbank**. (Das Vorschau-Verwaltungsportal unterstützt nicht das Verknüpfen eines Speicherkontos mit einem Cloud-Dienst.)
 
@@ -148,7 +148,7 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 	![Menü "Löschen"](./media/cloud-services-how-to-manage/CloudServices_DeleteMenu.png)
 
 
-3. Klicken Sie zum Löschen einer Bereitstellung auf **Delete production deployment** oder auf **Stagingbereitstellung löschenDelete staging deployment**. Klicken Sie dann an der Bestätigungsaufforderung auf **Ja**.
+3. Klicken Sie zum Löschen einer Bereitstellung auf **Produktionsbereitstellung löschen** oder auf **Stagingbereitstellung löschen**. Klicken Sie dann an der Bestätigungsaufforderung auf **Ja**.
 
 4. Wenn Sie den Cloud-Dienst löschen möchten, wiederholen Sie Schritt 3 bei Bedarf, um die andere Bereitstellung zu löschen.
 
@@ -158,4 +158,4 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 
  
 
-<!---HONumber=July15_HO3-->
+<!----HONumber=July15_HO3-->

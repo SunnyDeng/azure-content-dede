@@ -27,7 +27,9 @@ Bestimmen Sie anhand der Informationen unter [Aktualisieren von Web-/Business-SQ
 
 Sie können über das Azure-Verwaltungsportal, über [PowerShell](https://msdn.microsoft.com/library/azure/dn546726.aspx) oder über [REST-API](https://msdn.microsoft.com/library/dn505719.aspx) problemlos zwischen den Dienstebenen wechseln.
 
-Beachten Sie beim Wechseln zwischen Dienstebenen Folgendes: – Stellen Sie vor der Durchführung eines Upgrades zwischen Dienstebenen und Leistungsstufen sicher, dass Sie auf dem Server über Kontingente verfügen. Wenn Sie zusätzliche Kontingente benötigen, rufen Sie den Kundendienst an. – Für Verbunddatenbanken kann kein Upgrade auf die Dienstebenen Basic, Standard oder Premium durchgeführt werden.
+Beachten Sie beim Wechseln zwischen Dienstebenen Folgendes: 
+- Stellen Sie vor der Durchführung eines Upgrades zwischen Dienstebenen und Leistungsstufen sicher, dass Sie auf dem Server über Kontingente verfügen. Wenn Sie zusätzliche Kontingente benötigen, rufen Sie den Kundendienst an.
+- Für Verbunddatenbanken kann kein Upgrade auf die Dienstebenen Basic, Standard oder Premium durchgeführt werden.
 
 - Für ein Downgrade einer Datenbank sollte die Datenbank kleiner als die in der Zieldienstebene maximal zulässige Größe sein. Weitere Informationen zu den zulässigen Größe für jede Dienstebene finden Sie in der Tabelle mit den Dienstebenen und Datenbankgrößen weiter unten in diesem Abschnitt.
 
@@ -41,9 +43,11 @@ Beachten Sie beim Wechseln zwischen Dienstebenen Folgendes: – Stellen Sie vor 
 
 - Die neuen Eigenschaften für die Datenbank werden erst angewendet, wenn die Änderungen abgeschlossen sind.
 
-Bitte beachten Sie Folgendes: – Die Dienstebenen "Business" und "Web" werden im September 2015 eingestellt. Weitere Informationen finden Sie unter [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition](https://msdn.microsoft.com/library/azure/dn741330.aspx).
+Bitte beachten Sie Folgendes:
+- Die Dienstebenen "Business" und "Web" werden im September 2015 eingestellt. Weitere Informationen finden Sie unter [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition](https://msdn.microsoft.com/library/azure/dn741330.aspx).
 
-<note included> – Bitte beachten Sie unbedingt Folgendes: [ Die aktuelle Implementierung von Verbünden wird zusammen mit den Dienstebenen "Business" und "Web" eingestellt](https://msdn.microsoft.com/library/azure/dn741330.aspx). Es wird empfohlen, die Funktion [Flexible Skalierung für Azure SQL-Datenbank](sql-database-elastic-scale-get-started.md) zu verwenden, um eine Sharding-Lösung mit horizontaler Skalierung in Azure SQL-Datenbank zu erstellen. Wenn Sie dies ausprobieren möchten, finden Sie entsprechende Informationen unter "Erste Schritte mit der Vorschauversion von Elastic Scale für die Azure SQL-Datenbank".
+<note included>
+- Bitte beachten Sie unbedingt Folgendes: [ Die aktuelle Implementierung von Verbünden wird zusammen mit den Dienstebenen "Business" und "Web" eingestellt](https://msdn.microsoft.com/library/azure/dn741330.aspx). Es wird empfohlen, die Funktion [Flexible Skalierung für Azure SQL-Datenbank](sql-database-elastic-scale-get-started.md) zu verwenden, um eine Sharding-Lösung mit horizontaler Skalierung in Azure SQL-Datenbank zu erstellen. Wenn Sie dies ausprobieren möchten, finden Sie entsprechende Informationen unter "Erste Schritte mit der Vorschauversion von Elastic Scale für die Azure SQL-Datenbank".
 
 ## Upgrade auf eine höhere Dienstebene
 Verwenden Sie eine der folgenden Methoden, um ein Upgrade einer Datenbank durchzuführen. Die Schritte sind speziell für ein Upgrade auf eine Premium-Dienstebene dargestellt, gelten jedoch für alle Upgrades.
@@ -64,7 +68,12 @@ Verwenden Sie eine der folgenden Methoden, um ein Upgrade einer Datenbank durchz
 2. Legen Sie den Serverkontext mithilfe des "New-AzureSqlDatabaseServerContext"-Cmdlets fest. Die Beispielsyntax ist im Abschnitt "Verwenden von Azure PowerShell-Befehlen" angegeben.
 3. Rufen Sie ein Handle für die Datenbank und für die Zielleistungsstufe ab. Geben Sie die Leistungsstufe mithilfe von "Set-AzureSqlDatabase –ServiceObjective" an.
 
-**Verwendungsbeispiel** In diesem Beispiel: -In diesem Beispiel wird ein Upgrade auf eine Premium-Dienstebene veranschaulicht. - Das $db-Handle, das auf den Datenbanknamen "somedb" verweist, wird erstellt. - Das $P1-Handle, das auf die Premium-Leistungsstufe "1" verweist, wird erstellt. - Die Leistungsstufe für die "$db"-Datenbank wird auf "$P1" festgelegt.
+**Verwendungsbeispiel**
+In diesem Beispiel: 
+- In diesem Beispiel wird ein Upgrade auf eine Premium-Dienstebene veranschaulicht.
+- Das $db-Handle, das auf den Datenbanknamen "somedb" verweist, wird erstellt.
+- Das $P1-Handle, das auf die Premium-Leistungsstufe "1" verweist, wird erstellt.
+- Die Leistungsstufe für die "$db"-Datenbank wird auf "$P1" festgelegt.
 
 		Windows PowerShell:
 
@@ -120,7 +129,8 @@ Sie können die Leistungsstufen einer Standard- oder Premium-Datenbank mithilfe 
 
 Wenn Sie die Leistungsstufe einer Premium-Datenbank ändern, für die Aktive geografische Replikation-Beziehungen konfiguriert sind, verwenden Sie die folgende Reihenfolge für primäre und aktive sekundäre Datenbanken:
 
-Der Grund hierfür ist, dass die aktiven sekundären Datenbanken die gleiche Leistungsstufe wie die primäre Datenbank oder eine höhere aufweisen müssen. – Wenn Sie die Leistungsstufe von einer höheren in eine niedrigere ändern, beginnen Sie zuerst mit der primären Datenbank, gefolgt von einer oder mehreren aktiven sekundären Datenbanken.
+Der Grund hierfür ist, dass die aktiven sekundären Datenbanken die gleiche Leistungsstufe wie die primäre Datenbank oder eine höhere aufweisen müssen.
+- Wenn Sie die Leistungsstufe von einer höheren in eine niedrigere ändern, beginnen Sie zuerst mit der primären Datenbank, gefolgt von einer oder mehreren aktiven sekundären Datenbanken.
 
 - Wenn Sie die Leistungsstufe von einer niedrigeren auf eine höhere ändern, beginnen Sie mit den aktiven sekundären Datenbanken, schließlich gefolgt von der primären Datenbank.
 
@@ -199,11 +209,13 @@ Dieser Abschnitt beschreibt die Voraussetzungen für die Verwendung der Azure Po
 
 **Voraussetzungen**
 
-Um die in diesem Thema beschriebenen Azure PowerShell-Cmdlets zu verwenden, muss die folgende Software auf dem Computer installiert sein, auf dem PowerShell ausgeführt wird. 1. Laden Sie unter der folgenden Adresse eine Version von Windows PowerShell herunter, die mindestens die Versionsnummer 3.0 aufweist: http://www.microsoft.com/de-de/download/details.aspx?id=34595.
+Um die in diesem Thema beschriebenen Azure PowerShell-Cmdlets zu verwenden, muss die folgende Software auf dem Computer installiert sein, auf dem PowerShell ausgeführt wird. 
+1. Laden Sie unter der folgenden Adresse eine Version von Windows PowerShell herunter, die mindestens die Versionsnummer 3.0 aufweist: http://www.microsoft.com/de-de/download/details.aspx?id=34595.
 
 2. Laden Sie Azure PowerShell im Abschnitt "Befehlszeilentool" unter [Downloadseite für Azure SDK und Tools](http://azure.microsoft.com/downloads/) herunter.
 
-Gehen Sie wie folgt vor: Navigieren Sie im **Startbildschirm** oder **Startmenü** zu Azure PowerShell, und starten Sie dann Azure PowerShell.
+Gehen Sie wie folgt vor:
+Navigieren Sie im **Startbildschirm** oder **Startmenü** zu Azure PowerShell, und starten Sie dann Azure PowerShell.
 
 Geben Sie den Benutzernamen und das Kennwort für den Server ein.
 
@@ -229,4 +241,4 @@ Erstellen Sie den Serverkontext mithilfe von**New-AzureSqlDatabaseServerContext*
 [Set-AzureSqlDatabase](http://go.microsoft.com/fwlink/?LinkId=391412)
  
 
-<!---HONumber=July15_HO3-->
+<!----HONumber=July15_HO3-->

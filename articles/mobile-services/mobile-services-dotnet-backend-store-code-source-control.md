@@ -36,7 +36,8 @@ Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst durch Be
 
 	Die erforderlichen Schritte zum Installieren von Git variieren je nach Betriebssystem. Informationen zu Betriebssystem-spezifischen Distributionen und zur Installation finden Sie unter [Installieren von Git].
 
-	> [AZURE.NOTE]Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
+	> [AZURE.NOTE]
+	> Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
 
 2. Öffnen Sie eine Befehlszeile, zum Beispiel **GitBash** (Windows) oder **Bash** (Unix Shell). Auf OS X-Systemen können Sie auf die Befehlszeile über die **Terminal**-Anwendung zugreifen.
 
@@ -98,6 +99,7 @@ Ihr mobiles Dienstprojekt wird jetzt in der Quellcodeverwaltung verwaltet, und S
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-data.md
 [Azure Management Portal]: https://manage.windowsazure.com/
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Call a custom API from the client]: mobile-services-dotnet-backend-ios-call-custom-api.md
 [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts]: mobile-services-dotnet-backend-how-to-use-code-first-migrations.md
  

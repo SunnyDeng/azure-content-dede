@@ -22,13 +22,15 @@
 
 In diesem Leitfaden wird beschrieben, wie Sie Ihren auf Azure gehosteten Anwendungen die erstklassige Leistungsüberwachung von New Relic hinzufügen. Wir erläutern das schnelle und einfache Verfahren zum Hinzufügen von New Relic zu Anwendungen und stellen einige der Funktionen von New Relic vor. Weitere Informationen zum Arbeiten mit New Relic finden Sie unter [Verwenden von New Relic](#using-new-relic).
 
-Was ist New Relic? --
+Was ist New Relic? 
+--
 
 New Relic ist ein für Entwickler konzipiertes Tool, mit dem Produktionsanwendungen überwacht und detaillierte Informationen zu deren Leistung und Zuverlässigkeit abgerufen werden können. Es beschleunigt die Identifizierung und Diagnostizierung von Leistungsproblemen und gibt Ihnen die benötigten Informationen an die Hand, um diese Probleme zu lösen.
 
 New Relic verfolgt die Ladezeit und den Durchsatz von Webtransaktionen, sowohl vom Server als auch von den Browsern der Benutzer. Das Tool zeigt, wie viel Zeit Sie in der Datenbank verbracht haben, analysiert langsame Abfragen und Webanforderungen, bietet Verfügbarkeitsüberwachung und Warnfunktionen, verfolgt Anwendungsausnahmen und vieles mehr.
 
-Sonderpreis für New Relic im Azure Store --
+Sonderpreis für New Relic im Azure Store 
+--
 
 New Relic Standard ist für Azure-Benutzer kostenlos; New Relic Pro wird basierend auf der Instanzgröße für Azure-Clouddienste angeboten
 
@@ -38,7 +40,8 @@ Preisinformationen finden Sie auf der [New Relic-Seite im Azure Store](http://az
 
 Azure-Kunden erhalten bei Bereitstellung des New Relic-Agenten ein zweiwöchiges Testabonnement von New Relic Pro.
 
-Anmelden bei New Relic über den Azure Store --
+Anmelden bei New Relic über den Azure Store 
+--
 
 New Relic kann nahtlos in Azure-Web- und -Workerrollen integriert werden.
 
@@ -173,4 +176,4 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
  * [Real User Monitoring](https://newrelic.com/docs/features/real-user-monitoring): Überblick darüber, wie mit RUM (Real User Monitoring) die Zeit gemessen wird, die das Laden Ihrer Webseiten in den Browsern von Benutzern dauert, woher diese Benutzer stammen und welche Browser sie verwenden
  * [Finding Help](https://newrelic.com/docs/site/finding-help): Über das Online-Hilfecenter von New Relic aufrufbare Ressourcen
 
-<!---HONumber=July15_HO3-->
+<!----HONumber=July15_HO3-->

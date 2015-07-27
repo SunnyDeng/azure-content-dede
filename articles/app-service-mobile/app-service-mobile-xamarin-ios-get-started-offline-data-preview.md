@@ -85,9 +85,9 @@ Mit der Mobile App-Offlinesynchronisierung können Endbenutzer mit einer lokalen
 
     In diesem Beispiel werden alle Datensätze in der `TodoItem`-Remotetabelle abgerufen, Sie können die Datensätze aber auch durch Übergeben einer Abfrage filtern. Der erste Parameter für `PullAsync()` ist eine Abfrage-ID für eine inkrementelle Synchronisierung. Diese verwendet den `UpdatedAt`-Zeitstempel, um nur die Datensätze abzurufen, die seit der letzten Synchronisierung geändert wurden. Die Abfrage-ID muss eine beschreibende Zeichenfolge sein, die für jede logische Abfrage in Ihrer App eindeutig ist. Um die inkrementelle Synchronisierung zu deaktivieren, übergeben Sie als Abfrage-ID `null`. Dadurch werden in jedem Pullvorgang alle Datensätze abgerufen, was potenziell ineffizient ist.
 
-<!--     >[AZURE.NOTE] To remove records from the device local store when they have been deleted in your mobile service database, you should enable [Soft Delete]. Otherwise, your app should periodically call `IMobileServiceSyncTable.PurgeAsync()` to purge the local store.
+<!--     >[AZURE.NOTE] Um Einträge vom lokalen Speicher des Geräts zu entfernen, wenn sie in der Datenbank Ihres mobilen Diensts gelöscht wurden, aktivieren Sie die [vorläufige Löschung]. Andernfalls ruft Ihre App in bestimmten Zeitabständen `ImobileServiceSyncTable.PurgeAsync()` auf, um den lokalen Speicher zu bereinigen.
 
-    Note that the `MobileServicePushFailedException` can occur for both a push and a pull operation. The next tutorial, [Handling conflicts with offline support for Mobile Services], shows how to handle these sync related exceptions.
+    Beachten Sie, dass der Fehler `MobileServicePushFailedException` sowohl bei einem Push- als auch einem Pull-Vorgang auftreten kann. Das nächste Lernprogramm [Behandeln von Konflikten mit Offline-Support für Mobile Services] zeigt Ihnen, wie Sie mit Ausnahmen im Zusammenhang mit der Synchronisation umgehen können.
 -->
 
 5. In der `QSTodoService`-Klasse wird die `SyncAsync()`-Methode nach den Vorgängen zum Ändern von Daten, `InsertTodoItemAsync()` und `CompleteItemAsync`, aufgerufen. Sie wird auch von `RefreshDataAsync()` aufgerufen, sodass Benutzer die aktuellsten Daten abrufen, wenn sie die Akualisierungsbewegung durchführen. Die App führt außerdem eine Synchronisierung beim Start durch, da `QSTodoListViewController.ViewDidLoad()` einen Aufruf von `RefreshDataAsync()` durchführt.
@@ -166,4 +166,4 @@ In diesem Abschnitt stellen Sie erneut eine Verbindung zwischen der App und dem 
 [Xamarin-Erweiterung]: http://xamarin.com/visual-studio
  
 
-<!---HONumber=July15_HO3-->
+<!----HONumber=July15_HO3-->
