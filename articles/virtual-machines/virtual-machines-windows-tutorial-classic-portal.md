@@ -1,12 +1,11 @@
 <properties
 	pageTitle="Erstellen eines virtuellen Computers unter Windows in Azure"
-	description="Erfahren Sie, wie Sie im klassischen Azure-Portal virtuelle Windows-Computer erstellen können."
+	description="Erfahren Sie, wie Sie im Azure-Verwaltungsportal virtuelle Windows-Computer (VM) erstellen können."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="KBDAzure"
 	manager="timlt"
-	editor="tysonn"
-	tags="azure-classic-portal"/>
+	editor=""/>
 
 <tags
 	ms.service="virtual-machines"
@@ -14,29 +13,29 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/27/2015"
+	ms.date="06/05/2015"
 	ms.author="kathydav"/>
 
-
-
-# Erstellen eines virtuellen Computers unter Windows
+# Erstellen einen virtuellen Windows-Computers im Azure-Verwaltungsportal
 
 > [AZURE.SELECTOR]
-- [Azure portal](virtual-machines-windows-tutorial.md)
-- [Azure classic portal](virtual-machines-windows-tutorial-classic-portal.md)
-- [PowerShell](virtual-machines-ps-create-preconfigure-windows-vms.md)
+- [Azure Preview Portal](virtual-machines-windows-tutorial.md)
+- [Azure Portal](virtual-machines-windows-tutorial-classic-portal.md)
+- [PowerShell - Resource Management](virtual-machines-deploy-rmtemplates-powershell.md)
+- [PowerShell - Service Management](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-In diesem Lernprogramm erfahren Sie, wie einfach es ist, einen virtuellen Azure-Computer (Azure-VM) zu erstellen. In diesem Lernprogramm wird ein Windows Server-Image verwendet, das jedoch nur eines von vielen in Azure verfügbaren Images ist. Hierzu zählen Windows- und Linux-basierte Betriebssysteme sowie Images mit vorinstallierten Anwendungen. Welche Images Sie auswählen können, hängt jeweils von der Art Ihres Abonnements ab. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
 
-Sie können auch mithilfe [eigener Images](../virtual-machines-create-upload-vhd-windows-server-classic-portal.md) virtuelle Windows-Computer erstellen. Weitere Informationen zu virtuellen Azure-Computern finden Sie unter [Übersicht über virtuelle Computer in Azure](http://msdn.microsoft.com/library/azure/jj156143.aspx).
+In diesem Lernprogramm erfahren Sie, wie einfach es ist, einen virtuellen Azure-Computer (VM) im Azure-Verwaltungsportal zu erstellen. Als Beispiel wird ein Windows Server-Image verwendet. Dies ist jedoch nur eines von vielen Images, die Azure bietet. Beachten Sie, dass Ihre Imageauswahl von Ihrem Abonnement abhängt. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
 
-[AZURE.INCLUDE [Hinweis zur kostenlosen Testversion](../../includes/free-trial-note.md)]
+Sie können auch mithilfe [eigener Images](virtual-machines-create-upload-vhd-windows-server.md) virtuelle Computer erstellen. Informationen zu dieser und zu anderen Methoden finden Sie unter [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md).
 
-## <a id="createvirtualmachine"> </a>Erstellen von virtuellen Computern
+[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
-In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** ￼￼￼￼im klassischen Azure-Portal verwenden, um einen virtuellen Computer zu erstellen. Mit dieser Option erhalten Sie mehr Konfigurationsoptionen als mit **Schnellerfassung**. Wenn Sie beispielsweise einen virtuellen Computer mit einem virtuellen Netzwerk verbinden möchten, sollten Sie die Option **Aus Galerie** verwenden.
+## <a id="createvirtualmachine"> </a>Erstellen eines virtuellen Computers
 
-> [AZURE.NOTE]Sie können auch das umfangreichere, anpassbare [Azure-Portal](https://portal.azure.com) testen, um einen virtuellen Computer zu erstellen, das Bereitstellen von Anwendungsvorlagen für mehrere virtuelle Computer zu automatisieren, erweiterte Überwachungs- und Diagnosefunktionen für virtuelle Computer auszuführen und vieles mehr. Die verfügbaren VM-Konfigurationsoptionen in den beiden Portalen sind ähnlich, aber nicht identisch.
+In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** im Azure-Verwaltungsportal verwenden, um einen virtuellen Computer zu erstellen. Mit dieser Option erhalten Sie mehr Konfigurationsoptionen als mit **Schnellerfassung**. Wenn Sie beispielsweise einen virtuellen Computer mit einem virtuellen Netzwerk verbinden möchten, sollten Sie die Option **Aus Galerie** verwenden.
+
+> [AZURE.NOTE]Sie können auch das funktionsreichere, anpassbare [Azure-Vorschauportal](https://portal.azure.com) verwenden, um einen virtuellen Computer zu erstellen, die Bereitstellung von Anwendungsvorlagen für mehrere virtuelle Computer zu automatisieren, erweiterte VM-Überwachungs- und Diagnosefeatures zu verwenden und mehr. Die verfügbaren VM-Konfigurationsoptionen in den beiden Portalen sind ähnlich, aber nicht identisch.
 
 [AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-WindowsVM.md)]
 
@@ -49,6 +48,6 @@ In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** ￼￼￼�
 ## Zusätzliche Ressourcen
 
 Weitere Informationen zur Konfiguration eines virtuellen Computers und den geeigneten Zeitpunkten finden Sie unter [Informationen zu Azure-VM-Konfigurationseinstellungen](http://msdn.microsoft.com/library/azure/dn763935.aspx).
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

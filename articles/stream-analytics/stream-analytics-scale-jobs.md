@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Skalieren von Stream Analytics-Aufträgen | Azure"
-	description="Erfahren Sie mehr über die Skalierung von Stream Analytics-Aufträgen."
+	pageTitle="Skalieren von Stream Analytics-Aufträge zur Erhöhung des Durchsatzes | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Stream Analytics-Aufträge durch Konfiguration von Eingabepartitionen, Optimierung der Abfragedefinition und Einstellung von Auftrags-Streaming-Einheiten skalieren."
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -13,29 +13,36 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="04/28/2015"
+	ms.date="07/01/2015"
 	ms.author="jeffstok"/>
 
-# Skalieren von Azure Stream Analytics-Aufträgen
+# Skalieren von Azure Stream Analytics-Aufträge zur Erhöhung des Durchsatzes #
 
 Erfahren Sie, wie Sie *Streaming-Einheiten* für einen Stream Analytics-Auftrag berechnen und Stream Analytics-Aufträge durch Konfiguration von Eingabepartitionen, Optimierung der Abfragedefinition und Einstellung von Auftrags-Streaming-Einheiten skalieren.
 
-Eine Azure Stream Analytics-Auftragsdefinition umfasst Eingaben, Abfrage und Ausgabe. Bei der Eingabe liest der Auftrag den eingehenden Datenstrom, bei der Ausgabe sendet der Auftrag die Auftragsergebnisse, und bei der Abfrage wird der Eingabestrom umgewandelt.
+## Welche Teile hat ein Stream Analytics-Auftrag? ##
+Eine Azure Stream Analytics-Auftragsdefinition umfasst Eingaben, Abfrage und Ausgabe. Bei der Eingabe liest der Auftrag den eingehenden Datenstrom, bei der Ausgabe sendet der Auftrag die Auftragsergebnisse, und bei der Abfrage wird der Dateneingabestrom umgewandelt.
 
-Für einen Auftrag wird mindestens eine Datenstrom-Eingabequelle benötigt. Die Datenstrom-Eingabequelle kann entweder ein Azure Service Bus Event Hub oder ein Azure-BLOB-Speicher sein. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md), [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md) und [Azure Stream Analytics-Entwicklerhandbuch](../stream-analytics-developer-guide.md).
+Für einen Auftrag wird mindestens eine Eingabequelle für Datenstreaming benötigt. Die Datenstrom-Eingabequelle kann entweder ein Azure Service Bus Event Hub oder ein Azure-BLOB-Speicher sein. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md), [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md) und [Azure Stream Analytics-Entwicklerhandbuch](../stream-analytics-developer-guide.md).
 
-Die für die Verarbeitung von Stream Analytics-Aufträgen verfügbare Ressource wird durch eine Streaming-Einheit gemessen. Jede Streaming-Einheit kann einen Durchsatz von bis zu 1 MB/Sekunde bieten. Für jeden Auftrag wird mindestens eine Streaming-Einheit benötigt. Dies ist der Standardwert für sämtliche Aufträge. Über das Azure-Verwaltungsportal können Sie für einen Stream Analytics-Auftrag bis zu 50 Streaming-Einheiten einrichten. Für jedes Azure-Abonnement kann es höchstens 50 Streaming-Einheiten für alle Aufträge in einer bestimmten Region geben. Wenn Sie die Streaming-Einheiten für Ihr Abonnement auf bis zu 100 Einheiten erhöhen möchten, wenden Sie sich an den [Microsoft Support](http://support.microsoft.com).
+## Konfigurieren von Streaming-Einheiten ##
+Streaming-Einheiten (SUs) stellen die Ressourcen und Leistung für die Ausführung eines Azure Stream Analytics-Auftrags dar. SUs bieten anhand eines kombinierten Maßes aus CPU, Arbeitsspeicher und Schreib- und Leseraten eine Möglichkeit zur Beschreibung der relativen Ereignisverarbeitungskapazität. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s.
 
-Die Anzahl an Streaming-Einheiten, die ein Auftrag verwenden kann, hängt von der Partitionskonfiguration der Eingaben und der für den Auftrag definierten Abfrage ab. In diesem Artikel sehen Sie, wie Sie die Abfrage so berechnen und optimieren, dass der Durchsatz erhöht wird.
+Die benötigte SU-Anzahl für ein bestimmtes Projekt hängt von der für die Partitionskonfiguration für die Eingaben und die für den Auftrag definierte Abfrage ab. Über das Azure-Portal können Sie für einen Auftrag bis zu Ihrem Kontingent Streamingeinheiten einrichten. Für jedes Azure-Abonnement hat standardmäßig höchstens 50 Streaming-Einheiten für alle Analytics-Aufträge in einer bestimmten Region. Wenn Sie die Streaming-Einheiten für Ihr Abonnement erhöhen möchten, wenden Sie sich an den [Microsoft Support](http://support.microsoft.com).
 
+Die Anzahl an Streaming-Einheiten, die ein Auftrag verwenden kann, hängt von der Partitionskonfiguration der Eingaben und der für den Auftrag definierten Abfrage ab. Beachten Sie außerdem, dass ein gültiger Wert für die Streamingeinheiten verwendet werden muss. Die gültigen Werte beginnen bei 1, 3, 6 und dann weiter in Schritten von 6, wie unten dargestellt.
 
-## Berechnen der maximal möglichen Streaming-Einheiten für einen Auftrag
+![Azure Stream Analytics Skalieren von Streamingeinheiten][img.stream.analytics.streaming.units.scale]
+
+In diesem Artikel sehen Sie, wie Sie die Abfrage so berechnen und optimieren, dass der Durchsatz für Analytics-Aufträge erhöht wird.
+
+## Berechnen der maximal möglichen Streaming-Einheiten für einen Auftrag ##
 Die Gesamtzahl der von einem Stream Analytics-Auftrag verwendbaren Streaming-Einheiten hängt von der Anzahl an Schritten in der für den Auftrag definierten Abfrage und der Anzahl an Partitionen für die einzelnen Schritte ab.
 
-### Schritte einer Abfrage
+### Schritte einer Abfrage ###
 Eine Abfrage kann einen oder mehrere Schritte umfassen. Jeder Schritt besteht aus einer Unterabfrage, die anhand des WITH-Schlüsselworts definiert ist. Die einzige Abfrage, die sich außerhalb des WITH-Schlüsselworts befindet, wird ebenfalls als Schritt gezählt, beispielsweise die SELECT-Anweisung in der folgenden Abfrage:
 
-	WITH Step1 (
+	WITH Step1 AS (
 		SELECT COUNT(*) AS Count, TollBoothId
 		FROM Input1 Partition By PartitionId
 		GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
@@ -43,13 +50,13 @@ Eine Abfrage kann einen oder mehrere Schritte umfassen. Jeder Schritt besteht au
 
 	SELECT SUM(Count) AS Count, TollBoothId
 	FROM Step1
-	GROUP BY TumblingWindow(minute,3), TollBoothId, PartitionId
+	GROUP BY TumblingWindow(minute,3), TollBoothId
 
 Die vorherige Abfrage umfasst zwei Schritte.
 
 > [AZURE.NOTE]Diese Beispielabfrage wird im Laufe des Artikels erläutert.
 
-### Partitionieren eines Schritts
+### Partitionieren eines Schritts ###
 
 Für die Partitionierung eines Schrittes gelten die folgenden Voraussetzungen:
 
@@ -59,7 +66,7 @@ Für die Partitionierung eines Schrittes gelten die folgenden Voraussetzungen:
 
 Wenn eine Abfrage partitioniert ist, werden die Eingabeereignisse verarbeitet und in separaten Partitionsgruppen aggregiert, und für jede einzelne Gruppe werden Ausgabeereignisse generiert. Wenn ein kombiniertes Aggregat erwünscht ist, müssen Sie einen zweiten, nicht partitionierten Schritt zum Aggregieren erstellen.
 
-### Berechnen der maximal möglichen Streaming-Einheiten für einen Auftrag
+### Berechnen der maximal möglichen Streaming-Einheiten für einen Auftrag ###
 
 Alle nicht partitionierten Schritte zusammen können bis zu sechs Streaming-Einheiten für einen Stream Analytics-Auftrag skalieren. Um zusätzliche Streaming-Einheiten hinzuzufügen, muss ein Schritt partitioniert werden. Jede Partition kann über sechs Streaming-Einheiten verfügen.
 
@@ -103,7 +110,7 @@ Alle nicht partitionierten Schritte zusammen können bis zu sechs Streaming-Einh
 <td>24 (18 für partitionierte Schritte + 6 für nicht partitionierte Schritte)</td></tr>
 </table>
 
-### Beispiel für Skalierung
+### Beispiel für Skalierung ###
 Mit der folgenden Abfrage wird die Anzahl der Fahrzeuge berechnet, die innerhalb von drei Minuten eine gebührenpflichtige Station mit drei Mautstationen passieren. Diese Abfrage kann auf bis zu sechs Streaming-Einheiten skaliert werden.
 
 	SELECT COUNT(*) AS Count, TollBoothId
@@ -120,7 +127,7 @@ Wenn eine Abfrage partitioniert ist, werden die Eingabeereignisse verarbeitet un
 
 Jede Input1-Partition wird separat von Stream Analytics verarbeitet, und es werden mehrere Datensätze für die Anzahl der passierenden Autos für dieselbe Mautstation im selben rollierenden Fenster erstellt. Für den Fall, dass der Eingabepartitionsschlüssel nicht geändert werden kann, kann dieses Problem durch Hinzufügen eines zusätzlichen, nicht partitionierten Schritts behoben werden, z. B.:
 
-	WITH Step1 (
+	WITH Step1 AS (
 		SELECT COUNT(*) AS Count, TollBoothId
 		FROM Input1 Partition By PartitionId
 		GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
@@ -128,14 +135,14 @@ Jede Input1-Partition wird separat von Stream Analytics verarbeitet, und es werd
 
 	SELECT SUM(Count) AS Count, TollBoothId
 	FROM Step1
-	GROUP BY TumblingWindow(minute, 3), TollBoothId, ParititonId
+	GROUP BY TumblingWindow(minute, 3), TollBoothId
 
 Diese Abfrage kann auf bis zu 24 Streaming-Einheiten skaliert werden.
 
 >[AZURE.NOTE]Wenn Sie zwei Datenströmen verknüpfen, stellen Sie sicher, dass die Ströme anhand des Partitionsschlüssels der Spalte partitioniert werden, in der Sie die Verknüpfungen vornehmen, und in beiden Strömen dieselbe Anzahl an Partitionen vorhanden ist.
 
 
-## Konfigurieren der Stream Analytics-Auftragspartition
+## Konfigurieren der Stream Analytics-Auftragspartition ##
 
 **So passen Sie die Streaming-Einheit für einen Auftrag an**
 
@@ -147,7 +154,7 @@ Diese Abfrage kann auf bis zu 24 Streaming-Einheiten skaliert werden.
 ![Konfigurieren der Auftragsskalierung in Azure Stream Analytics][img.stream.analytics.configure.scale]
 
 
-## Überwachen der Auftragsleistung
+## Überwachen der Auftragsleistung ##
 
 Über das Verwaltungsportal können Sie den Durchsatz eines Auftrags in Ereignissen/Sekunde nachverfolgen:
 
@@ -155,7 +162,7 @@ Diese Abfrage kann auf bis zu 24 Streaming-Einheiten skaliert werden.
 
 Berechnen Sie den erwarteten Durchsatz der Arbeitsauslastung in Ereignissen/Sekunde. Für den Fall, dass der Durchsatz kleiner als erwartet ist, optimieren Sie die Eingabepartition und die Abfrage, und fügen Sie dem Auftrag zusätzliche Streaming-Einheiten hinzu.
 
-## Skalierter ASA-Durchsatz – Raspberry Pi-Szenario
+## Skalierter ASA-Durchsatz – Raspberry Pi-Szenario ##
 
 
 Um zu verstehen, wie ASA in einem typischen Szenario die Verarbeitung des Durchsatzes über mehrere Streaming-Einheiten skaliert, führen wir hier ein Experiment an, bei dem die Sensordaten (Clients) an einen Event Hub gesendet und von ASA verarbeitet werden, um als Ausgabe Warnungen oder Statistiken an einen anderen Event Hub zu senden.
@@ -220,11 +227,11 @@ Im Folgenden finden Sie die Ergebnisse mit einer wachsenden Anzahl an Streaming-
 
 ![img.stream.analytics.perfgraph][img.stream.analytics.perfgraph]
 
-## Hier erhalten Sie Hilfe
+## Hier erhalten Sie Hilfe ##
 Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
 
 
-## Nächste Schritte
+## Nächste Schritte ##
 
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
@@ -238,6 +245,7 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [img.stream.analytics.monitor.job]: ./media/stream-analytics-scale-jobs/StreamAnalytics.job.monitor.png
 [img.stream.analytics.configure.scale]: ./media/stream-analytics-scale-jobs/StreamAnalytics.configure.scale.png
 [img.stream.analytics.perfgraph]: ./media/stream-analytics-scale-jobs/perf.png
+[img.stream.analytics.streaming.units.scale]: ./media/stream-analytics-scale-jobs/StreamAnalyticsStreamingUnitsExample.jpg
 
 <!--Link references-->
 
@@ -246,10 +254,10 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [azure.event.hubs.developer.guide]: http://msdn.microsoft.com/library/azure/dn789972.aspx
 
 [stream.analytics.developer.guide]: ../stream-analytics-developer-guide.md
-[stream.analytics.limitations]: ../stream-analytics-limitations.md
 [stream.analytics.introduction]: stream-analytics-introduction.md
 [stream.analytics.get.started]: stream-analytics-get-started.md
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

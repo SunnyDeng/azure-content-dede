@@ -1,13 +1,11 @@
 <properties
-	urlDisplayName="How to connect to an Azure SQL database using SSMS"
 	pageTitle="Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SSMS" metaKeywords=""
 	description="Erfahren Sie, wie Sie mit SSMS eine Verbindung mit einer Azure SQL-Datenbank herstellen."
-	metaCanonical=""
 	services="sql-database"
 	documentationCenter=""
-	title="How to connect to an Azure SQL database using SSMS"
-	authors="sidneyh" solutions=""
-	manager="jhubbard" editor="" />
+	authors="sidneyh" 
+	manager="jhubbard" 
+	editor="" />
 
 <tags
 	ms.service="sql-database"
@@ -15,17 +13,18 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="04/02/2015"
+	ms.date="06/25/2015"
 	ms.author="sidneyh" />
 
-# Herstellen von Verbindungen mit einer Azure SQL-Datenbank mit SSMS
+# Herstellen von Verbindungen mit einer Azure SQL-Datenbank mit SQL Server Management Studio
 
-Mithilfe der folgenden Schritte können Sie eine Verbindung mit einer Microsoft Azure SQL-Datenbank mit SQL Server Management Studio herstellen.
+Mithilfe der folgenden Schritte können Sie eine Verbindung mit einer Microsoft Azure SQL-Datenbank mit SQL Server Management Studio (SSMS) herstellen.
 
 ## Voraussetzungen
 * Eine bereitgestellte und ausgeführte Azure SQL-Datenbank. Informationen zum Erstellen einer neuen SQL-Datenbank finden Sie unter [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md).
 * Der Anmeldename und das Kennwort des Administrators
 * SQL Server Management Studio 2014 Sie finden das Tool unter [Download SQL Server Express](http://www.hanselman.com/blog/DownloadSQLServerExpress.aspx) (in englischer Sprache).
+* Konfigurieren Sie die Firewalleinstellungen für die Datenbank. Weitere Informationen finden Sie unter [Konfigurieren der Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
 
 ## So stellen Sie eine Verbindung mit einer Instanz von SQL-Datenbank her
 1. Melden Sie sich beim [Azure-Verwaltungsportal](https://portal.azure.com) an.
@@ -63,4 +62,4 @@ Sie können Transact-SQL-Anweisungen zum Erstellen oder Verwalten von Datenbanke
 [5]: ./media/sql-database-connect-to-database/ssms-master.png
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

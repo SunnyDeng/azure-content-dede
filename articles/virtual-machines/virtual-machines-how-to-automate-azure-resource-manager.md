@@ -72,4 +72,4 @@ Der Azure-Ressourcen-Manager vereinfacht die Bereitstellung und Verwaltung von k
 
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

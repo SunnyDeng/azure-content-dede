@@ -1,7 +1,7 @@
 <properties 
    pageTitle="Was ist eine Netzwerksicherheitsgruppe (NSG)?"
    description="Informationen zu Netzwerksicherheitsgruppen (NSGs)"
-   services="traffic-manager"
+   services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
    manager="carolz"
@@ -118,7 +118,7 @@ Zuordnen einer NSG zu einem Subnetz: Bei der Zuordnung zu einem Subnetz werden d
 
 Zuordnen einer NSG zu einem Subnetz und zu einem virtuellen Computer: Sie haben die Möglichkeit, eine NSG einem virtuellen Computer und eine andere NSG dem Subnetz zuzuordnen, in dem sich der virtuelle Computer befindet. In diesem unterstützten Fall ist der virtuelle Computer auf zwei Ebenen geschützt. Bei eingehendem Datenverkehr durchläuft das Paket die im Subnetz angegebenen Zugriffsregeln und anschließend die Regeln auf dem virtuellen Computer. Bei ausgehendem Datenverkehr durchläuft das Paket zuerst die Regeln auf dem virtuellen Computer und anschließend die im Subnetz angegebenen Regeln (siehe Diagramm weiter unten).
 
-![NSG ACLs](./media/virtual-networks-nsg/figure1.png)
+![NSG-ACLs](./media/virtual-networks-nsg/figure1.png)
 
 Die Zuordnung einer NSG zu einem virtuellen Computer oder zu einem Subnetz macht die Netzwerkzugriffsregeln äußerst explizit. Die Plattform fügt keine implizite Regel ein, um eingehenden Datenverkehr für einen bestimmten Port zuzulassen. In diesem Fall gilt: Wenn Sie einen Endpunkt für den virtuellen Computer erstellen, müssen Sie auch eine Regel erstellen , die Datenverkehr aus dem Internet zulässt. Andernfalls kann von außen nicht auf die VIP-Adresse<Port> zugegriffen werden.
 
@@ -127,6 +127,27 @@ Ein Beispiel: Sie erstellen einen neuen virtuellen Computer und eine neue NSG. A
 | Name | Priorität | Quell-IP | Quellport | Ziel-IP | Zielport | Protokoll | Access |
 |------|----------|-----------|-------------|----------------|------------------|----------|--------|
 | WEB | 100 | INTERNET | * | * | 80 | TCP | ZULASSEN |
+
+## Überlegungen zum Entwurf
+
+Sie müssen wissen, wie virtuelle Computer mit Infrastrukturdiensten und dem von Azure gehosteten PaaS-Dienst kommunizieren, wenn Sie Ihre NSGs entwerfen. Auf die meisten Azure-PaaS-Dienste, wie z. B. SQL-Datenbanken und Speicher, kann nur über eine öffentliche Internetadresse zugegriffen werden. Dies gilt auch für Lastenausgleichstests.
+
+Ein häufiges Szenario in Azure ist die Abtrennung von virtuellen Computern und PaaS-Rollen in Subnetze abhängig davon, ob für diese Objekte ein Internetzugriff erforderlich ist oder nicht. In solchen Szenarien kann ein Subnetz mit virtuellen Computern oder Rolleninstanzen vorhanden sein, die Zugriff auf Azure-PaaS-Dienste wie SQL-Datenbanken und Speicher benötigen, für die jedoch keine eingehende oder ausgehende Kommunikation mit dem öffentlichen Internet erforderlich ist.
+
+Betrachten Sie z. B. die folgende NSG-Regel für ein solches Szenario:
+
+| Name | Priorität | Quell-IP | Quellport | Ziel-IP | Zielport | Protokoll | Access |
+|------|----------|-----------|-------------|----------------|------------------|----------|--------|
+|KEIN INTERNET|100| VIRTUAL_NETWORK|&#42;|INTERNET|&#42;|TCP|VERWEIGERN| 
+
+Da die Regel den gesamten Zugriff aus dem virtuellen Netzwerk auf das Internet verweigert, können virtuelle Computer nicht auf Azure-PaaS-Dienste zugreifen, für die ein öffentlicher Internet-Endpunkt erforderlich ist, z. B. SQL-Datenbanken.
+
+Erwägen Sie, anstatt einer Verweigerungsregel eine Regel zu verwenden, mit der der Zugriff aus dem virtuellen Netzwerk auf das Internet zugelassen, der Zugriff aus dem Internet auf das virtuelle Netzwerk jedoch verweigert wird, wie unten dargestellt:
+
+| Name | Priorität | Quell-IP | Quellport | Ziel-IP | Zielport | Protokoll | Access |
+|------|----------|-----------|-------------|----------------|------------------|----------|--------|
+|INS INTERNET|100| VIRTUAL_NETWORK|&#42;|INTERNET|&#42;|TCP|ZULASSEN|
+|AUS DEM INTERNET|110| INTERNET|&#42;|VIRTUAL_NETWORK|&#42;|TCP|VERWEIGERN| 
 
 
 ## Planung – Workflow für eine Netzwerksicherheitsgruppe
@@ -187,6 +208,11 @@ Derzeit können NSGs ausschließlich über PowerShell-Cmdlets und REST-APIs konf
 	| Set-AzureNetworkSecurityGroupConfig -NetworkSecurityGroupName "MyVNetSG" `
 	| Update-AzureVM
 
+**Anzeigen von einem virtuellen Computer zugeordneten NSGs**
+
+	Get-AzureVM -ServiceName "MyWebsite" -Name "Instance1" `
+	| Get-AzureNetworkSecurityGroupAssociation
+
 **Entfernen einer NSG von einem virtuellen Computer**
 
 	Get-AzureVM -ServiceName "MyWebsite" -Name "Instance1" `
@@ -198,6 +224,11 @@ Derzeit können NSGs ausschließlich über PowerShell-Cmdlets und REST-APIs konf
 	Get-AzureNetworkSecurityGroup -Name "MyVNetSG" `
 	| Set-AzureNetworkSecurityGroupToSubnet -VirtualNetworkName 'VNetUSWest' `
 		-SubnetName 'FrontEndSubnet'
+
+**Anzeigen von einem Subnetz zugeordneten NSGs**
+
+	Get-AzureNetworkSecurityGroupForSubnet -SubnetName 'FrontEndSubnet' `
+		-VirtualNetworkName 'VNetUSWest' 
 
 **Entfernen einer NSG aus dem Subnetz**
 
@@ -213,5 +244,8 @@ Derzeit können NSGs ausschließlich über PowerShell-Cmdlets und REST-APIs konf
 
 	Get-AzureNetworkSecurityGroup -Name "MyVNetSG" -Detailed
  
+**Anzeigen aller Azure-PowerShell-Cmdlets für NSGs**
 
-<!---HONumber=62-->
+	Get-Command *azurenetworksecuritygroup*
+
+<!---HONumber=July15_HO2-->

@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Erste Schritte mit Azure Search" 
+	pageTitle="Erste Schritte mit Azure Search | Microsoft Azure" 
 	description="Erste Schritte mit Azure Search" 
 	services="search" 
 	documentationCenter="" 
 	authors="HeidiSteen" 
 	manager="mblythe" 
-	editor=""/>
+	editor=""
+    tags="azure-portal"/>
 
 <tags 
 	ms.service="search" 
@@ -13,57 +14,46 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="01/16/2015" 
+	ms.date="07/08/2015" 
 	ms.author="heidist"/>
 
 # Erste Schritte mit Azure Search
 
-[AZURE.INCLUDE [In diesem Artikel wird das Azure Vorschauportal verwendet.](../../includes/preview-portal-note.md)]
+Microsoft Azure Search ist ein neuer Dienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt die Suchmaschine und den Speicherplatz für Ihre Daten zur Verfügung. Der Zugriff darauf und die Verwaltung der Daten erfolgt mithilfe einer .NET-Bibliothek oder einer REST-API.
 
-Microsoft Azure Search ist ein neuer Dienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt die Suchmaschine und den Speicherplatz für Ihre Daten zur Verfügung. Der Zugriff darauf und die Verwaltung der Daten erfolgt mithilfe eines .NET SDK oder einer REST-API. Weitere Informationen über Gründe für die Verwendung von Azure Search finden Sie unter [Azure Search-Szenarien und -Funktionen](http://azure.microsoft.com/blog/2014/08/28/azure-search-scenarios-and-capabilities/).  
+In diesem Artikel erhalten Sie eine Einführung in die REST-API für Azure Search.
 
-Administratoren können den Suchdienst bei der Auswahl des gemeinsam genutzten Diensts kostenlos zu einem bestehenden Abonnement hinzufügen, oder bei der Auswahl fest zugeordneter Ressourcen zu einem reduzierten Preis. Dieser Artikel besteht aus den folgenden Abschnitten:
+Ein alternativer Ansatz für .NET Entwickler ist die Verwendung des Azure Search .NET SDK. Weitere Informationen finden Sie unter [Erste Schritte mit Azure Search in .NET](search-get-started-dotnet.md) oder [Verwenden des Azure Search .NET SDK](search-howto-dotnet-sdk.md) Details.
 
+
+> [AZURE.NOTE]Um dieses Lernprogramm absolvieren zu können, benötigen Sie ein [Azure-Abonnement](../includes/free-trial-note.md). Wenn Sie sich noch nicht für ein Testabonnement registrieren möchten, können Sie dieses Lernprogramm überspringen und stattdessen [Azure App Service testen](https://tryappservice.azure.com/). Bei dieser Alternativoption erhalten Sie Azure Search mit einer ASP.NET-Web-App kostenlos – eine Stunde pro Sitzung, ganz ohne Abonnement.
+ 
 <a id="sub-1"></a>
 ## Erste Schritte mit dem kostenlosen Dienst
 
+Administratoren können den Suchdienst bei der Auswahl des gemeinsam genutzten Diensts kostenlos zu einem bestehenden Abonnement hinzufügen, oder bei der Auswahl fest zugeordneter Ressourcen zu einem reduzierten Preis.
+
 Abonnenten erhalten kostenlosen Zugriff auf einen gemeinsam genutzten mehrinstanzenfähigen Suchdienst, den Sie zu Lernzwecken, zum Testen von Machbarkeitsstudien oder zur Entwicklung kleiner Suchprojekte nutzen können. Führen Sie die folgenden Schritte aus, um sich für die kostenlose Version anzumelden.
 
-1. Melden Sie sich mit Ihrem bestehenden Abonnement am [Azure-Vorschauportal](https://portal.azure.com) an. Beachten Sie, dass diese URL zum Vorschauportal führt. Die Verwendung des Vorschauportals ist zwingend notwendig. 
+1. Melden Sie sich mit Ihrem bestehenden Abonnement beim [Azure-Portal](https://portal.azure.com) an. Beachten Sie, dass diese URL zum Vorschauportal führt. Die Verwendung des Vorschauportals ist zwingend notwendig. 
 
-2. Klicken Sie unten auf der Seite auf **Neu**.
+2. Klicken Sie am oberen Seitenrand auf **Neu**.
  
   	![][6]
 
-3. Klicken Sie oben auf der Seite auf **Alles**. 
+3. Klicken Sie auf **Daten + Speicher** | **Search**.
 
-  	![][7]
+	- Geben Sie einen Dienstnamen in Kleinbuchstaben für die Dienst-URL ein. Verwenden Sie dabei keine Leerzeichen, und beachten Sie die Längenbeschränkung von 15 Zeichen.
 
-4. Klicken Sie in der Galerie auf **Daten & Analysen**.
- 
-  	![][8]
+	- Klicken Sie auf den Pfeil in **Preisebene**, um eine Preisoption auszuwählen. Wählen Sie **KOSTENLOS** aus und klicken Sie auf **AUSWÄHLEN** am unteren Seitenrand. Die kostenlose Version bietet ausreichend Kapazität für Lernprogramme und zum Schreiben von Code für Machbarkeitsstudien, eignet sich jedoch nicht für den Einsatz in Produktionsumgebungen.
 
-5. Klicken Sie in den Datendiensten auf **Suchen**.
- 
-  	![][10]
+	- Klicken Sie auf den Pfeil in **Ressourcengruppe**, um eine bestehende Gruppe auszuwählen oder eine neue Gruppe zu erstellen. Ressourcengruppen sind Container für Dienste und Ressourcen, die einem gemeinsamen Zweck dienen. Wenn Sie eine auf Azure Search, Azure Websites und Azure-Blobspeicher basierte Suchanwendung erstellen möchten, können Sie z. B. eine Ressourcengruppe erstellen, die diese Dienste in den Verwaltungsseiten im Portal gruppiert.
 
-7. Klicken Sie unten auf der Suchseite auf **ERSTELLEN**.
+	- Klicken Sie auf den Pfeil in **Abonnement**, wenn Sie mehrere Abonnements haben und für diesen Suchdienst ein anderes Abonnement verwenden möchten.
 
-8. Geben Sie einen Dienstnamen in Kleinbuchstaben für die Dienst-URL ein. Verwenden Sie dabei keine Leerzeichen, und beachten Sie die Längenbeschränkung von 15 Zeichen.
- 
-  	![][11]
+	- Klicken Sie auf den Pfeil in **Standort**, um eine Region für das Rechenzentrum auszuwählen. In dieser Vorschau haben Sie die Wahl zwischen USA West, USA Ost, Nordeuropa und Südostasien. Später, wenn weitere Regionen online sind, können Sie eine Region für den zu erstellenden Dienst auswählen. Die öffentliche Vorschau unterstützt keine Konfiguration mit verteilten Ressourcen über mehrere Rechenzentren.
 
-9. Klicken Sie auf den Pfeil in **Preisebene**, um eine Preisoption auszuwählen. Wählen Sie **KOSTENLOS** aus, und klicken Sie am unteren Seitenrand auf **AUSWÄHLEN**. Die kostenlose Version bietet ausreichend Kapazität für Lernprogramme und zum Schreiben von Code für Machbarkeitsstudien, eignet sich jedoch nicht für den Einsatz in Produktionsumgebungen. 
-
-  	![][12]
-
-10. Klicken Sie auf den Pfeil in **Ressourcengruppe**, um eine bestehende Gruppe auszuwählen oder eine neue Gruppe zu erstellen. Ressourcengruppen sind Container für Dienste und Ressourcen, die einem gemeinsamen Zweck dienen. Wenn Sie eine auf Azure Search, Azure Websites und Azure-Blobspeicher basierte Suchanwendung erstellen möchten, können Sie z. B. eine Ressourcengruppe erstellen, die diese Dienste in den Verwaltungsseiten im Portal gruppiert.
-
-11. Klicken Sie auf den Pfeil in **Abonnement**, wenn Sie mehrere Abonnements haben und für diesen Suchdienst ein anderes Abonnement verwenden möchten.
-
-12. Klicken Sie auf den Pfeil in **Standort**, um eine Region für das Rechenzentrum auszuwählen. In dieser Vorschau haben Sie die Wahl zwischen USA West, USA Ost, Nordeuropa und Südostasien. Später, wenn weitere Regionen online sind, können Sie eine Region für den zu erstellenden Dienst auswählen. Die öffentliche Vorschau unterstützt keine Konfiguration mit verteilten Ressourcen über mehrere Rechenzentren.
-
-13. Klicken Sie auf **ERSTELLEN**, um den Dienst bereitzustellen. **ERSTELLEN** kann erst angeklickt werden, wenn Sie alle erforderlichen Werte eingegeben haben. 
+4. Klicken Sie auf **ERSTELLEN**, um den Dienst bereitzustellen. **CREATE** kann erst angeklickt werden, nachdem Sie alle erforderlichen Werte eingegeben haben.
 
 Der Dienst wird innerhalb weniger Minuten erstellt. Sie können zu den Konfigurationseinstellungen zurückkehren, um die URL oder die API-Schlüssel abzurufen. Für Verbindungen mit Ihrem Suchdienst benötigen Sie sowohl URL als auch API-Schlüssel, um den Aufruf zu authentifizieren. So finden Sie diese Werte schnell und einfach:
 
@@ -71,17 +61,9 @@ Der Dienst wird innerhalb weniger Minuten erstellt. Sie können zu den Konfigura
 
   	![][13]
 
-15.	Im Dienst-Dashboard sehen Sie Kacheln für **EIGENSCHAFTEN** und **SCHLÜSSEL**, sowie eine Übersicht über die Ressourcennutzung. 
+15.	Im Dienst-Dashboard sehen Sie Kacheln für **EIGENSCHAFTEN** und **SCHLÜSSEL**, sowie eine Übersicht über die Ressourcennutzung.
 
-  	![][23]
-
-   **EIGENSCHAFTEN** enthält die Dienst-URL. 
-
-   **SCHLÜSSEL** enthält die für die Authentifizierung benötigten API-Schlüssel.
- 
-   **NUTZUNG** zeigt Dokumentanzahl, verfügbare Ressourcen und Speicherbegrenzungen an.
-
-Unter [Testen der Dienstfunktionen](#sub-3) wird beschrieben, wie Sie mithilfe dieser Werte eine Verbindung zum Dienst herstellen können.
+Unter [Testen der Dienstfunktionen](#sub-3) wird beschrieben, wie Sie sich mithilfe dieser Werte mit dem Dienst verbinden können.
 
 <a id="sub-2"></a>
 ## Upgrade auf die Standardsuche
@@ -92,52 +74,44 @@ Fest zugeordnete Ressourcen verbessern Skalierbarkeit und Leistung, bieten jedoc
 
 Für die Standardsuche erstellen Sie einen neuen Suchdienst und wählen die Standard-Preisebene aus. Beachten Sie, dass das Upgrade keine direkte Aktualisierung der kostenlosen Version ist. Beim Wechsel zu Standard und dessen Skalierungspotenzial müssen Sie einen neuen Dienst erstellen. Sie müssen die von Ihrer Suchanwendung verwendeten Indizes und Dokumente erneut laden.
 
-Die Einrichtung fest zugeordneter Ressourcen kann einige Zeit in Anspruch nehmen (15 Minuten oder mehr). 
+Die Einrichtung fest zugeordneter Ressourcen kann einige Zeit in Anspruch nehmen (15 Minuten oder mehr).
 
-**Schritt 1 - Erstellen eines neuen Diensts mit der Preisebene "Standard"**
+**Schritt 1 - Erstellen eines neuen Diensts mit dem Tarif "Standard"**
 
-1. Melden Sie sich mit Ihrem bestehenden Abonnement am [Azure-Vorschauportal](https://portal.azure.com) an. 
+1. Melden Sie sich mit Ihrem bestehenden Abonnement beim [Azure-Portal](https://portal.azure.com) an. 
 
-2. Klicken Sie unten auf der Seite auf **Neu**.
+2. Klicken Sie unten auf der Seite auf **New**.
 
-3. Klicken Sie oben auf der Seite auf **Alles**.
+4. Klicken Sie im Katalog auf D**aten + Speicher** | **Search**.
 
-4. Klicken Sie in der Galerie auf **Daten & Analysen**.
+7. Geben Sie die Konfigurationseinstellungen des Dienstes an, und klicken Sie dann auf **CREATE**.
 
-6. Klicken Sie in den Datendiensten auf **Suchen**.
-
-7. Klicken Sie unten auf der Suchseite auf **ERSTELLEN**.
-
-8. Geben Sie einen Dienstnamen in Kleinbuchstaben für die Dienst-URL ein. Vermeiden Sie dabei Bindestriche und Leerzeichen und beachten Sie die Längenbeschränkung von 15 Zeichen.
-
-9. Klicken Sie auf den Pfeil in **Preisebene**, um eine Preisoption auszuwählen. Wählen Sie **STANDARD** aus, und klicken Sie am unteren Seitenrand auf **AUSWÄHLEN**.
-
- ![][14]
+8. Klicken Sie auf den Pfeil in **Tarif**, um eine Preisoption auszuwählen. Wählen Sie **STANDARD** aus und klicken Sie auf **AUSWÄHLEN** am unteren Seitenrand.
 
 **Schritt 2 - Anpassen der Sucheinheiten an die Skalierungsanforderungen**
 
 Die Standardsuche beginnt mit je einem Replikat und einer Partition, kann jedoch schnell und einfach auf höhere Ressourcenebenen skaliert werden.
 
-1.	Kehren Sie nach der Erstellung des Diensts zum Dienst-Dashboard zurück, und klicken Sie auf die Kachel **Skalieren**.
+1.	Kehren Sie nach der Erstellung des Diensts zum Dienst-Dashboard zurück und klicken Sie auf die Kachel **Skalieren**.
 
-2.	Mit den Schiebereglern können Sie Replikate, Partitionen oder beides hinzufügen. 
+2.	Mit den Schiebereglern können Sie Replikate, Partitionen oder beides hinzufügen.
 
-Zusätzliche Replikate und Partitionen werden in Sucheinheiten abgerechnet. Die insgesamt benötigten Sucheinheiten zum Unterstützen einer bestimmten Ressourcenkonfiguration wird auf der Seite angezeigt, während Sie Ressourcen hinzufügen. 
+Zusätzliche Replikate und Partitionen werden in Sucheinheiten abgerechnet. Die insgesamt benötigten Sucheinheiten zum Unterstützen einer bestimmten Ressourcenkonfiguration wird auf der Seite angezeigt, während Sie Ressourcen hinzufügen.
 
-Unter [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=509792) finden Sie Abrechnungsinformationen pro Einheit. Eine Entscheidungshilfe für die Konfiguration von Partitions- und Replikatkombinationen finden Sie unter [Grenzen und Einschränkungen](http://msdn.microsoft.com/library/azure/dn798934.aspx).
+Unter [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=509792) finden Sie Abrechnungsinformationen pro Einheit. Eine Entscheidungshilfe für die Konfiguration von Partitions- und Replikatkombinationen finden Sie unter [Limits und Einschränkungen](http://msdn.microsoft.com/library/azure/dn798934.aspx).
 
  ![][15]
 
 <a id="sub-3"></a>
 ## Testen der Dienstfunktionen
 
-Als letzter Schritt bei der Konfiguration der Suche überprüfen Sie, ob Ihr Dienst einsatzbereit ist und über eine Clientanwendung angesprochen werden kann. Diese Prozedur verwendet Fiddler, einen [kostenlosen Download von Telerik](http://www.telerik.com/fiddler), um HTTP-Anforderungen zu senden und die Antworten anzuzeigen. Mit Fiddler können Sie die API sofort testen, ohne Code schreiben zu müssen. 
+Als letzter Schritt bei der Konfiguration der Suche überprüfen Sie, ob Ihr Dienst einsatzbereit ist und über eine Clientanwendung angesprochen werden kann. Diese Prozedur verwendet Fiddler, einen [kostenlosen Download von Telerik](http://www.telerik.com/fiddler), um HTTP-Anforderungen zu senden und die Antworten anzuzeigen. Mit Fiddler können Sie die API sofort testen, ohne Code schreiben zu müssen.
 
 Die folgende Prozedur funktioniert für die gemeinsam genutzte und für die Standardsuche. In den folgenden Schritten erstellen Sie einen Index, laden Dokumente hoch, fragen den Index ab und fragen zuletzt Dienstinformationen aus dem System ab.
 
 ### Erstellen eines Index
 
-1. Starten Sie Fiddler. Deaktivieren Sie im Menü "File" die Option **Capture Traffic**, um zusätzliche HTTP-Aktivität auszublenden, die nicht zur aktuellen Aufgabe gehört. Erstellen Sie die folgende Anforderung in der Registerkarte Composer: 
+1. Starten Sie Fiddler. Deaktivieren Sie die Option **Capture Traffic** im Menü "File", um zusätzliche HTTP-Aktivität auszublenden, die nicht zur aktuellen Aufgabe gehört. Erstellen Sie die folgende Anforderung in der Registerkarte Composer: 
 
   	![][16]
 
@@ -145,12 +119,12 @@ Die folgende Prozedur funktioniert für die gemeinsam genutzte und für die Stan
 
 3. Geben Sie eine URL ein, die sich aus Dienst-URL (aus der Eigenschaftenseite), Anfrageattributen und der API-Version zusammensetzt. Beachten Sie dabei Folgendes:
    + Verwenden Sie das Präfix HTTPS
-   + Das Anfrageattribut ist "/indexes/hotels". Damit weisen Sie Search an, einen Index mit dem Namen 'hotels' zu erstellen.
-   + API-Version steht in Kleinbuchstaben mit dem Format "?api-version=2014-07-31-preview". API-Versionen sind wichtig, da regelmäßig Updates für Azure Search bereitgestellt werden. In seltenen Fällen kann es passieren, dass ein Teil der API durch ein Update nicht mehr wie gewohnt funktioniert. Mit API-Versionen können Sie weiterhin Ihre bestehende Version verwenden und selbst bestimmen, wann Sie zur neueren Version wechseln möchten.
+   + Das Anfrageattribut ist "/indexes/hotels". Damit weisen Sie Search an, einen Index mit dem Namen "hotels" zu erstellen.
+   + Die API-Version ist in Kleinbuchstaben als „?api-version=2015-02-28“ angegeben. API-Versionen sind wichtig, da regelmäßig Updates für Azure Search bereitgestellt werden. In seltenen Fällen kann es passieren, dass ein Teil der API durch ein Update nicht mehr wie gewohnt funktioniert. Mit API-Versionen können Sie weiterhin Ihre bestehende Version verwenden und selbst bestimmen, wann Sie zur neueren Version wechseln möchten.
 
     Die komplette URL sollte in etwa wie folgt aussehen:
 
-         https://my-app.search.windows.net/indexes/hotels?api-version=2014-07-31-Preview
+         https://my-app.search.windows.net/indexes/hotels?api-version=2015-02-28
 
 4.	Geben Sie den Anforderungsheader an, und ersetzen Sie host und api-key durch die entsprechenden Werte für Ihren Dienst.
 
@@ -166,7 +140,7 @@ Die folgende Prozedur funktioniert für die gemeinsam genutzte und für die Stan
         "fields": [
           {"name": "hotelId", "type": "Edm.String", "key":true, "searchable": false},
           {"name": "baseRate", "type": "Edm.Double"},
-          {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "suggestions": true},
+          {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false},
           {"name": "hotelName", "type": "Edm.String", "suggestions": true},
           {"name": "category", "type": "Edm.String"},
           {"name": "tags", "type": "Collection(Edm.String)"},
@@ -178,9 +152,9 @@ Die folgende Prozedur funktioniert für die gemeinsam genutzte und für die Stan
          ] 
         }
 
-6.	Klicken Sie auf **Execute**.
+6.	Klicken Sie auf **Ausführen**.
 
-Innerhalb weniger Sekunden sollten Sie eine "HTTP 201"-Antwort in der Sitzungsliste sehen. Dies bedeutet, dass der Index erfolgreich erstellt wurde. 
+In der Sitzungsliste sollte innerhalb weniger Sekunden eine HTTP 201-Antwort angezeigt werden. Das bedeutet, dass der Index erfolgreich erstellt wurde.
 
 Falls Sie eine "HTTP 504"-Antwort erhalten, prüfen Sie, ob die URL mit HTTPS beginnt. Wenn Sie eine "HTTP 400"- oder "HTTP 404"-Antwort erhalten, prüfen Sie den Hauptteil der Anforderung auf Fehler, die durch Kopieren und Einfügen entstanden sind. "HTTP 403" deutet in der Regel auf ein Problem mit dem api-key hin (entweder ein ungültiger Schlüssel oder ein Syntaxproblem bei der Angabe des API-Schlüssels).
 
@@ -192,9 +166,9 @@ Ihre Anforderung für Dokumente in der Registerkarte "Composer" sieht in etwa wi
 
 1. Wählen Sie **POST** aus.
 
-2.	Geben Sie eine URL ein, die mit HTTPS beginnt, gefolgt von Ihrer Dienst-URL, gefolgt von "/indexes/<'indexname'>/docs/index?api-version=2014-07-31-preview". Die komplette URL sollte in etwa wie folgt aussehen:
+2.	Geben Sie eine URL ein, die sich aus "HTTPS", Ihrer Dienst-URL und "/indexes/<'indexname'>/docs/index?api-version=2015-02-28" zusammensetzt. Die komplette URL sollte in etwa wie folgt aussehen:
 
-        https://my-app.search.windows.net/indexes/hotels/docs/index?api-version=2014-07-31-Preview
+        https://my-app.search.windows.net/indexes/hotels/docs/index?api-version=2015-02-28
 
 3.	Der Anforderungsheader muss identisch zur vorherigen Abfrage sein. Ersetzen Sie host und api-key (Kleinbuchstaben) durch die entsprechenden Werte für Ihren Dienst.
 
@@ -266,13 +240,13 @@ Ihre Anforderung für Dokumente in der Registerkarte "Composer" sieht in etwa wi
          ]
         }
 
-8.	Klicken Sie auf **Execute**.
+8.	Klicken Sie auf **Ausführen**.
 
 Innerhalb weniger Sekunden sollten Sie eine "HTTP 200"-Antwort in der Sitzungsliste sehen. Dies bedeutet, dass die Dokumente erfolgreich erstellt wurden. Falls Sie eine 207-Antwort erhalten, ist der Upload von mindestens einem Dokument fehlgeschlagen. Wenn Sie ein 404-Antwort erhalten, enthält entweder der Header oder der Text Ihrer Anforderung einen Syntaxfehler.
 
 ### Indexabfragen
 
-Sie haben nun einen Index erstellt und Dokumente hochgeladen und können beginnen, Abfragen auszuführen.  Erstellen Sie einen GET-Befehl in der Registerkarte Composer mit dem folgenden Text:
+Sie haben nun einen Index erstellt und Dokumente hochgeladen und können beginnen, Abfragen auszuführen. Erstellen Sie einen GET-Befehl in der Registerkarte Composer mit dem folgenden Text:
 
    ![][18]
 
@@ -280,7 +254,7 @@ Sie haben nun einen Index erstellt und Dokumente hochgeladen und können beginne
 
 2.	Geben Sie eine URL ein, die mit HTTPS beginnt, gefolgt von Ihrer Dienst-URL, gefolgt von "/indexes/<'indexname'>/docs?", gefolgt von den Abfrageparametern. Verwenden Sie als Beispiel die folgende URL und ersetzen Sie den Beispiel-Hostnamen durch einen gültigen Hostnamen für Ihren Dienst.
 
-        https://my-app.search.windows.net/indexes/hotels/docs?search=motel&facet=category&facet=rating,values:1|2|3|4|5&api-version=2014-07-31-Preview
+        https://my-app.search.windows.net/indexes/hotels/docs?search=motel&facet=category&facet=rating,values:1|2|3|4|5&api-version=2015-02-28
 
     Diese Abfrage sucht nach dem Begriff "motel" und ruft Facettenkategorien für Bewertungen ab.
 
@@ -295,16 +269,15 @@ Der Antwortcode sollte 200 sein, und die Antwortausgabe sollte in etwa der folge
  
    ![][19]
 
-Die folgende Beispielabfrage stammt aus dem Artikel [Suchindex-Operationen (Azure Search-API)](http://msdn.microsoft.com/library/dn798927.aspx) auf MSDN. Viele der Beispielabfragen in diesem Thema enthalten Leerzeichen, die von Fiddler nicht unterstützt werden. Ersetzen Sie alle Leerzeichen vor dem Einfügen durch ein +-Zeichen, bevor Sie die Abfrage in Fiddler ausführen: 
+Die folgende Beispielabfrage stammt aus dem Artikel [Suchindex-Operationen (Azure Search-API)](http://msdn.microsoft.com/library/dn798927.aspx) auf MSDN. Viele der Beispielabfragen in diesem Thema enthalten Leerzeichen, die von Fiddler nicht unterstützt werden. Ersetzen Sie alle Leerzeichen vor dem Einfügen durch ein +-Zeichen, bevor Sie die Abfrage in Fiddler ausführen:
 
 **Vor dem Ersetzen der Leerzeichen:**
 
-        GET /indexes/hotels/docs?search=*&$orderby=lastRenovationDate desc&api-version=2014-07-31-Preview
+        GET /indexes/hotels/docs?search=*&$orderby=lastRenovationDate desc&api-version=2015-02-28
 
 **Nach dem Ersetzen der Leerzeichen durch +:**
 
-        GET /indexes/hotels/docs?search=*&$orderby=lastRenovationDate+desc&api-version=2014-07-31-Preview
-
+        GET /indexes/hotels/docs?search=*&$orderby=lastRenovationDate+desc&api-version=2015-02-28
 ### Systemabfragen
 
 Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch zu erhalten. Erstellen Sie eine Anforderung in der Registerkarte Composer mit dem folgenden Text. Die Antwort enthält die Anzahl der Dokumente und den verbrauchten Speicherplatz.
@@ -313,9 +286,9 @@ Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch
 
 1.	Wählen Sie **GET** aus.
 
-2.	Geben Sie eine URL ein, die aus Ihrer Dienst-URL besteht, gefolgt von "/indexes/hotels/stats?api-version=2014-07-31-Preview":
+2.	Geben Sie eine URL mit Ihrer Dienst-URL ein, gefolgt von "/indexes/hotels/stats?api-version=2015-02-28":
 
-        https://my-app.search.windows.net/indexes/hotels/stats?api-version=2014-07-31-Preview 
+        https://my-app.search.windows.net/indexes/hotels/stats?api-version=2015-02-28 
 
 3.	Geben Sie den Anforderungsheader an, und ersetzen Sie host und api-key durch die entsprechenden Werte für Ihren Dienst.
 
@@ -326,7 +299,7 @@ Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch
 
 4.	Lassen Sie den Anforderungstext leer.
 
-5.	Klicken Sie auf **Execute**. Sie sollten eine "HTTP 200"-Antwort in der Sitzungsliste sehen. Wählen Sie den Eintrag zu Ihrem Befehl aus.
+5.	Klicken Sie auf **Ausführen**. Sie sollten eine "HTTP 200"-Antwort in der Sitzungsliste sehen. Wählen Sie den Eintrag zu Ihrem Befehl aus.
 
 6.	Klicken Sie auf die Registerkarte Inspectors | Headers und wählen Sie das JSON-Format aus. Sie sollten nun die Dokumentenanzahl und die Speichergröße (in KB) sehen.
 
@@ -337,18 +310,16 @@ Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch
 
 Falls Sie eine Auffrischung brauchen, um die Konfigurationsseiten zu finden, folgen Sie den folgenden Schritten, um zum Dienst-Dashboard zu gelangen.
 
-1.	Melden Sie sich mit Ihrem bestehenden Abonnement am [Azure-Vorschauportal](https://portal.azure.com) an. 
+1.	Melden Sie sich mit Ihrem bestehenden Abonnement beim [Azure-Portal](https://portal.azure.com) an. 
 2.	Klicken Sie auf **Startseite** und anschließend auf die Kachel für Ihren Search-Dienst.
 
  	![][22]
 
-4.	Durch das Klicken auf die Kachel wird das Dienst-Dashboard geöffnet. Beachten Sie die Kommandos **Start**, **Stop** und **Löschen** am oberen Rand. Das Dienst-Dashboard enthält Kacheln zum Anzeigen von Eigenschaften, Schlüsseln und ein Schnellstartmenü mit Links zu Informationen und Anweisungen. Blättern Sie nach unten, um die Nutzung anzuzeigen.
+4.	Durch das Klicken auf die Kachel wird das Dienst-Dashboard geöffnet. Beachten Sie die Kommandos **Start**, **Stop** und **Löschen** am oberen Rand.
 
-5.	Klicken Sie auf **EIGENSCHAFTEN**. Beachten Sie, dass die Eigenschaftenseite rechts geöffnet wird. Die Dienst-URL befindet sich oben auf der Seite. Sie benötigen diese URL zum Herstellen einer Verbindung mit Ihrem Azure Search-Dienst.
-
- 	![][23]
+5.	Die Dienst-URL befindet sich nahe dem oberen Seitenrand. Sie benötigen diese URL zum Herstellen einer Verbindung mit Ihrem Azure Search-Dienst.
 	
-7.	Klicken Sie auf **SCHLÜSSEL**, um die API-Schlüssel anzuzeigen. Sie benötigen einen Administratorschlüssel, um sich beim Dienst zu authentifizieren. Sie können entweder den primären oder den sekundären verwenden. Optional können Sie Abfrageschlüssel für einen schreibgeschützten Zugriff auf den Dienst erstellen.
+7.	Klicken Sie auf das Symbol **SCHLÜSSEL**, um die API-Schlüssel anzuzeigen. Sie benötigen einen Administratorschlüssel, um sich beim Dienst zu authentifizieren. Sie können entweder den primären oder den sekundären verwenden. Optional können Sie Abfrageschlüssel für einen schreibgeschützten Zugriff auf den Dienst erstellen.
 
 
 <!--Next steps and links -->
@@ -357,28 +328,28 @@ Falls Sie eine Auffrischung brauchen, um die Konfigurationsseiten zu finden, fol
 
 Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzliches Lernmaterial für die Erstellung und Verwaltung von Suchanwendungen mit Azure Search.
 
-- [Erstellen einer ersten Azure Search-Lösung](search-create-first-solution.md) 
-
 - [Erstellen eines Azure Search GeoSearch-Beispiels](search-create-geospatial.md)
 
-- [Verwalten Ihrer Suchlösung in Microsoft Azure](search-manage.md) 
+- [Verwalten Ihrer Suchlösung in Microsoft Azure](search-manage.md)
 
-- [Azure Search: Technische Übersicht](http://msdn.microsoft.com/library/dn798933.aspx)
+- [Was ist Azure Search?](search-what-is-azure-search.md)
 
 - [Azure Search REST-API](http://msdn.microsoft.com/library/dn798935.aspx)
 
-- [Channel 9-Video: Einführung in Azure Search](http://channel9.msdn.com/Shows/Data-Exposed/Introduction-To-Azure-Search)
+- [Azure Search .NET SDK](https://msdn.microsoft.com/library/azure/dn951165.aspx)
 
-- [Channel 9-Video: Azure Search und Geodaten](http://channel9.msdn.com/Shows/Data-Exposed/Azure-Search-and-Geospatial-Data)
+- [Channel 9-Video: Introduction to Azure Search](http://channel9.msdn.com/Shows/Data-Exposed/Introduction-To-Azure-Search)
+
+- [Channel 9-Video: Azure Search und Geodaten](http://channel9.msdn.com/Shows/Data-Exposed/Azure-Search-and-Geospatial-Data)
 
 - [Cloud Cover-Episode 152: Generieren eines Index in Azure Search](http://channel9.msdn.com/Shows/Cloud+Cover/Cloud-Cover-152-Azure-Search-with-Liam-Cavanagh)
 
 <!--Anchors-->
-[Erste Schritte mit dem kostenlosen Dienst]: #sub-1
-[Upgrade auf die Standardsuche]: #sub-2
-[Testen der Dienstfunktionen]: #sub-3
-[Erkunden des Suchdienst-Dashboards]: #sub-4
-[Ausprobieren]: #next-steps
+[Start with the free service]: #sub-1
+[Upgrade to standard search]: #sub-2
+[Test service operations]: #sub-3
+[Explore Search service dashboard]: #sub-4
+[Try it out]: #next-steps
 
 <!--Image references-->
 [6]: ./media/search-get-started/AzureSearch_Configure1_1_New.PNG
@@ -402,11 +373,9 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 
 
 <!--Link references-->
-[Verwalten Ihrer Suchlösung in Microsoft Azure]: search-manage.md
-[Entwicklungsworkflow in Azure Search]: search-workflow.md
-[Erstellen einer ersten Azure Search-Lösung]: search-create-first-solution.md
-[Erstellen einer räumlichen Such-App mit Azure Search]: search-create-geospatial.md
+[Manage your search solution in Microsoft Azure]: search-manage.md
+[Azure Search development workflow]: search-workflow.md
+[Create your first azure search solution]: search-create-first-solution.md
+[Create a geospatial search app using Azure Search]: search-create-geospatial.md
 
-<!--HONumber=49--> 
-
-<!--HONumber=49--> 
+<!---HONumber=July15_HO2-->

@@ -4,7 +4,8 @@
 	services="key-vault"
 	documentationCenter=""
 	authors="cabailey"
-	manager="mbaldwin"/>
+	manager="mbaldwin"
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="key-vault"
@@ -12,19 +13,20 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article" 
-	ms.date="05/04/2015"
+	ms.date="06/25/2015"
 	ms.author="cabailey"/>
 
 # Erste Schritte mit dem Azure-Schlüsseltresor #
+Azure-Tresorschlüssel ist in den meisten Regionen verfügbar. Weitere Informationen finden Sie auf der Seite [Preisdetails für Schlüsseltresor](../../../../pricing/details/key-vault/).
 
 ## Einführung  
-Verwenden Sie dieses Lernprogramm für den Einstieg in den Azure-Schlüsseltresor – derzeit in der Vorschau –, um einen geschützten Container (einen Tresor) in Azure zu erstellen, in dem Sie kryptografischen Schlüssel und geheime Schlüssel in Azure speichern und verwalten. Sie werden durch den Vorgang der Verwendung von Windows PowerShell zum Erstellen eines Tresors geleitet, der einen Schlüssel oder ein Kennwort enthält, den/das Sie anschließend mit einer Azure-Anwendung verwenden können. Anschließend wird gezeigt, wie eine Anwendung diesen Schlüssel bzw. das Kennwort verwenden kann.
+Verwenden Sie dieses Lernprogramm für den Einstieg in Azure-Schlüsseltresor, um einen geschützten Container (einen Tresor) in Azure zu erstellen, in dem Sie kryptografische und geheime Schlüssel in Azure speichern und verwalten. Sie werden durch den Vorgang der Verwendung von Windows PowerShell zum Erstellen eines Tresors geleitet, der einen Schlüssel oder ein Kennwort enthält, den/das Sie anschließend mit einer Azure-Anwendung verwenden können. Anschließend wird gezeigt, wie eine Anwendung diesen Schlüssel bzw. das Kennwort verwenden kann.
 
 **Geschätzter Zeitaufwand:** 20 Minuten
 
 >[AZURE.NOTE]Dieses Lernprogramm enthält keine Anweisungen zum Schreiben der Azure-Anwendung, die in einem der Schritte verwendet wird, um zu zeigen, wie Sie eine Anwendung zum Verwenden eines Schlüssels oder geheimen Schlüssels im Schlüsseltresor autorisieren.
 >
->Während des Vorschauzeitraums können Sie den Azure-Schlüsseltresor nicht im Azure-Portal konfigurieren. Sie müssen stattdessen die Anweisungen für Azure PowerShell verwenden.
+>Derzeit können Sie den Azure-Schlüsseltresor nicht im Azure-Portal konfigurieren. Sie müssen stattdessen die Anweisungen für Azure PowerShell verwenden. Anleitungen für die plattformübergreifende Befehlszeilenschnittstelle finden Sie in [diesem entsprechenden Tutorial](key-vault-manage-with-cli.md).
 
 Eine Übersicht über den Azure-Schlüsseltresor finden Sie unter [Was ist der Azure-Schlüsseltresor?](key-vault-whatis.md)
 
@@ -32,7 +34,7 @@ Eine Übersicht über den Azure-Schlüsseltresor finden Sie unter [Was ist der A
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-- Ein Abonnement für Microsoft Azure. Wenn Sie kein Abonnement haben, können Sie sich für eine [kostenlose Testversion](../../../pricing/free-trial) registrieren.
+- Ein Abonnement für Microsoft Azure. Wenn Sie kein Abonnement haben, können Sie sich für eine [kostenlose Testversion](../../../../pricing/free-trial) registrieren.
 - Azure PowerShell, Version 0.9.1 oder höher. Um die neueste Version zu installieren und sie Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 - Eine Anwendung, die zur Verwendung des Schlüssels oder Kennworts konfiguriert wird, den bzw. das Sie in diesem Lernprogramm erstellen. Eine Beispielanwendung erhalten Sie im [Microsoft Download Center](http://www.microsoft.com/de-de/download/details.aspx?id=45343). Anweisungen finden Sie in der zugehörigen Readme-Datei.
 
@@ -117,7 +119,7 @@ Geben Sie anschließend den folgenden Code ein, um den Schlüssel aus der PFX-Da
     $key = Add-AzureKeyVaultKey -VaultName 'ContosoKeyVault' -Name 'ContosoFirstKey' -KeyFilePath 'c:\softkey.pfx' -KeyFilePassword $securepfxpwd
 
 
-Jetzt können Sie mit dem zugehörigen URI auf den erstellten oder in den Azure-Schlüsseltresor hochgeladenen Schlüssel verweisen. Beispiel: **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** 
+Jetzt können Sie mit dem zugehörigen URI auf den erstellten oder in den Azure-Schlüsseltresor hochgeladenen Schlüssel verweisen. Verwenden Sie **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey**, um immer die aktuelle Version zu erhalten, und verwenden Sie **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**, um diese bestimmte Version abzurufen.
 
 Geben Sie zur Anzeige des URI für diesen Schlüssel Folgendes ein:
 
@@ -131,7 +133,7 @@ Geben Sie anschließend Folgendes ein:
 
 	$secret = Set-AzureKeyVaultSecret -VaultName 'ContosoKeyVault' -Name 'SQLPassword' -SecretValue $secretvalue
 
-Jetzt können Sie mit dem zugehörigen URI auf das Kennwort verweisen, das Sie dem Azure-Schlüsseltresor hinzugefügt haben. Beispiel: **https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**
+Jetzt können Sie mit dem zugehörigen URI auf das Kennwort verweisen, das Sie dem Azure-Schlüsseltresor hinzugefügt haben. Verwenden Sie **https://ContosoVault.vault.azure.net/secrets/SQLPassword**, um immer die aktuelle Version zu erhalten, und verwenden Sie **https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**, um diese bestimmte Version abzurufen.
 
 Geben Sie zur Anzeige des URI für diesen geheimen Schlüssel Folgendes ein:
 
@@ -188,7 +190,7 @@ Wenn Ihr Tresorname beispielsweise "ContosoKeyVault" lautet, die Anwendung, die 
 
 ## <a id="HSM"></a>Verwenden eines Hardwaresicherheitsmoduls (HSM) ##
 
-Zur Steigerung der Sicherheit können Sie Schlüssel in HSMs importieren oder in diesen generieren. Diese Schlüssel verbleiben immer innerhalb der HSM-Grenzen. HSMs sind gemäß FIPS 140-2 Level 2 zertifiziert. Wenn diese Anforderung auf Sie nicht zutrifft, überspringen Sie diesen Abschnitt und wechseln Sie zu [Löschen des Schlüsseltresors und zugeordneter Schlüssel und geheimer Schlüssel](#delete).
+Zur Steigerung der Sicherheit können Sie Schlüssel in HSMs importieren oder in diesen generieren. Diese Schlüssel verbleiben immer innerhalb der HSM-Grenzen. Die HSMs sind FIPS 140-2 Ebene 2 überprüft. Wenn diese Anforderung auf Sie nicht zutrifft, überspringen Sie diesen Abschnitt und wechseln Sie zu [Löschen des Schlüsseltresors und zugeordneter Schlüssel und geheimer Schlüssel](#delete).
 
 Um diese HSM-geschützten Schlüssel zu erstellen, müssen Sie über ein [Tresorabonnement mit Unterstützung von HSM-geschützten Schlüsseln](../../../pricing/free-trial) verfügen.
 
@@ -239,11 +241,11 @@ Die folgenden weiteren Befehle sind möglicherweise ebenfalls für das Verwalten
 
 ## <a id="next"></a>Nächste Schritte ##
 
-Ein Lernprogramm zur Verwendung des Azure-Schlüsseltresors in einer Webanwendung finden Sie unter [Use Azure Key Vault from a Web Application](key-vault-use-from-web-application.md) (in englischer Sprache).
+Ein Folgetutorial zur Verwendung des Azure-Schlüsseltresors in einer Webanwendung finden Sie unter [Verwenden des Azure-Schlüsseltresors aus einer Webanwendung](key-vault-use-from-web-application.md).
 
 Eine Liste der Windows PowerShell-Cmdlets für den Azure-Schlüsseltresor finden Sie unter [Cmdlets für den Azure-Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn868052.aspx).
 
-Eine Referenz zur Programmierung finden Sie unter [Azure-Schlüsseltresor – REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn903609.aspx) und [Azure-Schlüsseltresor – C# Client-API-Referenz](https://msdn.microsoft.com/library/azure/dn903628.aspx).
+Programmierungsreferenzen finden Sie unter [Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn903625.aspx) in der Dokumentationsbibliothek für Microsoft Azure auf MSDN.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO2-->

@@ -1,9 +1,7 @@
 <properties 
 	pageTitle="Erweiterte Analyseprozesse und -technologien in Aktion: Verwenden von Hadoop-Clustern in einem 1-TB-Criteo-DataSet | Microsoft Azure" 
 	description="Verwenden der erweiterten Analyseprozesse und -technologien (Advanced Analytics Process and Technology, ADAPT) für ein End-to-End-Szenario mit einem HDInsight Hadoop-Cluster zum Erstellen und Bereitstellen eines Modells unter Verwendung eines großen (1 TB) öffentlich zugänglichen DataSets" 
-	metaKeywords="" 
-	services="machine-learning,hdinsight" 
-	solutions="" 
+	services="machine-learning,hdinsight"  
 	documentationCenter="" 
 	authors="bradsev" 
 	manager="paulettm" 
@@ -114,7 +112,7 @@ Nun sind wir bereit für den ersten Teil der exemplarischen Vorgehensweise: Das 
 
 **WICHTIGER HINWEIS:** **Führen Sie alle Hive-Befehle dieser exemplarischen Vorgehensweise über Eingabeaufforderung im oben angeführten Hive-Verzeichnis "bin/" aus. So werden alle Pfadprobleme automatisch behoben. Die hier verwendeten Begriffe "Eingabeaufforderung im Hive-Verzeichnis" und "Hadoop-Befehlszeile" sind austauschbar.**
 
-**WICHTIGER HINWEIS 2:** **Zum Ausführen von Hive-Abfragen haben Sie stets folgende Möglichkeit:** cd %hive_home%\\bin hive
+**WICHTIGER HINWEIS 2:** **Zum Ausführen von Hive-Abfragen haben Sie stets folgende Möglichkeit:** cd %hive_home%\bin hive
 
 Wenn Hive REPL mit dem Symbol "hive >" angezeigt wird, können Sie die Abfrage einfach ausschneiden und einfügen, um sie auszuführen.
 
@@ -648,4 +646,4 @@ Dies bildet den Abschluss unserer Abhandlung über die End-to-End-Handhabung umf
 
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

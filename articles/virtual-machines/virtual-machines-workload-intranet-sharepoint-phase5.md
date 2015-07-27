@@ -35,14 +35,14 @@ Nachdem die Datenbanken gesichert und wiederhergestellt wurden, können sie der 
 
 Damit die Datenbanken gesichert und wiederhergestellt werden können, müssen die Sicherungsdateien (BAK-Dateien) vom virtuellen Computer des sekundären SQL-Servers aus zugänglich sein. Gehen Sie dazu wie folgt vor:
 
-1.	Melden Sie sich beim Host des primären SQL-Servers unter dem Konto [Domäne]**\\sp_farm_db** an. 
-2.	Navigieren Sie zu Laufwerk „F:\\“. 
+1.	Melden Sie sich beim Host des primären SQL-Servers unter dem Konto "[Domäne\]**\sp_farm_db**" an. 
+2.	Navigieren Sie zu Laufwerk „F:\“. 
 3.	Klicken Sie mit der rechten Maustaste auf den Ordner **Backup**, und klicken Sie auf **Freigeben für** und dann auf **Bestimmte Personen**.
-4.	Geben Sie im Dialogfeld **Dateifreigabe** **[Domäne]\\sqlservice** ein, und klicken Sie dann auf **Hinzufügen**.
+4.	Geben Sie im Dialogfeld **Dateifreigabe** **[Domäne\]\sqlservice** ein, und klicken Sie dann auf **Hinzufügen**.
 5.	Klicken Sie für den Kontonamen **sqlservice** auf die Spalte **Berechtigungsebene**, und klicken Sie dann auf **Lesen/Schreiben**. 
 6.	Klicken Sie auf **Freigeben** und dann auf **Fertig**.
 
-Führen Sie die oben genannten Schritte auf dem Host des sekundären SQL-Servers aus, erteilen Sie dem Konto „sqlservice“ in Schritt 5 für den Ordner „F:\\Backup“ allerdings nur die Berechtigung **Lesen**.
+Führen Sie die oben genannten Schritte auf dem Host des sekundären SQL-Servers aus, erteilen Sie dem Konto „sqlservice“ in Schritt 5 für den Ordner „F:\Backup“ allerdings nur die Berechtigung **Lesen**.
 
 ### Sichern und Wiederherstellen einer Datenbank
 
@@ -55,20 +55,20 @@ Führen Sie zum Sichern einer Datenbank die folgenden Schritte aus.
 3.	Erweitern Sie im linken Bereich den Knoten **Datenbanken**.
 4.	Klicken Sie mit der rechten Maustaste auf eine Datenbank, die Sie sichern möchten, zeigen Sie auf **Aufgaben**, und klicken Sie dann auf **Sichern**.
 5.	Klicken Sie im Abschnitt **Ziel** auf **Entfernen**, um den Standarddateipfad der Sicherungsdatei zu entfernen.
-6.	Klicken Sie auf **Hinzufügen**. Geben Sie unter **Dateiname** **[ComputerName]\\backup[DatenbankName].bak** ein, wobei „ComputerName“ der Name des primären SQL Server-Computers und „DatenbankName“ der Name der Datenbank ist. Klicken Sie auf **OK** und nach der Meldung über die erfolgreiche Sicherung nochmals auf **OK**.
-7.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **[DatenbankName]**, zeigen Sie auf **Aufgaben**, und klicken Sie dann auf **Sichern**.
+6.	Klicken Sie auf **Hinzufügen**. Geben Sie unter **Dateiname** **[Computername\]\backup[Datenbankname\].bak** ein, wobei "Computername" der Name des primären SQL Server-Computers und "Datenbankname" der Name der Datenbank ist. Klicken Sie auf **OK** und nach der Meldung über die erfolgreiche Sicherung nochmals auf **OK**.
+7.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **[Datenbankname\]**, zeigen Sie auf **Aufgaben**, und klicken Sie dann auf **Sichern**.
 8.	Wählen Sie unter **Sicherungstyp** die Option **Transaktionsprotokoll** aus, und klicken Sie dann zweimal hintereinander auf **OK**.
 9.	Lassen Sie diese Remotedesktopsitzung geöffnet.
 
 Führen Sie zum Wiederherstellen einer Datenbank die folgenden Schritte aus.
 
-1.	Melden Sie sich beim sekundären SQL Server-Computer unter dem Konto „[DomänenName]\\sp_farm_db“ an.
+1.	Melden Sie sich beim sekundären SQL Server-Computer unter dem Konto "[Domänenname\]\sp_farm_db" an.
 2.	Geben Sie auf dem Startbildschirm **SQL Studio** ein, und klicken Sie dann auf **SQL Server Management Studio**.
 3.	Klicken Sie auf **Verbinden**.
 4.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **Datenbanken**, und klicken Sie dann auf **Datenbank wiederherstellen**.
 5.	Wählen Sie im Abschnitt **Quelle** die Option **Gerät** aus, und klicken Sie dann auf die Schaltfläche mit den Auslassungspunkten (...).
 6.	Klicken Sie unter **Sicherungsmedien auswählen** auf **Hinzufügen**.
-7.	Geben Sie unter **Speicherort der Sicherungsdatei** „**[ComputerName]\\backup**“ ein, drücken Sie die **Eingabetaste**, wählen Sie **[DatenbankName].bak** aus, und klicken Sie dann zweimal hintereinander auf **OK**. Nun sollten im Abschnitt **Wiederherzustellende Sicherungssätze** die vollständige Sicherung und die Protokollsicherung angezeigt werden.
+7.	Geben Sie unter **Speicherort der Sicherungsdatei** **[Computername\]\backup** ein, drücken Sie die **Eingabetaste**, wählen Sie **[Datenbankname\].bak** aus, und klicken Sie dann zweimal auf **OK**. Nun sollten im Abschnitt **Wiederherzustellende Sicherungssätze** die vollständige Sicherung und die Protokollsicherung angezeigt werden.
 8.	Klicken Sie unter **Seite auswählen** auf **Optionen**. Wählen Sie im Abschnitt **Wiederherstellungsoptionen** unter **Wiederherstellungsstatus** die Option **OHNE RECOVERY WIEDERHERSTELLEN** aus, und klicken Sie dann auf **OK**. 
 9.	Klicken Sie auf Aufforderung auf **OK**.
 
@@ -121,4 +121,7 @@ Weitere Informationen zu SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgrupp
 
 [Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
 
-<!--HONumber=54--> 
+[Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
+ 
+
+<!---HONumber=July15_HO2-->

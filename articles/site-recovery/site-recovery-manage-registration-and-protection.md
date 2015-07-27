@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="05/29/2015" 
+	ms.date="07/08/2015" 
 	ms.author="raynew"/>
 
 # Verwalten von Registrierung und Schutz
@@ -24,9 +24,9 @@ In diesem Artikel erfahren Sie, wie Sie die Registrierung von Servern im Site R
 
 Wenn Sie die Registrierung eines VMM-Servers in einem Tresor aufheben möchten, müssen Sie den Server im Azure Site Recovery-Portal auf der Registerkarte **Server** löschen. Beachten Sie Folgendes:
 
--  Es empfiehlt sich, die Registrierung des VMM-Servers aufzuheben, während dieser mit Azure verbunden ist. Dadurch wird sichergestellt, dass Einstellungen auf dem lokalen VMM-Server sowie die zugeordneten VMM-Server (VMM-Server mit Clouds, die Clouds auf dem zu löschenden Server zugeordnet sind) ordnungsgemäß bereinigt werden. Nicht verbundene Server sollten nur im Falle eines dauerhaften Konnektivitätsproblems entfernt werden.
-- Wenn der VMM-Server beim Löschen nicht verbunden ist, müssen Sie manuell ein Bereinigungsskript ausführen. Dieses Skript finden Sie im [Microsoft-Katalog](https://gallery.technet.microsoft.com/scriptcenter/Cleanup-Script-for-Windows-95101439). Notieren Sie sich für die manuelle Bereinigung die VMM-ID des Servers.
-- Führen Sie folgende Schritte aus, wenn Sie die Registrierung eines in einem Cluster bereitgestellten VMM-Servers aufheben müssen:
+-  **Verbundener VMM-Server**: Es empfiehlt sich, die Registrierung des VMM-Servers aufzuheben, während dieser mit Azure verbunden ist. Dadurch wird sichergestellt, dass Einstellungen auf dem lokalen VMM-Server sowie die zugeordneten VMM-Server (VMM-Server mit Clouds, die Clouds auf dem zu löschenden Server zugeordnet sind) ordnungsgemäß bereinigt werden. Nicht verbundene Server sollten nur im Falle eines dauerhaften Konnektivitätsproblems entfernt werden.
+- **Unverbundener VMM-Server**: Wenn der VMM-Server beim Löschen nicht verbunden ist, müssen Sie manuell ein Bereinigungsskript ausführen. Dieses Skript finden Sie im [Microsoft-Katalog](https://gallery.technet.microsoft.com/scriptcenter/Cleanup-Script-for-Windows-95101439). Notieren Sie sich für die manuelle Bereinigung die VMM-ID des Servers.
+- **VMM-Server im Cluster**: Führen Sie folgende Schritte aus, wenn Sie die Registrierung eines in einem Cluster bereitgestellten VMM-Servers aufheben müssen:
 
 	- Ist der Server verbunden, löschen Sie den verbundenen VMM-Server auf der Registerkarte **Server**. Melden Sie sich zum Deinstallieren des Anbieters bei jedem Clusterknoten an, und deinstallieren Sie ihn über die Systemsteuerung. Führen Sie für alle passiven Knoten des Clusters das im vorherigen Abschnitt erwähnte Bereinigungsskript aus, um die Registrierungseinträge zu löschen.
 	- Ist der Server nicht verbunden, müssen Sie das Bereinigungsskript auf allen Clusterknoten ausführen.
@@ -136,15 +136,17 @@ Wenn Azure Site Recovery zum Schutz virtueller Computer auf einem Hyper-V-Server
 	    popd
 
 
-## Beenden des Schutzes für einen virtuellen Computer
+## Beenden des Schutzes für einen virtuellen Hyper-V-Computer
 
-Gehen Sie wie folgt vor, um den Schutz eines virtuellen Computers zu beenden:
+Wenn Sie einen virtuellen Hyper-V-Computer nicht mehr schützen möchten, müssen Sie den Schutz dafür entfernen. Je nachdem, wie Sie den Schutz aufheben, müssen Sie möglicherweise die Sicherheitseinstellungen auf dem Computer manuell bereinigen.
+
+### Schutz entfernen
 
 1. Wählen Sie in den Cloudeigenschaften auf der Registerkarte **Virtuelle Computer** den virtuellen Computer aus, und klicken Sie auf **Entfernen**.
 2. Auf der Seite **Entfernen des virtuellen Computers bestätigen** stehen mehrere Optionen zur Verfügung:
 
-	- **Schutz für den virtuellen Computer deaktivieren**: Wenn Sie diese Option aktivieren und speichern, wird der virtuelle Computer nicht mehr durch Azure Site Recovery geschützt. Die Sicherheitseinstellungen für den virtuellen Computer werden automatisch bereinigt.
-	- **Verwaltung des virtuellen Computers beenden**: Wenn Sie diese Option auswählen, wird der virtuelle Computer nur aus dem Azure Site Recovery-Dienst entfernt. Die lokalen Sicherheitseinstellungen für den virtuellen Computer sind davon nicht betroffen und müssen anhand der weiter unten angegebenen Anweisungen manuell bereinigt werden.
+	- **Schutz deaktivieren**: Wenn Sie diese Option aktivieren und speichern, wird der virtuelle Computer nicht mehr durch Site Recovery geschützt. Die Sicherheitseinstellungen für den virtuellen Computer werden automatisch bereinigt.
+	- **Aus dem Tresor entfernen**: Wenn Sie diese Option auswählen, wird der virtuelle Computer nur aus dem Site Recovery-Tresor entfernt. Lokale Sicherheitseinstellungen für den virtuellen Computer sind nicht betroffen. Sie müssen die Einstellungen manuell bereinigen, um die Schutzeinstellungen und den virtuellen Computer aus dem Azure-Abonnement zu entfernen sowie die Schutzeinstellungen, die Sie zum manuellen Bereinigen (wie unten beschrieben) benötigt werden.
 
 Wenn Sie den virtuellen Computer und dessen Festplatten löschen, werden sie am Zielspeicherort entfernt.
 
@@ -183,7 +185,6 @@ Bei Verwendung der Option **Verwaltung des virtuellen Computers beenden** müsse
 	    $replicationService = Get-WmiObject -Namespace "root\virtualization\v2"  -Query "Select * From Msvm_ReplicationService"  -computername $hostName
 	    $replicationService.RemoveReplicationRelationship($vm.__PATH)
 
-
 ### Manuelles Bereinigen der Schutzeinstellungen (zwischen Hyper-V-Standorten und Azure)
 
 1. Verwenden Sie auf dem Hyper-V-Hostquellserver das folgende Skript, um die Replikation für den virtuellen Computer zu entfernen. Ersetzen Sie „SQLVM1“ durch den Namen des virtuellen Computers.
@@ -193,23 +194,22 @@ Bei Verwendung der Option **Verwaltung des virtuellen Computers beenden** müsse
 	    $replicationService = Get-WmiObject -Namespace "root\virtualization\v2"  -Query "Select * From Msvm_ReplicationService"
 	    $replicationService.RemoveReplicationRelationship($vm.__PATH)
 
-### Manuelles Bereinigen der Schutzeinstellungen (zwischen VMware-Standorten und Azure)
+## Beenden Sie den Schutz für eine virtuelle VMware-Maschine oder für einen physischen Server
 
-Deinstallieren Sie auf dem Quellserver den Mobilitätsdienst.
+Wenn Sie den Schutz für eine virtuelle VMware-Maschine oder einen physischen Server beenden möchten, müssen Sie den Schutz dafür entfernen. Je nachdem, wie Sie den Schutz aufheben, müssen Sie möglicherweise die Sicherheitseinstellungen auf dem Computer manuell bereinigen.
 
+### Schutz entfernen
 
+1. Wählen Sie in den Cloudeigenschaften auf der Registerkarte **Virtuelle Computer** den virtuellen Computer aus, und klicken Sie auf **Entfernen**.
+2. Wählen Sie in **Virtuellen Computer entfernen** eine der folgenden Optionen:
 
+	- **Schutz deaktivieren (verwendet für die Wiederherstellung eines Drilldowns und der Änderung des Volumes)** – Sie werden diese Optione nur dann sehen und aktivieren können, wenn Sie:
+		- **Ändern der Volumegröße des virtuellen Computers**– Wenn Sie die Größe eines Volumes ändern, wechselt der virtuelle Computer in einen kritischen Zustand. Wählen Sie diese Option, falls dies der Fall ist. Der Schutz wird unter Beibehaltung der Wiederherstellungspunkte in Azure deaktiviert. Wenn Sie den Schutz für den Computer erneut aktivieren, werden die Daten für das angepasste Volume an Azure übertragen werden.
+		- **Ausführen eines Failovers**– Nachdem Sie Ihre Umgebung durch Ausführen eines Failovers von lokalen virtuellen VMware-Maschinen oder physischen Servern nach Azure getestet haben, wählen Sie diese Option, um Ihre lokalen virtuellen Computer wieder zu schützen. Mit dieser Option werden die einzelnen virtuellen Computer deaktiviert, sodass Sie den Schutz für diese wieder aktivieren müssen. Beachten Sie Folgendes:
+			- Das Deaktivieren des virtuellen Computers mit dieser Einstellung wirkt sich nicht auf den replizierten virtuellen Computer in Azure aus.
+			- Sie dürfen den Mobilitätsdienst nicht von der virtuellen Maschine deinstallieren.
+	
+	- **Schutz deaktivieren**: Wenn Sie diese Option aktivieren und speichern, wird der Computer nicht mehr durch Site Recovery geschützt. Die Sicherheitseinstellungen für den Computer werden automatisch bereinigt.
+	- **Aus dem Tresor entfernen**: Wenn Sie diese Option auswählen, wird der Computer nur aus dem Site Recovery-Tresor entfernt. Lokale Sicherheitseinstellungen für den Computer sind nicht betroffen. Um die Einstellungen vom Computer und den virtuellen Computer aus dem Azure-Abonnement zu entfernen, müssen Sie die Einstellungen bereinigen, indem Sie den Mobilitätsdienst deinstallieren. ![Optionen entfernen](./media/site-recovery-manage-registration-and-protection/RegistrationProtection_RemoveVM.png)
 
-
-
-
-
-
-
-
-
-
-
- 
-
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

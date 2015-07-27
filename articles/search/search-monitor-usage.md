@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="required" 
-   ms.date="04/27/2015"
+   ms.date="07/08/2015"
    ms.author="heidist"/>
 
 # Überwachen der Nutzung und Statistiken eines Azure-Suchdiensts
@@ -55,5 +55,6 @@ Weitere Informationen zur Dienstverwaltung finden Sie unter [Verwalten Ihres Suc
 
 
 
+ 
 
-<!--HONumber=54--> 
+<!---HONumber=July15_HO2-->

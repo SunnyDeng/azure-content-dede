@@ -5,7 +5,8 @@
    documentationCenter="dev-center-name"
    authors="mahthi"
    manager="coreysa"
-   editor=""/>
+   editor=""
+	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
    ms.service="virtual-machines"
@@ -16,7 +17,7 @@
    ms.date="04/29/2015"
    ms.author="mahthi"/>
 
-# Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager 
+# Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager
 
 Wenn der Azure-Ressourcen-Manager um Rechen-, Netzwerk- und Speicherkapazitäten erweitert wird, stellt dies eine erhebliche Vereinfachung der Bereitstellung und Verwaltung komplexer Anwendungen dar, die in IaaS ausgeführt werden. Für viele Anwendungen ist eine Kombination von Ressourcen wie virtuellen Netzwerken, Speicherkonten, virtuellen Computern und Netzwerkschnittstellen erforderlich. Mit dem Azure-Ressourcen-Manager können Sie eine JSON-Vorlage erstellen, um alle Ressourcen gemeinsam als eine einzige Anwendung bereitzustellen und zu verwalten.
 
@@ -88,7 +89,7 @@ Die ausführliche REST-API-Dokumentation zu den Rechen-, Netzwerk- und Speicherr
 
 ## Häufig gestellte Fragen
 
-**Kann ich mit dem neuen Azure-Ressourcen-Manager einen virtuellen Computer erstellen, der  in einem mithilfe der Azure-Dienstverwaltungs-APIs erstellten virtuellen Netzwerk oder Speicherkonto bereitgestellt wird?**
+**Kann ich mit dem neuen Azure-Ressourcen-Manager einen virtuellen Computer erstellen, der in einem mithilfe der Azure-Dienstverwaltungs-APIs erstellten virtuellen Netzwerk oder Speicherkonto bereitgestellt wird?**
 
 Dies wird zurzeit nicht unterstützt. Sie können die neuen Azure-Ressourcen-Manager-APIs nicht zum Bereitstellen eines virtuellen Computers in einem mithilfe der Azure-Dienstverwaltungs-APIs erstellten virtuellen Netzwerk oder Speicherkonto verwenden.
 
@@ -107,6 +108,6 @@ Die Automatisierungen und Skripts, die Sie erstellt haben, bleiben für die vorh
 **Können die mit den neuen Azure-Ressourcen-Manager-APIs erstellten virtuellen Netzwerke mit meinem Express Route-Schaltkreis verbunden werden?**
 
 Dies wird zurzeit nicht unterstützt. Die mit den neuen Azure-Ressourcen-Manager-APIs erstellten virtuellen Netzwerke können nicht mit Express Route-Schaltkreisen verbunden werden Dies wird zukünftig unterstützt.
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

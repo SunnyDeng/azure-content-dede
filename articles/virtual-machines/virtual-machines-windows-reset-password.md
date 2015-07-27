@@ -13,12 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/07/2015" 
+	ms.date="06/25/2015" 
 	ms.author="josephd"/>
 
 # Zurücksetzen eines Kennworts oder des Remotedesktopdiensts für virtuelle Windows-Computer
 
 Wenn Sie ein Kennwort vergessen haben oder ein Problem mit der Konfiguration des Remotedesktopdiensts vorliegt und Sie daher keine Verbindung mit einem virtuellen Windows-Computer herstellen können, verwenden Sie das Azur-Vorschauportal oder die VMAccess-Erweiterung zum Zurücksetzen des lokalen Administratorkennworts oder zum Zurücksetzen der Konfiguration des Remotedesktopdiensts.
+
+> [AZURE.NOTE]Dieser Artikel gilt nicht für virtuelle Computer, die auf dem Azure-Ressourcen-Manager basieren.
 
 ## Azure-Vorschauportal
 
@@ -49,7 +51,7 @@ Die Erweiterung "VMAccess" muss installiert sein, bevor Sie es verwenden können
 	$vm = Get-AzureVM -ServiceName $CSName -Name $VMName 
 	write-host $vm.VM.ProvisionGuestAgent
 
-Wenn Sie den Namen des Cloud-Diensts und des virtuellen Computers nicht kennen, führen Sie **Get-AzureVM** aus, um diese Informationen für alle virtuellen Computer im aktuellen Abonnement anzuzeigen.
+Wenn Sie den Namen des Clouddiensts und des virtuellen Computers nicht kennen, führen Sie **Get-AzureVM** aus, um diese Informationen für alle virtuellen Computer im aktuellen Abonnement anzuzeigen.
 
 Der Befehl **write-host** zeigt **True** an, wenn der VM-Agent installiert ist. Wenn **False** angezeigt wird, nutzen Sie die Anweisungen und den Link zum Download im Azure-Blogbeitrag VM [Agent and Extensions – Part 2](http://go.microsoft.com/fwlink/p/?linkid=403947&clcid=0x409) (in englischer Sprache).
 
@@ -108,4 +110,6 @@ Wenn Sie das Azure IaaS-Diagnosepaket (Windows) nicht ausführen konnten oder da
 
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH](http://msdn.microsoft.com/library/azure/dn535788.aspx)
 
-<!---HONumber=58--> 
+ 
+
+<!---HONumber=July15_HO2-->

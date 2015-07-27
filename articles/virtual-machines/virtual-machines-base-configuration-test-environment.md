@@ -1,24 +1,27 @@
 <properties 
 	pageTitle="Testumgebung für die Basiskonfiguration" 
-	description="Erfahren Sie, wie Sie eine einfache Entwicklungs-/Testumgebung erstellen können, von der ein vereinfachtes Intranet in Azure simuliert wird." 
+	description="Erfahren Sie, wie Sie eine einfache Entwicklungs-/Testumgebung erstellen können, von der ein vereinfachtes Intranet in Microsoft Azure simuliert wird." 
 	documentationCenter=""
 	services="virtual-machines" 
 	authors="JoeDavies-MSFT" 
 	manager="timlt" 
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags 
 	ms.service="virtual-machines" 
 	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
+	ms.tgt_pltfrm="vm-windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/02/2015" 
+	ms.date="07/07/2015" 
 	ms.author="josephd"/>
 
 # Testumgebung für die Basiskonfiguration
 
-Dieses Thema enthält eine schrittweise Anleitung zum Erstellen einer Testumgebung für die Basiskonfiguration in einem Microsoft Azure Virtual Network mit einem Computer mit Windows Server 2012 R2. Sie können die Testumgebung zu folgenden Zwecken verwenden:
+Dieser Artikel bietet Ihnen schrittweise Anweisungen zum Erstellen der Testumgebung “Basiskonfiguration” in einem Microsoft Azure Virtual Network mit virtuellen Computern, die in der Dienstverwaltung erstellt wurden.
+
+Sie können die Testumgebung zu folgenden Zwecken verwenden:
 
 - Zum Entwickeln und Testen von Anwendungen
 - Für eine [simulierte Hybridcloudumgebung](../virtual-network/virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md)
@@ -32,7 +35,7 @@ Sie enthält folgende Elemente:
 
 - Einen virtuellen Azure-Computer mit Windows Server 2012 R2 mit dem Namen „DC1“, der als Intranetdomänencontroller und DNS-Server (Domain Name System) konfiguriert ist
 - Einen virtuellen Azure-Computer mit Windows Server 2012 R2 und dem Namen „APP1“, der als allgemeine Anwendung und Webserver konfiguriert ist
-- Einem virtuellen Azure-Computer mit Windows Server 2012 R2 und dem Namen „CLIENT1“, der als Intranetclient verwendet wird 
+- Einem virtuellen Azure-Computer mit Windows Server 2012 R2 und dem Namen „CLIENT1“, der als Intranetclient verwendet wird
 
 Diese Konfiguration ermöglicht „DC1“, „APP1“, „CLIENT1“ sowie zusätzlichen Corpnet-Subnetzcomputern Folgendes:
 
@@ -166,7 +169,7 @@ Als Nächstes erstellen Sie in Active Directory ein Benutzerkonto zum Anmelden b
 
 Beachten Sie, dass durch den ersten Befehl die Aufforderung ausgelöst wird, das Kontokennwort für User1 einzugeben. Wählen Sie ein sicheres Kennwort aus, da dieses Konto für Remotedesktopverbindungen sämtlicher Mitgliedscomputer der CORP-Domäne verwendet wird. Sie können die Sicherheit des Kennworts unter [Password Checker: Using Strong Passwords](https://www.microsoft.com/security/pc-security/password-checker.aspx) (Kennwortprüfung – Verwenden sicherer Kennwörter) überprüfen. Zeichnen Sie das User1-Kontokennwort auf, und speichern Sie es an einem sicheren Ort.
 
-Stellen Sie erneut eine Verbindung mit dem virtuellen Computer DC1 her. Verwenden Sie dabei das Konto CORP\\User1.
+Stellen Sie erneut eine Verbindung mit dem virtuellen Computer DC1 her. Verwenden Sie dabei das Konto CORP\User1.
 
 Führen Sie anschließend mithilfe einer Windows PowerShell-Eingabeaufforderung mit Administratorrechten den folgenden Befehl aus, um Datenverkehr für das Ping-Tool zuzulassen:
 
@@ -191,7 +194,7 @@ Zunächst geben Sie den Namen des Clouddiensts an und führen mithilfe einer Azu
 	$vm1 | Set-AzureSubnet -SubnetNames Corpnet
 	New-AzureVM –ServiceName $serviceName -VMs $vm1 -VNetName TestLab
 
-Dann stellen Sie eine Verbindung mit dem virtuellen Computer APP1 her (verwenden Sie dabei die Anmeldeinformationen für CORP\\User1) und öffnen eine Windows PowerShell-Eingabeaufforderung auf Administratorebene.
+Dann stellen Sie eine Verbindung mit dem virtuellen Computer APP1 her (verwenden Sie dabei die Anmeldeinformationen für CORP\User1) und öffnen eine Windows PowerShell-Eingabeaufforderung auf Administratorebene.
 
 Zum Überprüfen der Namensauflösung und der Netzwerkkommunikation zwischen APP1 und DC1 führen Sie den Befehl **ping dc1.corp.contoso.com** aus und vergewissern sich, dass Sie vier Antworten erhalten.
 
@@ -224,7 +227,7 @@ Zunächst geben Sie den Namen des Clouddiensts an und führen mithilfe der Azure
 	$vm1 | Set-AzureSubnet -SubnetNames Corpnet
 	New-AzureVM –ServiceName $serviceName -VMs $vm1 -VNetName TestLab
 
-Stellen Sie anschließend eine Verbindung mit dem virtuellen Computer CLIENT1 her. Verwenden Sie dabei die Anmeldeinformationen für CORP\\User1.
+Stellen Sie anschließend eine Verbindung mit dem virtuellen Computer CLIENT1 her. Verwenden Sie dabei die Anmeldeinformationen für CORP\User1.
 
 Zum Überprüfen der Namensauflösung und der Netzwerkkommunikation zwischen CLIENT1 und DC1 führen Sie mithilfe der Azure PowerShell-Eingabeaufforderung den Befehl **ping dc1.corp.contoso.com** aus und vergewissern sich, dass Sie vier Antworten erhalten.
 
@@ -234,9 +237,8 @@ Als Nächstes überprüfen Sie, ob Sie mit CLIENT1 auf die Web- und Dateifreigab
 2.	Klicken Sie unter **Eigenschaften von CLIENT1** neben **Verstärkte Sicherheitskonfiguration für IE** auf **Ein** .
 3.	Klicken Sie unter **Verstärkte Sicherheitskonfiguration für IE** bei **Administratoren** und **Benutzern** auf **Aus**, und klicken Sie dann auf **OK**.
 4.	Klicken Sie auf der Startseite auf **Internet Explorer** und dann auf **OK**.
-5.	Geben Sie in die Adressleiste **http://app1.corp.contoso.com/** ein, und drücken Sie dann die EINGABETASTE. Nun sollte die IIS-Standardwebseite (Internet-Informationsdienste) für APP1 angezeigt werden. 
-6.	Klicken Sie in der Desktopsymbolleiste auf das Symbol des Datei-Explorers.
-7.	Geben Sie in der Adressleiste **\\\\app1\\Files** ein, und drücken Sie dann die EINGABETASTE.
+5.	Geben Sie in die Adressleiste **http://app1.corp.contoso.com/** ein, und drücken Sie dann die EINGABETASTE. Nun sollte die IIS-Standardwebseite (Internet-Informationsdienste) für APP1 angezeigt werden. 6.	Klicken Sie in der Desktopsymbolleiste auf das Symbol des Datei-Explorers.
+7.	Geben Sie in der Adressleiste **\app1\Files** ein, und drücken Sie dann die EINGABETASTE.
 8.	Es wird ein Fenster mit dem Inhalt des freigegebenen Ordners geöffnet.
 9.	Doppelklicken Sie im Fenster **Dateien** des freigegebenen Ordners auf die Datei **Example.txt**. Nun wird der Inhalt der Datei „Example.txt“ angezeigt.
 10.	Schließen Sie die Fenster **example.txt – Editor** und **Dateien** des freigegebenen Ordners.
@@ -279,6 +281,6 @@ Zum Starten der virtuellen Computer in der angegebenen Reihenfolge mit Azure Pow
 	Start-AzureVM -ServiceName $serviceName -Name "DC1"
 	Start-AzureVM -ServiceName $serviceName -Name "APP1"
 	Start-AzureVM -ServiceName $serviceName -Name "CLIENT1"
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO2-->

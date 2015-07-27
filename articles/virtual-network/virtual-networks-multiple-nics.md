@@ -1,10 +1,10 @@
 <properties 
    pageTitle="Erstellen eines virtuellen Computers mit mehreren Netzwerkschnittstellenkarten"
-   description="Gewusst wie: Erstellen von virtuellen Computern mit mehreren Netzwerkschnittstellenkarten"
+   description="Weitere Informationen zum Erstellen und Konfigurieren von virtuellen Computern mit mehreren Netzwerkkarten"
    services="virtual-network, virtual-machines"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="adinah"
+   manager="carolz"
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/30/2015"
+   ms.date="07/02/2015"
    ms.author="telmos" />
 
 # Erstellen eines virtuellen Computers mit mehreren Netzwerkschnittstellenkarten
@@ -119,9 +119,11 @@ Um die PowerShell-Befehle in diesem Beispiel ausführen zu können, müssen die 
 - Ein konfiguriertes virtuelles Netzwerk. Weitere Informationen zu virtuellen Netzwerken finden Sie unter [Virtuelle Netzwerke im Überblick](https://msdn.microsoft.com/library/azure/jj156007.aspx).
 - Die neueste Version von Azure PowerShell wurde heruntergeladen und installiert. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell).
 
-1. Wählen Sie ein VM-Image aus der Azure-VM-Image-Galerie aus. Beachten Sie, dass sich die Images häufig ändern und nach Region verfügbar sind. Das im folgenden Beispiel angegebene Image kann sich möglicherweise ändern oder nicht in Ihrer Region verfügbar sein. Geben Sie daher unbedingt das Image an, das Sie benötigen. 
+Führen Sie die folgenden Schritte aus, um einen virtuellen Computer mit mehreren Netzwerkkarten zu erstellen
 
-	    $image = Get-AzureVMImage `
+1. Wählen Sie ein VM-Image aus der Azure-VM-Image-Galerie aus. Beachten Sie, dass sich die Images häufig ändern und nach Region verfügbar sind. Das im folgenden Beispiel angegebene Image kann sich möglicherweise ändern oder nicht in Ihrer Region verfügbar sein. Geben Sie daher unbedingt das Image an, das Sie benötigen. 
+	    
+		$image = Get-AzureVMImage `
 	    	-ImageName "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201410.01-en.us-127GB.vhd"
 
 1. Erstellen Sie eine Konfiguration für den virtuellen Computer.
@@ -143,21 +145,111 @@ Um die PowerShell-Befehle in diesem Beispiel ausführen zu können, müssen die 
 
 1. Geben Sie das Subnetz und die IP-Adresse für die Standard-NIC an.
 
-		Set-AzureSubnet -SubnetNames "Frontend" -VM $vm Set-AzureStaticVNetIP  `
-			-IPAddress "10.1.0.100" -VM $vm
+		Set-AzureSubnet -SubnetNames "Frontend" -VM $vm 
+		Set-AzureStaticVNetIP -IPAddress "10.1.0.100" -VM $vm
 
 1. Erstellen Sie den virtuellen Computer in Ihrem virtuellen Netzwerk.
 
 		New-AzureVM -ServiceName "MultiNIC-CS" –VNetName "MultiNIC-VNet" –VMs $vm
 
->[AZURE.NOTE]Das virtuelle Netzwerk, das Sie hier angeben, muss bereits vorhanden sein (wie unter den Voraussetzungen angegeben). Im folgenden Beispiel wird ein virtuelles Netzwerk mit dem Namen "MultiNIC-VNet" angegeben.
+>[AZURE.NOTE]Das virtuelle Netzwerk, das Sie hier angeben, muss bereits vorhanden sein (wie unter den Voraussetzungen angegeben). Im folgenden Beispiel wird ein virtuelles Netzwerk mit dem Namen **MultiNIC-VNet** angegeben.
 
-## Siehe auch
+## Sekundärer Netzwerkkartenzugriff auf andere Subnetze
 
-[Virtuelle Netzwerke im Überblick](https://msdn.microsoft.com/library/azure/jj156007.aspx)
+Das aktuelle Modell in Azure sieht vor, dass alle Netzwerkkarten auf einem virtuellen Computer mit einem Standardgateway eingerichtet wurden. Dadurch können die Netzwerkkarten mit IP-Adressen außerhalb ihres Subnetzes kommunizieren. Bei Betriebssystemen, die das schwache Hostroutingmodell verwenden, z. B. Linux, werden Internetverbindungen unterbrochen, wenn eingehender und ausgehender Datenverkehr unterschiedliche Netzwerkkarten verwenden.
 
-[Konfigurationsaufgaben für virtuelle Netzwerke](https://msdn.microsoft.com/library/azure/jj156206.aspx)
+Um dieses Problem zu beheben, wird Anfang Juli 2015 ein Update für die Azure-Plattform eingeführt, mit dem das Standardgateway aus den sekundären Netzwerkkarten entfernt wird. Dies hat keine Auswirkungen auf vorhandene virtuelle Computer, solange diese nicht neu gestartet werden. Nach dem Neustart werden die neuen Einstellungen wirksam und der Datenverkehrsfluss für die sekundären Netzwerkkarten werden auf das gleiche Subnetz beschränkt. Wenn die Benutzer die Kommunikation der sekundäre Netzwerkkarten mit Adressen außerhalb ihres Subnetzes zulassen möchten, müssen sie, wie unten beschrieben, der Routingtabelle einen Eintrag hinzufügen, mit dem das Gateway konfiguriert wird.
 
-[Blogbeitrag: Multiple VM NICs and VNet Appliances in Azure](../multiple-vm-nics-and-network-virtual-appliances-in-azure)
+### Konfigurieren von virtuellen Windows-Computern
 
-<!---HONumber=58--> 
+Angenommen, Sie haben einen virtuellen Windows-Computer mit zwei Netzwerkkarten, der wie folgt konfiguriert ist:
+
+- IP-Adresse der primären Netzwerkkarte: 192.168.1.4
+- IP-Adresse der sekundären Netzwerkkarte: 192.168.2.5
+
+Die IPv4-Routingtabelle für diesen virtuellen Computer sieht wie folgt aus:
+
+	IPv4 Route Table
+	===========================================================================
+	Active Routes:
+	Network Destination        Netmask          Gateway       Interface  Metric
+	          0.0.0.0          0.0.0.0      192.168.1.1      192.168.1.4      5
+	        127.0.0.0        255.0.0.0         On-link         127.0.0.1    306
+	        127.0.0.1  255.255.255.255         On-link         127.0.0.1    306
+	  127.255.255.255  255.255.255.255         On-link         127.0.0.1    306
+	    168.63.129.16  255.255.255.255      192.168.1.1      192.168.1.4      6
+	      192.168.1.0    255.255.255.0         On-link       192.168.1.4    261
+	      192.168.1.4  255.255.255.255         On-link       192.168.1.4    261
+	    192.168.1.255  255.255.255.255         On-link       192.168.1.4    261
+	      192.168.2.0    255.255.255.0         On-link       192.168.2.5    261
+	      192.168.2.5  255.255.255.255         On-link       192.168.2.5    261
+	    192.168.2.255  255.255.255.255         On-link       192.168.2.5    261
+	        224.0.0.0        240.0.0.0         On-link         127.0.0.1    306
+	        224.0.0.0        240.0.0.0         On-link       192.168.1.4    261
+	        224.0.0.0        240.0.0.0         On-link       192.168.2.5    261
+	  255.255.255.255  255.255.255.255         On-link         127.0.0.1    306
+	  255.255.255.255  255.255.255.255         On-link       192.168.1.4    261
+	  255.255.255.255  255.255.255.255         On-link       192.168.2.5    261
+	===========================================================================
+
+Beachten Sie, dass die Standardroute (0.0.0.0) nur für die primäre Netzwerkkarte verfügbar ist. Sie können nicht auf Ressourcen außerhalb des Subnetzes für die sekundäre Netzwerkkarte zugreifen, wie unten dargestellt:
+
+	C:\Users\Administrator>ping 192.168.1.7 -S 192.165.2.5
+	 
+	Pinging 192.168.1.7 from 192.165.2.5 with 32 bytes of data:
+	PING: transmit failed. General failure.
+	PING: transmit failed. General failure.
+	PING: transmit failed. General failure.
+	PING: transmit failed. General failure.
+
+Führen Sie die folgenden Schritte aus, um eine Standardroute für die sekundäre Netzwerkkarte hinzuzufügen:
+
+1. Führen Sie an einer Eingabeaufforderung den folgenden Befehl aus, um die Indexnummer für die sekundäre Netzwerkkarte zu bestimmen:
+
+		C:\Users\Administrator>route print
+		===========================================================================
+		Interface List
+		 29...00 15 17 d9 b1 6d ......Microsoft Virtual Machine Bus Network Adapter #16
+		 27...00 15 17 d9 b1 41 ......Microsoft Virtual Machine Bus Network Adapter #14
+		  1...........................Software Loopback Interface 1
+		 14...00 00 00 00 00 00 00 e0 Teredo Tunneling Pseudo-Interface
+		 20...00 00 00 00 00 00 00 e0 Microsoft ISATAP Adapter #2
+		===========================================================================
+
+2. Beachten Sie den zweiten Eintrag in der Tabelle, der in diesem Beispiel den Index 27 aufweist.
+3. Führen Sie an einer Eingabeaufforderung den Befehl **route add** aus, wie unten dargestellt. In diesem Beispiel geben Sie 192.168.2.1 als Standardgateway für die sekundäre Netzwerkkarte an:
+
+		route ADD -p 0.0.0.0 MASK 0.0.0.0 192.168.2.1 METRIC 5000 IF 27
+
+4. Zum Testen der Verbindung führen Sie an der Eingabeaufforderung von der sekundären Netzwerkkarte aus Ping-Befehle für die verschiedenen Subnetze aus, wie im Beispiel unten dargestellt:
+
+		C:\Users\Administrator>ping 192.168.1.7 -S 192.165.2.5
+		 
+		Reply from 192.168.1.7: bytes=32 time<1ms TTL=128
+		Reply from 192.168.1.7: bytes=32 time<1ms TTL=128
+		Reply from 192.168.1.7: bytes=32 time=2ms TTL=128
+		Reply from 192.168.1.7: bytes=32 time<1ms TTL=128
+
+5. Sie können die neu hinzugefügte Route auch in der Routingtabelle überprüfen, wie unten dargestellt:
+
+		C:\Users\Administrator>route print
+
+		...
+
+		IPv4 Route Table
+		===========================================================================
+		Active Routes:
+		Network Destination        Netmask          Gateway       Interface  Metric
+		          0.0.0.0          0.0.0.0      192.168.1.1      192.168.1.4      5
+		          0.0.0.0          0.0.0.0      192.168.2.1      192.168.2.5   5005
+		        127.0.0.0        255.0.0.0         On-link         127.0.0.1    306
+
+### Konfigurieren von virtuellen Linux-Computern
+
+Da virtuelle Linux-Computer im Standardverhalten schwaches Hostrouting verwenden, wird empfohlen, die sekundäre Netzwerkkarte auf Datenverkehrsflüsse im gleichen Subnetz zu beschränken. Wenn es jedoch in bestimmten Szenarien erforderlich ist, Verbindungen mit Adressen außerhalb des Subnetzes herzustellen, sollten Benutzer das richtlinienbasierte Routing aktivieren, um sicherzustellen, dass für eingehenden und ausgehenden Datenverkehr dieselbe Netzwerkkarte verwendet wird.
+
+## Nächste Schritte
+
+- Weitere Informationen über die Verwendung [mehrerer Netzwerkkarten in virtuellen Computern und VNet-Geräten in Azure](../multiple-vm-nics-and-network-virtual-appliances-in-azure)
+
+<!---HONumber=July15_HO2-->

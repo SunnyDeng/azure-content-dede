@@ -1,7 +1,6 @@
 <properties 
 	pageTitle="Erfahren Sie mehr über die Schlüsselkonzepte von Stream Analytics | Microsoft Azure" 
 	description="Erfahren Sie mehr über die Schlüsselkonzepte von Azure Stream Analytics: Komponenten von Stream Analytics-Aufträgen, einschließlich unterstützte Eingaben und Ausgaben, Auftragskonfiguration und Metriken." 
-	keywords="event processing,data stream,key concepts,serialization"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -14,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="06/16/2015" 
+	ms.date="07/01/2015" 
 	ms.author="jeffstok" />
 
 
@@ -32,7 +31,7 @@ Stream Analytics ermöglicht Folgendes:
 
 Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md).
 
-Ein Stream Analytics-Auftrag umfasst alle der folgenden Angaben: * Ein oder mehrere Eingabequellen * Eine Abfrage über einen eingehender Datenstrom * Ein Ausgabeziel.
+Ein Stream Analytics-Auftrag umfasst alle der folgenden Angaben: - Ein oder mehrere Eingabequellen - Eine Abfrage über einen eingehender Datenstrom - Ein Ausgabeziel.
 
 
 ## Eingaben
@@ -139,10 +138,14 @@ Die Ausgabequelle ist der Ort, an den die Ergebnisse des Stream Analytics-Auftra
 - Azure-Tabellenspeicher – der Azure-Tabellenspeicher ist ein strukturierter Datenspeicher mit weniger Schemaeinschränkungen. Entitäten mit unterschiedlichen Schemas und Typen können in der gleichen Azure-Tabelle gespeichert werden. Azure-Tabellenspeicher kann zum Speichern von Daten für dauerhafte Archivierung und effizienten Abruf verwendet werden. Weitere Informationen finden Sie unter [Einführung zum Azure-Speicher](../storage/storage-introduction.md) und [Entwerfen einer Strategie für die skalierbare Partitionierung des Azure-Tabellenspeichers](https://msdn.microsoft.com/library/azure/hh508997.aspx).
 - Azure-SQL-Datenbank – diese Ausgabequelle eignet sich für relationale Daten oder für Anwendungen, die von dem in einer Datenbank gehosteten Inhalt abhängig sind.
 
+## Streaming-Einheiten ##
+Im Rahmen der Bereitstellung einer besser vorhersagbaren Leistung für Kunden verwendet Azure Stream Analytics Streaming-Einheiten (SUs) zur Darstellung der Ressourcen und Leistung für die Ausführung eines Auftrags. SUs bieten anhand eines kombinierten Maßes aus CPU, Arbeitsspeicher und Schreib- und Leseraten eine Möglichkeit zur Beschreibung der relativen Ereignisverarbeitungskapazität. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s. Für jeden Azure Stream Analytics-Auftrag wird mindestens eine Streaming-Einheit benötigt. Dies ist der Standardwert für sämtliche Aufträge. Weitere Informationen zum Auswählen der richtigen Anzahl an SUs für einen Auftrag finden Sie unter [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
 
 ## Skalieren von Aufträgen
 
-Ein Stream Analytics-Auftrag kann durch Konfigurieren von Streamingeinheiten skaliert werden, die die Größe der Verarbeitungsleistung für einen Auftrag bestimmen. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s. Jedes Abonnement verfügt über ein Kontingent von 12 Streaming-Einheiten pro Region für Aufträge in dieser Region.
+Die nachstehend definierte SU % Auslastungsmetrik ist ein Indikator für die Notwendigkeit der Skalierung eines Azure Stream Analytics-Auftrags. Hohe SU % Auslastung kann das Ergebnis sein von einem großen Fensters in einer Abfrage, großen Ereignissen in der Eingabe, einem großem Toleranzfensters für falsche Reihenfolge oder eine Kombination des oben genannten. Partitionieren der Abfrage oder unterteilen der Abfrage in mehrere Schritte und Hinzufügen weiterer SUs aus der Registerkarte "Skalierung" sind Strategien, um eine solche Bedingung zu vermeiden.
+
+Eventuell sehen Sie eine Baseline-Ressourcennutzung auch ohne Eingabeereignisse, da das System eine gewisse Menge an Ressourcen beansprucht. Die vom System verbrauchten Menge an Ressourcen kann im Lauf der Zeit schwanken.
 
 Einzelheiten finden Sie unter [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md).
 
@@ -156,9 +159,9 @@ Zum Aktivieren der Auftragsüberwachung erfordert Stream Analytics, dass Sie ein
 ### Metriken
 Die folgenden Metriken sind für die Überwachung der Nutzung und Leistung von Stream Analytics-Aufträgen verfügbar:
 
+- SU % Nutzung - Ein Indikator für die relative Ereignisverarbeitungskapazität für eine oder mehrere der Abfrageschritte. Sollte dieser Indikator 80 % erreichen oder darüber steigen, ist die Wahrscheinlichkeit hoch, dass die Ereignisverarbeitung verzögert wird oder keine Fortschritte mehr macht.
 - Fehler – Anzahl von Fehlermeldungen, die durch einen Stream Analytics-Auftrag entstehen.
-- Eingangsereignisse – Vom Stream Analytics-Auftrag erhaltene Datenmenge im Hinblick auf die 
-- Ereignisanzahl.
+- Eingangsereignisse – vom Stream Analytics-Auftrag erhaltene Datenmenge im Hinblick auf die Ereignisanzahl.
 - Ausgangsereignisse – vom Stream Analytics-Auftrag gesendete Datenmenge im Hinblick auf die Ereignisanzahl.
 - Ereignisse mit falscher Reihenfolge – Anzahl der Ereignisse, die in falscher Reihenfolge empfangen und anhand der entsprechenden Richtlinie entweder verworfen oder mit einem angepassten Zeitstempel versehen wurden.
 - Datenkonvertierungsfehler – Anzahl der Datenkonvertierungsfehler im Zusammenhang mit einem Stream Analytics-Auftrag.
@@ -203,4 +206,4 @@ Nachdem Sie nun mit den Schlüsselkonzepten von Stream Analytics vertraut sind, 
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

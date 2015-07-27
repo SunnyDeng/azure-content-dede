@@ -95,11 +95,11 @@ Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierende
 	
 	New-AzureVM –ServiceName $serviceName -VMs $vm1 -VNetName $vnetName
 
-Gehen Sie für jeden der vier SharePoint-Server nach den Anweisungen der Prozedur [Anmelden bei einem virtuellen Computer über eine Remotedesktopverbindung](virtual-machines-workload-intranet-sharepoint-phase2.md#logon) vor, um sich mit den Anmeldeinformationen für das in [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-intranet-sharepoint-phase2.md) erstellte Konto „[Domäne]\\sp_farm_db“ anzumelden.
+Gehen Sie für jeden der vier SharePoint-Server nach den Anweisungen der Prozedur [Anmelden bei einem virtuellen Computer über eine Remotedesktopverbindung](virtual-machines-workload-intranet-sharepoint-phase2.md#logon) vor, um sich mit den Anmeldeinformationen für das in [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-intranet-sharepoint-phase2.md) erstellte Konto "[Domäne\]\sp_farm_db" anzumelden.
 
 Gehen Sie für jeden der vier SharePoint-Server nach den Anweisungen der Prozedur [Testen der Konnektivität](virtual-machines-workload-intranet-sharepoint-phase2.md#testconn) vor, um die Konnektivität der Standorte Ihres Unternehmensnetzwerks zu testen.
 
-## Konfigurieren der SharePoint-Farm 
+## Konfigurieren der SharePoint-Farm
 
 Führen Sie zum Konfigurieren des ersten SharePoint-Servers der Farm folgende Schritte aus.
 
@@ -109,7 +109,7 @@ Führen Sie zum Konfigurieren des ersten SharePoint-Servers der Farm folgende Sc
 4.	Wählen Sie auf der Seite „Verbindung mit einer Serverfarm herstellen“ die Option **Eine neue Serverfarm erstellen** aus, und klicken Sie auf **Weiter**.
 5.	Auf der Seite „Einstellungen für die Konfigurationsdatenbank angeben“:
 - Geben Sie unter **Datenbankserver** den Namen des primären SQL-Servers ein. 
-- Geben Sie unter **Benutzername** den in [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-intranet-sharepoint-phase2.md) erstellten Namen „[Domäne]**\\sp_farm_db**“ ein. Das Konto „sp_farm_db“ verfügt, wie Sie sich erinnern, über sysadmin-Berechtigungen für den SQL-Server. 
+- Geben Sie unter **Benutzername** den in [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-intranet-sharepoint-phase2.md) erstellten Namen "[Domäne\]**\sp_farm_db**" ein. Das Konto „sp_farm_db“ verfügt, wie Sie sich erinnern, über sysadmin-Berechtigungen für den SQL-Server. 
 - Geben Sie unter **Kennwort** das Kennwort für das Konto „sp_farm_db“ ein.
 6.	Klicken Sie auf **Weiter**.
 7.	Geben Sie auf der Seite „Farmsicherheitseinstellungen angeben“ eine Passphrase ein und bestätigen Sie diese. Notieren Sie die Passphrase, und bewahren Sie sie für den Bedarfsfall an einem sicheren Ort auf. Klicken Sie auf **Weiter**.
@@ -188,4 +188,7 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 5:
 
 [Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
 
-<!--HONumber=54--> 
+[Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
+ 
+
+<!---HONumber=July15_HO2-->

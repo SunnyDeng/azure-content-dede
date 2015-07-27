@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="JoeDavies-MSFT" 
 	manager="timlt" 
-	editor=""/>
+	editor=""
+	tags="azure-resource-manager"/>
 
 <tags 
 	ms.service="virtual-machines" 
@@ -36,7 +37,7 @@ Stellen Sie vor dem Loslegen sicher, dass Azure PowerShell bereit ist.
 
 [AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
 
-## Grundlegendes zu Azure-Ressourcenvorlagen und -Ressourcengruppen
+## Grundlegendes zu Azure-Ressourcen-Manager-Vorlagen und -Ressourcengruppen
 
 Die meisten Anwendungen, die in Microsoft Azure bereitgestellt und ausgeführt werden, bestehen aus einer Kombination von verschiedenen Cloudressourcentypen (z. B. einer oder mehreren VMs und Speicherkonten, einer SQL-Datenbank oder einem virtuellen Netzwerk). Mithilfe von Azure Resource Manager-Vorlagen können Sie die unterschiedlichen Ressourcen gemeinsam bereitstellen und verwalten. Sie verwenden hierfür eine JSON-Beschreibung der Ressourcen sowie der zugeordneten Konfigurations- und Bereitstellungsparameter.
 
@@ -1116,7 +1117,7 @@ Informationen werden wie folgt angezeigt:
 
 ## Zusätzliche Ressourcen
 
-[Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
 [Übersicht über den Azure Resource Manager](../resource-group-overview.md)
 
@@ -1126,4 +1127,4 @@ Informationen werden wie folgt angezeigt:
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

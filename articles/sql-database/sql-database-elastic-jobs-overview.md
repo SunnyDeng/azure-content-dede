@@ -1,9 +1,8 @@
-<properties 
-	title="Elastic database jobs overview" 
+<properties  
 	pageTitle="Übersicht über elastische Datenbankaufträge" 
 	description="Veranschaulicht den Dienst für elastische Datenbankaufträge" 
-	metaKeywords="azure sql database elastic databases" 
-	services="sql-database" documentationCenter=""  
+	services="sql-database" 
+	documentationCenter="" 
 	manager="jeffreyg" 
 	authors="sidneyh"/>
 
@@ -13,12 +12,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/18/2015" 
+	ms.date="06/25/2015" 
 	ms.author="sidneyh" />
 
-# Übersicht über elastische Datenbankaufträge
+# Übersicht über Aufträge für die elastische Datenbank
 
-**Elastische Datenbankaufträge** (Vorschau) ermöglichen die Ausführung von T-SQL-Skripts (Aufträge) für alle Datenbanken in einem [elastischen Datenbankpool (Vorschau)](sql-database-elastic-pool.md). Beispielsweise können Sie das Schema in jeder Datenbank problemlos so aktualisieren, dass eine neue Tabelle eingeschlossen wird. Normalerweise müssen Sie unabhängig voneinander eine Verbindung mit jeder Datenbank herstellen, um T-SQL-Anweisungen oder andere administrative Aufgaben durchzuführen. **Elastische Datenbankaufträge** übernehmen die Anmeldung und führen Skripts zuverlässig aus, während sie den Status der Ausführung für jede Datenbank protokollieren. Anweisungen zum Installieren der Vorschau finden Sie unter [Installieren der Komponente für elastische Datenbankaufträge](sql-database-elastic-jobs-service-installation.md).
+**Aufträge für die elastische Datenbank** (Vorschau) ermöglichen die Ausführung von T-SQL-Skripts (Aufträge) für alle Datenbanken in einem [ Pool für elastische Datenbanken (Vorschau)](sql-database-elastic-pool.md). Beispielsweise können Sie das Schema in jeder Datenbank problemlos so aktualisieren, dass eine neue Tabelle eingeschlossen wird. Normalerweise müssen Sie unabhängig voneinander eine Verbindung mit jeder Datenbank herstellen, um T-SQL-Anweisungen oder andere administrative Aufgaben durchzuführen. Ein **Auftrag für die elastische Datenbank** übernimmt die Anmeldung und führt Skripts zuverlässig aus, während er den Status der Ausführung für jede Datenbank protokolliert. Anweisungen zum Installieren der Vorschau finden Sie unter [Installieren der Komponente für Aufträge für die elastische Datenbank](sql-database-elastic-jobs-service-installation.md).
 
 ![Dienst für elastische Datenbankaufträge][1]
 
@@ -36,15 +35,10 @@
 
 ## Funktionsweise des Auftrags
 
-1.	Installieren Sie die Dienste, die von elastischen Datenbankaufträgen verwendet werden. Weitere Informationen finden Sie unter [Installieren von elastischen Datenbankaufträgen](sql-database-elastic-jobs-service-installation.md). Wenn die Installation fehlschlägt, lesen Sie die Informationen zum [Deinstallieren](sql-database-elastic-jobs-uninstall.md).
+1.	Installieren Sie die Dienste, die von elastischen Datenbankaufträgen verwendet werden. Weitere Informationen finden Sie unter [Installieren von Aufträgen für die elastische Datenbank](sql-database-elastic-jobs-service-installation.md). Wenn die Installation fehlschlägt, lesen Sie die Informationen zum [Deinstallieren](sql-database-elastic-jobs-uninstall.md).
 2.	Konfigurieren Sie den elastischen Datenbankpool für die Ausführung von Aufträgen durch [Hinzufügen eines Benutzers zu jeder Datenbank](sql-database-elastic-jobs-add-logins-to-dbs.md).
-3.	Klicken Sie in der Ansicht für elastische Datenbankpools auf **Auftrag erstellen**.
-4.	Geben Sie den Benutzernamen und das Kennwort für die Auftragsverwaltungs-Datenbank (Metadatenspeicher für Aufträge) ein. (Sie erstellen den Benutzernamen und das Kennwort bei der Installation der elastischen Datenbankaufträge.)
-5.	Geben Sie auf dem Blatt **Auftrag erstellen** den Namen des Auftrags, den Benutzernamen und das Kennwort für die Zieldatenbanken (mit ausreichenden Berechtigungen für die Skriptausführung) ein, und fügen oder geben Sie das T-SQL-Skript ein.
-6.	Klicken Sie auf **Ausführen**. Der Auftrag führt das Skript dann für jede Datenbank aus.
-7.	In der Ansicht **Aufträge verwalten** werden alle Aufträge angezeigt, die ausgeführt werden oder wurden, einschließlich des aktuellen Ausführungsstatus.
-8.	Klicken Sie auf jeden Auftrag, um die Auftragsdetails für die Ausführung und den Status der Auftragsausführung für jede Datenbank anzuzeigen.
-9.	Wenn ein Auftrag fehlschlägt, klicken Sie auf den Namen, um das Fehlerprotokoll anzuzeigen.
+3.	Erstellen Sie ein idempotentes T-SQL-Skript, das für jede Datenbank im Pool ausgeführt werden kann.
+4.	Führen Sie folgende Schritte aus, um das Skript auszuführen: [Erstellen und Verwalten von elastischen Datenbankaufträgen](sql-database-elastic-jobs-create-and-manage.md). 
 
 ## Komponenten und Preise 
 
@@ -64,4 +58,4 @@ Die folgenden Komponenten arbeiten zusammen, um einen Azure-Clouddienst zu erste
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

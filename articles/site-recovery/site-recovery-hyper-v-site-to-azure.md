@@ -61,11 +61,7 @@ Im Rahmen der Azure Site Recovery-Bereitstellung werden auf jedem Hyper-V-Serv
 - Verwenden Sie jeweils die neueste Anbieter- und Agent-Version.
 - Alle Hyper-V-Server in einem Tresor müssen die gleiche Version aufweisen.
 - Der Anbieter muss eine Internetverbindung mit Azure Site Recovery herstellen. Hierbei können Sie entweder auf die Verwendung eines Proxys verzichten oder die derzeit auf dem VMM-Server konfigurierten Proxyeinstellungen bzw. die benutzerdefinierten Proxyeinstellungen verwenden, die Sie bei der Anbieterinstallation konfiguriert haben. Wenn Sie einen vorhandenen Proxyserver verwenden möchten, stellen Sie sicher, dass die URLs für die Verbindung mit Azure nicht durch die Firewall blockiert werden:
-	- *.hypervrecoverymanager.windowsazure.com 
-	- *.accesscontrol.windows.net
-	- *.backup.windowsazure.com 
-	- *.blob.core.windows.net 
-	- *.store.core.windows.net 
+	- *.hypervrecoverymanager.windowsazure.com - *.accesscontrol.windows.net - *.backup.windowsazure.com - *.blob.core.windows.net - *.store.core.windows.net 
 - Wenn Sie einen benutzerdefinierten Proxyserver verwenden möchten, richten Sie diesen vor der Installation des Anbieters ein. Bei der Anbieterinstallation müssen Sie dann die Adresse und den Port des Proxyservers sowie die Anmeldeinformationen für den Zugriff angeben.
 
 Die folgende Abbildung zeigt die verschiedenen Kommunikationskanäle und Ports, die Azure Site Recovery für die Orchestrierung und Replikation verwendet.
@@ -143,11 +139,7 @@ Installieren Sie Anbieter und Agent. Wenn Sie die Installation für einen Hyper-
 	- Wenn für den Standardproxy des Hyper-V-Servers eine Authentifizierung erforderlich ist, müssen Sie die Option für den benutzerdefinierten Proxyserver auswählen. Geben Sie die Details zum Standardproxy sowie die Anmeldeinformationen ein.
 	- Wenn Sie einen benutzerdefinierten Proxyserver verwenden möchten, richten Sie diesen vor der Anbieterinstallation ein. 
 	- Der Hyper-V-Host sollte auf die folgenden URLs Zugriff haben:
-		- *.hypervrecoverymanager.windowsazure.com 
-		- *.accesscontrol.windows.net 
-		- *.backup.windowsazure.com
-		- *.blob.core.windows.net
-		-  *.store.core.windows.net 
+		- *.hypervrecoverymanager.windowsazure.com - *.accesscontrol.windows.net - *.backup.windowsazure.com - *.blob.core.windows.net - *.store.core.windows.net 
 	- Lassen Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) angegebenen IP-Adressen sowie das HTTPS-Protokoll (443) zu. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
 9. Klicken Sie auf der Seite **Tresoreinstellungen** auf **Durchsuchen**, um die Schlüsseldatei auszuwählen. Geben Sie das Azure Site Recovery-Abonnement, den Tresornamen und den Hyper-V-Standort an, zu dem der Hyper-V-Server gehört.
@@ -165,15 +157,15 @@ Installieren Sie Anbieter und Agent. Wenn Sie die Installation für einen Hyper-
 
 Wenn Sie den Anbieter im Serverkern für Windows Server 2012 R2 oder für die eigenständige Version von Hyper-V Server 2012 R2 installieren möchten, gehen Sie wie folgt vor:
 
-1. Laden Sie die Anbieterinstallationsdatei und den Registrierungsschlüssel herunter.
+1. Laden Sie die Anbieterinstallationsdatei und den Registrierungsschlüssel in einen Ordner namens "C:\ASR" herunter.
 2. Geben Sie Folgendes ein, um das Anbieterinstallationsprogramm zu extrahieren:
 
-	    C:\Windows\System32> CD C:\Program Files\Azure Site Recovery Provider
-	    C:\Program Files\Azure Site Recovery Provider>AzureSiteRecoveryProvider.exe /x:. /q
+	    C:\Windows\System32> CD C:\ASR
+	    C:\ASR>AzureSiteRecoveryProvider.exe /x:. /q
 
 3. Geben Sie Folgendes ein, um den Anbieter zu installieren:
 
-	    C:\Program Files\Azure Site Recovery Provider> setupdr.exe /i
+	    C:\ASR> setupdr.exe /i
 
 4. Geben Sie Folgendes ein, um den Server zu registrieren:
 
@@ -187,12 +179,14 @@ Wenn Sie den Anbieter im Serverkern für Windows Server 2012 R2 oder für die 
 		- /proxyUsername <username>: Die Anmeldeinformationen, falls der Proxy eine Authentifizierung erfordert.
 		- proxyPassword <password>
 
+>[AZURE.NOTE]Sie können jeden einzelnen Hyper-V-Host so konfigurieren, dass unterschiedliche Netzwerk-Bandbreiteneinstellungen verwendet werden, um virtuelle Computer in Azure zu replizieren. Erfahren Sie mehr über [Verwalten der geschützter Nutzung der Netzwerkbandbreite „von lokal an Azure“](https://support.microsoft.com/de-de/kb/3056159).
+
+
 ## Schritt 4: Erstellen der Azure-Ressourcen
 
 1. Wählen Sie unter **Ressourcen vorbereiten** die Option **Speicherkonto erstellen** aus, um ein Azure-Speicherkonto zu erstellen, sofern noch nicht vorhanden. Für das Konto muss Georeplikation aktiviert sein. Es muss sich in der gleichen Region befinden wie der Azure Site Recovery-Tresor und dem gleichen Abonnement zugeordnet sein.
 
 	![Speicherkonto erstellen](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_CreateResources1.png)
-
 
 ## Schritt 5: Erstellen und Konfigurieren von Schutzgruppen
 
@@ -212,6 +206,7 @@ Schutzgruppen sind logische Gruppen virtueller Computer, für die die gleichen S
 
 
 ## Schritt 6: Aktivieren des Schutzes für virtuelle Computer
+
 
 Fügen Sie einer Schutzgruppe virtuelle Computer hinzu, um sie zu schützen.
 
@@ -250,7 +245,7 @@ Fügen Sie einer Schutzgruppe virtuelle Computer hinzu, um sie zu schützen.
 		- **Ziel-IP-Adresse**: Wenn der Netzwerkadapter des virtuellen Quellcomputers für die Verwendung einer statischen IP-Adresse konfiguriert ist, können Sie die IP-Adresse für den virtuellen Zielcomputer angeben, um sicherzustellen, dass der Computer nach dem Failover die gleiche IP-Adresse besitzt. Wenn Sie keine IP-Adresse angeben, wird beim Failover eine der verfügbaren Adressen zugewiesen. Wenn Sie eine Adresse angeben, die bereits verwendet wird, ist das Failover nicht erfolgreich.
 		 
 		![Konfigurieren der Eigenschaften virtueller Computer](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_VMMultipleNic.png)
-	
+
 ## Schritt 7: Erstellen eines Wiederherstellungsplans
 
 Zum Testen der Bereitstellung können Sie ein Test-Failover für einen einzelnen virtuellen Computer durchführen. Alternativ können Sie einen Wiederherstellungsplan erstellen, der mehrere virtuelle Computer enthält. Zum Erstellen eines Wiederherstellungsplans [befolgen Sie diese Anweisungen](site-recovery-create-recovery-plans.md).
@@ -301,4 +296,4 @@ Gehen Sie wie folgt vor, um das Testfailover durchzuführen:
 
 Wenn die Bereitstellung eingerichtet ist und ausgeführt wird, informieren Sie sich über [Failover](site-recovery-failover.md).
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

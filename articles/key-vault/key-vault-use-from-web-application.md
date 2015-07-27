@@ -1,4 +1,11 @@
-<properties pageTitle="Verwenden des Azure-Schlüsseltresors aus einer Webanwendung | Übersicht" description="In diesem Lernprogramm erfahren Sie, wie Sie den Azure-Schlüsseltresor aus einer Webanwendung verwenden." services="key-vault" documentationCenter="" authors="adamhurwitz" manager="" tags="azure-resource-manager"//>
+<properties 
+	pageTitle="Verwenden des Azure-Schlüsseltresors aus einer Webanwendung | Übersicht" 
+	description="In diesem Lernprogramm erfahren Sie, wie Sie den Azure-Schlüsseltresor aus einer Webanwendung verwenden." 
+	services="key-vault" 
+	documentationCenter="" 
+	authors="adamhurwitz" 
+	manager=""
+	tags="azure-resource-manager"/>
 
 <tags 
 	ms.service="key-vault" 
@@ -125,4 +132,4 @@ Eine Referenz zur Programmierung finden Sie unter [C#-Client-API-Referenz für d
 [1]: ./media/key-vault-use-from-web-application/PortalAppSettings.png
  
 
-<!---HONumber=58_postMigration-->
+<!---HONumber=July15_HO2-->

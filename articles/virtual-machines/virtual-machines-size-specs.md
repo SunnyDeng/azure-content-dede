@@ -1,18 +1,18 @@
-<properties 
- pageTitle="Größen virtueller Computer" 
- description="Listet die verschiedenen Größen für virtuelle Computer und die zugehörigen Kapazitäten auf." 
- services="virtual-machines" 
- documentationCenter="" 
- authors="KBDAzure" 
- manager="timlt" 
+<properties
+ pageTitle="Größen virtueller Computer"
+ description="Listet die verschiedenen Größen für virtuelle Computer und die zugehörigen Kapazitäten auf."
+ services="virtual-machines"
+ documentationCenter=""
+ authors="KBDAzure"
+ manager="timlt"
  editor=""/>
-<tags 
-ms.service="virtual-machines" 
- ms.devlang="na" 
- ms.topic="article" 
- ms.tgt_pltfrm="vm-multiple" 
+<tags
+ms.service="virtual-machines"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-multiple"
  ms.workload="infrastructure-services"
- ms.date="05/28/2015" 
+ ms.date="07/02/2015"
  ms.author="kathydav"/>
 
 # Größen für Virtual Machines
@@ -39,9 +39,9 @@ Die Größe des virtuellen Computers wirkt sich auf den Preis aus. Die Größe b
 
 Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe behilflich sein:
 
-*   Die Größe A0\\Basic_A0 ist nur bei Verwendung von Azure SDK, Version 1.3 oder höher, verfügbar.  
+*   Die Größe A0\Basic_A0 ist nur bei Verwendung von Azure SDK, Version 1.3 oder höher, verfügbar.  
 
-*   A1\\Basic_A1 ist die kleinste empfohlene Größe für Produktionsarbeitsauslastungen.
+*   A1\Basic_A1 ist die kleinste empfohlene Größe für Produktionsarbeitsauslastungen.
 
 *   Wählen Sie einen virtuellen Computer mit 4 oder 8 CPU-Kernen, wenn Sie SQL Server Enterprise Edition verwenden.
 
@@ -49,30 +49,43 @@ Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe
 
 *   Die VM-Größen A8/A10 und A9/A11 haben die gleiche Kapazität. Die VM-Instanzen A8 und A9 umfassen einen zusätzlichen Netzwerkadapter, der mit einem RDMA (Remote Direct Memory Access)-Netzwerk für die schnelle Kommunikation zwischen virtuellen Computern verbunden ist. Die A8- und A9-Instanzen wurden für High Performance Computing-Anwendungen entwickelt, die während der Ausführung eine konstante Kommunikation mit niedriger Latenz zwischen den Knoten erfordern, z. B. MPI (Message Passing Interface)-Anwendungen. Die VM-Instanzen A10 und A11 enthalten keinen zusätzlichen Netzwerkadapter. Die A10- und A11-Instanzen sind für High Performance Computing-Anwendungen vorgesehen, die keine konstante Kommunikation mit niedriger Latenz zwischen den Knoten erfordern, auch bekannt als parametrische oder hochgradig parallele Anwendungen.
 
+## Allgemeine Einschränkungen
+
+In dieser Tabelle sind die Einschränkungen aufgeführt, die unabhängig von der VM-Größe für virtuelle Computer gelten, die mit der Dienstverwaltung erstellt wurden.
+
+
+[AZURE.INCLUDE [azure-virtual-machines-limits](../../includes/azure-virtual-machines-limits.md)]
+
+In dieser Tabelle sind die Einschränkungen aufgeführt, die unabhängig von der VM-Größe für virtuelle Computer gelten, die mit dem Ressourcen-Manager erstellt wurden.
+
+[AZURE.INCLUDE [azure-virtual-machines-limits-azure-resource-manager](../../includes/azure-virtual-machines-limits-azure-resource-manager.md)]
+
+## Größentabellen
+
 In den folgenden Tabellen sind die Größe und die Kapazität, die von den einzelnen Größen bereitgestellt wird, aufgeführt.
 
 >[AZURE.NOTE]Die Speicherkapazität wird unter Verwendung von 1024^3 Bytes als Maßeinheit für GB dargestellt. Dies wird manchmal als Gibibyte oder Binärdefinition (bzw. Definition zur Basis 2) bezeichnet. Denken Sie beim Vergleichen von Größen, die andere Basissysteme verwenden, jedoch daran, dass eine als Binärwert angegebene Größe möglicherweise kleiner als ein Dezimalwert zur Basis 10 erscheint (z. B. 1 GB), das Binärsystem jedoch mehr Kapazität als das Dezimalsystem bietet, da 1024^3 größer als 1000^3 ist.
 
 ## Basic-Ebene
 
-|Größe – Verwaltungsportal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (300 pro Datenträger)|
+|Größe – Verwaltungsportal\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (300 pro Datenträger)|
 |---|---|---|---|---|---|
-|A0\\Basic_A0|1|768 MB|<p>BS = 1023 GB</p><p>Temporär = 20 GB</p>|1|1 x 300|
-|A1\\Basic_A1|1|1,75 GB|<p>BS = 1023 GB</p><p>Temporär = 40 GB</p>|2|2 x 300|
-|A2\\Basic_A2|2|3,5 GB|<p>BS = 1023 GB</p><p>Temporär = 60 GB</p>|4|4 x 300|
-|A3\\Basic_A3|4|7 GB|<p>BS = 1023 GB</p><p>Temporär = 120 GB</p>|8|4 x 300|
-|A4\\Basic_A4|8|14 GB|<p>BS = 1023 GB</p><p>Temporär = 240 GB</p>|16|16 x 300|
+|A0\Basic_A0|1|768 MB|<p>BS = 1023 GB</p><p>Temporär = 20 GB</p>|1|1 x 300|
+|A1\Basic_A1|1|1,75 GB|<p>BS = 1023 GB</p><p>Temporär = 40 GB</p>|2|2 x 300|
+|A2\Basic_A2|2|3,5 GB|<p>BS = 1023 GB</p><p>Temporär = 60 GB</p>|4|4 x 300|
+|A3\Basic_A3|4|7 GB|<p>BS = 1023 GB</p><p>Temporär = 120 GB</p>|8|4 x 300|
+|A4\Basic_A4|8|14 GB|<p>BS = 1023 GB</p><p>Temporär = 240 GB</p>|16|16 x 300|
 
 ## Standard-Ebene
 ### A- und D-Serie
 
-|Größe – Verwaltungsportal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (500 pro Datenträger)|
+|Größe – Verwaltungsportal\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (500 pro Datenträger)|
 |---|---|---|---|---|---|
-|A0\\ extra small (XS, sehr klein)|1|768 MB|<p>BS = 1023 GB</p><p>Temporär = 20 GB</p>|1|1 x 500|
-|A1\\small (S, klein)|1|1,75 GB|<p>BS = 1023 GB</p><p>Temporär = 70 GB</p>|2|2 x 500|
-|A2\\medium (M, mittel)|2|3,5 GB|<p>BS = 1023 GB</p><p>Temporär = 135 GB</p>|4|4 x 500|
-|A3\\large (L, groß)|4|7 GB|<p>BS = 1023 GB</p><p>Temporär = 285 GB</p>|8|8 x 500|
-|A4\\extra large (XL, sehr groß)|8|14 GB|<p>BS = 1023 GB</p><p>Temporär = 605 GB</p>|16|16 x 500|
+|A0\ extra small (XS, sehr klein)|1|768 MB|<p>BS = 1023 GB</p><p>Temporär = 20 GB</p>|1|1 x 500|
+|A1\small (S, klein)|1|1,75 GB|<p>BS = 1023 GB</p><p>Temporär = 70 GB</p>|2|2 x 500|
+|A2\medium (M, mittel)|2|3,5 GB|<p>BS = 1023 GB</p><p>Temporär = 135 GB</p>|4|4 x 500|
+|A3\large (L, groß)|4|7 GB|<p>BS = 1023 GB</p><p>Temporär = 285 GB</p>|8|8 x 500|
+|A4\extra large (XL, sehr groß)|8|14 GB|<p>BS = 1023 GB</p><p>Temporär = 605 GB</p>|16|16 x 500|
 |A5 (identisch)|2|14 GB|<p>BS = 1023 GB</p><p>Temporär = 135 GB</p>|4|4 x 500|
 |A6 (identisch)|4|28 GB|<p>BS = 1023 GB</p><p>Temporär = 285 GB</p>|8|8 x 500|
 |A7 (identisch)|8|56 GB|<p>BS = 1023 GB</p><p>Temporär = 605 GB</p>|16|16 x 500|
@@ -92,7 +105,7 @@ In den folgenden Tabellen sind die Größe und die Kapazität, die von den einze
 
 ### Standard-Ebene – DS-Serie *
 
-|Größe – Verwaltungsportal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Cachegröße (GB)|Max. Datenträger-IOPS &amp; Bandbreite|
+|Größe – Verwaltungsportal\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Cachegröße (GB)|Max. Datenträger-IOPS &amp; Bandbreite|
 |---|---|---|---|---|---|---|
 |Standard_DS1 (identisch)|1|3,5|<p>BS = 1023 GB</p><p>Lokales SSD-Laufwerk = 7 GB</p>|2|43|<p>3.200</p><p>32 MB pro Sekunde</p>|
 |Standard_DS2 (identisch)|2|7|<p>OS = 1023 GB</p><p>Lokales SSD-Laufwerk = 14 GB</p>|4|86|<p>6.400</p><p>64 MB pro Sekunde</p>|
@@ -107,7 +120,7 @@ In den folgenden Tabellen sind die Größe und die Kapazität, die von den einze
 
 ### Standard-Ebene – G-Serie
 
-|Größe – Verwaltungsportal\\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (500 pro Datenträger)|
+|Größe – Verwaltungsportal\Cmdlets und APIs|CPU-Kerne|Arbeitsspeicher|Max. Datenträgergrößen – virtueller Computer|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (500 pro Datenträger)|
 |---|---|---|---|---|---|
 |Standard_G1 (identisch)|2|28 GB|<p>BS = 1023 GB</p><p>Lokales SSD-Laufwerk = 384 GB</p>|4|4 x 500|
 |Standard_G2 (identisch)|4|56 GB|<p>BS = 1023 GB</p><p>Lokales SSD-Laufwerk = 768 GB</p>|8|8 x 500|
@@ -118,8 +131,7 @@ In den folgenden Tabellen sind die Größe und die Kapazität, die von den einze
 ### Weitere Informationen
 
 [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md)
- 
-[Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](http://go.microsoft.com/fwlink/p/?linkid=328042)
- 
 
-<!---HONumber=58_postMigration-->
+[Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](virtual-machines-a8-a9-a10-a11-specs.md)
+
+<!---HONumber=July15_HO2-->
