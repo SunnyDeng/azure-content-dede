@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/16/2015" 
+	ms.date="07/13/2015" 
 	ms.author="awills"/>
 
 # Überwachen einer SharePoint-Website mit Application Insights
@@ -41,7 +41,7 @@ Rufen Sie im Schnellstart das Skript für Webseiten ab:
 
 ![](./media/app-insights-sharepoint/02-monitor-web-page.png)
 
-Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie nachverfolgen möchten. Wenn Ihre Website über eine Masterseite verfügt, können Sie das Skript dort ablegen. Beispielsweise würden Sie es in einem ASP.NET MVC-Projekt unter "View\Shared_Layout.cshtml" ablegen.
+Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie nachverfolgen möchten. Wenn Ihre Website über eine Masterseite verfügt, können Sie das Skript dort ablegen. Beispielsweise würden Sie es in einem ASP.NET MVC-Projekt unter "View\\Shared_Layout.cshtml" ablegen.
 
 Das Skript enthält den Instrumentationsschlüssel, der die Telemetriedaten an Ihre Application Insights-Ressource leitet.
 
@@ -73,6 +73,8 @@ Fügen Sie ein Webpart ein, und betten Sie den Codeausschnitt darin ein.
 
 ## Anzeigen von Daten über Ihre App
 
+Stellen Sie Ihre App erneut bereit.
+
 Kehren Sie zum Blatt Ihrer Anwendung im [Azure-Portal](http://portal.azure.com) zurück.
 
 Die ersten Ereignisse werden in der Diagnosesuche angezeigt.
@@ -81,11 +83,11 @@ Die ersten Ereignisse werden in der Diagnosesuche angezeigt.
 
 Klicken Sie nach einigen Sekunden auf "Aktualisieren", wenn Sie mehr Daten erwarten.
 
-**Nutzungsanalyse** bietet einen schnellen Überblick über die Benutzer, Sitzungen und Seitenaufrufe:
+**Nutzungsanalysen** enthalten Links zu Diagrammen von Benutzern, Sitzungen und Seitenansichten:
 
 ![](./media/app-insights-sharepoint/06-usage.png)
 
-Klicken Sie durch die Seitenaufrufe, um weitere Details anzuzeigen:
+Klicken Sie beispielsweise auf „Seitenaufrufe“, um weitere Details anzuzeigen:
 
 ![](./media/app-insights-sharepoint/07-pages.png)
 
@@ -106,4 +108,4 @@ Klicken Sie durch die Benutzer, um Informationen über neue Benutzer und deren S
 
 <!--Link references-->
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

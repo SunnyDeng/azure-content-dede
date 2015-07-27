@@ -52,78 +52,49 @@ Befolgen Sie die Anweisungen [hier](http://go.microsoft.com/fwlink/?LinkId=51298
 > [AZURE.NOTE]Visual Studio Online unterstützt derzeit nur CI-Bereitstellungen von Visual Studio-Webanwendungen. Websiteprojekte werden nicht unterstützt.
 
 
-2. Öffnen Sie das Kontextmenü der Projektmappe, und wählen Sie **Projektmappe zur Quellcodeverwaltung hinzufügen**.<br/>
-![][5]
+2. Öffnen Sie das Kontextmenü der Projektmappe, und wählen Sie **Projektmappe zur Quellcodeverwaltung hinzufügen**.<br/> ![][5]
 
-3. Übernehmen oder ändern Sie die Standardeinstellungen, und klicken Sie auf die Schaltfläche **OK**. Wenn der Prozess abgeschlossen ist, werden im Projektmappen-Explorer die Symbole für die Quellcodeverwaltung angezeigt.<br/>
-![][6]
+3. Übernehmen oder ändern Sie die Standardeinstellungen, und klicken Sie auf die Schaltfläche **OK**. Wenn der Prozess abgeschlossen ist, werden im Projektmappen-Explorer die Symbole für die Quellcodeverwaltung angezeigt.<br/> ![][6]
 
-4. Öffnen Sie das Kontextmenü der Projektmappe, und klicken Sie auf **Einchecken**.<br/>
-![][7]
+4. Öffnen Sie das Kontextmenü der Projektmappe, und klicken Sie auf **Einchecken**.<br/> ![][7]
 
-5. Geben Sie in Team Explorer im Bereich "Ausstehende Änderungen" einen Kommentar zum Eincheckvorgang ein, und klicken Sie auf die Schaltfläche **Einchecken**.<br/>
-![][8]
+5. Geben Sie in Team Explorer im Bereich "Ausstehende Änderungen" einen Kommentar zum Eincheckvorgang ein, und klicken Sie auf die Schaltfläche **Einchecken**.<br/> ![][8]
 
-<br/> Beachten Sie die Optionen zum Ein- oder Ausschließen bestimmter Änderungen beim Einchecken. Wenn die gewünschten Änderungen ausgeschlossen wurden, wählen Sie den Link **Alles einschließen**.<br/>
-![][9]
+<br/> Beachten Sie die Optionen zum Ein- oder Ausschließen bestimmter Änderungen beim Einchecken. Wenn die gewünschten Änderungen ausgeschlossen wurden, wählen Sie den Link **Alles einschließen**.<br/> ![][9]
 
 ## <a name="step3"> </a>Schritt 3: Verbinden des Projekts mit Azure
 
-1. Nun, da Sie ein VSO-Teamprojekt mit Quellcode erstellt haben, sind Sie bereit, Ihr Teamprojekt mit Azure zu verbinden. Wählen Sie im [Azure-Portal](http://manage.windowsazure.com) Ihren Clouddienst oder Ihre Web-App aus, oder erstellen Sie einen neuen Clouddienst oder eine neue Web-App, indem Sie auf das +-Symbol links unten sowie auf **Clouddienst** oder **Web-App** und anschließend auf **Schnellerstellung** klicken. Klicken Sie auf den Link **Veröffentlichung über Visual Studio Online einrichten**.<br/>
-![][10]
+1. Nun, da Sie ein VSO-Teamprojekt mit Quellcode erstellt haben, sind Sie bereit, Ihr Teamprojekt mit Azure zu verbinden. Wählen Sie im [Azure-Portal](http://manage.windowsazure.com) Ihren Clouddienst oder Ihre Web-App aus, oder erstellen Sie einen neuen Clouddienst oder eine neue Web-App, indem Sie auf das +-Symbol links unten sowie auf **Clouddienst** oder **Web-App** und anschließend auf **Schnellerstellung** klicken. Klicken Sie auf den Link **Veröffentlichung über Visual Studio Online einrichten**.<br/> ![][10]
 
-2. Geben Sie in das Textfeld des Assistenten den Namen Ihres Visual Studio Online-Kontos ein, und klicken Sie auf den Link **Authorize Now (Jetzt autorisieren)**. Eventuell werden Sie aufgefordert, sich anzumelden.<br/>
-![][11]
+2. Geben Sie in das Textfeld des Assistenten den Namen Ihres Visual Studio Online-Kontos ein, und klicken Sie auf den Link **Authorize Now (Jetzt autorisieren)**. Eventuell werden Sie aufgefordert, sich anzumelden.<br/> ![][11]
 
-3. Klicken Sie im OAuth-Popupdialogfeld auf **Übernehmen**, um Azure für eine Konfiguration Ihres Teamprojekts in VSO zu autorisieren.<br/>
-![][12]
+3. Klicken Sie im OAuth-Popupdialogfeld auf **Übernehmen**, um Azure für eine Konfiguration Ihres Teamprojekts in VSO zu autorisieren.<br/> ![][12]
 
-4. Wenn die Autorisierung erfolgreich verläuft, wird eine Dropdown-Liste Ihrer Visual Studio Online-Teamprojekte angezeigt. Wählen Sie den Namen des Teamprojekts aus, das Sie in den vorherigen Schritten erstellt haben, und klicken Sie auf das Häkchen für den Assistenten.<br/>
-![][13]
+4. Wenn die Autorisierung erfolgreich verläuft, wird eine Dropdown-Liste Ihrer Visual Studio Online-Teamprojekte angezeigt. Wählen Sie den Namen des Teamprojekts aus, das Sie in den vorherigen Schritten erstellt haben, und klicken Sie auf das Häkchen für den Assistenten.<br/>![][13]
 
-5. Wenn Ihr Projekt verknüpft wird, erhalten Sie einige Anweisungen zum Einchecken von Änderungen in Ihrem Visual Studio Online-Teamprojekt. Bei Ihrer nächsten Anmeldung erstellt Visual Studio Online Ihr Projekt in Azure und stellt es dort bereit. Jetzt sind Sie an der Reihe: Klicken Sie auf den Link **Aus Visual Studio einchecken** und dann auf den Link **Visual Studio starten** (oder auf die entsprechende **Visual Studio**-Schaltfläche am unteren Rand des Portalbildschirms.<br/>
-![][14]
+5. Wenn Ihr Projekt verknüpft wird, erhalten Sie einige Anweisungen zum Einchecken von Änderungen in Ihrem Visual Studio Online-Teamprojekt. Bei Ihrer nächsten Anmeldung erstellt Visual Studio Online Ihr Projekt in Azure und stellt es dort bereit. Jetzt sind Sie an der Reihe: Klicken Sie auf den Link **Aus Visual Studio einchecken** und dann auf den Link **Visual Studio starten** (oder auf die entsprechende **Visual Studio**-Schaltfläche am unteren Rand des Portalbildschirms.<br/> ![][14]
 
 ## <a name="step4"> </a>Schritt 4: Auslösen einer Neuerstellung und erneutes Bereitstellen Ihres Projekts
 
-1. Klicken Sie in Visual Studio Team Explorer auf den Link **Quellcodeverwaltungs-Explorer**.<br/>
-![][15]
+1. Klicken Sie in Visual Studio Team Explorer auf den Link **Quellcodeverwaltungs-Explorer**.<br/> ![][15]
 
-2. Navigieren Sie zu Ihrer Projektmappendatei, und öffnen Sie sie.<br/>
-![][16]
+2. Navigieren Sie zu Ihrer Projektmappendatei, und öffnen Sie sie.<br/> ![][16]
 
-3. Öffnen Sie im Projektmappen-Explorer eine Datei, und ändern Sie sie. Ändern Sie z. B. die Datei _"Layout.cshtml" im Ordner "Views\Shared" in eine MVC-Webrolle.<br/>
-![][17]
+3. Öffnen Sie im Projektmappen-Explorer eine Datei, und ändern Sie sie. Ändern Sie z. B. die Datei _"Layout.cshtml" im Ordner "Views\\Shared" in eine MVC-Webrolle.<br/> ![][17]
 
-4. Bearbeiten Sie das Logo für die Website, und drücken Sie Strg+S, um die Datei zu speichern.<br/>
-![][18]
+4. Bearbeiten Sie das Logo für die Website, und drücken Sie Strg+S, um die Datei zu speichern.<br/> ![][18]
 
-5. Klicken Sie im Teamexplorer auf den Link **Ausstehende Änderungen**.<br/>
-![][19]
+5. Klicken Sie im Teamexplorer auf den Link **Ausstehende Änderungen**.<br/> ![][19]
 
-6. Geben Sie einen Kommentar ein, und klicken Sie auf die Schaltfläche **Einchecken**.<br/>
-![][20]
+6. Geben Sie einen Kommentar ein, und klicken Sie auf die Schaltfläche **Einchecken**.<br/> ![][20]
 
-7. Klicken Sie auf die Schaltfläche "Startseite", um zur Startseite von Team Explorer zurückzukehren.<br/>
-![][21]
+7. Klicken Sie auf die Schaltfläche "Startseite", um zur Startseite von Team Explorer zurückzukehren.<br/> ![][21]
 
-8. Klicken Sie auf den Link **Builds**, um die gerade stattfindenden Builds anzuzeigen.<br/>
-![][22]
-<br/>
-In Team Explorer wird ersichtlich, dass für Ihren Eincheckvorgang ein Build ausgelöst wurde.<br/>
-![][23]
+8. Klicken Sie auf den Link **Builds**, um die gerade stattfindenden Builds anzuzeigen.<br/> ![][22] <br/> In Team Explorer wird ersichtlich, dass für Ihren Eincheckvorgang ein Build ausgelöst wurde.<br/> ![][23]
 
-9. Doppelklicken Sie auf den Namen des Builds, der gerade erstellt wird, um ein detailliertes Protokoll zum Buildverlauf anzuzeigen.<br/>
-![][24]
+9. Doppelklicken Sie auf den Namen des Builds, der gerade erstellt wird, um ein detailliertes Protokoll zum Buildverlauf anzuzeigen.<br/> ![][24]
 
-10. Betrachten Sie während des Buildverlaufs die Builddefinition, die erstellt wurde, als Sie TFS mithilfe des Assistenten mit Azure verknüpft haben. Öffnen sie das Kontextmenü für die Builddefinition, und klicken Sie auf **Edit Build Definition (Builddefinition bearbeiten)**.<br/>
-![][25]
-<br/> Auf der Registerkarte **Trigger** sehen Sie, dass die Builddefinition standardmäßig so festgelegt ist, dass bei jedem Einchecken ein Buildvorgang ausgeführt wird.<br/>
-![][26]
-<br/>
-Auf der Registerkarte **Prozess** ist zu sehen, dass die Bereitstellungsumgebung auf den Namen Ihres Clouddiensts oder Ihrer Web-App eingestellt ist. Wenn Sie mit Web-Apps arbeiten, unterscheiden sich die Einstellungen, die Sie sehen, von den hier gezeigten.<br/>
-![][27]
-<br/> Geben Sie Werte für die Eigenschaften ein, wenn Sie andere Werte als die Standardwerte verwenden möchten. Die Eigenschaften für die Azure-Veröffentlichung befinden sich im Bereitstellungsabschnitt. Die folgende Tabelle zeigt die im Bereitstellungsabschnitt verfügbaren Eigenschaften:
+10. Betrachten Sie während des Buildverlaufs die Builddefinition, die erstellt wurde, als Sie TFS mithilfe des Assistenten mit Azure verknüpft haben. Öffnen sie das Kontextmenü für die Builddefinition, und klicken Sie auf **Edit Build Definition (Builddefinition bearbeiten)**.<br/> ![][25] <br/> Auf der Registerkarte **Trigger** sehen Sie, dass die Builddefinition standardmäßig so festgelegt ist, dass bei jedem Einchecken ein Buildvorgang ausgeführt wird.<br/> ![][26] <br/>Auf der Registerkarte **Prozess** ist zu sehen, dass die Bereitstellungsumgebung auf den Namen Ihres Clouddiensts oder Ihrer Web-App eingestellt ist. Wenn Sie mit Web-Apps arbeiten, unterscheiden sich die Einstellungen, die Sie sehen, von den hier gezeigten.<br/> ![][27] <br/> Geben Sie Werte für die Eigenschaften ein, wenn Sie andere Werte als die Standardwerte verwenden möchten. Die Eigenschaften für die Azure-Veröffentlichung befinden sich im Bereitstellungsabschnitt. Die folgende Tabelle zeigt die im Bereitstellungsabschnitt verfügbaren Eigenschaften:
 	<table>
 <tr><td><b>Eigenschaft</b></td><td><b>Standardwert</b></td></tr>
 ><tr><td>Nicht vertrauenswürdige Zertifikate zulassen</td><td>Wenn dies "false" ist, müssen SSL-Zertifikate von einer Stammzertifizierungsstelle signiert sein.</td></tr>
@@ -133,46 +104,33 @@ Auf der Registerkarte **Prozess** ist zu sehen, dass die Bereitstellungsumgebung
 <tr><td>Azure-Bereitstellungsumgebung</td><td>Der Name der Web-App oder des Clouddiensts</td></tr>
 </table> <br/>
 
-Wenn Sie mehrere Dienstkonfigurationen verwenden (.cscfg-Dateien), können Sie die gewünschte Dienstkonfiguration in der Einstellung **Build, Erweitert, MSBuild-Argumente** festlegen. Um zum Beispiel "ServiceConfiguration.Test.cscfg" zu verwenden, legen Sie die Zeilenoption der MSBuild-Argumente auf "/p:TargetProfile=Test" fest.<br/>
-![][38]
+Wenn Sie mehrere Dienstkonfigurationen verwenden (.cscfg-Dateien), können Sie die gewünschte Dienstkonfiguration in der Einstellung **Build, Erweitert, MSBuild-Argumente** festlegen. Um zum Beispiel "ServiceConfiguration.Test.cscfg" zu verwenden, legen Sie die Zeilenoption der MSBuild-Argumente auf "/p:TargetProfile=Test" fest.<br/> ![][38]
 
-11. An diesem Punkt sollte Ihr Build erfolgreich abgeschlossen sein.<br/>
-![][28]
+11. An diesem Punkt sollte Ihr Build erfolgreich abgeschlossen sein.<br/> ![][28]
 
-12. Wenn Sie auf den Buildnamen doppelklicken, zeigt Visual Studio eine **Buildzusammenfassung** mit allen Testergebnissen aus den zugeordneten Komponententestprojekten an.<br/>
-![][29]
+12. Wenn Sie auf den Buildnamen doppelklicken, zeigt Visual Studio eine **Buildzusammenfassung** mit allen Testergebnissen aus den zugeordneten Komponententestprojekten an.<br/> ![][29]
 
-13. Im [Azure-Portal](http://manage.windowsazure.com) können Sie die entsprechende Bereitstellung auf der Registerkarte "Bereitstellungen" anzeigen, wenn die Stagingumgebung ausgewählt ist.<br/>
-![][30]
+13. Im [Azure-Portal](http://manage.windowsazure.com) können Sie die entsprechende Bereitstellung auf der Registerkarte "Bereitstellungen" anzeigen, wenn die Stagingumgebung ausgewählt ist.<br/> ![][30]
 
-14.	Wechseln Sie zur URL Ihrer Site. Wenn es sich um eine Web-App handelt, klicken Sie einfach in der Befehlsleiste auf die Schaltfläche "Durchsuchen". Wenn es sich um einen Clouddienst handelt, wählen Sie die URL im Abschnitt **Auf einen Blick** der Seite **Dashboard**, auf der die Stagingumgebung für einen Clouddienst angezeigt wird. Bereitstellungen aus einer fortlaufenden Integration für Clouddienste werden standardmäßig in der Stagingumgebung veröffentlicht. Sie können dies ändern, indem Sie die Eigenschaft "Alternate Cloud Service Environment" auf "Produktion" stellen. Dieser Screenshot zeigt die Position der Website-URL auf der Dashboard-Seite des Clouddiensts: <br/>
-![][31] 
-<br/>
-Die ausgeführte Website wird auf einer neuen Browserregisterkarte angezeigt.<br/>
-![][32]
+14.	Wechseln Sie zur URL Ihrer Site. Wenn es sich um eine Web-App handelt, klicken Sie einfach in der Befehlsleiste auf die Schaltfläche "Durchsuchen". Wenn es sich um einen Clouddienst handelt, wählen Sie die URL im Abschnitt **Auf einen Blick** der Seite **Dashboard**, auf der die Stagingumgebung für einen Clouddienst angezeigt wird. Bereitstellungen aus einer fortlaufenden Integration für Clouddienste werden standardmäßig in der Stagingumgebung veröffentlicht. Sie können dies ändern, indem Sie die Eigenschaft "Alternate Cloud Service Environment" auf "Produktion" stellen. Dieser Screenshot zeigt die Position der Website-URL auf der Dashboard-Seite des Clouddiensts: <br/> ![][31] <br/> Die ausgeführte Website wird auf einer neuen Browserregisterkarte angezeigt.<br/> ![][32]
 
-15.	Wenn es sich dabei um einen Clouddienst handelt und Sie weitere Änderungen an Ihrem Projekt vornehmen, lösen Sie weitere Builds aus und sammeln mehrere Bereitstellungen. Die letzte davon wird als "Aktiv" markiert.<br/>
-![][33]
+15.	Wenn es sich dabei um einen Clouddienst handelt und Sie weitere Änderungen an Ihrem Projekt vornehmen, lösen Sie weitere Builds aus und sammeln mehrere Bereitstellungen. Die letzte davon wird als "Aktiv" markiert.<br/> ![][33]
 
 ## <a name="step5"> </a>Schritt 5: Erneutes Bereitstellen eines früheren Builds
 
-Dieser Schritt gilt nur für Clouddienste und ist optional. Wählen Sie im Verwaltungsportal eine frühere Bereitstellung aus, und klicken Sie auf die Schaltfläche **Erneut bereitstellen**, um Ihre Website auf einen früheren Eincheckvorgang zurückzusetzen. Beachten Sie, dass dadurch ein neuer Buildvorgang in TFS ausgelöst und in Ihrem Bereitstellungsverlauf ein neuer Eintrag erstellt wird.<br/>
-![][34]
+Dieser Schritt gilt nur für Clouddienste und ist optional. Wählen Sie im Verwaltungsportal eine frühere Bereitstellung aus, und klicken Sie auf die Schaltfläche **Erneut bereitstellen**, um Ihre Website auf einen früheren Eincheckvorgang zurückzusetzen. Beachten Sie, dass dadurch ein neuer Buildvorgang in TFS ausgelöst und in Ihrem Bereitstellungsverlauf ein neuer Eintrag erstellt wird.<br/> ![][34]
 
 ## <a name="step6"> </a>Schritt 6: Ändern der Produktionsbereitstellung
 
-Dieser Schritt gilt nur für Clouddienste, nicht für Web-Apps. Wenn Sie bereit sind, können Sie die Stagingumgebung in die Produktionsumgebung überführen, indem Sie im Verwaltungsportal auf die Schaltfläche "Swap" klicken. Die neu bereitgestellte Stagingumgebung wird in eine Produktionsumgebung geändert, und die vorherige Produktionsumgebung (falls vorhanden) wird zu einer Stagingumgebung. Die aktive Bereitstellung für die Produktionsumgebung kann sich von der aktiven Bereitstellung der Stagingumgebung unterscheiden, aber der Bereitstellungsverlauf der letzten Builds ist unabhängig von der Umgebung identisch.<br/>
-![][35]
+Dieser Schritt gilt nur für Clouddienste, nicht für Web-Apps. Wenn Sie bereit sind, können Sie die Stagingumgebung in die Produktionsumgebung überführen, indem Sie im Verwaltungsportal auf die Schaltfläche "Swap" klicken. Die neu bereitgestellte Stagingumgebung wird in eine Produktionsumgebung geändert, und die vorherige Produktionsumgebung (falls vorhanden) wird zu einer Stagingumgebung. Die aktive Bereitstellung für die Produktionsumgebung kann sich von der aktiven Bereitstellung der Stagingumgebung unterscheiden, aber der Bereitstellungsverlauf der letzten Builds ist unabhängig von der Umgebung identisch.<br/> ![][35]
 
 ## <a name="step7"> </a>Schritt 7: Ausführen von Komponententests
 
 Dieser Schritt gilt nur für Web-Apps, nicht für Clouddienste. Für eine zusätzliche Qualitätsstufe Ihrer Bereitstellungen können Sie Komponententests ausführen und im Falle eines Fehlers die Bereitstellung anhalten.
 
-1.  Fügen Sie in Visual Studio ein Komponententestprojekt hinzu.<br/>
-![][39]
+1.  Fügen Sie in Visual Studio ein Komponententestprojekt hinzu.<br/> ![][39]
 
-2.  Fügen Sie dem Projekt, das Sie testen möchten, Projektverweise hinzu.<br/>
-![][40]
+2.  Fügen Sie dem Projekt, das Sie testen möchten, Projektverweise hinzu.<br/> ![][40]
 
 3.  Fügen Sie einige Komponententests hinzu. Probieren Sie es zuerst mit einem Dummy-Test, der immer erfolgreich sein wird.
 
@@ -196,23 +154,13 @@ Dieser Schritt gilt nur für Web-Apps, nicht für Clouddienste. Für eine zusät
 4.  Bearbeiten Sie die Builddefinition, wählen Sie die Prozessregisterkarte, und erweitern Sie den Testknoten.
 
 
-5.  Legen Sie für **Buildfehler bei Testfehler** "True" fest. Dies bedeutet, dass die Bereitstellung erst erfolgt, wenn die Tests erfolgreich waren.<br/>
-![][41]
+5.  Legen Sie für **Buildfehler bei Testfehler** "True" fest. Dies bedeutet, dass die Bereitstellung erst erfolgt, wenn die Tests erfolgreich waren.<br/> ![][41]
 
-6.  Setzen Sie einen neuen Build in die Warteschlange.<br/>
-![][42]
-<br/>
-![][43]
+6.  Setzen Sie einen neuen Build in die Warteschlange.<br/> ![][42] <br/> ![][43]
 
-7. Prüfen Sie während der Buildverarbeitung den Fortschritt.<br/>
-![][44] 
-<br/>
-![][45]
+7. Prüfen Sie während der Buildverarbeitung den Fortschritt.<br/> ![][44] <br/> ![][45]
 
-7. Prüfen Sie die Testergebnisse, wenn der Build abgeschlossen ist.<br/>
-![][46]
-<br/>
-![][47]
+7. Prüfen Sie die Testergebnisse, wenn der Build abgeschlossen ist.<br/> ![][46] <br/> ![][47]
 
 8.  Versuchen Sie einen Test zu erstellen, der fehlschlagen wird. Fügen Sie einen neuen Test hinzu, indem Sie den ersten Test kopieren, umbenennen und die Codezeile auskommentieren, die besagt, dass "NotImplementedException" eine erwartete Ausnahme ist.
 
@@ -223,13 +171,9 @@ Dieser Schritt gilt nur für Web-Apps, nicht für Clouddienste. Für eine zusät
 		    throw new NotImplementedException();
 		}
 
-9. Checken Sie die Änderung ein, um einen neuen Build in die Warteschlange zu stellen.<br/>
-![][48]
+9. Checken Sie die Änderung ein, um einen neuen Build in die Warteschlange zu stellen.<br/> ![][48]
 
-10. Sehen Sie sich die Testergebnisse an, um Einzelheiten zum Fehler zu erhalten.<br/>
-![][49]
-<br/>
-![][50]
+10. Sehen Sie sich die Testergebnisse an, um Einzelheiten zum Fehler zu erhalten.<br/> ![][49] <br/> ![][50]
 
 Weitere Informationen zu Komponententests in Visual Studio Online finden Sie unter [Ausführen von Komponententests im Build](http://go.microsoft.com/fwlink/p/?LinkId=510474).
 
@@ -295,4 +239,4 @@ Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsof
 [50]: ./media/cloud-services-continuous-delivery-use-vso/TestsResultsFailed.PNG
  
 
-<!----HONumber=62-->
+<!---HONumber=July15_HO3-->

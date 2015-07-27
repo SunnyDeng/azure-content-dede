@@ -103,4 +103,4 @@ Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Inte
 <!--Other Web references-->
 [Azure Machine Learning documentation]: http://azure.microsoft.com/documentation/services/machine-learning/
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

@@ -352,4 +352,4 @@ In diesem Thema haben wir gezeigt, wie Sie einen einfachen Python-REST-Client f√
 [5]: ./media/notification-hubs-python-backend-how-to/TemplatedNotification.png
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

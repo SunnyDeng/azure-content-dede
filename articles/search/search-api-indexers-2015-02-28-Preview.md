@@ -12,12 +12,12 @@ ms.service="search"
 ms.devlang="rest-api" 
 ms.workload="search" ms.topic="article"  
 ms.tgt_pltfrm="na" 
-ms.date="04/23/2015" 
+ms.date="07/08/2015" 
 ms.author="heidist" />
 
 #Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)
 
-> [AZURE.NOTE]Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](../search-api-2015-02-28-preview.md). Derzeit besteht der einzige Unterschied zwischen Version `2015-02-28` (dokumentiert in [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173)) und der hier beschriebenen Version `2015-02-28-Preview` darin, dass die Preview-Version die Funktion *fieldMappings* enthält, die unter [Indexer erstellen](#CreateIndexer) beschrieben ist.
+> [AZURE.NOTE]Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](search-api-2015-02-28-preview.md). Derzeit besteht der einzige Unterschied zwischen Version `2015-02-28` (dokumentiert in [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173)) und der hier beschriebenen Version `2015-02-28-Preview` darin, dass die Preview-Version die Funktion *fieldMappings* enthält, die unter [Indexer erstellen](#CreateIndexer) beschrieben ist.
 
 ## Übersicht
 
@@ -87,7 +87,7 @@ Der Name der Datenquelle muss in Kleinbuchstaben angegeben werden, mit einem Buc
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgenwert. Die Anforderung **Datenquelle erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel (im Gegensatz zum Abfrageschlüssel) festgelegt ist. 
@@ -775,4 +775,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

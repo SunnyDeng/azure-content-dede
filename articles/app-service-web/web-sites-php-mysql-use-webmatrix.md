@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="PHP" 
 	ms.topic="article" 
-	ms.date="04/22/2015" 
+	ms.date="07/07/2015" 
 	ms.author="tomfitz"/>
 
 
@@ -177,8 +177,6 @@ Bevor die Anwendung in App Service-Web-Apps veröffentlicht wird, müssen die Ve
 
 3. Klicken Sie auf **Bestehende Website in Microsoft Azure auswählen**.
 
-	![](./media/web-sites-php-mysql-use-webmatrix/webmatrix-publish-existing-site.png)
-
 3. Wählen Sie die App Service-Web-App aus, die Sie zuvor erstellt haben.
 
 	![](./media/web-sites-php-mysql-use-webmatrix/webmatrix-publish-existing-site-choose.png)
@@ -263,4 +261,4 @@ Sie können die Anwendung einfach ändern, indem Sie die lokale Kopie der zuvor 
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/22/2015" 
+	ms.date="07/08/2015" 
 	ms.author="awills"/>
  
 # Verwenden der Diagnosesuche in Application Insights
@@ -81,6 +81,12 @@ In diesem Beispiel ist es klar, dass die Anforderung `Reports/Employees` die Meh
 
 Wenn Sie darüber hinaus auch anzeigen möchten, welche andere Ereignisse in diesem Zeitraum aufgetreten sind, können Sie **Ereignisse mit nicht definierten Eigenschaften einbeziehen** aktivieren.
 
+## Entfernen von Robot- und Webtest-Datenverkehr
+
+Verwenden Sie den Filter **Realer oder synthetischer Datenverkehr**, und aktivieren Sie **Real**.
+
+Sie können auch nach **Quelle von synthetischem Datenverkehr** filtern.
+
 ## Überprüfen einzelner Vorkommen
 
 Fügen Sie den Namen der gewünschten Anforderung der Filtergruppe hinzu, um anschließend einzelne Vorkommen dieses Ereignisses zu überprüfen.
@@ -89,7 +95,7 @@ Fügen Sie den Namen der gewünschten Anforderung der Filtergruppe hinzu, um ans
 
 Bei Anforderungsereignissen enthalten die Details Ausnahmen, die während der Verarbeitung der Anforderung aufgetreten sind.
 
-Klicken Sie auf eine Ausnahme, um deren Details anzuzeigen.
+Klicken Sie auf eine Ausnahme, um deren Details anzuzeigen, einschließlich der Stapelüberwachung.
 
 ![Klicken Sie auf eine Ausnahme](./media/app-insights-diagnostic-search/06-callStack.png)
 
@@ -192,4 +198,4 @@ POST-Daten werden nicht automatisch protokolliert. Sie können jedoch ["TrackTra
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

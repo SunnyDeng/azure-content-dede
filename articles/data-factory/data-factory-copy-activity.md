@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/04/2015" 
+	ms.date="07/07/2015" 
 	ms.author="spelluru"/>
 
 # Kopieren von Daten mit Azure Data Factory (Kopieraktivität)
@@ -40,23 +40,15 @@ Weitere Informationen finden Sie hier:
 ## Unterstützte Datenquellen und Senken
 Die Kopieraktivität unterstützt folgende Datenbewegungen:
 
-- Kopieren von Daten aus einem Azure Blob in Azure Blob, Azure-Tabellen, Azure SQL-Datenbanken, lokale SQL Server oder SQL Server unter IaaS.
-- Kopieren von Daten aus einem Azure Blob in Azure Blob, Azure-Tabellen, Azure SQL-Datenbanken, lokalen SQL Server oder SQL Server unter IaaS.
-- Kopieren von Daten aus einer Azure-Tabelle in Azure Blob, Azure-Tabelle oder Azure SQL-Datenbank.
-- Kopieren von Daten aus einem lokalen SQL Server/SQL Server unter IaaS in Azure Blob oder Azure SQL-Datenbank.
-- Kopieren von Daten aus einer lokalen Oracle-Datenbank in Azure Blob.
-- Kopieren von Daten aus einem lokalen Dateisystem in Azure Blob.
- 
-
 <table border="1">	
 	<tr>
 		<th><i>Quelle/Senke<i></th>
 		<th>Azure Blob</th>
 		<th>Azure-Tabelle</th>
 		<th>Azure SQL-Datenbank</th>
-		<th>Lokaler SQL Server</th>
-		<th>SQL Server unter IaaS</th>
 		<th>Azure DocumentDB</th>
+		<th>SQL Server auf virtuellen Azure-Computern</th>
+		<th>Lokaler SQL Server</th>
 	</tr>	
 
 	<tr>
@@ -74,11 +66,10 @@ Die Kopieraktivität unterstützt folgende Datenbewegungen:
 		<td>X</td>
 		<td>X</td>
 		<td>X</td>
-		<td></td>
-		<td></td>
+		<td>X</td>
+		<td>X</td>
 		<td>X</td>
 	</tr>	
-
 	<tr>
 		<td><b>Azure SQL-Datenbank</b></td>
 		<td>X</td>
@@ -88,108 +79,6 @@ Die Kopieraktivität unterstützt folgende Datenbewegungen:
 		<td>X</td>
 		<td>X</td>
 	</tr>
-
-
-	<tr>
-		<td><b>Lokaler SQL Server</b></td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
-	<tr>
-		<td><b>SQL Server unter IaaS</b></td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
-	<tr>
-		<td><b>Lokales Dateisystem</b></td>
-		<td>X</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale Oracle-Datenbank</b></td>
-		<td>X</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
-	<tr>
-		<td><b>Lokales Dateisystem</b></td>
-		<td>X</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale MySQL-Datenbank</b></td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale DB2-Datenbank</b></td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale Teradata-Datenbank</b></td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale Sybase-Datenbank</b></td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale PostgreSQL-Datenbank</b></td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
 	<tr>
 		<td><b>Azure DocumentDB</b></td>
 		<td>X</td>
@@ -198,6 +87,106 @@ Die Kopieraktivität unterstützt folgende Datenbewegungen:
 		<td></td>
 		<td></td>
 		<td></td>
+	</tr>
+
+	<tr>
+		<td><b>Lokaler SQL Server</b></td>
+		<td>X</td>
+		<td>X</td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td>X</td>
+	</tr>
+
+	<tr>
+		<td><b>SQL Server auf virtuellen Azure-Computern</b></td>
+		<td>X</td>
+		<td>X</td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td>X</td>
+	</tr>
+
+	<tr>
+		<td><b>Lokales Dateisystem</b></td>
+		<td>X</td>
+		<td>X</td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td>X</td>
+	</tr>
+
+	<tr>
+		<td><b>Lokale Oracle-Datenbank</b></td>
+		<td>X</td>
+		<td>X</td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td>X</td>
+	</tr>
+
+	<tr>
+		<td><b>Lokales Dateisystem</b></td>
+		<td>X</td>
+		<td>X</td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td>X</td>
+	</tr>
+
+	<tr>
+		<td><b>Lokale MySQL-Datenbank</b></td>
+		<td>X</td>
+		<td>X</td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td>X</td>
+	</tr>
+
+	<tr>
+		<td><b>Lokale DB2-Datenbank</b></td>
+		<td>X</td>
+		<td>X</td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td>X</td>
+	</tr>
+
+	<tr>
+		<td><b>Lokale Teradata-Datenbank</b></td>
+		<td>X</td>
+		<td>X</td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td>X</td>
+	</tr>
+
+	<tr>
+		<td><b>Lokale Sybase-Datenbank</b></td>
+		<td>X</td>
+		<td>X</td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td>X</td>
+	</tr>
+
+	<tr>
+		<td><b>Lokale PostgreSQL-Datenbank</b></td>
+		<td>X</td>
+		<td>X</td>
+		<td>X</td>
+		<td></td>
+		<td>X</td>
+		<td>X</td>
 	</tr>
 
 </table>
@@ -443,7 +432,7 @@ Für Datenspeicher mit HTTPS-Verbindung wählen Sie die HTTPS-Verbindung für di
 
 Für die **Azure SQL-Datenbank** fordern Sie explizit eine verschlüsselte Verbindung an und vertrauen nicht den Serverzertifikaten, um einen Man-in-the-Middle-Angriff zu vermeiden. Um dies zu erreichen, verwenden Sie **Encrypt = True** und **TrustServerCertificate = False** in der Verbindungszeichenfolge. Weitere Informationen finden Sie unter [Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](https://msdn.microsoft.com/library/azure/ff394108.aspx)
 
-Für traditionelle Datenbanken, wie z. B. **SQL Server**, insbesondere wenn die Instanzen in einer Azure Virtual Machine sind, ist die verschlüsselte Verbindungsoption durch Konfigurieren eines signierten Zertifikats möglich, mit **Encrypt = True** und **TrustServerCertificate = False** in der Verbindungszeichenfolge. Weitere Informationen finden Sie unter [Aktivieren von verschlüsselten Verbindungen zum Datenbankmodul](https://msdn.microsoft.com/library/ms191192(v=sql.110).aspx) und [Verbindungszeichenfolgensyntax](https://msdn.microsoft.com/library/ms254500.aspx).
+Für traditionelle Datenbanken, wie z. B. **SQL Server**, insbesondere wenn die Instanzen in einer Azure Virtual Machine sind, ist die verschlüsselte Verbindungsoption durch Konfigurieren eines signierten Zertifikats möglich, mit **Encrypt = True** und **TrustServerCertificate = False** in der Verbindungszeichenfolge. Weitere Informationen finden Sie unter [Aktivieren von verschlüsselten Verbindungen zum Datenbankmodul](https://msdn.microsoft.com/library/ms191192(v=sql.110)) und [Verbindungszeichenfolgensyntax](https://msdn.microsoft.com/library/ms254500.aspx).
 
 ## Erweiterte Szenarien
 - **Strukturdefinition verwendende Spaltenfilterung**. Je nach Typ der Tabelle ist es möglich, eine Teilmenge der Spalten aus der Datenquelle anzugeben, indem in der **Structure**-Definition der Tabellendefinition weniger Spalten angegeben werden, als in der zugrunde liegenden Datenquelle vorhanden sind.
@@ -486,4 +475,4 @@ Unter [Aktivieren von Pipelines für die Arbeit mit lokalen Daten][use-onpremise
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity/ColumnMappingSample2.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

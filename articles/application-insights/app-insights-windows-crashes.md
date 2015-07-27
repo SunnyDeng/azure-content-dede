@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter="windows"
 	authors="alancameronwills" 
-	manager="kamrani"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/28/2015" 
+	ms.date="07/01/2015" 
 	ms.author="awills"/>
 
 # Erkennen und Diagnostizieren von Abstürzen in Windows Store- und Windows Phone-Apps mit Application Insights
@@ -21,7 +21,7 @@
 
 Wenn Ihre App bei den Benutzern abstürzt, möchten Sie davon schnell erfahren und wünschen sich Details dazu, was passiert ist. Mit Application Insights können Sie überwachen, wie häufig Abstürze auftreten, Benachrichtigungen erhalten, wenn sie auftreten, und die Berichte zu den einzelnen Vorfällen untersuchen.
 
-"Absturz" bedeutet, dass die Anwendung aufgrund einer nicht abgefangenen Ausnahme beendet wird. Wenn Ihre Anwendung eine Ausnahme abfängt, können Sie dies mithilfe der "TrackException()"-API melden, jedoch die Ausführung fortsetzen. In diesem Fall wird sie nicht wie ein Absturz protokolliert.
+"Absturz" bedeutet, dass die Anwendung aufgrund einer nicht abgefangenen Ausnahme beendet wird. Wenn Ihre App eine Ausnahme abfängt, können Sie diese mithilfe der [TrackException-API][apiexceptions] melden, die Ausführung jedoch fortsetzen. In diesem Fall wird sie nicht wie ein Absturz protokolliert.
 
 
 ## Überwachen der Häufigkeit von Abstürzen
@@ -80,6 +80,8 @@ Wenn Sie den Build im Freigabemodus erstellen, werden Ereignisse auf dem Gerät 
 
 [Erkennung, Eingrenzung und Diagnose von Problemen mit Application Insights][detect]
 
+[Application Insights-API][api]
+
 [Erfassen von Diagnoseprotokollen][trace]
 
 [Problembehandlung](app-insights-windows-troubleshoot.md)
@@ -89,12 +91,15 @@ Wenn Sie den Build im Freigabemodus erstellen, werden Ereignisse auf dem Gerät 
 
 <!--Link references-->
 
+[api]: app-insights-api-custom-events-metrics.md
+[apiexceptions]: app-insights-api-custom-events-metrics.md#track-exception
 [detect]: app-insights-detect-triage-diagnose.md
 [diagnostic]: app-insights-diagnostic-search.md
+[platforms]: app-insights-platforms.md
 [portal]: http://portal.azure.com/
 [trace]: app-insights-search-diagnostic-logs.md
 [windows]: app-insights-windows-get-started.md
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

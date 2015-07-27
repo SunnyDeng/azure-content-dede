@@ -305,7 +305,7 @@ Für diesen Test wird eine Dateigröße von 30 GB bzw. 1 GB mit einem RAID 0-X
 |-----------|-----------|-----------
 |**innodb_buffer_pool_size** |Keine |7G
 |**innodb_log_file_size** |5M |512M
-|**max_connections** |100 |5.000
+|**max_connections** |100 |5\.000
 |**innodb_file_per_table** |0 |1
 |**innodb_flush_log_at_trx_commit** |1 |2
 |**innodb_log_buffer_size** |8M |128M
@@ -345,4 +345,4 @@ Weitere und detailliertere Konfigurationsparameter für die Optimierung finden S
 [14]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-14.png
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

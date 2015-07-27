@@ -23,7 +23,7 @@ Blobs, die am meisten vom Azure CDN-Caching profitieren, sind solche, auf die h�
 Sie haben zwei Möglichkeiten zur Steuerung der Gültigkeitsdauer.
 
 1.	Keine Cachewerte festlegen, sodass der Standardgültigkeitszeitraum von 7 Tagen verwendet wird. 
-2.	Die *x-ms-blob-cache-control*-Eigenschaft für eine Anforderung vom Typ **Put Blob**, **Put Block List** oder **Set Blob-Eigenschaften** explizit festlegen, oder die verwaltete Bibliothek von Azure verwenden, um die [BlobProperties.CacheControl](http://msdn.microsoft.com/library/microsoft.windowsazure.storageclient.blobproperties.cachecontrol.aspx)-Eigenschaft festzulegen. Durch das Festlegen dieser Eigenschaft wird der Wert des *Cache-Control*-Headers für das Blob festgelegt. Der Wert des Headers bzw. der Eigenschaft sollte den entsprechenden Wert in Sekunden angeben. Wenn Sie beispielsweise den maximalen Zeitraum der Zwischenspeicherung auf ein Jahr festlegen, können Sie den Anforderungsheader als `x-ms-blob-cache-control: public, max-age=31556926` angeben. Weitere Informationen zum Festlegen von Headern für die Zwischenspeicherung finden Sie unter [HTTP/1.1-Spezifikation](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html).  
+2.	Die *x-ms-blob-cache-control*-Eigenschaft für eine Anforderung vom Typ **Put Blob**, **Put Block List** oder **Set Blob-Eigenschaften** explizit festlegen, oder die verwaltete Bibliothek von Azure verwenden, um die [BlobProperties.CacheControl](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.blob.blobproperties.cachecontrol.aspx)-Eigenschaft festzulegen. Durch das Festlegen dieser Eigenschaft wird der Wert des *Cache-Control*-Headers für das Blob festgelegt. Der Wert des Headers bzw. der Eigenschaft sollte den entsprechenden Wert in Sekunden angeben. Wenn Sie beispielsweise den maximalen Zeitraum der Zwischenspeicherung auf ein Jahr festlegen, können Sie den Anforderungsheader als `x-ms-blob-cache-control: public, max-age=31556926` angeben. Weitere Informationen zum Festlegen von Headern für die Zwischenspeicherung finden Sie unter [HTTP/1.1-Spezifikation](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html).  
 
 Alle Inhalte, die Sie mithilfe des CDN zwischenspeichern möchten, müssen im Azure-Speicherkonto als öffentlich zugängliche Blobs gespeichert werden. Weitere Informationen zum Blob-Dienst von Azure finden Sie unter **Konzepte des Blobdiensts**.
 
@@ -96,4 +96,4 @@ Falls gewünscht, kann ein Tool wie **wget** oder Fiddler verwendet werden, um d
 
 [Verwalten des Ablaufs von Clouddienstinhalten in Azure CDN (Content Delivery Network)](./cdn-manage-expiration-of-cloud-service-content.md)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -25,4 +25,4 @@
 
 3. Klicken Sie auf **Ausführen**, um die App zu starten, und melden Sie sich dann mit dem ausgewählten Identitätsanbieter an. Nach der Anmeldung sollten Sie die Todo-Liste anzeigen und Änderungen vornehmen können.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

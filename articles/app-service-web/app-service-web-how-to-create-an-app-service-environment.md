@@ -26,6 +26,7 @@ Mit der Funktion der App Service-Umgebungen wird im Wesentlichen Azure App Servi
 
 - Ein regionales VNET ist erforderlich mit 512 (/23) oder mehr Adressen.
 - Ein Subnetz in diesem VNET ist erforderlich mit 256 (/24) oder mehr Adressen.
+- Das Subnetz **darf keinen anderen Computeressourcen enthalten**. In einem Subnetz kann nur eine App Service-Umgebung bereitgestellt werden. Der Erstellungsversuch misslingt, wenn das Subnetz bereits andere Compute-Ressourcen enthält.
 
 Wenn Sie noch kein VNET besitzen, das Sie zum Hosten Ihrer App Service-Umgebung verwenden möchten, können Sie bei der Erstellung der App Service-Umgebung eines erstellen.
 
@@ -142,4 +143,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AppServicePricing]: http://azure.microsoft.com/pricing/details/app-service/
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

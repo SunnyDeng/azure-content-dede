@@ -37,11 +37,11 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 Als Erstes erstellen Sie die Objekte, die in PolyBase zum Herstellen einer Verbindung mit dem Azure-Blob-Speicher und zum Abfragen von Daten in diesem erforderlich sind.
 
 ## Erstellen des Datenbank-Hauptschlüssels
-Stellen Sie eine Verbindung mit der Masterdatenbank auf dem Server her, um einen Datenbank-Hauptschlüssel zu erstellen. Dieser Schlüssel wird im nächsten Schritt zum Verschlüsseln des geheimen Schlüssels für Ihre Anmeldeinformationen verwendet.
+Stellen Sie eine Verbindung mit der Benutzerdatenbank auf dem Server her, um einen Datenbank-Hauptschlüssel zu erstellen. Dieser Schlüssel wird im nächsten Schritt zum Verschlüsseln des geheimen Schlüssels für Ihre Anmeldeinformationen verwendet.
 
 ```
 -- Creating master key
-CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'S0me!nfo';
+CREATE MASTER KEY;
 ```
 
 Referenzthema: [CREATE MASTER KEY (Transact-SQL)][].
@@ -49,8 +49,13 @@ Referenzthema: [CREATE MASTER KEY (Transact-SQL)][].
 ## Erstellen der datenbankbezogenen Anmeldeinformationen
 Um auf den Azure-Blob-Speicher zugreifen zu können, müssen Sie datenbankbezogene Anmeldeinformationen erstellen, in denen Authentifizierungsinformationen für Ihr Azure-Speicherkonto gespeichert sind. Stellen Sie eine Verbindung mit Ihrer Data Warehouse-Datenbank her, und erstellen Sie jeweils die datenbankbezogenen Anmeldeinformationen für alle Azure-Speicherkonten, auf die Sie zugreifen möchten. Geben Sie einen Identitätsnamen und Ihren Azure-Speicherkontoschlüssel als geheimen Schlüssel an. Der Identitätsname hat keine Auswirkungen auf die Authentifizierung für Azure Storage.
 
+Um festzustellen, ob im Datenbankbereich bereits Anmeldeinformationen vorhanden sind, verwenden Sie „sys.database_credentials“, nicht „sys.credentials“, da hier lediglich die Serveranmeldeinformationen angezeigt werden.
+
 ```
--- Creating credential
+-- Check for existing database-scoped credentials.
+SELECT * FROM sys.database_credentials;
+
+-- Create a database scoped credential
 CREATE DATABASE SCOPED CREDENTIAL ASBSecret WITH IDENTITY = 'joe', 
 	Secret = 'myazurestoragekey==';
 ```
@@ -202,4 +207,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [CREATE CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-de/library/ms189522.aspx
 [DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-de/library/ms189450.aspx
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

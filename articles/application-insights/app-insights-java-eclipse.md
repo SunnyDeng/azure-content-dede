@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter="java"
 	authors="alancameronwills" 
-	manager="keboyd"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/03/2015" 
+	ms.date="07/13/2015" 
 	ms.author="awills"/>
  
 # Erste Schritte mit Application Insights mit Java in Eclipse
@@ -100,9 +100,17 @@ Beim Anzeigen der Eigenschaften einer Anforderung können Sie die damit verbunde
 
 ## Clientseitige Telemetrie
 
-Auf dem Blatt "Übersicht" gelangen Sie über die Kachel "Schnellstart" zu einem Skript, das Sie Ihren Webseiten hinzufügen können.
+Klicken Sie auf dem Blatt "Schnellstart" auf die Option zum Abrufen von Code, um Webseiten zu überwachen:
 
-Seitenaufruf-, Benutzer- und Sitzungsmetriken werden auf dem Blatt "Übersicht" angezeigt:
+![Wählen Sie in Ihrer App auf dem Blatt "Übersicht" im Schnellstart die Option "Code abrufen", um Ihre Webseiten zu überwachen. Kopieren Sie das Skript.](./media/app-insights-java-eclipse/02-monitor-web-page.png)
+
+Fügen Sie den Codeausschnitt im Kopf der HTML-Dateien ein.
+
+#### Anzeigen von clientseitigen Daten
+
+Öffnen Sie die aktualisierten Webseiten, und verwenden Sie sie. Warten Sie ein oder zwei Minuten, kehren Sie dann zurück zu Application Insights, und aktualisieren Sie das Blatt "Verwendung".
+
+Seitenansichts-, Benutzer- und Sitzungsmetriken werden auf dem Blatt "Verwendung" angezeigt:
 
 ![Sitzungen, Benutzer und Seitenaufrufe](./media/app-insights-java-eclipse/appinsights-47usage-2.png)
 
@@ -110,7 +118,7 @@ Seitenaufruf-, Benutzer- und Sitzungsmetriken werden auf dem Blatt "Übersicht" 
 
 ## Verfügbarkeitswebtests
 
-Application Insights kann Ihre Website in regelmäßigen Abständen testen, um zu überprüfen, ob sie betriebsbereit ist und gut reagiert. Klicken Sie sich durch das leere Webtestdiagramm auf dem Blatt "Übersicht", und geben Sie Ihre öffentliche URL an.
+Application Insights kann Ihre Website in regelmäßigen Abständen testen, um zu überprüfen, ob sie betriebsbereit ist und gut reagiert. Um dies einzurichten, klicken Sie sich durch das leere Webtestdiagramm auf dem Blatt "Übersicht", und geben Sie Ihre öffentliche URL an.
 
 Sie erhalten Diagramme von Reaktionszeiten sowie E-Mail-Benachrichtigungen, falls Ihre Website ausfällt.
 
@@ -156,9 +164,9 @@ Sie können Code sowohl in das JavaScript der Webseite als auch in serverseitige
 [java]: app-insights-java-get-started.md
 [javalogs]: app-insights-java-trace-logs.md
 [metrics]: app-insights-metrics-explorer.md
-[track]: app-insights-custom-events-metrics-api.md
+[track]: app-insights-api-custom-events-metrics.md
 [usage]: app-insights-web-track-usage.md
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/20/2015" 
+	ms.date="06/25/2015" 
 	ms.author="sidneyh"/>
 
 # Deinstallieren der Komponenten für elastische Datenbankaufträge
@@ -52,10 +52,10 @@ Wahlweise können Sie folgendes PowerShell-Skript verwenden:
 
 Informationen zur erneuten Installation von elastischen Datenbankaufträgen finden Sie unter [Installieren des Diensts für elastische Datenbankaufträge](sql-database-elastic-jobs-service-installation.md).
 
-Eine Übersicht über den Dienst für elastische Aufträge finden Sie unter [Übersicht über elastische Aufträge](sql-database-elastic-jobs-overview.md).
+Eine Übersicht über den Dienst für elastische Datenbankaufträge finden Sie unter [Übersicht über elastische Aufträge](sql-database-elastic-jobs-overview.md).
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-job-uninstall/
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

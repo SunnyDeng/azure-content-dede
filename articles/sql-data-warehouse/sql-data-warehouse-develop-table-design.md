@@ -94,22 +94,22 @@ OR  y.[is_user_defined] = 1
 
 Die Abfrage enthält alle benutzerdefinierten Datentypen, die auch nicht unterstützt werden.
 
-Machen Sie sich keine Sorgen, falls in Ihrer Datenbank nicht unterstützte Typen enthalten sind. Unten sind einige Alternativen aufgeführt, die Sie stattdessen wählen können.
+Wenn Ihre Datenbank nicht unterstützte Datentypen enthält, ist das kein Grund zur Sorge. Unten sind einige Alternativen aufgeführt, die Sie stattdessen wählen können.
 
 Alternativen:
 
-- **geometry**: stattdessen einen varbinary-Typ
+- **geometry**: ein varbinary-Typ
 - **geography**: stattdessen einen varbinary-Typ
 - **hierarchyid**: CLR-Typ, nicht systemeigen
 - **image**, **text**, **ntext**: falls textbasiert, varchar/nvarchar verwenden (je kleiner desto besser)
 - **nvarchar(max)**: varchar(4000) oder kleiner zur Verbesserung der Leistung
-- **numeric**: stattdessen decimal
+- **numeric**: decimal
 - **sql_variant**: Spalte in mehrere Spalten mit starker Typisierung unterteilen
-- **sysname**: stattdessen nvarchar(128)
+- **sysname**: nvarchar(128)
 - **table**: in temporäre Tabellen konvertieren
 - **timestamp**: Code anpassen, sodass datetime2 und die `CURRENT_TIMESTAMP`-Funktion verwendet wird. Beachten Sie, dass Sie current_timestamp nicht als Standardeinschränkung verwenden können und dass der Wert nicht automatisch aktualisiert wird. Wenn Sie rowversion-Werte aus einer Spalte mit timestamp-Typ migrieren müssen, sollten Sie BINARY(8) oder VARBINARY(8) für NOT NULL- oder NULL-Zeilenversionswerte verwenden.
 - **varchar(max)**: varchar(8000) oder kleiner zur Verbesserung der Leistung
-- **uniqueidentifier**: stattdessen varbinary(8) verwenden
+- **uniqueidentifier**: varbinary(8)
 - **user defined types**: zurück in systemeigene Typen konvertieren, falls möglich
 - **xml**: varchar(8000) oder kleiner zur Verbesserung der Leistung verwenden – bei Bedarf auf Spalten aufteilen
 
@@ -306,4 +306,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

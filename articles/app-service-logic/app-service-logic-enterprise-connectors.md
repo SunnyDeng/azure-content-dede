@@ -13,10 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/31/2015" 
+	ms.date="07/08/2015" 
 	ms.author="mandia"/>
 
 # Enterprise-Connectors in Microsoft Azure App Service
+
+> [AZURE.NOTE]Dieses Thema wird eingestellt. Unter [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md) finden Sie alle verfügbaren integrierten Connectors und API-Apps.
+
 Microsoft Azure App Service (oder kurz App Service) bietet mehrere Connectors, die mit Enterprise-Systemen wie SAP und Marketo verwendet werden können. Bei Verwenden dieser Connectors können Sie sich problemlos mit einem Enterprise-System verbinden und verschiedene Aufgaben ausführen.
 
 Diese Enterprise-Connectors bieten die Funktionen "Trigger" oder "Aktion". Ein Trigger startet eine neue Instanz basierend auf einem bestimmten Ereignis wie z. B. der Aktualisierung eines Eintrags in MongoDb. Eine Aktion ist das Ergebnis, wie z. B. das Abrufen eines Eintrags aus MongoDB nach dessen Aktualisierung.
@@ -152,6 +155,7 @@ Einige der Enterprise-Connectors verwenden die OAuth-Sicherheitsfunktionen. Wenn
 
 
 ## Weitere Connectors
-[BizTalk-Integrationsconnectors](app-service-logic-integration-connectors.md)<br/> [Business-to-Business-Connectors](app-service-logic-b2b-connectors.md)<br/> [Connectors für soziale Netzwerke](app-service-logic-social-connectors.md)<br/> [Protokollconnectors](app-service-logic-protocol-connectors.md)<br/> [App und Data Services-Connectors](app-service-logic-data-connectors.md)<br/> [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
 
-<!---HONumber=62-->
+[Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/>[Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
+
+<!---HONumber=July15_HO3-->

@@ -81,4 +81,4 @@ Dieses Tool konvertiert Orchestrator-Runbooks in grafische Runbooks, die in Azur
 - [Orchestrator-Standardaktivitäten](http://technet.microsoft.com/library/hh403832.aspx)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -37,16 +37,21 @@ Nach dem Upgrade müssen Sie alle an "ApplicationInsights.xml" vorgenommenen Anp
  
 Vergleichen Sie die alte und die neue Version der Datei "ApplicationInsights.xml". Viele Änderungen sind darauf zurückzuführen, dass Module hinzugefügt und entfernt wurden. Reaktivieren Sie alle Anpassungen, die Sie vorgenommen haben.
 
+## Version 1.0.0
+- Hinzufügen von Unterstützung für das Application Insights-Writer-Plug-In für CollectD.
+- Hinzufügen von Unterstützung für den Application Insights-Java-Agent.
+- Beheben eines Kompatibilitätsproblems mit der Unterstützung von HttpClient-Versionen 4.2 und höher.
+
 ## Version 0.9.6
-- Kompatibilität des Java-SDK mit Servlet 2.5 und HttpClient vor Version 4.3
-- Unterstützung für Java EE-Interceptors
-- Entfernen redundanter Abhängigkeiten aus dem Logback-Appender
+- Erreichen von Kompatibilität des Java-SDK mit Servlet 2.5 und HttpClient vor Version 4.3.
+- Hinzufügen von Unterstützung für Java EE-Interceptors.
+- Entfernen redundanter Abhängigkeiten aus dem Logback-Appender.
 
 ## Version 0.9.5  
 
 - Behebung des Problems, bei dem benutzerdefinierte Ereignisse aufgrund von Cookieanalysefehlern nicht mit Benutzern/Sitzungen korreliert wurden.  
 - Verbesserte Logik zum Auflösen des Speicherorts der Konfigurationsdatei "ApplicationInsights.xml".
-- Die Nachverfolgung von Sitzungen und Benutzern wurde entfernt (diese erfolgt nur durch clientseitige SDKs).
+- Anonyme Benutzer und Sitzungscookies werden serverseitig nicht generiert. Um die Nachverfolgung von Benutzern und Sitzungen für Web-Apps zu implementieren, ist jetzt die Instrumentation mit dem JavaScript-SDK erforderlich – Cookies aus dem JavaScript-SDK werden weiterhin beachtet. Beachten Sie, dass diese Änderung zu einer erheblichen Anpassung von Benutzer- und Sitzungszahlen führen kann, da nun nur von Benutzern initiierte Sitzungen gezählt werden.
 
 ## Version 0.9.4
 
@@ -55,4 +60,4 @@ Vergleichen Sie die alte und die neue Version der Datei "ApplicationInsights.xml
 - Möglichkeit, ein Telemetrieelement als synthetisch zu markieren, indem dem gemeldeten Element eine ```SyntheticSource```-Eigenschaft hinzugefügt wird.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -247,4 +247,4 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

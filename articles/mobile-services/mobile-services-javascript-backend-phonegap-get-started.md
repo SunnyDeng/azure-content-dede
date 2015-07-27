@@ -76,7 +76,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	+ **Windows Phone 8**
 
-		1. Windows Phone 8: Öffnen Sie die SLN-Datei im Ordner **platforms\wp8** in Visual Studio 2012 Express für Windows Phone.
+		1. Windows Phone 8: Öffnen Sie die SLN-Datei im Ordner **platforms\\wp8** in Visual Studio 2012 Express für Windows Phone.
 
 		2. Drücken Sie die **F5**-Taste, um das Projekt neu zu erstellen und die App zu starten.
 
@@ -171,4 +171,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

@@ -143,4 +143,4 @@ Im nächsten Beispiel wird die **parametersLink**-Eigenschaft genutzt, um eine V
 - [Deploy an application with Azure Resource Manager Template](azure-portal/resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)
 - [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

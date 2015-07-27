@@ -135,4 +135,4 @@ Ihre Azure Active Directory-App wurde aktualisiert und enthält nun die Berechti
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

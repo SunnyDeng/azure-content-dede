@@ -1,19 +1,19 @@
 <properties
    pageTitle="Funktionen von Azure Resource Manager-Vorlagen"
    description="Es werden die Funktionen beschrieben, die in einer Azure-Ressourcen-Manager-Vorlage zum Abrufen von Werten, Formatieren von Zeichenfolgen und Abrufen von Bereitstellungsinformationen verwendet werden."
-   services="na"
+   services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
    manager="wpickett"
    editor=""/>
 
 <tags
-   ms.service="na"
+   ms.service="azure-resource-manager"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/08/2015"
+   ms.date="07/15/2015"
    ms.author="tomfitz"/>
 
 # Funktionen von Azure Resource Manager-Vorlagen
@@ -382,4 +382,4 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 - [Bereitstellen einer Anwendung mit einer Azure Resource Manager-Vorlage](azure-portal/resource-group-template-deploy.md)
 - [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

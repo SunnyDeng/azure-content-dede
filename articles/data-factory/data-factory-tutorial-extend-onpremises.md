@@ -72,14 +72,14 @@ In diesem Schritt erstellen Sie zuerst die erforderliche Datenbank und Tabelle a
 
 Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte Typen und gespeicherte Prozeduren erstellen. Diese werden zum Verschieben der Ergebnisse von **MarketingCampaignEffectiveness** aus dem Azure-Blob in die SQL Server-Datenbank verwendet.
 
-1.	Navigieren Sie in **Windows-Explorer** zum Unterordner **OnPremises** in **C:\ADFWalkthrough** (oder zu dem Speicherort, an dem Sie die Beispiele extrahiert haben).
+1.	Navigieren Sie in **Windows-Explorer** zum Unterordner **OnPremises** in **C:\\ADFWalkthrough** (oder zu dem Speicherort, an dem Sie die Beispiele extrahiert haben).
 2.	Öffnen Sie **prepareOnPremDatabase&Table.ps1** in Ihrem bevorzugten Editor, ersetzen Sie die markierten Informationen durch Ihre SQL Server-Informationen, und speichern Sie die Datei (geben Sie die Details der **SQL-Authentifizierung** ein). Aktivieren Sie für das Lernprogramm die SQL-Authentifizierung für die Datenbank. 
 			
 		$dbServerName = "<servername>"
 		$dbUserName = "<username>"
 		$dbPassword = "<password>"
 
-3. Navigieren Sie in **Azure PowerShell** zum Ordner **C:\ADFWalkthrough\OnPremises**.
+3. Navigieren Sie in **Azure PowerShell** zum Ordner **C:\\ADFWalkthrough\\OnPremises**.
 4.	Führen Sie **prepareOnPremDatabase&Table.ps1** aus **(entweder & in doppelten Anführungszeichen oder wie unten dargestellt)**.
 			
 		& '.\prepareOnPremDatabase&Table.ps1'
@@ -115,14 +115,14 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 ### Erstellen der lokalen logischen Tabelle
 
 1.	Klicken Sie in **Data Factory Editor** in der Symbolleiste auf **Neues Dataset**, und wählen Sie **Lokaler SQL Server**. 
-2. Ersetzen Sie JSON im rechten Bereich durch das JSON-Skript aus der Datei **MarketingCampaignEffectivenessOnPremSQLTable.json** im Ordner **C:\ADFWalkthrough\OnPremises**.
+2. Ersetzen Sie JSON im rechten Bereich durch das JSON-Skript aus der Datei **MarketingCampaignEffectivenessOnPremSQLTable.json** im Ordner **C:\\ADFWalkthrough\\OnPremises**.
 3. Ändern Sie den Namen des verknüpften-Diensts (**linkedServiceName**-Eigenschaft) von **OnPremSqlServerLinkedService** in **SqlServerLinkedService**.
 4. Klicken Sie in der Symbolleiste auf **Bereitstellen**, um die Tabelle bereitzustellen. 
 	 
 #### Erstellen der Pipeline zum Kopieren der Daten aus dem Azure-BLOB auf SQL Server
 
 1.	1. Klicken Sie in **Data Factory Editor** in der Symbolleiste auf die Schaltfläche **Neue Pipeline**. Klicken Sie in der Symbolleiste auf **... (drei Punkte)**, wenn die Schaltfläche nicht angezeigt wird. Alternativ können Sie in der Strukturansicht mit der rechten Maustaste auf **Pipelines** und dann auf **Neue Pipeline** klicken.
-2. Ersetzen Sie JSON im rechten Bereich durch das JSON-Skript aus der Datei **EgressDataToOnPremPipeline.json** im Ordner **C:\ADFWalkthrough\OnPremises**.
+2. Ersetzen Sie JSON im rechten Bereich durch das JSON-Skript aus der Datei **EgressDataToOnPremPipeline.json** im Ordner **C:\\ADFWalkthrough\\OnPremises**.
 3. Fügen Sie ein **Komma (',')** am Ende der **schließenden eckigen Klammer ('] ')** in JSON hinzu, und fügen Sie hinter der schließenden eckigen Klammer die folgenden drei Zeilen hinzu. 
 
         "start": "2014-05-01T00:00:00Z",
@@ -169,4 +169,4 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

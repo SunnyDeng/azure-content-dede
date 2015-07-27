@@ -194,7 +194,7 @@ Bevor Sie das Zurückschreiben von Kennwörtern aktivieren und verwenden können
 Das Zurückschreiben von Kennwörtern steht in Versionen von Azure AD Connect oder im Azure AD Sync-Tool mit Versionsnummer **1.0.0419.0911** oder höher zur Verfügung. Das Zurückschreiben von Kennwörtern mit automatischer Entsperrung von Konten steht in Versionen von Azure AD Connect oder im Azure AD Sync-Tool mit Versionsnummer **1.0.0485.0222** oder höher zur Verfügung. Wenn Sie eine ältere Version verwenden, führen Sie ein Upgrade auf diese oder eine höhere Version durch, bevor Sie fortfahren. [Klicken Sie hier, um die aktuelle Version von Azure AD Connect herunterzuladen](active-directory-aadconnect.md#download-azure-ad-connect).
 
 #### So überprüfen Sie die Version von Azure AD Sync
-1.	Navigieren Sie zu **%ProgramFiles%\Azure Active Directory Sync**. 2.	Suchen Sie nach der ausführbaren Datei **ConfigWizard.exe**.
+1.	Navigieren Sie zu **%ProgramFiles%\\Azure Active Directory Sync**. 2.	Suchen Sie nach der ausführbaren Datei **ConfigWizard.exe**.
 3.	Klicken Sie mit der rechten Maustaste auf die ausführbare Datei, und wählen Sie im Kontextmenü die Option **Eigenschaften** aus.
 4.	Klicken Sie auf die Registerkarte **Details**.
 5.	Suchen Sie nach dem Feld **Dateiversion**.
@@ -342,4 +342,4 @@ Jetzt, da das Zurückschreiben von Kennwörtern aktiviert ist, können Sie die o
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

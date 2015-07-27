@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/22/2015"
+   ms.date="07/06/2015"
    ms.author="kareni"/>
 
 
@@ -206,7 +206,7 @@ Usage Date | Usage Date | Das Datum, an dem die Ressource ausgegeben wurde.
 Name | Meter Category | Gibt den Dienst an, zu dem dieser Verbrauch gehört.
 Resource GUID | Meter ID | Der Bezeichner der berechneten Messung. Dieser Bezeichner wird verwendet, um die Nutzung zu berechnen.
 Typ | Meter Sub-Category | Der Azure-Dienst ist in dieser Spalte ggf. weiter definiert. Die Dienstart kann Auswirkungen auf den Tarif haben.
-Resource | Meter Name | Gibt die Maßeinheit für die Ressource an, für die der Verbrauch gemessen wird.
+Ressource | Meter Name | Gibt die Maßeinheit für die Ressource an, für die der Verbrauch gemessen wird.
 Region | Meter Region | Gibt den Standort des Rechenzentrums für bestimmte Dienste an, die basierend auf dem Standort des Rechenzentrums berechnet werden.
 Unit | Unit | Gibt die Einheit an, in der der Dienst in Rechnung gestellt wird. Beispiele sind GB, Stunden oder 10.000 s.
 Consumed | Consumed Quantity | Enthält den Betrag der Ressource, die an diesem Tag verbraucht wurde.
@@ -262,4 +262,4 @@ Im Abschnitt **Verwalten von Konten, Abonnements und Administratorrollen** unter
 
 <!--Image references-->
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

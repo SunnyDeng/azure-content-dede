@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/20/2015"
+	ms.date="06/30/2015"
 	ms.author="kirillg"/>
 
 # <a name="getting-started"> </a>Was sind mobile Apps?
@@ -56,4 +56,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [JavaScript backend version]: ../mobile-services-ios-get-started.md
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

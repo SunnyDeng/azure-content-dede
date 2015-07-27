@@ -99,4 +99,4 @@ Weitere Informationen zur Kapazität von DocumentDB finden Sie unter [Verwalten 
 [Next steps]: #Next-steps
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

@@ -108,4 +108,4 @@ Wenn beim Konfigurieren der Verzeichnissynchronisierung Probleme auftreten, übe
 Starten Sie nun das Azure-Verzeichnissynchronisierungstool, und verwenden Sie die Anmeldeinformationen **myAzureSyncUser@mydomain.com** für die erste Eingabeaufforderung (Microsoft Azure Active Directory-Administrator-Anmeldeinformationen) und **myDomainSyncUser@mydomain.com** für die zweite Aufforderung.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

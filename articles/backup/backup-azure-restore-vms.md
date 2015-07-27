@@ -4,7 +4,7 @@
 	description="Erfahren Sie, wie ein virtueller Azure-Computer wiederhergestellt wird."
 	services="backup"
 	documentationCenter=""
-	authors="aashishr"
+	authors="trinadhk"
 	manager="shreeshd"
 	editor=""/>
 
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="05/27/2015"
-	ms.author="aashishr"/>
+	ms.author="trinadhk"/>
 
 # Wiederherstellen eines virtuellen Computers
 Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus den Sicherungen im Azure-Sicherungstresor in einem neuen virtuellen Computer wiederherstellen.
@@ -55,9 +55,9 @@ Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus 
   - Geben Sie den Namen des virtuellen Computers an: In einem bestimmten Clouddienst sollte der Name des virtuellen Computers eindeutig sein. Wenn Sie beabsichtigen, einen vorhandenen virtuellen Computer durch denselben Namen zu ersetzen, löschen Sie zuerst den vorhandenen virtuellen Computer und die Datenträger, und stellen Sie dann die Daten aus Azure Backup wieder her.
   - Wählen Sie einen Clouddienst für den virtuellen Computer aus: Dies ist für das Erstellen eines virtuellen Computers erforderlich. Sie können entweder einen vorhandenen Clouddienst verwenden oder einen neuen Clouddienst erstellen.
 
-        Der ausgewählte Name des Clouddienstes sollte global eindeutig sein. Typischerweise ist dieser Name mit einer öffentlichen URL nach dem Muster [clouddienst].cloudapp.net verknüpft. Azure gestattet es Ihnen nicht, einen neuen Clouddienst zu erstellen, wenn der Name bereits verwendet wird. Wenn Sie einen neuen Clouddienst erstellen möchten, erhält dieser den gleichen Namen wie der virtuelle Computer. In diesem Fall sollte der Name des virtuellen Computers eindeutig genug sein, um auf den neuen Clouddienst angewendet zu werden.
+        Whatever cloud service name is picked should be globally unique. Typically, the cloud service name gets associated with a public-facing URL in the form of [cloudservice].cloudapp.net. Azure will not allow you to create a new cloud service if the name has already been used. If you choose to create select create a new cloud service, it will be given the same name as the virtual machine – in which case the VM name picked should be unique enough to be applied to the associated cloud service.
 
-         Wir zeigen ausschließlich Clouddienste und virtuelle Netzwerke an, die nicht mit Affinitätsgruppen in den Details der Wiederherstellungsinstanzen verbunden sind. [Erfahren Sie mehr] (https://msdn.microsoft.com/en-us/library/azure/jj156085.aspx).
+        We only display cloud services and virtual networks that are not associated with any affinity groups in the restore instance details. [Learn More](https://msdn.microsoft.com/de-de/library/azure/jj156085.aspx).
 
 2. Wählen Sie ein Speicherkonto für den virtuellen Computer aus: Dies ist für das Erstellen des virtuellen Computers erforderlich. Sie können aus vorhandenen Speicherkonten in der gleichen Region auswählen, in der sich auch der Azure Backup-Tresor befindet. Wir unterstützen keine Speicherkonten, die zonenredundant sind oder dem Premium-Speichertyp entsprechen.
 
@@ -90,7 +90,7 @@ Nach dem Abschluss des Wiederherstellungsvorgangs wird dieser auf der Registerka
 
 ![Wiederherstellungsauftrag abgeschlossen](./media/backup-azure-restore-vms/restore-job-complete.png)
 
-Nach dem Wiederherstellen des virtuellen Computers müssen Sie möglicherweise die auf dem ursprünglichen virtuellen Computer vorhandenen [Erweiterungen neu installieren](virtual-machines-set-up-endpoints) und für den virtuellen Computer im Azure-Portal die Endpunkte neu erstellen.
+Nach dem Wiederherstellen des virtuellen Computers müssen Sie möglicherweise die auf dem ursprünglichen virtuellen Computer vorhandenen Erweiterungen neu installieren und für den virtuellen Computer im Azure-Portal [die Endpunkte ändern](virtual-machines-set-up-endpoints).
 
 ## Problembehandlung
 Bei den meisten Fehlern können Sie die empfohlene Aktion befolgen, die unter "Fehlerdetails" vorgeschlagen wird. Hier sind einige weitere Punkte, die Sie bei der Problembehandlung unterstützen:
@@ -104,4 +104,4 @@ Bei den meisten Fehlern können Sie die empfohlene Aktion befolgen, die unter "F
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

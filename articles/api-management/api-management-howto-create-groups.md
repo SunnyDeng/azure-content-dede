@@ -106,4 +106,4 @@ Sobald ein Entwickler zu einer Gruppe hinzugefügt wurde, können diese die zu d
 [Erste Schritte mit Azure API Management]: api-management-get-started.md
 [Erstellen einer API Management-Instanz]: api-management-get-started.md#create-service-instance
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

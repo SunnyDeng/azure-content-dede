@@ -37,7 +37,7 @@ Unterstützung für Windows-Desktop-Apps und -Dienste wird über das Application
 
 2.  Erstellen Sie eine Kopie des Instrumentationsschlüssels.
 
-    ![Klicken Sie auf "Eigenschaften", wählen Sie den Schlüssel aus, und drücken Sie STRG+C.](./media/app-insights-windows-desktop/02-props.png)
+    ![Klicken Sie auf "Eigenschaften", wählen Sie den Schlüssel aus, und drücken Sie STRG+C](./media/app-insights-windows-desktop/02-props.png)
 
 ## <a name="sdk"></a>Installieren des SDK in Ihrer Anwendung
 
@@ -48,14 +48,9 @@ Unterstützung für Windows-Desktop-Apps und -Dienste wird über das Application
 
     ![Suchen Sie nach "Application Insights".](./media/app-insights-windows-desktop/04-core-nuget.png)
 
-3. Bearbeiten Sie die Datei "ApplicationInsights.config" (die durch die NuGet-Installation hinzugefügt wurde). Fügen Sie Folgendes direkt vor dem Endtag ein:
+3. Legen Sie das InstrumentationKey-Element im Code über das `TelemetryConfiguration.Active`-Objekt fest.
 
-    `<InstrumentationKey>*the key you copied*</InstrumentationKey>`
-
-    Alternativ können Sie denselben Effekt mit folgendem Code erzielen:
-    
     `TelemetryConfiguration.Active.InstrumentationKey = "your key";`
-
 
 ## <a name="telemetry"></a>Einfügen von Telemetrieaufrufen
 
@@ -178,4 +173,4 @@ Wenn Sie "TrackMetric" oder den Parameter "measurements" von "TrackEvent" verwen
 [CoreNuGet]: https://www.nuget.org/packages/Microsoft.ApplicationInsights
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

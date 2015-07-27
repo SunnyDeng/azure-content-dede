@@ -423,7 +423,7 @@ Die Sammlung statischer Dateien erfolgt automatisch als Teil des Bereitstellungs
 
 Wenn Sie die Sammlung statischer Dateien für die Django-Anwendung zu überspringen möchten:
 
-    .skipDjango
+    \.skipDjango
 
 Dann müssen Sie die Sammlung manuell auf dem lokalen Computer ausführen:
 
@@ -515,4 +515,4 @@ Weitere Informationen zur Verwendung von SQL-Datenbank und MySQL:
 [Dokumentation zu Django]: https://www.djangoproject.com/
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

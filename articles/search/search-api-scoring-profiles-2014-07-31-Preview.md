@@ -12,7 +12,7 @@ Der Begriff "Bewertung" verweist auf die Berechnung einer Suchbewertung für jed
 
 Ein Bewertungsprofil ist Teil der Indexdefinition und besteht aus Feldern, Funktionen und Parametern.
 
-Das folgende Beispiel zeigt, wie ein Bewertungsprofil aussieht, Dieses einfaches Profil hat die Bezeichnung "geo". In diesem Fall werden Elemente verstärkt, die den Suchbegriff im Feld `hotelName` enthalten. Darüber hinaus wird die `distance`-Funktion verwendet, um Elemente zu bevorzugen, die sich im Umkreis von zehn Kilometern um die aktuelle Position befinden. Wenn nach dem Begriff "inn" gesucht wird und "inn" Teil des Hotelnamens ist, werden die Dokumente in den Suchergebnissen weiter oben angezeigt, die Hotels mit "inn" im Namen enthalten.
+Das folgende Beispiel zeigt, wie ein Bewertungsprofil aussieht. Dieses einfache Profil hat die Bezeichnung "geo". In diesem Fall werden Elemente verstärkt, die den Suchbegriff im Feld `hotelName` enthalten. Darüber hinaus wird die `distance`-Funktion verwendet, um Elemente zu bevorzugen, die sich im Umkreis von zehn Kilometern um die aktuelle Position befinden. Wenn nach dem Begriff "inn" gesucht wird und "inn" Teil des Hotelnamens ist, werden die Dokumente in den Suchergebnissen weiter oben angezeigt, die Hotels mit "inn" im Namen enthalten.
 
     "scoringProfiles": [
       {
@@ -39,7 +39,7 @@ Um dieses Bewertungsprofil zu verwenden, muss die Abfrage so formuliert werden, 
 
     GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentLocation:-122.123,44.77233&api-version=2014-07-31-Preview
 
-Diese Abfrage sucht nach dem Begriff "inn" und übergibt die aktuelle Position. Beachten Sie, dass diese Abfrage weitere Parameter einbezieht, z. B. `scoringParameter`. Eine Beschreibung der Abfrageparameter finden Sie unter [Dokumente durchsuchen (Azure Search-API)]().
+Diese Abfrage sucht nach dem Begriff "inn" und übergibt die aktuelle Position. Beachten Sie, dass diese Abfrage weitere Parameter einbezieht, z. B. `scoringParameter`. Eine Beschreibung der Abfrageparameter finden Sie unter [Dokumente durchsuchen (Azure Search-API)](https://msdn.microsoft.com/library/azure/dn798927.aspx).
 
 Klicken Sie auf [Beispiel](#bkmk_ex), um ein ausführlicheres Beispiel für ein Bewertungsprofil zu überprüfen.
 
@@ -62,8 +62,6 @@ Die relevanzbasiert Sortierung wird ebenfalls über Bewertungsprofile implementi
 Wie bereits erwähnt, wird die benutzerdefinierte Bewertung über Bewertungsprofile implementiert, die in einem Indexschema definiert sind.
 
 In diesem Beispiel wird das Schema für einen Index mit zwei Bewertungsprofilen (`boostGenre`, `newAndHighlyRated`) gezeigt. Jede Abfrage für diesen Index, die eines der Profile als Abfrageparameter enthält, verwendet das Profil zum Bewerten des Resultsets.
-
-[Testen Sie dieses Beispiel]().
 
     {
       "name": "musicstoreindex",
@@ -132,41 +130,9 @@ Geben Sie einen Namen ein. Bewertungsprofile sind optional, wenn Sie jedoch ein 
 
 Der Hauptteil des Bewertungsprofils wird aus gewichteten Feldern und Funktionen erstellt.
 
-<font>
-<table style="font-size:12">
-<thead>
-<tr><td>Element</td><td>Beschreibung</td></tr></thead>
-<tbody>
-<tr>
-<td><b>Gewichtungen</b></td>
-<td>
-Geben Sie Name-Wert-Paare an, die einem Feld eine relative Gewichtung zuordnen. In diesem [Beispiel](#bkmk_ex) werden die Felder "albumTitle", "genre" und "artistName" entsprechend um 1, 5 und Null verstärkt. Warum wird "genre" so viel stärker als die anderen Felder erhöht? Wenn die Suche über relativ homogene Daten durchgeführt wird (wie bei "genre" in `musicstoreindex`), ist bei den relativen Gewichtungen möglicherweise eine größere Varianz erforderlich. In `musicstoreindex` wird "rock" z. B. sowohl für "genre" als auch für identisch formulierte Genrebeschreibungen angezeigt. Wenn "genre" schwerer wiegen soll als die Genrebeschreibung, dann benötigt das Feld "genre" eine viel höhere relative Gewichtung.
-</td>
-</tr>
-<tr>
-<td><b>Funktionen</b></td><td>Werden verwendet, wenn für bestimmte Kontexte zusätzliche Berechnungen erforderlich sind. Gültige Werte sind `freshness`, `magnitude` oder `distance`. Jede Funktion verfügt über Parameter, die für sie eindeutig sind.
-<br>
-- `freshness` sollte verwendet werden, wenn Sie Elemente in Abhängigkeit davon verstärken möchten, wie neu oder alt diese sind. Diese Funktion kann nur mit datetime-Feldern (edm.DataTimeOffset) verwendet werden. Beachten Sie, dass das `boostingDuration`-Attribut nur mit der Funktion "freshness" verwendet wird.
-<br>
-- `magnitude` sollte verwendet werden, wenn die Verstärkung auf Basis der Höhe eines numerischen Werts erfolgen soll. Szenarien, die diese Funktion erforderlich machen, umfassen die Verstärkung nach Gewinnspanne, Höchstpreis, Mindestpreis oder Downloadanzahl. Diese Funktion kann nur mit Double- und Integer-Feldern verwendet werden.
-<br>
-- `distance` sollte verwendet werden, wenn die Verstärkung entsprechend der Nähe oder geografischen Lage erfolgen soll. Diese Funktion kann nur mit `geo.distance`-Feldern verwendet werden.
-<br>
-<b>Regeln für die Verwendung von Funktionen</b>
-<br>
-Der Funktionstyp ("freshness", "magnitude", "distance") muss in Kleinbuchstaben angegeben werden.
-<br>
-Funktionen dürfen nicht Null sein oder leere Werte enthalten. Insbesondere beim Einbeziehen von Feldnamen muss ein Wert festgelegt werden.
-<br>
-Funktionen können nur auf filterbare Felder angewendet werden. Weitere Informationen zu filterbaren Feldern finden Sie unter [Index erstellen (Azure Search-API)]().
-<br> Funktionen können nur auf Felder angewendet werden, die in der Felderauflistung für einen Index definiert sind.
-<td>
-</tr>
-</tbody>
-</table>
-</font>
+<font> <table style="font-size:12"> <thead> <tr><td>Element</td><td>Beschreibung</td></tr></thead> <tbody <tr> <td><b>Gewichtungen</b></td> <td> Geben Sie Name-Wert-Paare an, die einem Feld eine relative Gewichtung zuordnen. In diesem [Beispiel](#bkmk_ex) werden die Felder "albumTitle", "genre" und "artistName" entsprechend um 1, 5 und Null verstärkt. Warum wird "genre" so viel stärker als die anderen Felder erhöht? Wenn die Suche über relativ homogene Daten durchgeführt wird (wie bei "genre" in `musicstoreindex`), ist bei den relativen Gewichtungen möglicherweise eine größere Varianz erforderlich. In `musicstoreindex` wird "rock" z. B. sowohl für "genre" als auch für identisch formulierte Genrebeschreibungen angezeigt. Wenn "genre" schwerer wiegen soll als die Genrebeschreibung, dann benötigt das Feld "genre" eine viel höhere relative Gewichtung. </td> </tr> <tr> <td><b>Funktionen</b></td><td>Werden verwendet, wenn für bestimmte Kontexte zusätzliche Berechnungen erforderlich sind. Gültige Werte sind `freshness`, `magnitude` oder `distance`. Jede Funktion verfügt über Parameter, die für sie eindeutig sind. <br> - `freshness` sollte verwendet werden, wenn Sie Elemente in Abhängigkeit davon verstärken möchten, wie neu oder alt diese sind. Diese Funktion kann nur mit datetime-Feldern (edm.DataTimeOffset) verwendet werden. Beachten Sie, dass das `boostingDuration`-Attribut nur mit der Funktion "freshness" verwendet wird. <br> - `magnitude` sollte verwendet werden, wenn die Verstärkung auf Basis der Höhe eines numerischen Werts erfolgen soll. Szenarien, die diese Funktion erforderlich machen, umfassen die Verstärkung nach Gewinnspanne, Höchstpreis, Mindestpreis oder Downloadanzahl. Diese Funktion kann nur mit Double- und Integer-Feldern verwendet werden. <br> - `distance` sollte verwendet werden, wenn die Verstärkung entsprechend der Nähe oder geografischen Lage erfolgen soll. Diese Funktion kann nur mit `geo.distance`-Feldern verwendet werden. <br> <b>Regeln für die Verwendung von Funktionen</b> <br> Der Funktionstyp ("freshness", "magnitude", "distance") muss in Kleinbuchstaben angegeben werden. <br> Funktionen dürfen nicht Null sein oder leere Werte enthalten. Insbesondere beim Einbeziehen von Feldnamen muss ein Wert festgelegt werden. <br> Funktionen können nur auf filterbare Felder angewendet werden. Weitere Informationen zu filterbaren Feldern finden Sie unter [Index erstellen (Azure Search-API)](). <br> Funktionen können nur auf Felder angewendet werden, die in der Felderauflistung für einen Index definiert sind. <td> </tr> </tbody> </table> </font>
 
-Nachdem der Index definiert wurde, erstellen Sie den Index durch Hochladen des Indexschemas, gefolgt von Dokumenten. Anweisungen zu diesen Vorgängen finden Sie unter [Index erstellen (Azure Search-API)]() und [Dokumente hinzufügen oder aktualisieren (Azure Search-API)](). Nachdem der Index erstellt wurde, sollten Sie über ein funktionsfähiges Bewertungsprofil verfügen, das mit Ihren Suchdaten arbeitet.
+Nachdem der Index definiert wurde, erstellen Sie den Index durch Hochladen des Indexschemas, gefolgt von Dokumenten. Anweisungen zu diesen Vorgängen finden Sie unter [Index erstellen (Azure Search-API)](https://msdn.microsoft.com/library/azure/dn798941.aspx) und [Dokumente hinzufügen oder aktualisieren (Azure Search-API)](https://msdn.microsoft.com/library/azure/dn798930.aspx). Nachdem der Index erstellt wurde, sollten Sie über ein funktionsfähiges Bewertungsprofil verfügen, das mit Ihren Suchdaten arbeitet.
 
 ##Vorlage
 In diesem Abschnitt wird die Syntax und die Vorlage für die Bewertungsprofile veranschaulicht. Beschreibungen zu den Attributen finden Sie im nächsten Abschnitt unter [Indexattributreferenz](#bkmk_indexref).
@@ -242,7 +208,7 @@ In diesem Abschnitt wird die Syntax und die Vorlage für die Bewertungsprofile v
 </tr><tr>
 <td>Interpolation</td>	<td>Erforderlich für Bewertungsfunktionen. Definiert die Steigung, für die die Bewertungsverstärkung vom Anfang bis zum Ende des Bereichs zunimmt. Gültige Werte sind "Linear" (Standard), "Constant", "Quadratic" und "Logarithmic". Ausführliche Informationen finden Sie unter [Festlegen von Interpolationen](#bkmk_interpolation).</td>
 </tr><tr>
-<td>magnitude</td>	<td>Die Bewertungsfunktion für die Größe wird dazu verwendet, um Rangfolgen auf Basis des Wertebereichs für ein numerisches Feld zu ändern. Einige der am häufigsten verwendete Beispiele hierfür sind: 
+<td>magnitude</td>	<td>Die Bewertungsfunktion für die Größe wird dazu verwendet, um Rangfolgen auf Basis des Wertebereichs für ein numerisches Feld zu ändern. Einige der am häufigsten verwendeten Beispiele hierfür sind: 
 <br>
 - Sternbewertungen: Ändern Sie die Bewertung auf Basis des Werts innerhalb des Felds für die "Sternbewertung". Wenn zwei Elemente relevant sind, wird das Element mit der höheren Bewertung zuerst angezeigt.
 <br>
@@ -265,7 +231,7 @@ In diesem Abschnitt wird die Syntax und die Vorlage für die Bewertungsprofile v
 </tr><tr>
 <td>distance</td>	<td>Die Bewertungsfunktion für den Abstand wird dazu verwendet, um auf Basis des Abstands relativ zu einem geografischen Standort Einfluss auf die Bewertung von Dokumenten zu nehmen. Der Referenzstandort wird als Teil der Abfrage in einem Parameter als "lon,lat"-Argument (Längengrad, Breitengrad) angegeben (mithilfe der scoringParameterquery-Zeichenfolgenoption).</td>
 </tr><tr>
-<td>distance | referencePointParameter</td>	<td>Ein in Abfragen zu übergebender Parameter, der als Referenzstandort verwendet wird. scoringParameter ist ein Abfrageparameter; "scoringParameter" ist ein Abfrageparameter.  Beschreibungen zu den Abfrageparametern finden Sie unter [Dokumente suchen (Azure Search-API)]().</td>
+<td>distance | referencePointParameter</td>	<td>Ein in Abfragen zu übergebender Parameter, der als Referenzstandort verwendet wird. scoringParameter ist ein Abfrageparameter; "scoringParameter" ist ein Abfrageparameter.  Eine Beschreibung der Abfragezeichenfolgen-Parameter finden Sie unter [Dokumente durchsuchen (Azure Search-API)] (https://msdn.microsoft.com/library/azure/dn798927.aspx).</td>
 </tr><tr>
 <td>distance | boostingDistance</td>	<td>Dies muss eine ganze Zahl sein. Legt den Abstand in Kilometern vom Referenzstandort fest, an dem der Verstärkungsbereich endet.</td>
 </tr><tr>
@@ -278,7 +244,7 @@ In diesem Abschnitt wird die Syntax und die Vorlage für die Bewertungsprofile v
 
 ##Festlegen von Interpolationen
 
-Interpolationen ermöglichen Ihnen die Definition der Steigung, in der die Bewertungsoptimierung vom Anfang bis zum Ende des Bereichs zunimmt. Die folgenden Interpolation können verwendet werden:
+Interpolationen ermöglichen Ihnen die Definition der Steigung, in der die Bewertungsoptimierung vom Anfang bis zum Ende des Bereichs zunimmt. Die folgenden Interpolationen können verwendet werden:
 
 - `Linear` Für Elemente, die sich innerhalb des maximalen und minimalen Bereichs befinden, erfolgt die auf das Element angewendete Verstärkung mit konstant abnehmender Stärke. "Linear" ist die Standardinterpolation für ein Bewertungsprofil.
 
@@ -318,14 +284,10 @@ Die folgende Tabelle enthält einige Beispiele.
 </tbody>
 </table>
 
-Weitere Beispiele finden Sie unter [XML-Schema: Datentypen (W3.org-Website)]().
-
 **Weitere Informationen**
 
-Azure Search-Dienst-REST-API:
-Erstellen eines Index (Azure Search-API)
-________________________________________
+Azure Search-Dienst-REST-API: Erstellen eines Index (Azure Search-API) ________________________________________
 
  
 
-<!----HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

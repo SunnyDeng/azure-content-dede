@@ -66,4 +66,4 @@ In Kombination mit SCDPM lässt sich mit Azure Backup Folgendes sichern:
 + Besuchen Sie das [Azure Sicherungs-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

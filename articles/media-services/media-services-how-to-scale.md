@@ -23,7 +23,7 @@
 
 Sie können **Media Services** skalieren, indem Sie die Anzahl **reservierter Einheiten für das Streaming** und die Anzahl **reservierter Einheiten für die Codierung** angeben, die für Ihr Konto bereitgestellt werden soll.
 
-Außerdem können Sie Ihr Media Service-Konto skalieren, indem Sie Speicherkonten hinzufügen. Jedes Speicherkonto ist auf 500 TB beschränkt. Um den Speicher über die Standardbeschränkungen hinaus zu erweitern, können Sie mehrere Speicherkonten mit einem einzelnen Media Service-Konto verknüpfen.
+Außerdem können Sie Ihr Media Services-Konto skalieren, indem Sie Speicherkonten hinzufügen. Jedes Speicherkonto ist auf 500 TB beschränkt. Um den Speicher über die Standardbeschränkungen hinaus zu erweitern, können Sie mehrere Speicherkonten mit einem einzelnen Media Service-Konto verknüpfen.
 
 Dieses Thema enthält Links zu relevanten Themen.
 
@@ -47,4 +47,4 @@ Weitere Informationen finden Sie unter [Verwalten von Media Services-Medienobjek
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

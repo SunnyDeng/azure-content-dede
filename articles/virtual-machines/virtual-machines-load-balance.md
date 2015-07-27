@@ -3,7 +3,7 @@
 	description="Beschreibt zwei unterschiedliche Typen des durch Azure unterstützten Lastenausgleichs: Lastenausgleich für Clouddienste und Azure Traffic Manager für Clientdatenverkehr." 
 	services="virtual-machines" 
 	documentationCenter="" 
-	authors="cherylmc" 
+	authors="joaoma" 
 	manager="adinah" 
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/12/2015" 
-	ms.author="cherylmc"/>
+	ms.date="06/16/2015" 
+	ms.author="joaoma"/>
 
 
 # Lastenausgleich für Azure-Infrastrukturdienste#
@@ -36,7 +36,7 @@ Azure Traffic Manager verwendet drei Lastenausgleichsmethoden, um den Datenverke
 - **Leistung**: Verwenden Sie diese Methode, wenn sich die Endpunkte an unterschiedlichen geografischen Standorten befinden und anfordernde Clients den "nächstgelegenen" Endpunkt (im Hinblick auf die geringste Latenzzeit) verwenden sollen.
 - **Roundrobin**: Verwenden Sie diese Methode, wenn Sie die Last auf eine Reihe von Clouddiensten im gleichen Rechenzentrum oder auf Clouddienste oder Websites in verschiedenen Rechenzentren verteilen möchten.
 
-Weitere Informationen finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/library/azure/dn339010.aspx).
+Weitere Informationen finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](../traffic-manager/traffic-manager-load-balancing-methods.md).
 
 Die folgende Abbildung zeigt ein Beispiel für die Roundrobin-Lastenausgleichsmethode, bei der der Datenverkehr zwischen unterschiedlichen Clouddiensten verteilt wird.
 
@@ -49,7 +49,7 @@ Im Folgenden die grundlegende Vorgehensweise:
 3.	Traffic Manager wählt den nächsten Cloud-Dienst in der Round-Robin-Liste und sendet den DNS-Namen zurück. Der DNS-Server des Internetclients löst den Namen in eine IP-Adresse auf und sendet diese an den Internetclient.
 4.	Der Internetclient wählt eine Verbindung mit dem Cloud-Dienst von Traffic Manager aus.
 
-Weitere Informationen finden Sie unter [Traffic Manager](http://msdn.microsoft.com/library/azure/hh745750.aspx).
+Weitere Informationen finden Sie unter [Traffic Manager](../traffic-manager/traffic-manager-overview.md).
 
 ## Azure-Lastenausgleich für virtuelle Computer ##
 
@@ -61,7 +61,7 @@ Die folgende Abbildung zeigt einen Endpunkt für Standard-Datenverkehr (unversch
 
 ![loadbalancing](./media/virtual-machines-load-balance/LoadBalancing.png)
 
-Weitere Informationen finden Sie unter [Azure-Lastenausgleichsmodul](http://msdn.microsoft.com/library/azure/dn655058.aspx). Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich](http://msdn.microsoft.com/library/azure/dn655055.aspx).
+Weitere Informationen finden Sie unter [Azure-Lastenausgleichsmodul](../load-balancer/load-balancer-overview.md). Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich](../load-balancer/load-balancer-internet-getstarted.md).
 
 Azure ist auch in der Lage, Lasten innerhalb eines Clouddiensts oder virtuellen Netzwerks auszugleichen. Diese Methode wird als interner Lastenausgleich bezeichnet und kann wie folgt verwendet werden:
 
@@ -77,10 +77,10 @@ Die folgende Abbildung zeigt ein Beispiel eines internen Endpunkts mit Lastenaus
 
 ## Nächste Schritte
 
-Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer internen Gruppe mit Lastenausgleich](http://msdn.microsoft.com/library/azure/dn690125.aspx).
+Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer internen Gruppe mit Lastenausgleich](../load-balancer/load-balancer-internal-getstarted.md).
 
-Weitere Informationen zum Lastenausgleich finden Sie unter [Interner Lastenausgleich](http://msdn.microsoft.com/library/azure/dn690121.aspx).
+Weitere Informationen zum Lastenausgleich finden Sie unter [Interner Lastenausgleich](../load-balancer/load-balancer-internal-overview.md).
 
 <!-- LINKS -->
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

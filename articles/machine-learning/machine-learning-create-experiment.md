@@ -14,18 +14,18 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article" 
-	ms.date="04/21/2015"
+	ms.date="07/09/2015"
 	ms.author="garye"/>
 
 #Lernprogramm für maschinelles Lernen: Erstellen Ihres ersten Experiments im Azure Machine Learning Studio
 
 In diesem Lernprogramm für maschinelles Lernen erstellen wir ein Modell für lineare Regression, das den Preis eines Autos anhand verschiedener Variablen wie Hersteller und technischer Angaben prognostiziert. Für dieses Vorgehen verwenden wir Azure Machine Learning Studio, um ein einfaches Vorhersageanalytik-Experiment zu entwickeln und schrittweise zu verfeinern.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
-Machine Learning Studio-Experimente bestehen aus Komponenten zum *Erstellen eines Modells*, zum *Trainieren des Modells* und zum *Testen und Bewerten des Modells*. Das Experiment verwendet Techniken für Vorhersagemodelle in Form von Machine Learning Studio-Modulen, die Daten erfassen, das Modell anhand dieser Daten trainieren und das Modell auf die neuen Daten anwenden. Sie könnten auch Module verwenden, die Daten vorverarbeiten und Funktionen auswählen, Daten in Trainings- und Testsätze aufteilen und die Qualität Ihres Modells bewerten oder per Kreuzvalidierung testen.
+Ein Machine Learning Studio-Experiment umfasst das Ziehen und Ablegen von Komponenten auf einer Canvas und das Verbinden dieser Komponenten, um *ein Modell zu erstellen**das Modell zu trainieren* sowie *zu bewerten und zu testen*. Das Experiment verwendet Techniken für Vorhersagemodelle in Form von Machine Learning Studio-Modulen, die Daten erfassen, das Modell anhand dieser Daten trainieren und das Modell auf die neuen Daten anwenden. Sie könnten auch Module verwenden, die Daten vorverarbeiten und Funktionen auswählen, Daten in Trainings- und Testsätze aufteilen und die Qualität Ihres Modells bewerten oder per Kreuzvalidierung testen.
 
-Öffnen Sie Machine Learning Studio über folgenden Link: [https://studio.azureml.net/Home](https://studio.azureml.net/Home). Informationen zu den ersten Schritten mit Machine Learning Studio finden Sie unter [Microsoft Azure Machine Learning Studio Home](https://studio.azureml.net/).
+Rufen Sie Machine Learning Studio:[https://studio.azureml.net](https://studio.azureml.net) auf, und klicken Sie auf die Schaltfläche „Erste Schritte“. Wählen Sie entweder den Gastzugang, oder melden Sie sich mit Ihrem Microsoft-Konto an.
 
 Allgemeine Informationen zu Machine Learning Studio finden Sie unter [Was ist Machine Learning Studio?](machine-learning-what-is-ml-studio.md).
 
@@ -233,4 +233,4 @@ Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersa
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

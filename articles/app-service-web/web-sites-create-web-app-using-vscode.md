@@ -220,9 +220,13 @@ In diesem Abschnitt erfahren Sie, wie Sie ein lokales Repository erstellen und e
 
 		git remote add azure [URL for remote repository]
 
-7. Übertragen Sie Ihre Änderungen mithilfe des folgenden Befehls per Push an Azure:
+7. Konfigurieren Sie Git, um Ihre Anmeldeinformationen lokal zu speichern, sodass sie automatisch an Ihre Push-Befehle angehängt werden, die vom Visual Studio-Code generiert werden.
 
-		git push azure master
+		git config credential.helper store
+
+8. Übertragen Sie Ihre Änderungen mithilfe des folgenden Befehls per Push an Azure: Nach diesem ersten Push in Azure können Sie alle Push-Befehle über Visual Studio-Code ausführen.
+
+		git push -u azure master
 
 	Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben. **Hinweis: Das Kennwort ist nicht sichtbar.**
 
@@ -232,7 +236,9 @@ In diesem Abschnitt erfahren Sie, wie Sie ein lokales Repository erstellen und e
 		To https://user@testsite.scm.azurewebsites.net/testsite.git
 		[new branch]      master -> master
 
-> [AZURE.NOTE]Wenn Sie Änderungen an Ihrer App vornehmen, können Sie sie erneut veröffentlichen. Verwenden Sie hierzu in VS Code die Option für ein umfassendes Commit, und geben Sie anschließend an einer Eingabeaufforderung den Befehl **git push azure master** ein.
+> [AZURE.NOTE]Wenn Sie Änderungen an Ihrer App vornehmen, können Sie mithilfe der integrierten Git-Funktionen direkt in Visual Studio-Code die erneute Veröffentlichung ausführen, indem Sie die Option **Commit für alle** gefolgt von der Option **Push** verwenden. Sie finden Sie die Option **Push** im Dropdownmenü neben den Schaltflächen **Commit für alle** und **Aktualisieren**.
+
+Wenn Sie an einem Projekt zusammenarbeiten müssen, sollten Sie zwischen Push-Vorgängen auf Azure Push-Vorgänge auf GitHub vornehmen.
 
 ## Ausführen der App in Azure
 Nachdem Sie Ihre Web-App nun bereitgestellt haben, können wir sie ausführen, während sie in Azure gehostet ist.
@@ -250,4 +256,4 @@ Dies kann auf zwei Arten erfolgen:
 ## Zusammenfassung
 In diesem Lernprogramm wurde gezeigt, wie Sie eine Web-App in VS Code erstellen und in Azure bereitstellen. Weitere Informationen zu VS Code finden Sie im Artikel [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) (Argumente für Visual Studio Code; in englischer Sprache). Informationen zu App Service-Web-Apps finden Sie unter [Web-Apps – Übersicht](app-service-web-overview.md).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

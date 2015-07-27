@@ -117,4 +117,4 @@ Jetzt können Sie auf die Active Directory-Authentifizierungsbibliothek in Ihrem
  [Erste Schritte mit mobilen Apps]: app-service-mobile-dotnet-backend-ios-get-started-preview.md
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

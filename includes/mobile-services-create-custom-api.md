@@ -36,4 +36,4 @@
 <!-- URLs. -->
 [mssql-Objekt]: http://msdn.microsoft.com/library/windowsazure/jj554212.aspx
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO3-->

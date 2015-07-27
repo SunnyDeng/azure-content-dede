@@ -130,4 +130,4 @@ Ein Beispiel, das die Verwendung der SQL-Datenbank mit PHP auf Azure zeigt, ist 
 [quick-create]: ./media/sql-database-php-how-to-use/create-new-sql.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

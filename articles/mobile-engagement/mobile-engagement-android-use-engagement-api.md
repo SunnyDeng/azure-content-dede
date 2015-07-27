@@ -3,8 +3,8 @@
 	description="Neuestes Android SDK – Verwenden der Engagement-API unter Android"
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
-	authors="kapiteir" 
-	manager="dwrede" 
+	authors="kpiteira" 
+	manager="dwrede"
 	editor="" />
 
 <tags 
@@ -18,7 +18,7 @@
 
 #Verwenden der Engagement-API unter Android
 
-Dieses Dokument ist ein Add-On zum Dokument [So integrieren Sie Engagement auf Android](mobile-engagement-android-integrate-engagement.md). Es bietet detaillierte Informationen zur Verwendung der Engagement-API zur Bereitstellung von Anwendungsstatistiken.
+Dieses Dokument ist eine Ergänzung zum Dokument [Integrieren von Engagement unter Android](mobile-engagement-android-integrate-engagement.md). Es bietet tiefergehende Details zur Verwendung der Engagement-API, um Ihre Anwendungsstatistik zu melden.
 
 Bedenken Sie, dass die einfachste Methode darin besteht, dass Ihre `Activity`-Unterklassen von der entsprechenden `EngagementActivity`-Klasse erben, wenn Engagement lediglich die Sitzungen, Aktivitäten, Abstürze und technischen Informationen Ihrer Anwendung melden soll.
 
@@ -298,4 +298,4 @@ Im vorherigen Beispiel enthält die an den Server gesendete JSON 44 Zeichen:
 			{"expiration":"2016-12-07","status":"premium"}
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

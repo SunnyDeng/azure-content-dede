@@ -37,14 +37,14 @@ Informationen zum Einrichten einer Datenkopieraktivität finden Sie unter [Kopie
  Auf die gleiche Weise wie beim Planen von Datenübertragungen kann Azure Data Factory auch zum Orchestrieren der Ausführung von gespeicherten Prozeduren verwendet werden. Dies ermöglicht die Erstellung komplexerer Pipelines und erweitert die Möglichkeiten von Azure Data Factory, sodass die Rechenleistung von SQL Data Warehouse genutzt wird.
 
 ## Nächste Schritte
-Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Integration (Übersicht)][]. Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklungsübersicht][].
+Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Integration (Übersicht)][]. Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht für SQL Data Warehouse][].
 
 <!--Image references-->
 
 <!--Article references-->
 
 [Kopieren von Daten mit Azure Data Factory]: ./data-factory-copy-activity/
-[SQL Data Warehouse-Entwicklungsübersicht]: ./sql-data-warehouse-overview-develop/
+[Entwicklungsübersicht für SQL Data Warehouse]: ./sql-data-warehouse-overview-develop/
 [SQL Data Warehouse-Integration (Übersicht)]: ./sql-data-warehouse-overview-integration/
 
 <!--MSDN references-->
@@ -52,4 +52,4 @@ Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Inte
 <!--Other Web references-->
 [Azure Data Factory-Dokumentation]: https://azure.microsoft.com/documentation/services/data-factory/
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

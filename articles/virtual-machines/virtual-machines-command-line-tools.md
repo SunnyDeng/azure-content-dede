@@ -188,7 +188,7 @@ Das folgende Diagramm zeigt, wie virtuelle Azure-Computer in der Produktionsumge
 
 ![Technisches Diagramm Azure](./media/virtual-machines-command-line-tools/architecturediagram.jpg)
 
-**create-new** erstellt das Laufwerk im Blobspeicher (E:\ in diesem Diagramm); **attach** hängt ein bereits erstelltes, aber noch nicht angehängtes Laufwerk an einen virtuellen Computer an.
+**create-new** erstellt das Laufwerk im Blobspeicher (E:\\ in diesem Diagramm); **attach** hängt ein bereits erstelltes, aber noch nicht angehängtes Laufwerk an einen virtuellen Computer an.
 
 **vm create [Optionen] &lt;DNS-Name> &lt;Image> &lt;Benutzername> [Kennwort]**
 
@@ -2346,4 +2346,4 @@ Löscht einen DNS-Servereintrag aus der Netzwerkkonfiguration.
 	+ Deleting the DNS server entry dns-4 ( 77.88.99.11 )
 	info:    network dnsserver unregister command OK
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

@@ -43,8 +43,8 @@ Sie verwenden das Blatt **API-App** für die folgenden Aufgaben:
 - Konfigurieren der Aktualisierungsrichtlinie – Klicken Sie auf **Einstellungen > Anwendungseinstellungen**. Der Standardwert lautet **Ein**. Dies bedeutet, dass beim Veröffentlichen einer neuen Version der API-App im Marketplace Ihre API-App automatisch auf die neue Version aktualisiert wird, sofern sie keine Funktionsbeeinträchtigung (non-breaking) bedeutet.  
 - Konfigurieren der Authentifizierung für ausgehende Aufrufe aus der API-App – Klicken Sie auf **Einstellungen > Authentifizierung**. Wenn die API-App einen externen Dienst aufruft, der eine Authentifizierung erfordert, werden hier die erforderlichen Konfigurationswerte eingegeben. Ein Dropbox-Connector erfordert beispielsweise eine Client-ID und einen geheimen Clientschlüssel für den Zugriff auf den Dropbox-Dienst.
 - Konfigurieren von [RBAC](../role-based-access-control-configure.md) – Klicken Sie auf **Einstellungen > Benutzer**. Der hier konfigurierte Benutzerzugriff legt fest, wer auf die API-App-spezifischen Funktionen zugreifen kann. Verwenden Sie zum Konfigurieren von RBAC für die Web-App-Funktionen das Blatt **API-App-Host**. Normalerweise sollten die RBAC-Einstellungen für die API-App und den API-App-Host synchronisiert werden. Wenn Sie Zugriff auf die API-App erteilen, jedoch nicht auf den API-App-Host, können die Funktionen auf dem Blatt **API-App**, die tatsächlich den API-App-Host betreffen, nicht genutzt werden.
-- Anzeigen der API-Definition – Klicken Sie im Abschnitt **Zusammenfassung** auf **API-Definition**, um eine Liste der von der **API-App** verfügbar gemachten Methoden anzuzeigen.
-- [Installieren von Hybrid Connection Manager](](../app-service-logic/app-service-logic-hybrid-connection-manager.md). (Gilt für integrierte Connector-API-Apps.) Der Hybrid Connection Manager bietet Ihnen die Möglichkeit zur Verbindungsherstellung mit einem lokalen System, beispielsweise SQL Server oder SAP. Diese Hybridkonnektivität verwendet Azure Service Bus zur Verbindungsherstellung und zur Steuerung der Sicherheit zwischen Ihren Azure-Ressourcen und Ihren lokalen Ressourcen.
+- Anzeigen der API-Definition – Klicken Sie im Abschnitt **Zusammenfassung** auf **API-Definition**, um eine Liste der von der API-App verfügbar gemachten Methoden anzuzeigen.
+- [Installieren des Hybrid Connection Managers](../app-service-logic/app-service-logic-hybrid-connection-manager.md). Der Hybrid Connection Manager bietet Ihnen die Möglichkeit zur Verbindungsherstellung mit einem lokalen System, beispielsweise SQL Server oder SAP. Diese Hybridkonnektivität verwendet Azure Service Bus zur Verbindungsherstellung und zur Steuerung der Sicherheit zwischen Ihren Azure-Ressourcen und Ihren lokalen Ressourcen.
 
 ### Aufgaben, die sowohl auf dem Blatt "API-App" als auch auf dem Blatt "API-App-Host" ausgeführt werden können 
 
@@ -130,8 +130,8 @@ Um im Server-Explorer zu einer API-App zu wechseln, klicken Sie auf **Azure > Ap
 
 ## Nächste Schritte
 
-Dieser Artikel hat gezeigt, wie Sie das Azure-Portal zum Ausführen verschiedener Verwaltungsaufgaben für API-Apps verwenden.
+Dieser Artikel hat gezeigt, wie Sie das Azure-Portal zum Ausführen verschiedener Verwaltungsaufgaben für API-Apps verwenden. Informationen zu API-Apps, die Sie aus dem API-App-Katalog installieren, finden Sie auch unter [Verwalten und Überwachen integrierter API-Apps und Connectors](../app-service-logic/app-service-logic-monitor-your-connectors.md).
 
 Informationen zum Verwalten von API-Apps über die Befehlszeile finden Sie in den Artikeln im Abschnitt **Automatisieren**, die links neben dem Artikel (bei breiten Browserfenstern) oder oben über dem Artikel (bei schmalen Browserfenstern) angezeigt werden.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

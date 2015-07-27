@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/02/2015" 
+	ms.date="06/29/2015" 
 	ms.author="tomfitz"/>
 
 # Bereitstellen einer Web-App in einem GitHub-Repository
@@ -22,15 +22,37 @@ In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage erst
 
 Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
-Die vollständige Vorlage finden Sie unter [Web-App verknüpft mit GitHub-Vorlage](https://github.com/tfitzmac/AppServiceTemplates/blob/master/WebAppLinkedToGithub.json).
+Die vollständige Vorlage finden Sie unter [Web-App verknüpft mit GitHub-Vorlage](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-github-deploy/azuredeploy.json).
 
 ## Was Sie bereitstellen
 
 Mit dieser Vorlage stellen Sie eine Web-App mit dem Code aus einem Projekt in GitHub bereit.
 
+Klicken Sie auf folgende Schaltfläche, um die Bereitstellung automatisch auszuführen:
+
+[![Bereitstellen in Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-github-deploy%2Fazuredeploy.json)
+
 ## Parameter
 
 [AZURE.INCLUDE [app-service-web-deploy-web-parameters](../../includes/app-service-web-deploy-web-parameters.md)]
+
+### repoURL
+
+URL des GitHub-Repositorys, das das bereitzustellende Projekt enthält. Dieser Parameter enthält einen Standardwert, der aber nur den Zweck hat, Ihnen zu zeigen, wie Sie die URL für das Repository angeben. Sie können diesen Wert verwenden, wenn Sie die Vorlage testen. Sie müssen allerdings die URL Ihres eigenen Repositorys angeben, wenn Sie mit der Vorlage arbeiten.
+
+    "repoURL": {
+        "type": "string",
+        "defaultValue": "https://github.com/davidebbo-test/Mvc52Application.git"
+    }
+
+### Verzweigung
+
+Die beim Bereitstellen der Anwendung zu verwendende Verzweigung des Repositorys. Der Standardwert ist "master", doch Sie können den Namen einer beliebigen Verzweigung im Repository angeben, die Sie bereitstellen möchten.
+
+    "branch": {
+        "type": "string",
+        "defaultValue": "master"
+    }
     
 ## Bereitzustellende Ressourcen
 
@@ -77,13 +99,13 @@ Die Web-App verfügt auch über eine untergeordnete Ressource, die unter **Resso
 
 ### PowerShell
 
-    New-AzureResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/tfitzmac/AppServiceTemplates/master/WebAppLinkedToGithub.json -siteName ExampleSite -hostingPlanName ExamplePlan -siteLocation "West US" -ResourceGroupName ExampleDeployGroup
+    New-AzureResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-github-deploy/azuredeploy.json -siteName ExampleSite -hostingPlanName ExamplePlan -siteLocation "West US" -ResourceGroupName ExampleDeployGroup
 
 ### Azure-Befehlszeilenschnittstelle
 
-    azure group deployment create --template-uri https://raw.githubusercontent.com/tfitzmac/AppServiceTemplates/master/WebAppLinkedToGithub.json
+    azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-github-deploy/azuredeploy.json
 
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

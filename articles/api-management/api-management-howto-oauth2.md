@@ -160,4 +160,4 @@ Weitere Informationen zur Verwendung von OAuth 2.0 und API Management finden Si
 [Test the OAuth 2.0 user authorization in the Developer Portal]: #step3
 [Next steps]: #next-steps
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

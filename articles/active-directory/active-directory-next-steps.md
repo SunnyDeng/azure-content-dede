@@ -41,4 +41,4 @@ Die Azure AD-Geräteregistrierung versieht Geräte mit einer Identität, die ver
 * [Azure-Identität](fundamentals-identity.md)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

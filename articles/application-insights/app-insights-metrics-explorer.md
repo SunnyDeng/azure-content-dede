@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/17/2015" 
+	ms.date="07/14/2015" 
 	ms.author="awills"/>
  
 # Untersuchen von Metriken in Application Insights
@@ -29,18 +29,7 @@ Einige Diagramme sind unterteilt: die Gesamthöhe des Diagramms an einem beliebi
 
 Gepunktete Linien zeigen den Wert der Metrik eine Woche zuvor.
 
-## Punktwerte
 
-Bewegen Sie die Maus über dem Diagramm, um die Werte der Metriken zu diesem Zeitpunkt anzuzeigen.
-
-
-![Bewegen Sie den Mauszeiger über einem Diagramm](./media/app-insights-metrics-explorer/02-focus.png)
-
-Der Wert der Eigenschaft zu einem bestimmten Zeitpunkt wird über das vorherige Abtastintervall aggregiert. Dieses kann je nach Zeitbereich des gesamten Diagramms variieren.
-
-Das Abtastintervall wird oben auf dem Blatt angezeigt.
-
-![Die Kopfzeile eines Blatts.](./media/app-insights-metrics-explorer/11-grain.png)
 
 ## Zeitbereich
 
@@ -56,6 +45,23 @@ Bewegen Sie auf dem Blatt "Übersicht" die Maus über einem Teil des Diagramms, 
 
 ![Ziehen Sie die Maus über einen Teil eines Diagramms.](./media/app-insights-metrics-explorer/12-drag.png)
 
+## Abtastintervall und Punktwerte
+
+Bewegen Sie die Maus über dem Diagramm, um die Werte der Metriken zu diesem Zeitpunkt anzuzeigen.
+
+![Bewegen Sie den Mauszeiger über einem Diagramm](./media/app-insights-metrics-explorer/02-focus.png)
+
+Der Wert der Eigenschaft zu einem bestimmten Zeitpunkt wird über das vorherige Abtastintervall aggregiert.
+
+Das Abtastintervall wird oben auf dem Blatt angezeigt.
+
+![Die Kopfzeile eines Blatts.](./media/app-insights-metrics-explorer/11-grain.png)
+
+Sie können das Abtastintervall auf dem Blatt "Zeitbereich" anpassen:
+
+![Die Kopfzeile eines Blatts.](./media/app-insights-metrics-explorer/grain.png)
+
+Die verfügbaren Abtastintervalle hängen vom ausgewählten Zeitbereich ab. Die expliziten Abtastintervalle sind Alternativen für das "automatische" Abtastintervall für den Zeitbereich.
 
 ## Metrik-Explorer
 
@@ -190,4 +196,4 @@ Wenn Sie Daten zur externen Verarbeitung fortlaufend exportieren möchten, sollt
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

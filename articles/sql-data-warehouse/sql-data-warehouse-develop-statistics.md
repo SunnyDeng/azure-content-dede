@@ -152,7 +152,7 @@ Verwenden Sie zum Erstellen einer Mehrspaltenstatistik einfach die vorherigen Be
 
 > [AZURE.NOTE]Das Histogramm, das zum Schätzen der Zeilenanzahl im Abfrageergebnis verwendet wird, ist nur für die erste Spalte verfügbar, die in der Definition des Statistikobjekts aufgelistet ist.
 
-In diesem Beispiel basiert das Histogramm auf *product_category*. Spaltenübergreifende Statistiken werden für *product_category* und *product_sub_c\ategory* berechnet:
+In diesem Beispiel basiert das Histogramm auf *product_category*. Spaltenübergreifende Statistiken werden für *product_category* und *product_sub_c\\ategory* berechnet:
 
 ```
 CREATE STATISTICS stats_2cols ON table1 (product_category, product_sub_category) WHERE product_category > '2000101' AND product_category < '20001231' WITH SAMPLE = 50 PERCENT;
@@ -452,4 +452,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 [sys.table_types]: https://msdn.microsoft.com/library/bb510623.aspx
 [Aktualisieren von Statistiken]: https://msdn.microsoft.com/library/ms187348.aspx
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

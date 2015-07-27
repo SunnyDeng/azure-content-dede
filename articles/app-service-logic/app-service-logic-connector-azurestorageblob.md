@@ -13,89 +13,91 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="05/11/2015"
+   ms.date="06/30/2015"
    ms.author="rajram"/>
    
-#Azure Storage-Blobconnector
+# Azure Storage-Blobconnector
+Verbinden Sie sich mit Ihrem Azure Storage-Blobconnector, um Blobs in den Blobcontainer hochzuladen, diese daraus herunterladen und zu löschen. Connectors können als Teil eines "Workflows" in Logik-Apps verwendet werden.
 
-##Übersicht
-Mit dem Azure Storage-Blobconnector können Sie Blobs aus einem Blobcontainer hochladen, herunterladen und löschen.
+## Trigger und Aktionen
+*Trigger* sind Ereignisse, die stattfinden. Z. B. wenn ein Auftrag aktualisiert oder ein neuer Kunde hinzugefügt wird. Eine *Aktion* ist das Ergebnis des Triggers. Z. B. bei Aktualisierung eines Auftrags eine Warnung an den Verkäufer senden. Oder bei Hinzufügen eines neuen Kunden eine E-Mail zur Begrüßung an den neuen Kunden senden.
 
-##Erstellen eines neuen Azure Storage-Blobconnectors
-Um einen neuen Azure Storage-Connector zu erstellen, führen Sie die unten aufgeführten Schritte aus. <ul> <li>Starten Sie das Azure-Portal. <li>Öffnen Sie den Azure Marketplace über "+Neu" (unten auf der Seite) -> "Web + Mobil" -> "Azure Marketplace".</ul>
+Der Speicherblob-Connector kann als ein Trigger oder eine Aktion in einer Logik-App verwendet werden und unterstützt Daten im JSON- und XML-Format. Es gibt derzeit keine Trigger für den Speicherblob-Connector.
 
-![Starten von Azure Marketplace][1]<br> <ul> <li>Klicken Sie auf API-Apps. <li>Suchen Sie nach <i>Blob</i>, und wählen Sie "Azure Storage-Blobconnector" aus.</ul>
+Der Speicherblob-Connector verfügt über folgende Trigger und Aktionen:
 
-![Wählen des Azure Storage-Blobconnectors][2] <br> <ul> <li>Klicken Sie auf "Erstellen". <li>Geben Sie die folgenden Daten im daraufhin geöffneten Blatt zum Azure Storage-Blobconnector an. </ul>
-
-![Erstellen des Azure Storage-Blobconnectors][3]
-
-- **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten.
-- **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
-- **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
-- **Webhostingplan** – Wählen oder erstellen Sie einen Webhostingplan.
-- **Preisstufe** – Wählen Sie eine Preisstufe für den Connector.
-- **Name** – Geben Sie einen Namen für den Blobspeicherconnector ein.
-- **Paketeinstellungen** 
-	- **Container/SAS-URI** – Geben Sie den URI des Blobcontainers an. Der URI kann auch das SAS-Token umfassen. Beispiel: http://storageaccountname.blob.core.windows.net/containername oder http://storageaccountname.blob.core.windows.net/containername?sr=c&si=mypolicy&sig=signatureblah.
-	- **Zugriffsschlüssel** – Geben Sie einen gültigen primären/sekundären Zugriffsschlüssel für das Speicherkonto an. Lassen Sie dieses Feld leer, wenn Sie SAS-Token für die Authentifizierung verwenden.
-- Klicken Sie auf "Erstellen". Ein neuer Azure Storage-Blobconnector wird erstellt.
-
-##Verwenden von Azure Storage-Blobconnectors in Logik-App
-Sobald der Azure Storage-Blobconnector erstellt wurde, kann er vom Datenfluss genutzt werden.
-
-Erstellen Sie einen neuen Datenfluss über "+Neu" -> "Web + Mobil" -> "Logik-App". Stellen Sie die Metadaten für den Datenfluss samt Ressourcengruppe bereit.
-
-![Erstellen einer Logik-App][4]
-
-Klicken Sie auf *Trigger und Aktionen*. Der Datenfluss-Designer wird geöffnet.
-
-![Logik-App – Leerer Datenfluss-Designer][5]
-
-Der Azure Storage-Blobconnector kann als Aktion verwendet werden.
-
-###Aktionen
-Klicken Sie im rechten Bereich auf "Azure Storage-Blobconnector". Der Connector listet die unterstützten Aktionen auf.
-
-![Liste der Azure Storage-Blobaktionen][10]
-
-Der Azure Storage-Blob-Connector unterstützt sechs Aktionen. Dies sind:
-
-- **Blob abrufen** – Abrufen eines bestimmten Blobs aus dem Container.
-- **Blob hochladen** – Hochladen eines neuen Blobs oder Aktualisieren eines vorhandenen Blobs.
-- **Blob löschen** – Löschen eines bestimmten Blobs aus einem Container.
-- **Blobs auflisten** – Auflisten aller Blobs in einem Verzeichnis.
-- **Blobmomentaufnahme erstellen** – Erstellen einer schreibgeschützten Momentaufnahme eines bestimmten Blobs.
-- **Blob kopieren** – Erstellen eines neuen Blobs durch Kopieren von einem anderen Blob. Das Quellblob kann sich in demselben Konto oder in einem anderen Konto befinden.
-
-Nehmen wir ein Beispiel – Blob hochladen. Klicken Sie auf "Blob hochladen".
-
-![Eingaben der Aktion "Blob hochladen"][11]
+Trigger | Aktionen
+--- | ---
+Keine | <ul><li>Blob abrufen: Abrufen eines bestimmten Blobs aus dem Container</li><li>Blob hochladen: Hochladen eines neuen Blobs oder Aktualisieren eines vorhandenen Blobs</li><li>Blob löschen: Löschen eines bestimmten Blobs aus einem Container</li><li>Blobs auflisten: Auflisten aller Blobs in einem Verzeichnis</li><li>Momentaufnahme für Blob erstellen : Erstellen einer schreibgeschützten Momentaufnahme eines bestimmten Blobs</li><li>Blob kopieren: Erstellen eines neuen Blobs durch Kopieren eines anderen Blobs. Das Quellblob kann sich in demselben Konto oder in einem anderen Konto befinden.</li></ul>
 
 
-- **Blobpfad** – Gibt den Pfad des Blobs an, das hochgeladen werden soll. Der Pfad wird relativ zum konfigurierten Containerpfad interpretiert.
-- **Blobinhalt schreiben** – Geben Sie den Inhalt und die Eigenschaften des Blobs an, das hochgeladen werden soll.
-- **Codierung für die Inhaltsübertragung** – Geben Sie keine oder Base64 an.
-- **Überschreiben** – Ist diese Option auf "True" festgelegt, wird ein vorhandenes Blob überschrieben. Andernfalls wird ein Fehler zurückgegeben, wenn ein Blob im gleichen Pfad bereits vorhanden ist.
+## Erstellen des Azure Storage-Blobconnectors
 
-Stellen Sie die Eingaben bereit, und klicken Sie auf das Häkchen, um die Eingabekonfiguration abzuschließen.
+Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
 
+1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
+2. Wählen Sie **API-Apps** aus, und suchen Sie nach "Blob":<br/> ![Wählen des Azure Storage-Blobconnectors][2]
+
+3. **Erstellen** Sie den Connector.
+4. Geben Sie den Namen, die App Service-Plan und andere Eigenschaften ein.
+5. Geben Sie die folgenden Paketeinstellungen ein:
+
+	Name | Erforderlich | Beschreibung
+--- | --- | ---
+Container/SAS-URI | Ja | Geben Sie den URI des Blobcontainers ein. Der URI kann auch das SAS-Token umfassen. Geben Sie z. B. http://*storageaccountname*.blob.core.windows.net/containername oder http://*storageaccountname*.blob.core.windows.net/containername?sr=c&si=mypolicy&sig=signatureblah ein.
+Zugriffsschüssel | Nein | Geben Sie einen gültigen primären oder sekundären Zugriffsschlüssel für das Speicherkonto ein. Wenn Sie das SAS-Token für die Authentifizierung verwenden, lassen Sie dieses Feld leer.
+
+	![Erstellen des Azure Storage-Blobconnectors][3]
+
+6. Klicken Sie auf **Erstellen**.
+
+## Verwenden von Azure Storage-Blobconnectors in Logik-App
+Sobald der Azure Storage-Blobconnector erstellt wurde, kann er Ihrem Workflow hinzugefügt werden.
+
+1. Erstellen einer neuen Logik App: Neu -> Web + Mobil -> Logik-App. Geben Sie die Eigenschaften für Ihre Logik-App ein:
+
+	![Erstellen einer Logik-App][4]
+
+2. Klicken Sie auf **Trigger und Aktionen**. Der Workflow-Designer wird geöffnet:
+
+	![Logik-App – Leerer Datenfluss-Designer][5]
+
+3. Wählen Sie im rechten Bereich Ihren Azure Storage-Blobconnector aus. Für den Connector werden die verfügbaren Aktionen aufgeführt:
+
+	![Liste der Azure Storage-Blobaktionen][10]
+
+4. In diesem Szenario verwenden wir die Aktion **Blob hochladen**:
+
+	![Eingaben der Aktion "Blob hochladen"][11]
+
+5. Geben Sie die Eingabewerte ein, und klicken Sie auf das Häkchen, um die Konfiguration abzuschließen:
+
+	Eingabe | Beschreibung
+--- | ---
+Blobpfad | Legt den Pfad des hochzuladenden Blobs fest. Der Pfad wird relativ zum konfigurierten Containerpfad interpretiert.
+Schreibinhalt des Blobs | Geben Sie den Inhalt und die Eigenschaften des hochzuladenden Blobs ein.
+Codierung für die Inhaltsübertragung | Geben Sie "Keine" oder "Base64" ein.
+Überschreiben | Falls auf "True" festgelegt, wird das vorhandene Blob überschrieben. Falls auf "False" festgelegt, wird ein Fehler zurückgegeben, wenn im gleichen Pfad bereits ein Blob vorhanden ist.
 
 Beachten Sie, dass die konfigurierte Aktion zum Hochladen des Azure Storage-Blobs sowohl Eingabeparameter als auch Ausgabeparameter anzeigt.
 
-####Verwenden der Ausgaben früherer Aktionen als Eingabe für Azure Storage-Blobaktionen
-Beachten Sie, dass der Wert für den Inhalt im konfigurierten Screenshot auf einen Ausdruck festgelegt ist.
+#### Verwenden der Ausgaben früherer Aktionen als Eingabe für Azure Storage-Blobaktionen
+Im vorherigen Bildschirmfoto kann der Wert **Inhalt** ein Ausdruck sein:
 
 	@triggers().outputs.body.Content
 
-
-Sie können ihn auf einen beliebigen Wert festlegen. Dies ist nur ein Beispiel. Der Ausdruck nimmt die Ausgabe des Triggers der Logik-App und verwendet sie als Inhalt der Datei, die hochgeladen werden soll. So können Sie die Ausgabe einer vorherigen Aktion, beispielsweise einer Transformation, verwenden. In diesem Fall lautet der Ausdruck folgendermaßen:
+Sie können ihn auf einen beliebigen Wert festlegen. Der Ausdruck nimmt die Ausgabe des Triggers der Logik-App und verwendet sie als Inhalt der Datei, die hochgeladen werden soll. Sie möchten z. B. die Ausgabe einer Transformation verwenden. In diesem Szenario lautet der Ausdruck:
 
 	@actions('transformservice').outputs.body.OutputXML
 
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
 <!-- Image reference -->
-[1]: ./media/app-service-logic-connector-azurestorageblob/LaunchAzureMarketplace.PNG
 [2]: ./media/app-service-logic-connector-azurestorageblob/SelectAzureStorageBlobConnector.PNG
 [3]: ./media/app-service-logic-connector-azurestorageblob/CreateAzureStorageBlobConnector.PNG
 [4]: ./media/app-service-logic-connector-azurestorageblob/CreateLogicApp.PNG
@@ -108,4 +110,4 @@ Sie können ihn auf einen beliebigen Wert festlegen. Dies ist nur ein Beispiel. 
 [11]: ./media/app-service-logic-connector-azurestorageblob/BasicInputsUploadBlob.PNG
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

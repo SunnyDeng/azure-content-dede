@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/19/2015" 
+	ms.date="07/14/2015" 
 	ms.author="awills"/>
 
 # Erstellen einer neuen Application Insights-Ressource
@@ -41,7 +41,7 @@ Wenn Sie Zugang zu einem Abonnement besitzen, melden Sie sich über Ihre Live-ID
 
 Fügen Sie unter [portal.azure.com](https://portal.azure.com) eine neue Application Insights-Ressource hinzu:
 
-![Klicken Sie auf "Neu > Application Insights".](./media/app-insights-create-new-resource/01-new.png)
+![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-create-new-resource/01-new.png)
 
 
 * **Anwendungstyp** bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften. Wenn Ihr App-Typ nicht angezeigt wird, wählen Sie einen der Webtypen für Webseiten und einen der Telefontypen für andere Geräte aus.
@@ -55,20 +55,20 @@ Wenn Ihre App erstellt wurde, wird ein neues Blatt geöffnet. Dort werden die Le
 Um bei der nächsten Anmeldung bei Azure dorthin zurückzugelangen, suchen Sie im Startmenü (Startseite) nach der Schnellstart-Kachel für Ihre App. Klicken Sie alternativ dazu auf "Durchsuchen", um sie zu finden.
 
 
-## Kopieren Sie den Instrumentationsschlüssel.
+## Kopieren des Instrumentationsschlüssels
 
+Der Instrumentationsschlüssel identifiziert die Ressource, die Sie erstellt haben. Sie müssen ihn an das SDK übergeben.
 
-Sie benötigen diesen in Kürze, um die Daten aus dem SDK in Ihrer App an die soeben erstellte Ressource zu leiten.
+![Klicken Sie auf "Essentials", klicken Sie auf "Instrumentationsschlüssel", STRG+C](./media/app-insights-create-new-resource/02-props.png)
 
-![Klicken Sie auf "Eigenschaften", wählen Sie den Schlüssel aus, und drücken Sie STRG+C.](./media/app-insights-create-new-resource/02-props.png)
+## Installieren des SDK in Ihrer App
 
-## Konfigurieren Ihres SDK
+Installieren Sie das Application Insights-SDK in Ihrer App. Dieser Schritt hängt stark von der Art der Anwendung ab.
 
 Konfigurieren Sie das [SDK, das Sie in Ihrer Anwendung installieren][start] mithilfe des Instrumentationsschlüssels.
 
-Dieser Schritt hängt stark von der Art der Anwendung ab, mit der Sie arbeiten.
+Das SDK enthält die Standardmodule, die Telemetriedaten senden, ohne dass Sie Code schreiben müssen. Um Benutzeraktionen nachzuverfolgen oder Probleme im Detail zu diagnostizieren, [verwenden Sie die API][api] zum Senden eigener Telemetriedaten.
 
-In einigen Fällen installieren Sie Standardmodule, die Telemetrie senden, ohne dass Sie Code schreiben müssen. In jedem Fall können Sie [die API verwenden][api], um eigene Telemetriedaten zu senden.
 
 ## <a name="monitor"></a>Anzeigen von Telemetriedaten
 
@@ -92,4 +92,4 @@ Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resour
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

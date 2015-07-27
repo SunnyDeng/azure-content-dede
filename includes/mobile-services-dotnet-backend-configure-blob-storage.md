@@ -1,5 +1,5 @@
 
-##<a name="storage-client-server"></a>Installieren des Speicherclients im Projekt für den mobilen Dienst
+##Installieren des Speicherclients im Mobildienstprojekt
 
 Um eine SAS für das Hochladen von Bildern in den Blob-Speicher generieren zu können, müssen Sie zuerst das NuGet-Paket hinzufügen, das die Speicherclientbibliothek für Windows Store-Apps installiert.
 
@@ -11,7 +11,7 @@ Um eine SAS für das Hochladen von Bildern in den Blob-Speicher generieren zu k�
 
   	Die Clientbibliothek für Azure-Speicherdienste wird dem Projekt für den mobilen Dienst hinzugefügt.
 
-##<a name="update-data-model"></a>Aktualisieren der TodoItem-Definition im Datenmodell
+##Aktualisieren der TodoItem-Definition im Datenmodell
 
 Die TodoItem-Klasse definiert das Datenobjekt, und Sie müssen dieser Klasse dieselben Eigenschaften hinzufügen, die Sie dem Client hinzugefügt haben.
 
@@ -28,7 +28,7 @@ Die TodoItem-Klasse definiert das Datenobjekt, und Sie müssen dieser Klasse die
 
 	>[AZURE.NOTE]Bei Verwendung des Standard-Datenbankinitialisierers können Sie mit Entity Framework die Datenbank löschen und erneut erstellen, sobald es eine Datenmodelländerung in der Code First-Modelldefinition erkennt. Um eine Datenmodelländerung durchzuführen und bestehende Daten in der Datenbank beizubehalten, müssen Sie Code First-Migrationen verwenden. Der Standard-Initialisierer kann nicht für eine SQL-Datenbank in Azure angewendet werden. Weitere Informationen finden Sie unter [Verwenden von Code First-Migrationen zur Aktualisierung des Datenmodells](../articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations.md).
 
-##<a name="update-scripts"></a>Aktualisieren des TodoItem-Controllers zur Erzeugung einer Shared Access Signature 
+##Aktualisieren des TodoItem-Controllers zur Erzeugung einer freigegebenen Zugriffssignatur SAS 
 
 Die vorhandene **TodoItemController**-Klasse wird aktualisiert, sodass die **PostTodoItem**-Methode eine SAS generiert, wenn ein neues TodoItem-Element eingefügt wird. Außerdem gilt:
 
@@ -132,4 +132,4 @@ Als Nächstes aktualisieren Sie die Quickstart-App, um unter Verwendung der beim
 [So erstellen Sie ein Speicherkonto]: ../articles/storage/storage-create-storage-account.md
 [App-Einstellungen]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO3-->

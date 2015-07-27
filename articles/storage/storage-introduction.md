@@ -117,9 +117,7 @@ Ein Speicherkonto kann eine beliebige Anzahl von Warteschlangen enthalten. Eine 
 
 ## Dateispeicher (Vorschau)
 
-Viele ältere Anwendungen verwenden Dateifreigaben. Diese Abhängigkeit erschwert den Umzug dieser Anwendungen in die Cloud. Der Dateispeicher bietet cloudbasierte Dateifreigaben, mit denen Sie ältere Anwendungen schnell und ohne kostspielige Neuentwicklungen nach Azure umziehen können.
-
-Anwendungen in virtuellen Azure-Computern oder Cloud-Diensten können eine Dateispeicher-Freigabe einbinden, um auf Dateidaten zuzugreifen, ebenso wie eine Desktopanwendung eine typische SMB-Freigabe einbinden würde. Die Dateispeicher-Freigaben können von beliebig vielen Anwendungskomponenten gleichzeitig eingebunden und abgerufen werden.
+Der Azure-Dateispeicher bietet cloudbasierte SMB 2.1-Dateifreigaben, mit denen Sie ältere Anwendungen, die auf Dateifreigaben an Azure angewiesen sind, schnell und ohne kostspielige Neuentwicklungen umziehen können. Mit dem Azure-Dateispeicher können Anwendungen in virtuellen Azure-Computern oder Cloud-Diensten eine Dateifreigabe in der Cloud einbinden, ebenso wie eine Desktopanwendung eine typische SMB-Freigabe einbindet. Die Dateispeicher-Freigaben können dann von beliebig vielen Anwendungskomponenten gleichzeitig eingebunden und abgerufen werden.
 
 Da es sich bei Dateispeicher-Freigaben um gewöhnliche SMB 2.1-Freigaben handelt, können Anwendungen in Azure über die E/A-System-APIs auf die Freigaben zugreifen. Entwickler können daher ihren vorhandenen Code und bereits erlernte Fertigkeiten für die Migration vorhandener Anwendungen verwenden. IT-Fachkräfte können PowerShell-Cmdlets verwenden, um Dateispeicher-Freigaben im Rahmen der Administration von Azure-Anwendungen zu erstellen, einzubinden und zu verwalten.
 
@@ -226,4 +224,4 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 - [Verwenden des Warteschlangenspeichers mit Python](storage-python-how-to-use-queue-storage.md)
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

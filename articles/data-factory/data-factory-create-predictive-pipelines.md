@@ -159,10 +159,14 @@ Es wird empfohlen, dass Sie zunächst das Lernprogramm [Erste Schritte mit Azure
 		               "timeout":"02:00:00"
 		            }
 		         }
-		        ]
+		        ],
+
+				"start": "2015-02-13T00:00:00Z",
+        		"end": "2015-02-14T00:00:00Z"
 		    }
 		}
 
+	Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Zeit für **Ende** ist optional. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
 
 ## Webdienstparameter
 Sie können Webdienstparameter verwenden, die von einem veröffentlichten Azure Machine Learning-Webdienst in ADF-Pipelines (Azure Data Factory) verfügbar gemacht werden. Sie können ein Experiment in Azure Machine Learning erstellen, es als Webdienst veröffentlichen und dann diesen Webdienst in mehreren ADF-Pipelines oder -Aktivitäten verwenden, um über die Webdienstparameter unterschiedliche Eingaben zu übergeben.
@@ -182,7 +186,7 @@ Sie können auch [Data Factory-Funktionen ](https://msdn.microsoft.com/library/d
 
 	transformation: {
     	webServiceParameters: {
-    	   "Database query": "$$Text.Format('SELECT * FROM myTable WHERE timeColumn = '{0:yyyy-MM-dd HH:mm:ss}'', Time.AddHours(SliceStart, 0))"
+    	   "Database query": "$$Text.Format('SELECT * FROM myTable WHERE timeColumn = \'{0:yyyy-MM-dd HH:mm:ss}\'', Time.AddHours(SliceStart, 0))"
     	}
   	}
  
@@ -298,7 +302,7 @@ Im obigen JSON-Beispiel:
 - Die Parameter für den Writer (mit dem Suffix "1") werden nicht automatisch vom Data Factory-Dienst ausgefüllt. Daher müssen Sie Werte für diese Parameter im Abschnitt **webServiceParameters** im JSON-Code der Aktivität angeben.  
 - **Customer ID**, **scored labels** und **scored probabilities** werden als durch Trennzeichen getrennte Spalten gespeichert. 
 - Der **Name der Datentabelle** in diesem Beispiel entspricht einer Tabelle in der Ausgabedatenbank.
-- Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Angabe für **end** ist optional, wird aber in diesem Lernprogramm verwendet. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
+- Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Zeit für **Ende** ist optional. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
 
 
 
@@ -324,4 +328,4 @@ Artikel | Beschreibung
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

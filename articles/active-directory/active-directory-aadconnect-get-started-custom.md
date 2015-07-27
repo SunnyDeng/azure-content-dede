@@ -58,7 +58,7 @@ Geben Sie im Bildschirm "Mit Azure AD verbinden" ein Konto und ein Kennwort für
 <center>![Benutzeranmeldung](./media/active-directory-aadconnect-get-started-custom/connectaad.png) </center>
 
 ### Verzeichnisse verbinden
-Zum Verbinden mit Ihrem Active Directory-Domänendienst benötigt Connect von Azure AD die Anmeldeinformationen für ein Konto, das über ausreichende Berechtigungen verfügt. Dieses Konto kann ein normales Benutzerkonto sein, da nur die standardmäßigen Leseberechtigungen benötigt werden. Abhängig von Ihrem Szenario benötigen Sie jedoch möglicherweise zusätzliche Berechtigungen. Weitere Informationen finden Sie unter [Azure AD Connect-Kontozusammenfassung](active-directory-addconnect-account-summary).
+Zum Verbinden mit Ihrem Active Directory-Domänendienst benötigt Connect von Azure AD die Anmeldeinformationen für ein Konto, das über ausreichende Berechtigungen verfügt. Dieses Konto kann ein normales Benutzerkonto sein, da nur die standardmäßigen Leseberechtigungen benötigt werden. Abhängig von Ihrem Szenario benötigen Sie jedoch möglicherweise zusätzliche Berechtigungen. Weitere Informationen finden Sie unter [Azure AD Connect-Kontozusammenfassung](active-directory-aadconnect-account-summary.md).
 
 <center>![Benutzeranmeldung](./media/active-directory-aadconnect-get-started-custom/connectdir.png) </center>
 
@@ -125,6 +125,9 @@ Diese Attribute sind jetzt über Graph verfügbar:
 <center>![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/extension4.png) </center>
 
 ## Benutzerrückschreiben (Vorschau)
+
+> [AZURE.WARNING]Wenn derzeit DirSync oder Azure AD Sync aktiv sind, aktivieren Sie keine der Features zum Rückschreiben in Azure AD Connect.
+
 Benutzerrückschreiben ermöglicht es Ihnen, einen Benutzer in Azure AD auszuwählen (über das Portal, Graph, PowerShell oder eine beliebige andere Methode) und den Benutzer wieder in den lokalen AD DS zurückzuschreiben. Um das Feature zu aktivieren, wählen Sie auf der Seite "Optionale Features" die Option "Benutzerrückschreiben" aus. Daraufhin wird Ihnen der Speicherort angezeigt, an dem diese Benutzer erstellt werden sollen. Bei der Standardkonfiguration werden alle Benutzern am selben Speicherort in AD DS erstellt.
 
 <center>![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/writeback2.png) </center>
@@ -133,6 +136,9 @@ Die Benutzer werden mit einem zufälligen Kennwort erstellt. Daher müssen Sie d
 >[AZURE.NOTE]Die Kennwortsynchronisierung und das Rückschreiben von Kennwörtern sind nicht kompatibel mit diesem Vorschaufeature.
 
 ## Gruppenrückschreiben (Vorschau)
+
+> [AZURE.WARNING]Wenn derzeit DirSync oder Azure AD Sync aktiv sind, aktivieren Sie keine der Features zum Rückschreiben in Azure AD Connect.
+
 Mit der Option zum Gruppenrückschreiben, die unter den optionalen Features aufgeführt ist, können Sie Gruppen in Office 365 in eine Gesamtstruktur zurückschreiben, wenn Exchange installiert ist. Dies ist ein neuer Gruppentyp, der immer in der Cloud verwaltet wird. Dies finden Sie unter "outlook.office365.com" oder "myapps.microsoft.com", wie hier gezeigt:
 
 
@@ -152,7 +158,16 @@ Diese Gruppe wird als Verteilergruppe im lokalen AD DS dargestellt. Auf dem loka
 Weitere Informationen finden Sie [hier](http://blogs.office.com/2014/09/25/delivering-first-chapter-groups-office-365/).
 
 ## Geräterückschreiben (Vorschau)
-Mit dem Feature "Geräterückschreiben" können Sie ein in der Cloud registriertes Gerät, z. B. in Intune, in AD DS für bedingten Zugriff auswählen. Um das Feature zu aktivieren, muss AD DS vorbereitet sein. Wenn Sie AD FS und den Geräteregistrierungsdienst installieren, stellt der Geräteregistrierungsdienst PowerShell-Cmdlets bereit, um Active Directory für das Geräterückschreiben vorzubereiten. Wenn Sie keinen Geräteregistrierungsdienst installiert haben, können Sie "C:\Programme\Microsoft Azure Active Directory Connect\AdPrep\AdSyncAdPrep.psm1" als Unternehmensadministrator ausführen.
+
+> [AZURE.WARNING]Wenn derzeit DirSync oder Azure AD Sync aktiv ist, aktivieren Sie keine der Features zum Rückschreiben in Azure AD Connect.
+
+Mit dem Feature "Geräterückschreiben" können Sie ein in der Cloud registriertes Gerät, z. B. in Intune, in AD DS für bedingten Zugriff auswählen. Um das Feature zu aktivieren, muss AD DS vorbereitet sein. Wenn Sie AD FS und den Geräteregistrierungsdienst installieren, stellt der Geräteregistrierungsdienst PowerShell-Cmdlets bereit, um Active Directory für das Geräterückschreiben vorzubereiten. Wenn Sie keinen Geräteregistrierungsdienst installiert haben, können Sie "C:\\Programme\\Microsoft Azure Active Directory Connect\\AdPrep\\AdSyncAdPrep.psm1" als Unternehmensadministrator ausführen.
+
+Vor dem Ausführen des PowerShell-Cmdlets müssen Sie dieses zunächst importieren.
+
+	Import-Module 'C:\Program Files\Microsoft Azure Active Directory Connect\AdPrep\AdSyncPrep.psm1'
+
+Hierzu müssen Active Directory und MSOnline PowerShell lokal installiert sein.
 
 
 
@@ -258,4 +273,4 @@ Sie können die Abbildung und das Logo für Ihre AD FS-Anmeldeseiten anpassen, i
 * [Weitere Informationen](active-directory-aadconnect-learn-more.md)
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

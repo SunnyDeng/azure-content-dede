@@ -229,9 +229,9 @@ Eine NIC kann auch den folgenden Netzwerkressourcen zugeordnet werden:
 - Lastenausgleichsmodul
 
 ## Virtuelles Netzwerk und Subnetz
-Virtuelle Netzwerke (VNET) und Subnetze helfen, eine Sicherheitsbegrenzung für in Azure ausgeführte Workloads zu definieren. Ein VNET verfügt über einen Adressraum, der auch als CIDR-Block bezeichnet wird.
+Virtuelle Netzwerke (VNET) und Subnetze helfen, eine Sicherheitsbegrenzung für in Azure ausgeführte Arbeitsauslastungen zu definieren. Ein VNET verfügt über einen Adressraum, der auch als CIDR-Block bezeichnet wird.
 
-Ein Subnetz ist eine untergeordnete Ressource eines VNET und hilft, die Segmente von Adressräumen innerhalb eines CIDR-Blocks mithilfe von IP-Adressenpräfixen zu definieren. Virtuelle Computer, die mehrere Workloads ausführen, arbeiten grundsätzlich in einer Subnetzgrenze.
+Ein Subnetz ist eine untergeordnete Ressource eines VNET und hilft, die Segmente von Adressräumen innerhalb eines CIDR-Blocks mithilfe von IP-Adressenpräfixen zu definieren. Virtuelle Computer, die mehrere Arbeitsauslastungen ausführen, arbeiten grundsätzlich in einer Subnetzgrenze.
 
 ![NICs auf einem einzelnen virtuellen Computer](./media/resource-group-networking/Figure4.png)
 
@@ -275,7 +275,7 @@ Zu den Schlüsseleigenschaften einer öffentlichen IP-Ressource zählen:
 - **IP-Zuordnungsmethode** – reserviert oder dynamisch 
 
 ## Netzwerksicherheitsgruppen (NSG)
-Eine NSG-Ressource ermöglicht das Erstellen einer Sicherheitsbegrenzung für Workloads durch Implementieren von Zulassungs- und Ablehnungsregeln. Solche Regeln können auf NIC-Ebene (VM-Instanzebene) oder auf Subnetzebene (VM-Gruppe) angewendet werden.
+Eine NSG-Ressource ermöglicht das Erstellen einer Sicherheitsbegrenzung für Arbeitsauslastungen durch Implementieren von Zulassungs- und Ablehnungsregeln. Solche Regeln können auf NIC-Ebene (VM-Instanzebene) oder auf Subnetzebene (VM-Gruppe) angewendet werden.
 
 Zu den Schlüsseleigenschaften einer NSG-Ressource zählen:
 
@@ -296,11 +296,11 @@ Zu den Schlüsseleigenschaften einer Sicherheitsregel zählen:
 - **Richtung** – gibt an, ob die Regel für Datenverkehr in *eingehende* oder *ausgehende* Richtung angewendet wird. 
 
 ## VPN-Gateway 
-Eine VPN-Gateway-Ressource ermöglicht Ihnen, eine sichere Verbindung zwischen ihrem lokalen Datencenter und Azure zu erstellen. Eine VPN-Gateway-Ressource kann auf drei unterschiedliche Arten konfiguriert werden:
+Eine VPN-Gateway-Ressource ermöglicht Ihnen, eine sichere Verbindung zwischen ihrem lokalen Rechenzentrum und Azure zu erstellen. Eine VPN-Gateway-Ressource kann auf drei unterschiedliche Arten konfiguriert werden:
  
 - **Punkt-zu-Standort** – Mit einem VPN-Client von einem beliebigen Computer können Sie sicher auf Ihre in einem VNET gehosteten Azure-Ressourcen zugreifen. 
-- **Multisite-Verbindung** – Sie können von Ihren lokalen Datencentern eine sichere Verbindung zu Ressourcen aufbauen, die in einem VNET ausgeführt werden. 
-- **VNET-zu-VNET** – Sie können über Azure-VNETs hinweg (in der gleichen Region oder regionsübergreifend) eine sichere Verbindung aufbauen, um Workloads mit Georedundanz zu erstellen.
+- **Multisite-Verbindung** – Sie können von Ihren lokalen Rechenzentren eine sichere Verbindung zu Ressourcen aufbauen, die in einem VNET ausgeführt werden. 
+- **VNET-zu-VNET** – Sie können über Azure-VNETs hinweg (in der gleichen Region oder regionsübergreifend) eine sichere Verbindung aufbauen, um Arbeitsauslastungen mit Georedundanz zu erstellen.
 
 Zu den Schlüsseleigenschaften eines VPN-Gateway zählen:
  
@@ -308,7 +308,7 @@ Zu den Schlüsseleigenschaften eines VPN-Gateway zählen:
 - **Adresspool-Präfix des VPN-Client** – IP-Adressen, die den Clients mit Punkt-zu-Standort-Verbindung zuzuweisen sind.
 
 ## Traffic Manager-Profil
-Der Traffic Manager und seine untergeordnete Endpunkt-Ressource ermöglichen die Verteilung Ihres Datenverkehrs zu Endpunkten in und außerhalb von Azure. Eine solche Datenverkehrsverteilung wird durch Richtlinien bestimmt. Der Traffic Manager lässt auch eine Überwachung der Endpunkt-Integrität zu, sowie eine angemessene Umleitung des Datenverkehrs basierend auf der Integrität eines Endpunkts.
+Der Traffic Manager und seine untergeordnete Endpunkt-Ressource ermöglichen die Verteilung Ihres Datenverkehrs zu Endpunkten in und außerhalb von Azure. Eine solche Datenverkehrsverteilung wird durch Richtlinien bestimmt. Der Traffic Manager lässt auch eine Überwachung der Endpunkt-Integrität zu, sowie eine angemessene Umleitung des Datenverkehrs basierend auf der Integrität eines Endpunktes.
 
 Zu den Schlüsseleigenschaften eines Traffic Manager zählen:
 
@@ -322,16 +322,16 @@ Zu den Schlüsseleigenschaften eines Traffic Manager zählen:
 ## Endpunkt 
 Ein Endpunkt ist eine dem Traffic Manager-Profil untergeordnete Ressource. Er stellt einen Dienst- oder Webendpunkt dar, an den der Benutzerdatenverkehr anhand der in der Traffic Manager-Ressource konfigurierten Richtlinie verteilt wird.
 
-Zu den Schlüsseleigenschaften eines Endpunkts zählen:
+Zu den Schlüsseleigenschaften eines Endpunktes zählen:
  
 - **Typ** - der Typ des Endpunkts, mögliche Werte sind *Azure-Endpunkt*, *externer Endpunkt* und *geschachtelter Endpunkt*. 
-- **Zielressourcen-ID** – öffentliche IP-Adresse eines Dienst- oder Webendpunkts. Dabei kann es sich um einen Azure- oder externen Endpunkt handeln.
+- **Zielressourcen-ID** – öffentliche IP-Adresse eines Dienst- oder Webendpunktes. Dabei kann es sich um einen Azure- oder externen Endpunkt handeln.
 - **Gewichtung** - Endpunkt-Gewichtung, die für die Datenverkehrsverwaltung verwendet wird. 
-- **Priorität** – Priorität des Endpunkts, die zum Definieren einer Failover-Aktion verwendet wird. 
+- **Priorität** - Priorität des Endpunktes, die zum Definieren einer Failover-Aktion verwendet wird. 
 
 ## Verwenden einer Vorlage
 
-Sie können Dienste in Azure über eine Vorlage bereitstellen, indem Sie PowerShell oder AzureCLI verwenden oder indem Sie die Bereitstellung von GitHub über einen Klick ausführen. Führen Sie zum Bereitstellen von Diensten über eine Vorlage in GitHub die folgenden Schritte aus:
+Sie können Dienste in Azure über eine Vorlage bereitstellen, indem Sie PowerShell oder AzureCLI verwenden oder indem Sie die Bereitstellung von GitHub per Klick ausführen. Führen Sie zum Bereitstellen von Diensten über eine Vorlage in GitHub die folgenden Schritte aus:
 
 1. Öffnen Sie die Datei "template3" von GitHub. Öffnen Sie beispielsweise [Virtual network with two subnets](https://github.com/Azure/azure-quickstart-templates/tree/master/101-virtual-network).
 2. Klicken Sie auf **Deploy to Azure**, und melden Sie sich dann mit Ihren Anmeldeinformationen im Azure-Portal an.
@@ -363,4 +363,4 @@ Sie können Dienste in Azure über eine Vorlage bereitstellen, indem Sie PowerSh
 
 [Bereitstellungen von Vorlagen](https://msdn.microsoft.com/library/azure/dn790549.aspx)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -1,27 +1,19 @@
 <properties
-   pageTitle="Azure Backup – Häufig gestellte Fragen"
+   pageTitle="Häufig gestellte Fragen zu Azure Backup | Microsoft Azure"
    description="Häufig gestellte Fragen zum Azure Backup-Dienst"
    services="backup"
    documentationCenter=""
-   authors="prvijay"
+   authors="Jim-Parker"
    manager="shreeshd"
    editor=""/>
 
-<tags
-   ms.service="backup"
-   ms.workload="storage-backup-recovery"
-	 ms.tgt_pltfrm="na"
-	 ms.devlang="na"
-	 ms.topic="article"
-	 ms.date="03/26/2015"
-	 ms.author="prvijay"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="07/10/2015" ms.author="arunak"; "jimpark"; "aashishr"/>
 
 # Azure Backup – Häufig gestellte Fragen
-Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. Wenn Sie weiteren Fragen zu Azure Backup haben, wechseln Sie zum [Diskussionsforum](https://social.msdn.microsoft.com/forums/azure/de-de/home?forum=windowsazureonlinebackup) und stellen Sie Ihre Fragen. Ein Mitglied der Community hilft Ihnen dabei, Ihre Antworten zu erhalten. Wenn eine Frage häufiger gestellt wird, fügen wir sie diesem Artikel hinzu, damit sie schnell und einfach gefunden werden kann.
+Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. Weitere Fragen zu Azure Backup können im [Diskussionsforum](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup) gestellt werden. Ein Mitglied der Community hilft Ihnen dabei, Ihre Antworten zu erhalten. Wenn eine Frage häufiger gestellt wird, fügen wir sie diesem Artikel hinzu, damit sie schnell und einfach gefunden werden kann.
 
 ## Installation und Konfiguration
-
-**F1. Welche Betriebssysteme werden für die Sicherung in Azure mithilfe von Azure Backup unterstützt?** <br/> A1. Die folgenden Betriebssysteme werden von Azure Backup unterstützt.
+**F1. Welche Betriebssysteme werden für die Sicherung in Azure mithilfe von Azure Backup unterstützt?** <br/> A1. Folgende Betriebssysteme werden von Azure Backup unterstützt:
 
 
 | Betriebssystem | Plattform | SKU |
@@ -39,15 +31,15 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 
 **F2. Wo kann ich den neuesten Azure Backup-Agent herunterladen?** <br/> A2. Sie können den neuesten Agent [hier](http://aka.ms/azurebackup_agent) herunterladen. Er kann auf Windows Server, SCDPM-Server oder Windows-Client installiert werden.
 
-**F3. Welche SCDPM-Serverversion wird unterstützt?** <br/> A3. Es wird empfohlen, den [neuesten](http://aka.ms/azurebackup_agent) Azure Backup-Agent aus dem neuesten Updaterollup von SCDPM (UR5 im Februar 2015) zu installieren.
+**F3. Welche SCDPM-Serverversion wird unterstützt?** <br/> A3. Wir empfehlen, den [aktuellen](http://aka.ms/azurebackup_agent) Azure Backup-Agent aus dem aktuellen Updaterollup von SCDPM (UR6; Stand: Juli 2015) zu installieren.
 
 **F4. Beim Konfigurieren des Azure Backup-Agents werde ich aufgefordert, die "Tresoranmeldedaten" einzugeben. Gibt es ein Ablaufdatum für die Tresoranmeldedaten?** <br/> A4. Ja, die Tresoranmeldedaten laufen nach 48 Stunden ab. Wenn die Datei abläuft, melden Sie sich beim Azure-Portal an, und laden Sie die Dateien mit den Tresoranmeldedaten aus Ihrem Azure Backup-Tresor herunter.
 
-**F5. Gibt es eine Beschränkung hinsichtlich der Anzahl von Sicherungstresoren, die in einem Azure-Abonnement erstellt werden können?** <br/> A5. Ja. Sie können ab März 2015 pro Abonnement 25 Tresore erstellen. Erstellen Sie ein neues Abonnement, wenn Sie weitere Tresore benötigen.
+**F5. Gibt es eine Beschränkung hinsichtlich der Anzahl von Sicherungstresoren, die in einem Azure-Abonnement erstellt werden können?** <br/> A5. Ja. Sie können pro Abonnement 25 Tresore erstellen (Stand: Juli 2015). Erstellen Sie ein neues Abonnement, wenn Sie weitere Tresore benötigen.
 
-**F6. Sollte ich Tresore als Abrechnungseinheit betrachten?** <br/> A6. Auch wenn es möglich ist, eine detaillierte Rechnung für jeden Tresor zu erhalten, empfiehlt es sich unbedingt, ein Azure-Abonnement als Abrechnungseinheit zu verwenden. Es ist für alle Dienste konsistent und einfacher zu verwalten.
+**F6. Kann ich einen Tresor als Abrechnungseinheit betrachten?** <br/> A6. Zwar besteht die Möglichkeit, eine detaillierte Rechnung für jeden Tresor zu erhalten, es empfiehlt sich aber unbedingt, ein Azure-Abonnement als Abrechnungseinheit zu verwenden. Es ist für alle Dienste konsistent und einfacher zu verwalten.
 
-**F7. Gibt es Beschränkungen im Hinblick auf die Anzahl der Server/Computer, die für jeden Tresor registriert werden können?** <br/> A7. Ja, Sie können bis zu 50 Computer pro Tresor registrieren. Wenn Sie weitere Computer registrieren müssen, erstellen Sie einen neuen Tresor.
+**F7. Gibt es Beschränkungen im Hinblick auf die Anzahl von Servern/Computern, die pro Tresor registriert werden können?** <br/> A7. Ja, Sie können bis zu 50 Computer pro Tresor registrieren. Wenn Sie weitere Computer registrieren müssen, erstellen Sie einen neuen Tresor.
 
 **F8. Gibt es Beschränkungen für die Datenmenge, die von einem Windows-Server/-Client oder einem SCDPM-Server gesichert werden kann?** <br/> A8. Nein.
 
@@ -57,56 +49,48 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 
 **F11. Von welchen Laufwerkstypen kann ich Dateien und Ordner sichern?** <br/> A11. Die folgenden Laufwerke/Volumes können gesichert werden:
 
-+ Wechselmedien: Das Laufwerk muss als feststehendes Laufwerk gelten, um als Quelle für Sicherungselemente verwendet zu werden.
-
-+ Schreibgeschützte Volumes: Das Volume muss beschreibbar sein, damit der Volumeschattenkopie-Dienst funktioniert.
-
-+ Offlinevolumes: Das Volume muss online sein, damit der Volumeschattenkopie-Dienst funktioniert.
-
-+ Netzwerkfreigabe: Das Volume muss sich lokal auf dem Server befinden, um mit der Onlinesicherung gesichert zu werden.
+- Wechselmedien: Das Laufwerk muss als feststehendes Laufwerk gelten, um als Quelle für Sicherungselemente verwendet zu werden.
+- Schreibgeschützte Volumes: Das Volume muss beschreibbar sein, damit der Volumeschattenkopie-Dienst funktioniert.
+- Offlinevolumes: Das Volume muss online sein, damit der Volumeschattenkopie-Dienst funktioniert.
+- Netzwerkfreigabe: Das Volume muss sich lokal auf dem Server befinden, um mit der Onlinesicherung gesichert zu werden.
+- Mit BitLocker geschützte Volumes: Das Volume muss entsperrt werden, bevor die Sicherung durchgeführt werden kann.
+- Dateisystemidentifizierung: Für diese Version des Onlinesicherungsdiensts wird ausschließlich NTFS unterstützt.
 
 **F12. Welche Datei- und Ordnertypen können von meinem Server gesichert werden?**<br/> A12. Die folgenden Typen werden unterstützt:
 
-+ Verschlüsselt
-
-+ Komprimiert
-
-+ Mit geringer Dichte
-
-+ Komprimiert und geringe Dichte
-
-+ Feste Links: Nicht unterstützt, werden übersprungen
-
-+ Analysepunkt: Nicht unterstützt, wird übersprungen
-
-+ Verschlüsselt und komprimiert: Nicht unterstützt, wird übersprungen
-
-+ Verschlüsselt und geringe Dichte: Nicht unterstützt, wird übersprungen
-
-+ Komprimierter Stream: Nicht unterstützt, wird übersprungen
-
-+ Stream mit geringer Dichte: Nicht unterstützt, wird übersprungen
+- Verschlüsselt
+- Komprimiert
+- Mit geringer Dichte
+- Komprimiert und geringe Dichte
+- Feste Links: Nicht unterstützt, werden übersprungen
+- Analysepunkt: Nicht unterstützt, wird übersprungen
+- Verschlüsselt und komprimiert: Nicht unterstützt, wird übersprungen
+- Verschlüsselt und geringe Dichte: Nicht unterstützt, wird übersprungen
+- Komprimierter Stream: Nicht unterstützt, wird übersprungen
+- Stream mit geringer Dichte: Nicht unterstützt, wird übersprungen
 
 **F13. Welche Mindestgröße gilt für den Cacheordner?** <br/> A13. Die Größe des Cacheordners wird durch die Menge der Daten bestimmt, die Sie sichern möchten. Im Allgemeinen sollten Sie davon ausgehen, dass 10 bis 15 % des für die Datenspeicherung erforderlichen Speicherplatzes für den Cacheordner zugewiesen werden sollte.
 
-**F14. Wie können bestimmte Serverdaten von der Wiederherstellung von anderen Servern in meiner Organisation isoliert werden? **<br/> A14. Alle über denselben Tresor registrierten Server können die Daten wiederherstellen, die von anderen Servern mit derselben Passphrase gesichert wurden. Wenn Sie Server verwenden, deren Wiederherstellung nur auf bestimmten Servern in Ihrer Organisation erfolgen darf, sollten Sie eine separate Passphrase für diese Server festlegen. Server der Personalabteilung können z. B. eine Verschlüsselungspassphrase verwenden, die Server der Buchhaltung eine andere und Speicherserver eine dritte.
+**F14. Wie kann ich bestimmte Serverdaten isolieren, sodass sie nicht von anderen Servern in meiner Organisation wiederhergestellt werden?**<br/> A14. Alle über denselben Tresor registrierten Server können die Daten wiederherstellen, die von anderen Servern mit derselben Passphrase gesichert wurden. Wenn Sie Server verwenden, deren Wiederherstellung nur auf bestimmten Servern in Ihrer Organisation erfolgen darf, sollten Sie eine separate Passphrase für diese Server festlegen. So können Sie beispielsweise für die Server der Personalabteilung, für die Server der Buchhaltung und für die Speicherserver jeweils eine eigene Verschlüsselungspassphrase verwenden.
 
 **F15. Kann ich meine Sicherungsdaten zwischen den Abonnements "migrieren"?** <br/> A15: Nein
 
 **F16: Kann ich meinen Sicherungstresor zwischen den Abonnements "migrieren"?** <br/> A16: Nein. Der Tresor wird auf einer Abonnementstufe erstellt und kann nach seiner Erstellung keinem anderen Abonnement zugewiesen werden.
 
+**F17: Funktioniert der Azure Backup-Agent auf einem Server, der die Deduplizierung von Windows Server 2012 verwendet?** <br/> A17: Ja. Der Agent-Dienst konvertiert die deduplizierten Daten bei der Vorbereitung des Sicherungsvorgangs in normale Daten. Anschließend optimiert er die Daten für die Sicherung, verschlüsselt sie und sendet die verschlüsselten Daten an den Onlinesicherungsdienst.
+
+**F18: Werden die Sicherungsdaten gelöscht, wenn ich eine bereits gestartete Sicherung abbreche?** <br/> A18: Nein. Der Sicherungstresor speichert die übertragenen Sicherungsdaten, die bis zum Zeitpunkt des Abbruchs übertragen wurden. Azure Backup verwendet einen Prüfpunktmechanismus: Während der Sicherung werden immer wieder Prüfpunkte erstellt, und die Integrität der Dateien kann vom nächsten Sicherungsprozess geprüft werden. Die nächste ausgelöste Sicherung ist eine inkrementelle Sicherung, die auf dem vorherigen Sicherungsvorgang aufbaut. Dies sorgt für eine bessere Nutzung der Bandbreite, da nicht wiederholt die gleichen Daten übertragen werden müssen.
+
+**F19: Warum wird eine Warnung mit dem Hinweis angezeigt, dass für diesen Server keine Azure-Sicherungen konfiguriert wurden, obwohl ich zuvor regelmäßige Sicherungen geplant habe?** <br/> A19: Dieses Problem kann auftreten, wenn die auf dem lokalen Server gespeicherten Sicherungszeitplaneinstellungen nicht den Einstellungen im Sicherungstresor entsprechen. Wenn für den Server oder die Einstellungen ein als funktionierend bekannter Zustand wiederhergestellt wurde, ist unter Umständen die Synchronisierung der Sicherungszeitpläne verloren gegangen. Konfigurieren Sie in diesem Fall die Sicherungsrichtlinie neu, und verwenden Sie dann **Sicherung jetzt ausführen**, um den lokalen Server wieder mit Azure zu synchronisieren.
+
 ## Sicherung und Aufbewahrung
-**F1. Gibt es eine Größenbeschränkung für die einzelnen Datenquellen, die gesichert werden?** <br/> A1. Ab März 2015 darf jede Datenquelle höchstens 1,7 TB groß sein. Zu den Datenquellen zählen:
+**F1. Gibt es eine Größenbeschränkung für die einzelnen Datenquellen, die gesichert werden?** <br/> A1. Jede Datenquelle darf höchstens 1,7 TB groß sein (Stand: Juli 2015). Zu den Datenquellen zählen:
 
-+ Datei-/Ordnervolume
-
-+ SQL-Datenbank
-
-+ SharePoint-Farm
-
-+ Exchange-Server
-
-+ Hyper-V-VM
+- Datei-/Ordnervolume
+- SQL-Datenbank
+- SharePoint-Farm
+- Exchange-Server
+- Hyper-V-VM
 
 **F2. Gibt es einen Grenzwert für die Häufigkeit der geplanten Sicherungen pro Tag?**<br/> A2. Ja. Azure Backup ermöglicht drei Sicherungskopien pro Tag über Windows Server/Client und zwei Sicherungskopien pro Tag über SCDPM.
 
@@ -116,9 +100,9 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 
 **F5. Kann ich meine Aufbewahrungsrichtlinien selektiv konfigurieren – d. h. wöchentlich und täglich, jedoch nicht jährlich und monatlich?**<br/> A5. Ihnen steht die vollständige Optionsauswahl zur Verfügung, um Richtlinien zu erstellen, die Ihre Compliance-/Aufbewahrungsanforderungen optimal definieren.
 
-**F6. Kann ich eine Sicherung um 18:00 Uhr planen und Aufbewahrungsrichtlinien für einen anderen Zeitpunkt festlegen?**<br/> A6. Nein. Aufbewahrungsrichtlinien können nur bei den Sicherungpunkten angewendet werden. In der folgenden Abbildung wird die Aufbewahrungsrichtlinie für Sicherungen festgelegt, die um 12:00 Uhr und um 18:00 Uhr erfolgen. <br/>
+**F6. Kann ich eine Sicherung um 18:00 Uhr planen und Aufbewahrungsrichtlinien für einen anderen Zeitpunkt festlegen?**<br/> A6. Nein. Aufbewahrungsrichtlinien können nur bei den Sicherungspunkten angewendet werden. In der folgenden Abbildung wird die Aufbewahrungsrichtlinie für Sicherungen festgelegt, die um 12:00 Uhr und um 18:00 Uhr erfolgen. <br/>
 
-![Planen von Sicherung und Aufbewahrung][1] <br/>
+![Planen von Sicherung und Aufbewahrung](./media/backup-azure-backup-faq/Schedule.png) <br/>
 
 **F7. Wird für die geplanten Aufbewahrungsrichtlinien eine inkrementelle Kopie übertragen?** <br/> A7. Nein, die inkrementelle Kopie wird dem Zeitpunkt entsprechend gesendet, der auf der Seite für den Sicherungszeitplan angegeben ist. Die Punkte, die aufbewahrt werden können, werden gemäß der Aufbewahrungsrichtlinie ermittelt.
 
@@ -128,13 +112,13 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 
 **F10. Gibt es eine Beschränkung für die Anzahl der Wiederherstellungspunkte, die erstellt werden können?**<br/> A10. Ab April 2015 können Sie bis zu 366 Wiederherstellungspunkte verwenden. Sie können eine beliebige Kombination einsetzen, um eine Anzahl von weniger als 366 zu erzielen. Die Aufbewahrungspunkte in der unten gezeigten Abbildung ergeben in der Summe beispielsweise 354. <br/>
 
-![Bildschirm für die Aufbewahrung][2]
+![Bildschirm für die Aufbewahrung](./media/backup-azure-backup-faq/RetentionScreen1.png)
 
-**F11. Sobald Microsoft den Grenzwert von 366 erhöht, muss ich ein Upgrade des Agents durchführen oder die erste Sicherung durch Seeding erneut einrichten?** <br/> A11. Nein. Sobald wir unseren Dienst ändern, werden Sie über unsere sozialen Medien (Blogs, Azure-Ankündigungen, Portal usw.) benachrichtigt. Basierend auf Ihren Anforderungen müssen Sie nur die Aufbewahrungsrichtlinie ändern.
+**F11. Muss ich ein Upgrade des Agents durchführen oder die erste Sicherung durch Seeding erneut einrichten, wenn Microsoft den Grenzwert von 366 erhöht?** <br/> A11. Nein. Sobald wir unseren Dienst ändern, werden Sie über unsere sozialen Medien (Blogs, Azure-Ankündigungen, Portal usw.) benachrichtigt. Basierend auf Ihren Anforderungen müssen Sie nur die Aufbewahrungsrichtlinie ändern.
 
 **F12. Warum entspricht die Menge der in der Sicherung übertragenen Daten nicht der Menge der gesicherten Daten?**<br/> A12. Alle Daten, die gesichert werden, werden vor der Übertragung komprimiert und verschlüsselt. Je nach Typ der zu sichernden Daten können Sie mit einem Komprimierungsvorteil von 30 bis 40 % rechnen.
 
-## Wiederherstellungen
+## Wiederherstellen
 **F1. Wie viele Wiederherstellungen kann ich für die Daten ausführen, die auf Azure gesichert werden?**<br/> A1. Es gibt keine Beschränkung für die Anzahl der Wiederherstellungen aus Azure Backup.
 
 **F2. Muss ich bei Wiederherstellungen für ausgehenden Datenverkehr aus dem Azure-Datencenter bezahlen?**<br/> A2. Nein. Ihre Wiederherstellungen sind kostenlos, und der ausgehende Datenverkehr wird nicht in Rechnung gestellt.
@@ -148,10 +132,4 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 
 **F4. Was geschieht, wenn ich den Schlüssel verlege? Kann ich die Daten wiederherstellen, oder kann Microsoft die Daten wiederherstellen?** <br/> A4. Der Schlüssel zum Verschlüsseln der Sicherungsdaten ist nur am Standort des Kunden vorhanden. Microsoft behält keine Kopie in Azure und hat keinen Zugriff auf den Schlüssel. Wenn der Kunde den Schlüssel verlegt, kann Microsoft die gesicherten Daten nicht wiederherstellen.
 
-
-<!--Image references-->
-[1]: ./media/backup-azure-backup-faq/Schedule.png
-[2]: ./media/backup-azure-backup-faq/RetentionScreen1.png
- 
-
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

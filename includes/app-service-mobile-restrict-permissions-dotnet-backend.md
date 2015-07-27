@@ -28,4 +28,4 @@ Standardmäßig sind sämtliche Anfragen an die Ressourcen von App Service-Mobil
 
 6. Veröffentlichen Sie Ihr Mobile App-Projekt erneut.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="04/24/2015" 
+	ms.date="07/01/2015" 
 	ms.author="jeffstok"/>
 
 #Herstellen von Verbindungen mit Ein- und Ausgaben
@@ -90,8 +90,7 @@ Es gibt einige Parameter für Event Hub-Datenströme, die Kunden konfigurieren m
 3. Event Hub-Richtlinienname: Der Name der Richtlinie für den gemeinsamen Zugriff auf den Event Hub. Die Richtlinie für den gemeinsamen Zugriff auf einen Event Hub wird auf der Registerkarte "Konfigurieren" eingerichtet. Jede Richtlinie für den gemeinsamen Zugriff umfasst einen Namen, die von Ihnen festgelegten Berechtigungen und Zugriffsschlüssel.
 4. Event Hub-Richtlinienschlüssel: Der primäre oder sekundäre Schlüssel der Richtlinie für den gemeinsamen Zugriff auf den Event Hub.  
 5. Event Hub-Verbrauchergruppe: Optionaler Parameter für Event Hub-Eingaben. Die Verbrauchergruppe für das Erfassen von Daten aus den Event Hub. Wenn nichts angegeben wird, verwenden Stream Analytics-Aufträge die Standardverbrauchergruppe, um Daten vom Event Hub zu erfassen. Es wird die Verwendung einer speziellen Verbrauchergruppe für jeden Stream Analytics-Auftrag empfohlen.
-
-Partitionsschlüsselspalte: Optionaler Parameter für die Event Hub-Ausgabe. Die Datenattributspalte wird als Partitionsschlüssel für die Event Hub-Ausgabe verwendet.
+6. Partitionsschlüsselspalte: Optionaler Parameter für die Event Hub-Ausgabe. Die Datenattributspalte wird als Partitionsschlüssel für die Event Hub-Ausgabe verwendet. 
 
 ##Verwenden von Azure-Tabellenausgaben
 
@@ -126,8 +125,7 @@ Wählen Sie als Ausgabe "Tabellenspeicher" aus.
 Geben Sie auf der nächsten Seite die Informationen zur Azure-Tabelle ein. Der Ausgabealias ist der Name, den Sie in Ihrer Abfrage zum Weiterleiten der Abfrageausgabe an diese Tabelle verwenden können.
 
 
-![Grafik14][graphic14]
-![Grafik15][graphic15]
+![Grafik14][graphic14] ![Grafik15][graphic15]
 
 Die Batchgröße ist die Anzahl der Datensätze für einen Batchvorgang. Behalten Sie den Standardwert bei, wenn Sie nicht damit vertraut sind. Weitere Informationen finden Sie unter [https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx).
 
@@ -151,7 +149,7 @@ In diesem Beispiel waren die bereitgestellten Anmeldeinformationen nicht korrekt
 ![Grafik19][graphic19]
 
 ## Hier erhalten Sie Hilfe
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-de/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
 
@@ -185,4 +183,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic19]: ./media/stream-analytics-connect-data-event-input-output/19-stream-analytics-connect-data-event-input-output.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/15/2015" 
+	ms.date="07/08/2015" 
 	ms.author="tamram"/>
 
 # Konfigurieren von Azure Storage-Verbindungszeichenfolgen
@@ -41,15 +41,7 @@ Das Speichern der Verbindungszeichenfolge in der Konfigurationsdatei erleichtert
 
 ## Erstellen einer Verbindungszeichenfolge mit dem Speicheremulator
 
-Das Speicheremulatorkonto ist ein lokales Konto mit einem bekannten Namen und Schlüssel. Sie können ein verkürztes Zeichenfolgenformat verwenden – `UseDevelopmentStorage=true`, um in einer Verbindungszeichenfolge auf den Speicheremulator zu verweisen. Eine Verbindungszeichenfolge, die auf den Speicheremulator in einer App.config-Datei verweist, kann beispielsweise wie folgt aussehen:
-
-    <appSettings>
-      <add key="StorageConnectionString" value="UseDevelopmentStorage=true" />
-    </appSettings>
-
-Sie können auch einen HTTP-Proxy angeben, der beim Testen des Dienstes anhand des Speicheremulators verwendet werden soll. Dies kann zum Beobachten von HTTP-Anforderungen und -Antworten nützlich sein, während Sie Vorgänge anhand der Speicherdienste debuggen. Fügen Sie der Verbindungszeichenfolge die Option `DevelopmentStorageProxyUri` hinzu, um einen Proxy anzugeben, und legen Sie ihren Wert auf den Proxy-URI fest. Hier sehen Sie beispielsweise eine Verbindungszeichenfolge, die auf den Speicheremulator verweist und einen HTTP-Proxy konfiguriert:
-
-    UseDevelopmentStorage=true;DevelopmentStorageProxyUri=http://myProxyUri
+[AZURE.INCLUDE [storage-emulator-connection-string-include](../../includes/storage-emulator-connection-string-include.md)]
 
 Unter [Einsatz des Azure-Speicheremulators für Entwicklung und Tests](storage-use-emulator.md) finden Sie weitere Informationen zum Speicheremulator.
 
@@ -60,9 +52,10 @@ Um eine Verbindungszeichenfolge für Ihr Azure-Speicherkonto zu erstellen, verwe
     DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey
 
 Ihre Verbindungszeichenfolge sollte der folgenden Beispiel-Verbindungszeichenfolge ähneln:
-
-```        DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=KWPLd0rpW2T0U7K2pVpF8rYr1BgYtB7wYQw33AYiXeUoquiaY6o0TWqduxmPHlqeCNZ3LU0DHptbeIAy5l/Yhg==
-```
+ 
+	DefaultEndpointsProtocol=https;
+	AccountName=storagesample;
+	AccountKey=<account-key>
 
 > [AZURE.NOTE]Azure Storage unterstützt sowohl HTTP als auch HTTPS. Die Verwendung von HTTPS wird jedoch ausdrücklich empfohlen.
     
@@ -75,9 +68,12 @@ Sie können die Dienstendpunkte in Ihrer Verbindungszeichenfolge explizit angebe
 
 Um eine Verbindungszeichenfolge zu erstellen, die einen expliziten Blob-Endpunkt festlegt, geben Sie für jeden Dienst den vollständigen Dienstendpunkt einschließlich Protokollspezifikation (HTTP oder HTTPS) im folgenden Format an:
 
-``` 
-BlobEndpoint=myBlobEndpoint;QueueEndpoint=myQueueEndpoint;TableEndpoint=myTableEndpoint;FileEndpoint=myFileEndpoint;[credentials]
-```
+	BlobEndpoint=myBlobEndpoint;
+	QueueEndpoint=myQueueEndpoint;
+	TableEndpoint=myTableEndpoint;
+	FileEndpoint=myFileEndpoint;
+	[credentials]
+
 
 Sie müssen mindestens einen, jedoch nicht unbedingt alle Dienstendpunkte angeben. Wenn Sie beispielsweise eine Verbindungszeichenfolge zur Verwendung mit einem benutzerdefinierten BLOB-Endpunkt erstellen, ist die Angabe der Endpunkte für Warteschlange und Tabelle optional. Wenn Sie die Endpunkte für Warteschlange und Tabelle in der Verbindungszeichenfolge auslassen, beachten Sie, dass Sie anhand dieser Verbindungszeichenfolge nicht von Ihrem Code aus auf die Warteschlangen- und Tabellendienste zugreifen können.
 
@@ -92,9 +88,11 @@ Wenn Sie einen benutzerdefinierten Domänennamen für die Verwendung mit dem Blo
 
 Eine Verbindungszeichenfolge für einen Blob-Endpunkt für eine benutzerdefinierte Domäne lautet ungefähr wie folgt:
 
-```
-DefaultEndpointsProtocol=https;BlobEndpoint=www.mydomain.com;AccountName=storagesample;AccountKey=KWPLd0rpW2T0U7K2pVpF8rYr1BgYtB7wYQw33AYiXeUoquiaY6o0TWqduxmPHlqeCNZ3LU0DHptbeIAy5l/Yhg== 
-```
+	DefaultEndpointsProtocol=https;
+	BlobEndpoint=www.mydomain.com;
+	AccountName=storagesample;
+	AccountKey=<account-key> 
+
 
 ### Angeben eines Blob-Endpunkts mit einer SAS (Shared Access Signature) 
 
@@ -116,8 +114,12 @@ Zum Erstellen einer Verbindungszeichenfolge für den Speicherdienst in Regionen 
 
 Ihre Verbindungszeichenfolge sollte der folgenden Beispiel-Verbindungszeichenfolge ähneln:
 
-	DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=KWPLd0rpW2T0U7K2pVpF8rYr1BgYtR7wYQk33AYiXeUoquiaY6o0TWqduxmPHlqeCNZ3LU0DHptbeIHy5l/Yhg==;EndpointSuffix=core.chinacloudapi.cn;
+	DefaultEndpointsProtocol=https;
+	AccountName=storagesample;
+	AccountKey=<account-key>;
+	EndpointSuffix=core.chinacloudapi.cn;
+
 
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

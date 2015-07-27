@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure"
-	description="Erfahren Sie, wie eine komplexe Anwendung in Azure als eine Einheit und in vorhersagbarer Weise mithilfe von JSON-Ressourcengruppenvorlagen und PowerShell-Skripts bereitgestellt wird."
+	pageTitle="Vorhersagbares Bereitstellen von Microservices in Azure"
+	description="Erfahren Sie, wie Sie eine aus Microservices bestehende Anwendung in Azure App Service als eine Einheit und in vorhersagbarer Weise mithilfe von JSON-Ressourcengruppenvorlagen und PowerShell-Skripts bereitstellen."
 	services="app-service\web"
 	documentationCenter=""
 	authors="cephalin"
@@ -13,21 +13,21 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/29/2015"
+	ms.date="07/08/2015"
 	ms.author="cephalin"/>
 
 
-# Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure #
+# Vorhersagbares Bereitstellen von Microservices in Azure #
 
-Dieses Lernprogramm zeigt, wie eine komplexe Anwendung in Azure als eine Einheit und in vorhersagbarer Weise mithilfe von JSON-Ressourcengruppenvorlagen und PowerShell-Skripts bereitgestellt wird.
+Dieses Tutorial zeigt, wie eine aus [Microservices](https://en.wikipedia.org/wiki/Microservices) bestehende Anwendung in [Azure App Service](/services/app-service/) als eine Einheit und in vorhersagbarer Weise mithilfe von JSON-Ressourcengruppenvorlagen und PowerShell-Skripts bereitgestellt wird.
 
-In DevOps sind Wiederholbarkeit und Vorhersagbarkeit der Schlüssel für eine erfolgreiche Bereitstellung komplexer, hochgradig skalierbarer Anwendungen. [Azure App Service](/services/app-service/) ermöglicht es Ihnen, komplexe Anwendungen zu erstellen, beispielsweise Web-Apps, mobile Apps, API- und Logik-Apps. Mit dem [Azure-Ressourcen-Manager](../resource-group-overview.md) können Sie alle Komponenten einer solchen Anwendung als eine Einheit verwalten. Jetzt können Sie auch solche komplexen Anwendungen mit JSON-Vorlagen und einfachen PowerShell-Skripts bereitstellen.
+Beim Bereitstellen umfassender Anwendungen, die aus stark entkoppelten Microservices bestehen, sind Wiederholbarkeit und Vorhersagbarkeit von entscheidender Bedeutung für den Erfolg. [Azure App Service](/services/app-service/) ermöglicht Ihnen, Microservices zu erstellen, die Web-, mobile, API- und Logik-Apps enthalten. Mit dem [Azure-Ressourcen-Manager](../resource-group-overview.md) können Sie alle Microservices zusammen mit Ressourcenabhängigkeiten, wie z. B. Datenbank- und Quellcodeverwaltungseinstellungen, als Einheit verwalten. Jetzt können Sie auch eine solche Anwendung mit JSON-Vorlagen und einfachen PowerShell-Skripts bereitstellen.
 
 ## Aufgaben ##
 
 In diesem Lernprogramm werden Sie eine Anwendung bereitstellen, die Folgendes enthält:
 
--	Zwei Web-Apps
+-	Zwei Web-Apps (d. h. zwei Microservices)
 -	Eine Back-End-SQL-Datenbank
 -	App-Einstellungen, Verbindungszeichenfolgen und Quellcodeverwaltung
 -	Application Insights, Warnungen und Einstellungen für die automatische Skalierung
@@ -90,7 +90,7 @@ Lassen Sie uns jetzt beginnen.
 
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-4-portalresourcegroupclicked.png)
  
-Alles, was Sie gerade in wenigen Minuten gesehen haben, ist eine vollständig bereitgestellte komplexe Anwendung, bei der alle Komponenten, Abhängigkeiten, Einstellungen, die Datenbank und die kontinuierliche Veröffentlichung von einer automatisierten Orchestrierung im Azure-Ressourcen-Manager eingerichtet wurden. All dies wurde mit zwei Dingen erreicht:
+Alles, was Sie gerade in wenigen Minuten gesehen haben, ist eine vollständig bereitgestellte komplexe Anwendung mit zwei Microservices, bei der alle Komponenten, Abhängigkeiten, Einstellungen, die Datenbank und die kontinuierliche Veröffentlichung von einer automatisierten Orchestrierung im Azure-Ressourcen-Manager eingerichtet wurden. All dies wurde mit zwei Dingen erreicht:
 
 -	Der Schaltfläche zum Bereitstellen in Azure
 -	azuredeploy.json im Stammverzeichnis des Repositorys
@@ -274,7 +274,7 @@ Mit den Schritten in diesem Abschnitt haben Sie im Wesentlichen Folgendes erreic
 2.	Eine Parameterdatei für die Vorlagendatei erstellt
 3.	Die Vorlagendatei mit der Parameterdatei bereitgestellt
 
-Der letzte Schritt kann mühelos durch ein PowerShell-Cmdlet erledigt werden. Um zu sehen, was in Visual Studio bei der Bereitstellung der Anwendung ausgeführt wurde, öffnen Sie "Scripts\Deploy AzureResourceGroup.ps1". Es ist viel Code vorhanden, ich werde aber nur den relevanten Code markieren, den Sie benötigen, um die Vorlagendatei mit der Parameterdatei bereitzustellen.
+Der letzte Schritt kann mühelos durch ein PowerShell-Cmdlet erledigt werden. Um zu sehen, was in Visual Studio bei der Bereitstellung der Anwendung ausgeführt wurde, öffnen Sie "Scripts\\Deploy AzureResourceGroup.ps1". Es ist viel Code vorhanden, ich werde aber nur den relevanten Code markieren, den Sie benötigen, um die Vorlagendatei mit der Parameterdatei bereitzustellen.
 
 ![](./media/app-service-deploy-complex-application-predictably/deploy-12-powershellsnippet.png)
 
@@ -282,7 +282,11 @@ Das letzte Cmdlet, `New-AzureResourceGroup`, führt die Aktion aus. All dies sol
 
 ## Zusammenfassung ##
 
-In DevOps sind Wiederholbarkeit und Vorhersagbarkeit der Schlüssel für eine erfolgreiche Bereitstellung komplexer, hochgradig skalierbarer Anwendungen. In diesem Lernprogramm haben Sie eine Anwendung in Azure als einzelne Ressourcengruppe mithilfe der Azure-Ressourcen-Manager-Vorlage bereitgestellt. Sie sollten jetzt damit beginnen können, Ihre komplexe Anwendung in Azure in eine Vorlage zu konvertieren und sie vorhersagbar in Azure bereitzustellen.
+In DevOps sind Wiederholbarkeit und Vorhersagbarkeit der Schlüssel für eine erfolgreiche Bereitstellung komplexer aus Microservices bestehender Anwendungen. In diesem Tutorial haben Sie eine als zwei Microservices bestehende Anwendung in Azure als einzelne Ressourcengruppe mithilfe der Azure-Ressourcen-Manager-Vorlage bereitgestellt. Sie sollten jetzt damit beginnen können, Ihre Anwendung in Azure in eine Vorlage zu konvertieren und sie vorhersagbar in Azure bereitzustellen.
+
+## Nächste Schritte ##
+
+Erfahren Sie, wie Sie [agile Methoden umsetzen und Ihre aus Microservices bestehende Anwendung problemlos kontinuierlich veröffentlichen](app-service-agile-software-development.md).
 
 <a name="resources"></a>
 ## Weitere Ressourcen ##
@@ -293,11 +297,11 @@ In DevOps sind Wiederholbarkeit und Vorhersagbarkeit der Schlüssel für eine er
 -	[Erweiterte Vorlagenvorgänge](../resource-group-advanced-template.md)
 -	[Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](../resource-group-template-deploy.md)
 -	[Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
--	[Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](../resource-group-deploy-debug.md)
+-	[Troubleshooting Resource Group Deployments in Azure](../resource-group-deploy-debug.md) (Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)
 
 
 
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/22/2015" 
+	ms.date="07/10/2015" 
 	ms.author="garye"/>
 
 
@@ -25,7 +25,7 @@ Dies ist der zweite Teil der Anleitung [Entwickeln einer Vorhersagelösung mit A
 1.	[Erstellen eines Machine Learning-Arbeitsbereichs](machine-learning-walkthrough-1-create-ml-workspace.md)
 2.	**Hochladen vorhandener Daten**
 3.	[Erstellen eines neuen Experiments](machine-learning-walkthrough-3-create-new-experiment.md)
-4.	[Trainieren und Bewerten der Modelle](machine-learning-walkthrough-4-train-and-evaluate-models.md)
+4.	[Trainieren und Auswerten der Modelle](machine-learning-walkthrough-4-train-and-evaluate-models.md)
 5.	[Veröffentlichen des Webdiensts](machine-learning-walkthrough-5-publish-web-service.md)
 6.	[Zugreifen auf den Webdienst](machine-learning-walkthrough-6-access-web-service.md)
 
@@ -62,7 +62,7 @@ Nach dem Konvertieren der Daten in das CSV-Format müssen Sie sie in Machine Lea
 2.	Klicken Sie im unteren Seitenbereich auf **+NEU**.
 3.	Wählen Sie **DATASET**.
 4.	Klicken Sie auf **AUS LOKALER DATEI**.
-5.	Klicken Sie im Dialogfeld **Upload a new dataset** auf **Durchsuchen**, und suchen Sie nach der zuvor erstellten Datei **german.csv**.
+5.	Klicken Sie im Dialogfeld **Neuen Datensatz hochladen** auf **Durchsuchen**, und suchen Sie nach der zuvor erstellten Datei **german.csv**.
 6.	Geben Sie einen Namen für das Dataset ein. In diesem Beispiel nennen wir es "UCI German Credit Card Data".
 7.	Wählen Sie den Datentyp **Generic CSV File With no header (.nh.csv)** aus.
 8.	Fügen Sie bei Bedarf eine Beschreibung hinzu.
@@ -80,4 +80,4 @@ Weitere Informationen zum Importieren von verschiedenen Datentypen in einem Expe
 [1]: ./media/machine-learning-walkthrough-2-upload-data/upload1.png
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

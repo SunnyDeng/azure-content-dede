@@ -24,4 +24,4 @@ Erfahren Sie mit dem Lernprogramm [Mobile Services und Microsoft Azure Storage] 
 [Mobile Services und Microsoft Azure Storage]: http://chrisrisner.com/Mobile-Services-and-Windows-Azure-Storage
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

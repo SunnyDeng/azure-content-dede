@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/16/2015" 
+	ms.date="06/30/2015" 
 	ms.author="tdykstra"/>
 
 # Nutzen einer API-App in Azure App Service aus einem .NET-Client 
@@ -59,27 +59,9 @@ In diesem Abschnitt erstellen Sie ein Konsolenanwendungsprojekt und fügen Code 
  
 2. Erstellen Sie in Visual Studio ein Projekt für eine Konsolenanwendung.
  
-### Hinzufügen von Clientcode, der über das App Service-SDK erstellt wurde
+### <a id="addclient"></a>Hinzufügen von Clientcode, der mit dem App Service SDK erstellt wurde
 
-3. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt (nicht auf die Projektmappe), und wählen Sie **Hinzufügen > Azure-API-App-Client**. 
-
-	![](./media/app-service-api-dotnet-consume/03-add-azure-api-client-v3.png)
-	
-3. Klicken Sie im Dialogfeld **Azure-API-App-Client hinzufügen** auf **Aus Azure-API-App herunterladen**.
-
-5. Wählen Sie in der Dropdownliste die API-App aus, die aufgerufen werden soll.
-
-7. Klicken Sie auf **OK**.
-
-	![Bildschirm zur Generierung](./media/app-service-api-dotnet-consume/04-select-the-api-v3.png)
-
-	Der Assistent lädt die API-Metadatendatei herunter und generiert eine typisierte Schnittstelle für den Aufruf der API-App.
-
-	![Generierungsvorgang wird ausgeführt](./media/app-service-api-dotnet-consume/05-metadata-downloading-v3.png)
-
-	Sobald der Code generiert wurde, wird im **Projektmappen-Explorer** ein neuer Ordner mit dem Namen der API-App angezeigt. Dieser Ordner enthält den Code zur Implementierung der Clientklassen und Datenmodelle.
-
-	![Generierung abgeschlossen](./media/app-service-api-dotnet-consume/06-code-gen-output-v3.png)
+[AZURE.INCLUDE [app-service-api-dotnet-add-generated-client](../../includes/app-service-api-dotnet-add-generated-client.md)]
 
 ### Hinzufügen von Code zum Aufrufen der API-App
 
@@ -116,9 +98,7 @@ Um die API-App aufzurufen, müssen Sie lediglich ein Clientobjekt erstellen und 
 
 ## Authentifizierter Aufruf aus einer Windows Desktop-Anwendung
 
-In diesem Abschnitt erstellen Sie ein Windows Desktop-Anwendungsprojekt und fügen Code hinzu, um eine API-App aufzurufen, für die eine Authentifizierung erforderlich ist. Da dieser Code den Oauth 2-*Serverauthentifizierungsfluss* implementiert, ruft anstelle der Clientanwendung das API-App-Gateway das Token vom Authentifizierungsanbieter ab.
-
-Azure-API-Apps unterstützen zudem den Clientauthentifizierungsfluss. Ein Szenario mit Clientauthentifizierungsfluss wird zu einem späteren Zeitpunkt zu diesem Lernprogramm hinzugefügt.
+In diesem Abschnitt erstellen Sie ein Windows Desktop-Anwendungsprojekt und fügen Code hinzu, um eine API-App aufzurufen, für die eine Authentifizierung erforderlich ist.
 
 ### Einrichten der API-App und Erstellen des Projekts
 
@@ -198,11 +178,31 @@ Azure-API-Apps unterstützen zudem den Clientauthentifizierungsfluss. Ein Szenar
 
 	![](./media/app-service-api-dotnet-consume/formaftercall.png)
 
+### <a id="client-flow"></a> Serverfluss und Clientfluss im Vergleich
+
+Die Beispielanwendung veranschaulicht den [Serverfluss](../app-service/app-service-authentication-overview.md#server-flow), was bedeutet, dass das Gateway das Zugriffstoken des Identitätsanbieters erhält. Für den [Clientfluss](../app-service/app-service-authentication-overview.md#client-flow), bei dem Ihre Clientanwendung das Zugriffstoken direkt vom Identitätsanbieter abruft und es an das Gateway sendet, rufen Sie `LoginAsync` statt `SetCurrentUser` auf.
+
+Im folgenden Codebeispiel wird davon ausgegangen, dass das Zugriffstoken des Identitätsanbieters in einer Zeichenfolgenvariablen namens `providerAccessToken` und der Identitätsanbieterindikator ("aad", "microsoftaccount", "google", "twitter" oder "facebook") in einer Zeichenfolgenvariablen mit dem Namen `idProvider` enthalten ist:
+
+		var appServiceClient = new AppServiceClient(GATEWAY_URL);
+		var providerAccessTokenJSON = new JObject();
+		providerAccessTokenJSON["access_token"] = providerAccessToken;
+		var appServiceUser = await appServiceClient.LoginAsync(idProvider, providerAccessTokenJSON);
+
+		var contactsListClient = appServiceClient.CreateContactsList();
+		var contacts = contactsListClient.Contacts.Get();
+		foreach (Contact contact in contacts)
+		{
+		    textBox1.Text += contact.Name + " " + contact.EmailAddress + System.Environment.NewLine;
+		}
+
 ## Nächste Schritte
 
 In diesem Artikel haben Sie erfahren, wie Sie API-Apps mit der Zugriffsebene **Öffentlich (authentifiziert)** oder **Öffentlich (anonym)** von einem .NET-Client aus aufrufen und nutzen.
 
 Um weitere Codebeispiele für den Aufruf einer API-App aus einem .NET-Client zu erhalten, laden Sie die [Azure Cards](https://github.com/Azure-Samples/API-Apps-DotNet-AzureCards-Sample)-Beispielanwendung herunter.
+
+Informationen zur Authentifizierung in API-Apps finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

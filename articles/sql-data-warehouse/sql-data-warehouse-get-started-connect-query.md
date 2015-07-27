@@ -141,13 +141,13 @@ Für die Verbindung mit einer bestimmten Instanz von SQLDW müssen Sie bei Verwe
 Zur Verbindung mit einer SQLDW-Instanz geben Sie daher Folgendes ein:
 
 ```
-C:\>sqlcmd -U <User>@<Server Name>.database.windows.net -P <Password> -S <Server Name>.database.windows.net -d <Database> -I
+C:>sqlcmd -U <User>@<Server Name>.database.windows.net -P <Password> -S <Server Name>.database.windows.net -d <Database> -I
 ```
 
 Nach dem Herstellen der Verbindung können Sie alle unterstützten Transact-SQL-Anweisungen für die Instanz ausgeben. Die folgende Anweisung nutzt beispielsweise die [CREATE TABLE](https://msdn.microsoft.com/library/azure/dn268335.aspx)-Anweisung zum Erstellen einer neuen Tabelle.
 
 ```
-C:\>sqlcmd -U <User>@<Server Name>.database.windows.net -P <Password> -S <Server Name>.database.windows.net -d <Database> -I
+C:>sqlcmd -U <User>@<Server Name>.database.windows.net -P <Password> -S <Server Name>.database.windows.net -d <Database> -I
 1> CREATE TABLE table1 (Col1 int, Col2 varchar(20));
 2> GO
 3> QUIT
@@ -183,4 +183,4 @@ Da wir jetzt unseren Server registriert haben, fahren wir mit dem Schreiben eine
 ## Nächste Schritte ##
 [Start developing code]: ./articles/sql-data-warehouse-overview-develop/
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

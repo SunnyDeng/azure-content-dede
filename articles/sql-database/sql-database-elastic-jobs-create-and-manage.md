@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/12/2015"
+	ms.date="06/25/2015"
 	ms.author="sidneyh"/>
 
 # Erstellen und Verwalten von elastischen Datenbankaufträgen
@@ -110,4 +110,4 @@ Wenn ein Auftrag fehlschlägt, wird ein Protokoll zu seiner Ausführung erstellt
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

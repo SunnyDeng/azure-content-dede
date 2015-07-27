@@ -128,4 +128,4 @@ Nachdem Sie nun mit den Grundlagen von Azure Service Bus vertraut sind, finden S
 [relay]: ./media/fundamentals-service-bus-hybrid-solutions/SvcBus_04_relay.png
 [MSDN]: https://msdn.microsoft.com/library/dn194201.aspx
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

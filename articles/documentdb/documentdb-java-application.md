@@ -21,7 +21,7 @@
 In diesem Lernprogramm erfahren Sie, wie Sie den [Microsoft Azure DocumentDB](https://portal.azure.com/#gallery/Microsoft.DocumentDB)-Dienst verwenden, um Daten von einer auf Azure-Websites gehosteten Java-Anwendung zu speichern und abzurufen. In diesem Abschnitt lernen Sie Folgendes:
 
 - Erstellen einer einfachen JSP-Anwendung in Eclipse.
-- Arbeiten mit dem Azure DocumentDB-Dienst mit dem  [DocumentDB Java SDK](https://github.com/Azure/azure-documentdb-java).
+- Arbeiten mit dem Azure DocumentDB-Dienst mit dem [DocumentDB Java SDK](https://github.com/Azure/azure-documentdb-java).
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine webbasierte Aufgabenverwaltungsanwendung erstellen, mit der Sie Aufgaben erstellen, abrufen und als abgeschlossen kennzeichnen können, wie in der folgenden Abbildung gezeigt. Alle Aufgaben in der Aufgabenliste sind als JSON-Dokumente in Azure DocumentDB gespeichert.
 
@@ -29,7 +29,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine webbasierte Aufgabenverwaltung
 
 > [AZURE.TIP]In diesem Lernprogramm wird davon ausgegangen, dass Sie bereits Erfahrung mit Java haben. Wenn Sie noch nicht mit Java oder den als [Voraussetzung erforderlichen Tools](#Prerequisites) vertraut sind, wird empfohlen, das vollständige [Todo](https://github.com/Azure/azure-documentdb-java/tree/master/tutorial/todo)-Projekt von [GitHub](https://github.com/Azure/azure-documentdb-java) herunterzuladen und gemäß den [Anweisungen am Ende dieses Artikels](#GetProject) erstellen. Nachdem Sie das Projekt erstellt haben, können Sie den Artikel lesen, um Einblick in den Code im Kontext des Projekts zu erhalten.
 
-## <a id="Prerequisites"></a>Voraussetzungen ##
+##<a id="Prerequisites"></a>Voraussetzungen ##
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](../../pricing/free-trial/).
@@ -37,18 +37,18 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 - [Eclipse IDE für Java EE-Entwickler.](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)
 - [Eine Azure-Website mit aktivierter Java-Laufzeitumgebung (z. B. Tomcat oder Jetty).](../web-sites-java-get-started.md)
 
-Wenn Sie diese Tools zum ersten Mal installieren, finden Sie unter coreservlets.com im Abschnitt „Schnellstart“  eine schrittweise Anleitung im Artikel [Lernprogramm: TomCat7 installieren und mit Eclipse verwenden](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html).
+Wenn Sie diese Tools zum ersten Mal installieren, finden Sie unter coreservlets.com im Abschnitt „Schnellstart“ eine schrittweise Anleitung im Artikel [Lernprogramm: TomCat7 installieren und mit Eclipse verwenden](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html).
 
-## <a id="CreateDB"></a>Schritt 1: Erstellen eines DocumentDB-Datenbankkontos ##
+##<a id="CreateDB"></a>Schritt 1: Erstellen eines DocumentDB-Datenbankkontos ##
 So stellen Sie ein DocumentDB-Datenbankkonto in Azure bereit
 
 1. Wenn Sie noch kein Datenbankkonto haben, erstellen Sie ein Konto mithilfe der Anweisungen unter [Erstellen eines Datenbankkontos](documentdb-create-account.md). Wenn Sie bereits über ein Konto verfügen, fahren Sie mit Schritt 2 fort.
 2. Kopieren Sie mithilfe des Bereichs **Schlüssel**, der in der folgenden Abbildung gezeigt ist, Ihren Endpunkt-**URI** und den **PRIMÄRSCHLÜSSEL** in die Zwischenablage und halten Sie beide bereit, da wir dieser Werte in der Webanwendung verwenden, die wir als Nächstes erstellen.
 
-![Screenshot des Azure-Portals mit einem DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche "Schlüssel" auf dem Blatt "DocumentDB-Konto", und auf dem Blatt "Schlüssel" die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL hervorgehoben sind][1]
+![Screenshot des Azure-Vorschauportals mit einem DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche „Schlüssel“ auf dem Blatt „DocumentDB-Konto“, und auf dem Blatt „Schlüssel“ die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL hervorgehoben sind][1]
 
 
-## <a id="CreateJSP"></a>Schritt 2: Erstellen Sie eine JSP-Anwendung ##
+##<a id="CreateJSP"></a>Schritt 2: Erstellen Sie eine JSP-Anwendung ##
 
 So erstellen Sie eine JSP-Anwendung
 
@@ -75,7 +75,7 @@ So erstellen Sie eine JSP-Anwendung
 
 	![](./media/documentdb-java-application/image12.png)
 
-## <a id="InstallSDK"></a>Schritt 3: Installieren des DocumentDB Java SDKs ##
+##<a id="InstallSDK"></a>Schritt 3: Installieren des DocumentDB Java SDKs ##
 
 Das DocumentDB Java SDK und seine Abhängigkeiten können am einfachsten über [Apache Maven](http://maven.apache.org/) einbezogen werden.
 
@@ -103,7 +103,7 @@ Dazu müssen Sie das Projekt zu einem Maven-Projekt konvertieren, indem Sie die 
 5. Klicken Sie auf **OK**, damit Maven das DocumentDB Java SDK installiert.
 6. Speichern Sie die Datei pom.xml.
 
-## <a id="UseService"></a>Schritt 4: Verwenden des DocumentDB-Diensts in einer Java-Anwendung ##
+##<a id="UseService"></a>Schritt 4: Verwenden des DocumentDB-Diensts in einer Java-Anwendung ##
 
 1. Definieren Sie zunächst das "TodoItem"-Objekt:
 
@@ -357,7 +357,7 @@ Dazu müssen Sie das Projekt zu einem Maven-Projekt konvertieren, indem Sie die 
 	    }
 
 
-## <a id="Wire"></a>Schritt 5: Zusammensetzen der restlichen Anwendung ##
+##<a id="Wire"></a>Schritt 5: Zusammensetzen der restlichen Anwendung ##
 
 Nachdem der angenehme Teil erledigt ist, muss nur noch schnell eine Benutzeroberfläche erstellt und mit unserem DAO verbunden werden.
 
@@ -734,7 +734,7 @@ Nachdem der angenehme Teil erledigt ist, muss nur noch schnell eine Benutzerober
 
 6. Wenn das Element angezeigt wird, können Sie den Status, ob es abgeschlossen ist, aktualisieren, indem Sie das Kontrollkästchen umschalten und auf **Update Tasks** klicken.
 
-## <a id="Deploy"></a>Schritt 6: Bereitstellen der Anwendung auf Azure-Websites ##
+##<a id="Deploy"></a>Schritt 6: Bereitstellen der Anwendung auf Azure-Websites ##
 
 Azure-Websites gestalten die Bereitstellung von Java-Anwendungen so einfach wie das Exportieren Ihrer Anwendung als WAR-Datei und dem anschließenden Hochladen über die Quellcodeverwaltung (z. B. GIT) oder über FTP.
 
@@ -749,7 +749,7 @@ Azure-Websites gestalten die Bereitstellung von Java-Anwendungen so einfach wie 
 	Sobald die WAR-Datei in das Verzeichnis "webapps" hochgeladen wurde, erkennt die Laufzeitumgebung, dass sie hinzugefügt wurde. Anschließend wird sie automatisch geladen.
 4. Navigieren Sie zum Anzeigen Ihres fertigen Produkts zu http://YOUR_SITE_NAME.azurewebsites.net/azure-documentdb-java-sample/, und beginnen Sie mit dem Hinzufügen Ihrer Aufgaben!
 
-## <a id="GetProject"></a>Abrufen des Projekts von GitHub##
+##<a id="GetProject"></a>Abrufen des Projekts von GitHub##
 
 Alle Beispiele in diesem Lernprogramm sind im [Todo](https://github.com/Azure/azure-documentdb-java/tree/master/tutorial/todo)-Projekt auf GitHub enthalten, das Teil des Repositorys [azure-documentdb-java](https://github.com/Azure/azure-documentdb-java) ist. Zum Importieren des Todo-Projekts in Eclipse müssen Sie sicherstellen, dass Sie über die im Abschnitt [Voraussetzungen](#Prerequisites) aufgeführten Softwareanwendungen und Ressourcen verfügen. Gehen Sie anschließend folgendermaßen vor:
 
@@ -777,6 +777,6 @@ Alle Beispiele in diesem Lernprogramm sind im [Todo](https://github.com/Azure/az
 22. Informationen zum Bereitstellen Ihres Projekts auf einer Azure-Website finden Sie unter [Schritt 6: Bereitstellen der Anwendung auf Azure-Websites](#Deploy). 
 
 [1]: media/documentdb-java-application/keys.png
-
-<!--HONumber=52-->
  
+
+<!---HONumber=July15_HO3-->

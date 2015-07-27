@@ -61,4 +61,4 @@ Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

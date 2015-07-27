@@ -32,7 +32,7 @@
 - Öffnen Sie ein PSH-Befehlsfenster mit erhöhten Rechten, und verwenden Sie den Befehl "Enable-PSRemoting –force".
 	- Auf dem Computer, auf dem der Assistent ausgeführt wird (wenn der Zielcomputer nicht der Domäne beigetreten ist oder sich in einer nicht vertrauenswürdigen Domäne befindet): 
 
-- Öffnen Sie ein PSH-Befehlsfenster mit erhöhten Rechten, und verwenden Sie den Befehl "Set-Item WSMan:\localhost\Client\TrustedHosts –Value <DMZServerFQDN> -Force –Concatenate".
+- Öffnen Sie ein PSH-Befehlsfenster mit erhöhten Rechten, und verwenden Sie den Befehl "Set-Item WSMan:\\localhost\\Client\\TrustedHosts –Value <DMZServerFQDN> -Force –Concatenate".
 	- In Server Manager:
 		- Fügen Sie den DMZ-WAP-Host zum Computerpool hinzu (Server-Manager -> "Verwalten" -> "Server hinzufügen"-> Registerkarte "DNS verwenden"). 
 		- Server-Manager, Registerkarte "Alle Server": Klicken Sie mit der rechten Maustaste auf "WAP-Server", und wählen Sie "Verwalten als" aus. Geben Sie dann die Anmeldeinformationen für den lokalen WAP-Computer ein (nicht für die Domäne). 
@@ -45,4 +45,4 @@
 * [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

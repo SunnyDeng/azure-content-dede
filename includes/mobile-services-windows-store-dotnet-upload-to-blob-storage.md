@@ -50,7 +50,7 @@
         [JsonProperty(PropertyName = "imageUri")]
         public string ImageUri { get; set; } 
 
-   	>[AZURE.NOTE]Um neue Eigenschaften zum TodoItem-Objekt hinzuzufügen, muss das dynamische Schema im mobilen Dienst aktiviert sein. Wenn das dynamische Schema aktiviert ist, werden automatisch neue Spalten in die TodoItem-Tabelle eingefügt, die auf diese neuen Eigenschaften verweisen.
+   	>[AZURE.NOTE]Um dem TodoItem-Objekt in einem mobilen JavaScript-Back-End-Dienst neue Eigenschaften hinzuzufügen, muss das dynamische Schema im mobilen Dienst aktiviert sein. Wenn das dynamische Schema aktiviert ist, werden automatisch neue Spalten in die TodoItem-Tabelle eingefügt, die auf diese neuen Eigenschaften verweisen. Informationen zu einem mobilen .NET-Back-End-Dienst finden Sie unter [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts](../articles/mobile-services/mobile-services-dotnet-backend-how-to-use-code-first-migrations.md).
 
 5. Fügen Sie in der MainPage-Klasse den folgenden Code hinzu:
 
@@ -142,4 +142,4 @@ Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass da
 
    	>[AZURE.NOTE]Das Bild wird automatisch vom Blob-Speicherdienst heruntergeladen, wenn die <code>imageUri</code>-Eigenschaft des neuen Elements an das <strong>Image</strong>-Steuerelement gebunden wird.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO3-->

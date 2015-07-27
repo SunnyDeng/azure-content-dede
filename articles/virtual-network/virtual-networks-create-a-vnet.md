@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/08/2015"
+   ms.date="07/06/2015"
    ms.author="telmosampaio"/>
 
 # Erstellen eines virtuellen Netzwerks
@@ -36,9 +36,9 @@ Nachdem Sie Ihr virtuelles Netzwerk erstellt haben, können Sie ihm neue VMs und
 
 
 4. Nehmen Sie auf der Seite **DNS-Server und VPN-Konnektivität** keine Änderungen vor. Wechseln Sie einfach durch Klicken auf den Pfeil zur nächsten Seite. Standardmäßig verwendet Azure eine grundlegende Namensauflösung für Ihr virtuelles Netzwerk. Möglicherweise sind Ihre Anforderungen für die Namensauflösung komplexer, sodass die grundlegende Namensauflösung von Azure nicht eingesetzt werden kann. In diesem Fall müssen Sie später möglicherweise einen virtuellen Computer mit DNS zu Ihrem virtuellen Netzwerk hinzufügen. Weitere Informationen zu Azure-Namensauflösung und DNS finden Sie unter [Namensauflösung](https://msdn.microsoft.com/library/azure/jj156088.aspx).
-5. Auf der Seite **Virtuelle Netzwerkadressräume** geben Sie den Adressraum ein, den Sie für dieses VNet verwenden möchten. Sofern Sie keine bestimmte interne IP-Adresse für Ihre VMs benötigen oder ein spezifisches Subnetz für VMs erstellen möchten, die eine statische DIP erhalten, müssen Sie auf dieser Seite keine Änderungen vornehmen. Wenn Sie mehrere Subnetze erstellen möchten, klicken Sie auf dieser Seite auf **Subnetz hinzufügen**. Weitere Informationen zu den Einstellungen auf der Detailseite finden Sie unter [Gewusst wie: Verwalten der Eigenschaften eines Virtual Network (VNet)](../virtual-networks-settings) im Abschnitt mit den Details zum virtuellen Netzwerk.
+5. Auf der Seite **Virtuelle Netzwerkadressräume** geben Sie den Adressraum ein, den Sie für dieses VNet verwenden möchten. Sofern Sie keine bestimmte interne IP-Adresse für Ihre VMs benötigen oder ein spezifisches Subnetz für VMs erstellen möchten, die eine statische DIP erhalten, müssen Sie auf dieser Seite keine Änderungen vornehmen. Wenn Sie mehrere Subnetze erstellen möchten, klicken Sie auf dieser Seite auf **Subnetz hinzufügen**. Weitere Informationen zu den Einstellungen auf der Detailseite finden Sie unter **Gewusst wie: Verwalten der Eigenschaften eines Virtual Network (VNet)** im Abschnitt mit den Details zum virtuellen Netzwerk[](../virtual-networks-settings).
 
-	-  Weitere Informationen zu den Einstellungen auf der Detailseite finden Sie unter [Gewusst wie: Verwalten der Eigenschaften eines Virtual Network (VNet)](../virtual-networks-settings) im Abschnitt mit den Details zum virtuellen Netzwerk.
+	-  Weitere Informationen zu den Einstellungen auf der Detailseite finden Sie unter **Gewusst wie: Verwalten der Eigenschaften eines Virtual Network (VNet)** im Abschnitt mit den Details zum virtuellen Netzwerk[](../virtual-networks-settings).
 	-  Da Sie dieses private virtuelle Netzwerk nicht über eine standortübergreifende VPN-Konfiguration mit Ihrem lokalen Netzwerk verbinden, müssen Sie diese Einstellungen nicht mit den IP-Adressbereichen für Ihr vorhandenes Netzwerk koordinieren. Wenn Sie erwägen, später eine standortübergreifende Konfiguration zu erstellen, müssen Sie die Adressräume jetzt mit den Bereichen koordinieren, die bereits am lokalen Standort vorhanden sind, um spätere Routingprobleme zu vermeiden. Das spätere Ändern der Bereiche kann sich kompliziert gestalten und führt häufig dazu, dass eine Neubereitstellung erforderlich wird.
 
 
@@ -48,15 +48,8 @@ Nachdem Sie Ihr virtuelles Netzwerk erstellt haben, können Sie ihm neue VMs und
 
 
 ## Nächste Schritte
--  [Virtuelle Netzwerke – technische Übersicht](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx)
+-  Erfahren Sie mehr über [virtuelle Netzwerke](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx) in Azure. 
 
--  [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](virtual-machines-create-custom)
+-  [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](../virtual-machines/virtual-machines-create-custom.md)
 
--  [Häufig gestellte Fragen zu virtuellen Netzwerken](http://msdn.microsoft.com/library/windowsazure/dn133803.aspx)
-
--  [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](virtual-networks-using-network-configuration-file)
-
--  [Übersicht über die Azure-Namensauflösung](http://go.microsoft.com/fwlink/?LinkId=248097)
- 
-
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

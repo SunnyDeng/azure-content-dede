@@ -97,4 +97,4 @@ Nachdem Sie die API erstellt und die Einstellungen konfiguriert haben, können S
 [Schützen der Back-End-Dienste mithilfe der gegenseitigen Zertifikatauthentifizierung in Azure API Management]: api-management-howto-mutual-certificates.md
 [Autorisieren von Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management]: api-management-howto-oauth2.md
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

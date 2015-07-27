@@ -89,7 +89,7 @@ Für PolyBase müssen Datendateien mit UTF-8 codiert sein. Dies bedeutet, dass I
 Alle Dateien, die mit UTF-16 codiert sind, müssen ***vor*** der Datenübertragung neu geschrieben werden.
 
 ### Format der Datendateien
-PolyBase erfordert das feste Zeilenabschlusszeichen "\n" oder einen Zeilenvorschub. Ihre Datendateien müssen diesem Standard entsprechen. Für Zeichenfolgen- oder Spaltenabschlusszeichen gibt es keine Einschränkungen.
+PolyBase erfordert das feste Zeilenabschlusszeichen "\\n" oder einen Zeilenvorschub. Ihre Datendateien müssen diesem Standard entsprechen. Für Zeichenfolgen- oder Spaltenabschlusszeichen gibt es keine Einschränkungen.
 
 Sie müssen jede Spalte in der Datei als Teil der externen Tabelle in PolyBase definieren. Stellen Sie sicher, dass alle exportierten Spalten erforderlich sind und die Datentypen den erforderlichen Standards entsprechen.
 
@@ -172,9 +172,9 @@ Weitere Informationen zur Migration finden Sie unter [Migrieren Ihrer Lösung na
 <!--Image references-->
 
 <!--Article references-->
-[AZCopy]: storage/storage-use-azcopy.md
-[ADF-Kopieraktivität]: storage/data-factory-copy-activity.md
-[Beispiele zur Verwendung der ADF-Kopieraktivität]: data-factory/data-factory-copy-activity-examples.md
+[AZCopy]: ../storage/storage-use-azcopy.md
+[ADF-Kopieraktivität]: ../data-factory/data-factory-copy-activity.md
+[Beispiele zur Verwendung der ADF-Kopieraktivität]: ../data-factory/data-factory-copy-activity-examples.md
 [Entwicklungsübersicht]: sql-data-warehouse-develop-overview.md
 [Migrieren Ihrer Lösung nach SQL Data Warehouse]: sql-data-warehouse-overview-migrate.md
 [SQL Data Warehouse development overview]: sql-data-warehouse-overview-develop.md
@@ -193,4 +193,4 @@ Weitere Informationen zur Migration finden Sie unter [Migrieren Ihrer Lösung na
 [Vorschauversion ]: http://aka.ms/downloadazcopypr/
 [SSIS-Dokumentation]: https://msdn.microsoft.com/de-de/library/ms141026.aspx
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

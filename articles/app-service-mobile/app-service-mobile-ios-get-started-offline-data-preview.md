@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="02/23/2015"
+	ms.date="07/01/2015"
 	ms.author="donnam"/>
 
 # Aktivieren der Offlinesynchronisierung für Ihre mobile iOS-App
@@ -48,7 +48,7 @@ In diesem Abschnitt wird der für die Offlinesynchronisierung relevante Code am 
 
     Um einen Verweis auf eine Synchronisierungstabelle zu erstellen, verwenden Sie die `syncTableWithName`-Methode. Zum Entfernen der Offlinesynchronisierung verwenden Sie stattdessen `tableWithName`.
 
-3. Bevor Tabellenvorgänge durchgeführt werden können, muss der lokale Speicher initialisiert werden. Dies ist der entsprechende Code in der `QSTodoService.init`-Methode:
+2. Bevor Tabellenvorgänge durchgeführt werden können, muss der lokale Speicher initialisiert werden. Dies ist der entsprechende Code in der `QSTodoService.init`-Methode:
 
         MSCoreDataStore *store = [[MSCoreDataStore alloc] initWithManagedObjectContext:context];
 
@@ -58,9 +58,9 @@ In diesem Abschnitt wird der für die Offlinesynchronisierung relevante Code am 
 
     Der erste Parameter von `initWithDelegate` wird zum Angeben eines Konflikthandlers verwendet. Da wir `nil` weitergegeben haben, verwenden wir den Standardkonflikthandler, der bei jedem Konflikten einen Fehler ausgibt.
 
-<!-- For details on how to implement a custom conflict handler, see the tutorial [Handling conflicts with offline support for Mobile Services]. -->
+	<!-- For details on how to implement a custom conflict handler, see the tutorial [Handling conflicts with offline support for Mobile Services]. -->
 
-4. Die Methoden `pullData` und `syncData` führen die eigentliche Synchronisierung aus: `syncData` führt zunächst einen Pushvorgang für neue Änderungen aus, anschließend werden mithilfe von `pullData` die Daten vom Remote-Back-End abgerufen.
+3. Die Methoden `pullData` und `syncData` führen die eigentliche Synchronisierung aus: `syncData` führt zunächst einen Pushvorgang für neue Änderungen aus, anschließend werden mithilfe von `pullData` die Daten vom Remote-Back-End abgerufen.
 
         -(void)syncData:(QSCompletionBlock)completion
         {
@@ -98,7 +98,7 @@ In diesem Abschnitt wird der für die Offlinesynchronisierung relevante Code am 
 
     Der zweite Parameter für `pullWithQuery` ist eine Abfrage-ID, die für die *inkrementelle Synchronisierung* verwendet wird. Die inkrementelle Synchronisierung ruft nur die Datensätze ab, die seit der letzten Synchronisierung geändert wurden. Dafür wird der Zeitstempel `UpdatedAt` (im lokalen Speicher `ms_updatedAt`) des Datensatzes verwendet. Die Abfrage-ID muss eine beschreibende Zeichenfolge sein, die für jede logische Abfrage in Ihrer App eindeutig ist. Um die inkrementelle Synchronisierung zu deaktivieren, übergeben Sie als Abfrage-ID `nil`. Beachten Sie, dass dies möglicherweise ineffizient ist, da auf diese Weise bei jedem Pullvorgang alle Datensätze abgerufen werden.
 
-<!--     >[AZURE.NOTE] To remove records from the device local store when they have been deleted in your mobile service database, you should enable [Soft Delete]. Otherwise, your app should periodically call `MSSyncTable.purgeWithQuery` to purge the local store.
+	<!--     >[AZURE.NOTE] To remove records from the device local store when they have been deleted in your mobile service database, you should enable [Soft Delete]. Otherwise, your app should periodically call `MSSyncTable.purgeWithQuery` to purge the local store.
  -->
 
 5. In der `QSTodoService`-Klasse wird die `syncData`-Methode nach den Vorgängen zum Ändern von Daten, `addItem` und `completeItem`, aufgerufen. Sie wird auch von `QSTodoListViewController.refresh` aufgerufen, sodass Benutzer die aktuellsten Daten abrufen, wenn sie die Akualisierungsbewegung durchführen. Die App führt außerdem eine Synchronisierung beim Start durch, da `QSTodoListViewController.init` einen Aufruf von `refresh` durchführt.
@@ -212,13 +212,13 @@ In diesem Abschnitt werden Sie im Simulator Wi-Fi deaktivieren, um ein Offlinesz
 
 Um die Offlinesynchronisierungsfunktion zu unterstützen, wurde die Schnittstelle `MSSyncTable` verwendet und `MSClient.syncContext` mit einem lokalen Speicher initialisiert. In diesem Fall war der lokale Speicher eine auf Core-Daten basierende Datenbank.
 
-Wenn Sie einen lokalen Core-Datenspeicher verwenden, müssen Sie mehrere Tabellen mit [korrekten Systemeigenschaften definieren][Überprüfen des Core-Datenmodells].
+Wenn Sie einen lokalen Core-Datenspeicher verwenden, müssen Sie mehrere Tabellen mit [korrekten Systemeigenschaften](#review-core-data) definieren.
 
-Die normalen CRUD-Vorgänge für mobile Apps funktionieren so, als ob die App immer noch verbunden wäre. Alle Vorgänge werden jedoch nur im lokalen Speicher ausgeführt.
+Die normalen CRUD-Operationen für Mobile Apps funktionieren so, als ob die App immer noch verbunden wäre. Alle Operationen werden jedoch nur im lokalen Speicher ausgeführt.
 
 Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden `MSSyncTable.pullWithQuery` und `MSClient.syncContext.pushWithCompletion` verwendet.
 
-*  Anschließend haben Sie `Review the Core Data model` aufgerufen, um die Änderungen per Push-Vorgang auf den Server zu übertragen. Diese Methode ist ein Element von `MSSyncContext` und nicht der Synchronisierungstabelle, da Änderungen per Push auf alle Tabellen übertragen werden.
+*  Anschließend haben Sie `pushWithCompletion` aufgerufen, um die Änderungen per Push-Vorgang auf den Server zu übertragen. Diese Methode ist ein Element von `MSSyncContext` und nicht der Synchronisierungstabelle, da Änderungen per Push auf alle Tabellen übertragen werden.
 
     Nur Datensätze, die lokal geändert wurden (mit CRUD-Operationen), werden an den Server gesendet.
 
@@ -275,7 +275,7 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [Soft Delete]: ../mobile-services-using-soft-delete.md
 
 [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
-[Azure Friday: Offlinefähige Apps in Azure Mobile Services]: http://azure.microsoft.com/de-de/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
+[Azure Friday: Offlinefähige Apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

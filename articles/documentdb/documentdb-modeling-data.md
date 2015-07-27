@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/23/2015" 
+	ms.date="05/21/2015" 
 	ms.author="ryancraw"/>
 
 #Modellieren von Daten in DocumentDB#
-Schemafreie Datenbanken wie DocumentDB erleichtern die Übernahme von Änderungen an Ihrem Datenmodell, dennoch sollten Sie etwas über Ihre Daten nachdenken. 
+Schemafreie Datenbanken wie DocumentDB erleichtern die Übernahme von Änderungen an Ihrem Datenmodell, dennoch sollten Sie etwas über Ihre Daten nachdenken.
 
 Wie werden die Daten gespeichert? Wie wird Ihre Anwendung Daten abrufen und abfragen? Ist Ihre Anwendung lese- und schreibintensiv?
 
@@ -30,17 +30,17 @@ Nach dem Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 - Wann bette ich Daten ein, und wann verknüpfe ich sie?
 
 ##Einbetten von Daten##
-Versuchen Sie beim ersten Modellieren von Daten in einer Dokumentenablage, wie z. B. DocumentDB, Ihre Entitäten als **eigenständige Dokumente**, dargestellt im JSON-Format, zu behandeln.
+Versuchen Sie beim ersten Modellieren von Daten in einer Dokumentenablage, wie z. B. DocumentDB, Ihre Entitäten als **eigenständige Dokumente**, dargestellt im JSON-Format, zu behandeln.
 
-Bevor wir uns stärker damit befassen, sehen Sie sich zunächst einmal genau an, wie Sie eine Entität in einer relationalen Datenbank modellieren, ein Konzept, mit dem viele von uns bereits vertraut sind. Das folgende Beispiel zeigt, wie eine Person in einer relationalen Datenbank gespeichert werden kann. 
+Bevor wir uns stärker damit befassen, sehen Sie sich zunächst einmal genau an, wie Sie eine Entität in einer relationalen Datenbank modellieren, ein Konzept, mit dem viele von uns bereits vertraut sind. Das folgende Beispiel zeigt, wie eine Person in einer relationalen Datenbank gespeichert werden kann.
 
-![Relational database model](./media/documentdb-modeling-data/relational-data-model.png)
+![Relationalen Datenbankmodell](./media/documentdb-modeling-data/relational-data-model.png)
 
 Bei der Arbeit mit relationalen Datenbanken galt viele Jahre lang das Motto: normalisieren, normalisieren, normalisieren.
 
-Beim Normalisieren von Daten wird in der Regel eine Entität, z. B. eine Person, in einzelne Datenelemente unterteilt. Im obigen Beispiel kann eine Person über mehrere Kontaktdetaildatensätze sowie mehrere Adressdatensätze verfügen. Wir gehen sogar noch einen Schritt weiter und unterteilen auch die Kontaktdetails, indem zusätzliche allgemeine Felder, wie z. B. Typ, extrahiert werden. Das Gleiche gilt für Adressen: Jeder Datensatz einem Typ wie z. B. *Privat* oder *Geschäftlich* zugeordnet. 
+Beim Normalisieren von Daten wird in der Regel eine Entität, z. B. eine Person, in einzelne Datenelemente unterteilt. Im obigen Beispiel kann eine Person über mehrere Kontaktdetaildatensätze sowie mehrere Adressdatensätze verfügen. Wir gehen sogar noch einen Schritt weiter und unterteilen auch die Kontaktdetails, indem zusätzliche allgemeine Felder, wie z. B. Typ, extrahiert werden. Das Gleiche gilt für Adressen: Jeder Datensatz einem Typ wie z. B. *Privat* oder *Geschäftlich* zugeordnet.
 
-Die beim Normalisieren von Daten geltende Prämisse besteht darin, dass das **Speichern von redundanten Daten in jedem Datensatz zu vermeiden ist** und dass stattdessen auf die einzelnen Daten verwiesen werden soll. Um in diesem Beispiel eine Person mit allen ihren Kontaktdaten und Adressen zu lesen, müssen Sie Verknüpfungen verwenden, um die Daten effektiv zur Laufzeit zu aggregieren.
+Die beim Normalisieren von Daten geltende Prämisse besteht darin, dass das **Speichern von redundanten Daten in jedem Datensatz zu vermeiden** ist und dass stattdessen auf die einzelnen Daten verwiesen werden soll. Um in diesem Beispiel eine Person mit allen ihren Kontaktdaten und Adressen zu lesen, müssen Sie Verknüpfungen verwenden, um die Daten effektiv zur Laufzeit zu aggregieren.
 
 	SELECT p.FirstName, p.LastName, a.City, cd.Detail
 	FROM Person p
@@ -48,7 +48,7 @@ Die beim Normalisieren von Daten geltende Prämisse besteht darin, dass das **Sp
     JOIN ContactDetailType on cdt ON cdt.Id = cd.TypeId
     JOIN Address a ON a.PersonId = p.Id
 
-Für das Aktualisieren einer einzelnen Person mit allen ihren Kontaktdaten und Adressen sind Schreibvorgänge über viele einzelne Tabellen hinweg erforderlich. 
+Für das Aktualisieren einer einzelnen Person mit allen ihren Kontaktdaten und Adressen sind Schreibvorgänge über viele einzelne Tabellen hinweg erforderlich.
 
 Sehen Sie sich jetzt an, wie Sie die gleichen Daten als eigenständige Entität in einer Dokumentendatenbank modellieren können.
 		
@@ -71,12 +71,11 @@ Sehen Sie sich jetzt an, wie Sie die gleichen Daten als eigenständige Entität 
 	    ] 
 	}
 
-Mit dem oben stehenden Ansatz haben wir jetzt den Personendatensatz **denormalisiert**, indem wir alle Informationen im Zusammenhang mit dieser Person, z. B. ihre Kontaktdaten und Adressen, in ein einzelnes JSON-Dokument **eingebettet** haben.
-Da wir nicht auf ein festes Schema beschränkt sind, haben wir darüber hinaus die Flexibilität, z. B. Kontaktdetails in vollständig verschiedenen Formen zu haben. 
+Mit dem oben stehenden Ansatz haben wir jetzt den Personendatensatz **denormalisiert**, indem wir alle Informationen im Zusammenhang mit dieser Person, z. B. ihre Kontaktdaten und Adressen, in ein einzelnes JSON-Dokument **eingebettet** haben. Da wir nicht auf ein festes Schema beschränkt sind, haben wir darüber hinaus die Flexibilität, z. B. Kontaktdetails in vollständig verschiedenen Formen zu haben.
 
 Das Abrufen eines vollständigen Personendatensatzes aus der Datenbank besteht jetzt aus einem einzelnen Lesevorgang einer einzelne Sammlung und für ein einzelnes Dokument. Das Aktualisieren eines Personendatensatzes zusammen mit den Kontaktinformationen und Adressen ist auch ein einzelner Schreibvorgang in einem einzelnen Dokument.
 
-Durch das Denormalisieren von Daten muss Ihre Anwendung u. U. weniger Abfragen und Aktualisierungen ausgeben, um allgemeine Vorgänge abzuschließen. 
+Durch das Denormalisieren von Daten muss Ihre Anwendung u. U. weniger Abfragen und Aktualisierungen ausgeben, um allgemeine Vorgänge abzuschließen.
 
 ###Wann Sie einbetten sollten
 
@@ -86,9 +85,9 @@ Verwenden Sie in der Regel eingebettete Datenmodelle in den folgenden Fällen:
 - Zwischen Entitäten gibt es **eins-zu-viele**-Beziehungen.
 - Es gibt eingebettete Daten, die sich **selten ändern**.
 - Es gibt eingebettete Daten, die nicht **grenzenlos** wachsen.
-- Es gibt eingebettete Daten, die von **integraler Bedeutung** für die Daten in einem Dokument sind.
+- Es gibt eingebettete Daten, die von **integraler** Bedeutung für die Daten in einem Dokument sind.
 
-> [AZURE.NOTE] In der Regel bieten denormalisierte Datenmodelle eine bessere **Leseleistung**.
+> [AZURE.NOTE]In der Regel bieten denormalisierte Datenmodelle eine bessere **Leseleistung**.
 
 ###Wann Sie nicht einbetten sollten
 
@@ -103,18 +102,18 @@ Nehmen Sie beispielsweise diesen JSON-Ausschnitt.
 		"comments": [
 			{"id": 1, "author": "anon", "comment": "something useful, I'm sure"},
 			{"id": 2, "author": "bob", "comment": "wisdom from the interwebs"},
-			...
+			…
 			{"id": 100001, "author": "jane", "comment": "and on we go ..."},
-			...
+			…
 			{"id": 1000000001, "author": "angry", "comment": "blah angry blah angry"},
-			...
+			…
 			{"id": ∞ + 1, "author": "bored", "comment": "oh man, will this ever end?"},
 		]
 	}
 
-So könnte eine Beitragsentität mit eingebetteten Kommentaren aussehen, wenn wir ein typisches Blog- oder CMS-System modellieren würden. Das Problem bei diesem Beispiel besteht darin, dass das Kommentar-Array **unbegrenzt** ist, d. h., es gibt (praktisch) keine Begrenzung hinsichtlich der Anzahl an Kommentaren zu einem einzelnen Beitrag. Dies wird zu einem Problem, da die Größe des Dokuments erheblich zunehmen kann.
+So könnte eine Beitragsentität mit eingebetteten Kommentaren aussehen, wenn wir ein typisches Blog- oder CMS-System modellieren würden. Das Problem bei diesem Beispiel besteht darin, dass das Kommentar-Array **unbegrenzt** ist, d. h., es gibt (praktisch) keine Begrenzung hinsichtlich der Anzahl an Kommentaren zu einem einzelnen Beitrag. Dies wird zu einem Problem, da die Größe des Dokuments erheblich zunehmen kann.
 
-> [AZURE.TIP] Dokumente in DocumentDB weisen eine Maximalgröße auf. Weitere Informationen dazu finden Sie unter [DocumentDB-Grenzen](documentdb-limits.md)
+> [AZURE.TIP]Dokumente in DocumentDB weisen eine Maximalgröße auf. Weitere Informationen dazu finden Sie unter [DocumentDB-Grenzen](documentdb-limits.md).
 
 Mit zunehmender Größe des Dokuments wird die Möglichkeit zum Übertragen von Daten über das Netz sowie zum Lesen und Aktualisieren des Dokuments bei Skalierung beeinträchtigt.
 
@@ -151,9 +150,9 @@ In einem solchen Fall sollte lieber das folgende Modell in Betracht gezogen werd
 		]
 	}
 
-Bei diesem Modell sind die drei aktuellsten Kommentare in den Beitrag selbst eingebettet, wobei es sich diesmal um ein Array mit einer festen Grenze handelt. Die anderen Kommentare sind zu Stapeln von je 100 Kommentaren gruppiert und in separaten Dateien gespeichert. Die Größe des Stapels wurde auf 100 festgelegt, da unsere fiktive Anwendung es dem Benutzer ermöglicht, 100 Kommentare gleichzeitig zu laden.  
+Bei diesem Modell sind die drei aktuellsten Kommentare in den Beitrag selbst eingebettet, wobei es sich diesmal um ein Array mit einer festen Grenze handelt. Die anderen Kommentare sind zu Stapeln von je 100 Kommentaren gruppiert und in separaten Dateien gespeichert. Die Größe des Stapels wurde auf 100 festgelegt, da unsere fiktive Anwendung es dem Benutzer ermöglicht, 100 Kommentare gleichzeitig zu laden.
 
-Das Einbetten von Daten ist auch dann keine gute Idee, wenn die eingebetteten Daten häufig in Dokumenten verwendet und häufig geändert werden. 
+Das Einbetten von Daten ist auch dann keine gute Idee, wenn die eingebetteten Daten häufig in Dokumenten verwendet und häufig geändert werden.
 
 Nehmen Sie beispielsweise diesen JSON-Ausschnitt.
 
@@ -173,19 +172,19 @@ Nehmen Sie beispielsweise diesen JSON-Ausschnitt.
 	    ]
 	}
 
-Dabei kann es sich um das Aktienportfolio einer Person handeln. Wir haben uns dazu entschlossen, die Aktiendaten in jedes Portfoliodokument einzubetten. In einer Umgebung, in der verknüpfte Daten häufig geändert werden, wie z. B. eine Aktienhandelsanwendung, bedeutet das Einbetten von sich häufig ändernden Daten, dass Sie bei jedem Aktienhandel jedes Portfoliodokument aktualisieren müssen.
+Dabei kann es sich um das Aktienportfolio einer Person handeln. Wir haben uns dazu entschlossen, die Aktiendaten in jedes Portfoliodokument einzubetten. In einer Umgebung, in der verknüpfte Daten häufig geändert werden, wie z. B. eine Aktienhandelsanwendung, bedeutet das Einbetten von sich häufig ändernden Daten, dass Sie bei jedem Aktienhandel jedes Portfoliodokument aktualisieren müssen.
 
-Die Aktie *zaza* wird möglicherweise jeden Tag mehrere Hundert Mal gehandelt und Tausende Benutzer besitzen *zaza* in ihrem Portfolio. Bei einem Datenmodell wie dem obigen müssten wir viele Tausend Portfoliodokumente mehrmals täglich aktualisieren, was zu einem schlecht skalierbaren System führt. 
+Die Aktie *zaza* kann jeden Tag mehrere Hundert Mal gehandelt werden, und Tausende Benutzer besitzen *zaza* in ihrem Portfolio. Bei einem Datenmodell wie dem obigen müssten wir viele Tausend Portfoliodokumente mehrmals täglich aktualisieren, was zu einem schlecht skalierbaren System führt.
 
 ##<a id="Refer"></a>Verweisen auf Daten##
 
-Das Einbetten von Daten funktioniert somit in vielen Fällen gut, aber es ist klar, dass es Szenarien gibt, bei denen das Denormalisieren von Daten mehr Probleme verursacht als es wert ist. Was also können wir jetzt tun? 
+Das Einbetten von Daten funktioniert somit in vielen Fällen gut, aber es ist klar, dass es Szenarien gibt, bei denen das Denormalisieren von Daten mehr Probleme verursacht als es wert ist. Was also können wir jetzt tun?
 
-Relationale Datenbanken sind nicht der einzige Ort, an dem Sie Beziehungen zwischen Entitäten herstellen können. In einer Dokumentendatenbank können sich die Informationen in einem Dokument befinden, das sich tatsächlich auf Daten in anderen Dokumenten bezieht. Ich befürworte nicht für eine Minute, dass wir Systeme in DocumentDB erstellen sollen, die besser für eine relationale Datenbank oder eine andere Dokumentendatenbank geeignet sind, aber einfache Beziehungen sind in Ordnung und können sehr nützlich sein. 
+Relationale Datenbanken sind nicht der einzige Ort, an dem Sie Beziehungen zwischen Entitäten herstellen können. In einer Dokumentendatenbank können sich die Informationen in einem Dokument befinden, das sich tatsächlich auf Daten in anderen Dokumenten bezieht. Ich befürworte nicht für eine Minute, dass wir Systeme in DocumentDB erstellen sollen, die besser für eine relationale Datenbank oder eine andere Dokumentendatenbank geeignet sind, aber einfache Beziehungen sind in Ordnung und können sehr nützlich sein.
 
-Im JSON-Abschnitt unten verwenden wir das vorherige Beispiel eines Aktienportfolios, aber dieses Mal verweisen wir auf den Aktieneintrag im Portfolio, anstatt ihn einzubetten. Auf diese Weise müssen wir nur dieses eine Aktiendokument aktualisieren, wenn sich der Aktieneintrag mehrmals am Tag ändert. 
+Im JSON-Abschnitt unten verwenden wir das vorherige Beispiel eines Aktienportfolios, aber dieses Mal verweisen wir auf den Aktieneintrag im Portfolio, anstatt ihn einzubetten. Auf diese Weise müssen wir nur dieses eine Aktiendokument aktualisieren, wenn sich der Aktieneintrag mehrmals am Tag ändert.
 
-    Personendokument:
+    Person document:
     {
         "id": "1",
         "firstName": "Thomas",
@@ -221,7 +220,7 @@ Im JSON-Abschnitt unten verwenden wir das vorherige Beispiel eines Aktienportfol
 
 Ein unmittelbarer Nachteil dieses Ansatzes besteht jedoch darin, dass, wenn Ihre Anwendung Informationen zu jeder Aktie anzeigen muss, die bei der Anzeige des Portfolios einer Person enthalten sein müssen, Sie mehrere Roundtrips zur Datenbank durchführen müssen, um die Informationen für jedes Aktiendokument zu laden. Hier haben wir beschlossen, die Effizienz der Schreibvorgänge zu verbessern, die mehrmals täglich durchgeführt werden, wir nehmen wiederum die Beeinträchtigung der Lesevorgänge hin, die sich potenziell weniger stark auf die Leistung dieses speziellen Systems auswirken.
 
-> [AZURE.NOTE] Normalisierte Datenmodelle **können mehrere Roundtrips** zum Server erfordern.
+> [AZURE.NOTE]Normalisierte Datenmodelle **können mehrere Roundtrips zum Server erfordern**.
 
 ### Was ist mit Fremdschlüsseln?
 Da es derzeit kein Konzept für eine Einschränkung gibt, Fremdschlüssel oder anderweitig, sind alle Beziehungen zwischen Dokumenten in Dokumenten im Grunde "schwache Verknüpfungen" und werden nicht von der Datenbank selbst überprüft. Wenn Sie sicherstellen möchten, dass die Daten, auf die ein Dokument verweist, tatsächlich vorhanden sind, müssen Sie dies in der Anwendung durchführen oder serverseitige Trigger oder gespeicherte Prozeduren für DocumentDB verwenden.
@@ -229,12 +228,12 @@ Da es derzeit kein Konzept für eine Einschränkung gibt, Fremdschlüssel oder a
 ###Wann Sie verweisen sollten
 Verwenden Sie in der Regel normalisierte Datenmodelle in den folgenden Fällen:
 
-- Zur Darstellung von **Eins-zu-viele**-Beziehungen.
-- Zur Darstellung von **Viele-zu-viele**-Beziehungen.
+- Zur Darstellung von **1:n**-Beziehungen.
+- Zur Darstellung von **m:n**-Beziehungen.
 - Wenn sich zugehörige Daten **häufig ändern**.
 - Wenn referenzierte Daten möglicherweise **unbegrenzt** sind.
 
-> [AZURE.NOTE] Wenn eine Normalisierung in der Regel eine bessere **Schreibleistung** bietet.
+> [AZURE.NOTE]Wenn eine Normalisierung in der Regel eine bessere **Schreibleistung** bietet.
 
 ###Wo erstelle ich die Beziehung?
 Das Wachstum der Beziehung hilft bei der Bestimmung, in welchem Dokument der Verweis gespeichert werden sollte.
@@ -257,7 +256,7 @@ Sehen Sie sich den unten stehenden JSON-Code an, in dem Verleger und Bücher mod
 	...
 	{"id": 1000, "name": "Deep Dive in to DocumentDB" }
 
-Wenn die Anzahl der Bücher für jeden Verleger klein ist und nur über begrenztes Wachstum verfügt, kann es nützlich sein, den Buchverweis im Verlegerdokument zu speichern. Wenn die Anzahl der Bücher pro Verleger jedoch unbegrenzt ist, würde dieses Datenmodell zu veränderbaren, wachsenden Arrays führen, wie im obigen Verlegerbeispieldokument gezeigt. 
+Wenn die Anzahl der Bücher für jeden Verleger klein ist und nur über begrenztes Wachstum verfügt, kann es nützlich sein, den Buchverweis im Verlegerdokument zu speichern. Wenn die Anzahl der Bücher pro Verleger jedoch unbegrenzt ist, würde dieses Datenmodell zu veränderbaren, wachsenden Arrays führen, wie im obigen Verlegerbeispieldokument gezeigt.
 
 Durch ein paar Änderungen entsteht ein Modell, das weiterhin die gleichen Daten darstellt, aber diese großen veränderbaren Sammlungen werden vermieden.
 
@@ -279,9 +278,9 @@ Durch ein paar Änderungen entsteht ein Modell, das weiterhin die gleichen Daten
 Im Beispiel oben haben wir die unbegrenzte Auflistung im Verlegerdokument gelöscht. Stattdessen haben wir nur einen Verweis zum Verleger in jedem Buchdokument.
 
 ###Wie modelliere ich Viele-zu-viele-Beziehungen?
-In einer relationalen Datenbank werden *many:many*-Beziehungen häufig mit Verknüpfungstabellen modelliert, bei denen einfach Datensätze aus anderen Tabellen miteinander verknüpft werden. 
+In einer relationalen Datenbank *m:n*-Beziehungen häufig mit Verknüpfungstabellen modelliert, bei denen einfach Datensätze aus anderen Tabellen miteinander verknüpft werden.
 
-![Join tables](./media/documentdb-modeling-data/join-table.png)
+![Verknüpfen von Tabellen](./media/documentdb-modeling-data/join-table.png)
 
 Möglicherweise sind Sie versucht, dasselbe mit Dokumenten zu replizieren, wobei jedoch ein Datenmodell entsteht, das etwa folgendermaßen aussieht.
 
@@ -302,10 +301,9 @@ Möglicherweise sind Sie versucht, dasselbe mit Dokumenten zu replizieren, wobei
 	{"authorId": 1, "bookId": 2 }
 	{"authorId": 1, "bookId": 3 }
 
-Das würde auch funktionieren. Wenn Sie jedoch einen Autor mit seinen Büchern oder ein Buch mit seinem Autor laden, sind immer mindestens zwei zusätzliche Abfragen für die Datenbank erforderlich. Eine Abfrage, um das Dokument zu verknüpfen, und dann eine weitere Abfrage zum Abrufen des tatsächlichen zu verknüpfenden Dokuments. 
+Das würde auch funktionieren. Wenn Sie jedoch einen Autor mit seinen Büchern oder ein Buch mit seinem Autor laden, sind immer mindestens zwei zusätzliche Abfragen für die Datenbank erforderlich. Eine Abfrage, um das Dokument zu verknüpfen, und dann eine weitere Abfrage zum Abrufen des tatsächlichen zu verknüpfenden Dokuments.
 
-Wenn die Verknüpfungstabelle einfach nur zwei Informationen miteinander verbindet, dann könnte man sie auch einfach komplett löschen.
-Stellen Sie sich einmal Folgendes vor:
+Wenn die Verknüpfungstabelle einfach nur zwei Informationen miteinander verbindet, dann könnte man sie auch einfach komplett löschen. Stellen Sie sich einmal Folgendes vor:
 
 	Author documents:
 	{"id": 1, "name": "Thomas Andersen", "books": [1, 2, 3]}
@@ -317,16 +315,16 @@ Stellen Sie sich einmal Folgendes vor:
 	{"id": 3, "name": "Learn about Azure DocumentDB", "authors": [1]}
 	{"id": 4, "name": "Deep Dive in to DocumentDB", "authors": [2]}
 
-Es gibt einen Autor, bei dem ich sofort weiß, welche Bücher er geschrieben hat, oder ich habe ein Buchdokument geladen, für das ich die IDs der Autoren kenne. Dadurch ersparen Sie sich Zwischenabfragen der Verknüpfungstabelle, wodurch wiederum die Anzahl der Serverroundtrips Ihrer Anwendung reduziert wird. 
+Es gibt einen Autor, bei dem ich sofort weiß, welche Bücher er geschrieben hat, oder ich habe ein Buchdokument geladen, für das ich die IDs der Autoren kenne. Dadurch ersparen Sie sich Zwischenabfragen der Verknüpfungstabelle, wodurch wiederum die Anzahl der Serverroundtrips Ihrer Anwendung reduziert wird.
 
 ##<a id="WrapUp"></a>Hybriddatenmodelle##
-Wir haben jetzt gesehen wie Daten eingebettet (bzw. denormalisiert) werden und wie auf Daten verwiesen wird (bzw. wie sie normalisiert werden), und beide Modelle haben ihre Vor- und Nachteile. 
+Wir haben jetzt gesehen wie Daten eingebettet (bzw. denormalisiert) werden und wie auf Daten verwiesen wird (bzw. wie sie normalisiert werden), und beide Modelle haben ihre Vor- und Nachteile.
 
-Doch es muss nicht immer ein Entweder-oder geben. Trauen Sie sich, die Systeme etwas zu vermischen. 
+Doch es muss nicht immer ein Entweder-oder geben. Trauen Sie sich, die Systeme etwas zu vermischen.
 
 Basierend auf bestimmten Verwendungsmustern und Arbeitsauslastungen gibt es möglicherweise Fälle, in denen eine Mischung aus eingebetteten und referenzierten Daten sinnvoll sein kann und zu einer einfacheren Anwendungslogik mit weniger Serverroundtrips führen kann, wobei gleichzeitig eine gute Leistung gewahrt wird.
 
-Betrachten Sie das folgende JSON-Beispiel. 
+Betrachten Sie das folgende JSON-Beispiel.
 
 	Author documents: 
 	{
@@ -369,28 +367,29 @@ Betrachten Sie das folgende JSON-Beispiel.
 		]
 	}
 
-Hier haben wir (hauptsächlich) das eingebettete Modell verwendet, bei dem Daten aus anderen Entitäten im übergeordneten Dokument eingebettet sind, in dem jedoch auf andere Daten verwiesen wird. 
+Hier haben wir (hauptsächlich) das eingebettete Modell verwendet, bei dem Daten aus anderen Entitäten im übergeordneten Dokument eingebettet sind, in dem jedoch auf andere Daten verwiesen wird.
 
-Wenn Sie das Buchdokument betrachten, sehen Sie ein paar interessante Felder, wenn wir das Array der Autoren betrachten. Es gibt ein *id*-Feld, bei dem es sich um das Feld handelt, das für einen Rückverweis auf ein Autorendokument verwendet wird, üblicherweise in einem normalisierten Modell, es gibt jedoch auch die Felder *name* und *thumbnailUrl*. Wir hätten es auch bei dem Feld *id* belassen können, sodass die Anwendung alle zusätzlichen Informationen mithilfe der "Verknüpfung" aus dem jeweiligen Autorendokument abruft. Da aber unsere Anwendung den Namen des Autors und ein Miniaturbild mit jedem angezeigten Buch anzeigt, können wir pro Buch in einer Liste einen Roundtrip zum Server einsparen, indem wir **einige** Daten vom Autor denormalisieren.
+Wenn Sie das Buchdokument betrachten, sehen Sie ein paar interessante Felder, wenn wir das Array der Autoren betrachten. Es gibt ein *id*-Feld, bei dem es sich um das Feld handelt, das für einen Rückverweis auf ein Autorendokument verwendet wird, üblicherweise in einem normalisierten Modell, es gibt jedoch auch die Felder *Name* und *ThumbnailUrl*. Wir hätten auch nur bei dem Feld *id* bleiben können, sodass sich die Anwendung alle zusätzlichen Informationen aus dem jeweiligen Autorendokument mithilfe der „Verknüpfung“ abruft, aber da unsere Anwendung den Namen des Autors und ein Miniaturbild mit jedem angezeigten Buch anzeigt, können wir einen Roundtrip zum Server pro Buch in einer Liste speichern, indem Sie **einige** Daten vom Autor denormalisieren.
 
-Wenn sich der Name des Autors ändert oder das Foto aktualisiert werden soll, müssten wir jedes Buch, das von ihm je veröffentlicht wurde, aktualisieren. Bei unserer Anwendung ist dies jedoch, basierend auf der Annahme, dass die Autoren ihre Namen nicht sehr oft ändern, eine akzeptable Entwurfsentscheidung.  
+Wenn sich der Name des Autors ändert oder das Foto aktualisiert werden soll, müssten wir jedes Buch, das von ihm je veröffentlicht wurde, aktualisieren. Bei unserer Anwendung ist dies jedoch, basierend auf der Annahme, dass die Autoren ihre Namen nicht sehr oft ändern, eine akzeptable Entwurfsentscheidung.
 
-Im Beispiel gibt es **vorab berechnete Aggregatwerte**, um sich die teure Verarbeitung eines Lesevorgangs zu ersparen. Im Beispiel werden einige der im Autorendokument eingebetteten Daten zur Laufzeit berechnet. Jedes Mal, wenn ein neues Buch veröffentlicht wird, wird ein Buchdokument erstellt, **und** das Feld "CountOfBooks" wird auf einen berechneten Wert festgelegt, basierend auf der Anzahl der Buchdokumente, die für einen bestimmten Autor vorhanden sind. Diese Optimierung wäre in schreibintensiven Systemen gut, in denen wir uns Berechnungen für Schreibvorgänge leisten können, um Lesevorgänge zu optimieren.
+Im Beispiel gibt es vorab **berechnete Aggregatwerte**, um sich die teure Verarbeitung eines Lesevorgangs zu ersparen. Im Beispiel werden einige der im Autorendokument eingebetteten Daten zur Laufzeit berechnet. Jedes Mal, wenn ein neues Buch veröffentlicht wird, wird ein Buchdokument erstellt, **und** das Feld „CountOfBooks“ wird auf einen berechneten Wert festgelegt, basierend auf der Anzahl der Buchdokumente, die für einen bestimmten Autor vorhanden sind. Diese Optimierung wäre in schreibintensiven Systemen gut, in denen wir uns Berechnungen für Schreibvorgänge leisten können, um Lesevorgänge zu optimieren.
 
-Die Möglichkeit über ein Modell mit vorab berechneten Felder zu verfügen, wird dank der Unterstützung von **Transaktionen mit mehreren Dokumenten** durch DocumentDB ermöglicht. Viele NoSQL-Speicher können keine Transaktionen über Dokumente hinweg durchführen und bevorzugen aufgrund dieser Einschränkung Entwurfsentscheidungen, wie z. B. "Immer alles einbetten". Mit DocumentDB können Sie serverseitige Trigger oder gespeicherte Prozeduren verwenden, mit denen Bücher eingefügt und Autoren in einer einzigen ACID-Transaktion aktualisiert werden. Sie **müssen** nicht alles in ein Dokument einbetten, nur um sicherzustellen, dass Ihre Daten konsistent bleiben.
+Die Möglichkeit über ein Modell mit vorab berechneten Felder zu verfügen, wird dank der Unterstützung von **Transaktionen mit mehreren Dokumenten** durch DocumentDB ermöglicht. Viele NoSQL-Speicher können keine Transaktionen über Dokumente hinweg durchführen und bevorzugen aufgrund dieser Einschränkung Entwurfsentscheidungen, wie z. B. "Immer alles einbetten". Mit DocumentDB können Sie serverseitige Trigger oder gespeicherte Prozeduren verwenden, mit denen Bücher eingefügt und Autoren in einer einzigen ACID-Transaktion aktualisiert werden. Sie **müssen** nicht alles in ein Dokument einbetten, nur um sicherzustellen, dass Ihre Daten konsistent bleiben.
 
 ##<a name="NextSteps"></a>Nächste Schritte
 
-Die wichtigsten Erkenntnisse dieses Artikels bestehen darin, dass die Datenmodellierung in einer schemafreien Welt genauso wichtig ist wie eh und je. 
+Die wichtigsten Erkenntnisse dieses Artikels bestehen darin, dass die Datenmodellierung in einer schemafreien Welt genauso wichtig ist wie eh und je.
 
-Es gibt genauso wenig einen einzigen Weg, um Daten auf einem Bildschirm darzustellen, wie es nur einen einzigen Weg gibt, Ihre Daten zu modellieren. Sie müssen Ihre Anwendung kennen und wissen, wie die Daten erstellt, verwendet und verarbeitet werden. Erst dann können Sie durch Anwenden von einigen der hier vorgestellten Richtlinien damit beginnen, ein Modell zu erstellen, das die unmittelbaren Anforderungen der Anwendung berücksichtigt. Wenn sich Ihre Anwendungen ändern müssen, können Sie die Flexibilität einer schemafreien Datenbank nutzen, um diese Änderung zu übernehmen und um das Datenmodell problemlos weiterzuentwickeln. 
+Es gibt genauso wenig einen einzigen Weg, um Daten auf einem Bildschirm darzustellen, wie es nur einen einzigen Weg gibt, Ihre Daten zu modellieren. Sie müssen Ihre Anwendung kennen und wissen, wie die Daten erstellt, verwendet und verarbeitet werden. Erst dann können Sie durch Anwenden von einigen der hier vorgestellten Richtlinien damit beginnen, ein Modell zu erstellen, das die unmittelbaren Anforderungen der Anwendung berücksichtigt. Wenn sich Ihre Anwendungen ändern müssen, können Sie die Flexibilität einer schemafreien Datenbank nutzen, um diese Änderung zu übernehmen und um das Datenmodell problemlos weiterzuentwickeln.
 
-Weitere Informationen zu Azure DocumentDB finden Sie auf der [Dokumentationsseite]( ../../services/documentdb/) des Diensts. 
+Weitere Informationen zu Azure DocumentDB finden Sie auf der [Dokumentationsseite](../../services/documentdb/) des Diensts.
 
 Informationen zum Optimieren von Indizes in Azure DocumentDB finden Sie im Artikel über die [Indizierungsrichtlinien](documentdb-indexing-policies.md).
 
-Informationen zur horizontalen Partitionierung ("Sharding") Ihrer Daten auf mehreren Partitionen finden Sie unter [Partitionieren von Daten in DocumentDB](documentdb-partition-data.md). 
+Informationen zur horizontalen Partitionierung („Sharding“) Ihrer Daten auf mehreren Partitionen finden Sie unter [Partitionieren von Daten in DocumentDB](documentdb-partition-data.md).
 
 Anleitungen für die Datenmodellierung und das Sharding für mehrinstanzenfähige Anwendungen finden Sie unter [Skalieren einer mehrinstanzenfähigen Anwendung mit Azure DocumentDB](http://blogs.msdn.com/b/documentdb/archive/2014/12/03/scaling-a-multi-tenant-application-with-azure-documentdb.aspx).
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO3-->

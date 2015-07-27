@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="05/12/2015" 
+	ms.date="06/30/2015" 
 	ms.author="jeffstok"/>
 	
 # Azure Stream Analytics & Power BI: Live-Dashboard für die Echtzeit-Analyse von Streamingdaten
@@ -27,12 +27,12 @@ In diesem Artikel erfahren Sie, wie Sie eigene benutzerdefinierte Business Intel
 
 > [AZURE.NOTE]Power BI ist eine Vorschaufunktion von Azure Stream Analytics.
 
-##Voraussetzungen
+## Voraussetzungen ##
 
 * Microsoft Azure-Konto mit Organisations-ID (Power BI funktioniert nur mit Ihrer Organisations-ID. Die Organisations-ID ist Ihre geschäftliche E-Mail-Adresse, z. B. xyz@mycompany.com. Persönliche E-Mail-Adressen wie xyz@hotmail.com sind keine Organisations-IDs. Erfahren Sie [hier](https://msdn.microsoft.com/subscriptions/dn531048.aspx) mehr über die Organisations-ID. Auch häufig gestellte Frage können [hier](http://go.microsoft.com/fwlink/?linkid=331007&clcid=0x409) heruntergeladen werden).
 * Eine Eingabe für Ihren Stream Analytics-Auftrag, aus dem Streamingdaten verwendet werden können. Stream Analytics akzeptiert Eingaben von Azure Event Hubs oder dem Azure-Blob-Speicher.  
 
-##Erstellen eines Azure Stream Analytics-Auftrags
+## Erstellen eines Azure Stream Analytics-Auftrags ##
 
 Klicken Sie im [Azure-Portal](https://manage.windowsazure.com) auf **Neu, Datendienste, Stream Analytics und Schnellerfassung**.
 
@@ -48,7 +48,7 @@ Klicken Sie im linken Bereich auf **Stream Analytics**, um die Stream Analytics-
 
 > [AZURE.TIP]Der neue Auftrag wird mit dem Status **Nicht gestartet** aufgeführt. Beachten Sie, dass die Schaltfläche **Start** am unteren Seitenrand deaktiviert ist. Dies entspricht dem erwarteten Verhalten, da Sie die Auftragseingabe, -ausgabe, -abfrage usw. konfigurieren müssen, bevor Sie den Auftrag starten können.
 
-##Festlegen der Auftragseingabe
+## Festlegen der Auftragseingabe ##
 
 In diesem Lernprogramm wird davon ausgegangen, dass Sie EventHub als Eingabe mit JSON-Serialisierung und UTF-8-Codierung verwenden.
 
@@ -73,7 +73,7 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie EventHub als Eingabe mit
   *	**Codierung** – UTF8
 *	Klicken Sie auf das Häkchen, um diese Quelle hinzuzufügen und um zu überprüfen, ob Stream Analytics erfolgreich mit dem Event Hub verbunden werden kann.
 
-##Power BI-Ausgabe hinzufügen
+## Power BI-Ausgabe hinzufügen ##
 
 1.  Klicken Sie am oberen Seitenrand auf **Ausgabe** und dann auf **Ausgabe hinzufügen**. Sie sehen, dass Power BI als Ausgabeoption aufgelistet ist.
 
@@ -104,7 +104,7 @@ Geben Sie die Werte wie nachfolgend gezeigt ein:
 >	[AZURE.WARNING] Also be aware that if Power BI already had a dataset and table with the same name as the one you provided in this Stream Analytics job, the existing data will be overwritten.
 
 
-##Schreiben von Abfragen
+## Schreiben von Abfragen ##
 
 Gehen Sie zur Registerkarte **Abfrage** des Auftrags. Schreiben Sie die Abfrage, deren Ausgabe Sie in Power BI sehen möchten. Dies kann z. B. die folgende SQL-Abfrage sein:
 
@@ -125,7 +125,7 @@ Gehen Sie zur Registerkarte **Abfrage** des Auftrags. Schreiben Sie die Abfrage,
     
 Starten Sie den Auftrag. Überprüfen Sie, ob der Event Hub Ereignisse empfängt und Ihre Abfrage die erwarteten Ergebnisse generiert. Wenn Ihre Abfrage 0 Zeilen ausgibt, werden Power BI-Dataset und -Tabellen nicht automatisch erstellt.
 
-##Erstellen des Dashboards in Power BI
+## Erstellen des Dashboards in Power BI ##
 
 Wechseln Sie zu [Powerbi.com](https://powerbi.com) und melden Sie sich mit Ihrer Organisations-ID an. Wenn die Stream Analytics-Auftragsabfrage Ergebnisse ausgibt, werden Sie feststellen, dass das Dataset bereits erstellt wurde:
 
@@ -161,10 +161,34 @@ Beachten Sie, dass in diesem Lernprogramm nur die Erstellung einer Art von Diagr
 
 Eine weitere nützliche Ressource, um mehr über das Erstellen von Dashboards mit Power BI zu erfahren, sind die [Dashboards in der Power BI-Vorschau](http://support.powerbi.com/knowledgebase/articles/424868-dashboards-in-power-bi-preview).
 
-## Hier erhalten Sie Hilfe
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-de/home?forum=AzureStreamAnalytics).
+## Einschränkungen und bewährte Methoden ##
+In Power BI werden Parallelitäts- und Durchsatzeinschränkungen genutzt. Eine Beschreibung finden Sie hier: [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing "Power BI-Preise") (in englischer Sprache).
 
-## Nächste Schritte
+Aufgrund dieser Einschränkungen eignet sich Power BI perfekt für Anwendungsfälle, bei denen Azure Stream Analytics eine erhebliche Datenlastverringerung ermöglicht. Es wird die Verwendung von "TumblingWindow" oder "HoppingWindow" empfohlen, um sicherzustellen, dass beim Datenpush maximal 1 Push pro Sekunde erfolgt und dass die Abfrage innerhalb der Durchsatzanforderungen liegt. Mit der folgenden Gleichung können Sie den Wert für das Fenster in Sekunden berechnen: ![Gleichung1](./media/stream-analytics-power-bi-dashboard/equation1.png).
+
+Beispiel: Wenn 1.000 Geräte jede Sekunde Daten senden und Sie das Power BI Pro-SKU verwenden, das 1.000.000 Zeilen pro Stunde unterstützt, und die durchschnittlichen Daten pro Gerät in Power BI berechnen möchten, können Sie maximal alle 4 Sekunden einen Push pro Gerät durchführen (wie im Folgenden gezeigt): ![Gleichung2](./media/stream-analytics-power-bi-dashboard/equation2.png)
+
+Das bedeutet, dass die ursprüngliche Abfrage wie folgt geändert wird:
+
+    SELECT
+    	MAX(hmdt) AS hmdt,
+    	MAX(temp) AS temp,
+    	System.TimeStamp AS time,
+    	dspl
+    INTO
+    	OutPBI
+    FROM
+    	Input TIMESTAMP BY time
+    GROUP BY
+    	TUMBLINGWINDOW(ss,4),
+    	dspl
+
+
+
+## Hier erhalten Sie Hilfe ##
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
+
+## Nächste Schritte ##
 
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
@@ -185,4 +209,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic10]: ./media/stream-analytics-power-bi-dashboard/10-stream-analytics-power-bi-dashboard.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -21,7 +21,7 @@ Azure bietet verschiedene Hostingmodelle für die Ausführung von Anwendungen. J
 
 | Computeoptionen | Zielgruppe |
 | ------------------ | --------   |
-| [App Service] | Skalierbare Web-Apps, mobile Apps, API-Apps und Logik-Apps für jedes Gerät |
+| [App Service] | Skalierbare Web-Apps, mobile Apps, API-Apps und Logik-Apps für beliebige Geräte |
 | [Cloud Services] | Hoch verfügbare, skalierbare, n-schichtige Cloud-Apps mit mehr Kontrolle des Betriebssystems |
 | [Virtual Machines] | Angepasste Windows- und Linux-VMs mit vollständiger Kontrolle des Betriebssystems |
 
@@ -36,4 +36,4 @@ Azure bietet verschiedene Hostingmodelle für die Ausführung von Anwendungen. J
 [Virtual Machines]: ../virtual-machines-choose-me.md
 [Cloud Services]: #tellmecs
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

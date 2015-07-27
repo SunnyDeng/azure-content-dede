@@ -86,4 +86,4 @@ Der folgende Codeausschnitt löscht alle Medienobjekte aus dem Media Services-Ko
 
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

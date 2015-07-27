@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="get-started-article" 
-	ms.date="03/24/2015"
+	ms.date="06/26/2015"
 	ms.author="tdykstra"/>
 
 # Erstellen von ASP.NET-Web-Apps in Azure App Service
@@ -58,7 +58,7 @@ Zunächst erstellen Sie ein Webanwendungsprojekt. Die Azure-Web-App, in der Sie 
 
 3. Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5** ausgewählt ist.
 
-4. Deaktivieren Sie das Kontrollkästchen **Add Application Insights to Project**.
+4.  [Application Insights](app-insights-overview.md) überwacht Ihre Web-App auf Verfügbarkeit, Leistung und Nutzung. Deaktivieren Sie das Kontrollkästchen **Add Application Insights to Project**, wenn Sie die Funktion nicht ausprobieren möchten.
 
 4. Nennen Sie die Anwendung **MyExample**, und klicken Sie auf **OK**.
 
@@ -316,4 +316,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

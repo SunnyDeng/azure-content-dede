@@ -1,10 +1,10 @@
-<properties 
-   pageTitle="Office 365-Connector" 
-   description="Verwenden des Office 365-Connectors" 
-   services="app-service\logic" 
-   documentationCenter=".net,nodejs,java" 
-   authors="sutalasi" 
-   manager="dwrede" 
+<properties
+   pageTitle="Office 365-Connector"
+   description="Verwenden des Office 365-Connectors"
+   services="app-service\logic"
+   documentationCenter=".net,nodejs,java"
+   authors="anuragdalmia"
+   manager="dwrede"
    editor=""/>
 
 <tags
@@ -12,9 +12,9 @@
    ms.devlang="multiple"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="03/20/2015"
-   ms.author="sutalasi"/>
+   ms.workload="integration"
+   ms.date="07/02/2015"
+   ms.author="sameerch"/>
 
 
 #Verwenden des Office 365-Connectors in Ihrer Logik-App#
@@ -80,7 +80,7 @@ Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (
 	![][9]
 
 11. Der Office 365-Trigger "Neue E-Mail" wird konfiguriert, und Sie können die Ausgabeparameter ebenfalls anzeigen.
-	
+
 	![][10]
 
 12.	Wählen Sie im Katalog im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
@@ -157,7 +157,4 @@ Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (
 [20]: ./media/app-service-logic-connector-office365/20_Office365_Send_Configured.png
 [21]: ./media/app-service-logic-connector-office365/21-create-new-o365-api-app.png
 
-
- 
-
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

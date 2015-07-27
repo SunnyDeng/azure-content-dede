@@ -1,10 +1,10 @@
 <properties 
-	pageTitle="Überwachen der Anwendungsleistung" 
+	pageTitle="Überwachen der Leistung der Azure-Web-App" 
 	description="Ladezeit für Diagramme und Antwortzeit, Informationen zu den Abhängigkeiten und Festlegen von Benachrichtigungen zur Leistung." 
 	services="azure-portal"
     documentationCenter="na"
 	authors="alancameronwills" 
-	manager="keboyd"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="azure-portal" 
@@ -12,32 +12,32 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/28/2015" 
+	ms.date="07/08/2015" 
 	ms.author="awills"/>
 
-# Überwachen der Anwendungsleistung
+# Überwachen der Leistung der Azure-Web-App
 
-Im [Azure-Portal](http://portal.azure.com) können Sie festlegen, dass Statistiken und Details zu den Anwendungsabhängigkeiten in Ihren Web-Apps oder virtuellen Computern gesammelt werden.
+Im [Azure-Portal](http://portal.azure.com) können Sie festlegen, dass Statistiken und Details zu den Anwendungsabhängigkeiten in Ihren [Azure-Web-Apps](../app-service-web/app-service-web-overview.md) oder [virtuellen Computern](../virtual-machines/virtual-machines-about.md) gesammelt werden.
 
 Azure unterstützt die Überwachung der Anwendungsleistung (oder *APM*, Application Performance Monitoring) durch die Nutzung von *Erweiterungen*. Diese Erweiterungen werden in Ihrer Anwendung installiert und geben die gesammelten Daten an die Überwachungsdienste zurück.
+
+Application Insights und New Relic sind zwei der zur Verfügung stehenden Erweiterungen zur Leistungsüberwachung. Um New Relic zu verwenden, müssen Sie einen Agent zur Laufzeit installieren. Um Application Insights zu verwenden, erstellen Sie Ihren Code mit einem SDK neu. Sie können auch eine Erweiterung installieren, die Zugriff auf zusätzliche Daten bietet. Mit dem SDK können Sie Code schreiben, um die Auslastung und Leistung Ihrer Anwendung genauer zu überwachen.
 
 ## Aktivieren einer Erweiterung
 
 1. Klicken Sie auf **Durchsuchen**, und wählen Sie die Web-App oder den virtuellen Computer aus, für den Sie eine Überwachung durchführen möchten.
 
-2. Klicken Sie unterhalb von **Überwachung** auf die Kachel **Anwendungsüberwachung**.
+2. Fügen Sie die Application Insights- oder die New Relic-Erweiterung hinzu. Wenn Sie eine Web-App instrumentieren möchten:
 
-3. Wählen Sie den gewünschten Erweiterungsanbieter aus, z. B. **Application Insights** oder **New Relic**.
-
-![Web-App-APM](./media/insights-perf-analytics/05-extend.png)
+![Einstellungen, Erweiterungen, Hinzufügen, Application Insights](./media/insights-perf-analytics/05-extend.png)
 
 Oder wenn Sie einen virtuellen Computer verwenden:
 
-![Virtueller Computer](./media/insights-perf-analytics/10-vm1.png)
+![Klicken Sie auf die Kachel „Analytics“.](./media/insights-perf-analytics/10-vm1.png)
 
 ### Für Application Insights: Neuerstellen mit dem SDK
 
-New Relic kann ohne zusätzliche Instrumentation automatisch installiert werden, aber für Application Insights gibt es eine zusätzliche Anforderung.
+Application Insights kann verwendet werden, indem Sie ein SDK in Ihrer App installieren.
 
 Fügen Sie in Visual Studio Ihrem Projekt das Application Insights SDK hinzu.
 
@@ -81,4 +81,4 @@ Nachdem Sie das Blatt geöffnet haben, z. B. für Application Insights, können
 * [Überwachen der Verfügbarkeit und Reaktionsfähigkeit einer beliebigen Webseite](../app-insights-monitor-web-app-availability.md) mit Application Insights, um zu ermitteln, ob eine Seite offline ist.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

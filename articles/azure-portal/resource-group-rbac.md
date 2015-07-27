@@ -1,19 +1,19 @@
 <properties
    pageTitle="Verwalten und Überwachen des Zugriffs auf Ressourcen"
    description="Verwenden Sie die rollenbasierte Zugriffssteuerung (RBAC) zum Verwalten von Berechtigungen für in Azure bereitgestellten Ressourcen."
-   services="azure-portal"
+   services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
    manager="wpickett"
    editor=""/>
 
 <tags
-   ms.service="azure-portal"
+   ms.service="azure-resource-manager"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="AzurePortal"
    ms.workload="na"
-   ms.date="06/18/2015"
+   ms.date="07/15/2015"
    ms.author="tomfitz"/>
 
 # Verwalten und Überwachen des Zugriffs auf Ressourcen
@@ -59,7 +59,7 @@ Wenn Sie noch nicht die neueste Version von Azure PowerShell installiert haben, 
 
 1. Melden Sie sich mit Ihren Anmeldeinformationen bei Ihrem Azure-Konto an. Der Befehl gibt Informationen zu Ihrem Konto zurück.
 
-        PS C:\> Add-AzureAccount
+        PS C:> Add-AzureAccount
           
         Id                             Type       ...
         --                             ----    
@@ -67,16 +67,16 @@ Wenn Sie noch nicht die neueste Version von Azure PowerShell installiert haben, 
 
 2. Wenn Sie über mehrere Abonnements verfügen, geben Sie die Abonnement-ID ein, die Sie für die Bereitstellung verwenden möchten.
 
-        PS C:\> Select-AzureSubscription -SubscriptionID <YourSubscriptionId>
+        PS C:> Select-AzureSubscription -SubscriptionID <YourSubscriptionId>
 
 3. Wechseln Sie zum Azure-Ressourcen-Manager-Modul.
 
-        PS C:\> Switch-AzureMode AzureResourceManager
+        PS C:> Switch-AzureMode AzureResourceManager
 
 ### Anzeigen verfügbarer Rollen
 Um alle verfügbaren Rollen für Ihr Abonnement anzuzeigen, führen Sie den Befehl **Get-AzureRoleDefinition** aus.
 
-    PS C:\> Get-AzureRoleDefinition
+    PS C:> Get-AzureRoleDefinition
 
     Name                          Id                            Actions                  NotActions
     ----                          --                            -------                  ----------
@@ -87,7 +87,7 @@ Um alle verfügbaren Rollen für Ihr Abonnement anzuzeigen, führen Sie den Befe
 ### Erteilen der Berechtigung von Lesern an eine Gruppe für das Abonnement
 1. Überprüfen Sie die Rollendefinition für **Leser**, indem Sie den Rollennamen bereitstellen, wenn Sie den Befehl **Get-AzureRoleDefinition** ausführen. Überprüfen Sie, ob die zulässigen Aktionen die sind, die Sie zuweisen möchten.
 
-        PS C:\> Get-AzureRoleDefinition Reader
+        PS C:> Get-AzureRoleDefinition Reader
    
         Name            Id                            Actions           NotActions
         ----            --                            -------           ----------
@@ -95,11 +95,11 @@ Um alle verfügbaren Rollen für Ihr Abonnement anzuzeigen, führen Sie den Befe
 
 2. Rufen Sie die erforderliche Sicherheitsgruppe durch Ausführen des Befehls **Get-AzureADGroup** ab. Geben Sie den tatsächlichen Namen der Gruppe in Ihrem Abonnement an. ExampleAuditorGroup ist unten dargestellt.
 
-        PS C:\> $group = Get-AzureAdGroup -SearchString ExampleAuditorGroup
+        PS C:> $group = Get-AzureAdGroup -SearchString ExampleAuditorGroup
 
 3. Erstellen Sie die Rollenzuweisung für die Sicherheitsgruppe "Auditor". Wenn der Befehl abgeschlossen ist, wird die neue Rollenzuweisung zurückgegeben.
 
-        PS C:\> New-AzureRoleAssignment -ObjectId $group.Id -Scope /subscriptions/{subscriptionId}/ -RoleDefinitionName Reader
+        PS C:> New-AzureRoleAssignment -ObjectId $group.Id -Scope /subscriptions/{subscriptionId}/ -RoleDefinitionName Reader
 
         Mail               :
         RoleAssignmentId   : /subscriptions/####/providers/Microsoft.Authorization/roleAssignments/####
@@ -113,32 +113,32 @@ Um alle verfügbaren Rollen für Ihr Abonnement anzuzeigen, führen Sie den Befe
 ###Erteilen der Berechtigung von Mitwirkenden an eine Anwendung für eine Ressourcengruppe
 1. Überprüfen Sie die Rollendefinition für **Mitwirkende**, indem Sie den Rollennamen bereitstellen, wenn Sie den Befehl **Get-AzureRoleDefinition** ausführen. Überprüfen Sie, ob die zulässigen Aktionen die sind, die Sie zuweisen möchten.
 
-        PS C:\> Get-AzureRoleDefinition Contributor
+        PS C:> Get-AzureRoleDefinition Contributor
 
 2. Rufen Sie die Objekt-ID des Dienstprinzipals ab, indem Sie den Befehl **Get-AzureADServicePrincipal** ausführen und den Namen der Anwendung in Ihrem Abonnement bereitstellen. ExampleApplication ist unten dargestellt.
 
-        PS C:\> $service = Get-AzureADServicePrincipal -SearchString ExampleApplicationName
+        PS C:> $service = Get-AzureADServicePrincipal -SearchString ExampleApplicationName
 
 3. Erstellen Sie die Rollenzuweisungen für den Dienstprinzipal, indem Sie den Befehl **New-AzureRoleAssignment** ausführen.
 
-        PS C:\> New-AzureRoleAssignment -ObjectId $service.Id -ResourceGroupName ExampleGroupName -RoleDefinitionName Contributor
+        PS C:> New-AzureRoleAssignment -ObjectId $service.Id -ResourceGroupName ExampleGroupName -RoleDefinitionName Contributor
 
 Eine ausführlichere Erläuterung der Einrichtung einer Azure Active Directory-Anwendung und eines Dienstprinzipals finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](../resource-group-authenticate-service-principal.md).
 
 ###Erteilen der Berechtigungen von Besitzern an einen Benutzer für eine Ressource
 1. Überprüfen Sie die Rollendefinition für **Besitzer**, indem Sie den Rollennamen bereitstellen, wenn Sie den Befehl **Get-AzureRoleDefinition** ausführen. Überprüfen Sie, ob die zulässigen Aktionen die sind, die Sie zuweisen möchten.
 
-        PS C:\> Get-AzureRoleDefinition Owner
+        PS C:> Get-AzureRoleDefinition Owner
 
 2. Erstellen Sie die Rollenzuweisungen für den Benutzer.
 
-        PS C:\> New-AzureRoleAssignment -UserPrincipalName "someone@example.com" -ResourceGroupName {groupName} -ResourceType "Microsoft.Web/sites" -ResourceName "mysite" -RoleDefinitionName Owner
+        PS C:> New-AzureRoleAssignment -UserPrincipalName "someone@example.com" -ResourceGroupName {groupName} -ResourceType "Microsoft.Web/sites" -ResourceName "mysite" -RoleDefinitionName Owner
 
 
 ###Auflisten von Überwachungsprotokollen der Ressourcengruppe
 Um das Überwachungsprotokoll für eine Ressourcengruppe abzurufen, führen Sie den Befehl **Get-AzureResourceGroupLog** aus.
 
-      PS C:\> Get-AzureResourceGroupLog -ResourceGroup ExampleGroupName
+      PS C:> Get-AzureResourceGroupLog -ResourceGroup ExampleGroupName
 
 ## Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows
 
@@ -270,4 +270,4 @@ Erstellen Sie die Rollenzuweisung.
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

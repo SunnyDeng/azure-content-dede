@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Anmelden an einem virtuellen Computer unter Linux in Azure" 
-	description="Erfahren Sie, wie Sie sich an einem virtuellen Azure-Computer unter Linux mithilfe eines Secure Shell (SSH)-Clients anmelden." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="KBDAzure" 
-	manager="timlt" 
+<properties
+	pageTitle="Anmelden an einem virtuellen Computer unter Linux in Azure"
+	description="Erfahren Sie, wie Sie sich an einem virtuellen Azure-Computer unter Linux mithilfe eines Secure Shell (SSH)-Clients anmelden."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="squillace"
+	manager="timlt"
 	editor=""/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="03/16/2015" 
-	ms.author="kathydav"/>
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="03/16/2015"
+	ms.author="rasquill"/>
 
 
 
@@ -47,11 +47,10 @@ Bei diesem Verfahren wird aufgezeigt, wie Sie mithilfe des PuTTY-Programms auf d
 	![Melden Sie sich beim virtuellen Computer an.](./media/virtual-machines-linux-how-to-log-on/sshlogin.png)
 
 >[AZURE.NOTE]Mit der VMAccess-Erweiterung können Sie den SSH-Schlüssel oder das SSH-Kennwort zurücksetzen, falls Sie diese vergessen sollten. Falls Sie den Benutzernamen vergessen, können Sie die Erweiterung verwenden, um einen neuen Benutzernamen mit sudo-Autorität zu erstellen. Eine Anleitung finden Sie unter [Zurücksetzen eines Kennworts oder einer SSH für virtuelle Linux-Computer].
-	
+
 Sie können jetzt mit dem virtuellen Computer wie mit jedem anderen Server arbeiten.
 
 <!-- LINKS -->
 [Zurücksetzen eines Kennworts oder einer SSH für virtuelle Linux-Computer]: http://go.microsoft.com/fwlink/p/?LinkId=512138
- 
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

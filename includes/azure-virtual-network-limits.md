@@ -37,4 +37,4 @@
 
 <sup>3</sup> ACL wird auf Eingabeendpunkten für virtuelle Computer unterstützt. Für Web-/Workerrollen wird ACL auf Eingabe- und Instanz-Eingabeendpunkten unterstützt.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

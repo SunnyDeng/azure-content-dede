@@ -165,7 +165,7 @@ Wenn Sie all Ihre statischen Inhalte Ihrer ASP.NET-Webanwendung zu einem CDN-End
 		cd <ProjectFolder>
 		.\UploadContentToAzureBlobs.ps1 -StorageAccount "<yourStorageAccountName>" -StorageContainer "<yourContainerName>"
 
-Dieses Skript lädt alle Dateien aus den Ordnern *\Content* und *\Scripts* zum angegebenen Speicherkonto und Container hoch. Dies bietet folgende Vorteile:
+Dieses Skript lädt alle Dateien aus den Ordnern *\\Content* und *\\Scripts* zum angegebenen Speicherkonto und Container hoch. Dies bietet folgende Vorteile:
 
 -	Automatische Replikation der Dateistruktur des Visual Studio-Projekts
 -	Automatisches Erstellen von Blob-Containern bei Bedarf
@@ -174,7 +174,7 @@ Dieses Skript lädt alle Dateien aus den Ordnern *\Content* und *\Scripts* zum a
 
 Für den `-StorageContainer`-Parameter ist es sinnvoll, den Namen Ihrer Webanwendung oder des Visual Studio-Projekts zu verwenden. Auch wenn ich zuvor das generische "cdn" als Containername verwendet habe, ermöglicht die Nutzung des Namens der Webanwendung, dass verwandte Inhalte im selben, leicht identifizierbaren Container angeordnet werden können.
 
-Sobald die Inhalte hochgeladen sind, können Sie alle Elemente in den Ordnern *\Content* und *\Scripts* mithilfe von `http://<yourCDNName>.vo.msecnd.net/<containerName>` in Ihrem HTML-Code – zum Beispiel in Ihren CSHTML-Dateien – verknüpfen. Hier ist ein Beispiel von etwas, das ich in einer Razor-Ansicht verwenden kann:
+Sobald die Inhalte hochgeladen sind, können Sie alle Elemente in den Ordnern *\\Content* und *\\Scripts* mithilfe von `http://<yourCDNName>.vo.msecnd.net/<containerName>` in Ihrem HTML-Code – zum Beispiel in Ihren CSHTML-Dateien – verknüpfen. Hier ist ein Beispiel von etwas, das ich in einer Razor-Ansicht verwenden kann:
 
 	<img alt="Mugshot" src="http://az623979.vo.msecnd.net/MyMvcApp/Content/cephas_lin.png" />
 
@@ -218,9 +218,9 @@ Es gibt natürlich berechtigte Zeiten und Orte für die Zwischenspeicherung. Ang
 <a name="query"></a>
 ## Sofortiges Bereitstellen neuer Inhalte mithilfe von Abfragezeichenfolgen ##
 
-In Azure CDN können Sie Abfragezeichenfolgen aktivieren, sodass Inhalte von URLs mit bestimmten Abfragezeichenfolgen separat zwischengespeichert werden. Dies ist eine sehr nützliche Funktion, wenn Sie bestimmte Inhaltsaktualisierungen sofort an Clientbrowser weitergeben möchten, anstatt darauf zu warten, dass der zwischengespeicherte CDN-Inhalt abläuft. Nehmen wir an, ich veröffentliche meine Webseite mit einer Versionsnummer in der URL. <pre class="prettyprint"> &lt;link href=&quot;http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=3.0.0</mark>&quot; rel=&quot;stylesheet&quot;/&gt; </pre>
+In Azure CDN können Sie Abfragezeichenfolgen aktivieren, sodass Inhalte von URLs mit bestimmten Abfragezeichenfolgen separat zwischengespeichert werden. Dies ist eine sehr nützliche Funktion, wenn Sie bestimmte Inhaltsaktualisierungen sofort an Clientbrowser weitergeben möchten, anstatt darauf zu warten, dass der zwischengespeicherte CDN-Inhalt abläuft. Nehmen wir an, ich veröffentliche meine Webseite mit einer Versionsnummer in der URL. <pre class="prettyprint"> &lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=3.0.0</mark>"; rel=";stylesheet";/&gt; </pre>
 
-Wenn ich eine CSS-Aktualisierung veröffentliche und eine andere Versionsnummer in meiner CSS-URL verwende: <pre class="prettyprint"> &lt;link href=&quot;http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=3.1.1</mark>&quot; rel=&quot;stylesheet&quot;/&gt; </pre>
+Wenn ich eine CSS-Aktualisierung veröffentliche und eine andere Versionsnummer in meiner CSS-URL verwende: <pre class="prettyprint"> &lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=3.1.1</mark>"; rel=";stylesheet";/&gt; </pre>
 
 Für einen CDN-Endpunkt, für den Abfragezeichenfolgen aktiviert sind, sind die beiden URLs jeweils eindeutig, sodass dieser eine neue Anfrage an meinen Webserver machen wird, um die neue *bootstrap.css* abzurufen. Für einen CDN-Endpunkt, für den Abfragezeichenfolgen nicht aktiviert sind, sind dies identische URLs, sodass einfach die zwischengespeicherte *bootstrap.css* abgerufen wird.
 
@@ -228,9 +228,9 @@ Der Trick besteht darin, die Versionsnummer automatisch zu aktualisieren. In Vis
 
 ...
 
-&lt;link href=&quot;http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=@cdnVersion</mark>&quot; rel=&quot;stylesheet&quot;/&gt; </pre>
+&lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=@cdnVersion</mark>"; rel=";stylesheet";/&gt; </pre>
 
-Wenn Sie die Assemblynummer als Teil jedes Veröffentlichungszyklus ändern, können Sie sicher sein, dass Sie jedes Mal eine eindeutige Versionsnummer erhalten, wenn Sie die Webanwendung veröffentlichen. Diese bleibt bis zum nächsten Veröffentlichungszyklus identisch. Sie können Visual Studio auch die Assemblyversionsnummer jedes Mal automatisch erhöhen lassen, wenn die Webanwendung erstellt wird, indem Sie im Visual Studio-Projekt *Properties\AssemblyInfo.cs* öffnen und `*` in `AssemblyVersion` verwenden. Beispiel:
+Wenn Sie die Assemblynummer als Teil jedes Veröffentlichungszyklus ändern, können Sie sicher sein, dass Sie jedes Mal eine eindeutige Versionsnummer erhalten, wenn Sie die Webanwendung veröffentlichen. Diese bleibt bis zum nächsten Veröffentlichungszyklus identisch. Sie können Visual Studio auch die Assemblyversionsnummer jedes Mal automatisch erhöhen lassen, wenn die Webanwendung erstellt wird, indem Sie im Visual Studio-Projekt *Properties\\AssemblyInfo.cs* öffnen und `*` in `AssemblyVersion` verwenden. Beispiel:
 
 	[assembly: AssemblyVersion("1.0.0.*")]
 
@@ -261,4 +261,4 @@ Ohne Integration in Azure App Service-Web-Apps oder Azure Cloud Services können
 - [Verwenden von CDN für Azure](cdn-how-to-use-cdn.md)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

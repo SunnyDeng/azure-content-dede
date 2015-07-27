@@ -290,4 +290,4 @@ Weitere Referenzinformationen finden Sie unter â€SQL Data Warehouse-Referenz â€
 
 <!--MSDN references-->
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

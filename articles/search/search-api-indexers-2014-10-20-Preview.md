@@ -1,10 +1,10 @@
 <properties title="" pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" description="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" metaKeywords="" services="search" solutions="" documentationCenter="" authors="HeidiSteen" manager="mblythe" videoId="" scriptId="" />
 
-<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="04/20/2015" ms.author="heidist" />
+<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="07/08/2015" ms.author="heidist" />
 
 #Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)
 
-> [AZURE.NOTE]Dieser Artikel beschreibt den Prototyp einer neuen Funktion, die nicht in der veröffentlichten Version der API enthalten ist. Weitere Informationen zu Versionen und Unterstützungsmöglichkeiten finden Sie unter[Versionsverwaltung für den Azure Search-Dienst](http://msdn.microsoft.com/library/azure/dn864560.aspx) auf MSDN. Weitere Informationen zu anderen Funktionen in dieser Vorschau-API finden Sie unter [Azure Search-Dienst REST API-Version: 2014-10-20-Preview](../search-api-2014-10-20-preview/).
+> [AZURE.NOTE]Dieser Artikel beschreibt den Prototyp einer neuen Funktion, die nicht in der veröffentlichten Version der API enthalten ist. Weitere Informationen zu Versionen und Unterstützungsmöglichkeiten finden Sie unter[Versionsverwaltung für den Azure Search-Dienst](http://msdn.microsoft.com/library/azure/dn864560.aspx) auf MSDN. Weitere Informationen zu anderen Funktionen in dieser Vorschau-API finden Sie unter [Azure Search-Dienst REST API-Version: 2014-10-20-Preview](search-api-2014-10-20-preview.md).
 
 ## Übersicht
 
@@ -75,14 +75,14 @@ Der Name der Datenquelle muss in Kleinbuchstaben angegeben werden, mit einem Buc
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgenwert. Die Anforderung **Datenquelle erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel (im Gegensatz zum Abfrageschlüssel) festgelegt ist. 
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erste Schritte mit Azure Search](search-get-started.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 
-<a name="CreateDataSourceRequestSyntax"></a> **Syntax des Anforderungstextes**
+<a name="CreateDataSourceRequestSyntax"></a> **Syntax des Anforderungstexts**
 
 Der Anforderungstext enthält eine Datenquellendefinition, einschließlich Datenquellentyp, Anmeldeinformationen zum Lesen der Daten sowie optionale Richtlinien zur Erkennung von Datenänderungen und Datenlöschungen. Diese Richtlinien werden verwendet, um geänderte und gelöschte Daten in der Datenquelle effizient zu identifizieren, wenn ein regelmäßig geplanter Indexer verwendet wird.
 
@@ -135,7 +135,7 @@ Diese Richtlinie kann wie folgt angegeben werden:
 
 ***Richtlinie für die integrierte SQL-Erkennung von Änderungen***
 
-Wenn die SQL-Datenbank die [integrierte SQL-Änderungsnachverfolgung](http://technet.microsoft.com/library/cc280462(v=SQL.105).aspx) unterstützt, wird empfohlen, die Richtlinie für die integrierte SQL-Änderungsnachverfolgung zu verwenden. Diese Richtlinie ermöglicht die effizienteste Änderungsnachverfolgung und sorgt dafür, dass Azure Search gelöschte Zeilen identifiziert, ohne dass Sie eine explizite "Vorläufig löschen"-Spalte in Ihrem Schema angeben müssen.
+Wenn die SQL-Datenbank die [integrierte SQL-Änderungsnachverfolgung](http://technet.microsoft.com/library/cc280462.aspx) unterstützt, wird empfohlen, die Richtlinie für die integrierte SQL-Änderungsnachverfolgung zu verwenden. Diese Richtlinie ermöglicht die effizienteste Änderungsnachverfolgung und sorgt dafür, dass Azure Search gelöschte Zeilen identifiziert, ohne dass Sie eine explizite "Vorläufig löschen"-Spalte in Ihrem Schema angeben müssen.
 
 Die integrierte SQL-Änderungsnachverfolgung wird beginnend mit den folgenden SQL-Datenbank-Versionen unterstützt: - SQL Server 2008 R2, wenn Sie SQL IaaS-VMs verwenden – Azure SQL-Datenbank V12, wenn Sie Azure SQL verwenden.
 
@@ -657,4 +657,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -80,4 +80,4 @@ Die Anzahl der API-Aufrufe kann durch eine expand-Zeichenfolge reduziert werden.
 
 > [AZURE.NOTE]Es wird empfohlen, dass Sie immer filter- und select-Klauseln für Ihre API-Aufrufe zur Listenerstellung verwenden, um die maximale Effizienz und optimale Leistung der Anwendung zu gewährleisten.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

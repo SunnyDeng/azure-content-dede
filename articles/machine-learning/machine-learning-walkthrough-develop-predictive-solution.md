@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="04/22/2015"
+	ms.date="07/10/2015"
 	ms.author="garye"/>
 
 
@@ -42,4 +42,4 @@ Um eine Lösung zur Kreditrisikobewertung zu erstellen, müssen wir die folgende
 Diese Anleitung basiert auf einer vereinfachten Version des in Machine Learning Studio enthaltenen Artikels [Experiment zur Kreditrisiko-Vorhersage](../machine-learning-sample-credit-risk-prediction.md).
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

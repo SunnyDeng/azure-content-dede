@@ -123,7 +123,7 @@ Das Azure-Modul enthält Cmdlets, mit denen Sie das Zertifikat herunterladen und
 
 4. Laden Sie das Veröffentlichungsprofil herunter und speichern Sie es, wenn Sie eine entsprechende Aufforderung erhalten, und notieren Sie den Pfad und Namen der Datei mit der Erweiterung *.publishsettings. Diese Informationen werden benötigt, wenn Sie das Cmdlet **Import-AzurePublishSettingsFile** ausführen, um die Einstellungen zu importieren. Für den Standardspeicherort und -dateinamen gilt folgendes Format:
 
-			C:\Users<UserProfile>\Download\[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
+			C:\\Users<UserProfile>\\Download\[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
 
 5. Geben Sie einen Befehl wie den folgenden ein, wobei Sie die Platzhalter durch Ihren Windows-Kontonamen und den Pfad und Dateinamen ersetzen:
 
@@ -260,4 +260,4 @@ Im Folgenden werden einige der verfügbaren Ressourcen genannt, in denen Sie erf
 
   [Microsoft Online Services Customer Portal]: https://mocp.microsoftonline.com/site/default.aspx
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

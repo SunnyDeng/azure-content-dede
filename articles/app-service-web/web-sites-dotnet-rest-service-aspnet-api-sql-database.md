@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="03/24/2015" 
+	ms.date="06/16/2015" 
 	ms.author="riande"/>
 
 # Erstellen eines REST-Diensts mithilfe der ASP.NET Web API und einer SQL-Datenbank in Azure App Service
@@ -37,7 +37,8 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 b
 
 ![Screenshot von Website][intro001]
 
-<a name="bkmk_setupdevenv"></a> <!-- the next line produces the "Set up the development environment" section as see at http://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/ -->[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
+<!-- the next line produces the "Set up the development environment" section as see at http://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/ -->
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ### Erstellen des Projekts
 
@@ -75,10 +76,10 @@ Wenn Sie über einen Datenbankserver verfügen, verwenden Sie diesen, um eine ne
 ### Einrichten der Seitenkopf- und -fußzeile
 
 
-1. Erweitern Sie im **Projektmappen-Explorer** den Ordner *Views\Shared*, und öffnen Sie die Datei *_Layout.cshtml*. .
+1. Erweitern Sie im **Projektmappen-Explorer** den Ordner *Views\\Shared*, und öffnen Sie die Datei *_Layout.cshtml*. .
 	![_Layout.cshtml im Projektmappen-Explorer][newapp004]
 
-1. Ersetzen Sie den Inhalt der Datei *Views\Shared_Layout.cshtml* durch den folgenden Code.
+1. Ersetzen Sie den Inhalt der Datei *Views\\Shared_Layout.cshtml* durch den folgenden Code.
 
 
 		<!DOCTYPE html>
@@ -125,7 +126,7 @@ Das Markup oben ändert den App-Namen von "My ASP.NET App" auf "Contact Manager"
 
 Darüber hinaus müssen Sie keine weiteren Aktionen ausführen, um die Anwendung zu erstellen, die Sie für Azure bereitstellen. Zu einem späteren Zeitpunkt fügen Sie Datenbankfunktionalität hinzu.
 
-<h2><a name="bkmk_deploytowindowsazure1"></a>Bereitstellen der Anwendung in Azure</h2>
+## Bereitstellen der Anwendung in Azure
 
 1. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf das Projekt, und wählen Sie im Kontextmenü **Veröffentlichen** aus.
 
@@ -145,7 +146,7 @@ Die Dateien werden von Visual Studio auf den Azure-Server kopiert. Im Fenster **
 	
 	![To-Do-List-Homepage in Azure][rxz2]
 
-<h2><a name="bkmk_addadatabase"></a>Hinzufügen einer Datenbank zur Anwendung</h2>
+## Hinzufügen einer Datenbank zur Anwendung
 
 Als Nächstes aktualisieren Sie die MVC-Anwendung, um Funktionen zum Anzeigen und Aktualisieren von Kontakten sowie Speichern der Daten in einer Datenbank hinzuzufügen. Die Anwendung verwendet Entity Framework, um die Datenbank zu erstellen und Daten in der Datenbank zu lesen und zu aktualisieren.
 
@@ -191,7 +192,7 @@ Mit der Klasse **Contacts** werden die Daten definiert, die für die einzelnen K
 
 Mit dem ASP.NET MVC-Gerüstfeature kann automatisch Code generiert werden, der Erstellungs-, Lese-, Aktualisierungs- und Löschaktionen (CRUD) durchführt.
 
-<h2><a name="bkmk_addcontroller"></a>Hinzufügen eines Controllers und einer Ansicht für die Daten</h2>
+## Hinzufügen eines Controllers und einer Ansicht für die Daten
 
 1. Zeigen Sie im **Projektmappen-Explorer** den Ordner "Controllers" an.
 
@@ -235,7 +236,7 @@ Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen](http://
 
 	In der **Initial**-Klasse wird mit der **Up**-Methode die Tabelle **Contacts** erstellt und mit der Down-Methode (wird verwendet, wenn Sie zum vorherigen Status zurückkehren möchten) wieder verworfen.
 
-3. Öffnen Sie die Datei *Migrations\Configuration.cs*.
+3. Öffnen Sie die Datei *Migrations\\Configuration.cs*.
 
 4. Fügen Sie die folgenden Namespaces hinzu.
 
@@ -316,9 +317,9 @@ In der Anwendung werden die Seeddaten angezeigt und Links zum Bearbeiten und Lö
 
 ![MVC-Datenansicht][rxz3]
 
-<h2><a name="bkmk_addview"></a>Bearbeiten der Anzeige</h2>
+## Bearbeiten der Anzeige
 
-1. Öffnen Sie die Datei *Views\Home\Index.cshtml*. Im nächsten Schritt ersetzen wir das generierte Markup mit Code, der [jQuery](http://jquery.com/) und [Knockout.js](http://knockoutjs.com/) verwendet. Dieser neue Code ruft die Liste der Kontakte mithilfe von Web API und JSON ab und bindet die Kontaktdaten mithilfe von knockout.js an das UI. Weitere Informationen finden Sie unter [Nächste Schritte](#nextsteps) am Ende dieses Lernprogramms. 
+1. Öffnen Sie die Datei *Views\\Home\\Index.cshtml*. Im nächsten Schritt ersetzen wir das generierte Markup mit Code, der [jQuery](http://jquery.com/) und [Knockout.js](http://knockoutjs.com/) verwendet. Dieser neue Code ruft die Liste der Kontakte mithilfe von Web API und JSON ab und bindet die Kontaktdaten mithilfe von knockout.js an das UI. Weitere Informationen finden Sie unter [Nächste Schritte](#nextsteps) am Ende dieses Lernprogramms. 
 
 
 2. Ersetzen Sie den Inhalt der Datei durch den folgenden Code.
@@ -475,7 +476,7 @@ In der Anwendung werden die Seeddaten angezeigt und Links zum Bearbeiten und Lö
 
 	Wir verwenden dieses Stylesheet für das Layout, die Farben und die Stile, die in der App "Content Manager" verwendet werden.
 
-6. Öffnen Sie die Datei *App_Start\BundleConfig.cs*.
+6. Öffnen Sie die Datei *App_Start\\BundleConfig.cs*.
 
 
 7. Fügen Sie den folgenden Code hinzu, um das [Knockout](http://knockoutjs.com/index.html "KO")-Plugin zu registrieren.
@@ -499,10 +500,9 @@ in:
 1. Führen Sie in der Paket-Managerkonsole den folgenden Befehl aus, um "Knockout" zu installieren.
 
 	Installationspaket Knockoutjs
+## Hinzufügen eines Controllers für die Restful-Web-API-Oberfläche
 
-<h2><a name="bkmk_addwebapi"></a>Hinzufügen eines Controllers für die Restful-Web-API-Oberfläche</h2>
-
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Controllers**, und klicken Sie dann auf **Hinzufügen** und Controller. 
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Controllers**, und klicken Sie dann auf **Hinzufügen** und Controller.
 
 1. Wählen Sie im Dialogfeld **Add Scaffold** die Option **Web API 2 Controller with actions, using Entity Framework** aus, und klicken Sie dann auf **Hinzufügen**.
 
@@ -541,8 +541,7 @@ in:
 	![Web-API-Speicherdialog][addwebapi007]
 
 	**Sicherheitswarnung**: Ihre Anwendung ist unsicher und anfällig für CSRF-Angriffe. Im Verlauf des Lernprogramms korrigieren wir diese Schwachstelle. Weitere Informationen erhalten Sie unter [Verhindern von Cross-Site Request Forgery (CSRF)-Angriffen][prevent-csrf-attacks].
-
-<h2><a name="xsrf"></a>Hinzufügen von XSRF-Schutz</h2>
+## Hinzufügen von XSRF-Schutz
 
 Bei der websiteübergreifenden Anforderungsfälschung (auch bekannt als XSRF oder CSRF) handelt es sich um einen Angriff auf eine im Web gehostete Anwendung, bei der eine schädliche Website die Interaktion zwischen einem Clientbrowser und einer Website, der der Browser vertraut, beeinflussen kann. Diese Angriffe sind möglich, da Webbrowser bei jeder Anforderung an eine Website automatisch Authentifizierungstoken senden. Ein typisches Beispiel ist ein Authentifizierungscookie, wie das Authentifizierungsticket von ASP.NET. Websites, die einen persistenten Authentifizierungsmechanismus verwenden (wie Windows-Authentifizierung, HTTP-Basic usw.), sind für derartige Angriffe anfällig.
 
@@ -630,7 +629,7 @@ Weitere Informationen finden Sie unter [Open Web Application Security Project](h
 
 	[ValidateHttpAntiForgeryToken] public IHttpActionResult PutContact(int id, Contact contact) {
 
-1. Aktualisieren Sie den Abschnitt *Skripts* der Datei *Views\Home\Index.cshtml*, um Code für die XSRF-Tokens zu erhalten.
+1. Aktualisieren Sie den Abschnitt *Skripts* der Datei *Views\\Home\\Index.cshtml*, um Code für die XSRF-Tokens zu erhalten.
 
          @section Scripts {
             @Scripts.Render("~/bundles/knockout")
@@ -685,7 +684,7 @@ Weitere Informationen finden Sie unter [Open Web Application Security Project](h
             </script>
 
 
-<h2><a name="bkmk_deploydatabaseupdate"></a>Veröffentlichen von Anwendungsaktualisierungen von Azure und SQL-Datenbank</h2>
+## Veröffentlichen von Anwendungsaktualisierungen von Azure und SQL-Datenbank
 
 Wiederholen Sie den Prozess, den Sie bereits zuvor durchgeführt haben, um die Anwendung zu veröffentlichen.
 
@@ -722,7 +721,7 @@ Die Anwendung wird nun in der Cloud ausgeführt und verwendet die SQL-Datenbank 
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-<h2><a name="nextsteps"></a>Nächste Schritte</h2>
+## Nächste Schritte
 
 Eine echte Anwendung benötigt eine Authentifizierung und Autorisierung, und Sie würden für diesen Zweck die Mitgliedsdatenbank verwenden. Das Lernprogramm [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank ](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md) basiert auf diesem Lernprogramm und zeigt, wie Sie eine Web-Anwendung mithilfe der Mitgliedsdatenbank bereitstellen.
 
@@ -811,4 +810,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

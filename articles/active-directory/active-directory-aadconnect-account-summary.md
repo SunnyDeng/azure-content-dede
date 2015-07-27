@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/28/2015" 
+	ms.date="07/02/2015" 
 	ms.author="billmath"/>
 
 
@@ -27,7 +27,8 @@ Der Azure AD Connect-Assistent bietet zwei unterschiedliche Pfade mit verschiede
 
 * Für die benutzerdefinierten Einstellungen stehen mehr Auswahlmöglichkeiten und Optionen zur Verfügung. Es gibt aber einige Situationen, in denen Sie sicherstellen müssen, dass Sie selbst über die richtigen Berechtigungen verfügen.
 
-Die folgende Tabelle enthält eine Zusammenfassung der Anmeldeinformationen, die erfasst werden, sowie Informationen zu ihrem Verwendungszweck bei einem Express-Setup.
+
+## Erfasste Anmeldeinformationen und deren Verwendungszweck bei einem Express-Setup
 
 Seite des Assistenten | Erfasste Anmeldeinformationen | Erforderliche Berechtigungen| Verwendung 
 ------------- | ------------- |------------- |------------- |
@@ -37,16 +38,8 @@ Nicht verfügbar|Anmeldeinformationen des Benutzers, der den Assistenten ausfüh
 
 <br> <br>
 
-Die folgende Tabelle enthält eine Zusammenfassung der Anmeldeinformationen, die erfasst werden, sowie Informationen zu ihrem Verwendungszweck bei einem Express-Setup.
 
-
-Seite des Assistenten | Erfasste Anmeldeinformationen | Erforderliche Berechtigungen| Verwendung 
-------------- | ------------- |------------- |------------- |
-Herstellen einer Verbindung mit Azure AD| Azure AD-Verzeichnisanmeldeinformationen | Globale Administratorrolle in Azure AD | <li>Aktivieren der Synchronisierung im Azure AD-Verzeichnis.</li> <li>Erstellen des Azure AD-Kontos, das für die fortlaufenden Synchronisierungsvorgänge in Azure AD verwendet wird.</li>
-Herstellen einer Verbindung mit AD DS | Lokale Active Directory-Anmeldeinformationen | Mitglied der Gruppe "Unternehmensadministratoren" in Active Directory| <li>Die Erstellung des lokalen AD-Kontos, das zum Lesen der Objekte und Attribute aus dem lokalen AD für den fortlaufenden Synchronisierungsvorgang verwendet wird.</li> <li> Zuweisen der richtigen Berechtigungen und Einstellungen für die Zugriffssteuerung für die Synchronisierung und Kennwortsynchronisierung mit dem oben genannten Konto und AD.</li> 
-Nicht verfügbar|Anmeldeinformationen des Benutzers, der den Assistenten ausführt| Administrator des lokalen Servers|Der Assistent erstellt das AD-Konto, das als Anmeldekonto für den Synchronisierungsdienst auf dem lokalen Computer dient.
-
-<br> <br> Die folgende Tabelle enthält eine Zusammenfassung der Anmeldeinformationen, die erfasst werden, sowie Informationen zu ihrem Verwendungszweck bei einem Express-Setup.
+## Erfasste Anmeldeinformationen und deren Verwendungszweck bei einem benutzerdefinierten Setup
 
 Seite des Assistenten | Erfasste Anmeldeinformationen | Erforderliche Berechtigungen| Verwendung 
 ------------- | ------------- |------------- |------------- |
@@ -61,7 +54,8 @@ Seite "AD FS-Dienstkonto", Option "Domänenbenutzerkonto verwenden"|Anmeldeinfor
 
 
 
-<br> <br> In der folgenden Tabelle finden Sie eine Zusammenfassung der Berechtigungen, die für bestimmte Szenarien erforderlich sind.
+<br> <br>
+## Für ein bestimmtes Szenario erforderliche Berechtigungen
 
 Szenario |Berechtigung
 ------------- | ------------- |
@@ -71,7 +65,8 @@ Kennwortrückschreiben | <li>Kennwort ändern</li><li>Kennwort zurücksetzen</li
 Benutzer-, Gruppen- und Geräterückschreiben|Schreibberechtigungen für die Active Directory-Objekte und -Attribute, die Sie "zurückschreiben" möchten.
 Einmaliges Anmelden und AD FS| Domänenadministratorberechtigungen in der Domäne, in der sich die Verbundserver befinden.
 
-<br> <br> In der folgende Tabelle finden Sie eine Zusammenfassung der Konten, die von Azure AD Connect erstellt werden.
+<br> <br>
+## Zusammenfassung der Konten, die von Azure AD Connect erstellt werden
 
 
 
@@ -95,4 +90,4 @@ AD FS: GMSA-Konto (aadcsvc$)|Domänenbenutzer|Anmeldekonto für den AD FS-Dienst
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

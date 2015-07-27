@@ -1,7 +1,7 @@
 
 <properties 
-    pageTitle="Anforderungen an RemoteApp-Images"
-    description="Erfahren Sie, welche Anforderungen bei der Erstellung von Images für die Verwendung mit RemoteApp bestehen." 
+    pageTitle="Anforderungen an Azure RemoteApp-Images"
+    description="Erfahren Sie, welche Anforderungen bei der Erstellung von Images für die Verwendung mit Azure RemoteApp bestehen." 
     services="remoteapp" 
     solutions="" documentationCenter="" 
     authors="lizap" 
@@ -13,15 +13,15 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="05/28/2015" 
+    ms.date="07/06/2015" 
     ms.author="elizapo" />
 
 
 
-# Anforderungen an RemoteApp-Images
-RemoteApp verwendet ein Windows Server 2012 R2-Image, um alle Programme zu hosten, die Sie an die Benutzer freigeben möchten. Um ein benutzerdefiniertes RemoteApp-Image zu erstellen, beginnen Sie mit einem bestehenden Image oder [erstellen ein neues](remoteapp-create-custom-image.md).
+# Anforderungen für Azure RemoteApp-Images
+Azure RemoteApp verwendet ein Windows Server 2012 R2-Image, um alle Programme zu hosten, die Sie an die Benutzer freigeben möchten. Um ein benutzerdefiniertes Image zu erstellen, beginnen Sie mit einem bestehenden Image oder [erstellen ein neues](remoteapp-create-custom-image.md).
 
-> [AZURE.TIP]Wussten Sie, dass Ihnen Ihr Azure RemoteApp-Abonnement Zugriff auf ein vordefiniertes Windows Server 2012 R2-Image im Azure-VM-Katalog bietet, mit dem Sie Ihr eigenes Vorlagenimage erstellen können? [Probieren Sie es aus](remoteapp-image-on-azurevm.md).
+> [AZURE.TIP]Wussten Sie, dass Ihnen Ihr Azure RemoteApp-Abonnement Zugriff auf ein Windows Server 2012 R2-Image im Azure-VM-Katalog bietet, mit dem Sie Ihr eigenes Vorlagenimage erstellen können? [Probieren Sie es aus](remoteapp-image-on-azurevm.md).
 
 
 Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll, muss folgende Anforderungen erfüllen:
@@ -43,4 +43,4 @@ Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll,
 - VHD-Uploads aus einer Momentaufnahmenkette werden nicht unterstützt.
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

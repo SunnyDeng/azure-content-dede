@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="03/03/2015"
+	ms.date="06/23/2015"
 	ms.author="mandia"/>
 
 
@@ -237,7 +237,7 @@ Sie können dann keine neuen Brücken mehr bereitstellen bzw. keine neuen Verein
 
 #### Wie kann ich von einer Ebene von BizTalk Services zu einer anderen Ebene migrieren?
 
-Verwenden Sie den Workflow zum Sichern und Wiederherstellen, um von einer Ebene zu einer anderen Ebene zu migrieren. Nicht alle Migrationspfade werden unterstützt. Weitere Informationen zu den unterstützten Migrationspfaden finden Sie unter [BizTalk Services: Sichern und Wiederherstellen](http://go.microsoft.com/fwlink/p/?LinkID=329873).
+Verwenden Sie den Workflow zum Sichern und Wiederherstellen, um von einer Ebene zu einer anderen Ebene zu migrieren. Nicht alle Migrationspfade werden unterstützt. Weitere Informationen zu den unterstützten Migrationspfaden finden Sie unter [BizTalk Services: Sichern und Wiederherstellen](biztalk-backup-restore.md).
 
 #### Ist der BizTalk-Adapterdienst im Dienst enthalten? Wie erhalte ich die Software?
 
@@ -245,16 +245,16 @@ Ja, BizTalk-Adapterdienst und BizTalk Adapter Pack sind im Azure BizTalk Service
 
 ## Weiter
 
-Um Azure BizTalk Services im Azure-Verwaltungsportal zu erstellen, wechseln Sie zu [BizTalk Services: Erstellen eines BizTalk Service im Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280). Wenn Sie mit dem Erstellen von Anwendungen beginnen möchten, wechseln Sie zu [Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=235197).
+Um Azure BizTalk Services im Azure-Verwaltungsportal zu erstellen, wechseln Sie zu [BizTalk Services: Erstellen eines BizTalk Service im Azure-Verwaltungsportal](biztalk-provision-services.md). Wenn Sie mit dem Erstellen von Anwendungen beginnen möchten, wechseln Sie zu [Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## Weitere Informationen
-- [BizTalk Services: Erstellen eines BizTalk Service im Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
-- [BizTalk Services: Bereitstellungsstatusübersicht](http://go.microsoft.com/fwlink/p/?LinkID=329870)<br/>
-- [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"](http://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
-- [BizTalk Services: Sichern und Wiederherstellen](http://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
-- [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
-- [BizTalk Services: Name und Schlüssel des Ausstellers](http://go.microsoft.com/fwlink/p/?LinkID=303941)<br/>
+- [BizTalk Services: Erstellen eines BizTalk Service im Azure-Verwaltungsportal](biztalk-provision-services.md)<br/>
+- [BizTalk Services: Bereitstellungsstatusübersicht](biztalk-service-state-chart.md)<br/>
+- [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"](biztalk-dashboard-monitor-scale-tabs.md)<br/>
+- [BizTalk Services: Sichern und Wiederherstellen](biztalk-backup-restore.md)<br/>
+- [BizTalk Services: Drosselung](biztalk-throttling-thresholds.md)<br/>
+- [BizTalk Services: Name und Schlüssel des Ausstellers](biztalk-issuer-name-issuer-key.md)<br/>
 - [Wie verwende ich das Azure BizTalk Services SDK?](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

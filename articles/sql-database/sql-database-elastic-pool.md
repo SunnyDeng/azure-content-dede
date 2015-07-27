@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="05/29/2015" 
+	ms.date="06/25/2015" 
 	ms.author="sstein" 
 	ms.workload="data-management" 
 	ms.topic="article" 
@@ -29,9 +29,7 @@ Microsoft hat elastische Datenbankpools speziell zur Behebung dieses Problems en
 
 Ein elastischer Datenbankpool stellt eine Sammlung der verfügbaren Ressourcen dar, die von den elastischen Datenbanken im Pool gemeinsam verwendet werden. Sie können Datenbanken zu einem beliebigen Zeitpunkt zum Pool hinzufügen oder daraus entfernen. Diese Datenbanken nutzen die Ressourcen (in Form von elastischen Datenbank-Durchsatzeinheiten oder eDTUs) und Speicherkapazitäten des Pools gemeinsam. Jede Datenbank verwendet jedoch nur die Ressourcen, die zu einem bestimmten Zeitpunkt erforderlich sind. Dadurch sind die Ressourcen für andere Datenbanken verfügbar, wenn diese benötigt werden. Anstelle einer Überdimensionierung einzelner Datenbanken mit daraus resultierenden Kosten für nicht genutzte Ressourcen, reservieren Sie diese nach Bedarf und zahlen einen vorhersagbaren Preis für zusammengefasste Ressourcen des Pools. Dadurch werden die Kosten verteilt, wodurch Sie ein konkurrenzfähiges Geschäftsmodell erhalten. Außerdem bietet jede Datenbank Anpassungsmöglichkeiten bei der Leistung.
 
-Datenbanken, die sich gut für elastische Datenbankpools eignen, sind i. d. R. weniger als 50 % der Zeit aktiv. Ein typisches Aktivitätsmuster ist, dass Datenbanken einige Zeit inaktiv bleiben, einige Zeit mit wenig Ressourcenanforderungen aktiv und dann mit hohen Ressourcenanforderungen aktiv sind.
-
-Nicht alle Datenbanken entsprechen jedoch diesem Muster. Es gibt Datenbanken mit einem konstanteren Ressourcenbedarf. Diese Datenbanken eignen sich besser für die Basic-, Standard- und Premium-Dienstebenen, bei denen Ressourcen einzeln zugewiesen werden.
+Datenbanken, die sich gut für elastische Datenbankpools eignen, sind i. d. R. weniger als 50 % der Zeit aktiv. Ein typisches Aktivitätsmuster ist, dass Datenbanken einige Zeit inaktiv bleiben, einige Zeit mit wenig Ressourcenanforderungen aktiv und dann mit hohen Ressourcenanforderungen aktiv sind. Nicht alle Datenbanken entsprechen jedoch diesem Muster. Es gibt Datenbanken mit einem konstanteren Ressourcenbedarf. Diese Datenbanken eignen sich besser für die Basic-, Standard- und Premium-Dienstebenen, bei denen Ressourcen einzeln zugewiesen werden. Hilfe beim Ermitteln, ob Ihre Datenbanken von einem Pool für elastische Datenbanken profitieren würden, finden Sie unter[Überlegungen zum Preis und zur Leistung eines elastischen Datenbankpools](sql-database-elastic-pool-guidance.md).
 
 Sie können einen elastischen Datenbankpool innerhalb weniger Minuten über das Microsoft Azure-Portal oder mit PowerShell erstellen. Weitere Informationen finden Sie unter [Erstellen und Verwalten elastischer Pools](sql-database-elastic-pool-portal.md). Weitere Informationen zu elastischen Datenbankpools, einschließlich API- und Fehlerinformationen, finden Sie unter [Referenz für elastische Datenbanken](sql-database-elastic-pool-reference.md).
 
@@ -65,4 +63,4 @@ Datenbanken, für die bereits die Georeplikation aktiviert wurde, können in und
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

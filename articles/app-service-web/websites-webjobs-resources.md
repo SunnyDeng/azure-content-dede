@@ -139,4 +139,4 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von WebJ
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

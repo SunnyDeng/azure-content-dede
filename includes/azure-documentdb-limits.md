@@ -25,11 +25,11 @@
    <td valign="middle"><p>2 GB</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Maximale Anforderungseinheiten/Sek. pro Auflistung</p></td>
+   <td valign="middle"><p>Maximale Anzahl Anforderungseinheiten/Sek. pro Sammlung</p></td>
    <td valign="middle"><p>2500</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Anzahl gespeicherter Prozeduren, Trigger und UDFs pro Auflistung* </p></td>
+   <td valign="middle"><p>Anzahl gespeicherter Prozeduren, Trigger und UDFs pro Sammlung* </p></td>
    <td valign="middle"><p>Jeweils 25</p></td>
 </tr>
 <tr>
@@ -37,15 +37,15 @@
    <td valign="middle"><p>5 Sekunden</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Bereitgestellter Dokumentspeicher/Auflistung</p></td>
+   <td valign="middle"><p>Bereitgestellter Dokumentspeicher/Sammlung</p></td>
    <td valign="middle"><p>10 GB</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Maximale Auflistungen pro Datenbankkonto*</p></td>
+   <td valign="middle"><p>Maximale Anzahl Sammlungen pro Datenbankkonto*</p></td>
    <td valign="middle"><p>100</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Maximaler Dokumentspeicher pro Datenbank (100 Auflistungen)*</p></td>
+   <td valign="middle"><p>Maximaler Dokumentspeicher pro Datenbank (100 Sammlungen)*</p></td>
    <td valign="middle"><p>1&#160;TB</p></td>
 </tr>
 <tr>
@@ -74,7 +74,7 @@
 </tr>
 <tr>
    <td valign="middle"><p>Maximale Länge der Eigenschaft oder des Werts</p></td>
-   <td valign="middle"><p>Keine Einschränkung</p></td>
+   <td valign="middle"><p>Keine Grenze</p></td>
 </tr>
 <tr>
    <td valign="middle"><p>Maximale Anzahl von UDFs pro Abfrage*</p></td>
@@ -97,7 +97,7 @@
    <td valign="middle"><p>100</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>Maximale Anzahl der Auflistungserstellungen pro Minute*</p></td>
+   <td valign="middle"><p>Maximale Anzahl von Sammlungserstellungen pro Minute*</p></td>
    <td valign="middle"><p>5</p></td>
 </tr>
 <tr>
@@ -108,4 +108,4 @@
 
 Kontingente mit einem Sternchen (*) [können angepasst werden. Wenden Sie sich dafür an den Azure-Support](../articles/documentdb/documentdb-increase-limits.md).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -7,4 +7,4 @@ Um die Endgeräte zu schützen, müssen Sie den Zugriff auf authentifizierte Cli
 
 	 Dadurch wird sichergestellt, dass alle Vorgänge für die Tabelle einen authentifizierten Benutzer erfordern. Die Einstellung ist auch für dieses Lernprogramm erforderlich. Um Ihr spezifisches Szenario zu unterstützen, können Sie für jeden Vorgang verschiedene Berechtigungen einstellen.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO3-->

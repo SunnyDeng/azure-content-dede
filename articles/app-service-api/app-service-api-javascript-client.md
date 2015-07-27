@@ -312,7 +312,7 @@ In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren Ang
 
 Ersetzen Sie im Code, den Sie gerade der Datei "index.html" hinzugefügt haben, die Portnummer in der Basis-URL (`http://localhost:1578`) durch die tatsächliche Portnummer für Ihr API-Projekt.
 
-	> **Hinweis** Verwenden Sie nicht die Portnummer des HTML-Clientprojekts. Klicken Sie stattdessen mit der rechten Maustaste auf das API-Projekt und anschließend auf „Debuggen“ > „Neue Instanz starten“, sodass ein Browserfenster mit der Portnummer angezeigt wird.
+	> **Note** Don't use the port number of the HTML client project. You can right-click the API project and click **Debug > Start New Instance** to get a browser window that shows the port number.
 
 1. Stellen Sie sicher, dass das API-App-Projekt beim Ausführen des HTML-Clients ebenfalls ausgeführt wird, sonst funktioniert der JavaScript-HTML-Code nicht ordnungsgemäß. Klicken Sie mit der rechten Maustaste auf die Projektmappe, und wählen Sie **Eigenschaften**. Legen Sie anschließend beide Webprojekte auf **Starten ohne Debugging** fest, und geben Sie an, dass das API-Projekt zuerst ausgeführt wird. 
 
@@ -365,9 +365,10 @@ In diesem Abschnitt stellen Sie den HTML/JavaScript-Client als eine App Service-
 
 	!["apiapp.json" und "Metadata" im Projektmappen-Explorer](./media/app-service-api-javascript-client/18-web-app-visible-in-resource-group.png)
 
-## Zusammenfassung 
+## Nächste Schritte 
+
 Das vorliegende Beispiel hat gezeigt, wie Sie AngularJS als JavaScript-Plattform für den Zugriff auf API-App-Back-Ends verwenden können. Sie können die REST-Zugriffsfunktionalität ändern, um auf ein beliebiges anderes JavaScript-Framework zuzugreifen.
 
- 
+Dieses Beispiel veranschaulicht den nicht authentifizierten Zugriff auf eine API-App. Informationen zur Authentifizierung in App Service finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

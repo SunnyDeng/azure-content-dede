@@ -13,11 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/31/2015" 
+	ms.date="07/08/2015" 
 	ms.author="deonhe"/>
 
 
 # Datenconnectors in Microsoft Azure App Service
+
+> [AZURE.NOTE]Dieses Thema wird eingestellt. Unter [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md) finden Sie alle verfügbaren integrierten Connectors und API-Apps.
 
 
 ## Was ist ein App- und Data Services-API-App-Connector?
@@ -47,17 +49,6 @@ Hier sehen Sie eine kurze Übersicht über die einzelnen App- und Data Services-
 <td>Mit dem Azure Service Bus-Connector können Sie Nachrichten aus Service Bus-Entitäten wie Warteschlangen und Themen senden und Nachrichten von Service Bus-Entitäten wie Warteschlangen und Abonnements empfangen.
 <td>Neue Nachrichten
 <td>Nachricht senden
-</tr>
-<tr>
-<td>Azure Storage-Tabelle
-<td>Der Azure Storage-Tabellenconnector ermöglicht das Verbinden mit einer Azure Storage-Tabelle und Ausführen verschiedener Aktionen, wie z. B. Entität abrufen, Entität abfragen, Entität einfügen, Entität aktualisieren, Entität löschen und Trigger zum Abrufen von Daten hinzufügen.
-<td>Neue Entität
-<td><li>Entität abrufen
-	<li>Entität einfügen
-	<li>Entität löschen
-	<li>Entität aktualisieren
-	<li>Abfrage
-
 </tr>
 
 <tr>
@@ -126,17 +117,6 @@ Hier sehen Sie eine kurze Übersicht über die einzelnen App- und Data Services-
 	<li>In Tabelle auswählen
 	<li>Aus Tabelle löschen
 	<li>Gespeicherte Prozedur aufrufen
-</tr>
-
-<tr>
-<td>MongoDB
-<td>Mit einem MongoDB-Connector können Sie Dokumente in einer MongoDB-Auflistung erstellen, aktualisieren, löschen und abrufen.
-<td>Neues Dokument
-<td>	<li>Dokument hinzufügen
-		<li>Dokument aktualisieren
-		<li>Dokumente abrufen
-		<li>Dokument einfügen/aktualisieren
-		<li>Dokument löschen
 </tr>
 
 
@@ -261,7 +241,8 @@ Connectors verwenden entweder OAuth oder Benutzernamen und Kennwörter.
 
 
 ## Weitere Connectors
-[BizTalk-Integrationsconnectors](app-service-logic-integration-connectors.md) | [Enterprise-Connectors](app-service-logic-enterprise-connectors.md) | [Business-to-Business-Connectors](app-service-logic-b2b-connectors.md) | [Connectors für soziale Netzwerke](app-service-logic-social-connectors.md) | [Protokollconnectors](app-service-logic-protocol-connectors.md) | [App und Data Services-Connectors](app-service-logic-data-connectors.md) | [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
+
+[Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/>[Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

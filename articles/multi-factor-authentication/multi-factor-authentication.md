@@ -4,8 +4,8 @@
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	manager="swadwha" 
+	editor="curtand"/>
 
 <tags 
 	ms.service="multi-factor-authentication" 
@@ -13,11 +13,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/02/2015" 
+	ms.date="07/02/2015" 
 	ms.author="billmath"/>
 
-# Mehr Sicherheit für eine allzeit vernetzte Welt
-
+# Was ist Azure Multi-Factor Authentication?
 Multi-Factor Authentication (MFA) ist eine Authentifizierungsmethode, die die Verwendung von mehr als einer Verifizierungsmethode erfordert und eine wichtige zweite Sicherheitsebene für Benutzeranmeldungen und Transaktionen darstellt. Dies funktioniert durch das Anfordern von zwei oder mehr der folgenden Verifizierungsmethoden:
 
 - Etwas, das Sie wissen (normalerweise ein Kennwort)
@@ -26,7 +25,7 @@ Multi-Factor Authentication (MFA) ist eine Authentifizierungsmethode, die die Ve
 
 <center>![Benutzername und Kennwort](./media/multi-factor-authentication/pword.png) &#160;&#160;&#160;&#160;&#160;![Zertifikate](./media/multi-factor-authentication/phone.png) &#160;&#160;&#160;&#160;&#160;![Smartphone](./media/multi-factor-authentication/hware.png) &#160;&#160;&#160;&#160;&#160;![Smartcard](./media/multi-factor-authentication/smart.png) &#160;&#160;&#160;&#160;&#160;![Virtuelle Smartcard](./media/multi-factor-authentication/vsmart.png) &#160;&#160;&#160;&#160;&#160;![Benutzername und Kennwort](./media/multi-factor-authentication/cert.png)</center>
 
-## Was ist Azure Multi-Factor Authentication?
+
 
 Azure Multi-Factor Authentication ist eine Methode zum Überprüfen der Identität, für die mehr als nur ein Benutzername und ein Kennwort erforderlich ist. Sie bietet eine zweite Sicherheitsebene für Benutzeranmeldungen und -transaktionen.
 
@@ -58,7 +57,8 @@ Weitere Informationen zu den Verwendungsgründen für Azure Multi-Factor Authent
 
 **Weitere Ressourcen**
 
-* [Für Benutzer](multi-factor-authentication-end-user.md)
+* [Was bedeutet die mehrstufige Authentifizierung für mich?](multi-factor-authentication-end-user.md)
+* [Einrichten der mehrstufigen Authentifizierung für Office 365](https://support.office.com/article/Set-up-multi-factor-authentication-for-Office-365-8f0454b2-f51a-4d9c-bcde-2c48e41621c6)
 * [Azure Multi-Factor Authentication bei MSDN](https://msdn.microsoft.com/library/azure/dn249471.aspx) 
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

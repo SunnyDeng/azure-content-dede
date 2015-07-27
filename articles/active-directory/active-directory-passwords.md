@@ -79,4 +79,4 @@ Hier sind einige Gründe aufgeführt, warum Sie die Funktionen der Azure AD-Kenn
 * [Weitere Informationen](active-directory-passwords-learn-more.md)
 * [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx) 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -24,7 +24,7 @@ In diesem Artikel erfahren Sie, wie Sie Azure PowerShell zum Einrichten von Azur
 Bevor Sie mit Azure PowerShell Sicherungen von Data Protection Manager auf Azure verwalten können, benötigen Sie die richtige Umgebung in Azure PowerShell. Zu Beginn der Azure PowerShell-Sitzung müssen Sie den folgenden Befehl ausführen, um die richtigen Module zu importieren und korrekt auf die DPM-Cmdlets verweisen zu können:
 
 ```
-PS C:\> & "C:\Program Files\Microsoft System Center 2012 R2\DPM\DPM\bin\DpmCliInitScript.ps1"
+PS C:> & "C:\Program Files\Microsoft System Center 2012 R2\DPM\DPM\bin\DpmCliInitScript.ps1"
 
 Welcome to the DPM Management Shell!
 
@@ -33,12 +33,12 @@ Full list of cmdlets: Get-Command Only DPM cmdlets: Get-DPMCommand Get general h
 
 ## Einrichtung und Registrierung
 ### Installieren des Azure Backup-Agents auf einem DPM-Server
-Bevor Sie den Azure Backup-Agent installieren, müssen Sie das Installationsprogramm herunterladen, damit es auf dem Windows-Server verfügbar ist. Sie erhalten die neueste Version des Installationsprogramms im [Microsoft Download Center](http://aka.ms/azurebackup_agent). Speichern Sie das Installationsprogramm an einem leicht zugänglichen Speicherort wie *C:\Downloads*.
+Bevor Sie den Azure Backup-Agent installieren, müssen Sie das Installationsprogramm herunterladen, damit es auf dem Windows-Server verfügbar ist. Sie erhalten die neueste Version des Installationsprogramms im [Microsoft Download Center](http://aka.ms/azurebackup_agent). Speichern Sie das Installationsprogramm an einem leicht zugänglichen Speicherort wie *C:\\Downloads*.
 
 Um den Agent zu installieren, führen Sie den folgenden Befehl in einer Azure PowerShell-Konsole mit erhöhten Rechten **auf dem DPM-Server** aus:
 
 ```
-PS C:\> MARSAgentInstaller.exe /q
+PS C:> MARSAgentInstaller.exe /q
 ```
 
 Dadurch wird der Agent mit allen Standardoptionen installiert. Der Installationsvorgang im Hintergrund dauert einige Minuten. Wenn Sie die */nu*-Option nicht angeben, wird am Ende der Installation das Fenster **Windows Update** geöffnet, um nach Updates zu suchen.
@@ -51,34 +51,25 @@ Der Agent wird in der Liste der installierten Programme angezeigt. Um die Liste 
 Um alle über die Befehlszeile verfügbaren Optionen anzuzeigen, verwenden Sie den folgenden Befehl:
 
 ```
-PS C:\> MARSAgentInstaller.exe /?
+PS C:> MARSAgentInstaller.exe /?
 ```
 
 Die verfügbaren Optionen umfassen:
 
 | Option | Details | Standard |
 | ---- | ----- | ----- |
-| /q | Unbeaufsichtigte Installation | - |
-| /p:"location" | Der Pfad zum Installationsordner für den Azure Backup-Agent. | C:\Program Files\\Microsoft Azure Recovery Services Agent |
-| /s:"Location" | Der Pfad zum Cacheordner für den Azure Backup-Agent. | C:\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch |
-| /m | Microsoft Update abonnieren | - |
-| /nu | Nach Abschluss der Installation nicht nach Updates suchen | - |
-| /d | Microsoft Azure Recovery Services Agent wird deinstalliert | - |
-| /ph | Proxyhostadresse | - |
-| /po | Proxyhost-Portnummer | - |
-| /pu | Proxyhost-Benutzername | - |
-| /pw | Proxykennwort | - |
+| /q | Unbeaufsichtigte Installation | - | | /p: "location" | Der Pfad zum Installationsordner für den Azure Backup-Agent. | C:\\Program Files\\Microsoft Azure Recovery Services Agent || /s: "Location" | Der Pfad zum Cacheordner für den Azure Backup-Agent. | C:\\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch || /m | Microsoft Update abonnieren | - | | /nu | Nach Abschluss der Installation nicht nach Updates suchen | - | | /d | Microsoft Azure Recovery Services Agent wird deinstalliert | - | | /ph | Proxyhostadresse | - | | /po | Proxyhost-Portnummer | - | | /pu | Proxyhost-Benutzername | - | | /pw | Proxykennwort | - |
 
 ### Registrieren beim Azure Backup-Dienst
 Vor der Registrierung beim Azure Backup-Dienst müssen Sie sicherstellen, dass die [Voraussetzungen](backup-azure-dpm-introduction.md) erfüllt sind. Die Voraussetzungen lauten wie folgt:
 
 - Gültiges Azure-Abonnement
 - Erstellen eines Sicherungstresors
-- Herunterladen der Tresoranmeldedaten und Speichern der Daten an einem geeigneten Speicherort (z. B. *C:\Downloads*). Die Tresoranmeldedaten können der Einfachheit halber auch umbenannt werden.
+- Herunterladen der Tresoranmeldedaten und Speichern der Daten an einem geeigneten Speicherort (z. B. *C:\\Downloads*). Die Tresoranmeldedaten können der Einfachheit halber auch umbenannt werden.
 Das Registrieren des Computer beim Tresor erfolgt mithilfe des [Start-DPMCloudRegistration](https://technet.microsoft.com/library/jj612787)-Cmdlets:
 
 ```
-PS C:\> Start-DPMCloudRegistration -DPMServerName "TestingServer" -VaultCredentialsFilePath "C:\Downloads\REGISTER.VaultCredentials"
+PS C:> Start-DPMCloudRegistration -DPMServerName "TestingServer" -VaultCredentialsFilePath "C:\Downloads\REGISTER.VaultCredentials"
 ```
 
 Dadurch wird der DPM-Server mit dem Namen „TestingServer“ unter Verwendung der angegebenen Tresoranmeldedaten im Microsoft Azure-Tresor registriert.
@@ -95,30 +86,30 @@ $setting = Get-DPMCloudSubscriptionSetting -DPMServerName "TestingServer"
 Alle Änderungen werden an diesem lokalen Azure PowerShell-Objekt ```$setting``` vorgenommen, und anschließend wird das vollständige Objekt zum Speichern der Änderungen mit dem [Set-DPMCloudSubscriptionSetting](https://technet.microsoft.com/library/jj612791)-Cmdlet per Commit in DPM und Azure Backup übernommen. Sie müssen das ```–Commit```-Kennzeichen verwenden, um sicherzustellen, dass die Änderungen gespeichert werden. Die Einstellungen werden erst angewendet und von Azure Backup verwendet, wenn ein Commit ausgeführt wurde.
 
 ```
-PS C:\> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -Commit
+PS C:> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -Commit
 ```
 
 ### Netzwerk
 Wenn die Verbindung des DPM-Computers mit dem Azure Backup-Dienst im Internet über einen Proxyserver hergestellt wird, müssen die Proxyservereinstellungen bereitgestellt werden, damit die Sicherungen erfolgreich erstellt werden. Dazu werden die Parameter ```-ProxyServer```, ```-ProxyPort```, ```-ProxyUsername``` und ```ProxyPassword``` mit dem [Set-DPMCloudSubscriptionSetting](https://technet.microsoft.com/library/jj612791)-Cmdlet verwendet. In diesem Beispiel gibt es keinen Proxyserver, daher werden alle Proxy-bezogenen Informationen explizit gelöscht.
 
 ```
-PS C:\> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -NoProxy
+PS C:> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -NoProxy
 ```
 
 Die Bandbreitennutzung kann auch mit Optionen für ```-WorkHourBandwidth``` und ```-NonWorkHourBandwidth``` für eine bestimmte Anzahl von Tagen der Woche gesteuert werden. In diesem Beispiel wird keine Drosselung festgelegt.
 
 ```
-PS C:\> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -NoThrottle
+PS C:> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -NoThrottle
 ```
 
 ### Konfigurieren des Stagingbereichs
 Der Azure Backup-Agent auf dem DPM-Server benötigt temporären Speicher für Daten, die aus der Cloud wiederhergestellt werden (Stagingbereich). Konfigurieren Sie den Stagingbereich mit dem [Set-DPMCloudSubscriptionSetting](https://technet.microsoft.com/library/jj612791)-Cmdlet und dem ```-StagingAreaPath```-Parameter.
 
 ```
-PS C:\> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -StagingAreaPath "C:\StagingArea"
+PS C:> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -StagingAreaPath "C:\StagingArea"
 ```
 
-Im obigen Beispiel wird der Stagingbereich im Azure PowerShell-Objekt ```$setting``` auf *C:\StagingArea* festgelegt. Stellen Sie sicher, dass der angegebene Ordner bereits vorhanden ist. Andernfalls schlägt der endgültige Commit für die Abonnementeinstellungen fehl.
+Im obigen Beispiel wird der Stagingbereich im Azure PowerShell-Objekt ```$setting``` auf *C:\\StagingArea* festgelegt. Stellen Sie sicher, dass der angegebene Ordner bereits vorhanden ist. Andernfalls schlägt der endgültige Commit für die Abonnementeinstellungen fehl.
 
 
 ### Verschlüsselungseinstellungen
@@ -127,9 +118,9 @@ Die Sicherungsdaten, die an Azure Backup gesendet werden, werden verschlüsselt,
 Im folgenden Beispiel konvertiert der erste Befehl die Zeichenfolge ```passphrase123456789``` in eine sichere Zeichenfolge und weist diese der Variablen namens ```$Passphrase``` zu. Der zweite Befehl legt die sichere Zeichenfolge in ```$Passphrase``` als Kennwort für die Verschlüsselung von Sicherungen fest.
 
 ```
-PS C:\> $Passphrase = ConvertTo-SecureString -string "passphrase123456789" -AsPlainText -Force
+PS C:> $Passphrase = ConvertTo-SecureString -string "passphrase123456789" -AsPlainText -Force
 
-PS C:\> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -EncryptionPassphrase $Passphrase
+PS C:> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -EncryptionPassphrase $Passphrase
 ```
 
 > [AZURE.IMPORTANT]Sichern Sie die Passphraseninformationen, nachdem Sie sie festgelegt haben. Es ist nicht möglich, Daten aus Azure ohne diese Passphrase wiederherzustellen.
@@ -137,7 +128,7 @@ PS C:\> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -Subscrip
 Jetzt sollten Sie alle erforderlichen Änderungen am ```$setting```-Objekt vorgenommen haben. Denken Sie daran, einen Commit für die Änderungen auszuführen:
 
 ```
-PS C:\> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -Commit
+PS C:> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -Commit
 ```
 
 ## Schützen von Daten auf Azure Backup
@@ -152,13 +143,13 @@ In diesem Abschnitt fügen Sie DPM einen Produktionsserver hinzu, und anschließ
 Erstellen Sie zunächst mithilfe des [New-DPMProtectionGroup](https://technet.microsoft.com/library/hh881722)-Cmdlets eine neue Schutzgruppe.
 
 ```
-PS C:\> $PG = New-DPMProtectionGroup -DPMServerName " TestingServer " -Name "ProtectGroup01"
+PS C:> $PG = New-DPMProtectionGroup -DPMServerName " TestingServer " -Name "ProtectGroup01"
 ```
 
 Das obige Cmdlet erstellt eine Schutzgruppe mit dem Namen *ProtectGroup01*. Eine vorhandene Schutzgruppe kann später auch geändert werden, um die Sicherung in der Azure Cloud hinzuzufügen. Um Änderungen an einer (neuen oder vorhandenen) Schutzgruppe vorzunehmen, müssen wir jedoch ein Handle für ein *änderbares* Objekt mit dem [Get-DPMModifiableProtectionGroup](https://technet.microsoft.com/library/hh881713)-Cmdlet abrufen.
 
 ```
-PS C:\> $MPG = Get-ModifiableProtectionGroup $PG
+PS C:> $MPG = Get-ModifiableProtectionGroup $PG
 ```
 
 ### Hinzufügen von Gruppenmitgliedern zur Schutzgruppe
@@ -172,15 +163,15 @@ Jeder DPM-Agent kennt die Liste der Datenquellen auf dem Server, auf dem er inst
 Die Liste der Server, auf denen der DPM-Agent installiert ist und vom DPM-Server verwaltet wird, wird mit dem [Get-DPMProductionServer](https://technet.microsoft.com/library/hh881600)-Cmdlet abgerufen. In diesem Beispiel filtern wir, um nur den Produktionsserver mit dem Namen *productionserver01* für die Sicherung zu konfigurieren.
 
 ```
-PS C:\> $server = Get-ProductionServer -DPMServerName "TestingServer" | where {($_.servername) –contains “productionserver01”
+PS C:> $server = Get-ProductionServer -DPMServerName "TestingServer" | where {($_.servername) –contains “productionserver01”
 ```
 
 Rufen Sie jetzt die Liste der Datenquellen auf ```$server``` mit dem [Get-DPMDatasource](https://technet.microsoft.com/library/hh881605)-Cmdlet ab. In diesem Beispiel filtern wir nach dem Volume *D:*, das wir für die Sicherung konfigurieren möchten. Diese Datenquelle wird der Schutzgruppe dann mithilfe des [Add-DPMChildDatasource](https://technet.microsoft.com/library/hh881732)-Cmdlets hinzugefügt. Denken Sie daran, zum Vornehmen von Änderungen das *änderbare* Schutzgruppenobjekt ```$MPG``` zu verwenden.
 
 ```
-PS C:\> $DS = Get-Datasource -ProductionServer $server -Inquire | where { $_.Name -contains “D:\” }
+PS C:> $DS = Get-Datasource -ProductionServer $server -Inquire | where { $_.Name -contains “D:\” }
 
-PS C:\> Add-DPMChildDatasource -ProtectionGroup $MPG -ChildDatasource $DS
+PS C:> Add-DPMChildDatasource -ProtectionGroup $MPG -ChildDatasource $DS
 ```
 
 Wiederholen Sie diesen Schritt, bis Sie der Schutzgruppe alle ausgewählten Datenquellen hinzugefügt haben. Sie können auch mit einer Datenquelle beginnen, die Schritte zum Erstellen der Schutzgruppe durchführen und der Schutzgruppe später weitere Datenquellen hinzufügen.
@@ -189,7 +180,7 @@ Wiederholen Sie diesen Schritt, bis Sie der Schutzgruppe alle ausgewählten Date
 Nachdem die Datenquellen der Schutzgruppe hinzugefügt wurden, legen Sie als Nächstes mithilfe des [Set-DPMProtectionType](https://technet.microsoft.com/library/hh881725)-Cmdlets die Schutzmethode fest. In diesem Beispiel wird die Schutzgruppe für die Sicherung auf dem lokalen Datenträger und in der Cloud eingerichtet.
 
 ```
-PS C:\> Set-DPMProtectionType -ProtectionGroup $PG -ShortTerm Disk –LongTerm Online
+PS C:> Set-DPMProtectionType -ProtectionGroup $PG -ShortTerm Disk –LongTerm Online
 ```
 
 ### Festlegen der Beibehaltungsdauer
@@ -198,30 +189,30 @@ Legen Sie die Beibehaltungsdauer für die Sicherungspunkte mithilfe des [Set-DPM
 Im folgenden Beispiel legt das Cmdlet die Aufbewahrungsparameter für Sicherungen auf Datenträger fest. Durch diese Einstellungen werden Sicherungen 10 Tage beibehalten und Daten alle 6 Stunden zwischen dem Produktionsserver und dem DPM-Server synchronisiert. ```SynchronizationFrequencyMinutes``` definiert nicht, wie oft ein Sicherungspunkt erstellt wird, aber wie häufig Daten auf den DPM-Server kopiert werden. Dadurch wird verhindert, dass Sicherungen zu groß werden.
 
 ```
-PS C:\> Set-DPMPolicyObjective –ProtectionGroup $MPG -RetentionRangeInDays 10 -SynchronizationFrequencyMinutes 360
+PS C:> Set-DPMPolicyObjective –ProtectionGroup $MPG -RetentionRangeInDays 10 -SynchronizationFrequencyMinutes 360
 ```
 
 Für Sicherungen auf Azure (in DPM werden diese als Onlinesicherungen bezeichnet) kann die Beibehaltungsdauer für [langfristig Aufbewahrung nach einem GFS-Schema (Grandfather-Father-Son)](backup-azure-backup-cloud-as-tape.md) konfiguriert werden. Sie können also eine kombinierte Aufbewahrungsrichtlinie mit täglichen, wöchentlichen, monatlichen und jährlichen Aufbewahrungsrichtlinien definieren. In diesem Beispiel erstellen wir ein Array, das das gewünschte komplexe Aufbewahrungsschema darstellt, und anschließend konfigurieren wir die Beibehaltungsdauer mit dem [Set-DPMPolicyObjective](https://technet.microsoft.com/library/hh881762)-Cmdlet.
 
 ```
-PS C:\> $RRlist = @()
-PS C:\> $RRList += (New-Object -TypeName Microsoft.Internal.EnterpriseStorage.Dls.UI.ObjectModel.OMCommon.RetentionRange -ArgumentList 180, Days)
-PS C:\> $RRList += (New-Object -TypeName Microsoft.Internal.EnterpriseStorage.Dls.UI.ObjectModel.OMCommon.RetentionRange -ArgumentList 104, Weeks)
-PS C:\> $RRList += (New-Object -TypeName Microsoft.Internal.EnterpriseStorage.Dls.UI.ObjectModel.OMCommon.RetentionRange -ArgumentList 60, Month)
-PS C:\> $RRList += (New-Object -TypeName Microsoft.Internal.EnterpriseStorage.Dls.UI.ObjectModel.OMCommon.RetentionRange -ArgumentList 10, Years)
-PS C:\> Set-DPMPolicyObjective –ProtectionGroup $MPG -OnlineRetentionRangeList $RRlist
+PS C:> $RRlist = @()
+PS C:> $RRList += (New-Object -TypeName Microsoft.Internal.EnterpriseStorage.Dls.UI.ObjectModel.OMCommon.RetentionRange -ArgumentList 180, Days)
+PS C:> $RRList += (New-Object -TypeName Microsoft.Internal.EnterpriseStorage.Dls.UI.ObjectModel.OMCommon.RetentionRange -ArgumentList 104, Weeks)
+PS C:> $RRList += (New-Object -TypeName Microsoft.Internal.EnterpriseStorage.Dls.UI.ObjectModel.OMCommon.RetentionRange -ArgumentList 60, Month)
+PS C:> $RRList += (New-Object -TypeName Microsoft.Internal.EnterpriseStorage.Dls.UI.ObjectModel.OMCommon.RetentionRange -ArgumentList 10, Years)
+PS C:> Set-DPMPolicyObjective –ProtectionGroup $MPG -OnlineRetentionRangeList $RRlist
 ```
 
 ### Festlegen des Sicherungszeitplans
 DPM legt automatisch einen Standardzeitplan fest, wenn Sie das Schutzziel mithilfe des ```Set-DPMPolicyObjective```-Cmdlets angeben. Um die Standardzeitpläne zu ändern, verwenden Sie das [Get-DPMPolicySchedule](https://technet.microsoft.com/library/hh881749)-Cmdlet gefolgt vom [Set-DPMPolicySchedule](https://technet.microsoft.com/library/hh881723)-Cmdlet.
 
 ```
-PS C:\> $onlineSch = Get-DPMPolicySchedule -ProtectionGroup $mpg -LongTermOnline
-PS C:\> Set-DPMPolicySchedule -ProtectionGroup $MPG -Schedule $onlineSch[0] -TimesOfDay 02:00
-PS C:\> Set-DPMPolicySchedule -ProtectionGroup $MPG -Schedule $onlineSch[1] -TimesOfDay 02:00 -DaysOfWeek Sa,Su –Interval 1
-PS C:\> Set-DPMPolicySchedule -ProtectionGroup $MPG -Schedule $onlineSch[2] -TimesOfDay 02:00 -RelativeIntervals First,Third –DaysOfWeek Sa
-PS C:\> Set-DPMPolicySchedule -ProtectionGroup $MPG -Schedule $onlineSch[3] -TimesOfDay 02:00 -DaysOfMonth 2,5,8,9 -Months Jan,Jul
-PS C:\> Set-DPMProtectionGroup -ProtectionGroup $MPG
+PS C:> $onlineSch = Get-DPMPolicySchedule -ProtectionGroup $mpg -LongTermOnline
+PS C:> Set-DPMPolicySchedule -ProtectionGroup $MPG -Schedule $onlineSch[0] -TimesOfDay 02:00
+PS C:> Set-DPMPolicySchedule -ProtectionGroup $MPG -Schedule $onlineSch[1] -TimesOfDay 02:00 -DaysOfWeek Sa,Su –Interval 1
+PS C:> Set-DPMPolicySchedule -ProtectionGroup $MPG -Schedule $onlineSch[2] -TimesOfDay 02:00 -RelativeIntervals First,Third –DaysOfWeek Sa
+PS C:> Set-DPMPolicySchedule -ProtectionGroup $MPG -Schedule $onlineSch[3] -TimesOfDay 02:00 -DaysOfMonth 2,5,8,9 -Months Jan,Jul
+PS C:> Set-DPMProtectionGroup -ProtectionGroup $MPG
 ```
 
 Im obigen Beispiel ist ```$onlineSch``` ein Array mit vier Elementen, das den vorhandenen Onlineschutzzeitplan für die Schutzgruppe im GFS-Schema enthält:
@@ -237,23 +228,23 @@ Wenn Sie den wöchentlichen Zeitplan ändern möchten, müssen Sie folglich auf 
 Wenn Sie eine Datenquelle zum ersten Mal sichern, muss DPM ein erstes Replikat erstellen, durch das eine Kopie der zu schützenden Datenquelle auf dem DPM-Replikatvolume erstellt wird. Diese Aktivität kann entweder für einen bestimmten Zeitpunkt geplant oder mit dem [Set-DPMReplicaCreationMethod](https://technet.microsoft.com/library/hh881715)-Cmdlet mit dem ```-NOW```-Parameter manuell ausgelöst werden.
 
 ```
-PS C:\> Set-DPMReplicaCreationMethod -ProtectionGroup $MPG -NOW
+PS C:> Set-DPMReplicaCreationMethod -ProtectionGroup $MPG -NOW
 ```
 
 ### Commit für Änderungen an der Schutzgruppe
 Zum Schluss muss für die Änderungen ein Commit ausgeführt werden, bevor DPM die Sicherung für die neue Schutzgruppenkonfiguration durchführen kann. Dazu wird das [Set-DPMProtectionGroup](https://technet.microsoft.com/library/hh881758)-Cmdlet verwendet.
 
 ```
-PS C:\> Set-DPMProtectionGroup -ProtectionGroup $MPG
+PS C:> Set-DPMProtectionGroup -ProtectionGroup $MPG
 ```
 
 ## Anzeigen der Sicherungspunkte
 Sie können das [Get-DPMRecoveryPoint](https://technet.microsoft.com/library/hh881746)-Cmdlet verwenden, um eine Liste aller Wiederherstellungspunkte für eine Datenquelle abzurufen. In diesem Beispiel rufen wir Folgendes ab: alle Schutzgruppen auf dem DPM-Server, die in einem Array ```$PG``` gespeichert werden, die Datenquellen, die ```$PG[0]``` entsprechen, und alle Wiederherstellungspunkte für eine Datenquelle.
 
 ```
-PS C:\> $PG = Get-DPMProtectionGroup –DPMServerName "TestingServer"
-PS C:\> $DS = Get-DPMDatasource -ProtectionGroup $PG[0]
-PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
+PS C:> $PG = Get-DPMProtectionGroup –DPMServerName "TestingServer"
+PS C:> $DS = Get-DPMDatasource -ProtectionGroup $PG[0]
+PS C:> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
 ```
 
 ## Wiederherstellen von Daten, die auf Azure geschützt werden
@@ -266,13 +257,13 @@ Das folgende Beispiel zeigt, wie Sie eine virtuelle Hyper-V-Maschine in Azure Ba
 - Auswählen eines Sicherungspunkts für die Wiederherstellung
 
 ```
-PS C:\> $RecoveryOption = New-DPMRecoveryOption -HyperVDatasource -TargetServer "HVDCenter02" -RecoveryLocation AlternateHyperVServer -RecoveryType Recover -TargetLocation “C:\VMRecovery”
+PS C:> $RecoveryOption = New-DPMRecoveryOption -HyperVDatasource -TargetServer "HVDCenter02" -RecoveryLocation AlternateHyperVServer -RecoveryType Recover -TargetLocation “C:\VMRecovery”
 
-PS C:\> $PG = Get-DPMProtectionGroup –DPMServerName "TestingServer"
-PS C:\> $DS = Get-DPMDatasource -ProtectionGroup $PG[0]
-PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
+PS C:> $PG = Get-DPMProtectionGroup –DPMServerName "TestingServer"
+PS C:> $DS = Get-DPMDatasource -ProtectionGroup $PG[0]
+PS C:> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
 
-PS C:\> Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -RecoveryOption $RecoveryOption
+PS C:> Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -RecoveryOption $RecoveryOption
 ```
 
 Die Befehle können mühelos für beliebige Datenquellentypen erweitert werden.
@@ -280,4 +271,4 @@ Die Befehle können mühelos für beliebige Datenquellentypen erweitert werden.
 ## Nächste Schritte
 Weitere Informationen zu Azure Backup für DPM finden Sie unter [Einführung in Azure DPM Backup](backup-azure-dpm-introduction.md)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

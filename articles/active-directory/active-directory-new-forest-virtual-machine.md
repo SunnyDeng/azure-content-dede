@@ -42,7 +42,7 @@ Konfigurieren | Lokal | Azure Virtual Network
 ------------- | -------------  | ------------
 **IP-Adresse des Domänencontrollers** | Statische IP-Adresse in den Netzwerkadaptereigenschaften zuweisen | Ausführen des Cmdlets "Set-AzureStaticVNetIP" zum Zuweisen einer statischen IP-Adresse
 **DNS-Clientauflösung** | Bevorzugte und alternative Adresse des DNS-Servers in den Netzwerkadaptereigenschaften von Domänenmitgliedern eingeben | Adresse des DNS-Servers in den Eigenschaften des virtuellen Netzwerks eingeben
-**Speicherort der Active Directory-Datenbank** | Standardspeicherort C:\ kann optional geändert werden | Standardspeicherort C:\ muss geändert werden
+**Speicherort der Active Directory-Datenbank** | Standardspeicherort C:\\ kann optional geändert werden | Standardspeicherort C:\\ muss geändert werden
 
 
 
@@ -139,4 +139,4 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

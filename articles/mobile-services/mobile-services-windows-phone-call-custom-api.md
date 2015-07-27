@@ -34,7 +34,7 @@ Diese Funktionalität wird der App hinzugefügt, nachdem Sie das Lernprogramm [H
 
 ## Nächste Schritte
 
-In diesem Thema wurde gezeigt, wie Sie mithilfe der **InvokeApiAsync**-Methode eine relativ einfache benutzerdefinierte API Ihrer Windows Phone-App aufrufen. Weitere Informationen zum Verwenden der **InvokeApiAsync**-Methode finden Sie im Beitrag [Custom API in Azure Mobile Services](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx) (in englischer Sprache).
+In diesem Thema wurde gezeigt, wie Sie mithilfe der **invokeApiAsync**-Methode eine relativ einfache benutzerdefinierte API Ihrer Windows Phone-App aufrufen. Weitere Informationen zum Verwenden der **InvokeApiAsync**-Methode finden Sie im Beitrag [Custom API in Azure Mobile Services](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx) (in englischer Sprache).
 
 Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 
@@ -61,4 +61,4 @@ Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

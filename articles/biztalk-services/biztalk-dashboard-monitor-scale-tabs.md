@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Dashboard, Überwachen, Skalieren, Konfigurieren und Hybridverbindungen in BizTalk Services | Azure" 
-	description="Erfahren Sie mehr über die Steuerelemente und Leistungsüberwachung auf den Registerkarten des Verwaltungsportals für BizTalk Services: &quot;Dashboard&quot;, &quot;Überwachen&quot;, &quot;Skalieren&quot;, &quot;Konfigurieren&quot; und &quot;Hybridverbindungen&quot;. MABS, WABS" 
+	description="Erfahren Sie mehr über die Steuerelemente und Leistungsüberwachung auf den Registerkarten des Verwaltungsportals für BizTalk Services: ";Dashboard";, ";Überwachen";, ";Skalieren";, ";Konfigurieren"; und ";Hybridverbindungen";. MABS, WABS" 
 	services="biztalk-services" 
 	documentationCenter="" 
 	authors="MandiOhlinger" 
@@ -28,10 +28,7 @@ Wenn Sie das Azure-Verwaltungsportal zum ersten Mal öffnen, ist automatisch die
 Dadurch wird ein neues Fenster mit den folgenden Registerkarten geöffnet. In diesem Thema werden diese Registerkarten beschrieben.
 
 ## Schnellstart (![Schnellstart][QuickStart])
-Eventuell stehen nicht alle aufgeführten Optionen für alle BizTalk Services-Editionen zur Verfügung. 
-<table border="1">
-    <tr>
-        <td><strong>Tools herunterladen</strong></td>
+Eventuell stehen nicht alle aufgeführten Optionen für alle BizTalk Services-Editionen zur Verfügung. <table border="1"> <tr> <td><strong>Tools herunterladen</strong></td>
 
         <td>Download the BizTalk Services SDK to install the Visual Studio project templates on your on-premises development computer. These templates create the <strong>BizTalk Services</strong> (bridge) and the <strong>BizTalk Service Artifacts</strong> (Transform) Visual Studio projects that are deployed to your BizTalk Service.
         <br/><br/>
@@ -236,20 +233,10 @@ Sie können auch die **relativen** oder **absoluten** Werte sowie ein **Zeitinte
 
 ##### So zeigen Sie Metriken im Diagramm an oder entfernen diese daraus:
 1. Wählen Sie die Registerkarte **Überwachen** aus.
-2. Klicken Sie in der Taskleiste auf **Metriken hinzufügen**:
-<br/>
-!["Metriken hinzufügen" auswählen][AddMetrics]
+2. Klicken Sie in der Taskleiste auf **Metriken hinzufügen**:<br/> !["Metriken hinzufügen" auswählen][AddMetrics]
 3. Prüfen Sie die Leistungsmetriken, die Sie anzeigen möchten.
 4. Wählen Sie das Häkchen aus, um zur Registerkarte **Überwachen** zurückzukehren.
-5. Wählen Sie den Kreis neben der Metrik aus, um den Wert dieser Metrik im Diagramm anzuzeigen.
-<br/>
-Die Metrik **CPU-Auslastung** ist beispielsweise grau unterlegt, ihr Ergebnis wird im Diagramm nicht angezeigt:
-<br/>
-![Metrik "CPU-.Auslastung" ist deaktiviert][GrayedMetric]
-<br/>
-Wählen Sie den grau unterlegten Kreis, um die Metrik **CPU-Auslastung** zu aktivieren und ihr Ergebnis im Diagramm anzuzeigen:
-<br/>
-![Metrik "CPU-.Auslastung" ist aktiviert][EnabledMetric]
+5. Wählen Sie den Kreis neben der Metrik aus, um den Wert dieser Metrik im Diagramm anzuzeigen. <br/> Die Metrik **CPU-Auslastung** ist beispielsweise grau unterlegt, ihr Ergebnis wird im Diagramm nicht angezeigt: <br/> ![Metrik "CPU-.Auslastung" ist deaktiviert][GrayedMetric] <br/> Wählen Sie den grau unterlegten Kreis, um die Metrik **CPU-Auslastung** zu aktivieren und ihr Ergebnis im Diagramm anzuzeigen: <br/> ![Metrik "CPU-.Auslastung" ist aktiviert][EnabledMetric]
 
 6. Wenn Sie eine Metrik aus dem Diagramm und der Liste entfernen möchten, wählen Sie in der Taskleiste **Metrik löschen** aus. Um die Metrik der Liste wieder hinzuzufügen, klicken Sie in der Taskleiste auf **Metriken hinzufügen**, markieren die Metrik und wählen das Häkchen aus, um zur Registerkarte **Überwachen** zurückzukehren. Wählen Sie den grau unterlegten Kreis aus, um die Metrik zu aktivieren.
 
@@ -368,4 +355,4 @@ Nun, da Sie mit den verschiedenen Registerkarten vertraut sind, können Sie mehr
 [EnabledMetric]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_EnabledMetric.png
  
 
-<!----HONumber=62-->
+<!---HONumber=July15_HO3-->

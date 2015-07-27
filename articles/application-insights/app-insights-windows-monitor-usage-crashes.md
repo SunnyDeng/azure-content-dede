@@ -24,4 +24,4 @@ Diese Seite wurde verschoben: [Sie finden sie jetzt hier](app-insights-windows-g
 
 <!--Link references-->
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

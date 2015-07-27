@@ -40,7 +40,7 @@ Dokument-Explorer kann über jedes DocumentDB-Blatt "Konto", "Datenbank" und "Sa
 
 2. Klicken Sie zum Starten von Dokument-Explorer einfach auf die Kachel.
 
-	<p>Die Dropdownlistenfelder **Datenbank** und **Sammlung** werden basierend auf dem Kontext, in dem Sie den Dokument-Explorer starten, automatisch ausgefüllt. Wenn Sie diesen z. B. aus einem Datenbankblatt starten, sind die Felder der aktuellen Datenbank bereits ausgefüllt. Wenn Sie diesen aus einem Blatt "Sammlung" starten, sind die Felder der aktuellen Sammlung ausgefüllt.
+	<p>Die Dropdownlistenfelder **Datenbank** und **Sammlung** werden basierend auf dem Kontext, in dem Sie den Dokument-Explorer starten, automatisch ausgefüllt. Wenn Sie diesen z. B. aus einem Datenbankblatt starten, sind die Felder der aktuellen Datenbank bereits ausgefüllt. Wenn Sie diesen aus einem Auflistungsblatt starten, sind die Felder der aktuellen Auflistung ausgefüllt.
 
 	![Screenshot des Dokument-Explorers](./media/documentdb-view-JSON-document-explorer/documentexplorerinitial.png)
 
@@ -140,4 +140,4 @@ Dokument-Explorer unterstützt die Sammelerfassung von vorhandenen JSON-Dokument
 Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

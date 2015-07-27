@@ -23,4 +23,4 @@ Sie müssen Ihre App bei einem Identitätsanbieter registrieren, damit Sie Benut
 <!-- URLs. -->
 [Azure-Vorschauportal]: https://portal.azure.com/
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

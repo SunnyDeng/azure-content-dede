@@ -43,4 +43,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation vertraut gemacht ha
 * Lernprogramm [Erste Schritte](../automation-create-runbook-from-samples.md) zu Azure Automation
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

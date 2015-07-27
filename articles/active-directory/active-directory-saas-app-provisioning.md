@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="05/07/2015"
+   ms.date="07/14/2015"
    ms.author="liviodlc"/>
 
 #Automatisieren der Bereitstellung und Bereitstellungsaufhebung von Benutzern für SaaS-Anwendungen mit Azure Active Directory
@@ -76,8 +76,7 @@ Kontaktieren Sie uns über das [Azure Active Directory-Feedbackforum](http://fee
 Azure AD stellt Benutzer für SaaS-Apps bereit, indem eine Verbindung mit Bereitstellungsendpunkten hergestellt wird, die vom jeweiligen Anwendungsanbieter zur Verfügung gestellt werden. Diese Endpunkte ermöglichen Azure AD das programmgesteuerte Erstellen, Aktualisieren und Entfernen von Benutzern. Nachstehend finden Sie einen kurzen Überblick über die verschiedenen Schritte, die Azure AD bei der automatisierten Bereitstellung ausführt.
 
 1. Wenn Sie die Bereitstellung für eine Anwendung das erste Mal aktivieren, werden die folgenden Aktionen ausgeführt:
- - Azure AD versucht, vorhandene Benutzer in der SaaS-App mit den entsprechenden Identitäten im Verzeichnis abzugleichen.
- - Wenn ein Benutzer abgeglichen wurde, wird automatisch Zugriff auf die Anwendung gewährt, sodass der Benutzer für das einmalige Anmelden aktiviert wird.
+ - Azure AD versucht, vorhandene Benutzer in der SaaS-App mit den entsprechenden Identitäten im Verzeichnis abzugleichen. Wenn ein Benutzer dem Abgleich entspricht, wird ihm *nicht* automatisch das einmalige Anmelden ermöglicht. Damit ein Benutzer auf die Anwendung zugreifen kann, muss er explizit in Azure AD der App zugewiesen werden, entweder direkt oder über eine Gruppenmitgliedschaft.
  - Wenn Sie bereits angegeben haben, welche Benutzer der Anwendung zugewiesen werden sollen, aber Azure AD keine vorhandenen Konten für diese Benutzer findet, stellt Azure AD für die Benutzer neue Konten in der Anwendung bereit.
 2. Nachdem die anfängliche Synchronisierung wie oben beschrieben abgeschlossen wurde, prüft Azure AD alle 10 Minuten auf die folgenden Änderungen:
  - Wenn der Anwendung neue Benutzer zugewiesen werden (entweder direkt oder über eine Gruppenmitgliedschaft), wird für diese ein neues Konto in der SaaS-App bereitgestellt.
@@ -107,4 +106,4 @@ Damit eine Anwendung die automatisierte Benutzerbereitstellung unterstützt, mü
 
 Wenn Sie das Azure AD-Entwicklungsteam kontaktieren möchten, um Bereitstellungsunterstützung für zusätzliche Anwendungen anzufordern, senden Sie uns eine Nachricht über das [Azure Active Directory-Feedbackforum](http://feedback.azure.com/forums/169401-azure-active-directory).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

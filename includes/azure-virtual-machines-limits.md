@@ -16,8 +16,8 @@
 </tr>
 </table>
 
-<sup>1</sup> Wenn Sie einen virtuellen Computer außerhalb einer Azure-Ressourcengruppe erstellen, wird automatisch auch ein Clouddienst erzeugt, der diesen Computer enthält. Sie können anschließend mehrere virtuelle Computer in diesem Clouddienst hinzufügen.
+<sup>1</sup>Die in der Dienstverwaltung (und nicht im Ressourcen-Manager) erstellten virtuellen Computer werden automatisch in einem Clouddienst gespeichert. Für den Lastenausgleich und die Verfügbarkeit können Sie diesem Clouddienst weitere virtuelle Computer hinzufügen. Siehe [Verbinden virtueller Computer mit einem virtuellen Netzwerk oder einem Clouddienst](../virtual-machines/cloud-services-connect-virtual-machine.md).
 
-<sup>2</sup> Eingabeendpunkte dienen zur Kommunikation mit virtuellen Computern außerhalb des aktuellen Clouddiensts. Virtuelle Computer innerhalb des gleichen Clouddiensts erlauben automatisch die Kommunikation zwischen allen UDP- und TCP-Ports für die interne Kommunikation.
+<sup>2</sup>Eingabeendpunkte ermöglichen die Kommunikation mit einem virtuellen Computer von außerhalb des Clouddiensts des virtuellen Computers. Virtuelle Computer im gleichen Clouddienst oder virtuellen Netzwerk können automatisch miteinander kommunizieren. Siehe [Einrichten von Endpunkten für einen virtuellen Computer](../virtual-machines/virtual-machines-set-up-endpoints.md)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

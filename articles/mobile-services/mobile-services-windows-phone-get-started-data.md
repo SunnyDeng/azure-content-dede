@@ -194,4 +194,4 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Windows Phone
 [Codebeispielen für Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=271146
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

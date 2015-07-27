@@ -46,4 +46,4 @@ Nach dem Einrichten von Warnungen werden diese im Account Center aufgelistet. Zu
 [Image2]: ./media/azure-billing-set-up-alerts/billingalert2.png
 [Image3]: ./media/azure-billing-set-up-alerts/billingalerts3.png
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/01/2015" 
+	ms.date="07/08/2015" 
 	ms.author="bradyg;tarcher"/>
 
 # Debuggen einer API-App in Azure App Service
@@ -68,7 +68,7 @@ Möglicherweise möchten Sie in bestimmten Fällen Ihre API-App lokal debuggen �
 
 1. Öffnen Sie in Visual Studio die Datei *web.config* des API-App-Projekts. 
  
-2. Navigieren Sie in Ihrem Browser zum [Azure-Vorschauportal](http://portal.azure.com).
+2. Navigieren Sie in Ihrem Browser zum [Azure-Vorschauportal](https://portal.azure.com).
 
 3. Klicken Sie in der Randleiste auf die Schaltfläche **Durchsuchen**, und wählen Sie **API-Apps**.
 
@@ -109,11 +109,26 @@ Möglicherweise möchten Sie in bestimmten Fällen Ihre API-App lokal debuggen �
 
 	![Setzen von Haltepunkten](./media/app-service-api-dotnet-debug/ld-breakpoints.png)
 
-11. Klicken Sie auf &lt;F5>, um eine Visual Studio-Debugsitzung zu starten. Wenn der Browser die Seite lädt, sollten Sie eine Fehlermeldung erhalten. Fügen Sie in der Adresszeile des Browsers am Ende der URL *swagger/* hinzu, und drücken Sie die &lt;Eingabetaste>.
+11. Drücken Sie F5, um ein Visual Studio-Debugsitzung zu starten.
+ 
+13.  Wenn die Zugriffsebene der API-App auf **Öffentlich (anonym)** festgelegt ist, können Sie die Seite mit der Swagger-Benutzeroberfläche für Tests verwenden.
 
-12. Sobald die Swagger-Benutzeroberfläche geladen wurde, klicken Sie auf das **Get**-Verb im Browserfenster, um das Schema für das Contact-Objekt anzuzeigen, und klicken Sie dann auf **Try it Out**. Visual Studio stoppt die Programmausführung an den zuvor gesetzten Haltepunkten, und Sie können Ihre Controllerlogik debuggen.
+	* Wenn der Browser die Seite lädt, wird eine Fehlermeldung angezeigt. Fügen Sie in der Adresszeile des Browsers am Ende der URL *swagger/* hinzu, und drücken Sie die EINGABETASTE.
 
-	![Ausprobieren](./media/app-service-api-dotnet-debug/ld-try-it-out.png)
+	* Sobald die Swagger-Benutzeroberfläche geladen wurde, klicken Sie auf das **Get**-Verb im Browserfenster, um das Schema für das Contact-Objekt anzuzeigen, und klicken Sie dann auf **Try it Out**.
+
+		Visual Studio stoppt die Programmausführung an den zuvor gesetzten Haltepunkten, und Sie können Ihre Controllerlogik debuggen.
+
+		![Ausprobieren](./media/app-service-api-dotnet-debug/ld-try-it-out.png)
+
+14.	Wenn die Zugriffsebene der API-App auf **Öffentlich (authentifiziert)** festgelegt ist, müssen Sie gemäß den unter [Schützen einer API-App](app-service-api-dotnet-add-authentication.md#use-postman-to-send-a-post-request) gezeigten Verfahren für eine POST-Anforderung eine Authentifizierung vornehmen und ein Browsertool verwenden. Gehen Sie so vor:
+
+	* Wechseln Sie zur Anmelde-URL für das Gateway, und geben Sie zum Anmelden die Anmeldeinformationen ein.
+	* Rufen Sie den Wert des Zumo-Tokens aus dem "x-zumo-auth"-Cookie ab.
+	* Fügen Sie den Header "x-zumo-auth" Ihrer Anforderung hinzu, und legen Sie seinen Wert auf den des "x-zumo-auth"-Cookies fest.
+	* Senden Sie die Anforderung.
+
+	**Hinweis:** Bei einer lokalen Ausführung kann Azure nicht den Zugriff auf die API-App steuern, um sicherzustellen, dass nur authentifizierte Benutzer deren Methoden ausführen dürfen. Bei Ausführung in Azure wird sämtlicher für die API-App bestimmter Datenverkehr über das Gateway weitergeleitet, wobei das Gateway nur authentifizierte Anforderungen weiterleitet. Bei lokaler Ausführung erfolgt keine Umleitung, was bedeutet, dass nicht authentifizierte Anforderungen nicht am Zugriff auf die API-App gehindert werden. Der Nutzen der oben beschriebenen Authentifizierung ist, dass Sie authentifizierungsbezogenen Code in der API-App erfolgreich ausführen können, wie z. B. Code, der Informationen zum angemeldeten Benutzer abruft. Weitere Informationen dazu, wie das Gateway die Authentifizierung für API-Apps abwickelt, finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md#azure-app-service-gateway).
 
 ## Nächste Schritte
 
@@ -121,7 +136,7 @@ Durch das Remotedebuggen für API-Apps können Sie einfacher sehen, wie Ihr Code
 
 App Service-API-Apps sind App Service-Web-Apps, die über zusätzliche Features zum Hosten von Webdiensten verfügen, sodass Sie dieselben Debugging- und Problembehandlungstools für API-Apps verwenden können, die Sie für Web-Apps nutzen. Weitere Informationen finden Sie unter [Problembehandlung einer Web-App in Azure App Service mithilfe von Visual Studio](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md).
 
-Die im Rahmen dieser Lernprogrammreihe erstellte API-App ist öffentlich verfügbar und kann durch beliebige Benutzer aufgerufen werden. Weitere Informationen zum Schutz der API-App, sodass nur authentifizierte darauf zugreifen können, finden Sie unter [Schützen einer API-App: Hinzufügen der Authentifizierung über Azure Active Directory oder ein soziales Netzwerk](app-service-api-dotnet-add-authentication.md).
+Die im Rahmen dieser Lernprogrammreihe erstellte API-App ist öffentlich verfügbar und kann durch beliebige Benutzer aufgerufen werden. Informationen zum Schützen von API-Apps, damit nur authentifizierte Benutzer sie aufrufen können, finden Sie unter [Authentifizierung für API- und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

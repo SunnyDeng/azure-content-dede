@@ -102,4 +102,4 @@ Unter [http://www.capptain.com](http://www.capptain.com) erfahren Sie mehr zu de
 [Mobile Services Stufe „Standard“]: /pricing/details/mobile-services/
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

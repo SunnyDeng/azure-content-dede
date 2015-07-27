@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/16/2015"
+	ms.date="06/29/2015"
 	ms.author="adegeo"/>
 
 
@@ -21,28 +21,31 @@
 
 # Konfigurieren von Clouddiensten
 
+> [AZURE.SELECTOR]
+- [Azure Portal](cloud-services-how-to-configure.md)
+- [Azure Preview Portal](cloud-services-how-to-configure-portal.md)
+
 Im Azure-Verwaltungsportal können Sie die am häufigsten für einen Clouddienst verwendeten Einstellungen konfigurieren. Wenn Sie die Konfigurationsdateien jedoch direkt aktualisieren möchten, laden Sie eine zu aktualisierende Konfigurationsdatei herunter, laden Sie anschließend die aktualisierte Datei hoch, und aktualisieren Sie den Clouddienst mit den Konfigurationsänderungen. In beiden Fällen wird die aktualisierte Konfiguration an alle Rolleninstanzen übermittelt.
 
 Sie können auch eine Remotedesktopverbindung zu einer oder allen Rollen aktivieren, die in Ihrem Clouddienst ausgeführt werden. Mit Remotedesktop können Sie auf den Desktop Ihrer Anwendung zugreifen, während diese ausgeführt wird, und Probleme diagnostizieren und beheben. Sie können eine Remotedesktopverbindung zu Ihrer Rolle auch aktivieren, wenn Sie während der Entwicklung der Anwendung die Servicedefinitionsdatei (.csdef) für Remotedesktop nicht konfiguriert haben. Die Anwendung muss nicht erneut bereitgestellt werden, um eine Remotedesktopverbindung zu aktivieren.
 
 Während der Konfigurationsupdates kann Azure nur dann eine Dienstverfügbarkeit von 99,95 Prozent sicherstellen, wenn Sie mindestens zwei Rolleninstanzen für jede Rolle haben. In diesem Fall kann ein virtueller Computer Clientanforderungen verarbeiten, während der andere aktualisiert wird. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/).
 
-## Aktualisieren der Konfiguration des Clouddiensts
+## Ändern eines Clouddiensts
 
-1. Klicken Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com/) auf **Cloud Services** und dann auf den Namen des Clouddiensts, und klicken Sie dann auf **Konfigurieren**.
+1. Klicken Sie im [Azure-Portal](http://manage.windowsazure.com/) auf **Cloud Services**, auf den Namen des Clouddiensts und dann auf **Konfigurieren**.
 
     ![Konfigurationsseite](./media/cloud-services-how-to-configure/CloudServices_ConfigurePage1.png)
     
     Auf der Seite **Konfigurieren** können Sie die Überwachung konfigurieren, Rolleneinstellungen aktualisieren sowie das Gast-Betriebssystem und die Familie für Rolleninstanzen wählen.
 
-2. Legen Sie in **Überwachung** die Überwachungsstufe auf "Ausführlich" oder "Minimal" fest, und konfigurieren Sie die Diagnoseverbindungszeichenfolgen, die für eine ausführliche Überwachung benötigt werden. Anweisungen hierzu finden Sie unter [Überwachen von Clouddiensten](../how-to-monitor-a-cloud-service.md).
-
+2. Legen Sie in **Überwachung** die Überwachungsstufe auf "Ausführlich" oder "Minimal" fest, und konfigurieren Sie die Diagnoseverbindungszeichenfolgen, die für eine ausführliche Überwachung benötigt werden.
 
 3. Bei Dienstrollen (gruppiert nach Rolle) können Sie die folgenden Einstellungen aktualisieren:
     
-    >**Einstellungen**<br/> Ändern Sie die Werte verschiedener Konfigurationseinstellungen, die in den *ConfigurationSettings*-Elementen der Dienstkonfigurationsdatei (.cscfg) festgelegt sind.
-    
-    >**Zertifikate**<br/> Ändern Sie den Zertifikatfingerabdruck, der bei der SSL-Verschlüsselung für eine Rolle verwendet wird. Um ein Zertifikat zu ändern, müssen Sie das neue Zertifikat zuerst hochladen (auf der Seite **Zertifikate**). Aktualisieren Sie anschließend den Fingerabdruck in der Zertifikatzeichenfolge, die in den Rolleneinstellungen angezeigt wird.
+    >**Einstellungen** Ändern Sie die Werte verschiedener Konfigurationseinstellungen, die in den *ConfigurationSettings*-Elementen der Dienstkonfigurationsdatei (.cscfg) festgelegt sind.
+    >
+    >**Zertifikate** Ändern Sie den Zertifikatfingerabdruck, der bei der SSL-Verschlüsselung für eine Rolle verwendet wird. Um ein Zertifikat zu ändern, müssen Sie das neue Zertifikat zuerst hochladen (auf der Seite **Zertifikate**). Aktualisieren Sie anschließend den Fingerabdruck in der Zertifikatzeichenfolge, die in den Rolleneinstellungen angezeigt wird.
 
 4. Unter **Betriebssystem** können Sie die Betriebssystemfamilie oder -version für Rolleninstanzen ändern, oder wählen Sie **Automatisch**, um automatische Updates der aktuellen Betriebssystemversion zu ermöglichen. Die Betriebssystemeinstellungen gelten für Webrollen und Workerrollen, betreffen virtuelle Computer jedoch nicht.
 
@@ -56,23 +59,23 @@ Während der Konfigurationsupdates kann Azure nur dann eine Dienstverfügbarkeit
 
 5. Um die Konfigurationseinstellungen zu speichern und an die Rolleninstanzen zu übertragen, klicken Sie auf **Speichern**. (Klicken Sie auf **Verwerfen**, um die Änderungen abzubrechen.) **Speichern** und **Verwerfen** werden der Befehlsleiste hinzugefügt, nachdem Sie eine Einstellung geändert haben.
 
-### Manuelles Aktualisieren einer Clouddienst-Konfigurationsdatei
+## Aktualisieren einer Clouddienst-Konfigurationsdatei
 
 1. Laden Sie eine Clouddienst-Konfigurationsdatei (CSCFG) mit der aktuellen Konfiguration herunter. Klicken Sie auf der Seite **Konfigurieren** des Clouddiensts auf **Herunterladen**. Klicken Sie danach auf **Speichern**, oder klicken Sie auf **Speichern als**, um die Datei zu speichern.
 
 2. Laden Sie nach dem Update der Dienstkonfigurationsdatei die Konfigurationsupdates hoch, und wenden Sie sie an:
 
-    a. Klicken Sie auf der Seite **Konfigurieren** auf **Hochladen**.
+    1. Klicken Sie auf der Seite **Konfigurieren** auf **Hochladen**.
     
-    ![Konfiguration hochladen](./media/cloud-services-how-to-configure/CloudServices_UploadConfigFile.png)
+        ![Konfiguration hochladen](./media/cloud-services-how-to-configure/CloudServices_UploadConfigFile.png)
     
-    b. Klicken Sie unter **Konfigurationsdatei** auf **Durchsuchen**, um die aktualisierte CSCFG-Datei auszuwählen.
+    2. Klicken Sie unter **Konfigurationsdatei** auf **Durchsuchen**, um die aktualisierte CSCFG-Datei auszuwählen.
     
-    c. Wenn Ihr Clouddienst Rollen enthält, die über nur eine Instanz verfügen, aktivieren Sie das Kontrollkästchen **Konfiguration auch dann anwenden, wenn mindestens eine Rolle nur eine einzelne Instanz enthält**, um die Konfigurationsupdates zu aktivieren, damit die Rollen fortgesetzt werden können.
+    3. Wenn Ihr Clouddienst Rollen enthält, die über nur eine Instanz verfügen, aktivieren Sie das Kontrollkästchen **Konfiguration auch dann anwenden, wenn mindestens eine Rolle nur eine einzelne Instanz enthält**, um die Konfigurationsupdates zu aktivieren, damit die Rollen fortgesetzt werden können.
     
-    Nur wenn Sie für jede Rolle mindestens zwei Instanzen definieren, kann Azure während der Updates der Dienstkonfiguration eine Verfügbarkeit des Clouddiensts von mindestens 99,95 Prozent garantieren. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/).
+        Nur wenn Sie für jede Rolle mindestens zwei Instanzen definieren, kann Azure während der Updates der Dienstkonfiguration eine Verfügbarkeit des Clouddiensts von mindestens 99,95 Prozent garantieren. Weitere Informationen finden Sie unter [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/).
     
-    d. Klicken Sie auf **OK** (Häkchen).
+    4. Klicken Sie auf **OK** (Häkchen).
 
 
 ## Konfigurieren des Remotezugriffs auf Rolleninstanzen
@@ -85,7 +88,7 @@ Auf der Seite **Konfigurieren** des Clouddiensts können Sie Remotedesktop aktiv
 
 Fügen Sie der Dienstdefinitionsdatei (.csdef) **Import**-Elemente hinzu, um die Module RemoteAccess und RemoteForwarder in das Dienstmodell zu importieren. Wenn diese Module vorhanden sind, fügt Azure die Konfigurationseinstellungen für Remotedesktop zur Dienstkonfigurationsdatei hinzu. Um die Remotedesktopkonfiguration abzuschließen, müssen Sie ein Zertifikat in Azure importieren und das Zertifikat in der Dienstkonfigurationsdatei angeben. Weitere Informationen finden Sie unter [Einrichten einer Remotedesktopverbindung für eine Rolle in Windows Azure][].
 
-###Aktivieren oder Ändern des Remotezugriffs für Rolleninstanzen im Verwaltungsportal###
+### Aktivieren oder Ändern des Remotezugriffs für Rolleninstanzen im Verwaltungsportal
 
 1. Klicken Sie auf **Cloud Services** und dann auf den Namen des Clouddiensts, und klicken Sie dann auf **Konfigurieren**.
 
@@ -115,13 +118,13 @@ Fügen Sie der Dienstdefinitionsdatei (.csdef) **Import**-Elemente hinzu, um die
 
 6. So verbinden Sie eine Rolleninstanz:
     
-    a. Klicken Sie auf **Instanzen**, um die Seite **Instanzen** zu öffnen.
+    1. Klicken Sie auf **Instanzen**, um die Seite **Instanzen** zu öffnen.
     
-    b. Wählen Sie eine Rolleninstanz aus, in der Remotedesktop konfiguriert ist.
+    2. Wählen Sie eine Rolleninstanz aus, in der Remotedesktop konfiguriert ist.
     
-    c. Klicken Sie auf **Verbinden**, und folgen Sie den Anweisungen, um den Desktop zu öffnen.
+    3. Klicken Sie auf **Verbinden**, und folgen Sie den Anweisungen, um den Desktop zu öffnen.
     
-    d. Klicken Sie auf **Öffnen** und dann auf **Verbinden**, um die Remotedesktopverbindung zu starten.
+    4. Klicken Sie auf **Öffnen** und dann auf **Verbinden**, um die Remotedesktopverbindung zu starten.
 
 ### Deaktivieren des Remotezugriffs für Rolleninstanzen im Verwaltungsportal
 
@@ -141,4 +144,4 @@ Fügen Sie der Dienstdefinitionsdatei (.csdef) **Import**-Elemente hinzu, um die
 			
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

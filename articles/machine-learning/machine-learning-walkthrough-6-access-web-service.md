@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/22/2015" 
+	ms.date="07/10/2015" 
 	ms.author="garye"/>
 
 
@@ -25,7 +25,7 @@ Dies ist der letzte Teil der Anleitung [Entwickeln einer Vorhersagelösung mit A
 1.	[Erstellen eines Machine Learning-Arbeitsbereichs](machine-learning-walkthrough-1-create-ml-workspace.md)
 2.	[Hochladen vorhandener Daten](machine-learning-walkthrough-2-upload-data.md)
 3.	[Erstellen eines neuen Experiments](machine-learning-walkthrough-3-create-new-experiment.md)
-4.	[Trainieren und Bewerten der Modelle](machine-learning-walkthrough-4-train-and-evaluate-models.md)
+4.	[Trainieren und Auswerten der Modelle](machine-learning-walkthrough-4-train-and-evaluate-models.md)
 5.	[Veröffentlichen des Webdiensts](machine-learning-walkthrough-5-publish-web-service.md)
 6.	**Zugreifen auf den Webdienst**
 
@@ -40,6 +40,6 @@ Auf der Registerkarte **DASHBOARD** dieses Webdiensts gibt es zwei Links zu Info
 
 Die API-Hilfeseite enthält Beispiele für die Programmiersprachen R, C# und Python.
 
-<!-- Add link to Derrick's articles on web services -->
+Weitere Informationen zum Zugreifen auf und Verwenden des Webdienstes finden Sie unter [Nutzen eines Azure Machine Learning-Webdiensts, der von einem Machine Learning-Experiment aus veröffentlicht wurde](machine-learning-consume-web-services.md).
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

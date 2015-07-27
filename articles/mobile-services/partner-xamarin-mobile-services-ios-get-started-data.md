@@ -242,4 +242,4 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
 [Xamarin.iOS]: http://xamarin.com/download
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -35,27 +35,9 @@ Für dieses Lernprogramm ist Version 2.5.1 oder höher des Azure-SDK für .NET e
 
 ## Erstellen eines API-App-Projekts
 
-1. Öffnen Sie Visual Studio 2013.
+Wenn Sie in den Anweisungen aufgefordert werden, einen Namen für das Projekt einzugeben, geben Sie *ContactsList* ein.
 
-2. Wählen Sie **Datei > Neues Projekt** aus.
-
-3. Wählen Sie die Vorlage **ASP.NET-Webanwendung**.
-
-4. Stellen Sie sicher, dass das Kontrollkästchen **Application Insights zu Projekt hinzufügen** deaktiviert ist.
-
-4. Geben Sie dem Projekt den Namen *ContactsList*.
-
-	![](./media/app-service-dotnet-create-api-app/01-filenew-v3.png)
-
-5. Klicken Sie auf **OK**.
-
-6. Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** die Projektvorlage **Azure API-App** aus.
-
-	![](./media/app-service-dotnet-create-api-app/02-api-app-template-v3.png)
-
-7. Klicken Sie auf **OK**, um das Projekt zu generieren.
-
-Visual Studio erstellt ein Web-API-Projekt, das zur Bereitstellung als API-App konfiguriert ist.
+[AZURE.INCLUDE [app-service-api-create](../../includes/app-service-api-create.md)]
 
 [AZURE.INCLUDE [app-service-api-review-metadata](../../includes/app-service-api-review-metadata.md)]
 
@@ -68,4 +50,4 @@ Visual Studio erstellt ein Web-API-Projekt, das zur Bereitstellung als API-App k
 Ihre API-App kann jetzt bereitgestellt werden. Dazu können Sie das Lernprogramm [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

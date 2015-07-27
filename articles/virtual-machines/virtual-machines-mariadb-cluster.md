@@ -370,4 +370,4 @@ Es empfiehlt sich unter Umständen, sich über eine [weitere Möglichkeit zur Gr
 [weitere Möglichkeit zur Gruppierung von MySQL unter Linux]: http://azure.microsoft.com/documentation/articles/virtual-machines-linux-mysql-cluster/
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

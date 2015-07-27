@@ -211,4 +211,4 @@ Wenn Sie Ihren benutzerdefinierten Domänennamen zum Clouddienst hinzufügen, na
 - [Als Organisation für Azure registrieren](sign-up-organization.md)
 - [Verwalten von Domänen in Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx) 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

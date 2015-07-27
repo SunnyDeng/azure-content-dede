@@ -13,16 +13,16 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="web" 
-	ms.date="03/24/2015" 
+	ms.date="07/02/2015" 
 	ms.author="cephalin"/>
 
 # Verwenden von Active Directory für die Authentifizierung in Azure App Service #
 
-[Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) ermöglichen Unternehmensszenarios für Branchenanwendungen, indem unabhängig davon, ob die Benutzer über Ihre lokale Umgebung oder das öffentliche Internet zugreifen, eine einmalige Anmeldung (SSO) unterstützt wird. Für die Authentifizierung und ordnungsgemäße Autorisierung Ihrer internen Active Directory-Benutzer kann eine Integration in [Azure Active Directory](http://azure.microsoft.com/services/active-directory/) (AAD) oder lokale Dienste für sichere Token, wie beispielsweise Active Directory-Verbunddienste (AD FS), vorgenommen werden.
+[Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) ermöglichen Unternehmensszenarios für Branchenanwendungen, indem unabhängig davon, ob die Benutzer über Ihre lokale Umgebung oder das öffentliche Internet zugreifen, eine einmalige Anmeldung (SSO) unterstützt wird. Für die Authentifizierung und ordnungsgemäße Autorisierung Ihrer internen Active Directory-Benutzer (AD) kann eine Integration in [Azure Active Directory](http://azure.microsoft.com/services/active-directory/) (AAD) oder einen lokalen Dienst für sichere Token (STS) wie beispielsweise Active Directory-Verbunddienste (AD FS) vorgenommen werden.
 
 ## Problemlose Authentifizierung und Autorisierung ##
 
-Mit einigen wenigen Mausklicks können Sie die Authentifizierung und Autorisierung für Ihre Web-App aktivieren. Die Konfiguration jeder Azure-Web-App erfolgt über Kontrollkästchen und ermöglicht eine grundlegende Zugriffssteuerung Ihrer Branchen-Web-App. Erreicht wird dies durch die Erzwingung von HTTPS und Authentifizierung gegenüber einem Azure AD-Mandanten Ihrer Wahl, bevor Benutzer Zugriff auf sämtliche Web-App-Inhalte erhalten. Weitere Informationen finden Sie unter [Web Apps Authentication / Authorization](http://azure.microsoft.com/blog/2014/11/13/azure-websites-authentication-authorization/) (in englischer Sprache).
+Mit einigen wenigen Mausklicks können Sie die Authentifizierung und Autorisierung für Ihre Web-App aktivieren. Die Konfiguration jeder Azure-Web-App erfolgt über Kontrollkästchen und ermöglicht eine grundlegende Zugriffssteuerung Ihrer Branchen-Web-App. Erreicht wird dies durch die Erzwingung von HTTPS und Authentifizierung gegenüber einem Azure AD-Mandanten Ihrer Wahl, bevor Benutzer Zugriff auf Ihren Web-App-Inhalt erhalten. Weitere Informationen finden Sie unter [Web Apps Authentication / Authorization](http://azure.microsoft.com/blog/2014/11/13/azure-websites-authentication-authorization/) (in englischer Sprache).
 
 >[AZURE.NOTE]Diese Funktion steht derzeit als Vorschau zur Verfügung.
 
@@ -39,7 +39,7 @@ In vielen Szenarien muss das Anwendungsverhalten in Bezug auf Authentifizierung 
 	-	Azure AD delegiert die Verwaltung von Anwendungen der [vertrauenden Seite](http://en.wikipedia.org/wiki/Relying_party) an Rollen ohne Administratorrechte, während der Anwendungszugriff auf vertrauliche Verzeichnisdaten weiterhin durch globale Administratoren konfiguriert werden muss.
 	-	Sendet einen allgemeinen Satz an Anspruchstypen für alle Anwendungen der vertrauenden Seite. Eine Liste der Anspruchstypen finden Sie unter [Unterstützte Token- und Anspruchstypen](http://msdn.microsoft.com/library/azure/dn195587.aspx). Ansprüche können nicht angepasst werden.
 	-	[Azure AD Graph-API](http://msdn.microsoft.com/library/azure/hh974476.aspx) ermöglicht Anwendungen den Zugriff auf Verzeichnisdaten in Azure AD.
--	[Lokale Sicherheitstokendienste wie AD FS](../web-sites-dotnet-lob-application-adfs/) - Sie können die Authentifizierung und Autorisierung für Ihre Web-App mit einem lokalen Sicherheitstokendienst wie beispielsweise AD FS konfigurieren. Die Verwendung lokaler Active Directory-Verbunddienste zeichnet sich durch folgende Eigenschaften aus:
+-	[Lokale Sicherheitstokendienste (STS) wie AD FS](../web-sites-dotnet-lob-application-adfs/) - Sie können die Authentifizierung und Autorisierung für Ihre Web-App mit einem lokalen Sicherheitstokendienst wie beispielsweise AD FS konfigurieren. Die Verwendung lokaler Active Directory-Verbunddienste zeichnet sich durch folgende Eigenschaften aus:
 	-	Die AD FS-Topologie muss lokal bereitgestellt werden, was mit Kosten und Verwaltungsaufwand verbunden ist.
 	-	Dieser Ansatz ist am besten geeignet, wenn die Unternehmensrichtlinie die lokale Speicherung von Active Directory-Daten vorschreibt.
 	-	Nur AD FS-Administratoren können [Vertrauensstellungen der vertrauenden Seite und Anspruchsregeln](http://technet.microsoft.com/library/dd807108.aspx) konfigurieren.
@@ -53,4 +53,4 @@ In vielen Szenarien muss das Anwendungsverhalten in Bezug auf Authentifizierung 
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

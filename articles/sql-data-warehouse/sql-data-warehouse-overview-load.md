@@ -44,7 +44,7 @@ Die ausführbare Befehlszeilendatei **bcp** ist ein Microsoft-Dienstprogramm zum
 PolyBase ist eine Microsoft-Technologie zur Vereinfachung von Datenanalysen durch eine Möglichkeit zum Abfragen von Blob-Speicher in Hadoop und Azure Storage mit standardmäßigem Transact-SQL und ohne MapReduce. PolyBase kann auch Daten aus dem Azure-Blob-Speicher in SQL Data Warehouse laden. Zum Einstieg befolgen Sie das Lernprogramm [Laden mit PolyBase][].
 
 ### SQL Server Integration Services (SSIS)
-[SSIS][] ist eine Plattform zum Erstellen von Integrations- und Transformationslösungen auf Unternehmensebene. Um Pakete zu erstellen, die Verbindungen mit SQL Data Warehouse herstellen, verwenden Sie den Standardadapter [SQL Server-Ziel][].
+[SSIS][] ist eine Plattform zum Erstellen von Integrations- und Transformationslösungen auf Unternehmensebene. Um Pakete zu erstellen, die Verbindungen mit SQL Data Warehouse herstellen, verwenden Sie den standardmäßigen [OLE DB-Zieladapter] [] mithilfe des ADO.Net-Verbindungsmanagers.
 
 ### Drittanbietertools
 SQL Data Warehouse unterstützt führende Branchenlösungen für das Laden von Daten. Weitere Einzelheiten finden Sie in unserer Liste der [Lösungspartner][].
@@ -63,10 +63,10 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 <!--MSDN references-->
 [unterstützte Quelle/Senke]: https://msdn.microsoft.com/library/dn894007.aspx
 [Kopieraktivitäten]: https://msdn.microsoft.com/library/dn835035.aspx
-[SQL Server-Ziel]: https://msdn.microsoft.com/library/ms141095.aspx
+[SQL Server destination adapter]: https://msdn.microsoft.com/library/ms141237.aspx
 [SSIS]: https://msdn.microsoft.com/library/ms141026.aspx
 
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

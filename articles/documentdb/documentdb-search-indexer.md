@@ -13,28 +13,28 @@
     ms.topic="article" 
     ms.tgt_pltfrm="NA" 
     ms.workload="data-services" 
-    ms.date="03/19/2015" 
+    ms.date="06/16/2015" 
     ms.author="andrl"/>
 
 #Herstellen einer Verbindung zwischen DocumentDB und Azure Search unter Verwendung von Indexern
 
 Wenn Sie ein hervorragendes Suchverlaufsverhalten in Bezug auf DocumentDB-Daten implementieren möchten, verwenden Sie den Azure Search Indexer für DocumentDB! In diesem Artikel erfahren Sie, wie Sie Azure DocumentDB mit der Azure-Suche integrieren, ohne dass Sie Code zum Beibehalten der Indexdienst-Infrastruktur schreiben müssen!
 
-Zur Realisierung müssen Sie [ein Azure-Suchkonto einrichten](../search-get-started.md#start-with-the-free-service) (Sie müssen kein Upgrade auf die Standardsuche durchführen) und anschließend den [Azure-Such-REST-API aufrufen](https://msdn.microsoft.com/library/azure/dn798935.aspx), um eine DocumentDB-**Datenquelle** und einen **Indexer** für diese Datenquelle zu erstellen.
+Zur Realisierung müssen Sie ein [Azure Search-Konto einrichten](../search-get-started.md#start-with-the-free-service) (Sie müssen kein Upgrade auf die Standardsuche durchführen) und anschließend die [Azure Search-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) aufrufen, um eine DocumentDB-**Datenquelle** und einen **Indexer** für diese Datenquelle zu erstellen.
 
 ##<a id="Concepts"></a>Azure Search Indexer-Konzepte
 
 Azure Search unterstützt die Erstellung und Verwaltung von Datenquellen (einschließlich DocumentDB) und von Indexern, die gegenläufig zu diesen Datenquellen fungieren.
 
-Eine **Datenquelle** gibt an, welche Daten indiziert werden müssen, und sie legt die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Azure-Suchaktivierung fest, um Änderungen an den Daten effizient identifizieren zu können (wie z. B. geänderte oder gelöschte Dokumente in der Auflistung). Die Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
+Eine **Datenquelle** gibt an, welche Daten indiziert werden müssen, und sie legt die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search, um Änderungen an den Daten effizient identifizieren zu können (wie z. B. geänderte oder gelöschte Dokumente in der Sammlung). Die Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
 
-Ein **Indexer** beschreibt, wie die Daten von der Datenquelle in einen Zielsuchindex fließen. Sie sollten jeweils einen Indexer pro Kombination aus Zielindex und Datenquelle erstellen. Während mehrere Indexer zwar in denselben Index schreiben können, kann ein Indexer nur in einen einzigen Index schreiben. Ein Indexer wird für Folgendes verwendet: 
+Ein **Indexer** beschreibt, wie die Daten von der Datenquelle in einen Zielsuchindex fließen. Sie sollten jeweils einen Indexer pro Kombination aus Zielindex und Datenquelle erstellen. Während mehrere Indexer zwar in denselben Index schreiben können, kann ein Indexer nur in einen einzigen Index schreiben. Ein Indexer wird für Folgendes verwendet:
 
 - Eine einmalige Kopie der Daten zum Auffüllen eines Indexes ausführen.
 - Einen Index mit Änderungen an der Datenquelle nach einem Zeitplan synchronisieren. Der Zeitplan ist Teil der Indexer-Definition.
 - Bedarfs-Updates für einen Index je nach Notwendigkeit abrufen. 
 
-##<a id="CreateDataSource"></a>Schritt 1: Erstellen einer Datenquelle
+##<a id="CreateDataSource"></a>Schritt 1: Erstellen einer Datenquelle
 
 Stellen Sie eine HTTP POST-Anforderung zum Erstellen einer neuen Datenquelle im Azure-Suchdienst einschließlich der folgenden Anforderungsheader aus.
     
@@ -42,11 +42,11 @@ Stellen Sie eine HTTP POST-Anforderung zum Erstellen einer neuen Datenquelle im 
     Content-Type: application/json
     api-key: [Search service admin key]
 
-Die `api-version` ist erforderlich. Gültige Werte sind `2015-02-28` oder eine höhere Version.
+`api-version` ist erforderlich. Die gültigen Werte sind `2015-02-28` oder eine höhere Version.
 
 Der Anforderungstext umfasst die Datenquellendefinition, welche die folgenden Felder enthalten sollte:
 
-- **name**: Der Name der Datenquelle.
+- **Name**: Der Name der Datenquelle.
 
 - **Typ**: Verwenden Sie `documentdb`.
 
@@ -56,7 +56,7 @@ Der Anforderungstext umfasst die Datenquellendefinition, welche die folgenden Fe
 
 - **Container**:
 
-    - **name**: Erforderlich. Geben Sie die zu indizierende DocumentDB-Auflistung an. 
+    - **Name**: Erforderlich. Geben Sie die zu indizierende DocumentDB-Auflistung an. 
 
     - **Abfrage**: Optional. Sie können eine Abfrage spezifizieren, um ein beliebiges JSON-Dokument in ein Flatfile-Schema zu reduzieren, welches Azure Search indizieren kann.
 
@@ -66,7 +66,7 @@ Der Anforderungstext umfasst die Datenquellendefinition, welche die folgenden Fe
 
 ###<a id="DataChangeDetectionPolicy"></a>Erfassen von geänderten Dokumenten
 
-Der Zweck der Richtlinie der Datenänderungserkennung besteht darin, die geänderten Datenelemente effizient identifizieren zu können. Zurzeit ist `High Water Mark` die einzige unterstützte Richtlinie, die die von DocumentDB bereitgestellte `_ts`-Eigenschaft für den Zeitstempel der letzten Verwendung nutzt. Diese wird folgendermaßen festgelegt:
+Die Richtlinie zum Erkennen von Datenänderungen dient einer effizienten Identifizierung geänderter Datenelemente. Derzeit ist die einzige unterstützte Richtlinie die `High Water Mark`-Richtlinie, die die `_ts` zuletzt modifizierte Zeitstempeleigenschaft verwendet, welche von DocumentDB bereitgestellt wird. Dies wird wie folgt spezifiziert:
 
     { 
         "@odata.type" : "#Microsoft.Azure.Search.HighWaterMarkChangeDetectionPolicy",
@@ -80,7 +80,7 @@ Sie müssen `_ts` außerdem in der Projektion und der `WHERE`-Klausel für Ihre 
 
 ###<a id="DataDeletionDetectionPolicy"></a>Erfassen von gelöschten Dokumenten
 
-Wenn Zeilen aus der Quelltabelle gelöscht werden, sollten Sie diese Zeilen auch aus dem Suchindex löschen. Die Richtlinie einer Datenlöschungserkennung dient einer effizienten Identifizierung gelöschter Datenelemente. Zurzeit ist `Soft Delete` die einzige unterstützte Richtlinie (die Löschung wird durch ein bestimmtes Kennzeichen markiert). Diese wird folgendermaßen festgelegt:
+Wenn Zeilen aus der Quelltabelle gelöscht werden, sollten Sie diese Zeilen auch aus dem Suchindex löschen. Die Richtlinie zum Erkennen von Datenlöschungen dient einer effizienten Identifizierung gelöschter Datenelemente. Zurzeit ist `Soft Delete` die einzige unterstützte Richtlinie (die Löschung wird durch ein bestimmtes Kennzeichen markiert). Diese wird folgendermaßen festgelegt:
 
     { 
         "@odata.type" : "#Microsoft.Azure.Search.SoftDeleteColumnDeletionDetectionPolicy",
@@ -88,9 +88,9 @@ Wenn Zeilen aus der Quelltabelle gelöscht werden, sollten Sie diese Zeilen auch
         "softDeleteMarkerValue" : "the value that identifies a document as deleted" 
     }
 
-> [AZURE.NOTE] Sie müssen die Eigenschaft in Ihre SELECT-Klausel einbeziehen, wenn Sie eine benutzerdefinierte Projektion verwenden.
+> [AZURE.NOTE]Sie müssen die Eigenschaft in Ihre SELECT-Klausel einbeziehen, wenn Sie eine benutzerdefinierte Projektion verwenden.
 
-###<a id="CreateDataSourceExample"></a>Beispiel für einen Anforderungstext
+###<a id="CreateDataSourceExample"></a>Beispiel für Anforderungstext
 
 Anhand des folgenden Beispiels wird eine Datenquelle mit einer benutzerdefinierten Abfrage und Richtlinienhinweisen erstellt:
 
@@ -119,9 +119,9 @@ Anhand des folgenden Beispiels wird eine Datenquelle mit einer benutzerdefiniert
 
 Sie erhalten die Antwort "HTTP 201 Created", wenn die Datenquelle erfolgreich erstellt wurde.
 
-##<a id="CreateIndex"></a>Schritt 2: Erstellen eines Index
+##<a id="CreateIndex"></a>Schritt 2: Erstellen eines Index
 
-Erstellen Sie einen Azure Search-Zielindex, wenn Sie bislang noch über keinen verfügen. Sie können dies von der [Azure-Portal-Benutzeroberfläche](../search-get-started.md#test-service-operations) aus tun, oder indem Sie [Index-API erstellen](https://msdn.microsoft.com/library/azure/dn798941.aspx) verwenden.
+Erstellen Sie einen Azure Search-Zielindex, wenn Sie bislang noch über keinen verfügen. Sie können dies auf der [Azure-Portal-Benutzeroberfläche](../search-get-started.md#test-service-operations) tun, oder indem Sie [Index-API erstellen](https://msdn.microsoft.com/library/azure/dn798941.aspx) verwenden.
 
 	POST https://[Search service name].search.windows.net/indexes?api-version=[api-version]
 	Content-Type: application/json
@@ -130,7 +130,7 @@ Erstellen Sie einen Azure Search-Zielindex, wenn Sie bislang noch über keinen v
 
 Stellen Sie sicher, dass das Schema des Ziel-Indexes mit dem Schema der JSON-Quelldokumente oder mit der Ausgabe Ihrer benutzerdefinierten Abfrageprojektion kompatibel ist.
 
-###Abbildung A: Zuordnung zwischen JSON-Datentypen und Azure Search-Datentypen
+###Abbildung A: Zuordnung zwischen JSON-Datentypen und Azure Search-Datentypen
 
 <table style="font-size:12">
     <tr>
@@ -154,7 +154,10 @@ Stellen Sie sicher, dass das Schema des Ziel-Indexes mit dem Schema der JSON-Que
         <td>Edm.String</td>
     </tr>
     <tr>
-        <td>Arrays primitiver Typen, z.B. [ "a", "b", "c" ]</td>
+        <td>
+            Arrays primitiver Typen<br/>
+            z.&#160;B. [„a“, „b“, „c“]
+        </td>
         <td>Collection(Edm.String)</td>
     </tr>
     <tr>
@@ -162,12 +165,19 @@ Stellen Sie sicher, dass das Schema des Ziel-Indexes mit dem Schema der JSON-Que
         <td>Edm.DateTimeOffset, Edm.String</td>
     </tr>
     <tr>
-        <td>JSON-Objekte</td>
+        <td>
+            GeoJSON-Objekte<br/>
+            z.&#160;B. {„Typ“: „Punkt“, „Koordinaten“: [long, lat]}
+        </td>
+        <td>Edm.GeographyPoint</td>
+    </tr>
+    <tr>
+        <td>Andere JSON-Objekte</td>
         <td>N/V</td>
     </tr>
 </table>
 
-###<a id="CreateIndexExample"></a>Beispiel für einen Anforderungstext
+###<a id="CreateIndexExample"></a>Beispiel für Anforderungstext
 
 Anhand des folgenden Beispiels wird ein Index mit einer ID und einem Beschreibungsfeld erstellt:
 
@@ -192,7 +202,7 @@ Anhand des folgenden Beispiels wird ein Index mit einer ID und einem Beschreibun
 
 Sie erhalten die Antwort "HTTP 201 Created", wenn der Index erfolgreich erstellt wurde.
 
-##<a id="CreateIndexer"></a>Schritt 3: Erstellen eines Indexers
+##<a id="CreateIndexer"></a>Schritt 3: Erstellen eines Indexers
 
 Sie können einen neuen Indexer innerhalb des Azure-Suchdiensts mithilfe einer HTTP POST-Anforderung mit den folgenden Headern erstellen.
     
@@ -202,7 +212,7 @@ Sie können einen neuen Indexer innerhalb des Azure-Suchdiensts mithilfe einer H
 
 Der Anforderungstext umfasst die Indexerdefinition, welche die folgenden Felder enthalten sollte:
 
-- **name**: Erforderlich. Der Name des Indexers.
+- **Name**: Erforderlich. Der Name des Indexers.
 
 - **dataSourceName**: Erforderlich. Der Name einer vorhandenen Datenquelle.
 
@@ -214,13 +224,13 @@ Der Anforderungstext umfasst die Indexerdefinition, welche die folgenden Felder 
 
 Ein Indexer kann optional einen Zeitplan angeben. Wenn ein Zeitplan vorliegt, wird der Indexer regelmäßig gemäß Zeitplan ausgeführt. Der Zeitplan besitzt die folgenden Attribute:
 
-- **Intervall**: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines [ISO 8601](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)-Zeitdauerwerts). Das Muster hierfür lautet: `P[nD][T[nH][nM]]`. Examples: `PT15M` für ein 15-Minuten-Intervall, `PT2H` für ein 2-Stunden-Intervall. 
+- **Intervall**: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines [ISO 8601-Zeitdauerwerts](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)). Das Muster hierfür lautet wie folgt: `P(nD)(T(nH)(nM))`. Beispiele: `PT15M` = alle 15 Minuten, `PT2H` = alle 2 Stunden. 
 
-- **startTime**: Erforderlich. Ein UTC-DateTime-Wert, der angibt, wann die Ausführung des Indexers beginnen soll. 
+- **startTime**: Erforderlich. Ein UTC-DateTime-Wert, der angibt, wann die Ausführung des Indexers beginnen soll.
 
-###<a id="CreateIndexerExample"></a>Beispiel für einen Anforderungstext
+###<a id="CreateIndexerExample"></a>Beispiel für Anforderungstext
 
-Anhand des folgenden Beispiels wird ein Indexer erstellt. Dieser kopiert Daten aus der Sammlung, die von der Datenquelle `myDocDbDataSource` referenziert wird, nach einem Zeitplan in den Index `mySearchIndex`. Der Zeitplan beginnt am 1. Jan. 2015 UTC und wird stündlich ausgeführt.
+Anhand des folgenden Beispiels wird ein Indexer erstellt. Dieser kopiert Daten aus der Sammlung, die von der `myDocDbDataSource`-Datenquelle referenziert wird, nach einem Zeitplan in den `mySearchIndex`-Index. Der Zeitplan beginnt am 1. Jan. 2015 UTC und wird stündlich ausgeführt.
 
     {
         "name" : "mysearchindexer",
@@ -233,9 +243,9 @@ Anhand des folgenden Beispiels wird ein Indexer erstellt. Dieser kopiert Daten a
 
 Sie erhalten die Antwort "HTTP 201 Created", wenn der Indexer erfolgreich erstellt wurde.
 
-##<a id="RunIndexer"></a>Schritt 4: Ausführen eines Indexers
+##<a id="RunIndexer"></a>Schritt 4: Ausführen ein Indexers
 
-Zusätzlich zur Ausführung in regelmäßigen Abständen nach einem Zeitplan kann ein Indexer bei Bedarf auch aufgerufen werden, indem die folgende HTTP POST-Anforderung ausgegeben wird: 
+Zusätzlich zur Ausführung in regelmäßigen Abständen nach einem Zeitplan kann ein Indexer bei Bedarf auch aufgerufen werden, indem die folgende HTTP POST-Anforderung ausgegeben wird:
 
     POST https://[Search service name].search.windows.net/indexers/[indexer name]/run?api-version=[api-version]
     api-key: [Search service admin key]
@@ -244,16 +254,16 @@ Zusätzlich zur Ausführung in regelmäßigen Abständen nach einem Zeitplan kan
 
 Sie erhalten die Antwort "HTTP 202 Accepted", wenn der Indexer erfolgreich aufgerufen wurde.
 
-##<a name="GetIndexerStatus"></a>Schritt 5: Abrufen des Indexer-Status
+##<a name="GetIndexerStatus"></a>Schritt 5: Abrufen des Indexerstatus
 
-Sie können eine HTTP GET-Anforderung ausgeben, um den aktuellen Status und den Ausführungsverlauf eines Indexers abzurufen: 
+Sie können eine HTTP GET-Anforderung ausgeben, um den aktuellen Status und den Ausführungsverlauf eines Indexers abzurufen:
 
     GET https://[Search service name].search.windows.net/indexers/[indexer name]/status?api-version=[api-version]
     api-key: [Search service admin key]
 
 ###Antwort
 
-Sie erhalten die Antwort "HTTP 200 OK", die zusammen mit einem Antworttext zurückgegeben wird. Dieser enthält Informationen über den Gesamtintegritätsstatus des Indexers, den letzten Indexer-Aufruf, sowie den Verlauf der jüngsten Indexer-Aufrufe (sofern vorhanden). 
+Sie erhalten die Antwort "HTTP 200 OK", die zusammen mit einem Antworttext zurückgegeben wird. Dieser enthält Informationen über den Gesamtintegritätsstatus des Indexers, den letzten Indexer-Aufruf, sowie den Verlauf der jüngsten Indexer-Aufrufe (sofern vorhanden).
 
 Die Antwort sollte etwa wie folgt aussehen:
 
@@ -289,8 +299,9 @@ Der Ausführungsverlauf enthält bis zu 50 der jüngsten abgeschlossenen Ausfüh
 
 Glückwunsch! Sie wissen nun, wie Azure DocumentDB mit Azure Search unter Verwendung des Indexers für DocumentDB integriert wird.
 
- - Um weitere Informationen zu Azure DocumentDB zu erhalten, klicken Sie [hier](/services/documentdb/).
+ - Klicken Sie [hier](/services/documentdb/), um weitere Informationen zu Azure DocumentDB zu erhalten.
 
- - Um weitere Informationen zu Azure Search zu erhalten, klicken Sie [hier](/services/search/).
+ - Klicken Sie [hier](/services/search/), um weitere Informationen zu Azure Search zu erhalten.
+ 
 
-<!--HONumber=49--> 
+<!---HONumber=July15_HO3-->

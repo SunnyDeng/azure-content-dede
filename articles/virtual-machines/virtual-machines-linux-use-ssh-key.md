@@ -79,7 +79,7 @@ Es gibt eine Reihe von Dienstprogrammen, die `openssl`-Client für Windows entha
 ### Verwenden von Msysgit ###
 
 1.	Laden Sie msysgit von folgendem Speicherort herunter, und installieren Sie es: [http://msysgit.github.com/](http://msysgit.github.com/)
-2.	Führen Sie `msys` aus dem installierten Verzeichnis aus (Beispiel: c:\msysgit\msys.exe).
+2.	Führen Sie `msys` aus dem installierten Verzeichnis aus (Beispiel: c:\\msysgit\\msys.exe).
 3.	Wechseln Sie zum Verzeichnis `bin`, indem Sie `cd bin` eingeben.
 
 
@@ -176,4 +176,4 @@ Es gibt eine Reihe von Dienstprogrammen, die `openssl`-Client für Windows entha
 5.	Klicken Sie auf **Öffnen**, um die Verbindung mit Ihrem virtuellen Computer herzustellen.
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

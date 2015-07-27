@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="windows"
    ms.workload="web"
-   ms.date="03/31/2015"
+   ms.date="06/30/2015"
    ms.author="cfowler"/>
 
 # Verbinden einer Web-App in Azure App Service mit Redis-Cache über das Memcache-Protokoll
@@ -83,7 +83,7 @@ Laden Sie das Ziel des x86-Links zum Non-Thread Safe (NTS) für Ihre in Web-Apps
 
 ### Aktivieren der php_memcache-Erweiterung
 
-Extrahieren Sie die Datei **php_memcache.dll** nach dem Herunterladen, und laden Sie sie in das Verzeichnis **d:\home\site\wwwroot\bin\ext** hoch. Nachdem die "php_memcache.dll" in die Web-App hochgeladen wurde, muss für die Erweiterung für die PHP-Laufzeit aktiviert werden. Öffnen Sie zum Aktivieren der Memcache-Erweiterung im Azure-Portal das Blatt **Anwendungseinstellungen** für die Web-App, und fügen Sie eine neue Anwendungseinstellung mit dem Schlüssel **PHP_EXTENSIONS** und dem Wert **bin\ext\php_memcache.dll** hinzu.
+Extrahieren Sie die Datei **php_memcache.dll** nach dem Herunterladen, und laden Sie sie in das Verzeichnis **d:\\home\\site\\wwwroot\\bin\\ext\** hoch. Nachdem die "php_memcache.dll" in die Web-App hochgeladen wurde, muss für die Erweiterung für die PHP-Laufzeit aktiviert werden. Öffnen Sie zum Aktivieren der Memcache-Erweiterung im Azure-Portal das Blatt **Anwendungseinstellungen** für die Web-App, und fügen Sie eine neue Anwendungseinstellung mit dem Schlüssel **PHP_EXTENSIONS** und dem Wert **bin\\ext\\php_memcache.dll** hinzu.
 
 
 > Wenn die Web-App mehrere PHP-Erweiterungen laden muss, sollte der Wert von PHP_EXTENSIONS eine durch Kommas getrennte Liste von relativen Pfaden zu DLL-Dateien sein.
@@ -93,6 +93,8 @@ Extrahieren Sie die Datei **php_memcache.dll** nach dem Herunterladen, und laden
 Klicken Sie, wenn Sie fertig sind, auf **Speichern**.
 
 ## Installieren des Memcache-WordPress-Plug-Ins
+
+> Sie können das [Memcached Objekt Cache-Plug-In](https://wordpress.org/plugins/memcached/) auch von WordPress.org herunterladen.
 
 Klicken Sie auf der Seite mit den WordPress-Plug-Ins auf die Schaltfläche **Hinzufügen**.
 
@@ -195,4 +197,4 @@ Glückwunsch! Die WordPress-App verfügt jetzt über einen zentralen Cache im Ar
 [13]: http://memcached.org
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

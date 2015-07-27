@@ -1,10 +1,10 @@
-<properties 
-   pageTitle="HTTP-Listener und Connector" 
-   description="Verwenden von HTTP-Listener und HTTP-Aktion in Ihrer Logik-App" 
-   services="app-service\logic" 
-   documentationCenter=".net,nodejs,java" 
-   authors="anuragdalmia" 
-   manager="dwrede" 
+<properties
+   pageTitle="HTTP-Listener und Connector"
+   description="Verwenden von HTTP-Listener und HTTP-Aktion in Ihrer Logik-App"
+   services="app-service\logic"
+   documentationCenter=".net,nodejs,java"
+   authors="anuragdalmia"
+   manager="dwrede"
    editor=""/>
 
 <tags
@@ -12,8 +12,8 @@
    ms.devlang="multiple"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="03/20/2015"
+   ms.workload="integration"
+   ms.date="07/02/2015"
    ms.author="prkumar"/>
 
 
@@ -88,11 +88,4 @@ Die Ausgabe der HTTP-Aktion besteht aus Headern und Text und kann in ähnlicher 
 [9]: ./media/app-service-logic-connector-http/9.png
 [10]: ./media/app-service-logic-connector-http/10.png
 
-
-
-
-
-
- 
-
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

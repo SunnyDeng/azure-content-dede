@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=".net"
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/26/2015" 
+	ms.date="07/11/2015" 
 	ms.author="awills"/>
  
 # Diagnostizieren von Fehlern und Ausnahmen in ASP.NET-Anwendungen mit Application Insights  
@@ -31,9 +31,8 @@ Klicken Sie in der Liste auf einen der fehlerhaften Anforderungstypen, um zu ein
 
 ![Wählen Sie eine Instanz einer fehlerhaften Anforderung aus, und rufen Sie unter Ausnahmedetails die Instanzen der Ausnahme ab.](./media/app-insights-asp-net-exceptions/030-req-drill.png)
 
-*Es werden keine Ausnahmen angezeigt? Informationen hierzu finden Sie unter [Erfassen von Ausnahmen](#exceptions).*
 
-Alternativ können Sie von der Liste der Ausnahmen ausgehen, die Sie weiter unten auf dem Blatt "Fehler" finden. Klicken Sie weiter, bis schließlich einzelne Ausnahmen angezeigt werden.
+**Alternativ** können Sie von der Liste der Ausnahmen ausgehen, die Sie weiter unten auf dem Blatt "Fehler" finden. Klicken Sie weiter, bis schließlich einzelne Ausnahmen angezeigt werden.
 
 
 ![Drillthrough](./media/app-insights-asp-net-exceptions/040-exception-drill.png)
@@ -57,7 +56,25 @@ Fehlerhafte Aufrufe von Abhängigkeiten werden auf dem Blatt "Fehler" aufgeführ
 
 *Keine Abhängigkeitsfehler? Das ist gut. Doch um sicherzustellen, dass Sie Abhängigkeitsdaten erhalten, öffnen Sie das Blatt "Leistung", und sehen Sie sich das Diagramm für die Dauer der Abhängigkeit an.*
 
-## Anzeigen von Anforderungs-POST- und anderen Protokolldaten
+ 
+
+## Benutzerdefinierte Ablaufverfolgung und Protokolldaten
+
+Um spezifische Diagnosedaten für Ihre App zu erhalten, können Sie Code zum Senden Ihrer eigenen Telemetriedaten einfügen. Diese werden in der Diagnosesuche neben der Anforderung, der Seitenansicht und anderen automatisch erfassten Daten angezeigt.
+
+Sie haben mehrere Möglichkeiten:
+
+* [TrackEvent()](app-insights-api-custom-events-metrics.md#track-event) wird normalerweise zum Überwachen von Verwendungsmustern verwendet, jedoch werden die damit gesendeten Daten auch unter den benutzerdefinierten Ereignissen in der Diagnosesuche angezeigt. Ereignisse werden benannt und können Zeichenfolgeneigenschaften und numerische Metriken aufweisen, nach denen Sie [Ihre Diagnosesuchvorgänge filtern][diagnostic] können.
+* Mit [TrackTrace()](app-insights-api-custom-events-metrics.md#track-trace) können Sie längere Daten wie POST-Informationen senden.
+* [TrackException()](#exceptions) sendet Stapelüberwachungen. [Weitere Informationen über Ausnahmen](#exceptions).
+* Wenn Sie bereits ein Protokollierungsframework wie Log4Net oder NLog verwenden, können Sie [diese Protokolle erfassen][netlogs] und in der Diagnosesuche neben Anforderungs- und Ausnahmedaten anzeigen.
+
+Öffnen Sie zum Anzeigen dieser Ereignisse [Suche][diagnostic] und anschließend "Filter", und wählen Sie dann "Benutzerdefiniertes Ereignis", "Ablaufverfolgung" oder "Ausnahme" aus.
+
+
+![Drillthrough](./media/app-insights-asp-net-exceptions/viewCustomEvents.png)
+
+### Anzeigen von POST-Daten von Anforderungen
 
 Anforderungsdetails enthalten nicht die Daten, die in einem POST-Aufruf an Ihre App gesendet wurden. So werden diese Daten gemeldet:
 
@@ -66,10 +83,6 @@ Anforderungsdetails enthalten nicht die Daten, die in einem POST-Aufruf an Ihre 
 * Wenn Sie eine fehlerhafte Anforderung untersuchen, suchen Sie die zugehörigen Ablaufverfolgungen.  
 
 ![Drillthrough](./media/app-insights-asp-net-exceptions/060-req-related.png)
-
-Wenn Sie bereits ein Protokollierungsframework wie Log4Net oder NLog verwenden, können Sie [diese Protokolle erfassen][netlogs] und auf die gleiche Weise anzeigen.
-
-[Benutzerdefinierte Ereignisse][api] werden normalerweise für die Nutzungsnachverfolgung eingesetzt. Sie finden sie jedoch auch unter "Gesamte Telemetrie für diese Anforderung".
 
 
 ## <a name="exceptions"></a> Erfassen von Ausnahmen und zugehörigen Diagnosedaten
@@ -286,7 +299,7 @@ Sie könnten dieses außer Kraft gesetzte Attribut bestimmten Controllern oder d
 Es gibt eine Reihe von Fällen, die von den Ausnahmefiltern nicht verarbeitet werden können. Beispiel:
 
 * Von Controllerkonstruktoren ausgelöste Ausnahmen. 
-* Von Meldungshandlern ausgelöste Ausnahmen. 
+* Von Meldungshandlern ausgelöste Ausnahmen 
 * Während des Routings ausgelöste Ausnahmen. 
 * Während der Serialisierung von Antwortinhalten ausgelöste Ausnahmen. 
 
@@ -428,4 +441,4 @@ Fügen Sie das Attribut den Dienstimplementierungen hinzu:
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

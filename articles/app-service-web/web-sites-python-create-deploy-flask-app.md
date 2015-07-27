@@ -401,4 +401,4 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 [Dokumentation zu Flask]: http://flask.pocoo.org/
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwalten eines Cloud-Diensts – Azure" 
-	description="Hier erfahren Sie mehr über die Verwaltung von Cloud-Diensten im Azure-Verwaltungsportal." 
+	description="Hier erfahren Sie mehr über die Verwaltung von Clouddiensten im Azure-Portal." 
 	services="cloud-services" 
 	documentationCenter="" 
 	authors="Thraka" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/16/2015"
+	ms.date="07/01/2015"
 	ms.author="adegeo"/>
 
 
@@ -22,14 +22,18 @@
 
 # Verwalten von Clouddiensten
 
-Im Bereich **Clouddienste** des Azure-Verwaltungsportals können Sie eine Dienstrolle oder eine Bereitstellung aktualisieren, eine Bereitstellung zur Produktion heraufstufen, Ressourcen mit Ihrem Clouddienst verknüpfen, sodass Sie die Ressourcenabhängigkeiten sehen und die Ressourcen zusammen skalieren können, und einen Clouddienst oder eine Bereitstellung löschen.
+> [AZURE.SELECTOR]
+- [Azure Portal](cloud-services-how-to-manage.md)
+- [Azure Preview Portal](cloud-services-how-to-manage-portal.md)
+
+Im Bereich **Cloud Services** des Azure-Portals können Sie eine Dienstrolle oder eine Bereitstellung aktualisieren, eine Bereitstellung zur Produktion heraufstufen, Ressourcen mit Ihrem Clouddienst verknüpfen, sodass Sie die Ressourcenabhängigkeiten sehen und die Ressourcen zusammen skalieren können, und einen Clouddienst oder eine Bereitstellung löschen.
 
 
 ## Aktualisieren einer Clouddienstrolle oder -bereitstellung
 
 Wenn Sie den Anwendungscode für Ihren Cloud-Dienst aktualisieren müssen, verwenden Sie **Aktualisieren** im Dashboard auf der Seite **Cloud-Dienste** oder auf der Seite **Instanzen**. Sie können eine oder alle Rollen aktualisieren. Sie müssen ein neues Dienstpaket und eine neue Dienstkonfigurationsdatei hochladen.
 
-1. Klicken Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) auf dem Dashboard auf der Seite **Cloud-Dienste** oder auf der Seite **Instanzen** auf **Aktualisieren**.
+1. Klicken Sie im [Azure-Portal](https://manage.windowsazure.com/) auf dem Dashboard auf der Seite **Cloud Services** oder auf der Seite **Instanzen** auf **Aktualisieren**.
 
 	![Bereitstellung aktualisieren](./media/cloud-services-how-to-manage/CloudServices_UpdateDeployment.png)
 
@@ -154,4 +158,4 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

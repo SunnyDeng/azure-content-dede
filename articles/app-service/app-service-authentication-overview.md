@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/29/2015" 
+	ms.date="06/30/2015" 
 	ms.author="tdykstra"/>
 
 # Authentifizierung für API-Apps und mobile Apps in Azure App Service
@@ -94,17 +94,17 @@ In anderen Szenarien kann der Serverfluss eine bessere Wahl sein:
 
 Sie können Code schreiben, um ausgehende Aufrufe von SaaS-Plattformen (Software-as-a-Service) im Auftrag eines angemeldeten Benutzers vorzunehmen, oder Sie können eine [Connector-API-App](../app-service-mobile/app-service-logic-what-are-biztalk-api-apps.md) verwenden. Beispiel: Um einen Tweet vom Twitter-Konto des Benutzers zu senden, können Sie [ein Twitter-SDK](https://dev.twitter.com/overview/api/twitter-libraries) verwenden oder einen [Twitter-Connector](../app-service-mobile/app-service-logic-connector-twitter.md) im Azure-Abonnement bereitstellen und aufrufen. In diesem Abschnitt wird der Zugriff auf eine SaaS-Plattform über Code behandelt, der in einer API-App oder einer mobilen App ausgeführt wird.
 
-### Verwenden des Identitätsanbietertokens 
+### <a id="obotoidprovider"></a> Verwenden des Identitätsanbietertokens 
 
 Das Gateway verwaltet einen *Tokenspeicher*, in dem es ein Zumo-Token einem oder mehreren Identitätsanbieter-Zugriffstoken und -Aktualisierungstoken zuordnet. Wenn eine HTTP-Anforderung mit einem gültigen Zumo-Token empfangen wird, weiß das Gateway, welche Identitätsanbietertoken zu dem Benutzer gehören.
   
-Wenn der in der API-App oder mobilen App ausgeführte Code eine geschützte Ressource für den angemeldeten Benutzer aufrufen muss, kann er das Token des Identitätsanbieters aus dem Tokenspeicher des Gateways abrufen und verwenden, wie in der folgenden Abbildung dargestellt.
+Wenn der in der API-App oder mobilen App ausgeführte Code eine geschützte Ressource für den angemeldeten Benutzer aufrufen muss, kann er das Token des Identitätsanbieters aus dem Tokenspeicher des Gateways abrufen und verwenden, wie in der folgenden Abbildung dargestellt. Im Diagramm wird davon ausgegangen, dass sich der Client bereits beim Gateway authentifiziert hat und über das Zumo-Token verfügt.
 
 ![](./media/app-service-authentication-overview/idprovidertoken.png)
 
 Nehmen wir beispielsweise an, dass der Identitätsanbieter Azure Active Directory (AAD) ist und dass Ihre API-App das AAD-Zugriffstoken verwenden möchte, um die Graph-API von AAD aufzurufen oder Zugriff auf eine SharePoint-Website anzufordern, für die der Benutzer Berechtigungen hat. Sie können eine Anforderung an das Gateway senden, um das AAD-Tokens abzurufen, und dann das AAD-Token verwenden, um die Graph-API aufzurufen oder ein Zugriffstoken für die SharePoint-Website zu erhalten.
 
-### Zustimmung des Benutzers für den Zugriff auf andere Ressourcen
+### <a id="obotosaas"></a>Erhalten der Zustimmung des Benutzers für den Zugriff auf andere Ressourcen
 
 Das Gateway verfügt auch über integrierte Features, um die Zustimmung des Benutzers zu erhalten, wenn Sie auf Ressourcen zugreifen möchten, die von einem anderen Anbieter als dem ursprünglichen Identitätsanbieter gesichert werden. Beispiel: Sie möchten für einen Benutzer, der sich mit Azure Active Directory anmeldet, auf Dateien im Dropbox-Konto des Benutzers zugreifen.
 
@@ -121,8 +121,10 @@ Das App Service-Gateway bietet integrierte Unterstützung, um die Zustimmung des
 * SharePointOnline
 * Twitter
 * Yammer
+* Azure Active Directory
+* Microsoft-Konto
 
-Für diese Anbieter verwaltet das Gateway Zugriffstoken und ordnet sie dem Zumo-Token zu, wie für das Zugriffstoken des Identitätsanbieters. Der Prozess zum Erhalten der Zustimmung des Benutzers und zum Aufrufen einer SaaS-Plattform wird im folgenden Diagramm veranschaulicht.
+Für diese Anbieter verwaltet das Gateway Zugriffstoken und ordnet sie dem Zumo-Token zu, wie für das Zugriffstoken des Identitätsanbieters. Der Prozess zum Erhalten der Zustimmung des Benutzers und zum Aufrufen einer SaaS-Plattform wird im folgenden Diagramm veranschaulicht. Im Diagramm wird davon ausgegangen, dass sich der Client bereits beim Gateway authentifiziert hat und über das Zumo-Token verfügt.
 
 ![](./media/app-service-authentication-overview/saastoken.png)
 
@@ -185,16 +187,17 @@ In diesem Artikel wurden die Authentifizierungsdienste von Azure App Service fü
 ### <a id="apiaclient"></a>API-Apps – Clientfluss
 
 * [Schützen einer API-App](../app-service-api/app-service-api-dotnet-add-authentication.md) – Der Teil zur API-App-Konfiguration betrifft sowohl den Client- als auch den Serverfluss, aber der Teil mit dem Test im Browser veranschaulicht den Serverfluss.
+* [Nutzen einer API-App in Azure App Service über einen .NET-Client](../app-service-api/app-service-api-dotnet-consume.md) – Die Beispiel-App für einen authentifizierten Aufruf veranschaulicht den Serverfluss. Der folgende Abschnitt [Clientfluss](../app-service-api/app-service-api-dotnet-consume.md#client-flow) enthält den Beispielcode.
 
 ### <a id="apiaserver"></a>API-Apps – Serverfluss
 
-* [Schützen einer API-App](../app-service-api/app-service-api-dotnet-add-authentication.md) – Der Teil zur API-App-Konfiguration betrifft sowohl den Client- als auch den Serverfluss, aber der Teil mit dem Test im Browser veranschaulicht den Serverfluss.
+* [Schützen einer API-App](../app-service-api/app-service-api-dotnet-add-authentication.md) – Der Teil der API-App-Konfiguration betrifft sowohl den Client- als auch den Serverfluss. Der Teil mit dem Test im Browser veranschaulicht den Serverfluss.
 * [Nutzen einer API-App in Azure App Service über einen .NET-Client](../app-service-api/app-service-api-dotnet-consume.md) – Der Beispielcode für einen authentifizierten Aufruf veranschaulicht den Serverfluss. 
 
-### <a id="apiaobo"></a>API-Apps – Aufrufe gesicherter Ressourcen im Auftrag
+### <a id="apiaobo"></a>API-Apps – Aufrufe im Auftrag
 
 * [Bereitstellen und Konfigurieren einer SaaS-Connector-API-App in Azure App Service](../app-service-api/app-service-api-connnect-your-app-to-saas-connector.md) – Veranschaulicht, wie eine vorgefertigte Connector-API-App bereitgestellt, konfiguriert und mit Browsertools aufgerufen wird.
-* Ein Lernprogramm, das zeigt, wie Sie einen eigenen Connector schreiben können, das also veranschaulicht, wie eine benutzerdefinierte API-App, die gesicherte Ressourcen im Auftrag aufruft, bereitgestellt und konfiguriert wird, ist in der Entwicklung.
+* [Verbinden mit einer SaaS-Plattform aus einer ASP.NET-API-App in Azure App Service](../app-service-api/app-service-api-dotnet-connect-to-saas.md) – Veranschaulicht, wie Sie einen eigenen Connector schreiben, d. h. Code für eine benutzerdefinierte API-App bereitstellen, konfigurieren und schreiben, die Aufrufe im Auftrag an einen SaaS-Anbieter richtet.
 
 ### <a id="maclient"></a>Mobile Apps – Clientfluss
 
@@ -211,4 +214,4 @@ In diesem Artikel wurden die Authentifizierungsdienste von Azure App Service fü
 
 * [Abrufen eines Zugriffstokens und Aufrufen der SharePoint-API in einer mobilen App](../app-service-mobile/app-service-mobile-dotnet-backend-get-started-connect-to-enterprise.md#obtain-token)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

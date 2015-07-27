@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/08/2015" 
+	ms.date="07/12/2015" 
 	ms.author="mandia"/>
 
 
@@ -48,12 +48,12 @@ Azure WebJobs | Stellt eine Verbindung zu WebJobs her.
 [QuickBooks](app-service-logic-connector-quickbooks.md) | Mit diesem Connector können Sie unterschiedliche Entitäten aus Intuit QuickBooks erstellen, aktualisieren, lesen, löschen und abfragen, beispielsweise Kunden, Artikel, Rechnungen und so weiter.
 [SFTP](app-service-logic-connector-sftp.md) (SSH File Transfer Protocol)| Stellt eine Verbindung mit SFTP her und kann Dateien hochladen, abrufen, löschen, auflisten und mithilfe eines Triggers abrufen.
 [SMTP](app-service-logic-connector-smtp.md) (Simple Mail Transfer Protocol) | Stellt eine Verbindung mit einem SMTP-Server her und kann E-Mails mit Anlagen senden.
-[Puffer](app-service-logic-connector-slack.md) | 
+[Puffer](app-service-logic-connector-slack.md) | Herstellen einer Verbindung mit Slack und Veröffentlichen von Nachrichten auf Slack-Kanälen.
 [Salesforce](app-service-logic-connector-salesforce.md) | Der Salesforce-Connector verwaltet verschiedene Entitäten, z. B. Kunden, Leads, Verkaufschancen, Anfragen usw., in Ihrem Salesforce-Konto. Sie können verschiedene Entitäten auch erstellen, aktualisieren, abfragen, löschen sowie einen Upsert anwenden.
 [SugarCRM](app-service-logic-connector-sugarcrm.md) | Stellt eine Verbindung mit SugarCRM Online her und kann verschiedene Modultypen erstellen, aktualisieren, lesen und löschen, beispielsweise Konten, Kontakte, Produkte und so weiter.
 [Twilio](app-service-logic-connector-twilio.md) | Stellt eine Verbindung mit Twilio her und kann Nachrichten senden, abrufen, auflisten, die Nutzung auflisten, verfügbare gebührenfreie Nummern abrufen, verfügbare Mobilnummern abrufen, verfügbare lokale Nummern abrufen, eingehende Telefonnummern auflisten sowie eingehende Telefonnummern hinzufügen.
 [Twitter](app-service-logic-connector-twitter.md) | Stellt eine Verbindung mit Twitter her und kann die Benutzerchronik abrufen, Tweets durchsuchen, Follower abrufen, Freunde abrufen, Benutzer suchen, die Chronik der eigenen Seite abrufen, die Chronik der Erwähnungen abrufen, Tweets an einen Benutzer posten und direkte Nachrichten senden. Der Twitter-Connector verwendet außerdem Trigger wie das Abrufen von Tweets nach Schlüsselwort, das Abrufen von Tweets nach Benutzerhandle und das Abrufen von Tweets nach Hashtag.
-Warten | Verwenden Sie diesen Connector, um die Ausführung der App zu verzögern. Die App kann für einen bestimmten Zeitraum oder bis zu einem Ereignis an einem bestimmten Zeitpunkt verzögert werden.
+[Warten](app-service-logic-connector-wait.md) | Verwenden Sie diesen Connector, um die Ausführung der App zu verzögern. Die App kann für einen bestimmten Zeitraum oder bis zu einem Ereignis an einem bestimmten Zeitpunkt verzögert werden.
 
 
 ## Premiumconnectors
@@ -61,11 +61,11 @@ Die folgende Tabelle enthält alle verfügbaren von Microsoft erstellten Connect
 
 Name | Beschreibung
 ------------- | -------------
-AS2-Connector | Der AS2-Connector kann in der Business-to-Business-Kommunikation Nachrichten über das AS2-Transport-Protokoll empfangen und senden. Daten werden mithilfe von digitalen Zertifikaten und Verschlüsselung sicher und zuverlässig über das Internet transportiert.
-BizTalk EDIFACT | Die EDIFACT-API-App empfängt und sendet Nachrichten mithilfe des EDIFACT-Protokolls in der Business-to-Business-Kommunikation.
-BizTalk X12 | Die X12-API-App empfängt und sendet Nachrichten mithilfe des X12-Protokolls in der Business-to-Business-Kommunikation.
-BizTalk-Handelspartnerverwaltung | Die Handelspartnerverwaltungs-API-App definiert und speichert Business-to-Business-Beziehungen anhand von Partnern, Vereinbarungen und Schemas sowie anhand von in Vereinbarungen verwendeten Zertifikaten. Diese Beziehungen werden mit den AS2-, EDIFACT- und X12-API-Apps durchgesetzt.
-BizTalk JSON Encoder | Ein Encoder und Decoder helfen Ihrer App bei der Interoperation zwischen JSON- und XML-Daten. Sie können damit eine angegebene JSON-Instanz in XML konvertieren und umgekehrt.
+[AS2-Connector](app-service-logic-connector-as2.md) | Der AS2-Connector kann in der Business-to-Business-Kommunikation Nachrichten über das AS2-Transport-Protokoll empfangen und senden. Daten werden mithilfe von digitalen Zertifikaten und Verschlüsselung sicher und zuverlässig über das Internet transportiert.
+[BizTalk EDIFACT](app-service-logic-connector-edifact.md) | Die EDIFACT-API-App empfängt und sendet Nachrichten mithilfe des EDIFACT-Protokolls in der Business-to-Business-Kommunikation.
+[BizTalk X12](app-service-logic-connector-x12.md) | Die X12-API-App empfängt und sendet Nachrichten mithilfe des X12-Protokolls in der Business-to-Business-Kommunikation.
+[BizTalk-Handelspartnerverwaltung](app-service-logic-connector-tpm.md) | Die Handelspartnerverwaltungs-API-App definiert und speichert Business-to-Business-Beziehungen anhand von Partnern, Vereinbarungen und Schemas sowie anhand von in Vereinbarungen verwendeten Zertifikaten. Diese Beziehungen werden mit den AS2-, EDIFACT- und X12-API-Apps durchgesetzt.
+[BizTalk JSON Encoder](app-service-logic-connector-jsonencoder.md) | Ein Encoder und Decoder helfen Ihrer App bei der Interoperation zwischen JSON- und XML-Daten. Sie können damit eine angegebene JSON-Instanz in XML konvertieren und umgekehrt.
 [BizTalk-Regeln](app-service-logic-use-biztalk-rules.md) | BizTalk-Regeln definieren und steuern die Struktur, den Betrieb und die Strategie einer Organisation. Geschäftsrichtlinien können ohne erneute Kompilierung und Bereitstellung der verbundenen Anwendungen aktualisiert werden.
 DB2-Connector | Stellt lokal und auf einem virtuellen Azure-Computer unter einem Windows-Betriebssystem eine Verbindung mit einer IBM DB2-Datenbank her. Er kann Befehlen der Informix Structured Query Language Web-API- und OData-API-Vorgänge zuordnen. <br/><br/>Keine Trigger. Aktionen umfassen die Auswahl von Tabellen, das Einfügen, Aktualisieren und Löschen sowie benutzerdefinierte Anweisungen.<br/><br/>Dieser Connector enthält auch den Microsoft-Client für DRDA zum Herstellen einer Verbindung mit einem Informix-Server über ein TCP/IP-Netzwerk.
 Informix | Stellt lokal und auf einem virtuellen Azure-Computer unter einem Windows-Betriebssystem eine Verbindung mit einer IBM Informix-Datenbank her. Er kann Befehlen der Informix Structured Query Language Web-API- und OData-API-Vorgänge zuordnen.<br/><br/>Keine Trigger. Aktionen umfassen die Auswahl von Tabellen, das Einfügen, Aktualisieren und Löschen sowie benutzerdefinierte Anweisungen.<br/><br/>Lokal oder mit VPN oder Azure kann ExpressRoute verwendet werden. Dieser Connector enthält auch einen Microsoft-Client für DRDA zum Herstellen einer Verbindung mit einem Informix-Server über ein TCP/IP-Netzwerk.
@@ -87,11 +87,11 @@ Mehrere Connectors bieten Trigger für Logik-Apps. Diese Trigger haben zwei Type
 Connectors können innerhalb Ihrer Logik-App auch als Aktionen verwendet werden. Aktionen sind hilfreich für die Suche nach Daten in der Logik-App, die dann bei der Ausführung verwendet werden können. Beispielsweise kann es sein, dass Sie Daten aus einer SQL-­Datenbank für zusätzliche Informationen zu einem Kunden bei der Verarbeitung einer Bestellung nachschauen müssen. Oder Sie müssen möglicherweise Daten in ein Ziel schreiben, darin aktualisieren oder löschen. Sie können dazu die Aktionen verwenden, die von den Connectors bereitgestellt werden. Aktionen werden Vorgängen in API-Apps zugeordnet (gemäß ihren Swagger-Metadaten).
 
 ## Erstellen Sie eigene Connectors und API-Apps
-[Connectors- und API-Apps-Referenz](http://aka.ms/appservicesconnectorreference)<br/> [API-App-Trigger für Azure App Service](../app-service-api/app-service-api-dotnet-triggers.md)
+[Referenz zu Connectors und API-Apps](http://aka.ms/appservicesconnectorreference)<br/> [Trigger für Azure App Service-API-Apps](../app-service-api/app-service-api-dotnet-triggers.md)<br/> [Referenz zu Logik-Apps](https://msdn.microsoft.com/library/azure/dn948510.aspx)
 
 
-## Weitere Connectors
+## Weitere Informationen zu Connectors und API-Apps
 
-[Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)<br/> [Verwendung des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md)
+[Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)<br/>[Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md)<br/>[Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

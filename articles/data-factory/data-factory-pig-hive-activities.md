@@ -24,7 +24,7 @@ Diese exemplarische Vorgehensweise enthält schrittweise Anleitungen zum Verwend
 
 ### Voraussetzungen
 1. Absolvieren Sie das Lernprogramm im Artikel [Erste Schritte mit Azure Data Factory][adfgetstarted].
-2. Erstellen Sie die Datei **hivequery.hql** in einem Unterordner mit dem Namen **Hive** unter **C:\ADFGetStarted** mit dem folgenden Inhalt.
+2. Erstellen Sie die Datei **hivequery.hql** in einem Unterordner mit dem Namen **Hive** unter **C:\\ADFGetStarted** mit dem folgenden Inhalt.
     		
     	DROP TABLE IF EXISTS adftutorialhivetable; 
 		CREATE EXTERNAL TABLE  adftutorialhivetable
@@ -140,7 +140,7 @@ Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Beda
 		                        "Month":"$$Text.Format('{0:%M}',SliceStart)",
 		                        "Day":"$$Text.Format('{0:%d}',SliceStart)"
 		                    },
-		                    "scriptpath": "adftutorial\hivequery.hql",
+		                    "scriptpath": "adftutorial\\hivequery.hql",
 						    "scriptLinkedService": "StorageLinkedService"
 						},
 						"policy":
@@ -258,7 +258,7 @@ Das folgende JSON-Beispiel für eine Beispielpipeline verwendet eine Hive-Aktivi
 					"transformation":
 					{
     					"type": "Hive",
-    					"scriptpath": "adfwalkthrough\scripts\transformdata.hql",    		
+    					"scriptpath": "adfwalkthrough\\scripts\\transformdata.hql",    		
 						"scriptLinkedService": "StorageLinkedService", 
 						"extendedProperties":
 						{
@@ -353,4 +353,4 @@ Artikel | Beschreibung
 [Azure Portal]: http://portal.azure.com
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

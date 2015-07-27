@@ -65,7 +65,7 @@
    <td valign="middle"><p>256</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/services/batch/">Batch-Vorschau</a>-Konten pro Region pro Abonnement</p></td>
+   <td valign="middle"><p><a href="http://azure.microsoft.com/services/batch/">Batchkonten</a> pro Region und Abonnement</p></td>
    <td valign="middle"><p>1</p></td>
    <td valign="middle"><p>50</p></td>
 </tr>
@@ -73,4 +73,4 @@
 
 <sup>1</sup> Zusätzliche kleine Instanzen zählen als ganzer Prozessorkern im Sinn des Limits, obwohl nur ein Teil eines Kerns verwendet wird.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

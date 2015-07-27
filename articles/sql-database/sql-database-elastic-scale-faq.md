@@ -48,4 +48,4 @@ Nein. Bei **split**-Vorgängen muss die Zieldatenbank mit dem entsprechenden Sch
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

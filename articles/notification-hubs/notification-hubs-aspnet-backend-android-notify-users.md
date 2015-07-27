@@ -434,4 +434,4 @@ Im nächsten Schritt erstellen Sie die Android-Anwendung.
 
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

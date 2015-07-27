@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/23/2015" 
+	ms.date="07/01/2015" 
 	ms.author="tomfitz"/>
 
 # Bereitstellen einer API-App mit einem neuen Gateway
@@ -24,7 +24,7 @@ Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von
 
 Weitere Informationen zum Bereitstellen von Apps finden Sie unter [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](../app-service-web/app-service-deploy-complex-application-predictably.md).
 
-Die vollständige Vorlage finden Sie unter [Vorlage für API-App mit neuem Gateway](../../templates/app-service-api-arm-new-gateway-provision/).
+Die vollständige Vorlage finden Sie unter [Vorlage für API-App mit neuem Gateway](https://github.com/Azure/azure-quickstart-templates/blob/master/201-api-app-gateway-new/azuredeploy.json).
 
 ## Was Sie bereitstellen
 
@@ -34,9 +34,28 @@ In dieser Vorlage stellen Sie Folgendes bereit:
 - Ein neues Gateway
 - Einen neuen App Service-Hostingplan
 
+Klicken Sie auf folgende Schaltfläche, um die Bereitstellung automatisch auszuführen:
+
+[![Bereitstellen in Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-api-app-gateway-new%2Fazuredeploy.json)
+
 ## Parameter
 
 [AZURE.INCLUDE [app-service-api-deploy-parameters](../../includes/app-service-api-deploy-parameters.md)]
+
+### hostingPlanSettings
+
+Die Einstellungen für den neuen Hostingplan.
+
+    "hostingPlanSettings": {
+      "type": "Object",
+      "defaultValue": {
+        "computeMode": "Dedicated",
+        "siteMode": "Limited",
+        "sku": "Standard",
+        "workerSize": "0",
+        "hostingEnvironment": ""
+      }
+    }
     
 ## Variablen
 
@@ -72,7 +91,7 @@ Erstellt den Diensthostingplan für die API-App.
 
 Erstellt eine Web-App, die das Gateway hostet.
 
-Beachten Sie, dass **kind** auf **gateway** festgelegt ist. Hierdurch wird das Azure-Portal darüber informiert, dass diese Web-App ein Gateway hostet. Das Portal blendet die Web-App auf dem Blatt zum Durchsuchen der Web-App aus. Zwischen der hostenden App und dem Gateway wird ein Link definiert. Der Abschnitt mit den App-Einstellungen enthält die erforderlichen Werte zum Hosten der API-App.
+Beachten Sie, dass **kind** auf **gateway** festgelegt ist. Hierdurch wird das Azure-Portal darüber informiert, dass diese Web-App ein Gateway hostet. Das Portal blendet die Web-App auf dem Blatt zum Durchsuchen von Web-Apps aus. Zwischen der hostenden Web-App und dem Gateway wird ein Link definiert. Der Abschnitt mit den App-Einstellungen enthält die erforderlichen Werte zum Hosten der API-App.
 
 
     {
@@ -159,7 +178,7 @@ Die hostende Web-App ist als eine Eigenschaft des Gateways definiert.
 
 Erstellt eine Web-App zum Hosten der API-App.
 
-Beachten Sie, dass **kind** auf **apiApp** festgelegt ist. Hierdurch wird das Azure-Portal darüber informiert, dass diese Web-App ein Gateway hostet. Das Portal blendet die Web-App auf dem Blatt zum Durchsuchen der Web-App aus. Die App umfasst eine Erweiterung zum Installieren des leeren API-App-Standardpakets. Zwischen der API-App und der hostenden Web-App wird ein Link definiert. Der Abschnitt mit den App-Einstellungen enthält die erforderlichen Werte zum Hosten der API-App.
+Beachten Sie, dass **kind** auf **apiApp** festgelegt ist. Hierdurch wird das Azure-Portal darüber informiert, dass diese Web-App eine API-App hostet. Das Portal blendet die Web-App auf dem Blatt zum Durchsuchen von Web-Apps aus. Die App umfasst eine Erweiterung zum Installieren des leeren API-App-Standardpakets. Zwischen der API-App und der hostenden Web-App wird ein Link definiert. Der Abschnitt mit den App-Einstellungen enthält die erforderlichen Werte zum Hosten der API-App.
 
     {
       "type": "Microsoft.Web/sites",
@@ -272,13 +291,13 @@ Beachten Sie, dass die Namen der hostenden Web-App und des Gateways als Eigensch
 
 ### PowerShell
 
-    New-AzureResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/tfitzmac/AppServiceTemplates/master/new-gateway-new-plan-new-apiapp.json
+    New-AzureResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-api-app-gateway-new/azuredeploy.json
 
 ### Azure-Befehlszeilenschnittstelle
 
-    azure group deployment create --template-uri https://raw.githubusercontent.com/tfitzmac/AppServiceTemplates/master/new-gateway-new-plan-new-apiapp.json
+    azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-api-app-gateway-new/azuredeploy.json
 
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -64,4 +64,4 @@ Bei Verwendung von Azure als tertiären Speicherendpunkt (Sie verwenden beispiel
 [5]: ./media/backup-azure-backup-create-vault/lrs.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

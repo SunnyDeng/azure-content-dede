@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/09/2015" 
+	ms.date="07/11/2015" 
 	ms.author="awills"/>
 
 # Application Insights-API für benutzerdefinierte Ereignisse und Metriken 
@@ -35,6 +35,7 @@ Methode | Verwendung
 [`TrackException`](#track-exception)|Protokollieren von Ausnahmen für die Diagnose. Verfolgen Sie, wo diese in Bezug auf andere Ereignisse auftreten, und untersuchen Sie die Stapelüberwachung.
 [`TrackRequest`](#track-request)| Protokollieren Sie die Häufigkeit und Dauer der Serveranforderungen für die Leistungsanalyse.
 [`TrackTrace`](#track-trace)|Diagnoseprotokollnachrichten. Sie können auch Drittanbieterprotokolle erfassen.
+[`TrackDependency`](#track-dependency)|Protokollieren Sie die Dauer und die Häufigkeit der Aufrufe von externen Komponenten, von denen Ihre Anwendung abhängt.
 
 Sie können den meisten dieser Telemetrieaufrufe [Eigenschaften und Metriken anfügen](#properties).
 
@@ -231,6 +232,7 @@ Wenn es für Sie praktischer ist, können Sie die Parameter eines Ereignisses in
     telemetry.TrackEvent(event);
 
 
+
 #### <a name="timed"></a> Zeitmessung bei Ereignissen
 
 Manchmal möchten Sie im Diagramm darstellen, wie lange es dauert, eine Aktion auszuführen. Beispielsweise möchten Sie wissen, wie lange Benutzer brauchen, um die Auswahl in einem Spiel zu erwägen. Dies ist ein nützliches Beispiel für die Verwendungszwecke des Messparameters.
@@ -367,7 +369,7 @@ Sie können diese Methode auch selbst aufrufen, wenn Sie Anforderungen in einem 
 
 ## TrackException
 
-Senden Sie Ausnahmen an Application Insights, um sie als Hinweis auf die Häufigkeit eines Problems [zu zählen][metrics] und um [einzelne Vorkommen zu untersuchen][diagnostic].
+Senden Sie Ausnahmen an Application Insights, um sie als Hinweis auf die Häufigkeit eines Problems [zu zählen][metrics] und um [einzelne Vorkommen zu untersuchen][diagnostic]. Die Berichte enthalten die Stapelüberwachung.
 
 *C#*
 
@@ -397,6 +399,30 @@ Verwenden Sie diese Methode zur Diagnose von Problemen, indem Sie eine "Brotkrü
     telemetry.TrackTrace(message, SeverityLevel.Warning, properties);
 
 Die Größenbeschränkung für `message` liegt wesentlich höher als der Grenzwert für Eigenschaften. Sie können nach Nachrichteninhalt suchen, aber (anders als bei Eigenschaftswerten) nicht danach filtern.
+
+## TrackDependency
+
+Diese API wird vom Standardmodul für das Nachverfolgen von Abhängigkeiten zum Protokollieren von Aufrufen der externen Abhängigkeiten wie Datenbanken oder REST-APIs verwendet. Das Modul erkennt einige externe Abhängigkeiten automatisch, jedoch könnte es nützlich sein, einige zusätzliche Komponenten auf die gleiche Weise zu behandeln.
+
+Beispiel: Wenn Sie Ihren Code mit einer Assembly erstellen, die Sie nicht selbst geschrieben haben, könnten Sie die Zeit aller Aufrufe ermitteln, um herauszufinden, welchen Beitrag sie an Ihren Reaktionszeiten hat. Um diese Daten in den Abhängigkeitsdiagrammen in Application Insights anzuzeigen, senden Sie sie mit `TrackDependency`.
+
+```C#
+
+            var success = false;
+            var startTime = DateTime.UtcNow;
+            var timer = System.Diagnostics.Stopwatch.StartNew();
+            try
+            {
+                success = dependency.Call();
+            }
+            finally
+            {
+                timer.Stop();
+                telemetry.TrackDependency("myDependency", "myCall", startTime, timer.Elapsed, success);
+            }
+```
+
+Zum Deaktivieren des Standardmoduls für das Nachverfolgen von Abhängigkeiten bearbeiten Sie [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md), und löschen Sie den Verweis auf `DependencyCollector.DependencyTrackingTelemetryModule`.
 
 ## <a name="defaults"></a>Festlegen von Standardeinstellungen für ausgewählte benutzerdefinierte Telemetriedaten
 
@@ -432,6 +458,7 @@ Wenn Sie nur die Standardeigenschaftswerte für einige von Ihnen benutzerdefinie
     gameTelemetry.TrackEvent("WinGame");
     
 Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwörterbüchern überschreiben.
+
 
 
 
@@ -692,6 +719,9 @@ Wenn Sie diese Werte selbst festlegen, empfiehlt es sich, die entsprechende Zeil
 * **Session** Identifiziert die Sitzung des Benutzers. Die ID wird auf einen generierten Wert festgelegt, der geändert wird, wenn der Benutzer für eine Weile nicht aktiv ist.
 * **User** Ermöglicht das Zählen von Benutzern. Wenn in einer Web-App ein Cookie vorhanden ist, wird die Benutzer-ID daraus entnommen. Andernfalls wird eine neue generiert. Wenn Ihre Benutzer sich bei Ihrer App anmelden müssen, können Sie die ID anhand ihrer authentifizierten ID festlegen, um eine zuverlässigere Zählung bereitzustellen, die auch dann richtig ist, wenn der Benutzer sich von einem anderen Computer aus anmeldet. 
 
+
+
+
 ## Grenzen
 
 Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignissen pro Anwendung.
@@ -704,6 +734,7 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 * *F: Wie lange werden Daten aufbewahrt?*
 
     Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
+
 
 ## Referenz
 
@@ -747,4 +778,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

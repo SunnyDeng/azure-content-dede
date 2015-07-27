@@ -240,4 +240,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Fl
 [Cloud Service-Projekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

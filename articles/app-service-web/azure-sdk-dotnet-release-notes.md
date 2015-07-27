@@ -62,4 +62,4 @@ Dieses Thema enthält Links zu Azure SDK für .NET-Versionshinweise.
 [Azure SDK-Versionshinweise auf MSDN](https://msdn.microsoft.com/library/azure/dn627519.aspx)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

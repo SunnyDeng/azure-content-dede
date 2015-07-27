@@ -118,7 +118,7 @@ Laden Sie Ihre Dateien mithilfe des **Azure-Verwaltungsportals**, mithilfe von *
 
 [AZURE.INCLUDE [media-services-selector-upload-files](../../includes/media-services-selector-upload-files.md)]
 
-###Erstellen von Aufträgen\Aufgaben
+###Erstellen von Aufträgen/Aufgaben
 
 Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthält (z. B. Codierung oder Indizierung). Jede Aufgabe führt einen unteilbaren Vorgang für das (oder die) Eingangsmedienobjekt(e) durch. Ein Beispiel zum Erstellen von Codierungsaufträgen finden Sie hier:
 
@@ -220,4 +220,4 @@ Weitere Informationen finden Sie unter [Wiedergabe Ihrer Inhalte mit vorhandenen
 [vod-overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

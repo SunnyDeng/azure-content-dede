@@ -25,6 +25,7 @@
 
 Die folgende Dokumentation hilft Ihnen beim Einstieg mit Azure Active Directory Connect. In dieser Dokumentation wird die Verwendung der Expressinstallation für Azure AD Connect behandelt. Informationen zur benutzerdefinierten Installation finden Sie unter [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md) (in englischer Sprache). Informationen zum Aktualisieren von DirSync auf Azure AD Connect finden Sie unter [Upgrading DirSync to Azure Active Directory Connect](active-directory-aadconnect-dirsync-upgrade-get-started.md) (in englischer Sprache).
 
+
 ## Azure AD Connect herunterladen
 
 
@@ -41,6 +42,21 @@ Vor der Installation von Azure AD Connect mit Express-Einstellungen benötigen 
 - Ein AD-Domänencontroller oder Mitgliedsserver mit Windows Server 2008 oder höher.
 - Ein Enterprise-Administratorkonto für Ihr lokales Active Directory
 - Optional: Ein Testbenutzerkonto zur Überprüfung der Synchronisierung. 
+
+### Hardwareanforderungen für Azure AD Connect
+Die folgende Tabelle zeigt die Mindestanforderungen für den Azure AD Connect-Computer.
+
+| Anzahl der Objekte in Active Directory | CPU | Arbeitsspeicher | Festplattengröße |
+| ------------------------------------- | --- | ------ | --------------- |
+| Weniger als 10.000 | 1,6 GHz | 4 GB | 70 GB |
+| 10\.000 bis 50.000 | 1,6 GHz | 4 GB | 70 GB |
+| 50\.000 bis 100.000 | 1,6 GHz | 16 GB | 100 GB |
+| Für 100.000 oder mehr Objekte ist die Vollversion von SQL Server erforderlich| | | |
+| 100\.000 bis 300.000 | 1,6 GHz | 32 GB | 300 GB |
+| 300\.000 bis 600.000 | 1,6 GHz | 32 GB | 450 GB |
+| Mehr als 600.000 | 1,6 GHz | 32 GB | 500 GB |
+
+
 
 
 Informationen zu weiteren Anforderungen für benutzerdefinierte Optionen, z. B. für mehrere Gesamtstrukturen oder die Verbundanmeldung, finden Sie [hier](active-directory-aadconnect-get-started-custom.md).
@@ -92,6 +108,10 @@ Nach der erfolgreichen Installation von Azure AD Connect können Sie überprüf
 ## Weitere Vorgehensweise
 Nachdem Sie nun Azure AD Connect installiert haben, können Sie auf diesen Link [hier](active-directory-aadconnect-whats-next.md) klicken, um verschiedene Aufgaben auszuführen, z. B. Zuweisen von Benutzern zu Azure AD Premium- oder Enterprise Mobility-Lizenzen oder Konfigurieren zusätzlicher Optionen.
 
+**Weitere Ressourcen**
+
+[Vergleich von Tools für die Verzeichnisintegration](active-directory-aadconnect-get-started-tools-comparison.md)
+
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

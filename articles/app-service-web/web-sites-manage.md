@@ -94,4 +94,4 @@ Um eine Warnungsregel hinzuzufügen, klicken Sie auf das Diagramm und dann auf *
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

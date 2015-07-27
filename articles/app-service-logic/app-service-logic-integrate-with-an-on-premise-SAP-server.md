@@ -1,10 +1,10 @@
-<properties 
+<properties
 	pageTitle="Integration in einen lokalen SAP-Server in Microsoft Azure App Service"
 	description="Informationen zur Integration in einen lokalen SAP-Server"
-	authors="rajeshramabathiran" 
-	manager="dwrede" 
-	editor="" 
-	services="app-service\logic" 
+	authors="rajeshramabathiran"
+	manager="dwrede"
+	editor=""
+	services="app-service\logic"
 	documentationCenter=""/>
 
 <tags
@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/22/2015"
-	ms.author="harish"/>
+	ms.date="07/02/2015"
+	ms.author="sameerch"/>
 
 
 # Integration in einen lokalen SAP-Server
 Mithilfe des SAP-Connectors können Sie Web-, mobile und Logik-Apps von Azure App Services in Ihren vorhandenen SAP-Server integrieren. Sie können RFCs, BAPIs, tRFCs aufrufen sowie IDOCs an den SAP-Server senden.
-	
+
 Der SAP-Server kann sich sogar lokal hinter Ihrer Firewall befinden. Bei einem lokalen Server wird Konnektivität wie gezeigt durch einen Hybridlistener hergestellt:
 
 ![Datenfluss der Hybridkonnektivität][1]
@@ -40,12 +40,12 @@ Die SAP-spezifischen Clientbibliotheken sind auf dem Clientcomputer erforderlich
 
 
 ## Erstellen eines neuen SAP-Connectors
-1. Melden Sie sich beim Azure-Verwaltungsportal an. 
+1. Melden Sie sich beim Azure-Verwaltungsportal an.
 2. Wählen Sie **Neu** aus.
 3. Wählen Sie auf dem Blatt "Erstellen" **Compute** > **Azure Marketplace** aus.
 4. Wählen Sie auf dem Blatt "Marketplace" **API-Apps**, und suchen Sie auf der Suchleiste nach SAP:
-	
-	![SAP-Connector-API-App][2]	
+
+	![SAP-Connector-API-App][2]
 5. Wählen Sie den von Microsoft veröffentlichten **SAP-Connector** aus.
 6. Wählen Sie auf dem Blatt "SAP-Connector" **Erstellen** aus.
 7. Geben Sie auf dem neuen Blatt, das geöffnet wird, Folgendes ein:
@@ -125,8 +125,4 @@ Für die ausgewählte Aktion sehen Sie die Eingabe- und Ausgabeparameter. Sie k�
 [8]: ./media/app-service-logic-integrate-with-an-on-premise-SAP-server/SAPConnector.HybridConnection.Connected.PNG
 [9]: http://download.microsoft.com/download/2/D/7/2D7CE8DF-A6C5-45F0-8319-14C3F1F9A0C7/InstallationGuide.htm
 
-
-
- 
-
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

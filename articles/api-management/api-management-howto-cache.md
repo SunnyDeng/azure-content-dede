@@ -161,4 +161,4 @@ Geben Sie **25** in das Feld **param2** ein, und klicken Sie auf **HTTP Get**.
 [Call an operation and test the caching]: #test-operation
 [Next steps]: #next-steps
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

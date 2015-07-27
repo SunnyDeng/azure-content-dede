@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/14/2015" 
+	ms.date="07/07/2015" 
 	ms.author="spelluru"/>
 
 # Beispiele für die Verwendung der Kopieraktivität in Azure Data Factory
@@ -144,7 +144,7 @@ In diesem Beispiel, eine Pipeline: **CopyActivityPipeline** ist mit den folgende
 - Die **type**-Eigenschaft wird auf **CopyActivity** festgelegt.
 - **MyOnPremTable** wird als Eingabe angegeben (**Eingaben**-Tag).
 - **MyAzureBlob** wird als Ausgabe angegeben (**Ausgaben**-Tag)
-- Der Abschnitt **Transformation** enthält zwei Unterabschnitte: **Quelle** und **Senke**. Für den Typ der Quelle wird **SqlSource** und für den Typ der Senke **BlobSink** festgelegt. **sqlReaderQuery** definiert die Transformation (Projektion), die für die Quelle ausgeführt werden soll. Ausführliche Informationen zu allen Eigenschaften finden Sie in der [JSON-Skriptreferenz][json-script-reference].
+- Der Abschnitt **Transformation** enthält zwei Unterabschnitte: **Quelle** und **Senke**. Für den Typ der Quelle wird **SqlSource** und für den Typ der Senke **BlobSink** festgelegt. **sqlReaderQuery** definiert die Transformation (Projektion), die für die Quelle ausgeführt werden soll. Weitere Informationen zu allen Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
 
          
 		{
@@ -177,7 +177,7 @@ In diesem Beispiel, eine Pipeline: **CopyActivityPipeline** ist mit den folgende
     		}
 		}
 
-Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Pipeline. Unter [Unterstützte Quellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) finden Sie Eigenschaften von "SqlSource" (z. B. **sqlReaderQuery**) und "BlobSink".
+Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Pipeline. Unter [Unterstützte Quellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) finden Sie Eigenschaften von „SqlSource“ (z. B. **SqlReaderQuery**) und „BlobSink“.
 
 
 ## Kopieren von Daten aus einem lokalen Dateisystem in ein Azure-Blob
@@ -186,8 +186,8 @@ Mithilfe der Kopieraktivität können Sie Dateien aus einem lokalen Dateisystem 
 ### Annahmen
 Bei diesem Beispiel wird Folgendes vorausgesetzt:
 
-- **Host** – Name des Servers, auf dem das Dateisystem gehostet wird: **\contoso**.
-- **Ordner** – Name des Ordners mit den Eingabedateien: **"marketingcampaign\regionaldata\{slice}". Hier sind Dateien in einem Ordner mit dem Namen "{slice}" aufgeteilt, wie z. B. 2014121112 (2014, 12. Monat, 11. Tag , 12. Stunde). 
+- **Host** – Name des Servers, auf dem das Dateisystem gehostet wird: **\\contoso**.
+- **Ordner** – Name des Ordners mit den Eingabedateien: **"marketingcampaign\\regionaldata\\{slice}". Hier sind Dateien in einem Ordner mit dem Namen "{slice}" aufgeteilt, wie z. B. 2014121112 (2014, 12. Monat, 11. Tag , 12. Stunde). 
 ### Erstellen eines mit dem lokalen Dateisystem verknüpften Diensts
 Im folgenden Beispiel kann JSON zum Erstellen eines verknüpften Diensts namens **FolderDataStore** vom Typ **OnPremisesFileSystemLinkedService** verwendet werden.
 
@@ -195,14 +195,14 @@ Im folgenden Beispiel kann JSON zum Erstellen eines verknüpften Diensts namens 
 	    "name": "FolderDataStore",
 	    "properties": {
 	        "type": "OnPremisesFileSystemLinkedService",
-	        "host": "\\contoso",
+	        "host": "\\\\contoso",
 	        "userId": "username",
 	        "password": "password",
 	        "gatewayName": "ContosoGateway"
 	    }
 	}
 
-> [AZURE.NOTE]Denken Sie daran, für Host- und Ordnernamen in JSON-Dateien das Escapezeichen "\" zu verwenden. Für **\Contoso** verwenden Sie **\\Contoso**.
+> [AZURE.NOTE]Denken Sie daran, für Host- und Ordnernamen in JSON-Dateien das Escapezeichen "\" zu verwenden. Für **\\Contoso** verwenden Sie **\\\\Contoso**.
 
 Unter [Mit dem lokalen Dateisystem verknüpfter Dienst](https://msdn.microsoft.com/library/dn930836.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren eines mit dem lokalen Dateisystem verknüpften Diensts.
 
@@ -228,7 +228,7 @@ Das folgende JSON-Skript definiert eine Eingabetabelle, die auf einen mit dem lo
 	    "properties": {
 	        "location": {
 	            "type": "OnPremisesFileSystemLocation",
-	            "folderPath": "marketingcampaign\regionaldata\{Slice}",
+	            "folderPath": "marketingcampaign\\regionaldata\\{Slice}",
 	            "partitionedBy": [
 	                { "name": "Slice", "value": { "type": "DateTime", "date": "SliceStart", "format": "yyyyMMddHH" } }
 	            ],
@@ -321,7 +321,7 @@ Beachten Sie, dass nur **folderPath** im JSON-Beispiel angegeben ist.
 	    "properties": {
 	        "location": {
 	            "type": "OnPremisesFileSystemLocation",
-	            "folderPath": "marketingcampaign\regionaldata\na",
+	            "folderPath": "marketingcampaign\\regionaldata\\na",
 	            "linkedServiceName": "FolderDataStore"
 	        },
 	        ...
@@ -336,7 +336,7 @@ Beachten Sie, dass **fileFilter** auf ***.csv** festgelegt ist.
 	    "properties": {
 	        "location": {
 	            "type": "OnPremisesFileSystemLocation",
-	            "folderPath": "marketingcampaign\regionaldata\na",
+	            "folderPath": "marketingcampaign\\regionaldata\\na",
 	            "fileFilter": "*.csv",
 	            "linkedServiceName": "FolderDataStore"
 	        },
@@ -352,7 +352,7 @@ Beachten Sie, dass **fileFiter** auf eine bestimmte Datei festgelegt ist: **2015
 	    "properties": {
 	        "location": {
 	            "type": "OnPremisesFileSystemLocation",
-	            "folderPath": "marketingcampaign\regionaldata\na",
+	            "folderPath": "marketingcampaign\\regionaldata\\na",
 	            "fileFilter": "201501.csv",
 	            "linkedServiceName": "FolderDataStore"
 	        },
@@ -461,7 +461,7 @@ Die folgende Beispielpipeline enthält eine Kopieraktivität, die Daten aus eine
 	                "transformation": {
 	                    "source": {
 	                        "type": "OracleSource",
-	                        "oracleReaderQuery": "$$Text.Format('select * from LOG where "Timestamp" >= to_date('{0:yyyy-MM-dd}', 'YYYY-MM-DD') AND "Timestamp" < to_date('{1:yyyy-MM-dd}', 'YYYY-MM-DD')', SliceStart, SliceEnd)"
+	                        "oracleReaderQuery": "$$Text.Format('select * from LOG where "Timestamp" >= to_date(\'{0:yyyy-MM-dd}\', \'YYYY-MM-DD\') AND "Timestamp" < to_date(\'{1:yyyy-MM-dd}\', \'YYYY-MM-DD\')', SliceStart, SliceEnd)"
 	                    },
 	                    "sink": {
 	                        "type": "BlobSink"
@@ -491,4 +491,4 @@ Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.a
 [adf-copyactivity]: data-factory-copy-activity.md
 [copy-activity-video]: http://azure.microsoft.com/documentation/videos/introducing-azure-data-factory-copy-activity/
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

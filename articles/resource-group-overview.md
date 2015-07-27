@@ -1,19 +1,19 @@
 <properties
    pageTitle="Übersicht über Azure Resource Manager"
    description="Es wird beschrieben, wie Sie den Azure-Ressourcen-Manager für die Bereitstellung, Verwaltung und Zugriffssteuerung von Ressourcen unter Azure verwenden."
-   services="multiple"
+   services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
    manager="wpickett"
    editor=""/>
 
 <tags
-   ms.service="multiple"
+   ms.service="azure-resource-manager"
    ms.devlang="na"
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/22/2015"
+   ms.date="07/15/2015"
    ms.author="tomfitz"/>
 
 # Übersicht über Azure Resource Manager
@@ -67,6 +67,8 @@ Wenn Sie eine Lösung über den Marketplace erstellen, enthält die Lösung auto
 Die Vorlage wird schließlich zu einem Teil des Quellcodes für Ihre App. Sie können sie in das Quellcoderepository einchecken und im Verlauf der App-Entwicklung aktualisieren. Sie können die Vorlage mit Visual Studio bearbeiten.
 
 Weitere Informationen zum Definieren der Vorlage finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-authoring-templates.md).
+
+Vorlagenschemas finden Sie unter [Schemas des Azure-Ressourcen-Manager](https://github.com/Azure/azure-resource-manager-schemas).
 
 Informationen zum Verwenden einer Vorlage für die Bereitstellung finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md) und [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 
@@ -124,6 +126,7 @@ Erstellen und Bereitstellen von Anwendungen
 - [Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage](virtual-machines/arm-template-deployment.md)
 - [Funktionen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-template-functions.md)
 - [Erweiterte Anwendungen mit Vorlagen](./resource-group-advanced-template.md)
+- [Vorlagenschemas](https://github.com/Azure/azure-resource-manager-schemas)
 
 Organisieren von Ressourcen
 
@@ -136,4 +139,4 @@ Zugriffsverwaltung und -überwachung
 - [Authentifizieren eines Dienstprinzipals](./resource-group-authenticate-service-principal.md)
 - [Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal](./resource-group-create-service-principal-portal.md)
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

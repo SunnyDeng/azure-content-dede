@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/07/2015"
+	ms.date="07/02/2015"
 	ms.author="banders"/>
 
 # Sicherheit von Operational Insights
@@ -32,11 +32,11 @@ Der Operational Insights-Dienst verwaltet Ihre Daten sicher mithilfe der folgend
 
 Jeder Kunde verfügt über einen dedizierten Azure-Blob (Speicher), der die langfristigen Daten enthält. Dieser Blob wird verschlüsselt. Dazu werden kundenbezogene, eindeutige Schlüssel verwendet, die alle 90 Tage geändert werden.
 
-**Datenaufbewahrung**: Die gesammelten Metriken für jede Lösung (früher als "Intelligence Pack" bezeichnet) werden in einer von Microsoft Azure gehosteten SQL-Datenbank gespeichert. Diese Daten werden für 390 Tage gespeichert. Indizierte Protokollsuchdaten werden im Durchschnitt für 10 Tage gespeichert, bevor die Daten bereinigt werden. Wenn das obere Limit von 20 Millionen Datensätzen für jeden Datentyp bereits früher erreicht wird, werden die Daten in Operational Insights nach weniger als 10 Tagen bereinigt. Wenn das Datenlimit nach 10 Tagen noch nicht erreicht ist, wartet Operational Insights vor der Bereinigung, bis das Limit erreicht ist.
+**Datenaufbewahrung**: Die gesammelten Metriken für einige der Lösungen (früher als "Intelligence Pack" bezeichnet) wie beispielsweise Capacity Management werden in einer von Microsoft Azure gehosteten SQL-Datenbank gespeichert. Diese Daten werden für 390 Tage gespeichert. Die Daten der indizierten Protokollsuche werden gemäß des Preisplans gespeichert und beibehalten. Weitere Informationen finden Sie auf unserer [Preisseite](http://azure.microsoft.com/pricing/details/operational-insights/).
 
 **Physische Sicherheit**: Der Operational Insights-Dienst ist mit Microsoft-Mitarbeitern besetzt. Alle Aktivitäten werden protokolliert und können überwacht werden. Der Operational Insights-Dienst wird vollständig in Azure ausgeführt und erfüllt die allgemeinen technischen Kriterien für Azure. Ausführliche Informationen über die physische Sicherheit der Azure-Ressourcen finden Sie auf Seite 18 des Dokuments [Windows Azure Security Overview](http://download.microsoft.com/download/6/0/2/6028B1AE-4AEE-46CE-9187-641DA97FC1EE/Windows%20Azure%20Security%20Overview%20v1.01.pdf) (in englischer Sprache).
 
-**Compliance und Zertifizierungen**: Das Softwareentwicklungs- und Serviceteam für Operational Insights arbeitet aktiv mit den Microsoft Legal- und Compliance-Teams und anderen Partnern der Branche zusammen, um eine Vielzahl von Zertifizierungen (einschließlich ISO) zu erhalten, bevor der Operational Insights-Dienst allgemein verfügbar ist.
+**Compliance und Zertifizierungen**: Das Softwareentwicklungs- und Serviceteam für Operational Insights arbeitet aktiv mit den Microsoft Legal- und Compliance-Teams und anderen Partnern der Branche zusammen, um eine Vielzahl von Zertifizierungen (einschließlich ISO) zu erhalten.
 
 Derzeit erfüllen wir die folgenden Sicherheitsstandards:
 
@@ -49,7 +49,7 @@ Das folgende Diagramm zeigt den Informationsfluss von Ihrem Unternehmen und dess
 
 ![Bild der Datenerfassung und der Sicherheit von Operational Insights](./media/operational-insights-security/security.png)
 
-### 1. Registrieren für Operational Insights und Sammeln von Daten
+### 1\. Registrieren für Operational Insights und Sammeln von Daten
 
 Damit Ihre Organisation Daten an den Operational Insights-Dienst senden kann, müssen Sie entweder Microsoft Monitoring Agents konfigurieren, wenn Sie eine direkte Verbindung mit dem Webdienst vornehmen, oder einen Konfigurations-Assistenten in der Betriebskonsole in Operations Manager verwenden. Benutzer (Sie, andere Einzelbenutzer oder eine Gruppe von Personen) müssen Operational Insights-Konten erstellen und jeden direkt verbundenen Agent bzw. ihre Operations Manager-Umgebung mithilfe eines der folgenden Konten registrieren:
 
@@ -140,21 +140,20 @@ Die folgende Tabelle zeigt Beispiele für Datentypen:
     </table>
 
 
-### 2. Senden von Daten von Agents
+### 2\. Senden von Daten von Agents
 
 Agents, die direkte Verbindungen mit dem Webdienst herstellen, werden mit einem Schlüssel registriert. Zwischen dem Agent und dem Operational Insights-Dienst wird eine sichere Verbindung über Port 443 hergestellt.
 
 Mit Operations Manager registrieren Sie ein Konto für den Operational Insights-Dienst. Zwischen dem Operations Manager-Verwaltungsserver und dem Operational Insights-Dienst wird eine sichere HTTPS-Verbindung über Port 443 hergestellt. Wenn Operations Manager aus irgendeinem Grund nicht mit dem Dienst kommunizieren kann, werden die gesammelten Daten in einem temporären Cache gespeichert, und der Verwaltungsserver versucht zwei Stunden lang alle acht Minuten, die Daten erneut zu senden. Gesammelte Daten werden komprimiert und unter Umgehung von lokalen Datenbanken an den Operational Insights-Dienst gesendet, sodass keine weitere Last hinzugefügt wird. Nach dem Senden werden die gesammelten Daten aus dem Cache entfernt.
 
-### 3. Empfangen und Verarbeiten von Daten durch den Operational Insights-Dienst
+### 3\. Empfangen und Verarbeiten von Daten durch den Operational Insights-Dienst
 
 Der Operational Insights-Dienst stellt sicher, dass eingehende Daten aus einer vertrauenswürdigen Quelle stammen, indem Zertifikate und die Integrität der Daten überprüft werden. Die unverarbeiteten Rohdaten werden dann als Blob in [Microsoft Azure Storage](http://azure.microsoft.com/documentation/services/storage/) gespeichert. Jeder Operational Insights-Benutzer verfügt über ein dediziertes Azure-Blob, auf das nur er zugreifen kann. Der Typ der gespeicherten Daten ist abhängig von den Typen der importierten und zum Sammeln von Daten verwendeten Lösungen.
 
 Der Operational Insights-Dienst verarbeitet die Rohdaten, und die aggregierten verarbeiteten Daten werden in einer SQL-Datenbank gespeichert. Die Kommunikation zwischen dem Operational Insights-Dienst und der SQL-Datenbank basiert auf SQL-Datenbank-Authentifizierung.
 
-### 4. Verwenden von Operational Insights für den Datenzugriff
+### 4\. Verwenden von Operational Insights für den Datenzugriff
 
 Sie können sich über das Konto, das Sie bereits eingerichtet haben, bei Operational Insights anmelden. Sämtlicher Datenverkehr zwischen Operational Insights und dem Operational Insights-Dienst wird über einen sicheren HTTPS-Kanal gesendet.
- 
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

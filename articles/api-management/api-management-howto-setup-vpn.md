@@ -67,4 +67,4 @@ Nachdem Ihr API Management-Dienst mit dem VPN verbunden wurde, unterscheidet sic
 [Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management]: api-management-howto-api-inspector.md
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

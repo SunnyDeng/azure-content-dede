@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/03/2015"
+   ms.date="07/05/2015"
    ms.author="bwren" />
 
 # Azure Automation-Webhooks
@@ -92,6 +92,7 @@ Der Client empfängt einen der folgenden Rückgabecodes als Antwort auf die POST
 |:---|:----|:---|
 | 202 | Zulässig | Die Anforderung wurde akzeptiert, und das Runbook wurde erfolgreich in die Warteschlange gestellt. |
 | 400 | Ungültige Anforderung | Die Anforderung wurde aus einem der folgenden Gründe nicht akzeptiert. <ul> <li>Der Webhook ist abgelaufen.</li> <li>Der Webhook ist deaktiviert.</li> <li>Das Token in der URL ist ungültig.</li> </ul>|
+| 404 | Nicht gefunden | Die Anforderung wurde aus einem der folgenden Gründe nicht akzeptiert. <ul> <li>Der Webhook wurde nicht gefunden.</li> <li>Das Runbook wurde nicht gefunden.</li> <li>Das Konto wurde nicht gefunden.</li> </ul> |
 | 500 | Interner Serverfehler | Die URL ist gültig, es ist jedoch ein Fehler aufgetreten. Senden Sie die Anforderung erneut. |
 
 Wenn die Anforderung erfolgreich ist, enthält die Antwort des Webhooks wie im Folgenden dargestellt die Auftrags-ID im JSON-Format. Die Antwort enthält eine einzelne Auftrags-ID, wobei das JSON-Format Potenzial für künftige Verbesserungen bietet.
@@ -173,4 +174,4 @@ Das folgende Beispiel-Runbook akzeptiert die Anforderung aus dem vorherigen Beis
 - [Starten eines Runbooks](automation-starting-a-runbook.md)
 - [Anzeigen des Status eines Runbookauftrags](automation-viewing-the-status-of-a-runbook-job.md) 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

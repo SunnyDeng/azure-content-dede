@@ -186,4 +186,4 @@ Quellcode des Azure-SDK für .NET, einschließlich Clientbibliotheken, finden Si
 
 Referenzdokumentation für Azure-Clientbibliotheken finden Sie unter [Azure .NET-Referenz](/documentation/api/).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

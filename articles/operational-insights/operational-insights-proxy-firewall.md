@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/04/2015"
+   ms.date="07/02/2015"
    ms.author="banders" />
 
 # Konfigurieren von Proxy- und Firewalleinstellungen für Operational Insights
@@ -27,8 +27,7 @@ Damit der Microsoft Monitoring Agent eine Verbindung herstellen und sich beim Op
 
 |**Agent-Ressource**|**Ports**|
 |--------------|-----|
-|*.ods.opinsights.azure.com|Port 443|
-|*.oms.opinsights.azure.com|Port 443|
+|*.ods.opinsights.azure.com|Port 443| |*.oms.opinsights.azure.com|Port 443|
 |ods.systemcenteradvisor.com|Port 443|
 |*.blob.core.windows.net/*|Port 443|
 
@@ -86,11 +85,7 @@ Damit eine Operations Manager-Verwaltungsgruppe eine Verbindung herstellen und s
 
 |**Verwaltungsserver-Ressource**|**Ports**|
 |--------------|-----|
-|*.ods.opinsights.azure.com|Port 443|
-|service.systemcenteradvisor.com|Port 443|
-|scadvisor.accesscontrol.windows.net|Port 443|
-|scadvisorservice.accesscontrol.windows.net|Port 443|
-|*.blob.core.windows.net/*|Port 443|
+|*.ods.opinsights.azure.com|Port 443| |service.systemcenteradvisor.com|Port 443| |scadvisor.accesscontrol.windows.net|Port 443| |scadvisorservice.accesscontrol.windows.net|Port 443| |*.blob.core.windows.net/*|Port 443|
 |data.systemcenteradvisor.com|Port 443|
 |ods.systemcenteradvisor.com|Port 443|
 |*.systemcenteradvisor.com|Port 443|
@@ -98,10 +93,8 @@ Damit eine Operations Manager-Verwaltungsgruppe eine Verbindung herstellen und s
 
 |**Operational Insights- und Operations Manager-Konsolenressource**|**Ports**|
 |---|---|
-|*.systemcenteradvisor.com|Port 80 und 443|
-|*.live.com|Ports 80 und 443|
-|*.microsoftonline.com|Port 80 und 443|
-|login.windows.net|Port 80 und 443|
+|*.systemcenteradvisor.com|Port 80 und 443| |*.live.com|Ports 80 und 443|
+|*.microsoftonline.com|Port 80 und 443| |login.windows.net|Port 80 und 443|
 
 
 Verwenden Sie die folgenden Verfahren, um die Operations Manager-Verwaltungsgruppe beim Operational Insights-Dienst zu registrieren. Wenn Sie Probleme mit der Kommunikation zwischen der Verwaltungsgruppe und dem Operational Insights-Dienst haben, verwenden Sie die Validierungsverfahren für eine Problembehandlung der Datenübertragung an den Operational Insights-Dienst.
@@ -175,7 +168,5 @@ Verwenden Sie die folgenden Verfahren, um die Operations Manager-Verwaltungsgrup
 
 3. Fügen Sie alle Leistungsindikatoren hinzu, die mit **HTTP** beginnen. ![Hinzufügen der Leistungsindikatoren](./media/operational-insights-proxy-firewall/sendingdata1.png)
 4. Wenn die Operations Manager-Konfiguration in Ordnung ist, werden Aktivitäten für die Leistungsindikatoren der Verwaltungsgruppen des Integritätsdiensts für Ereignisse und andere Datenelemente angezeigt. Die Grundlage bilden die in Operational Insights hinzugefügten Management Packs und die konfigurierten Richtlinien für die Protokollerfassung. ![Systemmonitor mit Aktivität](./media/operational-insights-proxy-firewall/sendingdata2.png)
- 
-<!--BugFixing Comment-->
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

@@ -22,4 +22,4 @@ Mobile Services umfasst folgende wichtige Funktionen und basiert auf den folgend
 + **Skalierung:** Die Möglichkeit, gegen eine Zusatzgebühr mehr Rechenleistung, Performance und Speicher hinzuzukaufen, wenn Ihre App am Popularität gewinnt.
 + **Geplanter Auftrag:** Benutzerdefinierter Code, der anhand eines vorab geplanten Termins oder auf Anforderung ausgeführt wird.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO3-->

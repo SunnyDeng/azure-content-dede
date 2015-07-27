@@ -4,7 +4,7 @@
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="piyushjo" 
-	manager="dwrede" 
+	manager="dwrede"
 	editor="" />
 
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/07/2015" 
+	ms.date="07/07/2015" 
 	ms.author="piyushjo" />
 
 #Verwendung der Engagement-API auf Windows Phone
@@ -379,4 +379,4 @@ Im vorherigen Beispiel enthält das an den Server gesendete JSON 44 Zeichen:
 			{"subscription":"2013-12-07","premium":"true"}
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

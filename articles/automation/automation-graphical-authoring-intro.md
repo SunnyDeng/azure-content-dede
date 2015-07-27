@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/04/2015"
+   ms.date="07/10/2015"
    ms.author="bwren" />
 
 # Grafische Erstellung in Azure Automation
@@ -115,11 +115,11 @@ Wenn Sie einen Wert für einen Parameter angeben, wählen Sie eine Datenquelle a
 |:---|:---|
 |Konstanter Wert|Geben Sie einen Wert für den Parameter ein. Dies ist nur für die folgenden Datentypen möglich: Int32, Int64, String, Boolean, DateTime, Switch. |
 |Aktivitätsausgabe|Ausgabe einer Aktivität, die der aktuellen Aktivität im Workflow vorausgeht. Es werden alle Aktivitäten aufgelistet. Wählen Sie einfach die Aktivität, um ihre Ausgabe für den Parameterwert zu verwenden. Wenn es sich bei der Aktivitätsausgabe um ein Objekt mit mehreren Eigenschaften handelt, können Sie nach Auswahl der Aktivität den Namen der Eigenschaft eingeben.|
-|Runbook-Eingabeparameter<br>*(in Kürze verfügbar)*|Wählen Sie einen Runbook-Eingabeparameter als Eingabe für den Aktivitätsparameter aus.|  
-|Automation-Variablenobjekt<br>*(in Kürze verfügbar)*|Wählen Sie eine Automation-Variable als Eingabe aus.|  
-|Automation-Anmeldeinformationenobjekt<br>*(in Kürze verfügbar)*|Wählen Sie ein Automation-Anmeldeinformationsobjekt als Eingabe aus.|  
-|Automation-Zertifikatobjekt<br>*(in Kürze verfügbar)*|Wählen Sie ein Automation-Zertifikatobjekt als Eingabe aus.|  
-|Automation-Verbindungsobjekt<br>*(in Kürze verfügbar)*|Wählen Sie ein Automation-Verbindungsobjekt als Eingabe aus.| 
+|Runbook-Eingabeparameter|Wählen Sie einen Runbook-Eingabeparameter als Eingabe für den Aktivitätsparameter aus.|  
+|Automation-Variablenressource|Wählen Sie eine Automation-Variable als Eingabe aus.|  
+|Automation-Anmeldeinformationsobjekt|Wählen Sie ein Automation-Anmeldeinformationsobjekt als Eingabe aus.|  
+|Automation-Zertifikatobjekt|Wählen Sie ein Automation-Zertifikatobjekt als Eingabe aus.|  
+|Automation-Verbindungsobjekt|Wählen Sie ein Automation-Verbindungsobjekt als Eingabe aus.| 
 |PowerShell-Ausdruck|Geben Sie einen einfachen PowerShell-Ausdruck an. Der Ausdruck wird vor der Aktivität ausgewertet, und das Ergebnis wird für den Parameterwert verwendet. Sie können Variablen verwenden, um auf die Ausgabe einer Aktivität oder einen Eingabeparameter für ein Runbook zu verweisen.|
 |Leere Zeichenfolge|Ein leerer Zeichenfolgenwert.|
 |Null|Ein Null-Wert.|
@@ -228,7 +228,7 @@ Sie können außerdem die Ausgabe einer Aktivität in einer Datenquelle vom Typ 
 
 ### Prüfpunkte
 
-Die Anleitungen zum Festlegen von [Prüfpunkten](automation-runbook-concepts/#checkpoints) in Ihrem Runbook gelten auch für grafische Runbooks. Sie können eine Aktivität für das Cmdlet "Checkpoint-Workflow" hinzufügen, wenn Sie einen Prüfpunkt setzen möchten. Sie sollten nach dieser Aktivität "Add-AzureAccount" einfügen, falls das Runbook von diesem Prüfpunkt aus auf einem anderen Worker gestartet wird.
+Die Anleitungen zum Festlegen von [Prüfpunkten](automation-powershell-workflow/#checkpoints) in Ihrem Runbook gelten auch für grafische Runbooks. Sie können eine Aktivität für das Cmdlet "Checkpoint-Workflow" hinzufügen, wenn Sie einen Prüfpunkt setzen möchten. Sie sollten nach dieser Aktivität "Add-AzureAccount" einfügen, falls das Runbook von diesem Prüfpunkt aus auf einem anderen Worker gestartet wird.
 
 ## Authentifizierung bei Azure-Ressourcen
 
@@ -276,8 +276,8 @@ Daten, die von einer Aktivität ohne ausgehende Verknüpfung erstellt werden, we
 
 ## Verwandte Artikel
 
-- [Azure Automation-Runbooks – Konzepte](automation-runbook-concepts.md)
+- [Grundlagen des Windows PowerShell-Workflows](automation-powershell-workflow.md)
 - [Automation-Objekte](http://msdn.microsoft.com/library/azure/dn939988.aspx)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

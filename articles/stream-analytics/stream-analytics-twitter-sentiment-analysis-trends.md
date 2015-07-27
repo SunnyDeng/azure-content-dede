@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="04/28/2015"
+	ms.date="07/01/2015"
 	ms.author="jeffstok"/>
 
 
@@ -30,7 +30,7 @@ Eine Nachrichtenwebsite ist daran interessiert, der Konkurrenz durch Seiteninhal
 
 ## Voraussetzungen
 1.	Ein Twitter-Konto ist für dieses Lernprogramm erforderlich.  
-2.	Dieses Lernprogramm nutzt einen Ereignisgenerator, der sich auf GitHub befindet. Laden Sie ihn [hier](https://github.com/streamanalytics/samples/tree/master/TwitterClient) herunter und befolgen Sie die folgenden Schritte, um Ihre Lösung einzurichten.
+2.	In diesem Lernprogramm wird eine Twitter-Clientanwendung verwendet, die sich auf GitHub befindet. Laden Sie ihn [hier](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TwitterClient) herunter und befolgen Sie die folgenden Schritte, um Ihre Lösung einzurichten.
 
 ## Erstellen einer Event Hub-Eingabe und einer Verbrauchergruppe
 
@@ -38,7 +38,7 @@ Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push
 
 Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
 
-1.	Klicken Sie im Azure-Portal auf **NEU** > **APP SERVICES** > **SERVICE BUS** > **EVENT HUB** > **SCHNELLERFASSUNG** und geben Sie einen Namen, eine Region und einen neuen oder vorhandenen Namespace an.  
+1.	Klicken Sie im Azure-Portal auf **NEU** > **APP SERVICES** > **SERVICE BUS** > **EVENT HUB** > **SCHNELLERFASSUNG**, und geben Sie einen Namen, eine Region und einen neuen oder vorhandenen Namespace an, um einen neuen Event Hub zu erstellen.  
 2.	Als bewährte Methode sollte jeder Stream Analytics-Auftrag aus einer einzelnen Event Hubs-Verbrauchergruppe lesen. Im Folgenden werden Sie durch den Prozess der Erstellung einer Verbrauchergruppe geführt und erfahren mehr über diese. Um eine Verbrauchergruppe zu erstellen, wechseln Sie zu dem neu erstellten Event Hub, klicken Sie auf die Registerkarte **VERBRAUCHERGRUPPEN** und anschließend auf **ERSTELLEN** am unteren Rand der Seite. Geben Sie einen Namen für die Verbrauchergruppe ein.
 3.	Um Zugriff auf den Event Hub zu gewähren, müssen wir eine Richtlinie für gemeinsamen Zugriff erstellen. Klicken Sie auf die Registerkarte **KONFIGURIEREN** des Event Hubs.
 4.	Erstellen Sie unter **RICHTLINIEN FÜR GEMEINSAMEN ZUGRIFF** eine neue Richtlinie mit Berechtigungen zum **VERWALTEN**.
@@ -49,9 +49,9 @@ Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
 5.	Klicken Sie unten auf der Seite auf **Speichern**.
 6.	Gehen Sie zum **DASHBOARD**, klicken Sie dann am unteren Rand auf **VERBINDUNGSINFORMATIONEN**, und kopieren und speichern Sie die Verbindungszeichenfolge. (Verwenden Sie das Symbol „Kopieren“, das unter dem Suchsymbol angezeigt wird.)
 
-## Konfigurieren und starten der Ereignisgenerator-Anwendung
+## Konfigurieren und Starten der Twitter-Clientanwendung
 
-Wir haben eine Clientanwendung bereitgestellt, die über die [REST-APIs von Twitter](https://dev.twitter.com/rest/public) auf Twitter-Daten zugreift, um Tweet-Ereignisse zu einer parametrisierten Reihe von Themen zu sammeln. Das Open-Source-Tool [Sentiment140](http://help.sentiment140.com/) eines Drittanbieters wird verwendet, um jedem Tweet einen Stimmungswert zuzuweisen (0: negativ, 2: neutral, 4: positiv). Danach werden die Tweet-Ereignisse mithilfe von Push an den Event Hub übertragen.
+Wir haben eine Clientanwendung bereitgestellt, die über die [Streaming-APIs von Twitter](https://dev.twitter.com/streaming/overview) auf Twitter-Daten zugreift, um Tweet-Ereignisse zu einer parametrisierten Reihe von Themen zu sammeln. Das Open-Source-Tool [Sentiment140](http://help.sentiment140.com/) eines Drittanbieters wird verwendet, um jedem Tweet einen Stimmungswert zuzuweisen (0: negativ, 2: neutral, 4: positiv). Danach werden die Tweet-Ereignisse mithilfe von Push an den Event Hub übertragen.
 
 Gehen Sie folgendermaßen vor, um die Anwendung einzurichten:
 
@@ -153,7 +153,7 @@ Um die Anzahl der Erwähnungen verschiedener Themen zu vergleichen, nutzen wir e
 
 #### Identifizieren von Trendthemen: Schiebefenster
 
-Zum Identifizieren von Trendthemen suchen wir nach Themen, die einen Schwellenwert für Erwähnungen in einem bestimmten Zeitraum überschreiten. Für die Zwecke dieses Lernprogramms suchen wir mihilfe eines [SlidingWindow](https://msdn.microsoft.com/library/azure/dn835051.aspx) nach Themen, die in 5 Sekunden mehr als 20 Mal erwähnt werden ein.
+Zum Identifizieren von Trendthemen suchen wir nach Themen, die einen Schwellenwert für Erwähnungen in einem bestimmten Zeitraum überschreiten. Für die Zwecke dieses Lernprogramms suchen wir mithilfe eines [SlidingWindow](https://msdn.microsoft.com/library/azure/dn835051.aspx) nach Themen, die in den letzten 5 Sekunden mehr als 20-mal erwähnt werden.
 
 1.	Ändern Sie die Abfrage im Code-Editor in:
 
@@ -183,7 +183,7 @@ Die letzte Abfrage, die wir testen, verwendet ein TumblingWindow, um alle 5 Seku
 
 ## Erstellen der Ausgabetabelle
 
-Nun, da wir einen Datenstrom, eine Event Hub-Eingabe zum Erfassen von Ereignissen und eine Abfrage zur Ausführung einer Umwandlung über den Stream definiert haben, ist der letzte Schritt die Definition einer Ausgabetabelle für den Auftrag. Die aggregierten Tweet-Ereignisse aus unserer Auftragsabfrage schreiben wir in ein Azure-Blob. Sie können die Ergebnisse je nach den Anforderungen Ihrer Anwendung auch mithilfe von Push auf die SQL-Datenbank übertragen oder in einer Tabelle oder dem Event Hub speichern.
+Nun, da wir einen Datenstrom, eine Event Hub-Eingabe zum Erfassen von Ereignissen und eine Abfrage zur Ausführung einer Umwandlung über den Stream definiert haben, ist der letzte Schritt die Definition einer Ausgabetabelle für den Auftrag. Die aggregierten Tweet-Ereignisse aus unserer Auftragsabfrage schreiben wir in ein Azure-Blob. Sie können die Ergebnisse je nach den spezifischen Anforderungen Ihrer Anwendung auch mithilfe von Push in eine SQL-Datenbank, einen Tabellenspeicher oder einen Event Hub übertragen.
 
 Befolgen Sie die nachstehenden Schritte zum Erstellen eines Containers für Blob-Speicher, wenn Sie noch keinen erstellt haben:
 
@@ -198,7 +198,7 @@ Befolgen Sie die nachstehenden Schritte zum Erstellen eines Containers für Blob
 3.	Geben Sie die folgenden Werte auf der dritten Seite ein, oder wählen Sie sie aus:
 
 	* **AUSGABEALIAS**: Geben Sie einen Anzeigenamen für diese Auftragsausgabe ein.
-	* **ABONNEMENT**: Befindet sich der Blob-Speicher, den Sie erstellt haben, in demselben Abonnement wie der Stream Analytics-Auftrag, wählen Sie **Storage-Konto aus dem aktuellen Abonnement verwenden**. Wenn sich der Speicher in einem anderen Abonnement befindet, wählen Sie **Storage-Konto von einem anderen Abonnement verwenden** und geben Sie manuell **SPEICHERKONTO**, **SPEICHERKONTOSCHLÜSSEL** und **CONTAINER** ein.
+	* **ABONNEMENT**: Befindet sich der Blob-Speicher, den Sie erstellt haben, in demselben Abonnement wie der Stream Analytics-Auftrag, wählen Sie **Speicherkonto aus dem aktuellen Abonnement verwenden**. Wenn sich der Speicher in einem anderen Abonnement befindet, wählen Sie **Speicherkonto aus einem anderen Abonnement verwenden** und geben Sie manuell **SPEICHERKONTO**, **SPEICHERKONTOSCHLÜSSEL** und **CONTAINER** ein.
 	* **SPEICHERKONTO**: Wählen Sie den Namen des Speicherkontos.
 	* **CONTAINER**: Wählen Sie den Namen des Containers.
 	* **DATEINAMENPRÄFIX**: Geben Sie ein Präfix ein, das beim Schreiben von Blob-Ausgaben verwendet wird.
@@ -224,7 +224,7 @@ Sobald Ihr Auftrag ausgeführt wird und den Twitter-Datenstrom in Echtzeit verar
 ![Soziale Medienanalyse: Ausgabe der Stimmungsanalyse (Opinion Mining) mit Stream Analytics in einem Power BI-Dashboard.](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-analytics-output-power-bi.png)
 
 ## Support
-Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-de/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
 
 
 ## Nächste Schritte
@@ -236,4 +236,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

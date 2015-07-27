@@ -107,16 +107,14 @@ Die Konfigurationseinstellung **availability** in der Ausgabedatentabelle bestim
 ## Kopieraktivität – Häufig gestellte Fragen
 ### F: In welchen Regionen wird die Kopieraktivität unterstützt?
 
-Die Kopieraktivität zum Kopieren von Daten wird in den folgenden Regionen unterstützt: USA (Ost), USA (Ost) 2, USA (West), USA (Mitte), USA (Mitte/Süden), Nordeuropa, Westeuropa und Südostasien.
+Die Kopieraktivität zum Kopieren von Daten wird in den folgenden Regionen unterstützt: USA (Ost), USA (Ost) 2, USA (West), USA (Mitte), USA (Mitte/Süden), Nordeuropa, Westeuropa, Südostasien, Japan (Ost), Brasilien (Süd)
 
 Das Kopieren von Daten in andere Regionen wird ebenfalls unterstützt, wenn eine der oben genannten fünf Regionen zur Weiterleitung der Daten genutzt wird. Der Kopiervorgang wird auf Basis der Region gemessen, über die die Daten weitergeleitet werden.
 
 Region des Kopierziels | Für die Weiterleitung genutzte Region
 -------------------------- | -----------------------
 Ostasien | Südostasien
-Japan Ost | USA (West)
-Japan West | USA (West)
-Brasilien Süd | USA (Ost) 2
+Japan (Westen) | Japan Ost
 
 ### Wie kann ich Daten in mehrere Ausgabetabellen kopieren?
 Wie im folgenden Beispiel gezeigt, kann eine Pipeline mehrere Ausgabetabellen enthalten.
@@ -217,4 +215,4 @@ Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige M�
 [hdinsight-alternate-storage-2]: http://blogs.msdn.com/b/cindygross/archive/2014/05/05/use-additional-storage-accounts-with-hdinsight-hive.aspx
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

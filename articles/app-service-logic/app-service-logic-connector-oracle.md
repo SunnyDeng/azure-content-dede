@@ -1,10 +1,10 @@
-<properties 
-   pageTitle="Verwendung des Oracle-Connectors in Microsoft Azure App Service" 
-   description="Verwenden des Oracle-Connectors" 
-   services="app-service\logic" 
-   documentationCenter=".net,nodejs,java" 
-   authors="anuragdalmia" 
-   manager="dwrede" 
+<properties
+   pageTitle="Verwendung des Oracle-Connectors in Microsoft Azure App Service"
+   description="Verwenden des Oracle-Connectors"
+   services="app-service\logic"
+   documentationCenter=".net,nodejs,java"
+   authors="anuragdalmia"
+   manager="dwrede"
    editor=""/>
 
 <tags
@@ -12,9 +12,9 @@
    ms.devlang="multiple"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="06/22/2015"
-   ms.author="sutalasi"/>
+   ms.workload="integration"
+   ms.date="07/02/2015"
+   ms.author="sameerch"/>
 
 
 # Oracle-Datenbankconnector
@@ -23,7 +23,7 @@ Stellen Sie eine Verbindung mit einem lokalen Oracle-Datenbankserver her, um Inf
 
 - Machen Sie einen Teil der Daten in der Oracle-Datenbank mithilfe einer Web- oder mobilen Anwendung verfügbar.
 - Einfügen von Daten in die Oracle-Datenbanktabelle zum Speichern. Sie können z. B. Mitarbeiterdatensätze eingeben, Aufträge aktualisieren, usw..
-- Rufen Sie Daten aus Oracle ab und verwenden Sie sie in einem Geschäftsprozess. Beispielsweise können Sie Kundendatensätze abrufen und sie in Salesforce übertragen. 
+- Rufen Sie Daten aus Oracle ab und verwenden Sie sie in einem Geschäftsprozess. Beispielsweise können Sie Kundendatensätze abrufen und sie in Salesforce übertragen.
 
 
 ## Trigger und Aktionen
@@ -69,7 +69,7 @@ Anweisung nach Abruf | Nein | Geben Sie die Anweisung ein, die nach der Abfrage 
 Betrachten wir eine einfache Logik-App, die Daten aus einer Oracle-Tabelle abruft, die Daten dann einer anderen Tabelle hinzufügt und anschließend aktualisiert.
 
 ### Den Trigger hinzufügen
-1. Beim Erstellen oder Bearbeiten einer Logik-App wählen Sie den Oracle-Connector als Trigger aus. Dadurch werden die verfügbaren Trigger aufgelistet: **Poll Data (JSON)** und **Poll Data (XML)**: <br/>![][5] 
+1. Beim Erstellen oder Bearbeiten einer Logik-App wählen Sie den Oracle-Connector als Trigger aus. Dadurch werden die verfügbaren Trigger aufgelistet: **Poll Data (JSON)** und **Poll Data (XML)**: <br/>![][5]
 
 2. Wählen Sie den Trigger **Poll Data (JSON)** aus, geben Sie die Häufigkeit an, und klicken Sie auf ✓: <br/>![][6]
 
@@ -80,7 +80,7 @@ Mithilfe unserer einfachen Logik-App, die Daten aus einer Oracle-Tabelle abruft,
 
 Für die Verwendung des Oracle-Connectors als Aktion geben Sie den Namen der Tabellen und/oder gespeicherte Prozeduren ein, die Sie schon bei der Erstellung des Oracle Connectors eingegeben haben:
 
-1. Wählen Sie denselben Oracle-Connector aus dem Katalog als Aktion aus. Wählen Sie eine der Einfügeaktionen aus, wie *Insert Into TempEmployeeDetails (JSON)*: <br/>![][8] 
+1. Wählen Sie denselben Oracle-Connector aus dem Katalog als Aktion aus. Wählen Sie eine der Einfügeaktionen aus, wie *Insert Into TempEmployeeDetails (JSON)*: <br/>![][8]
 
 2. Geben Sie die einzufügenden Eingabewerte des Datensatzes ein, und klicken Sie auf ✓: <br/> ![][9]
 
@@ -115,8 +115,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-oracle/LogicApp7.png
 [12]: ./media/app-service-logic-connector-oracle/LogicApp8.png
 
-
-
- 
-
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

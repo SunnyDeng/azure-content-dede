@@ -1,9 +1,9 @@
 <properties 
-	pageTitle="DocumentDB-Whitepaper von David Chappell | Azure" 
+	pageTitle="Introducing DocumentDB - Eine NoSQL-Datenbank für Microsoft Azure | Azure" 
 	description="Laden Sie ein Whitepaper von David Chappell zu DocumentDB herunter, einer verwalteten NoSQL-Datenbank in Azure." 
 	services="documentdb" 
 	documentationCenter="" 
-	authors="adlevin" 
+	authors="mimig1" 
 	manager="jhubbard" 
 	editor=""/>
 
@@ -13,27 +13,22 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/10/2015" 
-	ms.author="adlevin"/>
+	ms.date="05/13/2015" 
+	ms.author="mimig"/>
 
-# DocumentDB-Whitepaper von David Chappell 
+# Introducing DocumentDB – Eine NoSQL Datenbank für Microsoft Azure 
 
-**Zusammenfassung:** Informationen zu DocumentDB, einer verwalteten NoSQL-Datenbank in Microsoft Azure. DocumentDB ist die ideale Wahl für die Datenbanktechnologie, wenn Folgendes zutrifft:
+Sie sind sich nicht sicher, ob DocumentDB für Ihre Anwendung oder Daten geeignet ist? Möchten Sie erfahren, wie JSON-Daten gespeichert und auf sie in DocumentDB zugegriffen wird? Wenn dies der Fall ist, ist dieses einführende Whitepaper von David Chappell ein guter Ausgangspunkt. Es wird erläutert, wie Sie von der Flexibilität profitieren können, die schemafreie JSON-Daten bieten und wie sie so mühelos mit Änderungen an der Datenstruktur verfahren können.
 
-* Ihre Anwendung würde von einem schemafreien Datenmodell profitieren.
-* Ihre Datenbank muss viel Speicherplatz und Durchsatz skalieren.
-* Sie möchten eine bekannte Abfragesprache und Entwicklungsplattform verwenden.
+Dieses Whitepaper führt Sie auch durch die folgenden Aspekte:
 
-In diesem Whitepaper werden außerdem die folgenden grundlegenden Konzepte behandelt:
+ - Verwenden des DocumentDB-Datenmodells, um JSON-Daten in Dokumente und Auflistungen innerhalb einer Datenbank zu speichern. 
+ - Arbeiten mit Ihren Daten mithilfe von Clientbibliotheken, der RESTful-Zugriffsmethoden oder DocumentDB-SQL. 
+ - Ausführen von Logik von der Datenbank durch Schreiben von gespeicherten Prozeduren (gespeicherte Prozeduren), Triggern oder benutzerdefinierten Funktionen (UDFs) und deren Speicherung in der Auflistung.
+ - Auswählen einer Konsistenz-Option, um die Zuverlässigkeits- und Leistungsanforderungen Ihrer Anwendung zu erfüllen.
+ - Auswählen einer Preisoption entsprechend Ihrer Durchsatzanforderungen.
 
-* Das DocumentDB-Datenmodell.
-* Wie Anwendungen mit Daten arbeiten.
-* Optionen, die für Anwendungen zum Ausgleich von Leistung und Konsistenz zur Verfügung stehen.
+**Herunterladen von PDF-Dateien:** [ Introducing DocumentDB - Eine NoSQL-Datenbank für Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=511318)
+ 
 
-
-**Veröffentlicht:** 10. September 2014
-
-**Herunterladen:** [Einführung in DocumentDB - Eine NoSQL-Datenbank für Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=511318)
-
-
-<!--HONumber=49--> 
+<!---HONumber=July15_HO3-->

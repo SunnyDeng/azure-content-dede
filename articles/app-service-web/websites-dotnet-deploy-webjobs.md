@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="web" 
-	ms.date="04/03/2015" 
+	ms.date="06/29/2015" 
 	ms.author="tdykstra"/>
 
 # Bereitstellen von Webaufträgen mit Visual Studio
@@ -193,11 +193,11 @@ Bei einem unabhängigen Webauftrag wird derselbe Assistent **Web veröffentliche
 
 ## <a id="nextsteps"></a>Nächste Schritte
 
-Weitere Informationen zum Bereitstellen von Azure-Webaufträgen mit Visual Studio und mithilfe eines fortlaufenden Bereitstellungsprozesses finden Sie unter [Azure-Webaufträge – Empfohlene Ressourcen – Bereitstellung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/azure-webjobs-recommended-resources#deploying).
+In diesem Artikel wird erklärt, wie WebJobs mit Visual Studio bereitgestellt wird. Informationen zum Bereitstellen von Azure WebJobs mit Visual Studio und mithilfe eines fortlaufenden Bereitstellungsprozesses finden Sie unter [Azure WebJobs – Empfohlene Ressourcen – Bereitstellung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/azure-webjobs-recommended-resources#deploying).
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

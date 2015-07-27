@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/29/2015" 
+	ms.date="07/10/2015" 
 	ms.author="garye"/>
 
 
@@ -51,10 +51,10 @@ Klicken Sie auf die Registerkarte **DASHBOARD**.
 Im Dashboard können Sie die Gesamtnutzung des Arbeitsbereichs ablesen und sich eine schnelle Übersicht über die Informationen des Arbeitsbereichs verschaffen.
 
 - Das Diagramm **SERVER** zeigt die Computerressourcen an, die im Arbeitsbereich verwendet werden. Sie können die Ansicht ändern, um relative oder absolute Werte anzuzeigen, und den im Diagramm angezeigten Zeitrahmen ändern.
-- **Verwendungsübersicht** zeigt den vom Arbeitsbereich genutzten Azure-Speicher an. Hinweis: Speicherüberwachung steht während der öffentlichen Vorschauphase von Azure Machine Learning nicht zur Verfügung.
+- **Verwendungsübersicht** zeigt den vom Arbeitsbereich genutzten Azure-Speicher an.
 - **Auf einen Blick** enthält eine Zusammenfassung der Informationen des Arbeitsbereichs und nützliche Links.
 
-> [AZURE.NOTE]Über den Link **OPEN IN STUDIO** wird Machine Learning Studio mit dem Microsoft-Konto geöffnet, an dem Sie gerade angemeldet sind. Das Microsoft-Konto, mit dem Sie sich am Azure-Portal angemeldet haben, um einen Arbeitsbereich zu erstellen, verfügt nicht automatisch über die Berechtigung zum Öffnen dieses Arbeitsbereichs. Um einen Arbeitsbereich zu öffnen, müssen Sie an dem Microsoft-Konto angemeldet sein, das als Besitzer des Arbeitsbereichs definiert wurde, oder Sie müssen eine Einladung des Besitzers zur Teilnahme am Arbeitsbereich erhalten haben.
+> [AZURE.NOTE]Über den Link **Bei ML Studio anmelden** wird Machine Learning Studio mit dem Microsoft-Konto geöffnet, an dem Sie gerade angemeldet sind. Das Microsoft-Konto, mit dem Sie sich am Azure-Portal angemeldet haben, um einen Arbeitsbereich zu erstellen, verfügt nicht automatisch über die Berechtigung zum Öffnen dieses Arbeitsbereichs. Um einen Arbeitsbereich zu öffnen, müssen Sie an dem Microsoft-Konto angemeldet sein, das als Besitzer des Arbeitsbereichs definiert wurde, oder Sie müssen eine Einladung des Besitzers zur Teilnahme am Arbeitsbereich erhalten haben.
 
 
 ## So erteilen oder blockieren Sie den Zugriff für Benutzer ##
@@ -66,7 +66,7 @@ Auf der Registerkarte "Konfiguration" haben Sie folgende Möglichkeiten:
 - Blockieren des Zugriffs auf den Machine Learning-Arbeitsbereich, indem Sie auf "DENY" klicken. Benutzer können den Arbeitsbereich dann nicht mehr in Machine Learning Studio öffnen. Klicken Sie auf "ALLOW", um den Zugang wiederherzustellen.
 - Ändern des Besitzers des Arbeitsbereichs, indem Sie ein anderes Microsoft-Konto angeben. 
 
-Um zu verwalten, wer Zugriff auf den Arbeitsbereich in Machine Learning Studio hat, klicken Sie auf **OPEN IN STUDIO** (siehe Hinweis oben im Hinblick auf **OPEN IN STUDIO**). Dadurch wird der Arbeitsbereich in Machine Learning Studio geöffnet. Klicken Sie dort auf die Registerkarte **EINSTELLUNGEN** und dann auf **BENUTZER**. Sie können auf **INVITE MORE USERS** klicken, um Benutzern den Zugriff auf den Arbeitsbereich zu gewähren, oder einen Benutzer auswählen und durch Klicken auf **ENTFERNEN** entfernen.
+Um zu verwalten, wer Zugriff auf den Arbeitsbereich in Machine Learning Studio hat, klicken Sie auf der Registerkarte **DASHBOARD** auf**Bei ML Studio anmelden** (siehe obigen Hinweis zu **ML Studio anmelden**). Dadurch wird der Arbeitsbereich in Machine Learning Studio geöffnet. Klicken Sie dort auf die Registerkarte **EINSTELLUNGEN** und dann auf **BENUTZER**. Sie können auf **INVITE MORE USERS** klicken, um Benutzern den Zugriff auf den Arbeitsbereich zu gewähren, oder einen Benutzer auswählen und durch Klicken auf **ENTFERNEN** entfernen.
 
 
 ## So verwalten Sie Webdienste in diesem Arbeitsbereich
@@ -94,4 +94,4 @@ Sie können den Webdienst über diese Seite auch auf dem Azure Data Marketplace 
 
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

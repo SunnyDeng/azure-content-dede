@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/14/2015" 
+	ms.date="07/07/2015" 
 	ms.author="spelluru"/>
 
 #Azure Data Factory – Terminologie
@@ -113,4 +113,4 @@ Ein wichtiges Merkmal eines Hubs besteht darin, dass eine Pipeline auf einem ein
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

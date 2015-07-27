@@ -1,6 +1,6 @@
 <properties pageTitle="Azure Search-Dienst-REST-API: Version 2014-07-31-Preview" description="Azure Search-Dienst-REST-API: Version 2014-07-31-Preview" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" editor=""/>
 
-<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="05/21/2015" ms.author="heidist" />
+<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="07/08/2015" ms.author="heidist" />
 
 # Azure Search-Dienst-REST-API: Version 2014-07-31-Preview
 
@@ -10,7 +10,7 @@ Wenn Sie eine Vorschauversion der API in Ihrem Anwendungscode verwenden, wird dr
 
 Zu den weiteren API-Inhalten in Bezug auf **2014-07-31-Preview** gehören die folgenden:
 
-- [Bewertungsprofile (Azure Search-Dienst-REST-API: Version 2014-07-31-Preview)](../search-api-scoring-profiles-2014-07-31-preview.md)
+- [Bewertungsprofile (Azure Search-Dienst-REST-API: Version 2014-07-31-Preview)](search-api-scoring-profiles-2014-07-31-preview.md)
 
 
 ##Grundlegendes zur Suchdienst-REST-API
@@ -164,13 +164,13 @@ Der Indexname muss in Kleinbuchstaben angegeben werden und mit einem Buchstaben 
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
 - `api-key`: Erforderlich. Mit dem `api-key` wird 
 - die Anforderung für den Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist. 
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](../search-create-service.portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service.portal.md).
 
 <a name="RequestData"></a> **Syntax des Anforderungstexts**
 
@@ -642,12 +642,12 @@ Der Parameter `api-version` ist erforderlich. Gültige Werte sind `2014-07-31-Pr
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index aktualisieren** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](../search-create-service.portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service.portal.md).
 
 **Syntax des Anforderungstexts**
 
@@ -735,11 +735,11 @@ Der Parameter `api-version` ist erforderlich. Gültige Werte sind `2014-07-31-Pr
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
  
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index auflisten** muss einen `api-key` enthalten, der auf einen Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](../search-create-service.portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service.portal.md).
 
 **Anforderungstext**
 
@@ -802,11 +802,11 @@ Der Parameter `api-version` ist erforderlich. Gültige Werte sind `2014-07-31-Pr
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
  
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index abrufen** muss einen `api-key` enthalten, der auf einen Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](../search-create-service.portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service.portal.md).
 
 **Anforderungstext**
 
@@ -836,11 +836,11 @@ Der Parameter `api-version` ist erforderlich. Gültige Werte sind `2014-07-31-Pr
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
  
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Die Anforderung **Index löschen** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](../search-create-service.portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service.portal.md).
 
 **Anforderungstext**
 
@@ -868,11 +868,11 @@ Der Parameter `api-version` ist erforderlich. Gültige Werte sind `2014-07-31-Pr
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
  
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Indexstatistik abrufen** muss einen `api-key` enthalten, der auf einen Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](../search-create-service.portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service.portal.md).
 
 **Anforderungstext**
 
@@ -926,12 +926,12 @@ Der Parameter `api-version` ist erforderlich. Gültige Werte sind `2014-07-31-Pr
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index hinzufügen** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](../search-create-service.portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service.portal.md).
 
 **Anforderungstext**
 
@@ -1100,11 +1100,11 @@ Hinweis: Bei diesem Vorgang wird die `api-version` als Abfrageparameter angegebe
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die **Suchanforderung** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](../search-create-service.portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service.portal.md).
 
 **Anforderungstext**
 
@@ -1234,11 +1234,11 @@ Hinweis: Bei diesem Vorgang wird die `api-version` als Abfrageparameter angegebe
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Dokument suchen** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](../search-create-service.portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` im Dashboard zu Ihrem Dienst im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service.portal.md).
 
 **Anforderungstext**
 
@@ -1281,12 +1281,12 @@ Der Parameter `api-version` ist erforderlich. Gültige Werte sind `2014-07-31-Pr
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
 - `Accept`: Dieser Wert muss auf `text/plain` gesetzt werden.
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Dokumentanzahl** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](../search-create-service.portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service.portal.md).
 
 **Anforderungstext**
 
@@ -1336,11 +1336,11 @@ Hinweis: Bei diesem Vorgang wird die `api-version` als Abfrageparameter angegebe
 
 **Anforderungsheader**
 
-In der folgende Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
+In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Vorschläge** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](../search-create-service.portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service.portal.md).
 
 **Anforderungstext**
 
@@ -1384,4 +1384,4 @@ Rufen Sie 5 Vorschläge mit der Teilsuche nach "lux" ab.
 
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

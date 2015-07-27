@@ -28,13 +28,13 @@
 ##Herstellen einer Verbindung mit dem virtuellen Computer
 In Abhängigkeit von dem auf Ihrem Computer ausgeführten Betriebssystem verwenden Sie für die Verbindung mit dem virtuellen Computer SSH oder PuTTY:
 
-- Verwenden Sie SSH, wenn Sie für die Verbindung zum virtuellen Computer Linux nutzen. Geben Sie an der Eingabeaufforderung Folgendes ein: 
+- Verwenden Sie SSH, wenn Sie für die Verbindung zum virtuellen Computer Linux nutzen. Geben Sie an der Eingabeaufforderung Folgendes ein:
 
 	`$ ssh newuser@testlinuxvm.cloudapp.net -o ServerAliveInterval=180`
-	
+
 	Geben Sie das Kennwort des Benutzers ein.
 
-- Verwenden Sie PuTTY, wenn Sie für die Verbindung zum virtuellen Computer einen Windows-Computer nutzen. Sie können PuTTY von der [PuTTY-Downloadseite][PuTTYDownLoad] herunterladen.
+- Verwenden Sie PuTTY, wenn Sie für die Verbindung zum virtuellen Computer einen Windows-Computer nutzen. Sie können PuTTY von der [PuTTY-Downloadseite][PuTTYDownload] herunterladen.
 
 	Laden Sie **putty.exe** herunter, und speichern Sie die Daten in einem Verzeichnis auf dem Computer. Öffnen Sie eine Eingabeaufforderung, navigieren Sie zu dem betreffenden Verzeichnis, und führen Sie **putty.exe** aus.
 
@@ -58,4 +58,4 @@ In Abhängigkeit von dem auf Ihrem Computer ausgeführten Betriebssystem verwend
 
 [Image6]: ./media/create-and-configure-opensuse-vm-in-portal/putty.png
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

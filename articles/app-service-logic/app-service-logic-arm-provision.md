@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/02/2015" 
+	ms.date="06/29/2015" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer Logik-App mithilfe einer Vorlage
@@ -24,11 +24,15 @@ Weitere Informationen zu den Eigenschaften der Logik-App finden Sie unter [API f
 
 Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
-Die vollständige Vorlage finden Sie unter [Logik-App-Vorlage](https://github.com/tfitzmac/AppServiceTemplates/blob/master/LogicApp.json).
+Die vollständige Vorlage finden Sie unter [Logik-App-Vorlage](https://github.com/Azure/azure-quickstart-templates/blob/master/101-logic-app-create/azuredeploy.json).
 
 ## Was Sie bereitstellen
 
 Mit dieser Vorlage stellen Sie eine Logik-App bereit.
+
+Klicken Sie auf folgende Schaltfläche, um die Bereitstellung automatisch auszuführen:
+
+[![Bereitstellen in Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-logic-app-create%2Fazuredeploy.json)
 
 ## Parameter
 
@@ -38,7 +42,7 @@ Mit dieser Vorlage stellen Sie eine Logik-App bereit.
 
      "testUri": {
         "type": "string",
-        "defaultValue": "http://azure.microsoft.com/de-de/status/feed/"
+        "defaultValue": "http://azure.microsoft.com/status/feed/"
       }
     
 ## Bereitzustellende Ressourcen
@@ -127,13 +131,13 @@ Diese spezifische Definition wird einmal pro Stunde ausgeführt und pingt den im
 
 ### PowerShell
 
-    New-AzureResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/tfitzmac/AppServiceTemplates/master/LogicApp.json -ResourceGroupName ExampleDeployGroup
+    New-AzureResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-logic-app-create/azuredeploy.json -ResourceGroupName ExampleDeployGroup
 
 ### Azure-Befehlszeilenschnittstelle
 
-    azure group deployment create --template-uri https://raw.githubusercontent.com/tfitzmac/AppServiceTemplates/master/LogicApp.json -g ExampleDeployGroup
+    azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-logic-app-create/azuredeploy.json -g ExampleDeployGroup
 
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -77,9 +77,9 @@ Die **.pfx**-Datei mit dem Zertifikat wird zu Ihrem Dienstprojekt hinzugefügt u
 
 Wenn eine Node.js-Anwendung in einer Workerrolle bereitgestellt wird, verwaltet Node.exe das Serverzertifikat und die SSL-Verbindung. Für die Behandlung von SSL-Datenverkehr müssen Sie das 'https'-Modul anstelle von 'http' verwenden. Führen Sie die folgenden Schritte aus, um das SSL-Zertifikat zu Ihrem Projekt hinzuzufügen und ändern Sie anschließend die Anwendung, um das Zertifikat zu verwenden.
 
-1.   Speichern Sie die **.pfx**-Datei, die Sie von Ihrer Zertifizierungsstelle (ZS) erhalten haben, im Verzeichnis, das Ihre Anwendung enthält. **c:\node\securesite\workerrole1** ist z. B. das Verzeichnis, das die in diesem Artikel verwendete Anwendung enthält.
+1.   Speichern Sie die **.pfx**-Datei, die Sie von Ihrer Zertifizierungsstelle (ZS) erhalten haben, im Verzeichnis, das Ihre Anwendung enthält. **c:\\node\\securesite\\workerrole1** ist z. B. das Verzeichnis, das die in diesem Artikel verwendete Anwendung enthält.
 
-2.   Öffnen Sie die Datei **c:\node\securesite\workerrole1\server.js** mit Notepad.exe und ersetzen Sie deren Inhalt durch den folgenden Code:
+2.   Öffnen Sie die Datei **c:\\node\\securesite\\workerrole1\\server.js** mit Notepad.exe und ersetzen Sie deren Inhalt durch den folgenden Code:
 
 		var https = require('https');
 		var fs = require('fs');
@@ -123,9 +123,9 @@ Da Ihre Anwendung nun auf Port 443 auf Kommunikation wartet, müssen Sie ebenfal
 
 Jetzt wird die Bereitstellung in Azure ausgeführt und Sie können eine HTTPS-Verbindung herstellen.
 
-1.  Wählen Sie im Verwaltungsportal Ihren Cloud-Dienst aus und klicken Sie auf **Dashboard**.
+1.  Wählen Sie im Verwaltungsportal Ihren Clouddienst aus, und klicken Sie auf **Dashboard**.
 
-2. Blättern Sie nach unten und klicken Sie auf den Link, der als **Site URL** angezeigt wird:
+2. Blättern Sie nach unten, und klicken Sie auf den Link, der als **Site URL** angezeigt wird:
 
     ![Website-URL][site-url]
 
@@ -173,4 +173,4 @@ Jetzt wird die Bereitstellung in Azure ausgeführt und Sie können eine HTTPS-Ve
   
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

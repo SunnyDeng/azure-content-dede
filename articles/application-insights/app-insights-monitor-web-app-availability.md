@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/21/2015" 
+	ms.date="07/08/2015" 
 	ms.author="awills"/>
  
 # Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites
@@ -74,15 +74,17 @@ Sie können weitere Tests für beliebig viele URLs hinzufügen. Neben dem Testen
 
 ### <a name="monitor"></a>3. Anzeigen von Verfügbarkeitsberichten
 
-Klicken Sie nach 1 bis 2 Minuten auf dem Blatt "Verfügbarkeit" auf "Aktualisieren". (Die Aktualisierung erfolgt nicht automatisch.)
+Klicken Sie nach 1 bis 2 Minuten auf dem Blatt "Verfügbarkeit/Webtests" auf "Aktualisieren". (Die Aktualisierung erfolgt nicht automatisch.)
 
 ![Ergebnisübersicht im Startfenster](./media/app-insights-monitor-web-app-availability/14-availSummary.png)
 
-Das Diagramm auf dem Blatt "Verfügbarkeit" kombiniert die Ergebnisse für alle Webtests dieser Anwendung.
+Klicken Sie auf einen beliebigen Balken im Übersichtsdiagramm oben, um eine detailliertere Ansicht des Zeitraums zu erhalten.
 
-#### Seitenkomponenten
+In diesen Diagrammen werden die Ergebnisse für alle Webtests dieser Anwendung kombiniert.
 
-Bilder, Stylesheets und Skripts sowie andere statische Komponenten werden als Teil des Tests angefordert.
+#### Komponenten Ihrer Webseite
+
+Bilder, Stylesheets und Skripts sowie andere statische Komponenten der Webseite, die Sie testen, werden als Teil des Tests angefordert.
 
 Die aufgezeichnete Reaktionszeit ist der Zeitaufwand für das vollständige Laden aller Komponenten.
 
@@ -90,7 +92,11 @@ Wenn eine Komponente nicht geladen werden kann, wird der Test als fehlgeschlagen
 
 ## <a name="failures"></a>Wenn Sie Fehler finden ...
 
-Scrollen Sie auf dem Blatt "Webtests" nach unten, und klicken Sie auf einen Test, in dem Sie Fehler entdecken.
+Klicken Sie auf einen roten Punkt.
+
+![Auf einen roten Punkt klicken](./media/app-insights-monitor-web-app-availability/14-availRedDot.png)
+
+Oder führen Sie einen Bildlauf nach unten durch, und klicken Sie auf einen Test, bei dem der Erfolg kleiner als 100 % ist.
 
 ![Auf bestimmten Webtest klicken](./media/app-insights-monitor-web-app-availability/15-webTestList.png)
 
@@ -123,7 +129,7 @@ Sie können ein Szenario überwachen, das eine Sequenz mit mehreren URLs umfasst
 
 Um einen mehrstufigen Ttest zu erstellen, zeichnen das Szenario mit Visual Studio auf. Laden Sie dann die Aufzeichnung in Application Insights hoch. Application Insights wiederholt das Szenario in bestimmten Abständen und überprüft die Antworten.
 
-#### 1. Aufzeichnen eines Szenarios
+#### 1\. Aufzeichnen eines Szenarios
 
 Verwenden Sie Visual Studio Ultimate, um eine Websitzung aufzuzeichnen.
 
@@ -150,7 +156,7 @@ Verwenden Sie Visual Studio Ultimate, um eine Websitzung aufzuzeichnen.
 
 (Fügen Sie keinen Schleifen in den Webtestcode ein.)
 
-#### 2. Hochladen des Webtests in Application Insights
+#### 2\. Hochladen des Webtests in Application Insights
 
 1. Erstellen Sie im Application Insights-Portal einen neuen Webtest.
 
@@ -223,4 +229,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

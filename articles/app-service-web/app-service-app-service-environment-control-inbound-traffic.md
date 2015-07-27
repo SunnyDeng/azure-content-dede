@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/14/2015" 
+	ms.date="06/30/2015" 
 	ms.author="stefsh"/>
 
 # Steuern von eingehendem Datenverkehr in eine App Service-Umgebung
@@ -41,6 +41,13 @@ Im Folgenden sehen Sie eine Liste der Ports, die von einer App Service-Umgebung 
 - 4016: Wird zum Remotedebuggen in Visual Studio 2012 verwendet. Dieser Port kann sicher blockiert werden, wenn die Funktion nicht verwendet wird.
 - 4018: Wird zum Remotedebuggen in Visual Studio 2013 verwendet. Dieser Port kann sicher blockiert werden, wenn die Funktion nicht verwendet wird.
 - 4020: Wird zum Remotedebuggen in Visual Studio 2015 verwendet. Dieser Port kann sicher blockiert werden, wenn die Funktion nicht verwendet wird.
+
+## Ausgehende Verbindungen und DNS-Anforderungen ##
+Damit eine App-Service-Umgebung ordnungsgemäß funktioniert, ist auch ein ausgehender Zugriff auf Azure Storage sowie eine SQL-Datenbank in derselben Azure-Region erforderlich. Wenn der ausgehende Internetzugriff im virtuellen Netzwerk blockiert ist, können App Service-Umgebungen nicht auf diese Azure-Endpunkte zugreifen.
+
+Kunden können auch über benutzerdefinierte DNS-Server verfügen, die im virtuellen Netzwerk konfiguriert sind. App Service-Umgebungen müssen Azure-Endpunkte unter *.database.windows.net, *.file.core.windows.net und *.blob.core.windows.net auflösen können.
+
+Es empfiehlt sich auch, benutzerdefinierte DNS-Server im VNET vor dem Erstellen einer App-Service-Umgebung einzurichten. Wenn die DNS-Konfiguration eines virtuellen Netzwerks geändert wird, während eine App Service-Umgebung erstellt wird, misslingt das Erstellen der App Service-Umgebung.
 
 ## Erstellen einer Netzwerksicherheitsgruppe ##
 Einzelheiten zur Funktionsweise von Netzwerksicherheitsgruppen finden Sie in den folgenden [Informationen][NetworkSecurityGroups]. Die unten aufgeführten Details gehen kurz auf die wichtigsten Aspekte von Netzwerksicherheitsgruppen ein. Dabei liegt der Schwerpunkt auf dem Konfigurieren und Anwenden einer Netzwerksicherheitsgruppe auf ein Subnetz, das eine App Service-Umgebung enthält.
@@ -123,4 +130,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 <!-- IMAGES -->
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

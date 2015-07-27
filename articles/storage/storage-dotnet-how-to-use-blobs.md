@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Verwenden des Blob-Speichers mit .NET | Microsoft Azure"
-	description="Erfahren Sie, wie Sie Microsoft Azure Blob-Speicher zum Hochladen, Herunterladen, Auflisten und Löschen von Blob-Inhalten verwenden. Die Beispiele sind in C# geschrieben."
+	description="Erfahren Sie mehr über den Azure Blob-Speicher, und wie Sie einen Container erstellen und Blob-Inhalt hochladen, herunterladen, auflisten und löschen können."
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article" 
-	ms.date="06/15/2015"
+	ms.date="07/06/2015"
 	ms.author="tamram"/>
 
 
@@ -304,4 +304,4 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
   [REST API reference]: http://msdn.microsoft.com/library/azure/dd179355
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

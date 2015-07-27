@@ -88,4 +88,4 @@ Wenn Azure BizTalk Services einen Drosselungsstatus erreichen, tritt Folgendes e
 - [BizTalk Services: Name und Schlüssel des Ausstellers](http://go.microsoft.com/fwlink/p/?LinkID=303941)<br/>
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

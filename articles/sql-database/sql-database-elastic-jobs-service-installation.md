@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/29/2015" 
+	ms.date="06/25/2015" 
 	ms.author="sidneyh"/>
 
 # Installieren der Komponente für elastische Datenbankaufträge
@@ -24,7 +24,7 @@ Der [elastische Datenbankpool (Vorschau)](sql-database-elastic-pool-portal.md) b
 
 ## Voraussetzungen
 * Ein Azure-Abonnement. Eine kostenlose Testversion finden Sie unter [Einen Monat kostenlos testen](http://azure.microsoft.com/pricing/free-trial/).
-* Ein elastischer Datenbankpool. Siehe [Erstellen elastischer Pools in Azure SQL-Datenbank (Vorschau)](sql-database-elastic-pool-portal.md).
+* Ein elastischer Datenbankpool. Siehe [Erstellen elastischer Datenbankpools in Azure SQL-Datenbank (Vorschau)](sql-database-elastic-pool-portal.md).
 
 ## Installieren der Dienstkomponenten
 Wechseln Sie zunächst zum [Azure-Vorschauportal](https://ms.portal.azure.com/#).
@@ -63,4 +63,4 @@ Wenn neue Anmeldeinformationen bei der Installation der elastischen Datenbankauf
 [4]: ./media/sql-database-elastic-jobs-service-installation/incomplete.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

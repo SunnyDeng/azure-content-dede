@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/08/2015"
+	ms.date="07/14/2015"
 	ms.author="sidneyh" />
 
 # Lernprogramm zum Split-Merge-Tool für elastische Datenbanken
@@ -23,19 +23,19 @@
 2. Öffnen Sie eine Eingabeaufforderung, und navigieren Sie zu dem Verzeichnis, in das Sie „nuget.exe“ heruntergeladen haben.
 3. Laden Sie das neueste Split-Merge-Paket mit folgendem Befehl in das aktuelle Verzeichnis herunter: `nuget install Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge`  
 
-Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle Verzeichnis heruntergeladen. Die Dateien werden in einem Verzeichnis mit dem Namen **Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge.x.x.xxx.x** abgelegt, wobei *x.x.xxx.x* der Versionsnummer entspricht. Die Split-Merge-Dienstdateien befinden sich im Unterverzeichnis **content\splitmerge\service** und die Split-Merge-PowerShell-Skripts (und erforderlichen Client-DLLs) im Unterverzeichnis **content\splitmerge\powershell**.
+Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle Verzeichnis heruntergeladen. Die Dateien werden in einem Verzeichnis mit dem Namen **Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge.x.x.xxx.x** abgelegt, wobei *x.x.xxx.x* der Versionsnummer entspricht. Die Split-Merge-Dienstdateien befinden sich im Unterverzeichnis **content\\splitmerge\\service** und die Split-Merge-PowerShell-Skripts (und erforderlichen Client-DLLs) im Unterverzeichnis **content\\splitmerge\\powershell**.
 
 ## Voraussetzungen
 
-1. Erstellen Sie eine Azure SQL-Datenbank, die als Split-Merge-Statusdatenbank verwendet wird. Öffnen Sie das [Azure-Vorschauportal](https://ms.portal.azure.com). Erstellen Sie eine neue **SQL-Datenbank**. Geben Sie den Namen der Datenbank ein, und erstellen Sie einen neuen Benutzer und ein neues Kennwort. Achten Sie darauf, dass Sie den Namen und das Kennwort zur späteren Verwendung notieren.
+1. Erstellen Sie eine Azure SQL-Datenbank, die als Split-Merge-Statusdatenbank verwendet wird. Öffnen Sie das [Azure-Portal](https://ms.portal.azure.com). Erstellen Sie eine neue **SQL-Datenbank**. Geben Sie den Namen der Datenbank ein, und erstellen Sie einen neuen Benutzer und ein neues Kennwort. Achten Sie darauf, dass Sie den Namen und das Kennwort zur späteren Verwendung notieren.
 
-2. Achten Sie darauf, dass Ihr Azure SQL-Datenbankserver Verbindungen mit Azure-Diensten zulässt. Stellen Sie im [Vorschauportal](https://ms.portal.azure.com) in den **Firewalleinstellungen** sicher, dass die Einstellung **Zugriff auf Azure-Dienste erlauben** auf **Ein** eingestellt ist. Klicken Sie auf das Symbol "Speichern".
+2. Achten Sie darauf, dass Ihr Azure SQL-Datenbankserver Verbindungen mit Azure-Diensten zulässt. Stellen Sie im Portal in den **Firewalleinstellungen** sicher, dass die Einstellung **Zugriff auf Azure-Dienste erlauben** auf **Ein** eingestellt ist. Klicken Sie auf das Symbol "Speichern".
 
     ![Zulässige Dienste][1]
 
-3. Erstellen Sie ein Azure Storage-Konto, das für die Diagnoseausgabe verwendet wird. Wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com). Klicken Sie unten links auf **Neu**. Klicken Sie dann auf **Datendienste** und **Speicher** und anschließend auf **Schnellerfassung**.
+3. Erstellen Sie ein Azure Storage-Konto, das für die Diagnoseausgabe verwendet wird. Öffnen Sie das Azure-Vorschauportal. Klicken Sie in der linken Leiste auf **Neu**, klicken Sie auf **Daten + Speicher**, und anschließend auf **Speicher**.
 
-4. Erstellen Sie einen Azure-Cloud-Dienst, der den Split-Merge-Dienst enthält. Wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com). Klicken Sie unten links auf **Neu**, und klicken Sie dann **Compute**, **Cloud-Dienst** und **Schnellerfassung**.
+4. Erstellen Sie einen Azure-Cloud-Dienst, der den Split-Merge-Dienst enthält. Öffnen Sie das Azure-Vorschauportal. Klicken Sie in der linken Leiste auf **Neu**, dann auf **Berechnen**, **Clouddienst**, und**Erstellen**.
 
 
 ## Konfigurieren des Split-Merge-Diensts
@@ -54,13 +54,13 @@ Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle 
 5.    Geben Sie für die **SplitMergeWorker**-Rolle eine gültige Verbindungszeichenfolge für den Azure-Speicher für die Einstellung **WorkerRoleSynchronizationStorageAccountConnectionString** ein.
         
 ### Konfigurieren der Sicherheit
-Ausführliche Anweisungen zum Konfigurieren der Dienstsicherheit finden Sie unter [Split-Merge-Sicherheitskonfiguration](../sql-database-elastic-scale-configure-security.md).
+Ausführliche Anweisungen zum Konfigurieren der Dienstsicherheit finden Sie unter [Split-Merge-Sicherheitskonfiguration](sql-database-elastic-scale-split-merge-security-configuration.md).
 
 Für eine einfache Testbereitstellung, die zum Ausführen dieses Lernprogramms geeignet ist, führen Sie einige wenige Konfigurationsschritte aus, um den Dienst zu aktivieren und auszuführen. Durch diese Schritte werden nur ein Computer und Konto für die Kommunikation mit dem Dienst aktiviert.
 
 ### Erstellen eines selbstsignierten Zertifikats
 
-Erstellen Sie ein neues Verzeichnis, und führen Sie aus diesem Verzeichnis über ein Fenster [Developer-Eingabeaufforderung für Visual Studio](http://msdn.microsoft.com/de-de/library/ms229859.aspx) folgenden Befehl aus:
+Erstellen Sie ein neues Verzeichnis, und führen Sie aus diesem Verzeichnis über ein Fenster [Developer-Eingabeaufforderung für Visual Studio](http://msdn.microsoft.com/library/ms229859.aspx) folgenden Befehl aus:
 
     makecert ^
     -n "CN=*.cloudapp.net" ^
@@ -87,7 +87,7 @@ Führen Sie den folgenden Befehl im gleichen Fenster aus, in dem „makecert“ 
 
 ### Hochladen der PFX-Datei in den Cloud-Dienst
 
-Wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com).
+Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com).
 
 1. Wählen Sie **Cloud-Dienste**.
 2. Wählen Sie den oben für den Split-Merge-Dienst erstellten Cloud-Dienst aus.
@@ -113,10 +113,11 @@ Für die Workerrolle:
     <Certificate name="DataEncryptionPrimary" thumbprint="" thumbprintAlgorithm="sha1" />
 
 
-Beachten Sie, dass in Produktionsbereitstellungen für die Zertifizierungsstelle, die Verschlüsselung, das Serverzertifikat und die Clientzertifikate getrennte Zertifikate verwendet werden müssen. Ausführliche Anweisungen finden Sie unter [Sicherheitskonfiguration](../sql-database-elastic-scale-configure-security.md).
+Beachten Sie, dass in Produktionsbereitstellungen für die Zertifizierungsstelle, die Verschlüsselung, das Serverzertifikat und die Clientzertifikate getrennte Zertifikate verwendet werden müssen. Ausführliche Anweisungen finden Sie unter [Sicherheitskonfiguration](sql-database-elastic-scale-split-merge-security-configuration.md).
 
 ### Bereitstellen des Split-Merge-Diensts
-1. Wechseln Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com).
+
+1. Öffnen Sie das [Azure-Portal](https://manage.windowsazure.com).
 2. Klicken Sie links auf die Registerkarte **Cloud-Dienste** , und wählen Sie den zuvor erstellten Cloud-Dienst aus.
 3. Klicken Sie auf **Dashboard**.
 4. Wählen Sie die Stagingumgebung aus, und klicken Sie dann auf **Laden Sie eine neue Stagingbereitstellung hoch**.
@@ -131,6 +132,7 @@ Beachten Sie, dass in Produktionsbereitstellungen für die Zertifizierungsstelle
 
 
 ## Problembehandlung bei der Bereitstellung
+
 Wenn Ihre Webrolle nicht online geschaltet wird, liegt möglicherweise ein Problem mit der Sicherheitskonfiguration vor. Überprüfen Sie, ob SSL wie oben beschrieben konfiguriert ist.
 
 Wenn die Workerrolle nicht online geschaltet wird, während der Vorgang bei der Webrolle erfolgreich ist, liegt sehr wahrscheinlich ein Problem beim Herstellen der Verbindung mit der Statusdatenbank vor, die Sie zuvor erstellt haben.
@@ -145,6 +147,7 @@ Wenn die Workerrolle nicht online geschaltet wird, während der Vorgang bei der 
 * Achten Sie darauf, dass Ihr Azure SQL-Datenbankserver Verbindungen mit Azure-Diensten zulässt. Zu diesem Zweck öffnen Sie https://manage.windowsazure.com, klicken links auf „SQL-Datenbanken“, klicken oben auf „Server“ und wählen Ihren Server aus. Klicken Sie oben auf **Konfigurieren**, und stellen Sie sicher, dass die Einstellung für **Azure-Dienste** auf „Ja“ festgelegt ist. (Siehe den Abschnitt „Voraussetzungen“ am Anfang dieses Artikels.)
 
 ## Testen der Split-Merge-Dienstbereitstellung
+
 ### Herstellen einer Verbindung mit einem Webbrowser
 
 Ermitteln Sie den Webendpunkt Ihres Split-Merge-Diensts. Sie finden diesen im Azure-Verwaltungsportal im **Dashboard** Ihres Cloud-Dienstes unter **Website-URL** auf der rechten Seite. Ersetzen Sie **http://** durch **https://**, da der HTTP-Endpunkt durch die Standardsicherheitseinstellungen deaktiviert wird. Laden Sie die Seite für diese URL in Ihrem Browser.
@@ -327,4 +330,4 @@ Wenn Sie keine Anforderungen übermitteln können, wird möglicherweise Folgende
 [5]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/storage.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

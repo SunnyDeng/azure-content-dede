@@ -71,4 +71,4 @@ Sie können nun Google für die Authentifizierung in Ihrer App verwenden.
 [Azure-Verwaltungsportal]: https://portal.azure.com/
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

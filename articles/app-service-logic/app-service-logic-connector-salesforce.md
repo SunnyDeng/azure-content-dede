@@ -1,10 +1,10 @@
-<properties 
-   pageTitle="Salesforce-Connector" 
-   description="Verwenden des Salesforce-Connectors" 
-   services="app-service\logic" 
-   documentationCenter=".net,nodejs,java" 
-   authors="sutalasi" 
-   manager="dwrede" 
+<properties
+   pageTitle="Salesforce-Connector"
+   description="Verwenden des Salesforce-Connectors"
+   services="app-service\logic"
+   documentationCenter=".net,nodejs,java"
+   authors="anuragdalmia"
+   manager="dwrede"
    editor=""/>
 
 <tags
@@ -12,22 +12,22 @@
    ms.devlang="multiple"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="03/20/2015"
-   ms.author="sutalasi"/>
+   ms.workload="integration"
+   ms.date="07/02/2015"
+   ms.author="sameerch"/>
 
 
 #Verwenden des Salesforce-Connectors in Logik-Apps#
 
 Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Mit Salesforce-Connector können Sie unterschiedliche Entitäten wie z. B. Konten, Leads usw. erstellen und ändern. Im folgenden werden die typischen Integrationsszenarien aufgeführt, bei denen Salesforce verwendet wird.
 
-- Kontosynchronisierung zwischen Salesforce und ERP-Systemen wie SAP und QuickBooks	
+- Kontosynchronisierung zwischen Salesforce und ERP-Systemen wie SAP und QuickBooks
 
 - Datenfluss von der Bestellung bis zur Bezahlung von Salesforce bis zu ERP-Systemen
 
 
 Im Rahmen der Connector-Paketeinstellungen kann der Benutzer Entitäten angeben, die der Connector verwalten kann. Aktionen, Eingabe- und Ausgabeparameter werden daraufhin dynamisch aufgefüllt. Im Folgenden werden die verschiedenen im Salesforce-Connector verfügbaren Aktionen aufgeführt.
- 
+
 - Entität erstellen – Verwenden Sie diese Aktion zum Erstellen einer neuen Salesforce-Entität wie z. B. Kunde, Anfrage oder ein benutzerdefiniertes Objekt.
 
 - Entität aktualisieren – Verwenden Sie diese Aktion zum Aktualisieren einer vorhandenen Salesforce-Entität
@@ -133,7 +133,4 @@ Lassen Sie uns eine einfache Logik-App erstellen, die einen Kunden in Salesforce
 [14]: ./media/app-service-logic-connector-salesforce/14_Update_Account_Address.png
 [15]: ./media/app-service-logic-connector-salesforce/15_Create_new_salesforce_connector.png
 
-
- 
-
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

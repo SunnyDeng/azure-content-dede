@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="NA"
 	ms.devlang="dotnet"
 	ms.topic="get-started-article"
-	ms.date="03/10/2015"
+	ms.date="07/01/2015"
 	ms.author="donnam"/>
 
 # Erstellen einer App mit einem mobilen und einem Webclient in Azure App Service
@@ -21,4 +21,4 @@
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-web-and-mobile](../../includes/app-service-mobile-dotnet-backend-web-and-mobile.md)]
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

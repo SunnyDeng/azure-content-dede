@@ -395,4 +395,4 @@ Um ein Testtoken abzurufen, das auf der Token-Einschränkung basiert, die für d
 Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Konfigurieren einer Übermittlungsrichtlinie für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md) fort.
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

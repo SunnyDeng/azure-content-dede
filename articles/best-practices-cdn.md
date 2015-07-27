@@ -176,7 +176,7 @@ Der folgende Ausschnitt aus einer Web.config-Datei im Stammverzeichnis einer von
   <rewrite>
     <rules>
       <rule name="VersionedResource" stopProcessing="false">
-        <match url="(.*)_v(.*).(.*)" ignoreCase="true" />
+        <match url="(.*)_v(.*)\.(.*)" ignoreCase="true" />
         <action type="Rewrite" url="{R:1}.{R:3}" appendQueryString="true" />
       </rule>
       <rule name="CdnImages" stopProcessing="true">
@@ -219,4 +219,4 @@ Bündelung und Minimierung können von ASP.NET verarbeitet werden. In einem MVC-
 + [Integrieren eines Clouddiensts in Azure CDN](cdn-cloud-service-with-cdn.md)
 + [Bewährte Methoden für das Azure Content Delivery Network](http://azure.microsoft.com/blog/2011/03/18/best-practices-for-the-windows-azure-content-delivery-network/)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

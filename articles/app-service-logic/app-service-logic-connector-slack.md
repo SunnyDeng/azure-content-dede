@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Pufferconnector"
-	description="Erste Schritte mit dem Pufferconnector"
+	pageTitle="Verwenden des Slack-Connectors in Azure App Service"
+	description="Erste Schritte mit dem Slack-Connector"
 	authors="anuragdalmia" 
 	manager="dwrede" 
 	editor="" 
@@ -13,71 +13,73 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/21/2015"
+	ms.date="06/29/2015"
 	ms.author="andalmia"/>
 
-# Verwenden des Pufferconnectors in Ihrer Logik-App #
+# Slack-Connector
 
-Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten.
+Sie können eine Verbindung mit Slack-Kanälen herstellen und Nachrichten an Ihr Team senden. Connectors können in Logik-Apps als Teil eines "Workflows" zum Erledigen verschiedener Aufgaben verwendet werden. Wenn Sie den Slack-Connector im Workflow verwenden, können Sie eine Vielzahl von Szenarien mithilfe anderer Connectors umsetzen. Beispielsweise können Sie den [Facebook-Connector](app-service-logic-connector-facebook.md) in Ihrem Workflow zum Übermitteln einer Nachricht an Ihren Slack-Kanal verwenden.
 
-Mit einem Pufferconnector können Sie Nachrichten in Pufferkanälen bereitstellen.
+## Trigger und Aktionen
+*Trigger* sind Ereignisse, die stattfinden. Z. B. wenn ein Auftrag aktualisiert oder ein neuer Kunde hinzugefügt wird. Eine *Aktion* ist das Ergebnis des Triggers. Z. B. bei Aktualisierung eines Auftrags eine Warnung an den Verkäufer senden. Oder bei Hinzufügen eines neuen Kunden eine E-Mail zur Begrüßung an den neuen Kunden senden.
 
-## Erstellen eines Pufferconnectors für Ihre Logik-App ##
-Um den Pufferconnector zu verwenden, müssen Sie zunächst eine Instanz der Pufferconnector-API-App erstellen. Gehen Sie dazu folgendermaßen vor:
+Der Slack-Connector kann als ein Trigger oder eine Aktion in einer Logik-App verwendet werden und unterstützt Daten im JSON- und XML-Format. Es gibt derzeit keine Trigger für den Slack-Connector.
 
-1.	Öffnen Sie den Azure Marketplace mithilfe der Option "+ NEU" unten links im Azure-Portal.
-2.	Navigieren Sie zu "Web und Mobile > Azure Marketplace", und suchen Sie nach "Pufferconnector".
-3.	Konfigurieren Sie den Pufferconnector wie folgt:
- 
-	![][1]
-	- **Name** – Geben Sie einen Namen für den Pufferconnector an
-	- **App Service-Plan** - Wählen Sie einen App Service-Plan aus, oder erstellen Sie einen
-	- **Tarif** – Wählen Sie einen Tarif für den Connector aus
-	- **Ressourcengruppe** - Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll
-	- **Abonnement** - Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll
-	- **Standort** - Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll
+Der Slack-Connector verfügt über folgende Trigger und Aktionen:
 
-4. Klicken Sie auf "Erstellen". Ein neuer Pufferconnector wird erstellt.
-5. Sobald die API-App-Instanz erstellt wurde, können Sie eine Logik-App in derselben Ressourcengruppe erstellen, die den Pufferconnector verwenden soll.
+Trigger | Aktionen
+--- | ---
+Keine | Nachricht veröffentlichen
 
-## Verwenden des Pufferconnectors in Ihrer Logik-App ##
-Sobald Ihre API-App erstellt wurde, können Sie den Pufferconnector als Aktion für Ihre Logik-App verwenden. Gehen Sie hierzu wie folgt vor:
+## Erstellen des Slack-Connectors
+Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
 
-1.	Erstellen Sie eine neue Logik-App, und wählen Sie dieselbe Ressourcengruppe, die den Pufferconnector enthält. Befolgen Sie die Anweisungen zum [Erstellen einer neuen Logik-App].  	
+1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
+2. Wählen Sie **API-Apps** aus, und suchen Sie nach "Slack-Connector".
+3. Geben Sie den Namen, App Service-Plan und andere Eigenschaften ein: <br/> ![][1] 
+
+4. Klicken Sie auf **Erstellen**.
+
+## Verwenden des Connectors als Aktion in Ihrer Logik-App
+
+> [AZURE.IMPORTANT]Die Connectors und Logik-Apps müssen immer in der gleichen Ressourcengruppe erstellt werden.
+
+Nachdem der Slack-Connector erstellt wurde, können Sie ihn als Aktion Ihrer Logik-App hinzufügen:
+
+1.	Öffnen Sie in Ihrer Logik-App **Trigger und Aktionen**. [Erstellen einer neuen Logik-App](app-service-logic-create-a-logic-app.md)
+
+2.	Der Slack-Connector wird im Katalog auf der rechten Seite aufgeführt:<br/>![][2]
+
+3.	Wählen Sie den Slack-Connector aus, den Sie erstellt haben, um ihn automatisch Ihrer Logik-App hinzuzufügen.
+4.	Wählen Sie **Autorisieren** aus. Melden Sie sich bei Ihrem Slack-Konto an. Am Ende werden Sie aufgefordert, dem Connector die Zugriffsberechtigung für Ihr Slack-Konto zu erteilen. Wählen Sie **Autorisieren** aus:<br/>![][3]![][4]![][5]![][6]
 	
-2.	Öffnen Sie "Trigger und Aktionen" innerhalb der erstellten Logik-App, um den Logik-App-Designer zu öffnen und den Ablauf zu konfigurieren.
-	
-3.	Der Pufferconnector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt.
+5.	Jetzt können den Slack-Connector im Workflow verwenden. Die Aktion "Nachricht veröffentlichen" ist verfügbar: <br/>![][7]
+
+
+Sehen wir uns die Benutzeroberfläche von "Nachricht veröffentlichen" an. Sie können diese Aktion zum Veröffentlichen einer Nachricht über einen beliebigen Slack-Kanal verwenden:
  
-	![][2]
-4.	Die Pufferconnector-API-App kann durch Klicken auf den "Pufferconnector" in den Editor gezogen werden. Klicken Sie auf die Schaltfläche "Autorisieren". Geben Sie Ihre Microsoft-Anmeldeinformationen an (falls Sie nicht automatisch angemeldet werden). Melden Sie sich durch Befolgen der Schritte bei Ihrem Pufferkonto an. Am Ende werden Sie aufgefordert, dem Connector die Zugriffsberechtigung für Ihr Pufferkonto zu erteilen. Klicken Sie auf "Autorisieren".
- 
-	![][3]
-	![][4]
-	![][5]
-	![][6]
-	
-5.	Jetzt können den Pufferconnector im Ablauf verwenden. Trigger sind derzeit nicht im Pufferconnector verfügbar. Die verfügbaren Aktionen sind – Nachricht bereitstellen
- 
-	![][7]
+![][8]
 
-6.	Sehen wir uns die Benutzeroberfläche von "Nachricht bereitstellen" an. Sie können diese Aktion zum Bereitstellen einer Nachricht für einen beliebigen Pufferkanal verwenden.
- 
-	![][8]
+Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Nachricht veröffentlichen" wie folgt:
 
-	Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Nachricht bereitstellen" wie folgt:
+Eigenschaft | Beschreibung
+--- | ---
+Text | Geben Sie den Text der zu veröffentlichenden Nachricht ein.
+Kanalname | Geben Sie den Slack-Kanal ein, über den diese Nachricht veröffentlicht wird. Wenn der Kanal nicht eingegeben wird, wird die Nachricht für "#general" veröffentlicht.
+Erweiterte Eigenschaften | <ul><li><strong>Bot-Benutzername</strong>: Name des Bots, der für diese Nachricht verwendet wird. Die Nachricht wird als "Bot" veröffentlicht, wenn diese Angabe nicht erfolgt.</li><li><strong>Symbol-URL</strong> – URL zu einem Bild, das als Symbol für diese Nachricht verwendet werden soll. </li><li><strong>Emoticon</strong> – Emoticon, das als Symbol für diese Nachricht verwendet werden soll. Diese Eigenschaft überschreibt die "Symbol-URL"-Eigenschaft.</li></ul>
 
- - **Text** – Geben Sie den Text der bereitzustellenden Nachricht ein.
- - **Kanalname** – Geben Sie den Pufferkanal an, in den diese Nachricht hochgeladen werden soll. Wenn dieser nicht angegeben wird, wird die Nachricht in #general bereitgestellt.
+Für den Slack-Connector stehen REST-APIs zur Verfügung, sodass Sie den Connector außerhalb einer Logik-App verwenden können. Öffnen Sie den Slack-Connector, und wählen Sie **-API-Definition** aus:
 
- 	**Erweiterte Eigenschaften** – **Bot-Benutzername** – Name des Bots, der für diese Nachricht verwendet werden soll. Die Nachricht wird als "Bot" bereitgestellt, wenn diese Angabe nicht gemacht wird. – **Symbol-URL** – URL zu einem Bild, das als Symbol für diese Nachricht verwendet werden soll – **Emoticon** – Emoticon, das als Symbol für diese Nachricht verwendet werden soll. Setzt die Symbol-URL außer Kraft.
- 
+![][9]
 
-7. Um den Connector außerhalb einer Logik-App zu verwenden, können die vom Connector zur Verfügung gestellten REST-APIs genutzt werden. Sie können diese API-Definitionen mit "Durchsuchen" -> "API-App" -> "Pufferconnector" anzeigen. Klicken Sie jetzt auf die Lupe "API-Definition" im Abschnitt "Zusammenfassung", um alle APIs anzuzeigen, die von diesem Connector zur Verfügung gestellt werden.
 
-	![][9]
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-9. Details zu den APIs finden Sie auch unter [Puffer-API-Definition].
+Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
+
 
 <!-- Image reference -->
 [1]: ./media/app-service-logic-connector-slack/img1.PNG
@@ -90,8 +92,4 @@ Sobald Ihre API-App erstellt wurde, können Sie den Pufferconnector als Aktion f
 [8]: ./media/app-service-logic-connector-slack/img8.PNG
 [9]: ./media/app-service-logic-connector-slack/img9.PNG
 
-<!-- Links -->
-[Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
-[Puffer-API-Definition]: https://msdn.microsoft.com/de-de/library/dn708020.aspx
-
-<!----HONumber=62-->
+<!---HONumber=July15_HO3-->

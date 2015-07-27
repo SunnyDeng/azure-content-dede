@@ -192,4 +192,4 @@ Jetzt wird die Bereitstellung in Azure ausgeführt und Sie können eine HTTPS-Ve
   [Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Workerrolle]: /develop/nodejs/common-tasks/enable-ssl-worker-role/
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

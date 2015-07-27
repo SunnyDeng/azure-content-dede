@@ -112,4 +112,4 @@ Durch die Anzeige eingeschränkter Informationen zu einem Benutzer oder einer Gr
 [2]: ./media/active-directory-create-users/RBACGuestAccessControls.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

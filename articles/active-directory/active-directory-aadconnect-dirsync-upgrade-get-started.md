@@ -22,7 +22,8 @@ Die folgende Dokumentation hilft Ihnen beim Upgrade Ihrer vorhandenen DirSync-In
 
 ## Azure AD Connect herunterladen
 
-Für die ersten Schritte mit Azure AD Connect können Sie die neuste Version wie folgt herunterladen: [Herunterladen der öffentlichen Vorschau von Azure AD Connect](http://connect.microsoft.com/site1164/program8612)
+Für Ihre ersten Schritte mit Azure AD Connect können Sie die neuste Version über den folgenden Link herunterladen: [Download Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) (in englischer Sprache)
+
 
 ## Vor der Installation von Azure AD Connect
 Vor der Installation von Azure AD Connect und dem Upgrade von Dir Sync gibt es einige Dinge, die Sie benötigen.
@@ -125,7 +126,7 @@ Bei der Installation von Azure AD Connect auf einem neuen Server wird DirSync ni
 1. Führen Sie den Azure AD Connect-Installer aus (MSI)
 2. Wenn der Bildschirm "Willkommen bei Azure AD Connect" angezeigt wird, beenden Sie den Assistenten durch Klicken auf das "X" in der oberen rechten Ecke des Fensters.
 3. Öffnen Sie eine Eingabeaufforderung.
-4. Führen Sie aus dem Installationsordner von Azure AD Connect (Standard: C:\Program Files\Microsoft Azure Active Directory Connect) den folgenden Befehl aus:
+4. Führen Sie aus dem Installationsordner von Azure AD Connect (Standard: C:\\Program Files\\Microsoft Azure Active Directory Connect) den folgenden Befehl aus:
     * AzureADConnect.exe /migrate
 
 Azure AD Connect bietet Ihnen die folgende Benutzeroberfläche:
@@ -205,4 +206,4 @@ Folgendes ist eine Liste der erforderlichen und unterstützenden Komponenten, di
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

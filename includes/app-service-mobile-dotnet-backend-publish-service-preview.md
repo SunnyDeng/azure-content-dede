@@ -3,4 +3,4 @@
 
 2. Melden Sie sich mit Ihren Azure-Anmeldeinformationen an, und wählen Sie Ihren Dienst unter **Vorhandene Web-Apps** aus. Visual Studio lädt die Veröffentlichungseinstellungen direkt von Azure herunter. Klicken Sie abschließend auf **Veröffentlichen**.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -20,7 +20,7 @@
 
 Dieser Artikel bietet eine Übersicht über den [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/)-Skript-Explorer, ein Azure-Vorschauportaltool, das Ihnen die Anzeige von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen. Weitere Informationen über die serverseitige DocumentDB-Programmierung finden Sie [hier](documentdb-programming.md).
 
-Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:  
+Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:
 
 -	Wie kann ich einfach in DocumentDB gespeicherte Prozeduren über einen Webbrowser anzeigen?
 -	Wie kann ich einfach DocumentDB-Trigger über einen Webbrowser anzeigen?
@@ -56,7 +56,7 @@ Der Skript-Explorer kann über jedes DocumentDB-Konto, jede -Datenbank und jedes
 	![Screenshot der Skript-Explorers mit gefilterten Ergebnissen](./media/documentdb-view-scripts/scriptexplorerfilterresults.png)
 
 
-	> [AZURE.IMPORTANT] Die Filterfunktion vom Skript-Explorer filtert nur aus dem ***aktuell*** geladenen Satz an Skripten und aktualisiert die aktuell ausgewählte Sammlung nicht automatisch.
+	> [AZURE.IMPORTANT]Die Filterfunktion vom Skript-Explorer filtert nur aus dem ***aktuell*** geladenen Satz an Skripten und aktualisiert die aktuell ausgewählte Sammlung nicht automatisch.
 
 5. Zum Aktualisieren der vom Skript-Explorer geladenen Skriptliste klicken Sie einfach auf den Befehl **Aktualisieren** im oberen Bereich des Blatts.
 
@@ -65,7 +65,7 @@ Der Skript-Explorer kann über jedes DocumentDB-Konto, jede -Datenbank und jedes
 
 ## Anzeigen von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen mit dem Skript-Explorer
 
-Mit dem Skript-Explorer können Sie problemlos serverseitige Programmierartefakte in DocumentDB anzeigen.  
+Mit dem Skript-Explorer können Sie problemlos serverseitige Programmierartefakte in DocumentDB anzeigen.
 
 - Klicken Sie einfach das Skript, von dem Sie der Inhalt interessiert.
 
@@ -75,11 +75,11 @@ Mit dem Skript-Explorer können Sie problemlos serverseitige Programmierartefakt
 
 	![Screenshot der Ansicht Skript-Eigenschaften in Skript-Explorer](./media/documentdb-view-scripts/scriptproperties.png)
 
-	> [AZURE.NOTE] Die Zeitstempeleigenschaft (_ts) wird intern als Epochenzeit dargestellt, im Skript-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
+	> [AZURE.NOTE]Die Zeitstempeleigenschaft (_ts) wird intern als Epochenzeit dargestellt, im Skript-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
 
 ## Nächste Schritte
 
 Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -350,7 +350,7 @@ Sie sehen also, dass die Typkonsistenz und die Pflege der Eigenschaften für die
 Weitere Informationen zur Verwendung von [CTAS][] finden Sie auf der MSDN-Website. Dabei handelt es sich um eine der wichtigsten Anweisungen in Azure SQL Data Warehouse. Machen Sie sich damit eingehend vertraut.
 
 ## Nächste Schritte
-Weitere Tipps zur Entwicklung finden Sie unter [Entwicklungsübersicht][].
+Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Image references-->
 [1]: media/sql-data-warehouse-develop-ctas/ctas-results.png
@@ -363,4 +363,4 @@ Weitere Tipps zur Entwicklung finden Sie unter [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

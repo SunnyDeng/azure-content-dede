@@ -221,4 +221,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 [SQL-Datenbank]: /documentation/services/sql-database/
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

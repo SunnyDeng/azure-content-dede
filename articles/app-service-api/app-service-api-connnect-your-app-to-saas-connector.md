@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/07/2015" 
+	ms.date="07/08/2015" 
 	ms.author="tdykstra"/>
 
 # Bereitstellen und Konfigurieren einer SaaS-Connector-API-App in Azure App Service
 
 ## Übersicht
 
-In diesem Lernprogramm wird gezeigt, wie Sie einen [SaaS-Connector (Software-as-a-Service)](../app-service-logic-what-are-bizTalk-api-apps.md) in [Azure App Service](/documentation/services/app-service/) installieren, konfigurieren und testen, um ihn programmgesteuert aufzurufen, beispielsweise aus einer mobilen App. Ein SaaS-Connector ist eine [API-App](app-service-api-apps-why-best-platform.md), welche die Interaktion mit einer SaaS-Plattform wie z. B. Office 365, Salesforce, Facebook und Dropbox vereinfacht wird.
+In diesem Lernprogramm wird gezeigt, wie Sie einen [SaaS-Connector (Software-as-a-Service)](../app-service-logic-what-are-bizTalk-api-apps.md) in [Azure App Service](/documentation/services/app-service/) installieren, konfigurieren und testen, um ihn programmgesteuert aufzurufen, beispielsweise aus einer mobilen App. Ein SaaS-Connector ist eine [API-App](app-service-api-apps-why-best-platform.md), welche die Interaktion mit einer SaaS-Plattform wie z. B. Office 365, Salesforce, Facebook und Dropbox vereinfacht wird. Wenn Sie anstatt einen vorgefertigten Connector zu verwenden, eine benutzerdefinierte .NET API-App erstellen möchten, lesen Sie [Verbinden mit einer SaaS-Plattform über eine ASP.NET-API-App](app-service-api-dotnet-connect-to-saas.md).
 
 Wenn Sie beispielsweise HTTP-Anforderungen zum Lesen und Schreiben von Dateien in Ihrem Dropbox-Konto schreiben möchten, ist der Authentifizierungsprozess zum direkten Arbeiten mit Dropbox kompliziert. Ein Dropbox-Connector übernimmt die Authentifizierung, sodass Sie sich darauf konzentrieren können, Ihren geschäftsspezifischen Code zu schreiben.
 
@@ -32,6 +32,8 @@ Dieses Lernprogramm verwendet einen Dropbox-Connector als Beispiel und leitet Si
 * Konfigurieren des Dropbox-Connectors, sodass er sich mit dem Dropbox-Dienst verbinden kann (für diesen Schritt ist ein Dropbox-Konto erforderlich)
 * Konfigurieren der Ressourcengruppe, sodass nur authentifizierte Benutzer auf die API-Apps zugreifen können, die in der Ressourcengruppe enthalten sind
 * Testen, ob sowohl Benutzerauthentifizierung als auch Dropbox-Authentifizierung funktionieren
+
+Weitere Informationen zur Authentifizierung in App Service finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
 
 ## Installieren des Dropbox-Connectors
 
@@ -81,57 +83,11 @@ Um den API-Zugriff für Ihr Dropbox-Konto zu aktivieren, müssen Sie auf der Dro
 
 ### <a id="createdbapp"></a>Erstellen einer Dropbox-App
 
-Die folgenden Schritte zeigen das Vorgehen zum Erstellen einer Dropbox-App mithilfe der Website "Dropbox.com". Da die Website "Dropbox.com" ohne vorherige Ankündigung geändert werden kann, unterscheiden sich die tatsächlichen Benutzeroberflächenelemente möglicherweise von den hier gezeigten.
-
-1. Wechseln Sie zum [Dropbox-Entwicklerportal](https://www.dropbox.com/developers/apps), klicken Sie auf **App Console** und anschließend auf **Create app**.
-
-	![Erstellen einer Dropbox-App](./media/app-service-api-connnect-your-app-to-saas-connector/dbappcreate.png)
-
-2. Wählen Sie **Dropbox API app**, und konfigurieren Sie die weiteren Einstellungen.
- 
-	Die im nachstehenden Screenshot gezeigten Dateizugriffsoptionen ermöglichen es Ihnen, den Zugriff auf Ihr Dropbox-Konto mit einer einfachen HTTP-Get-Anforderung zu testen, wenn Sie über beliebige Dateien in Ihrem Konto verfügen.
-
-	Der Name der Dropbox-API-App kann beliebig gewählt werden, solange er von der Dropbox-Website akzeptiert wird.
-
-3. Klicken Sie auf **Create app**.
-
-	![Erstellen einer Dropbox-App](./media/app-service-api-connnect-your-app-to-saas-connector/dbapiapp.png)
-
-	Auf der nächsten Seite werden der App-Schlüssel und die geheimen App-Einstellungen gezeigt (in Azure als Client-ID und geheimer Clientschlüssel bezeichnet), die Sie zum Konfigurieren Ihres Azure-Dropbox-Connectors benötigen.
-
-	Diese Seite enthält außerdem ein Feld, in dem Sie den Umleitungs-URI eingeben können. Diesen Wert rufen Sie im nächsten Abschnitt ab.
-
-	![Erstellen einer Dropbox-App](./media/app-service-api-connnect-your-app-to-saas-connector/dbappsettings.png)
+[AZURE.INCLUDE [app-service-api-create-dropbox-app](../../includes/app-service-api-create-dropbox-app.md)]
 
 ### <a id="copysettings"></a>Kopieren der Dropbox-App-Einstellungen in den Azure-Dropbox-Connector und umgekehrt 
 
-4. Wechseln Sie in einem anderen Browserfenster oder in einer anderen Browserregisterkarte zum [Azure-Vorschauportal].
-
-3. Wechseln Sie zum Blatt **API-App** für Ihren Dropbox-Connector. (Wenn Sie noch das Blatt **Ressourcengruppe** anzeigen, klicken Sie einfach auf den Dropbox-Connector im Diagramm.)
-
-4. Klicken Sie auf **Einstellungen**, und klicken Sie dann auf dem Blatt **Einstellungen** auf **Authentifizierung**.
-
-	![Klicken Sie auf "Einstellungen"](./media/app-service-api-connnect-your-app-to-saas-connector/clicksettings.png)
-
-	![Klicken Sie auf "Authentifizierung"](./media/app-service-api-connnect-your-app-to-saas-connector/clickauth.png)
-
-5. Geben Sie auf dem Blatt "Authentifizierung" die Client-ID und den geheimen Clientschlüssel von der Dropbox-Website ein, und klicken Sie dann auf **Speichern**.
-
-	![Geben Sie Einstellungen ein, und klicken Sie auf "Speichern"](./media/app-service-api-connnect-your-app-to-saas-connector/authblade.png)
-
-3. Kopieren Sie den **Umleitungs-URI** (graues Feld oberhalb von Client-ID und dem geheimen Clientschlüssel), und fügen Sie den Wert auf der Seite ein, die Sie im vorherigen Schritt geöffnet gelassen haben.
-
-	Der Umleitungs-URI folgt diesem Muster:
-
-		[gatewayurl]/api/consent/redirect/[connectorname]
-
-	Zum Beispiel:
-
-		https://dropboxrgaeb4ae60b7.azurewebsites.net/api/consent/redirect/DropboxConnector
-
-	![Abrufen des Umleitungs-URI](./media/app-service-api-connnect-your-app-to-saas-connector/redirecturi.png)
-
-	![Erstellen einer Dropbox-App](./media/app-service-api-connnect-your-app-to-saas-connector/dbappsettings2.png)
+[AZURE.INCLUDE [app-service-api-exchange-dropbox-settings](../../includes/app-service-api-exchange-dropbox-settings.md)]
 
 ### Festlegen des Dropbox-Connectors für einen erforderlichen authentifizierten Zugriff
 
@@ -157,7 +113,7 @@ Nachdem Sie das Gateway in Ihrer Ressourcengruppe "DropboxRG" so konfiguriert ha
 
 In der Regel verwenden Sie einen Connector, indem Sie ihn über den Code aufrufen. Hierzu werden Lernprogramme bereitgestellt, in denen die erforderliche Vorgehensweise hierfür erläutert wird. Gelegentlich kann es aber vorkommen, dass Sie vorab prüfen möchten, ob der Connector funktioniert, bevor Sie ihn mit anderen Elementen einer App verknüpfen. In diesem Lernprogramm wird gezeigt, wie Sie mithilfe eines Browsers und einem einfachen REST-Clienttool prüfen, ob Sie über den soeben erstellten und konfigurierten Dropbox-Connector mit dem Dropbox-Dienst interagieren können.
 
-Die folgenden Anweisungen zeigen, wie Sie diese Schritte mit den Entwicklertools für den Chrome-Browser und dem Postman REST-Clienttool ausführen. Dies ist lediglich ein Beispiel, und Sie können dieselben Schritte mit anderen Browsern und Tools ausführen.
+Die folgenden Anweisungen zeigen, wie Sie diese Schritte mit den Entwicklertools für den Chrome-Browser und dem Postman REST-Clienttool ausführen. Dies ist lediglich ein Beispiel, und Sie können dieselben Schritte mit anderen Browsern und Tools ausführen. "Advanced REST Client" ist ein weiteres Chrome-Add-In, das Sie verwenden können.
 
 ### Anmelden als Endbenutzer
 
@@ -187,7 +143,7 @@ Führen Sie die folgenden Schritte in einem neuen Browserfenster aus. Je nach ge
 
 ### Bereitstellen der Benutzeridentität in Dropbox
 
-Um die Dropbox-Autorisierung zum Verwenden der Dropbox-API zu erhalten, müssen Sie die Benutzeranmeldeinformationen in Dropbox bereitstellen. Azure übernimmt diese Aufgabe für Sie, aber zum Auslösen des Vorgangs müssen Sie zu einer besonderen URL im Browser wechseln. Um diese URL abzurufen, senden Sie eine HTTP-Post-Anforderung an das Gateway.
+Um die Dropbox-Autorisierung zum Verwenden der Dropbox-API zu erhalten, müssen Sie die Benutzeranmeldeinformationen in Dropbox bereitstellen. Azure übernimmt das Einleiten dieses Prozesses für Sie, aber zum Auslösen des Vorgangs müssen Sie zu einer besonderen Gateway-URL im Browser wechseln. Um diese URL abzurufen, senden Sie eine HTTP-Post-Anforderung an das Gateway.
 
 Die HTTP-Post-Anforderung an das Gateway muss das Authentifizierungstoken enthalten, das Azure bei Ihrer Anmeldung bereitgestellt hat. Für Browseranforderungen erfolgt der Einschluss des Tokens automatisch, da es in einem Cookie gespeichert ist. Bei einer HTTP-Post-Anforderung mit Verwendung eines REST-Clienttools müssen Sie das Token zunächst aus dem Cookie abrufen und in den Anforderungsheader der HTTP-Post-Anforderung einfügen.
 
@@ -223,15 +179,15 @@ Die HTTP-Post-Anforderung an das Gateway muss das Authentifizierungstoken enthal
 
 	![Senden einer Zustimmungs-URL](./media/app-service-api-connnect-your-app-to-saas-connector/sendforconsent.png)
 
-	Die Antwort enthält eine URL, die Sie zum Authentifizieren des Benutzer für Dropbox verwenden können. (Wenn Sie eine Fehlermeldung erhalten, die angibt, dass die Get-Methode nicht unterstützt wird, obwohl Sie die Methode auf **Post** festgelegt haben, müssen Sie möglicherweise ein anderes REST-Clienttool verwenden. "Advanced REST Client" ist ein weiteres Chrome-Add-In, das Sie verwenden können.)
+	Die Antwort enthält eine URL, die Sie zum Einleiten der Anmeldung des Benutzers bei Dropbox verwenden können. (Wenn Sie eine Fehlermeldung erhalten, die angibt, dass die Get-Methode nicht unterstützt wird, obwohl Sie die Methode auf **Post** festgelegt haben, müssen Sie sicherstellen, dass Ihre Gateway-URL auf HTTPS und nicht auf HTTP festgelegt ist.)
 
 	![Zustimmungs-URL](./media/app-service-api-connnect-your-app-to-saas-connector/getconsenturl.png)
 
 2. Wechseln Sie zur URL, die Sie als Antwort auf die HTTP-Post-Anforderung erhalten haben.
 
-	Dropbox ordnet die Benutzeridentität Ihrer Dropbox-API-App zu und leitet den Browser dann an die Umleitungs-URL weiter, die Sie angegeben haben (z. B. das Azure-Vorschauportal, wenn Sie dem Beispiel gefolgt sind und https://portal.azure.com) verwendet haben).
-
-	Da sich Ihre Dropbox-App im Entwicklermodus befindet, wird möglicherweise eine Anmeldeseite von Dropbox angezeigt, bevor der Browser zur Umleitungs-URL wechselt. Nachdem Sie sich mit Ihren Dropbox-Anmeldeinformationen angemeldet haben, wird die Benutzeridentität, die Sie zur Anmeldung am Gateway verwendet haben, Ihrer Dropbox-App zugeordnet. Zukünftig ist der Schritt der Dropbox-Anmeldung dann für diese Benutzeridentität nicht mehr erforderlich.
+	Die Antwort auf diese URL leitet den Browser zur Dropbox-Website weiter, auf der der Benutzer sich anmeldet und der App die Zustimmung für den Zugriff auf das Konto des Benutzers gibt.
+	
+	Nach erfolgtem Anmeldungs- und Zustimmungsprozess leitet Dropbox den Browser an die Umleitungs-URL weiter, die Sie angegeben haben (z. B. zum Azure-Vorschauportal, wenn Sie dem Beispiel gefolgt sind und https://portal.azure.com) verwendet haben). Wenn der Aufruf aus einer Web-App erfolgt, wäre dies die nächste Seite, die in der Web-App angezeigt wird. Die App muss die URL überprüfen, da die Umleitungs-URL bei einem Fehler im Anmeldungs- oder Zustimmungsprozess eine Abfragezeichenfolgen-Variable vom Typ `error` enthalten könnte.
 
 3. Lassen Sie das Browserfenster geöffnet, da Sie es im nächsten Abschnitt benötigen.
 
@@ -271,11 +227,14 @@ In den folgenden Schritten senden Sie eine Get-Anforderung an den Dropbox-Connec
 
 ## Nächste Schritte
 
-Sie haben erfahren Sie wie einen SaaS-Connector installieren, konfigurieren und testen. Weitere Informationen finden Sie unter [Verwenden von Connectors](../app-service-logic/app-service-logic-use-biztalk-connectors.md).
+Sie haben erfahren Sie wie einen SaaS-Connector installieren, konfigurieren und testen. Weitere Informationen finden Sie in den folgenden Ressourcen:
+
+* [Verwenden von Connectors](../app-service-logic/app-service-logic-connectors-list.md)
+* [Authentifizierung für API- und mobile Apps](../app-service/app-service-authentication-overview.md)  
 
 [Azure-Vorschauportal]: https://portal.azure.com/
 [Azure-Vorschauportals]: https://portal.azure.com/
 [Azure-Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

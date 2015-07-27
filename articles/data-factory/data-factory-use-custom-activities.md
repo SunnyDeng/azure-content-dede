@@ -54,7 +54,7 @@ So erstellen Sie eine benutzerdefinierte Aktivität:
 ## Verwenden der benutzerdefinierten Aktivität in einer Pipeline
 So verwenden Sie die benutzerdefinierte Aktivität in einer Pipeline
 
-1.	**Komprimieren** Sie alle Binärdateien aus den Ausgabeordnern **bin\debug** oder **bin\release** für das Projekt. 
+1.	**Komprimieren** Sie alle Binärdateien aus den Ausgabeordnern **bin\\debug** oder **bin\\release** für das Projekt. 
 2.	Führen Sie das **Hochladen der ZIP-Datei** als Blob in Ihren **Azure-Blobspeicher** durch. 
 3.	Aktualisieren Sie die **JSON-Datei der Pipeline**, um auf die ZIP-Datei, die benutzerdefinierte Aktivitäts-DLL, die "activity"-Klasse und den Blob, der die ZIP-Datei im JSON-Code für die Pipeline enthält, zu verweisen. In der JSON-Datei:
 	<ol type ="a">
@@ -286,8 +286,8 @@ Diese exemplarische Vorgehensweise bietet Schritt-für-Schritt-Anleitungen zum E
 
 
 10. Kompilieren Sie das Projekt. Klicken Sie im Menü auf **Erstellen** und dann auf **Projektmappe erstellen**.
-11. Starten Sie **Windows-Explorer**, und navigieren Sie je nach Buildtyp zum Ordner **bin\debug** oder **bin\release**.
-12. Erstellen Sie die ZIP-Datei **MyDotNetActivity.zip**, die alle Binärdateien im Ordner "<project folder>\bin\Debug" enthält.
+11. Starten Sie **Windows-Explorer**, und navigieren Sie je nach Buildtyp zum Ordner **bin\\debug** oder **bin\\release**.
+12. Erstellen Sie die ZIP-Datei **MyDotNetActivity.zip**, die alle Binärdateien im Ordner "<project folder>\\bin\\Debug" enthält.
 13. Laden Sie **MyDotNetActivity.zip** als Blob in den Blobcontainer **customactivitycontainer** im Azure-Blobspeicher hoch, den der verknüpfte Dienst **MyBlobStore** in der **ADFTutorialDataFactory** verwendet. Erstellen Sie den Blobcontainer **blobcustomactivitycontainer**, sofern er noch nicht vorhanden ist. 
 
 
@@ -523,4 +523,4 @@ Es folgen die allgemeinen Schritte zur Verwendung des mit Azure Batch verknüpft
 [image-data-factory-azure-batch-tasks]: ./media/data-factory-use-custom-activities/AzureBatchTasks.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

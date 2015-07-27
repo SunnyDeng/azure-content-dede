@@ -26,11 +26,11 @@ Das Vorschauportal funktioniert einwandfrei auf modernen PCs, Macs und Tablet-PC
 ### Unterstützte Browser
 Die neuesten Versionen der folgenden Browser werden unterstützt:
 
-- Internet Explorer (10 und höher)
+- Internet Explorer (11 und höher)
 - Safari (7 und höher)
 - Chrome (neueste Version)
 - Firefox (neueste Version)
 
 *Safari 6 und niedriger wird nicht unterstützt. Wenn Sie OS X verwenden, können Sie entweder Chrome bzw. Firefox verwenden oder auf OS X Mavericks aktualisieren, um Safari 7 zu erhalten.*
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

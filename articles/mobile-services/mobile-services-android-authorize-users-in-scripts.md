@@ -110,4 +110,4 @@ Dies bildet den Abschluss der Lernprogramme, welche die Grundlagen der Arbeit mi
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

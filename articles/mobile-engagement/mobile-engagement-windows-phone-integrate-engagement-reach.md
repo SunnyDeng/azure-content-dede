@@ -12,8 +12,8 @@
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/07/2015" 
+	ms.topic="article"
+	ms.date="07/07/2015" 
 	ms.author="piyushjo" />
 
 #Integration von Windows Phone Silverlight Reach-SDK
@@ -113,15 +113,15 @@ Das EngagementReach-Objekt bietet zwei Methoden zum Verwalten der Aktivierung/De
 
 Sie können MPNS auch über die Engagement-Konfiguration <windows-phone-sdk-reach-configuration> deaktivieren.
 
-> 2.9.1) Die Anwendung muss zunächst die Benachrichtigungen beschreiben, die bereitgestellt werden sollen, und **die ausdrückliche Zustimmung des Benutzers (Abonnieren) einholen** sowie **einen Mechanismus bereitstellen, über den der Benutzer den Empfang von Pushbenachrichtigungen abbestellen kann**. Alle Benachrichtigungen, die mithilfe des Microsoft-Pushbenachrichtigungsdiensts bereitgestellt werden, müssen der dem Benutzer bereitgestellten Beschreibung entsprechen und alle anwendbaren [Anwendungsrichtlinien][Content Policies] und [zusätzlichen Anforderungen für bestimmte Anwendungstypen] erfüllen.
+> 2\.9.1) Die Anwendung muss zunächst die Benachrichtigungen beschreiben, die bereitgestellt werden sollen, und **die ausdrückliche Zustimmung des Benutzers (Abonnieren) einholen** sowie **einen Mechanismus bereitstellen, über den der Benutzer den Empfang von Pushbenachrichtigungen abbestellen kann**. Alle Benachrichtigungen, die mithilfe des Microsoft-Pushbenachrichtigungsdiensts bereitgestellt werden, müssen der dem Benutzer bereitgestellten Beschreibung entsprechen und alle anwendbaren [Anwendungsrichtlinien][Content Policies] und [zusätzlichen Anforderungen für bestimmte Anwendungstypen] erfüllen.
 
 2) Sie sollten nicht zu viele Pushbenachrichtigungen verwenden. Engagement verarbeitet Benachrichtigungen für Sie.
 
-> 2.9.2) Durch die Anwendung und deren Nutzung des Microsoft-Pushbenachrichtigungsdiensts darf die Netzwerkkapazität oder Bandbreite des Microsoft-Pushbenachrichtigungsdiensts nicht übermäßig beansprucht oder ein Windows Phone, ein anderes Microsoft-Gerät oder ein Dienst nicht durch übermäßige Pushbenachrichtigungen über Gebühr belastet werden, wie von Microsoft nach eigenem Ermessen festgelegt. Durch die Anwendung und deren MPNS-Nutzung dürfen Microsoft-Netzwerke oder -Server bzw. Server von Drittanbietern oder Netzwerke, die mit dem Microsoft-Pushbenachrichtigungsdienst verbunden sind, nicht beschädigt oder behindert werden.
+> 2\.9.2) Durch die Anwendung und deren Nutzung des Microsoft-Pushbenachrichtigungsdiensts darf die Netzwerkkapazität oder Bandbreite des Microsoft-Pushbenachrichtigungsdiensts nicht übermäßig beansprucht oder ein Windows Phone, ein anderes Microsoft-Gerät oder ein Dienst nicht durch übermäßige Pushbenachrichtigungen über Gebühr belastet werden, wie von Microsoft nach eigenem Ermessen festgelegt. Durch die Anwendung und deren MPNS-Nutzung dürfen Microsoft-Netzwerke oder -Server bzw. Server von Drittanbietern oder Netzwerke, die mit dem Microsoft-Pushbenachrichtigungsdienst verbunden sind, nicht beschädigt oder behindert werden.
 
 3) Verlassen Sie sich beim Senden kritischer Informationen nicht auf MPNS. Engagement verwendet MPNS, daher gilt diese Regel auch für Kampagnen, die über das Engagement-Front-End erstellt werden.
 
-> 2.9.3) Der Microsoft-Pushbenachrichtigungsdienst darf nicht zum Senden unternehmenskritischer oder anderer Benachrichtigungen verwendet werden, die über Leben und Tod entscheiden. Hierzu gehören uneingeschränkt auch entscheidende Benachrichtigungen im Zusammenhang mit einem medizinischen Gerät oder zustand. MICROSOFT SCHLIESST AUSDRÜCKLICH JEDE GEWÄHRLEISTUNG DAFÜR AUS, DASS DIE VERWENDUNG DES MICROSOFT-PUSHBENACHRICHTIGUNGSDIENSTS ODER DIE ÜBERMITTLUNG VON BENACHRICHTIGUNGEN MIT DEM MICROSOFT-PUSHBENACHRICHTIGUNGSDIENST UNTERBRECHUNGSFREI, FEHLERFREI ODER AUF ANDERE WEISE GARANTIERT IN ECHTZEIT ERFOLGT.
+> 2\.9.3) Der Microsoft-Pushbenachrichtigungsdienst darf nicht zum Senden unternehmenskritischer oder anderer Benachrichtigungen verwendet werden, die über Leben und Tod entscheiden. Hierzu gehören uneingeschränkt auch entscheidende Benachrichtigungen im Zusammenhang mit einem medizinischen Gerät oder zustand. MICROSOFT SCHLIESST AUSDRÜCKLICH JEDE GEWÄHRLEISTUNG DAFÜR AUS, DASS DIE VERWENDUNG DES MICROSOFT-PUSHBENACHRICHTIGUNGSDIENSTS ODER DIE ÜBERMITTLUNG VON BENACHRICHTIGUNGEN MIT DEM MICROSOFT-PUSHBENACHRICHTIGUNGSDIENST UNTERBRECHUNGSFREI, FEHLERFREI ODER AUF ANDERE WEISE GARANTIERT IN ECHTZEIT ERFOLGT.
 
 **Wir können nicht dafür garantieren, dass die Anwendung den Überprüfungsprozess besteht, wenn Sie diese Empfehlungen nicht beachten.**
 
@@ -266,4 +266,4 @@ Sie können den Rückruf in der `Application_Launching`-Methode der Datei `App.x
 [zusätzlichen Anforderungen für bestimmte Anwendungstypen]: http://msdn.microsoft.com/library/windows/apps/hh184838(v=vs.105).aspx
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

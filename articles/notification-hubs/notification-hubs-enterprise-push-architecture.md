@@ -271,4 +271,4 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
 [Erste Schritte mit Notification Hubs]: http://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

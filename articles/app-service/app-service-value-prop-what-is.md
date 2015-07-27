@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/13/2015" 
+	ms.date="06/30/2015" 
 	ms.author="omark"/>
 
 # Was ist Azure App Service?
-Azure App Service ist der einzige Clouddienst, der alle Komponenten integriert, die für das schnelle und einfache Erstellen von Web-Apps und mobilen Apps für beliebige Plattformen und Geräte benötigt werden. App Service ist eine für Entwickler konzipierte, vollständig verwaltete PaaS-Lösung (Platform-as-a-Service), die leistungsstarke Funktionen bereitstellt, wie z. B. integrierte DevOps, fortlaufende Integration in Visual Studio Online und GitHub, Staging- und Produktionsunterstützung sowie ein automatisches Patching.
+Azure App Service ist der einzige Clouddienst, der alle Komponenten integriert, die für das schnelle und einfache Erstellen von Web-Apps und mobilen Apps für beliebige Plattformen und Geräte benötigt werden. App Service ist eine für Entwickler konzipierte, vollständig verwaltete Plattform, die leistungsstarke Funktionen bereitstellt, wie z. B. integrierte DevOps, fortlaufende Integration in Visual Studio Online und GitHub, Staging- und Produktionsunterstützung sowie automatisches Patching.
 
 Azure App Service ist ein einzelner Dienst, der neben allen vorhandenen Funktionen von Azure-Websites, Azure Mobile Services und Azure BizTalk Services verschiedene neue Funktionen bietet. [Hier erfahren Sie](http://azure.microsoft.com/documentation/services/app-service/), wie App Service zu den vorhandenen Diensten in Beziehung steht.
 
@@ -59,4 +59,4 @@ Mit Azure App Service brauchen Sie dazu nur eine Sprache auszuwählen!
 [Erstellen Sie eine neue Web-App](http://go.microsoft.com/fwlink/?LinkId=523751) – sofort und kostenlos. Keine Kreditkarte erforderlich, keine Verpflichtungen, kein Ärger.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

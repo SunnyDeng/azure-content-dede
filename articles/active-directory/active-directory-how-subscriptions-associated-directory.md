@@ -88,7 +88,7 @@ Wenn Sie in der Vergangenheit ein Microsoft-Privatnutzerkonto mithilfe Ihrer ges
 
 ![][3]
 
-Sie haben Benutzerkonten mit dem gleichen Namen – ein Konto in Azure AD und ein anderes im Privatnutzerkontosystem von Microsoft. Sie müssen das Konto wählen, das dem Azure-Abonnement zugeordnet ist, das Sie verwenden möchten. Wenn ein Fehler ausgegeben wird, der besagt, dass für diesen Benutzer kein Abonnement vorhanden ist, haben Sie wahrscheinlich die falsche Option gewählt. Melden Sie sich ab, und versuchen Sie es erneut. Weitere Informationen zu Fehlern, die eine Anmeldung verhindern können, finden Sie unter[ Problembehandlung von Fehlern des Typs "Es wurden keine Abonnements gefunden, die Ihrem Konto zugeordnet sind"](https://social.msdn.microsoft.com/Forums/de-de/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement).
+Sie haben Benutzerkonten mit dem gleichen Namen – ein Konto in Azure AD und ein anderes im Privatnutzerkontosystem von Microsoft. Sie müssen das Konto wählen, das dem Azure-Abonnement zugeordnet ist, das Sie verwenden möchten. Wenn ein Fehler ausgegeben wird, der besagt, dass für diesen Benutzer kein Abonnement vorhanden ist, haben Sie wahrscheinlich die falsche Option gewählt. Melden Sie sich ab, und versuchen Sie es erneut. Weitere Informationen zu Fehlern, die eine Anmeldung verhindern können, finden Sie unter[ Problembehandlung von Fehlern des Typs "Es wurden keine Abonnements gefunden, die Ihrem Konto zugeordnet sind"](https://social.msdn.microsoft.com/Forums/en-US/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement).
 
 ## Verwalten des Verzeichnisses für Ihr Office 365-Abonnement in Azure
 
@@ -126,4 +126,4 @@ Führen Sie diese Schritte aus, um beide Verzeichnisse im Verwaltungsportal zu v
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

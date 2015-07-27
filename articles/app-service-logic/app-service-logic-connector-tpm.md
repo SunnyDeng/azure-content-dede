@@ -30,4 +30,4 @@ Klicken Sie [hier][1], um weitere Informationen zur Handelspartnervereinbarung (
 <!--References-->
 [1]: app-service-logic-create-a-trading-partner-agreement.md
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

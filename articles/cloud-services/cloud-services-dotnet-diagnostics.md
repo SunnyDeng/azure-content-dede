@@ -207,7 +207,7 @@ Ersetzen Sie den Inhalt von "WorkerRole.cs" durch den folgenden Code. Die von de
   			<WadCfg>
     			<DiagnosticMonitorConfiguration overallQuotaInMB="25000">
       			<PerformanceCounters scheduledTransferPeriod="PT1M">
-        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Processor Time" sampleRate="PT1M" unit="percent" />
+        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)% Processor Time" sampleRate="PT1M" unit="percent" />
         			<PerformanceCounterConfiguration counterSpecifier="\Memory\Committed Bytes" sampleRate="PT1M" unit="bytes"/>
       				</PerformanceCounters>
       				<EtwProviders>
@@ -332,7 +332,7 @@ In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement 
 
 ### Schritt 3. Bereitstellen der Anwendung
 1.	Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **WadExampleVM**, und wählen Sie **Ordner in Datei-Explorer öffnen** aus.
-2.	Navigieren Sie zum Ordner *bin\Debug*, und kopieren Sie alle Dateien (WadExampleVM.*).
+2.	Navigieren Sie zum Ordner *bin\\Debug*, und kopieren Sie alle Dateien (WadExampleVM.*).
 3.	Klicken Sie im Server-Explorer mit der rechten Maustaste auf den virtuellen Computer, und wählen Sie **Per Remotedesktop verbinden** aus.
 4.	Sobald die Verbindung mit dem virtuellen Computer hergestellt ist, erstellen Sie einen Ordner mit dem Namen "WadExampleVM", und fügen Sie Ihre Anwendungsdateien in diesen Ordner ein.
 5.	Starten Sie die Anwendung WadExampleVM.exe. Es sollte ein leeres Konsolenfenster angezeigt werden.
@@ -351,7 +351,7 @@ In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement 
   			<WadCfg>
     			<DiagnosticMonitorConfiguration overallQuotaInMB="25000">
       			<PerformanceCounters scheduledTransferPeriod="PT1M">
-        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Processor Time" sampleRate="PT1M" unit="percent" />
+        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)% Processor Time" sampleRate="PT1M" unit="percent" />
         			<PerformanceCounterConfiguration counterSpecifier="\Memory\Committed Bytes" sampleRate="PT1M" unit="bytes"/>
       				</PerformanceCounters>
       				<EtwProviders>
@@ -397,7 +397,7 @@ Die Diagnosekonfigurationsdatei definiert Werte, die verwendet werden, um beim S
 ### Die Azure-Diagnose wird nicht gestartet.
 Diagnose besteht aus zwei Komponenten: einem Gast-Agent-Plug-in und Monitoring Agent. Die Protokolldateien für das Gast-Agent-Plug-In befinden sich in folgender Datei:
 
-*%Systemlaufwerk%\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics*\CommandExecution.log
+*%Systemlaufwerk%\\WindowsAzure\\Logs\\Plugins\\Microsoft.Azure.Diagnostics.PaaSDiagnostics\*\\CommandExecution.log
 
 Die folgenden Fehlercodes werden von dem Plug-In zurückgegeben:
 
@@ -778,4 +778,4 @@ In der folgenden Tabelle werden die Features gegenübergestellt, die von den Ver
 [Remove-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/library/dn495168.aspx
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

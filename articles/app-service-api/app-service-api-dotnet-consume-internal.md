@@ -261,6 +261,8 @@ Das App Service-SDK ist von den Swagger-API-Definitionen abhängig, um Clientkla
 In diesem Artikel haben Sie gelernt, wie Sie eine interne API-App aus einem .NET-Client nutzen. Informationen zum Nutzen von API-Apps, die die Zugriffsebenen **Öffentlich (anonym)** oder **Öffentlich (authentifiziert)** haben, finden Sie unter [Nutzen einer API-App in Azure App Service aus einem .NET-Client](app-service-api-dotnet-consume.md).
 
 Um weitere Codebeispiele für den Aufruf einer API-App aus einem .NET-Client zu erhalten, laden Sie die [Azure Cards](https://github.com/Azure-Samples/API-Apps-DotNet-AzureCards-Sample)-Beispielanwendung herunter.
+
+Informationen zur Authentifizierung in App Service finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

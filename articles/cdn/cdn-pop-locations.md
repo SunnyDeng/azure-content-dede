@@ -71,4 +71,4 @@ In diesem Thema werden die aktuellen POP-Standorte (Point of Presence) von Micro
 - Melbourne
 - Sydney 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

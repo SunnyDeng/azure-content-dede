@@ -160,4 +160,4 @@ Auf der Seite **Dashboard** können Sie Informationen zu virtuellen Computern in
   ![Dashboard](./media/backup-azure-manage-vms/dashboard-protectedvms.png)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

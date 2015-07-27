@@ -7,4 +7,4 @@ Im Folgenden sehen Sie Screenshots aus der fertigen App:
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Services-Lernprogramme für Windows Store- und Windows Phone Store-Apps.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO3-->

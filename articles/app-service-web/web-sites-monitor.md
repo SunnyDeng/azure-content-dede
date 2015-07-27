@@ -13,10 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/24/2015"
+	ms.date="07/02/2015"
 	ms.author="cephalin"/>
-
-
 
 #<a name="howtomonitor"></a>Überwachen von Web-Apps in Azure App Service
 
@@ -24,7 +22,7 @@
 
 ##<a name="websitemetrics"></a>Vorgehensweise: Hinzufügen von Web-App-Kennzahlen
 
-1. Klicken Sie im[ Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) auf den Verwaltungsseiten der Web-App auf die Registerkarte **Überwachen**, um die Verwaltungsseite **Überwachung** anzuzeigen. Standardmäßig zeigt das Diagramm auf der Seite **Monitor** dieselben Kennzahlen wie das Diagramm auf der Seite **Dashboard** an.
+1. Klicken Sie im [Azure-Portal](https://manage.windowsazure.com) auf der Seite der Web-App auf die Registerkarte **Überwachen**, um die Verwaltungsseite **Überwachung** anzuzeigen. Standardmäßig zeigt das Diagramm auf der Seite **Monitor** dieselben Kennzahlen wie das Diagramm auf der Seite **Dashboard** an.
 
 2. Zum Anzeigen zusätzlicher Metriken für die Web-App klicken Sie unten auf der Seite auf **Metriken hinzufügen**, um das Dialogfeld **Metriken auswählen** anzuzeigen.
 
@@ -37,25 +35,25 @@
 6. Um Kennzahlen von der Seite **Monitor** zu entfernen, wählen Sie die zu entfernende Kennzahl aus und klicken auf das Symbol **Metrik löschen** unten auf der Seite.
 
 ##<a name="howtoreceivealerts"></a>Vorgehensweise: Empfangen von Warnungen mittels Web-App-Kennzahlen
-Im Web-App-Modus **Standard** können Sie basierend auf den Web-App-Überwachungskennzahlen Warnungen empfangen. Zur Verwendung der Warnfunktion müssen Sie zuerst einen Web-Endpunkt zur Überwachung auswählen, was Sie im Abschnitt **Monitoring** der Seite **Configure** tun können. Auf der Seite **Einstellungen** des Azure-Verwaltungsportals können Sie anschließend eine Regel erstellen, um eine Warnung auszulösen, wenn die von Ihnen ausgewählte Kennzahl einen festgelegten Wert erreicht. Außerdem können Sie eine E-Mail senden, wenn der Alarm ausgelöst wird. Weitere Informationen finden Sie unter [Vorgehensweise: Empfangen von Warnbenachrichtigungen und Verwalten von Warnungsregeln in Azure](http://go.microsoft.com/fwlink/?LinkId=309356).
+
+Im Web-App-Modus **Standard** können Sie basierend auf den Web-App-Überwachungskennzahlen Warnungen empfangen. Zur Verwendung der Warnfunktion müssen Sie zuerst einen Web-Endpunkt zur Überwachung auswählen, was Sie im Abschnitt **Monitoring** der Seite **Configure** tun können. Sie können auch festlegen, dass eine E-Mail gesendet wird, wenn eine ausgewählte Metrik den angegebenen Wert erreicht. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure](http://go.microsoft.com/fwlink/?LinkId=309356).
 
 ##<a name="howtoviewusage"></a>Vorgehensweise: Anzeigen der Nutzungskontingente für eine Web-App
 
-Web-Apps können auf der Verwaltungsseite **Skalierung** der Web-App zur Ausführung entweder im Modus **Freigegeben** oder **Standard** konfiguriert werden. Jedes Azure-Abonnement hat Zugriff auf einen Ressourcenpool, der für die Ausführung von bis zu 100 Web-Apps pro Region im Modus **Freigegeben** bereitgestellt wird. Der für jedes Web-App-Abonnement für diesen Zweck bereitgestellte Ressourcenpool wird in derselben geografischen Region auch von anderen Web-Apps genutzt, die im Modus **Freigegeben** konfiguriert sind. Da diese Ressourcen von anderen Web-Apps ebenfalls genutzt werden, verfügen alle Abonnements über begrenzte Ressourcennutzung. Die Höchstgrenzen für die Ressourcennutzung von Abonnements werden als Nutzungskontingente bezeichnet und sind im Abschnitt "Nutzungsübersicht" der Verwaltungsseite **Dashboard** jeder Web-App aufgelistet.
+Web-Apps können im [Azure-Portal](https://manage.windowsazure.com) auf der Verwaltungsseite **Skalierung** der Web-App zur Ausführung entweder im Modus **Shared** oder **Standard** konfiguriert werden. Jedes Azure-Abonnement hat Zugriff auf einen Ressourcenpool, der für die Ausführung von bis zu 100 Web-Apps pro Region im Modus **Freigegeben** bereitgestellt wird. Der für jedes Web-App-Abonnement für diesen Zweck bereitgestellte Ressourcenpool wird in derselben geografischen Region auch von anderen Web-Apps genutzt, die im Modus **Freigegeben** konfiguriert sind. Da diese Ressourcen von anderen Web-Apps ebenfalls genutzt werden, verfügen alle Abonnements über begrenzte Ressourcennutzung. Die Höchstgrenzen für die Ressourcennutzung von Abonnements werden als Nutzungskontingente bezeichnet und sind im Abschnitt "Nutzungsübersicht" der Verwaltungsseite **Dashboard** jeder Web-App aufgelistet.
 
 >[AZURE.NOTE]Wenn eine Web-App für die Ausführung im Modus **Standard** konfiguriert ist, werden ihr dedizierte Ressourcen entsprechend der Größe **Klein** (Standard), **Mittel** oder **Groß** des virtuellen Computers zugewiesen, die in der Tabelle unter [Größen virtueller Computer und Cloud-Dienste für Azure][vmsizes] aufgelistet sind. Es gibt kein Limit, wie viele Ressourcen ein Abonnement zum Ausführen von Web-Apps im **Standard**-Modus verwenden kann. Die Anzahl der im **Standard**-Modus erstellten Web-Apps pro Region ist jedoch auf 500 begrenzt.
 
 ### Vorgehensweise: Anzeigen der Nutzungskontingente für Web-Apps, die für den Modus "Freigegeben" konfiguriert sind ###
 Um zu bestimmen, in welchem Umfang eine Web-App sich auf die Ressourcennutzungskontingente auswirkt, führen Sie folgende Schritte aus:
 
-1. Öffnen Sie die Verwaltungsseite **Dashboard** der Web-App.
+1. Öffnen Sie die Verwaltungsseite **Dashboard** der Web-App im [Azure-Portal](https://manage.windowsazure.com).
 2. Im Abschnitt **Nutzungsübersicht** werden die Nutzungskontingente für den jeweiligen [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan angezeigt, der eine Teilmenge von Folgendem darstellt:
 	-	**Ausgehende Daten**, **CPU-Zeit** und **Arbeitsspeicher** – Wird das Kontingent überschritten, beendet Azure die Web-App für den Rest des aktuellen Kontingentintervalls. Azure startet die Web-Apps zu Beginn des nächsten Kontingentintervalls erneut.
 	-	**Dateisystemspeicher** - Wenn dieses Kontingent erreicht wird, bleibt der Dateisystemspeicher für Lesevorgänge weiterhin erreichbar. Alle Schreibvorgänge sind jedoch blockiert, einschließlich derjenigen, die für normale Web-App-Aktivitäten erforderlich sind. Schreibvorgänge werden wieder aufgenommen, wenn Sie die Dateinutzung verringern oder die Web-App in einen App Service-Plan mit einem höheren Kontingent verschieben.
 	-	**Verknüpfte Ressourcen** - Kontingente für etwaige verknüpfte Ressourcen in der Web-App wie etwa eine Datenbank oder Speicher werden hier ebenfalls angezeigt.
 
 	Einige Kontingente lassen sich pro Webhostingplan nutzen, andere pro Website. Detailinformationen zu Nutzungskontingenten für jeden Webhostingplan finden Sie unter [Websitelimits](azure-subscription-service-limits.md#websiteslimits).
-
 
 ##<a name="resourceusage"></a> Vorgehensweise: Kontingentüberschreitungen vermeiden
 
@@ -64,10 +62,9 @@ Kontingente sind keine Angelegenheit von Leistung oder Kosten, sondern stellen d
 - Verschieben Sie die Web-App(s) in einen größeren App Service-Plan und nutzen Sie das höhere Kontingent dort. Das einzige Kontingent bei den Plänen **Basic** und **Standard** gilt für den Dateisystemspeicher.
 - Je mehr die Anzahl der Instanzen einer Web-App wächst, desto wahrscheinlicher werden die gemeinsam genutzten Ressourcenkontingente ausgeschöpft. Wenn machbar, können Sie zusätzliche Instanzen einer Web-App zurückfahren, wenn eine Überschreitung der gemeinsam genutzten Ressourcenkontingente droht.
 
-
 ##<a name="howtoconfigdiagnostics"></a>Vorgehensweise: Konfigurieren der Diagnose und Herunterladen von Protokollen für eine Web-App
 
-Diagnosen werden auf der Verwaltungsseite** Konfigurieren** für die Web-App aktiviert. Es gibt zwei Arten von Diagnosen: **Anwendungsdiagnose** und **Websitediagnose**.
+Diagnosen werden auf der Registerkarte **Konfigurieren** für die Web-App im [Azure-Portal](https://manage.windowsazure.com) aktiviert. Es gibt zwei Arten von Diagnosen: **Anwendungsdiagnose** und **Websitediagnose**.
 
 #### Anwendungsdiagnose ####
 
@@ -95,16 +92,14 @@ Weitere Informationen zu Azure-Speicherkonten finden Sie unter [Verwalten von Sp
 
 Da die Anwendungsprotokollierung im Speicher die Verwendung eines Speicherclients zum Anzeigen der Protokolldaten erfordert, ist es hilfreich, wenn Sie eine Anwendung oder einen Dienst verwenden, die bzw. der Daten direkt aus der Azure-Tabelle oder dem Blob-Speicher lesen und verarbeiten kann. Bei der Protokollierung im Dateisystem werden Dateien erzeugt, die über FTP oder andere Dienstprogramme auf Ihren lokalen Computer heruntergeladen werden können, wie später in diesem Abschnitt beschrieben wird.
 
-> [AZURE.NOTE]**Anwendungsdiagnose (Dateisystem)**, **Anwendungsdiagnose (Tabellenspeicher)** und **Anwendungsdiagnose (BLOB-Speicher)** können parallel aktiviert werden und über individuelle Protokolliergrade aufweisen. Sie können beispielsweise Fehler und Warnmeldungen als langfristige Protokollierungslösung im Speicher protokollieren, während die Dateisystemprotokollierung nach der Instrumentierung des Anwendungscodes zum Zweck der Fehlerbehebung ausführlich erfolgt.
+**Anwendungsdiagnose (Dateisystem)**, **Anwendungsdiagnose (Tabellenspeicher)** und **Anwendungsdiagnose (BLOB-Speicher)** können parallel aktiviert werden und über individuelle Protokolliergrade aufweisen. Sie können beispielsweise Fehler und Warnmeldungen als langfristige Protokollierungslösung im Speicher protokollieren, während die Dateisystemprotokollierung nach der Instrumentierung des Anwendungscodes zum Zweck der Fehlerbehebung ausführlich erfolgt.
 
-> [AZURE.NOTE]Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden.
->
-> Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
+Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden. Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
 > [AZURE.NOTE]Die Anwendungsprotokollierung beruht auf Protokollinformationen, die von Ihrer Anwendung erzeugt werden. Die verwendete Methode zum Erzeugen von Protokollinformationen sowie das Format der Informationen hängt von der Sprache ab, in der Ihre Anwendung geschrieben ist. Erläuterungen zur sprachspezifischen Verwendung der Anwendungsprotokollierung finden Sie in den folgenden Artikeln:
 >
-> - **.NET** - [Aktivieren der Diagnoseprotokollierung für Azure-Websites](/develop/net/common-tasks/diagnostics-logging-and-instrumentation/)
-> - **Node.js** - [Debuggen einer Node.js-Anwendung auf Azure-Websites](/develop/nodejs/how-to-guides/Debug-Website/)
+> - **.NET** – [Problembehandlung von Web-Apps in Azure App Service in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md)
+> - **Node.js** - [Debuggen einer Node.js-Anwendung auf Azure-Websites](web-sites-nodejs-debug.md)
 >
 > Anwendungsprotokollierung in einer Tabelle oder einem Blob-Speicher wird nur für .NET-Anwendungen unterstützt.
 
@@ -137,7 +132,7 @@ Die Diagnose kann weiter angepasst werden, indem Sie Schlüssel/Wert-Paare im Ab
 
 - Das Verzeichnis, in dem die Anwendungsprotokolle gespeichert werden, in Bezug auf das Web-Stammverzeichnis.
 
-- Standardwert: ..\..\LogFiles\Application
+- Standardwert: ..\\..\\LogFiles\\Application
 
 **DIAGNOSTICS_TEXTTRACEMAXBUFFERSIZEBYTES**
 
@@ -157,7 +152,7 @@ Protokolldateien können per FTP, mit Azure PowerShell oder mit der Azure-Befehl
 
 **FTP**
 
-1. Öffnen Sie die Verwaltungsseite **Dashboard** der Web-App, und notieren Sie die unter **Diagnoseprotokolle** aufgelistete FTP-Website sowie das unter **Bereitstellungsbenutzer** aufgeführte Konto. Auf der FTP-Site befinden sich die Protokolldateien, und das unter "Deployment User" aufgelistete Konto wird zur Authentifizierung bei der FTP-Site verwendet.
+1. Öffnen Sie die Verwaltungsseite **Dashboard** der Web-App im [Azure-Portal](https://manage.windowsazure.com), und notieren Sie die unter **Diagnoseprotokolle** aufgelistete FTP-Website sowie das unter **Bereitstellungsbenutzer** aufgeführte Konto. Auf der FTP-Site befinden sich die Protokolldateien, und das unter "Deployment User" aufgelistete Konto wird zur Authentifizierung bei der FTP-Site verwendet.
 2. Falls Sie noch keine Bereitstellungsanmeldeinformationen erstellt haben, wird das Konto unter **Bereitstellungsbenutzer** als **Nicht festgelegt** aufgeführt. In diesem Fall müssen Sie die Bereitstellungsanmeldeinformationen wie im Abschnitt "Zurücksetzen der Bereitstellungsanmeldeinformationen" des Dashboards beschrieben erstellen, da diese Anmeldeinformationen zur Authentifizierung bei der FTP-Site erforderlich sind, wo die Protokolldateien gespeichert werden. Azure unterstützt keine Authentifizierung bei der FTP-Site mittels Live ID-Anmeldung.
 3. Verwenden Sie einen FTP-Client wie [FileZilla][fzilla] für die Verbindung mit der FTP-Site. Ein FTP-Client vereinfacht die Eingabe der Anmeldeinformationen und das Anzeigen der Ordner auf der FTP-Site gegenüber der Verwendung eines Browsers.
 4. Kopieren Sie die Protokolldateien von der FTP-Site auf Ihren lokalen Computer.
@@ -266,7 +261,6 @@ Nachdem Sie die Endpunktüberwachung konfiguriert haben, können Sie Details zu 
 
 	Azure überwacht nun aktiv den Endpunkt und sendet eine E-Mail-Mitteilung, wenn die Antwortzeit 3 Sekunden überschreitet.
 
-
 Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folgenden Videos:
 
 - [Scott Guthrie mit einer Einführung zu Azure-Websites und Einrichtung der Endpunktüberwachung](/documentation/videos/websites-and-endpoint-monitoring-scottgu/)
@@ -276,11 +270,11 @@ Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folge
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 [fzilla]: http://go.microsoft.com/fwlink/?LinkId=247914
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

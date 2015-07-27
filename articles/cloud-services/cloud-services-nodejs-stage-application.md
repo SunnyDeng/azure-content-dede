@@ -90,4 +90,4 @@ Sie haben nun eine Bereitstellung in Staging getestet und eine Produktionsbereit
   [Übersicht über das Verwalten von Bereitstellungen in Azure]: http://msdn.microsoft.com/library/windowsazure/hh386336.aspx
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

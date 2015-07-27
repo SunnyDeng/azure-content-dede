@@ -32,7 +32,7 @@ Führen Sie diese Schritte aus, um eine Web-App zu erstellen und die Git-Veröff
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
-2. Klicken Sie unten links im Portal auf das Symbol **+ Neu**.
+2. Klicken Sie oben links im Portal auf das Symbol **+ NEU**.
 
 3. Klicken Sie auf **Web + Mobile** und dann auf **Web-App**.
 
@@ -134,7 +134,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello Wor
 
 ##Veröffentlichen von Änderungen an der Anwendung
 
-1. Öffnen Sie die Datei **server.js** in einem Texteditor, und ändern Sie "Hello World\n" in "Hello Azure\n". Speichern Sie die Datei.
+1. Öffnen Sie die Datei **server.js** in einem Texteditor, und ändern Sie "Hello World\\n" in "Hello Azure\\n". Speichern Sie die Datei.
 2. Wechseln Sie über die Befehlszeile ins Verzeichnis **helloworld**, und führen Sie die folgenden Befehle aus:
 
 		git add .
@@ -196,4 +196,4 @@ Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalt
 [git-url]: ./media/web-sites-nodejs-develop-deploy-mac/git-url.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

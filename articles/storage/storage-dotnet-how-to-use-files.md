@@ -1,6 +1,6 @@
 <properties
 			pageTitle="Verwenden des Azure-Dateispeichers mit PowerShell und .NET | Microsoft Azure"
-            description="Erfahren Sie, wie Sie den Azure-Dateispeicher zum Erstellen von Cloud-Dateifreigaben und zum Verwalten des Dateiinhalts verwenden. Der Dateispeicher ermöglicht Unternehmen, von SMB-Dateifreigaben abhängige Anwendungen nach Azure zu verschieben. Die Beispiele sind in PowerShell und C# geschrieben."
+            description="Erfahren Sie, wie Sie den Azure-Dateispeicher zum Erstellen von Cloud-Dateifreigaben und zum Verwalten des Dateiinhalts verwenden. Der Dateispeicher ermöglicht Unternehmen, von SMB-Dateifreigaben abhängige Anwendungen nach Azure zu verschieben. Beibehalten Ihrer Speicherkonto-Anmeldeinformationen auf dem virtuellen Computer, sodass die Verbindung mit der Dateifreigabe beim Neustart des Computers hergestellt wird."
             services="storage"
             documentationCenter=".net"
             authors="tamram"
@@ -12,14 +12,18 @@
       ms.tgt_pltfrm="na"
       ms.devlang="dotnet"
       ms.topic="hero-article"
-      ms.date="06/22/2015"
+      ms.date="07/06/2015"
       ms.author="tamram" />
 
 # Verwenden des Azure-Dateispeichers mit PowerShell und .NET
 
 ## Übersicht
 
-In diesem Leitfaden für die ersten Schritte veranschaulichen wir die Grundlagen der Verwendung des Microsoft Azure-Dateispeichers. In diesem Lernprogramm wird Folgendes beschrieben:
+Der Azure-Dateidienst stellt Dateifreigaben mit dem SMB 2.1-Standardprotokoll bereit. Anwendungen, die in Azure ausgeführt werden, können nun ganz einfach über standardmäßige und bekannte Dateisystem-APIs wie ReadFile und WriteFile Dateien zwischen virtuellen Computern freigeben. Darüber hinaus kann der Dateizugriff gleichzeitig über eine REST-Schnittstelle erfolgen, die eine Vielzahl von Hybridszenarien ermöglicht. Schließlich beruhen Azure-Dateien auf der gleichen Technologie wie BLOB-, Tabellen-, und Warteschlangendienste, was bedeutet, dass Azure-Dateien die vorhandenen Verfügbarkeit, Dauerhaftigkeit, Skalierbarkeit und geografische Redundanz nutzen, die in die Plattform integriert ist.
+
+## Informationen zu diesem Lernprogramm
+
+In diesem Lernprogramm für die ersten Schritte veranschaulichen wir die Grundlagen der Verwendung des Microsoft Azure-Dateispeichers. In diesem Lernprogramm wird Folgendes beschrieben:
 
 - Verwenden von PowerShell, um die Erstellung einer neuen Azure-Dateifreigabe, das Hinzufügen eines Verzeichnisses, das Hochladen einer lokalen Datei in die Freigabe und das Auflisten der Dateien in dem Verzeichnis zu veranschaulichen.
 - Bereitstellen der Dateifreigabe von einem virtuellen Azure-Computer, genau wie bei einer SMB-Freigabe.
@@ -114,17 +118,17 @@ Windows stellt nun bei einem Neustart des virtuellen Computers erneut eine Verbi
 
 Nachdem Sie eine Remoteverbindung zu dem virtuellen Computer hergestellt haben, können Sie den Befehl `net use` mit folgender Syntax ausführen, um die Dateifreigabe bereitzustellen. Ersetzen Sie `<storage-account-name>` durch den Namen Ihres Speicherkontos und `<share-name>` durch den Namen Ihrer Dateispeicher-Freigabe:
 
-    net use <drive-letter>: <storage-account-name>.file.core.windows.net<share-name>
+    net use <drive-letter>: \<storage-account-name>.file.core.windows.net<share-name>
 
 	example :
-	net use z: \samples.file.core.windows.net\logs
+	net use z: \\samples.file.core.windows.net\logs
 
 > [AZURE.NOTE]Da Sie die Speicherkonto-Anmeldeinformationen im vorherigen Schritt dauerhaft gespeichert haben, müssen Sie diese nicht mit dem Befehl `net use` angeben. Wenn Sie Ihre Anmeldeinformationen jedoch nicht dauerhaft gespeichert haben, fügen Sie sie als Parameter hinzu, der an den Befehl `net use` übergeben wird.
 
-    net use <drive-letter>: <storage-account-name>.file.core.windows.net<share-name> /u:<storage-account-name> <storage-account-key>
+    net use <drive-letter>: \<storage-account-name>.file.core.windows.net<share-name> /u:<storage-account-name> <storage-account-key>
 
 	example :
-	net use z: \samples.file.core.windows.net\logs /u:samples <storage-account-key>
+	net use z: \\samples.file.core.windows.net\logs /u:samples <storage-account-key>
 
 Sie können nun mit der Dateispeicher-Freigabe vom virtuellen Computer aus arbeiten, wie von jedem anderen Laufwerk auch. Sie können die Standarddateibefehle über die Eingabeaufforderung eingeben oder die bereitgestellte Freigabe und deren Inhalt im Datei-Explorer anzeigen. Außerdem können Sie Code auf dem virtuellen Computer ausführen, der über standardmäßige Windows-E/A-APIs auf die Dateifreigabe zugreift, die z. B. über die [System.IO-Namespaces](http://msdn.microsoft.com/library/gg145019(v=vs.110).aspx) in .NET Framework bereitgestellt werden.
 
@@ -233,4 +237,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

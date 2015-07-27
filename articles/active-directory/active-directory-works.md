@@ -50,4 +50,4 @@ Wünschen Sie weitere Informationen zum Verwalten von Azure AD? Wie wird ein Ver
 * [Azure-Identität](fundamentals-identity.md)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

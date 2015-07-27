@@ -50,14 +50,14 @@ string serviceNamespace = "YOUR_NAMESPACE";
 string namespaceManageKeyName = "RootManageSharedAccessKey";
 string namespaceManageKey = "YOUR_ROOT_MANAGE_SHARED_ACCESS_KEY";
 Uri uri = ServiceBusEnvironment.CreateServiceUri("sb", serviceNamespace, string.Empty);
-TokenProvider td = TokenProvider.CreateSharedAccessSignatureTokenProvider(namespaceManageKeyName, amespaceManageKey);
+TokenProvider td = TokenProvider.CreateSharedAccessSignatureTokenProvider(namespaceManageKeyName, namespaceManageKey);
 NamespaceManager nm = new NamespaceManager(namespaceUri, namespaceManageTokenProvider);
 
 // Create Event Hub with a SAS rule that allows sending to that Event Hub.
 EventHubDescription ed = new EventHubDescription("MY_EVENT_HUB") { PartitionCount = 32 };
 string eventHubSendKeyName = "EventHubSendKey";
 string eventHubSendKey = SharedAccessAuthorizationRule.GenerateRandomKey();
-SharedAccessAuthorizationRule eventHubSendRule = new SharedAccessAuthorizationRule(eventHubSendKeyName, ventHubSendKey, new[] { AccessRights.Send });
+SharedAccessAuthorizationRule eventHubSendRule = new SharedAccessAuthorizationRule(eventHubSendKeyName, eventHubSendKey, new[] { AccessRights.Send });
 ed.Authorization.Add(eventHubSendRule); 
 nm.CreateEventHub(ed);
 
@@ -131,13 +131,13 @@ ACS unterstützt mehrere Möglichkeiten, um Dienstidentitäten, vertrauende Seit
 
 Weitere Informationen zu Event Hubs finden Sie unter den folgenden Themen:
 
-- [Übersicht über Event Hubs]
+- [Übersicht über Ereignis-Hubs]
 - Eine vollständige [Beispielanwendung mit Verwendung von Event Hubs].
 - Eine [Messaginglösung mit Warteschlange] unter Verwendung von Service Bus-Warteschlangen.
 
-[Übersicht über Event Hubs]: event-hubs-overview.md
+[Übersicht über Ereignis-Hubs]: event-hubs-overview.md
 [Beispielanwendung mit Verwendung von Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [Messaginglösung mit Warteschlange]: ../cloud-services-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

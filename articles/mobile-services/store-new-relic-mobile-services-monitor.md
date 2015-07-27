@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie das New Relic-Add-On verwenden, um Ihren mobilen Dienst zu überwachen." 
 	documentationCenter="" 
 	authors="stepsic-microsoft-com" 
-	manager="carolz" 
+	manager="carolz"
 	editor="" 
 	services="mobile-services"/>
 
@@ -154,4 +154,4 @@ Danach aktivieren Sie die New Relic-Überwachung Ihres mobilen Diensts im [Verwa
 
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

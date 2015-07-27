@@ -40,4 +40,4 @@ Der Dienst basiert auf dem Azure-Ressourcen-Manager (ARM). Die Domänen und Eint
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

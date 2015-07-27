@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/24/2015" 
+	ms.date="07/03/2015" 
 	ms.author="cephalin"/>
 
 # Wiederherstellen einer Web-App in Azure App Service
@@ -23,7 +23,7 @@ In diesem Artikel erfahren Sie, wie Sie eine Web-App wiederherstellen, die zuvor
 
 Mit der Wiederherstellungsfunktion für Web-Apps können Sie Ihre Web-App bei Bedarf in einem vorherigen Zustand wiederherstellen oder eine neue Web-App auf der Grundlage einer Sicherung Ihrer ursprünglichen Web-App erstellen. Das Erstellen einer neuen Web-App, die parallel zur letzten Version ausgeführt wird, kann für A/B-Tests nützlich sein.
 
-Die Wiederherstellungsfunktion für Web-Apps ist auf dem Blatt **Sicherungen** im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) verfügbar, jedoch nur im Standard- oder Premium-Modus. Weitere Informationen zum Skalieren Ihrer App im Standard- oder Premium-Modus finden Sie unter [Skalieren von Web-Apps in Azure App Service](web-sites-scale.md). Beachten Sie, dass im Premium-Modus eine größere Anzahl von täglichen Sicherungen als im Standardmodus ausgeführt werden kann.
+Die Wiederherstellungsfunktion für Web-Apps ist auf dem Blatt **Sicherungen** im [Azure-Vorschauportal](http://portal.azure.com) verfügbar, jedoch nur im Standard- oder Premium-Modus. Weitere Informationen zum Skalieren Ihrer App im Standard- oder Premium-Modus finden Sie unter [Skalieren von Web-Apps in Azure App Service](web-sites-scale.md). Beachten Sie, dass im Premium-Modus eine größere Anzahl von täglichen Sicherungen als im Standardmodus ausgeführt werden kann.
 
 <a name="PreviousBackup"></a>
 ## So stellen Sie eine Web-App aus einer zuvor erstellten Sicherung wieder her
@@ -97,4 +97,4 @@ Auf dem Blatt "Details" werden die verfügbaren Informationen im Zusammenhang mi
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

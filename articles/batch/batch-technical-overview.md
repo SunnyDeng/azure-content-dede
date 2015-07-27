@@ -13,21 +13,21 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="04/28/2015"
+	ms.date="07/13/2015"
 	ms.author="danlep"/>
 
 
 #Azure Batch – Technische Übersicht
-Azure Batch unterstützt Sie beim Ausführen von größeren parallelen und leistungsstarken Anwendungen (High Performance Computing, HPC) in der Cloud. Es handelt sich dabei um einen Plattformdienst, über den die Auftragsplanung und automatische Skalierung einer verwalteten Sammlung virtueller Computer (VMs) zum Ausführen der Aufträge bereitgestellt werden. Mit dem Batch-Dienst können Sie Batchworkloads so konfigurieren, dass sie in Azure bei Bedarf oder nach einem Zeitplan ausgeführt werden. Das komplexe Planen von Aufträgen und Verwalten von virtuellen Computern auf der zugrunde liegenden Plattform entfällt.
+Azure Batch unterstützt Sie beim effizienten Ausführen von größeren parallelen und leistungsstarken Anwendungen (High Performance Computing, HPC) in der Cloud. Es handelt sich dabei um einen Plattformdienst, über den die Auftragsplanung und automatische Skalierung einer verwalteten Sammlung virtueller Computer (VMs) zum Ausführen der Aufträge bereitgestellt werden. Mit dem Batch-Dienst können Sie Batchworkloads so konfigurieren, dass sie in Azure bei Bedarf oder nach einem Zeitplan ausgeführt werden. Das komplexe Konfigurieren und Verwalten von HPC-Clustern, VMs oder Auftragsplanern entfällt.
 
->[AZURE.NOTE]Batch ist in der Vorschauphase. Zum Verwenden von Batch benötigen Sie ein Azure-Konto, und Sie müssen sich für "Batch Preview" registrieren. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)](http://azure.microsoft.com/develop/php/tutorials/create-a-windows-azure-account/).
+>[AZURE.NOTE]Zum Verwenden von Batch benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)](http://azure.microsoft.com/develop/php/tutorials/create-a-windows-azure-account/).
 
 
 ## Anwendungsfälle
 
 Batch nutzt die Flexibilität und die Skalierung der Cloud zur Unterstützung der *Batchverarbeitung* oder von *Batch Computing* – Es werden große Mengen an ähnlichen Aufgaben ausgeführt, um das gewünschte Ergebnis zu erzielen. Ein Befehlszeilenprogramm oder Skript erhält einen Satz von Dateien als Eingabe, verarbeitet die Daten in einer Reihe von Aufgaben und erstellt eine Gruppe von Ausgabedateien. Die Ausgabedateien können das endgültige Ergebnis oder ein Zwischenschritt in einem größeren Workflow sein.
 
-Batch Computing ist ein häufig genutztes Muster für Unternehmen, die Verarbeiten, Transformieren und Analysieren großer Datenmengen durchführen, entweder nach einem Zeitplan oder bei Bedarf. Es umfasst Verarbeitung am Ende der Schleife, z. B. bei täglichen Risikoberichten einer Bank oder bei Lohnbuchhaltung, die planmäßig ausgeführt werden muss. Darüber hinaus umfasst es umfangreiche Geschäfts-, Wissenschafts- und Engineering-Anwendungen, die in der Regel Tools und Ressourcen von einem Computecluster oder -raster benötigen. Anwendungen umfassen herkömmliche HPC-Anwendungen wie fluiddynamische Simulationen sowie spezielle Workloads in den Bereichen Automobilindustrie, Öl-und Gasförderung, Biowissenschaftsforschung und Erstellung digitaler Inhalte.
+Batch Computing ist ein häufig genutztes Muster für Unternehmen, die Verarbeiten, Transformieren und Analysieren großer Datenmengen durchführen, entweder nach einem Zeitplan oder bei Bedarf. Es umfasst Verarbeitung am Ende der Schleife, z. B. bei täglichen Risikoberichten einer Bank oder bei Lohnbuchhaltung, die planmäßig ausgeführt werden muss. Darüber hinaus umfasst es umfangreiche Geschäfts-, Wissenschafts- und Engineering-Anwendungen, die in der Regel Tools und Ressourcen von einem Computecluster oder -raster benötigen. Anwendungen umfassen herkömmliche HPC-Anwendungen wie fluiddynamische Simulationen sowie spezielle Workloads in Bereichen, die von der Erstellung digitaler Inhalte über Finanzdienstleistungen bis hin zur Biowissenschaftensforschung reichen.
 
 Batch funktioniert sehr gut bei intrinsisch parallelen (manchmal als "hochgradig parallel" bezeichnete) Anwendungen oder Workloads, mit denen parallele Aufgaben auf mehreren Computern ausgeführt werden, wie z. B. die Compute-VMs, die vom Batch-Dienst verwaltet werden. Siehe Abbildung 1.
 
@@ -43,127 +43,55 @@ Beispiele:
 * Analyse genetischer Sequenzen
 * Testen von Software
 
-Batch können Sie auch nutzen, um parallele Berechnungen mit einem Reduzierungsschritt am Ende und andere kompliziertere, nicht azyklische parallele Workloads auszuführen.
+Batch können Sie auch nutzen, um parallele Berechnungen mit einem Reduzierungsschritt am Ende und andere kompliziertere, parallele Workloads auszuführen.
 
->[AZURE.NOTE]Die Batch-Vorschau unterstützt derzeit Message-Passing-Interface (MPI)-Anwendungen.
+>[AZURE.NOTE]Derzeit können nur Windows-Server-Workloads mit Batch ausgeführt werden. Zudem unterstützt Batch derzeit keine Message-Passing-Interface (MPI)-Anwendungen.
 
 ## Entwicklungsszenarien
 
-Die REST-basierten Batch-APIs unterstützen zwei Entwicklungsszenarien, mit denen Sie die Konfiguration und Ausführung von Workloads Batch mit dem Batch-Dienst durchführen können:
+Batch unterstützt verschiedene Entwicklungsszenarien, mit denen Sie große, parallele Workloads mit dem Batch-Dienst konfigurieren und ausführen können. Diese Szenarien nutzen APIs zur Erstellung und Verwaltung von VM-Pools (Computeknoten) sowie zur Planung der Aufträge und Aufgaben, die auf ihnen ausgeführt werden. Unter [API-Grundlagen für Azure Batch](batch-api-basics.md) finden Sie weitere Informationen über die Batch-Konzepte.
 
-1. **Verteilen von Berechnungen als Arbeitsaufgaben** – Verwenden Sie die *Batch*-APIs, um einen flexiblen Pool von Compute-VMs zu erstellen und zu verwalten und Arbeitsaufgaben anzugeben, die darauf ausgeführt werden sollen. Dies gibt Ihnen vollständige Kontrolle über Ressourcen und erfordert, dass der Client die Ausführungspipeline für Aufgaben verwaltet, z. B. mit einem Workflowmanager oder Meta-Planer, der mit Batch-REST-APIs oder optional einem Auftragsmanagerfeature der Arbeitsaufgabe implementiert werden kann. Statt eines Serverclusters einrichten oder Code schreiben zu müssen, um Aufträge in die Warteschlange zu stellen und zu planen, automatisieren Sie die Planung von Computeaufträgen und skalieren einen Pool von Compute-VMs nach oben oder unten, um sie auszuführen. Als Teil der Angabe von Arbeitsaufgaben definieren Sie alle Abhängigkeiten und definieren die Verschiebung von Eingabe-und Ausgabedateien.
+Typische Batch-Entwicklungsszenarien finden Sie in den folgenden Abschnitten.
 
-2. **Veröffentlichen und Ausführen von Anwendungen mit dem Batch-Dienst** – Die *Batch Apps*-APIs sind für die höhere Ebene bestimmt. Sie können damit eine vorhandene Anwendung umschließen, sodass sie als Dienst für einen Pool mit virtuellen Computern ausgeführt wird, die im Hintergrund von Batch verwaltet werden. Bei der Anwendung kann es sich um eine Anwendung handeln, die heute auf Clientworkstations oder einem Compute Cluster ausgeführt wird. Das Batch Apps-Framework ist für die Verschiebung von Eingabe- und Ausgabedateien, Auftragsausführung, Auftragsverwaltung und Datenpersistenz verantwortlich. Batch-Apps ermöglicht Ihnen auch, Aufgaben dafür zu erstellen, wie Daten partitioniert werden, sowie für mehrere Schritte eines Auftrags. Enthalten ist eine REST-basierte API und das Batch Apps-Portal, auf das Sie vom Azure-Verwaltungsportal aus zugreifen können, und hilft Ihnen übermittelte Aufträge zu überwachen.
+### Horizontales Skalieren eines parallelen Workloads
 
+Verwenden Sie die Batch-API, um intrinsische parallele Aufgaben wie Bildrendering auf einem Pool von bis zu Tausenden Prozessorkernen horizontal zu skalieren. Anstatt einen Computecluster einrichten oder Code schreiben zu müssen, um Aufträge in die Warteschlange zu stellen und zu planen sowie die erforderlichen Ein- und Ausgabedaten zu verschieben, automatisieren Sie die Planung von großen Computeaufträgen und skalieren einen Pool von Compute-VMs nach oben oder unten, um sie auszuführen. Sie können Clientanwendungen oder Front-Ends schreiben, um Aufträge und Aufgaben nach Bedarf, nach einem Zeitplan oder als Teil eines größeren, von Tools wie [Azure Data Factory](https://azure.microsoft.com/documentation/services/data-factory/) verwalteten, Workflows auszuführen.
 
-## Batch-Konzepte
-
-In den folgenden Abschnitten werden wichtige Konzepte für die Arbeit mit dem Batch-Dienst und APIs zusammengefasst. Weitere Informationen finden Sie unter [API-Grundlagen für Azure Batch](batch-api-basics.md).
-
-* [Batch-Konto](#BKMK_Account)
-* [TVMs und Pools](#BKMK_TVM)
-* [Arbeitsaufgaben, Aufträge und Aufgaben](#BKMK_Workitem)
-* [Dateien und Verzeichnisse](#BKMK_Files)
-
-### <a id="BKMK_Account">Batch-Konto</a>
-Sie benötigen ein eindeutiges **Batch-Konto**, um den Batch-Dienst verwenden zu können. Alle Anforderungen, die Sie an den Batch-Dienst stellen, müssen mit dem Namen des Kontos und dem dazugehörigen Zugriffsschlüssel authentifiziert werden.
-
-Sie können ein Batch-Konto erstellen und Zugriffsschlüssel für das Konto im Azure-Portal oder mit den [Batch-PowerShell-Cmdlets](batch-powershell-cmdlets-get-started.md) verwalten.
-
-So erstellen im Portal ein Batch-Konto
-
-1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com) an.
-2. Klicken Sie nacheinander auf **Neu**, **Compute**, **Batch-Dienst** und **Schnellerfassung**. ![Erstellen eines Batch-Kontos][account_portal]
-
-3. Geben Sie Folgendes ein:
-
-	* Geben Sie unter **Kontoname** einen eindeutigen Namen ein, der in der Batch-Konto-URL verwendet werden soll.
-	* Wählen Sie im Bereich **Region** eine Region aus, in der Batch verfügbar ist.
-	* Wenn Sie über mehrere Abonnements verfügen, wählen Sie unter **Abonnement** ein verfügbares Abonnement aus, dem die Verwendung von Batch in Rechnung gestellt werden soll.
-
-
-### <a id="BKMK_TVM">TVMs und Pools</a>
-
-Eine **TVM** (Task Virtual Machine) ist ein virtueller Azure-Computer, den der Batch-Dienst für die Ausführung einer bestimmten Aufgabe für Ihre Anwendung zuweist – z. B. eine ausführbare Datei (.exe) oder, im Fall von Batch Apps, mindestens ein Programm aus einem Anwendungsabbild. Im Gegensatz zu einem typischen virtuellen Azure-Computer wird eine TVM nicht direkt bereitgestellt oder verwaltet. Stattdessen erstellt und verwaltet der Batch-Dienst TVMs als **Pool** mit ähnlich konfigurierten virtuellen Computern, wie in Abbildung 2 dargestellt.
-
-![Pool und TVMs][TVM_pool]
-
-**Abbildung 2: Pool mit TVMs**
-
-Bei Verwendung der Batch-APIs können Sie direkt einen Pool erstellen oder festlegen, dass ein Pool automatisch erstellt wird, wenn Sie die zu erledigenden Aufgaben angeben. Wenn Sie die Batch Apps-APIs verwenden, wird ein Pool automatisch erstellt, wenn Sie die cloudfähige Batch-Anwendung ausführen.
-
-
-Attribute aus einem Pool enthalten:
-
-* Eine [Größe](http://msdn.microsoft.com/library/azure/dn197896.aspx) für die TVMs
-* Das Betriebssystem, das auf den TVMs ausgeführt wird
-* Die maximale Anzahl von TVMs
-* Eine Skalierungsrichtlinie für den Pool – Eine Formel, die dynamisch anhand der aktuellen Workload und der Ressourcennutzung die Anzahl der TVMs anpasst, die Aufgaben verarbeiten.
-* Gibt an, ob Firewallports auf den TVMs aktiviert sind, um Intrapoolkommunikation zuzulassen.
-* Ein Zertifikat, das auf den TVMs installiert ist – z. B. zum Authentifizieren des Zugriffs auf ein Speicherkonto.
-* Eine Startaufgabe für TVMs, für einmalige Vorgänge wie die Installation von Anwendungen oder das Herunterladen von Daten, die von Aufgaben verwendet werden.
-
->[AZURE.NOTE]Derzeit können auf TVMs nur die Betriebssysteme Windows Server 2012 R2, Windows Server 2012 und Windows Server 2008 R2 SP1 ausgeführt werden.
-
-Ein Pool kann nur von dem Batch-Konto verwendet werden, in dem er erstellt wurde. Ein Batch-Konto kann über mehrere Pools verfügen.
-
-Jeder TVM in einem Pool werden ein eindeutiger Name und eine dazugehörige IP-Adresse zugewiesen. Wenn eine TVM aus einem Pool entfernt wird, gehen die Änderungen verloren, die am Betriebssystem, lokalen Dateien, ihrem Namen und ihrer IP-Adresse vorgenommen wurden. Wenn eine TVM einen Pool verlässt, endet ihre Lebensdauer.
-
-
-### <a id="BKMK_Workitem">Arbeitsaufgaben, Aufträge und Aufgaben</a>
-
-Eine **Arbeitsaufgabe** ist eine Vorlage, die angibt, wie eine Anwendung auf TVMs in einem Pool ausgeführt wird. Ein **Auftrag** ist eine geplante Arbeitsaufgabe und kann einmal oder wiederholt erfolgen. Ein Auftrag besteht aus mehreren **Aufgaben**. Abbildung 3 zeigt die grundlegenden Beziehungen.
-
-![Arbeitsaufgabe, Auftrag und Aufgaben][job_task]
-
-**Abbildung 3: Arbeitsaufgabe, Auftrag und Aufgaben**
-
-Je nach den APIs, die Sie für die Entwicklung mit Batch verwenden, müssen Sie mehr oder weniger Details zu Arbeitsaufgaben, Aufträgen und Aufgaben verwalten.
-
-* Bei der Entwicklung einer Anwendung mit Batch-APIs müssen Sie programmgesteuert alle Arbeitsaufgaben, Aufträge und Aufgaben definieren und die TVM-Pools konfigurieren, die die Aufgaben ausführen.
-
-* Wenn Sie eine Clientanwendung mithilfe der Batch Apps–APIs und -Tools integrieren, können Sie Komponenten verwenden, die automatisch einen Auftrag in Aufgaben unterteilen, die Aufgaben verarbeiten und die Ergebnisse der einzelnen Vorgänge für die abschließenden Auftragsergebnisse zusammenführen. Wenn Sie die Workload an den Batch-Dienst senden, verwaltet das Batch Apps-Framework die Aufträge und führt die Aufgaben auf den TVMs aus.
-
-
-
-### <a id="BKMK_Files">Dateien und Verzeichnisse</a>
-
-Bei einer Datei handelt es sich um Daten, die als Eingabe für eine Aufgabe des Auftrags verwendet werden. Einer Aufgabe kann keine, eine oder es können ihr mehrere Eingabedateien zugeordnet sein. Dieselbe Datei kann auch für mehrere Aufgaben verwendet werden, beispielsweise die Aufgaben in einem Auftrag zum Rendern eines Films. Hier kann es häufig verwendete Strukturen und Modelle geben. Bei Aufgaben in einem Datenanalyseauftrag können die Dateien eine Reihe von Beobachtungen oder Messungen sein.
-
-Für jede Aufgabe ist ein Arbeitsverzeichnis vorhanden, in dem die verarbeiteten Eingabedaten und die erstellten Ausgabedaten enthalten sind. Diese Verzeichnisse und Dateien stehen für die Verwendung durch andere Tasks zur Verfügung, während ein Auftrag ausgeführt wird. Alle Aufgaben, Dateien und Verzeichnisse auf einer TVM gehören einem einzelnen Benutzerkonto.
-
-Je nach den mit Batch verwendeten APIs müssen Sie auch wieder mehr oder weniger Details zu den Eingabe- und Ausgabedateien für Ihre Aufträge und Aufgaben verwalten. Bei der Entwicklung mit Batch-APIs geben Sie diese Abhängigkeiten und Verschiebungen von Dateien explizit an. Mit Batch Apps verarbeitet das Framework die meisten dieser Details für Sie.
-
-## Workflow für Arbeitsaufgaben
-In Abbildung 4 ist dargestellt, wie Sie eine Anwendung an einen Pool übermitteln, in dem diese für die Verarbeitung verteilt wird. Dabei wird die Batch-API verwendet.
+Abbildung 2 zeigt einen vereinfachten Workflow zum Übermitteln einer Anwendung in einen Batch-Pool, in dem er zur Verarbeitung verteilt wird.
 
 ![Workflow für Arbeitsaufgaben][work_item_workflow]
 
-**Abbildung 4: Workflows für die Verteilung von Arbeitsaufgaben auf virtuelle Computer eines Pools**
+**Abbildung 2: Horizontales Skalieren eines parallelen Workloads auf Batch**
 
-1.	Hochladen von Eingabedateien (z. B. Quelldaten oder Bilder), die für einen Auftrag zu einem Azure-Speicherkonto erforderlich sind. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Der Batch-Dienst lädt sie beim Ausführen der Aufgabe in eine TVM.
-2.	Laden Sie die abhängigen Binärdateien in das Speicherkonto hoch. Die Binärdateien enthalten das Programm, das durch die Aufgabe und die abhängigen Assemblys ausgeführt wird. Auf diese Dateien muss auch aus dem Speicher zugegriffen werden und sie werden auf die TVM geladen.
-3.	Erstellen Sie einen Pool von TVMs, geben Sie die Größe der TVMs im Pool, das ausgeführte Betriebssystem und andere Eigenschaften an. Wenn eine Aufgabe ausgeführt wird, wird ihr eine TVM aus diesem Pool zugewiesen.
-4.	Erstellen Sie ein Arbeitselement. Ein Auftrag wird automatisch erstellt, wenn Sie eine Arbeitsaufgabe erstellen. Mit einem Arbeitselement können Sie einen Auftrag von Aufgaben verwalten.
+1.	Hochladen von Eingabedateien (z. B. Quelldaten oder Bilder), die für einen Auftrag zu einem Azure-Speicherkonto erforderlich sind. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Der Batch-Dienst lädt Dateien in Computeknoten, wenn die Aufgaben ausgeführt werden.
+2.	Laden Sie die abhängigen Binärdateien in das Speicherkonto hoch. Die Binärdateien enthalten das Programm, das durch die Aufgabe und die abhängigen Assemblys ausgeführt wird. Auf diese Dateien muss auch aus dem Speicher zugegriffen werden, und sie werden auf die Computeknoten geladen.
+3.	Erstellen Sie einen Pool von Computeknoten, indem Sie Eigenschaften wie die Größe der virtuellen Computer und das ausgeführte Betriebssystem festlegen. Sie können auch bestimmen, wie die Anzahl der Knoten im Pool dem Workload entsprechend nach oben oder unten skaliert wird. Wenn eine Aufgabe ausgeführt wird, wird ihr ein Knoten aus diesem Pool zugewiesen.
+4.	Definieren Sie einen Auftrag, der im Pool ausgeführt werden soll.
 5.	Hinzufügen von Aufgaben zum Auftrag. Jede Aufgabe verwendet das Programm, das Sie hochgeladen haben, um Informationen aus einer hochgeladenen Datei zu verarbeiten.
 6.	Führen Sie die Anwendung aus, und überwachen Sie die Ergebnisse der Ausgabe.
 
-## Workflow zum Veröffentlichen und Ausführen von Anwendungen
-Abbildung 5 zeigt einen einfachen Arbeitsablauf zum Veröffentlichen einer Anwendung mit der Batch Apps-API und zum darauf folgenden Übermitteln von Aufträgen an die Anwendung mit Batch.
+
+### Bereitstellen von rechenintensiven Apps für die Cloud
+
+Sie können die Vorschau-Batch-Apps-API verwenden, um eine vorhandene Anwendung zu umschließen, sodass sie als Dienst für einen Pool von Computenodes ausgeführt wird, die im Hintergrund von Batch verwaltet werden. Bei der Anwendung kann es sich um eine Anwendung handeln, die heute auf Clientworkstations oder einem Compute Cluster ausgeführt wird. Sie können den Dienst weiterentwickeln, sodass Benutzer Spitzenauslastungen in die Cloud auslagern oder vollständig in der Cloud arbeiten können. Das Batch-Apps-Framework ist für die Verschiebung von Eingabe- und Ausgabedaten, das Aufteilen von Aufträgen in Aufgaben, die Auftrags- und Aufgabenverarbeitung sowie die Datenpersistenz verantwortlich.
+
+>[AZURE.IMPORTANT]Azure wird die Batch-Apps-API nur in Vorschauform bieten. Sie sollten sie nur zur Entwicklung von Testprojekten oder Machbarkeitsstudien verwenden. Wichtige Batch-Apps-Funktionen werden in künftigen Versionen in die Batch-API integriert.
+
+Abbildung 3 zeigt einen einfachen Arbeitsablauf zum Veröffentlichen einer Anwendung mit der Batch Apps-API und zur Genehmigung für Benutzer, Aufträge an die Anwendung zu übermitteln.
 
 ![Workflow zum Veröffentlichen von Anwendungen][app_pub_workflow]
 
-**Abbildung 5: Workflow zum Veröffentlichen und Ausführen einer Anwendung mit Batch Apps**
+**Abbildung 3: Workflow zum Veröffentlichen und Ausführen einer Anwendung mit Batch Apps**
 
 1.	Vorbereiten eines **Anwendungsabbilds** – Eine ZIP-Datei mit den vorhandenen ausführbaren Dateien der Anwendung und allen benötigten unterstützenden Dateien. Dabei kann es sich um dieselben ausführbaren Dateien handeln, die mit einer herkömmlichen Serverfarm oder einem Cluster ausgeführt werden.
-2.	Erstellen Sie eine ZIP-Datei der **Cloud-Assembly**, die Workloads für den Batch-Dienst aufruft und disponiert. Diese enthält zwei Komponenten, die über das SDK verfügbar sind:
+2.	Erstellen Sie eine ZIP-Datei der **Cloud-Assembly**, die Workloads für den Batch-Dienst aufruft und disponiert. Dies umfasst zwei Komponenten:
 
 	a. **Auftragssplitter** – Unterteilt einen Auftrag in Aufgaben, die unabhängig voneinander verarbeitet werden können. Beispielsweise würde der Auftragssplitter bei einer Animation einen Auftrag zum Rendern eines Films in einzelne Frames unterteilen.
 
 	b. **Aufgabenprozessor** – Ruft die ausführbare Datei der Anwendung für eine bestimmte Aufgabe auf. Der Prozessor würde z. B. bei einer Animation ein Renderingprogramm zum Rendern des einzelnen Frames aufrufen, der von der Aufgabe angegeben wurde.
 
-3.	Verwenden Sie die Batch Apps–APIs oder Entwicklertools zum Hochladen von Zip-Dateien, die Sie in den beiden vorherigen Schritten auf Azure-Speicherkonten vorbereitet haben. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Dies wird normalerweise einmal pro Anwendung von einem Dienstadministrator ausgeführt.
-4.	Bieten Sie eine Möglichkeit zum Übermitteln von Aufträgen an den aktivierten Anwendungsdienst in Azure. Dies kann ein Plug-In für die Benutzeroberfläche der Anwendung, ein Webportal oder einen unbeaufsichtigten Dienst als Teil des Back-End-Systems sein. Es stehen für das SDK Beispiele zur Verfügung, um verschiedene Optionen zu veranschaulichen.
+3.	Verwenden Sie die Batch Apps–API oder Entwicklertools zum Hochladen von Zip-Dateien, die Sie in den beiden vorherigen Schritten auf Azure-Speicherkonten vorbereitet haben. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Dies wird normalerweise einmal pro Anwendung von einem Dienstadministrator ausgeführt.
+4.	Bieten Sie eine Möglichkeit zum Übermitteln von Aufträgen an den aktivierten Anwendungsdienst in Azure. Dies kann ein Plug-In für die Benutzeroberfläche der Anwendung, ein Webportal oder einen unbeaufsichtigten Dienst als Teil des Back-End-Systems sein.
 
 	Zum Ausführen eines Auftrags:
 
@@ -173,7 +101,43 @@ Abbildung 5 zeigt einen einfachen Arbeitsablauf zum Veröffentlichen einer Anwen
 
 	c. Überwachen Sie den Auftragsstatus mithilfe der APIs oder dem Batch Apps-Portal.
 
-	d. Laden Sie die Ausgaben herunter.
+
+
+## <a id="BKMK_Account">Batch-Konto</a>
+Sie müssen mindestens ein eindeutiges **Batch-Konto** erstellen, um den Batch-Dienst zu verwenden und damit zu entwickeln. Alle Anforderungen, die Sie an den Batch-Dienst stellen, müssen mit dem Namen eines Kontos und dem dazugehörigen Zugriffsschlüssel authentifiziert werden.
+
+Sie können ein Batch-Konto erstellen und Zugriffsschlüssel für das Konto im Azure-Vorschauportal oder mit den [Batch-PowerShell-Cmdlets](batch-powershell-cmdlets-get-started.md) verwalten.
+
+So erstellen im Portal ein Batch-Konto
+
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+
+2. Klicken Sie auf **Neu** > **Compute**> **Marketplace** > **Alles** und geben Sie dann *Batch* in das Suchfeld ein.
+
+	![Batch im Marketplace][marketplace_portal]
+
+3. Klicken Sie in den Suchergebnissen auf **Batch-Dienst**, und klicken Sie dann auf **Erstellen**.
+
+4. Geben Sie die folgenden Informationen auf dem Blatt**Neues Batch-Konto** ein:
+
+	a. Geben Sie unter **Kontoname** einen eindeutigen Namen ein, der in der Batch-Konto-URL verwendet werden soll.
+
+	>[AZURE.NOTE]Der Batch-Kontoname muss in Azure eindeutig sein, zwischen 3 und 24 Zeichen umfassen und kann nur Kleinbuchstaben und Zahlen enthalten.
+
+	b. Klicken Sie auf **Ressourcengruppe** wählen eine vorhandene Ressourcengruppe für das Konto aus, oder erstellen eine neue.
+
+	c. Wenn Sie über mehrere Abonnements verfügen, klicken Sie auf **Abonnement**, um ein verfügbares Abonnement auszuwählen, in dem das Konto erstellt wird.
+
+	d. Wählen Sie in **Speicherort** eine Azure-Region aus, in der Batch verfügbar ist.
+
+	![Erstellen eines Batch-Kontos][account_portal]
+
+5. Klicken Sie auf **Erstellen**, um die Kontoerstellung abzuschließen.
+
+
+Nachdem das Konto erstellt wurde, finden Sie es im Portal vor, um Zugriffsschlüssel und andere Einstellungen zu verwalten. Klicken Sie beispielsweise auf das Symbol zum Verwalten der Zugriffsschlüssel.
+
+![Batch-Kontoschlüssel][account_keys]
 
 ## Zusätzliche Ressourcen
 
@@ -183,10 +147,10 @@ Abbildung 5 zeigt einen einfachen Arbeitsablauf zum Veröffentlichen einer Anwen
 * [REST-API-Referenz für Azure Batch Apps](http://go.microsoft.com/fwlink/p/?LinkId=517804)
 
 [parallel]: ./media/batch-technical-overview/parallel.png
-[TVM_pool]: ./media/batch-technical-overview/TVM_pool.png
-[job_task]: ./media/batch-technical-overview/job_task.png
-[account_portal]: ./media/batch-technical-overview/account_portal.png
+[marketplace_portal]: ./media/batch-technical-overview/marketplace_batch.PNG
+[account_portal]: ./media/batch-technical-overview/batch_acct_portal.png
+[account_keys]: ./media/batch-technical-overview/account_keys.PNG
 [work_item_workflow]: ./media/batch-technical-overview/work_item_workflow.png
 [app_pub_workflow]: ./media/batch-technical-overview/app_pub_workflow.png
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -93,7 +93,7 @@ Die Datei **package.json** ist eine der im Stammverzeichnis des Projekts erstell
 
 	![Screenshot der Registerkarte "package.json"](./media/documentdb-nodejs-application/image17.png)
 
-       Dadurch wird Node (und später Azure) darüber informiert, dass Ihre Anwendung von diesen zusätzlichen Modulen abhängig ist.
+       Dadurch wird Node (und später Azure) darüber informiert, dass Ihre Anwendung von diesen zusätzlichen Modulen abhängig ist.
 
 ## <a name="_Toc395783180"></a>Schritt 4: Verwenden des DocumentDB-Diensts in einer Knotenanwendung
 
@@ -176,8 +176,7 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 				
 		module.exports = DocDBUtils;
 
-> [AZURE.TIP]createCollection akzeptiert einen optionalen requestOptions-Parameter, der für die Festlegung des Angebotstyps für die Sammlung verwendet werden kann. Wenn kein requestOptions.offerType-Wert angegeben ist, wird die Sammlung mit den Standardangebotstyp erstellt. 
-> Weitere Informationen zu DocumentDB-Angebotstypen finden Sie in [Leistungsstufen in DocumentDB](documentdb-performance-levels.md)
+> [AZURE.TIP]createCollection akzeptiert einen optionalen requestOptions-Parameter, der für die Festlegung des Angebotstyps für die Sammlung verwendet werden kann. Wenn kein requestOptions.offerType-Wert angegeben ist, wird die Sammlung mit den Standardangebotstyp erstellt. Weitere Informationen zu DocumentDB-Angebotstypen finden Sie in [Leistungsstufen in DocumentDB](documentdb-performance-levels.md)
 		
 3. Speichern und schließen Sie die Datei **docdbUtils.js**.
 
@@ -390,7 +389,7 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		
 		module.exports = config;
 
-3. Aktualisieren Sie in der Datei **config.js** die Werte für HOST und AUTH_KEY unter Verwendung der Werte im Blatt "Schlüssel" Ihres DocumentDB-Kontos im [Microsoft Azure-Portal](http://portal.azure.com):
+3. Aktualisieren Sie in der Datei **config.js** die Werte für HOST und AUTH_KEY unter Verwendung der Werte im Blatt „Schlüssel“ Ihres DocumentDB-Kontos im [Microsoft Azure-Vorschauportal](http://portal.azure.com):
 
 4. Speichern und schließen Sie die Datei **config.js**.
  
@@ -424,7 +423,7 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		app.post('/completetask', taskList.completeTask.bind(taskList));
 
 
-6. Diese Zeilen definieren eine neue Instanz unseres **TaskDao**-Objekts mit einer neuen Verbindung zu DocumentDB (unter Verwendung der aus **config.js** gelesenen Werte). Sie initialisieren das Task-Objekt und binden dann Formularaktionen an Methoden auf unserem **TaskList**-Controller. 
+6. Diese Zeilen definieren eine neue Instanz unseres **TaskDao**-Objekts mit einer neuen Verbindung zu DocumentDB (unter Verwendung der aus **config.js** gelesenen Werte). Sie initialisieren das Task-Objekt und binden dann Formularaktionen an Methoden auf unserem **TaskList**-Controller.
 
 7. Speichern und schließen Sie abschließend die Datei **app.js**. Wir sind fast fertig.
  
@@ -451,8 +450,7 @@ Jetzt konzentrieren wir uns auf die Erstellung der Benutzeroberfläche, um den B
 
 
 
-	Dadurch wird dem **Jade**-Modul mitgeteilt, dass für unsere Anwendung einige HTML-Elemente dargestellt werden müssen. Das Modul erstellt dann einen **Block** mit der Bezeichnung **content**, in dem wir das Layout für unsere Inhaltsseiten bereitstellen können.
-	Speichern und schließen Sie die Datei **layout.jade**.
+	Dadurch wird dem **Jade**-Modul mitgeteilt, dass für unsere Anwendung einige HTML-Elemente dargestellt werden müssen. Das Modul erstellt dann einen **Block** mit der Bezeichnung **content**, in dem wir das Layout für unsere Inhaltsseiten bereitstellen können. Speichern und schließen Sie die Datei **layout.jade**.
 
 4. Öffnen Sie nun die Datei **index.jade**, d. h. die Ansicht, die von der Anwendung verwendet wird, und ersetzen Sie den Inhalt der Datei durch Folgendes:
 
@@ -496,9 +494,7 @@ Jetzt konzentrieren wir uns auf die Erstellung der Benutzeroberfläche, um den B
 
 	Dadurch wird das Layout erweitert und Inhalt für den Platzhalter **content** bereitgestellt, den wir zuvor in der Datei **layout.jade** gesehen haben.
 	
-	In diesem Layout haben wir zwei HTML-Formulare erstellt. 
-	Das erste Formular enthält eine Tabelle für unsere Daten sowie eine Schaltfläche, mit der die Elemente durch Übermittlung an die **/completetask**-Methode des Controllers aktualisiert werden können. 
-	Das zweite Formular enthält zwei Eingabefelder und eine Schaltfläche, mit der Sie ein neues Element durch Übermittlung an die **/addtask**-Methode des Controllers erstellen können.
+	In diesem Layout haben wir zwei HTML-Formulare erstellt. Das erste Formular enthält eine Tabelle für unsere Daten sowie eine Schaltfläche, mit der die Elemente durch Übermittlung an die **/completetask**-Methode des Controllers aktualisiert werden können. Das zweite Formular enthält zwei Eingabefelder und eine Schaltfläche, mit der Sie ein neues Element durch Übermittlung an die **/addtask**-Methode des Controllers erstellen können.
 	
 	Dies sollte jetzt alles sein, damit unsere Anwendung funktioniert.
 
@@ -559,8 +555,8 @@ Glückwunsch! Sie haben Ihre erste Node.js-Express-Webanwendung mit Azure Docume
 
 Den Quellcode für die vollständige Referenzanwendung können Sie [hier](https://github.com/Azure/azure-documentdb-node/tree/master/tutorial/todo) herunterladen.
 
-[Node.js]: http://nodejs.org/
-[Git]: http://git-scm.com/
-
-<!--HONumber=52-->
+  [Node.js]: http://nodejs.org/
+  [Git]: http://git-scm.com/
  
+
+<!---HONumber=July15_HO3-->

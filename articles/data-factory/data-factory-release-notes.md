@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/10/2015" 
+	ms.date="07/07/2015" 
 	ms.author="spelluru"/>
 
 # Versionshinweise für Azure Data Factory
@@ -112,4 +112,4 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

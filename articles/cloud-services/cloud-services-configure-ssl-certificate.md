@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/16/2015"
+	ms.date="06/28/2015"
 	ms.author="adegeo"/>
 
 
@@ -21,13 +21,20 @@
 
 # Konfigurieren von SSL für eine Anwendung in Azure
 
-[AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
+> [AZURE.SELECTOR]
+- [Azure Portal](cloud-services-configure-ssl-certificate.md)
+- [Azure Preview Portal](cloud-services-configure-ssl-certificate-portal.md)
 
 Secure Socket Layer (SSL)-Verschlüsselung ist die am häufigsten verwendete Methode zur Sicherung von Daten im Internet. Im Folgenden erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Webrolle angeben und ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können.
 
 > [AZURE.NOTE]Die Prozesse in dieser Aufgabe gelten für Azure-Cloud-Dienste. Die Vorgehensweise für Websites finden Sie unter [Configuring an SSL certificate for an Azure web site](../web-sites-configure-ssl-certificate.md) (Konfigurieren eines SSL-Zertifikats für eine Azure-Website, in englischer Sprache).
 
 Diese Aufgabe erfordert die Verwendung einer Produktionsbereitstellung. Informationen zur Verwendung einer Stagingbereitstellung erhalten Sie am Ende dieses Themenabschnitts.
+
+Lesen Sie [dies](cloud-services-how-to-create-deploy.md) zuerst, wenn Sie noch keinen Clouddienst erstellt haben.
+
+[AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
+
 
 ## Schritt 1: Beziehen eines SSL-Zertifikats
 
@@ -105,27 +112,22 @@ Ihre Anwendung muss so konfiguriert sein, dass das Zertifikat verwendet wird. Au
 
 Die Definitions- und Konfigurationsdateien für den Dienst wurden aktualisiert. Erstellen Sie jetzt Ihr Bereitstellungspaket und laden Sie es in Azure hoch. Wenn Sie **cspack** verwenden, stellen Sie sicher, dass Sie nicht die Kennzeichnung **/generateConfigurationFile** verwenden, da dies die Zertifikatinformationen überschreibt, die Sie zuvor eingefügt haben.
 
-## Schritt 3: Hochladen des Bereitstellungspakets und des Zertifikats
+## Schritt 3: Hochladen eines Zertifikats
 
 Ihr Bereitstellungspaket wurde so aktualisiert, dass das Zertifikat verwendet wird. Außerdem wurde ein HTTPS-Endpunkt hinzugefügt. Jetzt können Sie das Paket und das Zertifikat in Azure über das Verwaltungsportal hochladen
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal][] an. 
-2. Klicken Sie auf **Neu**, dann auf **Cloud Service** und schließlich auf **Custom Create**.
-3. Geben Sie im Dialog **Create a cloud service** Werte für URL, Region/Affinitätsgruppe und Abonnement ein. Stellen Sie sicher, dass die Option **Deploy a cloud service package now** aktiviert ist, und klicken Sie dann auf die Schaltfläche **Weiter**.
-3. Geben Sie im Dialog **Publish your cloud service** die erforderlichen Informationen für Ihren Clouddienst ein, wählen Sie für die Umgebung **Production** aus, und stellen Sie sicher, dass **Add certificates now** aktiviert ist. (Wenn eine der Rollen eine einzelne Instanz enthält, stellen Sie sicher, dass **Deploy even if one or more roles contain a single instance** aktiviert ist.) 
+2. Klicken Sie im linken Navigationsbereich auf **Cloud Services**.
+3. Klicken Sie auf den gewünschten Clouddienst.
+4. Klicken Sie auf die Registerkarte **Zertifikate**.
 
-    ![Clouddienst veröffentlichen][0]
+    ![Klicken Sie auf die Registerkarte „Zertifikate“.](./media/cloud-services-configure-ssl-certificate/click-cert.png)
 
-4.  Klicken Sie auf die Schaltfläche **Weiter**.
-5.  Geben Sie im Dialog **Add Certificate** den Speicherort für das SSL-Zertifikat (Datei im PFX-Format) und das Kennwort für das Zertifikat ein, und klicken Sie auf **attach certificate**.  
+5. Klicken Sie auf die Schaltfläche **Upload**.
 
-    ![Zertifikat hinzufügen][1]
-
-6.  Stellen Sie sicher, dass Ihr Zertifikat im Bereich **Attached Certificates** aufgelistet ist.
-
-    ![Angehängte Zertifikate][4]
-
-7.  Klicken Sie auf die Schaltfläche **Complete**, um den Clouddienst zu erstellen. Wenn sich die Bereitstellung im Status **Ready** befindet, können Sie mit den nächsten Schritten fortfahren.
+    ![Hochladen](./media/cloud-services-configure-ssl-certificate/upload-button.png)
+    
+6. Geben Sie **Datei** und **Kennwort** an, und klicken Sie dann auf **Fertig stellen** (das Häkchen).
 
 ## Schritt 4: Herstellen einer Verbindung mit der Rolleninstanz über HTTPS
 
@@ -161,4 +163,4 @@ Wenn Sie SSL für eine Staging- statt für eine Produktionsbereitstellung verwen
   [Konfigurieren eines SSL-Zertifikats für einen HTTPS-Endpunkt]: http://msdn.microsoft.com/library/azure/ff795779.aspx
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

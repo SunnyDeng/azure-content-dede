@@ -125,7 +125,7 @@ Führen Sie in einem Docker-Host folgenden Befehl aus: ```
 ## Ausführen von Azure-CLI-Befehlen
 
 Sobald die Azure-Befehlszeilenschnittstelle installiert worden ist, können Sie den Befehl **azure** in Ihrer Befehlszeilenschnittstelle (Bash, Terminal, cmd.exe use.) verwenden, um auf die Befehle der Azure-Befehlszeilenschnittstelle zuzugreifen. Um den Hilfebefehl in Windows auszuführen, starten Sie beispielsweise eine Eingabeaufforderung ("cmd.exe") mit Administratorrechten: ```
-	C:\> azure help
+	c:> azure help
 ```
 
 Jetzt sind Sie soweit. Als Nächstes können Sie sich [von der Azure-Befehlszeilenschnittstelle aus mit Ihrem Azure-Abonnement verbinden](xplat-cli-connect.md) und die **azure**-Befehle verwenden.
@@ -153,4 +153,4 @@ Jetzt sind Sie soweit. Als Nächstes können Sie sich [von der Azure-Befehlszeil
 [cliasm]: virtual-machines/virtual-machines-command-line-tools.md
 [cliarm]: virtual-machines/xplat-cli-azure-resource-manager.md
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

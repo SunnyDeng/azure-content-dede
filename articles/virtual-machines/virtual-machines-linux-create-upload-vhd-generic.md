@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Erstellen und Hochladen einer Linux-VHD in Azure" 
-	description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein Linux-Betriebssystem enthält." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="szarkos" 
-	manager="timlt" 
+	pageTitle="Erstellen und Hochladen einer Linux-VHD in Azure"
+	description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die ein Linux-Betriebssystem enthält."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="szarkos"
+	manager="timlt"
 	editor="tysonn"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/15/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="05/15/2015"
 	ms.author="szarkos"/>
 
 
@@ -92,7 +92,7 @@ Wenn Sie nicht in einer Windows-Umgebung arbeiten, sollten Sie die Konvertierung
 		echo "Rounded Size = $rounded_size"
 
  3. Ändern Sie die Größe des RAW-Datenträgers mit $rounded_size, wie im obigen Skript festgelegt:
- 
+
 		# qemu-img resize MyLinuxVM.raw $rounded_size
 
  4. Konvertieren Sie nun den RAW-Datenträger zurück in eine virtuelle Festplatte mit fester Größe:
@@ -189,7 +189,4 @@ Der [Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md) (waagent) is
 
 - Sie müssen den virtuellen Computer anschließend herunterfahren und die virtuelle Festplatte in Azure hochladen.
 
-
- 
-
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

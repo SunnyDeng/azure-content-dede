@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/24/2015" 
+	ms.date="06/29/2015" 
 	ms.author="juliako"/>
 
 
@@ -70,4 +70,4 @@ Um ein Supportticket zu öffnen, gehen Sie folgendermaßen vor:
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

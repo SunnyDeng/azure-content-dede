@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/20/2015"
+	ms.date="06/30/2015"
 	ms.author="kirillg"/>
 
 # <a name="getting-started"> </a>Ich verwende Mobile Services. Welche Vorteile bietet App Service?
@@ -67,4 +67,4 @@ Mit *Azure App Service* können Sie jetzt mehrere private Test- und Stagingumgeb
 Sobald die Funktion *Mobile Azure App Service-App* allgemein verfügbar wird, stellen wir eine nahtlose Migrationsmöglichkeit für Ihre vorhandenen Mobile Services auf App Service bereit, falls Sie die Migration durchführen möchten. In der Zwischenzeit können Sie sich mithilfe dieses [Lernprogramms](app-service-mobile-dotnet-backend-migrating-from-mobile-services-preview.md) mit *App Service* vertraut machen und die Vorteile von *App Service* für Ihre vorhandenen Mobile Service-Projekte nutzen.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -498,4 +498,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [Azure Messaging-Komponente]: http://components.xamarin.com/view/azure-messaging
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

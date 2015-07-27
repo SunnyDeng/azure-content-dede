@@ -74,4 +74,4 @@ Erhalten Sie Informationen zum [Data Warehouse-Workload].
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

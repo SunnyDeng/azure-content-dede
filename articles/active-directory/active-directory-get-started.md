@@ -12,8 +12,8 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.date="06/02/2015"
+	ms.topic="article"
+	ms.date="07/02/2015"
 	ms.author="curtand"/>
 
 # Erste Schritte mit Azure AD
@@ -43,6 +43,5 @@ Azure AD bietet Administratoren eine Reihe von Berichten. Die kostenpflichtigen 
 
 * [Als Organisation für Azure registrieren](sign-up-organization.md)
 * [Azure-Identität](fundamentals-identity.md)
- 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

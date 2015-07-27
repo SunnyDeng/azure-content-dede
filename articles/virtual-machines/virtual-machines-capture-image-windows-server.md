@@ -1,26 +1,26 @@
-<properties 
-	pageTitle="Erfassen eines Images des virtuellen Computers unter Windows Server" 
-	description="Erfahren Sie, wie Sie ein Image eines virtuellen Azure-Computers unter Windows Server 2008 R2 erfassen können." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="KBDAzure" 
-	manager="timlt" 
+<properties
+	pageTitle="Erfassen eines Images des virtuellen Computers unter Windows Server"
+	description="Erfahren Sie, wie Sie ein Image eines virtuellen Azure-Computers unter Windows Server 2008 R2 erfassen können."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="KBDAzure"
+	manager="timlt"
 	editor="tysonn"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-windows" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="03/13/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="03/13/2015"
 	ms.author="kathydav"/>
 
 #Erfassen eines virtuellen Windows-Computers, um ihn als Vorlage zu verwenden#
 
-Dieser Artikel erläutert, wie Sie einen virtuellen Azure-Computer erfassen, auf dem Windows läuft, um ihn wie eine Vorlage zum Erstellen anderer virtueller Computer zu verwenden. Diese Vorlage umfasst den Betriebssystemdatenträger und alle an den virtuellen Computer angefügten Datenträger. Da die Vorlage keine Netzwerkkonfiguration enthält, müssen Sie die Konfiguration später vornehmen, wenn Sie die anderen virtuellen Computer erstellen, die auf dieser Vorlage basieren.
+Dieser Artikel erläutert, wie Sie einen virtuellen Azure-Computer erfassen, auf dem Windows läuft, um ihn wie eine Vorlage zum Erstellen anderer virtueller Computer zu verwenden. Diese Vorlage enthält den Betriebssystem-Datenträger und alle Datenträger, die an den virtuellen Computer angefügt sind. Da die Vorlage keine Netzwerkkonfiguration enthält, muss diese später erfolgen, wenn Sie die anderen auf dieser Vorlage basierenen virtuellen Computer erstellen.
 
-Azure behandelt diese Vorlage als lokales Image und speichert es unter**Eigene Images**. Hier werden sämtliche Images abgelegt, die Sie hochladen. Weitere Informationen zu Images finden Sie unter [Informationen zu virtuellen Computern in Azure][].
+Azure behandelt diese Vorlage als lokales Image und speichert es unter**Eigene Images**. Hier werden sämtliche Images abgelegt, die Sie hochladen. Weitere Informationen zu Images finden Sie unter [Informationen zu Images virtueller Computer in Azure][].
 
 ##Voraussetzungen##
 
@@ -31,7 +31,7 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 
 ##Erfassen des virtuellen Computers##
 
-1. Stellen Sie eine Verbindung mit dem virtuellen Computer her, indem Sie auf der Befehlsleiste auf **Verbinden** klicken. Ausführliche Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird][].
+1. Stellen Sie eine Verbindung mit dem virtuellen Computer her, indem Sie auf der Befehlsleiste auf **Verbinden** klicken. Weitere Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird][].
 
 2.	Öffnen Sie ein Eingabeaufforderungsfenster als ein Administrator.
 
@@ -50,7 +50,7 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 
 	![Sysprep ausführen](./media/virtual-machines-capture-image-windows-server/SysprepGeneral.png)
 
-7.	Sysprep fährt den virtuellen Computer herunter. Dadurch wird der Status des virtuellen Computers im [Verwaltungsportal](http://manage.windowsazure.com) in **Angehalten** geändert.
+7.	Sysprep fährt den virtuellen Computer herunter. Dadurch wird der Status des virtuellen Computers im [Azure-Portal](http://manage.windowsazure.com) in **Angehalten** geändert.
 
 
 8.	Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den virtuellen Computer aus, den Sie konfigurieren möchten.
@@ -72,10 +72,10 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
  Das neue Image steht nun unter **Images** zur Verfügung.![Image-Erfassung erfolgreich](./media/virtual-machines-capture-image-windows-server/VMCapturedImageAvailable.png)
 
 ##Nächste Schritte##
-Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet werden. Dazu erstellen Sie mithilfe der Methode **Aus Katalog** einen benutzerdefinierten virtuellen Computer und wählen das gerade erstellte Image aus. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][].
+Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet werden. Dazu erstellen Sie mithilfe des Menüeintrags **Aus Katalog** einen benutzerdefinierten virtuellen Computer und wählen das gerade erstellte Image aus. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][].
 
-	
-[Informationen zu virtuellen Computern in Azure]: http://msdn.microsoft.com/library/azure/dn790290.aspx
+
+[Informationen zu Images virtueller Computer in Azure]: http://msdn.microsoft.com/library/azure/dn790290.aspx
 [Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-create-custom.md
 [Anfügen eines Datenträgers an einen virtuellen Computer]: storage-windows-attach-disk.md
 [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: http://www.windowsazure.com/manage/windows/how-to-guides/log-on-a-windows-vm/
@@ -87,6 +87,5 @@ Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet wer
 [Enter the image name]: ./media/virtual-machines-capture-image-windows-server/Capture.png
 [Image capture successful]: ./media/virtual-machines-capture-image-windows-server/CaptureSuccess.png
 [Use the captured image]: ./media/virtual-machines-capture-image-windows-server/MyImagesWindows.png
- 
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

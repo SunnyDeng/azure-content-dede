@@ -1,10 +1,10 @@
-<properties 
-   pageTitle="Erstellen eines SharePoint-Connectors zur Verwendung in der Logik-App" 
-   description="Erstellen eines SharePoint-Connectors; Verwenden des SharePoint-Connectors in der Logik-App" 
-   services="app-service\logic" 
-   documentationCenter=".net,nodejs,java" 
-   authors="anuragdalmia" 
-   manager="dwrede" 
+<properties
+   pageTitle="Erstellen eines SharePoint-Connectors zur Verwendung in der Logik-App"
+   description="Erstellen eines SharePoint-Connectors; Verwenden des SharePoint-Connectors in der Logik-App"
+   services="app-service\logic"
+   documentationCenter=".net,nodejs,java"
+   authors="anuragdalmia"
+   manager="dwrede"
    editor=""/>
 
 <tags
@@ -12,9 +12,9 @@
    ms.devlang="multiple"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="06/22/2015"
-   ms.author="vagarw"/>
+   ms.workload="integration"
+   ms.date="07/02/2015"
+   ms.author="sameerch"/>
 
 # Verwenden des SharePoint-Connectors in Logik-Apps
 
@@ -33,12 +33,9 @@ Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*.
-Document Library / List Relative URLs | Yes | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
+Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*. Document Library / List Relative URLs | Yes | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
 
-5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus:
-<br/>
-![][1]
+5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: <br/> ![][1]
 
 Sobald Sie fertig sind, können Sie jetzt in derselben Ressourcengruppe eine Logik-App zur Verwendung des SharePoint Online-Connectors erstellen.
 
@@ -53,16 +50,13 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*.
-Authentication Mode | Yes | Geben Sie den Authentifizierungsmodus zum Verbinden mit einer SharePoint-Website ein. Optionen umfassen:<ul><li>Standard</li><li>WindowsAuthentication</li><li>FormBasedAuthentication</li></ul><br/><br/>Wenn Sie "Standard" wählen, werden die Anmeldeinformationen für den SharePoint-Connector verwendet. Benutzername und Kennwort sind nicht erforderlich. Benutzername und Kennwort sind für andere Authentifizierungstypen erforderlich.<br/><br/>**Hinweis** anonyme Authentifizierung wird nicht unterstützt.
+Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*. Authentication Mode | Yes | Geben Sie den Authentifizierungsmodus zum Verbinden mit einer SharePoint-Website ein. Optionen umfassen:<ul><li>Standard</li><li>WindowsAuthentication</li><li>FormBasedAuthentication</li></ul><br/><br/>Wenn Sie "Standard" wählen, werden die Anmeldeinformationen für den SharePoint-Connector verwendet. Benutzername und Kennwort sind nicht erforderlich. Benutzername und Kennwort sind für andere Authentifizierungstypen erforderlich.<br/><br/>** Hinweis ** anonyme Authentifizierung wird nicht unterstützt.
 Benutzername | Nein | Geben Sie einen gültigen Benutzernamen zum Verbinden mit einer SharePoint-Website ein, wenn als Authentifizierungsmodus nicht "Standard" verwendet wird.
 Kennwort | Nein | Geben Sie ein gültiges Kennwort zum Verbinden mit einer SharePoint-Website ein, wenn als Authentifizierungsmodus nicht "Standard" verwendet wird.
 Relative URLs zur Dokumentbibliothek/Liste | Ja | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
 Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/)
 
-5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus:
-<br/>
-![][2]
+5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: <br/> ![][2]
 
 Sobald Sie fertig sind, können Sie jetzt in derselben Ressourcengruppe eine Logik-App zur Verwendung des SharePoint Server-Connectors erstellen.
 
@@ -77,28 +71,13 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SharePoint-Connector a
 
 3. Wenn der SharePoint-Connector am Anfang der Logik-App aktiviert ist, fungiert dieser wie ein Trigger. Andernfalls könnte Aktionen auf dem SharePoint-Konto über den Connector ausgeführt werden.
 
-4. Wenn Sie den SharePoint-Online-Connector verwenden, müssen Logik-Apps in Ihrem Namen authentifiziert und autorisiert werden. Zum Starten der Autorisierung klicken Sie im SharePoint-Connector auf **Autorisieren**:
-<br/>
-![][3]
+4. Wenn Sie den SharePoint-Online-Connector verwenden, müssen Logik-Apps in Ihrem Namen authentifiziert und autorisiert werden. Zum Starten der Autorisierung klicken Sie im SharePoint-Connector auf **Autorisieren**: <br/>![][3]
 
-5. Durch das Klicken auf "Autorisieren" wird das Authentifizierungsdialogfeld von SharePoint angezeigt. Geben Sie die Anmeldeinformationen des SharePoint-Kontos an, mit dem Sie die Vorgänge ausführen möchten:
-<br/>
-![][4]
+5. Durch das Klicken auf "Autorisieren" wird das Authentifizierungsdialogfeld von SharePoint angezeigt. Geben Sie die Anmeldeinformationen des SharePoint-Kontos an, mit dem Sie die Vorgänge ausführen möchten: <br/> ![][4]
 
-6. Erteilen Sie den Logik-Apps Zugriff auf Ihr Konto, um Vorgänge in Ihrem Namen auszuführen:
-<br/>
-![][5]
+6. Erteilen Sie den Logik-Apps Zugriff auf Ihr Konto, um Vorgänge in Ihrem Namen auszuführen: <br/> ![][5]
 
-7. Wenn der SharePoint-Connector als Trigger konfiguriert ist, werden die Trigger angezeigt. Andernfalls wird eine Liste von Aktionen angezeigt und Sie können die entsprechende Operation wählen, die Sie ausführen möchten:
-<br/>
-![][6]
-<br/>
-**Relative URL, die für die Dokumentbibliothek konfiguriert wurde**
-<br/>
-![][7]
-<br/>
-**Relative URL, die für die Dokumentliste konfiguriert wurde**
-<br/>
+7. Wenn der SharePoint-Connector als Trigger konfiguriert ist, werden die Trigger angezeigt. Andernfalls wird eine Liste mit Aktionen angezeigt, und Sie können die entsprechende Operation wählen, die Sie ausführen möchten: <br/> ![][6] <br/> **Relative URL, die für die Dokumentbibliothek konfiguriert wurde** <br/> ![][7] <br/> **Relative URL, die für die Dokumentliste konfiguriert wurde**
 
 > [AZURE.NOTE]Für die unten aufgeführten Trigger wird davon ausgegangen, dass Sie in den Connector-Paketeinstellungen "Freigegebene Dokumente, Listen/Aufgabe" angegeben hat, wobei es sich bei "Freigegebene Dokumente" um eine Dokumentbibliothek und bei "Listen/Aufgabe" um eine Liste handelt.
 
@@ -107,14 +86,14 @@ Verwenden Sie Trigger, wenn Sie eine Logik-App starten möchten.
 
 > [AZURE.NOTE]Trigger löschen die Dateien nach dem Lesen. Um diese Dateien zu erhalten, geben Sie einen Wert für den Archivspeicherort ein.
 
-### 1. Neues Dokument in freigegebenen Dokumenten (JSON)
+### 1\. Neues Dokument in freigegebenen Dokumenten (JSON)
 Dieser Trigger wird ausgelöst, wenn ein neues Dokument in "Freigegebene Dokumente" verfügbar ist.
 
 #### Eingabe
 
 Name | Erforderlich | Beschreibung
 --- | --- | ---
-Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten. 
+Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten.
 Archivspeicherort | Nein | Geben Sie eine gültige Ordner-URL relativ zur SharePoint-Website ein, in der die verarbeiteten Dokumente archiviert werden.
 In Archiv überschreiben | Nein | Aktivieren Sie diese Option, um eine Datei im Archivpfad zu überschreiben, wenn sie bereits vorhanden ist.
 CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filtern von Dokumenten ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
@@ -122,7 +101,7 @@ CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filter
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 Name | Name des Dokuments
 Inhalt | Der Inhalt des Dokuments.
 ContentTransferEncoding | Codierung für die Inhaltsübertragung der Nachricht. ("none"oder "base64")
@@ -130,25 +109,25 @@ ContentTransferEncoding | Codierung für die Inhaltsübertragung der Nachricht. 
 **Hinweis:** Alle Spalten des Dokumentelements werden in den Ausgabeeigenschaften "Erweitert" angezeigt.
 
 
-### 2. Neues Element in Aufgaben (JSON)
+### 2\. Neues Element in Aufgaben (JSON)
 Dieser Trigger wird ausgelöst, wenn der Liste "Aufgaben" ein neues Element hinzugefügt wird.
 
 #### Eingabe
 
 Name | Erforderlich | Beschreibung
 --- | --- | ---
-Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern von Elementen in der Liste ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle neuen Elemente zu verarbeiten. 
+Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern von Elementen in der Liste ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle neuen Elemente zu verarbeiten.
 Archivspeicherort | Nein | Geben Sie eine gültige Ordner-URL relativ zur SharePoint-Website ein, in der die verarbeiteten Listenelemente archiviert werden.
 CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filtern von Dokumenten ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
 
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 Die Spalten in der Liste werden dynamisch aufgefüllt und in den Ausgabeparametern angezeigt. | &nbsp;
 
 
-### 3. Neues Dokument in freigegebenen Dokumenten (XML)
+### 3\. Neues Dokument in freigegebenen Dokumenten (XML)
 
 Dieser Trigger wird ausgelöst, wenn ein neues Dokument in "Freigegebene Dokumente" verfügbar ist. Das neue Dokument wird als XML-Nachricht zurückgegeben.
 
@@ -156,7 +135,7 @@ Dieser Trigger wird ausgelöst, wenn ein neues Dokument in "Freigegebene Dokumen
 
 Name | Erforderlich | Beschreibung
 --- | --- | ---
-Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten. 
+Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten.
 Archivspeicherort | Nein | Geben Sie eine gültige Ordner-URL relativ zur SharePoint-Website ein, in der die verarbeiteten Listendokumente archiviert werden.
 In Archiv überschreiben | Nein | Aktivieren Sie diese Option, um eine Datei im Archivpfad zu überschreiben, wenn sie bereits vorhanden ist.
 CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filtern von Dokumenten ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
@@ -164,12 +143,12 @@ CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filter
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 Inhalt | Der Inhalt des Dokuments.
 ContentTransferEncoding | Codierung für die Inhaltsübertragung der Nachricht. ("none"oder "base64")
 
 
-### 4. Neues Element in Aufgaben (XML)
+### 4\. Neues Element in Aufgaben (XML)
 
 Dieser Trigger wird ausgelöst, wenn der Liste "Aufgaben" ein neues Element hinzugefügt wird. Das neue Listenelement wird als XML-Nachricht zurückgegeben.
 
@@ -177,14 +156,14 @@ Dieser Trigger wird ausgelöst, wenn der Liste "Aufgaben" ein neues Element hinz
 
 Name | Erforderlich | Beschreibung
 --- | --- | ---
-Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern von Elementen in der Liste ein. Beispiel: "Genehmigte Aufträge". Lassen Sie dieses Feld leer, um alle neuen Elemente zu verarbeiten. 
+Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern von Elementen in der Liste ein. Beispiel: "Genehmigte Aufträge". Lassen Sie dieses Feld leer, um alle neuen Elemente zu verarbeiten.
 Archivspeicherort | Nein | Geben Sie eine gültige Ordner-URL relativ zur SharePoint-Website ein, in der die verarbeiteten Listenelemente archiviert werden.
 CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filtern der Listenelemente ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
 
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 Inhalt | Der Inhalt des Dokuments.
 ContentTransferEncoding | Codierung für die Inhaltsübertragung der Nachricht. ("none"oder "base64")
 
@@ -192,7 +171,7 @@ ContentTransferEncoding | Codierung für die Inhaltsübertragung der Nachricht. 
 ##  Aktionen
 Für die unten aufgeführten Aktionen wird davon ausgegangen, dass Sie in den Connector-Paketeinstellungen "Freigegebene Dokumente, Listen/Aufgabe" angegeben hat, wobei es sich bei "Freigegebene Dokumente" um eine Dokumentbibliothek und bei "Listen/Aufgabe" um eine Liste handelt.
 
-### 1. Upload in freigegebene Dokumente (JSON)
+### 1\. Upload in freigegebene Dokumente (JSON)
 
 Diese Aktion lädt das neue Dokument in "Freigegebene Dokumente" hoch. Die Eingabe ist ein stark typisiertes JSON-Objekt mit allen Spaltenfeldern der Dokumentbibliothek.
 
@@ -214,14 +193,14 @@ OptionalParam2* | Nein. Erweitert | Dies ist einer der optionalen Parameter zum 
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 ItemId | Element-ID des Dokuments, das der Dokumentbibliothek hinzugefügt wurde.
 Status | Ein erfolgreicher Upload des Dokuments gibt den Statuscode 200 (OK) zurück.
 
 
  
 
-### 2. Abrufen aus freigegebenen Dokumenten (JSON)
+### 2\. Abrufen aus freigegebenen Dokumenten (JSON)
 Diese Aktion ruft das Dokument anhand der relativen URL (Ordnerstruktur) des Dokuments aus der Dokumentbibliothek ab.
 
 #### Eingabe
@@ -233,8 +212,8 @@ Relativer Dokument-URI | Nein | Geben Sie die URL des Dokuments relativ zu "Frei
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
-Inhalt | Dokumentinhalt 
+--- | ---
+Inhalt | Dokumentinhalt
 ContentTransferEncoding | Codierung für die Inhaltsübertragung der Nachricht. ("none"oder "base64")
 Status | Eine erfolgreiche Aktionsausführung gibt den Statuscode 200 (OK) zurück.
 Param1* | Dies ist einer der Parameter eines Dokuments in der Dokumentbibliothek.
@@ -244,7 +223,7 @@ Param2* | Dies ist einer der Parameter eines Dokuments in der Dokumentbibliothek
 
  
 
-### 3. Löschen aus freigegebenen Dokumenten
+### 3\. Löschen aus freigegebenen Dokumenten
 
 Diese Aktion löscht das Dokument anhand der relativen URL (Ordnerstruktur) des Dokuments aus der Dokumentbibliothek.
 
@@ -257,11 +236,11 @@ Relativer Dokument-URI | Nein | Geben Sie die URL des Dokuments relativ zu "Frei
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 Status | Eine erfolgreiche Aktionsausführung gibt den Statuscode 200 (OK) zurück.
 
 
-### 4. Einfügen in Aufgaben (JSON)
+### 4\. Einfügen in Aufgaben (JSON)
 
 Diese Aktion fügt der Elementliste ein Element hinzu.
 
@@ -279,12 +258,12 @@ OptionalParam2* | Nein. Erweitert | Dies ist einer der erforderlichen Parameter 
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 ItemId | Element-ID des hinzugefügten Listenelements.
 Status | Ein erfolgreicher Einfügevorgang des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 5. Aktualisieren von Aufgaben (JSON)
+### 5\. Aktualisieren von Aufgaben (JSON)
 
 Diese Aktion aktualisiert ein Element in der Elementliste.
 
@@ -303,11 +282,11 @@ OptionalParam2* | Nein. Erweitert | Dies ist einer der erforderlichen Parameter 
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 Status | Eine erfolgreiche Aktualisierung des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 6. Abrufen eines Elements aus Aufgaben (JSON)
+### 6\. Abrufen eines Elements aus Aufgaben (JSON)
 
 Diese Aktion ruft ein Element aus der Liste ab.
 
@@ -320,7 +299,7 @@ ItemId | Ja | Element-ID des Listenelements
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 Column1* | Dies ist einer der Parameter in der Liste.
 Column2* | Dies ist einer der Parameter in der Liste.
 Status | Eine erfolgreiche Ausführung der Aktion gibt den Statuscode 200 (OK) zurück.
@@ -328,7 +307,7 @@ Status | Eine erfolgreiche Ausführung der Aktion gibt den Statuscode 200 (OK) z
 **Hinweis:** Die Spalten in der Liste werden dynamisch aufgefüllt und in den Ausgabeparametern angezeigt.
 
 
-### 7. Löschen von Element aus den Aufgaben
+### 7\. Löschen von Element aus den Aufgaben
 
 Diese Aktion löscht ein Element aus der Elementliste.
 
@@ -341,11 +320,11 @@ ItemId | Ja | Element-ID des Listenelements
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 Status | Ein erfolgreicher Löschvorgang des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 8. Auflisten freigegebener Dokumente (JSON)
+### 8\. Auflisten freigegebener Dokumente (JSON)
 
 Diese Aktion listet alle Dokumente in einer Dokumentbibliothek auf. Sie können eine Ansicht oder eine CAML-Abfrage zum Filtern der Dokumente verwenden.
 
@@ -353,18 +332,18 @@ Diese Aktion listet alle Dokumente in einer Dokumentbibliothek auf. Sie können 
 
 Name | Erforderlich | Beschreibung
 --- | --- | ---
-Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten. 
+Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern der zur Auswahl stehenden Dokumente ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle vorhandenen Dokumente zu verarbeiten.
 CAML-Abfrage | Nein | Geben Sie eine gültige CAML-Abfrage zum Filtern von Dokumenten ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
 
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 Dokumente | Ein Array aller Dokumente. Jedes Dokument verfügt über die folgenden Felder: <ul><li>Dokumente </li><li>Name</li><li>Element-Id</li><li>Vollständige URL des Elements</li><li>Erweitert</li><li>Element-URL bearbeiten</li><li>Listenname</li><li>Vollständige URL der Liste</li></ul>
 Status | Ein erfolgreicher Einfügevorgang des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 9. Hochladen in freigegebene Dokumente (XML)
+### 9\. Hochladen in freigegebene Dokumente (XML)
 
 Diese Aktion lädt das neue Dokument in "Freigegebene Dokumente" hoch. Das Eingabedokument sollte eine XML-Nutzlast sein. Die Antwort der Aktion ist eine XML-Nutzlast.
  
@@ -380,11 +359,11 @@ ContentTransferEncoding | Ja | Codierung für die Inhaltsübertragung der Nachri
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 Ausgabe-XML | Die Antwort der Aktion "Hochladen" im XML-Format.
 Status | Ein erfolgreicher Upload des Dokuments gibt den Statuscode 200 (OK) zurück.
 
-### 10. Abrufen aus freigegebenen Dokumenten (XML)
+### 10\. Abrufen aus freigegebenen Dokumenten (XML)
 
 Diese Aktion ruft das Dokument anhand der relativen URL (Ordnerstruktur) des Dokuments aus der Dokumentbibliothek ab.
 
@@ -398,12 +377,12 @@ Dateityp | Ja | Geben Sie ein, ob die Datei eine Binärdatei oder eine Textdatei
 #### Ausgabe
 
 Name | Beschreibung
---- | --- 
+--- | ---
 Ausgabe-XML | Dokumentinhalt
 ContentTransferEncoding | Codierung für die Inhaltsübertragung der Nachricht. ("none"oder "base64")
 Status | Eine erfolgreiche Aktionsausführung gibt den Statuscode 200 (OK) zurück.
 
-### 11. Einfügen in Aufgaben (XML)
+### 11\. Einfügen in Aufgaben (XML)
 
 Diese Aktion fügt der Elementliste ein Element hinzu. Als Eingabe wird eine XML-Nutzlast erwartet.
 
@@ -423,7 +402,7 @@ ItemId | Element-ID des hinzugefügten Listenelements.
 Status | Ein erfolgreicher Einfügevorgang des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 12. Aktualisieren von Aufgaben (XML)
+### 12\. Aktualisieren von Aufgaben (XML)
 
 Diese Aktion aktualisiert ein Element in der Elementliste. Als Eingabe wird eine XML-Nutzlast erwartet.
 
@@ -443,7 +422,7 @@ Name | Beschreibung
 Status | Eine erfolgreiche Aktualisierung des Listenelements gibt den Statuscode 200 (OK) zurück.
 
 
-### 13. Abrufen eines Elements aus Aufgaben (XML)
+### 13\. Abrufen eines Elements aus Aufgaben (XML)
 
 Diese Aktion ruft ein Element aus der Liste ab.
 
@@ -482,6 +461,5 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [5]: ./media/app-service-logic-connector-sharepoint/image_4.jpg
 [6]: ./media/app-service-logic-connector-sharepoint/image_5.png
 [7]: ./media/app-service-logic-connector-sharepoint/image_6.png
- 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

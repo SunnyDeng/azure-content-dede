@@ -1,10 +1,10 @@
-<properties 
+<properties
 	pageTitle="SFTP-Connector"
 	description="Erste Schritte mit dem SFTP-Connector"
-	authors="anuragdalmia" 
-	manager="dwrede" 
-	editor="" 
-	services="app-service\logic" 
+	authors="anuragdalmia"
+	manager="dwrede"
+	editor=""
+	services="app-service\logic"
 	documentationCenter=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/31/2015"
-	ms.author="adgoda"/>
+	ms.date="07/02/2015"
+	ms.author="sameerch"/>
 
 # Verwenden des SFTP-Connectors in Logik-Apps #
 
@@ -28,7 +28,7 @@ Zur Verwendung des SFTP-Connectors müssen Sie zunächst eine Instanz der SFTP-C
 1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" unten links im Azure-Portal.
 2.	Wechseln Sie zu "Web und Mobil > API-Apps", und suchen Sie nach "SFTP-Connector".
 3.	Konfigurieren Sie den SFTP-Connector wie folgt:
- 
+
 	![][1] - **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten. - **Abonnement** – Wählen Sie ein Abonnement aus, unter dem dieser Connector erstellt werden soll. - **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll. - **Webhostingplan** – Wählen oder erstellen Sie einen Webhostingplan. - **Tarif** – Wählen Sie einen Tarif für den Connector. - **Name** – Geben Sie dem SFTP-Connector einen Namen. - **Paketeinstellungen** – **Serveradresse** – Geben Sie den Namen oder die IP-Adresse des SFTP-Servers an. - **Beliebigen SSH-Server-HostKey akzeptieren** – Bestimmt, ob beliebige Fingerabdrücke des öffentlichen SSH-Schlüssels vom Server akzeptiert werden sollen. Wenn dies auf "False" festgelegt ist, wird der Hostschlüssel mit dem in der "SSH Server Host Key Finger Print"-Eigenschaft angegebenen Schlüssel abgeglichen. - **SSH-Server-HostKey** – Geben Sie den Fingerabdruck des öffentlichen Schlüssels für den SSH-Server an. - **Stammordner** – Geben Sie einen Pfad für den Stammordner an. - **Verschlüsselung verschlüsseln** – Geben Sie den Verschlüsselungsschlüssel an. - **Serverport** – Geben Sie die Portnummer des SFTP-Servers an.
 4. Klicken Sie auf "Erstellen". Ein neuer SFTP-Connector wird erstellt.
 
@@ -38,23 +38,23 @@ Zur Verwendung des SFTP-Connectors müssen Sie zunächst eine Instanz der SFTP-C
 6. Klicken Sie auf die Komponente "Sicherheit", um die Sicherheitsoptionen (Benutzername, Kennwort, privater Schlüssel, PPK-Dateikennwort) für den SFTP-Connector zu konfigurieren. Wählen Sie auf der Registerkarte "Autorisierung" unter "Sicherheit" eine der Autorisierungsmethoden "Kennwort" oder "Privatekey" bzw. "MultiFactor" aus, und geben Sie die erforderlichen Eigenschaften an.
 
 	![][3] ![][4] ![][5]
-6. Sobald die Sicherheitskonfiguration gespeichert wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des SFTP-Connectors erstellen. 
+6. Sobald die Sicherheitskonfiguration gespeichert wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des SFTP-Connectors erstellen.
 
 ## Verwenden des SFTP-Connectors in Logik-Apps ##
 Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Trigger oder Aktion für Ihre Logik-App verwenden. Gehen Sie hierzu wie folgt vor:
 
 1.	Erstellen Sie eine neue Logik-App, und wählen Sie dieselbe Ressourcengruppe aus, in der sich der SFTP-Connector befindet.
- 	
+
 	![][6]
-2.	Öffnen Sie "Trigger und Aktionen", um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren. 
- 	
+2.	Öffnen Sie "Trigger und Aktionen", um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren.
+
 	![][7]
 3.	Der SFTP-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt.
- 
+
 	![][8]
 4.	Sie können die SFTP-Connector-API-App im Editor bearbeiten, indem Sie auf den "SFTP-Connector" klicken.
- 
-	
+
+
 6.	Sie können nun den SFTP-Connector im Datenfluss verwenden. Sie können die aus dem SFTP-Trigger abgerufene Datei ("TriggerOnFileAvailable") in anderen Datenflussaktionen verwenden.
 
 	**Hinweis:** Der SFTP-Trigger "TriggerOnFileAvailable" löscht die abgerufene Datei nach deren Verarbeitung.
@@ -66,7 +66,7 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 	- **Dateimaske** – Geben Sie die Dateimaske an, die für das Abrufen von Dateien angewendet werden soll. Mit "*" werden alle Dateien im angegebenen Ordner abgerufen.
 	- **Dateimaske ausschließen** – Geben Sie die Dateimaske zum Ausschließen von Dateien an. Wenn auch die Eigenschaft "Dateimaske" festgelegt ist, wird zuerst "Dateimaske ausschließen" angewendet.
 
- 
+
 	![][9] ![][10]
 
 7.	Auf ähnliche Weise können Sie die SFTP-Aktionen im Datenfluss verwenden. Sie können die Aktion "Datei hochladen" zum Hochladen einer Datei auf den SFTP-Server verwenden. Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Datei hochladen" wie folgt:
@@ -96,6 +96,5 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 [10]: ./media/app-service-logic-connector-sftp/img10.PNG
 [11]: ./media/app-service-logic-connector-sftp/img11.PNG
 [12]: ./media/app-service-logic-connector-sftp/img12.PNG
- 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

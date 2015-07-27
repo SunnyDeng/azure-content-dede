@@ -168,4 +168,4 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
 
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

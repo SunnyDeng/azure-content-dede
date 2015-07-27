@@ -1,4 +1,3 @@
-
 Für abonnierte Operational Insights gelten folgende Begrenzungen.
 
 
@@ -11,4 +10,4 @@ Für abonnierte Operational Insights gelten folgende Begrenzungen.
 
 <sup>1</sup>Wenn Kunden ihre tägliche Begrenzung von 500 MB für die Dateiübertragung erreicht haben, wird die Datenanalyse beendet und am nächsten Morgen fortgesetzt. Ein Tag wird in UTC-Zeit ausgegeben.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO3-->

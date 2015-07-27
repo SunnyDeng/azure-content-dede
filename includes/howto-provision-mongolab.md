@@ -23,4 +23,4 @@ Glückwunsch! MongoLab hat nun eine MongoDB-Datenbank in der von Ihnen gewählte
 [screen-newmongolab]: ./media/howto-provision-mongolab/screen-newmongolab.png
 [message-success]: ./media/howto-provision-mongolab/message-provisionsuccess.png
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO3-->

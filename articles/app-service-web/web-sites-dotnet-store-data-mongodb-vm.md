@@ -245,7 +245,7 @@ Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Proj
 	}
 
 ## Hinzufügen eines Controllers ##
-Öffnen Sie die Datei *Controllers\HomeController.cs* im **Projektmappen-Explorer**, und ersetzen Sie den vorhandenen Code durch den folgenden:
+Öffnen Sie die Datei *Controllers\\HomeController.cs* im **Projektmappen-Explorer**, und ersetzen Sie den vorhandenen Code durch den folgenden:
 
 	using System;
 	using System.Collections.Generic;
@@ -326,11 +326,11 @@ Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Proj
 	}
 
 ## Einrichten der Stile ##
-Um den Titel oben auf der Seite zu ändern, öffnen Sie die Datei *Views\Shared_Layout.cshtml* im **Projektmappen-Explorer**, und ersetzen Sie "Application name" im Navigationsleistenheader durch "My Task List Application", sodass die Zeile folgendermaßen lautet:
+Um den Titel oben auf der Seite zu ändern, öffnen Sie die Datei *Views\\Shared\\_Layout.cshtml* im **Projektmappen-Explorer**, und ersetzen Sie "Application name" im Navigationsleistenheader durch "My Task List Application", sodass die Zeile folgendermaßen lautet:
 
  	@Html.ActionLink("My Task List Application", "Index", "Home", null, new { @class = "navbar-brand" })
 
-Öffnen Sie zum Einrichten des Aufgabenlisten-Menüs die Datei *\Views\Home\Index.cshtml*, und ersetzen Sie den vorhandenen Code durch den folgenden:
+Öffnen Sie zum Einrichten des Aufgabenlisten-Menüs die Datei *\\Views\\Home\\Index.cshtml*, und ersetzen Sie den vorhandenen Code durch den folgenden:
 	
 	@model IEnumerable<MyTaskListApp.Models.MyTask>
 	
@@ -367,7 +367,7 @@ Um den Titel oben auf der Seite zu ändern, öffnen Sie die Datei *Views\Shared_
 	<div>  @Html.Partial("Create", new MyTaskListApp.Models.MyTask())</div>
 
 
-Um die Möglichkeit zum Erstellen eines neuen Tasks hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Ordner *Views\Home*, und fügen Sie eine neue **Ansicht** hinzu. Benennen Sie die Ansicht *Create*. Ersetzen Sie den Code durch den folgenden Code:
+Um die Möglichkeit zum Erstellen eines neuen Tasks hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Ordner *Views\\Home\*, und fügen Sie eine neue **Ansicht** hinzu. Benennen Sie die Ansicht *Create*. Ersetzen Sie den Code durch den folgenden Code:
 
 	@model MyTaskListApp.Models.MyTask
 	
@@ -499,4 +499,4 @@ Weitere Informationen zum Entwickeln von C#-Anwendungen für MongoDB finden Sie 
 [Deploy the ASP.NET application to the web site using Git]: #deployapp
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

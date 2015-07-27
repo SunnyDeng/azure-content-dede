@@ -133,4 +133,4 @@ Das untere Diagramm zeigt dieselben Daten, die jetzt jedoch nach Abteilung unter
 [8]: ./media/billing-usage-rate-card-partner-solution-cloudcruiser/Workbook-Scheduling.png "Abbildung 8: Planen von Arbeitsmappen"
 [9]: ./media/billing-usage-rate-card-partner-solution-cloudcruiser/Workload-Cost-Simulation-Report.png "Abbildung 9: Beispielbericht für das Workload-Kostenvergleichsszenario"
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

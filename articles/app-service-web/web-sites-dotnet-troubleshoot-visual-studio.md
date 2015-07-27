@@ -109,7 +109,7 @@ Häufig ist der einfachste Weg für die Suche nach der Fehlerursache die Aktivie
 
 	![Detaillierte Fehlermeldung](./media/web-sites-dotnet-troubleshoot-visual-studio/detailederror.png)
 
-	(Dieser Fehler wurde durch Hinzufügen der in rot angezeigten Zeile zu *Views\Home\Index.cshtml* erstellt.)
+	(Dieser Fehler wurde durch Hinzufügen der in rot angezeigten Zeile zu *Views\\Home\\Index.cshtml* erstellt.)
 
 Änderungen an der Datei "Web.config" sind nur eines der Szenarien, in denen die Möglichkeit zum Lesen und Bearbeiten der Dateien in Ihrer Azure-Web-App die Problembehandlung erleichtert.
 
@@ -123,7 +123,7 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 1. Öffnen Sie das Webprojekt, das Sie in [Erste Schritte mit Windows Azure und ASP.NET][GetStarted] erstellt haben.
 
-1. Öffnen Sie die Datei *Controllers\HomeController.cs*.
+1. Öffnen Sie die Datei *Controllers\\HomeController.cs*.
 
 2. Löschen Sie die `About()`-Methode, und fügen Sie stattdessen den folgenden Code ein.
 
@@ -269,7 +269,7 @@ Wenn die Funktion [Protokolle geschrieben hat](websites-dotnet-webjobs-sdk-stora
 
 * Bei Aktivierung der Remotedebuggen-Funktion startet ein Timer auf dem Server, und die Funktion wird nach 48 Stunden automatisch abgeschaltet. Dieses Limit von 48 Stunden existiert aus Sicherheits- und Leistungsgründen. Sie können die Funktion jederzeit und beliebig oft aktivieren. Wenn Sie nicht aktiv debuggen, sollten Sie die Funktion jedoch deaktivieren.
 
-* Sie können den Debugger manuell an einen beliebigen Prozess anfügen, nicht nur an den Web-App-Prozess (w3wp.exe). Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter [Debuggen in Visual Studio](http://msdn.microsoft.com/de-de/library/vstudio/sc65sadd.aspx).
+* Sie können den Debugger manuell an einen beliebigen Prozess anfügen, nicht nur an den Web-App-Prozess (w3wp.exe). Weitere Informationen zum Debugmodus in Visual Studio finden Sie unter [Debuggen in Visual Studio](http://msdn.microsoft.com/library/vstudio/sc65sadd.aspx).
 
 ## <a name="logsoverview"></a>Übersicht über Diagnoseprotokolle
 
@@ -296,7 +296,7 @@ Informationen zum Erstellen von Anwendungsprotokollen in WebJobs finden Sie unte
 
 ### Hinzufügen von Ablaufverfolgungs-Anweisungen zur Anwendung
 
-1. Öffnen Sie *Controllers\HomeController.cs*, und ersetzen Sie den Inhalt der Datei durch den folgenden Code, um `Trace`-Anweisungen und eine `using`-Anweisung für `System.Diagnostics` hinzuzufügen:
+1. Öffnen Sie *Controllers\\HomeController.cs*, und ersetzen Sie den Inhalt der Datei durch den folgenden Code, um `Trace`-Anweisungen und eine `using`-Anweisung für `System.Diagnostics` hinzuzufügen:
 
 		using System;
 		using System.Collections.Generic;
@@ -517,9 +517,9 @@ Alle Protokolle, die Sie im **Ausgabefenster** überwachen können, lassen sich 
 
 	![Heruntergeladene Datei](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilefolders.png)
 
-	* Ablaufverfolgungsprotokolle von Anwendungen befinden sich in *.txt*-Dateien im Ordner *LogFiles\Application*.
-	* Webserverprotokolle befinden sich in *.log*-Dateien im Ordner *LogFiles\http\RawLogs*. Sie können diese Dateien mit Werkzeugen wie z. B. [Log Parser](http://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) anzeigen und bearbeiten.
-	* Detaillierte Fehlerprotokolle befinden sich in *.html*-Dateien im Ordner *LogFiles\DetailedErrors*.
+	* Ablaufverfolgungsprotokolle von Anwendungen befinden sich in *.txt*-Dateien im Ordner *LogFiles\\Application*.
+	* Webserverprotokolle befinden sich in *.log*-Dateien im Ordner *LogFiles\\http\\RawLogs*. Sie können diese Dateien mit Werkzeugen wie z. B. [Log Parser](http://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) anzeigen und bearbeiten.
+	* Detaillierte Fehlerprotokolle befinden sich in *.html*-Dateien im Ordner *LogFiles\\DetailedErrors*.
 
 	(Der Ordner *deployments* enthält Dateien der Quellcodeverwaltung und hat nichts mit der Veröffentlichung in Visual Studio zu tun. Der Ordner *Git* enthält Ablaufverfolgungsprotokolle für die Quellcodeverwaltung und den Protokollstreamingdienst.)
 
@@ -557,7 +557,7 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
 6. Wählen Sie in der Dropdownliste **Replikation** den Wert **Lokal redundant** aus.
 
-	Wenn Georeplikation für ein Speicherkonto aktiviert ist, werden dessen Inhalte an ein zweites Rechenzentrum repliziert, um im Katastrophenfall eine Failover-Instanz an diesem zweiten Standort zur Verfügung zu haben. Für die Georeplikation können zusätzliche Kosten anfallen. Für Test- und Entwicklungskonten macht es wenig Sinn, für Georeplikation zu bezahlen. Weitere Informationen finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](../storage-create-storage-account/#replication-options).
+	Wenn Georeplikation für ein Speicherkonto aktiviert ist, werden dessen Inhalte an ein zweites Datencenter repliziert, um im Katastrophenfall eine Failover-Instanz an diesem zweiten Standort zur Verfügung zu haben. Für die Georeplikation können zusätzliche Kosten anfallen. Für Test- und Entwicklungskonten macht es wenig Sinn, für Georeplikation zu bezahlen. Weitere Informationen finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](../storage-create-storage-account/#replication-options).
 
 5. Klicken Sie auf **Erstellen**.
 
@@ -565,8 +565,7 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
 1. Klicken Sie in Visual Studio im Fenster **Azure-Web-App** auf die Registerkarte **Protokolle** und anschließend auf **Protokollierung im Verwaltungsportal konfigurieren**.
 
-    <!-- todo:screenshot of new portal if the VS page link goes to new portal -->
-	![Konfigurieren der Protokollierung](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png)
+    <!-- todo:screenshot of new portal if the VS page link goes to new portal -->![Konfigurieren der Protokollierung](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png)
 
 	Damit öffnen Sie im Verwaltungsportal die Registerkarte **Konfigurieren** für Ihre Web-App. Sie können diese Registerkarte auch öffnen, indem Sie auf die Registerkarte **Web-Apps** und anschließend auf Ihre Web-App und dann auf die Registerkarte **Konfigurieren** klicken.
 
@@ -735,7 +734,7 @@ Momentan sind keine vollständigen und aktuellen Einführungen zur Ablaufverfolg
 
 Für die Fehlerprotokollierung können Sie Open Source-Protokollframeworks wie z. B. [ELMAH](http://nuget.org/packages/elmah/) verwenden, anstatt Ihren eigenen Ablaufverfolgungscode zu schreiben. Weitere Informationen finden Sie unter [Scott Hanselman's blog posts about ELMAH](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx) (Blogeinträge von Scott Hanselmann zu ELMAH, in englischer Sprache).
 
-Sie müssen nicht unbedingt die Ablaufverfolgung von ASP.NET oder System.Diagnostics verwenden, um Streamingprotokolle aus Azure zu erhalten. Der Streamingprotokolldienst von Azure-Web-Apps ist in der Lage, beliebige *.txt-*, *.html-* oder *.log-*-Dateien aus dem Ordner *LogFiles* zu streamen. Sie können also Ihr eigenes Protokollsystem erstellen und in das Dateisystem der Web-App schreiben, und Ihre Dateien werden automatisch gestreamt und heruntergeladen. Dazu müssen Sie nur den Anwendungscode schreiben, der Dateien im Ordner *d:\home\logfiles* erstellt.
+Sie müssen nicht unbedingt die Ablaufverfolgung von ASP.NET oder System.Diagnostics verwenden, um Streamingprotokolle aus Azure zu erhalten. Der Streamingprotokolldienst von Azure-Web-Apps ist in der Lage, beliebige *.txt-*, *.html-* oder *.log-*-Dateien aus dem Ordner *LogFiles* zu streamen. Sie können also Ihr eigenes Protokollsystem erstellen und in das Dateisystem der Web-App schreiben, und Ihre Dateien werden automatisch gestreamt und heruntergeladen. Dazu müssen Sie nur den Anwendungscode schreiben, der Dateien im Ordner *d:\\home\\logfiles* erstellt.
 
 ### Analyse von Webserverprotokollen
 
@@ -752,7 +751,7 @@ Die Microsoft TechNet-Website enthält einen Abschnitt zum Thema [Ablaufverfolgu
 
 ### Debuggen von Cloud-Diensten.
 
-Informationen darüber, wie Sie statt einer Web-App einen Azure-Cloud-Dienst debuggen, finden Sie unter [Debuggen von Cloud-Diensten](http://msdn.microsoft.com/de-de/library/windowsazure/ee405479.aspx).
+Informationen darüber, wie Sie statt einer Web-App einen Azure-Cloud-Dienst debuggen, finden Sie unter [Debuggen von Cloud-Diensten](http://msdn.microsoft.com/library/windowsazure/ee405479.aspx).
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -764,4 +763,4 @@ Informationen darüber, wie Sie statt einer Web-App einen Azure-Cloud-Dienst deb
 [GetStartedWJ]: websites-dotnet-webjobs-sdk.md
  
 
-<!-----HONumber=62-->
+<!---HONumber=July15_HO3-->

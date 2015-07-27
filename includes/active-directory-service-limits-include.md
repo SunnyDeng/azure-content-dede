@@ -1,54 +1,53 @@
-Here are the usage constraints and other service limits for the Azure Active Directory service. If you’re looking for the full set of Microsoft Azure service limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](azure-subscription-service-limits.md).
+Nachstehend finden Sie die Verwendungs- und andere Einschränkungen für den Azure Active Directory-Dienst.
 
-## Directories
+### Verzeichnisse
 
-A single user can only be associated with a maximum of 20 Azure Active Directory directories. This limit can be reached in any of the following examples:
+Ein einzelner Benutzer kann maximal nur 20 Azure Active Directory-Verzeichnissen zugeordnet werden. In jedem der folgenden Beispiele kann diesen Grenzwert erreicht werden:
 
-- A single user creates 20 directories.
-- A single user is added to 20 directories as a member.
-- A single user creates 10 directories and later is added by others to 10 different directories.
+- Ein einzelner Benutzer erstellt 20 Verzeichnisse.
+- Ein einzelner Benutzer wird 20 Verzeichnissen als Mitglied hinzugefügt.
+- Ein einzelner Benutzer erstellt 10 Verzeichnisse und wird später von anderen Benutzern 10 weiteren Verzeichnissen hinzugefügt.
 
-## Objects
+### Objekte
 
-- There are no limits for subscribers of Azure Active Directory Premium or Azure Active Directory Basic, Enterprise Mobility Suite, Office 365, Microsoft Intune, or any other Microsoft online service that relies on Azure Active Directory for directory services.
-- A maximum of 500,000 objects can be used in a single directory with the Free edition of Azure Active Directory.
-- A non-admin user can create up to 250 objects.
+- Für Abonnenten von Azure Active Directory Premium oder Azure Active Directory Basic, Enterprise Mobility Suite, Office 365, Microsoft Intune oder anderen Microsoft-Onlinediensten, die Azure Active Directory für Verzeichnisdienste benötigen, gelten keinerlei Einschränkungen.
+- Im Tarif "Free" von Azure Active Directory kann ein Verzeichnis maximal 500.000 Objekte enthalten.
+- Ein Benutzer ohne Administratorrechte kann bis zu 250 Objekte erstellen.
 
-##Schema extensions
+###Schemaerweiterungen
 
-Currently “User”, “Group”, “TenantDetail”, “Device”, “Application” and “ServicePrincipal” entities can be extended with “String” type or “Binary” type single-valued attributes. These include the following limitations:
+Derzeit können die Entitäten "User", "Group", "TenantDetail", "Device", "Application" und "ServicePrincipal" mit dem Typ "String" oder "Binary" mit Einzelwertattributen erweitert werden. Dabei gelten die folgenden Einschränkungen:
 
-- String type extensions can have maximum of 256 characters.
-- Binary type extensions are limited to 256 bytes.
-- 100 extension values (across ALL types and ALL applications) can be written to any single object.
-- Schema extensions are available only in Graph API-version 1.21-preview. The application must be granted write access to register an extension.
+- Erweiterungen des Typs "String" sind auf maximal 256 Zeichen begrenzt.
+- Erweiterungen des Typs "Binary" sind auf 256 Bytes beschränkt.
+- 100 Erweiterungswerte (für ALLE Typen und ALLE Anwendungen) können in jedes einzelne Objekt geschrieben werden.
+- Schemaerweiterungen sind nur in der Graph-API-Version "1.21-preview" verfügbar. Der Anwendung muss Schreibzugriff zum Registrieren einer Erweiterung gewährt werden.
 
-## Applications
+### Anwendungen
 
-A maximum of 10 users can be owners of a single application.
+Maximal 10 Benutzer können Besitzer einer einzelnen Anwendung sein.
 
-## Groups
+### Gruppen
 
-- A maximum of 10 users can be owners of a single group.
-- Any number of objects can be members of a single group in Azure Active Directory.
+- Maximal 10 Benutzer können Besitzer einer einzelnen Gruppe sein.
+- Eine beliebige Anzahl von Objekten kann einer einzelnen Gruppe in Azure Active Directory angehören.
 
 
 > [AZURE.NOTE]
 >
-There is a limit for the number of objects you can synchronize from your On Premises Active Directory to Azure Active Directory.
-- If you’re using DirSync the limit is 15K users.
-- If you’re using Azure AD Connect, the limit is 50K users.
+> Die Anzahl der Objekte, die Sie aus Ihrem lokalen Active Directory mit Azure Active Directory synchronisieren können, ist begrenzt.
+>
+> - Bei Verwendung von DirSync liegt die Beschränkung bei 15.000 Benutzern.
+> - Bei Verwendung von Azure AD Connect liegt die Beschränkung bei 50.000 Benutzern.
 
-## Access Panel
+<br/>
+### Anpassung des Zugriffsbereichs
 
-- There is no limit to the number of applications that can be seen in the Access Panel per end user for subscribers to Azure AD Premium or the Enterprise Mobility Suite.
-- A maximum of 10 preintegrated SaaS apps (examples: Box, Salesforce, or Dropbox) can be seen in the Access Panel for each end user with the Free or Azure AD Basic editions of Azure Active Directory. End users might see more than 10 apps if your organization developed apps that were integrated afterward with Azure Active Directory. This limit does not apply to Administrator accounts.
+- Für Abonnenten von Azure AD Premium oder der Enterprise Mobility Suite gibt es keine Beschränkung der Anzahl von Anwendungen, die pro Endbenutzer im Zugriffsbereich angezeigt werden.
+- Für Endbenutzer mit der Edition "Free" oder "Basic" von Azure Active Directory werden maximal 10 App-Titel (z. B. "Box", "Salesforce" oder "Dropbox") im Zugriffsbereich angezeigt. Diese Beschränkung gilt nicht für Administratorkonten.
 
-## Reports
+### Berichte
 
-A maximum of 1,000 rows can be viewed or downloaded in any report. Any additional data is truncated.
+In einem Bericht können maximal 1.000 Zeilen angezeigt oder heruntergeladen werden. Weitere Daten werden abgeschnitten.
 
-## What's next
-- [Sign up for Azure as an organization](sign-up-organization.md)
-- [How Azure subscriptions are associated with Azure AD](active-directory-how-subscriptions-associated-directory.md)
-- [Azure AD terminology](active-directory-terminology.md)
+<!---HONumber=July15_HO3-->

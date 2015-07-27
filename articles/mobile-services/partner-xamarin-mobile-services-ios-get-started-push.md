@@ -399,4 +399,4 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 [Xamarin.iOS]: http://xamarin.com/download
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

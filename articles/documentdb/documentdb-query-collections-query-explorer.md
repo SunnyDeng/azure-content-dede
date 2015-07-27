@@ -40,7 +40,7 @@ Der Abfrage-Explorer kann über jedes DocumentDB-Blatt "Konto", "Datenbank" und 
 
 2. Klicken Sie einfach auf die Kachel, um den Abfrage-Explorer zu starten.
 
-	Die Dropdownlistenfelder **Datenbank** und **Sammlung** werden basierend auf dem Kontext, in dem Sie den Abfrage-Explorer starten, automatisch ausgefüllt. Wenn Sie diesen z. B. aus einem Datenbankblatt starten, sind die Felder der aktuellen Datenbank bereits ausgefüllt. Wenn Sie diesen aus einem Blatt "Sammlung" starten, sind die Felder der aktuellen Sammlung ausgefüllt.
+	Die Dropdownlistenfelder **Datenbank** und **Sammlung** werden basierend auf dem Kontext, in dem Sie den Abfrage-Explorer starten, automatisch ausgefüllt. Wenn Sie diesen z. B. aus einem Datenbankblatt starten, sind die Felder der aktuellen Datenbank bereits ausgefüllt. Wenn Sie diesen aus einem Auflistungsblatt starten, sind die Felder der aktuellen Auflistung ausgefüllt.
 
 	![Screenshot des Abfrage-Explorers](./media/documentdb-query-collections-query-explorer/queryexplorerinitial.png)
 
@@ -78,4 +78,4 @@ Mit dem Abfrage-Explorer können Sie problemlos Abfragen für eine DocumentDB-Sa
 - Weitere Informationen zur DocumentDB-SQL-Grammatik, die im Abfrage-Explorer unterstützt wird, finden Sie [hier](documentdb-sql-query.md).
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

@@ -28,7 +28,7 @@ Der Microsoft Azure-Edifact-Dienst kann in der Business-to-Business-Kommunikatio
 Zur Verwendung des Edifact-Connectors müssen Sie zunächst eine Instanz der AS2-Connector-API-App erstellen. Dies kann entweder inline beim Erstellen einer Logik-App oder durch Auswählen der AS2-Connector-API-App aus dem Azure Marketplace erfolgen.
 
 ##Konfigurieren des Edifact-Connectors
-Handelspartner sind die Entitäten, die an einer B2B-Kommunikation (Business-to-Business) beteiligt sind. Wenn zwei Partner eine Beziehung eingehen, wird dies als „Vereinbarung“ bezeichnet. Diese Vereinbarung basiert auf der Kommunikation, die beide Partner wünschen, und ist protokoll- oder transportspezifisch.
+Handelspartner sind die Entitäten, die an einer B2B-Kommunikation (Business-to-Business) beteiligt sind. Wenn zwei Partner eine Beziehung eingehen, wird dies als "Vereinbarung" bezeichnet. Diese Vereinbarung basiert auf der Kommunikation, die beide Partner wünschen, und ist protokoll- oder transportspezifisch.
 
 Die Schritte zum Erstellen eines Handelspartnervertrags sind [hier][2] dokumentiert.
 
@@ -131,9 +131,9 @@ Der Edifact-Connector kann als Trigger oder als Aktion verwendet werden.
 Die Aktion gibt bei erfolgreichem Abschluss ein Objekt mit der EDIFACT-Nutzlast zurück.
 
 ## Optimale Nutzung Ihres Connectors
-Nachdem Sie den Connector erstellt haben, können Sie ihn mit einer Logik-App einem Unternehmensdatenfluss hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Sie können auch Leistungsstatistiken überprüfen und die Sicherheit für den Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
 
 
 <!--References -->
@@ -148,4 +148,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit für den C
 [9]: ./media/app-service-logic-connector-edifact/EncodeInput.PNG
 [10]: ./media/app-service-logic-connector-edifact/EncodeConfigured.PNG
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

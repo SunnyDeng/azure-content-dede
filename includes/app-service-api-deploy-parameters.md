@@ -4,7 +4,7 @@ Nachfolgend wird jeder der in der Vorlage verwendeten Parameter beschrieben.
 
 ### gatewayName
 
-Der Name des Gateways, das Sie erstellen möchten. Die API-App wird für dieses Gateway registriert.
+Der Name des Gateways. Die API-App wird für dieses Gateway registriert.
 
     "gatewayName": {
       "type": "string"
@@ -12,7 +12,7 @@ Der Name des Gateways, das Sie erstellen möchten. Die API-App wird für dieses 
 
 ### apiAppName
 
-Der Name der zu erstellenden API-App.
+Der Name der zu erstellenden API-App. Der Name muss zwischen 8 und 50 Zeichen lang sein.
     
     "apiAppName": {
       "type": "string"
@@ -34,4 +34,4 @@ Der Speicherort für die neue API-App.
       "type": "string"
     }
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -36,4 +36,4 @@ Möchten Sie sich als Organisation bei Azure anmelden? [**Jetzt registrieren**](
 * [Verwenden Ihrer lokalen Identitätsinfrastruktur in der Cloud](active-directory-aadconnect.md)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

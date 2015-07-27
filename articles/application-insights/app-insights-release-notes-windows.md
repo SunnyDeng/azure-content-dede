@@ -32,6 +32,33 @@ Weitere Informationen finden Sie unter [Erste Schritte mit Application Insights 
 * Vergleichen Sie die alte und neue Version der Datei "ApplicationInsights.config". Übernehmen Sie wieder alle Anpassungen, die Sie an der alten Version vorgenommen haben.
 * Erstellen Sie die Projektmappe neu.
 
+## Version 1.0.0
+
+### Windows-App-SDK
+
+- Neue Initialisierung für Windows-Apps. Neue `WindowsAppInitializer`-Klasse, deren `InitializeAsync()`-Methode die Bootstrappinginitialisierung der SDK-Sammlung ermöglicht. Diese Änderung erlaubt eine bessere Kontrolle und beträchtliche Leistungsverbesserungen bei der App-Initialisierung gegenüber der früheren Verwendung von "ApplicationInsights.config".
+- DeveloperMode wird nicht mehr automatisch festgelegt. Um das DeveloperMode-Verhalten zu ändern, müssen Sie es im Code angeben.
+- Das NuGet-Paket fügt "ApplicationInsights.config" nicht mehr ein. Sie sollten den neuen WindowsAppInitializer verwenden, wenn Sie das NuGet-Paket manuell hinzufügen.
+- "ApplicationInsights.config" liest nur `<InstrumentationKey>`, alle anderen Einstellungen werden in der Voreinstellung für WindowsAppInitializer-Einstellungen ignoriert.
+- Der Store-Markt wird automatisch vom SDK erfasst.
+- Zahlreiche Fehlerkorrekturen, Stabilitäts- und Leistungsverbesserungen.
+
+### Core SDK
+
+- Die Datei "ApplicationInsights.config" ist nicht mehr erforderlich. Sie wird nicht vom NuGet-Paket hinzugefügt. Die Konfiguration kann vollständig im Code angegeben werden.
+- Das NuGet-Paket fügt der Projektmappe keine Zieldatei mehr hinzu. Dadurch wird die automatische DeveloperMode-Einstellung im Debugbuild entfernt. DeveloperMode sollte manuell im Code festgelegt werden.
+
+## Version 0.17
+
+### Windows-App-SDK
+
+- Das Windows-App-SDK unterstützt jetzt universelle Windows-Apps, die für Windows 10 Technical Preview und mit Visual Studio 2015 RC erstellt wurden.
+
+### Core SDK
+
+- TelemetryClient wird standardmäßig mit InMemoryChannel initialisiert.
+- Neue API wurde hinzugefügt, `TelemetryClient.Flush()`. Diese Löschmethode löst ein unmittelbares Blockieren des Uploads aller Telemetriedaten aus, die auf dem Client protokolliert wurden. Dies ermöglicht das manuelle Auslösen des Uploads vor dem Beenden des Prozesses.
+- Das NuGet-Paket hat ein .NET 4.5-Ziel hinzugefügt. Dieses Ziel verfügt über keine externen Abhängigkeiten (entfernte BCL- und EventSource-Abhängigkeiten).
 
 ## Version 0.16 
 
@@ -50,4 +77,4 @@ Vorschau vom 28.04.2015
 
 Für ältere Versionen sind keine Versionshinweise verfügbar.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

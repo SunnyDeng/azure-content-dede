@@ -220,4 +220,4 @@ Weitere Informationen zum Entwickeln und Veröffentlichen von Azure-Websites fin
 [Warteschlangenspeicher]: storage-python-how-to-use-queue-storage.md
 [Blob-Speicher]: storage-python-how-to-use-blob-storage.md
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

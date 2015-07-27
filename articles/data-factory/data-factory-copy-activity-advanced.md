@@ -193,7 +193,7 @@ In diesem Beispiel wird eine SQL-Abfrage (im Vergleich zur Tabelle im vorherigen
 			"source":
 			{
 				"type": "SqlSource",
-				"SqlReaderQuery": "$$Text.Format('SELECT * FROM MyTable WHERE StartDateTime = '{0:yyyyMMdd-HH}'', SliceStart)"
+				"SqlReaderQuery": "$$Text.Format('SELECT * FROM MyTable WHERE StartDateTime = \'{0:yyyyMMdd-HH}\'', SliceStart)"
 			},
 			"sink":
 			{
@@ -347,4 +347,4 @@ Obwohl die UTF-8-Codierung sehr beliebt ist, verwenden Textdateien in Azure-Blob
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity-advanced/ColumnMappingSample2.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

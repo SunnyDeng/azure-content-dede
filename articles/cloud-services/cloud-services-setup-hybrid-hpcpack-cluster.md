@@ -106,7 +106,7 @@ HPC Pack installiert im Hauptknoten ein selbstsigniertes Zertifikat mit dem Name
 
 	![Zertifikateinstellungen][upload_cert1]
 
-4. Suchen Sie im Hauptknoten nach der Datei C:\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer. Klicken Sie dann auf die Schaltfläche mit dem **Häkchen**.
+4. Suchen Sie im Hauptknoten nach der Datei C:\\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer. Klicken Sie dann auf die Schaltfläche mit dem **Häkchen**.
 
 	![Hochladen des Zertifikats][install_hpc10]
 
@@ -347,4 +347,4 @@ Nachdem Sie das Cluster ausprobiert haben, können Sie mit HPC Cluster Manager d
 [stop_node4]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/stop_node4.png
 [view_instances2]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/view_instances2.png
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

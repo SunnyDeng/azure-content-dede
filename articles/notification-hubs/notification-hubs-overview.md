@@ -160,4 +160,4 @@ Die relevanten .NET-API-Referenzen für Pushbenachrichtigungen befinden sich hie
 
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

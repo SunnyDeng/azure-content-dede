@@ -13,37 +13,35 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="05/26/2015"
+	ms.date="07/06/2015"
 	ms.author="aashishr"/>
 
 
 # Sichern von virtuellen Azure-Computern
-
 Dieser Artikel ist der Hauptleitfaden zur Sicherung virtueller Azure-Computer. Bevor Sie fortfahren, stellen Sie sicher, dass alle [Voraussetzungen](backup-azure-vms-introduction.md#prerequisites) erfüllt werden.
 
 Zur Sicherung virtueller Azure-Computer gehören drei Hauptschritte:
 
 ![Drei Schritte zum Sichern eines virtuellen Azure-Computers](./media/backup-azure-vms/3-steps-for-backup.png)
 
-## Ermitteln von virtuellen Azure-Computern
+## 1\. Ermitteln von virtuellen Azure-Computern
 Beim Ermittlungsvorgang wird Azure nach der Liste virtueller Computer im Abonnement abgefragt. Außerdem werden zusätzliche Informationen wie der Clouddienstname und die Region erfasst.
 
 > [AZURE.NOTE]Der Ermittlungsvorgang sollte immer als erster Schritt ausgeführt werden. Dadurch wird sichergestellt, dass alle neuen virtuellen Computer, die dem Abonnement hinzugefügt wurden, identifiziert werden.
 
-Gehen Sie zum Auslösen des Ermittlungsvorgangs folgendermaßen vor:
+### So lösen Sie den Ermittlungsprozess aus
 
 1. Navigieren Sie zum Sicherungstresor, der sich im Azure-Portal unter **Recovery Services** befindet, und klicken Sie auf die Registerkarte **Registrierte Elemente**.
 
 2. Wählen Sie im Dropdownmenü als Art des Workloads **Azure Virtual Machine** aus, und klicken Sie auf die Schaltfläche **Auswählen**. ![Workload auswählen](./media/backup-azure-vms/discovery-select-workload.png)
 
-3. Klicken Sie unten auf der Seite auf die Schaltfläche **ERMITTELN**. ![Schaltfläche "Ermitteln"](./media/backup-azure-vms/discover-button.png)
+3. Klicken Sie unten auf der Seite auf die Schaltfläche **ERMITTELN**. ![Schaltfläche "Ermitteln"](./media/backup-azure-vms/discover-button-only.png)
 
 4. Der Ermittlungsvorgang kann einige Minuten andauern, während die virtuellen Computer in einer Tabelle aufgeführt werden. Am unteren Bildschirmrand wird eine Popupbenachrichtigung angezeigt, während der Ermittlungsvorgang ausgeführt wird. ![VMs ermitteln](./media/backup-azure-vms/discovering-vms.png)
 
 5. Sobald der Ermittlungsvorgang abgeschlossen ist, wird eine Popupbenachrichtigung angezeigt. ![Ermitteln abgeschlossen](./media/backup-azure-vms/discovery-complete.png)
 
-
-## Registrieren von virtuellen Azure-Computern
+##  2\. Registrieren von virtuellen Azure-Computern
 Bevor ein virtueller Computer geschützt werden kann, muss er beim Azure Backup-Dienst registriert werden. Der Registrierungsvorgang hat zwei Hauptziele:
 
 1. Aktivieren der Sicherungserweiterung im VM-Agent auf dem virtuellen Computer
@@ -58,7 +56,7 @@ Die Registrierung ist in der Regel eine einmalige Angelegenheit. Der Azure Backu
 
 2. Wählen Sie im Dropdownmenü als Workloadtyp **Azure Virtual Machine** aus, und klicken Sie auf die Schaltfläche "Auswählen". ![Workload auswählen](./media/backup-azure-vms/discovery-select-workload.png)
 
-3. Klicken Sie unten auf der Seite auf die Schaltfläche **REGISTRIEREN**. ![Schaltfläche "Registrieren"](./media/backup-azure-vms/register-button.png)
+3. Klicken Sie unten auf der Seite auf die Schaltfläche **REGISTRIEREN**. ![Schaltfläche "Registrieren"](./media/backup-azure-vms/register-button-only.png)
 
 4. Wählen Sie im Popupfenster **Elemente registrieren** die virtuellen Computer aus, die Sie registrieren möchten. Wenn zwei oder mehr virtuelle Computer denselben Namen aufweisen, verwenden Sie den Clouddienst zur Unterscheidung zwischen den virtuellen Computern.
 
@@ -72,9 +70,10 @@ Die Registrierung ist in der Regel eine einmalige Angelegenheit. Der Azure Backu
 
 7. Sobald der Vorgang abgeschlossen ist, ändert sich der Status im Portal dem registrierten Status entsprechend. ![Registrierungsstatus 2](./media/backup-azure-vms/register-status02.png)
 
-## Sichern von virtuellen Azure-Computern
+## 3\. Schützen: Sichern von virtuellen Azure-Computern
 Dieser Schritt umfasst das Einrichten einer Sicherungs- und Beibehaltungsrichtlinie für den virtuellen Computer. Um einen virtuellen Computer zu schützen, führen Sie die folgenden Schritte aus:
 
+### So sichern Sie virtuelle Azure-Computer
 1. Navigieren Sie zum Sicherungstresor, der sich im Azure-Portal unter **Recovery Services** befindet, und klicken Sie auf die Registerkarte **Registrierte Elemente**.
 2. Wählen Sie im Dropdownmenü als Art des Workloads **Azure Virtual Machine** aus, und klicken Sie auf die Schaltfläche **Auswählen**. ![Workload im Portal auswählen](./media/backup-azure-vms/select-workload.png)
 
@@ -143,10 +142,8 @@ Das Aktualisieren des VM-Agents ist so einfach wie das Neuinstallieren der [Bin�
 #### Überprüfen der VM-Agent-Installation
 So überprüfen Sie die Version des VM-Agents auf virtuellen Windows-Computern
 
-- Melden Sie sich am virtuellen Azure-Computer an, und navigieren Sie zum Ordner *C:\WindowsAzure\Packages*.
-- Dieser Ordner enthält die Datei "WaAppAgent.exe".
-- Klicken Sie mit der rechten Maustaste auf die Datei, wechseln Sie zu **Eigenschaften**, und wählen Sie dann die Registerkarte **Details**.
-- Im Feld mit der Produktversion sollte 2.6.1198.718 oder eine höhere Version angegeben sein.
+1. Melden Sie sich am virtuellen Azure-Computer an, und navigieren Sie zum Ordner *C:\\WindowsAzure\\Packages*. Dieser Ordner enthält die Datei "WaAppAgent.exe".
+2. Klicken Sie mit der rechten Maustaste auf die Datei, wechseln Sie zu **Eigenschaften**, und wählen Sie dann die Registerkarte **Details**. Im Feld mit der Produktversion sollte 2.6.1198.718 oder eine höhere Version angegeben sein.
 
 ### Problembehandlung bei Netzwerkproblemen
 Wie bei allen Erweiterungen ist für die Backup-Erweiterung der Zugriff auf das öffentliche Internet erforderlich, damit sie funktioniert. Wenn kein Zugriff auf das öffentliche Internet besteht, kann dies zu unterschiedlichen Ergebnissen führen:
@@ -177,13 +174,12 @@ In der folgenden Tabelle werden die Arten der Konsistenz aufgeführt, die bei de
 |-------------|-----------|---------|
 | Anwendungskonsistenz | Ja | Dies ist der ideale Ort für Microsoft-Workloads, da dadurch Folgendes gewährleistet wird:<ol><li> Der virtuelle Computer wird *hochgefahren* <li>Es gibt *keine Beschädigung* <li>Es gibt keinen *Datenverlust* <li> Die Daten sind mit der Anwendung konsistent, in der die Daten verwendet werden, da die Anwendung zum Zeitpunkt der Sicherung einbezogen wird – mithilfe von VSS</ol> Durch den Volumemomentaufnahmedienst (Volume Snapshot Service, VSS) wird sichergestellt, dass die Daten ordnungsgemäß in den Speicher geschrieben werden. Die meisten Microsoft-Workloads verfügen über VSS Writer, die Workload-spezifische Aktionen im Zusammenhang mit der Datenkonsistenz ausführen. Beispielsweise umfasst Microsoft SQL Server einen VSS Writer, der die ordnungsgemäße Durchführung der Schreibvorgänge in die Transaktionsprotokolldatei und die Datenbank gewährleistet.<br><br> Für die Azure-VM-Sicherung bedeutet das Erhalten eines anwendungskonsistenten Wiederherstellungspunkts, dass die Sicherungserweiterung den VSS-Workflow aufrufen und *ordnungsgemäß* abschließen konnte, bevor die Momentaufnahme des virtuellen Computers erstellt wurde. Dies heißt natürlich, dass die VSS Writer aller Anwendungen auf dem virtuellen Azure-Computer ebenfalls aufgerufen wurden.<br><br>Erlernen Sie die [Grundlagen von VSS](http://blogs.technet.com/b/josebda/archive/2007/10/10/the-basics-of-the-volume-shadow-copy-service-vss.aspx), und erlangen Sie detaillierte Kenntnisse zur [Funktionsweise](https://technet.microsoft.com/library/cc785914%28v=ws.10%29.aspx). |
 | Dateisystemkonsistenz | Ja, für Windows-Computer | Es gibt zwei Szenarien, in denen der Wiederherstellungspunkt dateisystemkonsistent sein kann:<ul><li>Sicherung virtueller Linux-Computer in Azure, da Linux über keine entsprechende Plattform wie VSS verfügt.<li>VSS-Fehler bei der Sicherung für virtuelle Windows-Computer in Azure.</li></ul> In beiden Fällen ist es das beste, Folgendes sicherzustellen: <ol><li> Der virtuelle Computer *wird hochgefahren*. <li>Es gibt *keine Datenbeschädigung*. <li>Es gibt keinen *Datenverlust*.</ol> Anwendungen müssen einen eigenen Reparaturmechanismus für die wiederhergestellten Daten implementieren.|
-| Absturzkonsistenz | Nein | Diese Situation entspricht dem Absturz eines Computers (durch eine Teil- oder Vollrückstellung). Es gibt keine Garantie für die Konsistenz der Daten auf dem Speichermedium. Nur Daten, die zum Zeitpunkt der Sicherung bereits auf dem Datenträger vorhanden sind, werden erfasst und gesichert. <ol><li>Auch wenn es keine Garantie gibt, wird das Betriebssystem in den meisten Fällen gestartet.<li>In der Regel folgt eine Prozedur zur Datenträgerüberprüfung wie chkdsk, um eine eventuelle Datenbeschädigung zu reparieren.<li> Alle Daten im Arbeitsspeicher oder Schreibvorgänge, die nicht vollständig auf den Datenträger geleert wurden, gehen verloren.<li> Die Anwendung folgt normalerweise mit einem eigenen Überprüfungsmechanismus, falls ein Datenrollback durchgeführt werden muss. </ol>Für die Sicherung virtueller Azure-Computer bedeutet das Erhalten eines absturzkonsistenten Wiederherstellungspunkts, dass Azure Backup keine Garantie für die Konsistenz der Daten im Speicher bietet - weder im Hinblick auf das Betriebssystem noch im Hinblick auf die Anwendung. Dies geschieht in der Regel, wenn der virtuelle Azure-Computer zum Zeitpunkt der Sicherung heruntergefahren wird.<br><br>Wenn das Transaktionsprotokoll beispielsweise Einträge enthält, die nicht in der Datenbank vorhanden sind, führt die Datenbanksoftware einen Rollback durch, bis die Daten konsistent sind. Beim Umgang mit Daten, die über mehrere virtuelle Laufwerke verteilt sind (z. B. übergreifende Volumes), bietet ein absturzkonsistenter Wiederherstellungspunkt keine Garantie für die Richtigkeit der Daten.|
+| Absturzkonsistenz | Nein | Diese Situation entspricht dem Absturz eines Computers (durch eine Teil- oder Vollrückstellung). Dies geschieht normalerweise, wenn zum Zeitpunkt der Sicherung der virtuelle Azure-Computer heruntergefahren wird. Für die Sicherung virtueller Azure-Computer bedeutet das Erhalten eines ausfallsicheren Wiederherstellungspunkts, dass Azure Backup keine Garantie für die Konsistenz der Daten auf dem Speichermedium gewährt – weder im Hinblick auf das Betriebssystem noch im Hinblick auf die Anwendung. Nur Daten, die zum Zeitpunkt der Sicherung bereits auf dem Datenträger vorhanden sind, werden erfasst und gesichert. <br/> <br/> Auch wenn es keine Garantie gibt, wird das Betriebssystem in den meisten Fällen gestartet. In der Regel folgt eine Prozedur zur Datenträgerüberprüfung wie „chkdsk“, um eine mögliche Datenbeschädigung zu reparieren. Alle Daten im Arbeitsspeicher oder Schreibvorgänge, die nicht vollständig auf den Datenträger übertragen wurden, gehen verloren. Die Anwendung folgt normalerweise mit einem eigenen Überprüfungsmechanismus, falls ein Datenrollback durchgeführt werden muss. Für die Sicherung virtueller Azure-Computer bedeutet das Erhalten eines ausfallsicheren Wiederherstellungspunkts, dass Azure Backup keine Garantie für die Konsistenz der Daten im Speicher gewährt – weder im Hinblick auf das Betriebssystem noch im Hinblick auf die Anwendung. Dies geschieht in der Regel, wenn der virtuelle Azure-Computer zum Zeitpunkt der Sicherung heruntergefahren wird.<br><br>Wenn das Transaktionsprotokoll beispielsweise Einträge enthält, die nicht in der Datenbank vorhanden sind, führt die Datenbanksoftware einen Rollback durch, bis die Daten konsistent sind. Beim Umgang mit Daten, die über mehrere virtuelle Laufwerke verteilt sind (z. B. übergreifende Volumes), bietet ein absturzkonsistenter Wiederherstellungspunkt keine Garantie für die Richtigkeit der Daten.|
 
 ## Nächste Schritte
 Weitere Informationen zum Einstieg in Azure Backup finden Sie unter:
 
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Verwalten virtueller Computer](backup-azure-manage-vms)
- 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

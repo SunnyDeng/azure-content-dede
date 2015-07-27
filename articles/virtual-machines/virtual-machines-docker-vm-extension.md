@@ -82,4 +82,4 @@ Eine vollständige Liste finden Sie unter [Azure VM-Erweiterungen](http://msdn.m
 [Erweiterungen für virtuelle Linux- und Windows-Computer]: #Virtual-Machine-Extensions-For-Linux-and-Windows
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

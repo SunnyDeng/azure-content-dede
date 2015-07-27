@@ -17,25 +17,33 @@ Sie erstellen einen WordPress-Blog unter Verwendung einer Standardvorlage. In de
 
 1. Melden Sie sich beim Azure-Vorschauportal an.
 
-2. Öffnen Sie Azure Marketplace entweder durch Klicken auf das Symbol **Marketplace** oder auf das Symbol **Neu** links unten im Dashboard. Wählen Sie anschließend **Web + Mobile** und dann unten **Azure Marketplace** aus.
+2. Öffnen Sie den Azure Marketplace durch Klicken auf das Symbol **Marketplace**:
+
+    ![Marketplace-Symbol][marketplace]
+
+    Oder klicken Sie auf das Symbol **Neu** oben rechts im Dashboard, und wählen Sie unten in der Liste den Eintrag **Marketplace** aus.
 	
-	![Neu erstellen][5]
+    ![Neu erstellen][5]
 	
-3. Wählen Sie **Web-Apps** aus. Suchen Sie nach **WordPress**, und klicken Sie dann auf das Symbol **WordPress**.
+3. Wählen Sie **Web und mobil** aus. Suchen Sie nach **WordPress**, und klicken Sie dann auf das Symbol **WordPress**.
 
 	![WordPress-Symbol in der Liste][7]
 	
 5. Wählen Sie nach dem Lesen der Beschreibung der WordPress-App **Erstellen** aus.
 
-6. Klicken Sie auf **WEB-APP**, und geben Sie die erforderlichen Werte für die Konfiguration Ihrer Web-App ein.
+6. Klicken Sie auf **Web-App**, und geben Sie die erforderlichen Werte für die Konfiguration Ihrer Web-App ein.
 	
-   ![App konfigurieren][8]
+    ![App konfigurieren][8]
 
-7. Klicken Sie auf **DATENBANK**, und geben Sie die erforderlichen Werte die Konfiguration Ihrer MySQL-Datenbank ein. 
+7. Klicken Sie auf **Datenbank**, und geben Sie die erforderlichen Werte für die Konfiguration Ihrer MySQL-Datenbank ein.
 
-   ![Datenbank konfigurieren][database]
+    ![Datenbank konfigurieren][database]
 
-8. Klicken Sie ggf. auf **ABONNEMENT**, und geben Sie das zu verwendende Abonnement an. 
+8. Geben Sie einen Namen für die neue Ressourcengruppe an.
+
+    ![Ressourcengruppe festlegen][groupname]
+
+8. Klicken Sie ggf. auf **ABONNEMENT**, und geben Sie das zu verwendende Abonnement an.
 
 7. Klicken Sie nach der Definition der Web-App auf **Erstellen**, und warten Sie, bis die neue Web-App erstellt ist.
 
@@ -47,11 +55,11 @@ Sie erstellen einen WordPress-Blog unter Verwendung einer Standardvorlage. In de
 	
 1. Klicken Sie auf die neue Web-App, um deren Details anzuzeigen.
 
-   ![Dashboard starten][10]
+    ![Dashboard starten][10]
 
 2. Klicken Sie auf der Seite **Essentials** auf **Durchsuchen** oder auf den Link unter **URL**, um die Willkommensseite der Web-App zu öffnen.
 
-   ![Website-URL][browse]
+    ![Website-URL][browse]
 
 3. Wenn Sie WordPress nicht installiert haben, geben Sie die für WordPress erforderlichen Konfigurationsinformationen ein, und klicken Sie auf **WordPress installieren**, um die Konfiguration abzuschließen und die Anmeldeseite der Web-App zu öffnen.
 
@@ -66,16 +74,18 @@ Sie erstellen einen WordPress-Blog unter Verwendung einer Standardvorlage. In de
 
 
 
-[5]: ./media/website-from-gallery/startmarketplace.png
+[5]: ./media/website-from-gallery/start-marketplace.png
 [6]: ./media/website-from-gallery/wordpressgallery-02.png
-[7]: ./media/website-from-gallery/selectwordpress.png
-[8]: ./media/website-from-gallery/configureweb.png
+[7]: ./media/website-from-gallery/search-web-app.png
+[8]: ./media/website-from-gallery/set-web-app.png
 [9]: ./media/website-from-gallery/wordpressgallery-05.png
-[10]: ./media/website-from-gallery/seewebapp.png
+[10]: ./media/website-from-gallery/select-web.png
 [13]: ./media/website-from-gallery/wordpressgallery-09.png
 [webapps]: ./media/website-from-gallery/selectwebapps.png
-[database]: ./media/website-from-gallery/configuredb.png
-[resourcegroup]: ./media/website-from-gallery/showgroup.png
-[browse]: ./media/website-from-gallery/browse.png
+[database]: ./media/website-from-gallery/set-db.png
+[resourcegroup]: ./media/website-from-gallery/show-rg.png
+[browse]: ./media/website-from-gallery/browse-web.png
+[marketplace]: ./media/website-from-gallery/marketplace-icon.png
+[groupname]: ./media/website-from-gallery/set-rg.png
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

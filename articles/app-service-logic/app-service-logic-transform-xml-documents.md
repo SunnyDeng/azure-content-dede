@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Transformieren von XML-Dokumenten" 
+	pageTitle="BizTalk-Transformation" 
 	description="Erfahren Sie, wie XML-Dokumente von einem Schema in ein anderes transformiert werden." 
 	authors="anuragdalmia" 
 	manager="dwrede" 
@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/23/2015"
+	ms.date="06/30/2015"
 	ms.author="anuragdalmia"/>
 
-#Transformieren von XML-Dokumenten
+#BizTalk-Transformation
 
 
-## BizTalk-Transformations-API-App – Übersicht
+## Übersicht
 Einfach ausgedrückt, konvertiert die BizTalk-Transformations-API-App Daten von einem Format in ein anderes. Sie können z. B. Versand- und Rechnungsanschrift einer Bestellung entnehmen und in ein Rechnungsdokument einfügen. Oder Sie haben eine eingehende Nachricht, die das aktuelle Datum im *YearMonthDay*-Format enthält. Sie möchten das Datum im *MonthDayYear*-Format neu formatieren.
 
 Dazu können Sie die Transformations-API-App in Microsoft Azure App Service verwenden. Eine Transformation oder Zuordnung besteht aus einem XML-Quellschema (der Eingabe) und einem XML-Zielschema (der Ausgabe). Sie können verschiedene integrierte Funktionen verwenden, um Daten zu ändern oder zu steuern, einschließlich Zeichenfolgenbearbeitungen, bedingter Zuordnungen, arithmetischer Ausdrücke, Datum-Uhrzeit-Formatierungen und sogar Schleifenkonstrukten.
@@ -33,47 +33,13 @@ Zusätzliche Features:
 - Direkte Kopieren von Daten zwischen den Schemas. Im BizTalk-Mapper ist dies so einfach wie das Zeichnen einer Linie, die die Elemente im Quellschema mit ihren Gegenstücken im Zielschema verbindet.
 - Wenn Sie eine Zuordnung erstellen, zeigen Sie eine grafische Darstellung der Zuordnung einschließlich aller erstellten Beziehungen und Links an.
 - Verwenden Sie das Feature **Testzuordnung** zum Hinzufügen einer XML-Beispielnachricht. Mit einem einfachen Mausklick können Sie die erstellte Zuordnung testen und die generierte Ausgabe anzeigen.
-- Laden Sie vorhandene Azure BizTalk Services-Zuordnungen(.trfm) hoch, und nutzen Sie alle Vorteile der Transformations-API-App.
+- Laden Sie vorhandene Azure BizTalk Services-Zuordnungen (.trfm) hoch, und nutzen Sie alle Vorteile der Transformations-API-App.
+- Wenn Sie die Zuordnung erstellen, müssen Sie kein Schema hinzuzufügen. Wenn die Zuordnung bereit ist, fügen Sie sie zur Transformations-API-App hinzu, und schon kann es losgehen. 
 - Unterstützung für das XML-Format.
-
-
-## Erstellen einer neuen BizTalk-Transformations-API-App
-
-1.	Melden Sie sich beim Azure-Portal an, und navigieren Sie zum Startmenü (Startseite).
-
-2.	Wählen Sie **Neu** > **Web und Mobil** > **Azure Marketplace** > **API-Apps**:
-
-	   ![][1]
- 
-	Oder Sie können im Startmenü **Marketplace** und dann aus der Liste "Verfügbar" **API-Apps** auswählen:
-
-	   ![][2]
- 
-3.	Navigieren Sie zur BizTalk-Transformation, indem Sie **Transform** eingeben und **BizTalk Transform Service** auswählen:
-
-	   ![][4]
- 
-4.	Klicken Sie auf dem Blatt **BizTalk Transform Service** auf **Erstellen**:
-
-       ![][5]
- 
-5.	Geben Sie auf dem Blatt **Neue API-App** die folgenden Informationen ein, und klicken Sie auf **Erstellen**:
-
-	- Name – Geben Sie einen Namen für die Transformations-API-App ein. 
-	- App Service-Plan – Wählen Sie einen App Service-Plan aus, oder erstellen Sie einen neuen. 
-	- Preisstufe – Wählen Sie die Preisstufe, der diese App angehören soll. 
-	- Ressourcengruppe – Wählen oder erstellen Sie die Ressourcengruppe, der die App angehören soll. 
-	- Standort – Wählen Sie den geografischen Standort aus, an dem Sie die App bereitstellen möchten.
-	
-	   ![][6]
-
-6.	Klicken Sie auf **Erstellen**. Innerhalb weniger Minuten wird Ihre BizTalk-Transformations-API-App erstellt.
 
 
 ## Herunterladen von Schemas aus Connector-API-Apps
 Sie können die XML-Schemas für Connectors, z. B. SQL, SAP und SharePoint, von der API-App-Seite "Zusammenfassung" herunterladen. Wenn Sie z. B. XML-Schemas für eine bestimmte SAP-Connector-API-App herunterladen möchten, wechseln Sie zur API-App, und öffnen Sie die Seite "Zusammenfassung". Klicken Sie auf **Schemas herunterladen**. Eine ZIP-Datei mit den Schemas, die den SAP-Aktionen entsprechend, wird auf Ihren Computer heruntergeladen. Anhand der Schemas können Sie in Visual Studio eine Zuordnung (.trfm) erstellen.
-
-   ![][14]
 
 
 ## Erstellen und Hinzufügen der Zuordnung
@@ -109,7 +75,7 @@ Wenn sich die Zuordnung ändert oder nach dem Hochladen geändert wird, können 
 
 
 ## Verwenden einer BizTalk-Transformations-API-App in einer Logik-App
-Nachdem die Zuordnung erstellt und getestet wurde, steht sie jetzt zur Nutzung bereit. Benutzer können eine neue Logik-App erstellen (**Neu** > **Logik-Apps**).
+Nachdem die Zuordnung erstellt und getestet wurde, steht sie jetzt zur Nutzung bereit.
 
 1. Innerhalb der Logik-App ist "BizTalk-Transformation" im Katalog rechts verfügbar. Wählen Sie im Katalog **BizTalk Transform Service** aus. Die Transformation wird dem Datenfluss hinzugefügt:
 
@@ -150,4 +116,4 @@ Nachdem die Zuordnung erstellt und getestet wurde, steht sie jetzt zur Nutzung b
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

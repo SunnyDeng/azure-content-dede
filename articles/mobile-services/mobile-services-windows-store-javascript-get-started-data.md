@@ -141,4 +141,4 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Windows Store
 [Mobile Services HTML/JavaScript How-to Conceptual Reference]: mobile-services-html-how-to-use-client-library.md
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

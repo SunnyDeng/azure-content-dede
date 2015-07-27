@@ -12,7 +12,7 @@
 	 ms.tgt_pltfrm="na" 
 	 ms.devlang="na" 
 	 ms.topic="article" 
-	 ms.date="03/05/2015" 
+	 ms.date="07/07/2015" 
 	 ms.author="mazha"/>
 
 #Zuordnen einer benutzerdefinierten Domäne zu einem CDN-Endpunkt (Content Delivery Network, Netzwerk für die Inhaltsübermittlung)
@@ -83,11 +83,11 @@ In den Verfahren in diesem Thema werden die folgenden Schritte erläutert:
 
 		http://www.mydomain.com/cdn/mycloudservice
 
-#Weitere Informationen
+##Siehe auch
 
 
-[Aktivieren des CDN (Content Delivery Network) für Azure](./cdn-create-new-endpoint.md) **Übersicht über das Azure CDN**
+[Aktivieren des CDN (Content Delivery Network) für Azure](./cdn-create-new-endpoint.md)
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

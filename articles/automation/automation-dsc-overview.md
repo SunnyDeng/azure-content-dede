@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="powershell"
    ms.workload="TBD" 
-   ms.date="05/04/2015"
+   ms.date="07/09/2015"
    ms.author="coreyp"/>
 
 # Azure Automation DSC – Übersicht #
 
->[AZURE.IMPORTANT]**Azure Automation DSC befindet sich derzeit in der eingeschränkten Vorschau** und wird für Produktionsworkloads nicht unterstützt. Es ist vorläufig ausschließlich Cmdlet-basiert und weist keine grafische Benutzeroberfläche auf. Durch Ihre Registrierung für die Azure Automation DSC-Vorschau erkennen Sie an, dass dieses Feature sich in der Vorschau befindet und eingeschränkten oder anderen Dienstbedingungen unterliegt als denjenigen in der [Servicevereinbarung](https://go.microsoft.com/fwLink/p/?LinkID=389530&clcid=0x409). Gleichzeitig stimmen Sie den [Zusatzbedingungen für die Vorschau](https://go.microsoft.com/fwLink/p/?LinkID=247638&clcid=0x409) zu. Der Dienst wird zurzeit kostenlos, in Zukunft jedoch als kostenpflichtiger Dienst angeboten werden.
+>[AZURE.IMPORTANT]**Azure Automation DSC befindet sich derzeit in der eingeschränkten Vorschau** und wird für Produktionsworkloads nicht unterstützt. Es ist vorläufig größtenteils Cmdlet-basiert und verfügt über eine minimale grafische Benutzeroberfläche. Durch Ihre Registrierung für die Azure Automation DSC-Vorschau erkennen Sie an, dass dieses Feature sich in der Vorschau befindet und eingeschränkten oder anderen Dienstbedingungen unterliegt als denjenigen in der [Servicevereinbarung](https://go.microsoft.com/fwLink/p/?LinkID=389530&clcid=0x409). Gleichzeitig stimmen Sie den [Zusatzbedingungen für die Vorschau](https://go.microsoft.com/fwLink/p/?LinkID=247638&clcid=0x409) zu. Der Dienst wird zurzeit kostenlos, in Zukunft jedoch als kostenpflichtiger Dienst angeboten werden.
 
 ## Was ist PowerShell DSC? ##
 Desired State Configuration (DSC) ist eine neue Verwaltungsplattform in Windows PowerShell, die eine Konfigurationsverwaltung für physische Hosts und virtuelle Computer über eine deklarative PowerShell-Syntax ermöglicht.
@@ -49,6 +49,8 @@ Azure Automation DSC setzt auf den mit PowerShell DSC eingeführten Grundlagen a
 
 Mithilfe von Azure Automation DSC können Sie [PowerShell DSC-Konfigurationen erstellen und verwalten](https://technet.microsoft.com/library/dn249918.aspx), [DSC-Ressourcen](https://technet.microsoft.com/library/dn282125.aspx) importieren und DSC-Knotenkonfigurationen (MOF-Dokumente) generieren – und das alles in der Cloud. Diese DSC-Elemente werden auf dem [DSC-Pullserver](https://technet.microsoft.com/library/dn249913.aspx) für Azure Automation platziert, sodass Zielknoten (beispielsweise physische und virtuelle Computer) diese in der Cloud oder lokal abrufen können, sich automatisch an den festgelegten Zustand anpassen und ihre Kompatibilität mit dem gewünschten Zustand an Azure Automation zurückmelden.
 
+> [AZURE.VIDEO microsoft-ignite-2015-heterogeneous-configuration-management-using-microsoft-azure-automation]
+
 ## Azure Automation DSC – Begriffe ##
 ### Konfiguration ###
 PowerShell DSC führt ein neues Konzept der sogenannten Konfigurationen ein. Mithilfe von Konfigurationen können Sie über die PowerShell-Syntax den gewünschten Zustand Ihrer Umgebung definieren. Um DSC zum Konfigurieren Ihrer Umgebung zu verwenden, definieren Sie zunächst einen Windows PowerShell-Skriptblock mit dem Schlüsselwort "Configuration". Auf den Block muss ein Bezeichner folgen, anschließend wird der Block mit Klammern ({}) abgetrennt.
@@ -69,7 +71,7 @@ Das Ausführen (Kompilieren) einer DSC-Konfiguration führt zur Erstellung von e
 
 Azure Automation DSC ermöglicht Ihnen das Importieren, Erstellen und Kompilieren von DSC-Konfigurationen in Azure Automation – ähnlich wie Runbooks in Azure Automation importiert, erstellt und gestartet werden können.
 
-Azure Automation DSC stellt für die Verwaltung von DSC-Konfigurationen zurzeit die folgenden Cmdlets im **PowerShell-Modul des Azure-Ressourcen-Managers** bereit:
+Azure Automation DSC stellt für die Verwaltung von DSC-Konfigurationen zurzeit die folgenden Cmdlets im [PowerShell-Modul des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/mt244122.aspx) bereit:
 
 - `Get-AzureAutomationDscConfiguration`
 - `Import-AzureAutomationDscConfiguration`
@@ -82,7 +84,7 @@ Wenn eine DSC-Konfiguration kompiliert wird, werden in Abhängigkeit von den Nod
 
 PS DSC-Knoten erkennen Knotenkonfigurationen, die entweder per DSC-Push oder mithilfe von Pullmethoden angewendet werden sollen. Azure Automation DSC basiert auf der DSC-Pullmethode, bei der Knoten Knotenkonfigurationen anfordern, die Sie von Azure Automation DSC-Pullservern anwenden sollen. Da die Knoten die Anforderung an Azure Automation DSC senden, können sich die Knoten hinter Firewalls befinden, keine eingehenden Ports geöffnet haben usw. Die Knoten benötigen lediglich ausgehenden Zugriff auf das Internet.
 
-Azure Automation DSC stellt für die Verwaltung von DSC-Knotenkonfigurationen zurzeit die folgenden Cmdlets im **PowerShell-Modul des Azure-Ressourcen-Managers** bereit: `Get-AzureAutomationDscNodeConfiguration`
+Azure Automation DSC stellt für die Verwaltung von DSC-Knotenkonfigurationen zurzeit die folgenden Cmdlets im [PowerShell-Modul des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/mt244122.aspx) bereit: `Get-AzureAutomationDscNodeConfiguration`
 
 
 ###Knoten###
@@ -91,7 +93,7 @@ Ein DSC-Knoten ist ein beliebiger Computer, dessen Konfiguration von DSC verwalt
 
 Azure Automation DSC vereinfacht die Integration von Knoten zur Verwaltung durch Azure Automation DSC und erlaubt das Ändern der Knotenkonfiguration, die jedem Knoten serverseitig zugewiesen ist. Wenn also ein Knoten den Server das nächste Mal auf Anweisungen überprüft, wird eine andere Rolle angenommen und die Konfiguration entsprechend abgeändert. Knoten melden außerdem ihren Zustand und ihre Konfigurationskompatibilität an Azure Automation DSC.
 
-Azure Automation DSC stellt für die Verwaltung von DSC-Knoten zurzeit die folgenden Cmdlets im [PowerShell-Modul des Azure-Ressourcen-Managers](../powershell-azure-resource-manager.md) bereit:
+Azure Automation DSC stellt für die Verwaltung von DSC-Knoten zurzeit die folgenden Cmdlets im [PowerShell-Modul des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/mt244122.aspx) bereit:
 
 -	`Get-AzureAutomationDscNode`  
 -	`Register-AzureAutomationDscNode` (zur Integration von Azure v2 VMs als Knoten)
@@ -137,7 +139,7 @@ PowerShell:
         ConfigurationFunction = "RegistrationMetaConfig.ps1\RegistrationMetaConfig"
 
         # update these DSC agent configurations if these defaults are not what you want. 
-        # See https://technet.microsoft.com/de-de/library/dn249922.aspx?f=255&MSPPError=-2147217396 for more details
+        # See https://technet.microsoft.com/library/dn249922.aspx?f=255&MSPPError=-2147217396 for more details
         Properties = @{
             RegistrationKey = $RegistrationInfo.PrimaryKey
             RegistrationUrl = $RegistrationInfo.Endpoint
@@ -168,7 +170,7 @@ DSC-Ressourcen können auch als Bestandteil der PowerShell-Module importiert wer
 
 Zum Lieferumfang von Azure Automation DSC gehören dieselben integrierten DSC-Ressourcen wie bei PS DSC. Sie können Azure Automation DSC zusätzliche Ressourcen hinzufügen, indem Sie PowerShell-Module mit den gewünschten Ressourcen in Azure Automation importieren.
 
-Azure Automation DSC stellt für die Verwaltung von DSC-Knoten zurzeit die folgenden Cmdlets im [PowerShell-Modul des Azure-Ressourcen-Managers](../powershell-azure-resource-manager.md) bereit:
+Azure Automation DSC stellt für die Verwaltung von DSC-Knoten zurzeit die folgenden Cmdlets im [PowerShell-Modul des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/mt244122.aspx) bereit:
 
 - `New-AzureAutomationModule`
 - `Remove-AzureAutomationModule`
@@ -185,7 +187,7 @@ Ein Kompilierungsauftrag in Azure Automation DSC ist eine Instanz einer Konfigur
 >[AZURE.NOTE]Ebenso wie Runbooks können Konfigurationen veröffentlicht werden. Dies hat nichts mit dem Platzieren von DSC-Elementen auf dem Azure Automation DSC-Pullserver zu tun. Kompilierungsaufträge sorgen dafür, dass DSC-Elemente auf dem Azure Automation DSC-Pullserver platziert werden. Weitere Informationen zum "Veröffentlichen" in Azure Automation finden Sie unter [Veröffentlichen eines Runbooks](https://msdn.microsoft.com/library/dn903765.aspx).
 
 
-Azure Automation DSC stellt für die Verwaltung von DSC-Kompilierungsaufträgen zurzeit die folgenden Cmdlets im [PowerShell-Modul des Azure-Ressourcen-Managers](../powershell-azure-resource-manager.md) bereit:
+Azure Automation DSC stellt für die Verwaltung von DSC-Kompilierungsaufträgen zurzeit die folgenden Cmdlets im [PowerShell-Modul des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/mt244122.aspx) bereit:
 
 -	`Get-AzureAutomationDscCompilationJob`
 -	`Get-AzureAutomationDscCompilationJobOutput`
@@ -218,8 +220,10 @@ Azure Automation DSC stellt für die Verwaltung von DSC-Kompilierungsaufträgen 
 
 - Bei der ersten Registrierung eines Knotens für ein Azure Automation-Konto, oder wenn der Knoten serverseitig einer anderen Knotenkonfiguration zugewiesen wird, ist sein Zustand kompatibel – selbst, wenn der Knotenzustand tatsächlich nicht mit der Knotenkonfiguration kompatibel ist, der er jetzt zugeordnet ist. Sobald der Knoten nach der Registrierung oder einer Änderungen der Knotenkonfigurationszuweisung seinen ersten Bericht sendet, kann der Knotenzustand als vertrauenswürdig eingestuft werden.
 
-- Wenn beim Integrieren eines virtuellen Azure-Computers zur Verwaltung mit Azure Automation DSC über `Register-AzureAutomationDscNode`, `Set-AzureAutomationDscExtension` oder die VM-Erweiterung von Azure Automation DSC im Azure-Vorschauportal die Registrierung mit dem Fehler **Der Computername wurde nicht angegeben, und das Konfigurationsverzeichnis enthält keine Konfigurationsdateien** abgebrochen wird, ist dies ein Fehlalarm. Die VM-Registrierung war tatsächlich erfolgreich. Die erfolgreiche Registrierung kann mit dem Cmdlet `Get-AzureAutomationDscNode` überprüft werden.
+- Wenn beim Integrieren eines virtuellen Azure-Computers zur Verwaltung mit Azure Automation DSC über `Register-AzureAutomationDscNode`, `Set-AzureVMExtension` oder die VM-Erweiterung von Azure Automation DSC im Azure-Vorschauportal die Registrierung mit dem Fehler **Der Computername wurde nicht angegeben, und das Konfigurationsverzeichnis enthält keine Konfigurationsdateien** abgebrochen wird, ist dies ein Fehlalarm. Die VM-Registrierung war tatsächlich erfolgreich. Die erfolgreiche Registrierung kann mit dem Cmdlet `Get-AzureAutomationDscNode` überprüft werden.
 
- 
+- Beim Integrieren eines virtuellen Azure-Computers für die Verwaltung in Azure Automation DSC mithilfe von `Register-AzureAutomationDscNode`, `Set-AzureVMExtension` oder mithilfe der VM-Erweiterung für Azure Automation DSC im Azure-Vorschauportal, kann es bis zu eine Stunde dauern, bis der virtuelle Computer als DSC-Knoten in Azure Automation angezeigt wird. Dies liegt an der Installation von Windows Management Framework 5.0 auf dem virtuellen Computer durch die Azure VM-Erweiterung für DSC, mit der der virtuelle Computer in Azure Automation DSC integriert werden muss.
 
-<!---HONumber=62-->
+- Für in Azure Automation DSC integrierte DSC-Knoten wird anfänglich der Status „Kompatibel“ angezeigt, auch wenn sie eigentlich nicht mit der DSC-Knotenkonfiguration kompatibel sind, der sie zugeordnet sind. Nachdem ein Knoten seinen ersten Pull-Vorgang ausgeführt und den ersten DSC-Bericht an Azure Automation DSC gesendet hat, sollte der korrekte Status angezeigt werden.
+
+<!---HONumber=July15_HO3-->

@@ -1,19 +1,19 @@
 <properties
    pageTitle="Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal"
    description="Beschreibt den Vorgang zum Erstellen eines neuen Azure-Dienstprinzipals, der mit der rollenbasierten Zugriffskontrolle in Azure Resource Manager zum Verwalten des Zugriffs auf Ressourcen verwendet werden kann."
-   services="na"
+   services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
    manager="wpickett"
    editor=""/>
 
 <tags
-   ms.service="na"
+   ms.service="azure-resource-manager"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/28/2015"
+   ms.date="07/15/2015"
    ms.author="tomfitz"/>
 
 # Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal
@@ -134,4 +134,4 @@ Zugriffsverwaltung und -überwachung
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

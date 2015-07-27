@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie APIs, Vorgänge und Produkte in API Management erstellen." 
 	services="app-service\logic" 
 	documentationCenter="" 
-	authors="jtwist" 
+	authors="joshtwist" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/05/2015" 
+	ms.date="07/08/2015" 
 	ms.author="jtwist"/>
 
-##BizTalk-Vorlagen und Logik-Apps
+# BizTalk-Vorlagen und Logik-Apps
 
-###Diese Dokumentation ist in Kürze verfügbar.
+### Diese Dokumentation ist in Kürze verfügbar.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

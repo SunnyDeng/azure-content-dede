@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/08/2015" 
+	ms.date="07/02/2015" 
 	ms.author="cephalin"/>
 
 # Betriebssystemfunktionen für Web-Apps in Azure App Service #
@@ -22,6 +22,7 @@ In diesem Artikel werden allgemeine grundlegende Betriebssystemfunktionen beschr
 
 <a id="tiers"></a>
 ## App Service-Planstufen
+
 Web-Apps führen Kunden-Apps in einer Hostingumgebung mit mehreren Mandanten aus. Web-Apps mit Bereitstellung in den Modi **Free** und **Shared** werden mit Workerprozessen auf gemeinsamen virtuellen Computern ausgeführt. Web-Apps mit Bereitstellung in den Modi **Standard** und **Premium** werden hingegen auf virtuellen Computern ausgeführt, die nur für die Web-Apps eines einzelnen Kunden bestimmt sind.
 
 Da Web-Apps eine nahtlose Skalierung zwischen unterschiedlichen Modi unterstützen, bleibt die durchgeführte Sicherheitskonfiguration für Web-Apps gleich. So wird gewährleistet, dass sich Webanwendungen nicht plötzlich anders verhalten und unerwartet ausfallen, wenn der Web-App-Modus gewechselt wird.
@@ -34,7 +35,6 @@ Web-App-Modi steuern die Rechnerressourcen (CPU, Datenspeicher, Speicherplatz un
 Web-Apps bieten Unterstützung für eine Vielzahl an Entwicklungsframeworks, einschließlich ASP.NET, klassischem ASP, Node.js, PHP und Python. Diese werden alle als Erweiterungen innerhalb von IIS ausgeführt. Web-Apps führen die verschiedenen Entwicklungsframeworks mit deren Standardeinstellungen aus, um die Sicherheitskonfiguration zu vereinfachen und zu normalisieren. Ein Ansatz für die Konfiguration von Web-Apps hätte die Anpassung des API-Oberflächenbereichs und der Funktionen für jedes einzelne Entwicklungsframework sein können. Stattdessen ist der Ansatz von Web-Apps allgemeiner. Es wird eine allgemeine Grundlage der Betriebssystemfunktionen ermöglicht, unabhängig vom Anwendungsentwicklungsframework einer Web-App.
 
 In den folgenden Abschnitten werden die allgemeinen Betriebssystemfunktionen für Web-Apps in Azure zusammengefasst.
-
 
 <a id="FileAccess"></a>
 ##Dateizugriff
@@ -53,18 +53,18 @@ Ein Alleinstellungsmerkmal von Web-Apps, das die Webanwendungsbereitstellung und
 
 In den Web-Apps werden mehrere UNC-Freigaben in jedem Rechenzentrum erstellt. Ein Prozentsatz der Benutzerinhalte aller Kunden in jedem Rechenzentrum wird auf alle UNC-Freigaben verteilt. Außerdem werden alle Dateiinhalte für das Abonnement eines Kunden immer auf derselben UNC-Freigabe abgelegt.
 
-Beachten Sie, dass sich aufgrund der Funktionsweise von Clouddiensten der spezifische virtuelle Computer, der die UNC-Freigabe hostet, im Laufe der Zeit ändert. Es wird gewährleistet, dass UNC-Freigaben von unterschiedlichen virtuellen Computern bereitgestellt werden, da diese während des normalen Verlaufs von Cloudvorgängen ein- und ausgeschaltet werden. Aus diesem Grund sollten Anwendungen nicht fest codiert annehmen, dass die Computerinformationen in einem UNC-Dateipfad immer stabil bleiben. Stattdessen muss der praktische *pseudoabsolute* Pfad **D:\home\site** verwendet werden, den Web-Apps zur Verfügung stellen. Dieser pseudoabsolute Pfad bietet eine portable, Web-App- und benutzeragnostische Methode für die Verknüpfung zur eigenen App. Wenn Sie **D:\home\site** verwenden, können Sie freigegebene Dateien von App zu App übertragen, ohne für jede Übertragung einen neuen absoluten Pfad konfigurieren zu müssen.
+Beachten Sie, dass sich aufgrund der Funktionsweise von Clouddiensten der spezifische virtuelle Computer, der die UNC-Freigabe hostet, im Laufe der Zeit ändert. Es wird gewährleistet, dass UNC-Freigaben von unterschiedlichen virtuellen Computern bereitgestellt werden, da diese während des normalen Verlaufs von Cloudvorgängen ein- und ausgeschaltet werden. Aus diesem Grund sollten Anwendungen nicht fest codiert annehmen, dass die Computerinformationen in einem UNC-Dateipfad immer stabil bleiben. Stattdessen muss der praktische *pseudoabsolute* Pfad **D:\\home\\site** verwendet werden, den Web-Apps zur Verfügung stellen. Dieser pseudoabsolute Pfad bietet eine portable, Web-App- und benutzeragnostische Methode für die Verknüpfung zur eigenen App. Wenn Sie **D:\\home\\site** verwenden, können Sie freigegebene Dateien von App zu App übertragen, ohne für jede Übertragung einen neuen absoluten Pfad konfigurieren zu müssen.
 
 <a id="TypesOfFileAccess"></a>
 ### Dateizugriffstypen für eine Webanwendung
 
 Jedes Abonnement eines Kunden verfügt über eine reservierte Verzeichnisstruktur auf einer bestimmten UNC-Freigabe innerhalb eines Rechenzentrums. Ein Kunde kann über mehrere Web-Apps verfügen, die in einem bestimmten Rechenzentrum erstellt werden. Alle Verzeichnisse, die zu einem Abonnement eines Kunden gehören, werden daher auf derselben UNC-Freigabe erstellt. In der Freigabe können Verzeichnisse für Inhalt, Fehler- und Diagnoseprotokolle und frühere Versionen der Web-App, erstellt von der Quellcodeverwaltung, enthalten sein. Wie erwartet, sind Web-App-Verzeichnisse eines Kunden für Lese- und Schreibzugriff während der Laufzeit über den Anwendungscode der Web-App verfügbar.
 
-Auf den lokalen Laufwerken, die zum virtuellen Computer gehören, auf dem eine Webanwendung ausgeführt wird, reserviert die Web-App Speicherplatz auf Laufwerk C:\ für eine App-spezifische, temporäre lokale Speicherung. Obwohl eine Web-App vollständigen Lese- und Schreibzugriff für den eigenen temporären lokalen Speicher besitzt, ist dieser Speicherplatz nicht dazu gedacht, direkt von Anwendungscode verwendet zu werden. Stattdessen dient er dem Zweck, temporären Dateispeicher für IIS und Webanwendungsframeworks bereitzustellen. Web-Apps beschränken außerdem den temporären lokalen Speicherplatz für jede Webanwendung, damit einzelne Apps nicht übermäßig viel lokalen Speicherplatz verbrauchen können.
+Auf den lokalen Laufwerken, die zum virtuellen Computer gehören, auf dem eine Webanwendung ausgeführt wird, reserviert die Web-App Speicherplatz auf Laufwerk C:\\ für eine App-spezifische, temporäre lokale Speicherung. Obwohl eine Web-App vollständigen Lese- und Schreibzugriff für den eigenen temporären lokalen Speicher besitzt, ist dieser Speicherplatz nicht dazu gedacht, direkt von Anwendungscode verwendet zu werden. Stattdessen dient er dem Zweck, temporären Dateispeicher für IIS und Webanwendungsframeworks bereitzustellen. Web-Apps beschränken außerdem den temporären lokalen Speicherplatz für jede Webanwendung, damit einzelne Apps nicht übermäßig viel lokalen Speicherplatz verbrauchen können.
 
 Zwei Beispiele dazu, wie Web-Apps temporären lokalen Speicherplatz verwenden, sind das Verzeichnis für ASP.NET-Dateien und das Verzeichnis für komprimierte IIS-Dateien. Das Kompilierungssystem von ASP.NET verwendet das Verzeichnis "Temporary ASP.NET Files" als temporären Speicherort für den Kompilierungscache. IIS verwenden das Verzeichnis "IIS Temporary Compressed Files", um komprimierte Rückmeldungen zu speichern. Diese beiden Typen der Dateinutzung (und weitere) werden in Web-Apps über temporären lokalen Speicherplatz pro App neu zugewiesen. Durch diese Neuzuweisung wird eine durchgängige Funktionalität gewährleistet.
 
-Jede App in Web-Apps wird als zufällige, eindeutige Workerrollenidentität mit geringen Berechtigungen ausgeführt. Weitere Informationen zu dieser als Anwendungspoolidentität bezeichneten Identität finden Sie unter folgendem Link: [http://www.iis.net/learn/manage/configuring-security/application-pool-identities](http://www.iis.net/learn/manage/configuring-security/application-pool-identities) (in englischer Sprache). Anwendungscode nutzt diese Identität für grundlegenden schreibgeschützten Zugriff auf das Betriebssystemlaufwerk (Laufwerk D:). Das bedeutet, Anwendungscode kann allgemeine Verzeichnisstrukturen auflisten und allgemeine Dateien auf dem Betriebssystemlaufwerk lesen. Dies erscheint zwar wie ein sehr umfassender Zugriff, dieselben Verzeichnisse und Dateien sind jedoch zugänglich, wenn Sie in einem von Azure gehosteten Dienst eine Workerrolle bereitstellen und die Laufwerksinhalte lesen.
+Jede App in Web-Apps wird als zufällige, eindeutige Workerrollenidentität mit geringen Berechtigungen ausgeführt. Weitere Informationen zu dieser als Anwendungspoolidentität bezeichneten Identität finden Sie unter folgendem Link: [http://www.iis.net/learn/manage/configuring-security/application-pool-identities](http://www.iis.net/learn/manage/configuring-security/application-pool-identities) (in englischer Sprache). Anwendungscode nutzt diese Identität für grundlegenden schreibgeschützten Zugriff auf das Betriebssystemlaufwerk (Laufwerk D:\\). Das bedeutet, Anwendungscode kann allgemeine Verzeichnisstrukturen auflisten und allgemeine Dateien auf dem Betriebssystemlaufwerk lesen. Dies erscheint zwar wie ein sehr umfassender Zugriff, dieselben Verzeichnisse und Dateien sind jedoch zugänglich, wenn Sie in einem von Azure gehosteten Dienst eine Workerrolle bereitstellen und die Laufwerksinhalte lesen.
 
 <a name="multipleinstances"></a>
 ### Dateizugriff über mehrere Instanzen
@@ -111,4 +111,4 @@ Der Schreibzugriff auf die Registrierung ist blockiert, einschließlich des Zugr
  
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

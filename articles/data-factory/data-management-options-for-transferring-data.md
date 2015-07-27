@@ -37,7 +37,7 @@ Themen in diesem Artikel:
 
 Mithilfe des Azure Import-/Export-Diensts können Sie große Mengen an Dateidaten an Azure-Blobspeicher übertragen, beispielsweise wenn das Hoch- oder Herunterladen über das Netzwerk unverhältnismäßig teuer oder nicht realisierbar ist. Der Upload oder Download großer Datensätze über das Netzwerk kann sehr viel Zeit in Anspruch nehmen. Beispielsweise dauert es einen Monat, 10 TB Daten über eine T3-Leitung (44,7 MBit/s) zu übertragen. Mit dem Microsoft Azure Import/Export-Dienst können Kunden die Festplatte einsenden, um den Upload oder Download von Daten zu verkürzen. Planen Sie mehrere Tage einschließlich Versand ein.
 
-Sie können eine oder mehrere Festplatten mit Daten an ein Azure-Datencenter schicken, um eine große Menge an Dateidaten auf Blobspeicher zu übertragen. In diesem Datencenter werden Ihre Daten in Ihr Speicherkonto hochgeladen. Ähnlich funktioniert das Exportieren von Daten auf Blobspeicher: Sie können leere Festplatten an ein Azure-Datencenter schicken. Dort werden Blobdaten von Ihrem Speicherkonto auf Ihre Festplatten kopiert und an Sie zurückgesendet. Bevor Sie ein Laufwerk einsenden, das Daten enthält, verschlüsseln Sie die Daten auf dem Laufwerk. Wenn der Import-/Export-Dienst Ihre Daten exportiert, um Ihnen diese zu senden, werden die Daten vor dem Versand ebenfalls verschlüsselt.
+Sie können eine oder mehrere Festplatten mit Daten an ein Azure-Datencenter schicken, um eine große Menge an Dateidaten auf Blobspeicher zu übertragen. In diesem Datencenter werden Ihre Daten in Ihr Speicherkonto hochgeladen. Ähnlich funktioniert das Exportieren von Daten auf Blob-Speicher: Sie können leere Festplatten an ein Azure-Datacenter schicken. Dort werden Blob-Daten von Ihrem Speicherkonto auf Ihre Festplatten kopiert und an Sie zurückgesendet. Bevor Sie ein Laufwerk einsenden, das Daten enthält, verschlüsseln Sie die Daten auf dem Laufwerk. Wenn der Import-/Export-Dienst Ihre Daten exportiert, um Ihnen diese zu senden, werden die Daten vor dem Versand ebenfalls verschlüsselt.
 
 Weitere Informationen finden Sie unter [Verwenden des Microsoft Azure Import/Export-Diensts zum Übertragen von Daten in den Blobspeicher][import-export].
 
@@ -270,4 +270,4 @@ Hinweise zum Entscheidungsbaum:
 [hybrid]: ../integration-hybrid-connection-overview.md
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

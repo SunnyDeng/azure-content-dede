@@ -37,4 +37,4 @@ In diesem Abschnitt fügen Sie Ihrem Verzeichnis zwei neue Benutzer und die neue
 
     ![](./media/mobile-services-aad-rbac-create-sales-group/sales-group-id-app-setting.png)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO3-->

@@ -58,4 +58,4 @@ Nach Abschluss der Tests kann die Anwendung im Azure Active Directory-Anwendungs
 > Logo einfügen (PNG-Datei, 150 px mal 122 px, transparente Hintergrundfarbe):
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

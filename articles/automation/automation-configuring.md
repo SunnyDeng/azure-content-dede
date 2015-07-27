@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/13/2015"
+   ms.date="07/10/2015"
    ms.author="bwren" />
 
 # Konfigurieren von Azure Automation
@@ -61,10 +61,10 @@ Sie können die Anmeldeinformationen in einem Runbook mithilfe der Aktivität [G
 	Add-AzureAccount –Credential $cred
 	Select-AzureSubscription –SubscriptionName "My Subscription"
 
-Diese Zeilen sollten nach jedem [Prüfpunkt](automation-runbook-execution/#checkpoints) wiederholt werden. Wenn das Runbook angehalten und später von einem anderen Benutzer fortgesetzt wird, muss die Authentifizierung erneut durchgeführt werden.
+Diese Zeilen sollten nach jedem [Prüfpunkt](automation-runbook-execution#checkpoints) wiederholt werden. Wenn das Runbook angehalten und später von einem anderen Benutzer fortgesetzt wird, muss die Authentifizierung erneut durchgeführt werden.
 
 ## Verwandte Artikel
 - [Azure Automation: Authentifizieren bei Azure mit Azure Active Directory](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

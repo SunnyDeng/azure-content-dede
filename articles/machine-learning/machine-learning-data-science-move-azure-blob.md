@@ -41,11 +41,7 @@ Azure Storage Explorer ist ein kostenloses Windows-Tool zum Prüfen und Ändern 
 
 1.  Starten von Azure Storage Explorer 
 2.  Wenn das Speicherkonto, auf das Sie zugreifen möchten, noch nicht in Azure Storage Explorer hinzugefügt wurde, klicken Sie auf die Schaltfläche "Add Account", um das Konto hinzuzufügen. Wenn es bereits hinzugefügt wurde, wählen Sie das Konto aus der Dropdownliste "--Wählen Sie ein Speicherkonto aus--" aus. ![Arbeitsbereich erstellen][1] <br>
-3. Geben Sie den Speicherkontonamen und den Speicherkontoschlüssel ein, und klicken Sie dann auf "Add Storage Account". Sie können mehrere Speicherkonten hinzufügen. Jedes Konto wird auf einer Registerkarte angezeigt. Die Container unter diesem Speicherkonto werden im linken Bereich angezeigt. Wählen Sie einen Container aus, um die Blobs im Container im rechten Bereich anzuzeigen. 
-![Arbeitsbereich erstellen][2]
-<br>
-![Arbeitsbereich erstellen][3]
-<br>
+3. Geben Sie den Speicherkontonamen und den Speicherkontoschlüssel ein, und klicken Sie dann auf "Add Storage Account". Sie können mehrere Speicherkonten hinzufügen. Jedes Konto wird auf einer Registerkarte angezeigt. Die Container unter diesem Speicherkonto werden im linken Bereich angezeigt. Wählen Sie einen Container aus, um die Blobs im Container im rechten Bereich anzuzeigen. ![Arbeitsbereich erstellen][2] <br> ![Arbeitsbereich erstellen][3] <br>
 4. Sie laden Daten hoch, indem Sie auf die Schaltfläche "Upload" klicken. Wählen Sie eine oder mehrere Dateien aus dem Dateisystem zum Hochladen aus, und klicken Sie auf "Öffnen", um mit dem Hochladen der Dateien zu beginnen.
 5. Sie laden Daten herunter, indem Sie das Blob im entsprechenden Container auswählen und dann auf die Schaltfläche "Download" klicken.
 
@@ -179,4 +175,4 @@ Der folgende Beispielcode lädt alle Blobs aus einem Container herunter. Dabei w
 [3]: ./media/machine-learning-data-science-move-azure-blob/data-science-process-uploading-data-to-blob-storage-img3.png
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="xamarin-ios"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="03/26/2015"
+	ms.date="07/01/2015"
     ms.author="donnam"/>
 
 # Aktivieren der Offlinesynchronisierung für Ihre mobile Xamarin iOS-App
@@ -166,4 +166,4 @@ In diesem Abschnitt stellen Sie erneut eine Verbindung zwischen der App und dem 
 [Xamarin-Erweiterung]: http://xamarin.com/visual-studio
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

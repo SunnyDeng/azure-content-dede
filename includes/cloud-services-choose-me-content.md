@@ -11,10 +11,8 @@ Diese Technologie bietet zwei leicht abweichende Optionen für VM: Auf Instanzen
 
 Eine beliebige Kombination dieser zwei leicht unterschiedlichen VM Hostingoptionen sind in einem Clouddienst verfügbar:
 
-* **Webrolle**  
-  Führt Windows Server mit Ihrer Web-App aus, die automatisch auf IIS bereitgestellt wird.
-* **Workerrolle**  
-  Führt Windows-Server ohne IIS aus.
+* **Webrolle** Führt Windows Server mit Ihrer Web-App aus, die automatisch auf IIS bereitgestellt wird.
+* **Workerrolle** Führt Windows-Server ohne IIS aus.
 
 Einfache Anwendungen verwenden z. B. nur eine Webrolle, während komplexere Anwendungen eine Webrolle für die Verarbeitung eingehender Benutzeranforderungen verwenden und die aus diesen Anforderungen entstandene Arbeit an Workerrollen abgeben. (Diese Kommunikation erfolgt über einen [Service Bus](../articles/service-bus/fundamentals-service-bus-hybrid-solutions.md) oder über [Azure-Warteschlangen](../articles/storage/storage-introduction.md).)
 
@@ -32,4 +30,4 @@ Cloud Services bietet außerdem Überwachungsfunktionen. Wie auch bei Azure Virt
 
 Die PaaS-Funktionsweise von Cloud Services hat auch noch andere Auswirkungen. Zum Beispiel sollten Anwendungen für diese Technologie so entwickelt werden, dass sie auch dann korrekt funktionieren, wenn eine beliebige Web- oder Workerrolle ausfällt. Aus diesem Grund sollten Cloud Services-Anwendungen keinen Status im Dateisystem der eigenen virtuellen Computer speichern. Im Gegensatz zu virtuellen Computern mit Azure Virtual Machines sind Schreibvorgänge in virtuellen Cloud Services-Computern nicht persistent. Diese virtuellen Computer haben keine eigenen Datenträger. Cloud Services-Anwendungen sollten daher ihren Status in SQL-Datenbanken, Blobs, Tabellen oder andere externe Speichermedien schreiben. Die auf diese Weise erstellten Anwendungen sind skalierbarer und fehlerresistenter; zwei wichtige Ziele von Cloud Services.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -1,10 +1,10 @@
-<properties 
-   pageTitle="SAP-Connector" 
-   description="Verwenden des SAP-Connectors" 
-   services="app-service\logic" 
-   documentationCenter=".net,nodejs,java" 
-   authors="harishkragarwal" 
-   manager="dwrede" 
+<properties
+   pageTitle="SAP-Connector"
+   description="Verwenden des SAP-Connectors"
+   services="app-service\logic"
+   documentationCenter=".net,nodejs,java"
+   authors="harishkragarwal"
+   manager="dwrede"
    editor=""/>
 
 <tags
@@ -12,14 +12,14 @@
    ms.devlang="multiple"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="03/20/2015"
-   ms.author="hariag"/>
+   ms.workload="integration"
+   ms.date="07/02/2015"
+   ms.author="sameerch"/>
 
 
 # SAP-Connector #
 
-Connectors können in Logik-Apps als Teil eines Datenflusses verwendet werden, um Daten im Rahmen eines Datenflusses abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. In manchen Szenarien müssen Sie möglicherweise mit einem SAP-System arbeiten, das lokal und hinter der Firewall installiert ist. Mithilfe des SAP-Connectors im Datenfluss können Sie eine Vielzahl von Szenarien erzielen. Einige Beispiele:
+Connectors können in Logik-Apps verwendet werden, um Daten im Rahmen eines Datenflusses abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. In verschiedenen Szenarien müssen Sie möglicherweise mit einem SAP-System arbeiten, das lokal und hinter der Firewall installiert ist. Mithilfe des SAP-Connectors im Workflow können Sie eine Vielzahl von Szenarien realisieren. Einige Beispiele:
 
 1.	Machen Sie einen Teil der Daten in Ihrem SAP-System über ein Front-End für Web- oder mobile Benutzer verfügbar.
 2.	Veröffentlichen von Daten an SAP nach der Verarbeitung
@@ -39,7 +39,9 @@ Zur Verwendung des SAP-Connectors müssen Sie zunächst eine Instanz der SAP-Con
 2. Wechseln Sie zu "Web und Mobil > API-Apps", und suchen Sie nach "SAP-Connector".
 3. Konfigurieren Sie ihn wie folgt:
 	1. Geben Sie die generischen Details wie Name, App Service-Plan usw. auf dem ersten Blatt an.
-	2. Geben Sie im Rahmen der Paketeinstellungen die SAP-Anmeldeinformationen ein. Geben Sie außerdem eine Azure Service Bus-Verbindungszeichenfolge an. Diese wird verwendet, um die Hybridkonnektivität mit Ihrem lokalen SAP-System herzustellen. 
+
+	2. Geben Sie im Rahmen der Paketeinstellungen die SAP-Anmeldeinformationen ein. Geben Sie außerdem eine Azure Service Bus-Verbindungszeichenfolge an. Diese wird verwendet, um die Hybridkonnektivität mit Ihrem lokalen SAP-System herzustellen.
+
 	3. RFCs, TRFCs, BAPIs und IDOCs müssen den Anforderungen des Szenarios entsprechend konfiguriert werden. Wenn mehrere Werte bereitgestellt werden müssen, können diese durch Kommas getrennt werden.
 
 ![][1]
@@ -92,7 +94,4 @@ Vervollständigen Sie die Logik-App, um den Geschäftsprozess zu definieren, und
 [6]: ./media/app-service-logic-connector-sap/LogicApp2.jpg
 [7]: ./media/app-service-logic-connector-sap/LogicApp3.jpg
 
-
- 
-
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

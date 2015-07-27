@@ -94,4 +94,4 @@ Sie können auch einen Verweis zu "Microsoft.WindowsAzure.Storage.Table.dll" hin
 [store-apps-storage-package-manager]: ./media/storage-use-store-apps/store-apps-storage-package-manager.png
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

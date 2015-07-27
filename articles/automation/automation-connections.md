@@ -67,7 +67,7 @@ Die Aktivitäten in der folgenden Tabelle werden für den Zugriff auf Verbindung
 
 ### So erstellen Sie eine neue Verbindung mit Windows PowerShell
 
-Erstellen Sie mit dem Windows PowerShell-Cmdlet [New-AzureAutomationConnection](http://msdn.microsoft.com/library/dn921825.aspx) eine neue Verbindung. Dieses Cmdlet verfügt über den Parameter **ConnectionFieldValues**, der eine [Hashtabelle](http://technet.microsoft.com/de-de/library/hh847780.aspx) erwartet, mit deren Hilfe die Werte für jede der im Verbindungstyp definierten Eigenschaften festgelegt werden.
+Erstellen Sie mit dem Windows PowerShell-Cmdlet [New-AzureAutomationConnection](http://msdn.microsoft.com/library/dn921825.aspx) eine neue Verbindung. Dieses Cmdlet verfügt über den Parameter **ConnectionFieldValues**, der eine [Hashtabelle](http://technet.microsoft.com/library/hh847780.aspx) erwartet, mit deren Hilfe die Werte für jede der im Verbindungstyp definierten Eigenschaften festgelegt werden.
 
 
 Die folgenden Beispielbefehle erstellen eine neue Verbindung für [Twilio](http://www.twilio.com), einem Telefoniedienst, der Ihnen das Senden und Empfangen von Textnachrichten ermöglicht. Ein Beispiel für ein Integrationsmodul, das einen Twilio-Verbindungstyp enthält, steht im [Script Center](http://gallery.technet.microsoft.com/scriptcenter/Twilio-PowerShell-Module-8a8bfef8) zur Verfügung. Dieser Verbindungstyp definiert Eigenschaften für Konto-SID und Autorisierungstoken, die zum Prüfen Ihres Kontos bei der Verbindungsherstellung mit Twilio erforderlich sind. Sie müssen [dieses Modul herunterladen](http://gallery.technet.microsoft.com/scriptcenter/Twilio-PowerShell-Module-8a8bfef8) und in Ihrem Automation-Konto installieren, damit der Beispielcode funktioniert.
@@ -120,4 +120,4 @@ Die folgende Abbildung zeigt das obige Beispiel, verwendet jedoch den Parameters
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

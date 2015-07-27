@@ -35,7 +35,7 @@ Wenn die Zeichenfolge nicht besonders lang ist, können Sie [sp_executesql][] no
 
 
 ## Nächste Schritte
-Weitere Tipps zur Entwicklung finden Sie unter [Entwicklungsübersicht][].
+Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Image references-->
 
@@ -47,4 +47,4 @@ Weitere Tipps zur Entwicklung finden Sie unter [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

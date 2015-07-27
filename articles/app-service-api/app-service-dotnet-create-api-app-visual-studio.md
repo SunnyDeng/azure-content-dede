@@ -83,4 +83,4 @@ In diesem Abschnitt wird gezeigt, wie Sie ein vorhandenes Web-API-Projekt als AP
 Ihre API-App kann jetzt bereitgestellt werden. Dazu können Sie das Lernprogramm [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -548,7 +548,7 @@ In diesem Schritt fügen Sie Ihrer Web-App-Konfiguration für Azure Umgebungsvar
 		STORAGE_NAME=<storage account name>;STORAGE_KEY=<storage access key>;PARTITION_KEY=mytasks;TABLE_NAME=tasks
 
 
-Ersetzen Sie**<storage account name>**durch den Namen des zuvor erstellten Speicherkontos und **<storage access key>** durch den primären Zugriffsschlüssel für Ihr Speicherkonto. (Verwenden Sie die gleichen Werte wie die Datei "config.json", die Sie zuvor erstellt haben.)
+Ersetzen Sie **<storage account name>** durch den Namen des zuvor erstellten Speicherkontos und **<storage access key>** durch den primären Zugriffsschlüssel für Ihr Speicherkonto. (Verwenden Sie die gleichen Werte wie die Datei "config.json", die Sie zuvor erstellt haben.)
 
 Alternativ können Sie Umgebungsvariablen im [Azure-Portal](https://portal.azure.com) festlegen:
 
@@ -641,4 +641,4 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 [Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -81,4 +81,4 @@ Die Gebühren für Application Insights werden Ihrer Azure-Rechnung hinzugefügt
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

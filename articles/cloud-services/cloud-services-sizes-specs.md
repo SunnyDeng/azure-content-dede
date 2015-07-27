@@ -66,4 +66,4 @@ Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe
 
 [Einrichten eines Clouddiensts für Azure](https://msdn.microsoft.com/library/hh124108) [Konfigurieren von Größen für Clouddienste](https://msdn.microsoft.com/library/ee814754)
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

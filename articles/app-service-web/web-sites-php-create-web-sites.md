@@ -103,4 +103,4 @@ Lernprogramme von Entwicklern für Entwickler finden Sie auf der Seite [Lernprog
 [Skalieren einer Web-App in Azure App Service]: web-sites-scale.md
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

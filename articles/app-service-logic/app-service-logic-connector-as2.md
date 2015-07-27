@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="AS2-Connector" 
-   description="AS2-Connector" 
+   pageTitle="Verwenden des AS2-Connectors in Microsoft Azure App Service" 
+   description="Verwenden des AS2-Connectors" 
    services="app-service\logic" 
    documentationCenter=".net,nodejs,java" 
    authors="rajeshramabathiran" 
@@ -13,97 +13,91 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="06/14/2015"
+   ms.date="06/29/2015"
    ms.author="rajram"/>
 
-#AS2-Connector
-Der Microsoft Azure AS2-Connector kann in der Business-to-Business-Kommunikation Nachrichten über das AS2-Transport-Protokoll empfangen und senden. AS2 steht für „Applicability Statement 2“ (Anwendbarkeitsanweisung 2). Daten werden sicher und zuverlässig über das Internet übertragen. Die Sicherheit wird mithilfe von digitalen Zertifikaten und Verschlüsselung gewährleistet.
+# Microsoft AS2-Connector
+Der Microsoft Azure AS2-Connector kann bei der Business-to-Business-Kommunikation Nachrichten über das AS2-Transportprotokoll (Applicability Statement 2) empfangen und senden. Daten werden sicher und zuverlässig über das Internet übertragen. Die Sicherheit wird mithilfe von digitalen Zertifikaten und Verschlüsselung gewährleistet.
 
-##Voraussetzungen
-- TPM-API-App: Bevor Sie einen AS2-Connector erstellen, müssen Sie einen [BizTalk-Handelspartnerverwaltungs-Connector][1] erstellen.
-- SQL Azure-Datenbank: Jede der B2B-API-Apps erfordert eine eigene Azure-SQL-Datenbank.
-- Azure-Blob-Speichercontainer: Speichert Nachrichteneigenschaften, wenn die AS2-Archivierung aktiviert ist. Wenn Sie die AS2-Nachrichtenarchivierung nicht benötigen, ist kein Speichercontainer erforderlich. 
+## Trigger und Aktionen
+Ein Trigger startet eine neue Instanz basierend auf einem bestimmten Ereignis wie dem Eingang einer AS2-Nachricht von einem Partner. Eine Aktion ist das Ergebnis. Nach dem Empfang einer AS2-Nachricht wird die Nachricht beispielsweise mit AS2 gesendet.
 
-##Verwenden des AS2-Connectors
-Zur Verwendung des AS2-Connectors müssen Sie zunächst eine Instanz der AS2-Connector-API-App erstellen. Dies kann entweder inline beim Erstellen einer Logik-App oder durch Auswählen der AS2-Connector-API-App aus dem Azure Marketplace erfolgen.
+Der AS2-Connector kann als ein Trigger oder eine Aktion in einer Logik-App verwendet werden und unterstützt Daten im JSON- und XML-Format. Der AS2-Connector verfügt über folgende Trigger und Aktionen:
 
-##Konfigurieren des AS2-Connectors
-Handelspartner sind die Entitäten, die an einer B2B (Business-to-Business)-Kommunikation beteiligt sind. Wenn zwei Partner eine Beziehung eingehen, wird dies als „Vereinbarung“ bezeichnet. Diese Vereinbarung basiert auf der Kommunikation, die beide Partner wünschen, und ist protokoll- oder transportspezifisch.
+Trigger | Aktionen
+--- | ---
+Empfangen und decodieren | Codieren und senden
 
-Die Schritte zum Erstellen eines Handelspartnervertrags sind [hier][2] dokumentiert.
+## Anforderungen für den Einstieg
+Diese Elemente müssen von Ihnen erstellt werden, bevor sie vom AS2-Connector verwendet werden können:
 
-##Verwenden des AS2-Connectors auf der Designeroberfläche von Logik-Apps
-Der AS2-Connector kann als Trigger oder als Aktion verwendet werden.
+Voraussetzung | Beschreibung
+--- | ---
+TPM-API-App | Bevor Sie einen AS2-Connector erstellen, müssen Sie einen [BizTalk-Handelspartnerverwaltungs-Connector][1] erstellen.<br/><br/>**Hinweis** Sie müssen den Namen Ihrer TPM-API-App kennen. 
+Azure SQL-Datenbank | Speichert B2B-Elemente, einschließlich Partner, Schemas, Zertifikate und Vereinbarungen. Jede der B2B-API-Apps erfordert eine eigene Azure-SQL-Datenbank. <br/><br/>**Hinweis** Kopieren Sie die Verbindungszeichenfolge in diese Datenbank.<br/><br/>[Erstellen einer Azure SQL-Datenbank](../sql-database-create-configure.md)
+Azure-Blobspeichercontainer | Speichert Nachrichteneigenschaften, wenn die AS2-Archivierung aktiviert ist. Wenn Sie die AS2-Nachrichtenarchivierung nicht benötigen, ist kein Speichercontainer erforderlich. <br/><br/>**Hinweis** Wenn Sie die Archivierung aktivieren, kopieren Sie die Verbindungszeichenfolge in diesen Blobspeicher.<br/><br/>[Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md).
 
-###Trigger
-- Starten Sie den Azure-Datenfluss-Designer für Logik-Apps.
-- Klicken Sie im rechten Bereich auf den AS2-Connector.
+## Erstellen des AS2-Connectors
 
-	![Triggereinstellungen][3]
-- Klicken Sie auf ->
+Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
 
-	![Triggeroptionen][4]
-- Der AS2-Connector stellt einen einzelnen Trigger bereit. Wählen Sie *Empfangen und decodieren* aus.
+1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
+2. Wählen Sie **API-Apps** aus, und suchen Sie nach "AS2-Connector".
+3. Geben Sie den Namen, die App Service-Plan und andere Eigenschaften ein.
+4. Geben Sie die folgenden Paketeinstellungen ein:
 
-	![Eingaben empfangen und decodieren][5]
-- Dieser Trigger weist keine Eingaben auf. Klicken Sie auf ->
+	Eigenschaft | Beschreibung
+--- | --- 
+Datenbankverbindungszeichenfolge | Geben Sie die ADO.NET-Verbindungszeichenfolge zur Azure-SQL-Datenbank ein, die Sie erstellt haben. Wenn Sie die Verbindungszeichenfolge kopieren, wird das Kennwort nicht der Verbindungszeichenfolge hinzugefügt. Achten Sie vor dem Einfügen darauf, dass das Kennwort in der Verbindungszeichenfolge eingegeben wird.
+Aktivieren der Archivierung für eingehende Nachrichten | Optional. Aktivieren Sie diese Eigenschaft, damit Nachrichteneigenschaften einer eingehenden AS2-Nachricht gespeichert werden, die von einem Partner empfangen wird. 
+Verbindungszeichenfolge zum Azure-Blobspeicher | Geben Sie die Verbindungszeichenfolge zum Azure-Blobspeichercontainer ein, den Sie erstellt haben. Wenn die Archivierung aktiviert ist, werden die codierten und decodierten Nachrichten in diesem Speichercontainer gespeichert.
+TPM-Instanzname | Geben Sie den Namen der API-App **BizTalk Trading Partner Management** ein, die Sie zuvor erstellt haben. Wenn Sie den AS2-Connector erstellen, führt dieser Connector nur die AS2-Vereinbarungen innerhalb dieser spezifischen TPM-Instanz aus.
 
-	![Konfigurierte Elemente empfangen und decodieren][6]
-- Als Teil der Ausgabe gibt der Connector die AS2-Nutzlast sowie AS2-spezifische Metadaten zurück.
+5. Klicken Sie auf **Erstellen**.
 
-###Aktion
-- Klicken Sie im rechten Bereich auf den AS2-Connector.
+Handelspartner sind die Entitäten, die an einer B2B-Kommunikation (Business-to-Business) beteiligt sind. Wenn zwei Partner eine Beziehung eingehen, wird dies als "Vereinbarung" bezeichnet. Diese Vereinbarung basiert auf der Kommunikation, die beide Partner wünschen, und ist protokoll- oder transportspezifisch.
 
-	![Aktionseinstellungen][7]
-- Klicken Sie auf ->
+Die Schritte zum Erstellen einer Handelspartnervereinbarung sind [hier][2] dokumentiert.
 
-	![Liste der Aktionen][8]
-- Der AS2-Connector unterstützt nur eine Aktion. Wählen Sie *Codieren und senden* aus.
+## Verwenden des Connectors als Trigger
 
-	![Eingaben codieren und senden][9]
-- Nehmen Sie die Eingaben für die Aktion vor, und konfigurieren Sie sie.
+1. Beim Erstellen oder Bearbeiten einer Logik-App wählen Sie im rechten Bereich den von Ihnen erstellten AS2-Connector aus: <br/> ![Triggereinstellungen][3]
 
-	![Konfigurierte Elemente codieren und senden][10]
+2. Klicken Sie auf den Pfeil nach rechts →: <br/> ![Triggeroptionen][4]
 
-<table>
-	<tr>
-		<th>Parameter</th>
-		<th>Typ</th>
-		<th>Beschreibung des Parameters</th>
-	</tr>
-	<tr>
-		<td>Nutzlast</td>
-		<td>Objekt</td>
-		<td>Nutzlast</td>
-	</tr>
-	<tr>
-		<td>AS2-From</td>
-		<td>Zeichenfolge</td>
-		<td>AS2-From</td>
-	</tr>
-	<tr>
-		<td>AS2-To</td>
-		<td>Zeichenfolge</td>
-		<td>AS2-To</td>
-	</tr>
-	<tr>
-		<td>Partner-URL</td>
-		<td>Zeichenfolge</td>
-		<td>Partner-URL</td>
-	</tr>
-	<tr>
-		<td>Archivierung aktivieren</td>
-		<td>Boolescher Wert</td>
-		<td>Archivierung aktivieren</td>
-	</tr>
-</table>
+3. Der AS2-Connector macht einen einzelnen Trigger verfügbar. Wählen Sie *Empfangen und decodieren* aus: <br/> ![Eingaben empfangen und decodieren][5]
+
+4. Dieser Trigger weist keine Eingaben auf. Klicken Sie auf den Pfeil nach rechts →: <br/> ![Konfigurierte Elemente empfangen und decodieren][6]
+
+Als Teil der Ausgabe gibt der Connector die AS2-Nutzlast sowie die AS2-spezifischen Metadaten zurück.
+
+## Verwenden des Connectors als Aktion
+1. Fügen Sie nach dem Trigger (oder wählen Sie "Diese Logik manuell ausführen") den im rechten Bereich erstellten AS2-Connector hinzu: <br/> ![Aktionseinstellungen][7]
+
+2. Klicken Sie auf den Pfeil nach rechts →: <br/> ![Liste der Aktionen][8]
+
+3. Der AS2-Connector unterstützt nur eine Aktion. Wählen Sie *Codieren und senden* aus: <br/> ![Eingaben codieren und senden][9]
+
+4. Nehmen Sie die Eingaben für die Aktion vor, und konfigurieren Sie sie: <br/> ![Konfigurierte Elemente codieren und senden][10]
+
+Parameter:
+
+Parameter | Typ | Beschreibung
+--- | --- | ---
+Nutzlast | Objekt| Der Inhalt der Nutzlast, die codiert und zum konfigurierten Endpunkt übermittelt werden soll. Die Nutzlast muss als JSON-Objekt bereitgestellt werden.
+AS2-From | string | Die AS2-Identität des Absenders der AS2-Nachricht. Dieser Parameter wird verwendet, um die entsprechende Vereinbarung zum Senden der Nachricht suchen.
+AS2-To | string | Die AS2-Identität des Empfängers der AS2-Nachricht. Dieser Parameter wird verwendet, um die entsprechende Vereinbarung zum Senden der Nachricht suchen.
+Partner-URL | string | Der Endpunkt des Partners, an den die Nachricht gesendet werden muss.
+Archivierung aktivieren | Boolescher Wert | Bestimmt, ob die ausgehende Nachricht archiviert werden soll.
 
 Die Aktion gibt bei erfolgreichem Abschluss einen HTTP 200-Antwortcode zurück.
 
-## Optimale Nutzung Ihres Connectors
-Nachdem Sie den Connector erstellt haben, können Sie ihn mit einer Logik-App einem Unternehmensdatenfluss hinzufügen. Weitere Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+## Mehr mit Ihrem Connector machen
+Mehr zu Logik-Apps erfahren Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Sie können auch Leistungsstatistiken überprüfen und die Sicherheit für den Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
+Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
 <!--References -->
 [1]: app-service-logic-connector-tpm.md
@@ -117,4 +111,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit für den C
 [9]: ./media/app-service-logic-connector-as2/EncodeAndSendInput.PNG
 [10]: ./media/app-service-logic-connector-as2/EncodeAndSendConfigured.PNG
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

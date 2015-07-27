@@ -12,8 +12,8 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="04/28/2015"
+	ms.topic="hero-article"
+	ms.date="07/02/2015"
 	ms.author="dastrock"/>
 
 # Einrichten eines Azure Active Directory-Mandanten
@@ -64,6 +64,5 @@ Wenn Sie sich zuvor mit Ihrem Organisationskonto für ein Azure-Abonnement regis
 Wenn Ihnen diese genannten Schritte unverständlich sind, machen Sie sich keine Sorgen. Besuchen Sie einfach [https://account.windowsazure.com/organization](https://account.windowsazure.com/organization), um sich mit einer neuen Organisation bei Azure zu registrieren. Nachdem Sie den Vorgang abgeschlossen haben, haben Sie einen eigenen Azure AD-Mandanten mit dem Domänennamen, den Sie bei der Registrierung gewählt haben. Sie finden Ihren Mandanten im [Azure-Verwaltungsportal](https://manage.windowsazure.com), indem Sie im linken Navigationsbereich zu "Active Directory" navigieren.
 
 Im Rahmen der Registrierung bei Azure müssen Sie Kreditkarteninformationen angeben. Sie können vertrauensvoll fortfahren, da das Veröffentlichen von Anwendungen in Azure AD oder Erstellen neuer Mandanten nicht berechnet wird.
- 
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

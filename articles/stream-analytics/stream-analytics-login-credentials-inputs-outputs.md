@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="04/24/2015" 
+	ms.date="07/01/2015" 
 	ms.author="jeffstok"/>
 
 #Austauschen der Anmeldeinformationen für die Eingabe-/Ausgabe
@@ -56,7 +56,8 @@ Für andere Ein-/Ausgaben fahren Sie mit Teil 2 fort.
 11. Fahren Sie mit Teil 2 fort.  
 
 ###SQL-Datenbank
-[AZURE.NOTE]Hinweis: Sie müssen eine Verbindung mit dem SQL-Datenbankdienst herstellen. Wir werden die Vorgehensweise anhand der Verwaltungsfunktionen des Azure-Verwaltungsportals erläutern, Sie können jedoch auch clientseitige Tools wie z. B. SQL Server Management Studio verwenden.
+
+>[AZURE.NOTE]Hinweis: Sie müssen eine Verbindung mit dem SQL-Datenbankdienst herstellen. Wir werden die Vorgehensweise anhand der Verwaltungsfunktionen des Azure-Verwaltungsportals erläutern, Sie können jedoch auch clientseitige Tools wie z. B. SQL Server Management Studio verwenden.
 
 1.  Wechseln Sie zur SQL-Datenbank-Erweiterung des Azure-Verwaltungsportals: ![Grafik14][graphic14]
 2.  Suchen Sie die für den Auftrag verwendete SQL-Datenbank, und **klicken Sie in derselben Zeile auf den Server**: ![Grafik15][graphic15]
@@ -136,7 +137,7 @@ Die folgende Bestätigung wird geöffnet:
 	Command(s) completed successfully.
 
 ## Hier erhalten Sie Hilfe
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-de/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
 
@@ -192,4 +193,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic43]: ./media/stream-analytics-login-credentials-inputs-outputs/43-stream-analytics-login-credentials-inputs-outputs.png
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -57,4 +57,4 @@ Weitere Informationen finden Sie unter den folgenden Links:
 [Referenz zur REST-API der Dienstverwaltung](https://msdn.microsoft.com/library/azure/ee460799.aspx)
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

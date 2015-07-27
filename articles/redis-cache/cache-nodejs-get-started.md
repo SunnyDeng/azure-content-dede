@@ -1,6 +1,6 @@
 <properties
    pageTitle="Verwenden von Azure Redis Cache mit Node.js"
-   description="Erste Schritte mit Azure Redis Cache mit Node.js und &quot;node_redis&quot;."
+   description="Erste Schritte mit Azure Redis Cache mit Node.js und ";node_redis";."
    services="redis-cache"
    documentationCenter=""
    authors="MikeWasson"
@@ -91,4 +91,4 @@ Ausgabe:
 
 [Erstellen einer Node.js-Chatanwendung mit Socket.IO auf einer Azure-Website]: ../app-service-web/web-sites-nodejs-chat-app-socketio.md
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

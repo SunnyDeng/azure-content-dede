@@ -86,4 +86,4 @@ Sobald Sie das mobile Back-End erstellt haben, können Sie einem einfachen Schne
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -234,7 +234,7 @@ In der untergeordneten Logik-App verwenden Sie dann die [`triggerBody()`](https:
 }
 ```
 
-Weitere Informationen zur [Aktion des Typs "Logik-App" finden Sie im MSDN](https://msdn.microsoft.com/de-de/library/azure/dn948511.aspx).
+Weitere Informationen zur [Aktion des Typs "Logik-App" finden Sie im MSDN](https://msdn.microsoft.com/en-US/library/azure/dn948511.aspx).
 
 >[AZURE.NOTE]Der Logik-Apps-Designer unterstützt keine Aktionen des Typs "Logik-App", daher müssen Sie die Definition manuell bearbeiten.
 
@@ -688,4 +688,4 @@ In der tatsächlichen `PUT`-Anforderung für die Logik-App können Sie dann den 
 
 In den einzelnen Umgebungen können Sie dann einen anderen Wert für den `connection`-Parameter angeben. In der [REST-API-Dokumentation](https://msdn.microsoft.com/library/azure/dn948513.aspx) finden Sie Informationen dazu, welche Möglichkeiten Sie zum Erstellen und Verwalten von Logik-Apps haben.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

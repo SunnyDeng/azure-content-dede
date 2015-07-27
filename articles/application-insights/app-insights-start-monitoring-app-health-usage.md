@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=".net"
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/21/2015" 
+	ms.date="07/08/2015" 
 	ms.author="awills"/>
 
 
@@ -114,19 +114,54 @@ Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass 
 
 Weitere Informationen finden Sie in [diesem Artikel zur Problembehandlung](app-insights-troubleshoot-faq.md#NuGetBuild).
 
+## Hinzufügen der Nachverfolgung von Abhängigkeiten
+
+Das SDK benötigt beim Zugriff auf bestimmte Daten etwas Hilfe. Dieser zusätzliche Schritt ist insbesondere erforderlich, um eine automatische Messung der von Ihrer App ausgeführten Aufrufe von Datenbanken, REST-APIs und anderen externen Komponenten zu ermöglichen. Diese Abhängigkeitsmetriken können sehr nützlich sein, um Leistungsprobleme zu diagnostizieren.
+
+#### Wenn Ihre App in IIS-Server ausgeführt wird
+
+Melden Sie sich auf Ihrem Server mit Administratorrechten an, und installieren Sie den [Application Insights-Statusmonitor](http://go.microsoft.com/fwlink/?LinkId=506648).
+
+(Sie können den Statusmonitor auch zum [Instrumentieren einer bereits ausgeführten Anwendung](app-insights-monitor-performance-live-website-now.md) verwenden, auch wenn diese nicht mit dem SDK erstellt wurde.)
+
+#### Wenn Ihre App eine Azure-Web-App ist
+
+Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-Erweiterung hinzu.
+
+![In der Web-App: „Einstellungen“ > „Erweiterungen“ > „Hinzufügen“ > „Application Insights“](./media/app-insights-start-monitoring-app-health-usage/05-extend.png)
+
+(Die Erweiterung unterstützt nur Apps, die mit dem SDK erstellt wurden. Im Gegensatz zum Statusmonitor kann sie keine vorhandene App instrumentieren.)
+
+## Hinzufügen der clientseitigen Überwachung
+
+Sie haben das SDK installiert, das serverseitige Telemetriedaten Ihrer Anwendung sendet. Nun können Sie die clientseitige Überwachung hinzufügen. Dadurch erhalten Sie Daten zu Benutzern, Sitzungen, Seitenaufrufen und allen Ausnahmen oder Abstürzen des Clients.
+
+Sie können zudem eigenen Code schreiben, um nachzuverfolgen, wie Ihre Benutzer Ihre App verwenden – bis hin zu Mausklicks und Tastaturanschläge.
+
+#### Wenn Ihre Clients Webbrowser sind
+
+Wenn in Ihrer App Webseiten angezeigt werden, fügen Sie jeder Seite einen JavaScript-Codeausschnitt hinzu. Verwenden Sie den Code aus Ihrer Application Insights-Ressource:
+
+![Öffnen Sie in Ihrer Web-App „Schnellstart“, und klicken Sie auf die Option zum Abrufen des Codes für die Überwachung von Webseiten.](./media/app-insights-start-monitoring-app-health-usage/02-monitor-web-page.png)
+
+Beachten Sie, dass der Code den Instrumentationsschlüssel enthält, der Ihre Anwendungsressource identifiziert.
+
+[Weitere Informationen zur Nachverfolgung von Webseiten](app-insights-web-track-usage.md)
+
+#### Wenn Ihre Clients Geräte-Apps sind
+
+Wenn Ihre Anwendung für Clients wie Smartphones oder andere Geräte verwendet wird, fügen Sie Ihrer Geräte-App das [entsprechende SDK](app-insights-platforms.md) hinzu.
+
+Wenn Sie das Client-SDK mit dem gleichen Instrumentationsschlüssel konfigurieren wie das Server-SDK, werden die beiden Datenströme integriert, damit Sie sie zusammen anzeigen können.
+
 
 ## Abschließen der Installation
 
-Um die vollständige 360-Grad-Ansicht Ihrer Anwendung zu erhalten, sollten Sie einige weitere Schritte durchführen:
+Führen Sie folgende Zusatzschritte aus, um einen umfassenden Überblick über Ihre Anwendung zu erhalten:
 
-
-* [Fügen Sie Ihren Webseiten das JavaScript SDK hinzu][client], um browserbasierte Telemetriedaten wie Anzahl der Seitenaufrufe, Benutzer und Sitzung, Seitenladezeiten oder Skriptausnahmen zu erhalten und um benutzerdefinierte Telemetrie in Ihre Seitenskripts schreiben zu können.
-* Fügen Sie die Abhängigkeitsnachverfolgung hinzu, um Probleme zu diagnostizieren, die durch die von der App verwendeten Datenbanken oder von anderen Komponenten verursacht werden:
- * [in Ihrer Azure-Web-App oder -VM][azure]
- * [auf Ihrem lokalen IIS-Server][redfield]
+* [Richten Sie Webtests ein][availability], um sicherzustellen, dass die Anwendung online und reaktionsfähig bleibt.
 * [Erfassen Sie Protokoll-Ablaufverfolgungen][netlogs] aus Ihrem bevorzugten Protokollierungsframework
 * [Verfolgen Sie benutzerdefinierte Ereignisse und Metriken][api] im Client oder im Server oder beides, um weitere Informationen zur Nutzung Ihrer Anwendung zu erhalten.
-* [Richten Sie Webtests ein][availability], um sicherzustellen, dass die Anwendung online und reaktionsfähig bleibt.
 
 ## <a name="ide"></a>Der automatisierte Weg
 
@@ -196,4 +231,4 @@ Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithi
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

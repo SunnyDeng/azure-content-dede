@@ -39,7 +39,7 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 - [Version Juli 2014](#july_changes_14)
 - [Version Mai 2014](#may_changes_14)
 - [Version April 2014](#april_changes_14) 
-- [Versionen Januar\Februar 2014](#jan_feb_changes_14) 
+- [Versionen Januar\\Februar 2014](#jan_feb_changes_14) 
 - [Version Dezember 2013](#december_changes_13)
 - [Version November 2013](#november_changes_13)
 - [Version August 2013](#august_changes_13)
@@ -297,7 +297,7 @@ Weitere Informationen finden Sie unter [Wiederholungslogik im Media Services SDK
 * Behebung eines Problems hinsichtlich des Transcodierens von MP4s, bei denen das Audio mit MPEG-1 Audio Layer 3 (alias MP3) codiert wurde.
 
 
-##<a id="jan_feb_changes_14"></a>Versionen Januar\Februar 2014
+##<a id="jan_feb_changes_14"></a>Versionen Januar\\Februar 2014
 
 ### <a name="jan_fab_14_donnet_changes"></a>Azure Media Services .NET SDK 3.0.0.1, 3.0.0.2 und 3.0.0.3
 
@@ -537,4 +537,4 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

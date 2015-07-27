@@ -41,4 +41,4 @@ Sie haben nun ein neues mobiles App-Back-End erstellt, das Sie mit Ihren mobilen
 <!-- URLs. -->
 [Azure-Portal]: https://portal.azure.com/
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

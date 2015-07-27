@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Upgrade von Web- oder Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen" 
-	description="Führen Sie ein Upgrade der Web- oder Business-Datenbanken von Azure SQL-Datenbank auf die neuen Dienstebenen und Leistungsstufen &quot;Basic&quot;, &quot;Standard&quot; und &quot;Premium&quot; von Azure SQL-Datenbank durch." 
+	description="Führen Sie ein Upgrade der Web- oder Business-Datenbanken von Azure SQL-Datenbank auf die neuen Dienstebenen und Leistungsstufen ";Basic";, ";Standard"; und ";Premium"; von Azure SQL-Datenbank durch." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="jenniehubbard" 
@@ -57,7 +57,7 @@ Das Upgrade einer Web- oder Business-Datenbank auf eine neue Dienstebene umfasst
 
 
 
-## 1. Ermitteln der Dienstebene basierend auf dem Funktionsumfang
+## 1\. Ermitteln der Dienstebene basierend auf dem Funktionsumfang
 
 Die Dienstebenen Basic, Standard und Premium bieten einen unterschiedlichen Funktionsumfang. Der erste Schritt bei der Auswahl der geeigneten Ebene besteht also darin, die Dienstebene mit dem Mindestfunktionsumfang zu ermitteln, der für Ihre Anwendung und das Unternehmen erforderlich ist.
 
@@ -86,7 +86,7 @@ Nach Auswahl einer geeigneten Dienstebene, die die Anforderungen der Datenbank e
 
 
 
-## 2. Ermitteln einer angemessenen Leistungsstufe basierend auf der bisherigen Ressourcennutzung
+## 2\. Ermitteln einer angemessenen Leistungsstufe basierend auf der bisherigen Ressourcennutzung
 
 Der Azure SQL-Datenbankdienst zeigt Informationen im Verwaltungsportal und in den Systemsichten an, um Ihnen eine neue Dienstebene und Leistungsstufe für Ihre vorhandene Web- oder Business-Datenbank vorzuschlagen.
 
@@ -203,7 +203,7 @@ In der grafischen Darstellung erkennen Sie den Trend des durchschnittlichen proz
 
 
 
-## 3. Warum entspricht die aktuelle Leistung meiner Web- oder Business-Datenbank höheren Premium-Stufen?
+## 3\. Warum entspricht die aktuelle Leistung meiner Web- oder Business-Datenbank höheren Premium-Stufen?
 
 Web- und Business-Datenbanken verfügen über keine reservierte Ressourcenkapazität für einzelne Datenbanken. Außerdem steht den Kunden kein Instrument zur Verfügung, um die Leistung einer Web- oder Business-Datenbank nach oben oder unten zu skalieren. Dies führt dazu, dass sich die Leistung einer Web- oder Business-Datenbank irgendwo zwischen extrem langsam und Premium-Level bewegen kann. Diese Leistungsschwankungen hängen *ungerechterweise* vom jeweiligen Gesamtressourcenverbrauch durch andere Datenbanken innerhalb einer mehrinstanzenfähigen Umgebung mit gemeinsamer Ressourcennutzung ab.
 
@@ -216,7 +216,7 @@ Die folgende Abbildung hilft Ihnen dabei, die Unterschiede zwischen Web-/Busines
 Wenn der prozentuale DTU-Gesamtwert sehr hoch ist, sollten Sie die Metriken der DTUs genauer analysieren. Insbesondere detaillierte Informationen zu Protokoll-E/A und Arbeitsspeichernutzung der Datenbank können aufschlussreich sein. So können Sie ggf. Problembereiche aufdecken, für die sich der DTU-Verbrauch verringern und optimieren lässt.
 
 
-## 4. Optimieren der Datenbankauslastung in Anpassung an eine niedrigere Leistungsstufe
+## 4\. Optimieren der Datenbankauslastung in Anpassung an eine niedrigere Leistungsstufe
 Wenn die Analyse des historischen Ressourcenverbrauchs einer Datenbank ein Upgrade auf eine Leistungsstufe nahe legt, die Ihr Budget übersteigt, können Sie sich auch erst über weitere Möglichkeiten der Leistungsoptimierung informieren.
 
 Wenn Ihnen der Ressourcenverbrauch Ihrer Anwendung gemessen an Ihren Erfahrungswerten sehr hoch erscheint und weit über der typischen Arbeitsauslastung liegt, können Sie u. U. einige weitere Möglichkeiten der Leistungsoptimierung für die Anwendung ausschöpfen.
@@ -235,7 +235,7 @@ Zusätzlich zu typischen Optimierungsschritten wie Indexanalyse, Ausführungspl�
 
 
 
-## 5. Upgrade auf die neue Dienstebene/Leistungsstufe
+## 5\. Upgrade auf die neue Dienstebene/Leistungsstufe
 Nachdem Sie die geeignete Dienstebene/Leistungsstufe für die Web-/Business-Datenbank ermittelt haben, bieten sich mehrere Möglichkeiten für ein Upgrade der Datenbank auf die neue Ebene:
 
 | Verwaltungstool | So ändern Sie die Dienstebene und Leistungsstufe einer Datenbank|
@@ -248,7 +248,7 @@ Nachdem Sie die geeignete Dienstebene/Leistungsstufe für die Web-/Business-Date
 Ausführliche Informationen finden Sie unter [Ändern von Datenbank-Dienstebenen und -Leistungsstufen](http://msdn.microsoft.com/library/dn369872.aspx)
 
 
-## 6. Überwachen des Upgrades auf die neue Dienstebene/Leistungsstufe
+## 6\. Überwachen des Upgrades auf die neue Dienstebene/Leistungsstufe
 Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht "sys.dm_operation_status" in der Masterdatenbank des logischen Servers, auf dem die aktuelle Datenbank gespeichert ist, Statusinformationen zu Verwaltungsvorgängen (z. B. "CREATE", "ALTER", "DROP") zur Verfügung, die für eine Datenbank ausgeführt werden [siehe Dokumentation zum Status des _Vorgangs_ "sys.dm_operation_status"].(http://msdn.microsoft.com/library/azure/dn270022.aspx) Verwenden Sie die dynamische Verwaltungssicht zum Vorgangsstatus, um den Status des Upgradevorgangs für eine Datenbank zu ermitteln. Die folgende Beispielabfrage zeigt alle Verwaltungsvorgänge, die für eine Datenbank ausgeführt werden:
 
     SELECT o.operation, o.state_desc, o.percent_complete
@@ -265,7 +265,7 @@ Wenn Sie das Verwaltungsportal für das Upgrade verwendet haben, ist auch eine B
 Leistungsstufen werden kalibriert und gesteuert, um die erforderlichen Ressourcen zum Ausführen der Arbeitsauslastung Ihrer Datenbank bis zu den maximalen Grenzwerten bereitzustellen, die für die ausgewählte Dienstebene/Leistungsstufe zulässig sind (d. h. der Ressourcenverbrauch liegt bei 100 %). Wenn die Arbeitsauslastung die Grenzwerte für CPU/Daten-E/A/Protokoll-E/A erreicht, erhalten Sie die Ressourcen auch weiterhin auf der maximal zulässigen Ebene. Es treten jedoch wahrscheinlich erhöhte Wartezeiten für Ihre Abfragen auf. Das Erreichen einer dieser Höchstgrenzen führt nicht zu Fehlern, sondern nur zu einer Verlangsamung Ihrer Arbeitsauslastung. Wenn die Verlangsamung jedoch zu schwerwiegend ist, tritt ein Timeout von Abfragen auf. Wenn Sie den Grenzwert für die maximal zulässigen gleichzeitigen Benutzersitzungen/-anforderungen (Arbeitsthreads) erreichen, erhalten Sie den [Fehler 10928 oder 10929](http://msdn.microsoft.com/library/azure/dn338078.aspx).
 
 
-## 7. Überwachen der Datenbank nach dem Upgrade
+## 7\. Überwachen der Datenbank nach dem Upgrade
 Nach dem Upgrade der Web-/Business-Datenbank auf die neue Ebene wird empfohlen, die Datenbank aktiv zu überwachen, um sicherzustellen, dass Anwendungen mit der gewünschten Leistung ausgeführt werden. Außerdem sollte die Nutzung optimiert werden. Die folgenden zusätzlichen Schritte werden zum Überwachen der Datenbank empfohlen.
 
 
@@ -309,4 +309,4 @@ Der Azure SQL-Datenbankdienst stellt Telemetriedaten und Tools zum Auswerten der
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

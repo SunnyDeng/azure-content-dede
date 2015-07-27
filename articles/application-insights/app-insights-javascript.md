@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/03/2015" 
+	ms.date="07/10/2015" 
 	ms.author="awills"/>
  
 # Application Insights für JavaScript-Web-Apps
@@ -44,7 +44,7 @@ Rufen Sie im Schnellstart das Skript für Webseiten ab:
 
 Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie nachverfolgen möchten. Wenn Ihre Website über eine Masterseite verfügt, können Sie das Skript dort ablegen. Beispiel:
 
-* In einem ASP.NET MVC-Projekt würden Sie es unter "View\Shared_Layout.cshtml" ablegen.
+* In einem ASP.NET MVC-Projekt würden Sie es unter "View\\Shared\\_Layout.cshtml" ablegen.
 * Öffnen Sie in einer SharePoint-Website in der Systemsteuerung [Websiteeinstellungen / Masterseite](app-insights-sharepoint.md).
 
 Das Skript enthält den Instrumentationsschlüssel, der die Daten an Ihre Application Insights-Ressource leitet.
@@ -135,11 +135,15 @@ Legen Sie im Fenster "Diagnosesuche" als Filter die Einstellung "Seitenansicht" 
 
 ![](./media/app-insights-javascript/12-search-pages.png)
 
-Wählen Sie ein Ereignis, um weitere Details anzuzeigen.
+Wählen Sie ein Ereignis, um weitere Details anzuzeigen. Klicken Sie auf der Detailseite auf "...", um weitere Details anzuzeigen.
 
 > [AZURE.NOTE]Beachten Sie bei Verwendung von [Search][diagnostic], dass Sie ganze Wörter suchen müssen: "Info" und "nfo" stimmen nicht mit "Informationen" überein, "Info*" hingegen schon. Ein Suchbegriff darf nicht mit einem Platzhalterzeichen beginnen. Beispielsweise ergibt die Suche nach „*bou“ nicht „About“.
 
 > [Erfahren Sie mehr über Diagnosesuche][diagnostic]
+
+### Eigenschaften von Seitenansichten
+
+* **Dauer der Seitenansicht**: Die Zeit, die das Laden der Seite und das Starten der Ausführung von Skripts dauert. Insbesondere das Intervall vom Beginn des Ladens der Seite bis zur Ausführung von trackPageView. Wenn Sie nach der Initialisierung des Skripts trackPageView von seiner üblichen Position verschoben haben, wird ein anderer Wert wiedergegeben. 
 
 ## Benutzerdefinierte Nutzungsverfolgung
 
@@ -177,4 +181,4 @@ Falls Sie dies noch nicht durchgeführt haben, können Sie Einblicke von Ihrem S
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

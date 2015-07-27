@@ -47,4 +47,4 @@ Zum Installieren des Chef-Clients auf einem virtuellen Azure-Computer haben Sie 
 
  
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->

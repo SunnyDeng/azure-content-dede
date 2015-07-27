@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2015" 
+	ms.date="06/29/2015" 
 	ms.author="tomfitz"/>
 
 # Bereitstellen einer Web-App mit einer SQL-Datenbank
@@ -24,7 +24,7 @@ Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von
 
 Weitere Informationen zum Bereitstellen von Apps finden Sie unter [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md).
 
-Die vollständige Vorlage finden Sie unter [Web-App mit SQL-Datenbankvorlage](../../templates/app-service-web-arm-with-sql-database-provision/).
+Die vollständige Vorlage finden Sie unter [Web-App mit SQL-Datenbankvorlage](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json).
 
 ## Was Sie bereitstellen
 
@@ -36,6 +36,10 @@ In dieser Vorlage stellen Sie Folgendes bereit:
 - Einstellungen für automatische Skalierung
 - Warnungsregeln
 - App Insights
+
+Klicken Sie auf folgende Schaltfläche, um die Bereitstellung automatisch auszuführen:
+
+[![Bereitstellen in Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-sql-database%2Fazuredeploy.json)
 
 ## Anzugebende Parameter
 
@@ -101,12 +105,16 @@ Der Typ der zu erstellenden Datenbank.
 
 ### maxSizeBytes
 
+Die maximale Größe (in Bytes) der Datenbank.
+
     "maxSizeBytes": {
       "type": "string",
       "defaultValue": "1073741824"
     }
 
 ### requestedServiceObjectiveId
+
+Die GUID entsprechend der Leistungsstufe der Edition. Eine Liste der verfügbaren Werte finden Sie unter [Erstellen einer Datenbank](https://msdn.microsoft.com/library/azure/dn505701.aspx). Der Standardwert entspricht der Leistungsstufe "Web".
 
     "requestedServiceObjectiveId": {
         "type": "string",
@@ -168,7 +176,7 @@ Erstellt einen neuen SQL-Server und eine Datenbank. Der Name des Servers wird im
 ### Web-App
 
     {
-      "apiVersion": "2014-06-01",
+      "apiVersion": "2015-06-01",
       "name": "[parameters('siteName')]",
       "type": "Microsoft.Web/Sites",
       "location": "[parameters('siteLocation')]",
@@ -426,13 +434,13 @@ Erstellt einen neuen SQL-Server und eine Datenbank. Der Name des Servers wird im
 
 ### PowerShell
 
-    New-AzureResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/tfitzmac/AppServiceTemplates/master/webandsql.json
+    New-AzureResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json
 
 ### Azure-Befehlszeilenschnittstelle
 
-    azure group deployment create --template-uri https://raw.githubusercontent.com/tfitzmac/AppServiceTemplates/master/webandsql.json
+    azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json
 
 
  
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO3-->

@@ -171,10 +171,10 @@ Indem wir den Code in Abschnitte unterteilen und eine Schleife generieren, wird 
 
 
 ## Nächste Schritte
-Weitere Tipps zur Entwicklung finden Sie unter [Entwicklungsübersicht][].
+Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Image references-->
-[1]: media/sql-data-warehouse-develop-group-by/sql-data-warehouse-develop-group-by-cube.png
+[1]: media/sql-data-warehouse-develop-group-by-options/sql-data-warehouse-develop-group-by-cube.png
 
 <!--Article references-->
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
@@ -185,4 +185,4 @@ Weitere Tipps zur Entwicklung finden Sie unter [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO1-->
+<!---HONumber=July15_HO3-->
