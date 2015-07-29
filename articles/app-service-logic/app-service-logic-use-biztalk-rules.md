@@ -34,11 +34,9 @@ Es gibt drei wichtige Gründe für die Verwendung von BizTalk-Geschäftsregeln i
 
 ##Vokabular
 
-Die zum Definieren von Regelbedingungen und Aktionen verwendeten Begriffe werden in der Regel durch eine domänen- oder branchenspezifischer Terminologie ausgedrückt. Ein E-Mail-Benutzer schreibt zum Beispiel Regeln in Bezug auf Nachrichten "erhalten von" und Nachrichten "erhalten nach", während ein Business Analyst in einer Versicherung Regeln in Bezug auf "Risikofaktoren" und "Deckungsbetrag" schreibt. 
-Dieser fachgebietsspezifischen Terminologie liegen die Technologieartefakte (Objekte, Datenbanktabellen und XML-Dokumente) zugrunde, welche die Regelbedingungen und Regelaktionen implementieren. Vokabulare sollen die Lücke zwischen Geschäftssemantik und Implementierung schließen.
+Die zum Definieren von Regelbedingungen und Aktionen verwendeten Begriffe werden in der Regel durch eine domänen- oder branchenspezifischer Terminologie ausgedrückt. Ein E-Mail-Benutzer schreibt zum Beispiel Regeln in Bezug auf Nachrichten "erhalten von" und Nachrichten "erhalten nach", während ein Business Analyst in einer Versicherung Regeln in Bezug auf "Risikofaktoren" und "Deckungsbetrag" schreibt. Dieser fachgebietsspezifischen Terminologie liegen die Technologieartefakte (Objekte, Datenbanktabellen und XML-Dokumente) zugrunde, welche die Regelbedingungen und Regelaktionen implementieren. Vokabulare sollen die Lücke zwischen Geschäftssemantik und Implementierung schließen.
 
-Beispielsweise könnte eine Datenbindung für einen Genehmigungsstatus auf eine bestimmte Spalte in einer bestimmten Zeile in einer bestimmten Datenbank verweisen, die als SQL-Abfrage dargestellt wird. Anstatt diese Art der komplexen Darstellung in eine Regel einzufügen, können Sie stattdessen eine Vokabulardefinition mit dem Anzeigenamen "Status" erstellen, die dieser Datenbindung zugeordnet ist. Anschließend können Sie "Status" in einer beliebigen Anzahl von Regeln verwenden, und das Regelmodul kann die entsprechenden Daten aus der Tabelle abrufen.
-Ein _Vokabular_ ist eine Auflistung von Definitionen, die aus Anzeigenamen für die in Regelbedingungen und Aktionen verwendeten IT-Objekte besteht. Vokabulardefinitionen erleichtern das Lesen, Verstehen und die gemeinsame Nutzung der Regeln von Personen in einem bestimmten Fachbereich.
+Beispielsweise könnte eine Datenbindung für einen Genehmigungsstatus auf eine bestimmte Spalte in einer bestimmten Zeile in einer bestimmten Datenbank verweisen, die als SQL-Abfrage dargestellt wird. Anstatt diese Art der komplexen Darstellung in eine Regel einzufügen, können Sie stattdessen eine Vokabulardefinition mit dem Anzeigenamen "Status" erstellen, die dieser Datenbindung zugeordnet ist. Anschließend können Sie "Status" in einer beliebigen Anzahl von Regeln verwenden, und das Regelmodul kann die entsprechenden Daten aus der Tabelle abrufen. Ein _Vokabular_ ist eine Auflistung von Definitionen, die aus Anzeigenamen für die in Regelbedingungen und Aktionen verwendeten IT-Objekte besteht. Vokabulardefinitionen erleichtern das Lesen, Verstehen und die gemeinsame Nutzung der Regeln von Personen in einem bestimmten Fachbereich.
 
 ##Regel
 
@@ -48,23 +46,17 @@ _IF_ _Bedingung_ _THEN_ _Aktion_
 
 Betrachten Sie das folgende Beispiel:
 
-*IF Menge kleiner gleich verfügbare Mittel*  
-*THEN Transaktion durchführen und Beleg drucken*
+*IF Menge kleiner gleich verfügbare Mittel* *THEN Transaktion durchführen und Beleg drucken*
 
-Diese Regel bestimmt, ob eine Transaktion durchgeführt wird, indem sie Geschäftslogik in Form eines Vergleichs zwischen zwei monetären Werten anwendet, einem Transaktionsbetrag und den zur Verfügung stehenden Mitteln. 
-Sie können anhand der Geschäftsregel Geschäftsregeln erstellen, ändern und bereitstellen. Alternativ können Sie die vorherigen Aufgaben programmgesteuert ausführen.
+Diese Regel bestimmt, ob eine Transaktion durchgeführt wird, indem sie Geschäftslogik in Form eines Vergleichs zwischen zwei monetären Werten anwendet, einem Transaktionsbetrag und den zur Verfügung stehenden Mitteln. Sie können anhand der Geschäftsregel Geschäftsregeln erstellen, ändern und bereitstellen. Alternativ können Sie die vorherigen Aufgaben programmgesteuert ausführen.
 
 ###Bedingungen
 
-Eine Bedingung ist ein boolescher Ausdruck (true/false), der aus einem oder mehreren Prädikaten besteht.
-In diesem Beispiel wird das Prädikat kleiner gleich auf die Menge und die verfügbaren Mittel angewendet. Diese Bedingung wird immer entweder als "true" oder "false" ausgewertet. 
-Prädikate können mit den logischen Operatoren AND, OR und NOT zu einem logischen Ausdruck kombiniert werden, der möglicherweise sehr umfangreich ist, aber immer als "true" oder "false" ausgewertet wird.
+Eine Bedingung ist ein boolescher Ausdruck (true/false), der aus einem oder mehreren Prädikaten besteht. In diesem Beispiel wird das Prädikat kleiner gleich auf die Menge und die verfügbaren Mittel angewendet. Diese Bedingung wird immer entweder als "true" oder "false" ausgewertet. Prädikate können mit den logischen Operatoren AND, OR und NOT zu einem logischen Ausdruck kombiniert werden, der möglicherweise sehr umfangreich ist, aber immer als "true" oder "false" ausgewertet wird.
 
 ###Aktionen
 
-Aktionen sind die funktionalen Folgen der Bedingungsauswertung. Wenn eine Bedingung erfüllt ist, wird mindestens eine entsprechende Aktion initiiert. 
-In unserem Beispiel sind "Transaktion durchführen" und "Beleg drucken" Aktionen, die nur dann durchgeführt werden, wenn die Bedingung (in diesem Fall "Betrag kleiner gleich verfügbare Mittel") wahr, also "true", ist. 
-Aktionen werden im Geschäftsregel-Framework dargestellt, indem bestimmte Vorgänge an XML-Dokumenten durchgeführt werden.
+Aktionen sind die funktionalen Folgen der Bedingungsauswertung. Wenn eine Bedingung erfüllt ist, wird mindestens eine entsprechende Aktion initiiert. In unserem Beispiel sind "Transaktion durchführen" und "Beleg drucken" Aktionen, die nur dann durchgeführt werden, wenn die Bedingung (in diesem Fall "Betrag kleiner gleich verfügbare Mittel") wahr, also "true", ist. Aktionen werden im Geschäftsregel-Framework dargestellt, indem bestimmte Vorgänge an XML-Dokumenten durchgeführt werden.
 
 ##Richtlinie
 
@@ -110,8 +102,7 @@ Nach dem Erstellen einer BizTalk-Regel-API-App besteht der nächste Schritt im E
 
    ![Alt text][4]
 
-2.Klicken Sie als nächstes auf "Vokabulardefinitionen". Der Bildschirm zum Verfassen des Vokabulars wird angezeigt. Klicken Sie auf "Hinzufügen", um neue Vokabulardefinitionen hinzuzufügen. 
-Derzeit werden zwei Arten von Vokabulardefinitionen unterstützt – literal und XML.
+2.Klicken Sie als nächstes auf "Vokabulardefinitionen". Der Bildschirm zum Verfassen des Vokabulars wird angezeigt. Klicken Sie auf "Hinzufügen", um neue Vokabulardefinitionen hinzuzufügen. Derzeit werden zwei Arten von Vokabulardefinitionen unterstützt – literal und XML.
 
 ##Literale Definition
 1.	Nach dem Klicken auf "Hinzufügen" wird ein neues Blatt "Definition hinzufügen" geöffnet. Geben Sie die folgenden Werte ein:
@@ -151,8 +142,7 @@ Nachdem der Entwickler die erforderlichen Vokabulare erstellt hat, ist der Busin
 	4. Klicken Sie auf "Neu hinzufügen", um eine neue Regel hinzuzufügen. Sie gelangen zu einem neuen Blatt.
 
 ##Regelerstellung
-Eine Regel ist eine Auflistung von Bedingungs- und Aktionsanweisungen. Die Aktionen werden ausgeführt, wenn die Bedingung als wahr ("true") ausgewertet wird. Geben Sie auf dem Blatt zur Regelerstellung einen eindeutigen Regelnamen (für diese Richtlinie) und eine Beschreibung (optional) ein. 
-Das Feld "Bedingung" kann zum Erstellen komplexer Bedingungsanweisungen verwendet werden. Folgende Schlüsselwörter werden unterstützt:  
+Eine Regel ist eine Auflistung von Bedingungs- und Aktionsanweisungen. Die Aktionen werden ausgeführt, wenn die Bedingung als wahr ("true") ausgewertet wird. Geben Sie auf dem Blatt zur Regelerstellung einen eindeutigen Regelnamen (für diese Richtlinie) und eine Beschreibung (optional) ein. Das Feld "Bedingung" kann zum Erstellen komplexer Bedingungsanweisungen verwendet werden. Folgende Schlüsselwörter werden unterstützt:  
 1. 	Und – bedingter Operator  
 2. 	Oder – bedingter Operator  
 3. 	does_not_exist  
@@ -250,4 +240,4 @@ Einer der Hauptvorteile der Verwendung von Geschäftsregeln ist, dass Änderunge
 [10]: ./media/app-service-logic-use-biztalk-rules/APIDef.PNG
 [11]: ./media/app-service-logic-use-biztalk-rules/PublicAnon.PNG
 
-<!----HONumber=July15_HO3-->
+<!-----HONumber=July15_HO3-->
