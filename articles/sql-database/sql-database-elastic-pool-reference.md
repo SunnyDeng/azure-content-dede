@@ -87,7 +87,7 @@ Ein elastischer Pool ist eine ARM-Ressource vom Typ "ElasticPool" in Microsoft A
 
 Die Speicherbegrenzung des Pools wird durch die Menge der DTUs des Pools bestimmt; jede DTU = 1 GB Speicher. Beispielsweise hat ein 200-DTU-Pool einen Grenzwert von 200 GB.
 
-| -Eigenschaft | Standardwert | Gültige Werte |
+| Eigenschaft | Standardwert | Gültige Werte |
 | :-- | :-- | :-- |
 | Dtu | 100 | 100, 200, 400, 800, 1.200 |
 | databaseDtuMax | 100 | 10, 20, 50, 100 |
@@ -102,11 +102,11 @@ Die maximale Anzahl von gleichzeitigen Workern und gleichzeitigen Sitzungen, die
 
 | DTUs | Max. gleichzeitige Worker | Max. gleichzeitige Sitzungen |
 | :-- | :-- | :-- |
-| 100 | 200 | 2\.400 |
-| 200 | 400 | 4\.800 |
-| 400 | 800 | 9\.600 |
-| 800 | 1\.600 | 19\.200 |
-| 1\.200 | 2\.400 | 28\.800 |
+| 100 | 200 | 2.400 |
+| 200 | 400 | 4.800 |
+| 400 | 800 | 9.600 |
+| 800 | 1.600 | 19.200 |
+| 1.200 | 2.400 | 28.800 |
 
 
 ## Einschränkungen für Azure-Ressourcen-Manager:
