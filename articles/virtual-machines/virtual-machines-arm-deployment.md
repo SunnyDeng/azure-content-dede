@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Bereitstellen von Azure-Ressourcen mithilfe der Computing-, Netzwerk- und Speicherbibliotheken von .NET" 
-	description="Erfahren Sie, wie Sie einige der verfügbaren Clients in den Computing-, Netzwerk- und Speicherbibliotheken von .NET zum Erstellen und Löschen von Ressourcen in Microsoft Azure verwenden." 
+	description="Erfahren Sie, wie Sie einige der verfügbaren Clients in den Computing-, Netzwerk- und Speicherbibliotheken von .NET zum Erstellen und Löschen von Ressourcen in Microsoft Azure verwenden" 
 	services="virtual-machines,virtual-network,storage" 
 	documentationCenter="" 
 	authors="davidmu1" 

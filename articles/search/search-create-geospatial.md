@@ -127,7 +127,8 @@ Das Projekt **AdventureWorksWebGeo** beschreibt, wie ASP.NET MVC 4 zusammen mit
 
 +	Die Funktion **Search** ruft die Geschäftsstandorte ab, die nach Empfang als PushPins zur Bing-Karte hinzugefügt werden.
 
-4.	Öffnen Sie unter **Controllers** die Datei "HomeController.cs“, und sehen Sie sich die Funktion **Search** an. Diese Funktion ruft die Funktion „_storeSearch.Search(lat, lon, 10000)“ auf. Dadurch wird eine Abfrage ausgeführt, um nach allen Geschäften in einem Umkreis von 10.000 km des mit dem Längengrad (lon) und Breitengrad (lat) angegebenen Standorts zu suchen. Die Abfrageergebnisse werden verarbeitet und anschließend an die Indexansicht zurückgesendet, um als PushPins verarbeitet und als Überlagerung auf der Bing-Karte angezeigt zu werden. 
+4.	Öffnen Sie unter **Controllers** die Datei "HomeController.cs“, und sehen Sie sich die Funktion **Search** an. Diese Funktion ruft die Funktion „_storeSearch.Search(lat, lon, 10000)“ auf. Dadurch wird eine Abfrage ausgeführt, um nach allen Geschäften in einem Umkreis von 10.000 km des mit dem Längengrad (lon) und Breitengrad (lat) angegebenen Standorts zu suchen. Die Abfrageergebnisse werden verarbeitet und anschließend an die Indexansicht zurückgesendet, um als PushPins verarbeitet und als Überlagerung auf der Bing-Karte angezeigt zu werden.
+
 Die Demonstration ist hiermit abgeschlossen. Sie haben sich nun mit den wichtigsten Operationen vertraut gemacht, die Sie zum Erstellen einer kartenbasierten ASP.NET MVC4-Anwendung mit Azure Search benötigen.
 
 

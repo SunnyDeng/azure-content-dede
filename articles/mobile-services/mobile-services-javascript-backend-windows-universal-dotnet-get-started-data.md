@@ -113,7 +113,7 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.com/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
-[Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkID=510826
+[Website mit den Codebeispielen für Entwickler]: http://go.microsoft.com/fwlink/p/?LinkID=510826
 
 [MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
  

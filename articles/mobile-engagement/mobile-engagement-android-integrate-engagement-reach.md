@@ -318,7 +318,7 @@ Wenn Sie für eine bestimmte Kategorie alternative Layouts verwenden möchten, k
 			  }
 			}
 
-**Beispiel für `my_notification_overlay.xml`: **
+**Beispiel für `my_notification_overlay.xml`:**
 
 			<?xml version="1.0" encoding="utf-8"?>
 			<RelativeLayout
@@ -333,7 +333,7 @@ Wenn Sie für eine bestimmte Kategorie alternative Layouts verwenden möchten, k
 
 Wie Sie sehen können, unterscheidet sich der Bezeichner für die Überlagerungsansicht vom Standardbezeichner. Es ist wichtig, dass jedes Layout einen eindeutigen Bezeichner für Überlagerungen verwendet.
 
-**Beispiel für `my_notification_area.xml`: **
+**Beispiel für `my_notification_area.xml`:**
 
 			<?xml version="1.0" encoding="utf-8"?>
 			<merge
