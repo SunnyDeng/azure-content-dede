@@ -22,9 +22,11 @@ So erstellen Sie einen Dienstnamespace:
 
 2.  Klicken Sie im linken Navigationsbereich des Verwaltungsportals auf **Servicebus**.
 
-3.  Klicken Sie im unteren Bereich des Verwaltungsportals auf **Erstellen**. ![](./media/howto-service-bus-queues/sb-queues-03.png)
+3.  Klicken Sie im unteren Bereich des Verwaltungsportals auf **Erstellen**.
+	![](./media/howto-service-bus-queues/sb-queues-03.png)
 
-4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.![](./media/howto-service-bus-queues/sb-queues-04.png)
+4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.
+	![](./media/howto-service-bus-queues/sb-queues-04.png)
 
 5.  Wählen Sie nach der Bestätigung, dass der Name für den Namespace verfügbar ist, das Land oder die Region, wo dieser Namespace gehostet werden soll. (Stellen Sie sicher, dass dies dasselbe Land/dieselbe Region ist, in dem/der Sie Ihre Rechnerressourcen bereitstellen.)
 
@@ -42,11 +44,15 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer W
 
 ###So rufen Sie die Anmeldeinformationen im Verwaltungsportal ab
 
-1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste verfügbarer Namespaces anzuzeigen: ![](./media/howto-service-bus-queues/sb-queues-13.png)
+1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste verfügbarer Namespaces anzuzeigen:
+	![](./media/howto-service-bus-queues/sb-queues-13.png)
 
-2.  Wählen Sie in der angezeigten Liste den Namespace, den Sie gerade erstellt haben: ![](./media/howto-service-bus-queues/sb-queues-09.png)
+2.  Wählen Sie in der angezeigten Liste den Namespace, den Sie gerade erstellt haben:
+	![](./media/howto-service-bus-queues/sb-queues-09.png)
 
-3.  Klicken Sie auf **Verbindungsinformationen**. ![](./media/howto-service-bus-queues/sb-queues-06.png)
+3.  Klicken Sie auf **Verbindungsinformationen**.
+
+	![](./media/howto-service-bus-queues/sb-queues-06.png)
 
 4.  Im Bereich **Zugriff auf die Verbindungsinformationen** finden Sie die Verbindungszeichenfolge, die den SAS-Schlüssel und den Schlüsselnamen enthält.
 
