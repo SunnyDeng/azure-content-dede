@@ -113,7 +113,7 @@ In diesem Abschnitt erstellen Sie eine neue Node-Anwendung in Ihrer Entwicklungs
 
 1. Wechseln Sie an der Befehlszeile zum Verzeichnis **tasklist**. Falls das Verzeichnis **tasklist** nicht vorhanden ist, erstellen Sie es.
 
-	> [AZURE.NOTE]In diesem Lernprogramm wird auf den Ordner **tasklist** Bezug genommen. Der vollständige Ordnerpfad wird nicht angegeben, da die Pfadsemantik je nach Betriebssystem unterschiedlich ist. Sie sollten diesen Ordner in einem Verzeichnis erstellen, auf das Sie im lokalen Dateisystem einfach zugreifen können, z. B. **~/node/tasklist** oder **c:\\node\\tasklist**.
+	> [AZURE.NOTE]In diesem Lernprogramm wird auf den Ordner **tasklist** Bezug genommen. Der vollständige Ordnerpfad wird nicht angegeben, da die Pfadsemantik je nach Betriebssystem unterschiedlich ist. Sie sollten diesen Ordner in einem Verzeichnis erstellen, auf das Sie im lokalen Dateisystem einfach zugreifen können, z. B. **~/node/tasklist** oder **c:\node\tasklist**.
 
 2. Geben Sie folgenden Befehl ein, um den Befehl "express" zu installieren.
 
@@ -571,4 +571,4 @@ Informationen zur Sicherheit von MongoDB finden Sie unter [MongoDB-Sicherheit][m
 [mongodbonazure]: http://docs.mongodb.org/ecosystem/tutorial/install-mongodb-on-linux-in-azure/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

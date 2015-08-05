@@ -73,4 +73,4 @@ Weitere Informationen finden Sie unter den folgenden Links:
 
 [Sichern und Wiederherstellen der Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/jj650016.aspx)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/07/2015" 
+	ms.date="07/21/2015" 
 	ms.author="spelluru"/>
 
 # Kopieren von Daten mit Azure Data Factory (Kopieraktivität)
@@ -40,156 +40,22 @@ Weitere Informationen finden Sie hier:
 ## Unterstützte Datenquellen und Senken
 Die Kopieraktivität unterstützt folgende Datenbewegungen:
 
-<table border="1">	
-	<tr>
-		<th><i>Quelle/Senke<i></th>
-		<th>Azure Blob</th>
-		<th>Azure-Tabelle</th>
-		<th>Azure SQL-Datenbank</th>
-		<th>Azure DocumentDB</th>
-		<th>SQL Server auf virtuellen Azure-Computern</th>
-		<th>Lokaler SQL Server</th>
-	</tr>	
+| *Quelle/Senke* | Azure Blob | Azure-Tabelle | Azure SQL-Datenbank | Azure DocumentDB | SQL Server auf Azure VM | Lokaler SQL Server |
+| ------------- | ---------- | ----------- | ------------------ | ---------------- | ------------------ | ------------------- |
+| Azure Blob | X | X | X | X | X | X |
+| Azure-Tabelle | X | X | X | X | X | X |
+| Azure SQL-Datenbank | X | X | X | X | X | X |
+| Azure DocumentDB | X | X | X | | | |  
+| Lokaler SQL Server | X | X | X | | X | X |
+| SQL Server auf Azure VM | X | X | X | | X | X |
+| Lokales Dateisystem | X | X | X | | X | X |
+| Lokale Oracle-Datenbank | X | X | X | | X | X |
+| Lokale MySQL-Datenbank| X | X | X | | X | X |
+| Lokale DB2-Datenbank | X | X | X | | X | X |
+| Lokale Teradata-Datenbank | X | X | X | | X | X |
+| Lokale Sybase-Datenbank | X | X | X | | X | X |
+| Lokale PostgreSQL-Datenbank | X | X | X | | X | X |
 
-	<tr>
-		<td><b>Azure Blob</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-
-	<tr>
-		<td><b>Azure-Tabelle</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-	</tr>	
-	<tr>
-		<td><b>Azure SQL-Datenbank</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-	<tr>
-		<td><b>Azure DocumentDB</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
-	<tr>
-		<td><b>Lokaler SQL Server</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-
-	<tr>
-		<td><b>SQL Server auf virtuellen Azure-Computern</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-
-	<tr>
-		<td><b>Lokales Dateisystem</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale Oracle-Datenbank</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-
-	<tr>
-		<td><b>Lokales Dateisystem</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale MySQL-Datenbank</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale DB2-Datenbank</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale Teradata-Datenbank</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale Sybase-Datenbank</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-
-	<tr>
-		<td><b>Lokale PostgreSQL-Datenbank</b></td>
-		<td>X</td>
-		<td>X</td>
-		<td>X</td>
-		<td></td>
-		<td>X</td>
-		<td>X</td>
-	</tr>
-
-</table>
 
 Weitere Informationen finden Sie im Thema [Unterstützte Datenquellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) in der MSDN Library.
 
@@ -249,57 +115,15 @@ Jede Aktivität innerhalb des Abschnitts **Aktivitäten** weist die folgende all
 
 Die folgende Tabelle beschreibt die Tags, die in einem Aktivitätsabschnitt verwendet werden.
 
-<table border="1">	
-	<tr>
-		<th align="left">Tag</th>
-		<th align="left">Beschreibung</th>
-		<th align="left">Erforderlich</th>
-	</tr>	
-
-	<tr>
-		<td>name</td>
-		<td>Der Name der Aktivität.</td>
-		<td>Y</td>
-	</tr>	
-
-	<tr>
-		<td>description</td>
-		<td>Ein Text, der beschreibt, wofür die Aktivität verwendet wird.</td>
-		<td>Y</td>
-	</tr>
-
-	<tr>
-		<td>type</td>
-		<td>Gibt den Typ der Aktivität an. <br/><br/>Für <b>type</b> sollte <b>CopyActivity</b> gesetzt sein.</td>
-		<td>Y</td>
-	</tr>
-
-	<tr>
-		<td>inputs</td>
-		<td>Eingabetabellen, die von der Aktivität verwendet werden. Geben Sie für die Kopieraktivität nur eine Eingabetabelle an.</td>
-		<td>Y</td>
-	</tr>
-
-	<tr>
-		<td>outputs</td>
-		<td>Ausgabetabellen, die von der Aktivität verwendet werden. Geben Sie für die Kopieraktivität nur eine Ausgabetabelle an.</td>
-		<td>Y</td>
-	</tr>
-
-	<tr>
-		<td>transformation</td>
-		<td>Eigenschaften der Transformation sind vom Typ abhängig. Die <b>Kopieraktivität</b> erfordert, dass Sie einen Abschnitt für die <b>Quelle</b> und einen Abschnitt für die <b>Senke</b> innerhalb des Abschnitts <b>Transformation</b> angeben. Weiter unten in diesem Artikel erhalten Sie weitere Details. </td>
-		<td>Y</td>
-	</tr>
-
-	<tr>
-		<td>policy</td>
-		<td>Richtlinien, die das Laufzeitverhalten der Aktivität beeinflussen. Wenn es nicht angegeben wird, werden Standardwerte verwendet.</td>
-		<td>N</td>
-	</tr>
-
-
-</table>
+| Tag | Beschreibung | Erforderlich |
+|-----|-------------|----------|
+|name|Der Name der Aktivität.|Y|
+|description|Ein Text, der beschreibt, wofür die Aktivität verwendet wird.|J|
+|type|Gibt den Typ der Aktivität an. Als Typ sollte **Copy** festgelegt sein. |J|
+|inputs|Eingabetabellen, die von der Aktivität verwendet werden. Geben Sie für die Kopieraktivität nur eine Eingabetabelle an. | J
+|outputs|Ausgabetabellen, die von der Aktivität verwendet werden. Geben Sie für die Kopieraktivität nur eine Ausgabetabelle an. | J
+|transformation|Eigenschaften der Transformation sind vom Typ abhängig. Die Kopieraktivität erfordert die Angabe eines Abschnitts für die Quelle und eines für die Senke innerhalb des Abschnitts "Transformation". Weiter unten in diesem Artikel erhalten Sie weitere Details.|Y
+|policy| Richtlinien, die das Laufzeitverhalten der Aktivität beeinflussen. Wenn es nicht angegeben wird, werden Standardwerte verwendet. | N
 
 Ausführliche Informationen zu JSON-Eigenschaften/-Tags finden Sie in der [JSON-Skriptreferenz][json-script-reference].
 
@@ -475,4 +299,4 @@ Unter [Aktivieren von Pipelines für die Arbeit mit lokalen Daten][use-onpremise
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity/ColumnMappingSample2.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

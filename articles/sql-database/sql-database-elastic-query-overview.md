@@ -33,14 +33,16 @@ Außerdem ermöglicht eine Abfrage für elastische Datenbanken den einfachen Zug
 
 Die Datenebene ist über viele Datenbanken mit einem gemeinsamen Schema horizontal skaliert. Dieser Ansatz wird auch horizontale Partitionierung oder Sharding genannt. Die Partitionierung kann mit (1)der [Clientbibliothek für elastischen Datenbanken](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) oder (2) mithilfe eines anwendungsspezifischen Modells zur Verteilung von Daten über mehrere Datenbanken ausgeführt und verwaltet werden. Mit dieser Topologie müssen sich Berichte häufig über mehrere Datenbanken erstrecken. Mit einer Abfrage für elastische Datenbanken können Sie nun eine Verbindung mit einer einzelnen SQL-Datenbank herstellen. Die Abfrageergebnisse der Remotedatenbanken werden so angezeigt, als sie ob von einer einzigen virtuellen Datenbank generiert wurden.
 
+> [AZURE.NOTE]Die flexible Datenbankabfrage funktioniert am besten bei gelegentlichen Reporting-Szenarien, bei denen der Großteil der Verarbeitung auf der Datenebene ausgeführt werden kann. Bei hohen Reporting-Arbeitslasten oder Data Warehousing-Szenarien mit komplexeren Abfragen, sollten Sie auch die Verwendung von [Azure SQL Data Warehouse](http://azure.microsoft.com/services/sql-data-warehouse/) in Betracht ziehen.
+
 
 ## Topologie für Abfragen für elastische Datenbanken
 
 Die Ausführung von Berichtsaufgaben mit einer Abfrage für elastische Datenbanken über eine horizontal partitionierte Datenebene erfordert eine Shard-Zuordnung mit elastischer Skalierung, um die Datenbanken der Datenebene darzustellen. Normalerweise wird nur eine einzige Shard-Zuordnung in diesem Szenario verwendet, und eine dedizierte Datenbank mit Abfragefunktionen für elastische Datenbanken dient als Einstiegspunkt für Berichtsabfragen. Nur diese dedizierte Datenbank muss mit Abfrageobjekten für elastische Datenbanken konfiguriert werden, wie im Folgenden beschrieben. Abbildung 2 zeigt diese Topologie und die Konfiguration mit der Abfragedatenbank und -Shard-Zuordnung für elastische Datenbanken.
 
-**Hinweis**: Die dedizierte Abfragedatenbank für elastische Datenbanken muss eine SQL-DB-v12-Datenbank sein, und es wird zunächst nur der Premium-Tarif unterstützt. Es gibt keine Einschränkungen für die Shards selbst.
+> [AZURE.NOTE]Die dedizierte Abfragedatenbank für elastische Datenbanken muss eine SQL-DB-v12-Datenbank sein, und es wird zunächst nur der Premium-Tarif unterstützt. Es gibt keine Einschränkungen für die Shards selbst.
 
-**Abbildung 2**
+**Abbildung 2**
 
 ![Verwenden von Abfragen für elastische Datenbanken zu Berichterstattung über Sharding-Ebenen][2]
 
@@ -208,7 +210,7 @@ SP_EXECUTE_FANOUT ist eine gespeicherte Prozedur, die Zugriff auf die Datenbanke
 
 -    **Servername** (nvarchar): Vollqualifizierter Name des logischen Servers, auf dem die Shard-Zuordnung gehostet wird.
 -    **Datenbankname der Shard-Zuordnung** (nvarchar): Der Name der Shard-Zuordnungsdatenbank.
--    **Benutzername** (nvarchar): Den Benutzernamen für die Anmeldung bei der Shard-Zuordnungsdatenbank und den Remotedatenbanken.
+-    **Benutzername** (nvarchar): Der Benutzername für die Anmeldung bei der Shard-Zuordnungsdatenbank und den Remotedatenbanken.
 -    **Kennwort** (nvarchar): Das Kennwort für den Benutzer.
 -    **Shard-Zuordnungsname** (nvarchar): Der Name der Shard-Zuordnung für die Abfrage.
 -    **Abfrage**: Die Abfrage, die für die einzelnen Shards ausgeführt wird.
@@ -250,7 +252,7 @@ Bedenken Sie in Bezug auf die Vorschau Folgendes:
 Teilen Sie uns Ihr Feedback auf Disqus oder Stackoverflow mit. Für uns sind alle Arten von Feedback zum Dienst (Fehler, Designprobleme und fehlende Features) interessant.
 
 ## Nächste Schritte
-Führen Sie zum Einstieg in Abfragen für elastische Datenbanken unser schrittweises Lernprogramm durch, um innerhalb von Minuten zu einem umfassenden Arbeitsbeispiel zu gelangen: [Erste Schritte mit Abfragen für elastische Datenbanken](sql-database-elastic-query-getting-started.md).
+Führen Sie zum Einstieg in Abfragen für elastische Datenbanken unser schrittweises Lernprogramm aus, um innerhalb von Minuten zu einem umfassenden Arbeitsbeispiel zu gelangen: [Erste Schritte mit Abfragen für elastische Datenbanken](sql-database-elastic-query-getting-started.md).
 
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
@@ -261,4 +263,4 @@ Führen Sie zum Einstieg in Abfragen für elastische Datenbanken unser schrittwe
 
 <!--anchors-->
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -153,4 +153,4 @@ Jetzt sind Sie soweit. Als Nächstes können Sie sich [von der Azure-Befehlszeil
 [cliasm]: virtual-machines/virtual-machines-command-line-tools.md
 [cliarm]: virtual-machines/xplat-cli-azure-resource-manager.md
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

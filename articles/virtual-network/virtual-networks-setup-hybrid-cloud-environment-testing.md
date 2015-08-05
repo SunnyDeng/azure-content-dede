@@ -239,8 +239,8 @@ Melden Sie sich anschließend bei dem neuen virtuellen Computer für DC2 an.
 3.	Wenn Sie zum Öffnen von DC2.rdp aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
-	- Name: **DC2**[Name des lokalen Administratorkontos\]
-	- Kennwort: [Kennwort des lokalen Administratorkontos\]
+	- Name: **DC2\**[Name des lokalen Administratorkontos]
+	- Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
 Konfigurieren Sie anschließend eine Windows-Firewall-Regel, um Datenverkehr zum Testen der allgemeinen Konnektivität zuzulassen. Führen Sie auf DC2 in einer Windows PowerShell-Eingabeaufforderung auf Administratorebene den folgenden Befehl aus:
@@ -326,4 +326,4 @@ Melden Sie sich als Nächstes bei RRAS1 als lokaler Administrator an, und führe
 Wechseln Sie zum Azure-Verwaltungsportal auf dem lokalen Computer, und warten Sie, bis das virtuelle Netzwerk TestVNET den Status „Verbunden“ aufweist.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

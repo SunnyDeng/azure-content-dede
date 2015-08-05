@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/10/2015" 
+	ms.date="07/19/2015" 
 	ms.author="nitinme"/>
 
 # Übersicht: Apache Spark für Azure HDInsight 
@@ -66,7 +66,7 @@ Bei Apache Spark in HDInsight werden Daten in Azure-BLOBs gespeichert. Experten 
 
 [Lernprogramm anzeigen](hdinsight-apache-spark-ipython-notebook-machine-learning.md)
 
-Apache Spark verfügt über [MLlib](http://spark.apache.org/mllib/), eine Machine Learning-Bibliothek, die auf Spark aufbaut. Außerdem umfasst Spark für HDInsight Anaconda, eine Python-Distribution mit vielen verschiedenen Paketen für Machine Learning. Wenn Sie dies mit der integrierten Unterstützung für IPython Notebooks kombinieren, verfügen Sie über eine hochmoderne Umgebung zur Erstellung von Machine Learning-Anwendungen.
+Apache Spark verfügt über [MLlib](http://spark.apache.org/mllib/), eine Machine Learning-Bibliothek, die auf Spark aufbaut. Außerdem umfasst Spark für HDInsight Anaconda, eine Python-Distribution mit vielen verschiedenen Paketen für Machine Learning. Wenn Sie dies mit der integrierten Unterstützung für Jupyter Notebooks kombinieren, verfügen Sie über eine hochmoderne Umgebung zur Erstellung von Machine Learning-Anwendungen.
 
 ### Streaming und Echtzeit-Datenanalysen
 
@@ -82,7 +82,7 @@ Spark in HDInsight enthält die folgenden Komponenten, die standardmäßig in de
 - [Anaconda](http://docs.continuum.io/anaconda/)
 - [Spark Job Server](https://github.com/spark-jobserver/spark-jobserver)
 - [Zeppelin Notebook](https://zeppelin.incubator.apache.org)
-- [IPython Notebook](https://jupyter.org)
+- [Jupyter Notebook](https://jupyter.org)
 
 Spark in HDInsight verfügt auch über einen [ODBC-Treiber](http://go.microsoft.com/fwlink/?LinkId=616229) für Verbindungen mit Spark-Clustern in HDInsight über BI-Tools wie Microsoft Power BI und Tableau.
 
@@ -99,4 +99,4 @@ Spark in HDInsight verfügt auch über einen [ODBC-Treiber](http://go.microsoft.
 
 [hdinsight-storage]: ../hdinsight-use-blob-storage/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

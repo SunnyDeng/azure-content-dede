@@ -150,4 +150,4 @@ Besuchen Sie "blitline.com", um Informationen zu allen anderen Funktionen zu erh
   [Erstellen eines Blitline-Jobs]: #createjob
   [Speichern eines Bilds in Azure Storage]: #saveazure
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

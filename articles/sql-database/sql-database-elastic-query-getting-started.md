@@ -2,7 +2,7 @@
 	pageTitle="Erste Schritte mit Abfragen für elastische Datenbanken"
 	description="Verwenden von Abfragen für elastische Datenbanken"
 	services="sql-database"
-	documentationCenter="" 
+	documentationCenter=""  
 	manager="jeffreyg"
 	authors="sidneyh"/>
 
@@ -143,4 +143,4 @@ Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](http://azu
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

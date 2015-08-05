@@ -80,4 +80,4 @@ Weitere Informationen zum Importieren von verschiedenen Datentypen in einem Expe
 [1]: ./media/machine-learning-walkthrough-2-upload-data/upload1.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

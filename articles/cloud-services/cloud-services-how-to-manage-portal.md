@@ -106,4 +106,4 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 
 [Azure-Vorschauportal]: https://portal.azure.com
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -1,6 +1,19 @@
-<properties title="" pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" description="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" metaKeywords="" services="search" solutions="" documentationCenter="" authors="HeidiSteen" manager="mblythe" videoId="" scriptId="" />
+<properties 
+	pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" 
+	description="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" 
+	services="search" 
+	documentationCenter="" 
+	authors="HeidiSteen" 
+	manager="mblythe" />
 
-<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="07/08/2015" ms.author="heidist" />
+<tags 
+	ms.service="search" 
+	ms.devlang="rest-api" 
+	ms.workload="search" 
+	ms.topic="article"  
+	ms.tgt_pltfrm="na" 
+	ms.date="07/08/2015" 
+	ms.author="heidist" />
 
 #Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)
 
@@ -657,4 +670,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

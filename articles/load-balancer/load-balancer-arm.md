@@ -35,7 +35,7 @@ Mit ARM enthält der Azure-Lastenausgleich die folgenden untergeordneten Ressour
 - Eingehende NAT-Regeln – NAT-Regeln definieren den Eingangsdatenverkehr, der durch die Front-End-IP fließt und an die Back-End-IP verteilt wird.
 
 
-![](https://acomdpsstorage.blob.core.windows.net/dpsmedia-prod/azure.microsoft.com/en-us/documentation/articles/resource-groups-networking/20150429054039/figure5.png)
+![](./media/load-balancer-arm/load-balancer-arm.png)
 
 
 
@@ -77,4 +77,4 @@ Beispiele für Vorlagen:
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

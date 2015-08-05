@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Verschiedene Möglichkeiten zum Erstellen eines virtuellen Linux-Computers" 
-	description="Listet die verschiedenen Möglichkeiten zum Erstellen eines virtuellen Linux-Computers auf und enthält Links zu Anweisungen." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="KBDAzure" 
-	manager="timlt" 
+<properties
+	pageTitle="Verschiedene Möglichkeiten zum Erstellen eines virtuellen Linux-Computers"
+	description="Listet die verschiedenen Möglichkeiten zum Erstellen eines virtuellen Linux-Computers auf und enthält Links zu Anweisungen."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="dsk-2015"
+	manager="timlt"
 	editor=""/>
 
-<tags 
-ms.service="virtual-machines" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="vm-linux" 
+<tags
+ms.service="virtual-machines"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-linux"
 	ms.workload="infrastructure-services"
-	ms.date="05/14/2015" 
-	ms.author="kathydav"/>
+	ms.date="07/20/2015"
+	ms.author="dkshir"/>
 
 # Verschiedene Möglichkeiten zum Erstellen eines virtuellen Linux-Computers
 
@@ -24,15 +24,15 @@ Azure-Ressourcen-Manager-Vorlagen wurden vor Kurzem als eine Möglichkeit eingef
 
 ## Tool-Optionen
 
-### GUI: Azure-Portal oder Vorschauportal 
+### GUI: Azure-Portal oder Vorschauportal
 
-Die grafische Benutzeroberfläche des Azure-Portals bietet eine einfache Möglichkeit zum Testen einer virtuellen Maschine. Dies gilt insbesondere dann, wenn Sie mit Azure beginnen. Erstellen Sie den virtuellen Computer über das Azure-Portal oder das Azure-Vorschauportal. Allgemeine Anweisungen dazu finden Sie unter [Erstellen eines virtuellen Linux-Computers][].
+Die grafische Benutzeroberfläche des Azure-Portals bietet eine einfache Möglichkeit zum Testen einer virtuellen Maschine. Dies gilt insbesondere dann, wenn Sie mit Azure beginnen. Erstellen Sie den virtuellen Computer über das Azure-Portal oder das Azure-Vorschauportal. Allgemeine Anweisungen erhalten Sie, indem Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][] ein beliebiges Linux-Image aus dem **Katalog** auswählen.
 
 ### Befehlsshell: Azure-Befehlszeilenschnittstelle oder Azure PowerShell
 
 Wenn Sie lieber in einer Befehlsshell arbeiten, wählen Sie zwischen der Azure-Befehlszeilenschnittstelle (CLI) für Mac- und Linux-Benutzer oder Azure PowerShell. Letzteres verfügt über Windows PowerShell-Cmdlets für Azure und eine benutzerdefinierte Konsole.
 
-Informationen zur Azure-Befehlszeilenschnittstelle finden Sie unter [Befehlsentsprechungen für Ressourcen-Manager und Service Management für VM-Vorgänge mit der Azure CLI für Mac, Linux und Windows][]. Informationen zum Verwenden einer Vorlage finden Sie unter [Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI][].
+Weitere Informationen zur Azure-Befehlszeilenschnittstelle finden Sie unter [Erstellen eines virtuellen Linux-Computers][] Informationen zum Verwenden einer Vorlage finden Sie unter [Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI][].
 
 Informationen zu Azure PowerShell finden Sie unter [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern][]. Informationen zum Verwenden einer Vorlage finden Sie unter [Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und PowerShell][].
 
@@ -70,11 +70,13 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 
 [Testumgebungen für Azure-Hybridclouds][]
 
+[Befehlsentsprechungen für Ressourcen-Manager und Service Management für VM-Vorgänge mit der Azure CLI für Mac, Linux und Windows][]
+
 <!-- LINKS -->
 [Übersicht]: ../resource-group-overview.md
 
 [Create a Virtual Machine Running Windows]: virtual-machines-windows-tutorial.md
-[Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
+[Create a Virtual Machine Running Linux]: virtual-machines-linux-tutorial.md
 
 [Befehlsentsprechungen für Ressourcen-Manager und Service Management für VM-Vorgänge mit der Azure CLI für Mac, Linux und Windows]: xplat-cli-azure-manage-vm-asm-arm.md
 [Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI]: virtual-machines-deploy-rmtemplates-azure-cli.md
@@ -82,7 +84,7 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern]: virtual-machines-ps-create-preconfigure-linux-vms.md
 
 [Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure]: virtual-machines-linux-create-custom.md
-[Erfassen eines virtuellen Linux-Computers mit der CLI, um ihn als Vorlage zu verwenden]: virtual-machines-vm-capture-image-cli.md
+[Erfassen eines virtuellen Linux-Computers mit der CLI, um ihn als Vorlage zu verwenden]: virtual-machines-linux-capture-image.md
 
 [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält]: virtual-machines-linux-create-upload-vhd.md
 
@@ -97,4 +99,7 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 [Testumgebung für die Basiskonfiguration]: virtual-machines-base-configuration-test-environment.md
 [Testumgebungen für Azure-Hybridclouds]: virtual-machines-hybrid-cloud-test-environments.md
 
-<!---HONumber=July15_HO2-->
+[Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
+[Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-create-custom.md
+
+<!---HONumber=July15_HO4-->

@@ -334,7 +334,7 @@ Hier wird die Webserver-URL eingerichtet. Hierzu benötigen Sie die folgenden In
 
 Bevor Sie einen Port für den Webserver wählen, ist es wichtig zu verstehen, dass Service Fabric eine Anwendungsebene bereitstellt, die als Puffer zwischen der Anwendung und dem zugrunde liegenden Betriebssystem fungiert. Service Fabric bietet somit eine Möglichkeit zum Konfigurieren von *Endpunkten* für Ihre Dienste. Service Fabric stellt sicher, dass der Endpunkt für den Dienst verfügbar ist, damit Sie ihn nicht selbst mit der zugrunde liegenden Betriebssystemumgebung konfigurieren müssen. Dies ermöglicht es Ihnen, die Service Fabric-Anwendung auf einfache Weise in verschiedenen Umgebungen zu hosten, ohne Änderungen an Ihrer Anwendung vorzunehmen. (Sie können z. B. die gleiche Anwendung in Azure oder in Ihrem eigenen Rechenzentrum hosten.)
 
-Konfigurieren Sie einen HTTP-Endpunkt in PackageRoot\\ServiceManifest.xml:
+Konfigurieren Sie einen HTTP-Endpunkt in PackageRoot\ServiceManifest.xml:
 
 ```xml
 
@@ -613,4 +613,4 @@ In ASP.NET 5 bleiben das Konzept und das Programmiermodell, bei dem die *Anwendu
 [Debuggen einer Service Fabric-Anwendung in Visual Studio](service-fabric-debugging-your-application.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

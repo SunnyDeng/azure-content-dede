@@ -139,4 +139,4 @@ Zugriffsverwaltung und -überwachung
 - [Authentifizieren eines Dienstprinzipals](./resource-group-authenticate-service-principal.md)
 - [Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal](./resource-group-create-service-principal-portal.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

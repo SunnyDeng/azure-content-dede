@@ -4,9 +4,9 @@
 
 Sie können die Kommunikation zwischen Web-App und Browser mit HTTPS sichern, wobei SSL-Verschlüsselung (Secure Socket Layer) verwendet wird. Dies ist die gängigste Methode zum Schützen von Daten, die über das Internet gesendet werden, und bietet Besuchern die Sicherheit, dass ihre Transaktionen mit Ihrer Web-App sicher sind. In diesem Artikel wird die Vorgehensweise beim Konfigurieren von HTTPS für eine Web-App in Azure App Service beschrieben. In diesem Artikel wird die Clientzertifikatsauthentifizierung nicht behandelt. Informationen hierzu finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../articles/app-service-web/app-service-web-configure-tls-mutual-auth.md).
 
-##<a name="bkmk_azurewebsites"></a>HTTPS für die Domäne "\\*.azurewebsites.net"
+##<a name="bkmk_azurewebsites"></a>HTTPS für die Domäne "\*.azurewebsites.net"
 
-Wenn Sie keinen benutzerdefinierten Domänennamen, sondern stattdessen die Domäne "\\*.azurewebsites.net" verwenden möchten, die Ihrer Web-App von Azure zugewiesen wird (z. B. "contoso.azurewebsites.net"), wird Ihre Web-App bereits durch ein von Microsoft bereitgestelltes Zertifikat geschützt, das HTTPS aktiviert. Sie können **https://mywebsite.azurewebsites.net** für den Zugriff auf Ihre App verwenden. "\\*.azurewebsites.net" ist jedoch eine Platzhalterdomäne. [Platzhalterdomänen](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/) sind generell nicht so sicher wie die Verwendung einer benutzerdefinierten Domäne mit Ihrem eigenen Zertifikat. 
+Wenn Sie keinen benutzerdefinierten Domänennamen, sondern stattdessen die Domäne "\*.azurewebsites.net" verwenden möchten, die Ihrer Web-App von Azure zugewiesen wird (z. B. "contoso.azurewebsites.net"), wird Ihre Web-App bereits durch ein von Microsoft bereitgestelltes Zertifikat geschützt, das HTTPS aktiviert. Sie können **https://mywebsite.azurewebsites.net** für den Zugriff auf Ihre App verwenden. "\*.azurewebsites.net" ist jedoch eine Platzhalterdomäne. [Platzhalterdomänen](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/) sind generell nicht so sicher wie die Verwendung einer benutzerdefinierten Domäne mit Ihrem eigenen Zertifikat. 
 
 In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie HTTPS für benutzerdefinierte Domänen wie **contoso.com**, **www.contoso.com** oder ***.contoso.com** aktiviert wird.
 
@@ -28,9 +28,9 @@ Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure er
 * Das Zertifikat muss für den Schlüsselaustausch erstellt werden und in eine PFX-Datei (Persönlicher Informationsaustausch) exportiert werden können.
 * Der Name des Antragstellers für das Zertifikat muss der Domäne entsprechen, über die auf die Web-App zugegriffen wird. Wenn dieses Zertifikat für mehrere Domänen gelten soll, müssen Sie, wie oben erläutert, einen Platzhalterwert verwenden oder Werte für alternative Antragstellernamen angeben.
 * Das Zertifikat muss mindestens eine 2048-Bit-Verschlüsselung haben.
-* Von Servern privater Zertifizierungsstellen ausgegebene Zertifikate werden von Azure App Service nicht unterstützt.
+* Von Servern privater Zertifizierungsstellen ausgegebene Zertifikate werden von Azure-Web-Apps nicht unterstützt.
 
-Um ein SSL-Zertifikat für die Verwendung mit Azure App Service zu erhalten, müssen Sie eine Zertifikatsignieranforderungsdatei (CSR) an eine Zertifizierungsstelle senden und anschließend eine PFX-Datei aus dem Zertifikat generieren, das Sie zurückerhalten haben. Sie können dazu das Tool Ihrer Wahl verwenden. Im Folgenden finden Sie einige der häufigsten Möglichkeiten, ein Zertifikat abzurufen:
+Um ein SSL-Zertifikat für die Verwendung mit Azure-Web-Apps zu erhalten, müssen Sie eine Zertifikatsignieranforderungsdatei (CSR) an eine Zertifizierungsstelle senden und anschließend eine PFX-Datei aus dem Zertifikat generieren, das Sie zurückerhalten haben. Sie können dazu das Tool Ihrer Wahl verwenden. Im Folgenden finden Sie einige der häufigsten Möglichkeiten, ein Zertifikat abzurufen:
 
 - [Abrufen eines Zertifikats mit "Certreq.exe"](#bkmk_certreq)
 - [Abrufen eines Zertifikats mit IIS-Manager](#bkmk_iismgr)
@@ -40,7 +40,7 @@ Um ein SSL-Zertifikat für die Verwendung mit Azure App Service zu erhalten, mü
 
 > [AZURE.NOTE]Wenn Sie die Schritte befolgen, werden Sie aufgefordert, einen **Allgemeinen Namen**, z. B. `www.contoso.com` einzugeben. Für Platzhalterzertifikate sollte dieser Wert "*.domainname" (z. B. *.contoso.com) lauten. Wenn Sie einen Platzhalternamen wie "*.contoso.com" und einen Stammdomänennamen wie "contoso.com" unterstützen müssen, können Sie ein Platzhalterzertifikat für einen alternativen Antragstellernamen (subjectAltName) verwenden.
 >
-> Zertifikate für die Kryptografie für elliptische Kurven (ECC) werden für Azure App Service zwar unterstützt, sie sind jedoch noch relativ neu, daher sollten Sie bei Ihrer Zertifizierungsstelle erfragen, wie genau Sie die CSR-Datei erstellen.
+> Zertifikate für die Kryptografie für elliptische Kurven (ECC) werden für Azure-Web-Apps zwar unterstützt, sie sind jedoch noch relativ neu, daher sollten Sie bei Ihrer Zertifizierungsstelle erfragen, wie genau Sie die CSR-Datei erstellen.
 
 Eventuell müssen Sie auch **[Zwischenzertifikate](http://en.wikipedia.org/wiki/Intermediate_certificate_authorities)** (auch Kettenzertifikate genannt) anfordern, wenn diese von Ihrer Zertifizierungsstelle verwendet werden. Zwischenzertifikate gelten als sicherer als 'nicht verkettete Zertifikate', sodass sie von Zertifizierungsstellen üblicherweise verwendet werden. Zwischenzertifikate werden auf der Website der Zertifizierungsstelle häufig als separater Download bereitgestellt. In diesem Artikel wird dargestellt, wie Sie sicherstellen können, dass Zwischenzertifikate mit dem Zertifikat zusammengeführt werden, das zu Ihrer Azure-Web-App hochgeladen wurde.
 
@@ -164,7 +164,7 @@ Jetzt können Sie die exportierte PFX-Datei zu Ihrer Azure-Web-App hochladen.
 
 5. Verwenden Sie in der Eingabeaufforderung, der Bash- oder Terminalsitzung den folgenden Befehl, um **myserver.key** und **myserver.crt** in **myserver.pfx** zu konvertieren, das Format, das von Azure App Service benötigt wird:
 
-		openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt
+		openssl pkcs12 -chain -export -out myserver.pfx -inkey myserver.key -in myserver.crt
 
 	Geben Sie bei der entsprechenden Aufforderung ein Kennwort ein, um die PFX-Datei zu schützen.
 
@@ -541,4 +541,4 @@ Weitere Informationen zum IIS-URL-Rewrite-Modul finden Sie unter der Dokumentati
 [certwiz3]: ./media/configure-ssl-web-site/waws-certwiz3.png
 [certwiz4]: ./media/configure-ssl-web-site/waws-certwiz4.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

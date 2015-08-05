@@ -2,7 +2,7 @@
     pageTitle="Best Practices für Azure RemoteApp"
     description="Bewährte Methoden zum Konfigurieren und Verwenden von Azure RemoteApp"
     services="remoteapp"
-    solutions="" documentationCenter=""
+	documentationCenter=""
     authors="lizap"
     manager="mbaldwin" />
 
@@ -44,4 +44,4 @@ Die folgenden Informationen sollen Ihnen bei der Konfiguration und der produktiv
 	- Deaktivieren Sie automatische Softwareupdates für veröffentlichte Anwendungen – wenden Sie Updates stattdessen manuell auf das Vorlagenimage an, und testen Sie sie, bevor Sie sie über die Vorlage bereitstellen.
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -66,4 +66,4 @@
 - **Erwägen Sie, die Anzahl der Dienstkonten zu minimieren**. Verwenden Sie z. B. ein spezielles Konto für den Zugriff auf Ressourcen oder Dienste, die Verbindungen beschränken oder bessere Leistung bringen, wenn weniger Verbindungen verwaltet werden. Dieser Ansatz wird häufig für Dienste wie z. B. Datenbanken verwendet, kann aber die Möglichkeit zur genauen Überwachung der Vorgänge aufgrund der Identitätswechsel des ursprünglichen Benutzers beeinflussen.
 - Im Rahmen der Test-Routinen während der Entwicklung **führen Sie Leistungsprofilerstellung und Auslastungstests durch** und stellen vor der endgültigen Version sicher, dass die Anwendung ausführt und nach Bedarf skaliert wird. Diese Tests sollten auf der gleichen Art von Hardware stattfinden, wie die Produktionsplattform, mit den gleichen Datentypen und -mengen sowie der Benutzerauslastung, die in der Produktion auftreten. Weitere Informationen finden Sie auf die Seite [Testen der Leistung eines Clouddiensts](https://msdn.microsoft.com/library/azure/hh369930.aspx) auf der Microsoft-Website.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

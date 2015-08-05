@@ -55,7 +55,7 @@ Im weiteren Verlauf dieses Themas werden die möglichen Fehlercodes im Detail er
 | **Fehlercode** | **40544**: Das maximale Datenbankkontingent wurde erreicht. Partitionieren oder löschen Sie Daten, Löschen Sie Indizes, oder suchen Sie in der Dokumentation nach möglichen Lösungen. |
 | **Begrenzung** | Hängt von der [Dienstebene und Leistungsstufe](https://msdn.microsoft.com/library/azure/dn741336.aspx) ab. |
 | **Typ der abgelehnten Anforderungen** | Nicht-Select-DML (einfügen, aktualisieren, zusammenführen zum Einfügen oder Aktualisieren). |
-| **Empfehlung** | Verwenden Sie DELETE/DROP-Anweisungen, um Daten aus der Datenbank zu entfernen, bis die Größe der Datenbank unterhalb der Begrenzung liegt. |
+| **Empfehlungen** | Verwenden Sie DELETE/DROP-Anweisungen, um Daten aus der Datenbank zu entfernen, bis die Größe der Datenbank unterhalb der Begrenzung liegt. |
 
 ## Anmeldungen
 
@@ -64,7 +64,7 @@ Im weiteren Verlauf dieses Themas werden die möglichen Fehlercodes im Detail er
 | **Bedingung** | Die SQL-Datenbank steuert die Begrenzung auf die Anzahl gleichzeitiger Anmeldungen, die mit einer Datenbank hergestellt werden können. Wenn die Begrenzung für gleichzeitige Anmeldungen für eine Datenbank erreicht ist, werden neue Anmeldungsanforderungen an die Datenbank verweigert und der Fehlercode 10928 zurückgegeben. |
 | **Fehlercode** | **10928**: Ressourcen-ID: 3. Das %s-Limit für die Datenbank beträgt %d und wurde erreicht. Hilfe finden Sie in http://go.microsoft.com/fwlink/?LinkId=267637. |
 | **Begrenzung** | Hängt von der [Dienstebene und Leistungsstufe](https://msdn.microsoft.com/library/azure/dn741336.aspx) ab. |
-| **Empfehlung** | Überprüfen Sie „dm_exec_connections“, um zu sehen, welche Benutzerverbindungen momentan aktiv sind.<br><br>Der Backoff und das Wiederholen der Anmeldung erfolgt nach 10 Sekunden. |
+| **Empfehlungen** | Überprüfen Sie „dm_exec_connections“, um zu sehen, welche Benutzerverbindungen momentan aktiv sind.<br><br>Der Backoff und das Wiederholen der Anmeldung erfolgt nach 10 Sekunden. |
 
 > [AZURE.NOTE]Der Ressourcen-ID-Wert in der Fehlermeldung gibt die Ressource an, für die die Begrenzung erreicht wurde. Für Anmeldungen, die Ressourcen-ID = 3.
 
@@ -76,7 +76,7 @@ Im weiteren Verlauf dieses Themas werden die möglichen Fehlercodes im Detail er
 | **Fehlercode** | **40553**: Die Sitzung wurde aufgrund übermäßiger Speicherauslastung beendet. Versuchen Sie, die Abfrage so zu ändern, dass weniger Zeilen verarbeitet werden. |
 | **Begrenzung** | Mehr als 16 MB Arbeitsspeicherzuweisung für über 20 Sekunden. |
 | **Typ der abgelehnten Anforderungen** | Abfragen, die Arbeitsspeicherzuweisungen belegen, einschließlich solcher, die Sortierungen und Hashjoins verwenden. |
-| **Empfehlung** | Optimieren Sie Abfragen, die Sortierungen und/oder Hashjoins verwenden. |
+| **Empfehlungen** | Optimieren Sie Abfragen, die Sortierungen und/oder Hashjoins verwenden. |
 
 ## Sitzungen
 
@@ -85,7 +85,7 @@ Im weiteren Verlauf dieses Themas werden die möglichen Fehlercodes im Detail er
 | **Bedingung** | Die SQL-Datenbank steuert die Begrenzung auf die Anzahl gleichzeitiger Sitzungen, die mit einer Datenbank hergestellt werden können. Wenn die maximale Anzahl gleichzeitiger Sitzungen für eine Datenbank erreicht ist, werden neue Verbindungen zur Datenbank verweigert, und Benutzer erhalten den Fehlercode „10928“. In der Datenbank werden vorhandenen Sitzungen jedoch nicht beendet. |
 | **Fehlercode** | **10928**: Ressourcen-ID: 2. Das %s-Limit für die Datenbank beträgt %d und wurde erreicht. Hilfe finden Sie in http://go.microsoft.com/fwlink/?LinkId=267637. |
 | **Begrenzung** | Hängt von der [Dienstebene und Leistungsstufe](https://msdn.microsoft.com/library/azure/dn741336.aspx) ab. |
-| **Empfehlung** | Überprüfen Sie „dm_exec_requests“, um anzuzeigen, welche Benutzeranforderungen derzeit ausgeführt werden. |
+| **Empfehlungen** | Überprüfen Sie „dm_exec_requests“, um anzuzeigen, welche Benutzeranforderungen derzeit ausgeführt werden. |
 
 > [AZURE.NOTE]Der Ressourcen-ID-Wert in der Fehlermeldung gibt die Ressource an, für die die Begrenzung erreicht wurde. Für Sitzungen, die Ressourcen-ID = 2.
 
@@ -97,7 +97,7 @@ Im weiteren Verlauf dieses Themas werden die möglichen Fehlercodes im Detail er
 | **Fehlercode** | **40551**: Die Sitzung wurde aufgrund übermäßiger Tempdb-Auslastung beendet. Versuchen Sie, Ihre Abfrage zu ändern, um die temporäre Nutzung des Tabellenspeicherplatzes zu reduzieren. |
 | **Begrenzung** | **Status 1:** 5 GB Speicherplatz in Tempdb<br><br>**Status 2:** 2 GB pro Transaktion in Tempdb <br><br>**Status 3:** 20 % des gesamten Protokollspeicherplatzes in Tempdb |
 | **Typ der abgelehnten Anforderungen** | Beliebige DDL- oder DML-Anweisungen in Tempdb. |
-| **Empfehlung** | Ändern Sie Abfragen, um die temporäre Nutzung des Tabellenspeicherplatzes zu reduzieren, temporäre Objekte zu löschen, wenn sie nicht mehr benötigt werden, Tabellen abzuschneiden, oder nicht mehr verwendete Tabellen zu entfernen. Reduzieren Sie die Datengröße der Transaktion in Tempdb, indem Sie die Anzahl der Zeilen reduzieren oder den Vorgang in mehrere Transaktionen aufteilen. |
+| **Empfehlungen** | Ändern Sie Abfragen, um die temporäre Nutzung des Tabellenspeicherplatzes zu reduzieren, temporäre Objekte zu löschen, wenn sie nicht mehr benötigt werden, Tabellen abzuschneiden, oder nicht mehr verwendete Tabellen zu entfernen. Reduzieren Sie die Datengröße der Transaktion in Tempdb, indem Sie die Anzahl der Zeilen reduzieren oder den Vorgang in mehrere Transaktionen aufteilen. |
 
 ## Transaktionsdauer
 
@@ -107,7 +107,7 @@ Im weiteren Verlauf dieses Themas werden die möglichen Fehlercodes im Detail er
 | **Fehlercode** | **40549**: Die Sitzung wird beendet, weil es eine lang andauernde Transaktion gibt. Verkürzen Sie die Transaktion. |
 | **Begrenzung** | **Status 1:** 24 Stunden<br><br>**Status 2:** 20 Sekunden, wenn eine Transaktion länger als 20 Sekunden eine Ressource sperrt, die für eine zugrunde liegende Systemaufgabe erforderlich ist |
 | **Typ der abgelehnten Anforderungen** | Jede Transaktion, die länger als 24 Stunden ausgeführt wurde oder beliebige DDL- oder DML-Anweisungen, die eine Sperre annehmen, was zu einem Blockieren einer Systemaufgabe führt. |
-| **Empfehlung** | Vorgänge für die SQL-Datenbank sollte Benutzereingaben nicht blockieren oder andere Abhängigkeiten haben, die zu lang andauernden Transaktionen führen. |
+| **Empfehlungen** | Vorgänge für die SQL-Datenbank sollte Benutzereingaben nicht blockieren oder andere Abhängigkeiten haben, die zu lang andauernden Transaktionen führen. |
 
 ## Anzahl der Transaktionssperren
 
@@ -117,7 +117,7 @@ Im weiteren Verlauf dieses Themas werden die möglichen Fehlercodes im Detail er
 | **Fehlercode** | **40550**: Die Sitzung wurde beendet, da zu viele Sperren abgerufen wurden. Versuchen Sie, weniger Zeilen in einer einzigen Transaktion zu lesen oder abzuändern. |
 | **Begrenzung** | 1 Million Sperren pro Transaktion |
 | **Typ der abgelehnten Anforderungen** | Beliebige DDL- oder DML-Anweisungen. |
-| **Empfehlung** | Die folgenden DMVs können zur Überwachung von Transaktionen verwendet werden: **sys.dm_tran_active_transactions**, **sys.dm_tran_database_transactions**, **sys.dm_tran_locks**, und **sys.dm_tran_session_transactions**. Je nach Art der Anwendung kann es möglich sein, gröbere Sperrhinweise zu verwenden, wie z. B. **PAGLOCK** oder **TABLOCK**, um die Anzahl der Sperren in einer bestimmten Anweisung/Transaktion zu begrenzen. Beachten Sie, dass sich dies negativ auf die Anwendungsparallelität auswirken kann. |
+| **Empfehlungen** | Die folgenden DMVs können zur Überwachung von Transaktionen verwendet werden: **sys.dm_tran_active_transactions**, **sys.dm_tran_database_transactions**, **sys.dm_tran_locks**, und **sys.dm_tran_session_transactions**. Je nach Art der Anwendung kann es möglich sein, gröbere Sperrhinweise zu verwenden, wie z. B. **PAGLOCK** oder **TABLOCK**, um die Anzahl der Sperren in einer bestimmten Anweisung/Transaktion zu begrenzen. Beachten Sie, dass sich dies negativ auf die Anwendungsparallelität auswirken kann. |
 
 ## Transaktionsprotokolllänge
 
@@ -127,7 +127,7 @@ Im weiteren Verlauf dieses Themas werden die möglichen Fehlercodes im Detail er
 | **Fehlercode** | **40552**: Die Sitzung wurde aufgrund übermäßiger Nutzung des Speicherplatzes im Transaktionsprotokoll beendet. Versuchen Sie, weniger Zeilen in einer einzigen Transaktion abzuändern. |
 | **Begrenzung** | **Status 1:** 2 GB pro Transaktion<br><br>** Status 2:** 20 % des gesamten Protokollspeicherplatzes |
 | **Typ der abgelehnten Anforderungen** | Beliebige DDL- oder DML-Anweisungen. |
-| **Empfehlung** | Bei Zeilenvorgängen verringern Sie die Größe der Daten in der Transaktion, beispielsweise durch Reduzieren der Anzahl der Zeilen oder Aufteilen des Vorgangs in mehrere Transaktionen. Bei Tabellen- bzw. Index-Vorgängen, die eine einzelne Transaktion erfordern, stellen Sie sicher, dass die folgende Formel eingehalten wird: Anzahl der betroffenen Zeilen in Tabelle * (durchschnittliche Größe des aktualisierten Felds in Bytes + 80) < 2 GB (bei einer Indexneuerstellung sollte die durchschnittliche Größe des aktualisierten Felds durch die durchschnittliche Indexgröße ersetzt werden). |
+| **Empfehlungen** | Bei Zeilenvorgängen verringern Sie die Größe der Daten in der Transaktion, beispielsweise durch Reduzieren der Anzahl der Zeilen oder Aufteilen des Vorgangs in mehrere Transaktionen. Bei Tabellen- bzw. Index-Vorgängen, die eine einzelne Transaktion erfordern, stellen Sie sicher, dass die folgende Formel eingehalten wird: Anzahl der betroffenen Zeilen in Tabelle * (durchschnittliche Größe des aktualisierten Felds in Bytes + 80) < 2 GB (bei einer Indexneuerstellung sollte die durchschnittliche Größe des aktualisierten Felds durch die durchschnittliche Indexgröße ersetzt werden). |
 
 ## Arbeitsthreads (max. Anzahl gleichzeitiger Anforderungen)
 
@@ -136,7 +136,7 @@ Im weiteren Verlauf dieses Themas werden die möglichen Fehlercodes im Detail er
 | **Bedingung** | Die SQL-Datenbank steuert die maximale Anzahl von Arbeitsthreads (gleichzeitigen Anforderungen) an eine Datenbank. Jede Datenbank mit mehr als der zulässigen Anzahl gleichzeitiger Anforderungen erhält den Fehler „10928“, und weitere Anforderungen an diese Datenbank können verweigert werden. |
 | **Fehlercodes** | **10928**: Ressourcen-ID: 1. Das %s-Limit für die Datenbank beträgt %d und wurde erreicht. Hilfe finden Sie in http://go.microsoft.com/fwlink/?LinkId=267637.<br><br>** 10929 **: Ressourcen-ID: 1. Die %s-Mindestgarantie beträgt %d, der maximale Wert beträgt %d und die aktuelle Nutzung für die Datenbank beträgt %d. Der Server ist jedoch derzeit zu stark ausgelastet, um Anforderungen über %d für diese Datenbank zu unterstützen. Hilfe finden Sie in http://go.microsoft.com/fwlink/?LinkId=267637. Bitte versuchen Sie es andernfalls später noch einmal. |
 | **Begrenzung** | Bei Basic, Standard und Premium-Tarifen hängt dies von der [Leistungsstufe](https://msdn.microsoft.com/library/azure/dn741336.aspx) ab. Für ältere Web/Business Edition-Datenbanken ist die maximale Anzahl gleichzeitiger Anforderungen 180 (abhängig von der Systemaktivität möglicherweise weniger). |
-| **Empfehlung** | Überprüfen Sie „dm_exec_requests“, um anzuzeigen, welche Benutzeranforderungen derzeit ausgeführt werden.<br><br>Backoff und Wiederholen der Anforderung nach 10 Sekunden. |
+| **Empfehlungen** | Überprüfen Sie „dm_exec_requests“, um anzuzeigen, welche Benutzeranforderungen derzeit ausgeführt werden.<br><br>Backoff und Wiederholen der Anforderung nach 10 Sekunden. |
 
 > [AZURE.NOTE]Der Ressourcen-ID-Wert in der Fehlermeldung gibt die Ressource an, für die die Begrenzung erreicht wurde. Bei Arbeitsthreads ist die Ressourcen-ID = 1.
 
@@ -152,4 +152,4 @@ In bestimmten Szenarien wie bei der Verwendung der Funktion für Verbunddatenban
 
 [Bewährte Methoden für Azure SQL-Datenbanken zum Verhindern von abgelehnten Anforderungen oder abgebrochenen Verbindungen](https://msdn.microsoft.com/library/azure/dn338082.aspx)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

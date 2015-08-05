@@ -290,4 +290,4 @@ Azure Search-Dienst-REST-API: Erstellen eines Index (Azure Search-API) _________
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

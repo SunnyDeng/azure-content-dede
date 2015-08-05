@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/15/2015" 
+	ms.date="07/21/2015" 
 	ms.author="spelluru"/>
 
 # Erweiterte Szenarien für die Verwendung der Kopieraktivität in Azure Data Factory 
@@ -24,34 +24,11 @@ Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer 
 ## Strukturdefinition verwendende Spaltenfilterung
 Je nach Typ der Tabelle ist es möglich, eine Teilmenge der Spalten aus der Datenquelle anzugeben, indem in der **Structure**-Definition der Tabellendefinition weniger Spalten angegeben werden als in der zugrunde liegenden Datenquelle vorhanden sind. Die folgende Tabelle enthält Informationen zur Spaltenfilterungslogik für verschiedene Arten von Tabellen.
 
-<table>
-
-	<tr>
-		<th align="left">Tabellentyp</th>
-		<th align="left">Spaltenfilterungslogik</th>
-	<tr>
-
-	<tr>
-		<td>AzureBlobLocation</td>
-		<td>Die <b>Structure</b>-Definition in der JSON-Tabelle muss der Struktur des Blobs entsprechen. Verwenden Sie zum Auswählen einer Teilmenge der Spalten das Spaltenzuordnungsfeature, das im nächsten Abschnitt beschrieben wird: Transformationsregeln – Spaltenzuordnung.</td>
-	<tr>
-
-	<tr>
-		<td>AzureSqlTableLocation und OnPremisesSqlServerTableLocation</td>
-		<td align="left">
-			Wenn die <b>SqlReaderQuery</b>-Eigenschaft im Rahmen der Definition der Kopieraktivität angegeben wird, sollte die <b>Structure</b>-Definition der Tabelle mit den in der Abfrage ausgewählten Spalten abgestimmt werden.<br/><br/>
-			Wenn die <b>SqlReaderQuery</b>-Eigenschaft nicht angegeben wird, erstellt die Kopieraktivität automatisch eine SELECT-Abfrage, die auf den in der <b>Structure</b>-Definition der Tabellendefinition angegebenen Spalten basiert.
-		</td>
-	<tr>
-
-	<tr>
-		<td>AzureTableLocation</td>
-		<td>
-			Der Abschnitt <b>Structure</b> in der Tabellendefinition kann den gesamten Satz oder eine Teilmenge der Spalten in der zugrunde liegenden Azure-Tabelle enthalten.
-		</td>
-	<tr>
-
-</table>
+| Tabellentyp | Spaltenfilterungslogik |
+|-------------------|----------------------- |
+| AzureBlobLocation |Die Strukturdefinition in der JSON-Tabelle muss der Struktur des Blobs entsprechen. Verwenden Sie zum Auswählen einer Teilmenge der Spalten das Spaltenzuordnungsfeature, das im nächsten Abschnitt beschrieben wird: Transformationsregeln – Spaltenzuordnung. | 
+| AzureSqlTableLocation und OnPremisesSqlServerTableLocation | Wenn die SqlReaderQuery-Eigenschaft als Teil der Definition der Kopieraktivität angegeben wird, sollte die Strukturdefinition der Tabelle an den in der Abfrage ausgewählten Spalten ausgerichtet sein. Falls SqlReaderQuery nicht angegeben ist, erstellt die Kopieraktivität automatisch eine SELECT-Abfrage anhand der in der Strukturdefinition der Tabellendefinition angegebenen Spalten. |
+| AzureTableLocation | Der Structure-Abschnitt in der Tabellendefinition kann den gesamten Satz oder eine Teilmenge der Spalten in der zugrunde liegenden Azure-Tabelle enthalten
 
 ## Transformationsregeln - Spaltenzuordnung
 Die Spaltenzuordnung kann zur Angabe verwendet werden, wie Spalten in Quelltabellen zu Spalten in Senkentabellen zugeordnet werden. Sie unterstützt die folgenden Szenarien:
@@ -213,49 +190,14 @@ In diesem Beispiel wird eine SQL-Abfrage (im Vergleich zur Tabelle im vorherigen
 
 Die im Abschnitt "Structure" der Tabellendefinition angegebenen Datentypen werden nur für **BlobSource** berücksichtigt. In der folgenden Tabelle wird beschrieben, wie die Datentypen für andere Typen von Quellen und Senken behandelt werden.
 
-<table>	
-	<tr>
-		<th align="left">Quelle/Senke</th>
-		<th align="left">Logik zur Datentypbehandlung</th>
-	</tr>	
-
-	<tr>
-		<td>SqlSource</td>
-		<td>Datentypen, die im Abschnitt <b>Structure</b> der Tabellendefinition definiert sind, werden ignoriert. Auf der zugrunde liegenden SQL-Datenbank definierte Datentypen werden während der Kopieraktivität zum Extrahieren der Daten verwendet.</td>
-	</tr>
-
-	<tr>
-		<td>SqlSink</td>
-		<td>Datentypen, die im Abschnitt <b>Structure</b> der Tabellendefinition definiert sind, werden ignoriert. Die Datentypen für die zugrunde liegende Quelle und für das Ziel werden verglichen, und es wird eine implizite Typkonvertierung durchgeführt, falls Typkonflikte auftreten.</td>
-	</tr>
-
-	<tr>
-		<td>BlobSource</td>
-		<td>Beim Übertragen von <b>BlobSource</b> zu <b>BlobSink</b> findet keine Typentransformation statt. Datentypen, die im Abschnitt <b>Structure</b> der Tabellendefinition definiert sind, werden ignoriert. Für andere Ziele als <b>BlobSink</b> werden Datentypen, die im Abschnitt <b>Structure</b> der Tabellendefinition definiert wurden, berücksichtigt.<br/><br/>
-		Wenn <b>Structure</b> in der Tabellendefinition nicht angegeben wird, hängt die Typbehandlung von der <b>format</b>-Eigenschaft von der <b>BlobSink</b>-Tabelle ab:
-		<ul>
-			<li> <b>TextFormat:</b> Alle Spaltentypen werden als Zeichenfolge behandelt, und für alle Spaltennamen wird "Prop_&lt;0-N>" festgelegt.</li> 
-			<li><b>AvroFormat:</b> Verwendet die integrierten Spaltentypen und -namen in der Avro-Datei.</li> 
-		</ul>
-		</td>
-	</tr>
-
-	<tr>
-		<td>BlobSink</td>
-		<td>Datentypen, die im Abschnitt <b>Structure</b> der Tabellendefinition definiert sind, werden ignoriert. Auf den zugrunde liegenden Eingabedaten definierte Datentypen werden verwendet. Für Spalten wird angegeben, dass sie für die Avro-Serialisierung NULL-Werte zulassen.</td>
-	</tr>
-
-	<tr>
-		<td>AzureTableSource</td>
-		<td>Datentypen, die im Abschnitt <b>Structure</b> der Tabellendefinition definiert sind, werden ignoriert. Auf der zugrunde liegenden Azure-Tabelle definierte Datentypen werden verwendet.</td>
-	</tr>
-
-	<tr>
-		<td>AzureTableSink</td>
-		<td>Datentypen, die im Abschnitt <b>Structure</b> der Tabellendefinition definiert sind, werden ignoriert. Auf den zugrunde liegenden Eingabedaten definierte Datentypen werden verwendet.</td>
-	</tr>
-
-</table>
+| Quelle/Senke | Logik zur Datentypbehandlung |
+| ----------- | ------------------------ |
+| SqlSource | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf der zugrunde liegenden SQL-Datenbank definierte Datentypen werden während der Kopieraktivität zum Extrahieren der Daten verwendet. |
+| SqlSink | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Die Datentypen für die zugrunde liegende Quelle und für das Ziel werden verglichen, und es wird eine implizite Typkonvertierung durchgeführt, falls Typkonflikte auftreten. |
+| BlobSource | Beim Übertragen von BlobSource zu BlobSink findet keine Typentransformation statt. Datentypen, die im Abschnitt Structure der Tabellendefinition definiert sind, werden ignoriert. Für andere Ziele als BlobSink werden Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert wurden, berücksichtigt. Wenn die Struktur nicht in der Tabellendefinition angegeben wird, hängt die Typbehandlung von der format-Eigenschaft der BlobSource-Tabelle ab: TextFormat: Alle Spaltentypen werden als Zeichenfolge behandelt, und alle Spaltennamen werden als "Prop_<0-N>" festgelegt. AvroFormat: Verwendet die integrierten Spaltentypen und -namen in der Avro-Datei.
+| BlobSink | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf den zugrunde liegenden Eingabedaten definierte Datentypen werden verwendet. Für Spalten wird angegeben, dass sie für die Avro-Serialisierung NULL-Werte zulassen |
+| AzureTableSource | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf der zugrunde liegenden Azure-Tabelle definierte Datentypen werden verwendet. |
+| AzureTableSink | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf den zugrunde liegenden Eingabedaten definierte Datentypen werden verwendet. |
 
 **Hinweis:** Azure-Tabellen unterstützen nur eine begrenzte Anzahl von Datentypen. Informationen hierzu finden Sie unter [Grundlegendes zum Tabellendienst-Datenmodell][azure-table-data-type].
 
@@ -347,4 +289,4 @@ Obwohl die UTF-8-Codierung sehr beliebt ist, verwenden Textdateien in Azure-Blob
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity-advanced/ColumnMappingSample2.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

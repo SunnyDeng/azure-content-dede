@@ -117,7 +117,7 @@ Lange Wiederholung | Ein Slice weist diesen Status auf, wenn „Lange Wiederholu
 
 Wenn Sie auf dem Blatt **Datenslices** mit **nach Slicezeit sortierten** Slices auf **Filter** klicken, wird ein anderer Typ des Blatts **Filter** angezeigt.
 
-![2\. Blatt "Filter"][image-data-factory-filter-blade-2]
+![2. Blatt "Filter"][image-data-factory-filter-blade-2]
 
 
 Wenn Sie das Blatt **Filter** öffnen, wird für das Feld **Bis** automatisch (gerundet) der aktuellste Zeitpunkt festgelegt, um die Anzahl der zurückgegebenen Datensätze einzuschränken. Das Feld **Von** wird ebenfalls automatisch festgelegt. Sie können das Datum für **Von** ändern, indem Sie auf die Schaltfläche **Kalender** klicken. Das Datum für **Bis** wird automatisch geändert, wenn Sie das Datum für **Von** ändern.
@@ -221,4 +221,4 @@ Artikel | Beschreibung
 [image-data-factory-events]: ./media/data-factory-monitor-manage-using-management-portal/Events.png
 [DataSlicesBySliceTime]: ./media/data-factory-monitor-manage-using-management-portal/DataSlicesBySliceTime.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

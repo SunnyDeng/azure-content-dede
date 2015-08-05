@@ -45,4 +45,4 @@ Ausführliche Informationen zu Event Hubs finden Sie unter den folgenden Themen
 [Lernprogramm zu Event Hubs]: service-bus-event-hubs-csharp-ephcs-getstarted.md
 [Beispielanwendung zur Verwendung von Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -211,4 +211,4 @@ Weitere Informationen finden Sie unter [EntityClient-Anbieter für das Entity Fr
 Nachdem Sie nun die Grundlagen der Verbindung mit der SQL-Datenbank kennengelernt haben, informieren Sie sich weiter unter [Entwicklung: Gewusst-wie-Themen (SQL-Datenbank)](http://msdn.microsoft.com/library/windowsazure/ee621787.aspx)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

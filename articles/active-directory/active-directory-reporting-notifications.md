@@ -39,11 +39,11 @@ Für den Bericht "Benutzer mit anomalen Anmeldeaktivitäten":
 - Mehrere Fehler: 10 Ereignisse
 - IP-Adressen mit verdächtigen Aktivitäten: 10 Ereignisse
 - Infizierte Geräte: 5 Ereignisse
-- Bericht "Anomale Anmeldungen": 15 Ereignisse
+- Bericht "Anormale Anmeldungen": 15 Ereignisse
 
 Die E-Mail wird gesendet, wenn eine der oben genannten Bedingungen binnen 30 Tagen erfüllt wurde oder wenn das Senden der letzten E-Mail weniger als 30 Tage zurückliegt.
 
-Anomale Anmeldungen sind diejenigen, die von unseren Algorithmen für maschinelles Lernen auf der Basis unerwarteter Anmeldeorte, der Tageszeit und des Standorts oder einer Kombination dieser Faktoren als "anomal" identifiziert wurden. Dies kann ein Hinweis sein, dass ein Hacker versucht hat, sich mit diesem Konto anzumelden. Weitere Informationen zu diesem Bericht finden Sie in der obigen Tabelle.
+Anormale Anmeldungen sind diejenigen, die von unseren Algorithmen für maschinelles Lernen auf der Basis unerwarteter Anmeldeorte, der Tageszeit und des Standorts oder einer Kombination dieser Faktoren als "anomal" identifiziert wurden. Dies kann ein Hinweis sein, dass ein Hacker versucht hat, sich mit diesem Konto anzumelden. Weitere Informationen zu diesem Bericht finden Sie in der obigen Tabelle.
 
 ## Wer empfängt die E-Mail-Benachrichtigungen?
 
@@ -67,4 +67,4 @@ Ja, zum Deaktivieren von Benachrichtigungen in Zusammenhang mit anomalen Anmeldu
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

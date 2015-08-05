@@ -1,5 +1,4 @@
 <properties 
-	writer="ricksal" 
 	pageTitle="Aufrufen einer benutzerdefinierten API über einen Android-Client | Mobile Dev Center" 
 	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer Android-App aufrufen, die Azure Mobile Services verwendet." 
 	services="mobile-services" 
@@ -70,4 +69,4 @@ Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

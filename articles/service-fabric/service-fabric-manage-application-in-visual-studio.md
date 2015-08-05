@@ -75,4 +75,4 @@ Um die Anwendung und die zugehörigen Dienste in einem Cluster bereitzustellen, 
 [newserviceapplicationmanifest]: ./media/service-fabric-manage-application-in-visual-studio/newserviceapplicationmanifest.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

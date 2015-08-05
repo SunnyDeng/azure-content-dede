@@ -1,5 +1,19 @@
-<properties title="Creating an Oracle Database Virtual Machine in Azure" pageTitle="Erstellen eines virtuellen Oracle Database-Computers in Azure" description="Erstellen Sie mithilfe eines Beispiels einen virtuellen Oracle-Computer in Microsoft Azure und anschließend eine Oracle-Datenbank auf dem Computer." services="virtual-machines" authors="bbenz" documentationCenter=""/>
-<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
+<properties 
+	pageTitle="Erstellen eines virtuellen Oracle Database-Computers in Azure" 
+	description="Erstellen Sie mithilfe eines Beispiels einen virtuellen Oracle-Computer in Microsoft Azure und anschließend eine Oracle-Datenbank auf dem Computer." 
+	services="virtual-machines" 
+	authors="bbenz" 
+	documentationCenter=""/>
+
+<tags 
+	ms.service="virtual-machines" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.workload="infrastructure-services" 
+	ms.date="06/22/2015" 
+	ms.author="bbenz" />
+
 #Erstellen eines virtuellen Oracle Database-Computers in Azure
 Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf einem von Microsoft bereitgestellten Oracle Database-Image unter Windows Server 2012 in Azure erstellen. Dies umfasst zwei Schritte: Erstellen des virtuellen Computers und Erstellen der Oracle-Datenbank auf dem virtuellen Computer. In diesem Beispiel wird Oracle Database Version 12c verwendet, die Schritte sind jedoch für Version 11g nahezu identisch.
 
@@ -15,7 +29,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 5.	Geben Sie einen **Benutzernamen** für den virtuellen Computer an. Beachten Sie, dass dieser Benutzer für die Remote-Anmeldung auf dem virtuellen Computer verwendet wird. Dies ist nicht der Oracle-Datenbank-Benutzername.
 
-6.	Geben Sie ein Kennwort für den virtuellen Computer ein und bestätigen Sie es, oder geben Sie einen öffentlichen SSH-Schlüssel an.
+6.	Geben Sie ein Kennwort für den virtuellen Computer ein, und bestätigen Sie es, oder geben Sie einen öffentlichen SSH-Schlüssel an.
 
 7.	Wählen Sie einen **Tarif** aus. Beachten Sie, dass die empfohlenen Preiskategorien standardmäßig angezeigt werden. Um alle Konfigurationsoptionen anzuzeigen, klicken Sie oben rechts auf **Alle anzeigen**.
 
@@ -179,4 +193,4 @@ Nachdem Sie den virtuellen Computer eingerichtet und die Datenbank erstellt habe
 
 -	[Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

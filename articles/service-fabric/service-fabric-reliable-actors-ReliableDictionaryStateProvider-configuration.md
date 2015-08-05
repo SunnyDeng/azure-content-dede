@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Übersicht über die Konfiguration von Service Fabric Reliable Actors vom Typ &quot;ReliableDictionaryActorStateProvider&quot;"
-   description="Erfahren Sie mehr über das Konfigurieren von statusbehafteten Service Fabric Actors vom Typ &quot;ReliableDictionaryActorStateProvider&quot;"
+   pageTitle="Übersicht über die Konfiguration von Service Fabric Reliable Actors vom Typ ";ReliableDictionaryActorStateProvider";"
+   description="Erfahren Sie mehr über das Konfigurieren von statusbehafteten Service Fabric Actors vom Typ ";ReliableDictionaryActorStateProvider";"
    services="Service-Fabric"
    documentationCenter=".net"
    authors="sumukhs"
@@ -88,4 +88,4 @@ Die Einstellung "MaxRecordSizeInKB" definiert die maximale Größe eines Datensa
 Die Einstellungen "SharedLogId" und "SharedLogPath" werden immer zusammen verwendet. Sie ermöglichen einem Dienst, ein separates freigegebenes Protokoll aus dem freigegebenen Standardprotokoll für den Knoten zu verwenden. Zur Optimierung der Effizienz sollten so viele Dienste wie möglich dasselbe freigegebene Protokoll angeben. Freigegebene Protokolldateien sollten auf Datenträgern gespeichert werden, die ausschließlich für die freigegebene Protokolldatei verwendet werden. Dies reduziert Konflikte durch die Bewegungen des Lesekopfs. Eine Änderung sollte nur in seltenen Fällen erforderlich sein.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

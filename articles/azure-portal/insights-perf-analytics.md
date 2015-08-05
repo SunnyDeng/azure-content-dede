@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.date="07/17/2015" 
 	ms.author="awills"/>
 
 # Überwachen der Leistung der Azure-Web-App
@@ -27,7 +27,9 @@ Application Insights und New Relic sind zwei der zur Verfügung stehenden Erweit
 
 1. Klicken Sie auf **Durchsuchen**, und wählen Sie die Web-App oder den virtuellen Computer aus, für den Sie eine Überwachung durchführen möchten.
 
-2. Fügen Sie die Application Insights- oder die New Relic-Erweiterung hinzu. Wenn Sie eine Web-App instrumentieren möchten:
+2. Fügen Sie die Application Insights- oder die New Relic-Erweiterung hinzu.
+
+    Wenn Sie eine Web-App instrumentieren möchten:
 
 ![Einstellungen, Erweiterungen, Hinzufügen, Application Insights](./media/insights-perf-analytics/05-extend.png)
 
@@ -81,4 +83,4 @@ Nachdem Sie das Blatt geöffnet haben, z. B. für Application Insights, können
 * [Überwachen der Verfügbarkeit und Reaktionsfähigkeit einer beliebigen Webseite](../app-insights-monitor-web-app-availability.md) mit Application Insights, um zu ermitteln, ob eine Seite offline ist.
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

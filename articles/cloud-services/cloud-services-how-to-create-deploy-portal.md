@@ -27,18 +27,20 @@
 
 Das Azure-Portal bietet zwei Methoden zum Erstellen und Bereitstellen eines Clouddiensts: **Schnellerfassung** und **Benutzerdefiniert erstellen**.
 
-In diesem Thema wird erläutert, wie Sie die Schnellerstellungsmethode zum Erstellen eines neuen Clouddiensts und dann **Hochladen** verwenden, um ein Clouddienstpaket in Azure hochzuladen und bereitzustellen. Wenn Sie diese Methode verwenden, stellt das Azure-Portal praktische Links zum Erfüllen aller Anforderungen zur Verfügung. Wenn Sie Ihren Clouddienst bei der Erstellung auch bereitstellen möchten, können Sie beides mithilfe von **Benutzerdefinierte Erstellung** durchführen.
+In diesem Thema wird erläutert, wie Sie die Schnellerfassungsmethode zum Erstellen eines neuen Clouddiensts und dann **Hochladen** verwenden, um ein Clouddienstpaket in Azure hochzuladen und bereitzustellen. Wenn Sie diese Methode verwenden, werden im Azure-Portal praktische Links zum Erfüllen aller Anforderungen zur Verfügung gestellt. Wenn Sie Ihren Clouddienst bei der Erstellung auch bereitstellen möchten, können Sie beides mithilfe von **Benutzerdefinierte Erstellung** durchführen.
 
 > [AZURE.NOTE]Wenn Sie Ihren Clouddienst aus Visual Studio Online (VSO) veröffentlichen möchten, verwenden Sie Schnellerstellung. Richten Sie die VSO-Veröffentlichung dann über **Schnellstart** oder das Dashboard ein. Weitere Informationen finden Sie unter [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online][TFSTutorialForCloudService] oder in der Hilfe zur **Schnellstart**-Seite.
 
 ## Konzepte
 Für die Bereitstellung einer Anwendung als Clouddienst in Azure sind drei Komponenten erforderlich:
 
-- **Dienstdefinition**<br/> Die Clouddienst-Definitionsdatei (.csdef) definiert das Dienstmodell einschließlich der Rollenanzahl.
+- **Dienstdefinition:** Die Clouddienst-Definitionsdatei (.csdef) definiert das Dienstmodell einschließlich der Rollenanzahl.
 
-- **Dienstkonfiguration**<br/> Die Clouddienst-Konfigurationsdatei (.cscfg) bietet Konfigurationseinstellungen für den Clouddienst sowie einzelne Rollen, darunter die Anzahl der Rolleninstanzen.
+- **Dienstkonfiguration:** Die Clouddienst-Konfigurationsdatei (.cscfg) enthält Konfigurationseinstellungen für den Clouddienst sowie einzelne Rollen, darunter die Anzahl der Rolleninstanzen.
 
-- **Dienstpaket**<br/> Das Dienstpaket (.cspkg) enthält den Anwendungscode, die Konfigurationen und die Dienstdefinitionsdatei.
+- **Dienstpaket:** Das Dienstpaket (.cspkg) enthält den Anwendungscode, die Konfigurationen und die Dienstdefinitionsdatei.
+
+Weitere Informationen zu diesen Komponenten sowie zum Erstellen eines Pakets finden Sie [hier](cloud-services-model-and-package.md).
 
 ## Vorbereiten Ihrer App
 Bevor Sie einen Clouddienst bereitstellen können, müssen Sie das Clouddienstpaket (CSPKG) aus dem Anwendungscode und eine Clouddienstkonfigurationsdatei (CSCFG) erstellen. Das Azure-SDK stellt Tools zum Vorbereiten dieser erforderlichen Bereitstellungsdateien bereit. Sie können das SDK auf der Seite [Azure-Downloads](http://azure.microsoft.com/downloads/) in der Sprache herunterladen, in der Sie den Anwendungscode entwickeln möchten.
@@ -65,7 +67,7 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 ## Schritt 3: Erstellen eines Clouddiensts und Hochladen des Bereitstellungspakets
 
 1. Melden Sie sich beim [Azure-Vorschauportal][] an. 
-2. Klicken Sie auf **Neu** und auf **Compute**, führen Sie dann einen Bildlauf nach unten zu **Clouddienst** aus, und klicken Sie darauf.
+2. Klicken Sie auf **Neu** und auf **Compute**, scrollen Sie nach unten zu **Clouddienst**, und klicken Sie darauf.
 
     ![Clouddienst veröffentlichen](media/cloud-services-how-to-create-deploy-portal/create-cloud-service.png)
 
@@ -74,7 +76,7 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 5. Wählen Sie einen **Speicherort** aus.
 6. Wählen Sie **Paket**, und füllen Sie auf dem Blatt **Paket hochladen** die erforderlichen Felder aus.  
       
-     (Wenn eine der Rollen eine einzelne Instanz enthält, stellen Sie sicher, dass **Auch dann bereitstellen, wenn für eine oder mehrere Rollen nur eine Instanz vorhanden ist** aktiviert ist.)
+     Wenn eine der Rollen eine einzelne Instanz enthält, stellen Sie sicher, dass **Auch dann bereitstellen, wenn für eine oder mehrere Rollen nur eine Instanz vorhanden ist** aktiviert ist.
 
 7. Stellen Sie sicher, dass **Bereitstellung starten** *aktiviert* ist.
 8. Klicken Sie auf **OK**. 
@@ -96,7 +98,7 @@ Wenn Ihr Bereitstellungspaket [für die Verwendung von Zertifikaten konfiguriert
 
 1. Klicken Sie auf die Instanz des Clouddiensts.
 
-	Der Status sollte anzeigen, dass der Dienst **Ausgeführt** wird.
+	Als Status sollte angezeigt werden, dass der Dienst **Ausgeführt** wird.
 
 2. Klicken Sie unter **Essentials** auf die **Website-URL**, um den Clouddienst in einem Webbrowser zu öffnen.
 
@@ -106,4 +108,4 @@ Wenn Ihr Bereitstellungspaket [für die Verwendung von Zertifikaten konfiguriert
 [TFSTutorialForCloudService]: http://go.microsoft.com/fwlink/?LinkID=251796&clcid=0x409
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

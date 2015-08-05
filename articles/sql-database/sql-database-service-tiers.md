@@ -89,4 +89,4 @@ Erfahren Sie mehr über die Preise für diese Ebenen unter [SQL-Datenbank Preise
 Nachdem Sie jetzt die Ebenen der SQL-Datenbank kennen, können Sie sie mit einer [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) ausprobieren und sich mit der [Erstellung Ihrer ersten SQL-Datenbank](sql-database-get-started.md) befassen!
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

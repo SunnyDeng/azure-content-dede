@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/01/2015" 
+	ms.date="07/17/2015" 
 	ms.author="sidneyh"/>
 
 
@@ -31,7 +31,7 @@ Ein **Microsoft Azure-Konto**. Eine kostenlose Testversion finden Sie in diesem 
 
 Laden Sie [**SQL Server Management Studio**](https://msdn.microsoft.com/library/mt238290.aspx) herunter. (Weitere Informationen zu diesem Tool finden Sie unter [SQL Server Management Studio - June 2015 Release Notes](https://msdn.microsoft.com/library/mt238486.aspx) (in englischer Sprache).)
 
-Ein vorhandener Server auf Azure SQL-Datenbank. Anweisungen zum Erstellen einer neuen Datenbank (auf einem neuen Server) finden Sie unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md).
+Einen vorhandenen **Azure SQL-Datenbankserver**. Bevor Sie einen Server erstellen, müssen Sie mindestens eine Datenbank erstellen. Wenn Sie eine Datenbank erstellen, können Sie sie wahlweise auf einem neuen Server oder auf einem vorhandenen Server erstellen. Anweisungen zum Erstellen einer neuen Datenbank (auf einem neuen Server) finden Sie unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md).
 
 ## Erstellen der Schuldatenbank auf einem lokalen Server
 
@@ -539,34 +539,34 @@ Jetzt haben Sie eine lokale Datenbank, die Sie nach Azure exportieren können. F
 	
 ## Bereitstellen der Datenbank in Azure SQL 
 	
-1. Klicken Sie in Management Studio mit der rechten Maustaste auf die Schuldatenbank, die Sie gerade erstellt haben, zeigen Sie auf **Tasks**, und klicken Sie auf **Deploy Database to Microsoft Azure SQL Database**.
+1. Klicken Sie in Management Studio mit der rechten Maustaste auf die Schuldatenbank, die Sie gerade erstellt haben, zeigen Sie auf **Tasks**, und klicken Sie auf **Datenbank in Microsoft Azure SQL-Datenbank bereitstellen**.
 2. Geben Sie unter **Bereitstellungseinstellungen** einen Namen für die Datenbank ein, z. B. *Schule*.
 5. Klicken Sie auf **Verbinden**. Um Probleme mit der Konnektivität zu beheben, lesen Sie [diesen Ratgeber](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1).
-6. Geben Sie unter **Servername** einen Servernamen bestehend aus 10 Zeichen, gefolgt von **.database.windows.net** ein.
-7. Wählen Sie unter **Authentication** die Option**SQL Server Authentication** aus.
+6. Geben Sie unter **Servername** einen 10-stelligen Servernamen, gefolgt von **.database.windows.net**, ein.
+7. Wählen Sie unter **Authentifizierung** die Option **SQL Server-Authentifizierung** aus.
 8. Geben Sie den Anmeldenamen und das Kennwort des Administrators ein, die Sie beim Erstellen des logischen SQL Database-Servers angegeben haben.
 9. Klicken Sie auf **Options**.
 10. Geben Sie bei den Verbindungseigenschaften unter **Mit Datenbank verbinden** **master** ein.
 
-	**Hinweis:** Sie müssen stets eine Verbindung mit der **master**-Datenbank herstellen, wenn Sie eine Datenbank auf dem Azure SQL-Datenbank-Server erstellen möchten. 
+	**Hinweis:** Sie müssen stets eine Verbindung mit der **master**-Datenbank herstellen, wenn Sie eine Datenbank auf dem Azure SQL-Datenbankserver erstellen möchten. 
 11. Klicken Sie auf **Verbinden**. Mit diesem Schritt schließen Sie die Verbindungsspezifikation ab und kehren zurück zum Assistenten.
 12. Klicken Sie auf **Next** und dann auf **Finish**, um den Assistenten auszuführen.
 
 	
 ## So überprüfen Sie die Datenbankbereitstellung
 	
-1. Klicken Sie in Management Studio unter **Objekt-Explorer** auf das Symbol **Verbinden**.
-2. Geben Sie im Feld **Servername** den Namen des Azure SQL-Servers, gefolgt von **.database.windows.net** ein.
+1. Klicken Sie in Management Studio im **Objekt-Explorer** auf das Symbol **Verbinden**.
+2. Geben Sie im Feld **Servername** den Namen des Azure SQL-Servers, gefolgt von **.database.windows.net**, ein.
 3. Wählen Sie unter **Authentifizierung** die Option **SQL Server-Authentifizierung** aus.
 4. Geben Sie den Anmeldenamen und das Kennwort des Administrators ein, die Sie beim Erstellen des Servers angegeben haben. 
 5. Klicken Sie auf die Schaltfläche **Optionen**.
 6. Klicken Sie auf die Dropdownliste **Mit Datenbank verbinden**, und klicken Sie auf **Server durchsuchen**. Klicken Sie im nachfolgenden Dialogfeld auf **Ja**, um das Durchsuchen des Servers zu erlauben.
-7. Klicken Sie auf die **school**-Datenbank, um diese auszuwählen, und klicken Sie dann auf **OK**. 
-8. Klicken Sie dann auf **Verbinden**. Um Probleme mit der Konnektivität zu beheben, lesen Sie [diesen Ratgeber](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1).
-2. Erweitern Sie den Ordner **Databases**. In der Liste sollte die Datenbank **Schule** aufgeführt werden.
+7. Klicken Sie auf die Datenbank **Schule**, um diese auszuwählen, und klicken Sie dann auf **OK**. 
+8. Klicken Sie auf **Verbinden**. Um Probleme mit der Konnektivität zu beheben, lesen Sie [diesen Ratgeber](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1).
+2. Erweitern Sie den Ordner **Datenbanken**. In der Liste sollte die Datenbank **Schule** aufgeführt werden.
 
-	**Hinweis:** Sie müssen die Verbindung mit der Datenbank herstellen, die Sie abfragen möchten. 
-3. Klicken Sie mit der rechten Maustaste auf **school**, und klicken Sie auf **Neue Abfrage**.
+	**Hinweis:** Sie müssen eine Verbindung mit der Datenbank herstellen, die Sie abfragen möchten. 
+3. Klicken Sie mit der rechten Maustaste auf **Schule**, und klicken Sie auf **Neue Abfrage**.
 4. Führen Sie die folgende Abfrage aus, um den Zugriff auf die Daten zu überprüfen.
 
 		SELECT
@@ -593,4 +593,4 @@ Ein Lernprogramm zum Erstellen einer neuen Azure SQL-Datenbank finden Sie unter 
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

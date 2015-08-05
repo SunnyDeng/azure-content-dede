@@ -93,4 +93,4 @@ Zum Erstellen eines auf Windows basierenden virtuellen Computers in Azure folgen
 - Mitgliedschaft in einer vorhandenen Lastenausgleichsgruppe
 - Statische IP-Adresse
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

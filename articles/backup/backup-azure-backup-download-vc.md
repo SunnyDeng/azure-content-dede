@@ -40,4 +40,4 @@ Die Datei mit Tresoranmeldeinformationen wird über einen sicheren Kanal aus dem
 ## Nächste Schritte
 [Herunterladen, Registrieren und Installieren des Azure Backup-Agents](backup-azure-backup-download-register)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

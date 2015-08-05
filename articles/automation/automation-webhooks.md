@@ -174,4 +174,4 @@ Das folgende Beispiel-Runbook akzeptiert die Anforderung aus dem vorherigen Beis
 - [Starten eines Runbooks](automation-starting-a-runbook.md)
 - [Anzeigen des Status eines Runbookauftrags](automation-viewing-the-status-of-a-runbook-job.md) 
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

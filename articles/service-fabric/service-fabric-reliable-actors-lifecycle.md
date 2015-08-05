@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/17/2015"
+   ms.date="07/09/2015"
    ms.author="amanbha"/>
 
 
 #Actor-Lebenszyklus und Garbage Collection
-Ein Actor wird aktiviert, wenn sein erster Aufruf erfolgt. Er wird deaktiviert (Garbage Collection durch die Actors-Laufzeit), wenn er einige Zeit lang nicht verwendet wird. Informationen zum Konfigurieren dieses Zeitraums finden Sie im Abschnitt "Actor Garbage Collection" weiter unten.
+Ein Actor wird aktiviert, wenn der erste Aufruf erfolgt. Er wird deaktiviert (Garbage Collection durch die Actors-Laufzeit), wenn er einige Zeit lang nicht verwendet wird. Informationen zum Konfigurieren dieses Zeitraums finden Sie im Abschnitt "Actor Garbage Collection" weiter unten.
 
 Was geschieht bei der Actor-Aktivierung?
 
@@ -91,4 +91,4 @@ Bitte beachten Sie, dass für einen Actor nie eine Garbage Collection durchgefü
 [1]: ./media/service-fabric-reliable-actors-lifecycle/garbage-collection.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

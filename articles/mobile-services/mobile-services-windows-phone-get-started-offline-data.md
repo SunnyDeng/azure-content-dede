@@ -291,4 +291,4 @@ In diesem Abschnitt testen Sie die Push- und Pull-Vorgänge zur Synchronisierung
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

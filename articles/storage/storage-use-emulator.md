@@ -80,7 +80,7 @@ Wenn Sie das Befehlszeilenfenster schließen, wird der Speicheremulator weiterhi
 
 Wenn Sie den Speicheremulator zum ersten Mal ausführen, wird die lokale Speicherumgebung für Sie initialisiert. Durch die Initialisierung wird in LocalDB eine Datenbank erstellt, und es werden für jeden lokalen Speicherdienst HTTP-Ports reserviert.
 
-Der Speicheremulator wird standardmäßig im Verzeichnis "C:\\Programme (x86)\\Microsoft SDKs\\Azure\\Storage Emulator" installiert.
+Der Speicheremulator wird standardmäßig im Verzeichnis "C:\Programme (x86)\Microsoft SDKs\Azure\Storage Emulator" installiert.
 
 ### Initialisieren des Speicheremulators zur Verwendung einer anderen SQL-Datenbank
 
@@ -93,7 +93,7 @@ Sie können das Speicheremulator-Befehlszeilentool zum Initialisieren des Speich
     
 	Mit dem folgenden Befehl können Sie den Emulator anweisen, die SQL Server-Standardinstanz zu verwenden:
 
-    	AzureStorageEmulator init /server .\\ 
+    	AzureStorageEmulator init /server .\ 
 
 	Sie können auch den folgenden Befehl verwenden, mit dem die Datenbank erneut als Standardinstanz von LocalDB initialisiert wird:
 
@@ -127,15 +127,13 @@ Die Dienstendpunkte für den Speicheremulator sind:
 	Queue Service: http://127.0.0.1:10001/<account-name>/<resource-path>
 	Table Service: http://127.0.0.1:10002/<account-name>/<resource-path>
 
-> [AZURE.NOTE]Sie können mit dem Speicheremulator kein HTTPS verwenden, auch wenn HTTPS das empfohlene Protokoll für den Zugriff auf Ressourcen in Azure Storage ist.
- 
 ### Adressieren des sekundären Kontos mit RA-GRS
 
 Ab Version 3.1 unterstützt das Speicheremulatorkonto georedundante Replikation mit Lesezugriff (Read-Access Geo-Redundant Replication, RA-GRS). Für Speicherressourcen in der Cloud und im lokalen Emulator können Sie auf den sekundären Speicherort zugreifen, indem Sie "-secondary" an den Kontonamen anfügen. Beispielsweise kann die folgende Adresse für den Zugriff auf ein Blob mithilfe des sekundären Speicherorts mit Lesezugriff verwendet werden:
 
     http://127.0.0.1:10000/myaccount-secondary/mycontainer/myblob.txt 
 
-> [AZURE.NOTE]Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. Ausführliche Informationen finden Sie in der [Referenz zur Speicherclientbibliothek](https://msdn.microsoft.com/library/azure/dn261237.aspx).
+> [AZURE.NOTE]Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. Ausführliche Informationen finden Sie unter [Microsoft Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
 
 ## Referenz zum Speicheremulator-Befehlszeilentool
 
@@ -167,11 +165,11 @@ Da der Speicheremulator eine emulierte Umgebung darstellt, die in einer lokalen 
 
 - Der Speicheremulator ist kein skalierbarer Speicherdienst, und er unterstützt keine große Anzahl von gleichzeitigen Clients.
 
-- Wie in [Adressieren von Ressourcen im Speicheremulator](#addressing-resources-in-the-storage-emulator) beschrieben, werden Ressourcen im Speicheremulator im Vergleich zu Azure-Speicherkonten anders behandelt. Dieser Unterschied ist darauf zurückzuführen, dass die Domänennamensauflösung zwar in der Cloud, nicht aber auf dem lokalen Computer verfügbar ist.
+- Wie in [Adressieren von Ressourcen im Speicheremulator](#addressing-resources-in-the-storage-emulator) beschrieben, werden Ressourcen im Speicheremulator im Vergleich zu einem Azure-Speicherkonto anders adressiert. Dieser Unterschied ist darauf zurückzuführen, dass die Domänennamensauflösung zwar in der Cloud, nicht aber auf dem lokalen Computer verfügbar ist.
 
 - Ab Version 3.1 unterstützt das Speicheremulatorkonto georedundante Replikation mit Lesezugriff (Read-Access Geo-Redundant Replication, RA-GRS). Im Emulator ist für alle Konten RA-GRS aktiviert, und es entsteht niemals eine Verzögerung zwischen den primären und sekundären Replikaten. Die Vorgänge "Get Blob Service Stats", "Get Queue Service Stats" und "Get Table Service Stats" werden für das sekundäre Konto unterstützt. Sie geben immer den Wert des `LastSyncTime`-Antwortelements als aktuelle Uhrzeit der zugrunde liegenden SQL-Datenbank zurück.
 
-	Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. Ausführliche Informationen finden Sie in der [Referenz zur Speicherclientbibliothek](https://msdn.microsoft.com/library/azure/dn261237.aspx).
+	Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. Ausführliche Informationen finden Sie unter [Microsoft Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
 
 - Die Endpunkte für Dateidienst und SMB-Protokolldienst werden im Speicheremulator zurzeit nicht unterstützt.
 
@@ -193,7 +191,7 @@ Die folgenden Unterschiede gelten für Tabellenspeicher im Emulator:
 
 - Die Gesamtgröße einer Zeile in einer Tabelle im Speicheremulator ist auf weniger als 1 MB beschränkt.
 
-- Im Speicheremulator unterstützen Eigenschaften der Datentypen `Edm.Guid` und `Edm.Binary` in Filterzeichenfolgen für Abfragen nur die Vergleichsoperatoren `Equal (eq)` und `NotEqual (ne)`.
+- Im Speicheremulator unterstützen Eigenschaften des Datentyps `Edm.Guid` oder `Edm.Binary` in Filterzeichenfolgen für Abfragen nur die Vergleichsoperatoren `Equal (eq)` und `NotEqual (ne)`.
 
 ### Unterschiede beim Warteschlangenspeicher
 
@@ -206,7 +204,7 @@ Es bestehen keine Unterschiede beim Warteschlangenspeicher im Emulator.
 Die ausführbare Datei des Speicheremulators wurde in *AzureStorageEmulator.exe* umbenannt.
 
 ### Version 3.2
-- Der Speicheremulator unterstützt nun Version 2014-02-14 der Speicherdienste auf Blob-, Warteschlangen- und Dienstendpunkten. Beachten Sie, dass Endpunkte für den Dateidienst im Speicheremulator zurzeit nicht unterstützt werden. Einzelheiten über die Version 2014-02-14 finden Sie unter [Versionsverwaltung für den Blob-Dienst, den Warteschlangendienst und den Tabellendienst in Windows Azure](https://msdn.microsoft.com/library/azure/dd894041.aspx).
+- Der Speicheremulator unterstützt nun Version 2014-02-14 der Speicherdienste auf Blob-, Warteschlangen- und Dienstendpunkten. Beachten Sie, dass Endpunkte für den Dateidienst im Speicheremulator zurzeit nicht unterstützt werden. Ausführliche Informationen über die Version 2014-02-14 finden Sie unter [Versionsverwaltung für den Blob-Dienst, den Warteschlangendienst und den Tabellendienst in Windows Azure](https://msdn.microsoft.com/library/azure/dd894041.aspx).
 
 ### Version 3.1
 - Lesezugriff auf den geografisch redundanten Speicher (RA-GRS) wird nun im Speicheremulator unterstützt. Die API-Vorgänge "Get Blob Service Stats", "Get Queue Service Stats" und "Get Table Service Stats" werden für das sekundäre Konto unterstützt. Sie geben immer den Wert des LastSyncTime-Antwortelements als aktuelle Uhrzeit der zugrunde liegenden SQL-Datenbank zurück. Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. Ausführliche Informationen finden Sie in der Referenz zur Speicherclientbibliothek.
@@ -222,4 +220,4 @@ Die ausführbare Datei des Speicheremulators wurde in *AzureStorageEmulator.exe*
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

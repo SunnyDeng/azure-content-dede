@@ -18,6 +18,8 @@
 
 # Konfigurieren Ihrer Anwendung zur Verwendung der Google-Anmeldung
 
+[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
+
 In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung von Google als Authentifizierungsanbieter konfigurieren.
 
 Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um den in diesem Thema beschriebenen Vorgang abzuschließen. Besuchen Sie die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>, um ein neues Google-Konto zu erstellen.
@@ -71,4 +73,4 @@ Sie können nun Google für die Authentifizierung in Ihrer App verwenden.
 [Azure-Verwaltungsportal]: https://portal.azure.com/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -4,7 +4,6 @@
 	services="app-service" 
 	documentationCenter="na" 
 	authors="stefsch" 
-	writer="tdykstra" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
@@ -98,4 +97,4 @@ Weitere Informationen finden Sie unter [Azure Application Services][AzureApplica
 [SharepointDocumentLibrary]: ./media/app-service-enterprise-multichannel-apps/05aSharepointDocumentLibrary.png
 [SalesforceIntegration]: ./media/app-service-enterprise-multichannel-apps/06aSalesforceIntegration.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -1,5 +1,19 @@
-<properties title="Configuring Oracle GoldenGate for Azure" pageTitle="Konfigurieren von Oracle-GoldenGate für Azure" description="Bearbeiten Sie ein Lernprogramm für das Einrichten und Implementieren von Oracle-GoldenGate auf Azure Virtual Machines für hohe Verfügbarkeit und Notfallwiederherstellung." services="virtual-machines" authors="bbenz" documentationCenter=""/>
-<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
+<properties 
+	pageTitle="Konfigurieren von Oracle-GoldenGate für Azure" 
+	description="Bearbeiten Sie ein Lernprogramm für das Einrichten und Implementieren von Oracle-GoldenGate auf Azure Virtual Machines für hohe Verfügbarkeit und Notfallwiederherstellung." 
+	services="virtual-machines" 
+	authors="bbenz" 
+	documentationCenter=""/>
+
+<tags 
+	ms.service="virtual-machines" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.workload="infrastructure-services" 
+	ms.date="06/22/2015" 
+	ms.author="bbenz" />
+
 #Konfigurieren von Oracle-GoldenGate für Azure
 Dieses Lernprogramm zeigt, wie Sie Oracle GoldenGate für virtuelle Computer in Azure-Umgebung für hohe Verfügbarkeit und Notfallwiederherstellung einrichten. Das Lernprogramm konzentriert sich auf [bidirektionale Replikation](http://docs.oracle.com/goldengate/1212/gg-winux/GWUAD/wu_about_gg.htm) für nicht-RAC Oracle-Datenbanken und erfordert, dass beide Standorte aktiv sind.
 
@@ -116,7 +130,7 @@ Und führen Sie folgendes aus:
 	      grant delete any table to ggate;
 	      grant drop any table to ggate;
 
-Suchen Sie als Nächstes die Datei INIT <DatabaseSID>. ORA im Ordner %ORACLE_HOME%\\database an Standort A und Standort B, und fügen Sie die folgenden Datenbankparameter zu INITTEST.ora hinzu:
+Suchen Sie als Nächstes die Datei INIT <DatabaseSID>. ORA im Ordner %ORACLE_HOME%\database an Standort A und Standort B, und fügen Sie die folgenden Datenbankparameter zu INITTEST.ora hinzu:
 
 	UNDO_MANAGEMENT=AUTO
 	UNDO_RETENTION=86400
@@ -189,7 +203,7 @@ Fahren Sie anschließend die Datenbank herunter und starten Sie sie neu:
 ##3. Erstellen aller erforderlichen Objekte zur Unterstützung der DDL-Replikation
 Dieser Abschnitt enthält die Skripte, die Sie verwenden müssen, um alle erforderlichen Objekte zur Unterstützung der DDL-Replikation zu erstellen. Sie müssen die Skripte in diesem Abschnitt sowohl an Standort A als auch an Standort B ausführen.
 
-Öffnen Sie eine Windows-Eingabeaufforderung, und navigieren Sie zu den Oracle-GoldenGate-Ordner, z. B. C:\\OracleGG. Starten Sie SQL* Plus-Eingabeaufforderung mit Administratorrechten für die Datenbank, wie z. B. **SYSDBA** auf Standort A und Standort B.
+Öffnen Sie eine Windows-Eingabeaufforderung, und navigieren Sie zu den Oracle-GoldenGate-Ordner, z. B. C:\OracleGG. Starten Sie SQL* Plus-Eingabeaufforderung mit Administratorrechten für die Datenbank, wie z. B. **SYSDBA** auf Standort A und Standort B.
 
 Führen Sie dann die folgende Skripte aus:
 	
@@ -277,7 +291,7 @@ Sie müssen die Prozesse Extrahieren und Datapump an Standort A und Standort B e
 	GGSCI (MachineGG1) 17> add rmttrail C:\OracleGG\dirdat\ab extract dpump1
 	RMTTRAIL added.
 
-Öffnen Sie die Parameterdatei mit dem Befehl EDIT PARAMS, und fügen Sie dann die folgende Informationen hinzu: GGSCI (MachineGG1) 18> edit params ext1 EXTRACT ext1 USERID ggate, PASSWORD ggate EXTTRAIL C:\\OracleGG\\dirdat\\aa TRANLOGOPTIONS EXCLUDEUSER ggate TABLE scott.inventory, GETBEFORECOLS ( ON UPDATE KEYINCLUDING (prod_category,qty_in_stock, last_dml), ON DELETE KEYINCLUDING (prod_category,qty_in_stock, last_dml));
+Öffnen Sie die Parameterdatei mit dem Befehl EDIT PARAMS, und fügen Sie dann die folgende Informationen hinzu: GGSCI (MachineGG1) 18> edit params ext1 EXTRACT ext1 USERID ggate, PASSWORD ggate EXTTRAIL C:\OracleGG\dirdat\aa TRANLOGOPTIONS EXCLUDEUSER ggate TABLE scott.inventory, GETBEFORECOLS ( ON UPDATE KEYINCLUDING (prod_category,qty_in_stock, last_dml), ON DELETE KEYINCLUDING (prod_category,qty_in_stock, last_dml));
 
 Öffnen Sie die Parameterdatei mit dem Befehl EDIT PARAMS, und fügen Sie dann die folgende Informationen hinzu:
 
@@ -583,4 +597,4 @@ Remotedesktop an Standort A und überprüfen Sie, ob die Replikation stattgefund
 ##Zusätzliche Ressourcen
 [Bilder des virtuellen Oracle-Computers für Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

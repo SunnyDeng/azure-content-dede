@@ -264,4 +264,4 @@ Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert wer
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

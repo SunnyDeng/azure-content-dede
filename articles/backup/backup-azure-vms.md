@@ -24,7 +24,7 @@ Zur Sicherung virtueller Azure-Computer gehören drei Hauptschritte:
 
 ![Drei Schritte zum Sichern eines virtuellen Azure-Computers](./media/backup-azure-vms/3-steps-for-backup.png)
 
-## 1\. Ermitteln von virtuellen Azure-Computern
+## 1. Ermitteln von virtuellen Azure-Computern
 Beim Ermittlungsvorgang wird Azure nach der Liste virtueller Computer im Abonnement abgefragt. Außerdem werden zusätzliche Informationen wie der Clouddienstname und die Region erfasst.
 
 > [AZURE.NOTE]Der Ermittlungsvorgang sollte immer als erster Schritt ausgeführt werden. Dadurch wird sichergestellt, dass alle neuen virtuellen Computer, die dem Abonnement hinzugefügt wurden, identifiziert werden.
@@ -41,7 +41,7 @@ Beim Ermittlungsvorgang wird Azure nach der Liste virtueller Computer im Abonnem
 
 5. Sobald der Ermittlungsvorgang abgeschlossen ist, wird eine Popupbenachrichtigung angezeigt. ![Ermitteln abgeschlossen](./media/backup-azure-vms/discovery-complete.png)
 
-##  2\. Registrieren von virtuellen Azure-Computern
+##  2. Registrieren von virtuellen Azure-Computern
 Bevor ein virtueller Computer geschützt werden kann, muss er beim Azure Backup-Dienst registriert werden. Der Registrierungsvorgang hat zwei Hauptziele:
 
 1. Aktivieren der Sicherungserweiterung im VM-Agent auf dem virtuellen Computer
@@ -70,7 +70,7 @@ Die Registrierung ist in der Regel eine einmalige Angelegenheit. Der Azure Backu
 
 7. Sobald der Vorgang abgeschlossen ist, ändert sich der Status im Portal dem registrierten Status entsprechend. ![Registrierungsstatus 2](./media/backup-azure-vms/register-status02.png)
 
-## 3\. Schützen: Sichern von virtuellen Azure-Computern
+## 3. Schützen: Sichern von virtuellen Azure-Computern
 Dieser Schritt umfasst das Einrichten einer Sicherungs- und Beibehaltungsrichtlinie für den virtuellen Computer. Um einen virtuellen Computer zu schützen, führen Sie die folgenden Schritte aus:
 
 ### So sichern Sie virtuelle Azure-Computer
@@ -142,7 +142,7 @@ Das Aktualisieren des VM-Agents ist so einfach wie das Neuinstallieren der [Bin�
 #### Überprüfen der VM-Agent-Installation
 So überprüfen Sie die Version des VM-Agents auf virtuellen Windows-Computern
 
-1. Melden Sie sich am virtuellen Azure-Computer an, und navigieren Sie zum Ordner *C:\\WindowsAzure\\Packages*. Dieser Ordner enthält die Datei "WaAppAgent.exe".
+1. Melden Sie sich am virtuellen Azure-Computer an, und navigieren Sie zum Ordner *C:\WindowsAzure\Packages*. Dieser Ordner enthält die Datei "WaAppAgent.exe".
 2. Klicken Sie mit der rechten Maustaste auf die Datei, wechseln Sie zu **Eigenschaften**, und wählen Sie dann die Registerkarte **Details**. Im Feld mit der Produktversion sollte 2.6.1198.718 oder eine höhere Version angegeben sein.
 
 ### Problembehandlung bei Netzwerkproblemen
@@ -182,4 +182,4 @@ Weitere Informationen zum Einstieg in Azure Backup finden Sie unter:
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Verwalten virtueller Computer](backup-azure-manage-vms)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

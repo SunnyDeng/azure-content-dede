@@ -82,4 +82,4 @@ Die folgende Tabelle enthält die Bibliotheken, die von Drittanbietern, wie ande
 https://en.wikipedia.org/wiki/Draft:Microsoft_SQL_Server_Libraries/Drivers
 -->
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

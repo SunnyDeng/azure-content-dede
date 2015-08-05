@@ -92,4 +92,4 @@ Die Integration in Azure AD bietet den Vorteil, dass Sie keinen zusätzlichen Co
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

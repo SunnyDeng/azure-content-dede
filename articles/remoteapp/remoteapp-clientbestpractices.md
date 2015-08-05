@@ -3,7 +3,7 @@
     pageTitle="Bewährte Methoden für Azure RemoteApp-Clients"
     description="Erfahren Sie mehr über bewährte Methoden für die Verwendung der RemoteApp-Clients" 
     services="remoteapp" 
-    solutions="" documentationCenter="" 
+	documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
 
@@ -27,4 +27,4 @@ Die folgenden Informationen können Ihnen bei der Verwendung von RemoteApp-Clien
 - RemoteApp meldet Sie automatisch ab, wenn Sie für einen bestimmten Zeitraum inaktiv sind. Um Datenverluste zu vermeiden, wird empfohlen, Ihre Anwendungen zu schließen, wenn Sie die Nutzung des Diensts beenden.
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

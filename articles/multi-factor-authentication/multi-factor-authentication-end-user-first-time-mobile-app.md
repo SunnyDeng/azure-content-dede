@@ -51,4 +51,4 @@ Die Azure Authenticator-App ist für [Windows Phone](http://www.windowsphone.com
 <li>Wenn Sie solche Apps verwenden, kopieren Sie das angegebene App-Kennwort und fügen es in die Nicht-Browser-Anwendung ein. Die Schritte für bestimmte Anwendungen wie Outlook und Lync finden Sie unter "Ändern des Kennworts in Ihrer E-Mail in das App-Kennwort" und "Ändern des Kennworts in Ihrer Anwendung in das App-Kennwort".</li>
 <li>Klicken Sie auf Done.</li>
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

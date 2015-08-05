@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Erstellen eines virtuellen Windows-Computers mit dem Azure Resource Manager und PowerShell" 
-	description="Verwenden Sie den Resource Management-Modus von Azure PowerShell, um ganz leicht einen neuen virtuellen Windows-Computer zu erstellen." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+<properties
+	pageTitle="Erstellen eines virtuellen Windows-Computers mit dem Azure Resource Manager und PowerShell"
+	description="Verwenden Sie den Resource Management-Modus von Azure PowerShell, um ganz leicht einen neuen virtuellen Windows-Computer zu erstellen."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="davidmu1"
+	manager="timlt"
 	editor=""/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/02/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/02/2015"
+	ms.author="davidmu"/>
 
 # Erstellen eines virtuellen Windows-Computers mit dem Azure Resource Manager und PowerShell
 
@@ -30,7 +30,7 @@ Wenn Sie Azure PowerShell bereits installiert haben, benötigen Sie Version 0.9.
 
 	Get-Module azure | format-table version
 
-Wenn Sie dies noch nicht getan haben oder die installierte Version von Azure PowerShell aktualisieren müssen, verwenden Sie die Anweisungen unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md), um Azure PowerShell auf Ihrem lokalen Computer zu installieren. Öffnen Sie dann eine Azure PowerShell-Befehlseingabeaufforderung.
+Wenn Sie dies noch nicht getan haben oder die installierte Version von Azure PowerShell aktualisieren müssen, verwenden Sie die Anweisungen unter [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md), um Azure PowerShell auf Ihrem lokalen Computer zu installieren. Öffnen Sie dann eine Azure PowerShell-Befehlseingabeaufforderung.
 
 Zunächst müssen Sie sich mit dem folgenden Befehl in Azure anmelden.
 
@@ -63,7 +63,7 @@ Als Nächstes müssen Sie den Modus von Azure PowerShell auf Resource Manager we
 
 Kopieren Sie nun den folgenden PowerShell-Befehlssatz in einen Texteditor wie Notepad. Geben Sie Ihr gewähltes Speicherkonto und den Ort ein, und ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
-	$stName="<chosen storage account name>"	
+	$stName="<chosen storage account name>"
 	$locName="<chosen Azure location name>"
 	$rgName="TestRG"
 	New-AzureResourceGroup -Name $rgName -Location $locName
@@ -79,19 +79,19 @@ Kopieren Sie nun den folgenden PowerShell-Befehlssatz in einen Texteditor wie No
 	$vm = Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
 	$osDiskUri = $storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/WindowsVMosDisk.vhd"
 	$vm = Set-AzureVMOSDisk -VM $vm -Name "windowsvmosdisk" -VhdUri $osDiskUri -CreateOption fromImage
-	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm 
+	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
 Kopieren Sie obigen Befehlssatz in die Zwischenablage, und klicken Sie dann mit der rechten Maustaste auf Ihre offene Azure PowerShell-Eingabeaufforderung. Dadurch wird der Befehlssatz als Reihe an PowerShell-Befehlen ausgegeben. Geben Sie den Namen und das Kennwort für das lokale Administratorkonto ein und erstellen Ihren virtuellen Azure-Computer.
 
 Es erscheint beispielsweise Folgendes:
 
-	PS C:> $stName="contosost"
-	PS C:> $locName="West US"
-	PS C:> $rgName="TestRG"
-	PS C:> New-AzureResourceGroup -Name $rgName -Location $locName
+	PS C:\> $stName="contosost"
+	PS C:\> $locName="West US"
+	PS C:\> $rgName="TestRG"
+	PS C:\> New-AzureResourceGroup -Name $rgName -Location $locName
 	VERBOSE: 12:45:15 PM - Created resource group 'TestRG' in location 'westus'
-	
-	
+
+
 	ResourceGroupName : TestRG
 	Location          : westus
 	ProvisioningState : Succeeded
@@ -100,25 +100,25 @@ Es erscheint beispielsweise Folgendes:
 	                    Actions  NotActions
 	                    =======  ==========
 	                    *
-	
+
 	ResourceId        : /subscriptions/fd92919d-eeca-4f5b-840a-e45c6770d92e/resourceGroups/TestRG
-	
-	
-	PS C:> $storageAcc=New-AzureStorageAccount -ResourceGroupName $rgName -Name $stName -Type "Standard_GRS" -Location $locName
-	PS C:> $singleSubnet=New-AzureVirtualNetworkSubnetConfig -Name singleSubnet -AddressPrefix 10.0.0.0/24
-	PS C:> $vnet=New-AzurevirtualNetwork -Name TestNet3 -ResourceGroupName $rgName -Location $locName -AddressPrefix 10.0.0.0/16 -Subnet $singleSubnet
-	PS C:> $pip = New-AzurePublicIpAddress -Name TestNIC -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
-	PS C:> $nic = New-AzureNetworkInterface -Name TestNIC -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id
-	PS C:> $cred = Get-Credential -Message "Type the name and password of the local administrator account."
-	PS C:> $vm = New-AzureVMConfig -VMName WindowsVM -VMSize "Standard_A1"
-	PS C:> $vm = Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName MyWindowsVM -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-	PS C:> $vm = Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
-	PS C:> $vm = Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
-	PS C:> $osDiskUri = $storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/MyWindowsVMosDisk.vhd"
-	PS C:> $vm = Set-AzureVMOSDisk -VM $vm -Name "windowsvmosdisk" -VhdUri $osDiskUri -CreateOption fromImage
-	PS C:> New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
-	
-	
+
+
+	PS C:\> $storageAcc=New-AzureStorageAccount -ResourceGroupName $rgName -Name $stName -Type "Standard_GRS" -Location $locName
+	PS C:\> $singleSubnet=New-AzureVirtualNetworkSubnetConfig -Name singleSubnet -AddressPrefix 10.0.0.0/24
+	PS C:\> $vnet=New-AzurevirtualNetwork -Name TestNet3 -ResourceGroupName $rgName -Location $locName -AddressPrefix 10.0.0.0/16 -Subnet $singleSubnet
+	PS C:\> $pip = New-AzurePublicIpAddress -Name TestNIC -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
+	PS C:\> $nic = New-AzureNetworkInterface -Name TestNIC -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id
+	PS C:\> $cred = Get-Credential -Message "Type the name and password of the local administrator account."
+	PS C:\> $vm = New-AzureVMConfig -VMName WindowsVM -VMSize "Standard_A1"
+	PS C:\> $vm = Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName MyWindowsVM -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+	PS C:\> $vm = Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
+	PS C:\> $vm = Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
+	PS C:\> $osDiskUri = $storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/MyWindowsVMosDisk.vhd"
+	PS C:\> $vm = Set-AzureVMOSDisk -VM $vm -Name "windowsvmosdisk" -VhdUri $osDiskUri -CreateOption fromImage
+	PS C:\> New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+
+
 	EndTime             : 4/28/2015 1:00:05 PM -07:00
 	Error               :
 	Output              :
@@ -132,7 +132,7 @@ Es erscheint beispielsweise Folgendes:
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Übersicht über den Azure Resource Manager](../resource-group-overview.md)
+[Übersicht über den Azure Resource Manager](resource-group-overview.md)
 
 [Erstellen eines virtuellen Windows-Computers mit einer Resource Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple.md)
 
@@ -140,9 +140,6 @@ Es erscheint beispielsweise Folgendes:
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-[Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
+[Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
-
- 
-
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

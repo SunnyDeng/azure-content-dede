@@ -138,4 +138,4 @@ Sie können z. B. den folgenden URI verwenden, um über eine benutzerdefinierte
 -   <a href="http://msdn.microsoft.com/library/azure/gg680307.aspx">Zuordnen von CDN-Inhalt (Content Delivery Network) zu einer benutzerdefinierten Domäne</a>
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

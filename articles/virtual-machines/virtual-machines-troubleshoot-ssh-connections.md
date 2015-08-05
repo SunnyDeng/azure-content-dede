@@ -8,6 +8,7 @@
 	editor=""
 	tags="azure-service-management,azure-resource-manager"/>
 
+
 <tags 
 	ms.service="virtual-machines" 
 	ms.workload="infrastructure-services" 
@@ -165,4 +166,4 @@ Informationen zur Nutzung von Azure-Support finden Sie unter der [Microsoft Azur
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

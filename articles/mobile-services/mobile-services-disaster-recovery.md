@@ -104,4 +104,4 @@ Jetzt sollte der mobile Dienst in einer neuen Azure-Region wiederhergestellt wor
 [Automatisieren von mobilen Diensten mit Befehlszeilentools]: http://www.windowsazure.com/develop/mobile/tutorials/command-line-administration/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

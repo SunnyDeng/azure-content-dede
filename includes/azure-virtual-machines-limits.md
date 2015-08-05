@@ -20,4 +20,4 @@
 
 <sup>2</sup>Eingabeendpunkte ermöglichen die Kommunikation mit einem virtuellen Computer von außerhalb des Clouddiensts des virtuellen Computers. Virtuelle Computer im gleichen Clouddienst oder virtuellen Netzwerk können automatisch miteinander kommunizieren. Siehe [Einrichten von Endpunkten für einen virtuellen Computer](../virtual-machines/virtual-machines-set-up-endpoints.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

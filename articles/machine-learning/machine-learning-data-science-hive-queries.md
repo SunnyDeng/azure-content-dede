@@ -2,6 +2,7 @@
 	pageTitle="Übermitteln von Hive-Abfragen an Hadoop-Cluster im erweiterten Analysevorgang | Microsoft Azure" 
 	description="Verarbeiten von Daten aus Hive-Tabellen" 
 	services="machine-learning" 
+	solutions="" 
 	documentationCenter="" 
 	authors="hangzh-msft" 
 	manager="paulettm" 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/29/2015" 
+	ms.date="07/17/2015" 
 	ms.author="hangzh;bradsev" />
 
 #<a name="heading"></a>Übermitteln von Hive-Abfragen an HdInsight Hadoop-Cluster im erweiterten Analysevorgang
@@ -27,40 +28,44 @@ In diesem Dokument werden die verschiedenen Möglichkeiten zum Übermitteln von 
 
 Es werden generische Hive-Abfragen bereitgestellt, die zum Durchsuchen der Daten oder zum Generieren der Funktionen verwendet werden, die eingebettete Hive-UDFs (User Defined Function, benutzerdefinierte Funktion) nutzen.
 
-Beispiele für Abfragen speziell für Szenarios mit den [NYC Taxi Trip-Daten](http://chriswhong.com/open-data/foil_nyc_taxi/) stehen auch im [GitHub-Repository](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts) bereit. Für diese Abfragen ist bereits ein Datenschema angegeben, sodass sie bereit für die Übermittlung zur Ausführung sind.
+Beispiele für Abfragen speziell für Szenarios mit den [NYC Taxi Trip-Daten](http://chriswhong.com/open-data/foil_nyc_taxi/) stehen auch im [GitHub-Repository](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts) bereit. Für diese Abfragen ist bereits ein Datenschema angegeben, sodass sie bereit für die Übermittlung zur Ausführung für dieses Szenario sind.
 
 Im letzten Abschnitt werden Parameter beschrieben, mit denen Sie die Leistung der Hive-Abfragen optimieren können.
 
 ## Voraussetzungen
 In diesem Artikel wird davon ausgegangen, dass Sie Folgendes abgeschlossen haben:
  
-* Sie haben ein Azure-Speicherkonto erstellt. Anweisungen finden Sie unter [Erstellen eines Azure-Speicherkontos](../hdinsight-get-started.md#storage) 
+* Sie haben ein Azure-Speicherkonto erstellt. Eine Anleitung zu dieser Aufgabe finden Sie unter [Erstellen eines Azure-Speicherkontos](../hdinsight-get-started.md#storage). 
 * Sie haben einen Hadoop-Cluster mit dem HDInsight-Dienst bereitgestellt. Anweisungen finden Sie unter [Bereitstellen eines HDInsight-Clusters](../hdinsight-get-started.md#provision).
 * Sie haben die Daten in Hive-Tabellen auf Azure HDInsight Hadoop-Clustern hochgeladen. Wenn dies nicht der Fall ist, führen Sie die unter [Erstellen und Laden von Daten in Hive-Tabellen](machine-learning-data-science-hive-tables.md) beschriebenen Schritte zum Hochladen von Daten in Hive-Tabellen aus.
 * Sie haben den Remotezugriff auf den Cluster aktiviert. Anweisungen finden Sie unter [Zugreifen auf den Hauptknoten von Hadoop-Clustern](machine-learning-data-science-customize-hadoop-cluster.md#remoteaccess). 
 
 
-- [Übermitteln von Hive-Abfragen](#submit)
-- [Durchsuchen von Daten und Verarbeiten von Funktionen](#explore)
-- [Weiterführende Themen: Abstimmen von Hive-Parametern zur Verbesserung der Abfrage-Geschwindigkeit](#tuning)
-
 ## <a name="submit"></a>Übermitteln von Hive-Abfragen
 
-###1. Über die Hadoop-Befehlszeile im Hauptknoten des Hadoop-Clusters
+1. [Übermitteln von Hive-Abfragen über die Hadoop-Befehlszeile im Hauptknoten des Hadoop-Clusters](#headnode)
+2. [Übermitteln von Hive-Abfragen mit dem Hive-Editor](#hive-editor)
+3. [Übermitteln von Hive-Abfragen mit Azure PowerShell-Befehlen](#ps)
+ 
+###<a name="headnode"></a> 1. Übermitteln von Hive-Abfragen über die Hadoop-Befehlszeile im Hauptknoten des Hadoop-Clusters
 
-Wenn die Abfrage komplex ist, führen Hive-Abfragen direkt am Hauptknoten des Hadoop-Clusters i. d. R. schneller zu Ergebnissen als das Senden im Hive-Editor oder über Azure PowerShell-Skripts.
+Wenn die Hive-Abfrage komplex ist, führt die direkte Übermittlung über den Hauptknoten des Hadoop-Clusters i. d. R. schneller zu Ergebnissen als das Senden im Hive-Editor oder über Azure PowerShell-Skripts.
 
 Melden Sie sich am Hauptknoten des Hadoop-Clusters an, öffnen Sie die Hadoop-Befehlszeile auf dem Desktop des Hauptknotens und geben Sie den Befehl `cd %hive_home%\bin` ein.
 
-Es gibt drei Möglichkeiten zum Übermitteln von Hive-Abfragen an der Hadoop-Befehlszeile.
+Es gibt drei Möglichkeiten zum Übermitteln von Hive-Abfragen über die Hadoop-Befehlszeile:
 
-####Übermitteln der Hive-Abfragen direkt an der Hadoop-Befehlszeile 
+* direkt
+* mithilfe von HQL-Dateien
+* über die Hive-Befehlskonsole
+
+#### Übermitteln der Hive-Abfragen direkt an der Hadoop-Befehlszeile 
 
 Benutzer können einen Befehl wie `hive -e "<your hive query>;` ausführen, um einfache Hive-Abfragen direkt an der Hadoop-Befehlszeile zu übermitteln. Hier ist ein Beispiel. Das rote Kästchen enthält den Befehl, der die Hive-Abfrage übermittelt, und das grüne Kästchen umschließt die Ausgabe der Hive-Abfrage.
 
 ![Arbeitsbereich erstellen][10]
 
-####Übermitteln der Hive-Abfragen in HQL-Dateien
+#### Übermitteln der Hive-Abfragen in HQL-Dateien
 
 Wenn die Hive-Abfrage sehr komplex ist und aus mehreren Zeilen besteht, ist das direkte Bearbeiten der Abfragen an der Befehlszeile oder an der Hive-Konsole nicht sehr praktikabel. Alternativ können die Hive-Abfragen mit einem Text-Editor auf dem Hauptknoten des Hadoop-Clusters in einer HQL-Datei in einem lokalen Verzeichnis auf dem Hauptknoten gespeichert werden. Anschließend kann die Hive-Abfrage in der HQL-Datei mithilfe des `-f`-Arguments wie folgt übermittelt werden:
 	
@@ -69,14 +74,14 @@ Wenn die Hive-Abfrage sehr komplex ist und aus mehreren Zeilen besteht, ist das 
 ![Arbeitsbereich erstellen][15]
 
 
-####Unterdrücken der Fortschrittsanzeige bei Hive-Abfragen
+**Unterdrücken der Fortschrittsanzeige bei Hive-Abfragen**
 
 Standardmäßig wird bei Hive-Abfragen, die über die Hadoop-Befehlszeile übermittelt werden, der Fortschritt des Map/Reduce-Auftrags auf dem Bildschirm angezeigt. Um die Fortschrittsanzeige des Map/Reduce-Auftrags zu unterdrücken, können Sie das Argument `-S` ("S" als Großbuchstabe) wie folgt an der Befehlszeile verwenden:
 
 	hive -S -f "<path to the .hql file>"
 	hive -S -e "<Hive queries>"
 
-####Übermitteln von Hive-Abfragen an der Hive-Befehlskonsole
+#### Übermitteln von Hive-Abfragen an der Hive-Befehlskonsole
 
 Benutzer können auch zunächst die Hive-Befehlskonsole starten, indem Sie den Befehl `hive` an der Hadoop-Befehlszeile eingeben und dann die Hive-Abfragen über die Hive-Befehlskonsole übermitteln. Beispiel: In diesem Beispiel kennzeichnen die beiden roten Kästchen die Befehle, die zum Starten der Hive-Befehlskonsole verwendet werden, und die Hive-Abfrage, die über die Hive-Befehlskonsole übermittelt wird. Das grüne Kästchen markiert die Ausgabe der Hive-Abfrage.
 
@@ -84,7 +89,7 @@ Benutzer können auch zunächst die Hive-Befehlskonsole starten, indem Sie den B
 
 In den vorherigen Beispielen wurden die Ergebnisse der Hive-Abfrage direkt auf den Bildschirm ausgeben. Sie können die Ausgabe aber auch in eine lokale Datei auf dem Hauptknoten oder in ein Azure-Blob schreiben. Sie können dann andere Tools verwenden, um die Ausgabe der Hive-Abfragen weiter zu analysieren.
 
-####Ausgeben der Hive-Abfrageergebnisse in eine lokale Datei 
+**Ausgeben der Hive-Abfrageergebnisse in eine lokale Datei**
 
 Für die Ausgabe der Hive-Abfrageergebnisse in ein lokales Verzeichnis auf dem Hauptknoten müssen Sie die Hive-Abfrage an der Hadoop-Befehlszeile wie folgt übermitteln:
 
@@ -94,7 +99,7 @@ Im folgenden Beispiel wird die Ausgabe der Hive-Abfrage in die Datei `hivequeryo
 
 ![Arbeitsbereich erstellen][12]
 
-####Ausgeben der Hive-Abfrageergebnisse in ein Azure-Blob
+**Ausgeben der Hive-Abfrageergebnisse in ein Azure-Blob**
 
 Sie können die Hive-Abfrageergebnisse auch in ein Azure-Blob im Standardcontainer des Hadoop-Clusters ausgeben. Die Hive-Abfrage muss wie folgt lauten:
 
@@ -108,17 +113,20 @@ Wenn Sie den Standardcontainer des Hadoop-Clusters mit Tools wie Azure-Speicher-
 
 ![Arbeitsbereich erstellen][14]
 
-###2. Über den Hive-Editor oder Azure PowerShell-Befehle
+###<a name="hive-editor"></a> 2. Übermitteln von Hive-Abfragen mit dem Hive-Editor
 
-Benutzer können auch die Abfrage-Konsole (Hive-Editor) verwenden, indem Sie die URL in einem Webbrowser `https://<Hadoop cluster name>.azurehdinsight.net/Home/HiveEditor` eingeben (Sie werden aufgefordert, die Anmeldeinformationen für den Hadoop-Cluster anzugeben). Sie können aber [Hive-Aufträgen mit PowerShell übermitteln](../hdinsight/hdinsight-submit-hadoop-jobs-programmatically.md#hive-powershell).
+Benutzer können auch die Abfrage-Konsole (Hive-Editor) verwenden, indem sie die URL in einem Webbrowser `https://<Hadoop cluster name>.azurehdinsight.net/Home/HiveEditor` eingeben (Sie werden aufgefordert, die Anmeldeinformationen für den Hadoop-Cluster anzugeben).
+
+###<a name="ps"></a> 3. Übermitteln von Hive-Abfragen mit Azure PowerShell-Befehlen
+
+Benutzer können zum Übermitteln von Hive-Abfragen auch PowerShell verwenden. Eine Anleitung hierzu finden Sie unter [Übermitteln von Hive-Aufträgen mit PowerShell](../hdinsight/hdinsight-submit-hadoop-jobs-programmatically.md#hive-powershell).
 
 ## <a name="explore"></a>Durchsuchen von Daten, Verarbeiten von Funktionen und Optimieren von Hive-Parametern
 
-Für die folgenden Schritte in diesem Abschnitt zum Durchsuchen von Daten verwenden wir Hive in Azure HDInsight Hadoop-Clustern. In einem weiterführenden Thema werden einige Hive-Parameter beschrieben, mit denen die Leistung der Hive-Abfragen optimiert werden kann:
+In diesem Abschnitt werden die folgenden Data Wrangling-Aufgaben mit Hive in Azure HDInsight-Hadoop-Clustern beschrieben:
 
 1. [Durchsuchen von Daten](#hive-dataexploration)
 2. [Generieren von Funktionen](#hive-featureengineering)
-3. [Weiterführende Themen: Optimieren von Hive-Parametern zur Verbesserung der Abfrage-Geschwindigkeit](#tune-parameters)
 
 > [AZURE.NOTE]Bei den Beispiel-Hive-Abfragen wird davon ausgegangen, dass die Daten in Hive-Tabellen in Azure HDInsight Hadoop-Clustern hochgeladen wurden. Wenn dies nicht der Fall ist, führen Sie die unter [Erstellen und Laden von Daten in Hive-Tabellen](machine-learning-data-science-hive-tables.md) beschriebenen Schritte zum Hochladen von Daten in Hive-Tabellen aus.
 
@@ -165,16 +173,16 @@ Hier finden Sie einige Hive-Beispielskripts, die zum Durchsuchen von Daten in de
 ###<a name="hive-featureengineering"></a>Generieren von Funktionen
 
 In diesem Abschnitt werden Methoden zum Generieren von Funktionen mithilfe von Hive-Abfragen beschrieben:
+  
+1. [Häufigkeitsbasierte Funktionsgenerierung](#hive-frequencyfeature)
+2. [Risiken kategorischer Variablen in binären Klassifizierungen](#hive-riskfeature)
+3. [Extrahieren von Funktionen aus "datetime"-Feldern](#hive-datefeature)
+4. [Extrahieren von Funktionen aus "Text"-Feldern](#hive-textfeature)
+5. [Berechnen der Entfernung zwischen GPS-Koordinaten](#hive-gpsdistance)
 
 > [AZURE.NOTE]Wenn Sie zusätzliche Funktionen generieren, können Sie diese als Spalten in der vorhandenen Tabelle hinzufügen oder eine neue Tabelle mit den zusätzlichen Funktionen und einem Primärschlüssel erstellen, die dann mit der ursprünglichen Tabelle zusammengeführt werden kann.
 
-1. [Häufigkeitsbasierte Funktionsgenerierung](#hive-frequencyfeature)
-2. [Risiken kategorischer Variablen in binären Klassifizierungen](#hive-riskfeature)
-3. [Extrahieren von Funktionen aus "datetime"-Feldern](#hive-datefeatures)
-4. [Extrahieren von Funktionen aus "Text"-Feldern](#hive-textfeatures)
-5. [Berechnen der Entfernung zwischen GPS-Koordinaten](#hive-gpsdistance)
-
-####<a name="hive-frequencyfeature"></a>Häufigkeitsbasierte Funktionsgenerierung
+####<a name="hive-frequencyfeature"></a> Häufigkeitsbasierte Funktionsgenerierung
 
 Manchmal ist es sinnvoll, die Häufigkeit der Ebenen einer kategorischen Variable oder die Häufigkeiten von Ebenenkombinationen mehrerer kategorischer Variablen zu berechnen. Mit dem folgenden Skript können Sie die Häufigkeiten berechnen:
 
@@ -189,7 +197,7 @@ Manchmal ist es sinnvoll, die Häufigkeit der Ebenen einer kategorischen Variabl
 		order by frequency desc;
 	
 
-####<a name="hive-riskfeature"></a>Risiken kategorischer Variablen in binären Klassifizierungen
+####<a name="hive-riskfeature"></a> Risiken kategorischer Variablen in binären Klassifizierungen
 
 Bei binären Klassifizierungen müssen manchmal nicht numerische kategorische Variablen in numerische Funktionen umgewandelt werden, da einige Modelle nur numerische Funktionen akzeptieren. Dazu werden die nicht numerischen Ebenen durch numerische Risiken ersetzt. In diesem Abschnitt werden einige generische Hive-Abfragen zur Berechnung der Risikowerte (logarithmische Wahrscheinlichkeiten) einer kategorischen Variable gezeigt.
 
@@ -216,7 +224,7 @@ In diesem Beispiel werden die Variablen `smooth_param1` und `smooth_param2` zum 
 
 Nach dem Berechnen der Risikotabelle können Sie einer Tabelle Risikowerte zuweisen, indem Sie sie mit der Risikotabelle zusammenführen. Die Hive-Abfrage für das Zusammenführen wurde im vorherigen Abschnitt beschrieben.
 
-####<a name="hive-datefeature"></a>Extrahieren von Funktionen aus "datetime"-Feldern
+####<a name="hive-datefeature"></a> Extrahieren von Funktionen aus „datetime“-Feldern
 
 Hive bietet eine Reihe von UDFs für die Verarbeitung von "datetime"-Feldern. In Hive lautet das Standardformat für "datetime" "JJJJ-MM-TT 00:00:00" (z. B. "1970-01-01 12:21:32"). In diesem Abschnitt werden Beispiele für das Extrahieren des Tages eines Monats und des Monats aus einem "datetime"-Feld gezeigt. Außerdem gibt es Beispiele zum Konvertieren einer "datetime"-Zeichenfolge in ein anderes Format als das Standardformat.
 
@@ -238,14 +246,14 @@ Wenn bei dieser Abfrage `<datetime field>` ein Muster wie `03/26/2015 12:04:39
 In dieser Abfrage enthält `hivesampletable` standardmäßig alle Azure HDInsight Hadoop-Cluster, wenn die Cluster bereitgestellt wurden.
 
 
-####<a name="hive-textfeature"></a>Extrahieren von Funktionen aus "Text"-Feldern
+####<a name="hive-textfeature"></a> Extrahieren von Funktionen aus „Text“-Feldern
 
 Angenommen, die Hive-Tabelle enthält ein Textfeld, das eine Zeichenfolge von durch Leerzeichen voneinander getrennten Wörtern ist. Sie können dann mit der folgenden Abfrage die Länge der Zeichenfolge und die Anzahl der Wörter in der Zeichenfolge extrahieren.
 
     	select length(<text field>) as str_len, size(split(<text field>,' ')) as word_num 
 		from <databasename>.<tablename>;
 
-####<a name="hive-gpsdistance"></a>Berechnen der Entfernung zwischen GPS-Koordinaten
+####<a name="hive-gpsdistance"></a> Berechnen der Entfernung zwischen GPS-Koordinaten
 
 Die in diesem Abschnitt angegebene Abfrage kann direkt auf die "NYC Taxi Trip"-Daten angewendet werden. Diese Abfrage soll veranschaulichen, wie Sie die eingebetteten mathematischen Funktionen in Hive zum Generieren von Funktionen verwenden.
 
@@ -318,4 +326,4 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

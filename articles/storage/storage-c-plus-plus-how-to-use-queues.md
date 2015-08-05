@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="06/22/2015" 
+	ms.date="07/19/2015" 
     ms.author="tamram"/>
 
 # Verwenden des Warteschlangenspeichers mit C++  
@@ -232,10 +232,11 @@ Nachdem Sie sich nun mit den Grundlagen von Warteschlangenspeichern vertraut gem
 
 -	[Verwenden des Blob-Speichers mit C++](storage-c-plus-plus-how-to-use-blobs.md)
 -	[Verwenden des Tabellenspeichers mit C++](storage-c-plus-plus-how-to-use-tables.md)
+-	[Auflisten von Azure Storage-Ressourcen in C++](storage-c-plus-plus-enumeration.md)
 -	[Speicherclientbibliothek für C++](https://msdn.microsoft.com/library/azure/gg433040.aspx) 
 -	[MSDN-Referenz für Azure-Speicher](https://msdn.microsoft.com/library/azure/gg433040.aspx)
 -	[Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

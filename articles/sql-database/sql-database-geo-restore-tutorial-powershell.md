@@ -39,13 +39,13 @@ Sie müssen zum Ausführen der folgenden Cmdlets die zertifikatbasierte Authenti
 1. Rufen Sie die Liste der wiederherstellbaren Datenbanken mithilfe des Cmdlets [Get-AzureSqlRecoverableDatabase](http://msdn.microsoft.com/library/azure/dn720219.aspx) ab. Geben Sie den folgenden Parameter an:
 	* **ServerName**: Der Server, auf dem sich die Datenbank befindet.	
 
-	`PS C:>Get-AzureSqlRecoverableDatabase -ServerName "myserver"`
+	`PS C:\>Get-AzureSqlRecoverableDatabase -ServerName "myserver"`
 
 2. Wählen Sie die Datenbank, die Sie wiederherstellen möchten, mithilfe des Cmdlets [Get-AzureSqlRecoverableDatabase](http://msdn.microsoft.com/library/azure/dn720219.aspx) aus. Geben Sie die folgenden Parameter an:
 	* **ServerName**: Der Server, auf dem sich die Datenbank befindet.
 	* **DatabaseName**: Name, der Datenbank, die wiederhergestellt werden soll.
 
-	`PS C:>$Database = Get-AzureSqlRecoverableDatabase -ServerName "myserver" –DatabaseName “mydb”`
+	`PS C:\>$Database = Get-AzureSqlRecoverableDatabase -ServerName "myserver" –DatabaseName “mydb”`
 	 
 3. Beginnen Sie die Wiederherstellung mithilfe des Cmdlets[Start-AzureSqlDatabaseRecovery](http://msdn.microsoft.com/library/dn720224.aspx). Geben Sie die folgenden Parameter an:
 	* **SourceDatabase**: Name der Datenbank, die Sie wiederherstellen möchten.
@@ -54,14 +54,14 @@ Sie müssen zum Ausführen der folgenden Cmdlets die zertifikatbasierte Authenti
 
 	Speichern Sie die Rückgabe in einer Variablen namens **$RestoreRequest**. Diese Variable enthält die Wiederherstellungsanforderungs-ID zum Überwachen des Status einer Wiederherstellung.
 
-	`PS C:>$RecoveryRequest = Start-AzureSqlDatabaseRecovery -SourceDatabase $Database –TargetDatabaseName “myrecoveredDB” –TargetServerName “mytargetserver”`
+	`PS C:\>$RecoveryRequest = Start-AzureSqlDatabaseRecovery -SourceDatabase $Database –TargetDatabaseName “myrecoveredDB” –TargetServerName “mytargetserver”`
 	
 Eine Datenbankwiederherstellung kann einige Zeit in Anspruch nehmen. Verwenden Sie zum Überwachen des Status der Wiederherstellung das Cmdlet [Get-AzureSqlDatabaseOperation](http://msdn.microsoft.com/library/azure/dn546738.aspx), und geben Sie die folgenden Parameter an:
 
 * **ServerName**: Name des Servers, auf dem die Datenbank wiederhergestellt werden soll.
 * **OperationGuid**: GUID des Vorgangs, wobei es sich um die Wiederherstellungsanforderungs-ID handelt, die in Schritt 3 in der Variablen **$RecoveryRequest** gespeichert wurde.
 
-	`PS C:>Get-AzureSqlDatabaseOperation –ServerName “mytargetserver” –OperationGuid $RecoveryRequest.ID`
+	`PS C:\>Get-AzureSqlDatabaseOperation –ServerName “mytargetserver” –OperationGuid $RecoveryRequest.ID`
 
 Die Felder **Status** und **ProzentAbgeschlossen** zeigen den Status der Wiederherstellung.
 
@@ -82,4 +82,4 @@ Weitere Informationen finden Sie unter den folgenden Links:
 [Azure PowerShell](https://msdn.microsoft.com/library/azure/jj156055.aspx)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

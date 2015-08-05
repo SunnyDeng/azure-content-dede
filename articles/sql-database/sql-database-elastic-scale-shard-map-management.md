@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Shard-Zuordnungsverwaltung" 
-	description="Erfahren Sie, wie Sie &quot;ShardMapManager&quot; und die Clienbtbibliothek für elastische Datenbanken verwenden." 
+	description="Erfahren Sie, wie Sie ";ShardMapManager"; und die Clienbtbibliothek für elastische Datenbanken verwenden." 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
@@ -234,4 +234,4 @@ Bei Szenarios, die eine Datenverschiebung erforderlich machen, wird jedoch das S
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -13,18 +13,20 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management" 
-   ms.date="04/14/2015"
+   ms.date="07/17/2015"
    ms.author="pehteh"/>
 
 #Lokales Aktualisieren einer Datenbank und Bereitstellen in Azure SQL-Datenbank
 
 ![alt text](./media/sql-database-migrate-visualstudio-ssdt/01VSSSDTDiagram.png)
 
-Verwenden Sie diese Option bei der Migration einer Datenbank in eine Azure SQL-Datenbank der Version 12, wenn Schemaänderungen erforderlich sind, die nicht mit dem SQL Azure-Migrations-Assistenten (SAMW) durchgeführt werden können. Dies ist der Fall, wenn die Datenbank SQL Server-Funktionen verwendet, die nicht oder noch nicht in Azure SQL-Datenbanken unterstützt werden. Bei dieser Option wird Visual Studio zunächst verwendet, um ein Datenbankprojekt aus der Quelldatenbank zu erstellen. Die Zielplattform für das Projekt wird dann auf Azure SQL-Datenbank V12 festgelegt, und das Projekt wird erstellt, um mögliche Kompatibilitätsprobleme zu ermitteln. SAMW kann viele, jedoch nicht alle Kompatibilitätsprobleme beheben und wird somit als erster Schritt zur Verarbeitung aller Skripts in den Projekten verwendet. Die Verwendung von SAMW ist optional, wird jedoch dringend empfohlen. Beim Erstellen des Projekts nach der Verarbeitung der Skriptdateien mit SAMW werden verbleibende Probleme erkannt, die dann manuell mithilfe von T-SQL-Bearbeitungs-Tools in Visual Studio gelöst werden müssen. Nachdem das Projekt erfolgreich erstellt wird, erfolgt eine Veröffentlichung des Schemas zurück in eine Kopie (empfohlen) der Quelldatenbank, um das Schema und die Daten lokal zu aktualisieren. Die aktualisierte Datenbank wird daraufhin entweder direkt oder durch Exportieren und Importieren einer BACPAC-Datei mit den in Option 1 beschriebenen Techniken in Azure bereitgestellt.
+Verwenden Sie diese Option, wenn bei der Migration einer Datenbank zu Azure SQL-Datenbank V12 Schemaänderungen erforderlich sind, die mit dem SQL Azure Migrations-Assistenten (SAMW) nicht durchgeführt werden können, da die Datenbank SQL Server-Funktionen verwendet, die in Azure SQL-Datenbank nicht unterstützt werden. Bei dieser Option wird zunächst Visual Studio verwendet, um ein Datenbankprojekt aus der Quelldatenbank zu erstellen. Die Zielplattform für das Projekt wird dann auf Azure SQL-Datenbank V12 festgelegt, und das Projekt wird erstellt, um mögliche Kompatibilitätsprobleme zu ermitteln. SAMW kann viele (aber nicht alle) Kompatibilitätsprobleme beheben und wird somit als erster Schritt zur Verarbeitung aller Skripts in den Projekten verwendet. Die Verwendung von SAMW ist optional, wird jedoch dringend empfohlen. Beim Erstellen des Projekts nach der Verarbeitung der Skriptdateien mit SAMW werden verbleibende Probleme erkannt, die dann manuell mithilfe der Transact-SQL-Bearbeitungstools in Visual Studio gelöst werden müssen. Nachdem das Projekt erfolgreich erstellt wurde, erfolgt eine erneute Veröffentlichung des Schemas in einer Kopie (empfohlen) der Quelldatenbank, um das Schema und die Daten lokal zu aktualisieren. Die aktualisierte Datenbank wird daraufhin entweder direkt oder durch Exportieren und Importieren einer BACPAC-Datei mit den in Option 1 beschriebenen Techniken in Azure bereitgestellt.
  
-Da diese Option die lokale Aktualisierung des Datenbankschemas vor der Bereitstellung in Azure umfasst, wird dringend empfohlen, dies auf einer Kopie der Datenbank auszuführen. Das Visual Studio-Schemavergleichstool kann verwendet werden, um den vollständigen Satz von Änderungen zu überprüfen, die vor dem Veröffentlichen des Projekts auf die Datenbank angewendet werden.
+Da diese Option die lokale Aktualisierung des Datenbankschemas vor der Bereitstellung in Azure umfasst, wird dringend empfohlen, eine Kopie der Datenbank zu verwenden. Das Visual Studio-Schemavergleichstool kann verwendet werden, um den vollständigen Satz von Änderungen zu überprüfen, die vor dem Veröffentlichen des Projekts auf die Datenbank angewendet werden.
 
-Die Verwendung des SQL Azure-Migrations-Assistenten (SAMW) ist optional, wird jedoch empfohlen. SAMW erkennt Kompatibilitätsprobleme innerhalb des Hauptteils der Funktionen sowie in gespeicherten Prozeduren und Triggern, die auf andere Weise bis zur Bereitstellung nicht erkannt werden. Wenn eine ausschließliche Schemabereitstellung erforderlich ist, kann das aktualisierte Schema direkt aus Visual Studio in der Azure SQL-Datenbank veröffentlicht werden.
+Die Verwendung des SQL Azure-Migrations-Assistenten (SAMW) ist optional, wird jedoch empfohlen. SAMW erkennt Kompatibilitätsprobleme innerhalb des Hauptteils der Funktionen sowie in gespeicherten Prozeduren und Triggern, die auf andere Weise bis zur Bereitstellung nicht erkannt werden.
+
+Wenn nur ein Schema bereitgestellt werden muss, kann das aktualisierte Schema direkt aus Visual Studio in Azure SQL-Datenbank veröffentlicht werden.
 
 ## Schritte bei der Migration
 
@@ -59,9 +61,9 @@ Die Verwendung des SQL Azure-Migrations-Assistenten (SAMW) ist optional, wird je
 
 ![alt text](./media/sql-database-migrate-visualstudio-ssdt/11MigrateSSDT.png)
 
->Beachten Sie, dass temporäre Kopien der ursprünglichen Dateien vor der Verarbeitung und der betroffenen Dateien nach der Verarbeitung an den oben auf der Seite angegebenen Speicherorten erstellt werden.
+> [AZURE.NOTE]Temporäre Kopien der ursprünglichen Dateien vor der Verarbeitung und der betroffenen Dateien nach der Verarbeitung werden an den oben auf der Seite angegebenen Speicherorten erstellt.
 
-10.	Klicken Sie im Bestätigungsdialogfeld auf "Überschreiben" und "OK", um die ursprünglichen Dateien mit den geänderten Dateien zu überschreiben. Beachten Sie, dass nur die Dateien, die tatsächlich geändert wurden, überschrieben werden.
+10.	Klicken Sie im Bestätigungsdialogfeld auf **Überschreiben** und **OK**, um die ursprünglichen Dateien mit den geänderten Dateien zu überschreiben. Dabei werden nur die Dateien, die tatsächlich geändert wurden, überschrieben.
 11.	Optional. Verwenden Sie einen Schemavergleich, um das Projekt mit einer früheren Momentaufnahme oder der ursprünglichen Datenbank zu vergleichen, sodass Sie die vom Assistenten vorgenommenen Änderungen nachvollziehen können. Sie sollten zu diesem Zeitpunkt eine weitere Momentaufnahme erstellen. 
 
 ![alt text](./media/sql-database-migrate-visualstudio-ssdt/12MigrateSSDT.png)
@@ -93,6 +95,4 @@ Im Schemavergleich unten wird die Adventure Works 2014-Datenbank in Azure SQL-D
 
 ![alt text](./media/sql-database-migrate-visualstudio-ssdt/13MigrateSSDT.png)
 
- 
-
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Gewusst wie: Verwenden von Azure Storage für die SQL Server-Sicherung und -Wiederherstellung | Azure" 
-	description="Sichern von SQL Server und SQL-Datenbanken in Azure Storage Erläutert die Vorteile der Sicherung von SQL-Datenbanken in Azure-Speicher und welche Komponenten von SQL Server und Azure-Speicher erforderlich sind." 
-	services="sql-database, virtual-machines" 
-	documentationCenter="" 
-	authors="jeffgoll" 
-	manager="jeffreyg" 
+<properties
+	pageTitle="Gewusst wie: Verwenden von Azure Storage für die SQL Server-Sicherung und -Wiederherstellung | Azure"
+	description="Sichern von SQL Server und SQL-Datenbanken in Azure Storage Erläutert die Vorteile der Sicherung von SQL-Datenbanken in Azure-Speicher und welche Komponenten von SQL Server und Azure-Speicher erforderlich sind."
+	services="sql-database, virtual-machines"
+	documentationCenter=""
+	authors="carlrabeler"
+	manager="jeffreyg"
 	editor="tysonn"/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="03/06/2015" 
-	ms.author="jeffreyg"/>
+<tags
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="vm-windows-sql-server"
+	ms.topic="article"
+	ms.date="07/16/2015"
+	ms.author="carlrab"/>
 
 
 
@@ -43,7 +43,7 @@ Als Erstes muss ein Azure-Konto erstellt werden. SQL Server verwendet den Namen 
 
 Eine ausführliche Anleitung zum Erstellen eines Speicherkontos und Durchführen einer einfachen Wiederherstellung finden Sie unter [Erste Schritte mit der SQL Server-Sicherung und -Wiederherstellung im Windows Azure-BLOB-Speicherdienst](http://go.microsoft.com/fwlink/?LinkId=271615).
 
-## Komponenten des Azure-Blob-Speicherdiensts 
+## Komponenten des Azure-Blob-Speicherdiensts
 
 * Speicherkonto: Das Speicherkonto ist der Ausgangspunkt für alle Speicherdienste. Um auf einen Azure-Blob-Speicherdienst zuzugreifen, erstellen Sie als Erstes ein Azure-Speicherkonto. Der Name und Zugriffsschlüssel des Speicherkontos werden für die Authentifizierung beim Azure-Blob-Speicherdienst und dessen Komponenten benötigt. Weitere Informationen zum Azure-Blob-Speicherdienst finden Sie unter [Verwenden des Azure-Blob-Speicherdiensts](http://azure.microsoft.com/develop/net/how-to-guides/blob-storage/).
 
@@ -69,17 +69,7 @@ Eine ausführliche Anleitung zum Erstellen eines Speicherkontos und Durchführen
 [Erste Schritte mit der SQL Server-Sicherung und -Wiederherstellung im Windows Azure-BLOB-Speicherdienst](http://go.microsoft.com/fwlink/?LinkID=271615 "Lernprogramm:")
 
 **Bewährte Methoden, Problembehandlung:**
-	
+
 [Bewährte Methoden für die Sicherung und Wiederherstellung (Windows Azure-BLOB-Speicherdienst)](http://go.microsoft.com/fwlink/?LinkId=272394)
 
-
-
-
-	
-
-
-
-
- 
-
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

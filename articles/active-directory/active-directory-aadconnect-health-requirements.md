@@ -72,7 +72,7 @@ Um mithilfe der Nutzungsanalyse Daten zu sammeln und zu analysieren, benötigt d
 #### So aktivieren Sie die Überwachung für AD FS 2.0
 
 1. Klicken Sie auf **Start**, zeigen Sie auf **Programme** und dann auf **Verwaltung**, und klicken Sie anschließend auf **Lokale Sicherheitsrichtlinie**.
-1. Navigieren Sie zum Ordner **Sicherheitseinstellungen\\Lokale Richtlinien\\Zuweisen von Benutzerrechten**, und doppelklicken Sie dann auf "Generieren von Sicherheitsüberwachungen".
+1. Navigieren Sie zum Ordner **Sicherheitseinstellungen\Lokale Richtlinien\Zuweisen von Benutzerrechten**, und doppelklicken Sie dann auf "Generieren von Sicherheitsüberwachungen".
 1. Stellen Sie auf der Registerkarte **Lokale Sicherheitseinstellung** sicher, dass das AD FS 2.0-Dienstkonto aufgeführt wird. Wenn es nicht vorhanden ist, klicken Sie auf **Benutzer oder Gruppe hinzufügen** und fügen es der Liste hinzu. Klicken Sie dann auf **OK**.
 1. Öffnen Sie eine Eingabeaufforderung mit erhöhten Rechten, und führen Sie den folgenden Befehl zum Aktivieren der Überwachung aus. `auditpol.exe /set /subcategory:"Application Generated" /failure:enable /success:enable`
 1. Schließen Sie "Lokale Sicherheitsrichtlinie", und öffnen Sie dann das Verwaltungs-Snap-In. Klicken Sie zum Öffnen des Verwaltungs-Snap-Ins auf **Start**, zeigen Sie auf **Programme** und dann auf **Verwaltung**, und klicken Sie anschließend auf "AD FS 2.0-Verwaltung".
@@ -84,7 +84,7 @@ Um mithilfe der Nutzungsanalyse Daten zu sammeln und zu analysieren, benötigt d
 #### So aktivieren Sie die Überwachung für AD FS unter Windows Server 2012 R2
 
 1. Öffnen Sie **Lokale Sicherheitsrichtlinie,** indem Sie den **Server-Manager** auf dem Startbildschirm oder über die Taskleiste auf dem Desktop öffnen, und klicken Sie dann auf **Tools/Lokale Sicherheitsrichtlinie**.
-1. Navigieren Sie zum Ordner **Sicherheitseinstellungen\\Lokale Richtlinien\\Zuweisen von Benutzerrechten**, und doppelklicken Sie dann auf **Generieren von Sicherheitsüberwachungen**.
+1. Navigieren Sie zum Ordner **Sicherheitseinstellungen\Lokale Richtlinien\Zuweisen von Benutzerrechten**, und doppelklicken Sie dann auf **Generieren von Sicherheitsüberwachungen**.
 1. Stellen Sie auf der Registerkarte **Lokale Sicherheitseinstellung** sicher, dass das AD FS-Dienstkonto aufgeführt wird. Wenn es nicht vorhanden ist, klicken Sie auf **Benutzer oder Gruppe hinzufügen** und fügen es der Liste hinzu. Klicken Sie dann auf **OK**.
 1. Öffnen Sie eine Eingabeaufforderung mit erhöhten Rechten, und führen Sie den folgenden Befehl zum Aktivieren der Überwachung aus: `auditpol.exe /set /subcategory:"Application Generated" /failure:enable /success:enable.`
 1. Schließen Sie **Lokale Sicherheitsrichtlinie**, und öffnen Sie dann das AD FS-Verwaltungs-Snap-In (klicken Sie hierzu im Server-Manager auf "Tools", und wählen Sie dann "AD FS-Verwaltung" aus).
@@ -155,4 +155,4 @@ Um sicherzustellen, dass der Agent installiert wurde, öffnen Sie die Dienste un
  
 ![Überprüfen von Azure AD Connect Health](./media/active-directory-aadconnect-health-requirements/install5.png)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

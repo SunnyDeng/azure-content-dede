@@ -59,4 +59,4 @@ Mit dieser API kann unstrukturierter Text für Aufgaben wie Stimmungsanalyse und
  
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

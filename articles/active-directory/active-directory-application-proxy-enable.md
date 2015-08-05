@@ -41,7 +41,7 @@ Portnummer | Beschreibung
 9090 | Ermöglicht die Connectorregistrierung (nur für den Connectorregistrierungsprozess erforderlich).
 9091 | Ermöglicht die automatische Erneuerung des Vertrauenszertifikats für den Connector.
  
-Wenn Ihre Firewall Datenverkehr gemäß Ursprungsbenutzern erzwingt, öffnen Sie diese Ports für den Datenverkehr aus Windows-Diensten, die als Netzwerkdienst ausgeführt werden. Stellen Sie außerdem sicher, dass Port 8080 für "NT Authority\\System" aktiviert ist.
+Wenn Ihre Firewall Datenverkehr gemäß Ursprungsbenutzern erzwingt, öffnen Sie diese Ports für den Datenverkehr aus Windows-Diensten, die als Netzwerkdienst ausgeführt werden. Stellen Sie außerdem sicher, dass Port 8080 für "NT Authority\System" aktiviert ist.
 
 
 ##Schritt 1: Aktivieren des Anwendungsproxys in Azure AD
@@ -70,4 +70,4 @@ Wenn Sie den Connector deinstallieren möchten, stellen Sie nach der Deinstallat
 * [Als Organisation für Azure registrieren](..sign-up-organization.md)
 * [Azure-Identität](..fundamentals-identity.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/10/2015"
+   ms.date="07/13/2015"
    ms.author="cherylmc" />
 
 # Informationen zu VPN-Gateways
@@ -71,12 +71,12 @@ Konfigurieren Sie Ihr virtuelles Netzwerk. Informationen zu standortübergreifen
 - [Konfigurieren einer Punkt-zu-Site-VPN-Verbindung mit einem Azure Virtual Network](vpn-gateway-point-to-site-create.md)
 - [Konfigurieren eines Site-to-Site-VPN mit Windows Server 2012 RRAS (Routing- und RAS-Dienst)](https://msdn.microsoft.com/library/dn636917.aspx)
 
-Informationen zum Konfigurieren eines VPN-Gateways finden Sie unter [Konfigurieren eines VPN-Gateways](http://go.microsoft.com/fwlink/p/?LinkId=615106).
+Informationen zum Konfigurieren eines VPN-Gateways finden Sie unter [Konfigurieren eines VPN-Gateways](vpn-gateway-configure-vpn-gateway-mp.md).
 
-Informationen zum Ändern des VPN-Gatewaytyps finden Sie unter [Ändern des Routingtyps von Gateways eines virtuellen Netzwerks](http://go.microsoft.com/fwlink/p/?LinkId=615109).
+Informationen zum Ändern des VPN-Gatewaytyps finden Sie unter [Ändern des Routingtyps von VPN-Gateways eines virtuellen Netzwerks](vpn-gateway-configure-vpn-gateway-mp.md).
 
 Informationen zum Verbinden mehrerer Standorte zu einem virtuellen Netzwerk finden Sie unter [Verbinden mehrerer lokaler Standorte mit einem virtuellen Netzwerk](http://go.microsoft.com/fwlink/p/?LinkID=615106).
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

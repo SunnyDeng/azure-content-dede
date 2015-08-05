@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/15/2015" 
+	ms.date="07/21/2015" 
 	ms.author="spelluru"/>
 
 # Erstellen von Warnungen zu Azure-Ereignissen
@@ -70,7 +70,7 @@ Aus der obigen JSON-Definition kann **subStatus** entfernt werden, wenn Sie zu e
 Eine Liste der Vorgänge sowie Status- und Unterstatuswerte finden Sie unter [Verfügbare Vorgänge und Statuswerte](#AvailableOperationsStatuses).
 
 ## Bereitstellen der Warnung
-Verwenden Sie zum Bereitstellen der Warnung das Azure-PowerShell-Cmdlet **New-AzureResourceGroupDeployment**, wie im folgenden Beispiel gezeigt:
+Verwenden Sie zum Bereitstellen der Warnung das Azure PowerShell-Cmdlet **New-AzureResourceGroupDeployment**, wie im folgenden Beispiel gezeigt:
 
 	New-AzureResourceGroupDeployment -ResourceGroupName adf 	-TemplateFile .\ADFAlertFailedSlice.json -StorageAccountName testmetricsabc
 
@@ -109,62 +109,16 @@ Um die Liste der bereitgestellten Azure-Ressourcengruppen abzurufen, verwenden S
 
 ## <a name="AvailableOperationsStatuses"></a>Verfügbare Vorgangsnamen und Statuswerte
 
-<table>
-<th align="left">Vorgangsname</th>
-<th align="left">Status</th>
-<th align="left">Unterstatus</th>
+| Vorgangsname | Status | Unterstatus |
+| -------------- | ------ | ---------- |
+| RunStarted | Started | Starting |
+| RunFinished | Failed/Succeeded |	<p>FailedResourceAllocation </p><p>Succeeded</p><p>FailedExecution</p><p>TimedOut</p><p>Canceled</p><p>FailedValidation</p><p>Abandoned</p> | 
+| SliceOnTime | In Progress | Ontime |
+| SliceDelayed | In Progress | Late |
+| OnDemandClusterCreateStarted | Gestartet | |
+| OnDemandClusterCreateSuccessful | Succeeded | | 
+| OnDemandClusterDeleted | Succeeded | |
 
-<tr>
-<td>RunStarted</td>
-<td>Started</td>
-<td>Starting</td>
-</tr>
-
-<tr>
-<td>RunFinished</td>
-<td>Failed / Succeeded</td>
-<td>
-	<p>FailedResourceAllocation </p>
-	<p>Succeeded</p>
-	<p>FailedExecution</p>
-	<p>TimedOut</p>
-	<p>Canceled</p>
-	<p>FailedValidation</p>
-	<p>Abandoned</p>
-</td>
-</tr>
-
-<tr>
-<td>SliceOnTime</td>
-<td>In Progress</td>
-<td>Ontime</td>
-</tr>
-
-<tr>
-<td>SliceDelayed</td>
-<td>In Progress</td>
-<td>Late</td>
-</tr>
-
-<tr>
-<td>OnDemandClusterCreateStarted</td>
-<td>Gestartet</td>
-<td></td>
-</tr>
-
-<tr>
-<td>OnDemandClusterCreateSuccessful</td>
-<td>Succeeded</td>
-<td></td>
-</tr>
-
-<tr>
-<td>OnDemandClusterDeleted</td>
-<td>Succeeded</td>
-<td></td>
-</tr>
-
-</table>
 
 ## Problembehandlung bei Benutzerereignissen
 Führen Sie den folgenden Befehl aus, um die generierten Ereignisse anzuzeigen:
@@ -172,4 +126,4 @@ Führen Sie den folgenden Befehl aus, um die generierten Ereignisse anzuzeigen:
 	Get-AzureResourceGroupLog –Name $ResourceGroup -All | Where-Object EventSource -eq "Microsoft.DataFactory"
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -72,4 +72,4 @@ Nachdem Sie ausgewählt haben, was Sie anzeigen möchten, klicken Sie unten auf 
 * [Überwachen von Dienstmetriken](insights-how-to-customize-monitoring.md), um sicherzustellen, dass Ihr Dienst verfügbar und reaktionsfähig ist.
 * [Nachverfolgen der Dienstintegrität](insights-service-health.md), um den Zeitpunkt von Leistungsabfällen oder Dienstunterbrechungen zu ermitteln, die in Azure aufgetreten sind.  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

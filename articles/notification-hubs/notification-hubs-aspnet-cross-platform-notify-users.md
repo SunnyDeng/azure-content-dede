@@ -112,4 +112,4 @@ Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notif
 [Notification Hub How to for Windows Store]: http://msdn.microsoft.com/library/windowsazure/jj927172.aspx
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

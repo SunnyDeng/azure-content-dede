@@ -1,7 +1,6 @@
 <properties
 	pageTitle="Erstellen eines einfachen Experiments in Machine Learning-Studio | Microsoft Azure"
 	description="Ein erstes Lernprogramm für maschinelles Lernen zum Erstellen eines einfachen Experiments zum Trainieren und Testen eines linearen Regressionsmodells in Azure Machine Learning Studio."
-	keywords="experiment,linear regression,machine learning algorithms,machine learning tutorial,predictive modeling techniques"
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -233,4 +232,4 @@ Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersa
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -183,4 +183,4 @@ Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass da
 [CameraCaptureTask]: http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.tasks.cameracapturetask(v=vs.105).aspx
 [PhotoCamera]: http://msdn.microsoft.com/library/windowsphone/develop/microsoft.devices.photocamera(v=vs.105).aspx
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

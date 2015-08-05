@@ -387,4 +387,4 @@ Um erfolgreich Vorlagen zu erstellen, lesen Sie bitte [Erstellen von Azure Resou
 [msn]: http://search.msn.com/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

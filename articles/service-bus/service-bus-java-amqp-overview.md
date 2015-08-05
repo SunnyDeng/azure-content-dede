@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="06/24/2015" 
+	ms.date="07/21/2015" 
 	ms.author="sethm"/>
 
 
@@ -70,30 +70,12 @@ Die folgende Abbildung zeigt das Beispiel einer Bereitstellung, bei der auf Linu
 
 Aktuell sind die folgenden Clientbibliotheken bekannt, die mit Service Bus arbeiten:
 
-<table>
-  <tr>
-    <th>Sprache</th>
-    <th>Bibliothek</th>
-  </tr>
-  <tr>
-    <td>Java</td>
-    <td>Apache Qpid Java Message Service (JMS)-Client<br/>
-        IIT Software SwiftMQ Java-Client</td>
-  </tr>
-  <tr>
-    <td>C</td>
-    <td>Apache Qpid Proton-C</td>
-  </tr>
-  <tr>
-    <td>PHP</td>
-    <td>Apache Qpid Proton-PHP</td>
-  </tr>
-  <tr>
-    <td>Python</td>
-    <td>Apache Qpid Proton-Python</td>
-  </tr>
-
-</table>
+| Sprache | Bibliothek |
+|----------|-------------------------------------------------------------------------------|
+| Java | Apache Qpid Java Message Service (JMS)-Client<br/> IIT Software SwiftMQ Java-Client |
+| C | Apache Qpid Proton-C |
+| PHP | Apache Qpid Proton-PHP |
+| Python | Apache Qpid Proton-Python |
 
 
 **Abbildung 2: Tabelle der AMQP 1.0 Clientbibliotheken**
@@ -117,4 +99,4 @@ Weitere Informationen zur Beschaffung dieser Bibliotheken und ihrer Verwendung m
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

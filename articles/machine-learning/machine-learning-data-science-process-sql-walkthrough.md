@@ -2,7 +2,6 @@
 	pageTitle="Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server | Microsoft Azure" 
 	description="Advanced Analytics Process and Technology in Aktion"  
 	services="machine-learning" 
-	solutions="" 
 	documentationCenter="" 
 	authors="msolhab" 
 	manager="paulettm" 
@@ -716,4 +715,4 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts und IPython Note
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

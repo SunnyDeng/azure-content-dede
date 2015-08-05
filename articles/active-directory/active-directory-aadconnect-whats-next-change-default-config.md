@@ -27,4 +27,4 @@ Wenn Sie die Standardkonfiguration ändern müssen, führen Sie folgende Schritt
 - Exportieren Sie Ihre benutzerdefinierten Synchronisierungsregeln mit dem Synchronisierungsregel-Editor. Dadurch erhalten Sie ein PowerShell-Skript, mit dem Sie die Regeln bei einem Notfallwiederherstellungsszenario problemlos neu erstellen können.
 - Wenn Sie den Umfang oder die Join-Einstellung einer integrierten Synchronisierungsregel ändern müssen, so dokumentieren Sie dies, und wenden Sie die Änderung nach dem Upgrade auf eine neuere Version von Azure AD Connect erneut an. 
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

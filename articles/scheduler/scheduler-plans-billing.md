@@ -87,4 +87,4 @@ Ausführliche Informationen finden Sie unter [Scheduler Preise](http://azure.mic
  [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
   
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

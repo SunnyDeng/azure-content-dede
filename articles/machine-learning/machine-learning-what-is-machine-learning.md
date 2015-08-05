@@ -1,6 +1,7 @@
 <properties
     pageTitle="Was ist Machine Learning in Azure ? | Microsoft Azure"
-    description="Dieser Artikel erläutert die grundlegenden Konzepte des vollständig verwalteten Machine Learning-Diensts, eine Cloudtechnologie, mit der Sie Lösungen erstellen, operationalisieren und vermarkten können." 
+    description="Dieser Artikel erläutert die grundlegenden Konzepte des vollständig verwalteten Machine Learning-Diensts, eine Cloudtechnologie, mit der Sie Lösungen erstellen, operationalisieren und vermarkten können."
+	keywords="what is machine learning,cloud technology,predictive,what is predictive analytics,operationalize"
 	services="machine-learning"
     documentationCenter=""
     authors="cjgronlund"
@@ -115,4 +116,4 @@ Die Grundlagen der Vorhersageanalyse und des maschinellen Lernens werden anhand 
 <!-- Module References -->
 [learning-with-counts]: https://msdn.microsoft.com/library/azure/81c457af-f5c0-4b2d-922c-fdef2274413c/
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

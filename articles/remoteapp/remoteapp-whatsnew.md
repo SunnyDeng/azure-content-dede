@@ -3,7 +3,7 @@
     pageTitle="Neuerungen in Azure RemoteApp"
     description="Erfahren Sie, welche Änderungen und Verbesserungen an Azure RemoteApp vorgenommen wurden." 
     services="remoteapp" 
-    solutions="" documentationCenter="" 
+	documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
 
@@ -51,4 +51,4 @@ Möchten Sie Azure RemoteApp in der Praxis testen? Sehen Sie sich das Lernprogra
 
 Vielen Dank, dass Sie uns treu bleiben. Im nächsten Monat gibt es weitere Updates.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -8,7 +8,7 @@ Ein neues Einfügeskript wird registriert, das beim Einfügen eines neuen Aktivi
 
    	![](./media/mobile-services-configure-blob-storage/mobile-blob-storage-account-keys.png)
 
-3. Klicken Sie in Ihrem mobilen Service auf die Registerkarte **Konfigurieren**, scrollen Sie nach unten bis **App-Einstellungen**, und geben Sie ein Paar aus **Name** und **Wert** für jedes der folgenden Elemente ein, die Sie vom Speicherkonto erhalten haben. Klicken Sie anschließend auf **Speichern**.
+3. Klicken Sie in Ihrem mobilen Service auf die Registerkarte **Konfigurieren**, führen Sie einen Bildlauf nach unten bis **App-Einstellungen** durch, und geben Sie ein Paar aus **Name** und **Wert** für jedes der folgenden Elemente ein, die Sie vom Speicherkonto erhalten haben. Klicken Sie anschließend auf **Speichern**.
 
 	+ `STORAGE_ACCOUNT_NAME`
 	+ `STORAGE_ACCOUNT_ACCESS_KEY`
@@ -91,4 +91,4 @@ Als Nächstes aktualisieren Sie die Quickstart-App, um unter Verwendung der beim
 <!-- URLs. -->
 [App-Einstellungen]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

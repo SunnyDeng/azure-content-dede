@@ -245,4 +245,4 @@ Connectors verwenden entweder OAuth oder Benutzernamen und Kennwörter.
 [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/>[Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

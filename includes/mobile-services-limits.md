@@ -1,7 +1,7 @@
 
 | EBENE: | FREI | BASIC | STANDARD |
 |----|----|----|----|
-| API-Aufrufe | 500\.000 | 1,5 Mio. pro Einheit | 15 Mio. pro Einheit |
+| API-Aufrufe | 500.000 | 1,5 Mio. pro Einheit | 15 Mio. pro Einheit |
 | Aktive Geräte | 500 | Unbegrenzt | Unbegrenzt |
 | Skalieren | N/V | Bis zu 6 Einheiten | Unbegrenzte Einheiten |
 | Pushbenachrichtigungen | Free-Tarif für Notification Hubs enthalten, bis zu 1 Mio. Push-Vorgänge | Basic-Tarif für Notification Hubs enthalten, bis zu 10 Mio. Push-Vorgänge | Standard-Tarif für Notification Hubs enthalten, bis zu 10 Mio. Push-Vorgänge |
@@ -14,4 +14,4 @@
 
 Weitere Informationen zu diesen Einschränkungen und zu Preisen finden Sie unter [Mobile Services Preise](https://azure.microsoft.com/pricing/details/mobile-services/).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

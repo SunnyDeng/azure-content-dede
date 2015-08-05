@@ -27,7 +27,7 @@ Wenn Ihre Organisation über einen Verbund mit Azure Active Directory verfügt u
 1. Führen Sie die unter [Aktivieren der Multi-Factor Authentication](multi-factor-authentication-get-started-cloud/#turn-on-multi-factor-authentication-for-users) beschriebenen Schritte für Benutzer aus, um ein Konto zu aktivieren.
 2. Gehen Sie wie folgt vor, um eine Anspruchsregel einzurichten:
 
-<center>![Cloud](./media/multi-factor-authentication-get-started-adfs-cloud/adfs1.png)</center>
+![Cloud](./media/multi-factor-authentication-get-started-adfs-cloud/adfs1.png)
 
 - 	Öffnen Sie die AD FS-Verwaltungskonsole.
 - 	Navigieren Sie zu "Vertrauensstellungen der vertrauenden Seite", und klicken Sie mit der rechten Maustaste auf "Vertrauensstellungen der vertrauenden Seite". Wählen Sie "Anspruchsregeln bearbeiten" aus.
@@ -48,7 +48,62 @@ Wenn Ihre Organisation über einen Verbund mit Azure Active Directory verfügt u
 
 Benutzer können dann die Anmeldung mithilfe der lokalen Methode (z. B. Smartcard) abschließen.
 
+## Vertrauenswürdige IPs für Partnerbenutzer
+Mit vertrauenswürdigen IPs können Administratoren die Multi-Factor Authentication für bestimmte IP-Adressen oder Partnerbenutzer umgehen, deren Anfragen aus dem eigenen Intranet stammen. In den folgenden Abschnitten wird beschrieben, wie Sie vertrauenswürdige IPs für die Azure Multi-Factor Authentication mit Partnerbenutzern konfigurieren und die Multi-Factor Authentication umgehen, wenn eine Anforderung aus dem Intranet eines Partnerbenutzers stammt. Hierzu wird für AD FS die Verwendung eines Passthrough-Elements oder für die Filterung einer Vorlage für einen eingehenden Anspruch mit dem Anspruchstyp „Innerhalb des Unternehmensnetzwerks“ konfiguriert. In diesem Beispiel wird Office 365 für die Vertrauensstellungen der vertrauenden Seite verwendet.
 
- 
+### Konfigurieren der AD FS-Anspruchsregeln
 
-<!---HONumber=July15_HO2-->
+Als Erstes müssen wir die AD FS-Ansprüche konfigurieren. Wir werden zwei Anspruchsregeln erstellen: eine für den Anspruchstyp „Innerhalb des Unternehmensnetzwerks“ und eine weitere zur Aufrechterhaltung der Anmeldung von Benutzern. <ol>
+
+<li>Öffnen Sie die AD FS-Verwaltung.</li>
+<li>Wählen Sie auf der linken Seite die Option für Vertrauensstellungen für vertrauende Seiten.</li>
+<li>Klicken Sie in der Mitte mit der rechten Maustaste auf die Microsoft Office&#160;365 Identity Platform, und wählen Sie ** Anspruchsregeln bearbeiten...**.</li>
+
+![Cloud](./media/multi-factor-authentication-get-started-adfs-cloud/trustedip1.png)
+
+<li>Klicken Sie unter „Ausstellungstransformationsregeln“ auf **Regel hinzufügen**.</li>
+
+![Cloud](./media/multi-factor-authentication-get-started-adfs-cloud/trustedip2.png)
+
+<li>Wählen Sie im Assistenten zum Hinzufügen von Transformationsanspruchsregeln im Dropdownmenü die Option „Passthrough oder eingehenden Anspruch filtern“, und klicken Sie auf „Weiter“.</li>
+
+![Cloud](./media/multi-factor-authentication-get-started-adfs-cloud/trustedip3.png)
+
+<li>Geben Sie der Regel im Feld neben „Anspruchsregelname“ einen Namen. Beispiel: InsideCorpNet.</li>
+<li>Wählen Sie in der Dropdownliste neben „Eingehender Anspruchstyp“ die Option „Innerhalb des Unternehmensnetzwerks“.</li>
+
+![Cloud](./media/multi-factor-authentication-get-started-adfs-cloud/trustedip4.png)
+
+<li>Klicken Sie auf Fertig stellen.</li>
+<li>Klicken Sie unter „Ausstellungstransformationsregeln“ auf **Regel hinzufügen**.</li>
+<li>Wählen Sie im Assistenten zum Hinzufügen von Transformationsanspruchsregeln in der Dropdownliste die Option „Ansprüche mit benutzerdefinierter Regel senden“, und klicken Sie auf „Weiter“.</li>
+<li>Geben Sie im Feld unter „Anspruchsregelname:“ den Text „Benutzeranmeldung aufrechterhalten“ ein.</li>
+<li>Geben Sie im Feld „Benutzerdefinierte Regel“ Folgendes ein: c:[Type == "http://schemas.microsoft.com/2014/03/psso"] => issue(claim = c);
+</li>
+
+![Cloud](./media/multi-factor-authentication-get-started-adfs-cloud/trustedip5.png)
+
+<li>Klicken Sie auf **Fertig stellen**.</li>
+<li>Klicken Sie auf **Anwenden**.</li>
+<li>Klicken Sie auf **OK**.</li>
+
+<li>Schließen Sie die AD FS-Verwaltung.</li>
+
+### Konfigurieren vertrauenswürdiger IPs der Azure Multi-Factor Authentication mit Partnerbenutzern
+Da die Ansprüche jetzt vorhanden sind, können wir vertrauenswürdige IPs konfigurieren. <ol>
+
+<li>Melden Sie sich am Azure-Verwaltungsportal an.</li>
+<li>Klicken Sie im linken Bereich auf "Active Directory".</li>
+<li>Klicken Sie unter „Verzeichnis“ auf das Verzeichnis, für das Sie vertrauenswürdige IPs einrichten möchten.</li>
+<li>Klicken Sie im ausgewählten Verzeichnis auf "Konfigurieren".</li>
+<li>Klicken Sie im Abschnitt "Multi-Factor Authentication" auf "Diensteinstellungen verwalten".</li>
+<li>Wählen Sie auf der Seite „Diensteinstellungen“ unter „Vertrauenswürdige IPs“ die Option **Für Anforderungen von Partnerbenutzern, die aus meinem Intranet stammen**.</li>
+
+![Cloud](./media/multi-factor-authentication-get-started-adfs-cloud/trustedip6.png)
+
+<li>Klicken Sie auf "Speichern".</li>
+<li>Sobald die Updates angewendet wurden, klicken Sie auf "Schließen".</li>
+
+Fertig! An diesem Punkt sollten Office 365-Partnerbenutzer nur MFA verwenden müssen, wenn ein Anspruch von außerhalb des Unternehmensintranets stammt.
+
+<!---HONumber=July15_HO4-->

@@ -84,4 +84,4 @@ Sobald Ihre API-App erstellt wurde, können Sie den OneDrive-Connector als Aktio
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [OneDrive Connector (in englischer Sprache)]: https://msdn.microsoft.com/de-de/library/dn974227.aspx
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

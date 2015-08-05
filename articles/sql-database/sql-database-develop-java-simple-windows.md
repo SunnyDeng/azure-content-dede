@@ -225,4 +225,4 @@ Kopieren Sie diesen kurzen Java-Codeausschnitt, und fügen Sie ihn beim Kommenta
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

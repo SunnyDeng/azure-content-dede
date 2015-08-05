@@ -32,7 +32,7 @@ Klicken Sie, um den [SDK-Inhalt](mobile-engagement-windows-phone-sdk-content.md)
 
 ##Versionshinweise
 
-###3\.0.0 (03.04.2015)
+###3.0.0 (03.04.2015)
 
 -   Standardbenachrichtigungssymbol aktualisiert.
 -   Beim Klicken auf eine Benachrichtigung wird Feedback zur Systembenachrichtigungsaktion gesendet.
@@ -55,4 +55,4 @@ Keiner.
 Siehe [Upgrade-Verfahren](mobile-engagement-windows-phone-upgrade-procedure/)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -153,18 +153,18 @@ Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen 
 
 Nachdem der SQLDW-Dienst bereitgestellt wurde, können wir jetzt zu dessen Verwendung übergehen.
 
-In den nächsten Schritten erfahren Sie daher Folgendes: 1. Data Warehouse – [Verbinden und Abfragen](sql-data-warehouse-get-started-connect-query.md). 2. Exportieren von Daten aus Data Warehouse in einen Azure Blob-Speicher. 3. Laden Sie weitere Daten in Data Warehouse.
+In den nächsten Schritten erfahren Sie daher Folgendes: 1. Data Warehouse – [Verbinden und Abfragen][]. 2. Exportieren von Daten aus Data Warehouse in einen Azure Blob-Speicher. 3. Laden Sie weitere Daten in Data Warehouse.
 
 
 <!--Image references-->
 
 
 <!-- Articles -->
-
+[Verbinden und Abfragen]: sql-data-warehouse-get-started-connect-query.md
 
 <!--External links-->
 [kostenlose Testversion]: https://azure.microsoft.com/de-de/pricing/free-trial/
 [Azure-Portal]: https://portal.azure.com/
 [Azure-Portals]: https://portal.azure.com/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

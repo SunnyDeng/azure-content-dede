@@ -91,4 +91,4 @@ Um das deaktivierte Geräts mit den Werkseinstellungen wiederherzustellen, gehen
 
 Für technische Unterstützung [wenden Sie sich an den Microsoft Support](https://msdn.microsoft.com/library/azure/dn757750.aspx).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

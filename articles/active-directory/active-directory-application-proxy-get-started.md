@@ -24,9 +24,9 @@ Sie möchten für Remotebenutzer den Zugriff mit beliebigen Arten von Geräten b
 In einer modernen Cloudumgebung erreichen Sie mit dem Anwendungsproxy in Microsoft Azure Active Directory die nächste Ebene des Remotezugriffs. Der Anwendungsproxy ist ein Feature von Azure AD, das als Dienst bereitgestellt wird, d. h. es ist einfach bereitzustellen und zu verwenden. Es ist in Azure Active Directory integriert, der gleichen Identitätsplattform, die von Office 365 verwendet wird.
 
 ## Was ist der Azure Active Directory-Anwendungsproxy?
-Der Anwendungsproxy ermöglicht die einmalige Anmeldung und sicheren Remotezugriff für lokal gehostete Webanwendungen, wie z. B. SharePoint-Websites und Outlook Web Access. Auf Ihre lokalen Webanwendungen kann jetzt genauso zugegriffen werden wie auf Ihre SaaS-Apps in Azure Active Directory, ohne dass ein VPN oder die Änderung der Netzwerkinfrastruktur nötig wäre. Mit dem Anwendungsproxy können Sie Anwendungen veröffentlichen. Mitarbeiter können sich auf ihren eigenen Geräten von zu Hause aus auf Ihre Anwendungen anmelden und sich über diesen cloudbasierten Proxy authentifizieren.
+Der Anwendungsproxy ermöglicht die einmalige Anmeldung und sicheren Remotezugriff für lokal gehostete Webanwendungen, wie z. B. SharePoint-Websites und Outlook Web Access. Auf Ihre lokalen Webanwendungen kann jetzt genauso zugegriffen werden wie auf Ihre SaaS-Apps in Azure Active Directory, ohne dass ein VPN oder die Änderung der Netzwerkinfrastruktur nötig wäre. Mit dem Anwendungsproxy können Sie Anwendungen veröffentlichen. Mitarbeiter können sich auf ihren eigenen Geräten von daheim aus auf Ihre Anwendungen anmelden und sich über diesen cloudbasierten Proxy authentifizieren.
 
-## Wie funktioniert es?
+## Wie funktioniert Application Insights?
 ### Aktivieren des Zugriffs
 Um den Anwendungsproxy nutzen zu können, müssen Sie einen als Connector bezeichneten schlanken Windows Server-Dienst in Ihrem Netzwerk installieren. Für den Connector müssen Sie keine eingehenden Ports öffnen und keine Komponenten in der DMZ platzieren. Wenn der Datenverkehr für Ihre Apps ansteigt, können Sie weitere Connectors hinzufügen, und der Dienst übernimmt den Lastenausgleich. Connectors sind zustandslos und rufen alle Informationen nach Bedarf aus der Cloud ab. Beim Remotezugriff eines Benutzers auf Anwendungen mit einem beliebigen Gerät wird er von Azure Active Directory authentifiziert und erhält Zugriff auf die Anwendung.
 
@@ -61,4 +61,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 * [Als Organisation für Azure registrieren](../sign-up-organization.md)
 * [Azure-Identität](../fundamentals-identity.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

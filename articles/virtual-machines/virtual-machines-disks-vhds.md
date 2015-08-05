@@ -65,4 +65,4 @@ Virtuelle Windows-Computer:
 -  [Erfassen eines virtuellen Windows-Computers](virtual-machines-capture-image-windows-server.md)
 -  [Trennen eines Datenträgers](storage-windows-detach-disk.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

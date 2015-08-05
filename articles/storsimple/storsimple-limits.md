@@ -27,4 +27,4 @@ StorSimple bietet skalierbaren und flexiblen Speicher für Ihr Rechenzentrum. Es
 
 Überprüfen Sie die [StorSimple-Systemanforderungen](storsimple-system-requirements.md).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

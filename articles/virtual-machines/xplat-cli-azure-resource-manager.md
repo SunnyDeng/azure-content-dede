@@ -340,4 +340,4 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

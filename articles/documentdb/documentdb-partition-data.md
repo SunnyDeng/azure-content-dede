@@ -113,4 +113,4 @@ In diesem Artikel haben wir einige gängige Verfahren der Datenpartitionierung m
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

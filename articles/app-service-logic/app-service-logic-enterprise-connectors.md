@@ -71,7 +71,7 @@ In den folgenden Schritte erstellen Sie einen Enterprise-Connector auf dem dazug
 2. Wählen Sie den Connector aus. Wählen Sie im neuen Blatt **Erstellen** aus. 
 3. Geben Sie die Eigenschaften ein: 
 
-	Eigenschaft | Beschreibung
+Eigenschaft | Beschreibung
 --- | ---
 Name | Geben Sie einen beliebigen Namen für den Connector ein. Sie können ihn beispielsweise *SAPConnector*, *SalesForceGetAccounts* oder *QuickBooksGetItems* nennen.
 Paketeinstellungen | Geben Sie die Einstellungen für das Enterprise-System ein, wie z. B. *SAP-Benutzername* oder *SugarCRM-Server-URL*. Siehe [Spezifische Eigenschaften des Enterprise-Systems](#AddProperties) in diesem Thema. 
@@ -87,7 +87,7 @@ Zum Startmenü hinzufügen | Wählen Sie diese Option aus, um den Connector Ihre
 
 > [AZURE.IMPORTANT]Jeder Connector verfügt über Eigenschaften, die für das jeweilige Enterprise-System spezifisch sind. Beim Herstellen einer Verbindung mit SAP geben Sie SAP-spezifische Eigenschaften ein. Beim Herstellen einer Verbindung mit Salesforce geben Sie Salesforce-spezifische Eigenschaften ein usw. In der folgenden Tabelle sind die erforderlichen Enterprise-Systemeigenschaften aufgeführt:
 	
-	Enterprise System | Required Properties
+Enterprise System | Required Properties
 --- | ---
 Marketo | <ul><li>Endpunkt</li><li>Name des Anbieters</li></ul>
 MongoDB| <ul><li>Verbindungszeichenfolge</li><li>Host</li><li>Port</li><li>Benutzername</li><li>Kennwort</li><li>Datenbank</li><li>Verwendung der SSL-Verschlüsselung</li><li>Lokal: Geben Sie "False" ein, wenn die Lösung cloudbasiert ist. Wenn das MongoDb-System lokal ist, geben Sie "True" und außerdem die folgenden Eigenschaften ein:<ul><li>Name des freigegebenen Zugriffsschlüssels</li><li>Service Bus-Namespace</li><li>Relaypfad</li><li>Schlüssel senden</li></ul></li></ul>
@@ -158,4 +158,4 @@ Einige der Enterprise-Connectors verwenden die OAuth-Sicherheitsfunktionen. Wenn
 
 [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/>[Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

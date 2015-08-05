@@ -108,4 +108,4 @@ Sie können den Redis Cache auch zum Zwischenspeichern von Objekten in Ihrer Web
   [ManageKeys]: ./media/web-sites-dotnet-session-state-caching/CachingScreenshot_ManageAccessKeys.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

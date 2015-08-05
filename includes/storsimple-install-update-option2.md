@@ -15,4 +15,4 @@
 
 7. Sie können nun [das Verwaltungsportal zum Installieren von Update 1 verwenden](#use-the-management-portal-to-install-update-1).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

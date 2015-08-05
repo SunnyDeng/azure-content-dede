@@ -286,4 +286,4 @@ Die Verbindung mit Office 365-Diensten kann sowohl über NSPs als auch EXPs herg
 Ja. Office 365-Dienstendpunkte sind über das Internet erreichbar, selbst wenn ExpressRoute für Ihr Netzwerk konfiguriert wurde. Wenn Sie sich an einem Ort befinden, an dem die Verbindung mit Office 365-Diensten über ExpressRoute konfiguriert wurde, wird die Verbindung über ExpressRoute hergestellt.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

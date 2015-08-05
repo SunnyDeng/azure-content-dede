@@ -376,4 +376,4 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeicher vertraut gemacht haben,
 [API-Referenz zum Azure Storage-SDK für Node]: http://dl.windowsazure.com/nodestoragedocs/index.html
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/01/2015"
+   ms.date="07/10/2015"
    ms.author="joaoma" />
 
 
@@ -77,7 +77,11 @@ Die Azure-Lastenausgleichskonfiguration unterstützt vollständige Cone-NAT für
 
 ![SNAT](./media/load-balancer-overview/load-balancer-snat.png)
 
-Beachten Sie, dass für jede neue ausgehende Verbindung, die von einem virtuellen Computer initiiert wurde, auch ein ausgehender Port vom Azure-Lastenausgleich zugeordnet wird. Dem externen Host wird eingehender Datenverkehr über eine VIP mit zugewiesenem Port angezeigt. Wenn Ihre Szenarios eine große Anzahl ausgehender Verbindungen benötigen, empfiehlt es sich, dass die virtuellen Computer öffentliche IP-Adressen auf Instanzebene verwenden, damit diese über eine festgelegte ausgehende IP für die Quell-NAT (SNAT, Source Network Address Translation) verfügen. Dies reduziert das Risiko von Portauslastung.
+
+>[AZURE.NOTE]Beachten Sie, dass für jede neue ausgehende Verbindung, die von einem virtuellen Computer initiiert wurde, auch ein ausgehender Port vom Azure-Lastenausgleich zugeordnet wird. Dem externen Host wird eingehender Datenverkehr über eine VIP mit zugewiesenem Port angezeigt. Wenn Ihre Szenarios eine große Anzahl ausgehender Verbindungen benötigen, empfiehlt es sich, dass die virtuellen Computer öffentliche IP-Adressen auf Instanzebene verwenden, damit diese über eine festgelegte ausgehende IP für die Quell-NAT (SNAT, Source Network Address Translation) verfügen. Dies reduziert das Risiko von Portauslastung.
+>
+>Die maximale Anzahl von Ports, die für VIP oder ILPIP verwendet werden können, beträgt 64k. Dies ist eine standardmäßige Einschränkung für TCP.
+
 
 **Unterstützung für mehrere IPs mit Lastenausgleich für virtuelle Computer**
 
@@ -95,4 +99,4 @@ Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-
 [Erste Schritte – Lastenausgleich für Internetzugriff](load-balancer-internet-getstarted.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

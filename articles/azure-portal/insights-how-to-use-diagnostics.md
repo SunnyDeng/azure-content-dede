@@ -71,4 +71,4 @@ Beachten Sie, dass derzeit bestimmte Linux-Distributionen nicht unterstützt wer
 * [Nachverfolgen der Dienstintegrität](insights-service-health.md), um den Zeitpunkt von Leistungsabfällen oder Dienstunterbrechungen zu ermitteln, die in Azure aufgetreten sind. 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -112,7 +112,7 @@ Wenn Sie zu einer vorhandenen Azure-VM migrieren, sind die folgenden Konfigurati
 		- Benutzername
 		- Neues Kennwort
 		- Kennwort bestätigen
-		- Standort
+		- Verzeichnis
 		- Größe
  	- Bestätigen Sie durch Klicken das automatisch generierte Zertifikat für diesen neuen virtuellen Microsoft Azure-Computer, und klicken Sie dann auf "OK".
 
@@ -161,4 +161,4 @@ Verwenden Sie diese Methode, um alle System- und Benutzerdatenbanken in einer lo
 
 Mithilfe der Methode [Windows Import-Export-Dienst](../storage-import-export-service/) können Sie große Mengen von Dateidaten an Azure-Blob-Speicher übertragen, beispielsweise, wenn das Hochladen über das Netzwerk zu kostenintensiv oder nicht machbar ist. Mit diesem Dienst versenden Sie Festplatten mit den Daten an ein Azure-Rechenzentrum, in dem die Daten in Ihr Speicherkonto hochgeladen werden.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

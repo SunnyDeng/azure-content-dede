@@ -1315,4 +1315,4 @@ Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.micr
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

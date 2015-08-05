@@ -63,4 +63,4 @@ Wenn Sie ein Software als Service (SaaS)-Entwickler sind, erfahren Sie mehr übe
 [4]: ./media/sql-database-connect-excel/power-pivot-results.png
 [5]: ./media/sql-database-connect-excel/select-database-and-table.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

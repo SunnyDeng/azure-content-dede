@@ -115,6 +115,17 @@ Die Testdefinition steuert auch die Häufigkeit des Tests. In unserem Fall teste
 
 Überprüfen Sie für weitere Informationen das Dienstdefinitionsschema für das [LoadBalancerProbe-Schema](https://msdn.microsoft.com/library/azure/jj151530.aspx).
 
+## Einrichten des Load Balancers mit PowerShell
+
+Nach dem Erstellen eines virtuellen Computers können Sie PowerShell-Cmdlets verwenden, um einem virtuellen Computer in demselben Clouddienst einen Load Balancer hinzuzufügen.
+
+Im folgenden Beispiel fügen Sie einen Load Balancer mit dem Namen „webfarm“ dem Clouddienst-Endpunkt „mycloudservice“ (bzw. „mycloudservice.cloudapp.net“) und dem Namen „myVM“ für den virtuellen Computer hinzu. Der Load Balancer empfängt Datenverkehr über Port 80 und führt für den Netzwerkdatenverkehr zwischen den virtuellen Computern über Port 8080 per HTTP einen Lastenausgleich durch.
+
+	Get-AzureVM -ServiceName "mycloudservice" -Name "MyVM" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -LBSetName "WebFarm" -ProbePort 80 -ProbeProtocol "http" -ProbePath '/' | Update-AzureVM
+
+
+
+
 ## Nächste Schritte
 
 [Erste Schritte zum Konfigurieren des internen Lastenausgleichs](load-balancer-internal-getstarted.md)
@@ -124,4 +135,4 @@ Die Testdefinition steuert auch die Häufigkeit des Tests. In unserem Fall teste
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

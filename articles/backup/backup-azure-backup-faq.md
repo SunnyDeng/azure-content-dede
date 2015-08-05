@@ -132,4 +132,4 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 
 **F4. Was geschieht, wenn ich den Schlüssel verlege? Kann ich die Daten wiederherstellen, oder kann Microsoft die Daten wiederherstellen?** <br/> A4. Der Schlüssel zum Verschlüsseln der Sicherungsdaten ist nur am Standort des Kunden vorhanden. Microsoft behält keine Kopie in Azure und hat keinen Zugriff auf den Schlüssel. Wenn der Kunde den Schlüssel verlegt, kann Microsoft die gesicherten Daten nicht wiederherstellen.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

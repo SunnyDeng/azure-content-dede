@@ -81,4 +81,4 @@ Um die Beispiele für C++ zu untersuchen, laden Sie die [Speicherclientbibliothe
 - [Quellcode für die Speicherclientbibliothek für C++](https://github.com/Azure/azure-storage-cpp)
 - [Referenz zur C++-Clientbibliothek](http://azure.github.io/azure-storage-cpp/) 
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

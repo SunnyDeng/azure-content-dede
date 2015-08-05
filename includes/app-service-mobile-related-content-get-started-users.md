@@ -6,4 +6,4 @@ Fügen Sie Ihrer mobilen App eine Authentifizierung hinzu: [iOS][ios-get-started
 [xamarin-android-get-started-users]: ../article/app-service-mobile/app-service-mobile-dotnet-backend-xamarin-android-get-started-users-preview.md
 [ios-get-started-users]: ../article/app-service-mobile/app-service-mobile-dotnet-backend-ios-get-started-users-preview.md
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

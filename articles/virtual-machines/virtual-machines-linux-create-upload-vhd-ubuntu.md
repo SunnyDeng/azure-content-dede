@@ -93,7 +93,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 
 	a) Öffnen Sie die Datei /etc/grub.d/00_header.
 
-	b) Suchen Sie in der **make_timeout()**-Funktion **if ["\\${recordfail}" = 1 ]; then**
+	b) Suchen Sie in der **make_timeout()**-Funktion **if ["\${recordfail}" = 1 ]; then**
 
 	c) Ändern Sie die Anweisung unterhalb dieser Zeile in **set timeout=5**.
 
@@ -125,4 +125,4 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

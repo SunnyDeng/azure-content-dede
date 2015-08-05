@@ -250,7 +250,7 @@ Melden Sie sich am virtuellen Computer an, und erstellen Sie die Verzeichnisstru
 	echo "installation is complete"
 
 
-Wenn Sie dieses Skript in das vim-Fenster einfügen, stellen Sie sicher, dass Sie den Wagenrücklauf ("\\r") mithilfe des folgenden Befehls entfernen:
+Wenn Sie dieses Skript in das vim-Fenster einfügen, stellen Sie sicher, dass Sie den Wagenrücklauf ("\r") mithilfe des folgenden Befehls entfernen:
 
 	tr -d '\r' <infile.sh >outfile.sh
 
@@ -700,4 +700,4 @@ Microsoft Azure ist eine flexible Plattform, die das Ausführen von Microsoft- s
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

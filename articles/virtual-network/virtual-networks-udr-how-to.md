@@ -150,4 +150,4 @@ Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
 
 [Übersicht über benutzerdefinierte Routen und die IP-Weiterleitung](../virtual-networks-udr-overview)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

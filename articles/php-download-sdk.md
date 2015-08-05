@@ -136,4 +136,4 @@ Informationen zur Verwendung der Azure-Befehlszeilenschnittstelle finden Sie unt
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

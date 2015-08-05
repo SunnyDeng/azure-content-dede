@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/15/2015"
+   ms.date="07/16/2015"
    ms.author="cherylmc" />
 
 # Häufig gestellte Fragen zum VPN-Gateway
@@ -27,7 +27,7 @@ Ja. Es gelten keine regionsbedingten Einschränkungen. Verbindungen können sowo
 Ja.
 ### Kann ich eine Verbindung mit mehreren Standorten eines einzelnen virtuellen Netzwerks herstellen?
 
-Verbindungen mit mehreren Standorten können mit Windows PowerShell und den REST-APIs von Azure hergestellt werden. Weitere Informationen finden Sie im Abschnitt [Mehrere Standorte und VNet-zu-VNet-Verbindungen](#Multi-Site-and-VNet-to-VNet-Connectivity).
+Verbindungen mit mehreren Standorten können mit Windows PowerShell und den REST-APIs von Azure hergestellt werden. Weitere Informationen finden Sie im Abschnitt [Mehrere Standorte und VNet-zu-VNet-Verbindungen](#multi-site-and-vnet-to-vnet-connectivity).
 ## Welche Optionen stehen mir bei standortübergreifenden Verbindungen zur Verfügung?
 
 Virtual Network unterstützt folgende standortübergreifende Verbindungen:
@@ -162,7 +162,7 @@ Fügen Sie die einzelnen Bereiche, die über das Gateway für Ihr virtuelles Net
 
 ### Kann ich eine erzwungene Tunnelung konfigurieren?
 
-Ja. Weitere Informationen finden Sie unter [Informationen zu erzwungener Tunnelung](http://go.microsoft.com/fwlink/p/?LinkId=615153).
+Ja. Weitere Informationen finden Sie unter [Informationen zu erzwungener Tunnelung](vpn-gateway-about-forced-tunneling.md).
 
 ### Kann ich in Azure einen eigenen VPN-Server einrichten und damit eine Verbindung mit meinem lokalen Netzwerk herstellen?
 
@@ -170,7 +170,7 @@ Ja. Sie können in Azure eigene VPN-Gateways oder -Server bereitstellen (entwede
 
 ### Weitere Informationen zu Gatewaytypen, Anforderungen und Durchsatz
 
-Weitere Informationen finden Sie unter [Gateways](http://go.microsoft.com/fwlink/p/?LinkID=615098).
+Weitere Informationen finden Sie unter[Informationen zu VPN-Gateways](vpn-gateway-about-vpngateways.md).
 
 ## Mehrere Standorte und VNet-zu-VNet-Verbindungen
 
@@ -244,4 +244,4 @@ Weitere Informationen finden Sie in anderen häufig gestellten Fragen zum Netzwe
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

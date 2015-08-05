@@ -63,7 +63,7 @@ Die Features des Premium-Add-Ons können bei der Erstellung einer neuen ExpressR
 ### 3. Überprüfen Sie, ob das ExpressRoute Premium-Add-on aktiviert ist
 Sie können überprüfen, ob das ExpressRoute Premium-Add-On für Ihre Verbindung aktiviert ist. Im folgenden Beispiel ist die ExpressRoute-Verbindung nicht mit den Features des ExpressRoute Premium-Add-Ons aktiviert. Wenn das Add-on aktiviert ist, wird als SKU ***Premium*** angezeigt.
 
-		PS C:> Get-AzureDedicatedCircuit -ServiceKey *********************************
+		PS C:\> Get-AzureDedicatedCircuit -ServiceKey *********************************
 
 		Bandwidth                        : 200
 		CircuitName                      : TestCircuit
@@ -86,15 +86,15 @@ Die Features des ExpressRoute Premium-Add-Ons können für jede bereits vorhande
 	Die Details Ihrer ExpressRoute-Verbindung können Sie mit dem folgenden PowerShell-Cmdlet abrufen:
 		
 
-    	PS C:> Get-AzureDedicatedCircuit
+    	PS C:\> Get-AzureDedicatedCircuit
 	
 	Dieser Befehl gibt eine Liste aller Verbindungen zurück, die Sie innerhalb Ihres Abonnements erstellt haben. Mit dem folgenden Befehl können Sie die Details einer bestimmten ExpressRoute-Verbindung abrufen, sofern Sie den Dienstschlüssel kennen.
 
-		 PS C:> Get-AzureDedicatedCircuit -ServiceKey <skey>
+		 PS C:\> Get-AzureDedicatedCircuit -ServiceKey <skey>
 
 	Ersetzen Sie <skey> durch den korrekten Dienstschlüssel.
 	
-		PS C:> Get-AzureDedicatedCircuit -ServiceKey *********************************
+		PS C:\> Get-AzureDedicatedCircuit -ServiceKey *********************************
 
 		Bandwidth                        : 200
 		CircuitName                      : TestCircuit
@@ -111,7 +111,7 @@ Die Features des ExpressRoute Premium-Add-Ons können für jede bereits vorhande
 
 	Für Ihre bereits vorhandene Verbindung können Sie das ExpressRoute Premium-Add-On mit dem folgenden PowerShell-Cmdlet aktivieren:
 	
-		PS C:> Set-AzureDedicatedCircuitProperties -ServiceKey "*********************************" -Sku Premium
+		PS C:\> Set-AzureDedicatedCircuitProperties -ServiceKey "*********************************" -Sku Premium
 		
 		Bandwidth                        : 1000
 		CircuitName                      : TestCircuit
@@ -136,15 +136,15 @@ Für eine ExpressRoute-Verbindung mit aktiviertem Premium-Add-On kann das Add-On
 	Die Details Ihrer ExpressRoute-Verbindung können Sie mit dem folgenden PowerShell-Cmdlet abrufen:
 		
 
-    	PS C:> Get-AzureDedicatedCircuit
+    	PS C:\> Get-AzureDedicatedCircuit
 	
 	Dieser Befehl gibt eine Liste aller Verbindungen zurück, die Sie innerhalb Ihres Abonnements erstellt haben. Mit dem folgenden Befehl können Sie die Details einer bestimmten ExpressRoute-Verbindung abrufen, sofern Sie den Dienstschlüssel kennen.
 
-		 PS C:> Get-AzureDedicatedCircuit -ServiceKey <skey>
+		 PS C:\> Get-AzureDedicatedCircuit -ServiceKey <skey>
 
 	Ersetzen Sie <skey> durch den korrekten Dienstschlüssel.
 	
-		PS C:> Get-AzureDedicatedCircuit -ServiceKey *********************************
+		PS C:\> Get-AzureDedicatedCircuit -ServiceKey *********************************
 
 		Bandwidth                        : 200
 		CircuitName                      : TestCircuit
@@ -161,7 +161,7 @@ Für eine ExpressRoute-Verbindung mit aktiviertem Premium-Add-On kann das Add-On
 
 	Für Ihre bereits vorhandene Verbindung können Sie das ExpressRoute Premium-Add-On mit dem folgenden PowerShell-Cmdlet deaktivieren:
 	
-		PS C:> Set-AzureDedicatedCircuitProperties -ServiceKey "*********************************" -Sku Standard
+		PS C:\> Set-AzureDedicatedCircuitProperties -ServiceKey "*********************************" -Sku Standard
 		
 		Bandwidth                        : 1000
 		CircuitName                      : TestCircuit
@@ -177,4 +177,4 @@ Für eine ExpressRoute-Verbindung mit aktiviertem Premium-Add-On kann das Add-On
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

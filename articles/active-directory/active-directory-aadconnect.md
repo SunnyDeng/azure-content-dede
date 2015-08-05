@@ -110,11 +110,11 @@ Die folgende Tabelle zeigt die Mindestanforderungen für den Azure AD Connect-Co
 | Anzahl der Objekte in Active Directory | CPU | Arbeitsspeicher | Festplattengröße |
 | ------------------------------------- | --- | ------ | --------------- |
 | Weniger als 10.000 | 1,6 GHz | 4 GB | 70 GB |
-| 10\.000 bis 50.000 | 1,6 GHz | 4 GB | 70 GB |
-| 50\.000 bis 100.000 | 1,6 GHz | 16 GB | 100 GB |
+| 10.000 bis 50.000 | 1,6 GHz | 4 GB | 70 GB |
+| 50.000 bis 100.000 | 1,6 GHz | 16 GB | 100 GB |
 | Für 100.000 oder mehr Objekte ist die Vollversion von SQL Server erforderlich| | | |
-| 100\.000 bis 300.000 | 1,6 GHz | 32 GB | 300 GB |
-| 300\.000 bis 600.000 | 1,6 GHz | 32 GB | 450 GB |
+| 100.000 bis 300.000 | 1,6 GHz | 32 GB | 300 GB |
+| 300.000 bis 600.000 | 1,6 GHz | 32 GB | 450 GB |
 | Mehr als 600.000 | 1,6 GHz | 32 GB | 500 GB |
 
 
@@ -252,4 +252,4 @@ Ignite 2015-Präsentation über die Erweiterung lokaler Verzeichnisse in die Cl
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

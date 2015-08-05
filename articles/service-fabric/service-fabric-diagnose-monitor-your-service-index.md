@@ -40,4 +40,4 @@ Service Fabric führt ein Integritätsmodell ein, das eine umfassende, flexible 
 - [Gewusst wie: Hinzufügen von Service Fabric-Integritätsberichten](service-fabric-report-health.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

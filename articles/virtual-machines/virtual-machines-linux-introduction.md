@@ -110,4 +110,4 @@ Der Datenträger unter Linux kann vom Kernel den Namen `/dev/sdc` erhalten. Die 
  - **Siehe auch:** [Konfigurieren des Software-RAID unter Linux](virtual-machines-linux-configure-raid.md)
  
 
-<!----HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -56,4 +56,4 @@ Azure Active Directory (Azure AD) unterstützt mehrere der am häufigsten verwen
 [Active Directory-Codebeispiele](active-directory-code-samples.md)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

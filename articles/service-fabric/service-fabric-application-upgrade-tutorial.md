@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/15/2015"
+   ms.date="07/17/2015"
    ms.author="subramar"/>
 
 
@@ -80,7 +80,7 @@ UpgradeTimeout = 3000
 
 ## Schritt 4: Vorbereiten der Anwendung für das Upgrade
 
-Die Anwendung ist nun erstellt und kann aktualisiert werden. Wenn Sie als Administrator ein PowerShell-Fenster öffnen und **Get-ServiceFabricApplication** eingeben, sollte angezeigt werden, dass der Anwendungstyp "1.0.0.0" von **VisualObjects** bereitgestellt wurde. Das Anwendungspaket ist unter dem folgenden relativen Pfad gespeichert, in dem Sie das Service Fabric-SDK dekomprimiert haben: *Samples\\Services\\Stateful\\VisualObjects\\VisualObjects\\obj\\x64\\Debug*. In diesem Verzeichnis befindet sich der Ordner "Package" – hier ist das Anwendungspaket gespeichert. Überprüfen Sie die Zeitstempel, um sicherzustellen, dass es sich um die neueste Version handelt (möglicherweise müssen Sie auch die Pfade entsprechend ändern).
+Die Anwendung ist nun erstellt und kann aktualisiert werden. Wenn Sie als Administrator ein PowerShell-Fenster öffnen und **Get-ServiceFabricApplication** eingeben, sollte angezeigt werden, dass der Anwendungstyp "1.0.0.0" von **VisualObjects** bereitgestellt wurde. Das Anwendungspaket ist unter dem folgenden relativen Pfad gespeichert, in dem Sie das Service Fabric-SDK dekomprimiert haben: *Samples\Services\Stateful\VisualObjects\VisualObjects\obj\x64\Debug*. In diesem Verzeichnis befindet sich der Ordner "Package" – hier ist das Anwendungspaket gespeichert. Überprüfen Sie die Zeitstempel, um sicherzustellen, dass es sich um die neueste Version handelt (möglicherweise müssen Sie auch die Pfade entsprechend ändern).
 
 Jetzt kopieren Sie das aktualisierte Anwendungspaket in den Service Fabric-ImageStore (in dem die Anwendungspakete von Service Fabric gespeichert werden). Der *ApplicationPackagePathInImageStore*-Parameter informiert Service Fabric darüber, wo sich das Anwendungspaket befindet. Wir haben die aktualisierte Anwendung mit dem folgenden Befehl in "VisualObjects_V2" abgelegt (möglicherweise müssen Sie die Pfade wieder entsprechend ändern).
 
@@ -126,4 +126,4 @@ Sie können auch versuchen, als Übung Version 2 in Version 3 oder gar Version
 [Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

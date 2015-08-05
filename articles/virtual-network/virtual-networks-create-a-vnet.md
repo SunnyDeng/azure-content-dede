@@ -52,4 +52,4 @@ Nachdem Sie Ihr virtuelles Netzwerk erstellt haben, können Sie ihm neue VMs und
 
 -  [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](../virtual-machines/virtual-machines-create-custom.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

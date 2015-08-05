@@ -127,4 +127,4 @@ Hinweis: Nicht alle der oben genannten Ausgabeformate werden zur Übermittlung p
 
 Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjekt trotzdem eine leere TTML-Datei.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -60,7 +60,7 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
 	Bevor Sie eine Verbindung herstellen, benötigen Sie eine Liste der Dienstanbieter sowie der unterstützten Standorte und Bandbreitenoptionen für jeden Standort. Verwenden Sie das folgende PowerShell-Cmdlet, um diese Informationen abzurufen, die Sie für einen späteren Schritt benötigen.
 
-    	PS C:> Get-AzureDedicatedCircuitServiceProvider
+    	PS C:\> Get-AzureDedicatedCircuitServiceProvider
 		**The information returned will look similar to the example below:**
 
 
@@ -117,7 +117,7 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
 	Sie können diese Informationen jederzeit mithilfe des Cmdlets "Get-AzureCircuit" abrufen. Wenn Sie den Aufruf ohne Parameter durchführen, werden alle Verbindungen aufgelistet. Der Dienstschlüssel wird im Feld "ServiceKey" aufgeführt.
 
-		PS C:> Get-AzureDedicatedCircuit
+		PS C:\> Get-AzureDedicatedCircuit
 
 		Bandwidth                        : 200
 		CircuitName                      : EquinixSVTest
@@ -136,7 +136,7 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
 	Dadurch wissen Sie, wann Ihr Anbieter die Verbindung aktiviert hat. Sobald die Verbindung aktiviert wurde, zeigt *ServiceProviderProvisioningState* wie im folgenden Beispiel den Status *Provisioned* an.
 
-		PS C:> Get-AzureDedicatedCircuit
+		PS C:\> Get-AzureDedicatedCircuit
 
 		Bandwidth                        : 200
 		CircuitName                      : EquinixSVTest
@@ -170,7 +170,7 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
 	Die unten stehende Antwort enthält die Informationen, die Sie für die nächsten Schritte benötigen. Verwenden Sie die Peer-ASN, um für Ihre Router-VRFs BGP zu konfigurieren.
 
-		PS C:> New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN –AccessType Private
+		PS C:\> New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN –AccessType Private
 
 		AzureAsn            : 12076
 		PeerAsn             : 65001
@@ -205,7 +205,7 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
 	Die unten stehende Antwort enthält die Informationen, die Sie für die nächsten Schritte benötigen. Verwenden Sie die Peer-ASN, um für Ihre Router-VRFs BGP zu konfigurieren.
 
-		PS C:> New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN –AccessType Private
+		PS C:\> New-AzureBGPPeering -ServiceKey $ServiceKey -PrimaryPeerSubnet $PriSN -SecondaryPeerSubnet $SecSN -PeerAsn $ASN -VlanId $VLAN –AccessType Private
 
 		AzureAsn            : 12076
 		PeerAsn             : 65001
@@ -224,8 +224,8 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 	- ServiceProviderProvisioningState: Provisioned
 	- Status: Enabled
 
-			PS C:> $Vnet = "MyTestVNet"
+			PS C:\> $Vnet = "MyTestVNet"
 			New-AzureDedicatedCircuitLink -ServiceKey $ServiceKey -VNetName $Vnet
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

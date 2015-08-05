@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="get-started-article" 
-	ms.date="04/14/2015"
+	ms.date="07/17/2015"
 	ms.author="cakarst"/>
 
 
@@ -137,4 +137,4 @@ Auf dem Blatt mit den Verbindungszeichenfolgen für Datenbanken werden die entsp
 2. Das Programm zeigt die Ergebnisse der Abfrage im Konsolenfenster an.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

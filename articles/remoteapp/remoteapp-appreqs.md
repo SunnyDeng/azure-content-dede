@@ -3,7 +3,7 @@
     pageTitle="App-Anforderungen für RemoteApp"
     description="Erfahren Sie die Anforderungen an Apps, die Sie in RemoteApp verwenden möchten." 
     services="remoteapp" 
-    documentationCenter="" 
+	documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
 
@@ -56,4 +56,4 @@ Gehen Sie nach den folgenden Richtlinien vor, um Anwendungen für RemoteApp zu e
 - Um die Leistung zu optimieren, empfiehlt es sich, der Anwendung eine [Erkennung](https://msdn.microsoft.com/library/aa380798.aspx) hinzuzufügen, ob sie in einer Clientsitzung ausgeführt wird. 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

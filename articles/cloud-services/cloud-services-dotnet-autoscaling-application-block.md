@@ -380,4 +380,4 @@ Da Sie jetzt die Grundlagen der Verwendung des Anwendungsblocks für die automat
   [Reduzieren der TechNet- und MSDN-Hostingkosten und der Umweltbelastung mit automatischer Skalierung in Azure]: http://msdn.microsoft.com/library/jj838718(PandP.50).aspx
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

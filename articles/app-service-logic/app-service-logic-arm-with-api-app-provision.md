@@ -133,7 +133,7 @@ Erstellt die Web-App, die das Gateway hostet.
                     },
                     {
                         "name": "EmaStorage",
-                        "value": "D:\\home\\data\\apiapps"
+                        "value": "D:\home\data\apiapps"
                     },
                     {
                         "name": "WEBSITE_START_SCM_ON_SITE_CREATION",
@@ -394,4 +394,4 @@ Beachten Sie, dass die Logik-App das Token verwendet, um das Gateway aufzurufen.
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

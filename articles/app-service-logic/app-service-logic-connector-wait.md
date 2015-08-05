@@ -64,4 +64,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [2]: ./media/app-service-logic-wait/DelayInput.PNG
 [3]: ./media/app-service-logic-wait/ActionConfigured.PNG
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

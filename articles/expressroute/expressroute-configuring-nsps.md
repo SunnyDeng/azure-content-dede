@@ -58,11 +58,11 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
 	Bevor Sie eine Verbindung herstellen, benötigen Sie eine Liste der Dienstanbieter sowie der unterstützten Standorte und Bandbreitenoptionen für jeden Standort. Verwenden Sie das folgende PowerShell-Cmdlet, um diese Informationen abzurufen, die Sie für einen späteren Schritt benötigen.
 
-		PS C:> Get-AzureDedicatedCircuitServiceProvider
+		PS C:\> Get-AzureDedicatedCircuitServiceProvider
 
 	Die zurückgegebenen Informationen sehen ähnlich wie im folgenden Beispiel aus:
 
-		PS C:> Get-AzureDedicatedCircuitServiceProvider
+		PS C:\> Get-AzureDedicatedCircuitServiceProvider
 	
 		Name                 DedicatedCircuitLocations      DedicatedCircuitBandwidths                                                                                                                                                                                   
 		----                 -------------------------      --------------------------                                                                                                                                                                                   
@@ -118,7 +118,7 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
 	Sie können diese Informationen jederzeit mithilfe des Cmdlets "Get-AzureCircuit" abrufen. Wenn Sie den Aufruf ohne Parameter durchführen, werden alle Verbindungen aufgelistet. Der Dienstschlüssel wird im Feld "ServiceKey" aufgeführt.
 
-		PS C:> Get-AzureDedicatedCircuit
+		PS C:\> Get-AzureDedicatedCircuit
 		
 		Bandwidth                        : 500
 		CircuitName                      : NetBondSVTest
@@ -145,9 +145,9 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
 	Stellen Sie sicher, dass Sie über mindestens ein virtuelles Azure-Netzwerk mit einem Gateway verfügen. Das Gateway muss ausgeführt werden.
 
-		PS C:> $Vnet = "MyTestVNet"
+		PS C:\> $Vnet = "MyTestVNet"
 		New-AzureDedicatedCircuitLink -ServiceKey $ServiceKey -VNetName $Vnet
 		
 		Provisioned 
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

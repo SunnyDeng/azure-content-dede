@@ -17,7 +17,7 @@
 
 # Konfigurieren eines VPN-Gateways im Verwaltungsportal
 
-Wenn Sie eine sichere standortübergreifende Verbindung zwischen Azure und Ihrem lokalen Standort erstellen möchten, benötigen Sie ein konfiguriertes VPN-Gateway. Es gibt verschiedene Arten von Gateways, und die Art des zu erstellenden Gateways hängt sowohl von Ihrem Netzwerkentwurf als auch vom gewünschten lokalen VPN-Gerät ab. Einige Konnektivitätsoptionen (wie etwa Punkt-zu-Standort-Verbindungen) setzen ein Gateway mit dynamischem Routing voraus. Wenn Sie Ihr Gateway so konfigurieren möchten, dass es gleichzeitig Punkt-zu-Standort-Verbindungen (P2S) und eine Standort-zu-Standort-Verbindung (S2S) unterstützt, müssen Sie ein Gateway mit dynamischem Routing konfigurieren, auch wenn für die Standort-zu-Standort-Verbindung eigentlich ein beliebiger Gateway-Routingtyp konfiguriert werden kann. Darüber hinaus müssen Sie sicherstellen, dass das Gerät, das Sie für Ihre Standort-zu-Standort-Verbindung verwenden möchten, den gewünschten Gatewaytyp unterstützt. Weitere Informationen finden Sie unter [Gateways](http://go.microsoft.com/fwlink/p/?LinkID=615098).
+Wenn Sie eine sichere standortübergreifende Verbindung zwischen Azure und Ihrem lokalen Standort erstellen möchten, benötigen Sie ein konfiguriertes VPN-Gateway. Es gibt verschiedene Arten von Gateways, und die Art des zu erstellenden Gateways hängt sowohl von Ihrem Netzwerkentwurf als auch vom gewünschten lokalen VPN-Gerät ab. Einige Konnektivitätsoptionen (wie etwa Punkt-zu-Standort-Verbindungen) setzen ein Gateway mit dynamischem Routing voraus. Wenn Sie Ihr Gateway so konfigurieren möchten, dass es gleichzeitig Punkt-zu-Standort-Verbindungen (P2S) und eine Standort-zu-Standort-Verbindung (S2S) unterstützt, müssen Sie ein Gateway mit dynamischem Routing konfigurieren, auch wenn für die Standort-zu-Standort-Verbindung eigentlich ein beliebiger Gateway-Routingtyp konfiguriert werden kann. Darüber hinaus müssen Sie sicherstellen, dass das Gerät, das Sie für Ihre Standort-zu-Standort-Verbindung verwenden möchten, den gewünschten Gatewaytyp unterstützt. Siehe [Zu VPN-Gateways](vpn-gateway-about-vpngateways.md).
 
 ## Konfigurationsübersicht
 
@@ -149,4 +149,4 @@ Wenn Sie eine Punkt-zu-Standort-VPN-Verbindung konfigurieren möchten, helfen Ih
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -1,6 +1,5 @@
 <properties 
 	pageTitle="Erste Schritte mit Mobile Services für Xamarin.Android" 
-	writer="craigd" 
 	description="Erfahren Sie mehr über die Verwendung von Azure Mobile Services mit Ihrer Xamarin.Android-App." 
 	documentationCenter="xamarin" 
 	authors="lindydonna" 
@@ -137,4 +136,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Management Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

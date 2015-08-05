@@ -63,15 +63,15 @@ SQL Data Warehouse wird problemlos in wenigen Sekunden bereitgestellt. Dieser Di
 
 
 ## Nächste Schritte
-Erhalten Sie Informationen zum [Data Warehouse-Workload].
+Erfahren Sie mehr über die [Data Warehouse-Workload].
 
 <!--Image references-->
 
 <!--Article references-->
-[Data Warehouse-Workload] sql-data-warehouse-overview-workload.md
+[Data Warehouse-Workload]: ./sql-data-warehouse-overview-workload.md
 
 <!--MSDN references-->
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

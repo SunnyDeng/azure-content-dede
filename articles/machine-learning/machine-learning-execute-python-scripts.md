@@ -1,10 +1,10 @@
 <properties 
 	pageTitle="Ausführen von Python-Machine Learning-Skripts | Microsoft Azure" 
 	description="Beschreibt die Entwurfsprinzipien, die der Unterstützung für Python-Skripts in Azure Machine Learning zugrunde liegen, sowie die grundlegenden Verwendungsszenarien, Funktionen und Einschränkungen." 
-	keywords="python machine learning,pandas,python pandas,python scripts"
+	keywords="python machine learning,pandas,python pandas,python scripts, execute python scripts"
 	services="machine-learning"
 	documentationCenter="" 
-	authors="garyericson" 
+	authors="bradsev" 
 	manager="paulettm" 
 	editor="cgronlun"/>
 
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/21/2015" 
-	ms.author="bradsev;garye" />
+	ms.date="07/14/2015" 
+	ms.author="bradsev" />
 
 
 # Ausführen von Python-Machine Learning-Skripts in Azure Machine Learning Studio
@@ -34,7 +34,7 @@ Die primäre Schnittstelle zu Python in Azure Machine Learning Studio wird durch
 
 ![image1](./media/machine-learning-execute-python-scripts/execute-machine-learning-python-scripts-module.png)
 
-![image2](./media/machine-learning-execute-python-scripts/embedded-machine-learning-python-script.png)
+![Bild2](./media/machine-learning-execute-python-scripts/embedded-machine-learning-python-script.png)
 
 Abbildung 1. Das **Execute Python Script**-Modul
 
@@ -171,4 +171,4 @@ In den nächsten Monaten werden wir zusätzliche Funktionen für das [Execute Py
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

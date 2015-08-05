@@ -1,43 +1,43 @@
-<properties 
-	pageTitle="Bereitstellen einer hoch verfügbaren Active Directory-Domäne mit einer Azure-Ressourcen-Manager-Vorlage" 
-	description="Mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach zwei Server bereitstellen, die als Active Directory-Domänencontroller fungieren." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+<properties
+	pageTitle="Bereitstellen einer hoch verfügbaren AD DS-Domäne mit einer Azure-Ressourcen-Manager-Vorlage"
+	description="Mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach zwei Server bereitstellen, die als AD DS-Domänencontroller fungieren."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="davidmu1"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/29/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/29/2015"
+	ms.author="davidmu"/>
 
 
-# Bereitstellen einer hoch verfügbaren Active Directory-Domäne mit einer Azure-Ressourcen-Manager-Vorlage
+# Bereitstellen einer hoch verfügbaren AD DS-Domäne mit einer Azure-Ressourcen-Manager-Vorlage
 
 Verwenden Sie die Anweisungen in diesem Artikel, um eine hoch verfügbare Active Directory-Domäne mit einer Ressourcen-Manager-Vorlage bereitzustellen. Mit dieser Vorlage werden zwei virtuelle Computer in einem neuen virtuellen Netzwerk im gleichen Subnetz erstellt.
 
 ![](./media/virtual-machines-workload-template-ad-domain/two-server-ad.png)
 
 Sie können die Vorlage mit dem Azure-Vorschauportal, mit Azure PowerShell oder der Azure-Befehlszeilenschnittstelle ausführen.
- 
+
 ## Azure-Vorschauportal
 
 Wenn Sie diesen Workload mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal bereitstellen möchten, klicken Sie [hier](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Factive-directory-new-domain-ha-2-dc%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-ad-domain/azure-portal-template.png)
- 
+
 1.	Klicken Sie im Bereich **Vorlage** auf **Speichern**.
 2.	Klicken Sie auf **Parameter**. Geben Sie im Bereich **Parameter** neue Werte ein, wählen Sie aus den zulässigen Werten aus, oder übernehmen Sie die Standardwerte. Klicken Sie dann auf **OK**.
 3.	Klicken Sie bei Bedarf auf **Abonnement**, und wählen Sie das richtige Azure-Abonnement aus.
 4.	Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine vorhandene Ressourcengruppe aus. Sie können auch auf **Oder neu erstellen** klicken, um einen neuen Trigger für diesen Workload zu erstellen.
 5.	Sofern erforderlich, klicken Sie auf **Ressourcengruppenstandort**, und wählen Sie den richtigen Azure-Standort aus.
-6.	Klicken Sie ggf. auf "Rechtliche Bedingungen", um die Nutzungsbedingungen für die Vorlage zu lesen.
+6.	Klicken Sie ggf. auf **Rechtliche Bedingungen**, um die Nutzungsbedingungen für die Vorlage zu lesen.
 7.	Klicken Sie auf **Erstellen**.
 
 Je nach Vorlage kann es einige Zeit dauern, bis der Workload in Azure erstellt ist. Wenn die Ausführung der Vorlage abgeschlossen ist, verfügen Sie über eine neue Active Directory-Domäne mit zwei Servern in der vorhandenen oder neuen Ressourcengruppe.
@@ -89,14 +89,14 @@ Beispiel:
 
 Beim Ausführen des Befehls **azure group deployment create** werden Sie aufgefordert, die Werte für eine Reihe von Parametern anzugeben. Sobald Sie alle Parameterwerte angegeben haben, werden die virtuellen Computer von Azure erstellt und konfiguriert.
 
-Wenn die Ausführung der Vorlage abgeschlossen ist, verfügen Sie über eine neue Active Directory-Domänenkonfiguration mit zwei Servern in der neuen Ressourcengruppe.
+Wenn die Ausführung der Vorlage abgeschlossen ist, verfügen Sie über eine neue AD DS-Domänenkonfiguration mit zwei Servern in der neuen Ressourcengruppe.
 
 
 ## Zusätzliche Ressourcen
 
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
+[Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
-[Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
 
 [Übersicht über den Azure Resource Manager](../resource-group-overview.md)
 
@@ -106,4 +106,4 @@ Wenn die Ausführung der Vorlage abgeschlossen ist, verfügen Sie über eine neu
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

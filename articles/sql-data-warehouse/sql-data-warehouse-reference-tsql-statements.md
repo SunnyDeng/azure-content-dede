@@ -127,4 +127,4 @@ Weitere Referenzinformationen finden Sie unter â€SQL Data Warehouse-Referenz â€
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -66,12 +66,12 @@ Führen Sie auf dem virtuellen Computer, auf dem das FreeBSD-Betriebssystem inst
 
 5. Voraussetzungen für den Azure-Agent
 
-    5\.1 **Installieren von python**
+    5.1 **Installieren von python**
 
 		# pkg install python27 py27-asn1
 		# ln -s /usr/local/bin/python2.7 /usr/bin/python
 
-    5\.2 **Installieren von wget**
+    5.2 **Installieren von wget**
 
 		# pkg install wget 
 
@@ -206,4 +206,4 @@ Nach dem Hochladen fügen Sie die VHD-Datei als Image zu der Ihrem Abonnement zu
 	![FreeBSD-Images in Azure](./media/virtual-machines-freebsd-create-upload-vhd/freebsdimageinazure.png)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

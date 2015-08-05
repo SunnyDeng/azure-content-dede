@@ -32,4 +32,4 @@ Bei Images haben Sie die folgenden Möglichkeiten:
 Unabhängig davon, wo Sie Ihr Image erhalten oder wie Sie es erstellen, sollten Sie sicherstellen, dass Sie die [Anwendungsanforderungen](remoteapp-appreqs.md) verstehen, sodass Ihre Anwendung in RemoteApp gut funktioniert. Der nächste Schritt ist die Erstellung einer [Cloud-](remoteapp-create-cloud-deployment.md) oder [Hybrid-](remoteapp-create-hybrid-deployment.md)Sammlung.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

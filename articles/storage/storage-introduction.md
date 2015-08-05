@@ -224,4 +224,4 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 - [Verwenden des Warteschlangenspeichers mit Python](storage-python-how-to-use-queue-storage.md)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

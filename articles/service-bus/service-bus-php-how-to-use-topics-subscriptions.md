@@ -332,4 +332,4 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind,
 [require-once]: http://php.net/require_once
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -1,8 +1,6 @@
 <properties 
-	title="" 
 	pageTitle="Auswählen von Algorithmen für das maschinelle Lernen | Microsoft Azure" 
 	description="Auswahl eines Azure Machine Learning-Algorithmus für überwachtes und unüberwachtes Lernen bei Clustering-, Klassifizierungs- oder Regressionsexperimenten." 
-	keywords="machine learning algorithms,types of machine learning algorithms,types of machine learning,clustering,clustering algorithm"	
 	services="machine-learning"
 	documentationCenter="" 
 	authors="garyericson" 
@@ -264,4 +262,4 @@ Weitere Informationen:
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -114,4 +114,4 @@ In den Schritten werden folgende Bezeichnungen verwendet: – *Quellcomputer* �
 ## Nächste Schritte
 - [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -319,4 +319,4 @@ Nachdem Sie Ihr Datenbankschema erfolgreich in SQL Data Warehouse migriert haben
 
 <!-- Other web references -->
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

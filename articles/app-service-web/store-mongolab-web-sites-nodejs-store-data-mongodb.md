@@ -68,7 +68,7 @@ Wenn Sie den Azure Store bereits kennengelernt haben, finden Sie in diesem Absch
  		...
  		mongoose.connect(connectionString);
 
-Hinweis: Azure fügt das Präfix **CUSTOMCONNSTR\\_** zur ursprünglich deklarierten Verbindungszeichenfolge hinzu. Darum wird im Code auf **CUSTOMCONNSTR\\_MONGOLAB\\_URI.** und nicht auf **MONGOLAB\\_URI** verwiesen.
+Hinweis: Azure fügt das Präfix **CUSTOMCONNSTR\_** zur ursprünglich deklarierten Verbindungszeichenfolge hinzu. Darum wird im Code auf **CUSTOMCONNSTR\_MONGOLAB\_URI.** und nicht auf **MONGOLAB\_URI** verwiesen.
 
 Nun folgt das vollständige Lernprogramm ...
 
@@ -570,4 +570,4 @@ Glückwunsch! Sie haben gerade eine "Node.js"-Anwendung mit einer von MongoLab g
 [mongolab-view]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/mongolab-view.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

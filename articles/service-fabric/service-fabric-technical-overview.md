@@ -54,4 +54,4 @@ Weitere Informationen zu Service Fabric finden Sie unter:
 - [Anwendungsszenarien](service-fabric-application-scenarios.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

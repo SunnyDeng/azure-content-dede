@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/22/2015" 
+	ms.date="07/10/2015" 
 	ms.author="garye"/>
 
 
@@ -40,14 +40,16 @@ Gehen Sie hierzu wie folgt vor:
 - Konvertieren des *Trainingsexperiments* in ein *Bewertungsexperiment*
 - Veröffentlichen des Bewertungsexperiments als Webdienst
 
-Zunächst muss das Experiment optimiert werden. Zurzeit enthält das Experiment zwei verschiedene Modelle, nun müssen Sie ein Modell auswählen,das veröffentlicht werden soll. In unserem Beispiel entscheiden wir, dass das Boosted Tree-Modell sich besser zur Verwendung eignet. Als Erstes müssen Sie nun das Modul [Two-Class Support Vector Machine][two-class-support-vector-machine] sowie die Module entfernen, mit denen dieses Modul trainiert wurde. Am besten erstellen Sie zunächst eine Kopie des Experiments, indem Sie unten in der Canvas des Experiments auf **Save As** klicken.
+Zunächst muss das Experiment optimiert werden. Zurzeit enthält das Experiment zwei verschiedene Modelle, nun müssen Sie ein Modell auswählen,das veröffentlicht werden soll.
+
+In unserem Beispiel entscheiden wir, dass das Boosted Tree-Modell sich besser zur Verwendung eignet. Als Erstes müssen Sie nun das Modul [Two-Class Support Vector Machine][two-class-support-vector-machine] sowie die Module entfernen, mit denen dieses Modul trainiert wurde. Am besten erstellen Sie zunächst eine Kopie des Experiments, indem Sie unten in der Canvas des Experiments auf **Save As** klicken.
 
 Folgende Module müssen gelöscht werden:
 
 1.	[Two-Class Support Vector Machine][two-class-support-vector-machine]
 2.	Die damit verbundenen Module [Train Model][train-model] und [Score Model][score-model]
 3.	[Normalize Data][normalize-data] (beide)
-4.	[Evaluate Model][evaluate-model]
+4.	[Modell evaluieren][evaluate-model]
 
 Jetzt ist das Modell bereit für die Veröffentlichung.
 
@@ -63,7 +65,7 @@ Glücklicherweise können alle drei Schritte ausgeführt werden, indem Sie einfa
 
 Wenn Sie auf **Create Scoring Experiment** klicken, werden verschiedene Vorgänge ausgeführt:
 
-- Das trainierte Modell wird als **Trained Model**-Modul in der Modulpalette gespeichert, die sich links neben der Experimentcanvas befindet (Sie finden die Palette unter **Trained Models**).
+- Das trainierte Modell wird als **Trained Model**-Modul in der Modulpalette gespeichert, die sich links neben der Experimentcanvas befindet. (Sie finden die Palette unter **Trained Models**.)
 - Module, die zum Training verwendet wurden, werden entfernt. Dies gilt insbesondere in folgenden Fällen:
   - [Two-Class Boosted Decision Tree][two-class-boosted-decision-tree]
   - [Train Model][train-model] 
@@ -74,7 +76,7 @@ Wenn Sie auf **Create Scoring Experiment** klicken, werden verschiedene Vorgäng
 
 > [AZURE.NOTE]Das Experiment wurde in zwei Teilen gespeichert: das ursprüngliche Trainingsexperiment und das neue Bewertungsexperiment. Sie können auf beide Teile über die Registerkarten oberhalb der Experimentcanvas zugreifen.
 
-Für das vorliegende Experiment muss nun noch ein zusätzlicher Schritt ausgeführt werden. Machine Learning Studio hat beim Entfernen des [Split][split]-Moduls das eine der [Execute R Script][execute-r-script]-Module entfernt, das andere [Execute R Script][execute-r-script]-Modul jedoch nicht. Da dieses Modul nur zum Trainieren und Testen verwendet wurde (es hat eine Gewichtungsfunktion für die Stichprobendaten bereitgestellt), können Sie es nun entfernen und den [Metadata Editor][metadata-editor] mit dem Modul [Score Model][score-model] verbinden.
+Für das vorliegende Experiment muss nun noch ein zusätzlicher Schritt ausgeführt werden. Machine Learning Studio hat beim Entfernen des [Split][split]-Moduls eines der [Execute R Script][execute-r-script]-Module entfernt, das andere [Execute R Script][execute-r-script]-Modul jedoch nicht. Da dieses Modul nur zum Trainieren und Testen verwendet wurde (es hat eine Gewichtungsfunktion für die Stichprobendaten bereitgestellt), können Sie es nun entfernen und den [Metadata Editor][metadata-editor] mit dem Modul [Score Model][score-model] verbinden.
 
 Unser Experiment sollte nun wie folgt aussehen:
 
@@ -85,13 +87,13 @@ Sie fragen sich vielleicht, warum das Dataset "UCI German Credit Card Data" im B
 
 Es stimmt zwar, dass der Dienst die Originalkreditkartendaten nicht benötigt. Er benötigt aber das Schema für diese Daten, darunter Angaben zur Anzahl der vorhandenen Spalten, und welche Spalten numerisch sind. Diese Schemainformationen sind erforderlich, um die Benutzerdaten zu interpretieren. Wir lassen diese Komponenten verbunden, damit das Bewertungsmodul über das Datasetschema verfügt, wenn der Dienst ausgeführt wird. Es werden nicht die Daten verwendet, sondern nur das Schema.
 
-Führen Sie das Experiment ein letztes Mal aus (klicken Sie auf **AUSFÜHREN**). Wenn Sie überprüfen möchten, ob das Modell noch funktioniert, klicken Sie mit der rechten Maustaste auf die Ausgabe des Moduls [Modell bewerten][score-model], und wählen Sie **Visualisieren** aus. Sie sehen, dass die Originaldaten zusammen mit dem Wert für das Kreditrisiko („Bewertete Beschriftungen“)' und dem Bewertungswahrscheinlichkeitswert („Bewertete Wahrscheinlichkeiten“) angezeigt werden.
+Führen Sie das Experiment ein letztes Mal aus (klicken Sie auf **AUSFÜHREN**). Wenn Sie überprüfen möchten, ob das Modell noch funktioniert, klicken Sie mit der rechten Maustaste auf die Ausgabe des Moduls [Score Model][score-model] und wählen **View Results**. Sie sehen, dass die Originaldaten zusammen mit dem Wert für das Kreditrisiko („Bewertete Beschriftungen“)' und dem Bewertungswahrscheinlichkeitswert („Bewertete Wahrscheinlichkeiten“) angezeigt werden.
 
 ##Veröffentlichen des Webdiensts
 
-Um einen aus dem Experiment abgeleiteten Webdienst zu veröffentlichen, klicken Sie auf **WEBDIENST VERÖFFENTLICHEN** unter dem Bereich, und klicken Sie bei Aufforderung auf **JA**. Machine Learning Studio veröffentlicht das Experiment als Webdienst auf dem Machine Learning-Stagingserver und leitet Sie zum Dienstdashboard weiter.
+Um einen aus dem Experiment abgeleiteten Webdienst zu veröffentlichen, klicken Sie auf **PUBLISH WEB SERVICE** unter dem Bereich. Machine Learning Studio veröffentlicht das Experiment als Webdienst und führt Sie zum Dienst-Dashboard.
 
-> [AZURE.TIP]Sie können den Webdienst nach der Veröffentlichung aktualisieren. Wenn Sie das Modell ändern möchten, bearbeiten Sie einfach die Modellparameter im Trainingsexperiment, und klicken Sie auf **UPDATE SCORING EXPERIMENT**. Wenn Sie das Experiment erneut veröffentlichen, wird der Webdienst ersetzt und das aktualisierte Modell verwendet.
+> [AZURE.TIP]Sie können den Webdienst nach der Veröffentlichung aktualisieren. Wenn Sie das Modell ändern möchten, bearbeiten Sie einfach die Modellparameter im Trainingsexperiment und klicken auf **PUBLISH WEB SERVICE**. Wenn Sie das Experiment erneut veröffentlichen, wird der Webdienst ersetzt und das aktualisierte Modell verwendet.
 
 Sie können den Dienst konfigurieren, indem Sie auf die Registerkarte **KONFIGURATION** klicken. Hier können Sie den Dienstnamen ändern (er erhält standardmäßig den Namen des Experiments) und eine Beschreibung hinzufügen. Sie können auch benutzerfreundlichere Beschriftungen für die Eingabe- und Ausgabespalten festlegen.
 
@@ -125,4 +127,4 @@ Die vom Webdienst generierten Ergebnisse werden jetzt unten im Dashboard angezei
 [two-class-support-vector-machine]: https://msdn.microsoft.com/library/azure/12d8479b-74b4-4e67-b8de-d32867380e20/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

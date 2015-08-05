@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/15/2015"
+   ms.date="07/10/2015"
    ms.author="joaoma" />
 
 # Erste Schritte zum Konfigurieren des internen Lastenausgleichs
@@ -102,7 +102,7 @@ Um diese Befehle zu verwenden, geben Sie die Werte ein und entfernen die Symbole
 
 Notieren Sie aus der Anzeige des Befehls "Get-AzureInternalLoadBalancer" die IP-Adresse, und nehmen Sie die erforderlichen Änderungen an Ihren Servern oder DNS-Datensätzen vor, um sicherzustellen, dass der Datenverkehr an die VIP-Adresse gesendet wird.
 
->[AZURE.IMPORTANT]Die Microsoft Azure-Plattform nutzt eine statische, öffenlich routingfähige IPv4-Adresse für eine Vielzahl von administrativen Szenarien. Die IP-Adresse lautet 168.63.129.16. Diese IP-Adresse sollte nicht durch Firewalls blockiert werden, da dies zu unerwartetem Verhalten führen kann. In Bezug auf den Azure-ILB wird diese IP-Adresse durch die Überwachung der Prüfpunkte aus dem Lastenausgleich verwendet, um den Integritätsstatus von VMs in einem Lastenausgleichsatz zu bestimmen. Eine Netzwerk-Sicherheitsgruppe wird verwendet, um den Datenverkehr auf Virtual Machines in einem internen Lastenausgleichsatz einzuschränken, oder wird einem Virtual Network-Subnetz zugewiesen, um sicherzustellen, dass eine Netzwerksicherheitsregel hinzugefügt wird, um Datenverkehr von 168.63.129.16 zuzulassen.
+>[AZURE.NOTE]Die Microsoft Azure-Plattform nutzt eine statische, öffenlich routingfähige IPv4-Adresse für eine Vielzahl von administrativen Szenarien. Die IP-Adresse lautet 168.63.129.16. Diese IP-Adresse sollte nicht durch Firewalls blockiert werden, da dies zu unerwartetem Verhalten führen kann. In Bezug auf den Azure-ILB wird diese IP-Adresse durch die Überwachung der Prüfpunkte aus dem Lastenausgleich verwendet, um den Integritätsstatus von VMs in einem Lastenausgleichsatz zu bestimmen. Eine Netzwerk-Sicherheitsgruppe wird verwendet, um den Datenverkehr auf Virtual Machines in einem internen Lastenausgleichsatz einzuschränken, oder wird einem Virtual Network-Subnetz zugewiesen, um sicherzustellen, dass eine Netzwerksicherheitsregel hinzugefügt wird, um Datenverkehr von 168.63.129.16 zuzulassen.
 
 
 
@@ -224,15 +224,59 @@ Beispiel:
 
 ILB wird sowohl für virtuelle Computer als auch Clouddienste unterstützt. Ein ILB-Endpunkt, der in einem Clouddienst außerhalb eines regionalen virtuellen Netzwerks erstellt wurde, ist nur innerhalb des Clouddiensts verfügbar.
 
-Die ILB-Konfiguration muss während der Erstellung der ersten Bereitstellung im Clouddienst festgelegt werden, wie im folgenden Cmdlet-Beispiel dargestellt.
+Die ILB-Konfiguration muss während der Erstellung der ersten Bereitstellung im Clouddienst festgelegt werden, wie im folgenden Beispiel dargestellt.
 
-### Erstellen eines lokalen ILB-Objekts
-	$myilbconfig = New-AzureInternalLoadBalancerConfig -InternalLoadBalancerName "MyILB"
+>[AZURE.IMPORTANT]Voraussetzung für die Ausführung der folgenden Schritte ist, dass Sie bereits ein virtuelles Netzwerk für die Cloudbereitstellung erstellt haben. Zum Erstellen des ILB benötigen Sie den Namen des virtuellen Netzwerks und den Subnetznamen.
 
-### Hinzufügen von internem Lastenausgleich für einen neuen Dienst
+### Schritt 1
 
-	New-AzureVMConfig -Name "Instance1" -InstanceSize Small -ImageName <imagename> | Add-AzureProvisioningConfig -Windows -AdminUsername <username> -Password <password> | New-AzureVM -ServiceName "Website2" -InternalLoadBalancerConfig $myilbconfig -Location "West US"
+Öffnen Sie die Dienstkonfigurationsdatei (.cscfg) für Ihre Cloudbereitstellung in Visual Studio, und fügen Sie den folgenden Abschnitt hinzu, um den ILB unter dem letzten „</Role>“-Element für die Netzwerkkonfiguration zu erstellen.
 
+
+
+
+	<NetworkConfiguration>
+	  <LoadBalancers>
+	    <LoadBalancer name="name of the load balancer">
+	      <FrontendIPConfiguration type="private" subnet="subnet-name" staticVirtualNetworkIPAddress="static-IP-address"/>
+	    </LoadBalancer>
+	  </LoadBalancers>
+	</NetworkConfiguration>
+ 
+
+Wir fügen nun die Werte für die Netzwerkkonfigurationsdatei hinzu, um zu veranschaulichen, wie dies aussieht. Im Beispiel wird davon ausgegangen, dass Sie ein Subnetz mit dem Namen „test_vnet“ und einem 10.0.0.0/24-Subnetz erstellt haben, das „test_subnet“ heißt und die statische IP 10.0.0.4 aufweist. Der Load Balancer hat den Namen testLB.
+
+	<NetworkConfiguration>
+	  <LoadBalancers>
+	    <LoadBalancer name="testLB">
+	      <FrontendIPConfiguration type="private" subnet="test_subnet" staticVirtualNetworkIPAddress="10.0.0.4"/>
+	    </LoadBalancer>
+	  </LoadBalancers>
+	</NetworkConfiguration>
+
+Weitere Informationen zu Load Balancer-Schemas finden Sie unter [Hinzufügen eines Load Balancers](https://msdn.microsoft.com/library/azure/dn722411.aspx).
+
+### Schritt 2
+
+
+Ändern Sie die Dienstdefinitionsdatei (.csdef), um dem ILB Endpunkte hinzuzufügen. Zum Zeitpunkt der Erstellung einer Rolleninstanz fügt die Dienstdefinitionsdatei die Rolleninstanzen dem ILB hinzu.
+
+
+	<WorkerRole name="worker-role-name" vmsize="worker-role-size" enableNativeCodeExecution="[true|false]">
+	  <Endpoints>
+	    <InputEndpoint name="input-endpoint-name" protocol="[http|https|tcp|udp]" localPort="local-port-number" port="port-number" certificate="certificate-name" loadBalancerProbe="load-balancer-probe-name" loadBalancer="load-balancer-name" />
+	  </Endpoints>
+	</WorkerRole>
+
+Als Nächstes fügen wir der Dienstdefinitionsdatei die Werte hinzu, indem wir die Werte aus dem obigen Beispiel verwenden.
+
+	<WorkerRole name=WorkerRole1" vmsize="A7" enableNativeCodeExecution="[true|false]">
+	  <Endpoints>
+	    <InputEndpoint name="endpoint1" protocol="http" localPort="80" port="80" loadBalancer="testLB" />
+	  </Endpoints>
+	</WorkerRole>
+
+Für den Netzwerkdatenverkehr wird für eingehende Anforderungen mit dem Load Balancer „testLB“ ein Lastenausgleich über Port 80 durchgeführt, und das Senden an Workerrolleninstanzen erfolgt ebenfalls über Port 80.
 
 
 ## Entfernen der ILB-Konfiguration
@@ -266,6 +310,7 @@ Beispiel:
 	Remove-AzureInternalLoadBalancer -ServiceName $svc
 
 
+
 ## Weitere Informationen zu ILB-Cmdlets
 
 
@@ -286,4 +331,4 @@ Um weitere Informationen zu ILB-Cmdlets zu erhalten, führen Sie die folgenden B
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

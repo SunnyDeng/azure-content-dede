@@ -498,7 +498,7 @@ Jetzt konzentrieren wir uns auf die Erstellung der Benutzeroberfläche, um den B
 	
 	Dies sollte jetzt alles sein, damit unsere Anwendung funktioniert.
 
-5. Öffnen Sie die Datei **style.css** im Verzeichnis **Public\\stylesheets**, und ersetzen Sie den Code durch Folgendes:
+5. Öffnen Sie die Datei **style.css** im Verzeichnis **Public\stylesheets**, und ersetzen Sie den Code durch Folgendes:
 
 		body {
 		  padding: 50px;
@@ -559,4 +559,4 @@ Den Quellcode für die vollständige Referenzanwendung können Sie [hier](https:
   [Git]: http://git-scm.com/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

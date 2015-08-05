@@ -139,4 +139,4 @@ Weitere Storm-Beispiele für HDInsight:
 
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

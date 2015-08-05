@@ -149,4 +149,4 @@ Auf ähnliche Weise werden die Endpunkte für die gemeinsamen SAML 2.0-Protokol
 
 [Entwicklerhandbuch zu Azure Active Directory](active-directory-developers-guide.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

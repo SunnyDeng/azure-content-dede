@@ -78,4 +78,4 @@ Mit dem Abfrage-Explorer können Sie problemlos Abfragen für eine DocumentDB-Sa
 - Weitere Informationen zur DocumentDB-SQL-Grammatik, die im Abfrage-Explorer unterstützt wird, finden Sie [hier](documentdb-sql-query.md).
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

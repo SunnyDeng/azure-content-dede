@@ -3,7 +3,7 @@
 	description="Erläutert den Zweck der Auswahl und Entwicklung von Features und stellt Beispiele ihrer Rolle im Datenaufbereitungsprozess für das maschinelle Lernen vor."
 	services="machine-learning"
 	documentationCenter=""
-	authors="bradsev"
+	authors="YanZhangADS"
 	manager="paulettm"
 	editor="cgronlun"/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/21/2015"
+	ms.date="07/14/2015"
 	ms.author="zhangya;bradsev" />
 
 
@@ -37,7 +37,7 @@ Die Entwicklung und Auswahl von Features ist Bestandteil eines größeren Prozes
 Entwicklung und Auswahl bilden den Schritt der **Datenaufbereitung** beim maschinellen Lernen. Drei Aspekte dieses Prozesses können für unsere Zwecke unterschieden werden:
 
 * **Datenvorbearbeitung**: Dieser Prozess soll sicherstellen, dass die gesammelten Daten bereinigt und konsistent sind. Er umfasst Aufgaben wie das Integrieren mehrerer Datasets, Behandlung fehlender Daten, Behandlung inkonsistenter Daten und Konvertierung von Datentypen.
-* **Featureentwicklung**: Dieser Prozess versucht, zusätzliche relevante Features aus den vorhandenen Rohfeatures in den Daten zu erstellen und die Vorhersageleistung des Lernalgorithmus zu steigern.
+* **Featureentwicklung**: Bei diesem Prozess wird versucht, zusätzliche relevante Features aus den vorhandenen Rohfeatures in den Daten zu erstellen und die Vorhersageleistung des Lernalgorithmus zu steigern.
 * **Featureauswahl**: Dieser Prozess wählt bei dem Versuch, die Anzahl von Dimensionen des Trainingsproblems zu verringern, die wichtigste Teilmenge der ursprünglichen Datenfeatures aus.
 
 In diesem Thema werden nur die Aspekte Entwicklung und Auswahl von Features des Datenaufbereitungsprozesses behandelt. Weitere Informationen zur Vorbearbeitung von Daten finden Sie im Video [Vorbearbeitung von Daten in Azure ML Studio](http://azure.microsoft.com/documentation/videos/preprocessing-data-in-azure-ml-studio/).
@@ -135,4 +135,4 @@ Beachten Sie, dass die Entwicklung bzw. Auswahl von Features nicht immer unbedin
 [fisher-linear-discriminant-analysis]: https://msdn.microsoft.com/library/azure/dcaab0b2-59ca-4bec-bb66-79fd23540080/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

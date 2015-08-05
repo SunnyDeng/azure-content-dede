@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Traffic Manager-Ausgleichsmethoden"
-   description="Diese Artikel erläutern Ihnen die verschiedenen Lastenausgleichsmethoden von Traffic Manager"
+   pageTitle="Traffic Manager-Routingmethoden"
+   description="Diese Artikel erläutern Ihnen die verschiedenen Routingmethode für Datenverkehr, die von Traffic Manager verwendet werden"
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/01/2015"
+   ms.date="07/10/2015"
    ms.author="joaoma" />
 
 # Traffic Manager-Routingmethoden
@@ -23,23 +23,23 @@ Beachten Sie unbedingt, dass alle Routingmethoden eine Endpunktüberwachung bein
 
 Die drei folgenden Traffic Manager-Routingmethoden stehen zur Verfügung:
 
-- **Failover**: Wählen Sie "Failover" aus, wenn sich Endpunkte in demselben oder in verschiedenen Azure-Datencentern (im Verwaltungsportal als "Regionen" bezeichnet) befinden und Sie einen primären Endpunkt für den gesamten Datenverkehr verwenden, jedoch Sicherungen für den Fall bereitstellen möchten, dass die primären oder Sicherungsendpunkte nicht verfügbar sind. Weitere Informationen finden Sie unter [Lastenausgleichsmethode "Failover"](#failover-load-balancing-method).
+- **Failover**: Wählen Sie "Failover" aus, wenn sich Endpunkte in demselben oder in verschiedenen Azure-Datencentern (im Verwaltungsportal als "Regionen" bezeichnet) befinden und Sie einen primären Endpunkt für den gesamten Datenverkehr verwenden, jedoch Sicherungen für den Fall bereitstellen möchten, dass die primären oder Sicherungsendpunkte nicht verfügbar sind. Weitere Informationen finden Sie unter [Routingmethode für Failoverdatenverkehr](#failover-traffic-routing-method).
 
-- **Round Robin**: Wählen Sie "Roundrobin" aus, wenn Sie die Last auf eine Reihe von Endpunkten in demselben oder in verschiedenen Datencentern verteilen möchten. Weitere Informationen finden Sie unter [Lastenausgleichsmethode "Roundrobin"](#round-robin-load-balancing-method).
+- **Round Robin**: Wählen Sie "Roundrobin" aus, wenn Sie die Last auf eine Reihe von Endpunkten in demselben oder in verschiedenen Datencentern verteilen möchten. Weitere Informationen finden Sie unter [Routingmethode für Roundrobin-Datenverkehr](#round-robin-traffic-routing-method).
 
-- **Leistung**: Wählen Sie Leistung aus, wenn sich die Endpunkte an unterschiedlichen geografischen Standorten befinden und anfordernde Clients den "nächstgelegenen" Endpunkt (im Hinblick auf die geringste Wartezeit) verwenden sollen. Weitere Informationen finden Sie unter [Lastenausgleichsmethode "Leistung"](#performance-load-balancing-method).
+- **Leistung**: Wählen Sie Leistung aus, wenn sich die Endpunkte an unterschiedlichen geografischen Standorten befinden und anfordernde Clients den "nächstgelegenen" Endpunkt (im Hinblick auf die geringste Wartezeit) verwenden sollen. Weitere Informationen finden Sie unter [Routingmethode für Leistungsdatenverkehr](#performance-traffic-routing-method).
 
-Beachten Sie, dass Azure Websites bereits Failover- und Roundrobin-Lastenausgleichsfunktionen für Websites in einem Datencenter unabhängig vom Websitemodus zur Verfügung stellen. Traffic Manager ermöglicht das Angeben des Failover- und Roundrobin-Lastenausgleichs für Websites in verschiedenen Datencentern.
+Beachten Sie, dass Azure Websites bereits Funktionen für Failover- und Roundrobin-Datenverkehrs-Routingmethoden für Websites in einem Datencenter unabhängig vom Websitemodus zur Verfügung stellen. Traffic Manager ermöglicht das Angeben von Failover- und Roundrobin-Datenverkehrsrouting für Websites in verschiedenen Datencentern.
 
 >[AZURE.NOTE]Die DNS-Gültigkeitsdauer (TTL) informiert DNS-Clients und -Resolver auf DNS-Servern, wie lange die aufgelösten Namen zwischengespeichert werden sollen. Clients verwenden weiterhin einen bestimmten Endpunkt beim Auflösen des Domänennamens, bis der lokale DNS-Cacheeintrag für den Namen abläuft.
 
-### Lastenausgleichsmethode "Failover"
+## Routingmethode für Failoverdatenverkehr
 
 Organisationen möchten häufig sicherstellen, dass ihre Dienste zuverlässig funktionieren. Dazu stellen sie Sicherungsprogramme für den Fall bereit, dass der primäre Dienst ausfällt. Der Failover-Lastenausgleich für Dienste wird häufig implementiert, indem eine Reihe identischer Endpunkte bereitgestellt und Datenverkehr an einen primären Dienst gesendet wird. Dabei wird eine Liste mit mindestens einer Sicherung verwendet. Wenn der primäre Dienst nicht verfügbar ist, werden anfordernde Clients an den nächsten Dienst in der Reihenfolge verwiesen. Wenn der erste und der zweite aufgeführte Dienst nicht verfügbar sind, wird der Datenverkehr an den dritten Dienst gesendet usw.
 
-Wenn Sie die Lastenausgleichsmethode "Failover" konfigurieren, ist die Reihenfolge der ausgewählten Endpunkte von Bedeutung. Mithilfe des Verwaltungsportals können Sie die Failoverreihenfolge auf der Seite "Konfiguration" für das Profil konfigurieren.
+Wenn Sie die Routingmethode für Failoverdatenverkehr konfigurieren, ist die Reihenfolge der ausgewählten Endpunkte von Bedeutung. Mithilfe des Verwaltungsportals können Sie die Failoverreihenfolge auf der Seite "Konfiguration" für das Profil konfigurieren.
 
-Abbildung 1 zeigt ein Beispiel für die Failover-Lastenausgleichsmethode für eine Reihe von Endpunkten.
+Abbildung 1 zeigt ein Beispiel für die Routingmethode für Failoverdatenverkehr für eine Reihe von Endpunkten.
 
 ![Traffic Manager-Failoverlastenausgleich](./media/traffic-manager-load-balancing-methods/IC750592.jpg)
 
@@ -52,11 +52,11 @@ Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 1.
 3. Traffic Manager gibt den Domänennamen von CS-B an den DNS-Server des Clients zurück, der den Domänennamen in eine IP-Adresse auflöst und diese an den Client sendet.
 4. Der Client initiiert Datenverkehr an CS-B.
 
-### Lastenausgleichsmethode "Roundrobin"
+## Routingmethode für Round-Robin-Datenverkehr
 
-Ein gängiges Lastenausgleichsmuster besteht darin, eine Reihe identischer Endpunkte bereitzustellen und Datenverkehr im Roundrobin-Verfahren an die einzelnen Endpunkte zu senden. Die Methode "Roundrobin" teilt den Datenverkehr auf verschiedene Endpunkte auf. Dabei wird ein fehlerfreier Endpunkt nach dem Zufallsprinzip ausgewählt und kein Datenverkehr an Dienste gesendet, die ausgefallen sind. Weitere Informationen finden Sie unter [Traffic Manager-Überwachung](../traffic-manager-onitoring.md).
+Ein gängiges Muster für das Datenverkehrsrouting besteht darin, eine Reihe identischer Endpunkte bereitzustellen und Datenverkehr im Roundrobin-Verfahren an die einzelnen Endpunkte zu senden. Die Methode "Roundrobin" teilt den Datenverkehr auf verschiedene Endpunkte auf. Dabei wird ein fehlerfreier Endpunkt nach dem Zufallsprinzip ausgewählt und kein Datenverkehr an Dienste gesendet, die ausgefallen sind. Weitere Informationen finden Sie unter [Traffic Manager-Überwachung](../traffic-manager-onitoring.md).
 
-Abbildung 2 zeigt ein Beispiel für die Lastenausgleichsmethode "Roundrobin" für eine Reihe von Endpunkten.
+Abbildung 2 zeigt ein Beispiel für die Routingmethode für Roundrobin-Datenverkehr für eine Reihe von Endpunkten.
 
 ![Traffic Manager-Lastenausgleichsmethode "Roundrobin"](./media/traffic-manager-load-balancing-methods/IC750593.jpg)
 
@@ -69,19 +69,19 @@ Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 2.
 3. Traffic Manager gibt den Domänennamen von CS-B an den DNS-Server des Clients zurück. Der DNS-Server des Clients löst diesen Domänennamen in eine IP-Adresse auf und sendet diese an den Client.
 4. Der Client initiiert Datenverkehr an CS-B.
 
-Die Lastenausgleichsmethode "Roundrobin" unterstützt auch die gewichtete Verteilung des Netzwerkdatenverkehrs. Abbildung 3 zeigt ein Beispiel für die Lastenausgleichsmethode "Roundrobin gewichtet" für eine Reihe von Endpunkten.
+Das Routing von Roundrobin-Datenverkehr unterstützt auch die gewichtete Verteilung des Netzwerkdatenverkehrs. Abbildung 3 zeigt ein Beispiel für die gewichtete Routingmethode für Roundrobin-Datenverkehr für eine Reihe von Endpunkten.
 
 ![Gewichteter Roundrobin-Lastenausgleich](./media/traffic-manager-load-balancing-methods/IC750594.png)
 
 **Abbildung 3**
 
-Gewichteter Roundrobin-Lastenausgleich ermöglicht das Verteilen der Last auf verschiedene Endpunkte basierend auf einem zugewiesenen "Gewichtungswert" jedes Endpunkts. Je höher die Gewichtung ist, desto häufiger wird ein Endpunkt zurückgegeben. In den folgenden Szenarien kann diese Methode sinnvoll sein:
+Gewichtetes Routing von Roundrobin-Datenverkehr ermöglicht das Verteilen der Last auf verschiedene Endpunkte basierend auf einem zugewiesenen "Gewichtungswert" jedes Endpunkts. Je höher die Gewichtung ist, desto häufiger wird ein Endpunkt zurückgegeben. In den folgenden Szenarien kann diese Methode sinnvoll sein:
 
 - Allmähliches Anwendungsupgrade: Weisen Sie einen Prozentwert des Datenverkehrs zu, der an einen neuen Endpunkt weitergeleitet wird, und erhöhen Sie den Datenverkehr dann im Lauf der Zeit allmählich auf 100 %.
 - Anwendungsmigration zu Azure: Erstellen Sie ein Profil mit Azure- und externen Endpunkten, und geben Sie die Gewichtung des Datenverkehrs an, der an jeden Endpunkt weitergeleitet wird.
 - Erweiterung in die Cloud für zusätzliche Kapazität: Erweitern Sie eine lokale Bereitstellung schnell in die Cloud, indem Sie diese hinter einem Traffic Manager-Profil zur Verfügung stellen. Wenn Sie zusätzliche Kapazität in der Cloud benötigen, können Sie weitere Endpunkte hinzufügen oder aktivieren. Geben Sie dann an, welcher Teil des Datenverkehrs an jeden Endpunkt gesendet wird.
 
-Zurzeit kann das Verwaltungsportal nicht zum Konfigurieren von gewichtetem Lastenausgleich verwendet werden. Azure stellt programmgesteuerten Zugriff auf diese Methode mithilfe der zugehörigen Dienstverwaltungs-REST-API und der Azure PowerShell-Cmdlets zur Verfügung.
+Zurzeit kann das Verwaltungsportal nicht zum Konfigurieren von gewichtetem Datenverkehrsrouting verwendet werden. Azure stellt programmgesteuerten Zugriff auf diese Methode mithilfe der zugehörigen Dienstverwaltungs-REST-API und der Azure PowerShell-Cmdlets zur Verfügung.
 
 Informationen zur Verwendung der REST-APIs finden Sie unter [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/p/?LinkId=313584).
 
@@ -89,13 +89,13 @@ Informationen zur Verwendung der Azure PowerShell-Cmdlets finden Sie unter [Azur
 
 Wenn Sie das Profil von einem einzelnen Client aus testen und das gleichmäßige oder gewichtete Roundrobin-Verhalten beobachten möchten, überprüfen Sie, ob der DNS-Name in die verschiedenen IP-Adressen für die Endpunkte gemäß den gleichmäßigen oder gewichteten Werten im Profil aufgelöst wird. Beim Testen müssen Sie clientseitiges DNS-Caching deaktivieren oder den DNS-Cache zwischen den einzelnen Versuchen löschen, damit sichergestellt ist, dass eine neue Abfrage des DNS-Namens gesendet wird.
 
-### Lastenausgleichsmethode "Leistung"
+## Routingmethode für Leistungsdatenverkehr
 
-Wenn Sie Lastenausgleich für Endpunkte in verschiedenen Datencentern weltweit ausführen möchten, können Sie eingehenden Datenverkehr an den nächstgelegenen Endpunkt (den Endpunkt mit der geringsten Wartezeit zwischen dem anfordernden Client und dem Endpunkt) weiterleiten. Normalerweise entspricht der "nächstgelegene" Endpunkt direkt der kürzesten geografischen Distanz. Die leistungsbezogene Lastenausgleichsmethode ermöglicht Ihnen eine Verteilung basierend auf Standort und Latenz, kann jedoch nicht die Echtzeitänderungen in der Netzwerkkonfiguration bzw. Last berücksichtigen.
+Wenn Sie Datenverkehrsrouting für Endpunkte in verschiedenen Datencentern weltweit ausführen möchten, können Sie eingehenden Datenverkehr an den nächstgelegenen Endpunkt (den Endpunkt mit der geringsten Wartezeit zwischen dem anfordernden Client und dem Endpunkt) weiterleiten. Normalerweise entspricht der "nächstgelegene" Endpunkt direkt der kürzesten geografischen Distanz. Die Routingmethode für Leistungsdatenverkehr ermöglicht Ihnen eine Verteilung basierend auf Standort und Latenz, kann jedoch nicht die Echtzeitänderungen in der Netzwerkkonfiguration bzw. Last berücksichtigen.
 
-Die Lastenausgleichsmethode "Leistung" sucht den anfordernden Client und leitet ihn zum nächstgelegenen Endpunkt weiter. Die "Nähe" wird durch eine Internetlatenztabelle ermittelt, welche die Roundtripzeit zwischen verschiedenen IP-Adressen und den einzelnen Azure-Datencentern anzeigt. Diese Tabelle wird in regelmäßigen Abständen aktualisiert und spiegelt nicht die Leistung über das Internet in Echtzeit wider. Diese Methode berücksichtigt nicht die Arbeitsauslastung eines bestimmten Diensts. Traffic Manager überwacht jedoch Ihre Endpunkte auf der Grundlage der ausgewählten Methode und schließt diese nicht in die DNS-Abfrageantworten ein, wenn sie nicht verfügbar sind. Die Lastenausgleichsmethode "Leistung" umfasst also auch die Lastenausgleichsmethode "Failover".
+Die Routingmethode für Leistungsdatenverkehr sucht den anfordernden Client und leitet ihn zum nächstgelegenen Endpunkt weiter. Die "Nähe" wird durch eine Internetlatenztabelle ermittelt, welche die Roundtripzeit zwischen verschiedenen IP-Adressen und den einzelnen Azure-Datencentern anzeigt. Diese Tabelle wird in regelmäßigen Abständen aktualisiert und spiegelt nicht die Leistung über das Internet in Echtzeit wider. Diese Methode berücksichtigt nicht die Arbeitsauslastung eines bestimmten Diensts. Traffic Manager überwacht jedoch Ihre Endpunkte auf der Grundlage der ausgewählten Methode und schließt diese nicht in die DNS-Abfrageantworten ein, wenn sie nicht verfügbar sind. Anders ausgedrückt, umfasst das Routing von Leistungsdatenverkehr also auch die Routingmethode für Failoverdatenverkehr.
 
-Abbildung 4 zeigt ein Beispiel für die Lastenausgleichsmethode "Leistung" für eine Reihe von Endpunkten.
+Abbildung 4 zeigt ein Beispiel für die Routingmethode für Leistungsdatenverkehr für eine Reihe von Endpunkten.
 
 ![Traffic Manager-Leistungslastenausgleich](./media/traffic-manager-load-balancing-methods/IC753237.jpg)
 
@@ -115,13 +115,13 @@ Die folgenden nummerierten Schritte entsprechen den Ziffern in Abbildung 4.
 - Wenn das Profil mehrere Endpunkte im selben Datencenter enthält, wird der an dieses Datencenter gerichtete Datenverkehr gleichmäßig auf die verfügbaren Endpunkte verteilt, die gemäß der Endpunktüberwachung verfügbar und fehlerfrei sind.
 - Wenn alle Endpunkte in einem bestimmten Datencenter gemäß der Endpunktüberwachung nicht verfügbar sind, wird der an diese Endpunkte gerichtete Datenverkehr auf alle verfügbaren Endpunkte verteilt, die im Profil angegeben sind, und nicht auf den oder die nächstgelegenen Endpunkt(e). Auf diese Weise können Sie kaskadierende Fehler vermeiden, die auftreten können, wenn der nächstgelegene Endpunkt überlastet ist.
 - Wenn die Internetlatenztabelle aktualisiert wird, stellen Sie ggf. einen Unterschied bei den Mustern und der Auslastung für den Datenverkehr in Ihren Endpunkten fest. Diese Änderungen sollten nur geringfügiger Natur sein.
-- Wenn die Lastenausgleichsmethode "Leistung" mit externen Endpunkten verwendet wird, müssen Sie den Speicherort dieser Endpunkte angeben. Wählen Sie die Azure-Region aus, die Ihrer Bereitstellung am nächsten ist. Weitere Informationen finden Sie unter [Verwalten von Endpunkten in Traffic Manager](traffic-manager-endpoints.md).
+- Wenn die Routingmethode für Leistungsdatenverkehr mit externen Endpunkten verwendet wird, müssen Sie den Speicherort dieser Endpunkte angeben. Wählen Sie die Azure-Region aus, die Ihrer Bereitstellung am nächsten ist. Weitere Informationen finden Sie unter [Verwalten von Endpunkten in Traffic Manager](traffic-manager-endpoints.md).
 
 ## Traffic Manager-Abbildungen
 
 Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen Präsentation zu Traffic Manager verwenden oder für Ihre eigenen Zwecke ändern möchten, lesen Sie [Traffic Manager figures in MSDN documentation](http://gallery.technet.microsoft.com/Traffic-Manager-figures-in-887e7c99) (in englischer Sprache).
 
-## Siehe auch
+## Nächste Schritte
 
 [Traffic Manager – Übersicht](traffic-manager-overview.md)
 
@@ -137,4 +137,4 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

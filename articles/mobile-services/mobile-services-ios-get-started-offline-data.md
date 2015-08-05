@@ -124,8 +124,8 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
     #### MS_TableOperations
 
     | Attribut | Typ |
-    |----------- |   ------    |
-    | id | Integer 64 |
+    |-------------- |   ------    |
+    | ID (erforderlich) | Integer 64 |
     | itemId | String |
     | Eigenschaften | Binärdaten |
     | Tabelle | String |
@@ -134,8 +134,8 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
     #### MS_TableOperationErrors
 
     | Attribut | Typ |
-    |------------ | ----------  |
-    | id | String |
+    |-------------- | ----------  |
+    | ID (erforderlich) | String |
     | operationId | Integer 64 |
     | Eigenschaften | Binärdaten |
     | tableKind | Integer 16 |
@@ -144,8 +144,8 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
 
 
     | Attribut | Typ |
-    |----------- | ----------  |
-    | id | String |
+    |-------------- | ----------  |
+    | ID (erforderlich) | String |
     | key | String |
     | keyType | Integer 64 |
     | Tabelle | String |
@@ -155,14 +155,13 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
 
     #### TodoItem
 
-    | Attribut | Typ |
-    |-----------   |  ------ |
-    | id | String |
-    | complete | Boolean |
-    | Text | String |
-    | ms_createdAt | Datum |
-    | ms_updatedAt | Datum |
-    | ms_version | String |
+    | Attribut | Typ | Hinweis | 
+    |-------------- |  ------ | -------------------------------------------------------|
+    | ID (erforderlich) | String | Primärschlüssel im Remotespeicher (erforderlich) |
+    | complete | Boolean | Todo-Elementfeld |
+    | Text | String | Todo-Elementfeld |
+    | ms_createdAt | Datum | (optional) Zuordnung zur __createdAt-Systemeigenschaft | | ms_updatedAt | Datum | (optional) Zuordnung zur __updatedAt-Systemeigenschaft | | ms_version | String | (optional) Zum Erkennen von Konflikten, Zuordnung zu __version |
+
 
 
 ## <a name="setup-sync"></a>Ändern des Synchronisierungsverhaltens der App
@@ -191,7 +190,7 @@ In diesem Abschnitt ändern Sie die Anwendung, sodass beim Starten der App oder 
 
 In diesem Abschnitt werden Sie im Simulator Wi-Fi deaktivieren, um ein Offlineszenario zu erzeugen. Wenn Sie Datenelemente hinzufügen, werden diese im lokalen Core-Datenspeicher vorgehalten, jedoch nicht mit dem mobilen Dienst synchronisiert.
 
-1. Deaktivieren Sie Wi-Fi im iOS-Simulator. Dadurch wird ein Offlineszenario simuliert.
+1. Deaktivieren Sie die Internetverbindung auf Ihrem Macintosh. Das alleinige Deaktivieren des WLAN im iOS-Simulator hat unter Umständen keinerlei Auswirkung, da der Simulator die Internetverbindung des Macintosh-Hostcomputers nutzt. Sie sollten daher die Internetverbindung des Computers trennen. So wird ein Offlineszenario simuliert.
 
 2. Fügen Sie einige TODO-Elemente hinzu, oder schließen Sie einige Elemente ab. Beenden Sie den Simulator (oder Erzwingen Sie das Schließen der App), und starten Sie ihn neu. Stellen Sie sicher, dass die Änderungen erhalten geblieben sind. Beachten Sie, dass die Datenelemente weiterhin angezeigt werden, da sie im lokalen Core-Datenspeicher gespeichert sind.
 
@@ -272,4 +271,4 @@ Um den lokalen Speicher mit dem Server zu synchronisieren, wurden `MSSyncTable.p
 
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

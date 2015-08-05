@@ -82,4 +82,4 @@ Mit dem Skript-Explorer können Sie problemlos serverseitige Programmierartefakt
 Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

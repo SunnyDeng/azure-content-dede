@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/06/2015" 
+	ms.date="07/16/2015" 
 	ms.author="mimig"/>
 
 #Abfragen von DocumentDB
@@ -610,17 +610,25 @@ Sie können auch die Aufrufe vom Operator wie in der folgenden Abfrage verschach
 
 Wie bei anderen Abfrageoperatoren werden Dokumente mit fehlenden verweisenden Eigenschaften im bedingten Ausdruck oder Dokumente mit unterschiedlichen verglichenen Typen in den Abfrageergebnissen ausgeschlossen.
 
-Der koaleszierte (??) Operator kann zur effizienten Prüfung auf das Vorkommen einer Eigenschaft ("Defined") in einem Dokument verwendet werden. Dies ist bei Abfragen für teilweise strukturiert oder gemischte Datentypen nützlich. Diese Abfrage gibt z. B. "LastName", falls vorhanden, oder "Surname", falls nicht vorhanden zurück,.
+Der koaleszierte (??) Operator kann zur effizienten Prüfung auf das Vorkommen einer Eigenschaft ("Defined") in einem Dokument verwendet werden. Dies ist bei Abfragen für teilweise strukturiert oder gemischte Datentypen nützlich. Diese Abfrage gibt z. B. "LastName", falls vorhanden, oder "Surname", falls nicht vorhanden zurück.
 
     SELECT f.lastName ?? f.surname AS familyName
     FROM Families f
+
+###Eigenschaftenaccessor in Anführungszeichen
+Sie können auf Eigenschaften auch zugreifen, indem Sie den Anführungszeichenoperator `[]` für Eigenschaften verwenden. Beispielsweise sind `SELECT c.grade` und `SELECT c["grade"]` gleichwertig. Diese Syntax ist hilfreich, wenn Sie eine Eigenschaft mit Escapezeichen versehen müssen, die Leerzeichen oder Sonderzeichen enthält oder zufällig den gleichen Namen wie ein SQL-Schlüsselwort oder ein reserviertes Wort hat.
+
+    SELECT f["lastName"]
+    FROM Families f
+    WHERE f["id"] = "AndersenFamily"
+
 
 ##Die SELECT-Klausel
 Die SELECT-Klausel (**`SELECT <select_list>`**) ist obligatorisch und gibt an, welche Werte die Abfrage zurückgeben soll, wie auch in ANSI-SQL. Die gefilterte Teilmenge aus den Quelldokumenten wird an die Projektionsphase übergeben, in der die angegebenen JSON-Werte abgerufen werden und ein neues JSON-Objekt für jede übergebene Eingabe erstellt wird.
 
 Das folgende Beispiel zeigt eine typische SELECT-Abfrage:
 
-**Abfragen**
+**Abfrage**
 
 	SELECT f.address
 	FROM Families f 
@@ -640,7 +648,7 @@ Das folgende Beispiel zeigt eine typische SELECT-Abfrage:
 ###Verschachtelte Eigenschaften
 Im folgenden Beispiel werden zwei verschachtelte Eigenschaften projiziert: `f.address.state` und `f.address.city`.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT f.address.state, f.address.city
 	FROM Families f 
@@ -656,7 +664,7 @@ Im folgenden Beispiel werden zwei verschachtelte Eigenschaften projiziert: `f.ad
 
 Die Projektion unterstützt auch JSON-Ausdrücke, wie im folgenden Beispiel gezeigt.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT { "state": f.address.state, "city": f.address.city, "name": f.id }
 	FROM Families f 
@@ -675,7 +683,7 @@ Die Projektion unterstützt auch JSON-Ausdrücke, wie im folgenden Beispiel geze
 
 Beachten Sie die Rolle von `$1`. Die `SELECT`-Klausel muss ein JSON-Objekt erstellen. Da kein Schlüssel angegeben ist, verwenden wir implizite Argumentvariablennamen beginnend mit `$1`. Diese Abfrage gibt z. B. zwei implizite Argumentvariablen mit den Bezeichnungen `$1` und `$2` zurück.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT { "state": f.address.state, "city": f.address.city }, 
 	       { "name": f.id }
@@ -700,7 +708,7 @@ Wir werden das obige Beispiel nun erweitern und explizite Aliase für Werte verw
 
 Wenn eine Abfrage zwei Eigenschaften mit demselben Namen hat, müssen Aliase verwendet werden, um mindestens eine der Eigenschaften umzubenennen, sodass diese im projizierten Ergebnis eindeutig sind.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT 
 	       { "state": f.address.state, "city": f.address.city } AS AddressInfo, 
@@ -724,7 +732,7 @@ Wenn eine Abfrage zwei Eigenschaften mit demselben Namen hat, müssen Aliase ver
 ###Skalare Ausdrücke
 Neben Eigenschaftsverweisen unterstützt die SELECT-Klausel auch skalare Ausdrücke wie Konstanten, arithmetische Ausdrücke, logische Ausdrücke usw. Hier sehen Sie z. B. eine einfache „Hello World“-Abfrage.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT "Hello World"
 
@@ -737,7 +745,7 @@ Neben Eigenschaftsverweisen unterstützt die SELECT-Klausel auch skalare Ausdrü
 
 Hier ist ein komplexeres Beispiel mit einem skalaren Ausdruck:
 
-**Abfragen**
+**Abfrage**
 
 	SELECT ((2 + 11 % 7)-2)/3	
 
@@ -750,7 +758,7 @@ Hier ist ein komplexeres Beispiel mit einem skalaren Ausdruck:
 
 Das Ergebnis des skalaren Ausdrucks im folgenden Beispiel ist ein Boolean-Wert.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT f.address.city = f.address.state AS AreFromSameCityState
 	FROM Families f	
@@ -770,7 +778,7 @@ Das Ergebnis des skalaren Ausdrucks im folgenden Beispiel ist ein Boolean-Wert.
 ###Objekt- und Arrayerstellung
 Eine weitere Schlüsselfunktion von DocumentDB-SQL ist die Objekt- und Arrayerstellung. Im vorherigen Beispiel haben wir ein neues JSON-Objekt erstellt. Auf dieselbe Weise können Sie Arrays erstellen, wie in den folgenden Beispielen gezeigt.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT [f.address.city, f.address.state] AS CityState 
 	FROM Families f	
@@ -795,7 +803,7 @@ Eine weitere Schlüsselfunktion von DocumentDB-SQL ist die Objekt- und Arrayerst
 ###VALUE-Schlüsselwort
 Mit dem **VALUE**-Schlüsselwort können Sie JSON-Werte zurückgeben. Die folgende Abfrage gibt z. B. den skalaren Wert `"Hello World"` anstelle von `{$1: "Hello World"}` zurück.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT VALUE "Hello World"
 
@@ -808,7 +816,7 @@ Mit dem **VALUE**-Schlüsselwort können Sie JSON-Werte zurückgeben. Die folgen
 
 Die folgende Abfrage gibt den JSON-Wert ohne die `"address"`-Bezeichnung in den Ergebnissen zurück.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT VALUE f.address
 	FROM Families f	
@@ -830,7 +838,7 @@ Die folgende Abfrage gibt den JSON-Wert ohne die `"address"`-Bezeichnung in den 
 
 Das folgende Beispiel zeigt, wie Sie primitive JSON-Werte zurückgeben können (auf der Blattebene der JSON-Baumstruktur).
 
-**Abfragen**
+**Abfrage**
 
 	SELECT VALUE f.address.state
 	FROM Families f	
@@ -846,7 +854,7 @@ Das folgende Beispiel zeigt, wie Sie primitive JSON-Werte zurückgeben können (
 ###* Operator
 Der Sonderoperator (*) wird unterstützt, um das Dokument unverändert zu projizieren. Wenn dieser Operator verwendet wird, dürfen keine weiteren projizierten Felder existieren. Abfragen wie `SELECT * FROM Families f` sind z. B. gültig, während `SELECT VALUE * FROM Families f ` und `SELECT *, f.id FROM Families f ` nicht gültig sind.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT * 
 	FROM Families f 
@@ -877,7 +885,7 @@ Wie bei ANSI-SQL auch, können Sie beim Abfragen eine optionale Order By-Klausel
 
 Dies ist beispielsweise eine Abfrage, mit der Familien sortiert nach dem Namen des Wohnorts abgerufen werden.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT f.id, f.address.city
 	FROM Families f 
@@ -898,7 +906,7 @@ Dies ist beispielsweise eine Abfrage, mit der Familien sortiert nach dem Namen d
 
 Und mit dieser Abfrage werden Familien sortiert nach dem Erstellungsdatum abgerufen. Dieser Wert wird als Zahl gespeichert, der die „Epoche“ repräsentiert, also die seit dem 1. Januar 1970 verstrichene Zeit in Sekunden.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT f.id, f.creationDate
 	FROM Families f 
@@ -921,7 +929,7 @@ Und mit dieser Abfrage werden Familien sortiert nach dem Erstellungsdatum abgeru
 ###Iteration
 Es wurde ein neues Konstrukt mit dem **IN**-Schlüsselwort in DocumentDB-SQL eingeführt, mit dem JSON-Arrays durchlaufen werden können. Die FROM-Quelle bietet Unterstützung für Iterationen. Beginnen wir mit dem folgenden Beispiel:
 
-**Abfragen**
+**Abfrage**
 
 	SELECT * 
 	FROM Families.children
@@ -955,7 +963,7 @@ Es wurde ein neues Konstrukt mit dem **IN**-Schlüsselwort in DocumentDB-SQL ein
 
 Betrachten wir nun eine andere Abfrage, die untergeordnete Elemente in der Sammlung durchläuft. Beachten Sie den Unterschied im Ausgabe-Array. Dieses Beispiel teilt `children` und fügt das Ergebnis in ein einzelnes Array ein.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT * 
 	FROM c IN Families.children
@@ -985,7 +993,7 @@ Betrachten wir nun eine andere Abfrage, die untergeordnete Elemente in der Samml
 
 Mit dieser Funktion können Sie über einzelne Einträge im Array filtern, wie im folgenden Beispiel gezeigt.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT c.givenName
 	FROM c IN Families.children
@@ -1000,11 +1008,11 @@ Mit dieser Funktion können Sie über einzelne Einträge im Array filtern, wie i
 ###Joins
 Die Möglichkeit, Tabellen zu verknüpfen, ist sehr wichtig in relationalen Datenbanken. Es ist die logische Grundvoraussetzung für die Planung normalisierter Schemas. Im Gegensatz dazu arbeitet DocumentDB mit denormalisierten Datenmodellen schemafreier Dokumente. Dies ist das logische Äquivalent zu "Selbstverknüpfungen".
 
-Die Sprache unterstützt die Syntax "<from_source1> JOIN <from_source2> JOIN... JOIN <from_sourceN>". Dabei wird ein Satz von **N**-Tupeln (Tupel mit **N** Werten) zurückgegeben. Jedes Tupel enthält Werte, die durch Iteration aller Sammlungsaliase über deren jeweilige Sätze entstanden sind. In anderen Worten, dies ist ein komplettes Kreuzungsprodukt der an der Verknüpfung beteiligten Sätze.
+Die Sprache unterstützt die Syntax "<from_source1> JOIN <from_source2> JOIN... JOIN <from_sourceN>. Dabei wird ein Satz von **N**-Tupeln (Tupel mit **N** Werten) zurückgegeben. Jedes Tupel enthält Werte, die durch Iteration aller Sammlungsaliase über deren jeweilige Sätze entstanden sind. In anderen Worten, dies ist ein komplettes Kreuzungsprodukt der an der Verknüpfung beteiligten Sätze.
 
 Die folgenden Beispiele veranschaulichen die Funktionsweise der JOIN-Klausel. Das Ergebnis im folgenden Beispiel ist leer, da das Kreuzprodukt der einzelnen Quelldokumente und einem leeren Satz leer ist.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT f.id
 	FROM Families f
@@ -1018,7 +1026,7 @@ Die folgenden Beispiele veranschaulichen die Funktionsweise der JOIN-Klausel. Da
 
 Im folgenden Beispiel findet die Verknüpfung zwischen dem Dokumentstamm und dem Unterstamm `children` statt. Es handelt sich um ein Kreuzprodukt zweier JSON-Objekte. Die Tatsache, dass die untergeordnete Struktur ein Array ist, macht für die Verknüpfung keinen Unterschied, da wir auf einem einzigen Stammknoten arbeiten, der das untergeordnete Array darstellt. Das Ergebnis enthält also nur zwei Ergebnisse, da das Kreuzprodukt der einzelnen Dokumente mit dem Array jeweils genau ein Dokument ergibt.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT f.id
 	FROM Families f
@@ -1038,7 +1046,7 @@ Im folgenden Beispiel findet die Verknüpfung zwischen dem Dokumentstamm und dem
 
 Das folgende Beispiel zeigt eine gewöhnlichere Verknüpfung:
 
-**Abfragen**
+**Abfrage**
 
 	SELECT f.id
 	FROM Families f
@@ -1070,7 +1078,7 @@ Das erste Dokument (`AndersenFamily`) enthält nur ein untergeordnetes Element. 
 
 Der wahre Nutzen von JOIN ist die Bildung von Tupeln aus dem Kreuzprodukt auf eine Weise, die auf anderen Wegen schwer zu projizieren ist. Außerdem könnten Sie Filter auf die Kombination von Tupeln anwenden, mit denen Benutzer eine Bedingung auswählen können, die von der Gesamtheit der Tupel erfüllt sein muss, wie im folgenden Beispiel gezeigt.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT 
 		f.id AS familyName,
@@ -1123,7 +1131,7 @@ Dieses Beispiel ist eine natürliche Erweiterung des vorherigen Beispiels und ze
 
 Das nächste Beispiel verwendet einen zusätzlichen Filter für `pet`. Damit werden alle Tupel ausgeschlossen, bei denen der Haustiername nicht "Shadow" ist. Wir können also Tupel aus Arrays bilden, beliebige Elemente der Tupel filtern und beliebige Kombinationen aus Elementen projizieren.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT 
 		f.id AS familyName,
@@ -1179,7 +1187,7 @@ Wir können diese UDF nun in einer Abfrage in einer Projektion verwenden. UDFs m
 
 >[AZURE.NOTE]Vor dem 17.3.2015 hat DocumentDB UDF-Aufrufe ohne das Präfix „udf.“, z. B. SELECT REGEX_MATCH(), unterstützt. Dieses Aufrufmuster ist veraltet.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT udf.REGEX_MATCH(Families.address.city, ".*eattle")
 	FROM Families
@@ -1197,7 +1205,7 @@ Wir können diese UDF nun in einer Abfrage in einer Projektion verwenden. UDFs m
 
 Die UDF kann auch in einem Filter verwendet werden, wie im folgenden Beispiel gezeigt – ebenfalls mit dem Präfix "udf." qualifiziert:
 
-**Abfragen**
+**Abfrage**
 
 	SELECT Families.id, Families.address.city
 	FROM Families
@@ -1236,7 +1244,7 @@ Wir erweitern den Funktionsumfang von UDFs im folgenden Beispiel um konditionale
 	
 Hier sehen Sie ein Verwendungsbeispiel für die UDF.
 
-**Abfragen**
+**Abfrage**
 
 	SELECT f.address.city, udf.SEALEVEL(f.address.city) AS seaLevel
 	FROM Families f	
@@ -1418,7 +1426,7 @@ Jede mathematische Funktion führt eine Berechnung durch, üblicherweise basiere
 
 Sie können nun beispielsweise Abfragen wie die folgende ausführen:
 
-**Abfragen**
+**Abfrage**
 
     SELECT VALUE ABS(-4)
 
@@ -1473,7 +1481,7 @@ Mit den Funktionen für die Typprüfung können Sie den Typ eines Ausdrucks in S
 
 Mithilfe dieser Funktionen können Sie nun Abfragen wie die folgende ausführen:
 
-**Abfragen**
+**Abfrage**
 
     SELECT VALUE IS_NUMBER(-4)
 
@@ -1557,7 +1565,7 @@ Die folgenden Skalarfunktionen führen einen Vorgang für einen Zeichenfolgen-Ei
 
 Mithilfe dieser Funktionen können Sie nun Abfragen wie die folgende ausführen: Beispielsweise können Sie den Familiennamen wie folgt in Großbuchstaben zurückgeben:
 
-**Abfragen**
+**Abfrage**
 
     SELECT VALUE UPPER(Families.id)
     FROM Families
@@ -1571,7 +1579,7 @@ Mithilfe dieser Funktionen können Sie nun Abfragen wie die folgende ausführen:
 
 Oder Zeichenfolgen wie in diesem Beispiel verketten:
 
-**Abfragen**
+**Abfrage**
 
     SELECT Families.id, CONCAT(Families.address.city, ",", Families.address.state) AS location
     FROM Families
@@ -1590,7 +1598,7 @@ Oder Zeichenfolgen wie in diesem Beispiel verketten:
 
 Zeichenfolgenfunktionen können auch in der WHERE-Klausel zum Filtern von Ergebnissen verwendet werden, wie im folgenden Beispiel:
 
-**Abfragen**
+**Abfrage**
 
     SELECT Families.id, Families.address.city
     FROM Families
@@ -1631,7 +1639,7 @@ Die folgenden Skalarfunktionen führen einen Vorgang für einen Arrayeingabewert
 
 Arrayfunktionen können verwendet werden, um Arrays in JSON zu bearbeiten. Mit dieser Abfrage werden beispielsweise alle Dokumente zurückgegeben, in denen ein Elternteil „Robin Wakefield“ ist.
 
-**Abfragen**
+**Abfrage**
 
     SELECT Families.id 
     FROM Families 
@@ -1645,7 +1653,7 @@ Arrayfunktionen können verwendet werden, um Arrays in JSON zu bearbeiten. Mit d
 
 Dies ist ein weiteres Beispiel für die Verwendung von ARRAY_LENGTH. Hierbei wird die Anzahl der Kinder pro Familie abgerufen.
 
-**Abfragen**
+**Abfrage**
 
     SELECT Families.id, ARRAY_LENGTH(Families.children) AS numberOfChildren
     FROM Families 
@@ -1814,7 +1822,7 @@ Die Syntax ist `input.Select(x => f(x))`, wobei `f` ein skalarer Ausdruck ist.
 
 
 
-**LINQ Lambda-Ausdruck**
+**LINQ-Lambdaausdruck**
 
 	input.Select(family => new
 	{
@@ -1834,7 +1842,7 @@ Die Syntax ist `input.Select(x => f(x))`, wobei `f` ein skalarer Ausdruck ist.
 ####SelectMany-Operator
 Die Syntax ist `input.SelectMany(x => f(x))`, wobei `f` ein skalarer Ausdruck ist, der einen Sammlungstyp zurückgibt.
 
-**LINQ Lambda-Ausdruck**
+**LINQ-Lambdaausdruck**
 
 	input.SelectMany(family => family.children);
 
@@ -1860,7 +1868,7 @@ Die Syntax ist `input.Where(x => f(x))`, wobei `f` ein skalarer Ausdruck ist, de
 
 
 
-**LINQ Lambda-Ausdruck**
+**LINQ-Lambdaausdruck**
 
 	input.Where(
 	    family => family.parents[0].familyName == "Smith" && 
@@ -1921,7 +1929,7 @@ Die Syntax ist `input(.|.SelectMany())(.Select()|.Where())*`. Eine verkettete Ab
 
 
 
-**LINQ Lambda-Ausdruck**
+**LINQ-Lambdaausdruck**
 
 	input.SelectMany(family => family.parents)
 	    .Where(parent => parents.familyName == "Smith");
@@ -1966,7 +1974,7 @@ In verschachtelten Abfragen wird die innere Abfrage auf jedes Element der äuße
 
 
 
-**LINQ Lambda-Ausdruck**
+**LINQ-Lambdaausdruck**
             
 	input.SelectMany(family => family.children.Where(
 	    child => child.familyName == family.parents[0].familyName));
@@ -2269,4 +2277,4 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von "queryDocuments" in der server
 [consistency-levels]: documentdb-consistency-levels.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

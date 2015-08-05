@@ -129,7 +129,7 @@ Sie können ein Szenario überwachen, das eine Sequenz mit mehreren URLs umfasst
 
 Um einen mehrstufigen Ttest zu erstellen, zeichnen das Szenario mit Visual Studio auf. Laden Sie dann die Aufzeichnung in Application Insights hoch. Application Insights wiederholt das Szenario in bestimmten Abständen und überprüft die Antworten.
 
-#### 1\. Aufzeichnen eines Szenarios
+#### 1. Aufzeichnen eines Szenarios
 
 Verwenden Sie Visual Studio Ultimate, um eine Websitzung aufzuzeichnen.
 
@@ -156,7 +156,7 @@ Verwenden Sie Visual Studio Ultimate, um eine Websitzung aufzuzeichnen.
 
 (Fügen Sie keinen Schleifen in den Webtestcode ein.)
 
-#### 2\. Hochladen des Webtests in Application Insights
+#### 2. Hochladen des Webtests in Application Insights
 
 1. Erstellen Sie im Application Insights-Portal einen neuen Webtest.
 
@@ -229,4 +229,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

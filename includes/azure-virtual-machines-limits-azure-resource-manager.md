@@ -15,4 +15,4 @@
 
 <sup>1</sup> Beim Azure-Ressourcen-Manager werden Zertifikate im Azure-Schlüsseltresor gespeichert. Obwohl die Anzahl der Zertifikate für ein Abonnement nicht begrenzt ist, gilt trotzdem das Limit von 1 MB für Zertifikate pro Bereitstellung (entweder eines virtuellen Computers oder einer Verfügbarkeitsgruppe).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

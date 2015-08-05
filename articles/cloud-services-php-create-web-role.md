@@ -37,7 +37,7 @@ Der erste Schritt bei der Erstellung einer PHP-Web- oder Workerrolle ist die Ers
 
 Führen Sie Azure PowerShell als Administrator sowie folgenden Befehl aus, um ein neues Azure-Dienstprojekt zu erstellen:
 
-	PS C:>New-AzureServiceProject myProject
+	PS C:\>New-AzureServiceProject myProject
 
 Durch diesen Befehl wird ein neues Verzeichnis (`myProject`) erstellt, dem Sie Web- und Workerrollen hinzufügen können.
 
@@ -212,4 +212,4 @@ Um die Anwendung zu veröffentlichen, müssen Sie zuerst die Veröffentlichungse
 [Importieren der Veröffentlichungseinstellungen]: /develop/php/how-to-guides/powershell-cmdlets/#ImportPubSettings
 [Bereitstellen eines Clouddiensts in Azure]: /develop/php/how-to-guides/powershell-cmdlets/#Deploy
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

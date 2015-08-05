@@ -51,4 +51,4 @@ Informationen zu den Service Fabric-Konzepten finden Sie hier:
 - [Definieren und Verwalten von Zuständen](service-fabric-concepts-state.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

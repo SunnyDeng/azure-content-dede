@@ -40,4 +40,4 @@ Einfache Vorlagen für die Integration in soziale Netzwerkdienste, wie z. B. Tw
 Nachdem Sie eine der Vorlagen ausgewählt haben, führen Sie die Bereitstellungsschritte durch, wie Sie es bei Ihrer eigenen Logik-App auch tun würden. Weitere Informationen finden Sie unter [Erstellen einer Logik-App](app-service-logic-create-a-logic-app.md).
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

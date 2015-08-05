@@ -1,7 +1,8 @@
 <properties 
-	pageTitle="Anpassen von Hadoop-Clustern für erweiterte Analyseprozesse und -technologien | Microsoft Azure"
+	pageTitle="Anpassen von Hadoop-Clustern für erweiterte Analyseprozesse und -technologien | Microsoft Azure" 
 	description="Beliebte Python-Module, die in benutzerdefinierten Azure HDInsight Hadoop-Clustern zur Verfügung gestellt werden."
-	services="machine-learning"  
+	services="machine-learning" 
+	solutions="" 
 	documentationCenter="" 
 	authors="hangzh-msft" 
 	manager="paulettm" 
@@ -97,4 +98,4 @@ Unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster](machine-learn
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

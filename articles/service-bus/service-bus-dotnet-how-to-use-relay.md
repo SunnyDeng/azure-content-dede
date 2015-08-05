@@ -268,4 +268,4 @@ Nachdem Sie nun mit den Grundlagen des Service Bus **Relay**-Diensts vertraut si
   [MSDN]: https://msdn.microsoft.com/de-de/library/azure/dn194201.aspx
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

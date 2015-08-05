@@ -1,3 +1,4 @@
+
 ### Schritt 1: Ein Gerät autorisieren, um den Verschlüsselungsschlüssel für Dienstdaten im Verwaltungsportal zu ändern.
 
 Üblicherweise fordert der Geräteadministrator den Dienstadministrator auf, ein Gerät zu autorisieren, um den Verschlüsselungsschlüssel für Dienstdaten zu ändern. Der Dienstadministrator autorisiert dann das Gerät, um den Schlüssel zu ändern.
@@ -72,4 +73,4 @@ Führen Sie die folgenden Schritte aus, um den Verschlüsselungsschlüssel für 
 
 3. Geben Sie den Verschlüsselungsschlüssel für Dienstdaten ein, den Sie in [Schritt2: Verwenden Sie Windows PowerShell für StorSimple, um die Änderung des Verschlüsselungsschlüssels für Dienstdaten zu initialisieren.](##to-initiate-the-service-data-encryption-key-change) erhalten haben.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

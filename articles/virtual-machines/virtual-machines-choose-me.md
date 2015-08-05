@@ -1,11 +1,11 @@
 <properties 
 	pageTitle="Sind virtuelle Azure-Computer die passende Computeoption für mich?" 
-	description="Erfahren Sie mehr über Computehostingoptionen in Azure und ihre Funktionsweise: App Service, Cloud Services und Virtual Machines"
+	description="Erfahren Sie mehr über Computehostingoptionen in Azure und ihre Funktionsweise: App Service, Cloud Services und Virtual Machines" 
 	services="virtual-machines"
 	authors="KBDAzure" 
 	documentationCenter=""
 	manager="timlt"
-	tags="azure-resource-manager, azure-service-management"/>
+	tags=azure-resource-manager, azure-service-management/>
 
 <tags 
 	ms.service="multiple" 
@@ -29,4 +29,4 @@ Erfahren Sie mehr über [Virtual Machines](https://msdn.microsoft.com/library/az
 [Virtual Machines]: #tellmevm
 [Cloud Services]: cloud-services-choose-me.md
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

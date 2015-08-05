@@ -285,7 +285,7 @@ Sie sollten das Symbol für das Startprogramm nicht verwenden. Dieses weist eine
 
 ###Aktivieren der App für den Empfang von GCM-Pushbenachrichtigungen
 
-1. Geben Sie die „gcm:sender“-Metadaten durch Kopieren und Einfügen des folgenden Codes in die Datei „Manifest.xml“ zwischen den Tags `<application>` und `</application>` ein. Der unten ausgeblendete Wert (mit Sternen) ist die `project number`, die von Ihrer Google Play-Konsole abgerufen wird. \\n ist beabsichtigt, stellen Sie daher sicher, dass Sie die Projektnummer damit endet.
+1. Geben Sie die „gcm:sender“-Metadaten durch Kopieren und Einfügen des folgenden Codes in die Datei „Manifest.xml“ zwischen den Tags `<application>` und `</application>` ein. Der unten ausgeblendete Wert (mit Sternen) ist die `project number`, die von Ihrer Google Play-Konsole abgerufen wird. \n ist beabsichtigt, stellen Sie daher sicher, dass Sie die Projektnummer damit endet.
 
 		<meta-data android:name="engagement:gcm:sender" android:value="************\n" />
 
@@ -394,4 +394,4 @@ Wir erstellen nun eine einfache Push-Benachrichtigungskampagne, die eine Push-Be
 [38]: ./media/mobile-engagement-android-get-started/campaign-create.png
 [39]: ./media/mobile-engagement-android-get-started/campaign-activate.png
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

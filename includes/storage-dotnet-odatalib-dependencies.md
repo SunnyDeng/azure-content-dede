@@ -2,4 +2,4 @@
 > 
 > Diese Bibliotheken werden von Azure-Tabellenspeicherklassen verwendet und sind erforderliche Abhängigkeiten für die Programmierung mit der Speicherclientbibliothek.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

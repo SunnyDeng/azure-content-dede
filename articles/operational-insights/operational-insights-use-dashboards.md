@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/02/2015"
+	ms.date="07/21/2015"
 	ms.author="evanhi"/>
 
 # Operational Insights-Dashboards
@@ -75,4 +75,4 @@ Navigieren Sie zum Organisieren des Dashboards zur Ansicht „Mein Dashboard“,
 ## Entfernen einer Kachel
 Navigieren Sie zum Entfernen einer Kachel zur Ansicht „Mein Dashboard“, und klicken Sie unten auf der Seite auf das Zahnrand **Anpassen**, um den Anpassungsmodus zu aktivieren. Wählen Sie die Kachel aus, die Sie entfernen möchten, und wählen Sie im rechten Bereich die Option **Kachel entfernen**. ![Entfernen einer Kachel](./media/operational-insights-use-dashboards/remove-tile.png)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

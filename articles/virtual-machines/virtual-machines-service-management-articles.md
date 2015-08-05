@@ -136,4 +136,4 @@ Im Folgenden finden Sie eine Liste von Artikeln, die Ihnen die Arbeit mit virtue
 
 [Azure-Befehlszeilenschnittstelle für die Dienstverwaltung](virtual-machines-command-line-tools.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

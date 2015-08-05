@@ -67,4 +67,4 @@ Wenn Sie die erstellten Veröffentlichungsskripts anpassen möchten, finden Sie 
 [4]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/CreateVM_SolutionExplorer.png
 [5]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/VS_Create_VM_Connect.png
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

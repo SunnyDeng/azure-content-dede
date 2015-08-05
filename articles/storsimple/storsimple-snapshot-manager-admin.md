@@ -60,4 +60,4 @@ Sie können StorSimple Snapshot Manager zum Überwachen und Verwalten bevorstehe
 
 [StorSimple Snapshot Manager herunterladen](https://www.microsoft.com/download/details.aspx?id=44220).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -3,7 +3,7 @@
     pageTitle="Anforderungen an Azure RemoteApp-Images"
     description="Erfahren Sie, welche Anforderungen bei der Erstellung von Images für die Verwendung mit Azure RemoteApp bestehen." 
     services="remoteapp" 
-    solutions="" documentationCenter="" 
+	documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
 
@@ -43,4 +43,4 @@ Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll,
 - VHD-Uploads aus einer Momentaufnahmenkette werden nicht unterstützt.
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

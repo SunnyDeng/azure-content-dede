@@ -255,9 +255,9 @@ Die Felder für die Zustandsübergänge können für erweiterte Warnungen verwen
 Im folgenden Beispiel wird über Powershell ein Integritätsbericht zur Anwendung "fabric:/WordCound" aus der Quelle "MyWatchdog" gesendet. Der Integritätsbericht enthält Informationen zur Integritätseigenschaft "Availability", die den Integritätszustand "Error" und den TTL-Wert "Infinite" aufweist. Anschließend wird die Anwendungsintegrität abgefragt. Die Abfrage gibt den aggregierten Integritätszustand "Error" und das gemeldete Integritätsereignis in der Liste der Integritätsereignisse zurück.
 
 ```powershell
-PS C:> Send-ServiceFabricApplicationHealthReport –ApplicationName fabric:/WordCount –SourceId "MyWatchdog" –HealthProperty "Availability" –HealthState Error
+PS C:\> Send-ServiceFabricApplicationHealthReport –ApplicationName fabric:/WordCount –SourceId "MyWatchdog" –HealthProperty "Availability" –HealthState Error
 
-PS C:> Get-ServiceFabricApplicationHealth fabric:/WordCount
+PS C:\> Get-ServiceFabricApplicationHealth fabric:/WordCount
 
 ApplicationName                 : fabric:/WordCount
 AggregatedHealthState           : Error
@@ -336,4 +336,4 @@ Das Integritätsmodell wird hauptsächlich für Überwachung und Diagnose, Evalu
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -69,7 +69,7 @@ Sie haben mehrere Möglichkeiten:
 * [TrackException()](#exceptions) sendet Stapelüberwachungen. [Weitere Informationen über Ausnahmen](#exceptions).
 * Wenn Sie bereits ein Protokollierungsframework wie Log4Net oder NLog verwenden, können Sie [diese Protokolle erfassen][netlogs] und in der Diagnosesuche neben Anforderungs- und Ausnahmedaten anzeigen.
 
-Öffnen Sie zum Anzeigen dieser Ereignisse [Suche][diagnostic] und anschließend "Filter", und wählen Sie dann "Benutzerdefiniertes Ereignis", "Ablaufverfolgung" oder "Ausnahme" aus.
+Öffnen Sie zum Anzeigen dieser Ereignisse [Search][diagnostic] und anschließend "Filter", und wählen Sie dann "Benutzerdefiniertes Ereignis", "Ablaufverfolgung" oder "Ausnahme" aus.
 
 
 ![Drillthrough](./media/app-insights-asp-net-exceptions/viewCustomEvents.png)
@@ -441,4 +441,4 @@ Fügen Sie das Attribut den Dienstimplementierungen hinzu:
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

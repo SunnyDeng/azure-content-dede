@@ -84,7 +84,7 @@ Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der 
 	
 	>[AZURE.NOTE]Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden.
 	> 
-	> 
+	> Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
 3. Senden nachfolgender API-Aufrufe an die neue URL. 
 	
 	Wenn nach einem Verbindungsversuch folgende Meldung angezeigt wird:
@@ -404,7 +404,7 @@ Eine SAS-URL weist das folgende Format auf:
 
 Folgende Überlegungen sollten berücksichtigt werden:
 
-- Einem bestimmten Medienobjekt können jeweils nicht mehr als fünf eindeutige Locators zugeordnet sein. Weitere Informationen finden Sie unter „Locator“.
+- Einem bestimmten Medienobjekt können jeweils nicht mehr als fünf eindeutige Locators zugeordnet sein. Weitere Informationen finden Sie unter "Locator".
 - Wenn Sie Ihre Dateien sofort hochladen müssen, sollten Sie Ihren StartTime-Wert auf fünf Minuten vor der aktuellen Uhrzeit festlegen. Dies ist erforderlich, weil ggf. eine Uhrzeitabweichung zwischen dem Clientcomputer und Media Services vorliegen kann. Zudem muss der StartTime-Wert das folgende DateTime-Format haben: JJJJ-MM-TTTHH:mm:ssZ (z. B. "2014-05-23T17:53:50Z").	
 - Gegebenenfalls tritt eine Verzögerung von 30 bis 40 Sekunden zwischen dem Erstellen eines Locators und seiner Verfügbarkeit auf. Dies gilt für die SAS-URL sowie für Ursprungslocators.
 
@@ -1284,4 +1284,4 @@ Weitere Informationen zum Erstellen von Video-on-Demand-Anwendungen erhalten Sie
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -27,4 +27,4 @@
 
 Nun müssen Sie den Hybrid Connection Manager auf dem lokalen Computer installieren.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -24,4 +24,4 @@
 
 ![Anmeldungen nach mehreren Fehlern](./media/active-directory-reporting-sign-ins-after-multiple-failures/signInsAfterMultipleFailures.PNG)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

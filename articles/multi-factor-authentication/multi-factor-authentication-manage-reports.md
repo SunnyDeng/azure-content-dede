@@ -50,4 +50,4 @@ In Warteschlange|Hier werden Berichte aufgelistet, die zur Verarbeitung und aufg
 * [Azure Multi-Factor Authentication bei MSDN](https://msdn.microsoft.com/library/azure/dn249471.aspx)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

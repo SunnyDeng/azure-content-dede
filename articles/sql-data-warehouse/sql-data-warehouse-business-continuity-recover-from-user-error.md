@@ -108,8 +108,8 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer Azure SQL-Datenbank
 <!--Image references-->
 
 <!--Article references-->
-[Azure SQL-Datenbank-Übersicht zur Geschäftskontinuität]: sql-database/sql-database-business-continuity/,d
-[Abschließen einer wiederhergestellten Datenbank]: sql-database/sql-database-recovered-finalize/
+[Azure SQL-Datenbank-Übersicht zur Geschäftskontinuität]: sql-database/sql-database-business-continuity.md
+[Abschließen einer wiederhergestellten Datenbank]: sql-database/sql-database-recovered-finalize.md
 
 <!--MSDN references-->
 [Datenbankwiederherstellungsanforderung erstellen]: http://msdn.microsoft.com/library/azure/dn509571.aspx
@@ -120,4 +120,4 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer Azure SQL-Datenbank
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

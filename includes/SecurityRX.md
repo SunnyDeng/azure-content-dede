@@ -279,22 +279,29 @@ In den folgenden Ressourcen finden Sie Hinweise zum Lösen dieses Szenarios:
 -   [Shared Access Signatures Are Easy These Days](http://blog.smarx.com/posts/shared-access-signatures-are-easy-these-days) (in englischer Sprache)
 
 
-##Azure SQL-Datenbankidentität und Zugriffsszenarien
+## Azure SQL-Datenbankidentität und Zugriffsszenarien
+
 
 Die SQL-Datenbank unterstützt nur SQL Server-Authentifizierung. Windows-Authentifizierung (integrierte Sicherheit) wird nicht unterstützt. Die Benutzer müssen bei jeder Verbindung zu einer SQL-Datenbank ihre Anmeldeinformationen (Benutzername und Kennwort) angeben. Seien Sie beim Verwalten Ihres Benutzernamens und Kennworts besonders vorsichtig, um das Offenlegen dieser Informationen zu vermeiden.
 
+
 ![][15]
 
-In den folgenden Ressourcen finden Sie Hinweise zum Lösen dieses Szenarios:
 
--   [Sicherheitsrichtlinien und Einschränkungen (SQL-Datenbank)](http://msdn.microsoft.com/library/windowsazure/ff394108.aspx#authentication)
--   [Vorgehensweise: Herstellen einer Verbindung mit der Azure SQL-Datenbank über sqlcmd](http://msdn.microsoft.com/library/windowsazure/ee336280.aspx)
--   [Vorgehensweise: Herstellen einer Verbindung mit der Azure SQL-Datenbank über ADO.NET](http://msdn.microsoft.com/library/windowsazure/ee336243.aspx)
--   [Vorgehensweise: Herstellen einer Verbindung mit der Azure SQL-Datenbank über ASP.NET](http://msdn.microsoft.com/library/windowsazure/ee621781.aspx)
--   [Vorgehensweise: Herstellen einer Verbindung mit der Azure SQL-Datenbank über WCF Data Services](http://msdn.microsoft.com/library/windowsazure/ee621789.aspx)
--  [Vorgehensweise: Herstellen einer Verbindung mit der Windows Azure SQL-Datenbank über PHP](http://msdn.microsoft.com/library/windowsazure/ff394110.aspx)
--   [Vorgehensweise: Herstellen einer Verbindung mit der Azure SQL-Datenbank über JDBC](http://msdn.microsoft.com/library/windowsazure/gg715284.aspx)
--   [Vorgehensweise: Herstellen einer Verbindung mit der Azure SQL-Datenbank über das ADO.NET Entity Framework](http://msdn.microsoft.com/library/windowsazure/ff951633.aspx)
+Informationen zum Lösen dieses Szenarios finden Sie im folgenden Hilfethema: <br/>[Azure SQL-Datenbankentwicklung: Gewusst-wie-Themen](http://msdn.microsoft.com/library/azure/ee621787.aspx)
+
+
+Oder lesen Sie eines der zahlreichen untergeordneten Themen. Hier eine Auswahl:
+
+
+- [Vorgehensweise: Herstellen einer Verbindung mit der Azure SQL-Datenbank über sqlcmd](http://msdn.microsoft.com/library/azure/ee336280.aspx)
+- [Codebeispiel: Wiederholungslogik für das Herstellen einer Verbindung mit einer Azure SQL-Datenbank mithilfe von ADO.NET](http://msdn.microsoft.com/library/azure/ee336243.aspx)
+- [Vorgehensweise: Herstellen einer Verbindung mit einer SQL-Datenbank mithilfe von PHP](http://msdn.microsoft.com/library/azure/ff394110.aspx)
+- [Vorgehensweise: Herstellen einer Verbindung mit der Azure SQL-Datenbank über JDBC](http://msdn.microsoft.com/library/azure/gg715284.aspx)
+
+
+Oder lesen Sie: <br/> [Richtlinien für und Einschränkungen von Azure SQL-Datenbanken](http://msdn.microsoft.com/library/azure/ff394108.aspx#authentication)
+
 
 ##Azure Service Bus-Identität und Zugriffsszenarien
 
@@ -444,4 +451,4 @@ Alle in diesem Thema umrissenen Szenarien und Lösungen sind gültig, wenn die A
 [Web SSO Design]: http://technet.microsoft.com/library/dd807033(WS.10).aspx
 [Federated Web SSO Design]: http://technet.microsoft.com/library/dd807050(WS.10).aspx
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

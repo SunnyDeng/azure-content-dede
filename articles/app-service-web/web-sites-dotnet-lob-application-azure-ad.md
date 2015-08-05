@@ -83,7 +83,7 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-GroupClaims-DotNet](https:
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/select-user-group.png)
 
-	> [AZURE.NOTE]In "Views\\Roles\\Index.cshtml" sehen Sie, dass in der Ansicht das JavaScript-Objekt <code>AadPicker</code> verwendet wird (in "Scripts\\AadPickerLibrary.js" definiert), um im Controller <code>Roles</code> auf die Aktion <code>Search</code> zuzugreifen. <pre class="prettyprint">var searchUrl = window.location.protocol + "//" + window.location.host + "<mark>/Roles/Search</mark>"; ... var picker = new <mark>AadPicker(searchUrl, maxResultsPerPage, input, token, tenant)</mark>;</pre> Unter "Controllers\\RolesController.cs" sehen Sie die Aktion <code>Search</code>, mit der die eigentliche Anforderung an die Azure Active Directory Graph-API gesendet und die Antwort an die Seite zurückgegeben wird. Später verwenden Sie dieselbe Methode, um einfache Funktionen in Ihrer Anwendung zu erstellen.
+	> [AZURE.NOTE]In "Views\Roles\Index.cshtml" sehen Sie, dass in der Ansicht das JavaScript-Objekt <code>AadPicker</code> verwendet wird (in "Scripts\AadPickerLibrary.js" definiert), um im Controller <code>Roles</code> auf die Aktion <code>Search</code> zuzugreifen. <pre class="prettyprint">var searchUrl = window.location.protocol + "//" + window.location.host + "<mark>/Roles/Search</mark>"; ... var picker = new <mark>AadPicker(searchUrl, maxResultsPerPage, input, token, tenant)</mark>;</pre> Unter "Controllers\RolesController.cs" sehen Sie die Aktion <code>Search</code>, mit der die eigentliche Anforderung an die Azure Active Directory Graph-API gesendet und die Antwort an die Seite zurückgegeben wird. Später verwenden Sie dieselbe Methode, um einfache Funktionen in Ihrer Anwendung zu erstellen.
 
 6.	Wählen Sie in der Dropdownliste einen Benutzer oder eine Gruppe aus, wählen Sie eine Rolle aus, und klicken Sie auf **Rolle zuweisen**.
 
@@ -164,7 +164,7 @@ Wenn Sie die veröffentlichte Web-App dem Debugger anfügen möchten (Sie müsse
 <a name="bkmk_crud"></a>
 ## Hinzufügen von Branchenfunktionen zur Beispielanwendung
 
-In diesem Teil des Lernprogramms erfahren Sie, wie Sie die gewünschte Branchenfunktionalität basierend auf der Beispielanwendung erstellen. Sie erstellen einen einfachen CRUD-Arbeitsaufgaben-Tracker ähnlich dem TaskTracker-Controller, der jedoch das standardmäßige CRUD-Gerüst und -Entwurfsmuster verwendet. Außerdem verwenden Sie die enthaltene Datei "Scripts\\AadPickerLibrary.js", um Ihre Anwendung mit Daten aus der Azure Active Directory Graph-API zu ergänzen.
+In diesem Teil des Lernprogramms erfahren Sie, wie Sie die gewünschte Branchenfunktionalität basierend auf der Beispielanwendung erstellen. Sie erstellen einen einfachen CRUD-Arbeitsaufgaben-Tracker ähnlich dem TaskTracker-Controller, der jedoch das standardmäßige CRUD-Gerüst und -Entwurfsmuster verwendet. Außerdem verwenden Sie die enthaltene Datei "Scripts\AadPickerLibrary.js", um Ihre Anwendung mit Daten aus der Azure Active Directory Graph-API zu ergänzen.
 
 5.	Erstellen Sie im Ordner "Models" ein neues Modell namens "WorkItem.cs", und ersetzen Sie den Code durch den folgenden Code:
 
@@ -191,7 +191,7 @@ In diesem Teil des Lernprogramms erfahren Sie, wie Sie die gewünschte Branchenf
 		    }
 		}
 
-6.	Öffnen Sie die Datei "DAL\\GroupClaimContext.cs", und fügen Sie den hervorgehobenen Code hinzu:
+6.	Öffnen Sie die Datei "DAL\GroupClaimContext.cs", und fügen Sie den hervorgehobenen Code hinzu:
 	<pre class="prettyprint">
 public class GroupClaimContext : DbContext
 {
@@ -213,7 +213,7 @@ public class GroupClaimContext : DbContext
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/8-add-scaffolded-controller.png)
 
-9.	Öffnen der Datei "Controllers\\WorkItemsController.cs"
+9.	Öffnen der Datei "Controllers\WorkItemsController.cs"
 
 11. Fügen Sie den jeweiligen Aktionen unten die hervorgehobenen [Authorize]-Dekorationen hinzu.
 	<pre class="prettyprint">
@@ -251,7 +251,7 @@ public class WorkItemsController : Controller
 
 	> [AZURE.NOTE]Bei einigen Aktionen haben Sie vielleicht die Dekoration <code>[ValidateAntiForgeryToken]</code> bemerkt. Aufgrund des Verhaltens, das von [Brock Allen](https://twitter.com/BrockLAllen) unter [MVC 4, AntiForgeryToken and Claims](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/) (MVC 4, AntiForgeryToken und Ansprüche, in englischer Sprache) beschrieben wird, besteht Ihr HTTP POST-Vorgang aus folgenden Gründen die Validierung des Fälschungsschutztokens ggf. nicht: + Azure Active Directory sendet http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider nicht, was vom Fälschungsschutztoken aber standardmäßig benötigt wird. + Wenn für Azure Active Directory eine Verzeichnissynchronisierung mit AD FS durchgeführt wird, sendet die AD FS-Vertrauensstellung den Anspruch http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider standardmäßig ebenfalls nicht. Sie können AD FS aber manuell konfigurieren, um diesen Anspruch zu senden. Mit diesen Dingen können Sie sich im nächsten Schritt befassen.
 
-12.  Fügen Sie in der Datei "App_Start\\Startup.Auth.cs" der `ConfigureAuth`-Methode die folgende Codezeile hinzu:
+12.  Fügen Sie in der Datei "App_Start\Startup.Auth.cs" der `ConfigureAuth`-Methode die folgende Codezeile hinzu:
 
 		AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.NameIdentifier;
 	
@@ -259,7 +259,7 @@ public class WorkItemsController : Controller
 
 13.	Fügen Sie in Create() und Edit() den folgenden Code hinzu, um für Ihr JavaScript später einige Variablen zur Verfügung zu stellen: ViewData["token"] = GraphHelper.AcquireToken(ClaimsPrincipal.Current.FindFirst(Globals.ObjectIdClaimType).Value); ViewData["tenant"] = ConfigHelper.Tenant;
 
-14.	Suchen Sie in "Views\\WorkItems\\Create.cshtml" (einem automatisch erstellten Gerüstelement) die Hilfsmethode `Html.BeginForm`, und ändern Sie sie folgendermaßen:
+14.	Suchen Sie in "Views\WorkItems\Create.cshtml" (einem automatisch erstellten Gerüstelement) die Hilfsmethode `Html.BeginForm`, und ändern Sie sie folgendermaßen:
 	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))
 {
     @Html.AntiForgeryToken()
@@ -331,11 +331,11 @@ public class WorkItemsController : Controller
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/9-create-workitem.png)
 
-16. Füllen Sie den Rest des Formulars aus, und klicken Sie auf **Erstellen**. Die Seite "~/WorkItems/Index" zeigt jetzt die neu erstellte Arbeitsaufgabe an. Darüber hinaus sehen Sie im Screenshot unten, dass ich die Spalte `AssignedToID` in der Datei "Views\\WorkItems\\Index.cshtml" entfernt habe.
+16. Füllen Sie den Rest des Formulars aus, und klicken Sie auf **Erstellen**. Die Seite "~/WorkItems/Index" zeigt jetzt die neu erstellte Arbeitsaufgabe an. Darüber hinaus sehen Sie im Screenshot unten, dass ich die Spalte `AssignedToID` in der Datei "Views\WorkItems\Index.cshtml" entfernt habe.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/10-workitem-index.png)
 
-11.	Nehmen Sie jetzt entsprechende Änderungen an der Ansicht **Bearbeiten** vor. Nehmen Sie in der Datei "Views\\WorkItems\\Edit.cshtml" die Änderungen an der `Html.BeginForm`-Hilfsmethode vor, die mit den Änderungen an "Views\\WorkItems\\Create.cshtml" im vorherigen Schritt identisch sind (ersetzen Sie "Create" im oben hervorgehobenen Code durch "Edit").
+11.	Nehmen Sie jetzt entsprechende Änderungen an der Ansicht **Bearbeiten** vor. Nehmen Sie in der Datei "Views\WorkItems\Edit.cshtml" die Änderungen an der `Html.BeginForm`-Hilfsmethode vor, die mit den Änderungen an "Views\WorkItems\Create.cshtml" im vorherigen Schritt identisch sind (ersetzen Sie "Create" im oben hervorgehobenen Code durch "Edit").
 
 Das ist alles!
 
@@ -362,4 +362,4 @@ Nachdem Sie die Autorisierungen und die Branchenfunktionalität für die verschi
 [AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

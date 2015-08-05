@@ -30,7 +30,7 @@ Im Folgenden werden die Einstellungen beschrieben, die für benutzerdefinierte J
 - Bis auf den einzelnen HTTP-Listener sollten alle Überwachungsports deaktiviert sein. In Tomcat umfassen diese die Shutdown-, HTTPS- und AJP-Ports.
 - Der Container darf nur für IPv4-Verkehr konfiguriert sein.
 - Der Befehl für den **Start** der Anwendung muss in der Konfiguration festgelegt sein.
-- Anwendungen, die Verzeichnisse mit Schreibberechtigungen benötigen, müssen im Inhaltsverzeichnis der Azure-Web-App abgelegt werden, d.h. unter **D:\\home**. Die Umgebungsvariable `HOME` verweist auf "D:\\home".  
+- Anwendungen, die Verzeichnisse mit Schreibberechtigungen benötigen, müssen im Inhaltsverzeichnis der Azure-Web-App abgelegt werden, d.h. unter **D:\home**. Die Umgebungsvariable `HOME` verweist auf "D:\home".  
 
 Sie können Umgebungsvariablen wie in der web.config-Datei erforderlich festlegen.
 
@@ -71,7 +71,7 @@ Beispiele:
                                                                                       
 **stdoutLogEnabled** (Default="true".) Falls dies zutrifft, werden **stdout** und **stderr**, die für den Prozess in der Einstellung **processPath** festgelegt sind, an die Datei weitergeleitet, die unter **stdoutLogFile** angegeben ist (siehe Abschnitt **stdoutLogFile**).
                                     
-**stdoutLogFile** (Default="d:\\home\\LogFiles\\httpPlatformStdout.log".) Absoluter Dateipfad, für den **stdout** und **stderr** von dem unter **processPath** angegebenen Prozess protokolliert werden.
+**stdoutLogFile** (Default="d:\home\LogFiles\httpPlatformStdout.log".) Absoluter Dateipfad, für den **stdout** und **stderr** von dem unter **processPath** angegebenen Prozess protokolliert werden.
                                     
 > [AZURE.NOTE]`%HTTP_PLATFORM_PORT%` ist ein spezieller Platzhalter, der entweder als Teil von **arguments** oder als Teil der Liste **httpPlatform** **environmentVariables** angegeben wird. Dieser wird von **HttpPlatformHandler** durch einen intern generierten Port ersetzt, damit der von **processPath** festgelegte Prozess diesen Port abhören kann.
 
@@ -139,9 +139,9 @@ Die Jetty-Konfiguration muss in der start.ini-Datei geändert werden, um `java.n
 
 In unserem Test verwendeten wir die Hudson 3.1.2-WAR-Datei und die Standardinstanz Tomcat 7.0.50, jedoch ohne die UI für die Einrichtung zu verwenden. Da es sich bei Hudson um ein softwarebasiertes Tool handelt, empfehlen wir die Installation auf dedizierten Instanzen, auf denen das Kennzeichen **AlwaysOn** für die Web-App festgelegt werden kann.
 
-1. Erstellen Sie im Stammverzeichnis Ihrer Web-App, also **d:\\home\\site\\wwwroot**, ein Verzeichnis namens **webapps** (falls nicht bereits vorhanden), und speichern Sie die Hudson.war-Datei unter **d:\\home\\site\\wwwroot\\webapps**.
-2. Laden Sie Apache Maven 3.0.5 herunter (mit Hudson kompatibel), und speichern Sie es unter **d:\\home\\site\\wwwroot**.
-3. Erstellen Sie unter **d:\\home\\site\\wwwroot** eine web.conifg-Datei, und kopieren Sie die folgenden Inhalte hinein:
+1. Erstellen Sie im Stammverzeichnis Ihrer Web-App, also **d:\home\site\wwwroot**, ein Verzeichnis namens **webapps** (falls nicht bereits vorhanden), und speichern Sie die Hudson.war-Datei unter **d:\home\site\wwwroot\webapps**.
+2. Laden Sie Apache Maven 3.0.5 herunter (mit Hudson kompatibel), und speichern Sie es unter **d:\home\site\wwwroot**.
+3. Erstellen Sie unter **d:\home\site\wwwroot** eine web.conifg-Datei, und kopieren Sie die folgenden Inhalte hinein:
 	
 		<?xml version="1.0" encoding="UTF-8"?>
 		<configuration>
@@ -194,7 +194,7 @@ Bei der Verwendung von Liferay 6.1.2 Community Edition GA3 in Kombination mit To
 - Legen Sie für den HTTP-Konnektor `<Connector port="${port.http}" protocol="HTTP/1.1" connectionTimeout="600000" address="127.0.0.1" URIEncoding="UTF-8" />` fest.
 - Kommentieren Sie den AJP-Konnektor.
 
-Erstellen Sie im Ordner **liferay\\tomcat-7.0.40\\webapps\\ROOT\\WEB-INF\\classes** eine Datei namens **portal-ext.properties**. Die Datei muss die folgende Zeile enthalten:
+Erstellen Sie im Ordner **liferay\tomcat-7.0.40\webapps\ROOT\WEB-INF\classes** eine Datei namens **portal-ext.properties**. Die Datei muss die folgende Zeile enthalten:
 
     liferay.home=%HOME%/site/wwwroot/liferay
 
@@ -236,4 +236,4 @@ Weitere Informationen über Liferay finden Sie unter [http://www.liferay.com](ht
  
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

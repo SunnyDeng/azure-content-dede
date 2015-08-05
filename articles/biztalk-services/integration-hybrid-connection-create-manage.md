@@ -124,8 +124,8 @@ Zum Verwalten der Hybridverbindungen haben Sie folgende Möglichkeiten:
 2. Extrahieren Sie die Dateien.
 3. Gehen Sie auf dem Computer, der die Gruppenrichtlinie ändert, wie folgt vor: 
 
-	- Kopieren Sie die ADMX-Dateien in den Ordner *%WINROOT%\\PolicyDefinitions*.
-	- Kopieren Sie die ADML-Dateien in den Ordner *%WINROOT%\\PolicyDefinitions\\de-de*.
+	- Kopieren Sie die ADMX-Dateien in den Ordner *%WINROOT%\PolicyDefinitions*.
+	- Kopieren Sie die ADML-Dateien in den Ordner *%WINROOT%\PolicyDefinitions\de-de*.
 
 Nach dem Kopieren können Sie den Gruppenrichtlinien-Editor verwenden, um die Richtlinie zu ändern.
 
@@ -146,4 +146,4 @@ Nach dem Kopieren können Sie den Gruppenrichtlinien-Editor verwenden, um die Ri
 [HCOnPremSetup]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionOnPremSetup.png
 [HCManageConnection]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionManageConn.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

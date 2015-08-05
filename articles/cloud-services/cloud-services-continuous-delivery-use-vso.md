@@ -80,7 +80,7 @@ Befolgen Sie die Anweisungen [hier](http://go.microsoft.com/fwlink/?LinkId=51298
 
 2. Navigieren Sie zu Ihrer Projektmappendatei, und öffnen Sie sie.<br/> ![][16]
 
-3. Öffnen Sie im Projektmappen-Explorer eine Datei, und ändern Sie sie. Ändern Sie z. B. die Datei _"Layout.cshtml" im Ordner "Views\\Shared" in eine MVC-Webrolle.<br/> ![][17]
+3. Öffnen Sie im Projektmappen-Explorer eine Datei, und ändern Sie sie. Ändern Sie z. B. die Datei _"Layout.cshtml" im Ordner "Views\Shared" in eine MVC-Webrolle.<br/> ![][17]
 
 4. Bearbeiten Sie das Logo für die Website, und drücken Sie Strg+S, um die Datei zu speichern.<br/> ![][18]
 
@@ -239,4 +239,4 @@ Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsof
 [50]: ./media/cloud-services-continuous-delivery-use-vso/TestsResultsFailed.PNG
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

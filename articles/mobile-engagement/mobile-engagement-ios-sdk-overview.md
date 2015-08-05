@@ -50,4 +50,4 @@ Für jede neue SDK-Version müssen Sie zunächst die Ordner "EngagementSDK" und 
 Keiner.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

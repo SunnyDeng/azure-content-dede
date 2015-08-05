@@ -61,7 +61,7 @@
 
 	Stellen Sie sicher, dass Sie über mindestens ein virtuelles Azure-Netzwerk mit einem Gateway verfügen. Das Gatewaysubnetz muss "/28" oder größer sein, damit es eine ExpressRoute-Verbindung unterstützt, und es muss aktiv sein.
 
-			PS C:> $Vnet = "MyTestVNet"
+			PS C:\> $Vnet = "MyTestVNet"
 			New-AzureDedicatedCircuitLink -ServiceKey $ServiceKey -VNetName $Vnet
 			Provisioned
 
@@ -74,4 +74,4 @@ Weitere Informationen zu virtuellen Netzwerken finden Sie unter [Häufig gestell
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

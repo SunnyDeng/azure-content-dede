@@ -31,7 +31,7 @@ Der StorSimple Snapshot Manager stellt eine zentrale Verwaltungskonsole bereit, 
 
 - Konfigurieren, Sichern und Löschen von Volumes
 - Konfigurieren von Volumegruppen, um sicherzustellen, dass gesicherte Daten anwendungskonsistent sind
-- Verwalten von Sicherungsrichtlinien, damit die Daten nach einem vordefinierten Zeitplan gesichert werden
+- Verwalten von Sicherungsrichtlinien, damit die Daten nach einem vordefinierten Zeitplan gesichert werden.
 - Erstellen unabhängiger Kopien von Daten, die in der Cloud gespeichert und für die Notfallwiederherstellung verwendet werden können
 
 Mit dem StorSimple Snapshot Manager können Sie Volumes bereitstellen und diese dann in Volumegruppen konfigurieren, i. d. R. nach Anwendung. Der StorSimple Snapshot Manager verwendet diese Volumegruppen zum Erstellen von anwendungskonsistenten Sicherungskopien. (Anwendungskonsistenz ist gegeben, wenn alle zugehörigen Dateien und Datenbanken synchron sind und den tatsächlichen Zustand der Anwendung zu einem bestimmten Zeitpunkt darstellen.)
@@ -148,4 +148,4 @@ Informationen zum Überwachen von Sicherungsaufträgen finden Sie unter [Anzeige
 
 [StorSimple Snapshot Manager herunterladen](https://www.microsoft.com/download/details.aspx?id=44220).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -42,4 +42,4 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
 <!-- URLs. -->
 [Erste Schritte]: ../articles/mobile-services/mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

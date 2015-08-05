@@ -317,4 +317,4 @@ Beachten Sie, dass Cloud Ubuntu-Images für zahlreiche Konfigurationsaufgaben, d
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

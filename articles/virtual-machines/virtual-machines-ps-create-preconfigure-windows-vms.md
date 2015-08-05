@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer verwenden."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="JoeDavies-MSFT"
+	authors="KBDAzure"
 	manager="timlt"
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/10/2015"
-	ms.author="josephd"/>
+	ms.author="kathydav"/>
 
 # Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer
 
@@ -174,7 +174,7 @@ Wenn Sie einen Texteditor verwenden, kopieren Sie den Befehlssatz schließlich i
 Wenn Sie diesen virtuellen Computer erneut oder einen ähnlichen Computer erstellen, können Sie:
 
 - diesen Befehlssatz als PowerShell-Skriptdatei (*.ps1) speichern
-- diesen Befehlssatz als Azure-Automatisierungsrunbook im Bereich **Automatisierung** des Azure-Verwaltungsportals speichern
+- diesen Befehlssatz als Azure-Automatisierungsrunbook im Bereich **Automatisierung** des Azure-Verwaltungsportals speichern.
 
 ## <a id="examples"></a>Beispiele
 
@@ -188,9 +188,9 @@ Ich brauche einen PowerShell-Befehl, um den ersten virtuellen Computer für eine
 - AZDC1 heißt
 - ein eigenständiger Computer ist
 - einen zusätzlichen Datenträger mit 20 GB aufweist
-- die statische IP-Adresse 192.168.244.4 umfasst
+- über die statische IP-Adresse 192.168.244.4 verfügt
 - sich im BackEnd-Subnetz des virtuellen Netzwerks "AZDatacenter" befindet
-- sich im Cloud-Dienst "Azure-TailspinToys" befindet
+- sich im Clouddienst "Azure-TailspinToys" befindet
 
 Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen Computers, mit Leerzeilen zwischen jedem Block für Lesbarkeit.
 
@@ -226,7 +226,7 @@ Ich brauche einen PowerShell-Befehlssatz, um einen virtuellen Computer für eine
 - Mitglied der Domäne "corp.contoso.com" ist
 - einen zusätzlichen Datenträger mit 200 GB aufweist
 - sich im FrontEnd-Subnetz des virtuellen Netzwerks "AZDatacenter" befindet
-- sich im Cloud-Dienst "Azure-TailspinToys" befindet
+- sich im Clouddienst "Azure-TailspinToys" befindet
 
 Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen Computers.
 
@@ -256,7 +256,7 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 
 ## Zusätzliche Ressourcen
-
+<!-- For section headings, use sentence-case caps -->
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
 [Virtuelle Computer in Azure – häufig gestellte Fragen](http://msdn.microsoft.com/library/azure/dn683781.aspx)
@@ -268,6 +268,5 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern](virtual-machines-ps-create-preconfigure-linux-vms.md)
 
 [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
- 
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

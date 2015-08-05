@@ -10,4 +10,4 @@
 
 	![Klicken Sie auf "Grundlegende Einstellungen"](./media/app-service-api-config-auth/setpublicauth.png)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

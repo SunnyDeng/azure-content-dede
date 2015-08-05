@@ -115,4 +115,4 @@ Die folgenden Richtlinien werden Ihnen helfen, für Ihre Anwendungen einen geeig
 * [Kompensieren eines Transaktionsmusters](http://msdn.microsoft.com/library/dn589804.aspx)
 * [Idempotenz-Muster](http://blog.jonathanoliver.com/2010/04/idempotency-patterns/)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -77,7 +77,7 @@ Installieren Sie auch den [vContinuum-Patch](http://go.microsoft.com/fwlink/?Lin
 
 ![](./media/site-recovery-failback-azure-to-vmware/image5.png)
 
-3.  Geben Sie die Passphrase für den Konfigurationsserver (Configuration Server, CS) an. Die Passphrase haben Sie sich bei der CS-Registrierung notiert. Hierbei handelt es sich um die gleiche Passphrase, die Sie auch bei der Bereitstellung von Masterziel und Prozessserver verwendet haben. Sollten Sie die Passphrase vergessen haben, navigieren Sie in Azure zum CS. Dort finden Sie die Passphrase unter „C:\\Programme (x86)\\InMage Systems\\private\\connection.passphrase“.
+3.  Geben Sie die Passphrase für den Konfigurationsserver (Configuration Server, CS) an. Die Passphrase haben Sie sich bei der CS-Registrierung notiert. Hierbei handelt es sich um die gleiche Passphrase, die Sie auch bei der Bereitstellung von Masterziel und Prozessserver verwendet haben. Sollten Sie die Passphrase vergessen haben, navigieren Sie in Azure zum CS. Dort finden Sie die Passphrase unter „C:\Programme (x86)\InMage Systems\private\connection.passphrase“.
 
     ![](./media/site-recovery-failback-azure-to-vmware/image6.png)
 
@@ -365,7 +365,7 @@ Hinweis: Während des Failovers von Azure zurück zum lokalen Schutz ähnelt der
 
     e. Wenn Sie die virtuellen Computer ermittelt haben, die Sie schützen möchten, wählen Sie sie nacheinander aus.
 
-4.  Wenn Sie einen zu schützenden virtuellen Computer auswählen, für den bereits ein Failover zu Azure stattgefunden hat, erscheint ein Popupfenster mit zwei Einträgen für den virtuellen Computer. Der Grund: Beim CS sind zwei Instanzen des virtuellen Computers registriert. Der Eintrag für den lokalen virtuellen Computer muss entfernt werden, damit der richtige virtuelle Computer geschützt werden kann. Bei den Einträgen handelt es sich jeweils um den Hostnamen des Computers. Zur Ermittlung des Eintrags für den richtigen virtuellen Azure-Computer können Sie sich bei dem virtuellen Azure-Computer anmelden und zu „C:\\Programme (x86)\\Microsoft Azure Site Recovery\\Application Data\...“ navigieren. Ermitteln Sie in der Datei „drscout.conf“ die Host-ID. Behalten Sie im Dialogfeld von vContinuum den Eintrag, dessen Host-ID Sie auf dem virtuellen Computer gefunden haben. Löschen Sie alle anderen Einträge.
+4.  Wenn Sie einen zu schützenden virtuellen Computer auswählen, für den bereits ein Failover zu Azure stattgefunden hat, erscheint ein Popupfenster mit zwei Einträgen für den virtuellen Computer. Der Grund: Beim CS sind zwei Instanzen des virtuellen Computers registriert. Der Eintrag für den lokalen virtuellen Computer muss entfernt werden, damit der richtige virtuelle Computer geschützt werden kann. Bei den Einträgen handelt es sich jeweils um den Hostnamen des Computers. Zur Ermittlung des Eintrags für den richtigen virtuellen Azure-Computer können Sie sich bei dem virtuellen Azure-Computer anmelden und zu „C:\Programme (x86)\Microsoft Azure Site Recovery\Application Data\...“ navigieren. Ermitteln Sie in der Datei „drscout.conf“ die Host-ID. Behalten Sie im Dialogfeld von vContinuum den Eintrag, dessen Host-ID Sie auf dem virtuellen Computer gefunden haben. Löschen Sie alle anderen Einträge.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image22.png)
 
@@ -604,4 +604,4 @@ Nach Abschluss des Failbacks empfiehlt es sich unter Umständen, die virtuellen 
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

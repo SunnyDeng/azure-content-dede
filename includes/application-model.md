@@ -40,7 +40,7 @@ Rolleninstanzen verarbeiten in der Regel Internet-Clientanforderungen, die das R
 
 ![image][2]
 
-Wenn Sie einen gehosteten Dienst in Azure erstellen, wird dieser einer öffentlich adressierbaren IP-Adresse zugewiesen, über die Clients auf den Dienst zugreifen können. Beim Erstellen des gehosteten Diensts müssen Sie ein URL-Präfix auswählen, das dieser IP-Adresse zugeordnet wird. Dieses Präfix muss eindeutig sein, da Sie damit die URL *Präfix*.cloudapp.net reservieren, die dann nur von Ihnen verwendet werden kann. Clients kommunizieren mit Ihren Rolleninstanzen mithilfe der URL. In der Regel verteilen oder veröffentlichen Sie die Azure-URL *Präfix*.cloudapp.net nicht. Stattdessen erwerben Sie einen DNS-Namen von einer von Ihnen gewählten DNS-Registrierungsstelle und konfigurieren Ihren DNS-Namen, sodass Clientanforderungen an die Azure-URL umgeleitet werden. Weitere Informationen finden Sie unter [Configuring a Custom Domain Name in Azure][] (Konfigurieren eines benutzerdefinierten Domänennamens in Azure, in englischer Sprache).
+Wenn Sie einen gehosteten Dienst in Azure erstellen, wird dieser einer öffentlich adressierbaren IP-Adresse zugewiesen, über die Clients auf den Dienst zugreifen können. Beim Erstellen des gehosteten Diensts müssen Sie ein URL-Präfix auswählen, das dieser IP-Adresse zugeordnet wird. Dieses Präfix muss eindeutig sein, da Sie damit die URL *Präfix.cloudapp.net* reservieren, die dann nur von Ihnen verwendet werden kann. Clients kommunizieren mit Ihren Rolleninstanzen mithilfe der URL. In der Regel verteilen oder veröffentlichen Sie die Azure-URL *Präfix*.cloudapp.net nicht. Stattdessen erwerben Sie einen DNS-Namen von einer von Ihnen gewählten DNS-Registrierungsstelle und konfigurieren Ihren DNS-Namen, sodass Clientanforderungen an die Azure-URL umgeleitet werden. Weitere Informationen finden Sie unter [Configuring a Custom Domain Name in Azure][] (Konfigurieren eines benutzerdefinierten Domänennamens in Azure, in englischer Sprache).
 
 ## <a id="considerations"> </a>Entwurfsüberlegungen zu gehosteten Diensten
 
@@ -284,7 +284,7 @@ In der Dienstdefinitionsdatei (CSDEF-Datei) geben Sie außerdem viele Attribute 
 
 Bei der Dienstkonfigurationsdatei (CSCFG-Datei) handelt es sich um eine XML-Datei, in der Einstellungen beschrieben werden, die ohne die erneute Bereitstellung Ihrer Anwendung geändert werden können. Das vollständige Schema für die XML-Datei finden Sie hier: [http://msdn.microsoft.com/library/windowsazure/ee758710.aspx][]. Die CSCFG-Datei enthält ein Rollenelement für jede Rolle in Ihrer Anwendung. Einige der Elemente, die Sie in der CSCFG-Datei angeben können, werden im Folgenden beschrieben:
 
--   **Betriebssystemversion**. Mit diesem Attribut können Sie die Betriebssystemversion auswählen, die für alle Rolleninstanzen verwendet wird, die Ihren Anwendungscode ausführen. Dieses Betriebssystem wird als *Gastbetriebssystem* bezeichnet, und alle neuen Versionen umfassen die neuesten Sicherheitspatches und -updates, die zum Zeitpunkt der Veröffentlichung des Gastbetriebssystems verfügbar sind. Wenn Sie das Attribut osVersion auf * festlegen, dann aktualisiert Azure automatisch das Gastbetriebssystem für Ihre Rolleninstanzen, wenn neue Versionen des Gastbetriebssystems verfügbar werden. Sie können sich jedoch auch gegen automatische Updates entscheiden, indem Sie eine bestimmte Version des Gastbetriebssystems auswählen. Wenn beispielsweise das Attribut "osVersion" auf den Wert "WA-GUEST-OS-2.8_201109-01" festgelegt wird, erhalten Ihre Rolleninstanzen das Betriebssystem, das auf folgender Webseite beschrieben wird: [http://msdn.microsoft.com/library/hh560567.aspx][]. Weitere Informationen zu Versionen von Gastbetriebssystemen finden Sie unter [Managing Upgrades to the Azure Guests OS] (Verwalten von Upgrades des Azure-Gastbetriebssystems, in englischer Sprache).
+-   **Betriebssystemversion**. Mit diesem Attribut können Sie die Betriebssystemversion auswählen, die für alle Rolleninstanzen verwendet wird, die Ihren Anwendungscode ausführen. Dieses Betriebssystem wird als *Gastbetriebssystem* bezeichnet, und alle neuen Versionen umfassen die neuesten Sicherheitspatches und -updates, die zum Zeitpunkt der Veröffentlichung des Gastbetriebssystems verfügbar sind. Wenn Sie das Attribut osVersion auf * festlegen, dann aktualisiert Azure automatisch das Gastbetriebssystem für Ihre Rolleninstanzen, wenn neue Versionen des Gastbetriebssystems verfügbar werden. Sie können sich jedoch auch gegen automatische Updates entscheiden, indem Sie eine bestimmte Version des Gastbetriebssystems auswählen. Wenn beispielsweise das Attribut "osVersion" auf den Wert "WA-GUEST-OS-2.8_201109-01" festgelegt wird, erhalten Ihre Rolleninstanzen das Betriebssystem, das auf folgender Webseite beschrieben wird: [http://msdn.microsoft.com/library/hh560567.aspx][]. Weitere Informationen zu Versionen von Gastbetriebssystemen finden Sie unter [Verwalten von Upgrades des Azure-Gastbetriebssystems].
 
 -   **Instanzen**. Der Wert dieses Elements gibt die Anzahl von Rolleninstanzen an, die zum Ausführen des Codes für eine bestimmte Rolle bereitgestellt werden sollen. Da Sie eine neue CSCFG-Datei zu Azure hochladen können (ohne Ihre Anwendung neu bereitzustellen), ist es problemlos möglich, den Wert dieses Elements zu ändern und eine neue CSCFG-Datei hochzuladen, um die Anzahl von Rolleninstanzen, die Ihren Anwendungscode ausführen, dynamisch zu erhöhen oder zu verringern. Damit können Sie Ihre Anwendung problemlos hoch- oder runterskalieren, um die tatsächlichen Arbeitsauslastungsanforderungen zu erfüllen und gleichzeitig zu kontrollieren, wie viel Ihnen für die Ausführung der Rolleninstanzen in Rechnung gestellt wird.
 
@@ -316,33 +316,34 @@ Weitere Informationen zum Bereitstellen, Aktualisieren und erneuten Konfiguriere
 
 </div>
 
-[Vorteile des Azure-Anwendungsmodells]: #benefits
-[Wichtige Konzepte zu gehosteten Diensten]: #concepts
-[Entwurfsüberlegungen zu gehosteten Diensten]: #considerations
-[Entwerfen Ihrer Anwendung im Hinblick auf Skalierbarkeit]: #scale
-[Definition und Konfiguration von gehosteten Diensten]: #defandcfg
-[Die Dienstdefinitionsdatei]: #def
-[Die Dienstkonfigurationsdatei]: #cfg
-[Erstellen und Bereitstellen eines gehosteten Diensts]: #hostedservices
-[Referenzen]: #references
-[0]: ./media/application-model/application-model-3.jpg
-[1]: ./media/application-model/application-model-4.jpg
-[2]: ./media/application-model/application-model-5.jpg
-[Configuring a Custom Domain Name in Azure]: http://www.windowsazure.com/develop/net/common-tasks/custom-dns/
-[Data Storage Offerings in Azure]: http://www.windowsazure.com/develop/net/fundamentals/cloud-storage/
-[3]: ./media/application-model/application-model-6.jpg
-[4]: ./media/application-model/application-model-7.jpg
-[Azure Pricing]: http://www.windowsazure.com/pricing/calculator/
-[Managing Certificates in Azure]: http://msdn.microsoft.com/library/windowsazure/gg981929.aspx
-[http://msdn.microsoft.com/library/windowsazure/ee758710.aspx]: http://msdn.microsoft.com/library/windowsazure/ee758710.aspx
-[http://msdn.microsoft.com/library/hh560567.aspx]: http://msdn.microsoft.com/library/hh560567.aspx
-[Managing Upgrades to the Azure Guests OS]: http://msdn.microsoft.com/library/ee924680.aspx
-[ Azure-Verwaltungsportal]: http://manage.windowsazure.com/
-[5]: ./media/application-model/application-model-8.jpg
-[Bereitstellen und Aktualisieren von Azure-Anwendungen]: http://www.windowsazure.com/develop/net/fundamentals/deploying-applications/
-[Erstellen eines gehosteten Diensts für Azure]: http://msdn.microsoft.com/library/gg432967.aspx
-[Verwalten von gehosteten Diensten in Azure]: http://msdn.microsoft.com/library/gg433038.aspx
-[Migrieren von Anwendungen zu Azure]: http://msdn.microsoft.com/library/gg186051.aspx
-[Konfigurieren einer Azure-Anwendung]: http://msdn.microsoft.com/library/windowsazure/ee405486.aspx
+  [Vorteile des Azure-Anwendungsmodells]: #benefits
+  [Wichtige Konzepte zu gehosteten Diensten]: #concepts
+  [Entwurfsüberlegungen zu gehosteten Diensten]: #considerations
+  [Entwerfen Ihrer Anwendung im Hinblick auf Skalierbarkeit]: #scale
+  [Definition und Konfiguration von gehosteten Diensten]: #defandcfg
+  [Die Dienstdefinitionsdatei]: #def
+  [Die Dienstkonfigurationsdatei]: #cfg
+  [Erstellen und Bereitstellen eines gehosteten Diensts]: #hostedservices
+  [Referenzen]: #references
+  [0]: ./media/application-model/application-model-3.jpg
+  [1]: ./media/application-model/application-model-4.jpg
+  [2]: ./media/application-model/application-model-5.jpg
+  [Configuring a Custom Domain Name in Azure]: http://www.windowsazure.com/develop/net/common-tasks/custom-dns/
+  [Data Storage Offerings in Azure]: http://www.windowsazure.com/develop/net/fundamentals/cloud-storage/
+  [3]: ./media/application-model/application-model-6.jpg
+  [4]: ./media/application-model/application-model-7.jpg
+  
+  [Azure Pricing]: http://www.windowsazure.com/pricing/calculator/
+  [Managing Certificates in Azure]: http://msdn.microsoft.com/library/windowsazure/gg981929.aspx
+  [http://msdn.microsoft.com/library/windowsazure/ee758710.aspx]: http://msdn.microsoft.com/library/windowsazure/ee758710.aspx
+  [http://msdn.microsoft.com/library/hh560567.aspx]: http://msdn.microsoft.com/library/hh560567.aspx
+  [Managing Upgrades to the Azure Guests OS]: http://msdn.microsoft.com/library/ee924680.aspx
+  [ Azure-Verwaltungsportal]: http://manage.windowsazure.com/
+  [5]: ./media/application-model/application-model-8.jpg
+  [Bereitstellen und Aktualisieren von Azure-Anwendungen]: http://www.windowsazure.com/develop/net/fundamentals/deploying-applications/
+  [Erstellen eines gehosteten Diensts für Azure]: http://msdn.microsoft.com/library/gg432967.aspx
+  [Verwalten von gehosteten Diensten in Azure]: http://msdn.microsoft.com/library/gg433038.aspx
+  [Migrieren von Anwendungen zu Azure]: http://msdn.microsoft.com/library/gg186051.aspx
+  [Konfigurieren einer Azure-Anwendung]: http://msdn.microsoft.com/library/windowsazure/ee405486.aspx
 
-<!--HONumber=52-->
+<!---HONumber=July15_HO4-->

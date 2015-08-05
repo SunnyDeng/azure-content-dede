@@ -33,4 +33,4 @@ Sie können auch einen HTTP-Proxy angeben, der beim Testen des Dienstes anhand d
 
     UseDevelopmentStorage=true;DevelopmentStorageProxyUri=http://myProxyUri
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

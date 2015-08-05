@@ -16,4 +16,4 @@ Hier können Sie eine bestimmte Sammlung auswählen und einzelne Dokumente anzei
 [button-addons]: ./media/howto-access-mongolab-ui/button-addons.png
 [screen-dblanding]: ./media/howto-access-mongolab-ui/screen-mongolab_dblanding.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

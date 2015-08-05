@@ -177,7 +177,7 @@ In diesem Beispiel, eine Pipeline: **CopyActivityPipeline** ist mit den folgende
     		}
 		}
 
-Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Pipeline. Unter [Unterstützte Quellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) finden Sie Eigenschaften von "SqlSource" (z. B. **sqlReaderQuery**) und "BlobSink".
+Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Pipeline. Unter [Unterstützte Quellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) finden Sie Eigenschaften von „SqlSource“ (z. B. **SqlReaderQuery**) und „BlobSink“.
 
 
 ## Kopieren von Daten aus einem lokalen Dateisystem in ein Azure-Blob
@@ -187,8 +187,7 @@ Mithilfe der Kopieraktivität können Sie Dateien aus einem lokalen Dateisystem 
 Bei diesem Beispiel wird Folgendes vorausgesetzt:
 
 - **Host** – Name des Servers, auf dem das Dateisystem gehostet wird: **\contoso**.
-- **Ordner** – Name des Ordners mit den Eingabedateien: **"marketingcampaign\regionaldata\{slice}". Hier sind Dateien in einem Ordner mit dem Namen "{slice}" aufgeteilt, wie z. B. 2014121112 (2014, 12. Monat, 11. Tag , 12. Stunde).
-
+- **Ordner** – Name des Ordners mit den Eingabedateien: **"marketingcampaign\regionaldata\{slice}". Hier sind Dateien in einem Ordner mit dem Namen "{slice}" aufgeteilt, wie z. B. 2014121112 (2014, 12. Monat, 11. Tag , 12. Stunde). 
 ### Erstellen eines mit dem lokalen Dateisystem verknüpften Diensts
 Im folgenden Beispiel kann JSON zum Erstellen eines verknüpften Diensts namens **FolderDataStore** vom Typ **OnPremisesFileSystemLinkedService** verwendet werden.
 
@@ -196,14 +195,14 @@ Im folgenden Beispiel kann JSON zum Erstellen eines verknüpften Diensts namens 
 	    "name": "FolderDataStore",
 	    "properties": {
 	        "type": "OnPremisesFileSystemLinkedService",
-	        "host": "\\\\contoso",
+	        "host": "\\contoso",
 	        "userId": "username",
 	        "password": "password",
 	        "gatewayName": "ContosoGateway"
 	    }
 	}
 
-> [AZURE.NOTE] Denken Sie daran, für Host- und Ordnernamen in JSON-Dateien das Escapezeichen "\" zu verwenden. Für **\Contoso** verwenden Sie **\\\\Contoso**.
+> [AZURE.NOTE]Denken Sie daran, für Host- und Ordnernamen in JSON-Dateien das Escapezeichen "\" zu verwenden. Für **\Contoso** verwenden Sie **\\Contoso**.
 
 Unter [Mit dem lokalen Dateisystem verknüpfter Dienst](https://msdn.microsoft.com/library/dn930836.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren eines mit dem lokalen Dateisystem verknüpften Diensts.
 
@@ -462,7 +461,7 @@ Die folgende Beispielpipeline enthält eine Kopieraktivität, die Daten aus eine
 	                "transformation": {
 	                    "source": {
 	                        "type": "OracleSource",
-	                        "oracleReaderQuery": "$$Text.Format('select * from LOG where "Timestamp" >= to_date('{0:yyyy-MM-dd}', 'YYYY-MM-DD') AND "Timestamp" < to_date('{1:yyyy-MM-dd}', 'YYYY-MM-DD')', SliceStart, SliceEnd)"
+	                        "oracleReaderQuery": "$$Text.Format('select * from LOG where "Timestamp" >= to_date(\'{0:yyyy-MM-dd}\', \'YYYY-MM-DD\') AND "Timestamp" < to_date(\'{1:yyyy-MM-dd}\', \'YYYY-MM-DD\')', SliceStart, SliceEnd)"
 	                    },
 	                    "sink": {
 	                        "type": "BlobSink"
@@ -492,4 +491,4 @@ Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.a
 [adf-copyactivity]: data-factory-copy-activity.md
 [copy-activity-video]: http://azure.microsoft.com/documentation/videos/introducing-azure-data-factory-copy-activity/
 
-<!----HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

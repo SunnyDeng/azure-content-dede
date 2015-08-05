@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/31/2015" 
+	ms.date="07/08/2015" 
 	ms.author="jgao"/>
 
 
@@ -149,8 +149,8 @@ Diese Wortzähllösung besteht aus zwei Konsolenanwendungsprojekten: Mapper und 
 
 Die ausführbaren Dateien für Mapper und Reducer haben folgende Pfade:
 
-- C:\\Tutorials\\WordCount\\WordCountMapper\\bin\\Debug\\WordCountMapper.exe
-- C:\\Tutorials\\WordCount\\WordCountReducer\\bin\\Debug\\WordCountReducer.exe
+- C:\Tutorials\WordCount\WordCountMapper\bin\Debug\WordCountMapper.exe
+- C:\Tutorials\WordCount\WordCountReducer\bin\Debug\WordCountReducer.exe
 
 
 ##<a name="test"></a>Testen des Programms im Emulator
@@ -167,7 +167,7 @@ Standardmäßig verwendet der HDInsight-Emulator HDFS (Hadoop Distributed File S
 
 In diesem Lernprogramm wird die folgende Ordnerstruktur verwendet:
 
-<table border="1"> <tr><td>Ordner</td><td>Hinweis</td></tr> <tr><td>\\WordCount</td><td>Der Stammordner des Wortzählungsprojekts. </td></tr> <tr><td>\\WordCount\\Apps</td><td>Der Ordner mit den ausführbaren Dateien für Mapper und Reducer.</td></tr> <tr><td>\\WordCount\\Input</td><td>Der MapReduce-Quelldateiordner.</td></tr> <tr><td>\\WordCount\\Output</td><td>Der MapReduce-Ausgabedateiordner.</td></tr> <tr><td>\\WordCount\\MRStatusOutput</td><td>Der Auftragsausgabeordner.</td></tr> </table></br>
+<table border="1"> <tr><td>Ordner</td><td>Hinweis</td></tr> <tr><td>\WordCount</td><td>Der Stammordner des Wortzählungsprojekts. </td></tr> <tr><td>\WordCount\Apps</td><td>Der Ordner mit den ausführbaren Dateien für Mapper und Reducer.</td></tr> <tr><td>\WordCount\Input</td><td>Der MapReduce-Quelldateiordner.</td></tr> <tr><td>\WordCount\Output</td><td>Der MapReduce-Ausgabedateiordner.</td></tr> <tr><td>\WordCount\MRStatusOutput</td><td>Der Auftragsausgabeordner.</td></tr> </table></br>
 
 In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop_home% verwendet.
 
@@ -278,7 +278,7 @@ In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop_home% verw
 	Sie können auch "|more" an das Ende der Befehlszeile anhängen, um eine Seitenansicht zu öffnen.
 
 ##<a id="upload"></a>Hochladen von Daten in Azure-Blobspeicher
-Azure HDInsight verwendet Azure-Blobspeicher als Standarddateisystem. Sie können ein HDInsight-Cluster für die Verwendung von zusätzlichem Blobspeicher für die Datendateien verwenden. In diesem Abschnitt erstellen Sie ein Azure-Speicherkonto und laden die Datendateien in den Blobspeicher hoch. Als Datendateien werden die .txt-Dateien im Verzeichnis %hadoop_home%\\share\\doc\\hadoop\\common verwendet.
+Azure HDInsight verwendet Azure-Blobspeicher als Standarddateisystem. Sie können ein HDInsight-Cluster für die Verwendung von zusätzlichem Blobspeicher für die Datendateien verwenden. In diesem Abschnitt erstellen Sie ein Azure-Speicherkonto und laden die Datendateien in den Blobspeicher hoch. Als Datendateien werden die .txt-Dateien im Verzeichnis %hadoop_home%\share\doc\hadoop\common verwendet.
 
 
 **So erstellen Sie einen Blobspeicher und Container**
@@ -316,7 +316,7 @@ Azure HDInsight verwendet Azure-Blobspeicher als Standarddateisystem. Sie könne
 		$localFolder = "C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common"
 		$destFolder = "WordCount/Input"
 
-	Beachten Sie: Der lokale Quellordner ist **C:\\hdp\\hadoop-2.4.0.2.1.3.0-1981\\share\\doc\\hadoop\\common**, und der Zielordner ist **WordCount/Input**. Der Quellordner ist der Speicherort der .txt-Dateien im HDInsight-Emulator. Als Ziel wird die Ordnerstruktur verwendet, die im Azure-Blobcontainer abgebildet wird.
+	Beachten Sie: Der lokale Quellordner ist **C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common**, und der Zielordner ist **WordCount/Input**. Der Quellordner ist der Speicherort der .txt-Dateien im HDInsight-Emulator. Als Ziel wird die Ordnerstruktur verwendet, die im Azure-Blobcontainer abgebildet wird.
 
 3. Führen Sie die folgenden Befehle aus, um eine Liste der .txt-Dateien im Quellordner abzurufen:
 
@@ -551,4 +551,4 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Hadoop-Streaming-MapReduce-Auf
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

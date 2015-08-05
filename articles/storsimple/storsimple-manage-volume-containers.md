@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Verwalten der StorSimple-Volumecontainer"
-   description="Beschreibt, wie Sie die Seite &quot;Volumecontainer&quot; des StorSimple-Manager-Dienstes zum Hinzufügen, Ändern oder Löschen eines Volumecontainers verwenden können."
+   description="Beschreibt, wie Sie die Seite ";Volumecontainer"; des StorSimple-Manager-Dienstes zum Hinzufügen, Ändern oder Löschen eines Volumecontainers verwenden können."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
@@ -66,4 +66,4 @@ In einem Volumecontainer sind Volumes enthalten. Er kann nur gelöscht werden, n
 Erfahren Sie mehr über das [Verwalten von StorSimple-Volumes](storsimple-manage-volumes.md).
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

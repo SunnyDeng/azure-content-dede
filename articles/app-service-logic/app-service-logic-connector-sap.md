@@ -94,4 +94,4 @@ Vervollständigen Sie die Logik-App, um den Geschäftsprozess zu definieren, und
 [6]: ./media/app-service-logic-connector-sap/LogicApp2.jpg
 [7]: ./media/app-service-logic-connector-sap/LogicApp3.jpg
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

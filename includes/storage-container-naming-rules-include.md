@@ -5,4 +5,4 @@ Jeder Blob im Azure-Speicher muss sich in einem Container befinden. Der Containe
  
 > [AZURE.IMPORTANT]Beachten Sie, dass der Name eines Containers immer aus Kleinbuchstaben bestehen muss. Wenn der Containername einen Großbuchstaben enthält oder anderweitig gegen die Benennungsregeln für Container verstößt, wird möglicherweise der Fehlercode 400 (Ungültige Anforderung) zurückgegeben. Informationen zu den Benennungsregeln für Container finden Sie unter [Benennen von Containern, Blobs und Metadaten und Verweisen auf diese](https://msdn.microsoft.com/library/azure/dd135715.aspx).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

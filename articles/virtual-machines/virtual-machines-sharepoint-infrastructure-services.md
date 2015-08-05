@@ -1,27 +1,27 @@
-<properties 
-	pageTitle="In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen" 
-	description="Hier finden Sie die wichtigsten Artikel zum Einrichten einer Entwicklungs-/Test- oder Produktions-SharePoint 2013-Farm in Microsoft Azure-Infrastrukturdiensten." 
-	documentationCenter="" 
+<properties
+	pageTitle="In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen"
+	description="Hier finden Sie die wichtigsten Artikel zum Einrichten einer Entwicklungs-/Test- oder Produktions-SharePoint 2013-Farm in Microsoft Azure-Infrastrukturdiensten."
+	documentationCenter=""
 	services="virtual-machines"
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""
 	tags="azure-service-management,azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-windows-sharepoint" 
-	ms.devlang="na" 
-	ms.topic="index-page" 
-	ms.date="07/07/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows-sharepoint"
+	ms.devlang="na"
+	ms.topic="index-page"
+	ms.date="07/21/2015"
 	ms.author="josephd"/>
 
 # In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen
 
 Richten Sie Ihre erste oder nächste Entwicklungs-/Test- oder Produktions-SharePoint-Farm in Microsoft Azure-Infrastrukturdiensten ein. Dadurch erhalten Sie eine einfache Konfiguration und die Möglichkeit, die Farm schnell mit neuen Kapazitäten zu erweitern oder die wichtigsten Funktionen zu optimieren.
 
-## Grundlegende SharePoint-Farm für Entwicklung/Tests 
+## Grundlegende SharePoint-Farm für Entwicklung/Tests
 
 Bei virtuellen Computern, die in der Dienstverwaltung erstellt wurden, können Sie die [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md)-Vorlage aus dem Azure-Vorschauportal verwenden, um eine grundlegende Test-/Entwicklungsfarm für eine SharePoint-Website mit Internetanbindung zu erstellen.
 
@@ -45,17 +45,22 @@ Bei dieser Konfiguration werden virtuelle Computer verwendet, die in der Dienstv
 
 ## Intranet-SharePoint-Produktionsfarm mit hoher Verfügbarkeit
 
-Unter [Bereitstellen von SharePoint 2013 mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-workload-intranet-sharepoint-overview.md) erstellen Sie eine einsatzbereite Intranet-SharePoint Server 2013-Farm mit hoher Verfügbarkeit in Azure.
+Mit der Bereitstellung von [SharePoint 2013 mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-workload-intranet-sharepoint-overview.md) erstellen Sie eine einsatzbereite Intranet-SharePoint Server 2013-Farm mit hoher Verfügbarkeit in Azure.
 
 Bei dieser Konfiguration werden virtuelle Computer verwendet, die in der Dienstverwaltung erstellt wurden.
 
 ## Zusätzliche Ressourcen
 
-[SharePoint Server in Azure-Infrastrukturdiensten](https://msdn.microsoft.com/library/dn275955.aspx)
+Zusätzliche Informationen und Konfigurationen zu SharePoint in Azure finden Sie unter diesen Ressourcen:
 
-[Planen von SharePoint 2013 für Azure-Infrastrukturdienste](https://msdn.microsoft.com/library/dn275958.aspx)
+- [Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
 
-[Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
- 
+- [Internetwebsites in Microsoft Azure mit SharePoint Server 2013](https://technet.microsoft.com/library/dn635307.aspx)
 
-<!---HONumber=July15_HO2-->
+- [SharePoint Server 2013 – Notfallwiederherstellung in Microsoft Azure](https://technet.microsoft.com/library/dn635313.aspx)
+
+- [Verwenden von Microsoft Azure Active Directory für die SharePoint 2013-Authentifizierung](https://technet.microsoft.com/library/dn635311.aspx)
+
+- [Bereitstellen von Office 365-Verzeichnissynchronisierung (DirSync) in Microsoft Azure](https://technet.microsoft.com/library/dn635310.aspx)
+
+<!---HONumber=July15_HO4-->

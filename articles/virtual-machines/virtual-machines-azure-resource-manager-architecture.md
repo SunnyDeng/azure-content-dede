@@ -3,19 +3,19 @@
    description="Lernen Sie die Architektur des Ressourcen-Managers und die Beziehungen zwischen den Anbietern für Compute-, Netzwerk- und Speicherressourcen kennen."
    services="virtual-machines"
    documentationCenter=""
-   authors="JoeDavies-MSFT"
+   authors="davidmu1"
    manager="timlt"
    editor=""
    tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/07/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/07/2015"
+	ms.author="davidmu"/>
 
 # Architektur des Azure-Ressourcen-Managers
 
@@ -32,8 +32,8 @@ Bevor die Architektur des Azure-Ressourcen-Managers und die verschiedenen Ressou
 Im Folgenden sind die Komponenten und deren Beziehungen für die Azure-Dienstverwaltung dargestellt.
 
 ![](./media/virtual-machines-azure-resource-manager-architecture/arm_arch1.png)
- 
-## Architektur des Ressourcen-Managers 
+
+## Architektur des Ressourcen-Managers
 
 Für den Azure-Ressourcen-Manager unterstützen Ressourcenanbieter die einzelnen Ressourcen zum Erstellen von funktionsfähigen virtuellen Computern in der von Ihnen benötigten Konfiguration. Für virtuelle Computer gibt es drei wichtige Ressourcenanbieter:
 
@@ -50,13 +50,13 @@ Außerdem gibt es Beziehungen zwischen den Ressourcen innerhalb der Ressourcenan
 - Eine Lastenausgleichsinstanz verweist auf den Back-End-Pool von IP-Adressen, die die NIC eines virtuellen Computers enthalten (optional) und auf eine öffentliche oder private IP-Adresse für den Lastenausgleich (optional).
 
 ![](./media/virtual-machines-azure-resource-manager-architecture/arm_arch2.png)
- 
+
 Die Komponentisierung von Ressourcen ermöglicht mehr Flexibilität beim Konfigurieren der Infrastruktur für eine IT-Workload, die in Azure gehostet wird. Mit Vorlagen für den Azure-Ressourcen-Manager wird diese Flexibilität genutzt, um einen Satz von abhängigen Ressourcen für eine bestimmte Konfiguration zu erstellen. Beim Ausführen einer Vorlage stellt der Ressourcen-Manager sicher, dass die Ressourcen für eine Konfiguration in der richtigen Reihenfolge erstellt werden, um die Abhängigkeiten und Verweise beizubehalten. Beispielsweise erstellt der Ressourcen-Manager die NIC für einen virtuellen Computer erst, nachdem er ein virtuelles Netzwerk mit einem Subnetz und einer IP-Adresse erstellt hat (eine Netzwerksicherheitsgruppe ist optional).
 
 Eine Ressourcengruppe ist ein logischer Container, der ähnliche Ressourcen für eine Anwendung enthält. Dies können mehrere virtuelle Computer, NICs, IP-Adressen, Lastenausgleichsinstanzen, Subnetze und Netzwerksicherheitsgruppen sein. Sie können beispielsweise alle Ressourcen der Anwendung als eine einzelne Verwaltungseinheit verwalten. Sie können sie alle gleichzeitig erstellen, aktualisieren und löschen. Im Folgenden sehen Sie eine Beispielanwendung, die in einer einzelnen Ressourcengruppen bereitgestellt wurde.
 
 ![](./media/virtual-machines-azure-resource-manager-architecture/arm_arch3.png)
- 
+
 Diese Anwendung besteht aus Folgendem:
 
 - Zwei virtuellen Computern, die das gleiche Speicherkonto verwenden und sich in der gleichen Verfügbarkeitsgruppe und im gleichen Subnetz eines virtuellen Netzwerks befinden.
@@ -79,4 +79,4 @@ Sie können die Komponentisierung sowie die Abhängigkeitsbeziehungen zwischen R
 
 [Azure Resource Manager Overview](resource-group-overview.md) (Übersicht über den Azure-Ressourcen-Manager)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

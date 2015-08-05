@@ -122,7 +122,7 @@ Da Hive und Pig die Anwendung zur Laufzeit aufrufen, sollte die Vorlage **Konsol
 
 6. Doppelklicken Sie auf **Standardcontainer** für den Cluster. Es wird ein neues Fenster geöffnet, das die Inhalte des Standardcontainers anzeigt.
 
-7. Klicken Sie auf das Symbol für den Upload, und wechseln Sie dann zum Ordner **bin\\debug** für das Projekt **HiveCSharp**. Wählen Sie anschließend die Datei **HiveCSharp.exe** aus, und klicken Sie auf **Ok**.
+7. Klicken Sie auf das Symbol für den Upload, und wechseln Sie dann zum Ordner **bin\debug** für das Projekt **HiveCSharp**. Wählen Sie anschließend die Datei **HiveCSharp.exe** aus, und klicken Sie auf **Ok**.
 
 	![Symbol für den Upload](./media/hdinsight-hadoop-hive-pig-udf-dotnet-csharp/upload.png)
 
@@ -240,4 +240,4 @@ Informationen zu anderen Möglichkeiten der Verwendung von Pig und Hive sowie In
 
 * [Verwenden von MapReduce mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

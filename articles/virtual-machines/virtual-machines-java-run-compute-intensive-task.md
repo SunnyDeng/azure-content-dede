@@ -265,7 +265,7 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 	                restCities.add(i);
 	            distances = new double[numCities][numCities];
 	            cityNames = new String[numCities];
-	            buildDistances("c:\\TSP\\cities.txt", numCities);
+	            buildDistances("c:\TSP\cities.txt", numCities);
 	            minDistance = -1;
 	            bestOrder = new int[numCities];
 	            permutation(startCities, 0, restCities);
@@ -413,9 +413,9 @@ Führen Sie die rechenintensive Anwendung aus, zunächst um die Warteschlage zu 
 ### Ausführen der rechenintensiven Anwendung
 
 1. Melden Sie sich am virtuellen Computer an.
-2. Erstellen Sie einen Ordner, in dem die Anwendung ausgeführt wird. Zum Beispiel **c:\\TSP**.
-3. Kopieren Sie **TSPSolver.jar** nach **c:\\TSP**.
-4. Erstellen Sie eine Datei namens **c:\\TSP\\cities.txt** mit folgendem Inhalt:
+2. Erstellen Sie einen Ordner, in dem die Anwendung ausgeführt wird. Zum Beispiel **c:\TSP**.
+3. Kopieren Sie **TSPSolver.jar** nach **c:\TSP**.
+4. Erstellen Sie eine Datei namens **c:\TSP\cities.txt** mit folgendem Inhalt:
 
 		City_1, 1002.81, -1841.35
 		City_2, -953.55, -229.6
@@ -468,7 +468,7 @@ Führen Sie die rechenintensive Anwendung aus, zunächst um die Warteschlage zu 
 		City_49, -120.3, -463.13
 		City_50, 588.51, 679.33
 	
-5. Wechseln Sie an einer Eingabeaufforderung zum Verzeichnis "c:\\TSP".
+5. Wechseln Sie an einer Eingabeaufforderung zum Verzeichnis "c:\TSP".
 6. Stellen Sie sicher, dass sich der Ordner "bin" der JRE in der PATH-Umgebungsvariable befindet.
 7. Sie müssen die Service Bus-Warteschlange erstellen, bevor Sie die TSP-Solver-Permutationen ausführen. Führen Sie den folgenden Befehl aus, um die Service Bus-Warteschlange zu erstellen:
 
@@ -484,10 +484,10 @@ Führen Sie die rechenintensive Anwendung aus, zunächst um die Warteschlage zu 
  
 ### Ausführen der überwachenden Clientanwendung
 1. Melden Sie sich an dem Computer an, auf dem die Clientanwendung ausgeführt wird. Dieser Computer muss nicht zwingend mit dem Computer identisch sein, auf dem die **TSPSolver**-Anwendung ausgeführt wird.
-2. Erstellen Sie einen Ordner, in dem die Anwendung ausgeführt wird. Zum Beispiel **c:\\TSP**.
-3. Kopieren Sie **TSPClient.jar** nach **c:\\TSP**,
+2. Erstellen Sie einen Ordner, in dem die Anwendung ausgeführt wird. Zum Beispiel **c:\TSP**.
+3. Kopieren Sie **TSPClient.jar** nach **c:\TSP**,
 4. Stellen Sie sicher, dass sich der Ordner "bin" der JRE in der PATH-Umgebungsvariable befindet.
-5. Wechseln Sie an einer Eingabeaufforderung zum Verzeichnis "c:\\TSP".
+5. Wechseln Sie an einer Eingabeaufforderung zum Verzeichnis "c:\TSP".
 6. Führen Sie den folgenden Befehl aus:
 
         java -jar TSPClient.jar
@@ -519,4 +519,4 @@ Für Solver- und Clientanwendungen können Sie **Strg+C** drücken, um die Anwen
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

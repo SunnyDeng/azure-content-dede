@@ -31,6 +31,10 @@ Die Offlinesynchronisierung hat eine Reihe potenzieller Nutzen:
 
 Falls Sie noch keine Erfahrung mit Mobile Apps haben, sollten Sie zunächst das Lernprogramm [Erstellen einer iOS-App] abschließen.
 
+##<a name="review"></a>Überprüfen der Konfiguration der Serverprojekts (optional)
+
+[AZURE.INCLUDE [app-service-mobile-dotnet-backend-enable-offline-preview](../../includes/app-service-mobile-dotnet-backend-enable-offline-preview.md)]
+
 ## <a name="get-app"></a>Abrufen der Offline-ToDo-Beispiel-App
 
 Klonen Sie im [Mobile Apps-Beispielrepository auf GitHub] das Repository, und öffnen Sie das Projekt [iOS-Offlinebeispiel] in Xcode.
@@ -278,4 +282,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [Azure Friday: Offlinefähige Apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -3,8 +3,8 @@
    description="Tipps zum Verwalten von Statistiken in Azure SQL Data Warehouse für die Entwicklung von Lösungen"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="barbkess"
-   manager="jhubbard"
+   authors="jrowlandjones"
+   manager="barbkess"
    editor=""/>
 
 <tags
@@ -152,7 +152,7 @@ Verwenden Sie zum Erstellen einer Mehrspaltenstatistik einfach die vorherigen Be
 
 > [AZURE.NOTE]Das Histogramm, das zum Schätzen der Zeilenanzahl im Abfrageergebnis verwendet wird, ist nur für die erste Spalte verfügbar, die in der Definition des Statistikobjekts aufgelistet ist.
 
-In diesem Beispiel basiert das Histogramm auf *product_category*. Spaltenübergreifende Statistiken werden für *product_category* und *product_sub_c\\ategory* berechnet:
+In diesem Beispiel basiert das Histogramm auf *product_category*. Spaltenübergreifende Statistiken werden für *product_category* und *product_sub_c\ategory* berechnet:
 
 ```
 CREATE STATISTICS stats_2cols ON table1 (product_category, product_sub_category) WHERE product_category > '2000101' AND product_category < '20001231' WITH SAMPLE = 50 PERCENT;
@@ -280,13 +280,13 @@ Sie können wie folgt vorgehen, um Statistiken zu aktualisieren:
 Verwenden Sie die folgende Syntax, um ein bestimmtes Statistikobjekt zu aktualisieren:
 
 ```
-UPDATE STATISTICS ON [schema_name].[table_name]([stat_name]);
+UPDATE STATISTICS [schema_name].[table_name]([stat_name]);
 ```
 
 Beispiel:
 
 ```
-UPDATE STATISTICS ON [dbo].[table1] ([stats_col1]);
+UPDATE STATISTICS [dbo].[table1] ([stats_col1]);
 ```
 
 Indem Sie bestimmte Statistikobjekte aktualisieren, können Sie den Zeit- und Ressourcenaufwand reduzieren, der zum Verwalten von Statistiken erforderlich ist. Hierfür ist aber Überlegung gefragt, damit die besten Statistikobjekte für die Aktualisierung ausgewählt werden können.
@@ -296,13 +296,13 @@ Indem Sie bestimmte Statistikobjekte aktualisieren, können Sie den Zeit- und Re
 Hier wird eine einfache Methode zum Aktualisieren aller Statistikobjekte einer Tabelle gezeigt.
 
 ```
-UPDATE STATISTICS ON [schema_name].[table_name];
+UPDATE STATISTICS [schema_name].[table_name];
 ```
 
 Beispiel:
 
 ```
-UPDATE STATISTICS ON dbo.table1;
+UPDATE STATISTICS dbo.table1;
 ```
 
 Diese Anweisung ist einfach zu verwenden. Bedenken Sie, dass hiermit alle Statistiken der Tabelle aktualisiert werden, sodass unter Umständen mehr Arbeit als erforderlich erledigt wird. Wenn die Leistung kein Problem darstellt, ist dies auf jeden Fall die einfachste und umfassendste Möglichkeit sicherzustellen, dass die Statistiken aktuell sind.
@@ -452,4 +452,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 [sys.table_types]: https://msdn.microsoft.com/library/bb510623.aspx
 [Aktualisieren von Statistiken]: https://msdn.microsoft.com/library/ms187348.aspx
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

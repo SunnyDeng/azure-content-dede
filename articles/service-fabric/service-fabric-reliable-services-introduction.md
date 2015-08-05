@@ -5,7 +5,7 @@
    documentationCenter=".net"
    authors="masnider"
    manager="timlt"
-   editor="jessebenson"/>
+   editor="jessebenson; mani-ramaswamy"/>
 
 <tags
    ms.service="Service-Fabric"
@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/13/2015"
+   ms.date="07/17/2015"
    ms.author="masnider;jesseb"/>
 
 # Übersicht über Reliable Services
-Service Fabric vereinfacht das Schreiben und Verwalten zuverlässiger zustandsloser und zustandsbehafteter Dienste (Reliable Services). In diesem Handbuch werden folgende Themen erörtert:
+Service Fabric vereinfacht das Schreiben und Verwalten zuverlässiger zustandsloser und zustandsbehafteter Dienste (Reliable Services). In diesem Dokument wird Folgendes behandelt:
 
-1. Das Reliable Service-Programmiermodell für zustandslose und zustandsbehaftete Dienste
-2. Die unterschiedlichen Optionen, aus denen beim Schreiben eines Reliable Service zu wählen ist
+1. Das Reliable Service-Programmiermodell für statusfreie und statusbehaftete Dienste
+2. Die unterschiedlichen Optionen, die beim Schreiben eines Reliable Service zur Auswahl stehen
 3. Szenarien und Beispiele für die Verwendung von Reliable Services und wie sie geschrieben werden
 
 Reliable Services zählen zu den in Service Fabric verfügbaren Programmiermodellen. Weitere Informationen zum Reliable Actors-Programmiermodell finden Sie in der [Einführung](../service-fabric/service-fabric-reliable-actors-introduction.md).
@@ -32,20 +32,20 @@ Service Fabric verwaltet die Lebensdauer von Diensten von der Bereitstellung und
 ## Was sind Reliable Services?
 Reliable Services bieten ein einfaches, leistungsfähiges und erstklassiges Programmiermodell, mit dem Sie alle wichtigen Funktionen in Ihrer Anwendung programmieren können. Das Reliable Services-Programmiermodell bietet Folgendes:
 
-1. Bei zustandsbehafteten Diensten können Sie mit dem Reliable Service-Programmiermodell den Zustand mithilfe von zuverlässigen Auflistungen (Reliable Collections) konsistent und zuverlässig direkt im Dienst speichern. Die zuverlässigen Auflistungen bieten einen einfachen Satz von hoch verfügbaren Auflistungsklassen. Wenn Sie bereits mit C#-Auflistungen gearbeitet haben, sind Ihnen diese vertraut. Dienste benötigten bisher für die zuverlässige Zustandsverwaltung externe Systemen. Mit den zuverlässigen Auflistungen können Sie den Zustand zusammen mit Ihren Berechnungen speichern und dabei von der gleichen hohe Verfügbarkeit und Zuverlässigkeit profitieren, die Sie von hoch verfügbaren externen Speichern gewohnt sind.
+1. Bei zustandsbehafteten Diensten können Sie mit dem Reliable Service-Programmiermodell den Zustand mithilfe von zuverlässigen Auflistungen (Reliable Collections) konsistent und zuverlässig direkt im Dienst speichern. Die zuverlässigen Auflistungen bieten einen einfachen Satz von hoch verfügbaren Auflistungsklassen. Wenn Sie bereits mit C#-Auflistungen gearbeitet haben, sind Ihnen diese vertraut. Dienste benötigten bisher für die zuverlässige Zustandsverwaltung externe Systemen. Mit zuverlässigen Auflistungen können Sie den Status zusammen mit dem Server speichern und dabei von der gleichen hohen Verfügbarkeit und Zuverlässigkeit, die Sie von hochverfügbaren externen Speichern gewohnt sind, und von zusätzlichen Latenzverbesserungen profitieren, die Server und Status-Anbieter zusammenbringen.
 
 2. Ein einfaches Modell für die Ausführung von eigenem Code, das Ihren gewohnten Programmiermodellen ähnelt: Der Code enthält einen klar definierten Einstiegspunkt und einen leicht zu verwaltenden Lebenszyklus.
 
 3. Ein austauschbares Kommunikationsmodell – wählen Sie den gewünschten Übertragungskanal, z. B. HTTP mit [Web-API](../service-fabric/service-fabric-reliable-services-communication-webapi.md), WebSockets, benutzerdefinierte TCP-Protokolle usw. Reliable Services bieten einige nützliche vorkonfigurierte Optionen. Sie können aber auch eigene Optionen verwenden.
 
 ## Was unterscheidet Reliable Services von anderen Diensten?
-Reliable Services sind nicht wie andere Dienste, die Sie möglicherweise bereits geschrieben haben. Mit Service Fabric können Sie die Zuverlässigkeit, Verfügbarkeit, Konsistenz und Skalierbarkeit Ihrer Dienste sicherstellen.
+Reliable Services sind nicht wie andere Dienste, die Sie möglicherweise bereits geschrieben haben. Service Fabric bietet Zuverlässigkeit, Verfügbarkeit, Konsistenz und Skalierbarkeit.
 
 + <u>Zuverlässigkeit</u>: Der Dienst wird auch dann fortgesetzt, wenn in der Umgebung Probleme auftreten, wie etwa Computerausfälle oder Netzwerkprobleme.
 
-+ <u>Verfügbarkeit</u>: Der Dienst ist tatsächlich erreichbar und reaktionsfähig (es gibt Dienste, die weder auffindbar noch erreichbar sind).
++ <u>Verfügbarkeit</u>: Der Dienst ist erreichbar und reaktionsfähig (was nicht heißt, dass Ihre Dienste nicht von extern nicht auffindbar oder erreichbar sein können).
 
-+ <u>Skalierbarkeit</u>: Die Dienste sind von bestimmter Hardware entkoppelt und können durch das Hinzufügen oder Entfernen von Hardware oder virtuellen Ressourcen nach Bedarf vergrößert oder verkleinert werden. Die Dienste lassen sich einfach partitionieren (insbesondere, wenn sie zustandsbehaftet sind), um sicherzustellen, dass Teile des Diensts unabhängig voneinander skaliert werden und auf Fehler reagieren können. Schließlich fördert Service Fabric das Erstellen einfacher Dienste, indem in einem einzigen Prozess Tausende von Diensten bereitgestellt werden können, anstatt ganze Betriebssysteminstanzen zu erzwingen oder für eine einzige Instanz einer bestimmten Arbeitsauslastung zu reservieren.
++ <u>Skalierbarkeit</u>: Die Dienste sind von bestimmter Hardware entkoppelt und können durch das Hinzufügen oder Entfernen von Hardware oder virtuellen Ressourcen nach Bedarf vergrößert oder verkleinert werden. Die Dienste lassen sich einfach partitionieren (insbesondere, wenn sie statusbehaftet sind), um sicherzustellen, dass Teile des Diensts unabhängig voneinander skaliert werden und auf Fehler reagieren können. Schließlich fördert Service Fabric das Erstellen einfacher Dienste, indem in einem einzigen Prozess Tausende von Diensten bereitgestellt werden können, anstatt ganze Betriebssysteminstanzen zu erzwingen oder für eine einzige Instanz einer bestimmten Arbeitsauslastung zu reservieren.
 
 + <u>Konsistenz</u>: Bei allen in diesem Dienst gespeicherten Informationen kann die Konsistenz garantiert werden (gilt nur für zustandsbehaftete Dienste – mehr dazu später).
 
@@ -54,9 +54,20 @@ Ungeachtet dessen, ob der Dienst zustandsbehaftet oder zustandslos ist, bieten R
 
 + CreateCommunicationListener: Hiermit definiert der Dienst den zu verwendenden Kommunikationsstapel. Der Kommunikationsstapel (z. B. [Web-API](../service-fabric/service-fabric-reliable-services-communication-webapi.md)) definiert die überwachenden Endpunkte des Diensts (wie er von Clients erreicht wird) sowie die Interaktion der angezeigten Nachrichten mit dem übrigen Dienstcode.
 
-+ RunAsync: Hiermit kann der Dienst "arbeiten". Das bereitgestellte Abbruchtoken dient als Signal, wenn die Arbeit beendet werden soll. Wenn Sie beispielsweise einen Dienst haben, der permanent Nachrichten aus einer ReliableQueue abrufen und verarbeiten muss, wird dieser Vorgang hiermit ausgeführt.
++ RunAsync – Hiermit führt der Dienst seine gesamte Geschäftslogik aus. Das bereitgestellte Abbruchtoken dient als Signal, wenn die Arbeit beendet werden soll. Wenn Sie beispielsweise einen Dienst haben, der permanent Nachrichten aus einer ReliableQueue abrufen und verarbeiten muss, wird dieser Vorgang hiermit ausgeführt.
 
-Dies sind die wichtigsten Ereignisse im Lebenszyklus eines Reliable Service: 1. Das Serviceobjekt (von "StatelessService" oder "StatefulService" abgeleitet) wird erstellt. 2. Die Methode "CreateCommunicationListener" wird aufgerufen, sodass der Dienst einen Kommunikationslistener seiner Wahl zurückgeben kann. Dies ist optional, wobei die meisten Dienste einige Endpunkt direkt bereitstellen. 3. Nach dem Erstellen von CommunicationListener wird der Dienst geöffnet. CommunicationListener verfügen über eine Methode namens "Open()", die zu diesem Zeitpunkt aufgerufen wird und die Überwachungsadresse für den Dienst zurückgibt. Wenn Ihr Reliable Service einen der integrierten ICommunicationListener verwendet, erfolgt dies automatisch. 4. Sobald der Kommunikationslistener den Status "Open()" hat, wird der Aufruf "RunAsync()" für den Hauptdienst ausgelöst. RunAsync ist optional. Wenn der Dienst alle Vorgänge nur direkt infolge von Benutzeraufrufen ausführt, muss "RunAsync()" nicht implementiert werden.
+Dies sind die wichtigsten Ereignisse im Lebenszyklus eines Reliable Service:
+
+1. Das Serviceobjekt (von "StatelessService" oder "StatefulService" abgeleitet) wird erstellt.
+
+2. Die CreateCommunicationListener-Methode wird aufgerufen, sodass der Dienst einen Kommunikationslistener seiner Wahl zurückzugeben kann.
+  + Dies ist optional, obwohl die meisten Dienste einige Endpunkte direkt verfügbar machen.
+
+3. Nach dem Erstellen des Kommunikationslisteners wird der Dienst geöffnet.
+  + Kommunikationslistener verfügen über eine Methode namens Open(), die zu diesem Zeitpunkt aufgerufen wird und die Überwachungsadresse für den Dienst zurückgibt. Wenn Ihr Reliable Service einen der integrierten ICommunicationListener verwendet, erfolgt dies automatisch.
+
+4. Sobald der Kommunikationslistener den Status "Open()" hat, wird der Aufruf "RunAsync()" für den Hauptdienst ausgelöst.
+  + RunAsync ist optional. Wenn der Dienst alle Vorgänge nur direkt infolge von Benutzeraufrufen ausführt, muss "RunAsync()" nicht implementiert werden.
 
 Wenn der Dienst heruntergefahren wird (weil er gelöscht oder einfach von einem bestimmten Speicherort verschoben wurde), bleibt die Aufrufreihenfolge gleich: Zunächst wird im CommunicationListener "Close()" aufgerufen und dann das an "RunAsync()" übergebene Abbruchtoken abgebrochen.
 
@@ -119,4 +130,4 @@ Wenn einer der folgenden Punkte auf Ihre Anwendungsdienstanforderungen zutrifft,
 + [Erfahren Sie mehr über das Reliable Actors-Programmiermodell](../service-fabric/service-fabric-reliable-actors-introduction.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

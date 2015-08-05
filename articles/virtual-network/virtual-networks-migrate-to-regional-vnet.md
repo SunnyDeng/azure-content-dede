@@ -31,29 +31,7 @@ Verwenden Sie bei der Erstellung neuer VNets ab sofort die Option *Region*. Dies
 
 ### Informationen zu VNets mit bestehender Affinitätsgruppenzuordnung
 
-Für VNets mit bestehender Affinitätsgruppenzuordnung wird in Kürze eine Migration zu regionalen VNets ermöglicht. Wir aktualisieren diese Seite, um Sie über den Prozess sowie über den Zeitpunkt für die nächsten Migrationsschritte zu informieren.
-
-Beachten Sie, dass Affinitätsgruppen weiterhin vorhanden sind, selbst wenn wir deren Verwendung für VNets nicht mehr empfehlen. Daher können Sie sich auch gegen eine Migration Ihres VNets entscheiden oder die Migration zu einem späteren Zeitpunkt durchführen. Ihr VNet funktioniert auch weiterhin. Unter Umständen stoßen Sie aber auf gewisse Einschränkungen, und Sie können keines der vielen neuen Features nutzen, die ein regionales VNet voraussetzen. Aus diesem Grund empfehlen wir ausdrücklich, affinitätsgruppenbasierte VNets zu einem regionalen VNet zu migrieren, wenn das VNet aktiviert wird.
-
-### Frühzeitige Migration
-
-Die frühzeitige Migration steht Kunden mit Supportvertrag offen. Gehen Sie wie folgt vor, um die frühzeitige Migration zu nutzen:
-
-1. Klicken Sie im Verwaltungsportal auf der Seite Ihres VNets in der rechten oberen Ecke auf **Microsoft-Support kontaktieren**.
-
-	![Migrationsanforderung für regionale VNets](./media/virtual-networks-migrate-to-regional-vnet/IC790447.png)
-
-1. Wählen Sie auf der Seite **Microsoft-Support kontaktieren** Folgendes aus:
-
-	- **Abonnement:** Falls Sie mehrere Abonnements besitzen, wählen Sie das Abonnement für das VNet aus, das Sie migrieren möchten.
-
-	- **Supporttyp:** *Technisch*
-
-	- **Produkttyp:** *Virtuelle Netzwerke (VNet)*
-
-	- **Problemtyp:** *Virtuelles Netzwerk zu regionalem virtuellem Netzwerk migrieren*
-
-1. Voraussetzung: Für die folgenden Schritte muss Ihr VNet bereits für die Migration vorgesehen sein. Ob dies der Fall ist, erfahren Sie entweder in einer Bestätigung (bei Anforderung einer frühzeitigen Migration) oder auf dieser Seite, wenn diese mit dem Hinweis aktualisiert wurde, dass die Migration für alle VNets möglich ist.
+Für VNets mit bestehender Affinitätsgruppenzuordnung ist die Migration zu regionalen VNets möglich. Gehen Sie folgendermaßen vor, um zu einem regionalen VNet zu migrieren:
 
 1. Exportieren Sie die Netzwerkkonfigurationsdatei. Dafür können Sie entweder PowerShell oder das Verwaltungsportal verwenden. Informationen zur Verwendung des Verwaltungsportals finden Sie unter [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](../virtual-networks-using-network-configuration-file/).
 
@@ -63,11 +41,11 @@ Die frühzeitige Migration steht Kunden mit Supportvertrag offen. Gehen Sie wie 
 	
 	Bearbeiten Sie die folgenden Zeilen Ihrer Netzwerkkonfigurationsdatei, und ersetzen Sie dabei die Werte durch Ihre eigenen Werte:
 
-	**Alter Wert:** \<VirtualNetworkSitename="VNetUSWest" AffinityGroup="VNetDemoAG"> 
+	**Alter Wert:** <VirtualNetworkSitename="VNetUSWest" AffinityGroup="VNetDemoAG">
 
-	**Neuer Wert:** \<VirtualNetworkSitename="VNetUSWest" Location="West US">
+	**Neuer Wert:** <VirtualNetworkSitename="VNetUSWest" Location="West US">
 
-1. Speichern Sie die Änderungen, und [importieren](../virtual-networks-using-network-configuration-file/) Sie die Netzwerkkonfiguration in Azure.
+1. Speichern Sie die Änderungen, und importieren[](../virtual-networks-using-network-configuration-file/) Sie die Netzwerkkonfiguration in Azure.
 
 ## Affinitätsgruppen und virtuelle Computer
 
@@ -86,4 +64,4 @@ Virtuelle Computer, die sich derzeit in einer Affinitätsgruppe befinden, müsse
 Die Bereitstellung eines virtuellen Computers erfolgt in einer einzelnen Skalierungseinheit. Affinitätsgruppen können zwar den Satz verfügbarer VM-Größen für eine neue VM-Bereitstellung einschränken, alle vorhandenen und bereits bereitgestellten virtuellen Computer sind jedoch bereits auf den Satz von VM-Größen beschränkt, der in der entsprechenden Skalierungseinheit verfügbar ist. Daher hat das Entfernen eines virtuellen Computers aus der Affinitätsgruppe keinerlei Auswirkungen.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -20,4 +20,4 @@
 
 Um eine Erhöhung der Anzahl der kostenpflichtigen Sammlungen oder gleichzeitigen Verbindungen anzufordern, senden Sie eine E-Mail an [remoteappforum@microsoft.com](mailto:remoteappforum@microsoft.com) mit genauen Angaben, einschließlich Ihrer Abonnement-ID.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

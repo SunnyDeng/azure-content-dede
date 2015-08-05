@@ -55,7 +55,7 @@ Die häufigsten Aufgaben im Zusammenhang mit einem Volume sind:
 
 ## Hinzufügen eines Volumes
 
-Sie haben beim Bereitstellen der StorSimple-Lösung [ein Volume erstellt](storsimple-deployment-walkthrough.md#step-6:-create-a-volume). Das Hinzufügen eines Volumes ist ein ähnliches Verfahren.
+Sie haben beim Bereitstellen der StorSimple-Lösung [ein Volume erstellt](storsimple-deployment-walkthrough.md#to-create-a-volume). Das Hinzufügen eines Volumes ist ein ähnliches Verfahren.
 
 ### So fügen Sie ein Volume hinzu
 
@@ -181,4 +181,4 @@ Erfahren Sie, wie Sie ein [StorSimple-Volume klonen](storsimple-clone-volume.md)
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

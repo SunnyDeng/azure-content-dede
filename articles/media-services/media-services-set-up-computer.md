@@ -42,4 +42,4 @@ Wählen Sie **.NET** oder **REST API**, um eine programmgesteuerte Verbindung mi
 [AZURE.INCLUDE [media-services-selector-connect](../../includes/media-services-selector-connect.md)]
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

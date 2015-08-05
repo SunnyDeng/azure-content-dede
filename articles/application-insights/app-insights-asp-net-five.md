@@ -171,4 +171,4 @@ Kehren Sie zum [Azure-Portal][portal] zurück, und navigieren Sie zur Applicatio
 [start]: app-insights-get-started.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/02/2015"
+   ms.date="07/21/2015"
    ms.author="banders" />
 
 # Identifizieren von Unterschieden mit Change Tracking
@@ -51,6 +51,7 @@ Sie können Änderungen an Ihrer Infrastruktur anzeigen und dann Einzelheiten f�
 
 3. Sie können auf jeder Seite für die Protokollsuche die Ergebnisse nach Zeit, detaillierte Ergebnisse und Ihren Protokollsuchverlauf anzeigen. Außerdem können Sie nach Facets filtern, um die Ergebnisse einzugrenzen.
 
-4. Auf jeder Seite für die Protokollsuche können Sie die Ergebnisdetails in eine CSV-Datei **exportieren**, die in Excel oder einer anderen Anwendung geöffnet, angezeigt oder geändert werden kann.
 
-<!---HONumber=July15_HO2-->
+[AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
+
+<!---HONumber=July15_HO4-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="php"
 	ms.topic="article"
-	ms.date="06/10/2015"
+	ms.date="07/20/2015"
 	ms.author="mebha"/>
 
 
@@ -27,19 +27,7 @@
 In diesem Thema wird veranschaulicht, wie Sie von einer in PHP geschriebenen Clientanwendung, die unter Windows ausgeführt wird, eine Verbindung mit Azure SQL-Datenbank herstellen können.
 
 
-## Voraussetzungen
-
-
-Für die Ausführung des PHP-Codebeispiels in diesem Thema muss auf dem Clientcomputer folgende Software installiert sein:
-
-
-- [Microsoft-Treiber für PHP für Microsoft SQL Server](http://www.microsoft.com/download/details.aspx?id=20098) ("SQLSRV32.EXE" enthält die aktuellsten Komponenten)
-- [Microsoft SQL Server Native Client 11.0](http://www.microsoft.com/download/details.aspx?id=36434)
-- [Microsoft ODBC-Treiber](https://www.microsoft.com/de-de/download/details.aspx?id=36434)
-- IIS Express
-- [PHP 5.6 für IIS Express](http://www.microsoft.com/web/downloads/platform.aspx): Das Herunterladen erfolgt über den Webplattform-Installer. Verwenden Sie unbedingt Internet Explorer, um den Webplattform-Installer herunterzuladen
-
-In unserem [Teamblog](http://blogs.msdn.com/b/sqlphp/archive/2015/05/11/getting-started-with-php-and-microsoft-sql-server.aspx) und [Video](https://www.youtube.com/watch?v=0oCjiRK_tUk) erfahren Sie, wie Sie die oben genannten Voraussetzungen installieren und einrichten.
+[AZURE.INCLUDE [sql-database-develop-includes-prerequisites-php-windows](../../includes/sql-database-develop-includes-prerequisites-php-windows.md)]
 
 
 ## Erstellen einer Datenbank und Abrufen der Verbindungszeichenfolge
@@ -192,4 +180,4 @@ Weitere Informationen über die Installation und Verwendung von PHP finden Sie u
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

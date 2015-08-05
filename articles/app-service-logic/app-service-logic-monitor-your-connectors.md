@@ -95,7 +95,7 @@ Rolle | Beschreibung
 --- | ---
 Besitzer | Verfügen über Vollzugriff auf die Verwaltungsfunktionen und können anderen Benutzern oder Gruppen Zugriff gewähren.
 Mitwirkender | Verfügen über Vollzugriff auf die Verwaltungsfunktionen. Können anderen Benutzern oder Gruppen keinen Zugriff gewähren.
-Leser | Können alle Ressourcen mit Ausnahme geheimer Schlüssel anzeigen.
+Reader | Können alle Ressourcen mit Ausnahme geheimer Schlüssel anzeigen.
 Benutzerzugriffsadministrator | Können alle Ressourcen anzeigen, Rollen erstellen/verwalten und Supporttickets erstellen/verwalten.
 
 Siehe [Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md).
@@ -133,4 +133,4 @@ Sie können Benutzer problemlos hinzufügen und ihnen bestimmte Rollen für Ihre
 [hostsettings]: ./media/app-service-logic-monitor-your-connectors/hostsettings.png
 [apiapphost]: ./media/app-service-logic-monitor-your-connectors/apiapphost.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

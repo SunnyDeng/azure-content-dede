@@ -3,7 +3,7 @@
    description="Beschreibt die Diagnose und Problembehandlung von Fehlern, die beim Bereitstellen von StorSimple auftreten."
    services="storsimple"
    documentationCenter="NA"
-   authors="SharS"
+   authors="alkohli"
    manager="adinah"
    editor="tysonn" />
 <tags 
@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="05/27/2015"
-   ms.author="v-sharos" />
+   ms.date="07/17/2015"
+   ms.author="alkohli" />
 
 # Beheben von Problemen mit der Bereitstellung von StorSimple-Geräten
 
@@ -64,7 +64,7 @@ Die folgenden Tabellen enthalten häufige Fehler, die auftreten können, wenn Si
 - die Kennwörter für den Geräteadministrator und für den StorSimple-Momentaufnahme-Manager einrichten. 
 - das Gerät registrieren. 
 
-### Fehler, die beim Konfigurieren der erforderlichen Netzwerkeinstellungen auftreten
+## Fehler während der erforderlichen Netzwerkeinstellungen
 
 | Nr.| Fehlermeldung | Mögliche Ursachen | Empfohlene Maßnahme |
 | ---| ------------- | --------------- | ------------------ |
@@ -76,7 +76,7 @@ Die folgenden Tabellen enthalten häufige Fehler, die auftreten können, wenn Si
 | 6 | Invoke-HcsSetupWizard: Ungültige IPv6-Adresse. | Die IP-Adresse hat das falsche Format.| Überprüfen Sie das Format, und geben Sie die IP-Adresse erneut an. Weitere Informationen finden Sie unter [Ipv6 Addressing][2] (in englischer Sprache).|
 | 7 | Invoke-HcsSetupWizard: Es sind keine Endpunkte mehr von der Endpunktzuordnung verfügbar. (Ausnahme von HRESULT: 0x800706D9) | Die Clusterfunktionalität ist nicht funktionsfähig. | [Wenden Sie sich an den Microsoft Support](https://msdn.microsoft.com/library/azure/dn757750.aspx) für weitere Schritte.
 
-### Fehler, die beim Konfigurieren der optionalen Webproxy-Einstellungen auftreten
+## Fehler während der optionalen Webproxyeinstellungen
 
 | Nr.| Fehlermeldung | Mögliche Ursachen | Empfohlene Maßnahme |
 | ---| ------------- | --------------- | ------------------ |
@@ -86,7 +86,7 @@ Die folgenden Tabellen enthalten häufige Fehler, die auftreten können, wenn Si
 | 4 | Invoke-HcsSetupWizard: Clusterressource wurde nicht gefunden (Ausnahme von HRESULT: 0x8007138f) | Die Clusterressource wurde nicht gefunden. Dies kann auftreten, wenn die Installation fehlerhaft verlaufen ist. | Möglicherweise müssen Sie das Gerät auf die werksseitigen Standardeinstellungen zurücksetzen. [Wenden Sie sich an den Microsoft Support](https://msdn.microsoft.com/library/azure/dn757750.aspx), um eine Clusterressource zu erstellen.|
 | 5 | Invoke-HcsSetupWizard: Clusterressource ist nicht online (Ausnahme von HRESULT: 0x8007138c)| Die Clusterressourcen sind nicht online. | [Wenden Sie sich an den Microsoft Support](https://msdn.microsoft.com/library/azure/dn757750.aspx) für weitere Schritte.|
 
-### Fehler, die beim Einrichten der Kennwörter für den Geräteadministrator und für den StorSimple-Momentaufnahme-Manager auftreten.
+## Fehler bei den Kennwörtern für den Geräteadministrator und für den StorSimple-Snapshot Manager
 
 Das Standardkennwort für den Geräteadministrator lautet **Password1**. Dieses Kennwort läuft nach der ersten Anmeldung ab. Aus diesem Grund müssen Sie den Setup-Assistenten verwenden, um es zu ändern. Sie müssen ein neues Kennwort für den Geräteadministrator angeben, wenn Sie das Gerät zum ersten Mal registrieren.
 
@@ -124,7 +124,7 @@ Sie können die Kennwörter über das Verwaltungsportal vom StorSimple-Manager-D
 - [Konfigurieren des Geräteadministratorkennworts](https://msdn.microsoft.com/library/azure/02f1412f-e196-4a88-8eda-2113247ea47c#sec09)
 - [Konfigurieren des StorSimple-Momentaufnahme-Managers](https://msdn.microsoft.com/library/azure/02f1412f-e196-4a88-8eda-2113247ea47c#sec08)
 
-### Fehler, die bei der Registrierung des Geräts auftreten.
+## Fehler bei der Geräteregistrierung
 
 Der StorSimple-Manager-Dienst in Microsoft Azure wird zur Registrierung des Geräts verwendet. Während der Geräteregistrierung können eines oder mehrere der folgenden Probleme auftreten.
 
@@ -575,4 +575,4 @@ Der Fehler kann eine der folgenden Ursachen haben:
 [1]: https://technet.microsoft.com/library/dd379547(v=ws.10).aspx
 [2]: https://technet.microsoft.com/library/dd392266(v=ws.10).aspx
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -113,4 +113,4 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

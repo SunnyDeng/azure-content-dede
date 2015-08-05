@@ -4,4 +4,4 @@
 >
 > **Benutzerdefinierte Domänennamen können nicht mit kostenlosen Web-Apps verwendet werden**. Sie müssen Ihre Web-App für den **Shared**-, **Basic**- oder **Standard**-Modus konfigurieren. Von dieser Einstellung hängt möglicherweise ab, wie Ihr Abonnement abgerechnet wird. Weitere Informationen erhalten Sie unter <a href=/pricing/details/web-sites/">Web-Apps – Preisübersicht</a>.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

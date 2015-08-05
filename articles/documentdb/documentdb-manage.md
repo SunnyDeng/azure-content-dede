@@ -79,4 +79,4 @@ Anweisungen für die Überwachung der Leistungsebenen im Azure-Vorschauportal fi
 Weitere Informationen zum Auswählen von Leistungsebenen für Sammlungen finden Sie unter [Leistungsebenen in DocumentDB](documentdb-performance-levels).
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

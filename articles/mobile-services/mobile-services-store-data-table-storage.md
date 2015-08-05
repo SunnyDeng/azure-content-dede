@@ -3,7 +3,6 @@
 	description="Lernen Sie, wie Sie Mobile Services zum Speichern von Daten in Tabellenspeicher verwenden." 
 	documentationCenter="" 
 	authors="ysxu" 
-	writer="yuaxu" 
 	services="mobile-services" 
 	manager="dwrede" 
 	editor=""/>
@@ -24,4 +23,4 @@ Erfahren Sie mit dem Lernprogramm [Mobile Services und Microsoft Azure Storage] 
 [Mobile Services und Microsoft Azure Storage]: http://chrisrisner.com/Mobile-Services-and-Windows-Azure-Storage
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/10/2015" 
+	ms.date="07/19/2015" 
 	ms.author="nitinme"/>
 
 
@@ -36,13 +36,13 @@ Hier finden Sie einige gängige Szenarien, die bei Ihrem Spark Cluster ggf. auft
 Apache Spark-Cluster in HDInsight ist mehrinstanzenfähig, sodass Ressourcen über mehrere Komponenten (Notebooks, Auftragsserver usw.) aufgeteilt sind. Dadurch können Sie alle Spark-Komponenten gleichzeitig verwenden, ohne sich darüber Gedanken machen zu müssen, ob für eine Komponente die zum Ausführen erforderlichen Ressourcen nicht vorhanden sind. Die einzelnen Komponente sind jedoch langsamer, da Ressourcen fragmentiert sind. Dies kann Ihren Anforderungen entsprechend angepasst werden.
 
 
-### Ich verwende nur IPython mit dem Spark-Cluster. Wie kann ich ihm alle Ressourcen zuweisen?
+### Ich verwende das Jupyter Notebook nur mit dem Spark-Cluster. Wie kann ich ihm alle Ressourcen zuweisen?
 
 1. Klicken Sie im **Spark-Dashboard** auf die Registerkarte **Spark-Benutzeroberfläche**, um die maximale Anzahl von Kernen und den maximalen Arbeitsspeicher zu ermitteln, die Sie den Anwendungen zuteilen können.
 
 	![Ressourcenzuteilung](./media/hdinsight-apache-spark-resource-manager/HDI.Spark.UI.Resource.png "Suchen nach Ressourcen, die einem Spark-Cluster zugeteilt sind")
 
-	Laut der Bildschirmaufnahme oben können Sie höchstens 7 Kerne (insgesamt 8 Kerne, wovon einer in Gebrauch ist) und höchstens 9 GB Arbeitsspeicher (insgesamt 12 GB, wovon 2 GB vom System und 1 GB von anderen Anwendungen genutzt wird) zuteilen.
+	Laut der Bildschirmaufnahme oben können Sie höchstens 7 Kerne (insgesamt 8 Kerne, wovon einer in Gebrauch ist) und höchstens 9 GB Arbeitsspeicher (insgesamt 12 GB, wovon 2 GB vom System und 1 GB von anderen Anwendungen genutzt werden) zuteilen.
 
 	Sie sollten auch alle ausgeführten Anwendungen berücksichtigen. Die ausgeführten Anwendungen können Sie auf der Registerkarte **Spark-Benutzeroberfläche** anzeigen.
 
@@ -79,4 +79,4 @@ Geben Sie als Anzahl von Thrift-Serverkernen und Thrift-Executor-Serverspeicher 
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

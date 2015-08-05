@@ -60,4 +60,4 @@ Die folgenden Beispielbefehle zeigen, wie Sie die Eigenschaften für ein Runbook
 - [Runbookausgabe und Meldungen](../automation-runbook-output-and-messages) 
 - [Erstellen oder Importieren eines Runbooks](https://msdn.microsoft.com/library/dn643637.aspx) 
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

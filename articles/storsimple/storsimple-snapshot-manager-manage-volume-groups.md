@@ -142,4 +142,4 @@ Gehen Sie folgendermaßen vor, um eine Volumegruppe zu löschen.
 
 [Verwenden des StorSimple Snapshot Managers zum Erstellen und Verwalten von Sicherungsrichtlinien](storsimple-snapshot-manager-manage-backup-policies.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

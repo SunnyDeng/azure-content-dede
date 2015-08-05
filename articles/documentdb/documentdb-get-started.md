@@ -475,4 +475,4 @@ Um die Verweise auf das DocumentDB .NET SDK in Visual Studio 2013 wiederherzust
 [keys]: media/documentdb-get-started/keys.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -3,7 +3,7 @@
     pageTitle="Ändern des Azure Active Directory-Mandanten in Azure RemoteApp"
     description="Erfahren Sie, wie Sie den Azure Active Directory-Mandanten ändern, der Azure RemoteApp zugeordnet ist."
     services="remoteapp"
-    solutions="" documentationCenter="" 
+	documentationCenter="" 
     authors="lizap"
     manager="mbaldwin" />
 
@@ -48,4 +48,4 @@ Wenn Sie einen anderen Mandanten verwenden möchten, führen Sie die folgenden S
 
 Nun können Sie den neuen Azure AD-Mandanten für die Zugriffskontrolle auf das Azure-Abonnement und zum Konfigurieren des Benutzerzugriffs in Azure RemoteApp verwenden.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/25/2015"
+   ms.date="07/20/2015"
    ms.author="cherylmc" />
 
 # Freigeben einer ExpressRoute-Verbindung für mehrere Abonnements
@@ -33,9 +33,9 @@ Der Besitzer der Verbindung hat die Möglichkeit, Autorisierungen jederzeit zu �
 
 ## Workflow
 
-1. Der Verbindungsbesitzer autorisiert die Administratoren anderer Abonnements für die Nutzung der angegebenen Verbindung. Im folgenden Beispiel ermöglicht der Administrator der Verbindung (Contoso-IT) dem Administrator eines anderen Abonnements (Contoso Sales) das Verknüpfen von 2 VNETs mit der Verbindung, indem dessen Microsoft (Live)-ID angegeben wird. Das Cmdlet sendet keine E-Mail an die angegebene Microsoft-ID. Der Verbindungsbesitzer muss den Besitzer des anderen Abonnements explizit darüber benachrichtigen, dass die Autorisierung erfolgt ist.
+1. Der Verbindungsbesitzer autorisiert die Administratoren anderer Abonnements für die Nutzung der angegebenen Verbindung. Im folgenden Beispiel ermöglicht der Administrator der Verbindung (Contoso-IT) dem Administrator eines anderen Abonnements (Contoso Sales) das Verknüpfen von 2 VNETs mit der Verbindung, indem dessen Microsoft-ID angegeben wird. Das Cmdlet sendet keine E-Mail an die angegebene Microsoft-ID. Der Verbindungsbesitzer muss den Besitzer des anderen Abonnements explizit darüber benachrichtigen, dass die Autorisierung erfolgt ist.
 
-		PS C:> New-AzureDedicatedCircuitLinkAuthorization -ServiceKey '6ed7e310-1a02-4261-915f-6ccfedc416f1' -Description 'SalesTeam' -Limit 2 -MicrosoftIds 'salesadmin@contoso.com'
+		PS C:\> New-AzureDedicatedCircuitLinkAuthorization -ServiceKey '6ed7e310-1a02-4261-915f-6ccfedc416f1' -Description 'SalesTeam' -Limit 2 -MicrosoftIds 'salesadmin@contoso.com'
 		
 		Description         : SalesTeam 
 		Limit               : 2 
@@ -45,7 +45,7 @@ Der Besitzer der Verbindung hat die Möglichkeit, Autorisierungen jederzeit zu �
 
 1. Nach Benachrichtigung durch den Verbindungsbesitzer kann der Administrator des autorisierten Abonnements zum Abrufen des Dienstschlüssels der Verbindung das folgende Cmdlet ausführen. In diesem Beispiel muss sich der Administrator von Contoso Sales zunächst mit der angegebenen Microsoft-ID (salesadmin@contoso.com) anmelden.
 
-		PS C:> Get-AzureAuthorizedDedicatedCircuit
+		PS C:\> Get-AzureAuthorizedDedicatedCircuit
 		
 		Bandwidth                        : 100
 		CircuitName                      : ContosoIT
@@ -59,7 +59,7 @@ Der Besitzer der Verbindung hat die Möglichkeit, Autorisierungen jederzeit zu �
 
 1. Der Administrator des autorisierten Abonnements führt das folgende Cmdlet aus, um den Verknüpfungsvorgang abzuschließen.
 
-		PS C:> New-AzureDedicatedCircuitLink –servicekey 6ed7e310-1a02-4261-915f-6ccfedc416f1 –VnetName 'SalesVNET1' 
+		PS C:\> New-AzureDedicatedCircuitLink –servicekey 6ed7e310-1a02-4261-915f-6ccfedc416f1 –VnetName 'SalesVNET1' 
 		
 			State VnetName 
 			----- -------- 
@@ -71,7 +71,7 @@ Das ist schon alles. Das VNet von Contoso Sales in Azure ist nun mit einer Verbi
 
 Der Verbindungsbesitzer kann eine Verbindung für bis zu 10 Azure-Abonnements freigeben. Der Verbindungsbesitzer kann sehen, wer für die Verbindung autorisiert wurde. Der Besitzer kann die Autorisierung jederzeit aufheben. Wenn der Verbindungsbesitzer eine Autorisierung aufhebt, werden alle anhand von "LinkAuthorizationId" identifizierten Verknüpfungen, die durch diese Autorisierung zugelassen sind, sofort gelöscht. Die verknüpften VNETs haben dann über die ExpressRoute-Verbindung keine Konnektivität mehr mit dem lokalen Netzwerk.
 
-	PS C:> Get-AzureDedicatedCircuitLinkAuthorization -ServiceKey: 6ed7e310-1a02-4261-915f-6ccfedc416f1 
+	PS C:\> Get-AzureDedicatedCircuitLinkAuthorization -ServiceKey: 6ed7e310-1a02-4261-915f-6ccfedc416f1 
 	
 	Description         : EngineeringTeam 
 	Limit               : 3 
@@ -91,7 +91,7 @@ Der Verbindungsbesitzer kann eine Verbindung für bis zu 10 Azure-Abonnements fr
 	MicrosoftIds        : salesadmin@contoso.com 
 	Used                : 2 
 	
-	PS C:> Remove-AzureDedicatedCircuitLinkAuthorization -ServiceKey '6ed7e310-1a02-4261-915f-6ccfedc416f1' -AuthorizationId 'e2bc2645-6fd4-44a4-94f5-f2e43e6953ed'
+	PS C:\> Remove-AzureDedicatedCircuitLinkAuthorization -ServiceKey '6ed7e310-1a02-4261-915f-6ccfedc416f1' -AuthorizationId 'e2bc2645-6fd4-44a4-94f5-f2e43e6953ed'
 
 
 Das folgende Diagramm zeigt den Workflow der Autorisierung:
@@ -102,4 +102,4 @@ Das folgende Diagramm zeigt den Workflow der Autorisierung:
 
 Weitere Informationen zu ExpressRoute finden Sie unter [ExpressRoute – Übersicht](expressroute-introduction.md).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

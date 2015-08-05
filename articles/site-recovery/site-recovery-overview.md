@@ -181,4 +181,4 @@ Die folgende Tabelle enthält Informationen zu den wichtigsten Features von Site
 Lesen Sie nach dieser Übersicht die [bewährten Methoden](site-recovery-best-practices.md), um mit der Planung der Bereitstellung zu beginnen.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -104,4 +104,4 @@ Das **Durchsuchen von Daten** ermöglicht einen frühzeitigen Einblick in die Da
 >Jiawei Han, Micheline Kamber und Jian Pei: _Data Mining: Concepts and Techniques_, 3. Auflage, Morgan Kaufmann, 2011
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

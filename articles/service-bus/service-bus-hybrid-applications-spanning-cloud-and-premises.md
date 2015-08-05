@@ -45,4 +45,4 @@ Hybride Anwendungen für Cloud und lokale Systeme sind aus modernen IT-Umgebunge
 - [Cloud Services](http://azure.microsoft.com/services/cloud-services/) 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

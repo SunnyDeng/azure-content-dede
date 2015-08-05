@@ -2104,7 +2104,7 @@ In der folgenden Tabelle werden die Werte dargestellt, die von den Schlüsseln r
 |ItemCutOffUpperBound| Hierdurch wird die Elementobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
 |UserCutOffLowerBound| Hierdurch wird die Benutzeruntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
 |UserCutOffUpperBound| Hierdurch wird die Benutzerobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
-| Description | Dies ist eine Beschreibung des Builds. | String | Beliebiger Text, maximal 512 Zeichen |
+| Beschreibung | Dies ist eine Beschreibung des Builds. | String | Beliebiger Text, maximal 512 Zeichen |
 | EnableModelingInsights | Hiermit können Sie Metriken zum Empfehlungsmodell verarbeiten. | Boolean | True/False |
 | UseFeaturesInModel | Hier wird angegeben, ob Features verwendet werden können, um das Empfehlungsmodell zu verbessern. | Boolean | True/False |
 | ModelingFeatureList | Dies ist die kommagetrennte Liste von Komponentennamen, die im Empfehlungsbuild verwendet werden soll, um die Empfehlung zu verbessern. | String | Featurenamen, bis zu 512 Zeichen |
@@ -2871,4 +2871,4 @@ HTTP-Statuscode: 200
 Dieses Dokument wird so bereitgestellt, wie es ist. Informationen und Stellungnahmen in diesem Dokument einschließlich URLs und anderer Verweise auf Websites können ohne Ankündigung geändert werden.<br><br> Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Ähnlichkeiten oder Verbindungen sind rein zufällig und nicht beabsichtigt.<br><br> Dieses Dokument gibt Ihnen keinerlei geistige Eigentums- oder anderweitige Rechte an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden.<br><br> © 2015 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

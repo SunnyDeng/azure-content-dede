@@ -1,4 +1,5 @@
 
+
 #### So rufen Sie den StorSimple-Dienstregistrierungsschlüssel ab
 
 1. Klicken Sie auf der Seite des Diensts **StorSimple-Manager** auf den Dienst, den Sie erstellt haben. Damit gelangen Sie auf die Seite **Schnellstart**. (Sie können jederzeit über das Schnellstartsymbol ![StorSimple-Schnellstart, Symbol](./media/storsimple-get-service-registration-key-gov/HCS_QuickStartIcon-include.png) auf die Seite **Schnellstart** zugreifen.)
@@ -19,4 +20,4 @@
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -94,4 +94,4 @@ Los! Probieren Sie es aus! Diese Artikel helfen Ihnen beim Einstieg in RemoteApp
 - [Azure RemoteApp – Häufig gestellte Fragen](remoteapp-faq.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

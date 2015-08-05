@@ -1,5 +1,19 @@
-<properties title="Creating an Oracle WebLogic Server 12c cluster in Azure" pageTitle="Erstellen eine Oracle WebLogic Server 12c-Cluster in Azure" description="Durchlaufen Sie ein Beispiel zum Erstellen eines Oracle WebLogic Server 12c-Clusters in Microsoft Azure. schrittweise aus." services="virtual-machines" authors="bbenz" documentationCenter=""/>
-<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
+<properties 
+	pageTitle="Erstellen eine Oracle WebLogic Server 12c-Cluster in Azure" 
+	description="Durchlaufen Sie ein Beispiel zum Erstellen eines Oracle WebLogic Server 12c-Clusters in Microsoft Azure. schrittweise aus." 
+	services="virtual-machines" 
+	authors="bbenz" 
+	documentationCenter=""/>
+
+<tags 
+	ms.service="virtual-machines" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.workload="infrastructure-services" 
+	ms.date="06/22/2015" 
+	ms.author="bbenz" />
+
 #Erstellen eine Oracle WebLogic Server 12c-Cluster in Azure
 Das folgende Beispiel zeigt, wie Sie ein Oracle WebLogic Server 12c-Cluster in Azure erstellen, der auf einem von Microsoft bereitgestellten Oracle WebLogic Server 12c-Image unter Windows Server 2012 basiert.
 
@@ -119,7 +133,7 @@ Erstellen Sie zusätzliche virtuelle Computer, die vom Verwaltungsserver verwalt
 
 9. Bleiben Sie in der WebLogic Server-Verwaltungskonsole angemeldet, und klicken Sie auf **Änderungen aktivieren**.
 
-10. Erstellen Sie auf dem virtuellen Verwaltungscomputer eine Umgebungsvariable mit dem Namen **SERVER_HOME**, und legen Sie ihren Wert auf **C:\\Oracle\\Middleware\\Oracle_Home\\wlserver** fest. Sie können eine Umgebungsvariable anhand der folgenden Schritte erstellen:
+10. Erstellen Sie auf dem virtuellen Verwaltungscomputer eine Umgebungsvariable mit dem Namen **SERVER_HOME**, und legen Sie ihren Wert auf **C:\Oracle\Middleware\Oracle_Home\wlserver** fest. Sie können eine Umgebungsvariable anhand der folgenden Schritte erstellen:
 
 	1. Klicken Sie auf die **Windows-Schaltfläche Start**, geben Sie **Systemsteuerung** ein, und klicken Sie auf das Symbol **Systemsteuerung**. Klicken Sie auf **System und Sicherheit**, dann auf **System**, und klicken Sie dann auf **Erweiterte Systemeinstellungen**.
 
@@ -127,7 +141,7 @@ Erstellen Sie zusätzliche virtuelle Computer, die vom Verwaltungsserver verwalt
 
 	3. Klicken Sie im Bereich **Systemvariablen** auf **Neu**, um die Variable zu erstellen.
 
-	4. Geben Sie im Dialogfeld **Neue Systemvariable** **SERVER_HOME** als Namen für die Variable ein, und legen Sie den Wert **C:\\Oracle\\Middleware\\Oracle_Home\\wlserver** fest.
+	4. Geben Sie im Dialogfeld **Neue Systemvariable** **SERVER_HOME** als Namen für die Variable ein, und legen Sie den Wert **C:\Oracle\Middleware\Oracle_Home\wlserver** fest.
 
 	5. Klicken Sie auf **OK**, um die neue Umgebungsvariable zu speichern und das Dialogfeld **Neue Systemvariable** zu schließen.
 
@@ -141,9 +155,9 @@ Erstellen Sie zusätzliche virtuelle Computer, die vom Verwaltungsserver verwalt
 
 12. Führen Sie den folgenden Befehl aus:
 
-		%SERVER_HOME%\\common\\bin\\pack.cmd -managed=true -domain=C:\\Oracle\\Middleware\\Oracle_Home\\user_projects\\domains\\base_domain -template=c:\\mytestdomain.jar -template_name="mytestdomain" 
+		%SERVER_HOME%\common\bin\pack.cmd -managed=true -domain=C:\Oracle\Middleware\Oracle_Home\user_projects\domains\base_domain -template=c:\mytestdomain.jar -template_name="mytestdomain" 
 
-	Dieser Befehl erstellt eine JAR-Datei mit dem Namen **c:\\mytestdomain.jar.** Diese JAR-Datei kopieren Sie später auf die verwalteten virtuellen Computer im Cluster.
+	Dieser Befehl erstellt eine JAR-Datei mit dem Namen **c:\mytestdomain.jar.** Diese JAR-Datei kopieren Sie später auf die verwalteten virtuellen Computer im Cluster.
 
 13. Lassen Sie eine eingehende Verbindung über die Firewall für Port 7001 zu.
 
@@ -165,17 +179,17 @@ Erstellen Sie zusätzliche virtuelle Computer, die vom Verwaltungsserver verwalt
 
 	1. Melden Sie sich beim virtuellen Computer an.
 
-	2. Erstellen Sie eine Umgebungsvariable mit dem Namen **SERVER_HOME**, und legen Sie ihren Wert auf **C:\\Oracle\\Middleware\\Oracle_Home\\wlserver** fest.
+	2. Erstellen Sie eine Umgebungsvariable mit dem Namen **SERVER_HOME**, und legen Sie ihren Wert auf **C:\Oracle\Middleware\Oracle_Home\wlserver** fest.
 
-	3. Kopieren Sie c:\\mytestdomain.jar vom virtuellen Verwaltungscomputer in c:\\mytestdomain.jar auf dem verwalteten virtuellen Computer.
+	3. Kopieren Sie c:\mytestdomain.jar vom virtuellen Verwaltungscomputer in c:\mytestdomain.jar auf dem verwalteten virtuellen Computer.
 
 	4. Öffnen Sie eine Eingabeaufforderung (denken Sie daran, den Befehl **title %COMPUTERNAME%** in der Eingabeaufforderung auszuführen, um zu sehen, auf welchen Computer Sie zugreifen).
 
 	5. Führen Sie den folgenden Befehl aus:
 
-			%SERVER_HOME%\\common\\bin\\unpack.cmd -domain=C:\\Oracle\\Middleware\\Oracle_Home\\user_projects\\domains\\base_domain -template=c:\\mytestdomain.jar
+			%SERVER_HOME%\common\bin\unpack.cmd -domain=C:\Oracle\Middleware\Oracle_Home\user_projects\domains\base_domain -template=c:\mytestdomain.jar
 
-	6. Ändern Sie das aktuelle Verzeichnis der Eingabeaufforderung in **C:\\Oracle\\Middleware\\Oracle_Home\\user_projects\\domains\\base_domain\\bin**.
+	6. Ändern Sie das aktuelle Verzeichnis der Eingabeaufforderung in **C:\Oracle\Middleware\Oracle_Home\user_projects\domains\base_domain\bin**.
 
 	7. Führen Sie Start <<*COMPUTERNAME*>>.cmd aus, wobei <<*COMPUTERNAME*>> der Name des verwalteten Computers ist. Zum Beispiel **startMYVM2-MANAGED**.
 
@@ -238,13 +252,13 @@ An diesem Punkt können Sie Ihre Anwendung mit den folgenden Schritten bereitste
 
 1. Melden Sie sich bei dem virtuellen Computer an, der zum Verwalten des WebLogic Server-Cluster verwendet wird (z. B. **MYVM1-ADMIN**). 
 
-2. Speichern Sie die Datei "shoppingcart.war" lokal. Erstellen Sie z. B. einen Ordner mit dem Namen **c:\\mywar** und speichern Sie die WAR-Datei unter <http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war> in **c:\\mywar**.
+2. Speichern Sie die Datei "shoppingcart.war" lokal. Erstellen Sie z. B. einen Ordner mit dem Namen **c:\mywar** und speichern Sie die WAR-Datei unter <http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war> in **c:\mywar**.
 
 3. Öffnen Sie die **WebLogic Server-Verwaltungskonsole** (<http://localhost:7001/console>). Geben Sie bei Aufforderung Ihren WebLogic-Benutzernamen und das Kennwort ein.
 
 4. Klicken Sie in der **WebLogic Server-Verwaltungskonsole** auf **Sperren und bearbeiten**, klicken Sie auf **Bereitstellungen**, und dann auf **Installieren**.
 
-5. Geben Sie den **Pfad** **c:\\myway\\shoppingcart.war** ein.
+5. Geben Sie den **Pfad** **c:\myway\shoppingcart.war** ein.
 
 	![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image004.png)
 
@@ -305,4 +319,4 @@ Nachdem Sie den Cluster mit Oracle WebLogic Server eingerichtet haben, lesen Sie
 
 - [Verwendung von Oracle WebLogic Server 12c mit Linux in Microsoft Azure](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

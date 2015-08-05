@@ -24,7 +24,7 @@ Auf der Webseite [Virtuelle Netzwerke im Überblick](http://go.microsoft.com/fwl
 
 ### Wie fange ich an?
 
-Auf der Webseite [Virtual Network documentation](http://azure.microsoft.com/documentation/services/virtual-network/) (in englischer Sprache) finden Sie Informationen zu den ersten Schritten. Auf dieser Seite befinden sich Links zu allgemeinen Konfigurationsschritten sowie Informationen zu den verschiedenen Aspekten, die Sie berücksichtigen müssen, wenn Sie Ihr virtuelles Netzwerk entwerfen.
+Auf der Webseite [Dokumentation zu virtuellen Netzwerken](http://azure.microsoft.com/documentation/services/virtual-network/) finden Sie Informationen zu den ersten Schritten. Auf dieser Seite befinden sich Links zu allgemeinen Konfigurationsschritten sowie Informationen zu den verschiedenen Aspekten, die Sie berücksichtigen müssen, wenn Sie Ihr virtuelles Netzwerk entwerfen.
 
 ### Welche Dienste können in VNets genutzt werden?
 
@@ -40,9 +40,9 @@ Ja. Ein VNet kann auch ohne Standort-zu-Standort-Konnektivität genutzt werden. 
 
 Sie können die folgenden Tools zum Erstellen oder Konfigurieren eines virtuellen Netzwerks verwenden:
 
-- Sie können das Verwaltungsportal verwenden. Siehe [Verwalten der Eigenschaften eines virtuellen Netzwerks (VNet)](./virtual-networks-settings).
+- Sie können das Verwaltungsportal verwenden. Siehe [Verwalten der Eigenschaften eines virtuellen Netzwerks (VNet)](virtual-networks-settings.md).
 
-- Sie können eine Netzwerkkonfigurationsdatei (NETCFG-Datei) verwenden. Siehe [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](./virtual-networks-using-network-configuration-file).
+- Sie können eine Netzwerkkonfigurationsdatei (NETCFG-Datei) verwenden. Siehe [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md).
 
 ### Welche Adressbereiche kann ich in meinen VNets verwenden?
 
@@ -50,7 +50,7 @@ Sie können öffentliche IP-Adressbereiche und alle in [RFC 1918](http://tools.i
 
 ### Können öffentliche IP-Adressen in VNets verwendet werden?
 
-Ja. Weitere Informationen zu öffentlichen IP-Adressbereichen finden Sie unter [Öffentlicher IP-Adressraum in einem virtuellen Netzwerk (VNet)](./virtual-networks-public-ip-within-vnet). Beachten Sie, dass auf Ihre öffentlichen IPs nicht direkt über das Internet zugegriffen werden kann.
+Ja. Weitere Informationen zu öffentlichen IP-Adressbereichen finden Sie unter [Öffentlicher IP-Adressraum in einem virtuellen Netzwerk (VNet)](virtual-networks-public-ip-within-vnet.md). Beachten Sie, dass auf Ihre öffentlichen IPs nicht direkt über das Internet zugegriffen werden kann.
 
 ### Ist die Anzahl der Subnetze im virtuellen Netzwerk begrenzt?
 
@@ -70,7 +70,7 @@ Nein. VNets sind Layer-3-Overlays. Layer-2-Semantik wird in Azure nicht unterst�
 
 ### Können benutzerdefinierte Routingrichtlinien für VNets und Subnetze angegeben werden?
 
-Ja. Sie können benutzerdefinierte Routen (UDR) verwenden. Weitere Informationen zu UDR finden Sie unter [Benutzerdefinierte Routen und IP-Weiterleitung](./virtual-networks-udr-overview).
+Ja. Sie können benutzerdefinierte Routen (UDR) verwenden. Weitere Informationen zu UDR finden Sie unter [Benutzerdefinierte Routen und IP-Weiterleitung](virtual-networks-udr-overview.md).
 
 ### Unterstützen VNets Multicasting oder Broadcasting?
 
@@ -86,11 +86,11 @@ Sie können innerhalb von VNets IP-basierte Standardprotokolle verwenden. Verkap
 
 ### Kann ich meine Standardrouter innerhalb eines VNet mit "ping" abfragen?
 
-Nr.
+Nein.
 
 ### Können Verbindungsdiagnosen mit "tracert" durchgeführt werden?
 
-Nr.
+Nein.
 
 ### Können Subnetze hinzugefügt werden, nachdem das VNet erstellt wurde?
 
@@ -118,7 +118,7 @@ Nein. Ein VNet ist auf eine Region beschränkt.
 
 ### Kann ein VNet mit einem anderen VNet in Azure verbunden werden?
 
-Ja. Sie können VNet-zu-VNet-Kommunikation mithilfe der REST-APIs oder Windows PowerShell erstellen. Siehe [Konfigurieren einer VNet-zu-VNet-Verbindung](./virtual-networks-configure-vnet-to-vnet-connection).
+Ja. Sie können VNet-zu-VNet-Kommunikation mithilfe der REST-APIs oder Windows PowerShell erstellen. Siehe [Konfigurieren einer VNet-zu-VNet-Verbindung](virtual-networks-configure-vnet-to-vnet-connection.md).
 
 ## Namensauflösung (DNS)
 
@@ -171,11 +171,11 @@ Ja. Sie können alle von Azure unterstützten Linux-Distributionen bereitstellen
 
 ### Welche IP-Adresse wird meinem virtuellen Computer zugewiesen?
 
-- **Interne IP-Adresse:** Wenn Sie einen virtuellen Computer in einem VNet bereitstellen, erhält der virtuelle Computer immer eine interne IP-Adresse aus einem Pool interner IP-Adressen, den Sie angeben. Virtuelle Computer kommunizieren im VNet mithilfe interner IP-Adressen. In Azure wird eine dynamische interne IP-Adresse zugewiesen, Sie können jedoch eine statische Adresse für Ihren virtuellen Computer anfordern. Weitere Informationen zu statischen internen IP-Adressen finden Sie unter [Festlegen einer statischen internen IP-Adresse](./virtual-networks-reserved-private-ip).
+- **Interne IP-Adresse:** Wenn Sie einen virtuellen Computer in einem VNet bereitstellen, erhält der virtuelle Computer immer eine interne IP-Adresse aus einem Pool interner IP-Adressen, den Sie angeben. Virtuelle Computer kommunizieren im VNet mithilfe interner IP-Adressen. In Azure wird eine dynamische interne IP-Adresse zugewiesen, Sie können jedoch eine statische Adresse für Ihren virtuellen Computer anfordern. Weitere Informationen zu statischen internen IP-Adressen finden Sie unter [Festlegen einer statischen internen IP-Adresse](virtual-networks-reserved-private-ip.md).
 
-- **VIP:** Ihrem virtuellen Computer wird auch eine VIP-Adresse zugewiesen. Eine VIP-Adresse wird dem virtuellen Computer jedoch niemals direkt zugewiesen. Eine VIP-Adresse ist eine öffentliche IP-Adresse, die dem Clouddienst zugewiesen werden kann. Sie können optional eine VIP-Adresse für Ihren Clouddienst reservieren. Siehe [Reservierte öffentliche IP-Adresse](./virtual-networks-reserved-public-ip).
+- **VIP:** Ihrem virtuellen Computer wird auch eine VIP-Adresse zugewiesen. Eine VIP-Adresse wird dem virtuellen Computer jedoch niemals direkt zugewiesen. Eine VIP-Adresse ist eine öffentliche IP-Adresse, die dem Clouddienst zugewiesen werden kann. Sie können optional eine VIP-Adresse für Ihren Clouddienst reservieren. Siehe [Reservierte öffentliche IP-Adresse](virtual-networks-reserved-public-ip.md).
 
-- **ILPIP:** Sie können außerdem eine öffentliche IP-Adresse auf Instanzebene (ILPIP) konfigurieren. ILPIPs sind dem virtuellen Computer direkt zugeordnet und nicht dem Clouddienst. Weitere Informationen zu ILPIPs finden Sie unter [Überblick über die öffentliche IP auf Instanzebene](./virtual-networks-instance-level-public-ip).
+- **ILPIP:** Sie können außerdem eine öffentliche IP-Adresse auf Instanzebene (ILPIP) konfigurieren. ILPIPs sind dem virtuellen Computer direkt zugeordnet und nicht dem Clouddienst. Weitere Informationen zu ILPIPs finden Sie unter [Überblick über die öffentliche IP auf Instanzebene](virtual-networks-instance-level-public-ip.md).
 
 ### Kann ich eine interne IP-Adresse für einen virtuellen Computer reservieren, den ich zu einem späteren Zeitpunkt erstelle?
 
@@ -197,7 +197,7 @@ Nichts. Die IP-Adressen (sowohl die öffentliche VIP-Adresse als auch die intern
 
 ### Können virtuelle Computer ohne erneute Bereitstellung zwischen Subnetzen in einem VNet verschoben werden?
 
-Ja. Weitere Informationen finden Sie [hier](./virtual-networks-move-vm-role-to-subnet).
+Ja. Weitere Informationen finden Sie [hier](virtual-networks-move-vm-role-to-subnet.md).
 
 ### Kann eine statische MAC-Adresse für einen virtuellen Computer konfiguriert werden?
 
@@ -225,7 +225,7 @@ Nein. Eine Azure-Web-App kann nicht in einem VNet bereitgestellt werden. Web-App
 
 - [Using VNet Integration and Hybrid Connections with Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/) (in englischer Sprache)
 
-- [Integrieren einer Web-App in einem Azure Virtual Network](./web-sites-integrate-with-vnet)
+- [Integrieren einer Web-App in einem Azure Virtual Network](web-sites-integrate-with-vnet.md)
 
 
 ### Können Clouddienste mit Web- und Workerrollen (PaaS) in einem VNet bereitgestellt werden?
@@ -264,4 +264,4 @@ Ja. VNets und die standortübergreifende Konnektivität können mithilfe von RES
 
 Ja. Sie können PowerShell und Befehlszeilentools für zahlreiche Plattformen verwenden. Weitere Informationen finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=317721).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

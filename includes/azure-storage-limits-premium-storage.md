@@ -19,4 +19,4 @@
 
 <sup>1</sup>*Eingehend* bezieht sich auf alle Daten (Anforderungen), die an ein Speicherkonto gesendet werden. *Ausgehend* bezieht sich auf alle Daten (Antworten), die von einem Speicherkonto empfangen werden.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

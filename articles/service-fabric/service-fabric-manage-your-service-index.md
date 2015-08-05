@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/08/2015"
+   ms.date="07/09/2015"
    ms.author="ryanwi"/>
 
 # Verwalten von Service Fabric-Diensten
@@ -30,6 +30,7 @@ In den folgenden Themen werden das Service Fabric-Anwendungsmodell und Vorgehens
 - [Dienstmanifestressourcen](service-fabric-service-manifest-resources.md)
 - [Packen einer Anwendung](service-fabric-application-model.md)
 - [Bereitstellen und Entfernen einer Anwendung](service-fabric-deploy-remove-applications.md)
+- [Bereitstellen einer vorhandenen Anwendung](service-fabric-deploy-existing-app.md)
 - [Verwalten von Service Fabric-Anwendungen in Visual Studio](service-fabric-manage-application-in-visual-studio.md)
 
 ## Upgraden einer Anwendung
@@ -49,4 +50,4 @@ In den folgenden Artikeln wird die Skalierung und Partitionierung beschrieben:
 - [Skalieren von Service Fabric-Anwendungen](service-fabric-concepts-scalability.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

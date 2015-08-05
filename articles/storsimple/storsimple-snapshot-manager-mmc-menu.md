@@ -127,4 +127,4 @@ Mit der Aktion **Liste exportieren** können Sie eine Liste in einer Datei mit k
 
 [Erfahren Sie mehr über die Benutzeroberfläche des StorSimple Snapshot Managers](storsimple-use-snapshot-manager.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

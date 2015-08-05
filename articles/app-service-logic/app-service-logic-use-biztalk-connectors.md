@@ -124,4 +124,4 @@ Connectors können in Ihrer Logik-App auch als Aktionen verwendet werden. Aktion
 [BizTalk-Transformationsdienst]: app-service-logic-transform-xml-documents.md
 [Warten-Connector]: app-service-logic-wait.md
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

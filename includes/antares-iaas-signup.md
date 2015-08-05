@@ -1,4 +1,4 @@
-> [WACOM.NOTE]
-> Sie benötigen ein Azure-Konto, um dieses Lernprogramm durchführen zu können. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][Kostenlose Azure-Testversion].
 
-  [Kostenlose Azure-Testversion]: http://www.windowsazure.com/de-de/pricing/free-trial
+> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://www.windowsazure.com/pricing/free-trial).
+
+<!---HONumber=July15_HO4-->

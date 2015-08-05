@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/02/2015"
+   ms.date="07/21/2015"
    ms.author="banders" />
 
 # Verwalten der Infrastrukturkapazität
@@ -162,4 +162,6 @@ Mithilfe des Projektionstools können Sie historische Trends für die Speicherpl
 
 4. Verschieben Sie im **Projektionstool** den Datumsschieberegler, um eine Projektion für die Kapazität anzuzeigen, die an dem von Ihnen gewählten Datum verwendet werden wird.
 
-<!---HONumber=July15_HO2-->
+[AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
+
+<!---HONumber=July15_HO4-->

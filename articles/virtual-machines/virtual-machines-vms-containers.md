@@ -1,9 +1,7 @@
 <properties 
-	title="Virtual Machines and Containers in Azure" 
 	pageTitle="Virtuelle Computer und Container in Azure" 
 	description="Beschreibt virtuelle Computer, Docker- und Linux-Container und ihre Verwendung in den entsprechenden Gruppen in Azure, einschließlich der jeweiligen Vorteile und von Szenarien, in denen jeder Ansatz gut funktioniert." 
 	services="virtual-machines" 
-	solutions="infrastructure" 
 	documentationCenter="virtual-machines" 
 	authors="squillace" 
 	manager="timlt" 
@@ -238,4 +236,4 @@ Auschecken von [Docker](https://www.docker.com) und [Windows Server-Containern](
 [microservice]: http://martinfowler.com/articles/microservices.html
 <!--Image references-->
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

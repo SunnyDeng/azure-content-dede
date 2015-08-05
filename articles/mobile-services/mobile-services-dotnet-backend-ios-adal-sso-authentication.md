@@ -121,4 +121,4 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 [Active Directory-Authentifizierungsbibliothek für iOS]: https://github.com/MSOpenTech/azure-activedirectory-library-for-ios
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

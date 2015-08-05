@@ -35,14 +35,16 @@
 </tr>
 <tr>
    <td valign="middle"><p>Serverinstanztyp</p></td>
-   <td valign="middle"><p>Freigegeben</p></td>
-   <td valign="middle"><p>Freigegeben</p></td>
+   <td valign="middle"><p>Shared
+</p></td>
+   <td valign="middle"><p>Shared
+</p></td>
    <td valign="middle"><p>Dediziert<sup>3</sup></p></td>
    <td valign="middle"><p>Dediziert<sup>3</sup></p></td>
    <td valign="middle"><p>Dediziert<sup>3</sup></p></td>
 </tr>
 <tr>
-   <td valign="middle"><p><a href="/documentation/articles/web-sites-scale/">Horizontal hochskalieren</a> (max. Instanzen)</p></td>
+   <td valign="middle"><p><a href="/documentation/articles/web-sites-scale/">Horizontal skalieren</a> (max. Instanzen)</p></td>
    <td valign="middle"><p>1 freigegebene</p></td>
    <td valign="middle"><p>1 freigegebene</p></td>
    <td valign="middle"><p>3 dedizierte<sup>3</sup></p></td>
@@ -124,7 +126,7 @@
    <td valign="middle"><p>Unbegrenzt, 5 SNI SSL-Verbindungen und 1 IP-SSL-Verbindung inbegriffen</p></td>
    <td valign="middle"><p>Unbegrenzt, 5 SNI SSL-Verbindungen und 1 IP-SSL-Verbindung inbegriffen</p></td>
 </tr><tr>
-   <td valign="middle"><p>Integrierter Load Balancer</p></td>
+   <td valign="middle"><p>Integrierter Lastenausgleich</p></td>
    <td valign="middle"><p></p></td>
    <td valign="middle"><p>X</p></td>
    <td valign="middle"><p>X</p></td>
@@ -203,4 +205,4 @@
 
 <sup>1</sup>Sofern nicht anderweitig vermerkt, gelten Apps- und Speicherkontingente gemäß dem App Service-Plan. <sup>2</sup>Die tatsächliche Anzahl der Apps, die Sie auf diesen Computern hosten können, hängt von der Aktivität der Apps, der Größe der Computerinstanzen und der entsprechenden Ressourcenauslastung ab. <sup>3</sup>Dedizierte Instanzen können unterschiedliche Größen aufweisen. Weitere Informationen finden Sie unter [App Service Preise](/pricing/details/app-service/). Zusätzliche Instanzen stehen durch das Eröffnen einer Supportanfrage zur Verfügung. <sup>4</sup>Im Premium-Tarif sind bei Verwendung von App Service-Umgebungen bis zu 50 Serverinstanzen (sofern verfügbar) und 500 GB Speicherplatz zulässig, andernfalls 20 Serverinstanzen und 250 GB Speicherplatz. <sup>5</sup>Die Speicherbegrenzung ist die gesamte Inhaltsgröße aller Apps im gleichen App Service-Plan. Speicherbegrenzungen können durch das Eröffnen einer Supportanfrage erhöht werden. <sup>6</sup>Diese Ressourcen werden durch physische Ressourcen auf den dedizierten Instanzen (die Instanzengröße und die Anzahl der Instanzen) beschränkt. <sup>7</sup>Wenn Sie eine App im Basic-Tarif auf zwei Instanzen skalieren, stehen Ihnen 350 gleichzeitige Verbindungen für jede der beiden Instanzen zur Verfügung. <sup>8</sup>Im Premium-Tarif sind bei Verwendung von App Service-Umgebungen Sicherungsintervalle von bis zu alle 5 Minuten möglich, andernfalls 50 Sicherungen pro Tag. <sup>9</sup>Sie können benutzerdefinierte ausführbare Dateien und/oder Skripts bei Bedarf, nach Zeitplan oder fortwährend als Hintergrundaufgabe in Ihrer App Service-Instanz ausführen. Für die fortlaufende WebJobs-Ausführung ist „Immer bereit“ erforderlich. Für geplante WebJobs ist Azure Scheduler Free oder Standard erforderlich. <sup>10</sup>Die SLA von 99,95 % gilt für Bereitstellungen mit mehreren Instanzen, bei denen Azure Traffic Manager für Failover konfiguriert ist.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

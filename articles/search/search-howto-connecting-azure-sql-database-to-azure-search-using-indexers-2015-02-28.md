@@ -68,7 +68,21 @@ Sie können die Verbindungszeichenfolge mit der Option `ADO.NET connection strin
 
 Dann erstellen Sie den Azure Search-Zielindex, sofern Sie bislang über keinen Index verfügen. Sie können dies von der Azure-[Portal-Benutzeroberfläche](https://portal.azure.com) aus tun oder indem Sie die [Create-Index-API](https://msdn.microsoft.com/library/azure/dn798941.aspx) verwenden. Stellen Sie sicher, dass das Schema des Zielindexes mit dem Schema der Quelltabelle kompatibel ist. Sie finden in der folgende Tabelle Informationen zum Zuordnen der SQL-Datentypen zu Azure Search-Datentypen.
 
-**Zuordnung von SQL-Datentypen zu Azure Search-Datentypen** <table style="font-size:12"> <tr> <td>SQL-Datentyp</td> <td>Zulässige Feldtypen für den Zielindex</td> <td>Hinweise</td> </tr> <tr> <td>bit</td> <td>Edm.Boolean, Edm.String</td> <td></td> </tr> <tr> <td>int, smallint, tinyint</td> <td>Int32, Int64, Edm.String</td> <td></td> </tr> <tr> <td>bigint</td> <td>Int64, Edm.String</td> <td></td> </tr> <tr> <td>real, float</td> <td>Edm.Double, Edm.String</td> <td></td> </tr> <tr> <td>smallmoney money<br/>decimal<br/>numeric </td> <td>Edm.String</td> <td>Azure Search unterstützt die Umwandlung von Dezimaltypen in Edm.Double nicht, da dadurch die Genauigkeit beeinträchtigt würde. </td> </tr> <tr> <td>Char, Nchar, Varchar, Nvarchar</td> <td>Edm.String<br/>Collection(Edm.String)</td> <td>Zum Transformieren einer Zeichenfolgenspalte in Collection(Edm.String) muss die Vorschau-API-Version 2015-02-28-Preview verwendet werden. Nähere Informationen finden Sie in [diesem Artikel](search-api-indexers-2015-02-28-Preview.md#create-indexer).</td> </tr> <tr> <td>smalldatetime, datetime, datetime2, date, datetimeoffset</td> <td>Edm.DateTimeOffset, Edm.String</td> <td></td> </tr> <tr> <td>uniqueidentifer</td> <td>Edm.String</td> <td></td> </tr> <tr> <td>geography</td> <td>Edm.GeographyPoint</td> <td>Nur geography-Instanzen vom Typ POINT mit SRID 4326 (Standardt) werden unterstützt</td> </tr> <tr> <td>rowversion</td> <td>n. z.</td> <td>Rowversion-Spalten können nicht im Suchindex gespeichert werden, aber sie können zur Änderungsnachverfolgung verwendet werden.</td> </tr> <tr> <td>time, timespan<br>binary, varbinary, image,<br>xml, geometry, CLR-Typen</td> <td>n. z.</td> <td>Nicht unterstützt</td> </tr> </table>
+**Zuordnung zwischen SQL-Datentypen und Azure Search-Datentypen**
+
+|SQL-Datentyp | Zulässige Ziel-Index-Feldtypen |Hinweise 
+|------|-----|----|
+|Bit|Edm.Boolean, Edm.String| |
+|int, smallint, tinyint |Edm.Int32, Edm.Int64, Edm.String| |
+| bigint | Edm.Int64, Edm.String | |
+| real, float |Edm.Double, Edm.String | |
+| Smallmoney, money decimal numeric | Edm.String| Azure Search unterstützt nicht die Konvertierung von Dezimaltypen in Edm.Double-Typen, da es hierbei zu Genauigkeitsverlusten kommt. |
+| char, nchar, varchar, nvarchar | Edm.String<br/>Collection(Edm.String)|Die Umwandlung einer Zeichenfolgenspalte in Collection(Edm.String) erfordert die Verwendung der Version 2015-02-28-Preview der Vorschau-API. Nähere Einzelheiten finden Sie [in diesem Artikel](search-api-indexers-2015-02-28-Preview.md#create-indexer).| 
+|smalldatetime, datetime, datetime2, date, datetimeoffset |Edm.DateTimeOffset, Edm.String| |
+|uniqueidentifer | Edm.String | |
+|geography | Edm.GeographyPoint | Es werden nur Geography-Instanzen vom Typ POINT mit SRID 4326 (Standard) unterstützt. | | 
+|rowversion| N/V |rowversion-Spalten können nicht im Suchindex gespeichert werden, sie können jedoch für die Änderungsnachverfolgung verwendet werden. | |
+| time, timespan, binary, varbinary, image, xml, geometry, CLR types | N/V |Nicht unterstützt |
 
 Erstellen Sie schließlich den Indexer, indem Sie ihm einen Namen geben und einen Verweis auf die Datenquelle und den Zielindex hinzufügen:
 
@@ -169,7 +183,7 @@ Wenn Sie einen Zeitplan verwenden und die Tabelle eine nicht triviale Anzahl von
 
 ### Richtlinie für die integrierte SQL-Änderungsnachverfolgung ###
 
-Wenn die SQL-Datenbank die [Änderungsnachverfolgung](https://msdn.microsoft.com/library/bb933875.aspx) unterstützt, wird empfohlen, die **Richtlinie für die integrierte SQL-Änderungsnachverfolgung** zu verwenden. Diese Richtlinie ermöglicht die effizienteste Änderungsnachverfolgung und sorgt dafür, dass Azure Search gelöschte Zeilen identifiziert, ohne dass Sie eine explizite "Vorläufig löschen"-Spalte in Ihrer Tabelle angeben müssen.
+Wenn die SQL-Datenbank die [integrierte SQL-Änderungsnachverfolgung](https://msdn.microsoft.com/library/bb933875.aspx) unterstützt, wird empfohlen, die Richtlinie für die **integrierte SQL-Änderungsnachverfolgung** zu verwenden. Diese Richtlinie ermöglicht die effizienteste Änderungsnachverfolgung und sorgt dafür, dass Azure Search gelöschte Zeilen identifiziert, ohne dass Sie eine explizite "Vorläufig löschen"-Spalte in Ihrer Tabelle angeben müssen.
 
 Die integrierte Änderungsverfolgung wird , ab den folgenden SQL Server-Datenbankversionen unterstützt:
  
@@ -263,4 +277,4 @@ A: Ja. Indexer werden auf einem der Knoten im Suchdienst ausgeführt, und die Re
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -273,11 +273,11 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
     	{% endblock %}
 
 
-### Hinzufügen einer Konfigurationsdatei und Ändern von \\_\\_init\\_\\_.py
+### Hinzufügen einer Konfigurationsdatei und Ändern von \_\_init\_\_.py
 
 1. Klicken Sie mit der rechten Maustaste auf den Projektnamen „tutorial“, und fügen Sie die Datei **config.py** hinzu. Diese Konfiguration ist für Formulare in Flask erforderlich. Sie können damit auch einen geheimen Schlüssel bereitstellen. Dies ist jedoch für dieses Lernprogramm nicht erforderlich.
 
-2. Fügen Sie folgenden Code zur Datei "config.py" hinzu: Ändern Sie die Werte von **DOCUMENTDB\\_HOST** und **DOCUMENTDB\\_KEY**.
+2. Fügen Sie folgenden Code zur Datei "config.py" hinzu: Ändern Sie die Werte von **DOCUMENTDB\_HOST** und **DOCUMENTDB\_KEY**.
 
     	CSRF_ENABLED = True
     	SECRET_KEY = 'you-will-never-guess'
@@ -289,7 +289,7 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
     	DOCUMENTDB_COLLECTION = 'voting collection'
     	DOCUMENTDB_DOCUMENT = 'voting document'
 
-3. Ersetzen Sie den Inhalt von **\\_\\_init\\_\\_.py** durch Folgendes.
+3. Ersetzen Sie den Inhalt von **\_\_init\_\_.py** durch Folgendes.
 
     	from flask import Flask
     	app = Flask(__name__)
@@ -350,4 +350,4 @@ Um Ihrer Anwendung weitere Funktionen hinzuzufügen, überprüfen Sie die im [Do
   [Azure Management Portal]: http://portal.azure.com
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

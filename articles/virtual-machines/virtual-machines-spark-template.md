@@ -20,11 +20,11 @@
 
 Apache Spark ist eine schnelles Modul zur Verarbeitung von umfangreichen Daten. Spark verfügt über ein erweitertes DAG-Ausführungsmodul, das zyklischen Datenfluss und In-Memory-Computing unterstützt sowie auf verschiedene Datenquellen, einschließlich HDFS, Spark, HBase und S3 zugreifen kann.
 
-Zusätzlich zur Ausführung auf den Cluster-Managern Mesos oder YARN bietet Spark auch einen einfachen eigenständigen Bereitstellungsmodus. Dieses Lernprogramm führt Sie durch die Verwendung einer Beispielvorlage für Azure-Ressourcen-Manager (ARM) zum Bereitstellen eines Spark-Clusters auf Ubuntu-VMs über [Azure PowerShell](../powershell-install-configure.md) oder die [Azure-Befehlszeilenschnittstelle](../xplat-cli.md).
+Zusätzlich zur Ausführung auf den Cluster-Managern Mesos oder YARN bietet Spark einen einfachen eigenständigen Bereitstellungsmodus. Dieses Lernprogramm führt Sie durch die Verwendung einer Beispielvorlage für Azure-Ressourcen-Manager zum Bereitstellen eines Spark-Clusters auf Ubuntu-VMs über [Azure PowerShell](../powershell-install-configure.md) oder die [Azure-Befehlszeilenschnittstelle](../xplat-cli.md).
 
 Diese Vorlage stellt einen Spark-Cluster auf Ubuntu-VMs bereit. Diese Vorlage stellt außerdem ein Speicherkonto, ein virtuelles Netzwerk, Verfügbarkeitsgruppen, öffentliche IP-Adressen und die für die Installation erforderlichen Netzwerkkarten bereit. Es gibt keinen öffentlichen IP-Zugriff auf den Spark-Cluster, da dieser hinter einem Subnetz erstellt wird. Als Teil der Bereitstellung kann eine optionale "Jumpbox" bereitgestellt werden. Diese "Jumpbox" ist ein virtueller Ubuntu-Computer, der in einem Subnetz bereitgestellt wird, aber eine öffentliche IP-Adresse mit einem offenen SSH-Port *verfügbar* macht, sodass Sie darauf zugreifen können. Sie können dann von der "Jumpbox" per SSH auf alle virtuellen Spark-Computer im Subnetz zugreifen.
 
-Diese Vorlage verwendet ein Konzept von "T-Shirt-Größen", um ein "kleines", "mittleres" oder "großes" Spark-Cluster-Setup anzugeben. Wenn die Vorlagensprache eine dynamischere Anpassung der Vorlagengrößen unterstützt, könnte sie zum Angeben der Anzahl der Masterknoten im Spark-Cluster, der Slaveknoten, der Größe der virtuellen Computer usw. geändert werden. Im Moment können Sie die VM-Größe und die Anzahl der Master und Slaves in der Datei "azuredeploy.json" in den Variablen "tshirtSizeS", "tshirtSizeM" und "tshirtSizeL" erkennen.
+Diese Vorlage verwendet ein Konzept von "T-Shirt-Größen", um ein "kleines", "mittleres" oder "großes" Spark-Cluster-Setup anzugeben. Wenn die Vorlagensprache eine dynamischere Anpassung der Vorlagengrößen unterstützt, könnte sie zum Angeben der Anzahl der Masterknoten im Spark-Cluster, der Slaveknoten, der Größe der virtuellen Computer usw. geändert werden. Im Moment können Sie die VM-Größe und die Anzahl der Master und Slaves in der Datei "azuredeploy.json" in den Variablen **tshirtSizeS**, **tshirtSizeM** und **tshirtSizeL** erkennen:
 
 - S: 1 Master, 1 Slave
 - M: 1 Master, 4 Slaves
@@ -34,7 +34,7 @@ Neu bereitgestellte Cluster auf Basis dieser Vorlage besitzen die im folgenden D
 
 ![cluster-architecture](media/virtual-machines-spark-template/cluster-architecture.png)
 
-Wie in der Abbildung oben gezeigt, setzt sich die Bereitstellungstopologie aus den folgenden Elementen zusammen:
+Wie in der Abbildung oben gezeigt, besteht die Bereitstellungstopologie aus den folgenden Elementen:
 
 -	Ein neues Speicherkonto, das den BS-Datenträger neu erstellter virtueller Computer hostet
 -	Ein virtuelles Netzwerk mit einem Subnetz Alle von der Vorlage erstellten virtuellen Computer werden in diesem virtuellen Netzwerk bereitgestellt
@@ -43,7 +43,7 @@ Wie in der Abbildung oben gezeigt, setzt sich die Bereitstellungstopologie aus d
 -	Vier Slaveknoten, die im gleichen virtuellen Subnetz und der gleichen Verfügbarkeitsgruppe ausgeführt werden wie der Masterknoten
 -	Eine "Jumpbox"-VM, die sich im gleichen virtuellen Netzwerk und Subnetz befindet und für den Zugriff auf den Cluster verwendet werden kann
 
-Version 3.0.0 von Spark ist die Standardversion. Sie können jede vorgefertigte Binärdatei aus dem Spark-Repository verwenden. Es ist im Skript vorgesehen, die Auskommentierung der Builderstellung aus der Quelle aufzuheben. Jedem Spark-Masterknoten wird eine statische IP-Adresse zugewiesen 10.0.0.10. Jedem Spark-Slaveknoten wird eine statische IP-Adresse zugewiesen, um die aktuelle Beschränkung bei der dynamischen Erstellung einer IP-Adressliste innerhalb der Vorlage zu umgehen (standardmäßig wird dem ersten Knoten die private IP-Adresse 10.0.0.30, dem zweiten Knoten 10.0.0.31 usw. zugewiesen). Zur Überprüfung auf Bereitstellungsfehler wechseln Sie zum neuen Azure-Portal und navigieren zu **Ressourcengruppe** > **Last deployment** > **Check Operation Details**.
+Version 3.0.0 von Spark ist die Standardversion. Sie können jede vorgefertigte Binärdatei aus dem Spark-Repository verwenden. Es ist im Skript vorgesehen, die Auskommentierung der Builderstellung aus der Quelle aufzuheben. Jedem Spark-Masterknoten wird eine statische IP-Adresse zugewiesen: 10.0.0.10. Jedem Spark-Slaveknoten wird eine statische IP-Adresse zugewiesen, um die aktuellen Beschränkung zu umgehen, durch die es nicht möglich ist, dynamisch aus der Vorlage heraus eine Liste von IP-Adressen zu erstellen. (Standardmäßig wird dem ersten Knoten die private IP-Adresse 10.0.0.30 zugewiesen, dem zweiten Knoten die IP-Adresse 10.0.0.31 usw.) Zur Überprüfung auf Bereitstellungsfehler wechseln Sie zum neuen Azure-Portal und navigieren zu **Ressourcengruppe** > **Last deployment** > **Check Operation Details**.
 
 Bevor wir zu näheren Einzelheiten zum Azure-Ressourcen-Manager und der für diese Bereitstellung verwendeten Vorlage kommen, stellen Sie sicher, dass Azure PowerShell oder die Azure-Befehlszeilenschnittstelle konfiguriert und einsatzbereit ist.
 
@@ -51,13 +51,13 @@ Bevor wir zu näheren Einzelheiten zum Azure-Ressourcen-Manager und der für die
 
 [AZURE.INCLUDE [xplat-getting-set-up-arm](../../includes/xplat-getting-set-up-arm.md)]
 
-## Erstellen eines Spark-Clusters mithilfe einer Ressourcen-Manager-Vorlage
+## Erstellen eines Spark-Clusters unter Verwendung einer Ressourcen-Manager-Vorlage
 
 Gehen Sie folgendermaßen vor, um mit Azure PowerShell oder über die Azure-Befehlszeilenschnittstelle einen Spark-Cluster mithilfe einer Ressourcen-Manager-Vorlage aus dem GitHub-Vorlagenrepository zu erstellen.
 
-### Schritt 1-a: Herunterladen der Vorlagendateien mithilfe von PowerShell
+### Schritt 1-a: Herunterladen der Vorlagendateien mithilfe von Azure PowerShell
 
-Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\\Azure\\Vorlagen\\Spark").
+Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\Azure\Vorlagen\Spark").
 
 Fügen Sie dabei den Namen Ihres lokalen Ordners ein, und führen Sie damit die folgenden Befehle aus:
 
@@ -87,17 +87,17 @@ foreach ($file in $files)
 
 ### Schritt 1-b: Herunterladen der Vorlagendateien mithilfe der Azure-Befehlszeilenschnittstelle
 
-Klonen Sie das komplette Vorlagen-Repository mithilfe eines Git-Clients Ihrer Wahl, zum Beispiel:
+Klonen Sie das komplette Vorlagenrepository mithilfe eines Git-Clients Ihrer Wahl, zum Beispiel:
 
 	git clone https://github.com/Azure/azure-quickstart-templates C:\Azure\Templates
 
-Suchen Sie anschließend unter "C:\\Azure\\Vorlagen" den Ordner **spark-on-ubuntu**.
+Suchen Sie nach Abschluss des Klonvorgangs unter "C:\Azure\Vorlagen" den Ordner **spark-on-ubuntu**.
 
 ### Schritt 2 (optional): Erlernen der Vorlagenparameter
 
-Wenn Sie einen Spark-Cluster mit einer Vorlage bereitstellen, müssen Sie eine Reihe von Konfigurationsparametern für den Umgang mit unterschiedlichen erforderlichen Einstellungen angeben. Durch Deklarieren dieser Parameter in der Vorlagendefinition ist es möglich, Werte während der Bereitstellungsausführung über eine externe Datei oder an der Befehlszeile anzugeben.
+Wenn Sie einen Spark-Cluster mit einer Vorlage bereitstellen, müssen Sie eine Reihe von Konfigurationsparametern für den Umgang mit unterschiedlichen erforderlichen Einstellungen angeben. Durch Deklarieren dieser Parameter in der Vorlagendefinition ist es möglich, Werte während der Bereitstellungsausführung über eine externe Datei oder an einer Befehlszeile anzugeben.
 
-Im Abschnitt "parameters" am Anfang der Datei **azuredeploy.json** finden Sie den Parametersatz, der von der Vorlage zum Konfigurieren eines Spark-Clusters verlangt wird. Dies ist Beispiel für den Abschnitt "parameters" aus der Datei azuredeploy.json dieser Vorlage:
+Im Abschnitt "parameters" am Anfang der Datei "azuredeploy.json" finden Sie den Parametersatz, der von der Vorlage zum Konfigurieren eines Spark-Clusters verlangt wird. Nachfolgend sehen Sie ein Beispiel für den Abschnitt "parameters" aus der Datei "azuredeploy.json" dieser Vorlage:
 
 ```json
 "parameters": {
@@ -117,14 +117,14 @@ Im Abschnitt "parameters" am Anfang der Datei **azuredeploy.json** finden Sie de
 		"type": "string",
 		"defaultValue": "Canonical",
 		"metadata": {
-			"Description": "Image Publisher"
+			"Description": "Image publisher"
 		}
 	},
 	"imageOffer": {
 		"type": "string",
 		"defaultValue": "UbuntuServer",
 		"metadata": {
-			"Description": "Image Offer"
+			"Description": "Image offer"
 		}
 	},
 	"imageSKU": {
@@ -138,7 +138,7 @@ Im Abschnitt "parameters" am Anfang der Datei **azuredeploy.json** finden Sie de
 		"type": "string",
 		"defaultValue": "uniquesparkstoragev12",
 		"metadata": {
-			"Description": "Unique namespace for the Storage Account where the Virtual Machine's disks will be placed"
+			"Description": "Unique namespace for the Storage account where the virtual machine's disks will be placed"
 		}
 	},
 	"region": {
@@ -173,7 +173,7 @@ Im Abschnitt "parameters" am Anfang der Datei **azuredeploy.json** finden Sie de
 		"type": "string",
 		"defaultValue": "Subnet-1",
 		"metadata": {
-			"Description": "Subnet name for the virtual network that resources will be provisioned in to"
+			"Description": "Subnet name for the virtual network that resources will be provisioned into"
 		}
 	},
 	"subnetPrefix": {
@@ -218,7 +218,7 @@ Im Abschnitt "parameters" am Anfang der Datei **azuredeploy.json** finden Sie de
 		"disabled"
 		],
 		"metadata": {
-			"Description": "The flag allowing to enable or disable provisioning of the jumpbox VM that can be used to access the Spark nodes"
+			"Description": "The flag allowing to enable or disable provisioning of the jump-box VM that can be used to access the Spark nodes"
 		}
 	},
 	"tshirtSize": {
@@ -236,13 +236,13 @@ Im Abschnitt "parameters" am Anfang der Datei **azuredeploy.json** finden Sie de
 }
 ```
 
-Jeder Parameter enthält Details wie Datentyp und zulässige Werte. Dies ermöglicht die Überprüfung von Parametern, die während der Vorlagenausführung im interaktiven Modus (z. B. PowerShell oder Azure-CLI) übergeben werden, und ebenso eine Benutzeroberfläche mit automatischer Erkennung, die dynamisch durch das Analysieren der Liste der erforderlichen Parameter und ihrer Beschreibungen erstellt werden könnte.
+Jeder Parameter enthält Details wie Datentyp und zulässige Werte. Dies ermöglicht die Überprüfung von Parametern, die während der Vorlagenausführung im interaktiven Modus (z. B. Azure PowerShell oder Azure-Befehlszeilenschnittstelle) übergeben werden, und ebenso eine Benutzeroberfläche mit automatischer Erkennung, die dynamisch durch das Analysieren der Liste der erforderlichen Parameter und ihrer Beschreibungen erstellt werden kann.
 
-### Schritt 3-a: Bereitstellen eines Spark-Clusters mit einer Vorlage mithilfe von PowerShell
+### Schritt 3-a: Bereitstellen eines Spark-Clusters mit einer Vorlage mithilfe von Azure PowerShell
 
-Bereiten Sie eine Parameterdatei für die Bereitstellung vor, indem Sie eine JSON-Datei mit den Laufzeitwerten für alle Parameter erstellen. Diese Datei wird dann als eine Entität an den Bereitstellungsbefehl übergeben. Wenn Sie keine Parameterdatei einfügen, verwendet PowerShell die in der Vorlage angegebenen Standardwerte und fordert Sie auf, die restlichen Werte einzugeben.
+Bereiten Sie eine Parameterdatei für die Bereitstellung vor, indem Sie eine JSON-Datei mit den Laufzeitwerten für alle Parameter erstellen. Diese Datei wird dann als eine Entität an den Bereitstellungsbefehl übergeben. Wenn Sie keine Parameterdatei einfügen, verwendet Azure PowerShell die in der Vorlage angegebenen Standardwerte und fordert Sie auf, die restlichen Werte einzugeben.
 
-Hier ist ein Beispielsatz von Parametern aus der Datei **azuredeploy-parameters.json**: Beachten Sie, dass Sie gültige Werte für die Parameter "storageAccountName", "adminUsername" und "adminPassword" bereitstellen und ggf. die anderen Parameter anpassen müssen:
+Nachfolgend sehen Sie einen Beispielsatz von Parametern aus der Datei "azuredeploy-parameters.json". Beachten Sie, dass Sie gültige Werte für die Parameter **storageAccountName**, **adminUsername** und **adminPassword** bereitstellen und ggf. die anderen Parameter anpassen müssen:
 
 ```json
 {
@@ -302,16 +302,16 @@ $templateParameterFile= $folderName + "\azuredeploy-parameters.json"
 New-AzureResourceGroup -Name $RGName -Location $locName
 New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateParamterFile $templateParameterFile -TemplateFile $templateFile
 ```
-> [AZURE.NOTE]"$RGName" muss innerhalb Ihres Abonnements eindeutig sein.
+> [AZURE.NOTE]**$RGName** muss innerhalb Ihres Abonnements eindeutig sein.
 
-Beim Ausführen des Befehls **New-AzureResourceGroupDeployment** werden damit die Parameterwerte aus der JSON-Parameterdatei extrahiert und die Ausführung der Vorlage entsprechend gestartet. Das Definieren und Verwenden mehrerer Parameterdateien in den verschiedenen Umgebungen (z. B. Test, Produktion usw.) fördert die Wiederverwendung von Vorlagen und vereinfacht komplexe Lösungen mit mehreren Umgebungen.
+Beim Ausführen des Befehls **New-AzureResourceGroupDeployment** werden damit die Parameterwerte aus der JSON-Parameterdatei extrahiert und die Ausführung der Vorlage entsprechend gestartet. Das Definieren und Verwenden mehrerer Parameterdateien in den verschiedenen Umgebungen (Test, Produktion usw.) fördert die Wiederverwendung von Vorlagen und vereinfacht komplexe Lösungen mit mehreren Umgebungen.
 
-Denken Sie beim Bereitstellen daran, dass ein neues Azure-Speicherkonto erstellt werden muss, daher muss der Name, den Sie als Speicherkonto-Parameter angeben, eindeutig sein und alle Anforderungen an ein Azure-Speicherkonto erfüllen (nur Kleinbuchstaben und Ziffern).
+Denken Sie beim Bereitstellen daran, dass ein neues Azure-Speicherkonto erstellt werden muss, daher muss der Name, den Sie als Speicherkontoparameter angeben, eindeutig sein und alle Anforderungen an ein Azure-Speicherkonto erfüllen (nur Kleinbuchstaben und Ziffern).
 
 Während der Bereitstellung wird etwa Folgendes angezeigt:
 
 ```powershell
-PS C:> New-AzureResourceGroup -Name $RGName -Location $locName
+PS C:\> New-AzureResourceGroup -Name $RGName -Location $locName
 
 ResourceGroupName : SparkResourceGroup
 Location          : westus
@@ -324,7 +324,7 @@ Permissions       :
 
 ResourceId        : /subscriptions/2018abc3-dbd9-4437-81a8-bb3cf56138ed/resourceGroups/sparkresourcegroup
 
-PS C:> New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateParameterFile $templateParameterFile -TemplateFile $templateFile
+PS C:\> New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateParameterFile $templateParameterFile -TemplateFile $templateFile
 VERBOSE: 10:08:28 AM - Template is valid.
 VERBOSE: 10:08:28 AM - Create template deployment 'SparkTestDeployment'.
 VERBOSE: 10:08:37 AM - Resource Microsoft.Resources/deployments 'shared-resources' provisioning status is running
@@ -379,9 +379,9 @@ Während und nach der Bereitstellung können Sie alle Anforderungen überprüfen
 
 Wechseln Sie dazu in das [Azure-Portal](https://portal.azure.com), und gehen Sie folgendermaßen vor:
 
-- Klicken Sie auf der linken Navigationsleiste auf "Durchsuchen", scrollen Sie nach unten, und klicken Sie auf "Ressourcengruppen".
-- Nach dem Klicken auf die Ressourcengruppe, die Sie gerade erstellt haben, wird das Blatt "Ressourcengruppe" angezeigt.
-- Durch Klicken auf das Balkendiagramm "Ereignisse" im Bereich "Überwachung" des Blattes "Ressourcengruppe" werden die Ereignisse für die Bereitstellung angezeigt:
+- Klicken Sie auf der linken Navigationsleiste auf **Durchsuchen**, scrollen Sie nach unten, und klicken Sie auf **Ressourcengruppen**.
+- Klicken Sie auf die gerade erstellte Ressourcengruppe, um das Blatt "Ressourcengruppe" anzuzeigen.
+- Durch Klicken auf das Balkendiagramm **Ereignisse** im Bereich **Überwachung** des Blattes "Ressourcengruppe" werden die Ereignisse für die Bereitstellung angezeigt.
 - Durch Klicken auf die einzelnen Ereignisse können Sie sich die Details jedes einzelnen Vorgangs, der von der Vorlage angestoßen wurde, noch näher ansehen.
 
 ![portal-events](media/virtual-machines-spark-template/portal-events.png)
@@ -392,13 +392,13 @@ Verwenden Sie nach den Tests zum Entfernen dieser Ressourcengruppe und all ihrer
 Remove-AzureResourceGroup -Name "<resource group name>" -Force
 ```
 
-### Schritt 3-b: Bereitstellen eines Spark-Clusters mit einer Vorlage mithilfe der Azure-Befehlszeilenschnittstelle
+### Schritt 3-a: Bereitstellen eines Spark-Clusters mit einer Vorlage mithilfe der Azure-Befehlszeilenschnittstelle
 
 Zum Bereitstellen eines Spark-Clusters über die Azure-CLI erstellen Sie zuerst eine Ressourcengruppe durch Angabe eines Namens und eines Speicherorts:
 
 	azure group create SparkResourceGroup "West US"
 
-Übergeben Sie diesen Namen für die Ressourcengruppe, den Speicherort der JSON-Vorlagendatei und den Speicherort der Parameterdatei (siehe Abschnitt oben zur PowerShell) an den folgenden Befehl:
+Übergeben Sie diesen Namen für die Ressourcengruppe, den Speicherort der JSON-Vorlagendatei und den Speicherort der Parameterdatei (siehe Abschnitt oben zu Azure PowerShell) an den folgenden Befehl:
 
 	azure group deployment create SparkResourceGroup -f .\azuredeploy.json -e .\azuredeploy-parameters.json
 
@@ -408,15 +408,15 @@ Sie können den Status der einzelnen Ressourcenbereitstellungen mit dem folgende
 
 ## Übersicht über die Spark-Vorlagenstruktur und -Dateianordnung
 
-Um eine stabile und wiederverwendbare Ressourcen-Manager-Vorlage zu erstellen, ist es erforderlich, genau über eine Reihe komplexer und zusammenhängender Aufgaben während der Bereitstellung einer komplexen Lösung wie Spark nachzudenken. Durch die Nutzung von ARM-Funktionen zum **Verknüpfen von Vorlagen** und **Ressourcenschleifen** und die zusätzliche Skriptausführung über zugehörige Erweiterungen ist es möglich, einen modularen Ansatz zu implementieren, der bei nahezu allen komplexen vorlagenbasierten Bereitstellungen wiederverwendet werden kann.
+Um eine stabile und wiederverwendbare Ressourcen-Manager-Vorlage zu erstellen, ist es erforderlich, genau über eine Reihe komplexer und zusammenhängender Aufgaben während der Bereitstellung einer komplexen Lösung wie Spark nachzudenken. Durch die Nutzung von Resource Manager zum Verknüpfen von Vorlagen und Ressourcenschleifen und die zusätzliche Skriptausführung über zugehörige Erweiterungen ist es möglich, einen modularen Ansatz zu implementieren, der bei nahezu allen komplexen vorlagenbasierten Bereitstellungen wiederverwendet werden kann.
 
 In diesem Diagramm werden die Beziehungen zwischen allen Dateien beschrieben, die für diese Bereitstellung von GitHub heruntergeladen werden:
 
 ![spark-files](media/virtual-machines-spark-template/spark-files.png)
 
-Dieser Abschnitt führt Sie schrittweise durch die Struktur der Datei **azuredeploy.json** für den Spark-Cluster.
+Dieser Abschnitt führt Sie schrittweise durch die Struktur der Datei "azuredeploy.json" für den Spark-Cluster.
 
-Wenn Sie nicht bereits eine Kopie der Vorlagendatei heruntergeladen haben, legen Sie einen lokalen Ordner als Speicherort für die Datei fest, und erstellen Sie ihn (z. B. "C:\\Azure\\Vorlagen\\Spark"). Geben Sie den Ordnernamen an, und führen Sie die folgenden Befehle aus:
+Wenn Sie nicht bereits eine Kopie der Vorlagendatei heruntergeladen haben, legen Sie einen lokalen Ordner als Speicherort für die Datei fest, und erstellen Sie ihn (z. B. "C:\Azure\Vorlagen\Spark"). Geben Sie den Ordnernamen an, und führen Sie die folgenden Befehle aus:
 
 ```powershell
 $folderName="<folder name, such as C:\Azure\Templates\Spark>"
@@ -430,7 +430,7 @@ $webclient.DownloadFile($url,$filePath)
 
 ### Abschnitt "parameters"
 
-Im Abschnitt "parameters" von **azuredeploy.json** werden veränderbare Parameter angegeben, die in dieser Vorlage verwendet werden. Die oben genannte Datei **azuredeploy-parameters.json** wird während der Vorlagenausführung zum Übergeben der Werte in den Abschnitt "parameters" von "azuredeploy.json" verwendet.
+Im Abschnitt "parameters" von "azuredeploy.json" werden veränderbare Parameter angegeben, die in dieser Vorlage verwendet werden. Die oben genannte Datei "azuredeploy-parameters.json" wird während der Vorlagenausführung zum Übergeben der Werte in den Abschnitt "parameters" von "azuredeploy.json" verwendet.
 
 Im Folgenden finden Sie ein Beispiel für einen Parameter für die "T-Shirt-Größe":
 
@@ -449,7 +449,7 @@ Im Folgenden finden Sie ein Beispiel für einen Parameter für die "T-Shirt-Grö
 },
 ```
 
->.[AZURE.NOTE]Beachten Sie, dass ein "DefaultValue" und "AllowedValues" angegeben werden können.
+> [AZURE.NOTE]Beachten Sie, dass ein **DefaultValue** und **AllowedValues** angegeben werden können.
 
 ### Abschnitt "Variablen"
 
@@ -486,16 +486,16 @@ Im Abschnitt "variables" sind Variablen angegeben, die in dieser Vorlage verwend
 },
 ```
 
-"**vmStorageAccountContainerName**" ist ein Beispiel für eine einfache Name-/Wert-Variable. "**vnetID**" ist ein Beispiel für eine Variable, die zur Laufzeit mit den Funktionen "**resourceId**" und "**parameters**" berechnet wird. Die Werte der "**numberOfMasterInstances**"- und "**vmSize**"-Variablen werden zur Laufzeit mithilfe der Funktionen "**concat**", "**variables**" und "**parameters**" berechnet.
+Die Variable **vmStorageAccountContainerName** ist ein Beispiel für eine einfache Name-/Wert-Variable. **vnetID** ist ein Beispiel für eine Variable, die zur Laufzeit mit den Funktionen **resourceId** und **parameters** berechnet wird. Die Werte der **numberOfMasterInstances**- und **vmSize**-Variablen werden zur Laufzeit mithilfe der Funktionen **concat**, **variables** und **parameters** berechnet.
 
-Wenn Sie die Größe der Spark-Clusterbereitstellung anpassen möchten, können Sie die Eigenschaften der Variablen "tshirtSizeS", "tshirtSizeM" und "tshirtSizeL" in der Vorlage "azuredeploy.json" ändern.
+Wenn Sie die Größe der Spark-Clusterbereitstellung anpassen möchten, können Sie die Eigenschaften der Variablen **tshirtSizeS**, **tshirtSizeM** und **tshirtSizeL** in der Vorlage "azuredeploy.json" ändern.
 
 Weitere Informationen zur Vorlagensprache finden Sie im MSDN unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
 
 
 ### Abschnitt "Ressourcen"
 
-Im Abschnitt **"resources"** geschieht am meisten. Schauen Sie sich diesen Abschnitt sorgfältig an. Sie können sofort zwei verschiedene Fälle identifizieren: Der erste ist ein definiertes Element des Typs `Microsoft.Resources/deployments`, was im Grunde den Aufruf einer geschachtelten Bereitstellung innerhalb der Hauptbereitstellung bedeutet. Durch das "**templateLink**"-Element (und die zugehörige Versionseigenschaft) kann eine verknüpfte Vorlagendatei bestimmt werden, die zur Übergabe eines Parametersatzes als Eingabe aufgerufen wird, wie Sie in diesem Fragment sehen:
+Im Abschnitt "resources" geschieht am meisten. Wenn Sie diesen Abschnitt genau überprüfen, erkennen Sie sofort zwei unterschiedliche Fälle. Der erste ist ein vom Typ `Microsoft.Resources/deployments` definiertes Element, das im Wesentlichen eine geschachtelte Bereitstellung innerhalb der Hauptbereitstellung aufruft. Der zweite ist die **templateLink**-Eigenschaft (und die zugehörige **contentVersion**-Eigenschaft), die es möglich macht, eine verknüpfte Vorlagendatei anzugeben, die unter Übergabe eines Satzes von Parametern als Eingabe aufgerufen wird. Diese sind in diesem Vorlagenfragment zu sehen:
 
 ```json
 "resources": [
@@ -533,18 +533,18 @@ Im Abschnitt **"resources"** geschieht am meisten. Schauen Sie sich diesen Absch
 },
 ```
 
-Im ersten Beispiel wird deutlich, wie die Datei **azuredeploy.json** in diesem Szenario als Mechanismus zur Orchestrierung organisiert wurde, indem eine Anzahl anderer Vorlagendateien aufgerufen wird, wobei jede jeweils für einen Teil der erforderlichen Bereitstellungsaufgaben verantwortlich ist.
+Im ersten Beispiel wird deutlich, wie die Datei "azuredeploy.json" in diesem Szenario als Mechanismus zur Orchestrierung organisiert wurde, indem eine Anzahl anderer Vorlagendateien aufgerufen wird. Jede Datei ist jeweils für einen Teil der erforderlichen Bereitstellungsaufgaben verantwortlich.
 
 Insbesondere folgende verknüpfte Vorlagen werden für diese Bereitstellung eingesetzt:
 
--	**shared-resource.json**: enthält die Definition aller Ressourcen, die in der Bereitstellung gemeinsam genutzt werden. Beispiele hierfür sind Speicherkonten, die zum Speichern der Datenträger auf dem Betriebssystem und den virtuellen Netzwerken des virtuellen Computers verwendet werden.
+-	**shared-resource.json**: enthält die Definition aller Ressourcen, die in der Bereitstellung gemeinsam genutzt werden. Beispiele hierfür sind Speicherkonten, die zum Speichern der Betriebssystem-Datenträger und virtuellen Netzwerke eines virtuellen Computers verwendet werden.
 -	**jumpbox-resources-enabled.json**: stellt die "Jumpbox"-VM und alle zugehörigen Ressourcen wie Netzwerkschnittstelle, öffentliche IP-Adresse und den Eingabeendpunkt für SSH in der Umgebung bereit.
 
-Nach dem Aufrufen dieser beiden Vorlagen stellt die Datei **azuredeploy.json** alle Spark-Clusterknoten-VMs und verbundene Ressourcen bereit (z. B. Netzwerkkarten, private IP-Adressen usw.). Diese Vorlage stellt auch VM-Erweiterungen bereit (benutzerdefinierte Skripts für Linux) und ruft ein Bash-Skript (**spark-cluster-install.sh**) auf, um Spark auf jedem Knoten physisch zu installieren und einzurichten.
+Nach dem Aufrufen dieser beiden Vorlagen stellt "azuredeploy.json" alle Spark-Clusterknoten-VMs und verbundenen Ressourcen bereit (Netzwerkadapter, private IP-Adressen usw.). Diese Vorlage stellt auch VM-Erweiterungen bereit (benutzerdefinierte Skripts für Linux) und ruft ein Bash-Skript ("spark-cluster-install.sh") auf, um Spark auf jedem Knoten physisch zu installieren und einzurichten.
 
-Sehen wir uns nun die *Verwendung* der letzten Vorlage, **azuredeploy.json**, genauer an, da diese aus Sicht der Vorlagenentwicklung am interessantesten ist. Ein wichtiges hervorzuhebendes Konzept ist die Möglichkeit, mehrere Kopien eines einzelnen Ressourcentyps mit einer einzigen Vorlagendatei bereitzustellen und für jede Instanz eindeutige Werte für die erforderlichen Einstellungen festzulegen. Dieses Konzept ist als **Ressourcenschleife** bekannt.
+Sehen wir uns nun die *Verwendung* der letzten Vorlage, "azuredeploy.json", genauer an, da diese aus Sicht der Vorlagenentwicklung am interessantesten ist. Ein wichtiges hervorzuhebendes Konzept ist die Möglichkeit, mehrere Kopien eines einzelnen Ressourcentyps mit einer einzigen Vorlagendatei bereitzustellen und für jede Instanz eindeutige Werte für die erforderlichen Einstellungen festzulegen. Dieses Konzept ist als **Ressourcenschleife** bekannt.
 
-Eine Ressource, die das "copy"-Element verwendet, "kopiert" sich selbst in der im "count"-Parameter des "copy"-Elements angegebenen Anzahl. Für alle Einstellungen, in denen es erforderlich ist, eindeutige Werte zwischen verschiedenen Instanzen der bereitgestellten Ressource anzugeben, kann die **copyindex()**-Funktion verwendet werden, um einen numerischen Wert zu erhalten, der den aktuellen Index in der bestimmten Ressourcenschleifenerstellung angibt. Das folgende Fragment aus **azuredeploy.json** zeigt, wie dieses Konzept auf die Erstellung mehrerer Netzwerkkarten, VMs und VM-Erweiterungen für den Spark-Cluster angewendet wird:
+Eine Ressource, die das **copy**-Element verwendet, "kopiert" sich selbst in der im **count**-Parameter des **copy**-Elements angegebenen Anzahl. Für alle Einstellungen, in denen es erforderlich ist, eindeutige Werte zwischen verschiedenen Instanzen der bereitgestellten Ressource anzugeben, kann die **copyindex()**-Funktion verwendet werden, um einen numerischen Wert zu erhalten, der den aktuellen Index in der bestimmten Ressourcenschleifenerstellung angibt. Das folgende Fragment aus "azuredeploy.json" zeigt, wie dieses Konzept auf die Erstellung mehrerer Netzwerkadapter, VMs und VM-Erweiterungen für den Spark-Cluster angewendet wird:
 
 ```json
 {
@@ -760,9 +760,9 @@ Eine Ressource, die das "copy"-Element verwendet, "kopiert" sich selbst in der i
 	}
 ```
 
-Ein weiteres wichtiges Konzept bei der Ressourcenerstellung ist die Möglichkeit, Abhängigkeiten und Vorränge zwischen Ressourcen anzugeben, wie Sie am JSON-Array **dependsOn** sehen können. In dieser speziellen Vorlage sehen Sie, dass die Spark-Clusterknoten von den zuerst erstellten gemeinsame Ressourcen und networkInterfaces-Ressourcen abhängig sind.
+Ein weiteres wichtiges Konzept bei der Ressourcenerstellung ist die Möglichkeit, Abhängigkeiten und Vorränge zwischen Ressourcen anzugeben, wie Sie am JSON-Array **dependsOn** sehen können. In dieser speziellen Vorlage sehen Sie, dass die Spark-Clusterknoten von den zuerst erstellten gemeinsame Ressourcen und **networkInterfaces**-Ressourcen abhängig sind.
 
-Ein weiteres interessantes Fragment ist das im Zusammenhang mit den VM-Erweiterungen **CustomScriptForLinux**. Diese werden als gesonderter Ressourcentyp mit einer Abhängigkeit auf jedem Clusterknoten installiert. In diesem Fall dient dies zum Installieren und Einrichten von Spark auf jedem VM-Knoten. Sehen wir uns einen Ausschnitt aus der Vorlage **azuredeploy.json** an, die diese verwendet:
+Ein weiteres interessantes Fragment ist das im Zusammenhang mit den VM-Erweiterungen **CustomScriptForLinux**. Diese werden als gesonderter Ressourcentyp mit einer Abhängigkeit auf jedem Clusterknoten installiert. In diesem Fall dient dies zum Installieren und Einrichten von Spark auf jedem VM-Knoten. Sehen wir uns einen Ausschnitt aus der Vorlage "azuredeploy.json" an, die diese verwendet:
 
 ```json
 {
@@ -817,9 +817,9 @@ Ein weiteres interessantes Fragment ist das im Zusammenhang mit den VM-Erweiteru
 }
 ```
 
-Beachten Sie, dass die Erweiterung für die Master- und Slaveknotenressourcen verschiedene Befehle ausführt, die in der **commandToExecute**-Eigenschaft im Rahmen des Bereitstellungsprozesses definiert wurden.
+Beachten Sie, dass die Erweiterung für die Master- und Slaveknotenressourcen verschiedene Befehle ausführt, die in der Eigenschaft **commandToExecute** im Rahmen des Bereitstellungsprozesses definiert wurden.
 
-Sie sehen, dass diese Ressource von der Ressourcen-VM abhängig ist, die bereits bereitgestellt wurde (**Microsoft.Compute/virtualMachines/vmMember<X>**, wobei **<X>** der "**machineSettings.machineIndex**"-Parameter und damit der Index des virtuellen Computers ist, der mithilfe der "**copyindex()**"-Funktion an dieses Skript übergeben wurde).
+Wenn Sie den JSON-Ausschnitt der aktuellen VM-Erweiterung betrachten, sehen Sie sich, dass diese Ressource von der VM-Ressource und deren Netzwerkschnittstelle abhängt. Das bedeutet, dass diese beiden Ressourcen bereits vor dem Bereitstellen und Ausführen der VM-Erweiterung bereitgestellt werden müssen. Beachten Sie auch die Verwendung der Funktion **copyindex()** zum Wiederholen dieses Schritts für jede Slave-VM.
 
 Indem Sie sich mit den anderen Dateien in dieser Bereitstellung vertraut machen, werden Sie alle Details und bewährten Methoden zum Organisieren und Orchestrieren komplexer Bereitstellungsstrategien für Lösungen mit mehreren Knoten verstehen, basierend auf sämtlichen Technologien und unter Nutzung von Azure-Ressourcen-Manager-Vorlagen. Obwohl nicht zwingend erforderlich, ist das Strukturieren der Vorlagendateien eine empfohlene Vorgehensweise, wie im folgenden Diagramm verdeutlicht:
 
@@ -828,10 +828,10 @@ Indem Sie sich mit den anderen Dateien in dieser Bereitstellung vertraut machen,
 Im Wesentlichen empfiehlt dieser Ansatz:
 
 -	Definieren Sie die Kernvorlagendatei als zentrale Orchestrierungsstelle für alle spezifischen Bereitstellungsaktivitäten, indem Sie Vorlagen nutzen, die auf Aufrufe von untergeordneten Vorlagenausführungen verweisen.
--	Erstellen Sie eine spezifische Vorlagendatei, die alle Ressourcen bereitstellt, die von allen anderen speziellen Bereitstellungsaufgaben gemeinsam genutzt werden (z. B. Speicherkonten, VNET-Konfiguration usw.). Diese kann häufig zwischen Bereitstellungen wiederverwendet werden, die ähnliche Anforderungen im Hinblick auf die allgemeine Infrastruktur haben.
+-	Erstellen Sie eine spezifische Vorlagendatei, die alle Ressourcen bereitstellt, die gemeinsam von allen anderen speziellen Bereitstellungsaufgaben (Speicherkonten, Konfiguration von virtuellen Netzwerken usw.) gemeinsam genutzt werden. Diese kann häufig zwischen Bereitstellungen wiederverwendet werden, die ähnliche Anforderungen im Hinblick auf die allgemeine Infrastruktur haben.
 -	Schließen Sie optionale Ressourcenvorlagen ein, um ressourcenspezifische Anforderungen zu erkennen.
 -	Erstellen Sie für identische Mitglieder einer Ressourcengruppe (Knoten in einem Cluster usw.) spezielle Vorlagen, die die Ressourcenschleife nutzen, um für mehrere Instanzen eindeutige Eigenschaften bereitzustellen.
--	Für alle Nachbereitstellungsaufgaben (z. B. Produktinstallation, Konfigurationen usw.) nutzen Sie die Bereitstellung von Skripterweiterungen, und erstellen Sie Skripts, die für die einzelnen Technologien spezifisch sind.
+-	Für alle Nachbereitstellungsaufgaben (Produktinstallation, Konfigurationen usw.) nutzen Sie die Bereitstellung von Skripterweiterungen, und erstellen Sie Skripts, die für die einzelnen Technologien spezifisch sind.
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
 
@@ -842,6 +842,5 @@ Weitere Details finden Sie unter [Bereitstellen einer Vorlage](../resource-group
 Entdecken Sie weitere [Anwendungsframeworks](virtual-machines-app-frameworks.md).
 
 [Problembehandlung bei Vorlagenbereitstellungen](resource-group-deploy-debug.md).
- 
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

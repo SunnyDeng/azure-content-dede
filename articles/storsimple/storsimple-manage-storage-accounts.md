@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Verwalten von StorSimple-Speicherkonten"
-   description="Beschreibt, wie Sie die Seite &quot;Konfigurieren&quot; zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten verwenden oder wie Sie die Sicherheitsschlüssel für ein Speicherkonto rotieren."
+   description="Beschreibt, wie Sie die Seite ";Konfigurieren"; zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten verwenden oder wie Sie die Sicherheitsschlüssel für ein Speicherkonto rotieren."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
@@ -152,4 +152,4 @@ Um den StorSimple-Manager-Dienst über die Änderung zu informieren, müssen Sie
 
 Erfahren Sie mehr über [StorSimple-Sicherheit](storsimple-security.md).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

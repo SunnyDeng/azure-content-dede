@@ -50,11 +50,10 @@ Im Folgenden werden die verschiedenen im SugarCRM-Connector verfügbaren Aktione
 *Hinweis*: Weitere Informationen über die unterstützten Argumente in Abfragen finden Sie in der SugarCRM-REST-API-Dokumentation.
 
 ##Erstellen einer SugarCRM-Connector-API-App##
-1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" unten rechts im Azure-Portal.
-2.	Wechseln Sie zu "Web und Mobil > API-Apps", und suchen Sie nach "SugarCRM".
-3.	Konfigurieren Sie den SugarCRM-Connector, indem Sie die Informationen für den Webhosting-Plan und die Ressourcengruppe angeben und einen Namen für die API-App wählen.
-
-4. Konfigurieren Sie den SugarCRM-Connector, und klicken Sie auf "Erstellen". Im Folgenden sind die Paketeinstellungen aufgeführt, die Sie zum Erstellen des Connectors bereitstellen müssen:
+1.	Navigieren Sie zu "portal.azure.com". Öffnen Sie den Azure Marketplace mit der Option "+NEU" oben links im Azure-Portal.
+2.	Navigieren Sie zu "Marketplace > Alles", und suchen Sie nach "SugarCRM".
+3.	Konfigurieren Sie den SugarCRM-Connector, indem Sie die Informationen für den App Service-Plan und die Ressourcengruppe angeben und einen Namen für die API-App eingeben.
+4. Konfigurieren Sie die Paketeinstellungen für den SugarCRM-Connector. Im Folgenden sind die Paketeinstellungen aufgeführt, die Sie zum Erstellen des Connectors bereitstellen müssen:
 
 	<table>
   <tr>
@@ -125,11 +124,11 @@ Wir erstellen eine einfache Logik-App, die einen Kunden in SugarCRM erstellt und
 
 13.	Wählen Sie "SugarCRM-Connector" aus dem Abschnitt "Zuletzt verwendet" im Katalog aus. Eine neue SugarCRM-Aktion wird hinzugefügt.
 
-14.	Wählen Sie "Konto aktualisieren" aus der Liste der Aktionen. Die Eingabeparameter der Aktion "Konto aktualisieren" werden angezeigt.
+14.	Wählen Sie "Konto aktualisieren" (unter den erweiterten Aktionen "...") aus der Liste der Aktionen aus, und die Eingabeparameter der Aktion "Konto aktualisieren" werden angezeigt.
 
 	![][6]
 
-15.	Klicken Sie neben "Datensatz-ID" auf "+", um den ID-Wert aus der Ausgabe der Aktion "Konto erstellen" auszuwählen.
+15.	Klicken Sie neben "Datensatz-ID" auf "...", um den ID-Wert aus der Ausgabe der Aktion "Konto erstellen" auszuwählen.
 
 	![][7]
 
@@ -139,7 +138,7 @@ Wir erstellen eine einfache Logik-App, die einen Kunden in SugarCRM erstellt und
 
 17. Klicken Sie im Bildschirm des Logik-App-Editors auf "OK", und klicken Sie dann auf "Erstellen". Es dauert ungefähr 30 Sekunden, bis die Erstellung abgeschlossen ist.
 
-18. Sehen Sie sich die neu erstellte Logik-App an, und klicken Sie auf "Ausführen", um eine Ausführung zu initiieren.
+18. Sehen Sie sich die neu erstellte Logik-App an, und klicken Sie auf "Jetzt ausführen", um eine Ausführung zu initiieren.
 
 19. Überprüfen Sie, ob ein neues Konto mit dem Namen "Microsoft-Konto" im SugarCRM-Konto erstellt wurde. Dieses Konto wird auch mit den Abrechnungsadressinformationen aktualisiert.
 
@@ -154,4 +153,4 @@ Wir erstellen eine einfache Logik-App, die einen Kunden in SugarCRM erstellt und
 [8]: ./media/app-service-logic-connector-sugarcrm/8_Update_Account_Address.png
 [9]: ./media/app-service-logic-connector-sugarcrm/9_Create_new_SugarCRM_connector.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -167,4 +167,4 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 
 <!-- URLs. -->
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

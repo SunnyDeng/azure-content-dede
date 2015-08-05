@@ -2,6 +2,7 @@
 	pageTitle="Nutzen eines Machine Learning-Webdiensts | Microsoft Azure" 
 	description="Sobald ein Machine Learning-Dienst veröffentlicht wurde, kann der zur Verfügung gestellte RESTFul-Webdienst als Antwort-/Anfrage-Dienst oder als Stapelausführungsdienst genutzt werden." 
 	services="machine-learning" 
+	solutions="big-data" 
 	documentationCenter="" 
 	authors="bradsev" 
 	manager="paulettm" 
@@ -433,4 +434,4 @@ Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Batchauftrag anhan
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

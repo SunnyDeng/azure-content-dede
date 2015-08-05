@@ -28,7 +28,7 @@ Das Einfügen eines Skripts oder anderer Daten in einen virtuellen Azure-Compute
 
 - Verwenden von speziellen Tools, die auf einigen Systemen zum automatischen Ermitteln und Verarbeiten benutzerdefinierter Daten verfügbar sind.
 
-> [AZURE.NOTE]Dieser Artikel beschreibt, wie benutzerdefinierte Daten mithilfe eines virtuellen Computers, der mit dem Azure-Service-Management-Compute-Stapel erstellt wurde, injiziert werden können. Informationen zur Verwendung des Azure-Ressourcen-Manager-Compute-Stapels finden Sie in [dieser Beispielvorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata).
+> [AZURE.NOTE]Dieser Artikel beschreibt, wie benutzerdefinierte Daten mithilfe eines virtuellen Computers, der mit dem Azure-Dienstverwaltungs-Computestapel erstellt wurde, injiziert werden können. Informationen zur Verwendung des Azure-Ressourcen-Manager-Computestapels finden Sie in [dieser Beispielvorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata).
 
 ## Einfügen benutzerdefinierter Daten in einem virtuellen Azure-Computer
 
@@ -80,4 +80,4 @@ Weitere Informationen finden Sie unter [cloud-init documentation for Ubuntu](htt
 [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

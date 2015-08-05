@@ -819,7 +819,7 @@ AzCopy generiert eine JSON-Datendatei in den lokalen Ordner oder Blobcontainer m
 
 Die generierte JSON-Datendatei folgt dem Nutzlastformat für minimale Metadaten. Details in Bezug auf dieses Nutzlastformat finden Sie unter [Nutzlastformat für Tabellendienstvorgänge](http://msdn.microsoft.com/library/azure/dn535600.aspx).
 
-Hinweis: Beim Exportieren von Speichertabellenentitäten in das Speicherblob exportiert AzCopy die Tabellenentitäten zunächst in lokale temporäre Datendateien und lädt sie dann in das Blob hoch. Dabei werden diese temporären Dateien im Journaldateiordner mit dem Standardpfad <code>%LocalAppData%\\Microsoft\\Azure\\AzCopy</code> gespeichert, und Sie können die Option "/Z: [Journaldateiordner]" angeben, um den Speicherort des Journaldateiordners und damit den temporären Speicherort für die Datendateien zu ändern. Die Größe der temporären Datendateien wird durch die Tabellenentitäten und die Größe bestimmt, die Sie mit der Option "/SplitSize" angegeben haben. Auch wenn die temporäre Datei auf dem lokalen Datenträger sofort gelöscht wird, sobald sie in das Blob hochgeladen wurde, sollten Sie sicherstellen, dass Sie über genügend lokalen Speicherplatz für diese temporären Dateien verfügen, bevor sie gelöscht werden,
+Hinweis: Beim Exportieren von Speichertabellenentitäten in das Speicherblob exportiert AzCopy die Tabellenentitäten zunächst in lokale temporäre Datendateien und lädt sie dann in das Blob hoch. Dabei werden diese temporären Dateien im Journaldateiordner mit dem Standardpfad <code>%LocalAppData%\Microsoft\Azure\AzCopy</code> gespeichert, und Sie können die Option "/Z: [Journaldateiordner]" angeben, um den Speicherort des Journaldateiordners und damit den temporären Speicherort für die Datendateien zu ändern. Die Größe der temporären Datendateien wird durch die Tabellenentitäten und die Größe bestimmt, die Sie mit der Option "/SplitSize" angegeben haben. Auch wenn die temporäre Datei auf dem lokalen Datenträger sofort gelöscht wird, sobald sie in das Blob hochgeladen wurde, sollten Sie sicherstellen, dass Sie über genügend lokalen Speicherplatz für diese temporären Dateien verfügen, bevor sie gelöscht werden,
 
 ### Aufteilen der exportierten Dateien
 
@@ -911,4 +911,4 @@ Weitere Informationen zu Azure Storage und zu AzCopy finden Sie in den folgenden
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

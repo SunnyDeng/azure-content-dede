@@ -1,7 +1,9 @@
 <properties 
-	pageTitle="Erweiterte Analyseprozesse und -technologien in Aktion: Verwenden von Hadoop-Clustern in einem 1-TB-Criteo-DataSet | Microsoft Azure" 
+	pageTitle="Erweiterte Analyseprozesse und -technologien in Aktion – mithilfe von HDInsight-Hadoop-Clustern in einem 1-TB-DataSet | Azure" 
 	description="Verwenden der erweiterten Analyseprozesse und -technologien (Advanced Analytics Process and Technology, ADAPT) für ein End-to-End-Szenario mit einem HDInsight Hadoop-Cluster zum Erstellen und Bereitstellen eines Modells unter Verwendung eines großen (1 TB) öffentlich zugänglichen DataSets" 
-	services="machine-learning,hdinsight"  
+	metaKeywords="" 
+	services="machine-learning,hdinsight" 
+	solutions="" 
 	documentationCenter="" 
 	authors="bradsev" 
 	manager="paulettm" 
@@ -13,14 +15,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/27/2015" 
+	ms.date="07/21/2015" 
 	ms.author="ginathan;mohabib;bradsev" />
 
 # Erweiterte Analyseprozesse und -technologien in Aktion – mithilfe von Azure HDInsight-Hadoop-Clustern in einem 1-TB-DataSet
 
-In dieser exemplarischen Vorgehensweise wird die End-to-End-Verwendung der erweiterten Analyseprozesse und -technologien (Advanced Analytics Process and Technology, ADAPT) mit einem [Azure HDInsight Hadoop-Cluster](http://azure.microsoft.com/services/hdinsight/) zum Speichern, Durchsuchen, Entwickeln von Funktionen sowie zum Komprimieren von Daten aus einem der öffentlich zugänglichen [Criteo](http://labs.criteo.com/downloads/download-terabyte-click-logs/)-DataSets veranschaulicht. Mithilfe von Azure Machine Learning erstellen wir anhand dieser Daten binäre Klassifizierungs- und Regressionsmodelle. Zudem zeigen wir auf, wie eines dieser Modelle als Webdienst veröffentlicht werden kann.
+In dieser exemplarischen Vorgehensweise wird die End-to-End-Verwendung der erweiterten Analyseprozesse und -technologien (Advanced Analytics Process and Technology, ADAPT) mit einem [Azure HDInsight Hadoop-Cluster](http://azure.microsoft.com/services/hdinsight/) zum Speichern, Durchsuchen, Entwickeln von Funktionen sowie zum Komprimieren von Daten aus einem der öffentlich zugänglichen [Criteo](http://labs.criteo.com/downloads/download-terabyte-click-logs/)-DataSets veranschaulicht. Mithilfe von Azure Machine Learning erstellen wir ein binäres Klassifizierungsmodell für diese Daten. Zudem zeigen wir auf, wie eines dieser Modelle als Webdienst veröffentlicht wird.
 
-Die in dieser exemplarischen Vorgehensweise vorgestellten Aufgaben können auch mit einem iPython-Notizbuch umgesetzt werden. Benutzer, die diesem Ansatz folgen möchten, sollten das Thema [Criteo walkthrough using a Hive ODBC connection](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-hive-walkthrough-criteo.ipynb) (in englischer Sprache) beachten.
+Die in dieser exemplarischen Vorgehensweise vorgestellten Aufgaben können auch mit einem IPython-Notizbuch umgesetzt werden. Benutzer, die diesem Ansatz folgen möchten, sollten das Thema [Criteo walkthrough using a Hive ODBC connection](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-hive-walkthrough-criteo.ipynb) (in englischer Sprache) beachten.
 
 
 ## <a name="dataset"></a>Beschreibung des Criteo-DataSets
@@ -62,7 +64,7 @@ In dieser exemplarischen Vorgehensweise werden zwei beispielhafte Vorhersageprob
 
 Richten Sie Ihre Azure Data Science-Umgebung ein, um in drei Schritten Lösungen für Vorhersageanalysen mit HDInsight-Clustern zu erstellen:
 
-1. [Erstellen eines Speicherkontos:](../storage-whatis-account.md) Mit diesem Speicherkonto werden Daten im Azure-Blob-Speicher gespeichert. Die in HDInsight-Clustern verwendeten Daten werden hier gespeichert.
+1. [Erstellen eines Speicherkontos:](storage-whatis-account.md) Mit diesem Speicherkonto werden Daten im Azure-Blob-Speicher gespeichert. Die in HDInsight-Clustern verwendeten Daten werden hier gespeichert.
 
 2. [Anpassen von Azure HDInsight Hadoop-Clustern für Data Science:](machine-learning-data-science-customize-hadoop-cluster.md) Mit diesem Schritt wird ein Azure HDInsight Hadoop-Cluster mit 64-Bit-Anaconda Python 2.7 auf allen Knoten erstellt. Beim Anpassen des HDInsight-Clusters müssen zwei (in diesem Thema beschriebene) wichtige Schritte durchgeführt werden.
 
@@ -80,7 +82,7 @@ Um auf das [Criteo](http://labs.criteo.com/downloads/download-terabyte-click-log
 
 Klicken Sie auf **Download fortsetzen**, um weitere Informationen über das DataSet und seine Verfügbarkeit zu erhalten.
 
-Die Daten befinden sich an einem öffentlichen Speicherort für [Azure-Blob-Speicher](../storage-dotnet-how-to-use-blobs.md): wasb://criteo@azuremlsampleexperiments.blob.core.windows.net/raw/. "wasb" bezieht sich auf den Azure-Blob-Speicherort.
+Die Daten befinden sich an einem öffentlichen Speicherort für [Azure-Blob-Speicher](storage-dotnet-how-to-use-blobs.md): wasb://criteo@azuremlsampleexperiments.blob.core.windows.net/raw/. "wasb" bezieht sich auf den Azure-Blob-Speicherort.
 
 1. Die Daten in diesem öffentlichen Blob-Speicher bestehen aus drei untergeordneten Ordnern mit extrahierten Daten.
 		
@@ -119,9 +121,9 @@ Wenn Hive REPL mit dem Symbol "hive >" angezeigt wird, können Sie die Abfrage e
 Mit folgendem Code werden die Datenbank "criteo" und anschließend vier Tabellen erstellt:
 
 
-* eine *Zahlentabelle* anhand der Tage "day_00" bis "day_20", 
-* eine auf "day_21" beruhende *Trainingstabelle* und 
-* zwei *Testtabellen* für "day_22" und "day_23". 
+* eine *Zahlentabelle* anhand der Tage „day_00“ bis „day_20“, 
+* eine auf „day_21“ beruhende *Trainingstabelle* und 
+* zwei *Testtabellen* für „day_22“ und „day_23“. 
 
 Wir teilen die Test-DataSets in zwei verschiedene Tabellen auf, da ein Tag ein Feiertag ist und wir anhand der Klickrate feststellen möchten, ob das Modell Unterschiede zwischen einem Feier- und einem Arbeitstag erkennen kann.
 
@@ -437,25 +439,28 @@ Beim Erstellen von Modellen in Azure Machine Learning führen wir folgende Schri
 5. [Bewerten des Modells](#step5)
 6. [Veröffentlichen des Modells als zu verwendender Webdienst](#step6)
 
-Wir sind nun bereit, in Azure Machine Learning Studio Modelle zu erstellen. Unsere komprimierten Daten wurden als Hive-Tabellen im Cluster gespeichert. Zum Lesen dieser Daten verwenden wir das Azure Machine Learning Reader-Modul. Im Folgenden finden Sie die Anmeldeinformationen für den Zugriff auf das Speicherkonto für diesen Cluster.
+Wir sind nun bereit, in Azure Machine Learning Studio Modelle zu erstellen. Unsere komprimierten Daten wurden als Hive-Tabellen im Cluster gespeichert. Zum Lesen dieser Daten verwenden wir das Azure Machine Learning **Reader**-Modul. Im Folgenden finden Sie die Anmeldeinformationen für den Zugriff auf das Speicherkonto für diesen Cluster.
 
 ### <a name="step1"></a> Schritt 1: Abrufen von Daten aus den Hive-Tabellen in Azure Machine Learning mit dem Reader-Modul und Auswählen für ein Computerexperiment
 
-Die für das **Reader**-Modul in der Grafik festgelegten Parameterwerte sind lediglich Beispiele. Im Folgenden finden Sie eine allgemeine Anleitung zum "Ausfüllen" der für das **Reader**-Modul festgelegten Parameter.
-
-1. Auswählen von "Hive-Abfrage" als Datenquelle
-2. In der "Hive-Abfrage" reicht ein einfaches "SELECT * FROM <ihr_datenbankname.ihr_tabellenname>" aus.
-3. Hcatalog-Server-URI: Wenn Ihr Cluster "abc" ist, dann gilt: https://abc.azurehdinsight.net
-4. Hadoop-Benutzerkontoname: Der bei der Bereitstellung des Clusters ausgewählte Benutzername (NICHT der RAS-Benutzername)
-5. Hadoop-Benutzerkonto-Kennwort: Das bei der Bereitstellung des Clusters ausgewählte Kennwort (NICHT das RAS-Kennwort)
-6. Speicherort der Ausgabedaten: Wählen Sie "Azure" aus.
-7. Azure-Speicherkontoname: Das dem Cluster zugeordnete Speicherkonto
-8. Azure-Speicherkontoschlüssel: Der dem Cluster zugeordnete Speicherschlüssel
-9. Azure-Containername: Wenn der Clustername "abc" ist, gilt in der Regel einfach "abc" 
+Wählen Sie zunächst **+ NEU** -> **EXPERIMENT**->**Leeres Experiment**. Suchen Sie dann über das Feld **Suche** oben links nach „Reader“. Legen Sie das **Reader**Modul durch Drag & Drop auf der Experiment-Canvas ab (den mittleren Teil des Bildschirms) um das Modul für den Datenzugriff zu verwenden.
 
 So sieht der **Reader** beim Abrufen von Daten aus der Hive-Tabelle aus:
 
 ![Reader erhält Daten](http://i.imgur.com/i3zRaoj.png)
+
+Für das **Reader**-Modul sind die Werte der in der Grafik enthaltenen Parameter nur Beispiele für Werte, die Sie bereitstellen müssen. Im Folgenden finden Sie allgemeine Anleitungen zum Ausfüllen des Parametersatzes für das **Reader**-Modul.
+
+1. Auswählen von „Hive-Abfrage“ als **Datenquelle**
+2. In Feld mit der **Hive-Datenbankabfrage** reicht ein einfaches „SELECT * FROM <ihr_datenbankname.ihr_tabellenname>“ aus.
+3. **Hcatalog-Server-URI**: Wenn Ihr Cluster „abc“ ist, lautet dieser einfach: https://abc.azurehdinsight.net
+4. **Hadoop-Benutzerkontoname**: Der bei der Bereitstellung des Clusters ausgewählte Benutzername (NICHT der Benutzername für den Remotezugriff!)
+5. **Hadoop-Benutzerkontokennwort**: Das bei der Bereitstellung des Clusters ausgewählte Kennwort (NICHT das Kennwort für den Remotezugriff!)
+6. **Speicherort der Ausgabedaten**: Wählen Sie „Azure“ aus.
+7. **Azure-Speicherkontoname**: Das dem Cluster zugeordnete Speicherkonto
+8. **Azure-Speicherkontoschlüssel**: Der dem Cluster zugeordnete Speicherschlüssel
+9. **Azure-Containername**: Wenn der Clustername „abc“ ist, gilt in der Regel einfach „abc“. 
+
 
 Sobald der **Reader** das Abrufen von Daten beendet (das grüne Häkchen für das Modul wird angezeigt), speichern Sie diese Daten als DataSet (mit einem Namen Ihrer Wahl). Dies sieht folgendermaßen aus:
 
@@ -464,158 +469,167 @@ Sobald der **Reader** das Abrufen von Daten beendet (das grüne Häkchen für da
 
 Klicken Sie mit der rechten Maustaste auf den Ausgabeport des **Reader**-Moduls. Es werden die Optionen **Als Dataset speichern** und **Visualisieren** angezeigt. Wenn die Option **Visualisieren** ausgewählt wurde, werden 100 Datenzeilen sowie rechts eine für einige zusammenfassende Statistiken nützliche Leiste angezeigt. Um Daten zu speichern, wählen Sie einfach **Als Dataset speichern** aus, und befolgen Sie die Anweisungen.
 
-Um das gespeicherte DataSet für die Verwendung in einem Machine Learning-Experiment zu verwenden, suchen Sie die DataSets mithilfe der unten dargestellten **Suche**. Geben Sie dann einfach teilweise den Namen des DataSets ein, um darauf zuzugreifen, und ziehen es in den Hauptbereich. Durch das Ziehen in den Hauptbereich wird es zur Verwendung für die Machine Learning-Modellierung ausgewählt.
+Um das gespeicherte DataSet für die Verwendung in einem Machine Learning-Experiment zu verwenden, suchen Sie die DataSets mithilfe des unten dargestellten Felds **Suche**. Geben Sie dann einfach teilweise den Namen ein, den Sie dem DataSets gegeben haben, um darauf zuzugreifen, und ziehen es in den Hauptbereich. Durch das Ziehen in den Hauptbereich wird es zur Verwendung für die Machine Learning-Modellierung ausgewählt.
 
-![DataSet suchen](http://i.imgur.com/rx4nnUH.png)
+![](http://i.imgur.com/cl5tpGw.png)
 
-Dies gilt sowohl für Trainings- als auch Test-DataSets.
-
+***WICHTIGER HINWEIS:*** **Dies gilt sowohl für Trainings- als auch Test-DataSets. Achten Sie außerdem darauf, den Datenbanknamen und die Tabellennamen zu verwenden, die Sie für diesen Zweck angegeben haben. Die in der Abbildung verwendeten Werte dienen lediglich zur Veranschaulichung.**
+ 
 ### <a name="step2"></a> Schritt 2: Erstellen eines einfachen Experiments in Azure Machine Learning, um Klicks/keine Klicks vorherzusagen
 
-Zunächst stellen wir eine einfache Experimentarchitektur vor, um anschließend etwas spezifischer zu werden. Zu Beginn bereinigen wir die Daten. Anschließend wählen wir einen Lerner aus und zeigen auf, wie wir diesen mit Funktionen ausstatten. Hierzu werden entweder vorgefertigte oder vom Benutzer von Grund auf neu erstellte Zahlentabellen verwendet.
+Unser Azure ML-Experiment sieht wie folgt aus:
 
-![Experimentarchitektur](http://i.imgur.com/R4iTLYi.png)
+![](http://i.imgur.com/xRpVfrY.png)
 
-Um einen Drilldown auszuführen, beginnen wir wie dargestellt mit unseren gespeicherten DataSets.
+Zunächst betrachten wir die Hauptkomponenten dieses Experiments. Denken Sie daran, dass wir zuerst unsere gespeicherten Trainings- und Test-DataSets auf die Experiment-Canvas ziehen müssen.
 
-Das anpassbare **Clean Missing Data**-Modul bereinigt fehlende Daten. In diesem Modul sehen wir dies:
+#### Fehlende Daten bereinigen
+
+Das anpassbare **Clean Missing Data**-Modul bereinigt fehlende Daten. Die Methode wird vom Benutzer festgelegt. In diesem Modul sehen wir dies:
 
 ![Fehlende Daten bereinigen](http://i.imgur.com/0ycXod6.png)
 
 Hier haben wir alle fehlenden Werte durch "0" ersetzt. Es gibt weitere Optionen, die mithilfe der Dropdownlisten im Modul angezeigt werden.
 
-Als Nächstes müssen wir einen Lerner auswählen. Als Lerner verwenden wir eine verstärkte Entscheidungsstruktur mit zwei Klassen. Wir möchten insbesondere aufzeigen, wie Zahlenfunktionen für umfangreiche Kategoriefunktionen zum Erstellen von kompakten Darstellungen unseres Modell sowie für effiziente Schulungen und Tests eingesetzt werden können.
+#### Funktionsverarbeitung der Daten
 
-An dieser Stelle sollte geklärt werden, dass es sich bei den Zahlentabellen tatsächlich um klassenbedingte Zahlen (manchmal nennen wir sie einfach nur "bedingte Zahlen") handelt. Letztlich handelt es sich um eine Möglichkeit, die Werte einer Funktion für die einzelnen Klassen zu zählen und diese Zählungen zum Berechnen von Protokollvorhersagen zu verwenden.
+Für einige kategorische Features von großen DataSets können Millionen von eindeutigen Werten vorhanden sein. Die Verwendung naiver Methoden wie One-Hot-Codierung für die Darstellung solcher hochdimensionalen Funktionen ist völlig unmöglich. In dieser exemplarischen Vorgehensweise wird demonstriert, wie in Azure Machine Learning integrierte Zählfunktionen zum Generieren von kompakten Darstellungen dieser hochdimensionalen kategorischen Variablen verwendet werden. Das Endergebnis ist eine geringere Modellgröße, kürzere Trainingszeiten und Leistungsdaten, die mit denen anderer Techniken vergleichbar sind.
 
+##### Erstellen von Zähltransformationen
 
-#### Zugreifen auf die vorgefertigten Zahlentabellen für die Modellierung
+Zum Erstellen von Zählfunktionen verwenden wir das **Build Counting Transform**-Modul, das in Azure Machine Learning verfügbar ist. Das Modul sieht wie folgt aus:
 
-Um auf unsere vorgefertigten Zahlentabellen zuzugreifen, klicken Sie wie unten dargestellt auf **Katalog**:
+![](http://i.imgur.com/e0eqKtZ.png) ![](http://i.imgur.com/OdDN0vw.png)
 
-![Katalog](http://i.imgur.com/TsWkig3.png)
+**Wichtiger Hinweis**: Im Feld **Spalten zählen** geben wir die Spalten ein, die wir zählen möchten. In der Regel handelt es sich dabei (wie bereits erwähnt) um hochdimensionale kategorische Spalten. Zu Beginn wurde erwähnt, dass das Criteo-DataSet über 26 Kategoriespalten verfügt: von Col15 bis Col40. Hier führen wir für alle eine Zählung durch und geben die Indizes (von 15 bis 40, durch Kommas getrennt, wie gezeigt) an.
 
-Durch Klicken auf **Katalog** gelangen Sie zu einer Seite, die folgendermaßen aussieht:
+Zur Verwendung des Moduls im MapReduce-Modus (geeignet für große DataSets) benötigen wir Zugriff auf einen HDInsight Hadoop-Cluster (dazu kann auch der oben zum Durchsuchen von Funktionen genutzte Cluster verwendet werden) und die Anmeldeinformationen. Die Abbildungen oben veranschaulichen die ausgefüllten Werte (ersetzen Sie die Beispielwerte durch die entsprechenden Werte für Ihren Anwendungsfall).
 
-![Katalogstartseite](http://i.imgur.com/dmXo0KR.png)
+![](http://i.imgur.com/05IqySf.png)
 
-Suchen sie hier nach dem Begriff "criteo counts", und scrollen Sie in der Ergebnisliste nach unten. Folgendes sollte angezeigt werden:
-
-![Criteo-Zahlen](http://i.imgur.com/JZ119Jf.png)
-
-Durch Klicken auf dieses Experiment gelangen Sie zu einer Seite, die folgendermaßen aussieht:
-
-![Zahlen](http://i.imgur.com/dxdjMjh.png)
-
-Klicken Sie hier auf **Open in Studio**, um das Experiment in Ihren Arbeitsbereich zu kopieren. Hierbei werden auch die DataSets automatisch kopiert. In diesem Fall sind die beiden interessanten DataSets die Zahlenltabelle und die Zahlenmetadaten, auf die wir noch ausführlicher eingehen.
-
-#### Zählfunktionen im DataSet
-
-Die nächsten Module des Experiments umfassen die Verwendung von vorgefertigten Zahlentabellen. Um diese vordefinierten Zahlentabellen zu verwenden, suchen Sie auf der Registerkarte "Suchen" eines neuen Experiments nach "Cr_count_". Es sollten zwei DataSets angezeigt werden: "Cr_count_cleanednulls_metadata" und "Cr_count_table_cleanednulls". Verschieben Sie beide per Drag&Drop nach rechts in den Experimentbereich. Wenn wir mit der rechten Maustaste auf die Ausgangsports klicken, können wir diese wie immer visuell darstellen.
-
-Die Visualisierung der Zahlentabellen-Metadaten sieht folgendermaßen aus:
-
-![Zahlentabellen-Metadaten](http://i.imgur.com/A39PIe7.png)
-
-Beachten Sie, dass die Metadaten Informationen darüber enthalten, auf welchen Spalten die bedingten Zahlen beruhen, ob zum Erstellen ein Wörterbuch verwendet wurde (eine Alternative ist die Skizze "count-min"), welcher Hashstartwert verwendet wurde, welche Anzahl von Hashsbits zum Hashen der Funktionen verwendet wurde, welche Menge von Klassen vorliegt und dergleichen mehr.
-
-Die Visualisierung der Zahlentabelle sieht folgendermaßen aus:
-
-![Zahlentabelle](http://i.imgur.com/NJn1EQO.png)
-
-Wir erkennen, dass die Zahlentabelle Informationen zu den klassenbedingten Zählungen enthält. Der Wert der Kategoriefunktionen befindet sich im "Hashwert", sodass die Funktionen selbst gehasht werden.
-
-Wie werden die Zahlenfunktionen in die DataSets integriert? Hierzu verwenden wir das **Featurizer**-Zählmodul (siehe unten):
-
-!["Count Featurizer"-Modul](http://i.imgur.com/dnMdrR1.png)
-
-Nach dem Erstellen der Zahlentabelle (denken Sie daran, dass hier klassenbedingte Zahlen von Kategoriefunktionen erstellt werden) erstellen wir mit dem oben dargestellten Modul **Count Featurizer** diese Zählfunktionen in unserem DataSet. Wie wir sehen, können wir mit dem **Featurizer**-Modul auswählen, über welche Funktionen gezählt werden soll oder ob wir nur die Protokollvorhersagen oder zudem die Zählungen benötigen. Zudem gibt es andere erweiterte Optionen.
-
-#### Zahlentabelle von Grund auf neu erstellen
-
-Denken Sie daran, dass in der Kurzerläuterung zu den Zahlentabellen erwähnt wurde, dass neben vorgefertigten Zahlentabellen (die in den vorherigen Abschnitten ausführlich besprochen wurden), die Benutzer auch eigene Zahlentabellen von Grund auf neu erstellen können.
-
-In diesem Abschnitt wird aufgezeigt, wie Sie eine Zahlentabelle von Grund auf neu erstellen. Hierzu verwenden wir das unten dargestellte Modul **Build Count Table** mit den entsprechenden Einstellungen:
-
-!["Build Count Table"-Modul](http://i.imgur.com/r7pP8Qq.png)
-
-Der letzte Teil der Einstellungen für dieses Modul folgt:
-
-![Einstellungen für das "Build Count Table"-Modul](http://i.imgur.com/PvmSh3C.png)
+In der Abbildung oben wird das Eingeben des Eingabe-BLOB-Speicherorts gezeigt. Dieser Speicherort enthält die Daten, die zum Erstellen von Zähltabellen reserviert sind.
 
 
-**Wichtiger Hinweis:** Verwenden Sie für die Cluster- und Speicherkontoeinstellungen die für Sie geltenden Werte!
+Nachdem die Ausführung dieses Moduls abgeschlossen ist, können wir die Transformation für später speichern, indem wir mit der rechten Maustaste auf das Modul klicken und die Option **Als Transformation speichern**:
 
-Wenn Sie auf **Ausführen** klicken, werden die Zahlentabellen im ausgewählten Cluster erstellt. Bei der Ausgabe handelt es sich wie bereits erwähnt um die Zahlentabelle und die zugeordneten Metadaten. Mit diesen Tabellen können wir nun das Experiment erstellen.
+![](http://i.imgur.com/IcVgvHR.png)
 
+In unserer oben gezeigten Experimentarchitektur entspricht das DataSet „ytransform2“ genau einer gespeicherten Zähltransformation. Für den Rest dieses Experiments wird angenommen, dass der Reader ein **Build Counting Transform**-Modul für einige Daten zum Generieren von Zahlen verwendet und mit diesen dann Zählfunktionen für die Trainings- und Test-DataSets generiert.
 
-### <a name="step3"></a> Schritt 3: Modelltraining
+##### Auswählen der Zählfunktionen, die in Trainings- und Test-DataSets aufgenommen werden
 
-Um diese Option auszuwählen, geben Sie einfach "two class boosted" in das Suchfeld ein, und ziehen Sie das Modul hinüber. Wir verwenden die unten angeführten Standardwerte des Lerners mit verstärkter Entscheidungsstruktur:
+Sobald eine Zähltransformation bereitsteht kann der Benutzer auswählen, welche Funktionen mithilfe des **Modify Count Table Parameters**-Moduls in seine Trainings- und Test-DataSets aufgenommen werden. Der Vollständigkeit halber zeigen wir dieses Modul unten, verwenden es aber aus Gründen der Einfachheit nicht tatsächlich in unserem Experiment.
 
-![BDT-Lerner](http://i.imgur.com/dDk0Jtv.png)
+![](http://i.imgur.com/PfCHkVg.png)
 
-Vor dem Ausführen des ML-Experiments benötigen wir drei abschließende Komponenten.
+In diesem Fall haben wir uns, wie man sehen kann, dafür entschieden, nur die logarithmischen Wahrscheinlichkeiten zu verwenden und die Backoff-Spalte ignorieren. Wir können auch Parameter festlegen, z. B. den Schwellenwert für Papierkorb, die Anzahl der hinzuzufügenden vorhergehenden Pseudobeispiele für die Glättung, und ob Laplace-Rauschen verwendet wird. Dabei handelt es sich um erweiterte Funktionen, und es ist darauf hinzuweisen, dass die Standardwerte ein guter Ausgangspunkt für Benutzer sind, die noch nicht mit dieser Art von Funktionsgenerierung vertraut sind.
 
-Die erste ist das "Train Modell"-Modul. Dessen erster Anschluss ist der Lernereingang, und der zweite gilt für das Trainings-DataSet zum Lernen. Die wird im Folgenden ebenso dargestellt wie die im Modul festzulegenden Parameter.
+##### Datentransformation vor dem Generieren der Zählfunktionen
 
-![Verbindungen des "BDT Train Model"-Moduls](http://i.imgur.com/szS2xBb.png)
+Jetzt konzentrieren wir uns auf einen wichtigen Aspekt der Transformation unserer Trainings- und Testdaten vor dem tatsächlichen Generieren der Zählfunktionen. Beachten Sie, dass zwei **Execute R Script**-Module verwendet werden, bevor wir die Zähltransformation auf unsere Daten anwenden.
 
-![Einstellungen des "BDT Train Model"-Moduls](http://i.imgur.com/nd7lHBL.png)
+![](http://i.imgur.com/aF59wbc.png)
 
-### <a name="step4"></a> Schritt 4: Bewerten des Modells anhand eines Test-DataSets
+Hier ist das erste R-Skript:
 
-Bei der zweiten Komponente handelt es sich um eine Möglichkeit, das Test-DataSet abzustimmen. Dies geschieht einfach mithilfe des **Score Model**-Moduls, das als Eingabe das anhand der Trainingsdaten erlernte Modell aufweist und beruhend auf dem Test-DataSet Vorhersagen trifft. Im Folgenden wird gezeigt, wie dies aussieht.
+![](http://i.imgur.com/3hkIoMx.png)
 
-![Verbindungen des Abstimmungs-BDT-Modells](http://i.imgur.com/AwIH1rH.png)
+In diesem R-Skript benennen wir unsere Spalten in „Col1“ bis „Col40“ um, da die Zähltransformation Namen dieses Formats erwartet.
+
+Im zweiten R-Skript gleichen wir die Verteilung zwischen positiven und negativen Klassen (Klasse 1 bzw. 0) durch die Verkleinerung der negativen Klasse aus. Dieser Vorgang wird anhand des folgenden R-Skripts veranschaulicht:
+
+![](http://i.imgur.com/91wvcwN.png)
+
+In diesem einfachen R-Skript verwenden wir „pos_neg_ratio“, um den Ausgleich zwischen den positiven und den negativen Klassen festzulegen. Dies ist wichtig, da das Verringern der Diskrepanz zwischen Klassen in der Regel Leistungsvorteile bei Klassifizierungsproblemen mit sich bringt, wenn die Klassenverteilung verzerrt ist (beachten Sie, dass in unserem Fall wir 3,3 % positive und 96,7 % negative Klassen vorhanden sind).
+
+##### Anwenden der Zähltransformation auf unsere Daten
+
+Schließlich können wir das **Apply Transformation**-Modul zum Anwenden der Zähltransformationen auf unsere Trainings- und Test-DataSets verwenden. Dieses Modul nimmt die gespeicherte Zähltransformation als eine Eingabe und die Trainings- oder Test-DataSets als die andere Eingabe auf und gibt Daten mit Zählfunktionen zurück. Dies wird nachfolgend gezeigt:
+
+![](http://i.imgur.com/xnQvsYf.png)
+
+##### Ein Auszug des Erscheinungsbilds der Zählfunktionen
+
+Es ist hilfreich zu sehen, wie die Zählfunktionen in unserem Fall aussehen. Unten sehen Sie einen Auszug dieser Funktion:
+
+![](http://i.imgur.com/FO1nNfw.png)
+
+In diesem Ausschnitt wird gezeigt, dass für die Spalten, für die wir Zählungen durchgeführt haben, neben den relevanten Backoffs auch die Zahlen und logarithmischen Wahrscheinlichkeiten erhalten.
+
+Wir können nun mithilfe dieser transformierten DataSets ein Azure Machine Learning-Modell erstellen. Die Vorgehensweise wird im nächsten Abschnitt gezeigt.
+
+#### Azure Machine Learning – Modellerstellung
+
+##### Auswahl des Lerners
+
+Zunächst müssen wir einen Lerner auswählen. Als Lerner verwenden wir eine verstärkte Entscheidungsstruktur mit zwei Klassen. Dies sind die Standardoptionen für diesen Lerner:
+
+![](http://i.imgur.com/bH3ST2z.png)
+
+Für unser Experiment wählen wir einfach die Standardwerte. Wir stellen fest, dass die Standardwerte in der Regel aussagekräftig und eine gute Möglichkeit zum schnellen Erzielen einer Leistungsbasis sind. Sie können die Leistung verbessern, indem Sie Parameter auswählen, sobald Sie eine Basislinie haben.
+
+#### Modelltraining
+
+Für das Training rufen wir einfach ein **Train Model**-Modul auf. Bei den zwei Eingaben handelt es sich um die verstärkte Entscheidungsstruktur mit zwei Klassen und unser Trainings-DataSet. Dies wird nachfolgend gezeigt:
+
+![](http://i.imgur.com/2bZDZTy.png)
+
+#### Bewertung des Modells
+
+Sobald wir über ein trainiertes Modell verfügen, sind wir bereit, das Test-DataSet und seine Leistung zu bewerten. Wir verwenden dafür das unten gezeigte **Score Model**-Modul zusammen mit einem **Evaluate Model**-Modul:
+
+![](http://i.imgur.com/fydcv6u.png)
 
 ### <a name="step5"></a> Schritt 5: Bewerten des Modells
 
-Abschließend möchten wir die Leistung des Modells ermitteln. Wenn bei zwei Klassen (binäre) Klassifizierungsprobleme auftreten, eignet sich AUC gewöhnlich als Maßstab. Um dies zu veranschaulichen, ordnen wir das Modul "Score Model" dem Modul "Evaluate Model" zu. Wenn Sie im Modul **Evaluate Model** auf **Visualisieren** klicken, ergibt dies ungefähr folgende Grafik:
+Abschließend möchten wir die Leistung des Modells analysieren. Wenn bei zwei Klassen (binäre) Klassifizierungsprobleme auftreten, eignet sich AUC gewöhnlich als Maßstab. Um dies zu veranschaulichen, ordnen wir das Modul **Score Model** dem Modul **Evaluate Model** zu. Wenn Sie im Modul **Evaluate Model** auf **Visualisieren** klicken, ergibt dies ungefähr folgende Grafik:
 
 !["Evaluate"-Modul für BDT-Modell](http://i.imgur.com/0Tl0cdg.png)
 
-Bei binären (oder zweiklassigen) Klassifizierungsproblemen, eignet sich AUC als guter Maßstab für die Vorhersagegenauigkeit. Im Folgenden finden Sie unsere Ergebnisse dieses Modells für unser Test-DataSet. Um diese zu erhalten, klicken mit der rechten Maustaste auf den Ausgangsport des Moduls **Evaluate Model** und anschließend auf **Visualisieren**.
+Bei binären (oder zweiklassigen) Klassifizierungsproblemen, eignet sich AUC (Area Under Curve, Bereich unter der Kurve) als guter Maßstab für die Vorhersagegenauigkeit. Im Folgenden finden Sie unsere Ergebnisse dieses Modells für unser Test-DataSet. Um diese zu erhalten, klicken mit der rechten Maustaste auf den Ausgangsport des Moduls **Evaluate Model** und anschließend auf **Visualisieren**.
 
 !["Visualize Evaluate Model"-Modul](http://i.imgur.com/IRfc7fH.png)
 
 ### <a name="step6"></a> Schritt 6: Veröffentlichen des Modells als Webdienst
-Es ist von besonderem Interesse, Machine Learning-Modelle als Webdienste veröffentlichen zu können. Sobald dies erfolgt ist, können wir mit den Daten, für die wir Vorhersagen benötigen, Aufrufe an den Webdienst durchführen. Das Modell gibt dann im Idealfall eine wie auch immer geartete Vorhersage zurück.
+Die Möglichkeit zum Veröffentlichen eines Azure Machine Learning-Modells als Webdienst ohne hohen Aufwand ist eine nützliche Funktion, um es allgemein verfügbar zu machen. Sobald dies erfolgt ist, kann jeder mit den Daten, für die Vorhersagen benötigt werden, Aufrufe an den Webdienst durchführen. Der Webdienst nutzt dann das Modell für das Zurückgeben dieser Vorhersagen.
 
-Zu diesem Zweck speichern wir unser trainiertes Modell zunächst als "Trained Model"-Objekt. Hierzu klicken wir mit der rechten Maustaste auf das Modul **Train Model**. Anschließend wählen wir die Option "Save as Trained Model" aus.
+Zu diesem Zweck speichern wir unser trainiertes Modell zunächst als "Trained Model"-Objekt. Dazu klicken wir mit der rechten Maustaste auf das Modul **Modell trainieren**. Anschließend wählen wir die Option **Als trainiertes Modell speichern** aus.
 
-Als Nächstes möchten wir einen E/A-Port für den Webdienst erstellen. Hierbei empfängt der Eingangsport Daten in der gleichen Form wie die Daten, die wir für Vorhersagen benötigen, während der Ausgangsport die bewerteten Bezeichnungen und die zugehörigen Wahrscheinlichkeiten zurückgibt.
+Als Nächstes müssen wir Eingabe und Ausgabeports für unseren Webdienst erstellen:
+
+* ein Eingabeport nimmt Daten im gleichen Format auf wie die Daten, für die wir Vorhersagen benötigen. 
+* ein Ausgabeport gibt die bezeichneten Beschriftungen und zugehörigen Wahrscheinlichkeiten aus.
 
 #### Auswählen einiger Datenzeilen für den Eingangsanschluss
 
-Wir zeigen nun auf, wie nur einige wenige Datenzeilen für den Eingangsanschluss ausgewählt werden.
+Die Verwendung eines **Apply SQL Transformation**-Moduls ist eine komfortable Methode zum Auswählen von nur 10 Zeilen, die als Eingabeportdaten fungieren. Wählen Sie mithilfe der unten gezeigten SQL-Abfrage nur diese Datenzeilen für unseren Eingabeport aus.
 
 ![Eingangsportdaten](http://i.imgur.com/XqVtSxu.png)
-
-Bequemerweise verwenden wir eine "Apply SQL"-Transformation, um nur 10 Zeilen auszuwählen, die als Daten für den Eingangsport fungieren.
 
 #### Webdienst
 Jetzt können wir ein kleines Experiment ausführen, das wir in unserem Webdienst veröffentlichen möchten.
 
 #### Generieren von Eingabedaten für den Webdienst
 
-Als nullten Schritt wählen wir, da die Zahlentabelle groß ist, einige wenige Zeilen mit Testdaten aus und generieren aus diesen mit den Zählfunktionen Ausgabedaten. Diese dienen als Eingabedatenformat für unseren Webdienst. Dies wird nachfolgend gezeigt:
+Als nullten Schritt wählen wir, da die Zahlentabelle groß ist, einige wenige Zeilen mit Testdaten aus und generieren aus diesen mit den Zählfunktionen Ausgabedaten. Diese können als Eingabedatenformat für unseren Webdienst dienen. Dies wird nachfolgend gezeigt:
 
 ![BDT-Eingangsdaten erstellen](http://i.imgur.com/OEJMmst.png)
 
-Hinweis: Für das Eingabedatenformat verwenden wir nun die AUSGABE des **Count Featurizer**-Moduls. Nach Abschluss der Ausführung dieses Experiments speichern Sie die Ausgabe des **Count Featurizer**-Moduls als DataSet. **Wichtiger Hinweis:** Dieses DataSet wird für die Eingabedaten des Webdiensts verwendet.
+Hinweis: Für das Eingabedatenformat verwenden wir nun die AUSGABE des **Count Featurizer**-Moduls. Nach Abschluss der Ausführung dieses Experiments speichern Sie die Ausgabe des **Count Featurizer**-Moduls als DataSet.
+
+**Wichtiger Hinweis:** Dieses DataSet wird für die Eingabedaten des Webdiensts verwendet.
 
 #### Abstimmung des Experiments für den Veröffentlichungswebdienst
 
-Zunächst wird im Folgenden gezeigt, wie dies aussieht. Die grundlegende Struktur ist ein "Score Model"-Modul, das unsere trainierten Modellobjekte und einige Zeilen der in den vorherigen Schritten mit dem **Count Featurizer**-Modul generierten Eingabedaten akzeptiert. Wir verwenden "Project Colums" um die bewerteten Bezeichnungen sowie die Bewertungswahrscheinlichkeiten auszublenden.
+Zunächst wird im Folgenden gezeigt, wie dies aussieht. Die grundlegende Struktur ist ein **Score Model**-Modul, das unsere trainierten Modellobjekte und einige Zeilen der in den vorherigen Schritten mit dem **Count Featurizer**-Modul generierten Eingabedaten akzeptiert. Wir verwenden "Project Colums" um die bewerteten Bezeichnungen sowie die Bewertungswahrscheinlichkeiten auszublenden.
 
 ![Project Columns](http://i.imgur.com/kRHrIbe.png)
 
-Es ist interessant zu sehen, wie mit dem "Project Colums"-Modul Daten aus einem DataSet "gefiltert" werden können. Im Folgenden finden Sie die Inhalte:
+Beachten Sie, dass das **Project Columns**-Modul zum Filtern von Daten aus einem DataSet verwendet werden kann. Im Folgenden finden Sie die Inhalte:
 
 ![Filterung mit dem "Project Columns"-Modul](http://i.imgur.com/oVUJC9K.png)
 
-Um die blauen E/A-Ports zu erhalten, klicken Sie einfach unten rechts auf "Prepare Webservice". Wenn wir dieses Experiment ausführen, können wir zudem den Webdienst veröffentlichen, indem wir unten rechts auf das im Folgenden dargestellte Symbol **PREPARE WEBSERVICE** klicken.
+Um die blauen E/A-Ports zu erhalten, klicken Sie einfach unten rechts auf **Webdienst vorbereiten**. Wenn wir dieses Experiment ausführen, können wir zudem den Webdienst veröffentlichen, indem wir unten rechts auf das im Folgenden dargestellte Symbol **PREPARE WEBSERVICE** klicken.
 
 ![Webdienst veröffentlichen](http://i.imgur.com/WO0nens.png)
 
@@ -626,24 +640,22 @@ Sobald der Webdienst veröffentlicht wurde, werden wir auf eine Seite umgeleitet
 Auf der linken Seite befinden sich zwei Links zu Webdiensten:
 
 * Der **REQUEST/RESPONSE**-Dienst (RRS) für einzelne Vorhersagen, den wir in diesem Workshop verwenden. 
-* Der **BATCH EXECUTION**-Dienst (BES) für Stapelvorhersagen, der erfordert, dass die Daten für Vorhersagen in einem Azure-Blob-Speicher gespeichert wurden.
+* Der **BATCH EXECUTION**-Dienst (BES) wird für Stapelvorhersagen verwendet und setzt voraus, dass sich die Eingabedaten für Vorhersagen in einem Azure-BLOB-Speicher befinden.
 
 Wenn Sie auf den Link **REQUEST/RESPONSE** klicken, gelangen Sie zu einer Seite mit vorprogrammiertem Code in C#, Python und R. Dieser Code kann problemlos für Aufrufe an den Webdienst verwendet werden. Beachten Sie, dass der API-Schlüssel auf dieser Seite für die Authentifizierung verwendet werden muss.
 
-Es empfiehlt sich, diesen Python-Code in eine neue Zelle des iPython-Notizbuchs zu kopieren.
+Es empfiehlt sich, diesen Python-Code in eine neue Zelle des IPython-Notizbuchs zu kopieren.
 
 Im Folgenden finden Sie einen Python-Codeabschnitt mit dem richtigen API-Schlüssel.
 
 ![Python-Code](http://i.imgur.com/f8N4L4g.png)
 
-Beachten Sie, dass wir den Standard-API-Schlüssel durch unseren Webdienst-API-Schlüssel ersetzt haben. Wenn Sie in dieser Zelle eines iPython-Notizbuchs auf "Ausführen" klicken, ergibt dies die folgende Antwort:
+Beachten Sie, dass wir den Standard-API-Schlüssel durch den API-Schlüssel unseres Webdienstes ersetzt haben. Wenn Sie in einem IPython-Notizbuch für diese Zelle auf **Ausführen** klicken, wird folgende Antwort zurückgegeben:
 
-![iPython-Antwort](http://i.imgur.com/KSxmia2.png)
+![IPython-Antwort](http://i.imgur.com/KSxmia2.png)
 
-Wir sehen, dass wir für die beiden angefragten Testbeispiele (im JSON-Framework oder Python-Skript) Antworten im Format "Bewertete Bezeichnungen, bewertete Wahrscheinlichkeiten" erhalten. Beachten Sie, dass wir in diesem Fall die Standardwerte des vorab erstellten Codes ausgewählt haben (Nullen für alle numerischen Spalten, die Zeichenfolge "value" für alle Kategoriespalten).
+Wir sehen, dass wir für die beiden angefragten Testbeispiele (im JSON-Framework oder Python-Skript) Antworten im Format "Bewertete Bezeichnungen, bewertete Wahrscheinlichkeiten" erhalten. Beachten Sie, dass wir in diesem Fall die Standardwerte des vorab erstellten Codes ausgewählt haben (Nullen für alle numerischen Spalten und die Zeichenfolge „value“ für alle Kategoriespalten).
 
-Dies bildet den Abschluss unserer Abhandlung über die End-to-End-Handhabung umfangreicher DataSets mit Azure ML. Aus einem Terabyte an Daten haben wir ein als Webdienst in der Cloud bereitgestelltes Vorhersagemodell entwickelt.
+Damit sind wir am Ende unser ausführlichen exemplarischen Vorgehensweise zum Behandeln umfangreicher DataSets mithilfe von Azure Machine Learning angekommen. Wir haben mit einem Terabyte an Daten begonnen, ein Vorhersagemodell erstellt und dieses als Webdienst in der Cloud bereitgestellt.
 
- 
-
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

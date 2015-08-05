@@ -555,4 +555,4 @@ Führen Sie die Konsolenanwendung aus, und beobachten Sie die Ausgabe, um heraus
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -401,4 +401,4 @@ Die Definition des folgenden Netzwerks zur Erkennung von Ziffern veranschaulicht
 [1]: ./media/machine-learning-azure-ml-netsharp-reference-guide/formula_large.gif
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

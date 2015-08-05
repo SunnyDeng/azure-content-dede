@@ -32,7 +32,7 @@ Ein A-Eintrag wird verwendet, um der IP-Adresse einen Namen zuzuordnen. Im folge
  
 Erstellen Sie einen A-Eintrag, und weisen Sie ihn einer Variablen "$rs" zu.
 	
-	PS C:>$rs=New-AzureDnsRecordSet -Name "@" -RecordType "A" -ZoneName "contoso.com" -ResourceGroupName "MyAzureResourceGroup" -Ttl 600 
+	PS C:\>$rs=New-AzureDnsRecordSet -Name "@" -RecordType "A" -ZoneName "contoso.com" -ResourceGroupName "MyAzureResourceGroup" -Ttl 600 
 
 ### Schritt 2
 
@@ -40,7 +40,7 @@ Fügen Sie einen IPv4-Wert der zuvor erstellten Datensatzgruppe "@" mithilfe der
 
 > [AZURE.NOTE]Befolgen Sie zum Suchen der IP-Adresse für eine Web-App die Anleitungen unter [Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](../web-sites-custom-domain-name/#Find-the-virtual-IP-address).
 
-	PS C:> Add-AzureDnsRecordConfig -RecordSet $rs -Ipv4Address <your web app IP address>
+	PS C:\> Add-AzureDnsRecordConfig -RecordSet $rs -Ipv4Address <your web app IP address>
 
 ### Schritt 3
 
@@ -56,7 +56,7 @@ Wenn Ihre Domäne bereits von Azure DNS verwaltet wird (siehe [DNS-Domänendeleg
 
 Öffnen Sie PowerShell, und erstellen Sie eine neue CNAME-Datensatzgruppe, und weisen Sie sie einer Variablen "$rs" zu:
 
-	PS C:> $rs = New-AzureDnsRecordSet -ZoneName contoso.com -ResourceGroupName myresourcegroup -Name "www" -RecordType "CNAME" -Ttl 600
+	PS C:\> $rs = New-AzureDnsRecordSet -ZoneName contoso.com -ResourceGroupName myresourcegroup -Name "www" -RecordType "CNAME" -Ttl 600
  
 	Name              : www
 	ZoneName          : contoso.com
@@ -75,7 +75,7 @@ Sobald die CNAME-Datensatzgruppe erstellt wurde, müssen Sie einen Aliaswert ers
 
 Mit der zuvor zugewiesenen Variable "$rs" können Sie den folgenden PowerShell-Befehl verwenden, um den Alias für die Web-App "contoso.azurewebsites.net" zu erstellen.
 
-	PS C:> Add-AzureDnsRecordConfig -RecordSet $rs -Cname "contoso.azurewebsites.net"
+	PS C:\> Add-AzureDnsRecordConfig -RecordSet $rs -Cname "contoso.azurewebsites.net"
  
 	Name              : www
 	ZoneName          : contoso.com
@@ -90,11 +90,11 @@ Mit der zuvor zugewiesenen Variable "$rs" können Sie den folgenden PowerShell-B
 
 Führen Sie mithilfe des Cmdlets "Set-AzureDnsRecordSet" ein Commit für die Änderungen aus.
 
-	PS C:>Set-AzureDnsRecordSet -RecordSet $rs
+	PS C:\>Set-AzureDnsRecordSet -RecordSet $rs
 
 Sie können überprüfen, ob der Eintrag korrekt erstellt wurde, indem Sie "www.contoso.com" mit nslookup abfragen, wie unten dargestellt:
 
-	PS C:> nslookup
+	PS C:\> nslookup
 	Default Server:  Default
 	Address:  192.168.0.1
  
@@ -117,7 +117,7 @@ Im folgenden Beispiel wird der Eintrag "awverify" für "contoso.com" erstellt, u
 
 ### Schritt 1
 
-	PS C:> $rs = New-AzureDnsRecordSet -ZoneName contoso.com -ResourceGroupName myresourcegroup -Name "awverify" -RecordType "CNAME" -Ttl 600
+	PS C:\> $rs = New-AzureDnsRecordSet -ZoneName contoso.com -ResourceGroupName myresourcegroup -Name "awverify" -RecordType "CNAME" -Ttl 600
  
 	Name              : awverify
 	ZoneName          : contoso.com
@@ -133,7 +133,7 @@ Im folgenden Beispiel wird der Eintrag "awverify" für "contoso.com" erstellt, u
 
 Sobald der Eintrag "awverify" erstellt wurde, müssen Sie den CNAME-Datensatzgruppenalias auf "awverify.contoso.azurewebsites.net" festlegen, wie im folgenden Befehl gezeigt:
 
-	PS C:> Add-AzureDnsRecordConfig -RecordSet $rs -Cname "awverify.contoso.azurewebsites.net"
+	PS C:\> Add-AzureDnsRecordConfig -RecordSet $rs -Cname "awverify.contoso.azurewebsites.net"
  
 	Name              : awverify
 	ZoneName          : contoso.com
@@ -148,7 +148,7 @@ Sobald der Eintrag "awverify" erstellt wurde, müssen Sie den CNAME-Datensatzgru
 
 Führen Sie mithilfe des Cmdlets "Set-AzureDnsRecordSet" ein Commit für die Änderungen aus, wie im folgenden Befehl gezeigt:
 
-	PS C:>Set-AzureDnsRecordSet -RecordSet $rs
+	PS C:\>Set-AzureDnsRecordSet -RecordSet $rs
 
 Jetzt können Sie mit der Durchführung der Schritte unter [Konfigurieren eines benutzerdefinierten Domänennamens für App Service](../web-sites-custom-domain-name) fortfahren, um die Web-App so zu konfigurieren, dass eine benutzerdefinierte Domäne verwendet wird.
 
@@ -165,4 +165,4 @@ Jetzt können Sie mit der Durchführung der Schritte unter [Konfigurieren eines 
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

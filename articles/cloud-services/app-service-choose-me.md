@@ -1,8 +1,6 @@
 <properties 
 	pageTitle="Ist App Service in Azure die passende Computeoption für mich?" 
 	description="Erfahren Sie mehr über Computehostingoptionen in Azure und ihre Funktionsweise: App Service, Cloud Services und Virtual Machines" 
-	headerExpose="" 
-	footerExpose="" 
 	services="cloud-services"
 	authors="cephalin" 
 	documentationCenter=""
@@ -36,4 +34,4 @@ Azure bietet verschiedene Hostingmodelle für die Ausführung von Anwendungen. J
 [Virtual Machines]: ../virtual-machines-choose-me.md
 [Cloud Services]: cloud-services-choose-me.md
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -53,7 +53,7 @@ Sie können diese Technologien separat verwenden oder sie wie benötigt miteinan
 
 ### Azure Virtual Machines
 
-![Azure Virtual Machines](./media/fundamentals-introduction-to-azure/mscsiart_VirtualMachinesIntroNew_12345.png) *Azure Virtual Machines bietet Ihnen vollständige Kontrolle über die Instanzen virtueller Computer in der Cloud.*
+![Azure Virtual Machines ROBBCSIART_TEST](./media/fundamentals-introduction-to-azure/mscsiart_VirtualMachinesIntroNew_12345.png) *Azure Virtual Machines bietet Ihnen vollständige Kontrolle über die Instanzen virtueller Computer in der Cloud.*
 
 Die Möglichkeit, bei Bedarf einen virtuellen Computer zu erstellen, sei es anhand eines Standard-Images oder anhand eines von Ihnen bereitgestellten Images, kann sehr nützlich sein. Genau diesen Ansatz, im Allgemeinen als Infrastructure-as-a-Services (IaaS) bezeichnet, bietet Ihnen Azure Virtual Machines. Abbildung 2 zeigt, wie ein virtueller Computer (VM) ausgeführt wird und wie ein solcher anhand einer VHD erstellt wird.
 
@@ -75,7 +75,7 @@ Dieser eher allgemeine Cloud Computing-Ansatz kann zur Lösung verschiedener Pro
 
 ### Web-Apps
 
-![Azure Web Apps](./media/fundamentals-introduction-to-azure/mscsiart_AzureWebsitesIntroNew_12345.png) *Abbildung: Azure Web Apps führt eine Websiteanwendung in der Cloud aus, ohne dass der zugrundeliegende Webserver verwaltet werden muss.*
+![Azure-Web-Apps ROBBCSIART_TEST](./media/fundamentals-introduction-to-azure/mscsiart_AzureWebsitesIntroNew_12345.png) *Abbildung: Azure-Web-Apps führen eine Websiteanwendung in der Cloud aus, ohne dass der zugrundeliegende Webserver verwaltet werden muss.*
 
 Die Cloud wird am häufigsten dazu verwendet, Websites und Webanwendungen auszuführen. Azure Virtual Machines macht dies möglich; Sie sind jedoch für die Verwaltung der virtuellen Computer und der zugrunde liegenden Betriebssysteme verantwortlich. Die kann zwar mit Cloud Services-Webrollen geschehen, deren Bereitstellung und Verwaltung bedeutet dennoch einen gewissen Aufwand. Was, wenn Sie nur eine Website möchten, für die jemand anderes die Verwaltungsarbeiten übernimmt?
 
@@ -179,9 +179,9 @@ Gelegentlich möchten Sie große Datenmengen nach Azure verschieben. Dies kann v
 
 
 ### Dateidienst
-![Azure File Service](./media/fundamentals-introduction-to-azure/FileServiceIntroNew.png) *Abbildung: Azure File Services stellt "\\\\server\\share"-SMB-Pfade für in der Cloud ausgeführte Anwendungen bereit.*
+![Azure File Service](./media/fundamentals-introduction-to-azure/FileServiceIntroNew.png) *Abbildung: Azure File Services stellt "\\server\share"-SMB-Pfade für in der Cloud ausgeführte Anwendungen bereit.*
 
-Lokal stehen häufig große Mengen an Dateispeicher zur Verfügung, auf die über das SMB-Protokoll (Server Message Block) unter Verwendung eines \\\\server\\share-Formats zugegriffen wird. Azure verfügt jetzt über einen Dienst, mit dem Sie dieses Protokoll in der Cloud verwenden können. Anwendungen, die in Azure ausgeführt werden, können damit über bekannte Dateisystem-APIs wie ReadFile und WriteFile Dateien zwischen virtuellen Computern freigeben. Darüber hinaus kann auf die Dateien gleichzeitig über eine REST-Schnittstelle zugegriffen werden. Dies ermöglicht den Zugriff auf die Freigaben über Ihr lokales System, wenn Sie auch ein virtuelles Netzwerk einrichten. Azure-Dateidienste setzt auf den Blobdienst auf und verhält sich daher in Bezug auf Verfügbarkeit, Stabilität, Skalierbarkeit und Georedundanz ebenso wie Azure Storage.
+Lokal stehen häufig große Mengen an Dateispeicher zur Verfügung, auf die über das SMB-Protokoll (Server Message Block) unter Verwendung eines \\server\share-Formats zugegriffen wird. Azure verfügt jetzt über einen Dienst, mit dem Sie dieses Protokoll in der Cloud verwenden können. Anwendungen, die in Azure ausgeführt werden, können damit über bekannte Dateisystem-APIs wie ReadFile und WriteFile Dateien zwischen virtuellen Computern freigeben. Darüber hinaus kann auf die Dateien gleichzeitig über eine REST-Schnittstelle zugegriffen werden. Dies ermöglicht den Zugriff auf die Freigaben über Ihr lokales System, wenn Sie auch ein virtuelles Netzwerk einrichten. Azure-Dateidienste setzt auf den Blobdienst auf und verhält sich daher in Bezug auf Verfügbarkeit, Stabilität, Skalierbarkeit und Georedundanz ebenso wie Azure Storage.
 
 **Szenarien für Azure Files**
 
@@ -218,7 +218,7 @@ Weitere Informationen über das Planen und Erstellen eines auf Ihren Bedarf zuge
 
 ![ExpressRoute](./media/fundamentals-introduction-to-azure/ExpressRouteIntroNew.png)
 
-*Abbildung: ExpressRoute verwendet ein virtuelles Azure-Netzwerk, verwendet für Verbindungen jedoch schnellere dedizierte Leitungen anstelle des öffentlichen Internets.*
+*Abbildung: ExpressRoute verwendet ein Azure Virtual Network, verwendet für Verbindungen jedoch schnellere dedizierte Leitungen anstelle des öffentlichen Internets.*
 
 Wenn Sie mehr Bandbreite oder Sicherheit benötigen, als eine Azure Virtual Network-Verbindung bieten kann, können Sie auf ExpressRoute zurückgreifen. In bestimmten Fällen können Sie mit ExpressRoute sogar Geld sparen. Sie benötigen zwar weiterhin ein virtuelles Netzwerk in Azure, zwischen Azure und Ihrem Standort wird jedoch eine dedizierte Verbindung eingerichtet, die das öffentliche Internet umgeht. Um diesen Dienst nutzen zu können, benötigen Sie einen Vertrag mit einem Netzwerk-Dienstanbieter oder einem Exchange-Anbieter.
 
@@ -294,7 +294,7 @@ Angenommen, Ihr Unternehmen verfügt über verschiedene Geräte, die sämtliche 
 Für einen Kunden der Spedition wäre es wahrscheinlich ebenfalls nützlich, diese Positionsdaten abrufen zu können. Der Kunde wüsste dann, wie lang der Transportweg der Produkte ist, wo sie aufgehalten werden, welche Kosten auf bestimmten Strecken anfallen (bei Kombination der Daten mit den Transportkosten). Wenn die Spedition diese Daten bereits aggregiert, würden viele Kunden vielleicht dafür bezahlen. Dann benötigt die Spedition aber auch eine Möglichkeit, den Kunden die Daten zu übermitteln. Wenn sie den Kunden Datenzugriff gewährt, kann sie möglicherweise nicht steuern, wie oft die Daten abgefragt werden. Die Spedition muss dann Regeln dafür aufstellen, wer auf welche Daten zugreifen kann. Alle diese Regeln müssten in die externe API integriert werden. In diesem Fall kann API Management helfen.
  
 
-## Identitäts- und Zugriffsverwaltung
+## Identität und Zugriff
  
 Bei den meisten Anwendungen findet eine Identitätsbestimmung statt. Eine Anwendung kann anhand der Identität eines Benutzers bestimmen, auf welche Weise mit diesem Benutzer interagiert werden soll. Azure bietet Dienste zur Erfassung der Identität sowie zu deren Integration in Identitätsspeicher, die Sie eventuell bereits verwenden.
 
@@ -592,4 +592,4 @@ Nachdem Sie nun einen Überblick erhalten haben, besteht der nächste Schritt da
 
 [Azure Media Services Poster]: http://azure.microsoft.com/documentation/infographics/media-services/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

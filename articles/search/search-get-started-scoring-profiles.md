@@ -126,4 +126,4 @@ Sie möchten einen Schritt zurückgehen und mehr über die Erstellung eines Inde
 [10]: ./media/search-get-started-scoring-profiles/AzureSearch_XLSX1.PNG
 [9]: ./media/search-get-started-scoring-profiles/AzureSearch_XLSX2.PNG
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -8,4 +8,4 @@ Die Ressourcen, die Sie mithilfe von Azure Resource Manager-Vorlagen erstellen, 
 
 Die folgenden Automatisierungsbeispiele veranschaulichen die Anwendung von Azure Resource Manager-Vorlagen sowie die Bereitstellung von Ressourcengruppen via PowerShell oder CLI.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO4-->

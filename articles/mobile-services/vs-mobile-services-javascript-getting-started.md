@@ -84,7 +84,7 @@ Aktualisieren Sie eine Zeile in einer Datentabelle. In diesem Beispiel ist todoI
 
 Löschen Sie eine Zeile in einer Datentabelle. Rufen Sie die Methode [done]() für das zurückgegebene [Promise]()-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
 
-	todoTable.delete(todoItem).done(function (item) {
+	todoTable.del(todoItem).done(function (item) {
 	    todoItems.splice(todoItems.indexOf(item), 1);
     }
 
@@ -92,4 +92,4 @@ Löschen Sie eine Zeile in einer Datentabelle. Rufen Sie die Methode [done]() f�
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

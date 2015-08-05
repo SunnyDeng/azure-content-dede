@@ -104,4 +104,4 @@ Informationen zu den ersten Schritten mit Azure DocumentDB finden Sie in folgend
 [1]: ./media/documentdb-introduction/intro.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

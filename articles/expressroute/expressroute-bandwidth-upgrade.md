@@ -42,15 +42,15 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 	Die Details Ihrer ExpressRoute-Verbindung können Sie mit dem folgenden PowerShell-Cmdlet abrufen:
 		
 
-    	PS C:> Get-AzureDedicatedCircuit
+    	PS C:\> Get-AzureDedicatedCircuit
 	
 	Dieser Befehl gibt eine Liste aller Verbindungen zurück, die Sie innerhalb Ihres Abonnements erstellt haben. Mit dem folgenden Befehl können Sie die Details einer bestimmten ExpressRoute-Verbindung abrufen, sofern Sie den Dienstschlüssel kennen:
 
-		 PS C:> Get-AzureDedicatedCircuit -ServiceKey <skey>
+		 PS C:\> Get-AzureDedicatedCircuit -ServiceKey <skey>
 
 	Ersetzen Sie <skey> durch den korrekten Dienstschlüssel.
 	
-		PS C:> Get-AzureDedicatedCircuit -ServiceKey *********************************
+		PS C:\> Get-AzureDedicatedCircuit -ServiceKey *********************************
 
 		Bandwidth                        : 200
 		CircuitName                      : TestCircuit
@@ -66,7 +66,7 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 	
 	Informationen zu unterstützten Bandbreitenoptionen für Ihren Anbieter finden Sie auf der Seite [ExpressRoute – Häufig gestellte Fragen](expressroute-faqs.md). Sie können jede Größe auswählen, die die Größe der vorhandenen Verbindung übersteigt. Sobald Sie sich für die benötigte Größe entschieden haben, können Sie den folgenden Befehl verwenden, um die Größe der Verbindung anzupassen.
 
-		PS C:> Set-AzureDedicatedCircuitProperties -ServiceKey ********************************* -Bandwidth 1000
+		PS C:\> Set-AzureDedicatedCircuitProperties -ServiceKey ********************************* -Bandwidth 1000
 		
 		Bandwidth                        : 1000
 		CircuitName                      : TestCircuit
@@ -85,4 +85,4 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -79,4 +79,4 @@ Zusätzliche Daten sind ähnlich wie JSON-Objekte strukturiert: sie bestehen aus
 Die gesamte Struktur aus Schlüssel-Wert-Paaren wird als JSON-Objekt gespeichert. Trotzdem wird nur die erste Ebene der Schlüssel-Wert-Paare zerlegt, damit einige erweiterte Funktionen wie Segmente direkt darauf zugreifen können (Sie können z. B. problemlos ein Segment namens „SciFi-Fans“ definieren, das aus allen Benutzern besteht, denen im letzten Monat mindestens 10 Mal das Ereignis „content_viewed“ mit dem zusätzlichen Schlüssel „content_type“ und dem Wert „scifi“ gesendet wurde). Es wird daher dringend empfohlen, nur zusätzliche Daten zu senden, die aus einfachen Listen von Schlüssel-Wert-Paaren bestehen, die skalare Werte verwenden (z. B. Zeichenfolgen, Datumsangaben, ganze Zahlen oder boolesche Werte).
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

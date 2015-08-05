@@ -210,4 +210,4 @@ Unter den folgenden Links finden Sie weitere Informationen zu Python Tools für 
 [Azure-SDK für Python]: https://github.com/Azure/azure-sdk-for-python
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

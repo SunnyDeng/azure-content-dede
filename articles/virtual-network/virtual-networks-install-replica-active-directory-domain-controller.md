@@ -78,7 +78,7 @@ Wiederholen Sie die folgenden Schritte, um virtuelle Computer zum Hosten der DC-
 
     'Get-AzureVM -ServiceName AzureDC1 -Name AzureDC1 | Set-AzureStaticVNetIP -IPAddress 10.0.0.4 | Update-AzureVM
 
-Weitere Informationen zum Festlegen einer statischen IP-Adresse finden Sie unter [Konfigurieren einer statischen internen IP-Adresse für einen virtuellen Computer](https://msdn.microsoft.com/library/azure/dn630228.aspx).
+Weitere Informationen zum Festlegen einer statischen IP-Adresse finden Sie unter [Konfigurieren einer statischen internen IP-Adresse für einen virtuellen Computer](../virtual-network/virtual-networks-reserved-private-ip.md).
 
 ## Installieren von AD DS auf virtuellen Azure-Computern
 
@@ -123,4 +123,4 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 [1]: ./media/virtual-networks-install-replica-active-directory-domain-controller/ReplicaDCsOnAzureVNet.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

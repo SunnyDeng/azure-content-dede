@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verwalten von Azure MFA-Einstellungen im Portal &quot;Meine Apps&quot;" 
-	description="Auf dieser Seite erfahren Benutzer, wo sie im Portal &quot;Meine Apps&quot; ihre Azure MFA-Einstellungen verwalten." 
+	pageTitle="Verwalten von Azure MFA-Einstellungen im Portal ";Meine Apps";" 
+	description="Auf dieser Seite erfahren Benutzer, wo sie im Portal ";Meine Apps"; ihre Azure MFA-Einstellungen verwalten." 
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -33,4 +33,4 @@ Wenn Sie Multi-Factor Authentication mit Office 365 verwenden, sollten Sie die 
 
 <center>![Setup](./media/multi-factor-authentication-end-user-manage-myapps/proofup.png)</center>
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

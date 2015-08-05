@@ -127,4 +127,4 @@ Die Dienstkonfigurationsdatei wird für jeden Clouddienst erstellt, den Sie in A
 
 [Azure-Dienstkonfigurationsschema](https://msdn.microsoft.com/library/azure/ee758710)[Konfigurationsschema für virtuelle Azure-Netzwerke](https://msdn.microsoft.com/library/azure/jj157100)[Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal](https://msdn.microsoft.com/library/azure/jj156074.aspx)[Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](https://msdn.microsoft.com/library/azure/jj156097.aspx)[Aufgaben für die Azure Virtual Network-Konfiguration](https://msdn.microsoft.com/library/azure/jj156206.aspx)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

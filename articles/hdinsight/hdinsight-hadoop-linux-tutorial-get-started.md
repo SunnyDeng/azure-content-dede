@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="03/13/2015"
+   ms.date="07/11/2015"
    ms.author="nitinme"/>
 
 # Hadoop-Lernprogramm: Erste Schritte bei der Verwendung von Hadoop mit Hive in HDInsight unter Linux (Vorschau)
@@ -22,13 +22,13 @@
 - [Windows](hdinsight-hadoop-tutorial-get-started-windows.md)
 - [Linux](hdinsight-hadoop-linux-tutorial-get-started.md)
 
-In diesem Lernprogramm zu Hadoop erhalten Sie Informationen zu den ersten Schritten mit Azure HDInsight unter Linux, indem Ihnen die Bereitstellung eines Hadoop-Clusters unter Linux und die Ausführung einer Hive-Abfrage zum Extrahieren aussagekräftiger Informationen aus unstrukturierten Daten gezeigt wird.
+In diesem Lernprogramm zu Hadoop erhalten Sie Informationen zu den ersten Schritten mit Azure HDInsight unter Linux, indem Ihnen die Bereitstellung eines Hadoop-Clusters unter Linux und die Ausführung einer Hive-Abfrage gezeigt wird.
 
 
 > [AZURE.NOTE]Wenn Sie noch keine Erfahrung mit Hadoop und Big Data haben, erfahren Sie mehr zu den Begriffen <a href="http://go.microsoft.com/fwlink/?LinkId=510084" target="_blank">Apache Hadoop</a>, <a href="http://go.microsoft.com/fwlink/?LinkId=510086" target="_blank">MapReduce</a>, <a href="http://go.microsoft.com/fwlink/?LinkId=510087" target="_blank">Hadoop Distributed File System (HDFS)</a> und <a href="http://go.microsoft.com/fwlink/?LinkId=510085" target="_blank">Hive</a>. Wie HDInsight Hadoop in Azure bereitstellt, erfahren Sie unter [Einführung in Hadoop in HDInsight](hdinsight-hadoop-introduction.md).
 
 
-## Welchen Zweck verfolgt dieses Lernprogramm? ##
+## Welchen Zweck verfolgt dieses Lernprogramm? 
 
 Angenommen, Sie verfügen über einen großen unstrukturierten Datensatz und möchten Abfragen für diesen ausführen, um aussagekräftige Informationen zu extrahieren. Und so geht's:
 
@@ -69,14 +69,14 @@ Zur Vereinfachung dieses Lernprogramms werden nur der standardmäßige Blobconta
 
 3. Geben Sie **URL**, **SPEICHERORT** und **REPLIKATION** ein, und klicken Sie dann auf **SPEICHERKONTO ERSTELLEN**. Affinitätsgruppen werden nicht unterstützt. Sie werden das neue Speicherkonto in der Speicherliste sehen.
 
-	>[AZURE.NOTE]Die Schnellerfassungsoption zur Bereitstellung eines HDInsight Linux-Clusters, die in diesem Lernprogramm verwendet wird, fordert beim Bereitstellen des Clusters nicht zur Angabe eines Standorts auf. Standardmäßig wird der Cluster im selben Datencenter wie das Speicherkonto bereitgestellt. Stellen Sie daher sicher, dass Sie das Speicherkonto an Standorten erstellen, die den Cluster unterstützen: **Ostasien**, **Südostasien**, **Nordeuropa**, **Westeuropa**, **USA (Osten)**, **USA (Westen)**, **USA (Mitte/Norden)**, **USA (Süden-Mitte)**.
+	>[AZURE.NOTE]Die Schnellerfassungsoption zur Bereitstellung eines HDInsight Linux-Clusters, die in diesem Lernprogramm verwendet wird, fordert beim Bereitstellen des Clusters nicht zur Angabe eines Standorts auf. Standardmäßig wird der Cluster im selben Datencenter wie das Speicherkonto bereitgestellt.
 
 4. Warten Sie, bis sich der **STATUS** des neuen Speicherkontos in **Online** geändert hat.
 5. Wählen Sie das neue Speicherkonto in der Liste aus, und klicken Sie unten auf der Seite auf **ZUGRIFFSSCHLÜSSEL VERWALTEN**.
 7. Notieren Sie sich den **NAMEN DES SPEICHERKONTOS** und den **PRIMÄREN ZUGRIFFSSCHLÜSSEL** (oder den **SEKUNDÄREN ZUGRIFFSSCHLÜSSEL** – beide Schlüssel funktionieren). Sie werden diese später im Lernprogramm benötigen.
 
 
-Weitere Informationen finden Sie unter [Erstellen eines Speicherkontos](../storage-create-storage-account.md) und [Verwenden von Azure-Blobspeicher mit HDInsight](../hdinsight-use-blob-storage.md).
+Weitere Informationen finden Sie unter [￼Erstellen eines Speicherkontos](../storage-create-storage-account.md) und [Verwenden von Azure-Blobspeicher mit HDInsight](../hdinsight-use-blob-storage.md).
 
 ## <a name="provision"></a>Bereitstellen eines HDInsight-Clusters unter Linux
 
@@ -271,4 +271,4 @@ In diesem Linux-Lernprogramm haben Sie erfahren, wie Sie einen Hadoop-Cluster un
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData2.png
  
 
-<!----HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

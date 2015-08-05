@@ -226,4 +226,4 @@ Azure Automation DSC stellt für die Verwaltung von DSC-Kompilierungsaufträgen 
 
 - Für in Azure Automation DSC integrierte DSC-Knoten wird anfänglich der Status „Kompatibel“ angezeigt, auch wenn sie eigentlich nicht mit der DSC-Knotenkonfiguration kompatibel sind, der sie zugeordnet sind. Nachdem ein Knoten seinen ersten Pull-Vorgang ausgeführt und den ersten DSC-Bericht an Azure Automation DSC gesendet hat, sollte der korrekte Status angezeigt werden.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

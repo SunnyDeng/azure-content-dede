@@ -44,7 +44,7 @@ Bei der Installation von Java und dem JDK können die folgenden Umgebungsvariabl
 
 	* **JAVA_HOME** (oder den entsprechenden Pfad)
 
-	* **JAVA_HOME\\bin** (oder den entsprechenden Pfad)
+	* **JAVA_HOME\bin** (oder den entsprechenden Pfad)
 
 	* Das Verzeichnis, in dem Maven installiert ist.
 
@@ -297,4 +297,4 @@ In diesem Dokument haben Sie gelernt, wie ein Java MapReduce-Auftrag entwickelt 
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

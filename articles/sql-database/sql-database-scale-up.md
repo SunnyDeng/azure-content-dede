@@ -232,7 +232,8 @@ Erstellen Sie den Serverkontext mithilfe von**New-AzureSqlDatabaseServerContext*
 		$serverContext = New-AzureSqlDatabaseServerContext -ServerName "myserver" -UseSubscription
 
 
-**Referenz zu Azure PowerShell** Ausführliche Informationen zu den in diesem Thema verwendeten Azure PowerShell-Cmdlets finden Sie unter [Azure SQL-Datenbank-Cmdlets](https://msdn.microsoft.com/library/dn546726.aspx).
+**Referenz zu Azure PowerShell**
+Ausführliche Informationen zu den in diesem Thema verwendeten Azure PowerShell-Cmdlets finden Sie unter [Azure SQL-Datenbank-Cmdlets](https://msdn.microsoft.com/library/dn546726.aspx).
 
 [New-AzureSqlDatabaseServerContext](http://go.microsoft.com/fwlink/?LinkId=391026)
 
@@ -241,4 +242,4 @@ Erstellen Sie den Serverkontext mithilfe von**New-AzureSqlDatabaseServerContext*
 [Set-AzureSqlDatabase](http://go.microsoft.com/fwlink/?LinkId=391412)
  
 
-<!----HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

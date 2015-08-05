@@ -126,7 +126,7 @@ Der folgende A-Datensatz leitet zum Beispiel den gesamten Verkehr von **www.cont
 
 | Hostname/Unterdomäne | IP-Adresse |
 | ------------------- | -------------- |
-| @ | 137\.135.70.239 |
+| @ | 137.135.70.239 |
 
 
 Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. Wenn Sie einen Platzhaltereintrag erstellen möchten, der alle Unterdomänen abdeckt, würden Sie "__*__" als Unterdomäne eingeben.
@@ -148,4 +148,4 @@ Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. W
 [csurl]: ./media/cloud-services-custom-domain-name-portal/csurl.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

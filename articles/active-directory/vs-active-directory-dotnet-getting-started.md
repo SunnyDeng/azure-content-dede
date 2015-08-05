@@ -77,4 +77,4 @@ Wenn Sie Ihrer Ansicht SignIn/SignOut-Steuerelemente hinzufügen möchten, könn
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

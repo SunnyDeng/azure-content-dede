@@ -45,4 +45,4 @@ Sehen Sie sich die Schritte im Video [Erste Schritte mit Azure Backup 3 von 3 �
 - Weitere Informationen zur Azure-Sicherung finden Sie unter [Übersicht über die Windows Azure-Sicherung](backup-introduction-to-azure-backup.md).
 - Besuchen Sie das [Azure Sicherungs-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

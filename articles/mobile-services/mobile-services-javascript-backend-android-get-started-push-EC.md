@@ -4,7 +4,6 @@
 	services="mobile-services, notification-hubs" 
 	documentationCenter="android" 
 	authors="RickSaling" 
-	writer="ricksal" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -213,4 +212,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Send template-based notifications to subscribers]: ../notification-hubs-android-send-localized-breaking-news.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

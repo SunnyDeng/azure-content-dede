@@ -1,3 +1,3 @@
 Eines von drei krebsbezogenen DataSets, das vom Onkologieinstitut bereitgestellt wurde, das häufig in Dokumenten zum maschinellen Lernen verwendet wird. Kombiniert Diagnoseinformationen mit Merkmalen der Laboranalyse von über 300 Gewebeproben.<p> </p><b>Verwendung:</b> Klassifizierung des Krebstyps auf Basis von neun Attributen, von denen einige linear, andere kategorisch sind. <p> </p><b>Zugehörige Untersuchungen:</b> Wohlberg, W. H., Street, W. N., & Mangasarian, O. L. (1995). UCI Machine Learning Repository <a href="http://archive.ics.uci.edu/ml">http://archive.ics.uci.edu/ml</a>. Irvine, CA: University of California, School of Information and Computer Science
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

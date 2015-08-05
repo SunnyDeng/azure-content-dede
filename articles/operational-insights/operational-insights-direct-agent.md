@@ -76,4 +76,4 @@ Wenn Sie in Ihrer Umgebung Proxyserver oder Firewalls verwenden, die den Zugriff
 
 - [Konfigurieren von Proxy- und Firewall-Einstellungen (optional)](operational-insights-proxy-firewall.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -82,4 +82,4 @@ Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Inte
 <!--Other Web references-->
 [Azure Stream Analytics documentation]: http://azure.microsoft.com/documentation/services/stream-analytics/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

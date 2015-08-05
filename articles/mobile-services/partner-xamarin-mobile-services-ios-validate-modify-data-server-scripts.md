@@ -139,4 +139,4 @@ Serverskripts werden auch zum Autorisieren von Benutzern und zum Senden von Push
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=331330
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -25,7 +25,7 @@ Bestimmte Nicht-Browser-Apps, z. B. der systemeigene E-Mail-Client von Apple, d
 
 >[AZURE.NOTE]Moderne Authentifizierung für Office 2013-Clients
 >
-> Office 2013-Clients (einschließlich Outlook) unterstützen jetzt neue Authentifizierungsprotokolle und bieten die Möglichkeit zum Aktivieren von Multi-Factor Authentication. Damit sind nach der Aktivierung keine App-Kennwörter mehr für Office 2013-Clients erforderlich. Weitere Informationen finden Sie unter [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) ("Öffentliche Preview für moderne Authentifizierung in Office 2013", in englischer Sprache).
+> Office 2013-Clients (einschließlich Outlook) unterstützen jetzt neue Authentifizierungsprotokolle und bieten die Möglichkeit zum Aktivieren von Multi-Factor Authentication. Damit sind nach der Aktivierung keine App-Kennwörter mehr für Office 2013-Clients erforderlich. Weitere Informationen finden Sie unter [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) ("Öffentliche Preview für moderne Authentifizierung in Office 2013", in englischer Sprache).
  
 ## Verwenden von App-Kennwörtern
 
@@ -54,4 +54,4 @@ Verwendung von Multi-Factor Authentication|Beschreibung
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

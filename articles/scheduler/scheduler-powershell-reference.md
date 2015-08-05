@@ -55,4 +55,4 @@ In der folgenden Tabelle sind die wichtigsten Cmdlets in Azure Scheduler beschri
 
   
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

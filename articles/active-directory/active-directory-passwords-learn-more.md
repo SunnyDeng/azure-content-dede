@@ -282,4 +282,4 @@ In der folgenden Tabelle wird beschrieben, wo und wie diese Daten während des V
 [002]: ./media/active-directory-passwords-learn-more/002.jpg "Image_002.jpg"
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

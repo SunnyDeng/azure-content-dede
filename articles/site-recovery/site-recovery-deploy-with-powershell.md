@@ -307,7 +307,7 @@ Das letzte Cmdlet erstellt eine Zuordnung zwischen dem primären Netzwerk und de
 
 ```
 
-PS C:> New-AzureSiteRecoveryNetworkMapping -PrimaryNetwork $Networks[0] -AzureSubscriptionId $Subscriptions[0].SubscriptionId -AzureVMNetworkId $AzureVmNetworks[0].Id
+PS C:\> New-AzureSiteRecoveryNetworkMapping -PrimaryNetwork $Networks[0] -AzureSubscriptionId $Subscriptions[0].SubscriptionId -AzureVMNetworkId $AzureVmNetworks[0].Id
 
 ```
 
@@ -354,7 +354,7 @@ Um den Abschluss des Vorgangs zu überprüfen, führen Sie die Schritte in [Übe
 
 ### Erstellen eines Wiederherstellungsplans
 
-1. Erstellen Sie eine XML-Datei als Vorlage für Ihren Wiederherstellungsplan mithilfe der unten aufgeführten Daten, und speichern Sie sie dann unter "C:\\RPTemplatePath.xml".
+1. Erstellen Sie eine XML-Datei als Vorlage für Ihren Wiederherstellungsplan mithilfe der unten aufgeführten Daten, und speichern Sie sie dann unter "C:\RPTemplatePath.xml".
 2. Ändern Sie die RecoveryPlan-Knoten "Id", "Name", "PrimaryServerId" und "SecondaryServerId".
 3. Ändern Sie den "ProtectionEntity"-Knoten "PrimaryProtectionEntityId" (vmid aus VMM).
 4. Sie können weitere virtuelle Computer hinzufügen, indem Sie weitere "ProtectionEntity"-Knoten hinzufügen.
@@ -461,4 +461,4 @@ if($isJobLeftForProcessing)
 
 <LI>Wenn Sie Fragen haben, besuchen Sie das<a href="http://go.microsoft.com/fwlink/?LinkId=313628"> Azure Recovery Services-Forum</a>.</LI></UL>
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

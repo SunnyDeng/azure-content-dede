@@ -499,9 +499,7 @@ In diesem Schritt laden Sie eine Datei mit Informationen zu Ihrem Abonnement her
 
 	Dieser Befehl startet einen Browser und navigiert zur Downloadseite. Melden Sie sich bei entsprechender Aufforderung mit dem Konto an, dass Ihrem Azure-Abonnement zugeordnet ist.
 
-	<!-- ![The download page][download-publishing-settings] -->
-
-	Der Dateidownload sollte automatisch beginnen. Klicken Sie andernfalls auf den Link oben auf der Seite, um die Datei manuell herunterzuladen. Speichern Sie die Datei, und notieren Sie den Dateipfad.
+	<!-- ![The download page][download-publishing-settings] -->Der Dateidownload sollte automatisch beginnen. Klicken Sie andernfalls auf den Link oben auf der Seite, um die Datei manuell herunterzuladen. Speichern Sie die Datei, und notieren Sie den Dateipfad.
 
 2. Geben Sie den folgenden Befehl ein, um die Einstellungen zu importieren:
 
@@ -643,4 +641,4 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 [Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
  
 
-<!----HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

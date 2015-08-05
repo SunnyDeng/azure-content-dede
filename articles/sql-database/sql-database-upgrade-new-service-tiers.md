@@ -1,9 +1,9 @@
 <properties 
 	pageTitle="Upgrade von Web- oder Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen" 
-	description="Führen Sie ein Upgrade der Web- oder Business-Datenbanken von Azure SQL-Datenbank auf die neuen Dienstebenen und Leistungsstufen &quot;Basic&quot;, &quot;Standard&quot; und &quot;Premium&quot; von Azure SQL-Datenbank durch." 
+	description="Führen Sie ein Upgrade der Web- oder Business-Datenbanken von Azure SQL-Datenbank auf die neuen Dienstebenen und Leistungsstufen ";Basic";, ";Standard"; und ";Premium"; von Azure SQL-Datenbank durch." 
 	services="sql-database" 
 	documentationCenter="" 
-	authors="jenniehubbard" 
+	authors="stevestein" 
 	manager="jeffreyg" 
 	editor=""/>
 
@@ -11,7 +11,7 @@
 	ms.service="sql-database"
 	ms.devlang="NA"
 	ms.date="06/18/2015" 
-	ms.author="jhubbard; sstein" 
+	ms.author="sstein" 
 	ms.workload="data-management" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="NA"/>
@@ -161,8 +161,7 @@ Basierend auf dem prozentualen DTU-Verbrauch und der größten Edition, die für
 
 ![Ressourcenverbrauch][4]
 
-> **Hinweis:**
-> Relative DTU-Werte zwischen verschiedenen Leistungsstufen basieren auf der Arbeitsauslastung [Azure SQL-Datenbankvergleichstest](http://msdn.microsoft.com/library/azure/dn741327.aspx). Da die Arbeitsauslastung Ihrer Datenbank wahrscheinlich von diesem Vergleichstest abweicht, sollten Sie die oben aufgeführten Berechnungen als Richtlinie für eine anfängliche Einordnung Ihrer Web-/Business-Datenbank in die neuen Dienstebenen verwenden. Nachdem Sie die Datenbank in die neue Ebene verschoben haben, verwenden Sie den im vorherigen Abschnitt beschriebenen Vorgang, um die richtigen Dienstebene zu überprüfen/optimieren, die für die Anforderungen Ihrer Arbeitsauslastung geeignet ist.
+> **Hinweis:** Relative DTU-Werte zwischen verschiedenen Leistungsstufen basieren auf der Arbeitsauslastung [Azure SQL-Datenbankvergleichstest](http://msdn.microsoft.com/library/azure/dn741327.aspx). Da die Arbeitsauslastung Ihrer Datenbank wahrscheinlich von diesem Vergleichstest abweicht, sollten Sie die oben aufgeführten Berechnungen als Richtlinie für eine anfängliche Einordnung Ihrer Web-/Business-Datenbank in die neuen Dienstebenen verwenden. Nachdem Sie die Datenbank in die neue Ebene verschoben haben, verwenden Sie den im vorherigen Abschnitt beschriebenen Vorgang, um die richtigen Dienstebene zu überprüfen/optimieren, die für die Anforderungen Ihrer Arbeitsauslastung geeignet ist.
 > 
 > Während die vorgeschlagene Dienstebene/Leistungsstufe der neuen Edition Ihre Datenbankaktivität innerhalb der letzten 14 Tage berücksichtigt, basieren diese Daten auf den Datenstichproben für den Ressourcenverbrauch, gemittelt über 5 Minuten. Aus diesem Grund können ggf. kurzfristige Aktivitätsspitzen unberücksichtigt bleiben, die weniger als 5 Minuten dauern. Diese Anleitung sollte daher beim Upgrade der Datenbank als Ausgangspunkt verwendet werden. Nachdem Sie das Upgrade der Datenbank auf die empfohlene Ebene ausgeführt haben, sind weitere Überwachungs-, Test- und Überprüfungsvorgänge erforderlich, und die Datenbank kann nach Bedarf nach oben oder unten in eine andere Ebene/Leistungsstufe verschoben werden.
 
@@ -310,4 +309,4 @@ Der Azure SQL-Datenbankdienst stellt Telemetriedaten und Tools zum Auswerten der
 
  
 
-<!----HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

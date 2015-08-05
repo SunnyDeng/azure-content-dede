@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="07/01/2015"
+	ms.date="07/13/2015"
 	ms.author="jeffstok"/>
 
 # Skalieren von Azure Stream Analytics-Aufträge zur Erhöhung des Durchsatzes #
@@ -151,7 +151,7 @@ Diese Abfrage kann auf bis zu 24 Streaming-Einheiten skaliert werden.
 3. Klicken Sie auf den Stream Analytics-Auftrag, den Sie skalieren möchten.
 4. Klicken Sie oben auf der Seite auf **SCALE** (Skalieren).
 
-![Konfigurieren der Auftragsskalierung in Azure Stream Analytics][img.stream.analytics.configure.scale]
+![Azure Stream Analytics Skalieren von Streamingeinheiten][img.stream.analytics.streaming.units.scale]
 
 
 ## Überwachen der Auftragsleistung ##
@@ -260,4 +260,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -543,4 +543,4 @@ Nachfolgend finden Sie die Liste der Ergebnistypen, die Sie im Bericht zur Aktiv
 [003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

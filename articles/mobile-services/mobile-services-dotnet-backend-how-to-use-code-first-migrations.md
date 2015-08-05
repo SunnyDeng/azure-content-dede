@@ -4,7 +4,6 @@
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="ggailey777" 
-	writer="glenga" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -170,4 +169,4 @@ Dieser Code ruft die Hilfserweiterungsmethode [AddOrUpdate] auf, um Seed-Daten i
 [DbSet<T>]: https://msdn.microsoft.com/library/azure/gg696460.aspx
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

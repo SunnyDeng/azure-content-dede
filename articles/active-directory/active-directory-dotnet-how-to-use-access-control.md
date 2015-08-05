@@ -116,7 +116,7 @@ In diesem Schritt erstellen Sie eine ASP.NET MVC-Anwendung. In nachfolgenden Sch
 
 1. Geben Sie in **Name** **MvcACS** ein, und klicken Sie dann auf **OK**.
 1. Wählen Sie im nächsten Dialogfeld **Internetanwendung** aus, und klicken Sie dann auf **OK**.
-1. Bearbeiten Sie die Datei *Views\\Shared_LoginPartial.cshtml*, und ersetzen Sie den Inhalt durch folgenden Code:
+1. Bearbeiten Sie die Datei *Views\Shared_LoginPartial.cshtml*, und ersetzen Sie den Inhalt durch folgenden Code:
 
         @if (Request.IsAuthenticated)
         {
@@ -206,7 +206,7 @@ Glückwunsch! Sie haben ACS mit Ihrer ASP.NET-Webanwendung integriert. ACS authe
 
 In diesem Abschnitt werden wir die Anwendung ändern, sodass die von ACS gesendeten Ansprüche angezeigt werden. Das Identitäts- und Zugriffstool hat eine Regelgruppe angelegt, die alle Ansprüche vom IP zu Ihrer Anwendung durchleitet. Beachten Sie, dass unterschiedliche Anbieter unterschiedliche Ansprüche senden.
 
-1. Öffnen Sie die Datei *Controllers\\HomeController.cs*. Fügen Sie eine **using**-Anweisung für **System.Threading** hinzu:
+1. Öffnen Sie die Datei *Controllers\HomeController.cs*. Fügen Sie eine **using**-Anweisung für **System.Threading** hinzu:
 
  	using System.Threading;
 
@@ -225,7 +225,7 @@ In diesem Abschnitt werden wir die Anwendung ändern, sodass die von ACS gesende
 
 1. Klicken Sie auf **Hinzufügen**.
 
-1. Ersetzen Sie den Inhalt der Datei *Views\\Home\\Claims.cshtml* durch den folgenden Code:
+1. Ersetzen Sie den Inhalt der Datei *Views\Home\Claims.cshtml* durch den folgenden Code:
 
         @{
             ViewBag.Title = "Claims";
@@ -402,4 +402,4 @@ Wenn Sie die ACS-Funktionalität genauer erforschen und mit anderen Szenarien ex
   [20]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace2.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

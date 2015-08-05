@@ -188,4 +188,4 @@ Wenn Sie Ihr Kriterium eingerichtet haben, wird es im Trichter "Segment" angezei
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

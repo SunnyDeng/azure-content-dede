@@ -285,4 +285,4 @@ Die folgenden Schritte zeigen, wie Sie rollenbasierte Zugriffssteuerung mithilfe
 [IsMemberOf]: http://msdn.microsoft.com/library/azure/dn151601.aspx
 [Zugriff auf Azure Active Directory Graph-Informationen]: mobile-services-javascript-backend-windows-store-dotnet-aad-graph-info.md
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

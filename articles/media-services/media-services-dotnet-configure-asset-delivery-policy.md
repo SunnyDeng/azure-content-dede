@@ -291,4 +291,4 @@ Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) 
         EnvelopeEncryptionIV,
     } 
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

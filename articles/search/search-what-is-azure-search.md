@@ -131,4 +131,4 @@ Sie können auch diese Lernprogramme ausprobieren:
 
 [Verwenden von Azure Search in .NET](search-howto-dotnet-sdk.md) [Erste Schritte mit Azure Search .NET](search-get-started-dotnet.md) [Azure Search: Lernprogramme, Videodemos und Beispiele](https://msdn.microsoft.com/library/azure/dn818681.aspx)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -31,4 +31,4 @@ Dieses Whitepaper führt Sie auch durch die folgenden Aspekte:
 **Herunterladen von PDF-Dateien:** [ Introducing DocumentDB - Eine NoSQL-Datenbank für Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=511318)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

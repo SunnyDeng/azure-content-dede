@@ -129,4 +129,4 @@ Zu den Serversuchergebnissen gehören:
 - Tage seit dem letzten Update
 - Version des Windows Update-Agents
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

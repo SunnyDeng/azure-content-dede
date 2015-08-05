@@ -41,4 +41,4 @@ In diesem Thema erfahren Sie, wie Sie mit dem [Azure-Verwaltungsportal][Manageme
 [.NET backend version]: ../mobile-services-dotnet-backend-windows-phone-get-started.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

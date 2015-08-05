@@ -71,6 +71,8 @@ Die Schritte zum Erstellen einer Handelspartnervereinbarung sind [hier][2] dokum
 
 Als Teil der Ausgabe gibt der Connector die AS2-Nutzlast sowie die AS2-spezifischen Metadaten zurück.
 
+Der Trigger wird ausgelöst, wenn eine AS2-Nutzlast wie ein POST an "https://{Host-URL}/decode" ist. Sie finden die Host-URL in den API-App-Einstellungen. Sie müssen möglicherweise auch die Zugriffsebene der API-App in den Anwendungseinstellungen in "Öffentlich" (authentifiziert oder anonym) ändern.
+
 ## Verwenden des Connectors als Aktion
 1. Fügen Sie nach dem Trigger (oder wählen Sie "Diese Logik manuell ausführen") den im rechten Bereich erstellten AS2-Connector hinzu: <br/> ![Aktionseinstellungen][7]
 
@@ -111,4 +113,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-as2/EncodeAndSendInput.PNG
 [10]: ./media/app-service-logic-connector-as2/EncodeAndSendConfigured.PNG
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

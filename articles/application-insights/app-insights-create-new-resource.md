@@ -92,4 +92,4 @@ Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resour
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

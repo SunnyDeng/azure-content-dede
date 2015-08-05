@@ -14,4 +14,4 @@
 Die neu hinzugefügte Richtlinie wird in der Tabellenansicht auf der Seite **Sicherungsrichtlinien** angezeigt.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

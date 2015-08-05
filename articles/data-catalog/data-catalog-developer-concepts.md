@@ -238,4 +238,4 @@ Mit den Ansichtselementanforderungen **PUT** und **POST** können Sie Rollen und
 <!--Image references-->
 [1]: ./media/data-catalog-developer-concepts/concept.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

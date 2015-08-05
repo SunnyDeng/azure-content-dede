@@ -51,4 +51,4 @@ In diesem Thema wurde gezeigt, wie Sie mithilfe der **invokeApi**-Methode eine r
 [Store server scripts in source control]: mobile-services-store-scripts-source-control.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

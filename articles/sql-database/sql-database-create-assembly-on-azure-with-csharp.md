@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="CREATE ASSEMBLY in Azure SQL-Datenbank mit CSharp"
-	description="C#-Quellcode zum Ausführen von &quot;CREATE ASSEMBLY&quot; in Azure SQL-Datenbank nach dem Codieren einer DLL-Datei in einer Zeichenfolge, die eine lange Hexadezimalzahl enthält." 
+	description="C#-Quellcode zum Ausführen von ";CREATE ASSEMBLY"; in Azure SQL-Datenbank nach dem Codieren einer DLL-Datei in einer Zeichenfolge, die eine lange Hexadezimalzahl enthält." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/17/2015" 
+	ms.date="07/14/2015" 
 	ms.author="genemi"/>
 
 
@@ -328,4 +328,4 @@ Dieser Transact-SQL-Codeblock endet mit einer SELECT-Anweisung, die die neue Fun
 
 <!-- EndOfFile -->
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

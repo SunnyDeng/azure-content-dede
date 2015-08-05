@@ -4,7 +4,6 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="Justinha" 
-	writer="Justinha" 
 	manager="TerryLan" 
 	editor="LisaToft"/>
 
@@ -47,4 +46,4 @@ Geschäfts- oder Schulkonto | Ein Benutzerkonto, das von einer Organisation (Unt
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

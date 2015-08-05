@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/09/2015" 
+	ms.date="07/21/2015" 
 	ms.author="spelluru"/>
 
 # Erstellen von Vorhersagepipelines mithilfe von Azure Data Factory und Azure Machine Learning 
@@ -166,7 +166,7 @@ Es wird empfohlen, dass Sie zunächst das Lernprogramm [Erste Schritte mit Azure
 		    }
 		}
 
-	Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Zeit für **Ende** ist optional. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
+	Datum und Uhrzeit von **start** und **end** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Zeit für **end** ist optional. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
 
 ## Webdienstparameter
 Sie können Webdienstparameter verwenden, die von einem veröffentlichten Azure Machine Learning-Webdienst in ADF-Pipelines (Azure Data Factory) verfügbar gemacht werden. Sie können ein Experiment in Azure Machine Learning erstellen, es als Webdienst veröffentlichen und dann diesen Webdienst in mehreren ADF-Pipelines oder -Aktivitäten verwenden, um über die Webdienstparameter unterschiedliche Eingaben zu übergeben.
@@ -213,39 +213,11 @@ Um einen Azure SQL-Reader über eine Azure Data Factory-Pipeline zu verwenden, f
 #### Azure SQL-Writer
 Wie ein Azure SQL-Reader kann auch ein Azure SQL-Writer seine Eigenschaften als Webdienstparameter verfügbar machen. Ein Azure SQL-Writer verwendet Einstellungen aus dem verknüpften Dienst, der der Eingabetabelle oder der Ausgabetabelle zugeordnet ist. In der folgende Tabelle werden diese beiden Typen verknüpfter Dienste miteinander verglichen.
 
-<table>
-<tr>
-<td>Ausgabe/Eingabe</td>
-<td><b>Eingabe ist Azure SQL</b></td>
-<td><b>Eingabe ist Azure-Blob</b></td>
-</tr>
-<tr>
-<td><b>Ausgabe ist Azure SQL</b></td>
-<td><p>Der Data Factory-Dienst verwendet die Informationen in der Verbindungszeichenfolge aus dem verknüpften Dienst INPUT zum Generieren der Webdienstparameter mit den Namen "Database server name", "Database name", "Server user account name", "Server user account password". Beachten Sie, dass Sie diese Standardnamen für Webdienstparameter in Azure ML Studio verwenden müssen.</p>
-<p>Wenn der Azure SQL-Reader und der Azure SQL-Writer in Ihrem Azure ML-Modell dieselben oben erwähnten Webdienstparameter verwenden, ist alles in Ordnung. Wenn sie nicht dieselben Webdienstparameter gemeinsam verwenden, der Azure SQL-Writer beispielsweise die Parameternamen "Database server name1", "Database name1", "Server user account name1", "Server user account password1" (mit "1" am Ende) verwendet, müssen Sie Werte für diese Webdienstparameter vom Typ OUTPUT im Abschnitt "webServiceParameters" des JSON-Codes der Aktivität übergeben.</p>
-<p>
-Sie können Werte für alle anderen Webdienstparameter mithilfe des Abschnitts "webServiceParameters" im JSON-Code der Aktivität übergeben.  
-</p>
-
-</td>
-<td>
-<p>Der Data Factory-Dienst verwendet die Informationen in der Verbindungszeichenfolge aus dem verknüpften Dienst OUTPUT zum Generieren der Webdienstparameter mit den Namen "Database server name", "Database name", "Server user account name", "Server user account password". Beachten Sie, dass Sie diese Standardnamen für Webdienstparameter in Azure ML Studio verwenden müssen.</p>
-<p>Sie können Werte für alle anderen Webdienstparameter mithilfe des Abschnitts "webServiceParameters" im JSON-Code der Aktivität übergeben. <p>Das Eingabeblob wird als Eingabespeicherort verwendet.</p>
-</td>
-</tr>
-<tr>
-<td><b>Ausgabe ist Azure-Blob</b></td>
-<td>Der Data Factory-Dienst verwendet die Informationen in der Verbindungszeichenfolge aus dem verknüpften Dienst INPUT zum Generieren der Webdienstparameter mit den Namen "Database server name", "Database name", "Server user account name", "Server user account password". Beachten Sie, dass Sie diese Standardnamen für Webdienstparameter in Azure ML Studio verwenden müssen.
-</td>
-<td>
-<p>Sie müssen Werte für beliebige Webdienstparameter mithilfe des Abschnitts "webServiceParameters" im JSON-Code der Aktivität übergeben.</p> 
-
-<p>Blobs werden als Eingabe- und Ausgabespeicherorte verwendet.</p>
-
-</td>
-<tr>
-
-</table>
+| Ausgabe/Eingabe | Eingabe ist Azure SQL | Eingabe ist Azure-Blob |
+| ------------ | ------------------ | ------------------- |
+| Ausgabe ist Azure SQL | <p>Der Data Factory-Dienst generiert mithilfe der Informationen in der Verbindungszeichenfolge aus dem verknüpften Dienst INPUT die Webdienstparameter mit den Namen "Database server name", "Database name", "Server user account name", "Server user account password". Beachten Sie, dass Sie diese Standardnamen für Webdienstparameter in Azure ML Studio verwenden müssen.</p><p>Wenn der Azure SQL-Reader und der Azure SQL-Writer in Ihrem Azure-ML-Modell die gleichen Webdienstparameter wie oben verwenden, ist alles in Ordnung. Wenn sie nicht dieselben Webdienstparameter verwenden, also beispielsweise der Azure SQL-Writer die Parameternamen "Database server name1", "Database name1", "Server user account name1", "Server user account password1" (mit einer "1" am Ende) verwendet, müssen Sie für diese OUTPUT-Webdienstparameter im Abschnitt webServiceParameters der JSON-Aktivität Werte übergeben.</p><p>Sie können Werte für alle anderen Webdienstparameter über den webServiceParameters-Abschnitt der JSON-Aktivität übergeben.</p> | <p>Der Data Factory-Dienst generiert mithilfe der Informationen in der Verbindungszeichenfolge aus dem verknüpften Dienst OUTPUT die Webdienstparameter mit den Namen "Database server name", "Database name", "Server user account name", "Server user account password". Beachten Sie, dass Sie diese Standardnamen für Webdienstparameter in Azure ML Studio verwenden müssen.</p><p>Sie können die Werte für alle anderen Webdienstparameter über den webServiceParameters-Abschnitt der JSON-Aktivität übergeben. <p>Das Eingabeblob wird als Eingabespeicherort verwendet.</p> |
+|Ausgabe ist Azure-Blob | Der Data Factory-Dienst verwendet die Informationen in der Verbindungszeichenfolge aus dem verknüpften Dienst INPUT zum Generieren der Webdienstparameter mit den Namen "Database server name", "Database name", "Server user account name", "Server user account password". Beachten Sie, dass Sie diese Standardnamen für Webdienstparameter in Azure ML Studio verwenden müssen. | <p>Sie müssen im Abschnitt WebServiceParameters der JSON-Aktivität Werte für alle Web Service-Parameter übergeben.</p><p>Blobs werden als Eingabe- und Ausgabespeicherorte verwendet.</p> |
+    
 
 > [AZURE.NOTE]Im Azure SQL-Writer kann es zu Schlüsselverletzungen kommen, wenn eine Identitätsspalte überschrieben wird. Sie müssen Ihre Ausgabetabelle so strukturieren, dass diese Situation vermieden wird.
 > 
@@ -302,7 +274,7 @@ Im obigen JSON-Beispiel:
 - Die Parameter für den Writer (mit dem Suffix "1") werden nicht automatisch vom Data Factory-Dienst ausgefüllt. Daher müssen Sie Werte für diese Parameter im Abschnitt **webServiceParameters** im JSON-Code der Aktivität angeben.  
 - **Customer ID**, **scored labels** und **scored probabilities** werden als durch Trennzeichen getrennte Spalten gespeichert. 
 - Der **Name der Datentabelle** in diesem Beispiel entspricht einer Tabelle in der Ausgabedatenbank.
-- Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Zeit für **Ende** ist optional. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
+- Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Zeit für **end** ist optional. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
 
 
 
@@ -328,4 +300,4 @@ Artikel | Beschreibung
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

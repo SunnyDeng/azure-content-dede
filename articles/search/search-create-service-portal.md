@@ -35,7 +35,7 @@ Bei Verwendung der Shared-Option können Administratoren Search kostenlos zu ein
 
      ![][2]
 
-	- Der **Dienstname** muss eindeutig sein und aus weniger als 15 Kleinbuchstaben ohne Leerzeichen bestehen. Dieser Name wird Teil des Endpunkts Ihres Azure Search-Diensts. Weitere Informationen zu den Benennungskonventionen finden Sie unter [Benennungsregeln](https://msdn.microsoft.com/library/azure/dn857353.aspx).
+	- Der **Dienstname** muss eindeutig sein und aus weniger als 15 Kleinbuchstaben ohne Leerzeichen bestehen. Dieser Name wird Bestandteil des Endpunkts Ihres Azure Search-Diensts. Weitere Informationen zu den Benennungskonventionen finden Sie unter [Benennungsregeln](https://msdn.microsoft.com/library/azure/dn857353.aspx).
 
 	- Der **Tarif** bestimmt die Kapazität und die Abrechnung. Beide Tarife bieten die gleichen Features, aber mit unterschiedlichen Ressourcen.
 
@@ -50,7 +50,7 @@ Bei Verwendung der Shared-Option können Administratoren Search kostenlos zu ein
 
 4. Klicken Sie auf **Erstellen**, um den Dienst bereitzustellen.
 
-Achten Sie auf Benachrichtigungen auf der Leiste. Wenn der Dienst verwendet werden kann, erscheint eine Benachrichtigung.
+Achten Sie auf Benachrichtigungen in der Navigationsleiste. Wenn der Dienst verwendet werden kann, erscheint eine Benachrichtigung.
 
 <a id="sub-2"></a>
 ##Ermitteln des Dienstnamens und der API-Schlüssel Ihres Azure Search-Diensts
@@ -120,4 +120,4 @@ Unter den folgenden Links finden Sie zusätzliches Material für die Erstellung 
 [2]: ./media/search-create-service-portal/create-search-portal-2.PNG
 [3]: ./media/search-create-service-portal/create-search-portal-3.PNG
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

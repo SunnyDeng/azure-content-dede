@@ -37,7 +37,7 @@ Für dieses Lernprogramm wird ein Apache Tomcat-Anwendungsserver auf einem virtu
 ## So erstellen Sie einen virtuellen Computer
 
 1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
-2. Klicken Sie auf **Neu**, auf **Compute** auf **Virtueller Computer** und dann auf **Aus Katalog**.
+2. Klicken Sie auf **Neu**, auf **Berechnen** auf **Virtueller Computer** und dann auf **Aus Galerie**.
 3. Wählen Sie im Dialogfeld **Virtual machine image select** die Option **JDK 7 Windows Server 2012** aus. Beachten Sie, dass **JDK 6 Windows Server 2012** verfügbar ist, wenn Ihre Legacyanwendungen nicht in JDK 7 ausgeführt werden können.
 4. Klicken Sie auf **Weiter**.
 5. Gehen Sie im Dialogfeld <strong>Konfiguration des virtuellen Computers</strong> wie folgt vor:
@@ -47,11 +47,11 @@ Für dieses Lernprogramm wird ein Apache Tomcat-Anwendungsserver auf einem virtu
     4. Geben Sie ein Kennwort in das Feld **Neues Kennwort** ein, und geben Sie das Kennwort dann erneut in das Feld **Kennwort bestätigen** ein. Dies ist das Kennwort für das Administratorkonto.
     5. Klicken Sie auf **Weiter**.
 6. Gehen Sie im nächsten Dialogfeld <strong>Konfiguration des virtuellen Computers</strong> wie folgt vor:
-    1. Verwenden Sie für den **Clouddienst** die Standardeinstellung **Neuen Clouddienst erstellen**.
-    2. Der Wert für **DNS-Name des Clouddiensts** muss auf cloudapp.net eindeutig sein. Ändern Sie wenn nötig diesen Wert, sodass Azure angibt, dass er eindeutig ist.
+    1. Verwenden Sie für den **Cloud-Dienst** die Standardeinstellung **Neuen Cloud-Dienst erstellen**.
+    2. Der Wert für **DNS-Name des Cloud-Diensts** muss auf cloudapp.net eindeutig sein. Ändern Sie wenn nötig diesen Wert, sodass Azure angibt, dass er eindeutig ist.
     2. Geben Sie eine Region, eine Affinitätsgruppe oder ein virtuelles Netzwerk an. Geben Sie für dieses Lernprogramm als Region **West-USA** an.
     2. Wählen Sie unter **Speicherkonto** die Option **Automatisch generiertes Speicherkonto verwenden** aus.
-    3. Wählen Sie unter **Verfügbarkeitsgruppe** die Option **(Keine)** aus.
+    3. Wählen Sie unter **Verfügbarkeitssatz** die Option **(Keine)** aus.
     4. Klicken Sie auf **Weiter**.
 7. Gehen Sie im letzten Dialogfeld <strong>Konfiguration des virtuellen Computers</strong> wie folgt vor:
     1. Akzeptieren Sie die Standardeinträge für Endpunkte.
@@ -159,4 +159,4 @@ Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Serv
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

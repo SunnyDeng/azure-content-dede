@@ -14,14 +14,14 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="04/08/2015"
+	ms.date="07/21/2015"
 	ms.author="jgao"/>
 
 # Erste Schritte bei der Verwendung von Hadoop-Tools für Visual Studio für HDInsight zum Ausführen einer Hive-Abfrage
 
 Erfahren Sie, wie Sie HDInsight Tools für Visual Studio nutzen, um eine Verbindung mit HDInsight-Clustern herzustellen und Hive-Abfragen zu übermitteln. Weitere Informationen zur Verwendung von HDInsight finden Sie unter [Einführung in HDInsight][hdinsight.introduction] und [Erste Schritte mit HDInsight][hdinsight.get.started]. Weitere Informationen zum Herstellen einer Verbindung mit einem Storm-Cluster finden Sie unter [Entwickeln von C#-Topologien für Apache Storm in HDInsight mit Visual Studio][hdinsight.storm.visual.studio.tools].
 
->[AZURE.NOTE]Die neueste Version verfügt über einige neue Features, z. B. die IntelliSense-Unterstützung des Hive-Editors, die lokale Hive-Skriptprüfung und der Zugriff auf YARN-Protokolle.
+>[AZURE.NOTE]Die neueste Version verfügt über einige neue Features, z. B. die Unterstützung des Hive-Editors, die lokale Hive-Skriptprüfung und den Zugriff auf YARN-Protokolle.
 
 
 ## Voraussetzungen
@@ -39,12 +39,12 @@ Um dieses Tutorial durchzuführen und die Hadoop-Tools in Visual Studio zu verwe
 	- Visual Studio (eine der folgenden Versionen):
 		- Visual Studio 2012 Professional/Premium/Ultimate mit [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)
 		- Visual Studio 2013 Community/Professional/Premium/Ultimate mit [Update 4](https://www.microsoft.com/download/details.aspx?id=44921)
-		- Visual Studio 2015 RC (Community/Enterprise)
+		- Visual Studio 2015 (Community/Enterprise)
 
 	>[AZURE.NOTE]Derzeit werden die HDInsight-Tools für Visual Studio nur mit der englischen Version bereitgestellt.
 
 
-## Installieren von Hadoop-Tools für Visual Studio
+## Installieren von HDInsight-Tools für Visual Studio
 
 HDInsight-Tools für Visual Studio gehören zum Microsoft Azure SDK für .NET, Version 2.5.1 oder höher. Für die Installation kann der [Webplattform-Installer](http://go.microsoft.com/fwlink/?LinkId=255386) verwendet werden. Sie müssen die Auswahl entsprechend Ihrer Version von Visual Studio vornehmen. Mit dem Hadoop-Toolpaket werden auch die Microsoft Hive ODBC-Treiber (32 Bit und 64 Bit) installiert.
 
@@ -53,7 +53,7 @@ HDInsight-Tools für Visual Studio gehören zum Microsoft Azure SDK für .NET, V
 
 >[AZURE.NOTE]Wenn Sie Visual Studio 2015 oder 2012 verwenden und Azure SDK 2.5 installiert ist, müssen Sie die frühere Version manuell entfernen, bevor Sie die neueste Version installieren können. Visual Studio 2013 unterstützt eine direkte Aktualisierung.
 
-## Verbinden mit Ihrem Azure-Abonnement
+## Herstellen einer Verbindung mit Azure-Abonnements
 Mithilfe der HDInsight-Tools für Visual Studio können Sie eine Verbindung mit Ihren HDInsight-Clustern herstellen, einfache Verwaltungsvorgänge durchführen und Hive-Abfragen ausführen.
 
 >[AZURE.NOTE]Informationen zum Herstellen einer Verbindung mit dem HDInsight-Emulator finden Sie unter [Erste Schritte mit dem HDInsight-Emulator](../hdinsight-get-started-emulator.md/#vstools).
@@ -135,7 +135,7 @@ Es gibt zwei Möglichkeiten zum Erstellen und Ausführen von Hive-Abfragen:
 
 1. Erweitern Sie in **Server-Explorer** erst **Azure** und dann **HDInsight-Cluster**.
 2. Klicken Sie mit der rechten Maustaste auf den Cluster, in dem Sie die Abfrage ausführen möchten, und klicken Sie dann auf **Hive-Abfrage schreiben**.
-3. Geben Sie die Hive-Abfragen ein. Beachten Sie, dass der Hive-Editor IntelliSense unterstützt. HDInsight-Tools für Visual Studio unterstützen das Laden von Remotemetadaten, wenn Sie Ihr Hive-Skript bearbeiten. Beispiel: Bei Eingabe von "SELECT * FROM" listet IntelliSense alle vorgeschlagenen Tabellennamen auf. Wenn ein Tabellenname angegeben wird, werden die Spaltennamen von IntelliSense aufgeführt.
+3. Geben Sie die Hive-Abfragen ein. Beachten Sie, dass der Hive-Editor IntelliSense unterstützt. HDInsight-Tools für Visual Studio unterstützen das Laden von Remotemetadaten, wenn Sie Ihr Hive-Skript bearbeiten. Beispiel: Bei Eingabe von „SELECT * FROM“ listet IntelliSense alle vorgeschlagenen Tabellennamen auf. Wenn ein Tabellenname angegeben wird, werden die Spaltennamen von IntelliSense aufgeführt. Das Tool unterstützt fast alle Hive-DML-Anweisungen, Unterabfragen und die integrierten UDFs. 
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – IntelliSense][13]
 
@@ -181,6 +181,18 @@ Die neueste Version des Tools ermöglicht es Ihnen zu sehen, was sich innerhalb 
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – Hive-Aufträge anzeigen][12]
 
+### Leistungsdiagramm für Tez Hive-Auftrag
+
+In den HDInsight-Tools für Visual Studio wird das Anzeigen von Leistungsdiagrammen für die Hive-Aufträge unterstützt, die vom Tez-Ausführungsmodul ausgeführt werden. Informationen zum Aktivieren von Tez finden Sie unter [Verwenden von Hive in HDInsight][hdinsight.hive]. Nachdem Sie in Visual Studio einen Hive-Job gesendet haben, wird das Diagramm in Visual Studio angezeigt, wenn der Auftrag abgeschlossen ist. Sie müssen unter Umständen auf die Aktualisierungsschaltfläche klicken, um den aktuellen Auftragsstatus zu erhalten.
+
+> [AZURE.NOTE]Dieses Feature ist nur für höhere HDInsight-Clusterversionen als 3.2.4.593 verfügbar und funktioniert nur für abgeschlossene Aufträge. Dies funktioniert sowohl für Windows-basierte als auch für Linux-basierte Cluster.
+
+![Leistungsdiagramm für Hadoop Hive Tez](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.hive.tez.performance.graph.png)
+
+## Ausführen von Pig-Skripts
+
+HDInsight-Tools für Visual Studio unterstützen die Erstellung und das Senden von Pig-Skripts an HDInsight-Cluster. Benutzer können ein Pig-Projekt über eine Vorlage erstellen und das Skript dann an HDInsight-Cluster senden.
+
 ## Nächste Schritte
 In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio mithilfe des Hadoop-Toolpakets eine Verbindung mit HDInsight-Clustern herstellen und Hive-Abfragen ausführen. Weitere Informationen finden Sie unter:
 
@@ -211,6 +223,7 @@ In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio mithilfe des Hado
 [13]: ./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.intellisense.table.names.png
 [14]: ./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.intellisense.column.names.png
 
+
 <!--Link references-->
 [hdinsight-provision]: ../hdinsight/hdinsight-provision-clusters.md
 [hdinsight.introduction]: ../hdinsight-introduction.md
@@ -223,4 +236,4 @@ In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio mithilfe des Hado
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -114,4 +114,4 @@ Klicken Sie auf **Vorschau** oder auf **Test senden**, um eine Vorschau der E-Ma
 [Erste Schritte mit API Management]: api-management-get-started.md
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

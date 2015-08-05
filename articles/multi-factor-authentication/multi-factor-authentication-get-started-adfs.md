@@ -43,7 +43,7 @@ Sicherheitshinweise zu App-Kennwörtern für Verbundbenutzer:
 
 Informationen zum Einrichten von Azure Multi-Factor Authentication oder Azure Multi-Factor Authentication-Server mit AD FS finden Sie hier:
 
-- [Sichern von Cloud-Ressourcen mit Azure Multi-Factor Authentication und AD FS](multi-factor-authentication-get-started-adfs-cloud)
+- [Sichern von Cloudressourcen mit Azure Multi-Factor Authentication und AD FS](multi-factor-authentication-get-started-adfs-cloud.md)
 - [Sichern von Cloud- und lokalen Ressourcen mithilfe von Azure Multi-Factor Authentication-Server mit Windows Server 2012 R2 AD FS](multi-factor-authentication-get-started-adfs-w2k12.md)
 - [Sichern von Cloud- und lokalen Ressourcen mithilfe von Azure Multi-Factor Authentication-Server mit AD FS 2.0](multi-factor-authentication-get-started-adfs-adfs2.md)
 
@@ -55,4 +55,4 @@ Informationen zum Einrichten von Azure Multi-Factor Authentication oder Azure Mu
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

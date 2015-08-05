@@ -140,4 +140,4 @@ Beispielsweise können Sie nun mit Ihrer neuen Azure Active Directory-Identität
     data:
     info:    group create command OK
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -39,7 +39,7 @@ Sie müssen diesen Schritt nur einmal pro Computer durchführen. Bei diesem Schr
 
     ![Hilfe, Neue Software installieren](./media/app-insights-java-eclipse/0-plugin.png)
 
-2. Das SDK befindet sich in http://dl.msopentech.com/eclipse unter "Azure Toolkit".
+2. Das SDK befindet sich in http://dl.windowsazure.com/eclipse unter "Azure Toolkit".
 3. Deaktivieren Sie **Contact all update sites...**.
 
     ![Deaktivieren Sie für das Application Insights SDK "Contact all update sites"](./media/app-insights-java-eclipse/1-plugin.png)
@@ -169,4 +169,4 @@ Sie können Code sowohl in das JavaScript der Webseite als auch in serverseitige
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

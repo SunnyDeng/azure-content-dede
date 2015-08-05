@@ -145,4 +145,4 @@ Hier folgt ein Beispielcode, der die Verwendung der synchronen Version dieser Me
 Weitere Informationen zur Verwendung des HDInsight .NET SDK finden Sie im Abschnitt [Benutzerdefinierte Bereitstellung von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

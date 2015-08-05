@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management" 
-   ms.date="04/13/2015"
+   ms.date="07/15/2015"
    ms.author="mihaelab"/>
 
 #Ausführen von Notfallwiederherstellungsverfahren
@@ -81,6 +81,4 @@ Die Notfallwiederherstellungsverfahren werden unter Verwendung eines parallelen 
 
 - Führen Sie das Verfahren aus, indem Sie die Anwendungsintegrität nach der Wiederherstellung sicherstellen (Verbindungszeichenfolgen, Anmeldungen, grundlegende Funktionstests oder andere Überprüfungen, die Teil der Standardabmeldeverfahren von Anwendungen sind).
 
- 
-
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

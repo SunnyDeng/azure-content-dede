@@ -274,4 +274,4 @@ In diesem einfachen Beispiel haben Sie Übertragungsbenachrichtigungen an alle I
 [Übersicht über Signale]: http://msdn.microsoft.com/library/windows/apps/hh779719.aspx
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -3,7 +3,7 @@
     pageTitle="Hochladen eines benutzerdefinierten Images für Azure RemoteApp"
     description="Erfahren Sie, wie Sie ein benutzerdefiniertes Image für Azure RemoteApp hochladen." 
     services="remoteapp" 
-    solutions="" documentationCenter="" 
+	documentationCenter="" 
     authors="ericorman" 
     manager="mbaldwin" />
 
@@ -52,4 +52,4 @@ Nachdem Sie Ihr benutzerdefiniertes Vorlagenimage erstellt oder aktualisiert hab
 - Wenn die VHD-Datei beim Upload ausgesperrt wird, kopieren oder verschieben Sie sie an den neuen Speicherort, und wiederholen Sie den Upload. Möglicherweise verhindern bestimmte Windows-Prozesse den Upload.  
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

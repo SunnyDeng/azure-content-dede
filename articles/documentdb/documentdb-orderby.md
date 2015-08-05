@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/06/2015" 
+	ms.date="07/19/2015" 
 	ms.author="arramac"/>
 
 # Sortieren von DocumentDB-Daten mit "Order By"
@@ -176,4 +176,4 @@ Verwenden Sie das [Github-Beispielprojekt](https://github.com/Azure/azure-docume
 * [DocumentDB-"Order By"-Beispiele](https://github.com/Azure/azure-documentdb-net/tree/master/samples/orderby)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

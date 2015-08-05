@@ -33,9 +33,9 @@ Die gefilterten Sicherungssätze werden dann basierend auf den folgenden Attribu
 - **Typ** – Sicherungssätze können lokale Momentaufnahmen oder Cloud-Momentaufnahmen sein. Eine lokale Momentaufnahme ist eine Sicherung aller Volumedaten, die auf dem lokalen Gerät gespeichert ist, während die Sicherung von Volumedaten in der Cloud als Cloud-Momentaufnahme bezeichnet wird. Lokale Momentaufnahmen bieten schnelleren Zugriff, während Cloud-Momentaufnahmen für Datenstabilität ausgewählt werden.
 - **Initiiert von** – die Sicherungen können automatisch nach einem Zeitplan oder manuell durch einen Benutzer initiiert werden. (Sie können eine Sicherungsrichtlinie verwenden, um Sicherungen zu planen. Es ist aber auch möglich, mithilfe der Option **Sicherung erstellen** eine interaktive Sicherung durchzuführen.)
 
-## Wiederherstellen von Geräten aus einer Sicherung
+## So stellen Sie Ihr StorSimple-Volume aus einer Sicherung wieder her
 
-Sie können Ihr Gerät mithilfe der Seite **Sicherungskatalog** aus einem bestimmten Sicherungssatz wiederherstellen. Beachten Sie dabei, dass das Volume durch die Wiederherstellung auf den Zustand zum Zeitpunkt der Sicherung zurückgesetzt wird. Alle Daten, die nach dem Sicherungsvorgang hinzugefügt wurden, gehen verloren.
+Sie können Ihr StorSimple-Volume mithilfe der Seite **Sicherungskatalog** aus einer bestimmten Sicherung wiederherstellen. Beachten Sie dabei, dass das Volume durch die Wiederherstellung auf den Zustand zum Zeitpunkt der Sicherung zurückgesetzt wird. Alle Daten, die nach dem Sicherungsvorgang hinzugefügt wurden, gehen verloren.
 
 > [AZURE.WARNING]Beim Wiederherstellen aus einer Sicherung werden die vorhandenen Volumes durch die Sicherung ersetzt. Dadurch können Daten verloren gehen, die nach dem Erstellen der Sicherung geschrieben wurden.
 
@@ -56,7 +56,7 @@ Sie können Ihr Gerät mithilfe der Seite **Sicherungskatalog** aus einem bestim
 
 3. Erweitern Sie einen Sicherungssatz, um die zugehörigen Volumes anzuzeigen. Diese Volumes müssen auf dem Host und dem Gerät offline geschaltet werden, bevor sie wiederhergestellt werden können. Greifen Sie auf der Seite **Volumecontainer** auf die Volumes zu, und führen Sie dann die Schritte in [Offlineschalten eines Volumes](storsimple-manage-volumes.md#take-a-volume-offline) durch, um diese offline zu schalten.
 
-    >  [AZURE.IMPORTANT]Vergewissern Sie sich, dass die Volumes auf dem Host offline sind, bevor Sie diese auf dem Gerät offline schalten. Wenn Sie diese Volumes nicht zunächst auf dem Host offline schalten, schaltet der StorSimple-Manager-Dienst diese automatisch auf dem Host offline. Dies kann möglicherweise zu Schäden an den Daten führen.
+    >  [AZURE.IMPORTANT]Vergewissern Sie sich, dass die Volumes auf dem Host offline sind, bevor Sie diese auf dem Gerät offline schalten. Wenn Sie die Volumes auf dem Host nicht offline schalten, kann es zur Beschädigung von Daten kommen.
 
 4. Navigieren Sie zurück zur Registerkarte **Sicherungskatalog**, und wählen Sie einen Sicherungssatz aus.
 
@@ -74,4 +74,4 @@ Sie können Ihr Gerät mithilfe der Seite **Sicherungskatalog** aus einem bestim
 
 Erfahren Sie, wie Sie [StorSimple-Volumes verwalten](storsimple-manage-volumes.md).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

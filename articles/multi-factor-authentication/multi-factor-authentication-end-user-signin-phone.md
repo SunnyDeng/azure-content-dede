@@ -38,4 +38,4 @@ Im Folgenden wird der Vorgang für Multi-Factor Authentication mit dem Büro- od
 
 <li>Sie sollten jetzt angemeldet sein.</li>
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

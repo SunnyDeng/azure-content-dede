@@ -26,4 +26,4 @@ Um einen mobilen Dienst lokal mit Clients zu testen, die auf einem Emulator, ein
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

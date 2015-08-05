@@ -188,4 +188,4 @@ Die .NET-API-Referenzen sind hier verfügbar:
 - [Referenz zur Ereignisprozessorhost-API](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.aspx)
 - 
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

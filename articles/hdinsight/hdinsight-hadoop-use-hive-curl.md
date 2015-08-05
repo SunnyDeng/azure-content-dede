@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Verwenden von Hadoop Pig mit HDInsight Curl | Microsoft Azure"
+   pageTitle="Verwenden von Hadoop Hive mit Curl in HDInsight | Microsoft Azure"
    description="Erfahren Sie, wie Sie Pig-Aufträge mithilfe von Curl remote an HDInsight übermitteln."
    services="hdinsight"
    documentationCenter=""
@@ -119,7 +119,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
 		azure storage blob download <container-name> <blob-name> <destination-file>
 
-	> [AZURE.NOTE]Sie müssen entweder den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE\\_STORAGE\\_ACCOUNT** und **AZURE\\_STORAGE\\_ACCESS\\_KEY** festlegen. Weitere Informationen finden Sie unter<a href="hdinsight-upload-data.md" target="_blank".
+	> [AZURE.NOTE]Sie müssen entweder den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** festlegen. Weitere Informationen finden Sie unter<a href="hdinsight-upload-data.md" target="_blank".
 
 6. Verwenden Sie die folgenden Anweisungen zum Erstellen einer neuen "internen" Tabelle namens **errorLogs**.
 
@@ -189,4 +189,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

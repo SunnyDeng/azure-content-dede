@@ -1,22 +1,23 @@
-<properties 
-	pageTitle="Anfügen eines Datenträgers an einen virtuellen Computer | Azure" 
-	description="Erfahren Sie, wie Sie einen Datenträger an einen virtuellen Azure-Computer anfügen und initialisieren können, damit er betriebsbereit ist." 
-	services="virtual-machines, storage" 
-	documentationCenter="" 
-	authors="KBDAzure" 
-	manager="timlt" 
-	editor="tysonn"/>
+<properties
+	pageTitle="Anfügen eines Datenträgers an einen virtuellen Computer | Azure"
+	description="Erfahren Sie, wie Sie einen Datenträger an einen virtuellen Azure-Computer anfügen und initialisieren können, damit er betriebsbereit ist."
+	services="virtual-machines, storage"
+	documentationCenter=""
+	authors="KBDAzure"
+	manager="timlt"
+	editor="tysonn"
+	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-windows" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/24/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/16/2015"
 	ms.author="kathydav"/>
 
-# Anfügen eines Datenträgers an einen Windows-Computer
+# Anfügen eines Datenträgers an einen virtuellen Windows-Computer
 
 Sie können leere Datenträger und Datenträger mit Daten anfügen. In beiden Fällen sind die Datenträger eigentlich VHD-Dateien, die sich in einem Azure-Speicherkonto befinden. Außerdem müssen Sie in beiden Fällen den Datenträger nach dem Anfügen initialisieren, damit er verwendet werden kann.
 
@@ -42,8 +43,14 @@ Sie können leere Datenträger und Datenträger mit Daten anfügen. In beiden F�
 
 	![Volume erfolgreich initialisiert](./media/storage-windows-attach-disk/newvolumecreated.png)
 
-> [AZURE.NOTE]Die Größe des virtuellen Computers bestimmt, wie viele Datenträger Sie anfügen können. Einzelheiten dazu finden Sie hier: [Clouddienste und Größe virtueller Computer](https://msdn.microsoft.com/library/azure/dn197896.aspx).
+> [AZURE.NOTE]Die Größe des virtuellen Computers bestimmt, wie viele Datenträger Sie anfügen können. Ausführliche Informationen finden Sie unter [Größen für virtuelle Computer](virtual-machines-size-specs.md).
+
+## Zusätzliche Ressourcen
+
+[Trennen eines Datenträgers von einem virtuellen Computer unter Windows](storage-windows-detach-disk.md)
+
+[Informationen zu Datenträgern und VHDs für virtuelle Computer](virtual-machines-disks-vhds.md)
 
 [logon]: virtual-machines-log-on-windows-server.md
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

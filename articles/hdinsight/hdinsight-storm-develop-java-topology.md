@@ -42,7 +42,7 @@ Bei der Installation von Java und dem JDK können die folgenden Umgebungsvariabl
 
 	* **JAVA_HOME** (oder den entsprechenden Pfad)
 
-	* **JAVA_HOME\\bin** (oder den entsprechenden Pfad)
+	* **JAVA_HOME\bin** (oder den entsprechenden Pfad)
 
 	* Das Verzeichnis, in dem Maven installiert ist.
 
@@ -58,17 +58,17 @@ Das Verzeichnis **WordCount** enthält die folgenden Elemente:
 
 * **pom.xml**: enthält Einstellungen für das Maven-Projekt.
 
-* **src\\main\\java\\com\\microsoft\\example**: enthält den Anwendungscode.
+* **src\main\java\com\microsoft\example**: enthält den Anwendungscode.
 
-* **src\\test\\java\\com\\microsoft\\example**: enthält Tests für die Anwendung. In diesem Beispiel werden keine Tests erstellt.
+* **src\test\java\com\microsoft\example**: enthält Tests für die Anwendung. In diesem Beispiel werden keine Tests erstellt.
 
 ###Entfernen des Beispielcodes
 
 Da unsere Anwendung von Grund auf neu erstellt wird, löschen Sie die generierten Test- und Anwendungsdateien:
 
-*  **src\\test\\java\\com\\microsoft\\example\\AppTest.java**
+*  **src\test\java\com\microsoft\example\AppTest.java**
 
-*  **src\\main\\java\\com\\microsoft\\example\\App.java**
+*  **src\main\java\com\microsoft\example\App.java**
 
 ##Hinzufügen von Abhängigkeiten
 
@@ -153,7 +153,7 @@ Um die Anforderungen für das Einrichten von externen Datenquellen zu verringern
 >
 > * <a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm-Kafka:</a> ein Spout, der Dateien aus Kafka liest
 
-Erstellen Sie für den Spout eine neue Datei namens **RandomSentenceSpout.java** im Verzeichnis **src\\main\\java\\com\\microsoft\\example**, und verwenden Sie Folgendes als Inhalt:
+Erstellen Sie für den Spout eine neue Datei namens **RandomSentenceSpout.java** im Verzeichnis **src\main\java\com\microsoft\example**, und verwenden Sie Folgendes als Inhalt:
 
     /**
      * Licensed to the Apache Software Foundation (ASF) under one
@@ -251,7 +251,7 @@ Bolts übernehmen die Datenverarbeitung. In dieser Topologie gibt es zwei Bolts:
 
 > [AZURE.NOTE]Bolts können alle Aufgaben übernehmen, beispielsweise Berechnungen, Persistenz oder Kommunikation mit externen Komponenten.
 
-Erstellen Sie zwei neue Dateien, **SplitSentence.java** und **WordCount.Java**, im Verzeichnis **src\\main\\java\\com\\microsoft\\example**. Fügen Sie den folgenden Inhalt in die Dateien ein:
+Erstellen Sie zwei neue Dateien, **SplitSentence.java** und **WordCount.Java**, im Verzeichnis **src\main\java\com\microsoft\example**. Fügen Sie den folgenden Inhalt in die Dateien ein:
 
 **SplitSentence**
 
@@ -285,7 +285,7 @@ Erstellen Sie zwei neue Dateien, **SplitSentence.java** und **WordCount.Java**, 
           //get the word
           String word=sentence.substring(start,end);
           //If a word is whitespace characters, replace it with empty
-          word=word.replaceAll("\\s+","");
+          word=word.replaceAll("\s+","");
           //if it's an actual word, emit it
           if (!word.equals("")) {
             collector.emit(new Values(word));
@@ -352,7 +352,7 @@ Nachfolgend sehen Sie eine einfache Darstellung des Komponentendiagramms für di
 
 ![Diagramm mit der Anordnung von Spouts und Bolts](./media/hdinsight-storm-develop-java-topology/wordcount-topology.png)
 
-Erstellen Sie zum Implementieren der Topologie eine neue Datei namens **WordCountTopology.java** im Verzeichnis **src\\main\\java\\com\\microsoft\\example**. Fügen Sie den folgenden Inhalt in die Datei ein:
+Erstellen Sie zum Implementieren der Topologie eine neue Datei namens **WordCountTopology.java** im Verzeichnis **src\main\java\com\microsoft\example**. Fügen Sie den folgenden Inhalt in die Datei ein:
 
 	package com.microsoft.example;
 
@@ -466,4 +466,4 @@ Sie haben erfahren, wie Sie eine Storm-Topologie mit Java erstellen. Nun lernen 
 
 Weitere Beispiel-Storm-Topologien finden Sie unter [Beispieltopologien für Storm auf HDInsight](hdinsight-storm-example-topology.md).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

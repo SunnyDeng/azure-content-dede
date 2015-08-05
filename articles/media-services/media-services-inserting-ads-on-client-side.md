@@ -804,4 +804,4 @@ Das folgende Beispiel zeigt, wie eine Mid-Roll-Overlay-Werbeeinblendung geplant 
 
 [Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md) [Introduction to the Azure Media Player Framework for iOS](https://channel9.msdn.com/Series/Windows-Azure-Media-Services-Tutorials/An-introduction-to-Azure-Media-Player-Framework-for-IOS) ("Einführung in Azure Media Player Framework für iOS", in englischer Sprache)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

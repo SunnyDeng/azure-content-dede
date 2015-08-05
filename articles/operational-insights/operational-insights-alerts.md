@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/02/2015"
+   ms.date="07/21/2015"
    ms.author="banders" />
 
 
@@ -56,4 +56,6 @@ Im Dashboard **Alert Management** können Sie alle Warnungen anzeigen, die Micro
 3. Klicken Sie auf eine Kachel oder ein Element, um detaillierte Informationen auf der Seite **Search** anzuzeigen.
 4. Anhand der gefundenen Informationen können Sie die Warnung untersuchen und zusätzliche Aktionen ermitteln, die Sie zur Fehlerbehebung durchführen müssen.
 
-<!---HONumber=July15_HO2-->
+[AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
+
+<!---HONumber=July15_HO4-->

@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure" 
-	description="In Azure können Sie SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in fünf Phasen bereitstellen." 
+<properties
+	pageTitle="Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure"
+	description="In Azure können Sie SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in fünf Phasen bereitstellen."
 	documentationCenter=""
-	services="virtual-machines" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	services="virtual-machines"
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/05/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="05/05/2015"
 	ms.author="josephd"/>
 
 # Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure
@@ -29,7 +29,7 @@ Dieses Thema enthält Links zu schrittweisen Anweisungen für die Bereitstellung
 Hier die Konfiguration mit Platzhalternamen für die Server:
 
 ![](./media/virtual-machines-workload-intranet-sharepoint-overview/workload-spsqlao_05.png)
- 
+
 Zwei Computer pro Rolle stellen eine hohe Verfügbarkeit sicher. Alle virtuellen Computer befinden sich in der gleichen Region. Jede Gruppe virtueller Computer einer bestimmten Rolle befindet sich in einer eigenen Verfügbarkeitsgruppe.
 
 Sie stellen diese Konfiguration in den folgenden Phasen bereit:
@@ -46,7 +46,7 @@ Die Konfiguration dieser vordefinierten Architektur wird Phase für Phase in ein
 
 Berücksichtigen Sie Folgendes:
 
-- Als erfahrener SharePoint-Implementierer können Sie die Anweisungen in den Phasen 3 bis 5 gerne abwandeln und die für Ihre Ansprüche optimale Farm erstellen. 
+- Als erfahrener SharePoint-Implementierer können Sie die Anweisungen in den Phasen 3 bis 5 gerne abwandeln und die für Ihre Ansprüche optimale Farm erstellen.
 - Wenn Sie bereits über eine Azure Hybrid Cloud-Implementierung verfügen, können Sie die Anweisungen in Phase 1 und 2 anpassen oder auch überspringen, um die neue SharePoint-Farm im entsprechenden Subnetz bereitzustellen.
 - Alle Server befinden sich im gleichen Subnetz des virtuellen Azure-Netzwerks. Wenn Sie zusätzliche Sicherheit ähnlich der Subnetzisolierung bereitstellen möchten, verwenden Sie [Netzwerksicherheitsgruppen](https://msdn.microsoft.com/library/azure/dn848316.aspx).
 
@@ -69,4 +69,4 @@ Zum Starten der Konfiguration für diese Arbeitsauslastung gehen Sie zu [Phase 1
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

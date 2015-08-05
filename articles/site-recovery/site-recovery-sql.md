@@ -436,4 +436,4 @@ Bei SQL-Standardclustern ist für das Failback nach einem nicht geplanten Failov
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

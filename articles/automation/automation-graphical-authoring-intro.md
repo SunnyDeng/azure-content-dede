@@ -280,4 +280,4 @@ Daten, die von einer Aktivität ohne ausgehende Verknüpfung erstellt werden, we
 - [Automation-Objekte](http://msdn.microsoft.com/library/azure/dn939988.aspx)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

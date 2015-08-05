@@ -608,4 +608,4 @@ Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforde
 [Aufrufen einer benutzerdefinierten API aus dem Client]: mobile-services-html-call-custom-api.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

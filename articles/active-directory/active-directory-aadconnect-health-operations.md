@@ -87,4 +87,4 @@ Beim Löschen einer Dienstinstanz sind folgende Punkte zu beachten:
 1. Bestätigen Sie den Dienstnamen, indem Sie ihn in das Bestätigungsfeld eingeben (Beispiel: sts.contoso.com). 
 1. Klicken Sie auf die Schaltfläche "Löschen".
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

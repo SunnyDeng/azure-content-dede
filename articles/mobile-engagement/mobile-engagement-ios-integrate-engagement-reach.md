@@ -24,7 +24,7 @@
 
 ### Einbetten des Engagement Reach-SDK in Ihr iOS-Projekt
 
--   Fügen Sie das Reach-SDK in Ihr Xcode-Projekt ein. Wechseln Sie in Xcode zur **Project \\> Add to project**, und wählen Sie den Ordner `EngagementReach`.
+-   Fügen Sie das Reach-SDK in Ihr Xcode-Projekt ein. Wechseln Sie in Xcode zur **Project \> Add to project**, und wählen Sie den Ordner `EngagementReach`.
 
 ### Ändern des Anwendungsdelegaten
 
@@ -458,4 +458,4 @@ Wie bei der erweiterten Benachrichtigungsanpassung wird empfohlen, sich den Quel
 			@end
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

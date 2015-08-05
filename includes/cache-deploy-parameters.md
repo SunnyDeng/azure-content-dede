@@ -49,4 +49,4 @@ Die Redis-Serverversion des neuen Caches.
       "defaultValue": "2.8"
     }
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

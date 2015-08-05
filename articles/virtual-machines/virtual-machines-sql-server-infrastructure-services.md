@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services" 
-	ms.date="04/17/2015"
+	ms.date="07/17/2015"
 	ms.author="jroth"/>
 
 # SQL Server auf virtuellen Azure-Computern
@@ -26,7 +26,9 @@ Sie können [SQL Server auf virtuellen Azure-Computern][sqlvmlanding] in einer V
 ## Bereitstellen einer SQL Server-Instanz auf einem einzelnen virtuellen Computer
 Sobald Sie [einen virtuellen Azure-Computer mithilfe des Azure-Verwaltungsportals][createvmportal] (in englischer Sprache) oder eine Automatisierung erstellt haben, installieren Sie eine beliebige SQL Server-Instanz, für die Sie eine Lizenz besitzen. Sie müssen jedoch zusätzliche Schritte zum [Einrichten der Verbindung][setupconnectivity] zwischen dem SQL Server-Computer und anderen Clientcomputern ausführen.
  
-Sie können auch eines der vielen verschiedenen Images virtueller SQL Server-Computer aus dem Katalog installieren. Diese Images enthalten in den Preisen für den virtuellen Computer SQL Server-Lizenzen. Weitere Informationen finden Sie unter [Bereitstellen eines virtuellen Computers mit SQL Server auf Azure][provisionsqlvm].
+Sie können auch eines der vielen verschiedenen Images virtueller SQL Server-Computer aus dem Katalog installieren. Diese Images enthalten in den Preisen für den virtuellen Computer SQL Server-Lizenzen. Weitere Informationen und die Konfigurationsschritte für die Verbindungsherstellung finden Sie unter [Bereitstellen eines virtuellen Computers mit SQL Server auf Azure][provisionsqlvm].
+
+Nachdem Ihr virtueller SQL Server-Computer eingerichtet wurde und ausgeführt wird, empfiehlt es sich, vorhandene Datenbanken auf den Computer zu migrieren. Weitere Informationen zur Datenbankmigration finden Sie unter [Migrieren einer Datenbank nach SQL Server auf einer Azure-VM](virtual-machines-migrate-onpremises-database.md).
 
 ## Bereitstellen einer hochverfügbaren Konfiguration mit mehreren virtuellen Computern
 Sie können hohe Verfügbarkeit für SQL Server mithilfe von SQL Server-AlwaysOn-Verfügbarkeitsgruppen erreichen. Dies beinhaltet mehrere Azure-VMs in einem virtuellen Netzwerk. Das Azure-Vorschauportal bietet eine Vorlage, die diese Konfiguration für Sie einrichtet. Weitere Informationen finden Sie unter [SQL Server AlwaysOn Offering in Microsoft Azure Portal Gallery][sqlalwaysonportal] (in englischer Sprache). Sie können [eine AlwaysOn-Verfügbarkeitsgruppe auch manuell konfigurieren][sqlalwaysonmanual]. Weitere Informationen finden Sie unter [Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern][sqlhadr].
@@ -35,21 +37,23 @@ Sie können hohe Verfügbarkeit für SQL Server mithilfe von SQL Server-AlwaysOn
 Sie können häufig verwendete SQL Server-Arbeitslasten auf virtuellen Azure-Computern ausführen. SQL Server bietet einige optimierte VM-Images im Katalog. Dazu gehören Images für [Business Intelligence][sqlbi], [Data Warehousing][sqldw] und [OLTP][sqloltp].
 
 ## Migrieren Ihrer Daten
-Es gibt mehrere Möglichkeiten zum Migrieren der Daten zu virtuellen Azure-Computern, auf denen SQL Server ausgeführt wird. Stellen Sie zuerst über das Azure-Verwaltungsportal, PowerShell-Automatisierung oder den Bereitstellungs-Assistenten von SQL Server Management Studio einen virtuellen SQL Server-Computer bereit. Optimierte SQL Server-Images enthalten Lizenzen im Preismodell. Sie können jedoch auch SQL Server mit eigener Lizenz installieren. Zum Migrieren der Daten stehen Ihnen mehrere Optionen zur Verfügung, z. B. mithilfe des Bereitstellungs-Assistenten oder durch die Migration eines Datenträgers zum virtuellen Zielcomputer. Weitere Informationen finden Sie unter [Bereit für die Migration zu SQL Server auf Azure-Virtuellen Computern][migratesql].
+Nachdem Ihr virtueller SQL Server-Computer eingerichtet wurde und ausgeführt wird, empfiehlt es sich, vorhandene Datenbanken auf den Computer zu migrieren. Es gibt verschiedene Methoden, aber der Bereitstellungs-Assistent in SQL Server Management Studio eignet sich gut für die meisten Szenarien. Eine Erläuterung der Szenarios und ein Lernprogramm für den Assistenten finden Sie unter [Migrieren einer Datenbank nach SQL Server auf einer Azure-VM](virtual-machines-migrate-onpremises-database.md).
 
 ## Sichern und Wiederherstellen
 Bei lokalen Datenbanken kann Azure als sekundäres Datencenter zum Speichern von SQL Server-Sicherungsdateien fungieren. Die [SQL Server-URL-Sicherung][backupurl] speichert Azure-Backupdateien im Azure-Blob-Speicher. Mithilfe von [SQL Server Managed Backup][managedbackup] können Sie eine Sicherung und Archivierung in Azure planen. Diese Dienste können mit lokalen SQL Server-Instanzen oder SQL Server auf virtuellen Azure-Computern verwendet werden. Azure-VMs können auch [automatisierte Sicherungen][autobackup] und [automatische Anwendung von Patches][autopatching] für SQL Server nutzen. Weitere Informationen finden Sie unter [Verwaltungsaufgaben für SQL Server auf virtuellen Azure-Computern][managementtasks].
 
-## Zusätzliche Ressourcen:
+## Ressourcen:
 [SQL Server auf virtuellen Azure-Computern][sqlmsdnlanding]
 
+[Bereitstellen eines virtuellen Computers mit SQL Server auf Azure][provisionsqlvm]
+
 [Erste Schritte mit SQL Server auf virtuellen Azure-Computern][sqlvmgetstarted]
+
+[Migrieren einer Datenbank zu SQL Server auf einer Azure-VM](virtual-machines-migrate-onpremises-database.md)
 
 [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure][sqlperf]
 
 [Sicherheitsüberlegungen für SQL Server auf virtuellen Azure-Computern][sqlsecurity]
-
-[Technische Artikel zu SQL Server auf virtuellen Azure-Computern][technicalarticles]
 
   [sqlvmlanding]: http://azure.microsoft.com/services/virtual-machines/sql-server/
   [sqldbcompared]: http://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas
@@ -74,4 +78,4 @@ Bei lokalen Datenbanken kann Azure als sekundäres Datencenter zum Speichern von
   [sqlsecurity]: https://msdn.microsoft.com/library/azure/dn133147.aspx
   [technicalarticles]: https://msdn.microsoft.com/library/azure/dn248435.aspx
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

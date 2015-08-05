@@ -33,7 +33,7 @@ Für dieses Projekt verwenden wir das Chat-Beispiel aus dem [Socket.IO GitHub-Re
 1.  Laden Sie eine [archivierte ZIP- oder GZ-Version][release] des Socket.IO-Projekts herunter (für dieses Dokument wurde Version 1.3.5 verwendet).
 
 
-3.  Extrahieren Sie das Archiv, und kopieren Sie das Verzeichnis **examples\\chat** in ein neues Verzeichnis. Beispiel: **\\node\\chat**.
+3.  Extrahieren Sie das Archiv, und kopieren Sie das Verzeichnis **examples\chat** in ein neues Verzeichnis. Beispiel: **\node\chat**.
 
 ## Ändern von "app.js" und Installieren von Modulen
 
@@ -57,7 +57,7 @@ Für dieses Projekt verwenden wir das Chat-Beispiel aus dem [Socket.IO GitHub-Re
 		  "socket.io": "1.3.5"
 		}
 
-4. Wechseln Sie über die Befehlszeile in das Verzeichnis **\\node\\chat**, und verwenden Sie npm, um die von dieser Anwendung benötigten Module zu installieren:
+4. Wechseln Sie über die Befehlszeile in das Verzeichnis **\node\chat**, und verwenden Sie npm, um die von dieser Anwendung benötigten Module zu installieren:
 
         npm install
 
@@ -76,7 +76,7 @@ Befolgen Sie diese Schritte, um eine Azure-Web-App zu erstellen und dann die Git
 		azure site deployment user set [username] [password]
 
 
-3. Wechseln Sie zum Verzeichnis **\\node\\chat**, und erstellen Sie mit dem folgenden Befehl eine neue Azure-Web-App und ein lokales Git-Repository. Mit dem Befehl wird auch ein Git-Remoterepository namens 'azure' erstellt.
+3. Wechseln Sie zum Verzeichnis **\node\chat**, und erstellen Sie mit dem folgenden Befehl eine neue Azure-Web-App und ein lokales Git-Repository. Mit dem Befehl wird auch ein Git-Remoterepository namens 'azure' erstellt.
 
 		azure site create mysitename --git
 
@@ -125,7 +125,7 @@ Führen Sie die Schritte unter [Einen Cache erstellen in Azure Redis Cache](http
 
 ###Hinzufügen der Module "redis" und "socket.io-redis"
 
-1. Wechseln Sie über die Befehlszeile in das Verzeichnis __\\node\\chat__, und führen Sie folgenden Befehl aus:
+1. Wechseln Sie über die Befehlszeile in das Verzeichnis __\node\chat__, und führen Sie folgenden Befehl aus:
 
 		npm install socket.io-redis@0.1.4 redis@0.12.1 --save
 
@@ -151,7 +151,7 @@ Führen Sie die Schritte unter [Einen Cache erstellen in Azure Redis Cache](http
 
 ###Übergeben der Änderungen und erneutes Bereitstellen
 
-Verwenden Sie in der Befehlszeile im Verzeichnis __\\node\\chat__ die folgenden Befehle, um die Änderungen zu übergeben und die Anwendung erneut bereitzustellen.
+Verwenden Sie in der Befehlszeile im Verzeichnis __\node\chat__ die folgenden Befehle, um die Änderungen zu übergeben und die Anwendung erneut bereitzustellen.
 
 	git add .
 	git commit -m "implementing scale out"
@@ -283,4 +283,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine Chat-Anwendung erstellt wird
 [pricing]: /pricing/details/web-sites/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

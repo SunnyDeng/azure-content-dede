@@ -370,4 +370,4 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 - Klicken Sie auf **Löschen**, und wählen Sie alle Datenträger des virtuellen Computers aus.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

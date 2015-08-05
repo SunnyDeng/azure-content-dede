@@ -133,4 +133,4 @@ Weitere Informationen finden Sie unter folgenden Links:
 [1]: ./media/search-build-prototype/azsearch-datafiles.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

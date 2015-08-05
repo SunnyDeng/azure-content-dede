@@ -42,9 +42,9 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 	* __pom.xml__: Das Projektobjektmodell ([POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)) enthält Informationen und Konfigurationsdetails für das Erstellen des Projekts.
 
-	* __src__: Das Verzeichnis, das das Verzeichnis __main\\java\\com\\microsoft\\examples__ enthält, in dem Sie die Anwendung erstellen.
+	* __src__: Das Verzeichnis, das das Verzeichnis __main\java\com\microsoft\examples__ enthält, in dem Sie die Anwendung erstellen.
 
-3. Löschen Sie die Datei __src\\test\\java\\com\\microsoft\\examples\\apptest.java__, da sie in diesem Beispiel nicht verwendet wird.
+3. Löschen Sie die Datei __src\test\java\com\microsoft\examples\apptest.java__, da sie in diesem Beispiel nicht verwendet wird.
 
 ##Aktualisieren des Projektobjektmodells
 
@@ -103,7 +103,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 		  </plugins>
 		</build>
 
-	Damit wird eine Ressource (__conf\\hbase-site.xml__,) konfiguriert, die die Konfigurationsinformationen für HBase enthält.
+	Damit wird eine Ressource (__conf\hbase-site.xml__,) konfiguriert, die die Konfigurationsinformationen für HBase enthält.
 
 	> [AZURE.NOTE]Sie können die Konfigurationswerte auch per Code festlegen. Wie Sie das tun, erfahren Sie in den Kommentaren im Beispiel __CreateTable__ weiter unten.
 
@@ -155,13 +155,13 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 	Diese Datei wird zum Laden der HBase-Konfiguration für einen HDInsight-Cluster verwendet.
 
-	> [AZURE.NOTE]Das ist eine sehr minimale Datei vom Typ "hbase-site.xml", und sie enthält Mindesteinstellungen für den HDInsight-Cluster. Eine vollständige Version der Konfigurationsdatei "hbase-site.xml", die von HDInsight verwendet wird, finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-management-portal.md#rdp). Die Datei "hbase-site.xml" befindet sich im Verzeichnis "C:\\apps\\dist\\hbase-&lt;Versionsnummer>-hadoop2\\conf". Der Dateiteil mit der Versionsnummer des Dateipfads ändert sich, wenn HBase auf dem Cluster aktualisiert wird.
+	> [AZURE.NOTE]Das ist eine sehr minimale Datei vom Typ "hbase-site.xml", und sie enthält Mindesteinstellungen für den HDInsight-Cluster. Eine vollständige Version der Konfigurationsdatei "hbase-site.xml", die von HDInsight verwendet wird, finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-management-portal.md#rdp). Die Datei "hbase-site.xml" befindet sich im Verzeichnis "C:\apps\dist\hbase-&lt;Versionsnummer>-hadoop2\conf". Der Dateiteil mit der Versionsnummer des Dateipfads ändert sich, wenn HBase auf dem Cluster aktualisiert wird.
 
 3. Speichern Sie die Datei __hbase-site.xml__.
 
 ##Erstellen der Anwendung
 
-1. Wechseln Sie zum Verzeichnis __hbaseapp\\src\\main\\java\\com\\microsoft\\examples__, und benennen Sie die Datei "app.java" in __CreateTable.java__ um.
+1. Wechseln Sie zum Verzeichnis __hbaseapp\src\main\java\com\microsoft\examples__, und benennen Sie die Datei "app.java" in __CreateTable.java__ um.
 
 2. Öffnen Sie die Datei __CreateTable.java__, und ersetzen Sie die vorhandenen Inhalte mit Folgendem:
 
@@ -231,7 +231,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 3. Speichern Sie die Datei __CreateTable.java__.
 
-4. Erstellen Sie im Verzeichnis __hbaseapp\\src\\main\\java\\com\\microsoft\\examples__ eine Datei mit dem Namen __SearchByEmail.java__. Fügen Sie Folgendes als Inhalt der Datei hinzu:
+4. Erstellen Sie im Verzeichnis __hbaseapp\src\main\java\com\microsoft\examples__ eine Datei mit dem Namen __SearchByEmail.java__. Fügen Sie Folgendes als Inhalt der Datei hinzu:
 
 		package com.microsoft.examples;
 		import java.io.IOException;
@@ -308,7 +308,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 5. Speichern Sie die Datei __SearchByEmail.java__.
 
-6. Erstellen Sie im Verzeichnis __hbaseapp\\src\\main\\hava\\com\\microsoft\\examples__ eine Datei mit dem Namen __DeleteTable.java__. Fügen Sie Folgendes als Inhalt der Datei hinzu:
+6. Erstellen Sie im Verzeichnis __hbaseapp\src\main\hava\com\microsoft\examples__ eine Datei mit dem Namen __DeleteTable.java__. Fügen Sie Folgendes als Inhalt der Datei hinzu:
 
 		package com.microsoft.examples;
 		import java.io.IOException;
@@ -344,7 +344,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 	Damit werden etwaige frühere Erstellungsartefakte entfernt, alle noch nicht installierten Abhängigkeiten heruntergeladen und dann die Anwendung erstellt und gepackt.
 
-3. Nachdem dieser Befehl ausgeführt wurde, enthält das Verzeichnis __hbaseapp\\target__ eine Datei namens __hbaseapp-1.0-SNAPSHOT.jar__.
+3. Nachdem dieser Befehl ausgeführt wurde, enthält das Verzeichnis __hbaseapp\target__ eine Datei namens __hbaseapp-1.0-SNAPSHOT.jar__.
 
 	> [AZURE.NOTE]Die Datei __hbaseapp-1.0-SNAPSHOT.jar__ ist ein Uberjar (manchmal auch Fatjar genannt) mit allen Abhängigkeiten, die für das Ausführen der Anwendung erforderlich sind.
 
@@ -591,4 +591,4 @@ Ersetzen Sie __hdinsightclustername__ durch den Namen Ihres HDInsight-Clusters.
 
 Verwenden Sie den Parameter `-showErr`, wenn Sie den Standardfehler (STDERR) sehen möchten, der während der Ausführung des Auftrags erzeugt wurde.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

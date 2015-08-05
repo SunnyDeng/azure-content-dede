@@ -42,7 +42,7 @@ Gehen folgendermaßen Sie vor, um einen MongoDB-Cluster mithilfe einer Ressource
 
 ### Schritt 1-a: Herunterladen der Vorlagendateien mithilfe von PowerShell
 
-Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\\Azure\\Vorlagen\\MongoDB").
+Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\Azure\Vorlagen\MongoDB").
 
 Fügen Sie dabei den Namen Ihres lokalen Ordners ein, und führen Sie damit die folgenden Befehle aus:
 
@@ -103,7 +103,7 @@ Klonen Sie das komplette Vorlagen-Repository mithilfe eines Git-Clients Ihrer Wa
 
     git clone https://github.com/Azure/azure-quickstart-templates C:\Azure\Templates
 
-Sobald dies abgeschlossen ist, suchen Sie im Verzeichnis "C:\\Azure\\Vorlagen" nach dem Ordner **mongodb-high-availability**.
+Sobald dies abgeschlossen ist, suchen Sie im Verzeichnis "C:\Azure\Vorlagen" nach dem Ordner **mongodb-high-availability**.
 
 ### Schritt 2 (optional): Erlernen der Vorlagenparameter
 
@@ -655,7 +655,7 @@ Angeschlossene Datenträger werden als Teil der Aktivitäten zur Vorbereitung de
 
     bash ./vm-disk-utils-0.1.sh -b $DATA_DISKS -s
 
-**vm-disk-utils-0.1.sh** ist im Ordner **shared_scripts\\ubuntu** im GitHub-Repository "azure-quickstart-templates" enthalten und bietet nützliche Funktionen für die Bereitstellung von Datenträgern, die Formatierung und das Striping, die jedes Mal wiederverwendet werden können, wenn Sie ähnliche Aufgaben im Rahmen der Vorlagenerstellung ausführen müssen.
+**vm-disk-utils-0.1.sh** ist im Ordner **shared_scripts\ubuntu** im GitHub-Repository "azure-quickstart-templates" enthalten und bietet nützliche Funktionen für die Bereitstellung von Datenträgern, die Formatierung und das Striping, die jedes Mal wiederverwendet werden können, wenn Sie ähnliche Aufgaben im Rahmen der Vorlagenerstellung ausführen müssen.
 
 Ein weiteres interessantes Fragment ist das im Zusammenhang mit den VM-Erweiterungen CustomScriptForLinux. Diese werden als eigener Ressourcentyp mit einer Abhängigkeit in jeder Bereitstellungsvorlage für Clusterknoten installiert. Sie finden dieses Fragment am Ende jeder **member-resources-Dx.json**-Datei:
 
@@ -692,4 +692,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

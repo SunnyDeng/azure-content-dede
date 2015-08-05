@@ -5,7 +5,7 @@
    documentationCenter="NA"
    authors="TwoUnder"
    manager="barbkess"
-   editor=""/>
+   editor="JRJ@BigBangData.co.uk"/>
 
 <tags
    ms.service="sql-data-warehouse"
@@ -71,13 +71,15 @@ GO
 20150101,1,3
 ```
 
-Speichern Sie diese im lokalen temporären Verzeichnis unter "C:\\Temp\\DimDate2.txt".
+Speichern Sie diese im lokalen temporären Verzeichnis unter "C:\Temp\DimDate2.txt".
+
+> [AZURE.NOTE]Es ist wichtig, daran zu denken, dass bcp.exe die UTF-8-Codierung nicht unterstützt. Verwenden Sie ASCII-codierte Dateien oder die UTF-16-Codierung für Ihre Dateien, wenn Sie bcp.exe verwenden.
 
 ### Schritt 3: Herstellen einer Verbindung und Importieren von Daten
 Sie können mit bcp eine Verbindung herstellen und die Daten mit dem folgenden Befehl importieren (ersetzen Sie die Werte nach Bedarf):
 
 ```
-bcp DimDate2 in C:\Temp\DimDate2.txt -S <Server Name> -d <Database Name> -U <Username> -P <password> -q -w -t
+bcp DimDate2 in C:\Temp\DimDate2.txt -S <Server Name> -d <Database Name> -U <Username> -P <password> -q -c -t  ','
 ```
 
 Sie können überprüfen, ob die Daten geladen wurden, indem Sie wie zuvor eine Verbindung mit sqlcmd herstellen und den folgenden TSQL-Befehl ausführen:
@@ -112,7 +114,7 @@ In diesem Lernprogramm erstellen Sie eine Datendatei aus einer Tabelle in SQL Da
 Sie können mit dem Dienstprogramm bcp eine Verbindung herstellen und die Daten mit dem folgenden Befehl exportieren (ersetzen Sie die Werte nach Bedarf):
 
 ```
-bcp DimDate2 out C:\Temp\DimDate2_export.txt -S <Server Name> -d <Database Name> -U <Username> -P <password> -q -w -t
+bcp DimDate2 out C:\Temp\DimDate2_export.txt -S <Server Name> -d <Database Name> -U <Username> -P <password> -q -c -t ','
 ```
 Sie können überprüfen, ob die Daten ordnungsgemäß exportiert wurden, indem Sie die neue Datei öffnen. Die Daten in der Datei sollten mit folgendem Text übereinstimmen:
 
@@ -150,4 +152,4 @@ Eine Übersicht über das Laden finden Sie unter [Laden von Daten in SQL Data Wa
 <!--Other Web references-->
 [Microsoft Download Center]: http://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

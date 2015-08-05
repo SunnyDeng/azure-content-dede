@@ -25,4 +25,4 @@ Sie haben nun einen neuen mobilen Dienst erstellt, der von Ihren mobilen Apps ve
 <!-- URLs. -->
 [Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -28,7 +28,7 @@ Das folgende Beispiel zeigt, wie Sie den Azure-Speicher zur Speicherung von Bild
 2.  Das Azure SDK ist installiert.
 3.  Die JAR-Datei der Azure-Bibliotheken für Java und alle sonstigen JAR-Abhängigkeiten sind installiert und im Buildpfad Ihres Java-Compilers eingebunden. Weitere Informationen zur Installation der Azure-Bibliotheken für Java finden Sie auf der [Downloadseite des Azure-SDK für Java].
 4.  Ein Azure-Speicherkonto wurde eingerichtet. Der folgende Code verwendet Kontonamen und Kontoschlüssel des Speicherkontos. Unter [Erstellen eines Speicherkontos] finden Sie Informationen zum Einrichten von Speicherkonten, und unter [Verwalten von Speicherkonten] erfahren Sie, wie Sie Ihren Kontoschlüssel ermitteln können.
-5.  Sie haben eine lokale Bilddatei unter dem Pfad c:\\myimages\\image1.jpg erstellt. Alternativ können Sie den **FileInputStream**-Konstruktor im Beispiel verändern, um einen anderen Pfad bzw. Dateinamen zu verwenden.
+5.  Sie haben eine lokale Bilddatei unter dem Pfad c:\myimages\image1.jpg erstellt. Alternativ können Sie den **FileInputStream**-Konstruktor im Beispiel verändern, um einen anderen Pfad bzw. Dateinamen zu verwenden.
 
 [AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
@@ -106,7 +106,7 @@ Abrufen eines Verweises auf den Blockblob, der den Blob im Azure-Speicher reprä
 
 Verwenden Sie den **File**-Konstruktor, um einen Verweis auf die lokale Datei abzurufen, die Sie hochladen möchten. (Stellen Sie sicher, dass die Datei existiert, bevor Sie den Code ausführen.)
 
-    File fileReference = new File ("c:\\myimages\\image1.jpg");
+    File fileReference = new File ("c:\myimages\image1.jpg");
 
 Laden Sie die lokale Datei hoch, indem Sie die **CloudBlockBlob.upload**-Methode aufrufen. Der erste Parameter der **CloudBlockBlob.upload**-Methode ist ein **FileInputStream**-Objekt, das die lokale Datei repräsentiert, die in den Azure-Speicher hochgeladen wird. Der zweite Parameter ist die Dateigröße in Byte.
 
@@ -237,7 +237,7 @@ Es folgt der vollständige Code für dieses Beispiel. Vergessen Sie nicht, die P
                 // Upload an image file.
                 blob = container.getBlockBlobReference("image1.jpg");
 
-                File fileReference = new File("c:\\myimages\\image1.jpg");
+                File fileReference = new File("c:\myimages\image1.jpg");
                 blob.upload(new FileInputStream(fileReference), fileReference.length());
 
                 // At this point the image is uploaded.
@@ -368,4 +368,4 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
   [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

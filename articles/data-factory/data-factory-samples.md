@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/25/2015" 
+	ms.date="07/21/2015" 
 	ms.author="spelluru"/>
 
 # Azure Data Factory Editor – Beispiele
@@ -52,8 +52,8 @@ Name des Beispiels | description
 Erstellen der Profile von Kunden eines Spieleherstellers | Contoso ist ein Spielehersteller, der Spiele für mehrere Plattformen entwickelt: Spielekonsolen, mobile Geräte und PCs. Jedes dieser Spiele erzeugt Unmengen von Protokollen. Ziel von Contoso ist es, die von diesen Spielen generierten Protokolle zu erfassen und zu analysieren, um Nutzungsinformationen zu erhalten, Up-Selling- und Cross-Selling-Möglichkeiten zu ermitteln, neue spannende Features zu entwickeln usw. Der Hersteller möchte auf diese Weise sein Geschäft und die Kundenerfahrung verbessern. Bei diesem Beispiel werden Beispielprotokolle gesammelt, verarbeitet und durch Verweisdaten ergänzt. Die Daten werden zur Bewertung der Effektivität einer vor Kurzem von Contoso gestarteten Marketingkampagne transformiert.
  
 ## Beispiele für GitHub
-Das [Azure-DataFactory-Repository auf GitHub](https://github.com/azure/azure-datafactory) enthält mehrere Beispiele, mit deren Hilfe Sie den Azure Data Factory-Dienst rasch in Betrieb nehmen können. Sie können die Skripts auch ändern, um sie in eigenen Anwendungen zu verwenden. Der Ordner "Samples\\JSON" enthält JSON-Codeausschnitte für gängige Szenarien.
+Das [Azure-DataFactory-Repository auf GitHub](https://github.com/azure/azure-datafactory) enthält mehrere Beispiele, mit deren Hilfe Sie den Azure Data Factory-Dienst rasch in Betrieb nehmen können. Sie können die Skripts auch ändern, um sie in eigenen Anwendungen zu verwenden. Der Ordner "Samples\JSON" enthält JSON-Codeausschnitte für gängige Szenarien.
 
 [data-factory-get-started]: data-factory-get-started.md#CreateDataFactory
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -1,7 +1,8 @@
 <properties 
 	pageTitle="Advanced Analytics Process and Technology (ADAPT) in Aktion: Verwenden von Hadoop-Clustern | Microsoft Azure" 
-	description="Verwenden von ADAPT (Advanced Analytics Process and Technology) für ein End-to-End-Szenario mit einem HDInsight Hadoop-Cluster zum Entwickeln und Bereitstellen eines Modells unter Verwendung eines öffentlich zugänglichen Datasets." 
-	services="machine-learning,hdinsight"
+	description="Verwenden von ADAPT (Advanced Analytics Process and Technology) für ein End-to-End-Szenario mit einem HDInsight Hadoop-Cluster zum Entwickeln und Bereitstellen eines Modells unter Verwendung eines öffentlich zugänglichen Datasets."  
+	services="machine-learning,hdinsight" 
+	solutions="" 
 	documentationCenter="" 
 	authors="bradsev" 
 	manager="paulettm" 
@@ -809,4 +810,4 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts werden von Micro
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

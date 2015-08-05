@@ -66,4 +66,4 @@ Datenverträge sind die empfohlene Lösung zum Sicherstellen der Kompatibilität
 [Weiterführende Themen](service-fabric-application-upgrade-advanced.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

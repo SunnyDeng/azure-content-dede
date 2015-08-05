@@ -28,4 +28,4 @@
 Die Seite **Sicherungsrichtlinien** wird aktualisiert, um die Änderungen an der Richtlinie zu speichern.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

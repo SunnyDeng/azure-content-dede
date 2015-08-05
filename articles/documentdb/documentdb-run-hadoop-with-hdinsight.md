@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="06/11/2015" 
+	ms.date="07/20/2015" 
 	ms.author="anhoh"/>
 
 #<a name="DocumentDB-HDInsight"></a>Ausführen eines Hadoop-Auftrags mit DocumentDB und HDInsight
@@ -40,17 +40,20 @@ Sie haben nicht die Zeit, das gesamte Lernprogramm zu bearbeiten und möchten le
 
 <table border='1'>
 	<tr><th>Hadoop-Connector-Version</th>
-		<td>1.0.0</td></tr>
+		<td>1.1.0</td></tr>
 	<tr><th>Skript-URI</th>
 		<td>https://portalcontent.blob.core.windows.net/scriptaction/documentdb-hadoop-installer-v03.ps1</td></tr>
 	<tr><th>Änderungsdatum</th>
-		<td>11.06.2015</td></tr>
+		<td>07/20/2015</td></tr>
 	<tr><th>Unterstützte HDInsight-Versionen</th>
 		<td>3.1, 3.2.</td></tr>
 	<tr><th>Änderungsprotokoll</th>
-		<td>Kompatibilität des festen Connectors mit dem <a href="https://www.microsoft.com/download/details.aspx?id=40886">Microsoft Hive ODBC-Treiber</a></br>
-			Funktion zum Ändern des Angebots der Ausgabesammlung (Standardmäßig S3-Angebot).</br>
-			Geringfügige Fehler behoben</br>
+		<td>DocumentDB-Java-SDK auf 1.1.0 aktualisiert</br>
+			Zusätzlichen Ausgabeparameter für benutzerdefinierte Indizierungspfade entfernt</br>
+			Optionalen Parameter für die benutzerdefinierte Zeichenfolgengenauigkeit hinzugefügt (standardmäßig&#160;-1)</br>
+			6/11/2015</br>
+			Fehler bei Kompatibilität des Connectors mit <a href="https://www.microsoft.com/download/details.aspx?id=40886">Microsoft Hive ODBC-Treiber</a> behoben</br>
+			Funktion zum Ändern des Angebotstyps der Ausgabesammlung hinzugefügt (standardmäßig S3-Angebot)</br>
 		</td></tr>
 </table>
 
@@ -467,4 +470,4 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [powershell-install-configure]: ../install-configure-powershell.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

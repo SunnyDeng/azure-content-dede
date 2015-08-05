@@ -55,7 +55,7 @@ Die folgende Tabelle enthält Name und Beschreibung der verfügbaren Medienproze
     <tr>
         <td>Azure Media Packager</td>
         <td>Konvertiert Medienobjekte von .mp4 in das Smooth Streaming-Format. Konvertiert außerdem Medienobjekte vom Smooth Streaming-Format in das Apple HTTP Live Streaming (HLS)-Format.</td>
-		<td><a href="http://msdn.microsoft.com/library/hh973635.aspx">Aufgabenvoreinstellungen für den Azure Media Packager</a></td>
+		<td><a href="http://msdn.microsoft.com/library/hh973635.aspx">Systemvoreinstellungen für den Azure Media Packager</a></td>
     </tr>
     <tr>
         <td>Azure Media Encryptor</td>
@@ -127,4 +127,4 @@ Sie sind nun in der Lage, eine Medienprozessor-Instanz zu erstellen, und können
 [Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/library/jj129582.aspx
 [How to: Connect to Media Services Programmatically]: ../media-services-rest-connect_programmatically/
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

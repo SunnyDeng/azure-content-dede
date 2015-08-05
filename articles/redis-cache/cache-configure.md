@@ -138,4 +138,4 @@ Weitere Informationen zu Redis-Befehlen finden Sie unter [http://redis.io/comman
 ## Nächste Schritte
 -	Weitere Informationen zum Verwenden von Redis-Befehlen finden Sie unter [Wie führe ich Redis-Befehle aus?](cache-faq.md#how-can-i-run-redis-commands).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

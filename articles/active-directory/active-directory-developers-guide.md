@@ -132,4 +132,4 @@ In diesen allgemeinen Präsentationen zur Entwicklung von Apps mit Azure Active 
 
 - **[Azure AD auf Twitter](https://twitter.com/azuread)**: Azure AD-Ankündigungen mit einer Länge von maximal 140 Zeichen.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

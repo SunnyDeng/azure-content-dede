@@ -777,4 +777,4 @@ Eventuell sind für Sie auch folgende Muster interessant, wenn Sie in den Anwend
 - Seite [Transactions in Redis](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Transactions.md) (in englischer Sprache) im GitHub-Repository StackExchange.Redis.
 - Seite [Data Partitioning Guidance](http://msdn.microsoft.com/library/dn589795.aspx) (in englischer Sprache) auf der Microsoft-Website.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

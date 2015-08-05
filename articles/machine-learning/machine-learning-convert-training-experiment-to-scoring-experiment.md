@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/21/2015" 
+	ms.date="07/10/2015" 
 	ms.author="garye"/>
 
 #Konvertieren eines Machine Learning-Trainingsexperiments in ein Bewertungsexperiment
@@ -54,7 +54,7 @@ Wenn Sie dieses Trainingsexperiment in ein Bewertungsexperiment konvertieren, we
 
 - **Prep** – Abhängig von den zum Bewerten übermittelten Daten können diese Module zum Verarbeiten der eingehenden Daten erforderlich sein oder auch nicht.
 
-	In diesem Beispiel können etwa im Beispiel-DataSet Werte fehlen und Spalten enthalten sein, die zum Trainieren des Modells nicht benötigt werden. Das Modul **Clean Missing Data** wurde für den Umgang mit fehlenden Werten eingeschlossen, und das Modul [Project Columns][project-columns] wurde eingeschlossen, um diese zusätzlichen Spalten aus dem Datenfluss auszuschließen. Wenn Sie wissen, dass in den zum Bewerten durch den Webdienst übermittelten Daten keine Werte fehlen, können Sie das Modul **Clean Missing Data** entfernen. Da das Modul [Project Columns][project-columns] beim Festlegen der bewerteten Funktionen hilft, muss dieses Modul beibehalten werden.
+	In diesem Beispiel können etwa im Beispiel-DataSet Werte fehlen und Spalten enthalten sein, die zum Trainieren des Modells nicht benötigt werden. Das Modul [Clean Missing Data][clean-missing-data] wurde für den Umgang mit fehlenden Werten eingeschlossen, und das Modul [Project Columns][project-columns] wurde eingeschlossen, um diese zusätzlichen Spalten aus dem Datenfluss auszuschließen. Wenn Sie wissen, dass in den zum Bewerten durch den Webdienst übermittelten Daten keine Werte fehlen, können Sie das Modul [Clean Missing Data][clean-missing-data] entfernen. Da das Modul [Project Columns][project-columns] beim Festlegen der bewerteten Funktionen hilft, muss dieses Modul beibehalten werden.
 
 - **Train** – Sobald das Modell erfolgreich trainiert wurde, speichern Sie es als einzelnes Modul des trainierten Modells. Anschließend ersetzen Sie diese einzelnen Module durch das gespeicherte trainierte Modell.
 
@@ -132,4 +132,4 @@ Weitere Informationen zum vollständigen Veröffentlichungsprozess finden Sie un
 [writer]: https://msdn.microsoft.com/library/azure/7a391181-b6a7-4ad4-b82d-e419c0d6522c/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

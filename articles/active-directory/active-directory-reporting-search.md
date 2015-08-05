@@ -28,7 +28,7 @@ Um für einen bestimmten Benutzer nach Aktivitäts- oder Überwachungsereignisse
 
 Es werden noch nicht alle Berichte in die Suchergebnisse einbezogen. Diese Tabelle gibt an, welche Berichte enthalten sind.
 
-|	Bericht |	Enthalten |
+|	Bericht |	Included |
 |	------												|	--------			|
 |	Anmeldungen aus unbekannten Quellen |	Nein |
 |	Anmeldungen nach mehreren Fehlern |	Nein |
@@ -55,4 +55,4 @@ Es werden noch nicht alle Berichte in die Suchergebnisse einbezogen. Diese Tabel
  - [Azure Active Directory-Berichte](active-directory-view-access-usage-reports.md)
  - [Azure Active Directory-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

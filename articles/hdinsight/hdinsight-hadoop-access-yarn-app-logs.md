@@ -3,7 +3,7 @@
 	description="Greifen Sie programmgesteuert auf Anwendungsprotokolle auf einem Hadoop-Cluster in HDInsight zu." 
 	services="hdinsight" 
 	documentationCenter="" 
-	authors="bradsev" 
+	authors="mumian" 
 	manager="paulettm" 
 	editor="cgronlun"/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/31/2015" 
-	ms.author="bradsev"/>
+	ms.date="07/09/2015" 
+	ms.author="jgao"/>
 
 # Programmgesteuerter Zugriff auf YARN-Anwendungsprotokolle in Hadoop in HDInsight
 
@@ -115,7 +115,7 @@ die auf die neu definierten APIs im folgenden Code verweisen. Mit dem folgenden 
 Mit dem "Application History"-Client können Sie abgeschlossene Anwendungen auflisten, Anwendungen basierend auf Ihren Kriterien filtern und relevante Anwendungsprotokolle herunterladen. Der folgende Codeausschnitt zeigt, wie dies programmgesteuert erfolgt:
 
 	// Local download folder location where the logs will be placed
-	string downloadLocation = "E:\\YarnApplicationLogs";
+	string downloadLocation = "E:\YarnApplicationLogs";
 	
 	// List completed applications on your cluster that were submitted in the last 24 hours but failed
 	// Search for applications based on application name
@@ -173,4 +173,4 @@ Bei Bedarf können Sie auch Protokolle für jeden Container (oder einen bestimmt
 [YARN-concepts]: http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/15/2015"
+   ms.date="07/09/2015"
    ms.author="seanmck"/>
 
 # Auswählen eines Frameworks für den Dienst
@@ -35,6 +35,5 @@ Bedenken Sie, dass es durchaus sinnvoll ist, verschiedenen Frameworks für versc
 
 - [Erfahren Sie mehr über Reliable Actors-APIs](service-fabric-reliable-actors-introduction.md)
 - [Erfahren Sie mehr über Reliable Services-APIs](../Service-Fabric/service-fabric-reliable-services-introduction.md)
- 
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

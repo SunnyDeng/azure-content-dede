@@ -208,4 +208,4 @@ Das Wiederholungsintervall (**retryInterval**) ist das Intervall zwischen den Wi
  [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

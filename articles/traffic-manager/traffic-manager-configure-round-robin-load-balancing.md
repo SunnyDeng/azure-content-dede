@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Konfigurieren der Traffic Manager-Lastenausgleichsmethode &quot;Roundrobin&quot;"
-   description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Lastenausgleichsmethode &quot;Roundrobin&quot; für Ihre Traffic Manager-Endpunkte."
+   pageTitle="Konfigurieren der Traffic Manager-Lastenausgleichsmethode ";Roundrobin";"
+   description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Lastenausgleichsmethode ";Roundrobin"; für Ihre Traffic Manager-Endpunkte."
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
@@ -50,4 +50,4 @@ Ein gängiges Lastenausgleichsmuster besteht darin, eine Reihe identischer Endpu
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

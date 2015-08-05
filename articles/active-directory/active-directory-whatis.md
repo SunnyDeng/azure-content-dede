@@ -92,4 +92,4 @@ Wir haben viele hervorragende Ressourcen online gestellt, in denen Sie alles Wis
 - [Nutzung der Cloud zum Erweitern und Überwachen lokaler Identitätssysteme](https://msdn.microsoft.com/library/azure/dn906722.aspx)
 - [Umfassende standardbasierte Plattform für Entwickler](https://msdn.microsoft.com/library/azure/ff800682.aspx)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

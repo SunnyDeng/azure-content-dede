@@ -63,7 +63,7 @@ Für solche Szenarios haben wir Unterstützung für konfigurierbare Leerlauftime
  
 Abrufen Ihrer Leerlauftimeout-Konfiguration
 
-	PS C:> Get-AzureVM –ServiceName “MyService” –Name “MyVM” | Get-AzureEndpoint
+	PS C:\> Get-AzureVM –ServiceName “MyService” –Name “MyVM” | Get-AzureEndpoint
 	VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
 	LBSetName : MyLoadBalancedSet
 	LocalPort : 80
@@ -166,4 +166,4 @@ Aktualisieren der Konfiguration der angegebenen Eingabeendpunkte mit Lastenausgl
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

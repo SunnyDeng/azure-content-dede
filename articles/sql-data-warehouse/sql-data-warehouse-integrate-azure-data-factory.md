@@ -52,4 +52,4 @@ Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Inte
 <!--Other Web references-->
 [Azure Data Factory-Dokumentation]: https://azure.microsoft.com/documentation/services/data-factory/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

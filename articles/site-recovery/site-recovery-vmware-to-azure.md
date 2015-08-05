@@ -55,7 +55,7 @@ Sie benötigen Folgendes:
 **Komponente** | **Bereitstellung** | **Details**
 --- | --- | ---
 **Konfigurationsserver** | <p>Die Bereitstellung erfolgt als virtueller Standard-A3-Azure-Computer in demselben Abonnement wie Site Recovery.</p> <p>Sie führen die Einrichtung im Site Recovery-Portal durch.</p> | Dieser Server koordiniert die Kommunikation zwischen geschützten Computern, dem Prozessserver und den Masterzielservern in Azure. Bei einem Failover richtet er die Replikation ein und koordiniert die Wiederherstellung in Azure.
-**Masterzielserver** | <p>Die Bereitstellung erfolgt als virtueller Azure-Computer – Entweder als Windows-Server, der auf einem Windows Server 2012 R2-Galerie-Image basiert (zum Schutz von Windows-Computern), oder als Linux-Server, der auf einem OpenLogic CentOS 6.6-Galerie-Image basiert (zum Schutz von Linux-Computern).</p> <p>Es stehen zwei Größenoptionen zur Verfügung – Standard A3 und Standard D14.<p><p>Der Server ist mit demselben Azure-Netzwerk verbunden wie der Konfigurationsserver.</p><p>Sie führen die Einrichtung im Site Recovery-Portal durch.</p> | <p>Er empfängt replizierte Daten von Ihren geschützten Computern und speichert sie mithilfe der angefügten virtuellen Festplatten, die im Blob-Speicher in Ihrem Azure-Speicherkonto erstellt wurden.</p>   
+**Masterzielserver** | <p>Die Bereitstellung erfolgt als virtueller Azure-Computer – Entweder als Windows-Server, der auf einem Windows Server 2012 R2-Galerie-Image basiert (zum Schutz von Windows-Computern), oder als Linux-Server, der auf einem OpenLogic CentOS 6.6-Galerie-Image basiert (zum Schutz von Linux-Computern).</p> <p>Es stehen zwei Größenoptionen zur Verfügung – Standard A4 und Standard D14.<p><p>Der Server ist mit demselben Azure-Netzwerk verbunden wie der Konfigurationsserver.</p><p>Sie führen die Einrichtung im Site Recovery-Portal durch.</p> | <p>Er empfängt replizierte Daten von Ihren geschützten Computern und speichert sie mithilfe der angefügten virtuellen Festplatten, die im Blob-Speicher in Ihrem Azure-Speicherkonto erstellt wurden.</p>   
 **Prozessserver** | <p>Die Bereitstellung erfolgt als lokaler virtueller oder physischer Server mit Windows Server 2012 R2</p> <p>Es wird empfohlen, diesen in demselben Netzwerk und LAN-Segment zu platzieren, in dem sich auch die zu schützenden Computer befinden. Er kann jedoch auch in einem anderen Netzwerk ausgeführt werden, solange die geschützten Computer über L3-Netzwerksichtbarkeit verfügen.<p>Die Einrichtung des Servers und seine Registrierung beim Konfigurationsserver führen Sie im Site Recovery-Portal durch.</p> | <p>Geschützte Computer senden Replikationsdaten an den lokalen Prozessserver. Der Server verfügt über einen datenträgerbasierten Cache zum Zwischenspeichern der empfangenen Replikationsdaten. Er führt eine Reihe von Aktionen für diese Daten aus.</p><p>Er optimiert die Daten, indem er sie vor dem Senden an den Masterzielserver zwischenspeichert, komprimiert und verschlüsselt.</p><p>Er behandelt die Pushinstallation des Mobilitätsdiensts.</p><p>Er führt die automatische Ermittlung virtueller VMware-Computer durch.</p>
 **Lokale Computer** | Lokale virtuelle Computer auf einem VMware-Hypervisor oder physische Server, auf denen Windows oder Linux ausgeführt wird. | Sie richten Replikationseinstellungen für virtuelle Computer und Server ein. Failover können für einzelne Computer durchgeführt werden, häufiger erfolgen sie jedoch im Rahmen eines Wiederherstellungsplans mit gemeinsamem Failover mehrerer virtueller Computer.
 **Mobilitätsdienst** | <p>Wird auf jedem virtuellen Computer oder physischen Server installiert, den Sie schützen möchten.</p><p>Kann manuell installiert oder vom Prozessserver automatisch per Pushfunktion installiert werden. | Der Dienst erstellt eine VSS-Momentaufnahme der Daten auf jedem geschützten Computer und verschiebt sie auf den Prozessserver, der sie wiederum auf dem Masterzielserver repliziert.
@@ -238,7 +238,7 @@ In der Grafik sind die Bereitstellungsschritte zusammengefasst.
 
     >[AZURE.WARNING]Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Konfigurationsservers erstellt wurden, nicht ändern oder löschen.
 
-Der Konfigurationsserver wird in einem automatisch erstellten Azure-Clouddienst mit einer reservierten IP-Adresse bereitgestellt. Die reservierte Adresse ist erforderlich, um sicherzustellen, dass die IP-Adresse des Konfigurationsserver-Clouddiensts nach Neustarts der virtuellen Computer (einschließlich des Konfigurationsservers) im Clouddienst gleich bleibt. Wenn der Konfigurationsserver außer Betrieb gesetzt wird und die Reservierung der öffentlichen IP-Adresse nicht manuell rückgängig gemacht wird, bleibt die öffentliche IP-Adresse reserviert. Standardmäßig sind bis zu 20 reservierte öffentliche IP-Adressen pro Abonnement zulässig. [Weitere Informationen](https://msdn.microsoft.com/library/azure/dn630228.aspx) über reservierte IP-Adressen.
+Der Konfigurationsserver wird in einem automatisch erstellten Azure-Clouddienst mit einer reservierten IP-Adresse bereitgestellt. Die reservierte Adresse ist erforderlich, um sicherzustellen, dass die IP-Adresse des Konfigurationsserver-Clouddiensts nach Neustarts der virtuellen Computer (einschließlich des Konfigurationsservers) im Clouddienst gleich bleibt. Wenn der Konfigurationsserver außer Betrieb gesetzt wird und die Reservierung der öffentlichen IP-Adresse nicht manuell rückgängig gemacht wird, bleibt die öffentliche IP-Adresse reserviert. Standardmäßig sind bis zu 20 reservierte öffentliche IP-Adressen pro Abonnement zulässig. [Weitere Informationen](../virtual-network/virtual-networks-reserved-private-ip.md) über reservierte IP-Adressen.
 
 ### Registrieren des Konfigurationsservers im Tresor
 
@@ -323,19 +323,6 @@ Beachten Sie Folgendes:
 - Bei einer VPN-Verbindung wird die interne IP-Adresse des Servers zusammen mit den Ports des privaten Endpunkts verwendet.
 - Es kann nur einmal entschieden werden, ob die Verbindung (zum Senden von Steuerungs- und Replikationsdaten) der lokalen Server mit den verschiedenen unter Azure ausgeführten Komponentenservern (Konfigurationsserver, Masterzielserver) über ein VPN oder über das Internet erfolgt. Sie können diese Einstellung später nicht ändern. Wenn Sie die Einstellung ändern, müssen Sie das Szenario erneut bereitstellen und die Computer erneut schützen.  
 
-#### Konfigurieren einer VPN-Verbindung (optional) 
-
-Wenn Sie eine VPN- oder ExpressRoute-Verbindung verwenden möchten, gehen Sie wie folgt vor:
-
-1. Hier erhalten Sie weitere Informationen, wenn derzeit keine Verbindung eingerichtet ist:
-
-	- [ExpressRoute or VPN - What's right for me (in englischer Sprache)](http://azure.microsoft.com/blog/2014/06/10/expressroute-or-virtual-network-vpn-whats-right-for-me/)
-	- [Konfigurieren eines Standort-zu-Standort-VPNs im Verwaltungsportal](../vpn-gateway-site-to-site-create.md)
-	- [Konfigurieren von ExpressRoute](../expressroute-configuring-exps.md)
-2. Klicken Sie im Tresor auf **Server** > **Konfigurationsserver** > Konfigurationsserver > **Konfigurieren**.
-3. Stellen Sie in **Verbindungseinstellungen** sicher, dass **Verbindungstyp** auf **VPN** festgelegt ist. Wenn Sie ein VPN eingerichtet haben und vom lokalen Standort aus keinen Internetzugriff besitzen, stellen Sie sicher, dass Sie die VPN-Option auswählen. Andernfalls kann der Prozessserver keine Replikationsdaten an den Masterzielserver an den öffentlichen Endpunkten senden.
-
-	![VPN aktivieren](./media/site-recovery-vmware-to-azure/ASRVMWare_EnableVPN.png)
 
 ## Schritt 3: Bereitstellen des Masterzielservers
 
@@ -400,12 +387,12 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 
 2. Kopieren Sie die heruntergeladene ZIP-Datei auf den Server, auf dem Sie den Prozessserver installieren möchten. Die ZIP-Datei enthält zwei Installationsdateien:
 
-	- Microsoft-ASR_CX_TP_8.2.0.0_Windows*
-	- Microsoft-ASR_CX_8.2.0.0_Windows*
+	- Microsoft-ASR_CX_TP_8.3.0.0_Windows*
+	- Microsoft-ASR_CX_8.3.0.0_Windows*
 
 3. Entpacken Sie das Archiv, und kopieren Sie die Installationsdateien in einen Speicherort auf dem Server.
-4. Führen Sie die Installationsdatei **Microsoft-ASR_CX_TP_8.2.0.0_Windows*** aus, und folgen Sie den Anweisungen. Dadurch werden die Drittanbieterkomponenten installiert, die für die Bereitstellung erforderlich sind.
-5. Führen Sie dann **Microsoft-ASR_CX_8.2.0.0_Windows*** aus.
+4. Führen Sie die Installationsdatei **Microsoft-ASR_CX_TP_8.3.0.0_Windows*** aus, und folgen Sie den Anweisungen. Dadurch werden die Drittanbieterkomponenten installiert, die für die Bereitstellung erforderlich sind.
+5. Führen Sie dann **Microsoft-ASR_CX_8.3.0.0_Windows*** aus.
 6. Wählen Sie auf der Seite **Servermodus** die Option **Prozessserver** aus.
 
 	![Serverauswahlmodus](./media/site-recovery-vmware-to-azure/ASRVMWare_ProcessServerSelection.png)
@@ -450,7 +437,7 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 
 Wenn Sie beim Registrieren des Prozessservers die Signaturüberprüfung für den Mobilitätsdienst nicht deaktiviert haben, können Sie dies später nachholen:
 
-1. Melden Sie sich beim Prozessserver als Administrator an, und öffnen Sie die Datei "C:\pushinstallsvc\pushinstaller.conf", um sie zu bearbeiten. Fügen Sie im Abschnitt **[PushInstaller.transport\]** die folgende Zeile hinzu: **SignatureVerificationChecks="0"**. Speichern und schließen Sie die Datei.
+1. Melden Sie sich beim Prozessserver als Administrator an, und öffnen Sie die Datei "C:\pushinstallsvc\pushinstaller.conf", um sie zu bearbeiten. Fügen Sie im Abschnitt **[PushInstaller.transport]** die folgende Zeile hinzu: **SignatureVerificationChecks="0"**. Speichern und schließen Sie die Datei.
 2. Starten Sie den InMage PushInstall-Dienst neu.
 
 
@@ -467,10 +454,10 @@ Sie erhalten die Updates im Site Recovery-**Dashboard **. Extrahieren Sie für e
 Wenn Sie virtuelle Computer oder physische Server ausführen, auf denen der Mobilitätsdienst bereits installiert ist, können Sie die Updates für den Dienst wie folgt abrufen:
 
 - Laden Sie die Updates für den Dienst wie folgt herunter:
-	- [Windows](http://download.microsoft.com/download/7/C/7/7C70CA53-2D8E-4FE0-BD85-8F7A7A8FA163/Microsoft-ASR_UA_8.3.0.0_Windows_GA_03Jul2015_release.exe)
-	- [RHELP6-64](http://download.microsoft.com/download/B/4/5/B45D1C8A-C287-4339-B60A-70F2C7EB6CFE/Microsoft-ASR_UA_8.3.0.0_RHEL6-64_GA_03Jul2015_release.tar.gz)
-	- [OL6-64](http://download.microsoft.com/download/9/4/8/948A2D75-FC47-4DED-B2D7-DA4E28B9E339/Microsoft-ASR_UA_8.3.0.0_OL6-64_GA_03Jul2015_release.tar.gz)
-	- [SLES11-SP3-64](http://download.microsoft.com/download/6/A/2/6A22BFCD-E978-41C5-957E-DACEBD43B353/Microsoft-ASR_UA_8.3.0.0_SLES11-SP3-64_GA_03Jul2015_release.tar.gz)
+	- [Windows Server (nur 64 Bit)](http://download.microsoft.com/download/7/C/7/7C70CA53-2D8E-4FE0-BD85-8F7A7A8FA163/Microsoft-ASR_UA_8.3.0.0_Windows_GA_03Jul2015_release.exe)
+	- [CentOS 6.4,6.5,6.6 (nur 64 Bit)](http://download.microsoft.com/download/B/4/5/B45D1C8A-C287-4339-B60A-70F2C7EB6CFE/Microsoft-ASR_UA_8.3.0.0_RHEL6-64_GA_03Jul2015_release.tar.gz)
+	- [Oracle Enterprise Linux 6.4,6.5 (nur 64 Bit)](http://download.microsoft.com/download/9/4/8/948A2D75-FC47-4DED-B2D7-DA4E28B9E339/Microsoft-ASR_UA_8.3.0.0_OL6-64_GA_03Jul2015_release.tar.gz)
+	- [SUSE Linux Enterprise Server SP3 (nur 64 Bit)](http://download.microsoft.com/download/6/A/2/6A22BFCD-E978-41C5-957E-DACEBD43B353/Microsoft-ASR_UA_8.3.0.0_SLES11-SP3-64_GA_03Jul2015_release.tar.gz)
 - Alternativ können Sie nach dem Aktualisieren des Prozessservers die aktualisierte Version des Mobilitätsdiensts aus dem Ordner "C:\pushinstallsvc\repository" auf dem Prozessserver abrufen.
 
 
@@ -534,7 +521,7 @@ Beim Hinzufügen von Computern zu einer Schutzgruppe wird der Mobilitätsdienst 
 
 **Automatische Pushinstallation des Mobilitätsdiensts auf Windows-Servern:**
 
-1. Installieren Sie die neuesten Updates für den Prozessserver wie in [Schritt 5: Installieren der neuesten Updates\](#latest updates) beschrieben, und stellen Sie sicher, dass der Prozessserver verfügbar ist. 
+1. Installieren Sie die neuesten Updates für den Prozessserver wie in [Schritt 5: Installieren der neuesten Updates](#latest updates) beschrieben, und stellen Sie sicher, dass der Prozessserver verfügbar ist. 
 2. Stellen Sie sicher, dass eine Netzwerkverbindung zwischen dem Quellcomputer und dem Prozessserver besteht und dass der Prozessserver Zugriff auf den Quellcomputer hat.  
 3. Konfigurieren Sie die Windows-Firewall so, dass die **Datei- und Druckerfreigabe** und die **Windows-Verwaltungsinstrumentation** erlaubt werden. Wählen Sie in den Einstellungen der Windows-Firewall die Option "Eine App oder ein Feature durch die Windows-Firewall zulassen" aus, und wählen Sie die in der folgenden Abbildung dargestellten Anwendungen aus. Für Computer, die einer Domäne angehören, können Sie die Firewallrichtlinie mit einem Gruppenrichtlinienobjekt konfigurieren.
 
@@ -545,7 +532,7 @@ Beim Hinzufügen von Computern zu einer Schutzgruppe wird der Mobilitätsdienst 
 
 **Automatische Pushinstallation des Mobilitätsdiensts auf Linux-Servern:**
 
-1. Installieren Sie die neuesten Updates für den Prozessserver wie in [Schritt 5: Installieren der neuesten Updates\](#latest updates) beschrieben, und stellen Sie sicher, dass der Prozessserver verfügbar ist.
+1. Installieren Sie die neuesten Updates für den Prozessserver wie in [Schritt 5: Installieren der neuesten Updates](#latest updates) beschrieben, und stellen Sie sicher, dass der Prozessserver verfügbar ist.
 2. Stellen Sie sicher, dass eine Netzwerkverbindung zwischen dem Quellcomputer und dem Prozessserver besteht und dass der Prozessserver Zugriff auf den Quellcomputer hat.  
 3. Stellen Sie sicher, dass das Konto einem Root-Benutzer auf dem Linux-Quellserver entspricht.
 4. Stellen Sie sicher, dass die Datei "/etc/hosts" auf dem Linux-Quellserver Einträge enthält, die den Namen des lokalen Hosts IP-Adressen zuordnen, die allen NICs zugeordnet sind.
@@ -596,7 +583,7 @@ Die Softwarepakete zum Installieren des Mobilitätsdiensts befinden sich auf dem
 
 7. Geben Sie die Passphrase für den Konfigurationsserver an, und klicken Sie auf **OK**, um den Mobilitätsdienst beim Konfigurationsserver zu registrieren.
 
-**So führen Sie dies über die Befehlszeile aus:**
+**So führen Sie dies über die Befehlszeile aus**:
 
 1. Kopieren Sie die Passphrase vom CX-Server in die Datei "C:\connection.passphrase" auf dem Server, und führen Sie diesen Befehl aus. In unserem Beispiel lautet die IP-Adresse des CX-Servers 104.40.75.37, und der HTTPS-Port lautet 62519:
 
@@ -760,4 +747,4 @@ The information in Section B is regarding Third Party Code components that are b
 
 The complete file may be found on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=530254). Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -72,7 +72,7 @@ Wenn nur ein oder zwei davon, jedoch nicht alle drei, aufgeführt werden, entfer
 ### 2. Verfahren: Überprüfen, ob die richtigen Lösungen in Ihren Direct Agent heruntergeladen werden
 >[AZURE.NOTE]Wenn Sie nur Operations Manager verwenden, können Sie dieses Verfahren ignorieren.
 
-Im Direct Agent sollte die Zwischenspeicherung der Richtlinie für die Lösungsdatensammlung unter **C:\\Programme\\Microsoft Monitoring Agent\\Agent\\Health Service State\\Management Packs** angezeigt werden.
+Im Direct Agent sollte die Zwischenspeicherung der Richtlinie für die Lösungsdatensammlung unter **C:\Programme\Microsoft Monitoring Agent\Agent\Health Service State\Management Packs** angezeigt werden.
 
 
 ### 3. Verfahren: Überprüfen, ob Daten an den Advisor-Dienst gesendet werden (oder ob dies zumindest versucht wird)
@@ -145,4 +145,4 @@ Melden Sie sich im OpInsights-Portal an, und navigieren Sie von der Seite „Üb
 
 Diese Seite bietet zudem Messungsinformationen (hierbei wird nicht der Index der Protokollsuche, sondern das Abrechnungssystem verwendet, und die Daten werden alle paar Stunden aktualisiert) über die an den Dienst gesendeten Datenmengen, aufgeschlüsselt nach Lösung.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

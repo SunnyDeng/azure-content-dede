@@ -152,4 +152,4 @@ Neben dem vom Cluster aus gestarteten Hadoop-Befehl stehen eine Vielzahl von Mö
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

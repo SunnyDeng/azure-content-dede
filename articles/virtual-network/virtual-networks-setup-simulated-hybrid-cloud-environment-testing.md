@@ -69,13 +69,13 @@ Erstellen Sie zunächst ein neues virtuelles Netzwerk mit dem Namen TestVNET.
 1.	Klicken Sie in der Taskleiste des Azure-Verwaltungsportals auf **Neu > Network Services > Virtual Network > Benutzerdefiniert erstellen**.
 2.	Geben Sie auf der Seite „Details zum virtuellen Netzwerk“ unter **Name** den Namen **TestVNET** ein.
 3.	Wählen Sie unter **Speicherort** den entsprechenden Speicherort aus.
-4.	Klicken Sie auf den Pfeil „Weiter“.
+4.	Klicken Sie auf den „Weiter“-Pfeil.
 5.	Geben Sie auf der Seite "DNS-Server und VPN-Konnektivität" unter **DNS-Server** > **Name auswählen oder eingeben** den Namen **DC1** ein , und klicken Sie dann auf den Pfeil für "Weiter".
 6.	Führen Sie auf der Seite „Virtuelle Netzwerkadressräume“ folgende Schritte aus:
 	- Wählen Sie unter **Adressraum** > **Start-IP** die **IP 192.168.0.0** aus, oder geben Sie sie ein.
 	- Klicken Sie unter **Subnetze** auf **Subnetz-1**, und ersetzen Sie den Namen durch **TestSubnet**. 
 	- Klicken Sie in der Spalte **CIDR (Anzahl Adressen)** für TestSubnet auf **/24 (256)**.
-7.	Klicken Sie auf das Symbol „Fertig stellen“. Warten Sie, bis das virtuelle Netzwerk erstellt ist, bevor Sie fortfahren.
+7.	Klicken Sie auf das Symbol „Abgeschlossen“. Warten Sie, bis das virtuelle Netzwerk erstellt ist, bevor Sie fortfahren.
 
 Befolgen Sie anschließend die Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md), um Azure PowerShell auf dem lokalen Computer zu installieren.
 
@@ -85,7 +85,7 @@ Sie können die Eindeutigkeit des Namens mit diesem Azure PowerShell-Befehl auf 
 
 	Test-AzureName -Service <Proposed cloud service name>
 
-Wenn dieser Befehl „False“ zurückgibt, ist der vorgeschlagene Name eindeutig. Erstellen Sie den Cloud-Dienst mit dem folgenden Befehl.
+Wird von diesem Befehl „False“ zurückgegeben, ist der vorgeschlagene Name eindeutig. Erstellen Sie den Cloud-Dienst mit dem folgenden Befehl.
 
 	New-AzureService -Service <Unique cloud service name> -Location "<Same location name as your virtual network>"
 
@@ -170,9 +170,9 @@ Melden Sie sich anschließend bei dem neuen virtuellen Computer für DC2 an.
 2.	Klicken Sie in der Taskleiste auf **Verbinden**. 
 3.	Wenn Sie zum Öffnen von DC2.rdp aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
-5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, verwenden Sie:
-- Name: **DC2**[Name des lokalen Administratorkontos\]
-- Kennwort: [Kennwort des lokalen Administratorkontos\]
+5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
+- Name: **DC2\**[Name des lokalen Administratorkontos]
+- Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
 Konfigurieren Sie anschließend eine Windows-Firewall-Regel, um Datenverkehr zum Testen der allgemeinen Konnektivität zuzulassen. Führen Sie in der Windows PowerShell-Eingabeaufforderung von DC2 die folgenden Befehle auf Administratorebene aus.
@@ -273,4 +273,4 @@ Setzen Sie anschließend den vorinstallierten Schlüssel für beide Gateways auf
 Klicken Sie anschließend auf der Seite "Netzwerk" im Azure-Verwaltungsportal auf das virtuelle Netzwerk **TestLab** und anschließend in der Taskleiste auf **Verbinden**. Warten Sie, bis angezeigt wird, dass das virtuelle Netzwerk TestLab mit dem lokalen Netzwerk TestVNET verbunden ist.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -15,4 +15,4 @@ Gehen Sie folgendermaßen vor, um diesen URI im Azure-Portal abzurufen:
 [screen-connectioninfo]: ./media/howto-get-connectioninfo-mongolab/dialog-mongolab_connectioninfo.png
 [button-addons]: ./media/howto-get-connectioninfo-mongolab/button-addons.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

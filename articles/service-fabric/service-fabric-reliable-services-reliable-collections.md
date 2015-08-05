@@ -60,16 +60,16 @@ Es gibt zwei Isolationsstufen, die von zuverlässigen Auflistungen unterstützt 
 Das zuverlässige Wörterbuch und die zuverlässige Warteschlange unterstützen beide "Read Your Writes". Mit anderen Worten sind jegliche Schreibvorgänge innerhalb einer Transaktion für den nachfolgenden Lesevorgang sichtbar, wenn dieser derselben Transaktion angehört.
 
 ### Zuverlässiges Wörterbuch
-| Vorgang\\Rolle | Primär | Sekundär |
+| Vorgang\Rolle | Primär | Sekundär |
 | --------------------- | :--------------- | :--------------- |
 | Lesevorgang für eine einzelne Entität | Wiederholbarer Lesevorgang | Momentaufnahme |
-| Aufzählung\\Anzahl | Momentaufnahme | Momentaufnahme |
+| Aufzählung\Anzahl | Momentaufnahme | Momentaufnahme |
 
 ### Zuverlässige Warteschlange
-| Vorgang\\Rolle | Primär | Sekundär |
+| Vorgang\Rolle | Primär | Sekundär |
 | --------------------- | :--------------- | :--------------- |
 | Lesevorgang für eine einzelne Entität | Momentaufnahme | Momentaufnahme |
-| Aufzählung\\Anzahl | Momentaufnahme | Momentaufnahme |
+| Aufzählung\Anzahl | Momentaufnahme | Momentaufnahme |
 
 ## Persistenzmodell:
 Der zuverlässige Zustands-Manager und die zuverlässigen Auflistungen basieren auf einem Persistenzmodell, das als Protokoll und Prüfpunkt bezeichnet wird. Bei diesem Modell wird jede Zustandsänderung auf dem Datenträger protokolliert und nur im Arbeitsspeicher angewendet. Der vollständige Zustand selbst wird nur gelegentlich persistent gespeichert (auch als Prüfpunkt bezeichnet). Der Vorteil ist:
@@ -87,7 +87,8 @@ Zuverlässige Auflistungen verwenden immer exklusive Sperren. Für Lesevorgänge
 
 Die Kompatibilitätsmatrix für Sperren finden Sie unten:
 
-| Anforderung\\Gewährt | Keine | Freigegeben | Aktualisieren | Exklusiv |
+| Anforderung\Gewährt | Keine | Shared  
+ | Aktualisieren | Exklusiv |
 | ----------------- | :----------- | :----------- | :---------- | :----------- |
 | Freigegeben | Kein Konflikt | Kein Konflikt | Konflikt: | Konflikt: |
 | Aktualisieren | Kein Konflikt | Kein Konflikt | Konflikt: | Konflikt: |
@@ -119,4 +120,4 @@ hier folgen einige Punkte, die es zu beachten gilt:
 - [Entwicklerreferenz für zuverlässige Auflistungen](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

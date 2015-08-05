@@ -77,4 +77,4 @@ Basierend auf der Begrenzung für Transaktionen können Sie die Anzahl der Daten
 
 <sup>3</sup>GRS bezieht sich auf den georedundanten Speicher und LRS auf den lokal redundanten Speicher.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

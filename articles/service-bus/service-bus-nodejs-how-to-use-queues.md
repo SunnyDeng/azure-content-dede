@@ -32,7 +32,7 @@ Damit Azure Service Bus verwendet werden kann, laden Sie das Node.js-Azure-Paket
 
 ### Verwenden von Node Package Manager (NPM) zum Beziehen des Pakets
 
-1.  Verwenden Sie das Befehlsfenster von **Windows PowerShell for Node.js**, um zum Ordner **c:\\\\node\\\\sbqueues\\\\WebRole1** zu navigieren, in dem Sie Ihre Beispielanwendung erstellt haben.
+1.  Verwenden Sie das Befehlsfenster von **Windows PowerShell for Node.js**, um zum Ordner **c:\\node\\sbqueues\\WebRole1** zu navigieren, in dem Sie Ihre Beispielanwendung erstellt haben.
 
 2.  Geben Sie **npm install azure** in das Befehlsfenster ein. Die Ausgabe sollte in etwa wie folgt aussehen:
 
@@ -190,4 +190,4 @@ Nachdem Sie nun mit den Grundlagen der Servicebus-Warteschlangen vertraut sind, 
   [Node.js-Webanwendung mit Speicher]: ../storage/storage-nodejs-how-to-use-table-storage.md
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

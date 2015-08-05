@@ -118,4 +118,4 @@ Möglicherweise wird jetzt ein Ladebildschirm angezeigt, wenn Sie auf eine Ankü
 
 Betten Sie die neue `res/layout/engagement_loading.xml`-Datei in Ihr Projekt ein.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

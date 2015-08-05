@@ -62,4 +62,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

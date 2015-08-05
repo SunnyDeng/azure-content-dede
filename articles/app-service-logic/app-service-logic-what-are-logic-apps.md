@@ -69,4 +69,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [templates]: app-service-logic-use-logic-app-templates.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

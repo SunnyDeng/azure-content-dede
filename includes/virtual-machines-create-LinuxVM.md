@@ -31,4 +31,4 @@
 
 Nachdem Azure den virtuellen Computer und den Cloud-Dienst erstellt hat, führt das Verwaltungsportal den neuen virtuellen Computer unter **Virtuelle Computer** und den Cloud-Dienst unter **Cloud-Dienste** auf. Sowohl der virtuelle Computer als auch der Clouddienst werden automatisch gestartet.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO4-->

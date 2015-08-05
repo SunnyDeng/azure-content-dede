@@ -103,4 +103,4 @@ Das Speicherkonto für die Diagnose kann jetzt in der Dienstkonfigurationsdatei 
 	Wenn Sie weiterhin die oben genannten Probleme haben, installieren Sie die neueste Version des Azure SDK 2.6 für [VS 2012](http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x409), [VS 2013](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) oder [VS 2015](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409).
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

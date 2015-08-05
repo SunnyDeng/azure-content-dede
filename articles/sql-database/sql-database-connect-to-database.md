@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SSMS" metaKeywords=""
+	pageTitle="Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SSMS" 
 	description="Erfahren Sie, wie Sie mit SSMS eine Verbindung mit einer Azure SQL-Datenbank herstellen."
 	services="sql-database"
 	documentationCenter=""
@@ -13,41 +13,56 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="06/25/2015"
+	ms.date="07/15/2015"
 	ms.author="sidneyh" />
 
-# Herstellen von Verbindungen mit einer Azure SQL-Datenbank mit SQL Server Management Studio
+# Herstellen einer Verbindung mit SQL Server Management Studio
 
-Mithilfe der folgenden Schritte können Sie eine Verbindung mit einer Microsoft Azure SQL-Datenbank mit SQL Server Management Studio (SSMS) herstellen.
+Nachfolgend werden die Schritte beschrieben, die zum Installieren von SQL Server Management Studio (SSMS) und zum Herstellen einer Verbindung zur Abfrage der SQL-Datenbank mit SSMS erforderlich sind.
 
 ## Voraussetzungen
-* Eine bereitgestellte und ausgeführte Azure SQL-Datenbank. Informationen zum Erstellen einer neuen SQL-Datenbank finden Sie unter [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md).
-* Der Anmeldename und das Kennwort des Administrators
-* SQL Server Management Studio 2014 Sie finden das Tool unter [Download SQL Server Express](http://www.hanselman.com/blog/DownloadSQLServerExpress.aspx) (in englischer Sprache).
-* Konfigurieren Sie die Firewalleinstellungen für die Datenbank. Weitere Informationen finden Sie unter [Konfigurieren der Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
+* Die AdventureWorks-Beispieldatenbank als SQL-Datenbank, wie unter [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md) beschrieben.
 
-## So stellen Sie eine Verbindung mit einer Instanz von SQL-Datenbank her
-1. Melden Sie sich beim [Azure-Verwaltungsportal](https://portal.azure.com) an.
-2. Klicken Sie auf die Schaltfläche **Durchsuchen** und dann auf **SQL-Datenbanken** (b).
+## Installieren und Starten von SQL Server Management Studio (SSMS)
+1. Wechseln Sie zur Downloadseite für [SQL Server 2014 Express](http://www.microsoft.com/download/details.aspx?id=42299), klicken Sie auf **Download**, und wählen Sie entweder die 32-Bit-Version (X 86) oder 64-Bit-Version (X 64) von MgmtStudio für den Download aus.
 
-	![Klicken auf "Durchsuchen" und "SQL-Datenbank"][1]
-3. Klicken Sie nach dem Auswählen von **SQL-Datenbanken** (a) auf den Namen einer Datenbank auf dem Server, mit der Sie eine Verbindung herstellen möchten (b).
+	![MgtmtStudio32BIT oder MgmtStudio64BIT][1]
+2.	Befolgen Sie beim Installieren von SSMS mit den Standardeinstellungen die Eingabeaufforderungen.
+3.	Suchen Sie nach dem Download auf Ihrem PC nach SQL Server 2014 Management Studio, und starten Sie SSMS.
 
-	![Klicken auf den Namen einer Datenbank][2]
-4. Klicken Sie nach der Auswahl des Namens (a) auf "Eigenschaften" (b). Kopieren Sie den Namen des Servers (c) und den Namen des Administrators (d). Der Administratorname und das zugehörige Kennwort werden bei der Erstellung der SQL-Datenbank erstellt. Sie benötigen das Kennwort im nächsten Schritt.
 
-	![Klicken auf "SQL Server", "Einstellungen" und "Eigenschaften"][3]
-5. Öffnen Sie SQL Server Management Studio 2014.
-6. Fügen Sie im Dialogfeld "Verbindung mit Server herstellen" den Namen des Servers im Feld **Servername** (a) ein. Legen Sie die Authentifizierung auf **SQL Server-Authentifizierung** (b) fest. Fügen Sie den Namen des Serveradministrators im Feld **Anmeldung** (c) ein, und geben Sie dann das zugehörige Kennwort (d) ein. Klicken Sie dann auf **Optionen** (e).
+## Herstellen von Verbindungen mit der SQL-Datenbank
+1. Öffnen Sie SSMS.
+2. Geben Sie im Fenster **Verbindung mit Server herstellen** im Feld **Servername** den Namen des Servers im Format *&lt;servername>*.**database.windows.net** ein.
+3. Wählen Sie im Dropdownfeld **Authentifizierung** den Eintrag **SQL Server-Authentifizierung** aus.
+4. Geben Sie den **Benutzernamen** und das **Kennwort** ein, die Sie beim Erstellen des SQL-Datenbankservers angegeben haben.
 
-	![SSMS-Anmeldung (Dialogfeld)][4]
-7. Legen Sie auf der Registerkarte "Verbindungseigenschaften" das Feld **Verbindung mit Datenbank herstellen** auf **master** (oder eine andere Datenbank, mit der Sie eine Verbindung herstellen möchten) fest. Klicken Sie dann auf **Verbinden**.
+	![Dialogfeld "Verbindung mit Server herstellen"][2]
+5. Klicken Sie auf die Schaltfläche **Optionen**.
+6. Geben Sie **AdventureWorks** im Feld **Mit Datenbank verbinden** ein, und klicken Sie auf **Verbinden**.
 
-	![Festlegen auf "master" und Klicken auf "Verbinden"][5]
+	![Mit Datenbank verbinden][3]
 
-## Beheben von Verbindungsproblemen
+### Bei Verbindungsfehlern
+Stellen Sie sicher, dass die Firewall des von Ihnen erstellten logischen Servers Verbindungen vom lokalen Computer zulässt. Weitere Informationen finden Sie unter [Konfigurieren der Firewalleinstellungen (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/azure/jj553530.aspx).
 
-Im Fall von Problemen lesen Sie unter [Behandeln von Verbindungsproblemen mit Azure SQL-Datenbank](https://support.microsoft.com/kb/2980233/) nach. Eine Liste der möglichen Probleme und Antworten finden Sie unter [Troubleshoot Microsoft Azure SQL Database connectivity](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1) (Behandeln von Verbindungsproblemen in Microsoft Azure SQL-Datenbank, in englischer Sprache).
+## Durchführen von Beispielabfragen
+
+1. Navigieren Sie im **Objekt-Explorer** zur Datenbank **AdventureWorks**.
+2. Klicken Sie mit der rechten Maustaste auf die Datenbank, und wählen Sie **Neue Abfrage** aus.
+
+	![Neue Abfrage][4]
+3. Kopieren Sie den folgenden Code, und fügen Sie ihn im neu geöffneten Abfragefenster ein:
+
+		SELECT 
+		CustomerId
+		,Title
+		,FirstName
+		,LastName
+		,CompanyName
+		FROM SalesLT.Customer;
+
+4. Klicken Sie dann auf die Schaltfläche **Ausführen**. Bei einer erfolgreichen Durchführung sieht das Ergebnis wie folgt aus: ![Erfolgreich][5]
 
 
 ## Nächste Schritte
@@ -55,11 +70,11 @@ Sie können Transact-SQL-Anweisungen zum Erstellen oder Verwalten von Datenbanke
 
 <!--Image references-->
 
-[1]: ./media/sql-database-connect-to-database/browse-vms.png
-[2]: ./media/sql-database-connect-to-database/sql-databases.png
-[3]: ./media/sql-database-connect-to-database/blades.png
-[4]: ./media/sql-database-connect-to-database/ssms-connect-to-server.png
-[5]: ./media/sql-database-connect-to-database/ssms-master.png
+[1]: ./media/sql-database-connect-to-database/1-download.png
+[2]: ./media/sql-database-connect-to-database/2-connect.png
+[3]: ./media/sql-database-connect-to-database/3-connect-to-database.png
+[4]: ./media/sql-database-connect-to-database/4-run-query.png
+[5]: ./media/sql-database-connect-to-database/5-success.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

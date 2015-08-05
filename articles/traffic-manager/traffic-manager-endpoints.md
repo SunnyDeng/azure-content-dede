@@ -77,4 +77,4 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 [Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

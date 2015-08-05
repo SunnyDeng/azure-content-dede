@@ -27,4 +27,4 @@
 </table>
 <sup>1</sup> Die Anzahl der Kerne pro Batch-Konto kann erhöht werden, die maximale Anzahl ist jedoch nicht festgelegt. Wenden Sie sich an den Kundensupport, um Fragen der Erhöhung zu erörtern. <sup>2</sup> Umfasst einmalig ausgeführte aktive Auftrage und aktive Auftragszeitpläne.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -25,30 +25,35 @@ Eine *Abhängigkeit* ist eine externe Komponente, die von Ihrer App aufgerufen w
 Aktuell steht die integrierte Abhängigkeitsüberwachung für folgende Apps und Dienste zur Verfügung:
 
 * ASP.NET-Web-Apps und Dienste, die auf einem IIS-Server oder auf Azure ausgeführt werden
+* [Java-Web-Apps](app-insights-java-agent.md)
 
-Für andere Typen wie Java-Web-Apps oder Geräte-Apps können Sie mithilfe der TrackDependency-API Ihre eigene Überwachung schreiben.
+Für andere Typen wie Geräte-Apps können Sie mithilfe der TrackDependency-API Ihre eigene Überwachung schreiben.
 
 Der standardmäßig verfügbare Abhängigkeitsmonitor meldet derzeit Aufrufe an diese Abhängigkeitstypen:
 
-* SQL-Datenbanken
-* ASP.NET-Web- und WCF-Dienste, die HTTP-basierte Bindungen verwenden
-* Lokale oder Remote-HTTP-Aufrufe
-* Azure DocumentDb, Tabelle, Blobspeicher und Warteschlange
+* ASP.NET
+ * SQL-Datenbanken
+ * ASP.NET-Web- und WCF-Dienste, die HTTP-basierte Bindungen verwenden
+ * Lokale oder Remote-HTTP-Aufrufe
+ * Azure DocumentDb, Tabelle, Blobspeicher und Warteschlange
+* Java
+ * Aufrufe an eine Datenbank über einen [JDBC](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)-Treiber, z. B. MySQL, SQL Server, PostgreSQL oder SQLite.
 
 In diesem Fall könnten Sie Ihre eigenen SDK-Aufrufe zum Überwachen anderer Abhängigkeiten schreiben.
 
-## Einrichten der Abhängigkeitsüberwachung
+## So richten Sie die Abhängigkeitsüberwachung ein
 
-Zum Überwachen der Abhängigkeit müssen Sie folgende Aktionen durchführen:
+Installieren Sie den entsprechenden Agent für den Hostserver.
 
-* Verwenden Sie den [Statusmonitor](app-insights-monitor-performance-live-website-now.md) auf dem IIS-Server, um die Überwachung zu aktivieren.
-* Fügen Sie Ihrer Azure-Web-App oder dem virtuellen Computer die [Application Insights-Erweiterung](../insights-perf-analytics.md) hinzu.
+Plattform | Installieren
+---|---
+IIS-Server | [Statusmonitor](app-insights-monitor-performance-live-website-now.md)
+Azure-Web-App | [Application Insights-Erweiterung](../insights-perf-analytics.md)
+Java-Webserver | [Java-Web-Apps](app-insights-java-agent.md)
 
-(Für einen virtuellen Azure-Computer können Sie, wie auf jedem anderen Computer, entweder die Erweiterung in der Azure-Systemsteuerung oder den Statusmonitor installieren.)
+Für den Statusmonitor für IIS-Server müssen Sie das Quellprojekt nicht mit dem Application Insights-SDK neu erstellen.
 
-Sie können die oben genannten Schritte für eine bereits bereitgestellte Web-App durchführen. Um eine standardmäßige Abhängigkeitsüberwachung zu erhalten, müssen Sie Application Insights nicht Ihrem Quellprojekt hinzufügen.
-
-## Diagnostizieren von Leistungsproblemen der Abhängigkeit
+## <a name="diagnosis"></a>Diagnostizieren von Leistungsproblemen der Abhängigkeit
 
 So bewerten Sie die Leistung der Anforderungen an den Server
 
@@ -124,4 +129,4 @@ Wenn Sie das Standardmodul für die Nachverfolgung von Abhängigkeiten deaktivie
 
 <!--Link references-->
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

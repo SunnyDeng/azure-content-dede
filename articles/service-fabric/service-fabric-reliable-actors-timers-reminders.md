@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/17/2015"
+   ms.date="07/09/2015"
    ms.author="amanbha"/>
 
 
 # Actor-Timer
-Actor-Timer bieten einen einfachen Wrapper um den .NET-Timer, wodurch die Rückrufmethoden die zur Actor-Laufzeit bereitgestellten wechselseitigen Parallelitätsgarantien respektieren.
+Actor-Timer bieten einen einfachen Wrapper um .NET-Timer, wodurch die Rückrufmethoden die zur Actor-Laufzeit bereitgestellten wechselseitigen Parallelitätsgarantien respektieren.
 
 Actor können sich mithilfe der Methoden `RegisterTimer` und `UnregisterTimer` ihrer Basisklasse bei ihren Timern an- und abmelden. Das folgende Beispiel zeigt die Verwendung von Timer-APIs. Die APIs sind dem .NET-Timer sehr ähnlich. Im Beispiel unten wird bei Ablauf des Timers von der Actor-Laufzeit die Methode `MoveObject` aufgerufen. Sie respektiert garantiert die wechselseitige Parallelität, sodass bis zum Abschluss des Rückrufs keine anderen Actor-Methoden oder Timer-/Erinnerungsrückrufe ausgeführt werden.
 
@@ -113,6 +113,5 @@ Task reminderUnregistration = UnregisterReminder(reminder);
 ```
 
 Wie oben gezeigt, akzeptiert die Methode `UnregisterReminder` die Schnittstelle `IActorReminder`. Die Basisklasse des Actors unterstützt die Methode `GetReminder`, die zum Abrufen der Schnittstelle `IActorReminder` durch Übergabe des Erinnerungsnamens verwendet werden kann. Dies ist praktisch, da der Actor die Schnittstelle `IActorReminder` nicht beibehalten muss, die bei Aufruf der Methode `RegisterReminder` zurückgegeben wurde.
- 
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -94,4 +94,4 @@ Connectors können innerhalb Ihrer Logik-App auch als Aktionen verwendet werden.
 
 [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)<br/>[Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md)<br/>[Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

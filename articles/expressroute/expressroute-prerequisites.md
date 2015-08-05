@@ -45,4 +45,4 @@ Zum Herstellen einer Verbindung mit den Microsoft-Clouddiensten über ExpressRou
 	- [Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter](expressroute-configuring-exps.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

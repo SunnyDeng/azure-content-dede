@@ -122,4 +122,4 @@ Die folgenden Features sind derzeit in öffentlicher Vorschau verfügbar und wer
 - [Anzeigen Ihrer Zugriffs- und Nutzungsberichte](active-directory-view-access-usage-reports.md)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

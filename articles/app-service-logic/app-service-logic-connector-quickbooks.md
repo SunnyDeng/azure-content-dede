@@ -119,4 +119,4 @@ Wir erstellen eine einfache Logik-App, die ein Konto in QuickBooks erstellt, und
 [12]: ./media/app-service-logic-connector-quickbooks/12_Update_Account_Address.png
 [13]: ./media/app-service-logic-connector-quickbooks/13_Create_new_quickbooks_connector.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

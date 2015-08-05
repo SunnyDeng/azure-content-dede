@@ -144,4 +144,4 @@ Im folgenden Beispiel wird das Löschen eines Locator veranschaulicht, mit dem e
 	Host: media.windows.net
 	Content-Length: 0
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

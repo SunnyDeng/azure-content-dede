@@ -19,7 +19,7 @@
 # Parallelitäts- und Workloadverwaltung in SQL Data Warehouse
 SQL Data Warehouse implementiert Verfahren zum Verwalten der Workloadparallelität und der Zuweisung von Rechnerressourcen, um bei jeder Skalierung für eine vorhersagbare Leistung zu sorgen.
 
-In diesem Artikel werden die Konzepte der Parallelitäts- und Workloadverwaltung vorgestellt. Es wird beschrieben, wie beide Features implementiert wurden und wie Sie sie in Ihrem Data Warehouse steuern können.
+In diesem Artikel werden die Konzepte der Parallelitäts- und Workloadverwaltung vorgestellt. Es wird beschrieben, wie beide Features implementiert wurden und wie Sie diese in Ihrem Data Warehouse steuern können.
 
 ## Parallelität
 Es ist wichtig zu verstehen, dass die Parallelität in SQL Data Warehouse auf zwei Konzepten beruht: **gleichzeitige Abfragen** und **Parallelitätsslots**.
@@ -93,9 +93,9 @@ Die folgende Tabelle enthält die Details zur Erhöhung des Speichers, der für 
 | Verfügbarer Speicher (pro Dist.) | DW100 | DW200 | DW300 | DW400 | DW500 | DW600 | DW1000 | DW1200 | DW1500 | DW2000 |
 | :-------------------------- | :----  | :----- | :----- | :------ | :------ | :------ | :------ | :------ | :------ | :------ |
 | smallrc(default) (s) | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB |
-| mediumrc (m) | 100 MB | 200 MB | 200 MB | 400 MB | 400 MB | 400 MB | 800 MB | 800 MB | 800 MB | 1\.600 MB |
-| largerc (l) | 200 MB | 400 MB | 400 MB | 800 MB | 800 MB | 800 MB | 1\.600 MB | 1\.600 MB | 1\.600 MB | 3\.200 MB |
-| xlargerc (xl) | 400 MB | 800 MB | 800 MB | 1\.600 MB | 1\.600 MB | 1\.600 MB | 3\.200 MB | 3\.200 MB | 3\.200 MB | 6\.400 MB |
+| mediumrc (m) | 100 MB | 200 MB | 200 MB | 400 MB | 400 MB | 400 MB | 800 MB | 800 MB | 800 MB | 1.600 MB |
+| largerc (l) | 200 MB | 400 MB | 400 MB | 800 MB | 800 MB | 800 MB | 1.600 MB | 1.600 MB | 1.600 MB | 3.200 MB |
+| xlargerc (xl) | 400 MB | 800 MB | 800 MB | 1.600 MB | 1.600 MB | 1.600 MB | 3.200 MB | 3.200 MB | 3.200 MB | 6.400 MB |
 
 Außerdem gilt Folgendes, wie oben bereits erwähnt: Je höher die dem Benutzer zugewiesene Ressourcenklasse ist, desto höher ist der Verbrauch von Parallelitätsslots. In der folgenden Tabelle ist der Verbrauch von Parallelitätsslots von Abfragen einer Ressourcenklasse dokumentiert.
 
@@ -145,7 +145,7 @@ Diese 8 Gruppen werden über den Verbrauch von Parallelitätsslots zugeordnet.
 | SloDWGroupC06 | 64 | Hoch |
 | SloDWGroupC07 | 128 | Hoch |
 
-Wenn beispielsweise DW500 die aktuelle Einstellung der DWU für Ihr SQL Data Warehouse ist, dann werden die aktiven Workloadgruppen wie folgt den Ressourcenklassen zugeordnet:
+Wenn beispielsweise DW500 die aktuelle Einstellung der DWU für Ihr SQL-Data Warehouse ist, dann werden die aktiven Workloadgruppen wie folgt den Ressourcenklassen zugeordnet:
 
 | Ressourcenklasse | Workloadgruppe | Verwendete Parallelitätsslots | Priorität |
 | :------------- | :------------- | :---------------------   | :--------- |
@@ -203,9 +203,9 @@ ORDER BY
 
 ## Beispiele für die Workloadverwaltung
 
-Um einem Benutzer Zugriff auf das SQL Data Warehouse zu gewähren, muss er sich zunächst anmelden.
+Um einem Benutzer Zugriff auf das SQL-Data Warehouse zu gewähren, muss er sich zunächst anmelden.
 
-Öffnen Sie eine Verbindung mit der Masterdatenbank für Ihr SQL Data Warehouse, und führen Sie die folgenden Befehle aus:
+Öffnen Sie eine Verbindung mit der Masterdatenbank für Ihr SQL-Data Warehouse, und führen Sie die folgenden Befehle aus:
 
 ```
 CREATE LOGIN newperson WITH PASSWORD = 'mypassword'
@@ -223,7 +223,7 @@ Nachdem die Anmeldung abgeschlossen ist, muss nun ein Benutzerkonto hinzugefügt
 CREATE USER newperson FOR LOGIN newperson
 ```
 
-Sobald dieser abgeschlossen ist, müssen dem Benutzer Berechtigungen erteilt werden. Im Beispiel unten erteilt `CONTROL` Berechtigungen in der SQL Data Warehouse-Datenbank. `CONTROL` auf Ebene der Datenbank entspricht „db_owner“ in SQL Server.
+Sobald dieser abgeschlossen ist, müssen dem Benutzer Berechtigungen erteilt werden. Im Beispiel unten erteilt `CONTROL` Berechtigungen in der SQL Data Warehouse-Datenbank. `CONTROL` auf Ebene der Datenbank entspricht "db_owner" in SQL Server.
 
 ```
 GRANT CONTROL ON DATABASE::MySQLDW to newperson
@@ -377,4 +377,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

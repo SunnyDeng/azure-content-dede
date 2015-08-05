@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Verwenden von &quot;docker-machine&quot; mit Azure"
-   description="Veranschaulicht das Abrufen und Ausführen auf Azure mit &quot;docker-machine&quot; auf Ubuntu."
+   pageTitle="Verwenden von ";docker-machine"; mit Azure"
+   description="Veranschaulicht das Abrufen und Ausführen auf Azure mit ";docker-machine"; auf Ubuntu."
    services="virtual-machines"
    documentationCenter="virtual-machines"
    authors="squillace"
@@ -210,4 +210,4 @@ Rufen Sie das [Docker-Benutzerhandbuch](https://docs.docker.com/userguide/) auf,
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

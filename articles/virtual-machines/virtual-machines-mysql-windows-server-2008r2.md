@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/20/2015" 
+	ms.date="07/10/2015" 
 	ms.author="kathydav"/>
 
 
@@ -22,6 +22,7 @@
 
 [MySQL](http://www.mysql.com) ist eine beliebte Open-Source-SQL-Datenbank. Mit dem [Azure-Verwaltungsportal](http://manage.windowsazure.com) können Sie über den Image-Katalog einen virtuellen Computer mit Windows Server 2012 R2 erstellen. Sie können ihn dann als MySQL-Server installieren und konfigurieren.
 
+Anleitungen zum Installieren von MySQL auf Linux finden Sie unter:[Installieren von MySQL auf Azure](virtual-machines-linux-install-mysql.md).
 
 Dieses Lernprogramm beschreibt Folgendes:
 
@@ -83,7 +84,7 @@ Befolgen Sie diese Schritte, um die Community-Version von MySQL Server zu instal
 
 	![](./media/virtual-machines-mysql-windows-server-2008r2/MySQL_CommandPrompt.png)
  
-19.	Sie können mit Einträgen in der Datei **C:\\Program Files (x86)\\MySQL\\MySQL Server 5.6\\my-default.ini** auch Standardeinstellungen für die Serverkonfiguration konfigurieren, wie die Basis- und Datenverzeichnisse und -laufwerke. Weitere Informationen finden Sie unter [5.1.2 Serverkonfiguration: Standardeinstellungen](http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html).
+19.	Sie können mit Einträgen in der Datei **C:\Program Files (x86)\MySQL\MySQL Server 5.6\my-default.ini** auch Standardeinstellungen für die Serverkonfiguration konfigurieren, wie die Basis- und Datenverzeichnisse und -laufwerke. Weitere Informationen finden Sie unter [5.1.2 Serverkonfiguration: Standardeinstellungen](http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html).
 
 
 Wenn der MySQL Server-Dienst für die MySQL-Clientcomputer im Internet verfügbar sein soll, müssen Sie einen Endpunkt für den TCP-Port konfigurieren, auf dem der MySQL Server-Dienst lauscht, und eine zusätzliche Windows-Firewallregel erstellen. Dies ist der TCP-Port 3306, es sei denn, Sie haben einen anderen Port auf der Seite "Typ und Netzwerke" (Schritt 10 des vorherigen Verfahrens) angegeben.
@@ -127,4 +128,4 @@ Informationen zu MySQL finden Sie in der [MySQL-Dokumentation](http://dev.mysql.
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

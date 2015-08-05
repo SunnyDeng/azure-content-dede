@@ -3,7 +3,7 @@
     pageTitle="Größeninformationen für ein VNET in RemoteApp"
     description="Informationen zu den IP-Adresse-Anforderungen für ein VNET mit RemoteApp" 
     services="remoteapp" 
-    documentationCenter="" 
+	documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
 
@@ -25,4 +25,4 @@ Wenn Sie RemoteApp mit einem virtuellen Netzwerk (VNET) verwenden, werden von Re
 Sie sollten für jede RemoteApp-Sammlung, die bei maximaler Kapazität ausgeführt werden soll, 100 IP-Adressen vorhalten. Wenn Sie beispielsweise RemoteApp-Sammlung im Standardplan haben und das Maximum von 500 Benutzern ausschöpfen möchten, müssen Sie für diese Sammlung 100 IP-Adressen vorhalten. Analog benötigen Sie für eine RemoteApp-Sammlung im Basisplan mit 800 Benutzern 100 IP-Adressen. Wenn Sie mit weniger Benutzern (unterhalb des Maximums) planen, können Sie die pro Sammlung erforderlichen IP-Adressen reduzieren. Die Mindestgrößenanforderung des Subnetzes liegt bei 30 Adressen (/27).
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

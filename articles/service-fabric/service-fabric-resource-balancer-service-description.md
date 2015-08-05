@@ -229,4 +229,4 @@ Weitere Informationen: [Resource Balancer-Architektur](service-fabric-resource-b
 [Image3]: media/service-fabric-resource-balancer-service-description/MW.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

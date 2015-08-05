@@ -107,4 +107,4 @@ Sowohl Ihr Mobile Service als auch Ihre App sind nun konfiguriert und funktionie
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -3,7 +3,7 @@
 	description="Erfahren Sie mehr über die wichtigsten Entwurfs- und Implementierungsrichtlinien für die Bereitstellung einer IT-Workload in Azure-Infrastrukturdiensten." 
 	documentationCenter=""
 	services="virtual-machines" 
-	authors="JoeDavies-MSFT" 
+	authors="squillace" 
 	manager="timlt" 
 	editor=""
 	tags="azure-service-management,azure-resource-manager"/>
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
-	ms.author="josephd"/>
+	ms.date="07/09/2015" 
+	ms.author="rasquill"/>
 
 # Implementierungsrichtlinien für Azure-Infrastrukturdienste
  
@@ -76,7 +76,7 @@ Sie sollten die einzelnen Ressourcentypen in der Benennungskonvention definieren
 - Verfügbarkeitsgruppen
 - Ressourcengruppen
 - Cloud Services
-- Virtual Machines
+- Virtuelle Computer
 - Endpunkte
 - Netzwerksicherheitsgruppen
 - Rollen
@@ -168,7 +168,7 @@ Betriebssystem-Datenträger und Datenträger mit Daten verfügen über eine maxi
 ### Stripesetdatenträger
 Neben der Möglichkeit, Datenträger mit mehr als 1.023 GB zu erstellen, wird durch Datenträgerstriping in vielen Fällen die Leistung verbessert, indem mehrere Blobs als Speicher für ein einzelnes Volume dienen können. Dadurch wird die zum Schreiben und Lesen von Daten von einem einzelnen Datenträger erforderliche E/A parallelisiert.
 
-Azure erzwingt Grenzwerte für die Anzahl von Datenträgern und die verfügbare Bandbreite, die sich nach der Größe des virtuellen Computers richten. Ausführliche Informationen finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
+Azure erzwingt Grenzwerte für die Anzahl von Datenträgern und die verfügbare Bandbreite, die sich nach der Größe des virtuellen Computers richten. Ausführliche Informationen finden Sie unter [Größen für virtuelle Computer](virtual-machines-size-specs.md).
 
 Wenn Sie Datenträgerstriping für Azure-Datenträger verwenden, beachten Sie die folgenden Richtlinien:
 
@@ -204,7 +204,7 @@ Aufgabe:
 
 - Erstellen Sie die Gruppe von Speicherkonten mit Ihrer Benennungskonvention. Sie können das Azure-Vorschauportal, das Azure-Verwaltungsportal oder das PowerShell-Cmdlet **New-AzureStorageAccount** verwenden.
 
-## 4. Cloud Services
+## 4. Cloud-Dienste
 
 Clouddienste sind ein wesentlicher Baustein von Azure Service Management, sowohl für PaaS- als auch IaaS-Dienste. Bei PaaS stellen Clouddienste eine Zuordnung von Rollen dar, deren Instanzen untereinander kommunizieren können. Clouddienste werden mit einer öffentlichen virtuellen IP-Adresse (VIP) und einem Lastenausgleich verknüpft, der eingehenden Datenverkehr aus dem Internet akzeptiert und diesen für die Rollen ausgleicht, die den Datenverkehr empfangen.
 
@@ -288,7 +288,7 @@ Aufgaben:
 - Definieren Sie den Adressraum für das virtuelle Netzwerk.
 - Definieren Sie den Satz von Subnetzen und den Adressraum für die Netzwerke.
 - Definieren Sie für standortübergreifende virtuelle Netzwerke den Satz von LAN-Adressbereichen für lokale Speicherorte, die die virtuellen Computer im virtuellen Netzwerk erreichen müssen.
-- Erstellen Sie das virtuelle Netzwerk mit der Benennungskonvention. Sie können das Azure-Vorschauportal oder das Azure-Verwaltungsportal verwenden.
+- Erstellen Sie das virtuelle Netzwerk mit der Benennungskonvention. Sie können das Azure-Vorschauportal oder das Azure-Portal verwenden.
 
 ## 6. Verfügbarkeitsgruppen
 
@@ -308,11 +308,11 @@ Aufgabe:
 
 - Definieren Sie die Verfügbarkeitsgruppen mit den Benennungskonvention. Sie können einen virtuellen Computer mit einer Verfügbarkeitsgruppe verknüpfen, wenn Sie die virtuellen Computer erstellen, oder Sie verknüpfen einen virtuellen Computer mit einer Verfügbarkeitsgruppe, nachdem der virtuelle Computer erstellt wurde.
 
-## 7. Virtual Machines
+## 7. Virtuelle Computer
 
 In Azure-PaaS verwaltet Azure virtuelle Computer und deren zugehörige Datenträger. Sie müssen Clouddienste und Rollen erstellen und benennen. Azure erstellt anschließend Instanzen, die diesen Rollen zugeordnet sind. Im Fall von Azure-IaaS können Sie selbst entscheiden, ob Sie Namen für Clouddienste, virtuelle Computer und zugehörige Datenträger angeben.
 
-Um den Verwaltungsaufwand zu reduzieren, verwendet das Azure-Verwaltungsportal den Computernamen als Standardnamen für den zugeordneten Clouddienst (wenn der Kunde einen neuen Clouddienst im Assistenten zur Erstellung des virtuellen Computers erstellt).
+Um den Verwaltungsaufwand zu reduzieren, verwendet das Azure-Portal den Computernamen als Standardnamen für den zugeordneten Clouddienst (wenn der Kunde einen neuen Clouddienst im Assistenten zur Erstellung des virtuellen Computers erstellt).
 
 Darüber hinaus benennt Azure Datenträger und unterstützende VHD-Blobs mit einer Kombination aus Clouddienstname, Computername und Erstellungsdatum.
 
@@ -430,7 +430,7 @@ Diese Konfiguration umfasst:
 
 [Microsoft Azure-Abonnements und Diensteinschränkungen, Kontingente und Einschränkungen](../azure-subscription-service-limits.md#storage-limits)
 
-[Größen virtueller Computer und Clouddienste für Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx)
+[Größen für Virtual Machines](virtual-machines-size-specs.md)
 
 [Skalierbarkeits- und Leistungsziele für Azure-Speicher](../storage-scalability-targets.md)
 
@@ -441,4 +441,4 @@ Diese Konfiguration umfasst:
 [Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](../articles/virtual-machines/virtual-machines-azurerm-versus-azuresm.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

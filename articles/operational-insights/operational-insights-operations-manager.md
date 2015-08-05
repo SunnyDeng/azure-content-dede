@@ -228,4 +228,4 @@ Führen Sie die folgenden Schritte aus, um das Konto festzulegen, wenn Sie Opera
 
 Wenn Sie Daten von Servern an unterschiedlichen geografischen Standorten analysieren möchten, sollten Sie die Verwendung einer Verwaltungsgruppe pro Standort in Betracht ziehen. Dadurch können Sie die Leistung der Datenübertragung vom Agent an die Verwaltungsgruppe verbessern.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

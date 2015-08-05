@@ -1,4 +1,3 @@
-<properties authors="KBDAzure" editor="tysonn" manager="timlt" />
 
 Virtuelle Computer, die in der Dienstverwaltung erstellt werden, sind immer mit einem Clouddienst verbunden. Der Clouddienst fungiert als Container und stellt einen eindeutigen öffentlichen DNS-Namen, eine öffentliche IP-Adresse und einen Satz von Endpunkten bereit, damit auf den virtuellen Computer über das Internet zugegriffen werden kann. Der Clouddienst kann optional auch in einem virtuellen Netzwerk sein.
 
@@ -38,10 +37,10 @@ So verbinden Sie virtuelle Computer in einem eigenständigen Clouddienst:
 
 [Konfigurationsaufgaben für virtuelle Netzwerke](https://msdn.microsoft.com/library/azure/jj156206.aspx)
 
-Nachdem Sie einen virtuellen Computer erstellt haben, empfiehlt es sich, einen Datenträger hinzuzufügen, damit ein Speicherort für die Daten der Dienste und Workloads verfügbar ist. Weitere Informationen finden Sie unter einer der folgenden Optionen:
+Nachdem Sie einen virtuellen Computer erstellt haben, empfiehlt es sich, einen Datenträger hinzuzufügen, damit ein Speicherort für die Daten der Dienste und Arbeitsauslastungen verfügbar ist. Weitere Informationen finden Sie unter einer der folgenden Optionen:
 
 [Vorgehensweise: Anfügen eines Datenträgers an einen virtuellen Linux-Computer](../articles/virtual-machines/virtual-machines-linux-how-to-attach-disk.md)
 
 [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](../articles/virtual-machines/storage-windows-attach-disk.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

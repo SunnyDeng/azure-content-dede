@@ -124,7 +124,7 @@ Zum Anzeigen von benutzerdefinierten Leistungsindikatoren im Portal müssen Sie 
 2. Navigieren Sie gemäß dem Muster **DeploymentId/ RoleName/RoleInstance** zum Blobpfad, um die Konfiguration für die Rolleninstanz zu suchen. 
 
 	![Speicher-Explorer von Visual Studio](./media/cloud-services-how-to-monitor/CloudServices_Monitor_VisualStudioStorage.png)
-3. Laden Sie die Konfigurationsdatei für die Rolleninstanz herunter, und aktualisieren Sie sie, um alle benutzerdefinierten Leistungsindikatoren einzuschließen. Fügen Sie beispielsweise zum Überwachen von *Datenträgerschreibvorgang Byte/s* für *Laufwerk C* Folgendes unter dem Knoten **PerformanceCounters\\Subscriptions** ein.
+3. Laden Sie die Konfigurationsdatei für die Rolleninstanz herunter, und aktualisieren Sie sie, um alle benutzerdefinierten Leistungsindikatoren einzuschließen. Fügen Sie beispielsweise zum Überwachen von *Datenträgerschreibvorgang Byte/s* für *Laufwerk C* Folgendes unter dem Knoten **PerformanceCounters\Subscriptions** ein.
 
 	```xml
 	<PerformanceCounterConfiguration>
@@ -192,4 +192,4 @@ Die folgenden Tabellen speichern z. B. ausführliche Überwachungsdaten aggregie
 	WAD8b7c4233802442b494d0cc9eb9d8dd9fPT1HRITable (hourly aggregations for role instances)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

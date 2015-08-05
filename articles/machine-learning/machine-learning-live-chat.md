@@ -31,4 +31,4 @@ Ihre Fragen werden von Mitgliedern des Teams live beantwortet. Wenn Sie das Live
 
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

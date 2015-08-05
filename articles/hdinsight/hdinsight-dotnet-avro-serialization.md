@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Azure HDInsight Avro zum Serialisieren großer Datenmengen verwendet." 
 	services="hdinsight" 
 	documentationCenter="" 
-	authors="bradsev" 
+	authors="mumian" 
 	manager="paulettm" 
 	editor="cgronlun"/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/07/2015" 
-	ms.author="bradsev"/>
+	ms.date="07/09/2015" 
+	ms.author="jgao"/>
 
 
 # Serialisieren von Daten in Hadoop mit der Microsoft Avro-Bibliothek
@@ -67,11 +67,11 @@ Die Microsoft Avro-Bibliothek enthält ein Hilfsprogramm zur Codegenerierung, mi
 
 1. Laden Sie die ZIP-Datei mit der neuesten Version des HDInsight SDK-Quellcodes aus dem <a href="http://hadoopsdk.codeplex.com/SourceControl/latest" target="_blank">Microsoft .NET SDK für Hadoop</a> herunter. (Klicken Sie auf das Symbol **Herunterladen**.)
 
-2. Extrahieren Sie das HDInsight SDK in ein Verzeichnis auf dem Computer, auf dem .NET Framework 4 installiert ist und der mit dem Internet verbunden ist, um die benötigten abhängigen NuGet-Pakete herunterzuladen. Im Folgenden gehen wir davon aus, dass der Quellcode in "C:\\SDK" extrahiert wurde.
+2. Extrahieren Sie das HDInsight SDK in ein Verzeichnis auf dem Computer, auf dem .NET Framework 4 installiert ist und der mit dem Internet verbunden ist, um die benötigten abhängigen NuGet-Pakete herunterzuladen. Im Folgenden gehen wir davon aus, dass der Quellcode in "C:\SDK" extrahiert wurde.
 
-3. Wechseln Sie zum Ordner C:\\SDK\\src\\Microsoft.Hadoop.Avro.Tools, und führen Sie build.bat aus. (Die Datei ruft MS Build in der 32-Bit-Distribution von .NET Framework auf. Wenn Sie die 64-Bit-Version verwenden möchten, bearbeiten Sie "build.bat" unter Befolgung der Kommentare in der Datei.) Stellen Sie sicher, dass der Build erfolgreich ist. (Bei einigen Systemen erzeugt MSBuild möglicherweise Warnungen. Diese Warnungen wirken sich nicht auf das Hilfsprogramm aus, solange keine Buildfehler auftreten.)
+3. Wechseln Sie zum Ordner C:\SDK\src\Microsoft.Hadoop.Avro.Tools, und führen Sie build.bat aus. (Die Datei ruft MS Build in der 32-Bit-Distribution von .NET Framework auf. Wenn Sie die 64-Bit-Version verwenden möchten, bearbeiten Sie "build.bat" unter Befolgung der Kommentare in der Datei.) Stellen Sie sicher, dass der Build erfolgreich ist. (Bei einigen Systemen erzeugt MSBuild möglicherweise Warnungen. Diese Warnungen wirken sich nicht auf das Hilfsprogramm aus, solange keine Buildfehler auftreten.)
 
-4. Das kompilierte Hilfsprogramm befindet sich in "C:\\SDK\\Bin\\Unsigned\\Release\\Microsoft.Hadoop.Avro.Tools".
+4. Das kompilierte Hilfsprogramm befindet sich in "C:\SDK\Bin\Unsigned\Release\Microsoft.Hadoop.Avro.Tools".
 
 
 Um sich mit der Befehlszeilensyntax vertraut zu machen, führen Sie den folgenden Befehl in dem Ordner aus, indem sich das Hilfsprogramm zur Codegenerierung befindet: `Microsoft.Hadoop.Avro.Tools help /c:codegen`
@@ -82,7 +82,7 @@ Zum Testen des Hilfsprogramms können Sie C#-Klassen anhand der Beispieldatei de
 
 Im aktuellen Verzeichnis sollten diese beiden C#-Dateien erstellt werden: "SensorData.cs" und "Location.cs".
 
-Um sich mit der Logik vertraut zu machen, die das Hilfsprogramm zur Codegenerierung beim Konvertieren des JSON-Schemas in C#-Typen verwendet, sehen Sie sich die Datei "GenerationVerification.feature" in "C:\\SDK\\src\\Microsoft.Hadoop.Avro.Tools\\Doc" an.
+Um sich mit der Logik vertraut zu machen, die das Hilfsprogramm zur Codegenerierung beim Konvertieren des JSON-Schemas in C#-Typen verwendet, sehen Sie sich die Datei "GenerationVerification.feature" in "C:\SDK\src\Microsoft.Hadoop.Avro.Tools\Doc" an.
 
 Beachten Sie, dass Namespaces mittels der Logik aus dem JSON-Schema extrahiert werden, die in der im vorhergehenden Absatz angegebenen Datei beschrieben ist. Aus dem Schema extrahierte Namespaces haben Vorrang vor allem, was mithilfe des Parameters "/n" über die Befehlszeile des Hilfsprogramms angegeben wird. Wenn Sie die im Schema enthaltenen Namespaces überschreiben möchten, verwenden Sie den Parameter "/nf". Um beispielsweise alle Namespaces von "SampleJSONSchema.avsc" in "my.own.nspace zu" ändern, führen Sie den folgenden Befehl aus:
 
@@ -1389,7 +1389,7 @@ Alle Informationen aus den Vorbedingungen müssen vor der Ausführung des Beispi
 * Bearbeiten der Datei "app.config" im Stammverzeichnis des Beispiels und anschließendes Erstellen des Beispiels 
 * Erstellen des Beispiels und anschließende Bearbeitung der Datei "AvroHDISample.exe.config" im Buildverzeichnis 
 
-In beiden Fällen müssen alle Änderungen im Einstellungsabschnitt **<appSettings>** erfolgen. Befolgen Sie die Kommentare in der Datei. Das Beispiel wird über die Befehlszeile mittels des folgenden Befehls ausgeführt (wobei davon ausgegangen wird, dass die ZIP-Datei mit dem Beispiel in "C:\\AvroHDISample" extrahiert wurde. Verwenden Sie andernfalls den entsprechenden Dateipfad):
+In beiden Fällen müssen alle Änderungen im Einstellungsabschnitt **<appSettings>** erfolgen. Befolgen Sie die Kommentare in der Datei. Das Beispiel wird über die Befehlszeile mittels des folgenden Befehls ausgeführt (wobei davon ausgegangen wird, dass die ZIP-Datei mit dem Beispiel in "C:\AvroHDISample" extrahiert wurde. Verwenden Sie andernfalls den entsprechenden Dateipfad):
 
     AvroHDISample run C:\AvroHDISample\Data
 
@@ -1406,4 +1406,4 @@ Führen Sie zum Aufräumen des Clusters den folgenden Befehl aus:
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

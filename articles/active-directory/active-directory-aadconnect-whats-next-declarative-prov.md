@@ -28,4 +28,4 @@ Ein wesentlicher Bestandteil der deklarativen Bereitstellung ist die in den Attr
 
 Weitere Informationen zur Ausdruckssprache finden Sie unter [Grundlagen zu den Ausdrücken für eine deklarative Bereitstellung](https://msdn.microsoft.com/library/azure/dn801048.aspx)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

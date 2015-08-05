@@ -262,4 +262,4 @@ Im Abschnitt **Verwalten von Konten, Abonnements und Administratorrollen** unter
 
 <!--Image references-->
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

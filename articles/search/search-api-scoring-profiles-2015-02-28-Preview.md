@@ -28,7 +28,7 @@ Azure Suche verwendet die Standardbewertung zum Berechnen eines Ursprungswerts. 
 
 Ein Bewertungsprofil ist Teil der Indexdefinition und besteht aus Feldern, Funktionen und Parametern.
 
-Das folgende Beispiel zeigt, wie ein Bewertungsprofil aussieht, Dieses einfaches Profil hat die Bezeichnung "geo". In diesem Fall werden Elemente verstärkt, die den Suchbegriff im Feld `hotelName` enthalten. Darüber hinaus wird die `distance`-Funktion verwendet, um Elemente zu bevorzugen, die sich im Umkreis von zehn Kilometern um die aktuelle Position befinden. Wenn nach dem Begriff "inn" gesucht wird und "inn" Teil des Hotelnamens ist, werden die Dokumente in den Suchergebnissen weiter oben angezeigt, die Hotels mit "inn" im Namen enthalten.
+Das folgende Beispiel zeigt, wie ein Bewertungsprofil aussieht. Dieses einfache Profil hat die Bezeichnung "geo". In diesem Fall werden Elemente verstärkt, die den Suchbegriff im Feld `hotelName` enthalten. Darüber hinaus wird die `distance`-Funktion verwendet, um Elemente zu bevorzugen, die sich im Umkreis von zehn Kilometern um die aktuelle Position befinden. Wenn nach dem Begriff "inn" gesucht wird und "inn" Teil des Hotelnamens ist, werden die Dokumente in den Suchergebnissen weiter oben angezeigt, die Hotels mit "inn" im Namen enthalten.
 
     "scoringProfiles": [
       {
@@ -244,7 +244,7 @@ In diesem Abschnitt wird die Syntax und die Vorlage für die Bewertungsprofile v
 </tr><tr>
 <td>Interpolation</td>	<td>Erforderlich für Bewertungsfunktionen. Definiert die Steigung, für die die Bewertungsverstärkung vom Anfang bis zum Ende des Bereichs zunimmt. Gültige Werte sind "Linear" (Standard), "Constant", "Quadratic" und "Logarithmic". Ausführliche Informationen finden Sie unter [Festlegen von Interpolationen](#bkmk_interpolation).</td>
 </tr><tr>
-<td>magnitude</td>	<td>Die Bewertungsfunktion für die Größe wird dazu verwendet, um Rangfolgen auf Basis des Wertebereichs für ein numerisches Feld zu ändern. Einige der am häufigsten verwendete Beispiele hierfür sind: 
+<td>magnitude</td>	<td>Die Bewertungsfunktion für die Größe wird dazu verwendet, um Rangfolgen auf Basis des Wertebereichs für ein numerisches Feld zu ändern. Einige der am häufigsten verwendeten Beispiele hierfür sind: 
 <br>
 - Sternbewertungen: Ändern Sie die Bewertung auf Basis des Werts innerhalb des Felds für die "Sternbewertung". Wenn zwei Elemente relevant sind, wird das Element mit der höheren Bewertung zuerst angezeigt.
 <br>
@@ -285,7 +285,7 @@ In diesem Abschnitt wird die Syntax und die Vorlage für die Bewertungsprofile v
 <a name="bkmk_interpolation"></a>
 ##Festlegen von Interpolationen
 
-Interpolationen ermöglichen Ihnen die Definition der Steigung, in der die Bewertungsoptimierung vom Anfang bis zum Ende des Bereichs zunimmt. Die folgenden Interpolation können verwendet werden:
+Interpolationen ermöglichen Ihnen die Definition der Steigung, in der die Bewertungsoptimierung vom Anfang bis zum Ende des Bereichs zunimmt. Die folgenden Interpolationen können verwendet werden:
 
 - `Linear` Für Elemente, die sich innerhalb des maximalen und minimalen Bereichs befinden, erfolgt die auf das Element angewendete Verstärkung mit konstant abnehmender Stärke. "Linear" ist die Standardinterpolation für ein Bewertungsprofil.
 
@@ -334,4 +334,4 @@ Weitere Beispiele finden Sie unter [XML-Schema: Datentypen (W3.org-Website)](htt
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

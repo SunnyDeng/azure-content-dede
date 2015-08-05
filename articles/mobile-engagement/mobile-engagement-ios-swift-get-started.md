@@ -337,4 +337,4 @@ Wir erstellen jetzt eine einfache Pushbenachrichtigungskampagne, die eine Pushbe
 [41]: ./media/mobile-engagement-ios-swift-get-started/AddHeaderFile.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

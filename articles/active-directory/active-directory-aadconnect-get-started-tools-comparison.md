@@ -88,4 +88,4 @@ Zulassen der Anwendung verschiedener Dienstvorlagen auf Attributflüsse |● | �
 Zulassen der Entfernung von Attributen aus dem Attributfluss von AD nach Azure AD | ● | ● | |  
 Zulassen einer erweiterten Anpassung des Attributflusses | ● | ● | | ●  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

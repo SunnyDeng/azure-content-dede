@@ -87,7 +87,7 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 
 		git clone https://github.com/<your_fork>/ToDoApp.git 
 
-4.	Sobald Sie Ihre lokalen Klon haben, navigieren Sie zu *&lt;Repositorystammverzeichnis>\\ARMTemplates* und führen das Skript "deploy.ps1" wie folgt aus:
+4.	Sobald Sie Ihre lokalen Klon haben, navigieren Sie zu *&lt;Repositorystammverzeichnis>\ARMTemplates* und führen das Skript "deploy.ps1" wie folgt aus:
 
 		.\deploy.ps1 –RepoUrl https://github.com/<your_fork>/todoapp.git
 
@@ -97,7 +97,7 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 
 	![](./media/app-service-agile-software-development/production-2-app-in-browser.png)
  
-	>[AZURE.TIP]Wenn Sie sich *&lt;Repositorystammverzeichnis>\\ARMTemplates\\Deploy.ps1* ansehen, erkennen Sie, wie das Skript Ressourcen mit eindeutigen IDs erstellt. Sie können den gleichen Ansatz zum Erstellen von Klonen der gleichen Bereitstellung befolgen, ohne sich Gedanken über in Konflikt stehende Ressourcennamen machen zu müssen.
+	>[AZURE.TIP]Wenn Sie sich *&lt;Repositorystammverzeichnis>\ARMTemplates\Deploy.ps1* ansehen, erkennen Sie, wie das Skript Ressourcen mit eindeutigen IDs erstellt. Sie können den gleichen Ansatz zum Erstellen von Klonen der gleichen Bereitstellung befolgen, ohne sich Gedanken über in Konflikt stehende Ressourcennamen machen zu müssen.
  
 6.	Zurück in der Git-Shell-Sitzung führen Sie Folgendes aus:
 
@@ -109,7 +109,7 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
  
 5.	Melden Sie sich am [Azure-Vorschauportal](https://portal.azure.com) an, und sehen Sie sich, was erstellt wurde.
 
-	Sie sollten zwei Web-Apps in der gleichen Ressourcengruppe sehen, von denen eine das Suffix `Api` im Namen enthält. Wenn Sie die Ressourcengruppenansicht betrachten, sehen Sie auch SQL-Datenbank und -Server, den App Service-Plan und die Stagingslots für die Web-Apps. Navigieren Sie durch die verschiedenen Ressourcen, und vergleichen Sie diese mit *&lt;Repositorystammverzeichnis>\\ARMTemplates\\ProdAndStage.json*, um zu prüfen, wie sie in der Vorlage konfiguriert sind.
+	Sie sollten zwei Web-Apps in der gleichen Ressourcengruppe sehen, von denen eine das Suffix `Api` im Namen enthält. Wenn Sie die Ressourcengruppenansicht betrachten, sehen Sie auch SQL-Datenbank und -Server, den App Service-Plan und die Stagingslots für die Web-Apps. Navigieren Sie durch die verschiedenen Ressourcen, und vergleichen Sie diese mit *&lt;Repositorystammverzeichnis>\ARMTemplates\ProdAndStage.json*, um zu prüfen, wie sie in der Vorlage konfiguriert sind.
 
 	![](./media/app-service-agile-software-development/production-3-resource-group-view.png)
 
@@ -174,7 +174,7 @@ Die Vorlagendateien "ProdAndStage.json" und "Dev.json" geben bereits die Quellve
 
 		git checkout Dev
 
-2.	Nehmen Sie eine einfache Änderung an der Benutzeroberflächenebene der App vor, indem Sie den Code so ändern, dass [Bootstrap](http://getbootstrap.com/components/)-Listen verwendet werden. Öffnen Sie *&lt;Repositorystammverzeichnis>\\src\\MultiChannelToDo.Web\\app\\index.cshtml*, und nehmen Sie die unten hervorgehobene Änderung vor:
+2.	Nehmen Sie eine einfache Änderung an der Benutzeroberflächenebene der App vor, indem Sie den Code so ändern, dass [Bootstrap](http://getbootstrap.com/components/)-Listen verwendet werden. Öffnen Sie *&lt;Repositorystammverzeichnis>\src\MultiChannelToDo.Web\app\index.cshtml*, und nehmen Sie die unten hervorgehobene Änderung vor:
 
 	![](./media/app-service-agile-software-development/commit-1-changes.png)
 
@@ -279,4 +279,4 @@ Eine agile Softwareentwicklung ist für viele Unternehmen unverzichtbar, die Azu
 -	[Erstellen oder Bearbeiten von Benutzern in Azure AD](https://msdn.microsoft.com/library/azure/hh967632.aspx#BKMK_1)
 -	[Wiki zum Kudu-Projekt](https://github.com/projectkudu/kudu/wiki)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

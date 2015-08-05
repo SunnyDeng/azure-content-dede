@@ -31,7 +31,7 @@ In diesem Lernprogramm erstellen Sie Data Factory-Pipelines, um die Wirksamkeit
 3.	Sie müssen [Azure PowerShell][download-azure-powershell] auf Ihren Computer herunterladen und installieren. Beispieldaten und Pig-/Hive-Skripts werden mithilfe von Data Factory-Cmdlets an den Blobspeicher hochgeladen. 
 2.	**Empfohlen:** Beschäftigen Sie sich mit dem Lernprogramm im Artikel [Erste Schritte mit Azure Data Factory][adfgetstarted], um sich im Rahmen eines einfachen Lernprogramms mit dem Portal und den Cmdlets vertraut zu machen.
 3.	**Empfohlen:** Beschäftigen Sie sich mit der exemplarischen Vorgehensweise im Artikel [Verwenden von Pig und Hive mit Azure Data Factory][usepigandhive], um sich mit der Erstellung einer Pipeline vertraut zu machen, mit der Daten aus einer lokalen Datenquelle in einen Azure-Blobspeicher verschoben werden.
-4.	Laden Sie die Dateien für [ADFWalkthrough][adfwalkthrough-download] in den Ordner **C:\\ADFWalkthrough** herunter, und **behalten Sie dabei die Ordnerstruktur bei**:
+4.	Laden Sie die Dateien für [ADFWalkthrough][adfwalkthrough-download] in den Ordner **C:\ADFWalkthrough** herunter, und **behalten Sie dabei die Ordnerstruktur bei**:
 	- **Pipelines:** Enthält JSON-Dateien mit der Definition der Pipelines.
 	- **Tables:** Enthält JSON-Dateien mit der Definition der Tabellen.
 	- **LinkedServices:** Enthält JSON-Dateien mit der Definition Ihres Speicher- und Datenverarbeitungsclusters (HDInsight). 
@@ -106,7 +106,7 @@ In diesem Schritt laden Sie alle Beispieldaten (einschließlich aller Protokolle
 
 Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim Verschieben der Wirksamkeitsergebnisse der Marketingkampagne aus dem Azure-BLOB-Speicher in die Azure SQL-Datenbank verschoben.
 
-1. Öffnen Sie **uploadSampleDataAndScripts.ps1** im Ordner **C:\\ADFWalkthrough** (oder in dem Ordner mit den extrahierten Dateien) in Ihrem bevorzugten Editor, ersetzen Sie die markierten Informationen durch Ihre Clusterinformationen, und speichern Sie die Datei.
+1. Öffnen Sie **uploadSampleDataAndScripts.ps1** im Ordner **C:\ADFWalkthrough** (oder in dem Ordner mit den extrahierten Dateien) in Ihrem bevorzugten Editor, ersetzen Sie die markierten Informationen durch Ihre Clusterinformationen, und speichern Sie die Datei.
 
 
 		$storageAccount = <storage account name>
@@ -118,10 +118,10 @@ Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim
  
 	Dieses Skript erfordert, dass Sie das sqlcmd-Dienstprogramm auf dem Computer installiert haben. Wenn Sie SQL Server installiert haben, verfügen Sie bereits über das Dienstprogramm. Andernfalls [laden Sie das Dienstprogramm herunter][sqlcmd-install] und installieren es.
 	
-	Sie können auch die Dateien im Ordner "C:\\ADFWalkthrough\\Scripts" verwenden, um Pig-/Hive-Skripts und Beispieldateien in den ADFWalkthrough-Container im Blob-Speicher hochzuladen und die Tabelle "MarketingCampaignEffectiveness" in der Azure SQL-Datenbank "MarketingCamapaigns" zu erstellen.
+	Sie können auch die Dateien im Ordner "C:\ADFWalkthrough\Scripts" verwenden, um Pig-/Hive-Skripts und Beispieldateien in den ADFWalkthrough-Container im Blob-Speicher hochzuladen und die Tabelle "MarketingCampaignEffectiveness" in der Azure SQL-Datenbank "MarketingCamapaigns" zu erstellen.
    
 2. Bestätigen Sie, dass der lokale Computer auf die Azure SQL-Datenbank zugreifen darf. Verwenden Sie das Azure-Verwaltungsportal oder **sp_set_firewall_rule** in der Masterdatenbank, um eine Firewallregel für die IP-Adresse auf dem Computer zu erstellen und so den Zugriff zu aktivieren. Es kann bis zu fünf Minuten dauert, bis diese Änderung wirksam wird. Unter [Festlegen von Firewallregeln für Azure SQL][azure-sql-firewall] finden Sie weitere Informationen.
-4. Navigieren Sie in Azure PowerShell zu dem Ordner, in dem Sie die Beispiele extrahiert haben (z. B. **C:\\ADFWalkthrough**).
+4. Navigieren Sie in Azure PowerShell zu dem Ordner, in dem Sie die Beispiele extrahiert haben (z. B. **C:\ADFWalkthrough**).
 5. Führen Sie **uploadSampleDataAndScripts.ps1** aus. 
 6. Wenn das Skript erfolgreich ausgeführt wird, wird Folgendes angezeigt:
 
@@ -292,7 +292,7 @@ In der Abbildung oben sind die Pipelines in der mittleren Zeile und die Tabellen
 ### So erstellen Sie die Tabellen
 	
 1. Klicken Sie im Editor für die Data Factory auf der Symbolleiste auf **Neues Dataset** und anschließend im Dropdownmenü auf **Azure-Blobspeicher**. 
-2. Ersetzen Sie JSON im rechten Bereich durch das JSON-Skript aus der Datei **RawGameEventsTable.json** im Ordner **C:\\ADFWalkthrough\\Tables**.
+2. Ersetzen Sie JSON im rechten Bereich durch das JSON-Skript aus der Datei **RawGameEventsTable.json** im Ordner **C:\ADFWalkthrough\Tables**.
 3. Klicken Sie auf der Symbolleiste auf **Bereitstellen**, um die Tabelle bereitzustellen. Vergewissern Sie sich auf der Titelleiste des Editors, dass die Meldung **TABELLE ERFOLGREICH ERSTELLT** angezeigt wird.
 4. Wiederholen Sie die Schritte 1 bis 3 mit dem Inhalt der folgenden Dateien: 
 	1. PartitionedGameEventsTable.json
@@ -314,7 +314,7 @@ In diesem Schritt erstellen Sie die folgenden Pipelines:
 ### So erstellen Sie Pipelines:
 
 1. Klicken Sie in **Data Factory Editor** in der Symbolleiste auf die Schaltfläche **Neue Pipeline**. Klicken Sie in der Symbolleiste auf **... (drei Punkte)**, wenn die Schaltfläche nicht angezeigt wird. Alternativ können Sie in der Strukturansicht mit der rechten Maustaste auf **Pipelines** und dann auf **Neue Pipeline** klicken.
-2. Ersetzen Sie JSON im rechten Bereich durch das JSON-Skript aus der Datei **PartitionGameLogsPipeline.json** im Ordner **C:\\ADFWalkthrough\\Pipelines**.
+2. Ersetzen Sie JSON im rechten Bereich durch das JSON-Skript aus der Datei **PartitionGameLogsPipeline.json** im Ordner **C:\ADFWalkthrough\Pipelines**.
 3. Fügen Sie ein **Komma (',')** am Ende der **schließenden eckigen Klammer ('] ')** in JSON hinzu, und fügen Sie hinter der schließenden eckigen Klammer die folgenden drei Zeilen hinzu. 
 
         "start": "2014-05-01T00:00:00Z",
@@ -525,4 +525,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial/DataFactoryCreateButton.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

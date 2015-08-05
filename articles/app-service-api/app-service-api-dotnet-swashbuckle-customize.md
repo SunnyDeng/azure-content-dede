@@ -74,7 +74,7 @@ Die folgenden Schritte zeigen, wie Sie Swashbuckle mithilfe der Datei *SwaggerCo
 		    }
 		}
 
-2. Rufen Sie in der Datei *App_Start\\SwaggerConfig.cs* die `OperationFilter`-Methode auf, damit Swashbuckle die neue `IOperationFilter`-Implementierung verwendet.
+2. Rufen Sie in der Datei *App_Start\SwaggerConfig.cs* die `OperationFilter`-Methode auf, damit Swashbuckle die neue `IOperationFilter`-Implementierung verwendet.
 
 		c.OperationFilter<MultipleOperationsWithSameVerbFilter>();
 
@@ -250,4 +250,4 @@ Den entsprechenden Code finden Sie in [diesem GitHub-Repository](https://github.
 In diesem Artikel wurde erläutert, wie die Generierung von Vorgangs-IDs und von gültigen Antwortcodes in Swashbuckle angepasst werden kann. Weitere Informationen finden Sie unter [Swashbuckle auf GitHub](https://github.com/domaindrivendev/Swashbuckle).
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

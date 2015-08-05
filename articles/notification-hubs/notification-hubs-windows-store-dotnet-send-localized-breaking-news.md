@@ -231,4 +231,4 @@ Weitere Informationen zum Verwenden von Vorlagen finden Sie unter [Benachrichtig
 [Notification Hub-Informationen für Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

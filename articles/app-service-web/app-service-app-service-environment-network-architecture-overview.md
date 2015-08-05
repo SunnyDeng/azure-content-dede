@@ -72,4 +72,4 @@ Details zur Verwendung benutzerdefinierten Routen zum Gewähren des ausgehenden 
 [GeneralNetworkFlows]: ./media/app-service-app-service-environment-network-architecture-overview/NetworkOverview-1.png
 [OutboundNetworkAddresses]: ./media/app-service-app-service-environment-network-architecture-overview/OutboundNetworkAddresses-1.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

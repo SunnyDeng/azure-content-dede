@@ -18,14 +18,6 @@
 
 # Abschließen der wiederhergestellten Azure SQL-Datenbank
 
-> [AZURE.SELECTOR]
-- [Point in Time Restore - portal](sql-database-point-in-time-restore-tutorial-management-portal.md)
-- [Point in Time Restore - PowerShell](sql-database-point-in-time-restore-tutorial-powershell.md)
-- [Point in Time Restore - REST API](sql-database-point-in-time-restore-tutorial-rest.md)
-- [Geo-Restore - portal](sql-database-geo-restore-tutorial-management-portal.md)
-- [Geo-Restore - PowerShell](sql-database-geo-restore-tutorial-powershell.md)
-- [Geo-Restore - REST API](sql-database-geo-restore-tutorial-rest.md)
-
 ## Übersicht
 
 Dieser Artikel enthält eine Aufgabenprüfliste, die Sie durchgehen müssen, bevor Sie eine neu wiederhergestellte Azure SQL-Datenbank wieder produktiv einsetzen. Diese Prüfliste gilt für Datenbanken, die aus einem Failover bei der Georeplikation, aus einer gelöschten Datenbank, mit der Zeitpunktwiederherstellung oder mit Geo-Restore wiederhergestellt wurden.
@@ -64,4 +56,4 @@ Weitere Informationen zu Datenbank-Warnungsregeln finden Sie unter [Vorgehenswei
 Wenn für den Zugriff auf die Datenbank Überwachung erforderlich ist, müssen Sie nach der Wiederherstellung der Datenbank die Überwachung aktivieren. Es ist ein guter Indikator für die Notwendigkeit von Überwachung, wenn Clientanwendungen sichere Verbindungszeichenfolgen in einem Muster von *.database.secure.windows.net verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit der SQL-Datenbanküberwachung](sql-database-auditing-get-started.md). 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

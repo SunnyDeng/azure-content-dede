@@ -92,4 +92,4 @@
 Nun verwendet der Dienst die Benutzer-ID-Markierung, um eine Pushbenachrichtigung (mit dem Text des eingefügten Elements) an alle Registrierungen zu senden, die vom angemeldeten Benutzer erstellt wurden.
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

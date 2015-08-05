@@ -112,4 +112,4 @@ Veröffentlichen Sie erneut Ihr mobiles Back-End-Projekt, und führen Sie eine b
 [Erste Schritte mit Pushbenachrichtigungen]: app-service-mobile-dotnet-backend-xamarin-ios-get-started-push-preview.md
 [Vorlagen]: https://msdn.microsoft.com/de-de/library/dn530748.aspx
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

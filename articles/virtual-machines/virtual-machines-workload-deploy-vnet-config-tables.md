@@ -5,7 +5,8 @@
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/27/2015"
+	ms.date="07/21/2015"
 	ms.author="josephd"/>
 
 # Erstellen eines standortübergreifenden virtuellen Netzwerks mithilfe von Konfigurationstabellen
@@ -27,7 +28,7 @@ In diesem Thema erfahren Sie Schritt für Schritt, wie ein standortübergreifend
 
 Diese Tabellen werden in der Regel in einem Thema ausgefüllt, in dem die Konfiguration einer IT-Arbeitsauslastung in Azure beschrieben wird, die auch ein standortübergreifendes virtuelles Netzwerk umfasst. Ein Beispiel finden Sie unter [Phase 1: Konfigurieren von Azure](virtual-machines-workload-intranet-sharepoint-phase1.md).
 
-In den nachfolgend dargestellten Schritten, die Sie durch die Konfiguration des virtuellen Netzwerks führen, wird auf die Informationen in diesen Tabellen verwiesen. Wenn Sie die Einstellungen in diesen Tabellen noch nicht in einem anderen Thema angegeben haben, aber dennoch ein standortübergreifendes virtuelles Netzwerk konfigurieren möchten, lesen Sie das Thema [Configure a Cross-Premises Site-to-Site connection to an Azure Virtual Network](https://msdn.microsoft.com/library/dn133795.aspx) (Konfiguration einer standortübergreifenden Site-to-Site-Verbindung zu einem virtuellen Azure-Netzwerk).
+In den nachfolgend dargestellten Schritten, die Sie durch die Konfiguration des virtuellen Netzwerks in der Dienstverwaltung führen, wird auf die Informationen in diesen Tabellen verwiesen. Wenn Sie die Einstellungen in diesen Tabellen noch nicht in einem anderen Thema angegeben haben, aber dennoch ein standortübergreifendes virtuelles Netzwerk konfigurieren möchten, lesen Sie das Thema [Configure a Cross-Premises Site-to-Site connection to an Azure Virtual Network](https://msdn.microsoft.com/library/dn133795.aspx) (Konfiguration einer standortübergreifenden Site-to-Site-Verbindung zu einem virtuellen Azure-Netzwerk).
 
 > [AZURE.NOTE]Dieses Verfahren führt Sie durch die Erstellung eines virtuellen Netzwerks, das eine Site-to-Site-VPN-Verbindung verwendet. Informationen zur Verwendung von Azure ExpressRoute für Ihre Site-to-Site-Verbindung finden Sie unter [ExpressRoute – technische Übersicht](https://msdn.microsoft.com/library/dn606309.aspx).
 
@@ -66,4 +67,4 @@ In den nachfolgend dargestellten Schritten, die Sie durch die Konfiguration des 
 
 [Configure a cross-premises site-to-site connection to an Azure virtual network](https://msdn.microsoft.com/library/dn133795.aspx) (Konfiguration einer standortübergreifenden Site-to-Site-Verbindung mit einem virtuellen Azure-Netzwerk).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

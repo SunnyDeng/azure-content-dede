@@ -117,7 +117,7 @@ In diesem Schritt verwenden Sie das Azure-Verwaltungsportal zum Erstellen einer 
 
 	![Blatt "Gateway konfigurieren"][image-data-factory-gateway-configure-blade]
 
-	Dies ist die einfachste Möglichkeit (One-Click) zum Herunterladen, Installieren, Konfigurieren und Registrieren des Gateways in einem einzigen Schritt. Sie können sehen, dass die Anwendung **Microsoft Datenverwaltungsgateway – Konfigurations-Manager** auf Ihrem Computer installiert ist. Die ausführbare Datei **ConfigManager.exe** befindet sich im Ordner **C:\\Programme\\Microsoft Data Management Gateway\\1.0\\Shared**.
+	Dies ist die einfachste Möglichkeit (One-Click) zum Herunterladen, Installieren, Konfigurieren und Registrieren des Gateways in einem einzigen Schritt. Sie können sehen, dass die Anwendung **Microsoft Datenverwaltungsgateway – Konfigurations-Manager** auf Ihrem Computer installiert ist. Die ausführbare Datei **ConfigManager.exe** befindet sich im Ordner **C:\Programme\Microsoft Data Management Gateway\1.0\Shared**.
 
 	Sie können das Gateway auch manuell über die Links in diesem Fenster herunterladen und installieren und mit dem Schlüssel im Textfeld **MIT SCHLÜSSEL REGISTRIEREN** registrieren.
 	
@@ -166,7 +166,7 @@ In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **StorageLinkedService
 4.	Führen Sie im JSON-Bereich folgende Schritte aus:
 	1.	Geben Sie **adftutorialgateway** für die **gatewayName**-Eigenschaft ein, um den gesamten Text in doppelten Anführungszeichen zu ersetzen.  
 	2.	Bei Verwendung der **SQL Server-Authentifizierung**: 
-		1.	Ersetzen Sie in der **connectionString**-Eigenschaft **<servername>**, **<databasename>**, **<username>** und **<password>** durch die Angaben für "Server", "Datenbank", "Benutzerkonto" und "Kennwort" Ihres lokalen SQL Server-Computers. Verwenden Sie zum Angeben eines Instanznamens Escapezeichen: . Beispiel: **Server\\Instanzname**. 	
+		1.	Ersetzen Sie in der **connectionString**-Eigenschaft **<servername>**, **<databasename>**, **<username>** und **<password>** durch die Angaben für "Server", "Datenbank", "Benutzerkonto" und "Kennwort" Ihres lokalen SQL Server-Computers. Verwenden Sie zum Angeben eines Instanznamens Escapezeichen: . Beispiel: **Server\Instanzname**. 	
 		2.	Entfernen Sie die letzten beiden Eigenschaften ("username" und **password**) aus der JSON-Datei und das **Komma (,)** am Ende der letzten Zeile des verbleibenden JSON-Skripts.
 		
 				{
@@ -487,7 +487,7 @@ Dieser Abschnitt beschreibt das Erstellen und Registrieren eines Gateways mit Az
 	**Beispiel für eine Befehlszeile und Ausgabe**:
 
 
-		PS C:> New-AzureDataFactoryGateway -Name MyGateway -DataFactoryName $df -ResourceGroupName ADF –Description “gateway for walkthrough”
+		PS C:\> New-AzureDataFactoryGateway -Name MyGateway -DataFactoryName $df -ResourceGroupName ADF –Description “gateway for walkthrough”
 
 		Name              : MyGateway
 		Description       : gateway for walkthrough
@@ -509,12 +509,12 @@ Dieser Abschnitt beschreibt das Erstellen und Registrieren eines Gateways mit Az
 	**Beispiel für eine Befehlszeilenausgabe:**
 
 
-		PS C:> $Key = New-AzureDataFactoryGatewayKey -GatewayName MyGateway -ResourceGroupName ADF -DataFactoryName $df 
+		PS C:\> $Key = New-AzureDataFactoryGatewayKey -GatewayName MyGateway -ResourceGroupName ADF -DataFactoryName $df 
 
 	
-4. Wechseln Sie in Azure PowerShell zum Ordner **C:\\Programme\\Microsoft Data Management Gateway\\1.0\\PowerShellScript\\, und führen Sie das Skript **RegisterGateway.ps1** aus, das mit der lokalen Variablen **$Key** verknüpft ist, wie im folgenden Befehl dargestellt. Sie registrieren damit den Client-Agent auf dem Computer mit dem logischen Gateway, das Sie zuvor erstellt haben.
+4. Wechseln Sie in Azure PowerShell zum Ordner **C:\Programme\Microsoft Data Management Gateway\1.0\PowerShellScript\, und führen Sie das Skript **RegisterGateway.ps1** aus, das mit der lokalen Variablen **$Key** verknüpft ist, wie im folgenden Befehl dargestellt. Sie registrieren damit den Client-Agent auf dem Computer mit dem logischen Gateway, das Sie zuvor erstellt haben.
 
-		PS C:> .\RegisterGateway.ps1 $Key.GatewayKey
+		PS C:\> .\RegisterGateway.ps1 $Key.GatewayKey
 		
 		Agent registration is successful!
 
@@ -627,4 +627,4 @@ Sie können ein Gateway mit dem **Remove-AzureDataFactoryGateway**-Cmdlet entfer
 
 [image-data-factory-preview-portal-storage-key]: ./media/data-factory-get-started/PreviewPortalStorageKey.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

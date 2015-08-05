@@ -125,4 +125,4 @@ Es gibt zahlreiche weitere Ressourcen für die Einrichtung eines LAMP-Stacks in 
 - [https://help.ubuntu.com/community/ApacheMySQLPHP](https://help.ubuntu.com/community/ApacheMySQLPHP)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

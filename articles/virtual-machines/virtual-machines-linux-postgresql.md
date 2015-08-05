@@ -6,7 +6,7 @@
 	authors="SuperScottz"
 	manager="timlt"
 	editor=""
-    tags=""/>
+  tags=""/>
 
 <tags
 	ms.service="virtual-machines"
@@ -251,4 +251,4 @@ Mit dem folgenden Befehl können Sie Daten in einer Tabelle aktualisieren: In di
 ##Weitere Informationen über PostgreSQL
 Sie schließen jetzt die Installation von PostgreSQL auf dem virtuellen Linux-Computer in Microsoft Azure ab und beginnen mit der Verwendung in Microsoft Azure. Weitere Informationen über PostgreSQL finden Sie [hier](http://www.postgresql.org/)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

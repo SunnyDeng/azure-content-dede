@@ -50,4 +50,4 @@ In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** im Azure-Ve
 Weitere Informationen zur Konfiguration eines virtuellen Computers und den geeigneten Zeitpunkten finden Sie unter [Informationen zu Azure-VM-Konfigurationseinstellungen](http://msdn.microsoft.com/library/azure/dn763935.aspx).
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

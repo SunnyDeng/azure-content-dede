@@ -125,4 +125,4 @@ Weitere Informationen zum Festlegen einer Node.js-Version für Ihre Anwendung fi
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

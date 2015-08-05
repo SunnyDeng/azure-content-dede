@@ -846,4 +846,4 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
 [Vollständiges Beispiel zu Xamarin.Forms Azure-Pushbenachrichtigungen]: https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPushXamarinForms
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

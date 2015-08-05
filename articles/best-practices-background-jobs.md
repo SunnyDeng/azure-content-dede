@@ -317,4 +317,4 @@ Hintergrundaufgaben müssen ausreichend Leistung bieten, damit sichergestellt is
 - [Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung](http://msdn.microsoft.com/library/hh767287.aspx)
 - [Aktivieren der Diagnose in einem Clouddienst](http://msdn.microsoft.com/library/dn482131.aspx)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

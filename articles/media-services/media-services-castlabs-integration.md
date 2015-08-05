@@ -25,7 +25,7 @@ In diesem Artikel wird beschrieben, wie Sie mithilfe von Azure Media Services (A
 
 In der folgenden Abbildung ist eine allgemeine Azure Media Services- und castLabs-Integrationsarchitektur dargestellt.
 
-![Seite "Skalieren"](./media/media-services-castlabs-integration/media-services-castlabs-integration.png)
+![Integration](./media/media-services-castlabs-integration/media-services-castlabs-integration.png)
 
 ##Typisches System-Setup
 
@@ -114,4 +114,4 @@ Wenn Sie das geschützte Video in HTML5 in Chrome mit dem castLabs-Player wieder
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

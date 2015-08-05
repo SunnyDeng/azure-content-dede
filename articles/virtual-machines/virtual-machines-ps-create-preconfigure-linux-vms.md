@@ -1,21 +1,21 @@
-<properties 
-	pageTitle="Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern" 
-	description="Erfahren Sie, wie Sie Azure PowerShell zum Erstellen und Vorabkonfigurieren Linux-basierter virtueller Computer verwenden." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+<properties
+	pageTitle="Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern"
+	description="Erfahren Sie, wie Sie Azure PowerShell zum Erstellen und Vorabkonfigurieren Linux-basierter virtueller Computer verwenden."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="KBDAzure"
+	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/09/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/09/2015"
+	ms.author="kathydav"/>
 
 # Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern
 
@@ -57,7 +57,7 @@ Hier finden Sie einige Beispiele für ImageFamily-Werte für Linux-basierte Comp
 - SUSE Linux Enterprise Server 12
 
 Öffnen Sie eine neue Instanz des Texteditors Ihrer Wahl oder der PowerShell Integrated Scripting Environment (ISE). Kopieren Sie den folgenden Code in die neue Textdatei oder PowerShell ISE, wobei Sie den Wert von "ImageFamily" ersetzen.
- 
+
 	$family="<ImageFamily value>"
 	$image=Get-AzureVMImage | where { $_.ImageFamily -eq $family } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 
@@ -84,7 +84,7 @@ Die InstanceSize-Werte für virtuelle Computer der D-, DS- oder G-Serie finden S
 
 Geben Sie den anfänglichen Linux-Benutzernamen und das Kennwort an (erforderlich). Verwenden Sie ein sicheres Kennwort. Sie können die Sicherheit des Kennworts unter [Password Checker: Using Strong Passwords](https://www.microsoft.com/security/pc-security/password-checker.aspx) (Kennwortprüfung – Verwenden sicherer Kennwörter) überprüfen.
 
-	$cred=Get-Credential -Message "Type the name and password of the initial Linux account."	
+	$cred=Get-Credential -Message "Type the name and password of the initial Linux account."
 	$vm1 | Add-AzureProvisioningConfig -Linux -LinuxUser $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
 
 Geben Sie optional einen Satz von SSH-Schlüsselpaaren an, die bereits im Abonnement bereitgestellt wurden.
@@ -137,7 +137,7 @@ Option 1: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddiens
 
 	New-AzureVM –ServiceName "<short name of the cloud service>" -VMs $vm1
 
-Der kurze Name des Clouddiensts ist der Name in der Liste der Clouddienste im Azure-Verwaltungsportal oder in der Liste der Ressourcengruppen im Azure-Vorschauportal.
+Der kurze Name des Cloud-Diensts ist der Name in der Liste der Cloud-Dienste im Azure-Verwaltungsportal oder in der Liste der Ressourcengruppen im Azure-Vorschauportal.
 
 Option 2: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddienst und virtuellen Netzwerk.
 
@@ -151,14 +151,14 @@ Option 2: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddiens
 
 Wenn Sie einen Texteditor verwenden, kopieren Sie den Befehlssatz schließlich in die Zwischenablage, und klicken Sie dann mit der rechten Maustaste auf Ihre offene Azure PowerShell-Eingabeaufforderung. Dies gibt den Befehlssatz als Serie von PowerShell-Befehlen aus und erstellt den virtuellen Azure-Computer. Führen Sie alternativ den Befehlssatz in der PowerShell ISE aus.
 
-Wenn Sie den virtuellen Computer in falschen Abonnements, Speicherkonten, Clouddiensten, Verfügbarkeitsgruppen, virtuellen Netzwerken oder Subnetzen erstellen, löschen Sie den virtuellen Computer, korrigieren Sie die Befehlsblocksyntax, und führen Sie dann den korrigierten Befehlssatz aus.
+Wenn Sie den virtuellen Computer in falschen Abonnements, Speicherkonten, Cloud-Diensten, Verfügbarkeitsgruppen, virtuellen Netzwerken oder Subnetzen erstellen, löschen Sie den virtuellen Computer, korrigieren Sie die Befehlsblocksyntax, und führen Sie dann den korrigierten Befehlssatz aus.
 
 Informieren Sie sich nach dem Erstellen des virtuellen Computer unter [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md).
 
 Wenn Sie diesen virtuellen Computer erneut oder einen ähnlichen Computer erstellen, können Sie:
 
 - diesen Befehlssatz als PowerShell-Skriptdatei (*.ps1) speichern
-- diesen Befehlssatz als Azure Automation-Runbook im Bereich **Automatisierung** des Azure-Verwaltungsportals speichern 
+- diesen Befehlssatz als Azure-Automatisierungsrunbook im Bereich **Automatisierung** des Azure-Verwaltungsportals speichern
 
 ## <a id="examples"></a>Beispiele
 
@@ -169,11 +169,11 @@ Hier finden Sie zwei Beispiele für die Verwendung der vorangegangenen Schritte 
 Ich brauche einen PowerShell-Befehlssatz, um den anfänglichen virtuellen Linux-Computer für einen MySQL-Server zu erstellen, der:
 
 - das Ubuntu Server 12.10-Image verwendet
-- AZMYSQL1 heißt 
+- AZMYSQL1 heißt
 - einen zusätzlichen Datenträger mit 500 GB aufweist
 - die statische IP-Adresse 192.168.244.4 umfasst
 - sich im BackEnd-Subnetz des virtuellen Netzwerks "AZDatacenter" befindet
-- sich im Clouddienst "Azure-TailspinToys" befindet
+- sich im Cloud-Dienst "Azure-TailspinToys" befindet
 
 Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen Computers, mit Leerzeilen zwischen jedem Block für Lesbarkeit.
 
@@ -184,7 +184,7 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 	$vmsize="Large"
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image
 
-	$cred=Get-Credential -Message "Type the name and password of the initial Linux account."	
+	$cred=Get-Credential -Message "Type the name and password of the initial Linux account."
 	$vm1 | Add-AzureProvisioningConfig -Linux -LinuxUser $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
 
 	$vm1 | Set-AzureSubnet -SubnetNames "BackEnd"
@@ -207,10 +207,10 @@ Ich brauche einen PowerShell-Befehlssatz, um einen virtuellen Linux-Computer fü
 
 - das SUSE Linux Enterprise Server 12-Image verwendet
 - LOB1 heißt
-- einen zusätzlichen Datenträger mit 50 GB aufweist 
-- ein Mitglied des LOBServers-Load Balancer-Satzes für standardmäßigen Webdatenverkehr ist
+- einen zusätzlichen Datenträger mit 50 GB aufweist
+- ein Mitglied des LOBServers-Lastausgleichssatzes für standardmäßigen Webdatenverkehr ist
 - sich im FrontEnd-Subnetz des virtuellen Netzwerks "AZDatacenter" befindet
-- sich im Clouddienst "Azure-TailspinToys" befindet
+- sich im Cloud-Dienst "Azure-TailspinToys" befindet
 
 Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen Computers.
 
@@ -221,7 +221,7 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 	$vmsize="Medium"
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image
 
-	$cred=Get-Credential -Message "Type the name and password of the initial Linux account."	
+	$cred=Get-Credential -Message "Type the name and password of the initial Linux account."
 	$vm1 | Add-AzureProvisioningConfig -Linux -LinuxUser $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
 
 	$vm1 | Set-AzureSubnet -SubnetNames "FrontEnd"
@@ -248,9 +248,9 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 ## Zusätzliche Ressourcen
 
-[Dokumentation zu Virtual Machines](http://azure.microsoft.com/documentation/services/virtual-machines/)
+[Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-[FAQ Virtuelle Computer in Azure](http://msdn.microsoft.com/library/azure/dn683781.aspx)
+[Virtuelle Computer in Azure – häufig gestellte Fragen](http://msdn.microsoft.com/library/azure/dn683781.aspx)
 
 [Übersicht über Azure Virtual Machines](http://msdn.microsoft.com/library/azure/jj156143.aspx)
 
@@ -260,6 +260,4 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
- 
-
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

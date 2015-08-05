@@ -2,7 +2,6 @@
     pageTitle="Hinzufügen eines Benutzers in RemoteApp" 
     description="Erfahren Sie, wie Sie in RemoteApp Benutzerhinzufügen" 
     services="remoteapp" 
-    solutions="" 
 	documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
@@ -54,4 +53,4 @@ Beachten Sie die [weiteren Informationen](remoteapp-ad.md) zum Konfigurieren von
 Bei Verwendung des Vorlagenimages von Office 365 ProPlus in Ihrer Sammlung *oder* bei Erstellung eines benutzerdefinierten Images, das Office 365 verwendet, dürfen Sie nur Azure Active Directory-Benutzer hinzufügen, die Office 365-Abonnements für die Standarddomäne Ihres Abonnements haben. Weitere Informationen finden Sie unter [Verwenden von Office 365 mit Azure RemoteApp](remoteapp-o365.md).
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

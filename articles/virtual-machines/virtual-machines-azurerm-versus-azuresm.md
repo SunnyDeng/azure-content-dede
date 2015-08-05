@@ -110,4 +110,4 @@ Die Automatisierungen und Skripts, die Sie erstellt haben, bleiben für die vorh
 Dies wird zurzeit nicht unterstützt. Die mit den neuen Azure-Ressourcen-Manager-APIs erstellten virtuellen Netzwerke können nicht mit Express Route-Schaltkreisen verbunden werden Dies wird zukünftig unterstützt.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

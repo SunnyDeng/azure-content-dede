@@ -145,4 +145,4 @@ Zum Verwenden der Push-API oder Device-API müssen Sie die eindeutige Geräteken
  
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

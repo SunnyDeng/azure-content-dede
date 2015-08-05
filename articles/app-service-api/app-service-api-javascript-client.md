@@ -371,4 +371,4 @@ Das vorliegende Beispiel hat gezeigt, wie Sie AngularJS als JavaScript-Plattform
 
 Dieses Beispiel veranschaulicht den nicht authentifizierten Zugriff auf eine API-App. Informationen zur Authentifizierung in App Service finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

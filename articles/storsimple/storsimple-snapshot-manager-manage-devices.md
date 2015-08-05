@@ -152,7 +152,7 @@ Gehen Sie folgendermaßen vor, um Details zu einem StorSimple-Gerät anzuzeigen 
 
 3. Klicken Sie im **Ergebnisbereich** mit der rechten Maustaste auf den Namen des Geräts, und klicken Sie dann auf **Details**.
 
-4\. Das Dialogfeld **Gerätedetails** wird angezeigt. In diesem Feld werden Name, Modell, Version, Seriennummer, Status, qualifizierter iSCSI-Name (IQN) des Ziels und Datum und Uhrzeit der letzten Synchronisierung angezeigt.
+4. Das Dialogfeld **Gerätedetails** wird angezeigt. In diesem Feld werden Name, Modell, Version, Seriennummer, Status, qualifizierter iSCSI-Name (IQN) des Ziels und Datum und Uhrzeit der letzten Synchronisierung angezeigt.
 
    - Klicken Sie auf **Resync**, um das Gerät zu synchronisieren.
 
@@ -238,7 +238,7 @@ Wenn ein StorSimple-Gerät ausfällt und durch ein Austauschgerät ersetzt wird 
 
 3. Entfernen Sie die Konfigurationsinformationen für das alte Gerät:
 
-    1. Navigieren Sie im Datei-Explorer zu "C:\\ProgramData\\Microsoft\\StorSimple\\BACatalog". 
+    1. Navigieren Sie im Datei-Explorer zu "C:\ProgramData\Microsoft\StorSimple\BACatalog". 
 
     2. Löschen Sie die Dateien im Ordner "BACatalog".
 
@@ -262,4 +262,4 @@ Wenn ein StorSimple-Gerät ausfällt und durch ein Austauschgerät ersetzt wird 
 
 [Verwenden des StorSimple Snapshot Managers zum Anzeigen und Verwalten von Volumes](storsimple-snapshot-manager-manage-volumes.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

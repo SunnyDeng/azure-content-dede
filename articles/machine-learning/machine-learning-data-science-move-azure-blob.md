@@ -175,4 +175,4 @@ Der folgende Beispielcode lädt alle Blobs aus einem Container herunter. Dabei w
 [3]: ./media/machine-learning-data-science-move-azure-blob/data-science-process-uploading-data-to-blob-storage-img3.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

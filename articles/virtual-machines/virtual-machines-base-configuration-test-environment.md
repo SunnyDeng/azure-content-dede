@@ -129,7 +129,7 @@ Stellen Sie dann eine Verbindung mit dem virtuellen Computer DC1 her.
 3.	Wenn Sie zum Öffnen von „DC1.rdp“ aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
-- Name: **DC1**[Name des lokalen Administratorkontos]
+- Name: **DC1\**[Name des lokalen Administratorkontos]
 - Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
@@ -158,7 +158,7 @@ Stellen Sie nach dem Neustart des virtuellen Computers DC1 erneut eine Verbindun
 3.	Wenn Sie zum Öffnen von „DC1.rdp“ aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
-- Name: **CORP**[Name des lokalen Administratorkontos]
+- Name: **CORP\**[Name des lokalen Administratorkontos]
 - Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
@@ -238,7 +238,7 @@ Als Nächstes überprüfen Sie, ob Sie mit CLIENT1 auf die Web- und Dateifreigab
 3.	Klicken Sie unter **Verstärkte Sicherheitskonfiguration für IE** bei **Administratoren** und **Benutzern** auf **Aus**, und klicken Sie dann auf **OK**.
 4.	Klicken Sie auf der Startseite auf **Internet Explorer** und dann auf **OK**.
 5.	Geben Sie in die Adressleiste **http://app1.corp.contoso.com/** ein, und drücken Sie dann die EINGABETASTE. Nun sollte die IIS-Standardwebseite (Internet-Informationsdienste) für APP1 angezeigt werden. 6.	Klicken Sie in der Desktopsymbolleiste auf das Symbol des Datei-Explorers.
-7.	Geben Sie in der Adressleiste **\app1\Files** ein, und drücken Sie dann die EINGABETASTE.
+7.	Geben Sie in der Adressleiste **\\app1\Files** ein, und drücken Sie dann die EINGABETASTE.
 8.	Es wird ein Fenster mit dem Inhalt des freigegebenen Ordners geöffnet.
 9.	Doppelklicken Sie im Fenster **Dateien** des freigegebenen Ordners auf die Datei **Example.txt**. Nun wird der Inhalt der Datei „Example.txt“ angezeigt.
 10.	Schließen Sie die Fenster **example.txt – Editor** und **Dateien** des freigegebenen Ordners.
@@ -283,4 +283,4 @@ Zum Starten der virtuellen Computer in der angegebenen Reihenfolge mit Azure Pow
 	Start-AzureVM -ServiceName $serviceName -Name "CLIENT1"
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="04/01/2015"
+	ms.date="07/11/2015"
 	ms.author="nitinme"/>
 
 # Entwickeln von Java MapReduce-Programmen für Hadoop in HDInsight
@@ -26,7 +26,7 @@ In diesem Lernprogramm werden Sie schrittweise durch ein End-to-End-Szenario fü
 
 Bevor Sie mit diesem Lernprogramm beginnen, benötigten Sie Folgendes:
 
-- Installieren des HDInsight-Emulators Informationen dazu finden Sie unter [Erste Schritte mit dem HDInsight-Emulator][hdinsight-emulator]. Stellen Sie sicher, dass alle erforderlichen Dienste ausgeführt werden. Starten Sie auf dem Computer, auf dem HDInsight-Emulator installiert ist, die Hadoop-Befehlszeile über die Desktopverknüpfung, navigieren Sie zu **C:\\hdp**, und führen Sie den Befehl **start_local_hdp_services.cmd** aus.
+- Installieren des HDInsight-Emulators Informationen dazu finden Sie unter [Erste Schritte mit dem HDInsight-Emulator][hdinsight-emulator]. Stellen Sie sicher, dass alle erforderlichen Dienste ausgeführt werden. Starten Sie auf dem Computer, auf dem HDInsight-Emulator installiert ist, die Hadoop-Befehlszeile über die Desktopverknüpfung, navigieren Sie zu **C:\hdp**, und führen Sie den Befehl **start_local_hdp_services.cmd** aus.
 - Installieren Sie Azure PowerShell auf dem Emulator-Computer. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure].
 - Installieren Sie die Java-Plattform JDK 7 oder eine neuere Version auf dem Emulator-Computer. Diese Software ist auf dem Emulator-Computer bereits verfügbar.
 - Installieren und konfigurieren Sie [Apache Maven](http://maven.apache.org/).
@@ -44,7 +44,7 @@ Erstellen Sie eine MapReduce-Anwendung zum Zählen von Wörtern. Diese einfache 
 
 **So erstellen Sie ein Projekt mit Maven**
 
-1. Erstellen Sie das Verzeichnis **C:\\Tutorials\\WordCountJava**. 2. Wechseln Sie in der Befehlszeile Ihrer Entwicklungsumgebung in das neu erstellte Verzeichnis.
+1. Erstellen Sie das Verzeichnis **C:\Tutorials\WordCountJava**. 2. Wechseln Sie in der Befehlszeile Ihrer Entwicklungsumgebung in das neu erstellte Verzeichnis.
 3. Verwenden Sie den Befehl __mvn__, der mit Maven installiert wird, um das Gerüst für das Projekt zu erstellen.
 
 		mvn archetype:generate -DgroupId=org.apache.hadoop.examples -DartifactId=wordcountjava -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -53,8 +53,8 @@ Erstellen Sie eine MapReduce-Anwendung zum Zählen von Wörtern. Diese einfache 
 
 	* __pom.xml__ – Das [Projektobjektmodell (POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)), das die Informationen und Konfigurationsdetails für das Erstellen des Projekts enthält.
 
-	* __src__ – Das Verzeichnis, das das __main\\java\\org\\apache\\hadoop\\examples__-Verzeichnis enthält, in dem Sie die Anwendung erstellen werden.
-3. Löschen Sie die Datei __src\\test\\java\\org\\apache\\hadoop\\examples\\apptest.java__, da diese in diesem Beispiel nicht verwendet wird.
+	* __src__ – Das Verzeichnis, das das __main\java\org\apache\hadoop\examples__-Verzeichnis enthält, in dem Sie die Anwendung erstellen werden.
+3. Löschen Sie die Datei __src\test\java\org\apache\hadoop\examples\apptest.java__, da diese in diesem Beispiel nicht verwendet wird.
 
 **So aktualisieren Sie das POM**
 
@@ -112,7 +112,7 @@ Erstellen Sie eine MapReduce-Anwendung zum Zählen von Wörtern. Diese einfache 
 
 **So erstellen Sie die Anwendung zum Zählen von Wörtern**
 
-1. Wechseln Sie in das Verzeichnis __wordcountjava\\src\\main\\java\\org\\apache\\hadoop\\examples__ und benennen Sie die Datei __app.java__ in __WordCount.java__ um.
+1. Wechseln Sie in das Verzeichnis __wordcountjava\src\main\java\org\apache\hadoop\examples__ und benennen Sie die Datei __app.java__ in __WordCount.java__ um.
 2. Öffnen Sie Notepad.
 2. Kopieren Sie das folgende Programm, und fügen Sie es in den Editor ein:
 
@@ -199,7 +199,7 @@ Erstellen Sie eine MapReduce-Anwendung zum Zählen von Wörtern. Diese einfache 
 
 	Damit werden etwaige frühere Buildartefakte entfernt, alle noch nicht installierten Abhängigkeiten heruntergeladen und die Anwendung erstellt und verpackt.
 
-3. Nachdem der Befehl ausgeführt wurde, enthält das Verzeichnis __wordcountjava\\target__ eine Datei mit dem Namen __wordcountjava-1.0-SNAPSHOT.jar__.
+3. Nachdem der Befehl ausgeführt wurde, enthält das Verzeichnis __wordcountjava\target__ eine Datei mit dem Namen __wordcountjava-1.0-SNAPSHOT.jar__.
 
 	> [AZURE.NOTE]Die Datei __wordcountjava-1.0-SNAPSHOT.jar__ ist eine Uberjar.
 
@@ -305,7 +305,7 @@ Damit ist die Entwicklung des MapReduce-Auftrags zum Zählen von Wörtern abgesc
 ##<a id="upload"></a>Hochladen von Daten und der Anwendung in den Azure-Blobspeicher
 Azure HDInsight verwendet zur Datenspeicherung Azure-Blobspeicher. Wenn ein HDInsight-Cluster bereitgestellt wird, werden die Systemdateien in einem Azure-Blobspeichercontainer gespeichert. Zum Speichern der Dateien können Sie entweder diesen Standardcontainer oder einen anderen Container verwenden (entweder in demselben Azure-Speicherkonto oder in einem anderen Speicherkonto in demselben Datencenter, in dem sich auch der Cluster befindet).
 
-In diesem Lernprogramm erstellen Sie einen Container in einem separaten Speicherkonto für die Datendateien und die MapReduce-Anwendung. Als Datendateien werden die Textdateien im Verzeichnis **C:\\hdp\\hadoop-2.4.0.2.1.3.0-1981\\share\\doc\\hadoop\\common** auf Ihrer Emulator-Arbeitsstation verwendet.
+In diesem Lernprogramm erstellen Sie einen Container in einem separaten Speicherkonto für die Datendateien und die MapReduce-Anwendung. Als Datendateien werden die Textdateien im Verzeichnis **C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common** auf Ihrer Emulator-Arbeitsstation verwendet.
 
 **So erstellen Sie ein Blobspeicherkonto und einen Container**
 
@@ -351,7 +351,7 @@ In diesem Lernprogramm erstellen Sie einen Container in einem separaten Speicher
 
 	Die Variablen **$storageAccountName_Data** und **$containerName_Data** stimmen mit den im letzten Vorgang definierten Variablen überein.
 
-	Bitte beachten Sie: Der Quellordner ist **c:\\Hadoop\\hadoop-1.1.0-SNAPSHOT**, und der Zielordner ist **WordCount/Input**.
+	Bitte beachten Sie: Der Quellordner ist **c:\Hadoop\hadoop-1.1.0-SNAPSHOT**, und der Zielordner ist **WordCount/Input**.
 
 3. Führen Sie die folgenden Befehle aus, um eine Liste der .txt-Dateien im Quellordner abzurufen:
 
@@ -546,7 +546,7 @@ In diesem Abschnitt wird erläutert, wie Sie die Ergebnisse herunterladen und an
 **So rufen Sie die Ausgabe ab**
 
 1. Öffnen Sie das Azure PowerShell-Fenster.
-2. Wechseln Sie zum Verzeichnis **C:\\Tutorials\\WordCountJava**. Das Standardverzeichnis für Azure PowerShell ist **C:\\Windows\\System32\\WindowsPowerShell\\v1.0**. Die Cmdlets, die Sie ausführen, laden die Ausgabedatei in den aktuellen Ordner herunter. Sie haben nicht die Berechtigung zum Herunterladen der Dateien in die Systemordner.
+2. Wechseln Sie zum Verzeichnis **C:\Tutorials\WordCountJava**. Das Standardverzeichnis für Azure PowerShell ist **C:\Windows\System32\WindowsPowerShell\v1.0**. Die Cmdlets, die Sie ausführen, laden die Ausgabedatei in den aktuellen Ordner herunter. Sie haben nicht die Berechtigung zum Herunterladen der Dateien in die Systemordner.
 2. Führen Sie die folgenden Befehle aus, um die Werte festzulegen:
 
 		$subscriptionName = "<AzureSubscriptionName>"
@@ -609,4 +609,4 @@ In diesem Lernprogramm haben Sie gelernt, wie Sie einen Java-MapReduce-Auftrag e
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

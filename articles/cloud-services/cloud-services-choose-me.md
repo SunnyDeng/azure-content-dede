@@ -36,4 +36,4 @@ Azure bietet verschiedene Hostingmodelle für die Ausführung von Anwendungen. J
 [Virtual Machines]: ../virtual-machines-choose-me.md
 [Cloud Services]: #tellmecs
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

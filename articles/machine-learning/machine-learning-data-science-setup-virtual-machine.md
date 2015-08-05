@@ -1,11 +1,13 @@
 <properties
 	pageTitle="Einrichten eines virtuellen Computers als IPython Notebook-Server | Microsoft Azure"
 	description="Richten Sie einen virtuellen Azure-Computer für die Verwendung in einer Data Science-Umgebung mit IPython-Server für eine erweiterte Analyse ein."
+	metaKeywords=""
 	services="machine-learning"
+	solutions="" 
 	documentationCenter=""
 	authors="msolhab"
 	manager="paulettm"
-	editor="cgronlun" />
+	editor="cgronlun"  />
 
 <tags
 	ms.service="machine-learning"
@@ -145,4 +147,4 @@ Die nächsten Schritte in Advanced Analytics Process and Technology (ADAPT) sind
 [29]: ./media/machine-learning-data-science-setup-virtual-machine/create-virtual-machine-6.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

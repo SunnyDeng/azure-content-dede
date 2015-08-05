@@ -1,3 +1,3 @@
 Beim Erstellen einer Web-App bietet Microsoft Azure Ihnen eine benutzerfreundliche Unterdomäne in der Domäne "azurewebsites.net", damit Ihre Benutzer über eine URL wie http://&lt;mywebapp&gt;.azurewebsites.net auf Ihre Website zugreifen können. Sie können Ihrer Web-App auch einen benutzerdefinierten Domänennamen zuweisen, z. B. contoso.com, um Ihren Benutzern einen leichter erkennbaren Domänennamen bereitzustellen.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

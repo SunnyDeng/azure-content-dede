@@ -67,4 +67,4 @@ Sobald Ihre API-App erstellt wurde, können Sie den Twilio-Connector als Aktion 
 [5]: ./media/app-service-logic-connector-twilio/img5.PNG
 [6]: ./media/app-service-logic-connector-twilio/img6.PNG
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -4,7 +4,6 @@
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 
-	writer="szark" 
 	manager="timlt" 
 	editor=""/>
 
@@ -179,4 +178,4 @@ In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

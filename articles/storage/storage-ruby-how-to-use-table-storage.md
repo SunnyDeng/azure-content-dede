@@ -89,7 +89,7 @@ Um eine Entität hinzuzufügen, erstellen Sie zunächst ein Hashobjekt, das die 
 
 Es sind mehrere Methoden zum Aktualisieren einer vorhandenen Entität vorhanden:
 
-* **update\\_entity()**: Aktualisiert eine vorhandene Entität, indem sie ersetzt wird.
+* **update\_entity()**: Aktualisiert eine vorhandene Entität, indem sie ersetzt wird.
 * **merge_entity()**: Aktualisiert eine vorhandene Entität durch Zusammenführen neuer Eigenschaftswerte mit der vorhandenen Entität.
 * **insert_or_merge_entity()**: Aktualisiert eine vorhandene Entität, indem sie ersetzt wird. Wenn keine Entität vorhanden ist, wird eine neue eingefügt:
 * **insert_or_replace_entity()**: Aktualisiert eine vorhandene Entität durch Zusammenführen neuer Eigenschaftswerte mit der vorhandenen Entität. Wenn keine Entität vorhanden ist, wird eine neue eingefügt.
@@ -159,4 +159,4 @@ Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht h
 - Besuchen Sie das [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

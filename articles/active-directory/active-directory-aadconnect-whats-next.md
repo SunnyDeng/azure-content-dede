@@ -94,4 +94,4 @@ Ein Teil der Dokumentation für Azure AD Sync ist noch immer relevant und gilt 
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

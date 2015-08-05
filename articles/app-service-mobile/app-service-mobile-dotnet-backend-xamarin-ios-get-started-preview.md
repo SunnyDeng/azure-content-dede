@@ -117,4 +117,4 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 [Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

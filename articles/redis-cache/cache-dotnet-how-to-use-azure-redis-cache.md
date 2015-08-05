@@ -371,4 +371,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Redis Caches vertraut gemacht 
 
 [Kostenlose Azure-Testversion]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=redis_cache_hero
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -78,7 +78,7 @@ In der folgenden Tabelle werden die Elemente im Menü "Datei" beschrieben.
 | Menüelement | Beschreibung |
 |:----------|:-------------|
 | Neu | Klicken Sie auf **Neu**, um eine neue Konsole basierend auf dem StorSimple Snapshot Manager zu erstellen. |
-| Öffnen Sie | Klicken Sie auf **Öffnen**, um eine vorhandene Konsole zu öffnen. |
+| Öffnen | Klicken Sie auf **Öffnen**, um eine vorhandene Konsole zu öffnen. |
 | Speichern | Klicken Sie auf **Speichern**, um die aktuelle Konsole speichern. |
 | Speichern unter | Klicken Sie auf **Speichern unter**, um eine neue, umbenannte Instanz der aktuellen Konsole zu erstellen. Verwenden Sie die Option **Speichern unter** zum Anpassen einer Ansicht und zum Speichern für den späteren Abruf. Sie können beispielsweise StorSimple Snapshot Manager-Snap-Ins erstellen, die auf bestimmte Server verweisen. |
 | Snap-In hinzufügen/entfernen | Klicken Sie auf **Snap-In hinzufügen/entfernen**, um Snap-Ins hinzuzufügen oder zu entfernen und um die Knoten im **Bereichsfenster** zu organisieren. Weitere Informationen finden Sie unter[Hinzufügen, Entfernen und Organisieren von Snap-Ins und Erweiterungen in MMC 3.0](https://technet.microsoft.com/library/cc722035.aspx). |
@@ -162,7 +162,7 @@ In der folgenden Tabelle werden die Elemente im Menü **Ansicht** beschrieben.
 | Menüelement | Beschreibung |
 |:-----------|:-------------|
 | Spalten hinzufügen/entfernen | Klicken Sie auf **Spalten hinzufügen/entfernen**, um Spalten im **Ergebnisbereich** hinzuzufügen oder zu entfernen. |
-| Anpassen. | Klicken Sie auf **Anpassen**, um Elemente im StorSimple Snapshot Manager-Konsolenfenster ein-oder auszublenden. |
+| Anpassen | Klicken Sie auf **Anpassen**, um Elemente im StorSimple Snapshot Manager-Konsolenfenster ein-oder auszublenden. |
 
 ### Menü "Favoriten"
 
@@ -441,7 +441,7 @@ In der folgenden Tabelle werden die Tastenkombinationen für die Menüleiste bes
 | ALT+F | Öffnet das Menü **Datei**. | N | Öffnet eine neue Konsoleninstanz. |
 | | | O | Öffnet die Seite **Verwaltung**. |
 | | | S | Speichert die StorSimple Snapshot Manager-Konsole.|
-| | | Eine Datei | Öffnet die Seite **Speichern unter**. |
+| | | A | Öffnet die Seite **Speichern unter**. |
 | | | M | Öffnet die Seite **Snap-In hinzufügen/entfernen**.|
 | | | P | Öffnet die Seite **Optionen**. |
 | | | H | Öffnet die Onlinehilfe.|
@@ -450,9 +450,9 @@ In der folgenden Tabelle werden die Tastenkombinationen für die Menüleiste bes
 | | | F | Aktualisiert die StorSimple Snapshot Manager-Konsole.|
 | | | L | Öffnet die Seite **Liste exportieren**. 
 | | | H | Öffnet die Onlinehilfe.|
-| ALT+V | Öffnet das Menü **Ansicht**. | Eine Datei | Öffnet die Seite **Spalten hinzufügen/entfernen**. |
+| ALT+V | Öffnet das Menü **Ansicht**. | A | Öffnet die Seite **Spalten hinzufügen/entfernen**. |
 | | | U | Öffnet die Seite **Ansicht anpassen**. |
-| ALT+O | Öffnet das Menü **Favoriten**. | Eine Datei | Öffnet die Seite **Zu Favoriten hinzufügen**. |
+| ALT+O | Öffnet das Menü **Favoriten**. | A | Öffnet die Seite **Zu Favoriten hinzufügen**. |
 | | | O | Öffnet die Seite **Favoriten verwalten**.|
 | ALT+W | Öffnet das Menü **Fenster**.| N | Öffnet ein weiteres StorSimple Snapshot Manager-Fenster.|
 | | | C | Zeigt alle offenen Konsolenfenster überlappend an.|
@@ -460,7 +460,7 @@ In der folgenden Tabelle werden die Tastenkombinationen für die Menüleiste bes
 | | | I | Ordnet die Symbole in einer horizontalen Zeile am unteren Bildschirmrand an.|
 | ALT+H | Öffnet das Menü **Hilfe**. | H | Öffnet die Onlinehilfe.|
 | | | T | Öffnet die Webseite von Microsoft TechNet TechCenter.|
-| | | Eine Datei | Öffnet die Seite **Info**. |
+| | | A | Öffnet die Seite **Info**. |
  
 ### Tastenkombinationen im Bereichsfenster
 
@@ -540,4 +540,4 @@ In den folgenden Tabellen werden die Tastenkombinationen für die einzelnen Knot
 
 Erfahren Sie, wie Sie [mit dem StorSimple Snapshot Manager Verbindungen mit Geräten herstellen und diese verwalten](storsimple-snapshot-manager-manage-devices.md).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

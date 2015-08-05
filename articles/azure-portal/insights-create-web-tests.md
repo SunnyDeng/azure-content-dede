@@ -22,4 +22,4 @@
 > [AZURE.NOTE]Dieser Artikel wurde verschoben. Siehe: [Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites](../app-insights-monitor-web-app-availability.md)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

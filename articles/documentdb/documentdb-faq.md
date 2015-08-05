@@ -98,4 +98,4 @@ Ja. Da es sich bei DocumentDB um einen RESTful-Dienst handelt, sind Ressourcenli
 [query]: documentdb-sql-query.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

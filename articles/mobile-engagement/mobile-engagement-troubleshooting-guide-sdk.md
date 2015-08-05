@@ -147,4 +147,4 @@ Im Folgenden finden Sie mögliche Probleme, die bei der Integration von Azure Mo
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

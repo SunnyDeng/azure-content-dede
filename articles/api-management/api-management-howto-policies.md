@@ -128,4 +128,4 @@ Sehen Sie sich das folgende Video zu Richtlinienausdrücken an.
 [policies-restrict]: ./media/api-management-howto-policies/api-management-policies-restrict.png
 [policies-save]: ./media/api-management-howto-policies/api-management-policies-save.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Tutorial: Integrating Google Apps with Azure Active Directory | Microsoft Azure"
-   description="Learn how to use Google Apps with Azure Active Directory to enable single sign-on, automated provisioning, and more!"
+   pageTitle="Tutorial: Integrieren von Google Apps in Azure Active Directory | Microsoft Azure"
+   description="Erfahren Sie, wie Sie Google Apps mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und mehr zu aktivieren!"
    services="active-directory"
    documentationCenter=""
    authors="liviodlc"
@@ -250,4 +250,4 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 [29]: ./media/active-directory-saas-google-apps-tutorial/assign-users.png
 [30]: ./media/active-directory-saas-google-apps-tutorial/assign-confirm.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

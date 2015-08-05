@@ -13,7 +13,7 @@
 	ms.workload="data-management" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="NA" 
-	ms.date="04/14/2015" 
+	ms.date="07/17/2015" 
 	ms.author="sstein"/>
 
 
@@ -72,4 +72,4 @@ Der oben genannte Supportartikel bietet Hilfe bei folgenden Verbindungsproblemen
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

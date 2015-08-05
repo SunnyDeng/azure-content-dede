@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="02/06/2015" 
+	ms.date="07/11/2015" 
 	ms.author="nitinme"/>
 
 # Verwenden von Hive in HDInsight zum Analysieren von Website-Protokollen
@@ -31,14 +31,14 @@ In diesem Beispiel analysieren Sie Websiteprotokolle in einem HDInsight-Cluster,
 
 ##Voraussetzungen
 
-- Sie müssen ein **HDInsight-Cluster** bereitgestellt haben. Weitere Informationen finden Sie unter [Bereitstellen eines HDInsight-Clusters][hdinsight-provision]. 
+- Sie müssen einen Hadoop-Cluster unter Azure HDInsight bereitgestellt haben. Weitere Informationen finden Sie unter [Bereitstellen eines HDInsight-Clusters][hdinsight-provision]. 
 - Microsoft Excel 2013 oder Excel 2010 muss installiert sein.
 - Sie benötigen den [Microsoft Hive ODBC-Treiber](http://www.microsoft.com/download/details.aspx?id=40886), um die Daten aus Hive in Excel zu importieren.
 
 
 ##So führen Sie das Beispiel aus
 
-1. Klicken Sie im Azure-Portal auf den Cluster, auf dem Sie das Beispiel ausführen möchten, und klicken Sie anschließend unten in der Seite auf **Abfragekonsole**. Alternativ können Sie die Abfragekonsole direkt über die folgende URL öffnen:
+1. Klicken Sie im Azure-Portal auf den Cluster, auf dem Sie das Beispiel ausführen möchten, und klicken Sie anschließend unten auf der Seite auf **Abfragekonsole**. Alternativ können Sie die Abfragekonsole direkt über die folgende URL öffnen:
 
 	 	https://<clustername>.azurehdinsight.net
 	
@@ -58,4 +58,4 @@ Versuchen Sie es mit dem folgenden Beispiel: [Analysieren von Sensordaten mit Hi
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

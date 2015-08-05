@@ -2,7 +2,6 @@
 	pageTitle="Verschieben von Daten nach SQL Server in Azure | Microsoft Azure" 
 	description="Verschieben von Daten nach SQL Server in Azure" 
 	services="machine-learning" 
-	solutions="" 
 	documentationCenter="" 
 	authors="msolhab" 
 	manager="paulettm" 
@@ -233,4 +232,4 @@ Einen Screenshot der Optionen für das Sichern/Wiederherstellen von Datenbanken 
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

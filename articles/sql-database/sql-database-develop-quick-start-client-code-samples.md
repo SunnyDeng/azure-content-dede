@@ -14,24 +14,32 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/10/2015" 
+	ms.date="07/21/2015" 
 	ms.author="genemi"/>
 
 
 # Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank
 
 
-Dieses Thema enthält Links zu Schnellstart-Codebeispielen, die Sie zum Herstellen von Verbindungen mit Azure SQL-Datenbank verwenden können. Die Beispiele decken Folgendes ab:
+Dieses Thema enthält Links zu Schnellstart-Codebeispielen, die Sie zum Herstellen einer Verbindung mit Azure SQL-Datenbank verwenden können.
+
+
+- Kurze Beispiele für Verbindungen und Abfragen.
+- Beispiele für die Wiederholung von Verbindung und Abfrage und die automatische Wiederholung, wenn ein Fehler als [*vorübergehender*](http://msdn.microsoft.com/library/azure/ff394106.aspx#bkmk_connection_errors) Fehler eingestuft wird (z. B. Verbindungstimeout).
+
+
+Die Beispiele decken Folgendes ab:
 
 
 - Eine Vielzahl von Programmiersprachen.
 - Windows, Linux und Mac OS als Betriebssystem, unter dem das Clientprogramm ausgeführt werden kann.
+- Links zum Download aller notwendigen Verbindungstreiber.
 - Kurze Schnellstart-Codebeispiele.
-- Längere Beispiele, die vorübergehende Fehler mit automatisierter Wiederholungslogik behandeln.
+- Längere Beispiele mit Behandlung vorübergehender Fehler in Form einer automatisierten Wiederholungslogik.
 - Codebeispiele, die relationale Resultsets in ein objektorientiertes Format konvertieren.
 
 
-> [AZURE.NOTE]Mit Stand vom 10. Juni 2015 werden Codebeispiele für weitere Sprachen vorbereitet. Links zu diesen Beispielen werden in diesem Thema hinzugefügt.
+> [AZURE.NOTE]Codebeispiele für weitere Sprachen werden vorbereitet. Links zu diesen Beispielen werden in diesem Thema hinzugefügt.
 
 
 ## Clients unter Linux
@@ -40,10 +48,11 @@ Dieses Thema enthält Links zu Schnellstart-Codebeispielen, die Sie zum Herstell
 Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramme unter Linux.
 
 
-| Sprache | Schnellstart | Wiederholen | Relational in objektorientiert |
+| Sprache | Kurzes Beispiel | Beispiel für Wiederholung | Relational in objektorientiert |
 | :-- | :-- | :-- | :-- |
 | Node.js | [Tedious](sql-database-develop-nodejs-simple-linux.md) | . | . |
 | Python | [FreeTDS, pymssql](sql-database-develop-python-simple-unbutu-linux.md) | . | . |
+| Ruby | [FreeTDS, TinyTDS](sql-database-develop-ruby-simple-linux.md) | . | . |
 
 
 ## Clients unter Mac OS
@@ -52,9 +61,10 @@ Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramm
 Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramme unter Mac OS.
 
 
-| Sprache | Schnellstart | Wiederholen | Relational in objektorientiert |
+| Sprache | Kurzes Beispiel | Beispiel für Wiederholung | Relational in objektorientiert |
 | :-- | :-- | :-- | :-- |
 | Python | [pymssql](sql-database-develop-python-simple-mac-osx.md) | . | . |
+| Ruby | [Homebrew<br/>FreeTDS, TinyTDS](sql-database-develop-ruby-simple-mac-osx.md) | . | . |
 
 
 ## Clients unter Windows
@@ -63,13 +73,13 @@ Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramm
 Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramme unter Windows.
 
 
-| Sprache | Schnellstart | Wiederholen | Relational in objektorientiert |
+| Sprache | Kurzes Beispiel | Beispiel für Wiederholung | Relational in objektorientiert |
 | :-- | :-- | :-- | :-- |
 | C# | [ADO.NET](sql-database-develop-dotnet-simple.md) | [ADO.NET](http://msdn.microsoft.com/library/azure/ee336243.aspx)<br/><br/>[ADO.NET mit Enterprise Library](http://msdn.microsoft.com/library/azure/dn961167.aspx) | [ADO.NET Entity Framework](http://msdn.microsoft.com/library/azure/ff951633.aspx) |
 | C++ | [ODBC-Treiber](http://msdn.microsoft.com/library/azure/hh974312.aspx) | . | . |
 | Java | [Java. JDBC, JDK. INSERT, TRANSACTION, SELECT.](sql-database-develop-java-simple-windows.md)<br/><br/>[Java. Eclipse](sql-data-java-how-to-use-sql-database.md)<br/><br/>[Java. JDBC](http://msdn.microsoft.com/library/azure/gg715284.aspx) | . | . |
 | Node.js | [msnodesql](sql-database-develop-nodejs-simple-windows.md) | . | . |
-| PHP | [ODBC](sql-database-develop-php-simple-windows.md) | . | . |
+| PHP | [ODBC](sql-database-develop-php-simple-windows.md) | [ODBC](sql-database-develop-php-retry-windows.md) | . |
 | Python | [pymssql](sql-database-develop-python-simple-windows.md) | . | . |
 
 
@@ -83,6 +93,4 @@ Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramm
 - [Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen](sql-database-connect-central-recommendations.md)
 - [Create your first Azure SQL Database](sql-database-get-started.md) (Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache)
 
- 
-
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

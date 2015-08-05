@@ -149,7 +149,7 @@ Installation auf virtuellen VMware-Computern oder physischen Servern. Computer u
 
 - **Windows-Server**:
 	-  64-Bit-Betriebssystem: Windows Server 2012 R2, Windows Server 2012 und Windows Server 2008 R2 mit SP1 oder höher.
-	-  Hostname, Bereitstellungspunkte, Gerätenamen, Windows-Systempfad (z. B. C:\\Windows) dürfen nur englische Zeichen enthalten.
+	-  Hostname, Bereitstellungspunkte, Gerätenamen, Windows-Systempfad (z. B. C:\Windows) dürfen nur englische Zeichen enthalten.
 	-  Betriebssystem auf dem Laufwerk C:\.
 	-  Nur Basisdatenträger werden unterstützt. Dynamische Datenträger werden nicht unterstützt.
 
@@ -169,10 +169,10 @@ Ausführliche Planungsinformationen zu diesen Komponenten finden Sie im Abschnit
 --- | --- 
 <p>**Azure Site Recovery-Anbieter für VMM**</p><p>**Azure Recovery Services-Agent**</p> | <p></p>**Erstmalige Installation **: Laden Sie die neueste Version von der Seite "Schnellstart" herunter<p></p>**In Betrieb**: Sie können die neuesten (und vorherigen) Versionen aus dem Dashboard im Site Recovery herunterladen. Wenn Sie sich für Microsoft Updates entscheiden, wird die neueste Version des Anbieters und des Agents automatisch auf dem Server installiert.
 <p>**Prozessserver**</p><p>**Konfigurationsserver**</p><p>**Masterzielserver**</p> | Suchen Sie im Site Recovery-Dashboard nach Updates. 
-**Mobilitätsdienst** | <p>Stellen Sie sicher, dass die neuesten Updates des Mobilitätsdiensts auf jedem Computer, die Sie schützen möchten, vorhanden sind:<p><p>Sie können die neuesten Updates herunterladen:</p><p>[Windows](http://download.microsoft.com/download/7/C/7/7C70CA53-2D8E-4FE0-BD85-8F7A7A8FA163/Microsoft-ASR_UA_8.3.0.0_Windows_GA_03Jul2015_release.exe)</p><p>[RHELP6-64-](http://download.microsoft.com/download/B/4/5/B45D1C8A-C287-4339-B60A-70F2C7EB6CFE/Microsoft-ASR_UA_8.3.0.0_RHEL6-64_GA_03Jul2015_release.tar.gz)</p><p>[OL6-64-](http://download.microsoft.com/download/9/4/8/948A2D75-FC47-4DED-B2D7-DA4E28B9E339/Microsoft-ASR_UA_8.3.0.0_OL6-64_GA_03Jul2015_release.tar.gz)</p><p>[SLES11-SP3-64](http://download.microsoft.com/download/6/A/2/6A22BFCD-E978-41C5-957E-DACEBD43B353/Microsoft-ASR_UA_8.3.0.0_SLES11-SP3-64_GA_03Jul2015_release.tar.gz)</p><p>Nachdem Sie sichergestellt haben, dass der Prozessserver auf dem neuesten Stand ist, können Sie alternativ auch die neueste Version des Mobilitätsdiensts aus dem Ordner "C:\\pushinstallsvc\\repository" auf dem Prozessserver herunterladen.</p>  
+**Mobilitätsdienst** | <p>Stellen Sie sicher, dass die neuesten Updates des Mobilitätsdiensts auf jedem Computer, die Sie schützen möchten, vorhanden sind:<p><p>Sie können die neuesten Updates herunterladen:</p><p>[Windows](http://download.microsoft.com/download/7/C/7/7C70CA53-2D8E-4FE0-BD85-8F7A7A8FA163/Microsoft-ASR_UA_8.3.0.0_Windows_GA_03Jul2015_release.exe)</p><p>[RHELP6-64-](http://download.microsoft.com/download/B/4/5/B45D1C8A-C287-4339-B60A-70F2C7EB6CFE/Microsoft-ASR_UA_8.3.0.0_RHEL6-64_GA_03Jul2015_release.tar.gz)</p><p>[OL6-64-](http://download.microsoft.com/download/9/4/8/948A2D75-FC47-4DED-B2D7-DA4E28B9E339/Microsoft-ASR_UA_8.3.0.0_OL6-64_GA_03Jul2015_release.tar.gz)</p><p>[SLES11-SP3-64](http://download.microsoft.com/download/6/A/2/6A22BFCD-E978-41C5-957E-DACEBD43B353/Microsoft-ASR_UA_8.3.0.0_SLES11-SP3-64_GA_03Jul2015_release.tar.gz)</p><p>Nachdem Sie sichergestellt haben, dass der Prozessserver auf dem neuesten Stand ist, können Sie alternativ auch die neueste Version des Mobilitätsdiensts aus dem Ordner "C:\pushinstallsvc\repository" auf dem Prozessserver herunterladen.</p>  
 
 ## Nächste Schritte
 
 Starten Sie die Konfiguration der Komponenten für Ihr Bereitstellungsszenario. [Weitere Informationen](site-recovery-overview.md).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

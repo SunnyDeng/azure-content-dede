@@ -17,4 +17,4 @@
 
 ![Anmeldungen aus mehreren geografischen Regionen](./media/active-directory-reporting-sign-ins-from-multiple-geographies/signInsFromMultipleGeographies.PNG)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

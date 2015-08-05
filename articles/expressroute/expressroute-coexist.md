@@ -4,7 +4,7 @@
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="adinah"
+   manager="jdial"
    editor="tysonn" />
 <tags
    ms.service="expressroute"
@@ -12,7 +12,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/30/2015"
+   ms.date="07/20/2015"
    ms.author="cherylmc"/>
 
 # Konfigurieren von gleichzeitig vorhandenen ExpressRoute- und Standort-zu-Standort-VPN-Verbindungen
@@ -45,10 +45,11 @@ Es stehen zwei separate Konfigurationsverfahren zur Auswahl. Welches Konfigurati
 
 ### Hinweise und Einschränkungen
 
+- Ein Routing (über Azure) zwischen Ihrem lokalen Netzwerk mit Standort-zu-Standort-VPN-Verbindung und Ihrem lokalen Netzwerk mit ExpressRoute-Verbindung wird nicht möglich sein.
+- Sie können keine Punkt-zu-Standort-VPN-Verbindungen mit einem VNET herstellen, für das eine Verbindung mit ExpressRoute besteht. Punkt-zu-Standort-VPN- und ExpressRoute-Verbindungen können für ein VNET nicht gleichzeitig vorhanden sein.
 - Sowohl das ExpressRoute-Gateway als auch das Standort-zu-Standort-VPN-Gateway müssen entweder eine Standard- oder Hochleistungs-Gateway-SKU sein. Informationen zu Gateway-SKUs finden Sie unter [Gateway-SKUs](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 - Wenn Ihr lokales Netzwerk mit ExpressRoute und einem Standort-zu-Standort-VPN (Szenario 1) verbunden ist, sollten Sie eine statische Route in Ihrem lokalen Netzwerk konfiguriert haben, um die Standort-zu-Standort-VPN-Verbindung an das öffentliche Internet weiterzuleiten. 
 - Sie müssen zuerst das ExpressRoute-Gateway erstellen, bevor Sie das Standort-zu-Standort-VPN-Gateway hinzufügen.
-- Ein Routing (über Azure) zwischen Ihrem lokalen Netzwerk mit Standort-zu-Standort-VPN-Verbindung und Ihrem lokalen Netzwerk mit ExpressRoute-Verbindung wird nicht möglich sein.
 - Beide Verfahren gehen davon aus, dass Sie bereits eine ExpressRoute-Verbindung konfiguriert haben. Ist dies nicht der Fall, lesen Sie bitte die folgenden Artikel: 
 
 	- [Konfigurieren einer ExpressRoute-Verbindung über einen Netzwerkdienstanbieter (NSP)](expressroute-configuring-nsps.md) 
@@ -151,7 +152,7 @@ Es stehen zwei separate Konfigurationsverfahren zur Auswahl. Welches Konfigurati
 		OperationStatus      : Succeeded
 
 	
-8. Konfigurieren Sie Ihr lokales VPN-Gerät für die Verbindung zum neuen Gateway. Verwenden Sie die Informationen, die Sie in Schritt 6 abgerufen haben, wenn Sie Ihr VPN-Gerät konfigurieren. Weitere Informationen zu VPN-Gerätekonfiguration finden Sie unter [VPN-Gerätekonfiguration](vpn-gateway-configure-vpn-gateway-mp.md/#gather-information-for-your-vpn-device-configuration).
+8. Konfigurieren Sie Ihr lokales VPN-Gerät für die Verbindung zum neuen Gateway. Verwenden Sie die Informationen, die Sie in Schritt 6 abgerufen haben, wenn Sie Ihr VPN-Gerät konfigurieren. Weitere Informationen zu VPN-Gerätekonfiguration finden Sie unter [VPN-Gerätekonfiguration](http://go.microsoft.com/fwlink/p/?linkid=615099).
 	
 
 9. Verknüpfen Sie das Standort-zu-Standort-VPN-Gateway in Azure mit dem lokalen Gateway.
@@ -203,4 +204,4 @@ Erfahren Sie mehr zu ExpressRoute. Siehe [ExpressRoute-Übersicht](expressroute-
 
 Erfahren Sie mehr zu VPN-Gateways. Siehe [Zu VPN-Gateways](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

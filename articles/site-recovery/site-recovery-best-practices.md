@@ -189,4 +189,4 @@ Nachdem Sie diese bewährten Methoden überprüft haben, können Sie mit der Ber
 - [Einrichten von Schutz mit einem einzelnen VMM-Server](site-recovery-single-vmm.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

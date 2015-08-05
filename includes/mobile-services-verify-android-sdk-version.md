@@ -20,4 +20,4 @@ Wenn eines dieser Symptome auftritt, stimmt die Version des in Android Studio in
 
 4. In Android Studio wird anders als bei Eclipse die Manifestdatei nicht mehr dazu verwendet, die Ziel-SDK und die SDK-Mindestversion anzugeben.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

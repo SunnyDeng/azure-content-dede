@@ -44,4 +44,4 @@ Azure AD bietet Administratoren eine Reihe von Berichten. Die kostenpflichtigen 
 * [Als Organisation für Azure registrieren](sign-up-organization.md)
 * [Azure-Identität](fundamentals-identity.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

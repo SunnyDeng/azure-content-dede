@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="04/27/2015" 
+	ms.date="07/20/2015" 
 	ms.author="mebha"/>
 
 
@@ -41,7 +41,7 @@ Nach der Konfiguration Ihres Computers mit **node** und **npm** navigieren Sie z
 
 
 	sudo npm init
-	sudp npm install tedious
+	sudo npm install tedious
 
 
 **npm init** erstellt ein node-Projekt. Wenn Sie während der Projekterstellung die Standardeinstellungen beibehalten möchten, drücken Sie die EINGABETASTE, bis das Projekt erstellt wurde. Im Projektverzeichnis wird nun die Datei **package.json** angezeigt.
@@ -171,4 +171,4 @@ Das Codebeispiel in diesem Abschnitt wendet Parameter auf eine SQL-INSERT-Anweis
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

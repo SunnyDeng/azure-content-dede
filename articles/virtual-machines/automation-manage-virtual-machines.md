@@ -42,4 +42,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Einsatz 
 
 [Erste Schritte mit Azure Automation](../automation-create-runbook-from-samples.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

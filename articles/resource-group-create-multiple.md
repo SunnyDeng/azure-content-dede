@@ -1,7 +1,7 @@
 <properties
    pageTitle="Erstellen von mehreren Instanzen von Ressourcen"
    description="Beschreibt, wie Sie den copy-Vorgang in einer Azure-Ressourcen-Manager-Vorlage verwenden, um sie beim Bereitstellen von Ressourcen mehrere Male zu durchlaufen."
-   services="na"
+   services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
    manager="wpickett"
@@ -110,8 +110,8 @@ Verwenden Sie die folgende Vorlage:
     ]
 
 ## Nächste Schritte
-- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) (Erstellen von Vorlagen im Azure-Ressourcen-Manager)
+- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) (in englischer Sprache)
 - [Azure Resource Manager Template Functions](./resource-group-template-functions.md) (Vorlagenfunktionen im Azure-Ressourcen-Manager)
 - [Deploy an application with Azure Resource Manager Template](azure-portal/resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

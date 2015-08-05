@@ -43,4 +43,4 @@ Wenn Sie Multi-Factor Authentication mit Office 365 verwenden, können Sie App-
 <li>Geben Sie einen Namen für das App-Kennwort an, und klicken Sie auf **Weiter**.</li>
 <li>Kopieren Sie das App-Kennwort in die Zwischenablage, und fügen Sie es in Ihrer App ein.</li>
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

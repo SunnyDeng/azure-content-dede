@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/02/2015"
+   ms.date="07/21/2015"
    ms.author="banders" />
 
 # Verwalten von Servern und Nutzungsdaten
@@ -57,4 +57,6 @@ Im Dashboard **Nutzung** werden die folgenden Informationen angezeigt:
 
 3. Wenn eine Verwaltungsgruppe keine Daten sendet, können Sie auf **Problembehandlung** klicken, um ausführliche Informationen zur Problembehandlung zu erhalten. Wenn Sie eine Verwaltungsgruppe und alle Agents, die diesen Bericht erstatten, nicht behalten möchten, klicken Sie auf **Entfernen**.
 
-<!---HONumber=July15_HO2-->
+[AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
+
+<!---HONumber=July15_HO4-->

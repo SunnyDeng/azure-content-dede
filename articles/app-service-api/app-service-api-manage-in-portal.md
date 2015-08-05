@@ -134,4 +134,4 @@ Dieser Artikel hat gezeigt, wie Sie das Azure-Portal zum Ausführen verschiedene
 
 Informationen zum Verwalten von API-Apps über die Befehlszeile finden Sie in den Artikeln im Abschnitt **Automatisieren**, die links neben dem Artikel (bei breiten Browserfenstern) oder oben über dem Artikel (bei schmalen Browserfenstern) angezeigt werden.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

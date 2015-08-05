@@ -205,4 +205,4 @@ Veröffentlichen von Medienobjekten (durch Locator-Erstellung) mithilfe des **Az
 [Aktualisieren von Media Services nach dem Austausch der Speicherschlüssel](media-services-roll-storage-access-keys.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

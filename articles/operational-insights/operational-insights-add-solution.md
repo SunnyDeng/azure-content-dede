@@ -90,4 +90,4 @@ Die Erfassung von IIS-Protokollen wird auf Computern mit folgenden Betriebssyste
 
 3. Klicken Sie auf der Bestätigungsseite auf **Ja**, um die Lösung zu entfernen.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

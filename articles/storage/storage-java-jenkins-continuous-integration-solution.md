@@ -1,18 +1,11 @@
 <properties 
-	urlDisplayName="Jenkins Continuous Integration" 
 	pageTitle="Verwenden von Azure-Speicher mit einer Jenkins-Lösung für die fortlaufende Integration | Microsoft Azure" 
-	metaKeywords="" 
 	description="Dieses Lernprogramm zeigt, wie Sie den Azure-Blobdienst als Repository für Buildartefakte verwenden, die von einer Jenkins-Lösung für die fortlaufende Integration erstellt wurden." 
-	metaCanonical="" 
 	services="storage" 
 	documentationCenter="java" 
-	title="" 
 	authors="rmcmurray" 
-	solutions="" 
 	manager="wpickett" 
-	editor="jimbe" 
-	scriptId="" 
-	videoId=""/>
+	editor="jimbe"/>
 
 <tags 
 	ms.service="storage" 
@@ -172,4 +165,4 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
   [ms-open-tech]: http://msopentech.com
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

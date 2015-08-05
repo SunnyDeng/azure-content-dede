@@ -72,7 +72,7 @@ Bitte beachten Sie, dass wenn auch nur eine Instanz in einer Verfügbarkeitsgrup
 
 Bei virtuellen Computern in einer Konfiguration mit nur einer Instanz werden diese ausgeschaltet, dann die Aktualisierung auf dem Host-Computer eingespielt und anschließend die virtuellen Computer neu gestartet. Diese Aktualisierungen werden auf allen virtuellen Computern in einer Region in einem einzigen Wartungsfenster ausgeführt.
 
-Der geplante Wartungsvorgang wirkt sich auf die Verfügbarkeit der Anwendung auf diese Art von Konfiguration eines virtuellen Computers aus. Aktuell wird bei Azure eine Woche vorher über geplante Wartungsarbeiten für virtuelle Computer in einer Einzelinstanzkonfiguration informiert.
+Der geplante Wartungsvorgang wirkt sich bei dieser Art von Konfiguration eines virtuellen Computers auf die Verfügbarkeit aus. Aktuell wird bei Azure eine Woche vorher über geplante Wartungsarbeiten für virtuelle Computer in einer Einzelinstanzkonfiguration informiert.
 
 ### E-Mail-Benachrichtigung
 Nur bei virtuellen Computern mit Konfigurationen mit einzelnen und mehreren Instanzen informiert Azure im Voraus per E-Mail über geplante Wartungsarbeiten. Bei einzelnen Instanzen erfolgt die Benachrichtigung eine Woche im Voraus, bei mehreren Instanzen 48 Stunden im Voraus. Diese E-Mail wird an das Haupt-E-Mail-Konto gesandt, das im Abonnement angegeben ist. Hier ist ein Beispiel für diese Art von E-Mail:
@@ -89,13 +89,13 @@ Region 1 | Region 2
 :----- | ------:
 USA (Mitte/Norden) | USA (Mitte/Süden)
 USA (Ost) | USA (West)
-USA, Osten 2 | USA (Mitte)
+USA (Ost 2) | USA (Mitte)
 Nordeuropa | Westeuropa
 Südostasien | Ostasien
 Ostchina | Nordchina
 Japan Ost | Japan (Westen)
 Brasilien Süd | USA (Mitte/Süden)
-Australien (Südost) | Australien (Ost)
+Australien (Südost) | Australien (Osten)
 US Government, Iowa | US Government, Virginia
 
 Beispiel: Während einer geplanten Wartung stellt Azure für "USA (West)" kein Update bereit, während "USA (Ost)" gewartet wird. Andere Regionen wie Nordeuropa können jedoch gleichzeitig mit USA (Ost) gewartet werden.
@@ -110,4 +110,4 @@ Beispiel: Während einer geplanten Wartung stellt Azure für "USA (West)" kein U
 [Virtual Machines Manage Availability]: virtual-machines-windows-tutorial.md
 [Unterschied zwischen geplanter und ungeplanter Wartung]: virtual-machines-manage-availability.md#Understand-planned-versus-unplanned-maintenance/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

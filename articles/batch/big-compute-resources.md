@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="big-compute"
-   ms.date="07/09/2015"
+   ms.date="07/14/2015"
    ms.author="danlep"/>
 
 # Big Compute in Azure: technische Ressourcen für Batch und HPC (High Performance Computing)
@@ -21,11 +21,11 @@ Dies ist eine Anleitung zu den technischen Ressourcen, die Ihnen beim Ausführen
 
 ## Lösungsoptionen
 
-Erfahren Sie mehr über Big Compute-Optionen in Azure, und wählen Sie den richtigen Ansatz für Ihre Workload und Ihre Geschäftserfordernisse aus.
+Erfahren Sie mehr über Big Compute-Optionen in Azure, und wählen Sie den richtigen Ansatz für Ihre Workload und Ihre Geschäftsanforderungen aus.
 
 * [Batch- und HPC-Lösungen](batch-hpc-solutions.md)
 
-* [Video: Big Compute in the Cloud with Azure and HPC](http://azure.microsoft.com/documentation/videos/teched-europe-2014-big-compute-in-the-cloud-with-high-performance-computing-on-azure/) (Big Compute in der Cloud mit Azure und HPC, in englischer Sprache)
+* [Big Compute in the Cloud with High Performance Computing on Azure](http://azure.microsoft.com/documentation/videos/teched-europe-2014-big-compute-in-the-cloud-with-high-performance-computing-on-azure/) (Big Compute in der Cloud mit HPC in Azure, in englischer Sprache)
 
 
 ## Azure Batch
@@ -81,6 +81,8 @@ Verwenden Sie die folgenden Azure-Ressourcen-Manager-Vorlagen zum Bereitstellen 
 
 Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe unterschiedlicher Größen](../virtual-machines/virtual-machines-size-specs.md) an, einschließlich rechenintensiver [A8-, A9-, A10- und A11-Instanzen](../virtual-machines/virtual-machines-a8-a9-a10-a11-specs.md).
 
+* [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](../virtual-machines/virtual-machines-linux-cluster-rdma.md)
+
 * [A8- und A9-Instanzen: Schnellstart mit HPC Pack](https://msdn.microsoft.com/library/azure/dn594431.aspx)
 
 * [Ausführen von MPI-Anwendungen auf A8- und A9-Instanzen](https://msdn.microsoft.com/library/azure/dn592104.aspx)
@@ -116,4 +118,4 @@ Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe u
 * Die neuesten Ankündigungen finden Sie im [Blog des HPC- und Batch-Teams von Microsoft](http://blogs.technet.com/b/windowshpc/) und im [Azure-Blog](http://azure.microsoft.com/blog/tag/hpc/).
 * Weitere Informationen finden Sie auch unter [Neuigkeiten bei Batch](http://azure.microsoft.com/updates/?service=batch) oder indem Sie den [RSS-Feed](http://azure.microsoft.com/updates/feed/?service=batch) abonnieren.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

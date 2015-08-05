@@ -74,7 +74,7 @@ Datum und Uhrzeit werden in UTC angegeben und entsprechen dem Zeitpunkt, an dem 
 
 ## <a name="format"></a> Datenformat
 
-* Jedes Blob ist eine Textdatei, die mehrere durch '\\n' getrennte Zeilen enthält.
+* Jedes Blob ist eine Textdatei, die mehrere durch '\n' getrennte Zeilen enthält.
 * Jede Zeile ist ein unformatiertes JSON-Dokument. Wenn Sie sich die Daten anschauen möchten, probieren Sie einen Viewer wie z. B. Notepad ++ mit dem JSON-Plug-In:
 
 ![Zeigen Sie die Telemetriedaten mit einem geeigneten Tool an](./media/app-insights-export-telemetry/06-json.png)
@@ -183,4 +183,4 @@ Der fortlaufende Export wird neu gestartet.
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

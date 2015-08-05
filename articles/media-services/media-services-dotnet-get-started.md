@@ -146,7 +146,7 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 		using Microsoft.WindowsAzure.MediaServices.Client;
 		using Microsoft.WindowsAzure.MediaServices.Client.DynamicEncryption;
 
-6. Erstellen Sie einen neuen Ordner unter dem Verzeichnis Projekte, und kopieren Sie eine MP4 oder WMV-Datei, die Sie codieren und streamen oder progressiv herunterladen möchten. In diesem Beispiel wird der Pfad "C:\\VideoFiles" verwendet.
+6. Erstellen Sie einen neuen Ordner unter dem Verzeichnis Projekte, und kopieren Sie eine MP4 oder WMV-Datei, die Sie codieren und streamen oder progressiv herunterladen möchten. In diesem Beispiel wird der Pfad "C:\VideoFiles" verwendet.
 
 ##Herstellen einer Verbindung mit dem Media Services-Konto
 
@@ -462,4 +462,4 @@ Weitere Informationen zum Erstellen von Video-on-Demand-Anwendungen erhalten Sie
   [Verwaltungsportal]: http://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

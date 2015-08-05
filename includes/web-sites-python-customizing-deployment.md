@@ -14,15 +14,15 @@ Sie können bestimmte Aspekte der Standardbereitstellungsschritte steuern, ohne 
 
 Wenn Sie alle Python-spezifischen Bereitstellungsschritte überspringen möchten, können Sie diese leere Datei erstellen:
 
-    \.skipPythonDeployment
+    .skipPythonDeployment
 
 Wenn Sie die Sammlung statischer Dateien für die Django-Anwendung zu überspringen möchten:
 
-    \.skipDjango 
+    .skipDjango 
 
 Für mehr Kontrolle über die Bereitstellung können Sie das Standardskript für die Bereitstellung überschreiben, indem Sie die folgenden Dateien erstellen:
 
-    \.deployment
+    .deployment
     \deploy.cmd
 
 Sie können die [Azure-Befehlszeilenschnittstelle][] verwenden, um die Dateien zu erstellen. Verwenden Sie diesen Befehl vom Projektordner aus:
@@ -33,4 +33,4 @@ Wenn diese Dateien nicht vorhanden sind, wird von Azure ein temporäres Bereitst
 
 [Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/downloads/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

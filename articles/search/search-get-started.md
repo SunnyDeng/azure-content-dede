@@ -166,7 +166,7 @@ Ihre Anforderung für Dokumente in der Registerkarte "Composer" sieht in etwa wi
 
 1. Wählen Sie **POST** aus.
 
-2.	Geben Sie eine URL ein, die sich aus "HTTPS", Ihrer Dienst-URL und "/indexes/<'indexname'>/docs/index?api-version=2015-02-28" zusammensetzt. Die komplette URL sollte in etwa wie folgt aussehen:
+2.	Geben Sie eine URL ein, die sich aus „HTTPS“, Ihrer Dienst-URL und „/indexes/<'indexname'>/docs/index?api-version=2015-02-28“ zusammensetzt. Die komplette URL sollte in etwa wie folgt aussehen:
 
         https://my-app.search.windows.net/indexes/hotels/docs/index?api-version=2015-02-28
 
@@ -242,7 +242,7 @@ Ihre Anforderung für Dokumente in der Registerkarte "Composer" sieht in etwa wi
 
 8.	Klicken Sie auf **Ausführen**.
 
-Innerhalb weniger Sekunden sollten Sie eine "HTTP 200"-Antwort in der Sitzungsliste sehen. Dies bedeutet, dass die Dokumente erfolgreich erstellt wurden. Falls Sie eine 207-Antwort erhalten, ist der Upload von mindestens einem Dokument fehlgeschlagen. Wenn Sie ein 404-Antwort erhalten, enthält entweder der Header oder der Text Ihrer Anforderung einen Syntaxfehler.
+Innerhalb weniger Sekunden sollten Sie eine "HTTP 200"-Antwort in der Sitzungsliste sehen. Dies bedeutet, dass die Dokumente erfolgreich erstellt wurden. Falls Sie eine 207-Antwort erhalten, ist der Upload von mindestens einem Dokument fehlgeschlagen. Wenn Sie eine 404-Antwort erhalten, enthält entweder der Header oder der Text Ihrer Anforderung einen Syntaxfehler.
 
 ### Indexabfragen
 
@@ -286,7 +286,7 @@ Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch
 
 1.	Wählen Sie **GET** aus.
 
-2.	Geben Sie eine URL mit Ihrer Dienst-URL ein, gefolgt von "/indexes/hotels/stats?api-version=2015-02-28":
+2.	Geben Sie eine URL mit Ihrer Dienst-URL ein, gefolgt von „/indexes/hotels/stats?api-version=2015-02-28“:
 
         https://my-app.search.windows.net/indexes/hotels/stats?api-version=2015-02-28 
 
@@ -378,4 +378,4 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [Create your first azure search solution]: search-create-first-solution.md
 [Create a geospatial search app using Azure Search]: search-create-geospatial.md
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

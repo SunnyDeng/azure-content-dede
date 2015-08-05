@@ -21,4 +21,4 @@ Hier ist eine Alternative, welche die Tatsache nutzt, dass das Bereitstellungssk
 
 Wenn Sie das Bereitstellungsskript angepasst haben, können Sie den Code in "deploy.cmd" ändern, um das Löschen des Ordners "env" zu erzwingen.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

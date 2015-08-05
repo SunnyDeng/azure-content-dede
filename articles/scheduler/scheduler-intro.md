@@ -51,4 +51,4 @@ Mit Scheduler können Sie ["Auftragssammlungen" und "Aufträge"](scheduler-conce
  [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -45,4 +45,4 @@
 		
 	Wenn Sie nun ein neues Aktivitätselement hinzufügen, wird eine Pushbenachrichtigung an alle registrierten Geräte gesendet.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

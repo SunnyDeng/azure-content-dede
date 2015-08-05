@@ -4,7 +4,6 @@
 	services="app-service\web" 
 	documentationCenter="" 
 	authors="cephalin" 
-	writer="cephalin" 
 	manager="wpickett" 
 	editor="mollybos"/>
 
@@ -97,4 +96,4 @@ Auf dem Blatt "Details" werden die verfügbaren Informationen im Zusammenhang mi
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

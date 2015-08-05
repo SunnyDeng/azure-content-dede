@@ -120,4 +120,4 @@ Die folgende Abbildung zeigt das obige Beispiel, verwendet jedoch den Parameters
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

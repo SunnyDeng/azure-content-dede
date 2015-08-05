@@ -120,7 +120,7 @@ Trennen Sie Direktiven mit einem Zeilenumbruch.
 
 *Daten werden im Portal nicht angezeigt.*
 
-* Öffnen Sie die [Suche][diagnostic], um zu überprüfen, ob die Rohereignisse angekommen sind. Manchmal dauert es länger, bis sie im Metrik-Explorer angezeigt werden.
+* Öffnen Sie [Search][diagnostic], um zu überprüfen, ob die Rohereignisse angekommen sind. Manchmal dauert es länger, bis sie im Metrik-Explorer angezeigt werden.
 * Aktivieren Sie die Ablaufverfolgung im Application Insights-Plug-In. Fügen Sie diese Zeile in `<Plugin ApplicationInsightsWriter>` hinzu:
  *  `SDKLogger true`
 * Öffnen Sie ein Terminal, und starten Sie collectd im ausführlichen Modus, um alle gemeldeten Probleme anzuzeigen:
@@ -143,4 +143,4 @@ Trennen Sie Direktiven mit einem Zeilenumbruch.
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

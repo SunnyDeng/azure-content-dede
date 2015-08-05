@@ -74,7 +74,7 @@ Im Azure-Portal können Sie beim Erstellen der Logik-Apps, Web-Apps oder mobilen
 2. Wählen Sie die API-App aus. Wählen Sie im neuen Blatt **Erstellen** aus. 
 3. Geben Sie die Eigenschaften ein: 
 
-	Eigenschaft | Beschreibung
+Eigenschaft | Beschreibung
 --- | ---
 Name | Geben Sie für Ihre API-App einen beliebigen Namen ein. Beispielsweise können Sie sie *RulesDiscountTaxCode* oder *APIAppValidateXML* nennen.
 App Service-Plan | Listet Ihren Zahlungsplan auf. Sie können ihn ändern, wenn Sie mehr oder weniger Ressourcen benötigen.
@@ -88,7 +88,7 @@ Zum Startmenü hinzufügen | Wählen Sie diese Option aus, um die Integrations-A
 ## Konfigurieren der BizTalk-API-Apps
 Öffnen Sie im Azure-Verwaltungsportal Ihre BizTalk-API-App. Im Abschnitt **Komponenten** können Sie die zusätzlichen Komponenten hinzufügen, die zum Vervollständigen der API-App erforderlich sind:
 
-	API App | Tasks
+API App | Tasks
 --- | ---
 BizTalk Flat File Encoder | Geben Sie eine Flatfile ein, z. B. eine Excel- oder CSV-Datei, die in XML umgewandelt werden soll. Oder geben Sie eine XML-Datei ein, die in eine Flatfile umgewandelt werden soll.
 BizTalk JSON Encoder | Geben Sie eine JSON-Datei ein, die in XML konvertiert werden soll. Oder geben Sie eine XML-Datei, die in JSON konvertiert werden soll. 
@@ -139,4 +139,4 @@ Wenn Sie in Ihrer App die BizTalk-API-Apps im Katalog auswählen, werden sie aut
 
 [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/>[Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

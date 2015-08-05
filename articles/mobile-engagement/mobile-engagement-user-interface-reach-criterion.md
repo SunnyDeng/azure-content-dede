@@ -173,4 +173,4 @@ Wenn Sie eine Ankündigung per Push nur an die Teilmenge der Benutzer verteilen 
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

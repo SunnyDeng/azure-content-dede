@@ -21,8 +21,8 @@
 </tr>
 <tr>
    <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/resource-group-overview/">Ressourcengruppen</a> pro Abonnement</p></td>
-   <td valign="middle"><p>500</p></td>
-   <td valign="middle"><p>500</p></td>
+   <td valign="middle"><p>800</p></td>
+   <td valign="middle"><p>800</p></td>
 </tr>
 <tr>
    <td valign="middle"><p>Ressourcen-Manager-API-Lesevorgänge</p></td>
@@ -52,4 +52,4 @@
 
 <sup>3</sup> Diese Features sind für Azure-Ressourcengruppen und den Azure-Ressourcen-Manager nicht mehr erforderlich.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

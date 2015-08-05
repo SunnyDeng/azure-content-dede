@@ -458,9 +458,9 @@ Um eine Verstärkung der Hintergrundgeräusche zu verhindern, führen Sie folgen
 
 1. Speichern Sie die geänderte Voreinstellungsdatei auf Ihrer lokalen Festplatte, und verwenden Sie einen Code wie den folgenden, um die Codierung mit diesen Voreinstellungen durchzuführen:
 	
-	// Laden Sie die Datei hoch, und erstellen Sie das Medienobjekt IAsset asset = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, @"C:\\TEMP\\Original.mp4");
+	// Laden Sie die Datei hoch, und erstellen Sie das Medienobjekt IAsset asset = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, @"C:\TEMP\Original.mp4");
 	 
-	string inputPresetFile = @"C:\\TEMP\\H264 Broadband 720p NoAudioNorm.xml"; string presetName = Path.GetFileNameWithoutExtension(inputPresetFile);
+	string inputPresetFile = @"C:\TEMP\H264 Broadband 720p NoAudioNorm.xml"; string presetName = Path.GetFileNameWithoutExtension(inputPresetFile);
 	 
 	IJob job = _context.Jobs.Create("Encode Job for " + asset.Name + ", encoded using " + presetName);
 	
@@ -482,4 +482,4 @@ Um eine Verstärkung der Hintergrundgeräusche zu verhindern, führen Sie folgen
 
 [Azure Media Encoder XML-Schema](https://msdn.microsoft.com/library/azure/dn584702.aspx)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

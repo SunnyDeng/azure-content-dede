@@ -218,4 +218,4 @@ Abschließend sei bemerkt, dass immer mehr Kunden Azure Service Fabric Actors al
 [2]: ./media/service-fabric-reliable-actors-pattern-internet-of-things/internet-of-things-2.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

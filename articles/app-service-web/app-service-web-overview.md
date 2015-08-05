@@ -65,4 +65,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

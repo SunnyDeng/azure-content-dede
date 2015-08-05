@@ -328,4 +328,4 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-hadoop-use-blob-storage/HDI.CustomCreateStorageAccount.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

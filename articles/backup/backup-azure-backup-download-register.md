@@ -55,4 +55,4 @@ Nach dem Erstellen des Azure Backup-Tresors sollte auf jedem lokalen Server (Win
 ## Nächste Schritte
 - Informationen zum Sichern von Daten und Anwendungen in Azure finden Sie unter [Planen von Sicherungen](backup-azure-backup-and-recover.md).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

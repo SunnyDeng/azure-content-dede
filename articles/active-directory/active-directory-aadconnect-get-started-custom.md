@@ -161,7 +161,7 @@ Weitere Informationen finden Sie [hier](http://blogs.office.com/2014/09/25/deliv
 
 > [AZURE.WARNING]Wenn derzeit DirSync oder Azure AD Sync aktiv ist, aktivieren Sie keine der Features zum Rückschreiben in Azure AD Connect.
 
-Mit dem Feature "Geräterückschreiben" können Sie ein in der Cloud registriertes Gerät, z. B. in Intune, in AD DS für bedingten Zugriff auswählen. Um das Feature zu aktivieren, muss AD DS vorbereitet sein. Wenn Sie AD FS und den Geräteregistrierungsdienst installieren, stellt der Geräteregistrierungsdienst PowerShell-Cmdlets bereit, um Active Directory für das Geräterückschreiben vorzubereiten. Wenn Sie keinen Geräteregistrierungsdienst installiert haben, können Sie "C:\\Programme\\Microsoft Azure Active Directory Connect\\AdPrep\\AdSyncAdPrep.psm1" als Unternehmensadministrator ausführen.
+Mit dem Feature "Geräterückschreiben" können Sie ein in der Cloud registriertes Gerät, z. B. in Intune, in AD DS für bedingten Zugriff auswählen. Um das Feature zu aktivieren, muss AD DS vorbereitet sein. Wenn Sie AD FS und den Geräteregistrierungsdienst installieren, stellt der Geräteregistrierungsdienst PowerShell-Cmdlets bereit, um Active Directory für das Geräterückschreiben vorzubereiten. Wenn Sie keinen Geräteregistrierungsdienst installiert haben, können Sie "C:\Programme\Microsoft Azure Active Directory Connect\AdPrep\AdSyncAdPrep.psm1" als Unternehmensadministrator ausführen.
 
 Vor dem Ausführen des PowerShell-Cmdlets müssen Sie dieses zunächst importieren.
 
@@ -273,4 +273,4 @@ Sie können die Abbildung und das Logo für Ihre AD FS-Anmeldeseiten anpassen, i
 * [Weitere Informationen](active-directory-aadconnect-learn-more.md)
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) 
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

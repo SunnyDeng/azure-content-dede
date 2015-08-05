@@ -1,7 +1,9 @@
 <properties 
 	pageTitle="Verwenden der linearen Regression in Machine Learning | Microsoft Azure" 
 	description="Ein Vergleich von Modellen zur linearen Regression in Excel und in Azure Machine Learning Studio" 
+	metaKeywords="" 
 	services="machine-learning" 
+	solutions="" 
 	documentationCenter="" 
 	authors="garyericson" 
 	manager="paulettm" 
@@ -13,7 +15,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/21/2015" 
+	ms.date="07/14/2015" 
 	ms.author="kbaroni;garye" />
 
 # Verwenden der linearen Regression in Azure Machine Learning
@@ -139,4 +141,4 @@ Im Folgenden finden Sie einige Ressourcen für Ihre Arbeit mit Regression:
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

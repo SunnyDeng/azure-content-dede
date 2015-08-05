@@ -237,4 +237,4 @@ Sie haben erfahren Sie wie einen SaaS-Connector installieren, konfigurieren und 
 [Azure-Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

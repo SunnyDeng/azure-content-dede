@@ -21,4 +21,4 @@
 
   Die Sicherung sollte in der Liste der Sicherungssätze enthalten sein, die im Katalog angezeigt wird.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

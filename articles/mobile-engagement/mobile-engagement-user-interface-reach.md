@@ -150,4 +150,4 @@ Sie können von der Detail- zur Statistikansicht einer geöffneten Kampagne wech
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

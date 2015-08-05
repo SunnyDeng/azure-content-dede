@@ -1,12 +1,3 @@
-<properties
-   pageTitle="Tabelle zu Beschränkungen für Azure Backup"
-   description="Beschreibung der Systembegrenzung für Azure Backup."
-   services="backup"
-   documentationCenter="NA"
-   authors="Jim-Parker"
-   manager="jwhit"
-   editor="" /> <tags ms.service="backup" ms.devlang="NA" ms.topic="article" ms.tgt_pltfrm="NA" ms.workload="TBD" ms.date="07/01/2015" ms.author="jimpark"; "aashishr" />
-
 
 Für Azure Backup gelten die folgenden Beschränkungen.
 
@@ -22,4 +13,4 @@ Für Azure Backup gelten die folgenden Beschränkungen.
 - <sup>1</sup>Die Beschränkung von 1,65 TB gilt nicht für IaaS-VM-Sicherungen.
 - <sup>2</sup>Mithilfe einer Permutation kann die Anzahl auf weniger als 366 festgelegt werden.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

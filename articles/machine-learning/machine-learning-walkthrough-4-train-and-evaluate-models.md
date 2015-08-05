@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/22/2015" 
+	ms.date="07/10/2015" 
 	ms.author="garye"/>
 
 
@@ -40,12 +40,12 @@ Zuerst wird das Boosted Decision Tree-Modell eingerichtet:
 
 1.	Suchen Sie das Modul [Two-Class Boosted Decision Trees][two-class-boosted-decision-tree] in der Modulpalette, und ziehen Sie es auf die Canvas.
 2.	Suchen Sie das Modul [Modell trainieren][train-model], ziehen Sie es in den Bereich, und verbinden Sie den Ausgang des Moduls „Boosted Decision Tree“ mit dem linken Eingabeport („Untrainiertes Modell“) des Moduls [Modell trainieren][train-model].
-3.	Verbinden Sie die Ausgabe des linken Moduls [Execute R Script][execute-r-script] mit dem rechten Eingabeport („Dataset“) des Moduls [Train Model][train-model].
+3.	Verbinden Sie die linke Ausgabe („Ergebnisdataset“) des linken Moduls [Execute R Script][execute-r-script] mit dem rechten Eingabeport („Dataset“) des Moduls [Train Model][train-model].
 
 	> [AZURE.TIP]Zwei der Eingaben und eine der Ausgaben des Moduls [Execute R Script][execute-r-script] werden für dieses Experiment nicht benötigt und daher nicht angefügt. Das kommt bei einigen Modulen häufiger vor.
 
 
-4.	Wählen Sie das Modul [Modell trainieren][train-model] aus. Klicken Sie im Bereich **Properties** auf **Launch column selector**, wählen Sie in der ersten Dropdownliste **Include** und in der zweiten Dropdownliste **column indices** aus, und geben Sie "21" in das Textfeld ein (Sie können auch **Column name** auswählen und "Credit Risk" eingeben). Dadurch wird Spalte 21, der Wert des Kreditrisikos, als die Spalte identifiziert, die vom Modell vorhergesagt werden soll.
+4.	Wählen Sie das Modul [Modell trainieren][train-model] aus. Klicken Sie im Bereich **Properties** auf **Launch column selector**, wählen Sie in der ersten Dropdownliste **Include** und in der zweiten Dropdownliste **column indices** aus, und geben Sie „21“ in das Textfeld ein (Sie können auch **Column name** auswählen und „Credit Risk“ eingeben). Dadurch wird Spalte 21, der Wert des Kreditrisikos, als die Spalte identifiziert, die vom Modell vorhergesagt werden soll.
 
 
 Dieser Teil des Experiments sieht jetzt in etwa wie folgt aus:
@@ -63,12 +63,12 @@ Boosted Decision Trees funktionieren hervorragend mit allen Arten von Merkmalen.
 5.	Verbinden Sie die Eingabe dieses Transformationsmoduls mit der Ausgabe des linken Moduls [Execute R Script][execute-r-script].
 6.	Verbinden Sie den linken Ausgabeport („Transformiertes Dataset“) des Transformationsmoduls mit dem rechten Eingabeport („Dataset“) des Moduls [Modell trainieren][train-model].
 7.	Wählen Sie im Bereich **Properties** des Transformationsmoduls den Wert **Tanh** für den Parameter **Transformation method** aus.
-8.	Klicken Sie auf **Launch column selector**, wählen Sie in der ersten Dropdownliste **Include**, in der zweiten Dropdownliste **column type** und in der dritten Dropdownliste **Numeric** aus. Damit wird festgelegt, dass alle numerischen Spalten (und nur die numerischen Spalten) transformiert werden.
-9.	Klicken Sie auf das Pluszeichen (+). Dadurch wird eine neue Dropdown-Zeile erstellt. Wählen Sie in der ersten Dropdownliste **Exclude** und in der zweiten Dropdownliste **column indices** aus, und geben Sie "21" in das Textfeld ein. Dadurch wird angegeben, dass Spalte 21 (die Spalte "Credit Risk") ignoriert wird.
+8.	Klicken Sie auf **Launch column selector**, wählen Sie für **Begin With** „No columns“ und wählen Sie in der ersten Dropdownliste **Include**, in der zweiten Dropdownliste **column type** und in der dritten Dropdownliste **Numeric** aus. Damit wird festgelegt, dass alle numerischen Spalten (und nur die numerischen Spalten) transformiert werden.
+9.	Klicken Sie auf das Pluszeichen (+). Dadurch wird eine neue Dropdown-Zeile erstellt. Wählen Sie in der ersten Dropdownliste **Exclude** und in der zweiten Dropdownliste **column indices** aus, und geben Sie „21“ in das Textfeld ein. Dadurch wird angegeben, dass Spalte 21 (die Spalte "Credit Risk") ignoriert wird.
 10.	Klicken Sie auf **OK**.  
 
 
-Das Modul [Normalize Data][normalize-data] ist jetzt für eine Tanh-Transformation aller numerischen Spalten mit Ausnahme der Spalte "Credit Risk" eingerichtet.
+Das Modul [Normalize Data][normalize-data] ist jetzt für eine Tanh-Transformation aller numerischen Spalten mit Ausnahme der Spalte „Credit Risk“ eingerichtet.
 
 Dieser Teil des Experiments sieht jetzt in etwa wie folgt aus:
 
@@ -79,13 +79,13 @@ Wir verwenden die Bewertungsdaten, die durch das Modul **Aufteilen** getrennt wu
 
 1.	Suchen Sie das Modul [Modell bewerten][score-model], und ziehen Sie es in den Bereich.
 2.	Verbinden Sie den linken Eingabeport dieses Moduls mit dem Boosted Decision Tree-Modell (d. h., verbinden Sie es mit dem Ausgabeport des Moduls [Modell trainieren][train-model], das mit dem Modul [Zweiklassiger Boosted Decision Tree][two-class-boosted-decision-tree] verbunden ist).
-3.	Verbinden Sie den rechten Eingabeport des Moduls [Score Model][score-model] mit der Ausgabe des rechten Moduls [Execute R Script][execute-r-script]. Beachten Sie, dass es in Ordnung ist, wenn die Ausgabe eines Moduls an verschiedene Stellen geht.
+3.	Verbinden Sie den rechten Eingabeport des Moduls [Modell bewerten][score-model] mit der Ausgabe des rechten Moduls [R-Skript ausführen][execute-r-script]. 
 4.	Kopieren Sie das Modul [Modell bewerten][score-model] und fügen Sie es ein, um eine zweite Kopie zu erstellen, oder ziehen Sie ein neues Modul in den Bereich.
 5.	Verbinden Sie den linken Eingabeport dieses Moduls mit dem SVM-Modell (d.h., verbinden Sie es mit dem Ausgabeport des Moduls [Modell trainieren][train-model], das mit dem Modul [Zweiklassige Support Vector Machine][two-class-support-vector-machine] verbunden ist).
 6.	Für das SVM-Modell muss die gleiche Transformation für die Testdaten durchgeführt werden wie für die Trainingsdaten. Kopieren Sie also das Modul [Normalize Data][normalize-data], und fügen Sie es ein, um eine zweite Kopie zu erstellen, und verbinden Sie es mit der Ausgabe des rechten Moduls [Execute R Script][execute-r-script].
 7.	Verbinden Sie den rechten Eingabeport des Moduls [Score Model][score-model] mit der Ausgabe des Moduls [Normalize Data][normalize-data].  
 
-Zur Auswertung der beiden Bewertungsergebnisse wird das Modul [Modell evaluieren][evaluate-model] verwendet.
+Zur Evaluierung der beiden Bewertungsergebnisse wird das Modul [Modell evaluieren][evaluate-model] verwendet.
 
 1.	Suchen Sie das Modul [Modell evaluieren][evaluate-model], und ziehen Sie es in den Bereich.
 2.	Verbinden Sie den linken Eingangsport mit dem Ausgangsport des Moduls [Modell bewerten][score-model], das dem Boosted Decision Tree-Modell zugeordnet ist.
@@ -97,7 +97,7 @@ Das Experiment sollte in etwa wie folgt aussehen:
  
 Klicken Sie auf die Schaltfläche **AUSFÜHREN** unter dem Bereich, um das Experiment auszuführen. Dies kann einige Minuten dauern. Für jedes Modul wird ein Drehindikator angezeigt, um anzugeben, dass es ausgeführt wird. Wenn das Modul abgeschlossen ist, wird ein grünes Häkchen angezeigt.
 
-Wenn alle Module ein Häkchen aufweisen, ist die Ausführung des Experiments beendet. Um die Ergebnisse zu prüfen, klicken Sie auf den Ausgabeport des Moduls [Modell evaluieren][evaluate-model], und wählen Sie **Visualisieren** aus.
+Wenn alle Module ein Häkchen aufweisen, ist die Ausführung des Experiments beendet. Um die Ergebnisse zu prüfen, klicken Sie auf den Ausgabeport des Moduls [Evaluate Model][evaluate-model], und wählen Sie **View Results** aus.
 
 Das Modul [Modell evaluieren][evaluate-model] erzeugt ein Paar aus Kurven und Metriken, mit denen die Ergebnisse der beiden bewerteten Modelle verglichen werden können. Sie können die Ergebnisse als ROC-Kurven (Receiver Operator Characteristic), Genauigkeits-/Trefferkurven oder Prognosegütekurven anzeigen. Zu den zusätzlich angezeigten Daten zählen eine Wahrheitsmatrix, kumulative Werte für den Bereich unter der Kurve (AUC) sowie weitere Metriken. Sie können den Schwellwert ändern, indem Sie den Schieberegler nach links oder rechts bewegen und beobachten, wie sich dies auf den Metriksatz auswirkt.
 
@@ -134,4 +134,4 @@ Als zusätzliche Hilfe beim Verfolgen der Änderungen, die Sie an den Modulparam
 [two-class-support-vector-machine]: https://msdn.microsoft.com/library/azure/12d8479b-74b4-4e67-b8de-d32867380e20/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -651,4 +651,4 @@ Alle Attribute werden im Folgenden beschrieben.
 **TruePeak**: Dieses Ergebnis enthält den größten absoluten True Peak-Wert in jedem Kanal, seit die Messung zurückgesetzt wurde. Eine Beschreibung von True Peak finden Sie unter ITU‐R BS.1770‐2. Die Werte liegen im Bereich von -70 bis 12.04 dBTP.
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

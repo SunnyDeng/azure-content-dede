@@ -4,7 +4,7 @@ Nach dem Erstellen des Azure-Sicherungstresors sollte auf jedem lokalen Server (
 
 1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com/) an.
 
-2. Klicken Sie auf **Recovery Services**, und wählen Sie den Sicherungstresor aus, den Sie bei einem Server registrieren möchten. Die Seite "Schnellstart" für diesen Sicherungstresor wird angezeigt.
+2. Klicken Sie auf **Wiederherstellungsdienste**, und wählen Sie den Sicherungstresor aus, den Sie bei einem Server registrieren möchten. Die Seite "Schnellstart" für diesen Sicherungstresor wird angezeigt.
 
     ![Schnellstart](./media/backup-install-agent/quickstart.png)
 
@@ -12,7 +12,7 @@ Nach dem Erstellen des Azure-Sicherungstresors sollte auf jedem lokalen Server (
 
     ![Agent speichern](./media/backup-install-agent/agent.png)
 
-4. Wenn der Agent installiert ist, doppelklicken Sie auf "MARSAgentInstaller.exe", um die Installation des Azure Backup-Agents zu starten. Wählen Sie den Installationsordner und den Ablageordner aus, der für den Agent erforderlich ist. Der verfügbare Cache am angegebenen Speicherort muss mindestens 5 % der Sicherungsdaten betragen.
+4. Sobald der Agent installiert ist, doppelklicken Sie auf „MARSAgentInstaller.exe“, um die Installation des Azure Backup-Agents zu starten. Wählen Sie den Installationsordner und den Ablageordner aus, der für den Agent erforderlich ist. Der verfügbare Speicherplatz am angegebenen Speicherort muss mindestens 5 % der Sicherungsdaten betragen.
 
 5.	Wenn Sie einen Proxyserver für die Verbindung mit dem Internet verwenden, geben Sie im Bildschirm **Proxykonfiguration** die Details des Proxyservers ein. Wenn Sie einen authentifizierten Proxy verwenden, geben Sie in diesem Bildschirm die Informationen zum Benutzernamen und zum Kennwort ein.
 
@@ -48,4 +48,4 @@ Nach dem Erstellen des Azure-Sicherungstresors sollte auf jedem lokalen Server (
 
     ![Konfigurieren von Azure Backup](./media/backup-install-agent/configure.png)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

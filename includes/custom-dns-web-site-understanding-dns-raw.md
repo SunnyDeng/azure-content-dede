@@ -16,7 +16,7 @@ Die Hauptvorteile eines A-Eintrags gegenüber einem CNAME-Eintrag sind:
 
 * Sie können eine Stammdomäne wie **contoso.com** einer IP-Adresse zuweisen; viele Registrierungsstellen gestatten dies nur bei Verwendung von A-Einträgen
 
-* Sie können einen Eintrag mit einem Platzhalter verwenden, wie **\*.contoso.com**, der Anfragen für mehrere Unterdomänen verarbeiten kann, z. B. **mail.contoso.com**, **blogs.contoso.com** oder **www.contso.com**.
+* Sie können einen Eintrag mit einem Platzhalter verwenden, wie ***.contoso.com**, der Anfragen für mehrere Unterdomänen verarbeiten kann, z. B. **mail.contoso.com**, **blogs.contoso.com** oder **www.contso.com**.
 
 > [AZURE.NOTE]Da ein A-Datensatz einer statischen IP-Adresse zugeordnet ist, können Änderungen an der IP-Adresse der Web-App nicht automatisch aufgelöst werden. Sie erhalten eine IP-Adresse zur Verwendung mit A-Datensätzen, wenn Sie benutzerdefinierte Domänennameneinstellungen für Ihre Web-App konfigurieren; dieser Wert kann sich jedoch ändern, wenn Sie Ihre Web-App löschen und neu erstellen oder den Modus des App Service-Plans auf **Free** zurücksetzen.
 
@@ -44,10 +44,10 @@ Sie können die IP-Adresse sowie den **awverify**-Namen und die **.azurewebsites
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
-	> [AZURE.NOTE] Wenn **Domänen verwalten** nicht aktiviert ist, verwenden Sie eine kostenlose Web-App im Modus **Free**. Die können benutzerdefinierte Domänennamen nicht mit einer Web-App im Modus **Free** verwenden und müssen für den App Service-Plan ein Upgrade auf einen der Modi **Shared**, **Basic** oder **Standard** ausführen. Weitere Informationen zu den Modi des App Service-Plans, darunter auch Informationen zum Ändern des Web-App-Modus, finden Sie unter [Skalieren von Web-Apps](../articles/web-sites-scale.md).
+	> [AZURE.NOTE]Wenn **Domänen verwalten** nicht aktiviert ist, verwenden Sie eine kostenlose Web-App im Modus **Free**. Die können benutzerdefinierte Domänennamen nicht mit einer Web-App im Modus **Free** verwenden und müssen für den App Service-Plan ein Upgrade auf einen der Modi **Shared**, **Basic** oder **Standard** ausführen. Weitere Informationen zu den Modi des App Service-Plans, darunter auch Informationen zum Ändern des Web-App-Modus, finden Sie unter [Skalieren von Web-Apps](../articles/web-sites-scale.md).
 
 6. Im Dialogfeld **BENUTZERDEFINIERTE DOMÄNEN VERWALTEN** werden dann die **awverify**-Information, der momentan zugewiesene **.azurewebsites.net**-Domänenname und die virtuelle IP-Adresse angezeigt. Speichern Sie diese Informationen, das sie beim Erstellen der DNS-Einträge benötigt werden.
 
 	![](./media/custom-dns-web-site/managecustomdomains.png)
 
-<!------HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

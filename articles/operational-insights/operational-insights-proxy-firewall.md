@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/02/2015"
+   ms.date="07/21/2015"
    ms.author="banders" />
 
 # Konfigurieren von Proxy- und Firewalleinstellungen für Operational Insights
@@ -79,9 +79,23 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 
 ## Konfigurieren von Proxy- und Firewalleinstellungen mit Operations Manager
 
-Damit eine Operations Manager-Verwaltungsgruppe eine Verbindung herstellen und sich beim Operational Insights-Dienst registrieren kann, benötigt sie Zugriff auf die Portnummer Ihrer Domänen und die URLs. Wenn Sie einen Proxyserver für die Kommunikation zwischen dem Operations Manager-Verwaltungsserver und dem Operational Insights-Dienst verwenden, müssen Sie sicherstellen, dass auf die entsprechenden Ressourcen zugegriffen werden kann. Wenn Sie eine Firewall verwenden, um den Zugriff auf das Internet einzuschränken, müssen Sie die Firewall so konfigurieren, dass Operational Insights Zugriff erhält. In der folgenden Tabelle sind die Ports im Zusammenhang mit diesen Aufgaben aufgelistet.
+Damit eine Operations Manager-Verwaltungsgruppe eine Verbindung herstellen und sich beim Operational Insights-Dienst registrieren kann, benötigt sie Zugriff auf die Portnummern Ihrer Domänen und die URLs. Wenn Sie einen Proxyserver für die Kommunikation zwischen dem Operations Manager-Verwaltungsserver und dem Operational Insights-Dienst verwenden, müssen Sie sicherstellen, dass auf die entsprechenden Ressourcen zugegriffen werden kann. Wenn Sie eine Firewall verwenden, um den Zugriff auf das Internet einzuschränken, müssen Sie die Firewall so konfigurieren, dass Operational Insights Zugriff erhält. Selbst, wenn ein Operations Manager-Verwaltungsserver nicht hinter einem Proxyserver ist, könnte dies bei dessen Agents der Fall sein. In diesem Fall sollte der Proxyserver auf dieselbe Weise wie die Agents konfiguriert sein, damit die Daten der Sicherheits- und Log Management-Lösung an den Operational Insights-Webdienst gesendet werden können.
+
+Damit Operations Manager-Agents mit dem Operational Insights-Dienst kommunizieren können, sollte Ihre Operations Manager-Infrastruktur (einschließlich Agents) über die korrekten Proxyeinstellungen und die richtige Version verfügen. Die Proxyeinstellung für Agents wird in der Operations Manager-Konsole angegeben. Sie sollten über eine der folgenden Versionen verfügen:
+
+- Operations Manager 2012 SP1 Updaterollup 7 oder höher
+- Operations Manager 2012 R2 Updaterollup 3 oder höher
+
+
+In der folgenden Tabelle sind die Ports im Zusammenhang mit diesen Aufgaben aufgelistet.
 
 >[AZURE.NOTE]In einigen der folgenden Ressourcen wird Advisor erwähnt. Die aufgelisteten Ressourcen werden jedoch in Zukunft geändert.
+
+|**Agent-Ressource**|**Ports**|
+|--------------|-----|
+|*.ods.opinsights.azure.com|Port 443| |*.oms.opinsights.azure.com|Port 443|
+|ods.systemcenteradvisor.com|Port 443|
+|*.blob.core.windows.net/*|Port 443|
 
 |**Verwaltungsserver-Ressource**|**Ports**|
 |--------------|-----|
@@ -119,6 +133,7 @@ Verwenden Sie die folgenden Verfahren, um die Operations Manager-Verwaltungsgrup
 
 
 ### So geben Sie Anmeldeinformationen ein, wenn der Proxyserver eine Authentifizierung erfordert
+ Anmeldeinformationen und Einstellungen von Proxyservern müssen an verwaltete Computer weitergegeben werden, die an Operational Insights Bericht erstatten. Diese Server sollten sich in der *Microsoft System Center Advisor-Überwachungsservergruppe* befinden. Anmeldeinformationen werden in der Registrierung jedes Servers in der Gruppe verschlüsselt.
 
 1. Öffnen Sie die Operations Manager-Konsole, und wählen Sie den Arbeitsbereich **Administration** aus.
 
@@ -128,28 +143,10 @@ Verwenden Sie die folgenden Verfahren, um die Operations Manager-Verwaltungsgrup
 4. Klicken Sie im Assistenten für das ausführende Profil auf **Hinzufügen**, um ein ausführendes Konto zu verwenden. Sie können ein neues ausführendes Konto erstellen oder ein vorhandenes Konto verwenden. Dieses Konto muss über ausreichende Berechtigungen für die Weiterleitung über den Proxyserver verfügen. ![Bild des Assistenten für das ausführende Profil](./media/operational-insights-proxy-firewall/proxyacct2.png)
 
 5. Um das zu verwaltende Konto festzulegen, wählen Sie **Einer bestimmten Klasse oder Gruppe bzw. eines bestimmten Objekts** aus, um das Dialogfeld "Objektsuche" zu öffnen. ![Bild des Assistenten für das ausführende Profil](./media/operational-insights-proxy-firewall/proxyacct2-1.png)
-6. Suchen Sie **Operations Manager Management Servers**, und wählen Sie diese Option dann aus. ![Bild des Dialogfelds "Objektsuche"](./media/operational-insights-proxy-firewall/proxyacct3.png)
+6. Suchen Sie die **Microsoft System Center Advisor-Überwachungsservergruppe**, und wählen Sie sie dann aus. ![Bild des Dialogfelds "Objektsuche"](./media/operational-insights-proxy-firewall/proxyacct3.png)
 7. Klicken Sie auf **OK**, um das Dialogfeld "Ausführendes Konto hinzufügen" zu schließen. ![Bild des Assistenten für das ausführende Profil](./media/operational-insights-proxy-firewall/proxyacct4.png)
 8. Schließen Sie den Assistenten ab, und speichern Sie die Änderungen. ![Bild des Assistenten für das ausführende Profil](./media/operational-insights-proxy-firewall/proxyacct5.png)
 
-
-### So konfigurieren Sie den Proxyserver auf jedem Verwaltungsserver für WinHTTP
-
-1. Wenn Operations Manager nicht mit Operations Manager 2012 R2-Updaterollup 3 oder Operations Manager 2012 SP1-Updaterollup 7 oder höher aktualisiert wurde, öffnen Sie auf dem Operations Manager-Verwaltungsserver ein Eingabeaufforderungsfenster als Administrator. Andernfalls müssen Sie dieses Verfahren nicht anwenden.
-
-2. Geben Sie **netsh winhttp set proxy myproxy:80** ein.
-
-3. Schließen Sie das Eingabeaufforderungsfenster, und starten Sie den System Center Management-Dienst (HealthService).
-
-4. Führen Sie Schritt 2 für jeden Verwaltungsserver in der Verwaltungsgruppe aus.
-
-### So konfigurieren Sie den Proxyserver auf jedem Verwaltungsserver
-
-1. Öffnen Sie die Operations Manager-Konsole, und wählen Sie den Arbeitsbereich **Administration** aus.
-
-2. Klicken Sie auf **Geräteverwaltung** und dann auf **Verwaltungsserver**.
-
-3. Klicken Sie mit der rechten Maustaste auf die Namen der einzelnen Verwaltungsserver, klicken Sie auf **Eigenschaften**, und legen Sie dann die Informationen auf der Registerkarte **Proxyeinstellungen** fest. ![Registerkarte "Proxyeinstellungen"](./media/operational-insights-proxy-firewall/proxyms.png)
 
 ### So überprüfen Sie, ob Operational Insights-Management Packs heruntergeladen werden
 
@@ -169,4 +166,4 @@ Verwenden Sie die folgenden Verfahren, um die Operations Manager-Verwaltungsgrup
 3. Fügen Sie alle Leistungsindikatoren hinzu, die mit **HTTP** beginnen. ![Hinzufügen der Leistungsindikatoren](./media/operational-insights-proxy-firewall/sendingdata1.png)
 4. Wenn die Operations Manager-Konfiguration in Ordnung ist, werden Aktivitäten für die Leistungsindikatoren der Verwaltungsgruppen des Integritätsdiensts für Ereignisse und andere Datenelemente angezeigt. Die Grundlage bilden die in Operational Insights hinzugefügten Management Packs und die konfigurierten Richtlinien für die Protokollerfassung. ![Systemmonitor mit Aktivität](./media/operational-insights-proxy-firewall/sendingdata2.png)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

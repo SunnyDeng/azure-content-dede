@@ -1,7 +1,7 @@
 <properties
    pageTitle="Verwenden von verknüpften Vorlagen mit Azure-Ressourcen-Manager"
    description="Beschreibt, wie verknüpfte Vorlagen in einer Azure-Ressourcen-Manager-Vorlage zum Erstellen einer modularen Vorlagenprojektmappe verwendet werden. Zeigt, wie Parameterwerte übergeben, eine Parameterdatei festgelegt und URLs dynamisch erstellt werden."
-   services="na"
+   services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
    manager="wpickett"
@@ -100,4 +100,4 @@ Wenn Sie einen Wert aus der verknüpften Vorlage an die Hauptvorlage übergeben 
 - [Erstellen von Vorlagen](./resource-group-authoring-templates.md)
 - [Bereitstellen von Vorlagen](azure-portal/resource-group-template-deploy.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

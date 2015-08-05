@@ -51,14 +51,14 @@ Die folgenden Schritte zeigen, wie Sie einen Load Balancer konfigurieren können
 Stellen Sie sicher, dass Sie in den PowerShell-Modus wechseln, um die ARM-Cmdlets zu verwenden. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](powershell-azure-resource-manager.md).
 
 
-    PS C:> Switch-AzureMode -Name AzureResourceManager
+    PS C:\> Switch-AzureMode -Name AzureResourceManager
 
 ### Schritt 2
 
 Melden Sie sich beim Azure-Konto an.
 
 
-    PS C:> Add-AzureAccount
+    PS C:\> Add-AzureAccount
 
 Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.
 
@@ -67,7 +67,7 @@ Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.
 
 Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.
 
-    PS C:> Select-AzureSubscription -SubscriptionName "MySubscription"
+    PS C:\> Select-AzureSubscription -SubscriptionName "MySubscription"
 
 Um eine Liste der verfügbaren Abonnements anzuzeigen, verwenden Sie das Cmdlet „Get-AzureSubscription“.
 
@@ -76,7 +76,7 @@ Um eine Liste der verfügbaren Abonnements anzuzeigen, verwenden Sie das Cmdlet 
 
 Erstellen Sie eine neue Ressourcengruppe. (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
 
-    PS C:> New-AzureResourceGroup -Name NRP-RG -location "West US"
+    PS C:\> New-AzureResourceGroup -Name NRP-RG -location "West US"
 
 Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speicherort angeben. Dieser wird als Standardspeicherort für Ressourcen in dieser Ressourcengruppe verwendet. Stellen Sie sicher, dass alle Befehle, mit denen ein Load Balancer erstellt wird, die gleiche Ressourcengruppe verwenden.
 
@@ -184,7 +184,7 @@ In diesem Schritt erstellen wir eine zweite Netzwerkschnittstelle, weisen sie de
 Das Ergebnis sieht in der Regel wie folgt aus:
 
 
-PS C:> $backendnic1
+PS C:\> $backendnic1
 
 
 	Name                 : lb-nic1-be
@@ -245,4 +245,4 @@ In der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Co
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

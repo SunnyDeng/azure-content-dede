@@ -1,7 +1,6 @@
 <properties
 	pageTitle="Schnellstart-Lernprogramm für die Sprache R fürMachine Learning | Microsoft Azure"
 	description="Verwenden Sie dieses Lernprogramm für die Programmierung in R, um einen schnellen Einstieg in die Verwendung der Sprache R mit Azure Machine Learning Studio zum Erstellen von Vorhersagelösungen zu erhalten."
-	keywords="quickstart,r language,r programming language,r programming tutorial"
 	services="machine-learning"
 	documentationCenter=""
 	authors="Blackmist"
@@ -1117,4 +1116,4 @@ Einige weitere nützliche Internetressourcen:
 <!-- Module References -->
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

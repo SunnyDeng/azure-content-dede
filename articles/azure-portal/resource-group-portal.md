@@ -4,7 +4,6 @@
 	services="azure-portal" 
 	documentationCenter="" 
 	authors="" 
-	writer="tfitzmac" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -95,4 +94,4 @@ Zugriffsverwaltung und -überwachung
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

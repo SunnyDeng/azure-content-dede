@@ -38,10 +38,10 @@ Zunächst müssen Sie Azure PowerShell installieren. Anweisungen hierzu finden S
 
 Öffnen Sie dann Azure PowerShell, und führen Sie die folgenden Befehle aus. Denken Sie daran, `ACCOUNT_NAME` und `ACCOUNT_KEY== ` durch Ihre Anmeldeinformationen für das Speicherkonto zu ersetzen. Ersetzen Sie `CONTAINER_NAME` durch einen Namen Ihrer Wahl.
 
-    PS C:> $context = New-AzureStorageContext -StorageAccountName "ACCOUNT_NAME" -StorageAccountKey "ACCOUNT_KEY=="
-	PS C:> New-AzureStorageContainer CONTAINER_NAME -Permission Off -Context $context
-	PS C:> $now = Get-Date
-	PS C:> New-AzureStorageContainerSASToken -Name CONTAINER_NAME -Permission rwdl -ExpiryTime $now.AddDays(1.0) -Context $context -FullUri
+    PS C:\> $context = New-AzureStorageContext -StorageAccountName "ACCOUNT_NAME" -StorageAccountKey "ACCOUNT_KEY=="
+	PS C:\> New-AzureStorageContainer CONTAINER_NAME -Permission Off -Context $context
+	PS C:\> $now = Get-Date
+	PS C:\> New-AzureStorageContainerSASToken -Name CONTAINER_NAME -Permission rwdl -ExpiryTime $now.AddDays(1.0) -Context $context -FullUri
 
 Der SAS-URI für den neuen Container sollte dem folgenden ähneln:
 
@@ -176,4 +176,4 @@ Weitere Informationen zu Blobs, Tabellen und Warteschlangen finden Sie über die
 [Einführung in Microsoft Azure Storage](storage-introduction.md) [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md) [Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md) [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

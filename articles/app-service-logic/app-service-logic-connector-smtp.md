@@ -70,16 +70,16 @@ Sobald Ihr Connector erstellt wurde, können Sie den SMTP-Connector als Aktion f
 
 Sie können nun den SMTP-Connector zur Verwendung in Ihrem Workflow konfigurieren. Wählen Sie die Aktion **E-Mail senden** aus, und konfigurieren Sie die Eingabeeigenschaften wie folgt:
 
-	Property | Description
+	Eigenschaft | Beschreibung
 	--- | ---
-	To | Enter the email address of recipient(s). Separate multiple email addresses using a semicolon (;). For example, enter: *recipient1@domain.com;recipient2@domain.com*.
-	Cc | Enter the email address of the carbon copy recipient(s). Separate multiple email addresses using a semicolon (;). For example, enter: *recipient1@domain.com;recipient2@domain.com*.
-	Subject | Enter the subject of the email.
-	Body | Enter body of the email.
-	Is HTML | When this property is set to true, the contents of the body are sent as HTML.
-	Bcc | Enter the email address of recipient(s) for blind carbon copy. Separate multiple email addresses using a semicolon (;). For example, enter: *recipient1@domain.com;recipient2@domain.com*.
-	Importance | Enter the Importance of the email. The options are Normal, Low, and High.
-	Attachments | Attachments to be sent along with the email. It contains the following fields: <ul><li>Content (String)</li><li>Content transfer Encoding (Enum) (“none”|”base64”)</li><li>Content Type (String)</li><li>Content ID (String)</li><li>File Name (String)</li></ul>
+	To | Geben Sie die E-Mail-Adresse des/der Empfänger/s ein. Trennen Sie mehrere E-Mail-Adressen durch ein Semikolon (;). Geben Sie z. B. Folgendes ein: *recipient1@domain.com;recipient2@domain.com*.
+	Cc | Geben Sie die E-Mail-Adresse des/der Empfänger/s in Cc ein. Trennen Sie mehrere E-Mail-Adressen durch ein Semikolon (;). Geben Sie z. B. Folgendes ein: *recipient1@domain.com;recipient2@domain.com*.
+	Subject | Geben Sie den Betreff der E-Mail ein.
+	Body | Geben Sie den Text der E-Mail ein.
+	Is HTML | Wenn diese Eigenschaft auf „true“ festgelegt ist, werden Textinhalte im HTML-Format gesendet.
+	Bcc | Geben Sie die E-Mail-Adresse des/der Empfänger/s in Bcc ein. Trennen Sie mehrere E-Mail-Adressen durch ein Semikolon (;). Geben Sie z. B. Folgendes ein: *recipient1@domain.com;recipient2@domain.com*.
+	Importance | Geben Sie die Wichtigkeit der E-Mail ein. Es stehen folgende Optionen zur Verfügung: „Normal“, „Niedrig“ und „Hoch“.
+	Attachments | Anlagen, die mit der E-Mail gesendet werden sollen. Enthält folgende Felder: <ul><li>Content (String)</li><li>Content transfer Encoding (Enum) (“none”|”base64”)</li><li>Content Type (String)</li><li>Content ID (String)</li><li>File Name (String)</li></ul>
 
 	![][5]
 	![][6]
@@ -91,7 +91,7 @@ Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [R
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
-	<!--Image references-->
+<!--Image references-->
 [1]: ./media/app-service-logic-connector-smtp/img1.PNG
 [2]: ./media/app-service-logic-connector-smtp/img2.PNG
 [3]: ./media/app-service-logic-connector-smtp/img3.png
@@ -99,4 +99,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [5]: ./media/app-service-logic-connector-smtp/img5.PNG
 [6]: ./media/app-service-logic-connector-smtp/img6.PNG
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

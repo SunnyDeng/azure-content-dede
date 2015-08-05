@@ -5,7 +5,7 @@
 	documentationCenter="" 
 	authors="MightyPen" 
 	manager="jeffreyg" 
-	editor="jeffreyg"/>
+	editor=""/>
 
 
 <tags 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="06/10/2015" 
+	ms.date="07/21/2015" 
 	ms.author="genemi"/>
 
 
@@ -109,6 +109,17 @@ Es gibt viele gute Gründe, warum Kunden jetzt ein Upgrade von V11 auf Azure SQL
 - Die meisten neuen Features werden in SQL-Datenbank V12 veröffentlicht, bevor sie für Microsoft SQL Server veröffentlicht werden.
 
 
+## In V12 stellt der Gateway keine Wiederholungslogik mehr bereit.
+
+
+Vor Version V12 enthielt Azure SQL-Datenbank einen Gateway, der als Proxy und Puffer für alle Interaktionen zwischen der Datenbank und Ihrem Clientprogramm fungierte. Der Gateway stellte für einige *vorübergehende Fehler* eine automatische *Wiederholungslogik* bereit.
+
+ In V12 ist der Gateway entfallen. Jetzt muss das Programm vorübergehende Fehler ausführlicher behandeln. Einzelheiten finden Sie hier:
+
+
+- [Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen](sql-database-connect-central-recommendations.md#gatewaynoretry)
+
+
 ## Verwenden Sie bereits V12?
 
 
@@ -145,11 +156,11 @@ V12 wurde im Dezember 2014 freigegeben, zunächst jedoch nur mit dem Status [Vor
 V12 ist in der Vorschau in den folgenden Regionen verfügbar:
 
 
-| Azure-Region | Aktuelle Version<br/>Status von V12 | Datum der Heraufstufung<br/>auf allgemeine Verfügbarkeit |
+| Azure-Region | Aktuelle Version<br/>Status von V12 | Datum der Heraufstufung<br/>auf allgemeine Verfügbarkeit, geschätzt |
 | :--- | :--- | :--- |
-| Australien (Ost) | **Vorschau** | 2. Quartal 2015 (geschätzt) |
-| Australien (Südost) | **Vorschau** | 2. Quartal 2015 (geschätzt) |
+| Australien (Osten) | **Vorschau** | Drittes Quartal 2015, geschätzt |
+| Australien (Südosten) | **Vorschau** | Drittes Quartal 2015, geschätzt |
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

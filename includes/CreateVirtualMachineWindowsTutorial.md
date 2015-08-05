@@ -1,3 +1,4 @@
+
 # Erstellen eines virtuellen Windows Server-Computers #
 
 In diesem Lernprogramm erfahren Sie, wie Sie mithilfe der Imagegalerie im Windows Azure-Verwaltungsportal ganz einfach einen virtuellen Azure-Computer mit Windows Server erstellen. Die Image-Galerie bietet verschiedene Images, unter anderem von Windows-Betriebssystemen, Linux-basierten Betriebssystemen sowie Anwendungs-Images.
@@ -125,4 +126,4 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
 [How to attach a data disk to the new virtual machine]: #attachdisk
 [How to set up communication with the virtual machine]: #endpoints
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO4-->

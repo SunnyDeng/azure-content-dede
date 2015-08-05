@@ -238,17 +238,17 @@ Eine Auftrags-Manager-Aufgabe in einem Auftrag besitzt keine höhere Priorität 
 
 Sie benötigen ein Batch-Konto, um den Batch-Dienst verwenden zu können, und Sie verwenden mehrere Ressourcen des Diensts zur Planung der Berechnungen. Sie verwenden den folgenden einfachen Workflow bei der Erstellung eines verteilten Rechenszenarios mit dem Batch-Dienst:
 
-1\. Laden Sie die Dateien, die Sie in Ihrem verteilten Rechenszenario verwenden möchten, an ein Azure-Speicherkonto hoch. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Der Batch-Dienst lädt sie beim Ausführen der Aufgabe in eine TVM.
+1. Laden Sie die Dateien, die Sie in Ihrem verteilten Rechenszenario verwenden möchten, an ein Azure-Speicherkonto hoch. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Der Batch-Dienst lädt sie beim Ausführen der Aufgabe in eine TVM.
 
-2\. Laden Sie die abhängigen Binärdateien an das Speicherkonto hoch. Die Binärdateien enthalten das Programm, das durch die Aufgabe und die abhängigen Assemblys ausgeführt wird. Auf diese Dateien muss auch aus dem Speicher zugegriffen werden und sie werden auf die TVM geladen.
+2. Laden Sie die abhängigen Binärdateien an das Speicherkonto hoch. Die Binärdateien enthalten das Programm, das durch die Aufgabe und die abhängigen Assemblys ausgeführt wird. Auf diese Dateien muss auch aus dem Speicher zugegriffen werden und sie werden auf die TVM geladen.
 
-3\. Erstellen Sie einen Pool mit virtuellen Aufgabencomputern. Sie können die Größe des zu verwendenden virtuellen Aufgabencomputers bei der Erstellung eines Pools zuweisen. Wenn eine Aufgabe ausgeführt wird, wird ihr eine TVM aus diesem Pool zugewiesen.
+3. Erstellen Sie einen Pool mit virtuellen Aufgabencomputern. Sie können die Größe des zu verwendenden virtuellen Aufgabencomputers bei der Erstellung eines Pools zuweisen. Wenn eine Aufgabe ausgeführt wird, wird ihr eine TVM aus diesem Pool zugewiesen.
 
-4\. Erstellen Sie ein Arbeitselement. Beim Erstellen eines Arbeitselements wird automatisch ein Auftrag erstellt. Mit einem Arbeitselement können Sie einen Auftrag von Aufgaben verwalten.
+4. Erstellen Sie ein Arbeitselement. Beim Erstellen eines Arbeitselements wird automatisch ein Auftrag erstellt. Mit einem Arbeitselement können Sie einen Auftrag von Aufgaben verwalten.
 
-5\. Fügen Sie dem Arbeitselement Aufgaben hinzu. Jede Aufgabe verwendet das von Ihnen hochgeladene Programm, um Informationen aus einer Datei zu verarbeiten, die Sie ebenfalls hochgeladen haben.
+5. Fügen Sie dem Arbeitselement Aufgaben hinzu. Jede Aufgabe verwendet das von Ihnen hochgeladene Programm, um Informationen aus einer Datei zu verarbeiten, die Sie ebenfalls hochgeladen haben.
 
-6\. Überwachen Sie die Ergebnisse der Ausgabe.
+6. Überwachen Sie die Ergebnisse der Ausgabe.
 
 ## <a name="files"></a>Dateien und Verzeichnisse
 
@@ -430,4 +430,4 @@ Jeder virtuelle Computer in einem Pool erhält einen eindeutigen Namen, und der 
 
 [Azure Batch – Technische Übersicht]: batch-technical-overview.md
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

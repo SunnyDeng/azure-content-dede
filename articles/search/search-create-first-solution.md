@@ -56,7 +56,7 @@ In diesem Schritt verwenden Sie **CatalogIndex**, um einen neuen Azure Search-In
 1.	Öffnen Sie in Visual Studio die Azure Search-Demoprojektmappe namens **AdventureWorksCatalog.sln**.  
 2.	Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **CatalogIndexer**, und wählen Sie **Als Startprojekt festlegen** aus, damit diese Anwendung anstelle des Projekts **AdventureWorksWeb** ausgeführt wird, wenn Sie **F5** drücken.
 3.	Öffnen Sie in diesem Projekt die Datei **App.config**, und aktualisieren Sie die Werte in den Feldern "SearchServiceName" und "SearchServiceApiKey" entsprechend Ihrem Azure Search-Dienst. Wenn Ihr Dienst beispielsweise "mysearch.search.windows.net" lautet, geben Sie unter "SearchServiceName" den Wert "mysearch" ein.
-4.	Optional enthält die Datei App.config einen Eintrag für "SourceSqlConnectionString", der SQL Server 2014 Express LocalDB (Server=(LocalDB)\\v11.0) voraussetzt. Wenn Sie eine andere SQL Server-Edition verwenden, aktualisieren Sie den Servernamen entsprechend. Wenn Sie z. B. eine lokale Standardinstanz haben, können Sie "(local)" oder "localhost" verwenden.
+4.	Optional enthält die Datei App.config einen Eintrag für "SourceSqlConnectionString", der SQL Server 2014 Express LocalDB (Server=(LocalDB)\v11.0) voraussetzt. Wenn Sie eine andere SQL Server-Edition verwenden, aktualisieren Sie den Servernamen entsprechend. Wenn Sie z. B. eine lokale Standardinstanz haben, können Sie "(local)" oder "localhost" verwenden.
 5.	Speichern Sie die Datei **App.config**.
 6.	Drücken Sie **F5**, um das Projekt zu starten.
 
@@ -206,4 +206,4 @@ Informationen finden Sie auch unter [Azure Search REST-API](http://msdn.microsof
 [11]: ./media/search-create-first-solution/AzureSearch_Create1_Suggestions.PNG
 [12]: ./media/search-create-first-solution/AzureSearch_Create1_CodeplexDownload.PNG
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

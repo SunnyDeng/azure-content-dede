@@ -154,7 +154,7 @@ SerDe ist die beste Wahl für die Analyse von geschachtelten JSON-Dokumenten. Si
 
 	1. Öffnen Sie **Erweiterte Systemeinstellungen anzeigen** auf dem Windows-Bildschirm.
 	2. Klicken Sie auf **Umgebungsvariablen**.  
-	3. Fügen Sie eine neue **JAVA_HOME** -Umgebungsvariable hinzu, die auf **C:\\Programme\\Java\\jdk1.7.0_55** bzw. auf den JDK-Installationsort verweist.
+	3. Fügen Sie eine neue **JAVA_HOME** -Umgebungsvariable hinzu, die auf **C:\Programme\Java\jdk1.7.0_55** bzw. auf den JDK-Installationsort verweist.
 
 	![Einrichten der richtigen Konfigurationswerte für JDK][image-hdi-hivejson-jdk]
 
@@ -170,9 +170,9 @@ SerDe ist die beste Wahl für die Analyse von geschachtelten JSON-Dokumenten. Si
 
 4: Öffnen Sie den Ordner, in den Sie das Paket heruntergeladen haben, und geben Sie "mvn package" ein. Dadurch werden die notwendigen JAR-Dateien erstellt, die Sie dann in den Cluster kopieren können.
 
-5: Wechseln Sie zum Zielordner im Stammordner, in den Sie das Paket heruntergeladen haben. Laden Sie die Datei „json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar“ zum Hauptknoten Ihres Clusters hoch. Ich speichere diese Datei normalerweise im Strukturbinärordner „C:\\apps\\dist\\hive-0.13.0.2.1.11.0-2316\\bin“ oder ähnlich.
+5: Wechseln Sie zum Zielordner im Stammordner, in den Sie das Paket heruntergeladen haben. Laden Sie die Datei „json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar“ zum Hauptknoten Ihres Clusters hoch. Ich speichere diese Datei normalerweise im Strukturbinärordner „C:\apps\dist\hive-0.13.0.2.1.11.0-2316\bin“ oder ähnlich.
  
-6: Geben Sie an der Hive-Eingabeaufforderung "add jar /path/to/json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar" ein. Da sich die JAR-Datei in diesem Fall im Ordner „C:\\apps\\dist\\hive-0.13.x\\bin“ befindet, kann die JAR-Datei mit dem Namen direkt hinzugefügt werden wie unten dargestellt:
+6: Geben Sie an der Hive-Eingabeaufforderung "add jar /path/to/json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar" ein. Da sich die JAR-Datei in diesem Fall im Ordner „C:\apps\dist\hive-0.13.x\bin“ befindet, kann die JAR-Datei mit dem Namen direkt hinzugefügt werden wie unten dargestellt:
 
     add jar json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar;
 
@@ -261,4 +261,4 @@ Verwandte Artikel
 [image-hdi-hivejson-serde_result]: ./media/hdinsight-using-json-in-hive/serde_result.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

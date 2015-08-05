@@ -130,4 +130,4 @@ Der technische Support ist auf der Website des [Microsoft Azure-Supports](https:
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/25/2015" 
+	ms.date="07/21/2015" 
 	ms.author="stepsic"/>
 
 # Ändern der Preisstufe in Azure App Service
@@ -25,6 +25,8 @@ Der verfügbare Dienstumfang für Ihren App Service-Plan richtet sich nach der [
 Zusätzlich zum Ändern der Preisstufe können Sie die Anzahl von Instanzen für Ihren Dienst ändern. Dieser Vorgang wird als *horizontale Skalierung* bezeichnet. Weitere Informationen zur *horizontalen Skalierung* finden Sie unter [Manuelles oder automatisches Skalieren der Instanzenanzahl](../insights-how-to-scale.md).
 
 Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App Service-Plan?](../web-sites-web-hosting-plan-overview.md) und [Azure App Service-Pläne – Detaillierte Übersicht](azure-web-sites-web-hosting-plans-in-depth-overview.md). Informationen zu Preisen und Features der einzelnen App Service-Pläne finden Sie unter [App Service – Preisdetails](/pricing/details/app-service/).
+
+Die Skalierung funktioniert anders, wenn Sie eine dedizierte [App Service-Umgebung](app-service-app-service-environment-intro.md) verwenden möchten. Weitere Details finden Sie unter [Skalieren von Web-Apps in einer App Service-Umgebung](app-service-web-scale-a-web-app-in-an-app-service-environment.md).
 
 > [AZURE.NOTE]Bevor Sie Web-Apps vom Modus **Free** zum Modus **Basic**, **Standard **oder **Premium** wechseln, müssen Sie zunächst das Ausgabenlimit für Ihr Azure App Service-Abonnement aufheben. Informationen zum Anzeigen oder Ändern von Optionen für Ihr Microsoft Azure App Service-Abonnement finden Sie unter [Microsoft Azure-Abonnement][azuresubscriptions].
 
@@ -42,8 +44,10 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 	
 4. Klicken Sie nach Auswahl der gewünschten Preisstufe auf **Auswählen**.
 	
-	Auf der Registerkarte **Benachrichtigungen** wird in Grün der Hinweis **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde.
-		
+	Auf der Registerkarte **Benachrichtigungen** wird in grüner Schrift der Text **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde.
+ 
+Außerdem erhalten Sie [hier](http://go.microsoft.com/fwlink/?LinkId=309169) Informationen zu den verschiedenen Compute-Ebenen in Azure.
+	
 <a name="ScalingSQLServer"></a>
 ##Skalieren der zugehörige Ressourcen
 Wenn Ihre App von anderen Diensten abhängt, beispielsweise von SQL oder Storage, können Sie diese Dienste basierend auf Ihren Anforderungen ebenfalls skalieren.
@@ -127,4 +131,4 @@ Je nach Preisstufe stehen die folgenden entwicklungsbezogenen Funktionen zur Ver
 [GeoReplication]: ./media/web-sites-scale/scale12SQLGeoReplication.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

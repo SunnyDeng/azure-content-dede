@@ -53,4 +53,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation vertraut gemacht ha
  * Lesen Sie den Blogbeitrag [Azure Automation: Your SQL Agent in the Cloud](http://azure.microsoft.com/blog/2014/06/26/azure-automation-your-sql-agent-in-the-cloud/) (in englischer Sprache).
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

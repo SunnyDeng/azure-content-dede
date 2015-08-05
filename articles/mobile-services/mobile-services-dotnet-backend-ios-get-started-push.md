@@ -131,4 +131,4 @@ In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen zum [Schnellstar
 [Send template-based notifications to subscribers]: ../notification-hubs-ios-send-localized-breaking-news.md
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

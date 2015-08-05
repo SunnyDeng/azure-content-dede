@@ -122,7 +122,7 @@ Das App Service-Gateway bietet integrierte Unterstützung, um die Zustimmung des
 * Twitter
 * Yammer
 * Azure Active Directory
-* Microsoft-Konto
+* Microsoft Account
 
 Für diese Anbieter verwaltet das Gateway Zugriffstoken und ordnet sie dem Zumo-Token zu, wie für das Zugriffstoken des Identitätsanbieters. Der Prozess zum Erhalten der Zustimmung des Benutzers und zum Aufrufen einer SaaS-Plattform wird im folgenden Diagramm veranschaulicht. Im Diagramm wird davon ausgegangen, dass sich der Client bereits beim Gateway authentifiziert hat und über das Zumo-Token verfügt.
 
@@ -214,4 +214,4 @@ In diesem Artikel wurden die Authentifizierungsdienste von Azure App Service fü
 
 * [Abrufen eines Zugriffstokens und Aufrufen der SharePoint-API in einer mobilen App](../app-service-mobile/app-service-mobile-dotnet-backend-get-started-connect-to-enterprise.md#obtain-token)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -405,4 +405,4 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
 - [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
 - [Schemas des Azure-Ressourcen-Manager](https://github.com/Azure/azure-resource-manager-schemas)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

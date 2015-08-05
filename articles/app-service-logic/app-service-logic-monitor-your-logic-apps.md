@@ -56,4 +56,4 @@ Beachten Sie, dass für *Push*-Trigger hier *nicht* die Zeiten angezeigt werden,
 Es gibt eine weitere Funktion, die zurzeit noch nicht auf der Benutzeroberfläche verfügbar ist, aber über [die REST-API](http://go.microsoft.com/fwlink/?LinkID=525617&clcid=0x409) zur Verfügung steht. Wenn Sie die Definition einer Logik-App aktualisieren, wird die vorherige Version der Definition gespeichert. Dies liegt daran, dass wenn eine Ausführung bereits läuft, diese Ausführung auf die Version der Logik-App verweist, die zum Zeitpunkt des Ausführungsbeginns vorhanden war. Definitionen laufender Ausführungen können nicht geändert werden. Die REST-API für den Versionsverlauf ermöglicht Ihnen den Zugriff auf diese Informationen.
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article" 
-	ms.date="06/25/2015"
+	ms.date="07/22/2015"
 	ms.author="cabailey"/>
 
 # Erste Schritte mit dem Azure-Schlüsseltresor #
@@ -211,7 +211,7 @@ Der nächste Befehl importiert ein BYOK-Paket (Bring Your Own Key). Auf diese We
 
 	$key = Add-AzureKeyVaultKey -VaultName 'ContosoKeyVaultHSM' -Name 'ContosoFirstHSMKey' -KeyFilePath 'c:\ITByok.byok' -Destination 'HSM'
 
-Ausführlichere Informationen zum Generieren dieses BYOK-Pakets finden Sie unter [Verwenden von HSM-geschützten Schlüsseln mit dem Azure-Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn903624.aspx).
+Ausführlichere Informationen zum Generieren dieses BYOK-Pakets finden Sie unter [Gewusst wie: Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor](key-vault-hsm-protected-keys.md).
 
 ## <a id="delete"></a>Löschen des Schlüsseltresors und der zugeordneten Schlüssel und geheimen Schlüssel ##
 
@@ -248,4 +248,4 @@ Eine Liste der Windows PowerShell-Cmdlets für den Azure-Schlüsseltresor finden
 Programmierungsreferenzen finden Sie unter [Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn903625.aspx) in der Dokumentationsbibliothek für Microsoft Azure auf MSDN.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

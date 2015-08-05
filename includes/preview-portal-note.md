@@ -5,4 +5,4 @@
 > 
 > Wenn Sie momentan nicht bei Ihrem Azure-Abonnement angemeldet sind, werden Sie beim Besuch des [Vorschauportals](https://portal.azure.com/) aufgefordert, sich anzumelden.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

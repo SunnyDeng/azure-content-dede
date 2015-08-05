@@ -1,3 +1,4 @@
+
 1. Melden Sie sich auf dem [Azure-Verwaltungsportal ](http://manage.windowsazure.com) an, falls Sie dies noch nicht getan haben.
 
 2. Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den betreffenden virtuellen Computer aus.
@@ -26,4 +27,4 @@ Klicken Sie auf **Ja**, um die Identität des virtuellen Computers zu bestätige
 
 Sie können jetzt über eine Remoteverbindung mit dem virtuellen Computer arbeiten.
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO4-->

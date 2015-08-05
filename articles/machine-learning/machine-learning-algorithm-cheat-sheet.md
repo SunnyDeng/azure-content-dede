@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Machine Learning Cheat Sheet für Algorithmen | Microsoft Azure" 
-	description="Eine druckbare Version des Machine Learning Cheat Sheet für Algorithmen, mit dem Sie den richtigen Algorithmus für Ihr Vorhersagemodell in Azure Machine Learning Studio auswählen können."	
+	description="Eine druckbare Version des Machine Learning Cheat Sheet für Algorithmen, mit dem Sie den richtigen Algorithmus für Ihr Vorhersagemodell in Azure Machine Learning Studio auswählen können."
+	keywords="algorithm cheat sheet,cheat sheet,machine learning algorithm"	
 	services="machine-learning"
 	documentationCenter="" 
 	authors="brohrer" 
@@ -89,4 +90,4 @@ Here's an example from the [Azure Machine Learning Gallery](http://gallery.azure
 [one-vs-all-multiclass]: https://msdn.microsoft.com/library/azure/7191efae-b4b1-4d03-a6f8-7205f87be664/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

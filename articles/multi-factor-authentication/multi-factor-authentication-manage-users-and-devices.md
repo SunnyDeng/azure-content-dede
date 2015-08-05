@@ -80,4 +80,4 @@ Administratoren haben die Möglichkeit, die Multi-Factor Authentication auf ihre
 <li>Klicken Sie oben auf "Benutzer".</li>
 <li>Klicken Sie unten auf der Seite auf "Verwalten der Multi-Factor Authentication". Die Seite für die mehrstufige Authentifizierung wird geöffnet. <li>Suchen Sie den Benutzer, den Sie verwalten möchten, und aktivieren Sie das Kontrollkästchen neben seinem Namen. Sie müssen möglicherweise oben die Ansicht ändern.</li> <li>Hierdurch erscheint rechts der Link **Benutzereinstellungen verwalten**. Klicken Sie auf diese Schaltfläche.</li> <li>Aktivieren Sie das Kontrollkästchen bei "Multi-Factor Authentication-Wiederherstellung auf allen ausgesetzten Geräten".</li> ![App-Kennwörter löschen](./media/multi-factor-authentication-manage-users-and-devices/rememberdevices.png) <li>Klicken Sie auf "Speichern".</li> <li>Klicken Sie auf "Schließen".</li>
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

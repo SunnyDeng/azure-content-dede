@@ -69,4 +69,4 @@ HTTP-Endpunkte werden von Service Fabric automatisch mit einer Zugriffssteuerung
 ```
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

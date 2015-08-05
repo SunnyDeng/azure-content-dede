@@ -31,7 +31,7 @@ Es folgt eine zusammenfassende Darstellung von Infrastruktur, Fabric, Diensten u
 
 ![][2]
 
-Azure Government umfasst die Kernkomponenten von Infrastructure-as-a-Service (IaaS) und Platform-as-a-Service (PaaS). Dazu gehören Infrastruktur, Netzwerk, Speicher, Datenverwaltung, Identitätsverwaltung und viele andere Dienste. Azure Government unterstützt die gleichen großartigen Funktionen, die Kunden der öffentlichen Version von Azure nutzen, wie z. B. geografische synchrone Datenreplikation und automatische Skalierung. Microsoft wurde von führenden Branchenanalysten als Marktführer für <a href="https://www.gartner.com/doc/2575715/magic-quadrant-cloud-infrastructure-service" target="_new">IaaS</a> und <a href="https://www.gartner.com/doc/2645317/magic-quadrant-enterprise-application-platform" target="_new">PaaS<a/> ermittelt.
+Azure Government umfasst die Kernkomponenten von Infrastructure-as-a-Service (IaaS) und Platform-as-a-Service (PaaS). Dazu gehören Infrastruktur, Netzwerk, Speicher, Datenverwaltung, Identitätsverwaltung und viele andere Dienste. Azure Government unterstützt die gleichen großartigen Funktionen, die Kunden der öffentlichen Version von Azure nutzen, wie z. B. geografische synchrone Datenreplikation und automatische Skalierung. Microsoft wurde von führenden Branchenanalysten als Marktführer für <a href="https://www.gartner.com/doc/2575715/magic-quadrant-cloud-infrastructure-service" target="_new">IaaS</a> und <a href="https://www.gartner.com/doc/2645317/magic-quadrant-enterprise-application-platform" target="_new">PaaS</a> ermittelt.
 
 Neben den stabilen Diensten und Funktionen der öffentlichen Version von Azure bietet Azure Government eine Reihe von Funktionen für US-Regierungseinrichtungen, damit diese sicherstellen können, dass ihre Daten geschützt sind. Dies beinhaltet Folgendes:
 
@@ -103,4 +103,4 @@ Wenn Sie mehr über Azure Government erfahren möchten, nutzen Sie einige der un
 [Link 2 to another azure.microsoft.com documentation topic]: app-service-web/web-sites-custom-domain-name.md
 [Link 3 to another azure.microsoft.com documentation topic]: storage-whatis-account.md
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

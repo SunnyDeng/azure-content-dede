@@ -30,7 +30,7 @@ Sie können die Azure PowerShell-Module herunterladen und installieren, indem Si
 
 Die Cmdlets zum Erstellen und Verwalten von Azure SQL-Datenbanken befinden sich im Azure-Ressourcen-Manager-Modul. Wenn Sie Azure PowerShell starten, werden die Cmdlets im Azure-Modul standardmäßig importiert. Um zum Azure-Ressourcen-Manager-Modul zu wechseln, verwenden Sie das Cmdlet **Switch-AzureMode**.
 
-	PS C:>Switch-AzureMode -Name AzureResourceManager
+	PS C:\>Switch-AzureMode -Name AzureResourceManager
 
 Falls die Warnung "The Switch-AzureMode cmdlet is deprecated and will be removed in a future release" angezeigt wird, ignorieren Sie diese Warnung, und fahren Sie mit dem nächsten Abschnitt fort.
 
@@ -42,7 +42,7 @@ Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit dem
 
 Um PowerShell-Cmdlets für Ihr Azure-Abonnement ausführen zu können, müssen Sie zunächst den Zugriff auf Ihr Azure-Konto herstellen. Führen Sie Folgendes aus. Es wird eine Anmeldeseite angezeigt, auf der Sie Ihre Anmeldeinformationen eingeben müssen. Verwenden Sie die E-Mail-Adresse und das Kennwort für die Anmeldung beim Azure-Portal.
 
-	PS C:>Add-AzureAccount
+	PS C:\>Add-AzureAccount
 
 Nach der erfolgreichen Anmeldung sollten einige Informationen auf dem Bildschirm angezeigt werden, wie die ID, mit der Sie sich angemeldet haben, und die Azure-Abonnements, auf die Sie zugreifen können.
 
@@ -53,7 +53,7 @@ Zur Auswahl des Abonnements, mit dem Sie arbeiten möchten, benötigen Sie Ihre 
 
 Führen Sie das folgende Cmdlet mit den Informationen zu Ihrem Abonnement aus, um Ihr aktuelles Abonnement festlegen:
 
-	PS C:>Select-AzureSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
+	PS C:\>Select-AzureSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
 
 Die folgenden Befehle werden für das soeben ausgewählte Abonnement ausgeführt.
 
@@ -68,13 +68,13 @@ Eine Liste der gültigen Standorte für Azure SQL-Datenbankserver erhalten Sie d
 
 Wenn Sie bereits über eine Ressourcengruppe verfügen, können Sie mit dem Erstellen eines Servers fortfahren, oder Sie führen nach Anpassung den folgenden Befehl zum Erstellen einer neuen Ressourcengruppe aus:
 
-	PS C:>New-AzureResourceGroup -Name "resourcegroupJapanWest" -Location "Japan West"
+	PS C:\>New-AzureResourceGroup -Name "resourcegroupJapanWest" -Location "Japan West"
 
 ## Erstellen eines Servers 
 
 Um einen neuen V12-Server zu erstellen, verwenden Sie den Befehl [New-AzureSqlServer](https://msdn.microsoft.com/library/mt163526.aspx). Ersetzen Sie "server12" durch den Namen Ihres Servers. Es muss ein eindeutiger SQL Azure-Servername sein. Wenn der Servername bereits vergeben ist, wird ein Fehler ausgeben. Sie sollten auch berücksichtigen, dass dieser Befehl mehrere Minuten in Anspruch nehmen kann. Die Serverdetails und PowerShell-Eingabeaufforderung werden angezeigt, nachdem der Server erfolgreich erstellt wurde. Sie können den Befehl für einen beliebigen gültigen Speicherort anpassen.
 
-	PS C:>New-AzureSqlServer -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -Location "Japan West" -ServerVersion "12.0"
+	PS C:\>New-AzureSqlServer -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -Location "Japan West" -ServerVersion "12.0"
 
 Beim Ausführen dieses Befehls wird ein Fenster zur Eingabe von **Benutzername** und **Kennwort** geöffnet. Dabei handelt es sich nicht um Ihre Azure-Anmeldeinformationen. Geben Sie den Benutzernamen und das Kennwort ein, die Sie als Anmeldeinformationen für das Administratorkonto des neuen Servers erstellen möchten.
 
@@ -84,7 +84,7 @@ Um eine Firewallregel für den Zugriff auf den Server zu erstellen, verwenden Si
 
 Wenn Ihr Server Zugriff auf andere Azure-Dienste ermöglichen muss, fügen Sie den Schalter **-AllowAllAzureIPs** hinzu, durch den eine spezielle Firewallregel hinzugefügt und alle Zugriffe für Azure-Datenverkehr auf den Server ermöglicht werden.
 
-	PS C:>New-AzureSqlServerFirewallRule -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -FirewallRuleName "clientFirewallRule1" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
+	PS C:\>New-AzureSqlServerFirewallRule -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -FirewallRuleName "clientFirewallRule1" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
 
 Weitere Informationen finden Sie unter [Firewall für die Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee621782.aspx).
 
@@ -92,27 +92,27 @@ Weitere Informationen finden Sie unter [Firewall für die Azure SQL-Datenbank](h
 
 Um eine Datenbank zu erstellen, verwenden Sie den Befehl [New-AzureSqlDatabase](https://msdn.microsoft.com/library/mt125915.aspx). Sie benötigen einen Server, um eine Datenbank zu erstellen. Im folgenden Beispiel wird eine SQL-Datenbank mit dem Namen "TestDB12" erstellt. Die Datenbank wird als Standard-S1-Datenbank erstellt.
 
-	PS C:>New-AzureSqlDatabase -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -DatabaseName "TestDB12" -Edition Standard -RequestedServiceObjectiveName "S1"
+	PS C:\>New-AzureSqlDatabase -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -DatabaseName "TestDB12" -Edition Standard -RequestedServiceObjectiveName "S1"
 
 
 ## Ändern der Leistungsebene einer SQL-Datenbank
 
 Sie können Ihre Datenbank mit dem Befehl [Set-AzureSqlDatabase](https://msdn.microsoft.com/library/mt125814.aspx) hoch- oder herunterskalieren. Im folgenden Beispiel wird eine SQL-Datenbank mit dem Namen "TestDB12" aus der aktuellen Leistungsebene auf eine Standard-S3-Ebene hochskaliert.
 
-	PS C:>Set-AzureSqlDatabase -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -DatabaseName "TestDB12" -Edition Standard -RequestedServiceObjectiveName "S3"
+	PS C:\>Set-AzureSqlDatabase -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -DatabaseName "TestDB12" -Edition Standard -RequestedServiceObjectiveName "S3"
 
 
 ## Löschen einer SQL-Datenbank
 
 Sie können eine SQL-Datenbank mit dem Befehl [Remove-AzureSqlDatabase](https://msdn.microsoft.com/library/mt125977.aspx) löschen. Im folgenden Beispiel wird eine SQL-Datenbank mit dem Namen "TestDB12" gelöscht.
 
-	PS C:>Remove-AzureSqlDatabase -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -DatabaseName "TestDB12"
+	PS C:\>Remove-AzureSqlDatabase -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12" -DatabaseName "TestDB12"
 
 ## Löschen eines Servers
 
 Sie können auch einen Server mit dem Befehl [Remove-AzureSqlServer](https://msdn.microsoft.com/library/mt125891.aspx) löschen. Im folgenden Beispiel wird ein Server mit dem Namen "server12" gelöscht.
 
-	PS C:>Remove-AzureSqlServer -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12"
+	PS C:\>Remove-AzureSqlServer -ResourceGroupName "resourcegroupJapanWest" -ServerName "server12"
 
 
 
@@ -126,10 +126,10 @@ Wenn Sie diese oder ähnliche Azure SQL-Ressourcen erneut erstellen, haben Sie f
 Kombinieren und Automatisieren von Befehlen. Ersetzen Sie z. B. alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >, durch Ihre Werte, um einen Server, die Firewallregel und die Datenbank zu erstellen:
 
 
-    PS C:>New-AzureResourceGroup -Name "<resourceGroupName>" -Location "<Location>"
-    PS C:>New-AzureSqlServer -ResourceGroupName "<resourceGroupName>" -ServerName "<serverName>" -Location "<Location>" -ServerVersion "12.0"
-    PS C:>New-AzureSqlServerFirewallRule -ResourceGroupName "<resourceGroupName>" -ServerName "<serverName>" -FirewallRuleName "<firewallRuleName>" -StartIpAddress "<192.168.0.198>" -EndIpAddress "<192.168.0.199>"
-    PS C:>New-AzureSqlDatabase -ResourceGroupName "<resourceGroupName>" -ServerName "<serverName>" -DatabaseName "<databaseName>" -Edition <Standard> -RequestedServiceObjectiveName "<S1>"
+    PS C:\>New-AzureResourceGroup -Name "<resourceGroupName>" -Location "<Location>"
+    PS C:\>New-AzureSqlServer -ResourceGroupName "<resourceGroupName>" -ServerName "<serverName>" -Location "<Location>" -ServerVersion "12.0"
+    PS C:\>New-AzureSqlServerFirewallRule -ResourceGroupName "<resourceGroupName>" -ServerName "<serverName>" -FirewallRuleName "<firewallRuleName>" -StartIpAddress "<192.168.0.198>" -EndIpAddress "<192.168.0.199>"
+    PS C:\>New-AzureSqlDatabase -ResourceGroupName "<resourceGroupName>" -ServerName "<serverName>" -DatabaseName "<databaseName>" -Edition <Standard> -RequestedServiceObjectiveName "<S1>"
 
 ## Verwandte Informationen
 
@@ -137,4 +137,4 @@ Kombinieren und Automatisieren von Befehlen. Ersetzen Sie z. B. alles innerhalb
 - [Azure SQL Database Cmdlets (in englischer Sprache)](https://msdn.microsoft.com/library/dn546726.aspx)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

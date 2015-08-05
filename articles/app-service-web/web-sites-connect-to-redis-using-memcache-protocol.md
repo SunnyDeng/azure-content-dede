@@ -83,7 +83,7 @@ Laden Sie das Ziel des x86-Links zum Non-Thread Safe (NTS) für Ihre in Web-Apps
 
 ### Aktivieren der php_memcache-Erweiterung
 
-Extrahieren Sie die Datei **php_memcache.dll** nach dem Herunterladen, und laden Sie sie in das Verzeichnis **d:\\home\\site\\wwwroot\\bin\\ext\** hoch. Nachdem die "php_memcache.dll" in die Web-App hochgeladen wurde, muss für die Erweiterung für die PHP-Laufzeit aktiviert werden. Öffnen Sie zum Aktivieren der Memcache-Erweiterung im Azure-Portal das Blatt **Anwendungseinstellungen** für die Web-App, und fügen Sie eine neue Anwendungseinstellung mit dem Schlüssel **PHP_EXTENSIONS** und dem Wert **bin\\ext\\php_memcache.dll** hinzu.
+Extrahieren Sie die Datei **php_memcache.dll** nach dem Herunterladen, und laden Sie sie in das Verzeichnis **d:\home\site\wwwroot\bin\ext\** hoch. Nachdem die "php_memcache.dll" in die Web-App hochgeladen wurde, muss für die Erweiterung für die PHP-Laufzeit aktiviert werden. Öffnen Sie zum Aktivieren der Memcache-Erweiterung im Azure-Portal das Blatt **Anwendungseinstellungen** für die Web-App, und fügen Sie eine neue Anwendungseinstellung mit dem Schlüssel **PHP_EXTENSIONS** und dem Wert **bin\ext\php_memcache.dll** hinzu.
 
 
 > Wenn die Web-App mehrere PHP-Erweiterungen laden muss, sollte der Wert von PHP_EXTENSIONS eine durch Kommas getrennte Liste von relativen Pfaden zu DLL-Dateien sein.
@@ -197,4 +197,4 @@ Glückwunsch! Die WordPress-App verfügt jetzt über einen zentralen Cache im Ar
 [13]: http://memcached.org
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -23,4 +23,4 @@
 
  >[AZURE.NOTE]Alle anderen Geräteeinstellungen können über die Seite **Konfigurieren** geändert werden.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

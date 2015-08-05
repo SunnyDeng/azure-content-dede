@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Häufige Fragen zu Azure AD Connect" 
+	pageTitle="Häufig gestellte Fragen zu Azure AD Connect" 
 	description="Auf dieser Seite finden Sie häufig gestellte Fragen zu Azure AD Connect." 
 	services="active-directory" 
 	documentationCenter="" 
@@ -18,7 +18,10 @@
 
 # Häufig gestellte Fragen zu Azure Active Directory Connect
 
-## Wie erhalte ich Hilfe zu Azure AD Connect?
+
+## Problembehandlung
+
+**F: Wie erhalte ich Hilfe zu Azure AD Connect?**
 
 [Durchsuchen der Microsoft Knowledge Base (KB)](https://www.microsoft.com/de-de/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport)
 
@@ -33,4 +36,8 @@
 
 - Verwenden Sie diesen Link, um Support über das Azure-Portal zu erhalten. 
 
-<!---HONumber=July15_HO3-->
+**F: Was muss ich tun, wenn ich eine E-Mail erhalte, die mich auffordert, mein Office 365-Zertifikat zu erneuern**
+
+Verwenden Sie die Anleitungen, die in [diesem](active-directory-aadconnect-o365-certs.md) Artikel beschrieben sind, um das Zertifikat zu erneuern.
+
+<!---HONumber=July15_HO4-->

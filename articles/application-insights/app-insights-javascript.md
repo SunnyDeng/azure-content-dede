@@ -44,7 +44,7 @@ Rufen Sie im Schnellstart das Skript für Webseiten ab:
 
 Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie nachverfolgen möchten. Wenn Ihre Website über eine Masterseite verfügt, können Sie das Skript dort ablegen. Beispiel:
 
-* In einem ASP.NET MVC-Projekt würden Sie es unter "View\\Shared\\_Layout.cshtml" ablegen.
+* In einem ASP.NET MVC-Projekt würden Sie es unter "View\Shared\_Layout.cshtml" ablegen.
 * Öffnen Sie in einer SharePoint-Website in der Systemsteuerung [Websiteeinstellungen / Masterseite](app-insights-sharepoint.md).
 
 Das Skript enthält den Instrumentationsschlüssel, der die Daten an Ihre Application Insights-Ressource leitet.
@@ -181,4 +181,4 @@ Falls Sie dies noch nicht durchgeführt haben, können Sie Einblicke von Ihrem S
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

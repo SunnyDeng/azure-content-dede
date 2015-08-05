@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/27/2015" 
+	ms.date="07/09/2015" 
 	ms.author="jgao"/>
 
 # Analysieren Sie Twitter-Stimmungen mit HBase in HDInsight
@@ -75,11 +75,11 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 
 	<table border="1">
-	<tr><th>Clustereigenschaft</th><th>Beschreibung</th></tr>
-	<tr><td>HBase-Clustername</td><td>Der Name Ihres HDInsight HBase-Clusters. Beispiel: https://myhbase.azurehdinsight.net/</td></tr>
-	<tr><td>Clusterbenutzer-Name</td><td>Der Name des Hadoop-Benutzerkontos. Der Standardbenutzername für Hadoop ist <strong>admin</strong>.</td></tr>
-	<tr><td>Clusterbenutzer-Kennwort</td><td>Das Benutzerkennwort für den Hadoop-Cluster.</td></tr>
-	</table>
+<tr><th>Clustereigenschaft</th><th>Beschreibung</th></tr>
+<tr><td>HBase-Clustername</td><td>Der Name Ihres HDInsight HBase-Clusters. Beispiel: https://myhbase.azurehdinsight.net/</td></tr>
+<tr><td>Clusterbenutzer-Name</td><td>Der Name des Hadoop-Benutzerkontos. Der Standardbenutzername für Hadoop ist <strong>admin</strong>.</td></tr>
+<tr><td>Clusterbenutzer-Kennwort</td><td>Das Benutzerkennwort für den Hadoop-Cluster.</td></tr>
+</table>
 
 - **Eine Workstation** mit installiertem Visual Studio 2013. [Installieren von Visual Studio](http://msdn.microsoft.com/library/e2h7fzkw.aspx)
 
@@ -98,13 +98,11 @@ Die Streaming-APIs von Twitter verwenden [OAuth](http://oauth.net/), um Anforder
 3. Geben Sie einen **Namen**, eine **Beschreibung** und eine **Website** ein. Das Feld "Website" ist nicht zwingend erforderlich. Es muss keine gültige URL enthalten. Die folgende Tabelle zeigt einige mögliche Beispielwerte:
 
 	<table border="1">
-	<tr><th>Feld</th><th>Wert</th></tr>
-	<tr><td>Name</td><td>MyHDInsightHBaseApp</td></tr>
-	<tr><td>Beschreibung</td><td>MyHDInsightHBaseApp</td></tr>
-	<tr><td>Website</td><td>http://www.myhdinsighthbaseapp.com</td></tr>
-	</table>
-
-	> [AZURE.NOTE]Der Name der Twitter-Anwendung muss eindeutig sein.
+<tr><th>Feld</th><th>Wert</th></tr>
+<tr><td>Name</td><td>MyHDInsightHBaseApp</td></tr>
+<tr><td>Beschreibung</td><td>MyHDInsightHBaseApp</td></tr>
+<tr><td>Website</td><td>http://www.myhdinsighthbaseapp.com</td></tr>
+</table>> [AZURE.NOTE]Der Name der Twitter-Anwendung muss eindeutig sein.
 
 4. Aktivieren Sie **Yes, I agree**, und klicken Sie dann auf **Create your Twitter application**.
 5. Klicken Sie auf die Registerkarte **Permissions**. Die Standardberechtigung ist **Read only**. Diese Berechtigung reicht für dieses Lernprogramm aus. 
@@ -163,7 +161,7 @@ Sie müssen eine Konsolenanwendung erstellen, um Tweets zu erhalten, einen Stimm
 
 	- Vorlage: **Visual C# / Windows-Desktop / Konsolenanwendung**
 	- Name: **TweetSentimentStreaming** 
-	- Speicherort: **C:\\Tutorials**
+	- Speicherort: **C:\Tutorials**
 	- Name der Projektmappe: **TweetSentimentStreaming**
 
 4. Klicken Sie auf **OK**, um fortzufahren.
@@ -541,7 +539,7 @@ In diesem Abschnitt erstellen Sie eine ASP.NET MVC-Webanwendung, die die Echtzei
 	- Vorlagenkategorie: **Visual C#/Web**
 	- Vorlage: **ASP.NET-Webanwendung**
 	- Name: **TweetSentimentWeb**
-	- Speicherort: **C:\\Tutorials** 
+	- Speicherort: **C:\Tutorials** 
 4. Klicken Sie auf **OK**.
 5. Klicken Sie unter **Vorlage auswählen** auf **MVC**. 
 6. Klicken Sie in **Microsoft Azure** auf **Abonnements verwalten**.
@@ -1354,7 +1352,6 @@ In diesem Tutorial haben Sie erfahren, wie Sie Tweets abrufen, die Stimmung von 
 [hdinsight-use-sqoop]: hdinsight-use-sqoop.md
 [hdinsight-power-query]: hdinsight-connect-excel-power-query.md
 [hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver.md
-
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

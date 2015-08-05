@@ -214,4 +214,4 @@ Um den Zugriff auf SAS aufzuheben, die dieselbe gespeicherte Zugriffsrichtlinie 
 - [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md)
 - [Delegieren des Zugriffs mit einer Shared Access Signature](https://msdn.microsoft.com/library/azure/ee395415.aspx) 
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -42,7 +42,7 @@ Konfigurieren | Lokal | Azure Virtual Network
 ------------- | -------------  | ------------
 **IP-Adresse des Domänencontrollers** | Statische IP-Adresse in den Netzwerkadaptereigenschaften zuweisen | Ausführen des Cmdlets "Set-AzureStaticVNetIP" zum Zuweisen einer statischen IP-Adresse
 **DNS-Clientauflösung** | Bevorzugte und alternative Adresse des DNS-Servers in den Netzwerkadaptereigenschaften von Domänenmitgliedern eingeben | Adresse des DNS-Servers in den Eigenschaften des virtuellen Netzwerks eingeben
-**Speicherort der Active Directory-Datenbank** | Standardspeicherort C:\\ kann optional geändert werden | Standardspeicherort C:\\ muss geändert werden
+**Speicherort der Active Directory-Datenbank** | Standardspeicherort C:\ kann optional geändert werden | Standardspeicherort C:\ muss geändert werden
 
 
 
@@ -79,7 +79,7 @@ Um die virtuellen Computer mithilfe von Windows PowerShell anstelle der Benutzer
 
     'Get-AzureVM -ServiceName AzureDC1 -Name AzureDC1 | Set-AzureStaticVNetIP -IPAddress 10.0.0.4 | Update-AzureVM
 
-Weitere Informationen zum Festlegen einer statischen IP-Adresse finden Sie unter [Konfigurieren einer statischen internen IP-Adresse für einen virtuellen Computer](https://msdn.microsoft.com/library/azure/dn630228.aspx).
+Weitere Informationen zum Festlegen einer statischen IP-Adresse finden Sie unter [Konfigurieren einer statischen internen IP-Adresse für einen virtuellen Computer](../virtual-network/virtual-networks-reserved-private-ip.md).
 
 ## Installieren von Windows Server Active Directory
 
@@ -139,4 +139,4 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

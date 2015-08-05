@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/02/2015"
+   ms.date="07/21/2015"
    ms.author="banders" />
 
 # Optimieren der Umgebung mit Assessment-Lösungen
@@ -123,4 +123,6 @@ Sie können Bewertungen der Einhaltung für Ihre Infrastruktur zusammenfassen un
 
 4. Ergreifen Sie die unter **Vorgeschlagene Aktionen** vorgeschlagenen Korrekturmaßnahmen. Nachdem das Element behandelt wurde, geben spätere Bewertungen an, dass empfohlene Aktionen ausgeführt wurden, und Ihre Bewertung der Einhaltung erhöht sich. Korrigierte Elemente werden als **Passed Objects** angezeigt.
 
-<!---HONumber=July15_HO2-->
+[AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
+
+<!---HONumber=July15_HO4-->

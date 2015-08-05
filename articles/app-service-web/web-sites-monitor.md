@@ -132,7 +132,7 @@ Die Diagnose kann weiter angepasst werden, indem Sie Schlüssel/Wert-Paare im Ab
 
 - Das Verzeichnis, in dem die Anwendungsprotokolle gespeichert werden, in Bezug auf das Web-Stammverzeichnis.
 
-- Standardwert: ..\\..\\LogFiles\\Application
+- Standardwert: ..\..\LogFiles\Application
 
 **DIAGNOSTICS_TEXTTRACEMAXBUFFERSIZEBYTES**
 
@@ -277,4 +277,4 @@ Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folge
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

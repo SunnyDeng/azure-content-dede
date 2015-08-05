@@ -382,4 +382,4 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 - [Bereitstellen einer Anwendung mit einer Azure Resource Manager-Vorlage](azure-portal/resource-group-template-deploy.md)
 - [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

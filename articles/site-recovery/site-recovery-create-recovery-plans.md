@@ -77,11 +77,11 @@ Beachten Sie Folgendes, bevor Sie beginnen:
 - Schreiben Sie Skripts mit Windows PowerShell.
 - VMM-Cmdlets werden in einem Windows PowerShell-Modul bereitgestellt. Das VMM-Modul von Windows PowerShell wird installiert, wenn Sie die VMM-Konsole installieren. Das VMM-Modul kann mit dem folgenden Skriptbefehl in das Skript geladen werden: Import-Module -Name virtualmachinemanager. [Weitere Details](hhttps://technet.microsoft.com/library/hh875013.aspx)
 - Stellen Sie sicher, dass Ihre VMM-Bereitstellung mindestens einen Bibliothekserver enthält. Standardmäßig befindet sich der Bibliotheksfreigabepfad für einen VMM-Server lokal auf dem VMM-Server mit dem Ordnernamen MSCVMMLibrary.
-- Wenn Ihr Bibliotheksfreigabepfad remote vorhanden ist (oder lokal, aber nicht für MSCVMMLibrary freigegeben), konfigurieren Sie die Freigabe wie folgt (hier dient „\\libserver2.contoso.com\\share\\“ als Beispiel):
+- Wenn Ihr Bibliotheksfreigabepfad remote vorhanden ist (oder lokal, aber nicht für MSCVMMLibrary freigegeben), konfigurieren Sie die Freigabe wie folgt (hier dient „\libserver2.contoso.com\share\“ als Beispiel):
 	- Öffnen Sie den Registrierungs-Editor.
-	- Navigieren Sie zu HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft System Center Virtual Machine Manager Server\\DRAdapter\\Registration.
+	- Navigieren Sie zu HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft System Center Virtual Machine Manager Server\DRAdapter\Registration.
 	- Bearbeiten Sie den Wert unter ScriptLibraryPath.
-	- Platzieren Sie den Wert als „\\libserver2.contoso.com\\share“. Geben Sie den vollqualifizierten Domänennamen vollständig ein.
+	- Platzieren Sie den Wert als „\libserver2.contoso.com\share“. Geben Sie den vollqualifizierten Domänennamen vollständig ein.
 	- Geben Sie die Berechtigungen für den Speicherort der Freigabe an.
 
 - Skripts in einem Wiederherstellungsplan werden im Kontext des VMM-Dienstkontos ausgeführt. Stellen Sie sicher, dass dieses Konto über Leseberechtigungen auf der Remotefreigabe verfügt, auf der sich das Skript befindet. Testen Sie die Ausführung des Skripts auf Berechtigungsebene des VMM-Dienstkontos.
@@ -96,9 +96,9 @@ Beachten Sie Folgendes, bevor Sie beginnen:
 
 Erstellen Sie das Skript wie folgt:
 
-1. Erstellen Sie einen neuen Ordner in der Bibliotheksfreigabe, z. B.: <VMMServerName>\\MSSCVMMLibrary\\RPScripts. Platzieren Sie diese Datei auf dem VMM-Quell- und -Zielserver.
+1. Erstellen Sie einen neuen Ordner in der Bibliotheksfreigabe, z. B.: <VMMServerName>\MSSCVMMLibrary\RPScripts. Platzieren Sie diese Datei auf dem VMM-Quell- und -Zielserver.
 2. Erstellen Sie das Skript (z. B. RPScript), und überprüfen Sie, ob es wie erwartet funktioniert.
-3. Platzieren Sie das Skript unter „<VMMServerName>\\MSSCVMMLibrary“ auf dem VMM-Quell- und -Zielserver.
+3. Platzieren Sie das Skript unter „<VMMServerName>\MSSCVMMLibrary“ auf dem VMM-Quell- und -Zielserver.
 
 #### Erstellen eines Azure-Automatisierungsrunbooks
 
@@ -110,7 +110,7 @@ Sie können Ihren Wiederherstellungsplan erweitern, indem Sie als Teil des Plans
 1. Öffnen Sie den Wiederherstellungsplan, den Sie anpassen möchten.
 2. Klicken Sie, um virtuelle Computer oder eine neue Gruppe hinzuzufügen.
 3. Klicken Sie zum Hinzufügen eines Skripts oder einer manuellen Aktion in der Liste **Schritt** auf einen beliebigen Eintrag, und klicken Sie anschließend auf **Skript** oder **Manuelle Aktion**. Geben Sie an, ob Sie das Skript oder die Aktion vor oder nach dem ausgewählten Eintrag hinzufügen möchten. Verwenden Sie die Befehlsschaltflächen **Nach oben** und **Nach unten**, um die Position des Skripts nach oben oder unten zu verschieben.
-4. Wählen Sie beim Hinzufügen eines VMM-Skripts die Option **Failover zu VMM-Skript** aus, und geben Sie unter **Skriptpfad** den relativen Pfad zur Freigabe ein. Geben Sie für unser Beispiel, in dem sich die Freigabe unter „\<VMMServerName>\\MSSCVMMLibrary\\RPScripts“ befindet, also den folgenden Pfad an: \\RPScripts\\RPScript.PS1.
+4. Wählen Sie beim Hinzufügen eines VMM-Skripts die Option **Failover zu VMM-Skript** aus, und geben Sie unter **Skriptpfad** den relativen Pfad zur Freigabe ein. Geben Sie für unser Beispiel, in dem sich die Freigabe unter „\<VMMServerName>\MSSCVMMLibrary\RPScripts“ befindet, also den folgenden Pfad an: \RPScripts\RPScript.PS1.
 5. Wenn Sie ein Azure-Automatisierungsrunbook hinzufügen, geben Sie das **Azure Automation-Konto** an, unter dem sich das Runbook befindet, und wählen das gewünschte **Azure-Runbookskript** aus.
 5. Führen Sie ein Failover für den Wiederherstellungsplan aus, um sicherzustellen, dass das Skript wie erwartet funktioniert.
 
@@ -122,4 +122,4 @@ Sie können unterschiedliche Arten von Failover-Wiederherstellungsplänen ausfü
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

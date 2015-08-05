@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="JoeDavies-MSFT" 
 	manager="timlt" 
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags 
 	ms.service="virtual-machines" 
@@ -13,23 +14,23 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/25/2015" 
+	ms.date="07/09/2015" 
 	ms.author="josephd"/>
 
 # Zurücksetzen eines Kennworts oder des Remotedesktopdiensts für virtuelle Windows-Computer
 
 Wenn Sie ein Kennwort vergessen haben oder ein Problem mit der Konfiguration des Remotedesktopdiensts vorliegt und Sie daher keine Verbindung mit einem virtuellen Windows-Computer herstellen können, verwenden Sie das Azur-Vorschauportal oder die VMAccess-Erweiterung zum Zurücksetzen des lokalen Administratorkennworts oder zum Zurücksetzen der Konfiguration des Remotedesktopdiensts.
 
-> [AZURE.NOTE]Dieser Artikel gilt nicht für virtuelle Computer, die auf dem Azure-Ressourcen-Manager basieren.
+> [AZURE.NOTE]Dieser Artikel gilt nicht für virtuelle Computer, die im Azure-Ressourcen-Manager erstellt wurden.
 
 ## Azure-Vorschauportal
 
-Um den Remotedesktop-Dienst im [Azure-Vorschauportal](https://portal.azure.com) zurückzusetzen, klicken Sie auf **Durchsuchen** > **Virtual Maschines** > *Ihr virtueller Windows-Computer* > **Remotezugriff zurücksetzen**. Beispiel:
+Um den Remotedesktop-Dienst im [Azure-Vorschauportal](https://portal.azure.com) zurückzusetzen, klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (Klassisch)** > *Ihr virtueller Windows-Computer* > **Remotezugriff zurücksetzen**. Beispiel:
 
 
 ![](./media/virtual-machines-windows-reset-password/Portal-RDP-Reset-Windows.png)
 
-Um den Namen und das Kennwort des lokalen Administratorkontos im [Azure-Vorschauportal](https://portal.azure.com) zurückzusetzen, klicken Sie auf **Durchsuchen** > **Virtual Maschines** > *Ihr virtueller Windows-Computer* > **Alle Einstellungen** > **Kennwortzurücksetzung**. Beispiel:
+Um den Namen und das Kennwort des lokalen Administratorkontos im [Azure-Vorschauportal](https://portal.azure.com) zurückzusetzen, klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (Klassisch)** > *Ihr virtueller Windows-Computer* > **Alle Einstellungen** > **Kennwortzurücksetzung**. Beispiel:
 
 ![](./media/virtual-machines-windows-reset-password/Portal-PW-Reset-Windows.png)
 
@@ -46,9 +47,9 @@ Die Erweiterung "VMAccess" muss installiert sein, bevor Sie es verwenden können
  
 Überprüfen Sie zunächst, ob der VM-Agent bereits installiert ist. Füllen Sie den Cloud-Dienstnamen und den Namen des virtuellen Computers aus, und führen Sie dann die folgenden Befehle an einer Azure PowerShell-Eingabeaufforderung mit Administratorrechten aus. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
-	$CSName = "<cloud service name>"
-	$VMName = "<virtual machine name>"
-	$vm = Get-AzureVM -ServiceName $CSName -Name $VMName 
+	$csName = "<cloud service name>"
+	$vmName = "<virtual machine name>"
+	$vm = Get-AzureVM -ServiceName $csName -Name $vmName 
 	write-host $vm.VM.ProvisionGuestAgent
 
 Wenn Sie den Namen des Clouddiensts und des virtuellen Computers nicht kennen, führen Sie **Get-AzureVM** aus, um diese Informationen für alle virtuellen Computer im aktuellen Abonnement anzuzeigen.
@@ -110,6 +111,7 @@ Wenn Sie das Azure IaaS-Diagnosepaket (Windows) nicht ausführen konnten oder da
 
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH](http://msdn.microsoft.com/library/azure/dn535788.aspx)
 
+[Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

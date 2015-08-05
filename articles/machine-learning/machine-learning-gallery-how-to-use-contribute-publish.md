@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="07/15/2015" 
 	ms.author="chhavib;cgronlun;garye"/>
 
 
@@ -58,7 +58,9 @@ Folgen Sie diesen Schritten:
 
 - Melden Sie sich beim Studio mit Ihrem Microsoft-Konto an. (Vergewissern Sie sich, dass Ihr Profilbild und Ihr Name in den Microsoft-Konto-Profileinstellungen der gewünschten Anzeige entsprechen.)
 - Erstellen Sie Ihr Experiment, und führen Sie es aus
-- Wenn Sie bereit sind, veröffentlichen Sie das Experiment im Katalog. Klicken Sie im unteren schwarzen Balken des Studios auf "Im Katalog veröffentlichen". ![Veröffentlichen](./media/machine-learning-gallery-how-to-use-contribute-publish/publish.png)Viel Spaß!
+- Wenn Sie bereit sind, veröffentlichen Sie das Experiment im Katalog. Klicken Sie im unteren schwarzen Balken des Studios auf „Im Katalog veröffentlichen“. ![Veröffentlichen](./media/machine-learning-gallery-how-to-use-contribute-publish/publish.png)
+
+Viel Spaß!
 
 ## Wir möchten von Ihnen hören! 
 Der Katalog soll von unseren Benutzern für unsere Benutzer gestaltet werden. Teilen Sie uns mit dem Smiley auf der rechten Seite mit, was Sie am Katalog schätzen oder daran ändern möchten.
@@ -66,7 +68,7 @@ Der Katalog soll von unseren Benutzern für unsere Benutzer gestaltet werden. Te
 ![Feedback](./media/machine-learning-gallery-how-to-use-contribute-publish/feedback.png)
 
 ## Häufig gestellte Fragen 
-**Ich möchte Änderungen am Workflow des Experiments vornehmen, das ich in den Katalog eingestellt habe. Wie muss ich vorgehen?**
+**Ich möchte Änderungen am Workflow des Experiments vornehmen, das ich an den Katalog übermittelt habe. Wie muss ich vorgehen?**
 
 Aktuell werden keine Aktualisierungen für den Workflow von Experimenten unterstützt, die Sie bereits im Katalog veröffentlicht haben. Sie können solche Änderungen als neues Experiment im Katalog veröffentlichen und das alte löschen. Wir arbeiten daran, die Veröffentlichung von Updates der Workflows für bereits im Katalog bereitgestellte Experimente zu ermöglichen. Halten Sie sich auf dem Laufenden.
 
@@ -111,4 +113,4 @@ Beschreibungen mit Rich Text-Renderingfunktionen sind nicht für alle Katalogben
 **[ZUM KATALOG >>](http://gallery.azureml.net)**
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -120,11 +120,11 @@ Dies sind die einzelnen Schritte zum Erstellen eines neuen Abbilds:
 	Alternativ können Sie in der Registrierung den folgenden DWORD-Wert festlegen oder hinzufügen:
 
 		HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisableEncryption = 1
-9.	Wenn Sie das Abbild in einem virtuellen Azure-Computer erstellen, müssen Sie die Datei **\%windir%\\Panther\\Unattend.xml** umbenennen, da sie anderenfalls das Uploadskript blockiert, das in einem der folgenden Schritte verwendet wird. Benennen Sie diese Datei in "Unattend.old" um, damit sie ggf. darauf zurückgreifen können, falls Sie die Bereitstellung rückgängig machen müssen.
+9.	Wenn Sie das Abbild in einem virtuellen Azure-Computer erstellen, müssen Sie die Datei **\%windir%\Panther\Unattend.xml** umbenennen, da sie anderenfalls das Uploadskript blockiert, das in einem der folgenden Schritte verwendet wird. Benennen Sie diese Datei in "Unattend.old" um, damit sie ggf. darauf zurückgreifen können, falls Sie die Bereitstellung rückgängig machen müssen.
 10.	Wechseln Sie zu Windows Update, und installieren Sie alle wichtigen Updates. Möglicherweise müssen Sie Windows Update mehrmals ausführen, um alle Updates zu erhalten. (Manchmal ist für ein von Ihnen installiertes Update direkt ein weiteres Update erforderlich.)
 10.	Bereiten Sie das Abbild mit SYSPREP vor. Führen Sie an einer Eingabeaufforderung mit erhöhten Rechten den folgenden Befehl aus:
 
-	**C:\\Windows\\System32\\sysprep\\sysprep.exe /generalize /oobe /shutdown**
+	**C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /shutdown**
 
 	**Hinweis:** Verwenden Sie nicht den Schalter **/mode:vm** für den SYSPREP-Befehls, auch wenn es sich um einen virtuellen Computer handelt.
 
@@ -137,4 +137,4 @@ Nach dem Erstellen des benutzerdefinierten Vorlagenimages müssen Sie dieses Ima
 - [Erstellen einer Cloud-Sammlung von RemoteApp](remoteapp-create-cloud-deployment.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

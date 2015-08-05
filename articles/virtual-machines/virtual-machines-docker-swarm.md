@@ -21,9 +21,7 @@
 
 In diesem Thema wird erläutert, wie Sie mithilfe von [Docker](https://www.docker.com/) mit [Swarm](https://github.com/docker/swarm) auf einfache Weise ein über Swarm verwaltetes Cluster auf Azure erstellen. Hierbei werden vier virtuelle Computer in Azure erstellt, von denen einer als Swarm-Manager fungiert und drei als Bestandteil des Clusters aus Docker-Hosts verwendet werden. Wenn Sie fertig sind, können Sie mithilfe von Swarm den Cluster anzeigen und mit der Verwendung von Docker beginnen. Darüber hinaus werden die Azure-CLI-Aufrufe in diesem Thema im ASM-Modus (Azure Service Management) ausgeführt.
 
-> [AZURE.NOTE] Es handelt sich um eine frühe Version der Software. Prüfen Sie daher auf Updates zur Verwendung auf Azure, um große, ausgeglichene und gesteuerte Cluster aus Docker-Containern zu erstellen. Prüfen Sie außerdem die Docker Swarm-Dokumentation, um sich mit allen Funktionen vertraut zu machen.
-<!-- -->
-> Zusätzlich wird in diesem Fall Docker mit Swarm und der Azure-Befehlszeilenschnittstelle *ohne* **docker-machine** eingesetzt. Dies soll zeigen, wie die verschiedenen Tools zusammenarbeiten, aber dennoch unabhängig bleiben. **docker-machine** verfügt über **--swarm**-Optionen, sodass Sie Knoten mit **docker-machine** einem Swarm direkt hinzufügen können. Ein Beispiel finden Sie in der Dokumentation zu [docker-machine](https://github.com/docker/machine). Informationen zur Ausführung von **docker-machine** für Azure-VMs finden Sie unter [Verwenden von "docker-machine" mit Azure](virtual-machines-docker-machine.md).
+> [AZURE.NOTE]Es handelt sich um eine frühe Version der Software. Prüfen Sie daher auf Updates zur Verwendung auf Azure, um große, ausgeglichene und gesteuerte Cluster aus Docker-Containern zu erstellen. Prüfen Sie außerdem die Docker Swarm-Dokumentation, um sich mit allen Funktionen vertraut zu machen. <!-- --> Zusätzlich wird in diesem Fall Docker mit Swarm und der Azure-Befehlszeilenschnittstelle *ohne* **docker-machine** eingesetzt. Dies soll zeigen, wie die verschiedenen Tools zusammenarbeiten, aber dennoch unabhängig bleiben. **docker-machine** verfügt über **--swarm**-Optionen, sodass Sie Knoten mit **docker-machine** einem Swarm direkt hinzufügen können. Ein Beispiel finden Sie in der Dokumentation zu [docker-machine](https://github.com/docker/machine). Informationen zur Ausführung von **docker-machine** für Azure-VMs finden Sie unter [Verwenden von "docker-machine" mit Azure](virtual-machines-docker-machine.md).
 
 ## Erstellen von Docker-Hosts mit Azure-VMs
 
@@ -134,4 +132,4 @@ Führen Sie Aufgaben im Swarm aus. Anregungen finden Sie unter [https://github.c
 [docker-machine-azure]: virtual-machines-docker-machine.md
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

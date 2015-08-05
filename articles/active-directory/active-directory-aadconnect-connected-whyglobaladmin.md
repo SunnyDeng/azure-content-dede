@@ -34,4 +34,4 @@ Für benutzerdefinierte Einstellungen | Aktivieren Sie die Synchronisierung in I
 * [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) 
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

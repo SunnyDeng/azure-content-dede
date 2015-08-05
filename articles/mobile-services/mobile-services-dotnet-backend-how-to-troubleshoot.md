@@ -154,4 +154,4 @@ Migrationen können komplex sein und erfordern, dass der Zustand der Datenbank s
 [LogsPortal]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/13.png
 [HelpConflict]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/14.png
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

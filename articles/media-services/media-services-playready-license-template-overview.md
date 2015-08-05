@@ -301,4 +301,4 @@ Ein Beispiel für die von Silverlight unterstützten Schutzebenen finden Sie unt
 	  <xs:element name="ScmsRestriction" nillable="true" type="tns:ScmsRestriction" />
 	</xs:schema>
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

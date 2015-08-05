@@ -46,4 +46,4 @@
 
 7. Das neu erstellte Speicherkonto wird auf der Seite **Konfigurieren** unter **Speicherkonten** angezeigt. Klicken Sie auf **Speichern**, um das neue Speicherkonto zu speichern. Klicken Sie auf **OK**, wenn Sie zur Bestätigung aufgefordert werden.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Datenabhängiges Routing" 
-	description="Erfahren Sie, wie Sie &quot;ShardMapManager&quot; für das datenabhängige Routing, einem Feature von elastischen Datenbanken für Azure SQL-Datenbank verwenden." 
+	description="Erfahren Sie, wie Sie ";ShardMapManager"; für das datenabhängige Routing, einem Feature von elastischen Datenbanken für Azure SQL-Datenbank verwenden." 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
@@ -117,4 +117,4 @@ Transaktionseigenschaften werden für alle Vorgänge lokal auf einem Shard garan
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

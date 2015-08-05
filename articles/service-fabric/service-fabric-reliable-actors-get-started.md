@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/17/2015"
+   ms.date="07/10/2015"
    ms.author="claudioc"/>
 
 # Reliable Actors: Das Szenario für die kanonische HelloWorld-Vorgehensweise
@@ -36,14 +36,17 @@ Um mit Reliable Actors zu beginnen, müssen Sie lediglich 4 grundlegende Konzept
 Nachdem Sie die Service Fabric-Tools für Visual Studio installiert haben, können Sie neue Projekttypen erstellen. Die neuen Projekttypen befinden sich unter der Kategorie "Cloud" des Dialogfelds "Neues Projekt".
 
 
-![][1]
+![Service Fabric-Tools für Visual Studio – Neues Projekt][1]
 
+Im nächsten Dialogfeld können Sie den Typ des Projekts auswählen, das Sie erstellen möchten.
+
+![Service Fabric-Projektvorlagen][5]
 
 Für das HelloWorld-Projekt wird der Service Fabric Actor-Dienst verwendet.
 
 Nachdem die Projektmappe erstellt wurde, sollte die folgende Struktur angezeigt werden:
 
-![][2]
+![Service Fabric-Projektstruktur][2]
 
 ## Grundlegende Bausteine von Reliable Actors
 
@@ -136,14 +139,14 @@ fabricRuntime.RegisterActor(typeof(MyNewActor));
 
 ## Debuggen
 
-Service Fabric-Tools für Visual Studio unterstützen das Debuggen auf dem lokalen Computer. Sie können eine Debugsitzung starten, indem Sie F5 drücken. Visual Studio erstellt (falls erforderlich) Pakete, stellt die Anwendung auf dem lokalen Service Fabric-Cluster bereit und fügt sie dem Debugger an. Die Erfahrung ist vergleichbar mit dem Debuggen einer ASP.NET-Anwendung. Während der Bereitstellung wird der Fortschritt im Ausgabefenster angezeigt.
+Service Fabric-Tools für Visual Studio unterstützen das Debuggen auf dem lokalen Computer. Sie können eine Debugsitzung starten, indem Sie F5 drücken. Visual Studio erstellt (falls erforderlich) Pakete, stellt die Anwendung auf dem lokalen Service Fabric-Cluster bereit und fügt den Debugger an. Die Erfahrung ist vergleichbar mit dem Debuggen einer ASP.NET-Anwendung. Während der Bereitstellung wird der Fortschritt im Ausgabefenster angezeigt.
 
-![][3]
+![Service Fabric-Debugging – Ausgabefenster][3]
 
 ## Anwendungsbereitstellung
 Sie können auch in Visual Studio die Anwendung packen und im lokalen Cluster bereitstellen, ohne den Debugger starten zu müssen. Wählen Sie dazu das Service Fabric-Anwendungsprojekt aus, und klicken Sie mit der rechten Maustaste darauf.
 
-![][4]
+![Service Fabric – Projektmenü für die Bereitstellung und das Packen von Anwendungen][4]
 
 * **Bereitstellen**: Verpackt die App und startet den Bereitstellungsprozess
 * **Bereitstellung entfernen**: Kann zum Entfernen einer Anwendung aus dem lokalen Cluster verwendet werden
@@ -151,8 +154,7 @@ Sie können auch in Visual Studio die Anwendung packen und im lokalen Cluster be
 
 ## Nächste Schritte
 
-[Einführung in Service Fabric Actors](service-fabric-reliable-actors-introduction.md)
-
+[Einführung in Service Fabric Actors](service-fabric-reliable-actors-introduction.md)[Referenzdokumentation zu Actors-APIs](https://msdn.microsoft.com/library/azure/dn971626.aspx) [Beispielcode](https://github.com/Azure/servicefabric-samples)
 
 
 <!--Image references-->
@@ -160,6 +162,7 @@ Sie können auch in Visual Studio die Anwendung packen und im lokalen Cluster be
 [2]: ./media/service-fabric-reliable-actors-get-started/reliable-actors-projectstructure.PNG
 [3]: ./media/service-fabric-reliable-actors-get-started/debugging-output.PNG
 [4]: ./media/service-fabric-reliable-actors-get-started/vs-context-menu.png
+[5]: ./media/service-fabric-reliable-actors-get-started/reliable-actors-newproject1.PNG
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

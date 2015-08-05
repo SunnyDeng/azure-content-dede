@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Konfigurieren der Lastenausgleichsmethode &quot;Leistung&quot;"
-   description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Lastenausgleichsmethode &quot;Leistung&quot;"
+   pageTitle="Konfigurieren der Lastenausgleichsmethode ";Leistung";"
+   description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Lastenausgleichsmethode ";Leistung";"
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
@@ -48,4 +48,4 @@ Wenn Sie Lastenausgleich für Cloud-Dienste und Websites (Endpunkte) in verschie
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

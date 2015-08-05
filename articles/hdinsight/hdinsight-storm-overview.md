@@ -77,7 +77,7 @@ Jeder Storm in HDInsight-Cluster bietet auch ein webbasiertes Storm-Dashboard, m
 
 Weitere Informationen über das Storm-Dashboard finden Sie unter [Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight](hdinsight-storm-deploy-monitor-topology.md).
 
-Storm in HDInsight bietet außerdem durch den **Event Hub-Spout** eine einfache Integration in Azure Event Hubs. Dieser steht auf jedem Storm-Cluster unter **%STORM_HOME%\\examples\\eventhubspout\\eventhubs-storm-spout-0.9-jar-with-dependencies.jar** zur Verfügung. Beispiele für die Verwendung dieses Spouts in einer Storm-Topologie finden Sie unter [Erste Schritte mit Event Hubs](service-bus-event-hubs-c-storm-getstarted.MD) und [Analysieren von Sensordaten mit Storm und HBase](hdinsight-storm-sensor-data-analysis.MD).
+Storm in HDInsight bietet außerdem durch den **Event Hub-Spout** eine einfache Integration in Azure Event Hubs. Dieser steht auf jedem Storm-Cluster unter **%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar** zur Verfügung. Beispiele für die Verwendung dieses Spouts in einer Storm-Topologie finden Sie unter [Erste Schritte mit Event Hubs](service-bus-event-hubs-c-storm-getstarted.MD) und [Analysieren von Sensordaten mit Storm und HBase](hdinsight-storm-sensor-data-analysis.MD).
 
 ###Zuverlässigkeit
 
@@ -156,7 +156,7 @@ Bei den meisten Java-Beispielen handelt es sich entweder um reines Java oder um 
 
 Weitere Informationen zu Trident finden Sie im [Trident Tutorial](https://storm.incubator.apache.org/documentation/Trident-tutorial.html) (in englischer Sprache) auf apache.org.
 
-Beispiele für reine Java- und Trident-Topologien finden Sie im Verzeichnis **%storm_home%\\contrib\\storm-starter** in Ihrem HDInsight Storm-Cluster.
+Beispiele für reine Java- und Trident-Topologien finden Sie im Verzeichnis **%storm_home%\contrib\storm-starter** in Ihrem HDInsight Storm-Cluster.
 
 ##Welche Entwicklungsmuster werden häufig verwendet?
 
@@ -209,4 +209,4 @@ Weitere Informationen zu Lösungen für Echtzeitanalysen mit Apache Storm in HDI
 [apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
 [gettingstarted]: ../hdinsight-storm-getting-started.md
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

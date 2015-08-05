@@ -85,4 +85,4 @@ Nachfolgend finden Sie eine Liste der Standardkonfigurationswerte, deren Übersc
 [max-age-ms]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.6.0/ds_Hadoop/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

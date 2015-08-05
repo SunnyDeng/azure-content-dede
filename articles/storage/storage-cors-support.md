@@ -292,4 +292,4 @@ Nicht erfolgreiche Preflight-Anforderungen werden nicht berechnet.
 [W3C-Spezifikation für CORS (Cross-Origin Resource Sharing)](http://www.w3.org/TR/cors/)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

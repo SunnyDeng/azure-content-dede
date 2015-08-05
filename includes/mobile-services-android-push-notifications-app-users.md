@@ -26,4 +26,4 @@ Als Nächstes müssen Sie den Zeitpunkt für die Benachrichtigungsregistrierung 
             refreshItemsFromTable();
         }	
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

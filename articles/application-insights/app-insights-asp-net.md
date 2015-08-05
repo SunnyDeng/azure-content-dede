@@ -23,22 +23,21 @@
 [AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
 
 
-Visual Studio Application Insights überwacht Ihre Live-Anwendung. So können Sie [Leistungsprobleme und -ausnahmen erkennen und diagnostizieren][detect] und zudem [ermitteln, wie Ihre App verwendet wird][knowUsers]. Es kann mit einer Vielzahl von Anwendungstypen verwendet werden. Dies funktioniert für Apps, die auf den eigenen lokalen IIS-Servern oder Azure-VMs gehostet werden, sowie für Azure-Web-Apps. ([Dies funktioniert auch für Geräte-Apps und Java-Server][start].)
+[Visual Studio Application Insights](http://azure.microsoft.com/services/application-insights) überwacht Ihre Live-Anwendung. So können Sie [Leistungsprobleme und -ausnahmen erkennen und diagnostizieren][detect] und zudem [ermitteln, wie Ihre App verwendet wird][knowUsers]. Es kann mit einer Vielzahl von Anwendungstypen verwendet werden. Dies funktioniert für Apps, die auf den eigenen lokalen IIS-Servern oder Azure-VMs gehostet werden, sowie für Azure-Web-Apps. ([Dies funktioniert auch für Geräte-Apps und Java-Server][start].)
 
 ![Beispiel für Leistungsüberwachungsdiagramm](./media/app-insights-asp-net/10-perf.png)
 
-Bei vielen Anwendungstypen [kann Visual Studio fast unbemerkt Application Insights Ihrer App hinzufügen](#ide). Aber da Sie diesen Artikel lesen, um besser zu verstehen, was passiert, werden wir diese Schritte manuell durchlaufen.
 
 #### Vorbereitung
 
 Erforderlich:
 
 * Ein Abonnement für [Microsoft Azure](http://azure.com) Wenn Ihr Team oder Ihre Organisation über ein Azure-Abonnement verfügt, kann der Besitzer Sie mit Ihrem [Microsoft-Konto](http://live.com) hinzufügen.
-* Visual Studio 2013 oder höher
+* Visual Studio 2013, Update 3 oder höher.
 
 ## <a name="ide"></a>Hinzufügen von Application Insights zu Ihrem Projekt in Visual Studio
 
-#### Falls es sich um ein neues Projekt handelt ...
+#### Falls es sich um ein neues Projekt handelt …
 
 Wenn Sie in Visual Studio ein neues Projekt erstellen, achten Sie darauf, dass Application Insights ausgewählt ist.
 
@@ -63,12 +62,13 @@ Falls Sie erstmals ein Projekt erstellen, werden Sie nach einer Anmeldung bei Mi
 Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithilfe von **Einstellungen konfigurieren** in derselben Ressourcengruppe wie die anderen Komponenten abzulegen.
 
 
-#### Welche Funktion hat "Application Insights hinzufügen"?
+####<a name="land"></a> Welche Funktion hat "Application Insights hinzufügen"?
 
-Der Befehl erledigt zwei Aufgaben (die Sie auch manuell erledigen könnten):
+Mit dem Befehl wurden die folgenden Schritte ausgeführt (die Sie stattdessen auch manuell ausführen könnten):
 
-* Er erstellt eine Application Insights-Ressource im[Azure-Portal][portal]. Hier werden Ihre Daten angezeigt. Es ruft den *Instrumentationsschlüssel*ab, der die Ressource identifiziert.
-* Er fügt das NuGet-Paket mit dem Application Insights-Web-SDK dem Projekt hinzu und nimmt den Schlüssel in`ApplicationInsights.config` auf.
+* Er erstellt eine Application Insights-Ressource im [Azure-Portal][portal]. Hier werden Ihre Daten angezeigt. Es ruft den *Instrumentationsschlüssel*ab, der die Ressource identifiziert.
+* Er fügt das NuGet-Paket mit dem Application Insights-Web-SDK dem Projekt hinzu. Um es in Visual Studio anzuzeigen, klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie "NuGet-Pakete verwalten" aus.
+* Fügt den Instrumentationsschlüssel in `ApplicationInsights.config` ein.
 
 
 ## <a name="run"></a> Ausführen des Projekts
@@ -119,9 +119,9 @@ Sie können zudem eigenen Code schreiben, um nachzuverfolgen, wie Ihre Benutzer 
 
 #### Wenn Ihre Clients Webbrowser sind
 
-Wenn in Ihrer App Webseiten angezeigt werden, fügen jeder Seite einen JavaScript-Codeausschnitt hinzu. Rufen Sie den Code von der Application Insights-Ressource ab:
+Wenn in Ihrer App Webseiten angezeigt werden, fügen Sie jeder Seite einen JavaScript-Codeausschnitt hinzu. Verwenden Sie den Code aus Ihrer Application Insights-Ressource:
 
-![Öffnen Sie in Ihrer Web-App "Schnellstart" und klicken Sie auf die Option zum Abrufen von Code für die Überwachung von Webseiten](./media/app-insights-asp-net/02-monitor-web-page.png)
+![Öffnen Sie in Ihrer Web-App "Schnellstart", und klicken Sie auf die Option zum Abrufen von Code für die Überwachung von Webseiten](./media/app-insights-asp-net/02-monitor-web-page.png)
 
 Beachten Sie, dass der Code den Instrumentationsschlüssel enthält, der Ihre Anwendungsressource identifiziert.
 
@@ -129,7 +129,7 @@ Beachten Sie, dass der Code den Instrumentationsschlüssel enthält, der Ihre An
 
 #### Wenn Ihre Clients Geräte-Apps sind
 
-Wenn Ihre Anwendung auf Clients wie Smartphones oder anderen Geräten eingesetzt wird, fügen Sie das [entsprechende SDK](app-insights-platforms.md)der Geräte-App hinzu.
+Wenn Ihre Anwendung für Clients wie Smartphones oder andere Geräte verwendet wird, fügen Sie Ihrer Geräte-App das [entsprechende SDK](app-insights-platforms.md) hinzu.
 
 Wenn Sie das Client-SDK mit dem gleichen Instrumentationsschlüssel wie das Server-SDK konfigurieren, werden die beiden Datenströme integriert, damit Sie sie zusammen anzeigen können.
 
@@ -142,7 +142,7 @@ Wenn Sie eine neue User Story bereitgestellt haben, möchten Sie wissen, wie vie
 
 ## Diagnoseprotokolle
 
-[Erfassen Sie Protokollablaufverfolgungen][netlogs] aus Ihrem bevorzugten Protokollierungsframework, um Probleme zu diagnostizieren. Die Protokolleinträge werden in der[Diagnosesuche][diagnostic] zusammen mit Application Insights-Telemetrieereignissen angezeigt.
+[Erfassen Sie Protokollablaufverfolgungen][netlogs] aus Ihrem bevorzugten Protokollierungsframework, um Probleme zu diagnostizieren. Die Protokolleinträge werden in der [Diagnosesuche][diagnostic] zusammen mit Application Insights-Telemetrieereignissen angezeigt.
 
 ## Veröffentlichen der App
 
@@ -168,7 +168,7 @@ Melden Sie sich auf Ihrem Server mit Administratorrechten an, und installieren S
 
 #### Wenn Ihre App eine Azure-Web-App ist
 
-Fügen Sie in der Systemsteuerung der Azure-Web-App die Application Insights-Erweiterung hinzu.
+Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-Erweiterung hinzu.
 
 ![In der Web-App: Einstellungen, Erweiterungen, Hinzufügen, Application Insights](./media/app-insights-asp-net/05-extend.png)
 
@@ -220,4 +220,4 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

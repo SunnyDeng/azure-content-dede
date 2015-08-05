@@ -49,4 +49,4 @@ Weitere Informationen zur Installation der PHP-Client-Bibliotheken für Azure (e
 [download-SDK-PHP]: ../articles/php-download-sdk.md
 [composer-phar]: http://getcomposer.org/composer.phar
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

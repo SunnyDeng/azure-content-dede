@@ -81,4 +81,4 @@ Für den Zugriff auf Media Services sind zwei zugeordnete Konten erforderlich:
   [Verwaltungsportal]: http://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

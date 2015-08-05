@@ -75,4 +75,4 @@ Dieses Beispiel zeigt, wie Sie Medienobjekte von Media Services auf Ihren lokale
 	}
    
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

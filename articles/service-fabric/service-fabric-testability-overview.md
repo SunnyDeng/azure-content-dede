@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/17/2015"
+   ms.date="07/13/2015"
    ms.author="rsinha"/>
 
 # Testability – Übersicht
@@ -94,4 +94,4 @@ Beim Erstellen von robusten Diensten für die Cloud ist es wichtig sicherzustell
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

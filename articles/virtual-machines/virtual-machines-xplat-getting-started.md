@@ -74,4 +74,4 @@ Weitere Beispiele zur Verwendung der Azure-Befehlszeilenschnittstelle zum Verwal
 <!--Image references-->
 [5]: ./media/markdown-template-for-new-articles/octocats.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

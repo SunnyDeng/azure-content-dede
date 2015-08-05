@@ -252,4 +252,4 @@ Da virtuelle Linux-Computer im Standardverhalten schwaches Hostrouting verwenden
 
 - Weitere Informationen über die Verwendung [mehrerer Netzwerkkarten in virtuellen Computern und VNet-Geräten in Azure](../multiple-vm-nics-and-network-virtual-appliances-in-azure)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -167,4 +167,4 @@ Nun, da Sie sich mit Event Hubs-Konzepten vertraut gemacht haben, können Sie mi
 [Messaginglösung mit Warteschlange]: ../cloud-services-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -13,10 +13,253 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/07/2015" 
+	ms.date="07/16/2015" 
 	ms.author="spelluru"/>
 
 # Versionshinweise für Azure Data Factory
+
+## Anmerkungen zur Version von Data Factory vom 17.7.2015
+Die folgenden JSON-Änderungen wurden mit der Version vom Juli 2015 von Azure PowerShell eingeführt.
+
+## Aktualisierung von Typen verknüpfter Dienste, Tabellen und Aktivitäten
+Ressourcentyp | Aktueller Name in JSON | Neuer Name in JSON
+------------- | -------------------- | ----------------
+Verknüpfter Dienst (Datenquelle) | AzureSqlLinkedService | AzureSqlDatabase
+Verknüpfter Dienst (Datenquelle) | AzureStorageLinkedService | AzureStorage
+Verknüpfter Dienst (Datenquelle) | DocumentDbLinkedService | DocumentDb
+Verknüpfter Dienst (Datenquelle) | OnPremisesFileSystemLinkedService | OnPremisesFileServer
+Verknüpfter Dienst (Datenquelle) | OnPremisesOracleLinkedService | OnPremisesOracle
+Verknüpfter Dienst (Datenquelle) | OnPremisesSqlLinkedService | OnPremisesSqlServer
+Verknüpfter Dienst (Datenquelle) | OnPremisesMySqlLinkedService | OnPremisesMySql
+Verknüpfter Dienst (Datenquelle) | OnPremisesDb2LinkedService | OnPremisesDb2
+Verknüpfter Dienst (Datenquelle) | OnPremisesTeradataLinkedService | OnPremisesTeradata
+Verknüpfter Dienst (Datenquelle) | OnPremisesSybaseLinkedService | OnPremisesSybase
+Verknüpfter Dienst (Datenquelle) | OnPremisesPostgreSqlLinkedService | OnPremisesPostgreSql
+Verknüpfter Dienst (Compute) | AzureMlLinkedService | AzureML
+Verknüpfter Dienst (Compute) | HDInsightBYOCLinkedService | HDInsight
+Verknüpfter Dienst (Compute) | HDInsightOnDemandLinkedService | HDInsightOnDemand
+Verknüpfter Dienst (Compute) | AzureBatchLinkedService | AzureBatch
+Datensatz | AzureBlobLocation | AzureBlob
+Datensatz | AzureTableLocation | AzureTable
+Datensatz | AzureSqlTableLocation | AzureSqlTable
+Datensatz | DocumentDbCollectionLocation | DocumentDbCollection 
+Datensatz | OnPremisesFileSystemLocation | FileShare
+Datensatz | OnPremisesOracleTableLocation | OracleTable
+Datensatz | OnPremisesSqlServerTableLocation | SqlServerTable
+Datensatz | RelationTableLocation | RelationalTable
+Aktivität | CopyActivity | Kopieren
+Aktivität | HDInsightActivity (Hive-Transformation) | HDInsightHive
+Aktivität | HDInsightActivity (Pig-Transformation) | HDInsightPig
+Aktivität | HDInsightActivity (MapReduce-Transformation) | HDInsightMapReduce
+Aktivität | HDInsightActivity (Streaming) | HDInsightHadoopStreaming
+Aktivität | AzureMLBatchScoringActivity | AzureMLBatchScoring
+Aktivität | StoredProcedureActivity | SqlServerStoredProcedure
+
+## Neues typeProperties-element
+Das neue **typeProperties**-Element enthält typspezifische Eigenschaften für verknüpfte Dienste/Tabellen/Aktivitäten.
+
+### Alter JSON-Text für verknüpfte Dienste
+	{
+	    "name": "StorageLinkedService",
+	    "properties":
+	    {
+	        "type": "AzureStorageLinkedService",
+	        "connectionString": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>" "
+	    }
+	}
+
+### Neuer JSON-Text für verknüpfte Dienste
+	{
+	  "name": "StorageLinkedService",
+	  "properties": {
+	    "type": "AzureStorage",
+	    "typeProperties": {
+	      "connectionString": "DefaultEndpointsProtocol=https;AccountName=<account name>;AccountKey=<Account key>"
+	    }
+	  }
+	}
+
+Beachten Sie Folgendes:
+
+- Die **type**-Eigenschaft wurde eine Ebene nach oben verschoben und auf **AzureStorage** festgelegt (geändert von **AzureStorageLinkedService** in **AzureStorage**) 
+- Neues **typeProperties**-Element, das Eigenschaften enthält, die von dem mit Azure-Speicher verknüpften Dienst unterstützt werden (in diesem Beispiel **connectionString**).  
+
+### Alter JSON-Text für DataSet
+	{
+	    "name": "EmpTable",
+	    "properties":
+	    {
+	        "location":
+	        {
+	            "type": "AzureTableLocation",
+	            "tableName": "myazuretable",
+	            "linkedServiceName": "MyLinkedService"
+	        },
+	        "availability":
+	        {
+	            "frequency": "Hour",
+	            "interval": 1
+	        }
+	    }
+	}
+
+### Neuer JSON-Text für DataSet
+
+	{
+	    "name": "EmpTable",
+	    "properties": {
+	        "type": "AzureTable",
+	        "linkedServiceName": "MyLinkedServiceName",
+	        "typeProperties": {
+	            "tableName": "myazuretable"
+	        },
+	        "availability": {
+	            "frequency": "Hour",
+	            "interval": "1"
+	        }
+	    }
+	}
+
+Beachten Sie Folgendes:
+
+- Die **type**-Eigenschaft wurde um eine Ebene nach oben verschobenen, und der Name des Typs **AzureTableLocation** wurde geändert in **AzureTable**.
+- Der **linkedServiceName** wurde um eine Ebene nach oben verschoben. 
+- Das **location**-Element wurde entfernt, und die typspezifischen Eigenschaften wie z. B. **tableName**, die im **location**-Abschnitt angegeben wurden, werden im neuen **typeProperties**-Abschnitt festgelegt.  
+
+### Alte JSON-Aktivität
+
+	{
+	    "name": "CopyFromSQLtoBlob   ",
+	    "description": "description", 
+	    "type": "CopyActivity",
+	    "inputs":  [ { "name": "InputSqlDA"  } ],
+	    "outputs":  [ { "name": "OutputBlobDA" } ],
+	    "transformation":
+	    {
+	        "source":
+	        {
+	            "type": "SqlSource",
+	            "sqlReaderQuery": "select * from MyTable"
+	        },
+	        "sink":
+	        {
+	            "type": "BlobSink"
+	        }
+	    }
+	}   
+
+### Neue JSON-Aktivität
+	
+	{
+	    "name": "CopyFromSQLtoBlob   ",
+	    "description": "description", 
+	    "type": "Copy",
+	    "inputs":  [ { "name": "InputSqlDA"  } ],
+	    "outputs":  [ { "name": "OutputBlobDA" } ],
+	    "typeProperties":
+	    {
+	        "source":
+	        {
+	            "type": "SqlSource",
+	            "sqlReaderQuery": "select * from MyTable"
+	        },
+	        "sink":
+	        {
+	            "type": "BlobSink"
+	        }
+	    }
+	}
+
+Beachten Sie Folgendes:
+
+- Beachten Sie, dass das **transformation**-Element durch das neue **typeProperties**-Element ersetzt wurde.
+
+## waitOnExternal-Element wurde entfernt.
+Das **waitOnExternal**-Element wird durch die neuen Eigenschaften **external** und**externalData** ersetzt.
+
+### Altes JSON
+	{
+	    "name": "EmpTableFromBlob",
+	    "properties":
+	    {
+	        "location": 
+	        {
+	            "type": "AzureBlobLocation",
+	            "folderPath": "adftutorial/",
+	            "format":
+	            {
+	                "type": "TextFormat",
+	                "columnDelimiter": ","
+	            },
+	            "linkedServiceName": "StorageLinkedService"
+	        },
+	        "availability": 
+	        {
+	            "frequency": "hour",
+	            "interval": 1,
+                "waitOnExternal": 
+				{
+			        "retryInterval": "00:01:00",
+			        "retryTimeout": "00:10:00",
+			        "maximumRetry": "3"			
+				}
+	        }
+	    }
+	} 
+
+### Neues JSON
+	{
+	  "name": "EmpTableFromBlob",
+	  "properties": {
+	    "type": "AzureBlob",
+	    "linkedServiceName": "StorageLinkedService",
+	    "typeProperties": {
+	      "folderPath": "adftutorial/",
+	      "format": {
+	        "type": "TextFormat",
+	        "columnDelimiter": ","
+	      }
+	    },
+	    "external": true,
+	    "availability": {
+	      "frequency": "hour",
+	      "interval": 1
+	    },
+	    "policy": {
+	      "externalData": {
+	        "retryInterval": "00:01:00",
+	        "retryTimeout": "00:10:00",
+	        "maximumRetry": "3"
+	      }
+	    }
+	  }
+	}
+
+Beachten Sie Folgendes:
+
+- Die **waitOnExternal**-Eigenschaft wurde aus dem **availability**-Abschnitt entfernt. 
+- Eine neue**external**-Eigenschaft wurde um eine Ebene höher hinzugefügt und wird für eine externe Tabelle als **true** festgelegt. 
+- Die Eigenschaften des **waitOnExternal**-Elements wie z. B. **retryInterval** wurden dem neuen **externalData**-Abschnitt im **Policy**-Element hinzugefügt.
+- Das **externalData**-Element ist ein optionales Element. 
+- Für die Verwendung des **externalData**-Elements muss die **external**-Eigenschaft als **true** festgelegt sein. 
+ 
+
+## Neue copyBehavior-Eigenschaft für BlobSink
+**BlobSink** unterstützt die neue Eigenschaft **copyBehavior**. Diese Eigenschaft definiert das Verhalten beim Kopieren, wenn die Quelle **BlobSource** oder **FileSystem** ist. Es gibt drei mögliche Werte für die **copyBehavior**-Eigenschaft.
+
+**PreserveHierarchy**: Bewahrt die Dateihierarchie im Zielordner, d. h., der relative Pfad der Quelldatei zum Quellordner ist identisch mit dem relativen Pfad der Zieldatei zum Zielordner.
+
+
+**FlattenHierarchy**: Alle Dateien aus dem Quellordner werden in der ersten Ebene des Zielordners gespeichert. Für die Zieldateien wird ein automatisch ein Name erzeugt.
+
+
+**MergeFiles**: Alle Dateien aus dem Quellordner werden in einer Datei zusammengeführt. Wenn der Datei-/Blob-Name angegeben wurde, entspricht der Name dem angegebenen Namen, andernfalls dem automatisch generierten Dateinamen.
+ 
+## Neue getDebugInfo-Eigenschaft für alle HDInsight-Aktivitäten
+Die HDInsight-Aktivitäten (Hive, Pig, MapReduce, Hadoop-Streaming) unterstützen die neue **getDebugInfo**-Eigenschaft. Die **getDebugInfo**-Eigenschaft ist ein optionales Element. Wenn die Eigenschaft als **Failure** festgelegt wird, werden die Protokolle nur bei Ausführungsfehlern heruntergeladen. Wenn die Eigenschaft als **All** festgelegt wird, werden Protokolle immer heruntergeladen, unabhängig vom Ausführungsstatus. Wenn die Eigenschaft als **None** festgelegt wird, werden keine Protokolle heruntergeladen.
+
+  
+     
 
 ## Anmerkungen zur Version von Data Factory vom 10.04.2015
 Die Listen **Letzte aktualisierte Slices** und **Letzte fehlerhafte Slices** befinden sich nun auf dem Blatt **TABELLE**. Diese Listen werden anhand der Aktualisierungszeit des Slices sortiert. Der Zeitpunkt der Aktualisierung eines Slices wird in den folgenden Situationen geändert.
@@ -69,7 +312,7 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 - Azure Machine Learning-Integration
 	- Mit dieser Version des Azure Data Factory-Diensts können Sie Azure Data Factory mit Azure Machine Learning (ML) mithilfe von **AzureMLLinkedService** und **AzureMLBatchScoringActivity** integrieren. Weitere Informationen finden Sie unter [Erstellen von Vorhersagepipelines mithilfe von Data Factory und Azure Machine Learning][adf-azure-ml]. 
 - Der Status der Gatewayversion wird bereitgestellt.
-	- Der Status "NewVersionAvailable" wird im Azure Vorschauportal und in der Ausgabe des Cmdlet "Get-AzureDataFactoryGateway" angezeigt, wenn eine neuere Version des Gateways als die derzeit installierte Version verfügbar ist. Sie können dann den Portalanweisungen folgen, um die neue Installationsdatei (MSI) herunterzuladen und auszuführen, um das neueste Gateway zu installieren. Es ist keine zusätzliche Konfiguration erforderlich.
+	- Der Status "NewVersionAvailable" wird im Azure-Vorschauportal und in der Ausgabe des Cmdlet "Get-AzureDataFactoryGateway" angezeigt, wenn eine neuere Version des Gateways als die derzeit installierte Version verfügbar ist. Sie können dann den Portalanweisungen folgen, um die neue Installationsdatei (MSI) herunterzuladen und auszuführen, um das neueste Gateway zu installieren. Es ist keine zusätzliche Konfiguration erforderlich.
 
 ### Änderungen
 
@@ -112,4 +355,4 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

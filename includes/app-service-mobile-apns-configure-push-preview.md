@@ -3,4 +3,4 @@
 
 * Klicken Sie im Azure-Vorschauportal auf **Durchsuchen** > **Mobile Apps** > Ihre App > **Pushbenachrichtigungsdienste** > **Apple-Pushbenachrichtigungsdienste** > **Zertifikat hochladen**. Laden Sie die P12-Datei hoch, und stellen Sie sicher, dass der richtige **Modus** ausgewählt ist (Sandbox oder Produktion, je nachdem, ob das von Ihnen erstellte Client-SSL-Zertifikat für die Entwicklung oder Verteilung galt). Ihr Dienst ist jetzt so konfiguriert, dass er mit Pushbenachrichtigungen unter iOS arbeitet.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

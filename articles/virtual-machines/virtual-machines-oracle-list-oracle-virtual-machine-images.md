@@ -1,5 +1,19 @@
-<properties title="List of Oracle Virtual Machine Images" pageTitle="Liste der Images virtueller Oracle-Computer" description="Rufen Sie die Liste der Oracle-Images im Azure-Katalog auf, und erfahren Sie, wie Sie anhand eines dieser Images einen virtuellen Oracle-Computer erstellen." services="virtual-machines" authors="bbenz" documentationCenter=""/>
-<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
+<properties 
+	pageTitle="Liste der Images virtueller Oracle-Computer" 
+	description="Rufen Sie die Liste der Oracle-Images im Azure-Katalog auf, und erfahren Sie, wie Sie anhand eines dieser Images einen virtuellen Oracle-Computer erstellen." 
+	services="virtual-machines" 
+	authors="bbenz" 
+	documentationCenter=""/>
+
+<tags 
+	ms.service="virtual-machines" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="na" 
+	ms.workload="infrastructure-services" 
+	ms.date="06/22/2015" 
+	ms.author="bbenz" />
+
 #Liste der Images virtueller Oracle-Computer
 Um auf Oracle-Images basierende virtuelle Computer zu erstellen, melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an, klicken Sie auf **Marketplace**, klicken Sie auf **Compute**, und geben Sie dann im Suchfeld **Oracle** ein. Wählen Sie ein Image aus, und folgen Sie den Anweisungen zum Einrichten des Images in Microsoft Azure. Beachten Sie, dass Oracle-Images von Microsoft im [Azure-Portal](https://ms.portal.azure.com/) unter Windows und Oracle-Images von Oracle unter Oracle Linux ausgeführt werden.
 
@@ -50,4 +64,4 @@ Die folgende Liste enthält die verfügbaren vorkonfigurierten Images virtueller
 
 [Verschiedene Überlegungen zu Images für virtuelle Oracle-Computer](#miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -1,7 +1,6 @@
 <properties
 	pageTitle="Importieren von Daten in Machine Learning Studio | Microsoft Azure"
 	description="Importieren von Trainingsdaten aus verschiedenen Datenquellen in Azure Machine Learning Studio Erfahren Sie, welche Datentypen und Datenformate unterstützt werden."
-	keywords="import data,data format,data types,data sources,training data"
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -144,4 +143,4 @@ Wenn der Speichervorgang abgeschlossen ist, ist das Dataset für die Verwendung 
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

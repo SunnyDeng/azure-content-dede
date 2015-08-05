@@ -84,4 +84,4 @@ In der folgenden Tabelle werden die Codecs und Dateiformate aufgeführt, die fü
 
 [Codieren von On-Demand-Inhalten mit Azure Media Services](media-services-encode-asset.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

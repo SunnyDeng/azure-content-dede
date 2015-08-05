@@ -3,7 +3,7 @@
     pageTitle="Problembehandlung bei der Erstellung von RemoteApp-Hybridsammlungen"
     description="Erfahren Sie, wie Sie Probleme beim Erstellen von RemoteApp-Hybrid-Sammlungen beheben." 
     services="remoteapp" 
-    solutions="" documentationCenter="" 
+    documentationCenter="" 
     authors="vkbucha" 
     manager="mbaldwin" />
 
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="06/30/2015" 
+    ms.date="07/16/2015" 
     ms.author="elizapo" />
 
 
@@ -27,7 +27,7 @@ Haben Sie Ihre Sammlung noch nicht erstellt? Die Schritte finden Sie unter [Erst
 Wenn Sie Probleme beim Erstellen einer Sammlung haben oder wenn die Sammlung nicht wie gewünscht funktioniert, lesen Sie die folgenden Informationen.
 
 ## Kann Ihr VNET erzwungene Tunnelung verwenden? ##
-RemoteApp unterstützt derzeit die Verwendung von VNETs nicht, bei denen erzwungene Tunnelung aktiviert ist. Wenn Sie diese Funktion benötigen, wenden Sie sich an das RemoteApp-Team, um Unterstützung anzufordern.
+RemoteApp unterstützt derzeit die Verwendung von VNETs nicht, bei denen erzwungene Tunnelung aktiviert ist. Wenn Sie diese Funktion benötigen, wenden Sie sich an das [RemoteApp-Team](mailto:remoteappforum@microsoft.com), um Unterstützung anzufordern.
 
 Nachdem Ihre Anfrage genehmigt wurde, stellen Sie sicher, dass die folgenden Ports im Subnetz geöffnet sind, das Sie für Azure RemoteApp und die virtuellen Computer im Subnetz ausgewählt haben. Die virtuellen Computer in Ihren Subnetzen sollten auch auf die URLs zugreifen können, die im Abschnitt über Netzwerksicherheitsgruppen erwähnt sind.
 
@@ -70,8 +70,6 @@ Beispiel:
 
 ![Definieren des DNS-Servers](./media/remoteapp-hybridtrouble/dnsvpn.png)
 
-Weitere Informationen finden Sie unter [Namensauflösung mithilfe eines eigenen DNS-Servers](https://msdn.microsoft.com/library/azure/jj156088.aspx#bkmk_BYODNS).
-
 ## Verwenden Sie einen Active Directory-Domänencontroller in Ihrer Sammlung? ##
 Derzeit kann nur eine Active Directory-Domäne Azure RemoteApp zugeordnet werden. Die Hybridsammlung unterstützt nur Azure Active Directory-Konten, die von einer Windows Server Active Directory-Bereitstellung synchronisiert wurden (mithilfe des Tools "DirSync"); hier besonders Konten, die entweder mit der Option "Kennwortsynchronisierung" oder mit Active Directory Federation Services (AD FS) in einer Verbundkonfiguration synchronisiert wurden. Sie müssen eine benutzerdefinierte Domäne erstellen, die dem UPN-Domänensuffix Ihrer lokalen Domäne entspricht, und die Verzeichnisintegration einrichten.
 
@@ -83,4 +81,4 @@ Stellen Sie sicher, dass die Domänendetails gültig sind und dass der Domänenc
 
 Der erstellte oder hinzugefügte Domänenname muss ein interner Domänenname sein (nicht Ihr Azure AD-Domänenname), und er muss in das DNS-Format auflösbar sein (contoso.local). Angenommen, Sie verfügen über einen internen Active Directory-Namen (contoso.local) und eine Active Directory-UPN (contoso.com), dann müssen Sie den internen Namen verwenden, wenn Sie eine Sammlung erstellen.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

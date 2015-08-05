@@ -85,7 +85,9 @@ Standardmäßig ist `reportExecutionTime` "true" und `reportCaughtExceptions` "f
 
 In der Application Insights-Ressource werden aggregierte Remoteabhängigkeiten und Methodenausführungszeiten [auf der Kachel "Leistung"][metrics] angezeigt.
 
-Um nach den einzelnen Instanzen der Abhängigkeits-, Ausnahmen- und Methodenberichte zu suchen, öffnen Sie die [Suche][diagnostic].
+Um nach den einzelnen Instanzen der Abhängigkeits-, Ausnahmen- und Methodenberichte zu suchen, öffnen Sie [Search][diagnostic].
+
+[Diagnostizieren von Problemen mit Abhängigkeiten – weitere Informationen](app-insights-dependencies.md#diagnosis).
 
 ## Fragen? Probleme?
 
@@ -107,4 +109,4 @@ Um nach den einzelnen Instanzen der Abhängigkeits-, Ausnahmen- und Methodenberi
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

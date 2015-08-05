@@ -120,7 +120,7 @@ Rufen Sie einen Containerverweis ab und verwenden Sie diesen zum Abrufen eines B
     	CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
 			
         // Define the path to a local file.
-        final String filePath = "C:\\myimages\\myimage.jpg";
+        final String filePath = "C:\myimages\myimage.jpg";
 
     	// Create or overwrite the "myimage.jpg" blob with contents from a local file.
     	CloudBlockBlob blob = container.getBlockBlobReference("myimage.jpg");
@@ -186,7 +186,7 @@ Führen Sie zum Herunterladen von Blobs die gleichen Schritte wie zum Hochladen 
 	       if (blobItem instanceof CloudBlob) {
 	           // Download the item and save it to a file with the same name.
     	        CloudBlob blob = (CloudBlob) blobItem;
-    	        blob.download(new FileOutputStream("C:\\mydownloads\" + blob.getName()));
+    	        blob.download(new FileOutputStream("C:\mydownloads\" + blob.getName()));
     	    }
     	}
     }
@@ -265,4 +265,4 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

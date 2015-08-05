@@ -105,4 +105,4 @@ Sorgen Sie beim Erstellen eines Runbooks dafür, dass die Zeit zum Ausführen vo
 - [Anzeigen des Status eines Runbookauftrags in Azure Automation](automation-viewing-the-status-of-a-runbook-job)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

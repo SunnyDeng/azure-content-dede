@@ -441,13 +441,13 @@ Jetzt sollte Ihre Lösung ohne Fehler erstellen können.
 
 Wenn Sie die Anwendung jetzt ausführen, werden Sie zum **HomeController** und der Ansicht **Index** dieses Controllers geleitet. Das ist das Standardverhalten für das MVC-Vorlagenprojekt, das am Anfang ausgewählt wurde, das möchten wir jedoch nicht! Zum Ändern dieses Verhaltens muss die Weiterleitung dieser MVC-Anwendung geändert werden.
 
-Öffnen Sie ***App\\_Start\\RouteConfig.cs***, navigieren Sie zur Zeile, die mit „defaults“ beginnt, und ändern Sie diese auf folgende Weise.
+Öffnen Sie ***App\_Start\RouteConfig.cs***, navigieren Sie zur Zeile, die mit „defaults“ beginnt, und ändern Sie diese auf folgende Weise.
 
     	defaults: new { controller = "Item", action = "Index", id = UrlParameter.Optional }
 
 Damit weiß ASP.NET MVC, dass Sie keinen Wert in der URL angegeben haben, um das Routingverhalten zu steuern, dass anstelle von **Home** **Item** als Controller und den Benutzer-**Index** als Ansicht verwendet.
 
-Wenn Sie die Anwendung nun ausführen, wird sie Ihren **ItemController** aufrufen, der die Repository-Klasse aufruft und die GetItems-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\\**Element**\\**Index** zurückzugeben.
+Wenn Sie die Anwendung nun ausführen, wird sie Ihren **ItemController** aufrufen, der die Repository-Klasse aufruft und die GetItems-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\**Element**\**Index** zurückzugeben.
 
 Wenn Sie dieses Projekt jetzt erstellen und ausführen, sollte ein Ergebnis ähnlich dem folgenden angezeigt werden.
 
@@ -658,4 +658,4 @@ Wenn Sie Zeit sparen und einfach nur die vollständige Todo-Projektmappe erstell
 [Grundlegende CRUD-Vorgänge in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

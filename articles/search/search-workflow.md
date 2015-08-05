@@ -191,4 +191,4 @@ Denken Sie daran, dass nur im Standard-Tarif eine Skalierung durchgeführt werde
 [1]: ./media/search-workflow/AzSearch-Workflow.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

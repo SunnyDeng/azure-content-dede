@@ -179,4 +179,4 @@ Nachdem Sie diese Sicherheitshinweise gelesen haben, ist der nächste Schritt, d
 
 - Für ein 8600-Gerät gehen Sie zu [Entpacken, Aufstellen und Verbinden Ihres 8600-Geräts](storsimple-8600-hardware-installation).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

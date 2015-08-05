@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="07/16/2015" 
 	ms.author="juliako"/>
 
 
@@ -41,13 +41,13 @@ Führen Sie folgende Schritte aus, um den Typ reservierter Einheiten und die Anz
 	![Prozessorenseite](./media/media-services-portal-encoding-units/media-services-encoding-scale.png)
 
 	  
-	>[Azure.Note]Der Premium-Typ für reservierte Einheiten ist in den folgenden Rechenzentren nicht verfügbar: Singapur, Hongkong, Osaka, Beijing und Shanghai.
+	>[AZURE.NOTE]Der Premium-Typ für reservierte Einheiten ist in den folgenden Rechenzentren nicht verfügbar: Singapur, Hongkong, Osaka, Beijing und Shanghai.
 
 3. Klicken Sie auf die Schaltfläche „Speichern“, um die Änderungen zu speichern.
 
 	Die neuen für das Codieren reservierten Einheiten werden zugewiesen, wenn Sie auf SPEICHERN klicken.
 
-	>[Azure.Note]Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet.
+	>[AZURE.NOTE]Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet.
 
 ##Kontingente und Einschränkungen
 
@@ -58,4 +58,4 @@ Informationen zu Kontingenten und Einschränkungen sowie zum Öffnen von Support
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

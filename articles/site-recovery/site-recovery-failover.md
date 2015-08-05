@@ -279,4 +279,4 @@ Wenn Sie den Schutz zwischen einem [Hyper-V-Standort und Azure](site-recovery-hy
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

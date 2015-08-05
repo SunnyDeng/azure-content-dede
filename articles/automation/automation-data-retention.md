@@ -36,4 +36,4 @@ Die Datenaufbewahrungsrichtlinie gilt für alle Benutzer und kann zurzeit nicht 
 ## Verwandte Artikel
 - [Sichern von Azure Automation](https://msdn.microsoft.com/library/dn643635.aspx) 
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

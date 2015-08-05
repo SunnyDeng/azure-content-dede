@@ -117,4 +117,4 @@ Löschen Sie eine Sicherung, wenn Sie die zugeordneten Daten nicht mehr beibehal
 
 Erfahren sie mehr über die Verwendung des Sicherungskatalogs zum [Wiederherstellen Ihres Geräts aus einem Sicherungssatz](storsimple-restore-from-backup-set.md).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

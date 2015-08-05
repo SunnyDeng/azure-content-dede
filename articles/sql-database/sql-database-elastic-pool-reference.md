@@ -87,7 +87,7 @@ Ein elastischer Pool ist eine ARM-Ressource vom Typ "ElasticPool" in Microsoft A
 
 Die Speicherbegrenzung des Pools wird durch die Menge der DTUs des Pools bestimmt; jede DTU = 1 GB Speicher. Beispielsweise hat ein 200-DTU-Pool einen Grenzwert von 200 GB.
 
-| Eigenschaft | Standardwert | Gültige Werte |
+| -Eigenschaft | Standardwert | Gültige Werte |
 | :-- | :-- | :-- |
 | Dtu | 100 | 100, 200, 400, 800, 1.200 |
 | databaseDtuMax | 100 | 10, 20, 50, 100 |
@@ -191,4 +191,4 @@ Der DTU-Einzelpreis für einen elastischen Anwendungspool ist höher als der DTU
 | 40891 | EX_USER | Die Mindestanzahl von DTUs pro Datenbank (%d) darf die Höchstanzahl von DTUs pro Datenbank (%d) nicht überschreiten. | DTU-Mindestanzahl pro Datenbank; DTU-Höchstanzahl pro Datenbank. | Es wurde versucht, die DTU-Mindestanzahl pro Datenbank höher festzulegen, als die maximale DTU-Anzahl pro Datenbank. | Stellen Sie sicher, dass die Mindestanzahl von DTUs pro Datenbank nicht die Höchstanzahl von DTUs pro Datenbank überschreitet. |
 | TBD | EX_USER | Die Speichergröße für eine einzelne Datenbank in einem elastischen Pool darf die maximal zulässige Größe für die Dienstebene des elastischen Pools "%.*ls" nicht überschreiten. | Dienstebene des elastischen Pools | Die maximale Größe der Datenbank überschreitet die maximale Größe, die von der Dienstebene des elastische Pools zugelassen wird. | Legen Sie die maximale Größe der Datenbank höchstens auf die maximal zulässige Größe der Dienstebene des elastische Pools fest. |
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

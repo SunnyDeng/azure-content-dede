@@ -31,4 +31,4 @@ Wenn Sie Multi-Factor Authentication mit Azure verwenden, sollten Sie die Einste
 
 <center>![Setup](./media/multi-factor-authentication-end-user-manage-azure/proofup.png)</center>
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -8,14 +8,7 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags
-	ms.service="backup"
-	ms.workload="storage-backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="05/27/2015"
-	ms.author="trinadhk"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="07/17/2015" ms.author="trinadhk"; "jimpark"/>
 
 # Wiederherstellen eines virtuellen Computers
 Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus den Sicherungen im Azure-Sicherungstresor in einem neuen virtuellen Computer wiederherstellen.
@@ -34,11 +27,11 @@ Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus 
 
 ## Auswählen eines Wiederherstellungspunkts
 
-1. Auf dem Bildschirm **Wählen Sie einen Wiederherstellungspunkt** können Sie eine Wiederherstellung vom neuesten Wiederherstellungspunkt oder von einem früheren Zeitpunkt durchführen. Die ausgewählte Standardoption beim Öffnen des Assistenten ist "Neuester Wiederherstellungspunkt".
+1. Auf dem Bildschirm **Wählen Sie einen Wiederherstellungspunkt** können Sie eine Wiederherstellung vom neuesten Wiederherstellungspunkt oder von einem früheren Zeitpunkt durchführen. Die ausgewählte Standardoption beim Öffnen des Assistenten ist *Neuester Wiederherstellungspunkt*.
 
     ![Auswählen eines Wiederherstellungspunkts](./media/backup-azure-restore-vms/select-recovery-point.png)
 
-2. Um einen früheren Zeitpunkt auszuwählen, wählen Sie in der Dropdownliste die Option **Datum auswählen**, und wählen Sie ein Datum im Kalendersteuerelement durch Klicken auf das Kalendersymbol aus. Im Steuerelement enthalten alle Datumsangaben mit Wiederherstellungspunkten eine hellgraue Schattierung und können vom Benutzer ausgewählt werden.
+2. Um einen früheren Zeitpunkt auszuwählen, wählen Sie in der Dropdownliste die Option **Datum auswählen** und dann ein Datum im Kalendersteuerelement durch Klicken auf das **Kalendersymbol** aus. Im Steuerelement enthalten alle Datumsangaben mit Wiederherstellungspunkten eine hellgraue Schattierung und können vom Benutzer ausgewählt werden.
 
     ![Auswählen eines Datums](./media/backup-azure-restore-vms/select-date.png)
 
@@ -46,7 +39,7 @@ Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus 
 
     ![Wiederherstellungspunkte](./media/backup-azure-restore-vms/recovery-points.png)
 
-3. Wählen Sie den Wiederherstellungspunkt aus der Tabelle **Wiederherstellungspunkte** aus, und klicken Sie auf den Pfeil "Weiter", um zum nächsten Bildschirm zu gelangen.
+3. Wählen Sie den Wiederherstellungspunkt in der Tabelle **Wiederherstellungspunkte** aus, und klicken Sie auf den Pfeil "Weiter", um zum nächsten Bildschirm zu gelangen.
 
 ## Angeben eines Zielspeicherorts
 
@@ -55,9 +48,9 @@ Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus 
   - Geben Sie den Namen des virtuellen Computers an: In einem bestimmten Clouddienst sollte der Name des virtuellen Computers eindeutig sein. Wenn Sie beabsichtigen, einen vorhandenen virtuellen Computer durch denselben Namen zu ersetzen, löschen Sie zuerst den vorhandenen virtuellen Computer und die Datenträger, und stellen Sie dann die Daten aus Azure Backup wieder her.
   - Wählen Sie einen Clouddienst für den virtuellen Computer aus: Dies ist für das Erstellen eines virtuellen Computers erforderlich. Sie können entweder einen vorhandenen Clouddienst verwenden oder einen neuen Clouddienst erstellen.
 
-        Whatever cloud service name is picked should be globally unique. Typically, the cloud service name gets associated with a public-facing URL in the form of [cloudservice].cloudapp.net. Azure will not allow you to create a new cloud service if the name has already been used. If you choose to create select create a new cloud service, it will be given the same name as the virtual machine – in which case the VM name picked should be unique enough to be applied to the associated cloud service.
+        Der ausgewählte Name des Clouddienstes sollte global eindeutig sein. Typischerweise ist dieser Name mit einer öffentlichen URL nach dem Muster [clouddienst].cloudapp.net verknüpft. Azure gestattet es Ihnen nicht, einen neuen Clouddienst zu erstellen, wenn der Name bereits verwendet wird. Wenn Sie einen neuen Clouddienst erstellen möchten, erhält dieser den gleichen Namen wie der virtuelle Computer. In diesem Fall sollte der Name des virtuellen Computers eindeutig genug sein, um auf den neuen Clouddienst angewendet zu werden.
 
-        We only display cloud services and virtual networks that are not associated with any affinity groups in the restore instance details. [Learn More](https://msdn.microsoft.com/de-de/library/azure/jj156085.aspx).
+         Wir zeigen ausschließlich Clouddienste und virtuelle Netzwerke an, die nicht mit Affinitätsgruppen in den Details der Wiederherstellungsinstanzen verbunden sind. [Erfahren Sie mehr] (https://msdn.microsoft.com/en-us/library/azure/jj156085.aspx).
 
 2. Wählen Sie ein Speicherkonto für den virtuellen Computer aus: Dies ist für das Erstellen des virtuellen Computers erforderlich. Sie können aus vorhandenen Speicherkonten in der gleichen Region auswählen, in der sich auch der Azure Backup-Tresor befindet. Wir unterstützen keine Speicherkonten, die zonenredundant sind oder dem Premium-Speichertyp entsprechen.
 
@@ -71,7 +64,7 @@ Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus 
 
     ![Auswählen eines virtuellen Netzwerks](./media/backup-azure-restore-vms/restore-cs-vnet.png)
 
-4. Wählen Sie ein Subnetz: Für den Fall, dass das VNET über Subnetze verfügt, wird standardmäßig das erste Subnetz ausgewählt. Wählen Sie in den Dropdownoptionen das Subnetz Ihrer Wahl aus. Subnetzdetails finden Sie auf der Homepage [Netzwerkerweiterungsportal](https://manage.windowsazure.com/). Rufen Sie "Virtuelle Netzwerke" auf, wählen Sie das virtuelle Netzwerk aus, und führen Sie eine Detailsuche in die Konfiguration aus, um die Subnetdetails zu finden.
+4. Wählen Sie ein Subnetz: Für den Fall, dass das VNET über Subnetze verfügt, wird standardmäßig das erste Subnetz ausgewählt. Wählen Sie in den Dropdownoptionen das Subnetz Ihrer Wahl aus. Details zu Subnetzen finden Sie in der Erweiterung "Netzwerke" der [Portal-Startseite](https://manage.windowsazure.com/). Wechseln Sie zu **Virtuelle Netzwerke**, wählen Sie das virtuelle Netzwerk aus, und führen Sie einen Drilldown in "Konfigurieren" aus, um Detailinformationen zu Subnetzen anzuzeigen.
 
     ![Auswählen eines Subnetzes](./media/backup-azure-restore-vms/select-subnet.png)
 
@@ -102,6 +95,4 @@ Bei den meisten Fehlern können Sie die empfohlene Aktion befolgen, die unter "F
 ## Nächste Schritte
 - [Verwalten virtueller Computer](backup-azure-manage-vms)
 
- 
-
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

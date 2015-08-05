@@ -66,4 +66,4 @@ Nachdem Sie Ihr VNet erstellt haben, können Sie ihm neue VMs hinzufügen. Es is
 [Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -3,8 +3,8 @@
 	description="Hilfestellung bei der Auswahl der besten Option für die Übertragung von Daten aus einer lokalen Bereitstellung oder anderen Cloudquellen in Microsoft Azure für eine erweiterte Analyse." 
 	services="data-factory, hdinsight, machine-learning, storage, sql-database" 
 	documentationCenter="" 
-	authors="cjgronlund" 
-	manager="paulettm" 
+	authors="spelluru" 
+	manager="jeffgoll" 
 	editor=""/>
 
 <tags 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="big-data" 
 	ms.date="01/07/2014" 
-	ms.author="cgronlun"/>
+	ms.author="spelluru"/>
 
 # Optionen für die Übertragung von gespeicherten Daten in die Cloud
 
@@ -270,4 +270,4 @@ Hinweise zum Entscheidungsbaum:
 [hybrid]: ../integration-hybrid-connection-overview.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

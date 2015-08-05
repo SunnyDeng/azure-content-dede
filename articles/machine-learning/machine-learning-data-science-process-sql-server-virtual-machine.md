@@ -2,7 +2,6 @@
 	pageTitle="Verarbeiten von Daten aus SQL Azure | Microsoft Azure" 
 	description="Verarbeiten von Daten aus SQL Azure" 
 	services="machine-learning" 
-	solutions="" 
 	documentationCenter="" 
 	authors="fashah" 
 	manager="paulettm" 
@@ -157,4 +156,4 @@ Ein umfassendes Beispiel für den Azure Data Science Process anhand eines öffen
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -79,4 +79,4 @@ Nachdem Sie Anwendungen mit dem Azure Active Directory-Anwendungsproxy veröffen
 
 * [Informationen zur eingeschränkten Kerberos-Delegierung](http://technet.microsoft.com/library/cc995228.aspx)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

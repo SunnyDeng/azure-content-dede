@@ -181,7 +181,7 @@ Sie sollten die StorSimple Snapshot Manager-Datenbank auf dem Hostcomputer regel
 
     4. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Beenden des Dienstes**.
 
-2. Navigieren Sie auf dem Hostcomputer zu C:\\ProgramData\\Microsoft\\StorSimple\\BACatalog.
+2. Navigieren Sie auf dem Hostcomputer zu C:\ProgramData\Microsoft\StorSimple\BACatalog.
 
     >[AZURE.NOTE]ProgramData ist ein versteckter Ordner.
  
@@ -197,7 +197,7 @@ Sie sollten die StorSimple Snapshot Manager-Datenbank auf dem Hostcomputer regel
 
     3. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Neustart des Dienstes**.
 
-5. Navigieren Sie auf dem Hostcomputer zu C:\\ProgramData\\Microsoft\\StorSimple\\BACatalog.
+5. Navigieren Sie auf dem Hostcomputer zu C:\ProgramData\Microsoft\StorSimple\BACatalog.
 
 6. Löschen Sie die XML-Katalogdatei, und ersetzen Sie sie durch die Sicherungskopie, die Sie erstellt haben.
 
@@ -207,4 +207,4 @@ Sie sollten die StorSimple Snapshot Manager-Datenbank auf dem Hostcomputer regel
 
 Informieren Sie sich unter den verfügbaren [StorSimple Snapshot Manager-Aufgaben und -Workflows](storsimple-what-is-snapshot-manager.md#storsimple-snapshot-manager-tasks-and-workflows).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

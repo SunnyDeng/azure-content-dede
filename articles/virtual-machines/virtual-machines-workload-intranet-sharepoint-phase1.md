@@ -1,30 +1,31 @@
-<properties 
-	pageTitle="SharePoint-Intranetfarm-Arbeitsauslastung Phase 1: Konfigurieren von Azure" 
-	description="In dieser ersten Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen Sie das virtuelle Azure-Netzwerk und andere Elemente der Azure-Infrastruktur." 
+<properties
+	pageTitle="SharePoint-Intranetfarm-Arbeitsauslastung Phase 1: Konfigurieren von Azure"
+	description="In dieser ersten Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen Sie das virtuelle Azure-Netzwerk und andere Elemente der Azure-Infrastruktur."
 	documentationCenter=""
-	services="virtual-machines" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
-	editor=""/>
+	services="virtual-machines"
+	authors="JoeDavies-MSFT"
+	manager="timlt"
+	editor=""
+	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/05/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows-sharepoint"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/21/2015"
 	ms.author="josephd"/>
 
 # SharePoint-Intranetfarm-Arbeitsauslastung Phase 1: Konfigurieren von Azure
 
-In dieser Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen Sie die Azure Netzwerk- und Speicherinfrastruktur. Diese Phase muss vor Beginn von [Phase 2](virtual-machines-workload-intranet-sharepoint-phase2.md) ausgeführt worden sein. Eine Übersicht über alle Phasen finden Sie unter [Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-workload-intranet-sharepoint-overview.md).
+In dieser Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen Sie die Azure Netzwerk- und Speicherinfrastruktur in der Azure-Dienstverwaltung. Diese Phase muss vor Beginn von [Phase 2](virtual-machines-workload-intranet-sharepoint-phase2.md) ausgeführt worden sein. Eine Übersicht über alle Phasen finden Sie unter [Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-workload-intranet-sharepoint-overview.md).
 
 Azure muss mit den folgenden grundlegenden Netzwerkkomponenten bereitgestellt werden:
 
-- Einem standortübergreifenden virtuellen Netzwerk mit einem Subnetz
-- Drei Azure Cloud-Diensten
-- Einem Azure-Speicherkonto zum Speichern von VHD-Datenträgerimages und weiteren Datenträgern
+- Einem standortübergreifenden virtuellen Netzwerk mit einem Subnetz.
+- Drei Azure Clouddiensten.
+- Einem Azure-Speicherkonto zum Speichern von VHD-Datenträgerimages und weiteren Datenträgern.
 
 ## Voraussetzungen
 
@@ -32,8 +33,8 @@ Füllen Sie vor der Konfiguration der Azure-Komponenten die folgenden Tabellen a
 
 Die Einstellungen für das virtuelle Netzwerk (VNet) tragen Sie in Tabelle V ein.
 
-Element | Konfigurationselement | Beschreibung | Wert 
---- | --- | --- | --- 
+Element | Konfigurationselement | Beschreibung | Wert
+--- | --- | --- | ---
 1. | VNet-Name | Der Name, den Sie dem virtuellen Azure-Netzwerk zuweisen (z. B. SPFarmNet) . | __________________
 2. | VNet-Standort | Das Azure-Rechenzentrum, in dem sich das virtuelle Netzwerk befindet. | __________________
 3. | Name des lokalen Netzwerks | Der Name, den Sie Ihrem Unternehmensnetzwerk zuweisen. | __________________
@@ -46,8 +47,8 @@ Element | Konfigurationselement | Beschreibung | Wert
 
 Füllen Sie für das Subnetz dieser Lösung Tabelle S aus. Geben Sie für das Subnetz einen Anzeigenamen, einen auf dem Adressraum des virtuellen Netzwerks basierenden IP-Adressraum und einen beschreibenden Zweck an. Der Adressraum muss im Classless Interdomain Routing (CIDR)-Format eingegeben werden, das auch als Netzwerkpräfixformat bezeichnet wird. Beispiel: 10.24.64.0/20. Fragen Sie Ihre IT-Abteilung nach diesem Adressraum. Er wird aus dem Adressraum des virtuellen Netzwerks bestimmt.
 
-Element | Subnetzname | Subnetzadressraum | Zweck 
---- | --- | --- | --- 
+Element | Subnetzname | Subnetzadressraum | Zweck
+--- | --- | --- | ---
 1. | _______________ | _____________________________ | _________________________
 
 **Tabelle S: Subnetze im virtuellen Netzwerk**
@@ -56,10 +57,10 @@ Element | Subnetzname | Subnetzadressraum | Zweck
 
 Füllen Sie für die zwei lokalen DNS-Server, die Sie bei der anfänglichen Einrichtung der Domänencontroller in Ihrem virtuellen Netzwerk verwenden möchten, Tabelle D aus. Geben Sie jedem DNS-Server einen Anzeigenamen und eine einzelne IP-Adresse. Der Anzeigename muss nicht mit dem Hostnamen oder dem Computernamen des DNS-Servers übereinstimmen. Auch wenn hierfür nur zwei Einträge vorgesehen sind, können Sie noch weitere hinzufügen. Erarbeiten Sie diese Liste gemeinsam mit Ihrer IT-Abteilung.
 
-Element | Anzeigename des DNS-Servers | IP-Adresse des DNS-Servers 
+Element | Anzeigename des DNS-Servers | IP-Adresse des DNS-Servers
 --- | --- | ---
 1. | ___________________________ | ___________________________
-2. | ___________________________ | ___________________________ 
+2. | ___________________________ | ___________________________
 
 **Tabelle D: Lokale DNS-Server**
 
@@ -67,7 +68,7 @@ Zur Weiterleitung von Paketen aus dem standortübergreifenden Netzwerk über die
 
 Füllen Sie zur Angabe der Adressräume Ihres lokalen Netzwerks Tabelle L aus. Hierfür sind zwar nur drei Einträge vorgesehen, vermutlich werden Sie aber mehr benötigen. Erarbeiten Sie die Liste dieser Adressräume gemeinsam mit Ihrer IT-Abteilung.
 
-Element | Adressraum des lokalen Netzwerks 
+Element | Adressraum des lokalen Netzwerks
 --- | ---
 1. | ___________________________________
 2. | ___________________________________
@@ -81,8 +82,8 @@ Zum Erstellen des virtuellen Netzwerks mit den Einstellungen der Tabellen V, S, 
 
 Nach der Erstellung des virtuellen Azure-Netzwerks ermittelt das Azure-Verwaltungsportal Folgendes:
 
-- Die öffentliche IPv4-Adresse des Azure-VPN-Gateways Ihres virtuellen Netzwerks
-- Den vorinstallierten Internet Protocol Security (IPsec)-Schlüssel für die Site-to-Site-VPN-Verbindung
+- Die öffentliche IPv4-Adresse des Azure-VPN-Gateways Ihres virtuellen Netzwerks.
+- Den vorinstallierten Internet Protocol Security (IPsec)-Schlüssel für die Site-to-Site-VPN-Verbindung.
 
 Um diese Informationen nach der Erstellung des virtuellen Netzwerks im Azure-Verwaltungsportal anzuzeigen, klicken Sie auf **Netzwerke**, den Namen des virtuellen Netzwerks und dann auf die Menüoption **Dashboard**.
 
@@ -103,7 +104,7 @@ Sie erhalten den korrekten Abonnementnamen aus der Eigenschaft **SubscriptionNam
 
 Erstellen Sie als Nächstes die drei für diese SharePoint-Farm erforderlichen Cloud-Dienste. Füllen Sie Tabelle C aus.
 
-Element | Zweck | Name des Cloud-Diensts 
+Element | Zweck | Name des Cloud-Diensts
 --- | --- | ---
 1. | Domänencontroller | ___________________________
 2. | SQL-Server | ___________________________
@@ -137,8 +138,8 @@ Wenn dieser Befehl „False“ zurückgibt, ist der vorgeschlagene Name eindeuti
 
 Definieren Sie als Nächstes die Namen von vier Verfügbarkeitsgruppen. Füllen Sie Tabelle A aus.
 
-Element | Zweck | Name der Verfügbarkeitsgruppe 
---- | --- | --- 
+Element | Zweck | Name der Verfügbarkeitsgruppe
+--- | --- | ---
 1. | Domänencontroller | ___________________________
 2. | SQL-Server | ___________________________
 3. | SharePoint-Anwendungsserver | ___________________________
@@ -167,6 +168,5 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 2:
 [Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
- 
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/27/2015" 
+	ms.date="07/20/2015" 
 	ms.author="juliako"/>
 
 
@@ -51,7 +51,6 @@ Sie können auch die folgenden SDKs verwenden:
 - [Microsoft Media-Plattform: Player-Framework](http://playerframework.codeplex.com/) 
 - [HTML5 Player Framework-Dokumentation](http://playerframework.codeplex.com/wikipage?title=HTML5%20Player&referringTitle=Documentation) 
 - [Microsoft Smooth Streaming-Plug-In für OSMF](https://www.microsoft.com/download/details.aspx?id=36057) 
-- [Media Player Framework für iOS](https://github.com/Azure/azure-media-player-framework) 
 - [Lizenzierung des Microsoft® Smooth Streaming Client Porting Kit](https://www.microsoft.com/mediaplatform/sspk.aspx) 
 - [Entwickeln von Videoanwendungen für Xbox](http://xbox.create.msdn.com/) 
  
@@ -77,4 +76,4 @@ Informationen zu Untertiteln und der Unterstützung von Werbeeinblendungen in Li
 [dash.js-Repository von GitHub](https://github.com/Dash-Industry-Forum/dash.js) (in englischer Sprache)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

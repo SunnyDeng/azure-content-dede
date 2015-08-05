@@ -71,8 +71,7 @@ Die einfachste Möglichkeit zu prüfen, ob Ihre API-App öffentlich zugänglich 
 
 ## Schützen der API-App
 
-Als Sie Ihre API-App bereitgestellt haben, ist die Bereitstellung als Bestandteil einer Ressourcengruppe erfolgt. Sie können Web-Apps und andere API-Apps zur selben Ressourcengruppe hinzufügen, und jede API-App innerhalb der Ressourcengruppe kann eine von drei Zugriffseinstellungen verwenden:
-<!--todo: diagram showing different accessibility settings-->
+Als Sie Ihre API-App bereitgestellt haben, ist die Bereitstellung als Bestandteil einer Ressourcengruppe erfolgt. Sie können Web-Apps und andere API-Apps zur selben Ressourcengruppe hinzufügen, und jede API-App innerhalb der Ressourcengruppe kann eine von drei Zugriffseinstellungen verwenden: <!--todo: diagram showing different accessibility settings-->
 
 - **Öffentlich (anonym)** – Beliebige Benutzer können die API-App von außerhalb der Ressourcengruppe und ohne Anmeldung aufrufen.
 - **Öffentlich (authentifiziert)** – Nur authentifizierte Benutzer können die API-App von außerhalb der Ressourcengruppe aufrufen.
@@ -269,4 +268,4 @@ Sie haben erfahren, wie Sie eine Azure API-App schützen, indem Sie sie für ein
 [Azure-Portal]: https://manage.windowsazure.com/
 [Azure-Vorschauportal]: https://portal.azure.com/
 
-<!----HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

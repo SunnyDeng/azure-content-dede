@@ -302,4 +302,4 @@ Weitere Informationen zu den Benachrichtigungsfunktionen für Berichte in Azure�
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

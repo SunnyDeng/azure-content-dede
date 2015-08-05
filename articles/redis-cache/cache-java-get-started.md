@@ -87,4 +87,4 @@ Klicken Sie auf den Link unter **Ports**, und klicken Sie bei "Zugriff nur über
 [3]: ./media/cache-java-get-started/cache03.png
 [4]: ./media/cache-java-get-started/cache04.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -113,4 +113,4 @@ Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Opti
 [dieses Verfahren]: https://developer.amazon.com/sdk/adm/integrating-app.html#Asset
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

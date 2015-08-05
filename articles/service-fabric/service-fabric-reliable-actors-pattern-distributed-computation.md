@@ -204,4 +204,4 @@ Es soll hier keineswegs behauptet werden, Azure Service Fabric sei ein Drop-in R
 [1]: ./media/service-fabric-reliable-actors-pattern-distributed-computation/distributed-computation-1.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

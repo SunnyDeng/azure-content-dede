@@ -54,4 +54,4 @@ Verwenden Sie für den Zugriff auf die im CDN zwischengespeicherten Inhalte den 
 [Übersicht über das Azure Content Delivery Network (CDN)](cdn-overview.md)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

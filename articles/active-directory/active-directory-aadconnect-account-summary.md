@@ -33,8 +33,8 @@ Der Azure AD Connect-Assistent bietet zwei unterschiedliche Pfade mit verschiede
 Seite des Assistenten | Erfasste Anmeldeinformationen | Erforderliche Berechtigungen| Verwendung 
 ------------- | ------------- |------------- |------------- |
 Herstellen einer Verbindung mit Azure AD| Azure AD-Verzeichnisanmeldeinformationen | Globale Administratorrolle in Azure AD | <li>Aktivieren der Synchronisierung im Azure AD-Verzeichnis.</li> <li>Erstellen des Azure AD-Kontos, das für die fortlaufenden Synchronisierungsvorgänge in Azure AD verwendet wird.</li>
-Herstellen einer Verbindung mit AD DS | Lokale Active Directory-Anmeldeinformationen | Mitglied der Gruppe "Unternehmensadministratoren" in Active Directory| <li>Die Erstellung des lokalen AD-Kontos, das zum Lesen der Objekte und Attribute aus dem lokalen AD für den fortlaufenden Synchronisierungsvorgang verwendet wird.</li> <li> Zuweisen der richtigen Berechtigungen und Einstellungen für die Zugriffssteuerung für die Synchronisierung und Kennwortsynchronisierung mit dem oben genannten Konto und AD.</li> 
-Nicht verfügbar|Anmeldeinformationen des Benutzers, der den Assistenten ausführt| Administrator des lokalen Servers|Der Assistent erstellt das AD-Konto, das als Anmeldekonto für den Synchronisierungsdienst auf dem lokalen Computer dient.
+Herstellen einer Verbindung mit AD DS | Lokale Active Directory-Anmeldeinformationen | Mitglied der Gruppe "Unternehmensadministratoren" in Active Directory| Wird als lokales AD-Connector-Konto verwendet. Das bedeutet, dass es zur Synchronisierung für Lese- und Schreibvorgänge für Verzeichnisinformationen verwendet wird.
+–|Anmeldeinformationen des Benutzers, der den Assistenten ausführt| Administrator des lokalen Servers|Der Assistent erstellt das AD-Konto, das als Anmeldekonto für den Synchronisierungsdienst auf dem lokalen Computer dient.
 
 <br> <br>
 
@@ -90,4 +90,4 @@ AD FS: GMSA-Konto (aadcsvc$)|Domänenbenutzer|Anmeldekonto für den AD FS-Dienst
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

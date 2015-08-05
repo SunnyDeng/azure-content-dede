@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="07/02/2015"
+   ms.date="07/21/2015"
    ms.author="banders" />
 
 # Suchen nach Daten in Operational Insights
@@ -50,9 +50,9 @@ Die grundlegendsten Filter, die Sie verwenden können, sind *Schlüsselwörter* 
 
 ### Durchführen einer einfachen Suche
 1. Klicken Sie im Operational Insights-Portal auf **Daten-Explorer durchsuchen**. !["search tile" (Kachel suchen)](./media/operational-insights-search/overview-search.png)
-2. Geben Sie in das Abfragefeld `error` ein und klicken Sie dann auf **Search**. !["search error" (Fehler suchen)](./media/operational-insights-search/search-error.png) Angenommen, die Abfrage für `error` gibt in der folgenden Abbildung 100.000 **Ereignis**datensätze zurück (von Log Management erfasst), 18 **Warnungs**datensätze (von der Konfigurationsbewertung generiert) und 12 **Konfigurationsänderungs**datensätze (von der Änderungsnachverfolgung aufgezeichnet). !["search results" (Ergebnisse durchsuchen)](./media/operational-insights-search/results01.png)
+2. Geben Sie in das Abfragefeld `error` ein und klicken Sie dann auf **Search**. !["search error" (Fehler suchen)](./media/operational-insights-search/search-error.png) Angenommen, die Abfrage für `error` gibt in der folgenden Abbildung 100.000 **Ereignis**datensätze zurück (von Log Management erfasst), 18 **Konfigurationswarnungs**datensätze (von der Konfigurationsbewertung generiert) und 12 **Konfigurationsänderungs**datensätze (von der Änderungsnachverfolgung aufgezeichnet). !["search results" (Ergebnisse durchsuchen)](./media/operational-insights-search/results01.png)
 
-Diese Filter sind keine echten Objekttypen/-klassen. *Type* ist nur ein Tag, eine Eigenschaft oder eine Zeichenfolge/ein Name/eine Kategorie, der oder die einem Teil der Daten zugeordnet ist. Einige Dokumente im System sind als **Type:Alert**, **Type: PerfHourly** oder **Type:Event** markiert, und so weiter. Alle Suchergebnisse, Dokumente, Datensätze oder Einträge zeigen die Basiseigenschaften und deren Werte für jedes dieser Datenelemente. Sie können die Feldnamen im Filter angeben, wenn Sie nur die Datensätze abrufen möchten, in dem das Feld den angegebenen Wert besitzt.
+Diese Filter sind keine echten Objekttypen/-klassen. *Type* ist nur ein Tag, eine Eigenschaft oder eine Zeichenfolge/ein Name/eine Kategorie, der oder die einem Teil der Daten zugeordnet ist. Einige Dokumente im System sind als **Type:ConfigurationAlert**, **Type: PerfHourly** oder **Type:Event** markiert, und so weiter. Alle Suchergebnisse, Dokumente, Datensätze oder Einträge zeigen die Basiseigenschaften und deren Werte für jedes dieser Datenelemente. Sie können die Feldnamen im Filter angeben, wenn Sie nur die Datensätze abrufen möchten, in dem das Feld den angegebenen Wert besitzt.
 
 *Type* ist im Prinzip nur ein Feld, über das alle Datensätze verfügen, es unterscheidet sich nicht von anderen Feldern. Dies wurde basierend auf dem Wert des Type-Felds festgelegt. Dieser Datensatz hat eine unterschiedliche Form oder Art. Übrigens ist **Type=PerfHourly** oder **Type=Ereignis** auch die Syntax, die Sie zur Abfrage von stündlichen Leistungsdatenaggregaten oder Ereignissen benötigen.
 
@@ -251,6 +251,8 @@ Der SELECT-Befehl verhält sich wie das Select-Objekt in PowerShell. Er gibt gef
 
 Dieser Befehl ist besonders nützlich, wenn Sie die Suchergebnisse steuern möchten und nur die Teile der Daten wählen, die für Ihre Untersuchung eine Rolle spielen, also häufig nicht der vollständige Datensatz. Dies ist auch nützlich, wenn Datensätze verschiedener Typen *einige* gemeinsame Eigenschaften aufweisen, dies aber nicht für *alle* Eigenschaften gilt. Sie können Ausgaben generieren, die natürlicher wie eine Tabelle aussehen oder gut funktionieren, wenn sie in eine CSV-Datei exportiert und dann in Excel bearbeitet werden.
 
+[AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
+
 ## Verwenden des "Measure"-Befehls
 
 MEASURE ist einer der vielseitigsten Befehle bei Operational Insights-Suchen. Sie können damit statistische *Funktionen* auf Ihre Daten anwenden und die Ergebnisse nach einem bestimmten Feld gruppieren. Es gibt mehrere statistische Funktionen, die "Measure" unterstützt.
@@ -263,12 +265,12 @@ Ergebnisse aus einer beliebigen Suchabfrage wie z. B. `Type=Event` zeigen auf de
 
 !["search measure count" ("Measure"-Count durchsuchen)](./media/operational-insights-search/search-measure-count01.png)
 
-Zum Beispiel sehen Sie in der Abbildung oben das **Computer** Feld, das anzeigt, dass innerhalb der fast 3 Millionen Ereignisse in den Ergebnissen 20 einmalige und eindeutige Werte für das **Computer**-Feld in diesen Datensätzen vorhanden sind. Die Kachel zeigt nur die fünf obersten an, welche die fünf häufigsten Werte sind, die in die **Computer**-Felder geschrieben werden, sortiert nach der Anzahl der Dokumente, die diesen bestimmten Wert in dem Feld enthalten. In der Abbildung sehen Sie, dass unter diesen fast 3 Millionen Ereignissen insgesamt 880.000 aus dem DM-Computer stammen, 602.000 aus dem DE-Computer usw..
+Zum Beispiel sehen Sie in der Abbildung oben das **Computer**-Feld, das anzeigt, dass innerhalb der fast 3 Millionen Ereignisse in den Ergebnissen 20 einmalige und eindeutige Werte dafür in diesen Datensätzen vorhanden sind. Die Kachel zeigt nur die fünf obersten an, welche die fünf häufigsten Werte sind, die in die **Computer**-Felder geschrieben werden, sortiert nach der Anzahl der Dokumente, die diesen bestimmten Wert in dem Feld enthalten. In der Abbildung sehen Sie, dass unter diesen fast 3 Millionen Ereignissen insgesamt 880.000 aus dem DM-Computer stammen, 602.000 aus dem DE-Computer usw..
 
 
 Was geschieht, wenn Sie alle Werte sehen möchten, obwohl die Kachel nur die ersten fünf anzeigt?
 
-Dies kann der "Measure"-Befehl mithilfe der "Count()"-Funktion erledigen. Diese Funktion verwendet keine Parameter. Geben Sie einfach das zu gruppieren Feld an, in diesem Fall das **Computer**-Feld:
+Dies kann der "Measure"-Befehl mithilfe der "Count()"-Funktion erledigen. Diese Funktion verwendet keine Parameter. Geben Sie einfach das zu gruppierende Feld an, in diesem Fall das **Computer**-Feld:
 
 `Type=Event | Measure count() by Computer`
 
@@ -280,7 +282,7 @@ Allerdings ist **Computer** nur ein Feld, das *in* jedem Datenelement verwendet 
 Type=Event | Measure count() by EventID
 ```
 
-Wenn Sie sich nicht für die tatsächliche Anzahl an Datensätzen interessieren, die einen bestimmten Wert enthalten, sondern nur eine Liste der Werte selbst benötigen, können Sie einen *Select*-Befehl am Ende hinzufügen und einfach die erste Spalte auswählen:
+Wenn Sie sich nicht für die tatsächliche Anzahl an Datensätzen interessieren, die einen bestimmten Wert enthalten, sondern nur eine Liste der Werte selbst benötigen, können Sie einen *Select*-Befehl am Ende hinzufügen, und einfach die erste Spalte auswählen:
 
 ```
 Type=Event | Measure count() by EventID | Select EventID
@@ -312,7 +314,7 @@ Es gibt verschiedene Szenarien, in denen **Measure Max()** und **Measure Min()**
 Bei Abfragen von Warnungen für die Konfigurationsbewertung gibt es die Eigenschaft **Schweregrad**, der entweder 0, 1 oder 2 sein kann, also Information, Warnung und kritischer Fehler. Beispiel:
 
 ```
-Type=Alert
+Type=ConfigurationAlert
 ```
 
 !["search measure count start" (Durchsuchen von "Measure"-Count starten)](./media/operational-insights-search/search-measure-max01.png)
@@ -320,7 +322,7 @@ Type=Alert
 Wenn Sie den höchsten Wert für alle Warnungen für einen gemeinsamen Computer nach Feld gruppiert erhalten möchten, verwenden Sie
 
 ```
-Type=Alert | Measure Max(Severity) by Computer
+Type=ConfigurationAlert | Measure Max(Severity) by Computer
 ```
 
 !["search measure max computer" ("Measure max"-Computer durchsuchen)](./media/operational-insights-search/search-measure-max02.png)
@@ -328,7 +330,7 @@ Type=Alert | Measure Max(Severity) by Computer
 Für Computer mit **Warnungen** wird angezeigt, dass für die meisten davon ein kritischer Fehler vorliegt und der Bacc-Computer eine Warnung des höchsten Schweregrads enthält.
 
 ```
-Type=Alert | Measure Max(Severity) by Computer
+Type=ConfigurationAlert | Measure Max(Severity) by Computer
 ```
 
 !["search measure max time generated computer" ("Measure max time" generierten Computer durchsuchen)](./media/operational-insights-search/search-measure-max03.png)
@@ -612,7 +614,7 @@ Sie können Datum/Zeit mit mathematischen Operatoren verketten, z. B.:
 
 Die folgende Tabelle enthält die unterstützten Datums-/Uhrzeit-Einheiten.
 
-<table border="1" cellspacing="4" cellpadding="4"><table> <tr> <th>Datum/Uhrzeit-Einheit </th> <th>Beschreibung </th> </tr> <tr> <td> <p>YEAR, YEARS</p> </td> <td> <p>rundet auf das aktuelle Jahr oder versetzt dieses um die angegebene Anzahl von Jahren.</p> </td> </tr> <tr> <td> <p>MONTH, MONTHS</p> </td> <td> <p>Rundet auf den aktuellen Monat oder versetzt um die angegebene Anzahl von Monaten.</p> </td></tr><tr><td><p>DAY, DAYS, DATE</p></td><td><p>Rundet auf den aktuellen Tag des Monats oder versetzt um die angegebene Anzahl von Tagen.</p> </td></tr><tr><td><p>HOUR, HOURS￼ </p></td><td><p> ￼Rundet auf die aktuelle Stunde oder versetzt um die angegebene Anzahl von Stunden.</p> </td></tr><tr><td><p>MINUTE, MINUTES</p></td><td><p>Rundet auf die aktuelle Minute oder versetzt um die angegebene Anzahl von Minuten.</p> </td></tr><tr><td><p>SECOND, SECONDS</p></td><td><p>Rundet auf die aktuelle Sekunde oder versetzt um die angegebene Anzahl von Sekunden.</p> </td></tr><tr><td><p>MILISECOND, MILLISECONDS, MILLI, MILLIS</p></td><td><p> ￼Rundet auf die aktuelle Millisekunde oder versetzt um die angegebene Anzahl von Millisekunden.</p></td></tr></table>
+<table border="1" cellspacing="4" cellpadding="4"><table> <tr> <th>Datum/Uhrzeit-Einheit </th> <th>Beschreibung </th> </tr> <tr> <td> <p>YEAR, YEARS</p> </td> <td> <p>rundet auf das aktuelle Jahr oder versetzt dieses um die angegebene Anzahl von Jahren.</p> </td> </tr> <tr> <td> <p>MONTH, MONTHS</p> </td> <td> <p>Rundet auf den aktuellen Monat oder versetzt ihn um die angegebene Anzahl von Monaten.</p> </td></tr><tr><td><p>DAY, DAYS, DATE</p></td><td><p>Rundet auf den aktuellen Tag des Monats oder versetzt ihn um die angegebene Anzahl von Tagen.</p> </td></tr><tr><td><p>HOUR, HOURS￼ </p></td><td><p> ￼Rundet auf die aktuelle Stunde oder versetzt sie um die angegebene Anzahl von Stunden.</p> </td></tr><tr><td><p>MINUTE, MINUTES</p></td><td><p>Rundet auf die aktuelle Minute oder versetzt sie um die angegebene Anzahl von Minuten.</p> </td></tr><tr><td><p>SECOND, SECONDS</p></td><td><p>Rundet auf die aktuelle Sekunde oder versetzt sie um die angegebene Anzahl von Sekunden.</p> </td></tr><tr><td><p>MILISECOND, MILLISECONDS, MILLI, MILLIS</p></td><td><p> ￼Rundet auf die aktuelle Millisekunde oder versetzt sie um die angegebene Anzahl von Millisekunden.</p></td></tr></table>
 
 
 #### Feldfacetten
@@ -688,7 +690,7 @@ Beispiele:
 Sie können den logischen Operator für Filterargumente der obersten Ebene auslassen. In diesem Fall wird vom AND-Operator ausgegangen.
 
 
-<table border="1" cellspacing="4" cellpadding="4"><table> <tr> <th>Filterausdruck</th> <th>entspricht</th> </tr> <tr> <td> <p>Systemfehler</p> </td> <td> <p>System Fehler</p> </td> </tr> <tr> <td> <p>System & Quot; Windows Server & Quot; ODER Schweregrad: 1</p> </td> <td> <p>System AND (& Quot; Windows Server & Quot; ODER Schweregrad: 1)</p> </td> </tr> </table>
+<table border="1" cellspacing="4" cellpadding="4"><table> <tr> <th>Filterausdruck</th> <th>entspricht</th> </tr> <tr> <td> <p>Systemfehler</p> </td> <td> <p>System UND Fehler</p> </td> </tr> <tr> <td> <p>System & Quot; Windows Server & Quot; ODER Schweregrad: 1</p> </td> <td> <p>System UND (& Quot; Windows Server & Quot; ODER Schweregrad: 1)</p> </td> </tr> </table>
 
 
 
@@ -764,7 +766,7 @@ Syntax:
 Aggregiert die Ergebnisse nach **groupField** und berechnet die aggregierten "Measure"-Werte mit **aggregatedField**.
 
 
-<table border="1" cellspacing="4" cellpadding="4"><table> <tr> <th>Messen der Statistikfunktion </th> <th>Beschreibung </th> </tr> <tr> <td> <p><em>aggregateFunction</em> </p> <p></p> </td> <td> <p>Der Name der Aggregatfunktion (ohne Berücksichtigung der Groß-und Kleinschreibung). Die folgenden Aggregatfunktionen werden unterstützt:</p> <ul> <li class="unordered">COUNT<br><br></li> <li class="unordered">MAX<br><br></li> <li class="unordered">MIN<br><br></li> <li class="unordered">SUM<br><br></li> <li class="unordered">AVG<br><br></li> <li class="unordered">STDDEV<br><br></li> </ul> </td> </tr> <tr> <td> <p><em>aggregatedField</em> </p> </td> <td> <p>Das Feld, die aggregiert wird. Dieses Feld ist für die Aggregatfunktion COUNT optional, muss jedoch ein vorhandenes numerisches Feld für MAX, SUM, MIN, AVG oder STDDEV sein.</p> </td> </tr> <tr> <td> <p><em>FieldAlias</em> </p> </td> <td> <p>Der (optionale) Alias für den berechneten aggregierten Wert. Wenn nicht angegeben, ist der Name des Felds <em>AggregatedValue.</em></p> </td> </tr> <tr> <td> <p><em>groupField</em> </p> </td> <td> <p>Der Name des Felds, in dem der Ergebnissatz gruppiert ist. </p> </td> </tr> <tr> <td> <p><em>Interval</em> </p> </td> <td> <p>Das angegebene Zeitintervall im Format: </p> <p><em>nnnNAME</em> </p> <p></p> <p>Wobei: </p> <p>nnn ist die positive ganze Zahl.</p> <p><em>NAME</em> ist der Name des Intervalls</p> <p>Unterstützte Intervall Namen enthalten (Groß-und Kleinschreibung): </p> MILLISECOND[S]<br><br></li> <li class="unordered">SECOND[S]<br><br></li> <li class="unordered">MINUTE[S]<br><br></li> <li class="unordered">HOUR[S]<br><br></li> <li class="unordered">DAY[S<br><br></li> MONTH[S]<br><br></li> <li class="unordered">YEAR[S]<br></li> </ul> </td> </tr> </table>
+<table border="1" cellspacing="4" cellpadding="4"><table> <tr> <th>Messen der Statistikfunktion </th> <th>Beschreibung </th> </tr> <tr> <td> <p><em>aggregateFunction</em> </p> <p></p> </td> <td> <p>Der Name der Aggregatfunktion (ohne Berücksichtigung der Groß-und Kleinschreibung). Die folgenden Aggregatfunktionen werden unterstützt:</p> <ul> <li class="unordered">COUNT<br><br></li> <li class="unordered">MAX<br><br></li> <li class="unordered">MIN<br><br></li> <li class="unordered">SUM<br><br></li> <li class="unordered">AVG<br><br></li> <li class="unordered">STDDEV<br><br></li> </ul> </td> </tr> <tr> <td> <p><em>aggregatedField</em> </p> </td> <td> <p>Das Feld, das aggregiert wird. Dieses Feld ist für die Aggregatfunktion COUNT optional, muss jedoch ein vorhandenes numerisches Feld für MAX, SUM, MIN, AVG oder STDDEV sein.</p> </td> </tr> <tr> <td> <p><em>FieldAlias</em> </p> </td> <td> <p>Der (optionale) Alias für den berechneten aggregierten Wert. Wenn nicht angegeben, ist der Name des Felds <em>AggregatedValue.</em></p> </td> </tr> <tr> <td> <p><em>groupField</em> </p> </td> <td> <p>Der Name des Felds, in dem der Ergebnissatz gruppiert ist. </p> </td> </tr> <tr> <td> <p><em>Interval</em> </p> </td> <td> <p>Das angegebene Zeitintervall im Format: </p> <p><em>nnnNAME</em> </p> <p></p> <p>Wobei: </p> <p>nnn ist die positive ganze Zahl.</p> <p><em>NAME</em> ist der Name des Intervalls</p> <p>Unterstützte Intervallnamen enthalten (Groß-und Kleinschreibung): </p><ul><li class="unordered"> MILLISECOND[S]<br><br></li> <li class="unordered">SECOND[S]<br><br></li> <li class="unordered">MINUTE[S]<br><br></li> <li class="unordered">HOUR[S]<br><br></li> <li class="unordered">DAY[S<br><br></li><li class="unordered"> MONTH[S]<br><br></li> <li class="unordered">YEAR[S]<br></li> </ul> </td> </tr> </table>
 
 
 
@@ -804,7 +806,7 @@ Wie im vorherigen Beispiel, jedoch mit einem aggregierten Feldalias (**AlertsPer
 
 *Erklärung*
 
-Gruppiert die Ergebnisse in stündlichen Intervallen mithilfe des **TimeCreated**-Felds, und gibt die Anzahl der Warnungen in jedem Intervall zurück.
+Gruppiert die Ergebnisse in Intervallen von fünf Tagen mithilfe des **TimeCreated**-Felds, und gibt die Anzahl der Warnungen in jedem Intervall zurück.
 
 **Beispiel 5**
 
@@ -820,7 +822,7 @@ Gruppiert die Warnungen anhand des Workloadnamens und gibt den Wert des maximale
 
 *Erklärung*
 
-Wie im vorherigen Beispiel, jedoch mit der aggregierten **Min** -Funktion.
+Wie im vorherigen Beispiel, jedoch mit der aggregierten **Min**-Funktion.
 
 **Beispiel 7**
 
@@ -2036,4 +2038,4 @@ Wenn Sie Suche verwenden, um Daten zu finden, zeigen die Ergebnisse verschiedene
 ## Weitere Ressourcen
 Stefan Roth hat einen praktisch Spickzettel für die Suche erstellt. Besuchen Sie seinen [Blog](http://stefanroth.net/2014/11/05/microsoft-azure-operational-insights-search-data-explorer-cheat-sheet/), um mehr zu erfahren und seinen Spickzettel herunterzuladen.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

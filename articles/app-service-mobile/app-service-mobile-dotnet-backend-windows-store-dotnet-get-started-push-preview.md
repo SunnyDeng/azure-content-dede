@@ -37,6 +37,10 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 * Ein aktives [Microsoft Store-Konto](http://go.microsoft.com/fwlink/p/?LinkId=280045)
 * <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio Community 2013</a>.
 
+##<a name="review"></a>Überprüfen der Konfiguration der Serverprojekts (optional)
+
+[AZURE.INCLUDE [app-service-mobile-dotnet-backend-enable-push-preview](../../includes/app-service-mobile-dotnet-backend-enable-push-preview.md)]
+
 ##<a id="register"></a>Registrieren der App für Pushbenachrichtigungen
 
 Um mit Azure App Service Pushbenachrichtigungen an universelle Windows-Apps senden zu können, müssen Sie Ihre App im Windows Store bereitstellen. Anschließend müssen Sie Ihre mobile App zur Integration in WNS mit Anmeldeinformationen für den Pushbenachrichtigungsdienst konfigurieren.
@@ -191,4 +195,4 @@ Ihre App kann jetzt Popupbenachrichtigungen empfangen.
 <!-- URLs. -->
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

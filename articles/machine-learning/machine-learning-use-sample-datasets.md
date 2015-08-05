@@ -1,7 +1,6 @@
 <properties 
 	pageTitle="Verwenden von Beispiel-DataSets in Machine Learning Studio | Microsoft Azure" 
 	description="Beschreibungen von in Beispielmodellen verwendete DataSets in ML Studio. Sie können diese Beispiel-DataSets für Experimente verwenden." 
-	keywords="data sets,datasets,ml studio,sample data sets"
 	services="machine-learning" 
 	documentationCenter="" 
 	authors="garyericson" 
@@ -318,4 +317,4 @@ For a list of sample experiments available in ML Studio, see [Machine Learning S
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

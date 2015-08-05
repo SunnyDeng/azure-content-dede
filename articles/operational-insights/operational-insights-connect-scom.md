@@ -46,4 +46,4 @@ Wenn Sie Operations Manager zum Überwachen der folgenden Arbeitsauslastungen ve
 
 [Konfigurieren von Proxy- und Firewall-Einstellungen (Optional)](operational-insights-proxy-firewall.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

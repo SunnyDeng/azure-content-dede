@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="05/19/2015"
+   ms.date="07/13/2015"
    ms.author="larryfr"/>
 
 #Entwickeln von Python-Streamingprogrammen für HDInsight
@@ -97,19 +97,19 @@ Nehmen Sie sich einen Moment Zeit, um den Code zu lesen und seine Funktionsweise
 Erstellen Sie eine neue Datei namens **mapper.py**, und verwenden Sie den folgenden Inhalt für die Datei:
 
 	#!/usr/bin/env python
-	
+
 	# import modules
 	from itertools import groupby
 	from operator import itemgetter
 	import sys
-	
+
 	# 'file' in this case is STDIN
 	def read_mapper_output(file, separator='\t'):
 		# Go through each line
 	    for line in file:
 			# Strip out the separator character
 	        yield line.rstrip().split(separator, 1)
-	
+
 	def main(separator='\t'):
 	    # Read the data using read_mapper_output
 	    data = read_mapper_output(sys.stdin, separator=separator)
@@ -127,7 +127,7 @@ Erstellen Sie eine neue Datei namens **mapper.py**, und verwenden Sie den folgen
 	        except ValueError:
 	            # Count was not a number, so do nothing
 	            pass
-	
+
 	if __name__ == "__main__":
 	    main()
 
@@ -153,12 +153,12 @@ Dadurch werden die Dateien aus dem lokalen System auf den Stammknoten kopiert.
 
 2. Verwenden Sie zum Starten des MapReduce-Auftrags den folgenden Befehl.
 
-		hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files mapper.py,reducer.py -mapper mapper.py -reducer reducer.py -input wasb:///example/data/davinci.txt -output wasb:///example/wordcountout
+		hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files mapper.py,reducer.py -mapper mapper.py -reducer reducer.py -input wasb:///example/data/gutenberg/davinci.txt -output wasb:///example/wordcountout
 
 	Dieser Befehl besteht aus den folgenden Komponenten:
 
 	* **hadoop-streaming.jar**: Wird verwendet, wenn Streaming-MapReduce-Vorgänge ausgeführt werden. Es verbindet Hadoop mit dem von Ihnen bereitgestellten externen MapReduce-Code.
-	
+
 	* **-files**: Teilt Hadoop mit, dass die angegebenen Dateien für diesen MapReduce-Auftrag erforderlich sind und auf alle Arbeitsknoten kopiert werden müssen
 
 	* **-mapper**: Teilt Hadoop mit, welche Datei als Mapper verwendet werden soll.
@@ -201,6 +201,5 @@ Nachdem Sie erfahren haben, wie Sie Streaming-MapReduce-Aufträge mit HDInsight 
 * [Verwenden von Hive mit HDInsight](hdinsight-use-hive.md)
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
- 
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

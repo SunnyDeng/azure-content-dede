@@ -77,4 +77,4 @@ In diesem Beispiel wurde die Verwendung derselben zugrunde liegenden Datenbank f
 [MultiChannelToDo]: https://github.com/Azure/mobile-services-samples/tree/web-mobile/MultiChannelToDo
 [Erstellen einer mobilen App]: ../article/app-service-mobile/app-service-mobile-dotnet-backend-xamarin-ios-get-started-preview.md
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

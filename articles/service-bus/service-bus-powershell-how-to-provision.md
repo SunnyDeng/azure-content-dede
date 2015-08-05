@@ -184,4 +184,4 @@ Es stehen auch einige einsatzbereite Skripts zum Download zur Verfügung: [Servi
 [.NET-API für Service Bus]: https://msdn.microsoft.com/library/microsoft.servicebus.aspx
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

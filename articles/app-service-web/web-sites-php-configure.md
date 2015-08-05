@@ -120,7 +120,7 @@ Wie im vorherigen Anschnitt angegeben ist die Standardkonfiguration die beste M�
 	![Web-App-Einstellungen][settings-button]
 
 5. Wählen Sie auf dem Blatt **Einstellungen** die Option **Anwendungseinstellungen** aus, und führen Sie einen Bildlauf zum Bereich **App-Einstellungen** aus.
-6. Erstellen Sie im Bereich **App-Einstellungen** den Schlüssel **PHP_EXTENSIONS**. Der Wert für diesen Schlüssel ist ein Pfad relativ zum Stammverzeichnis der Website: **bin\\your-ext-file**.
+6. Erstellen Sie im Bereich **App-Einstellungen** den Schlüssel **PHP_EXTENSIONS**. Der Wert für diesen Schlüssel ist ein Pfad relativ zum Stammverzeichnis der Website: **bin\your-ext-file**.
 
 	![Aktivieren Sie die Erweiterung in den App-Einstellungen][php-extensions]
 
@@ -176,4 +176,4 @@ Anstelle der PHP-Standardlaufzeit können App Service-Web-Apps auch eine PHP-Lau
 [GETPHPVERPS]: ./media/web-sites-php-configure/ShowPHPVersion-PS.png
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

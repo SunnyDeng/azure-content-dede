@@ -141,4 +141,4 @@ Microsoft und die Azure Automation-Community stellen Beispiel-Runbooks zur Verf�
 <strong>Geben Sie uns Feedback!</strong> Wenn Sie nach einer Azure Automation-Runbook-Lösung oder einem Integrationsmodul suchen, senden Sie im Script Center eine Skriptanforderung. Wenn Sie Feedback oder Vorschläge zu Features für Azure Automation haben, veröffentlichen Sie sie auf [User Voice](http://feedback.windowsazure.com/forums/34192--general-feedback). Vielen Dank!
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

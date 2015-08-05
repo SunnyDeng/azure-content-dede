@@ -50,4 +50,4 @@ Auf [GitHub](https://github.com/Azure/azure-quickstart-templates) finden Sie all
 Weitere Informationen zur Ressourcenverwaltung in Azure finden Sie [hier](../resource-group-template-deploy.md).
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

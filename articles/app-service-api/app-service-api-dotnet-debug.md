@@ -139,4 +139,4 @@ App Service-API-Apps sind App Service-Web-Apps, die über zusätzliche Features 
 Die im Rahmen dieser Lernprogrammreihe erstellte API-App ist öffentlich verfügbar und kann durch beliebige Benutzer aufgerufen werden. Informationen zum Schützen von API-Apps, damit nur authentifizierte Benutzer sie aufrufen können, finden Sie unter [Authentifizierung für API- und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

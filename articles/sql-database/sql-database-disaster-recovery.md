@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management" 
-   ms.date="04/13/2015"
+   ms.date="07/14/2015"
    ms.author="elfish"/>
 
 # Wiederherstellen einer Azure SQL-Datenbank nach einem Ausfall
@@ -101,4 +101,4 @@ Verwenden Sie REST für eine programmgesteuerte Durchführung der Datenbankwiede
 Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestellte Datenbank für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Abschließen einer wiederhergestellten Datenbank](sql-database-recovered-finalize.md).
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -104,4 +104,4 @@ Der kanonische Anwendungsfall, für den BigTable (und daher auch HBase) erstellt
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

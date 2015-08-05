@@ -180,4 +180,4 @@ Wenn Sie Administrator sind und mehrere Benutzer mit dem Arbeitsbereich verknüp
 
 3. Klicken Sie auf **Arbeitsbereich schließen**.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -220,4 +220,4 @@ Sie finden eine Referenz für die Vorlagen-Ausdruckssprache unter [Notification 
 [Notification Hub-Informationen für iOS]: http://msdn.microsoft.com/library/jj927168.aspx
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

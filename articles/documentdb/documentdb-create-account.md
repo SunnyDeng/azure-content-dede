@@ -45,4 +45,4 @@ Weitere Informationen zu DocumentDB finden Sie in folgenden Ressourcen:
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

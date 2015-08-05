@@ -41,4 +41,4 @@ Informationen zu den Service Fabric-Konzepten finden Sie hier:
 - [Partitionieren von Service Fabric-Diensten](service-fabric-concepts-partitioning.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

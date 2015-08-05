@@ -3,7 +3,7 @@
     pageTitle="Zugreifen auf Apps"
     description="Sie erfahren, welche Clients für Azure RemoteApp unterstützt werden und wie Sie auf Ihre Apps zugreifen."
     services="remoteapp"
-    documentationCenter=""
+	documentationCenter=""
     authors="lizap"
     manager="mbaldwin" />
 
@@ -207,4 +207,4 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem Windows Phone 8.1 Store ins
 ![Demofeed für Azure RemoteApp](./media/remoteapp-clients/WinPhone8.png)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

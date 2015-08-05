@@ -1,6 +1,6 @@
 <properties 
     pageTitle="Indizierungsrichtlinien für DocumentDB | Azure" 
-    description="Erfahren Sie, wie die Indizierung in DocumentDB funktioniert, und wie Sie die Indizierungsrichtlinie konfigurieren." 
+    description="Erfahren Sie, wie die Indizierung in DocumentDB funktioniert, und wie Sie die Indizierungsrichtlinie konfigurieren und ändern können." 
     services="documentdb" 
     documentationCenter="" 
     authors="mimig1" 
@@ -13,7 +13,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="data-services" 
-    ms.date="07/06/2015" 
+    ms.date="07/19/2015" 
     ms.author="mimig"/>
 
 
@@ -32,7 +32,7 @@ Das DocumentDB-Subsystem für die Indizierung dient zur Unterstützung von:
 
 Für die meisten Anwendungen können Sie die automatische Standardindizerungsrichtlinie verwenden, da sie die größte Flexibilität und vernünftige Kompromisse zwischen Leistung und Speichereffizienz bietet. Auf der anderen Seite ermöglicht die Angabe einer benutzerdefinierten Indizierungsrichtlinie differenzierte Kompromisse zwischen Abfrageleistung, Schreibleistung und Indexspeicheraufwand.
 
-Durch Ausschließen bestimmter Dokumente oder Pfade innerhalb von Dokumenten können Sie z. B. sowohl den für die Indizierung beanspruchten Speicherplatz als auch den Zeitaufwand beim Einfügen für die Indexwartung reduzieren. Sie können den Indextyp ändern, um diesen besser auf Bereichsabfragen anzupassen, oder Sie können die Indexgenauigkeit in Bytes erhöhen, um die Abfrageleistung zu verbessern. Dieser Artikel beschreibt die verschiedenen verfügbaren Optionen für die Indexkonfiguration in DocumentDB. Zudem wird beschrieben, wie die Indizierungsrichtlinie für Ihre Arbeitsauslastungen angepasst wird.
+Durch Ausschließen bestimmter Dokumente oder Pfade innerhalb von Dokumenten können Sie z. B. sowohl den für die Indizierung beanspruchten Speicherplatz als auch den Zeitaufwand beim Einfügen für die Indexwartung reduzieren. Sie können den Indextyp ändern, um diesen besser auf Bereichsabfragen anzupassen, oder Sie können die Indexgenauigkeit in Bytes erhöhen, um die Abfrageleistung zu verbessern. Dieser Artikel beschreibt die verschiedenen verfügbaren Optionen für die Indexkonfiguration in DocumentDB. Zudem wird beschrieben, wie die Indizierungsrichtlinie für Ihre Workloads angepasst wird.
 
 Nach Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 
@@ -41,14 +41,13 @@ Nach Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 - Wie kann ich den Index nach eventuellen Updates konfigurieren?
 - Wie kann ich die Indizierung konfigurieren, um Order By- oder Bereichsabfragen durchzuführen?
 
-
 ## So funktioniert die DocumentDB-Indizierung
 
 Bei der DocumentDB-Indizierung wird die Tatsache genutzt, dass Dokumente für die JSON-Grammatik **als Strukturen dargestellt** werden können. Damit ein JSON-Dokument als Struktur dargestellt werden kann, muss ein Dummy-Stammknoten erstellt werden, der für die restlichen Knoten im Dokument das übergeordnete Element darstellt. Jede Bezeichnung, einschließlich der Arrayindizes in einem JSON-Dokument, wird zu einem Knoten der Struktur. Die nachfolgende Abbildung zeigt ein JSON-Beispieldokument und die entsprechende Strukturdarstellung.
 
 ![Indizierungsrichtlinien](media/documentdb-indexing-policies/image001.png)
 
-Die JSON-Eigenschaft {"headquarters": "Belgium"} im obigen Beispiel entspricht dem Pfad /"headquarters"/"Belgium". Das JSON-Array {"exports": [{"city": “Moscow"}, {"city": Athens"}]} entspricht den Pfaden /"exports"/0/"city"/"Moscow" und /"exports"/1/"city"/"Athens".
+Die JSON-Eigenschaft `{"headquarters": "Belgium"}` im Beispiel oben entspricht dem Pfad `/headquarters/Belgium`. Das JSON-Array `{"exports": [{"city": “Moscow"}, {"city": Athens"}]}` entspricht den Pfaden `/exports/[]/city/Moscow` und `/exports/[]/city/Athens`.
 
 >[AZURE.NOTE]Die Pfaddarstellung verwischt die Grenzen zwischen Struktur/Schema und den Instanzwerten in Dokumenten, wodurch DocumentDB tatsächlich schemafrei sein kann.
 
@@ -56,64 +55,39 @@ In DocumentDB werden Dokumente in Sammlungen organisiert, die mithilfe von SQL a
 
 ## Konfigurieren der Indizierungsrichtlinie einer Sammlung
 
-Das folgende Beispiel veranschaulicht das Festlegen einer benutzerdefinierten Indizierungsrichtlinie bei der Erstellung einer Sammlung mithilfe der DocumentDB-REST-API. Das Beispiel stellt die Indizierungsrichtlinie in Form von Pfaden, Indextypen und Genauigkeiten dar.
+Für jede DocumentDB-Sammlung können Sie die folgenden Optionen konfigurieren:
 
-    POST https://<REST URI>/colls HTTP/1.1
-    Accept: application/json 
+- Indizierungsmodus: **Consistent**, **Lazy** (für asynchrone Aktualisierungen) oder **None** (nur "ID"-basierter Zugriff)
+- Eingeschlossene und ausgeschlossene Pfade: Legen Sie fest, welche Pfade in JSON eingeschlossen und ausgeschlossen sind.
+- Indexart: **Hash** (für Gleichheitsabfragen), **Range** (für Gleichheits-, Bereichs- und Order By-Abfragen mit größerem Speicher)
+- Indexgenauigkeit: 1–8 oder Maximum (–1) für Kompromiss zwischen Speicher und Leistung
+- Automatic: **true** oder **false** zur Aktivierung oder **manual** (opt-in mit jedem Einfügen)
 
-    {
-       "id":"customIndexCollection",
-       "indexingPolicy":{
-          "automatic":true,
-          "indexingMode":"Consistent",
-          "includedPaths":[
-             {
-                "path":"/*",
-                "indexes":[
+Mit dem folgenden .NET-Codeausschnitt wird gezeigt, wie eine benutzerdefinierte Indizierungsrichtlinie während der Erstellung einer Sammlung festgelegt wird. Hier wird die Richtlinie mit dem Bereichsindex für Zeichenfolgen und Zahlen mit maximaler Genauigkeit festgelegt. Mit dieser Richtlinie können Order By-Abfragen für Zeichenfolgen ausgeführt werden.
+
+    var collection = new DocumentCollection { Id = "myCollection" };
     
-                ]
-             }
-          ],
-          "excludedPaths":[
-             {
-                "path":"/nonIndexedContent/*"
-             }
-          ]
-       }
-    }
-     ...
+    collection.IndexingPolicy.IndexingMode = IndexingMode.Consistent;
+    
+    collection.IndexingPolicy.IncludedPaths.Add(
+        new IncludedPath { 
+            Path = "/*", 
+            Indexes = new Collection<Index> { 
+                new RangeIndex(DataType.String) { Precision = -1 }, 
+                new RangeIndex(DataType.Number) { Precision = -1 }
+            }
+        });
 
+    await client.CreateDocumentCollectionAsync(database.SelfLink, collection);   
 
-     HTTP/1.1 201 Created
 
 >[AZURE.NOTE]Das JSON-Schema für die Indizierungsrichtlinie wurde mit der Veröffentlichung der REST-API-Version 2015-06-03 geändert, um Bereichsindizes für Zeichenfolgen zu unterstützen. .NET SDK 1.2.0 und Java, Python und Node.js SDKs 1.1.0 unterstützen das neue Richtlinienschema. Für ältere SDKs wird die REST-API-Version 2015-04-08 genutzt und das ältere Schema der Indizierungsrichtlinie unterstützt.
 >
->Die Indizierungsrichtlinie einer Sammlung muss bei der Erstellung angegeben werden. Das Ändern der Indizierungsrichtlinie nach der Erstellung der Sammlung ist nicht zulässig, wird aber in einer zukünftigen Version von DocumentDB unterstützt.
->
->Standardmäßig indiziert DocumentDB alle Pfade in Dokumenten auf einheitliche Weise mit einem Hashindex. Der interne Pfad „Timestamp (_ts)“ wird in einem Bereichsindex gespeichert.
-
-### Automatische Indizierung
-
-Sie können wählen, ob die Sammlung automatisch alle Dokumente indizieren soll. Standardmäßig werden automatisch alle Dokumente indiziert, aber Sie können diese Option bei Bedarf deaktivieren. Wenn die Indizierung deaktiviert ist, kann auf die Dokumente nur über ihre eigenen Links oder über Abfragen mithilfe der ID zugegriffen werden.
-
-Mit deaktivierter automatischer Indizierung können Sie lediglich bestimmte Dokumente weiterhin zum Index hinzufügen. Umgekehrt können Sie die automatische Indizierung aktiviert lassen und nur bestimmte Dokumente einzeln ausschließen. Konfigurationen mit aktivierter/deaktivierter Indizierung sind hilfreich, wenn nur eine Teilmenge der Dokumente abgefragt werden muss.
-
-Sie können die Standardrichtlinie konfigurieren, indem Sie für den Wert der automatischen Eigenschaft "true" oder "false" angeben. Um dies für ein einzelnes Dokument außer Kraft zu setzen, können Sie den "x-ms-indexingdirective"-Anforderungsheader beim Einfügen oder Ersetzen eines Dokuments festlegen.
-
-Das folgende Beispiel veranschaulicht z. B. das explizite Einbeziehen eines Dokuments mithilfe des [DocumentDB .NET SDK](https://github.com/Azure/azure-documentdb-java) und der [RequestOptions.IndexingDirective](http://msdn.microsoft.com/library/microsoft.azure.documents.client.requestoptions.indexingdirective.aspx)-Eigenschaft.
-
-    // If you want to override the default collection behavior to either
-    // exclude (or include) a Document from indexing,
-    // use the RequestOptions.IndexingDirective property.
-    client.CreateDocumentAsync(defaultCollection.SelfLink,
-        new { id = "AndersenFamily", isRegistered = true },
-        new RequestOptions { IndexingDirective = IndexingDirective.Include });
-        
-
+>Standardmäßig indiziert DocumentDB alle Zeichenfolgeneigenschaften in Dokumenten konsistent mit einem Hashindex und numerische Eigenschaften mit einem Bereichsindex.
 
 ### Indizierungsmodi
 
-Sie können zwischen synchronen (konsistent) und asynchronen (verzögert) Indexaktualisierungen wählen. Der Index wird bei jedem Einfügen, Ersetzen oder Löschen eines Dokuments der Sammlung standardmäßig synchron aktualisiert. Auf diese Weise können die Abfragen dieselbe Konsistenzebene wie die von Dokumentlesevorgängen berücksichtigen, ohne dass sich Verzögerung dadurch ergeben, dass der Index aufholen muss.
+Sie können zwischen synchronen (**Consistent**), asynchronen (**Lazy**) und keinen (**None**) Indexaktualisierungen wählen. Der Index wird bei jedem Einfügen, Ersetzen oder Löschen eines Dokuments der Sammlung standardmäßig synchron aktualisiert. Auf diese Weise können die Abfragen dieselbe Konsistenzebene wie die von Dokumentlesevorgängen berücksichtigen, ohne dass sich Verzögerung dadurch ergeben, dass der Index aufholen muss.
 
 Obwohl DocumentDB für Schreibvorgänge optimiert ist und beständige Mengen an Dokumentschreibvorgängen zusammen mit der synchronen Indexwartung unterstützt, können Sie bestimmte Sammlungen so konfigurieren, dass ihr Index flexibel aktualisiert wird. Die verzögerte Indizierung eignet sich hervorragend für Szenarios, in denen Daten in großen Mengen geschrieben werden und sich der Arbeitsaufwand zum Indizieren von Inhalten über einen längeren Zeitraum bezahlt machen soll. Dadurch können Sie den bereitgestellten Durchsatz effektiv verwenden und Schreibanforderungen zu Spitzenzeiten mit minimalen Wartezeiten behandeln. Bei aktivierter verzögerter Indizierung werden Abfrageergebnisse unabhängig von der für das Datenbankkonto konfigurierten Konsistenzstufe letztendlich konsistent.
 
@@ -135,43 +109,13 @@ Das folgende Beispiel zeigt die Erstellung einer DocumentDB-Sammlung mithilfe de
      
      collection = await client.CreateDocumentCollectionAsync(database.SelfLink, collection);
 
-### Indextypen und Genauigkeit
-
-Der Typ oder das Schema, der bzw. das für die Indexeinträge verwendet wird, hat einen direkten Einfluss auf die Indexspeicherung und Leistung. Bei einem Schema mit höherer Genauigkeit werden Abfragen in der Regel schneller ausgeführt. Es ergibt sich aber auch ein höherer Speicherbedarf für den Index. Die Auswahl einer geringeren Genauigkeit bedeutet, dass während der Abfrageausführung mehr Dokumente verarbeitet werden müssen, wobei aber der Speicheraufwand geringer ist.
-
-Die Indexgenauigkeit für Werte unter jedem Pfad kann zwischen 1 und 8 liegen oder auf -1 festgelegt sein. Hiermit wird angegeben, dass für den Pfad die maximal erforderliche Genauigkeit verwendet werden muss. Jeder Pfad kann mit einem Array von Indizes konfiguriert werden: einer für jeden Datentyp (Zeichenfolge und Zahl) und jeweils mit Angabe der Genauigkeit.
-
-Es gibt auch zwei unterstützte Arten von Indextypen: Hash und Bereich. Durch die Auswahl des Indextyps **Hash** werden effiziente Gleichheitsabfragen ermöglicht. In den meisten Fällen benötigen Hashindizes keine höhere Genauigkeit als den Standardwert von 3 Bytes.
-
-Wenn Sie den Indextyp **Bereich** auswählen, sind sowohl Bereichsabfragen (mit >, <, >=, <=, !=) als auch **Order By**-Abfragen möglich. Order By-Abfragen erfordern standardmäßig auch, dass der Bereichsindex mit der maximalen Indexgenauigkeit (-1) erstellt wird, um die gesamte Sortierung der Ergebnisse sicherzustellen.
-
-Für Pfade mit großen Wertebereichen wird empfohlen, eine höhere Genauigkeit zu verwenden, z. B. 6 Bytes. Ein häufiges Anwendungsbeispiel, das einen höheren Genauigkeitsbereichsindex erfordert, sind als Epochenzeit gespeicherte Zeitstempel.
-
-Wenn Ihr Anwendungsfall keine Order By-Abfragen bzw. effizienten Bereichsabfragen erfordert, bieten die standardmäßigen Hashindizes den besten Kompromiss zwischen Speicherung und Leistung. Beachten Sie, dass Sie zum Unterstützen von Order By- oder Bereichsabfragen eine benutzerdefinierte, nicht standardmäßige Indexrichtlinie angeben müssen.
-
-Das folgende Beispiel zeigt, wie die Genauigkeit für Bereichsindizes in einer Sammlung mithilfe des .NET SDKs erhöht wird. Beachten Sie, dass hierbei ein spezieller Pfad („/“) verwendet wird. Dies wird im nächsten Abschnitt erläutert.
-
-    var rangeDefault = new DocumentCollection { Id = "rangeCollection" };
-    
-    rangeDefault.IndexingPolicy.IncludedPaths.Add(
-        new IncludedPath { 
-            Path = "/*", 
-            Indexes = new Collection<Index> { 
-                new RangeIndex(DataType.String) { Precision = -1 }, 
-                new RangeIndex(DataType.Number) { Precision = -1 }
-            }
-        });
-
-    await client.CreateDocumentCollectionAsync(database.SelfLink, rangeDefault);   
-
-
 ### Indexpfade
 
 Innerhalb von Dokumenten können Sie auswählen, welche Pfade bei der Indizierung ein- oder ausgeschlossen werden müssen. Dies kann bessere Schreibleistungen und geringeren Indexspeicherbedarf für Szenarien bieten, in denen die Abfragemuster im Voraus bekannt sind.
 
 Indexpfade beginnen mit dem Stamm (/) und enden in der Regel mit dem Platzhalterzeichen "?", das angibt, dass mehrere mögliche Werte für das Präfix verfügbar sind. Für SELECT * FROM Families F WHERE F.familyName = "Andersen" müssen Sie z. B. einen Indexpfad für /familyName/? in die Indexrichtlinie der Sammlung einbinden.
 
-Indexpfade können auch das Platzhalterzeichen "*" verwenden, um das Verhalten für Pfade rekursiv unter dem Präfix anzugeben. Beispielsweise kann /payload/* dazu verwendet werden, um sämtliche Elemente unter der „payload“-Eigenschaft von der Indizierung auszuschließen.
+Indexpfade können auch das Platzhalterzeichen "*" verwenden, um das Verhalten für Pfade rekursiv unter dem Präfix anzugeben. Beispielsweise kann "/payload/*" dazu verwendet werden, um sämtliche Elemente unter der "payload"-Eigenschaft von der Indizierung auszuschließen.
 
 Im Folgenden sind die allgemeinen Muster zum Angeben von Indexpfaden aufgeführt:
 
@@ -180,7 +124,7 @@ Im Folgenden sind die allgemeinen Muster zum Angeben von Indexpfaden aufgeführt
         <tr>
             <td valign="top">
                 <p>
-                    <strong>Pfad</strong>
+                    <strong>Path</strong>
                 </p>
             </td>
             <td valign="top">
@@ -217,6 +161,9 @@ Im Folgenden sind die allgemeinen Muster zum Angeben von Indexpfaden aufgeführt
                 <p>
                     SELECT * FROM collection c WHERE c.prop > 5
                 </p>
+                <p>
+                    SELECT * FROM collection c ORDER BY c.prop
+                </p>                
             </td>
         </tr>
         <tr>
@@ -238,7 +185,9 @@ Im Folgenden sind die allgemeinen Muster zum Angeben von Indexpfaden aufgeführt
                 <p>
                     SELECT * FROM collection c WHERE c.prop.subprop.nextprop = "value"
                 </p>
-
+                <p>
+                    SELECT * FROM collection c ORDER BY c.prop
+                </p>
             </td>
         </tr>
         <tr>
@@ -293,14 +242,17 @@ Im Folgenden sind die allgemeinen Muster zum Angeben von Indexpfaden aufgeführt
                 <p>
                     SELECT * FROM collection c WHERE c.prop.subprop > 5
                 </p>
+                <p>
+                    SELECT * FROM collection c ORDER BY c.prop.subprop
+                </p>                
             </td>
         </tr>
     </tbody>
 </table>
 
->[AZURE.NOTE]Beim Festlegen von benutzerdefinierten Indexpfaden ist es erforderlich, dass Sie die Standardindizierungsregel für die gesamte Dokumentstruktur angeben, die durch den speziellen Pfad „/*“ gekennzeichnet ist.
+>[AZURE.NOTE]Beim Festlegen von benutzerdefinierten Indexpfaden ist es erforderlich, dass Sie die Standardindizierungsregel für die gesamte Dokumentstruktur angeben, die durch den speziellen Pfad "/" angegeben ist.
 
-Im folgenden Beispiel wird ein bestimmter Pfad mit Bereichsindizierung und einem benutzerdefiniertem Genauigkeitswert von 20 Byte konfiguriert:
+Im folgenden Beispiel wird ein bestimmter Pfad mit Bereichsindizierung und benutzerdefiniertem Genauigkeitswert von 20 Byte konfiguriert:
 
     var collection = new DocumentCollection { Id = "rangeSinglePathCollection" };    
     
@@ -311,17 +263,62 @@ Im folgenden Beispiel wird ein bestimmter Pfad mit Bereichsindizierung und einem
                 new RangeIndex(DataType.String) { Precision = 20 } } 
             });
 
+    // Default for everything else
     collection.IndexingPolicy.IncludedPaths.Add(
         new IncludedPath { 
-            Path = "/*" 
+            Path = "/*" ,
+            Indexes = new Collection<Index> {
+                new HashIndex(DataType.String) { Precision = 3 }, 
+                new RangeIndex(DataType.Number) { Precision = -1 } 
+            }
         });
         
     collection = await client.CreateDocumentCollectionAsync(database.SelfLink, pathRange);
 
+### Indexdatentypen, Indexarten und Indexgenauigkeiten
 
-DocumentDB gibt einen Fehler zurück, wenn in einer Abfrage „Order By“ verwendet wird, aber für den abgefragten Pfad kein Bereichsindex mit maximaler Genauigkeit vorhanden ist. Ein Fehler wird für Abfragen mit Bereichsoperatoren wie >= zurückgegeben, wenn kein Bereichsindex vorhanden ist (mit beliebiger Genauigkeit). Sie können aber verarbeitet werden, sofern andere Filter vorhanden sind, für die die Verarbeitung über den Index möglich ist. Bereichsabfragen können ohne Bereichsindex mit dem Header „x-ms-documentdb-enable-scans“ in der REST-API oder mithilfe der „EnableScanInQuery“-Option des .NET SDK ausgeführt werden.
+Nachdem wir uns mit der Angabe von Pfaden beschäftigt haben, wenden wir uns jetzt den Optionen zu, mit denen die Indizierungsrichtlinie für einen Pfad konfiguriert werden kann. Für jeden Pfad können Sie eine oder mehrere Indizierungsdefinitionen angeben:
 
-Auf ähnliche Weise können Pfade vollständig von der Indizierung ausgeschlossen werden. Im nächsten Beispiel wird gezeigt, wie Sie einen gesamten Abschnitt der Dokumente (eine Unterstruktur) mit dem Platzhalterzeichen „*“ von der Indizierung ausschließen.
+- Datentyp: **Zeichenfolge** oder **Zahl** (kann nur einen Eintrag pro Datentyp pro Pfad enthalten)
+- Indexart: **Hash** (Gleichheitsabfragen) oder **Range** (Gleichheits-, Bereichs- und Order By-Abfragen)
+- Genauigkeit: 1–8 oder –1 (maximale Genauigkeit) für Zahlen, 1–100 (maximale Genauigkeit) für Zeichenfolgen
+
+#### Indexart
+
+DocumentDB unterstützt zwei Indexarten für jedes Paar aus Pfad und Datentyp.
+
+- **Hash** unterstützt wirksame Gleichheitsabfragen. In den meisten Fällen benötigen Hashindizes keine höhere Genauigkeit als den Standardwert von 3 Bytes.
+- **Range** unterstützt wirksame Gleichheitsabfragen, Bereichsabfragen (mit >, <, >=, <=, !=) und Order By-Abfragen. Bei Order By-Abfragen muss standardmäßig auch die maximale Indexgenauigkeit (–1) angegeben werden.
+
+#### Indexgenauigkeit
+
+Die Indexgenauigkeit ermöglicht eine Abstimmung zwischen dem Indexspeicheraufwand und der Abfrageleistung. Bei Zahlen wird die Verwendung der Standardkonfiguration für die Genauigkeit von –1 empfohlen. Da Zahlen in JSON eine Größe von 8 Byte aufweisen, entspricht dies einer Konfiguration von 8 Byte. Die Auswahl eines niedrigeren Werts für die Genauigkeit, z. B. 1 bis 7, bedeutet, dass Werte in einigen Bereichen dem gleichen Indexeintrag zugeordnet werden. Der Indexspeicherplatz reduziert sich, bei der Abfrageausführung muss jedoch möglicherweise eine größere Anzahl von Dokumenten verarbeitet werden, sodass sich somit der Durchsatz erhöht, d. h., eine größere Anzahl von Anforderungseinheiten genutzt wird.
+
+Die Konfiguration der Indexgenauigkeit lässt sich bei Zeichenfolgenbereichen sinnvoller anwenden. Da Zeichenfolgen eine beliebige Länge aufweisen können, kann sich die Wahl der Indexgenauigkeit auf die Leistung von Abfragen von Zeichenfolgenbereichen und auf den benötigten Indexspeicherplatz auswirken. Zeichenfolgenbereichsindizes können mit einem Wert von 1 bis 100 oder mit dem Wert für die maximale Genauigkeit (–1) konfiguriert werden. Für Order By-Abfragen von Zeichenfolgen müssen Sie einen Wert für den angegebenen Pfad festlegen (–1).
+
+Das folgende Beispiel zeigt, wie die Genauigkeit für Bereichsindizes in einer Sammlung mithilfe des .NET SDKs erhöht wird. Beachten Sie, dass dabei der Standardpfad "/*" verwendet wird.
+
+    var rangeDefault = new DocumentCollection { Id = "rangeCollection" };
+    
+    rangeDefault.IndexingPolicy.IncludedPaths.Add(
+        new IncludedPath { 
+            Path = "/*", 
+            Indexes = new Collection<Index> { 
+                new RangeIndex(DataType.String) { Precision = -1 }, 
+                new RangeIndex(DataType.Number) { Precision = -1 }
+            }
+        });
+
+    await client.CreateDocumentCollectionAsync(database.SelfLink, rangeDefault);   
+
+
+> [AZURE.NOTE]DocumentDB gibt einen Fehler zurück, wenn in einer Abfrage "Order By" verwendet wird, aber kein Bereichsindex für den abgefragten Pfad mit maximaler Genauigkeit vorhanden ist.
+>
+> Ein Fehler wird für Abfragen mit Bereichsoperatoren wie z. B. ">=" zurückgegeben, wenn kein Bereichsindex vorhanden ist (mit beliebiger Genauigkeit). Sie können aber verarbeitet werden, sofern andere Filter vorhanden sind, für die die Verarbeitung über den Index möglich ist.
+> 
+> Bereichsabfragen können ohne Bereichsindex mit dem Header "x-ms-documentdb-enable-scans" in der REST-API oder mithilfe der "EnableScanInQuery"-Option des .NET SDK ausgeführt werden.
+
+Auf ähnliche Weise können Pfade vollständig von der Indizierung ausgeschlossen werden. Im nächsten Beispiel wird gezeigt, wie Sie einen gesamten Abschnitt der Dokumente (eine Unterstruktur) mit dem Platzhalterzeichen "*" von der Indizierung ausschließen.
 
     var collection = new DocumentCollection { Id = "excludedPathCollection" };
     collection.IndexingPolicy.IncludedPaths.Add(new IncludedPath { Path = "/" });
@@ -330,9 +327,24 @@ Auf ähnliche Weise können Pfade vollständig von der Indizierung ausgeschlosse
     collection = await client.CreateDocumentCollectionAsync(database.SelfLink, excluded);
 
 
+### Automatische Indizierung
+
+Sie können wählen, ob die Sammlung automatisch alle Dokumente indizieren soll. Standardmäßig werden automatisch alle Dokumente indiziert, aber Sie können diese Option bei Bedarf deaktivieren. Wenn die Indizierung deaktiviert ist, kann auf die Dokumente nur über ihre eigenen Links oder über Abfragen mithilfe der ID zugegriffen werden.
+
+Mit deaktivierter automatischer Indizierung können Sie lediglich bestimmte Dokumente weiterhin zum Index hinzufügen. Umgekehrt können Sie die automatische Indizierung aktiviert lassen und nur bestimmte Dokumente einzeln ausschließen. Konfigurationen mit aktivierter/deaktivierter Indizierung sind hilfreich, wenn nur eine Teilmenge der Dokumente abgefragt werden muss.
+
+Das folgende Beispiel veranschaulicht z. B. das explizite Einbeziehen eines Dokuments mithilfe des [DocumentDB .NET SDK](https://github.com/Azure/azure-documentdb-java) und der [RequestOptions.IndexingDirective](http://msdn.microsoft.com/library/microsoft.azure.documents.client.requestoptions.indexingdirective.aspx)-Eigenschaft.
+
+    // If you want to override the default collection behavior to either
+    // exclude (or include) a Document from indexing,
+    // use the RequestOptions.IndexingDirective property.
+    client.CreateDocumentAsync(defaultCollection.SelfLink,
+        new { id = "AndersenFamily", isRegistered = true },
+        new RequestOptions { IndexingDirective = IndexingDirective.Include });
+
 ## Leistungsoptimierung
 
-Da Sie unterschiedliche Konfigurationen für die Indizierungsrichtlinie auswerten, sollten Sie die Auswirkungen der Richtlinie auf den Speicher und den Durchsatz über die DocumentDB-APIs messen.
+Die DocumentDB-APIs enthalten Informationen zu Leistungsindikatoren, z. B. dem genutzten Indexspeicher, und zu den Durchsatzkosten (Anforderungseinheiten) für jeden Vorgang. Anhand dieser Informationen können unterschiedliche Indizierungsrichtlinien im Hinblick auf die Leistungsoptimierung verglichen werden.
 
 Um das Speicherkontingent und die Verwendung einer Sammlung zu überprüfen, führen Sie ein "HEAD" oder "GET" für die Sammlungsressource aus, und überprüfen Sie die Header "x-ms-request-quota" und "x-ms-request-usage". Im .NET SDK enthalten die Eigenschaften [DocumentSizeQuota](http://msdn.microsoft.com/library/dn850325.aspx) und [DocumentSizeUsage](http://msdn.microsoft.com/library/azure/dn850324.aspx) in [ResourceResponse<T>](http://msdn.microsoft.com/library/dn799209.aspx) diese entsprechenden Werte.
 
@@ -342,7 +354,7 @@ Um das Speicherkontingent und die Verwendung einer Sammlung zu überprüfen, fü
      Console.WriteLine("Document size quota: {0}, usage: {1}", collectionInfo.DocumentQuota, collectionInfo.DocumentUsage);
 
 
-Um den Indizierungsaufwand für jeden Schreibvorgang (Erstellen, Aktualisieren oder Löschen) zu messen, überprüfen Sie den „x-ms-request-charge“-Header (oder die entsprechende [RequestCharge](http://msdn.microsoft.com/library/dn799099.aspx)-Eigenschaft in [ResourceResponse<T>](http://msdn.microsoft.com/library/dn799209.aspx) im .NET SDK). Hier können Sie die Anzahl der Anforderungseinheiten messen, die von diesen Vorgängen genutzt werden.
+Um den Indizierungsaufwand für jeden Schreibvorgang (Erstellen, Aktualisieren oder Löschen) zu messen, überprüfen Sie den "x-ms-request-charge"-Header (oder die entsprechende [RequestCharge](http://msdn.microsoft.com/library/dn799099.aspx)-Eigenschaft in [ResourceResponse<T>](http://msdn.microsoft.com/library/dn799209.aspx) im .NET SDK). Hier können Sie die Anzahl der Anforderungseinheiten messen, die von diesen Vorgängen genutzt werden.
 
      // Measure the performance (request units) of writes.     
      ResourceResponse<Document> response = await client.CreateDocumentAsync(collectionSelfLink, myDocument);              
@@ -361,19 +373,19 @@ Um den Indizierungsaufwand für jeden Schreibvorgang (Erstellen, Aktualisieren o
      Console.WriteLine("Query consumed {0} request units in total", totalRequestCharge);
 
 ## Änderungen an der Spezifikation der Indizierungsrichtlinie
-Am 7. Juli 2015 wurde mit der REST-API-Version 2015-06-03 eine Änderung im Schema für die Indizierungsrichtlinie eingeführt. Die entsprechenden Klassen in den SDK-Versionen verfügen über neue Implementierungen für das Schema.
+Am 7. Juli 2015 wurde mit der REST-API-Version 2015-06-03 eine Änderung im Schema für die Indizierungsrichtlinie eingeführt. Die entsprechenden Klassen in den SDK-Versionen verfügen über neue Implementierungen für das Schema.
 
 Die folgenden Änderungen wurden in die JSON-Spezifikation implementiert:
 
 - Indizierungsrichtlinie unterstützt Bereichsindizes für Zeichenfolgen
 - Jeder Pfad kann mehrere Indexdefinitionen aufweisen, eine für jeden Datentyp
-- Indizierungsgenauigkeit unterstützt 1 bis 8 bei den Zahlen und 1 bis 100 bei Zeichenfolgen sowie -1 (maximale Genauigkeit)
+- Indizierungsgenauigkeit unterstützt 1 bis 8 bei den Zahlen und 1 bis 100 bei Zeichenfolgen sowie –1 (maximale Genauigkeit)
 - Pfadsegmente erfordern für die einzelnen Pfade keine doppelten Anführungszeichen als Escapezeichen (beispielsweise können Sie einen Pfad für /title/? hinzufügen, anstatt /"title"/?)
-- Stammpfad für „alle Pfade“ kann als „/*“ dargestellt werden (zusätzlich zu „/“)
+- Stammpfad für "alle Pfade" kann als "/*" dargestellt werden (zusätzlich zu "/")
 
 Wenn in Ihrem Code Sammlungen mit einer benutzerdefinierten Indizierungsrichtlinie bereitgestellt werden, die mit Version 1.1.0 des .NET SDK oder früher geschrieben wurden, müssen Sie Ihren Anwendungscode zum Behandeln dieser Änderungen ändern, um die Umstellung auf SDK-Version 1.2.0 durchzuführen. Falls Sie keinen Code mit Konfiguration der Indizierungsrichtlinie haben oder weiterhin eine ältere SDK-Version verwenden möchten, sind keine Änderungen erforderlich.
 
-Hier sind einige Beispiele aufgeführt, um die Unterschiede zwischen der API-Version 2015-06-03 und der Vorgängerversion 2015-04-08 zu veranschaulichen.
+Für einen praktischen Vergleich folgen ein Beispiel für eine benutzerdefinierte Indizierungsrichtlinie unter Verwendung der REST-API-Version 2015-06-03 sowie ein Beispiel unter Verwendung der vorherigen Version 2015-04-08.
 
 **Vorherige Indizierungsrichtlinie (JSON)**
 
@@ -432,4 +444,4 @@ Verwenden Sie die unten angegebenen Links, um auf Beispiele für die Verwaltung 
 
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

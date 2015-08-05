@@ -222,4 +222,4 @@ Die folgende Abbildung zeigt einen typischen Workflow, den ein Entwickler mit Ba
 [burst_cluster]: ./media/batch-hpc-solutions/burst_cluster.png
 [batch_proc]: ./media/batch-hpc-solutions/batch_proc.png
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

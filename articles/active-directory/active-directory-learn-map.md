@@ -38,4 +38,4 @@ Informationen zu Verwendungseinschränkungen und anderen Dienstbeschränkungen f
 * [Azure-Identität](fundamentals-identity.md)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

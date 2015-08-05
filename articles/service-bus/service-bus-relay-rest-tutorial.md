@@ -568,7 +568,7 @@ namespace Microsoft.ServiceBus.Samples
 
 Führen Sie nach dem Erstellen der Projektmappe Folgendes aus, um die Anwendung auszuführen:
 
-1. Führen Sie den Dienst an einer Eingabeaufforderung aus (ImageListener\\bin\\Debug\\ImageListener.exe).
+1. Führen Sie den Dienst an einer Eingabeaufforderung aus (ImageListener\bin\Debug\ImageListener.exe).
 
 2. Kopieren Sie die Adresse aus der Eingabeaufforderung in einen Browser, um das Bild anzuzeigen.
 
@@ -580,4 +580,4 @@ Da Sie jetzt eine Anwendung erstellt haben, die den Service Bus Relay-Dienst ver
 
 - [Verwenden des Service Bus Relay-Diensts](service-bus-dotnet-how-to-use-relay.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

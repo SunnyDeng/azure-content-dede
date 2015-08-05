@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/27/2015"
+   ms.date="07/10/2015"
    ms.author="joaoma" />
 
-# Traffic Manager – Übersicht
+# Was ist Traffic Manager?
 
 Mit Microsoft Azure Traffic Manager können Sie die Verteilung des Benutzerdatenverkehrs an Ihre angegebenen Endpunkte steuern, darunter z. B. Azure Cloud Services, Websites und andere Endpunkte. Die Funktionsweise von Traffic Manager basiert darauf, dass Sie ein intelligentes Richtlinienmodul auf DNS-Abfragen (Domain Name System) von Domänennamen Ihrer Internetressourcen anwenden. Die Azure Cloud Services oder Websites können in verschiedenen Datencentern auf der ganzen Welt ausgeführt werden.
 
@@ -160,7 +160,7 @@ Wenn Sie ein Traffic Manager-Profil als Endpunkt hinzufügen und die Mindestanza
 
 Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen Präsentation zu Traffic Manager verwenden oder für Ihre eigenen Zwecke ändern möchten, finden Sie diese unter [Traffic Manager-Abbildungen in der MSDN-Dokumentation](http://gallery.technet.microsoft.com/Traffic-Manager-figures-in-887e7c99) (in englischer Sprache).
 
-## Siehe auch
+## Nächste Schritte
 
 [Cloud Services](http://go.microsoft.com/fwlink/p/?LinkId=314074)
 
@@ -170,4 +170,4 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

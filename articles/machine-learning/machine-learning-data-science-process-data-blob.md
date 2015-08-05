@@ -2,7 +2,6 @@
 	pageTitle="Verarbeiten von Azure-Blobdaten mit erweiterter Analyse | Microsoft Azure" 
 	description="Verarbeiten von Daten im Azure-Blobspeicher" 
 	services="machine-learning,storage" 
-	solutions="" 
 	documentationCenter="" 
 	authors="msolhab" 
 	manager="paulettm" 
@@ -186,4 +185,4 @@ Nachdem Sie die Daten untersucht und die erforderlichen Funktionen erstellt habe
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

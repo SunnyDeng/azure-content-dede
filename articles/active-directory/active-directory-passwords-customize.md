@@ -729,4 +729,4 @@ In der folgenden Tabelle werden die Auswirkungen der einzelnen Steuerelemente au
 * [Weitere Informationen](active-directory-passwords-learn-more.md)
 * [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx) 
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

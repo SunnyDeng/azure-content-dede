@@ -134,4 +134,4 @@ In den folgenden Tabellen sind die Größe und die Kapazität, die von den einze
 
 [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](virtual-machines-a8-a9-a10-a11-specs.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

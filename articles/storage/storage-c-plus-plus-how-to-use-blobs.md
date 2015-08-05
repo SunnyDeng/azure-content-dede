@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-	ms.date="05/11/2015" 
+	ms.date="07/19/2015" 
     ms.author="tamram"/>
 
 # Verwenden des Blob-Speichers mit C++  
@@ -165,6 +165,8 @@ Um die Blobs in einem Container aufzuführen, müssen Sie zuerst einen Container
 		}
 	}
 
+Weitere Informationen zu Auflistungsvorgängen finden Sie unter [Auflisten von Azure Storage-Ressourcen in C++](storage-c-plus-plus-enumeration.md).
+
 ## Herunterladen von Blobs
 Zum Herunterladen von Blobs rufen Sie zunächst einen Blob-Verweis ab, und rufen Sie anschließend die **download_to_stream**-Methode auf. Im folgenden Beispiel wird die **download_to_stream**-Methode verwendet, um den Blob-Inhalt auf ein Datenstromobjekt zu übertragen, das danach in einer lokalen Datei gespeichert werden kann.
 
@@ -230,7 +232,8 @@ Zum Löschen eines Blobs rufen Sie zunächst einen Blob-Verweis ab, und rufen Si
 Nachdem Sie sich nun mit den Grundlagen von Blob-Speichern vertraut gemacht haben, lesen Sie die folgenden Artikel, um mehr über Azure-Speicher zu erfahren.
 
 -	[Verwenden des Warteschlangenspeichers in C++](storage-c-plus-plus-how-to-use-queues.md)
--	[How to use Table Storage from C++](storage-c-plus-plus-how-to-use-tables.md) (in englischer Sprache)
+-	[Verwenden des Tabellenspeichers mit C++](storage-c-plus-plus-how-to-use-tables.md)
+-	[Auflisten von Azure Storage-Ressourcen in C++](storage-c-plus-plus-enumeration.md)
 -	[Speicherclientbibliothek für C++](https://msdn.microsoft.com/library/azure/gg433040.aspx) 
 -	[MSDN-Referenz für Azure-Speicher](https://msdn.microsoft.com/library/azure/gg433040.aspx)
 -	[Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
@@ -240,4 +243,4 @@ Nachdem Sie sich nun mit den Grundlagen von Blob-Speichern vertraut gemacht habe
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -63,4 +63,4 @@ Anzeigen eines VM-Images | `azure vm image show [options]` | Nicht verfügbar
 * Weitere Informationen zur Verwendung der Azure-Befehlszeilenschnittstelle mit Ressourcen im ARM-Modus finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md) und [Verwalten der rollenbasierten Zugriffssteuerung mit der plattformübergreifenden Befehlszeilenschnittstelle](../role-based-access-control-xplat-cli.md).
 * Weitere Beispiele für die Befehle der Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle (Azure-CLI)](../virtual-machines-command-line-tools.md) und [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](azure-cli-arm-commands.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

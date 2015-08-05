@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Virtual Network – häufig gestellte Fragen"
+   pageTitle="FAQs zu virtuellen Netzwerken"
    description="Azure Virtual Network (VNet) – häufig gestellte Fragen"
    services="virtual-network"
    documentationCenter="na"
@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/08/2015"
+   ms.date="07/20/2015"
    ms.author="telmos" />
 
-# Virtual Network – häufig gestellte Fragen
+# FAQs zu virtuellen Netzwerken
 
 [AZURE.INCLUDE [virtual-networks-vnet-faq-include](../../includes/virtual-networks-vnet-faq-include.md)]
 
@@ -23,4 +23,4 @@
 
 Die neuesten häufig gestellte Fragen zu virtuellen Netzwerk-VPNs finden Sie unter [Häufig gestellte Fragen zum VPN-Gateway](vpn-gateway-vpn-faq.md).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

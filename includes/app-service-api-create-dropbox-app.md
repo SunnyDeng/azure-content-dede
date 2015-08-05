@@ -20,4 +20,4 @@ Die folgenden Schritte zeigen das Vorgehen zum Erstellen einer Dropbox-App mithi
 
 	![Erstellen einer Dropbox-App](./media/app-service-api-create-dropbox-app/dbappsettings.png)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

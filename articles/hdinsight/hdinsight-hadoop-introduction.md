@@ -1,7 +1,6 @@
 <properties
 	pageTitle="Was ist Hadoop in HDInsight?: Big Data-Analyse in der Cloud | Microsoft Azure"
 	description="Eine Einführung in Hadoop-Komponenten in der Cloud in HDInsight. Erfahren Sie, wie HDInsight Hadoop-Cluster nutzt, um Big Data zu verwalten, zu analysieren und dazugehörige Berichte zu erstellen."
-	keywords="big data,big data analysis,hadoop,introduction to hadoop,what is hadoop"
 	services="hdinsight"
 	documentationCenter=""
 	authors="cjgronlund"
@@ -247,4 +246,4 @@ Wenden Sie Big Data-Analysen auf Daten Ihres Unternehmens an, um sich Einblicke 
 [zookeeper]: http://zookeeper.apache.org/
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

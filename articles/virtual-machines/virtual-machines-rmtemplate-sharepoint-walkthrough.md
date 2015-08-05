@@ -1,30 +1,30 @@
-<properties 
-	pageTitle="Ressourcen-Manager-Vorlage für die SharePoint-Farm mit drei Servern" 
-	description="Untersuchen Sie schrittweise die Struktur der Vorlagendatei &quot;azuredeploy.json&quot; für die SharePoint-Farm mit drei Servern." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+<properties
+	pageTitle="Ressourcen-Manager-Vorlage für die SharePoint-Farm mit drei Servern"
+	description="Untersuchen Sie schrittweise die Struktur der Vorlagendatei ";azuredeploy.json"; für die SharePoint-Farm mit drei Servern."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="davidmu1"
+	manager="timlt"
 	editor=""/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/29/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="04/29/2015"
+	ms.author="davidmu"/>
 
 # Ressourcen-Manager-Vorlage für die SharePoint-Farm mit drei Servern
 
 Dieses Thema führt Sie schrittweise durch die Struktur der Vorlagendatei "azuredeploy.json" für die SharePoint-Farm mit drei Servern. Von [hier](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json) aus können Sie den Inhalt dieser Vorlage in Ihrem Browser anzeigen.
 
-Stattdessen können Sie eine lokale Kopie der Datei "azuredeploy.json" untersuchen, indem Sie einen lokalen Ordner als Speicherort für die Datei festlegen und sie erstellen (z. B. C:\\Azure\\Templates\\SharePointFarm). Geben Sie den Ordnernamen ein, und führen Sie diese Befehle an der Azure PowerShell- Eingabeaufforderung aus.
+Stattdessen können Sie eine lokale Kopie der Datei "azuredeploy.json" untersuchen, indem Sie einen lokalen Ordner als Speicherort für die Datei festlegen und sie erstellen (z. B. C:\Azure\Templates\SharePointFarm). Geben Sie den Ordnernamen ein, und führen Sie diese Befehle an der Azure PowerShell- Eingabeaufforderung aus.
 
 	$folderName="<folder name, such as C:\Azure\Templates\SharePointFarm>"
 	$webclient = New-Object System.Net.WebClient
-	$url = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json"	
+	$url = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json"
 	$filePath = $folderName + "\azuredeploy.json"
 	$webclient.DownloadFile($url,$filePath)
 
@@ -370,12 +370,10 @@ Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Man
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Azure Resource Manager Overview](../resource-group-overview.md) (in englischer Sprache)
+[Azure Resource Manager Overview](resource-group-overview.md) (in englischer Sprache)
 
-[Authoring Azure Resource Manager Templates](../resource-group-authoring-templates.md) (in englischer Sprache)
+[Authoring Azure Resource Manager Templates](resource-group-authoring-templates.md) (in englischer Sprache)
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
- 
-
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

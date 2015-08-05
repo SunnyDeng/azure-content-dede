@@ -38,4 +38,4 @@ Funktionen für den Lastenausgleich von Ressourcen
 [Image1]: media/service-fabric-resource-balancer-architecture/Service-Fabric-Resource-Balancer-Architecture.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

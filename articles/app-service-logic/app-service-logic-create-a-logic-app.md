@@ -137,7 +137,7 @@ Der letzte Schritt ist das Hinzufügen einer Aktion, die Tweets in eine Dropbox-
 
 	Dadurch wird der Wert `@first(body('twitterconnector')).TweetText` in das Textfeld eingegeben. Dieser generierte Wert enthält die folgenden Teile:
 
-	Inhaltsteil | Beschreibung
+Inhaltsteil | Beschreibung
 	------------------------------------------ | ------------
 	 `@` | Gibt an, dass Sie eine Funktion statt eines tatsächlichen Werts eingeben.
 	`actions('twitterconnector').outputs.body` | Ruft die Tweets ab, die von der Twitter-Connector-Abfrage zurückgegeben wurden.
@@ -172,4 +172,4 @@ In weniger als 5 Minuten haben Sie eine einfache Logik-App eingerichtet, die in 
 [Verwenden von Logik-App-Features]: app-service-logic-use-logic-app-features.md
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

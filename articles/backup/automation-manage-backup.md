@@ -42,4 +42,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und seiner Verwendu
 * Weitere Informationen finden Sie im Handbuch [Erste Schritte mit Azure Automation](http://go.microsoft.com/fwlink/?LinkId=390560).
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

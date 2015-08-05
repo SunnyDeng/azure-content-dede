@@ -272,4 +272,4 @@ Dieses Lernprogramm hat die Grundlagen der Zusammenarbeit einer Windows Phone 8-
 [How to add a new Windows Firewall port rule]: http://go.microsoft.com/fwlink/?LinkId=392240
    
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

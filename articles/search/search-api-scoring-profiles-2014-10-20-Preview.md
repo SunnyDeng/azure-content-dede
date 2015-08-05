@@ -326,4 +326,4 @@ Weitere Beispiele finden Sie unter [XML-Schema: Datentypen (W3.org-Website)](htt
 [1]: ./media/search-api-scoring-profiles-2014-10-20-Preview/scoring_interpolations.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -44,4 +44,4 @@ Zertifikate können nicht aus Azure Automation exportiert werden. Sie müssen si
 - [Automation-Objekte](https://msdn.microsoft.com/library/dn939988.aspx)
 - [Azure-Cmdlets](https://msdn.microsoft.com/library/dn690262.aspx) 
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -612,4 +612,4 @@ In vielen Fällen können Berichte in Batchprozessen nach einem bestimmten Zeitp
 - Die Seite [Grundlegendes zur Überwachung von Warnungen und Benachrichtigungen in Azure](https://msdn.microsoft.com/library/azure/dn306639.aspx) auf der Microsoft-Website.
 - Die Seite [Application Insights](app-insights-get-started/) auf der Microsoft-Website.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

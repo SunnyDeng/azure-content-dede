@@ -136,4 +136,4 @@ Keine Änderung der Netzwerkeigenschaften von VM-2 nach dem Failover | VM-1 blei
 Nachdem Sie die Netzwerkzuordnung nun besser nachvollziehen können, können Sie sich zur Vorbereitung auf die Bereitstellung mit den [bewährten Methoden](site-recovery-best-practices.md) vertraut machen.
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

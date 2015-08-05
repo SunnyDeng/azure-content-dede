@@ -24,13 +24,13 @@ Azure-Ressourcen-Manager bietet die Möglichkeit, Vorgänge für Ressourcen mith
 
 Sperren unterscheiden sich vom Zuweisen von Benutzerberechtigungen zum Ausführen bestimmter Aktionen. Weitere Informationen zum Festlegen von Berechtigungen für Benutzer und Rollen finden Sie unter [Rollenbasierte Zugriffssteuerung über das Vorschauportal](role-based-access-control-configure.md) und [Verwalten und Überwachen des Zugriffs auf Ressourcen](resource-group-rbac.md).
 
-## Häufige Szenarien
+## Häufige Szenarios
 
 Ein häufiges Szenario ist eine Ressourcengruppe mit Ressourcen, die in einem Aus-und-An-Muster verwendet werden. VM-Ressourcen werden in regelmäßigen Abständen aktiviert, um Daten für ein angegebenes Zeitintervall zu verarbeiten, und dann wieder deaktiviert. In diesem Szenario möchten Sie das Herunterfahren der virtuellen Computer ermöglichen, ohne dabei jedoch ein Speicherkonto zu löschen. In diesem Szenario verwenden Sie für das Speicherkonto eine Ressourcensperre mit der Sperrebene **CanNotDelete**.
 
 In einem anderen Szenario gibt es in Ihrem Unternehmen möglicherweise Zeiträume, in denen keine Updates in der Produktionsumgebung durchgeführt werden sollen. Mit der Sperrebene **ReadOnly** können Sie die Erstellung oder Updates stoppen. Als Einzelhandelsunternehmen möchten Sie womöglich verhindern, dass während der Einkaufsperiode rund um die Feiertage Updates durchgeführt werde. Als Finanzdienstleister gelten bei Ihnen möglicherweise Einschränkungen in Bezug auf Bereitstellungen während bestimmter Marktstunden. Eine Ressourcensperre kann eine Richtlinie bereitstellen, um die Ressourcen je nach Bedarf zu sperren. Diese kann für bestimmte Ressourcen oder die gesamte Ressourcengruppe angewendet werden.
 
-## Erstellen eine Sperre in einer Vorlage
+## Erstellen einer Sperre in einer Vorlage
 
 Das folgende Beispiel zeigt eine Vorlage, mit der eine Sperre für ein Speicherkonto erstellt wird. Das Speicherkonto, für das die Sperre gelten soll, wird als Parameter bereitgestellt und in Verbindung mit der concat()-Funktion verwendet. Das Ergebnis ist der Ressourcenname, der auf "Microsoft.Authorization" endet und an den der Name der Sperre angefügt wird, in diesem Fall **myLock**.
 
@@ -85,7 +85,7 @@ Beispiele finden Sie in unter [REST-API für Verwaltungssperren](https://msdn.mi
 
 Sie können bereitgestellte Ressourcen mit Azure PowerShell sperren, indem Sie wie unten gezeigt das **New-AzureResourceLock**-Cmdlet verwenden.
 
-    PS C:> New-AzureResourceLock -LockLevel CanNotDelete -LockName LockSite -ResourceName examplesite -ResourceType Microsoft.Web/sites -ResourceGroupName ExampleGroup
+    PS C:\> New-AzureResourceLock -LockLevel CanNotDelete -LockName LockSite -ResourceName examplesite -ResourceType Microsoft.Web/sites -ResourceGroupName ExampleGroup
 
 PowerShell bietet auch andere Befehle für die Arbeit mit Sperren, z. B. **Set-AzureResourceLock**, um eine Sperre zu aktualisieren, und **Remove-AzureResourceLock**, um eine Sperre zu löschen.
 
@@ -94,4 +94,4 @@ PowerShell bietet auch andere Befehle für die Arbeit mit Sperren, z. B. **Set-
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](resource-group-using-tags.md)
 - [Verschieben von Ressourcen in eine neue Ressourcengruppe](resource-group-move-resources.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

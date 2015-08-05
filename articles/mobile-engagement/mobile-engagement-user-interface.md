@@ -133,4 +133,4 @@ Sobald Sie den Azure Mobile Service-[SDK][Link 5] in Ihre Anwendung integriert u
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

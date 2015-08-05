@@ -26,12 +26,12 @@ Die folgenden Schritte müssen ausgeführt werden, bevor Sie Azure DNS mit Azure
 ### Schritt 1
  Azure DNS verwendet den Azure-Ressourcen-Manager (ARM). Stellen Sie sicher, dass Sie in den PowerShell-Modus wechseln, um die ARM-Cmdlets zu verwenden. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](../powershell-azure-resource-manager).<BR><BR>
 
-		PS C:> Switch-AzureMode -Name AzureResourceManager
+		PS C:\> Switch-AzureMode -Name AzureResourceManager
 
 ### Schritt 2
  Melden Sie sich beim Azure-Konto an.<BR><BR>
 
-		PS C:> Add-AzureAccount
+		PS C:\> Add-AzureAccount
 
 Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.<BR>
 
@@ -39,14 +39,14 @@ Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.<BR
 Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 
 
-		PS C:> Select-AzureSubscription -SubscriptionName "MySubscription"
+		PS C:\> Select-AzureSubscription -SubscriptionName "MySubscription"
 
 Um eine Liste der verfügbaren Abonnements anzuzeigen, verwenden Sie das Cmdlet "Get-AzureSubscription".<BR>
 
 ### Schritt 4
 Erstellen Sie eine neue Ressourcengruppe. (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)<BR>
 
-		PS C:> New-AzureResourceGroup -Name MyAzureResourceGroup -location "West US"
+		PS C:\> New-AzureResourceGroup -Name MyAzureResourceGroup -location "West US"
 
 
 Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speicherort angeben. Dieser wird als Standardspeicherort für Ressourcen in dieser Ressourcengruppe verwendet. Da alle DNS-Ressourcen global und nicht regional sind, hat die Auswahl des Speicherorts für die Ressourcengruppe jedoch keine Auswirkungen auf Azure DNS.<BR>
@@ -75,13 +75,13 @@ Standardmäßig verwendet Azure DNS PowerShell Etags, um gleichzeitige Änderung
 ### Tags
 Tags unterscheiden sich von Etags. Tags sind eine Liste von Name-Wert-Paaren, die vom Azure-Ressourcen-Manager zum Beschriften von Ressourcen zu Abrechnungs- oder Gruppierungszwecken verwendet werden. Weitere Informationen zu Tags finden Sie unter "Verwenden von Tags zum Organisieren von Azure-Ressourcen". Azure DNS PowerShell unterstützt Tags für Zonen und Datensatzgruppen, die mit den Optionsparametern "-Tag" angegeben wurden. Das folgende Beispiel zeigt, wie Sie eine DNS-Zone mit zwei Tags erstellen, "project = demo" und "env = test":
 
-	PS C:> New-AzureDnsZone -Name contoso.com -ResourceGroupName MyAzureResourceGroup -Tag @( @{ Name="project"; Value="demo" }, @{ Name="env"; Value="test" } )
+	PS C:\> New-AzureDnsZone -Name contoso.com -ResourceGroupName MyAzureResourceGroup -Tag @( @{ Name="project"; Value="demo" }, @{ Name="env"; Value="test" } )
 
 
 ## Erstellen einer DNS-Zone
 Eine DNS-Zone wird mit dem Cmdlet "New-AzureDnsZone" erstellt. Im folgenden Beispiel erstellen wir eine DNS-Zone namens "contoso.com" in der Ressourcengruppe namens "MyResourceGroup":<BR>
 
-		PS C:> New-AzureDnsZone -Name contoso.com -ResourceGroupName MyAzureResourceGroup
+		PS C:\> New-AzureDnsZone -Name contoso.com -ResourceGroupName MyAzureResourceGroup
 
 >[AZURE.NOTE]In Azure DNS sollten Zonennamen ohne abschließenden "." angegeben werden. Beispiel: "contoso.com" anstatt "contoso.com.".<BR>
 
@@ -95,7 +95,7 @@ Die DNS-Zone wurde nun in Azure DNS erstellt. Beim Erstellen einer DNS-Zone werd
 
 Verwenden Sie Get-AzureDnsRecordSet, um diese Einträge anzuzeigen:
 
-		PS C:> Get-AzureDnsRecordSet -ZoneName contoso.com -ResourceGroupName MyAzureResourceGroup
+		PS C:\> Get-AzureDnsRecordSet -ZoneName contoso.com -ResourceGroupName MyAzureResourceGroup
 
 	Name              : @
 	ZoneName          : contoso.com
@@ -123,7 +123,7 @@ Nach der Erstellung Ihrer ersten DNS-Zone können Sie sie mit DNS-Tools wie nslo
 
 Wenn Sie Ihre Domäne noch nicht delegiert haben, um die neue Zone in Azure DNS zu verwenden, müssen Sie die DNS-Abfrage direkt auf einen der Namenserver für die Zone leiten. Die Namenserver für die Zone werden in den NS-Einträgen angegeben, wie von Get-AzureDnsRecordSet oben aufgeführt. Achten Sie darauf, die korrekten Werte für die Zone im folgenden Befehl zu ersetzen.<BR>
 
-		C:> nslookup
+		C:\> nslookup
 		> set type=SOA
 		> server ns1-01.azure-dns.com
 		> contoso.com
@@ -147,4 +147,4 @@ Wenn Sie Ihre Domäne noch nicht delegiert haben, um die neue Zone in Azure DNS 
 [Erste Schritte beim Erstellen von Datensatzgruppen und Einträgen](dns-getstarted-create-recordset.md)<BR> [Verwalten von DNS-Zonen](dns-operations-dnszones.md)<BR> [Verwalten von DNS-Einträgen](dns-operations-recordsets.md)<BR> [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)<BR> [Referenz zur Azure DNS-REST-API](https://msdn.microsoft.com/library/azure/mt163862.aspx)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

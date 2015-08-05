@@ -12,4 +12,4 @@
 
    Weitere Informationen finden Sie unter [Verbinden mit Azure in Visual Studio](http://go.microsoft.com/fwlink/?LinkId=324796).
 
-<!---HONumber=62-->
+<!---HONumber=July15_HO4-->

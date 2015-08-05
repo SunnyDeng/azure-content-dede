@@ -30,7 +30,7 @@ Bevor wir genauer auf das Thema Partitionierung eingehen, betrachten wir einige 
 - Sammlungen sind die Grenzen für ACID-Transaktionen, also gespeicherte Prozeduren und Trigger.
 - Sammlungen erzwingen kein Schema und können daher für JSON-Dokumente des gleichen Typs oder unterschiedlicher Typen verwendet werden.
 
-Ab Version [1\.1.0 des Azure DocumentDB .NET SDK](http://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) können Sie Dokumentvorgänge direkt in einer Datenbank durchführen. Intern verwendet der [DocumentClient](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.aspx) den "PartitionResolver", den Sie angegeben haben, damit die Datenbank Anforderungen an die entsprechende Sammlung weiterleitet.
+Ab Version [1.1.0 des Azure DocumentDB .NET SDK](http://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) können Sie Dokumentvorgänge direkt in einer Datenbank durchführen. Intern verwendet der [DocumentClient](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.aspx) den "PartitionResolver", den Sie angegeben haben, damit die Datenbank Anforderungen an die entsprechende Sammlung weiterleitet.
 
 Jede PartitionResolver-Klasse ist eine konkrete Implementierung einer [IPartitionResolver](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.ipartitionresolver.aspx)-Schnittstelle mit drei Methoden: [GetPartitionKey](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.ipartitionresolver.getpartitionkey.aspx), [ResolveForCreate](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.ipartitionresolver.resolveforcreate.aspx) und [ResolveForRead](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.ipartitionresolver.resolveforread.aspx). LINQ-Abfragen und ReadFeed-Iteratoren verwenden die ResolveForRead-Methode intern zum Durchlaufen aller Sammlungen, die dem Partitionsschlüssel für die Anforderung entsprechen. Ebenso wird bei Erstellungsvorgängen die ResolveForCreate-Methode zum Weiterleiten von Erstellungsvorgängen an die richtige Partition. Für Ersetzungs-, Lösch- und Lesevorgänge sind keine Änderungen erforderlich, da diese Dokumente verwenden, die bereits den Verweis auf die entsprechende Sammlung enthalten.
 
@@ -167,4 +167,4 @@ Sie können "PartitionResolver" verketten, indem Sie Ihren eigenen "IPartitionRe
 * [DocumentDB-Blog mit Leistungstipps](http://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

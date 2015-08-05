@@ -248,4 +248,4 @@ Derzeit können NSGs ausschließlich über PowerShell-Cmdlets und REST-APIs konf
 
 	Get-Command *azurenetworksecuritygroup*
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

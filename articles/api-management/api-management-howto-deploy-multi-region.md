@@ -75,4 +75,4 @@ Wenn Sie die gewünschten Regionen entfernt haben, klicken Sie auf **Speichern**
 [Einheit]: http://azure.microsoft.com/pricing/details/api-management/
 [Premium]: http://azure.microsoft.com/pricing/details/api-management/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

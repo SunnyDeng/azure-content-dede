@@ -142,4 +142,4 @@ Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht h
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

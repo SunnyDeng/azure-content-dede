@@ -121,7 +121,7 @@ Verfügbare Bereiche werden von jedem SaaS-Anbieter definiert und sind im Entwic
 	 
 			install-package DropboxRestAPI  
 
-1. Öffnen Sie *Controllers\\ValuesController.cs*, und ersetzen Sie den gesamten Code in der Datei durch folgenden Code.
+1. Öffnen Sie *Controllers\ValuesController.cs*, und ersetzen Sie den gesamten Code in der Datei durch folgenden Code.
 
 		using DropboxRestAPI;
 		using Microsoft.Azure.AppService.ApiApps.Service;
@@ -447,4 +447,4 @@ Sie haben erfahren, wie Sie eine API-App programmieren und konfigurieren, die si
 [Azure preview portal]: https://portal.azure.com/
 [Azure portal]: https://manage.windowsazure.com/
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

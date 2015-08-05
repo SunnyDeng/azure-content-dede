@@ -1,21 +1,21 @@
-<properties 
-	pageTitle="Automatisieren mit dem Azure-Ressourcen-Manager" 
-	description="Hier erhalten Sie Links zu Themen über die Automatisierung von virtuellen Maschinen mit dem Azure-Ressourcen-Manager." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+<properties
+	pageTitle="Automatisieren mit dem Azure-Ressourcen-Manager"
+	description="Hier finden Sie Links zu Themen zum Automatisieren der Erstellung und Verwaltung von virtuellen Computern in Azure mit dem Ressourcen-Manager."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="davidmu1"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/12/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="index-page"
+	ms.date="07/09/2015"
+	ms.author="davidmu"/>
 
 # Automatisieren mit dem Azure-Ressourcen-Manager
 
@@ -59,7 +59,7 @@ Der Azure-Ressourcen-Manager vereinfacht die Bereitstellung und Verwaltung von k
 ## Automatisieren mit .NET
 
 [Bereitstellen von Azure-Ressourcen mit der .NET-Bibliothek](virtual-machines-arm-deployment.md)
-   
+
 ## Automatisieren mit Azure Automation
 
 [Verwalten von VM-Aufgaben mit Azure Automation](automation-manage-virtual-machines.md)
@@ -70,6 +70,4 @@ Der Azure-Ressourcen-Manager vereinfacht die Bereitstellung und Verwaltung von k
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
- 
-
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

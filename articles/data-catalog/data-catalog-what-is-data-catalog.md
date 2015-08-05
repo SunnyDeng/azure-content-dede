@@ -117,4 +117,4 @@ Das ultimative Ziel der Datenermittlung besteht darin, die erforderlichen Daten 
  
 > [AZURE.NOTE]Für die private Preview-Version von Azure Data Catalog wird nur Microsoft Excel direkt unterstützt und ist im Menü **Verbinden** verfügbar.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

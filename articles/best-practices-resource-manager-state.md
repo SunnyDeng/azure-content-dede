@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Bewährte Methoden für die Verarbeitung von Status in Azure-Ressourcen-Manager-Vorlagen"
 	description="Zeigt empfohlene Vorgehensweisen zum Verwenden komplexer Objekte, um Statusdaten für Azure-Ressourcen-Manager-Vorlagen und verknüpfte Vorlagen freizugeben."
-	services="virtual-machines"
+	services="azure-resource-manager"
 	documentationCenter=""
 	authors="mmercuri"
 	manager="georgem"
@@ -150,7 +150,7 @@ domainName | String | Domänenname der öffentlich zugänglichen Jumpbox-VM im F
 adminUsername | String | Benutzername für die virtuellen Computer
 adminPassword | String | Kennwort für die virtuellen Computer
 tshirtSize | Zeichenfolge aus einer eingeschränkten Liste von angebotenen T-Shirt-Größen | Die Größe der benannten Skalierungseinheit, die bereitgestellt werden soll. Beispielsweise "Small", "Medium", "Large".
-virtualNetworkName | String | Der Name des virtuellen Netzwerks, das der Consumer verwenden möchte.
+virtualNetworkName | String | Der Name des virtuellen Netzwerks, das der Nutzer verwenden möchte.
 enableJumpbox | Zeichenfolge aus einer eingeschränkten Liste (aktiviert/deaktiviert) | Parameter, der angibt, ob eine Jumpbox für die Umgebung aktiviert werden soll. Werte: "aktiviert", "deaktiviert".
 
 ### An verknüpfte Vorlagen gesendete Parameter.
@@ -161,7 +161,7 @@ Bei der Verbindung mit verknüpften Vorlagen wird häufig eine Mischung aus stat
 
 Mithilfe statischer Variablen werden häufig Basiswerte wie z. B. URLs bereitgestellt, die in einer Vorlage oder als Werte verwendet werden, um Werte für dynamische Variablen zu erstellen.
 
-Im unten stehenden Vorlagenauszug gibt *templateBaseUrl* den Stammspeicherort für die Vorlage in GitHub zurück. Die nächste Zeile erstellt eine neue Variable*sharedTemplateUrl*, die den Wert von *templateBaseUrl* mit dem bekannten Namen der Vorlage für freigegebene Ressourcen verkettet. Darunter wird eine komplexe Objektvariable verwendet, um eine T-Shirt-Größe zu speichern. Hierbei wird *templateBaseUrl* verkettet, um den Speicherort der Vorlage für die bekannte Konfiguration anzugeben, der in der Eigenschaft *vmTemplate* gespeichert ist.
+Im unten stehenden Vorlagenauszug gibt *templateBaseUrl*den Stammspeicherort für die Vorlage in GitHub zurück. Die nächste Zeile erstellt eine neue Variable*sharedTemplateUrl*, die den Wert von *TemplateBaseUrl* mit dem bekannten Namen der freigegebenen Ressourcenvorlage verkettet. Darunter wird eine komplexe Objektvariable verwendet, um eine T-Shirt-Größe zu speichern. Hierbei wird *templateBaseUrl* verkettet, um den Speicherort der Vorlage für die bekannte Konfiguration anzugeben, der in der Eigenschaft *vmTemplate* gespeichert ist.
 
 Der Vorteil dieses Ansatzes ist, dass Sie die Vorlage problemlos verschieben, verzweigen oder als Grundlage für eine neue Vorlage verwenden können. Wenn sich der Speicherort für die Vorlage ändert, müssen Sie nur die statische Variable an einer Stelle ändern: der Hauptvorlage. Diese übergibt die Änderung an alle anderen Vorlagen.
 
@@ -319,7 +319,7 @@ Das folgende Beispiel zeigt ein Objekt für *osSettings*:
 
 ##### machineSettings
 
-Die generierte Variable *machineSettings* ist ein komplexes Objekt, das verschiedene wichtige Variablen zum Erstellen eines neuen virtuellen Computers umfasst: Administratorbenutzername und -kennwort, ein Präfix für die VM-Namen und einen Verweis auf ein Betriebssystemimage, wie unten gezeigt:
+Die generierte Variable *machineSettings* ist ein komplexes Objekt, das verschiedene Hauptvariablen zum Erstellen eines neuen virtuellen Computers enthält: Administratorbenutzername und -kennwort, ein Präfix für die VM-Namen und einen Verweis auf ein Betriebssystemimage, wie unten gezeigt:
 
     "machineSettings": {
         "adminUsername": "[parameters('adminUsername')]",
@@ -333,7 +333,7 @@ Die generierte Variable *machineSettings* ist ein komplexes Objekt, das verschie
         }
     },
 
-Beachten Sie, dass *osImageReference* die Werte aus der in der Hauptvorlage definierten Variable *osSettings* abruft. Dies bedeutet, dass Sie das Betriebssystem eines virtuellen Computers problemlos ändern können – vollständig oder basierend auf den Einstellungen eines Vorlageconsumers.
+Beachten Sie, dass *osImageReference* die Werte aus der in der Hauptvorlage definierten Variable *osSettings* abruft. Dies bedeutet, dass Sie das Betriebssystem eines virtuellen Computers problemlos ändern können – vollständig oder basierend auf den Einstellungen eines Vorlagenutzers.
 
 ##### vmScripts
 
@@ -378,7 +378,7 @@ Innerhalb der Hauptvorlage können Sie diese Daten mit folgender Syntax verwende
     }
 
 ## Nächste Schritte
-- [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md)
+- [Authoring Azure Resource Manager Templates](resource-group-authoring-templates.md) (in englischer Sprache)
 - [Funktionen von Azure-Ressourcen- Manager-Vorlagen](resource-group-template-functions.md)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

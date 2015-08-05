@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Azure Multi-Factor Authentication – Nächste Schritte" 
-	description="Dies ist die Seite &quot;Azure Multi-Factor Authentication&quot;, auf der beschrieben wird, was die nächsten Schritte mit Multi-Factor Authentication sind. Dazu gehören Berichte, Betrugswarnung, Einmalumgehung, benutzerdefinierte Sprachnachrichten, Zwischenspeicherung, vertrauenswürdige IP-Adressen und App-Kennwörter." 
+	description="Dies ist die Seite ";Azure Multi-Factor Authentication";, auf der beschrieben wird, was die nächsten Schritte mit Multi-Factor Authentication sind. Dazu gehören Berichte, Betrugswarnung, Einmalumgehung, benutzerdefinierte Sprachnachrichten, Zwischenspeicherung, vertrauenswürdige IP-Adressen und App-Kennwörter." 
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -226,7 +226,7 @@ In einigen Anwendungen wie Office 2010 oder älter und Apple Mail können Sie ke
 
 >[AZURE.NOTE]Moderne Authentifizierung für Office 2013-Clients
 >
-> Office 2013-Clients (einschließlich Outlook) unterstützen jetzt neue Authentifizierungsprotokolle und bieten die Möglichkeit zum Aktivieren von Multi-Factor Authentication. Damit sind nach der Aktivierung keine App-Kennwörter mehr für Office 2013-Clients erforderlich. Weitere Informationen finden Sie unter [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) ("Öffentliche Preview für moderne Authentifizierung in Office 2013", in englischer Sprache).
+> Office 2013-Clients (einschließlich Outlook) unterstützen jetzt neue Authentifizierungsprotokolle und bieten die Möglichkeit zum Aktivieren von Multi-Factor Authentication. Damit sind nach der Aktivierung keine App-Kennwörter mehr für Office 2013-Clients erforderlich. Weitere Informationen finden Sie unter [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) ("Öffentliche Preview für moderne Authentifizierung in Office 2013", in englischer Sprache).
 
 ### Wichtige Informationen zu App-Kennwörtern
 
@@ -300,8 +300,8 @@ Darüber hinaus können Benutzer App-Kennwörter auch später erstellen, durch �
 --------------------------------------------------------------------------------
 
 
-1. Melden Sie sich im Office 365-Portal an.
-2. Wählen Sie in der oberen rechten Ecke den Einstellungs-Widget.
+1. Melden Sie sich beim Office 365-Portal an.
+2. Wählen Sie in der oberen rechten Ecke das Einstellungs-Widget aus.
 3. Wählen Sie links "Zusätzliche Sicherheitsüberprüfung".
 4. Wählen Sie auf der rechten Seite **Aktualisieren meiner Telefonnummern für die Kontosicherheit**.
 5. Wählen Sie auf der Seite "Proofup" oben "App-Kennwörter".
@@ -314,9 +314,9 @@ Darüber hinaus können Benutzer App-Kennwörter auch später erstellen, durch �
 
 ### Erstellen von App-Kennwörtern im Azure-Portal
 --------------------------------------------------------------------------------
-1. Melden Sie sich im Azure-Verwaltungsportal an.
-3. Klicken Sie oben mit der rechten Maustaste auf Ihren Benutzernamen, und wählen Sie "Zusätzliche Sicherheitsüberprüfung".
-5. Wählen Sie auf der Seite "Proofup" oben "App-Kennwörter".
+1. Melden Sie sich beim Azure-Verwaltungsportal an.
+3. Klicken Sie oben mit der rechten Maustaste auf Ihren Benutzernamen, und wählen Sie "Zusätzliche Sicherheitsüberprüfung" aus.
+5. Wählen Sie oben auf der Seite "Proofup" die Option "App-Kennwörter" aus.
 6. Klicken Sie auf **Erstellen**.
 7. Geben Sie einen Namen für das App-Kennwort an, und klicken Sie auf **Weiter**.
 8. Kopieren Sie das App-Kennwort in die Zwischenablage, und fügen Sie es in Ihrer Anwendung hinzu.
@@ -358,4 +358,4 @@ Um sicherzustellen, dass die Benutzerkonten geschützt sind, sollten Sie die Mul
 <li>Auf der Seite "Einstellungen" unter "Geräteeinstellungen von Benutzern verwalten", **Aktivieren/Deaktivieren Sie mehrstufige Authentifizierung anhalten, indem ein Gerät gespeichert wird**.</li>
 ![Aussetzen von Geräten](./media/multi-factor-authentication-manage-users-and-devices/suspend.png) <li>Legen Sie die Anzahl der Tage fest, an denen Sie die Aussetzung zulassen möchten. Der Standardwert ist 14 Tage.</li> <li>Klicken Sie auf "Speichern".</li> <li>Klicken Sie auf "Schließen".</li>
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

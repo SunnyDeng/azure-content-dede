@@ -33,4 +33,4 @@ Im folgenden Abschnitt erfahren Sie, wie Sie sich über eine alternative Methode
 
 <li>Wählen Sie eine alternative Methode aus, und melden Sie sich an.</li>
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

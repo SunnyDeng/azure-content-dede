@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/02/2015"
+   ms.date="07/21/2015"
    ms.author="banders" />
 
 # Entdecken Sie die Sicherheits- und Überwachungsdaten in Operational Insights
@@ -39,6 +39,8 @@ Folgendes wird in diesem Artikel beschrieben:
 7. Lassen Sie im Feld für die Suchabfrage nur den Prozessnamen und die Anführungszeichen stehen und klicken Sie dann auf das Suchsymbol. ![Bild der detaillierten Suchinformationen](./media/operational-insights-security-audit/sec-audit-search04.png)
 8. In der Suche werden ausführliche Informationen über den Prozess angezeigt, u.a. der oder die Computer, wo der Prozess lief, das entsprechende Benutzerkonto sowie Datum und Uhrzeit, zu der das Ereignis für den Prozess erstellt wurde.
 9. Mit den gewonnenen Informationen können Sie nun die gewünschten Maßnahmen ergreifen. Falls Sie zum Beispiel feststellen, dass es sich bei der ausführbaren Datei um Schadsoftware handelt, können Sie sie von allen betroffenen Computersystemen entfernen lassen. Wenn die ausführbare Datei entfernt wurde und Operational Insights aktuelle Protokoll- und Überwachungsereignisse für Ihr Computersystem erhält, werden sich die Werte auf dem Blatt RELEVANTE PROBLEME am folgenden Tag ändern.
+
+[AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
 
 ## Bewährte Methoden für die forensische Analyse
 
@@ -98,4 +100,4 @@ Alle Überwachungsdaten, die Sie erfassen und an Operational Insights senden mö
 
 Wenn Sie zusätzlich zu den lokalen Richtlinieneinstellungen AppLocker zur Erfassung der Überwachungsdaten verwenden, wird Operational Insights diese Daten erfassen und dann können Sie sie ansehen.
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

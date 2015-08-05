@@ -688,4 +688,4 @@ In der tatsächlichen `PUT`-Anforderung für die Logik-App können Sie dann den 
 
 In den einzelnen Umgebungen können Sie dann einen anderen Wert für den `connection`-Parameter angeben. In der [REST-API-Dokumentation](https://msdn.microsoft.com/library/azure/dn948513.aspx) finden Sie Informationen dazu, welche Möglichkeiten Sie zum Erstellen und Verwalten von Logik-Apps haben.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -285,4 +285,4 @@ Nach etwa einer Stunde werden Daten aus dem Speicherkonto für die Analyse in Op
 
 [Konfigurieren von Proxy- und Firewall-Einstellungen (Optional)](../operational-insights-proxy-filewall.md)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

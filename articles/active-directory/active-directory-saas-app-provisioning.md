@@ -106,4 +106,4 @@ Damit eine Anwendung die automatisierte Benutzerbereitstellung unterstützt, mü
 
 Wenn Sie das Azure AD-Entwicklungsteam kontaktieren möchten, um Bereitstellungsunterstützung für zusätzliche Anwendungen anzufordern, senden Sie uns eine Nachricht über das [Azure Active Directory-Feedbackforum](http://feedback.azure.com/forums/169401-azure-active-directory).
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

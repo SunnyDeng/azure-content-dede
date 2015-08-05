@@ -47,11 +47,11 @@ Nach der Aktivierung von Verbindungen zu den virtuellen Computern oder Rollenins
 
 Gehen Sie auf einem REST-Client wie folgt vor:
 
-1. Stellen Sie sicher, dass Sie über ein Clientzertifikat für die Verbindung zum Azure-Portal verfügen. Um ein Clientzertifikat zu erhalten, führen Sie die Schritte unter [Gewusst wie: Herunterladen und Importieren von Veröffentlichungseinstellungen und Abonnementinformationen\] (https://msdn.microsoft.com/library/dn385850(v=nav.70).aspx)) aus.
+1. Stellen Sie sicher, dass Sie über ein Clientzertifikat für die Verbindung zum Azure-Portal verfügen. Um ein Clientzertifikat zu erhalten, führen Sie die Schritte unter [Gewusst wie: Herunterladen und Importieren von Veröffentlichungseinstellungen und Abonnementinformationen] (https://msdn.microsoft.com/library/dn385850(v=nav.70).aspx)) aus.
 
 1. Legen Sie einen Headereintrag mit dem Namen "x-ms-version" mit einem Wert von "2013-11-01" fest.
 
-1. Senden Sie eine Anforderung im folgenden Format: https://management.core.windows.net/<Abonnements-ID>/services/hostedservices/<Dienstname>?embed-detail=true
+1. Senden Sie eine Anforderung im folgenden Format: https://management.core.windows.net/\<Abonnements-ID>/services/hostedservices/<Dienstname>?embed-detail=true
 
 1. Suchen Sie das **HostName**-Element für jedes **RoleInstance**-Element.
 
@@ -71,4 +71,4 @@ Sie können den Hostnamen für einen virtuellen Computer oder eine Rolleninstanz
 
 [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](http://go.microsoft.com/fwlink/?LinkId=248094)
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

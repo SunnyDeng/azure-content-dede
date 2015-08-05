@@ -45,4 +45,4 @@
 
 Nachdem nun die App für die Verwendung von Mobile Services als Back-End-Speicher aktualisiert ist, können Sie die App mit Mobile Services testen.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

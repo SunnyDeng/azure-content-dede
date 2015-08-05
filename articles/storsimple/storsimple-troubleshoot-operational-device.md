@@ -48,4 +48,4 @@ In der folgenden Tabelle sind die Fehler, die beim Ausführen des Setup-Assisten
 ## Nächste Schritte
 Wenn das Problem durch die vorhergehenden Schritte nicht behoben wird, [wenden Sie sich für Hilfe an den Microsoft Support](https://msdn.microsoft.com/library/azure/dn757750.aspx).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

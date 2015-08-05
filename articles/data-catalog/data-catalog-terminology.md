@@ -71,4 +71,4 @@ Die Registrierung umfasst das Extrahieren der Metadaten einer Datenressource aus
 
 - [Erste Schritte mit Azure Data Catalog](data-catalog-get-started.md) Dieser Artikel enthält ein umfassendes Lernprogramm zur Verwendung von Azure Data Catalog für die Ermittlung von Datenquellen.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -63,7 +63,7 @@ Die in diesem Abschnitt bereitgestellten Informationen dienen zum Abschließen d
 
 2. Entpacken Sie die Datei *WAImportExport.zip*. Führen Sie das *WAImportExport*-Tool aus. Es formatiert das SATA-Laufwerk, schreibt die Sicherungsdaten auf das SATA-Laufwerk und verschlüsselt sie. Bevor Sie den folgenden Befehl ausführen, stellen Sie sicher, dass BitLocker auf dem Computer aktiviert ist. <br/>
 
-    *.\\WAImportExport.exe PrepImport /j:<*Journaldatei*>.jrn /id: <*Sitzungs-ID*> /sk:<*Speicherkontoschlüssel*> /BlobType:**PageBlob** /t:<*Ziellaufwerkbuchstabe*> /format /encrypt /srcdir:<*Stagingspeicherort*> /dstdir: <*VirtuellesVerzeichnisZielblob*>/*
+    *.\WAImportExport.exe PrepImport /j:<*Journaldatei*>.jrn /id: <*Sitzungs-ID*> /sk:<*Speicherkontoschlüssel*> /BlobType:**PageBlob** /t:<*Ziellaufwerkbuchstabe*> /format /encrypt /srcdir:<*Stagingspeicherort*> /dstdir: <*VirtuellesVerzeichnisZielblob*>/*
 
 
 | Parameter | Beschreibung
@@ -107,4 +107,4 @@ Sobald die ersten Sicherungsdaten im Speicherkonto verfügbar sind, kopiert der 
 - Wenn Sie Fragen zum Azure Import/Export-Workflow haben, finden Sie weitere Informationen in diesem [Artikel](../storage-import-export-service.md).
 - Bei Fragen zum Workflow finden Sie weitere Informationen im Abschnitt zur Offlinesicherung in den [häufig gestellten Fragen](backup-azure-backup-faq.md) zu Azure Backup.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

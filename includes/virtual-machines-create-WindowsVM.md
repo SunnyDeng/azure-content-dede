@@ -4,7 +4,7 @@
 2. Klicken Sie in der Befehlsleiste am unteren Ende des Fensters auf **Neu**.
 
 
-3. Unter **Compute** klicken Sie auf **Virtueller Computer** und anschließend auf **us Katalog**.
+3. Unter **Compute** klicken Sie auf **Virtueller Computer** und anschließend auf **From Gallery**.
 
 	![Navigieren Sie auf der Befehlsleiste zu „Aus Katalog“.](./media/virtual-machines-create-WindowsVM/fromgallery.png)
 
@@ -12,7 +12,7 @@
 4. Im ersten Bildschirm können Sie für Ihren virtuellen Computer ein **Image** aus einer Liste im Image-Katalog auswählen. (Die verfügbaren Images können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.)
 
 
-5. Im zweiten Bildschirm wählen Sie einen Computernamen, Größe sowie Benutzername und Passwort des Administrators aus. Andernfalls wählen Sie die benötigte Schicht und die Größe, um Ihre Anwendung oder Ihre Workload auszuführen. Nachfolgend finden Sie detaillierte Informationen, die Ihnen beim Ausfüllen helfen:
+5. Im zweiten Bildschirm wählen Sie einen Computernamen, Größe sowie Benutzername und Passwort des Administrators aus. Andernfalls wählen Sie die benötigte Schicht und die Größe, um Ihre Anwendung oder Ihren Leistungsumfang auszuführen. Nachfolgend finden Sie detaillierte Informationen, die Ihnen beim Ausfüllen helfen:
 
 	- **Neuer Benutzername** bezieht sich auf das Administratorkonto, dass Sie zur Verwaltung des Servers verwenden. Geben Sie für dieses Konto ein individuelles Passwort an und stellen Sie sicher, dass Sie es nicht vergessen. **Sie brauchen den Benutzernamen und das Passwort, um sich am virtuellen Computer anzumelden**.
 
@@ -40,4 +40,4 @@
 
 	![Konfigurieren Sie den VM-Agent und die Endpunkte des virtuellen Computers.](./media/virtual-machines-create-WindowsVM/vmcreated.png)
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

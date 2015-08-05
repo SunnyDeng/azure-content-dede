@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/22/2015"
+   ms.date="07/21/2015"
    ms.author="abhisram"/>
 
 # Diagnose und Leistungsüberwachung für Fabric Actors
@@ -154,6 +154,5 @@ Die Fabric Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit der
 |---|---|---|---|---|
 |ActorActivated|5|Information|0x1|Ein Actor wurde aktiviert.|
 |ActorDeactivated|6|Information|0x1|Ein Actor wurde deaktiviert.|
- 
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

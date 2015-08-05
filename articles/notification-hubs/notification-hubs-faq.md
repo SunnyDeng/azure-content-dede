@@ -135,4 +135,4 @@ Azure Notification Hubs ermöglicht die Anzeige von Telemetriedaten im Azure-Ver
 
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

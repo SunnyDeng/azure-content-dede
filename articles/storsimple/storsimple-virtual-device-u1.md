@@ -73,12 +73,12 @@ In den folgenden Abschnitten wird erläutert, wie Sie das virtuelle StorSimple-G
 Bevor Sie das virtuelle Gerät bereitstellen, müssen Sie in Ihrer Umgebung die folgenden Vorbereitungen treffen:
 
 - [Konfigurieren Sie ein virtuelles Netzwerk in Azure](https://msdn.microsoft.com/library/azure/jj156074.aspx) für das virtuelle Gerät. 
-- Sie können die von Azure bereitgestellten DNS-Standardserver verwenden, anstatt einen eigenen DNS-Servernamen anzugeben. 
+- Es empfiehlt sich, die von Azure bereitgestellten DNS-Standardserver zu verwenden, anstatt einen eigenen DNS-Servernamen anzugeben. Wenn Ihre DNS-Servername nicht gültig ist, schlägt die Erstellung des virtuellen Geräts fehl.
 - Punkt-zu-Standort und Standort-zu-Standort sind optional, aber nicht erforderlich. Sie können diese Optionen gegebenenfalls für erweiterte Szenarios konfigurieren. 
 
 >[AZURE.IMPORTANT]**Stellen Sie sicher, dass sich das virtuelle Netzwerk in der gleichen Region befindet, wie die mit dem Gerät zu verwendenden Cloud-Speicherkonten.**
 
-- Erstellen Sie im virtuellen Netzwerk [virtuelle Azure-Computer](https://msdn.microsoft.com/library/azure/jj156003.aspx) (Hostserver). Diese Server müssen die folgenden Anforderungen erfüllen: 							
+- Sie können [Virtuelle Azure-Computer](https://msdn.microsoft.com/library/azure/jj156003.aspx) (Hostserver) im virtuellen Netzwerk erstellen, die die Volumes verwenden können, die von dem virtuellen Gerät verfügbar gemacht werden. Diese Server müssen die folgenden Anforderungen erfüllen: 							
 	- Es muss sich um virtuelle Windows- oder Linux-Computer mit iSCSI-Initiatorsoftware handeln.
 	- Sie müssen im gleichen virtuellen Netzwerk wie das virtuelle Gerät ausgeführt werden.
 	- Das iSCSI-Ziel des virtuellen Geräts muss über die interne IP-Adresse des virtuellen Geräts eine Verbindung herstellen können.
@@ -131,10 +131,10 @@ Führen Sie die folgenden Schritte durch, um das virtuelle StorSimple-Gerät zu 
 	a. **Name** – ein eindeutiger Name für Ihr virtuelles Gerät.
 
 
-	b. **Version** – wählen Sie die Version des virtuellen Geräts aus. Diese Option ist nicht vorhanden, wenn Sie nur physische Geräte mit Update 1 für diesen Dienst registriert haben. Dieses Feld wird nur angezeigt, wenn Sie eine Kombination aus physischen Geräten ohne und mit Update 1 im Dienst registriert haben. Angesichts der Tatsache, dass die Version des virtuellen Geräts angibt, von welchem physischen Gerät Sie ein Failover ausführen oder klonen können, ist es wichtig, eine geeignete Version des virtuellen Geräts zu erstellen. Auswahl:
+	b. **Version** – wählen Sie die Version des virtuellen Geräts aus. Diese Option ist nicht vorhanden, wenn Sie nur physische Geräte mit Update 1 (oder höher) für diesen Dienst registriert haben. Dieses Feld wird nur angezeigt, wenn Sie eine Kombination aus physischen Geräten ohne und mit Update 1 im Dienst registriert haben. Angesichts der Tatsache, dass die Version des virtuellen Geräts angibt, von welchem physischen Gerät Sie ein Failover ausführen oder klonen können, ist es wichtig, eine geeignete Version des virtuellen Geräts zu erstellen. Auswahl:
 
 	- Versionsupdate 0.3, wenn Sie ein Failover oder eine Notfallwiederherstellung von einem physischen Gerät mit GA-Releaseversion oder Updates von 0.1 bis 0.3 ausführen. 
-	- Versionsupdate 1, wenn Sie ein Failover oder einen Klonvorgang von einem physischen Gerät mit Update 1 ausführen. 
+	- Versionsupdate 1, wenn Sie ein Failover oder einen Klonvorgang von einem physischen Gerät mit Update 1 (oder höher) ausführen. 
 
  
 	b. **Virtuelles Netzwerk** – der Name des virtuellen Netzwerks, das für dieses virtuelle Gerät verwendet werden soll.
@@ -155,27 +155,29 @@ Stellen Sie vorab sicher, dass Sie über eine Kopie des Verschlüsselungsschlüs
 Führen Sie die folgenden Schritte durch, um das virtuelle StorSimple-Gerät zu konfigurieren und zu registrieren:
 
 
-1. Wählen Sie das **virtuelle StorSimple-Gerät** als Ihr Gerät aus, und doppelklicken Sie darauf, um auf den Schnellstart zuzugreifen.
+1. Wählen Sie das **virtuelle StorSimple-Gerät** aus, das Sie soeben auf der Seite „Geräte“ erstellt haben. 
 
 - Klicken Sie auf **Gerätesetup abschließen**. Dadurch wird der Konfigurationsassistent gestartet.
 
 - Geben Sie den **Verschlüsselungsschlüssel für Dienstdaten** in das entsprechende Feld ein.
 
-- Klicken Sie auf das Häkchen, um die Erstkonfiguration sowie die Registrierung des virtuellen Geräts abzuschließen. Das Geräteadministratorkennwort wird mit Standardwerten vorkonfiguriert und muss im Anschluss an die Geräteregistrierung geändert werden.
+- Geben Sie das Snapshot Manager- und das Geräteadministratorkennwort entsprechend der angegebenen Länge und den angegebenen Einstellungen ein.
+
+- Klicken Sie auf das Häkchen, um die Erstkonfiguration sowie die Registrierung des virtuellen Geräts abzuschließen.
 
 ### Ändern der Konfigurationseinstellungen des Geräts
 
-Im folgenden Abschnitt werden die Gerätekonfigurationseinstellungen beschrieben, die für virtuelle StorSimple-Geräte konfiguriert werden müssen.
+Der folgende Abschnitt beschreibt die Gerätekonfigurationseinstellungen, die Sie möglicherweise für das virtuelle StorSimple-Gerät konfigurieren möchten, wenn Sie CHAP oder StorSimple Snapshot Manager verwenden oder das Geräteadministratorkennwort ändern möchten.
 
-#### Konfigurieren des CHAP-Initiators
+#### Konfigurieren des CHAP-Initiators (optional)
 
 Dieser Parameter enthält die Anmeldeinformationen, die Ihr virtuelles Gerät (Ziel) von den Initiatoren (Servern) erwartet, die auf die Volumes zugreifen. Die Initiatoren stellen einen CHAP-Benutzernamen und ein CHAP-Kennwort bereit, um sich bei der Authentifizierung bei Ihrem Gerät zu identifizieren.
 
-#### Konfigurieren des CHAP-Ziels
+#### Konfigurieren des CHAP-Ziels (optional)
 
-Dieser Parameter enthält die Anmeldeinformationen, die Ihr virtuelles Gerät verwendet, wenn ein CHAP-fähiger Initiator eine wechselseitige oder bidirektionale Authentifizierung anfordert. Ihr virtuelles Gerät verwendet einen Benutzernamen und ein Kennwort für das Zurücksetzen von CHAP, um sich beim Authentifizierungsvorgang beim Initiator zu identifizieren. Beachten Sie, dass es sich bei den CHAP-Zieleinstellungen um globale Einstellungen handelt. Wenn diese angewendet werden, verwenden alle mit dem virtuellen Speichergerät verbundenen Volumes die CHAP-Authentifizierung.
+Dieser Parameter enthält die Anmeldeinformationen, die Ihr virtuelles Gerät verwendet, wenn ein CHAP-fähiger Initiator eine wechselseitige oder bidirektionale Authentifizierung anfordert. Ihr virtuelles Gerät verwendet einen Benutzernamen und ein Kennwort für das Zurücksetzen von CHAP, um sich beim Authentifizierungsvorgang beim Initiator zu identifizieren. Beachten Sie, dass es sich bei den CHAP-Zieleinstellungen um globale Einstellungen handelt. Wenn diese angewendet werden, verwenden alle mit dem virtuellen Speichergerät verbundenen Volumes die CHAP-Authentifizierung. Wählen Sie Ihr Gerät auf der Seite „Geräte“ aus. Wechseln Sie auf der Seite „Geräte“ auf die Seite „Konfigurieren“, und scrollen Sie nach unten, um zu dem Abschnitt für CHAP zu gelangen.
 
-#### Konfigurieren des StorSimple-Momentaufnahme-Managers
+#### Konfigurieren des StorSimple Snapshot Managers
 
 Der StorSimple-Momentaufnahme-Manager befindet sich auf dem Windows-Host und ermöglicht Administratoren die Verwaltung der Sicherungen Ihres StorSimple-Geräts in Form von lokalen und Cloud-Momentaufnahmen.
 
@@ -183,7 +185,7 @@ Der StorSimple-Momentaufnahme-Manager befindet sich auf dem Windows-Host und erm
 
 Beim Konfigurieren eines Geräts im StorSimple-Momentaufnahme-Manager werden Sie aufgefordert, zur Authentifizierung des Speichergeräts die IP-Adresse und das Kennwort des StorSimple-Geräts anzugeben.
 
-Führen Sie die folgenden Schritte durch, um den StorSimple-Momentaufnahme-Manager für die Verwendung mit dem virtuellen StorSimple-Gerät zu konfigurieren.
+Führen Sie die folgenden Schritte aus, um das Kennwort für StorSimple Snapshot Manager ändern.
 
 1. Wechseln Sie auf dem virtuellen Gerät zu **Geräte > Konfigurieren**.
 
@@ -195,11 +197,11 @@ Führen Sie die folgenden Schritte durch, um den StorSimple-Momentaufnahme-Manag
 
 Das Kennwort für den StorSimple-Momentaufnahme-Manager wird jetzt aktualisiert und kann für die Authentifizierung bei den Windows-Hosts verwendet werden.
 
-#### Konfigurieren des Geräteadministratorkennworts
+#### Ändern des Geräteadministratorkennworts
 
 Wenn Sie über die Windows PowerShell-Benutzeroberfläche auf das virtuelle Gerät zugreifen, müssen Sie ein Kennwort eingeben. Für die Sicherheit Ihrer Daten müssen Sie dieses Kennwort ändern, bevor das virtuelle Gerät verwendet werden kann.
 
-Führen Sie die folgenden Schritte durch, um das Geräteadministratorkennwort für das virtuelle StorSimple-Gerät zu konfigurieren.
+Führen Sie die folgenden Schritte aus, um das Geräteadministratorkennwort für das virtuelle StorSimple-Gerät zu ändern.
 
 1. Wechseln Sie auf dem virtuellen Gerät zu **Geräte > Konfigurieren**.
  
@@ -211,7 +213,7 @@ Führen Sie die folgenden Schritte durch, um das Geräteadministratorkennwort f�
 
 Das Geräteadministratorkennwort wurde jetzt aktualisiert. Greifen Sie mit diesem geänderten Kennwort auf die Windows PowerShell-Benutzeroberfläche auf Ihrem virtuellen Gerät zu.
 
-#### Konfigurieren der Remoteverwaltung 
+#### Konfigurieren der Remoteverwaltung (optional)
 
 Der Remotezugriff auf Ihr virtuelles Gerät über die Windows PowerShell-Benutzeroberfläche ist standardmäßig nicht aktiviert. Sie müssen die Remoteverwaltung zunächst auf dem virtuellen Gerät und anschließend auf dem Client aktivieren, der für den Zugriff auf das virtuelle Gerät verwendet wird.
 
@@ -385,4 +387,4 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 Erfahren Sie, wie Sie eine [Wiederherstellung aus einem Sicherungssatz durchführen](../storsimple-restore-from-backupset.md).
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

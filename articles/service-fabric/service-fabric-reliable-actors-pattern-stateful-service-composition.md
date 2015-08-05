@@ -92,4 +92,4 @@ Nachteile von "zustandslosen Diensten" sehen wir bei der Erstellung von skalierb
 [3]: ./media/service-fabric-reliable-actors-pattern-stateful-service-composition/stateful-service-composition-3.png
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

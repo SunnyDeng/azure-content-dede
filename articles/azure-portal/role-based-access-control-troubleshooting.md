@@ -4,7 +4,6 @@
 	services="azure-portal"
 	documentationCenter="na" 
 	authors="stepsic-microsoft-com" 
-	writer="" 
 	manager="terrylan" 
 	editor=""/>
 
@@ -83,4 +82,4 @@ Für virtuelle Computer gibt es diese verwandten Ressourcen: Domänennamen, virt
     
 Wenn Sie auf keine dieser Kacheln zugreifen können, fragen Sie den Administrator nach Zugriff als Mitwirkender auf diese Ressourcengruppe.
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

@@ -44,7 +44,7 @@ Gehen Sie wie folgt vor, um ein auf DataStax basierendes Apache Cassandra-Cluste
 
 ### Schritt 1-a: Herunterladen der Vorlagendateien mithilfe von PowerShell
 
-Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\\Azure\\Vorlagen\\DataStax").
+Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\Azure\Vorlagen\DataStax").
 
 Fügen Sie dabei den Namen Ihres lokalen Ordners ein, und führen Sie damit die folgenden Befehle aus:
 
@@ -84,7 +84,7 @@ Klonen Sie das komplette Vorlagen-Repository mithilfe eines Git-Clients Ihrer Wa
 
 	git clone https://github.com/Azure/azure-quickstart-templates C:\Azure\Templates
 
-Ermitteln Sie anschließend unter "C:\\Azure\\Vorlagen" den Ordner **datastax-on-ubuntu**.
+Ermitteln Sie anschließend unter "C:\Azure\Vorlagen" den Ordner **datastax-on-ubuntu**.
 
 ### Schritt 2 (optional): Erlernen der Vorlagenparameter
 
@@ -439,7 +439,7 @@ Angeschlossene Datenträger werden als Teil der Aktivitäten zur Vorbereitung de
 
 	bash vm-disk-utils-0.1.sh
 
-"vm-disk-utils-0.1.sh" ist im Ordner **shared_scripts\\ubuntu** im GitHub-Repository "azure-quickstart-tempates" enthalten und bietet nützliche Funktionen für die Bereitstellung von Datenträgern, die Formatierung und das Striping. Diese Funktionen können in allen Vorlagen im Repository verwendet werden.
+"vm-disk-utils-0.1.sh" ist im Ordner **shared_scripts\ubuntu** im GitHub-Repository "azure-quickstart-tempates" enthalten und bietet nützliche Funktionen für die Bereitstellung von Datenträgern, die Formatierung und das Striping. Diese Funktionen können in allen Vorlagen im Repository verwendet werden.
 
 Ein weiteres interessantes Fragment ist das im Zusammenhang mit den VM-Erweiterungen CustomScriptForLinux. Diese werden als gesonderter Ressourcentyp mit einer Abhängigkeit auf jedem Clusterknoten (und der OpsCenter-Instanz) installiert. Sie nutzen denselben Ressourcenschleifenmechanismus, der im Zusammenhang mit virtuellen Computern beschrieben wurde:
 
@@ -482,4 +482,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

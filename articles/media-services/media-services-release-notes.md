@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="media" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/15/2015" 
+	ms.date="07/20/2015" 
 	ms.author="juliako"/>
 
 
@@ -25,6 +25,7 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 
 - [Aktuell bekannte Probleme](#issues)
 - [REST-API-Versionsverlauf](#rest_version_history)
+- [Version Juli 2015](#july_changes_15)
 - [Version Juni 2015](#june_changes_15)
 - [Version Mai 2015](#may_changes_15)
 - [Version April 2015](#april_changes_15)
@@ -39,7 +40,7 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 - [Version Juli 2014](#july_changes_14)
 - [Version Mai 2014](#may_changes_14)
 - [Version April 2014](#april_changes_14) 
-- [Versionen Januar\\Februar 2014](#jan_feb_changes_14) 
+- [Versionen Januar\Februar 2014](#jan_feb_changes_14) 
 - [Version Dezember 2013](#december_changes_13)
 - [Version November 2013](#november_changes_13)
 - [Version August 2013](#august_changes_13)
@@ -62,6 +63,23 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 ##<a id="rest_version_history"></a>REST-API-Versionsverlauf
 
 Informationen zum Versionsverlauf der Media Services-REST-API finden Sie unter [Azure Media Services – REST-API-Referenz].
+
+##<a id="july_changes_15"></a>Version Juli 2015
+
+Ankündigung der allgemeinen Verfügbarkeit von Media Encoder Standard. Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/).
+
+Media Encoder Standard verwendet die in [diesem](http://go.microsoft.com/fwlink/?LinkId=618336) Abschnitt beschriebenen Voreinstellungen. Beachten Sie, dass Sie beim Verwenden einer Voreinstellung für 4k-Codierungen den Einheitentyp „**Premium ** reservierte Einheit“ erhalten sollten. Weitere Informationen finden Sie unter [Skalieren der Codierung](media-services-portal-encoding-units).
+
+
+###Media Services .NET SDK-Updates
+
+Azure Media Services .NET SDK ist jetzt in der Version 3.4.0.0 erhältlich. Die folgende Funktionalität wurde in dieser Version hinzugefügt:
+
+- Die Unterstützung für das Live-Archiv wurde implementiert. Beachten Sie, dass Sie eine Ressource, die ein Live-Archiv enthält, nicht herunterladen können.
+- Die Unterstützung für dynamische Filter wurde implementiert.
+- Die Funktionalität, mit der Benutzer beim Löschen von Ressourcen Speichercontainer beibehalten können, wurde implementiert.
+- Fehlerbehebungen im Zusammenhang mit Wiederholungsrichtlinien in Kanälen
+- **Media Encoder-Premium-Workflow** aktiviert
 
 ##<a id="june_changes_15"></a>Version Juni 2015
 
@@ -297,7 +315,7 @@ Weitere Informationen finden Sie unter [Wiederholungslogik im Media Services SDK
 * Behebung eines Problems hinsichtlich des Transcodierens von MP4s, bei denen das Audio mit MPEG-1 Audio Layer 3 (alias MP3) codiert wurde.
 
 
-##<a id="jan_feb_changes_14"></a>Versionen Januar\\Februar 2014
+##<a id="jan_feb_changes_14"></a>Versionen Januar\Februar 2014
 
 ### <a name="jan_fab_14_donnet_changes"></a>Azure Media Services .NET SDK 3.0.0.1, 3.0.0.2 und 3.0.0.3
 
@@ -537,4 +555,4 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=July15_HO3-->
+<!---HONumber=July15_HO4-->

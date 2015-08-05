@@ -72,4 +72,4 @@ Der Ablaufverfolgungscode, den Sie zu Ihrer Anwendung für die lokale Diagnose h
 * [Diagnose zustandsbehafteter zuverlässiger Dienste](service-fabric-reliable-services-diagnostics.md)
  
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->

@@ -6,15 +6,15 @@
 	authors="KBDAzure"
 	manager="timlt"
 	editor="tysonn"
-	tags="azure-resource-manager, azure-service-management"/>
+	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article" 
-	ms.date="06/19/2015"
+	ms.topic="get-started-article"
+	ms.date="07/14/2015"
 	ms.author="kathydav"/>
 
 #Über virtuelle Azure-Computer
@@ -26,7 +26,7 @@ Alternativ lässt sich ein virtueller Computer auf Ihrer eigenen Hardware verwen
 Anhand dieser Tabelle können Sie die von Azure angebotenen Auswahlmöglichkeiten vergleichen.
 
 [AZURE.INCLUDE [Virtuelle-Computer-Auswahlmöglichkeiten](../../includes/virtual-machines-choose-me-content.md)]
- 
+
 ## Nächste Schritte
 
 Testen Sie einen virtuellen Computer probeweise aus: Erstellen Sie hierfür in nur wenigen Schritten einen einfachen virtuellen Computer. Weitere Anweisungen finden Sie in einem der folgenden Lernprogramme:
@@ -41,7 +41,7 @@ Da diese Lernprogramme darauf ausgerichtet sind, in wenigen Schritten einen virt
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-Wenn Sie sich zum ersten Mal mit virtuellen Azure-Computern beschäftigen, werfen Sie auch unbedingt einen Blick in unsere häufig gestellten Fragen.
+Wenn Sie sich zum ersten Mal mit virtuellen Azure-Computern beschäftigen, werfen Sie auch unbedingt einen Blick in unsere [häufig gestellten Fragen](virtual-machines-questions.md).
 
 
 <!--links-->
@@ -49,4 +49,4 @@ Wenn Sie sich zum ersten Mal mit virtuellen Azure-Computern beschäftigen, werfe
 [Virtual Machines]: #tellmevm
 [Cloud Services]: cloud-services-choose-me.md
 
-<!---HONumber=July15_HO2-->
+<!---HONumber=July15_HO4-->
