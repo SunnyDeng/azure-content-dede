@@ -87,7 +87,12 @@ Es gibt fünf Arten von Ereignissen, die von der Bibliothek unterstützt werden:
 ####3.2.1. Click-Ereignis
 Dieses Ereignis sollte jedes Mal, wenn ein Benutzer auf ein Element klickt, verwendet werden. Wenn der Benutzer auf ein Element klickt, wird in der Regel eine neue Seite mit den Elementdetails geöffnet. Auf dieser Seite sollte dieses Ereignis ausgelöst werden.
 
-Parameter: - event (Zeichenfolge, obligatorisch) – "click" - item (Zeichenfolge, obligatorisch) – eindeutiger Bezeichner des Elements - itemName (Zeichenfolge, optional) – der Name des Elements - itemDescription (Zeichenfolge, optional) – die Beschreibung des Elements - itemCategory (Zeichenfolge, optional) – die Kategorie des Elements
+Parameter: 
+- event (Zeichenfolge, obligatorisch) - "click" 
+- item (Zeichenfolge, obligatorisch) - eindeutiger Bezeichner des Elements 
+- itemName (Zeichenfolge, optional) - der Name des Elements 
+- itemDescription (Zeichenfolge, optional) - die Beschreibung des Elements 
+- itemCategory (Zeichenfolge, optional) - die Kategorie des Elements
 		
 		<script>
 			if (typeof AzureMLRecommendationsEvent == "undefined") { AzureMLRecommendationsEvent = []; }
@@ -105,7 +110,14 @@ Oder mit optionalen Daten:
 ####3.2.2. Recommendationclick-Ereignis
 Dieses Ereignis sollte jedes Mal verwendet werden, wenn ein Benutzer auf ein Element klickt, das von Azure ML-Empfehlungen als empfohlenes Element empfangen wurde. Wenn der Benutzer auf ein Element klickt, wird in der Regel eine neue Seite mit den Elementdetails geöffnet. Auf dieser Seite sollte dieses Ereignis ausgelöst werden.
 
-Parameter: - Parameter: - event (Zeichenfolge, obligatorisch) – "recommendationclick" - item (Zeichenfolge, obligatorisch) – eindeutiger Bezeichner des Elements - itemName (Zeichenfolge, optional) – der Name des Elements - itemDescription (Zeichenfolge, optional) – die Beschreibung des Elements - itemCategory (Zeichenfolge, optional) – die Kategorie des Elements - seeds (Zeichenfolgenarray, optional) – Startwerte, mit der die Empfehlungsabfrage generiert wurde. -recoList (Zeichenfolgenarray, optional) – das Ergebnis der Empfehlungsanforderung, die von dem Element, auf das geklickt wurde, generiert wurde.
+Parameter: 
+- event (Zeichenfolge, obligatorisch) – "recommendationclick" 
+- item (Zeichenfolge, obligatorisch) – eindeutiger Bezeichner des Elements 
+- itemName (Zeichenfolge, optional) – der Name des Elements 
+- itemDescription (Zeichenfolge, optional) – die Beschreibung des Elements 
+- itemCategory (Zeichenfolge, optional) – die Kategorie des Elements 
+- seeds (Zeichenfolgenarray, optional) – Startwerte, mit der die Empfehlungsabfrage generiert wurde. 
+- recoList (Zeichenfolgenarray, optional) – das Ergebnis der Empfehlungsanforderung, die von dem Element, auf das geklickt wurde, generiert wurde.
 		
 		<script>
 			if (typeof AzureMLRecommendationsEvent=="undefined") { AzureMLRecommendationsEvent = []; }
@@ -121,7 +133,14 @@ Oder mit optionalen Daten:
 
 
 ####3.2.3. Addshopcart-Ereignis
-Dieses Ereignis sollte verwendet werden, wenn der Benutzer ein Element zum Einkaufswagen hinzufügt. Parameter: - event (Zeichenfolge, obligatorisch) – "addshopcart" - item (Zeichenfolge, obligatorisch) – eindeutiger Bezeichner des Elements - itemName (Zeichenfolge, optional) – der Name des Elements - itemDescription (Zeichenfolge, optional) – die Beschreibung des Elements - itemCategory (Zeichenfolge, optional) – die Kategorie des Elements
+Dieses Ereignis sollte verwendet werden, wenn der Benutzer ein Element zum Einkaufswagen hinzufügt. 
+
+Parameter: 
+- event (Zeichenfolge, obligatorisch) – "addshopcart" 
+- item (Zeichenfolge, obligatorisch) – eindeutiger Bezeichner des Elements 
+- itemName (Zeichenfolge, optional) – der Name des Elements 
+- itemDescription (Zeichenfolge, optional) – die Beschreibung des Elements 
+- itemCategory (Zeichenfolge, optional) – die Kategorie des Elements
 		
 		<script>
 			if (typeof AzureMLRecommendationsEvent == "undefined") { AzureMLRecommendationsEvent = []; }
@@ -131,7 +150,12 @@ Dieses Ereignis sollte verwendet werden, wenn der Benutzer ein Element zum Einka
 ####3.2.4. Removeshopcart-Ereignis
 Dieses Ereignis sollte verwendet werden, wenn der Benutzer ein Element aus dem Einkaufswagen entfernt.
 
-Parameter: - event (Zeichenfolge, obligatorisch) – "removeshopcart" - item (Zeichenfolge, obligatorisch) – eindeutiger Bezeichner des Elements - itemName (Zeichenfolge, optional) – der Name des Elements - itemDescription (Zeichenfolge, optional) – die Beschreibung des Elements - itemCategory (Zeichenfolge, optional) – die Kategorie des Elements
+Parameter: 
+- event (Zeichenfolge, obligatorisch) – "removeshopcart" 
+- item (Zeichenfolge, obligatorisch) – eindeutiger Bezeichner des Elements 
+- itemName (Zeichenfolge, optional) – der Name des Elements 
+- itemDescription (Zeichenfolge, optional) – die Beschreibung des Elements 
+- itemCategory (Zeichenfolge, optional) – die Kategorie des Elements
 		
 		<script>
 			if (typeof AzureMLRecommendationsEvent=="undefined") { AzureMLRecommendationsEvent = []; }
@@ -141,7 +165,14 @@ Parameter: - event (Zeichenfolge, obligatorisch) – "removeshopcart" - item (Ze
 ####3.2.5. Purchase-Ereignis
 Dieses Ereignis sollte verwendet werden, wenn der Benutzer seinen Einkaufswagen gekauft hat.
 
-Parameter: * event (string) – “purchase” * items ( Purchased ) – Array mit einem Eintrag für jedes gekaufte Element.<br><br> Purchased-Format: * item (Zeichenfolge) - eindeutige Bezeichner des Elements * count (ganze Zahl oder Zeichenfolge) – die Anzahl der Elemente, die gekauft wurden * price (Gleitkommazahl oder Zeichenfolge) – optionales Feld – der Preis des Elements
+Parameter: 
+* event (string) – “purchase” 
+* items ( Purchased ) – Array mit einem Eintrag für jedes gekaufte Element.
+
+Purchased-Format: 
+	* item (Zeichenfolge) - eindeutige Bezeichner des Elements 
+	* count (ganze Zahl oder Zeichenfolge) – die Anzahl der Elemente, die gekauft wurden 
+	* price (Gleitkommazahl oder Zeichenfolge) – optionales Feld – der Preis des Elements
 
 Das folgende Beispiel zeigt den Kauf von 3 Elementen (33, 34, 35), zwei Elemente, bei denen alle Feldern aufgefüllt sind (item, count, price), und ein Element ohne Preis (item 34).
 
@@ -155,7 +186,13 @@ Die Ereignisbibliothek für Azure ML-Empfehlungen Bibliothek erstellt und verwen
 
 Dieses Ereignis sollte nach der Benutzeranmeldung auf Ihrer Website verwendet werden.
 
-Parameters: * event (string) – “userlogin” * user (string) – eindeutige ID des Benutzers. <script> if (typeof AzureMLRecommendationsEvent=="undefined") { AzureMLRecommendationsEvent = ; } AzureMLRecommendationsEvent.push({event: "userlogin", user: “ABCD10AA” }); </script>
+Parameters: 
+* event (string) – “userlogin” 
+* user (string) – eindeutige ID des Benutzers. 
+
+	<script> 
+		if (typeof AzureMLRecommendationsEvent=="undefined") { AzureMLRecommendationsEvent = ; } AzureMLRecommendationsEvent.push({event: "userlogin", user: “ABCD10AA” });
+	</script>
 
 ##4. Nutzen von Empfehlungen über JavaScript
 Der Code, der die Empfehlung nutzt, wird durch ein JavaScript-Ereignis von der Client-Webseite ausgelöst. Die Antwort mit der Empfehlung enthält die Ids der empfohlenen Elemente, deren Namen und ihre Bewertungen. Es empfiehlt sich, diese Option nur für eine Listenanzeige der empfohlenen Elemente zu verwenden. Eine komplexere Aufbereitung (wie z. B. das Hinzufügen von Metadaten des Elements) sollte in der serverseitigen Integration erledigt werden.
@@ -165,7 +202,15 @@ Um Empfehlungen nutzen zu können, müssen Sie die erforderlichen JavaScript-Bib
 
 Um Empfehlungen für ein oder mehrere Elemente zu nutzen, müssen Sie eine Methode namens AzureMLRecommendationsGetI2IRecommendation aufrufen.
 
-Parameter: * items (Array von Zeichenfolgen) – Ein oder mehrere Elemente, für die Empfehlungen abgerufen werden sollen. Wenn Sie einen Fbt-Build verwenden, können Sie hier nur ein Element festlegen. * numberOfResults (ganze Zahl) – Anzahl der Ergebnisse. * includeMetadata (Boolesch, optional) – Wenn der Parameter auf 'True' festgelegt wird, muss das Metadatenfeld im Ergebnis ausgefüllt werden. * function – eine Funktion, welche die zurückgegebenen Empfehlungen verarbeitet. Die Daten werden als Array mit folgenden Elementen zurückgegeben: * Item – eindeutige ID des Elements * name – Elementname (wenn im Katalog vorhanden) * rating – Empfehlungsbewertung * metadata – eine Zeichenfolge, die Metadaten des Elements darstellt
+Parameter: 
+* items (Array von Zeichenfolgen) – Ein oder mehrere Elemente, für die Empfehlungen abgerufen werden sollen. Wenn Sie einen Fbt-Build verwenden, können Sie hier nur ein Element festlegen.
+* numberOfResults (ganze Zahl) – Anzahl der Ergebnisse. 
+* includeMetadata (Boolesch, optional) – Wenn der Parameter auf 'True' festgelegt wird, muss das Metadatenfeld im Ergebnis ausgefüllt werden.
+* function – eine Funktion, welche die zurückgegebenen Empfehlungen verarbeitet. Die Daten werden als Array mit folgenden Elementen zurückgegeben: 
+	* Item – eindeutige ID des Elements 
+	* name – Elementname (wenn im Katalog vorhanden) 
+	* rating – Empfehlungsbewertung 
+	* metadata – eine Zeichenfolge, die Metadaten des Elements darstellt
 
 Beispiel: Mit dem folgenden Code werden acht Empfehlungen für das Element "64f6eb0d-947a-4c18-a16c-888da9e228ba"angefordert (und da includeMetadata nicht angegeben wird, besagt dies implizit, dass keine Metadaten erforderlich ist) und die Ergebnisse in einen Puffer verkettet.
 

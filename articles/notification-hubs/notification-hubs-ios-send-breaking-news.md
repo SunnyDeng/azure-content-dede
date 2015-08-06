@@ -346,7 +346,7 @@ Normalerweise würden die Benachrichtigungen von einem Back-End-Dienst gesendet 
 
 3. Jedes Gerät, das aktuelle Nachrichten abonniert hat, erhält die Benachrichtigungen, die Sie gerade gesendet haben.
 
-	![][4] ![][5]
+	![][4]![][5]
 
 
 ## Nächste Schritte

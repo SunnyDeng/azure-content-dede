@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="billing"
-   ms.date="07/7/2015"
+   ms.date="07/07/2015"
    ms.author="mobandyo;bryanla"/>
 
 # Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure 

@@ -10,6 +10,6 @@ Sie können BLOB-Container erstellen, indem Sie den **Server-Explorer** von Visu
 Standardmäßig ist der neue Container privat, und Sie müssen Ihren Speicherzugriffsschlüssel angeben, um Blobs aus diesem Container herunterzuladen. Wenn Sie die Dateien im Container öffentlich machen möchten, wählen Sie den Container im **Server-Explorer** aus, und drücken Sie `F4`, um das Fenster **Eigenschaften** anzuzeigen. Legen Sie für die Eigenschaft **Öffentlicher Lesezugriff** die Option **Blob** fest. Jede Person im Internet kann Blobs in einem öffentlichen Container anzeigen, Sie können sie jedoch nur bearbeiten oder löschen, wenn Sie über den entsprechenden Zugriffsschlüssel verfügen.
 
 
-[Image1]: ./media/vs-storage-getting-started-blobs-include/vs-storage-create-blob-containers-in-Server-Explorer.png
+[Image1]: ./media/vs-create-blob-container-in-server-explorer/vs-storage-create-blob-containers-in-Server-Explorer.png
 
 <!---HONumber=July15_HO4-->
