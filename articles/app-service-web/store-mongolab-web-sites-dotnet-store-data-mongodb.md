@@ -437,9 +437,11 @@ Das Erstellen einer Web-App ist in Azure App Service sehr einfach, insbesondere 
 
 1. Klicken Sie auf **Web-App erstellen**.
 
-1. Klicken Sie nach Abschluss der Web-App-Erstellung in der Web-App-Liste auf den Namen der Web-App. Das Web-App-Dashboard wird angezeigt. ![WebAppDashboard][screen-mongolab-websitedashboard]
+1. Klicken Sie nach Abschluss der Web-App-Erstellung in der Web-App-Liste auf den Namen der Web-App. Das Web-App-Dashboard wird angezeigt.
+	![WebAppDashboard][screen-mongolab-websitedashboard]
 
-1. Klicken Sie unter **Auf einen Blick** auf **Veröffentlichungsprofil herunterladen**, und speichern Sie die .PublishSettings-Datei in einem Verzeichnis Ihrer Wahl. ![DownloadPublishProfile][button-website-downloadpublishprofile]
+1. Klicken Sie unter **Auf einen Blick** auf **Veröffentlichungsprofil herunterladen**, und speichern Sie die .PublishSettings-Datei in einem Verzeichnis Ihrer Wahl.
+![DownloadPublishProfile][button-website-downloadpublishprofile]
 
 Sie können auch direkt in Visual Studio eine Web-App konfigurieren. Wenn Sie Ihr Azure-Konto mit Visual Studio verknüpfen, folgen Sie den Aufforderungen zum Konfigurieren einer Web-App von dort aus. Nachdem Sie fertig sind, können Sie einfach mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer klicken, um in Azure bereitzustellen. Sie müssen dennoch die MongoLab-Verbindungszeichenfolge konfigurieren, was in den Schritten unten beschrieben wird.
 
@@ -461,7 +463,8 @@ Sie können auch direkt in Visual Studio eine Web-App konfigurieren. Wenn Sie Ih
 
 1. Wenn die Überprüfung erfolgreich war, klicken Sie auf **Veröffentlichen**. Sobald die Veröffentlichung abgeschlossen ist, wird eine neue Browserregisterkarte mit der Web-App geöffnet.
 
-1. Geben Sie einen Text ein, klicken Sie auf **Erstellen**, und betrachten Sie das Ergebnis! ![HelloMongoAzure][screen-mongolab-sampleapp]
+1. Geben Sie einen Text ein, klicken Sie auf **Erstellen**, und betrachten Sie das Ergebnis!
+	![HelloMongoAzure][screen-mongolab-sampleapp]
 
 <a name="manage"></a>
 ## Verwalten der Datenbank
@@ -495,4 +498,4 @@ Glückwunsch! Sie haben gerade eine C# ASP.NET-Anwendung mit einer von MongoLab 
 
  
 
-<!----HONumber=July15_HO4-->
+<!-----HONumber=July15_HO4-->
