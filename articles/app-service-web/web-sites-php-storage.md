@@ -41,7 +41,8 @@ Gehen Sie folgendermaßen vor, um die PHP-Clientbibliotheken für Azure über Co
 
 1. [Installieren von Git][install-git]
 
-	> [AZURE.NOTE]Unter Windows muss die ausführbare Git-Datei zu Ihrer PATH-Umgebungsvariable hinzugefügt werden.
+> [AZURE.NOTE]
+> Unter Windows muss die ausführbare Git-Datei zu Ihrer PATH-Umgebungsvariable hinzugefügt werden.
 
 2. Erstellen Sie im Stammverzeichnis Ihres Projekts eine Datei namens **composer.json**, und fügen Sie zu dieser den folgenden Code hinzu:
 
@@ -430,4 +431,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [git-instructions]: ./media/web-sites-php-storage/git-instructions.png
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

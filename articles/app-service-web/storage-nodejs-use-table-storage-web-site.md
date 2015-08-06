@@ -39,7 +39,7 @@ Hier sehen Sie die erstellte Anwendung:
 
 ![Webseite mit einer leeren Aufgabenliste][node-table-finished]
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 
 ## Voraussetzungen
@@ -92,7 +92,7 @@ In diesem Abschnitt erstellen Sie eine neue Node-Anwendung und fügen Modulpaket
 		├── mkdirp@0.3.5
 		└── commander@1.3.2 (keypress@0.1.0)
 
-	> [AZURE.NOTE]Mit dem Parameter "-g" wird das Modul global installiert. Auf diese Weise können wir mithilfe des Befehls **express** ein Web-App-Gerüst generieren, ohne zusätzliche Pfadinformationen angeben zu müssen.
+	> [AZURE.NOTE] Mit dem Parameter "-g" wird das Modul global installiert. Auf diese Weise können wir mithilfe des Befehls **express** ein Web-App-Gerüst generieren, ohne zusätzliche Pfadinformationen angeben zu müssen.
 
 4. Um das Gerüst für die Anwendung zu erstellen, geben Sie den Befehl **express** ein:
 
@@ -340,7 +340,7 @@ Ein *Controller* verarbeitet HTTP-Anforderungen und rendert die HTML-Antwort.
 		var accountName = nconf.get("STORAGE_NAME");
 		var accountKey = nconf.get("STORAGE_KEY");
 
-	> [AZURE.NOTE]Nconf lädt die Konfigurationswerte entweder aus Umgebungsvariablen oder aus der Datei **config.json**, die wir später erstellen.
+	> [AZURE.NOTE] Nconf lädt die Konfigurationswerte entweder aus Umgebungsvariablen oder aus der Datei **config.json**, die wir später erstellen.
 
 3. Blättern Sie in der Datei "app.js" nach unten, bis Sie die folgende Zeile sehen:
 
@@ -481,7 +481,7 @@ Obwohl die Anwendung lokal ausgeführt wird, werden die Daten im Azure-Tabellend
 
 Die Schritte in diesem Abschnitt verwenden die Azure-Befehlszeilentools zum Erstellen einer neuen Web-App in App Service und verwenden dann Git zum Bereitstellen der Anwendung. Zur Durchführung dieser Schritte benötigen Sie ein Azure-Abonnement.
 
-> [AZURE.NOTE]Diese Schritte können auch über das [Azure-Portal](https://portal.azure.com) ausgeführt werden. Informationen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Web-App in Azure App Service].
+> [AZURE.NOTE] Diese Schritte können auch über das [Azure-Portal](https://portal.azure.com) ausgeführt werden. Informationen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Web-App in Azure App Service].
 >
 > Falls dies die erste von Ihnen erstellte Web-App ist, müssen Sie die Anwendung über das Azure-Portal bereitstellen.
 
@@ -499,7 +499,9 @@ In diesem Schritt laden Sie eine Datei mit Informationen zu Ihrem Abonnement her
 
 	Dieser Befehl startet einen Browser und navigiert zur Downloadseite. Melden Sie sich bei entsprechender Aufforderung mit dem Konto an, dass Ihrem Azure-Abonnement zugeordnet ist.
 
-	<!-- ![The download page][download-publishing-settings] -->Der Dateidownload sollte automatisch beginnen. Klicken Sie andernfalls auf den Link oben auf der Seite, um die Datei manuell herunterzuladen. Speichern Sie die Datei, und notieren Sie den Dateipfad.
+	<!-- ![The download page][download-publishing-settings] -->
+
+	Der Dateidownload sollte automatisch beginnen. Klicken Sie andernfalls auf den Link oben auf der Seite, um die Datei manuell herunterzuladen. Speichern Sie die Datei, und notieren Sie den Dateipfad.
 
 2. Geben Sie den folgenden Befehl ein, um die Einstellungen zu importieren:
 
@@ -521,7 +523,7 @@ In diesem Schritt laden Sie eine Datei mit Informationen zu Ihrem Abonnement her
 
 	Der `--git`-Parameter erstellt ein Git-Repository in Azure für diese Web-App. Er initialisiert zudem ein Git-Repository im aktuellen Verzeichnis, sofern noch keins vorhanden ist, und fügt ein [Git-Remoterepository] namens "azure" hinzu, mit dem die Anwendung in Azure veröffentlicht wird. Schließlich erstellt er die Datei **web.config** mit Einstellungen, die von Azure zum Hosten von Node-Anwendungen verwendet werden.
 
-	> [AZURE.NOTE]Wenn das Verzeichnis bereits ein Git-Repository enthält, wird das Verzeichnis durch den Befehl nicht erneut initialisiert. Wenn der `--git`-Parameter weggelassen wird, aber das Verzeichnis trotzdem noch ein Git-Repository enthält, wird das Remoterepository "azure" erstellt.
+	> [AZURE.NOTE] Wenn das Verzeichnis bereits ein Git-Repository enthält, wird das Verzeichnis durch den Befehl nicht erneut initialisiert. Wenn der `--git`-Parameter weggelassen wird, aber das Verzeichnis trotzdem noch ein Git-Repository enthält, wird das Remoterepository "azure" erstellt.
 
 	Nach Abschluss dieses Befehls wird eine Ausgabe ähnlich der folgenden angezeigt. Beachten Sie, dass die Zeile, die mit **Website erstellt am** beginnt, die URL für die Web-App enthält.
 
@@ -538,7 +540,7 @@ In diesem Schritt laden Sie eine Datei mit Informationen zu Ihrem Abonnement her
 		info:   Executing `git remote add azure https://username@tabletasklist.azurewebsites.net/TableTasklist.git`
 		info:   site create command OK
 
-	> [AZURE.NOTE]Falls dies die erste App Service-Web-App für Ihr Abonnement ist, werden Sie angewiesen, das Azure-Portal zum Erstellen der Web-App zu verwenden. Weitere Informationen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Web-App in Azure App Service].
+	> [AZURE.NOTE] Falls dies die erste App Service-Web-App für Ihr Abonnement ist, werden Sie angewiesen, das Azure-Portal zum Erstellen der Web-App zu verwenden. Weitere Informationen finden Sie unter [Erstellen und Bereitstellen einer Node.js-Web-App in Azure App Service].
 
 ### Festlegen von Umgebungsvariablen
 
@@ -548,7 +550,7 @@ In diesem Schritt fügen Sie Ihrer Web-App-Konfiguration für Azure Umgebungsvar
 		STORAGE_NAME=<storage account name>;STORAGE_KEY=<storage access key>;PARTITION_KEY=mytasks;TABLE_NAME=tasks
 
 
-Ersetzen Sie **<storage account name>** durch den Namen des zuvor erstellten Speicherkontos und **<storage access key>** durch den primären Zugriffsschlüssel für Ihr Speicherkonto. (Verwenden Sie die gleichen Werte wie die Datei "config.json", die Sie zuvor erstellt haben.)
+Ersetzen Sie**<storage account name>**durch den Namen des zuvor erstellten Speicherkontos und **<storage access key>** durch den primären Zugriffsschlüssel für Ihr Speicherkonto. (Verwenden Sie die gleichen Werte wie die Datei "config.json", die Sie zuvor erstellt haben.)
 
 Alternativ können Sie Umgebungsvariablen im [Azure-Portal](https://portal.azure.com) festlegen:
 
@@ -641,4 +643,4 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 [Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

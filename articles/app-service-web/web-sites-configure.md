@@ -36,7 +36,8 @@ Das Blatt **Anwendungseinstellungen** enthält Einstellungen, die unter verschie
 **Frameworkversionen**. Legen Sie diese Optionen fest, falls Ihre App von einem der folgenden Frameworks Gebrauch macht:
 
 - **.NET Framework**: Legen Sie die .NET Framework-Version fest. 
-- **PHP**: Legen Sie die PHP-Version fest, oder wählen Sie **AUS** aus, um PHP zu deaktivieren. - **Java**: Wählen Sie die Java-Version oder **AUS**, um Java zu deaktivieren. Über die Option **Webcontainer** können Sie zwischen Tomcat und Jetty wählen.
+- **PHP**: Legen Sie die PHP-Version fest, oder wählen Sie **AUS** aus, um PHP zu deaktivieren.
+- **Java**: Wählen Sie die Java-Version oder **AUS**, um Java zu deaktivieren. Über die Option **Webcontainer** können Sie zwischen Tomcat und Jetty wählen.
 - **Python**: Legen Sie die Python-Version fest, oder wählen Sie **AUS** aus, um Python zu deaktivieren.
 
 Aus technischen Gründen werden durch Aktivierung von Java für Ihre App die Optionen für .NET, PHP und Python deaktiviert.
@@ -174,4 +175,4 @@ Weitere Informationen finden Sie unter [Vorgehensweise: Überwachen des Web-Endp
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

@@ -36,7 +36,8 @@ Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst durch Be
 
 	Die erforderlichen Schritte zum Installieren von Git variieren je nach Betriebssystem. Informationen zu Betriebssystem-spezifischen Distributionen und zur Installation finden Sie unter [Installieren von Git].
 
-	> [AZURE.NOTE]Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
+	> [AZURE.NOTE]
+	> Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
 
 2. Öffnen Sie eine Befehlszeile, zum Beispiel **GitBash** (Windows) oder **Bash** (Unix Shell). Auf OS X-Systemen können Sie auf die Befehlszeile über die **Terminal**-Anwendung zugreifen.
 
@@ -59,7 +60,7 @@ Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst durch Be
 
 	In diesem Fall wurde ein neues Verzeichnis mit dem Namen des mobilen Dienstes erstellt. das als lokales Repository für den Datendienst dient.
 
-7. Öffnen Sie das Unterverzeichnis .\service\table und beachten Sie, dass dieses eine TodoItem.json-Datei enthält. Dabei handelt es sich um eine JSON-Darstellung der Operationsberechtigungen für die Tabelle TodoItem.
+7. Öffnen Sie das Unterverzeichnis .\\service\\table und beachten Sie, dass dieses eine TodoItem.json-Datei enthält. Dabei handelt es sich um eine JSON-Darstellung der Operationsberechtigungen für die Tabelle TodoItem.
 
 	Falls Sie Serverskripts für diese Tabelle definiert haben, sehen Sie außerdem eine oder mehrere Dateien mit dem Namen <code>TodoItem._&lt;operation&gt;_.js</code>. Diese Dateien enthalten die Skripts für die jeweilige Tabellenoperation. Zeitplanskripts und benutzerdefinierte API-Skripts werden in separaten Ordnern mit den jeweiligen Namen abgelegt. Weitere Informationen finden Sie unter [Quellcodeverwaltung].
 
@@ -67,7 +68,7 @@ Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Servers
 
 ##<a name="deploy-scripts"></a>Bereitstellen geänderter Skriptdateien in Ihrem mobilen Dienst
 
-1. Öffnen Sie das Unterverzeichnis .\service\table und erstellen Sie die Datei todoitem.insert.js, falls diese dort noch nicht existiert.
+1. Öffnen Sie das Unterverzeichnis .\\service\\table und erstellen Sie die Datei todoitem.insert.js, falls diese dort noch nicht existiert.
 
 2. Öffnen Sie die Datei todoitem.insert.js in einem Text-Editor, fügen Sie den folgenden Code ein und speichern Sie Ihre Änderungen:
 
@@ -109,7 +110,7 @@ Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobil
 
 	>[AZURE.NOTE]Durch diese Änderung in der Datei "package.json" wird nach dem Commit-Push ein Neustart in Ihrem mobilen Dienst ausgelöst.
 
-4. Öffnen Sie nun das Unterverzeichnis .\service\table, öffnen Sie die Datei todoitem.insert.js und ändern Sie den Code wie folgt:
+4. Öffnen Sie nun das Unterverzeichnis .\\service\\table, öffnen Sie die Datei todoitem.insert.js und ändern Sie den Code wie folgt:
 
 		function insert(item, user, request) {
 		    var uuid = require('node-uuid');
@@ -132,9 +133,11 @@ Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobil
 
 Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer Quellcodeverwaltung zu speichern. Die folgenden Artikel enthalten weiterführende Informationen zu Serverskripts und benutzerdefinierten APIs:
 
-+ [Arbeiten mit Serverskripts in Mobile Services] <br/>Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
++ [Arbeiten mit Serverskripts in Mobile Services] 
+	<br/>Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
 
-+ [Aufrufen einer benutzerdefinierten API vom Client] <br/> Zeigt, wie benutzerdefinierte APIs erstellt werden, die vom Client aufgerufen werden können.
++ [Aufrufen einer benutzerdefinierten API vom Client] 
+	<br/> Zeigt, wie benutzerdefinierte APIs erstellt werden, die vom Client aufgerufen werden können.
 
 <!-- Anchors. -->
 [Enable source control in your mobile service]: #enable-source-control
@@ -155,9 +158,10 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-ios-get-started-data.md
 [Arbeiten mit Serverskripts in Mobile Services]: mobile-services-how-to-use-server-scripts.md
 [Azure Management Portal]: https://manage.windowsazure.com/
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Aufrufen einer benutzerdefinierten API vom Client]: mobile-services-ios-call-custom-api.md
 [Module]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

@@ -1,9 +1,11 @@
 1.	Melden Sie sich online beim [Microsoft Azure-Vorschauportal](https://portal.azure.com/) an.
 2.	Klicken Sie in der Indexleiste auf **Neu**, klicken Sie auf **Daten und Speicher** und dann auf **Azure DocumentDB**. 
 
-	![Screenshot des Azure-Vorschauportals mit der Schaltfläche "Neu" und "Daten und Speicher" im Blatt "Erstellen" sowie "Azure DocumentDB" im Blatt "Daten und Speicher"][1]
+	![Screenshot des Azure-Vorschauportals mit der Schaltfläche "Neu" und "Daten und Speicher" im Blatt "Erstellen" sowie "Azure DocumentDB" im Blatt "Daten und Speicher"][1]   
 
-	<!-- Alternatively, from the Startboard, you can browse the Azure Marketplace, select **Data + storage**, choose **DocumentDB**, and then click **Create**.  --><!-- ![Screen shot of the Azure preview portal, showing the Marketplace blade with the DocumentDB tile highlighted, and the DocumentDB blade with the Create database button highlighted][2]    -->
+	<!-- Alternatively, from the Startboard, you can browse the Azure Marketplace, select **Data + storage**, choose **DocumentDB**, and then click **Create**.  -->
+	
+	<!-- ![Screen shot of the Azure preview portal, showing the Marketplace blade with the DocumentDB tile highlighted, and the DocumentDB blade with the Create database button highlighted][2]    -->
    
 
 3. Geben Sie im Blatt **Neues DocumentDB-Konto** die gewünschte Konfiguration für das DocumentDB-Konto an.
@@ -21,11 +23,12 @@
  
 	- Unter **Standort** können Sie einen geografischen Standort angeben, an dem Ihr DocumentDB-Konto gehostet wird.
 
-4.	Klicken Sie nach der Konfiguration der Optionen für das neue DocumentDB-Konto auf **Erstellen**. Die Erstellung des DocumentDB-Kontos kann einige Minuten dauern. Sie können den Fortschritt im Startmenü überwachen, um den Status zu überprüfen.![Screenshot der Kachel "Erstellen" im Startmenü – Online-Datenbankersteller][4]
+4.	Klicken Sie nach der Konfiguration der Optionen für das neue DocumentDB-Konto auf **Erstellen**. Die Erstellung des DocumentDB-Kontos kann einige Minuten dauern. Sie können den Fortschritt im Startmenü überwachen, um den Status zu überprüfen.  
+	![Screenshot der Kachel "Erstellen" im Startmenü – Online-Datenbankersteller][4]  
   
-	Sie können den Status auch über den Hub "Benachrichtigungen" überwachen.
+	Sie können den Status auch über den Hub "Benachrichtigungen" überwachen.  
 
-	![Datenbanken schnell erstellen – Screenshot des Notification Hubs, in dem gerade das DocumentDB-Konto erstellt wird – Benachrichtigung für Online-Datenbankersteller][5]
+	![Datenbanken schnell erstellen – Screenshot des Notification Hubs, in dem gerade das DocumentDB-Konto erstellt wird – Benachrichtigung für Online-Datenbankersteller][5]  
 
 	![Screenshot des Notification Hubs, in dem das DocumentDB-Konto erfolgreich erstellt und in einer Ressourcengruppe bereitgestellt wurde][6]
 
@@ -46,4 +49,4 @@
 [Next steps]: #NextSteps
 [documentdb-manage]: ../articles/documentdb/documentdb-manage.md
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

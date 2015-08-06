@@ -38,7 +38,8 @@ Preisinformationen finden Sie auf der [New Relic-Seite im Azure Marketplace](/ma
 
 Azure-Kunden erhalten bei Bereitstellung des New Relic-Agenten ein zweiwöchiges Testabonnement von New Relic Pro.
 
-Anmelden bei New Relic über den Azure Marketplace --
+Anmelden bei New Relic über den Azure Marketplace 
+--
 
 New Relic kann nahtlos in Azure-Web- und -Workerrollen sowie Azure App Service integriert werden.
 
@@ -175,4 +176,4 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
 [custom]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrcustom.png
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

@@ -75,11 +75,11 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 
 	<table border="1">
-<tr><th>Clustereigenschaft</th><th>Beschreibung</th></tr>
-<tr><td>HBase-Clustername</td><td>Der Name Ihres HDInsight HBase-Clusters. Beispiel: https://myhbase.azurehdinsight.net/</td></tr>
-<tr><td>Clusterbenutzer-Name</td><td>Der Name des Hadoop-Benutzerkontos. Der Standardbenutzername für Hadoop ist <strong>admin</strong>.</td></tr>
-<tr><td>Clusterbenutzer-Kennwort</td><td>Das Benutzerkennwort für den Hadoop-Cluster.</td></tr>
-</table>
+	<tr><th>Clustereigenschaft</th><th>Beschreibung</th></tr>
+	<tr><td>HBase-Clustername</td><td>Der Name Ihres HDInsight HBase-Clusters. Beispiel: https://myhbase.azurehdinsight.net/</td></tr>
+	<tr><td>Clusterbenutzer-Name</td><td>Der Name des Hadoop-Benutzerkontos. Der Standardbenutzername für Hadoop ist <strong>admin</strong>.</td></tr>
+	<tr><td>Clusterbenutzer-Kennwort</td><td>Das Benutzerkennwort für den Hadoop-Cluster.</td></tr>
+	</table>
 
 - **Eine Workstation** mit installiertem Visual Studio 2013. [Installieren von Visual Studio](http://msdn.microsoft.com/library/e2h7fzkw.aspx)
 
@@ -98,11 +98,13 @@ Die Streaming-APIs von Twitter verwenden [OAuth](http://oauth.net/), um Anforder
 3. Geben Sie einen **Namen**, eine **Beschreibung** und eine **Website** ein. Das Feld "Website" ist nicht zwingend erforderlich. Es muss keine gültige URL enthalten. Die folgende Tabelle zeigt einige mögliche Beispielwerte:
 
 	<table border="1">
-<tr><th>Feld</th><th>Wert</th></tr>
-<tr><td>Name</td><td>MyHDInsightHBaseApp</td></tr>
-<tr><td>Beschreibung</td><td>MyHDInsightHBaseApp</td></tr>
-<tr><td>Website</td><td>http://www.myhdinsighthbaseapp.com</td></tr>
-</table>> [AZURE.NOTE]Der Name der Twitter-Anwendung muss eindeutig sein.
+	<tr><th>Feld</th><th>Wert</th></tr>
+	<tr><td>Name</td><td>MyHDInsightHBaseApp</td></tr>
+	<tr><td>Beschreibung</td><td>MyHDInsightHBaseApp</td></tr>
+	<tr><td>Website</td><td>http://www.myhdinsighthbaseapp.com</td></tr>
+	</table>
+
+	> [AZURE.NOTE]Der Name der Twitter-Anwendung muss eindeutig sein.
 
 4. Aktivieren Sie **Yes, I agree**, und klicken Sie dann auf **Create your Twitter application**.
 5. Klicken Sie auf die Registerkarte **Permissions**. Die Standardberechtigung ist **Read only**. Diese Berechtigung reicht für dieses Lernprogramm aus. 
@@ -1175,7 +1177,8 @@ In diesem Abschnitt erstellen Sie eine ASP.NET MVC-Webanwendung, die die Echtzei
 
 **So ändern Sie die Datei "layout.cshtml"**
 
-1. Erweitern Sie im **Projektmappen-Explorer** den Eintrag **TweetSentimentWeb**, **Ansichten** und **Shared**, und doppelklicken Sie abschließend auf _**Layout.cshtml**.2. Ersetzen Sie den Inhalt durch Folgendes:
+1. Erweitern Sie im **Projektmappen-Explorer** den Eintrag **TweetSentimentWeb**, **Ansichten** und **Shared**, und doppelklicken Sie abschließend auf _**Layout.cshtml**.
+2. Ersetzen Sie den Inhalt durch Folgendes:
 
 		<!DOCTYPE html>
 		<html>
@@ -1352,6 +1355,7 @@ In diesem Tutorial haben Sie erfahren, wie Sie Tweets abrufen, die Stimmung von 
 [hdinsight-use-sqoop]: hdinsight-use-sqoop.md
 [hdinsight-power-query]: hdinsight-connect-excel-power-query.md
 [hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver.md
+
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

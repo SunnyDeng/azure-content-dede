@@ -30,7 +30,13 @@ Zur Verwendung des Chatter-Connectors müssen Sie zunächst eine Instanz der Cha
 2.	Wechseln Sie zu „Web und Mobil > API-Apps“, und suchen Sie nach „Chatter-Connector“.
 3.	Konfigurieren Sie den Chatter-Connector wie folgt:
 
-	![][1] – **Standort** – Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll. – **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll. – **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll. – **Webhostingplan** – Wählen Sie einen Webhostingplan aus, oder erstellen Sie einen. – **Tarif** – Wählen Sie einen Tarif für den Connector aus. – **Name** – Geben Sie Ihrem Chatter-Connector einen Namen.
+	![][1]
+	- **Standort** - Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll.
+	- **Abonnement** - Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
+	- **Ressourcengruppe** - Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
+	- **Webhostingplan** - Wählen Sie einen Webhostingplan aus, oder erstellen Sie einen.
+	- **Tarif** - Wählen Sie einen Tarif für den Connector aus.
+	- **Name** - Geben Sie Ihrem Chatter-Connector einen Namen.
 
 4.	Klicken Sie auf „Erstellen“. Ein neuer Chatter-Connector wird erstellt.
 5.	Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des Chatter-Connectors erstellen.
@@ -48,11 +54,14 @@ Sobald Ihre API-App erstellt wurde, können Sie den Chatter-Connector als Trigge
 	![][4]
 4. Sie können die Chatter-Connector-API-App im Editor bearbeiten, indem Sie auf „Chatter-Connector“ klicken. Klicken Sie auf die Schaltfläche „Autorisieren“. Geben Sie Ihre Anmeldeinformationen ein. Klicken Sie auf „Zulassen“.
 
-	![][5] ![][6] ![][7]
+	![][5]
+	![][6]
+	![][7]
 5.	Sie können nun den Chatter-Connector im Datenfluss verwenden. Sie können die aus dem Chatter-Trigger („Neue Nachricht“) abgerufene neue Nachricht für andere Aktionen im Datenfluss verwenden. Konfigurieren Sie die Eingabeeigenschaften für den Chatter-Trigger wie folgt:
 	- **Gruppen-ID** – Gibt die ID der Gruppe an, aus der die neue Nachricht abgerufen werden soll. Wenn die Gruppen-ID nicht angegeben wird, werden neue Nachrichten aus dem Feed des Benutzers abgerufen.
 
-  ![][8] ![][9]
+  ![][8]
+  ![][9]
 
 6. Auf ähnliche Weise können Sie die Chatter-Aktion im Datenfluss verwenden, um eine Nachricht bereitzustellen, indem Sie die Aktion „Nachricht bereitstellen“ auswählen. Konfigurieren Sie die Eingabeeigenschaften für die Aktion „Nachricht bereitstellen“ wie folgt:
 	- **Nachrichtentext** - Textinhalt der bereitzustellenden Nachricht.
@@ -64,7 +73,8 @@ Sobald Ihre API-App erstellt wurde, können Sie den Chatter-Connector als Trigge
 	- 	**Erwähnungen** – Bereich von Benutzernamen, die in der Nachricht markiert werden sollen
 	- 	**Hashtags** – Bereich von Hashtags, die mit der Nachricht bereitgestellt werden
 
-	![][10] ![][11]
+	![][10]
+	![][11]
 
 	<!--Image references-->
 [1]: ./media/app-service-logic-connector-chatter/img1.PNG
@@ -79,4 +89,4 @@ Sobald Ihre API-App erstellt wurde, können Sie den Chatter-Connector als Trigge
 [10]: ./media/app-service-logic-connector-chatter/img10.PNG
 [11]: ./media/app-service-logic-connector-chatter/img11.PNG
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

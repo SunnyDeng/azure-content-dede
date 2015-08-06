@@ -43,7 +43,8 @@ Die folgenden Zahlen stellen Näherungswerte dar.
 - CPU-Auslastung: ~ 1 % Zunahme
 - Arbeitsspeichernutzung: bis zu 10 % des insgesamt verfügbaren Systemarbeitsspeichers
 - Nutzung der Netzwerkbandbreite: ~ 1 MB pro 1000 AD FS-Anforderungen
->[AZURE.NOTE]
+>[AZURE.NOTE]Falls der Agent nicht mit Azure kommunizieren kann, speichert der Agent die Daten lokal bis zu einem Höchstwert von 10 % des gesamten Systemspeichers. Sobald der Agent 10 % des gesamten physischen Speichers erreicht hat und keine Daten in den Dienst mehr hochladen kann, überschreiben die neuen AD FS-Transaktionen etwaige zwischengespeicherte Transaktionen, wobei bei den am seltensten verwendeten Transaktionen begonnen wird.
+
 
 - Lokaler Pufferspeicher für AD Connect Health-Agent: ca. 20 MB
 - Datenspeicher für Überwachungskanal erforderlich
@@ -84,7 +85,7 @@ Fügen Sie der Datei "machine.config" folgenden Eintrag unter dem <configuration
 
  
 
-Zusätzliche <defaultProxy> Informationen finden Sie [hier] (https://msdn.microsoft.com/library/kd3cf2ex(v=vs.110).aspx)).
+Zusätzliche <defaultProxy> Informationen finden Sie [hier](https://msdn.microsoft.com/library/kd3cf2ex(v=vs.110).aspx).
 
 Mit diesen Einstellungen konfigurieren Sie .NET-Anwendungen systemweit so, dass bei .NET-Anforderungen über HTTP Ihr explizit definierter Proxy verwendet wird. Es wird nicht empfohlen, die einzelnen "app.config"-Dateien zu ändern, da diese Änderungen während einer automatischen Aktualisierung rückgängig gemacht werden. Wenn Sie die Datei "machine.config" bearbeiten, müssen Sie nur eine Datei ändern, und die Änderungen bleiben auch bei Aktualisierungen erhalten.
 
@@ -125,4 +126,4 @@ Azure AD Connect Health-Warnungen werden basierend auf einer Erfolgsbedingung a
 
 Sie müssen die TCP/UDP-Ports 80 und 443 öffnen, damit der Azure AD Connect Health-Agent mit den Azure AD Connect Health-Dienstendpunkten kommunizieren kann.
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

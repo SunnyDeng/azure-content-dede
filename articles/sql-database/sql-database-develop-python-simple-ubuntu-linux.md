@@ -95,11 +95,11 @@ In SQL-Datenbanken können die [IDENTITY](https://msdn.microsoft.com/library/ms1
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
 
 
-- Starten von Transaktionen
+-Starten von Transaktionen
 
-- Einfügen von Zeilen mit Daten
+-Einfügen von Zeilen mit Daten
 
-- Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
+-Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
 
 
 	import pymssql
@@ -112,4 +112,4 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

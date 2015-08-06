@@ -41,11 +41,11 @@ SendGrid ist ein [cloudbasierter E-Mail-Dienst], der zuverlässige [transaktiona
 
 Weitere Informationen finden Sie unter [https://sendgrid.com](https://sendgrid.com).
 
-<h2><a name="createaccount">Erstellen von SendGrid-Konten</a></h2>
+<h2><a name="createaccount"></a>Erstellen von SendGrid-Konten</h2>
 
 [AZURE.INCLUDE [sendgrid-sign-up](../../includes/sendgrid-sign-up.md)]
 
-<h2><a name="reference">Verweisen auf die SendGrid .NET-Klassenbibliothek</a></h2>
+<h2><a name="reference"></a>Verweisen auf die SendGrid .NET-Klassenbibliothek</h2>
 
 Der einfachste Weg, die SendGrid-API abzurufen und Ihre Anwendung mit allen Abhängigkeiten zu konfigurieren, ist das [SendGrid NuGet-Paket](https://www.nuget.org/packages/Sendgrid). NuGet ist eine Erweiterung von Microsoft Visual Studio 2012, die die Installation und die Aktualisierung von Bibliotheken und Tools erleichtert.
 
@@ -240,4 +240,4 @@ Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, f
   [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

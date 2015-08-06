@@ -130,13 +130,13 @@ Damit Sie die Vorteile des Premium-Speichers nutzen können, erstellen Sie zuers
 </tbody>
 </table>
 
-	For the most up-to-date information, see [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). To learn about the Premium storage disks and their IOPs and throughput limits, see the table in the [Scalability and Performance Targets when using Premium Storage](#scalability-and-performance-targets-whde-deing-premium-storage) section in this article.
+	Aktuelle Informationen finden Sie unter „[Größen virtueller Computer und Cloud-Dienste für Windows Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx)“. Informationen zu Premium Storage-Datenträgern und deren IOPs und Durchsatzlimits finden Sie in diesem Artikel im Abschnitt „[Premium Storage“ unter „Skalierbarkeits- und Leistungsziele für Azure Storage](#scalability-and-performance-targets-whde-deing-premium-storage)“ in der Tabelle.
 
 > [AZURE.NOTE]Cachetreffer werden durch die zugeordneten IOPS-/Durchsatzwerte des Datenträgers nicht eingeschränkt. Das heißt, bei Verwendung eines Datenträgers mit der Cacheeinstellung „ReadOnly“ für einen virtuellen Computer der DS-Serie unterliegen Lesevorgänge, die vom Cache verarbeitet werden, nicht den Einschränkungen für Premium-Speicherdatenträger. Daher können Sie einen sehr hohen Durchsatz mit einem Datenträger erzielen, wenn die Arbeitsauslastung vorwiegend aus Lesevorgängen besteht. Beachten Sie, dass für den Cache separate IOPS-/Durchsatzlimits auf Ebene des virtuellen Computers basierend auf der Größe des virtuellen Computers gelten. Virtuelle Computer der DS-Serie bieten etwa 4.000 IOPS und 33 MB pro Sekunde und Kern für E/A von Caches und lokalen SSDs.
 
 - Mit der gleichen DS-Serie der virtuellen Computer können Sie Datenträger des Premium- und Standardspeichers verwenden.
 - Mit dem Premium-Speicher können Sie einen virtuellen Computer der DS-Serie bereitstellen und mehrere permanente Datenträger an einen virtuellen Computer anschließen. Bei Bedarf können Sie Daten über die Datenträger verteilen, um die Kapazität und die Leistung des Volumens zu erhöhen. Wenn Sie Daten über Premium-Speicher-Datenträger mithilfe von [Speicherplätzen](http://technet.microsoft.com/library/hh831739.aspx) verteilen, sollten Sie sie für jeden verwendeten Datenträger eine Spalte konfigurieren. Andernfalls kann die Gesamtleistung des Stripesetvolume aufgrund ungleicher Verteilung des Datenverkehrs auf die Datenträger niedriger sein als erwartet. Standardmäßig können Sie auf der Server-Manager-Benutzeroberfläche Spalten für bis zu 8 Datenträger einrichten. Wenn Sie jedoch mehr als 8 Datenträger besitzen, müssen Sie PowerShell verwenden, um das Volumen zu erstellen. Außerdem müssen Sie die Anzahl der Spalten manuell angeben. Andernfalls verwendet die Server-Manager-Benutzeroberfläche weiterhin 8 Spalten, auch wenn Sie mehr Datenträger besitzen. Wenn Sie beispielsweise 32 Datenträger in einem einzelnen Stripeset besitzen, sollten Sie 32 Spalten angeben. Sie können mit dem *NumberOfColumns*-Parameter des PowerShell-Cmdlets [New-VirtualDisk](http://technet.microsoft.com/library/hh848643.aspx) die Anzahl der vom virtuellen Datenträger verwendeten Spalten angeben. Weitere Informationen finden Sie unter [Übersicht über Speicherplätze](http://technet.microsoft.com/library/jj822938.aspx) und [Häufig gestellte Fragen zu Speicherplätzen](http://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx).
-- Vermeiden Sie das Hinzufügen virtueller Computer der DS-Serie zu einem vorhandenen Clouddienst, der virtuelle Computer enthält, die nicht aus der DS-Serie stammen. Eine mögliche Problemumgehung besteht darin, vorhandene virtuelle Festplatten zu einem neuen Clouddienst zu migrieren, in dem nur virtuelle Computer der DS-Serie ausgeführt werden. Wenn Sie für den neuen Clouddienst dieselbe virtuelle IP-Adresse (VIP) beibehalten möchten, unter der die virtuellen Computer der DS-Serie gehostet werden, verwenden Sie das Feature [Reservierte IP-Adressen](virtual-networks-configure-vnet-to-vnet-connection.md).
+- Vermeiden Sie das Hinzufügen virtueller Computer der DS-Serie zu einem vorhandenen Clouddienst, der virtuelle Computer enthält, die nicht aus der DS-Serie stammen. Eine mögliche Problemumgehung besteht darin, vorhandene virtuelle Festplatten zu einem neuen Clouddienst zu migrieren, in dem nur virtuelle Computer der DS-Serie ausgeführt werden. Wenn Sie für den neuen Clouddienst dieselbe virtuelle IP-Adresse (VIP) beibehalten möchten, unter der die virtuellen Computer der DS-Serie gehostet werden, verwenden Sie das Feature [Reservierte IP-Adressen](https://msdn.microsoft.com/library/azure/dn690120.aspx).
 - Die DS-Serie der virtuellen Azure-Computer kann so konfiguriert werden, dass sie einen Betriebssystemdatenträger verwendet, der entweder in einem Standardspeicherkonto oder einem Premium-Speicherkonto gehostet wird. Wenn Sie den Betriebssystemdatenträger nur zum Starten verwenden, sollten Sie die Verwendung eines auf dem Standardspeicher basierenden Betriebssystemdatenträgers in Erwägung ziehen. Dadurch ergeben sich Kostenvorteile und ähnliche Leistungsergebnisse nach dem Hochfahren wie beim Premium-Speicher. Wenn Sie auf dem Betriebssystemdatenträger neben dem Starten weitere Aufgaben ausführen, verwenden Sie Premium-Speicher, da er bessere Leistungsergebnisse bietet. Wenn Ihre Anwendung vom Betriebssystemdatenträger liest und auf diesen Datenträger schreibt, bietet ein auf Premium-Speicher basierender Betriebssystemdatenträger eine bessere Leistung für Ihren virtuellen Computer.
 - Sie können die [Azure-Befehlszeilenschnittstelle (Azure CLI)](../xplat-cli.md) mit Premium-Speicher verwenden. Um die Cacherichtlinie auf einem Ihrer Datenträger mit der Azure-Befehlszeilenschnittstelle zu ändern, führen Sie den folgenden Befehl aus:
 
@@ -262,8 +262,56 @@ Nachfolgend finden Sie wichtige Anweisungen zum Konfigurieren virtueller Linux-C
 
 - Bei Premium-Speicherdatenträgern mit der Cacheeinstellung „ReadWrite“ müssen Sperren aktiviert werden, um die Beständigkeit von Schreibvorgängen zu gewährleisten.
 
-Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher überprüft wurden. Es wird empfohlen, dass Sie Ihre virtuellen Computer auf mindestens eine dieser Versionen (oder eine höhere Version) aktualisieren, um eine bessere Leistung und Stabilität mit Premium-Speicher zu erzielen. Außerdem erfordern einige Versionen die neuesten LIS (Linux-Integrationsdienste v4.0 für Microsoft Azure). Der Download und die Installation sind über folgenden Link möglich: Wir fügen der Liste mehr Images hinzu, wenn weitere Überprüfungen ausgeführt wurden. Beachten Sie, dass unsere Überprüfungen ergaben, dass die Leistung für diese Images variiert. Sie hängt auch von den Arbeitsauslastungsmerkmalen und -einstellungen der Images ab. Verschiedene Images werden für verschiedene Arten von Arbeitsauslastung optimiert. <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;"> <tbody> <tr> <td><strong>Verteilung</strong></td> <td><strong>Version</strong></td> <td><strong>Unterstützter Kernel</strong></td> <td><strong>Unterstütztes Image</strong></td> </tr> <tr> <td rowspan="4"><strong>Ubuntu</strong></td> <td>12.04</td> <td>3.2.0-75.110</td> <td>Ubuntu-12_04_5-LTS-amd64-server-20150119-de-de-30GB</td> </tr> <tr> <td>14.04</td> <td>3.13.0-44.73</td> <td>Ubuntu-14_04_1-LTS-amd64-server-20150123-de-de-30GB</td> </tr> <tr> <td>14.10</td> <td>3.16.0-29.39</td> <td>Ubuntu-14_10-amd64-server-20150202-de-de-30GB</td> </tr> <tr> <td>15.04</td> <td>3.19.0-15</td> <td>Ubuntu-15_04-amd64-server-20150422-de-de-30GB</td> </tr> <tr> <td><strong>SUSE</strong></td> <td>SLES 12</td> <td>3.12.36-38.1</td> <td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td> </tr> <tr> <td><strong>CoreOS</strong></td> <td>584.0.0</td> <td>3.18.4</td> <td>CoreOS 584.0.0</td> </tr> <tr> <td rowspan="2"><strong>CentOS</strong></td> <td>6.5, 6.6, 7.0</td> <td></td> <td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 erforderlich</a></td> </tr> <tr> <td>7.1</td> <td>3.10.0-229.1.2.el7</td> <td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 empfohlen </a></td> </tr>
-
+Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher überprüft wurden. Es wird empfohlen, dass Sie Ihre virtuellen Computer auf mindestens eine dieser Versionen (oder eine höhere Version) aktualisieren, um eine bessere Leistung und Stabilität mit Premium-Speicher zu erzielen. Außerdem erfordern einige Versionen die neuesten LIS (Linux-Integrationsdienste v4.0 für Microsoft Azure). Der Download und die Installation sind über folgenden Link möglich: Wir fügen der Liste mehr Images hinzu, wenn weitere Überprüfungen ausgeführt wurden. Beachten Sie, dass unsere Überprüfungen ergaben, dass die Leistung für diese Images variiert. Sie hängt auch von den Arbeitsauslastungsmerkmalen und -einstellungen der Images ab. Verschiedene Images werden für verschiedene Arten von Arbeitsauslastung optimiert. 
+<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;"> 
+<tbody> 
+<tr>
+	<td><strong>Verteilung</strong></td> 
+	<td><strong>Version</strong></td> 
+	<td><strong>Unterstützter Kernel</strong></td> 
+	<td><strong>Unterstütztes Image</strong></td> 
+</tr> 
+<tr> 
+	<td rowspan="4"><strong>Ubuntu</strong></td> 
+	<td>12.04</td> <td>3.2.0-75.110</td> 
+	<td>Ubuntu-12_04_5-LTS-amd64-server-20150119-de-de-30GB</td> 
+</tr> 
+<tr> 
+	<td>14.04</td> 
+	<td>3.13.0-44.73</td> 
+	<td>Ubuntu-14_04_1-LTS-amd64-server-20150123-de-de-30GB</td> 
+</tr> 
+<tr> 
+	<td>14.10</td> 
+	<td>3.16.0-29.39</td> 
+	<td>Ubuntu-14_10-amd64-server-20150202-de-de-30GB</td> 
+</tr> 
+<tr> 
+	<td>15.04</td> 
+	<td>3.19.0-15</td> 
+	<td>Ubuntu-15_04-amd64-server-20150422-de-de-30GB</td> 
+</tr> 
+<tr> 
+	<td><strong>SUSE</strong></td> 
+	<td>SLES 12</td> <td>3.12.36-38.1</td> 
+	<td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td> 
+</tr> 
+<tr> 
+	<td><strong>CoreOS</strong></td> 
+	<td>584.0.0</td> <td>3.18.4</td> 
+	<td>CoreOS 584.0.0</td> 
+</tr> 
+<tr> 
+	<td rowspan="2"><strong>CentOS</strong></td> 
+	<td>6.5, 6.6, 7.0</td> 
+	<td></td> 
+	<td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 erforderlich</a></td> 
+</tr> 
+<tr> 
+	<td>7.1</td> 
+	<td>3.10.0-229.1.2.el7</td> 
+	<td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 empfohlen </a></td> 
+</tr>
 <tr>
 	<td rowspan="2"><strong>Oracle</strong></td>
 	<td>6.4.</td>
@@ -275,7 +323,8 @@ Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher
 	<td></td>
 	<td>Ausführliche Informationen erhalten Sie vom Support.</td>
 </tr>
-</tbody> </table>
+</tbody> 
+</table>
 
 
 ## Preisgestaltung und Abrechnung bei der Verwendung des Premium-Speichers
@@ -391,4 +440,4 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

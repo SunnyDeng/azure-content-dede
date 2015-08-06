@@ -87,7 +87,7 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 [Hinzufügen von Authentifizierung zur App]: mobile-services-windows-store-javascript-get-started-users.md
 [Hinzufügen von Pushbenachrichtigungen zur App]: mobile-services-javascript-backend-windows-store-javascript-get-started-push.md
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

@@ -52,8 +52,9 @@ Verwenden Sie das Modul [Metadaten-Editor][metadata-editor], um Spaltenüberschr
 2.	Klicken Sie, und ziehen Sie das Modul [Metadaten-Editor][metadata-editor] in den Bereich, um es unter dem Dataset abzulegen.
 3.	Verbinden des Datasets mit dem [Metadata Editor][metadata-editor]: Klicken Sie auf den Ausgabeport des Datasets, ziehen Sie ihn zum Eingabeport des [Metadata Editors][metadata-editor], und lassen Sie die Maustaste los. Das Dataset und das Modul bleiben verbunden, auch wenn Sie diese im Bereich verschieben.
 4.	Klicken Sie bei ausgewähltem [Metadata Editor][metadata-editor] im Bereich **Eigenschaften** rechts neben der Canvas auf **Launch column selector**.
-5.	Legen Sie im Dialogfeld **Select columns** das Feld **Begin With** auf „All columns“ fest.
-6.	In der Zeile unterhalb von **Begin With** können Sie bestimmte Spalten für die Bearbeitung durch den [Metadata Editor][metadata-editor] ein- oder ausschließen. Da in diesem Beispiel alle Spalten bearbeitet werden sollen, löschen Sie diese Zeile, indem Sie auf das Minuszeichen ("-") rechts neben der Zeile klicken. Das Dialogfeld sollte wie folgt aussehen: ![Spaltenauswahl, alle Spalten ausgewählt][4]
+5.	Legen Sie im Dialogfeld **Select columns** das Feld **Begin With** auf "All columns" fest.
+6.	In der Zeile unterhalb von **Begin With** können Sie bestimmte Spalten für die Bearbeitung durch den [Metadata Editor][metadata-editor] ein- oder ausschließen. Da in diesem Beispiel alle Spalten bearbeitet werden sollen, löschen Sie diese Zeile, indem Sie auf das Minuszeichen ("-") rechts neben der Zeile klicken. Das Dialogfeld sollte wie folgt aussehen:
+    ![Spaltenauswahl, alle Spalten ausgewählt][4]
 7.	Klicken Sie auf das Häkchen **OK**. 
 8.	Suchen Sie im Bereich **Properties** nach dem Parameter **New column name**. Geben Sie in diesem Feld eine Liste der Namen für die 21 Spalten im Dataset ein, durch Kommas getrennt und in der Reihenfolge der Spalten. Die Spaltennamen können Sie der Datasetdokumentation auf der UCI-Website entnehmen, oder Sie können einfach Folgendes kopieren und einfügen:  
 
@@ -78,7 +79,7 @@ Der nächste Schritt des Experiments besteht im Erstellen von getrennten Dataset
 
 1.	Suchen Sie das Modul [Aufteilen][split], ziehen Sie es in den Bereich, und verbinden Sie es mit dem letzten Modul [Metadaten-Editor][metadata-editor].
 2.	Standardmäßig beträgt das Aufteilungsverhältnis 0,5, und der Parameter **Zufällige Aufteilung** ist festgelegt. Das bedeutet, dass eine zufällig ausgewählte Hälfte der Daten über einen Port des Moduls [Aufteilen][split] ausgegeben wird, die andere Hälfte über den anderen Port. Sie können diese Werte und den Parameter **Zufälliger Ausgangswert** anpassen, um die Aufteilung zwischen Trainings- und Bewertungsdaten zu ändern. Für dieses Beispiel bleiben die Werte unverändert.
-	> [AZURE.TIP]  
+	> [AZURE.TIP] Das Aufteilungsverhältnis bestimmt im Wesentlichen, wie viele der Daten über den linken Ausgabeport ausgegeben werden.Wenn Sie z. B. ein Aufteilungsverhältnis von 0,7 festlegen, werden 70 % der Daten über den linken Port und 30 % der Daten über den rechten Port ausgegeben.
 	
 Die Ausgaben des Moduls [Aufteilen][split] können beliebig verwendet werden. In diesem Fall wählen wir, die linke Ausgabe als Trainingsdaten und die rechte Ausgabe als Bewertungsdaten zu verwenden.
 
@@ -125,4 +126,4 @@ Weitere Informationen zum Verwenden von R-Skripts in Ihren Experimenten finden S
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

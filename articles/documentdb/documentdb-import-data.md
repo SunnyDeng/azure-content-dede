@@ -137,7 +137,20 @@ Diese Abfrage gibt die folgenden (partiellen) Ergebnisse zurück:
 
 Beachten Sie die Aliase, wie z. B. Address.AddressType und Address.Location.StateProvinceName. Durch Angabe des Schachtelungstrennzeichens "." erstellt das Importtool während des Imports die Filialdokumente "Address" und "Address.Location". Hier finden Sie ein Beispiel für ein Zieldokument in DocumentDB:
 
-*{ "id": "956", "Name": "Finer Sales and Service", "Address": { "AddressType": "Main Office", "AddressLine1": "#500-75 O'Connor Street", "Location": { "City": "Ottawa", "StateProvinceName": "Ontario" }, "PostalCode": "K4B 1S2", "CountryRegionName": "Canada" } }*
+*{
+  "id": "956",
+  "Name": "Finer Sales and Service",
+  "Address": {
+    "AddressType": "Main Office",
+    "AddressLine1": "#500-75 O'Connor Street",
+    "Location": {
+      "City": "Ottawa",
+      "StateProvinceName": "Ontario"
+    },
+    "PostalCode": "K4B 1S2",
+    "CountryRegionName": "Canada"
+  }
+}*
  
 Hier finden Sie einige Beispiele für Befehlszeilen zum Importieren aus SQL Server:
 
@@ -159,7 +172,18 @@ Mit der Importprogrammoption für CSV-Dateiquellen können Sie eine oder mehrere
 
 Beachten Sie die Aliase wie z. B."DomainInfo.Domain_Name" und "RedirectInfo.Redirecting". Durch Angabe des Schachtelungstrennzeichens "." erstellt das Importtool während des Imports die Filialdokumente "DomainInfo" und "RedirectInfo". Hier finden Sie ein Beispiel für ein Zieldokument in DocumentDB:
 
-*{ "DomainInfo": { "Domain_Name": "ACUS.GOV", "Domain_Name_Address": "http://www.ACUS.GOV" }, "Federal Agency": "Administrative Conference of the United States", "RedirectInfo": { "Redirecting": "0", "Redirect_Destination": "" }, "id": "9cc565c5-ebcd-1c03-ebd3-cc3e2ecd814d" }*
+*{
+  "DomainInfo": {
+    "Domain_Name": "ACUS.GOV",
+    "Domain_Name_Address": "http://www.ACUS.GOV"
+  },
+  "Federal Agency": "Administrative Conference of the United States",
+  "RedirectInfo": {
+    "Redirecting": "0",
+    "Redirect_Destination": ""
+  },
+  "id": "9cc565c5-ebcd-1c03-ebd3-cc3e2ecd814d"
+}*
 
 Das Importtool versucht, Typinformationen für Werte ohne Anführungszeichen in CSV-Dateien abzuleiten (Werte in Anführungszeichen werden immer als Zeichenfolgen behandelt). Typen werden in der folgenden Reihenfolge identifiziert: number, datetime, boolean.
 
@@ -247,7 +271,8 @@ Zum Importieren von Daten aus einer einzelnen DocumentDB-Sammlung geben Sie den 
 
 Die Importprogrammoption für DocumentDB-Quellen weist die folgenden erweiterten Optionen auf:
 
-1. Interne Felder einschließen: Gibt an, ob DocumentDB-Dokumentsystemeigenschaften (z. B. _rid,_ts) in den Export eingeschlossen werden oder nicht.2. Anzahl der Wiederholungsversuche bei Fehler: Gibt an, wie häufig bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) versucht werden soll, eine Verbindung zu DocumentDB herzustellen.
+1. Interne Felder einschließen: Gibt an, ob DocumentDB-Dokumentsystemeigenschaften (z. B. _rid,_ts) in den Export eingeschlossen werden oder nicht.
+2. Anzahl der Wiederholungsversuche bei Fehler: Gibt an, wie häufig bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) versucht werden soll, eine Verbindung zu DocumentDB herzustellen.
 3. Intervall der Wiederholungsversuche: Gibt an, wie lang bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) gewartet werden soll, bevor erneut versucht wird, eine Verbindung zu DocumentDB herzustellen.
 4. Verbindungsmodus: Gibt den Verbindungsmodus an, der mit DocumentDB verwendet werden soll. Verfügbare Optionen sind DirectTcp, DirectHttps und Gateway. Die Direktverbindungsmodi sind schneller, der Gatewaymodus ist besser für Firewalls geeignet, da nur Port 443 verwendet wird.
 
@@ -476,4 +501,4 @@ Geben Sie auf dem Bildschirm "Erweiterte Konfiguration" den Speicherort der Prot
 
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->
