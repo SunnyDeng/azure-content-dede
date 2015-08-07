@@ -492,4 +492,4 @@ Dieser Ansatz empfiehlt folgende Schritte:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
 
-<!-----HONumber=July15_HO4-->
+<!------HONumber=July15_HO4-->
