@@ -257,4 +257,4 @@ Sie können zu diesem Tutorial die folgenden Videos nutzen.
 [28]: ./media/active-directory-saas-salesforce-tutorial/assign-confirm.png
 [29]: ./media/active-directory-saas-salesforce-tutorial/assign-sf-profile.png
 
-<!----HONumber=July15_HO4-->
+<!-----HONumber=July15_HO4-->

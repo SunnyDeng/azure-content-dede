@@ -345,7 +345,7 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 		sudo chgrp lampappgroup /var/www/html/  # Change the ownership to group lampappgroup
 		sudo chmod g+w /var/www/html/                 # grant write permission to group lampappgroup
 
-	>[AZURE.NOTE]
+	>[AZURE.NOTE] Möglicherweise müssen Sie sich erneut anmelden, wenn Sie eine Datei in "/var/www/html/" ändern möchten.
 -	Verwenden Sie zum Herstellen einer Verbindung mit dem DNS-Namen Ihres virtuellen Computers (z. B. "lampdemo.cloudapp.net") einen beliebigen SFTP-Client (z. B. FileZilla), und navigieren Sie dann zu "/**var/www/html**", um Ihre Website zu veröffentlichen. ![][18]
 
 
@@ -452,4 +452,4 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 [18]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-18.jpg
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->
