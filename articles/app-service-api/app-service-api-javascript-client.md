@@ -310,7 +310,7 @@ In diesem Abschnitt erstellen Sie eine neue leere Webanwendung, installieren Ang
             $scope.refresh();
         });
 
-Ersetzen Sie im Code, den Sie gerade der Datei "index.html" hinzugefügt haben, die Portnummer in der Basis-URL (`http://localhost:1578`) durch die tatsächliche Portnummer für Ihr API-Projekt.
+1, Ersetzen Sie im Code, den Sie gerade der Datei "index.html" hinzugefügt haben, die Portnummer in der Basis-URL (`http://localhost:1578`) durch die tatsächliche Portnummer für Ihr API-Projekt.
 
 	> **Hinweis** Verwenden Sie nicht die Portnummer des HTML-Clientprojekts. Klicken Sie stattdessen mit der rechten Maustaste auf das API-Projekt und anschließend auf „Debuggen“ > „Neue Instanz starten“, sodass ein Browserfenster mit der Portnummer angezeigt wird.
 
