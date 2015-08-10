@@ -33,7 +33,7 @@ Für virtuelle Computer in Azure gibt es zwei einfache Methoden, die Agent-basie
 
 Bei Verwendung der Agent-basierten Sammlung für Protokolldaten müssen Sie auf der Konfigurationsseite der Protokollverwaltung im [Operational Insights-Portal](https://preview.opinsights.azure.com/) konfigurieren, welche Protokolle erfasst werden sollen
 
- >[AZURE.NOTE]Wenn Sie Operational Insights so konfiguriert haben, dass Protokolldaten mithilfe der Azure-Diagnose indiziert werden, und Sie den Agent für das Erfassen von Protokollen konfigurieren, werden dieselben Protokolle doppelt indiziert. Für beide Datenquellen werden die regulären Datenraten berechnet. Wenn Sie den Agent installiert haben, sollten Sie die Protokolldaten mithilfe des Agents sammeln und nicht die von der Azure-Diagnose erfassten Protokolle indizieren.
+ \>[AZURE.NOTE]Wenn Sie Operational Insights so konfiguriert haben, dass Protokolldaten mithilfe der Azure-Diagnose indiziert werden, und Sie den Agent für das Erfassen von Protokollen konfigurieren, werden dieselben Protokolle doppelt indiziert. Für beide Datenquellen werden die regulären Datenraten berechnet. Wenn Sie den Agent installiert haben, sollten Sie die Protokolldaten mithilfe des Agents sammeln und nicht die von der Azure-Diagnose erfassten Protokolle indizieren.
 
 ## Microsoft Azure-Verwaltungsportal
 
@@ -47,7 +47,7 @@ Der Agent wird automatisch installiert und für den Operational Insights-Arbeits
 
 ![Abbildung der Seite mit Operational Insights-Servern](./media/operational-insights-analyze-data-azure/servers.png)
 
- >[AZURE.NOTE]Der [VM-Agent von Azure](https://msdn.microsoft.com/library/azure/dn832621.aspx) muss installiert sein, damit der Agent für Operational Insights automatisch installiert wird.
+ \>[AZURE.NOTE]Der [VM-Agent von Azure](https://msdn.microsoft.com/library/azure/dn832621.aspx) muss installiert sein, damit der Agent für Operational Insights automatisch installiert wird.
 
 
 
@@ -87,54 +87,18 @@ Die Azure-Diagnose ist eine Azure-Erweiterung, mit der Sie Diagnosedaten von ein
 
 Mit der Azure-Diagnose können die folgenden Arten von Telemetriedaten erfasst werden:
 
-<table border="1" cellspacing="4" cellpadding="4">
-    <tbody>
-    <tr align="left" valign="top">
-		<td><b>Datenquelle</b></td>
-		<td><b> Description </b></td>
-    </tr>
-    <tr align="left" valign="top">
-		<td>IIS-Protokolle</td>
-		<td>Informationen zu IIS-Websites</td>
-    </tr>
-    <tr align="left" valign="top">
-		<td>Infrastrukturprotokolle der Azure-Diagnose</td>
-		<td>Informationen zur Diagnose selbst</td>
-    </tr>
-	<tr align="left" valign="top">
-		<td>Protokolle zu IIS-Anforderungsfehlern </td>
-		<td>Informationen zu fehlgeschlagenen IIS-Website- oder IIS-Anwendungsanforderungen</td>
-    </tr>
-	    <tr align="left" valign="top">
-		<td>Windows-Ereignisprotokolle</td>
-		<td>An das Windows-System für die Ereignisprotokollierung gesendete Informationen</td>
-    </tr>
-    <tr align="left" valign="top">
-		<td>Leistungsindikatoren</td>
-		<td>Leistungsindikatoren des Betriebssystems und benutzerdefinierte Leistungsindikatoren</td>
-    </tr>
-    <tr align="left" valign="top">
-		<td>Absturzabbilder</td>
-		<td>Informationen zum Status des Prozesses im Fall eines Anwendungsabsturzes</td>
-    </tr>
-    <tr align="left" valign="top">
-		<td>Benutzerdefinierte Fehlerprotokolle</td>
-		<td>Von Ihrer Anwendung oder Ihrem Dienst erstellte Protokolle</td>
-    </tr>
-    <tr align="left" valign="top">
-		<td>NET-EventSource</td>
-		<td>Von Ihrem Code mit der <a href="https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx">-.NET-EventSource-Klasse generierte Ereignisse.</td>
-    </tr>
-    <tr align="left" valign="top">
-		<td>Manifestbasiertes ETW</td>
-		<td>Von einem beliebigen Prozess generierte ETW-Ereignisse</td>
-    &lt;/tr
-    <tr align="left" valign="top">
-		<td>Syslog</td>
-		<td>An die Syslog- oder Rsyslog-Daemons gesendete Ereignisse.</td>
-    </tr>
-    </tbody>
-    </table>
+Datenquelle|Beschreibung
+ ---|--- 
+IIS-Protokolle|Informationen zu IIS-Websites
+Infrastrukturprotokolle der Azure-Diagnose|Informationen zur Diagnose selbst
+Protokolle zu IIS-Anforderungsfehlern |Informationen zu fehlgeschlagenen IIS-Website- oder IIS-Anwendungsanforderungen
+Windows-Ereignisprotokolle|An das Windows-System für die Ereignisprotokollierung gesendete Informationen
+Leistungsindikatoren|Leistungsindikatoren des Betriebssystems und benutzerdefinierte Leistungsindikatoren
+Absturzabbilder|Informationen zum Status des Prozesses im Fall eines Anwendungsabsturzes
+Benutzerdefinierte Fehlerprotokolle|Von Ihrer Anwendung oder Ihrem Dienst erstellte Protokolle
+NET-EventSource|Von Ihrem Code mit der .NET-\[EventSource-Klasse\]\(https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx\) generierte Ereignisse.
+Manifestbasiertes ETW|Von einem beliebigen Prozess generierte ETW-Ereignisse.
+Syslog|An die Syslog- oder Rsyslog-Daemons gesendete Ereignisse.
 
 
 Derzeit kann Operational Insights Folgendes analysieren:
@@ -145,11 +109,11 @@ Derzeit kann Operational Insights Folgendes analysieren:
 
 Die Protokolle müssen in folgenden Speicherorten enthalten sein:
 
-- WADWindowsEventLogsTable (Tabellenspeicherung) – Enthält Informationen aus Windows-Ereignisprotokollen.
-- wad-iis-logfiles (Blob-Speicher) – Enthält Informationen zu IIS-Protokollen.
-- LinuxsyslogVer2v0 (Tabellenspeicherung) – enthält Linux-Syslog-Ereignisse.
+- WADWindowsEventLogsTable \(Tabellenspeicherung\) – Enthält Informationen aus Windows-Ereignisprotokollen.
+- wad-iis-logfiles \(Blob-Speicher\) – Enthält Informationen zu IIS-Protokollen.
+- LinuxsyslogVer2v0 \(Tabellenspeicherung\) – enthält Linux-Syslog-Ereignisse.
 
- >[AZURE.NOTE]IIS-Protokolle von Azure-Websites werden derzeit nicht unterstützt.
+ \>[AZURE.NOTE]IIS-Protokolle von Azure-Websites werden derzeit nicht unterstützt.
 
 Bei virtuellen Maschinen haben Sie die Möglichkeit, [Microsoft Monitoring Agent](http://go.microsoft.com/fwlink/?LinkId=517269) auf Ihrem virtuellen Computer zu installieren, um zusätzliche Erkenntnisse zu gewinnen. Auf diese Weise können Sie nicht nur IIS-Protokolle und Ereignisprotokolle analysieren, sondern auch zusätzliche Analysen durchführen, einschließlich der Nachverfolgung von Konfigurationsänderungen, SQL-Bewertung und der Bewertung von Updates.
 
@@ -157,7 +121,7 @@ Helfen Sie uns, die Prioritäten für weitere zu analysierende Protokolle für O
 
 ## Aktivieren der Azure-Diagnose in einer Webrolle für die Sammlung von IIS-Protokollen und -Ereignissen
 
-Informationen hierzu finden Sie unter [Aktivieren der Diagnose in einem Cloud-Dienst](https://msdn.microsoft.com/library/azure/dn482131.aspx). Sie verwenden die grundlegenden Informationen von dort und passen hier die Schritte für die Verwendung mit Microsoft Azure Operational Insights an.
+Informationen hierzu finden Sie unter [Aktivieren der Diagnose in einem Clouddienst](https://msdn.microsoft.com/library/azure/dn482131.aspx). Sie verwenden die grundlegenden Informationen von dort und passen hier die Schritte für die Verwendung mit Microsoft Azure Operational Insights an.
 
 Bei aktivierter Azure-Diagnose:
 
@@ -167,7 +131,7 @@ Bei aktivierter Azure-Diagnose:
 
 ### So aktivieren Sie die Diagnose
 
-Um Windows-Ereignisprotokolle zu aktivieren oder die „scheduledTransferPeriod“ zu ändern, konfigurieren Sie die Azure-Diagnose mithilfe der XML-Konfigurationsdatei (diagnostics.wadcfg), siehe [Schritt2: Hinzufügen der Datei "diagnostics.wadcfg" zu Ihrer Visual Studio-Lösung](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step2) und [Schritt 3: Konfigurieren der Diagnose für Ihre Anwendung](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step3) im Thema "Aktivieren der Diagnose in einem Cloud-Dienst". Die folgende Beispielkonfigurationsdatei sammelt IIS-Protokolle und alle Ereignisse aus dem Anwendungs- und dem Systemprotokoll:
+Um Windows-Ereignisprotokolle zu aktivieren oder die "scheduledTransferPeriod" zu ändern, konfigurieren Sie die Azure-Diagnose mithilfe der XML-Konfigurationsdatei \(diagnostics.wadcfg\), wie im Thema "Aktivieren der Diagnose in einem Clouddienst" in [Schritt 2: Hinzufügen der Datei "diagnostics.wadcfg" zur Visual Studio-Projektmappe](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step2) und in [Schritt 3: Konfigurieren der Diagnose für Ihre Anwendung](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step3) beschrieben wird. Die folgende Beispielkonfigurationsdatei sammelt IIS-Protokolle und alle Ereignisse aus dem Anwendungs- und dem Systemprotokoll:
 
     <?xml version="1.0" encoding="utf-8" ?>
     <DiagnosticMonitorConfiguration xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration"
@@ -190,7 +154,7 @@ Um Windows-Ereignisprotokolle zu aktivieren oder die „scheduledTransferPeriod�
     </DiagnosticMonitorConfiguration>
 
 
-Stellen Sie in [Schritt 4: Konfigurieren der Speicherung von Diagnosedaten](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step4) im Thema "Aktivieren der Dignose in einem Cloud-Dienst" sicher, dass "ConfigurationSettings" ein Speicherkonto angibt, wie im folgenden Beispiel gezeigt wird:
+Stellen Sie in [Schritt 4: Konfigurieren des Speichers für Diagnosedaten](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step4) im Thema "Aktivieren der Diagnose in einem Clouddienst" sicher, dass "ConfigurationSettings" ein Speicherkonto angibt, wie im folgenden Beispiel gezeigt wird:
 
 
     <ConfigurationSettings>
@@ -268,10 +232,10 @@ Wenden Sie folgendes Verfahren an, um die Speicheranalyse zu aktivieren und um O
 ### So aktivieren Sie die Analyse über Operational Insights
 
 1. Navigieren Sie im Azure-Standardportal zu Ihrem Operational Insights-Arbeitsbereich, und wählen Sie die Registerkarte **Storage** aus. ![Registerkarte „Arbeitsbereichspeicher“](./media/operational-insights-analyze-data-azure/workspace-storage-tab.png)
-2. Klicken Sie auf **Speicherkonto hinzufügen**, um das Feld **Speicherkonto hinzufügen** zu öffnen.
+2. Klicken Sie auf **Hinzufügen eines Speicherkontos**, um das Feld **Speicherkonto hinzufügen** zu öffnen.
 3. Wählen Sie das Speicherkonto, das Sie verwenden möchten.
-4. Wählen Sie in der Liste **Datentyp** einen Datentyp: entweder **Ereignisse**, **IIS-Protokolle** oder **Syslog (Linux)**.
-5. Klicken Sie auf das Bild **OK**. ![Feld „Speicherkonto“](./media/operational-insights-analyze-data-azure/storage-account.png)
+4. Wählen Sie in der Liste **Datentyp** einen Datentyp: entweder **Ereignisse**, **IIS-Protokolle** oder **Syslog \(Linux\)**.
+5. Klicken Sie auf das Symbol **OK**.<br> ![Feld „Speicherkonto“](./media/operational-insights-analyze-data-azure/storage-account.png)
 6. Wiederholen Sie die oben genannten Schritte für jede Kombination aus Datentyp und Speicherkonto, die Sie erfassen möchten.
 
 Nach etwa einer Stunde werden Daten aus dem Speicherkonto für die Analyse in Operational Insights verfügbar.
@@ -279,10 +243,10 @@ Nach etwa einer Stunde werden Daten aus dem Speicherkonto für die Analyse in Op
 ## Verwandte Inhalte
 
 - [Direktes Verbinden von Computern mit Operational Insights](operational-insights-direct-agent)
-- [Blogbeitrag: Enable Operational Insights for Azure Virtual machines (in englischer Sprache)](http://azure.microsoft.com/updates/easily-enable-operational-insights-for-azure-virtual-machines/)
+- [Blogbeitrag: Aktivieren von Operational Insights für virtuelle Azure-Computer](http://azure.microsoft.com/updates/easily-enable-operational-insights-for-azure-virtual-machines/)
 
 ## Nächste Schritte
 
-[Konfigurieren von Proxy- und Firewall-Einstellungen (Optional)](../operational-insights-proxy-filewall.md)
+[Konfigurieren von Proxy- und Firewall-Einstellungen \(Optional\)](../operational-insights-proxy-filewall.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -31,9 +31,9 @@ Unterstützung für Windows-Desktop-Apps und -Dienste wird über das Application
 
 1.  Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource. Wählen Sie als Anwendungstyp "Windows Store-App" aus. 
 
-    ![Klicken Sie auf "Neu > Application Insights".](./media/app-insights-windows-desktop/01-new.png)
+    ![Klicken Sie auf "Neu \> Application Insights".](./media/app-insights-windows-desktop/01-new.png)
 
-    (Die Auswahl des Anwendungstyps bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften.)
+    \(Die Auswahl des Anwendungstyps bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften.\)
 
 2.  Erstellen Sie eine Kopie des Instrumentationsschlüssels.
 
@@ -56,7 +56,7 @@ Unterstützung für Windows-Desktop-Apps und -Dienste wird über das Application
 
 Erstellen Sie eine `TelemetryClient`-Instanz und [nutzen Sie sie anschließend, um Telemetriedaten zu senden][api].
 
-Verwenden Sie `TelemetryClient.Flush()` zum Senden von Nachrichten vor dem Schließen der App. Das Core SDK verwendet einen arbeitsspeicherinternen Puffer. Die Löschmethode stellt sicher, dass dieser Puffer geleert wird, damit beim Beenden des Prozesses keine Daten verloren gehen. (Dies wird für andere Arten von Apps nicht empfohlen. Die Plattform-SDKs implementieren dieses Verhalten automatisch.)
+Verwenden Sie `TelemetryClient.Flush()` zum Senden von Nachrichten vor dem Schließen der App. Das Core SDK verwendet einen arbeitsspeicherinternen Puffer. Die Löschmethode stellt sicher, dass dieser Puffer geleert wird, damit beim Beenden des Prozesses keine Daten verloren gehen. \(Dies wird für andere Arten von Apps nicht empfohlen. Die Plattform-SDKs implementieren dieses Verhalten automatisch.\)
 
 Beispielsweise können Sie in einer Windows Forms-Anwendung Folgendes schreiben:
 
@@ -95,11 +95,11 @@ Beispielsweise können Sie in einer Windows Forms-Anwendung Folgendes schreiben:
 
 Verwenden Sie eine der [Application Insights-APIs][api], um Telemetriedaten zu senden. In Windows-Desktopanwendungen werden Telemetriedaten nicht automatisch gesendet. In der Regel würden Sie Folgendes verwenden:
 
-* "TrackPageView(pageName)" für umschaltbare Formulare, Seiten oder Registerkarten
-* "TrackEvent(eventName)" für andere Benutzeraktionen
-* "TrackMetric(Name, Wert)" bei einer Hintergrundaufgabe, um Berichte zu Metriken, die nicht bestimmten Ereignissen zugeordnet sind, regelmäßig zu senden.
-* "TrackTrace(logEvent)" für die [Diagnoseprotokollierung][diagnostic]
-* "TrackException(exception)" in Catch-Klauseln
+* "TrackPageView\(pageName\)" für umschaltbare Formulare, Seiten oder Registerkarten
+* "TrackEvent\(eventName\)" für andere Benutzeraktionen
+* "TrackMetric\(Name, Wert\)" bei einer Hintergrundaufgabe, um Berichte zu Metriken, die nicht bestimmten Ereignissen zugeordnet sind, regelmäßig zu senden.
+* "TrackTrace\(logEvent\)" für die [Diagnoseprotokollierung][diagnostic]
+* "TrackException\(exception\)" in Catch-Klauseln
 
 #### Kontextinitialisierer
 
@@ -173,4 +173,4 @@ Wenn Sie "TrackMetric" oder den Parameter "measurements" von "TrackEvent" verwen
 [CoreNuGet]: https://www.nuget.org/packages/Microsoft.ApplicationInsights
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

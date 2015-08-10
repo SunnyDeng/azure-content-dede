@@ -18,7 +18,7 @@
 
 # Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal
 
-Es wird nun die rollenbasierte Zugriffssteuerung (RBAC) über das Microsoft Azure-Portal unterstützt, damit Organisationen ihren Zugriffsverwaltungsanforderungen einfach und präzise nachkommen können. Lesen Sie diesen [Blogeintrag](http://go.microsoft.com/fwlink/?LinkId=511576), um sich mit dieser Funktion vertraut zu machen und eine rasche Einführung zu erhalten. Die Konzepte werden detailliert beschrieben und an zusätzlichen Anwendungsfällen verdeutlicht.
+Es wird nun die rollenbasierte Zugriffssteuerung \(RBAC\) über das Microsoft Azure-Portal unterstützt, damit Organisationen ihren Zugriffsverwaltungsanforderungen einfach und präzise nachkommen können. Lesen Sie diesen [Blogeintrag](http://go.microsoft.com/fwlink/?LinkId=511576), um sich mit dieser Funktion vertraut zu machen und eine rasche Einführung zu erhalten. Die Konzepte werden detailliert beschrieben und an zusätzlichen Anwendungsfällen verdeutlicht.
 
 
 ## RBAC in Azure
@@ -41,7 +41,7 @@ Azure AD-Benutzer und -Dienste erhalten Zugriff, indem ihnen die entsprechende 
 
 Den folgenden Azure AD-Sicherheitsprinzipalen können Rollen zugewiesen werden:
 
-+ **Benutzer**: Organisationsbenutzern können Rollen zugewiesen werden, wenn sie Teil des Azure AD sind, das mit dem Azure-Abonnement verknüpft ist. Auch Benutzern von externen Microsoft-Konten Rollen zugewiesen werden (wie joe@outlook.com): Dabei wird einem Benutzer mithilfe der Invite-Aktion eine Rolle über das Azure-Portal zugewiesen. Wenn einem externen Microsoft Account-Benutzer eine Rolle zugewiesen wird, wird in Azure AD ein Gastkonto für diesen Benutzer erstellt. Wird das Gastkonto im Verzeichnis deaktiviert, ist der Benutzer nicht berechtigt, auf bereits gewährte Azure-Ressourcen zuzugreifen.
++ **Benutzer**: Organisationsbenutzern können Rollen zugewiesen werden, wenn sie Teil des Azure AD sind, das mit dem Azure-Abonnement verknüpft ist. Auch Benutzern von externen Microsoft-Konten Rollen zugewiesen werden \(wie joe@outlook.com\): Dabei wird einem Benutzer mithilfe der Invite-Aktion eine Rolle über das Azure-Portal zugewiesen. Wenn einem externen Microsoft Account-Benutzer eine Rolle zugewiesen wird, wird in Azure AD ein Gastkonto für diesen Benutzer erstellt. Wird das Gastkonto im Verzeichnis deaktiviert, ist der Benutzer nicht berechtigt, auf bereits gewährte Azure-Ressourcen zuzugreifen.
 + **Gruppen**: Azure AD-Sicherheitsgruppen können Rollen zugewiesen werden. Ein Benutzer erhält automatisch Zugriff auf eine Ressource, wenn er Mitglied einer Gruppe mit Zugriffsrechten wird. Ebenso verliert der Benutzer automatisch Zugriff auf die Ressource, wenn er aus der Gruppe entfernt wird. Es wird empfohlen, Zugriffsrechte über Gruppen zu verwalten, d. h. anstatt einzelnen Benutzern werden Gruppen Rollen zugewiesen und Benutzer zur Gruppe hinzugefügt oder daraus entfernt. Verteilungslisten können in Azure RBAC keine Rollen zugewiesen werden. Durch die Möglichkeit, Gruppen Rollen zuweisen zu können, kann eine Organisation ihr bestehendes Zugriffssteuerungsmodell von ihrem lokalen Verzeichnis auf die Cloud ausweiten. Dadurch lassen sich bereits für die lokale Zugriffssteuerung festgelegte Sicherheitsgruppen für die Zugriffssteuerung auf Ressourcen im Azure-Portal wiederverwenden. Weitere Informationen über die verschiedenen Optionen zur Synchronisation von Benutzern und Gruppen von einem lokalen Verzeichnis aus finden Sie unter [Verzeichnisintegration](http://technet.microsoft.com/library/jj573653.aspx). Azure AD Premium bietet außerdem eine [Funktion zur delegierten Gruppenverwaltung](http://msdn.microsoft.com/library/azure/dn641267.aspx). Mit dieser Funktion kann die Erstellung und Verwaltung von Gruppen an Nichtadministratorbenutzer von Azure AD delegiert werden.
 + **Dienstprinzipale**: Dienstidentitäten werden im Verzeichnis als Dienstprinzipale dargestellt. Sie authentifizieren sich mit Azure AD und können sicher miteinander kommunizieren. Diensten kann der Zugriff auf Azure-Ressourcen gewährleistet werden, indem dem Azure AD-Dienstprinzipal, der den Dienst darstellt, Rollen über das Azure-Modul für Windows PowerShell zugewiesen werden.
 
@@ -80,19 +80,19 @@ Gesamtes Team von Jana Schulz | Erstellen und Verwalten der gesamten Ressourcen 
 Brock | Erstellen und Verwalten der gesamten Ressourcen in der Prod-Ressourcengruppe | Hinzufügen von Brock zur Rolle "Mitwirkender" für die Prod-Ressourcengruppe
 
 
-Zunächst wird für alle Ressourcen eines Abonnements Lesezugriff hinzugefügt. Klicken Sie auf **Durchsuchen > Alles > Abonnements**.
+Zunächst wird für alle Ressourcen eines Abonnements Lesezugriff hinzugefügt. Klicken Sie auf **Durchsuchen \> Alles \> Abonnements**.
 
 ![][3]
 
-Klicken Sie auf *Name des Abonnements* ** > Leser > Hinzufügen**. Wählen Sie aus der Liste mit Benutzern und Gruppen den Namen der Active Directory-Gruppe aus, oder geben Sie ihn ein.
+Klicken Sie auf *Name des Abonnements* \*\* \> Leser \> Hinzufügen\*\*. Wählen Sie aus der Liste mit Benutzern und Gruppen den Namen der Active Directory-Gruppe aus, oder geben Sie ihn ein.
 
 ![][4]
 
-Fügen Sie dasselbe Team zur Rolle „Mitwirkender“ der Test-Ressourcengruppe hinzu. Klicken Sie auf eine Ressourcengruppe, um deren Eigenschaften anzuzeigen. Klicken Sie unter **Rollen** auf **Mitwirkender > Hinzufügen**, und geben Sie den Namen des Teams ein.
+Fügen Sie dasselbe Team zur Rolle „Mitwirkender“ der Test-Ressourcengruppe hinzu. Klicken Sie auf eine Ressourcengruppe, um deren Eigenschaften anzuzeigen. Klicken Sie unter **Rollen** auf **Mitwirkender \> Hinzufügen**, und geben Sie den Namen des Teams ein.
 
 ![][5]
 
-Um Brock zur Rolle "Mitwirkender" der Prod-Ressourcengruppe hinzuzufügen, klicken Sie auf die Ressourcengruppe, dann auf **Mitwirkender > Hinzufügen**, und geben Sie den Namen "Brock" ein.
+Um Brock zur Rolle "Mitwirkender" der Prod-Ressourcengruppe hinzuzufügen, klicken Sie auf die Ressourcengruppe, dann auf **Mitwirkender \> Hinzufügen**, und geben Sie den Namen "Brock" ein.
 
 ![][6]
 
@@ -104,7 +104,7 @@ Weitere Informationen über das Hinzufügen und Entfernen von Zugriffsrechten mi
 
 ### Zugriff entfernen
 
-Zugriffsberechtigungen können einfach wieder entfernt werden. Angenommen, Sie möchten einen Benutzer namens Bernd Ahrend von der Leserolle der TestDB-Ressourcengruppe entfernen. Öffnen Sie das Ressourcengruppenfenster, und klicken Sie auf **Leser > Bernd Ahrend > Entfernen**.
+Zugriffsberechtigungen können einfach wieder entfernt werden. Angenommen, Sie möchten einen Benutzer namens Bernd Ahrend von der Leserolle der TestDB-Ressourcengruppe entfernen. Öffnen Sie das Ressourcengruppenfenster, und klicken Sie auf **Leser \> Bernd Ahrend \> Entfernen**.
 
 ![][7]
 
@@ -114,7 +114,7 @@ Im folgenden Beispiel wird der Benutzer Bernd Ahrend über das Remove-AzureRoleA
 
 ### Zugriff für externe Benutzer hinzufügen und entfernen
 
-Die Registerkarte **Konfigurieren** eines Verzeichnisses enthält Optionen zur Zugriffssteuerung für externe Benutzer. Diese Optionen können nur über die Benutzeroberfläche (es gibt keine Windows PowerShell- oder API-Methode) im vollständigen Azure-Portal durch einen globalen Verzeichnisadministrator geändert werden. Klicken Sie zum Öffnen im Azure-Portal auf die Registerkarte **Konfigurieren** und dann auf **Active Directory** und den Namen des Verzeichnisses.
+Die Registerkarte **Konfigurieren** eines Verzeichnisses enthält Optionen zur Zugriffssteuerung für externe Benutzer. Diese Optionen können nur über die Benutzeroberfläche \(es gibt keine Windows PowerShell- oder API-Methode\) im vollständigen Azure-Portal durch einen globalen Verzeichnisadministrator geändert werden. Klicken Sie zum Öffnen im Azure-Portal auf die Registerkarte **Konfigurieren** und dann auf **Active Directory** und den Namen des Verzeichnisses.
 
 ![][10]
 
@@ -130,7 +130,7 @@ In der Standardeinstellung können Gäste den Verzeichnisinhalt nicht auflisten 
 
 Durch die Anzeige eingeschränkter Informationen zu einem Benutzer oder einer Gruppe können Gäste andere Personen einladen und Informationen zu Personen anzeigen, mit denen sie zusammenarbeiten.
 
-Gehen Sie wie folgt vor, um Zugriff für einen externen Benutzer hinzuzufügen. Wir fügen einen externen Benutzer zur selben Leserolle für die TestDB-Ressourcengruppe hinzu, sodass der Benutzer beim Beheben eines Fehlers helfen kann. Öffnen Sie das Ressourcengruppenfenster, klicken Sie auf **Leser > Hinzufügen > Einladen**, und geben Sie die E-Mail-Adresse des hinzuzufügenden Benutzers ein.
+Gehen Sie wie folgt vor, um Zugriff für einen externen Benutzer hinzuzufügen. Wir fügen einen externen Benutzer zur selben Leserolle für die TestDB-Ressourcengruppe hinzu, sodass der Benutzer beim Beheben eines Fehlers helfen kann. Öffnen Sie das Ressourcengruppenfenster, klicken Sie auf **Leser \> Hinzufügen \> Einladen**, und geben Sie die E-Mail-Adresse des hinzuzufügenden Benutzers ein.
 
 ![][9]
 
@@ -463,7 +463,7 @@ Rollenname | Beschreibung
 [Mitwirkender von virtuellen Computern](#virtual-machine-contributor) | Ermöglicht Ihnen die Verwaltung von virtuellen Computern, aber nicht den Zugriff darauf und nicht die Verwaltung des virtuellen Netzwerks oder Speicherkontos, mit dem sie verbunden sind.
 [Mitwirkender von virtuellem Netzwerk](#virtual-network-contributor) | Ermöglicht Ihnen die Verwaltung von virtuellen Netzwerken, aber nicht den Zugriff darauf.
 [Mitwirkender von Webplan](#web-plan-contributor) | Ermöglicht Ihnen die Verwaltung von Webplänen, aber nicht den Zugriff darauf.
-[Mitwirkender von Website](#website-contributor) | Ermöglicht Ihnen die Verwaltung von Websites (nicht Webplänen), aber nicht den Zugriff darauf.
+[Mitwirkender von Website](#website-contributor) | Ermöglicht Ihnen die Verwaltung von Websites \(nicht Webplänen\), aber nicht den Zugriff darauf.
 
 
 ### Mitwirkender des API-Verwaltungsdienstes
@@ -1293,4 +1293,4 @@ Die folgenden Ressourcen bieten weitere Unterstützung für die Verwendung der r
 [9]: ./media/role-based-access-control-configure/RBACInviteExtUser_NEW.png
 [10]: ./media/role-based-access-control-configure/RBACDirConfigTab.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

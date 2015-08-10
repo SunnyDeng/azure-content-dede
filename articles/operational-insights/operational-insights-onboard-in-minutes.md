@@ -97,4 +97,4 @@ Mit der Operations Management Suite können Sie schnell Ereignis- und IIS-Protok
 - Vertraut machen mit der [Suche](operational-insights-search.md)
 - Verwenden von [Dashboards](operational-insights-use-dashboards.md) zum Speichern und Anzeigen von benutzerdefinierten Suchvorgängen
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

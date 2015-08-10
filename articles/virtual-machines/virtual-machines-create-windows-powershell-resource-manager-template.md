@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="davidmu1"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -13,12 +14,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/29/2015"
+	ms.date="07/28/2015"
 	ms.author="davidmu"/>
 
 # Erstellen Sie einen virtuellen Windows-Computer mit einer Resource Manager-Vorlage
 
-Sie können ganz leicht einen neuen Windows-basierten virtuellen Computer (VM) in Azure mit einer Resource Manager-Vorlage mit Azure PowerShell oder der Azure-CLI erstellen. Diese Vorlage erstellt einen einzelnen virtuellen Computer unter Windows in einem neuen virtuellen Netzwerk mit einem einzelnen Subnetz in einer neuen Ressourcengruppe.
+Sie können ganz leicht einen neuen Windows-basierten virtuellen Computer \(VM\) in Azure mit einer Resource Manager-Vorlage mit Azure PowerShell oder der Azure-CLI erstellen. Diese Vorlage erstellt einen einzelnen virtuellen Computer unter Windows in einem neuen virtuellen Netzwerk mit einem einzelnen Subnetz in einer neuen Ressourcengruppe.
 
 ![](./media/virtual-machines-create-windows-powershell-resource-manager-template/windowsvm.png)
 
@@ -279,7 +280,7 @@ Sie haben nun einen neuen virtuellen Windows-Computer mit dem Namen MyWindowsVM 
 
 Gehen Sie folgendermaßen vor, um eine Windows-VM mit einer Resource Manager-Vorlage im Github-Vorlagenrepository mit Azure CLI-Befehlen zu erstellen.
 
-Geben Sie einen Namen und Azure-Speicherort (z. B. westus für den Westen der USA) ein, entfernen Sie die eckigen Klammern, und führen Sie anschließend diese Befehle aus.
+Geben Sie einen Namen und Azure-Speicherort \(z. B. westus für den Westen der USA\) ein, entfernen Sie die eckigen Klammern, und führen Sie anschließend diese Befehle aus.
 
 	azure group create [resource group] [location]
 	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json [resource group] firstdeployment
@@ -322,14 +323,14 @@ Die Ausgabe sollte folgendermaßen aussehen:
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Azure Resource Manager Overview](resource-group-overview.md) (Übersicht über den Azure-Ressourcen-Manager)
+[Azure Resource Manager Overview](resource-group-overview.md) \(Übersicht über den Azure-Ressourcen-Manager\)
 
-[Create a Windows virtual machine with Azure Resource Manager and PowerShell](virtual-machines-create-windows-powershell-resource-manager.md) (Erstellen eines virtuellen Windows-Computers mit dem Azure-Ressourcen-Manager und PowerShell)
+[Create a Windows virtual machine with Azure Resource Manager and PowerShell](virtual-machines-create-windows-powershell-resource-manager.md) \(Erstellen eines virtuellen Windows-Computers mit dem Azure-Ressourcen-Manager und PowerShell\)
 
-[Create a Windows virtual machine with PowerShell and Azure Service Manager](virtual-machines-create-windows-powershell-service-manager.md) (Erstellen eines virtuellen Windows-Computer mit PowerShell und Azure Service Manager)
+[Create a Windows virtual machine with PowerShell and Azure Service Manager](virtual-machines-create-windows-powershell-service-manager.md) \(Erstellen eines virtuellen Windows-Computer mit PowerShell und Azure Service Manager\)
 
 [Dokumentation zu virtuellen Maschinen](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
 [Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

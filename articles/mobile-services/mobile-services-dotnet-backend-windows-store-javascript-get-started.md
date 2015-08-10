@@ -21,13 +21,16 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
+##Übersicht
 In diesem Lernprogramm wird gezeigt, wie Sie einer universellen Windows-App einen cloudbasierten Back-End-Dienst unter Verwendung von Azure Mobile Services hinzufügen. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache *To-Do-Listen*-App in HTML und JavaScript, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen erstellte mobile Dienst verwendet die unterstützten .NET-Sprachen unter Verwendung von Visual Studio für die serverseitige Geschäftslogik und zur Verwaltung des mobilen Diensts. Informationen zum Erstellen eines mobilen Diensts, dessen serverseitige Geschäftslogik Sie in JavaScript schreiben können, finden Sie in der JavaScript-Version dieses Themas.
 
 [AZURE.INCLUDE [mobile-services-windows-universal-get-started](../../includes/mobile-services-windows-universal-get-started.md)]
 
+##Voraussetzungen
+
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
+* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
 * <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a>. Dazu ist eine kostenlose Testversion verfügbar.
 
 
@@ -68,26 +71,22 @@ In diesem Abschnitt erstellen Sie eine neue universelle Windows-App, die sich mi
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../../includes/mobile-services-dotnet-backend-publish-service.md)]
 
-<ol start="4">
-<li><p>Öffnen Sie im Projekt mit freigegebenem Code die Datei "default.js", suchen Sie den Code, durch den eine <a href="http://msdn.microsoft.com/library/azure/jj554219.aspx" target="_blank">WindowsAzure.MobileServiceClient</a>-Instanz erstellt wird, kommentieren Sie den Code aus, der diesen Client mit <em>localhost</em> erstellt, und heben Sie die Auskommentierung für den Code auf, der den Client mithilfe der URL des mobilen Remotediensts erstellt und etwa folgendermaßen aussieht:</p>
+&nbsp;&nbsp;4. Öffnen Sie im Projekt mit freigegebenem Code die Datei "default.js", suchen Sie den Code, durch den eine [WindowsAzure.MobileServiceClient](http://msdn.microsoft.com/library/azure/jj554219.aspx)-Instanz erstellt wird, kommentieren Sie den Code aus, der diesen Client mit *localhost* erstellt, und heben Sie die Auskommentierung für den Code auf, der den Client mithilfe der URL des mobilen Remotediensts erstellt und etwa folgendermaßen aussieht:
 
-        <pre><code>var client = new WindowsAzure.MobileServiceClient(
-            "https://todolist.azure-mobile.net/",
-            "XXXXXX-APPLICATION-KEY-XXXXXX"
-        );</code></pre>
+	var client = new WindowsAzure.MobileServiceClient(
+	    "https://todolist.azure-mobile.net/",
+	    "XXXXXX-APPLICATION-KEY-XXXXXX"
+	);
 
-	<p>Der Client greift jetzt auf den in Azure veröffentlichten mobilen Dienst zu.</p></li>
+&nbsp;&nbsp;Der Client greift jetzt auf den in Azure veröffentlichten mobilen Dienst zu.
 
-<li><p>Drücken Sie die <strong>F5</strong>-Taste, um das Projekt neu zu erstellen und die App zu starten.</p></li>
+&nbsp;&nbsp;5. Drücken Sie die **F5**-Taste, um das Projekt neu zu erstellen und die App zu starten.
 
-<li><p>Geben Sie in der App einen beschreibenden Text ein, zum Beispiel <em>Lernprogramm abschließen</em>, unter <strong>TodoItem einfügen</strong>. Klicken Sie dann auf <strong>Speichern</strong>.</p>
+&nbsp;&nbsp;6. Geben Sie in der App einen beschreibenden Text ein, zum Beispiel *Lernprogramm abschließen*, unter **Insert a TodoItem**. Klicken Sie dann auf **Save**.
 
-<p>Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet.</p>
-</li>
-<li><p>(Optional) Ändern Sie in einer universellen Windows-Lösung das standardmäßige Startprojekt in die andere App, und drücken Sie erneut <strong>F5</strong>.</p>
+&nbsp;&nbsp;Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet.
 
-	<p>Beachten Sie, dass nach dem Starten der App im vorhergehenden Schritt gespeicherte Daten aus dem mobilen Dienst geladen werden.</p></li>
-</ol>
+&nbsp;&nbsp;7. \(Optional\) Ändern Sie in einer universellen Windows-Lösung das Standard-Startprojekt in die andere App, und drücken Sie erneut **F5**. Beachten Sie, dass nach dem Starten der App im vorhergehenden Schritt gespeicherte Daten aus dem mobilen Dienst geladen werden.
 
 Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstützen mehrerer Geräteplattformen aus einem einzigen Mobile Service heraus](mobile-services-how-to-use-multiple-clients-single-service.md#shared-vs).
 
@@ -121,4 +120,4 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 [Get started with data in Mobile Services using Visual Studio 2012]: ../mobile-services-windows-store-dotnet-get-started-data-vs2012.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

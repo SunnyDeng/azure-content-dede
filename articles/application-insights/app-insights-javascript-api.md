@@ -86,7 +86,7 @@ Verwenden Sie nur die ersten beiden Parameter, um eine Messung zu senden. Wenn S
 
     trackException(exception: Error, handledAt?: string, properties?: Object, measurements?: Object)
 
-Protokolliert eine Ausnahme, die Sie abgefangen haben. (Vom Browser abgefangene Ausnahmen werden ebenfalls protokolliert.)
+Protokolliert eine Ausnahme, die Sie abgefangen haben. \(Vom Browser abgefangene Ausnahmen werden ebenfalls protokolliert.\)
 
 Im Portal können Sie [Ausnahmetypen suchen und](app-insights-diagnostic-search.md) den Typ, die Meldung und die Stapelüberwachung einzelner Instanzen anzeigen.
 
@@ -103,7 +103,7 @@ Im Portal können Sie [Ausnahmetypen suchen und](app-insights-diagnostic-search.
 
 Protokolliert ein Diagnoseereignis wie das Aufrufen oder Verlassen einer Methode.
 
-Im Portal können Sie den Meldungsinhalt durchsuchen und [einzelne trackTrace-Ereignisse anzeigen](app-insights-diagnostic-search.md). (Im Gegensatz zu `trackEvent` können Sie im Portal nicht nach dem Meldungsinhalt filtern.)
+Im Portal können Sie den Meldungsinhalt durchsuchen und [einzelne trackTrace-Ereignisse anzeigen](app-insights-diagnostic-search.md). \(Im Gegensatz zu `trackEvent` können Sie im Portal nicht nach dem Meldungsinhalt filtern.\)
 
  | | 
 ---|---|---
@@ -218,4 +218,4 @@ Informationen über das Gerät, den Standort und den Benutzer, die das SDK aus d
 
 Lesen Sie den [Code für das SDK](https://github.com/Microsoft/ApplicationInsights-js), und ergänzen Sie ihn.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

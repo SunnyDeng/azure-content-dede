@@ -72,7 +72,7 @@ Um mithilfe der Nutzungsanalyse Daten zu sammeln und zu analysieren, benötigt d
 #### So aktivieren Sie die Überwachung für AD FS 2.0
 
 1. Klicken Sie auf **Start**, zeigen Sie auf **Programme** und dann auf **Verwaltung**, und klicken Sie anschließend auf **Lokale Sicherheitsrichtlinie**.
-1. Navigieren Sie zum Ordner **Sicherheitseinstellungen\Lokale Richtlinien\Zuweisen von Benutzerrechten**, und doppelklicken Sie dann auf "Generieren von Sicherheitsüberwachungen".
+1. Navigieren Sie zum Ordner **Sicherheitseinstellungen\\Lokale Richtlinien\\Zuweisen von Benutzerrechten**, und doppelklicken Sie dann auf "Generieren von Sicherheitsüberwachungen".
 1. Stellen Sie auf der Registerkarte **Lokale Sicherheitseinstellung** sicher, dass das AD FS 2.0-Dienstkonto aufgeführt wird. Wenn es nicht vorhanden ist, klicken Sie auf **Benutzer oder Gruppe hinzufügen** und fügen es der Liste hinzu. Klicken Sie dann auf **OK**.
 1. Öffnen Sie eine Eingabeaufforderung mit erhöhten Rechten, und führen Sie den folgenden Befehl zum Aktivieren der Überwachung aus. `auditpol.exe /set /subcategory:"Application Generated" /failure:enable /success:enable`
 1. Schließen Sie "Lokale Sicherheitsrichtlinie", und öffnen Sie dann das Verwaltungs-Snap-In. Klicken Sie zum Öffnen des Verwaltungs-Snap-Ins auf **Start**, zeigen Sie auf **Programme** und dann auf **Verwaltung**, und klicken Sie anschließend auf "AD FS 2.0-Verwaltung".
@@ -84,10 +84,10 @@ Um mithilfe der Nutzungsanalyse Daten zu sammeln und zu analysieren, benötigt d
 #### So aktivieren Sie die Überwachung für AD FS unter Windows Server 2012 R2
 
 1. Öffnen Sie **Lokale Sicherheitsrichtlinie,** indem Sie den **Server-Manager** auf dem Startbildschirm oder über die Taskleiste auf dem Desktop öffnen, und klicken Sie dann auf **Tools/Lokale Sicherheitsrichtlinie**.
-1. Navigieren Sie zum Ordner **Sicherheitseinstellungen\Lokale Richtlinien\Zuweisen von Benutzerrechten**, und doppelklicken Sie dann auf **Generieren von Sicherheitsüberwachungen**.
+1. Navigieren Sie zum Ordner **Sicherheitseinstellungen\\Lokale Richtlinien\\Zuweisen von Benutzerrechten**, und doppelklicken Sie dann auf **Generieren von Sicherheitsüberwachungen**.
 1. Stellen Sie auf der Registerkarte **Lokale Sicherheitseinstellung** sicher, dass das AD FS-Dienstkonto aufgeführt wird. Wenn es nicht vorhanden ist, klicken Sie auf **Benutzer oder Gruppe hinzufügen** und fügen es der Liste hinzu. Klicken Sie dann auf **OK**.
 1. Öffnen Sie eine Eingabeaufforderung mit erhöhten Rechten, und führen Sie den folgenden Befehl zum Aktivieren der Überwachung aus: `auditpol.exe /set /subcategory:"Application Generated" /failure:enable /success:enable.`
-1. Schließen Sie **Lokale Sicherheitsrichtlinie**, und öffnen Sie dann das AD FS-Verwaltungs-Snap-In (klicken Sie hierzu im Server-Manager auf "Tools", und wählen Sie dann "AD FS-Verwaltung" aus).
+1. Schließen Sie **Lokale Sicherheitsrichtlinie**, und öffnen Sie dann das AD FS-Verwaltungs-Snap-In \(klicken Sie hierzu im Server-Manager auf "Tools", und wählen Sie dann "AD FS-Verwaltung" aus\).
 1. Klicken Sie im Bereich "Aktionen" auf **Verbunddiensteigenschaften bearbeiten**.
 1. Klicken Sie im Dialogfeld "Verbunddiensteigenschaften" auf die Registerkarte **Ereignisse**.
 1. Aktivieren Sie die Kontrollkästchen **Erfolgsüberwachungen und Fehlerüberwachungen**. Klicken Sie anschließend auf **OK**.
@@ -118,7 +118,7 @@ Führen Sie für Windows Server 2008 R2-Server die folgenden Schritte aus:
 1. Deaktivieren Sie für die Installation des Agents die verstärkte Sicherheit für Internet Explorer:
 1. Installieren Sie auf jedem Server Windows PowerShell 4.0, bevor Sie den AD Health-Agent installieren. So installieren Sie Windows PowerShell 4.0
  - Installieren Sie [Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=40779), indem Sie den folgenden Link zum Download des Offlineinstallers.
- - Installieren Sie PowerShell ISE (über "Windows-Features").
+ - Installieren Sie PowerShell ISE \(über "Windows-Features"\).
  - Installieren Sie [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855).
  - Installieren Sie Internet Explorer 10 oder höher auf dem Server. Dies ist erforderlich, damit der Health-Dienst Sie mithilfe der Azure-Administratoranmeldeinformationen authentifizieren kann.
 1. Weitere Informationen zum Installieren von Windows PowerShell 4.0 unter Windows Server 2008 R2 finden Sie in [diesem](http://social.technet.microsoft.com/wiki/contents/articles/20623.step-by-step-upgrading-the-powershell-version-4-on-2008-r2.aspx) Wiki-Artikel.
@@ -155,4 +155,4 @@ Um sicherzustellen, dass der Agent installiert wurde, öffnen Sie die Dienste un
  
 ![Überprüfen von Azure AD Connect Health](./media/active-directory-aadconnect-health-requirements/install5.png)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

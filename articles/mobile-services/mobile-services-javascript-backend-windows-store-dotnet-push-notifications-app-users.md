@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer" 
-	description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte" 
+	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer der universellen Windows-App | Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie mit Azure Mobile Services Pushbenachrichtigungen an bestimmte Benutzer Ihrer universellen Windows C#-App senden können." 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
 	authors="ggailey777" 
@@ -13,13 +13,14 @@
 	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/03/2015" 
+	ms.date="07/22/2015" 
 	ms.author="glenga"/>
 
 # Senden von Pushbenachrichtigungen an authentifizierte Benutzer
 
 [AZURE.INCLUDE [mobile-services-selector-push-users](../../includes/mobile-services-selector-push-users.md)]
 
+##Übersicht
 In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen an authentifizierte Benutzer auf einem beliebigen registrierten Gerät senden. Im Gegensatz zum vorherigen Lernprogramm [Hinzufügen von Pushbenachrichtigungen zur App] wird in diesem Lernprogramm der mobile Dienst geändert, sodass sich Benutzer authentifizieren müssen, bevor sich der Client beim Notification Hub für Pushbenachrichtigungen registrieren kann. Die Registrierung wird auch verändert, um ein Tag basierend auf der zugewiesenen Benutzer-ID hinzuzufügen. Schließlich wird das Serverskript aktualisiert, um Benachrichtigungen nur an authentifizierte Benutzer zu senden, und nicht an alle Registrierungen.
 
 In diesem Lernprogramm werden Sie durch den folgenden Prozess geführt:
@@ -44,20 +45,21 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
 [AZURE.INCLUDE [mobile-services-javascript-backend-push-notifications-app-users](../../includes/mobile-services-javascript-backend-push-notifications-app-users.md)]
 
-<ol start="5"><li><p>Ersetzen Sie die Einfügefunktion durch den folgenden Code. Klicken Sie dann auf <strong>Speichern</strong>:</p>
-<pre><code>function insert(item, user, request) {
-    // Definieren Sie eine Nutzlast für die Windows Store-Toastbenachrichtigung.
-    var payload = '&lt;?xml version="1.0" encoding="utf-8"?>&lt;toast>&lt;visual>' +    
-    '&lt;binding template="ToastText01">&lt;text id="1">' +
-    item.text + '&lt;/text>&lt;/binding>&lt;/visual>&lt;/toast>';
+&nbsp;&nbsp;5. Ersetzen Sie die Einfügefunktion durch den folgenden Code. Klicken Sie dann auf **Speichern**:
 
-    // Rufen Sie die ID des angemeldeten Benutzers ab.
+	function insert(item, user, request) {
+    // Define a payload for the Windows Store toast notification.
+    var payload = '<?xml version="1.0" encoding="utf-8"?><toast><visual>' +    
+    '<binding template="ToastText01"><text id="1">' +
+    item.text + '</text></binding></visual></toast>';
+
+    // Get the ID of the logged-in user.
     var userId = user.userId;		
 
     request.execute({
         success: function() {
-            // Wenn der Einfügevorgang erfolgreich war, senden Sie eine Benachrichtigung an alle Geräte, 
-	    	// die für den angemeldeten Benutzer als Tag registriert sind.
+            // If the insert succeeds, send a notification to all devices 
+	    	// registered to the logged-in user as a tag.
             	push.wns.send(userId, payload, 'wns/toast', {
                 success: function(pushResponse) {
                     console.log("Sent push:", pushResponse);
@@ -70,9 +72,9 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
                     });
                 }
             });
-}</code></pre>
+	}
 
-<p>Dieses Einfügeskript sendet mithilfe des Benutzer-ID-Tags eine Pushbenachrichtigung (mit dem Text des eingefügten Eintrags) an alle Windows Store-App-Registrierungen, die vom angemeldeten Benutzer erstellt wurden.</p></li></ol>
+&nbsp;&nbsp;Dieses Einfügeskript sendet mithilfe des Benutzer-ID-Tags eine Pushbenachrichtigung \(mit dem Text des eingefügten Eintrags\) an alle Windows Store-App-Registrierungen, die vom angemeldeten Benutzer erstellt wurden.
 
 ##<a name="update-app"></a>Aktualisieren der App zum Anmelden vor der Registrierung
 
@@ -93,7 +95,7 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 [Hinzufügen von Authentifizierung zur App]: ../mobile-services-windows-store-dotnet-get-started-users.md
 [Hinzufügen von Pushbenachrichtigungen zur App]: ../mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.com/
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

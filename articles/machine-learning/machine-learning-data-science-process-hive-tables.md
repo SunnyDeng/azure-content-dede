@@ -2,7 +2,6 @@
 	pageTitle="Übermitteln von Hive-Abfragen an Hadoop-Cluster im erweiterten Analyseprozess | Microsoft Azure"
 	description="Verarbeiten von Daten aus Hive-Tabellen mithilfe von Hive-Abfragen"
 	services="machine-learning"
-	solutions=""
 	documentationCenter=""
 	authors="hangzh-msft"
 	manager="paulettm" 
@@ -19,9 +18,9 @@
 
 #<a name="heading"></a> Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im erweiterten Analyseprozess 
 
-In diesem Dokument werden die verschiedenen Möglichkeiten zum Übermitteln von Hive-Abfragen an Hadoop-Cluster beschrieben, die durch einen HDInsight-Dienst in Azure verwaltet werden. Diese Aufgabe gehört zur Advanced Analytics Process and Technology (ADAPT), die von Azure Machine Learning bereitgestellt wird. Es werden mehrere Aufgaben zum Analysieren von Daten erläutert: das Durchsuchen von Daten und das Generieren von Funktionen. Generische Hive-Abfragen zeigen, wie Sie mit Hive in Azure HDInsight Hadoop-Clustern Daten durchsuchen oder Funktionen generieren. Diese Hive-Abfragen verwenden eingebettete Hive-UDFs (User Defined Function, benutzerdefinierte Funktion), die bereitgestellt werden.
+In diesem Dokument werden die verschiedenen Möglichkeiten zum Übermitteln von Hive-Abfragen an Hadoop-Cluster beschrieben, die durch einen HDInsight-Dienst in Azure verwaltet werden. Diese Aufgabe gehört zur Advanced Analytics Process and Technology \(ADAPT\), die von Azure Machine Learning bereitgestellt wird. Es werden mehrere Aufgaben zum Analysieren von Daten erläutert: das Durchsuchen von Daten und das Generieren von Funktionen. Generische Hive-Abfragen zeigen, wie Sie mit Hive in Azure HDInsight Hadoop-Clustern Daten durchsuchen oder Funktionen generieren. Diese Hive-Abfragen verwenden eingebettete Hive-UDFs \(User Defined Function, benutzerdefinierte Funktion\), die bereitgestellt werden.
 
-Beispiele für Abfragen speziell für Szenarios mit den [NYC Taxi Trip-Daten](http://chriswhong.com/open-data/foil_nyc_taxi/) stehen auch im [GitHub-Repository](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts) bereit. Für diese Abfragen ist bereits ein Datenschema angegeben, sodass sie bereit für die Übermittlung zur Ausführung sind.
+Beispiele für Abfragen speziell für Szenarien mit den <a href="http://chriswhong.com/open-data/foil_nyc_taxi/" target="_blank">NYC Taxi Trip-Daten</a> stehen auch im <a href="https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts" target="_blank">GitHub-Repository</a> bereit. Für diese Abfragen ist bereits ein Datenschema angegeben, sodass sie bereit für die Übermittlung zur Ausführung sind.
 
 Im letzten Abschnitt werden Parameter beschrieben, mit denen Sie die Leistung der Hive-Abfragen optimieren können.
 
@@ -41,6 +40,8 @@ Hive-Abfragen können folgendermaßen übermittelt werden:
 * in einem IPython Notebook
 * im Hive-Editor
 * mit Azure PowerShell-Skripts
+
+Hive-Abfragen sind ähnlich wie SQL-Abfragen. Mit SQL vertraute Benutzer finden möglicherweise das <a href="http://hortonworks.com/wp-content/uploads/downloads/2013/08/Hortonworks.CheatSheet.SQLtoHive.pdf" target="_blank">Cheat Sheet "Hive for SQL Users"</a> nützlich.
 
 Beim Übermitteln von Hive-Abfragen können Sie auch das Ziel der Ausgabe der Hive-Abfragen steuern. Diese kann auf den Bildschirm, in eine lokale Datei auf dem Hauptknoten oder in ein Azure-Blob erfolgen.
 
@@ -74,19 +75,17 @@ Wenn die Hive-Abfrage sehr komplex ist und aus mehreren Zeilen besteht, ist das 
 
 	`hive -f "<path to the .hql file>"`
 
-![Arbeitsbereich erstellen][15]
-
 
 #### Unterdrücken der Fortschrittsanzeige bei Hive-Abfragen
 
-Standardmäßig wird bei Hive-Abfragen, die über die Hadoop-Befehlszeile übermittelt werden, der Fortschritt des Map/Reduce-Auftrags auf dem Bildschirm angezeigt. Um diese Fortschrittsanzeige zum Map/Reduce-Auftrag zu unterdrücken, können Sie das Argument `-S` ("S" in Großbuchstaben) wie folgt an der Befehlszeile einfügen:
+Standardmäßig wird bei Hive-Abfragen, die über die Hadoop-Befehlszeile übermittelt werden, der Fortschritt des Map/Reduce-Auftrags auf dem Bildschirm angezeigt. Um diese Fortschrittsanzeige zum Map/Reduce-Auftrag zu unterdrücken, können Sie das Argument `-S` \(mit Unterscheidung von Groß-/Kleinschreibung\) wie folgt an der Befehlszeile angeben:
 
 	hive -S -f "<path to the .hql file>"
 	hive -S -e "<Hive queries>"
 
 #### Übermitteln von Hive-Abfragen an der Hive-Befehlskonsole
 
-Sie können auch die Hive-Befehlskonsole starten, indem Sie den `hive`-Befehl an der Hadoop-Befehlszeile eingeben und dann Hive-Abfragen über die Hive-Befehlskonsole übermitteln. Beispiel:
+Sie können auch die Hive-Befehlskonsole starten, indem Sie den `hive`-Befehl an der Hadoop-Befehlszeile eingeben und dann Hive-Abfragen über die Hive-Befehlskonsole an der Eingabeaufforderung **hive\>** übermitteln. Beispiel:
 
 ![Arbeitsbereich erstellen][11]
 
@@ -100,9 +99,6 @@ Für die Ausgabe der Hive-Abfrageergebnisse in ein lokales Verzeichnis auf dem H
 
 	`hive -e "<hive query>" > <local path in the head node>`
 
-Im folgenden Beispiel wird die Ausgabe der Hive-Abfrage in die Datei *hivequeryoutput.txt* im Verzeichnis *C:\apps\temp* geschrieben.
-
-![Arbeitsbereich erstellen][12]
 
 #### Ausgeben der Hive-Abfrageergebnisse in ein Azure-Blob
 
@@ -114,15 +110,15 @@ Im folgenden Beispiel wird die Ausgabe der Hive-Abfrage in das Blob-Verzeichnis 
 
 ![Arbeitsbereich erstellen][13]
 
-Sie können die Ausgabe der Hive-Abfrage im Blob-Speicher anzeigen, indem Sie den Standardcontainer des Hadoop-Clusters mithilfe des Azure-Speicher-Explorers (oder eines ähnlichen Tools) öffnen. Sie können Filter (markiert durch den roten Kasten) anwenden, um nur das Blob mit den angegebenen Buchstaben im Namen abzurufen.
+Sie können die Ausgabe der Hive-Abfrage im Blob-Speicher anzeigen, indem Sie den Standardcontainer des Hadoop-Clusters mithilfe des Azure-Speicher-Explorers \(oder eines ähnlichen Tools\) öffnen. Sie können Filter \(markiert durch den roten Kasten\) anwenden, um nur das Blob mit den angegebenen Buchstaben im Namen abzurufen.
 
 ![Arbeitsbereich erstellen][14]
 
 ### Über den Hive-Editor oder Azure PowerShell-Befehle
 
-Sie können auch die Abfrage-Konsole (Hive-Editor) verwenden, indem Sie die URL
+Sie können auch die Abfrage-Konsole \(Hive-Editor\) verwenden, indem Sie die URL
 
-*https://&#60;Hadoop Clustername>.azurehdinsight.net/Home/HiveEditor*
+*https://&#60;Hadoop Clustername\>.azurehdinsight.net/Home/HiveEditor*
 
 in einem Webbrowser eingeben. Beachten Sie, dass Sie zur Eingabe der Anmeldeinformationen für den Hadoop-Cluster aufgefordert werden. Alternativ können Sie [Hive-Aufträge mit PowerShell übermitteln](../hdinsight/hdinsight-submit-hadoop-jobs-programmatically.md#hive-powershell).
 
@@ -198,7 +194,7 @@ Oft ist es sinnvoll, die Häufigkeit der Ebenen einer kategorischen Variable ode
 
 ###<a name="hive-riskfeature"></a>Risiken kategorischer Variablen in binären Klassifizierungen
 
-Bei binären Klassifizierungen müssen manchmal nicht numerische kategorische Variablen in numerische Funktionen umgewandelt werden, wenn die Modelle nur numerische Funktionen akzeptieren. Dazu werden die nicht numerischen Ebenen durch numerische Risiken ersetzt. In diesem Abschnitt werden einige generische Hive-Abfragen zur Berechnung der Risikowerte (logarithmische Wahrscheinlichkeiten) einer kategorischen Variable gezeigt.
+Bei binären Klassifizierungen müssen manchmal nicht numerische kategorische Variablen in numerische Funktionen umgewandelt werden, wenn die Modelle nur numerische Funktionen akzeptieren. Dazu werden die nicht numerischen Ebenen durch numerische Risiken ersetzt. In diesem Abschnitt werden einige generische Hive-Abfragen zur Berechnung der Risikowerte \(logarithmische Wahrscheinlichkeiten\) einer kategorischen Variable gezeigt.
 
 
 	    set smooth_param1=1;
@@ -219,25 +215,25 @@ Bei binären Klassifizierungen müssen manchmal nicht numerische kategorische Va
 	    	group by <column_name1>, <column_name2>
 	    	)b
 
-In diesem Beispiel werden die Variablen `smooth_param1` und `smooth_param2` zum Glätten der aus den Daten berechneten Risikowerte festgelegt. Die Risiken liegen zwischen "-Inf" und "Inf". Ein Risiko > 0 steht für die Wahrscheinlichkeit, dass das Ziel 1 größer als 0,5 ist.
+In diesem Beispiel werden die Variablen `smooth_param1` und `smooth_param2` zum Glätten der aus den Daten berechneten Risikowerte festgelegt. Die Risiken liegen zwischen "-Inf" und "Inf". Ein Risiko \> 0 steht für die Wahrscheinlichkeit, dass das Ziel 1 größer als 0,5 ist.
 
 Nach dem Berechnen der Risikotabelle können Sie einer Tabelle Risikowerte zuweisen, indem Sie sie mit der Risikotabelle zusammenführen. Die Hive-Abfrage für das Zusammenführen wurde im vorherigen Abschnitt beschrieben.
 
 ###<a name="hive-datefeatures"></a>Extrahieren von Funktionen aus "datetime"-Feldern
 
-Hive bietet eine Reihe von UDFs für die Verarbeitung von "datetime"-Feldern. In Hive lautet das Standardformat für "datetime" "JJJJ-MM-TT 00:00:00" (wie z. B. in "1970-01-01 12:21:32"). In diesem Abschnitt werden Beispiele für das Extrahieren des Tags eines Monats und des Monats aus einem "datetime"-Feld gezeigt. Außerdem gibt es Beispiele zum Konvertieren einer "datetime"-Zeichenfolge in ein anderes Format als das Standardformat.
+Hive bietet eine Reihe von UDFs für die Verarbeitung von "datetime"-Feldern. In Hive lautet das Standardformat für "datetime" "JJJJ-MM-TT 00:00:00" \(wie z. B. in "1970-01-01 12:21:32"\). In diesem Abschnitt werden Beispiele für das Extrahieren des Tags eines Monats und des Monats aus einem "datetime"-Feld gezeigt. Außerdem gibt es Beispiele zum Konvertieren einer "datetime"-Zeichenfolge in ein anderes Format als das Standardformat.
 
     	select day(<datetime field>), month(<datetime field>)
 		from <databasename>.<tablename>;
 
-Bei dieser Hive-Abfrage wird vorausgesetzt, dass das *&#60;Datum/Uhrzeit-Feld>* im Standardformat für "datetime" vorliegt.
+Bei dieser Hive-Abfrage wird vorausgesetzt, dass das *&\#60;Datum/Uhrzeit-Feld\>* im Standardformat für "datetime" vorliegt.
 
 Liegt ein "datetime"-Feld nicht im Standardformat vor, muss zunächst das "datetime"-Feld in einen Unix-Zeitstempel konvertierten werden, der dann in eine "datetime"-Zeichenfolge im Standardformat konvertiert wird. Wenn "datetime" das Standardformat aufweist, können Sie die eingebetteten "datetime"-UDFs anwenden, um Funktionen zu extrahieren.
 
 		select from_unixtime(unix_timestamp(<datetime field>,'<pattern of the datetime field>'))
 		from <databasename>.<tablename>;
 
-Wenn das *&#60;Datum/Uhrzeit-Feld>* bei dieser Abfrage das Muster *03/26/2015 12:04:39* hat, muss `'MM/dd/yyyy HH:mm:ss'` das *'&#60;Muster des Datum/Uhrzeit-Felds>'* sein. Zum Testen können Sie folgenden Code ausführen:
+Wenn das *&\#60;Datum/Uhrzeit-Feld\>* bei dieser Abfrage das Muster *03/26/2015 12:04:39* hat, muss `'MM/dd/yyyy HH:mm:ss'` das *'&\#60;Muster des Datum/Uhrzeit-Felds\>'* sein. Zum Testen können Sie folgenden Code ausführen:
 
 		select from_unixtime(unix_timestamp('05/15/2015 09:32:10','MM/dd/yyyy HH:mm:ss'))
 		from hivesampletable limit 1;
@@ -256,7 +252,7 @@ Wenn die Hive-Tabelle ein Textfeld enthält, das eine Zeichenfolge von durch Lee
 
 Die in diesem Abschnitt angegebene Abfrage kann direkt auf die "NYC Taxi Trip"-Daten angewendet werden. Diese Abfrage soll veranschaulichen, wie Sie die eingebetteten mathematischen Funktionen in Hive zum Generieren von Funktionen verwenden.
 
-Die in dieser Abfrage verwendeten Felder sind GPS-Koordinaten von Start- und Zielorten mit den Bezeichnungen *pickup_longitude*, *pickup_latitude*, *dropoff_longitude* und *dropoff_latitude*. Die Abfragen zur Berechnung der direkten Entfernung zwischen den Start- und Zielkoordinaten sind:
+Die in dieser Abfrage verwendeten Felder sind GPS-Koordinaten von Start- und Zielorten mit den Bezeichnungen *pickup\_longitude*, *pickup\_latitude*, *dropoff\_longitude* und *dropoff\_latitude*. Die Abfragen zur Berechnung der direkten Entfernung zwischen den Start- und Zielkoordinaten sind:
 
 		set R=3959;
 		set pi=radians(180);
@@ -274,17 +270,17 @@ Die in dieser Abfrage verwendeten Felder sind GPS-Koordinaten von Start- und Zie
 		and dropoff_latitude between 30 and 90
 		limit 10;
 
-Die mathematischen Gleichungen zur Berechnung der Entfernung zwischen zwei GPS-Koordinaten finden Sie auf der Website [Movable Type Scripts](http://www.movable-type.co.uk/scripts/latlong.html) von Peter Lapisu. In seinem JavaScript-Code ist die `toRad()`-Funktion nur *lat_or_lon*pi/180* und rechnet Grad in Radianten um. Hierbei ist *lat_or_lon* der Längen- oder Breitengrad. Da Hive keine `atan2`-Funktion bereitstellt, jedoch die `atan`-Funktion, wird die `atan2`-Funktion in der oben angegebenen Hive-Abfrage durch die `atan`-Funktion anhand der in [Wikipedia](http://en.wikipedia.org/wiki/Atan2) angegebenen Definition implementiert.
+Die mathematischen Gleichungen zur Berechnung der Entfernung zwischen zwei GPS-Koordinaten finden Sie auf der Website <a href="http://www.movable-type.co.uk/scripts/latlong.html" target="_blank">Movable Type Scripts</a> von Peter Lapisu. In seinem JavaScript-Code ist die `toRad()`-Funktion nur *lat\_or\_lon\*pi/180* und rechnet Grad in Radianten um. Hierbei ist *lat\_or\_lon* der Längen- oder Breitengrad. Da Hive keine `atan2`-Funktion bereitstellt, jedoch die `atan`-Funktion, wird die `atan2`-Funktion in der oben angegebenen Hive-Abfrage durch die `atan`-Funktion anhand der in <a href="http://en.wikipedia.org/wiki/Atan2" target="_blank">Wikipedia</a> angegebenen Definition implementiert.
 
 ![Arbeitsbereich erstellen][1]
 
-Eine vollständige Liste der eingebettete Hive-UDFs finden Sie im Abschnitt **Built-in Functions** im [Apache Hive-Wiki](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-MathematicalFunctions).
+Eine vollständige Liste der eingebettete Hive-UDFs finden Sie im Abschnitt **Built-in Functions** im <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-MathematicalFunctions" target="_blank">Apache Hive-Wiki</a>.
 
 ## <a name="tuning"></a>Weiterführende Themen: Optimieren von Hive-Parametern zur Verbesserung der Abfrage-Geschwindigkeit
 
 Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich möglicherweise nicht für die Hive-Abfragen und die von den Abfragen verarbeiteten Daten. In diesem Abschnitt werden einige Parameter beschrieben, mit denen Sie die Leistung der Hive-Abfragen optimieren können. Sie müssen die Abfragen zur Parameteroptimierung vor den Abfragen der Verarbeitungsdaten einfügen.
 
-1. **Java-Heapspeicher**: Für Abfragen, bei denen große Datasets zusammengeführt oder lange Datensätze verarbeitet werden, besteht ein typischer Fehler darin, dass **nicht über genügend Heapspeicher verfügbar ist**. Dies kann durch Festlegen der Parameter *mapreduce.map.java.opts* und *mapreduce.task.io.sort.mb* auf die gewünschten Werte optimiert werden. Beispiel:
+1. **Java-Heapspeicher**: Für Abfragen, bei denen große Datasets zusammengeführt oder lange Datensätze verarbeitet werden, besteht ein typischer Fehler darin, **dass nicht über genügend Heapspeicher verfügt**. Dies kann durch Festlegen der Parameter *mapreduce.map.java.opts* und *mapreduce.task.io.sort.mb* auf die gewünschten Werte optimiert werden. Beispiel:
 
 		set mapreduce.map.java.opts=-Xmx4096m;
 		set mapreduce.task.io.sort.mb=-Xmx1024m;
@@ -292,11 +288,11 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 
 	Dieser Parameter ordnet dem Java-Heapspeicher 4 GB Arbeitsspeicher zu. Außerdem macht er die Sortierung effizienter, da er ihr mehr Arbeitsspeicher zuweist. Sie sollten etwas mit diesen Zuordnungen experimentieren, wenn bei einem Auftrag Fehler im Zusammenhang mit dem Heapspeicher auftreten.
 
-2. **DFS-Blockgröße**: Mit diesem Parameter wird die kleinste Dateneinheit festgelegt, die das Dateisystem speichert. Wenn beispielsweise die DFS-Blockgröße 128 MB beträgt, werden alle Daten bis zu einer Größe von 128 MB in einem Block gespeichert. Daten, die größer als 128 MB sind, werden zusätzliche Blöcke zugewiesen. Die Auswahl einer sehr geringen Blockgröße führt zu starkem zusätzlichem Verbrauch in Hadoop, da der Namensknoten viel mehr Anforderungen verarbeiten muss, um den entsprechenden Block für die Datei zu finden. Eine empfohlene Einstellung bei der Arbeit mit Daten im Gigabytebereich (oder größer) ist:
+2. **DFS-Blockgröße**: Mit diesem Parameter wird die kleinste Dateneinheit festgelegt, die das Dateisystem speichert. Wenn beispielsweise die DFS-Blockgröße 128 MB beträgt, werden alle Daten bis zu einer Größe von 128 MB in einem Block gespeichert. Daten, die größer als 128 MB sind, werden zusätzliche Blöcke zugewiesen. Die Auswahl einer sehr geringen Blockgröße führt zu starkem zusätzlichem Verbrauch in Hadoop, da der Namensknoten viel mehr Anforderungen verarbeiten muss, um den entsprechenden Block für die Datei zu finden. Eine empfohlene Einstellung bei der Arbeit mit Daten im Gigabytebereich \(oder größer\) ist:
 
 		set dfs.block.size=128m;
 
-3. **Optimieren von Join-Vorgängen in Hive**: Join-Vorgänge im Map/Reduce-Framework erfolgen meist in der Reduce-Phase. In einigen Fällen können jedoch enorme Vorteile erzielt werden, indem die Join-Vorgänge in die Map-Phase verlegt werden (so genannte "mapjoins"). Damit Hive dies möglichst häufig durchführt, legen Sie Folgendes fest:
+3. **Optimieren von Join-Vorgängen in Hive**: Join-Vorgänge im Map/Reduce-Framework erfolgen meist in der Reduce-Phase. In einigen Fällen können jedoch enorme Vorteile erzielt werden, indem die Join-Vorgänge in die Map-Phase verlegt werden \(so genannte "mapjoins"\). Damit Hive dies möglichst häufig durchführt, legen Sie Folgendes fest:
 
 		set hive.auto.convert.join=true;
 
@@ -306,7 +302,7 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 
 	Der Standardwert von *mapred.min.split.size* ist zumeist 0, der von *mapred.max.split.size* ist **Long.MAX** und der von *dfs.block.size* ist 64 MB. Bei entsprechender Datengröße können Sie durch Festlegen dieser Parameter die Anzahl der verwendeten Mapper optimieren.
 
-5. Einige andere **weiterführende Optionen** zur Optimierung der Leistung finden Sie unten. Diese ermöglichen das Festlegen des zugeordneten Speichers für "map"- und "reduce"-Aufgaben, die beim Optimieren der Leistung nützlich sein können. Beachten Sie aber, dass *mapreduce.reduce.memory.mb* nicht größer sein darf als die Größe des physischen Speichers der einzelnen Workerknoten im Hadoop-Cluster.
+5. Einige andere **weiterführende Optionen** zur Optimierung der Hive-Leistung finden Sie unten. Diese ermöglichen das Festlegen des zugeordneten Speichers für "map"- und "reduce"-Aufgaben, die beim Optimieren der Leistung nützlich sein können. Beachten Sie aber, dass *mapreduce.reduce.memory.mb* nicht größer sein darf als die Größe des physischen Speichers der einzelnen Workerknoten im Hadoop-Cluster.
 
 		set mapreduce.map.memory.mb = 2048;
 		set mapreduce.reduce.memory.mb=6144;
@@ -323,4 +319,4 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 [15]: ./media/machine-learning-data-science-process-hive-tables/run-hive-queries-3.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

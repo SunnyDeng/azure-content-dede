@@ -25,7 +25,7 @@ Das Tool [Postman](https://chrome.google.com/webstore/detail/postman-rest-client
 
 ## Anforderungen ##
 
-Sie benötigen einen Azure Search-Dienst. Genau wie bei anderen benutzerdefinierten Anwendungen, die Azure Search verwenden, benötigen Sie auch hier die URL für Ihren Dienst sowie einen API-Administratorschlüssel (`api-key`), um den Index erstellen zu können. Anweisungen zum Ermitteln der Werte für Ihren Search-Dienst finden Sie unter [Erstellen eines Diensts im Portal](search-create-service-portal.md).
+Sie benötigen einen Azure Search-Dienst. Genau wie bei anderen benutzerdefinierten Anwendungen, die Azure Search verwenden, benötigen Sie auch hier die URL für Ihren Dienst sowie einen API-Administratorschlüssel \(`api-key`\), um den Index erstellen zu können. Anweisungen zum Ermitteln der Werte für Ihren Search-Dienst finden Sie unter [Erstellen eines Diensts im Portal](search-create-service-portal.md).
 
 ## Installieren von Postman ##
 Postman kann über den [Google Chrome Store](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm) heruntergeladen werden. Über den Link auf dieser Seite können Sie den REST-Client für Postman herunterladen und installieren. Nach der Installation können Sie Postman über den Chrome App Launcher starten.
@@ -40,7 +40,7 @@ Gehen Sie zum Konfigurieren von Postman wie folgt vor:
 3. Vergewissern Sie sich, dass `GET` ausgewählt ist.
 4. Klicken Sie auf die Schaltfläche **Headers**.
 5. Geben Sie Werte für Folgendes ein:
-	- `api-key`: [Administratorschlüssel]
+	- `api-key`: \[Administratorschlüssel\]
 	- `Content-Type`: `application/json; charset=utf-8`
 6. Klicken Sie auf **Send**, um den REST-Aufruf an Azure Search zu initiieren und die JSON-Antwort zu visualisieren.
 
@@ -69,7 +69,7 @@ Hier gehen wir noch einen Schritt weiter und initiieren einen REST-Aufruf, um ei
 ![][4]
 
 ## Senden von Dokumenten an einen Azure Search-Index mit Postman ##
-Nachdem der Index nun erstellt ist, kann er mit Dokumenten gefüllt werden. Hierzu veröffentlichen wir eine Gruppe von Dokumenten mit fünf Wanderwegen aus dem Dataset des USGS (geologischer Dienst der USA) in einem Batch:
+Nachdem der Index nun erstellt ist, kann er mit Dokumenten gefüllt werden. Hierzu veröffentlichen wir eine Gruppe von Dokumenten mit fünf Wanderwegen aus dem Dataset des USGS \(geologischer Dienst der USA\) in einem Batch:
 
 1. Ändern Sie die URL in `https://[SEARCH SERVICE].windows.net/indexes/trails/docs/index?api-version=2015-02-28`. Verwenden Sie dabei den Namen Ihres Search-Diensts. Beachten Sie, dass die URL einen Pfad zum soeben erstellten Index enthält.
 2. Ändern Sie den HTTP-Typ in `POST`.
@@ -104,7 +104,7 @@ Die Antwort enthält die von Azure Search zurückgegebenen JSON-Suchergebnisse.
 Nachdem Sie nun mit der grundlegenden Verwendung von Azure Search mit Postman vertraut sind, gibt es noch einige hilfreiche Punkte für die nächsten Schritte:
 
 1. Mit `Collections` unterstützt Postman eine komfortable Möglichkeit zum Speichern häufig verwendeter Anforderungen. Sie können Auflistungen an andere Personen weitergeben, sodass sie sie in ihrem eigenen Exemplar von Postman verwenden können.
-2. Informieren Sie sich in der Azure Search-Dokumentation über den HTTP-Anforderungstyp (`GET`, `PUT` usw.) für die einzelnen Aufrufe, und nehmen Sie in Postman ggf. entsprechende Änderungen vor.
+2. Informieren Sie sich in der Azure Search-Dokumentation über den HTTP-Anforderungstyp \(`GET`, `PUT` usw.\) für die einzelnen Aufrufe, und nehmen Sie in Postman ggf. entsprechende Änderungen vor.
 
 Die Dokumentation für die REST-API finden Sie bei [MSDN](https://msdn.microsoft.com/library/azure/dn798935.aspx).
 
@@ -119,4 +119,4 @@ Weitere Beispiele finden Sie in der [Liste mit Videos und Lernprogrammen](https:
 [6]: ./media/search-chrome-postman/query.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

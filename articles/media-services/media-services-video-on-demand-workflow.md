@@ -21,7 +21,7 @@
 
 ##Übersicht
 
-In diesem Thema werden die Schritte eines typischen Azure Media Services-VoD-Workflows (Video on Demand) beschrieben. Jeder Schritt enthält Links zu relevanten Themen. Für Aufgaben, die mithilfe verschiedener Technologien erledigt werden können, stehen Schaltflächen zur Technologie Ihrer Wahl (z. B. .NET oder REST) zur Verfügung.
+In diesem Thema werden die Schritte eines typischen Azure Media Services-VoD-Workflows \(Video on Demand\) beschrieben. Jeder Schritt enthält Links zu relevanten Themen. Für Aufgaben, die mithilfe verschiedener Technologien erledigt werden können, stehen Schaltflächen zur Technologie Ihrer Wahl \(z. B. .NET oder REST\) zur Verfügung.
 
 Beachten Sie, dass Sie Media Services in Ihre vorhandenen Tools und Prozesse integrieren können. Codieren Sie Inhalte z. B. am Standort, und laden Sie sie danach zu Media Services hoch, um sie in mehreren Formaten zu transcodieren und über das Azure CDN oder ein Drittanbieter-CDN zu übermitteln.
 
@@ -31,14 +31,14 @@ Das folgende Diagramm zeigt die Hauptbestandteile der Media Services-Plattform, 
 
 ###Schützen von Inhalte im Speicher und Übermitteln von Streamingmedien ohne Verschlüsselung
 
-1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Medienobjekt hoch.
+1. Laden Sie eine Zwischendatei \(Mezzanine File\) hoher Qualität in ein Medienobjekt hoch.
 	
 	Es wird empfohlen, eine Speicherverschlüsselung auf Medienobjekte anzuwenden, um Ihre Inhalte beim Hochladen und während der Speicherung zu schützen. 
 1. Führen Sie eine Codierung in einen MP4-Satz mit adaptiver Bitrate durch. 
 
 	Es wird empfohlen, eine Speicherverschlüsselung das Ausgabemedienobjekt anzuwenden, um Ihre Inhalte während der Speicherung zu schützen.
 	
-1. Konfigurieren Sie eine Übermittlungsrichtlinie für Medienobjekte (wird zur dynamischen Paketerstellung verwendet).
+1. Konfigurieren Sie eine Übermittlungsrichtlinie für Medienobjekte \(wird zur dynamischen Paketerstellung verwendet\).
 	
 	Wenn Ihr Medienobjekt speicherverschlüsselt ist, **müssen** Sie die Übermittlungsrichtlinien für Medienobjekte konfigurieren.
 
@@ -52,27 +52,27 @@ Das folgende Diagramm zeigt die Hauptbestandteile der Media Services-Plattform, 
 
 Damit Sie die dynamische Verschlüsselung verwenden können, müssen Sie zunächst mindestens eine reservierte Einheit für das Streaming auf dem Streamingendpunkt abrufen, auf dem Sie verschlüsselte Inhalte streamen möchten.
 
-1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Medienobjekt hoch. Wenden Sie die Speicherverschlüsselung auf das Medienobjekt an.
+1. Laden Sie eine Zwischendatei \(Mezzanine File\) hoher Qualität in ein Medienobjekt hoch. Wenden Sie die Speicherverschlüsselung auf das Medienobjekt an.
 1. Führen Sie eine Codierung in einen MP4-Satz mit adaptiver Bitrate durch. Wenden Sie die Speicherverschlüsselung auf das Ausgabemedienobjekt an.
 1. Erstellen Sie einen Inhaltsverschlüsselungsschlüssel für das Medienobjekt, das während der Wiedergabe dynamisch verschlüsselt werden soll.
 2. Konfigurieren Sie Autorisierungsrichtlinien für Inhaltsschlüssel.
-1. Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte (wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet).
+1. Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte \(wird zur dynamischen Paketerstellung und zur dynamischen Verschlüsselung verwendet\).
 1. Veröffentlichen Sie das Medienobjekt durch Erstellen eines OnDemand-Locators.
 1. Streamen Sie die veröffentlichten Inhalte. 
 
 ###Indizieren von Inhalten
 
-1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Medienobjekt hoch.
+1. Laden Sie eine Zwischendatei \(Mezzanine File\) hoher Qualität in ein Medienobjekt hoch.
 1. Indizieren Sie die Inhalte.
 
-	Der Indizierungsauftrag erstellt Dateien, die bei der Videowiedergabe als Untertitel (Closed Captions, CC) verwendet werden können. Er generiert außerdem die Dateien, mit denen Sie im Video suchen und an den genauen Zeitpunkt im Video springen können.
+	Der Indizierungsauftrag erstellt Dateien, die bei der Videowiedergabe als Untertitel \(Closed Captions, CC\) verwendet werden können. Er generiert außerdem die Dateien, mit denen Sie im Video suchen und an den genauen Zeitpunkt im Video springen können.
 
 1. Nutzen Sie die indizierten Inhalte.
 
 
 ###Bereitstellen eines progressiven Downloads 
 
-1. Laden Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Medienobjekt hoch.
+1. Laden Sie eine Zwischendatei \(Mezzanine File\) hoher Qualität in ein Medienobjekt hoch.
 1. Führen Sie eine Codierung in einen MP4-Satz mit adaptiver Bitrate oder eine einzelne MP4-Datei durch.
 1. Veröffentlichen Sie das Medienobjekt durch Erstellen eines OnDemand- oder SAS-Locators.
 
@@ -120,7 +120,7 @@ Laden Sie Ihre Dateien mithilfe des **Azure-Verwaltungsportals**, mithilfe von *
 
 ###Erstellen von Aufträgen/Aufgaben
 
-Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthält (z. B. Codierung oder Indizierung). Jede Aufgabe führt einen unteilbaren Vorgang für das (oder die) Eingangsmedienobjekt(e) durch. Ein Beispiel zum Erstellen von Codierungsaufträgen finden Sie hier:
+Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthält \(z. B. Codierung oder Indizierung\). Jede Aufgabe führt einen unteilbaren Vorgang für das \(oder die\) Eingangsmedienobjekt\(e\) durch. Ein Beispiel zum Erstellen von Codierungsaufträgen finden Sie hier:
 
 Eine Übersicht finden Sie unter [Arbeiten mit Azure Media Services-Aufträgen](media-services-jobs.md).
 
@@ -163,7 +163,7 @@ Erweiterte Codierung mit dem **Media Encoder Premium Workflow** mit **.NET**.
 
 [Inhaltsschutz – Übersicht](media-services-content-protection-overview.md)
 
-Wenn Sie ein Medienobjekt mit AES (Advanced Encryption Standard, mit 128-Bit-Verschlüsselungsschlüsseln) oder PlayReady-DRM verschlüsseln möchten, müssen Sie einen Inhaltsschlüssel erstellen.
+Wenn Sie ein Medienobjekt mit AES \(Advanced Encryption Standard, mit 128-Bit-Verschlüsselungsschlüsseln\) oder PlayReady-DRM verschlüsseln möchten, müssen Sie einen Inhaltsschlüssel erstellen.
 
 Verwenden Sie **.NET** oder **REST API**, um Schlüssel zu erstellen.
 
@@ -196,7 +196,7 @@ Bereitstellen von Inhalten – Übersicht
 > [AZURE.SELECTOR]
 - [Overview](media-services-deliver-content-overview.md)
 
-Veröffentlichen Sie Medienobjekte (durch Locator-Erstellung) mit dem **Azure-Verwaltungsportal**, **.NET** oder der **REST-API**.
+Veröffentlichen Sie Medienobjekte \(durch Locator-Erstellung\) mit dem **Azure-Verwaltungsportal**, **.NET** oder der **REST-API**.
 
 [AZURE.INCLUDE [media-services-selector-publish](../../includes/media-services-selector-publish.md)]
 
@@ -220,4 +220,4 @@ Weitere Informationen finden Sie unter [Wiedergabe Ihrer Inhalte mit vorhandenen
 [vod-overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

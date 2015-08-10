@@ -32,7 +32,7 @@ Verwenden Sie den folgenden Schlüssel für jede der Tabellen.
 
 ## Synchronisierung vom lokalen Standort zur Cloud
 
-| Funktion | Azure Active Directory Connect | Azure Active Directory-Synchronisierungsdienste (AAD Sync) | Azure Active Directory-Synchronisierungstool (DirSync)| Forefront Identity Manager 2010 R2 (FIM) |
+| Funktion | Azure Active Directory Connect | Azure Active Directory-Synchronisierungsdienste \(AAD Sync\) | Azure Active Directory-Synchronisierungstool \(DirSync\)| Forefront Identity Manager 2010 R2 \(FIM\) |
 | :-------- |:--------:|:--------:|:--------:|:--------:
 | Herstellen einer Verbindung mit einer einzelnen lokalen AD-Gesamtstruktur | ● | ● | ● | ● |
 | Herstellen einer Verbindung mit mehreren lokalen AD-Gesamtstrukturen |● | ● | | ● |
@@ -40,34 +40,34 @@ Verwenden Sie den folgenden Schlüssel für jede der Tabellen.
 | Herstellen einer Verbindung mit einem einzelnen lokalen LDAP-Verzeichnis | BV | | | ● |
 | Herstellen einer Verbindung mit mehreren lokalen LDAP-Verzeichnissen |BV | | | ● |
 | Herstellen einer Verbindung mit lokalen Active Directory- und LDAP-Verzeichnissen |BV | | | ● |
-| Herstellen einer Verbindung mit benutzerdefinierten Systeme (z. B. SQL, Oracle, MySQL usw.) | BV | | | ● |
-| Synchronisieren von benutzerdefinierten Attributen (Verzeichniserweiterungen) | ● | | | |
+| Herstellen einer Verbindung mit benutzerdefinierten Systeme \(z. B. SQL, Oracle, MySQL usw.\) | BV | | | ● |
+| Synchronisieren von benutzerdefinierten Attributen \(Verzeichniserweiterungen\) | ● | | | |
 
 ## Synchronisierung von der Cloud zum lokalen Standort
 
-| Funktion | Azure Active Directory Connect | Azure Active Directory-Synchronisierungsdienste | Azure Active Directory-Synchronisierungstool (DirSync) | Forefront Identity Manager 2010 R2 (FIM) |
+| Funktion | Azure Active Directory Connect | Azure Active Directory-Synchronisierungsdienste | Azure Active Directory-Synchronisierungstool \(DirSync\) | Forefront Identity Manager 2010 R2 \(FIM\) |
 | :-------- |:--------:|:--------:|:--------:|:--------:
 | Rückschreiben von Geräten | ● | | ● | |
-| Rückschreiben von Attributen (für Exchange-Hybridbereitstellung) | ● | ● | ● | ● |
+| Rückschreiben von Attributen \(für Exchange-Hybridbereitstellung\) | ● | ● | ● | ● |
 | Rückschreiben von Benutzer- und Gruppenobjekten | ●| | | |
-| Rückschreiben von Kennwörtern (Self-Service-Kennwortzurücksetzung und Kennwortänderung) | ● | ● | | |
+| Rückschreiben von Kennwörtern \(Self-Service-Kennwortzurücksetzung und Kennwortänderung\) | ● | ● | | |
 
 
 
 ## Unterstützung von Authentifizierungsfunktionen
 
-| Funktion | Azure Active Directory Connect | Azure Active Directory-Synchronisierungsdienste | Azure Active Directory-Synchronisierungstool (DirSync) | Forefront Identity Manager 2010 R2 (FIM) |
+| Funktion | Azure Active Directory Connect | Azure Active Directory-Synchronisierungsdienste | Azure Active Directory-Synchronisierungstool \(DirSync\) | Forefront Identity Manager 2010 R2 \(FIM\) |
 | :-------- |:--------:|:--------:|:--------:|:--------:
 | Kennwortsynchronisierung für eine einzelne lokale Active Directory-Gesamtstruktur | ● | ● | ● | |
 | Kennwortsynchronisierung für mehrere lokale Active Directory-Gesamtstrukturen | ●| ● | | |
 | Einmaliges Anmelden mit Verbund | ● | ● | ● | ● |
-| Rückschreiben von Kennwörtern (Self-Service-Kennwortzurücksetzung und Kennwortänderung) |● | ● | | |
+| Rückschreiben von Kennwörtern \(Self-Service-Kennwortzurücksetzung und Kennwortänderung\) |● | ● | | |
 
 
 
 ## Einrichtung und Installation
 
-| Funktion | Azure Active Directory Connect | Azure Active Directory-Synchronisierungsdienste | Azure Active Directory-Synchronisierungstool (DirSync) | Forefront Identity Manager 2010 R2 (FIM) |
+| Funktion | Azure Active Directory Connect | Azure Active Directory-Synchronisierungsdienste | Azure Active Directory-Synchronisierungstool \(DirSync\) | Forefront Identity Manager 2010 R2 \(FIM\) |
 | :-------- |:--------:|:--------:|:--------:|:--------:
 | Unterstützt die Installation auf einem Domänencontroller | ● | ● | ● | |
 | Unterstützt die Installation mit SQL Express | ● | ● | ● | |
@@ -79,13 +79,13 @@ Verwenden Sie den folgenden Schlüssel für jede der Tabellen.
 
 ## Filterung und Konfiguration
 
-Funktion | Azure Active Directory Connect | Azure Active Directory-Synchronisierungsdienste | Azure Active Directory-Synchronisierungstool (DirSync) | Forefront Identity Manager 2010 R2 (FIM)  
+Funktion | Azure Active Directory Connect | Azure Active Directory-Synchronisierungsdienste | Azure Active Directory-Synchronisierungstool \(DirSync\) | Forefront Identity Manager 2010 R2 \(FIM\)  
 :-------- |:--------:|:--------:|:--------:|:--------:|
 Filterung nach für Domänen und Organisationseinheiten | ● | ● | ● | ●  
 Filterung nach den Attributwerten eines Objekts | ● | ● | ● | ● 
-Zulassen eines minimalen Attributsatzes für die Synchronisierung (MinSync) | ● | ● | |   
+Zulassen eines minimalen Attributsatzes für die Synchronisierung \(MinSync\) | ● | ● | |   
 Zulassen der Anwendung verschiedener Dienstvorlagen auf Attributflüsse |● | ● | |   
 Zulassen der Entfernung von Attributen aus dem Attributfluss von AD nach Azure AD | ● | ● | |  
 Zulassen einer erweiterten Anpassung des Attributflusses | ● | ● | | ●  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -13,16 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="05/24/2015" 
+	ms.date="07/23/2015" 
 	ms.author="juliako"/>
 
-#Erweiterte Codierung mit dem Media Encoder Premium Workflow (öffentliche Vorschau)
+#Erweiterte Codierung mit dem Media Encoder Premium Workflow
 
 **Hinweis** Der in diesem Thema beschriebene Media Encoder Premium Workflow-Medienprozessor ist in China nicht verfügbar.
 
 ##Übersicht
 
-Microsoft Azure Media Services stellt eine öffentliche Vorschau des **Media Encoder Premium Workflow**-Medienprozessors vor. Dieser Prozessor bietet leistungsstarke Codierungsfunktionen für Ihre bedarfsgesteuerten Premium-Workflows.
+Microsoft Azure Media Services stellt den **Media Encoder Premium Workflow**-Medienprozessor vor. Dieser Prozessor bietet leistungsstarke Codierungsfunktionen für Ihre bedarfsgesteuerten Premium-Workflows.
 
 In den folgenden Themen erhalten Sie nähere Informationen zum **Media Encoder Premium Workflow**:
 
@@ -265,4 +265,4 @@ Im folgenden finden Sie ein vollständiges Beispiel. Informationen zum Einrichte
 
 Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjekt trotzdem eine leere TTML-Datei.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

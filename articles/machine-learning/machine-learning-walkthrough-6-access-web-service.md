@@ -38,8 +38,8 @@ Damit ein Webdienst nützlich ist, müssen Benutzer in der Lage sein, Daten an i
 
 Auf der Registerkarte **DASHBOARD** dieses Webdiensts gibt es zwei Links zu Informationen, mit deren Hilfe Entwickler Code für den Zugriff auf diesen Dienst schreiben können. Klicken Sie auf den Link **API-Hilfeseite** in der Zeile **ANFRAGE/ANTWORT**, und es wird eine Seite geöffnet, die einen Beispielcode für das Verwenden des Anfrage/Antwort-Protokolls des Diensts enthält. In gleicher Weise liefert der Link **BATCHAUSFÜHRUNG** Beispielcode für das Durchführen einer Batchanforderung an den Dienst.
 
-Die API-Hilfeseite enthält Beispiele für die Programmiersprachen R, C# und Python.
+Die API-Hilfeseite enthält Beispiele für die Programmiersprachen R, C\# und Python.
 
 Weitere Informationen zum Zugreifen auf und Verwenden des Webdienstes finden Sie unter [Nutzen eines Azure Machine Learning-Webdiensts, der von einem Machine Learning-Experiment aus veröffentlicht wurde](machine-learning-consume-web-services.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

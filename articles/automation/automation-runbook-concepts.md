@@ -19,4 +19,4 @@
 
 Der Inhalt dieses Artikels wurde in [Grundlagen des PowerShell-Workflows](automation-powershell-workflow.md) verschoben.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

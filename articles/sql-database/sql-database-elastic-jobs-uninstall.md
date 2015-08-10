@@ -25,7 +25,7 @@ Tritt beim Installieren des Auftragsdiensts für elastische Datenbanken ein Fehl
 1. Öffnen Sie das [Azure-Vorschauportal](https://ms.portal.azure.com/).
 2. Navigieren Sie zum Abonnement, das den elastischen Auftrag enthält.
 3. Klicken Sie auf **Durchsuchen** und dann auf **Ressourcengruppen**.
-4. Wählen Sie die Ressourcengruppe mit dem Namen "__ElasticDatabaseJob".
+4. Wählen Sie die Ressourcengruppe mit dem Namen "\_\_ElasticDatabaseJob".
 5. Löschen Sie die Ressourcengruppe.
 
 Wahlweise können Sie folgendes PowerShell-Skript verwenden:
@@ -58,4 +58,4 @@ Eine Übersicht über den Dienst für elastische Datenbankaufträge finden Sie u
 [1]: ./media/sql-database-elastic-job-uninstall/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

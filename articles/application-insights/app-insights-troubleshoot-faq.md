@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/07/2015" 
+	ms.date="07/22/2015" 
 	ms.author="awills"/>
  
 # Problembehandlung und Fragen zu Application Insights für ASP.NET
@@ -46,11 +46,18 @@
 
 #### <a name="q02"></a>Mein neues Webprojekt wurde erstellt, aber ich konnte Application Insights nicht hinzufügen.
 
-Das kann vorkommen, wenn die Kommunikation mit dem Application Insights-Portal fehlgeschlagen ist oder wenn es ein Problem mit Ihrem Konto gibt.
+Dies ist in folgenden Situationen möglich:
 
-+ Stellen Sie sicher, dass Sie die Anmeldeinformationen für das richtige Azure-Konto eingegeben haben. Die Microsoft Azure-Anmeldeinformationen, die Sie im Dialogfeld "Neues Projekt" sehen, können sich von den Visual Studio Online-Anmeldeinformationen oben rechts in Visual Studio unterscheiden.
-+ Warten Sie einen Moment, und dann [fügen Sie Application Insights zu Ihrem vorhandenen Projekt hinzu][start].
-+ Wechseln Sie zu den Microsoft Azure-Kontoeinstellungen und überprüfen Sie eventuelle Beschränkungen. Testen Sie, ob Sie eine Application Insights-Anwendung manuell hinzufügen können.
+* Es liegt ein Fehler bei der Kommunikation mit dem Application Insights-Portal vor.
+* Es gibt ein Problem mit Ihrem Konto.
+* Sie verfügen nur über [Lesezugriff auf das Abonnement oder die Gruppe, in dem oder der Sie die neue Ressource erstellen möchten](app-insights-resources-roles-access-control.md).
+
+Lösung:
+
++ Stellen Sie sicher, dass Sie die Anmeldeinformationen für das richtige Azure-Konto eingegeben haben. In einigen früheren Versionen des Tools können sich die Microsoft Azure-Anmeldeinformationen, die Sie im Dialogfeld "Neues Projekt" sehen, von den Visual Studio Online-Anmeldeinformationen oben rechts in Visual Studio unterscheiden.
++ Überprüfen Sie in Ihrem Browser, ob Sie auf das [Azure-Portal](https://portal.azure.com) zugreifen können. Öffnen Sie "Einstellungen", und stellen Sie fest, ob eine Einschränkung besteht.
++ [Fügen Sie Application Insights einem vorhandenen Projekt hinzu][start]\: Klicken Sie mit der rechten Maustaste auf das Projekt im Projektmappen-Explorer, und wählen Sie "Application Insights hinzufügen" aus.
++ Wenn es immer noch nicht funktioniert, führen Sie das [manuelle Verfahren](app-insights-start-monitoring-app-health-usage.md)aus, um eine Ressource im Portal hinzuzufügen, und fügen Sie anschließend das SDK zum Projekt hinzu. 
 
 #### <a name="emptykey"></a>Eine Fehlermeldung "Instrumentationsschlüssel darf nicht leer sein" wird angezeigt.
 
@@ -90,7 +97,7 @@ Die Details hängen von der Art des Projekts ab. Für eine Webanwendung:
 
  - packages.config
 
-+ (Nur neue Projekte – wenn Sie [Application Insights zu einem vorhandenen Webprojekt hinzufügen][start], müssen Sie dies manuell ausführen.) Fügen Sie Codeausschnitte in den Client- und Servercode ein, um diese mit der Application Insights-Ressourcen-ID zu initialisieren. Beispielsweise wird in einer MVC-App Code auf der Masterseite "Views/Shared/_Layout.cshtml" eingefügt.
++ \(Nur neue Projekte – wenn Sie [Application Insights zu einem vorhandenen Webprojekt hinzufügen][start], müssen Sie dies manuell ausführen.\) Fügen Sie Codeausschnitte in den Client- und Servercode ein, um diese mit der Application Insights-Ressourcen-ID zu initialisieren. Beispielsweise wird in einer MVC-App Code auf der Masterseite "Views/Shared/\_Layout.cshtml" eingefügt.
 
 ####<a name="NuGetBuild"></a> Ich erhalte eine Fehlermeldung, dass auf meinem Buildserver NuGet-Pakete fehlen, obwohl die Erstellung auf meinen Entwicklungscomputern fehlerfrei funktioniert.
 
@@ -104,7 +111,7 @@ Gehen Sie dazu folgendermaßen vor:
 
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie "Projekt entladen" aus.
 2. Klicken Sie erneut mit der rechten Maustaste auf das Projekt, und wählen Sie *yourProject.csproj* zur Bearbeitung aus. 
-3. Entfernen Sie am Ende der Projektdatei die BCL-Ziele, die wie folgt aussehen: ``` <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+3. Entfernen Sie am Ende der Projektdatei die BCL-Ziele, die wie folgt aussehen: \`\`\` <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
 	  
 	  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
 	  
@@ -112,7 +119,7 @@ Gehen Sie dazu folgendermaßen vor:
 	    
 	    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
 	    
-	</Target> ```
+	</Target> \`\`\`
 4. Speichern Sie die Datei .
 5. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie *yourProject.csproj* zum erneuten Laden aus.
 
@@ -137,7 +144,7 @@ Informationen hierzu finden Sie in den [Versionshinweisen](app-insights-release-
 
 + Die Daten kommen aus Skripts auf den Webseiten. Wenn Sie Application Insights zu einem vorhandenen Webprojekt hinzugefügt haben, müssen Sie die [Skripts manuell hinzufügen][start].
 + Stellen Sie sicher, dass Internet Explorer Ihre Website nicht im Kompatibilitätsmodus anzeigt.
-+ Verwenden Sie die Debugfunktion Ihres Browsers (bei einigen Browsern drücken Sie F12 und wählen anschließend "Netzwerk" aus), um sicherzustellen, dass Daten an dc.services.visualstudio.com gesendet werden.
++ Verwenden Sie die Debugfunktion Ihres Browsers \(bei einigen Browsern drücken Sie F12 und wählen anschließend "Netzwerk" aus\), um sicherzustellen, dass Daten an dc.services.visualstudio.com gesendet werden.
 
 #### <a name="q08"></a>Kann ich Application Insights verwenden, um einen Intranetwebserver zu überwachen?
 
@@ -174,7 +181,7 @@ Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf `Application
 
 #### <a name="q06"></a>Zeigt die Übersicht auf dem Startbildschirm der Microsoft Azure-Vorschau den Status meiner Anwendung?
 
-Nein! Sie zeigt den Status des Azure-Diensts an. Um die Ergebnisse des Webtests anzuzeigen, wählen Sie "Durchsuchen > Application Insights > (Ihre Anwendung)" aus. Sehen Sie sich dann die Webtest-Ergebnisse an.
+Nein! Sie zeigt den Status des Azure-Diensts an. Um die Ergebnisse des Webtests anzuzeigen, wählen Sie "Durchsuchen \> Application Insights \> \(Ihre Anwendung\)" aus. Sehen Sie sich dann die Webtest-Ergebnisse an.
 
 
 #### <a name="q07"></a>Wenn ich Application Insights zu meiner Anwendung hinzufüge und das Application Insights-Portal öffne, sehe ich eine ganz andere Ansicht als in den Screenshots.
@@ -232,4 +239,4 @@ Sie können ein [PowerShell-Skript schreiben](app-insights-powershell-script-cre
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -20,7 +20,9 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
 
-In diesem Lernprogramm fügen Sie dem [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"] mithilfe eines unterstützten Identitätsanbieters eine Authentifizierung hinzu. Sie müssen zuerst das [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"] abschließen.
+In diesem Lernprogramm fügen Sie dem [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"] mithilfe eines unterstützten Identitätsanbieters eine Authentifizierung hinzu.
+
+Es empfiehlt sich, zuerst das [Tutorial "Erste Schritte mit Mobile Services"] abzuschließen. Laden Sie alternativ dazu das Schnellstart-iOS-Projekt herunter: Klicken Sie im Azure-Portal auf **Mobile Services**, auf Ihren mobilen Dienst und dann auf das Cloudzeichen oben links. Klicken Sie anschließend auf **iOS** \> **Eine neue iOS-App erstellen** \> **App herunterladen und ausführen** \> **Objective-C** \> **Herunterladen**. Sofern Sie diese Tabelle noch nicht erstellt haben, klicken Sie vor dem Klicken auf **Herunterladen** auf die Option **TodoItem-Tabelle erstellen**.
 
 ##<a name="register"></a>Registrieren der App für die Authentifizierung
 
@@ -75,6 +77,7 @@ Als Nächstes erfahren Sie, [wie der Benutzer-ID-Wert zum Filtern der zurückgeg
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Single sign-on for Windows Store apps by using Live Connect]: /develop/mobile/tutorials/single-sign-on-windows-8-dotnet
 [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"]: /develop/mobile/tutorials/get-started-ios
+[Tutorial "Erste Schritte mit Mobile Services"]: /develop/mobile/tutorials/get-started-ios
 [Get started with data]: /develop/mobile/tutorials/get-started-with-data-ios
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-ios
 [Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-ios
@@ -82,4 +85,4 @@ Als Nächstes erfahren Sie, [wie der Benutzer-ID-Wert zum Filtern der zurückgeg
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

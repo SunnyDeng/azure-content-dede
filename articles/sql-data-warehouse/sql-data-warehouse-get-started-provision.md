@@ -142,7 +142,7 @@ Führen Sie zur erstmaligen Konfiguration der Azure-Firewall folgende Schritte a
 
     Sie müssen an dieser Stelle einige Einstellungen vornehmen. Die sind die folgenden: - Benennen der Firewallregel - Festlegen eines IP-Adressbereichs, wenn Sie nicht über eine statische IP-Adresse verfügen
 
-    > [AZURE.NOTE]Der Client IP-Adressbereich, den Sie einbeziehen müssen, ist Ihre externe oder öffentliche IP-Adresse. Sie können Ihre externe IP-Adresse über einige Websites wie z. B. <a href="http://www.whatismyip.com" target="_blank">www.whatismyip.com</a> herausfinden.
+    > [AZURE.NOTE]Der Client IP-Adressbereich, den Sie einbeziehen müssen, ist Ihre externe oder öffentliche IP-Adresse. Sie können Ihre externe IP-Adresse über einige Websites wie z. B. <a href="http://www.whatismyip.com" target="\_blank">www.whatismyip.com</a> herausfinden.
 
 7. Speichern Sie Ihre Firewallregel.
 
@@ -163,8 +163,8 @@ In den nächsten Schritten erfahren Sie daher Folgendes: 1. Data Warehouse – [
 [Verbinden und Abfragen]: sql-data-warehouse-get-started-connect-query.md
 
 <!--External links-->
-[kostenlose Testversion]: https://azure.microsoft.com/de-de/pricing/free-trial/
+[kostenlose Testversion]: https://azure.microsoft.com/en-us/pricing/free-trial/
 [Azure-Portal]: https://portal.azure.com/
 [Azure-Portals]: https://portal.azure.com/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

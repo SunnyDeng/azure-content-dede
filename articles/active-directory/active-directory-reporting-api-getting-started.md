@@ -50,7 +50,7 @@ Die Reporting-API verwendet [OAuth](https://msdn.microsoft.com/library/azure/dn6
 - Navigieren Sie zu Ihrer neu erstellten Anwendung.
 - Klicken Sie auf die Registerkarte **Konfigurieren**.
 - Im Abschnitt "Berechtigungen für andere Anwendungen":
-	- Wählen Sie in "Microsoft Azure Active Directory" > "Anwendungsberechtigungen" **Verzeichnisdaten lesen** aus.
+	- Wählen Sie in "Microsoft Azure Active Directory" \> "Anwendungsberechtigungen" **Verzeichnisdaten lesen** aus.
 - Klicken Sie auf der unteren Leiste auf **Speichern**.
 
 
@@ -135,6 +135,6 @@ Das Skript gibt Listen aller verfügbaren Berichte und die Ausgabe des Berichts 
 ## Nächste Schritte
 - Möchten Sie wissen, welche Sicherheits-, Überwachungs- und Aktivitätsberichte zur Verfügung stehen? Lesen Sie [Sicherheits-, Überwachungs- und Aktivitätsberichte](active-directory-view-access-usage-reports.md).
 - Unter [Azure AD-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md) finden Sie weitere Informationen zum Überwachungsbericht.
-- Unter [Azure AD-Berichte und -Ereignisse (Vorschau)](https://msdn.microsoft.com/library/azure/mt126081.aspx) finden Sie weitere Informationen zum Graph-API-REST-Dienst.
+- Unter [Azure AD-Berichte und -Ereignisse \(Vorschau\)](https://msdn.microsoft.com/library/azure/mt126081.aspx) finden Sie weitere Informationen zum Graph-API-REST-Dienst.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -31,9 +31,7 @@ Es ist jetzt möglich, mehrere Azure-Ressourcen in einer einzigen Azure-Ressourc
 
 In den folgenden Grenzwerten wurde eine neue Tabelle hinzugefügt, um alle abweichenden Grenzwerte bei Verwendung des Azure-Ressourcen-Managers aufzuzeigen. Es gibt beispielsweise eine Tabelle **Einschränkungen für Abonnements** und eine Tabelle **Abonnementgrenzwerte - Azure-Ressourcen-Manager**. Wenn ein Grenzwert für beide Szenarien gilt, wird er nur in der ersten Tabelle angezeigt. Sofern nicht anders angegeben, gelten Grenzwerte global für alle Regionen.
 
-> [AZURE.NOTE]Wichtig ist, dass Kontingente für Ressourcen in Azure-Ressourcengruppen pro Region über Ihr Abonnement zugänglich sind, und nicht wie die Dienstverwaltungskontingente pro Abonnement. Verwenden wir Kernspeicherkontingente als Beispiel. Wenn Sie eine Erhöhung des Kontingents mit Unterstützung für Kernspeicher anfordern müssen, müssen Sie entscheiden, wie viel Kernspeicher Sie in den einzelnen Regionen verwenden möchten, und anschließend eine spezifische Anforderung für Azure-Ressourcengruppen-Kernspeicherkontingente für die gewünschten Beträge und Regionen vornehmen. Wenn Sie für die Ausführung Ihrer Anwendung 30 Kerne in Westeuropa benötigen, sollten Sie daher 30 Kerne in Westeuropa anfordern. In anderen Regionen erfolgt jedoch keine Erhöhung des Kernspeicherkontingents. Das Kontingent von 30 Kernen gilt nur für Westeuropa.
-<!-- --> 
-Daher sollten Sie ggf. überlegen, wie hoch Ihre Azure-Ressourcengruppenkontingente für Ihre Workload in jeder Region sein müssen, und diesen Betrag in jeder Region anfordern, in der Sie eine Bereitstellung in Betracht ziehen. Weitere Informationen zum Ermitteln Ihrer aktuellen Kontingente für bestimmte Regionen finden Sie unter [Problembehandlung bei der Bereitstellung](resource-group-deploy-debug.md##authentication-subscription-role-and-quota-issues).
+> [AZURE.NOTE]Wichtig ist, dass Kontingente für Ressourcen in Azure-Ressourcengruppen pro Region über Ihr Abonnement zugänglich sind, und nicht wie die Dienstverwaltungskontingente pro Abonnement. Verwenden wir Kernspeicherkontingente als Beispiel. Wenn Sie eine Erhöhung des Kontingents mit Unterstützung für Kernspeicher anfordern müssen, müssen Sie entscheiden, wie viel Kernspeicher Sie in den einzelnen Regionen verwenden möchten, und anschließend eine spezifische Anforderung für Azure-Ressourcengruppen-Kernspeicherkontingente für die gewünschten Beträge und Regionen vornehmen. Wenn Sie für die Ausführung Ihrer Anwendung 30 Kerne in Westeuropa benötigen, sollten Sie daher 30 Kerne in Westeuropa anfordern. In anderen Regionen erfolgt jedoch keine Erhöhung des Kernspeicherkontingents. Das Kontingent von 30 Kernen gilt nur für Westeuropa. <!-- --> Daher sollten Sie ggf. überlegen, wie hoch Ihre Azure-Ressourcengruppenkontingente für Ihre Workload in jeder Region sein müssen, und diesen Betrag in jeder Region anfordern, in der Sie eine Bereitstellung in Betracht ziehen. Weitere Informationen zum Ermitteln Ihrer aktuellen Kontingente für bestimmte Regionen finden Sie unter [Problembehandlung bei der Bereitstellung](resource-group-deploy-debug.md##authentication-subscription-role-and-quota-issues).
 
 ## Einschränkungen für Abonnements
 
@@ -77,7 +75,7 @@ Die folgenden Grenzwerte gelten bei Verwendung des Azure-Ressourcen-Managers und
 
 ## Speichergrenzwerte
 
-### Standardmäßige Speichergrenzwerte 
+### Standardmäßige Speichergrenzwerte
 
 [AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
@@ -103,6 +101,10 @@ Weitere Informationen zu Grenzwerten für Speicherkonten finden Sie unter [Skali
 
 [AZURE.INCLUDE [azure-websites-limits](../includes/azure-websites-limits.md)]
 
+## Scheduler-Grenzwerte
+
+[AZURE.INCLUDE [scheduler-limits-table](../includes/scheduler-limits-table.md)]
+
 ## Batchgrenzwerte
 
 [AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
@@ -122,7 +124,7 @@ Weitere Informationen zu Grenzwerten für Speicherkonten finden Sie unter [Skali
 
 [AZURE.INCLUDE [azure-search-limits](../includes/azure-search-limits.md)]
 
-Weitere Informationen zu den Grenzwerten für Azure Search finden Sie unter[Grenzwerte und Einschränkungen](https://msdn.microsoft.com/library/azure/dn798934.aspx).
+Weitere Informationen zu den Grenzwerten für Azure Search finden Sie unter [Grenzwerte und Einschränkungen](https://msdn.microsoft.com/library/azure/dn798934.aspx).
 
 ## Einschränkungen für SQL-Datenbanken
 
@@ -130,9 +132,9 @@ Weitere Informationen zu den Grenzwerten für Azure Search finden Sie unter[Gren
 
 Weitere Informationen zu Grenzwerten für SQL-Datenbanken finden Sie in den folgenden Themen:
 
- - [Dienstebenen (Editionen) der Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn741340.aspx)
+ - [Dienstebenen \(Editionen\) der Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn741340.aspx)
  - [Dienst- und Leistungsebenen für Azure SQL-Datenbanken](http://msdn.microsoft.com/library/azure/dn741336.aspx)
- - [Kontingente der Datenbankdurchsatzeinheit (DTU = Database Throughput Unit)](http://msdn.microsoft.com/library/azure/ee336245.aspx#DTUs)
+ - [Kontingente der Datenbankdurchsatzeinheit \(DTU = Database Throughput Unit\)](http://msdn.microsoft.com/library/azure/ee336245.aspx#DTUs)
  - [Ressourceneinschränkungen für SQL-Datenbanken](sql-database/sql-database-resource-limits.md)
 
 ## Media Services-Einschränkungen
@@ -198,4 +200,4 @@ Weitere Informationen zu Grenzwerten für SQL-Datenbanken finden Sie in den folg
 
 [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx)
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

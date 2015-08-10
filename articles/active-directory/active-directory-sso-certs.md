@@ -80,4 +80,4 @@ Im Idealfall sollte die unten gezeigten Schritte zur Erneuerung keine wesentlich
 
 [Anwendungszugriff und einmaliges Anmelden in Azure AD](active-directory-appssoaccess-whatis.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

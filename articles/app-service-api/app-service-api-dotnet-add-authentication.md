@@ -43,7 +43,7 @@ Die einfachste Möglichkeit zu prüfen, ob Ihre API-App öffentlich zugänglich 
 
 1. Wechseln Sie in Ihrem Browser zum [Azure-Vorschauportal].
 
-3. Klicken Sie auf der Startseite auf **Durchsuchen > API-Apps**, und klicken Sie dann auf den Namen der API-App, die Sie schützen möchten.
+3. Klicken Sie auf der Startseite auf **Durchsuchen \> API-Apps**, und klicken Sie dann auf den Namen der API-App, die Sie schützen möchten.
 
 	![Durchsuchen](./media/app-service-api-dotnet-add-authentication/browse.png)
 
@@ -73,9 +73,9 @@ Die einfachste Möglichkeit zu prüfen, ob Ihre API-App öffentlich zugänglich 
 
 Als Sie Ihre API-App bereitgestellt haben, ist die Bereitstellung als Bestandteil einer Ressourcengruppe erfolgt. Sie können Web-Apps und andere API-Apps zur selben Ressourcengruppe hinzufügen, und jede API-App innerhalb der Ressourcengruppe kann eine von drei Zugriffseinstellungen verwenden: <!--todo: diagram showing different accessibility settings-->
 
-- **Öffentlich (anonym)** – Beliebige Benutzer können die API-App von außerhalb der Ressourcengruppe und ohne Anmeldung aufrufen.
-- **Öffentlich (authentifiziert)** – Nur authentifizierte Benutzer können die API-App von außerhalb der Ressourcengruppe aufrufen.
-- **Intern** – Nur andere API-Apps oder Web-Apps in derselben Ressourcengruppe dürfen die API-App aufrufen. (Aufrufe von Web-Apps werden als extern betrachtet, selbst wenn sich die Web-Apps in derselben Ressourcengruppe befinden.)
+- **Öffentlich \(anonym\)** – Beliebige Benutzer können die API-App von außerhalb der Ressourcengruppe und ohne Anmeldung aufrufen.
+- **Öffentlich \(authentifiziert\)** – Nur authentifizierte Benutzer können die API-App von außerhalb der Ressourcengruppe aufrufen.
+- **Intern** – Nur andere API-Apps oder Web-Apps in derselben Ressourcengruppe dürfen die API-App aufrufen. \(Aufrufe von Web-Apps werden als extern betrachtet, selbst wenn sich die Web-Apps in derselben Ressourcengruppe befinden.\)
 
 Als Visual Studio die Ressourcengruppe für Sie erstellt hat, wurde auch ein *Gateway* erstellt. Ein Gateway ist eine spezielle Web-App, die alle Anforderungen verarbeitet, die an API-Apps in der Ressourcengruppe gerichtet sind.
 
@@ -85,7 +85,7 @@ Wenn Sie im [Azure-Vorschauportal] zum Blatt für die Ressourcengruppe wechseln,
 
 ### <a id="apiapp"></a>Konfigurieren der API-App zum Verwenden der Authentifizierung
 
-Um Ihre API-App so zu konfigurieren, dass nur authentifizierte Anforderungen akzeptiert werden, legen Sie den Zugriff **Öffentlich (authentifiziert)** fest. Anschließend konfigurieren Sie das Gateway für eine Authentifizierung über einen Anbieter wie Azure Active Directory, Google oder Facebook.
+Um Ihre API-App so zu konfigurieren, dass nur authentifizierte Anforderungen akzeptiert werden, legen Sie den Zugriff **Öffentlich \(authentifiziert\)** fest. Anschließend konfigurieren Sie das Gateway für eine Authentifizierung über einen Anbieter wie Azure Active Directory, Google oder Facebook.
 
 [AZURE.INCLUDE [app-service-api-config-auth](../../includes/app-service-api-config-auth.md)]
 
@@ -99,7 +99,7 @@ Ihre API-App ist jetzt vor einem nicht authentifizierten Zugriff geschützt. Als
 
 **Hinweis:** Wenn Sie beim Ausführen der folgenden Schritte Probleme bei der Anmeldung haben, öffnen Sie ein Browserfenster im privaten oder im Inkognito-Modus.
  
-1. Öffnen Sie ein Browserfenster, und geben Sie in der Adressleiste die URL ein, mit der (wie zuvor) die `Get`-Methode Ihrer API-App aufgerufen wird.
+1. Öffnen Sie ein Browserfenster, und geben Sie in der Adressleiste die URL ein, mit der \(wie zuvor\) die `Get`-Methode Ihrer API-App aufgerufen wird.
 
 	Dieses Mal führt der Zugriffsversuch auf die API-App zu einer Fehlermeldung.
 
@@ -109,11 +109,11 @@ Ihre API-App ist jetzt vor einem nicht authentifizierten Zugriff geschützt. Als
 
     	http://[gatewayurl]/login/[providername]
 
-	Sie können die Gateway-URL aus dem Blatt **Gateway** im [Azure-Vorschauportal] abrufen. (Sie gelangen zum Blatt **Gateway**, indem Sie auf dem Blatt **Ressourcengruppe** auf das Gateway im angezeigten Diagramm klicken.)
+	Sie können die Gateway-URL aus dem Blatt **Gateway** im [Azure-Vorschauportal] abrufen. \(Sie gelangen zum Blatt **Gateway**, indem Sie auf dem Blatt **Ressourcengruppe** auf das Gateway im angezeigten Diagramm klicken.\)
 
 	![Gateway-URL](./media/app-service-api-dotnet-add-authentication/gatewayurl.png)
 
-	Für [providername] muss einer der folgenden Werte verwendet werden:
+	Für \[providername\] muss einer der folgenden Werte verwendet werden:
 	
 	* "microsoftaccount"
 	* "facebook"
@@ -153,7 +153,7 @@ Damit Sie sehen, was im Hintergrund geschieht, verwenden Sie in diesem Abschnitt
 
 Diese Anweisungen zeigen, wie Sie das Postman-Tool im Chrome-Browser verwenden, aber Sie können dieselbe Aufgabe ebenso mit einem beliebigen REST-Clienttool und den Entwicklertools für den Browser durchführen.
 
-1. Durchlaufen Sie in einem Chrome-Browserfenster die im vorherigen Abschnitt gezeigten Schritte zur Authentifizierung, und öffnen Sie dann die Entwicklertools (F12).
+1. Durchlaufen Sie in einem Chrome-Browserfenster die im vorherigen Abschnitt gezeigten Schritte zur Authentifizierung, und öffnen Sie dann die Entwicklertools \(F12\).
 
 	![Wechseln Sie zur Registerkarte "Ressourcen"](./media/app-service-api-dotnet-add-authentication/resources.png)
 
@@ -268,4 +268,4 @@ Sie haben erfahren, wie Sie eine Azure API-App schützen, indem Sie sie für ein
 [Azure-Portal]: https://manage.windowsazure.com/
 [Azure-Vorschauportal]: https://portal.azure.com/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

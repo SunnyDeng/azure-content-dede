@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="05/05/2015" 
+	ms.date="07/29/2015" 
 	ms.author="ricksal"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
@@ -24,13 +24,13 @@ In diesem Thema erfahren Sie, wie Sie Azure Mobile Services als Back-End-Datenqu
 
 Der mobile Dienst, den Sie in diesem Lernprogramm erstellen, unterstützt die .NET Runtime in Mobile Services. Auf diese Weise können Sie .NET-Sprachen und Visual Studio für die serverseitige Geschäftslogik im mobilen Dienst verwenden. Informationen zum Erstellen eines mobilen Diensts, dessen serverseitige Geschäftslogik Sie in JavaScript schreiben können, finden Sie in der [JavaScript-Backend-Version](mobile-services-android-get-started-data.md) dieses Themas.
 
-> [AZURE.NOTE]Die Eclipse-Version dieses Lernprogramms finden Sie unter [Erste Schritte mit Daten (Eclipse)].
+> [AZURE.NOTE]Die Eclipse-Version dieses Lernprogramms finden Sie unter [Erste Schritte mit Daten \(Eclipse\)].
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-+ <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio 2013</a> (Update 3 oder eine höhere Version). 
++ <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio 2013</a> \(Update 3 oder eine höhere Version\). 
 
-+ Ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-android-get-started-data%2F).
++ Ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-android-get-started-data%2F).
 
 ##<a name="create-service"></a>Erstellen eines neuen mobilen Dienstes
 
@@ -122,7 +122,7 @@ Probieren Sie als Nächstes eines der anderen Lernprogramme aus:
 <!-- Images. -->
 
 <!-- URLs. -->
-[Erste Schritte mit Daten (Eclipse)]: mobile-services-dotnet-backend-android-get-started-data-EC.md
+[Erste Schritte mit Daten \(Eclipse\)]: mobile-services-dotnet-backend-android-get-started-data-EC.md
 [Get started with Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 [Erste Schritte mit der Authentifizierung]: mobile-services-dotnet-backend-android-get-started-users.md
 [Erste Schritte mit Pushbenachrichtigungen]: mobile-services-dotnet-backend-android-get-started-push.md
@@ -133,4 +133,4 @@ Probieren Sie als Nächstes eines der anderen Lernprogramme aus:
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=328660
    
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

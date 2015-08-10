@@ -18,7 +18,7 @@
 
 # Entwickeln von Script Action-Skripts für HDInsight 
 
-Mit Skriptaktionen (Script Action) kann zusätzliche Software in einem Hadoop-Cluster installiert oder die Konfiguration von in einem Cluster installierten Anwendungen geändert werden. Skriptaktionen sind Skripts, die auf Clusterknoten ausgeführt werden, wenn HDInsight-Cluster bereitgestellt sind. Sie werden dann ausgeführt, sobald die HDInsight-Konfiguration auf Knoten im Cluster abgeschlossen ist. Eine Skriptaktion wird mit Berechtigungen des Systemadministratorkontos ausgeführt und bietet umfassende Zugriffsrechte auf die Clusterknoten. Jeder Cluster kann mit einer Liste von Skriptaktionen bereitgestellt werden, die in der angegebenen Reihenfolge ausgeführt werden.
+Mit Skriptaktionen \(Script Action\) kann zusätzliche Software in einem Hadoop-Cluster installiert oder die Konfiguration von in einem Cluster installierten Anwendungen geändert werden. Skriptaktionen sind Skripts, die auf Clusterknoten ausgeführt werden, wenn HDInsight-Cluster bereitgestellt sind. Sie werden dann ausgeführt, sobald die HDInsight-Konfiguration auf Knoten im Cluster abgeschlossen ist. Eine Skriptaktion wird mit Berechtigungen des Systemadministratorkontos ausgeführt und bietet umfassende Zugriffsrechte auf die Clusterknoten. Jeder Cluster kann mit einer Liste von Skriptaktionen bereitgestellt werden, die in der angegebenen Reihenfolge ausgeführt werden.
 
 
 
@@ -97,7 +97,7 @@ Wenn Sie ein benutzerdefiniertes Skript für einen HDInsight-Cluster entwickeln,
 
 - Überprüfen der Hadoop-Version
 
-	Nur HDInsight Version 3.1 (Hadoop 2.4) und höher unterstützen die Installation von benutzerdefinierten Komponenten in einem Cluster mithilfe von Skriptaktionen. Sie müssen im benutzerdefinierten Skript die Hilfsmethode **Get-HDIHadoopVersion** verwenden, um die Hadoop-Version zu überprüfen, bevor Sie mit anderen Aufgaben im Skript fortfahren können.
+	Nur HDInsight Version 3.1 \(Hadoop 2.4\) und höher unterstützen die Installation von benutzerdefinierten Komponenten in einem Cluster mithilfe von Skriptaktionen. Sie müssen im benutzerdefinierten Skript die Hilfsmethode **Get-HDIHadoopVersion** verwenden, um die Hadoop-Version zu überprüfen, bevor Sie mit anderen Aufgaben im Skript fortfahren können.
 
 
 - Einrichten stabiler Verknüpfungen mit Skriptressourcen
@@ -107,24 +107,24 @@ Wenn Sie ein benutzerdefiniertes Skript für einen HDInsight-Cluster entwickeln,
 
 - Sicherstellen, dass das Clusteranpassungsskript idempotent ist
 
-	Sie müssen davon ausgehen, dass für die Knoten eines HDInsight-Clusters während der Nutzungsdauer des Clusters erneut ein Abbild erstellt wird. Das Clusteranpassungsskript wird immer dann ausgeführt, wenn für einen Cluster ein neues Abbild erstellt wird. Dieses Skript muss dahingehend idempotent sein, dass beim Erstellen eines neuen Image sichergestellt wird, dass der Cluster in denselben angepassten Status zurückgesetzt wird, in dem er sich befand, nachdem das Skript erstmals bei der Clustererstellung ausgeführt wurde. Beispiel: Wenn ein benutzerdefiniertes Skript bei der ersten Ausführung eine Anwendung in "D:\AppLocation" installiert hat, muss das Skript bei nachfolgenden Ausführungen, wenn ein neues Abbild erstellt wird, prüfen, ob die Anwendung am Speicherort "D:\AppLocation" vorhanden ist, ehe mit anderen Schritten im Skript fortgefahren wird.
+	Sie müssen davon ausgehen, dass für die Knoten eines HDInsight-Clusters während der Nutzungsdauer des Clusters erneut ein Abbild erstellt wird. Das Clusteranpassungsskript wird immer dann ausgeführt, wenn für einen Cluster ein neues Abbild erstellt wird. Dieses Skript muss dahingehend idempotent sein, dass beim Erstellen eines neuen Image sichergestellt wird, dass der Cluster in denselben angepassten Status zurückgesetzt wird, in dem er sich befand, nachdem das Skript erstmals bei der Clustererstellung ausgeführt wurde. Beispiel: Wenn ein benutzerdefiniertes Skript bei der ersten Ausführung eine Anwendung in "D:\\AppLocation" installiert hat, muss das Skript bei nachfolgenden Ausführungen, wenn ein neues Abbild erstellt wird, prüfen, ob die Anwendung am Speicherort "D:\\AppLocation" vorhanden ist, ehe mit anderen Schritten im Skript fortgefahren wird.
 
 
 - Installieren benutzerdefinierter Komponenten am optimalen Speicherort
 
-	Wenn von Clusterknoten ein neues Image erstellt wird, können das Ressourcenlaufwerk C:\ und das Systemlaufwerk D:\ neu formatiert werden, wodurch es zu einem Verlust von Daten und auf diesen Laufwerken installierten Anwendungen kommen kann. Dies kann auch passieren, wenn ein zum Cluster gehörender Azure VM-Knoten ausfällt und durch einen neuen Knoten ersetzt wird. Sie können Komponenten auf Laufwerk D:/ oder im Verzeichnis "C:\apps" im Cluster installieren. Alle anderen Speicherorte auf Laufwerk C:\ sind reserviert. Geben Sie den Installationsort für Anwendungen oder Bibliotheken im Clusteranpassungsskript an.
+	Wenn von Clusterknoten ein neues Image erstellt wird, können das Ressourcenlaufwerk C:\\ und das Systemlaufwerk D:\\ neu formatiert werden, wodurch es zu einem Verlust von Daten und auf diesen Laufwerken installierten Anwendungen kommen kann. Dies kann auch passieren, wenn ein zum Cluster gehörender Azure VM-Knoten ausfällt und durch einen neuen Knoten ersetzt wird. Sie können Komponenten auf Laufwerk D:/ oder im Verzeichnis "C:\\apps" im Cluster installieren. Alle anderen Speicherorte auf Laufwerk C:\\ sind reserviert. Geben Sie den Installationsort für Anwendungen oder Bibliotheken im Clusteranpassungsskript an.
 
 
 - Sicherstellen einer hohen Verfügbarkeit der Clusterarchitektur
 
-	HDInsight hat eine Aktiv-Passiv-Architektur für hohe Verfügbarkeit, in dem sich ein Hauptknoten im aktiven Modus (d. h. die HDInsight-Dienste werden ausgeführt) und der andere Hauptknoten im Standby-Modus (d. h. HDInsight-Dienste werden nicht ausgeführt) befindet. Die Knoten schalten zwischen aktivem und passivem Modus um, wenn die HDInsight-Dienste unterbrochen werden. Wenn eine Skriptaktion zur Installation von Diensten auf beiden Hauptknoten für hohe Verfügbarkeit verwendet wird, ist der HDInsight-Failovermechanismus nicht in der Lage, für diese vom Benutzer installierten Dienste automatisch ein Failover durchzuführen. Daher müssen vom Benutzer installierte Dienste auf HDInsight-Hauptknoten, die hoch verfügbar sein sollen, im Aktiv-Passiv-Modus über ihren eigenen Failovermechanismus verfügen oder sich im Aktiv-Aktiv-Modus befinden.
+	HDInsight hat eine Aktiv-Passiv-Architektur für hohe Verfügbarkeit, in dem sich ein Hauptknoten im aktiven Modus \(d. h. die HDInsight-Dienste werden ausgeführt\) und der andere Hauptknoten im Standby-Modus \(d. h. HDInsight-Dienste werden nicht ausgeführt\) befindet. Die Knoten schalten zwischen aktivem und passivem Modus um, wenn die HDInsight-Dienste unterbrochen werden. Wenn eine Skriptaktion zur Installation von Diensten auf beiden Hauptknoten für hohe Verfügbarkeit verwendet wird, ist der HDInsight-Failovermechanismus nicht in der Lage, für diese vom Benutzer installierten Dienste automatisch ein Failover durchzuführen. Daher müssen vom Benutzer installierte Dienste auf HDInsight-Hauptknoten, die hoch verfügbar sein sollen, im Aktiv-Passiv-Modus über ihren eigenen Failovermechanismus verfügen oder sich im Aktiv-Aktiv-Modus befinden.
 
-	Der HDInsight-Befehl "Script Action" wird auf beiden Hauptknoten ausgeführt, wenn die Hauptknotenrolle als Wert im Parameter *ClusterRoleCollection* angegeben ist (Informationen dazu finden Sie im nachstehenden Abschnitt [Ausführen einer Skriptaktion](#runScriptAction)). Vergewissern Sie sich beim Entwurf eines benutzerdefinierten Skripts, dass Ihrem Skript diese Konfiguration bekannt ist. Sie sollten beispielsweise keine Probleme bekommen, wenn dieselben Dienste auf beiden Hauptknoten installiert und gestartet wurden und letztlich in Konkurrenz zueinander treten. Daten gehen auch beim Re-imaging verloren, weshalb mithilfe von Skriptaktionen installierte Software bei solchen Ereignissen ausfallsicher sein muss. Anwendungen sollten so konzipiert sein, dass sie mit hoch verfügbaren Daten arbeiten können, die über viele Knoten verteilt werden. Beachten Sie, dass für maximal 1/5 der Knoten eines Clusters gleichzeitig ein neues Abbild erstellt werden kann.
+	Der HDInsight-Befehl "Script Action" wird auf beiden Hauptknoten ausgeführt, wenn die Hauptknotenrolle als Wert im Parameter *ClusterRoleCollection* angegeben ist \(Informationen dazu finden Sie im nachstehenden Abschnitt [Ausführen einer Skriptaktion](#runScriptAction)\). Vergewissern Sie sich beim Entwurf eines benutzerdefinierten Skripts, dass Ihrem Skript diese Konfiguration bekannt ist. Sie sollten beispielsweise keine Probleme bekommen, wenn dieselben Dienste auf beiden Hauptknoten installiert und gestartet wurden und letztlich in Konkurrenz zueinander treten. Daten gehen auch beim Re-imaging verloren, weshalb mithilfe von Skriptaktionen installierte Software bei solchen Ereignissen ausfallsicher sein muss. Anwendungen sollten so konzipiert sein, dass sie mit hoch verfügbaren Daten arbeiten können, die über viele Knoten verteilt werden. Beachten Sie, dass für maximal 1/5 der Knoten eines Clusters gleichzeitig ein neues Abbild erstellt werden kann.
 
 
 - Konfigurieren benutzerdefinierter Komponenten zur Verwendung von Azure-Blobspeicher
 
-	Die benutzerdefinierten Komponenten, die Sie auf den Clusterknoten installieren, sind möglicherweise standardmäßig so konfiguriert, dass sie den HDFS-Speicher (Hadoop Distributed File System) verwenden. Ändern Sie die Konfiguration, um stattdessen Azure-Blobspeicher zu verwenden. Auf einem Cluster-Reimage wird das HDFS-Dateisystem formatiert, sodass Sie alle darauf gespeicherten Daten verlieren würden. Mithilfe von Azure-Blobspeicher wird stattdessen sichergestellt, dass Ihre Daten erhalten bleiben.
+	Die benutzerdefinierten Komponenten, die Sie auf den Clusterknoten installieren, sind möglicherweise standardmäßig so konfiguriert, dass sie den HDFS-Speicher \(Hadoop Distributed File System\) verwenden. Ändern Sie die Konfiguration, um stattdessen Azure-Blobspeicher zu verwenden. Auf einem Cluster-Reimage wird das HDFS-Dateisystem formatiert, sodass Sie alle darauf gespeicherten Daten verlieren würden. Mithilfe von Azure-Blobspeicher wird stattdessen sichergestellt, dass Ihre Daten erhalten bleiben.
 
 ## Hilfsmethoden für benutzerdefinierte Skripts 
 
@@ -132,18 +132,18 @@ Script Action bietet die folgenden Hilfsmethoden, mit denen Sie zum Schreiben vo
 
 Hilfsmethode | Beschreibung
 -------------- | -----------
-**Save-HDIFile** | Herunterladen einer Datei vom angegebenen URI (Uniform Resource Identifier) an einen Speicherort auf dem lokalen Datenträger, der dem im Cluster zugewiesenen Azure VM-Knoten zugeordnet ist.
+**Save-HDIFile** | Herunterladen einer Datei vom angegebenen URI \(Uniform Resource Identifier\) an einen Speicherort auf dem lokalen Datenträger, der dem im Cluster zugewiesenen Azure VM-Knoten zugeordnet ist.
 **Expand-HDIZippedFile** | Entpacken einer ZIP-Datei.
 **Invoke-HDICmdScript** | Ausführen eines Skripts über "cmd.exe".
 **Write-HDILog** | Schreiben der Ausgabe des benutzerdefinierten Skripts, das für die Skriptaktion verwendet wird.
 **Get-Services** | Abrufen einer Liste von Diensten auf dem Rechner, auf dem das Skript ausgeführt wird.
-**Get-Service** | Mit dem bestimmten Dienstnamen als Eingabe werden detaillierte Informationen für einen bestimmten Dienst (Dienstname, Prozess-ID, Status usw.) auf dem Computer zurückgegeben, auf dem das Skript ausgeführt wird.
+**Get-Service** | Mit dem bestimmten Dienstnamen als Eingabe werden detaillierte Informationen für einen bestimmten Dienst \(Dienstname, Prozess-ID, Status usw.\) auf dem Computer zurückgegeben, auf dem das Skript ausgeführt wird.
 **Get-HDIServices** | Abrufen einer Liste der HDInsight-Dienste auf dem Computer, auf dem das Skript ausgeführt wird.
-**Get-HDIService** | Mit dem bestimmten HDInsight-Dienstnamen als Eingabe werden detaillierte Informationen für einen bestimmten Dienst (Dienstname, Prozess-ID, Status usw.) auf dem Computer zurückgegeben, auf dem das Skript ausgeführt wird.
+**Get-HDIService** | Mit dem bestimmten HDInsight-Dienstnamen als Eingabe werden detaillierte Informationen für einen bestimmten Dienst \(Dienstname, Prozess-ID, Status usw.\) auf dem Computer zurückgegeben, auf dem das Skript ausgeführt wird.
 **Get-ServicesRunning** | Abrufen einer Liste von Diensten auf dem Computer, auf dem das Skript ausgeführt wird.
-**Get-ServiceRunning** | Überprüfen, ob ein bestimmter Dienst (namentlich) auf dem Computer ausgeführt wird, auf dem das Skript ausgeführt wird.
+**Get-ServiceRunning** | Überprüfen, ob ein bestimmter Dienst \(namentlich\) auf dem Computer ausgeführt wird, auf dem das Skript ausgeführt wird.
 **Get-HDIServicesRunning** | Abrufen einer Liste der HDInsight-Dienste auf dem Computer, auf dem das Skript ausgeführt wird.
-**Get-HDIServiceRunning** | Überprüfen, ob ein bestimmter HDInsight-Dienst (namentlich) auf dem Computer ausgeführt wird, auf dem das Skript ausgeführt wird.
+**Get-HDIServiceRunning** | Überprüfen, ob ein bestimmter HDInsight-Dienst \(namentlich\) auf dem Computer ausgeführt wird, auf dem das Skript ausgeführt wird.
 **Get-HDIHadoopVersion** | Abrufen der Hadoop-Version, die auf dem Computer installiert ist, auf dem das Skript ausgeführt wird.
 **Test-IsHDIHeadNode** | Überprüfen, ob der Computer, auf dem das Skript ausgeführt wird, ein Hauptknoten ist.
 **Test-IsActiveHDIHeadNode** | Überprüfen, ob der Computer, auf dem das Skript ausgeführt wird, ein aktiver Hauptknoten ist.
@@ -161,11 +161,11 @@ Bei der Entwicklung von Skriptaktionen müssen häufig Umgebungsvariablen festge
 	Write-HDILog "Starting environment variable setting at: $(Get-Date)";
 	[Environment]::SetEnvironmentVariable('MDS_RUNNER_CUSTOM_CLUSTER', 'true', 'Machine');
 
-Mit dieser Anweisung wird die Umgebungsvariable **MDS_RUNNER_CUSTOM_CLUSTER** auf den Wert "true" und auch der Gültigkeitsbereich dieser Variablen (für den gesamten Computer) festgelegt. Mitunter ist es wichtig, dass Umgebungsvariablen im entsprechenden Bereich (Computer oder Benutzer) festgelegt werden. [Hier][1] finden Sie weitere Informationen zum Festlegen von Umgebungsvariablen.
+Mit dieser Anweisung wird die Umgebungsvariable **MDS\_RUNNER\_CUSTOM\_CLUSTER** auf den Wert "true" und auch der Gültigkeitsbereich dieser Variablen \(für den gesamten Computer\) festgelegt. Mitunter ist es wichtig, dass Umgebungsvariablen im entsprechenden Bereich \(Computer oder Benutzer\) festgelegt werden. [Hier][1] finden Sie weitere Informationen zum Festlegen von Umgebungsvariablen.
 
 ### Zugriff auf Speicherorte benutzerdefinierter Skripts
 
-Skripts zur Anpassung eines Clusters müssen entweder im Standardspeicherkonto des Clusters oder in einem öffentlichen schreibgeschützten Container eines anderen Speicherkontos enthalten sein. Wenn Ihr Skript auf externe Ressourcen zugreift, müssen diese öffentlich zugänglich sein (oder mindestens einen öffentlichen Lesezugriff aufweisen). Sie möchten z. B. auf eine Datei zugreifen und sie mithilfe des Befehls "SaveFile-HDI" speichern.
+Skripts zur Anpassung eines Clusters müssen entweder im Standardspeicherkonto des Clusters oder in einem öffentlichen schreibgeschützten Container eines anderen Speicherkontos enthalten sein. Wenn Ihr Skript auf externe Ressourcen zugreift, müssen diese öffentlich zugänglich sein \(oder mindestens einen öffentlichen Lesezugriff aufweisen\). Sie möchten z. B. auf eine Datei zugreifen und sie mithilfe des Befehls "SaveFile-HDI" speichern.
 
 	Save-HDIFile -SrcUri 'https://somestorageaccount.blob.core.windows.net/somecontainer/some-file.jar' -DestFile 'C:\apps\dist\hadoop-2.4.0.2.1.9.0-2196\share\hadoop\mapreduce\some-file.jar'
 
@@ -201,20 +201,20 @@ Es folgen unsere Schritte bei der Vorbereitung der Bereitstellung dieser Skripts
 2. Fügen Sie Skripts Überprüfungen hinzu, um sicherzustellen, dass sie idempotent ausgeführt werden, damit das Skript mehrmals auf demselben Knoten ausgeführt werden kann.
 3. Verwenden Sie das PowerShell-Cmdlet **Write-Output**, um für eine Ausgabe in STDOUT und STDERR zu sorgen. Verwenden Sie nicht **Write-Host**.
 4. Verwenden Sie einen temporären Dateiordner wie "$env:TEMP", um die heruntergeladene von den Skripts verwendete Dateien aufzubewahren, und leeren Sie den Ordner nach der Ausführung der Skripts.
-5. Installieren Sie benutzerdefinierte Software nur auf "D:\" oder in "C:\apps". Andere Speicherorte auf Laufwerk C:\ dürfen nicht verwendet werden, da sie reserviert sind. Beachten Sie, dass das Installieren von Dateien auf Laufwerk C:\ außerhalb des Ordners "C:/apps" beim Erstellen neuer Abbilder des Knotens zu Einrichtungsfehlern führen kann.
+5. Installieren Sie benutzerdefinierte Software nur auf "D:\\" oder in "C:\\apps". Andere Speicherorte auf Laufwerk C:\\ dürfen nicht verwendet werden, da sie reserviert sind. Beachten Sie, dass das Installieren von Dateien auf Laufwerk C:\\ außerhalb des Ordners "C:/apps" beim Erstellen neuer Abbilder des Knotens zu Einrichtungsfehlern führen kann.
 6. Wenn sich Einstellungen auf Betriebssystemebene oder Hadoop-Dienstkonfigurationsdateien geändert haben, können Sie bei Bedarf die HDInsight-Dienste neu starten. Diese können dann Einstellungen auf Betriebssystemebene übernehmen, z. B. die in den Skripts festgelegten Umgebungsvariablen.
 
 
 
 ## Testen von benutzerdefinierten Skripts mit dem HDInsight-Emulator
 
-Eine einfache Möglichkeit, ein benutzerdefiniertes Skript vor der Verwendung im HDInsight-Skriptaktionsbefehl zu testen, ist seine Ausführung im HDInsight-Emulator. Sie können den HDInsight-Emulator auf einer Azure-IaaS-VM (Infrastructure as a Service) mit Windows Server 2012 R2 oder einem lokalen Computer installieren und beobachten, ob sich das Skript ordnungsgemäß verhält. Beachten Sie, dass die Windows Server 2012 R2 VM dieselbe VM ist, die HDInsight für seine Knoten verwendet.
+Eine einfache Möglichkeit, ein benutzerdefiniertes Skript vor der Verwendung im HDInsight-Skriptaktionsbefehl zu testen, ist seine Ausführung im HDInsight-Emulator. Sie können den HDInsight-Emulator auf einer Azure-IaaS-VM \(Infrastructure as a Service\) mit Windows Server 2012 R2 oder einem lokalen Computer installieren und beobachten, ob sich das Skript ordnungsgemäß verhält. Beachten Sie, dass die Windows Server 2012 R2 VM dieselbe VM ist, die HDInsight für seine Knoten verwendet.
 
 In diesem Abschnitt werden die Schritte zur lokalen Nutzung des HDInsight Emulators für Testzwecke beschrieben, aber das Verfahren für die Verwendung eines virtuellen Computers ist ähnlich.
 
 **Installieren des HDInsight-Emulators**: Um die Skriptaktion lokal auszuführen, muss der HDInsight-Emulator installiert sein. Installationsanweisungen finden Sie unter [Erste Schritte mit dem HDInsight-Emulator](../hdinsight-get-started-emulator/).
 
-**Festlegen der Ausführungsrichtlinie für Azure PowerShell**: Öffnen Sie Azure PowerShell, und führen Sie den folgenden Befehl (als Administrator) aus, um die Ausführungsrichtlinie auf *LocalMachine* und auf *Unrestricted* festzulegen:
+**Festlegen der Ausführungsrichtlinie für Azure PowerShell**: Öffnen Sie Azure PowerShell, und führen Sie den folgenden Befehl \(als Administrator\) aus, um die Ausführungsrichtlinie auf *LocalMachine* und auf *Unrestricted* festzulegen:
  
 	Set-ExecutionPolicy Unrestricted –Scope LocalMachine
 
@@ -239,9 +239,9 @@ Mitunter kann ein benutzerdefiniertes Skript tatsächlich von HDInsight-Komponen
 
 ## Debuggen von benutzerdefinierten Skripts
 
-Die Skriptfehlerprotokolle werden mit anderen Ausgaben im Standardspeicherkonto gespeichert, das Sie für den Cluster bei seiner Erstellung angegeben haben. Die Protokolle befinden sich in einer Tabelle mit dem Namen *u<\cluster-name-fragment><\time-stamp>setuplog*. Dabei handelt es sich um zusammengeführte Protokolle mit Aufzeichnungen aller Knoten (Haupt- und Workerknoten), auf denen das Skript im Cluster ausgeführt wurde.
+Die Skriptfehlerprotokolle werden mit anderen Ausgaben im Standardspeicherkonto gespeichert, das Sie für den Cluster bei seiner Erstellung angegeben haben. Die Protokolle befinden sich in einer Tabelle mit dem Namen *u\<\\cluster-name-fragment\>\<\\time-stamp\>setuplog*. Dabei handelt es sich um zusammengeführte Protokolle mit Aufzeichnungen aller Knoten \(Haupt- und Workerknoten\), auf denen das Skript im Cluster ausgeführt wurde.
 
-Sie können auch remote auf die Clusterknoten zugreifen, um STDOUT und STDERR für benutzerdefinierte Skripts anzuzeigen. Die Protokolle auf jedem Knoten beziehen sich nur auf diesen Knoten und befinden sich unter **C:\HDInsightLogs\DeploymentAgent.log**. In diesen Protokolldateien werden alle Ausgaben aus dem benutzerdefinierten Skript aufgezeichnet. Ein Beispielprotokollauszug einer Spark-Skriptaktion sieht so aus:
+Sie können auch remote auf die Clusterknoten zugreifen, um STDOUT und STDERR für benutzerdefinierte Skripts anzuzeigen. Die Protokolle auf jedem Knoten beziehen sich nur auf diesen Knoten und befinden sich unter **C:\\HDInsightLogs\\DeploymentAgent.log**. In diesen Protokolldateien werden alle Ausgaben aus dem benutzerdefinierten Skript aufgezeichnet. Ein Beispielprotokollauszug einer Spark-Skriptaktion sieht so aus:
 
 	Microsoft.Hadoop.Deployment.Engine.CustomPowershellScriptCommand; Details : BEGIN: Invoking powershell script https://configactions.blob.core.windows.net/sparkconfigactions/spark-installer.ps1.; 
 	Version : 2.1.0.0; 
@@ -304,4 +304,4 @@ Bei Auftreten eines Ausführungsfehlers enthält die Protokolldatei auch die bes
 [1]: https://msdn.microsoft.com/library/96xafkes(v=vs.110).aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

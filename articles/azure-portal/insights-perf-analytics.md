@@ -19,7 +19,7 @@
 
 Im [Azure-Portal](http://portal.azure.com) können Sie festlegen, dass Statistiken und Details zu den Anwendungsabhängigkeiten in Ihren [Azure-Web-Apps](../app-service-web/app-service-web-overview.md) oder [virtuellen Computern](../virtual-machines/virtual-machines-about.md) gesammelt werden.
 
-Azure unterstützt die Überwachung der Anwendungsleistung (oder *APM*, Application Performance Monitoring) durch die Nutzung von *Erweiterungen*. Diese Erweiterungen werden in Ihrer Anwendung installiert und geben die gesammelten Daten an die Überwachungsdienste zurück.
+Azure unterstützt die Überwachung der Anwendungsleistung \(oder *APM*, Application Performance Monitoring\) durch die Nutzung von *Erweiterungen*. Diese Erweiterungen werden in Ihrer Anwendung installiert und geben die gesammelten Daten an die Überwachungsdienste zurück.
 
 Application Insights und New Relic sind zwei der zur Verfügung stehenden Erweiterungen zur Leistungsüberwachung. Um New Relic zu verwenden, müssen Sie einen Agent zur Laufzeit installieren. Um Application Insights zu verwenden, erstellen Sie Ihren Code mit einem SDK neu. Sie können auch eine Erweiterung installieren, die Zugriff auf zusätzliche Daten bietet. Mit dem SDK können Sie Code schreiben, um die Auslastung und Leistung Ihrer Anwendung genauer zu überwachen.
 
@@ -83,4 +83,4 @@ Nachdem Sie das Blatt geöffnet haben, z. B. für Application Insights, können
 * [Überwachen der Verfügbarkeit und Reaktionsfähigkeit einer beliebigen Webseite](../app-insights-monitor-web-app-availability.md) mit Application Insights, um zu ermitteln, ob eine Seite offline ist.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

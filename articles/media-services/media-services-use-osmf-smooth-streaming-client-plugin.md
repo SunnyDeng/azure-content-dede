@@ -23,13 +23,13 @@
 ##Übersicht ##
 
 
-Das Microsoft Smooth Streaming-Plug-In für das Open Source Media-Framework 2.0 (SS für OSMF) erweitert die OSMF-Standardfunktionen und bietet Abspielfunktionen für Microsoft Smooth Streaming-Inhalte für neue und existierende OSMF-Player. Das Plug-In bietet außerdem Smooth Streaming-Wiedergabefähigkeiten für Strobe Media Playback (SMP).
+Das Microsoft Smooth Streaming-Plug-In für das Open Source Media-Framework 2.0 \(SS für OSMF\) erweitert die OSMF-Standardfunktionen und bietet Abspielfunktionen für Microsoft Smooth Streaming-Inhalte für neue und existierende OSMF-Player. Das Plug-In bietet außerdem Smooth Streaming-Wiedergabefähigkeiten für Strobe Media Playback \(SMP\).
 
 SS für OSMF enthält zwei Versionen des Plug-Ins:
 
-- Statisches Smooth Streaming-Plug-In für OSMF (.swc)
+- Statisches Smooth Streaming-Plug-In für OSMF \(.swc\)
 
-- Dynamisches Smooth Streaming-Plug-In für OSMF (.swf)
+- Dynamisches Smooth Streaming-Plug-In für OSMF \(.swf\)
 
 Dieses Dokument geht davon aus, dass die Leser über allgemeine Kenntnisse zu OSMF und OSMF-Plug-Ins verfügen. Weitere Informationen zu OSMF finden Sie in der Dokumentation auf der [offiziellen OSMF-Website](http://osmf.org/).
 
@@ -37,9 +37,9 @@ Dieses Dokument geht davon aus, dass die Leser über allgemeine Kenntnisse zu OS
 
 Das Plug-In unterstützt Laden und Wiedergabe von bedarfsgesteuerten Smooth Streaming-Inhalten mit den folgenden Features:
 
-- Bedarfsgesteuerte Smooth Streaming-Wiedergabe (Wiedergabe, Pause, Positionierung, Beenden)
-- Live Smooth Streaming-Wiedergabe (Wiedergabe)
-- Live DVR-Funktionen (Pause, Positionierung, DVR-Wiedergabe, Wechsel zu Live)
+- Bedarfsgesteuerte Smooth Streaming-Wiedergabe \(Wiedergabe, Pause, Positionierung, Beenden\)
+- Live Smooth Streaming-Wiedergabe \(Wiedergabe\)
+- Live DVR-Funktionen \(Pause, Positionierung, DVR-Wiedergabe, Wechsel zu Live\)
 - Unterstützung für Videocodecs - H.264
 - Unterstützung für Audiocodecs - AAC
 - Umschalten zwischen mehreren Audiosprachen mit eingebauten OSMF-APIs
@@ -54,11 +54,11 @@ Eine vollständige Liste der unterstützten Funktionen, der nicht unterstützten
 
 
 ## Laden des Plug-Ins
-OSMF-Plug-Ins können statisch (zur Kompilierzeit) oder dynamisch (zur Laufzeit) geladen werden. Die Downloadversion des Smooth Streaming-Plug-Ins für OSMF enthält sowohl die statische als auch die dynamische Version.
+OSMF-Plug-Ins können statisch \(zur Kompilierzeit\) oder dynamisch \(zur Laufzeit\) geladen werden. Die Downloadversion des Smooth Streaming-Plug-Ins für OSMF enthält sowohl die statische als auch die dynamische Version.
 
-- Statisches Laden: Zum statischen Laden wird eine statische Bibliotheksdatei (SWC) benötigt. Statische Plug-Ins werden als Verweise zu Projekten hinzugefügt und zur Kompilierzeit in die Projekt-Ausgabedatei eingebunden.
+- Statisches Laden: Zum statischen Laden wird eine statische Bibliotheksdatei \(SWC\) benötigt. Statische Plug-Ins werden als Verweise zu Projekten hinzugefügt und zur Kompilierzeit in die Projekt-Ausgabedatei eingebunden.
 
-- Dynamisches Laden: Zum dynamischen Laden wird eine vorkompilierte Datei (SWF) benötigt. Dynamische Plug-Ins werden in der Runtime geladen und sind nicht in der Projektausgabe enthalten. (Kompilierte Ausgabe) Dynamische Plug-Ins können mit den HTTP- und FILE-Protokollen geladen werden.
+- Dynamisches Laden: Zum dynamischen Laden wird eine vorkompilierte Datei \(SWF\) benötigt. Dynamische Plug-Ins werden in der Runtime geladen und sind nicht in der Projektausgabe enthalten. \(Kompilierte Ausgabe\) Dynamische Plug-Ins können mit den HTTP- und FILE-Protokollen geladen werden.
 
 Weitere Informationen zum statischen und dynamischen Laden finden Sie auf der offiziellen [OSMF-Plug-In-Website](http://osmf.org/dev/osmf/OtherPDFs/osmf_plugin_dev_guide.pdf).
 
@@ -337,10 +337,10 @@ package
 </code></pre>
 
 ##Strobe Media Playback mit dem dynamischen SS ODMF-Plug-In
-Das dynamische Smooth Streaming für OSMF-Plug-In unterstützt [Strobe Media Playback (SMP)](http://osmf.org/strobe_mediaplayback.html). Sie können das Smooth Streaming für OSMF-Plug-In für die Smooth Streaming-Wiedergabe von SMP verwenden. Kopieren Sie dazu "MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swf" in einen Webserver für die HTTP-Funktion, indem Sie die folgenden Schritte ausführen:
+Das dynamische Smooth Streaming für OSMF-Plug-In unterstützt [Strobe Media Playback \(SMP\)](http://osmf.org/strobe_mediaplayback.html). Sie können das Smooth Streaming für OSMF-Plug-In für die Smooth Streaming-Wiedergabe von SMP verwenden. Kopieren Sie dazu "MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swf" in einen Webserver für die HTTP-Funktion, indem Sie die folgenden Schritte ausführen:
 
 1.	Öffnen Sie die [Strobe Media Playback-Einrichtungsseite](http://osmf.org/dev/2.0gm/setup.html). 
-2.	Wählen Sie eine Smooth Streaming-Quelle als Quelle (z. B. http://devplatem.vo.msecnd.net/Sintel/Sintel_H264.ism/manifest) 
+2.	Wählen Sie eine Smooth Streaming-Quelle als Quelle \(z. B. http://devplatem.vo.msecnd.net/Sintel/Sintel_H264.ism/manifest\) 
 3.	Nehmen Sie die gewünschten Konfigurationsänderungen vor und klicken Sie auf Vorschau und Aktualisieren.
  
 	**Hinweis** Ihr Webserver benötigt eine gültige crossdomain.xml-Datei. 
@@ -393,7 +393,7 @@ Das dynamische Smooth Streaming für OSMF-Plug-In unterstützt [Strobe Media Pla
 		</html>
 
 
-6. 	Speichern Sie Ihre HTML-Seite und veröffentlichen Sie die Seite auf einem Webserver. Öffnen Sie die veröffentlichte Webseite in einem Internetbrowser Ihrer Wahl, der den Flash&reg; Player unterstützt (Internet Explorer, Chrome, Firefox usw.).
+6. 	Speichern Sie Ihre HTML-Seite und veröffentlichen Sie die Seite auf einem Webserver. Öffnen Sie die veröffentlichte Webseite in einem Internetbrowser Ihrer Wahl, der den Flash&reg; Player unterstützt \(Internet Explorer, Chrome, Firefox usw.\).
 7. 	Betrachten Sie den Smooth Streaming-Inhalt in Ihrem Adobe&reg; Flash&reg; Player.
 
 Weitere allgemeine Informationen zu OSMF-Entwicklung finden Sie auf der offiziellen [OSMF-Entwicklungswebsite](http://osmf.org/resources.html).
@@ -401,6 +401,6 @@ Weitere allgemeine Informationen zu OSMF-Entwicklung finden Sie auf der offiziel
 
 ##Siehe auch
 
-[Microsoft Adaptive Streaming Plugin for OSMF Update (in englischer Sprache)](http://azure.microsoft.com/blog/2014/10/27/microsoft-adaptive-streaming-plugin-for-osmf-update/)
+[Microsoft Adaptive Streaming Plugin for OSMF Update \(in englischer Sprache\)](http://azure.microsoft.com/blog/2014/10/27/microsoft-adaptive-streaming-plugin-for-osmf-update/)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -1,3 +1,4 @@
+
 Für Azure Site Recovery gelten die folgenden Beschränkungen.
 
 
@@ -10,4 +11,4 @@ Für Azure Site Recovery gelten die folgenden Beschränkungen.
 |Anzahl der Server pro Schutzgruppe|Keine Begrenzung|
 |Anzahl der Server pro Wiederherstellungsplan|50|
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

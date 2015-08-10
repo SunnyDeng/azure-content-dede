@@ -22,16 +22,16 @@ Das Application Insights SDK sendet Telemetriedaten aus Ihrer Java-Anwendung, da
 
 ## Voraussetzungen
 
-Derzeit funktioniert das Plug-In für dynamische Webprojekte in Eclipse. ([Hinzufügen von Application Insights zu anderen Arten von Java-Projekten][java].)
+Derzeit funktioniert das Plug-In für dynamische Webprojekte in Eclipse. \([Hinzufügen von Application Insights zu anderen Arten von Java-Projekten][java].\)
 
 Sie benötigen Folgendes:
 
 * Oracle JRE 1.6 oder höher
-* Ein Abonnement für [Microsoft Azure](http://azure.microsoft.com/). (Sie können mit der [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) beginnen.)
+* Ein Abonnement für [Microsoft Azure](http://azure.microsoft.com/). \(Sie können mit der [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) beginnen.\)
 * [Eclipse IDE für Java EE-Entwickler](http://www.eclipse.org/downloads/), Indigo oder höher.
 * Windows 7 oder höher oder Windows Server 2008 oder höher
 
-## Installation des SDK in Eclipse (einmalig)
+## Installation des SDK in Eclipse \(einmalig\)
 
 Sie müssen diesen Schritt nur einmal pro Computer durchführen. Bei diesem Schritt wird ein Toolkit installiert, mit dem dann das SDK jedem dynamischen Webprojekt hinzugefügt werden kann.
 
@@ -50,7 +50,7 @@ Führen für jedes Java-Projekt die verbleibenden Schritte aus.
 
 Ihre Nutzungs- und Leistungsanalysen werden in einer Azure-Ressource im Azure-Webportal angezeigt. In diesem Schritt richten Sie eine Azure-Ressource für Ihre Anwendung ein.
 
-1. Melden Sie sich am [Microsoft Azure-Portal](https://portal.azure.com) an. (Sie benötigen auch ein [Azure-Abonnement](http://azure.microsoft.com/).)
+1. Melden Sie sich am [Microsoft Azure-Portal](https://portal.azure.com) an. \(Sie benötigen auch ein [Azure-Abonnement](http://azure.microsoft.com/).\)
 2. Erstellen einer neuen Application Insights-Ressource
 
     ![Klicken Sie auf +, und wählen Sie "Application Insights"](./media/app-insights-java-eclipse/01-create.png)
@@ -79,7 +79,7 @@ Führen Sie Ihre Anwendung aus.
 
 Kehren Sie zur Application Insights-Ressource in Microsoft Azure zurück.
 
-HTTP-Anforderungsdaten werden auf dem Blatt "Übersicht" angezeigt. (Wenn sie nicht vorhanden sind, warten Sie einige Sekunden, und klicken Sie dann auf "Aktualisieren".)
+HTTP-Anforderungsdaten werden auf dem Blatt "Übersicht" angezeigt. \(Wenn sie nicht vorhanden sind, warten Sie einige Sekunden, und klicken Sie dann auf "Aktualisieren".\)
 
 ![Serverantwort, Anforderungsanzahl und Fehler](./media/app-insights-java-eclipse/5-results.png)
  
@@ -128,7 +128,7 @@ Sie erhalten Diagramme von Reaktionszeiten sowie E-Mail-Benachrichtigungen, fall
 
 ## Diagnoseprotokolle
 
-Wenn Sie für die Ablaufverfolgung Logback oder Log4J (Version 1.2 bzw. 2.0) verwenden, werden Ihre Ablaufverfolgungsprotokolle automatisch an Application Insights gesendet. Hier können Sie sie durchsuchen und untersuchen.
+Wenn Sie für die Ablaufverfolgung Logback oder Log4J \(Version 1.2 bzw. 2.0\) verwenden, werden Ihre Ablaufverfolgungsprotokolle automatisch an Application Insights gesendet. Hier können Sie sie durchsuchen und untersuchen.
 
 [Weitere Informationen zu Diagnoseprotokolle][javalogs]
 
@@ -169,4 +169,4 @@ Sie können Code sowohl in das JavaScript der Webseite als auch in serverseitige
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -29,7 +29,7 @@ Führen Sie die Schritte zum [Erstellen einer Logik-App] aus. Der BizTalk JSON E
 - Klicken Sie im rechten Bereich auf BizTalk JSON Encoder.
 
 	![Aktionseinstellungen][3]
-- Klicken Sie auf ->
+- Klicken Sie auf -\>
 
 	![Liste der Aktionen][4]
 - Der BizTalk JSON Encoder unterstützt zwei Aktionen. Wählen Sie *XML zu JSON*.
@@ -76,4 +76,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Erstellen einer Logik-App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -29,9 +29,9 @@ Das Erstellen und Aktualisieren der Statistiken ist wichtig, um die Abfrageleist
 
 Statistiken für einzelne Spalten sind Objekte, die Informationen zum Wertebereich und zur Häufigkeit von Werten in einer Spalte enthalten. Der Abfrageoptimierer verwendet dieses Histogramm, um die Anzahl von Spalten im Abfrageergebnis zu schätzen. Dies wirkt sich direkt auf Entscheidungen aus, die in Bezug auf die Optimierung der Abfrage getroffen werden.
 
-Statistiken für mehrere Spalten sind Statistiken, die für eine Liste mit Spalten erstellt werden. Sie enthalten Einspaltenstatistiken für die erste Spalte der Liste sowie einige spaltenübergreifende Korrelationsinformationen, die als „Densities“ (Dichten) bezeichnet werden. Mehrspaltenstatistiken können die Abfrageleistung für bestimmte Vorgänge verbessern, z. B. zusammengesetzte Verknüpfungen (Joins) und Group By-Vorgänge.
+Statistiken für mehrere Spalten sind Statistiken, die für eine Liste mit Spalten erstellt werden. Sie enthalten Einspaltenstatistiken für die erste Spalte der Liste sowie einige spaltenübergreifende Korrelationsinformationen, die als „Densities“ \(Dichten\) bezeichnet werden. Mehrspaltenstatistiken können die Abfrageleistung für bestimmte Vorgänge verbessern, z. B. zusammengesetzte Verknüpfungen \(Joins\) und Group By-Vorgänge.
 
-Weitere Informationen finden Sie unter [DBCC SHOW_STATISTICS][] auf der MSDN-Website.
+Weitere Informationen finden Sie unter [DBCC SHOW\_STATISTICS][] auf der MSDN-Website.
 
 ## Warum sind Statistiken erforderlich?
 Ohne geeignete Statistiken können Sie nicht die Leistung erzielen, für deren Bereitstellung SQL Data Warehouse ausgelegt ist. Für Tabellen und Spalten werden von SQL Data Warehouse nicht automatisch Statistiken generiert, sodass Sie diese selbst erstellen müssen. Es ist ratsam, sie während des Erstellvorgangs der Tabelle zu erstellen und dann nach dem Auffüllen zu aktualisieren.
@@ -47,7 +47,7 @@ Mehrspaltenstatistiken werden vom Abfrageoptimierer nur verwendet, wenn sich die
 
 Es ist zu Beginn der SQL Data Warehouse-Entwicklung daher eine gute Idee, das folgende Muster zu implementieren: - Erstellen von Einspaltenstatistiken für jede Spalte in jeder Tabelle - Erstellen von Mehrspaltenstatistiken für Spalten, die in Verknüpfungen und Group By-Klauseln verwendet werden
 
-Wenn Sie später genauer wissen, wie Sie Ihre Daten abfragen möchten, können Sie dieses Modell verfeinern. Dies gilt vor allem, wenn die Tabellen breit sind. Einen erweiterten Methodenansatz finden Sie im Abschnitt [Implementieren der Statistikverwaltung](## Implementieren der Statistikverwaltung).
+Wenn Sie später genauer wissen, wie Sie Ihre Daten abfragen möchten, können Sie dieses Modell verfeinern. Dies gilt vor allem, wenn die Tabellen breit sind. Einen erweiterten Methodenansatz finden Sie im Abschnitt \[Implementieren der Statistikverwaltung\]\(\#\# Implementieren der Statistikverwaltung\).
 
 ## Gründe für das Aktualisieren von Statistiken
 Es ist wichtig, das Aktualisieren von Statistiken in den üblichen Ablauf Ihrer Datenbankverwaltung einzubeziehen. Wenn sich die Verteilung der Daten in der Datenbank ändert, müssen die Statistiken aktualisiert werden. Andernfalls kann es zu einer suboptimalen Abfrageleistung kommen, und es könnte sich nicht lohnen, die weitere Problembehebung für die Abfrage durchzuführen.
@@ -68,13 +68,13 @@ Häufig ist es ratsam, den Datenladeprozess zu erweitern, um sicherzustellen, da
 
 Unten sind einige Richtlinien zur Aktualisierung von Statistiken während des Ladeprozesses angegeben:
 
-- Stellen Sie sicher, dass jede geladene Tabelle mindestens über ein aktualisiertes Statistikobjekt verfügt. Im Rahmen der Statistikaktualisierung werden dann die Informationen zur Tabellengröße (Zeilen- und Seitenanzahl) aktualisiert.
+- Stellen Sie sicher, dass jede geladene Tabelle mindestens über ein aktualisiertes Statistikobjekt verfügt. Im Rahmen der Statistikaktualisierung werden dann die Informationen zur Tabellengröße \(Zeilen- und Seitenanzahl\) aktualisiert.
 - Konzentrieren Sie sich auf Spalten mit JOIN-, GROUP BY-, ORDER BY- und DISTINCT-Klauseln.
 - Erwägen Sie, Spalten vom Typ „aufsteigender Schlüssel“, z. B. Transaktionsdaten, häufiger zu aktualisieren, da diese Werte nicht in das Statistikhistogramm einbezogen werden.
 - Erwägen Sie, Spalten mit statischer Verteilung weniger häufig zu aktualisieren.
 - Bedenken Sie, dass jedes statistische Objekt der Reihe nach aktualisiert wird. Es ist ggf. nicht ideal, einfach `UPDATE STATISTICS <TABLE_NAME>` zu implementieren. Dies gilt besonders für breite Tabellen mit vielen Statistikobjekten.
 
-> [AZURE.NOTE]Weitere Informationen zum Thema [Aufsteigender Schlüssel] finden Sie im Whitepaper zum Kardinalitätsschätzungsmodell von SQL Server 2014.
+> [AZURE.NOTE]Weitere Informationen zum Thema \[Aufsteigender Schlüssel\] finden Sie im Whitepaper zum Kardinalitätsschätzungsmodell von SQL Server 2014.
 
 Weitere Informationen finden Sie unter [Kardinalitätsschätzung][] auf der MSDN-Website.
 
@@ -152,13 +152,13 @@ Verwenden Sie zum Erstellen einer Mehrspaltenstatistik einfach die vorherigen Be
 
 > [AZURE.NOTE]Das Histogramm, das zum Schätzen der Zeilenanzahl im Abfrageergebnis verwendet wird, ist nur für die erste Spalte verfügbar, die in der Definition des Statistikobjekts aufgelistet ist.
 
-In diesem Beispiel basiert das Histogramm auf *product_category*. Spaltenübergreifende Statistiken werden für *product_category* und *product_sub_c\ategory* berechnet:
+In diesem Beispiel basiert das Histogramm auf *product\_category*. Spaltenübergreifende Statistiken werden für *product\_category* und *product\_sub\_c\\ategory* berechnet:
 
 ```
 CREATE STATISTICS stats_2cols ON table1 (product_category, product_sub_category) WHERE product_category > '2000101' AND product_category < '20001231' WITH SAMPLE = 50 PERCENT;
 ```
 
-Da zwischen *product_category* und *product_sub_category* eine Korrelation besteht, kann eine Mehrspaltenstatistik nützlich sein, wenn gleichzeitig auf diese Spalten zugegriffen wird.
+Da zwischen *product\_category* und *product\_sub\_category* eine Korrelation besteht, kann eine Mehrspaltenstatistik nützlich sein, wenn gleichzeitig auf diese Spalten zugegriffen wird.
 
 ### G. Erstellen von Statistiken für alle Spalten einer Tabelle
 
@@ -177,14 +177,14 @@ WITH
   )
 ;
 
-CREATE STATISTICS stats_col1 on dbo.table1;
-CREATE STATISTICS stats_col2 on dbo.table2;
-CREATE STATISTICS stats_col3 on dbo.table3;
+CREATE STATISTICS stats_col1 on dbo.table1 (col1);
+CREATE STATISTICS stats_col2 on dbo.table2 (col2);
+CREATE STATISTICS stats_col3 on dbo.table3 (col3);
 ```
 
 ### H. Verwenden einer gespeicherten Prozedur zum Erstellen von Statistiken für alle Spalten einer Datenbank
 
-SQL Data Warehouse verfügt nicht über eine im System gespeicherte Prozedur, die [sp_create_stats][] in SQL Server entspricht. Mit dieser gespeicherten Prozedur wird ein Einzelspaltenstatistik-Objekt für jede Spalte der Datenbank erstellt, die nicht bereits über eine Statistik verfügt.
+SQL Data Warehouse verfügt nicht über eine im System gespeicherte Prozedur, die \[sp\_create\_stats\]\[\] in SQL Server entspricht. Mit dieser gespeicherten Prozedur wird ein Einzelspaltenstatistik-Objekt für jede Spalte der Datenbank erstellt, die nicht bereits über eine Statistik verfügt.
 
 Dies ist eine nützliche Einstiegshilfe für den Datenbankentwurf. Sie können diesen Vorgang an Ihre Anforderungen anpassen.
 
@@ -325,9 +325,9 @@ Diese Systemsichten enthalten Informationen zu Statistiken:
 | [sys.objects][] | Eine Zeile für jedes Objekt in der Datenbank. | |
 | [sys.schemas][] | Eine Zeile für jedes Schema in der Datenbank. | |
 | [sys.stats][] | Eine Zeile für jedes Statistikobjekt. |
-| [sys.stats_columns][] | Eine Zeile für jede Spalte im Statistikobjekt. Eine Verknüpfung zurück zu sys.columns. |
-| [sys.tables][] | Eine Zeile für jede Tabelle (enthält externe Tabellen). |
-| [sys.table_types][] | Eine Zeile für jeden Datentyp. |
+| [sys.stats\_columns][] | Eine Zeile für jede Spalte im Statistikobjekt. Eine Verknüpfung zurück zu sys.columns. |
+| [sys.tables][] | Eine Zeile für jede Tabelle \(enthält externe Tabellen\). |
+| [sys.table\_types][] | Eine Zeile für jeden Datentyp. |
 
 
 ### Systemfunktionen für Statistiken
@@ -335,12 +335,12 @@ Diese Systemfunktionen sind nützlich für die Arbeit mit Statistiken:
 
 | Systemfunktion | Beschreibung |
 | :-------------- | :---------- |
-| [STATS_DATE][] | Datum, an dem das Statistikobjekt zuletzt aktualisiert wurde. |
-| [DBCC SHOW_STATISTICS][] | Stellt Zusammenfassungsebenen und ausführliche Informationen zur Verteilung der Werte gemäß Statistikobjekt bereit. |
+| [STATS\_DATE][] | Datum, an dem das Statistikobjekt zuletzt aktualisiert wurde. |
+| [DBCC SHOW\_STATISTICS][] | Stellt Zusammenfassungsebenen und ausführliche Informationen zur Verteilung der Werte gemäß Statistikobjekt bereit. |
 
 ### Kombinieren von Statistikspalten und -funktionen zu einer Sicht
 
-In dieser Sicht werden Spalten, die sich auf Statistiken beziehen, und Ergebnisse aus der [STATS_DATE()][]-Funktion zusammengefasst.
+In dieser Sicht werden Spalten, die sich auf Statistiken beziehen, und Ergebnisse aus der \[STATS\_DATE\(\)\]\[\]-Funktion zusammengefasst.
 
 ```
 CREATE VIEW dbo.vstats_columns
@@ -378,9 +378,9 @@ AND     sts.[user_created] = 1
 ;
 ```
 
-## DBCC SHOW_STATISTICS()-Beispiele
+## DBCC SHOW\_STATISTICS\(\)-Beispiele
 
-Mit DBCC SHOW_STATISTICS() werden die Daten angezeigt, die in einem Statistikobjekt enthalten sind. Diese Daten bestehen aus drei Teilen.
+Mit DBCC SHOW\_STATISTICS\(\) werden die Daten angezeigt, die in einem Statistikobjekt enthalten sind. Diese Daten bestehen aus drei Teilen.
 
 1. Header
 2. Dichtevektor
@@ -402,7 +402,7 @@ Beispiel:
 DBCC SHOW_STATISTICS (dbo.table1, stats_col1);
 ```
 
-### Anzeigen eines oder mehrerer Teile von DBCC SHOW_STATISTICS();
+### Anzeigen eines oder mehrerer Teile von DBCC SHOW\_STATISTICS\(\);
 
 Wenn Sie nur bestimmte Teile anzeigen möchten, verwenden Sie die `WITH`-Klausel und geben an, welche Teile dies sein sollen:
 
@@ -416,13 +416,13 @@ Beispiel:
 DBCC SHOW_STATISTICS (dbo.table1, stats_col1) WITH histogram, density_vector
 ```
 
-## DBCC SHOW_STATISTICS()-Unterschiede
-DBCC SHOW_STATISTICS() ist im Vergleich zu SQL Server strenger in SQL Data Warehouse implementiert.
+## DBCC SHOW\_STATISTICS\(\)-Unterschiede
+DBCC SHOW\_STATISTICS\(\) ist im Vergleich zu SQL Server strenger in SQL Data Warehouse implementiert.
 
 1. Nicht dokumentierte Funktionen werden nicht unterstützt.
-- Verwendung von Stats_stream nicht möglich
-- Ergebnisse für bestimmte Teilmengen von Statistikdaten können nicht verknüpft werden, z. B. (STAT_HEADER JOIN DENSITY_VECTOR)
-2. NO_INFOMSGS kann für die Meldungsunterdrückung nicht festgelegt werden
+- Verwendung von Stats\_stream nicht möglich
+- Ergebnisse für bestimmte Teilmengen von Statistikdaten können nicht verknüpft werden, z. B. \(STAT\_HEADER JOIN DENSITY\_VECTOR\)
+2. NO\_INFOMSGS kann für die Meldungsunterdrückung nicht festgelegt werden
 3. Eckige Klammern um Namen von Statistiken können nicht verwendet werden
 4. Spaltennamen können nicht zum Identifizieren von Statistikobjekten verwendet werden
 5. Benutzerdefinierter Fehler 2767 wird nicht unterstützt
@@ -440,16 +440,16 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 <!-- External Links -->
 [Kardinalitätsschätzung]: https://msdn.microsoft.com/library/dn600374.aspx
 [CREATE STATISTICS]: https://msdn.microsoft.com/library/ms188038.aspx
-[DBCC SHOW_STATISTICS]: https://msdn.microsoft.com/library/ms174384.aspx
+[DBCC SHOW\_STATISTICS]: https://msdn.microsoft.com/library/ms174384.aspx
 [Statistiken]: https://msdn.microsoft.com/library/ms190397.aspx
-[STATS_DATE]: https://msdn.microsoft.com/library/ms190330.aspx
+[STATS\_DATE]: https://msdn.microsoft.com/library/ms190330.aspx
 [sys.columns]: https://msdn.microsoft.com/library/ms176106.aspx
 [sys.objects]: https://msdn.microsoft.com/library/ms190324.aspx
 [sys.schemas]: https://msdn.microsoft.com/library/ms190324.aspx
 [sys.stats]: https://msdn.microsoft.com/library/ms177623.aspx
-[sys.stats_columns]: https://msdn.microsoft.com/library/ms187340.aspx
+[sys.stats\_columns]: https://msdn.microsoft.com/library/ms187340.aspx
 [sys.tables]: https://msdn.microsoft.com/library/ms187406.aspx
-[sys.table_types]: https://msdn.microsoft.com/library/bb510623.aspx
+[sys.table\_types]: https://msdn.microsoft.com/library/bb510623.aspx
 [Aktualisieren von Statistiken]: https://msdn.microsoft.com/library/ms187348.aspx
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

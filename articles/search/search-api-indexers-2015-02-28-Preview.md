@@ -15,9 +15,9 @@ ms.tgt_pltfrm="na"
 ms.date="07/08/2015" 
 ms.author="heidist" />
 
-#Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)
+#Indexer-Vorgänge \(REST-API für Azure Search-Dienst: 2015-02-28-Preview\)
 
-> [AZURE.NOTE]Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](search-api-2015-02-28-preview.md). Derzeit besteht der einzige Unterschied zwischen Version `2015-02-28` (dokumentiert in [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173)) und der hier beschriebenen Version `2015-02-28-Preview` darin, dass die Preview-Version die Funktion *fieldMappings* enthält, die unter [Indexer erstellen](#CreateIndexer) beschrieben ist.
+> [AZURE.NOTE]Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](search-api-2015-02-28-preview.md). Derzeit besteht der einzige Unterschied zwischen Version `2015-02-28` \(dokumentiert in [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173)\) und der hier beschriebenen Version `2015-02-28-Preview` darin, dass die Preview-Version die Funktion *fieldMappings* enthält, die unter [Indexer erstellen](#CreateIndexer) beschrieben ist.
 
 ## Übersicht
 
@@ -31,7 +31,7 @@ Ein **Indexer** ist die Ressource, die Datenquellen mit Zielsuchindizes verbinde
 
 Ein **Indexer** ist nützlich, wenn regelmäßige Aktualisierungen eines Indexes durchgeführt werden sollen. Sie können einen eingebetteten Zeitplan als Teil der Definition eines Indexers einrichten oder den Indexer bei Bedarf mit [Indexer ausführen](#RunIndexer) ausführen.
 
-Eine **Datenquelle** gibt an, welche Daten indiziert werden müssen. Sie legt außerdem die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search fest, um Änderungen an den Daten effizient identifizieren zu können (wie z. B. geänderte oder gelöschte Zeilen in einer Datenbanktabelle). Die Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
+Eine **Datenquelle** gibt an, welche Daten indiziert werden müssen. Sie legt außerdem die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search fest, um Änderungen an den Daten effizient identifizieren zu können \(wie z. B. geänderte oder gelöschte Zeilen in einer Datenbanktabelle\). Die Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
 
 Die folgenden Datenquellen werden derzeit unterstützt:
 
@@ -44,7 +44,7 @@ Informationen zu maximalen Grenzwerten mit Bezug auf Indexer- und Datenquellenre
 
 ## Typischer Verwendungsablauf
 
-Das Erstellen und Verwalten der Indexer und Datenquellen erfolgt über einfache HTTP-Anforderungen (POST, GET, PUT, DELETE) für die angegebene `data source`- oder `indexer`-Ressource.
+Das Erstellen und Verwalten der Indexer und Datenquellen erfolgt über einfache HTTP-Anforderungen \(POST, GET, PUT, DELETE\) für die angegebene `data source`- oder `indexer`-Ressource.
 
 Das Einrichten der automatischen Indizierung erfolgt in der Regel in vier Schritten:
 
@@ -58,7 +58,7 @@ Das Einrichten der automatischen Indizierung erfolgt in der Regel in vier Schrit
 
 Sie sollten jeweils einen Indexer pro Kombination aus Zielindex und Datenquelle erstellen. Sie können mehrere Indexer erstellen, die in denselben Index schreiben, und dieselbe Datenquelle für mehrere Indexer verwenden. Ein Indexer kann jedoch jeweils nur eine Datenquelle auf einmal nutzen und nur in einen einzelnen Index schreiben.
 
-Nach dem Erstellen eines Indexers können Sie seinen Ausführungsstatus mit dem Vorgang [Indexer-Status abrufen](#GetIndexerStatus) ermitteln. Sie können einen Indexer jederzeit ausführen (anstelle von oder zusätzlich zur regelmäßigen Ausführung nach einem Zeitplan), indem Sie den Vorgang [Indexer ausführen](#RunIndexer) verwenden.
+Nach dem Erstellen eines Indexers können Sie seinen Ausführungsstatus mit dem Vorgang [Indexer-Status abrufen](#GetIndexerStatus) ermitteln. Sie können einen Indexer jederzeit ausführen \(anstelle von oder zusätzlich zur regelmäßigen Ausführung nach einem Zeitplan\), indem Sie den Vorgang [Indexer ausführen](#RunIndexer) verwenden.
 
 <!-- MSDN has 2 art files plus a API topic link list -->
 
@@ -81,7 +81,7 @@ Alternativ können Sie PUT verwenden und den Namen der Datenquelle für den URI 
 
 HTTPS ist für alle Dienstanforderungen erforderlich. Die Anforderung **Datenquelle erstellen** kann mit der POST- oder PUT-Methode konstruiert werden. Wenn POST verwendet wird, müssen Sie einen Namen und eine Definition der Datenquelle im Anforderungstext bereitstellen. Bei Verwendung von PUT ist der Name Teil der URL. Wenn die Datenquelle nicht vorhanden ist, wird sie erstellt. Wenn sie bereits vorhanden ist, wird sie mit der neuen Definition aktualisiert.
 
-Der Name der Datenquelle muss in Kleinbuchstaben angegeben werden, mit einem Buchstaben oder einer Zahl beginnen, darf keine Schrägstriche oder Punkte enthalten und muss weniger als 128 Zeichen lang sein. Der Rest des Namens (nach dem Buchstaben bzw. der Zahl zu Beginn des Namens) kann beliebige Buchstaben, Zahlen und Bindestriche enthalten, solange die Striche nicht aufeinander folgen. Weitere Informationen finden Sie unter [Benennungsregeln](https://msdn.microsoft.com/library/azure/dn857353.aspx).
+Der Name der Datenquelle muss in Kleinbuchstaben angegeben werden, mit einem Buchstaben oder einer Zahl beginnen, darf keine Schrägstriche oder Punkte enthalten und muss weniger als 128 Zeichen lang sein. Der Rest des Namens \(nach dem Buchstaben bzw. der Zahl zu Beginn des Namens\) kann beliebige Buchstaben, Zahlen und Bindestriche enthalten, solange die Striche nicht aufeinander folgen. Weitere Informationen finden Sie unter [Benennungsregeln](https://msdn.microsoft.com/library/azure/dn857353.aspx).
 
 `api-version` ist erforderlich. Die aktuelle Version ist `2015-02-28`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
@@ -90,7 +90,7 @@ Der Name der Datenquelle muss in Kleinbuchstaben angegeben werden, mit einem Buc
 In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
-- `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgenwert. Die Anforderung **Datenquelle erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel (im Gegensatz zum Abfrageschlüssel) festgelegt ist. 
+- `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgenwert. Die Anforderung **Datenquelle erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel \(im Gegensatz zum Abfrageschlüssel\) festgelegt ist. 
  
 Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im [Azure-Verwaltungsportal](https://portal.azure.com/). Hilfe bei der Seitennavigation finden Sie unter [Search-Dienst im Portal erstellen](search-create-service-portal.md).
 
@@ -124,7 +124,7 @@ Die Anforderung enthält die folgenden Eigenschaften:
 		- Für DocumentDB muss die Verbindungszeichenfolge folgenden Format aufweisen: `"AccountEndpoint=https://[your account name].documents.azure.com;AccountKey=[your account key];Database=[your database id]"`. Alle Werte sind erforderlich. Informationen zu den Werten finden Sie im [Azure-Verwaltungsportal](https://portal.azure.com/).   
 		
 - `container`:
-	- Die erforderliche Eigenschaft `name` gibt die Tabelle bzw. Ansicht (für Azure SQL-Datenquelle) oder eine Sammlung (für DocumentDB-Datenquelle) an, die indiziert werden soll. 
+	- Die erforderliche Eigenschaft `name` gibt die Tabelle bzw. Ansicht \(für Azure SQL-Datenquelle\) oder eine Sammlung \(für DocumentDB-Datenquelle\) an, die indiziert werden soll. 
 	- DocumentDB-Datenquellen unterstützen auch die optionale Eigenschaft `query` zum Angeben einer Abfrage, die ein beliebiges JSON-Dokumentlayout in ein Flatfile-Schema reduziert, welches von Azure Search indiziert werden kann.   
 - Die optionalen Richtlinien `dataChangeDetectionPolicy` und `dataDeletionDetectionPolicy` werden im Folgenden beschrieben.
 
@@ -221,7 +221,7 @@ Sie können eine vorhandene Datenquelle mithilfe einer HTTP-PUT-Anforderung aktu
 
 `api-version` ist erforderlich. Die aktuelle Version ist `2015-02-28`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 **Anforderung** Die Syntax des Anforderungstexts ist mit der für [Anforderungen zum Erstellen von Datenquellen](#CreateDataSourceRequestSyntax) identisch.
 
@@ -239,7 +239,7 @@ Der Vorgang **Datenquellen auflisten** gibt eine Liste der Datenquellen im Azure
 
 `api-version` ist erforderlich. Die aktuelle Version ist `2015-02-28`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 **Antwort**
 
@@ -278,7 +278,7 @@ Der Vorgang **Datenquelle abrufen** ruft die Definition der Datenquelle aus Azur
 
 `api-version` ist erforderlich. Die aktuelle Version ist `2015-02-28`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 **Antwort**
 
@@ -315,7 +315,7 @@ Der Vorgang **Datenquelle löschen** entfernt eine Datenquelle aus Ihrem Azure S
 
 `api-version` ist erforderlich. Die aktuelle Version ist `2015-02-28`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 **Antwort**
 
@@ -338,7 +338,7 @@ Alternativ können Sie PUT verwenden und den Namen der Datenquelle für den URI 
 
 `api-version` ist erforderlich. Die aktuelle Version ist `2015-02-28`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 
 <a name="CreateIndexerRequestSyntax"></a> **Syntax des Anforderungstextes**
@@ -362,7 +362,7 @@ Die Syntax für die Strukturierung der Anforderungsnutzlast ist wie folgt. Eine 
 
 Ein Indexer kann optional einen Zeitplan angeben. Wenn ein Zeitplan vorliegt, wird der Indexer regelmäßig gemäß Zeitplan ausgeführt. Der Zeitplan besitzt die folgenden Attribute:
 
-- `interval`: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines [ISO 8601-Zeitdauerwerts](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)). Das Muster hierfür lautet wie folgt: `P(nD)(T(nH)(nM))`. Beispiele: `PT15M` = alle 15 Minuten, `PT2H` = alle 2 Stunden. 
+- `interval`: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein \(eine eingeschränkte Teilmenge eines [ISO 8601-Zeitdauerwerts](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)\). Das Muster hierfür lautet wie folgt: `P(nD)(T(nH)(nM))`. Beispiele: `PT15M` = alle 15 Minuten, `PT2H` = alle 2 Stunden. 
 
 - `startTime`: Erforderlich. Ein UTC-DateTime-Wert, der angibt, wann die Ausführung des Indexers beginnen soll.
 
@@ -395,13 +395,13 @@ Beachten Sie bei Quell- und Zielfeldnamen die Groß-und Kleinschreibung.
 
 Feldzuordnungen können auch verwendet werden, um Quellfeldwerte mithilfe von *Zuordnungsfunktionen* umzuwandeln.
 
-Derzeit wird nur eine Zuordnungsfunktion unterstützt: `jsonArrayToStringCollection`. Hierbei wird ein Feld, dass eine als JSON-Array formatierte Zeichenfolge enthält, in ein Collection(Edm.String)-Feld im Zielindex geparst. Die Funktion ist insbesondere zur Verwendung mit dem Azure SQL-Indexer vorgesehen, da SQL über keinen nativen Datentyp "Sammlung" verfügt. Sie können die Funktion wie folgt verwenden:
+Derzeit wird nur eine Zuordnungsfunktion unterstützt: `jsonArrayToStringCollection`. Hierbei wird ein Feld, dass eine als JSON-Array formatierte Zeichenfolge enthält, in ein Collection\(Edm.String\)-Feld im Zielindex geparst. Die Funktion ist insbesondere zur Verwendung mit dem Azure SQL-Indexer vorgesehen, da SQL über keinen nativen Datentyp "Sammlung" verfügt. Sie können die Funktion wie folgt verwenden:
 
 	"fieldMappings" : [ { "sourceFieldName" : "tags", "mappingFunction" : { "name" : "jsonArrayToStringCollection" } } ] 
 
 Wenn das Quellfeld beispielsweise die Zeichenfolge `["red", "white", "blue"]` enthält, wird das Zielfeld vom Typ `Collection(Edm.String)` mit drei Werten gefüllt: `"red"`, `"white"` und `"blue"`.
 
-HINWEIS: Die Eigenschaft `targetFieldName` ist optional; wenn Sie keinen Wert angeben, wird der `sourceFieldName`-Wert verwendet).
+HINWEIS: Die Eigenschaft `targetFieldName` ist optional; wenn Sie keinen Wert angeben, wird der `sourceFieldName`-Wert verwendet\).
 
 <a name="CreateIndexerRequestExamples"></a>**Beispiel für einen Anforderungstext**
 
@@ -432,7 +432,7 @@ Sie können einen vorhandene Indexer mithilfe einer HTTP PUT-Anforderung aktuali
 
 `api-version` ist erforderlich. Die aktuelle Version ist `2015-02-28`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 **Anforderung**
 
@@ -454,7 +454,7 @@ Der Vorgang **Indexer auflisten** gibt die Liste der Indexer in Ihrem Azure Sear
 
 `api-version` ist erforderlich. Die Vorschauversion ist `2015-02-28-Preview`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 **Antwort**
 
@@ -496,7 +496,7 @@ Der Vorgang **Indexer abrufen** ruft die Indexer-Definition aus Azure Search ab.
 
 `api-version` ist erforderlich. Die Vorschauversion ist `2015-02-28-Preview`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 **Antwort**
 
@@ -526,7 +526,7 @@ Beim Löschen eines Indexers, der gerade ausgeführt wird, werden die Ausführun
  
 `api-version` ist erforderlich. Die Vorschauversion ist `2015-02-28-Preview`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 **Antwort**
 
@@ -542,7 +542,7 @@ Zusätzlich zur Ausführung in regelmäßigen Abständen nach einem Zeitplan kan
 
 `api-version` ist erforderlich. Die Vorschauversion ist `2015-02-28-Preview`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 **Antwort**
 
@@ -559,13 +559,13 @@ Der Vorgang **Indexer-Status abrufen** ruft den aktuellen Status und den Ausfüh
 
 `api-version` ist erforderlich. Die Vorschauversion ist `2015-02-28-Preview`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 **Antwort**
 
 Statuscode: "200 OK" bei erfolgreicher Antwort.
 
-Der Antworttext enthält Informationen über den Gesamtintegritätsstatus des Indexers, den letzten Indexer-Aufruf, sowie den Verlauf der jüngsten Indexer-Aufrufe (sofern vorhanden).
+Der Antworttext enthält Informationen über den Gesamtintegritätsstatus des Indexers, den letzten Indexer-Aufruf, sowie den Verlauf der jüngsten Indexer-Aufrufe \(sofern vorhanden\).
 
 Ein Beispiel-Antworttext sieht folgendermaßen aus:
 
@@ -619,13 +619,13 @@ Das Indexer-Ausführungsergebnis enthält die folgenden Eigenschaften:
 
 - `errors`: Eine Liste der auf Elementebene aufgetretenen Fehler, falls vorhanden.
 
-- `itemsProcessed`: Die Anzahl der vom Indexer in dieser Ausführung zu indizierenden Datenquellen-Elemente (z. B. Zeilen in Tabelle).
+- `itemsProcessed`: Die Anzahl der vom Indexer in dieser Ausführung zu indizierenden Datenquellen-Elemente \(z. B. Zeilen in Tabelle\).
 
 - `itemsFailed`: Die Anzahl der Elemente, die während der Ausführung fehlgeschlagen sind.
  
-- `initialTrackingState`: Ist immer `null`, wenn der Indexer erstmalig ausgeführt wird oder wenn die Richtlinie für die Änderungsnachverfolgung für Daten für die verwendete Datenquelle nicht aktiviert ist. Wenn eine solche Richtlinie aktiviert ist, gibt dieser Wert in den nachfolgenden Ausführungen den ersten (niedrigste Priorität) Änderungsnachverfolgungswert an, der bei dieser Ausführung verarbeitet wurde.
+- `initialTrackingState`: Ist immer `null`, wenn der Indexer erstmalig ausgeführt wird oder wenn die Richtlinie für die Änderungsnachverfolgung für Daten für die verwendete Datenquelle nicht aktiviert ist. Wenn eine solche Richtlinie aktiviert ist, gibt dieser Wert in den nachfolgenden Ausführungen den ersten \(niedrigste Priorität\) Änderungsnachverfolgungswert an, der bei dieser Ausführung verarbeitet wurde.
 
-- `finalTrackingState`: Ist immer `null` wenn die Richtlinie für die Änderungsnachverfolgung für Daten für die verwendete Datenquelle nicht aktiviert ist. Andernfalls wird der neueste (höchste Priorität) Änderungsnachverfolgungswert angegeben, der bei dieser Ausführung erfolgreich verarbeitet wurde.
+- `finalTrackingState`: Ist immer `null` wenn die Richtlinie für die Änderungsnachverfolgung für Daten für die verwendete Datenquelle nicht aktiviert ist. Andernfalls wird der neueste \(höchste Priorität\) Änderungsnachverfolgungswert angegeben, der bei dieser Ausführung erfolgreich verarbeitet wurde.
 
 <a name="IndexerExecutionStatus"></a>**Status der Indexer-Ausführung**
 
@@ -640,19 +640,19 @@ Der Status der Indexer-Ausführung erfasst den Status einer einzelnen Indexer-Au
 
 - `persistentFailure` gibt an, dass zum Beheben des Indexer-Fehlers eine Benutzeraktion erforderlich ist. Die geplanten Indexer-Ausführungen werden gestoppt. Beheben Sie das Problem und starten Sie die geplanten Ausführungen mithilfe der API zum Zurücksetzen des Indexers neu.
 
-- `reset` gibt an, dass der Indexer durch den Aufruf der API zum Zurücksetzen des Indexers (siehe unten) zurückgesetzt wurde.
+- `reset` gibt an, dass der Indexer durch den Aufruf der API zum Zurücksetzen des Indexers \(siehe unten\) zurückgesetzt wurde.
 
 <a name="ResetIndexer"></a>
 ## Indexer zurücksetzen
 
-Der Vorgang **Indexer zurücksetzen** setzt den mit dem Indexer verknüpften Status der Änderungsnachverfolgung zurück. Dies ermöglicht Ihnen, eine komplett neue Indizierung durchführen (z. B. wenn Ihr Datenquellenschema geändert wurde) oder die Richtlinie für die Änderungsnachverfolgung für Daten für eine mit dem Indexer verknüpfte Datenquelle zu ändern.
+Der Vorgang **Indexer zurücksetzen** setzt den mit dem Indexer verknüpften Status der Änderungsnachverfolgung zurück. Dies ermöglicht Ihnen, eine komplett neue Indizierung durchführen \(z. B. wenn Ihr Datenquellenschema geändert wurde\) oder die Richtlinie für die Änderungsnachverfolgung für Daten für eine mit dem Indexer verknüpfte Datenquelle zu ändern.
 
 	POST https://[service name].search.windows.net/indexers/[indexer name]/reset?api-version=[api-version]
     api-key: [admin key]
 
 `api-version` ist erforderlich. Die Vorschauversion ist `2015-02-28-Preview`. Unter [Versionsverwaltung für Azure Search](https://msdn.microsoft.com/library/azure/dn864560.aspx) finden Sie nähere Angaben und weitere Informationen zu alternativen Versionen.
 
-`api-key` muss ein Admin-Schlüssel sein (im Gegensatz zu einer Abfrageschlüssel). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
+`api-key` muss ein Admin-Schlüssel sein \(im Gegensatz zu einer Abfrageschlüssel\). Weitere Informationen zu Schlüsseln finden Sie unter [REST-API für den Search-Dienst](https://msdn.microsoft.com/library/azure/dn798935.aspx) im Abschnitt "Authentifizierung". In [Erstellen eine Search-Dienstes im Portal](search-create-service-portal.md) wird erläutert, wie Sie die Dienst-URL und Schlüsseleigenschaften, die in der Anforderung verwendet werden, abrufen können.
 
 **Antwort**
 
@@ -775,4 +775,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

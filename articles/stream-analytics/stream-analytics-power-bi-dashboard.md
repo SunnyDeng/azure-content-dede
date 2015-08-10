@@ -28,8 +28,9 @@ In diesem Artikel erfahren Sie, wie Sie eigene benutzerdefinierte Business Intel
 
 ## Voraussetzungen ##
 
-* Microsoft Azure-Konto mit Organisations-ID (Power BI funktioniert nur mit Ihrer Organisations-ID. Die Organisations-ID ist Ihre geschäftliche E-Mail-Adresse, z. B. xyz@mycompany.com. Persönliche E-Mail-Adressen wie xyz@hotmail.com sind keine Organisations-IDs. Erfahren Sie [hier](https://msdn.microsoft.com/subscriptions/dn531048.aspx) mehr über die Organisations-ID. Auch häufig gestellte Frage können [hier](http://go.microsoft.com/fwlink/?linkid=331007&clcid=0x409) heruntergeladen werden).
+* Microsoft Azure-Konto
 * Eine Eingabe für Ihren Stream Analytics-Auftrag, aus dem Streamingdaten verwendet werden können. Stream Analytics akzeptiert Eingaben von Azure Event Hubs oder dem Azure-Blob-Speicher.  
+* Microsoft Power BI-Organisations-ID
 
 ## Erstellen eines Azure Stream Analytics-Auftrags ##
 
@@ -49,7 +50,7 @@ Klicken Sie im linken Bereich auf **Stream Analytics**, um die Stream Analytics-
 
 ## Festlegen der Auftragseingabe ##
 
-In diesem Lernprogramm wird davon ausgegangen, dass Sie EventHub als Eingabe mit JSON-Serialisierung und UTF-8-Codierung verwenden.
+In diesem Lernprogramm wird davon ausgegangen, dass Sie Event Hub als Eingabe mit JSON-Serialisierung und UTF-8-Codierung verwenden.
 
 * Klicken Sie auf den Auftragsnamen.
 * Klicken Sie am oberen Seitenrand auf **Eingaben** und dann auf **Eingabe hinzufügen**. Das aufgerufene Dialogfeld führt Sie durch eine Reihe von Schritten, um Ihre Eingabe einzurichten.
@@ -62,9 +63,9 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie EventHub als Eingabe mit
 
 > [AZURE.NOTE]In diesem Beispiel wird die Standardanzahl an Partitionen verwendet, sprich 16.
 
-* **Event Hub-Name** – Wählen Sie den Namen Ihres Azure Event Hubs aus.
-* **Event Hub-Richtlinienname** – Wählen Sie die Richtlinie für den Event Hub aus, den Sie verwenden. Stellen Sie sicher, dass diese Richtlinie über Verwaltungsberechtigungen verfügt.
-*	**Event Hub-Verbrauchergruppe** – Dieses Feld können Sie leer lassen oder eine der Verbrauchergruppen Ihres Event Hub angeben. Beachten Sie, dass jede Verbrauchergruppe eines Event Hub nur fünf Leser gleichzeitig haben darf. Wählen Sie also die richtige Verbrauchergruppe für Ihren Auftrag aus. Wenn Sie das Feld leer lassen, wird die Standardverbrauchergruppe verwendet.
+* **Event Hub-Name** – Wählen Sie den Namen Ihrer Azure Event Hub-Instanz aus.
+* **Event Hub-Richtlinienname** – Wählen Sie die Richtlinie für die Event Hub-Instanz aus, die Sie verwenden. Stellen Sie sicher, dass diese Richtlinie über Verwaltungsberechtigungen verfügt.
+*	**Event Hub-Verbrauchergruppe** – Dieses Feld können Sie leer lassen oder eine der Verbrauchergruppen Ihrer Event Hub-Instanz angeben. Beachten Sie, dass jede Verbrauchergruppe von Event Hub nur fünf Leser gleichzeitig haben darf. Wählen Sie also die richtige Verbrauchergruppe für Ihren Auftrag aus. Wenn Sie das Feld leer lassen, wird die Standardverbrauchergruppe verwendet.
 
 *	Klicken Sie auf die rechte Taste.
 *	Geben Sie die folgenden Werte an:
@@ -78,14 +79,15 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie EventHub als Eingabe mit
 
 ![Grafik2][graphic2]
 
-> [AZURE.NOTE]Die Power BI-Ausgabe ist nur für Azure-Konten mit Organisations-IDs verfügbar. Wenn Sie für Ihr Azure-Konto keine Organisations-ID verwenden (sondern z. B. Ihre Live-ID / Ihr persönliches Microsoft-Konto), wird die Power BI-Ausgabeoption nicht angezeigt.
-
 2.  Wählen Sie **Power BI**, und klicken Sie dann auf die rechte Taste.
 3.  Es wird ein Bildschirm ähnlich dem folgenden angezeigt:
 
 ![Grafik3][graphic3]
 
-4.  Bei diesem Schritt müssen Sie darauf achten, dieselbe Organisations-ID zu verwenden, die Sie für den Stream Analytics-Auftrag verwenden. Derzeit muss die Power BI-Ausgabe dieselbe Organisations-ID wie Ihr Stream Analytics-Auftrag verwenden. Wenn Sie bereits ein Power BI-Konto mit der gleichen Organisations-ID haben, wählen Sie „Jetzt autorisieren“. Falls nicht, wählen Sie „Jetzt registrieren“, und verwenden Sie während des Anmeldevorgangs für Power BI dieselbe Organisations-Id wie für Ihr Azure-Konto. [Hier finden Sie ein gutes Blog über die Einzelheiten der Power BI-Anmeldung (in englischer Sprache)](http://blogs.technet.com/b/powerbisupport/archive/2015/02/06/power-bi-sign-up-walkthrough.aspx).
+4.  Geben Sie in diesem Schritt eine Organisations-ID für die Stream Analytics-Auftragsausgabe an. Wenn Sie bereits ein Power BI-Konto haben, wählen Sie **Jetzt autorisieren**. Falls nicht, wählen Sie **Jetzt anmelden**. [Hier finden Sie ein gutes Blog über die Einzelheiten der Power BI-Anmeldung \(in englischer Sprache\)](http://blogs.technet.com/b/powerbisupport/archive/2015/02/06/power-bi-sign-up-walkthrough.aspx).
+
+![Grafik11][graphic11]
+
 5.  Als Nächstes wird ein Bildschirm ähnlich dem folgenden angezeigt:
 
 ![Grafik4][graphic4]
@@ -96,11 +98,11 @@ Geben Sie die Werte wie nachfolgend gezeigt ein:
 * **Datasetname** – Geben Sie einen Datasetnamen für die Power BI-Ausgabe an. Verwenden wir z. B. „pbidemo“.
 *	**Tabellenname** – Geben Sie einen Tabellennamen unter dem Dataset der Power BI-Ausgabe ein. Wir verwenden hier „pbidemo“. Derzeit darf die Power BI-Ausgabe von Stream Analytics-Aufträgen nur eine Tabelle pro Dataset aufweisen.
 
->	[AZURE.NOTE] Sie sollten Dataset und Tabelle nicht explizit in Ihrem Power BI-Konto erstellen. Sie werden automatisch beim Starten Ihres Stream Analytics-Auftrags erstellt, sobald der Auftrag eine Ausgabe an Power BI zurückgibt. Wenn Ihre Auftragsabfrage keine Ergebnisse zurückgibt, werden Dataset und Tabelle nicht erstellt.
+>	[AZURE.NOTE] You should not explicitly create this dataset and table in your Power BI account. They will be automatically created when you start your Stream Analytics job and the job starts pumping output into Power BI. If your job query doesn’t return any results, the dataset and table will not be created.
 
 *	Klicken Sie auf **OK** und anschließend auf **Testverbindung**. Die Ausgabekonfiguration ist abgeschlossen.
 
->	[AZURE.WARNING] Wenn Power BI bereits über ein Dataset und eine Tabelle mit demselben Namen verfügt, den Sie in diesem Stream Analytics-Auftrag angegeben haben, beachten Sie bitte, dass die vorhandenen Daten überschrieben werden.
+>	[AZURE.WARNING] Also be aware that if Power BI already had a dataset and table with the same name as the one you provided in this Stream Analytics job, the existing data will be overwritten.
 
 
 ## Schreiben von Abfragen ##
@@ -136,7 +138,7 @@ Um ein neues Dashboard zu erstellen, gehen Sie zur Option „Dashboards“.
 
 In diesem Beispiel nennen wir es „Demo Dashboard“.
 
-Klicken Sie jetzt auf das Dataset, das durch den Stream Analytics-Auftrag („pbidemo“ im aktuellen Beispiel) erstellt wurde. Zum Erstellen eines Diagramms auf diesem Dataset werden Sie zu einer anderen Seite weitergeleitet. Im Folgenden nur ein Beispiel für die Berichte, die Sie erstellen können:
+Klicken Sie jetzt auf das Dataset, das durch den Stream Analytics-Auftrag \(„pbidemo“ im aktuellen Beispiel\) erstellt wurde. Zum Erstellen eines Diagramms auf diesem Dataset werden Sie zu einer anderen Seite weitergeleitet. Im Folgenden nur ein Beispiel für die Berichte, die Sie erstellen können:
 
 Wählen Sie die Felder „Σ temp“ und „time“ aus. Sie werden automatisch dem Wert und der Achse des Diagramms zugewiesen:
 
@@ -150,7 +152,7 @@ Klicken Sie im Abschnitt „Wert“ auf die Dropdownliste für „temp“ und w�
 
 ![Grafik9][graphic9]
 
-Jetzt erhalten Sie ein Liniendiagramm der Durchschnittstemperatur im Laufe des Zeitraums. Verwenden die Option zum Anheften (siehe unten) und verknüpfen Sie das Diagramm mit dem Dashboard, das Sie zuvor erstellt haben:
+Jetzt erhalten Sie ein Liniendiagramm der Durchschnittstemperatur im Laufe des Zeitraums. Verwenden die Option zum Anheften \(siehe unten\) und verknüpfen Sie das Diagramm mit dem Dashboard, das Sie zuvor erstellt haben:
 
 ![Grafik10][graphic10]
 
@@ -161,12 +163,11 @@ Beachten Sie, dass in diesem Lernprogramm nur die Erstellung einer Art von Diagr
 Eine weitere nützliche Ressource, um mehr über das Erstellen von Dashboards mit Power BI zu erfahren, sind die [Dashboards in der Power BI-Vorschau](http://support.powerbi.com/knowledgebase/articles/424868-dashboards-in-power-bi-preview).
 
 ## Einschränkungen und bewährte Methoden ##
-In Power BI werden Parallelitäts- und Durchsatzeinschränkungen genutzt. Eine Beschreibung finden Sie hier: [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing "Power BI-Preise") (in englischer Sprache).
+In Power BI werden Parallelitäts- und Durchsatzeinschränkungen genutzt. Eine Beschreibung finden Sie hier: [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing "Power BI-Preise") \(in englischer Sprache\).
 
 Aufgrund dieser Einschränkungen eignet sich Power BI perfekt für Anwendungsfälle, bei denen Azure Stream Analytics eine erhebliche Datenlastverringerung ermöglicht. Es wird die Verwendung von "TumblingWindow" oder "HoppingWindow" empfohlen, um sicherzustellen, dass beim Datenpush maximal 1 Push pro Sekunde erfolgt und dass die Abfrage innerhalb der Durchsatzanforderungen liegt. Mit der folgenden Gleichung können Sie den Wert für das Fenster in Sekunden berechnen: ![Gleichung1](./media/stream-analytics-power-bi-dashboard/equation1.png).
 
-Beispiel: Wenn 1.000 Geräte jede Sekunde Daten senden und Sie das Power BI Pro-SKU verwenden, das 1.000.000 Zeilen pro Stunde unterstützt, und die durchschnittlichen Daten pro Gerät in Power BI berechnen möchten, können Sie maximal alle 4 Sekunden einen Push pro Gerät durchführen (wie im Folgenden gezeigt): 
-![Gleichung2](./media/stream-analytics-power-bi-dashboard/equation2.png)
+Beispiel: Wenn 1.000 Geräte jede Sekunde Daten senden und Sie das Power BI Pro-SKU verwenden, das 1.000.000 Zeilen pro Stunde unterstützt, und die durchschnittlichen Daten pro Gerät in Power BI berechnen möchten, können Sie maximal alle 4 Sekunden einen Push pro Gerät durchführen \(wie im Folgenden gezeigt\): ![Gleichung2](./media/stream-analytics-power-bi-dashboard/equation2.png)
 
 Das bedeutet, dass die ursprüngliche Abfrage wie folgt geändert wird:
 
@@ -193,7 +194,7 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
-- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Stream Analytics Query Language Reference \(in englischer Sprache\)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
 
@@ -207,6 +208,6 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic8]: ./media/stream-analytics-power-bi-dashboard/8-stream-analytics-power-bi-dashboard.png
 [graphic9]: ./media/stream-analytics-power-bi-dashboard/9-stream-analytics-power-bi-dashboard.png
 [graphic10]: ./media/stream-analytics-power-bi-dashboard/10-stream-analytics-power-bi-dashboard.png
- 
+[graphic11]: ./media/stream-analytics-power-bi-dashboard/11-stream-analytics-power-bi-dashboard.png
 
-<!-----HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

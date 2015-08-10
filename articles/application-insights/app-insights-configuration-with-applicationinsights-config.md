@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Konfigurieren des Application Insights-SDK mit ";ApplicationInsights.config"; oder XML" 
+	pageTitle="Konfigurieren des Application Insights-SDK mit &quot;ApplicationInsights.config&quot; oder XML" 
 	description="Aktivieren oder deaktivieren Sie Datensammlungsmodule, und fügen Sie Leistungsindikatoren und andere Parameter hinzu" 
 	services="application-insights"
     documentationCenter="" 
@@ -106,7 +106,7 @@ handling a request with the automatically generated `RequestTelemetry.Id".
 
 * `RequestTrackingTelemetryModule` verfolgt von Ihrer Web-App empfangene Anforderungen und misst die Reaktionszeiten.
 * `ExceptionTrackingTelemetryModule` verfolgt nicht behandelte Ausnahmen in Ihrer Web-App. Informationen hierzu finden Sie unter [Fehler und Ausnahmen][exceptions].
-* `DeveloperModeWithDebuggerAttachedTelemetryModule` erzwingt, dass `TelemetryChannel` von Application Insights Daten sofort sendet (jeweils nur ein Telemetrieelement), wenn ein Debugger an den Anwendungsprozess angefügt ist. Dies reduziert die Zeitspanne zwischen dem Zeitpunkt, zu dem Ihre Anwendung Telemetriedaten verfolgt, und der Anzeige im Application Insights-Portal auf Kosten einer signifikanten Auslastung von CPU und Netzwerkbandbreite.
+* `DeveloperModeWithDebuggerAttachedTelemetryModule` erzwingt, dass `TelemetryChannel` von Application Insights Daten sofort sendet \(jeweils nur ein Telemetrieelement\), wenn ein Debugger an den Anwendungsprozess angefügt ist. Dies reduziert die Zeitspanne zwischen dem Zeitpunkt, zu dem Ihre Anwendung Telemetriedaten verfolgt, und der Anzeige im Application Insights-Portal auf Kosten einer signifikanten Auslastung von CPU und Netzwerkbandbreite.
 
 ## [Microsoft.ApplicationInsights.PerfCounterCollector](http://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector)-NuGet-Paket
 
@@ -144,7 +144,7 @@ Wenn Sie ein `ReportAs`-Attribut angeben, wird dieses als Anzeigename in Applica
 
 Für die Berichterstellung an Application Insights dürfen die Indikatornamen nur folgende Zeichen enthalten: Buchstaben, runde Klammern, Schrägstriche, Bindestriche, Unterstriche, Leerzeichen und Punkte.
 
-Verwenden Sie "ReportAs", wenn der zu überwachende Leistungsindikator ungültige Zeichen wie "#" oder Ziffern enthält.
+Verwenden Sie "ReportAs", wenn der zu überwachende Leistungsindikator ungültige Zeichen wie "\#" oder Ziffern enthält.
       
 Die folgenden Platzhalter werden für `InstanceName` unterstützt:
 
@@ -152,7 +152,7 @@ Die folgenden Platzhalter werden für `InstanceName` unterstützt:
     ??APP_W3SVC_PROC?? - instance name of the application IIS worker process for IIS/ASP.NET counters.
     ??APP_CLR_PROC?? - instance name of the application CLR process for .NET counters.
 
-## Kanalparameter (Java)
+## Kanalparameter \(Java\)
 
 Diese Parameter beeinflussen, wie das Java-SDK die gesammelten Telemetriedaten speichert und leert.
 
@@ -177,7 +177,7 @@ Die Anzahl der Telemetrieelemente, die im In-Memory-Speicher des SDK gespeichert
 
 #### FlushIntervalInSeconds 
 
-Bestimmt, wie oft der In-Memory-Speicher geleert (die Daten an Application Insights gesendet) werden sollen.
+Bestimmt, wie oft der In-Memory-Speicher geleert \(die Daten an Application Insights gesendet\) werden sollen.
 
 -	Min.: 1
 -	Max.: 300
@@ -228,7 +228,7 @@ Mit Kontextinitialisierern können Sie Werte festlegen, die zum Initialisieren d
         }
     }
 
-Verwenden Sie Telemetrieinitialisierer, um jedem Ereignis eine Verarbeitung hinzuzufügen. Beispielsweise kennzeichnet das Web-SDK jede Anforderung mit einem Antwortcode >= 400 als fehlerhaft. Sie können dieses Verhalten außer Kraft setzen:
+Verwenden Sie Telemetrieinitialisierer, um jedem Ereignis eine Verarbeitung hinzuzufügen. Beispielsweise kennzeichnet das Web-SDK jede Anforderung mit einem Antwortcode \>= 400 als fehlerhaft. Sie können dieses Verhalten außer Kraft setzen:
 
     public class MyTelemetryInitializer : ITelemetryInitializer
     {
@@ -313,4 +313,4 @@ Um einen neuen Schlüssel abzurufen, [erstellen Sie eine neue Ressource im Appli
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-get-started.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

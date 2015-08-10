@@ -18,7 +18,7 @@
 
 # Azure Active Directory-Authentifizierungsprotokolle
 
-Azure Active Directory (Azure AD) unterstützt mehrere der am häufigsten verwendeten Protokolle zur Authentifizierung und Autorisierung. Die Themen in diesem Abschnitt beschreiben die unterstützten Protokolle und ihre Implementierung in Azure AD. Die Themen umfassen eine Beschreibung der unterstützten Anspruchstypen, eine Einführung in die Verwendung von Verbundmetadaten, ausführliche OAuth 2.0.- und SAML 2.0-Protokoll-Referenzdokumentation und einen Abschnitt zur Problembehandlung.
+Azure Active Directory \(Azure AD\) unterstützt mehrere der am häufigsten verwendeten Protokolle zur Authentifizierung und Autorisierung. Die Themen in diesem Abschnitt beschreiben die unterstützten Protokolle und ihre Implementierung in Azure AD. Die Themen umfassen eine Beschreibung der unterstützten Anspruchstypen, eine Einführung in die Verwendung von Verbundmetadaten, ausführliche OAuth 2.0.- und SAML 2.0-Protokoll-Referenzdokumentation und einen Abschnitt zur Problembehandlung.
 
 ## Authentifizierungsprotokolle, Artikel und Referenz 
 
@@ -51,9 +51,9 @@ Azure Active Directory (Azure AD) unterstützt mehrere der am häufigsten verwen
 
 [Entwicklerhandbuch zu Azure Active Directory](active-directory-developers-guide.md)
 
-[Verwenden von Azure AD für Autorisierung](https://msdn.microsoft.com/library/azure/dn385718.aspx)
+[Verwenden von Azure AD für Autorisierung](../app-service-web/web-sites-authentication-authorization.md)
 
 [Active Directory-Codebeispiele](active-directory-code-samples.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

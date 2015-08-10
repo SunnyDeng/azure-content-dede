@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit Azure Data Factory" 
+	pageTitle="Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL" 
 	description="In diesem Lernprogramm erfahren Sie, wie Sie eine Beispieldatenpipeline erstellen, die Daten von einem Blob an eine Azure SQL-Datenbankinstanz kopiert." 
 	services="data-factory" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/17/2015" 
+	ms.date="07/27/2015" 
 	ms.author="spelluru"/>
 
 # Lernprogramm: Erstellen und Überwachen einer Data Factory mit Visual Studio
@@ -37,7 +37,7 @@ In diesem Schritt erstellen Sie im Azure-Vorschauportal eine Azure Data Factory 
 
 1.	Nach der Anmeldung beim [Azure-Vorschauportal](http://portal.azure.com) klicken Sie links unten auf **NEU**, wählen **Datenanalyse** auf dem Blatt **Erstellen** aus und klicken auf dem Blatt **Datenanalyse** auf **Data Factory**. 
 
-	![Neu->DataFactory](./media/data-factory-get-started-using-vs/NewDataFactoryMenu.png)
+	![Neu-\>DataFactory](./media/data-factory-get-started-using-vs/NewDataFactoryMenu.png)
 
 6. Gehen Sie auf dem Blatt **Neue Data Factory** wie folgt vor:
 	1. Geben Sie **ADFTutorialDataFactoryVS** als **Namen** ein. 
@@ -53,7 +53,7 @@ In diesem Schritt erstellen Sie im Azure-Vorschauportal eine Azure Data Factory 
 7. Auf dem Blatt **Neue Data Factory** ist **Zum Startmenü hinzufügen** aktiviert.
 8. Klicken Sie auf dem Blatt **Neue Data Factory** auf **Erstellen**.
 
-	Der Name der Azure Data Factory muss global eindeutig sein. Wenn die Fehlermeldung **Data factory name "ADFTutorialDataFactoryVS" is not available** angezeigt wird, ändern Sie den Namen der Data Factory (z. B.in "IhrNameADFTutorialDataFactoryVS") und wiederholen den Vorgang. Verwenden Sie diesen Namen beim Ausführen der restlichen Schritte in diesem Lernprogramm anstelle von "ADFTutorialFactory". Im Thema [Data Factory – Benennungsregeln][data-factory-naming-rules] finden Sie Benennungsregeln für Data Factory-Artefakte.
+	Der Name der Azure Data Factory muss global eindeutig sein. Wenn die Fehlermeldung **Data factory name "ADFTutorialDataFactoryVS" is not available** angezeigt wird, ändern Sie den Namen der Data Factory \(z. B.in "IhrNameADFTutorialDataFactoryVS"\) und wiederholen den Vorgang. Verwenden Sie diesen Namen beim Ausführen der restlichen Schritte in diesem Lernprogramm anstelle von "ADFTutorialFactory". Im Thema \[Data Factory – Benennungsregeln\]\[data-factory-naming-rules\] finden Sie Benennungsregeln für Data Factory-Artefakte.
 	 
 	![Data Factory-Name nicht verfügbar](./media/data-factory-get-started-using-vs/getstarted-data-factory-not-available.png)
 
@@ -249,4 +249,4 @@ Um die Azure Data Factory-Tools für Visual Studio zu aktualisieren, führen Sie
 
 Unter [Überwachen von DataSets und Pipelines](data-factory-get-started-using-editor.md/#MonitorDataSetsAndPipeline) finden Sie eine Anleitung zum Überwachen der in dieser Anleitung erstellten Pipeline und DataSets über das Azure-Vorschauportal.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

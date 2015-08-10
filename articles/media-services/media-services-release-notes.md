@@ -40,7 +40,7 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 - [Version Juli 2014](#july_changes_14)
 - [Version Mai 2014](#may_changes_14)
 - [Version April 2014](#april_changes_14) 
-- [Versionen Januar\Februar 2014](#jan_feb_changes_14) 
+- [Versionen Januar\\Februar 2014](#jan_feb_changes_14) 
 - [Version Dezember 2013](#december_changes_13)
 - [Version November 2013](#november_changes_13)
 - [Version August 2013](#august_changes_13)
@@ -54,7 +54,7 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 
 ### <a id="general_issues"></a>Allgemeine Probleme von Media Services
 
-<table border="1"> <tr><th>Problem</th><th>Beschreibung</yt></tr> <tr><td>Verschiedene gängige HTTP-Header werden in der REST-API nicht bereitgestellt. </td><td>Wenn Sie Media Services-Anwendungen mithilfe der REST-API entwickeln, wird Ihnen auffallen, dass einige gängige HTTP-Headerfelder (einschließlich CLIENT-REQUEST-ID, REQUEST-ID und RETURN-CLIENT-REQUEST-ID) nicht unterstützt werden. Diese Header werden in einem späteren Update hinzugefügt.</td></tr> <tr><td>Beim Codieren eines Medienobjekts mit einem Dateinamen, der Escapezeichen (z. B. %20) enthält, tritt der Fehler "MediaProcessor: Datei nicht gefunden."</td><td>Die Namen von Dateien, die einem Medienobjekt hinzugefügt und dann codiert werden sollen, sollten nur alphanumerische Zeichen und Leerzeichen enthalten. Dieses Problem wird in einem späteren Update behoben.</td></tr> <tr><td>Die ListBlobs-Methode, die Teil des Azure Storage-SDK, Version 3.x, ist, kann nicht ausgeführt werden.</td><td>Media Services generiert SAS-URLs auf Grundlage der Version <a href="http://msdn.microsoft.com/library/azure/dn592123.aspx">2012-02-12</a>. Wenn Sie das Azure Storage-SDK zur Auflistung von Blobs in einem Blobcontainer nutzen möchten, verwenden Sie die <a href="http://msdn.microsoft.com/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.listblobs.aspx">CloudBlobContainer.ListBlobs</a>-Methode, die Teil des Azure Storage-SDK, Version 2.x, ist. Die ListBlobs-Methode, die Teil des Azure Storage-SDK, Version 3.x, ist, kann nicht ausgeführt werden.</td></tr> <tr><td>Der Drosselungsmechanismus von Media Services schränkt die Ressourcenverwendung für Anwendungen ein, die zu viele Anforderungen an den Dienst ausgeben. Der Dienst kann den HTTP-Statuscode "Dienst nicht verfügbar (503)" zurückgeben.</td><td>Weitere Informationen finden Sie in der Beschreibung des HTTP-Statuscodes 503 unter <a href="http://msdn.microsoft.com/library/azure/dn168949.aspx">Azure Media Services-Fehlercodes</a>.</td></tr> </table><br/>
+<table border="1"> <tr><th>Problem</th><th>Beschreibung</yt></tr> <tr><td>Verschiedene gängige HTTP-Header werden in der REST-API nicht bereitgestellt. </td><td>Wenn Sie Media Services-Anwendungen mithilfe der REST-API entwickeln, wird Ihnen auffallen, dass einige gängige HTTP-Headerfelder \(einschließlich CLIENT-REQUEST-ID, REQUEST-ID und RETURN-CLIENT-REQUEST-ID\) nicht unterstützt werden. Diese Header werden in einem späteren Update hinzugefügt.</td></tr> <tr><td>Beim Codieren eines Medienobjekts mit einem Dateinamen, der Escapezeichen \(z. B. %20\) enthält, tritt der Fehler "MediaProcessor: Datei nicht gefunden."</td><td>Die Namen von Dateien, die einem Medienobjekt hinzugefügt und dann codiert werden sollen, sollten nur alphanumerische Zeichen und Leerzeichen enthalten. Dieses Problem wird in einem späteren Update behoben.</td></tr> <tr><td>Die ListBlobs-Methode, die Teil des Azure Storage-SDK, Version 3.x, ist, kann nicht ausgeführt werden.</td><td>Media Services generiert SAS-URLs auf Grundlage der Version <a href="http://msdn.microsoft.com/library/azure/dn592123.aspx">2012-02-12</a>. Wenn Sie das Azure Storage-SDK zur Auflistung von Blobs in einem Blobcontainer nutzen möchten, verwenden Sie die <a href="http://msdn.microsoft.com/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.listblobs.aspx">CloudBlobContainer.ListBlobs</a>-Methode, die Teil des Azure Storage-SDK, Version 2.x, ist. Die ListBlobs-Methode, die Teil des Azure Storage-SDK, Version 3.x, ist, kann nicht ausgeführt werden.</td></tr> <tr><td>Der Drosselungsmechanismus von Media Services schränkt die Ressourcenverwendung für Anwendungen ein, die zu viele Anforderungen an den Dienst ausgeben. Der Dienst kann den HTTP-Statuscode "Dienst nicht verfügbar \(503\)" zurückgeben.</td><td>Weitere Informationen finden Sie in der Beschreibung des HTTP-Statuscodes 503 unter <a href="http://msdn.microsoft.com/library/azure/dn168949.aspx">Azure Media Services-Fehlercodes</a>.</td></tr> </table><br/>
  
 ### <a id="dotnet_issues"></a>Probleme in Media Services SDK für .NET
 
@@ -68,7 +68,7 @@ Informationen zum Versionsverlauf der Media Services-REST-API finden Sie unter [
 
 Ankündigung der allgemeinen Verfügbarkeit von Media Encoder Standard. Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/).
 
-Media Encoder Standard verwendet die in [diesem](http://go.microsoft.com/fwlink/?LinkId=618336) Abschnitt beschriebenen Voreinstellungen. Beachten Sie, dass Sie beim Verwenden einer Voreinstellung für 4k-Codierungen den Einheitentyp „**Premium ** reservierte Einheit“ erhalten sollten. Weitere Informationen finden Sie unter [Skalieren der Codierung](media-services-portal-encoding-units).
+Media Encoder Standard verwendet die in [diesem](http://go.microsoft.com/fwlink/?LinkId=618336) Abschnitt beschriebenen Voreinstellungen. Beachten Sie, dass Sie beim Verwenden einer Voreinstellung für 4k-Codierungen den Einheitentyp „**Premium \*\* reservierte Einheit“ erhalten sollten. Weitere Informationen finden Sie unter [Skalieren der Codierung](media-services-portal-encoding-units).
 
 
 ###Media Services .NET SDK-Updates
@@ -78,8 +78,8 @@ Azure Media Services .NET SDK ist jetzt in der Version 3.4.0.0 erhältlich. Die
 - Die Unterstützung für das Live-Archiv wurde implementiert. Beachten Sie, dass Sie eine Ressource, die ein Live-Archiv enthält, nicht herunterladen können.
 - Die Unterstützung für dynamische Filter wurde implementiert.
 - Die Funktionalität, mit der Benutzer beim Löschen von Ressourcen Speichercontainer beibehalten können, wurde implementiert.
-- Fehlerbehebungen im Zusammenhang mit Wiederholungsrichtlinien in Kanälen
-- **Media Encoder-Premium-Workflow** aktiviert
+- Fehlerbehebungen im Zusammenhang mit Wiederholungsrichtlinien in Kanälen.
+- **Media Encoder Premium Workflow** wurde aktiviert.
 
 ##<a id="june_changes_15"></a>Version Juni 2015
 
@@ -90,9 +90,9 @@ Azure Media Services .NET SDK ist jetzt in der Version 3.3.0.0 erhältlich. Die
 - Unterstützung für die OpenId Connect Discovery-Spezifikation
 - Unterstützung für die Verarbeitung von Schlüsselrollover auf der Seite des Identitätsanbieters 
 
-Wenn Sie einen Identitätsanbieter verwenden, der das OpenID Connect Discovery-Dokument verfügbar macht (wie die folgenden Anbieter: Azure Active Directory, Google, Salesforce), können Sie Azure Media Services anweisen, Signaturschlüssel zur Überprüfung des JWT-Tokens aus der OpenID Connect Discovery-Spezifikation abzurufen.
+Wenn Sie einen Identitätsanbieter verwenden, der das OpenID Connect Discovery-Dokument verfügbar macht \(wie die folgenden Anbieter: Azure Active Directory, Google, Salesforce\), können Sie Azure Media Services anweisen, Signaturschlüssel zur Überprüfung des JWT-Tokens aus der OpenID Connect Discovery-Spezifikation abzurufen.
 
-Weitere Informationen finden Sie unter [Using Json Web Keys from OpenID Connect discovery spec to work with JWT token authentication in Azure Media Services](http://gtrifonov.com/2015/06/07/using-json-web-keys-from-openid-connect-discovery-spec-to-work-with-jwt-token-authentication-in-azure-media-services/) (in englischer Sprache).
+Weitere Informationen finden Sie unter [Using Json Web Keys from OpenID Connect discovery spec to work with JWT token authentication in Azure Media Services](http://gtrifonov.com/2015/06/07/using-json-web-keys-from-openid-connect-discovery-spec-to-work-with-jwt-token-authentication-in-azure-media-services/) \(in englischer Sprache\).
 
 
 ##<a id="may_changes_15"></a>Version Mai 2015
@@ -131,8 +131,8 @@ Im Folgenden werden einige der Updates für Kunden aufgeführt:
 
 ### Allgemeine Media Services-Updates
 
-- Media Services bietet jetzt eine Integration von Azure CDN. Zur Unterstützung der Integration wurde **StreamingEndpoint** die **CdnEnabled**-Eigenschaft hinzugefügt. **CdnEnabled** kann mit REST-APIs ab Version 2.9 verwendet werden (weitere Informationen finden Sie unter [StreamingEndpoint](https://msdn.microsoft.com/library/azure/dn783468.aspx)). **CdnEnabled** kann mit dem .NET SDK ab Version 3.1.0.2 verwendet werden (weitere Informationen finden Sie unter [StreamingEndpoint](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mediaservices.client.istreamingendpoint(v=azure.10).aspx)).
-- Ankündigung des **Media Encoder Premium-Workflow**. Weitere Informationen finden Sie unter [Introducing Premium Encoding in Azure Media Services](http://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services) (in englischer Sprache).
+- Media Services bietet jetzt eine Integration von Azure CDN. Zur Unterstützung der Integration wurde **StreamingEndpoint** die **CdnEnabled**-Eigenschaft hinzugefügt. **CdnEnabled** kann mit REST-APIs ab Version 2.9 verwendet werden \(weitere Informationen finden Sie unter [StreamingEndpoint](https://msdn.microsoft.com/library/azure/dn783468.aspx)\). **CdnEnabled** kann mit dem .NET SDK ab Version 3.1.0.2 verwendet werden \(weitere Informationen finden Sie unter [StreamingEndpoint]\(https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mediaservices.client.istreamingendpoint(v=azure.10).aspx)).
+- Ankündigung des **Media Encoder Premium-Workflow**. Weitere Informationen finden Sie unter [Introducing Premium Encoding in Azure Media Services](http://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services) \(in englischer Sprache\).
  
 
 
@@ -146,7 +146,7 @@ Die Media Services-REST-API ist jetzt in Version 2.9 verfügbar. Beginnend mit 
 
 ### Allgemeine Media Services-Updates
 
-Ankündigung der allgemeinen Verfügbarkeit (GA) des Inhaltschutzes mit dynamischer Verschlüsselung. Weitere Informationen finden Sie unter [Azure Media Services enhances streaming security with General Availability of DRM technology](http://azure.microsoft.com/blog/2015/01/29/azure-media-services-enhances-streaming-security-with-general-availability-of-drm-technology/) (in englischer Sprache).
+Ankündigung der allgemeinen Verfügbarkeit \(GA\) des Inhaltschutzes mit dynamischer Verschlüsselung. Weitere Informationen finden Sie unter [Azure Media Services enhances streaming security with General Availability of DRM technology](http://azure.microsoft.com/blog/2015/01/29/azure-media-services-enhances-streaming-security-with-general-availability-of-drm-technology/) \(in englischer Sprache\).
 
 ###Media Services .NET SDK-Updates
 
@@ -165,30 +165,30 @@ Durch diese Version wird der Microsoft.WindowsAzure.MediaServices.Client.Content
 - Eine neue REST-API wurde hinzugefügt, mit der Sie die Codierung reservierter Einheiten aktualisieren können: [EncodingReservedUnitType mit REST](http://msdn.microsoft.com/library/azure/dn859236.aspx).
 - CORS-Unterstützung für wichtigen Übermittlungsdienst wurde hinzugefügt.
 - Leistungsverbesserungen für Abfragen von Autorisierungsrichtlinienoptionen wurden vorgenommen.
-- Im Datencenter China gilt die [Schlüsselübermittlungs-URL](http://msdn.microsoft.com/library/azure/ef4dfeeb-48ae-4596-ab28-44d6b36d8769#get_delivery_service_url) jetzt pro Kunde (genau wie in anderen Datencentern).
-- Automatische HLS-Zieldauer hinzugefügt. Bei Livestreaming wird HLS immer dynamisch verpackt. Standardmäßig berechnet Media Services das HLS Segment-Paketerstellungsverhältnis (FragmentsPerSegment) basierend auf dem Keyframe-Intervall (KeyFrameInterval), auch bezeichnet als Gruppe von Bildern – GOP, die vom Live-Encoder empfangen wird. Weitere Informationen finden Sie unter [Working with Azure Media Services Live Streaming] (in englischer Sprache).
+- Im Datencenter China gilt die [Schlüsselübermittlungs-URL](http://msdn.microsoft.com/library/azure/ef4dfeeb-48ae-4596-ab28-44d6b36d8769#get_delivery_service_url) jetzt pro Kunde \(genau wie in anderen Datencentern\).
+- Automatische HLS-Zieldauer hinzugefügt. Bei Livestreaming wird HLS immer dynamisch verpackt. Standardmäßig berechnet Media Services das HLS Segment-Paketerstellungsverhältnis \(FragmentsPerSegment\) basierend auf dem Keyframe-Intervall \(KeyFrameInterval\), auch bezeichnet als Gruppe von Bildern – GOP, die vom Live-Encoder empfangen wird. Weitere Informationen finden Sie unter [Working with Azure Media Services Live Streaming] \(in englischer Sprache\).
  
 ###Media Services .NET SDK-Updates
 
 - [Azure Media Services .NET SDK](http://www.nuget.org/packages/windowsazure.mediaservices/) ist jetzt in der Version 3.1.0.0 erhältlich.
 - Die Abhängigkeit von .Net-SDK wurde auf das .NET 4.5-Framework aktualisiert.
 - Eine neue API wurde hinzugefügt, mit der Sie die Codierung reservierter Einheiten aktualisieren können: Weitere Informationen finden Sie unter [Aktualisieren des reservierten Einheitentyps und Erhöhen der Codierungs-RUs mit .NET](http://msdn.microsoft.com/library/azure/jj129582.aspx).
-- JWT-Unterstützung (JSON Web Token) für Token-Authentifizierung hinzugefügt. Weitere Informationen finden Sie unter [JWT-Token-Authentifizierung in Azure Media Services und dynamische Verschlüsselung](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/).
+- JWT-Unterstützung \(JSON Web Token\) für Token-Authentifizierung hinzugefügt. Weitere Informationen finden Sie unter [JWT-Token-Authentifizierung in Azure Media Services und dynamische Verschlüsselung](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/).
 - Relative Offsets für "BeginDate" und "ExpirationDate" in der PlayReady-Lizenzvorlage hinzugefügt.
 
 
 ##<a id="november_changes_14"></a>Version November 2014
 
-- Media Services ermöglicht jetzt das Erfassen von Live-Smooth-Streaming (FMP4)-Inhalten über eine SSL-Verbindung. Zur Erfassung über SSL stellen Sie sicher, dass die Erfassungs-URL auf HTTPS aktualisiert wurde. Weitere Informationen zu Live-Streaming finden Sie unter [Arbeiten mit Azure Media Services-Livestreaming].
+- Media Services ermöglicht jetzt das Erfassen von Live-Smooth-Streaming \(FMP4\)-Inhalten über eine SSL-Verbindung. Zur Erfassung über SSL stellen Sie sicher, dass die Erfassungs-URL auf HTTPS aktualisiert wurde. Weitere Informationen zu Live-Streaming finden Sie unter [Arbeiten mit Azure Media Services-Livestreaming].
 - Beachten Sie, dass Sie derzeit RTMP-Livestreams nicht über eine SSL-Verbindung erfassen können.
 - Sie können auch den Inhalt über eine SSL-Verbindung streamen. Zu diesem Zweck stellen Sie sicher, dass die Streaming-URLs mit HTTPS beginnen.
-- Beachten Sie, dass Sie nur über SSL streamen können, wenn der Streaming-Endpunkt, von dem aus Sie Ihre Inhalte übermitteln, nach dem 10. September 2014 erstellt wurde. Wenn die Streaming-URLs auf Streaming-Endpunkten basieren, die nach dem 10. September erstellt wurden, enthält die URL "streaming.mediaservices.windows.net" (neues Format). Streaming-URLs, die "origin.mediaservices.windows.net" (das alte Format) enthalten, unterstützen kein SSL. Wenn die URL im alten Format vorliegt und Sie über SSL streamen möchten, [erstellen Sie einen neuen Streamingendpunkt](media-services-manage-origins.md). Verwenden Sie die URLs, die basierend auf dem neuen Streaming-Endpunkt erstellt wurden, um Ihre Inhalte über SSL zu streamen.
+- Beachten Sie, dass Sie nur über SSL streamen können, wenn der Streaming-Endpunkt, von dem aus Sie Ihre Inhalte übermitteln, nach dem 10. September 2014 erstellt wurde. Wenn die Streaming-URLs auf Streaming-Endpunkten basieren, die nach dem 10. September erstellt wurden, enthält die URL "streaming.mediaservices.windows.net" \(neues Format\). Streaming-URLs, die "origin.mediaservices.windows.net" \(das alte Format\) enthalten, unterstützen kein SSL. Wenn die URL im alten Format vorliegt und Sie über SSL streamen möchten, [erstellen Sie einen neuen Streamingendpunkt](media-services-manage-origins.md). Verwenden Sie die URLs, die basierend auf dem neuen Streaming-Endpunkt erstellt wurden, um Ihre Inhalte über SSL zu streamen.
    
 ##<a id="october_changes_14"></a>Version Oktober 2014
 
 ### <a id="new_encoder_release"></a>Media Services-Encoder-Version
 
-Hiermit kündigen wir die neue Version des Media Services-Azure-Medienencoders an. Beim neuesten Azure Media Encoder werden Ihnen nur die ausgegebenen GB berechnet. Ansonsten sind die Funktionen des neuen Encoders mit dem vorherigen Encoder kompatibel. Weitere Informationen finden Sie unter [Mediendienste – Preisdetails]).
+Hiermit kündigen wir die neue Version des Media Services-Azure-Medienencoders an. Beim neuesten Azure Media Encoder werden Ihnen nur die ausgegebenen GB berechnet. Ansonsten sind die Funktionen des neuen Encoders mit dem vorherigen Encoder kompatibel. Weitere Informationen finden Sie unter [Mediendienste – Preisdetails]\).
 
 ### <a id="oct_sdk"></a>Media Services .NET SDK 
 
@@ -221,20 +221,20 @@ Für Media Services SDK für .NET ist jetzt Version 3.0.0.7 verfügbar.
 * **Origin** wurde in [StreamingEndpoint] umbenannt.
 * Eine Änderung des Standardverhaltens bei Verwendung des **Azure-Verwaltungsportals** zum Codieren und Veröffentlichen von MP4-Dateien. 
 
-	Zuvor wurde bei Verwendung des Verwaltungsportals zum Veröffentlichen eines MP4-Videoobjekts mit einer einzelnen Datei eine SAS-URL erstellt (SAS-URLs ermöglichen das Herunterladen des Videos aus einem Blobspeicher). Derzeit verweist die generierte URL bei Verwendung des Verwaltungsportals zum Codieren und Veröffentlichen eines MP4-Videoobjekts mit einer einzelnen Datei auf einen Azure Media Services-Streaming-Endpunkt. Diese Änderung hat keinerlei Einfluss auf MP4-Videos, die direkt in Media Services hochgeladen und ohne Codierung durch Azure Media Services veröffentlicht werden.
+	Zuvor wurde bei Verwendung des Verwaltungsportals zum Veröffentlichen eines MP4-Videoobjekts mit einer einzelnen Datei eine SAS-URL erstellt \(SAS-URLs ermöglichen das Herunterladen des Videos aus einem Blobspeicher\). Derzeit verweist die generierte URL bei Verwendung des Verwaltungsportals zum Codieren und Veröffentlichen eines MP4-Videoobjekts mit einer einzelnen Datei auf einen Azure Media Services-Streaming-Endpunkt. Diese Änderung hat keinerlei Einfluss auf MP4-Videos, die direkt in Media Services hochgeladen und ohne Codierung durch Azure Media Services veröffentlicht werden.
 	
 	Derzeit stehen Ihnen die folgenden beiden Optionen zur Verfügung, um das Problem zu beheben.
 	
 	* Aktivieren von Streaming-Einheiten und Verwenden der dynamischen Paketerstellung, um das .mp4-Objekt als Smooth-Streaming-Präsentation zu streamen
 	
-	* Erstellen einer SAS-URL zum Herunterladen (oder schrittweisen Abspielen) der .mp4 Weitere Informationen zum Erstellen eines SAS-Locators finden Sie unter [Bereitstellen von Inhalten].
+	* Erstellen einer SAS-URL zum Herunterladen \(oder schrittweisen Abspielen\) der .mp4 Weitere Informationen zum Erstellen eines SAS-Locators finden Sie unter [Bereitstellen von Inhalten].
 
 
 ### <a id="sept_14_GA_changes"></a>Neue Funktionen/Szenarien, die Teil der GA-Version sind
 
 * **Indexer-Medienprozessor**. Weitere Informationen finden Sie unter [Indizieren von Mediendateien mit Azure Media Indexer].
 
-* Mit der [StreamingEndpoint]-Entität können Sie nun benutzerdefinierte Domänennamen (Hostnamen) hinzufügen.
+* Mit der [StreamingEndpoint]-Entität können Sie nun benutzerdefinierte Domänennamen \(Hostnamen\) hinzufügen.
 
 	Damit ein benutzerdefinierter Domänenname als Name des Media Services-Streaming-Endpunkts verwendet werden kann, müssen Sie Ihrem Streaming-Endpunkt benutzerdefinierte Hostnamen hinzufügen. Verwenden Sie die REST-APIs oder das .NET-SDK von Media Services, um benutzerdefinierte Hostnamen hinzuzufügen.
 	
@@ -244,14 +244,14 @@ Für Media Services SDK für .NET ist jetzt Version 3.0.0.7 verfügbar.
 	
 	* Sie müssen als Eigentümer des Domänennamens von Azure Media Services validiert werden. Erstellen Sie zum Überprüfen der Domäne einen CName-Datensatz, der <MediaServicesAccountId>.<parent domain> zu verifydns.<mediaservices-dns-zone> zuordnet.
 	
-	* Sie müssen einen anderen CName-Datensatz erstellen, der den benutzerdefinierten Hostnamen (z. B. sports.contoso.com) dem Hostnamen des Media Services-Streamingendpunkts zuordnet (z. B. amstest.streaming.mediaservices.windows.net).
+	* Sie müssen einen anderen CName-Datensatz erstellen, der den benutzerdefinierten Hostnamen \(z. B. sports.contoso.com\) dem Hostnamen des Media Services-Streamingendpunkts zuordnet \(z. B. amstest.streaming.mediaservices.windows.net\).
 
 
-	Weitere Informationen finden Sie unter der **CustomHostNames**-Eigenschaft unter [StreamingEndpoint] (in englischer Sprache).
+	Weitere Informationen finden Sie unter der **CustomHostNames**-Eigenschaft unter [StreamingEndpoint] \(in englischer Sprache\).
 
 ### <a id="sept_14_preview_changes"></a>Neue Funktionen/Szenarien, die Teil der öffentlichen Vorschauversion sind
 
-* Live Streaming-Vorschau. Weitere Informationen finden Sie unter [Working with Azure Media Services Live Streaming] (in englischer Sprache).
+* Live Streaming-Vorschau. Weitere Informationen finden Sie unter [Working with Azure Media Services Live Streaming] \(in englischer Sprache\).
 
 * Schlüsselübermittlungsdienst. Weitere Informationen finden Sie unter [Verwenden der dynamischen AES-128-Verschlüsselung und des Schlüsselübermittlungsdiensts].
 
@@ -263,7 +263,7 @@ Für Media Services SDK für .NET ist jetzt Version 3.0.0.7 verfügbar.
 
 * Media Services PlayReady-Lizenzvorlage. Weitere Informationen finden Sie unter [Media Services PlayReady-Lizenzvorlage – Übersicht].
 
-* Streaming von speicherverschlüsselten Inhalten. Weitere Informationen finden Sie unter [Streaming Storage Encrypted Content] (in englischer Sprache).
+* Streaming von speicherverschlüsselten Inhalten. Weitere Informationen finden Sie unter [Streaming Storage Encrypted Content] \(in englischer Sprache\).
 
 ##<a id="august_changes_14"></a>Version August 2014
 
@@ -282,9 +282,9 @@ Die folgenden Fehlerkorrekturen wurden für Azure Media Services Packager und En
 
 ### <a id="may_14_changes"></a>Allgemeine Media Services-Updates
 
-Sie können nun die [Dynamische Paketerstellung] zum Streamen von HTTP Live Streaming (HLS) v3 verwenden. Fügen Sie zum Streamen von HLS v3 das folgende Format zum ursprünglichen Locator-Pfad hinzu: *.ism/manifest(format=m3u8-aapl-v3). Weitere Informationen finden Sie in [Nick Drouins Blog].
+Sie können nun die [Dynamische Paketerstellung] zum Streamen von HTTP Live Streaming \(HLS\) v3 verwenden. Fügen Sie zum Streamen von HLS v3 das folgende Format zum ursprünglichen Locator-Pfad hinzu: *.ism/manifest\(format=m3u8-aapl-v3\). Weitere Informationen finden Sie in [Nick Drouins Blog].
 
-Die dynamische Paketerstellung unterstützt jetzt auch die Bereitstellung von mit PlayReady verschlüsseltem HLS (v3 und v4) basierend auf statisch mit PlayReady verschlüsseltem Smooth Streaming. Informationen zum Verschlüsseln von Smooth Streaming mit PlayReady finden Sie unter [Schützen von Smooth Streaming und MPEG DASH mit PlayReady].
+Die dynamische Paketerstellung unterstützt jetzt auch die Bereitstellung von mit PlayReady verschlüsseltem HLS \(v3 und v4\) basierend auf statisch mit PlayReady verschlüsseltem Smooth Streaming. Informationen zum Verschlüsseln von Smooth Streaming mit PlayReady finden Sie unter [Schützen von Smooth Streaming und MPEG DASH mit PlayReady].
 
 ### <a name="may_14_donnet_changes"></a>Media Services .NET SDK-Updates
 
@@ -296,7 +296,7 @@ Das Media Services SDK für .NET Version 3.0.0.5 umfasst die folgenden Verbesser
 
 	* Vorübergehende Fehlerermittlung und Wiederholungslogik wurden für Ausnahmen verbessert, die durch Abfragen, Speichern von Änderungen, Hochladen oder Herunterladen von Dateien verursacht werden. 
 	
-	* Bei der Ausgabe von Webausnahmen (z. B. während der Abfrage eines ACS-Token) schlagen schwerwiegende Fehler nun schneller fehl.
+	* Bei der Ausgabe von Webausnahmen \(z. B. während der Abfrage eines ACS-Token\) schlagen schwerwiegende Fehler nun schneller fehl.
 
 Weitere Informationen finden Sie unter [Wiederholungslogik im Media Services SDK für .NET].
 
@@ -304,7 +304,7 @@ Weitere Informationen finden Sie unter [Wiederholungslogik im Media Services SDK
 
 ### <a name="april_14_enocer_changes"></a>Media Services Encoder-Updates
 
-* Unterstützung für die Erfassung von mit dem nichtlinearen Grass Valley EDIUS-Editor erstellten AVI-Dateien, wobei das Video leicht mit dem Grass Valley HQ-/HQX-Codec komprimiert ist. Weitere Informationen finden Sie unter [Grass Valley Announces EDIUS 7 Streaming Through the Cloud] (in englischer Sprache).
+* Unterstützung für die Erfassung von mit dem nichtlinearen Grass Valley EDIUS-Editor erstellten AVI-Dateien, wobei das Video leicht mit dem Grass Valley HQ-/HQX-Codec komprimiert ist. Weitere Informationen finden Sie unter [Grass Valley Announces EDIUS 7 Streaming Through the Cloud] \(in englischer Sprache\).
 
 * Unterstützung für die Festlegung der Namenskonvention für die vom Media Encoder erstellten Dateien. Weitere Informationen finden Sie unter [Steuern von Media Services Encoder-Ausgabedateinamen].
 
@@ -312,10 +312,10 @@ Weitere Informationen finden Sie unter [Wiederholungslogik im Media Services SDK
 
 * Unterstützung für das Zusammenfügen mehrerer Videosegmente. Weitere Informationen finden Sie unter [Zusammenfügen von Videosegmenten].
 
-* Behebung eines Problems hinsichtlich des Transcodierens von MP4s, bei denen das Audio mit MPEG-1 Audio Layer 3 (alias MP3) codiert wurde.
+* Behebung eines Problems hinsichtlich des Transcodierens von MP4s, bei denen das Audio mit MPEG-1 Audio Layer 3 \(alias MP3\) codiert wurde.
 
 
-##<a id="jan_feb_changes_14"></a>Versionen Januar\Februar 2014
+##<a id="jan_feb_changes_14"></a>Versionen Januar\\Februar 2014
 
 ### <a name="jan_fab_14_donnet_changes"></a>Azure Media Services .NET SDK 3.0.0.1, 3.0.0.2 und 3.0.0.3
 
@@ -331,7 +331,7 @@ Die folgenden Änderungen wurden in 3.0.0.3 vorgenommen:
 
 * Upgrade der Azure-Speicherabhängigkeiten für die Verwendung von Version 3.0.3.0. 
 
-* Behebung des Problems mit der Abwärtskompatibilität für Versionen 3.0.*.*.
+* Behebung des Problems mit der Abwärtskompatibilität für Versionen 3.0.\*.\*.
 
 
 ##<a id="december_changes_13"></a>Version Dezember 2013
@@ -346,7 +346,7 @@ Ab Media Services SDK Version 3.0.0.0 können Sie die Token des [Zugriffssteueru
 
 ### <a name="dec_13_donnet_ext_changes"></a>Azure Media Services .NET SDK-Erweiterungen 2.0.0.0
 
-Azure Media Services SDK-Erweiterungen für .NET ist ein Satz von Erweiterungsmethoden und Hilfsfunktionen, die Ihren Code vereinfachen und eine einfachere Entwicklung mit Azure Media Services ermöglichen. Sie können die neuesten Bits unter [Azure Media Services .NET SDK Extensions] (in englischer Sprache) abrufen.
+Azure Media Services SDK-Erweiterungen für .NET ist ein Satz von Erweiterungsmethoden und Hilfsfunktionen, die Ihren Code vereinfachen und eine einfachere Entwicklung mit Azure Media Services ermöglichen. Sie können die neuesten Bits unter [Azure Media Services .NET SDK Extensions] \(in englischer Sprache\) abrufen.
 
 ##<a id="november_changes_13"></a>Version November 2013
 
@@ -358,7 +358,7 @@ Ab dieser Version behandelt Media Services SDK für .NET vorübergehende Fehler,
 
 ### <a name="aug_13_powershell_changes"></a>In Azure-SDK-Tools enthaltene Media Services-PowerShell-Cmdlets
 
-Die folgenden Media Services-PowerShell-Cmdlets sind jetzt in [azure-sdk-tools] (in englischer Sprache) enthalten.
+Die folgenden Media Services-PowerShell-Cmdlets sind jetzt in [azure-sdk-tools] \(in englischer Sprache\) enthalten.
 
 * Get-AzureMediaServices 
 
@@ -432,9 +432,9 @@ Die folgenden Änderungen sind in Media Services SDK-Versionen von Juni 2013 en
 	
 	Der Microsoft.WindowsAzure.MediaServices.Client.NotificationJobState-Typ.
 
-* Abhängigkeit vom Azure-Speicherclient-SDK 2.0 (Microsoft.WindowsAzure.StorageClient.dll).
+* Abhängigkeit vom Azure-Speicherclient-SDK 2.0 \(Microsoft.WindowsAzure.StorageClient.dll\).
 
-* Abhängigkeit von OData 5.5 (Microsoft.Data.OData.dll).
+* Abhängigkeit von OData 5.5 \(Microsoft.Data.OData.dll\).
 
 
 ##<a id="december_changes_12"></a>Version Dezember 2012
@@ -449,33 +449,33 @@ Problembehebung im SDK von November 2012:
 
 * IAsset.Locators.Count: Diese Anzahl wird nun korrekt auf neuen IAsset-Oberflächen angegeben, nachdem alle Locators gelöscht wurden.
 
-* IAssetFile.ContentFileSize: Dieser Wert ist nun nach dem Hochladen durch IAssetFile.Upload(filepath) korrekt eingestellt.
+* IAssetFile.ContentFileSize: Dieser Wert ist nun nach dem Hochladen durch IAssetFile.Upload\(filepath\) korrekt eingestellt.
 
 * IAssetFile.ContentFileSize: Diese Eigenschaft kann nun bei der Erstellung einer Objektdatei festgelegt werden. Sie war zuvor schreibgeschützt.
 
-* IAssetFile.Upload(filepath): Behebung eines Fehlers, bei dem diese synchrone Uploadmethode beim Hochladen mehrerer Dateien in das Objekt den folgenden Fehler ausgab. Der Fehler lautete "Die Anforderung konnte nicht authentifiziert werden. Stellen Sie sicher, dass der Wert des Autorisierungsheaders, einschließlich der Signatur, korrekt ist."
+* IAssetFile.Upload\(filepath\): Behebung eines Fehlers, bei dem diese synchrone Uploadmethode beim Hochladen mehrerer Dateien in das Objekt den folgenden Fehler ausgab. Der Fehler lautete "Die Anforderung konnte nicht authentifiziert werden. Stellen Sie sicher, dass der Wert des Autorisierungsheaders, einschließlich der Signatur, korrekt ist."
 
 * IAssetFile.UploadAsync: Behebung eines Fehlers, bei dem höchstens fünf Dateien gleichzeitig hochgeladen werden konnten.
 
 * IAssetFile.UploadProgressChanged: Dieses Ereignis wird nun vom SDK bereitgestellt.
 
-* IAssetFile.DownloadAsync(string, BlobTransferClient, ILocator, CancellationToken): Diese Methodenüberladung wird nun bereitgestellt.
+* IAssetFile.DownloadAsync\(string, BlobTransferClient, ILocator, CancellationToken\): Diese Methodenüberladung wird nun bereitgestellt.
 
 * IAssetFile.DownloadAsync: Behebung eines Fehlers, bei dem höchstens fünf Dateien gleichzeitig heruntergeladen werden konnten.
 
-* IAssetFile.Delete(): Behebung eines Fehlers, bei dem das Aufrufen der Löschfunktion eine Ausnahme auslösen konnte, wenn keine Datei für IAssetFile hochgeladen wurde.
+* IAssetFile.Delete\(\): Behebung eines Fehlers, bei dem das Aufrufen der Löschfunktion eine Ausnahme auslösen konnte, wenn keine Datei für IAssetFile hochgeladen wurde.
 
 * Aufträge: Behebung eines Fehlers, bei dem durch die Verkettung einer Aufgabe zum Konvertieren von MP4 für Smooth Streams und einer PlayReady-Schutzaufgabe unter Verwendung einer Jobvorlage keine Aufgabe erstellt wurde.
 
-* EncryptionUtils.GetCertificateFromStore(): Diese Methode gibt keine Null-Referenz-Ausnahme mehr zurück, weil bei der Suche nach dem Zertifikat aufgrund von Problemen mit der Zertifikatkonfiguration Fehler auftreten.
+* EncryptionUtils.GetCertificateFromStore\(\): Diese Methode gibt keine Null-Referenz-Ausnahme mehr zurück, weil bei der Suche nach dem Zertifikat aufgrund von Problemen mit der Zertifikatkonfiguration Fehler auftreten.
 
 ##<a id="november_changes_12"></a>Version November 2012
 
-Die in diesem Abschnitt aufgeführten Änderungen sind Updates, die im SDK von November 2012 (Version 2.0.0.0) enthalten waren. Aufgrund dieser Änderungen muss möglicherweise Code, der für die SDK-Vorschauversion von Juni 2012 geschrieben wurde, geändert oder neu geschrieben werden.
+Die in diesem Abschnitt aufgeführten Änderungen sind Updates, die im SDK von November 2012 \(Version 2.0.0.0\) enthalten waren. Aufgrund dieser Änderungen muss möglicherweise Code, der für die SDK-Vorschauversion von Juni 2012 geschrieben wurde, geändert oder neu geschrieben werden.
 
 * Objekte
 	
-	IAsset.Create(assetName) ist die EINZIGE Funktion für die Objekterstellung. IAsset.Create lädt im Rahmen des Methodenaufrufs keine Dateien mehr hoch. Verwenden Sie IAssetFile zum Hochladen.
+	IAsset.Create\(assetName\) ist die EINZIGE Funktion für die Objekterstellung. IAsset.Create lädt im Rahmen des Methodenaufrufs keine Dateien mehr hoch. Verwenden Sie IAssetFile zum Hochladen.
 	
 	Die IAsset.Publish-Methode und der AssetState.Publish-Aufzählungswert wurden aus dem Services SDK entfernt. Von diesem Wert abhängiger Code muss neu geschrieben werden.
 
@@ -487,15 +487,15 @@ Die in diesem Abschnitt aufgeführten Änderungen sind Updates, die im SDK von N
 
 	IAssetFile ersetzt FileInfo und weist ein anderes Verhalten auf. Um es verwenden zu können, instanziieren Sie das IAssetFiles-Objekt und laden Sie dann eine Datei über das Media Services SDK oder das Azure-Speicher-SDK hoch. Die folgenden IAssetFile.Upload-Überladungen können verwendet werden:
 
-	* IAssetFile.Upload(filePath): Eine synchrone Methode, die den Thread sperrt und nur beim Hochladen einer einzelnen Datei empfohlen wird.
+	* IAssetFile.Upload\(filePath\): Eine synchrone Methode, die den Thread sperrt und nur beim Hochladen einer einzelnen Datei empfohlen wird.
 	
-	* IAssetFile.UploadAsync(filePath, blobTransferClient, locator, cancellationToken): Eine asynchrone Methode. Das ist der bevorzugte Uploadmechanismus.
+	* IAssetFile.UploadAsync\(filePath, blobTransferClient, locator, cancellationToken\): Eine asynchrone Methode. Das ist der bevorzugte Uploadmechanismus.
 
 	Bekannter Fehler: Durch Verwendung des cancellationToken wird der Upload zwar abgebrochen, für den Abbruchstatus der Aufgaben gibt es jedoch unterschiedliche Möglichkeiten. Sie müssen Ausnahmen korrekt erfassen und behandeln.
 
 * Locators
 	
-	Die ursprungsspezifischen Versionen wurden entfernt. Der SAS-spezifische context.Locators.CreateSasLocator (asset, accessPolicy) wird als veraltet markiert oder durch GA entfernt. Informationen zum aktualisierten Verhalten finden Sie im Abschnitt "Locator" unter "Neue Funktionalität".
+	Die ursprungsspezifischen Versionen wurden entfernt. Der SAS-spezifische context.Locators.CreateSasLocator \(asset, accessPolicy\) wird als veraltet markiert oder durch GA entfernt. Informationen zum aktualisierten Verhalten finden Sie im Abschnitt "Locator" unter "Neue Funktionalität".
 
 
 ##<a id="june_changes_12"></a>Vorschauversion Juni 2012
@@ -504,7 +504,7 @@ Die folgende Funktion war neu in der November-Version des SDK.
 
 * Löschen von Entitäten
 
-	Objekte IAsset, IAssetFile, ILocator, IAccessPolicy, IContentKey werden nun auf Objektebene gelöscht (d. h. IObject.Delete()), anstatt in der Sammlung gelöscht werden zu müssen (d. h. cloudMediaContext.ObjCollection.Delete(objInstance)).
+	Objekte IAsset, IAssetFile, ILocator, IAccessPolicy, IContentKey werden nun auf Objektebene gelöscht \(d. h. IObject.Delete\(\)\), anstatt in der Sammlung gelöscht werden zu müssen \(d. h. cloudMediaContext.ObjCollection.Delete\(objInstance\)\).
 
 * Locators
 
@@ -555,4 +555,4 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

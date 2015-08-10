@@ -13,7 +13,7 @@
 
 2. Fügen Sie der **ToDoActivity**-Klasse die folgende Methode hinzu:
 	
-	private void authenticate() { // Anmelden mit dem Google-Anbieter.
+	private void authenticate\(\) { // Anmelden mit dem Google-Anbieter.
 	    
 		ListenableFuture<MobileServiceUser> mLogin = mClient.login(MobileServiceAuthenticationProvider.Google);
 
@@ -65,4 +65,4 @@
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

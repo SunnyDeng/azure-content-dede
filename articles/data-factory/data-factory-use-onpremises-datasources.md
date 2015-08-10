@@ -46,7 +46,7 @@ Das Datenverwaltungsgateway verfügt über eine Vielzahl von lokalen Datenverbin
 5.	Wenn Sie bereits ein Gateway auf dem Computer installiert haben, das ein **Power BI**-Szenario unterstützt, installieren Sie auf einem anderen Computer ein **separates Gateway für die Azure Data Factory**.
 
 ### Ports und Sicherheitsaspekte 
-- Das Installationsprogramm für das Datenverwaltungsgateway öffnet auf dem Gatewaycomputer die Ports **8050** und **8051**. Diese Ports werden vom **Anmeldeinformations-Manager** (ClickOnce-Anwendung) verwendet. Dadurch können Sie Anmeldeinformationen für einen lokal verknüpften Dienst festlegen und die Verbindung mit der Datenquelle testen. Diese Ports können nicht aus dem Internet erreicht werden, und Sie müssen sie nicht in der Unternehmensfirewall öffnen.
+- Das Installationsprogramm für das Datenverwaltungsgateway öffnet auf dem Gatewaycomputer die Ports **8050** und **8051**. Diese Ports werden vom **Anmeldeinformations-Manager** \(ClickOnce-Anwendung\) verwendet. Dadurch können Sie Anmeldeinformationen für einen lokal verknüpften Dienst festlegen und die Verbindung mit der Datenquelle testen. Diese Ports können nicht aus dem Internet erreicht werden, und Sie müssen sie nicht in der Unternehmensfirewall öffnen.
 - Stellen Sie beim Kopieren von Daten zwischen einer lokalen SQL Server-Datenbank und einer Azure SQL-Datenbank Folgendes sicher:
  
 	- Die Firewall auf dem Gatewaycomputer lässt die ausgehende TCP-Kommunikation über **TCP**-Port **1433** zu.
@@ -74,11 +74,11 @@ In diesem Schritt verwenden Sie das Azure-Verwaltungsportal zum Erstellen einer 
 
 1.	Nach der Anmeldung beim [Azure-Vorschauportal][azure-preview-portal] klicken Sie links unten auf **NEU**, dann auf **Datenanalyse** auf dem Blatt **Erstellen** und anschließend auf **Data Factory** auf dem Blatt **Datenanalyse**.
 
-	![Neu->DataFactory][image-data-factory-new-datafactory-menu]
+	![Neu-\>DataFactory][image-data-factory-new-datafactory-menu]
   
 6. Gehen Sie auf dem Blatt **Neue Data Factory** wie folgt vor:
 	1. Geben Sie **ADFTutorialOnPremDF** als **Namen** ein.
-	2. Klicken Sie auf **RESSOURCENGRUPPENNAME**, und wählen Sie **ADFTutorialResourceGroup** aus (wenn Sie das Lernprogramm unter [Erste Schritte mit Azure Data Factory][adfgetstarted] ausgeführt haben). Sie können eine vorhandene Ressourcengruppe auswählen oder eine neue erstellen. So erstellen Sie eine neue Ressourcengruppe:
+	2. Klicken Sie auf **RESSOURCENGRUPPENNAME**, und wählen Sie **ADFTutorialResourceGroup** aus \(wenn Sie das Lernprogramm unter [Erste Schritte mit Azure Data Factory][adfgetstarted] ausgeführt haben\). Sie können eine vorhandene Ressourcengruppe auswählen oder eine neue erstellen. So erstellen Sie eine neue Ressourcengruppe:
 		1. Klicken Sie auf **Neue Ressourcengruppe erstellen**.
 		2. Geben Sie auf dem Blatt **Ressourcengruppe erstellen** unter **Name** einen Namen für die Ressourcengruppe ein, und klicken Sie auf **OK**.
 
@@ -88,7 +88,7 @@ In diesem Schritt verwenden Sie das Azure-Verwaltungsportal zum Erstellen einer 
 
 8. Klicken Sie auf dem Blatt **Neue Data Factory** auf **Erstellen**.
 
-	Der Name der Azure Data Factory muss global eindeutig sein. Bei Anzeige der Fehlermeldung **Data factory name "ADFTutorialOnPremDF" is not available** ändern Sie den Namen der Data Factory (z. B.in "IhrNameADFTutorialOnPremDF") und wiederholen den Vorgang. Verwenden Sie diesen Namen beim Ausführen der restlichen Schritte in diesem Lernprogramm anstelle von "ADFTutorialOnPremDF".
+	Der Name der Azure Data Factory muss global eindeutig sein. Bei Anzeige der Fehlermeldung **Data factory name "ADFTutorialOnPremDF" is not available** ändern Sie den Namen der Data Factory \(z. B.in "IhrNameADFTutorialOnPremDF"\) und wiederholen den Vorgang. Verwenden Sie diesen Namen beim Ausführen der restlichen Schritte in diesem Lernprogramm anstelle von "ADFTutorialOnPremDF".
 
 9. Suchen Sie im Hub **BENACHRICHTIGUNGEN** auf der linken Seite nach Benachrichtigungen zum Erstellungsvorgang. Klicken Sie auf **X**, um das Blatt **BENACHRICHTIGUNGEN** zu schließen, falls es geöffnet ist.
 
@@ -117,7 +117,7 @@ In diesem Schritt verwenden Sie das Azure-Verwaltungsportal zum Erstellen einer 
 
 	![Blatt "Gateway konfigurieren"][image-data-factory-gateway-configure-blade]
 
-	Dies ist die einfachste Möglichkeit (One-Click) zum Herunterladen, Installieren, Konfigurieren und Registrieren des Gateways in einem einzigen Schritt. Sie können sehen, dass die Anwendung **Microsoft Datenverwaltungsgateway – Konfigurations-Manager** auf Ihrem Computer installiert ist. Die ausführbare Datei **ConfigManager.exe** befindet sich im Ordner **C:\Programme\Microsoft Data Management Gateway\1.0\Shared**.
+	Dies ist die einfachste Möglichkeit \(One-Click\) zum Herunterladen, Installieren, Konfigurieren und Registrieren des Gateways in einem einzigen Schritt. Sie können sehen, dass die Anwendung **Microsoft Datenverwaltungsgateway – Konfigurations-Manager** auf Ihrem Computer installiert ist. Die ausführbare Datei **ConfigManager.exe** befindet sich im Ordner **C:\\Programme\\Microsoft Data Management Gateway\\1.0\\Shared**.
 
 	Sie können das Gateway auch manuell über die Links in diesem Fenster herunterladen und installieren und mit dem Schlüssel im Textfeld **MIT SCHLÜSSEL REGISTRIEREN** registrieren.
 	
@@ -129,7 +129,7 @@ In diesem Schritt verwenden Sie das Azure-Verwaltungsportal zum Erstellen einer 
 
 	![Express-Installation erfolgreich][express-setup-succeeded]
 5. Klicken Sie auf dem Blatt **Erstellen** auf **OK** und dann auf das Blatt **Neues Datenverwaltungsgateway**.
-6. Schließen Sie das Blatt **Verknüpfte Dienste** (durch Klicken auf **X** rechts oben), und öffnen Sie erneut das Blatt **Verknüpfte Dienste**, um den aktuellen Status des Gateways anzuzeigen. 
+6. Schließen Sie das Blatt **Verknüpfte Dienste** \(durch Klicken auf **X** rechts oben\), und öffnen Sie erneut das Blatt **Verknüpfte Dienste**, um den aktuellen Status des Gateways anzuzeigen. 
 7. Überprüfen Sie, ob der **Status** des Gateways **Online** lautet. 
 
 	![Gatewaystatus][gateway-status]
@@ -166,29 +166,33 @@ In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **StorageLinkedService
 4.	Führen Sie im JSON-Bereich folgende Schritte aus:
 	1.	Geben Sie **adftutorialgateway** für die **gatewayName**-Eigenschaft ein, um den gesamten Text in doppelten Anführungszeichen zu ersetzen.  
 	2.	Bei Verwendung der **SQL Server-Authentifizierung**: 
-		1.	Ersetzen Sie in der **connectionString**-Eigenschaft **<servername>**, **<databasename>**, **<username>** und **<password>** durch die Angaben für "Server", "Datenbank", "Benutzerkonto" und "Kennwort" Ihres lokalen SQL Server-Computers. Verwenden Sie zum Angeben eines Instanznamens Escapezeichen: . Beispiel: **Server\Instanzname**. 	
-		2.	Entfernen Sie die letzten beiden Eigenschaften ("username" und **password**) aus der JSON-Datei und das **Komma (,)** am Ende der letzten Zeile des verbleibenden JSON-Skripts.
+		1.	Ersetzen Sie in der **connectionString**-Eigenschaft **\<servername\>**, **\<databasename\>**, **\<username\>** und **\<password\>** durch die Angaben für "Server", "Datenbank", "Benutzerkonto" und "Kennwort" Ihres lokalen SQL Server-Computers. Verwenden Sie zum Angeben eines Instanznamens Escapezeichen: . Beispiel: **Server\\Instanzname**. 	
+		2.	Entfernen Sie die letzten beiden Eigenschaften \("username" und **password**\) aus der JSON-Datei und das **Komma \(,\)** am Ende der letzten Zeile des verbleibenden JSON-Skripts.
 		
 				{
-	    			"name": "SqlServerLinkedService",
-	    			"properties": {
-		        		"type": "OnPremisesSqlLinkedService",
-		        		"ConnectionString": "Data Source=<servername>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;Password=<password>;",
-		        		"gatewayName": "adftutorialgateway"
-	    			}
+				  "name": "SqlServerLinkedService",
+				  "properties": {
+				    "type": "OnPremisesSqlServer",
+				    "typeProperties": {
+				      "ConnectionString": "Data Source=<servername>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;Password=<password>;",
+				      "gatewayName": "adftutorialgateway"
+				    }
+				  }
 				}
 	3.	Bei Verwendung der **Windows-Authentifizierung:**:
-		1. Ersetzen Sie in der **connectionString**-Eigenschaft **<servername>** und **<databasename>** durch die Angaben für den lokalen SQL Server-Computer und die Datenbank. Legen Sie **Integrierte Sicherheit** auf **Wahr** fest. Entfernen Sie **ID** und **Kennwort** aus der Verbindungszeichenfolge.
+		1. Ersetzen Sie in der **connectionString**-Eigenschaft **\<servername\>** und **\<databasename\>** durch die Angaben für den lokalen SQL Server-Computer und die Datenbank. Legen Sie **Integrierte Sicherheit** auf **Wahr** fest. Entfernen Sie **ID** und **Kennwort** aus der Verbindungszeichenfolge.
 			
 				{
-    				"name": "SqlServerLinkedService",
-    				"properties": {
-        				"type": "OnPremisesSqlLinkedService",
-        				"ConnectionString": "Data Source=<servername>;Initial Catalog=<databasename>;Integrated Security=True;",
-		   				"gatewayName": "adftutorialgateway",
-				        "username": "<Specify user name if you are using Windows Authentication>",
-				        "password": "<Specify password for the user account>"
-    				}
+				  "name": "SqlServerLinkedService",
+				  "properties": {
+				    "type": "OnPremisesSqlServer",
+				    "typeProperties": {
+				      "ConnectionString": "Data Source=<servername>;Initial Catalog=<databasename>;Integrated Security=True;",
+				      "gatewayName": "adftutorialgateway",
+				      "username": "<Specify user name if you are using Windows Authentication>",
+				      "password": "<Specify password for the user account>"
+				    }
+				  }
 				}		
 		
 6. Klicken Sie auf der Symbolleiste auf **Bereitstellen**, um den verknüpften Dienst "SqlServerLinkedService" bereitzustellen. Vergewissern Sie sich, dass die Meldung **VERKNÜPFTER DIENST ERFOLGREICH ERSTELLT** auf der Titelleiste des Editors angezeigt wird. Außerdem sollte **SqlServerLinkedService** in der Strukturansicht auf der linken Seite angezeigt werden.
@@ -204,7 +208,7 @@ Sie können auch einen verknüpften SQL Server-Dienst erstellen, indem Sie auf d
 
 	![Editor – Schaltfläche "Neuer Datenspeicher"][image-editor-newdatastore-button]
     
-6. Ersetzen Sie **<accountname>** und **<accountkey>** durch die Werte für den Kontonamen und -schlüssel Ihres Azure-Speicherkontos.
+6. Ersetzen Sie **\<accountname\>** und **\<accountkey\>** durch die Werte für den Kontonamen und -schlüssel Ihres Azure-Speicherkontos.
 
 	![Editor – Blobspeicher – JSON][image-editor-blob-storage-json]
 	
@@ -216,14 +220,14 @@ Sie können auch einen verknüpften SQL Server-Dienst erstellen, indem Sie auf d
 
  
 ## Schritt 3: Erstellen von Eingabe- und Ausgabedatasets
-In diesem Schritt erstellen Sie die Eingabe- und Ausgabedatasets, die ein- und ausgehende Daten für den Kopiervorgang darstellen (lokale SQL Server-Datenbank = > Azure-Blobspeicher). Vor dem Erstellen von Datasets oder Tabellen (rechteckige Datasets) müssen Sie Folgendes ausführen (detaillierte Schritte in der Liste):
+In diesem Schritt erstellen Sie die Eingabe- und Ausgabedatasets, die ein- und ausgehende Daten für den Kopiervorgang darstellen \(lokale SQL Server-Datenbank = \> Azure-Blobspeicher\). Vor dem Erstellen von Datasets oder Tabellen \(rechteckige Datasets\) müssen Sie Folgendes ausführen \(detaillierte Schritte in der Liste\):
 
 - Erstellen Sie eine Tabelle mit dem Namen **emp** in der SQL Server-Datenbank, die Sie der Data Factory als verknüpften Dienst hinzugefügt haben, und fügen Sie verschiedene Beispieleinträge in die Tabelle ein.
 - - Wenn Sie das Lernprogramm [Erste Schritte mit Azure Data Factory][adfgetstarted] noch nicht durchgeführt haben, erstellen Sie einen Blobcontainer mit dem Namen **adftutorial** im Azure-Blobspeicherkonto, das Sie der Data Factory als verknüpften Dienst hinzugefügt haben.
 
 ### Vorbereitung des lokalen SQL Servers für das Lernprogramm
 
-1. Verwenden Sie in der Datenbank, die Sie für den verknüpften Dienst der lokalen SQL Server-Datenbank (SqlServerLinkedService) angegeben haben, das folgende SQL-Skript zum Erstellen der Tabelle **emp** in der Datenbank.
+1. Verwenden Sie in der Datenbank, die Sie für den verknüpften Dienst der lokalen SQL Server-Datenbank \(SqlServerLinkedService\) angegeben haben, das folgende SQL-Skript zum Erstellen der Tabelle **emp** in der Datenbank.
 
 
         CREATE TABLE dbo.emp
@@ -249,41 +253,39 @@ In diesem Schritt erstellen Sie die Eingabe- und Ausgabedatasets, die ein- und a
 1.	Klicken Sie im **Data Factory-Editor** auf der Symbolleiste auf **Neues Dataset**, und wählen Sie **Lokaler SQL Server**. 
 2.	Ersetzen Sie das JSON-Skript im rechten Bereich durch folgenden Text:    
 
-        {
-    		"name": "EmpOnPremSQLTable",
-    		"properties":
-    		{
-        		"location":
-        		{
-            		"type": "OnPremisesSqlServerTableLocation",
-            		"tableName": "emp",
-            		"linkedServiceName": "SqlServerLinkedService"
-        		},
-        		"availability": 
-        		{
-            		"frequency": "Hour",
-            		"interval": 1,       
-	    			"waitOnExternal":
-	    			{
-        				"retryInterval": "00:01:00",
-	        			"retryTimeout": "00:10:00",
-	        			"maximumRetry": 3
-	    			}
-		  
-        		}
-    		}
+		{
+		  "name": "EmpOnPremSQLTable",
+		  "properties": {
+		    "type": "SqlServerTable",
+		    "linkedServiceName": "SqlServerLinkedService",
+		    "typeProperties": {
+		      "tableName": "emp"
+		    },
+		    "external": true,
+		    "availability": {
+		      "frequency": "Hour",
+		      "interval": 1
+		    },
+		    "policy": {
+		      "externalData": {
+		        "retryInterval": "00:01:00",
+		        "retryTimeout": "00:10:00",
+		        "maximumRetry": 3
+		      }
+		    }
+		  }
 		}
 
 	Beachten Sie Folgendes:
 	
-	- **location type** ist auf **OnPremisesSqlServerTableLocation** festgelegt.
+	- **type** ist auf **SqlServerTable** festgelegt.
 	- **tableName** ist auf **emp** festgelegt.
-	- **linkedServiceName** ist auf **SqlServerLinkedService** festgelegt (diesen verknüpften Dienst haben Sie in Schritt 2 erstellt).
-	- Für eine Eingabetabelle, die nicht durch eine andere Pipeline in Azure Data Factory generiert wird, müssen Sie den Abschnitt **waitOnExternal** in der JSON-Datei angeben. Dies bedeutet, dass die eingegebenen Daten außerhalb des Azure Data Factory-Diensts erstellt werden.   
+	- **linkedServiceName** ist auf **SqlServerLinkedService** festgelegt \(diesen verknüpften Dienst haben Sie in Schritt 2 erstellt\).
+	- Für eine Eingabetabelle, die nicht durch eine andere Pipeline in Azure Data Factory generiert wird, müssen Sie **external** auf **true** festlegen. Optional können Sie im Abschnitt **externalData** Richtlinien angeben.   
 
 	Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz][json-script-reference].
 
-2. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um das Dataset bereitzustellen (eine Tabelle ist ein rechteckiges Dataset). Vergewissern Sie sich, dass auf der Titelleiste **TABELLE ERFOLGREICH BEREITGESTELLT** angezeigt wird.
+2. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um das Dataset bereitzustellen \(eine Tabelle ist ein rechteckiges Dataset\). Vergewissern Sie sich, dass auf der Titelleiste **TABELLE ERFOLGREICH BEREITGESTELLT** angezeigt wird.
 
 
 ### Erstellen der Ausgabetabelle
@@ -292,40 +294,36 @@ In diesem Schritt erstellen Sie die Eingabe- und Ausgabedatasets, die ein- und a
 2.	Ersetzen Sie das JSON-Skript im rechten Bereich durch folgenden Text: 
 
 		{
-    		"name": "OutputBlobTable",
-    		"properties":
-    		{
-        		"location": 
-        		{
-            		"type": "AzureBlobLocation",
-            		"folderPath": "adftutorial/outfromonpremdf",
-            		"format":
-            		{
-                		"type": "TextFormat",
-                		"columnDelimiter": ","
-            		},
-            		"linkedServiceName": "StorageLinkedService"
-        		},
-        		"availability": 
-        		{
-            		"frequency": "Hour",
-            		"interval": 1
-        		}
-    		}
+		  "name": "OutputBlobTable",
+		  "properties": {
+		    "type": "AzureBlob",
+		    "linkedServiceName": "StorageLinkedService",
+		    "typeProperties": {
+		      "folderPath": "adftutorial/outfromonpremdf",
+		      "format": {
+		        "type": "TextFormat",
+		        "columnDelimiter": ","
+		      }
+		    },
+		    "availability": {
+		      "frequency": "Hour",
+		      "interval": 1
+		    }
+		  }
 		}
   
 	Beachten Sie Folgendes:
 	
-	- **location type** ist auf **AzureBlobLocation** festgelegt.
-	- **linkedServiceName** ist auf **StorageLinkedService** festgelegt (diesen verknüpften Dienst haben Sie in Schritt 2 erstellt).
+	- **type** ist auf **AzureBlob** festgelegt.
+	- **linkedServiceName** ist auf **StorageLinkedService** festgelegt \(diesen verknüpften Dienst haben Sie in Schritt 2 erstellt\).
 	- **folderPath** ist auf **adftutorial/outfromonpremdf** festgelegt, wobei "outfromonpremdf" der Ordner im "adftutorial"-Container ist. Sie müssen lediglich den **adftutorial**-Container erstellen.
-	- Die Verfügbarkeit (**availability**) ist auf **hourly**, **frequency** auf **hour** und **interval** auf **1** festgelegt. Der Data Factory-Dienst generiert in der Tabelle **emp** in der Azure SQL-Datenbank stündlich einen Ausgabedatenslice. 
+	- Die Verfügbarkeit \(**availability**\) ist auf **hourly**, \*\*frequency\*\* auf **hour** und **interval** auf **1** festgelegt. Der Data Factory-Dienst generiert in der Tabelle **emp** in der Azure SQL-Datenbank stündlich einen Ausgabedatenslice. 
 
-	Wenn Sie keinen **fileName** für eine **Eingabetabelle** angeben, werden alle Dateien/Blobs aus dem Eingabeordner (**folderPath**) als Eingaben angesehen. Wenn Sie einen Dateinamen in der JSON-Datei angeben, wird nur die angegebene Datei/der angegebene Blob als Eingabe betrachtet. Beispiele finden Sie in den Beispieldateien des [Lernprogramms][adf-tutorial].
+	Wenn Sie keinen **fileName** für eine **Eingabetabelle** angeben, werden alle Dateien/Blobs aus dem Eingabeordner \(\*\*folderPath\*\*\) als Eingaben angesehen. Wenn Sie einen Dateinamen in der JSON-Datei angeben, wird nur die angegebene Datei/der angegebene Blob als Eingabe betrachtet. Beispiele finden Sie in den Beispieldateien des [Lernprogramms][adf-tutorial].
  
-	Wenn Sie keinen **fileName** für eine **Ausgabetabelle** angeben, werden die generierten Dateien in **folderPath** im folgenden Format benannt: Data.<Guid>.txt (Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt).
+	Wenn Sie keinen **fileName** für eine **Ausgabetabelle** angeben, werden die generierten Dateien in **folderPath** im folgenden Format benannt: Data.<Guid>.txt \(Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt\).
 
-	Um **folderPath** und **fileName** dynamisch basierend auf der **SliceStart**-Zeit festzulegen, verwenden Sie die "partitionedBy"-Eigenschaft. Im folgenden Beispiel verwendet folderPath die Angaben für Jahr, Monat und Tag aus "SliceStart" (Startzeit des zu verarbeitenden Slices) und "fileName" die Angabe für Stunde aus "SliceStart". Wenn beispielsweise ein Slice für den Zeitpunkt "2014-10-20T08:00:00" erzeugt wird, wird "folderName" auf "wikidatagateway/wikisampledataout/2014/10/20" und "filName" auf "08.csv" festgelegt.
+	Um **folderPath** und **fileName** dynamisch basierend auf der **SliceStart**-Zeit festzulegen, verwenden Sie die "partitionedBy"-Eigenschaft. Im folgenden Beispiel verwendet folderPath die Angaben für Jahr, Monat und Tag aus "SliceStart" \(Startzeit des zu verarbeitenden Slices\) und "fileName" die Angabe für Stunde aus "SliceStart". Wenn beispielsweise ein Slice für den Zeitpunkt "2014-10-20T08:00:00" erzeugt wird, wird "folderName" auf "wikidatagateway/wikisampledataout/2014/10/20" und "filName" auf "08.csv" festgelegt.
 
 	  	"folderPath": "wikidatagateway/wikisampledataout/{Year}/{Month}/{Day}",
         "fileName": "{Hour}.csv",
@@ -341,73 +339,73 @@ In diesem Schritt erstellen Sie die Eingabe- und Ausgabedatasets, die ein- und a
 
 	Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz][json-script-reference].
 
-2.	Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um das Dataset bereitzustellen (eine Tabelle ist ein rechteckiges Dataset). Vergewissern Sie sich, dass auf der Titelleiste **TABELLE ERFOLGREICH BEREITGESTELLT** angezeigt wird.
+2.	Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um das Dataset bereitzustellen \(eine Tabelle ist ein rechteckiges Dataset\). Vergewissern Sie sich, dass auf der Titelleiste **TABELLE ERFOLGREICH BEREITGESTELLT** angezeigt wird.
   
 
 ## Schritt 4: Erstellen und Ausführen einer Pipeline
 In diesem Schritt erstellen Sie eine **Pipeline** mit einer **Kopieraktivität**, die **EmpOnPremSQLTable** als Eingabe und **OutputBlobTable** als Ausgabe verwendet.
 
-1.	Klicken Sie auf der Befehlsleiste auf **Neue Pipeline**. Wenn die Schaltfläche nicht angezeigt wird, klicken Sie auf **... (Auslassungspunkte)**, um die Befehlsleiste zu erweitern.
+1.	Klicken Sie auf der Befehlsleiste auf **Neue Pipeline**. Wenn die Schaltfläche nicht angezeigt wird, klicken Sie auf **... \(Auslassungspunkte\)**, um die Befehlsleiste zu erweitern.
 2.	Ersetzen Sie das JSON-Skript im rechten Bereich durch folgenden Text:   
 
 
-        {
-			"name": "ADFTutorialPipelineOnPrem",
-    		"properties":
-    		{
-        		"description" : "This pipeline has one Copy activity that copies data from an on-prem SQL to Azure blob",
-	       		 "activities":
-	        	[
-			    	{
-						"name": "CopyFromSQLtoBlob",
-						"description": "Copy data from on-prem SQL server to blob",		
-						"type": "CopyActivity",
-						"inputs": [ {"name": "EmpOnPremSQLTable"} ],
-						"outputs": [ {"name": "OutputBlobTable"} ],
-						"transformation":
-						{
-							"source":
-							{                               
-								"type": "SqlSource",
-								"sqlReaderQuery": "select * from emp"
-							},
-							"sink":
-							{
-								"type": "BlobSink"
-							}	
-						},
-						"Policy":
-						{
-							"concurrency": 1,
-							"executionPriorityOrder": "NewestFirst",
-							"style": "StartOfInterval",
-							"retry": 0,
-							"timeout": "01:00:00"
-						}		
-
-				     }
-	        	],
-				"start": "2015-02-13T00:00:00Z",
-        		"end": "2015-02-14T00:00:00Z",
-        		"isPaused": false
-			}
+		{
+		  "name": "ADFTutorialPipelineOnPrem",
+		  "properties": {
+		    "description": "This pipeline has one Copy activity that copies data from an on-prem SQL to Azure blob",
+		    "activities": [
+		      {
+		        "name": "CopyFromSQLtoBlob",
+		        "description": "Copy data from on-prem SQL server to blob",
+		        "type": "Copy",
+		        "inputs": [
+		          {
+		            "name": "EmpOnPremSQLTable"
+		          }
+		        ],
+		        "outputs": [
+		          {
+		            "name": "OutputBlobTable"
+		          }
+		        ],
+		        "typeProperties": {
+		          "source": {
+		            "type": "SqlSource",
+		            "sqlReaderQuery": "select * from emp"
+		          },
+		          "sink": {
+		            "type": "BlobSink"
+		          }
+		        },
+		        "Policy": {
+		          "concurrency": 1,
+		          "executionPriorityOrder": "NewestFirst",
+		          "style": "StartOfInterval",
+		          "retry": 0,
+		          "timeout": "01:00:00"
+		        }
+		      }
+		    ],
+		    "start": "2015-02-13T00:00:00Z",
+		    "end": "2015-02-14T00:00:00Z",
+		    "isPaused": false
+		  }
 		}
-
 	Beachten Sie Folgendes:
  
-	- Der Abschnitt "activities" enthält nur eine Aktivität, deren **type** auf **CopyActivity** festgelegt ist.
+	- Der Abschnitt "activities" enthält nur eine Aktivität, deren **type** auf **Copy** festgelegt ist.
 	- **Input** für die Aktivität ist auf **EmpOnPremSQLTable** und **output** auf **OutputBlobTable** festgelegt.
-	- Im Abschnitt **transformation** ist **SqlSource** als **Quelltyp** und **BlobSink** als **Senkentyp** angegeben. - Die SQL-Abfrage **select * from emp** ist für die **sqlReaderQuery**-Eigenschaft von **SqlSource** angegeben.
+	- Im Abschnitt **transformation** ist **SqlSource** als **Quelltyp** und **BlobSink** als **Senkentyp** angegeben. - Die SQL-Abfrage **select \* from emp** ist für die **sqlReaderQuery**-Eigenschaft von **SqlSource** angegeben.
 
 	Ersetzen Sie den Wert der **start**-Eigenschaft durch den aktuellen Tag und den Wert der **end**-Eigenschaft durch den nächsten Tag. Die Start- und Endzeit von Datums-/Uhrzeitangaben müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Angabe für **end** ist optional, wird aber in diesem Lernprogramm verwendet.
 	
-	Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9/9/9999** an.
+	Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "\*\*start + 48 Stunden\*\*" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9/9/9999** an.
 	
 	Durch Angabe des aktiven Zeitraums für eine Pipeline definieren Sie die Dauer, für die die Datenslices verarbeitet werden, basierend auf den **Verfügbarkeitseigenschaften**, die für jede Azure Data Factory-Tabelle definiert wurden.
 	
 	Im obigen Beispiel ergeben sich 24 Datenslices, da jede Stunde ein Datenslice erstellt wird.
 	
-2. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um das Dataset bereitzustellen (eine Tabelle ist ein rechteckiges Dataset). Vergewissern Sie sich, dass auf der Titelleiste **PIPELINE ERFOLGREICH BEREITGESTELLT** angezeigt wird.
+2. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um das Dataset bereitzustellen \(eine Tabelle ist ein rechteckiges Dataset\). Vergewissern Sie sich, dass auf der Titelleiste **PIPELINE ERFOLGREICH BEREITGESTELLT** angezeigt wird.
 5. Schließen Sie jetzt das Blatt **Editor**, indem Sie auf **X** klicken. Klicken Sie erneut auf **X**, um das Blatt "ADFTutorialDataFactory" mit der Symbolleiste und Strukturansicht zu schließen. Wenn die Meldung **Ihre nicht gespeicherten Änderungen werden verworfen** angezeigt wird, klicken Sie auf **OK**.
 6. Sie sollten sich nun wieder auf dem Blatt **DATA FACTORY** für **ADFTutorialOnPremDF** befinden.
 
@@ -422,12 +420,12 @@ In diesem Schritt erstellen Sie eine **Pipeline** mit einer **Kopieraktivität**
 
 	![Diagrammansicht][image-data-factory-diagram-view]
 
-	Sie können die Ansicht vergrößern, verkleinern, auf 100 % anpassen, an die Fenstergröße anpassen, Pipelines und Tabellen automatisch positionieren und Informationen zur Datenherkunft anzeigen (d. h. vor- und nachgelagerte Elemente ausgewählter Elemente hervorheben). Sie können auf ein Objekt (in der Ein-/Ausgabetabelle oder Pipeline) doppelklicken, um seine Eigenschaften anzuzeigen.
+	Sie können die Ansicht vergrößern, verkleinern, auf 100 % anpassen, an die Fenstergröße anpassen, Pipelines und Tabellen automatisch positionieren und Informationen zur Datenherkunft anzeigen \(d. h. vor- und nachgelagerte Elemente ausgewählter Elemente hervorheben\). Sie können auf ein Objekt \(in der Ein-/Ausgabetabelle oder Pipeline\) doppelklicken, um seine Eigenschaften anzuzeigen.
 
 ## Schritt 5: Überwachen der Datasets und Pipelines
 In diesem Schritt verwenden Sie das Azure-Portal zur Überwachung der Aktivitäten in einer Azure Data Factory. Sie können auch PowerShell-Cmdlets zum Überwachen von Datasets und Pipelines verwenden. Einzelheiten zur Verwendung von Cmdlets für die Überwachung finden Sie unter [Überwachen und Verwalten von Azure Data Factory mit PowerShell][monitor-manage-powershell].
 
-1. Navigieren Sie zum **Azure-Vorschauportal** (falls Sie es geschlossen haben).
+1. Navigieren Sie zum **Azure-Vorschauportal** \(falls Sie es geschlossen haben\).
 2. Wenn das Blatt für **ADFTutorialOnPremDF** nicht geöffnet ist, klicken Sie im **Startmenü** zum Öffnen auf **ADFTutorialOnPremDF**.
 3. Auf diesem Blatt sollten die **Anzahl** und **Namen** der erstellten Tabellen und der Pipeline angezeigt werden.
 
@@ -444,11 +442,11 @@ In diesem Schritt verwenden Sie das Azure-Portal zur Überwachung der Aktivität
     
 
 	-  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set AzureDataFactorySliceStatus** oder durch Klicken auf **Ausführen** auf dem Blatt **SLICE** des Slices.
-	-  Der Status des Slices ändert sich aufgrund einer Ausführung (z. B. Ausführung gestartet, Ausführung mit Fehler beendet, Ausführung erfolgreich beendet usw.).
+	-  Der Status des Slices ändert sich aufgrund einer Ausführung \(z. B. Ausführung gestartet, Ausführung mit Fehler beendet, Ausführung erfolgreich beendet usw.\).
  
-	Klicken Sie auf den Titel der Listen oder auf **...** (Auslassungspunkte), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
+	Klicken Sie auf den Titel der Listen oder auf **...** \(Auslassungspunkte\), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
 	
-	Zum Anzeigen der nach Start-/Endzeit sortierten Datenslices klicken Sie auf die Kachel **Datenslices (nach Slicezeit)**.
+	Zum Anzeigen der nach Start-/Endzeit sortierten Datenslices klicken Sie auf die Kachel **Datenslices \(nach Slicezeit\)**.
 
 7. Klicken Sie jetzt auf dem Blatt **Datasets** auf **OutputBlobTable**.
 
@@ -465,7 +463,7 @@ In diesem Schritt verwenden Sie das Azure-Portal zur Überwachung der Aktivität
 	![Blatt "Aktivitätsausführung – Details"][image-data-factory-activity-run-details]
 
 11. Klicken Sie auf **X**, um alle Fenster zu schließen, bis Sie sich wieder im Startfenster für **ADFTutorialOnPremDF** befinden.
-14. (optional) Klicken Sie auf **Pipelines**, dann auf **ADFTutorialOnPremDF,** und zeigen Sie Details zu den Eingabetabellen (Genutzt) oder Ausgabetabellen (Erstellt) an.
+14. \(optional\) Klicken Sie auf **Pipelines**, dann auf **ADFTutorialOnPremDF,** und zeigen Sie Details zu den Eingabetabellen \(Genutzt\) oder Ausgabetabellen \(Erstellt\) an.
 15. Verwenden Sie Tools wie z. B. **Azure Storage-Explorer**, um die Ausgabe zu überprüfen.
 
 	![Azure Storage-Explorer][image-data-factory-stroage-explorer]
@@ -512,7 +510,7 @@ Dieser Abschnitt beschreibt das Erstellen und Registrieren eines Gateways mit Az
 		PS C:\> $Key = New-AzureDataFactoryGatewayKey -GatewayName MyGateway -ResourceGroupName ADF -DataFactoryName $df 
 
 	
-4. Wechseln Sie in Azure PowerShell zum Ordner **C:\Programme\Microsoft Data Management Gateway\1.0\PowerShellScript\, und führen Sie das Skript **RegisterGateway.ps1** aus, das mit der lokalen Variablen **$Key** verknüpft ist, wie im folgenden Befehl dargestellt. Sie registrieren damit den Client-Agent auf dem Computer mit dem logischen Gateway, das Sie zuvor erstellt haben.
+4. Wechseln Sie in Azure PowerShell zum Ordner **C:\\Programme\\Microsoft Data Management Gateway\\1.0\\PowerShellScript\\, und führen Sie das Skript **RegisterGateway.ps1** aus, das mit der lokalen Variablen **$Key** verknüpft ist, wie im folgenden Befehl dargestellt. Sie registrieren damit den Client-Agent auf dem Computer mit dem logischen Gateway, das Sie zuvor erstellt haben.
 
 		PS C:\> .\RegisterGateway.ps1 $Key.GatewayKey
 		
@@ -627,4 +625,4 @@ Sie können ein Gateway mit dem **Remove-AzureDataFactoryGateway**-Cmdlet entfer
 
 [image-data-factory-preview-portal-storage-key]: ./media/data-factory-get-started/PreviewPortalStorageKey.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

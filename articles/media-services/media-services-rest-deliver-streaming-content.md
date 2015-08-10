@@ -13,18 +13,21 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/24/2015" 
+	ms.date="07/23/2015" 
 	ms.author="juliako"/>
 
 
 #Gewusst wie: Bereitstellen von Streaminginhalten
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
+> [AZURE.SELECTOR]
+- [.NET](media-services-deliver-streaming-content.md)
+- [REST](media-services-rest-deliver-streaming-content.md)
+- [Portal](media-services-manage-content.md#publish)
 
 ##Übersicht
 
 
-Sie können einen MP4-Satz mit adaptiver Bitrate streamen, indem Sie einen OnDemand-Streaminglocator und eine Streaming-URL erstellen. Im Thema [Codieren eines Medienobjekts](media-services-rest-encode-asset.md) wird die Codierung in einen MP4-Satz mit adaptiver Bitrate erläutert. Bevor Sie einen Locator erstellen, sollten Sie eine Übermittlungsrichtlinie für Medienobjekte konfigurieren, wie in [diesem](media-services-rest-configure-asset-delivery-policy.md) Thema beschrieben.
+Sie können einen MP4-Satz mit adaptiver Bitrate streamen, indem Sie einen OnDemand-Streaminglocator und eine Streaming-URL erstellen. Im Thema [Codieren eines Medienobjekts](media-services-rest-encode-asset.md) wird die Codierung in einen MP4-Satz mit adaptiver Bitrate erläutert. Wenn Ihr Inhalt verschlüsselt ist, konfigurieren Sie vor dem Erstellen eines Locators die Bereitstellungsrichtlinie für Medienobjekte \(wie in [diesem](media-services-rest-configure-asset-delivery-policy.md) Thema beschrieben\).
 
 Sie können auch einen OnDemand-Streaminglocator zum Erstellen von URLs verwenden, die auf MP4-Dateien verweisen, die progressiv heruntergeladen werden können.
 
@@ -37,9 +40,9 @@ Im [folgenden](#types) Abschnitt finden Sie die Enumerationstypen, deren Werte i
 Verfahren Sie zum Erstellen des OnDemand-Streaminglocators und Abrufen von URLs wie folgt:
 
 
-   1. Definieren Sie eine Zugriffsrichtlinie.
+   1. Wenn der Inhalt verschlüsselt ist, definieren Sie eine Zugriffsrichtlinie.
    2. Erstellen Sie einen OnDemand-Streaminglocator.
-   3. Wenn Sie ein Streaming planen, rufen Sie die Streaming-Manifestdatei (ISM) im Medienobjekt ab. 
+   3. Wenn Sie ein Streaming planen, rufen Sie die Streaming-Manifestdatei \(ISM\) im Medienobjekt ab. 
    		
 	Wenn Sie einen progressiven Download ausführen möchten, rufen Sie die Namen der MP4-Dateien im Medienobjekt ab. 
    4. Erstellen Sie URLs für die Manifestdatei oder MP4-Dateien. 
@@ -131,14 +134,14 @@ Beispiel:
 
 	http://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny.ism/manifest
 
-HLS: **Path** + Manifestdateiname + "/manifest(format=m3u8-aapl)"
+HLS: **Path** + Manifestdateiname + "/manifest\(format=m3u8-aapl\)"
 
 Beispiel:
 
 	http://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny.ism/manifest(format=m3u8-aapl)
 
 
-DASH: **Path** + Manifestdateiname + "/manifest(format=mpd-time-csf)"
+DASH: **Path** + Manifestdateiname + "/manifest\(format=mpd-time-csf\)"
 
 
 Beispiel:
@@ -175,4 +178,4 @@ Beispiel:
         OnDemandOrigin = 2,
     } 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

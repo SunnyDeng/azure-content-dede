@@ -1,8 +1,7 @@
 <properties 
     pageTitle="Elastic Scale – Sicherheitskonfigurationen" 
     description="Einrichten von x409-Zertifikaten für die Verschlüsselung" 
-    services="sql-database" 
-	documentationCenter="" 
+    services="sql-database" documentationCenter="" 
     manager="jhubbard" 
     authors="sidneyh"/>
 
@@ -28,7 +27,7 @@ Zertifikate werden auf zwei Arten konfiguriert.
 
 ## So rufen Sie Zertifikate ab
 
-Zertifikate können von öffentlichen Zertifizierungsstellen (CAs) oder vom [Windows-Zertifikatdienst](http://msdn.microsoft.com/library/windows/desktop/aa376539.aspx) abgerufen werden. Dies sind die bevorzugten Methoden für den Erhalt von Zertifikaten.
+Zertifikate können von öffentlichen Zertifizierungsstellen \(CAs\) oder vom [Windows-Zertifikatdienst](http://msdn.microsoft.com/library/windows/desktop/aa376539.aspx) abgerufen werden. Dies sind die bevorzugten Methoden für den Erhalt von Zertifikaten.
 
 Wenn diese Optionen nicht verfügbar sind, können Sie **selbstsignierte Zertifikate** generieren.
  
@@ -85,11 +84,11 @@ Clientzertifikate sind erforderlich, um Anforderungen an den Dienst zu authentif
 8.    [Konfigurieren der zulässigen Clients in der Dienstkonfigurationsdatei](Configure#Allowed#Clients#in#the#Service#Configuration#File)
 
 ### So verwenden Sie vorhandene Clientzertifikate
-1.    [Suchen des öffentlichen Schlüssels der Zertifizierungsstelle](Find#CA#Public Key)
+1.    \[Suchen des öffentlichen Schlüssels der Zertifizierungsstelle\]\(Find\#CA\#Public Key\)
 2.    [Hochladen eines CA-Zertifikats zum Clouddienst](Upload#CA#certificate#to#cloud#service)
 3.    [Aktualisieren des CA-Zertifikats in der Dienstkonfigurationsdatei](Update#CA#Certificate#in#Service#Configuration#File)
 4.    [Kopieren der Clientfingerabdrücke](Copy#Client#Certificate#Thumbprints)
-5.    [Konfigurieren der zulässigen Clients in der Dienstkonfigurationsdatei](Configure#Allowed#Clients#in#the#Service#Configuration File)
+5.    \[Konfigurieren der zulässigen Clients in der Dienstkonfigurationsdatei\]\(Configure\#Allowed\#Clients\#in\#the\#Service\#Configuration File\)
 6.    [Konfigurieren der Sperrprüfung für Clientzertifikate](Configure#Client#Certificate#Revocation#Check)
 
 ## Zulässige IP-Adressen
@@ -146,13 +145,13 @@ Das Format wird in der Dokumentation über Netzwerk-Zugriffsteuerungslisten erl�
 
 Es werden zwei unterschiedliche Mechanismen zum Erkennen und Verhindern von Dienstverweigerungsangriffen unterstützt:
 
-*    Beschränken der Anzahl gleichzeitiger Anforderungen pro Remotehost (standardmäßig deaktiviert)
-*    Beschränken der Zugriffsrate pro Remotehost (standardmäßig aktiviert)
+*    Beschränken der Anzahl gleichzeitiger Anforderungen pro Remotehost \(standardmäßig deaktiviert\)
+*    Beschränken der Zugriffsrate pro Remotehost \(standardmäßig aktiviert\)
 
 Sie basieren auf den Funktionen, die unter der dynamischen IP-Sicherheit in IIS eingehender dokumentiert sind. Wenn Sie diese Konfiguration ändern, beachten Sie die folgenden Faktoren:
 
 * Das Verhalten der Proxys und Netzwerkadressübersetzungs-Geräte über die Remotehostinformationen
-* Jede Anforderung an eine Ressource in der Web-Rolle wird berücksichtigt(z. B. das Laden von Skripts, Images usw.).
+* Jede Anforderung an eine Ressource in der Web-Rolle wird berücksichtigt\(z. B. das Laden von Skripts, Images usw.\).
 
 ## Einschränken der Anzahl gleichzeitiger Zugriffe
 
@@ -196,7 +195,7 @@ Führen Sie folgende Befehle aus:
 
 Zur Anpassung:
 
-*    -n mit der Dienst-URL. Platzhalter ("CN=*.cloudapp.net") und alternative Namen ("CN=myservice1.cloudapp.net, CN=myservice2.cloudapp.net") werden unterstützt.
+*    -n mit der Dienst-URL. Platzhalter \("CN=\*.cloudapp.net"\) und alternative Namen \("CN=myservice1.cloudapp.net, CN=myservice2.cloudapp.net"\) werden unterstützt.
 *    -e mit dem Ablaufdatum des Zertifikats. Erstellen Sie ein sicheres Kennwort, und geben Sie es bei Aufforderung an.
 
 ## Erstellen einer PFX-Datei für ein selbstsigniertes SSL-Zertifikat
@@ -205,12 +204,12 @@ Führen Sie folgende Befehle aus:
 
         pvk2pfx -pvk MySSL.pvk -spc MySSL.cer
 
-Geben Sie das Kennwort ein, und exportieren Sie dann das Zertifikat mit den folgenden Optionen: * Ja, privaten Schlüssel exportieren * Alle erweiterten Eigenschaften exportieren
+Geben Sie das Kennwort ein, und exportieren Sie dann das Zertifikat mit den folgenden Optionen: \* Ja, privaten Schlüssel exportieren \* Alle erweiterten Eigenschaften exportieren
 
 ## Exportieren des SSL-Zertifikats aus dem Zertifikatspeicher
 
 * Suchen des Zertifikats
-* Klicken Sie auf "Aktionen -> Alle Aufgaben -> Exportieren..."
+* Klicken Sie auf "Aktionen -\> Alle Aufgaben -\> Exportieren..."
 * Exportieren Sie das Zertifikats mit den folgenden Optionen in eine.PFX-Datei:
     * Ja, privaten Schlüssel exportieren
     * Wenn möglich, alle Zertifikate im Zertifizierungspfad einbeziehen *Alle erweiterten Eigenschaften exportieren
@@ -236,7 +235,7 @@ Führen Sie die folgenden Schritten für alle Konto/Computer aus, die mit dem Di
 
 ## Deaktivieren der zertifikatbasierten Clientauthentifizierung
 
-Nur zertifikatbasierte Clientauthentifizierung wird unterstützt, und deren Deaktivierung lässt den öffentlichen Zugriff auf die Dienstendpunkte zu, sofern nicht andere Mechanismen eingerichtet wurden (z. B. Microsoft Azure Virtual Network).
+Nur zertifikatbasierte Clientauthentifizierung wird unterstützt, und deren Deaktivierung lässt den öffentlichen Zugriff auf die Dienstendpunkte zu, sofern nicht andere Mechanismen eingerichtet wurden \(z. B. Microsoft Azure Virtual Network\).
 
 Ändern Sie diese Einstellungen in der Dienstkonfigurationsdatei zu "false", um die Funktion zu deaktivieren:
 
@@ -278,7 +277,7 @@ Wenn die Datei mit dem öffentlichen Schlüssel nicht verfügbar ist, exportiere
 * Schließen Sie das Dialogfeld **Zertifikat**.
 * Suchen des Zertifikats
     * Suchen Sie nach der oben aufgeführten Zertifizierungsstelle.
-* Klicken Sie auf "Aktionen -> Alle Aufgaben -> Exportieren..."
+* Klicken Sie auf "Aktionen -\> Alle Aufgaben -\> Exportieren..."
 * Exportieren Sie das Zertifikat mit den folgenden Optionen in eine .CER-Datei:
     * **Nein, privaten Schlüssel nicht exportieren**
     * Wenn möglich, alle Zertifikate im Zertifizierungspfad einbeziehen
@@ -345,7 +344,7 @@ Jede Person, für die ein Clientzertifikat ausgestellt wurde, sollte das Schlüs
     * "Alle erweiterten Eigenschaften mit einbeziehen" aktiviert
 
 ## Kopieren der Clientzertifikatfingerabdrücke
-Jede Person, für die ein Clientzertifikat ausgegeben wurde, muss folgende Schritte zum Abrufen des Fingerabdrucks ihres Zertifikats ausführen, das der Dienstkonfigurationsdatei hinzugefügt wird: * Ausführen von "certmgr.exe" * Auswählen der Registerkarte "Persönlich" * Doppelklicken auf das Clientzertifikat für die Authentifizierung * Klicken auf die Registerkarte "Details" im angezeigten Dialogfeld "Zertifikat" * Überprüfen, ob unter "Anzeigen" die Option "Alle" ausgewählt ist * Auswählen des Felds "Fingerabdruck" aus der Liste * Kopieren des Werts des Fingerabdrucks ** Löschen nicht sichtbarer Unicode-Zeichen vor der ersten Ziffer ** Löschen aller Leerzeichen
+Jede Person, für die ein Clientzertifikat ausgegeben wurde, muss folgende Schritte zum Abrufen des Fingerabdrucks ihres Zertifikats ausführen, das der Dienstkonfigurationsdatei hinzugefügt wird: \* Ausführen von "certmgr.exe" \* Auswählen der Registerkarte "Persönlich" \* Doppelklicken auf das Clientzertifikat für die Authentifizierung \* Klicken auf die Registerkarte "Details" im angezeigten Dialogfeld "Zertifikat" \* Überprüfen, ob unter "Anzeigen" die Option "Alle" ausgewählt ist \* Auswählen des Felds "Fingerabdruck" aus der Liste \* Kopieren des Werts des Fingerabdrucks \*\* Löschen nicht sichtbarer Unicode-Zeichen vor der ersten Ziffer \*\* Löschen aller Leerzeichen
 
 ## Konfigurieren der zulässigen Clients in der Dienstkonfigurationsdatei
 
@@ -369,12 +368,12 @@ Anpassen:
 
     MyID.pvk and MyID.cer with the filename for the encryption certificate
 
-Geben Sie das Kennwort ein, und exportieren Sie dann das Zertifikat mit den folgenden Optionen: * Ja, privaten Schlüssel exportieren * Alle erweiterten Eigenschaften exportieren * Sie benötigen das Kennwort zum Hochladen des Zertifikats in den Clouddienst.
+Geben Sie das Kennwort ein, und exportieren Sie dann das Zertifikat mit den folgenden Optionen: \* Ja, privaten Schlüssel exportieren \* Alle erweiterten Eigenschaften exportieren \* Sie benötigen das Kennwort zum Hochladen des Zertifikats in den Clouddienst.
 
 ## Exportieren des Verschlüsselungszertifikats aus dem Zertifikatspeicher
 
 *    Suchen des Zertifikats
-*    Klicken Sie auf "Aktionen -> Alle Aufgaben -> Exportieren..."
+*    Klicken Sie auf "Aktionen -\> Alle Aufgaben -\> Exportieren..."
 *    Exportieren Sie das Zertifikats mit den folgenden Optionen in eine.PFX-Datei: 
   *    Ja, privaten Schlüssel exportieren
   *    Wenn möglich, alle Zertifikate im Zertifizierungspfad einbeziehen 
@@ -402,7 +401,7 @@ Aktualisieren Sie den Fingerabdruckwert der folgenden Einstellungen in der Diens
 Folgen Sie diesen Schritten:
 
 1. Führen Sie "mmc.exe" aus.
-2. Datei -> Snap-In hinzufügen/entfernen…
+2. Datei -\> Snap-In hinzufügen/entfernen…
 3. Wählen Sie **Zertifikate** aus.
 4. Klicken Sie auf **Hinzufügen**.
 5. Wählen Sie den Speicherort des Zertifikats aus.
@@ -424,7 +423,7 @@ Gehen Sie im **Zertifikatexport-Assistenten** wie folgt vor:
 6. Aktivieren Sie **Kennwort**.
 7. Geben Sie ein sicheres Kennwort ein, und bestätigen Sie es.
 8. Klicken Sie auf **Weiter**.
-9. Geben einen Dateinamen für das Speichern des Zertifikats ein, oder suchen Sie danach (verwenden Sie die Dateierweiterung .PFX).
+9. Geben einen Dateinamen für das Speichern des Zertifikats ein, oder suchen Sie danach \(verwenden Sie die Dateierweiterung .PFX\).
 10. Klicken Sie auf **Weiter**.
 11. Klicken Sie auf **Fertig stellen**.
 12. Klicken Sie auf **OK**.
@@ -464,7 +463,7 @@ Im [Azure-Verwaltungsportal](http://portal.azure.com/).
 
 ## Weitere Überlegungen zur Sicherheit
  
-Die in diesem Dokument beschriebenen SSL-Einstellungen verschlüsseln die Kommunikation zwischen dem Dienst und seinen Clients, wenn der HTTPS-Endpunkt verwendet wird. Dies ist wichtig, da die Anmeldeinformationen für den Datenbankzugriff und andere vertrauliche Informationen in der Kommunikation enthalten sind. Beachten Sie jedoch, dass der Dienst den internen Status, einschließlich der Anmeldeinformationen, in den internen Tabellen in der Microsoft Azure SQL-Datenbank, die Sie in Ihrem Microsoft Azure-Abonnement für Metadatenspeicher bereitgestellt haben, beibehält. Diese Datenbank wurde im Rahmen der folgenden Einstellung in der Dienstkonfigurationsdatei (.CSCFG-Datei) definiert:
+Die in diesem Dokument beschriebenen SSL-Einstellungen verschlüsseln die Kommunikation zwischen dem Dienst und seinen Clients, wenn der HTTPS-Endpunkt verwendet wird. Dies ist wichtig, da die Anmeldeinformationen für den Datenbankzugriff und andere vertrauliche Informationen in der Kommunikation enthalten sind. Beachten Sie jedoch, dass der Dienst den internen Status, einschließlich der Anmeldeinformationen, in den internen Tabellen in der Microsoft Azure SQL-Datenbank, die Sie in Ihrem Microsoft Azure-Abonnement für Metadatenspeicher bereitgestellt haben, beibehält. Diese Datenbank wurde im Rahmen der folgenden Einstellung in der Dienstkonfigurationsdatei \(.CSCFG-Datei\) definiert:
 
     <Setting name="ElasticScaleMetadata" value="Server=…" />
 
@@ -472,4 +471,4 @@ In dieser Datenbank gespeicherte Anmeldeinformationen werden verschlüsselt. Ste
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/06/2015"
+   ms.date="07/23/2015"
    ms.author="larryfr"/>
 
 # Ausführen von Hive-Abfragen mithilfe der Abfragekonsole
@@ -23,6 +23,7 @@
 In diesem Artikel erfahren Sie, wie Sie mit der HDInsight-Abfragekonsole Hive-Abfragen auf einem Hadoop-Cluster in HDInsight in Ihrem Browser ausführen.
 
 > [AZURE.NOTE]Die Abfragekonsole ist nur auf Windows-basierten HDInsight-Clustern verfügbar.
+
 
 ##<a id="prereq"></a>Voraussetzungen
 
@@ -34,9 +35,7 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
 
 ##<a id="run"></a> Ausführen von Hive-Abfragen mithilfe der Abfragekonsole
 
-1. Öffnen Sie das [Azure-Portal](https://manage.windowsazure.com), und wählen Sie Ihren HDInsight-Cluster aus. Wählen Sie am Ende der Seite die Option **Abfragekonsole** aus. Geben Sie nach der entsprechenden Aufforderung den Benutzer ein, den Sie beim Erstellen des Clusters eingegeben haben.
-
-    > [AZURE.NOTE]Sie können die Abfrage-Konsole auch durch Eingabe von **https://CLUSTERNAME.azurehdinsight.net** in Ihrem Browser erreichen.
+1. Öffnen Sie einen Webbrowser, und navigieren Sie zu __https://CLUSTERNAME.azurehdinsight.net__, wobei __CLUSTERNAME__ der Name des HDInsight-Clusters ist. Geben Sie nach der entsprechenden Aufforderung den Benutzernamen samt Kennwort ein, den Sie beim Erstellen des Clusters eingegeben haben. 
 
 2. Wählen Sie am Seitenanfang in den Links die Option **Hive-Editor** aus. Dadurch wird ein Formular angezeigt, mit dem Sie HiveQL-Anweisungen eingeben können, die Sie auf dem HDInsight-Cluster ausführen möchten.
 
@@ -55,13 +54,13 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
     * **TABELLE LÖSCHEN**: Löscht Tabelle und Datendatei, falls die Tabelle bereits vorhanden ist.
     * **EXTERNE TABELLE ERSTELLEN**: Erstellt eine neue "externe" Tabelle in Hive. Externe Tabellen dienen nur zum Speichern der Tabellendefinition in Hive. Die Daten verbleiben am ursprünglichen Speicherort.
 
-    > [AZURE.NOTE]Wenn erwartet wird, dass die zugrunde liegenden Daten über eine externe Quelle (z. B. einen automatisierten Prozess zum Hochladen von Daten) oder über einen anderen MapReduce-Vorgang aktualisiert, aber von Hive immer die neuesten Daten verwendet werden, sollten externe Tabellen verwendet werden.
+    > [AZURE.NOTE]Wenn erwartet wird, dass die zugrunde liegenden Daten über eine externe Quelle \(z. B. einen automatisierten Prozess zum Hochladen von Daten\) oder über einen anderen MapReduce-Vorgang aktualisiert, aber von Hive immer die neuesten Daten verwendet werden, sollten externe Tabellen verwendet werden.
     >
     > Durch das Löschen einer externen Tabelle werden **nicht** die Daten, sondern nur die Tabellendefinitionen gelöscht.
 
     * **ZEILENFORMAT**: Teilt Hive mit, wie die Daten formatiert werden. In diesem Fall werden die Felder in den einzelnen Protokollen durch Leerzeichen getrennt.
-    * **SPEICHERORT DER TEXTDATEI**: Teilt Hive den Speicherort der Daten (das Verzeichnis "Beispiel/Daten") und die Information mit, dass die Speicherung als Text erfolgt.
-    * **AUSWÄHLEN**: Wählt die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **[ERROR]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
+    * **SPEICHERORT DER TEXTDATEI**: Teilt Hive den Speicherort der Daten \(das Verzeichnis "Beispiel/Daten"\) und die Information mit, dass die Speicherung als Text erfolgt.
+    * **AUSWÄHLEN**: Wählt die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **\[ERROR\]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
 
 2. Klicken Sie auf **Senden**. Die **Auftragssitzung** am unteren Seitenrand sollte Details für den Auftrag anzeigen.
 
@@ -120,4 +119,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

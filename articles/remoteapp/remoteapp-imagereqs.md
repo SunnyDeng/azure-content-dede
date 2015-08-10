@@ -31,16 +31,16 @@ Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll,
 - Das Image enthält keine Daten, die verloren gehen können.
 - Die Größe des Images sollte ein Vielfaches der Einheit MB betragen. Wenn Sie versuchen, ein Abbild hochzuladen, das kein exaktes Vielfaches ist, treten beim Upload Fehler auf.
 - Das Abbild darf nicht größer als 127 GB sein. 
-- Es muss sich auf einer VHD-Datei befinden (VHDX-Dateien werden derzeit nicht unterstützt).
+- Es muss sich auf einer VHD-Datei befinden \(VHDX-Dateien werden derzeit nicht unterstützt\).
 - Die VHD darf kein virtueller Computer der 2. Generation sein.
 - Die VHD kann eine feste Größe haben oder dynamisch erweiterbar sein. Wir empfehlen eine dynamisch erweiterbare VHD, da das Hochladen dieser in Azure weniger Zeit in Anspruch nimmt.
-- Der Datenträger muss mit der Master Boot Record (MBR)-Partitionierung initialisiert werden. Die GPT-Partitionierung (GUID-Partitionstabelle) wird nicht unterstützt. 
+- Der Datenträger muss mit der Master Boot Record \(MBR\)-Partitionierung initialisiert werden. Die GPT-Partitionierung \(GUID-Partitionstabelle\) wird nicht unterstützt. 
 - Die VHD muss eine einzige Installation von Windows Server 2012 R2 enthalten. Sie kann mehrere Volumes enthalten, jedoch nur eines mit einer Windows-Installation. 
-- Die RDSH-Rolle (Remote Desktop Session Host) und das Desktopdarstellung-Feature müssen installiert sein.
+- Die RDSH-Rolle \(Remote Desktop Session Host\) und das Desktopdarstellung-Feature müssen installiert sein.
 - Die Remotedesktop-Verbindungsbroker-Rolle darf *nicht* installiert sein.
-- Encrypting File System (EFS) muss deaktiviert sein.
+- Encrypting File System \(EFS\) muss deaktiviert sein.
 - Das Abbild muss mit SYSPREP unter Verwendung der Parameter **/oobe /generalize /shutdown** vorbereitet werden. Verwenden Sie nicht den Parameter **/mode:vm**.
 - VHD-Uploads aus einer Momentaufnahmenkette werden nicht unterstützt.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

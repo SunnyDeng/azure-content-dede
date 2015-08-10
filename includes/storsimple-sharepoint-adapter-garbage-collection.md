@@ -1,51 +1,35 @@
-<properties 
-   pageTitle="StorSimple Adapter for SharePoint - garbage collection | Microsoft Azure"
-   description="Describes how to delete BLOBs immediately when using StorSimple Adapter for SharePoint."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="carolz"
-   editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="07/10/2015"
-   ms.author="v-sharos" />
 
-In this procedure, you will:
+Dieses Verfahren umfasst Folgendes:
 
-1. [Prepare to run the Maintainer executable](#to-prepare-to-run-the-maintainer) .
+1. [Vorbereiten der Ausführung von „Maintainer.exe“](#to-prepare-to-run-the-maintainer)
 
-2. [Prepare the content database and Recycle Bin for immediate deletion of orphaned BLOBs](#to-prepare-the-content-database-and-recycle-bin-to-immediately-delete-orphaned-blobs).
+2. [Vorbereiten der Inhaltsdatenbank und des Papierkorbs für die sofortige Löschung verwaister BLOBs](#to-prepare-the-content-database-and-recycle-bin-to-immediately-delete-orphaned-blobs)
 
-3. [Run Maintainer.exe](#to-run-the-maintainer).
+3. [Ausführen von „Maintainer.exe“](#to-run-the-maintainer)
 
-4. [Revert the content database and Recycle Bin settings](#to-revert-the-content-database-and-recycle-bin-settings).
+4. [Wiederherstellen der Einstellungen von Inhaltsdatenbank und Papierkorb](to-revert-the-content-database-and-recycle-bin-settings)
 
-#### To prepare to run the Maintainer
+#### So bereiten Sie die Ausführung von Maintainer vor
 
-1. On the Web front-end server, open the SharePoint 2013 Management Shell as an administrator.
+1. Öffnen Sie auf dem Front-End-Webserver die SharePoint 2013-Verwaltungsshell als Administrator.
 
-2. Navigate to the folder <boot drive>:\Program Files\Microsoft SQL Remote Blob Storage 10.50\Maintainer\.
+2. Navigieren Sie zum folgenden Ordner: <boot drive>:\\Programme\\Microsoft SQL Remote Blob Storage 10.50\\Maintainer.
 
-3. Rename **Microsoft.Data.SqlRemoteBlobs.Maintainer.exe.config** to **web.config**.
+3. Benennen Sie **Microsoft.Data.SqlRemoteBlobs.Maintainer.exe.config** in **web.config** um.
 
-4. Use `aspnet_regiis -pdf connectionStrings` to decrypt the web.config file.
+4. Entschlüsseln Sie die Datei „web.config“ mithilfe von `aspnet_regiis -pdf connectionStrings`.
 
-5. In the decrypted web.config file, under the **<connectionStrings>** node, add the connection string for your SQL server instance and the content database name. See the following example.
+5. Fügen Sie der entschlüsselten Datei „web.config“ unter dem Knoten **<connectionStrings>** die Verbindungszeichenfolge für Ihre SQL Server-Instanz und den Namen der Inhaltsdatenbank hinzu. Siehe folgendes Beispiel.
 
     `<add name=”RBSMaintainerConnectionWSSContent” connectionString="Data Source=SHRPT13-SQL12\SHRPT13;Initial Catalog=WSS_Content;Integrated Security=True;Application Name=&quot;Remote Blob Storage Maintainer for WSS_Content&quot;" providerName="System.Data.SqlClient" />`
 
-6. Use `aspnet_regiis –pef connectionStrings` to re-encrypt the web.config file. 
+6. Verschlüsseln Sie die Datei „web.config“ mithilfe von `aspnet_regiis –pef connectionStrings` wieder.
 
-7. Rename web.config to Microsoft.Data.SqlRemoteBlobs.Maintainer.exe.config. 
+7. Benennen Sie die Datei „Web.config“ in „Microsoft.Data.SqlRemoteBlobs.Maintainer.exe.config“ um.
 
-#### To prepare the content database and Recycle Bin to immediately delete orphaned BLOBs
+#### So bereiten Sie die Inhaltsdatenbank und den Papierkorb für die sofortige Löschung verwaister BLOBs vor
 
-1. On the SQL Server, in SQL Management Studio, run the following update queries for the target content database: 
+1. Führen Sie auf dem Computer mit SQL Server in SQL Management Studio die folgenden Updateabfragen für die Zielinhaltsdatenbank aus: 
 
        `use WSS_Content`
 
@@ -53,21 +37,21 @@ In this procedure, you will:
 
        `exec mssqlrbs.rbs_sp_set_config_value ‘delete_scan_period’ , ’time 00:00:00’`
 
-2. On the web front-end server, under **Central Administration**, edit the **Web Application General Settings** for the desired content database to temporarily disable the Recycle Bin. This action will also empty the Recycle Bin for any related site collections. To do this, click **Central Administration** -> **Application Management** -> **Web Applications (Manage web applications)** -> **SharePoint - 80** -> **General Application Settings**. Set the **Recycle Bin Status** to **OFF**.
+2. Bearbeiten Sie auf dem Front-End-Webserver unter **Zentraladministration** die allgemeinen Webanwendungseinstellungen für die gewünschte Inhaltsdatenbank, um den Papierkorb vorübergehend zu deaktivieren. Im Zuge dieser Aktion wird auch der Papierkorb für alle dazugehörigen Websitesammlungen geleert. Klicken Sie auf **Zentraladministration** -\> **Anwendungsverwaltung** -\> **Webanwendungen \(Webanwendungen verwalten\)** -\> **SharePoint - 80** -\> **Allgemeine Anwendungseinstellungen**. Legen Sie den Status des Papierkorbs auf **AUS** fest.
 
-    ![Web Application General Settings](./media/storsimple-sharepoint-adapter-garbage-collection/HCS_WebApplicationGeneralSettings-include.png)
+    ![Allgemeine Webanwendungseinstellungen](./media/storsimple-sharepoint-adapter-garbage-collection/HCS_WebApplicationGeneralSettings-include.png)
 
-#### To run the Maintainer
+#### So führen Sie Maintainer aus
 
-- On the web front-end server, in the SharePoint 2013 Management Shell, run the Maintainer as follows:
+- Verwenden Sie auf dem Front-End-Webserver in der SharePoint 2013-Verwaltungsshell Folgendes, um Maintainer auszuführen:
 
       `Microsoft.Data.SqlRemoteBlobs.Maintainer.exe -ConnectionStringName RBSMaintainerConnectionWSSContent -Operation GarbageCollection -GarbageCollectionPhases rdo`
 
-    >[AZURE.NOTE] Only the `GarbageCollection` operation is supported for StorSimple at this time. Also note that the parameters issued for Microsoft.Data.SqlRemoteBlobs.Maintainer.exe are case sensitive. 
+    >[AZURE.NOTE]Für StorSimple wird derzeit nur der `GarbageCollection`-Vorgang unterstützt. Beachten Sie außerdem, dass bei den für „Microsoft.Data.SqlRemoteBlobs.Maintainer.exe“ ausgegebenen Parametern die Groß-/Kleinschreibung beachtet werden muss.
  
-#### To revert the content database and Recycle Bin settings
+#### So stellen Sie die Einstellungen von Inhaltsdatenbank und Papierkorb wieder her
 
-1. On the SQL Server, in SQL Management Studio, run the following update queries for the target content database:
+1. Führen Sie auf dem Computer mit SQL Server in SQL Management Studio die folgenden Updateabfragen für die Zielinhaltsdatenbank aus:
 
       `use WSS_Content`
 
@@ -77,4 +61,6 @@ In this procedure, you will:
 
       `exec mssqlrbs.rbs_sp_set_config_value ‘orphan_scan_period’ , ’days 30’`
 
-2. On the web front-end server, in **Central Administration**, edit the **Web Application General Settings** for the desired content database to re-enable the Recycle Bin. To do this, click **Central Administration** -> **Application Management** -> **Web Applications (Manage web applications)** -> **SharePoint - 80** -> **General Application Settings**. Set the Recycle Bin Status to **ON**.
+2. Bearbeiten Sie auf dem Front-End-Webserver unter **Zentraladministration** die allgemeinen Webanwendungseinstellungen für die gewünschte Inhaltsdatenbank, um den Papierkorb wieder zu aktivieren. Klicken Sie auf **Zentraladministration** -\> **Anwendungsverwaltung** -\> **Webanwendungen \(Webanwendungen verwalten\)** -\> **SharePoint - 80** -\> **Allgemeine Anwendungseinstellungen**. Legen Sie den Status des Papierkorbs auf **EIN** fest.
+
+<!---HONumber=July15_HO5-->

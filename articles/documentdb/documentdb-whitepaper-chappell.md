@@ -24,11 +24,11 @@ Dieses Whitepaper führt Sie auch durch die folgenden Aspekte:
 
  - Verwenden des DocumentDB-Datenmodells, um JSON-Daten in Dokumente und Auflistungen innerhalb einer Datenbank zu speichern. 
  - Arbeiten mit Ihren Daten mithilfe von Clientbibliotheken, der RESTful-Zugriffsmethoden oder DocumentDB-SQL. 
- - Ausführen von Logik von der Datenbank durch Schreiben von gespeicherten Prozeduren (gespeicherte Prozeduren), Triggern oder benutzerdefinierten Funktionen (UDFs) und deren Speicherung in der Auflistung.
+ - Ausführen von Logik von der Datenbank durch Schreiben von gespeicherten Prozeduren \(gespeicherte Prozeduren\), Triggern oder benutzerdefinierten Funktionen \(UDFs\) und deren Speicherung in der Auflistung.
  - Auswählen einer Konsistenz-Option, um die Zuverlässigkeits- und Leistungsanforderungen Ihrer Anwendung zu erfüllen.
  - Auswählen einer Preisoption entsprechend Ihrer Durchsatzanforderungen.
 
 **Herunterladen von PDF-Dateien:** [ Introducing DocumentDB - Eine NoSQL-Datenbank für Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=511318)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

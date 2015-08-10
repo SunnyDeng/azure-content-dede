@@ -29,11 +29,11 @@ Moderne Anwendungen erzeugen während ihrer Ausführung eine enorme Menge an Inf
  
 ## Entwickeln
 - [Event Hubs – REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn790674.aspx)
-- [Event Hubs-Codebeispiele (in englischer Sprache)](https://code.msdn.microsoft.com/windowsazure/site/search?query=event%20hubs&f%5B0%5D.Value=event%20hubs&f%5B0%5D.Type=SearchText&ac=5)
+- [Event Hubs-Codebeispiele \(in englischer Sprache\)](https://code.msdn.microsoft.com/windowsazure/site/search?query=event%20hubs&f%5B0%5D.Value=event%20hubs&f%5B0%5D.Type=SearchText&ac=5)
  
 ## Verknüpfte Dienste
-- [Azure Storage](http://azure.microsoft.com/documentation/services/storage/) (in englischer Sprache)
+- [Azure Storage](http://azure.microsoft.com/documentation/services/storage/) \(in englischer Sprache\)
 - [HDInsight](http://azure.microsoft.com/documentation/services/hdinsight/)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

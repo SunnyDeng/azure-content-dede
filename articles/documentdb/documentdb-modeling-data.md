@@ -111,7 +111,7 @@ Nehmen Sie beispielsweise diesen JSON-Ausschnitt.
 		]
 	}
 
-So könnte eine Beitragsentität mit eingebetteten Kommentaren aussehen, wenn wir ein typisches Blog- oder CMS-System modellieren würden. Das Problem bei diesem Beispiel besteht darin, dass das Kommentar-Array **unbegrenzt** ist, d. h., es gibt (praktisch) keine Begrenzung hinsichtlich der Anzahl an Kommentaren zu einem einzelnen Beitrag. Dies wird zu einem Problem, da die Größe des Dokuments erheblich zunehmen kann.
+So könnte eine Beitragsentität mit eingebetteten Kommentaren aussehen, wenn wir ein typisches Blog- oder CMS-System modellieren würden. Das Problem bei diesem Beispiel besteht darin, dass das Kommentar-Array **unbegrenzt** ist, d. h., es gibt \(praktisch\) keine Begrenzung hinsichtlich der Anzahl an Kommentaren zu einem einzelnen Beitrag. Dies wird zu einem Problem, da die Größe des Dokuments erheblich zunehmen kann.
 
 > [AZURE.TIP]Dokumente in DocumentDB weisen eine Maximalgröße auf. Weitere Informationen dazu finden Sie unter [DocumentDB-Grenzen](documentdb-limits.md).
 
@@ -318,7 +318,7 @@ Wenn die Verknüpfungstabelle einfach nur zwei Informationen miteinander verbind
 Es gibt einen Autor, bei dem ich sofort weiß, welche Bücher er geschrieben hat, oder ich habe ein Buchdokument geladen, für das ich die IDs der Autoren kenne. Dadurch ersparen Sie sich Zwischenabfragen der Verknüpfungstabelle, wodurch wiederum die Anzahl der Serverroundtrips Ihrer Anwendung reduziert wird.
 
 ##<a id="WrapUp"></a>Hybriddatenmodelle##
-Wir haben jetzt gesehen wie Daten eingebettet (bzw. denormalisiert) werden und wie auf Daten verwiesen wird (bzw. wie sie normalisiert werden), und beide Modelle haben ihre Vor- und Nachteile.
+Wir haben jetzt gesehen wie Daten eingebettet \(bzw. denormalisiert\) werden und wie auf Daten verwiesen wird \(bzw. wie sie normalisiert werden\), und beide Modelle haben ihre Vor- und Nachteile.
 
 Doch es muss nicht immer ein Entweder-oder geben. Trauen Sie sich, die Systeme etwas zu vermischen.
 
@@ -367,7 +367,7 @@ Betrachten Sie das folgende JSON-Beispiel.
 		]
 	}
 
-Hier haben wir (hauptsächlich) das eingebettete Modell verwendet, bei dem Daten aus anderen Entitäten im übergeordneten Dokument eingebettet sind, in dem jedoch auf andere Daten verwiesen wird.
+Hier haben wir \(hauptsächlich\) das eingebettete Modell verwendet, bei dem Daten aus anderen Entitäten im übergeordneten Dokument eingebettet sind, in dem jedoch auf andere Daten verwiesen wird.
 
 Wenn Sie das Buchdokument betrachten, sehen Sie ein paar interessante Felder, wenn wir das Array der Autoren betrachten. Es gibt ein *id*-Feld, bei dem es sich um das Feld handelt, das für einen Rückverweis auf ein Autorendokument verwendet wird, üblicherweise in einem normalisierten Modell, es gibt jedoch auch die Felder *Name* und *ThumbnailUrl*. Wir hätten auch nur bei dem Feld *id* bleiben können, sodass sich die Anwendung alle zusätzlichen Informationen aus dem jeweiligen Autorendokument mithilfe der „Verknüpfung“ abruft, aber da unsere Anwendung den Namen des Autors und ein Miniaturbild mit jedem angezeigten Buch anzeigt, können wir einen Roundtrip zum Server pro Buch in einer Liste speichern, indem Sie **einige** Daten vom Autor denormalisieren.
 
@@ -387,9 +387,9 @@ Weitere Informationen zu Azure DocumentDB finden Sie auf der [Dokumentationsseit
 
 Informationen zum Optimieren von Indizes in Azure DocumentDB finden Sie im Artikel über die [Indizierungsrichtlinien](documentdb-indexing-policies.md).
 
-Informationen zur horizontalen Partitionierung („Sharding“) Ihrer Daten auf mehreren Partitionen finden Sie unter [Partitionieren von Daten in DocumentDB](documentdb-partition-data.md).
+Informationen zur horizontalen Partitionierung \(„Sharding“\) Ihrer Daten auf mehreren Partitionen finden Sie unter [Partitionieren von Daten in DocumentDB](documentdb-partition-data.md).
 
 Anleitungen für die Datenmodellierung und das Sharding für mehrinstanzenfähige Anwendungen finden Sie unter [Skalieren einer mehrinstanzenfähigen Anwendung mit Azure DocumentDB](http://blogs.msdn.com/b/documentdb/archive/2014/12/03/scaling-a-multi-tenant-application-with-azure-documentdb.aspx).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

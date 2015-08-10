@@ -18,8 +18,8 @@
 	ms.author="kathydav"/>
 
 
-# Verbinden virtueller Computer mit einem virtuellen Netzwerk oder einem Clouddienst
+# Verbinden virtueller Computer mit einem virtuellen Netzwerk oder Clouddienst
 
 [AZURE.INCLUDE [howto-connect-vm-cloud-service](../../includes/howto-connect-vm-cloud-service.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

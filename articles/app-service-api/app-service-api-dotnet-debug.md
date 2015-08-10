@@ -20,7 +20,7 @@
 
 ## Übersicht
 
-In diesem Lernprogramm erfahren Sie, wie Sie ASP.NET-Web-API-Code debuggen, der zur Ausführung in einer [API-App](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md) konfiguriert ist. Das Debugging wird sowohl lokal als auch remote (während der Ausführung in Azure) durchgeführt. Im Lernprogramm wird die API-App verwendet, die Sie in den vorherigen Lernprogrammen in dieser Reihe [erstellt](app-service-dotnet-create-api-app.md) und [bereitgestellt](app-service-dotnet-deploy-api-app.md) haben.
+In diesem Lernprogramm erfahren Sie, wie Sie ASP.NET-Web-API-Code debuggen, der zur Ausführung in einer [API-App](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md) konfiguriert ist. Das Debugging wird sowohl lokal als auch remote \(während der Ausführung in Azure\) durchgeführt. Im Lernprogramm wird die API-App verwendet, die Sie in den vorherigen Lernprogrammen in dieser Reihe [erstellt](app-service-dotnet-create-api-app.md) und [bereitgestellt](app-service-dotnet-deploy-api-app.md) haben.
 
 ## Remotedebuggen einer API-App 
 
@@ -36,13 +36,13 @@ Mit den folgenden Schritten ermöglichen Sie das Debuggen einer API-App, währen
 
 3. Es sollte sich ein Browserfenster mit einer Bestätigungsmeldung öffnen, dass Ihre API-App erfolgreich erstellt wurde.
 
-4. Fügen Sie in der Adresszeile des Browsers am Ende der URL "/swagger" hinzu, und drücken Sie die &lt;Eingabetaste>. Daraufhin wird der Client mit der Swagger-Benutzeroberfläche angezeigt.
+4. Fügen Sie in der Adresszeile des Browsers am Ende der URL "/swagger" hinzu, und drücken Sie die &lt;Eingabetaste\>. Daraufhin wird der Client mit der Swagger-Benutzeroberfläche angezeigt.
 
 	![Swagger-Benutzeroberfläche](./media/app-service-api-dotnet-debug/rd-swagger-ui.png)
 
 5. Kehren Sie zu Visual Studio zurück, und klicken Sie im Menü **Ansicht** auf **Server-Explorer**.
 
-6. Erweitern Sie im **Server-Explorer** den Knoten **Azure > App Service**.
+6. Erweitern Sie im **Server-Explorer** den Knoten **Azure \> App Service**.
 
 7. Suchen Sie die Ressourcengruppe, die Sie beim Bereitstellen Ihrer API-App erstellt haben.
 
@@ -95,23 +95,23 @@ Möglicherweise möchten Sie in bestimmten Fällen Ihre API-App lokal debuggen �
 	![API-App-Host – Anwendungseinstellungen für das lokale Debuggen](./media/app-service-api-dotnet-debug/ld-app-settings-for-local-debugging.png)
 
 9. Suchen Sie in den **App-Einstellungen** nach den folgenden Werten, und fügen Sie sie dem Abschnitt *appSettings* in der Datei **web.config** hinzu.
-	- **EMA_MicroserviceId**
-	- **EMA_Secret**
-	- **EMA_RuntimeUrl**
+	- **EMA\_MicroserviceId**
+	- **EMA\_Secret**
+	- **EMA\_RuntimeUrl**
 
 	Anschließend sollte der **appSettings**-Abschnitt der Datei *web.config* in etwa wie der folgende Screenshot aussehen.
 
 	![API-App-Host – Anwendungseinstellungen für das lokale Debuggen](./media/app-service-api-dotnet-debug/ld-debug-settings.png)
 
-	**Hinweis:** Die *EMA_*-Werte, die Sie der Datei *web.config* in diesem Abschnitt hinzufügen, enthalten sensible Autorisierungsinformationen. Daher wird empfohlen, mit Bedacht vorzugehen, wenn Sie diese Datei in einem öffentlich zugänglichen Repository für die Quellsteuerung (wie z. B. *github*) bereitstellen, da diese geheimen Schlüssel dann für andere Benutzer sichtbar sind. Weitere Informationen zur Sicherheit und zur Verwendung von Anmeldeinformationen finden Sie unter [Best Practices für das Bereitstellen von Kennwörtern und anderen vertraulichen Daten in ASP.NET und Azure App Service](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
+	**Hinweis:** Die *EMA\_*-Werte, die Sie der Datei *web.config* in diesem Abschnitt hinzufügen, enthalten sensible Autorisierungsinformationen. Daher wird empfohlen, mit Bedacht vorzugehen, wenn Sie diese Datei in einem öffentlich zugänglichen Repository für die Quellsteuerung \(wie z. B. *github*\) bereitstellen, da diese geheimen Schlüssel dann für andere Benutzer sichtbar sind. Weitere Informationen zur Sicherheit und zur Verwendung von Anmeldeinformationen finden Sie unter [Best Practices für das Bereitstellen von Kennwörtern und anderen vertraulichen Daten in ASP.NET und Azure App Service](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
 
-10. Platzieren Sie einen oder mehrere Haltepunkte in Ihrem API-App-Controllercode (in den `Get`- und `Post`-Methoden).
+10. Platzieren Sie einen oder mehrere Haltepunkte in Ihrem API-App-Controllercode \(in den `Get`- und `Post`-Methoden\).
 
 	![Setzen von Haltepunkten](./media/app-service-api-dotnet-debug/ld-breakpoints.png)
 
 11. Drücken Sie F5, um ein Visual Studio-Debugsitzung zu starten.
  
-13.  Wenn die Zugriffsebene der API-App auf **Öffentlich (anonym)** festgelegt ist, können Sie die Seite mit der Swagger-Benutzeroberfläche für Tests verwenden.
+13.  Wenn die Zugriffsebene der API-App auf **Öffentlich \(anonym\)** festgelegt ist, können Sie die Seite mit der Swagger-Benutzeroberfläche für Tests verwenden.
 
 	* Wenn der Browser die Seite lädt, wird eine Fehlermeldung angezeigt. Fügen Sie in der Adresszeile des Browsers am Ende der URL *swagger/* hinzu, und drücken Sie die EINGABETASTE.
 
@@ -121,7 +121,7 @@ Möglicherweise möchten Sie in bestimmten Fällen Ihre API-App lokal debuggen �
 
 		![Ausprobieren](./media/app-service-api-dotnet-debug/ld-try-it-out.png)
 
-14.	Wenn die Zugriffsebene der API-App auf **Öffentlich (authentifiziert)** festgelegt ist, müssen Sie gemäß den unter [Schützen einer API-App](app-service-api-dotnet-add-authentication.md#use-postman-to-send-a-post-request) gezeigten Verfahren für eine POST-Anforderung eine Authentifizierung vornehmen und ein Browsertool verwenden. Gehen Sie so vor:
+14.	Wenn die Zugriffsebene der API-App auf **Öffentlich \(authentifiziert\)** festgelegt ist, müssen Sie gemäß den unter [Schützen einer API-App](app-service-api-dotnet-add-authentication.md#use-postman-to-send-a-post-request) gezeigten Verfahren für eine POST-Anforderung eine Authentifizierung vornehmen und ein Browsertool verwenden. Gehen Sie so vor:
 
 	* Wechseln Sie zur Anmelde-URL für das Gateway, und geben Sie zum Anmelden die Anmeldeinformationen ein.
 	* Rufen Sie den Wert des Zumo-Tokens aus dem "x-zumo-auth"-Cookie ab.
@@ -139,4 +139,4 @@ App Service-API-Apps sind App Service-Web-Apps, die über zusätzliche Features 
 Die im Rahmen dieser Lernprogrammreihe erstellte API-App ist öffentlich verfügbar und kann durch beliebige Benutzer aufgerufen werden. Informationen zum Schützen von API-Apps, damit nur authentifizierte Benutzer sie aufrufen können, finden Sie unter [Authentifizierung für API- und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

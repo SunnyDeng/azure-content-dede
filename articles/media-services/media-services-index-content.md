@@ -13,27 +13,30 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/21/2015" 
+	ms.date="07/23/2015" 
 	ms.author="juliako"/>
 
 
 # Indizieren von Mediendateien mit Azure Media Indexer
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).
+> [AZURE.SELECTOR]
+- [Portal](media-services-manage-content.md#index)
+- [.NET](media-services-index-content.md)
+
 
 Mit dem Azure Media Indexer können Sie die Inhalte Ihrer Mediendateien durchsuchbar machen und eine Volltext-Aufzeichnung für Untertitel und Schlüsselwörter generieren. Sie können eine einzelne Mediendatei oder mehrere Mediendateien in einem Batch verarbeiten.
 
->[AZURE.NOTE]Stellen Sie beim Indizieren von Inhalten sicher, dass Mediendateien verwendet werden, die sehr klare Sprache enthalten (ohne Hintergrundmusik, Lärm, Effekte oder Mikrofonrauschen). Die folgenden Beispiele sind geeignete Inhalte: aufgezeichnete Besprechungen, Vorträge oder Präsentationen. Folgende Inhalte sind für die Indizierung ggf. nicht geeignet: Filme, Fernsehsendungen, Material mit gemischten Audio- und Soundeffekten, schlecht aufgezeichnete Inhalte mit Hintergrundgeräuschen (Rauschen).
+>[AZURE.NOTE]Stellen Sie beim Indizieren von Inhalten sicher, dass Mediendateien verwendet werden, die sehr klare Sprache enthalten \(ohne Hintergrundmusik, Lärm, Effekte oder Mikrofonrauschen\). Die folgenden Beispiele sind geeignete Inhalte: aufgezeichnete Besprechungen, Vorträge oder Präsentationen. Folgende Inhalte sind für die Indizierung ggf. nicht geeignet: Filme, Fernsehsendungen, Material mit gemischten Audio- und Soundeffekten, schlecht aufgezeichnete Inhalte mit Hintergrundgeräuschen \(Rauschen\).
 
 
 Ein Indizierungsauftrag erzeugt vier Ausgaben für jede Indexdatei:
 
 - Geschlossene Untertiteldatei im SAMI-Format.
-- Geschlossene Untertiteldatei im TTML-Format (Timed Text Markup Language).
+- Geschlossene Untertiteldatei im TTML-Format \(Timed Text Markup Language\).
 
 	SAMI und TTML enthalten ein Tag namens „Recognizability“, das einen Indizierungsauftrag basierend darauf bewertet, wie gut die Sprache im Quellvideo erkennbar ist. Sie können den Wert von Recognizability nutzen, um Dateien auf ihre Verwendbarkeit zu prüfen. Eine niedrige Bewertung steht für schlechte Indizierungsergebnisse aufgrund der Audioqualität.
-- Schlüsselwortdatei (XML).
-- AID-Datei (Audio Indexing Blob) zur Verwendung mit SQL Server.
+- Schlüsselwortdatei \(XML\).
+- AID-Datei \(Audio Indexing Blob\) zur Verwendung mit SQL Server.
 	
 	Weitere Informationen finden Sie unter [Verwenden von AIB-Dateien mit Azure Media Indexer und SQL Server](http://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/).
 
@@ -48,7 +51,7 @@ Sie können weitere Details für Ihre Indizierungsaufgaben mithilfe einer Aufgab
 
 Sie können auch mehrere Mediendateien gleichzeitig mithilfe einer Manifestdatei verarbeiten.
 
-Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
+Weitere Informationen finden Sie unter [Taskvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
 
 ##Indizieren eines Medienobjekts
 
@@ -180,7 +183,7 @@ Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht de
 
 Mit der folgenden Methode werden mehrere Mediendateien als Medienobjekt hochgeladen und ein Auftrag zum Indizieren all dieser Dateien in einem Batch erstellt.
 
-Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Medienobjekt hochgeladen. Die Manifestdatei enthält die Liste sämtlicher Medienobjektdateien. Weitere Informationen finden Sie unter [Aufgabenvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
+Es wird eine Manifestdatei mit der Erweiterung LST erstellt und in das Medienobjekt hochgeladen. Die Manifestdatei enthält die Liste sämtlicher Medienobjektdateien. Weitere Informationen finden Sie unter [Taskvoreinstellung für Azure Media Indexer](https://msdn.microsoft.com/library/azure/dn783454.aspx).
 	
 	static bool RunBatchIndexingJob(string[] inputMediaFiles, string outputFolder)
 	{
@@ -303,7 +306,7 @@ Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht de
 Wenn nicht alle Eingabemediendateien erfolgreich indiziert werden, verursacht der Indizierungsauftrag einen Fehler mit dem Fehlercode 4000. Weitere Informationen finden Sie unter [Fehlercodes](#error_codes).
 
 
-Es werden die gleichen Ausgaben (wie bei erfolgreichen Aufträgen) generiert. Sie können anhand der Ausgabemanifestdatei feststellen, welche Eingabedateien gemäß den Werten in der Fehlerspalte fehlerhaft sind. Bei fehlerhaften Eingabedateien werden KEINE AIB-, SAMI-, TTML- und Stichwortdateien generiert.
+Es werden die gleichen Ausgaben \(wie bei erfolgreichen Aufträgen\) generiert. Sie können anhand der Ausgabemanifestdatei feststellen, welche Eingabedateien gemäß den Werten in der Fehlerspalte fehlerhaft sind. Bei fehlerhaften Eingabedateien werden KEINE AIB-, SAMI-, TTML- und Stichwortdateien generiert.
 
 
 ### <a id="error_codes"></a>Fehlercodes
@@ -331,7 +334,7 @@ Kein Audiostream in den Eingabemedien</td></tr>
 
 ##<a id="supported_languages"></a>Unterstützte Sprachen
 
-Derzeit werden die Sprachen Englisch und Spanisch unterstützt. Weitere Informationen finden Sie unter [Azure Media Indexer – Spanisch](http://azure.microsoft.com/blog/2015/04/13/azure-media-indexer-spanish-v1-2/).
+Derzeit werden die Sprachen Englisch und Spanisch unterstützt. Weitere Informationen finden Sie unter [Azure Media Indexer Spanisch](http://azure.microsoft.com/blog/2015/04/13/azure-media-indexer-spanish-v1-2/) \(in englischer Sprache\).
 
 ##Verwandte Links
 
@@ -343,4 +346,4 @@ Derzeit werden die Sprachen Englisch und Spanisch unterstützt. Weitere Informat
 
 <!-- URLs. -->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

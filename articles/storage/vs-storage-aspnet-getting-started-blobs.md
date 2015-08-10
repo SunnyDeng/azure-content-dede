@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/24/2015" 
+	ms.date="07/22/2015" 
 	ms.author="patshea123"/>
 
-# Erste Schritte mit Azure Storage (ASP.NET-Projekte)
+# Erste Schritte mit Azure Storage \(ASP.NET-Projekte\)
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-storage-aspnet-getting-started-blobs.md)
@@ -27,14 +27,14 @@
 > - [Queues](vs-storage-aspnet-getting-started-queues.md)
 > - [Tables](vs-storage-aspnet-getting-started-tables.md)
 
->[AZURE.NOTE]Dieser Artikel beschreibt, wie die ersten Schritte des Verwendens von Azure-BLOB-Speicher aussehen, nachdem Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** in einer ASP.NET-App ein Azure-Speicherkonto erstellt oder auf ein solches Konto verwiesen haben. Weitere allgemeine Informationen zur Verwendung von Azure-BLOB-Speicher finden Sie unter [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md).
+Dieser Artikel beschreibt, wie die ersten Schritte des Verwendens von Azure-BLOB-Speicher aussehen, nachdem Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** in einer ASP.NET-App ein Azure-Speicherkonto erstellt oder auf ein solches Konto verwiesen haben. Weitere allgemeine Informationen zur Verwendung von Azure-BLOB-Speicher finden Sie unter [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md).
 
 Die BLOB-Speicherung in Azure ist ein Dienst zur Speicherung großer Mengen unstrukturierter Daten, auf die von überall auf der Welt über HTTP oder HTTPS zugegriffen werden kann. Ein einzelner BLOB kann eine beliebige Größe aufweisen. BLOBs können Bilder, Audio- und Videodateien, Rohdaten und Dokumentdateien enthalten.
 
 Dateien werden in Ordnern gespeichert, Speicher-BLOBs analog dazu in Containern. Nachdem Sie ein Speicherkonto erstellt haben, erstellen Sie mindestens einen Container in dem Speicher. Beispielsweise können Sie in einem Speicher namens „Notizbuch“ BLOB-Container im Speicher namens „Bilder“ erstellen, um Bilder zu speichern, und einen anderen namens „Audio“ erstellen, um Audiodateien zu speichern. Nachdem Sie die Container erstellt haben, können Sie einzelne BLOB-Dateien in diese hochladen.
 
 
-In diesem Artikel wird gezeigt, wie häufige Szenarien mit dem Windows Azure Blob-Speicherdienst ausgeführt werden. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs.
+In diesem Artikel wird gezeigt, wie häufige Szenarien mit dem Windows Azure Blob-Speicherdienst ausgeführt werden. Die Beispiele sind in C\# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs.
 
 Weitere Informationen zu ASP.NET-Projekten finden Sie unter [ASP.NET](http://www.asp.net).
 
@@ -46,7 +46,7 @@ Weitere Informationen zu ASP.NET-Projekten finden Sie unter [ASP.NET](http://www
 
 Für den programmgesteuerten Zugriff auf Blobs in ASP.NET-Projekten müssen Sie die folgenden Elemente hinzuzufügen, wenn sie nicht bereits vorhanden sind.
 
-1. Fügen Sie die folgenden Codenamespace-Deklarationen am Anfang aller C#-Dateien hinzu, mit denen Sie programmgesteuert auf Azure Storage zugreifen möchten.
+1. Fügen Sie die folgenden Codenamespace-Deklarationen am Anfang aller C\#-Dateien hinzu, mit denen Sie programmgesteuert auf Azure Storage zugreifen möchten.
 
 		using Microsoft.Framework.Configuration;
 		using Microsoft.WindowsAzure.Storage;
@@ -165,7 +165,7 @@ Wie oben gezeigt, wird beim Blobdienst ebenfalls das Konzept von Verzeichnissen 
 	2011/architecture/description.txt
 	2011/photo7.jpg
 
-Wenn Sie **ListBlobs** für den Container "photos" aufrufen (wie im Beispiel oben), enthält die zurückgegebene Sammlung **CloudBlobDirectory**- und **CloudBlockBlob**-Objekte, die die auf der obersten Ebene enthaltenen Verzeichnisse und Blobs darstellen. Die Ausgabe würde folgendermaßen aussehen:
+Wenn Sie **ListBlobs** für den Container "photos" aufrufen \(wie im Beispiel oben\), enthält die zurückgegebene Sammlung **CloudBlobDirectory**- und **CloudBlockBlob**-Objekte, die die auf der obersten Ebene enthaltenen Verzeichnisse und Blobs darstellen. Die Ausgabe würde folgendermaßen aussehen:
 
 	Directory: https://<accountname>.blob.core.windows.net/photos/2010/
 	Directory: https://<accountname>.blob.core.windows.net/photos/2011/
@@ -191,7 +191,7 @@ Das Ergebnis sähe folgendermaßen aus:
 	Block blob of length 399751: https://<accountname>.blob.core.windows.net/photos/2011/photo7.jpg
 	Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/photo1.jpg
 
-Weitere Informationen finden Sie unter [CloudBlobContainer.ListBlobs][].
+Weitere Informationen finden Sie unter \[CloudBlobContainer.ListBlobs\]\[\].
 
 ## Herunterladen von Blobs
 
@@ -318,4 +318,4 @@ Da die Beispielmethode eine asynchrone Methode aufruft, muss sie mit dem Schlüs
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/04/2015" 
+	ms.date="07/28/2015" 
 	ms.author="piyushjo" />
 
 #Übersicht über Azure Mobile Engagement
@@ -45,9 +45,9 @@ Microsoft bekennt sich seit langer Zeit zum Datenschutz, einem wichtigen Teil un
 
 ###Nächste Schritte:
 
-[Erste Schritte (Vermarkter)](mobile-engagement-define-your-mobile-engagement-strategy.md)
+[Erste Schritte \(Vermarkter\)](mobile-engagement-define-your-mobile-engagement-strategy.md)
 
-[Erste Schritte (Entwickler)](/documentation/services/mobile-engagement/)
+[Erste Schritte \(Entwickler\)](/documentation/services/mobile-engagement/)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

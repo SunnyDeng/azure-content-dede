@@ -25,7 +25,7 @@
 
 Diese Schritte zeigen, wie Sie eine Reihe von Azure PowerShell-Befehlen anpassen, mit denen ein Linux-basierter virtueller Azure-Computer in der Dienstverwaltung mit einem Bausteinansatz erstellt und vorab konfiguriert wird. Sie können diesen Prozess verwenden, um schnell einen Befehlssatz für einen neuen Linux-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern oder mehrere Befehlssätze zu erstellen, die schnell eine benutzerdefinierte Entwicklungs-/Test- oder IT-Expertenumgebung erstellen.
 
-Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure PowerShell-Befehlssätzen. Dieser Ansatz kann hilfreich sein, wenn Sie noch nicht mit Azure PowerShell gearbeitet haben oder einfach wissen möchten, welche Werte Sie für die erfolgreiche Konfiguration angeben müssen. Fortgeschrittene Azure PowerShell-Benutzer können die Befehle verwenden und dabei die Variablen (Zeilen, die mit "$" beginnen) durch eigene Werte ersetzen.
+Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure PowerShell-Befehlssätzen. Dieser Ansatz kann hilfreich sein, wenn Sie noch nicht mit Azure PowerShell gearbeitet haben oder einfach wissen möchten, welche Werte Sie für die erfolgreiche Konfiguration angeben müssen. Fortgeschrittene Azure PowerShell-Benutzer können die Befehle verwenden und dabei die Variablen \(Zeilen, die mit "$" beginnen\) durch eigene Werte ersetzen.
 
 Das Begleitthema zum Konfigurieren der Windows-basierten virtuellen Computer finden Sie unter [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md).
 
@@ -56,7 +56,7 @@ Hier finden Sie einige Beispiele für ImageFamily-Werte für Linux-basierte Comp
 - CoreOS Alpha
 - SUSE Linux Enterprise Server 12
 
-Öffnen Sie eine neue Instanz des Texteditors Ihrer Wahl oder der PowerShell Integrated Scripting Environment (ISE). Kopieren Sie den folgenden Code in die neue Textdatei oder PowerShell ISE, wobei Sie den Wert von "ImageFamily" ersetzen.
+Öffnen Sie eine neue Instanz des Texteditors Ihrer Wahl oder der PowerShell Integrated Scripting Environment \(ISE\). Kopieren Sie den folgenden Code in die neue Textdatei oder PowerShell ISE, wobei Sie den Wert von "ImageFamily" ersetzen.
 
 	$family="<ImageFamily value>"
 	$image=Get-AzureVMImage | where { $_.ImageFamily -eq $family } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
@@ -65,7 +65,7 @@ Hier finden Sie einige Beispiele für ImageFamily-Werte für Linux-basierte Comp
 
 Erstellen Sie den Rest des Befehlssatzes, indem Sie den entsprechenden Satz an Blöcken unten in Ihre neue Textdatei oder PowerShell ISE kopieren und dann die Variablenwerte eingeben und die Zeichen < and > entfernen. Anhand der beiden [Beispiele](#examples) am Ende dieses Artikels erhalten Sie eine Idee des Endergebnisses.
 
-Starten Sie den Befehlssatz, indem Sie einen dieser beiden Befehlssätze auswählen (erforderlich).
+Starten Sie den Befehlssatz, indem Sie einen dieser beiden Befehlssätze auswählen \(erforderlich\).
 
 Option 1: Geben Sie einen Namen für den virtuellen Computer und eine Größe an.
 
@@ -82,7 +82,7 @@ Option 2: Geben Sie einen Namen, eine Größe und einen Verfügbarkeitsgruppenn
 
 Die InstanceSize-Werte für virtuelle Computer der D-, DS- oder G-Serie finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
 
-Geben Sie den anfänglichen Linux-Benutzernamen und das Kennwort an (erforderlich). Verwenden Sie ein sicheres Kennwort. Sie können die Sicherheit des Kennworts unter [Password Checker: Using Strong Passwords](https://www.microsoft.com/security/pc-security/password-checker.aspx) (Kennwortprüfung – Verwenden sicherer Kennwörter) überprüfen.
+Geben Sie den anfänglichen Linux-Benutzernamen und das Kennwort an \(erforderlich\). Verwenden Sie ein sicheres Kennwort. Sie können die Sicherheit des Kennworts unter [Password Checker: Using Strong Passwords](https://www.microsoft.com/security/pc-security/password-checker.aspx) \(Kennwortprüfung – Verwenden sicherer Kennwörter\) überprüfen.
 
 	$cred=Get-Credential -Message "Type the name and password of the initial Linux account."
 	$vm1 | Add-AzureProvisioningConfig -Linux -LinuxUser $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
@@ -99,7 +99,7 @@ Geben Sie optional eine Liste von öffentlichen SSH-Schlüsseln an, die bereits 
 
 Zusätzliche Vorabkonfigurationsoptionen für Linux-basierte virtuelle Computer finden Sie in der Syntax für den **Linux**-Parametersatz in [Add-AzureProvisioningConfig](https://msdn.microsoft.com/library/azure/dn495299.aspx).
 
-Weisen Sie dem virtuellen Computer optional eine bestimmte IP-Adresse (statische DIP) zu.
+Weisen Sie dem virtuellen Computer optional eine bestimmte IP-Adresse \(statische DIP\) zu.
 
 	$vm1 | Set-AzureStaticVNetIP -IPAddress <IP address>
 
@@ -131,7 +131,7 @@ Optional können Sie den virtuellen Computer einem vorhandenen Satz mit Lastenau
 	$probepath="<URL path for probe traffic>"
 	$vm1 | Add-AzureEndpoint -Name $endpointname -Protocol $prot -LocalPort $localport -PublicPort $pubport -LBSetName $lbsetname -ProbeProtocol $probeprotocol -ProbePort $probeport -ProbePath $probepath
 
-Schließlich starten Sie den Erstellungsprozess für die virtuellen Computer durch Auswahl eines dieser Befehlsblöcke (erforderlich).
+Schließlich starten Sie den Erstellungsprozess für die virtuellen Computer durch Auswahl eines dieser Befehlsblöcke \(erforderlich\).
 
 Option 1: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddienst.
 
@@ -157,7 +157,7 @@ Informieren Sie sich nach dem Erstellen des virtuellen Computer unter [Anmelden 
 
 Wenn Sie diesen virtuellen Computer erneut oder einen ähnlichen Computer erstellen, können Sie:
 
-- diesen Befehlssatz als PowerShell-Skriptdatei (*.ps1) speichern
+- diesen Befehlssatz als PowerShell-Skriptdatei \(\*.ps1\) speichern
 - diesen Befehlssatz als Azure-Automatisierungsrunbook im Bereich **Automatisierung** des Azure-Verwaltungsportals speichern
 
 ## <a id="examples"></a>Beispiele
@@ -260,4 +260,4 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

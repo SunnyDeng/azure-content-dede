@@ -1,11 +1,13 @@
-You can create Azure queues by using Visual Studio **Server Explorer**.
+Sie können Azure-Warteschlangen erstellen, indem Sie den **Server-Explorer** von Visual Studio verwenden.
 
-![Server Explorer Blobs][Image1]
+![Server-Explorer-BLOBs][Image1]
 
-1. On the **View** menu, choose **Server Explorer**.
-2. In Server Explorer, expand the **Azure** node for your subscription, expand the **Storage** node and the node for the storage account you specified in the Azure Storage connected service.
-3. Select the **Queues** node and choose **Create Queue** from the context menu.
-4. Enter a name for the queue and choose **OK**.   
+1. Wählen Sie im Menü **Ansicht** den Eintrag **Server-Explorer** aus.
+2. Erweitern Sie im Server-Explorer den Knoten **Azure** für Ihr Abonnement, erweitern Sie den Knoten **Speicher**und den Knoten für das Speicherkonto, das Sie in dem mit Azure Storage verbundenen Dienst angegeben haben.
+3. Wählen Sie den Knoten **Warteschlangen** aus, und wählen Sie im Kontextmenü **Warteschlange erstellen** aus.
+4. Geben Sie einen Namen für die Warteschlange ein, und wählen Sie **OK** aus.   
 
 
 [Image1]: ./media/vs-create-queue-in-server-explorer/vs-storage-queues-create-in-server-explorer.png
+
+<!---HONumber=July15_HO5-->

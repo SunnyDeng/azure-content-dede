@@ -1,6 +1,6 @@
 1. Öffnen Sie Visual Studio 2013.
 
-2. Wählen Sie **Datei > Neues Projekt** aus.
+2. Wählen Sie **Datei \> Neues Projekt** aus.
 
 3. Wählen Sie die Vorlage **ASP.NET-Webanwendung**.
 
@@ -20,4 +20,4 @@
 
 Visual Studio erstellt ein Web-API-Projekt, das zur Bereitstellung als API-App konfiguriert ist.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

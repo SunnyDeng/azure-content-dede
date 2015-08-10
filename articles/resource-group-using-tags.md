@@ -90,7 +90,7 @@ Fixieren Sie die wichtigsten Tags für den schnellen Zugriff auf dem Startboard,
 
 ## Tags und Abrechnung
 
-Abrechnungsdaten können für unterstützte Dienste mithilfe von Tags gruppiert werden. So können Sie beispielsweise mithilfe von [in den Azure-Ressourcen-Manager integrierten virtuellen Computern](/virtual-machines/virtual-machines-azurerm-versus-azuresm.md) Tags definieren und anwenden, um die Abrechnung für virtuelle Computer zu organisieren. Wenn Sie mehrere virtuelle Computer für verschiedene Organisationen betreiben, können Sie die Nutzung mithilfe von Tags nach Kostenstelle gruppieren. Mit Tags können Sie auch Kosten nach Laufzeitumgebung kategorisieren (beispielsweise zur Abrechnung der Nutzung virtueller Computer in der Produktionsumgebung).
+Abrechnungsdaten können für unterstützte Dienste mithilfe von Tags gruppiert werden. So können Sie beispielsweise mithilfe von [in den Azure-Ressourcen-Manager integrierten virtuellen Computern](/virtual-machines/virtual-machines-azurerm-versus-azuresm.md) Tags definieren und anwenden, um die Abrechnung für virtuelle Computer zu organisieren. Wenn Sie mehrere virtuelle Computer für verschiedene Organisationen betreiben, können Sie die Nutzung mithilfe von Tags nach Kostenstelle gruppieren. Mit Tags können Sie auch Kosten nach Laufzeitumgebung kategorisieren \(beispielsweise zur Abrechnung der Nutzung virtueller Computer in der Produktionsumgebung\).
 
 Informationen zu Tags können über die [Nutzungs-API](billing-usage-rate-card-overview.md) oder aus der Nutzungsdatei im CSV-Format abgerufen werden, die Sie aus dem [Azure-Kontenportal](https://account.windowsazure.com/) oder aus dem [EA-Portal](https://ea.azure.com) herunterladen können.
 
@@ -101,18 +101,18 @@ Wenn Sie die CSV-Nutzungsdatei für Dienste herunterladen, die die Verwendung vo
 ## Nächste Schritte
 Erste Schritte
 
-- [Azure Resource Manager Overview](./resource-group-overview.md) (Übersicht über den Azure-Ressourcen-Manager)  
+- [Azure Resource Manager Overview](./resource-group-overview.md) \(Übersicht über den Azure-Ressourcen-Manager\)  
 - [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](./powershell-azure-resource-manager.md)
 - [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](./xplat-cli-azure-resource-manager.md)  
-- [Using the Azure Portal to manage your Azure resources](./resource-group-portal.md) (Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen)  
+- [Using the Azure Portal to manage your Azure resources](./resource-group-portal.md) \(Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen\)  
   
 Erstellen und Bereitstellen von Anwendungen
   
-- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) (Erstellen von Vorlagen im Azure-Ressourcen-Manager)  
-- [Deploy an application with Azure Resource Manager Template](./resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)  
-- [Troubleshooting Resource Group Deployments in Azure](./resource-group-deploy-debug.md) (Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)  
-- [Azure Resource Manager Template Functions](./resource-group-template-functions.md) (Vorlagenfunktionen im Azure-Ressourcen-Manager)  
-- [Advanced Template Operations](./resource-group-advanced-template.md) (Erweiterte Anwendungen mit Vorlagen)  
+- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) \(Erstellen von Vorlagen im Azure-Ressourcen-Manager\)  
+- [Deploy an application with Azure Resource Manager Template](./resource-group-template-deploy.md) \(Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager\)  
+- [Troubleshooting Resource Group Deployments in Azure](./resource-group-deploy-debug.md) \(Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure\)  
+- [Azure Resource Manager Template Functions](./resource-group-template-functions.md) \(Vorlagenfunktionen im Azure-Ressourcen-Manager\)  
+- [Advanced Template Operations](./resource-group-advanced-template.md) \(Erweiterte Anwendungen mit Vorlagen\)  
   
 Zugriffsverwaltung und -überwachung
   
@@ -121,4 +121,4 @@ Zugriffsverwaltung und -überwachung
 - [Erstellen neuer Azure-Dienstprinzipale mit dem Azure-Portal](./resource-group-create-service-principal-portal.md)  
   
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

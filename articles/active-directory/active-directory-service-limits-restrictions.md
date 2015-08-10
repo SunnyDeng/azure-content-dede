@@ -27,4 +27,4 @@
 - [Verknüpfung von Azure-Abonnements mit Azure AD](active-directory-how-subscriptions-associated-directory.md)
 - [Azure AD-Terminologie](active-directory-terminology.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -49,4 +49,4 @@
 
 <sup>2</sup>Wenn bei einer Transaktion eine Ressource gesperrt wird, die für eine zugrunde liegende Systemaufgabe erforderlich ist, beträgt die maximale Dauer 20 Sekunden.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

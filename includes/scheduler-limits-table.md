@@ -1,17 +1,19 @@
-The following table describes each of the major quotas, limits, defaults, and throttles in Azure Scheduler.
+Die folgende Tabelle informiert über die einzelnen zentralen Kontingente, Einschränkungen, Standardwerte und Drosselungen für Azure Scheduler:
 
-|Resource|Limit Description|
+|Ressource|Beschreibung der Einschränkung|
 |---|---|
-|**Job size**|The maximum job size is 16K. If a PUT or a PATCH results in a job larger than these limits, a 400 Bad Request status code is returned.|
-|**Request URL size**|Maximum size of the request URL is 2048 chars.|
-|**Aggregate header size**|Maximum aggregate header size is 4096 chars.|
-|**Header count**|Maximum header count is 50 headers.|
-|**Body size**|Maximum body size is 8192 chars.|
-|**Recurrence span**|Maximum recurrence span is 18 months.|
-|**Time to start time**|Maximum “time to start time” is 18 months.|
-|**Job history**|Maximum response body stored in job history is 2048 bytes.|
-|**Frequency**|The default max frequency quota is 1 hour in a free job collection and 1 minute in a standard job collection. The max frequency is configurable on a job collection to be lower than the maximum. All jobs in the job collection are limited the value set on the job collection. If you attempt to create a job with a higher frequency than the maximum frequency on the job collection then request will fail with a 409 Conflict status code.|
-|**Jobs**|The default max jobs quota is 5 jobs in a free job collection and 50 jobs in a standard job collection. The maximum number of jobs is configurable on a job collection. All jobs in the job collection are limited the value set on the job collection. If you attempt to create more jobs than the maximum jobs quota, then the request fails with a 409 Conflict status code.|
-|**Job history retention**|Job history is retained for up to 2 months.|
-|**Completed and faulted job retention**|Completed and faulted jobs are retailed for 60 days.|
-|**Timeout**|There’s a static (not configurable) request timeout of 30 seconds for HTTP actions. For longer running operations, follow HTTP asynchronous protocols; for example, return a 202 immediately but continue working in the background.|
+|**Auftragsgröße**|Die maximale Auftragsgröße beträgt 16 KB. Bei Überschreitung dieses Grenzwerts durch eine PUT- oder PATCH-Anforderung wird der Statuscode 400 \(unzulässige Anforderung\) zurückgegeben.|
+|**Größe der Anforderungs-URL**|Die Anforderungs-URL darf maximal 2048 Zeichen umfassen.|
+|**Aggregierte Headergröße**|Die aggregierte Headergröße darf maximal 4096 Zeichen umfassen.|
+|**Headeranzahl**|Die maximale Headeranzahl beträgt 50 Header.|
+|**Textlänge**|Die maximale Textlänge beträgt 8192 Zeichen.|
+|**Wiederholungsspanne**|Die maximal zulässige Wiederholungsspanne beträgt 18 Monate.|
+|**Zeit bis zur Startzeit**|Der maximal zulässige Wert für die Zeit bis zur Startzeit beträgt 18 Monate.|
+|**Auftragsverlauf**|Die maximale Größe des im Auftragsverlauf gespeicherten Antworttexts beträgt 2048 Bytes.|
+|**Frequency**|Das Standardkontingent für die maximale Häufigkeit beträgt eine Stunde \(kostenlose Auftragssammlung\) bzw. eine Minute \(Standard-Auftragssammlung\). Die maximale Häufigkeit kann für eine Auftragssammlung auf einen Wert unterhalb des Maximalwerts festgelegt werden. Der für die Auftragssammlung festgelegte Wert gilt für alle Aufträge in der Auftragssammlung. Beim Versuch, einen Auftrag mit einer Häufigkeit zu erstellen, die die maximal zulässige Häufigkeit der Auftragssammlung übersteigt, ist die Anforderung nicht erfolgreich, und der Statuscode 409 \(Konflikt\) wird zurückgegeben.|
+|**Aufträge**|Das Standardkontingent für die maximale Auftragsanzahl liegt bei fünf Aufträgen \(kostenlose Auftragssammlung\) bzw. bei 50 Aufträgen \(Standard-Auftragssammlung\). Die maximale Auftragsanzahl kann für eine Auftragssammlung konfiguriert werden. Der für die Auftragssammlung festgelegte Wert gilt für alle Aufträge in der Auftragssammlung. Bei Überschreitung des maximalen Auftragskontingents wird der Statuscode 409 \(Konflikt\) zurückgegeben.|
+|**Speicherung des Auftragsverlaufs**|Der Auftragsverlauf wird bis zu zwei Monate lang gespeichert.|
+|**Speicherung abgeschlossener und fehlerhafter Aufträge**|Abgeschlossene und fehlerhafte Aufträge werden 60 Tage lang gespeichert.|
+|**Timeout**|Bei HTTP-Aktionen gilt ein statisches \(nicht konfigurierbares\) Anforderungstimeout von 30 Sekunden. Greifen Sie bei länger dauernden Vorgängen auf asynchrone HTTP-Protokolle zurück, bei denen beispielsweise umgehend der Statuscode 202 zurückgegeben und der Vorgang im Hintergrund fortgesetzt wird.|
+
+<!---HONumber=July15_HO5-->

@@ -25,7 +25,7 @@ Mithilfe der Knoten im **Bereichsfenster** des StorSimple Snapshot Managers kön
 
 **Abbildung 1: Verbundenes Gerät im StorSimple Snapshot Manager**
 
-Je nach Ihrer Auswahl für die **Ansicht** werden im **Ergebnisbereich** die folgenden Informationen über jedes Gerät angezeigt. (Weitere Informationen zum Konfigurieren einer Ansicht finden Sie unter [Menü "Ansicht"](storsimple-use-snapshot-manager.md#view-menu).
+Je nach Ihrer Auswahl für die **Ansicht** werden im **Ergebnisbereich** die folgenden Informationen über jedes Gerät angezeigt. \(Weitere Informationen zum Konfigurieren einer Ansicht finden Sie unter [Menü "Ansicht"](storsimple-use-snapshot-manager.md#view-menu).
 
 
 | Ergebnisspalte |Beschreibung |
@@ -138,7 +138,7 @@ Gehen Sie folgendermaßen vor, um ein StorSimple-Gerät im StorSimple Snapshot M
 
 4. Das Dialogfeld **Authentifizieren** wird angezeigt. Geben Sie das Kennwort für das Gerät ein, und klicken Sie dann auf **OK**.
 
-    ![Authentifizieren (Dialogfeld)](./media/storsimple-snapshot-manager-manage-devices/HCS_SSM_Authenticate.png)
+    ![Authentifizieren \(Dialogfeld\)](./media/storsimple-snapshot-manager-manage-devices/HCS_SSM_Authenticate.png)
  
 ## Anzeigen von Gerätedetails
 
@@ -152,7 +152,7 @@ Gehen Sie folgendermaßen vor, um Details zu einem StorSimple-Gerät anzuzeigen 
 
 3. Klicken Sie im **Ergebnisbereich** mit der rechten Maustaste auf den Namen des Geräts, und klicken Sie dann auf **Details**.
 
-4. Das Dialogfeld **Gerätedetails** wird angezeigt. In diesem Feld werden Name, Modell, Version, Seriennummer, Status, qualifizierter iSCSI-Name (IQN) des Ziels und Datum und Uhrzeit der letzten Synchronisierung angezeigt.
+4\. Das Dialogfeld **Gerätedetails** wird angezeigt. In diesem Feld werden Name, Modell, Version, Seriennummer, Status, qualifizierter iSCSI-Name \(IQN\) des Ziels und Datum und Uhrzeit der letzten Synchronisierung angezeigt.
 
    - Klicken Sie auf **Resync**, um das Gerät zu synchronisieren.
 
@@ -196,7 +196,7 @@ Sie müssen ein Kennwort eingeben, um ein StorSimple-Gerät im StorSimple Snapsh
 
 1. Starten Sie im Verwaltungsportal den StorSimple Manager-Dienst.
 
-2. Klicken Sie auf **Geräte** > **Konfigurieren** für das Gerät.
+2. Klicken Sie auf **Geräte** \> **Konfigurieren** für das Gerät.
 
 3. Scrollen Sie nach unten zum Abschnitt "StorSimple Snapshot Manager". Geben Sie ein Kennwort mit einer Länge von 14–15 Zeichen ein. Das Kennwort muss eine Kombination aus drei der vier folgenden Elemente sein: Großbuchstaben, Kleinbuchstaben, Zahlen und Sonderzeichen.
 
@@ -218,7 +218,7 @@ Sie müssen ein Kennwort eingeben, um ein StorSimple-Gerät im StorSimple Snapsh
 
 ## Ersetzen eines ausgefallenen Geräts
 
-Wenn ein StorSimple-Gerät ausfällt und durch ein Austauschgerät ersetzt wird (Failover), gehen Sie folgendermaßen vor, um eine Verbindung mit dem neuen Gerät herzustellen und die zugehörigen Sicherungen anzuzeigen.
+Wenn ein StorSimple-Gerät ausfällt und durch ein Austauschgerät ersetzt wird \(Failover\), gehen Sie folgendermaßen vor, um eine Verbindung mit dem neuen Gerät herzustellen und die zugehörigen Sicherungen anzuzeigen.
 
 #### So stellen Sie nach einem Failover eine Verbindung mit einem neuen Gerät her
 
@@ -238,7 +238,7 @@ Wenn ein StorSimple-Gerät ausfällt und durch ein Austauschgerät ersetzt wird 
 
 3. Entfernen Sie die Konfigurationsinformationen für das alte Gerät:
 
-    1. Navigieren Sie im Datei-Explorer zu "C:\ProgramData\Microsoft\StorSimple\BACatalog". 
+    1. Navigieren Sie im Datei-Explorer zu "C:\\ProgramData\\Microsoft\\StorSimple\\BACatalog". 
 
     2. Löschen Sie die Dateien im Ordner "BACatalog".
 
@@ -254,7 +254,7 @@ Wenn ein StorSimple-Gerät ausfällt und durch ein Austauschgerät ersetzt wird 
 
 6. Um das neue StorSimple-Gerät zu konfigurieren, führen Sie die Schritte unter [Schritt 2: Herstellen einer Verbindung mit einem StorSimple-Geräts](storsimple-snapshot-manager-deployment.md#step-2:-connect-a-storsimple-device) in [Bereitstellen des StorSimple Snapshot Managers](storsimple-snapshot-manager-deployment.md) aus.
 
-7. Klicken Sie im **Bereichsfenster** mit der rechten Maustaste auf den Knoten der obersten Ebene (StorSimple Snapshot Manager im Beispiel), und klicken Sie dann auf **Toggle Imports Display**.
+7. Klicken Sie im **Bereichsfenster** mit der rechten Maustaste auf den Knoten der obersten Ebene \(StorSimple Snapshot Manager im Beispiel\), und klicken Sie dann auf **Toggle Imports Display**.
 
 8. Es wird eine Meldung angezeigt, wenn die importierten Volumegruppen und Sicherungen im StorSimple Snapshot Manager angezeigt werden. Klicken Sie auf **OK**.
 
@@ -262,4 +262,4 @@ Wenn ein StorSimple-Gerät ausfällt und durch ein Austauschgerät ersetzt wird 
 
 [Verwenden des StorSimple Snapshot Managers zum Anzeigen und Verwalten von Volumes](storsimple-snapshot-manager-manage-volumes.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Erste Schritte mit internem Lastenausgleich | Microsoft Azure"
+   pageTitle="Erste Schritte mit dem internen Lastenausgleich | Microsoft Azure"
    description="Konfigurieren von internem Lastenausgleich und dessen Implementierung für virtuelle Computer und Cloudbereitstellungen"
    services="load-balancer"
    documentationCenter="na"
@@ -12,12 +12,16 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/10/2015"
+   ms.date="07/22/2015"
    ms.author="joaoma" />
 
 # Erste Schritte zum Konfigurieren des internen Lastenausgleichs
 
-Der interne Azure-Lastenausgleich (ILB) ermöglicht Lastenausgleich zwischen virtuellen Computern in einem Clouddienst oder virtuellen Netzwerk mit regionalem Umfang. Informationen zur Verwendung und Konfiguration virtueller Netzwerke mit regionalem Umfang finden Sie unter [Regionale virtuelle Netzwerke](../regional-virtual-networks.md) im Azure-Blog. Vorhandene virtuelle Netzwerke, die für eine Affinitätsgruppe konfiguriert wurden, können kein ILB verwenden.
+> [AZURE.SELECTOR]
+- [Azure Classic steps](load-balancer-internal-getstarted.md)
+- [Resource Manager Powershell steps](load-balancer-internal-arm-powershell.md)
+
+Der interne Azure-Lastenausgleich \(ILB\) ermöglicht Lastenausgleich zwischen virtuellen Computern in einem Clouddienst oder virtuellen Netzwerk mit regionalem Umfang. Informationen zur Verwendung und Konfiguration virtueller Netzwerke mit regionalem Umfang finden Sie unter [Regionale virtuelle Netzwerke](../regional-virtual-networks.md) im Azure-Blog. Vorhandene virtuelle Netzwerke, die für eine Affinitätsgruppe konfiguriert wurden, können kein ILB verwenden.
 
 
 
@@ -29,7 +33,7 @@ Zum Erstellen eines internen Azure-Lastenausgleichsgruppe und der Server, die de
 
 1. Fügen Sie Endpunkte für die virtuellen Computer hinzu, die den eingehenden Datenverkehr empfangen.
 
-1. Konfigurieren Sie die Server, die den Datenverkehr für den Lastenausgleich ausführen, so, dass der Datenverkehr an die virtuelle IP-Adresse (VIP) der ILB-Instanz gesendet wird.
+1. Konfigurieren Sie die Server, die den Datenverkehr für den Lastenausgleich ausführen, so, dass der Datenverkehr an die virtuelle IP-Adresse \(VIP\) der ILB-Instanz gesendet wird.
 
 ### Schritt 1: Erstellen einer ILB-Instanz
 
@@ -85,7 +89,7 @@ Beispiel:
 
 ### Schritt 3: Konfigurieren der Server zum Senden von Datenverkehr an den neuen ILB-Endpunkt
 
-Sie müssen die Server, für deren Datenverkehr Lastenausgleich ausgeführt werden soll, für die Verwendung der neuen IP-Adresse (VIP) der ILB-Instanz konfigurieren. Dies ist die Adresse, die die ILB-Instanz überwacht. In den meisten Fällen müssen Sie nur einen DNS-Eintrag für die VIP der ILB-Instanz hinzufügen oder ändern.
+Sie müssen die Server, für deren Datenverkehr Lastenausgleich ausgeführt werden soll, für die Verwendung der neuen IP-Adresse \(VIP\) der ILB-Instanz konfigurieren. Dies ist die Adresse, die die ILB-Instanz überwacht. In den meisten Fällen müssen Sie nur einen DNS-Eintrag für die VIP der ILB-Instanz hinzufügen oder ändern.
 
 Wenn Sie die IP-Adresse während der Erstellung der ILB-Instanz angegeben haben, verfügen Sie bereits über die VIP-Adresse. Andernfalls können Sie die VIP-Adresse mithilfe der folgenden Befehle anzeigen:
 
@@ -152,11 +156,11 @@ Im nächsten Schritt ermittelt Contoso die VIP-Adresse der ILB-Instanz PARTNER-D
 
 	Get-AzureService -ServiceName $svc | Get-AzureInternalLoadBalancer
 
-Aus der Anzeige dieses Befehls notiert Contoso die VIP-Adresse 100.64.65.211 und konfiguriert den DNS-Adressdatensatz (A) für den Namen "partner-sql.external.contoso.com" so, dass diese neue Adresse verwendet wird.
+Aus der Anzeige dieses Befehls notiert Contoso die VIP-Adresse 100.64.65.211 und konfiguriert den DNS-Adressdatensatz \(A\) für den Namen "partner-sql.external.contoso.com" so, dass diese neue Adresse verwendet wird.
 
 ### Eine in Azure gehostete LOB-Anwendung
 
-Die Contoso Corporation möchte eine Line-of-Business(LOB)-Anwendung für eine Gruppe von Webservern in Azure hosten. Für den Clientdatenverkehr an TCP-Port 80 muss Lastenausgleich zwischen drei virtuellen Computern in einem standortübergreifenden virtuellen Netzwerk ausgeführt werden. Diese Konfiguration wird in Abbildung 2 gezeigt.
+Die Contoso Corporation möchte eine Line-of-Business\(LOB\)-Anwendung für eine Gruppe von Webservern in Azure hosten. Für den Clientdatenverkehr an TCP-Port 80 muss Lastenausgleich zwischen drei virtuellen Computern in einem standortübergreifenden virtuellen Netzwerk ausgeführt werden. Diese Konfiguration wird in Abbildung 2 gezeigt.
 
 ![Interner Lastenausgleich für eine LOB-Anwendung](./media/load-balancer-internal-getstarted/IC744148.png)
 
@@ -230,7 +234,7 @@ Die ILB-Konfiguration muss während der Erstellung der ersten Bereitstellung im 
 
 ### Schritt 1
 
-Öffnen Sie die Dienstkonfigurationsdatei (.cscfg) für Ihre Cloudbereitstellung in Visual Studio, und fügen Sie den folgenden Abschnitt hinzu, um den ILB unter dem letzten „</Role>“-Element für die Netzwerkkonfiguration zu erstellen.
+Öffnen Sie die Dienstkonfigurationsdatei \(.cscfg\) für Ihre Cloudbereitstellung in Visual Studio, und fügen Sie den folgenden Abschnitt hinzu, um den ILB unter dem letzten "`</Role>`"-Element für die Netzwerkkonfiguration zu erstellen.
 
 
 
@@ -244,7 +248,7 @@ Die ILB-Konfiguration muss während der Erstellung der ersten Bereitstellung im 
 	</NetworkConfiguration>
  
 
-Wir fügen nun die Werte für die Netzwerkkonfigurationsdatei hinzu, um zu veranschaulichen, wie dies aussieht. Im Beispiel wird davon ausgegangen, dass Sie ein Subnetz mit dem Namen „test_vnet“ und einem 10.0.0.0/24-Subnetz erstellt haben, das „test_subnet“ heißt und die statische IP 10.0.0.4 aufweist. Der Load Balancer hat den Namen testLB.
+Wir fügen nun die Werte für die Netzwerkkonfigurationsdatei hinzu, um zu veranschaulichen, wie dies aussieht. Im Beispiel wird davon ausgegangen, dass Sie ein Subnetz mit dem Namen „test\_vnet“ und einem 10.0.0.0/24-Subnetz erstellt haben, das „test\_subnet“ heißt und die statische IP 10.0.0.4 aufweist. Der Load Balancer hat den Namen testLB.
 
 	<NetworkConfiguration>
 	  <LoadBalancers>
@@ -254,12 +258,12 @@ Wir fügen nun die Werte für die Netzwerkkonfigurationsdatei hinzu, um zu veran
 	  </LoadBalancers>
 	</NetworkConfiguration>
 
-Weitere Informationen zu Load Balancer-Schemas finden Sie unter [Hinzufügen eines Load Balancers](https://msdn.microsoft.com/library/azure/dn722411.aspx).
+Weitere Informationen zu Lastenausgleichsschemas finden Sie unter [Hinzufügen eines Lastenausgleichs](https://msdn.microsoft.com/library/azure/dn722411.aspx).
 
 ### Schritt 2
 
 
-Ändern Sie die Dienstdefinitionsdatei (.csdef), um dem ILB Endpunkte hinzuzufügen. Zum Zeitpunkt der Erstellung einer Rolleninstanz fügt die Dienstdefinitionsdatei die Rolleninstanzen dem ILB hinzu.
+Ändern Sie die Dienstdefinitionsdatei \(.csdef\), um dem ILB Endpunkte hinzuzufügen. Zum Zeitpunkt der Erstellung einer Rolleninstanz fügt die Dienstdefinitionsdatei die Rolleninstanzen dem ILB hinzu.
 
 
 	<WorkerRole name="worker-role-name" vmsize="worker-role-size" enableNativeCodeExecution="[true|false]">
@@ -331,4 +335,4 @@ Um weitere Informationen zu ILB-Cmdlets zu erhalten, führen Sie die folgenden B
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/13/2015"
+	ms.date="07/23/2015"
 	ms.author="kenazk"/>
 
 #Verwalten der Verfügbarkeit virtueller Computer
@@ -34,9 +34,9 @@ Um die Downtime aufgrund eines oder mehrerer dieser Ereignisse zu verringern, so
 * [Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen]
 
 ### Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe für höhere Redundanz
-Um Redundanz für Ihre Anwendung zu gewährleisten, empfehlen wir die Gruppierung von zwei oder mehreren virtuellen Computern in einer Verfügbarkeitsgruppe. Durch diese Konfiguration wird sichergestellt, dass während eines geplanten oder ungeplanten Wartungsereignisses mindestens ein virtueller Computer verfügbar ist und die von der Azure-SLA zugesicherte Verfügbarkeit von 99,95 % eingehalten wird. Weitere Informationen zu Vereinbarungen zum Servicelevel finden Sie im Abschnitt "Clouddienste, virtuelle Computer und das virtuelle Netzwerk" unter [Vereinbarungen zum Servicelevel (SLAs)](../../../support/legal/sla/).
+Um Redundanz für Ihre Anwendung zu gewährleisten, empfehlen wir die Gruppierung von zwei oder mehreren virtuellen Computern in einer Verfügbarkeitsgruppe. Durch diese Konfiguration wird sichergestellt, dass während eines geplanten oder ungeplanten Wartungsereignisses mindestens ein virtueller Computer verfügbar ist und die von der Azure-SLA zugesicherte Verfügbarkeit von 99,95 % eingehalten wird. Weitere Informationen zu Vereinbarungen zum Servicelevel finden Sie im Abschnitt "Clouddienste, virtuelle Computer und das virtuelle Netzwerk" unter [Vereinbarungen zum Servicelevel \(SLAs\)](../../../support/legal/sla/).
 
-Jeder virtuelle Computer im Verfügbarkeitssatz wird einer Aktualisierungs- (Update Domain, UD) und Ausfalldomäne (Fault Domain, FD) der zugrunde liegenden Azure-Plattform zugewiesen. Einer bestimmten Verfügbarkeitsgruppe werden dabei fünf nicht vom Benutzer konfigurierbare Aktualisierungsdomänen zugeordnet, um Gruppen virtueller Computer und die zugehörige physische Hardware zu kennzeichnen, die gleichzeitig neu gestartet werden kann. Wenn innerhalb einer Verfügbarkeitsgruppe mehr als fünf virtuelle Computer konfiguriert sind, wird der sechste virtuelle Computer in derselben Aktualisierungsdomäne gespeichert wie der erste virtuelle Computer, der siebte in derselben Aktualisierungsdomäne wie der zweite virtuelle Computer usw. Während einer geplanten Wartung werden die Aktualisierungsdomänen möglicherweise nicht sequenziell neu gestartet. Es wird aber jeweils nur eine Aktualisierungsdomäne neu gestartet.
+Jeder virtuelle Computer im Verfügbarkeitssatz wird einer Aktualisierungs- \(Update Domain, UD\) und Ausfalldomäne \(Fault Domain, FD\) der zugrunde liegenden Azure-Plattform zugewiesen. Einer bestimmten Verfügbarkeitsgruppe werden dabei fünf nicht vom Benutzer konfigurierbare Aktualisierungsdomänen zugeordnet, um Gruppen virtueller Computer und die zugehörige physische Hardware zu kennzeichnen, die gleichzeitig neu gestartet werden kann. Wenn innerhalb einer Verfügbarkeitsgruppe mehr als fünf virtuelle Computer konfiguriert sind, wird der sechste virtuelle Computer in derselben Aktualisierungsdomäne gespeichert wie der erste virtuelle Computer, der siebte in derselben Aktualisierungsdomäne wie der zweite virtuelle Computer usw. Während einer geplanten Wartung werden die Aktualisierungsdomänen möglicherweise nicht sequenziell neu gestartet. Es wird aber jeweils nur eine Aktualisierungsdomäne neu gestartet.
 
 Durch Fehlerdomänen wird die Gruppe der virtuellen Computer definiert, die eine Stromquelle und einen Netzwerkswitch gemeinsam nutzen. Die innerhalb der Verfügbarkeitsgruppe konfigurierten virtuellen Computer werden standardmäßig auf zwei separate Fehlerdomänen verteilt. Auch wenn Verfügbarkeitsgruppen Ihre Anwendung nicht gänzlich vor Fehlern des Betriebssystems oder der Anwendung selbst schützen können, verringern sie doch die Auswirkungen potenzieller physischer Hardwarefehler, Netzwerkausfälle oder Stromunterbrechungen.
 
@@ -69,4 +69,4 @@ Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine
 [Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen]: #avoid-single-instance-virtual-machines-in-availability-sets
 [Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer]: virtual-machines-how-to-configure-availability.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

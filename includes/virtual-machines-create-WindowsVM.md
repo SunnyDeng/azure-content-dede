@@ -9,7 +9,7 @@
 	![Navigieren Sie auf der Befehlsleiste zu „Aus Katalog“.](./media/virtual-machines-create-WindowsVM/fromgallery.png)
 
 
-4. Im ersten Bildschirm können Sie für Ihren virtuellen Computer ein **Image** aus einer Liste im Image-Katalog auswählen. (Die verfügbaren Images können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.)
+4. Im ersten Bildschirm können Sie für Ihren virtuellen Computer ein **Image** aus einer Liste im Image-Katalog auswählen. \(Die verfügbaren Images können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.\)
 
 
 5. Im zweiten Bildschirm wählen Sie einen Computernamen, Größe sowie Benutzername und Passwort des Administrators aus. Andernfalls wählen Sie die benötigte Schicht und die Größe, um Ihre Anwendung oder Ihren Leistungsumfang auszuführen. Nachfolgend finden Sie detaillierte Informationen, die Ihnen beim Ausfüllen helfen:
@@ -40,4 +40,4 @@
 
 	![Konfigurieren Sie den VM-Agent und die Endpunkte des virtuellen Computers.](./media/virtual-machines-create-WindowsVM/vmcreated.png)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -23,14 +23,14 @@
 </div>
 
 
-Die folgende Dokumentation hilft Ihnen beim Einstieg mit Azure Active Directory Connect. In dieser Dokumentation wird die Verwendung der Expressinstallation für Azure AD Connect behandelt. Informationen zur benutzerdefinierten Installation finden Sie unter [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md) (in englischer Sprache). Informationen zum Aktualisieren von DirSync auf Azure AD Connect finden Sie unter [Upgrading DirSync to Azure Active Directory Connect](active-directory-aadconnect-dirsync-upgrade-get-started.md) (in englischer Sprache).
+Die folgende Dokumentation hilft Ihnen beim Einstieg mit Azure Active Directory Connect. In dieser Dokumentation wird die Verwendung der Expressinstallation für Azure AD Connect behandelt. Informationen zur benutzerdefinierten Installation finden Sie unter [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md) \(in englischer Sprache\). Informationen zum Aktualisieren von DirSync auf Azure AD Connect finden Sie unter [Upgrading DirSync to Azure Active Directory Connect](active-directory-aadconnect-dirsync-upgrade-get-started.md) \(in englischer Sprache\).
 
 
 ## Azure AD Connect herunterladen
 
 
 
-Für Ihre ersten Schritte mit Azure AD Connect können Sie die neuste Version über den folgenden Link herunterladen: [Download Azure AD Connect](http://go.microsoft.com/fwlink/?LinkID=615771) (in englischer Sprache)
+Für Ihre ersten Schritte mit Azure AD Connect können Sie die neuste Version über den folgenden Link herunterladen: [Download Azure AD Connect](http://go.microsoft.com/fwlink/?LinkID=615771) \(in englischer Sprache\)
 
 ## Vor der Installation von Azure AD Connect
 Vor der Installation von Azure AD Connect mit Express-Einstellungen benötigen Sie Folgendes.
@@ -49,11 +49,11 @@ Die folgende Tabelle zeigt die Mindestanforderungen für den Azure AD Connect-Co
 | Anzahl der Objekte in Active Directory | CPU | Arbeitsspeicher | Festplattengröße |
 | ------------------------------------- | --- | ------ | --------------- |
 | Weniger als 10.000 | 1,6 GHz | 4 GB | 70 GB |
-| 10.000 bis 50.000 | 1,6 GHz | 4 GB | 70 GB |
-| 50.000 bis 100.000 | 1,6 GHz | 16 GB | 100 GB |
+| 10\.000 bis 50.000 | 1,6 GHz | 4 GB | 70 GB |
+| 50\.000 bis 100.000 | 1,6 GHz | 16 GB | 100 GB |
 | Für 100.000 oder mehr Objekte ist die Vollversion von SQL Server erforderlich| | | |
-| 100.000 bis 300.000 | 1,6 GHz | 32 GB | 300 GB |
-| 300.000 bis 600.000 | 1,6 GHz | 32 GB | 450 GB |
+| 100\.000 bis 300.000 | 1,6 GHz | 32 GB | 300 GB |
+| 300\.000 bis 600.000 | 1,6 GHz | 32 GB | 450 GB |
 | Mehr als 600.000 | 1,6 GHz | 32 GB | 500 GB |
 
 
@@ -63,7 +63,7 @@ Informationen zu weiteren Anforderungen für benutzerdefinierte Optionen, z. B.
 
 
 ## Expressinstallation von Azure AD Connect
-Die Auswahl der Express-Einstellungen ist die Standardoption und eines der häufigsten Szenarios. Auf diese Weise stellt Azure AD Connect die Synchronisierung mit der Kennwort-Hash-Synchronisierungsoption bereit. Dies gilt nur für eine einzige Gesamtstruktur und ermöglicht den Benutzern die Verwendung ihres lokalen Kennworts beim Anmelden in der Cloud. Bei Verwendung der Express-Einstellungen wird nach Abschluss der Installation automatisch eine Synchronisierung gestartet (dies können Sie jedoch auch deaktivieren). Mit dieser Option können Sie mit nur wenigen kurzen Klicks Ihr lokales Verzeichnis auf die Cloud erweitern.
+Die Auswahl der Express-Einstellungen ist die Standardoption und eines der häufigsten Szenarios. Auf diese Weise stellt Azure AD Connect die Synchronisierung mit der Kennwort-Hash-Synchronisierungsoption bereit. Dies gilt nur für eine einzige Gesamtstruktur und ermöglicht den Benutzern die Verwendung ihres lokalen Kennworts beim Anmelden in der Cloud. Bei Verwendung der Express-Einstellungen wird nach Abschluss der Installation automatisch eine Synchronisierung gestartet \(dies können Sie jedoch auch deaktivieren\). Mit dieser Option können Sie mit nur wenigen kurzen Klicks Ihr lokales Verzeichnis auf die Cloud erweitern.
 
 <center>![Willkommen bei Azure&#160;AD Connect](./media/active-directory-aadconnect-get-started/welcome.png)</center>
 
@@ -79,7 +79,7 @@ Die Auswahl der Express-Einstellungen ist die Standardoption und eines der häuf
 8. Geben Sie im Bildschirm "Mit AD DS verbinden" den Benutzernamen und das Kennwort für ein Enterprise-Administratorkonto ein. Klicken Sie auf **Weiter**.
 <center>![Willkommen bei Azure&#160;AD Connect](./media/active-directory-aadconnect-get-started/install4.png)</center>
 9. Klicken Sie im Bildschirm "Bereit zur Konfiguration" auf **Installieren**.
-	- Optional können Sie auf der Seite "Bereit zur Konfiguration" das Kontrollkästchen **Starten Sie den Synchronisierungsvorgang, sobald die Anfangskonfiguration abgeschlossen wurde** deaktivieren. Der Assistent konfiguriert dann zwar die Synchronisierung, die Aufgabe bleibt jedoch deaktiviert, sodass sie erst ausgeführt wird, wenn Sie sie in der Aufgabenplanung manuell aktivieren. Sobald die Aufgabe aktiviert ist, wird die Synchronisierung alle drei Stunden ausgeführt.
+	- Optional können Sie auf der Seite "Bereit zur Konfiguration" das Kontrollkästchen \*\*Starten Sie den Synchronisierungsvorgang, sobald die Anfangskonfiguration abgeschlossen wurde\*\* deaktivieren. Der Assistent konfiguriert dann zwar die Synchronisierung, die Aufgabe bleibt jedoch deaktiviert, sodass sie erst ausgeführt wird, wenn Sie sie in der Aufgabenplanung manuell aktivieren. Sobald die Aufgabe aktiviert ist, wird die Synchronisierung alle drei Stunden ausgeführt.
 	- Durch Aktivieren des entsprechenden Kontrollkästchens können Sie wahlweise auch die Konfiguration von Synchronisierungsdiensten für die **Exchange-Hybridbereitstellung** festlegen. Wenn Sie Exchange-Postfächer nicht gleichzeitig lokal und in der Cloud bereitstellen möchten, müssen Sie diese Option nicht aktivieren.
 
 <center>![Willkommen bei Azure&#160;AD Connect](./media/active-directory-aadconnect-get-started/readyinstall.png)</center>
@@ -114,4 +114,4 @@ Nachdem Sie nun Azure AD Connect installiert haben, können Sie auf diesen Link
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

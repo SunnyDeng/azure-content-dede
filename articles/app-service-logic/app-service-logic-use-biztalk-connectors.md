@@ -58,7 +58,7 @@ Azure App Service bietet eine Reihe von Connectors, die direkt einsatzbereit sin
 * [AS2-Connector]
 * [BizTalk EDIFACT]
 * [BizTalk Flat File Encoder]
-* [BizTalk JSON Encoder]
+* \[BizTalk JSON Encoder\]
 * [BizTalk-Transformationsdienst]
 * [BizTalk-Regeln]
 * [BizTalk X12]
@@ -82,7 +82,7 @@ Mehrere Connectors bieten Trigger für Logik-Apps. Diese Trigger haben zwei Type
 2. Push-Trigger: Diese Trigger lauschen auf den Eingang von Daten an einem Endpunkt oder das Eintreten eines Ereignisses und lösen eine neue Instanz einer Logik-App aus. Beispiele für solche Connectors sind "HTTP-Listener" und "Twitter".
 
 ###Connectors als Aktionen###
-Connectors können in Ihrer Logik-App auch als Aktionen verwendet werden. Aktionen sind nützlich für die Suche nach Daten in der Logik-App, die bei der Ausführung verwendet werden. Sie müssen möglicherweise in einer SQL-Datenbank zusätzliche Informationen zu einem Kunden nachschlagen, wenn Sie eine Bestellung verarbeiten. Alternativ müssen Sie möglicherweise Daten in ein Ziel schreiben und dort aktualisieren oder löschen, wofür Sie die von den Connectors bereitgestellten Aktionen verwenden können. Aktionen werden Vorgängen in API-Apps zugeordnet (gemäß ihren Swagger-Metadaten).
+Connectors können in Ihrer Logik-App auch als Aktionen verwendet werden. Aktionen sind nützlich für die Suche nach Daten in der Logik-App, die bei der Ausführung verwendet werden. Sie müssen möglicherweise in einer SQL-Datenbank zusätzliche Informationen zu einem Kunden nachschlagen, wenn Sie eine Bestellung verarbeiten. Alternativ müssen Sie möglicherweise Daten in ein Ziel schreiben und dort aktualisieren oder löschen, wofür Sie die von den Connectors bereitgestellten Aktionen verwenden können. Aktionen werden Vorgängen in API-Apps zugeordnet \(gemäß ihren Swagger-Metadaten\).
 
 
 <!-- Links -->
@@ -124,4 +124,4 @@ Connectors können in Ihrer Logik-App auch als Aktionen verwendet werden. Aktion
 [BizTalk-Transformationsdienst]: app-service-logic-transform-xml-documents.md
 [Warten-Connector]: app-service-logic-wait.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

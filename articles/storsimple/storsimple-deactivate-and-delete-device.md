@@ -35,7 +35,7 @@ Bei einem virtuellen StorSimple-Gerät löscht die Deaktivierung die virtuelle M
 
 Wenn Sie das Gerät vollständig löschen und die Gerätedaten nicht beibehalten wollen, führen Sie die folgenden Schritte aus:
 
-1. Vor dem Deaktivieren eines Geräts müssen Sie alle Volumecontainer (und die Volumes) löschen, die dem Gerät zugeordnet sind. Sie können Volumecontainer nur löschen, nachdem Sie die zugeordneten Sicherungen gelöscht haben.
+1. Vor dem Deaktivieren eines Geräts müssen Sie alle Volumecontainer \(und die Volumes\) löschen, die dem Gerät zugeordnet sind. Sie können Volumecontainer nur löschen, nachdem Sie die zugeordneten Sicherungen gelöscht haben.
 
 2. Deaktivieren Sie das Gerät. Anweisungen finden Sie unter [Schritte zum Deaktivieren](#steps-to-deactivate).
 
@@ -91,4 +91,4 @@ Um das deaktivierte Geräts mit den Werkseinstellungen wiederherzustellen, gehen
 
 Für technische Unterstützung [wenden Sie sich an den Microsoft Support](https://msdn.microsoft.com/library/azure/dn757750.aspx).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

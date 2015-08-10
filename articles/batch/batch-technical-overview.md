@@ -18,9 +18,9 @@
 
 
 #Azure Batch – Technische Übersicht
-Azure Batch unterstützt Sie beim effizienten Ausführen von größeren parallelen und leistungsstarken Anwendungen (High Performance Computing, HPC) in der Cloud. Es handelt sich dabei um einen Plattformdienst, über den die Auftragsplanung und automatische Skalierung einer verwalteten Sammlung virtueller Computer (VMs) zum Ausführen der Aufträge bereitgestellt werden. Mit dem Batch-Dienst können Sie Batchworkloads so konfigurieren, dass sie in Azure bei Bedarf oder nach einem Zeitplan ausgeführt werden. Das komplexe Konfigurieren und Verwalten von HPC-Clustern, VMs oder Auftragsplanern entfällt.
+Azure Batch unterstützt Sie beim effizienten Ausführen von größeren parallelen und leistungsstarken Anwendungen \(High Performance Computing, HPC\) in der Cloud. Es handelt sich dabei um einen Plattformdienst, über den die Auftragsplanung und automatische Skalierung einer verwalteten Sammlung virtueller Computer \(VMs\) zum Ausführen der Aufträge bereitgestellt werden. Mit dem Batch-Dienst können Sie Batchworkloads so konfigurieren, dass sie in Azure bei Bedarf oder nach einem Zeitplan ausgeführt werden. Das komplexe Konfigurieren und Verwalten von HPC-Clustern, VMs oder Auftragsplanern entfällt.
 
->[AZURE.NOTE]Zum Verwenden von Batch benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)](http://azure.microsoft.com/develop/php/tutorials/create-a-windows-azure-account/).
+>[AZURE.NOTE]Zum Verwenden von Batch benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account \(in englischer Sprache\)](http://azure.microsoft.com/develop/php/tutorials/create-a-windows-azure-account/).
 
 
 ## Anwendungsfälle
@@ -29,7 +29,7 @@ Batch nutzt die Flexibilität und die Skalierung der Cloud zur Unterstützung de
 
 Batch Computing ist ein häufig genutztes Muster für Unternehmen, die Verarbeiten, Transformieren und Analysieren großer Datenmengen durchführen, entweder nach einem Zeitplan oder bei Bedarf. Es umfasst Verarbeitung am Ende der Schleife, z. B. bei täglichen Risikoberichten einer Bank oder bei Lohnbuchhaltung, die planmäßig ausgeführt werden muss. Darüber hinaus umfasst es umfangreiche Geschäfts-, Wissenschafts- und Engineering-Anwendungen, die in der Regel Tools und Ressourcen von einem Computecluster oder -raster benötigen. Anwendungen umfassen herkömmliche HPC-Anwendungen wie fluiddynamische Simulationen sowie spezielle Workloads in Bereichen, die von der Erstellung digitaler Inhalte über Finanzdienstleistungen bis hin zur Biowissenschaftensforschung reichen.
 
-Batch funktioniert sehr gut bei intrinsisch parallelen (manchmal als "hochgradig parallel" bezeichnete) Anwendungen oder Workloads, mit denen parallele Aufgaben auf mehreren Computern ausgeführt werden, wie z. B. die Compute-VMs, die vom Batch-Dienst verwaltet werden. Siehe Abbildung 1.
+Batch funktioniert sehr gut bei intrinsisch parallelen \(manchmal als "hochgradig parallel" bezeichnete\) Anwendungen oder Workloads, mit denen parallele Aufgaben auf mehreren Computern ausgeführt werden, wie z. B. die Compute-VMs, die vom Batch-Dienst verwaltet werden. Siehe Abbildung 1.
 
 ![Parallele Aufgaben][parallel]
 
@@ -45,11 +45,11 @@ Beispiele:
 
 Batch können Sie auch nutzen, um parallele Berechnungen mit einem Reduzierungsschritt am Ende und andere kompliziertere, parallele Workloads auszuführen.
 
->[AZURE.NOTE]Derzeit können nur Windows-Server-Workloads mit Batch ausgeführt werden. Zudem unterstützt Batch derzeit keine Message-Passing-Interface (MPI)-Anwendungen.
+>[AZURE.NOTE]Derzeit können nur Windows-Server-Workloads mit Batch ausgeführt werden. Zudem unterstützt Batch derzeit keine Message-Passing-Interface \(MPI\)-Anwendungen.
 
 ## Entwicklungsszenarien
 
-Batch unterstützt verschiedene Entwicklungsszenarien, mit denen Sie große, parallele Workloads mit dem Batch-Dienst konfigurieren und ausführen können. Diese Szenarien nutzen APIs zur Erstellung und Verwaltung von VM-Pools (Computeknoten) sowie zur Planung der Aufträge und Aufgaben, die auf ihnen ausgeführt werden. Unter [API-Grundlagen für Azure Batch](batch-api-basics.md) finden Sie weitere Informationen über die Batch-Konzepte.
+Batch unterstützt verschiedene Entwicklungsszenarien, mit denen Sie große, parallele Workloads mit dem Batch-Dienst konfigurieren und ausführen können. Diese Szenarien nutzen APIs zur Erstellung und Verwaltung von VM-Pools \(Computeknoten\) sowie zur Planung der Aufträge und Aufgaben, die auf ihnen ausgeführt werden. Unter [API-Grundlagen für Azure Batch](batch-api-basics.md) finden Sie weitere Informationen über die Batch-Konzepte.
 
 Typische Batch-Entwicklungsszenarien finden Sie in den folgenden Abschnitten.
 
@@ -63,7 +63,7 @@ Abbildung 2 zeigt einen vereinfachten Workflow zum Übermitteln einer Anwendung 
 
 **Abbildung 2: Horizontales Skalieren eines parallelen Workloads auf Batch**
 
-1.	Hochladen von Eingabedateien (z. B. Quelldaten oder Bilder), die für einen Auftrag zu einem Azure-Speicherkonto erforderlich sind. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Der Batch-Dienst lädt Dateien in Computeknoten, wenn die Aufgaben ausgeführt werden.
+1.	Hochladen von Eingabedateien \(z. B. Quelldaten oder Bilder\), die für einen Auftrag zu einem Azure-Speicherkonto erforderlich sind. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Der Batch-Dienst lädt Dateien in Computeknoten, wenn die Aufgaben ausgeführt werden.
 2.	Laden Sie die abhängigen Binärdateien in das Speicherkonto hoch. Die Binärdateien enthalten das Programm, das durch die Aufgabe und die abhängigen Assemblys ausgeführt wird. Auf diese Dateien muss auch aus dem Speicher zugegriffen werden, und sie werden auf die Computeknoten geladen.
 3.	Erstellen Sie einen Pool von Computeknoten, indem Sie Eigenschaften wie die Größe der virtuellen Computer und das ausgeführte Betriebssystem festlegen. Sie können auch bestimmen, wie die Anzahl der Knoten im Pool dem Workload entsprechend nach oben oder unten skaliert wird. Wenn eine Aufgabe ausgeführt wird, wird ihr ein Knoten aus diesem Pool zugewiesen.
 4.	Definieren Sie einen Auftrag, der im Pool ausgeführt werden soll.
@@ -95,7 +95,7 @@ Abbildung 3 zeigt einen einfachen Arbeitsablauf zum Veröffentlichen einer Anwen
 
 	Zum Ausführen eines Auftrags:
 
-	a. Laden Sie die Eingabedateien hoch (z. B. Quelldaten oder Bilder), die für den Auftrag des Benutzers spezifisch sind. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann.
+	a. Laden Sie die Eingabedateien hoch \(z. B. Quelldaten oder Bilder\), die für den Auftrag des Benutzers spezifisch sind. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann.
 
 	b. Übermitteln Sie einen Auftrag mit den erforderlichen Parametern und der Liste der Dateien.
 
@@ -112,7 +112,7 @@ So erstellen im Portal ein Batch-Konto
 
 1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
-2. Klicken Sie auf **Neu** > **Compute**> **Marketplace** > **Alles** und geben Sie dann *Batch* in das Suchfeld ein.
+2. Klicken Sie auf **Neu** \> **Compute**\> **Marketplace** \> **Alles** und geben Sie dann *Batch* in das Suchfeld ein.
 
 	![Batch im Marketplace][marketplace_portal]
 
@@ -153,4 +153,4 @@ Nachdem das Konto erstellt wurde, finden Sie es im Portal vor, um Zugriffsschlü
 [work_item_workflow]: ./media/batch-technical-overview/work_item_workflow.png
 [app_pub_workflow]: ./media/batch-technical-overview/app_pub_workflow.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

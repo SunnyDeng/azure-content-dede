@@ -19,7 +19,7 @@
 
 ## Übersicht
 
-StorSimple Snapshot Manager ist ein Microsoft Management Console (MMC)-Snap-In, das den Datenschutz und die Sicherungsverwaltung in einer Microsoft Azure StorSimple-Umgebung vereinfacht. Mit dem StorSimple Snapshot Manager können Sie Microsoft Azure StorSimple-Daten im Rechenzentrum und in der Cloud als eine einzelne integrierte Speicherlösung verwalten und somit die Sicherungsprozesse vereinfachen und die Kosten senken.
+StorSimple Snapshot Manager ist ein Microsoft Management Console \(MMC\)-Snap-In, das den Datenschutz und die Sicherungsverwaltung in einer Microsoft Azure StorSimple-Umgebung vereinfacht. Mit dem StorSimple Snapshot Manager können Sie Microsoft Azure StorSimple-Daten im Rechenzentrum und in der Cloud als eine einzelne integrierte Speicherlösung verwalten und somit die Sicherungsprozesse vereinfachen und die Kosten senken.
 
 Diese Übersicht bietet eine Einführung in den StorSimple Snapshot Manager, eine Beschreibung der Features und eine Erläuterung seiner Rolle in Microsoft Azure StorSimple.
 
@@ -34,9 +34,9 @@ Der StorSimple Snapshot Manager stellt eine zentrale Verwaltungskonsole bereit, 
 - Verwalten von Sicherungsrichtlinien, damit die Daten nach einem vordefinierten Zeitplan gesichert werden.
 - Erstellen unabhängiger Kopien von Daten, die in der Cloud gespeichert und für die Notfallwiederherstellung verwendet werden können
 
-Mit dem StorSimple Snapshot Manager können Sie Volumes bereitstellen und diese dann in Volumegruppen konfigurieren, i. d. R. nach Anwendung. Der StorSimple Snapshot Manager verwendet diese Volumegruppen zum Erstellen von anwendungskonsistenten Sicherungskopien. (Anwendungskonsistenz ist gegeben, wenn alle zugehörigen Dateien und Datenbanken synchron sind und den tatsächlichen Zustand der Anwendung zu einem bestimmten Zeitpunkt darstellen.)
+Mit dem StorSimple Snapshot Manager können Sie Volumes bereitstellen und diese dann in Volumegruppen konfigurieren, i. d. R. nach Anwendung. Der StorSimple Snapshot Manager verwendet diese Volumegruppen zum Erstellen von anwendungskonsistenten Sicherungskopien. \(Anwendungskonsistenz ist gegeben, wenn alle zugehörigen Dateien und Datenbanken synchron sind und den tatsächlichen Zustand der Anwendung zu einem bestimmten Zeitpunkt darstellen.\)
 
-StorSimple Snapshot Manager-Sicherungen sind inkrementelle Momentaufnahmen, die nur die Änderungen seit der letzten Sicherung erfassen. Deshalb verbrauchen die Sicherungen weniger Speicherplatz und können schnell erstellt und wiederhergestellt werden. Der StorSimple Snapshot Manager verwendet den Windows-Volumeschattenkopie-Dienst (Volume Shadow Copy Service, VSS), um sicherzustellen, dass in den Momentaufnahmen anwendungskonsistente Daten erfasst werden. (Weitere Informationen finden Sie im Abschnitt "Integration in den Windows-Volumeschattenkopie-Dienst".) Sie können mit dem StorSimple Snapshot Manager Sicherungszeitpläne erstellen oder sofortige Sicherungen anlegen. Wenn Sie anschließend Daten aus einer Sicherung wiederherstellen müssen, ermöglicht der StorSimple Snapshot Manager die Auswahl aus in einem Katalog mit lokalen oder Cloudmomentaufnahmen. Azure StorSimple stellt nur die erforderlichen Daten wieder her, wenn sie benötigt werden – dies verhindert Verzögerungen bei der Datenverfügbarkeit.)
+StorSimple Snapshot Manager-Sicherungen sind inkrementelle Momentaufnahmen, die nur die Änderungen seit der letzten Sicherung erfassen. Deshalb verbrauchen die Sicherungen weniger Speicherplatz und können schnell erstellt und wiederhergestellt werden. Der StorSimple Snapshot Manager verwendet den Windows-Volumeschattenkopie-Dienst \(Volume Shadow Copy Service, VSS\), um sicherzustellen, dass in den Momentaufnahmen anwendungskonsistente Daten erfasst werden. \(Weitere Informationen finden Sie im Abschnitt "Integration in den Windows-Volumeschattenkopie-Dienst".\) Sie können mit dem StorSimple Snapshot Manager Sicherungszeitpläne erstellen oder sofortige Sicherungen anlegen. Wenn Sie anschließend Daten aus einer Sicherung wiederherstellen müssen, ermöglicht der StorSimple Snapshot Manager die Auswahl aus in einem Katalog mit lokalen oder Cloudmomentaufnahmen. Azure StorSimple stellt nur die erforderlichen Daten wieder her, wenn sie benötigt werden – dies verhindert Verzögerungen bei der Datenverfügbarkeit.\)
 
 ![StorSimple Snapshot Manager-Architektur](./media/storsimple-what-is-snapshot-manager/HCS_SSM_Overview.png)
 
@@ -48,13 +48,13 @@ Sie können den StorSimple Snapshot Manager zum Konfigurieren und Sichern der fo
 
 - **Basisvolumes:** Ein Basisvolume ist eine einzelne Partition auf einem Basisdatenträger. 
 
-- **Einfache Volumes:** Ein einfaches Volume ist ein dynamisches Volume, das den Speicherplatz von einem einzelnen dynamischen Datenträger enthält. Ein einfaches Volume besteht aus einem einzelnen Bereich auf einem Datenträger oder aus mehreren Bereichen auf demselben Datenträger, die miteinander verknüpft sind. (Sie können einfache Volumes nur auf dynamischen Datenträgern erstellen.) Einfache Volumes bieten keine Fehlertoleranz.
+- **Einfache Volumes:** Ein einfaches Volume ist ein dynamisches Volume, das den Speicherplatz von einem einzelnen dynamischen Datenträger enthält. Ein einfaches Volume besteht aus einem einzelnen Bereich auf einem Datenträger oder aus mehreren Bereichen auf demselben Datenträger, die miteinander verknüpft sind. \(Sie können einfache Volumes nur auf dynamischen Datenträgern erstellen.\) Einfache Volumes bieten keine Fehlertoleranz.
 
 - **Dynamische Volumes:** Ein dynamisches Volume ist ein Volume, das auf einem dynamischen Datenträger erstellt wird. Dynamische Datenträger verwenden eine Datenbank zum Nachverfolgen von Informationen zu den Volumes auf den dynamischen Datenträgern in einem Computer.
 
 - **Dynamische Volumes mit Spiegelung:** Dynamische Volumes mit Spiegelung basieren auf der RAID-1-Architektur. Bei RAID 1 werden identische Daten auf zwei oder mehr Datenträger geschrieben, wodurch ein gespiegelter Satz entsteht. Eine Leseanforderung kann dann von einem beliebigen Datenträger behandelt werden, der die angeforderten Daten enthält.
 
-- **Freigegebene Clustervolumes:** Bei freigegebenen Clustervolumes (CSV) können mehrere Knoten in einem Failovercluster gleichzeitig auf demselben Datenträger lesen oder schreiben. Failover von einem Knoten auf einen anderen Knoten können sehr schnell durchgeführt werden, ohne dass eine Änderung am Besitz für das Laufwerk erforderlich ist oder dass ein Volume bereitgestellt, seine Bereitstellung aufgehoben oder ein Volume entfernt werden muss.
+- **Freigegebene Clustervolumes:** Bei freigegebenen Clustervolumes \(CSV\) können mehrere Knoten in einem Failovercluster gleichzeitig auf demselben Datenträger lesen oder schreiben. Failover von einem Knoten auf einen anderen Knoten können sehr schnell durchgeführt werden, ohne dass eine Änderung am Besitz für das Laufwerk erforderlich ist oder dass ein Volume bereitgestellt, seine Bereitstellung aufgehoben oder ein Volume entfernt werden muss.
 
 >[AZURE.IMPORTANT]Mischen Sie keine freigegebene Clustervolumes mit nicht freigegebenen Clustervolumes in derselben Momentaufnahme. Das Vermischen von freigegebenen Clustervolumes mit nicht freigegebenen Clustervolumes in einer Momentaufnahme wird nicht unterstützt.
  
@@ -69,17 +69,17 @@ Weitere Informationen über Features des StorSimple Snapshot Managers und deren 
 
 Mit dem StorSimple Snapshot Manager können Sie Volumes erstellen und dann in Volumegruppen konfigurieren.
 
-Der StorSimple Snapshot Manager verwendet Volumegruppen zum Erstellen von anwendungskonsistenten Sicherungskopien. Anwendungskonsistenz ist gegeben, wenn alle zugehörigen Dateien und Datenbanken synchron sind und den tatsächlichen Zustand einer Anwendung zu einem bestimmten Zeitpunkt darstellen. Volumegruppen (auch als *Konsistenzgruppen* bezeichnet) bilden die Basis von Sicherungs- oder Wiederherstellungsaufträgen.
+Der StorSimple Snapshot Manager verwendet Volumegruppen zum Erstellen von anwendungskonsistenten Sicherungskopien. Anwendungskonsistenz ist gegeben, wenn alle zugehörigen Dateien und Datenbanken synchron sind und den tatsächlichen Zustand einer Anwendung zu einem bestimmten Zeitpunkt darstellen. Volumegruppen \(auch als *Konsistenzgruppen* bezeichnet\) bilden die Basis von Sicherungs- oder Wiederherstellungsaufträgen.
 
 >[AZURE.NOTE]Volumegruppen sind nicht dasselbe wie Volumecontainer. Ein Volumecontainer enthält ein oder mehrere Volumes, die gemeinsame Einstellungen für das Cloudspeicherkonto und andere Attribute wie die Verschlüsselung und die Bandbreitenauslastung haben. Ein Volumecontainer kann bis zu 256 nach Bedarf bereitgestellte StorSimple-Volumes enthalten. Weitere Informationen zu Volumecontainern finden Sie unter [Verwalten von Volumecontainern](storsimple-manage-volume-containers.md). Volumegruppen sind Sammlungen von Volumes, die Sie für Sicherungsvorgänge konfigurieren. Wenn Sie zwei Volumes, die zu verschiedenen Volumecontainern gehören, in einer einzelnen Volumegruppe platzieren und dann eine Sicherungsrichtlinie für diese Volumegruppe erstellen, wird jedes Volume mithilfe des zugehörigen Speicherkontos im entsprechenden Volumecontainer gesichert.
 
 ## Integration in den Windows-Volumeschattenkopie-Dienst
 
-Der StorSimple Snapshot Manager verwendet den Windows-Volumeschattenkopie-Dienst (Volume Shadow Copy Service, VSS), um anwendungskonsistente Daten zu erfassen. VSS gewährleistet die Anwendungskonsistenz über die Kommunikation mit VSS-fähigen Anwendungen zur Koordination der Erstellung inkrementeller Momentaufnahmen. VSS stellt sicher, dass die Anwendungen vorübergehend inaktiv oder untätig sind, wenn die Momentaufnahmen erstellt werden.
+Der StorSimple Snapshot Manager verwendet den Windows-Volumeschattenkopie-Dienst \(Volume Shadow Copy Service, VSS\), um anwendungskonsistente Daten zu erfassen. VSS gewährleistet die Anwendungskonsistenz über die Kommunikation mit VSS-fähigen Anwendungen zur Koordination der Erstellung inkrementeller Momentaufnahmen. VSS stellt sicher, dass die Anwendungen vorübergehend inaktiv oder untätig sind, wenn die Momentaufnahmen erstellt werden.
 
 Die StorSimple Snapshot Manager-Implementierung von VSS arbeitet mit SQL Server und generischen NTFS-Volumes. Dieser Prozess verläuft wie folgt:
 
-1. Ein Anforderer, i. d. R. eine Datenverwaltungs- und Datenschutzlösung (z. B. StorSimple Snapshot Manager) oder eine Sicherungsanwendung, ruft VSS auf und fordert den Dienst zum Sammeln von Informationen von der Writer-Software in der Zielanwendung auf.
+1. Ein Anforderer, i. d. R. eine Datenverwaltungs- und Datenschutzlösung \(z. B. StorSimple Snapshot Manager\) oder eine Sicherungsanwendung, ruft VSS auf und fordert den Dienst zum Sammeln von Informationen von der Writer-Software in der Zielanwendung auf.
 
 2. VSS ruft eine Beschreibung der Daten von der Writer-Komponente ab. Der Writer gibt die Beschreibung der zu sichernden Daten zurück.
 
@@ -87,7 +87,7 @@ Die StorSimple Snapshot Manager-Implementierung von VSS arbeitet mit SQL Server
 
 4. VSS weist den Writer an, die Datenspeicher für die Anwendung vorübergehend zu beenden, und sicherzustellen, dass keine Daten auf das Volume geschrieben werden, während die Schattenkopie erstellt wird. Durch diesen Schritt, der nicht länger als 60 Sekunden dauert, wird die Konsistenz der Daten sichergestellt.
 
-5. VSS weist den Anbieter an, die Schattenkopie zu erstellen. Anbieter (software- oder hardwarebasiert) verwalten die zurzeit ausgeführten Volumes und erstellen von diesen bei Bedarf Schattenkopien. Der Anbieter erstellt die Schattenkopie und benachrichtigt VSS nach Abschluss des Vorgangs.
+5. VSS weist den Anbieter an, die Schattenkopie zu erstellen. Anbieter \(software- oder hardwarebasiert\) verwalten die zurzeit ausgeführten Volumes und erstellen von diesen bei Bedarf Schattenkopien. Der Anbieter erstellt die Schattenkopie und benachrichtigt VSS nach Abschluss des Vorgangs.
 
 6. VSS weist den Writer an, die Anwendung zu benachrichtigen, dass die E/A-Vorgänge fortgesetzt werden können, und zu bestätigen, dass die E/A-Vorgänge während der Erstellung der Schattenkopien erfolgreich angehalten wurden.
 
@@ -129,7 +129,7 @@ Sie konfigurieren die folgenden Informationen für jede von Ihnen erstellte Sich
 
 - **Volumegruppe:** die Volumegruppe, der die ausgewählte Sicherungsrichtlinie zugewiesen wird.
 
-- **Aufbewahrung:** die Anzahl von beizubehaltenden Sicherungskopien. Wenn Sie die Option **Alle** aktivieren, werden alle Sicherungskopien aufbewahrt, bis die maximale Anzahl von Sicherungskopien pro Volume erreicht ist. Zu diesem Zeitpunkt schlägt die Richtlinie fehl und generiert eine Fehlermeldung. Sie können auch eine Anzahl von Sicherungen angeben, die beibehalten werden sollen (zwischen 1 und 64).
+- **Aufbewahrung:** die Anzahl von beizubehaltenden Sicherungskopien. Wenn Sie die Option **Alle** aktivieren, werden alle Sicherungskopien aufbewahrt, bis die maximale Anzahl von Sicherungskopien pro Volume erreicht ist. Zu diesem Zeitpunkt schlägt die Richtlinie fehl und generiert eine Fehlermeldung. Sie können auch eine Anzahl von Sicherungen angeben, die beibehalten werden sollen \(zwischen 1 und 64\).
 
 - **Datum:** das Datum, an dem die Sicherungsrichtlinie erstellt wurde.
 
@@ -148,4 +148,4 @@ Informationen zum Überwachen von Sicherungsaufträgen finden Sie unter [Anzeige
 
 [StorSimple Snapshot Manager herunterladen](https://www.microsoft.com/download/details.aspx?id=44220).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

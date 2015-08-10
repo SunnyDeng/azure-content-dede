@@ -20,7 +20,7 @@
 
 ## Übersicht
 
-Dieser Leitfaden enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-Blob erstellt oder aktualisiert wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet.
+Dieser Leitfaden enthält C\#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-Blob erstellt oder aktualisiert wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet.
 
 Im Handbuch wird davon ausgegangen, dass Sie wissen, [wie ein WebJobs-Projekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto verweisen](websites-dotnet-webjobs-sdk-get-started.md).
 
@@ -36,7 +36,7 @@ Die Codeausschnitte zeigen nur Funktionen, nicht den Code, mit dem das `JobHost`
 
 Für die Arbeit mit Service Bus müssen Sie neben den weiteren WebJobs-SDK-Paketen das NuGet-Paket [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus/) installieren.
 
-Sie müssen außerdem zusätzlich zu den Speicherverbindungszeichenfolgen die Verbindungszeichenfolge "AzureWebJobsServiceBus" festlegen. Sie führen dies im Abschnitt `connectionStrings` der Datei "Web.config" aus, wie im folgenden Beispiel gezeigt:
+Sie müssen außerdem zusätzlich zu den Speicherverbindungszeichenfolgen die Verbindungszeichenfolge "AzureWebJobsServiceBus" festlegen. Sie führen dies im Abschnitt `connectionStrings` der Datei "App.config" aus, wie im folgenden Beispiel gezeigt:
 
 		<connectionStrings>
 		    <add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=[accountname];AccountKey=[accesskey]"/>
@@ -44,7 +44,9 @@ Sie müssen außerdem zusätzlich zu den Speicherverbindungszeichenfolgen die Ve
 		    <add name="AzureWebJobsServiceBus" connectionString="Endpoint=sb://[yourServiceNamespace].servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[yourKey]"/>
 		</connectionStrings>
 
-Ein Beispielprojekt finden Sie unter [Service Bus-Beispiel](https://github.com/Azure/azure-webjobs-sdk-samples/tree/master/BasicSamples/ServiceBus). Weitere Informationen finden Sie unter [Erste Schritte mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-get-started.md).
+Ein Beispielprojekt, das die Einstellung für die Service Bus-Verbindungszeichenfolge in der Datei "App.config" enthält, finden Sie im [Service Bus-Beispiel](https://github.com/Azure/azure-webjobs-sdk-samples/tree/master/BasicSamples/ServiceBus).
+
+Die Verbindungszeichenfolgen können auch in der Azure-Laufzeitumgebung festgelegt werden, die dann die „App.config“-Einstellungen überschreibt, wenn der WebJob in Azure ausgeführt wird. Weitere Informationen finden Sie unter [Erste Schritte mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-get-started.md#configure-the-web-app-to-use-your-azure-sql-database-and-storage-account).
 
 ## <a id="trigger"></a> Auslösen einer Funktion, wenn eine Service Bus-Warteschlangennachricht empfangen wird
 
@@ -70,7 +72,7 @@ Das folgende Codebeispiel liest eine Warteschlangennachricht, die eine Zeichenfo
 
 ### POCO-Warteschlangennachricht
 
-Das SDK führt eine automatische Deserialisierung der Warteschlangennachricht durch, die für einen POCO-Typ [(Plain Old CLR Object)](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object) JSON enthält. Das folgende Codebeispiel liest eine Warteschlangennachricht, die ein `BlobInformation`-Objekt mit einer `BlobName`-Eigenschaft enthält:
+Das SDK führt eine automatische Deserialisierung der Warteschlangennachricht durch, die für einen POCO-Typ [\(Plain Old CLR Object\)](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object) JSON enthält. Das folgende Codebeispiel liest eine Warteschlangennachricht, die ein `BlobInformation`-Objekt mit einer `BlobName`-Eigenschaft enthält:
 
 		public static void WriteLogPOCO([ServiceBusTrigger("inputqueue")] BlobInformation blobInfo,
 		    TextWriter logger)
@@ -157,4 +159,4 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 In dieser Anleitung wurde anhand von Codebeispielen veranschaulicht, wie häufige Szenarien für das Arbeiten mit Azure Service Bus behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

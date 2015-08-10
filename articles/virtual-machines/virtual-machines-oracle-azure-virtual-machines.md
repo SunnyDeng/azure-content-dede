@@ -1,8 +1,8 @@
 <properties
 	pageTitle="Auf Azure Virtual Machines gehostete Oracle-Software"
 	description="Erfahren Sie, wie Sie Oracle-Software auf Windows- oder Linux-basierten virtuellen Azure-Computern einrichten."
-	documentationCenter=""
 	services="virtual-machines"
+	documentationCenter=""
 	authors="JoeDavies-MSFT"
 	manager="timlt"
 	editor=""
@@ -19,7 +19,7 @@
 
 # Auf Azure Virtual Machines gehostete Oracle-Software
 
-Richten Sie Ihre erste oder nächste Oracle-Datenbank für Entwicklung/Tests oder Produktion auf einem virtuellen Computer in Microsoft Azure-Infrastrukturdiensten ein. Nutzen Sie die Vorteile der einfachen Konfiguration und die Möglichkeit, die Oracle-Datenbankworkload schnell zu erweitern, um neue Kapazitäten einzuschließen.
+Richten Sie Ihre erste oder nächste Oracle-Datenbank für Entwicklung/Tests oder Produktion auf einem virtuellen Computer in Azure-Infrastrukturdiensten ein. Nutzen Sie die Vorteile der einfachen Konfiguration und die Möglichkeit, die Oracle-Datenbankworkload schnell zu erweitern, um neue Kapazitäten einzuschließen.
 
 ## Images virtueller Oracle-Computer
 
@@ -31,7 +31,7 @@ In [Verschiedene Überlegungen zu Images für virtuelle Oracle-Computer](virtual
 
 ## Virtueller Oracle Database-Computer
 
-[Erstellen eines virtuellen Oracle Database-Computers in Azure](virtual-machines-creating-oracle-database-virtual-machine.md) führt Sie schrittweise durch die Erstellung eines virtuellen Computer, die Erstellung der Datenbank und die Konfiguration beliebter Optionen.
+[Erstellen eines virtuellen Oracle Database-Computers in Azure](virtual-machines-creating-oracle-database-virtual-machine.md) führt Sie schrittweise durch die Erstellung eines virtuellen Computers, die Erstellung der Datenbank und die Konfiguration beliebter Optionen.
 
 ## Oracle WebLogic Server 12c
 
@@ -61,4 +61,4 @@ In [Verschiedene Überlegungen zu Images für virtuelle Oracle-Computer](virtual
 
 [Konfigurieren von Oracle GoldenGate für Azure](virtual-machines-configuring-oracle-goldengate.md) führt Sie schrittweise durch das Datenbank- und Replikationssetup.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

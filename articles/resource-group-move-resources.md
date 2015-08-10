@@ -44,11 +44,12 @@ Derzeit unterstützen die folgenden Dienste das Verschieben in eine neue Ressour
 - Mobile Engagement
 - Operational Insights
 - Redis-Cache
+- Azure-Web-Apps \(es gelten einige [Einschränkungen](app-service-web/app-service-move-resources.md)\)
 
 Die folgenden Dienste unterstützen das Verschieben in eine neue Ressourcengruppe, jedoch nicht in ein neues Abonnement:
 
-- Compute (Klassisch)
-- Storage (Klassisch)
+- Compute \(Klassisch\)
+- Storage \(Klassisch\)
 
 Die folgenden Dienste unterstützen derzeit nicht das Verschieben einer Ressource:
 
@@ -56,7 +57,7 @@ Die folgenden Dienste unterstützen derzeit nicht das Verschieben einer Ressourc
 
 ## Verschieben von Ressourcen mithilfe von PowerShell
 
-Verwenden Sie zum Verschieben vorhandener Ressourcen in eine andere Ressourcengruppe oder ein anderes Abonnement den **Move-AzureResource**-Befehl.
+Verwenden Sie zum Verschieben vorhandener Ressourcen in eine andere Ressourcengruppe oder ein anderes Abonnement den Befehl **Move-AzureResource**.
 
 Das erste Beispiel zeigt, wie Sie eine Ressource in eine neue Ressourcengruppe verschieben.
 
@@ -95,4 +96,4 @@ Schließen Sie in die Anforderung ein JSON-Objekt ein, das die Zielressourcengru
 - [Verwenden des Azure-Portals zum Verwalten von Ressourcen](azure-portal/resource-group-portal.md)
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

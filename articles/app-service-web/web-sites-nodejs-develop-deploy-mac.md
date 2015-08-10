@@ -28,8 +28,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 Führen Sie diese Schritte aus, um eine Web-App zu erstellen und die Git-Veröffentlichung zu aktivieren.
 
-> [AZURE.NOTE]
-> Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/de-de/pricing/free-trial/?WT.mc_id=A261C142F).
+> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/en-us/pricing/free-trial/?WT.mc_id=A261C142F).
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
@@ -60,7 +59,7 @@ Führen Sie diese Schritte aus, um eine Web-App zu erstellen und die Git-Veröff
 	![][setup-git-publishing]
 
 
-10. Klicken Sie auf den Bereich **Anmeldeinformationen für die Bereitstellung** (siehe unten in rot). Erstellen Sie einen Benutzernamen und ein Kennwort. Klicken Sie auf **Speichern**. Wenn Sie die Veröffentlichung für eine Web-App bereits zuvor aktiviert haben, müssen Sie diesen Schritt nicht ausführen.
+10. Klicken Sie auf den Bereich **Anmeldeinformationen für die Bereitstellung** \(siehe unten in rot\). Erstellen Sie einen Benutzernamen und ein Kennwort. Klicken Sie auf **Speichern**. Wenn Sie die Veröffentlichung für eine Web-App bereits zuvor aktiviert haben, müssen Sie diesen Schritt nicht ausführen.
 
 	![][deployment-credentials]
 
@@ -98,8 +97,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello Wor
 
 		git init
 
-	> [AZURE.NOTE]**Git-Befehl nicht verfügbar?** 
-	> [Git](http://git-scm.com/%20target="_blank) ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure-Website bereitstellen können. Installationsanweisungen für Ihre Plattform finden Sie auf der [Download-Seite für Git](http://git-scm.com/download%20target="_blank").
+	> [AZURE.NOTE]**Git-Befehl nicht verfügbar?** [Git](http://git-scm.com/%20target="_blank) ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure-Website bereitstellen können. Installationsanweisungen für Ihre Plattform finden Sie auf der [Download-Seite für Git](http://git-scm.com/download%20target="_blank").
 
 2. Verwenden Sie die folgenden Befehle, um dem Repository Dateien hinzuzufügen:
 
@@ -136,7 +134,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello Wor
 
 ##Veröffentlichen von Änderungen an der Anwendung
 
-1. Öffnen Sie die Datei **server.js** in einem Texteditor, und ändern Sie "Hello World\n" in "Hello Azure\n". Speichern Sie die Datei.
+1. Öffnen Sie die Datei **server.js** in einem Texteditor, und ändern Sie "Hello World\\n" in "Hello Azure\\n". Speichern Sie die Datei.
 2. Wechseln Sie über die Befehlszeile ins Verzeichnis **helloworld**, und führen Sie die folgenden Befehle aus:
 
 		git add .
@@ -198,4 +196,4 @@ Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalt
 [git-url]: ./media/web-sites-nodejs-develop-deploy-mac/git-url.png
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

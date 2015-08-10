@@ -17,7 +17,7 @@
 
 # Anzeigen und Ändern von Hostnamen
 
-Damit auf Ihre Rolleninstanzen mit dem Hostnamen verwiesen werden kann, müssen Sie den Wert für den Hostnamen in der Dienstkonfigurationsdatei für jede Rolle festlegen. Hierzu fügen Sie den gewünschten Hostnamen dem **vmName**-Attribut des **Role**-Elements hinzu. Der Wert des **vmName**-Attributs wird als Grundlage für den Hostnamen der einzelnen Rolleninstanzen verwendet. Wenn **vmName** beispielsweise *webrole* lautet und drei Instanzen dieser Rolle vorhanden sind, lauten die Hostnamen der Instanzen *webrole0*, *webrole1* und *webrole2*. Sie müssen keinen Hostnamen für virtuelle Computer in der Konfigurationsdatei angeben, da der Hostname für einen virtuellen Computer auf Grundlage des Namens des virtuellen Computers erstellt wird. Weitere Informationen zum Konfigurieren eines Microsoft Azure-Diensts finden Sie unter [Azure-Dienstkonfigurationsschema (.cscfg-Datei)](https://msdn.microsoft.com/library/azure/ee758710.aspx)
+Damit auf Ihre Rolleninstanzen mit dem Hostnamen verwiesen werden kann, müssen Sie den Wert für den Hostnamen in der Dienstkonfigurationsdatei für jede Rolle festlegen. Hierzu fügen Sie den gewünschten Hostnamen dem **vmName**-Attribut des **Role**-Elements hinzu. Der Wert des **vmName**-Attributs wird als Grundlage für den Hostnamen der einzelnen Rolleninstanzen verwendet. Wenn **vmName** beispielsweise *webrole* lautet und drei Instanzen dieser Rolle vorhanden sind, lauten die Hostnamen der Instanzen *webrole0*, *webrole1* und *webrole2*. Sie müssen keinen Hostnamen für virtuelle Computer in der Konfigurationsdatei angeben, da der Hostname für einen virtuellen Computer auf Grundlage des Namens des virtuellen Computers erstellt wird. Weitere Informationen zum Konfigurieren eines Microsoft Azure-Diensts finden Sie unter [Azure-Dienstkonfigurationsschema \(.cscfg-Datei\)](https://msdn.microsoft.com/library/azure/ee758710.aspx)
 
 ## Anzeigen von Hostnamen
 
@@ -35,27 +35,27 @@ Sie können die Dienstkonfigurationsdatei für einen bereitgestellten Dienst auf
 
 ### Remotedesktop
 
-Nach der Aktivierung von Verbindungen zu den virtuellen Computern oder Rolleninstanzen über Remotedesktop (Windows), Windows PowerShell-Remoting (Windows) oder SSH (Linux und Windows) haben Sie mehrere Möglichkeiten, um den Hostnamen aus einer aktiven Remotedesktopverbindung anzuzeigen:
+Nach der Aktivierung von Verbindungen zu den virtuellen Computern oder Rolleninstanzen über Remotedesktop \(Windows\), Windows PowerShell-Remoting \(Windows\) oder SSH \(Linux und Windows\) haben Sie mehrere Möglichkeiten, um den Hostnamen aus einer aktiven Remotedesktopverbindung anzuzeigen:
 
 - Geben Sie an der Eingabeaufforderung oder im SSH-Terminal "hostname" ein.
 
-- Geben Sie "ipconfig /all" an der Eingabeaufforderung ein (nur Windows).
+- Geben Sie "ipconfig /all" an der Eingabeaufforderung ein \(nur Windows\).
 
-- Zeigen Sie den Computernamen in den Systemeinstellungen an (nur Windows).
+- Zeigen Sie den Computernamen in den Systemeinstellungen an \(nur Windows\).
 
 ### Azure-Dienstverwaltungs-REST-API
 
 Gehen Sie auf einem REST-Client wie folgt vor:
 
-1. Stellen Sie sicher, dass Sie über ein Clientzertifikat für die Verbindung zum Azure-Portal verfügen. Um ein Clientzertifikat zu erhalten, führen Sie die Schritte unter [Gewusst wie: Herunterladen und Importieren von Veröffentlichungseinstellungen und Abonnementinformationen] (https://msdn.microsoft.com/library/dn385850(v=nav.70).aspx)) aus.
+1. Stellen Sie sicher, dass Sie über ein Clientzertifikat für die Verbindung zum Azure-Portal verfügen. Um ein Clientzertifikat zu erhalten, führen Sie die Schritte unter \[Gewusst wie: Herunterladen und Importieren von Veröffentlichungseinstellungen und Abonnementinformationen\] \(https://msdn.microsoft.com/library/dn385850(v=nav.70).aspx)\) aus.
 
 1. Legen Sie einen Headereintrag mit dem Namen "x-ms-version" mit einem Wert von "2013-11-01" fest.
 
-1. Senden Sie eine Anforderung im folgenden Format: https://management.core.windows.net/\<Abonnements-ID>/services/hostedservices/<Dienstname>?embed-detail=true
+1. Senden Sie eine Anforderung im folgenden Format: https://management.core.windows.net/\\<Abonnements-ID\>/services/hostedservices/\<Dienstname\>?embed-detail=true
 
 1. Suchen Sie das **HostName**-Element für jedes **RoleInstance**-Element.
 
->[AZURE.WARNING]Sie können auch das interne Domänensuffix für Ihren Clouddienst über die Antwort auf den REST-Aufruf anzeigen, indem Sie das **InternalDnsSuffix**-Element überprüfen. Alternativ können Sie "ipconfig /all" an einer Eingabeaufforderung in einer Remotedesktopsitzung (Windows) oder "running cat /etc/resolv.conf" in einem SSH-Terminal ausführen (Linux).
+>[AZURE.WARNING]Sie können auch das interne Domänensuffix für Ihren Clouddienst über die Antwort auf den REST-Aufruf anzeigen, indem Sie das **InternalDnsSuffix**-Element überprüfen. Alternativ können Sie "ipconfig /all" an einer Eingabeaufforderung in einer Remotedesktopsitzung \(Windows\) oder "running cat /etc/resolv.conf" in einem SSH-Terminal ausführen \(Linux\).
 
 ## Ändern eines Hostnamens
 
@@ -63,12 +63,12 @@ Sie können den Hostnamen für einen virtuellen Computer oder eine Rolleninstanz
 
 ## Siehe auch
 
-[Namensauflösung (DNS)](https://msdn.microsoft.com/library/azure/jj156088.aspx)
+[Namensauflösung \(DNS\)](https://msdn.microsoft.com/library/azure/jj156088.aspx)
 
-[Azure-Dienstkonfigurationsschema (CSCFG)](https://msdn.microsoft.com/library/windowsazure/ee758710.aspx)
+[Azure-Dienstkonfigurationsschema \(CSCFG\)](https://msdn.microsoft.com/library/windowsazure/ee758710.aspx)
 
 [Konfigurationsschema für virtuelle Azure-Netzwerke](http://go.microsoft.com/fwlink/?LinkId=248093)
 
 [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](http://go.microsoft.com/fwlink/?LinkId=248094)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

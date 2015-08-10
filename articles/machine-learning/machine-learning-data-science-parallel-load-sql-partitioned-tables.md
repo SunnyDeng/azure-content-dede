@@ -23,13 +23,13 @@ Die Leistung beim Laden/Übertragen/Importieren großer Datenmengen in eine SQL-
 
 ## Erstellen einer neuen Datenbank und eines Satzes von Dateigruppen
 
-- [Erstellen Sie eine neue Datenbank](https://technet.microsoft.com/library/ms176061.aspx) (sofern noch nicht vorhanden).
+- [Erstellen Sie eine neue Datenbank](https://technet.microsoft.com/library/ms176061.aspx) \(sofern noch nicht vorhanden\).
 - Fügen Sie der Datenbank Dateigruppen hinzu, die die partitionierten physischen Dateien enthalten werden.
 - Hinweis: Dies kann bei einer neuen Datenbank mit [CREATE DATABASE](https://technet.microsoft.com/library/ms176061.aspx) und bei einer bereits vorhandenen Datenbank mit [ALTER DATABASE](https://msdn.microsoft.com/library/bb522682.aspx) erfolgen.
 
-- Fügen Sie (je nach Anforderungen) den einzelnen Datenbank-Dateigruppen eine oder mehrere Dateien hinzu.
+- Fügen Sie \(je nach Anforderungen\) den einzelnen Datenbank-Dateigruppen eine oder mehrere Dateien hinzu.
 
- >[AZURE.NOTE]Geben Sie die Ziel-Dateigruppe an, die die Daten für diese Partition enthalten wird, und die Dateinamen der physischen Datenbank, in der die Dateigruppendaten gespeichert werden.
+ \>[AZURE.NOTE]Geben Sie die Ziel-Dateigruppe an, die die Daten für diese Partition enthalten wird, und die Dateinamen der physischen Datenbank, in der die Dateigruppendaten gespeichert werden.
  
 Mit dem folgenden Beispiel wird eine neue Datenbank mit drei Dateigruppen erstellt, die sich von den primären und Protokollgruppen unterscheiden und jeweils eine physische Datei enthalten. Die Datenbankdateien werden im Standarddatenordner von SQL Server erstellt, der in der SQL Server-Instanz konfiguriert wurde. Weitere Informationen zu den Standarddateispeicherorten finden Sie unter [Dateispeicherorte für Standard- und benannte Instanzen von SQL Server](https://msdn.microsoft.com/library/ms143547.aspx).
 
@@ -58,7 +58,7 @@ Erstellen Sie die partitionierten Tabellen gemäß dem Datenschema, das den im v
 
 **So erstellen Sie eine Partitionstabelle:**
 
-- [Erstellen Sie eine Partitionsfunktion](https://msdn.microsoft.com/library/ms187802.aspx), die den Datenbereich/die Grenzen für die einzelnen Partitionstabellen definiert. Im folgenden Beispiel werden die Partitionen nach "month(some_datetime_field)" im Jahr 2013 begrenzt:
+- [Erstellen Sie eine Partitionsfunktion](https://msdn.microsoft.com/library/ms187802.aspx), die den Datenbereich/die Grenzen für die einzelnen Partitionstabellen definiert. Im folgenden Beispiel werden die Partitionen nach "month\(some\_datetime\_field\)" im Jahr 2013 begrenzt:
 
 	    CREATE PARTITION FUNCTION <DatetimeFieldPFN>(<datetime_field>)  
 	    AS RANGE RIGHT FOR VALUES (
@@ -95,7 +95,7 @@ Erstellen Sie die partitionierten Tabellen gemäß dem Datenschema, das den im v
 
 - Sie können BCP, BULK INSERT oder andere Methoden wie den [SQL-Datenbankmigrations-Assistenten](http://sqlazuremw.codeplex.com/) verwenden. Im Beispiel wird BPC verwendet.
 
-- [Bearbeiten Sie die Datenbank](https://msdn.microsoft.com/library/bb522682.aspx) zur Änderung des Transaktionsprotokollierungsschemas in BULK_LOGGED, um den Overhead für die Protokollierung zu minimieren. Beispiel:
+- [Bearbeiten Sie die Datenbank](https://msdn.microsoft.com/library/bb522682.aspx) zur Änderung des Transaktionsprotokollierungsschemas in BULK\_LOGGED, um den Overhead für die Protokollierung zu minimieren. Beispiel:
 
 	    ALTER DATABASE <database_name> SET RECOVERY BULK_LOGGED
 
@@ -134,13 +134,13 @@ Das folgende PowerShell-Skript ist ein Beispiel für das parallele Laden von Dat
     # BCP example using Windows authentication
     $ScriptBlock1 = {
        param($dbname, $tbname, $basename, $fmtfile, $indir, $logdir, $num)
-       bcp ($dbname + ".." + $tbname) in ($indir + "" + $basename + "_" + $num + ".csv") -o ($logdir + "" + $tbname + "_" + $num + ".txt") -h "TABLOCK" -F 2 -C "RAW" -f ($fmtfile) -T -b 2500 -t "," -r \n
+       bcp ($dbname + ".." + $tbname) in ($indir + "\" + $basename + "_" + $num + ".csv") -o ($logdir + "\" + $tbname + "_" + $num + ".txt") -h "TABLOCK" -F 2 -C "RAW" -f ($fmtfile) -T -b 2500 -t "," -r \n
     }
     
     # BCP example using SQL authentication
     $ScriptBlock2 = {
        param($dbname, $tbname, $basename, $fmtfile, $indir, $logdir, $num, $sqlusr, $server, $pass)
-       bcp ($dbname + ".." + $tbname) in ($indir + "" + $basename + "_" + $num + ".csv") -o ($logdir + "" + $tbname + "_" + $num + ".txt") -h "TABLOCK" -F 2 -C "RAW" -f ($fmtfile) -U $sqlusr -S $server -P $pass -b 2500 -t "," -r \n
+       bcp ($dbname + ".." + $tbname) in ($indir + "\" + $basename + "_" + $num + ".csv") -o ($logdir + "\" + $tbname + "_" + $num + ".txt") -h "TABLOCK" -F 2 -C "RAW" -f ($fmtfile) -U $sqlusr -S $server -P $pass -b 2500 -t "," -r \n
     }
     
     # Background processing of all partitions
@@ -168,7 +168,7 @@ Das folgende PowerShell-Skript ist ein Beispiel für das parallele Laden von Dat
 
 - Wenn Sie Daten für die Modellierung aus mehreren Tabellen extrahieren, erstellen Sie die Indizes für die Verknüpfungsschlüssel zur Verbesserung der Leistung beim Zusammenführen.
 
-- [Erstellen Sie Indizes](https://technet.microsoft.com/library/ms188783.aspx) (gruppiert oder nicht gruppiert), deren Ziel dieselbe Dateigruppe für jede Partition ist. Beispiel:
+- [Erstellen Sie Indizes](https://technet.microsoft.com/library/ms188783.aspx) \(gruppiert oder nicht gruppiert\), deren Ziel dieselbe Dateigruppe für jede Partition ist. Beispiel:
 
 	    CREATE CLUSTERED INDEX <table_idx> ON <table_name>( [include index columns here] )
 	    ON <TablePScheme>(<partition)field>)
@@ -177,11 +177,11 @@ oder
 	    CREATE INDEX <table_idx> ON <table_name>( [include index columns here] )
 	    ON <TablePScheme>(<partition)field>)
 
- >[AZURE.NOTE]Sie können auch die Indizes vor dem Massenimport von Daten erstellen. Die Indexerstellung vor dem Massenimport verlangsamt das Laden der Daten.
+ \>[AZURE.NOTE]Sie können auch die Indizes vor dem Massenimport von Daten erstellen. Die Indexerstellung vor dem Massenimport verlangsamt das Laden der Daten.
 
 ### Advanced Analytics Process and Technology in Aktion – Beispiel
 
-Eine umfassende exemplarische Vorgehensweise zur Verwendung der Advanced Analytics Process and Technology (ADAPT) mit einem öffentlichen DataSet finden Sie unter [Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server](machine-learning-data-science-process-sql-walkthrough.md).
+Eine umfassende exemplarische Vorgehensweise zur Verwendung der Advanced Analytics Process and Technology \(ADAPT\) mit einem öffentlichen DataSet finden Sie unter [Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server](machine-learning-data-science-process-sql-walkthrough.md).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

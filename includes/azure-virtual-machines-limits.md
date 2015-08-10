@@ -16,8 +16,8 @@
 </tr>
 </table>
 
-<sup>1</sup>Die in der Dienstverwaltung (und nicht im Ressourcen-Manager) erstellten virtuellen Computer werden automatisch in einem Clouddienst gespeichert. Für den Lastenausgleich und die Verfügbarkeit können Sie diesem Clouddienst weitere virtuelle Computer hinzufügen. Siehe [Verbinden virtueller Computer mit einem virtuellen Netzwerk oder einem Clouddienst](../virtual-machines/cloud-services-connect-virtual-machine.md).
+<sup>1</sup>Die in der Dienstverwaltung \(und nicht im Ressourcen-Manager\) erstellten virtuellen Computer werden automatisch in einem Clouddienst gespeichert. Für den Lastenausgleich und die Verfügbarkeit können Sie diesem Clouddienst weitere virtuelle Computer hinzufügen. Siehe [Verbinden virtueller Computer mit einem virtuellen Netzwerk oder einem Clouddienst](../virtual-machines/cloud-services-connect-virtual-machine.md).
 
 <sup>2</sup>Eingabeendpunkte ermöglichen die Kommunikation mit einem virtuellen Computer von außerhalb des Clouddiensts des virtuellen Computers. Virtuelle Computer im gleichen Clouddienst oder virtuellen Netzwerk können automatisch miteinander kommunizieren. Siehe [Einrichten von Endpunkten für einen virtuellen Computer](../virtual-machines/virtual-machines-set-up-endpoints.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

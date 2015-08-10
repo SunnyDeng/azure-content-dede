@@ -13,28 +13,27 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="07/23/2015" 
 	ms.author="juliako"/>
 
 
 
 #Hochladen von Dateien in ein Media Services-Konto mit .NET
+
 [AZURE.INCLUDE [media-services-selector-upload-files](../../includes/media-services-selector-upload-files.md)]
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).
-
-In Media Services laden Sie Ihre digitalen Dateien in ein Medienobjekt hoch oder erfassen sie auf diese Weise. Die **Medienobjekt**-Entität kann Videos, Audiodateien, Bilder, Miniaturansichtssammlungen, Texttitel und Untertiteldateien (und die Metadaten zu diesen Dateien) enthalten. Nachdem die Dateien hochgeladen wurden, werden Ihre Inhalte zur weiteren Verarbeitung und zum Streaming sicher in der Cloud gespeichert.
+In Media Services laden Sie Ihre digitalen Dateien in ein Medienobjekt hoch oder erfassen sie auf diese Weise. Die **Medienobjekt**-Entität kann Videos, Audiodateien, Bilder, Miniaturansichtssammlungen, Texttitel und Untertiteldateien \(und die Metadaten zu diesen Dateien\) enthalten. Nachdem die Dateien hochgeladen wurden, werden Ihre Inhalte zur weiteren Verarbeitung und zum Streaming sicher in der Cloud gespeichert.
 
 Die Dateien im Medienobjekt heißen **Medienobjektdateien**. Die **AssetFile**-Instanz und die eigentliche Mediendatei sind zwei verschiedene Objekte. Die AssetFile-Instanz enthält Metadaten zur Mediendatei, während die Mediendatei die tatsächlichen Medieninhalte enthält.
 
 Wenn Sie Medienobjekte erstellen, können Sie die folgenden Verschlüsselungsoptionen angeben.
 
 - **None:** Es wird keine Verschlüsselung verwendet. Dies ist der Standardwert. Beachten Sie, dass bei Verwendung dieser Option Ihre Inhalte während der Übertragung oder des Verbleibs im Speicher nicht geschützt sind. Wenn Sie planen, eine MP4-Datei über progressives Herunterladen zu übermitteln, verwenden Sie diese Option. 
-- **CommonEncryption:** Verwenden Sie diese Option, wenn Sie Inhalte hochladen, die bereits verschlüsselt wurden und durch Common Encryption oder PlayReady-DRM geschützt sind (z. B. mit PlayReady-DRM geschütztes Smooth Streaming).
+- **CommonEncryption:** Verwenden Sie diese Option, wenn Sie Inhalte hochladen, die bereits verschlüsselt wurden und durch Common Encryption oder PlayReady-DRM geschützt sind \(z. B. mit PlayReady-DRM geschütztes Smooth Streaming\).
 - **EnvelopeEncrypted:** Verwenden Sie diese Option, wenn Sie mit AES verschlüsseltes HLS hochladen. Beachten Sie, dass die Dateien durch Transform Manager codiert und verschlüsselt sein müssen.
 - **StorageEncrypted:** Verschlüsselt Ihre Inhalte lokal mithilfe von AES-256-Bit-Verschlüsselung und lädt sie dann in Azure Storage hoch, wo sie verschlüsselt im Ruhezustand gespeichert werden. Medienobjekte, die durch Storage Encryption geschützt sind, werden automatisch entschlüsselt, vor der Codierung in einem verschlüsselten Dateisystem platziert und optional vor dem Hochladen als neues Ausgabemedienobjekt erneut verschlüsselt. Der primäre Anwendungsfall für Storage Encryption ist, wenn Sie Ihre qualitativ hochwertigen Eingabemediendateien mit starker Verschlüsselung beim Speichern im Ruhezustand auf dem Datenträger sichern möchten.
 
-	Media Services bieten Speicherverschlüsselung auf der Festplatte und nicht für die Netzwerkkommunikation wie Digital Rights Manager (DRM).
+	Media Services bieten Speicherverschlüsselung auf der Festplatte und nicht für die Netzwerkkommunikation wie Digital Rights Manager \(DRM\).
 
 	Wenn Ihr Medienobjekt speicherverschlüsselt ist, müssen Sie die Übermittlungsrichtlinien für Medienobjekte konfigurieren. Weitere Informationen finden Sie unter [Konfigurieren von Übermittlungsrichtlinien für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md).
 
@@ -42,7 +41,7 @@ Wenn Sie für Ihr Medienobjekt eine Verschlüsselung unter Verwendung der **Comm
 
 Wenn Sie für Ihr Medienobjekt eine Verschlüsselung mit einer **StorageEncrypted**-Option angeben, wird vom Media Services SDK für .NET ein **StorateEncrypted** **ContentKey** für Ihr Medienobjekt erstellt.
 
->[AZURE.NOTE]Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den Wert der IAssetFile.Name-Eigenschaft (z. B. http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.). Aus diesem Grund ist die Prozentcodierung nicht zulässig. Der Wert der **Name**-Eigenschaft darf keines der folgenden [für die Prozentcodierung reservierten Zeichen enthalten](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#". Darüber hinaus wird für die Dateinamenerweiterung nur ein Punkt (.) unterstützt.
+>[AZURE.NOTE]Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den Wert der IAssetFile.Name-Eigenschaft \(z. B. http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.\). Aus diesem Grund ist die Prozentcodierung nicht zulässig. Der Wert der **Name**-Eigenschaft darf keines der folgenden [für die Prozentcodierung reservierten Zeichen enthalten](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !\*'\(\);:@&=+$,/?%\#". Darüber hinaus wird für die Dateinamenerweiterung nur ein Punkt \(.\) unterstützt.
 
 In diesem Thema wird beschrieben, wie Sie mit dem Media Services .NET SDK und den Media Services .NET SDK-Erweiterungen Dateien in ein Media Services-Medienobjekt hochladen.
 
@@ -180,20 +179,20 @@ Wenn Sie eine große Anzahl von Medienobjekten hochladen, sollten Sie Folgendes 
  
 ##<a id="ingest_in_bulk"></a>Sammelerfassung von Medienobjekten mithilfe von Media Services .NET SDK 
 
-Das Hochladen großer Medienobjektdateien kann während der Erstellung von Medienobjekten einen Engpass verursachen. Beim Erfassen von Medienobjekten in einem Massenvorgang bzw. bei der "Sammelerfassung" wird die Erstellung von Medienobjekten vom Uploadvorgang entkoppelt. Zur Verwendung der Sammelerfassung erstellen Sie ein Manifest (IngestManifest), in dem das Medienobjekt und die zugeordneten Dateien beschrieben werden. Laden Sie dann die zugeordneten Dateien mithilfe der gewünschten Uploadmethode in den Blobcontainer des Manifests hoch. Microsoft Azure Media Services überwacht den dem Manifest zugeordneten Blobcontainer. Nachdem eine Datei in den Blobcontainer hochgeladen wurde, wird die Erstellung des Medienobjekts basierend auf dessen Konfiguration im Manifest (IngestManifestAsset) durch Microsoft Azure Media Services abgeschlossen.
+Das Hochladen großer Medienobjektdateien kann während der Erstellung von Medienobjekten einen Engpass verursachen. Beim Erfassen von Medienobjekten in einem Massenvorgang bzw. bei der "Sammelerfassung" wird die Erstellung von Medienobjekten vom Uploadvorgang entkoppelt. Zur Verwendung der Sammelerfassung erstellen Sie ein Manifest \(IngestManifest\), in dem das Medienobjekt und die zugeordneten Dateien beschrieben werden. Laden Sie dann die zugeordneten Dateien mithilfe der gewünschten Uploadmethode in den Blobcontainer des Manifests hoch. Microsoft Azure Media Services überwacht den dem Manifest zugeordneten Blobcontainer. Nachdem eine Datei in den Blobcontainer hochgeladen wurde, wird die Erstellung des Medienobjekts basierend auf dessen Konfiguration im Manifest \(IngestManifestAsset\) durch Microsoft Azure Media Services abgeschlossen.
 
 
-Zum Neuerstellen des Manifests (IngestManifest) rufen Sie die Create-Methode auf, die von der IngestManifests-Auflistung im CloudMediaContext verfügbar gemacht wird. Durch diese Methode wird ein neues Manifest (IngestManifest) mit dem von Ihnen angegebenen Manifestnamen erstellt.
+Zum Neuerstellen des Manifests \(IngestManifest\) rufen Sie die Create-Methode auf, die von der IngestManifests-Auflistung im CloudMediaContext verfügbar gemacht wird. Durch diese Methode wird ein neues Manifest \(IngestManifest\) mit dem von Ihnen angegebenen Manifestnamen erstellt.
 
 	IIngestManifest manifest = context.IngestManifests.Create(name);
 
-Erstellen Sie die Medienobjekte, die dem Sammelmanifest (IngestManifest) zugeordnet werden. Konfigurieren Sie die gewünschten Verschlüsselungsoptionen für die Sammelerfassung des Medienobjekts.
+Erstellen Sie die Medienobjekte, die dem Sammelmanifest \(IngestManifest\) zugeordnet werden. Konfigurieren Sie die gewünschten Verschlüsselungsoptionen für die Sammelerfassung des Medienobjekts.
 
 	// Create the assets that will be associated with this bulk ingest manifest
 	IAsset destAsset1 = _context.Assets.Create(name + "_asset_1", AssetCreationOptions.None);
 	IAsset destAsset2 = _context.Assets.Create(name + "_asset_2", AssetCreationOptions.None);
 
-IngestManifestAsset ordnet ein Medienobjekt einem Sammelmanifest (IngestManifest) für die Sammelerfassung zu. Außerdem werden die AssetFiles zugeordnet, aus denen sich das jeweilige Medienobjekt zusammensetzt. Zum Erstellen eines ingestmanifestasset-Objekts verwenden Sie die Create-Methode im Serverkontext.
+IngestManifestAsset ordnet ein Medienobjekt einem Sammelmanifest \(IngestManifest\) für die Sammelerfassung zu. Außerdem werden die AssetFiles zugeordnet, aus denen sich das jeweilige Medienobjekt zusammensetzt. Zum Erstellen eines ingestmanifestasset-Objekts verwenden Sie die Create-Methode im Serverkontext.
 
 Das folgende Beispiel zeigt das Hinzufügen zwei neuer IngestManifestAssets, durch die die beiden zuvor erstellten Medienobjekte dem Manifest für die Sammelerfassung zugeordnet werden. Jedes IngestManifestAsset-Objekt ordnet zusätzlich eine Reihe von Dateien zu, die während der Sammelerfassung für jedes Medienobjekt hochgeladen werden.
 
@@ -214,7 +213,7 @@ Sie können eine beliebige hochleistungsfähige Clientanwendung nutzen, die in d
 	        CloudBlobClient blobClient = storageaccount.CreateCloudBlobClient();
 	        CloudBlobContainer blobContainer = blobClient.GetContainerReference(destBlobURI);
 	
-	        string[] splitfilename = filename.Split('\');
+	        string[] splitfilename = filename.Split('\\');
 	        var blob = blobContainer.GetBlockBlobReference(splitfilename[splitfilename.Length - 1]);
 	
 	        using (var stream = System.IO.File.OpenRead(filename))
@@ -276,7 +275,7 @@ Das folgende Beispiel zeigt, wie IngestManifest anhand der **ID** abgerufen wird
 
 ##Hochladen von Dateien mit .NET SDK-Erweiterungen 
 
-Das folgende Beispiel zeigt, wie eine einzelne Datei mit den.NET SDK-Erweiterungen hochgeladen wird. In diesem Fall wird die **CreateFromFile**-Methode verwendet, allerdings steht auch die asynchrone Version zur Verfügung (**CreateFromFileAsync**). Mit der **CreateFromFile**-Methode können Sie den Dateinamen, die Verschlüsselungsoption und einen Rückruf angeben, damit der Uploadstatus der Datei nachverfolgt werden kann.
+Das folgende Beispiel zeigt, wie eine einzelne Datei mit den.NET SDK-Erweiterungen hochgeladen wird. In diesem Fall wird die **CreateFromFile**-Methode verwendet, allerdings steht auch die asynchrone Version zur Verfügung \(\*\*CreateFromFileAsync\*\*\). Mit der **CreateFromFile**-Methode können Sie den Dateinamen, die Verschlüsselungsoption und einen Rückruf angeben, damit der Uploadstatus der Datei nachverfolgt werden kann.
 
 
 	static public IAsset UploadFile(string fileName, AssetCreationOptions options)
@@ -306,4 +305,4 @@ Sie haben nun ein Medienobjekt in den Mediendienst hochgeladen und können mit d
 [Abrufen eines Medienprozessors]: media-services-get-media-processor.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

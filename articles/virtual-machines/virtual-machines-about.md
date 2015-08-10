@@ -33,9 +33,9 @@ Testen Sie einen virtuellen Computer probeweise aus: Erstellen Sie hierfür in n
 
 [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md)
 
-[Erstellen Sie einen virtuellen Windows-Computes im Azure-Vorschauportal](virtual-machines-windows-tutorial.md)
+[Erstellen eines virtuellen Computers unter Windows im Azure-Vorschauportal](virtual-machines-windows-tutorial.md)
 
-Da diese Lernprogramme darauf ausgerichtet sind, in wenigen Schritten einen virtuellen Computer zu erstellen, zeigen sie nur eine von mehreren Möglichkeiten auf. Die verschiedenen Tools, die für die Erstellung eines virtuellen Computers zur Verfügung stehen, werden hingegen nicht beschrieben. Ein Überblick über diese Tools und Links zu den entsprechenden Anweisungen finden Sie unter:
+Da diese Lernprogramme darauf ausgerichtet sind, in wenigen Schritten einen virtuellen Computer zu erstellen, zeigen sie nur eine von mehreren Möglichkeiten auf. Die verschiedenen Tools, die für die Erstellung virtueller Computers zur Verfügung stehen, werden hingegen nicht beschrieben. Ein Überblick über diese Tools und Links zu den entsprechenden Anweisungen finden Sie unter:
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-choices-create-vm.md)
 
@@ -46,7 +46,7 @@ Wenn Sie sich zum ersten Mal mit virtuellen Azure-Computern beschäftigen, werfe
 
 <!--links-->
 [App Service]: app-service-choose-me.md
-[Virtuelle Computer]: #tellmevm
-[Cloud-Dienste]: cloud-services-choose-me.md
+[Virtual Machines]: #tellmevm
+[Cloud Services]: cloud-services-choose-me.md
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

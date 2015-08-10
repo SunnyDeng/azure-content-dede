@@ -72,4 +72,4 @@ Weitere Informationen finden Sie unter[Integration in Azure Stream Analytics](..
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

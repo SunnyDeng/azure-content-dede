@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/15/2015"
+   ms.date="07/27/2015"
    ms.author="tomfitz"/>
 
 # Funktionen von Azure Resource Manager-Vorlagen
@@ -22,7 +22,7 @@ Dieses Thema beschreibt alle Funktionen, die Sie in einer Azure Resource Manager
 
 ## base64
 
-**base64 (InputString)**
+**base64 \(InputString\)**
 
 Rückkehr zur base64-Darstellung der Eingabezeichenfolge.
 
@@ -39,7 +39,7 @@ Das folgende Beispiel zeigt die Funktionsweise der base64-Funktion.
 
 ## concat
 
-**concat (arg1, arg2, arg3, ...)**
+**concat \(arg1, arg2, arg3, ...\)**
 
 Kombiniert mehrere Zeichenfolgewerte und gibt den resultierenden Zeichenfolgewert zurück. Diese Funktion kann eine beliebige Anzahl an Argumenten entgegennehmen.
 
@@ -52,9 +52,15 @@ Das folgende Beispiel zeigt die Kombinationsweise mehrerer Werte, um einen Wert 
         }
     }
 
+## copyIndex
+
+**copyIndex\(offset\)**
+
+Gibt den aktuellen Index einer Iterationsschleife zurück. Beispiele zur Verwendung dieser Funktion finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
+
 ## deployment
 
-**deployment()**
+**deployment\(\)**
 
 Gibt Informationen zum aktuellen Bereitstellungsvorgang zurück.
 
@@ -81,7 +87,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Bereitstellungsinformationen im 
 
 ## listKeys
 
-**listKeys (resourceName oder resourceIdentifier, [apiVersion])**
+**listKeys \(resourceName oder resourceIdentifier, \[apiVersion\]\)**
 
 Gibt die Schlüssel eines Speicherkontos zurück. Die Ressourcen-ID kann mithilfe der [Ressourcen-ID-Funktion](./#resourceid) oder mithilfe des Formats **providerNamespaces/resourceType/resourceName** angegeben werden. Sie können die Funktion nutzen um den Primär- und Sekundärschlüssel abzurufen.
   
@@ -101,7 +107,7 @@ Das folgende Beispiel zeigt, wie die Schlüssel von einem Speicherkonto in die A
 
 ## padLeft
 
-**padLeft(stringToPad, totalLength, paddingCharacter)**
+**padLeft\(stringToPad, totalLength, paddingCharacter\)**
 
 Gibt eine rechtsbündig ausgerichtete Zeichenfolge zurück, indem links Zeichen hinzugefügt werden, bis die angegebene Gesamtlänge erreicht ist.
   
@@ -123,7 +129,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie den vom Benutzer angegebenen
 
 ## parameters
 
-**Parameter (parameterName)**
+**Parameter \(parameterName\)**
 
 Gibt einen Parameterwert zurück. Der spezifizierte Parametername muss im Parameterabschnitt der Vorlage definiert werden.
 
@@ -149,7 +155,7 @@ Die folgenden Beispiele zeigen eine vereinfachte Nutzungsweise der Parameterfunk
 
 ## Anbieter
 
-**provider (providerNamespace, [resourceType])**
+**provider \(providerNamespace, \[resourceType\]\)**
 
 Rückgabe von Informationen über einen Ressourcenanbieter und die von ihm unterstützten Ressourcentypen. Wenn kein Typ angegeben wird, werden alle unterstützten Typen zurückgegeben.
 
@@ -177,7 +183,7 @@ Das folgende Beispiel zeigt die Nutzungsweise der Anbieterfunktion:
 
 ## Referenz
 
-**reference (resourceName oder resourceIdentifier, [apiVersion])**
+**reference \(resourceName oder resourceIdentifier, \[apiVersion\]\)**
 
 Aktiviert einen Ausdruck, um seinen Wert vom Laufzeitstatus einer anderen Ressource abzuleiten.
 
@@ -188,7 +194,7 @@ Aktiviert einen Ausdruck, um seinen Wert vom Laufzeitstatus einer anderen Ressou
 
 Die **Referenz**-Funktion leitet ihren Wert von einem Laufzeitstatus ab und kann somit nicht im Variablen-Abschnitt verwendet werden. Sie kann in Ausgabeabschnitten einer Vorlage verwendet werden.
 
-Mithilfe des Referenzausdrucks können Sie deklarieren, dass eine Ressource von einer anderen abhängt, wenn die verwiesene Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird.
+Mithilfe des Referenzausdrucks können Sie implizit deklarieren, dass eine Ressource von einer anderen abhängt, wenn die referenzierte Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Sie müssen nicht zusätzlich die Eigenschaft **dependsOn** verwenden. Der Ausdruck wird nicht ausgewertet, bis die Ressource, auf die verwiesen wird, die Bereitstellung abgeschlossen hat.
 
     "outputs": {
       "siteUri": {
@@ -199,7 +205,7 @@ Mithilfe des Referenzausdrucks können Sie deklarieren, dass eine Ressource von 
 
 ## replace
 
-**replace(originalString, oldCharacter, newCharacter)**
+**replace\(originalString, oldCharacter, newCharacter\)**
 
 Gibt eine neue Zeichenfolge zurück, in der alle Instanzen eines Zeichens in der angegebenen Zeichenfolge durch ein anderes Zeichen ersetzt wurden.
 
@@ -220,7 +226,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie alle Bindestriche aus einer 
 
 ## Ressourcengruppe
 
-**resourceGroup()**
+**resourceGroup\(\)**
 
 Gibt ein strukturiertes Objekt zurück, das die aktuelle Ressourcengruppe repräsentiert. Das Objekt wird das folgende Format haben:
 
@@ -244,7 +250,7 @@ Das folgende Beispiel nutzt den Speicherort der Ressourcengruppe, um einer Websi
 
 ## Ressourcen-ID
 
-**resourceId ([resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
+**resourceId \(\[resourceGroupName\], resourceType, resourceName1, \[resourceName2\]...\)**
 
 Gibt den eindeutigen Bezeichner einer Ressource zurück. Diese Funktion wird verwendet, wenn der Ressourcenname zweideutig ist oder nicht innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Der Bezeichner wird im folgenden Format zurückgeben:
 
@@ -265,7 +271,7 @@ Das folgende Beispiel zeigt, wie die Ressourcen-IDs für eine Website und eine D
 Sie müssen diese Funktion oft nutzen, wenn Sie ein Speicherkonto oder einen virtuellen Computer in einer alternativen Ressourcengruppe verwenden. Das Speicherkonto oder der virtuelle Computer können über mehrere Ressourcengruppen hinweg genutzt werden. Daher sollten Sie diese beim Löschvorgang für eine einzelne Ressourcengruppe nicht löschen. Das folgende Beispiel zeigt, wie eine Ressource von einer externen Ressourcengruppe leicht verwendet werden kann:
 
     {
-      "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+      "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
       "contentVersion": "1.0.0.0",
       "parameters": {
           "virtualNetworkName": {
@@ -308,7 +314,7 @@ Sie müssen diese Funktion oft nutzen, wenn Sie ein Speicherkonto oder einen vir
 
 ## Abonnement
 
-**subscription()**
+**subscription\(\)**
 
 Gibt Details über das Abonnement im folgenden Format zurück:
 
@@ -328,7 +334,7 @@ Das folgende Beispiel zeigt ein Abrufen der Abonnement-Funktion im Ausgabeabschn
 
 ## toLower
 
-**toLower(stringToChange)**
+**toLower\(stringToChange\)**
 
 Konvertiert die angegebene Zeichenfolge in Kleinbuchstaben.
 
@@ -347,7 +353,7 @@ Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in Kleinbuc
 
 ## toUpper
 
-**toUpper(stringToChange)**
+**toUpper\(stringToChange\)**
 
 Konvertiert die angegebene Zeichenfolge in Großbuchstaben.
 
@@ -367,7 +373,7 @@ Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in Großbuc
 
 ## Variablen
 
-**Variablen (variableName)**
+**Variablen \(variableName\)**
 
 Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variablenabschnitt der Vorlage definiert werden.
 
@@ -377,9 +383,9 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 
 
 ## Nächste Schritte
-- [Erstellen von Resource Manager-Vorlagen](./resource-group-authoring-templates.md)
-- [Erweiterte Vorlagenvorgänge](./resource-group-advanced-template.md)
-- [Bereitstellen einer Anwendung mit einer Azure Resource Manager-Vorlage](azure-portal/resource-group-template-deploy.md)
-- [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
+- Eine Beschreibung der Abschnitte in einer Azure-Ressourcen-Manager-Vorlage finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
+- Informationen zum Zusammenführen mehrerer Vorlagen finden Sie unter [Verwenden von verknüpften Vorlagen mit Azure-Ressourcen-Manager](resource-group-linked-templates.md).
+- Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmten Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
+- Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

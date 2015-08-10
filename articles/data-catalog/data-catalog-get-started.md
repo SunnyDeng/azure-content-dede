@@ -30,15 +30,15 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 ## Übung 1: Installieren der Adventure Works-Beispieldatenbank
 
-In dieser Übung installieren Sie die Adventure Works-Beispieldaten für das SQL Server-Datenbankmodul und SQL Server Analysis Services (Mehrdimensional). Diese Beispiele werden in den folgenden Übungen verwendet.
+In dieser Übung installieren Sie die Adventure Works-Beispieldaten für das SQL Server-Datenbankmodul und SQL Server Analysis Services \(Mehrdimensional\). Diese Beispiele werden in den folgenden Übungen verwendet.
 
 > [AZURE.NOTE]Diese Übung ist optional. Die restlichen Übungen im Lernprogramm sind so geschrieben, dass auf die Adventure Works-Beispieldatenbanken verwiesen wird. Sie können die Übung aber auch überspringen und stattdessen Ihre eigenen Datenquellen verwenden. Unten sind die Schritte zum Installieren von Adventure Works angegeben.
 
 ### Installieren der Adventure Works 2014 OLTP- und Data Warehouse-Datenbanken
 
-Die Adventure Works OLTP-Datenbank unterstützt standardmäßige Onlinetransaktionsverarbeitung-Szenarios für einen fiktiven Fahrradhersteller (Adventure Works Cycles), z. B. für die Bereiche Fertigung, Vertrieb und Einkauf. Anhand der Adventure Works DW-Datenbank wird veranschaulicht, wie Sie ein Data Warehouse erstellen.
+Die Adventure Works OLTP-Datenbank unterstützt standardmäßige Onlinetransaktionsverarbeitung-Szenarios für einen fiktiven Fahrradhersteller \(Adventure Works Cycles\), z. B. für die Bereiche Fertigung, Vertrieb und Einkauf. Anhand der Adventure Works DW-Datenbank wird veranschaulicht, wie Sie ein Data Warehouse erstellen.
 
-Die Datenbanken befinden sich unter http://msftdbprodsamples.codeplex.com/ und können installiert werden, indem die Schritte unter [So wird‘s gemacht: Installieren der Adventure Works 2014-Beispieldatenbanken] ausgeführt werden.
+Die Datenbanken befinden sich unter http://msftdbprodsamples.codeplex.com/ und können installiert werden, indem die Schritte unter \[So wird‘s gemacht: Installieren der Adventure Works 2014-Beispieldatenbanken\] ausgeführt werden.
 
 In dieser Übung haben Sie die Adventure Works-Beispieldatenbanken installiert, die in den restlichen Übungen verwendet werden. Wenn Sie diese Übung übersprungen haben und Datenquellen Ihres eigenen Unternehmens verwenden, sollten Sie darauf vorbereitet sein, sich Namen, Tags und andere Metadaten zu merken.
 
@@ -69,7 +69,7 @@ In dieser Übung verwenden Sie das Azure Data Catalog-Registrierungstool, um Ihr
 
     ![register4][4]
 
-    c. Klicken Sie auf den Pfeil zum Verschieben der ausgewählten Elemente (**>**). Alle Product-Objekte werden in die Liste **Für Registrierung** verschoben.
+    c. Klicken Sie auf den Pfeil zum Verschieben der ausgewählten Elemente \(\*\*\>\*\*\). Alle Product-Objekte werden in die Liste **Für Registrierung** verschoben.
 
     ![register5][5]
 
@@ -109,13 +109,13 @@ Sie können auch genauer einstellen, welche Datenressourcen angezeigt werden sol
 
 In diesem Beispiel verwenden Sie eine Schlüsselwortsuche. Die **Azure Data Catalog**-Suche enthält verschiedene Abfrageverfahren. In diesem Beispiel wird eine Suchabfrage vom Typ **Gruppierung** verwendet.
 
-**Abfrageverfahren** <table><tr><td><b>Verfahren</b></td><td><b>Zweck</b></td><td><b>Beispiel</b></td></tr><tr><td>Bereichsdefinition für Eigenschaften</td><td>Es werden nur Datenquellen zurückgegeben, bei denen der Suchbegriff in der angegebenen Eigenschaft übereinstimmt.</td><td>name:product</td></tr><tr><td>Logische Operatoren</td><td>Eine Suche wird mit booleschen Operatoren erweitert oder eingegrenzt, wie im Abschnitt „Boolesche Operatoren“ auf dieser Seite beschrieben.</td><td>finance NOT corporate</td></tr><tr><td>Gruppierung mit Klammern</td><td>Klammern werden zum Gruppieren von Teilen der Abfrage verwendet, um eine logische Isolierung zu erzielen, besonders in Verbindung mit booleschen Operatoren.</td><td>name:product AND (tags:illustration OR tags:photo)</td></tr><tr><td>Vergleichsoperatoren</td><td>Vergleiche (mit Ausnahme von „Equality“) werden für Eigenschaften verwendet, die über numerische und Datumsdatentypen verfügen.</td><td>creationTime:&gt;11/05/14</td></tr></table>
+**Abfrageverfahren** <table><tr><td><b>Verfahren</b></td><td><b>Zweck</b></td><td><b>Beispiel</b></td></tr><tr><td>Bereichsdefinition für Eigenschaften</td><td>Es werden nur Datenquellen zurückgegeben, bei denen der Suchbegriff in der angegebenen Eigenschaft übereinstimmt.</td><td>name:product</td></tr><tr><td>Logische Operatoren</td><td>Eine Suche wird mit booleschen Operatoren erweitert oder eingegrenzt, wie im Abschnitt „Boolesche Operatoren“ auf dieser Seite beschrieben.</td><td>finance NOT corporate</td></tr><tr><td>Gruppierung mit Klammern</td><td>Klammern werden zum Gruppieren von Teilen der Abfrage verwendet, um eine logische Isolierung zu erzielen, besonders in Verbindung mit booleschen Operatoren.</td><td>name:product AND \(tags:illustration OR tags:photo\)</td></tr><tr><td>Vergleichsoperatoren</td><td>Vergleiche \(mit Ausnahme von „Equality“\) werden für Eigenschaften verwendet, die über numerische und Datumsdatentypen verfügen.</td><td>creationTime:&gt;11/05/14</td></tr></table>
 
 In diesem Beispiel führen Sie eine Suche vom Typ **Gruppierung** für Datenressourcen durch, bei denen der Name mit dem Produkt übereinstimmt und Tags mit der Abbildung oder dem Foto übereinstimmen.
 
 1.	Melden Sie sich am **Azure Data Catalog**-Portal an.
 2.	Klicken Sie auf **Ermitteln**.
-3.	Geben Sie im Feld **Suche** eine Abfrage vom Typ **Gruppierung** ein: (tags:description OR tags:photo). 
+3.	Geben Sie im Feld **Suche** eine Abfrage vom Typ **Gruppierung** ein: \(tags:description OR tags:photo\). 
 4.	Klicken Sie auf das Suchsymbol, oder drücken Sie die EINGABETASTE. In **Azure Data Catalog** werden Datenressourcen für diese Suchabfrage angezeigt.
     
     ![Suchen][8]
@@ -157,7 +157,7 @@ In dieser Übung haben Sie die Funktionen von Azure Data Catalog zum Crowdsourci
 1.	Melden Sie sich am **Azure Data Catalog**-Portal an.
 2.	Klicken Sie auf **Ermitteln**.
 3.	Wählen Sie eine Datenressource aus. Wählen Sie in diesem Beispiel „ProductCategory“ aus.
-4.	Wählen Sie **Öffnen in** > **Excel**.
+4.	Wählen Sie **Öffnen in** \> **Excel**.
 
     ![connect1][10]
 5.	Klicken Sie im Fenster **Sicherheitshinweis für Microsoft Excel** auf **Aktivieren**.
@@ -222,4 +222,4 @@ In diesem Lernprogramm haben Sie wichtige Funktionen der Preview-Version von **A
 [11]: ./media/data-catalog-get-started/connect2.png
 [12]: ./media/data-catalog-get-started/ownership.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

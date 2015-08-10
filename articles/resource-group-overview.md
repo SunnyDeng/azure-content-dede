@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/15/2015"
+   ms.date="07/24/2015"
    ms.author="tomfitz"/>
 
 # Übersicht über Azure Resource Manager
@@ -38,13 +38,15 @@ Beim Definieren der Ressourcengruppe sind einige wichtige Faktoren zu beachten:
 
 Im Azure-Vorschauportal werden alle neue Ressourcen in einer Ressourcengruppe erstellt. Auch wenn Sie nur eine einzelne Ressource erstellen, z. B. eine Website, müssen Sie entscheiden, ob Sie diese Ressource einer vorhandenen Gruppe hinzufügen oder eine neue Gruppe für die Ressource erstellen.
 
-Die folgende Abbildung zeigt eine Ressourcengruppe mit einer Website, einer Datenbank und Application Insights.
+Die folgende Abbildung zeigt eine Ressourcengruppe mit Application Insights, einem Datenbankserver, einer Datenbank, einem App Services-Plan und einer Website.
 
-![Zusammenfassung der Ressourcengruppe](./media/resource-group-overview/resourcegroupsummary.png)
+![Zusammenfassung der Ressourcengruppe](./media/resource-group-overview/resourcegroupsummary2.png)
 
-Eine Ressourcengruppe kann auch mit einer Ressource in einer anderen Ressourcengruppe verknüpft werden. Eine Ressource wird als verknüpft angesehen, wenn zwischen Ressourcen in unterschiedlichen Ressourcengruppen eine Bereitstellungsabhängigkeit besteht. Wenn eine Web-App in einer Ressourcengruppe eine Verbindung mit einer Datenbank in einer anderen Ressourcengruppe herstellt, sind diese Ressourcen verknüpft.
+Eine Ressourcengruppe kann auch mit einer Ressource in einer anderen Ressourcengruppe verknüpft werden. Eine Ressource wird als verknüpft angesehen, wenn zwischen Ressourcen in unterschiedlichen Ressourcengruppen eine Bereitstellungsabhängigkeit besteht. Wenn eine Web-App in einer Ressourcengruppe eine Verbindung mit einer Datenbank in einer anderen Ressourcengruppe herstellt, sind diese Ressourcen verknüpft. Sie können Verknüpfungen zwischen Ressourcen in einer anderen Ressourcengruppe auch explizit definieren.
 
-![Verknüpfte Ressource](./media/resource-group-overview/linkedresource.png)
+Weitere Informationen zum Verknüpfen von Ressourcen finden Sie unter [Verknüpfen von Ressourcen im Azure-Ressourcen-Manager](resource-group-link-resources.md).
+
+Wenn Sie eine Ressource in eine neue Ressourcengruppe verschieben müssen, lesen Sie die Informationen unter [Verschieben von Ressourcen in eine neue Ressourcengruppe oder ein neues Abonnement](resource-group-move-resources.md).
 
 Im Vorschauportal können Sie bequem Kosten anzeigen, Ereignisse überwachen und Warnungen verwalten. Die folgende Abbildung zeigt die zusammengefasste Abrechnung für eine Gruppe.
 
@@ -52,7 +54,7 @@ Im Vorschauportal können Sie bequem Kosten anzeigen, Ereignisse überwachen und
 
 ## Bereitstellungen von Vorlagen
 
-Mit dem Azure-Ressourcen-Manager können Sie eine einfache Vorlage (im JSON-Format) erstellen, mit der die Bereitstellung und Konfiguration Ihrer Anwendung definiert wird. Diese Vorlage wird als Azure-Vorlage bezeichnet und ist eine deklarative Möglichkeit zum Definieren der Bereitstellung. Mit einer Vorlage können Sie die Anwendung während des gesamten App-Lebenszyklus wiederholt bereitstellen und sicher sein, dass Ihre Ressourcen einheitlich bereitgestellt werden.
+Mit dem Azure-Ressourcen-Manager können Sie eine einfache Vorlage \(im JSON-Format\) erstellen, mit der die Bereitstellung und Konfiguration Ihrer Anwendung definiert wird. Diese Vorlage wird als Azure-Vorlage bezeichnet und ist eine deklarative Möglichkeit zum Definieren der Bereitstellung. Mit einer Vorlage können Sie die Anwendung während des gesamten App-Lebenszyklus wiederholt bereitstellen und sicher sein, dass Ihre Ressourcen einheitlich bereitgestellt werden.
 
 In der Vorlage definieren Sie die Infrastruktur für Ihre App, die Konfiguration der Infrastruktur und die Veröffentlichung Ihres App-Codes in der Infrastruktur. Sie müssen sich nicht mit der Reihenfolge für die Bereitstellung befassen, weil der Azure-Ressourcen-Manager die Abhängigkeiten analysiert und so sicherstellt, dass Ressourcen in der richtigen Reihenfolge erstellt werden.
 
@@ -72,21 +74,23 @@ Vorlagenschemas finden Sie unter [Schemas des Azure-Ressourcen-Manager](https://
 
 Informationen zum Verwenden einer Vorlage für die Bereitstellung finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md) und [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 
+Anleitungen zum Strukturieren von Vorlagen finden Sie unter [Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-design-templates.md).
+
 ## Tags
 
-Der Azure-Ressourcen-Manager verfügt über eine Markierungsfunktion, mit der Sie Ressourcen gemäß Ihren Anforderungen für die Verwaltung oder Abrechnung kategorisieren können. Die Verwendung von Markierungen (Tags) kann ratsam sein, wenn Sie über eine komplexe Sammlung von Ressourcengruppen und Ressourcen verfügen und diese Ressourcen auf möglichst sinnvolle Weise visualisieren müssen. Beispielsweise können Sie Ressourcen markieren, die in Ihrer Organisation eine ähnliche Funktion haben oder zu derselben Abteilung gehören.
+Der Azure-Ressourcen-Manager verfügt über eine Markierungsfunktion, mit der Sie Ressourcen gemäß Ihren Anforderungen für die Verwaltung oder Abrechnung kategorisieren können. Die Verwendung von Markierungen \(Tags\) kann ratsam sein, wenn Sie über eine komplexe Sammlung von Ressourcengruppen und Ressourcen verfügen und diese Ressourcen auf möglichst sinnvolle Weise visualisieren müssen. Beispielsweise können Sie Ressourcen markieren, die in Ihrer Organisation eine ähnliche Funktion haben oder zu derselben Abteilung gehören.
 
 Im Vorschauportal können Sie mit der Verwendung von Tags beginnen, indem Sie auf das Tagsymbol klicken.
 
 ![tags](./media/resource-group-overview/tags.png)
 
-Ressourcen müssen sich nicht in derselben Ressourcengruppe befinden, um ein gemeinsames Tag aufzuweisen. Sie können Ihre eigene Tag-Taxonomie erstellen, um dafür zu sorgen, dass alle Benutzer in Ihrer Organisation die gleichen Tags verwenden. So wird verhindert, dass Benutzer versehentlich leicht unterschiedliche Tags nutzen (z. B. „dept“ anstelle von „department“).
+Ressourcen müssen sich nicht in derselben Ressourcengruppe befinden, um ein gemeinsames Tag aufzuweisen. Sie können Ihre eigene Tag-Taxonomie erstellen, um dafür zu sorgen, dass alle Benutzer in Ihrer Organisation die gleichen Tags verwenden. So wird verhindert, dass Benutzer versehentlich leicht unterschiedliche Tags nutzen \(z. B. „dept“ anstelle von „department“\).
 
 Weitere Informationen zu Tags finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md).
 
 ## Zugriffssteuerung
 
-Mit dem Azure-Ressourcen-Manager können Sie steuern, wer Zugriff auf spezielle Aktionen für Ihre Organisation hat. OAuth und die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) sind standardmäßig in die Verwaltungsplattform integriert, und diese Zugriffssteuerung wird auf alle Dienste in der Ressourcengruppe angewendet. Sie können Benutzer vordefinierten Plattformrollen und ressourcenspezifischen Rollen hinzufügen und diese Rollen auf ein Abonnement, eine Ressourcengruppe oder eine Ressource anwenden, um den Zugriff zu beschränken. Beispielsweise können Sie die vordefinierte Rolle „SQL DB Contributor“ verwenden, mit der Benutzer Datenbanken verwalten können, aber keine Datenbankserver oder Sicherheitsrichtlinien. Sie fügen Benutzer Ihrer Organisation, die diese Art von Zugriff benötigen, der Rolle „SQL DB Contributor“ hinzu und wenden die Rolle auf das Abonnement, die Ressourcengruppe oder die Ressource an.
+Mit dem Azure-Ressourcen-Manager können Sie steuern, wer Zugriff auf spezielle Aktionen für Ihre Organisation hat. OAuth und die rollenbasierte Zugriffssteuerung \(Role-Based Access Control, RBAC\) sind standardmäßig in die Verwaltungsplattform integriert, und diese Zugriffssteuerung wird auf alle Dienste in der Ressourcengruppe angewendet. Sie können Benutzer vordefinierten Plattformrollen und ressourcenspezifischen Rollen hinzufügen und diese Rollen auf ein Abonnement, eine Ressourcengruppe oder eine Ressource anwenden, um den Zugriff zu beschränken. Beispielsweise können Sie die vordefinierte Rolle „SQL DB Contributor“ verwenden, mit der Benutzer Datenbanken verwalten können, aber keine Datenbankserver oder Sicherheitsrichtlinien. Sie fügen Benutzer Ihrer Organisation, die diese Art von Zugriff benötigen, der Rolle „SQL DB Contributor“ hinzu und wenden die Rolle auf das Abonnement, die Ressourcengruppe oder die Ressource an.
 
 Im Vorschauportal können Sie die Zugriffssteuerung definieren, indem Sie auf die Schaltfläche für den Zugriff klicken.
 
@@ -94,11 +98,13 @@ Im Vorschauportal können Sie die Zugriffssteuerung definieren, indem Sie auf di
 
 Der Azure-Ressourcen-Manager protokolliert Benutzeraktionen automatisch zu Prüfzwecken.
 
-Sie können kritische Ressourcen auch explizit sperren, um zu verhindern, dass sie von Benutzern gelöscht oder geändert werden.
+Sie können kritische Ressourcen auch explizit sperren, um zu verhindern, dass sie von Benutzern gelöscht oder geändert werden. Weitere Informationen finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
 Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal](./role-based-access-control-configure.md).
 
 Beispiele zum Festlegen von Zugriffsrichtlinien finden Sie unter [Verwalten und Überwachen des Zugriffs auf Ressourcen](azure-portal/resource-group-rbac.md).
+
+Bewährte Methoden finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 
 ## Einheitliche Verwaltungsebene
 
@@ -110,33 +116,13 @@ Informationen zur Azure-Befehlszeilenschnittstelle finden Sie unter [Verwenden d
 
 Informationen zur REST-API finden Sie unter [Referenz zur REST-API des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn790568.aspx).
 
+Informationen zum Verwenden des Vorschauportals finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](azure-portal/resource-group-portal.md).
+
 ## Nächste Schritte
-Erste Schritte
 
-- [Verwenden von Azure PowerShell mit dem Ressourcen-Manager](./powershell-azure-resource-manager.md)
-- [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung](./virtual-machines/xplat-cli-azure-resource-manager.md)
-- [Verwenden des Azure-Portals zum Verwalten von Ressourcen](azure-portal/resource-group-portal.md)
+- Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Vorlagen](./resource-group-authoring-templates.md).
+- Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen von Vorlagen](azure-portal/resource-group-template-deploy.md).
+- Grundlegende Informationen zu den Funktionen, die in einer Vorlage verwendet werden können, finden Sie unter [Vorlagenfunktionen](./resource-group-template-functions.md).
+- Anleitungen zum Entwerfen von Vorlagen finden Sie unter [Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-design-templates.md).
 
-Erstellen und Bereitstellen von Anwendungen
-
-- [Erstellen von Vorlagen](./resource-group-authoring-templates.md)
-- [Bereitstellen von Vorlagen](azure-portal/resource-group-template-deploy.md)
-- [Problembehebung beim Bereitstellen von Ressourcengruppen in Azure](virtual-machines/resource-group-deploy-debug.md)
-- [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-web/app-service-deploy-complex-application-predictably.md)
-- [Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage](virtual-machines/arm-template-deployment.md)
-- [Funktionen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-template-functions.md)
-- [Erweiterte Anwendungen mit Vorlagen](./resource-group-advanced-template.md)
-- [Vorlagenschemas](https://github.com/Azure/azure-resource-manager-schemas)
-
-Organisieren von Ressourcen
-
-- [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)
-
-Zugriffsverwaltung und -überwachung
-
-- [Verwalten und Überwachen des Zugriffs auf Ressourcen](azure-portal/resource-group-rbac.md)
-- [Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal](./role-based-access-control-configure.md)
-- [Authentifizieren eines Dienstprinzipals](./resource-group-authenticate-service-principal.md)
-- [Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal](./resource-group-create-service-principal-portal.md)
-
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

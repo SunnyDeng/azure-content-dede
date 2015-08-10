@@ -46,9 +46,9 @@ Im folgenden Abschnitt werden die Codecs und Dateiformate aufgelistet, die für 
 ###Audiocodecs
 
 - PCM
-- AAC (AAC-LC, AAC-HE und AAC-HEv2)
+- AAC \(AAC-LC, AAC-HE und AAC-HEv2\)
 - WMA9/Pro
-- MP3 (MPEG-1 Audio Layer 3)
+- MP3 \(MPEG-1 Audio Layer 3\)
 - FLAC
 - Opus
 - Vorbis
@@ -84,4 +84,4 @@ In der folgenden Tabelle werden die Codecs und Dateiformate aufgeführt, die fü
 
 [Codieren von On-Demand-Inhalten mit Azure Media Services](media-services-encode-asset.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/15/2015"
+   ms.date="07/24/2015"
    ms.author="tomfitz"/>
 
 # Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage
@@ -22,7 +22,7 @@ In diesem Thema wird erläutert, wie Azure-Ressourcen-Manager-Vorlagen verwendet
 
 Mit Azure-Ressourcen-Manager-Vorlagen können Sie schnell und einfach Ihre Anwendungen über eine deklarative JSON-Datei in Azure bereitstellen. In einer JSON-Vorlage können Sie mehrere Dienste bereitstellen, darunter beispielsweise Virtual Machines, Virtual Network, Storage, App Services und Datenbanken. Sie verwenden die gleiche Vorlage, um Ihre Anwendung während jeder Phase des Anwendungslebenszyklus wiederholt und konsistent bereitzustellen.
 
-Zur Vereinfachung der Verwaltung Ihrer Anwendung können Sie alle Ressourcen, die einen gemeinsamen Lebenszyklus aufweisen, in einer einzelnen Ressourcengruppe organisieren. Ressourcengruppen erleichtern Ihnen das gleichzeitige Bereitstellen, Aktualisieren und Löschen aller verwandten Ressourcen. In den meisten Fällen ist eine Ressourcengruppe einer einzelnen Anwendung oder einer Anwendungsebene (bei großen Anwendungen) zugeordnet. Die Ressource, die über eine Vorlage bereitgestellt wird, befindet sich in einer einzelnen Ressourcengruppe, sie kann aber Abhängigkeiten in anderen Ressourcengruppen enthalten.
+Zur Vereinfachung der Verwaltung Ihrer Anwendung können Sie alle Ressourcen, die einen gemeinsamen Lebenszyklus aufweisen, in einer einzelnen Ressourcengruppe organisieren. Ressourcengruppen erleichtern Ihnen das gleichzeitige Bereitstellen, Aktualisieren und Löschen aller verwandten Ressourcen. In den meisten Fällen ist eine Ressourcengruppe einer einzelnen Anwendung oder einer Anwendungsebene \(bei großen Anwendungen\) zugeordnet. Die Ressource, die über eine Vorlage bereitgestellt wird, befindet sich in einer einzelnen Ressourcengruppe, sie kann aber Abhängigkeiten in anderen Ressourcengruppen enthalten.
 
 Sie können innerhalb einer Ressourcengruppe die Ausführung einer Bereitstellung verfolgen und den Status der Bereitstellung und Ausgaben der Vorlagenausführung anzeigen.
 
@@ -48,9 +48,12 @@ Mit Ressourcen-Manager-Vorlagen können Sie folgende Aktionen ausführen:
 
 ## Bereitstellen mit dem Vorschauportal
 
-Wissen Sie was? Jede Anwendung im Katalog wird durch eine Azure-Ressourcen-Manager-Vorlage unterstützt! Erstellen Sie einfach einen virtuellen Computer, ein virtuelles Netzwerk, ein Speicherkonto, einen App Service der eine Datenbank über das Portal, und Sie können die Vorteile des Azure-Ressourcen-Managers ohne zusätzlichen Aufwand nutzen.
+Wissen Sie was? Jede Anwendung, die Sie über das [Vorschauportal](https://portal.azure.com/) erstellt haben, wird in einer Azure-Ressourcen-Manager-Vorlage gesichert. Erstellen Sie einfach einen virtuellen Computer, ein virtuelles Netzwerk, ein Speicherkonto, einen App Service der eine Datenbank über das Portal, und Sie können die Vorteile des Azure-Ressourcen-Managers ohne zusätzlichen Aufwand nutzen. Klicken Sie einfach auf das Symbol **Neu**, und Sie können direkt mit der Bereitstellung einer Anwendung über den Azure-Ressourcen-Manager beginnen.
 
-Klicken Sie zur Problembehandlung bei Bereitstellungen über das Vorschauportal auf **Durchsuchen** -> **Ressourcengruppen** -> *IhrRessourcengruppenname*. Klicken Sie hier auf die Kachel **Ereignisse** unter dem Fokus **Überwachung**. Wählen Sie abschließend einen einzelnen **Vorgang** und ein **Ereignis** aus, um Details anzuzeigen.
+![Neu](./media/resource-group-template-deploy/new.png)
+
+Weitere Informationen zum Verwenden des Portals mit dem Azure-Ressourcen-Manager finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](resource-group-portal.md).
+
 
 ## Bereitstellen mit PowerShell
 
@@ -247,13 +250,11 @@ Bei der Verwendung einer Parameterdatei zum Übergeben von Parameterwerten an Ih
     }
 
 ## Nächste Schritte
-- [Azure Resource Manager Overview](../resource-group-overview.md) (Übersicht über den Azure-Ressourcen-Manager)
-- [Bereitstellen von Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage](../arm-template-deployment.md)
-- [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](../app-service-web/app-service-deploy-complex-application-predictably.md)
-- [Erstellen von Vorlagen](../resource-group-authoring-templates.md)
-- [Vorlagenfunktionen](../resource-group-template-functions.md)
-- [Erweiterte Vorlagenvorgänge](../resource-group-advanced-template.md)  
+- Ein Beispiel für die Bereitstellung von Ressourcen über die .NET-Clientbibliothek finden Sie unter [Bereitstellen von Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage](../arm-template-deployment.md).
+- Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](../app-service-web/app-service-deploy-complex-application-predictably.md).
+- Informationen zu den Abschnitten der Azure-Ressourcen-Manager-Vorlage finden Sie unter [Erstellen von Vorlagen](../resource-group-authoring-templates.md).
+- Unter [Vorlagenfunktionen](../resource-group-template-functions.md) finden Sie eine Liste der Funktionen, die Sie in einer Azure-Ressourcen-Manager-Vorlage verwenden können.
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

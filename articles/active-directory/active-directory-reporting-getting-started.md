@@ -59,7 +59,7 @@ Azure Active Directory umfasst Sicherheits-, Aktivitäts- und Prüfberichte für
 
 Die Berichterstellungspipeline umfasst drei wesentliche Schritte. Jedes Mal, wenn sich ein Benutzer anmeldet oder eine Authentifizierung erfolgt, geschieht Folgendes:
 
-- Erstens wird der Benutzer authentifiziert (erfolgreich oder nicht erfolgreich), und das Ergebnis wird in den Azure Active Directory-Dienstdatenbanken gespeichert.
+- Erstens wird der Benutzer authentifiziert \(erfolgreich oder nicht erfolgreich\), und das Ergebnis wird in den Azure Active Directory-Dienstdatenbanken gespeichert.
 - In regelmäßigen Abständen werden alle aktuellen Anmeldungen verarbeitet. Dabei durchsuchen Algorithmen für Sicherheit und anomale Aktivität alle aktuellen Anmeldungen nach verdächtigen Aktivitäten.
 - Nach der Verarbeitung werden die Berichte geschrieben, zwischengespeichert und im Azure-Verwaltungsportal bereitgestellt.
 
@@ -98,7 +98,7 @@ Navigieren Sie zu jedem Bericht, um die gesammelten Daten und die verarbeiteten 
 
 ### Herunterladen der Berichte als CSV-Datei
 
-Jeder Bericht kann als CSV-Datei (durch Trennzeichen getrennte Werte) heruntergeladen werden. Sie können diese Dateien in Excel, PowerBI oder Analyseprogrammen von Drittanbietern öffnen, um Ihre Daten näher zu analysieren.
+Jeder Bericht kann als CSV-Datei \(durch Trennzeichen getrennte Werte\) heruntergeladen werden. Sie können diese Dateien in Excel, PowerBI oder Analyseprogrammen von Drittanbietern öffnen, um Ihre Daten näher zu analysieren.
 
 Um einen Bericht im CSV-Format herunterzuladen, navigieren Sie zum Bericht, und klicken Sie unten auf "Herunterladen".
 
@@ -156,4 +156,4 @@ Unter der E-Mail-Adresse [aadreportinghelp@microsoft.com](mailto:aadreportinghel
 
 > [AZURE.TIP]Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

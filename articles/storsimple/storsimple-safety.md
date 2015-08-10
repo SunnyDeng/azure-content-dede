@@ -19,7 +19,7 @@
 
 ![Symbol "Warnung"](./media/storsimple-safety/IC740879.png)![Symbol "Sicherheitshinweis lesen"](./media/storsimple-safety/IC740885.png)**LESEN SIE DIE INFORMATIONEN ZUR SICHERHEIT UND INTEGRITÄT**
 
-Lesen Sie alle Informationen zur Sicherheit und Integrität in diesem Artikel, die sich auf Ihr Microsoft Azure StorSimple-Gerät beziehen. Bewahren Sie für die künftige Verwendung alle gedruckten Handbücher auf, die im Lieferumfang des StorSimple-Geräts enthalten waren. Wenn die Anweisungen nicht befolgt werden und das Produkt nicht ordnungsgemäß eingerichtet, verwendet und gewartet wird, kann sich das Risiko von schwerwiegenden Verletzungen, Todesfällen oder Schäden am Gerät/an den Geräten erhöhen. Eine [herunterladbare Version dieses Handbuchs](http://www.microsoft.com/de-de/download/details.aspx?id=44233) ist ebenfalls verfügbar.
+Lesen Sie alle Informationen zur Sicherheit und Integrität in diesem Artikel, die sich auf Ihr Microsoft Azure StorSimple-Gerät beziehen. Bewahren Sie für die künftige Verwendung alle gedruckten Handbücher auf, die im Lieferumfang des StorSimple-Geräts enthalten waren. Wenn die Anweisungen nicht befolgt werden und das Produkt nicht ordnungsgemäß eingerichtet, verwendet und gewartet wird, kann sich das Risiko von schwerwiegenden Verletzungen, Todesfällen oder Schäden am Gerät/an den Geräten erhöhen. Eine [herunterladbare Version dieses Handbuchs](http://www.microsoft.com/en-us/download/details.aspx?id=44233) ist ebenfalls verfügbar.
 
 ## Konventionen für Sicherheitssymbole
 
@@ -34,7 +34,7 @@ Die folgenden Symbole finden Sie in den Sicherheitsvorkehrungen, die beachtet we
 |![Symbol "Stromschlag"](./media/storsimple-safety/IC740882.png) **Elektrischer Schlag** |Hochspannung|
 |![Symbol "Schwergewicht"](./media/storsimple-safety/IC740883.png) **Schwergewicht**| |
 |![Symbol "Keine durch Benutzer zu wartenden Teile"](./media/storsimple-safety/IC740879.png) **Keine durch Benutzer zu wartenden Teile**|Zugriff nur bei ausreichender Schulung.|
-|![Symbol "Sicherheitshinweis lesen"](./media/storsimple-safety/IC740885.png)**Lesen Sie zunächst alle Anweisungen**| |
+|![Symbol "Sicherheitshinweis lesen"](./media/storsimple-safety/IC740885.png)\*\*Lesen Sie zunächst alle Anweisungen\*\*| |
 |![Symbol "Kippgefahr"](./media/storsimple-safety/IC740886.png)**Kippgefahr**| |
 
 
@@ -47,7 +47,7 @@ So wird die Gefahr von Verletzungen verringert:
 
 - Ein vollständig konfiguriertes Gehäuse kann bis zu 32 kg wiegen. Versuchen Sie nicht, es allein zu heben.
 - Stellen Sie vor dem Verschieben des Gehäuses immer sicher, dass zwei Personen verfügbar sind, um das Gewicht zu tragen. Denken Sie daran: Wenn eine Person versucht, das Gewicht alleine zu heben, kann dies zu Verletzungen führen.
-- Heben Sie das Gehäuse nicht an den Griffen der Stromversorgungs- und Kühleinheiten (PCMs) auf der Rückseite der Einheit an. Diese sind nicht dafür ausgelegt, das Gewicht zu tragen.
+- Heben Sie das Gehäuse nicht an den Griffen der Stromversorgungs- und Kühleinheiten \(PCMs\) auf der Rückseite der Einheit an. Diese sind nicht dafür ausgelegt, das Gewicht zu tragen.
 
 ## Vorsichtsmaßnahmen bei der Verbindung
 
@@ -71,7 +71,7 @@ So reduzieren Sie die Wahrscheinlichkeit von Überhitzung oder Brand bei elektri
 
 - Stellen Sie eine geeignete Stromquelle mit elektrischem Überlastungsschutz bereit, um die Anforderungen der technischen Spezifikationen zu erfüllen.
 
-- Verwenden Sie keine verzweigten Stromkabel ("Y"-Leitungen).
+- Verwenden Sie keine verzweigten Stromkabel \("Y"-Leitungen\).
 
 - Um die Anforderungen für Sicherheit, Emissionen und Temperaturüberwachung zu erfüllen, sollten keine Abdeckungen entfernt werden, und alle Einschübe sollten mit Plug-in-Modulen oder leeren Laufwerken aufgefüllt werden.
 
@@ -119,11 +119,11 @@ Für die ordnungsgemäße Kühlung des Gestellsystems:
 
 - Stellen Sie sicher, dass der Gestellaufbau die maximale vom Gehäuse erzeugte Umgebungstemperatur von 35 Grad Celsius berücksichtigt.
 
-- Das System wird mit einer Installation mit niedrigem Druck und hinterer Lüftung betrieben (der hintere Druck durch die Gestelltüren und -hindernisse darf 5 Pascal [0,5 mm auf der Wasserstandsanzeige] nicht überschreiben).
+- Das System wird mit einer Installation mit niedrigem Druck und hinterer Lüftung betrieben \(der hintere Druck durch die Gestelltüren und -hindernisse darf 5 Pascal \[0,5 mm auf der Wasserstandsanzeige\] nicht überschreiben\).
 
-## Vorsichtsmaßnahmen bei der Stromversorgungs- und Kühleinheit (PCM)
+## Vorsichtsmaßnahmen bei der Stromversorgungs- und Kühleinheit \(PCM\)
 
-Das Gerät ist für den Betrieb mit zwei Kühleinheiten ausgelegt. Jede der Kühleinheiten verfügt über eine Stromversorgung und ein Doppelachsgebläse. In kritischem Zustand lässt das System das Versagen einer Stromzufuhr zu, während der normale Betrieb aufrecht erhalten wird. Zwei Kühleinheiten (und daher Stromzufuhren) müssen immer installiert sein. Eine einzelne PCM bietet keine redundante Stromversorgung. Aus diesem Grund kann der Ausfall von nur einer PCM zu Ausfallzeiten und Datenverlusten führen.
+Das Gerät ist für den Betrieb mit zwei Kühleinheiten ausgelegt. Jede der Kühleinheiten verfügt über eine Stromversorgung und ein Doppelachsgebläse. In kritischem Zustand lässt das System das Versagen einer Stromzufuhr zu, während der normale Betrieb aufrecht erhalten wird. Zwei Kühleinheiten \(und daher Stromzufuhren\) müssen immer installiert sein. Eine einzelne PCM bietet keine redundante Stromversorgung. Aus diesem Grund kann der Ausfall von nur einer PCM zu Ausfallzeiten und Datenverlusten führen.
 
 ![Symbol "Warnung"](./media/storsimple-safety/IC740879.png) ![Symbol "Stromschlag"](./media/storsimple-safety/IC740882.png) **WARNUNG!**
 
@@ -139,7 +139,7 @@ Für den ordnungsgemäßen Betrieb Ihrer Geräte und um Schäden am Produkt zu v
 
 - Eine PCM kann nicht entfernt werden, sofern kein Ersatz sofort installiert werden kann. Das Gehäuse darf nicht ohne alle an der richtigen Stelle vorhandenen Module betrieben werden.
 
-## Vorsichtsmaßnahmen bei der elektrostatischen Entladung (ESD)
+## Vorsichtsmaßnahmen bei der elektrostatischen Entladung \(ESD\)
 
 ![Symbol "Hinweis"](./media/storsimple-safety/IC740881.png) **HINWEIS:**
 
@@ -179,4 +179,4 @@ Nachdem Sie diese Sicherheitshinweise gelesen haben, ist der nächste Schritt, d
 
 - Für ein 8600-Gerät gehen Sie zu [Entpacken, Aufstellen und Verbinden Ihres 8600-Geräts](storsimple-8600-hardware-installation).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

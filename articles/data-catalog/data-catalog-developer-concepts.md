@@ -35,11 +35,11 @@ Der Katalog enthält **Benutzer** und **Objekte**.
 
 ### Benutzer
 
-Benutzer sind Sicherheitsprinzipale, die über Berechtigungen zum Ausführen von Aktionen im Katalog verfügen (Durchsuchen des Katalogs, Hinzufügen, Bearbeiten oder Entfernen von Elementen usw.).
+Benutzer sind Sicherheitsprinzipale, die über Berechtigungen zum Ausführen von Aktionen im Katalog verfügen \(Durchsuchen des Katalogs, Hinzufügen, Bearbeiten oder Entfernen von Elementen usw.\).
 
 Ein Benutzer kann verschiedene Rollen haben. Weitere Informationen zu Rollen finden Sie im Abschnitt „Rollen und Autorisierung“.
 
-Es können nur einzelne Benutzer (keine Sicherheitsgruppen) hinzugefügt werden.
+Es können nur einzelne Benutzer \(keine Sicherheitsgruppen\) hinzugefügt werden.
 
 Azure Data Catalog verwendet Azure Active Directory für die Identitäts- und Zugriffsverwaltung. Jeder Katalogbenutzer muss einem Active Directory für das Konto angehören.
 
@@ -47,7 +47,7 @@ Azure Data Catalog verwendet Azure Active Directory für die Identitäts- und Zu
 
 Ein **Katalog** enthält Datenobjekte. **Objekte** sind die Einheit des vom Katalog verwalteten Elements.
 
-Die Granularität eines Objekts variiert je nach Datenquelle. Bei SQL Server oder Oracle Database kann ein Objekt eine Tabelle oder Sicht sein. Bei SQL Server Analysis Services kann ein Objekt ein Measures-Objekt, ein Dimensions-Objekt oder ein Key Performance Indicator (KPI) sein. Bei SQL Server Reporting Services kann ein Objekt ein Bericht sein.
+Die Granularität eines Objekts variiert je nach Datenquelle. Bei SQL Server oder Oracle Database kann ein Objekt eine Tabelle oder Sicht sein. Bei SQL Server Analysis Services kann ein Objekt ein Measures-Objekt, ein Dimensions-Objekt oder ein Key Performance Indicator \(KPI\) sein. Bei SQL Server Reporting Services kann ein Objekt ein Bericht sein.
 
 Ein **Objekt** ist das Element, das Sie einem Katalog hinzufügen oder daraus entfernen. Es ist die Ergebniseinheit, die von **Search** zurückgegeben wird.
 
@@ -59,7 +59,7 @@ Anmerkungen sind Elemente, die Metadaten für Objekte darstellen.
 
 Beispiele für Anmerkungen sind Beschreibungen, Tags, Schemas, Dokumentationen usw. Eine vollständige Liste der Objekt- und Anmerkungstypen finden Sie im Abschnitt Objektmodellabschnitt.
 
-## Crowdsourcing von Anmerkungen und Benutzerperspektive (Meinungsvielfalt)
+## Crowdsourcing von Anmerkungen und Benutzerperspektive \(Meinungsvielfalt\)
 
 Ein zentraler Aspekt von Azure Data Catalog ist die Crowdsourcing-Unterstützung für Metadaten im System. Im Gegensatz zu einem Wiki-Ansatz, bei dem nur eine einzelne Meinung möglich ist und vom letzten Autor bestimmt wird, können beim Azure Data Catalog-Modell gleichzeitig mehrere Meinungen im System vorhanden sein.
 
@@ -69,7 +69,7 @@ Dieser Ansatz spiegelt die Realität von Unternehmensdaten wider, da er für ein
 -	Ein Data Steward kann Informationen zu den Geschäftsprozessen, bei denen das Objekt angewendet wird, oder die Klassifizierungen angeben, die das Unternehmen auf das Objekt angewendet hat.
 -	Ein Finanzanalyst kann Informationen zur Verwendung der Daten im Rahmen der Berichterstellung am Ende des Zeitraums angeben.
 
-Um dieses Beispiel zu ermöglichen, kann jeder Benutzer (Datenbankadministrator, Data Steward und Analyst) einer einzelnen, im Katalog registrierten Tabelle eine Beschreibung hinzufügen. Alle Beschreibungen werden im System gespeichert und im Azure Data Catalog-Portal angezeigt.
+Um dieses Beispiel zu ermöglichen, kann jeder Benutzer \(Datenbankadministrator, Data Steward und Analyst\) einer einzelnen, im Katalog registrierten Tabelle eine Beschreibung hinzufügen. Alle Beschreibungen werden im System gespeichert und im Azure Data Catalog-Portal angezeigt.
 
 Dieses Muster wird für die meisten Elemente im Objektmodell verwendet. Aus diesem Grund handelt es sich bei Objekttypen in der JSON-Nutzlast häufig um Arrays für Eigenschaften, obwohl Sie eigentlich einen Singleton erwarten würden.
  
@@ -148,13 +148,13 @@ Drei Rollen stehen zur Verfügung: **Administrator**, **Besitzer** und **Mitwirk
 
 <table><tr><td><b>Rolle</b></td><td><b>Umfang</b></td><td><b>Rechte</b></td></tr><tr><td>Administrator</td><td>Katalog (also alle Objekte/Anmerkungen im Katalog)</td><td>Read Delete ViewRoles ChangeOwnership ChangeVisibility ViewPermissions</td></tr><tr><td>Besitzer</td><td>Jedes Objekt (Stammelement)</td><td>Read Delete ViewRoles ChangeOwnership ChangeVisibility ViewPermissions</td></tr><tr><td>Mitwirkender</td><td>Jedes einzelne Objekt und jede einzelne Anmerkung</td><td>Read Update Delete ViewRoles – Hinweis: Wird dem Mitwirkenden die Leseberechtigung für das Objekt entzogen, werden ihm auch die anderen Rechte entzogen.</td></tr></table>
 
-> [AZURE.NOTE]Die Rechte **Read**, **Update**, **Delete** und **ViewRoles** gelten für jedes Element (Objekt oder Anmerkung), die Rechte **TakeOwnership**, **ChangeOwnership**, **ChangeVisibility** und **ViewPermissions** gelten dagegen nur für das Stammobjekt.
+> [AZURE.NOTE]Die Rechte **Read**, **Update**, **Delete** und **ViewRoles** gelten für jedes Element \(Objekt oder Anmerkung\), die Rechte **TakeOwnership**, **ChangeOwnership**, **ChangeVisibility** und **ViewPermissions** gelten dagegen nur für das Stammobjekt.
 >
 >Das Recht **Delete** gilt für ein Element sowie für alle dazugehörigen untergeordneten Elemente. Beim Löschen eines Objekts werden also beispielsweise auch sämtliche Anmerkungen für dieses Objekt gelöscht.
 
 ### Berechtigungen
 
-Eine Berechtigung ist eine Liste mit Zugriffssteuerungseinträgen. Jeder Zugriffssteuerungseintrag weist einem Sicherheitsprinzipal eine Gruppe von Rechten zu. Berechtigungen können nur für ein Objekt (Stammelement) angegeben werden und gelten für das Objekt und alle dazugehörigen untergeordneten Elemente.
+Eine Berechtigung ist eine Liste mit Zugriffssteuerungseinträgen. Jeder Zugriffssteuerungseintrag weist einem Sicherheitsprinzipal eine Gruppe von Rechten zu. Berechtigungen können nur für ein Objekt \(Stammelement\) angegeben werden und gelten für das Objekt und alle dazugehörigen untergeordneten Elemente.
 
 In der Vorschauversion von **Azure Data Catalog** wird in der Berechtigungsliste nur das Recht **Read** unterstützt, um die Einschränkung der Sichtbarkeit eines Objekts zu ermöglichen.
 
@@ -162,15 +162,15 @@ Standardmäßig ist jeder authentifizierte Benutzer zum Lesen aller Elemente im 
 
 ## REST-API
 
-Mit den Ansichtselementanforderungen **PUT** und **POST** können Sie Rollen und Berechtigungen steuern. Neben der Elementnutzlast können zwei Systemeigenschaften angegeben werden: **__roles** und **__permissions**.
+Mit den Ansichtselementanforderungen **PUT** und **POST** können Sie Rollen und Berechtigungen steuern. Neben der Elementnutzlast können zwei Systemeigenschaften angegeben werden: **__roles\*\* und **__permissions\*\*.
 
 > [AZURE.NOTE]
 >
-> **__permissions** gilt nur für ein Stammelement.
+> **__permissions\*\* gilt nur für ein Stammelement.
 >
 > Die Rolle **Besitzer** gilt nur für ein Stammelement.
 >
-> Bei der Erstellung eines Elements im Katalog wird standardmäßig der entsprechende **Mitwirkende** als derzeit authentifizierter Benutzer festgelegt. Soll ein Element für jeden Benutzer aktualisierbar sein, muss der **Mitwirkende** in der Eigenschaft **__roles** bei der Erstveröffentlichung des Elements auf den speziellen Sicherheitsprinzipal <Everyone> festgelegt werden (siehe Beispiel weiter unten). Der **Mitwirkende** kann nicht geändert werden (auch nicht vom **Administrator** oder **Besitzer**) und bleibt während der gesamten Lebensdauer eines Elements unverändert. Der einzige unterstützte Wert zum expliziten Festlegen des **Mitwirkenden** ist <Everyone>. Der **Mitwirkende** kann also nur ein Benutzer sein, der ein Element erstellt hat, oder <Everyone>.
+> Bei der Erstellung eines Elements im Katalog wird standardmäßig der entsprechende **Mitwirkende** als derzeit authentifizierter Benutzer festgelegt. Soll ein Element für jeden Benutzer aktualisierbar sein, muss der **Mitwirkende** in der Eigenschaft **__roles\*\* bei der Erstveröffentlichung des Elements auf den speziellen Sicherheitsprinzipal <Everyone> festgelegt werden \(siehe Beispiel weiter unten\). Der **Mitwirkende** kann nicht geändert werden \(auch nicht vom **Administrator** oder **Besitzer**\) und bleibt während der gesamten Lebensdauer eines Elements unverändert. Der einzige unterstützte Wert zum expliziten Festlegen des **Mitwirkenden** ist <Everyone>. Der **Mitwirkende** kann also nur ein Benutzer sein, der ein Element erstellt hat, oder <Everyone>.
 
 ###Beispiele
 **Festlegen des Mitwirkenden auf <Everyone> beim Veröffentlichen eines Elements.** Die Objekt-ID des speziellen Sicherheitsprinzipals <Everyone> lautet „00000000-0000-0000-0000-000000000201“. **POST** https://123154bb...6aad6370ee14.datacatalog.azure.com/default/views/tables/?api-version=2015-07.1.0-Preview **Body**
@@ -238,4 +238,4 @@ Mit den Ansichtselementanforderungen **PUT** und **POST** können Sie Rollen und
 <!--Image references-->
 [1]: ./media/data-catalog-developer-concepts/concept.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

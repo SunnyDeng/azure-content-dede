@@ -1,12 +1,13 @@
 
-Now that you've learned the basics of Azure queue storage, follow these links to learn about more complex storage tasks.
+Nachdem Sie sich nun mit den Grundlagen des Azure-Warteschlangenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
-- View the Queue service reference documentation in the [Storage Client Library for .NET](http://go.microsoft.com/fwlink/?LinkID=390731) reference for complete details about available APIs.
-- Learn more about using Queue storage at [How to use Queue storage from .NET](storage-dotnet-how-to-use-queues.md)
-- Learn about more advanced tasks you can perform with Azure Storage at [Storing and Accessing Data in Azure](https://msdn.microsoft.com/library/azure/gg433040.aspx).    
-- Learn how to simplify the code you write to work with Azure Storage by using the [Azure WebJobs SDK](../app-service/websites-dotnet-webjobs-sdk.md)
-- View more feature guides to learn about additional options for storing data in Azure.
-  - Use [Blob Storage](./storage-dotnet-how-to-use-blobs.md) to store structured data.
-  - Use [Table Storage](./storage-dotnet-how-to-use-tables.md) to store structured data.
-  - Use [SQL Database](../sql-database/sql-database-dotnet-how-to-use.md) to store relational data.
+- Vollständige Informationen zu verfügbaren APIs finden Sie in der Warteschlangendienst-Referenzdokumentation unter [Referenz zur Storage-Clientbibliothek für .NET](http://go.microsoft.com/fwlink/?LinkID=390731).
+- Weitere Informationen zum Verwenden von Warteschlangenspeichern finden Sie unter [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md).
+- Weitere Informationen zu fortgeschrittenen Aufgaben mit Azure Storage finden Sie unter [Speicher](https://msdn.microsoft.com/library/azure/gg433040.aspx).    
+- Erfahren Sie, wie Sie mithilfe des [Azure WebJobs SDK](../app-service/websites-dotnet-webjobs-sdk.md) den geschriebenen Code so vereinfachen, dass er mit Azure Storage funktioniert.
+- Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
+  - Verwenden Sie [Blobspeicher](./storage-dotnet-how-to-use-blobs.md) zum Speichern strukturierter Daten.
+  - Verwenden Sie [Tabellenspeicher](./storage-dotnet-how-to-use-tables.md) zum Speichern strukturierter Daten.
+  - Verwenden Sie eine [SQL-Datenbank](../sql-database/sql-database-dotnet-how-to-use.md) zum Speichern relationaler Daten.
 
+<!---HONumber=July15_HO5-->

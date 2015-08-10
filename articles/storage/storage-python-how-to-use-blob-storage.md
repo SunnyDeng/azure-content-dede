@@ -58,9 +58,9 @@ Nach dieser Änderung kann jeder Benutzer im Internet Blobs in einem öffentlich
 
 ## Hochladen von Blobs in einen Container
 
-Zum Hochladen von Daten in einen Blob verwenden Sie die Methode **put_block_blob_from_path**, **put_block_blob_from_file**, **put_block_blob_from_bytes** oder **put_block_blob_from_text**. Dies sind allgemeine Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
+Zum Hochladen von Daten in einen Blob verwenden Sie die Methode **put\_block\_blob\_from\_path**, **put\_block\_blob\_from\_file**, **put\_block\_blob\_from\_bytes** oder **put\_block\_blob\_from\_text**. Dies sind allgemeine Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
 
-**put_block_blob_from_path** lädt den Inhalt einer Datei aus dem angegebenen Pfad hoch, **put_block_blob_from_file** lädt den Inhalt aus einer bereits geöffneten Datei/einem Stream. **put_block_blob_from_bytes** lädt ein Byte-Array hoch, und **put_block_blob_from_text** lädt den angegebenen Textwert unter Verwendung der festgelegten Codierung (standardmäßig UTF-8) hoch.
+**put\_block\_blob\_from\_path** lädt den Inhalt einer Datei aus dem angegebenen Pfad hoch, **put\_block\_blob\_from\_file** lädt den Inhalt aus einer bereits geöffneten Datei/einem Stream. **put\_block\_blob\_from\_bytes** lädt ein Byte-Array hoch, und **put\_block\_blob\_from\_text** lädt den angegebenen Textwert unter Verwendung der festgelegten Codierung \(standardmäßig UTF-8\) hoch.
 
 Das folgende Beispiel lädt den Inhalt der Datei **sunset.png** in das Blob **myblob** hoch.
 
@@ -73,24 +73,36 @@ Das folgende Beispiel lädt den Inhalt der Datei **sunset.png** in das Blob **my
 
 ## Auflisten der Blobs in einem Container
 
-Um die Blobs in einem Container aufzulisten, verwenden Sie die **list_blobs**-Methode mit einer **for**-Schleife, um die Namen der einzelnen Blobs im Container anzuzeigen. Der folgende Code gibt den **Namen** und die **URL** der einzelnen Blobs in einem Container in der Konsole aus.
+Um die Blobs in einem Container aufzulisten, verwenden Sie die **list\_blobs**-Methode mit einer **for**-Schleife, um die Namen der einzelnen Blobs im Container anzuzeigen. Der folgende Code gibt den **Namen** der einzelnen Blobs in einem Container in der Konsole aus.
 
 	blobs = blob_service.list_blobs('mycontainer')
 	for blob in blobs:
 		print(blob.name)
-		print(blob.url)
+
+**list\_blobs** gibt nur maximal 5.000 Blobs zurück. Enthält der Container mehr als 5.000 Blobs, verwenden Sie den folgenden Code.
+
+	blobs = []
+	marker = None
+	while True:
+		batch = blob_service.list_blobs('mycontainer', marker=marker)
+		blobs.extend(batch)
+		if not batch.next_marker:
+			break
+		marker = batch.next_marker
+	for blob in blobs:
+		print(blob.name)
 
 ## Herunterladen von Blobs
 
-Verwenden Sie **get_blob_to_path**, **get_blob_to_file**, **get_blob_to_bytes** oder **get_blob_to_text**, um Daten aus einem Blob herunterzuladen. Dies sind allgemeine Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
+Verwenden Sie **get\_blob\_to\_path**, **get\_blob\_to\_file**, **get\_blob\_to\_bytes** oder **get\_blob\_to\_text**, um Daten aus einem Blob herunterzuladen. Dies sind allgemeine Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
 
-Das folgende Beispiel verwendet **get_blob_to_path**, um den Inhalt des Blobs **myblob** herunterzuladen und in der Datei **out-sunset.png** zu speichern:
+Das folgende Beispiel verwendet **get\_blob\_to\_path**, um den Inhalt des Blobs **myblob** herunterzuladen und in der Datei **out-sunset.png** zu speichern:
 
 	blob_service.get_blob_to_path('mycontainer', 'myblob', 'out-sunset.png')
 
 ## Löschen eines Blobs
 
-Um ein Blob zu löschen, rufen Sie **delete_blob** auf.
+Um ein Blob zu löschen, rufen Sie **delete\_blob** auf.
 
 	blob_service.delete_blob('mycontainer', 'myblob') 
 
@@ -98,13 +110,13 @@ Um ein Blob zu löschen, rufen Sie **delete_blob** auf.
 
 Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][].
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern von und Zugreifen auf Daten in Azure][].
 -   Besuchen Sie den [Blog des Azure-Speicherteams][]
 
-[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Speichern von und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure-Paket]: https://pypi.python.org/pypi/azure
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

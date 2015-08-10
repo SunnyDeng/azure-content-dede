@@ -36,7 +36,7 @@ Wenn Sie den Anwendungscode für den Clouddienst aktualisieren müssen, verwende
 
     ![Schaltfläche „Aktualisieren“](./media/cloud-services-how-to-manage-portal/update-button.png)
 
-3. Aktualisieren Sie die Bereitstellung mit einer neuen Dienstpaketdatei (.cspkg) und Dienstkonfigurationsdatei (.cscfg).
+3. Aktualisieren Sie die Bereitstellung mit einer neuen Dienstpaketdatei \(.cspkg\) und Dienstkonfigurationsdatei \(.cscfg\).
 
     ![Bereitstellung aktualisieren](./media/cloud-services-how-to-manage-portal/update-blade.png)
 
@@ -44,11 +44,11 @@ Wenn Sie den Anwendungscode für den Clouddienst aktualisieren müssen, verwende
 
 5. Wenn durch das Update die Anzahl der Rollen oder die Größe einer Rolle geändert wird, aktivieren Sie das Kontrollkästchen **Allow update if role sizes or number of roles changes**, um die Fortsetzung des Updates zu ermöglichen.
 
-	>[AZURE.WARNING]Wenn Sie die Größe einer Rolle (d. h. die Größe eines virtuellen Computers, der eine Rolleninstanz hostet) oder die Anzahl der Rollen ändern, denken Sie daran, dass für jede Rolleninstanz (virtueller Computer) ein neues Image erstellt werden muss und dass lokale Daten verloren gehen.
+	>[AZURE.WARNING]Wenn Sie die Größe einer Rolle \(d. h. die Größe eines virtuellen Computers, der eine Rolleninstanz hostet\) oder die Anzahl der Rollen ändern, denken Sie daran, dass für jede Rolleninstanz \(virtueller Computer\) ein neues Image erstellt werden muss und dass lokale Daten verloren gehen.
 
 6. Wenn Dienstrollen nur eine Rolleninstanz haben, aktivieren Sie das Kontrollkästchen **Update even if one or more role contain a single instance**, damit das Update fortgesetzt werden kann.
 
-	Azure kann während des Updates eines Clouddiensts nur dann eine Dienstverfügbarkeit von 99,95 Prozent garantieren, wenn jede Rolle mindestens zwei Rolleninstanzen (virtuelle Computer) hat. In diesem Fall kann ein virtueller Computer Clientanforderungen verarbeiten, während der andere aktualisiert wird.
+	Azure kann während des Updates eines Clouddiensts nur dann eine Dienstverfügbarkeit von 99,95 Prozent garantieren, wenn jede Rolle mindestens zwei Rolleninstanzen \(virtuelle Computer\) hat. In diesem Fall kann ein virtueller Computer Clientanforderungen verarbeiten, während der andere aktualisiert wird.
 
 8. Klicken Sie auf **OK**, um mit der Aktualisierung des Diensts zu beginnen.
 
@@ -106,4 +106,4 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 
 [Azure-Vorschauportal]: https://portal.azure.com
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

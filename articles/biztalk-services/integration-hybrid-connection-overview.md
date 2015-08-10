@@ -23,7 +23,7 @@ In diesem Thema werden Hybridverbindungen vorgestellt und die unterstützten Kon
 
 ## Was ist eine Hybridverbindung
 
-Hybridverbindungen sind eine Funktion von Azure BizTalk Services. Hybridverbindungen bieten eine einfache und praktische Möglichkeit, Azure-Web-Apps (früher Websites) und mobile Azure-Apps (früher Mobile Services) mit lokalen Ressourcen hinter der Firewall zu verbinden:
+Hybridverbindungen sind eine Funktion von Azure BizTalk Services. Hybridverbindungen bieten eine einfache und praktische Möglichkeit, Azure-Web-Apps \(früher Websites\) und mobile Azure-Apps \(früher Mobile Services\) mit lokalen Ressourcen hinter der Firewall zu verbinden:
 
 ![Hybridverbindungen][HCImage]
 
@@ -35,9 +35,9 @@ Zu den Vorteilen von Hybridverbindungen zählen:
 - Anwendungen, die Hybridverbindungen verwenden, greifen nur auf die spezifische lokale Ressource zu, die über die Hybridverbindung veröffentlicht wurde.
 - Es sind Verbindungen zu allen lokalen Ressourcen möglich, die einen statischen TCP-Port verwenden, inklusive SQL Server, MySQL, HTTP Web-APIs und die meisten benutzerdefinierten Webdienste.
 
-	> [AZURE.NOTE]TCP-basierte Dienste, die dynamische Ports verwenden (wie passiver oder erweiterter passiver FTP-Modus) werden derzeit nicht unterstützt.
+	> [AZURE.NOTE]TCP-basierte Dienste, die dynamische Ports verwenden \(wie passiver oder erweiterter passiver FTP-Modus\) werden derzeit nicht unterstützt.
 
-- Sie können zusammen mit allen Frameworks verwendet werden, die von Azure-Web-Apps (.NET, PHP, Java, Python, Node.js) und mobilen Azure-Apps (Node.js, .NET) unterstützt werden.
+- Sie können zusammen mit allen Frameworks verwendet werden, die von Azure-Web-Apps \(.NET, PHP, Java, Python, Node.js\) und mobilen Azure-Apps \(Node.js, .NET\) unterstützt werden.
 - Web-Apps und Mobile Apps können auf lokale Ressourcen genauso zugreifen, als ob sich die Web-App oder die mobile Apps im lokalen Netzwerk befände. So kann z. B. die lokal verwendete Verbindungszeichenfolge auch in Azure verwendet werden.
 
 
@@ -68,7 +68,7 @@ Wenn Hybridverbindungen für den Zugriff auf lokale SQL Server verwendet wird, b
 
 ## Sicherheit und Ports
 
-Hybridverbindungen verwenden SAS-Autorisierung (Shared Access Signature) zum Sichern der Verbindungen von den Azure-Anwendungen und dem lokalen Hybrid Connection Manager zur Hybridverbindung. Es werden getrennte Verbindungsschlüssel für die Anwendung und den lokalen Hybrid Connection Manager erstellt. Diese Verbindungsschlüssel können unabhängig voneinander ausgetauscht oder widerrufen werden.
+Hybridverbindungen verwenden SAS-Autorisierung \(Shared Access Signature\) zum Sichern der Verbindungen von den Azure-Anwendungen und dem lokalen Hybrid Connection Manager zur Hybridverbindung. Es werden getrennte Verbindungsschlüssel für die Anwendung und den lokalen Hybrid Connection Manager erstellt. Diese Verbindungsschlüssel können unabhängig voneinander ausgetauscht oder widerrufen werden.
 
 Hybridverbindungen stellen eine reibungslose und sichere Verteilung der Schlüssel an die Anwendungen und den lokalen Hybrid Connection Manager bereit.
 
@@ -85,7 +85,7 @@ Port | Grund
 --- | ---
 9350 - 9354 | Diese Ports werden für die Datenübertragung verwendet. Der Service Bus Relay-Manager prüft Port 9350, um festzustellen, ob die TCP-Konnektivität verfügbar ist. Wenn sie verfügbar ist, wird davon ausgegangen, dass Port 9352 ebenfalls verfügbar ist. Der Datenverkehr geht über Port 9352. <br/><br/>Ausgehende Verbindungen auf diese Ports zulassen.
 5671 | Wenn Port 9352 für den Datenverkehr verwendet wird, wird Port 5671 als Steuerungskanal verwendet. <br/><br/>Ausgehende Verbindungen auf diesen Port zulassen. 
-80, 443 | Wenn die Ports 9352 und 5671 nicht brauchbar sind, *dann* sind die Ports 80 und 443 die Alternative für die Datenübertragung und den Steuerungskanal.<br/><br/>Ausgehende Verbindungen auf diese Ports zulassen.<br/><br/>** Hinweis ** Sie sollten diese alternativen Ports nicht anstelle der anderen TCP-Ports verwenden. HTTP/WebSocket wird als Protokoll anstelle des systemeigenen TCP für Datenkanäle verwendet. Dies könnte zu einer niedrigeren Leistung führen.
+80, 443 | Wenn die Ports 9352 und 5671 nicht brauchbar sind, *dann* sind die Ports 80 und 443 die Alternative für die Datenübertragung und den Steuerungskanal.<br/><br/>Ausgehende Verbindungen auf diese Ports zulassen.<br/><br/>\*\* Hinweis \*\* Sie sollten diese alternativen Ports nicht anstelle der anderen TCP-Ports verwenden. HTTP/WebSocket wird als Protokoll anstelle des systemeigenen TCP für Datenkanäle verwendet. Dies könnte zu einer niedrigeren Leistung führen.
 
 
 
@@ -103,4 +103,4 @@ Port | Grund
 [HCOnPremSetup]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionOnPremSetup.png
 [HCManageConnection]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionManageConn.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

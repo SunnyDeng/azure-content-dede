@@ -185,7 +185,7 @@ Beachten Sie, dass der **administratorLoginPassword**-Parameter eine sichere Zei
 
 Im Abschnitt **resources** der Vorlagen werden die Ressourcen aufgelistet, die von der Vorlage erstellt werden. Diese Vorlage erstellt einen SQL-Datenbankserver und eine SQL-Datenbank, eine Serverfarm und eine Website sowie mehrere Verwaltungseinstellungen.
   
-Die Definition der einzelnen Ressource umfasst ihre Eigenschaften, zum Beispiel Name, Typ und Speicherort sowie Parameter für benutzerdefinierte Werte. In diesem Abschnitt der Vorlage wird beispielsweise die SQL-Datenbank definiert. Er enthält Parameter für den Datenbanknamen ([parameters('databaseName')]), den Speicherort des Datenbankservers [parameters('serverLocation')] und die Sortierungseigenschaft [parameters('collation')].
+Die Definition der einzelnen Ressource umfasst ihre Eigenschaften, zum Beispiel Name, Typ und Speicherort sowie Parameter für benutzerdefinierte Werte. In diesem Abschnitt der Vorlage wird beispielsweise die SQL-Datenbank definiert. Er enthält Parameter für den Datenbanknamen \(\[parameters\('databaseName'\)\]\), den Speicherort des Datenbankservers \[parameters\('serverLocation'\)\] und die Sortierungseigenschaft \[parameters\('collation'\)\].
 
     {
         "name": "[parameters('databaseName')]",
@@ -228,7 +228,7 @@ Jetzt haben Sie die Informationen, die Sie zum Erstellen der Ressourcengruppe be
 
 ### Schritt 5: Erstellen einer Ressourcengruppe
  
-In diesem Schritt verwenden Sie die Ressourcengruppenvorlage zum Erstellen der Ressourcengruppe. Sie können zur Referenz die Datei „New_WebSite_And_Database.json“ auf dem Datenträger öffnen und dies mitverfolgen. Die Vorlagendatei kann sehr hilfreich dabei sein, die zu übergebenden Parameterwerte zu ermitteln, z. B. die richtige ApiVersion für eine Ressource.
+In diesem Schritt verwenden Sie die Ressourcengruppenvorlage zum Erstellen der Ressourcengruppe. Sie können zur Referenz die Datei „New\_WebSite\_And\_Database.json“ auf dem Datenträger öffnen und dies mitverfolgen. Die Vorlagendatei kann sehr hilfreich dabei sein, die zu übergebenden Parameterwerte zu ermitteln, z. B. die richtige ApiVersion für eine Ressource.
 
 Um eine Ressourcengruppe zu erstellen, verwenden Sie das **New-AzureResourceGroup**-Cmdlet.
 
@@ -241,7 +241,7 @@ Sobald Sie den Vorlagennamen eingeben, ruft New-AzureResourceGroup die Vorlage a
 
 **Dynamische Vorlagenparameter**
 
-Um die Parameter abzurufen, geben Sie zur Angabe eines Parameternamens ein Minuszeichen (-) ein, und drücken Sie dann die TAB-Taste. Sie können auch die ersten Buchstaben eines Parameternamens eingeben, zum Beispiel siteName, und dann die TAB-Taste drücken.
+Um die Parameter abzurufen, geben Sie zur Angabe eines Parameternamens ein Minuszeichen \(-\) ein, und drücken Sie dann die TAB-Taste. Sie können auch die ersten Buchstaben eines Parameternamens eingeben, zum Beispiel siteName, und dann die TAB-Taste drücken.
 
     PS C:\> New-AzureResourceGroup -Name TestRG1 -Location "East Asia" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.2.6-preview -si<TAB>
 
@@ -280,7 +280,7 @@ Nach dem Erstellen einer Ressourcengruppe können Sie die Cmdlets im AzureResour
 
 - Um alle Ressourcengruppen in Ihrem Abonnement abzurufen, verwenden Sie das **Get-AzureResourceGroup**-Cmdlet:
 
-		PS C:\>Get-AzureResourceGroup
+		PS C:>Get-AzureResourceGroup
 
 		ResourceGroupName : TestRG
 		Location          : eastasia
@@ -376,20 +376,20 @@ Erste Schritte
 
 - [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
 - [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](./xplat-cli-azure-resource-manager.md)
-- [Using the Azure Portal to manage your Azure resources](./resource-group-portal.md) (Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen)
+- [Using the Azure Portal to manage your Azure resources](./resource-group-portal.md) \(Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen\)
 
 Erstellen und Bereitstellen von Anwendungen
 
-- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) (Erstellen von Vorlagen im Azure-Ressourcen-Manager)
-- [Deploy an application with Azure Resource Manager Template](./resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)
+- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) \(Erstellen von Vorlagen im Azure-Ressourcen-Manager\)
+- [Deploy an application with Azure Resource Manager Template](./resource-group-template-deploy.md) \(Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager\)
 - [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-web/app-service-deploy-complex-application-predictably.md)
 - [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](./resource-group-deploy-debug.md)
-- [Azure Resource Manager Template Functions](./resource-group-template-functions.md) (Vorlagenfunktionen im Azure-Ressourcen-Manager)
+- [Azure Resource Manager Template Functions](./resource-group-template-functions.md) \(Vorlagenfunktionen im Azure-Ressourcen-Manager\)
 - [Erweiterte Vorlagenvorgänge](./resource-group-advanced-template.md)
 
 Organisieren von Ressourcen
 
-- [Using tags to organize your Azure resources](./resource-group-using-tags.md) (Verwenden von Tags zum Organisieren von Azure-Ressourcen)
+- [Using tags to organize your Azure resources](./resource-group-using-tags.md) \(Verwenden von Tags zum Organisieren von Azure-Ressourcen\)
 
 Zugriffsverwaltung und -überwachung
 
@@ -397,4 +397,4 @@ Zugriffsverwaltung und -überwachung
 - [Authentifizieren eines Dienstprinzipals mit Azure-Ressourcen-Manager](./resource-group-authenticate-service-principal.md)
 - [Erstellen neuer Azure-Dienstprinzipale mit dem Azure-Portal](./resource-group-create-service-principal-portal.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

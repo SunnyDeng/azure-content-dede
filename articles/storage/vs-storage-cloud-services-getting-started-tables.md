@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/17/2015" 
+	ms.date="07/22/2015" 
 	ms.author="patshea123"/>
 
-# Erste Schritte mit Azure Storage (Cloud Service-Projekte)
+# Erste Schritte mit Azure Storage \(Cloud Service-Projekte\)
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-storage-cloud-services-getting-started-tables.md)
@@ -31,15 +31,13 @@
 
 Der Azure-Tabellenspeicherdienst ermöglicht das Speichern großer Mengen von strukturierten Daten. Der Dienst ist ein NoSQL-Datenspeicher, der authentifizierte Aufrufe von innerhalb und außerhalb der Azure-Cloud akzeptiert. Azure-Tabellen sind hervorragend zur Speicherung strukturierter nicht relationaler Daten geeignet.
 
-Dieser Artikel beschreibt, wie die ersten Schritte des Verwendens von Azure-Tabellenspeicher in Visual Studio aussehen, nachdem Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** in einem CI-Projekt ein Azure-Speicherkonto erstellt oder auf ein solches Konto verwiesen haben.
-
-Bei einem **Verbundene Dienste hinzufügen**-Vorgang werden die entsprechenden NuGet-Pakete installiert, um auf Azure-Speicher in Ihrem Projekt zuzugreifen, und wird die Verbindungszeichenfolge für das Speicherkonto in Ihren Konfigurationsdateien des Projekts hinzugefügt.
+Dieser Artikel beschreibt, wie die ersten Schritte des Verwendens von Azure-Tabellenspeicher in Visual Studio aussehen, nachdem Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** in einem Clouddienst-Projekt ein Azure-Speicherkonto erstellt oder auf ein solches Konto verwiesen haben. Bei einem **Verbundene Dienste hinzufügen**-Vorgang werden die entsprechenden NuGet-Pakete installiert, um auf Azure-Speicher in Ihrem Projekt zuzugreifen, und wird die Verbindungszeichenfolge für das Speicherkonto in Ihren Konfigurationsdateien des Projekts hinzugefügt.
 
 Weitere allgemeine Informationen zur Verwendung von Azure-Tabellenspeicher finden Sie unter [Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md).
 
 Damit Sie beginnen können, müssen Sie zuerst eine Tabelle in Ihrem Speicherkonto erstellen. Es wird gezeigt, wie Sie aus Visual Studio **Server-Explorer** eine Azure-Tabelle erstellen. Möglicherweise bevorzugen Sie es, eine Tabelle in Code zu erstellen. Auch dies wird gezeigt.
 
-Außerdem wird gezeigt, wie Sie grundlegende Tabellen- und Entitätsvorgänge, etwa Hinzufügen, Ändern und Lesen von Tabellenentitäten, ausführen. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück.
+Außerdem wird gezeigt, wie Sie grundlegende Tabellen- und Entitätsvorgänge, etwa Hinzufügen, Ändern und Lesen von Tabellenentitäten, ausführen. Die Beispiele sind in C\# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück.
 
 **HINWEIS:** Einige der APIs, die Aufrufe zum Azure-Speicher ausführen, sind asynchron. Unter [Asynchrone Programmierung mit Async und Await](http://msdn.microsoft.com/library/hh191443.aspx) finden Sie weitere Informationen. Im folgenden Code wird die Programmierung mit Async-Methoden angenommen.
 
@@ -49,9 +47,9 @@ Außerdem wird gezeigt, wie Sie grundlegende Tabellen- und Entitätsvorgänge, e
 
 ##**Zugreifen auf Tabellen in Code** 
 
-Um auf Tabellen in Clouddienst-Projekten zuzugreifen, müssen Sie die folgenden Elemente zu jeder C#-Quelldatei hinzufügen, in der auf Azure-Tabellenspeicher zugegriffen wird.
+Um auf Tabellen in Clouddienst-Projekten zuzugreifen, müssen Sie die folgenden Elemente zu jeder C\#-Quelldatei hinzufügen, in der auf Azure-Tabellenspeicher zugegriffen wird.
 
-1. Vergewissern Sie sich, dass die Namespace-Deklarationen am Anfang der C#-Datei diese `using`-Anweisungen enthalten.
+1. Vergewissern Sie sich, dass die Namespace-Deklarationen am Anfang der C\#-Datei diese `using`-Anweisungen enthalten.
 
 		using Microsoft.Framework.Configuration;
 		using Microsoft.WindowsAzure.Storage;
@@ -72,7 +70,7 @@ Um auf Tabellen in Clouddienst-Projekten zuzugreifen, müssen Sie die folgenden 
 	    // Create the table client.
     	CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-4. Rufen Sie ein **CloudTable**-Verweisobjekt ab, auf eine bestimmte Tabelle und auf bestimmte Entitäten zu verweisen.
+4. Rufen Sie ein **CloudTable**-Verweisobjekt ab, um auf eine bestimmte Tabelle und auf bestimmte Entitäten zu verweisen.
 	
     	// Get a reference to a table named "peopleTable"
 	    CloudTable table = tableClient.GetTableReference("peopleTable");
@@ -120,7 +118,7 @@ Tabellenvorgänge, die Entitäten betreffen, werden mit dem **CloudTable**-Objek
 
 ##Einfügen eines Entitätsbatchs
 
-Sie können mehrere Entitäten mit einem Schreibvorgang in eine Tabelle einfügen. Das folgende Codebeispiel erstellt zwei Entitätsobjekte („Jeff Smith“ und „Ben Smith“), fügt diese mithilfe der Insert-Methode einem **TableBatchOperation**-Objekt hinzu und startet den Vorgang dann durch einen Aufruf von CloudTable.ExecuteBatchAsync.
+Sie können mehrere Entitäten mit einem Schreibvorgang in eine Tabelle einfügen. Das folgende Codebeispiel erstellt zwei Entitätsobjekte \(„Jeff Smith“ und „Ben Smith“\), fügt diese mithilfe der Insert-Methode einem **TableBatchOperation**-Objekt hinzu, und startet den Vorgang dann durch einen Aufruf von „CloudTable.ExecuteBatchAsync“.
 
 	// Get a reference to a **CloudTable** object named 'peopleTable' as described in "Access a table in code"
 	
@@ -223,4 +221,4 @@ Sie können eine Entität nach dem Abrufen löschen. Der folgende Code sucht nac
 [Weitere Informationen zu Azure Storage](http://azure.microsoft.com/documentation/services/storage/) finden Sie unter [Durchsuchen von Speicherressourcen mit Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx) und [ASP.NET 5](http://www.asp.net/vnext).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

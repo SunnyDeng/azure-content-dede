@@ -2,9 +2,9 @@
 
 <tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="05/21/2015" ms.author="heidist" />
       
-#Hinzufügen von Bewertungsprofilen zu einem Suchindex (Azure Search-Dienst-REST-API: Version 2014-07-31-Preview)
+#Hinzufügen von Bewertungsprofilen zu einem Suchindex \(Azure Search-Dienst-REST-API: Version 2014-07-31-Preview\)
 
-Diese Dokumentation zu Bewertungsprofilen beschreibt Version 2014-07-31-Preview der Azure Search-Dienst-REST-API. Diese wurde durch die allgemein verfügbare Version unter [Bewertungsprofile (MSDN)](https://msdn.microsoft.com/library/dn798928.aspx) ersetzt.
+Diese Dokumentation zu Bewertungsprofilen beschreibt Version 2014-07-31-Preview der Azure Search-Dienst-REST-API. Diese wurde durch die allgemein verfügbare Version unter [Bewertungsprofile \(MSDN\)](https://msdn.microsoft.com/library/dn798928.aspx) ersetzt.
 
 **Grundlegendes zu Bewertungsprofilen**
 
@@ -39,16 +39,15 @@ Um dieses Bewertungsprofil zu verwenden, muss die Abfrage so formuliert werden, 
 
     GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentLocation:-122.123,44.77233&api-version=2014-07-31-Preview
 
-Diese Abfrage sucht nach dem Begriff "inn" und übergibt die aktuelle Position. Beachten Sie, dass diese Abfrage weitere Parameter einbezieht, z. B. `scoringParameter`. Eine Beschreibung der Abfrageparameter finden Sie unter [Dokumente durchsuchen (Azure Search-API)](https://msdn.microsoft.com/library/azure/dn798927.aspx).
+Diese Abfrage sucht nach dem Begriff "inn" und übergibt die aktuelle Position. Beachten Sie, dass diese Abfrage weitere Parameter einbezieht, z. B. `scoringParameter`. Eine Beschreibung der Abfrageparameter finden Sie unter [Dokumente durchsuchen \(Azure Search-API\)](https://msdn.microsoft.com/library/azure/dn798927.aspx).
 
 Klicken Sie auf [Beispiel](#bkmk_ex), um ein ausführlicheres Beispiel für ein Bewertungsprofil zu überprüfen.
 
 ## Standardbewertung
 
-Bei der Bewertung wird eine Suchbewertung für jedes Element in einem nach Rangfolge sortierten Resultset berechnet. Jedes Element in einem Resultset wird einer Suchbewertung zugeordnet und anschließend wird eine absteigende Rangfolge zugewiesen. Die Elemente mit den höchsten Bewertungen werden an die Anwendung zurückgegeben. Standardmäßig werden die ersten 50 Elemente zurückgegeben, Sie können jedoch den `$top`-Parameter verwenden, um eine kleinere oder größere Anzahl von Elementen (bis zu 1000 in einer einzelnen Antwort) zurückzugeben.
+Bei der Bewertung wird eine Suchbewertung für jedes Element in einem nach Rangfolge sortierten Resultset berechnet. Jedes Element in einem Resultset wird einer Suchbewertung zugeordnet und anschließend wird eine absteigende Rangfolge zugewiesen. Die Elemente mit den höchsten Bewertungen werden an die Anwendung zurückgegeben. Standardmäßig werden die ersten 50 Elemente zurückgegeben, Sie können jedoch den `$top`-Parameter verwenden, um eine kleinere oder größere Anzahl von Elementen \(bis zu 1000 in einer einzelnen Antwort\) zurückzugeben.
 
-Standardmäßig wird eine Suchbewertung auf Basis der statistischen Eigenschaften der Daten und der Abfrage berechnet. Azure Search findet Dokumente, die die Suchbegriffe in der Abfragezeichenfolge enthalten (einige oder alle in Abhängigkeit von `searchMode`), wobei Dokumente bevorzugt werden, die viele Instanzen des Suchbegriffs enthalten. Die Suchbewertung fällt sogar noch höher aus, wenn der Begriff nur selten im Datenhauptteil, jedoch innerhalb des Dokuments häufig vorkommt. Die Grundlage für diesen Ansatz zur Berechnung der Relevanz wird als TF-IDF (Term Frequency-Inverse Document Frequency, Vorkommenshäufigkeit-Inverse Dokumenthäufigkeit) bezeichnet.
-Wenn keine benutzerdefinierte Sortierung erfolgt, werden die Ergebnisse nach Suchbewertung sortiert, bevor sie an die aufrufende Anwendung zurückgegeben werden. Wenn `$top` nicht angegeben ist, werden die 50 Elemente mit der höchsten Suchbewertung zurückgegeben.
+Standardmäßig wird eine Suchbewertung auf Basis der statistischen Eigenschaften der Daten und der Abfrage berechnet. Azure Search findet Dokumente, die die Suchbegriffe in der Abfragezeichenfolge enthalten \(einige oder alle in Abhängigkeit von `searchMode`\), wobei Dokumente bevorzugt werden, die viele Instanzen des Suchbegriffs enthalten. Die Suchbewertung fällt sogar noch höher aus, wenn der Begriff nur selten im Datenhauptteil, jedoch innerhalb des Dokuments häufig vorkommt. Die Grundlage für diesen Ansatz zur Berechnung der Relevanz wird als TF-IDF \(Term Frequency-Inverse Document Frequency, Vorkommenshäufigkeit-Inverse Dokumenthäufigkeit\) bezeichnet. Wenn keine benutzerdefinierte Sortierung erfolgt, werden die Ergebnisse nach Suchbewertung sortiert, bevor sie an die aufrufende Anwendung zurückgegeben werden. Wenn `$top` nicht angegeben ist, werden die 50 Elemente mit der höchsten Suchbewertung zurückgegeben.
 
 Suchbewertungswerte können in einem Resultset wiederholt vorkommen. Es können z. B. 10 Elemente mit einer Bewertung von 1,2, 20 Elemente mit einer Bewertung von 1,0 und 20 Elemente mit einer Bewertung von 0,5 vorliegen. Wenn mehrere Treffer dieselbe Suchbewertung aufweisen, ist die Sortierung von Elementen mit gleicher Bewertung nicht definiert und somit auch nicht stabil. Führen Sie die Abfrage erneut aus, um zu sehen, wie sich die Position der Elemente ändert. Wenn zwei Elemente mit identischer Bewertung vorliegen, kann nicht garantiert werden, welches Element zuerst angezeigt wird.
 
@@ -62,7 +61,7 @@ Die relevanzbasiert Sortierung wird ebenfalls über Bewertungsprofile implementi
 
 Wie bereits erwähnt, wird die benutzerdefinierte Bewertung über Bewertungsprofile implementiert, die in einem Indexschema definiert sind.
 
-In diesem Beispiel wird das Schema für einen Index mit zwei Bewertungsprofilen (`boostGenre`, `newAndHighlyRated`) gezeigt. Jede Abfrage für diesen Index, die eines der Profile als Abfrageparameter enthält, verwendet das Profil zum Bewerten des Resultsets.
+In diesem Beispiel wird das Schema für einen Index mit zwei Bewertungsprofilen \(`boostGenre`, `newAndHighlyRated`\) gezeigt. Jede Abfrage für diesen Index, die eines der Profile als Abfrageparameter enthält, verwendet das Profil zum Bewerten des Resultsets.
 
     {
       "name": "musicstoreindex",
@@ -127,46 +126,13 @@ Um ein benutzerdefiniertes Bewertungsverhalten zu implementieren, fügen Sie dem
 
 Beginnen Sie mit der in diesem Thema angegebenen [Vorlage](#bkmk_template).
 
-Geben Sie einen Namen ein. Bewertungsprofile sind optional, wenn Sie jedoch ein Profil hinzufügen, ist der Name erforderlich. Achten Sie darauf, dass Sie die Namenskonventionen für Felder einhalten (mit einem Buchstaben beginnen, Sonderzeichen und reservierte Wörter vermeiden). Weitere Informationen finden Sie unter [Benennungsregeln](https://msdn.microsoft.com/library/dn857353.aspx).
+Geben Sie einen Namen ein. Bewertungsprofile sind optional, wenn Sie jedoch ein Profil hinzufügen, ist der Name erforderlich. Achten Sie darauf, dass Sie die Namenskonventionen für Felder einhalten \(mit einem Buchstaben beginnen, Sonderzeichen und reservierte Wörter vermeiden\). Weitere Informationen finden Sie unter [Benennungsregeln](https://msdn.microsoft.com/library/dn857353.aspx).
 
 Der Hauptteil des Bewertungsprofils wird aus gewichteten Feldern und Funktionen erstellt.
 
-<font>
-<table style="font-size:12">
-<thead>
-<tr><td>Element</td><td>Beschreibung</td></tr></thead>
-<tbody 
-<tr>
-<td><b>Gewichtungen</b></td>
-<td>
-Geben Sie Name-Wert-Paare an, die einem Feld eine relative Gewichtung zuordnen. In diesem [Beispiel](#bkmk_ex) werden die Felder "albumTitle", "genre" und "artistName" entsprechend um 1, 5 und Null verstärkt. Warum wird "genre" so viel stärker als die anderen Felder erhöht? Wenn die Suche über relativ homogene Daten durchgeführt wird (wie bei "genre" in `musicstoreindex`), ist bei den relativen Gewichtungen möglicherweise eine größere Varianz erforderlich. In `musicstoreindex` wird "rock" z. B. sowohl für "genre" als auch für identisch formulierte Genrebeschreibungen angezeigt. Wenn "genre" schwerer wiegen soll als die Genrebeschreibung, dann benötigt das Feld "genre" eine viel höhere relative Gewichtung.
-</td>
-</tr>
-<tr>
-<td><b>Funktionen</b></td><td>Werden verwendet, wenn für bestimmte Kontexte zusätzliche Berechnungen erforderlich sind. Gültige Werte sind `freshness`, `magnitude` oder `distance`. Jede Funktion verfügt über Parameter, die für sie eindeutig sind.
-<br>
-- `freshness` sollte verwendet werden, wenn Sie Elemente in Abhängigkeit davon verstärken möchten, wie neu oder alt diese sind. Diese Funktion kann nur mit datetime-Feldern (edm.DataTimeOffset) verwendet werden. Beachten Sie, dass das `boostingDuration`-Attribut nur mit der Funktion "freshness" verwendet wird.
-<br>
-- `magnitude` sollte verwendet werden, wenn die Verstärkung auf Basis der Höhe eines numerischen Werts erfolgen soll. Szenarien, die diese Funktion erforderlich machen, umfassen die Verstärkung nach Gewinnspanne, Höchstpreis, Mindestpreis oder Downloadanzahl. Diese Funktion kann nur mit Double- und Integer-Feldern verwendet werden.
-<br>
-- `distance` sollte verwendet werden, wenn die Verstärkung entsprechend der Nähe oder geografischen Lage erfolgen soll. Diese Funktion kann nur mit `geo.distance`-Feldern verwendet werden.
-<br>
-<b>Regeln für die Verwendung von Funktionen</b>
-<br>
-Der Funktionstyp ("freshness", "magnitude", "distance") muss in Kleinbuchstaben angegeben werden. 
-<br>
-Funktionen dürfen nicht Null sein oder leere Werte enthalten. Insbesondere beim Einbeziehen von Feldnamen muss ein Wert festgelegt werden.
-<br>
-Funktionen können nur auf filterbare Felder angewendet werden. Weitere Informationen zu filterbaren Feldern finden Sie unter [Index erstellen (Azure Search-API)]().
-<br>
-Funktionen können nur auf Felder angewendet werden, die in der Felderauflistung für einen Index definiert sind.
-<td>
-</tr>
-</tbody>
-</table>
-</font>
+<font> <table style="font-size:12"> <thead> <tr><td>Element</td><td>Beschreibung</td></tr></thead> \<tbody <tr> <td><b>Gewichtungen</b></td> <td> Geben Sie Name-Wert-Paare an, die einem Feld eine relative Gewichtung zuordnen. In diesem [Beispiel](#bkmk_ex) werden die Felder "albumTitle", "genre" und "artistName" entsprechend um 1, 5 und Null verstärkt. Warum wird "genre" so viel stärker als die anderen Felder erhöht? Wenn die Suche über relativ homogene Daten durchgeführt wird \(wie bei "genre" in `musicstoreindex`\), ist bei den relativen Gewichtungen möglicherweise eine größere Varianz erforderlich. In `musicstoreindex` wird "rock" z. B. sowohl für "genre" als auch für identisch formulierte Genrebeschreibungen angezeigt. Wenn "genre" schwerer wiegen soll als die Genrebeschreibung, dann benötigt das Feld "genre" eine viel höhere relative Gewichtung. </td> </tr> <tr> <td><b>Funktionen</b></td><td>Werden verwendet, wenn für bestimmte Kontexte zusätzliche Berechnungen erforderlich sind. Gültige Werte sind `freshness`, `magnitude` oder `distance`. Jede Funktion verfügt über Parameter, die für sie eindeutig sind. <br> - `freshness` sollte verwendet werden, wenn Sie Elemente in Abhängigkeit davon verstärken möchten, wie neu oder alt diese sind. Diese Funktion kann nur mit datetime-Feldern \(edm.DataTimeOffset\) verwendet werden. Beachten Sie, dass das `boostingDuration`-Attribut nur mit der Funktion "freshness" verwendet wird. <br> - `magnitude` sollte verwendet werden, wenn die Verstärkung auf Basis der Höhe eines numerischen Werts erfolgen soll. Szenarien, die diese Funktion erforderlich machen, umfassen die Verstärkung nach Gewinnspanne, Höchstpreis, Mindestpreis oder Downloadanzahl. Diese Funktion kann nur mit Double- und Integer-Feldern verwendet werden. <br> - `distance` sollte verwendet werden, wenn die Verstärkung entsprechend der Nähe oder geografischen Lage erfolgen soll. Diese Funktion kann nur mit `geo.distance`-Feldern verwendet werden. <br> <b>Regeln für die Verwendung von Funktionen</b> <br> Der Funktionstyp \("freshness", "magnitude", "distance"\) muss in Kleinbuchstaben angegeben werden. <br> Funktionen dürfen nicht Null sein oder leere Werte enthalten. Insbesondere beim Einbeziehen von Feldnamen muss ein Wert festgelegt werden. <br> Funktionen können nur auf filterbare Felder angewendet werden. Weitere Informationen zu filterbaren Feldern finden Sie unter [Index erstellen \(Azure Search-API\)](). <br> Funktionen können nur auf Felder angewendet werden, die in der Felderauflistung für einen Index definiert sind. <td> </tr> </tbody> </table> </font>
 
-Nachdem der Index definiert wurde, erstellen Sie den Index durch Hochladen des Indexschemas, gefolgt von Dokumenten. Anweisungen zu diesen Vorgängen finden Sie unter [Index erstellen (Azure Search-API)](https://msdn.microsoft.com/library/azure/dn798941.aspx) und [Dokumente hinzufügen oder aktualisieren (Azure Search-API)](https://msdn.microsoft.com/library/azure/dn798930.aspx). Nachdem der Index erstellt wurde, sollten Sie über ein funktionsfähiges Bewertungsprofil verfügen, das mit Ihren Suchdaten arbeitet.
+Nachdem der Index definiert wurde, erstellen Sie den Index durch Hochladen des Indexschemas, gefolgt von Dokumenten. Anweisungen zu diesen Vorgängen finden Sie unter [Index erstellen \(Azure Search-API\)](https://msdn.microsoft.com/library/azure/dn798941.aspx) und [Dokumente hinzufügen oder aktualisieren \(Azure Search-API\)](https://msdn.microsoft.com/library/azure/dn798930.aspx). Nachdem der Index erstellt wurde, sollten Sie über ein funktionsfähiges Bewertungsprofil verfügen, das mit Ihren Suchdaten arbeitet.
 
 ##Vorlage
 In diesem Abschnitt wird die Syntax und die Vorlage für die Bewertungsprofile veranschaulicht. Beschreibungen zu den Attributen finden Sie im nächsten Abschnitt unter [Indexattributreferenz](#bkmk_indexref).
@@ -217,8 +183,7 @@ In diesem Abschnitt wird die Syntax und die Vorlage für die Bewertungsprofile v
 
 ##Indexattributreferenz
 
-**Hinweis**
-Eine Bewertungsfunktion kann nur auf filterbare Felder angewendet werden.
+**Hinweis** Eine Bewertungsfunktion kann nur auf filterbare Felder angewendet werden.
 
 <table style="font-size:12">
 <thead>
@@ -296,7 +261,7 @@ Interpolationen ermöglichen Ihnen die Definition der Steigung, in der die Bewer
 
 `boostingDuration` ist ein Attribut der Funktion "freshness". Sie können damit eine Ablaufdauer festlegen, nach der die Verstärkung für ein bestimmtes Dokument beendet wird. Um beispielsweise eine Produktlinie oder Marke für einen zehntägigen Werbezeitraum zu verstärken, können Sie den zehntägigen Zeitraum für diese Dokumente z. B. als "P10D" angeben.
 
-`boostingDuration` muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines ISO 8601-Zeitdauerwerts). Das Muster hierfür lautet: "P(nD)(T(nH)(nM)(nS))".
+`boostingDuration` muss als XSD-Wert "dayTimeDuration" formatiert sein \(eine eingeschränkte Teilmenge eines ISO 8601-Zeitdauerwerts\). Das Muster hierfür lautet: "P\(nD\)\(T\(nH\)\(nM\)\(nS\)\)".
 
 Die folgende Tabelle enthält einige Beispiele.
 
@@ -321,10 +286,8 @@ Die folgende Tabelle enthält einige Beispiele.
 
 **Weitere Informationen**
 
-Azure Search-Dienst-REST-API:
-Erstellen eines Index (Azure Search-API)
-________________________________________
+Azure Search-Dienst-REST-API: Erstellen eines Index \(Azure Search-API\) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

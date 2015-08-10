@@ -43,31 +43,31 @@ Nachdem Sie sich mit den Suchtechniken vertraut gemacht haben, können Sie sich 
 
 ## Verwenden einfacher Filter
 
-Als erstes sollten Sie wissen, dass der erste Teil einer Suchabfrage vor einem senkrechten Strich "|" immer ein *Filter* ist. Sie können sich dies als WHERE-Klausel in TSQL vorstellen: Der Filter bestimmt *was* die Teilmenge der Daten ist, die aus dem Datenspeicher von Operational Insights Datenspeicher abgerufen werden. Beim Suchen im Datenspeicher geht es größtenteils um die Angabe der Merkmale der Daten, die Sie extrahieren möchten. Daher ist es natürlich, dass eine Abfrage mit der WHERE-Klausel beginnt.
+Als erstes sollten Sie wissen, dass der erste Teil einer Suchabfrage vor einem senkrechten Strich "\|" immer ein *Filter* ist. Sie können sich dies als WHERE-Klausel in TSQL vorstellen: Der Filter bestimmt *was* die Teilmenge der Daten ist, die aus dem Datenspeicher von Operational Insights Datenspeicher abgerufen werden. Beim Suchen im Datenspeicher geht es größtenteils um die Angabe der Merkmale der Daten, die Sie extrahieren möchten. Daher ist es natürlich, dass eine Abfrage mit der WHERE-Klausel beginnt.
 
 Die grundlegendsten Filter, die Sie verwenden können, sind *Schlüsselwörter* wie 'Error' oder 'Timeout', oder ein Computername. Diese Typen von einfachen Abfragen geben in der Regel verschiedene Datenformen innerhalb des gleichen Ergebnissatzes zurück. Dies liegt daran, dass Operational Insights unterschiedliche *Typen* von Daten im System hat.
 
 
 ### Durchführen einer einfachen Suche
-1. Klicken Sie im Operational Insights-Portal auf **Daten-Explorer durchsuchen**. !["search tile" (Kachel suchen)](./media/operational-insights-search/overview-search.png)
-2. Geben Sie in das Abfragefeld `error` ein und klicken Sie dann auf **Search**. !["search error" (Fehler suchen)](./media/operational-insights-search/search-error.png) Angenommen, die Abfrage für `error` gibt in der folgenden Abbildung 100.000 **Ereignis**datensätze zurück (von Log Management erfasst), 18 **Konfigurationswarnungs**datensätze (von der Konfigurationsbewertung generiert) und 12 **Konfigurationsänderungs**datensätze (von der Änderungsnachverfolgung aufgezeichnet). !["search results" (Ergebnisse durchsuchen)](./media/operational-insights-search/results01.png)
+1. Klicken Sie im Operational Insights-Portal auf **Daten-Explorer durchsuchen**. !["search tile" \(Kachel suchen\)](./media/operational-insights-search/overview-search.png)
+2. Geben Sie in das Abfragefeld `error` ein und klicken Sie dann auf **Search**. !["search error" \(Fehler suchen\)](./media/operational-insights-search/search-error.png) Angenommen, die Abfrage für `error` gibt in der folgenden Abbildung 100.000 **Ereignis**datensätze zurück \(von Log Management erfasst\), 18 **Konfigurationswarnungs**datensätze \(von der Konfigurationsbewertung generiert\) und 12 **Konfigurationsänderungs**datensätze \(von der Änderungsnachverfolgung aufgezeichnet\). !["search results" \(Ergebnisse durchsuchen\)](./media/operational-insights-search/results01.png)
 
 Diese Filter sind keine echten Objekttypen/-klassen. *Type* ist nur ein Tag, eine Eigenschaft oder eine Zeichenfolge/ein Name/eine Kategorie, der oder die einem Teil der Daten zugeordnet ist. Einige Dokumente im System sind als **Type:ConfigurationAlert**, **Type: PerfHourly** oder **Type:Event** markiert, und so weiter. Alle Suchergebnisse, Dokumente, Datensätze oder Einträge zeigen die Basiseigenschaften und deren Werte für jedes dieser Datenelemente. Sie können die Feldnamen im Filter angeben, wenn Sie nur die Datensätze abrufen möchten, in dem das Feld den angegebenen Wert besitzt.
 
 *Type* ist im Prinzip nur ein Feld, über das alle Datensätze verfügen, es unterscheidet sich nicht von anderen Feldern. Dies wurde basierend auf dem Wert des Type-Felds festgelegt. Dieser Datensatz hat eine unterschiedliche Form oder Art. Übrigens ist **Type=PerfHourly** oder **Type=Ereignis** auch die Syntax, die Sie zur Abfrage von stündlichen Leistungsdatenaggregaten oder Ereignissen benötigen.
 
-Sie können hinter dem Feldnamen und vor dem Wert entweder einen Doppelpunkt (:) oder ein Gleichheitszeichen (=) verwenden. **Type:Event** und **Type=Event** sind bedeutungsgleich, Sie können sich eine Form aussuchen.
+Sie können hinter dem Feldnamen und vor dem Wert entweder einen Doppelpunkt \(:\) oder ein Gleichheitszeichen \(=\) verwenden. **Type:Event** und **Type=Event** sind bedeutungsgleich, Sie können sich eine Form aussuchen.
 
 Wenn also die Type=PerfHourly-Datensätze ein Feld namens "CounterName" besitzen, dann können Sie eine Abfrage ähnlich `Type=PerfHourly CounterName="% Processor Time"` schreiben.
 
-Dadurch erhalten Sie nur die Leistungsdaten, bei denen der Name des Leistungsindikators "Prozessorzeit (%)" ist.
+Dadurch erhalten Sie nur die Leistungsdaten, bei denen der Name des Leistungsindikators "Prozessorzeit \(%\)" ist.
 
 ### Suche nach Leistungsdaten zur Prozessorzeit
 - Geben Sie im Suchabfragefeld `Type=PerfHourly CounterName="% Processor Time"` ein.
 
-Sie können auch spezifischer sein und **InstanceName = _ 'Total'** in der Abfrage verwenden, was ein Windows-Leistungsindikator ist. Sie können auch eine Facette und einen weiteren Wert **field:value** auswählen. Der Filter wird automatisch zu Ihrem Filter in der Abfrageleiste hinzugefügt. Dies wird in der folgenden Abbildung veranschaulicht. Hier erfahren Sie, wo Sie zum Hinzufügen von **InstanceName:'_Total'** zur Abfrage klicken müssen, ohne etwas einzugeben.
+Sie können auch spezifischer sein und **InstanceName = \_ 'Total'** in der Abfrage verwenden, was ein Windows-Leistungsindikator ist. Sie können auch eine Facette und einen weiteren Wert **field:value** auswählen. Der Filter wird automatisch zu Ihrem Filter in der Abfrageleiste hinzugefügt. Dies wird in der folgenden Abbildung veranschaulicht. Hier erfahren Sie, wo Sie zum Hinzufügen von **InstanceName:'\_Total'** zur Abfrage klicken müssen, ohne etwas einzugeben.
 
-!["search facet" (Facette durchsuchen)](./media/operational-insights-search/search-facet.png)
+!["search facet" \(Facette durchsuchen\)](./media/operational-insights-search/search-facet.png)
 
 Ihre Abfrage wird jetzt zu `Type=PerfHourly CounterName=”% Processor Time” InstanceName=”_Total”`.
 
@@ -106,7 +106,7 @@ Die folgende Abfrage gibt Einträge für zwei Ereignisprotokolle für alle Compu
 EventLog=Application OR EventLog=System
 ```
 
-!["search results" (Ergebnisse durchsuchen)](./media/operational-insights-search/search-results03.png)
+!["search results" \(Ergebnisse durchsuchen\)](./media/operational-insights-search/search-results03.png)
 
 Durch Auswahl eines der Felder oder Filter wird die Abfrage auf einen bestimmten Computer beschränkt, und alle anderen werden ausgeschlossen. Die resultierende Abfrage ähnelt der folgenden.
 
@@ -132,7 +132,7 @@ Wie beim Ereignisprotokoll-Feld können Sie Daten nur für einen Satz bestimmter
 (EventLog=Application OR EventLog=System) AND (Computer=SERVER1.contoso.com OR Computer=SERVER2.contoso.com OR Computer=SERVER3.contoso.com)
 ```
 
-Ähnlich dazu wird die folgende Abfrage **CPU-Zeit (%)** nur für die beiden ausgewählten Computer zurückgegeben.
+Ähnlich dazu wird die folgende Abfrage **CPU-Zeit \(%\)** nur für die beiden ausgewählten Computer zurückgegeben.
 
 ```
 CounterName=”% Processor Time”  AND InstanceName=”_Total” AND (Computer=SERVER1.contoso.com OR Computer=SERVER2.contoso.com)
@@ -140,7 +140,7 @@ CounterName=”% Processor Time”  AND InstanceName=”_Total” AND (Computer=
 
 
 ### Boolesche Operatoren
-Mit "datetime" und numerischen Feldern können Sie Werte mit *größer als*, *kleiner als*, und *kleiner als oder gleich* suchen. Sie können einfache Operatoren wie z. B. >, <, >=, < =,! = in der Suchabfrageleiste verwenden.
+Mit "datetime" und numerischen Feldern können Sie Werte mit *größer als*, *kleiner als*, und *kleiner als oder gleich* suchen. Sie können einfache Operatoren wie z. B. \>, \<, \>=, \< =,! = in der Suchabfrageleiste verwenden.
 
 
 Sie können ein bestimmtes Ereignisprotokoll für einen bestimmten Zeitraum abfragen. Beispielsweise werden die letzten 24 Stunden mit dem folgenden mnemonischen Ausdruck dargestellt.
@@ -151,13 +151,13 @@ EventLog=System TimeGenerated>NOW-24HOURS
 
 
 #### Suchen mithilfe eines booleschen Operators
-- Geben Sie im Suchabfragefeld `EventLog=System TimeGenerated>NOW-24HOURS"` !["search with boolean" (boolesche Suche)](./media/operational-insights-search/search-boolean.png) ein.
+- Geben Sie im Suchabfragefeld `EventLog=System TimeGenerated>NOW-24HOURS"` !["search with boolean" \(boolesche Suche\)](./media/operational-insights-search/search-boolean.png) ein.
 
-Sie können das Zeitintervall zwar grafisch steuern, was die meiste Zeit auch sinnvoll ist, es hat jedoch auch Vorteile, einen Zeitfilter direkt in die Abfrage einzuschließen. Beispielsweise funktioniert dies hervorragend mit Dashboards, bei denen Sie die Zeit für jede Kachel überschreiben können, unabhängig von der *globalen* Zeitauswahl auf der Dashboardseite. Weitere Informationen finden Sie unter [Time Matters in Dashboard](http://cloudadministrator.wordpress.com/2014/10/19/system-center-advisor-restarted-time-matters-in-dashboard-part-6/) ("Zeit spielt in Dashboards eine Rolle", auf Englisch).
+Sie können das Zeitintervall zwar grafisch steuern, was die meiste Zeit auch sinnvoll ist, es hat jedoch auch Vorteile, einen Zeitfilter direkt in die Abfrage einzuschließen. Beispielsweise funktioniert dies hervorragend mit Dashboards, bei denen Sie die Zeit für jede Kachel überschreiben können, unabhängig von der *globalen* Zeitauswahl auf der Dashboardseite. Weitere Informationen finden Sie unter [Time Matters in Dashboard](http://cloudadministrator.wordpress.com/2014/10/19/system-center-advisor-restarted-time-matters-in-dashboard-part-6/) \("Zeit spielt in Dashboards eine Rolle", auf Englisch\).
 
-Beim Filtern nach Zeit sollten Sie bedenken, dass Sie Resultate für die *Schnittmenge* der beiden Zeiträume erhalten: den im Operational Insights-Portal (S1) und den in der Abfrage (S2) angegebenen Zeitraum.
+Beim Filtern nach Zeit sollten Sie bedenken, dass Sie Resultate für die *Schnittmenge* der beiden Zeiträume erhalten: den im Operational Insights-Portal \(S1\) und den in der Abfrage \(S2\) angegebenen Zeitraum.
 
-!["intersection" (Schnittmenge)](./media/operational-insights-search/intersection.png)
+!["intersection" \(Schnittmenge\)](./media/operational-insights-search/intersection.png)
 
 Das heißt, wenn die Zeiträume sich nicht überschneiden, z. B. wenn im Operational Insights-Portal **diese Woche** und in der Abfrage **letzte Woche** definiert ist, gibt es keine Überschneidung und Sie erhalten keine Ergebnisse.
 
@@ -183,13 +183,13 @@ Type=Event EventLog="Operations Manager" EventID:[2100..2199]
 ```
 
 
->[AZURE.NOTE]Die zu verwendende Bereichssyntax ist der Doppelpunkt (:) "Feld:Trennzeichen" und *nicht* das Gleichheitszeichen (=). Schließen Sie das untere und obere Ende des Bereichs in eckige Klammern ein, und trennen Sie diese durch zwei Punkte (..).
+>[AZURE.NOTE]Die zu verwendende Bereichssyntax ist der Doppelpunkt \(:\) "Feld:Trennzeichen" und *nicht* das Gleichheitszeichen \(=\). Schließen Sie das untere und obere Ende des Bereichs in eckige Klammern ein, und trennen Sie diese durch zwei Punkte \(..\).
 
 ## Bearbeiten von Suchergebnissen
 
 Wenn Sie nach Daten suchen, sollten Sie Ihre Suchabfrage verfeinern und die Ergebnisse gut kontrollieren können. Wenn Ergebnisse abgerufen werden, können Sie die Befehle anwenden, um sie zu verändern.
 
-Befehle in Operational Insights-Suchen *müssen* nach dem senkrechten Strich (|) folgen. Ein Filter muss immer der erste Teil einer Abfragezeichenfolge sein. Er definiert den Datensatz, mit dem Sie arbeiten, und "leitet" diese Ergebnisse dann in einen Befehl. Mit der Pipe können Sie anschließend zusätzliche Befehle hinzufügen. Dies ist in etwa mit der Windows PowerShell-Pipeline vergleichbar.
+Befehle in Operational Insights-Suchen *müssen* nach dem senkrechten Strich \(\|\) folgen. Ein Filter muss immer der erste Teil einer Abfragezeichenfolge sein. Er definiert den Datensatz, mit dem Sie arbeiten, und "leitet" diese Ergebnisse dann in einen Befehl. Mit der Pipe können Sie anschließend zusätzliche Befehle hinzufügen. Dies ist in etwa mit der Windows PowerShell-Pipeline vergleichbar.
 
 Im Allgemeinen versucht die Operational Insights-Suchsprache, sich an PowerShell-Stil und -Richtlinien zu orientieren, um IT-Experten den Einstieg zu erleichtern und die Lernkurve zu verbessern.
 
@@ -235,7 +235,7 @@ Type=Event EventID=2110 | Top 1
 
 
 #### Suchen mit "Top"
-- Geben Sie im Suchabfragefeld `Type=Event EventID=2110 | Top 1` !["search top" (oben suchen)](./media/operational-insights-search/search-top.png) ein.
+- Geben Sie im Suchabfragefeld `Type=Event EventID=2110 | Top 1` !["search top" \(oben suchen\)](./media/operational-insights-search/search-top.png) ein.
 
 In der Abbildung oben gibt es 988 Datensätze mit der EventID = 2110. Die Felder, Facetten und Filter auf der linken Seite zeigen immer Informationen zu den Ergebnissen an, die *vom Filterteil* der Abfrage zurückgegeben werden, also der Teil vor jedem senkrechten Strich. Im **Ergebnis**-Bereich wird nur das einzelne neueste Ergebnis zurückgegeben, da der Beispielbefehl die Ergebnisse geformt und transformiert hat.
 
@@ -247,7 +247,7 @@ Der SELECT-Befehl verhält sich wie das Select-Objekt in PowerShell. Er gibt gef
 
 1. Geben Sie in der Suche `Type=Event` ein und klicken Sie dann auf **Search**.
 2. Klicken Sie in einem der Ergebnisse auf **+ mehr anzeigen**, um alle Eigenschaften der Ergebnisse anzuzeigen.
-3. Wählen Sie einige davon explizit aus, und die Abfrage ändert sich zu `Type=Event | Select Computer,EventID,RenderedDescription`. !["search select" (Auswahl durchsuchen)](./media/operational-insights-search/search-select.png)
+3. Wählen Sie einige davon explizit aus, und die Abfrage ändert sich zu `Type=Event | Select Computer,EventID,RenderedDescription`. !["search select" \(Auswahl durchsuchen\)](./media/operational-insights-search/search-select.png)
 
 Dieser Befehl ist besonders nützlich, wenn Sie die Suchergebnisse steuern möchten und nur die Teile der Daten wählen, die für Ihre Untersuchung eine Rolle spielen, also häufig nicht der vollständige Datensatz. Dies ist auch nützlich, wenn Datensätze verschiedener Typen *einige* gemeinsame Eigenschaften aufweisen, dies aber nicht für *alle* Eigenschaften gilt. Sie können Ausgaben generieren, die natürlicher wie eine Tabelle aussehen oder gut funktionieren, wenn sie in eine CSV-Datei exportiert und dann in Excel bearbeitet werden.
 
@@ -257,24 +257,24 @@ Dieser Befehl ist besonders nützlich, wenn Sie die Suchergebnisse steuern möch
 
 MEASURE ist einer der vielseitigsten Befehle bei Operational Insights-Suchen. Sie können damit statistische *Funktionen* auf Ihre Daten anwenden und die Ergebnisse nach einem bestimmten Feld gruppieren. Es gibt mehrere statistische Funktionen, die "Measure" unterstützt.
 
-### "Measure count()"
+### "Measure count\(\)"
 
-Die erste statistische Funktion, die verwendet werden kann und leicht zu verstehen ist, ist die *count()*-Funktion.
+Die erste statistische Funktion, die verwendet werden kann und leicht zu verstehen ist, ist die *count\(\)*-Funktion.
 
 Ergebnisse aus einer beliebigen Suchabfrage wie z. B. `Type=Event` zeigen auf der linken Seite der Suchergebnisse Filter, die auch als Facetten bezeichnet werden. Die Filter zeigen eine Verteilung der Werte anhand eines bestimmten Felds für die Ergebnisse in der ausgeführten Suche an.
 
-!["search measure count" ("Measure"-Count durchsuchen)](./media/operational-insights-search/search-measure-count01.png)
+!["search measure count" \("Measure"-Count durchsuchen\)](./media/operational-insights-search/search-measure-count01.png)
 
 Zum Beispiel sehen Sie in der Abbildung oben das **Computer**-Feld, das anzeigt, dass innerhalb der fast 3 Millionen Ereignisse in den Ergebnissen 20 einmalige und eindeutige Werte dafür in diesen Datensätzen vorhanden sind. Die Kachel zeigt nur die fünf obersten an, welche die fünf häufigsten Werte sind, die in die **Computer**-Felder geschrieben werden, sortiert nach der Anzahl der Dokumente, die diesen bestimmten Wert in dem Feld enthalten. In der Abbildung sehen Sie, dass unter diesen fast 3 Millionen Ereignissen insgesamt 880.000 aus dem DM-Computer stammen, 602.000 aus dem DE-Computer usw..
 
 
 Was geschieht, wenn Sie alle Werte sehen möchten, obwohl die Kachel nur die ersten fünf anzeigt?
 
-Dies kann der "Measure"-Befehl mithilfe der "Count()"-Funktion erledigen. Diese Funktion verwendet keine Parameter. Geben Sie einfach das zu gruppierende Feld an, in diesem Fall das **Computer**-Feld:
+Dies kann der "Measure"-Befehl mithilfe der "Count\(\)"-Funktion erledigen. Diese Funktion verwendet keine Parameter. Geben Sie einfach das zu gruppierende Feld an, in diesem Fall das **Computer**-Feld:
 
 `Type=Event | Measure count() by Computer`
 
-!["search measure count" ("Measure"-Count durchsuchen)](./media/operational-insights-search/search-measure-count-computer.png)
+!["search measure count" \("Measure"-Count durchsuchen\)](./media/operational-insights-search/search-measure-count-computer.png)
 
 Allerdings ist **Computer** nur ein Feld, das *in* jedem Datenelement verwendet wird. Es sind keine relationalen Datenbanken vorhanden und es gibt nirgendwo ein separates **Computer**-Objekt. Nur die Werte *in* den Daten beschreiben, durch welche Entität sie generiert wurden, und eine Anzahl weiterer Merkmale und Aspekte der Daten – daher der Begriff *Facette*. Allerdings können Sie auch eine Gruppierung nach anderen Feldern vornehmen. Da die ursprünglichen Ergebnisse von fast 3 Millionen Ereignissen, die in den "Measure"-Befehl geleitet werden, auch über ein Feld namens **EventID** verfügen, können Sie das gleiche Verfahren zum Gruppieren nach diesem Feld verwenden und eine Anzahl der Ereignisse nach EventID erhalten:
 
@@ -305,11 +305,11 @@ Einige wichtige Punkte sind zu beachten und hervorzuheben:
 
 Erstens sind die angezeigten Ergebnisse nicht mehr die ursprünglichen Rohergebnisse. Stattdessen handelt es sich um aggregierte Ergebnisse – im Wesentlichen Gruppen von Ergebnissen. Während dies kein Problem ist, sollten Sie dennoch wissen, dass Sie mit einer sehr unterschiedliche Form von Daten interagieren, die sich von der ursprünglichen Rohform unterscheidet, die als Ergebnis der Aggregation/statistischen Funktion dynamisch erstellt wird.
 
-Zweitens gibt der **Measure-Count** zurzeit nur die ersten 100 unterschiedlichen Ergebnisse zurück. Diese Beschränkung gilt nicht für andere statistische Funktionen. Daher müssen Sie in der Regel zunächst einen genaueren Filter für bestimmte Elemente zur Suche angeben, bevor Sie "Measure count()" anwenden.
+Zweitens gibt der **Measure-Count** zurzeit nur die ersten 100 unterschiedlichen Ergebnisse zurück. Diese Beschränkung gilt nicht für andere statistische Funktionen. Daher müssen Sie in der Regel zunächst einen genaueren Filter für bestimmte Elemente zur Suche angeben, bevor Sie "Measure count\(\)" anwenden.
 
 ## Verwenden der "Max"- und "Min"-Funktion mit dem "Measure"-Befehl
 
-Es gibt verschiedene Szenarien, in denen **Measure Max()** und **Measure Min()** nützlich sind. Da die Funktionen jedoch genau gegensätzlich sind, illustrieren wie "Max()", sodass Sie mit "Min()" selbst experimentieren können.
+Es gibt verschiedene Szenarien, in denen **Measure Max\(\)** und **Measure Min\(\)** nützlich sind. Da die Funktionen jedoch genau gegensätzlich sind, illustrieren wie "Max\(\)", sodass Sie mit "Min\(\)" selbst experimentieren können.
 
 Bei Abfragen von Warnungen für die Konfigurationsbewertung gibt es die Eigenschaft **Schweregrad**, der entweder 0, 1 oder 2 sein kann, also Information, Warnung und kritischer Fehler. Beispiel:
 
@@ -317,7 +317,7 @@ Bei Abfragen von Warnungen für die Konfigurationsbewertung gibt es die Eigensch
 Type=ConfigurationAlert
 ```
 
-!["search measure count start" (Durchsuchen von "Measure"-Count starten)](./media/operational-insights-search/search-measure-max01.png)
+!["search measure count start" \(Durchsuchen von "Measure"-Count starten\)](./media/operational-insights-search/search-measure-max01.png)
 
 Wenn Sie den höchsten Wert für alle Warnungen für einen gemeinsamen Computer nach Feld gruppiert erhalten möchten, verwenden Sie
 
@@ -325,7 +325,7 @@ Wenn Sie den höchsten Wert für alle Warnungen für einen gemeinsamen Computer 
 Type=ConfigurationAlert | Measure Max(Severity) by Computer
 ```
 
-!["search measure max computer" ("Measure max"-Computer durchsuchen)](./media/operational-insights-search/search-measure-max02.png)
+!["search measure max computer" \("Measure max"-Computer durchsuchen\)](./media/operational-insights-search/search-measure-max02.png)
 
 Für Computer mit **Warnungen** wird angezeigt, dass für die meisten davon ein kritischer Fehler vorliegt und der Bacc-Computer eine Warnung des höchsten Schweregrads enthält.
 
@@ -333,7 +333,7 @@ Für Computer mit **Warnungen** wird angezeigt, dass für die meisten davon ein 
 Type=ConfigurationAlert | Measure Max(Severity) by Computer
 ```
 
-!["search measure max time generated computer" ("Measure max time" generierten Computer durchsuchen)](./media/operational-insights-search/search-measure-max03.png)
+!["search measure max time generated computer" \("Measure max time" generierten Computer durchsuchen\)](./media/operational-insights-search/search-measure-max03.png)
 
 Diese Funktion funktioniert gut mit Zahlen, aber auch mit DateTime-Feldern. Es empfiehlt sich, den letzten oder neuesten Zeitstempel für alle Daten zu prüfen, die für jeden Computer indiziert wurden. Beispiel: Wann wurde die letzte Konfigurationsänderung von der Lösung zur Änderungsnachverfolgung für jeden Computer gemeldet?
 
@@ -343,7 +343,7 @@ Type=ConfigurationChange | Measure Max(TimeGenerated) by Computer
 
 ## Verwenden der "Avg"-Funktion mit dem Measure-Befehl
 
-Die statistische "Avg()"-Funktion kann zusammen mit "Measure" verwendet werden, sodass Sie den Durchschnittswert für ein Feld berechnen, und die Ergebnisse nach dem gleichen oder einem anderen Feld gruppieren können. Dies ist in einer Vielzahl von Fällen nützlich, z. B. für Leistungsdaten.
+Die statistische "Avg\(\)"-Funktion kann zusammen mit "Measure" verwendet werden, sodass Sie den Durchschnittswert für ein Feld berechnen, und die Ergebnisse nach dem gleichen oder einem anderen Feld gruppieren können. Dies ist in einer Vielzahl von Fällen nützlich, z. B. für Leistungsdaten.
 
 Wir beginnen mit den Leistungsdaten. Beachten Sie jedoch, dass Operational Insights derzeit nur bestimmte Fabric-bezogene Leistungsindikatoren für Virtual Machine Manager und Hyper-V-Hosts als Teil der Capacity Management-Lösung erfasst.
 
@@ -353,11 +353,11 @@ Die grundlegende Abfrage zum Suchen *aller* Leistungsdaten ist:
 Type=PerfHourly
 ```
 
-!["search avg start" ("Avg"-Suche starten)](./media/operational-insights-search/search-avg01.png)
+!["search avg start" \("Avg"-Suche starten\)](./media/operational-insights-search/search-avg01.png)
 
 Als Erstes sehen Sie, dass Operational Insights Diagramme der Leistungsindikatoren anzeigt. Am unteren Teil der Ergebnisse sehen Sie die eigentlichen Datensätze hinter den Diagrammen.
 
-!["search avg start" ("Avg"-Suche starten)](./media/operational-insights-search/search-avg02.png)
+!["search avg start" \("Avg"-Suche starten\)](./media/operational-insights-search/search-avg02.png)
 
 In der Abbildung oben gibt es zwei Sätze von gekennzeichneten Feldern, die auf Folgendes hinweisen:
 
@@ -365,11 +365,11 @@ In der Abbildung oben gibt es zwei Sätze von gekennzeichneten Feldern, die auf 
 - **SampleValue** ist der tatsächliche Wert des Indikators
 - in der Abfrage, **Type=PerfHourly** ist eine stündliche Aggregation.
 - **TimeGenerated** ist 21:00 Uhr im 24-Stunden-Format. Dies ist die Aggregation für diesen stündlichen Zeitraum zwischen 20:00 Uhr und 21:00 Uhr.
-- **SampleCount** ist die Aggregation, die mit 12 Proben berechnet wird (alle 5 Minuten eine).
-- Für die stündliche Periode waren **min**, **max** und **Percentile95** in diesem Beispiel für den Arbeitsspeicher in einer virtuellen Maschine 6144 MB (Megabytes).
+- **SampleCount** ist die Aggregation, die mit 12 Proben berechnet wird \(alle 5 Minuten eine\).
+- Für die stündliche Periode waren **min**, **max** und **Percentile95** in diesem Beispiel für den Arbeitsspeicher in einer virtuellen Maschine 6144 MB \(Megabytes\).
 - **SampleValue** ist eine stündliche Aggregation und wird mit dem *Durchschnitt* für den stündlichen Zeitraum befüllt. Damit werden die Leistungsdiagramme dargestellt.
 
-Nachdem Sie von der Form des "PerfHourly"-Datensatzes und anderen Suchtechniken erfahren haben, können Sie "Measure Avg()" zur Aggregation dieser Art von numerischen Daten verwenden.
+Nachdem Sie von der Form des "PerfHourly"-Datensatzes und anderen Suchtechniken erfahren haben, können Sie "Measure Avg\(\)" zur Aggregation dieser Art von numerischen Daten verwenden.
 
 Hier ist ein einfaches Beispiel:
 
@@ -377,7 +377,7 @@ Hier ist ein einfaches Beispiel:
 Type=PerfHourly  ObjectName:Processor  InstanceName:_Total  CounterName:"% Processor Time" | Measure Avg(SampleValue) by Computer
 ```
 
-!["search avg samplevalue" ("Avg samplevalue" suchen)](./media/operational-insights-search/search-avg03.png)
+!["search avg samplevalue" \("Avg samplevalue" suchen\)](./media/operational-insights-search/search-avg03.png)
 
 In diesem Beispiel wählen Sie den Leistungsindikator für die CPU-Gesamtzeit und den Durchschnitt pro Computer. Da **SampleValue** bereits ein Durchschnittswert ist, fragen Sie tatsächlich den Durchschnitt des Durchschnitts ab. Dies ist zu diesem Zeitpunkt korrekt mit "Type=PerfHourly". Sie sollten immer einen Filter auf "TimeGenerated" verwenden, um den Vorgang auf kleine oder aktuelle Datensätze zu begrenzen, wie z. B. die letzten 4 Stunden anstelle der letzten 7 Tage.
 
@@ -398,7 +398,7 @@ Sie können Daten von *mehreren* Computern aggregieren und korrelieren. Angenomm
 Type=PerfHourly AND (Computer=”SERVER1.contoso.com” OR Computer=”SERVER2.contoso.com” OR Computer=”SERVER3.contoso.com”)
 ```
 
-Sie verfügen nun über die Computer und sollten jetzt nur zwei Key Performance Indicators (KPIs) auswählen: "CPU-Auslastung in %" und "freier Speicherplatz in %". Daher wird dieser Teil der Abfrage zu:
+Sie verfügen nun über die Computer und sollten jetzt nur zwei Key Performance Indicators \(KPIs\) auswählen: "CPU-Auslastung in %" und "freier Speicherplatz in %". Daher wird dieser Teil der Abfrage zu:
 
 ```
 Type=PerfHourly  InstanceName:_Total  ((ObjectName:Processor AND CounterName:"% Processor Time") OR (ObjectName="LogicalDisk" AND CounterName="% Free Space")) AND TimeGenerated>NOW-4HOURS
@@ -410,7 +410,7 @@ Jetzt können Sie Computer und Indikatoren anhand des folgenden Beispiels hinzuf
 Type=PerfHourly  InstanceName:_Total  ((ObjectName:Processor AND CounterName:"% Processor Time") OR (ObjectName="LogicalDisk" AND CounterName="% Free Space")) AND TimeGenerated>NOW-4HOURS AND (Computer=”SERVER1.contoso.com” OR Computer=”SERVER2.contoso.com” OR Computer=”SERVER3.contoso.com”)
 ```
 
-Da Sie eine sehr spezifische Auswahl haben, kann der **Measure Avg()**-Befehl den Durchschnitt nicht nur pro Computer, sondern über die gesamte Farm hinweg zurückgeben, und zwar ganz einfach durch die Gruppierung nach "CounterName". Beispiel:
+Da Sie eine sehr spezifische Auswahl haben, kann der **Measure Avg\(\)**-Befehl den Durchschnitt nicht nur pro Computer, sondern über die gesamte Farm hinweg zurückgeben, und zwar ganz einfach durch die Gruppierung nach "CounterName". Beispiel:
 
 ```
 Type=PerfHourly  InstanceName:_Total  ((ObjectName:Processor AND CounterName:"% Processor Time") OR (ObjectName="LogicalDisk" AND CounterName="% Free Space")) AND TimeGenerated>NOW-4HOURS AND (Computer=”SERVER1.contoso.com” OR Computer=”SERVER2.contoso.com” OR Computer=”SERVER3.contoso.com”) | Measure Avg(SampleValue) by CounterName
@@ -418,20 +418,20 @@ Type=PerfHourly  InstanceName:_Total  ((ObjectName:Processor AND CounterName:"% 
 
 Dadurch erhalten Sie eine nützliche, kompakte Ansicht von einigen KPIs in Ihrer Umgebung.
 
-!["search avg grouping" ("Avg"-Gruppierung durchsuchen)](./media/operational-insights-search/search-avg04.png)
+!["search avg grouping" \("Avg"-Gruppierung durchsuchen\)](./media/operational-insights-search/search-avg04.png)
 
 
 Sie können dies problemlos in einem Dashboard verwenden. Weitere Informationen zum Verwenden von Dashboards finden Sie unter [Operational Insights-Dashboards](operational-insights-use-dashboards).
 
-!["search avg dashboard" ("Avg"-Dashboard durchsuchen)](./media/operational-insights-search/search-avg05.png)
+!["search avg dashboard" \("Avg"-Dashboard durchsuchen\)](./media/operational-insights-search/search-avg05.png)
 
 ### Verwenden der "Sum"-Funktion mit dem "Measure"-Befehl
 
-Die "Sum"-Funktion ähnelt anderen Funktionen des "Measure"-Befehls. Ein Beispiel zur Verwendung der "Sum"-Funktion finden Sie auf [W3C IIS Logs Search in Microsoft Azure Operational Insights](http://blogs.msdn.com/b/dmuscett/archive/2014/09/20/w3c-iis-logs-search-in-system-center-advisor-limited-preview.aspx) ("W3C-IIS-Protokollsuche in Microsoft Azure Operational Insights", auf Englisch).
+Die "Sum"-Funktion ähnelt anderen Funktionen des "Measure"-Befehls. Ein Beispiel zur Verwendung der "Sum"-Funktion finden Sie auf [W3C IIS Logs Search in Microsoft Azure Operational Insights](http://blogs.msdn.com/b/dmuscett/archive/2014/09/20/w3c-iis-logs-search-in-system-center-advisor-limited-preview.aspx) \("W3C-IIS-Protokollsuche in Microsoft Azure Operational Insights", auf Englisch\).
 
-Sie können "Max()" und "Min()" mit Zahlen, Uhrzeitangaben und Textzeichenfolgen verwenden. Mit Textzeichenfolgen sind diese alphabetisch sortiert, und Sie erhalten die erste und letzte.
+Sie können "Max\(\)" und "Min\(\)" mit Zahlen, Uhrzeitangaben und Textzeichenfolgen verwenden. Mit Textzeichenfolgen sind diese alphabetisch sortiert, und Sie erhalten die erste und letzte.
 
-Sie können "Sum()" ausschließlich mit numerischen Feldern verwenden. Dies gilt auch für "Avg()".
+Sie können "Sum\(\)" ausschließlich mit numerischen Feldern verwenden. Dies gilt auch für "Avg\(\)".
 
 ## Verwenden des "Where"-Befehls
 
@@ -443,7 +443,7 @@ Beispiel:
 Type=PerfHourly  CounterName="% Processor Time"  InstanceName="_Total" | Measure Avg(SampleValue) as AVGCPU by Computer
 ```
 
-Sie können einen weiteren senkrechten Strich "|" und den "Where"-Befehl hinzufügen, um nur Computer abzurufen, deren durchschnittliche CPU-Nutzung über 80 % liegt, siehe folgendes Beispiel:
+Sie können einen weiteren senkrechten Strich "\|" und den "Where"-Befehl hinzufügen, um nur Computer abzurufen, deren durchschnittliche CPU-Nutzung über 80 % liegt, siehe folgendes Beispiel:
 
 ```
 Type=PerfHourly  CounterName="% Processor Time"  InstanceName="_Total" | Measure Avg(SampleValue) as AVGCPU by Computer | Where AVGCPU>80
@@ -451,9 +451,9 @@ Type=PerfHourly  CounterName="% Processor Time"  InstanceName="_Total" | Measure
 
 Wenn Sie mit Microsoft System Center – Operations Manager vertraut sind, können Sie sich den "Where"-Befehl in der Management Pack-Terminologie denken. Wenn das Beispiel eine Regel wäre, wäre der erste Teil der Abfrage die Datenquelle und der "Where"-Befehl wäre die Bedingungserkennung.
 
-Sie können die Abfrage als Kachel in **Mein Dashboard** verwenden, als eine Art Überwachung, wenn die CPUs des Computers stark ausgelastet sind. Weitere Informationen zu Dashboards finden Sie unter [Operational Insights-Dashboards](operational-insights-use-dashboards). Sie können Dashboards auch mithilfe der mobilen App erstellen und verwenden. Weitere Informationen finden Sie unter [Azure Operational Insights – Mobile App ](http://www.windowsphone.com/de-de/store/app/operational-insights/4823b935-83ce-466c-82bb-bd0a3f58d865). In den unteren beiden Kacheln der folgenden Abbildung bekommen Sie den Monitor als Liste und als Zahl angezeigt. Im Wesentlichen sollte die Zahl immer 0 (null) sein und die Liste leer. Andernfalls könnte es eine Warnungsbedingung geben. Bei Bedarf können sie die Abfrage auch nutzen, um einen Blick auf überlastete Computer zu werden.
+Sie können die Abfrage als Kachel in **Mein Dashboard** verwenden, als eine Art Überwachung, wenn die CPUs des Computers stark ausgelastet sind. Weitere Informationen zu Dashboards finden Sie unter [Operational Insights-Dashboards](operational-insights-use-dashboards). Sie können Dashboards auch mithilfe der mobilen App erstellen und verwenden. Weitere Informationen finden Sie unter [Azure Operational Insights – Mobile App ](http://www.windowsphone.com/en-us/store/app/operational-insights/4823b935-83ce-466c-82bb-bd0a3f58d865). In den unteren beiden Kacheln der folgenden Abbildung bekommen Sie den Monitor als Liste und als Zahl angezeigt. Im Wesentlichen sollte die Zahl immer 0 \(null\) sein und die Liste leer. Andernfalls könnte es eine Warnungsbedingung geben. Bei Bedarf können sie die Abfrage auch nutzen, um einen Blick auf überlastete Computer zu werden.
 
-!["mobile dashboard" ("mobiles Dashboard")](./media/operational-insights-search/search-mobile.png)
+!["mobile dashboard" \("mobiles Dashboard"\)](./media/operational-insights-search/search-mobile.png)
 
 ## Search-Syntaxreferenz
 
@@ -465,9 +465,9 @@ Sie erhalten Informationen über die von der Suche zurückgegebenen Felder und d
 
 Syntax:
 
-filterExpression | command1 | command2 …
+filterExpression \| command1 \| command2 …
 
-Der Filterausdruck (**filterExpression**) definiert die "Where"-Bedingung für die Abfrage. Die Befehle gelten für die von der Abfrage zurückgegebenen Ergebnisse. Mehrere Befehle müssen durch einen senkrechten Strich (|) getrennt werden.
+Der Filterausdruck \(\*\*filterExpression\*\*\) definiert die "Where"-Bedingung für die Abfrage. Die Befehle gelten für die von der Abfrage zurückgegebenen Ergebnisse. Mehrere Befehle müssen durch einen senkrechten Strich \(\|\) getrennt werden.
 
 #### Beispiele für die allgemeine Syntax
 
@@ -477,7 +477,7 @@ Beispiele:
 
 Diese Abfrage gibt Ergebnisse mit dem Wort "System" in jedem Feld zurück, das für die Volltextsuche oder bestimmte Suchbegriffe indiziert wurde.
 
->[AZURE.NOTE]Nicht alle Felder sind auf diese Weise indiziert, aber die am häufigsten verwendeten Textfelder (z. B. Beschreibungen und Namen) sind es in der Regel schon.
+>[AZURE.NOTE]Nicht alle Felder sind auf diese Weise indiziert, aber die am häufigsten verwendeten Textfelder \(z. B. Beschreibungen und Namen\) sind es in der Regel schon.
 
 	system error
 
@@ -485,7 +485,7 @@ Diese Abfrage gibt Ergebnisse zurück, die die Wörter "System" und "Fehler" ent
 
 	system error | sort ManagementGroupName, TimeGenerated desc | top 10
 
-Diese Abfrage gibt Ergebnisse zurück, die die Wörter "System" und "Fehler" enthalten. Dann sortiert die Abfrage die Ergebnisse nach dem Feld **ManagementGroupName** (in aufsteigender Reihenfolge), und anschließend nach **TimeGenerated** (in absteigender Reihenfolge). Nur die ersten zehn Ergebnisse werden genommen.
+Diese Abfrage gibt Ergebnisse zurück, die die Wörter "System" und "Fehler" enthalten. Dann sortiert die Abfrage die Ergebnisse nach dem Feld **ManagementGroupName** \(in aufsteigender Reihenfolge\), und anschließend nach **TimeGenerated** \(in absteigender Reihenfolge\). Nur die ersten zehn Ergebnisse werden genommen.
 
 >[AZURE.IMPORTANT]Bei allen Feldnamen und Werten für die Zeichenfolgen- und Textfelder muss die Groß-und Kleinschreibung beachtet werden.
 
@@ -495,7 +495,7 @@ In den folgenden Unterabschnitten werden Filterausdrücke erläutert.
 
 #### Zeichenfolgenliterale
 
-Ein Zeichenfolgenliteral ist eine Zeichenfolge, die vom Parser nicht als ein Schlüsselwort oder ein vordefinierter Datentyp (z. B. eine Zahl oder ein Datum) erkannt wird.
+Ein Zeichenfolgenliteral ist eine Zeichenfolge, die vom Parser nicht als ein Schlüsselwort oder ein vordefinierter Datentyp \(z. B. eine Zahl oder ein Datum\) erkannt wird.
 
 Beispiele:
 
@@ -521,9 +521,9 @@ Beispiele:
 
 #### Datum/Uhrzeit
 
-Jedes Datenelement im System besitzt eine **TimeGenerated**-Eigenschaft, die das ursprüngliche Datum und die Uhrzeit des Datensatzes darstellt. Einige Datentypen können darüber hinaus weitere Datums-/Uhrzeitfelder haben (z. B. **LastModified**).
+Jedes Datenelement im System besitzt eine **TimeGenerated**-Eigenschaft, die das ursprüngliche Datum und die Uhrzeit des Datensatzes darstellt. Einige Datentypen können darüber hinaus weitere Datums-/Uhrzeitfelder haben \(z. B. **LastModified**\).
 
-Das Zeitachsen-Diagramm/der Uhrzeit-Selektor in Operational Insights zeigt eine Verteilung von Ergebnissen im Zeitverlauf an (gemäß der aktuell ausgeführten Abfrage), basierend auf dem Feld **TimeGenerated**. Datums-/Uhrzeit-Felder verfügen über ein bestimmtes Zeichenfolgenformat, das in Abfragen verwendet werden kann, um diese auf einen bestimmten Zeitraum zu beschränken. Sie können mit der Syntax auch auf relative Zeitintervalle verweisen (z. B. "zwischen vor 3 Tagen und vor 2 Stunden") .
+Das Zeitachsen-Diagramm/der Uhrzeit-Selektor in Operational Insights zeigt eine Verteilung von Ergebnissen im Zeitverlauf an \(gemäß der aktuell ausgeführten Abfrage\), basierend auf dem Feld **TimeGenerated**. Datums-/Uhrzeit-Felder verfügen über ein bestimmtes Zeichenfolgenformat, das in Abfragen verwendet werden kann, um diese auf einen bestimmten Zeitraum zu beschränken. Sie können mit der Syntax auch auf relative Zeitintervalle verweisen \(z. B. "zwischen vor 3 Tagen und vor 2 Stunden"\) .
 
 Syntax:
 
@@ -614,7 +614,15 @@ Sie können Datum/Zeit mit mathematischen Operatoren verketten, z. B.:
 
 Die folgende Tabelle enthält die unterstützten Datums-/Uhrzeit-Einheiten.
 
-<table border="1" cellspacing="4" cellpadding="4"><table> <tr> <th>Datum/Uhrzeit-Einheit </th> <th>Beschreibung </th> </tr> <tr> <td> <p>YEAR, YEARS</p> </td> <td> <p>rundet auf das aktuelle Jahr oder versetzt dieses um die angegebene Anzahl von Jahren.</p> </td> </tr> <tr> <td> <p>MONTH, MONTHS</p> </td> <td> <p>Rundet auf den aktuellen Monat oder versetzt ihn um die angegebene Anzahl von Monaten.</p> </td></tr><tr><td><p>DAY, DAYS, DATE</p></td><td><p>Rundet auf den aktuellen Tag des Monats oder versetzt ihn um die angegebene Anzahl von Tagen.</p> </td></tr><tr><td><p>HOUR, HOURS￼ </p></td><td><p> ￼Rundet auf die aktuelle Stunde oder versetzt sie um die angegebene Anzahl von Stunden.</p> </td></tr><tr><td><p>MINUTE, MINUTES</p></td><td><p>Rundet auf die aktuelle Minute oder versetzt sie um die angegebene Anzahl von Minuten.</p> </td></tr><tr><td><p>SECOND, SECONDS</p></td><td><p>Rundet auf die aktuelle Sekunde oder versetzt sie um die angegebene Anzahl von Sekunden.</p> </td></tr><tr><td><p>MILISECOND, MILLISECONDS, MILLI, MILLIS</p></td><td><p> ￼Rundet auf die aktuelle Millisekunde oder versetzt sie um die angegebene Anzahl von Millisekunden.</p></td></tr></table>
+Einheit für Datum/Uhrzeit|Beschreibung
+---|--- 
+YEAR, YEARS|Rundet auf das aktuelle Jahr oder versetzt um die angegebene Anzahl von Jahren.
+MONTH, MONTHS|Rundet auf den aktuellen Monat oder versetzt um die angegebene Anzahl von Monaten.
+DAY, DAYS, DATE|Rundet auf den aktuellen Tag des Monats oder versetzt um die angegebene Anzahl von Tagen.
+HOUR, HOURS|Rundet auf die aktuelle Stunde oder versetzt um die angegebene Anzahl von Stunden.
+MINUTE, MINUTES|Rundet auf die aktuelle Minute oder versetzt um die angegebene Anzahl von Minuten.
+SECOND, SECONDS|Rundet auf die aktuelle Sekunde oder versetzt um die angegebene Anzahl von Sekunden.
+MILLISECOND, MILLISECONDS, MILLI, MILLIS|Rundet auf die aktuelle Millisekunde oder versetzt um die angegebene Anzahl von Millisekunden.
 
 
 #### Feldfacetten
@@ -623,9 +631,9 @@ Mithilfe von Feldfacetten können Sie die Suchbedingung für bestimmte Felder un
 
 **Syntax**
 
-*field:value*
+*Feld:Wert*
 
-*field=value*
+*Feld=Wert*
 
 **Beschreibung**
 
@@ -644,15 +652,15 @@ Beispiel:
 
 **Syntax**
 
-*field>value*
+*Feld\>Wert*
 
-*field<value*
+*Feld\<Wert*
 
-*field>=value*
+*Feld\>=Wert*
 
-*field<=value*
+*Feld\<=Wert*
 
-*field!=value*
+*Feld!=Wert*
 
 **Beschreibung**
 
@@ -665,7 +673,7 @@ Beispiel:
 
 **Syntax**
 
-*field:[from..to]*
+*Feld:\[von..bis\]*
 
 **Beschreibung**
 
@@ -679,7 +687,7 @@ Beispiel:
 	SampleValue:[0..2]
 #### Logische Operatoren
 
-Abfragesprachen unterstützen die logischen Operatoren (AND, OR und NOT) und ihre jeweiligen Aliasse im C-Format (& &, ||, und!). Sie können Klammern verwenden, um diese Operatoren zu gruppieren.
+Abfragesprachen unterstützen die logischen Operatoren \(AND, OR und NOT\) und ihre jeweiligen Aliasse im C-Format \(& &, \|\|, und!\). Sie können Klammern verwenden, um diese Operatoren zu gruppieren.
 
 Beispiele:
 
@@ -690,13 +698,16 @@ Beispiele:
 Sie können den logischen Operator für Filterargumente der obersten Ebene auslassen. In diesem Fall wird vom AND-Operator ausgegangen.
 
 
-<table border="1" cellspacing="4" cellpadding="4"><table> <tr> <th>Filterausdruck</th> <th>entspricht</th> </tr> <tr> <td> <p>Systemfehler</p> </td> <td> <p>System UND Fehler</p> </td> </tr> <tr> <td> <p>System & Quot; Windows Server & Quot; ODER Schweregrad: 1</p> </td> <td> <p>System UND (& Quot; Windows Server & Quot; ODER Schweregrad: 1)</p> </td> </tr> </table>
+Filtern von Ausdrücken|Entspricht
+---|---
+system error|system AND error
+system "Windows Server" OR Severity:1|system AND \("Windows Server" OR Severity:1\)
 
 
 
 ### Befehle
 
-Die Befehle gelten für die von der Abfrage zurückgegebenen Ergebnisse. Verwenden Sie den senkrechten Strich (|), um einen Befehl auf die abgerufenen Ergebnisse anzuwenden. Mehrere Befehle müssen durch einen senkrechten Strich (|) getrennt werden.
+Die Befehle gelten für die von der Abfrage zurückgegebenen Ergebnisse. Verwenden Sie den senkrechten Strich \(\|\), um einen Befehl auf die abgerufenen Ergebnisse anzuwenden. Mehrere Befehle müssen durch einen senkrechten Strich \(\|\) getrennt werden.
 
 >[AZURE.NOTE]Befehlsnamen können in Groß- oder Kleinbuchstaben geschrieben werden, im Gegensatz zu den Feldnamen und den Daten.
 
@@ -706,7 +717,7 @@ Syntax:
 
 	sort field1 asc|desc, field2 asc|desc, …
 
-Sortiert die Ergebnisse nach bestimmten Feldern. Das Präfix "Asc/Desc" ist optional. Wenn sie ausgelassen werden, wird von der "Asc"-Sortierreihenfolge ausgegangen. Wenn eine Abfrage den **Sortieren**-Befehl nicht explizit verwendet, ist **TimeGenerated**-"desc" (absteigende Reihenfolge) das Standardverhalten. Es gibt die neuesten Ergebnisse immer zuerst zurück.
+Sortiert die Ergebnisse nach bestimmten Feldern. Das Präfix "Asc/Desc" ist optional. Wenn sie ausgelassen werden, wird von der "Asc"-Sortierreihenfolge ausgegangen. Wenn eine Abfrage den Befehl **Sortieren** nicht explizit verwendet, ist "**TimeGenerated** desc" \(absteigende Reihenfolge\) das Standardverhalten. Dabei werden die neuesten Ergebnisse immer zuerst zurückgegeben.
 
 #### "Top"/"Limit"
 
@@ -750,11 +761,11 @@ Beispiel:
 
 	Type:Alert errors detected | select Name, Severity
 
-Schränkt die zurückgegebenen Ergebnisfelder auf **Name** und **Schweregrad** ein.
+Schränkt die zurückgegebenen Ergebnisfelder auf **Name** und **Severity** \(Schweregrad\) ein.
 
 #### "Measure"
 
-Der **Measure**-Befehl wird verwendet, um statistische Funktionen auf rohe Suchergebnisse anzuwenden. Dies ist sehr nützlich, um einen ersten *Group-by*-Überblick über die Daten zu erhalten. Wenn Sie den **Measure**-Befehl verwenden, zeigt Operational Insights eine Tabelle mit aggregierten Ergebnissen an.
+Der Befehl **Measure** wird verwendet, um statistische Funktionen auf unformatierte Suchergebnisse anzuwenden. Dies ist sehr nützlich, um einen ersten *gruppierten* Überblick über die Daten zu erhalten. Wenn Sie den Befehl **Measure** verwenden, zeigt Operational Insights eine Tabelle mit aggregierten Ergebnissen an.
 
 Syntax:
 
@@ -766,13 +777,13 @@ Syntax:
 Aggregiert die Ergebnisse nach **groupField** und berechnet die aggregierten "Measure"-Werte mit **aggregatedField**.
 
 
-<table border="1" cellspacing="4" cellpadding="4"><table> <tr> <th>Messen der Statistikfunktion </th> <th>Beschreibung </th> </tr> <tr> <td> <p><em>aggregateFunction</em> </p> <p></p> </td> <td> <p>Der Name der Aggregatfunktion (ohne Berücksichtigung der Groß-und Kleinschreibung). Die folgenden Aggregatfunktionen werden unterstützt:</p> <ul> <li class="unordered">COUNT<br><br></li> <li class="unordered">MAX<br><br></li> <li class="unordered">MIN<br><br></li> <li class="unordered">SUM<br><br></li> <li class="unordered">AVG<br><br></li> <li class="unordered">STDDEV<br><br></li> </ul> </td> </tr> <tr> <td> <p><em>aggregatedField</em> </p> </td> <td> <p>Das Feld, das aggregiert wird. Dieses Feld ist für die Aggregatfunktion COUNT optional, muss jedoch ein vorhandenes numerisches Feld für MAX, SUM, MIN, AVG oder STDDEV sein.</p> </td> </tr> <tr> <td> <p><em>FieldAlias</em> </p> </td> <td> <p>Der (optionale) Alias für den berechneten aggregierten Wert. Wenn nicht angegeben, ist der Name des Felds <em>AggregatedValue.</em></p> </td> </tr> <tr> <td> <p><em>groupField</em> </p> </td> <td> <p>Der Name des Felds, in dem der Ergebnissatz gruppiert ist. </p> </td> </tr> <tr> <td> <p><em>Interval</em> </p> </td> <td> <p>Das angegebene Zeitintervall im Format: </p> <p><em>nnnNAME</em> </p> <p></p> <p>Wobei: </p> <p>nnn ist die positive ganze Zahl.</p> <p><em>NAME</em> ist der Name des Intervalls</p> <p>Unterstützte Intervallnamen enthalten (Groß-und Kleinschreibung): </p><ul><li class="unordered"> MILLISECOND[S]<br><br></li> <li class="unordered">SECOND[S]<br><br></li> <li class="unordered">MINUTE[S]<br><br></li> <li class="unordered">HOUR[S]<br><br></li> <li class="unordered">DAY[S<br><br></li><li class="unordered"> MONTH[S]<br><br></li> <li class="unordered">YEAR[S]<br></li> </ul> </td> </tr> </table>
+<table border="1" cellspacing="4" cellpadding="4"><table> <tr> <th>Measure-Statistikfunktion </th> <th>Beschreibung </th> </tr> <tr> <td> <p><em>aggregateFunction</em> </p> <p></p> </td> <td> <p>Der Name der Aggregatfunktion \(ohne Berücksichtigung der Groß-und Kleinschreibung\). Die folgenden Aggregatfunktionen werden unterstützt:</p><ul><li class="unordered">COUNT<br><br></li> <li class="unordered">MAX<br><br></li> <li class="unordered">MIN<br><br></li> <li class="unordered">SUM<br><br></li> <li class="unordered">AVG<br><br></li> <li class="unordered">STDDEV<br><br></li> </ul> </td> </tr> <tr> <td> <p><em>aggregatedField</em> </p> </td> <td> <p>Das Feld, das aggregiert wird. Dieses Feld ist für die Aggregatfunktion COUNT optional, muss jedoch ein vorhandenes numerisches Feld für SUM, MAX, MIN, AVG oder STDDEV sein.</p> </td> </tr> <tr> <td> <p><em>fieldAlias</em> </p> </td> <td> <p>Der \(optionale\) Alias für den berechneten aggregierten Wert. Wenn nicht angegeben, lautet der Name des Felds <em>AggregatedValue.</em></p> </td> </tr> <tr> <td> <p><em>groupField</em> </p> </td> <td> <p>Der Name des Felds, nach dem der Ergebnissatz gruppiert wird. </p> </td> </tr> <tr> <td> <p><em>Interval</em> </p> </td> <td> <p>Das Zeitintervall in folgendem Format: </p> <p><em>nnnNAME</em> </p> <p></p> <p>Dabei gilt: </p> <p>nnn ist die positive ganze Zahl</p> <p><em>NAME</em> ist der Name des Intervalls</p> <p>Folgende Intervallnamen werden unterstützt \(Groß- und Kleinschreibung sind zu berücksichtigen\): </p> <ul> <li class="unordered">MILLISECOND\[S\]<br><br></li> <li class="unordered">SECOND\[S\]<br><br></li> <li class="unordered">MINUTE\[S\]<br><br></li> <li class="unordered">HOUR\[S\]<br><br></li> <li class="unordered">DAY\[S\]<br><br></li> <li class="unordered">MONTH\[S\]<br><br></li> <li class="unordered">YEAR\[S\]<br></li> </ul> </td> </tr> </table>
 
 
 
-Die Intervalloption kann nur in Datums-/Uhrzeit-Feldern verwendet werden (z. B. **TimeGenerated** und **TimeCreated**). Aktuell, dies wird nicht vom Dienst erzwungen, aber ein Feld ohne Datum/Uhrzeit, das an das Back-End übergeben wird, führt zu einem Laufzeitfehler. Wenn die Schemaüberprüfung implementiert wird, lehnt die Dienst-API Abfragen ab, die ohne Datum/Uhrzeit-Felder für die Intervall-Aggregation verwenden werden. Die aktuelle **Measure**-Implementierung unterstützt Intervallgruppierungen nur für die **Count**-Aggregatfunktion.
+Die Intervalloption kann nur in Datums-/Uhrzeit-Gruppenfeldern verwendet werden \(z. B. **TimeGenerated** und **TimeCreated**\). Aktuell, dies wird nicht vom Dienst erzwungen, aber ein Feld ohne Datum/Uhrzeit, das an das Back-End übergeben wird, führt zu einem Laufzeitfehler. Wenn die Schemaüberprüfung implementiert wird, lehnt die Dienst-API Abfragen ab, die ohne Datum/Uhrzeit-Felder für die Intervall-Aggregation verwenden werden. Die aktuelle **Measure**-Implementierung unterstützt Intervallgruppierungen nur für die **Count**-Aggregatfunktion.
 
-Wenn die BY-Klausel weggelassen wird, aber ein Intervall angegeben (als zweite Syntax), wird das **TimeGenerated**-Feld standardmäßig angenommen.
+Wenn die BY-Klausel weggelassen, aber ein Intervall angegeben wird \(als zweite Syntax\), wird das **TimeGenerated**-Feld standardmäßig angenommen.
 
 Beispiele:
 
@@ -782,7 +793,7 @@ Beispiele:
 
 *Erklärung*
 
-Gruppiert die Warnungen nach **ObjectID** und berechnet die Anzahl der Warnungen für jede Gruppe. Der aggregierte Wert wird als das **Count**-Feld (Alias) zurückgegeben.
+Gruppiert die Warnungen nach **ObjectID** und berechnet die Anzahl der Warnungen für jede Gruppe. Der aggregierte Wert wird als das **Count**-Feld \(Alias\) zurückgegeben.
 
 **Beispiel 2**
 
@@ -798,7 +809,7 @@ Gruppiert die Warnungen in stündlichen Intervallen mithilfe des **TimeGenerated
 
 *Erklärung*
 
-Wie im vorherigen Beispiel, jedoch mit einem aggregierten Feldalias (**AlertsPerHour**).
+Wie im vorherigen Beispiel, jedoch mit einem aggregierten Feldalias \(\*\*AlertsPerHour\*\*\).
 
 **Beispiel 4**
 
@@ -830,7 +841,7 @@ Wie im vorherigen Beispiel, jedoch mit der aggregierten **Min**-Funktion.
 
 *Erklärung*
 
-Gruppiert PerfHourly von ObjectId und berechnet den Mittelwert (Durchschnitt).
+Gruppiert PerfHourly von ObjectId und berechnet den Mittelwert \(Durchschnitt\).
 
 **Beispiel 8**
 
@@ -860,7 +871,7 @@ Ruft die oberen fünf Workflows mit der maximalen Anzahl von Warnungen ab.
 
 Syntax:
 
-**where** AggregatedValue > 20
+**where** AggregatedValue\>20
 
 Kann nur nach einem **Measure**-Befehl verwendet werden, um die aggregierten Ergebnisse weiter zu filtern, die die **Measure**-Aggregationsfunktion erzeugt hat.
 
@@ -2038,4 +2049,4 @@ Wenn Sie Suche verwenden, um Daten zu finden, zeigen die Ergebnisse verschiedene
 ## Weitere Ressourcen
 Stefan Roth hat einen praktisch Spickzettel für die Suche erstellt. Besuchen Sie seinen [Blog](http://stefanroth.net/2014/11/05/microsoft-azure-operational-insights-search-data-explorer-cheat-sheet/), um mehr zu erfahren und seinen Spickzettel herunterzuladen.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

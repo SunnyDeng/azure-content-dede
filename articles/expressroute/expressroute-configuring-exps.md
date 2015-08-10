@@ -4,7 +4,7 @@
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="adinah"
+   manager="carolz"
    editor="tysonn" />
 <tags
    ms.service="expressroute"
@@ -12,7 +12,7 @@
    ms.topic="hero-article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/29/2015"
+   ms.date="07/28/2015"
    ms.author="cherylmc"/>
 
 #  Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter
@@ -32,13 +32,13 @@ Bevor Sie mit der Konfiguration beginnen, vergewissern Sie sich, dass die folgen
 - Aktuelle Version von Azure PowerShell
 - Die folgenden Anforderungen hinsichtlich virtueller Netzwerke:
 	- Eine Gruppe von IP-Adresspräfixen, die in virtuellen Netzwerken in Azure verwendet werden
-	- Eine Gruppe von lokalen IP-Präfixen (kann öffentliche IP-Adressen enthalten)
+	- Eine Gruppe von lokalen IP-Präfixen \(kann öffentliche IP-Adressen enthalten\)
 	- Das Gateway des virtuellen Netzwerks muss mit einem /28-Subnetz erstellt werden.
-	- Zusätzliche Gruppe von IP-Präfixen (/28) außerhalb des virtuellen Netzwerks. Dies wird zum Konfigurieren von BGP-Peering verwendet.
-	- AS-Nummer für Ihr Netzwerk. Weitere Informationen zu AS-Nummern finden Sie unter [Autonome Systemnummern (AS)](http://www.iana.org/assignments/as-numbers/as-numbers.xhtml).
+	- Zusätzliche Gruppe von IP-Präfixen \(/28\) außerhalb des virtuellen Netzwerks. Dies wird zum Konfigurieren von BGP-Peering verwendet.
+	- AS-Nummer für Ihr Netzwerk. Weitere Informationen zu AS-Nummern finden Sie unter [Autonome Systemnummern \(AS\)](http://www.iana.org/assignments/as-numbers/as-numbers.xhtml).
 	- MD5-Hash, wenn Sie eine authentifizierte BGP-Sitzung benötigen
 	- VLAN-IDs, über die der Datenverkehr gesendet wird. Sie benötigen 2 VLAN-IDs pro Verbindung: eine für virtuelle Netzwerke und die andere für Dienste, die unter öffentlichen IP-Adressen gehostet werden.
-	- [Autonome Systemnummern (AS)](http://www.iana.org/assignments/as-numbers/as-numbers.xhtml) für Ihr Netzwerk.
+	- [Autonome Systemnummern \(AS\)](http://www.iana.org/assignments/as-numbers/as-numbers.xhtml) für Ihr Netzwerk.
 	- Zwei 1-Gbit/s- bzw. 10-Gbit/s-Querverbindungen mit dem Ethernet-Exchange des Exchange-Anbieters.
 	- Ein Routerpaar, das für das Routing BGP unterstützen kann
 
@@ -218,7 +218,7 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
 8. **Konfigurieren Sie das virtuelle Netzwerk und das Gateway.**
 
-	Weitere Informationen finden Sie unter [Konfigurieren eines virtuellen Netzwerks und Gateways für ExpressRoute](https://msdn.microsoft.com/library/azure/dn643737.aspx). Beachten Sie, dass das Gatewaysubnetz "/28" sein muss, um mit einer ExpressRoute-Verbindung arbeiten zu können.
+	Weitere Informationen finden Sie unter [Konfigurieren eines virtuellen Netzwerks und Gateways für ExpressRoute](expressroute-configuring-vnet-gateway.md). Beachten Sie, dass das Gatewaysubnetz "/28" sein muss, um mit einer ExpressRoute-Verbindung arbeiten zu können.
 
 9. **Verknüpfen Sie Ihr Netzwerk mit einer Verbindung.** Führen Sie die folgenden Anweisungen erst aus, nachdem Sie sichergestellt haben, dass Ihre Verbindung den folgenden Zustand und Status hat:
 	- ServiceProviderProvisioningState: Provisioned
@@ -227,5 +227,8 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 			PS C:\> $Vnet = "MyTestVNet"
 			New-AzureDedicatedCircuitLink -ServiceKey $ServiceKey -VNetName $Vnet
  
+## Nächste Schritte
 
-<!---HONumber=July15_HO4-->
+- Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
+
+<!---HONumber=July15_HO5-->

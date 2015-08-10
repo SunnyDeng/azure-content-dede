@@ -22,7 +22,7 @@
 > - [Getting Started](vs-mobile-services-javascript-getting-started.md)
 > - [What Happened](vs-mobile-services-javascript-what-happened.md)
 
-###<span id="whathappened">Was ist mit meinem Projekt passiert?</id>
+###Was ist mit meinem Projekt passiert?</id>
 
 #####NuGet-Paket hinzugefügt
 
@@ -30,7 +30,7 @@ Das NuGet-Paket **WindowsAzure.MobileServices.WinJS** wurde installiert, einschl
   
 #####Werte für die Verbindungszeichenfolge für Mobile Services 
 
-Im Ordner `services\mobileServices\settings` wurde eine neue JavaScript-Datei (JS-Datei) mit einem **MobileServiceClient** generiert. Sie enthält die Anwendungs-URL des ausgewählten mobilen Diensts sowie seinen Anwendungsschlüssel.
+Im Ordner `services\mobileServices\settings` wurde eine neue JavaScript-Datei \(JS-Datei\) mit einem **MobileServiceClient** generiert. Sie enthält die Anwendungs-URL des ausgewählten mobilen Diensts sowie seinen Anwendungsschlüssel.
 
 
 #####Verweise zu "default.html" hinzugefügt
@@ -46,4 +46,4 @@ Im Ordner "Dienste" wurden Konfigurationsdateien für verbundene Dienste hinzuge
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -1,7 +1,6 @@
 <properties
 	pageTitle="Einführung in Apache Storm in HDInsight | Microsoft Azure"
 	description="Erhalten Sie eine Einführung in Apache Sturm, und erfahren Sie, wie Sie mit Storm in HDInsight Analyselösungen für Echtzeitdaten in der Cloud erstellen können."
-	keywords="apache storm,real time analytics"
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -14,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/06/2015"
+   ms.date="07/24/2015"
    ms.author="larryfr"/>
 
 #Einführung in Apache Storm in HDInsight: Echtzeitanalysen für Hadoop
@@ -31,9 +30,9 @@ Apache Storm in HDInsight wird als verwalteter Cluster angeboten, der in die Azu
 
 * Ausführung als verwalteter Dienst mit einer SLA von 99,9 % Betriebszeit.
 
-* Verwendung der Sprache Ihrer Wahl: Bietet Unterstützung für Storm-Komponenten in **Java**, **C#** und **Python**.
+* Verwendung der Sprache Ihrer Wahl: Bietet Unterstützung für Storm-Komponenten in **Java**, **C\#** und **Python**.
 
-	* Unterstützung für gemischte Programmiersprachen: Daten werden mit Java gelesen und dann mit C# verarbeitet.
+	* Unterstützung für gemischte Programmiersprachen: Daten werden mit Java gelesen und dann mit C\# verarbeitet.
 
 	* Verwendung der **Trident**-Java-Schnittstelle zum Erstellen von Storm-Topologien, die eine "exakt einmalige" Verarbeitung von Nachrichten, "transaktionale" Datenspeicherpersistenz sowie eine Reihe allgemeiner Datenstrom-Analysevorgänge unterstützen.
 
@@ -51,15 +50,13 @@ Eine Einführung in Storm finden Sie unter [Erste Schritte mit Storm in HDInsigh
 
 Sie können einen neuen Storm in HDInsight-Cluster in wenigen Minuten bereitstellen. Geben Sie den Clusternamen, die Größe, das Administratorkonto und das Speicherkonto an. Azure erstellt den Cluster, einschließlich Beispieltopologien und Dashboard zur Webverwaltung.
 
-Im Folgenden finden Sie ein Beispiel für die Bereitstellung eines Storm in HDInsight-Clusters mithilfe des Azure-Portals. Sie können einen Storm-Cluster auch über [Azure PowerShell](../install-configure-powershell.md) bereitstellen.
-
-![Ein Beispiel für das Schnellerfassungsformular für Cluster im Portal](./media/hdinsight-storm-overview/quick-create.png)
+> [AZURE.NOTE]Sie können Storm-Cluster auch über die [Azure-Befehlszeilenschnittstelle](../powershell-install-configure.md) oder [Azure PowerShell](../xplat-cli.md) bereitstellen.
 
 Innerhalb von 15 Minuten nach Übermittlung der Anforderung verfügen Sie über einen neuen Storm-Cluster, der bereit ist für die erste Echtzeitanalysepipeline.
 
 ###Einfache Bedienung
 
-Wenn Sie Visual Studio verwenden, haben Sie mit den HDInsight-Tools für Visual Studio die Möglichkeit, C#- und hybride C#-/Java-Topologien zu erstellen, die Sie dann an Ihren Storm in HDInsight-Cluster senden können.
+Wenn Sie Visual Studio verwenden, haben Sie mit den HDInsight-Tools für Visual Studio die Möglichkeit, C\#- und hybride C\#-/Java-Topologien zu erstellen, die Sie dann an Ihren Storm in HDInsight-Cluster senden können.
 
 ![Storm-Projekterstellung](./media/hdinsight-storm-overview/createproject.png)
 
@@ -67,7 +64,7 @@ Die HDInsight-Tools für Visual Studio bieten außerdem eine Schnittstelle, die 
 
 ![Storm-Verwaltung](./media/hdinsight-storm-overview/stormview.png)
 
-Ein Beispiel für die Verwendung der HDInsight-Tools zum Erstellen einer Storm-Anwendung finden Sie unter [Entwickeln von C#-Storm-Topologien mit HDInsight-Tools für Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology.md).
+Ein Beispiel für die Verwendung der HDInsight-Tools zum Erstellen einer Storm-Anwendung finden Sie unter [Entwickeln von C\#-Storm-Topologien mit HDInsight-Tools für Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology.md).
 
 Informationen zu den HDInsight-Tools für Visual Studio finden Sie unter [Erste Schritte mit den HDInsight-Tools für Visual Studio](../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md).
 
@@ -77,7 +74,7 @@ Jeder Storm in HDInsight-Cluster bietet auch ein webbasiertes Storm-Dashboard, m
 
 Weitere Informationen über das Storm-Dashboard finden Sie unter [Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight](hdinsight-storm-deploy-monitor-topology.md).
 
-Storm in HDInsight bietet außerdem durch den **Event Hub-Spout** eine einfache Integration in Azure Event Hubs. Dieser steht auf jedem Storm-Cluster unter **%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar** zur Verfügung. Beispiele für die Verwendung dieses Spouts in einer Storm-Topologie finden Sie unter [Erste Schritte mit Event Hubs](service-bus-event-hubs-c-storm-getstarted.MD) und [Analysieren von Sensordaten mit Storm und HBase](hdinsight-storm-sensor-data-analysis.MD).
+Storm in HDInsight bietet außerdem durch den **Event Hub-Spout** eine einfache Integration in Azure Event Hubs. Dieser steht auf jedem Storm-Cluster unter **%STORM\_HOME%\\examples\\eventhubspout\\eventhubs-storm-spout-0.9-jar-with-dependencies.jar** zur Verfügung. Beispiele für die Verwendung dieses Spouts in einer Storm-Topologie finden Sie unter [Erste Schritte mit Event Hubs](service-bus-event-hubs-c-storm-getstarted.MD) und [Analysieren von Sensordaten mit Storm und HBase](hdinsight-storm-sensor-data-analysis.MD).
 
 ###Zuverlässigkeit
 
@@ -93,7 +90,7 @@ In der Standardkonfiguration verfügt Apache Storm über einen einzelnen Nimbus-
 
 Obwohl Sie die Anzahl der Knoten im Cluster bei der Erstellung angeben können, sollten Sie den Cluster je nach Workload vergrößern oder verkleinern. Alle HDInsight-Cluster bieten die Möglichkeit, die Anzahl der Knoten im Cluster sogar während der Verarbeitung von Daten zu ändern.
 
-![Anzahl der Datenknoteninstanzen im Portal](./media/hdinsight-storm-overview/scale.png)
+> [AZURE.NOTE]Um neue Knoten zu nutzen, die über eine Skalierung hinzugefügt wurden, müssen Sie Topologien neu ausrichten, die vor dem Vergrößern des Clusters gestartet wurden.
 
 ###Support
 
@@ -101,12 +98,12 @@ Für Storm in HDInsight steht umfassender Support auf Unternehmensebene rund um 
 
 ##Allgemeine Szenarien für Echtzeitanalysen
 
-Hier finden Sie eine Liste der typischen Szenarien, in denen Apache Storm in HDInsight eingesetzt wird. Weitere Informationen zu realen Szenarien finden Sie unter [Companies using Apache Storm](https://storm.incubator.apache.org/documentation/Powered-By.html) (in englischer Sprache).
+Hier finden Sie eine Liste der typischen Szenarien, in denen Apache Storm in HDInsight eingesetzt wird. Weitere Informationen zu realen Szenarien finden Sie unter [Companies using Apache Storm](https://storm.incubator.apache.org/documentation/Powered-By.html) \(in englischer Sprache\).
 
-* Internet der Dinge (IoT, Internet of Things)
+* Internet der Dinge \(IoT, Internet of Things\)
 * Betrugserkennung
 * Soziale Analysen
-* Extraktions-, Umwandlungs- und Ladeprozesse (Extract, Transform and Load, ETL)
+* Extraktions-, Umwandlungs- und Ladeprozesse \(Extract, Transform and Load, ETL\)
 * Netzwerküberwachung
 * Suchen
 * Mobile Engagement
@@ -133,30 +130,30 @@ Apache Storm verarbeitet **Topologien** anstelle der MapReduce-Aufträge, die Si
 
 * **Bolt**: Konsumiert **Datenströme**, verarbeitet **Tupel** und kann **Datenströme** ausgeben. Bolts sind außerdem dafür verantwortlich, Daten in externe Speicher zu schreiben, z. B. eine Warteschlange, HDInsight, HBase, Blobs oder andere Datenspeicher.
 
-* **Apache Thrift**: Ein Software-Framework für die Entwicklung skalierbarer, sprachübergreifender Dienste. Mit Thrift können Sie Dienste entwickeln, die zwischen C++, Java, Python, PHP, Ruby, Erlang, Perl, Haskell, C#, Cocoa, JavaScript, Node.js, Smalltalk und anderen Sprachen funktionieren.
+* **Apache Thrift**: Ein Software-Framework für die Entwicklung skalierbarer, sprachübergreifender Dienste. Mit Thrift können Sie Dienste entwickeln, die zwischen C++, Java, Python, PHP, Ruby, Erlang, Perl, Haskell, C\#, Cocoa, JavaScript, Node.js, Smalltalk und anderen Sprachen funktionieren.
 
 	* **Nimbus** ist ein Thrift-Dienst, und eine **Topologie** ist eine Thrift-Definition. Aus diesem Grund ist es möglich, Topologien in einer Vielzahl von Programmiersprachen zu entwickeln.
 
-Weitere Informationen zu Storm-Komponenten finden Sie im [Storm Tutorial][apachetutorial] (in englischer Sprache) auf apache.org.
+Weitere Informationen zu Storm-Komponenten finden Sie im [Storm Tutorial][apachetutorial] \(in englischer Sprache\) auf apache.org.
 
 
 ##Welche Programmiersprachen kann ich verwenden?
 
-Der Storm in HDInsight-Cluster unterstützt C#, Java und Python.
+Der Storm in HDInsight-Cluster unterstützt C\#, Java und Python.
 
-### C&#35;
+### C&\#35;
 
-Mit den HDInsight-Tools für Visual Studio können .NET-Entwickler eine Topologie in C# entwerfen und implementieren. Sie können auch Hybridtopologien erstellen, die Java- und C#-Komponenten verwenden.
+Mit den HDInsight-Tools für Visual Studio können .NET-Entwickler eine Topologie in C\# entwerfen und implementieren. Sie können auch Hybridtopologien erstellen, die Java- und C\#-Komponenten verwenden.
 
-Weitere Informationen finden Sie unter [Entwickeln von C#-Topologien für Apache Storm in HDInsight mithilfe von Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology.md).
+Weitere Informationen finden Sie unter [Entwickeln von C\#-Topologien für Apache Storm in HDInsight mithilfe von Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology.md).
 
 ###Java
 
 Bei den meisten Java-Beispielen handelt es sich entweder um reines Java oder um Trident. Trident ist eine Abstraktion auf einer hohen Ebene zur Erleichterung von Aufgaben wie z. B. Joins, Aggregation, Gruppierung und Filterung. Trident arbeitet jedoch mit Stapeln von Tupeln, wohingegen Datenströme in reinen Java-Lösungen tupelweise verarbeitet werden.
 
-Weitere Informationen zu Trident finden Sie im [Trident Tutorial](https://storm.incubator.apache.org/documentation/Trident-tutorial.html) (in englischer Sprache) auf apache.org.
+Weitere Informationen zu Trident finden Sie im [Trident Tutorial](https://storm.incubator.apache.org/documentation/Trident-tutorial.html) \(in englischer Sprache\) auf apache.org.
 
-Beispiele für reine Java- und Trident-Topologien finden Sie im Verzeichnis **%storm_home%\contrib\storm-starter** in Ihrem HDInsight Storm-Cluster.
+Beispiele für reine Java- und Trident-Topologien finden Sie im Verzeichnis **%storm\_home%\\contrib\\storm-starter** in Ihrem HDInsight Storm-Cluster.
 
 ##Welche Entwicklungsmuster werden häufig verwendet?
 
@@ -164,7 +161,7 @@ Beispiele für reine Java- und Trident-Topologien finden Sie im Verzeichnis **%s
 
 Mit Storm lassen sich verschiedene Stufen der garantierten Nachrichtenverarbeitung implementieren. Eine einfache Storm-Anwendung kann z. B. die Verarbeitung nach dem "At-Least-Once"-Prinzip garantieren, während Trident Nachrichten nach dem "Exactly-Once"-Prinzip garantiert.
 
-Weitere Informationen finden Sie unter [Guarantees on Data Processing](https://storm.apache.org/about/guarantees-data-processing.html) (in englischer Sprache) auf apache.org.
+Weitere Informationen finden Sie unter [Guarantees on Data Processing](https://storm.apache.org/about/guarantees-data-processing.html) \(in englischer Sprache\) auf apache.org.
 
 ###IBasicBolt
 
@@ -209,4 +206,4 @@ Weitere Informationen zu Lösungen für Echtzeitanalysen mit Apache Storm in HDI
 [apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
 [gettingstarted]: ../hdinsight-storm-getting-started.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

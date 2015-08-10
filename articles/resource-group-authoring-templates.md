@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/15/2015"
+   ms.date="07/24/2015"
    ms.author="tomfitz"/>
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen
 
-Azure-Anwendungen erfordern i. d. R. eine Kombination von Ressourcen (z. B. Datenbankserver, Datenbanken oder Websites), um die gewünschten Ziele zu erreichen. Anstatt jede Ressource gesondert bereitzustellen und zu verwalten, können Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, die für die Bereitstellung aller Ressourcen für Ihre Anwendung in einem einzigen koordinierten Vorgang sorgt. In der Vorlage müssen Sie die Ressourcen definieren, die für die Anwendung erforderlich sind, und Bereitstellungsparameter für die Eingabe von Werten für unterschiedliche Umgebungen angeben. Die Vorlage besteht aus JSON und Ausdrücken, mit denen Sie Werte für die Bereitstellung erstellen können.
+Azure-Anwendungen erfordern i. d. R. eine Kombination von Ressourcen \(z. B. Datenbankserver, Datenbanken oder Websites\), um die gewünschten Ziele zu erreichen. Anstatt jede Ressource gesondert bereitzustellen und zu verwalten, können Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, die für die Bereitstellung aller Ressourcen für Ihre Anwendung in einem einzigen koordinierten Vorgang sorgt. In der Vorlage müssen Sie die Ressourcen definieren, die für die Anwendung erforderlich sind, und Bereitstellungsparameter für die Eingabe von Werten für unterschiedliche Umgebungen angeben. Die Vorlage besteht aus JSON und Ausdrücken, mit denen Sie Werte für die Bereitstellung erstellen können.
 
 In diesem Thema werden die Abschnitte der Vorlage beschrieben. Die tatsächlichen Schemas finden Sie unter [Schemas des Azure-Ressourcen-Manager](https://github.com/Azure/azure-resource-manager-schemas).
 
@@ -38,7 +38,7 @@ Das folgende Beispiel zeigt die Abschnitte, die die grundlegende Struktur einer 
 | Elementname | Erforderlich | Beschreibung
 | :------------: | :------: | :----------
 | $schema | Ja | Speicherort der JSON-Schemadatei, die die Version der Vorlagensprache beschreibt.
-| contentVersion | Ja | Version der Vorlage (z. B. 1.0.0.0). Bei der Bereitstellung von Ressourcen mithilfe der Vorlage kann mit diesem Wert sichergestellt werden, dass die richtige Vorlage verwendet wird.
+| contentVersion | Ja | Version der Vorlage \(z. B. 1.0.0.0\). Bei der Bereitstellung von Ressourcen mithilfe der Vorlage kann mit diesem Wert sichergestellt werden, dass die richtige Vorlage verwendet wird.
 | parameters | Nein | Werte, die bei der Bereitstellung angegeben werden, um die Bereitstellung der Ressourcen anpassen.
 | Variablen | Nein | Werte, die als JSON-Fragmente in der Vorlage verwendet werden, um Vorlagensprachausdrücke zu vereinfachen.
 | angeben | Ja | Arten von Diensten, die in einer Ressourcengruppe bereitgestellt oder aktualisiert werden.
@@ -48,33 +48,33 @@ Wir werden die Abschnitte der Vorlage weiter unten in diesem Thema ausführlich 
 
 ## Ausdrücke und Funktionen
 
-Die grundlegende Syntax der Vorlage ist JSON. Allerdings erweitern Ausdrücke und Funktionen die JSON-Anfragen, die in der Vorlage verfügbar sind, und ermöglichen Ihnen das Erstellen von Werten, die keine strikten Literalwerte sind. Ausdrücke werden in Klammern eingeschlossen ([ und ]) und bei der Bereitstellung der Vorlage ausgewertet. Ausdrücke können an beliebiger Stelle in einem JSON-Zeichenfolgenwert auftreten und geben immer einen anderen JSON-Wert zurück. Wenn Sie ein Zeichenfolgenliteral verwenden müssen, das mit einer eckigen Klammer [ beginnt, müssen Sie zwei eckige Klammern verwenden [[.
+Die grundlegende Syntax der Vorlage ist JSON. Allerdings erweitern Ausdrücke und Funktionen die JSON-Anfragen, die in der Vorlage verfügbar sind, und ermöglichen Ihnen das Erstellen von Werten, die keine strikten Literalwerte sind. Ausdrücke werden in Klammern eingeschlossen \(\[ und \]\) und bei der Bereitstellung der Vorlage ausgewertet. Ausdrücke können an beliebiger Stelle in einem JSON-Zeichenfolgenwert auftreten und geben immer einen anderen JSON-Wert zurück. Wenn Sie ein Zeichenfolgenliteral verwenden müssen, das mit einer eckigen Klammer \[ beginnt, müssen Sie zwei eckige Klammern verwenden \[\[.
 
-In der Regel verwenden Sie Ausdrücke mit Funktionen, um Vorgänge zum Konfigurieren der Bereitstellung durchzuführen. Genau wie in JavaScript haben Funktionsaufrufe das Format **functionName(arg1,arg2,arg3)**. Auf Eigenschaften verweisen Sie mithilfe der Operatoren Punkt und [Index].
+In der Regel verwenden Sie Ausdrücke mit Funktionen, um Vorgänge zum Konfigurieren der Bereitstellung durchzuführen. Genau wie in JavaScript haben Funktionsaufrufe das Format **functionName\(arg1,arg2,arg3\)**. Auf Eigenschaften verweisen Sie mithilfe der Operatoren Punkt und \[Index\].
 
 Die folgende Liste zeigt häufig verwendete Funktionen.
 
-- **parameters(parameterName)**
+- **parameters\(parameterName\)**
 
     Gibt bei Ausführung der Bereitstellung einen Parameterwert zurück.
 
-- **variables(variableName)**
+- **variables\(variableName\)**
 
     Gibt eine Variable zurück, die in der Vorlage definiert ist.
 
-- **concat(arg1,arg2,arg3,...)**
+- **concat\(arg1,arg2,arg3,...\)**
 
     Kombiniert mehrere Zeichenfolgenwerte. Diese Funktion kann eine beliebige Anzahl an Argumenten entgegennehmen.
 
-- **base64(inputString)**
+- **base64\(inputString\)**
 
     Rückkehr zur base64-Darstellung der Eingabezeichenfolge.
 
-- **resourceGroup()**
+- **resourceGroup\(\)**
 
-    Gibt ein strukturiertes Objekt (mit Eigenschaften für ID, Name und Speicherort) zurück, das die aktuellen Ressourcengruppe darstellt.
+    Gibt ein strukturiertes Objekt \(mit Eigenschaften für ID, Name und Speicherort\) zurück, das die aktuellen Ressourcengruppe darstellt.
 
-- **resourceId([resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
+- **resourceId\(\[resourceGroupName\], resourceType, resourceName1, \[resourceName2\]...\)**
 
     Gibt den eindeutigen Bezeichner einer Ressource zurück. Kann zum Abrufen von Ressourcen aus einer anderen Ressourcengruppe verwendet werden.
 
@@ -218,8 +218,8 @@ Sie definieren Ressourcen mit der folgenden Struktur:
 
 | Elementname | Erforderlich | Beschreibung
 | :----------------------: | :------: | :----------
-| apiVersion | Ja | Die Version der API, die die Ressource unterstützt.
-| Typ | Ja | Der Typ der Ressource. Dieser Wert ist eine Kombination aus dem Namespace des Ressourcenanbieters und dem Ressourcentyp, den der Ressourcenanbieter unterstützt.
+| apiVersion | Ja | Die Version der API, die die Ressource unterstützt. Die verfügbaren Versionen und Schemas für Ressourcen finden Sie unter [Schemas des Azure-Ressourcen-Manager](https://github.com/Azure/azure-resource-manager-schemas).
+| type | Ja | Der Typ der Ressource. Dieser Wert ist eine Kombination aus dem Namespace des Ressourcenanbieters und dem Ressourcentyp, den der Ressourcenanbieter unterstützt.
 | Name | Ja | Der Name der Ressource. Der Name muss die Einschränkungen für URI-Komponenten laut Definition in RFC3986 erfüllen.
 | location | Nein | Unterstützte Standorte der angegebenen Ressource
 | tags | Nein | Markierungen, die der Ressource zugeordnet sind
@@ -227,7 +227,7 @@ Sie definieren Ressourcen mit der folgenden Struktur:
 | Eigenschaften | Nein | Ressourcenspezifische Konfigurationseinstellungen
 | angeben | Nein | Untergeordnete Ressourcen, die von der definierten Ressource abhängig sind.
 
-Wenn der Ressourcenname nicht eindeutig ist, können Sie mit der **resourceId**-Hilfsfunktion (weiter unten beschrieben) den eindeutigen Bezeichner für eine Ressource abrufen.
+Wenn der Ressourcenname nicht eindeutig ist, können Sie mit der **resourceId**-Hilfsfunktion \(weiter unten beschrieben\) den eindeutigen Bezeichner für eine Ressource abrufen.
 
 Das folgende Beispiel zeigt eine **Microsoft.Web/serverfarms**-Ressource und eine **Microsoft.Web/Sites**-Ressource mit einer verschachtelten **Extensions**-Ressource:
 
@@ -311,7 +311,9 @@ Das folgende Beispiel zeigt einen Wert, der im Ausgabeabschnitt zurückgegeben w
 ## Fortgeschrittenere Szenarios.
 Dieses Thema bietet einen einführenden Einblick in die Vorlage. Ihr Szenario erfordert jedoch möglicherweise komplexere Aufgaben.
 
-Sie müssen möglicherweise zwei Vorlagen zusammenführen oder eine untergeordnete Vorlage innerhalb einer übergeordneten Vorlage verwenden. Weitere Informationen finden Sie unter [Geschachtelte Profile](../resource-group-advanced-template#nested-template).
+Sie müssen möglicherweise zwei Vorlagen zusammenführen oder eine untergeordnete Vorlage innerhalb einer übergeordneten Vorlage verwenden. Weitere Informationen finden Sie unter [Verwenden von verknüpften Vorlagen mit Azure-Ressourcen-Manager](resource-group-linked-templates.md).
+
+Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 
 Möglicherweise müssen Sie Ressourcen verwenden, die in einer anderen Ressourcengruppe enthalten sind. Dies geschieht normalerweise bei der Arbeit mit Speicherkonten oder virtuellen Netzwerken, die in mehreren Ressourcengruppen gemeinsam verwendet werden. Weitere Informationen finden Sie unter der [resourceId-Funktion](../resource-group-template-functions#resourceid).
 
@@ -319,7 +321,7 @@ Möglicherweise müssen Sie Ressourcen verwenden, die in einer anderen Ressource
 Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus einer ZIP-Datei aus.
 
     {
-       "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+       "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
        "contentVersion": "1.0.0.0",
        "parameters": {
          "siteName": {
@@ -398,11 +400,9 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
     }
 
 ## Nächste Schritte
-- [Vorlagenfunktionen im Azure-Ressourcen-Manager](./resource-group-template-functions.md)
-- [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md)
-- [Erweiterte Vorlagenvorgänge](./resource-group-advanced-template.md)
-- [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-web/app-service-deploy-complex-application-predictably.md)
-- [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
-- [Schemas des Azure-Ressourcen-Manager](https://github.com/Azure/azure-resource-manager-schemas)
+- Ausführliche Informationen zu den Funktionen, die Sie innerhalb einer Vorlage nutzen können, finden Sie unter [Funktionen der Azure-Ressourcen-Manager-Vorlagen](resource-group-template-functions.md).
+- Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
+- Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
+- Die verfügbaren Schemas finden Sie unter [Schemas des Azure-Ressourcen-Manager](https://github.com/Azure/azure-resource-manager-schemas).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

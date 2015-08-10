@@ -32,7 +32,7 @@ Im Folgenden finden Sie ein Beispiel einer in App Service-Web-Apps ausgeführten
 
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/web-app-notitle.svg" width="100%" height="100%"></object>
 
-> [AZURE.NOTE]In diesem Leitfaden werden einige der häufigsten Themenbereichen und Aufgaben im Zusammenhang mit Branchenanwendungen vorgestellt. Azure App Service-Web-Apps bieten jedoch noch weitere Funktionen, die Sie in Ihrer speziellen Implementierung nutzen können. Weitere Informationen zu diesen Funktionen finden Sie in den anderen Leitfäden unter [Globale Webpräsenz](web-sites-global-web-presence-solution-overview.md) und [Digitale Marketingkampagnen](web-sites-digital-marketing-application-solution-overview.md) (beides in englischer Sprache).
+> [AZURE.NOTE]In diesem Leitfaden werden einige der häufigsten Themenbereichen und Aufgaben im Zusammenhang mit Branchenanwendungen vorgestellt. Azure App Service-Web-Apps bieten jedoch noch weitere Funktionen, die Sie in Ihrer speziellen Implementierung nutzen können. Weitere Informationen zu diesen Funktionen finden Sie in den anderen Leitfäden unter [Globale Webpräsenz](web-sites-global-web-presence-solution-overview.md) und [Digitale Marketingkampagnen](web-sites-digital-marketing-application-solution-overview.md) \(beides in englischer Sprache\).
 
 ## Nutzen vorhandener Ressourcen
 
@@ -42,11 +42,11 @@ Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werde
 
 ## Schützen Sie Ihre Ressourcen
 
-Schützen Sie Ihre Ressourcen durch Verschlüsselung, Authentifizierung von Unternehmensbenutzern (ob lokal oder remote) und eine Autorisierung der Ressourcenverwendung.
+Schützen Sie Ihre Ressourcen durch Verschlüsselung, Authentifizierung von Unternehmensbenutzern \(ob lokal oder remote\) und eine Autorisierung der Ressourcenverwendung.
 
-Schützen Sie interne Ressourcen mit [HTTPS] vor Lauschangriffen. Der Domänenname ***.azurewebsites.net** schließt bereits ein SSL-Zertifikat ein, und wenn Sie eine benutzerdefinierte Domäne einsetzen, können Sie Ihr SSL-Zertifikat in App Service-Web-Apps weiterhin verwenden. Für jedes SSL-Zertifikat fällt eine monatliche Gebühr an (abgerechnet nach Stunden). Weitere Informationen finden Sie unter [App Service-Preisdetails].
+Schützen Sie interne Ressourcen mit [HTTPS] vor Lauschangriffen. Der Domänenname **\*.azurewebsites.net** schließt bereits ein SSL-Zertifikat ein, und wenn Sie eine benutzerdefinierte Domäne einsetzen, können Sie Ihr SSL-Zertifikat in App Service-Web-Apps weiterhin verwenden. Für jedes SSL-Zertifikat fällt eine monatliche Gebühr an \(abgerechnet nach Stunden\). Weitere Informationen finden Sie unter [App Service-Preisdetails].
 
-[Authentifizieren von Benutzern] mit dem Unternehmensverzeichnis. App Service-Web-Apps können Benutzer mithilfe von lokalen Identitätsanbietern authentifizieren, beispielsweise mit den Active Directory-Verbunddiensten (AD FS), oder über einen Azure Active Directory-Mandanten, der mit Ihrer Active Directory-Unternehmensbereitstellung synchronisiert wurde. Benutzer können über eine einmalige Anmeldung auf Ihre Webpräsenzen in Web-Apps zugreifen – unabhängig davon, ob sie lokal arbeiten oder sich von unterwegs anmelden. Vorhandene Dienste, wie z. B. Office 365 oder Microsoft Intune, verwenden bereits Azure Active Directory. Über [Easy Auth] ist es sehr einfach, für Ihre Web-App eine Authentifizierung mit demselben Azure Active Directory-Mandanten zu aktivieren.
+[Authentifizieren von Benutzern] mit dem Unternehmensverzeichnis. App Service-Web-Apps können Benutzer mithilfe von lokalen Identitätsanbietern authentifizieren, beispielsweise mit den Active Directory-Verbunddiensten \(AD FS\), oder über einen Azure Active Directory-Mandanten, der mit Ihrer Active Directory-Unternehmensbereitstellung synchronisiert wurde. Benutzer können über eine einmalige Anmeldung auf Ihre Webpräsenzen in Web-Apps zugreifen – unabhängig davon, ob sie lokal arbeiten oder sich von unterwegs anmelden. Vorhandene Dienste, wie z. B. Office 365 oder Microsoft Intune, verwenden bereits Azure Active Directory. Über [Easy Auth] ist es sehr einfach, für Ihre Web-App eine Authentifizierung mit demselben Azure Active Directory-Mandanten zu aktivieren.
 
 [Autorisieren Sie Benutzer] zur Verwendung von Webeigenschaften. Mit minimalem zusätzlichen Code, beispielsweise mit der `[Authorize]`-Dekoration, können Sie dieselben lokalen ASP.NET-Codierungsmuster in App Service-Web-Apps einbringen. Sie behalten dieselbe Flexibilität zur Optimierung der Zugriffssteuerung wie für Anwendungen, die Sie lokal verwalten.
 
@@ -62,11 +62,11 @@ Möglicherweise ist es für Ihr Unternehmen jedoch erforderlich, die zugehörige
 
 Optimieren Sie Ihre Branchenanwendung über eine automatische Skalierung mit "Autoskalierung", eine Zwischenspeicherung mit Azure Redis Cache, die Ausführung von Hintergrundaufgaben mithilfe von WebJobs, und sorgen Sie mit Azure Traffic Manager für eine gleichbleibend hohe Verfügbarkeit.
 
-Die Fähigkeit von App Service-Web-Apps, eine [vertikale und horizontale Skalierung] zu bieten, ist optimal für Ihre Branchenanwendung geeignet, unabhängig von der Arbeitsauslastung. Skalieren Sie Ihre Web-App manuell über das [Azure-Verwaltungsportal], programmgesteuert über die [Dienstverwaltungs-API] oder [PowerShell-Skripts] oder automatisch über die Funktion "Autoskalierung". Im Modus **Standard** können Sie eine Web-App mithilfe von "Autoskalierung" basierend auf der CPU-Auslastung automatisch horizontal hochskalieren. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
+Die Fähigkeit von App Service-Web-Apps, eine [vertikale und horizontale Skalierung] zu bieten, ist optimal für Ihre Branchenanwendung geeignet, unabhängig von der Arbeitsauslastung. Skalieren Sie Ihre Web-App manuell über das [Azure-Verwaltungsportal], programmgesteuert über die [Dienstverwaltungs-API] oder [PowerShell-Skripts] oder automatisch über die Funktion "Autoskalierung". Im Modus **Standard** können Sie eine Web-App mithilfe von "Autoskalierung" basierend auf der CPU-Auslastung automatisch horizontal hochskalieren. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] \(10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache\).
 
 Erhöhen Sie die Reaktionsfähigkeit Ihrer Web-App mit [Azure Redis Cache]. Nutzen Sie diese Funktion zum Zwischenspeichern von Daten aus Back-End-Datenbanken und anderen Daten, beispielsweise [ASP.NET-Sitzungszustand] und [Ausgabecache].
 
-Stellen Sie mithilfe von [Azure Traffic Manager] eine hohe Verfügbarkeit Ihrer Web-App sicher. Bei Verwendung der **Failover**-Methode leitet Traffic Manager Datenverkehr automatisch an eine sekundäre Website um, wenn ein Problem mit der primären Website vorliegt.
+Stellen Sie mithilfe von \[Azure Traffic Manager\] eine hohe Verfügbarkeit Ihrer Web-App sicher. Bei Verwendung der **Failover**-Methode leitet Traffic Manager Datenverkehr automatisch an eine sekundäre Website um, wenn ein Problem mit der primären Website vorliegt.
 
 ## Überwachung und Analyse
 
@@ -124,4 +124,4 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

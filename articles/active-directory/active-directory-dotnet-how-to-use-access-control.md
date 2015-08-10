@@ -22,7 +22,7 @@
 # Authentifizieren von Webbenutzern mit der Azure Active Directory-Zugriffssteuerung
 
 
-Diese Anleitung zeigt, wie Sie mit der Azure Active Directory-Zugriffssteuerung (auch Access Control Service oder ACS genannt) Benutzer von Identitätsanbietern wie Microsoft, Google, Yahoo und Facebook authentifizieren, wenn sie versuchen, auf eine Webanwendung zuzugreifen.
+Diese Anleitung zeigt, wie Sie mit der Azure Active Directory-Zugriffssteuerung \(auch Access Control Service oder ACS genannt\) Benutzer von Identitätsanbietern wie Microsoft, Google, Yahoo und Facebook authentifizieren, wenn sie versuchen, auf eine Webanwendung zuzugreifen.
 
 
 ## Was ist der ACS?
@@ -31,10 +31,10 @@ Die meisten Entwickler sind keine Identitätsexperten und auch nicht bereit, ihr
 
 Folgende Funktionen stehen im ACS zur Verfügung:
 
--   Integration mit Windows Identity Foundation (WIF).
--   Unterstützung beliebter Anbieter von Webidentitäten (IPs) wie beispielsweise Microsoft-Konto (vormals Windows Live ID), Google, Yahoo und Facebook.
--   Unterstützung von Active Directory Federation Services (AD FS) 2.0.
--   Ein auf dem Open Data Protocol (OData) basierender Verwaltungsdienst, der den programmgesteuerten Zugriff auf die ACS-Einstellungen ermöglicht.
+-   Integration mit Windows Identity Foundation \(WIF\).
+-   Unterstützung beliebter Anbieter von Webidentitäten \(IPs\) wie beispielsweise Microsoft-Konto \(vormals Windows Live ID\), Google, Yahoo und Facebook.
+-   Unterstützung von Active Directory Federation Services \(AD FS\) 2.0.
+-   Ein auf dem Open Data Protocol \(OData\) basierender Verwaltungsdienst, der den programmgesteuerten Zugriff auf die ACS-Einstellungen ermöglicht.
 -   Ein Verwaltungsportal, über das Administratoren auf die ACS-Einstellungen zugreifen können.
 
 Weitere Informationen zu ACS finden Sie unter [Access Control Service 2.0][].
@@ -48,13 +48,13 @@ Damit Sie die in dieser Anleitung gestellten Aufgaben durchführen können, müs
 
 **Client** - Ein Browser, der versucht, auf Ihre Webanwendung zuzugreifen.
 
-**Anwendung der vertrauenden Seite (Relying Party, RP) ** - Ihre Webanwendung. Eine RP-Anwendung ist eine Website oder ein Dienst, die/der die Authentifizierung an eine externe Stelle auslagert. Im Identitätskontext sagt man, dass die RP der Authentifizierungsstelle vertraut. In dieser Anleitung wird erklärt, wie Sie eine Anwendung so konfigurieren, dass sie dem ACS vertraut.
+**Anwendung der vertrauenden Seite \(Relying Party, RP\) ** - Ihre Webanwendung. Eine RP-Anwendung ist eine Website oder ein Dienst, die/der die Authentifizierung an eine externe Stelle auslagert. Im Identitätskontext sagt man, dass die RP der Authentifizierungsstelle vertraut. In dieser Anleitung wird erklärt, wie Sie eine Anwendung so konfigurieren, dass sie dem ACS vertraut.
 
 **Token** - Ein Benutzer erlangt Zugriff auf eine RP-Anwendung, indem er ein gültiges Token vorweist, das von einer Stelle ausgestellt wurde, der die RP-Anwendung vertraut. Eine Sammlung von Sicherheitsdaten, die bei Authentifizierung eines Clients ausgegeben werden. Sie enthält eine Reihe von Ansprüchen, bei denen es sich um Attribute des authentifizierten Benutzers handelt, beispielsweise den Namen oder das Alter eines Benutzers oder einen Bezeichner einer Benutzerrolle. Ein Token ist digital signiert, sodass der Aussteller identifiziert und der Inhalt nicht geändert werden kann.
 
-**Identitätsanbieter (Identity Provider, IP)** - Eine Stelle, die Benutzeridentitäten authentifiziert und Sicherheitstoken ausgibt, beispielsweise Microsoft-Konto (Windows Live ID), Facebook, Google, Twitter und Active Directory. Wenn zwischen ACS und einem IP ein Vertrauensverhältnis konfiguriert worden ist, akzeptiert und validiert ACS die von diesem IP vergebenen Token. Da ACS gleichzeitig mehreren IPs vertrauen kann, kann Ihre Anwendung, sofern sie ACS vertraut, es den Benutzern überlassen, sich mit einem der IPs zu authentifizieren, denen ACS stellvertretend für Sie vertraut.
+**Identitätsanbieter \(Identity Provider, IP\)** - Eine Stelle, die Benutzeridentitäten authentifiziert und Sicherheitstoken ausgibt, beispielsweise Microsoft-Konto \(Windows Live ID\), Facebook, Google, Twitter und Active Directory. Wenn zwischen ACS und einem IP ein Vertrauensverhältnis konfiguriert worden ist, akzeptiert und validiert ACS die von diesem IP vergebenen Token. Da ACS gleichzeitig mehreren IPs vertrauen kann, kann Ihre Anwendung, sofern sie ACS vertraut, es den Benutzern überlassen, sich mit einem der IPs zu authentifizieren, denen ACS stellvertretend für Sie vertraut.
 
-**Verbundanbieter (Federation Provider, FP)** - Identitätsanbieter (IPs) kennen die Benutzer, authentifizieren Benutzer anhand ihrer Anmeldeinformationen und geben Ansprüche für Benutzer aus. Ein Verbundanbieter (FP) ist eine andere Art von Authentifizierungsstelle. Ein FP authentifiziert Benutzer nicht direkt, sondern fungiert als Authentifizierungsbroker. Er übernimmt die Funktion eines Vermittlers zwischen einer RP-Anwendung und einem oder mehreren IPs. ACS ist ein Verbundanbieter (FP).
+**Verbundanbieter \(Federation Provider, FP\)** - Identitätsanbieter \(IPs\) kennen die Benutzer, authentifizieren Benutzer anhand ihrer Anmeldeinformationen und geben Ansprüche für Benutzer aus. Ein Verbundanbieter \(FP\) ist eine andere Art von Authentifizierungsstelle. Ein FP authentifiziert Benutzer nicht direkt, sondern fungiert als Authentifizierungsbroker. Er übernimmt die Funktion eines Vermittlers zwischen einer RP-Anwendung und einem oder mehreren IPs. ACS ist ein Verbundanbieter \(FP\).
 
 **ACS-Regelmodul** - Anspruchstransformationsregeln konvertieren die Ansprüche in Tokens vertrauenswürdiger IPs, sodass diese von einer RP verwendet werden können. ACS verfügt unter anderem über ein Regelmodul, das die Anspruchstransformationsregeln anwendet, die Sie für Ihre RP festlegen.
 
@@ -64,10 +64,10 @@ Die folgende Abbildung zeigt, wie die ACS-Authentifizierung bei einer Webanwendu
 
 ![][0]
 
-1.  Der Client (in diesem Fall ein Browser) fordert von der RP eine Seite an.
+1.  Der Client \(in diesem Fall ein Browser\) fordert von der RP eine Seite an.
 2.  Da die Anforderung noch nicht authentifiziert ist, verweist die RP den Benutzer an die Stelle, der sie vertraut, also an ACS. Der ACS übermittelt dem Benutzer verschiedene IPs, die für diese RP definiert wurden. Der Benutzer wählt einen passenden IP aus.
 3.  Der Client geht auf die Authentifizierungsseite des IPs und fordert den Benutzer auf, sich anzumelden.
-4.  Wenn der Client authentifiziert ist (beispielsweise die Anmeldeinformationen eingegeben wurden), gibt der IP ein Sicherheitstoken aus.
+4.  Wenn der Client authentifiziert ist \(beispielsweise die Anmeldeinformationen eingegeben wurden\), gibt der IP ein Sicherheitstoken aus.
 5.  Nach der Ausgabe des Sicherheitstokens weist der IP den Client an, dieses Token an ACS zu senden.
 6.  ACS validiert das vom IP ausgegebene Token, gibt die in diesem Token enthaltenen Identitätsansprüche in das ACS-Regelmodul ein, berechnet die auszugebenden Identitätsansprüche und gibt ein neues Sicherheitstoken aus, dass diese Ansprüche enthält.
 7.  ACS weist den Client an, das von ACS ausgegebene Token an die RP zu senden. Die RP validiert die Signatur auf dem Sicherheitstoken, extrahiert die für die Geschäftslogik der Anwendung bestimmten Ansprüche und gibt die ursprünglich angeforderte Seite zurück.
@@ -79,14 +79,14 @@ Damit Sie die in dieser Anleitung gestellten Aufgaben ausführen können, brauch
 
 -	Azure-Abonnement
 -	Microsoft Visual Studio 2012 
--	Identitäts- und Zugriffstool für Visual Studio 2012 (Download siehe [Identitäts- und Zugriffstool][])
+-	Identitäts- und Zugriffstool für Visual Studio 2012 \(Download siehe [Identitäts- und Zugriffstool][]\)
 
 
 ## Erstellen eines Access Control-Namespace
 
 Damit Sie den Active Directory-Zugriffssteuerungsdienst in Azure verwenden können, müssen Sie einen Access Control-Namespace anlegen. Dieser Namespace stellt einen eindeutigen Bereich für die Adressierung von ACS-Ressourcen innerhalb Ihrer Anwendung bereit.
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an (https://manage.WindowsAzure.com).
+1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an \(https://manage.WindowsAzure.com).
     
 2.  Klicken Sie auf **Active Directory**.
 
@@ -106,9 +106,9 @@ Azure erstellt und aktiviert den Namespace.
 
 In diesem Schritt erstellen Sie eine ASP.NET MVC-Anwendung. In nachfolgenden Schritten wird diese einfache Anwendung für Webformulare mit ACS integriert.
 
-1.	Starten Sie Visual Studio 2012 oder Visual Studio Express für Web 2012 (Frühere Versionen von Visual Studio können mit diesem Lernprogramm nicht verwendet werden).
+1.	Starten Sie Visual Studio 2012 oder Visual Studio Express für Web 2012 \(Frühere Versionen von Visual Studio können mit diesem Lernprogramm nicht verwendet werden\).
 1.	Klicken Sie auf **Datei** und dann auf **Neues Projekt**.
-1.	Wählen Sie zuerst die Vorlage "Visual C#/Web" aus und dann **ASP.NET MVC 4-Webanwendung**.
+1.	Wählen Sie zuerst die Vorlage "Visual C\#/Web" aus und dann **ASP.NET MVC 4-Webanwendung**.
 
 	In dieser Anleitung arbeiten wir mit einer MVC-Anwendung. Sie können für diese Aufgabe allerdings eine beliebige Webanwendung verwenden.
 
@@ -116,7 +116,7 @@ In diesem Schritt erstellen Sie eine ASP.NET MVC-Anwendung. In nachfolgenden Sch
 
 1. Geben Sie in **Name** **MvcACS** ein, und klicken Sie dann auf **OK**.
 1. Wählen Sie im nächsten Dialogfeld **Internetanwendung** aus, und klicken Sie dann auf **OK**.
-1. Bearbeiten Sie die Datei *Views\Shared_LoginPartial.cshtml*, und ersetzen Sie den Inhalt durch folgenden Code:
+1. Bearbeiten Sie die Datei *Views\\Shared\_LoginPartial.cshtml*, und ersetzen Sie den Inhalt durch folgenden Code:
 
         @if (Request.IsAuthenticated)
         {
@@ -164,7 +164,7 @@ In dieser Aufgabe werden Sie Ihre ASP.NET-Webanwendung mit ACS integrieren.
 
     ![][444]
 
-	Visual Studio fordert Informationen über den Access Control-Namespace an. Geben Sie den Namen des Namespace ein, den Sie zuvor angelegt haben ("Test" in dem Beispiel oben, aber der Name Ihres Namespace wird anders lauten). Wechseln Sie zurück zum Azure-Verwaltungsportal, um den symmetrischen Schlüssel zu beschaffen.
+	Visual Studio fordert Informationen über den Access Control-Namespace an. Geben Sie den Namen des Namespace ein, den Sie zuvor angelegt haben \("Test" in dem Beispiel oben, aber der Name Ihres Namespace wird anders lauten\). Wechseln Sie zurück zum Azure-Verwaltungsportal, um den symmetrischen Schlüssel zu beschaffen.
 
 	![][17]
 
@@ -186,7 +186,7 @@ In dieser Aufgabe werden Sie Ihre ASP.NET-Webanwendung mit ACS integrieren.
 
 	Visual Studio verwendet die Information über den Namespace, um die Verbindung zum ACS-Verwaltungsportal herzustellen und die Einstellungen für Ihren Namespace abzurufen, unter anderem Identitätsanbieter, Bereich und Rückgabe-URL.
 
-8.	Wählen Sie **Windows Live ID** (Microsoft-Konto) aus, und klicken Sie auf "OK".
+8.	Wählen Sie **Windows Live ID** \(Microsoft-Konto\) aus, und klicken Sie auf "OK".
 
 	![][5]
 
@@ -196,7 +196,7 @@ In dieser Aufgabe wird erläutert, wie Sie die Integration Ihrer RP-Anwendung mi
 
 -	Drücken Sie in Visual Studio die Taste F5, um die Anwendung auszuführen.
 
-Wenn Ihre Anwendung mit ACS integriert ist und Sie "Windows Live ID" (Microsoft-Konto) ausgewählt haben, wird nicht die standardmäßige ASP.NET Web Forms-Anwendung geöffnet, sondern Ihr Browser auf die Anmeldeseite für Microsoft-Konten umgeleitet. Wenn Sie sich mit einem gültigen Benutzernamen und Kennwort anmelden, werden Sie zu der Anwendung MvcACS weitergeleitet.
+Wenn Ihre Anwendung mit ACS integriert ist und Sie "Windows Live ID" \(Microsoft-Konto\) ausgewählt haben, wird nicht die standardmäßige ASP.NET Web Forms-Anwendung geöffnet, sondern Ihr Browser auf die Anmeldeseite für Microsoft-Konten umgeleitet. Wenn Sie sich mit einem gültigen Benutzernamen und Kennwort anmelden, werden Sie zu der Anwendung MvcACS weitergeleitet.
 
 ![][6]
 
@@ -206,13 +206,13 @@ Glückwunsch! Sie haben ACS mit Ihrer ASP.NET-Webanwendung integriert. ACS authe
 
 In diesem Abschnitt werden wir die Anwendung ändern, sodass die von ACS gesendeten Ansprüche angezeigt werden. Das Identitäts- und Zugriffstool hat eine Regelgruppe angelegt, die alle Ansprüche vom IP zu Ihrer Anwendung durchleitet. Beachten Sie, dass unterschiedliche Anbieter unterschiedliche Ansprüche senden.
 
-1. Öffnen Sie die Datei *Controllers\HomeController.cs*. Fügen Sie eine **using**-Anweisung für **System.Threading** hinzu:
+1. Öffnen Sie die Datei *Controllers\\HomeController.cs*. Fügen Sie eine **using**-Anweisung für **System.Threading** hinzu:
 
  	using System.Threading;
 
 1. Fügen Sie in der HomeController-Klasse die *Claims*-Methode hinzu:
 
-    public ActionResult Claims() { ViewBag.Message = "Your claims page.";
+    public ActionResult Claims\(\) { ViewBag.Message = "Your claims page.";
 
         ViewBag.ClaimsIdentity = Thread.CurrentPrincipal.Identity;
 
@@ -225,7 +225,7 @@ In diesem Abschnitt werden wir die Anwendung ändern, sodass die von ACS gesende
 
 1. Klicken Sie auf **Hinzufügen**.
 
-1. Ersetzen Sie den Inhalt der Datei *Views\Home\Claims.cshtml* durch den folgenden Code:
+1. Ersetzen Sie den Inhalt der Datei *Views\\Home\\Claims.cshtml* durch den folgenden Code:
 
         @{
             ViewBag.Title = "Claims";
@@ -285,7 +285,7 @@ Weitere Informationen zur Verwendung von Ansprüchen in Ihrer Anwendung siehe di
 
 Das Identitäts- und Zugriffstool in Visual Studio integriert Ihre Anwendung automatisch mit ACS.
 
-Wenn Sie die Option "Use Azure Access Control" auswählen und dann Ihre Anwendung ausführen, fügt das Identitäts- und Zugriffstool Ihre Anwendung als vertrauende Seite (RP) hinzu, konfiguriert sie für die Verwendung der ausgewählten Identitätsanbieter, erzeugt die standardmäßigen Anspruchstransformationsregeln und wählt diese für die Anwendung aus.
+Wenn Sie die Option "Use Azure Access Control" auswählen und dann Ihre Anwendung ausführen, fügt das Identitäts- und Zugriffstool Ihre Anwendung als vertrauende Seite \(RP\) hinzu, konfiguriert sie für die Verwendung der ausgewählten Identitätsanbieter, erzeugt die standardmäßigen Anspruchstransformationsregeln und wählt diese für die Anwendung aus.
 
 Diese Konfigurationseinstellungen können Sie im ACS-Verwaltungsportal prüfen und ändern. Gehen Sie folgendermaßen vor, um die Änderungen im Portal zu überprüfen.
 
@@ -323,7 +323,7 @@ Im nächsten Abschnitt werden wir mit den Funktionen des ACS-Verwaltungsportals 
 
 Auf dem ACS-Verwaltungsportal ändern wir nun die Authentifizierung der MvcACS-Anwendung. In diesem Beispiel werden wir Google als Identitätsanbieter für MvcACS hinzuzufügen.
 
-1.	Klicken Sie auf **Identitätsanbieter** (im Navigationsmenü) und dann auf **Hinzufügen**.
+1.	Klicken Sie auf **Identitätsanbieter** \(im Navigationsmenü\) und dann auf **Hinzufügen**.
 
 	![][13]
 
@@ -402,4 +402,4 @@ Wenn Sie die ACS-Funktionalität genauer erforschen und mit anderen Szenarien ex
   [20]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace2.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

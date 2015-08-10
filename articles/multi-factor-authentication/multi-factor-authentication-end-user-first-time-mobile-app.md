@@ -13,42 +13,64 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/30/2015" 
+	ms.date="07/21/2015" 
 	ms.author="billmath"/>
 
 # Verwenden einer mobilen App als Kontaktmethode mit Azure Multi-Factor Authentication
 
 Wenn Sie die mobile App als primäre Kontaktmethode verwenden möchten, finden Sie weitere Informationen in diesem Artikel. Hier erfahren Sie, wie Sie Multi-Factor Authentication einrichten, um Ihre mobile App als primäre Kontaktmethode zu verwenden.
 
-Die Azure Authenticator-App ist für [Windows Phone](http://www.windowsphone.com/de-de/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458) verfügbar.
+Die Azure Authenticator-App ist für [Windows Phone](http://www.windowsphone.com/en-us/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458) verfügbar.
 
 ## So verwenden Sie eine mobile App als Kontaktmethode
-<ol>
-<li>Wählen Sie in der Dropdownliste "Mobile App" aus.</li>
-
-<center>![Setup](./media/multi-factor-authentication-end-user-first-time-mobile-app/mobileapp.png)</center>
-
-<li>Wählen Sie "Benachrichtigung" oder "Einmalkennwort" aus, und klicken Sie auf "Einrichten".</li>
-<li>Starten Sie die Azure Authenticator-App auf dem Mobiltelefon, auf dem die App installiert ist, und tippen Sie auf "Barcode einlesen".</li>
 
 
-<center>![Setup](./media/multi-factor-authentication-end-user-first-time-mobile-app/scan.png)</center>
+- Wählen Sie in der Dropdownliste "Mobile App" aus.
 
 
-<li>Scannen Sie das Bild mit dem Barcode, das im Bildschirm "Mobile App konfigurieren" angezeigt wird. Klicken Sie auf "Fertig", um den Bildschirm mit dem Barcode zu schließen. Wenn der Barcode nicht gescannt werden kann, können Sie die Informationen manuell eingeben.</li>
+![Einrichtung](./media/multi-factor-authentication-end-user-first-time-mobile-app/mobileapp.png)
 
-<center>![Setup](./media/multi-factor-authentication-end-user-first-time-mobile-app/barcode.png)</center>
+- Wählen Sie "Benachrichtigung" oder "Einmalkennwort" aus, und klicken Sie auf "Einrichten".
+- Starten Sie die Azure Authenticator-App auf dem Mobiltelefon, auf dem die App installiert ist, und tippen Sie auf "Barcode einlesen". Informationen zum Hinzufügen eines Kontos, das bereits über Azure MFA oder ein Drittanbieterkonto verfügt, finden Sie unter [Manuelles Hinzufügen eines Kontos](#adding-an-account-manually).
 
-<li>Die Aktivierung auf dem Mobiltelefon wird gestartet. Sobald der Vorgang abgeschlossen ist, klicken Sie auf "Nehmen Sie Kontakt mit mir auf". Dadurch wird eine Benachrichtigung oder ein Überprüfungscode an Ihr Mobiltelefon gesendet. Klicken Sie auf "Überprüfen".</li>
+![Einrichtung](./media/multi-factor-authentication-end-user-first-time-mobile-app/scan.png)
 
-<center>![Setup](./media/multi-factor-authentication-end-user-first-time-mobile-app/verify.png)</center>
+- Scannen Sie das Bild mit dem Barcode, das im Bildschirm "Mobile App konfigurieren" angezeigt wird. Klicken Sie auf "Fertig", um den Bildschirm mit dem Barcode zu schließen. Wenn der Barcode nicht gescannt werden kann, können Sie die Informationen manuell eingeben.
 
-<li>Klicken Sie auf "Schließen". Die Überprüfung sollte jetzt erfolgreich abgeschlossen sein.</li>
-<li>Jetzt sollten Sie Ihre Mobiltelefonnummer eingeben, falls Sie einmal keinen Zugang zu Ihrer mobilen App mehr haben. <li>Wählen Sie Ihr Land aus der Dropdownliste aus, und geben Sie im Feld neben dem Land Ihre Mobiltelefonnummer ein. Klicken Sie auf "Weiter".</li> <li>Ihre Kontaktmethode ist nun eingerichtet. Als Nächstes richten Sie App-Kennwörter für Nicht-Browser-Apps wie Outlook 2010 oder früher ein. Wenn Sie solche Apps nicht verwenden, klicken Sie auf **Fertig**. Fahren Sie andernfalls mit dem nächsten Schritt fort.</li>
+![Einrichtung](./media/multi-factor-authentication-end-user-first-time-mobile-app/barcode.png)
 
-<center>![Setup](./media/multi-factor-authentication-end-user-first-time-mobile-app/step4.png)</center>
+- Die Aktivierung auf dem Mobiltelefon wird gestartet. Sobald der Vorgang abgeschlossen ist, klicken Sie auf "Nehmen Sie Kontakt mit mir auf". Dadurch wird eine Benachrichtigung oder ein Überprüfungscode an Ihr Mobiltelefon gesendet. Klicken Sie auf "Überprüfen".
 
-<li>Wenn Sie solche Apps verwenden, kopieren Sie das angegebene App-Kennwort und fügen es in die Nicht-Browser-Anwendung ein. Die Schritte für bestimmte Anwendungen wie Outlook und Lync finden Sie unter "Ändern des Kennworts in Ihrer E-Mail in das App-Kennwort" und "Ändern des Kennworts in Ihrer Anwendung in das App-Kennwort".</li>
-<li>Klicken Sie auf Done.</li>
+![Einrichtung](./media/multi-factor-authentication-end-user-first-time-mobile-app/verify.png)
 
-<!---HONumber=July15_HO4-->
+- Klicken Sie auf "Schließen". Die Überprüfung sollte jetzt erfolgreich abgeschlossen sein.
+- Jetzt sollten Sie Ihre Mobiltelefonnummer eingeben, falls Sie einmal keinen Zugang zu Ihrer mobilen App mehr haben.
+- Wählen Sie Ihr Land aus der Dropdownliste aus, und geben Sie im Feld neben dem Land Ihre Mobiltelefonnummer ein. Klicken Sie auf Weiter.
+- Ihre Kontaktmethode ist nun eingerichtet. Als Nächstes richten Sie App-Kennwörter für Nicht-Browser-Apps wie Outlook 2010 oder früher ein. Wenn Sie solche Apps nicht verwenden, klicken Sie auf **Fertig**. Fahren Sie andernfalls mit dem nächsten Schritt fort.
+
+![Einrichtung](./media/multi-factor-authentication-end-user-first-time-mobile-app/step4.png)
+
+- Wenn Sie solche Apps verwenden, kopieren Sie das angegebene App-Kennwort und fügen es in die Nicht-Browser-Anwendung ein. Die Schritte für bestimmte Anwendungen wie Outlook und Lync finden Sie unter "Ändern des Kennworts in Ihrer E-Mail in das App-Kennwort" und "Ändern des Kennworts in Ihrer Anwendung in das App-Kennwort".
+- Klicken Sie auf Done.
+
+
+## Manuelles Hinzufügen eines Kontos
+Wenn Sie ein Konto manuell hinzufügen möchten, wählen Sie die Schaltfläche zum manuellen Eingeben des Kontos aus.
+
+![Einrichtung](./media/multi-factor-authentication-end-user-first-time-mobile-app/addaccount.png)
+
+Wenn Sie ein Konto besitzen, das bereits über Azure MFA verfügt, geben Sie den Code und die URL ein, die auf der Seite mit dem Barcode bereitgestellt werden. Diese werden in der mobilen App in den Feldern für Code und URL eingegeben. Dadurch wird die Aktivierung gestartet.
+
+![Einrichtung](./media/multi-factor-authentication-end-user-first-time-mobile-app/barcode2.png)
+
+Sobald der Vorgang abgeschlossen ist, klicken Sie auf die Schaltfläche zur Kontaktaufnahme. Dadurch wird eine Benachrichtigung oder ein Überprüfungscode an Ihr Mobiltelefon gesendet. Klicken Sie auf "Überprüfen". Befolgen Sie zum Abschluss die oben aufgeführten Schritte, beginnend mit Schritt 6.
+
+Wenn Sie ein Drittanbieterkonto mit der mobilen App verwenden, geben Sie den Kontonamen und den Sicherheitsschlüssel in die entsprechenden Textfelder ein, und aktivieren Sie anschließend das Konto. Sobald Sie das Konto überprüft haben, befolgen Sie die oben aufgeführten Schritte, beginnend mit Schritt 6.
+
+
+![Einrichtung](./media/multi-factor-authentication-end-user-first-time-mobile-app/add3rdparty.png)
+
+>[AZURE.NOTE]Wenn Sie zum Hinzufügen eines Geschäftskontos aufgefordert werden, gilt dies für die Einbindung in den Arbeitsplatz und nicht für die mehrstufige Authentifizierung. Sie können dies ignorieren.
+ 
+
+<!---HONumber=July15_HO5-->

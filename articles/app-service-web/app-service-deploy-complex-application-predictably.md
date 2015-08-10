@@ -27,7 +27,7 @@ Beim Bereitstellen umfassender Anwendungen, die aus stark entkoppelten Microserv
 
 In diesem Lernprogramm werden Sie eine Anwendung bereitstellen, die Folgendes enthält:
 
--	Zwei Web-Apps (d. h. zwei Microservices)
+-	Zwei Web-Apps \(d. h. zwei Microservices\)
 -	Eine Back-End-SQL-Datenbank
 -	App-Einstellungen, Verbindungszeichenfolgen und Quellcodeverwaltung
 -	Application Insights, Warnungen und Einstellungen für die automatische Skalierung
@@ -36,7 +36,7 @@ In diesem Lernprogramm werden Sie eine Anwendung bereitstellen, die Folgendes en
 
 In diesem Lernprogramm verwenden Sie die folgenden Tools. Da dies keine umfassende Erläuterung der Tools ist, wird schwerpunktmäßig das komplette Szenario dargestellt. Sie erhalten eine kurze Einführung zu allen Tools und erfahren, wo Sie weiterführende Informationen finden.
 
-### Azure-Ressourcen-Manager-Vorlagen (JSON) ###
+### Azure-Ressourcen-Manager-Vorlagen \(JSON\) ###
  
 Jedes Mal, wenn Sie beispielsweise eine Web-App in Azure App Service erstellen, verwendet der Azure-Ressourcen-Manager eine JSON-Vorlage zum Erstellen der gesamten Ressourcengruppe mit den Komponentenressourcen. Eine komplexe Vorlage aus [Azure Marketplace](/marketplace) wie die App [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) kann die MySQL-Datenbank, Speicherkonten, den App Service-Plan, die Web-App selbst, Warnregeln, App-Einstellungen, Einstellungen für die automatische Skalierung und mehr enthalten, und alle diese Vorlagen stehen Ihnen über PowerShell zur Verfügung. Informationen zum Herunterladen und Verwenden dieser Vorlagen finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
 
@@ -44,7 +44,7 @@ Weitere Informationen zu den Azure-Ressourcen-Manager-Vorlagen finden Sie unter 
 
 ### Azure SDK 2.6 für Visual Studio ###
 
-Das neueste SDK enthält Verbesserungen für die Unterstützung von Ressourcen-Manager-Vorlagen im JSON-Editor. Sie können damit schnell eine Ressourcengruppenvorlage ganz neu erstellen oder eine vorhandene JSON-Vorlage (z. B. eine heruntergeladene Katalogvorlage) zur Bearbeitung öffnen, die Parameterdatei füllen und sogar die Ressourcengruppe direkt aus einer Azure-Ressourcengruppenlösung bereitstellen.
+Das neueste SDK enthält Verbesserungen für die Unterstützung von Ressourcen-Manager-Vorlagen im JSON-Editor. Sie können damit schnell eine Ressourcengruppenvorlage ganz neu erstellen oder eine vorhandene JSON-Vorlage \(z. B. eine heruntergeladene Katalogvorlage\) zur Bearbeitung öffnen, die Parameterdatei füllen und sogar die Ressourcengruppe direkt aus einer Azure-Ressourcengruppenlösung bereitstellen.
 
 Weitere Informationen finden Sie im [Azure SDK 2.6 für Visual Studio](/blog/2015/04/29/announcing-the-azure-sdk-2-6-for-net/).
 
@@ -97,7 +97,7 @@ Alles, was Sie gerade in wenigen Minuten gesehen haben, ist eine vollständig be
 
 Sie können diese Anwendung Dutzende, Hunderte oder Tausende Male bereitstellen und erhalten jedes Mal genau die gleiche Konfiguration. Durch die Wiederholbarkeit und die Vorhersagbarkeit dieses Ansatzes können Sie hochgradig skalierbare Anwendungen einfach und zuverlässig bereitstellen.
 
-## Untersuchen (oder Bearbeiten) von AZUREDEPLOY.JSON ##
+## Untersuchen \(oder Bearbeiten\) von AZUREDEPLOY.JSON ##
 
 Jetzt sehen wir uns an, wie das GitHub-Repository eingerichtet wurde. Verwenden Sie den JSON-Editor im Azure .NET SDK. Wenn Sie das [Azure .NET SDK 2.6](/downloads/) noch nicht installiert haben, holen Sie dies jetzt nach.
 
@@ -121,11 +121,11 @@ Im Ressourcenknoten sehen Sie, dass vier Ressourcen der obersten Ebene definiert
 
 #### App Service-Plan ####
 
-Beginnen wir mit einer einfachen Ressource auf Stammebene in JSON. Klicken Sie in der JSON-Gliederung auf den App Service-Plan mit dem Namen **[hostingPlanName]**, um den entsprechenden JSON-Code zu markieren.
+Beginnen wir mit einer einfachen Ressource auf Stammebene in JSON. Klicken Sie in der JSON-Gliederung auf den App Service-Plan mit dem Namen **\[hostingPlanName\]**, um den entsprechenden JSON-Code zu markieren.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-3-appserviceplan.png)
 
-Beachten Sie, dass das `type`-Element die Zeichenfolge für einen App Service-Plan angibt (wurde früher als Serverfarm bezeichnet). Andere Elemente und Eigenschaften werden mit den in der JSON-Datei definierten Parametern ausgefüllt, und diese Ressource weist keine geschachtelten Ressourcen auf.
+Beachten Sie, dass das `type`-Element die Zeichenfolge für einen App Service-Plan angibt \(wurde früher als Serverfarm bezeichnet\). Andere Elemente und Eigenschaften werden mit den in der JSON-Datei definierten Parametern ausgefüllt, und diese Ressource weist keine geschachtelten Ressourcen auf.
 
 >[AZURE.NOTE]Beachten Sie außerdem, dass der Wert von `apiVersion` Azure mitteilt, mit welcher Version der REST-API die JSON-Ressourcendefinition verwendet wird. Dies kann beeinflussen, wie die Ressource innerhalb von `{}` formatiert werden muss.
 
@@ -147,7 +147,7 @@ Beachten Sie Folgendes im Zusammenhang mit dem hervorgehobenen JSON-Code:
 
 #### Web-App ####
 
-Betrachten wir nun die tatsächlichen Web-Apps selbst, die komplizierter sind. Klicken Sie in der JSON-Gliederung auf die [variables('apiSiteName')]-Web-App, um deren JSON-Code zu markieren. Sie werden feststellen, dass die Dinge viel interessanter werden. Daher werden die Features einzeln erläutert:
+Betrachten wir nun die tatsächlichen Web-Apps selbst, die komplizierter sind. Klicken Sie in der JSON-Gliederung auf die \[variables\('apiSiteName'\)\]-Web-App, um deren JSON-Code zu markieren. Sie werden feststellen, dass die Dinge viel interessanter werden. Daher werden die Features einzeln erläutert:
 
 ##### Stammressource #####
 
@@ -174,19 +174,19 @@ Die Verbindungszeichenfolgen werden auch als geschachtelte Ressource definiert.
 
 Im `properties`-Element für `config/connectionstrings` ist jede Verbindungszeichenfolge auch als Name-Wert-Paar im Format `“<name>” : {“value”: “…”, “type”: “…”}` definiert. Mögliche Werte für das `type`-Element sind `MySql`, `SQLServer`, `SQLAzure` und `Custom`.
 
->[AZURE.TIP]Eine endgültige Liste der Typen von Verbindungszeichenfolgen erhalten Sie, indem Sie den folgenden Befehl in Azure PowerShell ausführen: [Enum]::GetNames("Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.DatabaseType")
+>[AZURE.TIP]Eine endgültige Liste der Typen von Verbindungszeichenfolgen erhalten Sie, indem Sie den folgenden Befehl in Azure PowerShell ausführen: \[Enum\]::GetNames\("Microsoft.WindowsAzure.Commands.Utilities.Websites.Services.WebEntities.DatabaseType"\)
     
 ##### Quellcodeverwaltung #####
 
-Die Einstellungen für die Quellcodeverwaltung werden auch als geschachtelte Ressource definiert. Der Azure-Ressourcen-Manager verwendet diese Ressource, um die kontinuierliche Veröffentlichung zu konfigurieren (weitere Informationen finden Sie unter den Hinweisen zu `IsManualIntegration` weiter unten), und auch, um die automatische Bereitstellung von Anwendungscode während der Verarbeitung der JSON-Datei zu starten.
+Die Einstellungen für die Quellcodeverwaltung werden auch als geschachtelte Ressource definiert. Der Azure-Ressourcen-Manager verwendet diese Ressource, um die kontinuierliche Veröffentlichung zu konfigurieren \(weitere Informationen finden Sie unter den Hinweisen zu `IsManualIntegration` weiter unten\), und auch, um die automatische Bereitstellung von Anwendungscode während der Verarbeitung der JSON-Datei zu starten.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-8-webappsourcecontrol.png)
 
 `RepoUrl` und `branch` sollten ziemlich selbsterklärend sein und auf das Git-Repository und den Namen der Verzweigung für die Veröffentlichung verweisen. Auch sie werden durch Eingabeparameter definiert.
 
-Beachten Sie im `dependsOn`-Element, dass zusätzlich zur Abhängigkeit von der Web-App-Ressource selbst `sourcecontrols/web` auch von `config/appsettings` und `config/connectionstrings` abhängt. Der Grund hierfür ist, dass, sobald `sourcecontrols/web` konfiguriert ist, der Azure-Bereitstellungsprozess automatisch versucht, den Anwendungscode bereitzustellen, zu erstellen und zu starten. Daher können Sie durch das Einfügen dieser Abhängigkeit sicherstellen, dass die Anwendung über Zugriff auf die erforderlichen App-Einstellungen und Verbindungszeichenfolgen verfügt, bevor der Anwendungscode ausgeführt wird. [Aufgabe: Sie müssen überprüfen, ob dies der Fall ist.]
+Beachten Sie im `dependsOn`-Element, dass zusätzlich zur Abhängigkeit von der Web-App-Ressource selbst `sourcecontrols/web` auch von `config/appsettings` und `config/connectionstrings` abhängt. Der Grund hierfür ist, dass, sobald `sourcecontrols/web` konfiguriert ist, der Azure-Bereitstellungsprozess automatisch versucht, den Anwendungscode bereitzustellen, zu erstellen und zu starten. Daher können Sie durch das Einfügen dieser Abhängigkeit sicherstellen, dass die Anwendung über Zugriff auf die erforderlichen App-Einstellungen und Verbindungszeichenfolgen verfügt, bevor der Anwendungscode ausgeführt wird. \[Aufgabe: Sie müssen überprüfen, ob dies der Fall ist.\]
 
->[AZURE.NOTE]Beachten Sie auch, dass `IsManualIntegration` auf `true` festgelegt ist. Diese Eigenschaft ist in diesem Lernprogramm erforderlich, da Sie das GitHub-Repository nicht besitzen und daher Azure nicht die Berechtigung erteilen können, die kontinuierliche Veröffentlichung von [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) zu konfigurieren (d. h. automatische Updates im Repository in Azure zu übernehmen). Sie können den Standardwert `false` für das angegebene Repository nur verwenden, wenn Sie die GitHub-Anmeldeinformationen für den Besitzer zuvor im [Azure-Vorschauportal](https://portal.azure.com) konfiguriert haben. Anders ausgedrückt, wenn Sie zuvor mit Ihren Benutzeranmeldeinformationen die Quellcodeverwaltung für GitHub oder BitBucket für eine App im [Azure-Vorschauportal](https://portal.azure.com) eingerichtet haben, werden die Anmeldeinformationen in Azure gespeichert und verwendet, wenn Sie später eine App über GitHub oder BitBucket bereitstellen. Wenn dies jedoch noch nicht geschehen ist, schlägt die Bereitstellung der JSON-Vorlage fehl, wenn der Azure-Ressourcen-Manager versucht, die Quellcodeeinstellungen der Web-App zu konfigurieren, da mit den Anmeldeinformationen des Repositorybesitzers eine Anmeldung bei GitHub oder BitBucket nicht möglich ist.
+>[AZURE.NOTE]Beachten Sie auch, dass `IsManualIntegration` auf `true` festgelegt ist. Diese Eigenschaft ist in diesem Lernprogramm erforderlich, da Sie das GitHub-Repository nicht besitzen und daher Azure nicht die Berechtigung erteilen können, die kontinuierliche Veröffentlichung von [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) zu konfigurieren \(d. h. automatische Updates im Repository in Azure zu übernehmen\). Sie können den Standardwert `false` für das angegebene Repository nur verwenden, wenn Sie die GitHub-Anmeldeinformationen für den Besitzer zuvor im [Azure-Vorschauportal](https://portal.azure.com) konfiguriert haben. Anders ausgedrückt, wenn Sie zuvor mit Ihren Benutzeranmeldeinformationen die Quellcodeverwaltung für GitHub oder BitBucket für eine App im [Azure-Vorschauportal](https://portal.azure.com) eingerichtet haben, werden die Anmeldeinformationen in Azure gespeichert und verwendet, wenn Sie später eine App über GitHub oder BitBucket bereitstellen. Wenn dies jedoch noch nicht geschehen ist, schlägt die Bereitstellung der JSON-Vorlage fehl, wenn der Azure-Ressourcen-Manager versucht, die Quellcodeeinstellungen der Web-App zu konfigurieren, da mit den Anmeldeinformationen des Repositorybesitzers eine Anmeldung bei GitHub oder BitBucket nicht möglich ist.
 
 ## Vergleichen der JSON-Vorlage mit der bereitgestellten Ressourcengruppe ##
 
@@ -206,9 +206,9 @@ Die geschachtelten Ressourcen sollten wieder eine Hierarchie aufweisen, die der 
 
 Die Schaltfläche **Deploy to Azure** ist großartig, aber sie können damit die Ressourcengruppenvorlage nur in "azuredeploy.json" bereitstellen, wenn Sie "azuredeploy.json" bereits in GitHub abgelegt haben. Das Azure .NET SDK stellt außerdem Tools zur Verfügung, um JSON-Vorlagendateien direkt über Ihren lokalen Computer bereitzustellen. Führen Sie dazu die folgenden Schritte aus:
 
-1.	Klicken Sie in Visual Studio auf **Datei** > **Neu** > **Projekt**.
+1.	Klicken Sie in Visual Studio auf **Datei** \> **Neu** \> **Projekt**.
 
-2.	Klicken Sie auf **Visual C#** > **Cloud** > **Azure-Ressourcengruppe** und dann auf **OK**.
+2.	Klicken Sie auf **Visual C\#** \> **Cloud** \> **Azure-Ressourcengruppe** und dann auf **OK**.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-1-vsproject.png)
 
@@ -240,11 +240,11 @@ Die Schaltfläche **Deploy to Azure** ist großartig, aber sie können damit die
 
 10.	Klicken Sie in der JSON-Gliederung auf **CPUHigh appInsights**, um den JSON-Code zu markieren. Dies ist eine Warnung.
 
-11.	Suchen Sie nach den Eigenschaften `location` und `isEnabled`, und legen Sie sie wie unten dargestellt fest. Gehen Sie auf diese Weise für die anderen drei Warnungen vor (lila Glühbirnen).
+11.	Suchen Sie nach den Eigenschaften `location` und `isEnabled`, und legen Sie sie wie unten dargestellt fest. Gehen Sie auf diese Weise für die anderen drei Warnungen vor \(lila Glühbirnen\).
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-7-alerts.png)
 
-12.	Jetzt können Sie mit der Bereitstellung beginnen. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **Bereitstellen** > **Neue Bereitstellung** aus.
+12.	Jetzt können Sie mit der Bereitstellung beginnen. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **Bereitstellen** \> **Neue Bereitstellung** aus.
 
 	![](./media/app-service-deploy-complex-application-predictably/deploy-8-newdeployment.png)
 
@@ -274,7 +274,7 @@ Mit den Schritten in diesem Abschnitt haben Sie im Wesentlichen Folgendes erreic
 2.	Eine Parameterdatei für die Vorlagendatei erstellt
 3.	Die Vorlagendatei mit der Parameterdatei bereitgestellt
 
-Der letzte Schritt kann mühelos durch ein PowerShell-Cmdlet erledigt werden. Um zu sehen, was in Visual Studio bei der Bereitstellung der Anwendung ausgeführt wurde, öffnen Sie "Scripts\Deploy AzureResourceGroup.ps1". Es ist viel Code vorhanden, ich werde aber nur den relevanten Code markieren, den Sie benötigen, um die Vorlagendatei mit der Parameterdatei bereitzustellen.
+Der letzte Schritt kann mühelos durch ein PowerShell-Cmdlet erledigt werden. Um zu sehen, was in Visual Studio bei der Bereitstellung der Anwendung ausgeführt wurde, öffnen Sie "Scripts\\Deploy AzureResourceGroup.ps1". Es ist viel Code vorhanden, ich werde aber nur den relevanten Code markieren, den Sie benötigen, um die Vorlagendatei mit der Parameterdatei bereitzustellen.
 
 ![](./media/app-service-deploy-complex-application-predictably/deploy-12-powershellsnippet.png)
 
@@ -297,11 +297,11 @@ Erfahren Sie, wie Sie [agile Methoden umsetzen und Ihre aus Microservices besteh
 -	[Erweiterte Vorlagenvorgänge](../resource-group-advanced-template.md)
 -	[Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](../resource-group-template-deploy.md)
 -	[Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
--	[Troubleshooting Resource Group Deployments in Azure](../resource-group-deploy-debug.md) (Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)
+-	[Troubleshooting Resource Group Deployments in Azure](../resource-group-deploy-debug.md) \(Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure\)
 
 
 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

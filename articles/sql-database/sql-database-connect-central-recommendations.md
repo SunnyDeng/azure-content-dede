@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/21/2015" 
+	ms.date="07/24/2015" 
 	ms.author="genemi"/>
 
 
@@ -88,9 +88,9 @@ Während dieses Vorgangs ist die Datenbank möglicherweise vorübergehend nicht 
 Wenn in SQL-Datenbank ein Fehler auftritt, wird eine [SqlException](https://msdn.microsoft.com/library/system.data.sqlclient.sqlexception.aspx) ausgelöst. Die `SqlException` enthält einen numerischen Fehlercode in der **Number**-Eigenschaft. Wenn der Fehlercode einen vorübergehenden Fehler bezeichnet, sollte die Anwendung den Aufruf wiederholen.
 
 
-- [Fehlermeldungen (Azure SQL-Datenbank)](http://msdn.microsoft.com/library/azure/ff394106.aspx)
+- [Fehlermeldungen für Clientprogramme der SQL-Datenbank](sql-database-develop-error-messages.md)
  - Der Abschnitt **Vorübergehende Fehler, Fehler bei Verbindungsabbruch** enthält eine Liste der vorübergehenden Fehler, bei denen sich automatische Wiederholungsversuche empfehlen.
- - Führen Sie beispielsweise eine Wiederholung durch, wenn Fehler Nummer 40613 auftritt, der in etwa besagt: <br/>* Datenbank "mydatabase" auf Server "Server" ist derzeit nicht verfügbar.*
+ - Führen Sie beispielsweise eine Wiederholung durch, wenn Fehler Nummer 40613 auftritt, der in etwa besagt: <br/>\* Datenbank "mydatabase" auf Server "Server" ist derzeit nicht verfügbar.\*
 
 
 *Vorübergehende Fehler* werden mitunter auch englisch als *Transient Faults* bezeichnet. In diesem Thema werden die beiden Begriffe als Synonyme angesehen.
@@ -135,7 +135,7 @@ Die Wiederholungslogik des Gateways hat einige vorübergehende Fehler behandelt.
  - Enthält Links zu Codebeispielen mit Wiederholungslogik und zu einfacheren Beispiele, die das Herstellen von Verbindungen und die Abfrage verdeutlichen.
 - [Vorgehensweise: Zuverlässiges Herstellen einer Verbindung mit Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn864744.aspx)
 - [Vorgehensweise: Herstellen einer Verbindung mit Azure SQL-Datenbank mithilfe von ADO.NET mit Enterprise Library](http://msdn.microsoft.com/library/azure/dn961167.aspx)
-- [Vorgehensweise: Herstellen einer Verbindung mit Azure SQL-Datenbank mithilfe von ADO.NET](http://msdn.microsoft.com/library/azure/ee336243.aspx)
+- [Codebeispiel: Wiederholungslogik in C\# für das Herstellen einer Verbindung mit einer SQL-Datenbank](sql-database-develop-csharp-retry-windows.md)
 
 
 ## Technologien
@@ -147,7 +147,7 @@ Die folgenden Themen enthalten Links zu Codebeispielen für mehrere Sprachen und
 Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unterschiedliche Codebeispiele angegeben.
 
 
-**Allgemeine Beispiele:** Es gibt Codebeispiele für eine Vielzahl von Programmiersprachen, einschließlich PHP, Python, Node.js und .NET C#. Darüber hinaus gibt es Beispiele für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden.
+**Allgemeine Beispiele:** Es gibt Codebeispiele für eine Vielzahl von Programmiersprachen, einschließlich PHP, Python, Node.js und .NET C\#. Darüber hinaus gibt es Beispiele für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden.
 
 
 - [Codebeispiele für die Cliententwicklung und erste Schritte mit SQL-Datenbanken](sql-database-develop-quick-start-client-code-samples.md)
@@ -164,14 +164,14 @@ Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unt
 **Treiberbibliotheken:** Informationen zu Verbindungstreiberbibliotheken, einschließlich empfohlener Versionen, finden Sie unter:
 
 
-- [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)
+- [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) \(Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache\)
 
 
 ## Siehe auch
 
 
-- [Create your first Azure SQL Database](sql-database-get-started.md) (Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache)
+- [Create your first Azure SQL Database](sql-database-get-started.md) \(Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache\)
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

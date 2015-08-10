@@ -21,7 +21,7 @@ SQL Data Warehouse bietet zahlreiche Optionen zum Laden von Daten für eine Viel
 
 - Große Batches einmal pro Tag
 - Kleinere Batches im Lauf des Tages
-- Einfache Updates für (dimensional) kleinere Tabellen
+- Einfache Updates für \(dimensional\) kleinere Tabellen
 
 Die Anforderungen der einzelnen Szenarios sind ebenso vielfältig wie die Arten der Daten, die in SQL Data Warehouse geladen werden sollen. In diesem Artikel werden einige der Möglichkeiten aufgelistet, die Sie für das Laden von Daten haben.
 
@@ -31,10 +31,10 @@ SQL Data Warehouse unterstützt diese Standardtools zum Laden von Daten:
 - Azure Data Factory
 - Befehlszeilenprogramm bcp
 - PolyBase
-- SQL Server Integration Services (SSIS)
+- SQL Server Integration Services \(SSIS\)
 - Drittanbietertools zum Laden von Daten
 
-### Azure Data Factory (ADF)
+### Azure Data Factory \(ADF\)
 ADF ist ein vollständig verwalteter Dienst für das Kombinieren von Diensten zur Datenspeicherung, Datenverarbeitung und Datenverschiebung in optimierten, skalierbaren und zuverlässigen Datenproduktions-Pipelines. SQL Data Warehouse ist eine [unterstützte Quelle/Senke][] für ADF-[Kopieraktivitäten][].
 
 ### Befehlszeilenprogramm bcp
@@ -43,8 +43,8 @@ Die ausführbare Befehlszeilendatei **bcp** ist ein Microsoft-Dienstprogramm zum
 ### PolyBase
 PolyBase ist eine Microsoft-Technologie zur Vereinfachung von Datenanalysen durch eine Möglichkeit zum Abfragen von Blob-Speicher in Hadoop und Azure Storage mit standardmäßigem Transact-SQL und ohne MapReduce. PolyBase kann auch Daten aus dem Azure-Blob-Speicher in SQL Data Warehouse laden. Zum Einstieg befolgen Sie das Lernprogramm [Laden mit PolyBase][].
 
-### SQL Server Integration Services (SSIS)
-[SSIS][] ist eine Plattform zum Erstellen von Integrations- und Transformationslösungen auf Unternehmensebene. Um Pakete zu erstellen, die Verbindungen mit SQL Data Warehouse herstellen, verwenden Sie den standardmäßigen [OLE DB-Zieladapter] [] mithilfe des ADO.Net-Verbindungsmanagers.
+### SQL Server Integration Services \(SSIS\)
+[SSIS][] ist eine Plattform zum Erstellen von Integrations- und Transformationslösungen auf Unternehmensebene. Um Pakete zu erstellen, die Verbindungen mit SQL Data Warehouse herstellen, verwenden Sie den standardmäßigen \[OLE DB-Zieladapter\] \[\] mithilfe des ADO.Net-Verbindungsmanagers.
 
 ### Drittanbietertools
 SQL Data Warehouse unterstützt führende Branchenlösungen für das Laden von Daten. Weitere Einzelheiten finden Sie in unserer Liste der [Lösungspartner][].
@@ -69,4 +69,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -20,7 +20,7 @@
 
 Für die Verwendung von Microsoft Azure DocumentDB benötigen Sie ein [DocumentDB-Konto](documentdb-create-account.md), eine [Datenbank](documentdb-create-database.md), eine Sammlung und Dokumente. Dieses Thema beschreibt die Erstellung einer DocumentDB-Sammlung im Azure-Vorschauportal.
 
-Sammlungen müssen nicht über das Vorschauportal erstellt werden. Sie können diese auch mithilfe der [DocumentDB-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) erstellen. Ein C#-Codebeispiel, das veranschaulicht, wie eine Sammlung mit dem DocumentDB .NET SDK erstellt wird, finden Sie in der Datei [Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/CollectionManagement/Program.cs) im CollectionManagement-Projekt. Dieses steht im Repository [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net) auf [GitHub.com](https://github.com) zur Verfügung.
+Sammlungen müssen nicht über das Vorschauportal erstellt werden. Sie können diese auch mithilfe der [DocumentDB-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) erstellen. Ein C\#-Codebeispiel, das veranschaulicht, wie eine Sammlung mit dem DocumentDB .NET SDK erstellt wird, finden Sie in der Datei [Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/CollectionManagement/Program.cs) im CollectionManagement-Projekt. Dieses steht im Repository [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net) auf [GitHub.com](https://github.com) zur Verfügung.
 
 1.  Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf **Alle durchsuchen**.
 
@@ -58,8 +58,8 @@ Nachdem Sie nun über eine Sammlung verfügen, besteht der nächste Schritt dari
 
 - Sie können [Dokumente hinzufügen](../documentdb-view-json-document-explorer.md), indem Sie den Dokument-Explorer im Vorschauportal verwenden.
 - Sie können [Dokumente und Daten importieren](documentdb-import-data.md), indem Sie das Datenmigrationstool für DocumentDB verwenden, mit dem Sie JSON- und CSV-Dateien importieren können. Sie können auch Daten aus SQL Server, MongoDB, dem Azure-Tabellenspeicher und anderen DocumentDB-Sammlungen importieren. 
-- Sie können Dokumente auch mithilfe eines der [DocumentDB-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) hinzufügen. DocumentDB verfügt über SDKs für .NET, Java, Python, Node.js und JavaScript-API. Die Datei [Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/DocumentManagement/Program.cs) im Projekt „DatabaseManagement“ (steht im Repository [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net) auf [GitHub.com](https://github.com) zur Verfügung) veranschaulicht CRUD-Vorgänge für Dokumente mit dem DocumentDB .NET SDK.
+- Sie können Dokumente auch mithilfe eines der [DocumentDB-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) hinzufügen. DocumentDB verfügt über SDKs für .NET, Java, Python, Node.js und JavaScript-API. Die Datei [Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/DocumentManagement/Program.cs) im Projekt „DatabaseManagement“ \(steht im Repository [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net) auf [GitHub.com](https://github.com) zur Verfügung\) veranschaulicht CRUD-Vorgänge für Dokumente mit dem DocumentDB .NET SDK.
 
 Nachdem eine Sammlung Dokumente enthält, können Sie in [DocumentDB SQL](documentdb-sql-query.md) an den Dokumenten [Abfragen ausführen](documentdb-sql-query.md#executing-queries), indem Sie den [Abfrage-Explorer](documentdb-query-collections-query-explorer.md) im Vorschauportal, die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) verwenden.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

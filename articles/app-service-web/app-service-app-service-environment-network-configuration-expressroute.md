@@ -28,7 +28,7 @@ App Service-Umgebungen erfordern für einen ordnungsgemäßen Betrieb Folgendes:
 
 
 -  Ausgehende Netzwerkverbindungen mit Azure-Speicher- und SQL-Datenbankressourcen, die sich in der gleichen Region wie die App Service-Umgebung befinden. Dieser Netzwerkpfad kann nicht durch interne Unternehmensproxys laufen, da sich dabei wahrscheinlich die tatsächliche NAT-Adresse des ausgehenden Netzwerkdatenverkehrs ändert. Durch Ändern der NAT-Adresse des ausgehendem Netzwerkdatenverkehrs einer App Service-Umgebung zu Azure-Speicher- und SQL-Datenbankendpunkten werden Verbindungsfehler verursacht.
--  Die DNS-Konfiguration für das virtuelle Netzwerk muss Endpunkte in den folgenden von Azure gesteuerten Domänen auflösen können: **. file.core.windows.net*, **. blob.core.windows.net*, **. database.windows.net*.-  Die DNS-Konfiguration für das virtuelle Netzwerk muss stabil bleiben, wenn App Service-Umgebungen erstellt werden. Das gilt auch für Neukonfigurationen und Skalierungsänderungen an App Service-Umgebungen.   
+-  Die DNS-Konfiguration für das virtuelle Netzwerk muss Endpunkte in den folgenden von Azure gesteuerten Domänen auflösen können: **. file.core.windows.net\*, **. blob.core.windows.net\*, **. database.windows.net\*.-  Die DNS-Konfiguration für das virtuelle Netzwerk muss stabil bleiben, wenn App Service-Umgebungen erstellt werden. Das gilt auch für Neukonfigurationen und Skalierungsänderungen an App Service-Umgebungen.   
 -  Eingehender Netzwerkzugriff auf die erforderlichen Ports für App Service-Umgebungen muss entsprechend diesem [Artikel][requiredports] zugelassen werden.
 
 Die DNS-Anforderungen können erfüllt werden, indem eine gültige DNS-Konfiguration für das virtuelle Netzwerk gewährleistet wird.
@@ -40,7 +40,7 @@ In der Standardeinstellung kündigt eine neu erstellte ExpressRoute-Verbindung e
 
 Eine gängige Kundenkonfiguration sieht hingegen das Definieren einer eigenen Standardroute vor, die ausgehenden Internetdatenverkehr stattdessen zwingt, die lokale Proxy-/Firewallinfrastruktur eines Kunden zu durchlaufen. Bei diesem Datenfluss funktionieren App Service-Umgebungen nicht mehr, da ausgehender Datenverkehr entweder lokal blockiert oder mittels NAT in eine nicht mehr nachvollziehbare Gruppe von Adressen übersetzt wird, die nicht mehr mit verschiedenen Azure-Endpunkten funktionieren.
 
-Die Lösung besteht darin, eine (oder mehrere) benutzerdefinierten Routen im Subnetz zu definieren, das die App Service-Umgebung enthält. Eine benutzerdefinierte Route definiert subnetzspezifische Routen, die anstelle der Standardroute berücksichtigt werden.
+Die Lösung besteht darin, eine \(oder mehrere\) benutzerdefinierten Routen im Subnetz zu definieren, das die App Service-Umgebung enthält. Eine benutzerdefinierte Route definiert subnetzspezifische Routen, die anstelle der Standardroute berücksichtigt werden.
 
 Hintergrundinformationen zu benutzerdefinierten Routen finden Sie in dieser [Übersicht][UDROverview].
 
@@ -50,7 +50,7 @@ Details zum Erstellen und Konfigurieren benutzerdefinierter Routen finden Sie in
 
 **Voraussetzungen**
 
-1. Installieren Sie die aktuellste Azure PowerShell über die [Seite mit den Azure-Downloads][AzureDownloads] (vom Juni 2015 oder später). Unter "Befehlszeilentools" befindet sich unter "Windows PowerShell" der Link "Installieren", über den die aktuellen PowerShell-Cmdlets installiert werden.
+1. Installieren Sie die aktuellste Azure PowerShell über die [Seite mit den Azure-Downloads][AzureDownloads] \(vom Juni 2015 oder später\). Unter "Befehlszeilentools" befindet sich unter "Windows PowerShell" der Link "Installieren", über den die aktuellen PowerShell-Cmdlets installiert werden.
 
 2. Es wird empfohlen, ein eindeutiges Subnetz für die ausschließliche Verwendung durch eine App Service-Umgebung zu erstellen. Dadurch wird sichergestellt, dass die im Subnetz eingerichteten benutzerdefinierten Routen nur für ausgehenden Datenverkehr für die App Service-Umgebung geöffnet werden.
 3. **Wichtig**: Stellen Sie die App-Service-Umgebung erst bereit, **nachdem** die folgenden Konfigurationsschritte erfolgt sind. Dadurch wird sichergestellt, dass ausgehende Netzwerkverbindungen verfügbar sind, bevor Sie versuchen, eine App Service-Umgebung bereitzustellen.
@@ -111,8 +111,8 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [UDROverview]: http://azure.microsoft.com/documentation/articles/virtual-networks-udr-overview/
 [UDRHowTo]: http://azure.microsoft.com/documentation/articles/virtual-networks-udr-how-to/
 [HowToCreateAnAppServiceEnvironment]: http://azure.microsoft.com/documentation/articles/app-service-web-how-to-create-an-app-service-environment/
-[AzureDownloads]: http://azure.microsoft.com/downloads/
-[DownloadCenterAddressRanges]: http://www.microsoft.com/de-de/download/details.aspx?id=41653
+[AzureDownloads]: http://azure.microsoft.com/en-us/downloads/
+[DownloadCenterAddressRanges]: http://www.microsoft.com/en-us/download/details.aspx?id=41653
 [NetworkSecurityGroups]: https://msdn.microsoft.com/library/azure/dn848316.aspx
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
 [IntroToAppServiceEnvironment]: http://azure.microsoft.com/documentation/articles/app-service-app-service-environment-intro/
@@ -120,4 +120,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 <!-- IMAGES -->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

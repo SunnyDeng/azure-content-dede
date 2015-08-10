@@ -1,75 +1,59 @@
-<properties 
-   pageTitle="Configure RBS for the StorSimple Adapter for SharePoint | Microsoft Azure"
-   description="Describes how to install the StorSimple Adapter for SharePoint in a SharePoint server farm."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="carolz"
-   editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="07/17/2015"
-   ms.author="v-sharos" />
 
->[AZURE.NOTE] When making changes to the StorSimple Adapter for SharePoint RBS configuration, you must be logged on with a user account that belongs to the Domain Admins group. Additionally, you must access the configuration page from a browser running on the same host as Central Administration.
+>[AZURE.NOTE]Wenn Sie den StorSimple-Adapter für die SharePoint-RBS-Konfiguration ändern möchten, müssen Sie mit einem Benutzerkonto angemeldet sein, das der Domänenadministratorgruppe angehört. Darüber hinaus müssen Sie die Konfigurationsseite in einem Browser öffnen, der auf dem gleichen Host ausgeführt wird wie die Zentraladministration.
 
-#### To configure RBS
+#### So konfigurieren Sie RBS
 
-1. Open the SharePoint Central Administration page, and browse to **System Settings**. 
+1. Öffnen Sie die SharePoint-Zentraladministration, und navigieren Sie zu **Systemeinstellungen**. 
 
-2. In the **Azure StorSimple** section, click **Configure StorSimple Adapter**.
+2. Klicken Sie im Abschnitt **Azure StorSimple** auf **StorSimple-Adapter konfigurieren**.
 
-    ![Configure the StorSimple Adapter](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS1-include.png) 
+    ![Konfigurieren des StorSimple-Adapters](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS1-include.png)
 
-3. On the **Configure StorSimple Adapter** page:
+3. Gehen Sie auf der Seite **StorSimple-Adapter konfigurieren** wie folgt vor:
 
-    1. Make sure that the **Enable editing path** check box is selected.
+    1. Vergewissern Sie sich, dass das Kontrollkästchen **Bearbeitungspfad aktivieren** aktiviert ist.
 
-    2. In the text box, type the Universal Naming Convention (UNC) path of the BLOB store.
+    2. Geben Sie im Textfeld den UNC-Pfad des BLOB-Speichers ein.
 
-          >[AZURE.NOTE] The BLOB store volume must be hosted on an iSCSI volume configured on the StorSimple device.
+          \>[AZURE.NOTE]Das BLOB-Speichervolume muss auf einem auf dem StorSimple-Gerät konfigurierten iSCSI-Volume gehostet werden.
 
-    3. Click the **Enable** button below each of the content databases that you want to configure for remote storage.
+    3. Klicken Sie unter jeder Inhaltsdatenbank, die Sie für Remotespeicher konfigurieren möchten, auf die Schaltfläche **Aktivieren**.
 
-          >[AZURE.NOTE] The BLOB store must be shared and reachable by all web front-end (WFE) servers, and the user account that is configured for the SharePoint server farm must have access to the share.
+          \>[AZURE.NOTE]Der BLOB-Speicher muss freigegeben und für Web-Front-End \(WFE\)-Server erreichbar sein, und das für die SharePoint-Serverfarm konfigurierte Benutzerkonto muss Zugriff auf die Freigabe haben.
 
-          ![Enable the RBS provider](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS2-include.png)
+          ![Aktivieren des RBS-Anbieters](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS2-include.png)
 
-           When you enable or disable RBS, you will also see the following message.
+           Beim Aktivieren oder Deaktivieren von RBS erscheint die folgende Meldung:
 
-          ![Configure StorSimple Adapter Enable Disable](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_ConfigureStorSimpleAdapterEnableDisableMessage-include.png)
+          ![Konfigurieren des StorSimple-Adapters \(aktivieren/deaktivieren\)](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_ConfigureStorSimpleAdapterEnableDisableMessage-include.png)
 
-    4. Click the **Update** button to apply the configuration. When you click the **Update** button, the RBS configuration status will be updated on all WFE servers, and the entire farm will be RBS-enabled. The following message appears.
+    4. Klicken Sie auf die Schaltfläche **Aktualisieren**, um die Konfiguration anzuwenden. Wenn Sie auf die Schaltfläche „Aktualisieren“ klicken, wird der Status der RBS-Konfiguration auf allen WFE-Servern aktualisiert, und RBS wird in der gesamten Farm aktiviert. Die folgende Meldung wird angezeigt.
 
-           ![Adapter configuration message](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS3-include.png)
+           ![Adapterkonfigurationsmeldung](./media/storsimple-sharepoint-adapter-configure-rbs/HCS_SSASP_ConfigRBS3-include.png)
 
-           >[AZURE.NOTE] If you are configuring RBS for a SharePoint farm with a very large number of databases (greater than 200), the SharePoint Central Administration web page might time out. If that occurs, refresh the page. This does not affect the configuration process.
+           \>[AZURE.NOTE]Wenn Sie RBS für eine SharePoint-Farm konfigurieren, die mehr als 200 Datenbanken enthält, tritt auf der Webseite „SharePoint-Zentraladministration“ unter Umständen ein Timeout auf. Aktualisieren Sie in diesem Fall die Seite. Dies wirkt sich nicht auf den Konfigurationsprozess aus.
  
-4. Verify the configuration:
+4. Überprüfen Sie die Konfiguration:
 
-    1. Log on to the SharePoint Central Administration website, and browse to the **Configure StorSimple Adapter** page.
+    1. Melden Sie sich auf der Website „SharePoint-Zentraladministration“ an, und navigieren Sie zur Seite **StorSimple-Adapter konfigurieren**.
 
-    2. Check the configuration details to make sure that they match the settings that you entered. 
+    2. Vergewissern Sie sich, dass die Konfigurationsdetails den eingegebenen Einstellungen entsprechen.
 
-5. Verify that RBS works correctly:
+5. Vergewissern Sie sich, dass RBS ordnungsgemäß funktioniert:
 
-    1. Upload a document to SharePoint. 
+    1. Laden Sie ein Dokument an SharePoint hoch. 
 
-    2. Browse to the UNC path that you configured. Make sure that the RBS directory structure was created and that it contains the uploaded object.
+    2. Navigieren Sie zum konfigurierten UNC-Pfad. Vergewissern Sie sich, dass die RBS-Verzeichnisstruktur erstellt wurde und das hochgeladene Objekt enthält.
 
-6. (Optional) You can use the Microsoft RBS `Migrate()` PowerShell cmdlet included with SharePoint to migrate existing BLOB content to the StorSimple device. For more information, see [Migrate content into or out of RBS in SharePoint 2013][6] or [Migrate content into or out of RBS (SharePoint Foundation 2010)][7].
+6. \(Optional\) Mit dem in SharePoint enthaltenen Microsoft RBS-PowerShell-Cmdlet `Migrate()` können Sie vorhandene BLOB-Inhalte zum StorSimple-Gerät migrieren. Weitere Informationen finden Sie unter [Migrieren von Inhalten zu oder aus RBS in SharePoint 2013][6] oder [Migrieren von Inhalten in den und aus dem Remote-BLOB-Speicher \(SharePoint Foundation 2010\)][7].
 
-7. (Optional) On test installations, you can verify that the BLOBs were moved out of the content database as follows: 
+7. \(Optional\) In Testinstallationen können Sie sich wie folgt vergewissern, dass die BLOBs aus der Inhaltsdatenbank verschoben wurden:
 
-    1. Start SQL Management Studio.
+    1. Starten Sie SQL Management Studio.
 
-    2. Run the ListBlobsInDB_2010.sql or ListBlobsInDB_2013.sql query, as follows.
+    2. Führen Sie die Abfrage „ListBlobsInDB\_2010.sql“ oder „ListBlobsInDB\_2013.sql“ wie folgt aus:
 
-     **ListBlobsInDB_2013.sql**
+     **ListBlobsInDB\_2013.sql**
 
          USE WSS_Content
          GO
@@ -87,7 +71,7 @@
          ORDER BY TimeLastModified DESC
          GO
 
-     **ListBlobsInDB_2010.sql**
+     **ListBlobsInDB\_2010.sql**
 
          USE WSS_Content
          GO
@@ -104,17 +88,19 @@
          ORDER BY TimeLastModified DESC
          GO
 
-     If RBS was configured correctly, a NULL value should appear in the SizeOfContentInDB column for any object that was uploaded and successfully externalized with RBS.
+     Wenn RBS ordnungsgemäß konfiguriert wurde, enthält die Spalte „SizeOfContentInDB“ für jedes hochgeladene Objekt, das erfolgreich mit RBS externalisiert wurde, einen NULL-Wert.
 
-8. (Optional) After you configure RBS and move all BLOB content to the StorSimple device, you can move the content database to the device. If you choose to move the content database, we recommend that you configure the content database storage on the device as a primary volume. Then, use established SQL Server best practices to migrate the content database to the StorSimple device. 
+8. \(Optional\) Nachdem Sie RBS konfiguriert und alle BLOB-Inhalte auf das StorSimple-Gerät verschoben haben, können Sie die Inhaltsdatenbank auf das Gerät verschieben. Wenn Sie die Inhaltsdatenbank verschieben möchten, empfehlen wir, den Inhaltsdatenbankspeicher auf dem Gerät als primäres Volume zu konfigurieren. Wenden Sie dann die bewährten Methoden für die SQL Server-Migration an, um die Inhaltsdatenbank zum StorSimple-Gerät zu migrieren.
 
-     >[AZURE.NOTE] Moving the content database to the device is only supported for the StorSimple 8000 series (it is not supported for the 5000 or 7000 series).
+     \>[AZURE.NOTE]Das Verschieben der Inhaltsdatenbank auf das Gerät wird nur bei der 8000er Serie von StorSimple unterstützt. \(Bei der 5000er und 7000er Serie wird diese Funktion nicht unterstützt\).
  
-     If you store BLOBs and the content database in separate volumes on the StorSimple device, we recommend that you configure them in the same volume container. This ensures that they will be backed up together.
+     Wenn Sie BLOBs und die Inhaltsdatenbank auf dem StorSimple-Gerät in separaten Volumes speichern, sollten Sie diese im gleichen Volumecontainer konfigurieren. Dadurch wird sichergestellt, dass sie gemeinsam gesichert werden.
 
-       >[AZURE.WARNING] If you have not enabled RBS, we do not recommend moving the content database to the StorSimple device. This is an untested configuration.
+     \>[AZURE.WARNING]Wenn Sie RBS nicht aktiviert haben, ist es nicht ratsam, die Inhaltsdatenbank auf das StorSimple-Gerät zu verschieben. Dies ist eine nicht getestete Konfiguration.
  
-9. Go to the next step: [Configure garbage collection](#configure-garbage-collection).
+9. Fahren Sie mit dem nächsten Schritt fort: [Konfigurieren der automatischen Speicherbereinigung](#configure-garbage-collection).
 
 [6]: https://technet.microsoft.com/library/ff628254(v=office.15).aspx
 [7]: https://technet.microsoft.com/library/ff628255(v=office.14).aspx
+
+<!---HONumber=July15_HO5-->

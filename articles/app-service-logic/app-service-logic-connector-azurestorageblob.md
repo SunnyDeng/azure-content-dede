@@ -54,7 +54,7 @@ Zugriffsschüssel | Nein | Geben Sie einen gültigen primären oder sekundären 
 ## Verwenden von Azure Storage-Blobconnectors in Logik-App
 Sobald der Azure Storage-Blobconnector erstellt wurde, kann er Ihrem Workflow hinzugefügt werden.
 
-1. Erstellen einer neuen Logik App: Neu -> Web + Mobil -> Logik-App. Geben Sie die Eigenschaften für Ihre Logik-App ein:
+1. Erstellen einer neuen Logik App: Neu -\> Web + Mobil -\> Logik-App. Geben Sie die Eigenschaften für Ihre Logik-App ein:
 
 	![Erstellen einer Logik-App][4]
 
@@ -110,4 +110,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-azurestorageblob/BasicInputsUploadBlob.PNG
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

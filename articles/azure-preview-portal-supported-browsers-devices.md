@@ -3,8 +3,8 @@
 	description="" 
 	services="" 
 	documentationCenter="" 
-	authors="JustinBeckwith" 
-	manager="carolz" 
+	authors="micflan" 
+	manager="lwelicki" 
 	editor=""/>
 
 <tags 
@@ -13,23 +13,23 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/16/2014" 
-	ms.author="justbe"/>
+	ms.date="07/23/2015" 
+	ms.author="micflan"/>
 
 #Unterstützte Browser und Geräte
-Das Microsoft Azure-Vorschauportal kann auf allen modernen Desktop- und Tablet-PCs und von allen Browsern ausgeführt werden.
+Das Microsoft Azure-Portal kann auf allen modernen Desktop- und Tablet-Geräten und mit allen Browsern ausgeführt werden.
 
 ### Unterstützte Geräte
-Das Vorschauportal funktioniert einwandfrei auf modernen PCs, Macs und Tablet-PCs. Mobiltelefone werden zurzeit nicht unterstützt.
+Das Portal funktioniert einwandfrei auf modernen PCs, Macs und Tablets. Mobiltelefone werden zurzeit nicht unterstützt.
 
 ### Unterstützte Browser
 Die neuesten Versionen der folgenden Browser werden unterstützt:
 
-- Internet Explorer (11 und höher)
-- Safari (7 und höher)
-- Chrome (neueste Version)
-- Firefox (neueste Version)
+- Internet Explorer \(11 und höher\)
+- Safari \(7 und höher\)
+- Chrome \(neueste Version\)
+- Firefox \(neueste Version\)
 
 *Safari 6 und niedriger wird nicht unterstützt. Wenn Sie OS X verwenden, können Sie entweder Chrome bzw. Firefox verwenden oder auf OS X Mavericks aktualisieren, um Safari 7 zu erhalten.*
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

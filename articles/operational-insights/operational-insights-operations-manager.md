@@ -27,7 +27,7 @@ Darüber hinaus müssen Sie die Anmeldeinformationen für die Ausführung der Wo
 
 Operative Insights besteht aus einem Webdienst in der Cloud und entweder Agents, die direkt mit dem Webdienst verbunden sind, oder Operations Manager-Agents und Operations Manager-Verwaltungsgruppen, die Computer in Ihrer Umgebung verwalten.
 
-Bevor Sie Operations Manager-Agents (zum Sammeln von Daten) und Verwaltungsgruppen (zum Verwalten von Agents und Senden von Daten an den Operational Insights-Dienst) auswählen, sollten Sie Folgendes wissen:
+Bevor Sie Operations Manager-Agents \(zum Sammeln von Daten\) und Verwaltungsgruppen \(zum Verwalten von Agents und Senden von Daten an den Operational Insights-Dienst\) auswählen, sollten Sie Folgendes wissen:
 
 - Der Operations Manager-Agent wird auf jedem Server installiert, auf dem Sie Daten sammeln und analysieren möchten.
 
@@ -43,7 +43,7 @@ Operational Insights kann den Integritätsdienst von System Center zum Sammeln u
 
 ## Koexistenz mit Operations Manager
 
-Bei Verwendung von Operations Manager wird Operational Insights nur mit dem Operations Manager-Agent in System Center Operations Manager 2012 R2 oder System Center Operations Manager 2012 SP1 unterstützt. Es wird nicht mit früheren Versionen von System Center Operations Manager unterstützt. Da der Operations Manager-Agent zum Sammeln von Daten eingesetzt wird, verwendet er bestimmte Anmeldeinformationen (Aktionskonten oder ausführende Konten) zur Unterstützung einiger der analysierten Workloads, z. B. SharePoint 2012.
+Bei Verwendung von Operations Manager wird Operational Insights nur mit dem Operations Manager-Agent in System Center Operations Manager 2012 R2 oder System Center Operations Manager 2012 SP1 unterstützt. Es wird nicht mit früheren Versionen von System Center Operations Manager unterstützt. Da der Operations Manager-Agent zum Sammeln von Daten eingesetzt wird, verwendet er bestimmte Anmeldeinformationen \(Aktionskonten oder ausführende Konten\) zur Unterstützung einiger der analysierten Workloads, z. B. SharePoint 2012.
 
 ## Operational Insights und SQL Server 2012
 
@@ -57,7 +57,7 @@ Bei Verwendung von Operations Manager muss der Verwaltungsserver auf das Interne
 
 ## Unterstützung für Clustering
 
-Der Operations Manager-Agent wird auf Computern unter Windows Server 2012, Windows Server 2008 R2 oder Windows Server 2008 unterstützt, die als Teil eines Windows-Failoverclusters konfiguriert sind. Die Cluster können im Operational Insights-Portal angezeigt werden. Auf der Seite "Server" werden Cluster als TYPE=CLUSTER identifiziert (im Gegensatz zu TYPE=AGENT, womit physische Computer gekennzeichnet werden).
+Der Operations Manager-Agent wird auf Computern unter Windows Server 2012, Windows Server 2008 R2 oder Windows Server 2008 unterstützt, die als Teil eines Windows-Failoverclusters konfiguriert sind. Die Cluster können im Operational Insights-Portal angezeigt werden. Auf der Seite "Server" werden Cluster als TYPE=CLUSTER identifiziert \(im Gegensatz zu TYPE=AGENT, womit physische Computer gekennzeichnet werden\).
 
 Die Ermittlungs- und Konfigurationsregeln werden auf den aktiven und passiven Knoten des Clusters ausgeführt, die auf den passiven Knoten generierten Warnungen werden jedoch ignoriert. Wenn ein Knoten von passiv in aktiv geändert wird, werden Warnungen für den Knoten automatisch angezeigt, ohne dass ein Benutzereingriff erforderlich ist.
 
@@ -69,35 +69,22 @@ Operational Insights unterstützt nicht die Gruppierung oder Verknüpfung von Co
 
 ## Skalieren Ihrer Operational Insights-Umgebung
 
-Beachten Sie bei der Planung Ihrer Operational Insights-Bereitstellung die Kapazität des Servers im Hinblick auf dem Speicherplatz (insbesondere dann, wenn Sie die Anzahl der Operations Manager-Agents analysieren, die zum Übertragen von Daten über eine einzelne Verwaltungsgruppe verwendet werden sollen).
+Beachten Sie bei der Planung Ihrer Operational Insights-Bereitstellung die Kapazität des Servers im Hinblick auf dem Speicherplatz \(insbesondere dann, wenn Sie die Anzahl der Operations Manager-Agents analysieren, die zum Übertragen von Daten über eine einzelne Verwaltungsgruppe verwendet werden sollen\).
 
 Berücksichtigen Sie die folgenden Variablen:
 
 - Anzahl der Agents pro Verwaltungsgruppe
 
-- Die durchschnittliche Größe der Daten, die pro Tag vom Agent an die Verwaltungsgruppe übertragen werden. Standardmäßig lädt jeder Agent zweimal pro Tag CAB-Dateien in die Verwaltungsgruppe hoch. Die Größe der CAB-Dateien hängt von der Konfiguration des Servers (z. B. von der Anzahl der SQL Server-Module und der Anzahl der Datenbanken) und von der Integrität des Servers ab (z. B. von der Anzahl der generierten Warnungen). In den meisten Fällen beträgt die tägliche Uploadgröße in der Regel weniger als 100 KB.
+- Die durchschnittliche Größe der Daten, die pro Tag vom Agent an die Verwaltungsgruppe übertragen werden. Standardmäßig lädt jeder Agent zweimal pro Tag CAB-Dateien in die Verwaltungsgruppe hoch. Die Größe der CAB-Dateien hängt von der Konfiguration des Servers \(z. B. von der Anzahl der SQL Server-Module und der Anzahl der Datenbanken\) und von der Integrität des Servers ab \(z. B. von der Anzahl der generierten Warnungen\). In den meisten Fällen beträgt die tägliche Uploadgröße in der Regel weniger als 100 KB.
 
-- Der Archivierungszeitraum für die Aufbewahrung von Daten in der Verwaltungsgruppe (der Standardwert ist 5 Tage)
+- Der Archivierungszeitraum für die Aufbewahrung von Daten in der Verwaltungsgruppe \(der Standardwert ist 5 Tage\)
 
 Wenn Sie beispielsweise von einer täglichen Uploadgröße von 100 KB pro Agent und vom Standardarchivierungszeitraum ausgehen, benötigen Sie für die Verwaltungsgruppe den folgenden Speicherplatz:
 
-<table border="1" cellspacing="4" cellpadding="4">
-    <tbody>
-    <tr align="left" valign="top">
-		<td><b>Anzahl der Agents</b></td>
-		<td><b>Geschätzter Speicherplatzbedarf für die Verwaltungsgruppe</b></td>
-    </tr>
-    <tr align="left" valign="top">
-		<td>5</td>
-		<td>~2,5&#160;MB (5 Agents x 100&#160;KB Daten/Tag x 5 Tage =&#160;2.500&#160;KB)</td>
-    </tr>
-    <tr align="left" valign="top">
-		<td>50</td>
-		<td>~25&#160;MB (50 Agents x 100&#160;KB Daten/Tag x 5 Tage =&#160;25.000&#160;KB)</td>
-    </tr>
-
-    </tbody>
-    </table>
+Anzahl der Agents|Geschätzter Speicherplatzbedarf für die Verwaltungsgruppe
+---|---
+5|\~2,5 MB \(5 Agents x 100 KB Daten/Tag x 5 Tage = 2.500 KB\)
+50|\~25 MB \(50 Agents x 100 KB Daten/Tag x 5 Tage = 25.000 KB\)
 
 ## Ausführende Operations Manager-Konten für Operational Insights
 
@@ -118,7 +105,7 @@ In den folgenden Abschnitten wird beschrieben, wie ausführende Operations Manag
 
 1. Öffnen Sie in Operations Manager die Betriebskonsole, und klicken Sie dann auf **Verwaltung**.
 
-2. Klicken Sie unter **Ausführen als Konfiguration** auf **Profile**, und öffnen Sie **Ausführen als Profil für Operational Insights SQL Assessment**.
+2. Klicken Sie unter **Ausführen als-Konfiguration** auf **Profile**, und öffnen Sie das **ausführende Profil für Operational Insights SQL Assessment**.
 
 3. Klicken Sie auf der Seite **Ausführende Konten** auf **Hinzufügen**.
 
@@ -129,7 +116,7 @@ In den folgenden Abschnitten wird beschrieben, wie ausführende Operations Manag
 
 6. Ändern und führen Sie dann das folgende T-SQL-Beispiel auf jeder SQL Server-Instanz aus, um dem ausführenden Konto die erforderlichen Mindestberechtigungen zum Ausführen von SQL Assessment zu erteilen. Dies ist jedoch nicht erforderlich, wenn ein ausführendes Konto bereits Teil der Serverrolle "sysadmin" auf SQL Server-Instanzen ist.
 
-```
+\`\`\`
 ---
     -- Replace <UserName> with the actual user name being used as Run As Account.
     USE master
@@ -159,7 +146,7 @@ Open a PowerShell window and run the following script after you’ve updated it 
     $profile = Get-SCOMRunAsProfile -DisplayName "Operational Insights SQL Assessment Run As Profile"
     $account = Get-SCOMrunAsAccount | Where-Object {$_.Name -eq "<your run as account name>"}
     Set-SCOMRunAsProfile -Action "Add" -Profile $Profile -Account $Account
-```
+\`\`\`
 
 
 ### Festlegen des ausführenden Kontos für Virtual Machine Manager
@@ -178,7 +165,7 @@ Führen Sie die folgenden Schritte aus, um das Konto festzulegen, wenn Sie Opera
 
 1. Öffnen Sie in Operations Manager die Betriebskonsole, und klicken Sie dann auf **Verwaltung**.
 
-2. Klicken Sie unter **Ausführen als Konfiguration** auf **Profile**, und öffnen Sie **Ausführen als Konto für Operational Insights VMM**.
+2. Klicken Sie unter **Ausführen als-Konfiguration** auf **Profile**, und öffnen Sie das **ausführende Konto für Operational Insights VMM**.
 
 3. Klicken Sie auf der Seite **Ausführende Konten** auf **Hinzufügen**.
 
@@ -196,7 +183,7 @@ Führen Sie die folgenden Schritte aus, um das Konto festzulegen, wenn Sie Opera
 
 1. Öffnen Sie in Operations Manager die Betriebskonsole, und klicken Sie dann auf **Verwaltung**.
 
-2. Klicken Sie unter **Ausführen als Konfiguration** auf **Profile**, und öffnen Sie **Ausführen als Konto für Operational Insights Lync**.
+2. Klicken Sie unter **Ausführen als-Konfiguration** auf **Profile**, und öffnen Sie das **ausführende Konto für Operational Insights Lync**.
 
 3. Klicken Sie auf der Seite **Ausführende Konten** auf **Hinzufügen**.
 
@@ -213,7 +200,7 @@ Führen Sie die folgenden Schritte aus, um das Konto festzulegen, wenn Sie Opera
 
 1. Öffnen Sie in Operations Manager die Betriebskonsole, und klicken Sie dann auf **Verwaltung**.
 
-2. Klicken Sie unter **Ausführen als Konfiguration** auf **Profile**, und öffnen Sie **Ausführen als Konto für Operational Insights SharePoint**.
+2. Klicken Sie unter **Ausführen als-Konfiguration** auf **Profile**, und öffnen Sie das **ausführende Konto für Operational Insights SharePoint**.
 
 3. Klicken Sie auf der Seite **Ausführende Konten** auf **Hinzufügen**.
 
@@ -228,4 +215,4 @@ Führen Sie die folgenden Schritte aus, um das Konto festzulegen, wenn Sie Opera
 
 Wenn Sie Daten von Servern an unterschiedlichen geografischen Standorten analysieren möchten, sollten Sie die Verwendung einer Verwaltungsgruppe pro Standort in Betracht ziehen. Dadurch können Sie die Leistung der Datenübertragung vom Agent an die Verwaltungsgruppe verbessern.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

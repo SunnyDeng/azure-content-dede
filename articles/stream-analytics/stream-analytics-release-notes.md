@@ -13,10 +13,41 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="07/09/2015" 
+	ms.date="07/30/2015" 
 	ms.author="jeffstok"/>
 
 #Microsoft Stream Analytic Versionshinweise
+
+## Hinweise zur Stream Analytics-Version vom 30.07.2015 ##
+
+Diese Version enthält die folgenden Updates.
+
+<table border="1">
+<tr>
+<th>Titel</th>
+<th>Beschreibung</th>
+</tr>
+<tr>
+<td>Die Power BI-Organisations-ID wurde von der Azure-ID entkoppelt.</td>
+<td>Dieses Feature ermöglicht die Power BI-Ausgabe für ASA-Aufträge unter einem beliebigen Azure-Kontotyp (Live-ID oder Organisations-ID). Darüber hinaus können Sie eine Organisations-ID für Ihre Azure-Konto einrichten und eine andere ID für die Autorisierung der Power BI-Ausgabe verwenden.</td>
+</tr>
+<tr>
+<td>Unterstützung für die Ausgabe von Service&#160;Bus-Warteschlangen</td>
+<td>Service&#160;Bus-Warteschlangenausgaben stehen nun in Stream&#160;Analytics Aufträgen zur Verfügung.</td>
+</tr>
+<tr>
+<td>Unterstützung für die Ausgabe von Service Bus-Themen</td>
+<td>Ausgaben von Service Bus-Themen stehen nun in Stream Analytics-Aufträgen zur Verfügung.</td>
+</tr>
+<tr>
+<td>Neue Arrayfunktionen</td>
+<td>Die Arrayfunktionen „GetArrayElement“, „GetArrayElements“ und „GetArrayLength“ wurden hinzugefügt.</td>
+</tr>
+<tr>
+<td>Neue Datensatzfunktionen</td>
+<td>Die Datensatzfunktionen „GetRecordProperties“ und „GetRecordPropertyValue“ wurden hinzugefügt.</td>
+</tr>
+</table>
 
 ## Hinweise zur Version von Stream Analytics vom 07/09/2015 ##
 
@@ -117,8 +148,8 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](../stream.analytics.get.started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
-- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Stream Analytics Query Language Reference \(in englischer Sprache\)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

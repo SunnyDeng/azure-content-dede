@@ -2,7 +2,6 @@
 	pageTitle="Planen einer erweiterten Azure Machine Learning-Analyseumgebung | Microsoft Azure" 
 	description="Planen Sie Ihre erweiterte Analyseumgebung unter Berücksichtigung von Kernfragen." 
 	services="machine-learning" 
-	solutions="" 
 	documentationCenter="" 
 	authors="msolhab"
 	manager="paulettm" 
@@ -14,25 +13,24 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/29/2015" 
+	ms.date="07/22/2015" 
 	ms.author="mohabib;bradsev" />
 
 
 # Planen einer erweiterten Azure Machine Learning-Analyseumgebung
 
-Sie müssen beim Einrichten einer erweiterten Azure Machine Learning-Analyseumgebung verschiedene Entscheidungen treffen. Die getroffene Auswahl sollte auf der Art, der Größe und dem Speicherort Ihrer Daten sowie dem Ziel für diese Daten in der Cloud beruhen. Der erweiterte Analyseprozess umfasst alle Aufgaben und führt von den ursprünglichen Daten in einer beliebigen Quelle bis zur Erstellung und Veröffentlichung eines Modells als Azure-Webdienst für die Nutzung in Anwendungen.
+Welches Szenario entspricht Ihrem Analyseproblem, wenn Sie sich darauf vorbereiten, eine Umgebung für erweiterte Analysen mit Azure Machine Learning einzurichten? Ihre Entscheidungen hinsichtlich der benötigten Ressourcen basieren auf der Art, der Größe und dem Quellspeicherort Ihrer Daten sowie dem Zielspeicherort dieser Daten in der Cloud. In diesem Artikel werden die Fragen behandelt, die Ihnen helfen sollen, Ihr Szenario zu bestimmen.
 
-Der erweiterte Analyseprozessworkflow wird unter [Erstellen von erweiterten Analyselösungen in Azure](machine-learning-data-science-how-to-create-machine-learning-service.md) gezeigt. Klicken Sie im Leitfaden auf die entsprechenden Artikel, um weitere Informationen zu den einzelnen Schritten im Leitfaden "Erweiterter Analyseprozess und Technologie" zu erhalten.
+Nachdem Sie das relevante Szenario ermittelt haben, begleitet Sie der ADAPT-Workflow \(Advanced Analytics Process and Technology\), der im [Lernpfad: Erstellen von erweiterten Analyselösungen in Azure](machine-learning-data-science-how-to-create-machine-learning-service.md) vorgestellt wurde, durch eine Reihe von Aufgaben. Dazu zählen das Abrufen eines Datasets über die Erstellung und Veröffentlichung eines Modells als Azure-Webdienst, den Anwendungen nutzen können.
 
-In diesem Artikel werden Fragen erläutert, die Sie beim Einrichten Ihrer erweiterten Analyseumgebung beachten sollten. Außerdem werden Ressourcen und Tools aufgelistet, die bei diesem Prozess hilfreich sind. Darüber hinaus enthält der Artikel Anleitungen zum Verwenden des Leitfadens "Erweiterter Analyseprozess und Technologie".
+In diesem Thema werden auch einige der Ressourcen und Tools aufgelistet, die bei diesem erweiterten Analyseprozess verwendet werden.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
-## Zu berücksichtigende Fragen
+## Beantworten Sie diese Fragen
+Beantworten Sie diese Fragen, um zu bestimmen, mit welchem Szenario Sie arbeiten, bevor Sie Ihre Umgebung für erweiterte Analysen erstellen.
 
-Bevor Sie mit dem Erstellen Ihrer erweiterten Analyseumgebung beginnen, sollten Sie die folgenden Fragen klären.
-
-1. **Wo befindet sich Ihre Daten?** (Dieser Speicherort wird als die ***Datenquelle*** bezeichnet.) Beispiel:
+1. **Wo befindet sich Ihre Daten?** \(Dieser Speicherort wird als die ***Datenquelle*** bezeichnet.\) Beispiel:
 	- Die Daten sind öffentlich über eine HTTP-Adresse verfügbar.
 	- Die Daten befinden sich an einem lokalen/Netzwerkspeicherort.
 	- Die Daten befinden sich in einer SQL Server-Datenbank.
@@ -50,8 +48,8 @@ Bevor Sie mit dem Erstellen Ihrer erweiterten Analyseumgebung beginnen, sollten 
 4. **Wie vertraut sind Sie mit den Daten?**
     - Müssen Sie zum Durchsuchen der Daten deren Schema, die Variablenverteilungen, fehlende Werte usw. ermitteln? 
 	- Erfordern die Daten eine Vorverarbeitung oder Bereinigung, bevor sie in eine Tabellendarstellung umgewandelt werden können? 
-5. **Planen Sie, alle Daten nach Azure verschieben? Sind Sie in der Lage dazu?**
-    - Ja, ich plane, das gesamte DataSet zur Verarbeitung in die Cloud zu kopieren.
+5. **Planen Sie, alle Daten in Azure-Speicher zu verschieben? Sind Sie in der Lage dazu?**
+    - Ja, ich plane, das gesamte Dataset zur Verarbeitung in die Cloud zu kopieren.
 	- Nein, ich werde nur einen Teil der Daten nach Azure kopieren.
 6. **Was ist Ihr bevorzugtes Azure-Cloudziel?** Beispiel:
 	- Verschieben von Daten in Azure-Speicher-Blobs
@@ -59,24 +57,26 @@ Bevor Sie mit dem Erstellen Ihrer erweiterten Analyseumgebung beginnen, sollten 
 	- Laden von Daten in eine SQL Server-Datenbank auf einem virtuellen Azure-Computer
 	- Zuordnen von Daten zu Azure HDInsight Hive-Tabellen
 
+## Wie sieht Ihr Szenario aus?
+Nachdem Sie die Fragen im vorherigen Abschnitt beantwortet haben, können Sie bestimmen, welches Szenario für Ihren Fall am besten geeignet ist. Die Beispielszenarien werden unter [Szenarien für die erweiterte Analyse in Azure Machine Learning](../machine-learning-data-science-plan-sample-scenarios.md) erläutert.
+
 ## Erweiterte Analyseressourcen in Azure
+Je nach Szenario benötigen Sie möglicherweise einige der folgenden Tools und Ressourcen.
 
-Abhängig von Ihrem Szenario benötigen Sie außerdem Folgendes:
-
-1.  Azure Tools: [Azure PowerShell SDK](../install-configure-powershell.md), [Azure Storage-Explorer](http://azurestorageexplorer.codeplex.com/), [AzCopy](../storage-use-azcopy.md) u. a.
+1.  Azure-Tools: 
+	* 	[Azure PowerShell SDK](../install-configure-powershell.md) 
+	* 	[Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/)
+	* 	[AzCopy](../storage-use-azcopy.md)
 2.  Virtuelle Azure-Computer mit SQL Server
-3.  Azure HDInsight (Hadoop)
+3.  Azure HDInsight \(Hadoop\)
 4.  Virtuelle Azure-Netzwerke für das Freigeben lokaler Dateien in Azure
 5.  Azure Data Factory für das Planen von Datenverschiebungen
 
 
-## Verwenden des Leitfadens "Erweiterter Analyseprozess und Technologie"
 
-Der unter [Erstellen von erweiterten Analyselösungen in Azure ](machine-learning-data-science-how-to-create-machine-learning-service.md) bereitgestellte Leitfaden bietet eine Vielzahl von Big Data-Übungen. Die Übersicht zeigt die wichtigsten Schritte in einem typischen erweiterten Analyseworkflow. Nicht alle Schritte sind bei jeder Data Science-Aufgabe erforderlich. Darüber hinaus ist der Ablaufplan fortlaufend, während die Abfolge der Schritte in bestimmten Szenarios abweichen kann. Anhand Ihrer Antworten auf die Fragen oben können Sie entscheiden, welche Schritte für Ihr Szenario relevant sind, wann sie im Ablauf durchgeführt werden müssen und unter welchen Bedingungen mehrere Durchläufe der Schritte erforderlich sind.
 
-Unter [Szenarien für den erweiterten Analyseprozess in Azure Machine Learning](../machine-learning-data-science-plan-sample-scenarios.md) finden Sie auf der ursprünglichen Datengröße basierende Beispielszenarien, den Speicherort von Datenquellen und das Zielrepository in Azure.
 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

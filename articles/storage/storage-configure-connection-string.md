@@ -33,7 +33,7 @@ Sie können eine Verbindungszeichenfolge konfigurieren, um Folgendes zu tun:
 Die Anwendung muss die Verbindungszeichenfolge speichern, um den Zugriff auf Azure Storage während der Ausführung zu authentifizieren. Es gibt mehrere Möglichkeiten, die Verbindungszeichenfolge zu speichern:
 
 - Für eine Anwendung, die auf dem Desktop oder auf einem Gerät ausgeführt wird, können Sie die Verbindungszeichenfolge in einer app.config-Datei oder einer anderen Konfigurationsdatei speichern. Wenn Sie eine app.config-Datei verwenden, fügen Sie die Verbindungszeichenfolge zum Abschnitt **AppSettings** hinzu.
-- Wenn Ihre Anwendung in einem Clouddienst in Azure ausgeführt wird, speichern Sie die Verbindungszeichenfolge zumeist im [Azure-Dienstkonfigurationsschema (CSCFG-Datei)](https://msdn.microsoft.com/library/ee758710.aspx). Fügen Sie die Verbindungszeichenfolge zum Abschnitt **ConfigurationSettings** der Dienstkonfigurationsdatei hinzu.
+- Wenn Ihre Anwendung in einem Clouddienst in Azure ausgeführt wird, speichern Sie die Verbindungszeichenfolge zumeist im [Azure-Dienstkonfigurationsschema \(CSCFG-Datei\)](https://msdn.microsoft.com/library/ee758710.aspx). Fügen Sie die Verbindungszeichenfolge zum Abschnitt **ConfigurationSettings** der Dienstkonfigurationsdatei hinzu.
 
 Das Speichern der Verbindungszeichenfolge in der Konfigurationsdatei erleichtert die Aktualisierung der Verbindungszeichenfolge, um zwischen dem Speicheremulator und einem Azure-Speicherkonto in der Cloud zu wechseln. Sie müssen die Verbindungszeichenfolge nur so bearbeiten, dass sie auf Ihr Speicherkonto verweist.
 
@@ -47,7 +47,7 @@ Unter [Einsatz des Azure-Speicheremulators für Entwicklung und Tests](storage-u
 
 ## Erstellen einer Verbindungszeichenfolge für ein Azure-Speicherkonto
 
-Um eine Verbindungszeichenfolge für Ihr Azure-Speicherkonto zu erstellen, verwenden Sie das nachstehende Format der Verbindungszeichenfolge. Geben Sie an, ob Sie über HTTP oder HTTPS (empfohlen) eine Verbindung mit dem Speicherkonto herstellen möchten, ersetzen Sie `myAccountName` durch den Namen Ihres Speicherkontos, und ersetzen Sie `myAccountKey` durch Ihren Kontozugriffsschlüssel:
+Um eine Verbindungszeichenfolge für Ihr Azure-Speicherkonto zu erstellen, verwenden Sie das nachstehende Format der Verbindungszeichenfolge. Geben Sie an, ob Sie über HTTP oder HTTPS \(empfohlen\) eine Verbindung mit dem Speicherkonto herstellen möchten, ersetzen Sie `myAccountName` durch den Namen Ihres Speicherkontos, und ersetzen Sie `myAccountKey` durch Ihren Kontozugriffsschlüssel:
 
     DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey
 
@@ -64,9 +64,9 @@ Ihre Verbindungszeichenfolge sollte der folgenden Beispiel-Verbindungszeichenfol
 Sie können die Dienstendpunkte in Ihrer Verbindungszeichenfolge explizit angeben, wenn Folgendes gilt:
 
 - Sie haben einen benutzerdefinierten Domänennamen für Ihr Speicherkonto beim Blob-Dienst registriert.
-- Sie verwenden eine SAS (Shared Access Signature) für den Zugriff auf Speicherressourcen.
+- Sie verwenden eine SAS \(Shared Access Signature\) für den Zugriff auf Speicherressourcen.
 
-Um eine Verbindungszeichenfolge zu erstellen, die einen expliziten Blob-Endpunkt festlegt, geben Sie für jeden Dienst den vollständigen Dienstendpunkt einschließlich Protokollspezifikation (HTTP oder HTTPS) im folgenden Format an:
+Um eine Verbindungszeichenfolge zu erstellen, die einen expliziten Blob-Endpunkt festlegt, geben Sie für jeden Dienst den vollständigen Dienstendpunkt einschließlich Protokollspezifikation \(HTTP oder HTTPS\) im folgenden Format an:
 
 	BlobEndpoint=myBlobEndpoint;
 	QueueEndpoint=myQueueEndpoint;
@@ -94,9 +94,9 @@ Eine Verbindungszeichenfolge für einen Blob-Endpunkt für eine benutzerdefinier
 	AccountKey=<account-key> 
 
 
-### Angeben eines Blob-Endpunkts mit einer SAS (Shared Access Signature) 
+### Angeben eines Blob-Endpunkts mit einer SAS \(Shared Access Signature\) 
 
-Sie können eine Verbindungszeichenfolge mit expliziten Endpunkten für den Zugriff auf Speicherressourcen über eine SAS erstellen. In diesem Fall können Sie die SAS anstelle des Kontonamens und der Schlüsselanmeldeinformationen als Teil der Verbindungszeichenfolge angeben. Das SAS-Token enthält Informationen über die Ressource, auf die zugegriffen werden soll, den Zeitraum, für den sie verfügbar ist, sowie die erteilten Berechtigungen. Weitere Informationen zu SAS finden Sie unter [Delegieren des Zugriffs mit einer SAS (Shared Access Signature)](https://msdn.microsoft.com/library/ee395415.aspx).
+Sie können eine Verbindungszeichenfolge mit expliziten Endpunkten für den Zugriff auf Speicherressourcen über eine SAS erstellen. In diesem Fall können Sie die SAS anstelle des Kontonamens und der Schlüsselanmeldeinformationen als Teil der Verbindungszeichenfolge angeben. Das SAS-Token enthält Informationen über die Ressource, auf die zugegriffen werden soll, den Zeitraum, für den sie verfügbar ist, sowie die erteilten Berechtigungen. Weitere Informationen zu SAS finden Sie unter [Delegieren des Zugriffs mit einer SAS \(Shared Access Signature\)](https://msdn.microsoft.com/library/ee395415.aspx).
 
 Um eine Verbindungszeichenfolge zu erstellen, die eine SAS enthält, geben Sie die Zeichenfolge im folgenden Format ein:
 
@@ -106,7 +106,7 @@ Der Endpunkt kann entweder dem Standarddienstendpunkt oder einem benutzerdefinie
 
 ### Erstellen einer Verbindungszeichenfolge mit einem Endpunktsuffix
 
-Zum Erstellen einer Verbindungszeichenfolge für den Speicherdienst in Regionen oder Instanzen mit anderen Endpunktsuffixen, z. B. für Azure China oder Azure Governance, verwenden Sie das folgende Format der Verbindungszeichenfolge. Geben Sie an, ob Sie über HTTP oder HTTPS (empfohlen) eine Verbindung mit dem Speicherkonto herstellen möchten, ersetzen Sie `myAccountName` durch den Namen Ihres Speicherkontos, `myAccountKey` durch Ihren Kontozugriffsschlüssel und `mySuffix` durch das URI-Suffix:
+Zum Erstellen einer Verbindungszeichenfolge für den Speicherdienst in Regionen oder Instanzen mit anderen Endpunktsuffixen, z. B. für Azure China oder Azure Governance, verwenden Sie das folgende Format der Verbindungszeichenfolge. Geben Sie an, ob Sie über HTTP oder HTTPS \(empfohlen\) eine Verbindung mit dem Speicherkonto herstellen möchten, ersetzen Sie `myAccountName` durch den Namen Ihres Speicherkontos, `myAccountKey` durch Ihren Kontozugriffsschlüssel und `mySuffix` durch das URI-Suffix:
 
 
 	DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=mySuffix;
@@ -122,4 +122,4 @@ Ihre Verbindungszeichenfolge sollte der folgenden Beispiel-Verbindungszeichenfol
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

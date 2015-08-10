@@ -31,7 +31,7 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
 
 5. Klicken Sie mit der rechten Maustaste auf das Serviceprojekt, und klicken Sie dann auf **Veröffentlichen**. Veröffentlichen Sie den mobilen Service auf Ihrem Microsoft Azure-Konto mit den zuvor im Lernprogramm [Erste Schritte] oder [Erste Schritte mit Daten](../articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md) verwendeten Veröffentlichungseinstellungen.
  
-     >[AZURE.NOTE]Alternativ können Sie mit dem in IIS Express lokal gehosteten Service testen. Weitere Informationen finden Sie im Lernprogramm [Erste Schritte mit Daten](../articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md).
+     \>[AZURE.NOTE]Alternativ können Sie mit dem in IIS Express lokal gehosteten Service testen. Weitere Informationen finden Sie im Lernprogramm [Erste Schritte mit Daten](../articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data.md).
 
     ![](./media/mobile-services-dotnet-backend-add-validation/mobile-services-publish-dotnet-service.png)
 
@@ -42,4 +42,4 @@ Es empfiehlt sich, die Länge der Daten, die von Benutzern übermittelt werden, 
 <!-- URLs. -->
 [Erste Schritte]: ../articles/mobile-services/mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

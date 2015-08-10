@@ -36,7 +36,7 @@ Für diese Szenarien muss Folgendes ausgeführt werden:
 Zur Verwendung des SAP-Connectors müssen Sie zunächst eine Instanz der SAP-Connector-API-App erstellen. Dies kann wie folgt durchgeführt werden:
 
 1. Öffnen Sie den Azure Marketplace mit der Option "+NEU" unten links im Azure-Portal.
-2. Wechseln Sie zu "Web und Mobil > API-Apps", und suchen Sie nach "SAP-Connector".
+2. Wechseln Sie zu "Web und Mobil \> API-Apps", und suchen Sie nach "SAP-Connector".
 3. Konfigurieren Sie ihn wie folgt:
 	1. Geben Sie die generischen Details wie Name, App Service-Plan usw. auf dem ersten Blatt an.
 
@@ -48,7 +48,7 @@ Zur Verwendung des SAP-Connectors müssen Sie zunächst eine Instanz der SAP-Con
 
 ## Konfigurieren der soeben erstellten SAP-Connector-API-App ##
 
-Navigieren Sie zu der soeben erstellten API-App über "Durchsuchen" -> "API-Apps" -> <Name of the API App just created>. Sie stellen das folgende Verhalten fest. Das Setup ist unvollständig, da die Hybridverbindung noch nicht hergestellt wurde.
+Navigieren Sie zu der soeben erstellten API-App über "Durchsuchen" -\> "API-Apps" -\> <Name of the API App just created>. Sie stellen das folgende Verhalten fest. Das Setup ist unvollständig, da die Hybridverbindung noch nicht hergestellt wurde.
 
 ![][2]
 
@@ -94,4 +94,4 @@ Vervollständigen Sie die Logik-App, um den Geschäftsprozess zu definieren, und
 [6]: ./media/app-service-logic-connector-sap/LogicApp2.jpg
 [7]: ./media/app-service-logic-connector-sap/LogicApp3.jpg
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

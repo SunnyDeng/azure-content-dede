@@ -22,7 +22,7 @@
 
 ### F: Was ist Azure Data Factory?
 
-Data Factory ist ein vollständig verwalteter Dienst für Entwickler zum Erstellen von Diensten für Datenspeicher, Transfer und Verarbeitung in fehlertoleranten Datenpipelines mit hoher Verfügbarkeit. Data Factory arbeitet mit lokalem und Cloud-Datenspeicher. Eine Pipeline ist ein Satz von Dateneingaben, Verarbeitungsaktivitäten und Datenausgaben und wird mit einfachen JSON-Skripts definiert und über PowerShell-Befehle aktiviert. Nach der Aktivierung organisiert und plant die Data Factory Pipelines für die Ausführung in HDInsight (Hadoop) mit Optionen für die automatische Clusterverwaltung im Auftrag des Benutzers. Data Factory bietet zudem eine visuelle Verwaltung und Überwachung über das Azure-Vorschauportal, um alle Pipelines mit umfassenden Informationen zum Betrieb und zur Dienstintegrität über ein Dashboard zu überwachen.
+Data Factory ist ein vollständig verwalteter Dienst für Entwickler zum Erstellen von Diensten für Datenspeicher, Transfer und Verarbeitung in fehlertoleranten Datenpipelines mit hoher Verfügbarkeit. Data Factory arbeitet mit lokalem und Cloud-Datenspeicher. Eine Pipeline ist ein Satz von Dateneingaben, Verarbeitungsaktivitäten und Datenausgaben und wird mit einfachen JSON-Skripts definiert und über PowerShell-Befehle aktiviert. Nach der Aktivierung organisiert und plant die Data Factory Pipelines für die Ausführung in HDInsight \(Hadoop\) mit Optionen für die automatische Clusterverwaltung im Auftrag des Benutzers. Data Factory bietet zudem eine visuelle Verwaltung und Überwachung über das Azure-Vorschauportal, um alle Pipelines mit umfassenden Informationen zum Betrieb und zur Dienstintegrität über ein Dashboard zu überwachen.
  
 ### F: Welche Kundenherausforderung lässt sich mit Data Factory meistern?
 
@@ -83,7 +83,7 @@ Nein. Wie bei anderen Azure-Ressourcen auch kann der Name einer Azure Data Facto
 ### F: Welche Datenquellen und Aktivitäten werden unterstützt?
 
 - **Unterstützte Datenquellen**: 
-	- Azure Storage (Blob und Tabellen)
+	- Azure Storage \(Blob und Tabellen\)
 	- Azure SQL
 	- Azure DocumentDB
 	- Lokaler SQL Server
@@ -95,26 +95,26 @@ Nein. Wie bei anderen Azure-Ressourcen auch kann der Name einer Azure Data Facto
 	- Lokale Sybase-Datenbank
 	- Lokale PostgreSQL-Datenbank  
 - **Unterstützte Aktivitäten**: 
-	- Kopieraktivität (lokal nach Cloud und Cloud nach lokal)
-	- HDInsight-Aktivität (Pig, Hive, MapReduce, Hadoop-Streamingtransformationen)
+	- Kopieraktivität \(lokal nach Cloud und Cloud nach lokal\)
+	- HDInsight-Aktivität \(Pig, Hive, MapReduce, Hadoop-Streamingtransformationen\)
 	- Azure Machine Learning-Batch-Bewertungsaktivität
 	- Azure SQL-Aktivität "Gespeicherte Prozedur"
 	- Benutzerdefinierte .NET-Aktivitäten
 
 ### Wann wird eine Aktivität ausgeführt?
-Die Konfigurationseinstellung **availability** in der Ausgabedatentabelle bestimmt, wann die Aktivität erfolgt. Die Aktivität prüft, ob alle Eingabedatenabhängigkeiten erfüllt sind (den Status **ready** haben), bevor die Ausführung beginnt.
+Die Konfigurationseinstellung **availability** in der Ausgabedatentabelle bestimmt, wann die Aktivität erfolgt. Die Aktivität prüft, ob alle Eingabedatenabhängigkeiten erfüllt sind \(den Status **ready** haben\), bevor die Ausführung beginnt.
 
 ## Kopieraktivität – Häufig gestellte Fragen
 ### F: In welchen Regionen wird die Kopieraktivität unterstützt?
 
-Die Kopieraktivität zum Kopieren von Daten wird in den folgenden Regionen unterstützt: USA (Ost), USA (Ost) 2, USA (West), USA (Mitte), USA (Mitte/Süden), Nordeuropa, Westeuropa, Südostasien, Japan (Ost), Brasilien (Süd)
+Die Kopieraktivität zum Kopieren von Daten wird in den folgenden Regionen unterstützt: USA \(Ost\), USA \(Ost\) 2, USA \(West\), USA \(Mitte\), USA \(Mitte/Süden\), Nordeuropa, Westeuropa, Südostasien, Japan \(Ost\), Brasilien \(Süd\)
 
 Das Kopieren von Daten in andere Regionen wird ebenfalls unterstützt, wenn eine der oben genannten fünf Regionen zur Weiterleitung der Daten genutzt wird. Der Kopiervorgang wird auf Basis der Region gemessen, über die die Daten weitergeleitet werden.
 
 Region des Kopierziels | Für die Weiterleitung genutzte Region
 -------------------------- | -----------------------
 Ostasien | Südostasien
-Japan (Westen) | Japan Ost
+Japan \(Westen\) | Japan Ost
 
 ### Wie kann ich Daten in mehrere Ausgabetabellen kopieren?
 Wie im folgenden Beispiel gezeigt, kann eine Pipeline mehrere Ausgabetabellen enthalten.
@@ -139,7 +139,7 @@ Der bedarfsgesteuerte HDInsight-Cluster wird in derselben Region erstellt, in de
 
 ### F: Wie können weitere Speicherkonten mit Ihrem HDInsight-Cluster verknüpft werden?
 
-Wenn Sie Ihren eigenen HDInsight-Cluster (BYOC - Bring Your Own Cluster) verwenden, lesen Sie die folgenden Themen:
+Wenn Sie Ihren eigenen HDInsight-Cluster \(BYOC - Bring Your Own Cluster\) verwenden, lesen Sie die folgenden Themen:
 
 - [Verwenden eines HDInsight-Clusters mit alternativen Speicherkonten und Metastores][hdinsight-alternate-storage]
 - [Verwenden zusätzlicher Speicherkonten mit HDInsight Hive][hdinsight-alternate-storage-2]
@@ -215,4 +215,4 @@ Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige M�
 [hdinsight-alternate-storage-2]: http://blogs.msdn.com/b/cindygross/archive/2014/05/05/use-additional-storage-accounts-with-hdinsight-hive.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

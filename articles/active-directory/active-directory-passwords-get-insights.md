@@ -50,7 +50,7 @@ Zum Finden der Berichte für die Kennwortverwaltung führen Sie die folgenden Sc
 
 ## Anzeigen der Aktivität "Registrierung für Zurücksetzen des Kennworts"
 
-Der Bericht "Aktivität "Registrierung für Zurücksetzen des Kennworts"" zeigt alle Registrierungen für die Kennwortzurücksetzung, die in Ihrer Organisation erfolgt sind. Eine Registrierung für die Kennwortzurücksetzung wird in diesem Bericht für jeden Benutzer angezeigt, der erfolgreich Authentifizierungsinformationen beim Registrierungsportal für die Kennwortzurücksetzung registriert hat ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)).
+Der Bericht "Aktivität "Registrierung für Zurücksetzen des Kennworts"" zeigt alle Registrierungen für die Kennwortzurücksetzung, die in Ihrer Organisation erfolgt sind. Eine Registrierung für die Kennwortzurücksetzung wird in diesem Bericht für jeden Benutzer angezeigt, der erfolgreich Authentifizierungsinformationen beim Registrierungsportal für die Kennwortzurücksetzung registriert hat \([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)\).
 
 - **Max. Zeitraum**: 1 Monat
 - **Maximale Anzahl von Zeilen**: unbegrenzt
@@ -124,10 +124,10 @@ Dieser Bericht zeigt alle Versuche der Kennwortzurücksetzung an, die in Ihrer O
 ### Beschreibung der Berichtsspalten
 In der folgende Liste werden alle Berichtsspalten im Detail beschrieben:
 
-1. **Benutzer** – Der Benutzer, der versucht hat, ein Kennwort zurückzusetzen (basierend auf dem Feld "Benutzer-ID", das bereitgestellt wird, wenn der Benutzer ein Kennwort zurückzusetzen versucht).
+1. **Benutzer** – Der Benutzer, der versucht hat, ein Kennwort zurückzusetzen \(basierend auf dem Feld "Benutzer-ID", das bereitgestellt wird, wenn der Benutzer ein Kennwort zurückzusetzen versucht\).
 2. **Rolle** – Die Rolle des Benutzers im Verzeichnis.
 3. **Datum und Uhrzeit** – Datum und Uhrzeit des Versuchs.
-4. **Verwendete Methode(n)** – Die Authentifizierungsmethoden, die der Benutzer für diesen Zurücksetzungsvorgang verwendet hat.
+4. **Verwendete Methode\(n\)** – Die Authentifizierungsmethoden, die der Benutzer für diesen Zurücksetzungsvorgang verwendet hat.
 5. **Ergebnis** – Das Endergebnis des Vorgangs zum Zurücksetzen des Kennworts.
 6. **Details** – Die Einzelheiten dazu, warum die Kennwortzurücksetzung zu dem entsprechenden Wert geführt hat. Enthält auch alle Maßnahmen, die Sie ergreifen können, um einen unerwarteten Fehler zu beheben.
 
@@ -543,4 +543,4 @@ Nachfolgend finden Sie die Liste der Ergebnistypen, die Sie im Bericht zur Aktiv
 [003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

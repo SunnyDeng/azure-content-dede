@@ -37,7 +37,7 @@ Im Folgenden sehen Sie eine Liste der Ports, die von einer App Service-Umgebung 
 - 80: Standardport für eingehenden HTTP-Datenverkehr in Apps, die in App Service-Plänen in einer App Service-Umgebung ausgeführt werden.
 - 443: Standardport für eingehenden SSL-Datenverkehr in Apps, die in App Service-Plänen in einer App Service-Umgebung ausgeführt werden.
 - 21: Steuerungskanal für FTP. Dieser Port kann sicher blockiert werden, wenn FTP nicht verwendet wird.
-- 10001 10020: Datenkanäle für FTP. Wie der Steuerungskanal können diese Ports sicher blockiert werden, wenn FTP nicht verwendet wird (**Hinweis:** Die FTP-Datenkanäle können sich während der Vorschau ändern.)
+- 10001 10020: Datenkanäle für FTP. Wie der Steuerungskanal können diese Ports sicher blockiert werden, wenn FTP nicht verwendet wird \(\*\*Hinweis:\*\* Die FTP-Datenkanäle können sich während der Vorschau ändern.\)
 - 4016: Wird zum Remotedebuggen in Visual Studio 2012 verwendet. Dieser Port kann sicher blockiert werden, wenn die Funktion nicht verwendet wird.
 - 4018: Wird zum Remotedebuggen in Visual Studio 2013 verwendet. Dieser Port kann sicher blockiert werden, wenn die Funktion nicht verwendet wird.
 - 4020: Wird zum Remotedebuggen in Visual Studio 2015 verwendet. Dieser Port kann sicher blockiert werden, wenn die Funktion nicht verwendet wird.
@@ -66,7 +66,7 @@ Das folgende Beispiel zeigt eine Regel, die explizit Zugriff auf die Verwaltungs
     Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Set-AzureNetworkSecurityRule -Name "ALLOW AzureMngmt" -Type Inbound -Priority 100 -Action Allow -SourceAddressPrefix 'INTERNET'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '454-455' -Protocol TCP
     
 
-Wenn Sie den Zugriff auf Port 80 und 443 sperren, um eine App Service-Umgebung hinter Upstreamgeräten oder -diensten "auszublenden", müssen Sie die Upstream-IP-Adresse kennen. Wenn Sie beispielsweise eine Web Application Firewall (WAF) verwenden, besitzt die WAF eine eigene IP-Adresse (oder mehrere Adressen) zum Leiten von Datenverkehr über einen Proxy an eine Downstream-App Service-Umgebung. Diese IP-Adresse müssen Sie im Parameter *SourceAddressPrefix* einer Netzwerksicherheitsregel verwenden.
+Wenn Sie den Zugriff auf Port 80 und 443 sperren, um eine App Service-Umgebung hinter Upstreamgeräten oder -diensten "auszublenden", müssen Sie die Upstream-IP-Adresse kennen. Wenn Sie beispielsweise eine Web Application Firewall \(WAF\) verwenden, besitzt die WAF eine eigene IP-Adresse \(oder mehrere Adressen\) zum Leiten von Datenverkehr über einen Proxy an eine Downstream-App Service-Umgebung. Diese IP-Adresse müssen Sie im Parameter *SourceAddressPrefix* einer Netzwerksicherheitsregel verwenden.
 
 Im folgenden Beispiel wird der eingehende Datenverkehr von einer bestimmten Upstream-IP-Adresse explizit zugelassen. Die Adresse *1.2.3.4* dient als Platzhalter für die IP-Adresse einer Upstream-WAF. Ändern Sie den Wert in die Adresse, die von Ihrem Upstreamgerät oder -dienst verwendet wird.
 
@@ -78,7 +78,7 @@ Wenn FTP-Unterstützung gewünscht wird, können die folgenden Regeln als Vorlag
     Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Set-AzureNetworkSecurityRule -Name "RESTRICT FTPCtrl" -Type Inbound -Priority 400 -Action Allow -SourceAddressPrefix '1.2.3.4/32'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '21' -Protocol TCP
     Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Set-AzureNetworkSecurityRule -Name "RESTRICT FTPDataRange" -Type Inbound -Priority 500 -Action Allow -SourceAddressPrefix '1.2.3.4/32'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '10001-10020' -Protocol TCP
 
-(**Hinweis:** Der Datenkanal-Portbereich kann sich während des Vorschauzeitraums möglicherweise ändern.)
+\(\*\*Hinweis:\*\* Der Datenkanal-Portbereich kann sich während des Vorschauzeitraums möglicherweise ändern.\)
 
 Für das Remotedebuggen mit Visual Studio wird das Erteilen des Zugriffs durch die folgenden Regeln veranschaulicht. Es gibt für jede unterstützte Version von Visual Studio eine separate Regel, da jede Version einen anderen Port für das Remotedebuggen verwendet. Wie beim FTP-Zugriff fließt der Datenverkehr für das Remotedebuggen möglicherweise nicht ordnungsgemäß durch eine herkömmliche WAF oder ein Proxygerät. Das *SourceAddressPrefix* kann stattdessen auf den IP-Adressbereich von Entwicklungscomputern mit Visual Studio festgelegt werden.
 
@@ -96,7 +96,7 @@ Das folgende Beispiel zeigt eine Netzwerksicherheitsgruppe, die einem Subnetz un
 
     Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Set-AzureNetworkSecurityGroupToSubnet -VirtualNetworkName 'testVNet' -SubnetName 'Subnet-test'
 
-Nach der erfolgreichen Zuweisung der Netzwerksicherheitsgruppe (die Zuweisung ist ein längerer Vorgang und kann einige Minuten dauern) erreicht nur derjenige eingehende Datenverkehr die Apps in der App Service-Umgebung, der den *Zulassen*-Regeln entspricht.
+Nach der erfolgreichen Zuweisung der Netzwerksicherheitsgruppe \(die Zuweisung ist ein längerer Vorgang und kann einige Minuten dauern\) erreicht nur derjenige eingehende Datenverkehr die Apps in der App Service-Umgebung, der den *Zulassen*-Regeln entspricht.
 
 Das folgende Beispiel zeigt der Vollständigkeit halber das Entfernen und somit das Trennen der Netzwerksicherheitsgruppe vom Subnetz:
 
@@ -104,7 +104,7 @@ Das folgende Beispiel zeigt der Vollständigkeit halber das Entfernen und somit 
     Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Remove-AzureNetworkSecurityGroupFromSubnet -VirtualNetworkName 'testVNet' -SubnetName 'Subnet-test'
 
 ## Besonderheiten für explizites IP-SSL ##
-Wenn eine Anwendung mit einer expliziten IP-Adresse und nicht mit der Standard-IP-Adresse der App Service-Umgebung konfiguriert wird, fließt sowohl HTTP- als auch HTTPS-Datenverkehr über einen anderen Satz von Ports (nicht über Port 80 und 443) in das Subnetz.
+Wenn eine Anwendung mit einer expliziten IP-Adresse und nicht mit der Standard-IP-Adresse der App Service-Umgebung konfiguriert wird, fließt sowohl HTTP- als auch HTTPS-Datenverkehr über einen anderen Satz von Ports \(nicht über Port 80 und 443\) in das Subnetz.
 
 Während der ersten Vorschau von App Service-Umgebungen ist es nicht möglich, die spezifischen von IP-SSL verwendeten Ports zu bestimmen. Sobald diese Informationen jedoch über das Portal, Befehlszeilentools und REST-APIs verfügbar gemacht wurden, können Entwickler Netzwerksicherheitsgruppen so konfigurieren, dass diese auch den Datenverkehr über diese Ports regeln.
 
@@ -130,4 +130,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 <!-- IMAGES -->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

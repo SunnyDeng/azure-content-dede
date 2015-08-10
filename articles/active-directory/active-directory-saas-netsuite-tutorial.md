@@ -18,7 +18,7 @@
 
 #Tutorial: Integrieren von NetSuite in Azure Active Directory
 
-In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure Active Directory (Azure AD) verbinden. Sie erfahren, wie Sie die einmalige Anmeldung bei NetSuite konfigurieren, die automatisierte Benutzerbereitstellung aktivieren und Benutzern den Zugriff auf NetSuite zuweisen.
+In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure Active Directory \(Azure AD\) verbinden. Sie erfahren, wie Sie die einmalige Anmeldung bei NetSuite konfigurieren, die automatisierte Benutzerbereitstellung aktivieren und Benutzern den Zugriff auf NetSuite zuweisen.
 
 ##Voraussetzungen
 
@@ -258,4 +258,4 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 [31]: ./media/active-directory-saas-netsuite-tutorial/assign-users.png
 [32]: ./media/active-directory-saas-netsuite-tutorial/assign-confirm.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

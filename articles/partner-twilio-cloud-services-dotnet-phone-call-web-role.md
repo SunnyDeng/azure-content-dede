@@ -23,7 +23,7 @@
 
 In diesem Leitfaden wird veranschaulicht, wie Sie von einer in Azure gehosteten Webseite einen Anruf über Twilio tätigen können. Die Anwendung fragt den Benutzer nach Werten für den Telefonanruf, wie im folgenden Screenshot gezeigt.
 
-! [Azure-Anrufformular mit Twilio und ASP.NET] [twilio_dotnet_basic_f
+! \[Azure-Anrufformular mit Twilio und ASP.NET\] \[twilio\_dotnet\_basic\_f
 
 ## <a name="twilio-prereqs"></a>Voraussetzungen
 
@@ -70,7 +70,7 @@ Der folgende Code erstellt ein Web-Formular zur Eingabe der Benutzerdaten für d
     </asp:Content>
 
 ## <a id="howtocreatecode"></a>Erstellen des Codes für den Anruf
-Der folgende Code wird aufgerufen wenn der Benutzer das Formular abschließt und generiert die Anrufnachricht und führt den Anruf aus. In diesem Beispiel wird der Code im oncklick-Ereignishandler der Schaltfläche im Formular ausgeführt. (Ersetzen Sie die Platzhalterwerte **accountSID** und **authToken** im folgenden Code durch Ihr Twilio-Konto und Ihr Authentifizierungs-Token.)
+Der folgende Code wird aufgerufen wenn der Benutzer das Formular abschließt und generiert die Anrufnachricht und führt den Anruf aus. In diesem Beispiel wird der Code im oncklick-Ereignishandler der Schaltfläche im Formular ausgeführt. \(Ersetzen Sie die Platzhalterwerte **accountSID** und **authToken** im folgenden Code durch Ihr Twilio-Konto und Ihr Authentifizierungs-Token.\)
 
     using System;
     using System.Collections.Generic;
@@ -192,4 +192,4 @@ Dieser Code demonstriert die allgemeinen Funktionen für die Verwendung von Twil
 
 [azure_runtime_ref_dotnet]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

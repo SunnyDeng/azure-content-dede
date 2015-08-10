@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/16/2015" 
+	ms.date="07/22/2015" 
 	ms.author="spelluru"/>
 
 # Erstellen, Überwachen und Verwalten von Azure Data Factorys mithilfe des Data Factory .NET SDK
@@ -29,7 +29,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 - Herunterladen und Installieren von NuGet-Paketen für Azure Data Factory Entsprechende Anweisungen sind in der exemplarischen Vorgehensweise enthalten.
 
 ## Exemplarische Vorgehensweise
-1. Erstellen Sie mithilfe von Visual Studio 2012 oder 2013 eine C# .NET-Konsolenanwendung.
+1. Erstellen Sie mithilfe von Visual Studio 2012 oder 2013 eine C\# .NET-Konsolenanwendung.
 	<ol type="a">
 	<li>Starten Sie <b>Visual Studio 2012</b> oder <b>Visual Studio 2013</b>.</li>
 	<li>Klicken Sie auf <b>Datei</b>, zeigen Sie auf <b>Neu</b>, und klicken Sie auf <b>Projekt</b>.</li> 
@@ -46,7 +46,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 		Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
 6. Fügen Sie den folgenden **appSettings**-Abschnitt zur Datei **App.config** hinzu. Diese werden von der Hilfsmethode **GetAuthorizationHeader** verwendet. 
 
-	Ersetzen Sie die Werte für **SubscriptionId** und **ActiveDirectoryTenantId** durch Ihre Abonnement- und Mandanten-ID für Azure. Sie können diese Werte abrufen, indem Sie über Azure PowerShell **Get-AzureAccount** ausführen (möglicherweise müssen Sie sich zuvor mithilfe von "Add-AzureAccount" anmelden).
+	Ersetzen Sie die Werte für **SubscriptionId** und **ActiveDirectoryTenantId** durch Ihre Abonnement- und Mandanten-ID für Azure. Sie können diese Werte abrufen, indem Sie über Azure PowerShell **Get-AzureAccount** ausführen \(möglicherweise müssen Sie sich zuvor mithilfe von "Add-AzureAccount" anmelden\).
  
 		<appSettings>
 		    <!--CSM Prod related values-->
@@ -59,7 +59,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 		    <add key="SubscriptionId" value="<subscription ID>" />
     		<add key="ActiveDirectoryTenantId" value="<tenant ID" />
 		</appSettings>
-6. Fügen Sie die folgenden **using**-Anweisungen zur Quelldatei (Program.cs) im Projekt hinzu.
+6. Fügen Sie die folgenden **using**-Anweisungen zur Quelldatei \(Program.cs\) im Projekt hinzu.
 
 		using System.Threading;
 		using System.Configuration;
@@ -74,7 +74,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 6. Fügen Sie folgenden Code, der eine Instanz der **DataPipelineManagementClient**-Klasse erstellt, zur Methode **Main** hinzu. Sie verwenden dieses Objekt, um eine Data Factory, einen verknüpften Dienst, Eingabe- und Ausgabetabellen sowie eine Pipeline zu erstellen. Zudem verwenden Sie dieses Objekt, um Datenslices einer Tabelle zur Laufzeit zu überwachen.    
 
         // create data factory management client
-        string resourceGroupName = "ADF";
+        string resourceGroupName = "resourcegroupname";
         string dataFactoryName = "APITutorialFactorySP";
 
         TokenCloudCredentials aadTokenCredentials =
@@ -85,6 +85,8 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
         Uri resourceManagerUri = new Uri(ConfigurationManager.AppSettings["ResourceManagerEndpoint"]);
 
         DataFactoryManagementClient client = new DataFactoryManagementClient(aadTokenCredentials, resourceManagerUri);
+
+	> [AZURE.NOTE]Ersetzen Sie die**resourcegroupname** durch den Namen Ihrer Azure-Ressourcengruppe. Mit dem Cmdlet [New-AzureResourceGroup](https://msdn.microsoft.com/library/Dn654594.aspx) können Sie eine Ressourcengruppe erstellen.
 
 7. Fügen Sie den folgenden Code, der eine **Data Factory** erstellt, zur Methode **Main** hinzu.
 
@@ -124,7 +126,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 
 	Beachten Sie, dass für **FolderPath** für das Eingabeblob der Wert **adftutorial/** festgelegt ist, wobei **adftutorial** den Namen des Containers im Blobspeicher darstellt. Wenn dieser Container nicht in Ihrem Azure-Blobspeicher enthalten ist, erstellen Sie einen Container mit dem Namen **adftutorial** und laden eine Textdatei in den Container hoch.
 	
-	Beachten Sie, dass für "FolderPath" für das Ausgabe-Blob auf **adftutorial/apifactoryoutput/{Slice}** festgelegt ist, wobei **Slice** auf Basis des Werts von **SliceStart** (Startdatum und -zeit für jeden Slice) dynamisch berechnet wird.
+	Beachten Sie, dass für "FolderPath" für das Ausgabe-Blob auf **adftutorial/apifactoryoutput/{Slice}** festgelegt ist, wobei **Slice** auf Basis des Werts von **SliceStart** \(Startdatum und -zeit für jeden Slice\) dynamisch berechnet wird.
 
  
         // create input and output tables
@@ -329,7 +331,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
             }
         }
 
-14. **(optional)** Fügen Sie der **Main**-Methode den folgenden Code hinzu, um Ausführungsdetails für einen Datenslice abzurufen.
+14. **\(optional\)** Fügen Sie der **Main**-Methode den folgenden Code hinzu, um Ausführungsdetails für einen Datenslice abzurufen.
 
         Console.WriteLine("Getting run details of a data slice");
 
@@ -366,9 +368,9 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
         John, Doe
 		Jane, Doe
 	 
-17. Führen Sie das Beispiel aus, indem Sie im Menü auf **Debuggen** -> **Debuggen starten** klicken. Wenn angezeigt wird, dass die **Ausführungsdetails für ein Datenslice** abgerufen werden, warten Sie einige Minuten, und drücken Sie dann die **EINGABETASTE**.
+17. Führen Sie das Beispiel aus, indem Sie im Menü auf **Debuggen** -\> **Debuggen starten** klicken. Wenn angezeigt wird, dass die **Ausführungsdetails für einen Datenslice** abgerufen werden, warten Sie einige Minuten, und drücken Sie dann die **EINGABETASTE**.
 18. Verwenden Sie das Azure-Vorschauportal, um Folgendes für die Data Factory zu überprüfen: **APITutorialFactory** wird mit folgenden Artefakten erstellt: 
-	- Verknüpfter Dienst: **LinkedService_AzureStorage** 
+	- Verknüpfter Dienst: **LinkedService\_AzureStorage** 
 	- Tabellen: **TableBlobSource** und **TableBlobDestination**.
 	- Pipeline: **PipelineBlobSample** 
 18. Stellen Sie sicher, dass im Ordner **apifactoryoutput** im **adftutorial**-Container eine Ausgabedatei erstellt wird.
@@ -392,4 +394,4 @@ Artikel | Beschreibung
 [azure-developer-center]: http://azure.microsoft.com/downloads/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

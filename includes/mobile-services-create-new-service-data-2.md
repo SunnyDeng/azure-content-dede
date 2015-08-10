@@ -8,7 +8,7 @@ Um App-Daten im neuen mobilen Dienst speichern zu können, müssen Sie zuerst ei
 
 3. Geben Sie unter **Tabellenname** den Namen _TodoItem_ ein und klicken Sie auf das Kontrollkästchen.
 
-  Dadurch wird die neue Speichertabelle **TodoItem** mit Standardberechtigungen erstellt. Dies bedeutet, dass jeder mit dem Anwendungsschlüssel (der mit Ihrer App verteilt wird) auf die Daten in der Tabelle zugreifen und diese ändern kann.
+  Dadurch wird die neue Speichertabelle **TodoItem** mit Standardberechtigungen erstellt. Dies bedeutet, dass jeder mit dem Anwendungsschlüssel \(der mit Ihrer App verteilt wird\) auf die Daten in der Tabelle zugreifen und diese ändern kann.
 
 	>[AZURE.NOTE] The same table name is used in Mobile Services quickstart. However, each table is created in a schema that is specific to a given mobile service. This is to prevent data collisions when multiple mobile services use the same database.
 
@@ -48,4 +48,4 @@ Um App-Daten im neuen mobilen Dienst speichern zu können, müssen Sie zuerst ei
 
 Sie können den neuen mobilen Dienst nun als Datenspeicher für die App verwenden.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

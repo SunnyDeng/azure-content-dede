@@ -26,7 +26,7 @@ Event Hubs ist ein Dienst zur Ereignisverarbeitung, der riesige Mengen an Ereig
 
 * Anwendungsinstrumentation
 * Benutzerumgebung oder Workflowverarbeitung
-* Internet der Dinge (IoT)-Szenarien
+* Internet der Dinge \(IoT\)-Szenarien
 
 Weitere Beispiele für die Funktionen von Event Hubs sind Verhaltensanalysen in mobilen Apps, Verkehrsinformationen von Webfarmen, Ereignisaufzeichnungen in Konsolenspielen oder von Industriemaschinen oder verbundenen Fahrzeugen erfasste Telemetriedaten.
 
@@ -45,4 +45,4 @@ Ausführliche Informationen zu Event Hubs finden Sie unter den folgenden Themen
 [Lernprogramm zu Event Hubs]: service-bus-event-hubs-csharp-ephcs-getstarted.md
 [Beispielanwendung zur Verwendung von Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

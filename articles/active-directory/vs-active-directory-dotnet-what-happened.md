@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vs-what-happened"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/06/2015"
+	ms.date="07/22/2015"
 	ms.author="patshea123"/>
 
 # Was ist mit meinem Projekt passiert?
@@ -22,11 +22,11 @@
 > - [Getting Started](vs-active-directory-dotnet-getting-started.md)
 > - [What Happened](vs-active-directory-dotnet-what-happened.md)
 
-###<span id="whathappened">Was ist mit meinem Projekt passiert?</span>
 
-Verweise wurden hinzugefügt.
 
-#####NuGet-Paketverweise
+##Verweise wurden hinzugefügt
+
+###NuGet-Paketverweise
 
 - `Microsoft.IdentityModel.Protocol.Extensions`
 - `Microsoft.Owin`
@@ -37,7 +37,7 @@ Verweise wurden hinzugefügt.
 - `Owin`
 - `System.IdentityModel.Tokens.Jwt`
 
-#####.NET-Verweise
+###.NET-Verweise
 
 - `Microsoft.IdentityModel.Protocol.Extensions`
 - `Microsoft.Owin`
@@ -50,15 +50,17 @@ Verweise wurden hinzugefügt.
 - `System.IdentityModel.Tokens.Jwt`
 - `System.Runtime.Serialization`
 
-#####Ihrem Projekt wurden Codedateien hinzugefügt
+##Code wurde hinzugefügt
 
-Ihrem Projekt wurde die Authentifizierungsstartklasse `App_Start/Startup.Auth.cs` hinzugefügt. Sie enthält Startlogik für die Azure AD-Authentifizierung. Außerdem wurde eine Controllerklasse ("Controllers/AccountController.cs") hinzugefügt, die die Methoden `SignIn()` und `SignOut()` enthält. Schließlich wurde die Teilansicht `Views/Shared/_LoginPartial.cshtml` hinzugefügt, die einen Aktionslink für "SignIn/SignOut" enthält.
+###Ihrem Projekt wurden Codedateien hinzugefügt
 
-#####Ihrem Projekt wurde Startcode hinzugefügt
+Ihrem Projekt wurde die Authentifizierungsstartklasse `App_Start/Startup.Auth.cs` hinzugefügt. Sie enthält Startlogik für die Azure AD-Authentifizierung. Außerdem wurde eine Controllerklasse \("Controllers/AccountController.cs"\) hinzugefügt, die die Methoden `SignIn()` und `SignOut()` enthält. Schließlich wurde die Teilansicht `Views/Shared/_LoginPartial.cshtml` hinzugefügt, die einen Aktionslink für "SignIn/SignOut" enthält.
+
+###Ihrem Projekt wurde Startcode hinzugefügt
 
 Wenn Sie bereits eine Startklasse in Ihrem Projekt verwendet haben, wurde die **Configuration**-Methode so aktualisiert, dass sie einen Aufruf von `ConfigureAuth(app)` enthält. Andernfalls wurde Ihrem Projekt eine Startklasse hinzugefügt.
 
-#####Ihre Datei "app.config" oder "web.config" weist neue Konfigurationswerte auf
+###Ihre Datei "app.config" oder "web.config" weist neue Konfigurationswerte auf
 
 Die folgenden Konfigurationseinträge wurden hinzugefügt. <pre> `<appSettings>
 	    <add key="ida:ClientId" value="ClientId from the new Azure AD App" />
@@ -68,19 +70,19 @@ Die folgenden Konfigurationseinträge wurden hinzugefügt. <pre> `<appSettings>
 	    <add key="ida:PostLogoutRedirectUri" value="Your project start page" />
 	</appSettings>` </pre>
 
-#####Eine Azure Active Directory-App (AD) wurde erstellt
+###Eine Azure Active Directory-App \(AD\) wurde erstellt
 Eine Azure AD-Anwendung wurde in dem Verzeichnis erstellt, das Sie im Assistenten ausgewählt haben.
 
-###Wenn ich *das Deaktivieren der Authentifizierung für einzelne Benutzerkonten* ausgewählt habe, welche zusätzlichen Änderungen wurden an meinem Projekt vorgenommen?
+##Wenn ich *das Deaktivieren der Authentifizierung für einzelne Benutzerkonten* ausgewählt habe, welche zusätzlichen Änderungen wurden an meinem Projekt vorgenommen?
 NuGet-Paketverweise wurden entfernt, und die Dateien wurden entfernt und gesichert. Abhängig vom Status des Projekts müssen Sie möglicherweise manuell zusätzliche Verweise oder Dateien entfernen oder Code entsprechend ändern.
 
-#####NuGet-Paketverweise entfernt (die vorhanden waren)
+###NuGet-Paketverweise entfernt \(die vorhanden waren\)
 
 - `Microsoft.AspNet.Identity.Core`
 - `Microsoft.AspNet.Identity.EntityFramework`
 - `Microsoft.AspNet.Identity.Owin`
 
-#####Codedateien gesichert und entfernt (die vorhanden waren)
+###Codedateien gesichert und entfernt \(die vorhanden waren\)
 
 Jede der folgenden Dateien wurde gesichert und aus dem Projekt entfernt. Sicherungsdateien befinden sich in einem Ordner "Backup" im Stammverzeichnis des Projektverzeichnisses.
 
@@ -89,19 +91,20 @@ Jede der folgenden Dateien wurde gesichert und aus dem Projekt entfernt. Sicheru
 - `Models\IdentityModels.cs`
 - `Models\ManageViewModels.cs`
 
-#####Codedateien gesichert (die vorhanden waren)
+###Codedateien gesichert \(die vorhanden waren\)
 
 Jede der folgenden Dateien wurde gesichert, bevor sie ersetzt wurde. Sicherungsdateien befinden sich in einem Ordner "Backup" im Stammverzeichnis des Projektverzeichnisses.
 
 - `Startup.cs`
 - `App_Start\Startup.Auth.cs`
 - `Controllers\AccountController.cs`
-- `Views\Shared_LoginPartial.cshtml`
+- `Views\Shared\_LoginPartial.cshtml`
 
-###Wenn ich *Verzeichnisdaten lesen* aktiviert habe, welche zusätzlichen Änderungen wurden an meinem Projekt vorgenommen?
+##Wenn ich *Verzeichnisdaten lesen* aktiviert habe, welche zusätzlichen Änderungen wurden an meinem Projekt vorgenommen?
+
 Zusätzliche Verweise wurden hinzugefügt.
 
-#####Zusätzliche NuGet-Paketverweise
+###Zusätzliche NuGet-Paketverweise
 
 - `EntityFramework`
 - `Microsoft.Azure.ActiveDirectory.GraphClient`
@@ -111,7 +114,7 @@ Zusätzliche Verweise wurden hinzugefügt.
 - `Microsoft.IdentityModel.Clients.ActiveDirectory`
 - `System.Spatial`
 
-#####Zusätzliche .NET-Verweise
+###Zusätzliche .NET-Verweise
 
 - `EntityFramework`
 - `EntityFramework.SqlServer`
@@ -123,15 +126,15 @@ Zusätzliche Verweise wurden hinzugefügt.
 - `Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms`
 - `System.Spatial`
 
-#####Ihrem Projekt wurden zusätzliche Codedateien hinzugefügt
+###Ihrem Projekt wurden zusätzliche Codedateien hinzugefügt
 
 Zur Unterstützung der Tokenzwischenspeicherung wurden zwei Dateien hinzugefügt: `Models\ADALTokenCache.cs` und `Models\ApplicationDbContext.cs`. Ein zusätzlicher Controller und eine Ansicht wurden hinzugefügt, um den Zugriff auf Benutzerprofilinformationen mithilfe von Azure Graph-APIs zu veranschaulichen. Dies sind die Dateien `Controllers\UserProfileController.cs` und `Views\UserProfile\Index.cshtml`.
 
-#####Ihrem Projekt wurde zusätzlicher Startcode hinzugefügt
+###Ihrem Projekt wurde zusätzlicher Startcode hinzugefügt
 
 In der Datei `startup.auth.cs` wurde dem `Notifications`-Member von `OpenIdConnectAuthenticationOptions` ein neues `OpenIdConnectAuthenticationNotifications`-Objekt hinzugefügt. Auf diese Weise wird der Empfang des OAuth-Codes und dessen Austausch gegen ein Zugriffstoken aktiviert.
 
-#####An "app.config" oder "web.config" wurden zusätzliche Änderungen vorgenommen
+###An "app.config" oder "web.config" wurden zusätzliche Änderungen vorgenommen
 
 Die folgenden zusätzlichen Konfigurationseinträge wurden hinzugefügt. <pre> `<appSettings>
 	    <add key="ida:ClientSecret" value="Your Azure AD App's new client secret" />
@@ -156,9 +159,9 @@ Die folgenden Konfigurationsabschnitte und eine Verbindungszeichenfolge wurden h
 	</entityFramework>`</pre>
 
 
-#####Ihre Azure Active Directory-App (AD) wurde aktualisiert
+###Ihre Azure Active Directory-App \(AD\) wurde aktualisiert
 Ihre Azure Active Directory-App wurde aktualisiert und enthält nun die Berechtigung *Verzeichnis lesen*. Außerdem wurde ein zusätzlicher Schlüssel erstellt, der als *ida:ClientSecret* in der Datei `web.config` verwendet wird.
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

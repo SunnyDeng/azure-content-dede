@@ -13,22 +13,22 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/06/2015" 
+	ms.date="07/22/2015" 
 	ms.author="patshea123"/>
 
 # Fehler während der Authentifizierungserkennung
 
 Beim Erkennen des vorherigen Authentifizierungscodes hat der Assistent einen nicht kompatiblen Authentifizierungstyp erkannt.
 
-###Was wird überprüft?
+##Was wird überprüft?
 
 **Hinweis:** Um vorherigen Authentifizierungscode in einem Projekt ordnungsgemäß erkennen zu können, muss das Projekt erstellt werden. Wenn dieser Fehler auftritt und in Ihrem Projekt kein vorheriger Authentifizierungscode enthalten ist, erstellen Sie Ihr Projekt neu, und versuchen Sie es nochmals.
 
-####Projekttypen
+###Projekttypen
 
 Der Assistent überprüft, welche Art von Projekt Sie entwickeln, um die richtige Authentifizierungslogik in das Projekt einzufügen. Bei einem Domänencontroller, der im Projekt von `ApiController` abgeleitet wird, gilt es als WebAPI-Projekt. Wenn nur Domänencontroller vorhanden sind, die im Projekt von `MVC.Controller` abgeleitet sind, wird es als MVC-Projekt betrachtet. Alles andere wird vom Assistenten als nicht unterstützt betrachtet. WebForms-Projekte werden derzeit nicht unterstützt.
 
-#####Kompatibler Authentifizierungscode
+###Kompatibler Authentifizierungscode
 
 Der Assistent überprüft auch Authentifizierungseinstellungen, die zuvor mit dem Assistenten konfiguriert wurden oder mit dem Assistenten kompatibel sind. Wenn alle Einstellungen vorhanden sind, gilt dies als eintrittsinvarianter Fall, und der Assistent wird geöffnet und zeigt die Einstellungen an. Wenn nur einige der Einstellungen vorhanden sind, wird es als Fehlerfall betrachtet.
 
@@ -45,7 +45,7 @@ Außerdem überprüft der Assistent die folgenden Einstellungen in einem Web-API
 	<add key="ida:Tenant" value="" />
 	<add key="ida:Audience" value="" />
 
-#####Nicht kompatibler Authentifizierungscode
+###Nicht kompatibler Authentifizierungscode
 
 Der Assistent versucht schließlich, Versionen von Authentifizierungscode zu erkennen, die mit früheren Versionen von Visual Studio konfiguriert wurden. Wenn Sie diesen Fehler erhalten, ist ein nicht kompatibler Authentifizierungstyp in Ihrem Projekt vorhanden. Der Assistent erkennt die folgenden Authentifizierungstypen aus früheren Versionen von Visual Studio:
 
@@ -97,4 +97,4 @@ Wenn Sie den Authentifizierungstyp ändern möchten, entfernen Sie den inkompati
 Weitere Informationen finden Sie unter [Authentifizierungsszenarien für Azure AD](active-directory-authentication-scenarios.md).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

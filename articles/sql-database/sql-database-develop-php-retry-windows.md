@@ -40,9 +40,9 @@ Im Thema [Erste Schritte](sql-database-get-started.md) erhalten Sie Informatione
 
 Das Demoprogramm wurde so entworfen, dass ein vorübergehender Fehler beim Herstellen einer Verbindung zu einer Wiederholung führt. Ein vorübergehender Fehler während des Abfragebefehls bewirkt jedoch, dass das Programm die Verbindung verwirft und eine neue Verbindung herstellt, bevor der Abfragebefehl wiederholt wird. Microsoft spricht keinerlei Empfehlung für oder gegen diese Entwurfsentscheidung aus. Das Demoprogramm soll lediglich die Entwurfsflexibilität veranschaulichen, die Ihnen zur Verfügung steht.
 
-<br>Die Länge dieses Codebeispiel ist größtenteils auf die Catch-Exception-Logik zurückzuführen. Eine kürzere Version der Datei "Program.cs" finden Sie [hier](https://azure.microsoft.com/de-de/documentation/articles/sql-database-develop-php-simple-windows/). <br>Die Main-Methode befindet sich in der Datei "Program.cs". Die Aufrufreihenfolge lautet wie folgt: * Main calls ConnectAndQuery. * ConnectAndQuery calls EstablishConnection. * EstablishConnection calls IssueQueryCommand.
+<br>Die Länge dieses Codebeispiel ist größtenteils auf die Catch-Exception-Logik zurückzuführen. Eine kürzere Version der Datei „Program.cs“ finden Sie [hier](sql-database-develop-php-simple-windows.md). <br>Die Main-Methode befindet sich in der Datei "Program.cs". Die Aufrufreihenfolge lautet wie folgt: \* Main calls ConnectAndQuery. \* ConnectAndQuery calls EstablishConnection. \* EstablishConnection calls IssueQueryCommand.
 
-Mit der [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php)-Funktion können Sie ein Resultset aus einer Abfrage einer SQL-Datenbank abrufen. Diese Funktion akzeptiert praktisch jede Abfrage und das Verbindungsobjekt und gibt ein Resultset zurück, das mithilfe von [sqlsrv_fetch_array()](http://php.net/manual/en/function.sqlsrv-fetch-array.php) durchlaufen werden kann.
+Mit der [sqlsrv\_query\(\)](http://php.net/manual/en/function.sqlsrv-query.php)-Funktion können Sie ein Resultset aus einer Abfrage einer SQL-Datenbank abrufen. Diese Funktion akzeptiert praktisch jede Abfrage und das Verbindungsobjekt und gibt ein Resultset zurück, das mithilfe von [sqlsrv\_fetch\_array\(\)](http://php.net/manual/en/function.sqlsrv-fetch-array.php) durchlaufen werden kann.
 
 	<?php
 		// Variables to tune the retry logic.  
@@ -133,8 +133,8 @@ Mit der [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php)-Fun
 ## Weitere nützliche Informationen
 
 
-Weitere Informationen über die Installation und Verwendung von PHP finden Sie unter [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/library/cc793139.aspx) (Zugreifen auf SQL Server-Datenbanken mit PHP, in englischer Sprache).
+Weitere Informationen über die Installation und Verwendung von PHP finden Sie unter [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/library/cc793139.aspx) \(Zugreifen auf SQL Server-Datenbanken mit PHP, in englischer Sprache\).
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

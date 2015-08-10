@@ -1,34 +1,41 @@
-1. Melden Sie sich beim Azure [Verwaltungsportal](http://manage.windowsazure.com) an. Klicken Sie in der Befehlsleiste auf **Neu**.
+1. Melden Sie sich bei Ihrem Azure-Abonnement an, indem Sie die Schritte unter [Herstellen einer Verbindung mit Azure von der Azure Befehlszeilenschnittstelle \(Azure-CLI\)](../articles/xplat-cli-connect.md) ausführen.
+2. Stellen Sie folgendermaßen sicher, dass der Dienstverwaltungsmodus aktiviert ist:
 
-2. Klicken Sie auf **Virtueller Computer** und dann auf **From Gallery**.
+        azure config mode asm
 
-3. Wählen Sie unter **Abbild auswählen** ein Abbild aus einer der Listen aus. (Die verfügbaren Abbilder können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.) Klicken Sie auf den Pfeil, um fortzufahren.
+3. Wählen Sie aus den verfügbaren Images das Linux-Image aus, das Sie laden möchten:
 
-4. Wenn mehrere Versionen des Images verfügbar sind, wählen Sie unter **Version Release Date** die Version aus, die Sie verwenden möchten.
+        azure vm image list | grep "Linux"
 
-5. Geben Sie unter **Virtual Machine Name** den Namen ein, den Sie verwenden möchten. Geben Sie für diesen virtuellen Computer **MyTestVM1** ein.
+4. Erstellen Sie mithilfe von `azure vm create` einen neuen virtuellen Computer mit dem Linux-Image aus der obigen Liste. Dadurch werden ein neuer Clouddienst und ein neues Speicherkonto erstellt. Sie können auch mithilfe der Option `-c` eine Verbindung zwischen diesem virtuellen Computer und einem vorhandenen Clouddienst herstellen. Zudem wird ein SSH-Endpunkt zum Anmelden beim virtuellen Linux-Computer mit der Option `-e` erstellt.
 
-6. Wählen Sie unter **Größe** die Größe für den virtuellen Computer aus. Die Größe, die Sie auswählen, hängt von der Anzahl der Kerne ab, die für Ihre Anwendung erforderlich sind. Wählen Sie für diesen virtuellen Computer die kleinste verfügbare Größe.
+        ~$ azure vm create "MyTestVM" b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64 "adminUser" -z "Small" -e -l "West US"
+        info:    Executing command vm create
+        + Looking up image b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64
+        Enter VM 'adminUser' password:*********
+        Confirm password: *********
+        + Looking up cloud service
+        info:    cloud service MyTestVM not found.
+        + Creating cloud service
+        + Retrieving storage accounts
+        + Creating a new storage account 'mytestvm1437604756125'
+        + Creating VM
+        info:    vm create command OK
 
-7. Geben Sie unter **Neuer Benutzername** den Namen des Kontos ein, das Sie zur Administration des virtuellen Computers verwenden. Sie können nicht "root" für den Benutzernamen verwenden. Geben Sie für diesen virtuellen Computer **NeuerBenutzer1** ein.
+    >[AZURE.NOTE]Geben Sie bei einem virtuellen Linux-Computer die Option `-e` in `vm create` an. SSH kann nicht nach der Erstellung des virtuellen Computers aktiviert werden. Weitere Informationen zu SSH finden Sie unter [Verwenden von SSH mit Linux in Azure](../articles/virtual-machines/virtual-machines-linux-use-ssh-key.md).
 
-8. Wählen Sie unter **Authentication** Kennwort angeben. Geben Sie dann die erforderlichen Informationen ein, und klicken Sie auf den Pfeil, um fortzufahren.
+    Beim Image *b4590d9e3ed742e4a1d46e5424aa335e\_\_suse-opensuse-13.1-20141216-x86-64* handelt es sich um das Image, das wir im vorherigen Schritt in der Liste der Images ausgewählt haben. *MyTestVM* ist der Name des neuen virtuellen Computers, und *adminUser* ist der Benutzername, den wir für SSH auf dem virtuellen Computer verwenden. Sie können diese Variablen nach Bedarf ersetzen. Weitere Informationen zu diesem Befehl finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Azure-Dienstverwaltung](../articles/virtual-machines/virtual-machines-command-line-tools.md).
 
-9. Sie können virtuelle Computer zusammen im Clouddienst platzieren. Aber in diesem Tutorial erstellen Sie nur einen einzigen virtuellen Computer. Wählen Sie hierzu **Neuen Clouddienst erstellen** aus.
+5. Der neu erstellte virtuelle Linux-Computer wird in der angegebenen Liste angezeigt:
 
-10. Geben Sie unter **DNS-Name des Clouddiensts** einen Namen ein, der zwischen drei und 24 Kleinbuchstaben und Ziffern enthält. Sie müssen einen eigenen Namen für den Cloud-Dienst eingeben, da dieser in Azure eindeutig sein muss. Der Name des Cloud-Diensts wird zu einem Teil des URI, mit dessen Hilfe der virtuelle Computer über den Cloud-Dienst kontaktiert wird.
+        azure vm list
 
-11. Wählen Sie unter **Region/Affinitätsgruppe/Virtuelles Netzwerk** den Standort des virtuellen Computers aus.
+6. Sie können die Attribute des virtuellen Computers mithilfe des folgenden Befehls überprüfen:
 
-12. Sie können ein Speicherkonto auswählen, in dem die VHD-Datei gespeichert wird. In diesem Tutorial verwenden wir die Standardeinstellung **Automatisch generiertes Speicherkonto verwenden**.
+        azure vm show MyTestVM
 
-13. Wählen Sie außerdem unter **Verfügbarkeitsgruppe** für dieses Tutorial die Standardeinstellung **Keine**.
+7. Der neu erstellte virtuelle Computer kann nun mit dem Befehl `azure vm start` gestartet werden.
 
-14.	Prüfen Sie unter **Endpunkte** den automatisch erstellten Endpunkt, um Secure Shell-Verbindungen (SSH) zu dem virtuellen Computer zuzulassen. (Endpunkte ermöglichen Ressourcen im Internet oder anderen virtuellen Netzwerken die Kommunikation mit einem virtuellen Computer.) Sie können jetzt weitere Endpunkte hinzufügen oder diese später erstellen. Anweisungen dazu, wie Sie sie später erstellen, finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](../articles/virtual-machines/virtual-machines-set-up-endpoints.md).
+Ausführliche Informationen zu diesen Azure CLI-Befehlen für virtuelle Computer finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Azure-Dienstverwaltung](../articles/virtual-machines/virtual-machines-command-line-tools.md).
 
-15.  Prüfen Sie unter **VM-Agent** die verfügbaren Erweiterungen. Diese Erweiterungen bieten verschiedene Features, die die Verwendung und Verwaltung eines virtuellen Computers vereinfachen. Details finden Sie im Thema zu den [Azure-VM-Erweiterungen](http://go.microsoft.com/FWLink/p/?LinkID=390493).
-
-
-Nachdem Azure den virtuellen Computer und den Cloud-Dienst erstellt hat, führt das Verwaltungsportal den neuen virtuellen Computer unter **Virtuelle Computer** und den Cloud-Dienst unter **Cloud-Dienste** auf. Sowohl der virtuelle Computer als auch der Clouddienst werden automatisch gestartet.
-
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

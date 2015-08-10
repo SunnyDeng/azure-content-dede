@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/14/2015"
+   ms.date="07/22/2015"
    ms.author="jesseb"/>
 
 # Verwalten von Service Fabric-Anwendungen in Visual Studio
@@ -34,13 +34,8 @@ Beim Bereitstellen einer Service Fabric-Anwendung werden die folgenden Schritte 
 4. Entfernen ausgeführter Anwendungsinstanzen
 5. Erstellen einer neuen Anwendungsinstanz
 
-Um die Anwendung mit Visual Studio bereitzustellen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Service Fabric-Anwendung, und klicken Sie auf **Bereitstellen**. Sie können auch **F5** drücken, um die Anwendung bereitzustellen und den Debugger an alle Anwendungsinstanzen anzufügen.
+In Visual Studio können Sie eine Anwendung bereitstellen, indem Sie im Menü „Build“ den Befehl „Projektmappe bereitstellen“ wählen. Sie können auch **F5** drücken, um die Anwendung bereitzustellen und den Debugger an alle Anwendungsinstanzen anzufügen.
 
-Die Bereitstellung kann mit **Bereitstellung entfernen** entfernt werden. Hierbei werden die oben genannten Bereitstellungsschritte rückgängig gemacht.
-
-1. Entfernen ausgeführter Anwendungsinstanzen
-2. Aufheben der Registrierung des Anwendungstyps
-3. Entfernen des Anwendungspakets aus dem Image-Speicher
 
 ## Hinzufügen von Diensten zur Service Fabric-Anwendung
 
@@ -60,6 +55,16 @@ Der neue Dienst wird zur Projektmappe und dem vorhandenen Anwendungspaket hinzug
 
 Um die Anwendung und die zugehörigen Dienste in einem Cluster bereitzustellen, muss ein Anwendungspaket erstellt werden. Das Paket ordnet das Anwendungsmanifest, das bzw. die Dienstmanifeste und andere erforderliche Dateien in einem bestimmten Layout an. Visual Studio richtet das Paket im Projektordner der Anwendung im Verzeichnis "Pkg" ein und verwaltet es. Klicken Sie zum Erstellen oder Aktualisieren des Anwendungspakets auf **Packen**. Dies ist möglicherweise erforderlich, falls Sie die Anwendung mithilfe benutzerdefinierter Powershell-Scripts bereitstellen möchten.
 
+## Entfernen einer Anwendung
+
+Sie können mit dem Server-Explorer eine Anwendung aus Ihrem lokalen Cluster entfernen. Hierbei werden die oben beschriebenen Bereitstellungsschritte rückgängig gemacht:
+
+1. Entfernen ausgeführter Anwendungsinstanzen
+2. Aufheben der Registrierung des Anwendungstyps
+3. Entfernen des Anwendungspakets aus dem Image-Speicher
+
+![Entfernen einer Anwendung](./media/service-fabric-manage-application-in-visual-studio/removeapplication.png)
+
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
 
@@ -73,6 +78,5 @@ Um die Anwendung und die zugehörigen Dienste in einem Cluster bereitzustellen, 
 [manageservicefabric]: ./media/service-fabric-manage-application-in-visual-studio/manageservicefabric.png
 [newservice]: ./media/service-fabric-manage-application-in-visual-studio/newservice.png
 [newserviceapplicationmanifest]: ./media/service-fabric-manage-application-in-visual-studio/newserviceapplicationmanifest.png
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

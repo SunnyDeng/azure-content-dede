@@ -4,26 +4,26 @@ Diese schrittweise Anleitung erläutert die Installation und Ausführung von Mon
 
 1. Wenn Sie über Remote Desktop eine Verbindung zum virtuellen Computer aufgebaut haben, öffnen Sie im Menü **Start** des virtuellen Computers den Internet Explorer.
 
-2. Klicken Sie in der oberen rechten Ecke auf **Extras**. Öffnen Sie unter **Internetoptionen** die Registerkarte **Sicherheit**, wählen Sie anschließend das Symbol **Vertrauenswürdige Sites**, und klicken Sie anschließend auf die Schaltfläche **Sites**. Fügen Sie der Liste vertrauenswürdiger Websites _http://*.mongodb.org_ hinzu.
+2. Klicken Sie in der oberen rechten Ecke auf **Extras**. Öffnen Sie unter **Internetoptionen** die Registerkarte **Sicherheit**, wählen Sie anschließend das Symbol **Vertrauenswürdige Sites**, und klicken Sie anschließend auf die Schaltfläche **Sites**. Fügen Sie der Liste vertrauenswürdiger Websites _http://\*.mongodb.org_ hinzu.
 
 3. Gehen Sie zu [Downloads - MongoDB][MongoDownloads].
 
 4. Suchen Sie **Current Stable Release**, wählen Sie in der Spalte "Windows" die neueste **64-Bit**-Version aus, laden Sie das MSI-Installationsprogramm herunter, und installieren Sie es.
 
-5. MongoDB wird normalerweise unter "C:\Programme\MongoDB" installiert. Suchen Sie auf dem Desktop nach "Umgebungsvariablen", und fügen Sie der PATH-Variablen den Pfad der MongoDB-Binärdateien hinzu. Die Binärdateien befinden sich beispielsweise auf Ihrem Computer unter "C:\Programme\MongoDB\Server\3.0\bin".
+5. MongoDB wird normalerweise unter "C:\\Programme\\MongoDB" installiert. Suchen Sie auf dem Desktop nach "Umgebungsvariablen", und fügen Sie der PATH-Variablen den Pfad der MongoDB-Binärdateien hinzu. Die Binärdateien befinden sich beispielsweise auf Ihrem Computer unter "C:\\Programme\\MongoDB\\Server\\3.0\\bin".
 
-6. Erstellen Sie die Daten- und Protokollverzeichnisse für MongoDB auf dem Datenträger (z. B. Laufwerk **F:**), den Sie in den vorherigen Schritten erstellt haben. Wählen Sie unter **Start** die Option **Eingabeaufforderung**, um ein Eingabeaufforderungsfenster zu öffnen. Geben Sie Folgendes ein:
+6. Erstellen Sie die Daten- und Protokollverzeichnisse für MongoDB auf dem Datenträger \(z. B. Laufwerk **F:**\), den Sie in den vorherigen Schritten erstellt haben. Wählen Sie unter **Start** die Option **Eingabeaufforderung**, um ein Eingabeaufforderungsfenster zu öffnen. Geben Sie Folgendes ein:
 
 		C:\> F:
-		F:> mkdir \MongoData
-		F:> mkdir \MongoLogs
+		F:\> mkdir \MongoData
+		F:\> mkdir \MongoLogs
 
 7. Geben Sie Folgendes rein, um die Datenbank auszuführen:
 
-		F:> C:
+		F:\> C:
 		C:\> mongod --dbpath F:\MongoData\ --logpath F:\MongoLogs\mongolog.log
 
-	Alle Protokollmeldungen werden in die Datei *F:\MongoLogs\mongolog.log* geleitet, sobald der Server mongod.exe startet und die Journaldateien reserviert. Es kann einige Minuten dauern, bis MongoDB die Journaldateien reserviert hat und mit dem Lauschen auf Verbindungen beginnt.
+	Alle Protokollmeldungen werden in die Datei *F:\\MongoLogs\\mongolog.log* geleitet, sobald der Server mongod.exe startet und die Journaldateien reserviert. Es kann einige Minuten dauern, bis MongoDB die Journaldateien reserviert hat und mit dem Lauschen auf Verbindungen beginnt.
 
 8. Starten Sie die MongoDB-Administrator-Shell, indem Sie unter **Start** ein weiteres Befehlsfenster öffnen und Folgendes eingeben:
 
@@ -46,7 +46,7 @@ Diese schrittweise Anleitung erläutert die Installation und Ausführung von Mon
 
 		C:\mongodb\bin>mongod --logpath F:\MongoLogs\mongolog.log --logappend --dbpath F:\MongoData\ --install
 
-	Dadurch wird der Dienst "Mongo DB" mit der Beschreibung "Mongo DB" erstellt. Zur Festlegung einer Protokolldatei muss die Option **--logpath** verwendet werden, da der laufende Dienst kein Befehlsfenster zur Anzeige der Ausgabe hat. Die Option **--logappend** legt fest, dass ein Neustart des Diensts eine Ausgabe generiert, die an die vorhandene Protokolldatei angehängt wird. Die Option **--dbpath** gibt den Ort des Datenverzeichnisses an. Weitere dienstbezogene Befehlszeilenoptionen finden Sie unter [Service-related command line options][MongoWindowsSvcOptions] (Dienstbezogene Befehlszeilenoptionen, in englischer Sprache).
+	Dadurch wird der Dienst "Mongo DB" mit der Beschreibung "Mongo DB" erstellt. Zur Festlegung einer Protokolldatei muss die Option **--logpath** verwendet werden, da der laufende Dienst kein Befehlsfenster zur Anzeige der Ausgabe hat. Die Option **--logappend** legt fest, dass ein Neustart des Diensts eine Ausgabe generiert, die an die vorhandene Protokolldatei angehängt wird. Die Option **--dbpath** gibt den Ort des Datenverzeichnisses an. Weitere dienstbezogene Befehlszeilenoptionen finden Sie unter [Service-related command line options][MongoWindowsSvcOptions] \(Dienstbezogene Befehlszeilenoptionen, in englischer Sprache\).
 
 	Führen Sie zum Starten des Diensts den folgenden Befehl aus:
 
@@ -62,7 +62,7 @@ Diese schrittweise Anleitung erläutert die Installation und Ausführung von Mon
 
 	![Windows-Firewall][Image2]
 
-	Wählen Sie **TCP** und anschließend **Bestimmte lokale Ports**. Geben Sie als Port "27017" ein (diesen Standardport verwendet MongoDB als Überwachungsport), und klicken Sie auf **Weiter**.
+	Wählen Sie **TCP** und anschließend **Bestimmte lokale Ports**. Geben Sie als Port "27017" ein \(diesen Standardport verwendet MongoDB als Überwachungsport\), und klicken Sie auf **Weiter**.
 
 	![Windows-Firewall][Image3]
 
@@ -108,4 +108,4 @@ Diese schrittweise Anleitung erläutert die Installation und Ausführung von Mon
 [Image8]: ./media/install-and-run-mongo-on-win2k8-vm/WinVmAddEndpoint2.png
 [Image9]: ./media/install-and-run-mongo-on-win2k8-vm/WinVmAddEndpoint3.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

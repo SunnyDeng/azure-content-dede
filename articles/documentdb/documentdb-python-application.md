@@ -16,7 +16,7 @@
     ms.date="07/07/2015"
     ms.author="ryancraw"/>
 
-# Erstellen einer Webanwendung mit Python und Flask (MVC) mithilfe von DocumentDB
+# Erstellen einer Webanwendung mit Python und Flask \(MVC\) mithilfe von DocumentDB
 
 Dieses Dokument bietet eine vollständige Anleitung zur Erstellung einer Webanwendung für eine Wahl mithilfe von Azure DocumentDB, um zu zeigen, wie Azure DocumentDB von Kunden effizient zum Speichern und Abfragen von JSON-Dokumenten genutzt werden kann.
 
@@ -38,11 +38,11 @@ Im Verlauf dieses Lernprogramms erstellen Sie eine einfache Wahlanwendung, über
 
 Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgendes installiert ist:
 
-- [Visual Studio 2013](http://www.visualstudio.com/) oder höher oder [Visual Studio Express] (die kostenlose Version).
-- Python Tools für Visual Studio ([hier][] erhältlich)
-- Azure SDK für Visual Studio 2013, Version 2.4 oder höher ([hier][1] erhältlich)
-- Python 2.7 ([hier][2] erhältlich)
-- Microsoft Visual C++-Compiler für Python 2.7 ([hier][3] erhältlich)
+- [Visual Studio 2013](http://www.visualstudio.com/) oder höher oder [Visual Studio Express] \(die kostenlose Version\).
+- Python Tools für Visual Studio \([hier][] erhältlich\)
+- Azure SDK für Visual Studio 2013, Version 2.4 oder höher \([hier][1] erhältlich\)
+- Python 2.7 \([hier][2] erhältlich\)
+- Microsoft Visual C++-Compiler für Python 2.7 \([hier][3] erhältlich\)
 
 ## Schritt 1: Erstellen eines DocumentDB-Datenbankkontos
 
@@ -56,7 +56,7 @@ Erstellen Sie zunächst ein DocumentDB-Konto. Wenn Sie bereits über ein Konto v
 
 ## Schritt 2: Erstellen einer neuen Python Flask-Webanwendung
 
-1. Öffnen Sie Visual Studio, klicken Sie auf **Datei** -> **Neues Projekt** -> **Python** ->, **Flask-Webprojekt**, und erstellen Sie ein neues Projekt mit dem Namen **tutorial**.
+1. Öffnen Sie Visual Studio, klicken Sie auf **Datei** -\> **Neues Projekt** -\> **Python** -\>, **Flask-Webprojekt**, und erstellen Sie ein neues Projekt mit dem Namen **tutorial**.
 
 	Bei Flask handelt es sich um ein Webframework, das uns beim schnelleren Erstellen von Webanwendungen in Python unterstützt. [Klicken Sie hier, um Flask-Lernprogramme zu öffnen][].
 
@@ -89,9 +89,9 @@ Nachdem das Projekt eingerichtet ist, müssen Sie bestimmte Flask-Pakete hinzuf�
 
 2. Klicken Sie mit der rechten Maustaste auf **env**, und klicken Sie auf den Link zum **Installieren aus requirements.txt**.
 
-	![Screenshot mit „env“ (Python 2.7) ausgewählt, „Installieren aus requirements.txt“ in der Liste markiert](./media/documentdb-python-application/image11.png)
+	![Screenshot mit „env“ \(Python 2.7\) ausgewählt, „Installieren aus requirements.txt“ in der Liste markiert](./media/documentdb-python-application/image11.png)
 
-> [AZURE.NOTE]In seltenen Fällen wird eventuell ein Fehler im Ausgabefenster angezeigt. Wenn dies geschieht, prüfen Sie, ob der Fehler mit der Bereinigung zusammenhängt. Gelegentlich schlägt die Bereinigung fehl, aber die Installation verläuft dennoch erfolgreich (blättern Sie im Ausgabefenster nach oben, um dies zu prüfen). <a name="verify-the-virtual-environment"></a> In diesem Fall können Sie fortfahren.
+> [AZURE.NOTE]In seltenen Fällen wird eventuell ein Fehler im Ausgabefenster angezeigt. Wenn dies geschieht, prüfen Sie, ob der Fehler mit der Bereinigung zusammenhängt. Gelegentlich schlägt die Bereinigung fehl, aber die Installation verläuft dennoch erfolgreich \(blättern Sie im Ausgabefenster nach oben, um dies zu prüfen\). <a name="verify-the-virtual-environment"></a> In diesem Fall können Sie fortfahren.
 
 
 ### Überprüfen der virtuellen Umgebung
@@ -273,11 +273,11 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
     	{% endblock %}
 
 
-### Hinzufügen einer Konfigurationsdatei und Ändern von \_\_init\_\_.py
+### Hinzufügen einer Konfigurationsdatei und Ändern von \\\_\\\_init\\\_\\\_.py
 
 1. Klicken Sie mit der rechten Maustaste auf den Projektnamen „tutorial“, und fügen Sie die Datei **config.py** hinzu. Diese Konfiguration ist für Formulare in Flask erforderlich. Sie können damit auch einen geheimen Schlüssel bereitstellen. Dies ist jedoch für dieses Lernprogramm nicht erforderlich.
 
-2. Fügen Sie folgenden Code zur Datei "config.py" hinzu: Ändern Sie die Werte von **DOCUMENTDB\_HOST** und **DOCUMENTDB\_KEY**.
+2. Fügen Sie folgenden Code zur Datei "config.py" hinzu: Ändern Sie die Werte von **DOCUMENTDB\\\_HOST** und **DOCUMENTDB\\\_KEY**.
 
     	CSRF_ENABLED = True
     	SECRET_KEY = 'you-will-never-guess'
@@ -289,7 +289,7 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
     	DOCUMENTDB_COLLECTION = 'voting collection'
     	DOCUMENTDB_DOCUMENT = 'voting document'
 
-3. Ersetzen Sie den Inhalt von **\_\_init\_\_.py** durch Folgendes.
+3. Ersetzen Sie den Inhalt von **\\\_\\\_init\\\_\\\_.py** durch Folgendes.
 
     	from flask import Flask
     	app = Flask(__name__)
@@ -324,7 +324,7 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
 
 Nachdem eine vollständige, DocumentDB korrekt entgegenwirkende, Anwendung erstellt ist, stellen wir sie auf Azure Websites bereit.
 
-1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt(stellen Sie sicher,dass es nicht lokal ausgeführt wird), und wählen Sie dann "Veröffentlichen" aus. Wählen Sie dann "Microsoft Azure-Websites" aus.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt\(stellen Sie sicher,dass es nicht lokal ausgeführt wird\), und wählen Sie dann "Veröffentlichen" aus. Wählen Sie dann "Microsoft Azure-Websites" aus.
 
  	![Screenshot des im Projektmappen-Explorer ausgewählten Lernprogramms mit hervorgehobener Option „Veröffentlichen“](./media/documentdb-python-application/image20.png)
 
@@ -350,4 +350,4 @@ Um Ihrer Anwendung weitere Funktionen hinzuzufügen, überprüfen Sie die im [Do
   [Azure Management Portal]: http://portal.azure.com
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

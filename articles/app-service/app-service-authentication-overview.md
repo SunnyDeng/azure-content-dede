@@ -60,11 +60,11 @@ Die Gatewayauthentifizierungsdienste bieten mehrere Vorteile gegenüber einer ei
 
 ## Serverfluss oder Clientfluss
 
-Das App Service-Gateway bietet zwei Möglichkeiten zum Authentifizieren von Clients: *Clientfluss* und *Serverfluss*. In beiden Fällen sendet die Clientanwendung die Anmeldeinformationen des Benutzers (normalerweise Benutzername und Kennwort) direkt an den Identitätsanbieter. In beiden Fällen empfängt weder das Gateway noch die Anwendung Benutzeranmeldeinformationen.
+Das App Service-Gateway bietet zwei Möglichkeiten zum Authentifizieren von Clients: *Clientfluss* und *Serverfluss*. In beiden Fällen sendet die Clientanwendung die Anmeldeinformationen des Benutzers \(normalerweise Benutzername und Kennwort\) direkt an den Identitätsanbieter. In beiden Fällen empfängt weder das Gateway noch die Anwendung Benutzeranmeldeinformationen.
 
 ### Clientfluss
 
-Clientfluss bedeutet, dass die Clientanwendung direkt mit dem Identitätsanbieter kommuniziert, um das Zugriffstoken des Anbieters zu erhalten. Die Clientanwendung sendet das Zugriffstoken des Anbieters zum Gateway. Das Gateway erstellt ein Benutzerkontexttoken und sendet es an den Client. Dieses Benutzerkontexttoken wird auch als Zumo-Token bezeichnet, abgeleitet vom ursprünglichen Codenamen für [Azure Mobile Services](/documentation/services/mobile-services/). (Authentifizierungsdienste für API-Apps und mobile Apps basieren auf der gleichen Architektur, die ursprünglich für Mobile Services entwickelt wurde.)
+Clientfluss bedeutet, dass die Clientanwendung direkt mit dem Identitätsanbieter kommuniziert, um das Zugriffstoken des Anbieters zu erhalten. Die Clientanwendung sendet das Zugriffstoken des Anbieters zum Gateway. Das Gateway erstellt ein Benutzerkontexttoken und sendet es an den Client. Dieses Benutzerkontexttoken wird auch als Zumo-Token bezeichnet, abgeleitet vom ursprünglichen Codenamen für [Azure Mobile Services](/documentation/services/mobile-services/). \(Authentifizierungsdienste für API-Apps und mobile Apps basieren auf der gleichen Architektur, die ursprünglich für Mobile Services entwickelt wurde.\)
 
 Das folgende Diagramm veranschaulicht diesen Fluss.
 
@@ -92,7 +92,7 @@ In anderen Szenarien kann der Serverfluss eine bessere Wahl sein:
 
 ## Im Auftrag ausgeführte ausgehende Aufrufe von SaaS-Plattformen
 
-Sie können Code schreiben, um ausgehende Aufrufe von SaaS-Plattformen (Software-as-a-Service) im Auftrag eines angemeldeten Benutzers vorzunehmen, oder Sie können eine [Connector-API-App](../app-service-mobile/app-service-logic-what-are-biztalk-api-apps.md) verwenden. Beispiel: Um einen Tweet vom Twitter-Konto des Benutzers zu senden, können Sie [ein Twitter-SDK](https://dev.twitter.com/overview/api/twitter-libraries) verwenden oder einen [Twitter-Connector](../app-service-mobile/app-service-logic-connector-twitter.md) im Azure-Abonnement bereitstellen und aufrufen. In diesem Abschnitt wird der Zugriff auf eine SaaS-Plattform über Code behandelt, der in einer API-App oder einer mobilen App ausgeführt wird.
+Sie können Code schreiben, um ausgehende Aufrufe von SaaS-Plattformen \(Software-as-a-Service\) im Auftrag eines angemeldeten Benutzers vorzunehmen, oder Sie können eine [Connector-API-App](../app-service-mobile/app-service-logic-what-are-biztalk-api-apps.md) verwenden. Beispiel: Um einen Tweet vom Twitter-Konto des Benutzers zu senden, können Sie [ein Twitter-SDK](https://dev.twitter.com/overview/api/twitter-libraries) verwenden oder einen [Twitter-Connector](../app-service-mobile/app-service-logic-connector-twitter.md) im Azure-Abonnement bereitstellen und aufrufen. In diesem Abschnitt wird der Zugriff auf eine SaaS-Plattform über Code behandelt, der in einer API-App oder einer mobilen App ausgeführt wird.
 
 ### <a id="obotoidprovider"></a> Verwenden des Identitätsanbietertokens 
 
@@ -102,7 +102,7 @@ Wenn der in der API-App oder mobilen App ausgeführte Code eine geschützte Ress
 
 ![](./media/app-service-authentication-overview/idprovidertoken.png)
 
-Nehmen wir beispielsweise an, dass der Identitätsanbieter Azure Active Directory (AAD) ist und dass Ihre API-App das AAD-Zugriffstoken verwenden möchte, um die Graph-API von AAD aufzurufen oder Zugriff auf eine SharePoint-Website anzufordern, für die der Benutzer Berechtigungen hat. Sie können eine Anforderung an das Gateway senden, um das AAD-Tokens abzurufen, und dann das AAD-Token verwenden, um die Graph-API aufzurufen oder ein Zugriffstoken für die SharePoint-Website zu erhalten.
+Nehmen wir beispielsweise an, dass der Identitätsanbieter Azure Active Directory \(AAD\) ist und dass Ihre API-App das AAD-Zugriffstoken verwenden möchte, um die Graph-API von AAD aufzurufen oder Zugriff auf eine SharePoint-Website anzufordern, für die der Benutzer Berechtigungen hat. Sie können eine Anforderung an das Gateway senden, um das AAD-Tokens abzurufen, und dann das AAD-Token verwenden, um die Graph-API aufzurufen oder ein Zugriffstoken für die SharePoint-Website zu erhalten.
 
 ### <a id="obotosaas"></a>Erhalten der Zustimmung des Benutzers für den Zugriff auf andere Ressourcen
 
@@ -148,7 +148,7 @@ Für mobile Apps stehen SDKs für die folgenden Plattformen zu Verfügung:
 - [Xamarin iOS](../app-service-mobile/app-service-mobile-dotnet-backend-xamarin-ios-get-started-preview.md)
 - [Xamarin Android](../app-service-mobile/app-service-mobile-dotnet-backend-xamarin-android-get-started-preview.md)
 - [Windows](../app-service-mobile/app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md)
-- JavaScript (Lernprogramm in der Entwicklung)
+- JavaScript \(Lernprogramm in der Entwicklung\)
 
 ## Alternative Authentifizierungsmethoden
 
@@ -162,13 +162,13 @@ Zurzeit unterstützt App Service keine selbst durchgeführte Lösung zusammen mi
 
 ### <a id="apim"></a>Azure API Management
 
-Wenn APIs vorhanden sind, die Sie mit der Authentifizierung schützen möchten, können Sie dazu den Azure API Management-Dienst verwenden. Informationen zum Verwenden von API Management mit API-Apps finden Sie im Blogbeitrag von Panos Kefalidis: [Taking advantage of API Management for API Apps](http://www.kefalidis.me/2015/06/taking-advantage-of-api-management-for-api-apps/) (in englischer Sprache).
+Wenn APIs vorhanden sind, die Sie mit der Authentifizierung schützen möchten, können Sie dazu den Azure API Management-Dienst verwenden. Informationen zum Verwenden von API Management mit API-Apps finden Sie im Blogbeitrag von Panos Kefalidis: [Taking advantage of API Management for API Apps](http://www.kefalidis.me/2015/06/taking-advantage-of-api-management-for-api-apps/) \(in englischer Sprache\).
 
 ## Nächste Schritte
 
 In diesem Artikel wurden die Authentifizierungsdienste von Azure App Service für API-Apps und mobile Apps erläutert. Im Folgenden finden Sie einige Links zu Ressourcen mit Informationen über die zugrunde liegenden Authentifizierungsprotokolle sowie die Dokumentationen zur Verwendung der App Service-Authentifizierungsfeatures.
 
-* [OAuth 2.0, OpenID Connect und JSON Web Tokens (JWT)](#oauth)
+* [OAuth 2.0, OpenID Connect und JSON Web Tokens \(JWT\)](#oauth)
 * Ressourcen für API-Apps
 	* [API-Apps – Clientfluss](#apiaclient)
 	* [API-Apps – Serverfluss](#apiaserver)
@@ -178,11 +178,11 @@ In diesem Artikel wurden die Authentifizierungsdienste von Azure App Service fü
 	* [Mobile Apps – Serverfluss](#maserver)
 	* [Mobile Apps – Aufrufe im Auftrag](#maobo)
 
-### <a id="oauth"></a>OAuth 2.0, OpenID Connect und JSON Web Tokens (JWT)
+### <a id="oauth"></a>OAuth 2.0, OpenID Connect und JSON Web Tokens \(JWT\)
 
-* [Getting started with OAuth 2.0](http://shop.oreilly.com/product/0636920021810.do "Getting started with OAuth 2.0 (in englischer Sprache)") (in englischer Sprache) 
-* [Introduction to OAuth2, OpenID Connect and JSON Web Tokens (JWT) - PluralSight Course](http://www.pluralsight.com/courses/oauth2-json-web-tokens-openid-connect-introduction) (in englischer Sprache) 
-* [Building and Securing a RESTful API for Multiple Clients in ASP.NET - PluralSight course](http://www.pluralsight.com/courses/building-securing-restful-api-aspdotnet) (in englischer Sprache)
+* [Getting started with OAuth 2.0](http://shop.oreilly.com/product/0636920021810.do "Getting started with OAuth 2.0 (in englischer Sprache)") \(in englischer Sprache\) 
+* [Introduction to OAuth2, OpenID Connect and JSON Web Tokens \(JWT\) - PluralSight Course](http://www.pluralsight.com/courses/oauth2-json-web-tokens-openid-connect-introduction) \(in englischer Sprache\) 
+* [Building and Securing a RESTful API for Multiple Clients in ASP.NET - PluralSight course](http://www.pluralsight.com/courses/building-securing-restful-api-aspdotnet) \(in englischer Sprache\)
 
 ### <a id="apiaclient"></a>API-Apps – Clientfluss
 
@@ -214,4 +214,4 @@ In diesem Artikel wurden die Authentifizierungsdienste von Azure App Service fü
 
 * [Abrufen eines Zugriffstokens und Aufrufen der SharePoint-API in einer mobilen App](../app-service-mobile/app-service-mobile-dotnet-backend-get-started-connect-to-enterprise.md#obtain-token)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

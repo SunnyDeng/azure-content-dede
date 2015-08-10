@@ -23,19 +23,19 @@
 - [Azure CLI](virtual-machines-linux-tutorial.md)
 - [Azure Preview Portal](virtual-machines-linux-tutorial-portal-rm.md)
 
-Das Erstellen eines virtuellen Azure-Computers (VM), auf dem Linux ausdeführt wird, ist ganz einfach. In diesem Lernprogramm erfahren Sie, wie Sie mit dem Azure-Vorschauportal einen solchen virtuellen Computer schnell erstellen können, und es wird anhand der `~/.ssh/id_rsa.pub`Datei, die den öffentlichen Schlüssel enthält, die Konfiguration einer **SSH**-Verbindung zum Schutz Ihres virtuellen Computers gezeigt. Sie können auch mithilfe [eigener Abbilder als Vorlagen](virtual-machines-linux-create-upload-vhd.md) entsprechende virtuelle Linux-Computer erstellen.
+Das Erstellen eines virtuellen Azure-Computers \(VM\), auf dem Linux ausdeführt wird, ist ganz einfach. In diesem Lernprogramm erfahren Sie, wie Sie mit dem Azure-Vorschauportal einen solchen virtuellen Computer schnell erstellen können, und es wird anhand der `~/.ssh/id_rsa.pub`Datei, die den öffentlichen Schlüssel enthält, die Konfiguration einer **SSH**-Verbindung zum Schutz Ihres virtuellen Computers gezeigt. Sie können auch mithilfe [eigener Abbilder als Vorlagen](virtual-machines-linux-create-upload-vhd.md) entsprechende virtuelle Linux-Computer erstellen.
 
 > [AZURE.NOTE]In diesem Lernprogramm wird ein virtueller Azure-Computer erstellt, der über die Azure-Ressourcengruppen-API verwaltet wird. Weitere Informationen finden Sie unter [Übersicht über Azure Ressourcengruppen](resource-group-overview.md).
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
-## Auswählen des Abbilds
+## Auswählen des Images
 
-Wechseln Sie im Vorschauportal zum Azure Marketplace, um das gewünschte Windows-Server-Abbild zu finden.
+Wechseln Sie im Vorschauportal zum Azure Marketplace, um das gewünschte Windows-Server-Image zu finden.
 
 1. Melden Sie sich beim [Vorschauportal](https://portal.azure.com) an.
 
-2. Klicken Sie im Hub-Menü auf **Neu** > **Compute** > **Ubuntu Server 14.04 LTS**.
+2. Klicken Sie im Hub-Menü auf **Neu** \> **Compute** \> **Ubuntu Server 14.04 LTS**.
 
 	![Auswählen eines VM-Abbilds](media/virtual-machines-linux-tutorial-portal-rm/chooseubuntuvm.png)
 
@@ -49,9 +49,9 @@ Wechseln Sie im Vorschauportal zum Azure Marketplace, um das gewünschte Windows
 
 ## Erstellen des virtuellen Computers
 
-Nachdem Sie das Abbild ausgewählt haben, können Sie für den Großteil der Konfiguration die Azure-Standardeinstellungen verwenden und den virtuellen Computer rasch erstellen.
+Nachdem Sie das Image ausgewählt haben, können Sie für den Großteil der Konfiguration die Azure-Standardeinstellungen verwenden und den virtuellen Computer rasch erstellen.
 
-1. Klicken Sie auf dem Blatt **Virtuellen Computer erstellen** auf **Grundlagen**. Geben Sie den gewünschten **Namen** für den virtuellen Computer und eine Datei für den öffentlichen Schlüssel ein (im **SSH-RSA**-Format, in diesem Fall aus der Datei `~/.ssh/id_rsa.pub`). Wenn Sie über mehr als ein Abonnement verfügen, geben Sie das für den neuen virtuellen Computer geltende Abonnement an sowie eine neue oder vorhandene **Ressourcengruppe** und den **Speicherort** eines Azure-Rechenzentrums.
+1. Klicken Sie auf dem Blatt **Virtuellen Computer erstellen** auf **Grundlagen**. Geben Sie den gewünschten **Namen** für den virtuellen Computer und eine Datei für den öffentlichen Schlüssel ein \(im **SSH-RSA**-Format, in diesem Fall aus der Datei `~/.ssh/id_rsa.pub`\). Wenn Sie über mehr als ein Abonnement verfügen, geben Sie das für den neuen virtuellen Computer geltende Abonnement an sowie eine neue oder vorhandene **Ressourcengruppe** und den **Speicherort** eines Azure-Rechenzentrums.
 
 	![](media/virtual-machines-linux-tutorial-portal-rm/step-1-thebasics.png)
 
@@ -61,7 +61,7 @@ Nachdem Sie das Abbild ausgewählt haben, können Sie für den Großteil der Kon
 
 	>[AZURE.NOTE]Storage Premium steht für virtuelle Computer der DS-Reihe in bestimmten Regionen zur Verfügung. Storage Premium die beste Speicheroption für datenintensive Workloads wie Datenbanken. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
 
-3. Klicken Sie auf **Einstellungen**, um die Einstellungen für Hauptspeicher und Netzwerkfähigkeit des neuen virtuellen Computers anzuzeigen. Für einen ersten virtuellen Computer können Sie im Allgemeinen die Standardeinstellungen akzeptieren. Wenn Sie eine geeignete Größe für den virtuellen Computer ausgewählt haben, können Sie durch Auswahl von **Premium (SSD)** unter **Datenträgertyp** Storage Premium testen. Klicken Sie anschließend auf ![Schaltfläche "OK"](media/virtual-machines-linux-tutorial-portal-rm/okbutton.png).
+3. Klicken Sie auf **Einstellungen**, um die Einstellungen für Hauptspeicher und Netzwerkfähigkeit des neuen virtuellen Computers anzuzeigen. Für einen ersten virtuellen Computer können Sie im Allgemeinen die Standardeinstellungen akzeptieren. Wenn Sie eine geeignete Größe für den virtuellen Computer ausgewählt haben, können Sie durch Auswahl von **Premium \(SSD\)** unter **Datenträgertyp** Storage Premium testen. Klicken Sie anschließend auf ![Schaltfläche "OK"](media/virtual-machines-linux-tutorial-portal-rm/okbutton.png).
 
 	![](media/virtual-machines-linux-tutorial-portal-rm/step-3-settings.png)
 
@@ -126,4 +126,4 @@ Weitere Informationen zu Linux auf Azure erhalten Sie unter:
 
 - [Die Docker-Erweiterung für virtuelle Linux-Computer auf Azure](virtual-machines-docker-vm-extension.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

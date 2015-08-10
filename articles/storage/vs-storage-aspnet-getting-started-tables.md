@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/17/2015" 
+	ms.date="07/22/2015" 
 	ms.author="patshea123"/>
 
-# Erste Schritte mit Azure Storage (ASP.NET-Projekte)
+# Erste Schritte mit Azure Storage \(ASP.NET-Projekte\)
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-storage-aspnet-getting-started-tables.md)
@@ -34,7 +34,7 @@ Dieser Artikel beschreibt, wie die ersten Schritte des Verwendens von Azure-Tabe
 Der Azure-Tabellenspeicherdienst ermöglicht das Speichern großer Mengen von strukturierten Daten. Der Dienst ist ein NoSQL-Datenspeicher, der authentifizierte Aufrufe von innerhalb und außerhalb der Azure-Cloud akzeptiert. Azure-Tabellen sind hervorragend zur Speicherung strukturierter nicht relationaler Daten geeignet.
 
 
-Dieser Artikel beschreibt, wie Sie allgemeine Aufgaben in Azure-Tabellen ausführen. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die behandelten Szenarien umfassen das **Erstellen und Löschen einer Tabelle** sowie das **Arbeiten mit Tabellenentitäten**.
+Dieser Artikel beschreibt, wie Sie allgemeine Aufgaben in Azure-Tabellen ausführen. Die Beispiele sind in C\# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die behandelten Szenarien umfassen das **Erstellen und Löschen einer Tabelle** sowie das **Arbeiten mit Tabellenentitäten**.
 
 ##Erstellen von Azure-Speichertabellen in Visual Studio Server-Explorer
 
@@ -42,14 +42,9 @@ Dieser Artikel beschreibt, wie Sie allgemeine Aufgaben in Azure-Tabellen ausfüh
 
 ##Zugreifen auf Tabellen in Code 
 
-## Programmgesteuerter Zugriff auf Tabellenspeicher
 
-[AZURE.INCLUDE [storage-dotnet-obtain-assembly](../../includes/storage-dotnet-obtain-assembly.md)]
 
-### Namespace-Deklarationen
-Fügen Sie die folgenden Namespace-Deklarationen zum Anfang aller C#-Dateien hinzu, in denen Sie programmgesteuert auf den Azure-Speicher zugreifen möchten:
-
-1. Vergewissern Sie sich, dass die Namespace-Deklarationen am Anfang der C#-Datei diese `using`-Anweisungen enthalten.
+1. Vergewissern Sie sich, dass die Namespace-Deklarationen am Anfang der C\#-Datei diese `using`-Anweisungen enthalten.
 
 	using Microsoft.Azure; using Microsoft.WindowsAzure.Storage; using Microsoft.WindowsAzure.Storage.Auth; using Microsoft.WindowsAzure.Storage.Table;
 
@@ -65,7 +60,7 @@ Fügen Sie die folgenden Namespace-Deklarationen zum Anfang aller C#-Dateien hin
 	    // Create the table client.
     	CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-4. Rufen Sie ein **CloudTable**-Verweisobjekt ab, auf eine bestimmte Tabelle und auf bestimmte Entitäten zu verweisen.
+4. Rufen Sie ein **CloudTable**-Verweisobjekt ab, um auf eine bestimmte Tabelle und auf bestimmte Entitäten zu verweisen.
 	
     	// Get a reference to a table named "peopleTable"
 	    CloudTable table = tableClient.GetTableReference("peopleTable");
@@ -92,7 +87,7 @@ Um die Azure-Tabelle in Code statt mit Visual Studio **Server-Explorer** zu erst
 
 ##Einfügen eines Entitätsbatchs
 
-Sie können mehrere Entitäten mit einem Schreibvorgang in eine Tabelle einfügen. Das folgende Codebeispiel erstellt zwei Entitätsobjekte („Jeff Smith“ und „Ben Smith“), fügt diese mithilfe der Insert-Methode einem **TableBatchOperation**-Objekt hinzu und startet den Vorgang dann durch einen Aufruf von CloudTable.ExecuteBatchAsync.
+Sie können mehrere Entitäten mit einem Schreibvorgang in eine Tabelle einfügen. Das folgende Codebeispiel erstellt zwei Entitätsobjekte \(„Jeff Smith“ und „Ben Smith“\), fügt diese mithilfe der Insert-Methode einem **TableBatchOperation**-Objekt hinzu, und startet den Vorgang dann durch einen Aufruf von „CloudTable.ExecuteBatchAsync“.
 
 	// Get a reference to a **CloudTable** object named 'peopleTable' as described in "Access a table in code"
 	
@@ -188,7 +183,7 @@ Sie können eine Entität nach dem Abrufen löschen. Der folgende Code sucht nac
 
 ## Nächste Schritte
 
-[AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
+[AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../../includes/vs-storage-dotnet-tables-next-steps.md)]
 
 
 
@@ -215,4 +210,4 @@ Sie können eine Entität nach dem Abrufen löschen. Der folgende Code sucht nac
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

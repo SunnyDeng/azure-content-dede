@@ -30,7 +30,7 @@ Wenn Sie Operations Manager zum Überwachen der folgenden Arbeitsauslastungen ve
 - Lync Server
 - SharePoint
 
- >[AZURE.NOTE]Ab Operations Manager 2012 SP1 UR6 und Operations Manager 2012 R2 UR2 steht Unterstützung für Operational Insights zur Verfügung. Proxy-Unterstützung wurde in System Center Operations Manager 2012 SP1 UR7 und System Center Operations Manager 2012 R2 UR3 hinzugefügt.
+ \>[AZURE.NOTE]Ab Operations Manager 2012 SP1 UR6 und Operations Manager 2012 R2 UR2 steht Unterstützung für Operational Insights zur Verfügung. Proxy-Unterstützung wurde in System Center Operations Manager 2012 SP1 UR7 und System Center Operations Manager 2012 R2 UR3 hinzugefügt.
 
 ## So verbinden Sie Operations Manager mit Operational Insights und fügen Agents hinzu
 
@@ -44,6 +44,6 @@ Wenn Sie Operations Manager zum Überwachen der folgenden Arbeitsauslastungen ve
 5. Im Dialogfeld **Computersuche** können Sie nach Computern oder Gruppen suchen, die von Operations Manager überwacht werden. Wählen Sie Computer oder Gruppen aus, die in Operational Insights aufgenommen werden sollen, klicken Sie auf **Hinzufügen**, und klicken Sie dann auf **OK**. ![Operations Manager – Computer hinzufügn](./media/operational-insights-connect-scom/om02.png)
 ## Nächste Schritte
 
-[Konfigurieren von Proxy- und Firewall-Einstellungen (Optional)](operational-insights-proxy-firewall.md)
+[Konfigurieren von Proxy- und Firewall-Einstellungen \(Optional\)](operational-insights-proxy-firewall.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

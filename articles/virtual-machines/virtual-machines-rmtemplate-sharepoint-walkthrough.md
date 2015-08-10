@@ -1,11 +1,12 @@
 <properties
 	pageTitle="Ressourcen-Manager-Vorlage für die SharePoint-Farm mit drei Servern"
-	description="Untersuchen Sie schrittweise die Struktur der Vorlagendatei ";azuredeploy.json"; für die SharePoint-Farm mit drei Servern."
+	description="Untersuchen Sie schrittweise die Struktur der Vorlagendatei &quot;azuredeploy.json&quot; für die SharePoint-Farm mit drei Servern."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="davidmu1"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -13,14 +14,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/29/2015"
+	ms.date="07/28/2015"
 	ms.author="davidmu"/>
 
 # Ressourcen-Manager-Vorlage für die SharePoint-Farm mit drei Servern
 
 Dieses Thema führt Sie schrittweise durch die Struktur der Vorlagendatei "azuredeploy.json" für die SharePoint-Farm mit drei Servern. Von [hier](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json) aus können Sie den Inhalt dieser Vorlage in Ihrem Browser anzeigen.
 
-Stattdessen können Sie eine lokale Kopie der Datei "azuredeploy.json" untersuchen, indem Sie einen lokalen Ordner als Speicherort für die Datei festlegen und sie erstellen (z. B. C:\Azure\Templates\SharePointFarm). Geben Sie den Ordnernamen ein, und führen Sie diese Befehle an der Azure PowerShell- Eingabeaufforderung aus.
+Stattdessen können Sie eine lokale Kopie der Datei "azuredeploy.json" untersuchen, indem Sie einen lokalen Ordner als Speicherort für die Datei festlegen und sie erstellen \(z. B. C:\\Azure\\Templates\\SharePointFarm\). Geben Sie den Ordnernamen ein, und führen Sie diese Befehle an der Azure PowerShell- Eingabeaufforderung aus.
 
 	$folderName="<folder name, such as C:\Azure\Templates\SharePointFarm>"
 	$webclient = New-Object System.Net.WebClient
@@ -120,7 +121,7 @@ Beispiel:
 
 ### Microsoft.Network/virtualNetworks
 
-In diesem Abschnitt wird ein virtuelles Nur-Cloud-Netzwerk mit drei Subnetzen erstellt (eines für jede Bereitstellungsebene), in dem sich die virtuellen Computer befinden. Hier finden Sie den JSON-Code:
+In diesem Abschnitt wird ein virtuelles Nur-Cloud-Netzwerk mit drei Subnetzen erstellt \(eines für jede Bereitstellungsebene\), in dem sich die virtuellen Computer befinden. Hier finden Sie den JSON-Code:
 
 	{
 		"name": "[parameters('virtualNetworkName')]",
@@ -140,7 +141,7 @@ In diesem Abschnitt wird ein virtuelles Nur-Cloud-Netzwerk mit drei Subnetzen er
 
 ### Microsoft.Network/loadBalancers
 
-In diesen Abschnitten werden Lastenausgleichsinstanzen für jeden virtuellen Computer erstellt, die NAT und Filterung für eingehenden Datenverkehr aus dem Internet bereitstellen. Für jedes Lastenausgleichssystem werden Front-End- und Back-End-Einstellungen sowie NAT-Regeln für eingehenden Datenverkehr festgelegt. Es gibt z. B. Remotedesktop-Verkehrsregeln für jeden virtuellen Computer und eine Regel zum Zulassen von eingehendem Webdatenverkehr (TCP-Port 80) über das Internet für den SharePoint-Server. Es folgt ein Beispiel für den SharePoint-Server:
+In diesen Abschnitten werden Lastenausgleichsinstanzen für jeden virtuellen Computer erstellt, die NAT und Filterung für eingehenden Datenverkehr aus dem Internet bereitstellen. Für jedes Lastenausgleichssystem werden Front-End- und Back-End-Einstellungen sowie NAT-Regeln für eingehenden Datenverkehr festgelegt. Es gibt z. B. Remotedesktop-Verkehrsregeln für jeden virtuellen Computer und eine Regel zum Zulassen von eingehendem Webdatenverkehr \(TCP-Port 80\) über das Internet für den SharePoint-Server. Es folgt ein Beispiel für den SharePoint-Server:
 
 
 	{
@@ -354,15 +355,15 @@ Im nächsten **"type": "Microsoft.Compute/virtualMachines"**-Abschnitt werden de
 
 Beachten Sie die allgemeine Organisation der Unterabschnitte des Abschnitts **"Ressourcen"** der JSON-Datei:
 
-1.	Erstellen Sie die Elemente der Azure-Infrastruktur, die für die Unterstützung mehrerer virtueller Computer erforderlich sind (ein Speicherkonto, öffentliche IP-Adressen, Verfügbarkeitsgruppen, ein virtuelles Netzwerk, Netzwerkschnittstellen, Lastenausgleichsinstanzen).
+1.	Erstellen Sie die Elemente der Azure-Infrastruktur, die für die Unterstützung mehrerer virtueller Computer erforderlich sind \(ein Speicherkonto, öffentliche IP-Adressen, Verfügbarkeitsgruppen, ein virtuelles Netzwerk, Netzwerkschnittstellen, Lastenausgleichsinstanzen\).
 2.	Erstellen Sie den virtuellen Computer des Domänencontrollers, der die zuvor erstellten allgemeinen und spezifischen Elemente der Azure-Infrastruktur verwendet, fügen Sie Datenträger hinzu, und führen Sie ein PowerShell-Skript aus. Aktualisieren Sie außerdem das virtuelle Netzwerk, sodass die statische IP-Adresse des Domänencontrollers verwendet wird.
 3.	Erstellen Sie den virtuellen Computer des SQL Servers, der die zuvor für die Domänencontroller erstellten allgemeinen und spezifischen Elemente der Azure-Infrastruktur verwendet, fügen Sie Datenträger hinzu, und führen Sie ein PowerShell-Skript zum Konfigurieren von SQL Server aus.
 4.	Erstellen Sie den virtuellen Computer des SharePoint-Servers, der die zuvor erstellten allgemeinen und spezifischen Elemente der Azure-Infrastruktur verwendet, und führen Sie ein PowerShell-Skript zum Konfigurieren der SharePoint-Farm aus.
 
 Bei Ihren eigenen JSON-Vorlagen zum Erstellen einer Infrastruktur mit mehreren Ebenen in Azure sollten Sie die gleichen Schritte ausführen:
 
-1.	Erstellen Sie die allgemeinen Elemente (Speicherkonto, virtuelles Netzwerk), spezifische Elemente für die Ebene (Verfügbarkeitsgruppen) und spezifische Elemente für die virtuellen Computer (öffentliche IP-Adressen, Verfügbarkeitsgruppen, Netzwerkschnittstellen und Lastenausgleichsinstanzen) der Azure-Infrastruktur, die für die Bereitstellung erforderlich sind.
-2.	Erstellen Sie für jede Ebene in der Anwendung (z. B. Authentifizierung , Datenbank, Web) die Server in dieser Ebene mithilfe der allgemeinen Elemente (Speicherkonto, virtuelles Netzwerk), der spezifischen Elemente für die Ebene (Verfügbarkeitsgruppe) und der spezifischen Elemente für die virtuellen Computer (öffentliche IP-Adressen, Netzwerkschnittstellen, Lastenausgleichsinstanzen), und konfigurieren Sie sie.
+1.	Erstellen Sie die allgemeinen Elemente \(Speicherkonto, virtuelles Netzwerk\), spezifische Elemente für die Ebene \(Verfügbarkeitsgruppen\) und spezifische Elemente für die virtuellen Computer \(öffentliche IP-Adressen, Verfügbarkeitsgruppen, Netzwerkschnittstellen und Lastenausgleichsinstanzen\) der Azure-Infrastruktur, die für die Bereitstellung erforderlich sind.
+2.	Erstellen Sie für jede Ebene in der Anwendung \(z. B. Authentifizierung , Datenbank, Web\) die Server in dieser Ebene mithilfe der allgemeinen Elemente \(Speicherkonto, virtuelles Netzwerk\), der spezifischen Elemente für die Ebene \(Verfügbarkeitsgruppe\) und der spezifischen Elemente für die virtuellen Computer \(öffentliche IP-Adressen, Netzwerkschnittstellen, Lastenausgleichsinstanzen\), und konfigurieren Sie sie.
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
 
@@ -370,10 +371,10 @@ Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Man
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Azure Resource Manager Overview](resource-group-overview.md) (in englischer Sprache)
+[Azure Resource Manager Overview](resource-group-overview.md) \(in englischer Sprache\)
 
-[Authoring Azure Resource Manager Templates](resource-group-authoring-templates.md) (in englischer Sprache)
+[Authoring Azure Resource Manager Templates](resource-group-authoring-templates.md) \(in englischer Sprache\)
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

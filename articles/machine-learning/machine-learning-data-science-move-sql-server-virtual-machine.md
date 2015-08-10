@@ -18,7 +18,7 @@
 
 #Verschieben von Daten nach SQL Server in Azure
 
-In diesem Dokument wird das Verschieben von Daten aus Flatfiles (CSV/TSV) oder von einem lokalen SQL Server auf einen SQL Server in Azure beschrieben. Diese Aufgabe gehört zur Advanced Analytics Process and Technology (ADAPT), die von Azure Machine Learning bereitgestellt wird.
+In diesem Dokument wird das Verschieben von Daten aus Flatfiles \(CSV/TSV\) oder von einem lokalen SQL Server auf einen SQL Server in Azure beschrieben. Diese Aufgabe gehört zur Advanced Analytics Process and Technology \(ADAPT\), die von Azure Machine Learning bereitgestellt wird.
 
 
 <table>
@@ -53,7 +53,7 @@ In diesem Dokument wird das Verschieben von Daten aus Flatfiles (CSV/TSV) oder v
 
 Beachten Sie, dass in diesem Dokument davon ausgegangen wird, dass die SQL-Befehle in SQL Server Management Studio oder im Datenbank-Explorer von Visual Studio ausgeführt werden.
 
-> [AZURE.TIP]Alternativ dazu können Sie [Azure Data Factory](https://azure.microsoft.com/de-de/services/data-factory/) verwenden, um eine Pipeline zu erstellen und zu planen, die Daten in eine SQL Server-VM auf Azure verschiebt. Weitere Informationen hierzu finden Sie unter [Kopieren von Daten mit Azure Data Factory (Kopieraktivität)](../data-factory/data-factory-copy-activity.md).
+> [AZURE.TIP]Alternativ dazu können Sie [Azure Data Factory](https://azure.microsoft.com/en-us/services/data-factory/) verwenden, um eine Pipeline zu erstellen und zu planen, die Daten in eine SQL Server-VM auf Azure verschiebt. Weitere Informationen hierzu finden Sie unter [Kopieren von Daten mit Azure Data Factory \(Kopieraktivität\)](../data-factory/data-factory-copy-activity.md).
 
 
 ## <a name="sqlonazurevm"></a>Verschieben von Daten in eine SQL Server-VM in Azure
@@ -68,18 +68,18 @@ In diesem Dokument wird das Verschieben von Daten aus folgenden Datenquellen bes
 
 ### <a name="filesource_to_sqlonazurevm"></a>Dateiquelle
 
-Wenn sich Ihre Daten in einer Flatfile (in Zeilen/Spalten angeordnet) befinden, können sie über die folgenden Methoden auf eine SQL Server-VM in Azure verschoben werden:
+Wenn sich Ihre Daten in einer Flatfile \(in Zeilen/Spalten angeordnet\) befinden, können sie über die folgenden Methoden auf eine SQL Server-VM in Azure verschoben werden:
 
-1. [Befehlszeilenprogramm zum Massenkopieren (BCP)](#insert-tables-bcp) 
+1. [Befehlszeilenprogramm zum Massenkopieren \(BCP\)](#insert-tables-bcp) 
 2. [SQL-Abfrage zum Masseneinfügen](#insert-tables-bulkquery)
-3. [Integrierte grafische Hilfsprogramme in SQL Server (Importieren/Exportieren, SSIS)](#sql-builtin-utilities)
+3. [Integrierte grafische Hilfsprogramme in SQL Server \(Importieren/Exportieren, SSIS\)](#sql-builtin-utilities)
 
 
-### <a name="insert-tables-bcp"></a>Befehlszeilenprogramm zum Massenkopieren (BCP)
+### <a name="insert-tables-bcp"></a>Befehlszeilenprogramm zum Massenkopieren \(BCP\)
 
-BPC ist ein Befehlszeilenprogramm, das mit SQL Server installiert wird und eine der schnellsten Möglichkeiten zum Verschieben von Daten darstellt. Es funktioniert für alle drei SQL Server-Varianten (lokaler SQL Server, SQL Azure und SQL Server-VM in Azure).
+BPC ist ein Befehlszeilenprogramm, das mit SQL Server installiert wird und eine der schnellsten Möglichkeiten zum Verschieben von Daten darstellt. Es funktioniert für alle drei SQL Server-Varianten \(lokaler SQL Server, SQL Azure und SQL Server-VM in Azure\).
 
-> [AZURE.NOTE]**Wo sollten sich die Daten für die Verwendung mit BCP befinden?** Auch wenn dies nicht erforderlich ist, beschleunigt sich die Übertragung, wenn sich die Ausgangsdaten auf demselben Computer wie der Ziel-SQL Server befinden (Netzwerkgeschwindigkeit im Vergleich zur E/A-Geschwindigkeit des lokalen Datenträgers). Sie können die Flatfiles mit den Daten auf den Computer verschieben, auf dem SQL Server installiert ist. Dazu stehen verschiedene Dateikopiertools wie [AzCopy](../storage-use-azcopy.md), [Azure Storage-Explorer](https://azurestorageexplorer.codeplex.com/) oder das Kopieren und Einfügen unter Windows über RDP (Remotedesktopprotokoll) zur Verfügung.
+> [AZURE.NOTE]**Wo sollten sich die Daten für die Verwendung mit BCP befinden?** Auch wenn dies nicht erforderlich ist, beschleunigt sich die Übertragung, wenn sich die Ausgangsdaten auf demselben Computer wie der Ziel-SQL Server befinden \(Netzwerkgeschwindigkeit im Vergleich zur E/A-Geschwindigkeit des lokalen Datenträgers\). Sie können die Flatfiles mit den Daten auf den Computer verschieben, auf dem SQL Server installiert ist. Dazu stehen verschiedene Dateikopiertools wie [AzCopy](../storage-use-azcopy.md), [Azure Storage-Explorer](https://azurestorageexplorer.codeplex.com/) oder das Kopieren und Einfügen unter Windows über RDP \(Remotedesktopprotokoll\) zur Verfügung.
 
 1. Stellen Sie sicher, dass die Datenbank und die Tabellen in der SQL Server-Zieldatenbank erstellt werden. Es folgt ein Beispiel für die Durchführung unter Verwendung der Befehle `Create Database` und `Create Table`:
 
@@ -148,11 +148,11 @@ Das PowerShell-Beispielskript unten veranschaulicht das parallele Einfügen mith
 
 ### <a name="insert-tables-bulkquery"></a>SQL-Abfrage zum Masseneinfügen
 
-Mit der [SQL-Abfrage zum Masseneinfügen](https://msdn.microsoft.com/library/ms188365) können Sie Daten aus zeilen-/spaltenbasierten Dateien in die Datenbank importieren (Informationen zu den unterstützten Typen finden Sie [hier](https://msdn.microsoft.com/library/ms188609)).
+Mit der [SQL-Abfrage zum Masseneinfügen](https://msdn.microsoft.com/library/ms188365) können Sie Daten aus zeilen-/spaltenbasierten Dateien in die Datenbank importieren \(Informationen zu den unterstützten Typen finden Sie [hier](https://msdn.microsoft.com/library/ms188609)\).
 
 Im Folgenden sehen Sie einige Beispielbefehle für Masseneinfügungen:
 
-1. Analysieren Sie vor dem Importieren Ihre Daten, und legen Sie benutzerdefinierte Optionen fest, um sicherzustellen, dass die SQL Server-Datenbank dasselbe Format für alle Sonderfelder wie z. B. Datumsangaben annimmt. Hier ist ein Beispiel für das Festlegen des Datumsformats Jahr-Monat-Tag (wenn die Daten das Datum im Jahr-Monat-Tag-Format enthalten):
+1. Analysieren Sie vor dem Importieren Ihre Daten, und legen Sie benutzerdefinierte Optionen fest, um sicherzustellen, dass die SQL Server-Datenbank dasselbe Format für alle Sonderfelder wie z. B. Datumsangaben annimmt. Hier ist ein Beispiel für das Festlegen des Datumsformats Jahr-Monat-Tag \(wenn die Daten das Datum im Jahr-Monat-Tag-Format enthalten\):
 
 		SET DATEFORMAT ymd;	
 	
@@ -171,7 +171,7 @@ Im Folgenden sehen Sie einige Beispielbefehle für Masseneinfügungen:
 
 ### <a name="sql-builtin-utilities"></a>Integrierte Hilfsprogramme in SQL Server
 
-Sie können die SQL Server Integration Services (SSIS) zum Importieren von Daten aus einer Flatfile in die SQL Server-VM in Azure verwenden. SSIS ist in zwei Studio-Umgebungen verfügbar. Weitere Informationen finden Sie unter [Integration Services (SSIS) und Studio-Umgebungen](https://technet.microsoft.com/library/ms140028.aspx):
+Sie können die SQL Server Integration Services \(SSIS\) zum Importieren von Daten aus einer Flatfile in die SQL Server-VM in Azure verwenden. SSIS ist in zwei Studio-Umgebungen verfügbar. Weitere Informationen finden Sie unter [Integration Services \(SSIS\) und Studio-Umgebungen](https://technet.microsoft.com/library/ms140028.aspx):
 
 - Einzelheiten zu den SQL Server Data Tools finden Sie unter [Microsoft SQL Server Data Tools](https://msdn.microsoft.com/data/tools.aspx).  
 - Ausführliche Informationen zum Import/Export-Assistenten finden Sie unter [SQL Server-Import/Export-Assistent](https://msdn.microsoft.com/library/ms141209.aspx).
@@ -188,7 +188,7 @@ Diese Verfahren werden im Folgenden beschrieben:
 
 #### <a name="export-flat-file"></a>Exportieren in eine Flatfile
 
-Für das Massenexportieren von Daten von einem lokalen SQL Server stehen verschiedene Vorgehensweisen zur Verfügung, die [hier](https://msdn.microsoft.com/library/ms175937.aspx) beschrieben werden. In diesem Dokument wird als Beispiel BPC (Bulk Copy Program) beschrieben. Nachdem die Daten in eine Flatfile exportiert wurden, können sie mit einem Massenimport auf einen anderen SQL Server importiert werden.
+Für das Massenexportieren von Daten von einem lokalen SQL Server stehen verschiedene Vorgehensweisen zur Verfügung, die [hier](https://msdn.microsoft.com/library/ms175937.aspx) beschrieben werden. In diesem Dokument wird als Beispiel BPC \(Bulk Copy Program\) beschrieben. Nachdem die Daten in eine Flatfile exportiert wurden, können sie mit einem Massenimport auf einen anderen SQL Server importiert werden.
 
 1. Exportieren Sie die Daten vom lokalen SQL Server folgendermaßen mit dem Dienstprogramm BPC in eine Datei:
 
@@ -219,7 +219,7 @@ Der [SQL-Datenbankmigrations-Assistent](http://sqlazuremw.codeplex.com/) stellt 
 
 SQL Server unterstützt:
 
-1. [Funktionen zur Datenbanksicherung und -wiederherstellung](https://msdn.microsoft.com/library/ms187048.aspx) (sowohl in einer lokalen Datei als auch per bacpac-Export in ein Blob) und [Datenebenenanwendungen](https://msdn.microsoft.com/library/ee210546.aspx) (mit bacpac). 
+1. [Funktionen zur Datenbanksicherung und -wiederherstellung](https://msdn.microsoft.com/library/ms187048.aspx) \(sowohl in einer lokalen Datei als auch per bacpac-Export in ein Blob\) und [Datenebenenanwendungen](https://msdn.microsoft.com/library/ee210546.aspx) \(mit bacpac\). 
 2. Die Möglichkeit, SQL Server-VMs in Azure direkt mit einer kopierten Datenbank oder der Kopie einer vorhandenen SQL Azure-Datenbank zu erstellen. Weitere Informationen finden Sie unter [Verwenden des Assistenten zum Kopieren von Datenbanken](https://msdn.microsoft.com/library/ms188664.aspx). 
 
 Einen Screenshot der Optionen für das Sichern/Wiederherstellen von Datenbanken in SQL Server Management Studio finden Sie unten.
@@ -232,4 +232,4 @@ Einen Screenshot der Optionen für das Sichern/Wiederherstellen von Datenbanken 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

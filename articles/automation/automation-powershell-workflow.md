@@ -52,7 +52,7 @@ Der PowerShell-Workflowcode sieht bis auf einige signifikante Änderungen fast g
 
 Eine Aktivität ist eine bestimmte Aufgabe in einem Workflow. Ebenso wie ein Skript aus einem oder mehreren Befehlen zusammengesetzt ist, setzt sich ein Workflow aus einer oder mehreren Aktivitäten zusammen, die in einer bestimmten Reihenfolge ausgeführt werden. Windows PowerShell Workflow konvertiert viele der Windows PowerShell-Cmdlets automatisch in Aktivitäten, wenn ein Workflow ausgeführt wird. Wenn Sie eines dieser Cmdlets in Ihrem Runbook angeben, wird von Windows Workflow Foundation tatsächlich die entsprechende Aktivität ausgeführt. Für Cmdlets ohne entsprechende Aktivität führt Windows PowerShell Workflow das Cmdlet automatisch in einer [InlineScript](#inlinescript)-Aktivität aus. Es gibt einen Satz Cmdlets, der hiervon ausgeschlossen ist und nicht in einem Workflow verwendet werden kann – es sei denn, Sie schließen diese Cmdlets explizit in einen InlineScript-Block ein. Weitere Informationen zu diesen Konzepten finden Sie unter [Verwenden von Aktivitäten in Skriptworkflows](http://technet.microsoft.com/library/jj574194.aspx).
 
-Workflowaktivitäten teilen sich einen Satz allgemeiner Parameter, um ihren Betrieb zu konfigurieren. Ausführliche Informationen zu den allgemeinen Workflowparametern finden Sie unter [about_WorkflowCommonParameters](http://technet.microsoft.com/library/jj129719.aspx).
+Workflowaktivitäten teilen sich einen Satz allgemeiner Parameter, um ihren Betrieb zu konfigurieren. Ausführliche Informationen zu den allgemeinen Workflowparametern finden Sie unter [about\_WorkflowCommonParameters](http://technet.microsoft.com/library/jj129719.aspx).
 
 ### Positionsparameter
 
@@ -88,7 +88,7 @@ Eine Möglichkeit besteht darin, diese beiden Codezeilen in einen [InlineScript]
 		}
 	} 
 
-Eine weitere Möglichkeit ist die Verwendung eines anderen Cmdlets, mit dem die gleichen Funktionen wie mit der Methode durchgeführt werden (sofern verfügbar). In unserem Beispiel werden mit dem Stop-Service-Cmdlet die gleichen Funktionen wie mit der Stop-Methode bereitgestellt, und Sie können Folgendes für einen Workflow verwenden:
+Eine weitere Möglichkeit ist die Verwendung eines anderen Cmdlets, mit dem die gleichen Funktionen wie mit der Methode durchgeführt werden \(sofern verfügbar\). In unserem Beispiel werden mit dem Stop-Service-Cmdlet die gleichen Funktionen wie mit der Stop-Methode bereitgestellt, und Sie können Folgendes für einen Workflow verwenden:
 
 	Workflow Stop-MyService
 	{
@@ -144,7 +144,7 @@ InlineScript-Aktivitäten können in bestimmten Workflows wichtig sein, aber sie
 - Sie können in einem InlineScript-Block keine [parallele Ausführung](#parallel-execution) nutzen.
 - InlineScript-Blöcke beeinträchtigen die Skalierbarkeit des Workflows, da die Windows PowerShell-Sitzung für die gesamte Dauer des InlineScript-Blocks übernommen wird.
 
-Ausführliche Informationen zur Verwendung von InlineScript finden Sie unter [Ausführen von Windows PowerShell-Befehlen in einem Workflow](http://technet.microsoft.com/library/jj574197.aspx) und unter [about_InlinScript](http://technet.microsoft.com/library/jj649082.aspx).
+Ausführliche Informationen zur Verwendung von InlineScript finden Sie unter [Ausführen von Windows PowerShell-Befehlen in einem Workflow](http://technet.microsoft.com/library/jj574197.aspx) und unter [about\_InlinScript](http://technet.microsoft.com/library/jj649082.aspx).
 
 
 ## Parallele Verarbeitung
@@ -163,9 +163,9 @@ Sie können mit dem Schlüsselwort **Parallel** einen Skriptblock mit mehreren B
 
 Sehen Sie sich beispielsweise die folgenden PowerShell-Befehle an, mit denen mehrere Dateien an ein Netzwerkziel kopiert werden. Diese Befehle werden nacheinander ausgeführt, sodass der Kopiervorgang einer Datei abgeschlossen sein muss, bevor der nächste Vorgang gestartet wird.
 
-	$Copy-Item -Path C:\LocalPath\File1.txt -Destination \NetworkPath\File1.txt
-	$Copy-Item -Path C:\LocalPath\File2.txt -Destination \NetworkPath\File2.txt
-	$Copy-Item -Path C:\LocalPath\File3.txt -Destination \NetworkPath\File3.txt
+	$Copy-Item -Path C:\LocalPath\File1.txt -Destination \\NetworkPath\File1.txt
+	$Copy-Item -Path C:\LocalPath\File2.txt -Destination \\NetworkPath\File2.txt
+	$Copy-Item -Path C:\LocalPath\File3.txt -Destination \\NetworkPath\File3.txt
 
 Im folgenden Workflow werden die gleichen Befehle parallel ausgeführt, sodass die Kopiervorgänge alle gleichzeitig beginnen. Die Abschlussmeldung wird erst angezeigt, nachdem alle Kopiervorgänge abgeschlossen sind.
 
@@ -173,9 +173,9 @@ Im folgenden Workflow werden die gleichen Befehle parallel ausgeführt, sodass d
 	{
 		Parallel 
 		{
-			$Copy-Item -Path "C:\LocalPath\File1.txt" -Destination "\NetworkPath"
-			$Copy-Item -Path "C:\LocalPath\File2.txt" -Destination "\NetworkPath"
-			$Copy-Item -Path "C:\LocalPath\File3.txt" -Destination "\NetworkPath"
+			$Copy-Item -Path "C:\LocalPath\File1.txt" -Destination "\\NetworkPath"
+			$Copy-Item -Path "C:\LocalPath\File2.txt" -Destination "\\NetworkPath"
+			$Copy-Item -Path "C:\LocalPath\File3.txt" -Destination "\\NetworkPath"
 		}
 
 		Write-Output "Files copied."
@@ -199,7 +199,7 @@ Das folgende Beispiel ähnelt dem vorherigen Beispiel mit dem parallelen Kopiere
 
 		ForEach -Parallel ($File in $Files) 
 		{
-			$Copy-Item -Path $File -Destination \NetworkPath
+			$Copy-Item -Path $File -Destination \\NetworkPath
 			Write-Output "$File copied."
 		}
 		
@@ -231,7 +231,7 @@ Im folgenden Beispiel werden mehrere Dateien an einen Netzwerkspeicherort kopier
 
 		ForEach ($File in $Files) 
 		{
-			$Copy-Item -Path $File -Destination \NetworkPath
+			$Copy-Item -Path $File -Destination \\NetworkPath
 			Write-Output "$File copied."
 			Checkpoint-Workflow
 		}
@@ -249,4 +249,4 @@ Weitere Informationen zu Prüfpunkten finden Sie unter [Hinzufügen von Prüfpun
 
 - [Erste Schritte mit dem Windows PowerShell-Workflow](http://technet.microsoft.com/library/jj134242.aspx) 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -33,8 +33,40 @@ Sobald eine Workflowdatei erstellt wurde, kann sie als Medienobjekt hochgeladen 
 
 Die standardmäßigen Workflowdateien können mit dem Designer-Tool geändert werden. Sie können die standardmäßigen Workflowdateien [hier](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows) abrufen. Der Ordner enthält auch Beschreibungen dieser Dateien.
 
-Der folgende Blog enthält Schulungsvideos zur Verwendung des Designers:
+In den folgenden Videos wird die Verwendung des Designers veranschaulicht.
+
+###Tag 1 – erste Schritte
+
+Im Video von Tag 1 werden folgende Themen behandelt:
+
+- Übersicht über Designer
+- Grundlegende Workflows – "Hello World"
+- Erstellen mehrerer MP4-Ausgabedateien für die Verwendung mit Azure Media Services-Streaming
+
+> [AZURE.VIDEO azure-premium-encoder-workflow-designer-training-videos-day-1]
+
+###Tag 2
+
+Im Video von Tag 2 werden folgende Themen behandelt:
+
+- Unterschiedliche Quelldateiszenarien – Verarbeiten von Audiodaten
+- Workflows mit erweiterter Logik
+- Graph-Phasen
+
+> [AZURE.VIDEO azure-premium-encoder-workflow-designer-training-videos-day-2]
+
+###Tag 3
+
+Im Video von Tag 3 werden folgende Themen behandelt:
+
+- Skripterstellung innerhalb von Workflows/Blaupausen
+- Einschränkungen des aktuellen Encoders
+- Fragen und Antworten
+ 
+> [AZURE.VIDEO azure-premium-encoder-workflow-designer-training-videos-day-3]
+
+##Weitere Informationen
 
 [Azure Premium Encoder Workflow-Designer – Schulungsvideos](http://johndeutscher.com/2015/07/06/azure-premium-encoder-workflow-designer-training-videos/)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/15/2015" 
+	ms.date="07/29/2015" 
 	ms.author="femila"/>
 
 
@@ -30,15 +30,15 @@ Die erweiterte Regel, die Sie für die dynamischen Mitgliedschaften für Gruppen
 - Binärer Operator
 - Rechte Konstante 
 
-Eine vollständige erweiterte Regel sieht etwa wie folgt aus: (leftParameter binaryOperator "RightConstant"). Für den gesamten Ausdruck sind öffnende und schließende Klammern erforderlich, die rechte Konstante muss in doppelte gerade Anführungszeichen eingeschlossen werden, und die Syntax für den linken Parameter lautet "user.property". Eine erweiterte Regel kann aus mehreren binären Ausdrücke bestehen, die durch die logischen Operatoren "-and", "-or" und "-not" getrennt sind. Hier finden Sie Beispiele für eine richtig aufgebaute erweiterte Regel:
+Eine vollständige erweiterte Regel sieht etwa wie folgt aus: \(leftParameter binaryOperator "RightConstant"\). Für den gesamten Ausdruck sind öffnende und schließende Klammern erforderlich, die rechte Konstante muss in doppelte gerade Anführungszeichen eingeschlossen werden, und die Syntax für den linken Parameter lautet "user.property". Eine erweiterte Regel kann aus mehreren binären Ausdrücke bestehen, die durch die logischen Operatoren "-and", "-or" und "-not" getrennt sind. Hier finden Sie Beispiele für eine richtig aufgebaute erweiterte Regel:
 
-- (user.department -eq "Sales") -or (user.department -eq "Marketing") 
-- (user.department -eq "Sales") -and -not (user.jobTitle -contains "SDE") 
+- \(user.department -eq "Sales"\) -or \(user.department -eq "Marketing"\) 
+- \(user.department -eq "Sales"\) -and -not \(user.jobTitle -contains "SDE"\) 
 
 Eine vollständige Liste der unterstützten Parameter und Ausdrucksregeloperatoren finden Sie in den folgenden Abschnitten.
 
 Die Gesamtlänge des Texts der erweiterten Regel darf 255 Zeichen nicht überschreiten.
-> [AZURE.NOTE]Bei string- und regex-Vorgängen wird die Groß-und Kleinschreibung nicht beachtet. Sie können auch NULL-Prüfungen durchführen, indem Sie "$null" als Konstante verwenden, z. B.: user.department -eq $null. Zeichenfolgen mit Anführungszeichen (") sollten mit dem Escapezeichen ` maskiert werden, z. B.: user.department -eq "Sa`"les".
+> [AZURE.NOTE]Bei string- und regex-Vorgängen wird die Groß-und Kleinschreibung nicht beachtet. Sie können auch NULL-Prüfungen durchführen, indem Sie "$null" als Konstante verwenden, z. B.: user.department -eq $null. Zeichenfolgen mit Anführungszeichen \("\) sollten mit dem Escapezeichen \` maskiert werden, z. B.: user.department -eq "Sa\`"les".
 
 ##Unterstützte Ausdrucksregeloperatoren
 Die folgende Tabelle enthält alle Ausdrucksregeloperatoren und ihre Syntax zur Verwendung im Text der erweiterten Regel:
@@ -57,19 +57,19 @@ Die folgende Tabelle enthält alle Ausdrucksregeloperatoren und ihre Syntax zur 
 
 | Abfrageanalysefehler | Fehlerverwendung | Korrigierte Verwendung |
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Fehler: Das Attribut nicht unterstützt. | (user.invalidProperty -eq "Value") | (user.department -eq "value")  
+| Fehler: Das Attribut nicht unterstützt. | \(user.invalidProperty -eq "Value"\) | \(user.department -eq "value"\)  
 Die Eigenschaft sollte einer der unterstützten Eigenschaften aus der obigen Liste entsprechen. |
-| Fehler: Der Operator wird für das Attribut nicht unterstützt. | (user.accountEnabled -contains true) | (user.accountEnabled -eq true)  
-Die Eigenschaft weist den Typ "boolesch" auf. Verwenden Sie die unterstützten booleschen Operatoren (-eq oder -ne) aus der oben stehenden Liste. |
-| Fehler: Abfragekompilierungsfehler. | (user.department -eq "Sales") -and (user.department -eq "Marketing")(user.userPrincipalName -match "*@domain.ext") | (user.department -eq "Sales") -and (user.department -eq "Marketing")  
+| Fehler: Der Operator wird für das Attribut nicht unterstützt. | \(user.accountEnabled -contains true\) | \(user.accountEnabled -eq true\)  
+Die Eigenschaft weist den Typ "boolesch" auf. Verwenden Sie die unterstützten booleschen Operatoren \(-eq oder -ne\) aus der oben stehenden Liste. |
+| Fehler: Abfragekompilierungsfehler. | \(user.department -eq "Sales"\) -and \(user.department -eq "Marketing"\)\(user.userPrincipalName -match "\*@domain.ext"\) | \(user.department -eq "Sales"\) -and \(user.department -eq "Marketing"\)  
 Der logische Operator sollte einer der unterstützten Eigenschaften aus der obigen Liste entsprechen.  
-(user.userPrincipalName -match ".*@domain.ext")  
+\(user.userPrincipalName -match ".\*@domain.ext"\)  
 oder  
-(user.userPrincipalName -match "@domain.ext$")  
+\(user.userPrincipalName -match "@domain.ext$"\)  
 Fehler im regulären Ausdruck. |
-| Fehler: Die Binärausdruck weist nicht das richtige Format auf. | (user.department –eq “Sales”) (user.department -eq "Sales")(user.department-eq"Sales") | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain")  
+| Fehler: Die Binärausdruck weist nicht das richtige Format auf. | \(user.department –eq “Sales”\) \(user.department -eq "Sales"\)\(user.department-eq"Sales"\) | \(user.accountEnabled -eq true\) -and \(user.userPrincipalName -contains "alias@domain"\)  
 Abfrage enthält mehrere Fehler. Die Klammern befinden sich nicht an der richtigen Stelle. |
-| Fehler: Unbekannter Fehler beim Einrichten dynamischer Mitgliedschaften. | (user.accountEnabled -eq "True" AND user.userPrincipalName -contains "alias@domain") | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain")  
+| Fehler: Unbekannter Fehler beim Einrichten dynamischer Mitgliedschaften. | \(user.accountEnabled -eq "True" AND user.userPrincipalName -contains "alias@domain"\) | \(user.accountEnabled -eq true\) -and \(user.userPrincipalName -contains "alias@domain"\)  
 Abfrage enthält mehrere Fehler. Die Klammern befinden sich nicht an der richtigen Stelle. |
 
 ##Unterstützte Parameter
@@ -87,8 +87,8 @@ Zulässige Operatoren
 
 | Eigenschaften | Zulässige Werte | Verwendung |
 |----------------|-----------------|--------------------------------|
-| accountEnabled | true false | user.accountEnabled -eq true) |
-| dirSyncEnabled | true false null | (user.dirSyncEnabled -eq true) |
+| accountEnabled | true false | user.accountEnabled -eq true\) |
+| dirSyncEnabled | true false null | \(user.dirSyncEnabled -eq true\) |
 
 **Eigenschaften vom Typ "string"**
 
@@ -119,29 +119,29 @@ Zulässige Operatoren
 
 | Eigenschaften | Zulässige Werte | Verwendung |
 |----------------------------|-------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
-| city | Jeder string-Wert oder $null. | (user.city -eq "value") |
-| country | Jeder string-Wert oder $null. | (user.country -eq "value") |
-| department | Jeder string-Wert oder $null. | (user.department -eq "value") |
-| displayName | Jeder string-Wert. | (user.displayName -eq "value") |
-| facsimileTelephoneNumber | Jeder string-Wert oder $null. | (user.facsimileTelephoneNumber -eq "value") |
-| givenName | Jeder string-Wert oder $null. | (user.givenName -eq "value") |
-| jobTitle | Jeder string-Wert oder $null. | (user.jobTitle -eq "value") |
-| mail | Jeder string-Wert oder $null. SMTP-Adresse des Benutzers. | (user.mail -eq "value") |
-| mailNickName | Jeder string-Wert. E-Mail-Alias des Benutzers. | (user.mailNickName -eq "value") |
-| mobile | Jeder string-Wert oder $null. | (user.mobile -eq "value") |
-| objectId | GUID des Benutzerobjekts. | (user.objectId -eq "1111111-1111-1111-1111-111111111111") |
-| passwordPolicies | None DisableStrongPassword DisablePasswordExpiration DisablePasswordExpiration, DisableStrongPassword | (user.passwordPolicies -eq "DisableStrongPassword") |
-| physicalDeliveryOfficeName | Jeder string-Wert oder $null. | (user.physicalDeliveryOfficeName -eq "value") |
-| postalCode | Jeder string-Wert oder $null. | (user.postalCode -eq "value") |
-| preferredLanguage | ISO 639-1 code | (user.preferredLanguage -eq "en-US") |
-| sipProxyAddress | Jeder string-Wert oder $null. | (user.sipProxyAddress -eq "value") |
-| state | Jeder string-Wert oder $null. | (user.state -eq "value") |
-| streetAddress | Jeder string-Wert oder $null. | (user.streetAddress -eq "value") |
-| surname | Jeder string-Wert oder $null. | (user.surname -eq "value") |
-| telephoneNumber | Jeder string-Wert oder $null. | (user.telephoneNumber -eq "value") |
-| usageLocation | Aus zwei Buchstaben bestehender Ländercode. | (user.usageLocation -eq "US") |
-| userPrincipalName | Jeder string-Wert. | (user.userPrincipalName -eq "alias@domain") |
-| userType | member guest $null | (user.userType -eq "Member") |
+| city | Jeder string-Wert oder $null. | \(user.city -eq "value"\) |
+| country | Jeder string-Wert oder $null. | \(user.country -eq "value"\) |
+| department | Jeder string-Wert oder $null. | \(user.department -eq "value"\) |
+| displayName | Jeder string-Wert. | \(user.displayName -eq "value"\) |
+| facsimileTelephoneNumber | Jeder string-Wert oder $null. | \(user.facsimileTelephoneNumber -eq "value"\) |
+| givenName | Jeder string-Wert oder $null. | \(user.givenName -eq "value"\) |
+| jobTitle | Jeder string-Wert oder $null. | \(user.jobTitle -eq "value"\) |
+| mail | Jeder string-Wert oder $null. SMTP-Adresse des Benutzers. | \(user.mail -eq "value"\) |
+| mailNickName | Jeder string-Wert. E-Mail-Alias des Benutzers. | \(user.mailNickName -eq "value"\) |
+| mobile | Jeder string-Wert oder $null. | \(user.mobile -eq "value"\) |
+| objectId | GUID des Benutzerobjekts. | \(user.objectId -eq "1111111-1111-1111-1111-111111111111"\) |
+| passwordPolicies | None DisableStrongPassword DisablePasswordExpiration DisablePasswordExpiration, DisableStrongPassword | \(user.passwordPolicies -eq "DisableStrongPassword"\) |
+| physicalDeliveryOfficeName | Jeder string-Wert oder $null. | \(user.physicalDeliveryOfficeName -eq "value"\) |
+| postalCode | Jeder string-Wert oder $null. | \(user.postalCode -eq "value"\) |
+| preferredLanguage | ISO 639-1 code | \(user.preferredLanguage -eq "en-US"\) |
+| sipProxyAddress | Jeder string-Wert oder $null. | \(user.sipProxyAddress -eq "value"\) |
+| state | Jeder string-Wert oder $null. | \(user.state -eq "value"\) |
+| streetAddress | Jeder string-Wert oder $null. | \(user.streetAddress -eq "value"\) |
+| surname | Jeder string-Wert oder $null. | \(user.surname -eq "value"\) |
+| telephoneNumber | Jeder string-Wert oder $null. | \(user.telephoneNumber -eq "value"\) |
+| usageLocation | Aus zwei Buchstaben bestehender Ländercode. | \(user.usageLocation -eq "US"\) |
+| userPrincipalName | Jeder string-Wert. | \(user.userPrincipalName -eq "alias@domain"\) |
+| userType | member guest $null | \(user.userType -eq "Member"\) |
 
 **Eigenschaften vom Typ "string collection"**
 
@@ -154,10 +154,20 @@ Zulässige Operatoren
 
 | Eigenschaften | Zulässige Werte | Verwendung |
 |----------------|---------------------------------------|------------------------------------------------------|
-| otherMails | Jeder string-Wert. | (user.otherMails -contains "alias@domain") |
-| proxyAddresses | SMTP: alias@domain smtp: alias@domain | (user.proxyAddresses -contains "SMTP: alias@domain") |
+| otherMails | Jeder string-Wert. | \(user.otherMails -contains "alias@domain"\) |
+| proxyAddresses | SMTP: alias@domain smtp: alias@domain | \(user.proxyAddresses -contains "SMTP: alias@domain"\) |
 
-Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Directory bieten:
+## Mitarbeiterregel
+Sie können Mitglieder einer Gruppe jetzt basierend auf dem manager-Attribut eines Benutzers auffüllen.
+So konfigurieren Sie eine Gruppe als Gruppe mit "Vorgesetzten"
+--------------------------------------------------------------------------------
+1. Klicken Sie im Administratorportal auf die Registerkarte **Konfigurieren**, und wählen Sie **ERWEITERTE REGEL** aus. 
+2. Geben Sie die Regel mit folgender Syntax ein: Mitarbeiter von *Mitarbeiter von {Benutzer-ID\_von\_Vorgesetztem}*
+3. Nach dem Speichern dieser Regel werden alle Benutzer, die diese Regel erfüllen, als Mitglieder dieser Gruppe eingetragen. Beachten Sie, dass das erste Auffüllen der Gruppe einige Minuten dauern kann. 
+
+
+## Zusätzliche Informationen
+Hier sind einige Themen aufgeführt, die zusätzliche Informationen zu Azure Active Directory bieten.
 
 * [Problembehandlung bei dynamischen Mitgliedschaften für Gruppen](active-directory-accessmanagement-troubleshooting.md)
 
@@ -165,6 +175,6 @@ Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Di
 
 * [Was ist Azure Active Directory?](active-directory-whatis.md)
 
-* [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+* [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -23,7 +23,7 @@
 [AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
 
 
-Visual Studio Application Insights überwacht Ihre Live-Anwendung. So können Sie [Leistungsprobleme und -ausnahmen erkennen und diagnostizieren][detect] und zudem [ermitteln, wie Ihre App verwendet wird][knowUsers]. Es kann mit einer Vielzahl von Anwendungstypen verwendet werden. Dies funktioniert für Apps, die auf den eigenen lokalen IIS-Servern oder Azure-VMs gehostet werden, sowie für Azure-Web-Apps. ([Dies funktioniert auch für Geräte-Apps und Java-Server][start].)
+Visual Studio Application Insights überwacht Ihre Live-Anwendung. So können Sie [Leistungsprobleme und -ausnahmen erkennen und diagnostizieren][detect] und zudem [ermitteln, wie Ihre App verwendet wird][knowUsers]. Es kann mit einer Vielzahl von Anwendungstypen verwendet werden. Dies funktioniert für Apps, die auf den eigenen lokalen IIS-Servern oder Azure-VMs gehostet werden, sowie für Azure-Web-Apps. \([Dies funktioniert auch für Geräte-Apps und Java-Server][start].\)
 
 ![Beispiel für Leistungsüberwachungsdiagramm](./media/app-insights-start-monitoring-app-health-usage/10-perf.png)
 
@@ -40,7 +40,7 @@ Erforderlich:
 
 Melden Sie sich beim [Azure-Portal][portal] an, und erstellen Sie eine neue Application Insights-Ressource. Wählen Sie als Anwendungstyp "ASP.NET" aus.
 
-![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-start-monitoring-app-health-usage/01-new-asp.png)
+![Klicken Sie auf "Neu \> Application Insights"](./media/app-insights-start-monitoring-app-health-usage/01-new-asp.png)
 
 Eine [Ressource][roles] in Azure ist eine Instanz eines Diensts. In dieser Ressource werden Telemetriedaten aus Ihrer App analysiert und Ihnen angezeigt.
 
@@ -66,11 +66,11 @@ Der Schlüssel identifiziert die Ressource, den Sie bald im SDK installieren kö
     ![Suchen Sie nach "Application Insights".](./media/app-insights-start-monitoring-app-health-usage/04-ai-nuget.png)
 
 
-3. Bearbeiten Sie die Datei "ApplicationInsights.config" (die bei der NuGet-Installation hinzugefügt wurde). Fügen Sie Folgendes direkt vor dem Endtag ein:
+3. Bearbeiten Sie die Datei "ApplicationInsights.config" \(die bei der NuGet-Installation hinzugefügt wurde\). Fügen Sie Folgendes direkt vor dem Endtag ein:
 
     `<InstrumentationKey>` *Der kopierte Instrumentationsschlüssel* `</InstrumentationKey>`
 
-    (Alternativ können Sie [den Schlüssel durch Schreiben von Code][apikey] in Ihrer App festlegen.)
+    \(Alternativ können Sie [den Schlüssel durch Schreiben von Code][apikey] in Ihrer App festlegen.\)
 
 #### So aktualisieren Sie auf zukünftige SDK-Versionen
 
@@ -122,15 +122,15 @@ Das SDK benötigt beim Zugriff auf bestimmte Daten etwas Hilfe. Dieser zusätzli
 
 Melden Sie sich auf Ihrem Server mit Administratorrechten an, und installieren Sie den [Application Insights-Statusmonitor](http://go.microsoft.com/fwlink/?LinkId=506648).
 
-(Sie können den Statusmonitor auch zum [Instrumentieren einer bereits ausgeführten Anwendung](app-insights-monitor-performance-live-website-now.md) verwenden, auch wenn diese nicht mit dem SDK erstellt wurde.)
+\(Sie können den Statusmonitor auch zum [Instrumentieren einer bereits ausgeführten Anwendung](app-insights-monitor-performance-live-website-now.md) verwenden, auch wenn diese nicht mit dem SDK erstellt wurde.\)
 
 #### Wenn Ihre App eine Azure-Web-App ist
 
 Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-Erweiterung hinzu.
 
-![In der Web-App: „Einstellungen“ > „Erweiterungen“ > „Hinzufügen“ > „Application Insights“](./media/app-insights-start-monitoring-app-health-usage/05-extend.png)
+![Klicken Sie in der Web-App auf "Extras", "Leistungsüberwachung", "Hinzufügen" und "Application Insights".](./media/app-insights-start-monitoring-app-health-usage/05-extend.png)
 
-(Die Erweiterung unterstützt nur Apps, die mit dem SDK erstellt wurden. Im Gegensatz zum Statusmonitor kann sie keine vorhandene App instrumentieren.)
+\(Die Erweiterung unterstützt nur Apps, die mit dem SDK erstellt wurden. Im Gegensatz zum Statusmonitor kann sie keine vorhandene App instrumentieren.\)
 
 ## Hinzufügen der clientseitigen Überwachung
 
@@ -142,7 +142,7 @@ Sie können zudem eigenen Code schreiben, um nachzuverfolgen, wie Ihre Benutzer 
 
 Wenn in Ihrer App Webseiten angezeigt werden, fügen Sie jeder Seite einen JavaScript-Codeausschnitt hinzu. Verwenden Sie den Code aus Ihrer Application Insights-Ressource:
 
-![Öffnen Sie in Ihrer Web-App „Schnellstart“, und klicken Sie auf die Option zum Abrufen des Codes für die Überwachung von Webseiten.](./media/app-insights-start-monitoring-app-health-usage/02-monitor-web-page.png)
+![Öffnen Sie in Ihrer Web-App "Schnellstart", und klicken Sie auf die Option zum Abrufen von Code für die Überwachung von Webseiten](./media/app-insights-start-monitoring-app-health-usage/02-monitor-web-page.png)
 
 Beachten Sie, dass der Code den Instrumentationsschlüssel enthält, der Ihre Anwendungsressource identifiziert.
 
@@ -167,7 +167,7 @@ Führen Sie folgende Zusatzschritte aus, um einen umfassenden Überblick über I
 
 Die Einrichtung von Visual Studio ist sehr einfach.
 
-Sie benötigen [Visual Studio 2013 Update 3](http://go.microsoft.com/fwlink/?linkid=397827&clcid=0x409) (oder neuer) und ein Konto in [Microsoft Azure](http://azure.com).
+Sie benötigen [Visual Studio 2013 Update 3](http://go.microsoft.com/fwlink/?linkid=397827&clcid=0x409) \(oder neuer\) und ein Konto in [Microsoft Azure](http://azure.com).
 
 #### Falls es sich um ein neues Projekt handelt ...
 
@@ -192,7 +192,7 @@ In diesem Fall wird das [JavaScript-SDK][client] nicht Ihren Webseiten hinzugef�
 
 #### Setupoptionen
 
-Falls Sie erstmals ein Projekt erstellen, werden Sie nach einer Anmeldung bei Microsoft Azure Preview gefragt. (Dies ist nicht zu verwechseln mit Ihrem Visual Studio Online-Konto.)
+Falls Sie erstmals ein Projekt erstellen, werden Sie nach einer Anmeldung bei Microsoft Azure Preview gefragt. \(Dies ist nicht zu verwechseln mit Ihrem Visual Studio Online-Konto.\)
 
 Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithilfe von **Einstellungen konfigurieren** in derselben Ressourcengruppe wie die anderen Komponenten abzulegen.
 
@@ -231,4 +231,4 @@ Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithi
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

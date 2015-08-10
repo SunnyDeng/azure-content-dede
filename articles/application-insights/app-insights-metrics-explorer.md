@@ -82,11 +82,11 @@ Verschiedene Metriken werden auf unterschiedliche Weise zusammengefasst:
 
  * Für eine Metrik wie Antwortzeit werden Werte über den Zeitraum des Diagramms **gemittelt**.
  * Für Anzahlen von Ereignissen, wie z. B. Anforderungsfehler, ist das Aggregat die **Summe** der Anzahlen über den Zeitraum.
- * Für Anzahlen von Benutzer ist das Aggregat ist die Anzahl **eindeutiger** Benutzer über den Zeitraum. (Wenn ein Benutzer mehr als einmal im Zeitraum erfasst wird, wird er nur einmal gezählt.)
+ * Für Anzahlen von Benutzer ist das Aggregat ist die Anzahl **eindeutiger** Benutzer über den Zeitraum. \(Wenn ein Benutzer mehr als einmal im Zeitraum erfasst wird, wird er nur einmal gezählt.\)
 
 Um zu überprüfen, ob der Wert eine Summe, ein Mittel- oder eindeutiger Wert ist, klicken Sie auf das Diagramm und führen einen Bildlauf nach unten zum ausgewählten Wert durch. Sie können auch eine kurze Beschreibung der Metrik abrufen.
 
-![Bewegen Sie den Mauszeiger über (i)](./media/app-insights-metrics-explorer/06-total.png)
+![Bewegen Sie den Mauszeiger über \(i\)](./media/app-insights-metrics-explorer/06-total.png)
  
 
 
@@ -102,7 +102,7 @@ Wählen Sie ein vorhandenes oder neues Diagramm aus, um dessen Anzeige zu bearbe
 
 Sie können in einem Diagramm mehr als eine Metrik anzeigen, wenngleich es Einschränkungen bezüglich der Kombinationen gibt, die zusammen angezeigt werden können. Sobald Sie eine Metrik auswählen, werden einige der anderen deaktiviert.
 
-Wenn Sie [benutzerdefinierte Metriken][track] in Ihrer App (Aufrufe von "TrackMetric" und "TrackEvent") programmiert haben, werden sie hier aufgelistet.
+Wenn Sie [benutzerdefinierte Metriken][track] in Ihrer App \(Aufrufe von "TrackMetric" und "TrackEvent"\) programmiert haben, werden sie hier aufgelistet.
 
 ## Segmentieren der Daten
 
@@ -179,8 +179,13 @@ Die Dateien, die Ihnen angezeigt werden, werden exportiert. Ändern Sie den Zeit
 
 *Der Export funktioniert zurzeit nur mit Internet Explorer und Chrome. Unterstützung für weitere Browser wird in Zukunft verfügbar sein.*
 
+### Fortlaufender Export
+
 Wenn Sie Daten zur externen Verarbeitung fortlaufend exportieren möchten, sollten Sie die Funktion [Fortlaufender Export](app-insights-export-telemetry.md) verwenden.
 
+### Power BI
+
+Wenn Sie umfangreichere Ansichten der Daten wünschen, können Sie sie [nach Power BI exportieren](app-insights-export-power-bi.md).
 
 ## Nächste Schritte
 
@@ -196,4 +201,4 @@ Wenn Sie Daten zur externen Verarbeitung fortlaufend exportieren möchten, sollt
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

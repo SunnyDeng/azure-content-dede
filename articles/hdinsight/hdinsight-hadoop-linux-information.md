@@ -13,20 +13,20 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="05/27/2015"
+   ms.date="07/24/2015"
    ms.author="larryfr"/>
 
-# Informationen zur Verwendung von HDInsight unter Linux (Vorschau)
+# Informationen zur Verwendung von HDInsight unter Linux \(Vorschau\)
 
 Auf Linux basierende Azure HDInsight-Cluster stellen Hadoop in einer vertrauten Linux-Umgebung bereit, die in der Azure-Cloud ausgeführt wird. Die Lösung sollte sich größtenteils genauso wie jede andere Installation von Hadoop unter Linux verhalten. In diesem Dokument werden bestimmte Unterschiede aufgeführt, die Sie kennen sollten.
 
 ## Domänennamen
 
-Der vollqualifizierte Domänenname (FQDN) für die Verbindung zum Cluster lautet **&lt;Clustername>.azurehdinsight.net** oder (nur für SSH) **&lt;Clustername-ssh>.azurehdinsight.net**.
+Der vollqualifizierte Domänenname \(FQDN\) für die Verbindung zum Cluster lautet **&lt;Clustername\>.azurehdinsight.net** oder \(nur für SSH\) **&lt;Clustername-ssh\>.azurehdinsight.net**.
 
 ## Remotezugriff auf Dienste
 
-* **Ambari (Web)** - https://&lt;clustername>.azurehdinsight.net
+* **Ambari \(Web\)** - https://&lt;clustername\>.azurehdinsight.net
 
 	> [AZURE.NOTE]Authentifizieren Sie sich mit dem Benutzernamen und Kennwort des Clusteradministrators, und melden Sie sich anschließend bei Ambari an. Hierbei werden ebenfalls Benutzername und Kennwort des Clusteradministrators verwendet.
 	>
@@ -40,19 +40,19 @@ Der vollqualifizierte Domänenname (FQDN) für die Verbindung zum Cluster lautet
 
 	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows) – Anleitung zum Verwenden von Putty zum Erstellen eines SSH-Tunnels.
 
-* **Ambari (REST)** - https://&lt;clustername>.azurehdinsight.net/ambari
+* **Ambari \(REST\)** - https://&lt;clustername\>.azurehdinsight.net/ambari
 
 	> [AZURE.NOTE]Authentifizieren Sie sich mit dem Benutzernamen und Kennwort des Clusteradministrators.
 	>
 	> Die Authentifizierung erfolgt unverschlüsselt. Verwenden Sie immer HTTPS, um eine sichere Verbindung zu gewährleisten.
 
-* **WebHCat (Templeton)** - https://&lt;clustername>.azurehdinsight.net/templeton
+* **WebHCat \(Templeton\)** - https://&lt;clustername\>.azurehdinsight.net/templeton
 
 	> [AZURE.NOTE]Authentifizieren Sie sich mit dem Benutzernamen und Kennwort des Clusteradministrators.
 	>
 	> Die Authentifizierung erfolgt unverschlüsselt. Verwenden Sie immer HTTPS, um eine sichere Verbindung zu gewährleisten.
 
-* **SSH** - &lt;Clustername>-ssh.azurehdinsight.net an Port 22
+* **SSH** - &lt;Clustername\>-ssh.azurehdinsight.net an Port 22
 
 	> [AZURE.NOTE]Sie können auf einem Clientcomputer nur über SSH auf den Hauptknoten des Clusters zugreifen. Nachdem die Verbindung hergestellt ist, können Sie vom Hauptknoten aus über SSH auf die Workerknoten zugreifen.
 
@@ -60,7 +60,7 @@ Der vollqualifizierte Domänenname (FQDN) für die Verbindung zum Cluster lautet
 
 Zu Hadoop zugehörige Dateien befinden sich auf den Clusterknoten in `/usr/hdp/current`.
 
-Beispieldaten und JAR-Dateien für Hadoop Distributed File System (HDFS) oder Azure-Blobspeicher finden Sie unter '/example' oder 'wasb:///example'.
+Beispieldaten und JAR-Dateien für Hadoop Distributed File System \(HDFS\) oder Azure-Blobspeicher finden Sie unter '/example' oder 'wasb:///example'.
 
 ## Bewährte Methoden für HDFS, Azure-Blobspeicher und Speicher
 
@@ -78,15 +78,13 @@ Da dies der Standardspeicher für HDInsight ist, sind für seine Verwendung in d
 
 Bei einigen Befehlen müssen Sie möglicherweise angeben, dass Sie Blobspeicher verwenden. Für diese Befehle können Sie die Zeichenfolge **WASB://** voranstellen.
 
-Mit HDInsight können Sie auch mehrere Blobspeicherkonten einem Cluster zuordnen. Für den Zugriff auf Daten in einem nicht standardmäßigen Blobspeicherkonto können Sie das Format **WASB://&lt;container-name>@&lt;Kontoname>.blob.core.windows.net/** verwenden. Der folgende Befehl listet z. B. den Inhalt des Verzeichnisses **/example/data** für den angegebenen Container und das Blobspeicherkonto auf:
+Mit HDInsight können Sie auch mehrere Blobspeicherkonten einem Cluster zuordnen. Für den Zugriff auf Daten in einem nicht standardmäßigen Blobspeicherkonto können Sie das Format **WASB://&lt;container-name\>@&lt;Kontoname\>.blob.core.windows.net/** verwenden. Der folgende Befehl listet z. B. den Inhalt des Verzeichnisses **/example/data** für den angegebenen Container und das Blobspeicherkonto auf:
 
 	hadoop fs -ls wasb://mycontainer@mystorage.blob.core.windows.net/example/data
 
 ### Welchen Blobspeicher verwendet der Cluster?
 
-Während der Clustererstellung haben Sie entweder die Verwendung eines vorhandenen Azure-Speicherkontos und -containers ausgewählt, oder Sie erstellen diese neu. Dann haben Sie diese möglicherweise wieder vergessen. Sie können das Speicherkonto und den Container mithilfe der folgenden Methoden finden.
-
-**Ambari-API**
+Während der Clustererstellung haben Sie entweder die Verwendung eines vorhandenen Azure-Speicherkontos und -containers ausgewählt, oder Sie erstellen diese neu. Dann haben Sie diese möglicherweise wieder vergessen. Sie können das Speicherkonto und den Container mithilfe der Ambari-REST-API finden.
 
 1. Verwenden Sie den folgenden Befehl aus, um HDFS-Konfigurationsinformationen abzurufen:
 
@@ -110,16 +108,6 @@ Während der Clustererstellung haben Sie entweder die Verwendung eines vorhanden
 	>
 	> `curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties as $in | $in | keys[] | select(. | contains("fs.azure.account.key.")) as $item | $item | ltrimstr("fs.azure.account.key.") | { storage_account: ., storage_account_key: $in[$item] }'`
 
-
-**Azure-Portal**
-
-1. Wählen Sie im [Azure-Portal](https://manage.windowsazure.com/) Ihren HDInsight-Cluster aus.
-
-2. Wählen Sie oben auf der Seite **Dashboard** aus.
-
-3. Die Speicherkonten und Container werden auf der Seite im Abschnitt **Verknüpfte Ressourcen** aufgelistet.
-
-	![Verknüpfte Ressourcen](./media/hdinsight-hadoop-linux-information/storageportal.png)
 
 ### Wie kann ich auf Blobspeicher zugreifen?
 
@@ -150,6 +138,5 @@ Neben dem vom Cluster aus gestarteten Hadoop-Befehl stehen eine Vielzahl von Mö
 * [Verwenden von Hive mit HDInsight](hdinsight-use-hive.md)
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

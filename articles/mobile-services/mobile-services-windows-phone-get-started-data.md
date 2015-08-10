@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="05/28/2015" 
+	ms.date="07/25/2015" 
 	ms.author="glenga"/>
 
 
@@ -21,13 +21,12 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-data-legacy](../../includes/mobile-services-selector-get-started-data-legacy.md)]
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
+##Übersicht
 
-<p>In diesem Thema wird gezeigt, wie Sie mit Azure Mobile Services Daten in einer Windows Phone 8-App nutzen können. In diesem Lernprogramm laden Sie eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App und melden sich dann beim Azure-Verwaltungsportal an, um Datenänderungen beim Ausführen der App anzuzeigen.</p>
-</div>
-<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkID=298628" target="_blank" class="label">Lernprogramm ansehen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-wp8-get-started-data-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkID=298628" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a> <span class="time">12:54:00</span></div>
-</div>
+In diesem Thema wird gezeigt, wie Sie mit Azure Mobile Services Daten in einer Windows Phone 8-App nutzen können. In diesem Lernprogramm laden Sie eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App und melden sich dann beim Azure-Verwaltungsportal an, um Datenänderungen beim Ausführen der App anzuzeigen.
+
+Sie können auch eine Demonstration von Nick Harris im folgenden Video anzeigen:
+>[AZURE.VIDEO mobile-get-started-with-data-windows-phone]
 
 ##Voraussetzungen 
 
@@ -120,9 +119,9 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
         private IMobileServiceTable<TodoItem> todoTable = 
 			App.MobileService.GetTable<TodoItem>();
 
-   	Dieser Code erstellt eine Bindungssammlung (**items**), die Mobile Services unterstützt, und eine Proxyklasse für die SQL-Datenbanktabelle **TodoItem** (**todoTable**).
+   	Dieser Code erstellt eine Bindungssammlung \(\*\*items\*\*\), die Mobile Services unterstützt, und eine Proxyklasse für die SQL-Datenbanktabelle **TodoItem** \(\*\*todoTable\*\*\).
 
-7. Entfernen Sie aus der **InsertTodoItem**-Methode die Codezeile, in der die **TodoItem.**.**id**-Eigenschaft festgelegt wird, fügen Sie der Methode den **async**-Modifizierer hinzu, und heben Sie die Auskommentierung der folgenden Codezeile auf:
+7. Entfernen Sie aus der **InsertTodoItem**-Methode die Codezeile, in der die **TodoItem.**.\*\*id\*\*-Eigenschaft festgelegt wird, fügen Sie der Methode den **async**-Modifizierer hinzu, und heben Sie die Auskommentierung der folgenden Codezeile auf:
 
         await todoTable.InsertAsync(todoItem);
 
@@ -168,7 +167,7 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Windows Phone
 
 * [Hinzufügen von Pushbenachrichtigungen zur App](mobile-services-javascript-backend-windows-phone-get-started-push.md) <br/>Erfahren Sie, wie Sie mit Mobile Services eine einfache Pushbenachrichtigung an Ihre App senden können.
 
-* [Mobile Services #C-Anleitungen: Konzeptionelle Referenz](mobile-services-windows-dotnet-how-to-use-client-library.md) <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
+* [Mobile Services \#C-Anleitungen: Konzeptionelle Referenz](mobile-services-windows-dotnet-how-to-use-client-library.md) <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
  
 <!-- Anchors. -->
 [Download the Windows Phone 8 app project]: #download-app
@@ -194,4 +193,4 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Windows Phone
 [Codebeispielen für Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=271146
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

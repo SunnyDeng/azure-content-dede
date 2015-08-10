@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/17/2015" 
+	ms.date="04/24/2015" 
 	ms.author="sidneyh"/>
 
 # Verwalten von Anmeldeinformationen in der Clientbibliothek für elastische Datenbanken
 
-Die [Clientbibliothek für elastische Datenbanken](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) verwendet Anmeldeinformationen für unterschiedliche Vorgangstypen, insbesondere für das Erstellen oder Ändern eines [Shard-Zuordnungs-Managers](sql-database-elastic-scale-shard-map-management.md), wobei auf einen vorhandenen Shard-Zuordnungs-Manager verwiesen wird, um Informationen zu Shards abzurufen und eine Verbindung zu Shards herzustellen. Anmeldeinformationen für diese Art von Vorgängen werden nachfolgend beschrieben.
+Die [Clientbibliothek für elastische Datenbanken](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) verwendet Anmeldeinformationen für unterschiedliche Vorgangstypen, insbesondere für das Erstellen oder Ändern eines [Shard-Zuordnungs-Managers](sql-database-elastic-scale-shard-map-management.md), wobei auf einen vorhandenen Shard-Zuordnungs-Manager verwiesen wird, um Informationen zu Shards abzurufen und eine Verbindung mit Shards herzustellen. Anmeldeinformationen für diese Art von Vorgängen werden nachfolgend beschrieben.
 
 
 * **Verwaltungsanmeldeinformationen für den Zugriff auf Shard-Zuordnungen**: Die Verwaltungsanmeldeinformationen werden beim Instanziieren eines **ShardMapManager**-Objekts für Anwendungen verwendet, die Shard-Zuordnungen ändern. Der Benutzer der Clientbibliothek für elastische Datenbanken muss die entsprechenden SQL-Benutzer und SQL-Anmeldungen erstellen und sicherstellen, dass diesen Lese-/Schreibberechtigungen für die globale Shard-Zuordnungsdatenbank und auch alle Shard-Datenbanken gewährt werden. Diese Anmeldeinformationen werden zum Verwalten der globalen und der lokalen Shard-Maps verwendet, wenn Änderungen an der Shard-Map vorgenommen werden. Verwenden Sie z. B. die Verwaltungsanmeldeinformationen, um das ShardMapManager-Objekt zu instanziieren, wie im folgenden Code dargestellt: 
@@ -60,4 +60,4 @@ Die [Clientbibliothek für elastische Datenbanken](http://www.nuget.org/packages
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

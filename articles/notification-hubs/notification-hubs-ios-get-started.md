@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Azure-Benachrichtigungs-Hubs"
+	pageTitle="Erste Schritte mit Azure Notification Hubs"
 	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen."
 	services="notification-hubs"
 	documentationCenter="ios"
@@ -22,7 +22,7 @@
 
 ##Übersicht
 
-In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Notification Hubs Pushbenachrichtigungen an eine iOS-App senden. In diesem Lernprogramm erstellen Sie eine leere iOS-App, die Pushbenachrichtigungen mithilfe des Apple-Pushbenachrichtigungsdiensts (APNs) empfängt. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Notification Hub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
+In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Notification Hubs Pushbenachrichtigungen an eine iOS-App senden. In diesem Lernprogramm erstellen Sie eine leere iOS-App, die Pushbenachrichtigungen mithilfe des Apple-Pushbenachrichtigungsdiensts \(APNs\) empfängt. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Notification Hub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
 
 Das Lernprogramm zeigt ein einfaches Übertragungsszenario mithilfe von Notification Hubs.
 
@@ -32,14 +32,14 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + [Mobile Services iOS SDK]
 + [XCode 6][Install Xcode]
-+ Ein Gerät, das auf iOS 8 (oder einer neueren Version) laufen kann
++ Ein Gerät, das auf iOS 8 \(oder einer neueren Version\) laufen kann
 + iOS-Entwicklerprogramm-Mitgliedschaft
 
-   >[AZURE.NOTE]Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Simulator bereitgestellt und getestet werden.
+   \>[AZURE.NOTE]Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät \(iPhone oder iPad\) anstatt im Simulator bereitgestellt und getestet werden.
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Notification Hub-Lernprogramme für iOS-Apps.
 
-> [AZURE.NOTE]Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fnotification-hubs-ios-get-started).
+> [AZURE.NOTE]Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-ios-get-started).
 
 [AZURE.INCLUDE [Notification Hubs – Aktivieren von Apple-Pushbenachrichtigungen](../../includes/notification-hubs-enable-apple-push-notifications.md)]
 
@@ -66,7 +66,7 @@ Dieser Abschnitt führt Sie durch das Erstellen und Konfigurieren eines neuen No
 
    	![][3]
 
-5. Klicken Sie auf den soeben erstellten Namespace (in der Regel ***Name des Notification Hubs*-ns**), um das Dashboard zu öffnen.
+5. Klicken Sie auf den soeben erstellten Namespace \(in der Regel ***Name des Notification Hubs*-ns**\), um das Dashboard zu öffnen.
 
    	![][4]
 
@@ -74,7 +74,7 @@ Dieser Abschnitt führt Sie durch das Erstellen und Konfigurieren eines neuen No
 
    	![][5]
 
-7. Klicken Sie oben auf die Registerkarte **Konfigurieren** und dann auf die Schaltfläche **Hochladen** in den Benachrichtigungseinstellungen von Apple, um den Zertifikatfingerabdruck hochzuladen. Wählen Sie anschließend das zuvor exportierte **.p12**-Zertifikat und das Kennwort für das Zertifikat aus. Wählen Sie aus, ob Sie den Pushdienst **Production** (wenn Sie Pushbenachrichtigungen an Benutzer versenden möchten, die Ihre App aus dem Store erworben haben) oder **Sandbox** (während der Entwicklung) verwenden möchten.
+7. Klicken Sie oben auf die Registerkarte **Konfigurieren** und dann auf die Schaltfläche **Hochladen** in den Benachrichtigungseinstellungen von Apple, um den Zertifikatfingerabdruck hochzuladen. Wählen Sie anschließend das zuvor exportierte **.p12**-Zertifikat und das Kennwort für das Zertifikat aus. Wählen Sie aus, ob Sie den Pushdienst **Production** \(wenn Sie Pushbenachrichtigungen an Benutzer versenden möchten, die Ihre App aus dem Store erworben haben\) oder **Sandbox** \(während der Entwicklung\) verwenden möchten.
 
    	![][6]
 
@@ -341,7 +341,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
                              delegate:nil delegateQueue:nil];
 
 			// Apple Notification format of the notification message
-		    NSString *json = [NSString stringWithFormat:@"{"aps":{"alert":"%@"}}",
+		    NSString *json = [NSString stringWithFormat:@"{\"aps\":{\"alert\":\"%@\"}}",
 								self.notificationMessage.text];
 
 			// Construct the messages REST endpoint
@@ -439,7 +439,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
 
 
 
-Sie finden alle möglichen Benachrichtigungs-Nutzlasten im [Apple Local and Push Notification Programming Guide] (in englischer Sprache).
+Sie finden alle möglichen Benachrichtigungs-Nutzlasten im [Apple Local and Push Notification Programming Guide] \(in englischer Sprache\).
 
 
 
@@ -512,4 +512,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Gerä
 [Apple Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

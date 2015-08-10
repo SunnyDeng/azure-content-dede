@@ -48,7 +48,7 @@ In den meisten Fällen ist es ratsam, die [CreateEventHubIfNotExists](https://ms
 var description = manager.CreateEventHubIfNotExists("MyEventHub");
 ```
 
-Alle Event Hub-Erstellungsvorgänge, z. B. [CreateEventHubIfNotExists](https://msdn.microsoft.com/library/microsoft.servicebus.namespacemanager.createeventhubifnotexists.aspx), erfordern für den jeweiligen Namespace Verwaltungsberechtigungen (**Manage**). Falls Sie die Berechtigungen für Ihre Veröffentlichungs- oder Consumeranwendungen beschränken möchten, können Sie diese Aufrufe von Erstellungsvorgängen im Produktionscode vermeiden, wenn Sie Anmeldeinformationen mit begrenzten Berechtigungen verwenden.
+Alle Event Hub-Erstellungsvorgänge, z. B. [CreateEventHubIfNotExists](https://msdn.microsoft.com/library/microsoft.servicebus.namespacemanager.createeventhubifnotexists.aspx), erfordern für den jeweiligen Namespace Verwaltungsberechtigungen \(**Manage**\). Falls Sie die Berechtigungen für Ihre Veröffentlichungs- oder Consumeranwendungen beschränken möchten, können Sie diese Aufrufe von Erstellungsvorgängen im Produktionscode vermeiden, wenn Sie Anmeldeinformationen mit begrenzten Berechtigungen verwenden.
 
 Die [EventHubDescription](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventhubdescription.aspx)-Klasse enthält Details zu einem Event Hub, z. B. Autorisierungsregeln, Intervall der Nachrichtenaufbewahrung, Partitions-IDs, Status und Pfad. Sie können diese Klasse verwenden, um die Metadaten für einen Event Hub zu aktualisieren.
 
@@ -60,7 +60,7 @@ Die Hauptklasse für die Interaktion mit Event Hubs ist [Microsoft.ServiceBus.Me
 var client = EventHubClient.Create(description.Path);
 ```
 
-In dieser Methode werden die Service Bus-Verbindungsinformationen aus dem Abschnitt `appSettings` der Datei „App.config“ verwendet. Ein Beispiel für den `appSettings`-XML-Code, der zum Speichern der Service Bus-Verbindungsinformationen verwendet wird, finden Sie in der Dokumentation zur [Microsoft.ServiceBus.Messaging.EventHubClient.Create(System.String)](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventhubclient.create.aspx)-Methode.
+In dieser Methode werden die Service Bus-Verbindungsinformationen aus dem Abschnitt `appSettings` der Datei „App.config“ verwendet. Ein Beispiel für den `appSettings`-XML-Code, der zum Speichern der Service Bus-Verbindungsinformationen verwendet wird, finden Sie in der Dokumentation zur [Microsoft.ServiceBus.Messaging.EventHubClient.Create\(System.String\)](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventhubclient.create.aspx)-Methode.
 
 Eine weitere Option ist die Erstellung des Clients über eine Verbindungszeichenfolge. Diese Option funktioniert gut, wenn Azure-Workerrollen verwendet werden, weil Sie die Zeichenfolge in den Konfigurationseigenschaften für den Worker speichern können. Beispiel:
 
@@ -89,11 +89,11 @@ Sie senden Ereignisse an einen Event Hub, indem Sie eine [EventData](https://msd
 
 ## Ereignisserialisierung
 
-Die [EventData](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx)-Klasse verfügt über [vier überladene Konstruktoren](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx), für die verschiedene Parameter verwendet werden können, z. B. ein Objekt und Serialisierungsprogramm, ein Bytearray oder ein Datenstrom. Es ist auch möglich, die [EventData](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx)-Klasse zu instanziieren und den Textdatenstrom danach festzulegen. Wenn Sie JSON mit [EventData](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx) verwenden, können Sie mit **Encoding.UTF8.GetBytes()** das Bytearray für eine JSON-codierte Zeichenfolge abrufen.
+Die [EventData](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx)-Klasse verfügt über [vier überladene Konstruktoren](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx), für die verschiedene Parameter verwendet werden können, z. B. ein Objekt und Serialisierungsprogramm, ein Bytearray oder ein Datenstrom. Es ist auch möglich, die [EventData](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx)-Klasse zu instanziieren und den Textdatenstrom danach festzulegen. Wenn Sie JSON mit [EventData](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx) verwenden, können Sie mit **Encoding.UTF8.GetBytes\(\)** das Bytearray für eine JSON-codierte Zeichenfolge abrufen.
 
 ## Partitionsschlüssel
 
-Die [EventData](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx)-Klasse enthält eine [PartitionKey](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.partitionkey.aspx)-Eigenschaft, mit der der Absender einen Wert angeben kann, der gehasht ist, um eine Partitionsanweisung zu erzeugen. Mit einem Partitionsschlüssel wird sichergestellt, dass alle Ereignisse mit dem gleichen Schlüssel an dieselbe Partition im Event Hub gesendet werden. Gemeinsame Partitionsschlüssel enthalten Benutzersitzungs-IDs und eindeutige Absender-IDs. Die [PartitionKey](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.partitionkey.aspx)-Eigenschaft ist optional und kann bereitgestellt werden, wenn die Methode [Microsoft.ServiceBus.Messaging.EventHubClient.Send(Microsoft.ServiceBus.Messaging.EventData)](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx) oder [Microsoft.ServiceBus.Messaging.EventHubClient.SendAsync(Microsoft.ServiceBus.Messaging.EventData)](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx) verwendet wird. Wenn Sie keinen Wert für [PartitionKey](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.partitionkey.aspx) angeben, werden gesendete Ereignisse per Roundrobin-Modell an Partitionen verteilt.
+Die [EventData](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx)-Klasse enthält eine [PartitionKey](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.partitionkey.aspx)-Eigenschaft, mit der der Absender einen Wert angeben kann, der gehasht ist, um eine Partitionsanweisung zu erzeugen. Mit einem Partitionsschlüssel wird sichergestellt, dass alle Ereignisse mit dem gleichen Schlüssel an dieselbe Partition im Event Hub gesendet werden. Gemeinsame Partitionsschlüssel enthalten Benutzersitzungs-IDs und eindeutige Absender-IDs. Die [PartitionKey](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.partitionkey.aspx)-Eigenschaft ist optional und kann bereitgestellt werden, wenn die Methode [Microsoft.ServiceBus.Messaging.EventHubClient.Send\(Microsoft.ServiceBus.Messaging.EventData\)](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx) oder [Microsoft.ServiceBus.Messaging.EventHubClient.SendAsync\(Microsoft.ServiceBus.Messaging.EventData\)](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.aspx) verwendet wird. Wenn Sie keinen Wert für [PartitionKey](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventdata.partitionkey.aspx) angeben, werden gesendete Ereignisse per Roundrobin-Modell an Partitionen verteilt.
 
 ## Sendevorgänge für Batchereignisse
 
@@ -103,7 +103,7 @@ Das Senden von Ereignissen in Batches kann den Durchsatz erheblich erhöhen. Die
 public void SendBatch(IEnumerable<EventData> eventDataList);
 ```
 
-Es ist wichtig zu beachten, dass ein einzelner Batch den Grenzwert von 256 KB für ein Ereignis nicht überschreiten darf. Darüber hinaus wird für jede Nachricht im Batch die gleiche Herausgeberidentität (Publisher Identity) verwendet. Der Absender ist dafür verantwortlich sicherzustellen, dass die maximale Ereignisgröße für den Batch nicht überschritten wird. Bei einer Überschreitung wird ein **Send**-Fehler für den Client generiert.
+Es ist wichtig zu beachten, dass ein einzelner Batch den Grenzwert von 256 KB für ein Ereignis nicht überschreiten darf. Darüber hinaus wird für jede Nachricht im Batch die gleiche Herausgeberidentität \(Publisher Identity\) verwendet. Der Absender ist dafür verantwortlich sicherzustellen, dass die maximale Ereignisgröße für den Batch nicht überschritten wird. Bei einer Überschreitung wird ein **Send**-Fehler für den Client generiert.
 
 ## Asynchrones Senden und Senden mit Skalierung
 
@@ -162,7 +162,7 @@ Sie können [IEventProcessor](https://msdn.microsoft.com/library/microsoft.servi
 
 - [ProcessEventsAsync](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.ieventprocessor.processeventsasync.aspx)
 
-Instanziieren Sie zum Starten der Ereignisverarbeitung die [EventProcessorHost](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.aspx)-Klasse, und geben Sie die entsprechenden Parameter für Ihren Event Hub an. Rufen Sie anschließend [RegisterEventProcessorAsync](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.registereventprocessorasync.aspx) auf, um Ihre [IEventProcessor](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.ieventprocessor.aspx)-Implementierung bei der Laufzeit zu registrieren. An diesem Punkt versucht der Host, einen Lease für jede Partition im Event Hub zu erhalten, indem er einen „gierigen“ Algorithmus verwendet. Diese Leases gelten für einen bestimmten Zeitraum und müssen anschließend erneuert werden. Wenn neue Knoten (hier: Workerinstanzen) in den Onlinezustand versetzt werden, geben sie Leasereservierungen heraus. Im Laufe der Zeit wird die Arbeitsauslastung dann auf die Knoten verteilt, da jeder Knoten versucht, mehr Leases zu erlangen.
+Instanziieren Sie zum Starten der Ereignisverarbeitung die [EventProcessorHost](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.aspx)-Klasse, und geben Sie die entsprechenden Parameter für Ihren Event Hub an. Rufen Sie anschließend [RegisterEventProcessorAsync](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.registereventprocessorasync.aspx) auf, um Ihre [IEventProcessor](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.ieventprocessor.aspx)-Implementierung bei der Laufzeit zu registrieren. An diesem Punkt versucht der Host, einen Lease für jede Partition im Event Hub zu erhalten, indem er einen „gierigen“ Algorithmus verwendet. Diese Leases gelten für einen bestimmten Zeitraum und müssen anschließend erneuert werden. Wenn neue Knoten \(hier: Workerinstanzen\) in den Onlinezustand versetzt werden, geben sie Leasereservierungen heraus. Im Laufe der Zeit wird die Arbeitsauslastung dann auf die Knoten verteilt, da jeder Knoten versucht, mehr Leases zu erlangen.
 
 ![Ereignisprozessorhost](./media/event-hubs-programming-guide/IC759863.png)
 
@@ -182,7 +182,7 @@ Weitere Informationen zu Event Hubs-Szenarien finden Sie unter diesen Links:
 
 - [Übersicht über die Event Hubs-API](event-hubs-api-overview.md)
 - [Übersicht über Event Hubs](event-hubs-overview.md)
-- [Event Hubs-Codebeispiele](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hub&f[0].Type=SearchText&ac=5)
+- \[Event Hubs-Codebeispiele\]\(http://code.msdn.microsoft.com/site/search?query=event hub&f\[0\].Value=event hub&f\[0\].Type=SearchText&ac=5\)
 - [Referenz zur Ereignisprozessorhost-API](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.aspx)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

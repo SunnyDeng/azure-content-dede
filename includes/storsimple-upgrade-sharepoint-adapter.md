@@ -1,51 +1,37 @@
-<properties 
-   pageTitle="Upgrade the StorSimple Adapter for SharePoint | Microsoft Azure"
-   description="Describes how to upgrade SharePoint and then install a new version of the StorSimple Adapter for SharePoint."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="carolz"
-   editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="07/13/2015"
-   ms.author="v-sharos" />
 
-### Upgrade SharePoint 2010 to SharePoint 2013 and then install the StorSomple Adapter for SharePoint
+### Upgraden von SharePoint 2010 auf SharePoint 2013 und Installieren des StorSimple-Adapters für SharePoint
 
->[AZURE.IMPORTANT] Any files that were previously moved to external storage via RBS will not be available until the upgrade is finished and the RBS feature is enabled again. To limit user impact, perform any upgrade or reinstallation during a planned maintenance window.
+>[AZURE.IMPORTANT]Alle Dateien, die zuvor per RBS an einen externen Speicher verschoben wurden, sind erst wieder verfügbar, wenn das Upgrade abgeschlossen und das RBS-Feature wieder aktiviert ist. Führen Sie Upgrades oder Neuinstallationen während eines geplanten Wartungsfensters durch, um die Auswirkungen für die Benutzer möglichst gering zu halten.
 
 [AZURE.INCLUDE [storsimple-upgrade-sharepoint-adapter](../../includes/storsimple-upgrade-sharepoint-adapter.md)]
  
-#### To upgrade SharePoint 2010 to SharePoint 2013 and then install the adapter
+#### So führen Sie ein Upgrade von SharePoint 2010 auf SharePoint 2013 mit anschließender Adapterinstallation aus
 
-1. In the SharePoint 2010 farm, note the BLOB store path for the externalized BLOBs and the content databases for which RBS is enabled. 
+1. Notieren Sie sich in der SharePoint 2010-Farm den BLOB-Speicherpfad für die externalisierten BLOBs und die Inhaltsdatenbanken, für die RBS aktiviert ist. 
 
-2. Install and configure the new SharePoint 2013 farm. 
+2. Installieren und konfigurieren Sie die neue SharePoint 2013-Farm.
 
-3. Move databases, applications, and site collections from the SharePoint 2010 farm to the new SharePoint 2013 farm. For instructions, go to Overview of the upgrade process to SharePoint 2013.
+3. Verschieben Sie Datenbanken, Anwendungen und Websitesammlungen aus der SharePoint 2010-Farm in die neue SharePoint 2013-Farm. Eine Anleitung finden Sie in der Übersicht über den Upgradeprozess auf SharePoint 2013.
 
-4. Install the StorSimple Adapter for SharePoint on the new farm. Go to [Install the StorSimple Adapter for SharePoint](#install-the-storsimple-adapter-for-sharepoint) for procedures.
+4. Installieren Sie in der neuen Farm den StorSimple-Adapter für SharePoint. Die Vorgehensweise wird unter [Installieren des StorSimple-Adapters für SharePoint](#install-the-storsimple-adapter-for-sharepoint) beschrieben.
 
-5. Using the information that you noted in step 1, enable RBS for the same set of content databases and provide the same BLOB store path that was used in the SharePoint 2010 installation. Go to [Configure RBS](#configure-rbs) for procedures. After you complete this step, previously externalized files should be accessible from the new farm. 
+5. Aktivieren Sie RBS unter Verwendung der Informationen, die Sie in Schritt 1 notiert haben, für die gleichen Inhaltsdatenbanken, und geben Sie den BLOB-Speicherpfad an, der auch in der SharePoint 2010-Installation verwendet wurde. Die Vorgehensweise finden Sie unter [Konfigurieren von RBS](#configure-rbs). Nach Abschluss dieses Schritts kann von der neuen Farm aus auf zuvor externalisierte Dateien zugegriffen werden.
 
-### Upgrade the StorSimple Adapter for SharePoint
+### Upgraden des StorSimple-Adapters für SharePoint
 
->[AZURE.IMPORTANT] You should schedule this upgrade to occur during a planned maintenance window for the following reasons:
+>[AZURE.IMPORTANT]Dieses Upgrade sollte aus folgenden Gründen in einem geplanten Wartungsfenster ausgeführt werden:
 >
->- Previously externalized content will not be available until the adapter is reinstalled.
+>- Zuvor externalisierte Inhalte sind erst nach der Neuinstallation des Adapters wieder verfügbar.
 >
->- Any content uploaded to the site after you uninstall the previous version of the StorSimple Adapter for SharePoint, but before you install the new version, will be stored in the content database. You will need to move that content to the StorSimple device after you install the new adapter. 
+>- Alle Inhalte, die nach der Deinstallation der vorherigen Version des StorSimple-Adapters für SharePoint und vor der Installation der neuen Version an die Website hochgeladen werden, werden in der Inhaltsdatenbank gespeichert. Diese Inhalte müssen nach dem Installieren des neuen Adapters auf das StorSimple-Gerät verschoben werden.
 
 
-#### To upgrade the StorSimple Adapter for SharePoint 
+#### So führen Sie ein Upgrade des StorSimple-Adapters für SharePoint aus 
 
-1. Uninstall the previous version of StorSimple Adapter for SharePoint.
+1. Deinstallieren Sie die vorherige Version des StorSimple-Adapters für SharePoint.
 
-    >[AZURE.NOTE] This will automatically disable RBS on the content databases. However, existing BLOBs will remain on the StorSimple device. Because RBS is disabled and the BLOBs have not been migrated back to the content databases, any requests for those BLOBs will fail. 
+    >[AZURE.NOTE]Dadurch wird RBS automatisch für die Inhaltsdatenbanken deaktiviert. Bereits vorhandene BLOBs bleiben allerdings auf dem StorSimple-Gerät erhalten. Da RBS deaktiviert ist und die BLOBs nicht wieder in die Inhaltsdatenbanken migriert wurden, sind Anforderungen für diese BLOBs nicht erfolgreich.
  
-2. Install the new StorSimple Adapter for SharePoint. The new adapter will automatically recognize the content databases that were previously enabled or disabled for RBS and will use the previous settings.
+2. Installieren Sie den StorSimple-Adapter für SharePoint. Der neue Adapter erkennt automatisch die Inhaltsdatenbanken, die zuvor mit RBS verwendet wurden, und verwendet die vorherigen Einstellungen.
+
+<!---HONumber=July15_HO5-->

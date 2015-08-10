@@ -1,19 +1,20 @@
-<properties 
-	pageTitle="Effiziente Listenabfragen" 
-	description="Erfahren Sie, wie Sie die Anzahl der in einer Liste zurückgegebenen Elemente sowie die für jedes Element zurückgegebenen Informationen reduzieren können." 
-	services="batch" 
-	documentationCenter="" 
-	authors="davidmu1" 
-	manager="timlt" 
-	editor="tysonn"/>
+<properties
+	pageTitle="Effiziente Listenabfragen"
+	description="Erfahren Sie, wie Sie die Anzahl der in einer Liste zurückgegebenen Elemente sowie die für jedes Element zurückgegebenen Informationen reduzieren können."
+	services="batch"
+	documentationCenter=""
+	authors="davidmu1"
+	manager="timlt"
+	editor="tysonn"
+	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="multiple" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="vm-windows" 
+<tags
+	ms.service="multiple"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows"
 	ms.workload="multiple"
-	ms.date="05/09/2015" 
+	ms.date="07/28/2015"
 	ms.author="davidmu"/>
 
 # Effiziente Listenabfragen
@@ -42,11 +43,11 @@ Für alle APIs gelten folgende Bedingungen:
 - Jeder Eigenschaftenname ist eine Zeichenfolge, die der Eigenschaft des Objekts zugeordnet ist.
 - Bei allen Eigenschaftennamen muss die Groß- und Kleinschreibung beachtet werden, bei Eigenschaftswerten dagegen nicht.
 - Datum/Uhrzeit-Zeichenfolgen können eines der beiden folgenden Formate aufweisen, und ihnen muss "DateTime" vorangestellt sein.
-	- W3CDTF (z. B. "creationTime gt DateTime’2011-05-08T08:49:37Z’")
-	- RFC1123 (z. B. "creationTime gt DateTime’Sun, 08 May 2011 08:49:37 GMT’")
+	- W3CDTF \(z. B. "creationTime gt DateTime’2011-05-08T08:49:37Z’"\)
+	- RFC1123 \(z. B. "creationTime gt DateTime’Sun, 08 May 2011 08:49:37 GMT’"\)
 - Boolesche Zeichenfolgen sind "true" oder "false".
-- Wenn eine ungültige Eigenschaft oder ein ungültiger Operator angegeben ist, wird eine Ausnahme mit der internen Ausnahme "400 (Ungültige Anforderung)" erstellt.
-- Der DetailLevel-Parameter mit Select- und Expand-Klauseln kann auch an die entsprechenden Get-Methoden übergeben werden, z. B. an "IPoolManager.GetPool()".
+- Wenn eine ungültige Eigenschaft oder ein ungültiger Operator angegeben ist, wird eine Ausnahme mit der internen Ausnahme "400 \(Ungültige Anforderung\)" erstellt.
+- Der DetailLevel-Parameter mit Select- und Expand-Klauseln kann auch an die entsprechenden Get-Methoden übergeben werden, z. B. an "IPoolManager.GetPool\(\)".
 
 Das ODataDetailLevel-Objekt verfügt über drei öffentliche Eigenschaften, die entweder im Konstruktor angegeben oder direkt festgelegt werden können. Alle drei Eigenschaften sind Zeichenfolgen:
 
@@ -80,4 +81,4 @@ Die Anzahl der API-Aufrufe kann durch eine expand-Zeichenfolge reduziert werden.
 
 > [AZURE.NOTE]Es wird empfohlen, dass Sie immer filter- und select-Klauseln für Ihre API-Aufrufe zur Listenerstellung verwenden, um die maximale Effizienz und optimale Leistung der Anwendung zu gewährleisten.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

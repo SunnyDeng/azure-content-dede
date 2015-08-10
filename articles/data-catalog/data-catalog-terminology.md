@@ -24,7 +24,7 @@ Azure Data Catalog ist ein cloudbasiertes Metadatenrepository, in dem Datenquell
 
 ## Datenquelle
 
-Eine Datenquelle ist ein System oder ein Container zum Verwalten von Datenressourcen. Beispiele hierfür sind SQL Server-Datenbanken, Oracle-Datenbanken, SQL Server Analysis Services-Datenbanken (tabellarisch oder mehrdimensional) und SQL Server Reporting Services-Server.
+Eine Datenquelle ist ein System oder ein Container zum Verwalten von Datenressourcen. Beispiele hierfür sind SQL Server-Datenbanken, Oracle-Datenbanken, SQL Server Analysis Services-Datenbanken \(tabellarisch oder mehrdimensional\) und SQL Server Reporting Services-Server.
 
 ## Datenressource
 
@@ -40,7 +40,7 @@ Strukturelle Metadaten sind die Metadaten, die aus einer Datenquelle extrahiert 
 
 ## Beschreibende Metadaten
 
-Beschreibende Metadaten sind Metadaten, mit denen der Zweck oder die Absicht einer Datenressource beschrieben wird. Normalerweise werden beschreibende Metadaten von Katalogbenutzern über das Azure Data Catalog-Portal hinzugefügt, aber sie können auch während der Registrierung aus der Datenquelle extrahiert werden. Mit dem Azure Data Catalog-Registrierungstool werden Beschreibungen aus der Description-Eigenschaft in SQL Server Analysis Services und SQL Server Reporting Services extrahiert – sowie aus der [erweiterten ms_description-Eigenschaft](https://technet.microsoft.com/library/ms190243.aspx) in SQL Server-Datenbanken –, sofern diese Eigenschaften mit Werten aufgefüllt wurden.
+Beschreibende Metadaten sind Metadaten, mit denen der Zweck oder die Absicht einer Datenressource beschrieben wird. Normalerweise werden beschreibende Metadaten von Katalogbenutzern über das Azure Data Catalog-Portal hinzugefügt, aber sie können auch während der Registrierung aus der Datenquelle extrahiert werden. Mit dem Azure Data Catalog-Registrierungstool werden Beschreibungen aus der Description-Eigenschaft in SQL Server Analysis Services und SQL Server Reporting Services extrahiert – sowie aus der [erweiterten ms\_description-Eigenschaft](https://technet.microsoft.com/library/ms190243.aspx) in SQL Server-Datenbanken –, sofern diese Eigenschaften mit Werten aufgefüllt wurden.
 
 ## Vorschau
 
@@ -48,7 +48,7 @@ Eine Vorschau in Azure Data Catalog ist eine Momentaufnahme von bis zu 20 Daten
 
 ## Perspektive des Benutzers
 
-In Azure Data Catalog können alle Benutzer beschreibende Metadaten für eine registrierte Datenressource angeben. Jeder Benutzer hat eine eigene Sicht auf die Daten und deren Nutzung. Beispielsweise kann ein für einen Server verantwortlicher Administrator die Details der Vereinbarung zum Servicelevel (SLA) oder Sicherungsfenster bereitstellen. Ein Data Steward kann Links zur Dokumentation für die Geschäftsprozesse angeben, die mit den Daten unterstützt werden. Ein Analyst kann eine Beschreibung mit den Angaben bereitstellen, die für andere Analysten am relevantesten sind und sehr hilfreich für Benutzer sein können, die die Daten ermitteln und verstehen müssen.
+In Azure Data Catalog können alle Benutzer beschreibende Metadaten für eine registrierte Datenressource angeben. Jeder Benutzer hat eine eigene Sicht auf die Daten und deren Nutzung. Beispielsweise kann ein für einen Server verantwortlicher Administrator die Details der Vereinbarung zum Servicelevel \(SLA\) oder Sicherungsfenster bereitstellen. Ein Data Steward kann Links zur Dokumentation für die Geschäftsprozesse angeben, die mit den Daten unterstützt werden. Ein Analyst kann eine Beschreibung mit den Angaben bereitstellen, die für andere Analysten am relevantesten sind und sehr hilfreich für Benutzer sein können, die die Daten ermitteln und verstehen müssen.
 
 Jede dieser Perspektiven ist sehr wertvoll, und mit Azure Data Catalog kann jeder Benutzer die Informationen angeben, die für ihn aussagekräftig sind. Alle Benutzer können diese Informationen nutzen, um die Daten und ihren Zweck zu verstehen.
 
@@ -71,4 +71,4 @@ Die Registrierung umfasst das Extrahieren der Metadaten einer Datenressource aus
 
 - [Erste Schritte mit Azure Data Catalog](data-catalog-get-started.md) Dieser Artikel enthält ein umfassendes Lernprogramm zur Verwendung von Azure Data Catalog für die Ermittlung von Datenquellen.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

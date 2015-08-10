@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="dsk-2015"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -13,21 +14,28 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/23/2015"
+	ms.date="07/24/2015"
 	ms.author="dkshir"/>
 
-#Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure
+# Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure
 
-Ein *benutzerdefinierter* virtueller Computer ist einfach ein virtueller Computer, den Sie mit der Option **Aus Katalog** erstellen, da Sie durch diese Option mehr Konfigurationsmöglichkeiten erhalten als durch die Option **Schnellerfassung**. Zu diesen Möglichkeiten gehören:
+Dieses Thema enthält Informationen zum Erstellen eines *benutzerdefinierten* virtuellen Computers mithilfe der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows im Azure-Dienstverwaltungsdodus. Wir verwenden ein Linux-Image von den verfügbaren **IMAGES**in Azure. Die Azure-Befehlszeilenschnittstelle enthält u. a. folgende Konfigurationsoptionen:
 
 - Verbinden des virtuellen Computers mit einem virtuellen Netzwerk
-- Installieren von VM-Agent und -Erweiterungen z. B. für Antischadsoftware
 - Hinzufügen des virtuellen Computers zu einem vorhandenen Cloud-Dienst
 - Hinzufügen des virtuellen Computers zu einem vorhandenen Speicherkonto
-- Hinzufügen des virtuellen Computers zu einer Verfügbarkeitsgruppe
+- Hinzufügen des virtuellen Computers zu einer Verfügbarkeitsgruppe oder einem Speicherort
 
 > [AZURE.IMPORTANT]Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, damit Sie sich direkt über den Hostnamen oder über eine lokal eingerichtete Verbindung mit ihm verbinden können, stellen Sie sicher, dass Sie das virtuelle Netzwerk schon dann angeben, wenn Sie den virtuellen Computer erstellen. Ein virtueller Computer kann so konfiguriert werden, dass er nur zu dem Zeitpunkt Teil eines virtuellen Netzwerks werden kann, zu dem er erstellt wird. Ausführliche Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über Azure Virtual Network](http://go.microsoft.com/fwlink/p/?LinkID=294063).
 
+<p/>
+[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../../includes/service-management-pointer-to-resource-manager.md)]
+
+- [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md)
+
+
+## So erstellen Sie einen virtuellen Linux-Computer mit der Azure-Dienstverwaltung
+
 [AZURE.INCLUDE [Virtueller-Computer-erstellen-LinuxVM](../../includes/virtual-machines-create-LinuxVM.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

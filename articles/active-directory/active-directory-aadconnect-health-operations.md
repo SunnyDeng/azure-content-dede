@@ -82,9 +82,9 @@ Beim Löschen einer Dienstinstanz sind folgende Punkte zu beachten:
 
 	### So löschen Sie eine Dienstinstanz aus dem Azure AD Connect Health-Dienst
 <ol>
-1. Öffnen Sie das Blatt "Dienst", indem Sie auf dem Blatt "Dienstliste" die ID des Diensts (Name der Farm) auswählen, den Sie entfernen möchten. 
+1. Öffnen Sie das Blatt "Dienst", indem Sie auf dem Blatt "Dienstliste" die ID des Diensts \(Name der Farm\) auswählen, den Sie entfernen möchten. 
 1. Klicken Sie auf der Aktionsleiste des Blatts "Server" auf die Schaltfläche "Löschen".
-1. Bestätigen Sie den Dienstnamen, indem Sie ihn in das Bestätigungsfeld eingeben (Beispiel: sts.contoso.com). 
+1. Bestätigen Sie den Dienstnamen, indem Sie ihn in das Bestätigungsfeld eingeben \(Beispiel: sts.contoso.com\). 
 1. Klicken Sie auf die Schaltfläche "Löschen".
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

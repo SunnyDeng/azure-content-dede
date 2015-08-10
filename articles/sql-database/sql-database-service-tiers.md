@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="04/15/2015"
+   ms.date="07/24/2015"
    ms.author="shkurhek"/>
 
 # Dienstebenen
@@ -31,9 +31,9 @@ Die Dienstebene "Basic" ist für Anwendungen mit einer leichten Transaktionsarbe
 
 | Dienstebene | Basic |
 | :-- | :-- |
-| Datenbankdurchsatzeinheiten (DTUs) | 5 |
+| Datenbankdurchsatzeinheiten \(DTUs\) | 5 |
 | Maximale Datenbankgröße | 2 GB |
-| Zeitpunktwiederherstellung (PITR) | Bis zu Millisekunde innerhalb der letzten 7 Tage |
+| Zeitpunktwiederherstellung \(PITR\) | Bis zu Millisekunde innerhalb der letzten 7 Tage |
 | Notfallwiederherstellung. | Geowiederherstellung, Wiederherstellung für jede beliebige Azure-Region |
 | Leistungsziele | Transaktionsrate pro Stunde |
 
@@ -47,16 +47,16 @@ Die Dienstebene "Standard" ist die richtige Wahl für erste Schritte mit Transak
 
 | Dienstebene | Standard S0 | Standard S1 | Standard S2 | Standard S3 |
 | :-- | :-- | :-- | :-- | :-- |
-| Datenbankdurchsatzeinheiten (DTUs) | 10 | 20 | 50 | 100 |
+| Datenbankdurchsatzeinheiten \(DTUs\) | 10 | 20 | 50 | 100 |
 | Maximale Datenbankgröße | 250 GB | 250 GB | 250 GB | 250 GB |
 
 
 **Merkmale**
 
 
-| Dienstebene | Standard (S0, S1, S2, S3) |
+| Dienstebene | Standard \(S0, S1, S2, S3\) |
 | :-- | :-- |
-| Zeitpunktwiederherstellung (PITR) | Bis zu Millisekunde innerhalb der letzten 14 Tage |
+| Zeitpunktwiederherstellung \(PITR\) | Bis zu Millisekunde innerhalb der letzten 14 Tage |
 | Notfallwiederherstellung. | Geografische Standardreplikation, 1 sekundäre offline |
 | Leistungsziele | Transaktionsrate pro Minute |
 
@@ -68,18 +68,18 @@ Die Dienstebene "Premium" ist für unternehmenskritische Anwendungen ausgelegt. 
 **Leistung und Größe**
 
 
-| Dienstebene | Premium P1 | Premium P2 | Premium P3 |
+| Dienstebene | Premium P1 | Premium P2 | Premium P6 \(früher P3\) |
 | :-- | :-- | :-- | :-- |
-| Datenbankdurchsatzeinheiten (DTUs) | 125 | 250 | 1000 |
+| Datenbankdurchsatzeinheiten \(DTUs\) | 125 | 250 | 1000 |
 | Maximale Datenbankgröße | 500 GB | 500 GB | 500 GB |
 
 
 **Merkmale**
 
 
-| Dienstebene | Premium (P1, P2, P3) |
+| Dienstebene | Premium \(P1, P2, P6\) |
 | :-- | :-- |
-| Zeitpunktwiederherstellung (PITR) | Bis zu Millisekunde innerhalb der letzten 35 Tage |
+| Zeitpunktwiederherstellung \(PITR\) | Bis zu Millisekunde innerhalb der letzten 35 Tage |
 | Notfallwiederherstellung. | Aktive geografische Replikation, bis zu 4 lesbare sekundäre Onlinedatenbanken |
 | Leistungsziele | Transaktionsrate pro Sekunde |
 
@@ -89,4 +89,4 @@ Erfahren Sie mehr über die Preise für diese Ebenen unter [SQL-Datenbank Preise
 Nachdem Sie jetzt die Ebenen der SQL-Datenbank kennen, können Sie sie mit einer [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) ausprobieren und sich mit der [Erstellung Ihrer ersten SQL-Datenbank](sql-database-get-started.md) befassen!
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

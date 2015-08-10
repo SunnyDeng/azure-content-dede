@@ -31,7 +31,7 @@ Dies ist der zweite Teil der Anleitung [Entwickeln einer Vorhersagelösung mit A
 
 ----------
 
-Um ein Vorhersagemodell für Kreditrisiken zu entwickeln, verwenden wir den Datensatz "UCI Statlog (German Credit Data)" aus dem UCI Machine Learning-Repository. Sie finden den Datensatz unter folgender URL: <a href="http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)">http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)</a>
+Um ein Vorhersagemodell für Kreditrisiken zu entwickeln, verwenden wir den Datensatz "UCI Statlog \(German Credit Data\)" aus dem UCI Machine Learning-Repository. Sie finden den Datensatz unter folgender URL: <a href="http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)">http://archive.ics.uci.edu/ml/datasets/Statlog+\(German+Credit+Data\)</a>
 
 Wir werden die Datei mit dem Namen **german.data** verwenden. Laden Sie die Datei auf Ihre lokale Festplatte herunter.
 
@@ -44,7 +44,7 @@ Wir werden unser Vorhersageanalytikmodell anhand dieser Daten trainieren. Anschl
 Hier ist ein interessantes Extra. In der Beschreibung des Datensatzes wird erläutert, dass die Fehlklassifizierung einer Person, die eigentlich ein hohes Kreditrisiko hat, mit niedrigem Kreditrisiko, 5 mal so teuer für die Finanzinstitution ist als eine Fehlklassifizierung in der Gegenrichtung. Wir können dies in unserem Experiment berücksichtigen, indem wir die Einträge von Personen mit hohem Kreditrisiko 5 mal duplizieren. Wenn das Modell anschließend ein hohes Kreditrisiko fälschlicherweise als niedrig klassifiziert, wird diese Fehlklassifizierung 5 mal ausgeführt, ein mal pro Duplikat. Auf diese Weise werden die Kosten für diesen Fehler in den Trainingsergebnissen erhöht.
 
 ##Konvertieren des Datensatzformats
-Der Originaldatensatz verwendet ein Format mit Trennung durch Leerzeichen. Machine Learning Studio funktioniert besser mit durch Trennzeichen getrennten Dateien (CSV). Daher werden wir den Datensatz konvertieren, indem wir die Leerzeichen durch Kommas ersetzen.
+Der Originaldatensatz verwendet ein Format mit Trennung durch Leerzeichen. Machine Learning Studio funktioniert besser mit durch Trennzeichen getrennten Dateien \(CSV\). Daher werden wir den Datensatz konvertieren, indem wir die Leerzeichen durch Kommas ersetzen.
 
 Dazu können wir den folgenden Windows PowerShell-Befehl verwenden:
 
@@ -58,13 +58,13 @@ Alternativ können wir den folgenden sed-Befehl unter Unix verwenden:
 
 Nach dem Konvertieren der Daten in das CSV-Format müssen Sie sie in Machine Learning Studio hochladen.
 
-1.	Melden Sie sich bei Machine Learning Studio ([https://studio.azureml.net](https://studio.azureml.net)) mithilfe des Microsoft-Kontos an, das als Besitzer des Arbeitsbereichs angegeben wurde, und klicken Sie oben auf die Registerkarte **Studio**.
+1.	Melden Sie sich bei Machine Learning Studio \([https://studio.azureml.net](https://studio.azureml.net)\) mithilfe des Microsoft-Kontos an, das als Besitzer des Arbeitsbereichs angegeben wurde, und klicken Sie oben auf die Registerkarte **Studio**.
 2.	Klicken Sie im unteren Seitenbereich auf **+NEU**.
 3.	Wählen Sie **DATASET**.
 4.	Klicken Sie auf **AUS LOKALER DATEI**.
 5.	Klicken Sie im Dialogfeld **Neuen Datensatz hochladen** auf **Durchsuchen**, und suchen Sie nach der zuvor erstellten Datei **german.csv**.
 6.	Geben Sie einen Namen für das Dataset ein. In diesem Beispiel nennen wir es "UCI German Credit Card Data".
-7.	Wählen Sie den Datentyp **Generic CSV File With no header (.nh.csv)** aus.
+7.	Wählen Sie den Datentyp **Generic CSV File With no header \(.nh.csv\)** aus.
 8.	Fügen Sie bei Bedarf eine Beschreibung hinzu.
 9.	Klicken Sie auf **OK**.  
 
@@ -80,4 +80,4 @@ Weitere Informationen zum Importieren von verschiedenen Datentypen in einem Expe
 [1]: ./media/machine-learning-walkthrough-2-upload-data/upload1.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

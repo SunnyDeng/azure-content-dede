@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer" 
-	description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte" 
+	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer der Windows Phone Silverlight-App | Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie mit Azure Mobile Services Pushbenachrichtigungen an bestimmte Benutzer Ihrer Windows Phone Silverlight-App senden können." 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
 	authors="ggailey777" 
@@ -13,12 +13,14 @@
 	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/04/2015" 
+	ms.date="07/22/2015" 
 	ms.author="glenga"/>
 
 # Senden von Pushbenachrichtigungen an authentifizierte Benutzer
 
 [AZURE.INCLUDE [mobile-services-selector-push-users](../../includes/mobile-services-selector-push-users.md)]
+
+##Übersicht
 
 In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen an authentifizierte Benutzer auf einem beliebigen registrierten Gerät senden. Im Gegensatz zum vorherigen Lernprogramm [Hinzufügen von Pushbenachrichtigungen zur App] wird in diesem Lernprogramm der mobile Dienst geändert, sodass sich Benutzer authentifizieren müssen, bevor sich der Client beim Notification Hub für Pushbenachrichtigungen registrieren kann. Die Registrierung wird auch verändert, um ein Tag basierend auf der zugewiesenen Benutzer-ID hinzuzufügen. Schließlich wird das Serverskript aktualisiert, um Benachrichtigungen nur an authentifizierte Benutzer zu senden, und nicht an alle Registrierungen.
  
@@ -38,20 +40,21 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
 [AZURE.INCLUDE [mobile-services-javascript-backend-push-notifications-app-users](../../includes/mobile-services-javascript-backend-push-notifications-app-users.md)]
 
-<ol start="5"><li><p>Ersetzen Sie die Einfügefunktion durch den folgenden Code. Klicken Sie dann auf <strong>Speichern</strong>:</p>
-<pre><code>function insert(item, user, request) {
-	// Nutzlast für Windows Phone-Popupbenachrichtigung definieren.
-	var payload = '&lt;?xml version="1.0" encoding="utf-8"?>' +
-		'&lt;wp:Notification xmlns:wp="WPNotification">&lt;wp:Toast>' +
-		'&lt;wp:Text1>Neues Element&lt;/wp:Text1>&lt;wp:Text2>' + item.text + 
-		'&lt;/wp:Text2>&lt;/wp:Toast>&lt;/wp:Notification>';
+&nbsp;&nbsp;5. Ersetzen Sie die Einfügefunktion durch den folgenden Code. Klicken Sie dann auf **Speichern**:
 
-	// Rufen Sie die ID des angemeldeten Benutzers ab.
+    function insert(item, user, request) {
+	// Define a payload for the Windows Phone toast notification.
+	var payload = '<?xml version="1.0" encoding="utf-8"?>' +
+		'<wp:Notification xmlns:wp="WPNotification"><wp:Toast>' +
+		'<wp:Text1>New Item</wp:Text1><wp:Text2>' + item.text + 
+		'</wp:Text2></wp:Toast></wp:Notification>';
+
+	// Get the ID of the logged-in user.
 	var userId = user.userId;		
 
 	request.execute({
 		success: function() {
-			// Wenn der Einfügevorgang erfolgreich war, senden Sie eine Benachrichtigung.
+			// If the insert succeeds, send a notification.
 			push.mpns.send(userId, payload, 'toast', 22, {
 				success: function(pushResponse) {
 					console.log("Sent push:", pushResponse);
@@ -64,9 +67,9 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 					});
 				}
 			});      
-}</code></pre>
+	}
 
-<p>Dieses Einfügeskript sendet mithilfe des Benutzer-ID-Tags eine Pushbenachrichtigung (mit dem Text des eingefügten Eintrags) an alle Windows Phone (MPNS)-App-Registrierungen, die vom angemeldeten Benutzer erstellt wurden.</p></li></ol>
+&nbsp;&nbsp;Dieses Einfügeskript sendet mithilfe des Benutzer-ID-Tags eine Pushbenachrichtigung \(mit dem Text des eingefügten Eintrags\) an alle Windows Phone-App-Registrierungen \(MPNS\), die vom angemeldeten Benutzer erstellt wurden.
 
 ##<a name="update-app"></a>Aktualisieren der App zum Anmelden vor der Registrierung
 
@@ -91,4 +94,4 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

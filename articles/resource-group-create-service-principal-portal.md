@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/15/2015"
+   ms.date="07/24/2015"
    ms.author="tomfitz"/>
 
 # Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal
@@ -24,7 +24,7 @@ Dienstprinzipale sind automatisierte Prozesse, Anwendungen oder Dienste, die auf
 Hier wird erklärt, wie ein neues Dienstprinzipal mithilfe des Azure-Portals erstellt werden kann. Aktuell müssen Sie das Microsoft Azure-Portal zum Erstellen eines neuen Dienstprinzipals verwenden. Das Azure-Vorschauportal wird in einer späteren Version um diese Möglichkeit erweitert.
 
 ## Konzepte
-1. Azure Active Directory (AAD) - ein Cloud-Dienst für Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist das Azure Active Directory](./active-directory-whatis/)
+1. Azure Active Directory \(AAD\) - ein Cloud-Dienst für Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist das Azure Active Directory](./active-directory-whatis/)
 2. Dienstprinzipal - ein Anwendungsbeispiel in einem Verzeichnis.
 3. AD-Anwendung - ein Verzeichnisdatensatz im AAD, der eine Anwendung für AAD identifiziert. Weitere Informationen finden Sie unter [Grundlagen der Authentifizierung im Azure AD](https://msdn.microsoft.com/library/azure/874839d9-6de6-43aa-9a5c-613b0c93247e#BKMK_Auth).
 
@@ -94,30 +94,12 @@ Ihre Anwendung ist nun bereit und das Dienstprinzipal in Ihrem Mandanten erstell
 * **SCHLÜSSEL** - als Ihr Kennwort.
 
 ## Nächste Schritte
-Erste Schritte
 
-- [Azure Resource Manager Overview](./resource-group-overview.md) (Übersicht über den Azure-Ressourcen-Manager)  
-- [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](./powershell-azure-resource-manager.md)
-- [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](virtual-machines/xplat-cli-azure-resource-manager.md)  
-- [Using the Azure Portal to manage your Azure resources](azure-portal/resource-group-portal.md) (Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen)  
-  
-Erstellen und Bereitstellen von Anwendungen
-  
-- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) (Erstellen von Vorlagen im Azure-Ressourcen-Manager)  
-- [Deploy an application with Azure Resource Manager Template](azure-portal/resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)  
-- [Troubleshooting Resource Group Deployments in Azure](virtual-machines/resource-group-deploy-debug.md) (Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)  
-- [Azure Resource Manager Template Functions](./resource-group-template-functions.md) (Vorlagenfunktionen im Azure-Ressourcen-Manager)  
-- [Advanced Template Operations](./resource-group-advanced-template.md) (Erweiterte Anwendungen mit Vorlagen)  
-- [Deploy Azure Resources Using .NET Libraries and a Template](virtual-machines/arm-template-deployment.md) (Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage)
-  
-Organisieren von Ressourcen
-  
-- [Using tags to organize your Azure resources](./resource-group-using-tags.md) (Verwenden von Tags zum Organisieren von Azure-Ressourcen)  
-  
-Zugriffsverwaltung und -überwachung
-  
-- [Verwalten und Überwachen des Ressourcen-Zugriffs](azure-portal/resource-group-rbac.md)  
-- [Authentifizieren eines Dienstprinzipals mit Azure Resource Manager](./resource-group-authenticate-service-principal.md)  
+- Informationen zum Festlegen von Sicherheitsrichtlinien finden Sie unter [Verwalten und Überwachen des Zugriffs auf Ressourcen](azure-portal/resource-group-rbac.md).  
+- Die Schritte, mit denen Sie einem Dienstprinzipal den Zugriff auf Ressourcen ermöglichen, finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](./resource-group-authenticate-service-principal.md).  
+- Eine Übersicht über die rollenbasierte Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md).
+- Anleitungen für die Implementierung von Sicherheitseinstellungen mit dem Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
+
 
 <!-- Images. -->
 [1]: ./media/resource-group-create-service-principal-portal/active-directory.png
@@ -134,4 +116,4 @@ Zugriffsverwaltung und -überwachung
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

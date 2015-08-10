@@ -26,7 +26,7 @@ Sie erstellen eine ContactNames-Web-API. Die Get-Methode der Web-API ruft eine A
 
 ![](./media/app-service-api-dotnet-consume-internal/tryitout.png)
 
-Informationen zum Aufrufen von API-Apps, die für die Zugriffsebenen **Öffentlich (anonym)** oder **Öffentlich (authentifiziert)** finden Sie unter [Nutzen einer API-App in Azure App Service aus einem .NET-Client](app-service-api-dotnet-consume.md).
+Informationen zum Aufrufen von API-Apps, die für die Zugriffsebenen **Öffentlich \(anonym\)** oder **Öffentlich \(authentifiziert\)** finden Sie unter [Nutzen einer API-App in Azure App Service aus einem .NET-Client](app-service-api-dotnet-consume.md).
 
 ## Voraussetzungen
 
@@ -45,7 +45,7 @@ Für dieses Lernprogramm ist die Version 2.6 des Azure-SDK für .NET erforderlic
 
 1. Wenn Sie die erforderlichen Schritte noch nicht ausgeführt haben, befolgen Sie die Anweisungen des Lernprogramms [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md), um das Beispielprojekt "ContactsList" für eine API-App in Ihrem Azure-Abonnement bereitzustellen.
 
-2. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/)auf dem Blatt **API-App** für die API-App "ContactsList", die Sie zuvor bereitgestellt haben, auf **Einstellungen > Anwendungseinstellungen**, und legen Sie für **Zugriffsebene** die Option **Intern** fest. Klicken Sie anschließend auf **Speichern**.
+2. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/)auf dem Blatt **API-App** für die API-App "ContactsList", die Sie zuvor bereitgestellt haben, auf **Einstellungen \> Anwendungseinstellungen**, und legen Sie für **Zugriffsebene** die Option **Intern** fest. Klicken Sie anschließend auf **Speichern**.
 
 	![](./media/app-service-api-dotnet-consume-internal/setinternal.png)
  
@@ -59,7 +59,7 @@ Für dieses Lernprogramm ist die Version 2.6 des Azure-SDK für .NET erforderlic
 
 Die folgenden Schritte werden ausführlicher unter [Nutzen eine API-App in Azure App Service aus einem .NET-Client](app-service-api-dotnet-consume.md) beschrieben.
 
-3. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt (nicht auf die Projektmappe), und wählen Sie **Hinzufügen > Azure-API-App-Client**. 
+3. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt \(nicht auf die Projektmappe\), und wählen Sie **Hinzufügen \> Azure-API-App-Client**. 
 
 3. Klicken Sie im Dialogfeld **Azure-API-App-Client hinzufügen** auf **Aus Azure-API-App herunterladen**.
 
@@ -71,7 +71,7 @@ Die folgenden Schritte werden ausführlicher unter [Nutzen eine API-App in Azure
 
 API-App-Projekte sind standardmäßig mit automatischer [Swagger](http://swagger.io/ "Offizielle Swagger-Informationen")-Metadatengenerierung aktiviert, aber die neue Azure-Projektvorlage für API-Apps deaktiviert die API-Testseite. In diesem Abschnitt aktivieren Sie die Testseite.
 
-1. Öffnen Sie die Datei *App_Start/SwaggerConfig.cs*, und suchen Sie nach **EnableSwaggerUI**:
+1. Öffnen Sie die Datei *App\_Start/SwaggerConfig.cs*, und suchen Sie nach **EnableSwaggerUI**:
 
 2. Entfernen Sie die Kommentare in den folgenden Codezeilen:
 
@@ -81,7 +81,7 @@ API-App-Projekte sind standardmäßig mit automatischer [Swagger](http://swagger
 
 ## Erstellen eines Controllers
 
-5. Klicken Sie mit der rechten Maustaste auf den Ordner **Controller**, und wählen Sie dann im Kontextmenü **Hinzufügen > Controller**. 
+5. Klicken Sie mit der rechten Maustaste auf den Ordner **Controller**, und wählen Sie dann im Kontextmenü **Hinzufügen \> Controller**. 
 
 6. Wählen Sie im Dialogfeld **Gerüst hinzufügen** die Option **Web API 2-Controller – Leer** aus, und klicken Sie auf **Hinzufügen**.
 
@@ -91,7 +91,7 @@ API-App-Projekte sind standardmäßig mit automatischer [Swagger](http://swagger
 
 Um eine API-App aufzurufen, die durch Festlegen der Zugriffsebene auf **Intern** geschützt wurde, müssen Sie HTTP-Anforderungen interne Authentifizierungsheader hinzufügen. Diese Header informieren die Ziel-API-App darüber, dass die Aufrufquelle eine Peer-API-App ist, die den Aufruf innerhalb derselben Ressourcengruppe tätigt.
 
-Das App Service-SDK generiert Clientklassen, die den Code vereinfachen, den Sie zum Aufrufen der API-App schreiben. Um eine API-App mit der Zugriffsebene **Öffentlich (anonym)** aufzurufen, müssen Sie lediglich ein Clientobjekt erstellen und Methoden für dieses Objekt aufrufen. Beispiel:
+Das App Service-SDK generiert Clientklassen, die den Code vereinfachen, den Sie zum Aufrufen der API-App schreiben. Um eine API-App mit der Zugriffsebene **Öffentlich \(anonym\)** aufzurufen, müssen Sie lediglich ein Clientobjekt erstellen und Methoden für dieses Objekt aufrufen. Beispiel:
 
 		var client = new ContactsList();
 		var contacts = await client.Contacts.GetAsync();
@@ -165,7 +165,7 @@ Die folgenden Bereitstellungsschritte werden ausführlicher unter [Bereitstellen
 
 1. Erstellen Sie eine API-App "ContactNames".
 
-	* Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt (nicht die Projektmappe), und klicken Sie auf **Veröffentlichen**. 
+	* Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt \(nicht die Projektmappe\), und klicken Sie auf **Veröffentlichen**. 
 
 	* Klicken Sie auf die Registerkarte **Profil**, und klicken Sie dann auf **Microsoft Azure-API-Apps**.
 
@@ -205,7 +205,7 @@ In diesem Abschnitt verwenden Sie die Swagger-UI zum Testen der neuen API-App un
 
 		https://microsoft-apiapp214f26e673e5449a214f26e673e5449a.azurewebsites.net/swagger
 
-1. Klicken Sie auf der Seite "Swagger-UI" auf **ContactNames > Abrufen > Jetzt testen!**
+1. Klicken Sie auf der Seite "Swagger-UI" auf **ContactNames \> Abrufen \> Jetzt testen!**
 
 	![](./media/app-service-api-dotnet-consume-internal/tryitout.png)
   
@@ -248,7 +248,7 @@ Das App Service-SDK ist von den Swagger-API-Definitionen abhängig, um Clientkla
 
 1. Führen Sie dieselben Schritte wie bereits zuvor zur Bereitstellung des API-App-Codes aus.
 
-	**Hinweis:** Sie können das Dialogfeld **Web veröffentlichen** umgehen und die Bereitstellung erneut durchführen, indem Sie auf eine einzelne Schaltfläche auf der Symbolleiste klicken. Klicken Sie in Visual Studio auf **Ansicht > Symbolleisten**, und aktivieren Sie die Symbolleiste **Webveröffentlichung mit einem Klick**.
+	**Hinweis:** Sie können das Dialogfeld **Web veröffentlichen** umgehen und die Bereitstellung erneut durchführen, indem Sie auf eine einzelne Schaltfläche auf der Symbolleiste klicken. Klicken Sie in Visual Studio auf **Ansicht \> Symbolleisten**, und aktivieren Sie die Symbolleiste **Webveröffentlichung mit einem Klick**.
  
 2. Führen Sie dieselben Schritte aus, die Sie zuvor zur Verwendung der Swagger-UI durchgeführt haben.
 
@@ -258,11 +258,11 @@ Das App Service-SDK ist von den Swagger-API-Definitionen abhängig, um Clientkla
   
 ## Nächste Schritte
 
-In diesem Artikel haben Sie gelernt, wie Sie eine interne API-App aus einem .NET-Client nutzen. Informationen zum Nutzen von API-Apps, die die Zugriffsebenen **Öffentlich (anonym)** oder **Öffentlich (authentifiziert)** haben, finden Sie unter [Nutzen einer API-App in Azure App Service aus einem .NET-Client](app-service-api-dotnet-consume.md).
+In diesem Artikel haben Sie gelernt, wie Sie eine interne API-App aus einem .NET-Client nutzen. Informationen zum Nutzen von API-Apps, die die Zugriffsebenen **Öffentlich \(anonym\)** oder **Öffentlich \(authentifiziert\)** haben, finden Sie unter [Nutzen einer API-App in Azure App Service aus einem .NET-Client](app-service-api-dotnet-consume.md).
 
 Um weitere Codebeispiele für den Aufruf einer API-App aus einem .NET-Client zu erhalten, laden Sie die [Azure Cards](https://github.com/Azure-Samples/API-Apps-DotNet-AzureCards-Sample)-Beispielanwendung herunter.
 
 Informationen zur Authentifizierung in App Service finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

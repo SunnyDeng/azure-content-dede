@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/16/2015" 
+	ms.date="07/24/2015" 
 	ms.author="sidneyh"/>
 
 # Hinzufügen von Verweisen auf die Clientbibliothek für elastische Datenbanken in einem Visual Studio-Projekt 
@@ -24,7 +24,7 @@
 
 ### Hinzufügen eines Verweises auf die Clientbibliothek für elastische Datenbanken in Visual Studio 
 
-1. Öffnen Sie ein vorhandenes Projekt, oder erstellen Sie ein neues Projekt im Dialogfeld "Neues Projekt", das Sie über **Datei** --> **Neu** --> **Projekt** öffnen. 
+1. Öffnen Sie ein vorhandenes Projekt, oder erstellen Sie ein neues Projekt im Dialogfeld "Neues Projekt", das Sie über **Datei** --\> **Neu** --\> **Projekt** öffnen. 
 2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Verweise**, und wählen Sie **NuGet-Pakete verwalten** aus.
 3. Wählen Sie im Menü auf der linken Seite des Fensters "NuGet-Pakete verwalten" **Online** und dann **nuget.org** oder "Alle" aus. 
 4. Geben Sie im Dialogfeld **Online suchen** als Suchbegriff **elastische Datenbank** ein, wählen Sie die **Clientbibliothek für elastische Datenbanken** aus, und klicken Sie auf **Installieren**.
@@ -40,4 +40,4 @@ Der Verweis auf die Clientbibliothek wurde damit Ihrem Projekt hinzugefügt.
 [1]: ./media/sql-database-elastic-scale-add-references-visual-studio/search-online.png
 <!--anchors-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

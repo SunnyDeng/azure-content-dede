@@ -18,7 +18,7 @@
 # Technische Übersicht über Application Gateway 
 
 
-Microsoft Azure Application Gateway ist ein von Azure verwalteter Dienst, der dem Azure-VPN-Gateway ähnelt. Application Gateway bietet eine von Azure verwaltete HTTP-Lastenausgleichslösung, die auf dem Routing von Anwendungsanforderungen (Application Request Routing, ARR) von IIS basiert. Der Anwendungsgatewaydienst bietet hohe Verfügbarkeit und gute Kontrolle. Die Vereinbarung zum Servicelevel und Preise finden Sie auf den Seiten [SLA](http://azure.microsoft.com/support/legal/sla/) und [Preise](https://azure.microsoft.com/pricing/details/application-gateway/).
+Microsoft Azure Application Gateway bietet eine von Azure verwaltete HTTP-Lastenausgleichslösung, die auf Lastenausgleich der HTTP-Ebene 7 basiert. Durch Anwendungslastenausgleich können IT-Administratoren und Entwickler Routingregeln für Netzwerkverkehr basierend auf HTTP erstellen. Der Anwendungsgatewaydienst bietet hohe Verfügbarkeit und gute Kontrolle. Die Vereinbarung zum Servicelevel und Preise finden Sie auf den Seiten [SLA](http://azure.microsoft.com/support/legal/sla/) und [Preise](https://azure.microsoft.com/pricing/details/application-gateway/).
 
 Application Gateway unterstützt derzeit die Anwendungsbereitstellung der Ebene 7 für Folgendes:
 
@@ -29,8 +29,12 @@ Application Gateway unterstützt derzeit die Anwendungsbereitstellung der Ebene�
 ![Application Gateway](./media/application-gateway-introduction/appgateway1.png)
 
 ## Lastenausgleich der HTTP-Ebene 7
-Azure bietet Lastenausgleich der Ebene 4 über einen Softwarelastenausgleich. Dies geschieht implizit für jeden Clouddienst, der eine Lastenausgleichs-VIP (öffentlich oder intern) aufweist. Es gibt jedoch viele Anwendungen, die auf Ebene 7 (HTTP) basierenden Lastenausgleich verwenden können.
 
+Azure bietet Lastenausgleich der Ebene 4 über Azure Load Balancer, der auf der Transportebene \(TCP/UDP\) eingesetzt wird und den Lastenausgleich des gesamten eingehenden Netzwerkverkehr für den Anwendungsgatewaydienst übernimmt. Das Anwendungsgateway wendet dann Routingregeln auf den HTTP-Datenverkehr an und ermöglicht so Lastenausgleich der Ebene 7 \(HTTP\). Wenn Sie ein Anwendungsgateway erstellen, wird ein Endpunkt \(VIP\) zugeordnet und als öffentliche IP-Adresse für eingehenden Netzwerkverkehr verwendet.
+
+Das Anwendungsgateway leitet den HTTP-Datenverkehr auf Grundlage der Konfiguration weiter: virtueller Computer, Clouddienst, Web-App oder eine externe IP-Adresse.
+
+Das folgende Diagramm veranschaulicht den Datenfluss für Application Gateway: ![Application Gateway2](./media/application-gateway-introduction/appgateway2.png)
 
 Lastenausgleich der HTTP-Ebene 7 eignet sich für:
 
@@ -55,4 +59,4 @@ Erstellen Sie ein Anwendungsgateway. Weitere Informationen finden Sie unter [Ers
 
 Konfigurieren Sie die SSL-Auslagerung. Weitere Informationen finden Sie unter [Konfigurieren der SSL-Auslagerung mit Application Gateway](application-gateway-ssl.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

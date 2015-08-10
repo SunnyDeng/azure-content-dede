@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager | Microsoft Azure"
+   pageTitle="Erste Schritte zum Konfigurieren des Lastenausgleichs für Internetverbindungen mit dem Azure-Ressourcen-Manager | Microsoft Azure"
    description="So erstellen Sie Load-Balancer-Regeln, NAT-Regeln und Tests für den Azure-Ressourcen-Manager. Umfassende schrittweise Anleitung zum Erstellen einer Load-Balancer-Ressource."
    services="load-balancer"
    documentationCenter="na"
@@ -12,31 +12,37 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/30/2015"
+   ms.date="07/22/2015"
    ms.author="joaoma" />
 
-# Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager
+# Erste Schritte zum Konfigurieren des Lastenausgleichs für Internetverbindungen mit dem Azure-Ressourcen-Manager
 
-Die folgenden Schritte zeigen, wie Sie einen Load Balancer mit dem Azure-Ressourcen-Manager mit PowerShell erstellen. Beim Azure-Ressourcen-Manager werden die Elemente, mit denen ein Load Balancer erstellt wird, einzeln konfiguriert und dann zusammengeführt, um eine Ressource zu erstellen.
+
+> [AZURE.SELECTOR]
+- [Service Manager steps](load-balancer-internet-getstarted.md)
+- [Resource Manager Powershell steps](load-balancer-arm-powershell.md)
+
+
+Die folgenden Schritte zeigen, wie Sie einen internen Lastenausgleich für Internetverbindungen mit dem Azure-Ressourcen-Manager mit PowerShell erstellen. Beim Azure-Ressourcen-Manager werden die Elemente, mit denen ein Lastenausgleich für Internetverbindungen erstellt wird, einzeln konfiguriert und dann zusammengeführt, um eine Ressource zu erstellen.
 
 Auf dieser Seite wird die Abfolge der einzelnen Aufgaben beschrieben, die zum Erstellen eines Load Balancers durchgeführt werden müssen. Sie erfahren detailliert, welche Schritte durchgeführt werden müssen, um einen Load Balancer zu erstellen.
 
 
-## Was ist erforderlich, um einen Load Balancer zu erstellen?
+## Was ist erforderlich, um einen Lastenausgleich für Internetverbindungen zu erstellen?
 
 Die folgenden Elemente müssen konfiguriert werden, bevor Sie einen Load Balancer erstellen:
 
-- Front-End-IP-Konfiguration 
+- Konfiguration der IP-Adresse des Front-Ends – Dient zum Hinzufügen einer öffentlichen IP-Adresse zum Front-End-IP-Adresspool für einen Lastenausgleich des eingehenden Netzwerkverkehrs. 
 
-- Back-End-Adresspool
+- Back-End-Adresspool – Dient zum Konfigurieren der Netzwerkschnittstellen, die den vom Load Balancer verteilten Datenverkehr vom Front-End-IP-Adresspool empfangen.
 
-- Lastenausgleichsregeln
+- Lastenausgleichsregeln – Quell- und lokale Portkonfiguration für den Lastenausgleich.
 
-- Tests
+- Tests – Dient zum Konfigurieren des Integritätsstatustests für die VM-Instanzen.
 
-- Eingehende NAT-Regeln
+- Eingehende NAT-Regeln – Dient zum Konfigurieren der Portregeln, um direkt auf eine der VM-Instanzen zuzugreifen.
 
-Unter [Unterstützung des Azure-Ressourcen-Managers für Load Balancer](load-balancer-arm.md) erhalten Sie weitere Informationen über Load-Balancer-Komponenten des Azure-Ressourcen-Managers.
+Unter [Unterstützung des Azure-Ressourcen-Managers für den Lastenausgleich](load-balancer-arm.md) erhalten Sie weitere Informationen zu Lastenausgleichskomponenten des Azure-Ressourcen-Managers.
 
 Die folgenden Schritte zeigen, wie Sie einen Load Balancer konfigurieren können, um einen Lastenausgleich zwischen zwei virtuellen Computern durchzuführen.
 
@@ -74,7 +80,7 @@ Um eine Liste der verfügbaren Abonnements anzuzeigen, verwenden Sie das Cmdlet 
 
 ### Schritt 4
 
-Erstellen Sie eine neue Ressourcengruppe. (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
+Erstellen Sie eine neue Ressourcengruppe. \(Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.\)
 
     PS C:\> New-AzureResourceGroup -Name NRP-RG -location "West US"
 
@@ -110,7 +116,7 @@ Richten Sie einen Front-End-IP-Pool für den eingehenden Netzwerkverkehr des Loa
 
 ### Schritt 1 
 
-Erstellen Sie den Front-End-IP-Pool mit einer öffentlichen IP-Variablen ($publicIP).
+Erstellen Sie den Front-End-IP-Pool mit einer öffentlichen IP-Variablen \($publicIP\).
 
 	$frontendIP = New-AzureLoadBalancerFrontendIpConfig -Name LB-Frontend -PublicIpAddress $publicIP 
 
@@ -148,7 +154,7 @@ Im obigen Beispiel werden die folgenden Elemente erstellt:
 
 ### Schritt 2
 
-Erstellen Sie den Load Balancer, indem Sie alle Objekte (NAT-Regeln, Load-Balancer-Regeln, Testkonfigurationen) zusammenfügen:
+Erstellen Sie den Load Balancer, indem Sie alle Objekte \(NAT-Regeln, Load-Balancer-Regeln, Testkonfigurationen\) zusammenfügen:
 
 	$NRPLB = New-AzureLoadBalancer -ResourceGroupName "NRP-RG" -Name "NRP-LB" -Location "West US" -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe 
 
@@ -217,7 +223,7 @@ PS C:\> $backendnic1
                            ],
                            "ProvisioningState": "Succeeded",
                            "Name": "ipconfig1",
-                           "Etag": "W/"d448256a-e1df-413a-9103-a137e07276d1"",
+                           "Etag": "W/\"d448256a-e1df-413a-9103-a137e07276d1\"",
                            "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be/ipConfigurations/ipconfig1"
                          }
                        ]
@@ -245,4 +251,4 @@ In der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Co
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

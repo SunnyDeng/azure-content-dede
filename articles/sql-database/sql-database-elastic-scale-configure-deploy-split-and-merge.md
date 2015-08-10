@@ -21,7 +21,7 @@
 2. Öffnen Sie eine Eingabeaufforderung, und navigieren Sie zu dem Verzeichnis, in das Sie „nuget.exe“ heruntergeladen haben.
 3. Laden Sie das neueste Split-Merge-Paket mit folgendem Befehl in das aktuelle Verzeichnis herunter: `nuget install Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge`  
 
-Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle Verzeichnis heruntergeladen. Die Dateien werden in einem Verzeichnis mit dem Namen **Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge.x.x.xxx.x** abgelegt, wobei *x.x.xxx.x* der Versionsnummer entspricht. Die Split-Merge-Dienstdateien befinden sich im Unterverzeichnis **content\splitmerge\service** und die Split-Merge-PowerShell-Skripts (und erforderlichen Client-DLLs) im Unterverzeichnis **content\splitmerge\powershell**.
+Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle Verzeichnis heruntergeladen. Die Dateien werden in einem Verzeichnis mit dem Namen **Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge.x.x.xxx.x** abgelegt, wobei *x.x.xxx.x* der Versionsnummer entspricht. Die Split-Merge-Dienstdateien befinden sich im Unterverzeichnis **content\\splitmerge\\service** und die Split-Merge-PowerShell-Skripts \(und erforderlichen Client-DLLs\) im Unterverzeichnis **content\\splitmerge\\powershell**.
 
 ## Voraussetzungen
 
@@ -44,7 +44,7 @@ Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle 
 
 2. Öffnen Sie „ServiceConfiguration.cscfg“ in Ihrem bevorzugten Text-Editor. Wir empfehlen die Verwendung von Visual Studio, da Eingaben, z. B. das Format von Zertifikatfingerabdrücken, von der Software überprüft werden.
 
-3. Erstellen Sie entweder eine neue Datenbank, oder wählen Sie eine vorhandene Datenbank als Statusdatenbank für Teilungs-/Zusammenführungsvorgänge (Split/Merge) aus, und rufen Sie die Verbindungszeichenfolge dieser Datenbank ab. Bei Azure SQL-Datenbanken hat die Verbindungszeichenfolge in der Regel folgendes Format:
+3. Erstellen Sie entweder eine neue Datenbank, oder wählen Sie eine vorhandene Datenbank als Statusdatenbank für Teilungs-/Zusammenführungsvorgänge \(Split/Merge\) aus, und rufen Sie die Verbindungszeichenfolge dieser Datenbank ab. Bei Azure SQL-Datenbanken hat die Verbindungszeichenfolge in der Regel folgendes Format:
 
         "Server=myservername.database.windows.net; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 4.    Geben Sie die Verbindungszeichenfolge in der CSCFG-Datei sowohl im Abschnitt für die **SplitMergeWeb**-Rolle als auch für die **SplitMergeWorker**-Rolle der Einstellung „ElasticScaleMetadata“ ein.
@@ -80,7 +80,7 @@ Führen Sie den folgenden Befehl im gleichen Fenster aus, in dem „makecert“ 
 2. Wählen Sie im **Zertifikatimport-Assistenten** die Option **Aktueller Benutzer** aus, und klicken Sie auf **Weiter**.
 3. Bestätigen Sie den Dateipfad, und klicken Sie auf **Weiter**.
 4. Geben Sie das Kennwort ein, lassen Sie **Alle erweiterten Eigenschaften mit einbeziehen** aktiviert, und klicken Sie auf **Weiter**.
-5. Lassen Sie **Zertifikatspeicher automatisch auswählen[…]** aktiviert, und klicken Sie auf **Weiter**.
+5. Lassen Sie **Zertifikatspeicher automatisch auswählen\[…\]** aktiviert, und klicken Sie auf **Weiter**.
 6. Klicken Sie auf **Fertig stellen** und auf **OK**.
 
 ### Hochladen der PFX-Datei in den Cloud-Dienst
@@ -142,7 +142,7 @@ Wenn die Workerrolle nicht online geschaltet wird, während der Vorgang bei der 
         "Server=myservername.database.windows.net; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 
 * Stellen Sie sicher, dass der Servername nicht mit **https://** beginnt.
-* Achten Sie darauf, dass Ihr Azure SQL-Datenbankserver Verbindungen mit Azure-Diensten zulässt. Zu diesem Zweck öffnen Sie https://manage.windowsazure.com, klicken links auf „SQL-Datenbanken“, klicken oben auf „Server“ und wählen Ihren Server aus. Klicken Sie oben auf **Konfigurieren**, und stellen Sie sicher, dass die Einstellung für **Azure-Dienste** auf „Ja“ festgelegt ist. (Siehe den Abschnitt „Voraussetzungen“ am Anfang dieses Artikels.)
+* Achten Sie darauf, dass Ihr Azure SQL-Datenbankserver Verbindungen mit Azure-Diensten zulässt. Zu diesem Zweck öffnen Sie https://manage.windowsazure.com, klicken links auf „SQL-Datenbanken“, klicken oben auf „Server“ und wählen Ihren Server aus. Klicken Sie oben auf **Konfigurieren**, und stellen Sie sicher, dass die Einstellung für **Azure-Dienste** auf „Ja“ festgelegt ist. \(Siehe den Abschnitt „Voraussetzungen“ am Anfang dieses Artikels.\)
 
 ## Testen der Split-Merge-Dienstbereitstellung
 
@@ -156,8 +156,8 @@ Die Bereitstellung und Ihre Umgebung können getestet werden, indem Sie die im P
 
 Die enthaltenen Skriptdateien lauten:
 
-1. **SetupSampleSplitMergeEnvironment.ps1**: Richtet eine Testdatenebene für Split/Merge ein (eine ausführliche Beschreibung finden Sie in der Tabelle unten).
-2. **ExecuteSampleSplitMerge.ps1**: Führt Testvorgänge auf der Testdatenebene aus (eine ausführliche Beschreibung finden Sie in der Tabelle unten).
+1. **SetupSampleSplitMergeEnvironment.ps1**: Richtet eine Testdatenebene für Split/Merge ein \(eine ausführliche Beschreibung finden Sie in der Tabelle unten\).
+2. **ExecuteSampleSplitMerge.ps1**: Führt Testvorgänge auf der Testdatenebene aus \(eine ausführliche Beschreibung finden Sie in der Tabelle unten\).
 3. **GetMappings.ps1**: Beispielskript auf oberster Ebene, das den aktuellen Status der Shardzuordnungen ausgibt.
 4. **ShardManagement.psm1**: Hilfsskript, das die ShardManagement-API umschließt.
 5. **SqlDatabaseHelpers.psm1**: Hilfsskript zum Erstellen und Verwalten von SQL-Datenbanken.
@@ -209,7 +209,7 @@ Die enthaltenen Skriptdateien lauten:
 ##Überprüfen der Bereitstellung mithilfe von PowerShell
 
 1.    Öffnen Sie ein neues PowerShell-Fenster, und navigieren Sie zu dem Verzeichnis, in das Sie das Split-Merge-Paket heruntergeladen haben, und wechseln Sie dann in das Verzeichnis „powershell“.
-2.    Erstellen Sie einen Azure SQL-Datenbankserver (oder wählen Sie einen vorhandenen Server aus), auf dem ShardMapManager und Shards erstellt werden.
+2.    Erstellen Sie einen Azure SQL-Datenbankserver \(oder wählen Sie einen vorhandenen Server aus\), auf dem ShardMapManager und Shards erstellt werden.
 
     Hinweis: Um das Skript einfach zu halten, werden alle diese Datenbanken vom Skript „SetupSampleSplitMergeEnvironment.ps1“ standardmäßig auf demselben Server erstellt. Dies ist keine Einschränkung des Split-Merge-Diensts selbst.
 
@@ -235,7 +235,7 @@ Die enthaltenen Skriptdateien lauten:
             -Password 'MySqlPassw0rd' `
             -ShardMapManagerServerName 'abcdefghij.database.windows.net'
 
-5.    Führen Sie das Skript „ExecuteSampleSplitMerge.ps1“ aus, um einen Teilungsvorgang auszuführen (die Hälfte der Daten vom ersten Shard auf den zweiten Shard zu verschieben) und dann einen Zusammenführungsvorgang auszuführen (die Daten wieder zurück auf den ersten Shard zu verschieben). Wenn Sie SSL konfiguriert und den http-Endpunkt deaktiviert gelassen haben, stellen Sie sicher, dass Sie stattdessen den https://-Endpunkt verwenden.
+5.    Führen Sie das Skript „ExecuteSampleSplitMerge.ps1“ aus, um einen Teilungsvorgang auszuführen \(die Hälfte der Daten vom ersten Shard auf den zweiten Shard zu verschieben\) und dann einen Zusammenführungsvorgang auszuführen \(die Daten wieder zurück auf den ersten Shard zu verschieben\). Wenn Sie SSL konfiguriert und den http-Endpunkt deaktiviert gelassen haben, stellen Sie sicher, dass Sie stattdessen den https://-Endpunkt verwenden.
 
     Beispiel für eine Befehlszeile:
 
@@ -294,15 +294,15 @@ Der Split-Merge-Dienst kann Daten sowohl in Shardtabellen als auch in Verweistab
 
 Um einen Teilungs-/Zusammenführungsvorgang auszuführen, müssen Sie die zu verschiebenden Shardtabellen und Verweistabellen deklarieren. Sie verwenden dazu die **SchemaInfo**-API. Diese API befindet sich im **Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.Schema**-Namespace.
 
-1.    Erstellen Sie für jede Shardtabelle ein **ShardedTableInfo**-Objekt, das den Namen des übergeordneten Schemas der Tabelle (optional, standardmäßig „dbo“), den Tabellennamen und den Spaltennamen in der Tabelle angibt, die den Shardingschlüssel enthält.
-2.    Erstellen Sie für jede Verweistabelle ein **ReferenceTableInfo**-Objekt, das den Namen des übergeordneten Schemas der Tabelle (optional, standardmäßig „dbo“) und den Tabellennamen angibt.
+1.    Erstellen Sie für jede Shardtabelle ein **ShardedTableInfo**-Objekt, das den Namen des übergeordneten Schemas der Tabelle \(optional, standardmäßig „dbo“\), den Tabellennamen und den Spaltennamen in der Tabelle angibt, die den Shardingschlüssel enthält.
+2.    Erstellen Sie für jede Verweistabelle ein **ReferenceTableInfo**-Objekt, das den Namen des übergeordneten Schemas der Tabelle \(optional, standardmäßig „dbo“\) und den Tabellennamen angibt.
 3.    Fügen Sie die oben beschriebenen TableInfo-Objekte einem neuen **SchemaInfo**-Objekt hinzu.
 4.    Rufen Sie einen Verweis auf ein **ShardMapManager**-Objekt ab, und rufen Sie **GetSchemaInfoCollection** auf.
 5.    Fügen Sie **SchemaInfo** unter Angabe des Namens der Shard Map zu **SchemaInfoCollection** hinzu.
 
 Ein Beispiel dazu finden Sie im Skript „SetupSampleSplitMergeEnvironment.ps1“.
 
-Beachten Sie, dass durch den Split-Merge-Dienst keine Zieldatenbank (bzw. kein Schema für Tabellen in der Datenbank) für Sie erstellt wird. Diese müssen erstellt werden, bevor eine Anforderung an den Dienst gesendet wird.
+Beachten Sie, dass durch den Split-Merge-Dienst keine Zieldatenbank \(bzw. kein Schema für Tabellen in der Datenbank\) für Sie erstellt wird. Diese müssen erstellt werden, bevor eine Anforderung an den Dienst gesendet wird.
 
 
 ## Problembehandlung
@@ -314,7 +314,7 @@ Dieser Fehler weist darauf hin, dass das SSL-Zertifikat nicht ordnungsgemäß ko
 
 Wenn Sie keine Anforderungen übermitteln können, wird möglicherweise Folgendes angezeigt:
 
- [Exception] System.Data.SqlClient.SqlException (0x80131904): Die gespeicherte Prozedur 'dbo.InsertRequest' wurde nicht gefunden.
+ \[Exception\] System.Data.SqlClient.SqlException \(0x80131904\): Die gespeicherte Prozedur 'dbo.InsertRequest' wurde nicht gefunden.
 
 Überprüfen Sie in diesem Fall Ihre Konfigurationsdatei, insbesondere die Einstellung für **WorkerRoleSynchronizationStorageAccountConnectionString**. Dieser Fehler weist normalerweise darauf hin, dass die Workerrolle die Metadaten-Datenbank bei der ersten Verwendung nicht erfolgreich initialisieren konnte.
 
@@ -328,4 +328,4 @@ Wenn Sie keine Anforderungen übermitteln können, wird möglicherweise Folgende
 [5]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/storage.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

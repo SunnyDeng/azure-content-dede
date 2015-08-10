@@ -28,9 +28,9 @@ Nachdem der Arbeitsbereich erstellt wurde, können Sie andere Aufgaben darin aus
 ## Wie viele Arbeitsbereiche benötige ich?
 Ein Arbeitsbereich wird im Azure-Verwaltungsportal als Azure-Ressource angezeigt.
 
-Sie können entweder einen neuen Arbeitsbereich erstellen oder eine Verknüpfung mit einem vorhandenen Arbeitsbereich herstellen, den Sie zuvor für die Verwendung mit System Center Operations Manager geöffnet, aber möglicherweise noch keinem Azure-Abonnement zugeordnet haben (was für die Abrechnung erforderlich ist). Ein Arbeitsbereich stellt die Ebene dar, auf der Daten erfasst, aggregiert, analysiert und im Operational Insights-Portal angezeigt werden. Sie können nach Wunsch mit mehreren Arbeitsbereichen arbeiten, um Daten aus verschiedenen Umgebungen und Systemen zu trennen. Jede Operations Manager-Verwaltungsgruppe (und alle ihre Agents) oder einzelne VMs/Agents können jeweils mit nur einem Arbeitsbereich verbunden werden.
+Sie können entweder einen neuen Arbeitsbereich erstellen oder eine Verknüpfung mit einem vorhandenen Arbeitsbereich herstellen, den Sie zuvor für die Verwendung mit System Center Operations Manager geöffnet, aber möglicherweise noch keinem Azure-Abonnement zugeordnet haben \(was für die Abrechnung erforderlich ist\). Ein Arbeitsbereich stellt die Ebene dar, auf der Daten erfasst, aggregiert, analysiert und im Operational Insights-Portal angezeigt werden. Sie können nach Wunsch mit mehreren Arbeitsbereichen arbeiten, um Daten aus verschiedenen Umgebungen und Systemen zu trennen. Jede Operations Manager-Verwaltungsgruppe \(und alle ihre Agents\) oder einzelne VMs/Agents können jeweils mit nur einem Arbeitsbereich verbunden werden.
 
-Jedem Arbeitsbereich können mehrere Benutzerkonten zugeordnet sein, wobei jedes Benutzerkonto (Microsoft- oder Organisationskonto) Zugriff auf mehrere Operational Insights-Arbeitsbereiche hat. Standardmäßig wird der Besitzer des Microsoft- oder Organisationskontos, das zum Erstellen des Arbeitsbereichs verwendet wird, zum Administrator des Arbeitsbereichs. Der Administrator kann anschließend zusätzliche Microsoft-Konten einladen oder Benutzer in seinem Azure Active Directory auswählen.
+Jedem Arbeitsbereich können mehrere Benutzerkonten zugeordnet sein, wobei jedes Benutzerkonto \(Microsoft- oder Organisationskonto\) Zugriff auf mehrere Operational Insights-Arbeitsbereiche hat. Standardmäßig wird der Besitzer des Microsoft- oder Organisationskontos, das zum Erstellen des Arbeitsbereichs verwendet wird, zum Administrator des Arbeitsbereichs. Der Administrator kann anschließend zusätzliche Microsoft-Konten einladen oder Benutzer in seinem Azure Active Directory auswählen.
 
 ## Verknüpfen eines vorhandenen Arbeitsbereichs mit einem Azure-Abonnement
 
@@ -44,13 +44,13 @@ Es ist möglich, unter [microsoft.com/oms](https://microsoft.com/oms) einen Arbe
 4. Klicken Sie auf **Schnellerfassung**.
 5. Auf der Liste **Konto** sollte eine Liste Ihrer vorhandenen Arbeitsbereiche enthalten sein, die *noch nicht* mit dem Azure-Abonnement verknüpft sind. Wählen Sie ein Konto aus.
 
-  >[AZURE.NOTE]Wenn der Arbeitsbereich, den Sie verknüpfen möchten, hier nicht angezeigt wird, bedeutet dies, dass Ihr Azure-Abonnement keinen Zugriff auf Ihren Operational Insights-Arbeitsbereich hat. Sie müssen in Ihrem Operational Insights-Arbeitsbereich den Zugriff auf dieses Konto gewähren. Informationen hierzu finden Sie unter [Hinzufügen eines Benutzers zu einem vorhandenen Arbeitsbereich](#add-a-user-to-an-existing-workspace).
+  \>[AZURE.NOTE]Wenn der Arbeitsbereich, den Sie verknüpfen möchten, hier nicht angezeigt wird, bedeutet dies, dass Ihr Azure-Abonnement keinen Zugriff auf Ihren Operational Insights-Arbeitsbereich hat. Sie müssen in Ihrem Operational Insights-Arbeitsbereich den Zugriff auf dieses Konto gewähren. Informationen hierzu finden Sie unter [Hinzufügen eines Benutzers zu einem vorhandenen Arbeitsbereich](#add-a-user-to-an-existing-workspace).
 
   ![Konto verknüpfen](./media/operational-insights-setup-workspace/link-account.png) <p> 6. Füllen Sie die verbleibenden Felder aus, und wählen Sie dann **Arbeitsbereich erstellen**.
 
 ## Aktualisieren des Arbeitsbereichs auf einen kostenpflichtigen Plan
 
-Es gibt drei Arten von Arbeitsbereichsplänen für Operational Insights: **Kostenlos**, **Standard** und **Premium**. Wenn Sie mit einem Plan vom Typ *Kostenlos* arbeiten, ist Ihre Datenübertragung auf 500 MB begrenzt. Sie müssen für den Arbeitsbereich die '**nutzungsbasierte Bezahlung**' aktivieren, um Daten über diesen Grenzwert hinaus erfassen zu können. Sie können Ihren Plantyp jederzeit ändern. Weitere Informationen zu den Preisen von Operational Insights finden Sie unter [Preisdetails](http://azure.microsoft.com/pricing/operational-insights/).
+Es gibt drei Arten von Arbeitsbereichsplänen für Operational Insights: **Kostenlos**, **Standard** und **Premium**. Wenn Sie mit einem Plan vom Typ *Kostenlos* arbeiten, ist Ihre Datenübertragung auf 500 MB begrenzt. Sie müssen für den Arbeitsbereich die '\*\*nutzungsbasierte Bezahlung\*\*' aktivieren, um Daten über diesen Grenzwert hinaus erfassen zu können. Sie können Ihren Plantyp jederzeit ändern. Weitere Informationen zu den Preisen von Operational Insights finden Sie unter [Preisdetails](http://azure.microsoft.com/pricing/operational-insights/).
 
 >[AZURE.IMPORTANT]Pläne für Arbeitsbereiche können nur geändert werden, wenn sie mit einem Azure-Abonnement *verknüpft* sind. Wenn Sie den Arbeitsbereich in Azure erstellt haben oder *bereits* eine Verknüpfung mit dem Arbeitsbereich hergestellt haben, können Sie diese Meldung ignorieren. Wenn Sie den Arbeitsbereich unter [opinsights.azure.com](http://opinsights.azure.com) erstellt haben, müssen Sie die Schritte unter [Verknüpfen eines vorhandenen Arbeitsbereichs mit einem Azure-Abonnement](#link-an-existing-workspace-to-an-Azure-subscription) ausführen.
 
@@ -117,8 +117,8 @@ Gehen Sie folgendermaßen vor, um einem Operational Insights-Arbeitsbereich eine
 2. Klicken Sie auf das Symbol "Konfigurieren".
 3. Klicken Sie in Operational Insights auf der Seite **Einstellungen** im Abschnitt **Benutzerkonten verwalten** auf **Benutzer verwalten**. ![Benutzer verwalten](./media/operational-insights-setup-workspace/settings04.png)
 4. Klicken Sie im Fenster **Benutzer verwalten** auf **Hinzufügen**. ![Seite "Einstellungen"](./media/operational-insights-setup-workspace/manage-users01.png)
-5. Wenn Ihr Operational Insights-Konto Azure Active Directory zugeordnet ist, geben Sie **Organisationskonto** an. >[AZURE.NOTE]Dieser Schritt wird nicht angezeigt, wenn Ihr Operational Insights-Konto nur Microsoft-Konten verwendet. ![Benutzerkontotyp hinzufügen](./media/operational-insights-setup-workspace/manage-users02.png)
-6. Geben Sie die neuen Benutzerinformationen für das Microsoft- oder Organisationskonto ein. Wenn Sie ein Organisationskonto hinzufügen, können Sie einen Teil des Benutzer- oder Gruppennamens oder des E-Mail-Alias eingeben und dann auf **Namen überprüfen** klicken, um den jeweiligen Benutzer oder die Gruppe zu suchen. >[AZURE.NOTE]Zum Erzielen einer optimalen Leistung begrenzen Sie die Anzahl von Active Directory-Gruppen, die einem einzelnen Operational Insights-Konto zugeordnet sind, auf zwei - eines für Administratoren und eines für Benutzer. Mehr Gruppen können sich auf die Leistung von Operational Insights auswirken.
+5. Wenn Ihr Operational Insights-Konto Azure Active Directory zugeordnet ist, geben Sie **Organisationskonto** an. \>[AZURE.NOTE]Dieser Schritt wird nicht angezeigt, wenn Ihr Operational Insights-Konto nur Microsoft-Konten verwendet. ![Benutzerkontotyp hinzufügen](./media/operational-insights-setup-workspace/manage-users02.png)
+6. Geben Sie die neuen Benutzerinformationen für das Microsoft- oder Organisationskonto ein. Wenn Sie ein Organisationskonto hinzufügen, können Sie einen Teil des Benutzer- oder Gruppennamens oder des E-Mail-Alias eingeben und dann auf **Namen überprüfen** klicken, um den jeweiligen Benutzer oder die Gruppe zu suchen. \>[AZURE.NOTE]Zum Erzielen einer optimalen Leistung begrenzen Sie die Anzahl von Active Directory-Gruppen, die einem einzelnen Operational Insights-Konto zugeordnet sind, auf zwei - eines für Administratoren und eines für Benutzer. Mehr Gruppen können sich auf die Leistung von Operational Insights auswirken.
 7. Wählen Sie die Rolle für den neuen Benutzer: **Administrator** oder **Benutzer**. ![Benutzerrolle zu Arbeitsbereich hinzufügen](./media/operational-insights-setup-workspace/manage-users03.png)
 8. Klicken Sie auf **OK**.
 
@@ -180,4 +180,4 @@ Wenn Sie Administrator sind und mehrere Benutzer mit dem Arbeitsbereich verknüp
 
 3. Klicken Sie auf **Arbeitsbereich schließen**.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

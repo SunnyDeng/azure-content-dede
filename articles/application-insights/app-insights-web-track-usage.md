@@ -40,9 +40,9 @@ Es empfiehlt sich üblicherweise, die Nutzungsdaten vom Webclient in der gleiche
 
 ![](./media/app-insights-web-track-usage/02-monitor-web-page.png)
 
-Fügen Sie den Code in eine Masterseite wie z. B. (in .NET) _Layout.cshtml oder in eine Includedatei ein, um sicherzustellen, dass er in all Ihren Seiten eingefügt wird.
+Fügen Sie den Code in eine Masterseite wie z. B. \(in .NET\) _Layout.cshtml oder in eine Includedatei ein, um sicherzustellen, dass er in all Ihren Seiten eingefügt wird.
 
-Der Codeausschnitt enthält den Instrumentationsschlüssel (iKey), der Ihre Ressource identifiziert. Um Daten an eine andere Ressource zu senden – beispielsweise zum Testen –, müssen Sie nur den iKey ersetzen.
+Der Codeausschnitt enthält den Instrumentationsschlüssel \(iKey\), der Ihre Ressource identifiziert. Um Daten an eine andere Ressource zu senden – beispielsweise zum Testen –, müssen Sie nur den iKey ersetzen.
 
 Veröffentlichen Sie Ihre Webseiten, oder verwenden Sie sie im Debugmodus, um Telemetriedaten zu generieren.
 
@@ -55,7 +55,7 @@ Melden Sie sich beim [Azure-Portal][portal] an, navigieren Sie zur Anwendungsres
 
 * **Benutzer:** Die Anzahl der unterschiedlichen aktiven Benutzer für den Zeitbereich des Diagramms 
 * **Sitzungen:** Die Anzahl der aktiven Sitzungen
-* **Seitenaufrufe** Zählt die Anzahl der Aufrufe von trackPageView(), wird in der Regel einmal auf jeder Webseite aufgerufen.
+* **Seitenaufrufe** Zählt die Anzahl der Aufrufe von trackPageView\(\), wird in der Regel einmal auf jeder Webseite aufgerufen.
 
 Klicken Sie auf ein Diagramm, um weitere Details anzuzeigen. Beachten Sie, dass Sie den Zeitraum der Diagramme ändern können.
 
@@ -67,7 +67,7 @@ Klicken Sie auf das Blatt "Verwendung", um das Benutzerdiagramm und weitere Deta
  
 ### Welche Browser oder Betriebssysteme verwenden sie?
 
-Gruppieren (Segmentieren) Sie Daten anhand einer Eigenschaft, z. B. Browser, Betriebssystem oder Ort:
+Gruppieren \(Segmentieren\) Sie Daten anhand einer Eigenschaft, z. B. Browser, Betriebssystem oder Ort:
 
 ![Wählen Sie ein Diagramm mit einer einzelnen Metrik, schalten Sie "Gruppierung" ein, und wählen Sie eine Eigenschaft](./media/app-insights-web-track-usage/03-browsers.png)
 
@@ -78,7 +78,7 @@ Sitzungen sind ein grundlegendes Konzept in Application Insights, um jedes Telem
 
 Für jede Sitzung werden umfangreiche Kontextinformationen gesammelt, wie etwa Geräteeigenschaften, geografischer Standort, Betriebssystem usw.
 
-Wenn Sie sowohl Client als auch Server ([ASP.NET][greenbrown] oder [J2EE][java]) instrumentieren, geben die SDKs die Sitzungs-ID zwischen Client und Server weiter, sodass Ereignisse auf beiden Seiten korreliert werden können.
+Wenn Sie sowohl Client als auch Server \([ASP.NET][greenbrown] oder [J2EE][java]\) instrumentieren, geben die SDKs die Sitzungs-ID zwischen Client und Server weiter, sodass Ereignisse auf beiden Seiten korreliert werden können.
 
 Bei der [Problemdiagnose][diagnostic] erhalten Sie alle Telemetriedaten zu der Sitzung, bei der ein Problem aufgetreten ist, einschließlich sämtlicher Anforderungen sowie protokollierter Ereignisse, Ausnahmen oder Ablaufverfolgungen.
 
@@ -101,7 +101,7 @@ Sie können diese Standardeinstellungen ändern, indem Sie den Codeausschnitt be
 * `sessionRenewalMs` : Der Zeitraum in Millisekunden, nach dem die Sitzung aufgrund der Inaktivität des Benutzers beendet wird. Standardwert: 30 Minuten.
 * `sessionExpirationMs` : Die maximale Sitzungslänge in Millisekunden. Wenn der Benutzer nach Ablauf dieses Zeitraums noch aktiv ist, zählt dies als weitere Sitzung. Standardwert: 24 Stunden.
 
-**Sitzungsdauer** ist eine [Metrik][metrics], die die Zeitspanne zwischen den ersten und letzten Telemetrieelementen einer Sitzung aufzeichnet. (Der Timeoutzeitraum ist darin nicht enthalten.)
+**Sitzungsdauer** ist eine [Metrik][metrics], die die Zeitspanne zwischen den ersten und letzten Telemetrieelementen einer Sitzung aufzeichnet. \(Der Timeoutzeitraum ist darin nicht enthalten.\)
 
 **Sitzungsanzahl** innerhalb eines bestimmten Intervalls ist als Anzahl eindeutiger Sitzungen mit Aktivität während dieses Intervalls definiert. Wenn Sie einen langen Zeitraum betrachten, wie z. B. die Anzahl der täglichen Sitzungen der vergangenen Woche, entspricht diese Anzahl üblicherweise der Gesamtanzahl von Sitzungen.
 
@@ -154,7 +154,7 @@ Verwenden Sie auch benutzerdefinierte Ereignisse. Sie können diese von Geräte-
 
     telemetryClient.trackEvent("GameEnd");
 
-*C#*
+*C\#*
 
     var tc = new Microsoft.ApplicationInsights.TelemetryClient(); 
     tc.TrackEvent("GameEnd");
@@ -203,7 +203,7 @@ Wir können bis auf Seitenaufrufe alle Arten von Telemetriedaten für diese Sitz
 
 ![](./media/app-insights-web-track-usage/10-filter.png)
  
-Jetzt können wir erkennen, dass sich dieser Benutzer nur angemeldet, um die neuesten Punktstände zu überprüfen. Vielleicht sollten wir eine User Story entwickeln, die dies vereinfacht. (Und wir sollten ein benutzerdefiniertes Ereignis implementieren, das meldet, wenn diese bestimmte User Story auftritt.)
+Jetzt können wir erkennen, dass sich dieser Benutzer nur angemeldet, um die neuesten Punktstände zu überprüfen. Vielleicht sollten wir eine User Story entwickeln, die dies vereinfacht. \(Und wir sollten ein benutzerdefiniertes Ereignis implementieren, das meldet, wenn diese bestimmte User Story auftritt.\)
 
 ## Filtern, Suchen und Segmentieren der Daten mit Eigenschaften
 Sie können beliebige Tags und numerische Werte an Ereignisse anfügen.
@@ -221,7 +221,7 @@ Sie können beliebige Tags und numerische Werte an Ereignisse anfügen.
     );
 ```
 
-*C# auf Server*
+*C\# auf Server*
 
 ```C#
 
@@ -281,9 +281,9 @@ Wenn Sie nicht wissen, welche Variante eines Features erfolgreicher sein wird, v
 
 Für dieses Verfahren fügen Sie unterschiedliche Tags an alle Telemetriedaten an, die von jeder Version Ihrer App gesendet wird. Dazu definieren Sie Eigenschaften im aktiven "TelemetryContext"-Element. Diese Standardeigenschaften werden jeder Telemetrienachricht hinzugefügt, die die Anwendung sendet, nicht nur Ihren benutzerdefinierten Nachrichten, sondern auch den Standardtelemetriedaten.
 
-Im Application Insights-Portal können Sie anschließend Ihre Daten anhand der Tags filtern und gruppieren (segmentieren), um die verschiedenen Versionen zu vergleichen.
+Im Application Insights-Portal können Sie anschließend Ihre Daten anhand der Tags filtern und gruppieren \(segmentieren\), um die verschiedenen Versionen zu vergleichen.
 
-*C# auf Server*
+*C\# auf Server*
 
 ```C#
 
@@ -347,6 +347,11 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 * Sprechen Sie Ihre Benutzer an! Analysen allein genügen nicht, sondern dienen zur Aufrechterhaltung einer guten Kundenbeziehung.
 
 
+## Referenzen
+
+* [Verwenden der API – Übersicht][api]
+* [JavaScript-API-Referenz](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
+
 ## Video
 
 > [AZURE.VIDEO usage-monitoring-application-insights]
@@ -366,4 +371,4 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

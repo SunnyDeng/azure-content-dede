@@ -13,10 +13,10 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="07/08/2015" 
+    ms.date="07/24/2015" 
     ms.author="sidneyh"/>
 
-#Tools für elastische Datenbanken – Glossar
+# Tools für elastische Datenbanken – Glossar
 Die folgenden Begriffe werden für die Tools für elastische Datenbanken von Azure SQL-Datenbank definiert. Die Tools umfassen die Clientbibliothek für elastische Datenbanken , das Split-Merge-Tool, elastische Pools und Abfragen.
 
 ![Begriffe zur elastischen Skalierung][1]
@@ -31,7 +31,7 @@ Die folgenden Begriffe werden für die Tools für elastische Datenbanken von Azu
 
 **Lokale Shard-Zuordnung:** wird für einen Shard gespeichert und enthält die Zuordnungen für die Shardlets, die sich in dem Shard befinden.
 
-**Abfrage mehrerer Shards:** die Möglichkeit, eine Abfrage für mehrere Shards durchzuführen. Die Resultsets werden über die UNION ALL-Semantik zurückgegeben (auch als "Auffächerungsabfrage" bezeichnet). Vgl. **Datenabhängiges Routing**.
+**Abfrage mehrerer Shards:** die Möglichkeit, eine Abfrage für mehrere Shards durchzuführen. Die Resultsets werden über die UNION ALL-Semantik zurückgegeben \(auch als "Auffächerungsabfrage" bezeichnet\). Vgl. **Datenabhängiges Routing**.
 
 **Bereichs-Shard-Zuordnung:** eine Shard-Zuordnung, in der die Shard-Verteilungsstrategie auf mehreren Bereichen zusammenhängender Werte basiert.
 
@@ -68,9 +68,9 @@ Die folgenden Begriffe werden für die Tools für elastische Datenbanken von Azu
 
 **Shard:** das horizontale Partitionieren identisch strukturierter Daten über mehrere Datenbanken anhand eines Sharding-Schlüssels.
 
-**Aufteilen:** das Verschieben mehrerer Shardlets aus einem Shard in einen anderen (i. d. R. neuen) Shard. Als Aufteilungspunkt wird ein Sharding-Schlüssel vom Benutzer bereitgestellt.
+**Aufteilen:** das Verschieben mehrerer Shardlets aus einem Shard in einen anderen \(i. d. R. neuen\) Shard. Als Aufteilungspunkt wird ein Sharding-Schlüssel vom Benutzer bereitgestellt.
 
-**Vertikales Skalieren:** das Heraufskalieren (oder Herunterskalieren) der Leistungsstufe eines einzelnen Shards. Dies erfolgt z. B. durch Ändern eines Shards von Standard in Premium (wodurch mehr Computerressourcen zur Verfügung stehen).
+**Vertikales Skalieren:** das Heraufskalieren \(oder Herunterskalieren\) der Leistungsstufe eines einzelnen Shards. Dies erfolgt z. B. durch Ändern eines Shards von Standard in Premium \(wodurch mehr Computerressourcen zur Verfügung stehen\).
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
@@ -80,4 +80,4 @@ Die folgenden Begriffe werden für die Tools für elastische Datenbanken von Azu
 [3]: ./media/sql-database-elastic-scale-glossary/h_versus_vert.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -25,7 +25,7 @@ Sie können den Sicherungskatalog durch Erweitern des Knotens **Sicherungskatalo
 
 - Wenn Sie auf den Namen der Volumegruppe klicken, wird im Bereich **Ergebnisse** die Anzahl der lokalen und cloudbasierten Momentaufnahmen angezeigt, die für diese Volumegruppe verfügbar sind. 
 
-- Wenn Sie auf **Lokale Momentaufnahme** oder **Cloud-Momentaufnahme** klicken, werden im Bereich **Ergebnisse** die folgenden Informationen über jede Sicherungsmomentaufnahme angezeigt (je nach Einstellungen in der **Ansicht**):
+- Wenn Sie auf **Lokale Momentaufnahme** oder **Cloud-Momentaufnahme** klicken, werden im Bereich **Ergebnisse** die folgenden Informationen über jede Sicherungsmomentaufnahme angezeigt \(je nach Einstellungen in der **Ansicht**\):
 
     - **Name** – die Zeit, zu der die Momentaufnahme erstellt wurde. 
 
@@ -35,7 +35,7 @@ Sie können den Sicherungskatalog durch Erweitern des Knotens **Sicherungskatalo
 
     - **Verfügbar** – ob die Momentaufnahme aktuell verfügbar ist. „True“ gibt an, dass die Momentaufnahme verfügbar ist und wiederhergestellt werden kann. „False“ gibt an, dass die Momentaufnahme nicht mehr verfügbar ist.
 
-    - **Importiert** – ob die Sicherung importiert wurde. **True** gibt an, dass die Sicherung zum Zeitpunkt der Konfiguration des Geräts in StorSimple Snapshot Manager aus dem StorSimple Manager-Dienst importiert wurde. **False** gibt an, dass er nicht importiert, sondern vom StorSimple Snapshot Manager erstellt wurde. (Sie können problemlos eine importierte Volumegruppe identifizieren, da ein Suffix hinzugefügt wird, das das Gerät identifiziert, aus dem die Volume-Gruppe importiert wurde.)
+    - **Importiert** – ob die Sicherung importiert wurde. **True** gibt an, dass die Sicherung zum Zeitpunkt der Konfiguration des Geräts in StorSimple Snapshot Manager aus dem StorSimple Manager-Dienst importiert wurde. **False** gibt an, dass er nicht importiert, sondern vom StorSimple Snapshot Manager erstellt wurde. \(Sie können problemlos eine importierte Volumegruppe identifizieren, da ein Suffix hinzugefügt wird, das das Gerät identifiziert, aus dem die Volume-Gruppe importiert wurde.\)
 
     ![Sicherungskatalog](./media/storsimple-snapshot-manager-manage-backup-catalog/HCS_SSM_Backup_catalog.png)
 
@@ -43,7 +43,7 @@ Sie können den Sicherungskatalog durch Erweitern des Knotens **Sicherungskatalo
 
     - **Name** – das Volume, das durch den Laufwerkbuchstaben identifiziert wird. 
 
-    - **Lokaler Namen** – der lokale Name des Laufwerks (falls verfügbar).
+    - **Lokaler Namen** – der lokale Name des Laufwerks \(falls verfügbar\).
 
     - **Gerät** – der Name des Geräts, auf dem sich das Volume befindet.
 
@@ -89,7 +89,7 @@ Der StorSimple Snapshot Manager zeigt die folgende Meldung an, während aus Vors
 
 ## Klonen eines Volumes oder einer Volumegruppe
 
-Verwenden Sie das folgende Verfahren, um ein Duplikat (Klon) eines Volumes oder einer Volumegruppe zu erstellen.
+Verwenden Sie das folgende Verfahren, um ein Duplikat \(Klon\) eines Volumes oder einer Volumegruppe zu erstellen.
 
 #### So klonen Sie ein Volume oder eine Volumegruppe
 
@@ -105,13 +105,13 @@ Verwenden Sie das folgende Verfahren, um ein Duplikat (Klon) eines Volumes oder 
 
     1. Geben Sie im Textfeld **Name** einen Namen für das geklonte Volume ein. Dieser Name wird im Knoten **Volumes** angezeigt. 
 
-    2. (Optional) Wählen Sie **Laufwerk** aus, und anschließend einen Laufwerkbuchstaben aus der Dropdown-Liste.
+    2. \(Optional\) Wählen Sie **Laufwerk** aus, und anschließend einen Laufwerkbuchstaben aus der Dropdown-Liste.
 
-    3. (Optional) Wählen Sie **Ordner (NTFS)** aus, und geben Sie einen Ordnerpfad ein oder klicken Sie auf „Durchsuchen“, und wählen dann einen Speicherort für den Ordner.
+    3. \(Optional\) Wählen Sie **Ordner \(NTFS\)** aus, und geben Sie einen Ordnerpfad ein oder klicken Sie auf „Durchsuchen“, und wählen dann einen Speicherort für den Ordner.
 
     4. Klicken Sie auf **Erstellen**.
 
-5. Wenn der Klonvorgang abgeschlossen ist, müssen Sie das geklonte Volume initialisieren. Starten Sie den Server-Manager, und starten Sie dann die Datenträgerverwaltung. Ausführliche Anweisungen finden Sie unter [Laden von Volumes](storsimple-snapshot-manager-manage-volumes.md#mount-volumes). Nach der Initialisierung wird das Volume unter dem Knoten **Volumes** im Fenster **Bereich** aufgeführt. Wenn Sie das aufgeführte Volume nicht erscheint, aktualisieren Sie die Liste der Volumes (mit der rechten Maustaste auf den Knoten **Volumes** klicken, und dann auf **Aktualisieren**).
+5. Wenn der Klonvorgang abgeschlossen ist, müssen Sie das geklonte Volume initialisieren. Starten Sie den Server-Manager, und starten Sie dann die Datenträgerverwaltung. Ausführliche Anweisungen finden Sie unter [Laden von Volumes](storsimple-snapshot-manager-manage-volumes.md#mount-volumes). Nach der Initialisierung wird das Volume unter dem Knoten **Volumes** im Fenster **Bereich** aufgeführt. Wenn Sie das aufgeführte Volume nicht erscheint, aktualisieren Sie die Liste der Volumes \(mit der rechten Maustaste auf den Knoten **Volumes** klicken, und dann auf **Aktualisieren**\).
 
 ## Löschen einer Sicherung
 
@@ -151,15 +151,15 @@ Bevor Sie loslegen, stellen Sie sicher, dass Sie über eine aktuelle Sicherung d
 
    1. Geben Sie im Textfeld **Name** einen Namen für das geklonte Volume ein. Dieser Name wird im Knoten **Volumes** angezeigt.
 
-   2. (Optional) Wählen Sie **Laufwerk** aus, und anschließend einen Laufwerkbuchstaben aus der Dropdown-Liste.
+   2. \(Optional\) Wählen Sie **Laufwerk** aus, und anschließend einen Laufwerkbuchstaben aus der Dropdown-Liste.
 
-   3. (Optional) Wählen Sie **Ordner (NTFS)** aus, und geben Sie einen Ordnerpfad ein oder klicken Sie auf **Durchsuchen**, und wählen dann einen Speicherort für den Ordner.
+   3. \(Optional\) Wählen Sie **Ordner \(NTFS\)** aus, und geben Sie einen Ordnerpfad ein oder klicken Sie auf **Durchsuchen**, und wählen dann einen Speicherort für den Ordner.
 
    4. Klicken Sie auf **Erstellen**.
 
 5. Wenn der Klonvorgang abgeschlossen ist, müssen Sie das geklonte Volume initialisieren. Starten Sie den Server-Manager, und starten Sie dann die Datenträgerverwaltung. Ausführliche Anweisungen finden Sie unter [Laden von Volumes](storsimple-snapshot-manager-manage-volumes.md#mount-volumes). Nach der Initialisierung wird das Volume unter dem Knoten **Volumes** im Fenster **Bereich** aufgeführt.
 
-    Wenn Sie das aufgeführte Volume nicht erscheint, aktualisieren Sie die Liste der Volumes (mit der rechten Maustaste auf den Knoten **Volumes** klicken, und dann auf **Aktualisieren**).
+    Wenn Sie das aufgeführte Volume nicht erscheint, aktualisieren Sie die Liste der Volumes \(mit der rechten Maustaste auf den Knoten **Volumes** klicken, und dann auf **Aktualisieren**\).
 
 6. Öffnen Sie den NTFS-Ordner, der das geklonte Volume enthält, erweitern Sie den Knoten **Volumes**, und öffnen Sie dann das geklonte Volume. Suchen Sie die Datei, die Sie wiederherstellen möchten, und kopieren Sie sie auf das primäre Volume.
 
@@ -181,7 +181,7 @@ Sie sollten die StorSimple Snapshot Manager-Datenbank auf dem Hostcomputer regel
 
     4. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Beenden des Dienstes**.
 
-2. Navigieren Sie auf dem Hostcomputer zu C:\ProgramData\Microsoft\StorSimple\BACatalog.
+2. Navigieren Sie auf dem Hostcomputer zu C:\\ProgramData\\Microsoft\\StorSimple\\BACatalog.
 
     >[AZURE.NOTE]ProgramData ist ein versteckter Ordner.
  
@@ -197,7 +197,7 @@ Sie sollten die StorSimple Snapshot Manager-Datenbank auf dem Hostcomputer regel
 
     3. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Neustart des Dienstes**.
 
-5. Navigieren Sie auf dem Hostcomputer zu C:\ProgramData\Microsoft\StorSimple\BACatalog.
+5. Navigieren Sie auf dem Hostcomputer zu C:\\ProgramData\\Microsoft\\StorSimple\\BACatalog.
 
 6. Löschen Sie die XML-Katalogdatei, und ersetzen Sie sie durch die Sicherungskopie, die Sie erstellt haben.
 
@@ -207,4 +207,4 @@ Sie sollten die StorSimple Snapshot Manager-Datenbank auf dem Hostcomputer regel
 
 Informieren Sie sich unter den verfügbaren [StorSimple Snapshot Manager-Aufgaben und -Workflows](storsimple-what-is-snapshot-manager.md#storsimple-snapshot-manager-tasks-and-workflows).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

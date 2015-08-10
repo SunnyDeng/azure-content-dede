@@ -25,9 +25,9 @@ In diesem Abschnitt mit häufig gestellten Fragen werden Fragen zur Azure Multi-
 
 **Wo erhalte ich Hilfe zur Azure Multi-Factor Authentication?**
 
-[Durchsuchen der Microsoft Knowledge Base (KB)](http://search.microsoft.com/supportresults.aspx?form=mssupport&q=phonefactor)
+[Durchsuchen der Microsoft Knowledge Base \(KB\)](http://search.microsoft.com/supportresults.aspx?form=mssupport&q=phonefactor)
 
-- Suchen Sie in der Microsoft Knowledge Base (KB) nach technischen Lösungen für häufige Probleme und nach Unterstützung für Microsoft Azure Multi-Factor Authentication-Server (Phone Factor).
+- Suchen Sie in der Microsoft Knowledge Base \(KB\) nach technischen Lösungen für häufige Probleme und nach Unterstützung für Microsoft Azure Multi-Factor Authentication-Server \(Phone Factor\).
 
 [Microsoft Azure Active Directory-Foren](https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD)
 
@@ -37,19 +37,19 @@ In diesem Abschnitt mit häufig gestellten Fragen werden Fragen zur Azure Multi-
 
 - Kunden der älteren Phone Factor-Version, die Fragen zum Zurücksetzen des Kennworts haben oder hierbei Hilfe benötigen, können den unten angegebenen Link verwenden und eine Supportanfrage erstellen.
 
-[Microsoft Azure Multi-Factor Authentication-Server (Phone Factor) – Kundensupport](https://support.microsoft.com/oas/default.aspx?prid=14947)
+[Microsoft Azure Multi-Factor Authentication-Server \(Phone Factor\) – Kundensupport](https://support.microsoft.com/oas/default.aspx?prid=14947)
 
 - Verwenden Sie diesen Link, wenn Sie mit einem Microsoft-Supportmitarbeiter Kontakt aufnehmen möchten. Sie werden gebeten, einige Fragen zu beantworten, sodass wir die für Sie geeigneten Supportoptionen ermitteln können. Mögliche Supportoptionen sind E-Mail, Online-Übermittlung oder Telefonsupport. 
 
-[Allgemeine Anfragen zu Microsoft Azure Multi-Factor Authentication-Server (Phone Factor)](http://azure.microsoft.com/services/multi-factor-authentication)
+[Allgemeine Anfragen zu Microsoft Azure Multi-Factor Authentication-Server \(Phone Factor\)](http://azure.microsoft.com/services/multi-factor-authentication)
 
-- Wenn Sie weitere Informationen zu Microsoft Azure Multi-Factor Authentication-Server (Phone Factor) wünschen oder eine Frage zu Bezugsquellen und den verschiedenen Supportoptionen für das Produkt haben, besuchen oder senden Sie eine E-Mail an [pfsales@microsoft.com](mailto:pfsales@microsoft.com). 
+- Wenn Sie weitere Informationen zu Microsoft Azure Multi-Factor Authentication-Server \(Phone Factor\) wünschen oder eine Frage zu Bezugsquellen und den verschiedenen Supportoptionen für das Produkt haben, besuchen oder senden Sie eine E-Mail an [pfsales@microsoft.com](mailto:pfsales@microsoft.com). 
 
 
 
-**F: Wie behandelt der Azure Multi-Factor Authentication-Server Benutzerdaten?**
+**F: Wie werden Benutzerdaten vom Azure Multi-Factor Authentication-Server behandelt?**
 
-Bei lokaler Verwendung des Multi-Factor Authentication (MFA)-Servers werden die Daten eines Benutzers auf den lokalen Servern gespeichert. Daten werden nicht dauerhaft in der Cloud gespeichert. Wenn der Benutzer eine zweistufige Authentifizierung durchführt, sendet der MFA-Server Daten an den Azure MFA-Clouddienst, um die Authentifizierung auszuführen. Wenn diese Authentifizierungsanforderungen an den Clouddienst gesendet werden, werden in der Anforderung und den Protokollen die folgenden Felder gesendet, damit sie in den Authentifizierungs-/Verwendungsberichten des Kunden verfügbar sind. Einige Felder sind optional und können für den Multi-Factor Authentication-Server aktiviert oder deaktiviert werden. Für die Kommunikation zwischen MFA-Server und MFA-Clouddienst wird SSL/TLS über den ausgehenden Port 443 verwendet. Die Felder lauten:
+Bei lokaler Verwendung des Multi-Factor Authentication \(MFA\)-Servers werden die Daten eines Benutzers auf den lokalen Servern gespeichert. Daten werden nicht dauerhaft in der Cloud gespeichert. Wenn der Benutzer eine zweistufige Authentifizierung durchführt, sendet der MFA-Server Daten an den Azure MFA-Clouddienst, um die Authentifizierung auszuführen. Wenn diese Authentifizierungsanforderungen an den Clouddienst gesendet werden, werden in der Anforderung und den Protokollen die folgenden Felder gesendet, damit sie in den Authentifizierungs-/Verwendungsberichten des Kunden verfügbar sind. Einige Felder sind optional und können für den Multi-Factor Authentication-Server aktiviert oder deaktiviert werden. Für die Kommunikation zwischen MFA-Server und MFA-Clouddienst wird SSL/TLS über den ausgehenden Port 443 verwendet. Die Felder lauten:
 
 - Eindeutige ID: Benutzername oder interne ID des MFA-Servers
 - Vor- und Nachname: optional
@@ -64,7 +64,7 @@ Bei lokaler Verwendung des Multi-Factor Authentication (MFA)-Servers werden die 
 
 
 
-Zusätzlich zu den obigen Feldern werden auch das Authentifizierungsergebnis (Erfolg/Ablehnung) und der Grund für etwaige Ablehnungen mit den Authentifizierungsdaten gespeichert. Sie stehen in den Authentifizierungs-/Verwendungsberichten zur Verfügung.
+Zusätzlich zu den obigen Feldern werden auch das Authentifizierungsergebnis \(Erfolg/Ablehnung\) und der Grund für etwaige Ablehnungen mit den Authentifizierungsdaten gespeichert. Sie stehen in den Authentifizierungs-/Verwendungsberichten zur Verfügung.
 
 
 
@@ -87,7 +87,7 @@ Die Abrechnung basiert auf der Anzahl der Benutzer, für die Multi-Factor Authen
 
 **F: Was kann ich tun, wenn ich auf meinem Telefon keine Antwort erhalte oder wenn ich mein Telefon vergessen habe?**
 
-Wenn Sie zuvor ein alternatives Telefon als Ersatzanschluss konfiguriert haben, versuchen Sie es erneut, und wählen Sie auf der Anmeldeseite an der entsprechenden Aufforderung den Ersatzanschluss aus. Wenn Sie keine andere Methode konfiguriert haben, wenden Sie sich an Ihren Administrator, und bitten Sie ihn, die für Ihr primäres Telefon angegebene Nummer (mobil oder Büro) zu aktualisieren.
+Wenn Sie zuvor ein alternatives Telefon als Ersatzanschluss konfiguriert haben, versuchen Sie es erneut, und wählen Sie auf der Anmeldeseite an der entsprechenden Aufforderung den Ersatzanschluss aus. Wenn Sie keine andere Methode konfiguriert haben, wenden Sie sich an Ihren Administrator, und bitten Sie ihn, die für Ihr primäres Telefon angegebene Nummer \(mobil oder Büro\) zu aktualisieren.
 
 **F: Ich habe einen Benutzer aus einer Administratorrolle entfernt und vergessen, die Multi-Factor Authentication zu deaktivieren. Nun wird die Funktion nicht mehr in der Liste angezeigt. Wie kann ich die Funktion deaktivieren?**
 
@@ -101,11 +101,11 @@ Wenn Sie zuvor ein alternatives Telefon als Ersatzanschluss konfiguriert haben, 
 
 **F: Wie gehe ich als Administrator vor, wenn ein Benutzer meldet, dass sein Konto gesperrt wurde?**
 
-Sie können das Benutzerkonto zurücksetzen, indem Sie das erneute Durchführen des Registrierungsprozesses erzwingen. Weitere Informationen finden Sie unter [Verwalten von Benutzereinstellungen mit Azure Multi-Factor Authentication (MFA) in der Cloud](multi-factor-authentication-manage-users-and-devices.md).
+Sie können das Benutzerkonto zurücksetzen, indem Sie das erneute Durchführen des Registrierungsprozesses erzwingen. Weitere Informationen finden Sie unter [Verwalten von Benutzereinstellungen mit Azure Multi-Factor Authentication \(MFA\) in der Cloud](multi-factor-authentication-manage-users-and-devices.md).
 
 **F: Wie gehe ich vor, wenn ein Gerät eines Benutzers verloren gegangen ist oder gestohlen wurde, auf dem App-Kennwörter verwendet werden?**
 
-Sie können alle App-Kennwörter des Benutzers löschen, um nicht autorisierte Zugriffe zu verhindern. Sobald ein Ersatzgerät verfügbar ist, kann der Benutzer neue Kennwörter erstellen. Weitere Informationen finden Sie unter [Verwalten von Benutzereinstellungen mit Azure Multi-Factor Authentication (MFA) in der Cloud](multi-factor-authentication-manage-users-and-devices.md).
+Sie können alle App-Kennwörter des Benutzers löschen, um nicht autorisierte Zugriffe zu verhindern. Sobald ein Ersatzgerät verfügbar ist, kann der Benutzer neue Kennwörter erstellen. Weitere Informationen finden Sie unter [Verwalten von Benutzereinstellungen mit Azure Multi-Factor Authentication \(MFA\) in der Cloud](multi-factor-authentication-manage-users-and-devices.md).
 
 **F: Wie gehe ich vor, wenn die Anmeldung eines Benutzers in Nicht-Browser-Apps fehlschlägt?**
 
@@ -117,7 +117,7 @@ Informationen zum Erstellen von App-Kennwörtern finden Sie in der [Hilfe zu App
 
 >[AZURE.NOTE]Moderne Authentifizierung für Office 2013-Clients
 >
-> Office 2013-Clients (einschließlich Outlook) unterstützen jetzt neue Authentifizierungsprotokolle und bieten die Möglichkeit zum Aktivieren von Multi-Factor Authentication. Damit sind nach der Aktivierung keine App-Kennwörter mehr für Office 2013-Clients erforderlich. Weitere Informationen finden Sie unter [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) („Öffentliche Preview für moderne Authentifizierung in Office 2013“, in englischer Sprache).
+> Office 2013-Clients \(einschließlich Outlook\) unterstützen jetzt neue Authentifizierungsprotokolle und bieten die Möglichkeit zum Aktivieren von Multi-Factor Authentication. Damit sind nach der Aktivierung keine App-Kennwörter mehr für Office 2013-Clients erforderlich. Weitere Informationen finden Sie unter [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) \(„Öffentliche Preview für moderne Authentifizierung in Office 2013“, in englischer Sprache\).
 
 **F: Was kann ich tun, wenn ich keine Textnachricht erhalte oder beim Antworten auf die Textnachricht ein Timeout auftritt?**
 
@@ -141,8 +141,8 @@ Außerdem ist die Überprüfung per Textnachricht in einigen Ländern zuverläss
 
 **F: Wie gehe ich vor, wenn der Fehler „0x800434D4L“ angezeigt wird, während ich versuche, mich mit einer Nicht-Browser-Anwendung anzumelden?**
 
-Derzeit kann die zusätzliche Sicherheitsüberprüfung nur für Anwendungen und Dienste verwendet werden, auf die Sie über Ihren Browser zugreifen können. Nicht-Browser-Anwendungen (auch bezeichnet als Rich Client-Anwendungen), die auf dem lokalen Computer installiert sind, z. B. Windows Powershell, können nicht zusammen mit Konten verwendet werden, bei denen eine zusätzliche Sicherheitsüberprüfung erforderlich ist. In diesem Fall wird von der Anwendung der Fehler "0x800434D4L" ausgegeben.
+Derzeit kann die zusätzliche Sicherheitsüberprüfung nur für Anwendungen und Dienste verwendet werden, auf die Sie über Ihren Browser zugreifen können. Nicht-Browser-Anwendungen \(auch bezeichnet als Rich Client-Anwendungen\), die auf dem lokalen Computer installiert sind, z. B. Windows Powershell, können nicht zusammen mit Konten verwendet werden, bei denen eine zusätzliche Sicherheitsüberprüfung erforderlich ist. In diesem Fall wird von der Anwendung der Fehler "0x800434D4L" ausgegeben.
 
-Als Problemumgehung können Sie zusätzlich zu Ihrem normalen Konto ein separates Benutzerkonto für Administratoraufgaben erstellen. Anschließend können Sie die Postfächer beider Konten miteinander verknüpfen, sodass Sie für die Anmeldung bei Outlook lediglich ihr normales Konto benötigen. Weitere Informationen hierzu finden Sie unter [Einem Administrator das Öffnen und Anzeigen des Inhalts des Postfachs eines Benutzers ermöglichen](http://help.outlook.com/141/gg709759(d=loband).aspx?sl=1).
+Als Problemumgehung können Sie zusätzlich zu Ihrem normalen Konto ein separates Benutzerkonto für Administratoraufgaben erstellen. Anschließend können Sie die Postfächer beider Konten miteinander verknüpfen, sodass Sie für die Anmeldung bei Outlook lediglich ihr normales Konto benötigen. Weitere Informationen hierzu finden Sie unter \[Einem Administrator das Öffnen und Anzeigen des Inhalts des Postfachs eines Benutzers ermöglichen\]http://help.outlook.com/141/gg709759(d=loband).aspx?sl=1).
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

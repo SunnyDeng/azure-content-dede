@@ -27,7 +27,7 @@ In StorSimple Snapshot Manager werden die folgenden Aktionen in allen Aktionsmen
 - Liste exportieren 
 - Hilfe 
 
-Diese Aktionen sind Teil der Microsoft Management Console (MMC) und nicht spezifisch für StorSimple Snapshot Manager.
+Diese Aktionen sind Teil der Microsoft Management Console \(MMC\) und nicht spezifisch für StorSimple Snapshot Manager.
 
 In diesem Lernprogramm werden diese Aktionen und ihre Verwendung in StorSimple Snapshot Manager beschrieben.
 
@@ -93,9 +93,9 @@ Mit der Aktion **Aktualisieren** können Sie das Konsolenfenster aktualisieren.
 
 ## Liste exportieren
 
-Mit der Aktion **Liste exportieren** können Sie eine Liste in einer Datei mit kommagetrennten Werten (CSV) speichern. Beispielsweise können Sie die Liste der Sicherungsrichtlinien oder den Sicherungskatalog exportieren. Sie können die CSV-Datei dann zur Analyse in eine Tabellenkalkulationsanwendung importieren.
+Mit der Aktion **Liste exportieren** können Sie eine Liste in einer Datei mit kommagetrennten Werten \(CSV\) speichern. Beispielsweise können Sie die Liste der Sicherungsrichtlinien oder den Sicherungskatalog exportieren. Sie können die CSV-Datei dann zur Analyse in eine Tabellenkalkulationsanwendung importieren.
 
-#### So speichern Sie eine Liste in einer Datei mit kommagetrennten Werten (CSV)
+#### So speichern Sie eine Liste in einer Datei mit kommagetrennten Werten \(CSV\)
 
 1. Klicken Sie auf das Desktopsymbol, um den StorSimple Snapshot Manager zu starten. 
 
@@ -127,4 +127,4 @@ Mit der Aktion **Liste exportieren** können Sie eine Liste in einer Datei mit k
 
 [Erfahren Sie mehr über die Benutzeroberfläche des StorSimple Snapshot Managers](storsimple-use-snapshot-manager.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

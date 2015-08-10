@@ -42,7 +42,7 @@ Es gibt zwei Arten von Webtests:
 
 Melden Sie sich bei [Microsoft Azure](http://azure.com) an, wechseln Sie zum [Azure-Portal](https://portal.azure.com), und erstellen Sie eine neue Application Insights-Ressource.
 
-![Neu > Application Insights](./media/app-insights-monitor-web-app-availability/11-new-app.png)
+![Neu \> Application Insights](./media/app-insights-monitor-web-app-availability/11-new-app.png)
 
 Das Blatt "Übersicht" für die neue Ressource wird geöffnet. Um dieses zu einem beliebigen Zeitpunkt im [Azure-Portal](https://portal.azure.com) zu finden, klicken Sie auf "Durchsuchen".
 
@@ -74,7 +74,7 @@ Sie können weitere Tests für beliebig viele URLs hinzufügen. Neben dem Testen
 
 ### <a name="monitor"></a>3. Anzeigen von Verfügbarkeitsberichten
 
-Klicken Sie nach 1 bis 2 Minuten auf dem Blatt "Verfügbarkeit/Webtests" auf "Aktualisieren". (Die Aktualisierung erfolgt nicht automatisch.)
+Klicken Sie nach 1 bis 2 Minuten auf dem Blatt "Verfügbarkeit/Webtests" auf "Aktualisieren". \(Die Aktualisierung erfolgt nicht automatisch.\)
 
 ![Ergebnisübersicht im Startfenster](./media/app-insights-monitor-web-app-availability/14-availSummary.png)
 
@@ -129,7 +129,7 @@ Sie können ein Szenario überwachen, das eine Sequenz mit mehreren URLs umfasst
 
 Um einen mehrstufigen Ttest zu erstellen, zeichnen das Szenario mit Visual Studio auf. Laden Sie dann die Aufzeichnung in Application Insights hoch. Application Insights wiederholt das Szenario in bestimmten Abständen und überprüft die Antworten.
 
-#### 1. Aufzeichnen eines Szenarios
+#### 1\. Aufzeichnen eines Szenarios
 
 Verwenden Sie Visual Studio Ultimate, um eine Websitzung aufzuzeichnen.
 
@@ -154,9 +154,9 @@ Verwenden Sie Visual Studio Ultimate, um eine Websitzung aufzuzeichnen.
     ![Öffnen Sie in Visual Studio die WEBTEST-Datei, und klicken Sie auf "Ausführen".](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-run.png)
  
 
-(Fügen Sie keinen Schleifen in den Webtestcode ein.)
+\(Fügen Sie keinen Schleifen in den Webtestcode ein.\)
 
-#### 2. Hochladen des Webtests in Application Insights
+#### 2\. Hochladen des Webtests in Application Insights
 
 1. Erstellen Sie im Application Insights-Portal einen neuen Webtest.
 
@@ -229,4 +229,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

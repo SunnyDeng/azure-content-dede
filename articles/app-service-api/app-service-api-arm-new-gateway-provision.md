@@ -65,7 +65,7 @@ Diese Vorlage definiert eine Variable, die beim Bereitstellen der Ressourcen ver
       "packageId": "Microsoft.ApiApp"
     }
     
-Der Wert wird nachstehend als **variables('packageId')** verwendet.
+Der Wert wird nachstehend als **variables\('packageId'\)** verwendet.
 
 ## Bereitzustellende Ressourcen
 
@@ -126,7 +126,7 @@ Beachten Sie, dass **kind** auf **gateway** festgelegt ist. Hierdurch wird das A
             },
             {
               "name": "EmaStorage",
-              "value": "D:\home\data\apiapps"
+              "value": "D:\\home\\data\\apiapps"
             },
             {
               "name": "WEBSITE_START_SCM_ON_SITE_CREATION",
@@ -300,4 +300,4 @@ Beachten Sie, dass die Namen der hostenden Web-App und des Gateways als Eigensch
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -69,8 +69,13 @@
    <td valign="middle"><p>1</p></td>
    <td valign="middle"><p>50</p></td>
 </tr>
+<tr>
+   <td valign="middle"><p>Warnungsregeln pro Abonnement</p></td>
+   <td valign="middle"><p>250</p></td>
+   <td valign="middle"><p>250</p></td>
+</tr>
 </table>
 
 <sup>1</sup> Zusätzliche kleine Instanzen zählen als ganzer Prozessorkern im Sinn des Limits, obwohl nur ein Teil eines Kerns verwendet wird.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

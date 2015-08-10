@@ -18,7 +18,7 @@
 
 # Erstellen und Verwalten von elastischen Datenbankaufträgen
 
-**Elastische Datenbankpools** bieten ein vorhersagbares Modell zur Bereitstellung einer großen Anzahl von Datenbanken. Sie können die minimalen Datendurchsatzeinheiten (DTUs) für jede Datenbank zu einem bestimmten Preis festlegen. Das Verwalten von häufig verwendeten Objekten in diesen Datenbanken erledigen Sie am einfachsten mit **elastischen Datenbankaufträgen**. Der Dienst ermöglicht es Ihnen, T-SQL-Skripts für alle Datenbanken im Pool in einem einzigen Vorgang auszuführen. Beispielsweise können Sie eine Richtlinie für jede Datenbank festlegen, sodass nur Personen mit den richtigen Anmeldeinformationen zum Anzeigen vertraulicher Daten berechtigt sind.
+**Elastische Datenbankpools** bieten ein vorhersagbares Modell zur Bereitstellung einer großen Anzahl von Datenbanken. Sie können die minimalen Datendurchsatzeinheiten \(DTUs\) für jede Datenbank zu einem bestimmten Preis festlegen. Das Verwalten von häufig verwendeten Objekten in diesen Datenbanken erledigen Sie am einfachsten mit **elastischen Datenbankaufträgen**. Der Dienst ermöglicht es Ihnen, T-SQL-Skripts für alle Datenbanken im Pool in einem einzigen Vorgang auszuführen. Beispielsweise können Sie eine Richtlinie für jede Datenbank festlegen, sodass nur Personen mit den richtigen Anmeldeinformationen zum Anzeigen vertraulicher Daten berechtigt sind.
 
 ## Voraussetzungen
 
@@ -29,7 +29,7 @@
 ## Erstellen von Aufträgen
 
 1. Klicken Sie auf dem Blatt für elastische Datenbankauftragspools auf **Auftrag erstellen**.
-2. Geben Sie den Benutzernamen und das Kennwort des Datenbankadministrators (der bei der Installation der Aufträge erstellt wurde) für die Auftragsverwaltungs-Datenbank (Metadatenspeicher für Aufträge) ein.
+2. Geben Sie den Benutzernamen und das Kennwort des Datenbankadministrators \(der bei der Installation der Aufträge erstellt wurde\) für die Auftragsverwaltungs-Datenbank \(Metadatenspeicher für Aufträge\) ein.
 
 	![Benennen Sie den Auftrag, geben Sie den Code ein, oder fügen Sie ihn ein, und klicken Sie auf "Ausführen".][1]
 2. Geben Sie auf dem Blatt **Auftrag erstellen** einen Namen für den Auftrag ein.
@@ -41,7 +41,7 @@
 
 ## Ausführen idempotenter Aufträge
 
-Beim Ausführen eines Skripts für einen Satz von Datenbanken müssen Sie darauf achten, dass das Skript idempotent ist. Das heißt, das Skript muss mehrmals ausgeführt werden können, auch wenn es zuvor in einem unvollständigen Zustand Fehler verursacht hat. Wenn beispielsweise ein Skript fehlschlägt, wird der Auftrag automatisch wiederholt, bis er erfolgreich abgeschlossen wurde (mit Einschränkungen, da die Wiederholungslogik irgendwann keine Wiederholung mehr ausführt). Die Vorgehensweise dabei ist, eine "IF EXISTS"-Klausel zu verwenden und jede gefundene Instanz zu löschen, bevor Sie ein neues Objekt erstellen. Im Folgenden ist ein Beispiel dargestellt:
+Beim Ausführen eines Skripts für einen Satz von Datenbanken müssen Sie darauf achten, dass das Skript idempotent ist. Das heißt, das Skript muss mehrmals ausgeführt werden können, auch wenn es zuvor in einem unvollständigen Zustand Fehler verursacht hat. Wenn beispielsweise ein Skript fehlschlägt, wird der Auftrag automatisch wiederholt, bis er erfolgreich abgeschlossen wurde \(mit Einschränkungen, da die Wiederholungslogik irgendwann keine Wiederholung mehr ausführt\). Die Vorgehensweise dabei ist, eine "IF EXISTS"-Klausel zu verwenden und jede gefundene Instanz zu löschen, bevor Sie ein neues Objekt erstellen. Im Folgenden ist ein Beispiel dargestellt:
 
 	IF EXISTS (SELECT name FROM sys.indexes
             WHERE name = N'IX_ProductVendor_VendorID')
@@ -87,7 +87,7 @@ Nachdem ein Auftrag gestartet wurde, können Sie seinen Fortschritt überprüfen
 
 	![Klicken Sie auf "Aufträge verwalten".][2]
 
-2. Klicken Sie auf den Namen (a) eines Auftrags. Der **STATUS** kann "Abgeschlossen" oder "Fehlgeschlagen" lauten. Die Auftragsdetails (b) werden mit Datum und Uhrzeit der Erstellung und Ausführung angezeigt. Die Liste (c) zeigt den Fortschritt des Skripts für jede Datenbank im Pool unter Angabe des Datums und der Uhrzeit an.
+2. Klicken Sie auf den Namen \(a\) eines Auftrags. Der **STATUS** kann "Abgeschlossen" oder "Fehlgeschlagen" lauten. Die Auftragsdetails \(b\) werden mit Datum und Uhrzeit der Erstellung und Ausführung angezeigt. Die Liste \(c\) zeigt den Fortschritt des Skripts für jede Datenbank im Pool unter Angabe des Datums und der Uhrzeit an.
 
 	![Überprüfen beendeter Aufträge][3]
 
@@ -110,4 +110,4 @@ Wenn ein Auftrag fehlschlägt, wird ein Protokoll zu seiner Ausführung erstellt
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

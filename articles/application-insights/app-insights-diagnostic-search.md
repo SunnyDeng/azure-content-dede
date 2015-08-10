@@ -42,11 +42,11 @@ Wählen Sie ein beliebiges Telemetrieelement aus, um Schlüsselfelder und verwan
 
 ![Diagnosesuche öffnen](./media/app-insights-diagnostic-search/10-detail.png)
 
-Um alle Felder zu finden, verwenden Sie einfache Zeichenfolgen (ohne Platzhalterzeichen). Die verfügbaren Felder hängen vom Typ der Telemetrie ab.
+Um alle Felder zu finden, verwenden Sie einfache Zeichenfolgen \(ohne Platzhalterzeichen\). Die verfügbaren Felder hängen vom Typ der Telemetrie ab.
 
 ## Filtern von Ereignistypen
 
-Öffnen Sie das Blatt "Filter", und wählen Sie die Ereignistypen, die Sie anzeigen möchten. (Wenn Sie später die Filter wiederherstellen möchten, mit denen Sie das Blatt geöffnet haben, klicken Sie auf "Zurücksetzen".)
+Öffnen Sie das Blatt "Filter", und wählen Sie die Ereignistypen, die Sie anzeigen möchten. \(Wenn Sie später die Filter wiederherstellen möchten, mit denen Sie das Blatt geöffnet haben, klicken Sie auf "Zurücksetzen".\)
 
 
 ![Wählen Sie "Filter" und dann Telemetrietypen](./media/app-insights-diagnostic-search/02-filter-req.png)
@@ -57,8 +57,8 @@ Die Ereignistypen sind:
 * **Ablaufverfolgung** – Diagnoseprotokolle, einschließlich TrackTrace, log4Net, NLog und Aufrufe von "System.Diagnostic.Trace".
 * **Anforderung** – Von Ihrer Serveranwendung empfangene HTTP-Anforderungen, einschließlich Seiten, Skripts, Bilder, Formatdateien und Daten. Diese Ereignisse werden verwendet, um die Übersichtsdiagramme für Anforderungen und Antworten zu erstellen.
 * **Seitenaufruf** – Vom Webclient gesendete Telemetriedaten, die zum Erstellen von Seitenaufrufberichten verwendet werden. 
-* **Benutzerdefiniertes Ereignis** – Wenn Sie Aufrufe von "TrackEvent()" zum [Überwachen der Nutzung][track] eingefügt haben, können Sie diese hier suchen.
-* **Ausnahme** – Nicht vom Server abgefangene Ausnahmen und Ausnahmen, die Sie mit "TrackException()" protokollieren können.
+* **Benutzerdefiniertes Ereignis** – Wenn Sie Aufrufe von "TrackEvent\(\)" zum [Überwachen der Nutzung][track] eingefügt haben, können Sie diese hier suchen.
+* **Ausnahme** – Nicht vom Server abgefangene Ausnahmen und Ausnahmen, die Sie mit "TrackException\(\)" protokollieren können.
 
 ## Filtern von Eigenschaftswerten
 
@@ -107,9 +107,9 @@ Suchen Sie alle Elemente mit dem gleichen Eigenschaftswert:
 
 ## Suchen nach metrischem Wert
 
-Rufen Sie alle Anforderungen mit einer Antwortzeit > 5 Sek. ab. Zeiten werden mithilfe von Teilstrichen dargestellt: 10.000 Teilstriche = 1 ms.
+Rufen Sie alle Anforderungen mit einer Antwortzeit \> 5 Sek. ab. Zeiten werden mithilfe von Teilstrichen dargestellt: 10.000 Teilstriche = 1 ms.
 
-!["Response time":(threshold TO *)](./media/app-insights-diagnostic-search/11-responsetime.png)
+!\["Response time":\(threshold TO *\)\]\(./media/app-insights-diagnostic-search/11-responsetime.png\)
 
 
 
@@ -121,13 +121,13 @@ Sie können auch einen Zeitbereich festlegen, da die Suche in einem kürzeren Be
 
 ![Diagnosesuche öffnen](./media/app-insights-diagnostic-search/appinsights-311search.png)
 
-Suchen Sie nach Begriffen, nicht nach Teilzeichenfolgen. Begriffe sind alphanumerische Zeichenfolgen, die Zeichen wie '.' und '_' enthalten können. Beispiel:
+Suchen Sie nach Begriffen, nicht nach Teilzeichenfolgen. Begriffe sind alphanumerische Zeichenfolgen, die Zeichen wie '.' und '\_' enthalten können. Beispiel:
 
 Begriff|stimmt *nicht* überein mit|stimmt überein mit
 ---|---|---
-HomeController.Info|info<br/>home|h*info<br/>home*
-IstLokal|lokal<br/>ist<br/>*lokal|istl*<br/>istlokal<br/>i*l*
-Neue Stornierung|e s|neue<br/>stornierung<br/>n* AND s*
+HomeController.Info|info<br/>home|h\*info<br/>home\*
+IstLokal|lokal<br/>ist<br/>\*lokal|istl\*<br/>istlokal<br/>i\*l\*
+Neue Stornierung|e s|neue<br/>stornierung<br/>n\* AND s\*
 
 
 Dies sind einige Suchausdrücke, die Sie verwenden können:
@@ -136,12 +136,12 @@ Beispielabfrage | Effekt
 ---|---
 langsam|Findet alle Ereignisse im Datumsbereich, deren Felder den Begriff „langsam“ enthalten
 Datenbank??|Datenbank01, Datenbankab,... entspricht<br/>? ist am Anfang eines Suchbegriffs nicht zulässig.
-Datenbank*|Datenbank, Datenbank01, DatenbankNNNN entspricht<br/> ist am Anfang eines Suchbegriffs nicht zulässig.
+Datenbank\*|Datenbank, Datenbank01, DatenbankNNNN entspricht<br/> ist am Anfang eines Suchbegriffs nicht zulässig.
 Apfel UND Banane|Findet Ereignisse, die beide Begriffe enthalten. Verwenden Sie „AND“ in Großbuchstaben, nicht „and“.
 Apfel OR Banane<br/>Apfel Banane|Findet Ereignisse, die einen der beiden Begriffe enthalten. Verwenden Sie "OR" nicht "or".</br/>Kurzform.
 Apfel NOT Banane<br/>Apfel -Banane|Findet Ereignisse, die den einen Begriff enthalten, aber nicht den anderen.<br/>Kurzform.
-Apf* AND Banane -(Traube Birne)|Logische Operatoren und Klammern.
-"Metrik": 0 BIS 500<br/>"Metrik": 500 BIS * | Suchen Sie Ereignisse, die die benannte Messung im Wertebereich enthalten.
+Apf\* AND Banane -\(Traube Birne\)|Logische Operatoren und Klammern.
+"Metrik": 0 BIS 500<br/>"Metrik": 500 BIS \* | Suchen Sie Ereignisse, die die benannte Messung im Wertebereich enthalten.
 
 
 ## Speichern der Suche
@@ -198,4 +198,4 @@ POST-Daten werden nicht automatisch protokolliert. Sie können jedoch ["TrackTra
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

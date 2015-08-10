@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Mobile Services mit PhoneGap | Mobile Dev Center"
+	pageTitle="Erste Schritte mit Azure Mobile Services für PhoneGap/Cordova-Apps"
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die PhoneGap-Entwicklung für iOS, Android und Windows Phone."
 	services="mobile-services"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-phonegap"
 	ms.devlang="multiple"
 	ms.topic="article" 
-	ms.date="04/24/2015"
+	ms.date="07/21/2015"
 	ms.author="ggailey777"/>
 
 # Erste Schritte mit Mobile Services
@@ -30,15 +30,15 @@ Unten sehen Sie einen Screenshot aus der fertigen App:
 
 Zum Abschluss dieses Lernprogramms ist Folgendes erforderlich:
 
-+ PhoneGap-Tools (V3.2 oder höher für Windows Phone 8-Projekte erforderlich).
++ PhoneGap-Tools \(V3.2 oder höher für Windows Phone 8-Projekte erforderlich\).
 
 + Ein aktives Microsoft Azure-Konto.
 
 + PhoneGap unterstützt die Entwicklung für verschiedene Plattformen. Zusätzlich zu den eigentlichen PhoneGap-Tools müssen Sie die Tools für jede geplante Plattform installieren:
 
 	- Windows Phone: Installieren Sie [Visual Studio 2012 Express für Windows Phone](https://go.microsoft.com/fwLink/p/?LinkID=268374)
-	- iOS: Installieren Sie [Xcode] (V4.4 oder höher erforderlich)
-	- Android: Installieren Sie die [Android Developer Tools][Android SDK] <br/> (das Mobile Services SDK für Android unterstützt Apps für Android 2.2 oder höhere Versionen. Android 4.2 oder höher ist zum Ausführen der Schnellstart-App erforderlich.)
+	- iOS: Installieren Sie [Xcode] \(V4.4 oder höher erforderlich\)
+	- Android: Installieren Sie die [Android Developer Tools][Android SDK] <br/> \(das Mobile Services SDK für Android unterstützt Apps für Android 2.2 oder höhere Versionen. Android 4.2 oder höher ist zum Ausführen der Schnellstart-App erforderlich.\)
 
 ## Erstellen eines neuen mobilen Diensts
 
@@ -58,7 +58,7 @@ In diesem Abschnitt erstellen Sie eine neue PhoneGap-App, die mit Ihrem Mobile S
 
   	![][1]
 
-3. Falls Sie es nicht bereits getan haben, laden Sie PhoneGap sowie mindestens eines der Plattform-Entwicklungstools (Windows Phone, iOS oder Android) herunter und installieren Sie sie.
+3. Falls Sie es nicht bereits getan haben, laden Sie PhoneGap sowie mindestens eines der Plattform-Entwicklungstools \(Windows Phone, iOS oder Android\) herunter und installieren Sie sie.
 
 4. Klicken Sie auf **TodoItem-Tabelle erstellen**, um eine Tabelle zum Speichern von App-Daten zu erstellen.
 
@@ -76,7 +76,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	+ **Windows Phone 8**
 
-		1. Windows Phone 8: Öffnen Sie die SLN-Datei im Ordner **platforms\wp8** in Visual Studio 2012 Express für Windows Phone.
+		1. Windows Phone 8: Öffnen Sie die SLN-Datei im Ordner **platforms\\wp8** in Visual Studio 2012 Express für Windows Phone.
 
 		2. Drücken Sie die **F5**-Taste, um das Projekt neu zu erstellen und die App zu starten.
 
@@ -100,7 +100,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 			![][4]
 
-		>[AZURE.NOTE]Sie müssen mindestens ein Android Virtual Device (AVD) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
+		>[AZURE.NOTE]Sie müssen mindestens ein Android Virtual Device \(AVD\) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
 
 
 3. Nachdem Sie die App in einem der oben angegebenen mobilen Emulatoren gestartet haben, geben Sie Text in das Textfeld ein und klicken auf **Hinzufügen**.
@@ -171,4 +171,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

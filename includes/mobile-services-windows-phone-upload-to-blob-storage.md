@@ -3,13 +3,13 @@
 
 In diesem Abschnitt aktualisieren Sie das Projekt aus dem Lernprogramm [Erste Schritte mit Mobile Services], um Fotos aufzunehmen und diese in den Azure-BLOB-Speicher hochzuladen. Zum Aufnehmen des Bilds wird in diesem Lernprogramm [CameraCaptureTask] aus dem `Microsoft.Phone.Tasks`-Namespace verwendet. Diese Klasse startet die Kamera-Benutzeroberfläche auf dem Windows Phone-Gerät, um das Foto aufzunehmen, und speichert das Bild automatisch in Eigene Aufnahmen auf dem Windows Phone-Gerät. Falls Sie die Bilder nicht in "Eigene Aufnahmen" speichern möchten, verwenden Sie stattdessen die [PhotoCamera]-Klasse im `Microsoft.Devices`-Namespace.
 
-1. Erweitern Sie im Projektmappen-Explorer für Visual Studio unter dem Projekt **Eigenschaften**. Öffnen Sie dann die Datei WMAppManifest.xml, und aktivieren Sie auf der Registerkarte **Funktionen** die Kamera, indem Sie auf **ID_CAP_ISV_CAMERA** klicken. Schließen Sie die Datei, um die Änderung zu speichern.
+1. Erweitern Sie im Projektmappen-Explorer für Visual Studio unter dem Projekt **Eigenschaften**. Öffnen Sie dann die Datei WMAppManifest.xml, und aktivieren Sie auf der Registerkarte **Funktionen** die Kamera, indem Sie auf **ID\_CAP\_ISV\_CAMERA** klicken. Schließen Sie die Datei, um die Änderung zu speichern.
 
    	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-WMAppmanifest-wp8.png)
 
    	Damit stellen Sie sicher, dass Ihre App eine am Computer angeschlossene Kamera nutzen kann. Bei der erstmaligen Ausführung der App wird der Benutzer dazu aufgefordert, Kamerazugang zu gestatten.
 
-2. Öffnen Sie die Datei MainPage.xaml file und ersetzen Sie das **Grid**-Element namens **ContentPanel** durch den folgenden Code:
+2. Öffnen Sie die Datei MainPage.xaml und ersetzen Sie das **Grid**-Element namens **ContentPanel** durch den folgenden Code:
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
@@ -176,11 +176,11 @@ Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass da
 
 	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-final-wp8.png)
 
-   >[AZURE.NOTE]Das Bild wird automatisch vom Blob-Speicherdienst heruntergeladen, wenn die <code>imageUri</code>-Eigenschaft des neuen Elements an das <strong>Image</strong>-Steuerelement gebunden wird.
+   \>[AZURE.NOTE]Das Bild wird automatisch vom Blob-Speicherdienst heruntergeladen, wenn die <code>imageUri</code>-Eigenschaft des neuen Elements an das <strong>Image</strong>-Steuerelement gebunden wird.
 
 
 [Erste Schritte mit Mobile Services]: ../articles/mobile-services-windows-phone-get-started.md
 [CameraCaptureTask]: http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.tasks.cameracapturetask(v=vs.105).aspx
 [PhotoCamera]: http://msdn.microsoft.com/library/windowsphone/develop/microsoft.devices.photocamera(v=vs.105).aspx
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

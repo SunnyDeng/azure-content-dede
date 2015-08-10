@@ -54,13 +54,13 @@ Nachstehend finden Sie einen Screenshot der vollständigen Anwendung:
 
 ## <a id="setup"> </a>Einrichten von Python und Django
 
-**Hinweis:** Für den Download mithilfe von Internet Explorer müssen Sie möglicherweise die erweiterten Sicherheitseinstellungen für Internet Explorer konfigurieren ("Start > Verwaltung > Server-Manager > Lokaler Server". Klicken Sie dann auf **Verstärkte Sicherheitskonfiguration für IE**, und legen Sie "Aus" fest.)
+**Hinweis:** Für den Download mithilfe von Internet Explorer müssen Sie möglicherweise die erweiterten Sicherheitseinstellungen für Internet Explorer konfigurieren \("Start \> Verwaltung \> Server-Manager \> Lokaler Server". Klicken Sie dann auf **Verstärkte Sicherheitskonfiguration für IE**, und legen Sie "Aus" fest.\)
 
 1. Installieren Sie den [Webplattform-Installer][].
 1. Installieren Sie Python und WFastCGI mit dem Webplattform-Installer. Dadurch wird wfastcgi.py in Ihrem Python-Skriptordner installiert.
 	1. Starten Sie den Webplattform-Installer.
 	1. Geben Sie „WFastCGI“ in der Suchleiste ein.
-	1. Wählen Sie den Eintrag „WFactCGI“ für die Python-Version aus, die Sie verwenden möchten (2.7 oder 3.4). Beachten Sie, dass dadurch Python als eine Abhängigkeit von WFastCGI installiert wird.
+	1. Wählen Sie den Eintrag „WFactCGI“ für die Python-Version aus, die Sie verwenden möchten \(2.7 oder 3.4\). Beachten Sie, dass dadurch Python als eine Abhängigkeit von WFastCGI installiert wird.
 1. Installieren Sie Django mit pip.
 
     Verwenden Sie für Python 2.7 den folgenden Befehl.
@@ -76,7 +76,7 @@ Nachstehend finden Sie einen Screenshot der vollständigen Anwendung:
 
 1. Installieren Sie IIS mit Unterstützung für FastCGI. Die Ausführung nimmt möglicherweise einige Minuten in Anspruch.
 
-		start /wait %windir%\System32\PkgMgr.exe /iu:IIS-WebServerRole;IIS-WebServer;IIS-CommonHttpFeatures;IIS-StaticContent;IIS-DefaultDocument;IIS-DirectoryBrowsing;IIS-HttpErrors;IIS-HealthAndDiagnostics;IIS-HttpLogging;IIS-LoggingLibraries;IIS-RequestMonitor;IIS-Security;IIS-RequestFiltering;IIS-HttpCompressionStatic;IIS-WebServerManagementTools;IIS-ManagementConsole;WAS-WindowsActivationService;WAS-ProcessModel;WAS-NetFxEnvironment;WAS-ConfigurationAPI;IIS-CGI
+		start /wait %windir%\System32\\PkgMgr.exe /iu:IIS-WebServerRole;IIS-WebServer;IIS-CommonHttpFeatures;IIS-StaticContent;IIS-DefaultDocument;IIS-DirectoryBrowsing;IIS-HttpErrors;IIS-HealthAndDiagnostics;IIS-HttpLogging;IIS-LoggingLibraries;IIS-RequestMonitor;IIS-Security;IIS-RequestFiltering;IIS-HttpCompressionStatic;IIS-WebServerManagementTools;IIS-ManagementConsole;WAS-WindowsActivationService;WAS-ProcessModel;WAS-NetFxEnvironment;WAS-ConfigurationAPI;IIS-CGI
 
 
 ### Python 2,7
@@ -148,7 +148,7 @@ Führen Sie diese Befehle nur dann aus, wenn Sie Python 3.4 verwenden.
 ## Erstellen einer neuen Django-Anwendung
 
 
-1.  Geben Sie in *C:\inetpub\wwwroot* den folgenden Befehl zum Erstellen eines neuen Django-Projekts ein.
+1.  Geben Sie in *C:\\inetpub\\wwwroot* den folgenden Befehl zum Erstellen eines neuen Django-Projekts ein.
 
     Verwenden Sie für Python 2.7 den folgenden Befehl.
 
@@ -162,13 +162,13 @@ Führen Sie diese Befehle nur dann aus, wenn Sie Python 3.4 verwenden.
 
 1.  Mit dem Befehl **django-admin** wird eine Grundstruktur für Django-basierte Websites erstellt:
 
-  -   **helloworld\manage.py** hilft Ihnen, den Hostvorgang für Ihre Django-basierte Website zu starten und zu beenden.
-  -   **helloworld\helloworld\settings.py** enthält Django-Einstellungen für Ihre Anwendung.
-  -   **helloworld\helloworld\urls.py** enthält den Zuordnungscode zwischen den einzelnen URLs und der entsprechenden Ansicht.
+  -   **helloworld\\manage.py** hilft Ihnen, den Hostvorgang für Ihre Django-basierte Website zu starten und zu beenden.
+  -   **helloworld\\helloworld\\settings.py** enthält Django-Einstellungen für Ihre Anwendung.
+  -   **helloworld\\helloworld\\urls.py** enthält den Zuordnungscode zwischen den einzelnen URLs und der entsprechenden Ansicht.
 
 
 
-1.  Erstellen Sie eine neue Datei mit dem Namen **views.py** im Verzeichnis *C:\inetpub\wwwroot\helloworld\helloworld*. Diese enthält die Ansicht, mit der die "Hello World"-Seite generiert wird. Starten Sie den Editor, und geben Sie Folgendes ein.
+1.  Erstellen Sie eine neue Datei mit dem Namen **views.py** im Verzeichnis *C:\\inetpub\\wwwroot\\helloworld\\helloworld*. Diese enthält die Ansicht, mit der die "Hello World"-Seite generiert wird. Starten Sie den Editor, und geben Sie Folgendes ein.
 
 		from django.http import HttpResponse
 		def home(request):
@@ -198,4 +198,4 @@ Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virt
 
 [Webplattform-Installer]: http://www.microsoft.com/web/downloads/platform.aspx
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

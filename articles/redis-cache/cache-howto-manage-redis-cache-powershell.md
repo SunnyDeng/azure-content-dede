@@ -1,7 +1,7 @@
 <properties 
-   pageTitle="Verwalten von Azure-Redis-Cache mit Azure PowerShell" 
-   description="Erfahren Sie, wie Sie administrative Aufgaben für Azure-Redis-Cache mit Azure PowerShell ausführen." 
-   services="redis-cache" 
+ pageTitle="Verwalten von Azure-Redis-Cache mit Azure PowerShell" 
+ description="Erfahren Sie, wie Sie administrative Aufgaben für Azure-Redis-Cache mit Azure PowerShell ausführen." 
+ services="redis-cache" 
    documentationCenter="" 
    authors="Rick-Anderson" 
    manager="wpickett" 
@@ -89,10 +89,10 @@ Das folgende Skript veranschaulicht das Erstellen, Aktualisieren und Löschen ei
 
 Weitere Informationen zur Verwendung von Windows PowerShell mit Azure finden Sie in den folgenden Ressourcen:
  
-- [Azure Resource Manager Cmdlets](http://go.microsoft.com/fwlink/?LinkID=394765) (in englischer Sprache): Verwenden der Cmdlets im AzureResourceManager-Modul.
-- [Using Resource groups to manage your Azure resources](../azure-portal/resource-group-portal) (in englischer Sprache): Erstellen und Verwalten von Ressourcengruppe im Azure-Verwaltungsportal.
+- [Azure Resource Manager Cmdlets](http://go.microsoft.com/fwlink/?LinkID=394765) \(in englischer Sprache\): Verwenden der Cmdlets im AzureResourceManager-Modul.
+- [Using Resource groups to manage your Azure resources](../azure-portal/resource-group-portal) \(in englischer Sprache\): Erstellen und Verwalten von Ressourcengruppe im Azure-Verwaltungsportal.
 - [Azure-Blog](http://blogs.msdn.com/windowsazure): Informationen zu neuen Funktionen in Azure.
 - [Windows PowerShell-Blog](http://blogs.msdn.com/powershell): Informationen zu neuen Funktionen in Windows PowerShell.
 - ["Hey, Scripting Guy!"- Blog](http://blogs.technet.com/b/heyscriptingguy/): Praktische Tipps und Tricks aus der Windows PowerShell-Community.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

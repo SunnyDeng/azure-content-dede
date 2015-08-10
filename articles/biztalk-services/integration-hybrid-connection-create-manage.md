@@ -45,8 +45,8 @@ Eine Hybridverbindung kann im Azure-Verwaltungsportal anhand von Web-Apps **oder
 
 	Eigenschaft | Beschreibung
 --- | ---
-Name | Der Name der Hybridverbindung muss eindeutig sein, und es darf sich nicht um den Namen des BizTalk Service handeln. Sie können jeden beliebigen Namen eingeben; er sollte aber auf den Zweck hinweisen. Beispiele:<br/><br/>Lohnbuchhaltung*SQLServer*<br/>Lieferantenliste*SharepointServer*<br/>Kunden*OracleServer*
-Hostname | Geben Sie den vollständig qualifizierten Hostnamen, nur den Hostnamen oder die IPv4-Adresse der lokalen Ressource ein. Beispiele:<br/><br/>mySQLServer<br/>*mySQLServer*.*Domäne*.corp.*IhreFirma*.com<br/>*myHTTPSharePointServer*<br/>*myHTTPSharePointServer*.*IhreFirma*.com<br/>10.100.10.10
+Name | Der Name der Hybridverbindung muss eindeutig sein, und es darf sich nicht um den Namen des BizTalk Service handeln. Sie können jeden beliebigen Namen eingeben; er sollte aber auf den Zweck hinweisen. Beispiele:<br/><br/>Lohnbuchhaltung\*SQLServer\*<br/>Lieferantenliste\*SharepointServer\*<br/>Kunden\*OracleServer\*
+Hostname | Geben Sie den vollständig qualifizierten Hostnamen, nur den Hostnamen oder die IPv4-Adresse der lokalen Ressource ein. Beispiele:<br/><br/>mySQLServer<br/>\*mySQLServer\*.\*Domäne\*.corp.\*IhreFirma\*.com<br/>\*myHTTPSharePointServer\*<br/>\*myHTTPSharePointServer\*.\*IhreFirma\*.com<br/>10.100.10.10
 Port | Geben Sie die Portnummer der lokalen Ressource ein. Wenn Sie Web-Apps verwenden, geben Sie beispielsweise Port 80 oder Port 443 ein. Wenn Sie SQL Server verwenden, geben Sie Port 1433 ein.
 
 5. Wählen Sie das Häkchen aus, um das Setup abzuschließen.
@@ -99,7 +99,7 @@ You can also download the Hybrid Connection Manager MSI file and copy the file t
 	- Die lokale Ressource wird automatisch so konfiguriert, dass sie die primäre lokale Verbindungszeichenfolge verwendet.
 
 - Der Hybrid Connection Manager muss eine gültige lokale Verbindungszeichenfolge für die Autorisierung verwenden. Die Azure-Web-Apps bzw. die mobilen Apps müssen eine gültige Anwendungsverbindungszeichenfolge für die Autorisierung verwenden.
-- Sie können Hybridverbindungen skalieren, indem Sie eine andere Instanz von Hybrid Connection Manager auf einem anderen Server installieren. Konfigurieren Sie den lokalen Listener so, dass er die gleiche Adresse wie der erste lokale Listener verwenden. In diesem Fall wird der Datenverkehr zufällig (Roundrobin) zwischen den aktiven lokalen Listenern verteilt. 
+- Sie können Hybridverbindungen skalieren, indem Sie eine andere Instanz von Hybrid Connection Manager auf einem anderen Server installieren. Konfigurieren Sie den lokalen Listener so, dass er die gleiche Adresse wie der erste lokale Listener verwenden. In diesem Fall wird der Datenverkehr zufällig \(Roundrobin\) zwischen den aktiven lokalen Listenern verteilt. 
 
 
 ## <a name="ManageHybridConnection"></a>Verwalten von Hybridverbindungen
@@ -124,8 +124,8 @@ Zum Verwalten der Hybridverbindungen haben Sie folgende Möglichkeiten:
 2. Extrahieren Sie die Dateien.
 3. Gehen Sie auf dem Computer, der die Gruppenrichtlinie ändert, wie folgt vor: 
 
-	- Kopieren Sie die ADMX-Dateien in den Ordner *%WINROOT%\PolicyDefinitions*.
-	- Kopieren Sie die ADML-Dateien in den Ordner *%WINROOT%\PolicyDefinitions\de-de*.
+	- Kopieren Sie die ADMX-Dateien in den Ordner *%WINROOT%\\PolicyDefinitions*.
+	- Kopieren Sie die ADML-Dateien in den Ordner *%WINROOT%\\PolicyDefinitions\\en-us*.
 
 Nach dem Kopieren können Sie den Gruppenrichtlinien-Editor verwenden, um die Richtlinie zu ändern.
 
@@ -146,4 +146,4 @@ Nach dem Kopieren können Sie den Gruppenrichtlinien-Editor verwenden, um die Ri
 [HCOnPremSetup]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionOnPremSetup.png
 [HCManageConnection]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionManageConn.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

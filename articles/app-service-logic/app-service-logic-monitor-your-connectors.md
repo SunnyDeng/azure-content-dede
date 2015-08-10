@@ -64,7 +64,7 @@ Dazu müssen diese Schritte ausgeführt werden:
 6. Klicken Sie auf die Einstellung, die Sie ändern möchten, geben den neuen Wert ein, und **speichern** Sie Ihre Änderungen.
 
 
-## Installieren des Hybrid Connection Managers (optional)
+## Installieren des Hybrid Connection Managers \(optional\)
 
 ![][hcsetup]
 
@@ -133,4 +133,4 @@ Sie können Benutzer problemlos hinzufügen und ihnen bestimmte Rollen für Ihre
 [hostsettings]: ./media/app-service-logic-monitor-your-connectors/hostsettings.png
 [apiapphost]: ./media/app-service-logic-monitor-your-connectors/apiapphost.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

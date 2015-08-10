@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="05/20/2015" 
+	ms.date="07/24/2015" 
 	ms.author="sdanie"/>
 
 # Verwenden von Azure Redis Cache
 
-Dieser Leitfaden beschreibt die ersten Schritte mit **Azure Redis Cache**. Die Beispiele sind in C# geschrieben und verwenden den [StackExchange.Redis][]-Client. Die behandelten Szenarien umfassen das **Erstellen und Konfigurieren eines Caches**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten aus dem Cache** und **Speichern des ASP.NET-Sitzungsstatus im Cache**. Weitere Informationen zum Verwenden von Azure Redis Cache finden Sie im Abschnitt [Nächste Schritte][].
+Dieser Leitfaden beschreibt die ersten Schritte mit **Azure Redis Cache**. Die Beispiele sind in C\# geschrieben und verwenden den [StackExchange.Redis][]-Client. Die behandelten Szenarien umfassen das **Erstellen und Konfigurieren eines Caches**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten aus dem Cache** und **Speichern des ASP.NET-Sitzungsstatus im Cache**. Weitere Informationen zum Verwenden von Azure Redis Cache finden Sie im Abschnitt [Nächste Schritte][].
 
 <a name="what-is"></a>
 ## Was ist Azure Redis Cache?
@@ -57,7 +57,7 @@ Geben Sie auf dem Blatt **Neuer Redis Cache** die gewünschte Konfiguration für
 
 Geben Sie unter **DNS-Name** einen Unterdomänennamen für den Cacheendpunkt ein. Der Endpunktname muss eine Zeichenfolge zwischen sechs und zwanzig Zeichen sein. Er darf nur Kleinbuchstaben und Ziffern enthalten und muss mit einem Buchstaben beginnen.
 
-Wählen Sie unter **Tarif** die gewünschte Größe und Merkmale für den Cache aus. Caches der Stufe **Basic** verfügen über einen einzelnen Knoten in unterschiedlichen Größen bis zu 53 GB. Caches der Stufe **Standard** verfügen über eine Konfiguration mit zwei Knoten – Primär und Replikat –, eine Vereinbarung zum Servicelevel (SLA) von 99,9 % sowie unterschiedliche Größen bis zu 53 GB.
+Wählen Sie unter **Tarif** die gewünschte Größe und Merkmale für den Cache aus. Caches der Stufe **Basic** verfügen über einen einzelnen Knoten in unterschiedlichen Größen bis zu 53 GB. Caches der Stufe **Standard** verfügen über eine Konfiguration mit zwei Knoten – Primär und Replikat –, eine Vereinbarung zum Servicelevel \(SLA\) von 99,9 % sowie unterschiedliche Größen bis zu 53 GB.
 
 Unter **Ressourcengruppe** können Sie eine Ressourcengruppe für Ihren Cache auswählen oder erstellen.
 
@@ -122,15 +122,13 @@ Die Verbindung zum Azure Redis Cache wird von der `ConnectionMultiplexer`-Klasse
 
 Um eine Verbindung zu einem Azure Redis Cache herzustellen und eine Instanz einer verbundenen `ConnectionMultiplexer`-Klasse zu erhalten, rufen Sie die statische `Connect`-Methode auf und übergeben den Cacheendpunkt und den Schlüssel wie im folgenden Beispiel gezeigt. Übergeben Sie den im Portal generierten Azure-Schlüssel im Parameter für das Kennwort.
 
-	ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.windows.net,ssl=true,password=...");
+	ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.windows.net,abortConnect=false,ssl=true,password=...");
 
 >[AZURE.IMPORTANT]Warnung: Speichern Sie niemals Anmeldeinformationen im Quellcode. Ich zeige diese Daten hier im Code, um dieses Beispiel zu vereinfachen. Informationen zum Speichern von Anmeldeinformationen finden Sie unter [Funktionsweise von Anwendungs- und Verbindungszeichenfolgen][].
 
-Falls Sie kein SSL verwenden möchten, können Sie entweder `ssl=false` festlegen oder einfach Endpunkt und Schlüssel übergeben.
+Wenn Sie SSL verwenden nicht möchten, legen Sie entweder `ssl=false` fest, oder lassen Sie den `ssl`-Parameter aus.
 
 >[AZURE.NOTE]Der Nicht-SSL-Port ist für neue Caches standardmäßig deaktiviert. Anweisungen zum Aktivieren des Nicht-SSL-Ports finden Sie im Thema [Konfigurieren eines Caches in Azure Redis Cache][] im Abschnitt "Zugriffsports".
-
-	connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.windows.net,password=...");
 
 Weitere Informationen zu erweiterten Optionen für den Verbindungsaufbau finden Sie unter [StackExchange.Redis-Konfigurationsmodell][].
 
@@ -142,12 +140,12 @@ Cacheendpunkt und Schlüssel finden Sie auf dem Blatt **Redis-Cache** Ihrer Cach
 
 Nach dem Verbindungsaufbau können Sie einen Verweis auf diese Redis-Cachedatenbank zurückgeben, indem Sie die `ConnectionMultiplexer.GetDatabase`-Methode aufrufen.
 
-	// connection referes to a previously configured ConnectionMultiplexer
+	// connection refers to a previously configured ConnectionMultiplexer
 	IDatabase cache = connection.GetDatabase();
 
 >[AZURE.NOTE]Das von der `GetDatabase`-Methode zurückgegebene Objekt ist ein einfaches Durchgangsobjekt und muss nicht gespeichert werden.
 
-	ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.windows.net,ssl=true,password=...");
+	ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.windows.net,abortConnect=false,ssl=true,password=...");
 
 	IDatabase cache = connection.GetDatabase();
 
@@ -161,8 +159,6 @@ Nach dem Verbindungsaufbau können Sie einen Verweis auf diese Redis-Cachedatenb
 	int key2 = (int)cache.StringGet("key2");
 
 Sie sind nun in der Lage, sich mit einer Azure Redis Cache-In zu verbinden und einen Verweis auf die Cache-Datenbank zurückzugeben und können nun beginnen, mit dem Cache zu arbeiten.
-
-
 
 <a name="add-object"></a>
 ## Hinzufügen zu und Abrufen von Objekten aus dem Cache
@@ -273,7 +269,7 @@ Weitere Informationen zum Konfigurieren dieser Einstellungen und zum Verwenden d
 
 Nachdem Sie sich nun mit den Grundlagen von Azure Redis Caches vertraut gemacht haben, finden Sie unter den folgenden Links weitere Informationen zu komplexeren Cachingaufgaben.
 
--	[Aktivieren Sie die Cachediagnose](https://msdn.microsoft.com/library/azure/dn763945.aspx#EnableDiagnostics), damit Sie die Integrität Ihres Caches [überwachen](https://msdn.microsoft.com/library/azure/dn763945.aspx) können. Sie können die Metriken im Portal anzeigen und sie anschließend mit einem Tool Ihrer Wahl [herunterladen und prüfen](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring).
+-	[Aktivieren Sie die Cachediagnose](cache-how-to-monitor.md#enable-cache-diagnostics), damit Sie die Integrität Ihres Caches überwachen können. Sie können die Metriken im Portal anzeigen und sie anschließend mit einem Tool Ihrer Wahl [herunterladen und prüfen](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring).
 -	Lesen Sie die [Dokumentation für den StackExchange.Redis-Cacheclient][].
 	-	Auf Azure Redis Cache können viele Redis-Clients und Entwicklungssprachen zugreifen. Weitere Informationen finden Sie unter [http://redis.io/clients][] und [Entwickeln in anderen Sprachen für Azure Redis Cache][].
 	-	Azure Redis Cache kann auch mit Diensten wie Redsmin verwendet werden. Weitere Informationen finden Sie unter [Abrufen einer Azure Redis-Verbindungszeichenfolge und ihre Verwendung mit Redsmin][].
@@ -371,4 +367,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Redis Caches vertraut gemacht 
 
 [Kostenlose Azure-Testversion]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=redis_cache_hero
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

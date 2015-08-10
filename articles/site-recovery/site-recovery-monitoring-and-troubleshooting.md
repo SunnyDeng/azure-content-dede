@@ -87,7 +87,7 @@ Hinweis: Wenn aktive Vorgänge ausgeführt werden oder fehlgeschlagen sind, navi
 
 | Szenarios | Ereignisquellen |
 |-------------------------	|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| Schutz des VMM-Standorts | VMM-Server <ul><li> **Applications and Service Logs/Microsoft/VirtualMachineManager/Server/Admin** </li></ul> Hyper-V-Host <ul><li> **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** (für Azure als Ziel)</li><li> **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin** </li></ul> |
+| Schutz des VMM-Standorts | VMM-Server <ul><li> **Applications and Service Logs/Microsoft/VirtualMachineManager/Server/Admin** </li></ul> Hyper-V-Host <ul><li> **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** \(für Azure als Ziel\)</li><li> **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin** </li></ul> |
 | Schutz des Hyper-V-Standorts | <ul><li> **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** </li><li> **Applications and Service Logs/Microsoft/Azure Site Recovery/Provider/Operational** </li><li> **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin** </li><ul>|
 
 
@@ -103,7 +103,7 @@ In diesem Fall wird die *Replikationsintegrität* als "Kritisch" angegeben. Klic
 
 ### Protokollierungsoptionen für die Hyper-V-Replikation
 
-Alle Ereignisse für Hyper-V Replica werden im Protokoll "Hyper-V-VMMS\Admin" unter **Applications and Services Logs\Microsoft\Windows** protokolliert. Darüber hinaus kann ein analytisches Protokoll für Hyper-V-VMMS aktiviert werden. Um dieses Protokoll zu aktivieren, müssen Sie zunächst die analytischen und Debugprotokolle in der Ereignisanzeige einblenden. Öffnen Sie die Ereignisanzeige, und klicken Sie im Menü **Ansicht** auf **Analytische und Debugprotokolle einblenden**.
+Alle Ereignisse für Hyper-V Replica werden im Protokoll "Hyper-V-VMMS\\Admin" unter **Applications and Services Logs\\Microsoft\\Windows** protokolliert. Darüber hinaus kann ein analytisches Protokoll für Hyper-V-VMMS aktiviert werden. Um dieses Protokoll zu aktivieren, müssen Sie zunächst die analytischen und Debugprotokolle in der Ereignisanzeige einblenden. Öffnen Sie die Ereignisanzeige, und klicken Sie im Menü **Ansicht** auf **Analytische und Debugprotokolle einblenden**.
 
 ![Behandlung von lokalen Hyper-V-Problemen](media/site-recovery-monitoring-and-troubleshooting/image14.png)
 
@@ -127,13 +127,13 @@ Beenden Sie zum Anzeigen der gesammelten Informationen zunächst die Ablaufverfo
 
 ### Protokollsammlung
 
-Im Hinblick auf den Schutz von VMM-Standorten finden Sie Informationen zum Sammeln der erforderlichen Protokolle unter [ASR Log Collection using Support Diagnostics Platform (SDP) Tool](http://social.technet.microsoft.com/wiki/contents/articles/28198.asr-data-collection-and-analysis-using-the-vmm-support-diagnostics-platform-sdp-tool.aspx) (in englischer Sprache).
+Im Hinblick auf den Schutz von VMM-Standorten finden Sie Informationen zum Sammeln der erforderlichen Protokolle unter [ASR Log Collection using Support Diagnostics Platform \(SDP\) Tool](http://social.technet.microsoft.com/wiki/contents/articles/28198.asr-data-collection-and-analysis-using-the-vmm-support-diagnostics-platform-sdp-tool.aspx) \(in englischer Sprache\).
 
 Laden Sie für den Schutz von Hyper-V-Zweigstellen und SMB-Standorten dieses [Tool](https://dcupload.microsoft.com/tools/win7files/DIAG_ASRHyperV_global.DiagCab) herunter, und führen Sie es auf dem Hyper-V-Host aus, um die Protokolle zu sammeln.
 
-Informationen zum Sammeln der erforderlichen Protokolle für physische oder VMware-Szenarios finden Sie unter [Azure Site Recovery Log Collection for VMware and Physical site protection](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx) (in englischer Sprache).
+Informationen zum Sammeln der erforderlichen Protokolle für physische oder VMware-Szenarios finden Sie unter [Azure Site Recovery Log Collection for VMware and Physical site protection](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx) \(in englischer Sprache\).
 
-Das SDP-Tool sammelt die Protokolldatei lokal. Diese finden Sie auch in einem zufällig benannten Unterordner unter **%LocalAppData%\ElevatedDiagnostics**.
+Das SDP-Tool sammelt die Protokolldatei lokal. Diese finden Sie auch in einem zufällig benannten Unterordner unter **%LocalAppData%\\ElevatedDiagnostics**.
 
 ### Öffnen eines Supporttickets
 
@@ -141,20 +141,20 @@ Um ein Supportticket für ASR zu öffnen, wenden Sie sich an den Azure-Support u
 
 ## KB-Artikel
 
--   [How to preserve the drive letter for protected virtual machines (in englischer Sprache)
+-   \[How to preserve the drive letter for protected virtual machines \(in englischer Sprache\)
     > http://support.microsoft.com/kb/3031135
 
--   [How to troubleshoot Azure Recovery
-    > Services (in englischer Sprache)] (http://support.microsoft.com/kb/3005185)
+-   \[How to troubleshoot Azure Recovery
+    > Services \(in englischer Sprache\)\] \(http://support.microsoft.com/kb/3005185\)
 
--   [How to Enable Debug Logging for the Azure Site Recovery in Hyper-V
-    > Site Protection (in englischer Sprache)] (http://support.microsoft.com/kb/3033922)
+-   \[How to Enable Debug Logging for the Azure Site Recovery in Hyper-V
+    > Site Protection \(in englischer Sprache\)\] \(http://support.microsoft.com/kb/3033922\)
 
--   [ASR: "The cluster resource could not be found" error when you try
-    > to enable protection for a virtual machine (in englischer Sprache)] (http://support.microsoft.com/kb/3010979)
+-   \[ASR: "The cluster resource could not be found" error when you try
+    > to enable protection for a virtual machine \(in englischer Sprache\)\] \(http://support.microsoft.com/kb/3010979\)
     
--   [Understand & Troubleshoot Hyper-V Replica
-    > Guide (in englischer Sprache)] (http://www.microsoft.com/en-in/download/details.aspx?id=29016)
+-   \[Understand & Troubleshoot Hyper-V Replica
+    > Guide \(in englischer Sprache\)\] \(http://www.microsoft.com/en-in/download/details.aspx?id=29016\)
 	
 	
 	
@@ -164,8 +164,6 @@ Im Folgenden werden häufige Fehler aufgeführt, die passieren können, sowie de
 
 ### Einrichtung
 
--   [Das ausgewählte Zertifikat kann nicht überprüft werden. Wählen Sie ein anderes Zertifikat aus.](http://social.technet.microsoft.com/wiki/contents/articles/25569.the-selected-certificate-cannot-be-validated-please-select-a-different-certificate.aspx)
-
 -   [Der VMM-Server kann aufgrund eines internen Fehlers nicht registriert werden. In der Auftragsansicht im Site Recovery-Portal finden Sie weitere Details zu diesem Fehler. Führen Sie den Setup erneut aus, um den Server zu registrieren.](http://social.technet.microsoft.com/wiki/contents/articles/25570.the-vmm-server-cannot-be-registered-due-to-an-internal-error-please-refer-to-the-jobs-view-in-the-site-recovery-portal-for-more-details-on-the-error-run-setup-again-to-register-the-server.aspx)
 
 -   [Mit dem Hyper-V-Wiederherstellungs-Manager-Tresor kann keine Verbindung hergestellt werden. Überprüfen Sie die Proxyeinstellungen oder versuchen Sie es später erneut.](http://social.technet.microsoft.com/wiki/contents/articles/25571.a-connection-cant-be-established-to-the-hyper-v-recovery-manager-vault-verify-the-proxy-settings-or-try-again-later.aspx)
@@ -174,21 +172,15 @@ Im Folgenden werden häufige Fehler aufgeführt, die passieren können, sowie de
 
 -   [Der Hyper-V-Hostcluster enthält mindestens einen statischen Netzwerkadapter, oder keine verbundenen Adapter sind für die Verwendung von DHCP konfiguriert.](http://social.technet.microsoft.com/wiki/contents/articles/25498.hyper-v-host-cluster-contains-at-least-one-static-network-adapter-or-no-connected-adapters-are-configured-to-use-dhcp.aspx)
 
--   [Das Hyper-V-Profil wird nicht in den Capability Profiles für die Cloud aktiviert.](http://social.technet.microsoft.com/wiki/contents/articles/25499.the-hyper-v-profile-isn-t-enabled-in-the-capability-profiles-for-cloud.aspx)
-
--   [Die Schutzkonfiguration für "%CloudName;" konnte nicht angewendet werden. Ein neu hinzugefügter Hyper-V-Host oder -Cluster konnte nicht konfiguriert werden, weil der Cloudschutz nicht konfiguriert ist.](http://social.technet.microsoft.com/wiki/contents/articles/25500.protection-configuration-for-cloudname-couldn-t-be-applied-a-newly-added-hyper-v-host-or-cluster-couldn-t-be-configured-because-cloud-protection-isn-t-configured.aspx)
-
--   [VMM besitzt keine Berechtigungen zum Ausführen einer Aktion](http://social.technet.microsoft.com/wiki/contents/articles/31110.vmm-does-not-have-permissions-to-complete-an-action.aspx)
+-   [VMM besitzt keine Berechtigungen zum Ausführen einer Aktion.](http://social.technet.microsoft.com/wiki/contents/articles/31110.vmm-does-not-have-permissions-to-complete-an-action.aspx)
 
 ### Schutz
 
--   [Das Betriebssystem wird nicht unterstützt.](http://social.technet.microsoft.com/wiki/contents/articles/31103.the-operating-system-is-not-supported.aspx)
-
 -   [Aktivieren des Schutzes fehlgeschlagen, da der Agent nicht auf dem Hostcomputer installiert ist.](http://social.technet.microsoft.com/wiki/contents/articles/31105.enable-protection-failed-since-agent-not-installed-on-host-machine.aspx)
 
--   [Ein geeigneter Host für den replizierten virtuellen Computer wurde nicht gefunden – aufgrund geringer Compute-Ressourcen.](http://social.technet.microsoft.com/wiki/contents/articles/25501.a-suitable-host-for-the-replica-virtual-machine-can-t-be-found-due-to-low-compute-resources.aspx)
+-   [Ein geeigneter Host für den replizierten virtuellen Computer wurde nicht gefunden. Grund: geringe Compute-Ressourcen.](http://social.technet.microsoft.com/wiki/contents/articles/25501.a-suitable-host-for-the-replica-virtual-machine-can-t-be-found-due-to-low-compute-resources.aspx)
 
--   [Ein geeigneter Host für den replizierten virtuellen Computer wurde nicht gefunden – weil kein logisches Netzwerk angeschlossen ist.](http://social.technet.microsoft.com/wiki/contents/articles/25502.a-suitable-host-for-the-replica-virtual-machine-can-t-be-found-due-to-no-logical-network-attached.aspx)
+-   [Ein geeigneter Host für den replizierten virtuellen Computer wurde nicht gefunden. Grund: Es ist kein logisches Netzwerk angeschlossen.](http://social.technet.microsoft.com/wiki/contents/articles/25502.a-suitable-host-for-the-replica-virtual-machine-can-t-be-found-due-to-no-logical-network-attached.aspx)
 
 -   [Keine Verbindung mit dem replizierten Host-Computer – Verbindung konnte nicht hergestellt werden.](http://social.technet.microsoft.com/wiki/contents/articles/31106.cannot-connect-to-the-replica-host-machine-connection-could-not-be-established.aspx)
 
@@ -198,13 +190,13 @@ Im Folgenden werden häufige Fehler aufgeführt, die passieren können, sowie de
 
     -   [Ein Failover auf den ausgewählten Wiederherstellungspunkt für den virtuellen Computer: Allgemeiner Zugriffsfehler.](http://social.technet.microsoft.com/wiki/contents/articles/25504.fail-over-to-the-selected-recovery-point-for-virtual-machine-general-access-denied-error.aspx)
 
-    -   [Hyper-V konnte kein Failover auf den ausgewählten Wiederherstellungspunkt für virtuelle Computer ausgeben: Der Vorgang wurde abgebrochen. Versuchen Sie es mit einem neueren Wiederherstellungspunkt. (0x80004004)](http://social.technet.microsoft.com/wiki/contents/articles/25503.hyper-v-failed-to-fail-over-to-the-selected-recovery-point-for-virtual-machine-operation-aborted-try-a-more-recent-recovery-point-0x80004004.aspx)
+    -   [Hyper-V konnte kein Failover auf den ausgewählten Wiederherstellungspunkt für virtuelle Computer ausgeben: Der Vorgang wurde abgebrochen. Versuchen Sie es mit einem neueren Wiederherstellungspunkt. \(0x80004004\)](http://social.technet.microsoft.com/wiki/contents/articles/25503.hyper-v-failed-to-fail-over-to-the-selected-recovery-point-for-virtual-machine-operation-aborted-try-a-more-recent-recovery-point-0x80004004.aspx)
 
-    -   Eine Verbindung mit dem Server konnte nicht hergestellt werden (0x00002EFD).
+    -   Eine Verbindung mit dem Server konnte nicht hergestellt werden \(0x00002EFD\).
 
-        -   [Fehler von Hyper-V beim Aktivieren der umgekehrten Replikation für den virtuellen Computer.](http://social.technet.microsoft.com/wiki/contents/articles/25505.a-connection-with-the-server-could-not-be-established-0x00002efd-hyper-v-failed-to-enable-reverse-replication-for-virtual-machine.aspx)
+        -   [Fehler von Hyper-V beim Aktivieren der umgekehrten Replikation für den virtuellen Computer](http://social.technet.microsoft.com/wiki/contents/articles/25505.a-connection-with-the-server-could-not-be-established-0x00002efd-hyper-v-failed-to-enable-reverse-replication-for-virtual-machine.aspx)
 
-        -   [Fehler von Hyper-V beim Aktivieren der Replikation für den virtuellen Computer.](http://social.technet.microsoft.com/wiki/contents/articles/25506.a-connection-with-the-server-could-not-be-established-0x00002efd-hyper-v-failed-to-enable-replication-for-virtual-machine-virtual-machine.aspx)
+        -   [Fehler von Hyper-V beim Aktivieren der Replikation für den virtuellen Computer](http://social.technet.microsoft.com/wiki/contents/articles/25506.a-connection-with-the-server-could-not-be-established-0x00002efd-hyper-v-failed-to-enable-replication-for-virtual-machine-virtual-machine.aspx)
 
     -   [Failover für virtuellen Computer konnte nicht übergeben werden.](http://social.technet.microsoft.com/wiki/contents/articles/25508.could-not-commit-failover-for-virtual-machine.aspx)
 
@@ -214,20 +206,20 @@ Im Folgenden werden häufige Fehler aufgeführt, die passieren können, sowie de
 
 -   [Der virtuelle Computer wird nicht ausgeführt und ist nicht ausgeschaltet.](http://social.technet.microsoft.com/wiki/contents/articles/25510.virtual-machine-is-not-running-and-is-not-powered-off.aspx)
 
--   [Out-of-Band-Vorgang auf einem virtuellen Computer und ](http://social.technet.microsoft.com/wiki/contents/articles/25507.the-virtual-machine-isn-t-ready-for-planned-failover.aspx)Fehler bei Übergabe des Failovers.
+-   [Out-of-Band-Vorgang auf einem virtuellen Computer und ](http://social.technet.microsoft.com/wiki/contents/articles/25507.the-virtual-machine-isn-t-ready-for-planned-failover.aspx)Fehler bei Übergabe des Failovers
 
 -   Test-Failover
 
     -   [Failover konnte nicht initiiert werden, da das Testfailover ausgeführt wird.](http://social.technet.microsoft.com/wiki/contents/articles/31111.failover-could-not-be-initiated-since-test-failover-is-in-progress.aspx)
 
--   Für die Wiederherstellung in Azure
-
-    -   [Failover konnte nicht gestartet werden, da der VM-Name nicht unterstützte Zeichen enthält.](http://social.technet.microsoft.com/wiki/contents/articles/31107.failover-could-not-be-started-due-to-unsupported-characters-in-the-vm-name.aspx)
 
 ### Konfigurationsserver, Prozessserver, Masterziel
 
-Konfigurationsserver (Configuration Server, CS), Prozessserver (Process Server, PS), Masterziel (Master Target, MT)
+Konfigurationsserver \(Configuration Server, CS\), Prozessserver \(Process Server, PS\), Masterziel \(Master Target, MT\)
 
 -   [Der ESXi-Host, auf dem der PS/CS als virtueller Computer gehostet wird, schlägt mit einem violetten Bildschirm fehl.](http://social.technet.microsoft.com/wiki/contents/articles/31107.vmware-esxi-host-experiences-a-purple-screen-of-death.aspx)
 
-<!---HONumber=July15_HO4-->
+### Remotedesktop-Problembehandlung nach einem Failover
+Viele Kunden haben Probleme beim Herstellen einer Verbindung mit dem virtuellen Computer in Azure festgestellt, für den ein Failover ausgeführt wurde. Stellen Sie anhand des Dokuments für die Problembehandlung eine RDP-Verbindung mit dem virtuellen Computer her. [Link zum Dokument](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)
+
+<!---HONumber=July15_HO5-->

@@ -40,10 +40,10 @@
 
 5. Aktivieren Sie **SSL-Modus aktivieren**, um einen sicheren Kanal für die Netzwerkkommunikation zwischen Ihrem Gerät und der Cloud zu erstellen. Deaktivieren Sie das Kontrollkästchen **SSL-Modus aktivieren** nur, wenn der Betrieb in einer privaten Cloud stattfindet.
 
-      >[AZURE.NOTE]Bei Verwendung von HP als Anbieter wird immer SSL aktiviert.
+      \>[AZURE.NOTE]Bei Verwendung von HP als Anbieter wird immer SSL aktiviert.
   		
 6. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-configure-new-storage-account/HCS_CheckIcon-include.png). Sie werden benachrichtigt, nachdem das Speicherkonto erfolgreich erstellt wurde.
 
 7. Das neu erstellte Speicherkonto wird auf der Seite **Konfigurieren** unter **Speicherkonten** angezeigt. Klicken Sie auf **Speichern**, um das neue Speicherkonto zu speichern. Klicken Sie auf **OK**, wenn Sie zur Bestätigung aufgefordert werden.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Behandeln von Konflikten mit Offlinedaten in Mobile Services (Windows Store) | Mobile Dev Center" 
-	description="Erfahren Sie, wie Sie mithilfe von Azure Mobile Services Konflikte beim Synchronisieren von Offlinedaten in Ihrer Windows Store-Anwendung behandeln." 
+	pageTitle="Behandeln von Konflikten mit Offlinedaten in universellen Windows-Apps | Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie mithilfe von Azure Mobile Services Konflikte beim Synchronisieren von Offlinedaten in Ihrer universellen Windows-Anwendung behandeln." 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
 	manager="dwrede" 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/15/2015" 
-	ms.author="wesmc"/>
+	ms.date="07/23/2015" 
+	ms.author="glenga"/>
 
 
 # Behandeln von Konflikten bei der Synchronisierung von Offlinedaten in Mobile Services
@@ -23,15 +23,13 @@
 
 ##Übersicht
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
-<p>In diesem Thema erfahren Sie, wie Sie Daten synchronisieren und Konflikte behandeln können, wenn Sie die Offlinefunktionen von Azure Mobile Services verwenden.</p>
-<p>Wenn Sie lieber ein Video zu diesem Thema ansehen möchten, können Sie den Clip auf der rechten Seite auswählen. In diesem werden dieselben Schritte behandelt wie in diesem Lernprogramm.</p>
-</div>
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Build-offline-apps-Azure-Mobile-Services" target="_blank" class="label">Lernprogramm ansehen</a> <a style="background-image: url('http://video.ch9.ms/ch9/ea1c/ffed2371-4db1-4a8e-8869-80013859ea1c/BuildOfflineAppsAzureMobileServices_220.jpg') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Build-offline-apps-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a> <span class="time">14:36:00</span></div>
-</div>
+In diesem Thema erfahren Sie, wie Sie Daten synchronisieren und Konflikte behandeln können, wenn Sie die Offlinefunktionen von Azure Mobile Services verwenden.
 
-In diesem Lernprogramm werden Sie eine Windows Universal C#-Lösung für eine App herunterladen, die die Behandlung von Konflikten bei der Offlinesynchronisierung unterstützt. Sie integrieren einen mobilen Dienst in die App und führen dann die Windows Store 8.1- und Windows Phone 8.1-Clients aus, um einen Synchronisierungskonflikt zu generieren und zu beheben.
+Wenn Sie lieber ein Video zu diesem Thema ansehen möchten, können Sie den Clip unten auswählen. In diesem werden dieselben Schritte behandelt wie in diesem Lernprogramm.
+
+> [AZURE.VIDEO build-offline-apps-azure-mobile-services]
+
+In diesem Tutorial laden Sie eine universelle Windows C\#-Lösung für eine App herunter, die die Behandlung von Konflikten bei der Offlinesynchronisierung unterstützt. Sie integrieren einen mobilen Dienst in die App und führen dann die Windows Store 8.1- und Windows Phone 8.1-Clients aus, um einen Synchronisierungskonflikt zu generieren und zu beheben.
 
 Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Offlinedaten]. Bevor Sie mit diesem Lernprogramm beginnen, sollten Sie zunächst [Erste Schritte mit Offlinedaten] abschließen.
 
@@ -51,11 +49,11 @@ In diesem Lernprogramm wird exemplarisch gezeigt, wie das [Todo Offline-Beispiel
 
 2. Wenn Sie SQLite für Windows 8.1 und Windows Phone 8.1 nicht bereits wie im Lernprogramm [Erste Schritte mit Offlinedaten] beschrieben installiert haben, installieren Sie beide Runtimes.
 
-3. Öffnen Sie in Visual Studio 2013 die Projektmappendatei *mobile-services-samples\TodoOffline\WindowsUniversal\TodoOffline-Universal.sln*. Drücken Sie die Taste **F5**, um das Projekt erneut zu erstellen und auszuführen. Überprüfen Sie, ob die NuGet-Pakete wiederhergestellt wurden und die Verweise korrekt sind.
+3. Öffnen Sie in Visual Studio 2013 die Projektmappendatei *mobile-services-samples\\TodoOffline\\WindowsUniversal\\TodoOffline-Universal.sln*. Drücken Sie die Taste **F5**, um das Projekt erneut zu erstellen und auszuführen. Überprüfen Sie, ob die NuGet-Pakete wiederhergestellt wurden und die Verweise korrekt sind.
 
     >[AZURE.NOTE]Möglicherweise müssen Sie alte Verweise auf die SQLite-Laufzeit löschen und wie im Lernprogramm [Erste Schritte mit Offlinedaten] beschrieben durch den aktualisierten Verweis ersetzen.
 
-4. Geben Sie in der App Text unter **Insert a TodoItem** (TodoItem einfügen) ein, und klicken Sie auf **Save** (Speichern), um "todoitems" zum lokalen Store hinzuzufügen. Schließen Sie dann die App.
+4. Geben Sie in der App Text unter **Insert a TodoItem** \(TodoItem einfügen\) ein, und klicken Sie auf **Save** \(Speichern\), um "todoitems" zum lokalen Store hinzuzufügen. Schließen Sie dann die App.
 
 Beachten Sie, dass noch keine Verbindung zwischen der App und einem mobilen Dienst besteht, daher erzeugen die Schaltflächen **Push** und **Pull** Ausnahmefehler.
 
@@ -132,7 +130,7 @@ Um Konflikte zugunsten des lokalen Elements zu lösen, führen Sie den Vorgang e
 
 Um Konflikte zugunsten des Serverelements zu lösen, verlassen Sie einfach `ExecuteTableOperationAsync`. Die lokale Version des Objekts wird verworfen und durch den Wert vom Server ersetzt.
 
-Um den Pushvorgang zu beenden (die Änderungen in der Warteschlange jedoch zu erhalten), verwenden Sie die `AbortPush()`-Methode:
+Um den Pushvorgang zu beenden \(die Änderungen in der Warteschlange jedoch zu erhalten\), verwenden Sie die `AbortPush()`-Methode:
 
     operation.AbortPush();
 
@@ -166,4 +164,4 @@ Wenn ein Pushvorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePush
 [Todo Offline-Beispiel für Mobile Services]: http://go.microsoft.com/fwlink/?LinkId=512866
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

@@ -48,11 +48,11 @@ Windows Store-Apps müssen zunächst im Windows-Entwicklungscenter registriert w
 
    	Auf diese Weise wird der Assistent zum **Zuordnen Ihrer Anwendung zum Windows Store** angezeigt.
 
-5. Klicken Sie im Assistenten auf **Anmelden**, und melden Sie sich mit Ihrem Microsoft-Konto an. Wählen Sie den App-Namen aus, den Sie in Schritt 2 reserviert haben, und klicken Sie auf **Weiter** > **Zuordnen**.
+5. Klicken Sie im Assistenten auf **Anmelden**, und melden Sie sich mit Ihrem Microsoft-Konto an. Wählen Sie den App-Namen aus, den Sie in Schritt 2 reserviert haben, und klicken Sie auf **Weiter** \> **Zuordnen**.
 
    	Auf diese Weise werden die erforderlichen Windows Store-Registrierungsinformationen zum Anwendungsmanifest hinzugefügt.
 
-6. (Optional) Für universelle Windows-Apps wiederholen Sie die Schritte 4 und 5 für das Windows Phone Store-Projekt.
+6. \(Optional\) Für universelle Windows-Apps wiederholen Sie die Schritte 4 und 5 für das Windows Phone Store-Projekt.
 
 6. Klicken Sie auf der Windows-Entwicklungscenter-Seite für Ihre neue Anwendung auf **Dienste**.
 
@@ -66,15 +66,15 @@ Die Microsoft-Kontoseite für Ihre App wird nun angezeigt.
 
 ## Konfigurieren Sie Ihre Microsoft-Kontoanmeldung und stellen Sie eine Verbindung zu Mobile Services her
 
-Der erste Schritt in diesem Abschnitt gilt nur für Windows Phone 8, Windows Phone 8.1 Silverlight und Apps, die nicht Windows Store-basiert sind. Für diese Anwendungen können Sie auch die Paket-Sicherheits-ID (SID) ignorieren, die nur für Windows Store-Apps verfügbar ist.
+Der erste Schritt in diesem Abschnitt gilt nur für Windows Phone 8, Windows Phone 8.1 Silverlight und Apps, die nicht Windows Store-basiert sind. Für diese Anwendungen können Sie auch die Paket-Sicherheits-ID \(SID\) ignorieren, die nur für Windows Store-Apps verfügbar ist.
 
-1. Für eine App, die nicht Windows Store-basiert ist, navigieren Sie zu der Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=262039" target="_blank">Meine Anwendungen</a> im Entwicklercenter des Microsoft-Kontos, melden sich mit Ihrem Microsoft-Konto an (falls erforderlich), klicken auf **Anwendung erstellen**, geben dann einen **Anwendungsnamen** ein und klicken auf **Ich stimme zu**.
+1. Für eine App, die nicht Windows Store-basiert ist, navigieren Sie zu der Seite <a href="http://go.microsoft.com/fwlink/p/?LinkId=262039" target="_blank">Meine Anwendungen</a> im Entwicklercenter des Microsoft-Kontos, melden sich mit Ihrem Microsoft-Konto an \(falls erforderlich\), klicken auf **Anwendung erstellen**, geben dann einen **Anwendungsnamen** ein und klicken auf **Ich stimme zu**.
 
    	Dadurch wird ein App-Name mit dem Microsoft-Konto reserviert und die Microsoft-Kontoseite für Ihre App angezeigt.
 
 2. Klicken Sie auf der Microsoft-Kontoseite für Ihre App auf **API-Einstellungen**, aktivieren Sie das Kontrollkästchen **Mobile oder Desktop-Client-App**, legen Sie die mobile Dienst-URL als **Zieldomäne** fest, geben Sie den Wert `https://<mobile_service>.azure-mobile.net/login/microsoftaccount/` in die **Umleitungs-URL** ein, und klicken Sie anschließend auf **Speichern**.
 
-	 >[AZURE.NOTE]Für einen mit Visual Studio in Azure veröffentlichten mobilen .NET-Back-End-Dienst ist die Umleitungs-URL die URL Ihres mobilen Diensts mit dem Pfadsuffix _signin-microsoft_ für Ihren mobilen Dienst als .NET-Dienst, z. B. `https://todolist.azure-mobile.net/signin-microsoft`.
+	 \>[AZURE.NOTE]Für einen mit Visual Studio in Azure veröffentlichten mobilen .NET-Back-End-Dienst ist die Umleitungs-URL die URL Ihres mobilen Diensts mit dem Pfadsuffix _signin-microsoft_ für Ihren mobilen Dienst als .NET-Dienst, z. B. `https://todolist.azure-mobile.net/signin-microsoft`.
 
     ![API-Einstellungen im Microsoft-Konto](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-app-push-auth-2.png)
 
@@ -107,4 +107,4 @@ Sowohl Ihr Mobile Service als auch Ihre App sind nun konfiguriert und funktionie
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

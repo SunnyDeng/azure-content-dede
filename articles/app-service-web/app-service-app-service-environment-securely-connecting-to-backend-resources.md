@@ -25,7 +25,7 @@ Beispielsweise kann ein SQL Server auf einem Cluster virtueller Computer ausgef�
 
 Als weiteres Beispiel können vertrauliche Endpunkte lokal ausgeführt werden und mit Azure entweder über [Site-to-Site][SiteToSite]- oder [Azure ExpressRoute][ExpressRoute]-Verbindungen verbunden sein. Daher können nur Ressourcen in virtuellen Netzwerken, die mit den Site-to-Site- oder ExpressRoute-Tunneln verbunden sind, auf lokale Standorte zugreifen.
 
-In all diesen Szenarien können Apps, die in einer App Service-Umgebung ausgeführt werden, sich sicher mit den verschiedenen Servern und Ressourcen verbinden. Ausgehender Datenverkehr von in einer App Service-Umgebung ausgeführten Apps zu privaten Endpunkte in demselben virtuellen Netzwerk (oder die mit demselben virtuellen Netzwerk verbunden sind) wird nur über das virtuelle Netzwerk geleitet. Ausgehender Datenverkehr an private Endpunkte verläuft nicht über das öffentliche Internet.
+In all diesen Szenarien können Apps, die in einer App Service-Umgebung ausgeführt werden, sich sicher mit den verschiedenen Servern und Ressourcen verbinden. Ausgehender Datenverkehr von in einer App Service-Umgebung ausgeführten Apps zu privaten Endpunkte in demselben virtuellen Netzwerk \(oder die mit demselben virtuellen Netzwerk verbunden sind\) wird nur über das virtuelle Netzwerk geleitet. Ausgehender Datenverkehr an private Endpunkte verläuft nicht über das öffentliche Internet.
 
 ## Ausgehende Verbindungen und DNS-Anforderungen ##
 Damit eine App-Service-Umgebung ordnungsgemäß funktioniert, ist ein ausgehender Zugriff auf Azure Storage sowie eine SQL-Datenbank in derselben Azure-Region erforderlich. Wenn der ausgehende Internetzugriff im virtuellen Netzwerk blockiert ist, können App Service-Umgebungen nicht auf diese Azure-Endpunkte zugreifen.
@@ -42,7 +42,7 @@ Eine gängige SQL Server-Konfiguration verfügt über einen Endpunkt, der an Por
 Es gibt zwei Ansätze zum Einschränken des Datenverkehrs zu diesem Endpunkt:
 
 
-- [Netzwerk-Zugriffssteuerungslisten][NetworkAccessControlLists] (Netzwerk-ACLs)
+- [Netzwerk-Zugriffssteuerungslisten][NetworkAccessControlLists] \(Netzwerk-ACLs\)
 
 - [Netzwerksicherheitsgruppen][NetworkSecurityGroups]
 
@@ -97,7 +97,7 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 <!-- LINKS -->
 [virtualnetwork]: https://msdn.microsoft.com/library/azure/dn133803.aspx
 [ControlInboundTraffic]: http://azure.microsoft.com/documentation/articles/app-service-app-service-environment-control-inbound-traffic/
-[SiteToSite]: https://msdn.microsoft.com/library/azure/dn133795.aspx
+[SiteToSite]: https://azure.microsoft.com/documentation/articles/vpn-gateway-site-to-site-create/
 [ExpressRoute]: http://azure.microsoft.com/services/expressroute/
 [NetworkAccessControlLists]: https://msdn.microsoft.com/library/azure/dn376541.aspx
 [NetworkSecurityGroups]: https://msdn.microsoft.com/library/azure/dn848316.aspx
@@ -110,4 +110,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [NetworkAccessControlListExample]: ./media/app-service-app-service-environment-securely-connecting-to-backend-resources/NetworkAcl01.png
 [DefaultNetworkSecurityRules]: ./media/app-service-app-service-environment-securely-connecting-to-backend-resources/DefaultNetworkSecurityRules01.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

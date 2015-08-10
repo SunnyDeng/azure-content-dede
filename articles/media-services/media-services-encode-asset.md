@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/16/2015" 
+	ms.date="07/23/2015" 
 	ms.author="juliako"/>
 
 #Codieren von On-Demand-Inhalten mit Azure Media Services
@@ -26,7 +26,7 @@ Media Services unterstützen die folgenden Encoder:
 
 - [Media Encoder Standard](#media_encoder_standard)
 - [Azure Media Encoder](#azure_media_encoder)
-- [Medienencoder-Premium-Workflow](#media_encoder_premium_workflow) (öffentliche Vorschau)
+- [Media Encoder Premium Workflow](#media_encoder_premium_workflow)
 
 Im [folgenden Abschnitt](#compare_encoders) werden die Codierfunktionen von unterstützten Encodern verglichen.
 
@@ -61,7 +61,7 @@ Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des **Azure-Verwa
 [Codieren Ihrer Medien mit Dolby Digital Plus](media-services-encode-with-dolby-digital-plus.md): Beschreibt das Codieren von Audiospuren mit Dolby Digital Plus-Codierung.
 
 
-##<a id="media_encoder_premium_wokrflow"></a>Medienencoder-Premium-Workflow (Vorschau)
+##<a id="media_encoder_premium_wokrflow"></a>Media Encoder Premium Workflow 
 
 **Hinweis** Der in diesem Thema beschriebene Media Encoder Premium Workflow-Medienprozessor ist in China nicht verfügbar.
 
@@ -80,10 +80,10 @@ Codieren mit **Media Encoder Premium Workflow** mit **.NET**. Weitere Informatio
 
 <table border="1">
 <tr><th>Medienprozessorname</th><th>Geltende Preise</th><th>Hinweise</th></tr>
-<tr><td><b>Windows Azure Media Encoder</b></td><td>LEGACY ENCODER</td><td>Codieraufgaben werden gemäß der Summe der Größen von Eingabemedienobjekten und Ausgabemedienobjekten in GB berechnet, und zwar zur <a href="http://azure.microsoft.com/pricing/details/media-services/">hier</a> angegebenen Rate in der Spalte LEGACY ENCODER.</td></tr>
-<tr><td><b>Azure Media Encoder</b></td><td>ENCODER</td><td>Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur <a href="http://azure.microsoft.com/pricing/details/media-services/">hier</a> angegebenen Rate in der Spalte ENCODER.</td></tr>
-<tr><td><b>Media Encoder Standard</b></td><td>ENCODER</td><td>Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur <a href="http://azure.microsoft.com/pricing/details/media-services/">hier</a> angegebenen Rate in der Spalte ENCODER.</td></tr>
-<tr><td><b>Media Encoder Premium Workflow</b></td><td>PREMIUM ENCODER</td><td>Codierungsaufgaben werden gemäß der Größe von Ausgabemedienobjekten in GB angegeben, und zwar zur <a href="http://azure.microsoft.com/pricing/details/media-services/">hier</a> angegebenen Rate in der Spalte PREMIUM ENCODER.</td></tr>
+<tr><td><b>Windows Azure Media Encoder</b></td><td>LEGACY ENCODER</td><td>Codieraufgaben werden gemäß der Summe der Größen von Eingabemedienobjekten und Ausgabemedienobjekten in GB berechnet, und zwar zur <a href="http://azure.microsoft.com/en-us/pricing/details/media-services/">hier</a> angegebenen Rate in der Spalte LEGACY ENCODER.</td></tr>
+<tr><td><b>Azure Media Encoder</b></td><td>ENCODER</td><td>Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur <a href="http://azure.microsoft.com/en-us/pricing/details/media-services/">hier</a> angegebenen Rate in der Spalte ENCODER.</td></tr>
+<tr><td><b>Media Encoder Standard</b></td><td>ENCODER</td><td>Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur <a href="http://azure.microsoft.com/en-us/pricing/details/media-services/">hier</a> angegebenen Rate in der Spalte ENCODER.</td></tr>
+<tr><td><b>Media Encoder Premium Workflow</b></td><td>PREMIUM ENCODER</td><td>Codierungsaufgaben werden gemäß der Größe von Ausgabemedienobjekten in GB angegeben, und zwar zur <a href="http://azure.microsoft.com/en-us/pricing/details/media-services/">hier</a> angegebenen Rate in der Spalte PREMIUM ENCODER.</td></tr>
 </table>
 
 
@@ -107,7 +107,7 @@ Eingabecontainer/Dateiformate
 <tr><td>AVI (unkomprimiert, 8-Bit/10-Bit)</td><td>Ja</td><td>Ja</td><td>Ja</td></tr>
 <tr><td>3GPP/3GPP2</td><td>Nein</td><td>Ja</td><td>Ja</td></tr>
 <tr><td>Smooth Streaming-Dateiformat (PIFF 1.3)</td><td>Nein</td><td>Ja</td><td>Ja</td></tr>
-<tr><td><a href="https://msdn.microsoft.com/de-de/library/windows/desktop/dd692984(v=vs.85).aspx">Microsoft Digital Video Recording (DVR-MS)</a></td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+<tr><td><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd692984(v=vs.85).aspx">Microsoft Digital Video Recording (DVR-MS)</a></td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
 <tr><td>Matroska/WebM</td><td>Nein</td><td>Nein</td><td>Ja</td></tr></table>
 
 Codecs für Videoeingang
@@ -189,10 +189,10 @@ Codecs für Audioausgabe
 
 ##Verwandte Artikel
 
-- [Introducing Premium Encoding in Azure Media Services (in englischer Sprache)](http://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services)
-- [How to Use Premium Encoding in Azure Media Services (in englischer Sprache)](http://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
+- [Introducing Premium Encoding in Azure Media Services \(in englischer Sprache\)](http://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services)
+- [How to Use Premium Encoding in Azure Media Services \(in englischer Sprache\)](http://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
 - [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md)
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

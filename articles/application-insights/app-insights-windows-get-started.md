@@ -35,7 +35,7 @@ Sie benötigen Folgendes:
 * Ein Abonnement für [Microsoft Azure][azure]
 * Visual Studio 2013 oder höher
 
-## 1. Erstellen einer Application Insights-Ressource 
+## 1\. Erstellen einer Application Insights-Ressource 
 
 Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource.
 
@@ -50,7 +50,7 @@ Mit diesem Schlüssel wird die Ressource identifiziert. Sie benötigen ihn in K�
 ![Öffnen Sie die Dropdownliste "Essentials", und wählen Sie den Instrumentationsschlüssel aus](./media/app-insights-windows-get-started/02-props.png)
 
 
-## 2. Hinzufügen des Application Insights SDK zu Ihren Apps
+## 2\. Hinzufügen des Application Insights SDK zu Ihren Apps
 
 Fügen Sie in Visual Studio das entsprechende SDK Ihrem Projekt hinzu.
 
@@ -66,18 +66,20 @@ Wenn es sich um eine universelle Windows App handelt, wiederholen Sie die Schrit
 
 3. Wählen Sie **Application Insights für Windows-Anwendungen**.
 
-4. Fügen Sie die Datei „ApplicationInsights.config“ im Stammverzeichnis der Projektmappe hinzu, und fügen Sie den oben kopierten Instrumentationsschlüssel ein. Nachfolgend sehen Sie einen XML-Beispielcode für diese Config-Datei. **Stellen Sie sicher, dass der Buildvorgang der Datei „ApplicationInsights.config“ als „Inhalt“ markiert und für „In Ausgabeverzeichnis kopieren“ die Option „Immer kopieren“ festgelegt ist**.
+4. Fügen Sie die Datei "ApplicationInsights.config" im Stammverzeichnis des Projekts hinzu, und fügen Sie den im Portal kopierten Instrumentationsschlüssel ein. Nachfolgend sehen Sie einen XML-Beispielcode für diese Config-Datei.
 
 	```xml
 		<?xml version="1.0" encoding="utf-8" ?>
 		<ApplicationInsights>
-			<InstrumentationKey>YOUR COPIED KEY FROM ABOVE</InstrumentationKey>
+			<InstrumentationKey>YOUR COPIED INSTRUMENTATION KEY</InstrumentationKey>
 		</ApplicationInsights>
 	```
+
+    Legen Sie die Eigenschaften der Datei "ApplicationInsights.config" fest: **Buildvorgang** = **Inhalt** und **In Ausgabeverzeichnis kopieren** = **Immer kopieren**.
 	
 	![](./media/app-insights-windows-get-started/AIConfigFileSettings.png)
 
-5. Fügen Sie den folgenden Initialisierungscode hinzu. Es wird empfohlen, diesen Code dem `App()`-Konstruktor hinzuzufügen. Wenn diese Initialisierung nicht im App-Konstruktor erfolgt, verpassen Sie möglicherweise die erste automatische Sammlung von Seitenaufrufen.
+5. Fügen Sie den folgenden Initialisierungscode hinzu. Es ist am besten, diesen Code dem `App()`-Konstruktor hinzuzufügen. Wenn Sie ihn an anderer Stelle hinzufügen, könnten Sie die automatische Erfassung der ersten Seitenansichten verpassen.
 
 ```C#
 	public App()
@@ -180,7 +182,7 @@ Wenn Sie die Einrichtungsschritte lieber in Visual Studio ausführen möchten, i
 
 Wählen Sie Application Insights im Dialogfeld "Neues Projekt" aus.
 
-Wenn Sie aufgefordert werden, sich anzumelden, verwenden Sie die Anmeldeinformationen Ihres Azure-Kontos (das vom Visual Studio Online-Konto getrennt ist).
+Wenn Sie aufgefordert werden, sich anzumelden, verwenden Sie die Anmeldeinformationen Ihres Azure-Kontos \(das vom Visual Studio Online-Konto getrennt ist\).
 
 ![](./media/app-insights-windows-get-started/appinsights-d21-new.png)
 
@@ -227,4 +229,4 @@ Gehen Sie bei [Veröffentlichung einer neuen SDK-Version](app-insights-release-n
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

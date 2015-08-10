@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vs-what-happened" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/20/2015" 
+	ms.date="07/22/2015" 
 	ms.author="patshea123"/>
 
 # Was ist mit meinem Projekt passiert?
@@ -27,7 +27,7 @@
 > - [Queues](vs-storage-aspnet5-getting-started-queues.md)
 > - [Tables](vs-storage-aspnet5-getting-started-tables.md)
 
-###<span id="whathappened">Was ist mit meinem Projekt passiert?</span>
+###Was ist mit meinem Projekt passiert?</span>
 
 ##### Verweise wurden hinzugefügt
 
@@ -50,4 +50,4 @@ In der Datei config.json Ihres Projekts wurde ein Element mit der Verbindungszei
 Weitere Informationen finden Sie unter [ASP.NET 5](http://www.asp.net/vnext).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

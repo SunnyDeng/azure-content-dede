@@ -52,7 +52,7 @@ Falls noch nicht geschehen:
 
 * Schließen Sie Folgendes in den Geräte- oder Webservercode ein:
 
-    *C#:* `using Microsoft.ApplicationInsights;`
+    *C\#:* `using Microsoft.ApplicationInsights;`
 
     *VB:* `Imports Microsoft.ApplicationInsights`
 
@@ -60,9 +60,9 @@ Falls noch nicht geschehen:
 
 ## Erstellen eines TelemetryClient
 
-Erstellen Sie eine Instanz von TelemetryClient (außer in JavaScript auf Webseiten):
+Erstellen Sie eine Instanz von TelemetryClient \(außer in JavaScript auf Webseiten\):
 
-*C#:*
+*C\#:*
 
     private TelemetryClient telemetry = new TelemetryClient();
 
@@ -92,7 +92,7 @@ Senden Sie z. B. in einer Spiele-App ein Ereignis, sobald ein Benutzer das Spiel
 
     appInsights.trackEvent("WinGame");
 
-*C#*
+*C\#*
     
     telemetry.TrackEvent("WinGame");
 
@@ -124,15 +124,15 @@ Klicken Sie auf ein beliebiges Vorkommen, um weitere Details anzuzeigen.
 
 ## <a name="properties"></a>Filtern, Suchen und Segmentieren der Daten mit Eigenschaften
 
-Sie können Ihren Ereignissen (und auch Metriken, Seitenaufrufen und anderen Telemetriedaten) Eigenschaften und Messungen anfügen.
+Sie können Ihren Ereignissen \(und auch Metriken, Seitenaufrufen und anderen Telemetriedaten\) Eigenschaften und Messungen anfügen.
 
 **Eigenschaften** sind die Zeichenfolgenwerte, die Sie zum Filtern der Telemetriedaten in den Nutzungsberichten verwenden können. Wenn zum Beispiel die Anwendung mehrere Spiele bereitstellt, sollten Sie den Namen des Spiels an jedes Ereignis anfügen, damit Sie sehen können, welche Spiele immer populärer werden.
 
-Es gibt eine Beschränkung von ca. 1 KB für die Länge der Zeichenfolge. (Wenn Sie große Datenblöcke senden möchten, verwenden Sie den message-Parameter von [TrackTrace](#track-trace).)
+Es gibt eine Beschränkung von ca. 1 KB für die Länge der Zeichenfolge. \(Wenn Sie große Datenblöcke senden möchten, verwenden Sie den message-Parameter von [TrackTrace](#track-trace).\)
 
 **Metriken** sind numerische Werte, die grafisch dargestellt werden können. Beispiel: Sie möchten überprüfen, ob die von den Spielern erreichten Punktzahlen stetig zunehmen. Die Diagramme können anhand der mit dem Ereignis gesendeten Eigenschaften unterteilt werden, sodass Sie für verschiedene Spiele separate oder gestapelte Diagramme erhalten.
 
-Metrikwerte müssen >=0 sein, um richtig angezeigt zu werden.
+Metrikwerte müssen \>=0 sein, um richtig angezeigt zu werden.
 
 
 Es gibt einige [Beschränkungen hinsichtlich der Anzahl von Eigenschaften, Eigenschaftswerten und Metriken](#limits), die Sie verwenden können.
@@ -148,7 +148,7 @@ Es gibt einige [Beschränkungen hinsichtlich der Anzahl von Eigenschaften, Eigen
          {Score: currentGame.score, Opponents: currentGame.opponentCount}
          );
 
-*C#*
+*C\#*
 
     // Set up some properties and metrics:
     var properties = new Dictionary <string, string> 
@@ -185,7 +185,7 @@ Es gibt einige [Beschränkungen hinsichtlich der Anzahl von Eigenschaften, Eigen
     metrics.put("Score", currentGame.getScore());
     metrics.put("Opponents", currentGame.getOpponentCount());
     
-    telemetry.trackEvent("WinGame", properties, metrics2/7/2015 12:05:25 AM );
+    telemetry.trackEvent("WinGame", properties, metrics);
 
 
 > [AZURE.NOTE]Achten Sie darauf, keine persönlich identifizierbaren Informationen in den Eigenschaften zu protokollieren.
@@ -238,7 +238,7 @@ Wenn es für Sie praktischer ist, können Sie die Parameter eines Ereignisses in
 Manchmal möchten Sie im Diagramm darstellen, wie lange es dauert, eine Aktion auszuführen. Beispielsweise möchten Sie wissen, wie lange Benutzer brauchen, um die Auswahl in einem Spiel zu erwägen. Dies ist ein nützliches Beispiel für die Verwendungszwecke des Messparameters.
 
 
-*C#*
+*C\#*
 
     var stopwatch = System.Diagnostics.Stopwatch.StartNew();
 
@@ -264,14 +264,14 @@ Verwenden Sie TrackMetric zum Senden von Metriken, die keinen bestimmten Ereigni
 
 Metriken werden als statistische Diagramme im Metrik-Explorer angezeigt. Im Gegensatz zu Ereignissen können Sie jedoch nicht nach einzelnen Vorkommen in der Diagnosesuche suchen.
 
-Metrikwerte müssen >=0 sein, um richtig angezeigt zu werden.
+Metrikwerte müssen \>=0 sein, um richtig angezeigt zu werden.
 
 
 *JavaScript*
 
     appInsights.trackMetric("Queue", queue.Length);
 
-*C#*
+*C\#*
 
     telemetry.TrackMetric("Queue", queue.Length);
 
@@ -285,7 +285,7 @@ Metrikwerte müssen >=0 sein, um richtig angezeigt zu werden.
 
 Tatsächlich können Sie dies in einem Hintergrundthread ausführen:
 
-*C#*
+*C\#*
 
     private void Run() {
      var appInsights = new TelemetryClient();
@@ -316,7 +316,7 @@ Benutzer- und Sitzungsdaten werden als Eigenschaften zusammen mit Seitenaufrufen
 
     appInsights.trackPageView("tab1");
 
-*C#*
+*C\#*
 
     telemetry.TrackPageView("GameReviewPage");
 
@@ -350,7 +350,7 @@ Wird vom Server-SDK zum Protokollieren von HTTP-Anforderungen verwendet.
 
 Sie können diese Methode auch selbst aufrufen, wenn Sie Anforderungen in einem Kontext simulieren möchten, in dem das Webdienstmodul nicht ausgeführt wird.
 
-*C#*
+*C\#*
 
     // At start of processing this request:
 
@@ -371,7 +371,7 @@ Sie können diese Methode auch selbst aufrufen, wenn Sie Anforderungen in einem 
 
 Senden Sie Ausnahmen an Application Insights, um sie als Hinweis auf die Häufigkeit eines Problems [zu zählen][metrics] und um [einzelne Vorkommen zu untersuchen][diagnostic]. Die Berichte enthalten die Stapelüberwachung.
 
-*C#*
+*C\#*
 
     try
     {
@@ -394,11 +394,11 @@ Verwenden Sie diese Methode zur Diagnose von Problemen, indem Sie eine "Brotkrü
 [Protokolladapter][trace] verwenden diese API zum Senden von Drittanbieterprotokollen an das Portal.
 
 
-*C#*
+*C\#*
 
     telemetry.TrackTrace(message, SeverityLevel.Warning, properties);
 
-Die Größenbeschränkung für `message` liegt wesentlich höher als der Grenzwert für Eigenschaften. Sie können nach Nachrichteninhalt suchen, aber (anders als bei Eigenschaftswerten) nicht danach filtern.
+Die Größenbeschränkung für `message` liegt wesentlich höher als der Grenzwert für Eigenschaften. Sie können nach Nachrichteninhalt suchen, aber \(anders als bei Eigenschaftswerten\) nicht danach filtern.
 
 ## TrackDependency
 
@@ -428,7 +428,7 @@ Zum Deaktivieren des Standardmoduls für das Nachverfolgen von Abhängigkeiten b
 
 Wenn Sie nur die Standardeigenschaftswerte für einige von Ihnen benutzerdefinierte Ereignisse festlegen möchten, können Sie diese in einem TelemetryClient einstellen. Sie werden jedem Telemetrieelement zugeordnet, das von diesem Client gesendet wird..
 
-*C#*
+*C\#*
 
     using Microsoft.ApplicationInsights.DataContracts;
 
@@ -464,7 +464,7 @@ Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwört
 
 ## <a name="ikey"></a> Festlegen des Instrumentationsschlüssels für ausgewählte benutzerdefinierte Telemetriedaten
 
-*C#*
+*C\#*
     
     var telemetry = new TelemetryClient();
     telemetry.Context.InstrumentationKey = "---my key---";
@@ -480,7 +480,7 @@ Eine typische Verwendung besteht in der Identifikation von Telemetriedaten aus v
 **Definieren des Initialisierers**
 
 
-*C#*
+*C\#*
 
 ```C#
 
@@ -533,7 +533,7 @@ In "ApplicationInsights.config":
 
 *Alternativ* können Sie den Initialisierer im Code instanziieren:
 
-*C#*
+*C\#*
 
 ```C#
 
@@ -559,13 +559,13 @@ Im JavaScript-Webclient können derzeit keine Standardeigenschaften festgelegt w
 
 Verwenden Sie Telemetrieinitialisierer zum Überschreiben ausgewählter Verhalten der Standardtelemetriemodule.
 
-Das Application Insights for Web-Paket erfasst beispielsweise Telemetriedaten über HTTP-Anforderungen. Standardmäßig kennzeichnet es jede Anforderung mit einem Antwortcode >= 400 als fehlerhaft. Wenn 400 jedoch als erfolgreich behandelt werden soll, können Sie einen Telemetrieinitialisierer angeben, der die Success-Eigenschaft festlegt.
+Das Application Insights for Web-Paket erfasst beispielsweise Telemetriedaten über HTTP-Anforderungen. Standardmäßig kennzeichnet es jede Anforderung mit einem Antwortcode \>= 400 als fehlerhaft. Wenn 400 jedoch als erfolgreich behandelt werden soll, können Sie einen Telemetrieinitialisierer angeben, der die Success-Eigenschaft festlegt.
 
-Wenn Sie einen Telemetrieinitialisierer angeben, wird dieser immer aufgerufen, wenn eine der Track*()-Methoden aufgerufen wird. Dies umfasst auch Methoden, die von den Standardtelemetriemodulen aufgerufen werden. Nach Abmachung legen diese Module keine Eigenschaft fest, die bereits durch einen Initialisierer festgelegt wurde.
+Wenn Sie einen Telemetrieinitialisierer angeben, wird dieser immer aufgerufen, wenn eine der Track\*\(\)-Methoden aufgerufen wird. Dies umfasst auch Methoden, die von den Standardtelemetriemodulen aufgerufen werden. Nach Abmachung legen diese Module keine Eigenschaft fest, die bereits durch einen Initialisierer festgelegt wurde.
 
 **Definieren des Initialisierers**
 
-*C#*
+*C\#*
 
 ```C#
 
@@ -637,7 +637,7 @@ Um das Vermischen von Telemetriedaten aus Entwicklungs-, Test- und Produktionsum
 
 Statt den Instrumentationsschlüssel aus der Konfigurationsdatei abzurufen, können Sie ihn im Code festlegen. Legen Sie den Schlüssel in einer Initialisierungsmethode fest, wie z. B. "global.aspx.cs" in einem ASP.NET-Dienst:
 
-*C#*
+*C\#*
 
     protected void Application_Start()
     {
@@ -673,7 +673,7 @@ Auf Webseiten empfiehlt es sich, ihn über den Zustand des Webservers festzulege
 
 Normalerweise sendet das SDK Daten zu ausgewählten Zeiten, um den Benutzer möglichst wenig zu beeinträchtigen. In einigen Fällen empfiehlt es sich jedoch, den Puffer zu leeren – wenn Sie das SDK beispielsweise in einer Anwendung verwenden, die heruntergefahren wird.
 
-*C#*
+*C\#*
 
     telemetry.Flush();
 
@@ -693,7 +693,7 @@ Sie können [ausgewählte Teile der Standardtelemetrie deaktivieren][config], in
 Während des Debuggens ist es sinnvoll, die Telemetriedaten beschleunigt über die Pipeline zu senden, damit die Ergebnisse sofort angezeigt werden. Sie erhalten außerdem zusätzliche Meldungen, mit denen Sie alle Probleme mit der Telemetrie verfolgen können. Schalten Sie ihn in der Produktion aus, da er Ihre App beeinträchtigen kann.
 
 
-*C#*
+*C\#*
     
     TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = true;
 
@@ -708,14 +708,14 @@ TelemetryClient besitzt eine Eigenschaft "Context", die eine Reihe von Werten en
 Wenn Sie diese Werte selbst festlegen, empfiehlt es sich, die entsprechende Zeile aus [ApplicationInsights.config][config] zu entfernen, damit kein Konflikt zwischen Ihren Werten und den Standardwerten entsteht.
 
 * **Component** Identifiziert die App und deren Version.
-* **Device** Daten zu dem Gerät, auf dem die App ausgeführt wird (in Web-Apps der Server oder das Clientgerät, von dem die Telemetrie gesendet wird).
+* **Device** Daten zu dem Gerät, auf dem die App ausgeführt wird \(in Web-Apps der Server oder das Clientgerät, von dem die Telemetrie gesendet wird\).
 * **InstrumentationKey** Identifiziert die Application Insights-Ressource in Azure, in der die Telemetrie angezeigt wird. In der Regel wird diese aus der Datei "ApplicationInsights.config" übernommen.
 * **Location** Identifiziert den geografischen Standort des Geräts.
 * **Operation** In Web-Apps die aktuelle HTTP-Anforderung. In anderen App-Typen können Sie dies zur Gruppierung von Ereignissen festlegen.
  * **Id**: Ein generierter Wert, der verschiedene Ereignisse korreliert, sodass Sie beim Untersuchen eines Ereignisses in der Diagnosesuche "Verwandte Elemente" finden können.
  * **Name**: Die URL der HTTP-Anforderung.
  * **SyntheticSource**: Wenn sie nicht null oder leer ist, gibt diese Zeichenfolge an, dass die Quelle der Anforderung als Roboter oder Webtest identifiziert wurde. Standardmäßig wird sie von Berechnungen im Metrik-Explorer ausgeschlossen.
-* **Properties** Eigenschaften, die mit allen Telemetriedaten gesendet werden. Kann in einzelnen Track*-Aufrufen außer Kraft gesetzt werden.
+* **Properties** Eigenschaften, die mit allen Telemetriedaten gesendet werden. Kann in einzelnen Track\*-Aufrufen außer Kraft gesetzt werden.
 * **Session** Identifiziert die Sitzung des Benutzers. Die ID wird auf einen generierten Wert festgelegt, der geändert wird, wenn der Benutzer für eine Weile nicht aktiv ist.
 * **User** Ermöglicht das Zählen von Benutzern. Wenn in einer Web-App ein Cookie vorhanden ist, wird die Benutzer-ID daraus entnommen. Andernfalls wird eine neue generiert. Wenn Ihre Benutzer sich bei Ihrer App anmelden müssen, können Sie die ID anhand ihrer authentifizierten ID festlegen, um eine zuverlässigere Zählung bereitzustellen, die auch dann richtig ist, wenn der Benutzer sich von einem anderen Computer aus anmeldet. 
 
@@ -726,7 +726,7 @@ Wenn Sie diese Werte selbst festlegen, empfiehlt es sich, die entsprechende Zeil
 
 Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignissen pro Anwendung.
 
-1. Bis zu 500 Telemetriedatenpunkte pro Sekunde pro Instrumentationsschlüssel (d. h. pro Anwendung). Dazu gehören sowohl die vom SDK-Modul gesendete Standardtelemetrie als auch benutzerdefinierte Ereignisse, Metriken und andere Telemetriedaten, die vom Code gesendet werden.
+1. Bis zu 500 Telemetriedatenpunkte pro Sekunde pro Instrumentationsschlüssel \(d. h. pro Anwendung\). Dazu gehören sowohl die vom SDK-Modul gesendete Standardtelemetrie als auch benutzerdefinierte Ereignisse, Metriken und andere Telemetriedaten, die vom Code gesendet werden.
 1.	Bis zu 200 eindeutige Metriknamen und 200 eindeutige Eigenschaftennamen für Ihre Anwendung. Zu den Metriken gehören Daten, die über TrackMetric gesendet werden, sowie Messungen für andere Datentypen wie z. B. Ereignisse. Metriken und Eigenschaftennamen gelten global pro Instrumentationsschlüssel und werden nicht auf den Datentyp begrenzt.
 2.	Eigenschaften können nur zur Filterung und zur Gruppierung verwendet werden, solange sie weniger als 100 eindeutige Werte für jede Eigenschaft aufweisen. Sobald die eindeutigen Werte 100 überschreiten, kann die Eigenschaft zwar noch zur Suche und Filterung, jedoch nicht mehr für Filter verwendet werden.
 3.	Standardeigenschaften wie z. B. RequestName und die Seiten-URL, sind auf 1000 eindeutige Werte pro Woche beschränkt. Nach 1000 eindeutigen Werten werden zusätzliche Werte als "Andere Werte" gekennzeichnet. Der ursprüngliche Wert kann nach wie vor für die Volltextsuche und die Filterung verwendet werden.
@@ -740,10 +740,11 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
 * [ASP.NET-Referenz](https://msdn.microsoft.com/library/dn817570.aspx)
 * [Java-Referenz](http://dl.windowsazure.com/applicationinsights/javadoc/)
+* [JavaScript-Referenz](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
 
 ## Fragen
 
-* *Welche Ausnahmen werden möglicherweise von "Track *"-Aufrufen ausgelöst?*
+* *Welche Ausnahmen werden möglicherweise von "Track \*"-Aufrufen ausgelöst?*
     
     Keine. Sie müssen sie nicht in Catch-Klauseln einbetten.
 
@@ -778,4 +779,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

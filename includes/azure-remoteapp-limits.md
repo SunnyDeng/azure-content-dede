@@ -7,11 +7,11 @@
 |Testsammlungen| 2 pro Abonnement|
 |Benutzer pro Testsammlung| 10|
 |Testvorlagenimages|	25|
-|Kostenpflichtige Sammlungen| 3 (Sie können eine Erhöhung dieser Begrenzung anfordern.)|
+|Kostenpflichtige Sammlungen| 3 \(Sie können eine Erhöhung dieser Begrenzung anfordern.\)|
 |Kostenpflichtige Vorlagenimages| 25|	
-|Benutzer – Basic-Tarif*| 400 (Standard) / 800 (maximal)|
-|Benutzer – Standard-Tarif*| 250 (Standard) / 500 (maximal)|
-|Gleichzeitige Verbindungen für alle Sammlungen in einem Abonnement| 5000 (Sie können eine Erhöhung dieser Begrenzung anfordern.)|
+|Benutzer – Basic-Tarif\*| 400 \(Standard\) / 800 \(maximal\)|
+|Benutzer – Standard-Tarif\*| 250 \(Standard\) / 500 \(maximal\)|
+|Gleichzeitige Verbindungen für alle Sammlungen in einem Abonnement| 5000 \(Sie können eine Erhöhung dieser Begrenzung anfordern.\)|
 |Speicherung von Benutzerdaten pro Benutzer pro Sammlung| 50 GB|
 |Leerlauftimeout| 4 Stunden|
 |Timeout nach Trennung| 4 Stunden|
@@ -20,4 +20,4 @@
 
 Um eine Erhöhung der Anzahl der kostenpflichtigen Sammlungen oder gleichzeitigen Verbindungen anzufordern, senden Sie eine E-Mail an [remoteappforum@microsoft.com](mailto:remoteappforum@microsoft.com) mit genauen Angaben, einschließlich Ihrer Abonnement-ID.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

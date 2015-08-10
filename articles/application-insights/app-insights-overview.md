@@ -31,7 +31,7 @@ Er ist für das Entwicklungsteam vorgesehen. Damit können Sie folgende Aktionen
  *  Metriken zur Diagnose von Leistungsproblemen, z. B. Reaktionszeiten, CPU-Auslastung, Nachverfolgung von Abhängigkeiten.
  *  Verfügbarkeitstests für Web-Apps.
  *  Berichte und Warnungen zu Abstürzen und Ausnahmen.
- *  Leistungsstarke Suche für Diagnoseprotokolle (einschließlich Protokollablaufverfolgungen aus Ihren bevorzugten Protokollierungsframeworks).
+ *  Leistungsstarke Suche für Diagnoseprotokolle \(einschließlich Protokollablaufverfolgungen aus Ihren bevorzugten Protokollierungsframeworks\).
 
 Das SDK für jede Plattform umfasst eine Reihe von Modulen, die die Anwendung ohne Konfigurationsaufwand überwachen. Darüber hinaus können Sie Ihre eigene Telemetrie für detailliertere und besser abgestimmte Analysen codieren.
 
@@ -39,6 +39,9 @@ Von der Anwendung gesammelte Telemetriedaten werden im Azure-Portal gespeichert 
 
 ![Erstellen Sie ein Diagramm mit der Statistik zur Benutzeraktivität, oder führen Sie eine Detailsuche bei bestimmten Ereignissen aus.](./media/app-insights-overview/00-sample.png)
 
+Benötigen Sie noch tiefer gehende Analysen? [Exportieren Sie](app-insights-export-telemetry.md) Ihre Daten [nach SQL](app-insights-code-sample-export-telemetry-sql-database.md), [Power BI](app-insights-export-power-bi.md) oder eigenen Tools.
+
+![Anzeigen von Daten in Power BI](./media/app-insights-overview/210.png)
 
 ## Plattformen und Sprachen
 
@@ -47,8 +50,8 @@ Es gibt SDKs für eine wachsende Palette an Plattformen. Derzeit enthält die Li
  * [ASP.NET-Server][greenbrown] auf Azure oder dem IIS-Server
  * [Azure Cloud Services](app-insights-cloudservices.md)
  * [J2EE-Server][java]
- * [Webseiten][client]: HTML und JavaScript
- * [Windows Phone, Windows Store, universelle Windows-10-Apps und direkte Integration in das Windows-10-Entwicklerportal][windows]
+ * [Webseiten][client]\: HTML und JavaScript
+ * [Windows Phone, Windows Store, universelle Windows 10-Apps und direkte Integration in das Windows 10-Entwicklerportal][windows]
  * [Windows Desktop][desktop]
  * [iOS][ios]
  * [Android][android]
@@ -72,9 +75,12 @@ Für ASP.NET-Server und Azure Web-Apps können Sie auch [Statusmonitor][redfield
 * Überwachen einer Web-App, ohne sie neu zu erstellen oder neu zu installieren.
 * Verfolgen von Aufrufen abhängiger Module.
 
+
+
 ### Wie sieht der Aufwand aus?
 
 Die Auswirkungen auf die Leistung sind sehr gering. Aufrufe werden nicht blockierend nachverfolgt, zusammengefasst und in einem separaten Thread gesendet.
+
 
 
 ## Erste Schritte
@@ -139,4 +145,4 @@ Wählen Sie für weitere Details Ihren App-Typ unter "Erste Schritte" in der Nav
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

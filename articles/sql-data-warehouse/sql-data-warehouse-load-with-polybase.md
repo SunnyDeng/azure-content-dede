@@ -44,12 +44,12 @@ Stellen Sie eine Verbindung mit der Benutzerdatenbank auf dem Server her, um ein
 CREATE MASTER KEY;
 ```
 
-Referenzthema: [CREATE MASTER KEY (Transact-SQL)][].
+Referenzthema: [CREATE MASTER KEY \(Transact-SQL\)][].
 
 ## Erstellen der datenbankbezogenen Anmeldeinformationen
 Um auf den Azure-Blob-Speicher zugreifen zu können, müssen Sie datenbankbezogene Anmeldeinformationen erstellen, in denen Authentifizierungsinformationen für Ihr Azure-Speicherkonto gespeichert sind. Stellen Sie eine Verbindung mit Ihrer Data Warehouse-Datenbank her, und erstellen Sie jeweils die datenbankbezogenen Anmeldeinformationen für alle Azure-Speicherkonten, auf die Sie zugreifen möchten. Geben Sie einen Identitätsnamen und Ihren Azure-Speicherkontoschlüssel als geheimen Schlüssel an. Der Identitätsname hat keine Auswirkungen auf die Authentifizierung für Azure Storage.
 
-Um festzustellen, ob im Datenbankbereich bereits Anmeldeinformationen vorhanden sind, verwenden Sie „sys.database_credentials“, nicht „sys.credentials“, da hier lediglich die Serveranmeldeinformationen angezeigt werden.
+Um festzustellen, ob im Datenbankbereich bereits Anmeldeinformationen vorhanden sind, verwenden Sie „sys.database\_credentials“, nicht „sys.credentials“, da hier lediglich die Serveranmeldeinformationen angezeigt werden.
 
 ```
 -- Check for existing database-scoped credentials.
@@ -60,7 +60,7 @@ CREATE DATABASE SCOPED CREDENTIAL ASBSecret WITH IDENTITY = 'joe',
 	Secret = 'myazurestoragekey==';
 ```
 
-Referenzthema: [CREATE CREDENTIAL (Transact-SQL)][].
+Referenzthema: [CREATE CREDENTIAL \(Transact-SQL\)][].
 
 Wenn Sie Ihre Azure-Speicherkontoschlüssel turnusmäßig ändern, müssen Sie die Anmeldeinformationen löschen und mit dem neuen Schlüssel als geheimen Schlüssel neu erstellen.
 
@@ -69,7 +69,7 @@ Wenn Sie Ihre Azure-Speicherkontoschlüssel turnusmäßig ändern, müssen Sie d
 DROP DATABASE SCOPED CREDENTIAL ASBSecret;
 ```
 
-Referenzthema: [DROP CREDENTIAL (Transact-SQL)][].
+Referenzthema: [DROP CREDENTIAL \(Transact-SQL\)][].
 
 
 ## Erstellen einer externen Datenquelle
@@ -85,10 +85,10 @@ WITH (
 );
 ```
 
-Referenzthema: [CREATE EXTERNAL DATA SOURCE (Transact-SQL)][].
+Referenzthema: [CREATE EXTERNAL DATA SOURCE \(Transact-SQL\)][].
 
 ## Erstellen eines externen Dateiformats
-Das externe Dateiformat ist ein Datenbankobjekt, das das Format der externen Daten angibt. In diesem Beispiel enthält die Textdatei unkomprimierte Daten und Felder, die durch den senkrechten Strich ("|") getrennt sind.
+Das externe Dateiformat ist ein Datenbankobjekt, das das Format der externen Daten angibt. In diesem Beispiel enthält die Textdatei unkomprimierte Daten und Felder, die durch den senkrechten Strich \("\|"\) getrennt sind.
 
 ```
 -- Creating external file format (delimited text file)
@@ -104,7 +104,7 @@ WITH (
 
 In PolyBase können komprimierte und unkomprimierte Daten im durch Trennzeichen getrennten Textformat sowie im Hive RCFILE- und HIVE ORC-Format bearbeitet werden.
 
-Referenzthema: [CREATE EXTERNAL FILE FORMAT (Transact-SQL)][].
+Referenzthema: [CREATE EXTERNAL FILE FORMAT \(Transact-SQL\)][].
 
 ## Erstellen einer externen Tabelle
 
@@ -131,9 +131,9 @@ WITH (LOCATION='/Demo/',
 
 Alle Dateien für eine Tabelle müssen sich im gleichen logischen Ordner im Azure-Blob befinden. Unterteilen Sie als bewährte Methode Ihre Daten im Azure-Speicher möglichst in Dateien mit einer Größe von nicht mehr als 1 GB, um die parallele Verarbeitung mit SQL Data Warehouse sicherzustellen.
 
-Referenzthema: [CREATE EXTERNAL TABLE (Transact-SQL)][].
+Referenzthema: [CREATE EXTERNAL TABLE \(Transact-SQL\)][].
 
-Die soeben erstellten Objekte werden in der SQL Data Warehouse-Datenbank gespeichert. Sie können sie im Objekt-Explorer von SQL Server Data Tools (SSDT) anzeigen.
+Die soeben erstellten Objekte werden in der SQL Data Warehouse-Datenbank gespeichert. Sie können sie im Objekt-Explorer von SQL Server Data Tools \(SSDT\) anzeigen.
 
 
 ## Abfragen von Daten im Azure-Blob-Speicher
@@ -161,7 +161,7 @@ Durch direktes Speichern der Daten entfällt bei Abfragen die für die Datenübe
 
 In diesem Beispiel werden die Daten mit der CREATE TABLE AS SELECT-Anweisung geladen. Die neue Tabelle erbt die in der Abfrage benannten Spalten. Sie erbt die Datentypen dieser Spalten aus der Definition der externen Tabelle.
 
-CREATE TABLE AS SELECT ist eine leistungsstarke Transact-SQL-Anweisung, die INSERT...SELECT ersetzt. Sie wurde ursprünglich für das Massively Parallel Processing (MPP)-Modul in Analytics Platform System entwickelt und wird jetzt in SQL Data Warehouse verwendet.
+CREATE TABLE AS SELECT ist eine leistungsstarke Transact-SQL-Anweisung, die INSERT...SELECT ersetzt. Sie wurde ursprünglich für das Massively Parallel Processing \(MPP\)-Modul in Analytics Platform System entwickelt und wird jetzt in SQL Data Warehouse verwendet.
 
 ```
 -- Load data from Azure blob storage to SQL Data Warehouse 
@@ -174,7 +174,7 @@ WITH (
 AS SELECT * from [ext].[CarSensor_Data];
 ```
 
-Siehe [CREATE TABLE AS SELECT (Transact-SQL)][].
+Siehe [CREATE TABLE AS SELECT \(Transact-SQL\)][].
 
 
 ## Einschränkungen
@@ -199,12 +199,12 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 
 <!-- External Links -->
-[CREATE EXTERNAL DATA SOURCE (Transact-SQL)]: https://msdn.microsoft.com/library/dn935022(v=sql.130).aspx
-[CREATE EXTERNAL FILE FORMAT (Transact-SQL)]: https://msdn.microsoft.com/library/dn935026(v=sql.130).aspx
-[CREATE EXTERNAL TABLE (Transact-SQL)]: https://msdn.microsoft.com/library/dn935021(v=sql.130).aspx
-[CREATE TABLE AS SELECT (Transact-SQL)]: https://msdn.microsoft.com/library/mt204041.aspx
-[CREATE MASTER KEY (Transact-SQL)]: https://msdn.microsoft.com/de-de/library/ms174382.aspx
-[CREATE CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-de/library/ms189522.aspx
-[DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-de/library/ms189450.aspx
+[CREATE EXTERNAL DATA SOURCE \(Transact-SQL\)]: https://msdn.microsoft.com/library/dn935022(v=sql.130).aspx
+[CREATE EXTERNAL FILE FORMAT \(Transact-SQL\)]: https://msdn.microsoft.com/library/dn935026(v=sql.130).aspx
+[CREATE EXTERNAL TABLE \(Transact-SQL\)]: https://msdn.microsoft.com/library/dn935021(v=sql.130).aspx
+[CREATE TABLE AS SELECT \(Transact-SQL\)]: https://msdn.microsoft.com/library/mt204041.aspx
+[CREATE MASTER KEY \(Transact-SQL\)]: https://msdn.microsoft.com/en-us/library/ms174382.aspx
+[CREATE CREDENTIAL \(Transact-SQL\)]: https://msdn.microsoft.com/en-us/library/ms189522.aspx
+[DROP CREDENTIAL \(Transact-SQL\)]: https://msdn.microsoft.com/en-us/library/ms189450.aspx
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

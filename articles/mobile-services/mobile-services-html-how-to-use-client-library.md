@@ -91,7 +91,7 @@ Das an die `where`-Methode übergebene Objekt kann beliebig viele Parameter enth
 	   alert("Error: " + err);
 	});
 
-Lässt sich (für die bereits gezeigte Abfrage) in etwa wie folgt übersetzen:
+Lässt sich \(für die bereits gezeigte Abfrage\) in etwa wie folgt übersetzen:
 
 	SELECT *
 	FROM TodoItem
@@ -127,7 +127,7 @@ Oder mit der Fluent-API:
 
 Beide Methoden sind äquivalent und können frei austauschbar verwendet werden. Alle bisherigen `where`-Aufrufe verwenden ein Objekt mit Parametern und prüfen auf Gleichheit mit den Daten in der Datenbank. Für die Abfragemethode gibt es jedoch noch eine weitere Überladung, die eine Funktion anstelle eines Objekts entgegennimmt. In dieser Funktion können wir komplexere Ausdrücke schreiben und Operatoren wie z. B. Ungleichheit oder andere relationale Operatoren verwenden. In diesen Funktionen ist das Schlüsselwort `this` an das Serverobjekt gebunden.
 
-Der Funktionstext wird in einen booleschen OData (Open Data Protocol)-Ausdruck übersetzt, der anschließend an einen Abfragezeichenfolgenparameter übergeben wird. Es ist möglich, Funktionen ohne Parameter zu übergeben:
+Der Funktionstext wird in einen booleschen OData \(Open Data Protocol\)-Ausdruck übersetzt, der anschließend an einen Abfragezeichenfolgenparameter übergeben wird. Es ist möglich, Funktionen ohne Parameter zu übergeben:
 
     query.where(function () {
        return this.assignee == "david" && (this.difficulty == "medium" || this.difficulty == "low");
@@ -297,7 +297,7 @@ Zeichenfolgen-IDs bieten Ihnen die folgenden Vorteile:
 
 Wenn der ID-Wert einer Zeichenfolge für eingefügte Datensätze nicht bereits festgelegt ist, generiert Mobile Services einen eindeutigen Wert für die ID. Weitere Informationen zum Generieren eigener ID-Werte auf dem Client oder in einem .NET-Back-End finden Sie unter [Gewusst wie: Generieren eindeutiger ID-Werte](mobile-services-how-to-use-server-scripts.md#generate-guids).
 
-Alternativ können Sie auch ganzzahlige IDs für Ihre Tabellen verwenden. Um ganzzahlige IDs zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables](../virtual-machines-command-line-tools.md#Mobile_Tables) (CLI für Tabellen in mobilen Diensten, in englischer Sprache).
+Alternativ können Sie auch ganzzahlige IDs für Ihre Tabellen verwenden. Um ganzzahlige IDs zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle \(CLI\) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables](../virtual-machines-command-line-tools.md#Mobile_Tables) \(CLI für Tabellen in mobilen Diensten, in englischer Sprache\).
 
 ##<a name="modifying"></a>Gewusst wie: Ändern von Daten in einem mobilen Dienst
 
@@ -363,7 +363,7 @@ Dieser Abschnitt beschreibt das Anzeigen von Datenobjekten in GUI-Elementen. Zum
 	   alert("Error: " + err);
 	});
 
-In Windows Store-Apps können Sie mit dem Abfrageergebnis ein [WinJS.Binding.List]-Objekt erstellen, das als Datenquelle für ein [ListView]-Objekt gebunden werden kann. Weitere Informationen finden Sie unter [Datenbindung (Windows Store-Apps mit JavaScript und HTML)].
+In Windows Store-Apps können Sie mit dem Abfrageergebnis ein \[WinJS.Binding.List\]-Objekt erstellen, das als Datenquelle für ein [ListView]-Objekt gebunden werden kann. Weitere Informationen finden Sie unter [Datenbindung \(Windows Store-Apps mit JavaScript und HTML\)].
 
 ##<a name="#custom-api"></a>Gewusst wie: Aufrufen einer benutzerdefinierten API
 
@@ -400,7 +400,7 @@ Insgesamt werden zwei Authentifizierungsflüsse unterstützt: ein _Serverfluss_ 
 ###Serverfluss
 Sie müssen Ihre Anwendung bei Ihrem Identitätsanbieter registrieren, um den mobilen Diensten die Verwaltung des Authentifizierungsprozesses in Ihrer Windows Store- oder HTML5-App zu ermöglichen. Anschließend müssen Sie in Ihrem mobilen Dienst die Anwendungs-ID und den geheimen Schlüssel Ihres Anbieters konfigurieren. Weitere Informationen finden Sie im Lernprogramm [Authentifizierung zu Ihrer App hinzufügen](mobile-services-html-get-started-users.md).
 
-Nach der Registrierung bei Ihrem Identitätsanbieter können Sie die [LoginAsync]-Methode mit dem [MobileServiceAuthenticationProvider]-Wert Ihres Anbieters aufrufen. Für die Facebook-Anmeldung verwenden Sie z. B. den folgenden Code.
+Nach der Registrierung bei Ihrem Identitätsanbieter können Sie die \[LoginAsync\]-Methode mit dem \[MobileServiceAuthenticationProvider\]-Wert Ihres Anbieters aufrufen. Für die Facebook-Anmeldung verwenden Sie z. B. den folgenden Code.
 
 	client.login("facebook").done(function (results) {
 	     alert("You are now logged in as: " + results.userId);
@@ -410,7 +410,7 @@ Nach der Registrierung bei Ihrem Identitätsanbieter können Sie die [LoginAsync
 
 Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an die `login`-Methode oben übergebenen Wert in einen der folgenden Werte: `microsoftaccount`, `facebook`, `twitter`, `google` oder `windowsazureactivedirectory`.
 
-In diesem Fall verwaltet der mobile Dienst den OAuth 2.0-Authentifizierungsfluss, indem die Anmeldungsseite des ausgewählten Anbieters angezeigt und nach der erfolgreichen Anmeldung beim Identitätsanbieter ein Authentifizierungstoken für den mobilen Dienst generiert wird. Die [login]-Funktion gibt ein JSON-Objekt (**user**) zurück, das sowohl Benutzer-ID als auch Authentifizierungstoken für den mobilen Dienst in den Feldern **userId** bzw. **authenticationToken** zur Verfügung stellt. Dieses Token kann zwischen gespeichert und wiederverwendet werden, bis es abläuft. Weitere Informationen finden Sie unter [Zwischenspeichern des Authentifizierungstokens].
+In diesem Fall verwaltet der mobile Dienst den OAuth 2.0-Authentifizierungsfluss, indem die Anmeldungsseite des ausgewählten Anbieters angezeigt und nach der erfolgreichen Anmeldung beim Identitätsanbieter ein Authentifizierungstoken für den mobilen Dienst generiert wird. Die [login]-Funktion gibt ein JSON-Objekt \(\*\*user\*\*\) zurück, das sowohl Benutzer-ID als auch Authentifizierungstoken für den mobilen Dienst in den Feldern **userId** bzw. **authenticationToken** zur Verfügung stellt. Dieses Token kann zwischen gespeichert und wiederverwendet werden, bis es abläuft. Weitere Informationen finden Sie unter \[Zwischenspeichern des Authentifizierungstokens\].
 
 > [AZURE.NOTE]**Windows Store-App** Wenn Sie den Anmeldeanbieter für Microsoft-Konten zum Authentifizieren von Benutzern Ihrer Windows Store-App verwenden, sollten Sie ebenfalls das App-Paket im mobilen Dienst registrieren. Wenn Sie Ihre Windows Store-App-Paketinformationen bei Mobile Services registrieren, kann der Client die Anmeldeinformationen für Microsoft Account für eine einmalige Anmeldung verwenden. Wenn Sie dies nicht tun, werden Ihre Benutzer mit Microsoft Account-Login jedes Mal zur Anmeldung aufgefordert, wenn diese Anmeldemethode aufgerufen wird. Informationen zur Registrierung Ihres Windows Store-App-Pakets finden Sie unter [Registrieren Ihres Windows Store-App-Pakets für Microsoft-Authentifizierung](/develop/mobile/how-to-guides/register-windows-store-app-package/%20target="_blank"). Nach der Registrierung Ihres Pakets im mobilen Dienst können Sie die [login](http://go.microsoft.com/fwlink/p/?LinkId=322050%20target="_blank")-Methode aufrufen und den Wert **true** für den <em>useSingleSignOn-Parameter</em> übergeben, um die Anmeldeinformationen wiederzuverwenden.
 
@@ -447,7 +447,7 @@ Wenn Sie die Facebook- oder Google-APIs für die Clientauthentifizierung verwend
 Dieses Beispiel geht davon aus, dass das vom jeweiligen Anbieter gelieferte Token in der `token`-Variable gespeichert wird. Clientauthentifizierung für Twitter ist derzeit nicht möglich. Microsoft Azure Active Directory kann derzeit nicht mit JavaScript-Back-Ends für die Clientauthentifizierung verwendet werden.
 
 ###Zwischenspeichern des Authentifizierungstokens
-Manche Aufrufe der Anmeldemethode lassen sich vermeiden, nachdem sich der Benutzer authentifiziert hat. Sie können entweder [sessionStorage] oder [localStorage] verwenden, um die Identität des aktuellen Benutzers bei der ersten Anmeldung zwischenzuspeichern und später bei Bedarf prüfen, ob Sie die Benutzeridentität bereits im Speicher haben. Falls der Zwischenspeicher leer ist oder ein Aufruf fehlschlägt (d. h. die aktuelle Anmeldesitzung abgelaufen ist), müssen wir dennoch den Anmeldeprozess durchlaufen.
+Manche Aufrufe der Anmeldemethode lassen sich vermeiden, nachdem sich der Benutzer authentifiziert hat. Sie können entweder [sessionStorage] oder [localStorage] verwenden, um die Identität des aktuellen Benutzers bei der ersten Anmeldung zwischenzuspeichern und später bei Bedarf prüfen, ob Sie die Benutzeridentität bereits im Speicher haben. Falls der Zwischenspeicher leer ist oder ein Aufruf fehlschlägt \(d. h. die aktuelle Anmeldesitzung abgelaufen ist\), müssen wir dennoch den Anmeldeprozess durchlaufen.
 
     // After logging in
     sessionStorage.loggedInUser = JSON.stringify(client.currentUser);
@@ -465,9 +465,9 @@ Manche Aufrufe der Anmeldemethode lassen sich vermeiden, nachdem sich der Benutz
 
 ##<a name="push-notifications"></a>Gewusst wie: Registrieren für Pushbenachrichtigungen
 
-Für PhoneGap- oder Apache Cordova-Apps in HTML/JavaScript ermöglicht die systemeigene mobile Plattform das Empfangen von Pushbenachrichtigungen auf dem Gerät. Mit dem [Apache Cordova-Plug-In für Azure Mobile Services](https://github.com/Azure/azure-mobile-services-cordova) können Sie die App für Pushbenachrichtigungen mit Azure Notification Hubs registrieren. Welcher Benachrichtigungsdienst verwendet wird, ist von der systemeigenen Plattform abhängig, auf der der Code ausgeführt wird. Ein Beispiel hierzu finden Sie unter [Use Microsoft Azure to push notifications to Cordova apps](https://github.com/Azure/mobile-services-samples/tree/master/CordovaNotificationsArticle) (Microsoft Azure für Pushbenachrichtigungen an Cordova-Apps verwenden, in englischer Sprache).
+Für PhoneGap- oder Apache Cordova-Apps in HTML/JavaScript ermöglicht die systemeigene mobile Plattform das Empfangen von Pushbenachrichtigungen auf dem Gerät. Mit dem [Apache Cordova-Plug-In für Azure Mobile Services](https://github.com/Azure/azure-mobile-services-cordova) können Sie die App für Pushbenachrichtigungen mit Azure Notification Hubs registrieren. Welcher Benachrichtigungsdienst verwendet wird, ist von der systemeigenen Plattform abhängig, auf der der Code ausgeführt wird. Ein Beispiel hierzu finden Sie unter [Use Microsoft Azure to push notifications to Cordova apps](https://github.com/Azure/mobile-services-samples/tree/master/CordovaNotificationsArticle) \(Microsoft Azure für Pushbenachrichtigungen an Cordova-Apps verwenden, in englischer Sprache\).
 
->[AZURE.NOTE]Dieses Plug-In unterstützt derzeit nur iOS- und Android-Geräte. Eine Lösung, die auch Windows-Geräte umfasst, finden Sie im Artikel [Push Notifications to PhoneGap Apps using Notification Hubs Integration](http://blogs.msdn.com/b/azuremobile/archive/2014/06/17/push-notifications-to-phonegap-apps-using-notification-hubs-integration.aspx) (Pushbenachrichtigungen für PhoneGap-Apps mit Notification Hubs-Integration, in englischer Sprache).
+>[AZURE.NOTE]Dieses Plug-In unterstützt derzeit nur iOS- und Android-Geräte. Eine Lösung, die auch Windows-Geräte umfasst, finden Sie im Artikel [Push Notifications to PhoneGap Apps using Notification Hubs Integration](http://blogs.msdn.com/b/azuremobile/archive/2014/06/17/push-notifications-to-phonegap-apps-using-notification-hubs-integration.aspx) \(Pushbenachrichtigungen für PhoneGap-Apps mit Notification Hubs-Integration, in englischer Sprache\).
 
 ##<a name="errors"></a>Gewusst wie: Fehlerbehandlung
 
@@ -483,7 +483,7 @@ Ein Beispiel sind Serverskripts, die in einem mobilen Dienst registriert sind un
 	   }
 	}
 
-Das Serverskript validiert die Länge von Zeichenfolgen, die an den mobilen Dienst geschickt werden, und lehnt zu lange Zeichenfolgen ab (in diesem Fall länger als 10 Zeichen).
+Das Serverskript validiert die Länge von Zeichenfolgen, die an den mobilen Dienst geschickt werden, und lehnt zu lange Zeichenfolgen ab \(in diesem Fall länger als 10 Zeichen\).
 
 Nun ist Ihr mobiler Dienst in der Lage, Daten zu validieren und Fehlermeldungen im Server zu generieren und Sie können Ihre HTML-Anwendung erweitern, sodass diese mit den Validierungsfehlern umgehen kann.
 
@@ -539,7 +539,7 @@ Wie folgt:
 	   alert("Error: " + err);
 	});
 
-Sie können Promises auf verschiedene Arten einsetzen. Sie können Zusagevorgänge verketten, indem Sie `then` oder `done` für die Zusage aufrufen, die von der vorherigen `then`-Funktion zurückgegeben wird. Verwenden Sie `.then().then()` für die Zwischenschritte des Vorgangs (z. B. `then`) und `done` für die den letzten Schritt des Vorgangs (z. B. `.then().then().done()`). Sie können mehrere `then`-Funktionen verketten, da `then` eine Zusage zurückgibt. Sie können nicht mehr als eine `done`-Methode verketten, da die Rückgabe nicht definiert ist. [Weitere Informationen zum Unterschied zwischen then und done].
+Sie können Promises auf verschiedene Arten einsetzen. Sie können Zusagevorgänge verketten, indem Sie `then` oder `done` für die Zusage aufrufen, die von der vorherigen `then`-Funktion zurückgegeben wird. Verwenden Sie `.then().then()` für die Zwischenschritte des Vorgangs \(z. B. `then`\) und `done` für die den letzten Schritt des Vorgangs \(z. B. `.then().then().done()`\). Sie können mehrere `then`-Funktionen verketten, da `then` eine Zusage zurückgibt. Sie können nicht mehr als eine `done`-Methode verketten, da die Rückgabe nicht definiert ist. [Weitere Informationen zum Unterschied zwischen then und done].
 
 	todoItemTable.insert({
 	   text: "foo"
@@ -562,9 +562,9 @@ Sie können benutzerdefinierte Anforderungsheader mit der `withFilter`-Funktion 
 
 Filter haben noch zahlreiche weitere Funktionen neben der Anpassung von Anforderungsheadern. Mit Filtern können Sie Anforderungen untersuchen oder ändern, Antworten untersuchen oder ändern, Netzwerkaufrufe umgehen, mehrere Aufrufe verschicken etc.
 
-##<a name="hostnames"></a>Gewusst wie: Verwenden von Cross-Origin Resource Sharing (CORS)
+##<a name="hostnames"></a>Gewusst wie: Verwenden von Cross-Origin Resource Sharing \(CORS\)
 
-Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforderungen senden dürfen, sollten Sie den Hostnamen der Website, die Sie zum Hosten verwenden, der CORS (Cross-Origin Resource Sharing)-Positivliste hinzufügen. Für einen mobilen Dienst mit JavaScript-Back-End konfigurieren Sie die Positivliste auf der Registerkarte "Konfigurieren" im [Azure-Verwaltungsportal](https://manage.windowsazure.com). Sie können bei Bedarf Platzhalter verwenden. Neue mobile Dienste weisen Browser standardmäßig an, nur Zugriff von `localhost` zuzulassen, und Cross-Origin Resource Sharing (CORS) gestattet es dem JavaScript-Code in einem Browser unter einem externen Hostnamen, mit Ihrem mobilen Dienst zu interagieren. Diese Konfiguration wird für WinJS-Anwendungen nicht benötigt.
+Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforderungen senden dürfen, sollten Sie den Hostnamen der Website, die Sie zum Hosten verwenden, der CORS \(Cross-Origin Resource Sharing\)-Positivliste hinzufügen. Für einen mobilen Dienst mit JavaScript-Back-End konfigurieren Sie die Positivliste auf der Registerkarte "Konfigurieren" im [Azure-Verwaltungsportal](https://manage.windowsazure.com). Sie können bei Bedarf Platzhalter verwenden. Neue mobile Dienste weisen Browser standardmäßig an, nur Zugriff von `localhost` zuzulassen, und Cross-Origin Resource Sharing \(CORS\) gestattet es dem JavaScript-Code in einem Browser unter einem externen Hostnamen, mit Ihrem mobilen Dienst zu interagieren. Diese Konfiguration wird für WinJS-Anwendungen nicht benötigt.
 
 <!-- Anchors. -->
 [What is Mobile Services]: #what-is
@@ -600,7 +600,7 @@ Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforde
 [localStorage]: http://msdn.microsoft.com/library/cc197062(v=vs.85).aspx
 
 [ListView]: http://msdn.microsoft.com/library/windows/apps/br211837.aspx
-[Datenbindung (Windows Store-Apps mit JavaScript und HTML)]: http://msdn.microsoft.com/library/windows/apps/hh758311.aspx
+[Datenbindung \(Windows Store-Apps mit JavaScript und HTML\)]: http://msdn.microsoft.com/library/windows/apps/hh758311.aspx
 [login]: https://github.com/Azure/azure-mobile-services/blob/master/sdk/Javascript/src/MobileServiceClient.js#L301
 [Authentifizieren Ihrer Anwendung mit einmaliger Anmeldung]: mobile-services-windows-store-javascript-single-sign-on.md
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
@@ -608,4 +608,4 @@ Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforde
 [Aufrufen einer benutzerdefinierten API aus dem Client]: mobile-services-html-call-custom-api.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

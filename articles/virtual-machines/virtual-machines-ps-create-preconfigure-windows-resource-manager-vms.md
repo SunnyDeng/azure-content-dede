@@ -14,14 +14,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/09/2015"
+	ms.date="07/22/2015"
 	ms.author="kathydav"/>
 
 # Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell
 
 Diese Schritte zeigen, wie Sie einen Befehlssatz im Ressourcen-Manager-Modus von Azure PowerShell erstellen, mit dem ein Windows-basierter virtueller Azure-Computer erstellt und vorab konfiguriert wird. Sie können dieses Bausteinverfahren verwenden, um schnell einen Befehlssatz für einen neuen Windows-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern. Sie können damit auch mehrere Befehlssätze erstellen, mit denen Sie schnell eine benutzerdefinierte professionelle Entwicklungs- und Test-IT-Umgebung aufbauen können.
 
-Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure PowerShell-Befehlssätzen. Dieser Ansatz kann hilfreich sein, wenn Sie noch nicht mit PowerShell gearbeitet haben oder einfach wissen möchten, welche Werte Sie für die erfolgreiche Konfiguration angeben müssen. Wenn Sie ein fortgeschrittener PowerShell-Benutzer sind, können Sie die Befehle verwenden und die Variablen (mit "$" beginnende Zeilen) durch eigene Werte ersetzen.
+Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure PowerShell-Befehlssätzen. Dieser Ansatz kann hilfreich sein, wenn Sie noch nicht mit PowerShell gearbeitet haben oder einfach wissen möchten, welche Werte Sie für die erfolgreiche Konfiguration angeben müssen. Wenn Sie ein fortgeschrittener PowerShell-Benutzer sind, können Sie die Befehle verwenden und die Variablen \(mit "$" beginnende Zeilen\) durch eigene Werte ersetzen.
 
 [AZURE.INCLUDE [resource-manager-pointer-to-service-management](../../includes/resource-manager-pointer-to-service-management.md)]
 
@@ -29,7 +29,7 @@ Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure Po
 
 ## Schritt 1: Installieren von Azure PowerShell
 
-Ebenfalls müssen Sie über die Azure PowerShell-Version 0.9.0 oder eine aktuellere verfügen. Falls Azure PowerShell noch nicht installiert und konfiguriert ist, klicken Sie für die Anleitung bitte [hier](powershell-install-configure.md).
+Ebenfalls müssen Sie über die Azure PowerShell-Version 0.9.0 oder eine aktuellere verfügen. Falls Azure PowerShell noch nicht installiert und konfiguriert ist, klicken Sie für die Anleitung bitte [hier](../powershell-install-configure.md).
 
 Sie können die von Ihnen installierte Azure Power Shell-Version mit diesem Befehl über die Azure PowerShell-Eingabeaufforderung prüfen.
 
@@ -41,7 +41,7 @@ Beispiel:
 	-------
 	0.9.0
 
-Falls Sie nicht über Version 0.9.0 oder eine aktuellere verfügen, müssen Sie Azure PowerShell mithilfe der Systemsteuerung "Programme und Funktionen" entfernen und anschließend die aktuellste Version installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
+Falls Sie nicht über Version 0.9.0 oder eine aktuellere verfügen, müssen Sie Azure PowerShell mithilfe der Systemsteuerung "Programme und Funktionen" entfernen und anschließend die aktuellste Version installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 ## Schritt 2: Festlegen des Abonnements
 
@@ -119,6 +119,8 @@ Verwenden Sie diesen Befehl zum Auflisten der vorhandenen Verfügbarkeitsgruppen
 
 	Get-AzureAvailabilitySet –ResourceGroupName $rgName | Sort Name | Select Name
 
+Virtuelle Computer auf Ressourcen-Manager-Basis können mit eingehenden NAT-Regeln zum Zulassen von eingehendem Datenverkehr aus dem Internet konfiguriert und in eine Gruppe mit Lastenausgleich platziert werden. In beiden Fällen müssen Sie eine Load Balancer-Instanz und andere Einstellungen angeben. Weitere Informationen finden Sie unter [Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
+
 Virtuelle Computer auf Ressourcen-Manager-Basis benötigen ein virtuelles Netzwerk auf Ressourcen-Manager-Basis. Erstellen Sie bei Bedarf ein neues virtuelles Netzwerk auf Ressourcen-Manager-Basis mit mindestens einem Subnetz für den neuen virtuellen Computer. Hier ist ein Beispiel für ein neues virtuelles Netzwerk mit zwei Subnetzen namens frontendSubnet und backendSubnet.
 
 	$rgName="LOBServers"
@@ -134,7 +136,7 @@ Mit diesen Befehlen können Sie die vorhandenen virtuellen Netzwerke auflisten.
 
 ## Schritt 4: Erstellen des Befehlssatzes
 
-Öffnen Sie eine neue Instanz eines Texteditors Ihrer Wahl oder die PowerShell Integrated Scripting Environment (ISE), und kopieren Sie die folgenden Zeilen, um den Befehlssatz zu starten. Geben Sie den Namen der Ressourcengruppe, den Azure-Standort und das Speicherkonto für den neuen virtuellen Computer an. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < and >, durch die korrekten Namen.
+Öffnen Sie eine neue Instanz eines Texteditors Ihrer Wahl oder die PowerShell Integrated Scripting Environment \(ISE\), und kopieren Sie die folgenden Zeilen, um den Befehlssatz zu starten. Geben Sie den Namen der Ressourcengruppe, den Azure-Standort und das Speicherkonto für den neuen virtuellen Computer an. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < and >, durch die korrekten Namen.
 
 	Switch-AzureMode AzureResourceManager
 	$rgName="<resource group name>"
@@ -165,24 +167,71 @@ Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie einen vorhandenen vi
 	$subnetIndex=<index of the subnet on which to create the NIC for the virtual machine>
 	$vnet=Get-AzurevirtualNetwork -Name $vnetName -ResourceGroupName $rgName
 
-Im nächsten Schritt erstellen Sie eine Netzwerkschnittstellenkarte (NIC), fordern eine öffentliche IP-Adresse an und weisen dieser optional eine DNS-Domänennamensbezeichnung zu. Kopieren Sie eine der beiden folgenden Optionen in den Befehlssatz, und geben Sie den NIC-Namen und die DNS-Domänennamensbezeichnung ein.
+Als Nächstes erstellen Sie eine Netzwerkschnittstellenkarte \(NIC\). Kopieren Sie eine der folgenden Optionen in den Befehlssatz, und geben Sie die erforderlichen Informationen ein.
 
-Option 1: Geben Sie einen Namen für die Netzwerkkarte an.
+### Option 1: Geben Sie einen NIC-Namen an und weisen eine öffentliche IP-Adresse zu.
 
-Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie den Namen für die Netzwerkkarte an.
+Kopieren Sie die folgenden Zeilen in den Befehlssatz, und geben Sie den Namen für die Netzwerkkarte an.
 
 	$nicName="<name of the NIC of the VM>"
 	$pip = New-AzurePublicIpAddress -Name $nicName -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
 	$nic = New-AzureNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[$subnetIndex].Id -PublicIpAddressId $pip.Id
 
-Option 2: Geben Sie einen Namen für die Netzwerkkarte und eine DNS-Domänennamensbezeichnung an.
+### Option 2: Geben Sie einen NIC-Namen und die DNS-Domänennamensbezeichnung an.
 
-Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie den Namen für die Netzwerkkarte sowie die global eindeutige Domänennamensbezeichnung an. Beim Erstellen von virtuellen Computern im Dienstverwaltungsmodus von Azure PowerShell schließt Azure diese Schritte automatisch ab.
+Kopieren Sie die folgenden Zeilen in den Befehlssatz, und geben Sie den Namen für die Netzwerkkarte sowie die global eindeutige Domänennamensbezeichnung an. Beim Erstellen von virtuellen Computern im Dienstverwaltungsmodus von Azure PowerShell schließt Azure diese Schritte automatisch ab.
 
 	$nicName="<name of the NIC of the VM>"
 	$domName="<domain name label>"
 	$pip = New-AzurePublicIpAddress -Name $nicName -ResourceGroupName $rgName -DomainNameLabel $domName -Location $locName -AllocationMethod Dynamic
 	$nic = New-AzureNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[$subnetIndex].Id -PublicIpAddressId $pip.Id
+
+### Option 3: Geben Sie einen NIC-Namen an und weisen eine statische, private IP-Adresse zu.
+
+Kopieren Sie die folgenden Zeilen in den Befehlssatz, und geben Sie den Namen für die Netzwerkkarte an.
+
+	$nicName="<name of the NIC of the VM>"
+	$staticIP="<available static IP address on the subnet>"
+	$pip = New-AzurePublicIpAddress -Name $nicName -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
+	$nic = New-AzureNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[$subnetIndex].Id -PublicIpAddressId $pip.Id -PrivateIpAddress $staticIP
+
+### Option 4: Geben Sie einen NIC-Namen und eine Load Balancer-Instanz für eine eingehende NAT-Regel an.
+
+Zum Erstellen einer Netzwerkkarte und Hinzufügen der Karte zu einer Load Balancer-Instanz für eine eingehende NAT-Regel benötigen Sie Folgendes:
+
+- Den Namen einer zuvor erstellten Load Balancer-Instanz, die über eine eingehende NAT-Regel für den Datenverkehr verfügt, der an den virtuellen Computer weitergeleitet wird.
+- Die Indexnummer des Back-End-Adresspools der Load Balancer-Instanz zum Zuweisen auf die NIC.
+- Die Indexnummer der eingehenden NAT-Regel zum Zuweisen auf die NIC.
+
+Informationen zum Erstellen einer Load Balancer-Instanz mit eingehenden NAT-Regeln finden Sie unter [Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
+
+Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie die erforderlichen Namen und Indexnummern an.
+
+	$nicName="<name of the NIC of the VM>"
+	$lbName="<name of the load balancer instance>"
+	$bePoolIndex=<index of the back end pool, starting at 0>
+	$natRuleIndex=<index of the inbound NAT rule, starting at 0>
+	$lb=Get-AzureLoadBalancer -Name $lbName -ResourceGroupName $rgName 
+	$nic=New-AzureNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $locName -Subnet $vnet.Subnets[$subnetIndex].Id -LoadBalancerBackendAddressPool $lb.BackendAddressPools[$bePoolIndex] -LoadBalancerInboundNatRule $lb.InboundNatRules[$natRuleIndex]
+
+Die „$nicName“-Zeichenfolge muss für die Ressourcengruppe eindeutig sein. Eine bewährte Methode ist die Integration des Namens des virtuellen Computers in der Zeichenfolge, wie z. B. "LOB07-NIC".
+
+### Option 5: Geben Sie einen NIC-Namen und eine Load Balancer-Instanz für eine Gruppe mit Lastenausgleich an.
+
+Zum Erstellen einer Netzwerkkarte und Hinzufügen der Karte zu einer Load Balancer-Instanz für eine Gruppe mit Lastenausgleich benötigen Sie Folgendes:
+
+- Den Namen einer zuvor erstellten Load Balancer-Instanz, die über eine Regel für den eingehenden Datenverkehr verfügt.
+- Die Indexnummer des Back-End-Adresspools der Load Balancer-Instanz zum Zuweisen auf die NIC.
+
+Informationen zum Erstellen einer Load Balancer-Instanz mit Regeln für Datenverkehr mit Lastenausgleich finden Sie unter [Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
+
+Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie die erforderlichen Namen und Indexnummern an.
+
+	$nicName="<name of the NIC of the VM>"
+	$lbName="<name of the load balancer instance>"
+	$bePoolIndex=<index of the back end pool, starting at 0>
+	$lb=Get-AzureLoadBalancer -Name $lbName -ResourceGroupName $rgName 
+	$nic=New-AzureNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $locName -Subnet $vnet.Subnets[$subnetIndex].Id -LoadBalancerBackendAddressPool $lb.BackendAddressPools[$bePoolIndex]
 
 Als Nächstes erstellen Sie ein lokales Objekt für den virtuellen Computer und fügen es optional einer Verfügbarkeitsgruppe hinzu. Kopieren Sie eine der beiden folgenden Optionen in den Befehlssatz, und geben Sie den Namen, die Größe und den Verfügbarkeitsgruppennamen ein.
 
@@ -262,7 +311,7 @@ Schließlich kopieren Sie diese Befehle in den Befehlssatz, und geben den Namens
 
 Wenn Sie Ihre Befehle in einem Texteditor verwenden, kopieren Sie den Befehlssatz in die Zwischenablage, und klicken Sie dann mit der rechten Maustaste auf Ihre offene Azure PowerShell-Eingabeaufforderung. Dies gibt den Befehlssatz als Serie von PowerShell-Befehlen aus und erstellt den virtuellen Azure-Computer. Führen Sie alternativ den Befehlssatz in Azure PowerShell ISE aus.
 
-Wenn Sie diesen virtuellen Computer erneut oder einen ähnlichen virtuellen Computer erstellen, können Sie diesen Befehlssatz als PowerShell-Skriptdatei (*.PS1) speichern.
+Wenn Sie diesen virtuellen Computer erneut oder einen ähnlichen virtuellen Computer erstellen, können Sie diesen Befehlssatz als PowerShell-Skriptdatei \(\*.PS1\) speichern.
 
 ## Beispiel
 
@@ -270,8 +319,8 @@ Ich brauche einen PowerShell-Befehlssatz, um einen zusätzlichen virtuellen Comp
 
 - sich in der vorhandenen LOBServers-Ressourcengruppe befindet
 - das Windows Server 2012 R2 Datacenter-Image verwendet
-- den Namen LOB07 hat und sich in der vorhandenen WEB_AS-Verfügbarkeitsgruppe befindet
-- über eine Netzwerkkarte mit einer öffentlichen IP-Adresse im FrontEnd-Subnetz (Subnetzindex 0) des vorhandenen virtuellen AZDatacenter-Netzwerks verfügt
+- den Namen LOB07 hat und sich in der vorhandenen WEB\_AS-Verfügbarkeitsgruppe befindet
+- über eine Netzwerkkarte mit einer öffentlichen IP-Adresse im FrontEnd-Subnetz \(Subnetzindex 0\) des vorhandenen virtuellen AZDatacenter-Netzwerks verfügt
 - einen zusätzlichen Datenträger mit 200 GB aufweist
 
 Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen Computers auf Grundlage der in Schritt 4 beschriebenen Verfahren.
@@ -282,7 +331,7 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 	# Set values for existing resource group and storage account names
 	$rgName="LOBServers"
 	$locName="West US"
-	$saName="contosoLOBServersSA"
+	$saName="contosolobserverssa"
 
 	# Set the existing virtual network and subnet index
 	$vnetName="AZDatacenter"
@@ -290,7 +339,7 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 	$vnet=Get-AzurevirtualNetwork -Name $vnetName -ResourceGroupName $rgName
 
 	# Create the NIC
-	$nicName="AzureInterface"
+	$nicName="LOB07-NIC"
 	$domName="contoso-vm-lob07"
 	$pip=New-AzurePublicIpAddress -Name $nicName -ResourceGroupName $rgName -DomainNameLabel $domName -Location $locName -AllocationMethod Dynamic
 	$nic=New-AzureNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[$subnetIndex].Id -PublicIpAddressId $pip.Id
@@ -330,12 +379,12 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Übersicht über den Azure Resource Manager](resource-group-overview.md)
+[Übersicht über den Azure Resource Manager](../resource-group-overview.md)
 
 [Bereitstellen und Verwalten von virtuellen Azure-Computern mit Ressourcen-Manager-Vorlagen und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
 [Erstellen eines virtuellen Windows-Computers mit einer Resource Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple)
 
-[Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
+[Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

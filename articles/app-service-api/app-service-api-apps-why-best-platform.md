@@ -28,7 +28,7 @@ API-Apps sind Teil des [Azure App Service](../app-service/app-service-value-prop
 
 API-Apps bieten Funktionen zum Entwickeln, bereitstellen, veröffentlichen, nutzen und verwalten von RESTful-Web-APIs. App Service stellt die folgenden Funktionen bereit, die heute als öffentliche Vorschau verfügbar sind:
 
-- **Einfache Nutzung** – Die integrierte [Swagger](http://swagger.io/)-Unterstützung ermöglicht es, dass Ihre APIs auf einfache Weise von zahlreichen Clients genutzt werden können. Über das API-Apps SDK kann Clientcode für Ihre APIs in zahlreichen verschiedenen Sprachen generiert werden, darunter C#, Java und Javascript.
+- **Einfache Nutzung** – Die integrierte [Swagger](http://swagger.io/)-Unterstützung ermöglicht es, dass Ihre APIs auf einfache Weise von zahlreichen Clients genutzt werden können. Über das API-Apps SDK kann Clientcode für Ihre APIs in zahlreichen verschiedenen Sprachen generiert werden, darunter C\#, Java und Javascript.
 
 - **Einfache Zugriffssteuerung** – Integrierte Authentifizierungsdienste bieten Unterstützung für Azure Active Directory oder Drittanbieterdienste wie z. B. Facebook und Twitter. Sie können eine API-App vor einem nicht authentifizierten Zugriff schützen, ohne Änderungen an Ihrem Code vornehmen zu müssen. Wenn Sie mit den von [Azure Mobile Services](../mobile-services-windows-dotnet-how-to-use-client-library.md#authentication) bereitgestellten Authentifizierungsdiensten vertraut sind: API-Apps baut auf diesem Framework auf und weitet es auf APIs aus, die über API-Apps gehostet werden. Mit dem App Service SDK können Sie außerdem eine vereinfachte Syntax für Autorisierungscode verwenden. Weitere Informationen finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
 
@@ -42,7 +42,7 @@ Nutzen Sie eigene APIs in unveränderter Form: Es ist nicht erforderlich, den Co
 
 Darüber hinaus enthalten API-Apps [Features von App Service-Web-Apps](../app-service-web/app-service-web-overview.md).
 
->[AZURE.NOTE] [Azure API Management](/services/api-management/) ist ein separater Dienst, der Features wie Endpunktkonsolidierung und Drosselung bereitstellt. Sie können API Management mit API-Apps einsetzen.
+>[AZURE.NOTE] [Azure API Management]\(/services/api-management/\) ist ein separater Dienst, der Features wie Endpunktkonsolidierung und Drosselung bereitstellt. Sie können API Management mit API-Apps einsetzen.
 >
 >API-Apps befindet sich derzeit in der öffentlichen Vorschau. [App Service-Web-Apps](../app-service-web/app-service-web-overview.md) ist ein allgemein verfügbaren Dienst zum weltweiten Erstellen und Hosten sicherer, unternehmenskritischer Anwendungen. Wenn Sie jetzt nach einem allgemein verfügbaren Dienst zum Erstellen Ihrer API suchen, ist Web-Apps eine hervorragende Option. Sobald API-Apps allgemein verfügbar ist, wird eine Möglichkeit bereitgestellt, vorhandene Web-Apps zu migrieren und die zusätzlichen Features von API-Apps zu nutzen.
 
@@ -54,7 +54,7 @@ Bald wird für die API-Apps-Plattform ein umfangreiches Ökosystem an APIs berei
 
 - **Automatisches Bereitstellen von Abhängigkeiten** – Immer dann, wenn Sie eine API-App aus dem Marketplace für Ihr Azure-Abonnement bereitstellen, stellt Azure automatisch abhängige API-Apps bereit und erstellt die erforderlichen Ressourcen. Ein API-App-Paket gibt an, von welchen API-Apps es abhängt und welche Azure-Ressourcen erforderlich sind.
 
-- **Automatische Updates** – Wenn Sie den Code für ein API-App-Paket aktualisieren, das Sie freigegeben haben, können Sie das Update per Push an alle Benutzer weitergeben, die Ihre API-App installiert haben und ausführen. Dies funktioniert für Änderungen ohne Funktionsbeeinträchtigung (non-breaking) und für Benutzer, die den Empfang von Updates aktiviert haben.
+- **Automatische Updates** – Wenn Sie den Code für ein API-App-Paket aktualisieren, das Sie freigegeben haben, können Sie das Update per Push an alle Benutzer weitergeben, die Ihre API-App installiert haben und ausführen. Dies funktioniert für Änderungen ohne Funktionsbeeinträchtigung \(non-breaking\) und für Benutzer, die den Empfang von Updates aktiviert haben.
 
 Viele dieser Features, beispielsweise Marketplace und automatische Updates, stehen für die von Microsoft bereitgestellten API-Apps bereits zur Verfügung.
 
@@ -76,4 +76,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

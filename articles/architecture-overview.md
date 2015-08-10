@@ -42,7 +42,7 @@ Microsoft veröffentlicht eine Reihe von allgemeinen Architekturplänen, die ver
 
 Die 2D-Plandiagramme verwenden den nachstehend genannten Cloud- und Enterprise-Symbolsatz.
 
-Die 3D-PDF-Plandateien wurden in einem Nicht-Microsoft-Tool erstellt, eine Visio-Vorlage befindet sich jedoch in Entwicklung. Weitere Informationen finden Sie im [Trainingsvideo zur BETA-Vorlage](http://aka.ms/3dBlueprintTemplate). Wenn Sie die 3D-Visio-Vorlage (Beta) erhalten möchten, senden Sie eine E-Mail an [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com).
+Die 3D-PDF-Plandateien wurden in einem Nicht-Microsoft-Tool erstellt, eine Visio-Vorlage befindet sich jedoch in Entwicklung. Weitere Informationen finden Sie im [Trainingsvideo zur BETA-Vorlage](http://aka.ms/3dBlueprintTemplate). Wenn Sie die 3D-Visio-Vorlage \(Beta\) erhalten möchten, senden Sie eine E-Mail an [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com).
 
 ![Microsoft-Architekturpläne – 3D-Diagramm](./media/architecture-overview/BluePrintThumb.jpg)
 
@@ -54,7 +54,7 @@ Der Symbolsatz wird vierteljährlich herausgegeben und aktualisiert, wenn neue D
 
 Ihr Feedback ist uns sehr wichtig. Daher ist im Download eine Feedback-Anleitung enthalten. Wenn Sie die Symbole verwendet haben, beantworten Sie die fünf Fragen unserer [Umfrage](http://aka.ms/azuresymbolssurveyv2) um uns mitzuteilen, ob die Symbole für Sie nützlich sind und wie Sie sie verwenden.
 
-Zusätzliche Symbole stehen in der [Microsoft Office Visio-Schablone](http://www.microsoft.com/de-de/download/details.aspx?id=35772) zur Verfügung, allerdings sind diese nicht wie der CnE-Satz für Architekturdiagramme optimiert.
+Zusätzliche Symbole stehen in der [Microsoft Office Visio-Schablone](http://www.microsoft.com/en-us/download/details.aspx?id=35772) zur Verfügung, allerdings sind diese nicht wie der CnE-Satz für Architekturdiagramme optimiert.
 
 ![Cloud- und Enterprise-Symbolsatz](./media/architecture-overview/CnESymbols.png)
 
@@ -68,4 +68,4 @@ Microsoft veröffentlicht mehrere architekturbezogene Poster/Infografiken. Dazu 
 
 ![Infografiken zur Azure-Architektur](./media/architecture-overview/AzureArchInfographicThumb.jpg)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

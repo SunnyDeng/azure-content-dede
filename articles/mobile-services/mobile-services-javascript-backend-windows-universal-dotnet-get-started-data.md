@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (Windows Universal) | Mobile Dev Center" 
-	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer universellen Windows-App." 
+	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen universellen Windows-App – Azure Mobile Services" 
+	description="Erfahren Sie, wie Ihre vorhandene universelle Windows-App mit Azure Mobile Services verbinden." 
 	services="mobile-services" 
 	documentationCenter="windows" 
 	authors="ggailey777" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="05/02/2015" 
+	ms.date="07/22/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
@@ -30,8 +30,8 @@ In diesem Lernprogramm laden Sie ein Visual Studio 2013-Projekt für eine univer
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-universal-dotnet-get-started-data%2F).
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Express 2013 für Windows</a> (Update 2 oder höhere Version). 
+* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-universal-dotnet-get-started-data%2F).
+* [Visual Studio Express 2013 für Windows](https://go.microsoft.com/fwLink/p/?LinkID=257546) \(Update 2 oder höhere Version\). 
 
 ##<a name="download-app"></a>Herunterladen des GetStartedWithData-Projekts
 
@@ -42,19 +42,16 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 [AZURE.INCLUDE [mobile-services-create-new-service-vs2013](../../includes/mobile-services-create-new-service-vs2013.md)]
 
-<ol start="7"><li><p>Öffnen Sie im Projektmappen-Explorer im Projektordner "GetStartedWithData.Shared" die Codedatei "App.xaml.cs". Im Block für die bedingte Kompilierung einer Windows Store-App wurde der <strong>App</strong>-Klasse ein neues statisches Feld hinzugefügt, das dem im folgenden Beispiel entspricht:</p> 
+&nbsp;&nbsp;7. Öffnen Sie im Projektmappen-Explorer im Projektordner "GetStartedWithData.Shared" die Codedatei "App.xaml.cs". Im Block für die bedingte Kompilierung einer Windows Store-App wurde der **App**-Klasse ein neues statisches Feld hinzugefügt, das dem im folgenden Beispiel entspricht:
 
-		<pre><code>public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient 
-		    todolistClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
-		        "https://todolist.azure-mobile.net/",
-		        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-		</code></pre>
+	public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient 
+	    todolistClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
+	        "https://todolist.azure-mobile.net/",
+	        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
-	<p>In diesem Code wird der Zugriff auf den neuen mobilen Dienst in Ihrer App über eine Instanz der <a href="http://go.microsoft.com/fwlink/p/?LinkId=302030">MobileServiceClient-Klasse</a> bereitgestellt. Der Client wird durch Angabe des URI und des Anwendungsschlüssels des neuen mobilen Diensts erstellt. Dieses statische Feld steht allen Seiten in Ihrer App zur Verfügung.</p>
-</li>
-<li><p>Klicken Sie mit der rechten Maustaste auf das Windows Phone-App-Projekt, klicken Sie auf <strong>Hinzufügen</strong> und dann auf <strong>Verbundener Dienst...</strong>. Wählen Sie anschließend den soeben erstellten mobilen Dienst aus, und klicken Sie auf <strong>OK</strong>. </p>
-<p>Derselbe Code wird der gemeinsam verwendeten Datei "App.xaml.cs" hinzugefügt, diesmal jedoch innerhalb eines Blocks für die bedingte Kompilierung einer Windows Phone-App.</p></li>
-</ol>
+&nbsp;&nbsp;In diesem Code wird der Zugriff auf den neuen mobilen Dienst in Ihrer App über eine Instanz der [MobileServiceClient]-Klasse bereitgestellt. Der Client wird durch Angabe des URI und des Anwendungsschlüssels des neuen mobilen Diensts erstellt. Dieses statische Feld steht allen Seiten in Ihrer App zur Verfügung.
+
+&nbsp;&nbsp;8. Klicken Sie mit der rechten Maustaste auf das Windows Phone-App-Projekt, klicken Sie auf **Hinzufügen** und dann auf **Verbundener Dienst...**. Wählen Sie anschließend den soeben erstellten mobilen Dienst aus, und klicken Sie auf **OK**. Derselbe Code wird der gemeinsam verwendeten Datei "App.xaml.cs" hinzugefügt, diesmal jedoch innerhalb eines Blocks für die bedingte Kompilierung einer Windows Phone-App.
 
 Jetzt sind sowohl die Windows Store- als auch die Windows Phone Store-App mit dem neuen mobilen Dienst verbunden. Im nächsten Schritt wird eine neue TodoItem-Tabelle im mobilen Dienst erstellt.
 
@@ -72,11 +69,10 @@ Nun können wir beide Versionen der universellen Windows-App mit dem in Azure ge
 
 [AZURE.INCLUDE [mobile-services-windows-universal-test-app](../../includes/mobile-services-windows-universal-test-app.md)]
 
-<ol start="4">
-<li><p>Klicken Sie im <a href="https://manage.windowsazure.com/" target="_blank">Verwaltungsportal</a> auf <strong>Mobile Dienste</strong> und dann auf Ihren mobilen Dienst.<p></li>
-<li><p>Klicken Sie auf die Registerkarte <strong>Daten</strong> und dann auf <strong>Durchsuchen</strong>.</p>
-<p>Die <strong>TodoItem</strong>-Tabelle enthält nun Daten mit von Mobile Services generierten ID-Werten, und der Tabelle wurden automatisch Spalten entsprechend der TodoItem-Klasse der App hinzugefügt.</p></li>
-</ol>
+&nbsp;&nbsp;4. Klicken Sie im [Azure-Verwaltungsportal] auf **Mobile Services** und dann auf Ihren mobilen Dienst.
+
+&nbsp;&nbsp;5. Klicken Sie auf **Daten** und auf **Durchsuchen**. Die **TodoItem**-Tabelle enthält nun Daten mit von Mobile Services generierten ID-Werten, und der Tabelle wurden automatisch Spalten entsprechend der TodoItem-Klasse der App hinzugefügt.
+     
 Damit ist das Lernprogramm beendet.
 
 ## <a name="next-steps"> </a>Nächste Schritte
@@ -87,7 +83,7 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen 
 
 * [Erste Schritte mit Pushbenachrichtigungen] <br/>Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
-* [Mobile Services #C-Anleitungen: Konzeptionelle Referenz](mobile-services-windows-dotnet-how-to-use-client-library.md) <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
+* [Mobile Services \#C-Anleitungen: Konzeptionelle Referenz](mobile-services-windows-dotnet-how-to-use-client-library.md) <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
   
 <!-- Anchors. -->
 
@@ -110,12 +106,12 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen 
 [Erste Schritte mit Pushbenachrichtigungen]: ../mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md
 [Mobile Services .NET How-to Conceptual Reference]: mobile-services-windows-dotnet-how-to-use-client-library.md
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.com/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
-[Website mit den Codebeispielen für Entwickler]: http://go.microsoft.com/fwlink/p/?LinkID=510826
+[Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkID=510826
 
-[MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
+[MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

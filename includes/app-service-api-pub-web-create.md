@@ -1,8 +1,8 @@
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt (nicht die Projektmappe), und klicken Sie auf **Veröffentlichen**. 
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt \(nicht die Projektmappe\), und klicken Sie auf **Veröffentlichen**. 
 
 	![Menüoption zur Projektveröffentlichung](./media/app-service-api-pub-web-create/20-publish-gesture-v3.png)
 
-2. Klicken Sie auf die Registerkarte **Profil**, und klicken Sie auf **Microsoft Azure API-Apps (Vorschau)**.
+2. Klicken Sie auf die Registerkarte **Profil**, und klicken Sie auf **Microsoft Azure API-Apps \(Vorschau\)**.
 
 	![Dialogfeld zur Webveröffentlichung](./media/app-service-api-pub-web-create/21-select-api-apps-for-deployment-v2.png)
 
@@ -33,4 +33,4 @@
 
 	![Statusbenachrichtigung über das Fenster "Azure App Service-Aktivität"](./media/app-service-api-pub-web-create/26-provisioning-success-v3.png)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

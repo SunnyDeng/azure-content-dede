@@ -23,11 +23,11 @@ Azure ist eine hervorragende Plattform zur Implementierung von Konfigurationen f
 
 In diesem Leitfaden werden viele Bereiche behandelt, bei denen Planung der Schlüssel zum Erfolg einer IT-Workload in Azure sind. Darüber hinaus wird eine strukturierte Reihenfolge für die Erstellung der erforderlichen Ressourcen dargestellt. Es gibt zwar eine gewisse Flexibilität, Microsoft empfiehlt jedoch, dass Sie die Struktur in diesem Artikel bei der Planung und Entscheidungsfindung anwenden.
 
-Dieser Artikel basiert auf dem Inhalt im Blogbeitrag [Azure Implementation Guidelines](http://blogs.msdn.com/b/thecolorofazure/archive/2014/05/13/azure-implementation-guidelines.aspx) (in englischer Sprache). Vielen Dank an Santiago Cánepa (Application Development Manager bei Microsoft), Hugo Salcedo (Application Development Manager bei Microsoft) für ihr ursprüngliches Material.
+Dieser Artikel basiert auf dem Inhalt im Blogbeitrag [Azure Implementation Guidelines](http://blogs.msdn.com/b/thecolorofazure/archive/2014/05/13/azure-implementation-guidelines.aspx) \(in englischer Sprache\). Vielen Dank an Santiago Cánepa \(Application Development Manager bei Microsoft\), Hugo Salcedo \(Application Development Manager bei Microsoft\) für ihr ursprüngliches Material.
 
 > [AZURE.NOTE]Affinitätsgruppen gelten als veraltet, und ihre Verwendung wird hier nicht beschrieben. Weitere Informationen finden Sie unter [Informationen zu regionalen VNETs und Affinitätsgruppen](https://msdn.microsoft.com/library/azure/jj156085.aspx).
 
-## 1. Benennungskonventionen
+## 1\. Benennungskonventionen
 
 Es sollte eine geeignete Benennungskonvention vorhanden sein, bevor Sie mit der Entwicklung in Azure beginnen. Durch eine Benennungskonvention wird sichergestellt, dass alle Ressourcen vorhersagbare Namen haben, die den Verwaltungsaufwand dieser Ressourcen senken.
 
@@ -41,31 +41,32 @@ Wenn Sie bestimmte Ressourcen erstellen, verwendet Azure einige Standards zur Ve
 
 Daher ist es vorteilhaft, die Ressourcentypen zu ermitteln, die ein Affix zum Erkennen des Typs benötigen. Darüber hinaus sollten Sie eindeutig festlegen, an welcher Stelle sich das Affix befindet:
 
-- Am Anfang des Namens (Präfix)
-- Am Ende des Namens (Suffix)
+- Am Anfang des Namens \(Präfix\)
+- Am Ende des Namens \(Suffix\)
 
 Hier sind z. B. zwei mögliche Namen für eine Ressourcengruppe, die ein Berechnungsmodul hostet:
 
-- Rg-CalculationEngine (Präfix)
-- CalculationEngine-Rg (Suffix)
+- Rg-CalculationEngine \(Präfix\)
+- CalculationEngine-Rg \(Suffix\)
 
 Affixe können auf verschiedene Aspekte verweisen, die die entsprechenden Ressourcen beschreiben. Die folgende Tabelle zeigt einige üblicherweise verwendete Beispiele.
 
 Aspekt | Beispiele | Hinweise
 --- | --- | ---
 Environment | dev, stg, prod | Abhängig von Zweck und Name der jeweiligen Umgebung.
-Standort | usw (USA Westen), use (USA Osten 2) | Abhängig von der Region des Datencenters oder der Region der Organisation.
+Standort | usw \(USA Westen\), use \(USA Osten 2\) | Abhängig von der Region des Datencenters oder der Region der Organisation.
 Azure-Komponente, -Dienst oder -Produkt | Rg für Ressourcengruppe, Svc für Clouddienst, VNET für virtuelles Netzwerk | Je nach Produkt, das die Ressource unterstützt.
 Rolle | sql, ora, sp, iis | Abhängig von der Rolle des virtuellen Computers.
 Instanz | 01, 02, 03 usw. | Für Ressourcen, die mehr als eine Instanz besitzen. Beispielsweise Webserver mit Lastenausgleich in einem Clouddienst.
 		
-Beim Einrichten der Benennungskonventionen sollten Sie sicherstellen, dass diese eindeutig angeben, welche Affixe für die einzelnen Ressourcentypen verwendet werden sollen und an welcher Position (Präfix und Suffix).
+Beim Einrichten der Benennungskonventionen sollten Sie sicherstellen, dass diese eindeutig angeben, welche Affixe für die einzelnen Ressourcentypen verwendet werden sollen und an welcher Position \(Präfix und Suffix\).
 
 ### Datumsangaben
 
 In vielen Fällen ist es wichtig, das Datum der Erstellung anhand des Namens einer Ressource bestimmen zu können. Microsoft empfiehlt das Datumsformat JJJJMMTT. Durch dieses Format wird sichergestellt, dass nicht nur das vollständige Datum aufgezeichnet wird, sondern auch zwei Ressourcen gleichzeitig alphabetisch und chronologisch sortiert werden, deren Namen sich nur durch das Datum unterscheiden.
 
 ### Benennen von Ressourcen
+
 Sie sollten die einzelnen Ressourcentypen in der Benennungskonvention definieren, die Regeln für die Zuweisung von Namen für die erstellten Ressourcen enthalten sollte. Diese Regeln sollten auf alle Ressourcentypen angewendet werden, z. B.:
 
 - Abonnements
@@ -81,25 +82,24 @@ Sie sollten die einzelnen Ressourcentypen in der Benennungskonvention definieren
 - Netzwerksicherheitsgruppen
 - Rollen
 
-Namen sollten so aussagekräftig wie möglich sein, sodass der Name genügend Informationen bietet, um festzustellen, auf welche Ressource er verweist.
+Sie sollten aussagekräftige Namen verwenden, sodass der Name genügend Informationen bietet, um festzustellen, auf welche Ressource er verweist.
 
 ### Computernamen
 
 Wenn Administratoren einen virtuellen Computer erstellen, erfordert Microsoft Azure, dass ein Name mit bis zu 15 Zeichen für den virtuellen Computer angegeben wird. Microsoft Azure verwendet den Namen des virtuellen Computers als den Ressourcennamen des virtuellen Azure-Computers. Azure verwendet den gleichen Namen wie den Computernamen im Betriebssystem auf des virtuellen Computers. Allerdings können diese Namen nicht immer identisch sein.
 
-In Fällen, in denen ein virtueller Computer aus einer VHD-Datei erstellt wird, die bereits ein Betriebssystem enthält, kann sich der Name des virtuellen Computers in Microsoft Azure vom Betriebssystem-Computernamen des virtuellen Computers unterscheiden. Dies kann zusätzliche Probleme bei der Verwaltung virtueller Computer verursachen, deshalb wird davon abgeraten. Stellen Sie immer sicher, dass der Ressourcenname des virtuellen Azure-Computers mit dem Computernamen im Betriebssystem des virtuellen Computers übereinstimmt.
+In Fällen, in denen ein virtueller Computer aus einer VHD-Imagedatei erstellt wird, die bereits ein Betriebssystem enthält, kann sich der Name des virtuellen Computers in Microsoft Azure vom Betriebssystem-Computernamen des virtuellen Computers unterscheiden. Dies kann zusätzliche Probleme bei der Verwaltung virtueller Computer verursachen, deshalb wird davon abgeraten. Geben Sie der Ressource des virtuellen Azure-Computers den gleichen Computernamen, den Sie dem Betriebssystem des virtuellen Computers zuweisen.
 
 Es wird empfohlen, den gleichen Namen für den virtuellen Azure-Computer und den Computer mit dem zugrunde liegenden Betriebssystem zu verwenden. Befolgen Sie daher die NetBIOS-Benennungsregeln, wie in [Namenskonventionen für Microsoft NetBIOS-Computer](https://support.microsoft.com/kb/188997/) beschrieben.
 
 ### Speicherkontonamen
 
-Für die Benennung von Speicherkonten gelten spezielle Regeln. Sie können nur Kleinbuchstaben und Zahlen und den zugewiesenen Namen verwenden. Verkettet mit dem Dienst (Blob, Tabelle oder Warteschlange) und der Standarddomäne ("core.windows.net") sollte dies für einen global gültigen, eindeutigen DNS-Namen sorgen. Wenn beispielsweise das Speicherkonto den Namen "meinspeicherkonto" hat, ergeben die folgenden URLs gültige und eindeutige DNS-Namen:
+Für die Benennung von Speicherkonten gelten spezielle Regeln. Sie können nur Kleinbuchstaben und Zahlen verwenden. Weitere Informationen finden Sie unter [Erstellen eines Speicherkontos](../storage/storage-create-storage-account.md#create-a-storage-account). Darüber hinaus sollte der Namen des Speicherkontos in Kombination mit „core.windows.net“ ein global gültiger und eindeutiger DNS-Name sein. Wenn beispielsweise das Speicherkonto den Namen "meinspeicherkonto" besitzt, sollten die folgenden resultierenden DNS-Namen eindeutig sein:
 
 - meinspeicherkonto.blob.core.windows.net
 - meinspeicherkonto.table.core.windows.net
 - meinspeicherkonto.queue.core.windows.net
 
-Darüber hinaus können Speicherkonten Container nutzen. Diese müssen den Benennungskonventionen folgen, wie unter [Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese](https://msdn.microsoft.com/library/azure/dd135715.aspx) beschrieben.
 
 ### Azure Building Block-Namen
 
@@ -117,7 +117,7 @@ Aufgabe:
 
 - Definieren Sie die Benennungskonventionen in Bezug auf Affixe, Hierarchie, Zeichenfolgenwerte und andere Richtlinien für Azure-Ressourcen.
 
-## 2. Abonnements und Konten
+## 2\. Abonnements und Konten
 
 Für die Arbeit mit Azure benötigen Sie mindestens ein Azure-Abonnement. Ressourcen, wie z. B. Clouddienste oder virtuelle Computer, sind im Kontext dieser Abonnements vorhanden.
 
@@ -153,17 +153,17 @@ Aufgabe:
 
 - Erstellen Sie die Gruppe von Abonnements und Konten mit Ihrer Benennungskonvention.
 
-## 3. Speicher
+## 3\. Speicher
 
-Speicher ist ein integraler Bestandteil jeder Azure-Lösung, da er nicht nur Dienste auf Anwendungsebene bereitstellt, sondern auch einen Teil der Infrastruktur zur Unterstützung von virtuellen Computer ausmacht.
- 
-Es sind zwei Arten von Speicher in Azure verfügbar. Mit Standardspeicher erhalten Sie Zugriff auf Blob-Speicher, Tabellenspeicher, Warteschlangenspeicher und Dateispeicher. Premium-Speicher wurde für Anwendungen mit hoher Leistung, wie z. B. SQL Server in einem AlwaysOn-Cluster, entworfen und unterstützt derzeit nur virtuelle Azure-Datenträger.
+Azure-Speicher sind ein wesentlicher Bestandteil vieler Azure-Lösungen. Azure-Speicher bieten Dienste zum Speichern von Daten, unstrukturierten Daten und Nachrichten, und sind außerdem Teil der Infrastruktur zur Unterstützung virtueller Computer.
+
+Es sind zwei Arten von Speicherkonten in Azure verfügbar. Mit einem Standardspeicherkonto erhalten Sie Zugriff auf Blob- \(zum Speichern von Datenträgern in virtuellen Azure-Computern verwendet\), Tabellen-, Warteschlangen- und Dateispeicher. Premium-Speicher wurde für Anwendungen mit hoher Leistung, wie z. B. SQL Server in einem AlwaysOn-Cluster, entworfen und unterstützt derzeit nur virtuelle Azure-Datenträger.
 
 Speicherkonten sind an Skalierbarkeitsziele gebunden. Machen Sie sich unter [Microsoft Azure-Abonnement- und -Dienstgrenzen, -Kontingente und -Einschränkungen](../azure-subscription-service-limits.md#storage-limits) mit den aktuellen Azure-Speichergrenzwerten vertraut. Siehe auch [Skalierbarkeits- und Leistungsziele für Azure-Speicher](../storage-scalability-targets.md).
 
-Azure erstellt virtuelle Computer mit Betriebssystem-Datenträger, einem temporären Datenträger und null oder mehreren optionalen Datenträgern. Der Betriebssystem-Datenträger und Datenträger mit Daten sind Azure-Blobs, während der temporäre Datenträger sich im lokalen Speicher des Knotens befindet, in dem auch der Computer gespeichert ist. Dadurch eignet sich der temporäre Datenträger nicht für Daten, die während eines Systemneustarts beibehalten werden müssen, da der Computer im Hintergrund von einem Knoten zu einem anderen migriert werden kann, wodurch Daten auf diesem Datenträger verloren gehen. Speichern Sie keine Daten im temporären Laufwerk.
+Azure erstellt virtuelle Computer mit Betriebssystem-Datenträger, einem temporären Datenträger und null oder mehreren optionalen Datenträgern. Der Betriebssystem-Datenträger und Datenträger mit Daten sind Azure-Seitenblobs, während der temporäre Datenträger sich im lokalen Speicher des Knotens befindet, in dem auch der Computer gespeichert ist. Dadurch eignet sich der temporäre Datenträger nicht für Daten, die während eines Systemneustarts beibehalten werden müssen, da der Computer im Hintergrund von einem Knoten zu einem anderen migriert werden kann, wodurch Daten auf diesem Datenträger verloren gehen. Speichern Sie keine Daten im temporären Laufwerk.
 
-Betriebssystem-Datenträger und Datenträger mit Daten verfügen über eine maximale Größe von 1023 GB, da die maximale Größe eines Blobs 1024 GB beträgt, und darin müssen die Metadaten (Fußzeile) der VHD-Datei (ein GB hat 1024<sup>3</sup> Bytes) enthalten sein. Sie können unter Windows Datenträgerstriping implementieren, um diese Beschränkung zu übergehen.
+Betriebssystem-Datenträger und Datenträger mit Daten verfügen über eine maximale Größe von 1023 GB, da die maximale Größe eines Blobs 1024 GB beträgt, und darin müssen die Metadaten \(Fußzeile\) der VHD-Datei \(ein GB hat 1024<sup>3</sup> Bytes\) enthalten sein. Sie können unter Windows Datenträgerstriping implementieren, um diese Beschränkung zu übergehen.
 
 ### Stripesetdatenträger
 Neben der Möglichkeit, Datenträger mit mehr als 1.023 GB zu erstellen, wird durch Datenträgerstriping in vielen Fällen die Leistung verbessert, indem mehrere Blobs als Speicher für ein einzelnes Volume dienen können. Dadurch wird die zum Schreiben und Lesen von Daten von einem einzelnen Datenträger erforderliche E/A parallelisiert.
@@ -172,13 +172,13 @@ Azure erzwingt Grenzwerte für die Anzahl von Datenträgern und die verfügbare 
 
 Wenn Sie Datenträgerstriping für Azure-Datenträger verwenden, beachten Sie die folgenden Richtlinien:
 
-- Datenträger sollten immer die maximale Größe (1.023 GB) haben.
+- Datenträger sollten immer die maximale Größe \(1.023 GB\) haben.
 - Fügen Sie die maximal zulässige Anzahl von Datenträgern für den virtuellen Computer an.
 - Verwenden Sie Speicherplatzkonfigurationen.
 - Verwenden Sie Speicherstripingkonfigurationen.
-- Vermeiden Sie die Verwendung von Azure-Datenträger-Cachingoptionen (Cachingrichtlinie = Keine)
+- Vermeiden Sie die Verwendung von Azure-Datenträger-Cachingoptionen \(Cachingrichtlinie = Keine\)
 
-Weitere Informationen finden Sie unter [Storage Spaces – Designing for Performance](http://social.technet.microsoft.com/wiki/contents/articles/15200.storage-spaces-designing-for-performance.aspx) (Speicherplätze – Entwerfen für optimale Leistung, in englischer Sprache).
+Weitere Informationen finden Sie unter [Storage Spaces – Designing for Performance](http://social.technet.microsoft.com/wiki/contents/articles/15200.storage-spaces-designing-for-performance.aspx) \(Speicherplätze – Entwerfen für optimale Leistung, in englischer Sprache\).
 
 ### Mehrere Speicherkonten
 
@@ -204,9 +204,9 @@ Aufgabe:
 
 - Erstellen Sie die Gruppe von Speicherkonten mit Ihrer Benennungskonvention. Sie können das Azure-Vorschauportal, das Azure-Verwaltungsportal oder das PowerShell-Cmdlet **New-AzureStorageAccount** verwenden.
 
-## 4. Cloud-Dienste
+## 4\. Cloud-Dienste
 
-Clouddienste sind ein wesentlicher Baustein von Azure Service Management, sowohl für PaaS- als auch IaaS-Dienste. Bei PaaS stellen Clouddienste eine Zuordnung von Rollen dar, deren Instanzen untereinander kommunizieren können. Clouddienste werden mit einer öffentlichen virtuellen IP-Adresse (VIP) und einem Lastenausgleich verknüpft, der eingehenden Datenverkehr aus dem Internet akzeptiert und diesen für die Rollen ausgleicht, die den Datenverkehr empfangen.
+Clouddienste sind ein wesentlicher Baustein von Azure Service Management, sowohl für PaaS- als auch IaaS-Dienste. Bei PaaS stellen Clouddienste eine Zuordnung von Rollen dar, deren Instanzen untereinander kommunizieren können. Clouddienste werden mit einer öffentlichen virtuellen IP-Adresse \(VIP\) und einem Lastenausgleich verknüpft, der eingehenden Datenverkehr aus dem Internet akzeptiert und diesen für die Rollen ausgleicht, die den Datenverkehr empfangen.
 
 Clouddienste bieten bei IaaS ähnliche Funktionalität, obwohl in den meisten Fällen die Lastenausgleichsfunktionen zum Weiterleiten von Datenverkehr an bestimmte TCP- oder UDP-Ports aus dem Internet an die vielen virtuellen Computer innerhalb des Clouddiensts verwendet wird.
 
@@ -214,7 +214,7 @@ Clouddienste bieten bei IaaS ähnliche Funktionalität, obwohl in den meisten F�
 
 Clouddienstnamen sind in IaaS besonders wichtig, da Azure sie als Teil der Standard-Benennungskonvention für Datenträger verwendet. Der Name des Clouddiensts darf nur Buchstaben, Zahlen und Bindestriche enthalten. Das erste und das letzte Zeichen im Feld müssen Buchstaben oder Zahlen sein.
 
-Microsoft Azure macht die Clouddienstnamen verfügbar, da sie der VIP-Adresse in der Domäne "cloudapp.NET" zugeordnet sind. Für eine bessere Benutzererfahrung in der Anwendung kann ggf. ein kürzerer Vanity-Name konfiguriert werden, der den vollqualifizierten Clouddienstnamen ersetzt. Dies erfolgt normalerweise über einen CNAME-Eintrag in Ihrem öffentlichen DNS, der den öffentlichen DNS-Namen der Ressource (z. B. "www.contoso.com") dem DNS-Namen des Clouddiensts zuordnet, der die Ressource (z. B. den Clouddienst mit dem Webserver für "www.contoso.com") hostet.
+Microsoft Azure macht die Clouddienstnamen verfügbar, da sie der VIP-Adresse in der Domäne "cloudapp.NET" zugeordnet sind. Für eine bessere Benutzererfahrung in der Anwendung kann ggf. ein kürzerer Vanity-Name konfiguriert werden, der den vollqualifizierten Clouddienstnamen ersetzt. Dies erfolgt normalerweise über einen CNAME-Eintrag in Ihrem öffentlichen DNS, der den öffentlichen DNS-Namen der Ressource \(z. B. "www.contoso.com"\) dem DNS-Namen des Clouddiensts zuordnet, der die Ressource \(z. B. den Clouddienst mit dem Webserver für "www.contoso.com"\) hostet.
 
 Darüber hinaus müssen Benennungskonvention für Clouddienste möglicherweise Ausnahmen tolerieren, da die Namen der Clouddienste für alle anderen Microsoft Azure-Clouddienste unabhängig vom Microsoft Azure-Mandanten eindeutig sein müssen.
 
@@ -232,7 +232,7 @@ Aufgabe:
 
 - Erstellen Sie die Gruppe von Clouddiensten mit Ihrer Benennungskonvention. Sie können das Azure-Verwaltungsportal oder das PowerShell-Cmdlet **New-AzureService** verwenden.
 
-## 5. Virtuelle Netzwerke
+## 5\. Virtuelle Netzwerke
 
 Der nächste logische Schritt ist die Erstellung der virtuellen Netzwerke, die für die Kommunikation zwischen den virtuellen Computern in der Lösung erforderlich sind. Obwohl es möglich ist, mehrere virtuelle Computer einer IT-Workload in einem Clouddienst zu hosten, werden virtuelle Netzwerke empfohlen.
 
@@ -243,7 +243,7 @@ Wenn lokale Benutzer und Computer nicht kontinuierlich mit virtuellen Computern 
 
 ![](./media/virtual-machines-infrastructure-services-implementation-guidelines/vnet01.png)
  
-Dies eignet sich normalerweise für Internetworkloads, wie z. B. Internetwebserver. Sie können diese virtuellen Computer mithilfe von Remotedesktopverbindungen, PowerShell-Remotesitzungen, Secure Shell (SSH)-Verbindungen und Punkt-zu-Standort-VPN-Verbindungen verwalten.
+Dies eignet sich normalerweise für Internetworkloads, wie z. B. Internetwebserver. Sie können diese virtuellen Computer mithilfe von Remotedesktopverbindungen, PowerShell-Remotesitzungen, Secure Shell \(SSH\)-Verbindungen und Punkt-zu-Standort-VPN-Verbindungen verwalten.
 
 Da sie nicht mit Ihrem lokalen Netzwerk verbunden sind, können ausschließliche Cloudnetzwerke einen beliebigen Teil des privaten IP-Adressbereichs verwenden.
 
@@ -257,10 +257,10 @@ Da sie eine Verbindung mit Ihrem lokalen Netzwerk herstellen, müssen standortü
 
 Um Pakete aus Ihrem standortübergreifenden virtuellen Netzwerk in Ihr lokales Netzwerk zu übertragen, müssen Sie den Satz von entsprechenden lokalen Adresspräfixen als Teil der Definition des lokalen Netzwerks für das virtuelle Netzwerk konfigurieren. Je nach dem Adressraum des virtuellen Netzwerks sowie den entsprechenden lokalen Standorten können viele Adresspräfixe im lokalen Netzwerk vorhanden sein.
 
-Sie können ein virtuelles Netzwerk auf ausschließlicher Cloudbasis in ein standortübergreifendes virtuelles Netzwerk konvertieren. Dabei ist es jedoch höchstwahrscheinlich erforderlich, dass Sie den virtuellen Netzwerkadressbereich, die Subnetze und Ihre virtuellen Computer, die statische, Azure zugewiesene IP-Adressen (dynamische IP-Adressen, DIPs) verwenden, neu nummerieren. Sie sollten daher sorgfältig den virtuellen Netzwerktyp planen, den Sie benötigen (cloudbasiert oder standortübergreifend), bevor Sie das Netzwerk erstellen.
+Sie können ein virtuelles Netzwerk auf ausschließlicher Cloudbasis in ein standortübergreifendes virtuelles Netzwerk konvertieren. Dabei ist es jedoch höchstwahrscheinlich erforderlich, dass Sie den virtuellen Netzwerkadressbereich, die Subnetze und Ihre virtuellen Computer, die statische, Azure zugewiesene IP-Adressen \(dynamische IP-Adressen, DIPs\) verwenden, neu nummerieren. Sie sollten daher sorgfältig den virtuellen Netzwerktyp planen, den Sie benötigen \(cloudbasiert oder standortübergreifend\), bevor Sie das Netzwerk erstellen.
 
 ### Subnetze
-Subnetze ermöglichen es Ihnen, Ressourcen zu organisieren, die entweder logisch (z. B. in einem Subnetz für virtuelle Computer, die der gleichen Anwendung zugeordnet sind) oder physisch (z. B. in einem Subnetz pro Clouddienst) verknüpft sind. Sie können mit Subnetzen auch Isolationstechniken zur Erhöhung der Sicherheit implementieren.
+Subnetze ermöglichen es Ihnen, Ressourcen zu organisieren, die entweder logisch \(z. B. in einem Subnetz für virtuelle Computer, die der gleichen Anwendung zugeordnet sind\) oder physisch \(z. B. in einem Subnetz pro Clouddienst\) verknüpft sind. Sie können mit Subnetzen auch Isolationstechniken zur Erhöhung der Sicherheit implementieren.
 
 Für standortübergreifende virtuelle Netzwerke sollten Sie Subnetze mit den gleichen Konventionen entwerfen, die Sie für lokale Ressourcen verwenden. Bedenken Sie dabei jedoch, dass **Azure immer die ersten drei IP-Adressen des Adressbereichs für jedes Subnetz verwendet**. Um die erforderliche Anzahl der Adressen für das Subnetz zu ermitteln, zählen Sie die virtuellen Computer, die Sie jetzt benötigen, und schätzen Sie, wie viele für zukünftiges Wachstum hinzukommen können. Verwenden Sie dann die folgende Tabelle zum Bestimmen der Größe des Subnetzes.
  
@@ -272,7 +272,7 @@ Anzahl benötigter virtueller Computer | Anzahl der erforderlichen Hostbits | Su
 28–59 | 6 | /26
 60–123 | 7 | /25
 
-> [AZURE.NOTE]Für normale lokale Subnetze ist die maximale Anzahl von Adressen für ein Subnetz mit n Hostbits 2<sup>n</sup>-2. Für ein Azure-Subnetz ist die maximale Anzahl von Adressen für ein Subnetz mit n Hostbits 2<sup>n</sup>-5 (2+3 für die Adressen, die Azure in jedem Subnetz verwendet).
+> [AZURE.NOTE]Für normale lokale Subnetze ist die maximale Anzahl von Adressen für ein Subnetz mit n Hostbits 2<sup>n</sup>-2. Für ein Azure-Subnetz ist die maximale Anzahl von Adressen für ein Subnetz mit n Hostbits 2<sup>n</sup>-5 \(2+3 für die Adressen, die Azure in jedem Subnetz verwendet\).
 
 Wenn Sie eine zu geringe Subnetzgröße wählen, müssen Sie die virtuellen Computer im Subnetz neu nummerieren und neu bereitstellen.
 
@@ -280,7 +280,7 @@ Wenn Sie eine zu geringe Subnetzgröße wählen, müssen Sie die virtuellen Comp
 
 Entscheidungen:
 
-- Welchen virtuellen Netzwerktyp benötigen Sie, um Ihre IT-Workload oder -Infrastruktur zu hosten (cloudbasiert oder standortübergreifend)?
+- Welchen virtuellen Netzwerktyp benötigen Sie, um Ihre IT-Workload oder -Infrastruktur zu hosten \(cloudbasiert oder standortübergreifend\)?
 - Wie viel Adressraum benötigen Sie bei standortübergreifenden virtuellen Netzwerken, um die Subnetze und virtuellen Computer jetzt und zukünftig bei einer wahrscheinlichen Erweiterung zu hosten?
 
 Aufgaben:
@@ -290,11 +290,11 @@ Aufgaben:
 - Definieren Sie für standortübergreifende virtuelle Netzwerke den Satz von LAN-Adressbereichen für lokale Speicherorte, die die virtuellen Computer im virtuellen Netzwerk erreichen müssen.
 - Erstellen Sie das virtuelle Netzwerk mit der Benennungskonvention. Sie können das Azure-Vorschauportal oder das Azure-Portal verwenden.
 
-## 6. Verfügbarkeitsgruppen
+## 6\. Verfügbarkeitsgruppen
 
 In Azure-PaaS enthalten Clouddienste eine oder mehrere Rollen, die Anwendungscode ausführen. Rollen können eine oder mehrere virtuelle Computerinstanzen aufweisen, die die Struktur automatisch bereitstellt. Azure kann die Instanzen in diesen Rollen jederzeit aktualisieren. Da sie jedoch Teil der gleichen Rolle sind, aktualisiert Azure nicht alle gleichzeitig, um eine Dienstunterbrechung für die Rolle zu verhindern.
 
-In Azure-IaaS wird das Konzept der Rolle nicht berücksichtigt, da jeder virtuelle IaaS-Computer eine Rolle mit einer einzelnen Instanz darstellt. Um Azure darauf hinzuweisen, nicht gleichzeitig zwei oder mehr zugeordnete Computer auszuschalten (z. B. für OS-Updates des Knotens, in dem sie sich befinden), wurde das Konzept der Verfügbarkeit eingeführt. Eine Verfügbarkeitsgruppe teilt Azure mit, nicht alle Computer in der gleichen Verfügbarkeitsgruppe auszuschalten, um zu verhindern, dass eine Dienstunterbrechung entsteht. Die virtuellen Computer, die Mitglieder einer Verfügbarkeitsgruppe sind, bieten eine per Servicelevelvereinbarung garantierte Verfügbarkeit von 99,95 %.
+In Azure-IaaS wird das Konzept der Rolle nicht berücksichtigt, da jeder virtuelle IaaS-Computer eine Rolle mit einer einzelnen Instanz darstellt. Um Azure darauf hinzuweisen, nicht gleichzeitig zwei oder mehr zugeordnete Computer auszuschalten \(z. B. für OS-Updates des Knotens, in dem sie sich befinden\), wurde das Konzept der Verfügbarkeit eingeführt. Eine Verfügbarkeitsgruppe teilt Azure mit, nicht alle Computer in der gleichen Verfügbarkeitsgruppe auszuschalten, um zu verhindern, dass eine Dienstunterbrechung entsteht. Die virtuellen Computer, die Mitglieder einer Verfügbarkeitsgruppe sind, bieten eine per Servicelevelvereinbarung garantierte Verfügbarkeit von 99,95 %.
 
 Verfügbarkeitsgruppen müssen Teil der Planung für hohe Verfügbarkeit der Lösung sein. Eine Verfügbarkeitsgruppe wird als Satz von virtuellen Computern innerhalb eines einzelnen Clouddiensts definiert, die den gleichen Verfügbarkeitsgruppennamen aufweisen. Sie können Verfügbarkeitsgruppen erstellen, nachdem Sie Clouddienste erstellt haben.
 
@@ -308,11 +308,11 @@ Aufgabe:
 
 - Definieren Sie die Verfügbarkeitsgruppen mit den Benennungskonvention. Sie können einen virtuellen Computer mit einer Verfügbarkeitsgruppe verknüpfen, wenn Sie die virtuellen Computer erstellen, oder Sie verknüpfen einen virtuellen Computer mit einer Verfügbarkeitsgruppe, nachdem der virtuelle Computer erstellt wurde.
 
-## 7. Virtuelle Computer
+## 7\. Virtuelle Computer
 
 In Azure-PaaS verwaltet Azure virtuelle Computer und deren zugehörige Datenträger. Sie müssen Clouddienste und Rollen erstellen und benennen. Azure erstellt anschließend Instanzen, die diesen Rollen zugeordnet sind. Im Fall von Azure-IaaS können Sie selbst entscheiden, ob Sie Namen für Clouddienste, virtuelle Computer und zugehörige Datenträger angeben.
 
-Um den Verwaltungsaufwand zu reduzieren, verwendet das Azure-Portal den Computernamen als Standardnamen für den zugeordneten Clouddienst (wenn der Kunde einen neuen Clouddienst im Assistenten zur Erstellung des virtuellen Computers erstellt).
+Um den Verwaltungsaufwand zu reduzieren, verwendet das Azure-Portal den Computernamen als Standardnamen für den zugeordneten Clouddienst \(wenn der Kunde einen neuen Clouddienst im Assistenten zur Erstellung des virtuellen Computers erstellt\).
 
 Darüber hinaus benennt Azure Datenträger und unterstützende VHD-Blobs mit einer Kombination aus Clouddienstname, Computername und Erstellungsdatum.
 
@@ -333,9 +333,9 @@ Aufgaben:
 
 Die Contoso Corporation hat ein Finanzanalysemodul der nächsten Generation mit hochmodernen proprietären Algorithmen zum Handel mit Futures entwickelt. Das Unternehmen möchte seinen Kunden dieses Modul als Gruppe von Servern in Azure in folgender Form zur Verfügung stellen:
 
-- Zwei (und zukünftig weitere) IIS-basierte Webserver, auf denen benutzerdefinierte Webdienste in einer Webebene ausgeführt werden
-- Zwei (und zukünftig weitere) IIS-basierte Anwendungsserver, die die Berechnungen in einer Anwendungsebene ausführen
-- Ein SQL Server 2014-Cluster mit AlwaysOn-Verfügbarkeitsgruppen (zwei SQL Server und ein Mehrheitsknotenzeuge), die historische und laufende Berechnungsdaten in einer Datenbankebene speichern
+- Zwei \(und zukünftig weitere\) IIS-basierte Webserver, auf denen benutzerdefinierte Webdienste in einer Webebene ausgeführt werden
+- Zwei \(und zukünftig weitere\) IIS-basierte Anwendungsserver, die die Berechnungen in einer Anwendungsebene ausführen
+- Ein SQL Server 2014-Cluster mit AlwaysOn-Verfügbarkeitsgruppen \(zwei SQL Server und ein Mehrheitsknotenzeuge\), die historische und laufende Berechnungsdaten in einer Datenbankebene speichern
 - Zwei Active Directory-Domänencontroller für eine eigenständige Gesamtstruktur und Domäne in der Authentifizierungsebene, die vom SQL Server-Cluster benötigt wird
 - Alle Server befinden sich in zwei Subnetzen – ein Front-End-Subnetz für die Webserver und ein Back-End-Subnetz für die Anwendungsserver, ein SQL Server 2014-Cluster und Domänencontroller
 
@@ -354,11 +354,11 @@ Der Entwurf muss Folgendes umfassen:
 
 Alle oben aufgeführten Elemente werden anhand der Contoso-Benennungskonventionen benannt:
 
-- Contoso verwendet [IT-Workload]-[Standort]-[Azure-Ressource] als Präfix. In diesem Beispiel ist "azfae" (Azure-Finanzanalysemodul) der Name der IT-Workload und "use" (USA Osten 2) der Standort, da sich die meisten Contoso-Kunden an der Ostküste der USA befinden.
-- Speicherkonten verwenden "contosoazfaeusesa[Beschreibung]". Beachten Sie, dass dem Präfix für mehr Eindeutigkeit "Contoso" hinzugefügt wurde und dass Speicherkontennamen keine Bindestriche unterstützen.
-- Virtuelle Netzwerke verwenden "AZFAE-USE-VN[Nummer]".
-- Verfügbarkeitsgruppen verwenden "azfae-use-as-[Rolle]".
-- Die Namen der virtuellen Computer folgen der Konvention "use azfae-use-vm-[VM-Name]".
+- Contoso verwendet \[IT-Workload\]-\[Standort\]-\[Azure-Ressource\] als Präfix. In diesem Beispiel ist "azfae" \(Azure-Finanzanalysemodul\) der Name der IT-Workload und "use" \(USA Osten 2\) der Standort, da sich die meisten Contoso-Kunden an der Ostküste der USA befinden.
+- Speicherkonten verwenden "contosoazfaeusesa\[Beschreibung\]". Beachten Sie, dass dem Präfix für mehr Eindeutigkeit "Contoso" hinzugefügt wurde und dass Speicherkontennamen keine Bindestriche unterstützen.
+- Virtuelle Netzwerke verwenden "AZFAE-USE-VN\[Nummer\]".
+- Verfügbarkeitsgruppen verwenden "azfae-use-as-\[Rolle\]".
+- Die Namen der virtuellen Computer folgen der Konvention "use azfae-use-vm-\[VM-Name\]".
 
 ### Azure-Abonnements und -Konten
 
@@ -418,7 +418,7 @@ Hier sehen Sie die daraus resultierende Konfiguration.
  
 Diese Konfiguration umfasst:
 
-- Ein virtuelles Netzwerk auf ausschließlicher Cloudbasis mit zwei Subnetzen (Front-End- und Back-End)
+- Ein virtuelles Netzwerk auf ausschließlicher Cloudbasis mit zwei Subnetzen \(Front-End- und Back-End\)
 - Zwei Speicherkonten
 - Vier Verfügbarkeitsgruppen, eine für jede Ebene des Finanzanalysemoduls
 - Die virtuellen Computer für die vier Ebenen
@@ -434,11 +434,11 @@ Diese Konfiguration umfasst:
 
 [Skalierbarkeits- und Leistungsziele für Azure-Speicher](../storage-scalability-targets.md)
 
-[Cloud Platform Integration Framework (Azure-Architekturmuster)](../azure-architectures-cpif-overview.md)
+[Cloud Platform Integration Framework \(Azure-Architekturmuster\)](../azure-architectures-cpif-overview.md)
 
-[Datacenter extension reference architecture diagram](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84) (in englischer Sprache)
+[Datacenter extension reference architecture diagram](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84) \(in englischer Sprache\)
 
 [Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](../articles/virtual-machines/virtual-machines-azurerm-versus-azuresm.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

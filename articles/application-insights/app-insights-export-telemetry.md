@@ -21,7 +21,7 @@ Möchten Sie Ihre Telemetriedaten einer angepassten Analyse unterziehen? Oder m�
 
 Der fortlaufende Export ist im kostenlosen Testzeitraum und in den [Standard- und Premium-Preisplänen](http://azure.microsoft.com/pricing/details/application-insights/) verfügbar.
 
-(Wenn Sie die Daten in einem Ihrer Blätter "Metriken" oder "Suchen" nur [einmal exportieren](app-insights-metrics-explorer.md#export-to-excel) möchten, klicken Sie oben im Blatt auf "Export".)
+\(Wenn Sie die Daten in einem Ihrer Blätter "Metriken" oder "Suchen" nur [einmal exportieren](app-insights-metrics-explorer.md#export-to-excel) möchten, klicken Sie oben im Blatt auf "Export".\)
 
 ## <a name="setup"></a> Einrichten des fortlaufenden Exports
 
@@ -38,7 +38,7 @@ Wählen Sie die Ereignistypen, die Sie exportieren möchten:
 ![Klicken Sie auf "Ereignistypen auswählen".](./media/app-insights-export-telemetry/03-types.png)
 
 
-Nachdem Sie Ihren Exportvorgang erstellt haben, geht es gleich los. (Sie erhalten nur Daten, die nach Erstellung des Exportvorgangs eingehen.)
+Nachdem Sie Ihren Exportvorgang erstellt haben, geht es gleich los. \(Sie erhalten nur Daten, die nach Erstellung des Exportvorgangs eingehen.\)
 
 
 Wenn Sie die Ereignistypen später ändern möchten, bearbeiten Sie einfach den Export:
@@ -74,7 +74,7 @@ Datum und Uhrzeit werden in UTC angegeben und entsprechen dem Zeitpunkt, an dem 
 
 ## <a name="format"></a> Datenformat
 
-* Jedes Blob ist eine Textdatei, die mehrere durch '\n' getrennte Zeilen enthält.
+* Jedes Blob ist eine Textdatei, die mehrere durch '\\n' getrennte Zeilen enthält.
 * Jede Zeile ist ein unformatiertes JSON-Dokument. Wenn Sie sich die Daten anschauen möchten, probieren Sie einen Viewer wie z. B. Notepad ++ mit dem JSON-Plug-In:
 
 ![Zeigen Sie die Telemetriedaten mit einem geeigneten Tool an](./media/app-insights-export-telemetry/06-json.png)
@@ -110,17 +110,7 @@ Im kleinen Rahmen können Sie Code zum Aufteilen Ihrer Daten schreiben, sie in e
 
 Ein umfangreicheres Codebeispiel finden Sie unter [Verwenden einer Workerrolle][exportasa].
 
-#### Exportieren in SQL
 
-Eine weitere Option ist das Verschieben von Daten in eine SQL-Datenbank, in der Sie leistungsstärkere Analysen durchführen können.
-
-In Beispielen werden zwei alternative Methoden zum Verschieben der Daten aus dem Blobspeicher in eine Datenbank veranschaulicht:
-
-* [Exportieren in SQL über eine Workerrolle][exportcode]
-* [Exportieren in SQL mit Stream Analytics][exportasa]
-
-
-Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/services/hdinsight/)-Hadoop-Cluster in der Cloud erwägen. HDInsight bietet eine Vielzahl von Technologien für die Verwaltung und Analyse riesiger Datenmengen.
 
 ## <a name="delete"></a>Löschen der alten Daten
 Beachten Sie, dass Sie für die Verwaltung Ihrer Speicherkapazität und das Löschen der alten Daten nach Bedarf verantwortlich sind.
@@ -134,6 +124,27 @@ Wenn Sie den Schlüssel zu Ihrem Speicher ändern, funktioniert der fortlaufende
 ![Bearbeiten Sie den fortlaufenden Exports, und öffnen und schließen Sie das Exportziel.](./media/app-insights-export-telemetry/07-resetstore.png)
 
 Der fortlaufende Export wird neu gestartet.
+
+## Exportieren nach Power BI
+
+[Microsoft Power BI](https://powerbi.microsoft.com/) stellt die Daten mit umfangreichen und unterschiedlichen Grafiken dar und bietet die Möglichkeit, Informationen aus mehreren Quellen zu kombinieren. Sie können die Telemetriedaten über die Leistung und Nutzung Ihrer Apps von Application Insights zu Power BI streamen.
+
+[Streamen von Application Insights zu Power BI](app-insights-export-power-bi.md)
+
+![Beispiel für eine Power BI-Ansicht der Application Insights-Nutzungsdaten](./media/app-insights-export-telemetry/210.png)
+
+## Exportieren in SQL
+
+Eine weitere Option ist das Verschieben von Daten in eine SQL-Datenbank, in der Sie leistungsstärkere Analysen durchführen können.
+
+In Beispielen werden zwei alternative Methoden zum Verschieben der Daten aus dem Blobspeicher in eine Datenbank veranschaulicht:
+
+* [Exportieren in SQL über eine Workerrolle][exportcode]
+* [Exportieren in SQL mit Stream Analytics][exportasa]
+
+
+Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/services/hdinsight/)-Hadoop-Cluster in der Cloud erwägen. HDInsight bietet eine Vielzahl von Technologien für die Verwaltung und Analyse riesiger Datenmengen.
+
 
 
 ## Fragen und Antworten
@@ -162,7 +173,7 @@ Der fortlaufende Export wird neu gestartet.
 
 * *Wie viele Blobs sollten im Speicher angezeigt werden?*
 
- * Für jeden Datentyp, den Sie zum Exportieren ausgewählt haben, wird jede Minute ein neues Blob erstellt (falls Daten verfügbar sind).
+ * Für jeden Datentyp, den Sie zum Exportieren ausgewählt haben, wird jede Minute ein neues Blob erstellt \(falls Daten verfügbar sind\).
  * Darüber hinaus werden weitere Partitionseinheiten für Anwendungen mit hohem Datenverkehr zugeordnet. In diesem Fall erstellt jede Einheit jede Minute ein Blob.
 
 
@@ -183,4 +194,4 @@ Der fortlaufende Export wird neu gestartet.
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

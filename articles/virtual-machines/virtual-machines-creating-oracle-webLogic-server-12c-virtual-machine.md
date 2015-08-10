@@ -1,18 +1,6 @@
-<properties 
-	pageTitle="Erstellen eines Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers in Azure" 
-	description="Durchlaufen Sie ein Beispiel zum Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers unter Windows Server 2012 in Microsoft Azure." 
-	services="virtual-machines" 
-	authors="bbenz" 
-	documentationCenter=""/>
+<properties pageTitle="Erstellen eines Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers in Azure" description="Durchlaufen Sie ein Beispiel zum Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers unter Windows Server 2012 in Microsoft Azure." services="virtual-machines" authors="bbenz" documentationCenter=""/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="infrastructure-services" 
-	ms.date="06/22/2015" 
-	ms.author="bbenz" />
+<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
 
 #Erstellen eines Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers in Azure
 Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf einem von Microsoft bereitgestellten Oracle WebLogic Server 12c-Image unter Windows Server 2012 in Azure erstellen.
@@ -23,7 +11,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 2. Klicken Sie auf **Marketplace**, dann auf **Compute**, und geben Sie **Oracle** in das Suchfeld ein.
 
-3.	Wählen Sie das Image **WebLogic Server 12c Standard Edition on Windows Server 2012** oder **Oracle WebLogic Server 12c Enterprise Edition on Windows Server 2012** aus. Überprüfen Sie die Informationen zum Image, das Sie auswählen möchten (z. B. empfohlene Mindestgröße), und klicken Sie dann auf **Weiter**.
+3.	Wählen Sie das Image **WebLogic Server 12c Standard Edition on Windows Server 2012** oder **Oracle WebLogic Server 12c Enterprise Edition on Windows Server 2012** aus. Überprüfen Sie die Informationen zum Image, das Sie auswählen möchten \(z. B. empfohlene Mindestgröße\), und klicken Sie dann auf **Weiter**.
 
 4.	Geben Sie einen **Hostnamen** für den virtuellen Computer an.
 
@@ -57,7 +45,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 5.	Befolgen Sie die Anweisungen, um eine Verbindung mit dem virtuellen Computer herzustellen. Wenn Sie zur Eingabe des Administratornamens und des Kennworts aufgefordert werden, verwenden Sie die Werte, die Sie beim Erstellen des virtuellen Computers bereitgestellt haben.
 
-6.	Klicken Sie im Dialogfeld **WebLogic-Plattform Schnellstart** auf **Erste Schritte mit WebLogic-Server**. (Wenn das Dialogfeld **WebLogic-Plattform Schnellstart** nicht bereits geöffnet ist, öffnen Sie es, indem Sie auf die **Windows-Schaltfläche Start** klicken, **Admin-Server für WebLogic Server-Domäne starten** eingeben und dann auf das Symbol **Admin-Server für WebLogic Server-Domäne starten** klicken.)
+6.	Klicken Sie im Dialogfeld **WebLogic-Plattform Schnellstart** auf **Erste Schritte mit WebLogic-Server**. \(Wenn das Dialogfeld **WebLogic-Plattform Schnellstart** nicht bereits geöffnet ist, öffnen Sie es, indem Sie auf die **Windows-Schaltfläche Start** klicken, **Admin-Server für WebLogic Server-Domäne starten** eingeben und dann auf das Symbol **Admin-Server für WebLogic Server-Domäne starten** klicken.\)
 
 7.	Wählen Sie im Dialogfeld **Willkommen** die Option **Neue WebLogic-Domäne erstellen** aus, und klicken Sie dann auf **Weiter**.
 
@@ -73,7 +61,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 10.	Im Dialogfeld **Benutzername und Kennwort für Administrator konfigurieren**:
 
-	1.	[Optional] Ändern Sie den Namen von **weblogic** in einen beliebigen Namen Ihrer Wahl.
+	1.	\[Optional\] Ändern Sie den Namen von **weblogic** in einen beliebigen Namen Ihrer Wahl.
 
 	2.	Geben Sie ein Kennwort für den WebLogic Server-Administrator ein und bestätigen Sie es.
 
@@ -81,7 +69,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image13.png)
 
-11.	Wählen Sie im Dialogfeld **Server-Startmodus und JDK konfigurieren** die Option **Produktionsmodus** aus, wählen Sie das verfügbare JDK aus (oder navigieren Sie ggf. zum gewünschten JDK), und klicken Sie dann auf **Weiter**.
+11.	Wählen Sie im Dialogfeld **Server-Startmodus und JDK konfigurieren** die Option **Produktionsmodus** aus, wählen Sie das verfügbare JDK aus \(oder navigieren Sie ggf. zum gewünschten JDK\), und klicken Sie dann auf **Weiter**.
 
 	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image14.png)
 
@@ -100,13 +88,13 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 15.	Eine Eingabeaufforderung für **startWebLogic.cmd** wird gestartet. Geben Sie bei Aufforderung Ihren WebLogic-Benutzernamen und das Kennwort ein.
 
 ##Installieren einer Anwendung auf einem virtuellen Oracle WebLogic Server 12c-Computer in Azure
-1.	Bleiben Sie am virtuellen Computer angemeldet, und speichern Sie das shoppingcart.war-Beispiel unter http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war lokal. Erstellen Sie z. B. einen Ordner mit dem Namen **c:\mywar** und speichern Sie die WAR-Datei unter http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war in **c:\mywar**.
+1.	Bleiben Sie am virtuellen Computer angemeldet, und speichern Sie das shoppingcart.war-Beispiel unter http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war lokal. Erstellen Sie z. B. einen Ordner mit dem Namen **c:\\mywar** und speichern Sie die WAR-Datei unter http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war in **c:\\mywar**.
 
-2.	Öffnen Sie die **WebLogic Server-Verwaltungskonsole** (http://localhost:7001/console). Geben Sie bei Aufforderung Ihren WebLogic-Benutzernamen und das Kennwort ein.
+2.	Öffnen Sie die **WebLogic Server-Verwaltungskonsole** \(http://localhost:7001/console\). Geben Sie bei Aufforderung Ihren WebLogic-Benutzernamen und das Kennwort ein.
 
 3.	Klicken Sie in der **WebLogic Server-Verwaltungskonsole** auf **Sperren und bearbeiten**, klicken Sie auf **Bereitstellungen**, und dann auf **Installieren**.
 
-4.	Geben Sie den **Pfad** **c:\myway\shoppingcart.war** ein.
+4.	Geben Sie den **Pfad** **c:\\myway\\shoppingcart.war** ein.
 
 	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image18.png)
 
@@ -156,7 +144,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 	2.	Klicken Sie auf die **Windows-Schaltfläche Start**, geben Sie **Windows-Firewall mit erweiterter Sicherheit** ein, und klicken Sie dann auf das Symbol **Windows-Firewall mit erweiterter Sicherheit**. Die Verwaltungskonsole für **Windows-Firewall mit erweiterter Sicherheit** wird geöffnet.
 
-	3.	Klicken Sie in der Firewall-Verwaltungskonsole im linken Bereich auf **Eingehende Regeln** (wenn **Eingehende Regeln** nicht angezeigt wird, erweitern Sie den obersten Knoten im linken Bereich), und klicken Sie dann auf "Neue Regel" im rechten Bereich.
+	3.	Klicken Sie in der Firewall-Verwaltungskonsole im linken Bereich auf **Eingehende Regeln** \(wenn **Eingehende Regeln** nicht angezeigt wird, erweitern Sie den obersten Knoten im linken Bereich\), und klicken Sie dann auf "Neue Regel" im rechten Bereich.
 
 	4.	Wählen Sie für **Regeltyp** die Option **Port** aus, und klicken Sie auf **Weiter**.
 
@@ -168,7 +156,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 	8.	Geben Sie einen Namen für die Regel und optional eine Beschreibung ein, und klicken Sie dann auf **Fertig stellen**.
 
-12.	Um die ausgeführte Warenkorbanwendung im Internet anzuzeigen, öffnen Sie einen Browser mit der URL in Form von `http://<<unique_domain_name>>/shoppingcart`. (Sie können den Wert für <<*unique_domain_name*>> im **Azure-Portal** festlegen, indem Sie auf [Virtuelle Computer](https://ms.portal.azure.com/) klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle WebLogic Server verwenden.)
+12.	Um die ausgeführte Warenkorbanwendung im Internet anzuzeigen, öffnen Sie einen Browser mit der URL in Form von `http://<<unique_domain_name>>/shoppingcart`. \(Sie können den Wert für \<\<\*unique\_domain\_name\*\>\> im **Azure-Portal** festlegen, indem Sie auf [Virtuelle Computer](https://ms.portal.azure.com/) klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle WebLogic Server verwenden.\)
 
 
 ##Zusätzliche Ressourcen
@@ -180,6 +168,6 @@ Nachdem Sie den virtuellen Computer mit Oracle WebLogic Server eingerichtet habe
 
 -	[Verwendung von Oracle WebLogic Server 12c mit Linux in Microsoft Azure](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
 
--	[Oracle Virtual Machine images for Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md) (Images von virtuellen Oracle-Computern für Azure; in englischer Sprache)
+-	[Oracle Virtual Machine images for Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md) \(Images von virtuellen Oracle-Computern für Azure; in englischer Sprache\)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

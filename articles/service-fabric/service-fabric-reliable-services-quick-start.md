@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/02/2015"
+   ms.date="07/23/2015"
    ms.author="vturecek"/>
 
 # Erste Schritte mit Microsoft Azure Service Fabric Reliable Services
@@ -30,14 +30,18 @@ In diesem Lernprogramm implementieren Sie sowohl einen zustandslosen als auch ei
 
 Beginnen wir mit einem zustandslosen Dienst.
 
-Starten Sie Visual Studio 2015 RC als **Administrator**, und erstellen Sie ein neues Projekt mit einem **zustandslosen Service Fabric-Dienst** mit dem Namen *HelloWorld*:
+Starten Sie Visual Studio 2015 RC als **Administrator**, und erstellen Sie eine neue **Service Fabric-Anwendung** mit dem Namen *HelloWorld*:
 
-![Erstellen Sie im Dialogfeld "Neues Projekt" einen neuen zustandslosen Service Fabric-Dienst.](media/service-fabric-reliable-services-quick-start/hello-stateless-NewProject.png)
+![Erstellen Sie im Dialogfeld „Neues Projekt“ eine neue Service Fabric-Anwendung.](media/service-fabric-reliable-services-quick-start/hello-stateless-NewProject.png)
 
-Sie sehen in der erstellten Lösung zwei Projekte:
+Erstellen Sie anschließend ein Projekt für einen **zustandslosen Dienst** mit dem Namen *HelloWorldStateless*:
 
- + **HelloWorldApplication** Dies ist das *Anwendungsprojekt*, das Ihre *Dienste* enthält. Darüber hinaus enthält es das Anwendungsmanifest, das die Anwendung und einer Reihe von PowerShell-Skripts beschreibt, mit deren Hilfe Sie die Anwendung bereitstellen können.
- + **HelloWorld**: Dies ist das Dienstprojekt, das die zustandslose Dienstimplementierung enthält.
+![Erstellen Sie im zweiten Dialogfeld einen zustandslosen Dienst.](media/service-fabric-reliable-services-quick-start/hello-stateless-NewProject2.png)
+
+Die Projektmappe enthält jetzt zwei Projekte:
+
+ + **HelloWorld**: Dies ist das *Anwendungsprojekt*, das Ihre *Dienste* enthält. Darüber hinaus enthält es das Anwendungsmanifest, das die Anwendung und einer Reihe von PowerShell-Skripts beschreibt, mit deren Hilfe Sie die Anwendung bereitstellen können.
+ + **HelloWorldStateless**: Dies ist das Dienstprojekt, das die Implementierung des zustandslosen Diensts enthält.
 
 
 ## Implementieren des Diensts
@@ -53,7 +57,7 @@ protected override async Task RunAsync(CancellationToken cancellationToken)
 }
 ```
 
- - Einen Einstiegspunkt für die Kommunikation, in den Sie den gewünschten Kommunikationsstapel (z. B. Web-API) einbinden können, um Anforderungen von Benutzern oder anderen Diensten zu empfangen.
+ - Einen Einstiegspunkt für die Kommunikation, in den Sie den gewünschten Kommunikationsstapel \(z. B. Web-API\) einbinden können, um Anforderungen von Benutzern oder anderen Diensten zu empfangen.
 
 ```C#
 protected override ICommunicationListener CreateCommunicationListener()
@@ -88,11 +92,11 @@ Die Plattform ruft diese Methode auf, wenn eine Instanz des Diensts platziert wu
 - Das System kann die Dienstinstanzen für den Ressourcenausgleich verschieben.
 - Innerhalb des Codes sind Fehler aufgetreten.
 - Während Anwendungs- oder Systemaktualisierungen.
-- Wenn die zugrunde liegende Hardware ausfällt. 
+- Wenn die zugrunde liegende Hardware ausfällt.
 
 Diese Orchestrierung wird vom System so verwaltet, dass der Dienst hoch verfügbar bleibt und die Lasten ordnungsgemäß verteilt sind.
 
-`RunAsync()` wird in einem eigenen **Task** ausgeführt. In Codeausschnitt oben verwenden wir direkt eine **while**-Schleife, da für die Arbeitsauslastung keine separate Aufgabe geplant werden muss. Zum Abbrechen der Arbeitsauslastung ist das Zusammenspiel verschiedener Aktionen erforderlich, die vom bereitgestellten Abbruchtoken orchestriert werden. Das System wartet darauf, dass der Task beendet wird (entweder durch erfolgreichen Abschluss, durch Abbruch oder Fehler), bevor es fortfährt. Es ist **wichtig**, das Abbruchtoken zu berücksichtigen, etwaige Arbeiten abzuschließen und `RunAsync()` so schnell wie möglich zu beenden, falls vom System angefordert.
+`RunAsync()` wird in einem eigenen **Task** ausgeführt. Im Codeausschnitt oben verwenden wir direkt eine **while**-Schleife, da für die Arbeitsauslastung keine separate Aufgabe geplant werden muss. Zum Abbrechen der Arbeitsauslastung ist das Zusammenspiel verschiedener Aktionen erforderlich, die vom bereitgestellten Abbruchtoken orchestriert werden. Das System wartet darauf, dass der Task beendet wird \(entweder durch erfolgreichen Abschluss, durch Abbruch oder Fehler\), bevor es fortfährt. Es ist **wichtig**, das Abbruchtoken zu berücksichtigen, etwaige Arbeiten abzuschließen und `RunAsync()` so schnell wie möglich zu beenden, wenn vom System ein Abbruch angefordert wird.
 
 In diesem Beispiel eines zustandslosen Diensts wird die Anzahl in einer lokalen Variablen gespeichert. Da es sich jedoch um einen zustandslosen Dienst handelt, existiert der gespeicherte Wert nur für den aktuellen Lebenszyklus der Dienstinstanz, in der er sich befindet. Wenn der Dienst verschoben oder neu gestartet wird, geht der Wert verloren.
 
@@ -100,7 +104,7 @@ In diesem Beispiel eines zustandslosen Diensts wird die Anzahl in einer lokalen 
 
 Um den Zählerwert selbst bei einer Verschiebung oder einem Neustart des Diensts von zustandslos zu hoch verfügbar und persistent zu konvertieren, benötigen wir einen zustandsbehafteten Dienst.
 
-Fügen Sie der Anwendung **HelloWorld** einen neuen Dienst hinzu, indem Sie mit der rechten Maustaste auf das Anwendungsprojekt klicken und die Option für einen **neuen Fabric-Dienst** auswählen.
+Fügen Sie der Anwendung **HelloWorld** einen neuen Dienst hinzu, indem Sie mit der rechten Maustaste auf das Anwendungsprojekt klicken und die Option **Neuer Fabric-Dienst** auswählen.
 
 ![Fügen Sie der Service Fabric-Anwendung einen Dienst hinzu.](media/service-fabric-reliable-services-quick-start/hello-stateful-NewService.png)
 
@@ -155,7 +159,7 @@ Zuverlässige Auflistungen können mit gewissen Einschränkungen beliebige .NET-
  1. Service Fabric macht den Zustand hochverfügbar, indem es ihn auf verschiedenen Knoten *repliziert* und auf einem lokalen Datenträger speichert. Dies bedeutet, dass alle Elemente, die in einer zuverlässigen Auflistung gespeichert werden, *serialisierbar* sein müssen. Zuverlässige Auflistungen verwenden standardmäßig [DataContract](https://msdn.microsoft.com/library/system.runtime.serialization.datacontractattribute%28v=vs.110%29.aspx) für die Serialisierung. Stellen Sie daher bei Verwendung des Standardserialisierers unbedingt sicher, dass die Typen [vom Datenvertragsserialisierer unterstützt](https://msdn.microsoft.com/library/ms731923%28v=vs.110%29.aspx) werden.
 
  2. Objekte werden zum Zweck einer hohen Verfügbarkeit repliziert, wenn Sie eine Transaktion auf eine zuverlässige Auflistung anwenden. In zuverlässigen Auflistungen gespeicherte Objekte bleiben im lokalen Speicher in Ihrem Dienst erhalten. Sie verfügen somit über einen lokalen Verweis auf das Objekt.
- 
+
     Es ist wichtig, dass Sie lokale Instanzen dieser Objekte nur ändern, nachdem Sie ein Update für die zuverlässige Auflistung in einer Transaktion durchgeführt haben, da diese Änderungen nicht automatisch repliziert werden.
 
 Der *Zustands-Manager* verwaltet zuverlässige Auflistungen für Sie. Sie können vom Zustands-Manager jederzeit und überall im Dienst anhand des Namens eine zuverlässige Auflistung anfordern. Der Manager stellt sicher, dass Sie einen Verweis zurück erhalten. Es wird davon abgeraten, Verweise auf Instanzen zuverlässiger Auflistungen in Klassenmembervariablen oder -eigenschaften zu speichern. Es muss sonst ausdrücklich darauf geachtet werden, dass der Verweis während des gesamten Dienstlebenszyklus eine Instanz referenziert. Der Zustands-Manager übernimmt diese für wiederholte Besuche optimierte Arbeit für Sie.
@@ -199,6 +203,5 @@ Sobald die Dienste ausgeführt werden, sehen Sie die generierten ETW-Ereignisse 
 [Verwalten von Service Fabric-Diensten](service-fabric-manage-your-service-index.md)
 
 [Entwicklerreferenz für zuverlässige Dienste](https://msdn.microsoft.com/library/azure/dn706529.aspx)
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->

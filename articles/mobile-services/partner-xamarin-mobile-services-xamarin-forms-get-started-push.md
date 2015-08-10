@@ -27,7 +27,7 @@ Wenn Sie dieses Lernprogramm abgeschlossen haben, sendet der mobile Dienst immer
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-+ Ein iOS 8-Gerät (Sie können keine Pushbenachrichtigungen in iOS-Simulator testen)
++ Ein iOS 8-Gerät \(Sie können keine Pushbenachrichtigungen in iOS-Simulator testen\)
 + iOS-Entwicklerprogramm-Mitgliedschaft
 + [Xamarin.iOS Studio]
 + [Azure Mobile Services-Komponente]
@@ -82,19 +82,19 @@ Im Folgenden werden Pushbenachrichtigungen einem vorhandenen Beispiel hinzugefü
 
 2. Klicken Sie im Verwaltungsportal auf **Mobile Dienste** und dann auf Ihren mobilen Dienst. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich die **Site-URL**. Klicken Sie dann auf **Schlüssel verwalten** und notieren Sie den **Anwendungsschlüssel**. Sie benötigen diese Werte beim Zugriff auf den mobilen Dienst von Ihrem App-Code aus.
 
-3. Öffnen Sie im Projekt **ToDoAzure(Portable)** der Lösung die Datei **Constants.cs** und ersetzen Sie `ApplicationURL` und `ApplicationKey` durch die Website-URL und den Anwendungsschlüssel, die bzw. den Sie im vorherigen Schritt abgerufen haben.
+3. Öffnen Sie im Projekt **ToDoAzure\(Portable\)** der Lösung die Datei **Constants.cs** und ersetzen Sie `ApplicationURL` und `ApplicationKey` durch die Website-URL und den Anwendungsschlüssel, die bzw. den Sie im vorherigen Schritt abgerufen haben.
 
 ## <a name="iOS"></a>Hinzufügen von Pushbenachrichtigungen zur Xamarin Forms.iOS-App
 
-In diesem Lernprogramm fügen Sie der iOS-App mithilfe des Apple Push Notification Service (APNS) Pushbenachrichtigungen hinzu. Sie benötigen ein aktives Google-Konto und die [Google Cloud Messaging Client-Komponente].
+In diesem Lernprogramm fügen Sie der iOS-App mithilfe des Apple Push Notification Service \(APNS\) Pushbenachrichtigungen hinzu. Sie benötigen ein aktives Google-Konto und die [Google Cloud Messaging Client-Komponente].
 
->[AZURE.IMPORTANT]Pushbenachrichtigungen müssen aufgrund von Anforderungen des Apple Push Notification Service (APNS) auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
+>[AZURE.IMPORTANT]Pushbenachrichtigungen müssen aufgrund von Anforderungen des Apple Push Notification Service \(APNS\) auf einem iOS-fähigen Gerät \(iPhone oder iPad\) anstatt im Emulator bereitgestellt und getestet werden.
 
 APNS verwendet Zertifikate zur Authentifizierung Ihres mobilen Diensts. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen auf Ihren mobilen Dienst. Die offizielle Dokumentation der APNS-Merkmale finden Sie unter [Apple Push Notification Service].
 
 ### <a name="certificates"></a>Erstellen der Zertifikatsignieranforderungsdatei
 
-Zunächst müssen Sie die Zertifikatsignieranforderungsdatei (CSR-Datei) erstellen, die von Apple zur Generierung eines signierten Zertifikats verwendet wird.
+Zunächst müssen Sie die Zertifikatsignieranforderungsdatei \(CSR-Datei\) erstellen, die von Apple zur Generierung eines signierten Zertifikats verwendet wird.
 
 1. Führen Sie unter den Hilfsprogrammen die **Schlüsselbundverwaltung** aus.
 
@@ -106,7 +106,7 @@ Zunächst müssen Sie die Zertifikatsignieranforderungsdatei (CSR-Datei) erstell
 
     ![][6]
 
-4. Geben Sie einen Namen für die Zertifikatsignieranforderungsdatei (CSR-Datei) in **Sichern unter** ein, wählen Sie den Speicherort in **Ort**, und klicken Sie dann auf **Sichern**.
+4. Geben Sie einen Namen für die Zertifikatsignieranforderungsdatei \(CSR-Datei\) in **Sichern unter** ein, wählen Sie den Speicherort in **Ort**, und klicken Sie dann auf **Sichern**.
 
     ![][7]
 
@@ -162,9 +162,9 @@ Um von Mobile Services Pushbenachrichtigungen an eine iOS-App senden zu können,
 
     ![][9]
 
-    Hinweis: Standardmäßig ist die heruntergeladene Datei ein Entwicklungszertifikat namens <strong>aps_development.cer</strong>.
+    Hinweis: Standardmäßig ist die heruntergeladene Datei ein Entwicklungszertifikat namens <strong>aps\_development.cer</strong>.
 
-7. Doppelklicken Sie auf dem heruntergeladenen Pushzertifikat **aps_development.cer**.
+7. Doppelklicken Sie auf dem heruntergeladenen Pushzertifikat **aps\_development.cer**.
 
     Hierdurch wird das neue Zertifikat im Schlüsselbund installiert, wie unten gezeigt:
 
@@ -246,7 +246,7 @@ Ihr mobiler Dienst ist nun für APNS konfiguriert.
 
     ![][120]
 
-    Dadurch wird sichergestellt, dass das Xamarin-Projekt das neue Profil für die Codesignierung verwendet. Die offizielle Dokumentation zur Xamarin-Gerätebereitstellung finden Sie unter [Xamarin Device Provisioning] (Xamarin – Gerätebereitstellung, in englischer Sprache).
+    Dadurch wird sichergestellt, dass das Xamarin-Projekt das neue Profil für die Codesignierung verwendet. Die offizielle Dokumentation zur Xamarin-Gerätebereitstellung finden Sie unter [Xamarin Device Provisioning] \(Xamarin – Gerätebereitstellung, in englischer Sprache\).
 
 ### <a name="add-push"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
@@ -290,7 +290,7 @@ Ihr mobiler Dienst ist nun für APNS konfiguriert.
             // Register for push with Mobile Services
             IEnumerable<string> tag = new List<string>() { "uniqueTag" };
             
-            const string template = "{"aps":{"alert":"$(message)"}}";
+            const string template = "{\"aps\":{\"alert\":\"$(message)\"}}";
 
             var expiryDate = DateTime.Now.AddDays(90).ToString
                 (System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
@@ -356,15 +356,15 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
            });   
           }
 
-    Auf diese Weise wird ein neues Einfügeskript registriert, mit dem eine Pushbenachrichtigung (der eingefügte Text) an das in der Einfügeanforderung angegebene Gerät sendet.
+    Auf diese Weise wird ein neues Einfügeskript registriert, mit dem eine Pushbenachrichtigung \(der eingefügte Text\) an das in der Einfügeanforderung angegebene Gerät sendet.
 
-   >[AZURE.NOTE]Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
+   \>[AZURE.NOTE]Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
 
 ### <a name="test"></a>Testen von Pushbenachrichtigungen in der App
 
 1. Drücken Sie auf **Run**, um das Projekt zu erstellen, starten Sie die App auf einem iOS-fähigen Gerät, und klicken Sie dann auf **OK**, um Pushbenachrichtigungen zu akzeptieren
 
-   >[AZURE.NOTE]Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
+   \>[AZURE.NOTE]Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
 
 2. Klicken Sie in der App auf die Schaltfläche **Hinzufügen**, fügen Sie einen Aufgabentitel hinzu, und klicken Sie dann auf die Schaltfläche **Speichern**. 
 
@@ -375,7 +375,7 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
 ## <a name="Android"></a>Hinzufügen von Pushbenachrichtigungen zur Xamarin Forms.Android-App
 
-Zum Hinzufügen von Pushbenachrichtigungen zur Android-App verwenden Sie den Google Cloud Messaging-Dienst (GCM). Sie benötigen ein aktives Google-Konto und die [Google Cloud Messaging Client-Komponente].
+Zum Hinzufügen von Pushbenachrichtigungen zur Android-App verwenden Sie den Google Cloud Messaging-Dienst \(GCM\). Sie benötigen ein aktives Google-Konto und die [Google Cloud Messaging Client-Komponente].
 
 ###<a id="register"></a>Aktivieren von Google Cloud Messaging
 
@@ -427,9 +427,9 @@ Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf di
           }
 
 
-    Auf diese Weise wird ein neues Einfügeskript registriert, mit dem eine Pushbenachrichtigung (der eingefügte Text) an das in der Einfügeanforderung angegebene Gerät sendet.
+    Auf diese Weise wird ein neues Einfügeskript registriert, mit dem eine Pushbenachrichtigung \(der eingefügte Text\) an das in der Einfügeanforderung angegebene Gerät sendet.
 
-   >[AZURE.NOTE]Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
+   \>[AZURE.NOTE]Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
 
 
 ###<a id="configure-app"></a>Konfigurieren vorhandener Projekte für Pushbenachrichtigungen
@@ -516,7 +516,7 @@ Die **MainActivity** ist damit auf das Hinzufügen von Pushbenachrichtigungen vo
 
 	Beachten Sie, dass die Klasse von **GcmServiceBase** abgeleitet ist, und dass diese über das Attribut **Service** verfügen muss.
 
-	>[AZURE.NOTE]Die **GcmServiceBase**-Klasse implementiert die Methoden **OnRegistered()**, **OnUnRegistered()**, **OnMessage()** und **OnError()**. Sie müssen diese Methoden in der **GcmService**-Klasse überschreiben.
+	>[AZURE.NOTE]Die **GcmServiceBase**-Klasse implementiert die Methoden **OnRegistered\(\)**, **OnUnRegistered\(\)**, **OnMessage\(\)** und **OnError\(\)**. Sie müssen diese Methoden in der **GcmService**-Klasse überschreiben.
 
 5. Fügen Sie folgenden Code der **GcmService**-Klasse hinzu, mit dem der **OnRegistered**-Ereignishandler überschrieben wird.
 
@@ -538,7 +538,7 @@ Die **MainActivity** ist damit auf das Hinzufügen von Pushbenachrichtigungen vo
         {
             try
             {
-                const string template = "{"data":{"message":"$(message)"}}";
+                const string template = "{\"data\":{\"message\":\"$(message)\"}}";
 
                 await push.RegisterTemplateAsync(RegistrationID, template, "mytemplate", tags);
             }
@@ -611,7 +611,7 @@ Die **MainActivity** ist damit auf das Hinzufügen von Pushbenachrichtigungen vo
             notificationManager.Notify(1, notification);
         }
 
-12. Fügen Sie die folgenden Methodenüberschreibungen für **OnUnRegistered()** und **OnError()** hinzu. Diese sind erforderlich, um das Projekt zu kompilieren.
+12. Fügen Sie die folgenden Methodenüberschreibungen für **OnUnRegistered\(\)** und **OnError\(\)** hinzu. Diese sind erforderlich, um das Projekt zu kompilieren.
 
         protected override void OnError(Context context, string errorId)
         {
@@ -622,9 +622,9 @@ Die **MainActivity** ist damit auf das Hinzufügen von Pushbenachrichtigungen vo
 
 Sie können die App testen, indem Sie ein Android-Telefon direkt mit einem USB-Kabel verbinden oder ein virtuelles Gerät im Emulator verwenden.
 
-Wenn Sie diese App im Emulator ausführen, stellen Sie sicher, dass Sie ein Android Virtual Device (AVD) verwenden, das Google-APIs unterstützt.
+Wenn Sie diese App im Emulator ausführen, stellen Sie sicher, dass Sie ein Android Virtual Device \(AVD\) verwenden, das Google-APIs unterstützt.
 
-> [AZURE.IMPORTANT]Damit Sie Pushbenachrichtigungen erhalten, müssen Sie ein Google-Konto auf Ihrem Android Virtual Device einrichten (Navigieren Sie im Emulator zu **Einstellungen**, und klicken Sie auf **Konto hinzufügen**). Überprüfen Sie zudem, dass der Emulator mit dem Internet verbunden ist.
+> [AZURE.IMPORTANT]Damit Sie Pushbenachrichtigungen erhalten, müssen Sie ein Google-Konto auf Ihrem Android Virtual Device einrichten \(Navigieren Sie im Emulator zu **Einstellungen**, und klicken Sie auf **Konto hinzufügen**\). Überprüfen Sie zudem, dass der Emulator mit dem Internet verbunden ist.
 
 1. Klicken Sie unter **Tools** auf **Open Android Emulator Manager**, wählen Sie Ihr Gerät aus, und klicken Sie auf **Edit**.
     
@@ -677,19 +677,19 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
 
                    // Register for notifications using the new channel
                     const string template =
-                    "<?xml version="1.0" encoding="utf-8"?><wp:Notification " +
-                    "xmlns:wp="WPNotification"><wp:Toast><wp:Text1>$(message)</wp:Text1></wp:Toast></wp:Notification>";
+                    "<?xml version=\"1.0\" encoding=\"utf-8\"?><wp:Notification " +
+                    "xmlns:wp=\"WPNotification\"><wp:Toast><wp:Text1>$(message)</wp:Text1></wp:Toast></wp:Notification>";
 
                     await client.GetPush()
                         .RegisterTemplateAsync(CurrentChannel.ChannelUri.ToString(), template, "mytemplate");
                 });
         }
 
-    Dieser Code ruft den Kanal-URI für die App aus dem von Windows Phone 8.x "Silverlight" verwendeten Microsoft-Pushbenachrichtigungsdienst (MPNS) ab und registriert anschließend diesen Kanal-URI für Pushbenachrichtigungen.
+    Dieser Code ruft den Kanal-URI für die App aus dem von Windows Phone 8.x "Silverlight" verwendeten Microsoft-Pushbenachrichtigungsdienst \(MPNS\) ab und registriert anschließend diesen Kanal-URI für Pushbenachrichtigungen.
 
 	>[AZURE.NOTE]In diesem Lernprogramm sendet der mobile Dienst eine Popupbenachrichtigung an das Gerät. Wenn Sie eine Kachelbenachrichtigung senden, müssen Sie stattdessen die **BindToShellTile**-Methode für den Kanal aufrufen.
 
-4. Fügen Sie in der Datei "App.xaml.cs" am Anfang des **Application_Launching**-Ereignishandlers den folgenden Aufruf der neuen **AcquirePushChannel**-Methode hinzu:
+4. Fügen Sie in der Datei "App.xaml.cs" am Anfang des **Application\_Launching**-Ereignishandlers den folgenden Aufruf der neuen **AcquirePushChannel**-Methode hinzu:
 
         AcquirePushChannel();
 
@@ -697,7 +697,7 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
 
 5. Drücken Sie **F5**, um die App auszuführen. Ein Dialogfenster wird mit dem Registrierungsschlüssel angezeigt.
   
-6.	Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei "WMAppManifest.xml", klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **IID___CAP___PUSH_NOTIFICATION**.
+6.	Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei "WMAppManifest.xml", klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **IID\_\_\_CAP\_\_\_PUSH\_NOTIFICATION**.
 
    	![Aktivieren von Benachrichtigungen in VS](./media/partner-xamarin-mobile-services-xamarin-forms-get-started-push/mobile-app-enable-push-wp8.png)
 
@@ -745,13 +745,13 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
           }
 
 
-    Auf diese Weise wird ein neues Einfügeskript registriert, mit dem eine Pushbenachrichtigung (der eingefügte Text) an das in der Einfügeanforderung angegebene Gerät sendet.
+    Auf diese Weise wird ein neues Einfügeskript registriert, mit dem eine Pushbenachrichtigung \(der eingefügte Text\) an das in der Einfügeanforderung angegebene Gerät sendet.
 
 3. Klicken Sie auf die Registerkarte **Push**, aktivieren Sie **Enable unauthenticated push notifications**, und klicken Sie dann auf **Speichern**.
 
 	Daraufhin kann der mobile Dienst im nicht authentifizierten Modus eine Verbindung mit MPNS zum Senden von Pushbenachrichtigungen herstellen.
 
-	>[AZURE.NOTE]Dieses Lernprogramm verwendet MPNS im nicht authentifizierten Modus. In diesem Modus beschränkt MPNS die Anzahl der Benachrichtigungen, die an einen Gerätekanal gesendet werden können. Um diese Beschränkung aufzuheben, müssen Sie ein Zertifikat generieren und hochladen, indem Sie auf **Upload** klicken und das Zertifikat auswählen. Weitere Informationen zum Generieren des Zertifikats finden Sie unter [Einrichten eines authentifizierten Webdienstes zum Senden von Pushbenachrichtigungen für Windows Phone].
+	>[AZURE.NOTE]Dieses Lernprogramm verwendet MPNS im nicht authentifizierten Modus. In diesem Modus beschränkt MPNS die Anzahl der Benachrichtigungen, die an einen Gerätekanal gesendet werden können. Um diese Beschränkung aufzuheben, müssen Sie ein Zertifikat generieren und hochladen, indem Sie auf **Upload** klicken und das Zertifikat auswählen. Weitere Informationen zum Generieren des Zertifikats finden Sie unter \[Einrichten eines authentifizierten Webdienstes zum Senden von Pushbenachrichtigungen für Windows Phone\].
 
 ###<a id="test"></a> Testen von Pushbenachrichtigungen in der App
 
@@ -765,7 +765,7 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
 
 	![Empfangene Toast-Benachrichtigung](./media/partner-xamarin-mobile-services-xamarin-forms-get-started-push/mobile-quickstart-push5-wp8.png)
 
-	>[AZURE.NOTE]Wenn Sie sich noch in der App befinden, erhalten Sie die Benachrichtigung nicht. Um eine Toast-Benachrichtigung zu empfangen, während die App aktiv ist, müssen Sie das [ShellToastNotificationReceived] (http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.notification.httpnotificationchannel.shelltoastnotificationreceived(v=vs.105).aspx)-Ereignis behandeln.
+	>[AZURE.NOTE]Wenn Sie sich noch in der App befinden, erhalten Sie die Benachrichtigung nicht. Um eine Toast-Benachrichtigung zu empfangen, während die App aktiv ist, müssen Sie das \[ShellToastNotificationReceived\] \(http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.notification.httpnotificationchannel.shelltoastnotificationreceived(v=vs.105).aspx\)-Ereignis behandeln.
    
 <!-- Anchors. -->
 [Generate the certificate signing request]: #certificates
@@ -846,4 +846,4 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
 [Vollständiges Beispiel zu Xamarin.Forms Azure-Pushbenachrichtigungen]: https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPushXamarinForms
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=July15_HO5-->
