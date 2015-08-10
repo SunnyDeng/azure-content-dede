@@ -1,6 +1,20 @@
-\<properties pageTitle="Azure Backup – Sicherung und Wiederherstellung von einem Windows-Server- oder Windows-Clientcomputer" \| Microsoft Azure description="Erfahren Sie, wie Windows-Server- oder Windows-Clientcomputer gesichert und wiederhergestellt werden. Der Artikel befasst sich außerdem mit der Wiederherstellung auf einem anderen Server" services="Backup" documentationCenter="" authors="Jim-Parker" manager="jwhit" editor=""/\>
+<properties
+   pageTitle="Azure Backup – Sicherung und Wiederherstellung von einem Windows-Server- oder Windows-Clientcomputer| Microsoft Azure"
+   description="Erfahren Sie, wie Windows-Server- oder Windows-Clientcomputer gesichert und wiederhergestellt werden. Der Artikel befasst sich außerdem mit der Wiederherstellung auf einem anderen Server"
+   services="backup"
+   documentationCenter=""
+   authors="Jim-Parker"
+   manager="jwhit"
+   editor=""/>
 
-\<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt\_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="07/01/2015" ms.author="jimpark"; "aashishr"/\>
+<tags
+   ms.service="backup"
+   ms.workload="storage-backup-recovery"
+	 ms.tgt_pltfrm="na"
+	 ms.devlang="na"
+	 ms.topic="article"
+	 ms.date="07/01/2015"
+	 ms.author="jimpark"; "aashishr"/>
 
 # Sicherung und Wiederherstellung von Windows-Server- oder Windows-Clientcomputern
 Dieser Artikel behandelt die erforderlichen Schritte zur Sicherung von Windows-Server- oder Windows-Clientcomputern. Dabei werden auch die Schritte berücksichtigt, die zum Wiederherstellen der gesicherten Dateien auf demselben Computer erforderlich sind, sowie die Schritte zum Wiederherstellen der gesicherten Dateien auf einem anderen Computer.
@@ -114,4 +128,4 @@ In den Schritten werden folgende Bezeichnungen verwendet: – *Quellcomputer* �
 ## Nächste Schritte
 - [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
 
-<!---HONumber=July15_HO5-->
+<!----HONumber=July15_HO5-->

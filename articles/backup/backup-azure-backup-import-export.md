@@ -5,7 +5,15 @@
    documentationCenter=""
    authors="aashishr"
    manager="shreeshd"
-   editor=""/> \<tags ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt\_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="07/14/2015" ms.author="aashishr"; "jimpark"/\>
+   editor=""/>
+<tags
+   ms.service="backup"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="storage-backup-recovery"
+   ms.date="07/14/2015"
+   ms.author="aashishr"; "jimpark"/>
 
 # Workflow zur Offlinesicherung in Azure Backup
 
@@ -107,4 +115,4 @@ Sobald die ersten Sicherungsdaten im Speicherkonto verfügbar sind, kopiert der 
 - Wenn Sie Fragen zum Azure Import/Export-Workflow haben, finden Sie weitere Informationen in diesem [Artikel](../storage-import-export-service.md).
 - Bei Fragen zum Workflow finden Sie weitere Informationen im Abschnitt zur Offlinesicherung in den [häufig gestellten Fragen](backup-azure-backup-faq.md) zu Azure Backup.
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->

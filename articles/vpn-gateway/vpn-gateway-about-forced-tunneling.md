@@ -1,4 +1,12 @@
-\<properties pageTitle="Konfigurieren der Tunnelerzwingung für Microsoft Azure-VPN-Gateways" description="Sie können in einem virtuellen Netzwerk mit einem standortübergreifenden VPN-Gateway die Umleitung des gesamten Internetdatenverkehrs an Ihren lokalen Standort 'erzwingen'. " services="vpn-gateway" documentationCenter="na" authors="cherylmc" manager="jdial" editor="tysonn" /\> <tags 
+<properties 
+   pageTitle="Konfigurieren der Tunnelerzwingung für Microsoft Azure-VPN-Gateways"
+   description="Sie können in einem virtuellen Netzwerk mit einem standortübergreifenden VPN-Gateway die Umleitung des gesamten Internetdatenverkehrs an Ihren lokalen Standort 'erzwingen'. "
+   services="vpn-gateway"
+   documentationCenter="na"
+   authors="cherylmc"
+   manager="jdial"
+   editor="tysonn" />
+<tags 
    ms.service="vpn-gateway"
    ms.devlang="na"
    ms.topic="article"
@@ -144,4 +152,4 @@ Gehen Sie folgendermaßen vor, um die Tunnelerzwingung zu konfigurieren.
 
 Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines/virtual-machines-create-custom.md).
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->

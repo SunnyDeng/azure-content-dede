@@ -7,7 +7,14 @@
    manager="shreeshd"
    editor=""/>
 
-\<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt\_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="07/23/2015" ms.author="arunak"; "jimpark"; "aashishr"/\>
+<tags
+   ms.service="backup"
+   ms.workload="storage-backup-recovery"
+	 ms.tgt_pltfrm="na"
+	 ms.devlang="na"
+	 ms.topic="article"
+	 ms.date="08/07/2015"
+	 ms.author="arunak"; "jimpark"; "aashishr"/>
 
 # Azure Backup – Häufig gestellte Fragen
 Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. Weitere Fragen zu Azure Backup können im [Diskussionsforum](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup) gestellt werden. Ein Mitglied der Community hilft Ihnen dabei, Ihre Antworten zu erhalten. Wenn eine Frage häufiger gestellt wird, fügen wir sie diesem Artikel hinzu, damit sie schnell und einfach gefunden werden kann.
@@ -128,17 +135,23 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 **F12. Warum entspricht die Menge der in der Sicherung übertragenen Daten nicht der Menge der gesicherten Daten?**<br/> A12. Alle Daten, die gesichert werden, werden vor der Übertragung komprimiert und verschlüsselt. Je nach Typ der zu sichernden Daten können Sie mit einem Komprimierungsvorteil von 30 bis 40 % rechnen.
 
 ## Wiederherstellen
-**F1. Wie viele Wiederherstellungen kann ich für die Daten ausführen, die auf Azure gesichert werden?**<br/> A1. Es gibt keine Beschränkung für die Anzahl der Wiederherstellungen aus Azure Backup.
+**F1. Wie viele Wiederherstellungen kann ich für die Daten ausführen, die auf Azure gesichert werden?**<br/>
+A1. Es gibt keine Beschränkung für die Anzahl der Wiederherstellungen aus Azure Backup.
 
-**F2. Muss ich bei Wiederherstellungen für ausgehenden Datenverkehr aus dem Azure-Datencenter bezahlen?**<br/> A2. Nein. Ihre Wiederherstellungen sind kostenlos, und der ausgehende Datenverkehr wird nicht in Rechnung gestellt.
+**F2. Muss ich bei Wiederherstellungen für ausgehenden Datenverkehr aus dem Azure-Datencenter bezahlen?**<br/>
+A2. Nein. Ihre Wiederherstellungen sind kostenlos, und der ausgehende Datenverkehr wird nicht in Rechnung gestellt.
 
 ## Sicherheit
-**F1. Werden die Daten verschlüsselt an Azure gesendet?** <br/> A1. Ja. Daten werden auf dem lokalen Server-/Client-/SCDPM-Computer mit AES256 verschlüsselt, und die Daten werden über eine sichere HTTPS-Verbindung gesendet.
+**F1. Werden die Daten verschlüsselt an Azure gesendet?** <br/>
+A1. Ja. Daten werden auf dem lokalen Server-/Client-/SCDPM-Computer mit AES256 verschlüsselt, und die Daten werden über eine sichere HTTPS-Verbindung gesendet.
 
-**F2. Werden die Sicherungsdaten auf Azure ebenfalls verschlüsselt?**<br/> A2. Ja. Die an Azure gesendeten Daten bleiben verschlüsselt \(im Ruhezustand\). Die Sicherungsdaten werden zu keinem Zeitpunkt von Microsoft entschlüsselt.
+**F2. Werden die Sicherungsdaten auf Azure ebenfalls verschlüsselt?**<br/>
+A2. Ja. Die an Azure gesendeten Daten bleiben verschlüsselt \(im Ruhezustand\). Die Sicherungsdaten werden zu keinem Zeitpunkt von Microsoft entschlüsselt.
 
-**F3. Wie lang muss der Verschlüsselungsschlüssel zur Verschlüsselung von Sicherungsdaten mindestens sein?** <br/> A3. Der Verschlüsselungsschlüssel sollte mindestens 16 Zeichen lang sein.
+**F3. Wie lang muss der Verschlüsselungsschlüssel zur Verschlüsselung von Sicherungsdaten mindestens sein?** <br/>
+A3. Der Verschlüsselungsschlüssel sollte mindestens 16 Zeichen lang sein.
 
-**F4. Was geschieht, wenn ich den Schlüssel verlege? Kann ich die Daten wiederherstellen, oder kann Microsoft die Daten wiederherstellen?** <br/> A4. Der Schlüssel zum Verschlüsseln der Sicherungsdaten ist nur am Standort des Kunden vorhanden. Microsoft behält keine Kopie in Azure und hat keinen Zugriff auf den Schlüssel. Wenn der Kunde den Schlüssel verlegt, kann Microsoft die gesicherten Daten nicht wiederherstellen.
+**F4. Was geschieht, wenn ich den Schlüssel verlege? Kann ich die Daten wiederherstellen, oder kann Microsoft die Daten wiederherstellen?** <br/>
+A4. Der Schlüssel zum Verschlüsseln der Sicherungsdaten ist nur am Standort des Kunden vorhanden. Microsoft behält keine Kopie in Azure und hat keinen Zugriff auf den Schlüssel. Wenn der Kunde den Schlüssel verlegt, kann Microsoft die gesicherten Daten nicht wiederherstellen.
 
-<!---HONumber=July15_HO5-->
+<!------HONumber=July15_HO5-->

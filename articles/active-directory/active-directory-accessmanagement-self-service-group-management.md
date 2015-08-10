@@ -1,4 +1,12 @@
-\<properties pageTitle="Einrichten von Azure AD zur Self-Service-Verwaltung des Anwendungszugriffs \| Microsoft Azure" description="Dieses Thema erläutert die Verwaltung von Gruppen in Azure AD." services="active-directory" documentationCenter="" authors="femila" manager="swadhwa"" editor="" tags="azure-classic-portal"/\>
+<properties 
+	pageTitle="Einrichten von Azure AD zur Self-Service-Verwaltung des Anwendungszugriffs | Microsoft Azure" 
+	description="Dieses Thema erläutert die Verwaltung von Gruppen in Azure AD." 
+	services="active-directory" 
+	documentationCenter="" 
+    authors="femila"
+	manager="swadhwa"" 
+	editor=""
+	tags="azure-classic-portal"/>
 
 <tags 
 	ms.service="active-directory" 
@@ -41,4 +49,4 @@ Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Di
 
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->
