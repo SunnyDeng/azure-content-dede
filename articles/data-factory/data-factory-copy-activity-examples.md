@@ -187,7 +187,8 @@ Mithilfe der Kopieraktivität können Sie Dateien aus einem lokalen Dateisystem 
 Bei diesem Beispiel wird Folgendes vorausgesetzt:
 
 - **Host** – Name des Servers, auf dem das Dateisystem gehostet wird: **\contoso**.
-- **Ordner** – Name des Ordners mit den Eingabedateien: **"marketingcampaign\regionaldata\{slice}". Hier sind Dateien in einem Ordner mit dem Namen "{slice}" aufgeteilt, wie z. B. 2014121112 (2014, 12. Monat, 11. Tag , 12. Stunde). 
+- **Ordner** – Name des Ordners mit den Eingabedateien: **"marketingcampaign\regionaldata\{slice}". Hier sind Dateien in einem Ordner mit dem Namen "{slice}" aufgeteilt, wie z. B. 2014121112 (2014, 12. Monat, 11. Tag , 12. Stunde).
+
 ### Erstellen eines mit dem lokalen Dateisystem verknüpften Diensts
 Im folgenden Beispiel kann JSON zum Erstellen eines verknüpften Diensts namens **FolderDataStore** vom Typ **OnPremisesFileSystemLinkedService** verwendet werden.
 
@@ -491,4 +492,4 @@ Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.a
 [adf-copyactivity]: data-factory-copy-activity.md
 [copy-activity-video]: http://azure.microsoft.com/documentation/videos/introducing-azure-data-factory-copy-activity/
 
-<!-----HONumber=July15_HO4-->
+<!------HONumber=July15_HO4-->

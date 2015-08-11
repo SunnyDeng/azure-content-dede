@@ -20,7 +20,7 @@
 
 ## Übersicht
 
-In diesem Tutorial wird gezeigt, wie eine [API-App](app-service-api-apps-why-best-platform.md) programmiert und konfiguriert wird, die eine Verbindung mit einer [SaaS-Plattform \(Software-as-a-Service\)](../app-service/app-service-authentication-overview.md#obotosaas) mithilfe des [App Service-API-App SDK für .NET](http://www.nuget.org/packages/Microsoft.Azure.AppService.ApiApps.Service/) herstellt. Das Tutorial veranschaulicht auch, wie die API-App aus einem .NET-Client mithilfe des [App Service SDK für .NET](http://www.nuget.org/packages/Microsoft.Azure.AppService) aufgerufen wird. Am Ende des Tutorials verfügen Sie über einen .NET-Konsolen-App-Client, der eine .NET API-App aufruft, die in Azure App Service ausgeführt wird. Die API-App ruft die Dropbox-API auf und gibt eine Liste mit Dateien und Ordnern im Dropbox-Konto des Benutzers zurück.
+In diesem Tutorial wird gezeigt, wie eine [API-App](app-service-api-apps-why-best-platform.md) programmiert und konfiguriert wird, die eine Verbindung mit einer [SaaS-Plattform (Software-as-a-Service)](../app-service/app-service-authentication-overview.md#obotosaas) mithilfe des [App Service-API-App SDK für .NET](http://www.nuget.org/packages/Microsoft.Azure.AppService.ApiApps.Service/) herstellt. Das Tutorial veranschaulicht auch, wie die API-App aus einem .NET-Client mithilfe des [App Service SDK für .NET](http://www.nuget.org/packages/Microsoft.Azure.AppService) aufgerufen wird. Am Ende des Tutorials verfügen Sie über einen .NET-Konsolen-App-Client, der eine .NET API-App aufruft, die in Azure App Service ausgeführt wird. Die API-App ruft die Dropbox-API auf und gibt eine Liste mit Dateien und Ordnern im Dropbox-Konto des Benutzers zurück.
 
 Als Alternative zum Schreiben von Code, der eine SaaS-API direkt aus einer benutzerdefinierten API-Anwendung aufruft, können Sie eine vorgefertigte [Connector-API-App](../app-service-logic/app-service-logic-what-are-biztalk-api-apps.md) aufrufen. Informationen hierzu finden Sie unter [Bereitstellen und Konfigurieren einer SaaS-Connector-API-App](app-service-api-connnect-your-app-to-saas-connector.md).
 
@@ -56,7 +56,7 @@ Wenn Sie in den Anweisungen aufgefordert werden, einen Namen für das Projekt ei
 
 Damit eine API-App ausgehende Aufrufe an eine SaaS-Plattform richten kann, muss die SaaS-Plattform in der Datei *apiapp.json* angegeben werden.
 
-1. Öffnen Sie die Datei *apiapp.json*, und fügen Sie wie hier gezeigt eine `authentication`-Eigenschaft hinzu \(Sie müssen auch ein Komma nach der vorherigen Eigenschaft hinzufügen\):
+1. Öffnen Sie die Datei *apiapp.json*, und fügen Sie wie hier gezeigt eine `authentication`-Eigenschaft hinzu (Sie müssen auch ein Komma nach der vorherigen Eigenschaft hinzufügen):
 
 		"authentication": [
 		  {
@@ -115,7 +115,7 @@ Verfügbare Bereiche werden von jedem SaaS-Anbieter definiert und sind im Entwic
 
 1. Installieren Sie das NuGet-Paket [DropboxRestAPI](https://www.nuget.org/packages/DropboxRestAPI) im Projekt "SimpleDropbox".
 
-	* Klicken Sie im Menü **Extras** auf **NuGet-Paket-Manager \> Paket-Manager-Konsole**.
+	* Klicken Sie im Menü **Extras** auf **NuGet-Paket-Manager > Paket-Manager-Konsole**.
 
 	* Geben Sie im Fenster **Paket-Manager-Konsole** diesen Befehl ein:
 	 
@@ -364,7 +364,7 @@ Es folgt eine Übersicht über die Aufgaben, die der Code ausführt:
 	 
 * Schließen des Browsers, nachdem der Benutzer sich angemeldet hat und auf Dropbox.com die Zustimmung gegeben hat. Schritt 3 im Diagramm
  
-* Aufrufen der API-App auf Schritt 5 im Diagramm. \(Schritt 4 erfolgt im Hintergrund zwischen Dropbox.com und Gateway. Die Schritte 6 und 7 werden von der API-App, nicht vom Client ausgeführt.\)
+* Aufrufen der API-App auf Schritt 5 im Diagramm. (Schritt 4 erfolgt im Hintergrund zwischen Dropbox.com und Gateway. Die Schritte 6 und 7 werden von der API-App, nicht vom Client ausgeführt.)
 
 ![](./media/app-service-api-dotnet-connect-to-saas/saastoken.png)
 
@@ -376,7 +376,12 @@ Weitere Hinweise:
 
 		browser.Navigate(string.Format(@"{0}/login/aad", GATEWAY_URL));
 
-	Hier die Werte für andere Anbieter: \* "microsoftaccount" \* "facebook" \* "twitter" \* "google" <br/><br/>
+	Hier die Werte für andere Anbieter:
+	* "microsoftaccount"
+	* "facebook"
+	* "twitter"
+	* "google"
+<br/><br/>
 
 * Der zweite Parameter für die `GetConsentLinkAsync()`-Methode ist die Rückruf-URL, zu der der Zustimmungsserver umgeleitet wird, nachdem sich der Benutzer bei Dropbox angemeldet und die Zustimmung für den Zugriff auf das Konto des Benutzers gegeben hat.
 
@@ -390,7 +395,7 @@ Weitere Hinweise:
 
 1. Führen Sie die Konsolenanwendung "SimpleDropboxTest" aus.
 
-2. Melden Sie sich auf der ersten Anmeldeseite mit Ihren Azure Active Directory-Anmeldeinformationen \(oder Anmeldeinformationen für einen anderen Identitätsanbieter wie z. B. Google oder Twitter, wenn dies im Gateway so konfiguriert ist\) an.
+2. Melden Sie sich auf der ersten Anmeldeseite mit Ihren Azure Active Directory-Anmeldeinformationen (oder Anmeldeinformationen für einen anderen Identitätsanbieter wie z. B. Google oder Twitter, wenn dies im Gateway so konfiguriert ist) an.
 
 	![](./media/app-service-api-dotnet-connect-to-saas/aadlogon.png)
 
@@ -428,7 +433,7 @@ Stellen Sie sicher, dass Sie die richtige **Client-ID** auf dem Blatt **Authenti
 
 ### <a id="403"></a>HTTP-Fehler 403 beim Aufrufen der API-App
 
-* Stellen Sie sicher, dass die **Zugriffsebene** der API-App auf **Öffentlich \(authentifiziert\)** und nicht auf **Intern** festgelegt ist.
+* Stellen Sie sicher, dass die **Zugriffsebene** der API-App auf **Öffentlich (authentifiziert)** und nicht auf **Intern** festgelegt ist.
 
 * Stellen Sie sicher, dass Sie den richtigen **geheimen Clientschlüssel** auf dem Blatt **Authentifizierung** der API-App angegeben haben und dass keine führenden oder nachgestellten Leerzeichen vorhanden sind.
 
@@ -445,6 +450,8 @@ Wenn Sie "%3d%3d" am Ende des Werts `error` der Abfragezeichenfolge entfernen, i
 Sie haben erfahren, wie Sie eine API-App programmieren und konfigurieren, die sich mit einer SaaS-Plattform verbindet. Links zu anderen Tutorials zur Authentifizierung in API-Apps finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service – Nächste Schritte](../app-service/app-service-authentication-overview.md#next-steps).
 
 [Azure preview portal]: https://portal.azure.com/
+[Azure-Vorschauportal]: https://portal.azure.com/
 [Azure portal]: https://manage.windowsazure.com/
+[Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->

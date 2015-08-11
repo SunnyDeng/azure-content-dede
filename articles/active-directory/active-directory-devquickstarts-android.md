@@ -24,7 +24,7 @@
 
 Bei der Entwicklung einer Desktopanwendung ist es für Sie mit Azure AD einfach und problemlos möglich, Ihre Benutzer über deren Active Directory-Konten zu authentifizieren. Außerdem kann Ihre Anwendung damit auf sichere Weise alle Web-APIs nutzen, die per Azure AD geschützt sind, z. B. die Office 365-APIs oder die Azure-API.
 
-Für Android-Clients, die auf geschützte Ressourcen zugreifen müssen, ist unter Azure AD die Active Directory-Authentifizierungsbibliothek \(ADAL\) verfügbar. Die einzige Aufgabe der ADAL besteht darin, Ihrer App das Abrufen von Zugriffstoken zu erleichtern. Um Ihnen zu zeigen, wie einfach es geht, erstellen wir hier eine Android-Anwendung mit einer Aufgabenliste, mit der folgende Aktionen ausgeführt werden können:
+Für Android-Clients, die auf geschützte Ressourcen zugreifen müssen, ist unter Azure AD die Active Directory-Authentifizierungsbibliothek (ADAL) verfügbar. Die einzige Aufgabe der ADAL besteht darin, Ihrer App das Abrufen von Zugriffstoken zu erleichtern. Um Ihnen zu zeigen, wie einfach es geht, erstellen wir hier eine Android-Anwendung mit einer Aufgabenliste, mit der folgende Aktionen ausgeführt werden können:
 
 -	Abrufen von Zugriffstoken zum Aufrufen einer Aufgabenlisten-API mit dem [OAuth 2.0-Authentifizierungsprotokoll](https://msdn.microsoft.com/library/azure/dn645545.aspx)
 -	Abrufen der Aufgabenliste eines Benutzers
@@ -44,7 +44,7 @@ Informationen zur Einrichtung finden Sie unter den vorhandenen Beispielen:
 
 **Wie gehe ich vor?**
 
-*Microsoft Active Directory unterstützt das Hinzufügen von zwei Arten von Anwendungen. Web-APIs, die Benutzern Dienste anbieten, und Anwendungen \(im Web oder eine Anwendung, die auf einem Gerät ausgeführt wird\), von denen auf diese Web-APIs zugegriffen wird. In diesem Schritt registrieren Sie die Web-API, die Sie lokal zum Testen dieses Beispiels ausführen. Normalerweise handelt es sich bei dieser Web-API um einen REST-Dienst, mit dem die Funktionen bereitgestellt werden, auf die Ihre Anwendung zugreifen können soll. Microsoft Azure Active Directory kann jeden beliebigen Endpunkt schützen!*
+*Microsoft Active Directory unterstützt das Hinzufügen von zwei Arten von Anwendungen. Web-APIs, die Benutzern Dienste anbieten, und Anwendungen (im Web oder eine Anwendung, die auf einem Gerät ausgeführt wird), von denen auf diese Web-APIs zugegriffen wird. In diesem Schritt registrieren Sie die Web-API, die Sie lokal zum Testen dieses Beispiels ausführen. Normalerweise handelt es sich bei dieser Web-API um einen REST-Dienst, mit dem die Funktionen bereitgestellt werden, auf die Ihre Anwendung zugreifen können soll. Microsoft Azure Active Directory kann jeden beliebigen Endpunkt schützen!*
 
 *In diesem Thema wird davon ausgegangen, dass Sie die zuvor erwähnte Aufgabenlisten-REST-API registrieren. Allerdings funktioniert diese Methode für jede Web-API, die Azure Active Directory schützen soll.*
 
@@ -68,13 +68,13 @@ Zunächst müssen Sie Ihre Webanwendung registrieren. Danach müssen Sie Azure A
 
 **Wie gehe ich vor?**
 
-*Wie bereits erwähnt, unterstützt Microsoft Azure Active Directory das Hinzufügen von zwei Anwendungstypen. Web-APIs, die Benutzern Dienste anbieten, und Anwendungen \(im Web oder eine Anwendung, die auf einem Gerät ausgeführt wird\), von denen auf diese Web-APIs zugegriffen wird. In diesem Schritt registrieren Sie die Anwendung dieses Beispiels. Dies ist erforderlich, damit die Anwendung den Zugriff auf die eben registrierte Web-API anfordern kann. Azure Active Directory verweigert Ihrer Anwendung sogar die Anforderung einer Anmeldung, wenn sie nicht registriert ist. Dies ist Teil der Sicherheit dieses Modells.*
+*Wie bereits erwähnt, unterstützt Microsoft Azure Active Directory das Hinzufügen von zwei Anwendungstypen. Web-APIs, die Benutzern Dienste anbieten, und Anwendungen (im Web oder eine Anwendung, die auf einem Gerät ausgeführt wird), von denen auf diese Web-APIs zugegriffen wird. In diesem Schritt registrieren Sie die Anwendung dieses Beispiels. Dies ist erforderlich, damit die Anwendung den Zugriff auf die eben registrierte Web-API anfordern kann. Azure Active Directory verweigert Ihrer Anwendung sogar die Anforderung einer Anmeldung, wenn sie nicht registriert ist. Dies ist Teil der Sicherheit dieses Modells.*
 
 *Hier wird davon ausgegangen, dass Sie die oben genannte Beispielanwendung registrieren. Die gleiche Methode funktioniert aber auch für jede selbst entwickelte Anwendung.*
 
 **Warum integriere ich sowohl eine Anwendung als auch eine Web-API in ein- und denselben Mandanten?**
 
-*Wie Sie vielleicht schon vermuten, können Sie auch eine Anwendung erstellen, von der auf eine externe API zugegriffen wird, die von einem anderen Mandanten aus in Azure Active Directory registriert wurde. Wenn Sie dies tun, werden Ihre Kunden aufgefordert, der Verwendung der API in der Anwendung zuzustimmen. Das Schöne ist aber, dass die Active Directory-Authentifizierungsbibliothek \(ADAL\) für iOS diese Zustimmung für Sie übernimmt! Wenn wir uns mit den erweiterten Funktionen beschäftigen, werden Sie feststellen, dass dies ein wichtiger Teil der Aufgaben ist, die für den Zugriff auf die Suite der Microsoft-APIs von Azure und Office sowie anderer Dienstanbieter erforderlich sind. Da Sie aber nun sowohl Ihre Web-API als auch Ihre Anwendung unter dem gleichen Mandanten registriert haben, wird Ihnen keine Aufforderung zur Zustimmung angezeigt. Dies ist eher die Regel, wenn Sie eine Anwendung nur für Ihr eigenes Unternehmen entwickeln.*
+*Wie Sie vielleicht schon vermuten, können Sie auch eine Anwendung erstellen, von der auf eine externe API zugegriffen wird, die von einem anderen Mandanten aus in Azure Active Directory registriert wurde. Wenn Sie dies tun, werden Ihre Kunden aufgefordert, der Verwendung der API in der Anwendung zuzustimmen. Das Schöne ist aber, dass die Active Directory-Authentifizierungsbibliothek (ADAL) für iOS diese Zustimmung für Sie übernimmt! Wenn wir uns mit den erweiterten Funktionen beschäftigen, werden Sie feststellen, dass dies ein wichtiger Teil der Aufgaben ist, die für den Zugriff auf die Suite der Microsoft-APIs von Azure und Office sowie anderer Dienstanbieter erforderlich sind. Da Sie aber nun sowohl Ihre Web-API als auch Ihre Anwendung unter dem gleichen Mandanten registriert haben, wird Ihnen keine Aufforderung zur Zustimmung angezeigt. Dies ist eher die Regel, wenn Sie eine Anwendung nur für Ihr eigenes Unternehmen entwickeln.*
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com) an.
 2. Klicken Sie in der linken Navigationsleiste auf Active Directory.
@@ -100,7 +100,7 @@ Für die Erstellung mit Maven können Sie die Datei „pom.xml“ auf der oberst
   * Richten Sie den Emulator mit SDK 19 ein.
   * Wechseln Sie zu dem Stammordner, in dem Sie das Repository geklont haben.
   * Führen Sie den folgenden Befehl aus: mvn clean install.
-  * Wechseln Sie in das Verzeichnis mit dem Schnellstartbeispiel: cd samples\\hello.
+  * Wechseln Sie in das Verzeichnis mit dem Schnellstartbeispiel: cd samples\hello.
   * Führen Sie den folgenden Befehl aus: mvn android:deploy android:run.
   * Die App wird gestartet.
   * Geben Sie die Anmeldeinformationen des Testbenutzers ein, um sie auszuprobieren.
@@ -136,7 +136,7 @@ repositories {
         dirs 'libs'
     }
     maven {
-        url "YourLocalMavenRepoPath\\.m2\\repository"
+        url "YourLocalMavenRepoPath\.m2\repository"
     }
 }
 dependencies {
@@ -270,7 +270,8 @@ Sie können **acquireTokenSilent** aufrufen, um das Caching und die Aktualisieru
      mContext.acquireTokenSilent(resource, clientid, userId, callback );
     ```
 
-11. **Broker**: Die Brokerkomponente wird über die Unternehmensportal-App von Microsoft Intune bereitgestellt. ADAL verwendet das Brokerkonto, falls unter diesem Authentifikator ein Benutzerkonto erstellt wurde und der Entwickler sich nicht für das Überspringen entschieden hat. Der Entwickler kann den Brokerbenutzer wie folgt überspringen:
+11. **Broker**:
+  Die Brokerkomponente wird über die Unternehmensportal-App von Microsoft Intune bereitgestellt. ADAL verwendet das Brokerkonto, falls unter diesem Authentifikator ein Benutzerkonto erstellt wurde und der Entwickler sich nicht für das Überspringen entschieden hat. Der Entwickler kann den Brokerbenutzer wie folgt überspringen:
 
     ```java
      AuthenticationSettings.Instance.setSkipBroker(true);
@@ -282,13 +283,14 @@ Sie können **acquireTokenSilent** aufrufen, um das Caching und die Aktualisieru
 
  ```java
  String brokerAccount =  mContext.getBrokerUser();
- ``` Der Brokerbenutzer wird zurückgegeben, wenn das Konto gültig ist.
+ ``` 
+Der Brokerbenutzer wird zurückgegeben, wenn das Konto gültig ist.
 
  Ihr App-Manifest sollte über Berechtigungen zum Verwenden von Account Manager-Konten verfügen: http://developer.android.com/reference/android/accounts/AccountManager.html
 
- * GET\_ACCOUNTS
- * USE\_CREDENTIALS
- * MANAGE\_ACCOUNTS
+ * GET_ACCOUNTS
+ * USE_CREDENTIALS
+ * MANAGE_ACCOUNTS
 
 
 Mit dieser exemplarischen Vorgehensweise haben Sie alles, was Sie für die erfolgreiche Integration in Azure Active Directory benötigen. Weitere Beispiele hierzu finden Sie im Repository „AzureADSamples/“ bei GitHub.
@@ -297,11 +299,11 @@ Mit dieser exemplarischen Vorgehensweise haben Sie alles, was Sie für die erfol
 
 ### Anpassung
 
-Bibliotheksprojektressourcen können von Ihren Anwendungsressourcen überschrieben werden. Dies kann beim Erstellen Ihrer App passieren. Aus diesem Grund können Sie das Layout der Authentifizierungsaktivität wie gewünscht anpassen. Sie müssen sicherstellen, dass die ID der Steuerelemente beibehalten wird, die von der ADAL genutzt werden \(Webview\).
+Bibliotheksprojektressourcen können von Ihren Anwendungsressourcen überschrieben werden. Dies kann beim Erstellen Ihrer App passieren. Aus diesem Grund können Sie das Layout der Authentifizierungsaktivität wie gewünscht anpassen. Sie müssen sicherstellen, dass die ID der Steuerelemente beibehalten wird, die von der ADAL genutzt werden (Webview).
 
 ### Broker
 
-Die Brokerkomponente wird über die Unternehmensportal-App von Microsoft Intune bereitgestellt. Das Konto wird im Account Manager erstellt. Der Kontotyp lautet „com.microsoft.workaccount“. Es ist nur ein einzelnes SSO-Konto zulässig. Für diesen Benutzer wird ein SSO-Cookie erstellt, nachdem die Geräteabfrage \(Challenge\) für eine der Apps abgeschlossen wurde.
+Die Brokerkomponente wird über die Unternehmensportal-App von Microsoft Intune bereitgestellt. Das Konto wird im Account Manager erstellt. Der Kontotyp lautet „com.microsoft.workaccount“. Es ist nur ein einzelnes SSO-Konto zulässig. Für diesen Benutzer wird ein SSO-Cookie erstellt, nachdem die Geräteabfrage (Challenge) für eine der Apps abgeschlossen wurde.
 
 ### Autoritäts-URL und AD FS
 
@@ -311,9 +313,12 @@ Für die Autoritäts-URL sind die STS-Instanz und der Mandantenname erforderlich
 
 ### Abfragen von Cacheelementen
 
-Die ADAL stellt den Standardcache unter SharedPreferences mit einigen einfachen Funktionen für die Cacheabfrage bereit. Sie können den aktuellen Cache aus AuthenticationContext wie folgt abrufen: ```Java
+Die ADAL stellt den Standardcache unter SharedPreferences mit einigen einfachen Funktionen für die Cacheabfrage bereit. Sie können den aktuellen Cache aus AuthenticationContext wie folgt abrufen: 
+```Java
  ITokenCacheStore cache = mContext.getCache();
-```. Außerdem können Sie Ihre Cacheimplementierung bereitstellen, wenn Sie sie anpassen möchten. ```Java
+```
+ Außerdem können Sie Ihre Cacheimplementierung bereitstellen, wenn Sie sie anpassen möchten. 
+```Java
 mContext = new AuthenticationContext(MainActivity.this, authority, true, yourCache);
 ```
 
@@ -329,7 +334,7 @@ Bei dieser Methode wird kein UI-Popup verwendet, und es ist keine Aktivität erf
     Future<AuthenticationResult> result = mContext.acquireTokenSilent(resource, clientid, userId, callback );
     ```
 
-Mit dieser Methode können Sie auch einen Synchronisierungsaufruf durchführen. Sie können „null“ auf „callback“ \(Rückruf\) festlegen oder acquireTokenSilentSync verwenden.
+Mit dieser Methode können Sie auch einen Synchronisierungsaufruf durchführen. Sie können „null“ auf „callback“ (Rückruf) festlegen oder acquireTokenSilentSync verwenden.
 
 ### Diagnose
 
@@ -343,7 +348,7 @@ Beachten Sie auch, dass die Korrelations-IDs zentraler Bestandteil der Diagnose 
 
 #### Ausnahmen
 
-Dies ist natürlich die erste Diagnosemaßnahme. Wir versuchen, hilfreiche Fehlermeldungen für Sie bereitzustellen. Sie können uns ein Problem melden, falls Sie eine Fehlermeldung finden, die nicht hilfreich ist. Geben Sie dabei auch die Geräteinformationen an, z. B. Modell und SDK\#.
+Dies ist natürlich die erste Diagnosemaßnahme. Wir versuchen, hilfreiche Fehlermeldungen für Sie bereitzustellen. Sie können uns ein Problem melden, falls Sie eine Fehlermeldung finden, die nicht hilfreich ist. Geben Sie dabei auch die Geräteinformationen an, z. B. Modell und SDK#.
 
 #### Protokolle
 
@@ -359,7 +364,8 @@ Sie können die Bibliothek so konfigurieren, dass Protokollmeldungen generiert w
       writeToLogFile(getApplicationContext(), tag +":" + message + "-" + additionalMessage);
      }
  }
- ``` Meldungen können wie unten dargestellt in eine benutzerdefinierte Protokolldatei geschrieben werden. Leider gibt es keine standardmäßige Möglichkeit, Protokolle von einem Gerät abzurufen. Es sind einige Dienste verfügbar, die Ihnen hierbei behilflich sein können. Sie können auch eigene Wege erfinden, z. B. das Senden einer Datei an einen Server.
+ ``` 
+Meldungen können wie unten dargestellt in eine benutzerdefinierte Protokolldatei geschrieben werden. Leider gibt es keine standardmäßige Möglichkeit, Protokolle von einem Gerät abzurufen. Es sind einige Dienste verfügbar, die Ihnen hierbei behilflich sein können. Sie können auch eigene Wege erfinden, z. B. das Senden einer Datei an einen Server.
 
 ```Java
 private syncronized void writeToLogFile(Context ctx, String msg) {
@@ -375,12 +381,13 @@ private syncronized void writeToLogFile(Context ctx, String msg) {
 
 ##### Protokolliergrade
 
-+ Error \(Fehler\) \(Ausnahmen\)
-+ Warn \(Warnung\) \(Warnung\)
-+ Info \(Informationen\) \(Informationszwecke\)
-+ Verbose \(Ausführlich\) \(mehr Details\)
++ Error (Fehler) (Ausnahmen)
++ Warn (Warnung) (Warnung)
++ Info (Informationen) (Informationszwecke)
++ Verbose (Ausführlich) (mehr Details)
 
-Sie legen den Protokolliergrad wie folgt fest: ```Java
+Sie legen den Protokolliergrad wie folgt fest: 
+```Java
 Logger.getInstance().setLogLevel(Logger.LogLevel.Verbose);
  ```
 
@@ -388,7 +395,8 @@ Logger.getInstance().setLogLevel(Logger.LogLevel.Verbose);
 
  ```
   adb logcat > "C:\logmsg\logfile.txt"
- ``` Weitere Beispiele zu adb-Befehlen: https://developer.android.com/tools/debugging/debugging-log.html#startingLogcat
+ ```
+Weitere Beispiele zu adb-Befehlen: https://developer.android.com/tools/debugging/debugging-log.html#startingLogcat
 
 #### Netzwerkablaufverfolgung
 
@@ -405,20 +413,22 @@ Die acquireToken-Methode ohne Aktivität unterstützt die Dialogfeldaufforderung
 
 ### Verschlüsselung
 
-Mit ADAL werden die Token verschlüsselt und standardmäßig unter SharedPreferences gespeichert. Sehen Sie sich die StorageHelper-Klasse an, um einen Einblick in die Details zu erhalten. Für Android wurde AndroidKeyStore für 4.3 \(API18\) zum sicheren Speichern privater Schlüssel eingeführt. ADAL nutzt dieses Verfahren für API18 und höher. Falls Sie ADAL für frühere SDK-Versionen verwenden möchten, müssen Sie unter „AuthenticationSettings.INSTANCE.setSecretKey“ einen geheimen Schlüssel angeben.
+Mit ADAL werden die Token verschlüsselt und standardmäßig unter SharedPreferences gespeichert. Sehen Sie sich die StorageHelper-Klasse an, um einen Einblick in die Details zu erhalten. Für Android wurde AndroidKeyStore für 4.3 (API18) zum sicheren Speichern privater Schlüssel eingeführt. ADAL nutzt dieses Verfahren für API18 und höher. Falls Sie ADAL für frühere SDK-Versionen verwenden möchten, müssen Sie unter „AuthenticationSettings.INSTANCE.setSecretKey“ einen geheimen Schlüssel angeben.
 
 ### OAuth2-Beareranforderung
 
-Die AuthenticationParameters-Klasse enthält Funktionen zum Abrufen des authorization\_uri aus der OAuth2-Beareranforderung.
+Die AuthenticationParameters-Klasse enthält Funktionen zum Abrufen des authorization_uri aus der OAuth2-Beareranforderung.
 
 ### Sitzungscookies in Webview
 
-In Android Webview werden Sitzungscookies nach dem Schließen der App nicht gelöscht. Sie können dies mit dem unten angegebenen Beispielcode behandeln: ```java
+In Android Webview werden Sitzungscookies nach dem Schließen der App nicht gelöscht. Sie können dies mit dem unten angegebenen Beispielcode behandeln: 
+```java
 CookieSyncManager.createInstance(getApplicationContext());
 CookieManager cookieManager = CookieManager.getInstance();
 cookieManager.removeSessionCookie();
 CookieSyncManager.getInstance().sync();
-``` Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
+``` 
+Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
 
 ### Außerkraftsetzungen von Ressourcen
 
@@ -439,9 +449,9 @@ Diese sollten von Ihrer Anwendung überschrieben werden, falls lokalisierte Zeic
 =======
 
 ### NTLM-Dialogfeld
-ADAL Version 1.1.0 unterstützt das NTLM-Dialogfeld, das über das onReceivedHttpAuthRequest-Ereignis des WebViewClient-Elements verarbeitet wird. Sie können das Dialogfeldlayout und die Zeichenfolgen anpassen.\#\#\# Schritt 5: Herunterladen des iOS-Beispielcodes für den systemeigenen Client
+ADAL Version 1.1.0 unterstützt das NTLM-Dialogfeld, das über das onReceivedHttpAuthRequest-Ereignis des WebViewClient-Elements verarbeitet wird. Sie können das Dialogfeldlayout und die Zeichenfolgen anpassen.### Schritt 5: Herunterladen des iOS-Beispielcodes für den systemeigenen Client
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
  
 
-<!---HONumber=July15_HO5-->
+<!----HONumber=July15_HO5-->

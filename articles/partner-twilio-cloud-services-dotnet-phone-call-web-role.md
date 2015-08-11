@@ -23,7 +23,7 @@
 
 In diesem Leitfaden wird veranschaulicht, wie Sie von einer in Azure gehosteten Webseite einen Anruf über Twilio tätigen können. Die Anwendung fragt den Benutzer nach Werten für den Telefonanruf, wie im folgenden Screenshot gezeigt.
 
-! \[Azure-Anrufformular mit Twilio und ASP.NET\] \[twilio\_dotnet\_basic\_f
+![Azure-Anrufformular mit Twilio und ASP.NET][twilio_dotnet_basic_form]
 
 ## <a name="twilio-prereqs"></a>Voraussetzungen
 
@@ -192,4 +192,4 @@ Dieser Code demonstriert die allgemeinen Funktionen für die Verwendung von Twil
 
 [azure_runtime_ref_dotnet]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
 
-<!---HONumber=July15_HO5-->
+<!----HONumber=July15_HO5-->

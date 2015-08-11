@@ -46,7 +46,7 @@ Wenn Sie sich zum ersten Mal mit virtuellen Azure-Computern beschäftigen, werfe
 
 <!--links-->
 [App Service]: app-service-choose-me.md
-[Virtual Machines]: #tellmevm
-[Cloud Services]: cloud-services-choose-me.md
+[Virtuelle Computer]: #tellmevm
+[Cloud-Dienste]: cloud-services-choose-me.md
 
-<!---HONumber=July15_HO5-->
+<!----HONumber=July15_HO5-->

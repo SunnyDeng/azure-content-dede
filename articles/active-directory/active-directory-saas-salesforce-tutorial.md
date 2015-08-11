@@ -74,7 +74,7 @@ Sie können zu diesem Tutorial die folgenden Videos nutzen.
 
 ##Schritt 2: Aktivieren der einmaligen Anmeldung
 
-1. Bevor Sie die einmalige Anmeldung konfigurieren können, müssen Sie eine benutzerdefinierte Domäne für Ihre Salesforce-Umgebung einrichten und bereitstellen. Anleitungen hierzu finden Sie unter [Set Up a Domain Name](https://help.salesforce.com/HTViewHelpDoc?id=domain_name_setup.htm&language=en_US) \(in englischer Sprache\).
+1. Bevor Sie die einmalige Anmeldung konfigurieren können, müssen Sie eine benutzerdefinierte Domäne für Ihre Salesforce-Umgebung einrichten und bereitstellen. Anleitungen hierzu finden Sie unter [Set Up a Domain Name](https://help.salesforce.com/HTViewHelpDoc?id=domain_name_setup.htm&language=en_US) (in englischer Sprache).
 
 2. Klicken Sie auf der Seite "Schnellstart" von Salesforce in Azure AD auf die Schaltfläche **Einmaliges Anmelden konfigurieren**.
 
@@ -216,7 +216,7 @@ Sie können zu diesem Tutorial die folgenden Videos nutzen.
 
 		![Confirm the assignment.][29]
 
-		> [AZURE.IMPORTANT] If you are provisioning to a Salesforce **developer** environment, you will have a very limited number of licenses available for each profile. Therefore, it's best to provision users to the **Chatter Free User** profile, which has 4,999 licenses available.
+		> [AZURE.IMPORTANT] Bei der Bereitstellung in eine Salesforce-**Entwickler**umgebung steht Ihnen für jedes Profil eine sehr begrenzte Anzahl an Lizenzen zur Verfügung. Daher sollten Benutzer möglichst im **Chatter Free User**-Profil bereitgestellt werden, für das 4.999 Lizenzen verfügbar sind.
 
 4. Um Ihre Einstellungen für die einmalige Anmeldung zu testen, öffnen Sie den Zugriffsbereich unter [https://myapps.microsoft.com](https://myapps.microsoft.com/), melden Sie sich beim Testkonto an, und klicken Sie auf **Salesforce**.
 
@@ -257,4 +257,4 @@ Sie können zu diesem Tutorial die folgenden Videos nutzen.
 [28]: ./media/active-directory-saas-salesforce-tutorial/assign-confirm.png
 [29]: ./media/active-directory-saas-salesforce-tutorial/assign-sf-profile.png
 
-<!---HONumber=July15_HO5-->
+<!----HONumber=July15_HO5-->

@@ -53,8 +53,8 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
     request.execute({
         success: function() {
-            // If the insert succeeds, send a notification to all devices 
-	    	// registered to the logged-in user as a tag.
+            // Wenn der Einfügevorgang erfolgreich war, senden Sie eine Benachrichtigung an alle Geräte, 
+	    	// die für den angemeldeten Benutzer als Tag registriert sind.
             	push.wns.send(userId, payload, 'wns/toast', {
                 success: function(pushResponse) {
                     console.log("Sent push:", pushResponse);
@@ -69,7 +69,7 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
             });
 	}
 
-&nbsp;&nbsp;Dieses Einfügeskript sendet mithilfe des Benutzer-ID-Tags eine Pushbenachrichtigung \(mit dem Text des eingefügten Eintrags\) an alle Windows Store-App-Registrierungen, die vom angemeldeten Benutzer erstellt wurden.
+&nbsp;&nbsp;Dieses Einfügeskript sendet mithilfe des Benutzer-ID-Tags eine Pushbenachrichtigung (mit dem Text des eingefügten Eintrags) an alle Windows Store-App-Registrierungen, die vom angemeldeten Benutzer erstellt wurden.
 
 ##<a name="update-app"></a>Aktualisieren der App zum Anmelden vor der Registrierung
 
@@ -90,7 +90,7 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 [Hinzufügen von Authentifizierung zur App]: mobile-services-windows-store-javascript-get-started-users.md
 [Hinzufügen von Pushbenachrichtigungen zur App]: mobile-services-javascript-backend-windows-store-javascript-get-started-push.md
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO5-->
+<!----HONumber=July15_HO5-->

@@ -29,7 +29,7 @@ Für Web-Apps können die folgenden Informationen gesichert werden:
 
 * Web-App-Konfiguration
 * Dateiinhalte der Web-App
-* Jede SQL Server- und jede MySQL-Datenbank, die mit der Web-App verbunden ist \(Sie können auswählen, welche gesichert werden sollen\)
+* Jede SQL Server- und jede MySQL-Datenbank, die mit der Web-App verbunden ist (Sie können auswählen, welche gesichert werden sollen)
 
 Diese Informationen werden in dem von Ihnen angegebenen Azure-Speicherkonto und -Container gesichert.
 
@@ -58,7 +58,7 @@ Diese Informationen werden in dem von Ihnen angegebenen Azure-Speicherkonto und 
 	
 	![Speicherkonto auswählen][ChooseStorageAccount]
 	
-5. Wählen Sie mithilfe der Option **Enthaltene Datenbanken** auf dem Blatt **Sicherungen** die Datenbanken aus, die mit der zu sichernden Web-App verbunden sind \(SQL Server oder MySQL\).
+5. Wählen Sie mithilfe der Option **Enthaltene Datenbanken** auf dem Blatt **Sicherungen** die Datenbanken aus, die mit der zu sichernden Web-App verbunden sind (SQL Server oder MySQL).
 
 	> [AZURE.NOTE]Damit eine Datenbank in dieser Liste angezeigt wird, muss die zugehörige Verbindungszeichenfolge im Portal auf dem Blatt **Web-App-Einstellungen** im Abschnitt **Verbindungszeichenfolgen** angegeben sein.
 	
@@ -83,18 +83,18 @@ Sie können jederzeit eine manuelle Sicherung vornehmen.
 	
 	![Speicherkonto auswählen][ChooseStorageAccount]
 	
-3. Geben Sie im Feld **Häufigkeit** an, wie oft automatisierte Sicherungen erstellt werden sollen. Die Anzahl der Tage muss zwischen 1 und 90 liegen \(von einmal täglich bis einmal alle 90 Tage\).
+3. Geben Sie im Feld **Häufigkeit** an, wie oft automatisierte Sicherungen erstellt werden sollen. Die Anzahl der Tage muss zwischen 1 und 90 liegen (von einmal täglich bis einmal alle 90 Tage).
 	
 4. Verwenden Sie die Option **Startdatum**, um das Startdatum und eine Uhrzeit für den Beginn der automatisierten Sicherungen festzulegen.
 	
 	> [AZURE.NOTE]Azure speichert die Sicherungszeit im UTC-Format, zeigt sie jedoch entsprechend der Systemzeit des Computers an, auf dem Sie das Portal anzeigen.
 	
-5. Wählen Sie im Abschnitt **Enthaltene Datenbanken** die Datenbanken aus, die mit der zu sichernden Web-App verbunden sind \(SQL Server oder MySQL\). Damit eine Datenbank in der Liste angezeigt wird, muss die zugehörige Verbindungszeichenfolge im Portal auf dem Blatt **Web-App-Einstellungen** im Abschnitt **Verbindungszeichenfolgen** angegeben sein.
+5. Wählen Sie im Abschnitt **Enthaltene Datenbanken** die Datenbanken aus, die mit der zu sichernden Web-App verbunden sind (SQL Server oder MySQL). Damit eine Datenbank in der Liste angezeigt wird, muss die zugehörige Verbindungszeichenfolge im Portal auf dem Blatt **Web-App-Einstellungen** im Abschnitt **Verbindungszeichenfolgen** angegeben sein.
 	
 	> [AZURE.NOTE]Wenn Sie eine oder mehrere Datenbanken in die Sicherung einschließen möchten und eine Häufigkeit von weniger als 7 Tagen angeben, werden Sie darauf hingewiesen, dass häufige Sicherungen die Kosten für die Datenbank erhöhen können.
 	
 6. Legen Sie außerdem die **Aufbewahrung in Tagen** auf die Anzahl der Tage fest, die die Sicherung beibehalten werden soll.
-7. Klicken Sie in der Befehlsleiste auf **Speichern**, um die Konfigurationsänderungen zu speichern \(oder wählen Sie **Verwerfen** aus, wenn Sie sie nicht speichern möchten\).
+7. Klicken Sie in der Befehlsleiste auf **Speichern**, um die Konfigurationsänderungen zu speichern (oder wählen Sie **Verwerfen** aus, wenn Sie sie nicht speichern möchten).
 	
 	![Schaltfläche "Save"][SaveIcon]
 
@@ -112,7 +112,7 @@ Sie können jederzeit eine manuelle Sicherung vornehmen.
 Manchmal möchten Sie nicht alles in Ihrer Web-App sichern. Hier sind einige Beispiele:
 
 -	Sie [richten wöchentliche Sicherungen](web-sites-backup.md#configure-automated-backups) der Web-App ein, die statische Inhalte enthält, die sich nie ändern, z. B. alte Blogbeiträge oder Bilder.
--	Ihre Web-App verfügt über mehr als 10 GB an Inhalten \(der maximale Umfang, der auf einmal gesichert werden kann\).
+-	Ihre Web-App verfügt über mehr als 10 GB an Inhalten (der maximale Umfang, der auf einmal gesichert werden kann).
 -	Sie möchten die Protokolldateien nicht sichern.
 
 Bei Teilsicherungen können Sie genau auswählen, welche Dateien gesichert werden sollen.
@@ -123,7 +123,8 @@ Erstellen Sie zum Ausschließen von Dateien und Ordnern aus der Sicherung eine `
 
 Stellen Sie sich vor, Sie verfügen über eine Website mit Protokolldateien und statischen Bildern aus früheren Jahren, die sich nicht ändern. Sie haben bereits eine vollständige Sicherung der Web-App erstellt, die die alten Bilder enthält. Jetzt möchten Sie die Web-App täglich sichern, aber Sie möchten nicht für die Speicherung von Protokolldateien oder statischen Bilddateien bezahlen, die sich nie ändern.
 
-![Ordner "Logs"][LogsFolder] ![Ordner "Images"][ImagesFolder]
+![Ordner "Logs"][LogsFolder]
+![Ordner "Images"][ImagesFolder]
 	
 Die unten angegebenen Schritte zeigen, wie Sie diese Dateien aus der Sicherung ausschließen.
 
@@ -157,7 +158,7 @@ Alle Dateien und Ordner, die in `_backup.filter` angegeben sind, werden jetzt au
 
 Nachdem Sie eine oder mehrere Sicherungen für Ihre Web-App vorgenommen haben, werden die Sicherungen auf dem Blatt **Container** in Ihrem Speicherkonto sowie in Ihrer Web-App angezeigt. Im Speicherkonto besteht jede Sicherung aus einer ZIP-Datei mit den gesicherten Daten und einer XML-Datei, die ein Manifest des ZIP-Dateiinhalts enthält. Sie können diese Dateien extrahieren und durchsuchen, wenn Sie auf die Sicherungen zugreifen möchten, ohne eine Web-App-Wiederherstellung auszuführen.
 
-Die Datenbanksicherung für die Web-App wird im Stammverzeichnis der ZIP-Datei gespeichert. Bei SQL-Datenbanken ist dies eine BACPAC-Datei \(ohne Dateierweiterung\), die importiert werden kann. Schritte zum Erstellen einer neuen SQL-Datenbank auf Basis des BACPAC-Exports finden Sie im Artikel [Importieren einer BACPAC-Datei zum Erstellen einer neuen Benutzerdatenbank](http://technet.microsoft.com/library/hh710052.aspx).
+Die Datenbanksicherung für die Web-App wird im Stammverzeichnis der ZIP-Datei gespeichert. Bei SQL-Datenbanken ist dies eine BACPAC-Datei (ohne Dateierweiterung), die importiert werden kann. Schritte zum Erstellen einer neuen SQL-Datenbank auf Basis des BACPAC-Exports finden Sie im Artikel [Importieren einer BACPAC-Datei zum Erstellen einer neuen Benutzerdatenbank](http://technet.microsoft.com/library/hh710052.aspx).
 
 > [AZURE.WARNING]Wenn Sie die Dateien im Container **websitebackups** ändern, kann die Sicherung ungültig werden und nicht mehr wiederhergestellt werden.
 
@@ -179,7 +180,7 @@ Ihre Wiederherstellungsstrategie sollte etwa wie folgt aussehen:
 -	Testen Sie die Wiederherstellung, um festzustellen, ob die Staging-App ordnungsgemäß funktioniert.
 -	[Verschieben](web-sites-staged-publishing.md#Swap) Sie die bereitgestellte Web-App zum Produktionsslot.
 
->[AZURE.NOTE]Testen Sie stets den Wiederherstellungsvorgang. Weitere Informationen finden Sie unter [Very Good Thing](http://axcient.com/blog/one-thing-can-derail-disaster-recovery-plan/) \(in englischer Sprache\). Beispielsweise gelten auf bestimmten Blogplattformen wie z. B. [Ghost](https://ghost.org/) explizite Vorsichtsmaßnahmen im Zusammenhang mit dem Verhalten während einer Sicherung. Durch Testen der Wiederherstellung können Sie diese Vorsichtsmaßnahmen abfangen, wenn Sie noch nicht von einem Fehler oder Notfall betroffen sind.
+>[AZURE.NOTE]Testen Sie stets den Wiederherstellungsvorgang. Weitere Informationen finden Sie unter [Very Good Thing](http://axcient.com/blog/one-thing-can-derail-disaster-recovery-plan/) (in englischer Sprache). Beispielsweise gelten auf bestimmten Blogplattformen wie z. B. [Ghost](https://ghost.org/) explizite Vorsichtsmaßnahmen im Zusammenhang mit dem Verhalten während einer Sicherung. Durch Testen der Wiederherstellung können Sie diese Vorsichtsmaßnahmen abfangen, wenn Sie noch nicht von einem Fehler oder Notfall betroffen sind.
 
 <a name="nextsteps"></a>
 ## Nächste Schritte
@@ -197,7 +198,7 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 
 [Überwachen eines Speicherkontos](../storage-monitor-storage-account.md)
 
-[Understanding Azure Storage Billing](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx) \(Grundlagen zur Abrechnung von Azure-Speicher, in englischer Sprache\)
+[Understanding Azure Storage Billing](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx) (Grundlagen zur Abrechnung von Azure-Speicher, in englischer Sprache)
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -219,4 +220,4 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
  
 
-<!---HONumber=July15_HO5-->
+<!----HONumber=July15_HO5-->

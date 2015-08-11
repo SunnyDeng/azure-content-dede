@@ -54,7 +54,9 @@ Befolgen Sie diese Schritte, um die Community-Version von MySQL Server zu instal
 > [AZURE.NOTE]Diese Schritte gelten für die Community-Version 5.6.23.0 von MySQL und Windows Server 2012 R2. Ihre Erfahrung ist möglicherweise für unterschiedliche Versionen von MySQL oder Windows Server unterschiedlich.
 
 1.	Wenn Sie über Remotedesktop eine Verbindung zum virtuellen Computer aufgebaut haben, klicken Sie im Startbildschirm auf **Internet Explorer**.
-2.	Wählen Sie die Schaltfläche **Tools** oben rechts (Zahnradsymbol), und klicken Sie dann auf **Internetoptionen**. Klicken Sie auf die Registerkarte **Sicherheit**, auf das Symbol **Vertrauenswürdige Sites** und dann auf die Schaltfläche **Sites**. Fügen Sie der Liste vertrauenswürdiger Sites **http://*.mysql.com** hinzu. Klicken Sie auf **Schließen** und dann auf **OK**. 3.	Geben Sie in der Adressleiste von Internet Explorer Folgendes ein: **http://dev.mysql.com/downloads/mysql/**4.	Verwenden Sie die MySQL-Website, um die neueste Version von MySQL-Installer für Windows zu suchen und herunterzuladen. Laden Sie bei Auswahl des MySQL-Installer die Version mit dem kompletten Dateisatz herunter (beispielsweise mysql-installer-community-5.6.23.0.msi mit einer Dateigröße von 282,4 MB), und speichern Sie die Installationsprogrammdatei auf dem Windows-Desktop.
+2.	Wählen Sie die Schaltfläche **Tools** oben rechts (Zahnradsymbol), und klicken Sie dann auf **Internetoptionen**. Klicken Sie auf die Registerkarte **Sicherheit**, auf das Symbol **Vertrauenswürdige Sites** und dann auf die Schaltfläche **Sites**. Fügen Sie der Liste vertrauenswürdiger Sites **http://*.mysql.com** hinzu. Klicken Sie auf **Schließen** und dann auf **OK**. 
+3.	Geben Sie in der Adressleiste von Internet Explorer Folgendes ein: **http://dev.mysql.com/downloads/mysql/**
+4.	Verwenden Sie die MySQL-Website, um die neueste Version von MySQL-Installer für Windows zu suchen und herunterzuladen. Laden Sie bei Auswahl des MySQL-Installer die Version mit dem kompletten Dateisatz herunter (beispielsweise mysql-installer-community-5.6.23.0.msi mit einer Dateigröße von 282,4 MB), und speichern Sie die Installationsprogrammdatei auf dem Windows-Desktop.
 5.	Doppelklicken Sie auf dem Desktop auf die Installationsprogrammdatei, um die Installation zu beginnen.
 6.	Stimmen Sie auf der Seite **Lizenzvereinbarung** der Lizenzvereinbarung zu, und klicken Sie auf **Weiter**.
 7.	Klicken Sie auf der Seite **Einrichtungstyp wählen** auf den gewünschten Einrichtungstyp, und klicken Sie dann auf **Weiter**. Bei den folgenden Schritten wird davon ausgegangen, dass der Einrichtungstyp **Nur Server** ausgewählt ist.
@@ -128,4 +130,4 @@ Informationen zu MySQL finden Sie in der [MySQL-Dokumentation](http://dev.mysql.
 
  
 
-<!---HONumber=July15_HO4-->
+<!----HONumber=July15_HO4-->

@@ -49,12 +49,12 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 		'<wp:Text1>New Item</wp:Text1><wp:Text2>' + item.text + 
 		'</wp:Text2></wp:Toast></wp:Notification>';
 
-	// Get the ID of the logged-in user.
+	// Rufen Sie die ID des angemeldeten Benutzers ab.
 	var userId = user.userId;		
 
 	request.execute({
 		success: function() {
-			// If the insert succeeds, send a notification.
+			// Wenn der Einfügevorgang erfolgreich war, senden Sie eine Benachrichtigung.
 			push.mpns.send(userId, payload, 'toast', 22, {
 				success: function(pushResponse) {
 					console.log("Sent push:", pushResponse);
@@ -94,4 +94,4 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
  
 
-<!---HONumber=July15_HO5-->
+<!----HONumber=July15_HO5-->

@@ -40,16 +40,16 @@ Die Installation des Azure AD Connect Health-Agents auf den AD FS-Servern wirk
 
 Die folgenden Zahlen stellen Näherungswerte dar.
 
-- CPU-Auslastung: \~ 1 % Zunahme
+- CPU-Auslastung: ~ 1 % Zunahme
 - Arbeitsspeichernutzung: bis zu 10 % des insgesamt verfügbaren Systemarbeitsspeichers
-- Nutzung der Netzwerkbandbreite: \~ 1 MB pro 1000 AD FS-Anforderungen
->[AZURE.NOTE]
+- Nutzung der Netzwerkbandbreite: ~ 1 MB pro 1000 AD FS-Anforderungen
+>[AZURE.NOTE]Falls der Agent nicht mit Azure kommunizieren kann, speichert der Agent die Daten lokal bis zu einem Höchstwert von 10 % des gesamten Systemspeichers. Sobald der Agent 10 % des gesamten physischen Speichers erreicht hat und keine Daten in den Dienst mehr hochladen kann, überschreiben die neuen AD FS-Transaktionen etwaige zwischengespeicherte Transaktionen, wobei bei den am seltensten verwendeten Transaktionen begonnen wird.
 
 - Lokaler Pufferspeicher für AD Connect Health-Agent: ca. 20 MB
 - Datenspeicher für Überwachungskanal erforderlich
 
 
-Es wird empfohlen, 1024 MB \(1 GB\) Festplattenspeicher für den AD FS-Überwachungskanal für AD Connect Health-Agents bereitzustellen, um sämtliche Daten zu verarbeiten.
+Es wird empfohlen, 1024 MB (1 GB) Festplattenspeicher für den AD FS-Überwachungskanal für AD Connect Health-Agents bereitzustellen, um sämtliche Daten zu verarbeiten.
 
 **F: Muss ich meine Server während der Installation der Azure AD Connect Health-Agents neu starten?**
 
@@ -62,13 +62,13 @@ Beispielsweise erfordert die Installation des .NET 4.5-Frameworks unter Windows
 
 Ja, sowohl der Registrierungsprozess als auch der normale Betrieb funktionieren über einen expliziten Proxy zum Weiterleiten von ausgehenden HTTP-Anforderungen. "Netsh WinHttp set Proxy" funktioniert in diesem Fall nicht, da der Agent System.Net statt der Microsoft Windows HTTP-Dienste verwendet, um Webanforderungen zu senden.
 
-Führen Sie diesen Schritt vor Ausführung von Register-AdHealthAgent aus \(letzter Schritt der Installation\).
+Führen Sie diesen Schritt vor Ausführung von Register-AdHealthAgent aus (letzter Schritt der Installation).
 
 
 - Schritt 1: Hinzufügen eines Eintrags zur Datei "machine.config"
 
 
-Suchen Sie nach der Datei "machine.config". Diese Datei befindet sich hier: %windir%\\Microsoft.NET\\Framework64\[version\]\\config\\machine.config</li>
+Suchen Sie nach der Datei "machine.config". Diese Datei befindet sich hier: %windir%\\Microsoft.NET\\Framework64[version]\\config\\machine.config</li>
 
 Fügen Sie der Datei "machine.config" folgenden Eintrag unter dem <configuration></configuration> Element hinzu.
  
@@ -84,13 +84,13 @@ Fügen Sie der Datei "machine.config" folgenden Eintrag unter dem <configuration
 
  
 
-Zusätzliche <defaultProxy> Informationen finden Sie \[hier\] \(https://msdn.microsoft.com/library/kd3cf2ex(v=vs.110).aspx)\).
+Zusätzliche <defaultProxy> Informationen finden Sie [hier](https://msdn.microsoft.com/library/kd3cf2ex(v=vs.110).aspx).
 
 Mit diesen Einstellungen konfigurieren Sie .NET-Anwendungen systemweit so, dass bei .NET-Anforderungen über HTTP Ihr explizit definierter Proxy verwendet wird. Es wird nicht empfohlen, die einzelnen "app.config"-Dateien zu ändern, da diese Änderungen während einer automatischen Aktualisierung rückgängig gemacht werden. Wenn Sie die Datei "machine.config" bearbeiten, müssen Sie nur eine Datei ändern, und die Änderungen bleiben auch bei Aktualisierungen erhalten.
 
 - Schritt 2: Konfigurieren des Proxys unter "Internetoptionen"
 
-Öffnen Sie "Internet Explorer -\> Einstellungen -\> Internetoptionen -\> Verbindungen -\> LAN-Einstellungen".
+Öffnen Sie "Internet Explorer -> Einstellungen -> Internetoptionen -> Verbindungen -> LAN-Einstellungen".
 
 Wählen Sie "Proxyserver für LAN verwenden" aus.
 
@@ -128,4 +128,4 @@ Azure AD Connect Health-Warnungen werden basierend auf einer Erfolgsbedingung a
 
 Sie müssen die TCP/UDP-Ports 80 und 443 öffnen, damit der Azure AD Connect Health-Agent mit den Azure AD Connect Health-Dienstendpunkten kommunizieren kann.
 
-<!---HONumber=July15_HO5-->
+<!----HONumber=July15_HO5-->

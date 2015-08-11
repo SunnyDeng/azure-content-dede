@@ -31,7 +31,7 @@ In diesem Lernprogramm laden Sie ein Visual Studio 2013-Projekt für eine univer
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
 * Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-universal-dotnet-get-started-data%2F).
-* [Visual Studio Express 2013 für Windows](https://go.microsoft.com/fwLink/p/?LinkID=257546) \(Update 2 oder höhere Version\). 
+* [Visual Studio Express 2013 für Windows](https://go.microsoft.com/fwLink/p/?LinkID=257546) (Update 2 oder höhere Version). 
 
 ##<a name="download-app"></a>Herunterladen des GetStartedWithData-Projekts
 
@@ -83,7 +83,7 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen 
 
 * [Erste Schritte mit Pushbenachrichtigungen] <br/>Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
-* [Mobile Services \#C-Anleitungen: Konzeptionelle Referenz](mobile-services-windows-dotnet-how-to-use-client-library.md) <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
+* [Mobile Services #C-Anleitungen: Konzeptionelle Referenz](mobile-services-windows-dotnet-how-to-use-client-library.md) <br/>Lernen Sie mehr über die Verwendung von Mobile Services mit .NET.
   
 <!-- Anchors. -->
 
@@ -109,9 +109,9 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.com/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
-[Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkID=510826
+[Website mit den Codebeispielen für Entwickler]: http://go.microsoft.com/fwlink/p/?LinkID=510826
 
 [MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030
  
 
-<!---HONumber=July15_HO5-->
+<!----HONumber=July15_HO5-->
