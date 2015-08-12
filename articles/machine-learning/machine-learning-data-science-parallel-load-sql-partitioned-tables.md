@@ -29,7 +29,7 @@ Die Leistung beim Laden/Übertragen/Importieren großer Datenmengen in eine SQL-
 
 - Fügen Sie \(je nach Anforderungen\) den einzelnen Datenbank-Dateigruppen eine oder mehrere Dateien hinzu.
 
- \>[AZURE.NOTE]Geben Sie die Ziel-Dateigruppe an, die die Daten für diese Partition enthalten wird, und die Dateinamen der physischen Datenbank, in der die Dateigruppendaten gespeichert werden.
+ > [AZURE.NOTE] Geben Sie die Ziel-Dateigruppe an, die die Daten für diese Partition enthalten wird, und die Dateinamen der physischen Datenbank, in der die Dateigruppendaten gespeichert werden.
  
 Mit dem folgenden Beispiel wird eine neue Datenbank mit drei Dateigruppen erstellt, die sich von den primären und Protokollgruppen unterscheiden und jeweils eine physische Datei enthalten. Die Datenbankdateien werden im Standarddatenordner von SQL Server erstellt, der in der SQL Server-Instanz konfiguriert wurde. Weitere Informationen zu den Standarddateispeicherorten finden Sie unter [Dateispeicherorte für Standard- und benannte Instanzen von SQL Server](https://msdn.microsoft.com/library/ms143547.aspx).
 
@@ -168,7 +168,7 @@ Das folgende PowerShell-Skript ist ein Beispiel für das parallele Laden von Dat
 
 - Wenn Sie Daten für die Modellierung aus mehreren Tabellen extrahieren, erstellen Sie die Indizes für die Verknüpfungsschlüssel zur Verbesserung der Leistung beim Zusammenführen.
 
-- [Erstellen Sie Indizes](https://technet.microsoft.com/library/ms188783.aspx) \(gruppiert oder nicht gruppiert\), deren Ziel dieselbe Dateigruppe für jede Partition ist. Beispiel:
+- [Erstellen Sie Indizes](https://technet.microsoft.com/library/ms188783.aspx) (gruppiert oder nicht gruppiert), deren Ziel dieselbe Dateigruppe für jede Partition ist. Beispiel:
 
 	    CREATE CLUSTERED INDEX <table_idx> ON <table_name>( [include index columns here] )
 	    ON <TablePScheme>(<partition)field>)
@@ -184,4 +184,4 @@ oder
 Eine umfassende exemplarische Vorgehensweise zur Verwendung der Advanced Analytics Process and Technology \(ADAPT\) mit einem öffentlichen DataSet finden Sie unter [Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server](machine-learning-data-science-process-sql-walkthrough.md).
  
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->

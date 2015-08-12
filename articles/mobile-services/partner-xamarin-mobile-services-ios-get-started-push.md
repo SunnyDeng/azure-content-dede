@@ -187,7 +187,7 @@ Ihr mobiler Dienst ist nun für APNS konfiguriert.
 
     ![][120]
 
-    Dadurch wird sichergestellt, dass das Xamarin-Projekt das neue Profil für die Codesignierung verwendet. Die offizielle Dokumentation zur Xamarin-Gerätebereitstellung finden Sie unter [Xamarin Device Provisioning] \(Xamarin – Gerätebereitstellung, in englischer Sprache\).
+    Dadurch wird sichergestellt, dass das Xamarin-Projekt das neue Profil für die Codesignierung verwendet. Die offizielle Dokumentation zur Xamarin-Gerätebereitstellung finden Sie unter [Xamarin Device Provisioning](Xamarin – Gerätebereitstellung, in englischer Sprache\).
 
 ## <a name="add-push"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
@@ -305,7 +305,7 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
     Auf diese Weise wird ein neues Einfügeskript registriert, das über das [apns-Objekt] eine Pushbenachrichtigung \(den eingefügten Text\) zum in der Einfügeanforderung angegebenen Gerät sendet.
 
-   \>[AZURE.NOTE]Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
+   >[AZURE.NOTE] Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
 
 ## <a name="test"></a>Testen von Pushbenachrichtigungen in der App
 
@@ -313,9 +313,9 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
     ![][23]
 
-   \>[AZURE.NOTE]Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
+   >[AZURE.NOTE] Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
 
-2. Geben Sie in der App einen aussagekräftigen Text ein, beispielsweise _Neue Mobile Services-Aufgabe_, und klicken Sie dann auf das Plussymbol \(\*\*+\*\*\).
+2. Geben Sie in der App einen aussagekräftigen Text ein, beispielsweise _Neue Mobile Services-Aufgabe_, und klicken Sie dann auf das Plussymbol (**+**).
 
     ![][24]
 
@@ -399,4 +399,4 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 [Xamarin.iOS]: http://xamarin.com/download
  
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->

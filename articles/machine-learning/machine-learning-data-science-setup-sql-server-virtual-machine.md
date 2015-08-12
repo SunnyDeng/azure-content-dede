@@ -25,7 +25,7 @@ In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu fin
 - SQL Server 2012 SP2 Enterprise für kleine bis mittlere Datenvolumen
 - SQL Server 2012 SP2 Enterprise Optimized for DataWarehousing Workloads für große bis sehr große Datenvolumen
 
- \>[AZURE.NOTE]Das SQL Server 2012 SP2 Enterprise-Image **enthält keinen Datenträger**. Sie müssen einen oder mehrere virtuelle Festplatten zum Speichern von Daten hinzufügen und/oder anfügen. Wenn Sie einen virtuellen Azure-Computer erstellen, hat dieser einen Datenträger für das Betriebssystem, der Laufwerk C zugeordnet ist, und einen temporären Datenträger, der Laufwerk D zugeordnet ist. Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
+ > [AZURE.NOTE] Das SQL Server 2012 SP2 Enterprise-Image **enthält keinen Datenträger**. Sie müssen einen oder mehrere virtuelle Festplatten zum Speichern von Daten hinzufügen und/oder anfügen. Wenn Sie einen virtuellen Azure-Computer erstellen, hat dieser einen Datenträger für das Betriebssystem, der Laufwerk C zugeordnet ist, und einen temporären Datenträger, der Laufwerk D zugeordnet ist. Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
 
 
 ##<a name="Provision"></a>Verbinden mit dem Azure-Verwaltungsportal und Bereitstellen eines virtuellen Computers mit SQL Server
@@ -38,30 +38,39 @@ In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu fin
 
 	![Auswählen des virtuellen SQL Server-Computer][1]
 
-4.  Geben Sie zunächst auf der Seite **Konfiguration des virtuellen Computers** die folgenden Informationen ein:
+4.  Geben Sie zunächst auf der Seite **Konfiguration des virtuellen Computers**
+    die folgenden Informationen ein:
 
     -   Geben Sie einen **NAMEN DES VIRTUELLEN COMPUTERS** ein.
-    -   Geben Sie im Feld **NEUER BENUTZERNAME** einen eindeutigen Benutzernamen für das lokale Administratorkonto für den virtuellen Computer ein.
-    -   Geben Sie in das Feld **NEUES KENNWORT** ein sicheres Kennwort ein. Weitere Informationen finden Sie unter [Sichere Kennwörter](http://msdn.microsoft.com/library/ms161962.aspx).
+    -   Geben Sie im Feld **NEUER BENUTZERNAME**
+        einen eindeutigen Benutzernamen für das lokale Administratorkonto für den virtuellen Computer ein.
+    -   Geben Sie in das Feld **NEUES KENNWORT** ein sicheres Kennwort ein. Weitere
+        Informationen finden Sie unter [Sichere Kennwörter](http://msdn.microsoft.com/library/ms161962.aspx).
     -   Geben Sie das Kennwort im Feld **KENNWORT BESTÄTIGEN** nochmals ein.
     -   Wählen Sie in der Dropdownliste die geeignete **GRÖSSE** aus.
 
-     \>[AZURE.NOTE]Die Größe des virtuellen Computers wird während der Bereitstellung angegeben: A2 ist die kleinste empfohlene Größe für Produktionsarbeitsauslastungen. Die empfohlene Minimalgröße für einen virtuellen Computer ist A3, wenn SQL Server Enterprise Edition verwendet wird. Wählen Sie A3 oder höher aus, wenn Sie SQL Server Enterprise Edition verwenden. Wählen Sie A4 aus, wenn Sie SQL Server 2012 oder 2014 Enterprise verwenden, das für Images für transaktionale Arbeitslasten optimiert ist. Wählen Sie A7 aus, wenn Sie SQL Server 2012 oder 2014 Enterprise verwenden, das für Images für Data Warehousing-Arbeitslasten optimiert ist. Die ausgewählte Größe begrenzt die Anzahl der Datenträger, die Sie konfigurieren können. Die aktuellsten Informationen zu verfügbaren Größen virtueller Computer und der Anzahl an Datenträgern, die Sie zu einem virtuellen Computer hinzufügen können, finden Sie unter [Größen virtueller Computer für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Preisinformationen finden Sie unter [Preise für virtuelle Computer](http://azure.microsoft.com/pricing/details/virtual-machines/).
+     > [AZURE.NOTE] Die Größe des virtuellen Computers wird während der Bereitstellung angegeben: A2 ist die kleinste empfohlene Größe für Produktionsarbeitsauslastungen. Die empfohlene Minimalgröße für einen virtuellen Computer ist A3, wenn SQL Server Enterprise Edition verwendet wird. Wählen Sie A3 oder höher aus, wenn Sie SQL Server Enterprise Edition verwenden. Wählen Sie A4 aus, wenn Sie SQL Server 2012 oder 2014 Enterprise verwenden, das für Images für transaktionale Arbeitslasten optimiert ist. Wählen Sie A7 aus, wenn Sie SQL Server 2012 oder 2014 Enterprise verwenden, das für Images für Data Warehousing-Arbeitslasten optimiert ist. Die ausgewählte Größe begrenzt die Anzahl der Datenträger, die Sie konfigurieren können. Die aktuellsten Informationen zu verfügbaren Größen virtueller Computer und der Anzahl an Datenträgern, die Sie zu einem virtuellen Computer hinzufügen können, finden Sie unter [Größen virtueller Computer für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Preisinformationen finden Sie unter [Preise für virtuelle Computer](http://azure.microsoft.com/pricing/details/virtual-machines/).
 
     Klicken Sie unten rechts auf den Pfeil für die nächste Seite, um fortzufahren.
 
     ![Konfiguration des virtuellen Computers][2]
 
-5.  Konfigurieren Sie auf der zweiten Seite **Konfiguration des virtuellen Computers** die Ressourcen für Netzwerk, Speicher und Verfügbarkeit:
+5.  Konfigurieren Sie auf der zweiten Seite **Konfiguration des virtuellen Computers**
+    die Ressourcen für Netzwerk, Speicher und Verfügbarkeit:
 
-    -   Wählen Sie im Feld **Cloud-Dienst** die Option **Einen neuen Cloud-Dienst erstellen** aus.
-    -   Geben Sie im Feld **DNS-Name des Cloud-Diensts** den ersten Teil eines DNS-Namens Ihrer Wahl ein, sodass insgesamt ein Name des Formats **TESTNAME.cloudapp.net** entsteht.
-    -   Wählen Sie im Feld **REGION/AFFINITY GROUP/VIRTUAL NETWORK** eine Region aus, in der dieses virtuelle Image gehostet wird.
-    -   Wählen Sie unter **Speicherkonto** ein vorhandenes Speicherkonto aus, oder wählen Sie ein automatisch generiertes aus.
+    -   Wählen Sie im Feld **Cloud-Dienst** die Option
+        **Einen neuen Cloud-Dienst erstellen** aus.
+    -   Geben Sie im Feld **DNS-Name des Cloud-Diensts** den ersten Teil
+        eines DNS-Namens Ihrer Wahl ein, sodass insgesamt ein Name des
+        Formats **TESTNAME.cloudapp.net** entsteht.
+    -   Wählen Sie im Feld **REGION/AFFINITY GROUP/VIRTUAL NETWORK** eine
+        Region aus, in der dieses virtuelle Image gehostet wird.
+    -   Wählen Sie unter **Speicherkonto** ein vorhandenes Speicherkonto aus,
+        oder wählen Sie ein automatisch generiertes aus.
     -   Wählen Sie im Feld **AVAILABILITY SET** den Eintrag **\(none\)**.
     -   Lesen Sie sich die Preisinformationen durch, und bestätigen Sie diese.
 
-6.	Klicken Sie im Abschnitt **ENDPUNKTE** in die leere Dropdownliste unter **NAME**, wählen Sie **MSSQL** aus, und geben Sie dann die Portnummer der Instanz des Datenbankmoduls ein \(\*\*1433\*\* für die Standardinstanz\).
+6.	Klicken Sie im Abschnitt **ENDPUNKTE** in die leere Dropdownliste unter **NAME**, wählen Sie **MSSQL** aus, und geben Sie dann die Portnummer der Instanz des Datenbankmoduls ein (**1433** für die Standardinstanz).
 
 7.  Die SQL Server-VM kann auch als IPython Notebook-Server dienen, der in einem späteren Schritt konfiguriert wird. Fügen Sie einen neuen Endpunkt hinzu, um den Port für den IPython Notebook-Server anzugeben. Geben Sie einen Namen in der Spalte **NAME** ein, wählen Sie eine Portnummer für den öffentlichen Port und "9999" für den privaten Port aus.
 
@@ -71,7 +80,7 @@ In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu fin
 
 8.  Lassen Sie die Option **VM-Agent installieren** aktiviert, und klicken Sie auf das Häkchen in der unteren rechten Ecke des Assistenten, um die VM-Bereitstellung abzuschließen.
 
-	\`![Letzte Optionen für virtuelle Computer][4]
+	`![Letzte Optionen für virtuelle Computer][4]
 
 9.  Warten Sie, während Azure den virtuellen Computer vorbereitet. Der virtuelle Computer wird folgende Phasen durchlaufen:
 
@@ -83,13 +92,23 @@ In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu fin
 
 ##<a name="RemoteDesktop"></a>Öffnen des virtuellen Computers mithilfe von Remotedesktop und vollständige Einrichtung
 
-1.  Wenn die Bereitstellung abgeschlossen ist, klicken Sie auf den Namen des virtuellen Computers, um zur Seite "DASHBOARD" zu gelangen. Klicken Sie unten auf der Seite auf **Verbinden**.
+1.  Wenn die Bereitstellung abgeschlossen ist, klicken Sie auf den Namen des virtuellen
+    Computers, um zur Seite "DASHBOARD" zu gelangen. Klicken Sie unten auf der Seite auf **Verbinden**.
 
-2.  Öffnen Sie die RPD-Datei mit dem Windows-Remotedesktop-Programm \(`%windir%\system32\mstsc.exe`\).
+2.  Öffnen Sie die RPD-Datei mit dem Windows-Remotedesktop-Programm (`%windir%\system32\mstsc.exe`).
 
-3.  Geben Sie im Dialogfeld **Windows-Sicherheit** das Kennwort für das lokale Administratorkonto an, das Sie zuvor festgelegt haben. \(Sie werden möglicherweise dazu aufgefordert, die Anmeldedaten des virtuellen Computers zu überprüfen.\)
+3.  Geben Sie im Dialogfeld **Windows-Sicherheit** das Kennwort für das
+    lokale Administratorkonto an, das Sie zuvor festgelegt haben.
+    (Sie werden möglicherweise dazu aufgefordert, die Anmeldedaten des virtuellen Computers zu überprüfen.\)
 
-4.  Beim ersten Anmelden auf dem virtuellen Computer müssen eventuell einige Prozesse ausgeführt werden, darunter die Einrichtung Ihres Desktops, Windows-Updates und die Fertigstellung der ersten Windows-Konfigurationsaufgaben \(sysprep\). Nachdem Windows-sysprep abgeschlossen ist, stellt die SQL Server-Einrichtung die Konfigurationsaufgaben fertig. Diese Tasks können während der Ausführung eine Verzögerung von wenigen Minuten verursachen. `SELECT @@SERVERNAME` gibt den richtigen Namen möglicherweise erst zurück, wenn die Einrichtung von SQL Server abgeschlossen ist, und SQL Server Management Studio wird auf der Startseite möglicherweise nicht angezeigt.
+4.  Beim ersten Anmelden auf dem virtuellen Computer müssen eventuell einige Prozesse
+    ausgeführt werden, darunter die Einrichtung Ihres Desktops, Windows-Updates
+    und die Fertigstellung der ersten Windows-Konfigurationsaufgaben
+    (sysprep). Nachdem Windows-sysprep abgeschlossen ist, stellt die SQL
+    Server-Einrichtung die Konfigurationsaufgaben fertig. Diese Tasks können während der Ausführung eine Verzögerung von wenigen Minuten verursachen. `SELECT @@SERVERNAME`
+    gibt den richtigen Namen möglicherweise erst zurück,
+    wenn die Einrichtung von SQL Server abgeschlossen ist, und SQL
+    Server Management Studio wird auf der Startseite möglicherweise nicht angezeigt.
 
 Nachdem Sie über Windows Remotedesktop mit dem virtuellen Computer verbunden sind, funktioniert der virtuelle Computer wie jeder andere Computer. Stellen Sie ganz normal eine Verbindung zur Standardinstanz von SQL Server mit SQL Server Management Studio, das auf dem virtuellen Computer ausgeführt wird, her.
 
@@ -111,7 +130,8 @@ Zum Konfigurieren der neuen SQL Server-VM als IPython Notebook-Server und zum In
 	+ Für die IPython Notebook-Server-Remotekonnektivität
 	+ Abrufen von Beispiel-IPython Notebooks und -SQL-Skripts
 	+ Herunterladen und Installieren von nützlichen Python-Paketen für Data Science
-	+ Herunterladen und Installieren von Azure-Tools wie AzCopy und Azure-Speicher-Explorer <br>
+	+ Herunterladen und Installieren von Azure-Tools wie AzCopy und Azure-Speicher-Explorer  
+<br>
 - Sie können über einen beliebigen Browser lokal oder remote auf IPython Notebook zugreifen und es ausführen. Verwenden Sie dazu eine URL im Format `https://<virtual_machine_DNS_name>:<port>`, wobei der Port der öffentliche IPython-Port ist, den Sie beim Bereitstellen des virtuellen Computers ausgewählt haben.
 - Der IPython Notebook-Server wird als Hintergrunddienst ausgeführt und bei einem Neustart des virtuellen Computers ebenfalls automatisch neu gestartet.
 
@@ -119,7 +139,7 @@ Zum Konfigurieren der neuen SQL Server-VM als IPython Notebook-Server und zum In
 
 Wenn Ihr VM-Image keine Datenträger enthält, d. h. keine anderen Datenträger als die Laufwerke C \(Datenträger für das Betriebssystem\) und D \(temporärer Datenträger\), müssen Sie mindestens einen Datenträger zum Speichern der Daten hinzufügen. Das VM-Image für SQL Server 2012 SP2 Enterprise Optimized für DataWarehousing Workloads ist bereits mit zusätzlichen Datenträgern für die Daten- und Protokolldateien von SQL Server vorkonfiguriert.
 
- \>[AZURE.NOTE]Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
+ > [AZURE.NOTE] Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
 
 Um zusätzliche Datenträger anzufügen, führen Sie die Schritte unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](storage-windows-attach-disk.md) durch:
 
@@ -137,13 +157,20 @@ Das SQL Server-Datenbankmodul kann ohne Domänenumgebung keine Windows-Authentif
 
     Wenn Sie Management Studio erstmalig öffnen, muss dieses eine Management Studio-Benutzerumgebung erstellen. Dies kann einige Zeit dauern.
 
-2.  Beim Öffnen wird in Management Studio das Dialogfeld **Verbindung mit Server herstellen** angezeigt. Geben Sie im Feld **Servername** den Namen des virtuellen Computers ein, um das Datenbankmodul mit dem Objekt-Explorer zu verbinden. \(Anstelle des Namen des virtuellen Computers können Sie auch **\(lokal\)** oder einen einzigen Punkt als **Servername** verwenden. Wählen Sie **Windows-Authentifizierung**, und lassen Sie ***your\_VM\_name*\\your\_local\_administrator** im Feld **Benutzername**. Klicken Sie auf **Verbinden**.
+2.  Beim Öffnen wird in Management Studio das Dialogfeld **Verbindung mit Server herstellen**
+    angezeigt. Geben Sie im Feld **Servername**
+    den Namen des virtuellen
+    Computers ein, um das Datenbankmodul mit dem Objekt-Explorer zu verbinden. \(Anstelle des Namen des virtuellen Computers können Sie auch **(lokal)** oder
+    einen einzigen Punkt als **Servername** verwenden. Wählen Sie **Windows
+    Authentifizierung**, und lassen Sie
+    ***your\_VM\_name*\\your\_local\_administrator** im Feld **Benutzername**.
+    Klicken Sie auf **Verbinden**.
 
     ![Mit Server verbinden][6]
 
 	<br>
 
-	 \>[AZURE.TIP]Sie können den SQL Server-Authentifizierungsmodus über einen Windows-Registrierungsschlüssel oder in SQL Server Management Studio ändern. Starten Sie zum Ändern des Authentifizierungsmodus über einen Registrierungsschlüssel eine **Neue Abfrage**, und führen Sie das folgende Skript aus:
+	 > [AZURE.TIP] Sie können den SQL Server-Authentifizierungsmodus über einen Windows-Registrierungsschlüssel oder in SQL Server Management Studio ändern. Starten Sie zum Ändern des Authentifizierungsmodus über einen Registrierungsschlüssel eine **Neue Abfrage**, und führen Sie das folgende Skript aus:
 
 		USE master
     	go
@@ -154,7 +181,8 @@ Das SQL Server-Datenbankmodul kann ohne Domänenumgebung keine Windows-Authentif
 
 	So ändern Sie den Authentifizierungsmodus mit SQL Server Management Studio:
 
-3.  Klicken Sie im Objekt-Explorer von SQL Server Management Studio mit der rechten Maustaste auf die Instanz von SQL Server \(den Namen des virtuellen Computers\), und klicken Sie dann auf **Eigenschaften**.
+3.  Klicken Sie im Objekt-Explorer von SQL Server Management Studio mit der rechten Maustaste auf die Instanz von SQL Server 
+    (den Namen des virtuellen Computers), und klicken Sie dann auf **Eigenschaften**.
 
     ![Servereigenschaften][7]
 
@@ -259,7 +287,7 @@ In späteren Phasen des Advanced Analytics Process and Technology \(ADAPT\) verw
 
 Virtuelle Azure-Computer werden **nach Nutzung abgerechnet**. Damit Sie nicht für ungenutzte virtuelle Computer bezahlen müssen, sollten Sie diese in den Status **Angehalten \(Freigegeben\)** versetzen.
 
-> [AZURE.NOTE]Beim Herunterfahren virtueller Computer aus der VM heraus \(mithilfe der Windows-Energieoptionen\) wird der virtuelle Computer beendet, er bleibt jedoch weiterhin zugeordnet. Um sicherzustellen, dass virtuelle Computer nicht abgerechnet werden, beenden Sie sie immer im [Azure-Verwaltungsportal](http://manage.windowsazure.com/). Sie können die VM auch über PowerShell beenden, indem Sie ShutdownRoleOperation mit der "PostShutdownAction" "StoppedDeallocated" aufrufen.
+> [AZURE.NOTE] Beim Herunterfahren virtueller Computer aus der VM heraus \(mithilfe der Windows-Energieoptionen\) wird der virtuelle Computer beendet, er bleibt jedoch weiterhin zugeordnet. Um sicherzustellen, dass virtuelle Computer nicht abgerechnet werden, beenden Sie sie immer im [Azure-Verwaltungsportal](http://manage.windowsazure.com/). Sie können die VM auch über PowerShell beenden, indem Sie ShutdownRoleOperation mit der "PostShutdownAction" "StoppedDeallocated" aufrufen.
 
 So fahren Sie den virtuellen Computer herunter und heben die Zuordnung auf:
 
@@ -298,4 +326,4 @@ Die nächsten Schritte des Datenanalyseprozesses sind unter [Leitfaden: Erweiter
 [15]: ./media/machine-learning-data-science-setup-sql-server-virtual-machine/vmshutdown.png
  
 
-<!---HONumber=July15_HO5-->
+<!------HONumber=July15_HO5-->

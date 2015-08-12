@@ -29,7 +29,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + [Xamarin.iOS Studio]
 + [Azure Mobile Services-Komponente]
 
-   \>[AZURE.NOTE]Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät \(iPhone oder iPad\) anstatt im Emulator bereitgestellt und getestet werden.
+   > [AZURE.NOTE] Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät \(iPhone oder iPad\) anstatt im Emulator bereitgestellt und getestet werden.
 
 Der Apple Push Notification Service \(APNS\) verwendet Zertifikate, um Ihre mobile App zu authentifizieren. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen der Zertifikate in Ihre mobile App. Die offizielle Dokumentation der APNS-Merkmale finden Sie unter [Apple Push Notification Service].
 
@@ -266,7 +266,7 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 	
 	> [AZURE.NOTE]Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
 
-2. Geben Sie in der App eine Aufgabe ein, und klicken Sie dann auf das Pluszeichen \(+\).
+2. Geben Sie in der App eine Aufgabe ein, und klicken Sie dann auf das Pluszeichen (+).
 
 3. Stellen Sie sicher, dass Sie eine Benachrichtigung erhalten haben, und klicken Sie dann auf **OK**, um diese zu schließen.
 
@@ -340,4 +340,4 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
  
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->

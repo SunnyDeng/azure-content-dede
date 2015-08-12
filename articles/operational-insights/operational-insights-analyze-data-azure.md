@@ -33,7 +33,9 @@ Für virtuelle Computer in Azure gibt es zwei einfache Methoden, die Agent-basie
 
 Bei Verwendung der Agent-basierten Sammlung für Protokolldaten müssen Sie auf der Konfigurationsseite der Protokollverwaltung im [Operational Insights-Portal](https://preview.opinsights.azure.com/) konfigurieren, welche Protokolle erfasst werden sollen
 
- \>[AZURE.NOTE]Wenn Sie Operational Insights so konfiguriert haben, dass Protokolldaten mithilfe der Azure-Diagnose indiziert werden, und Sie den Agent für das Erfassen von Protokollen konfigurieren, werden dieselben Protokolle doppelt indiziert. Für beide Datenquellen werden die regulären Datenraten berechnet. Wenn Sie den Agent installiert haben, sollten Sie die Protokolldaten mithilfe des Agents sammeln und nicht die von der Azure-Diagnose erfassten Protokolle indizieren.
+ >[AZURE.NOTE] Wenn Sie Operational Insights so konfiguriert haben, dass Protokolldaten mithilfe der Azure-Diagnose indiziert werden, und Sie den Agent für das Erfassen von Protokollen konfigurieren, werden dieselben Protokolle doppelt indiziert.
+Für beide Datenquellen werden die regulären Datenraten berechnet.
+Wenn Sie den Agent installiert haben, sollten Sie die Protokolldaten mithilfe des Agents sammeln und nicht die von der Azure-Diagnose erfassten Protokolle indizieren.
 
 ## Microsoft Azure-Verwaltungsportal
 
@@ -47,7 +49,7 @@ Der Agent wird automatisch installiert und für den Operational Insights-Arbeits
 
 ![Abbildung der Seite mit Operational Insights-Servern](./media/operational-insights-analyze-data-azure/servers.png)
 
- \>[AZURE.NOTE]Der [VM-Agent von Azure](https://msdn.microsoft.com/library/azure/dn832621.aspx) muss installiert sein, damit der Agent für Operational Insights automatisch installiert wird.
+ >[AZURE.NOTE] Der [VM-Agent von Azure](https://msdn.microsoft.com/library/azure/dn832621.aspx) muss installiert sein, damit der Agent für Operational Insights automatisch installiert wird.
 
 
 
@@ -83,7 +85,7 @@ Die unten stehenden Themen beschreiben, wie Sie die Sammlung von Diagnosedaten i
 
 Die Azure-Diagnose ist eine Azure-Erweiterung, mit der Sie Diagnosedaten von einer Worker- oder Webrolle oder einem virtuellen Computer erfassen können, die bzw. der in Azure ausgeführt wird. Die Daten werden in einem Azure-Speicherkonto gespeichert und können dann von Operational Insights verwendet werden.
 
->[AZURE.NOTE]Ihnen werden die gängigen Datenraten für Speicherung und Transaktionen in Rechnung gestellt, wenn Sie Diagnoseinformationen an ein Speicherkonto senden und wenn Operational Insights die Daten aus Ihrem Speicherkonto liest.
+>[AZURE.NOTE] Ihnen werden die gängigen Datenraten für Speicherung und Transaktionen in Rechnung gestellt, wenn Sie Diagnoseinformationen an ein Speicherkonto senden und wenn Operational Insights die Daten aus Ihrem Speicherkonto liest.
 
 Mit der Azure-Diagnose können die folgenden Arten von Telemetriedaten erfasst werden:
 
@@ -96,7 +98,7 @@ Windows-Ereignisprotokolle|An das Windows-System für die Ereignisprotokollierun
 Leistungsindikatoren|Leistungsindikatoren des Betriebssystems und benutzerdefinierte Leistungsindikatoren
 Absturzabbilder|Informationen zum Status des Prozesses im Fall eines Anwendungsabsturzes
 Benutzerdefinierte Fehlerprotokolle|Von Ihrer Anwendung oder Ihrem Dienst erstellte Protokolle
-NET-EventSource|Von Ihrem Code mit der .NET-\[EventSource-Klasse\]\(https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx\) generierte Ereignisse.
+NET-EventSource|Von Ihrem Code mit der .NET-[EventSource-Klasse](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx) generierte Ereignisse.
 Manifestbasiertes ETW|Von einem beliebigen Prozess generierte ETW-Ereignisse.
 Syslog|An die Syslog- oder Rsyslog-Daemons gesendete Ereignisse.
 
@@ -113,7 +115,7 @@ Die Protokolle müssen in folgenden Speicherorten enthalten sein:
 - wad-iis-logfiles \(Blob-Speicher\) – Enthält Informationen zu IIS-Protokollen.
 - LinuxsyslogVer2v0 \(Tabellenspeicherung\) – enthält Linux-Syslog-Ereignisse.
 
- \>[AZURE.NOTE]IIS-Protokolle von Azure-Websites werden derzeit nicht unterstützt.
+ > [AZURE.NOTE] IIS-Protokolle von Azure-Websites werden derzeit nicht unterstützt.
 
 Bei virtuellen Maschinen haben Sie die Möglichkeit, [Microsoft Monitoring Agent](http://go.microsoft.com/fwlink/?LinkId=517269) auf Ihrem virtuellen Computer zu installieren, um zusätzliche Erkenntnisse zu gewinnen. Auf diese Weise können Sie nicht nur IIS-Protokolle und Ereignisprotokolle analysieren, sondern auch zusätzliche Analysen durchführen, einschließlich der Nachverfolgung von Konfigurationsänderungen, SQL-Bewertung und der Bewertung von Updates.
 
@@ -231,11 +233,13 @@ Wenden Sie folgendes Verfahren an, um die Speicheranalyse zu aktivieren und um O
 
 ### So aktivieren Sie die Analyse über Operational Insights
 
-1. Navigieren Sie im Azure-Standardportal zu Ihrem Operational Insights-Arbeitsbereich, und wählen Sie die Registerkarte **Storage** aus. ![Registerkarte „Arbeitsbereichspeicher“](./media/operational-insights-analyze-data-azure/workspace-storage-tab.png)
+1. Navigieren Sie im Azure-Standardportal zu Ihrem Operational Insights-Arbeitsbereich, und wählen Sie die Registerkarte **Storage** aus.
+![Registerkarte „Arbeitsbereichspeicher“](./media/operational-insights-analyze-data-azure/workspace-storage-tab.png)
 2. Klicken Sie auf **Hinzufügen eines Speicherkontos**, um das Feld **Speicherkonto hinzufügen** zu öffnen.
 3. Wählen Sie das Speicherkonto, das Sie verwenden möchten.
-4. Wählen Sie in der Liste **Datentyp** einen Datentyp: entweder **Ereignisse**, **IIS-Protokolle** oder **Syslog \(Linux\)**.
-5. Klicken Sie auf das Symbol **OK**.<br> ![Feld „Speicherkonto“](./media/operational-insights-analyze-data-azure/storage-account.png)
+4. Wählen Sie in der Liste **Datentyp** einen Datentyp: entweder **Ereignisse**, **IIS-Protokolle** oder **Syslog (Linux)**.
+5. Klicken Sie auf das Symbol **OK**.<br>
+![Feld „Speicherkonto“](./media/operational-insights-analyze-data-azure/storage-account.png)
 6. Wiederholen Sie die oben genannten Schritte für jede Kombination aus Datentyp und Speicherkonto, die Sie erfassen möchten.
 
 Nach etwa einer Stunde werden Daten aus dem Speicherkonto für die Analyse in Operational Insights verfügbar.
@@ -249,4 +253,4 @@ Nach etwa einer Stunde werden Daten aus dem Speicherkonto für die Analyse in Op
 
 [Konfigurieren von Proxy- und Firewall-Einstellungen \(Optional\)](../operational-insights-proxy-filewall.md)
 
-<!---HONumber=July15_HO5-->
+<!------HONumber=July15_HO5-->

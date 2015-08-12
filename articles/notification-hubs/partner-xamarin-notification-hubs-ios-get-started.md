@@ -36,11 +36,11 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + [Xamarin.iOS]
 + [Azure Mobile Services-Komponente]
 
-   \>[AZURE.NOTE]Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät \(iPhone oder iPad\) anstatt im Simulator bereitgestellt und getestet werden.
+   > [AZURE.NOTE] Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät \(iPhone oder iPad\) anstatt im Simulator bereitgestellt und getestet werden.
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Notification Hub-Lernprogramme für Xamarin.iOS-Apps.
 
-> [AZURE.IMPORTANT]Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A643EE910&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fpartner-xamarin-notification-hubs-ios-get-started).
+> [AZURE.IMPORTANT] Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A643EE910&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fpartner-xamarin-notification-hubs-ios-get-started).
 
 Der Apple Push Notification Service \(APNS\) verwendet Zertifikate zur Authentifizierung Ihres mobilen Dienstes. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen auf Ihren mobilen Dienst. Die offizielle Dokumentation der APNS-Merkmale finden Sie unter [Apple Push Notification Service].
 
@@ -59,7 +59,7 @@ Zunächst müssen Sie die Zertifikatsignieranforderungsdatei \(CSR-Datei\) erste
 
   	![][6]
 
-4. Geben Sie einen Namen für die Zertifikatsignieranforderungsdatei \(CSR-Datei\) in **Sichern unter** ein, wählen Sie den Speicherort in **Ort**, und klicken Sie dann auf **Sichern**.
+4. Geben Sie einen Namen für die Zertifikatsignieranforderungsdatei (CSR-Datei) in **Sichern unter** ein, wählen Sie den Speicherort in **Ort**, und klicken Sie dann auf **Sichern**.
 
   	![][7]
 
@@ -92,7 +92,7 @@ Um von Mobile Services Pushbenachrichtigungen an eine iOS-App senden zu können,
 
    	![][110]
 
-	> [AZURE.NOTE]Wenn Sie sich dafür entscheiden, einen anderen **Bundle Identifier**-Wert als **MobileServices.Quickstart** anzugeben, müssen Sie auch die Bundle-ID in Ihrem Xcode-Projekt aktualisieren.
+	> [AZURE.NOTE] Wenn Sie sich dafür entscheiden, einen anderen **Bundle Identifier**-Wert als **MobileServices.Quickstart** anzugeben, müssen Sie auch die Bundle-ID in Ihrem Xcode-Projekt aktualisieren.
 
 3. Lokalisieren Sie die soeben erstellte App-ID und klicken Sie auf deren Zeile.
 
@@ -112,7 +112,7 @@ Um von Mobile Services Pushbenachrichtigungen an eine iOS-App senden zu können,
 
    	![][115]
 
-	> [AZURE.NOTE]In diesem Lernprogramm wird ein Entwicklungszertifikat verwendet. Derselbe Prozess wird auch zum Registrieren eines Produktionszertifikats durchgeführt. Vergewissern Sie sich nur, dass Sie denselben Zertifikattyp einstellen, wenn Sie das Zertifikat zu Mobile Services hochladen.
+	> [AZURE.NOTE] In diesem Lernprogramm wird ein Entwicklungszertifikat verwendet. Derselbe Prozess wird auch zum Registrieren eines Produktionszertifikats durchgeführt. Vergewissern Sie sich nur, dass Sie denselben Zertifikattyp einstellen, wenn Sie das Zertifikat zu Mobile Services hochladen.
 
 5. Klicken Sie auf **Choose File**, navigieren Sie zum Speicherort der in der ersten Aufgabe erstellten CSR-Datei, und klicken Sie dann auf **Generate**.
 
@@ -128,15 +128,16 @@ Um von Mobile Services Pushbenachrichtigungen an eine iOS-App senden zu können,
 
   	![][9]
 
-    > [AZURE.NOTE]Standardmäßig ist die heruntergeladene Datei ein Entwicklungszertifikat namens **aps\_development.cer**.
+    > [AZURE.NOTE] Standardmäßig ist die heruntergeladene Datei ein Entwicklungszertifikat namens **aps_development.cer**.
 
-7. Doppelklicken Sie auf dem heruntergeladenen Pushzertifikat **aps\_development.cer**.
+7. Doppelklicken Sie auf dem heruntergeladenen Pushzertifikat **aps_development.cer**.
 
 	Hierdurch wird das neue Zertifikat im Schlüsselbund installiert, wie unten gezeigt:
 
    	![][10]
 
-	> [AZURE.NOTE]Der Name in Ihrem Zertifikat kann abweichen, erhält aber das Präfix <strong>Apple Development iOS Push Notification Services:</strong>.
+	> [AZURE.NOTE]
+	> Der Name in Ihrem Zertifikat kann abweichen, erhält aber das Präfix <strong>Apple Development iOS Push Notification Services:</strong>.
 
 	Später können Sie mit diesem Zertifikat eine .p12-Datei erstellen und in Ihr Notification Hub hochladen, um Pushbenachrichtigungen mit APNS zu ermöglichen.
 
@@ -216,7 +217,7 @@ Der Notification Hub ist nun konfiguriert, um mit APNs arbeiten zu können. Auß
 
 ### Erstellen eines neuen Projekts
 
-1. Erstellen Sie in Xamarin Studio ein neues iOS-Projekt, und wählen Sie die Vorlage **Unified API \> Single View Application** aus.
+1. Erstellen Sie in Xamarin Studio ein neues iOS-Projekt, und wählen Sie die Vorlage **Unified API > Single View Application** aus.
 
    	![][31]
 
@@ -248,7 +249,7 @@ Der Notification Hub ist nun konfiguriert, um mit APNs arbeiten zu können. Auß
             return true;
         }
 
-7. Überschreiben Sie die Methode **RegisteredForRemoteNotifications\(\)** in **AppDelegate.cs**:
+7. Überschreiben Sie die Methode **RegisteredForRemoteNotifications()** in **AppDelegate.cs**:
 
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
@@ -312,7 +313,7 @@ Der Notification Hub ist nun konfiguriert, um mit APNs arbeiten zu können. Auß
             }
         }
 
-    > [AZURE.NOTE]Sie können **FailedToRegisterForRemoteNotifications\(\)** überschreiben, um Situationen wie z. B. eine fehlende Netzwerkverbindung zu behandeln.
+    > [AZURE.NOTE] Sie können **FailedToRegisterForRemoteNotifications()** überschreiben, um Situationen wie z. B. eine fehlende Netzwerkverbindung zu behandeln.
 
 
 10. Führen Sie die App auf Ihrem Gerät aus.
@@ -480,4 +481,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Gerä
 [WindowsAzure.Messaging]: https://github.com/infosupport/WindowsAzure.Messaging.iOS
  
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->
