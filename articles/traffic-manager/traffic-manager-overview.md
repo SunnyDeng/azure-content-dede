@@ -38,7 +38,7 @@ Beim Konfigurieren eines Traffic Manager-Profils legen Sie verschiedene Einstell
 
 1. **Benutzerdatenverkehr an den Domänennamen des Unternehmens**: Der Client fordert Informationen mithilfe des Domänennamens des Unternehmens an. Das Ziel ist, einen DNS-Namen in eine IP-Adresse aufzulösen. Unternehmensdomänen müssen über normale Internetdomänennamen reserviert werden, die außerhalb von Traffic Manager verwaltet werden. In Abbildung 1 lautet die Unternehmensdomäne *www.contoso.com*.
 2. **Zuordnen des Namens der Unternehmensdomäne zum Traffic Manager-Domänennamen**: Der DNS-Ressourceneintrag für die Unternehmensdomäne verweist auf einen Traffic Manager-Domänennamen, der in Azure Traffic Manager verwaltet wird. Dies wird mit einem CNAME-Ressourceneintrag erreicht, der den Domänennamen des Unternehmens dem Traffic Manager-Domänennamen zuordnet. Im Beispiel lautet der Traffic Manager-Domänenname *contoso.trafficmanager.net*.
-3. **Traffic Manager-Domänenname und -Profil**: Der Traffic Manager-Domänenname ist Bestandteil des Traffic Manager-Profils. Der DNS-Server des Benutzers sendet eine neue DNS-Abfrage für den Traffic Manager-Domänennamen \(im Beispiel *contoso.trafficmanager.net*\), die von den Traffic Manager-DNS-Namensservern empfangen wird.
+3. **Traffic Manager-Domänenname und -Profil**: Der Traffic Manager-Domänenname ist Bestandteil des Traffic Manager-Profils. Der DNS-Server des Benutzers sendet eine neue DNS-Abfrage für den Traffic Manager-Domänennamen \(im Beispiel *contoso.trafficmanager.net*), die von den Traffic Manager-DNS-Namensservern empfangen wird.
 4. **Verarbeiten der Traffic Manager-Profilregeln**: Traffic Manager verwendet die ausgewählte Lastenausgleichsmethode sowie den zugehörigen Überwachungsstatus, um zu bestimmen, welcher Azure- oder anderer Endpunkt die Anforderung verarbeiten soll.
 5. **Senden des Endpunktdomänennamens an den Benutzer**: Traffic Manager gibt einen CNAME-Eintrag zurück, der den Traffic Manager-Domänennamen dem Domänennamen des Endpunkts zuordnet. Der DNS-Server des Benutzers löst den Domänennamen des Endpunkts in seine IP-Adresse auf und sendet diese an den Benutzer.
 6. **Aufrufen des Endpunkts durch den Benutzer**: Der Benutzer ruft den zurückgegebenen Endpunkt mithilfe der zugehörigen IP-Adresse direkt auf.
@@ -61,7 +61,7 @@ Da der Domänenname des Unternehmens und die aufgelöste IP-Adresse auf dem Clie
    - **Erstellen Sie Ihr Traffic Manager-Profil**: Informationen zum Erstellen eines Profils mithilfe der Schnellerfassung im Verwaltungsportal finden Sie unter [Verwalten von Traffic Manager-Profilen](traffic-manager-manage-profiles.md).
    - **Konfigurieren Sie die Einstellungen der Lastenausgleichsmethode**: Bei der Schnellerfassung müssen Sie die Lastenausgleichsmethode für das Profil auswählen. Diese Einstellung kann jederzeit geändert werden, nachdem Sie die Schritte für die Schnellerfassung ausgeführt haben. Die Konfigurationsschritte finden Sie im Thema zu Ihrer Lastenausgleichsmethode: [Konfigurieren der Lastenausgleichsmethode „Leistung“](traffic-manager-configure-performance-load-balancing.md), [Konfigurieren der Lastenausgleichsmethode „Failover“](traffic-manager-configure-failover-load-balancing.md), [Konfigurieren der Lastenausgleichsmethode „Roundrobin“](traffic-manager-configure-round-robin-load-balancing.md).
    
-   \>[AZURE.NOTE]Die Lastenausgleichsmethode "Roundrobin" unterstützt jetzt auch die gewichtete Verteilung von Netzwerkdatenverkehr. Zurzeit müssen Sie zum Konfigurieren von Gewichtung jedoch die REST-APIs oder Windows PowerShell verwenden. Weitere Informationen und ein Konfigurationsbeispiel finden Sie unter [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) \(Azure Traffic Manager: Externe Endpunkte und gewichtetes Roundrobin über PowerShell; in englischer Sprache\) im Azure-Blog.
+   >[AZURE.NOTE] Die Lastenausgleichsmethode "Roundrobin" unterstützt jetzt auch die gewichtete Verteilung von Netzwerkdatenverkehr. Zurzeit müssen Sie zum Konfigurieren von Gewichtung jedoch die REST-APIs oder Windows PowerShell verwenden. Weitere Informationen und ein Konfigurationsbeispiel finden Sie unter [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell) (Azure Traffic Manager: Externe Endpunkte und gewichtetes Roundrobin über PowerShell; in englischer Sprache) im Azure-Blog.
 
    - **Konfigurieren von Endpunkten**: Endpunkte werden während der Schnellerfassung nicht konfiguriert. Nachdem Sie das Profil erstellt und die Lastenausgleichsmethode angegeben haben, müssen Sie dem Traffic Manager Informationen zu den Endpunkten bereitstellen. Die Schritte zum Konfigurieren von Endpunkten finden Sie unter [Verwalten von Endpunkten in Traffic Manager](traffic-manager-endpoints.md).
 
@@ -69,17 +69,18 @@ Da der Domänenname des Unternehmens und die aufgelöste IP-Adresse auf dem Clie
 6. **Testen Sie Ihr Traffic Manager-Profil**. Testen Sie, ob das Profil und die Domäne ordnungsgemäß funktionieren. Informationen hierzu finden Sie unter [Testen der Traffic Manager-Einstellungen](traffic-manager-testing-settings.md).
 7. **Verweisen Sie mit dem DNS-Ressourceneintrag des Domänennamens Ihres Unternehmens auf das Profil, damit es aktiviert wird**. Weitere Informationen dazu finden Sie unter [Verweisen einer Unternehmens-Internetdomäne auf eine Traffic Manager-Domäne](traffic-manager-point-internet-domain.md).
 
-Beim Beispiel in Abbildung 1 können Sie den DNS-Ressourceneintrag auf Ihren Servern folgendermaßen ändern, damit der Domänenname des Unternehmens auf den Traffic Manager-Domänennamen verweist: www.contoso.com IN CNAME contoso.trafficmanager.net
+Beim Beispiel in Abbildung 1 können Sie den DNS-Ressourceneintrag auf Ihren Servern folgendermaßen ändern, damit der Domänenname des Unternehmens auf den Traffic Manager-Domänennamen verweist:
+    www.contoso.com IN CNAME contoso.trafficmanager.net
 
 ## Konfigurieren von Traffic Manager-Einstellungen
 
 Sie können Traffic Manager-Einstellungen im Verwaltungsportal, mithilfe der REST-APIs und mit Windows PowerShell-Cmdlets konfigurieren.
 
-Obwohl nicht jedes REST-API-Element im Verwaltungsportal sichtbar ist, können viele Einstellungen mit beiden Methoden konfiguriert werden. Weitere Informationen zur Verwendung von REST-APIs finden Sie unter [Vorgänge für Traffic Manager \(REST-API-Referenz\)](http://go.microsoft.com/fwlink/p/?LinkId=313584).
+Obwohl nicht jedes REST-API-Element im Verwaltungsportal sichtbar ist, können viele Einstellungen mit beiden Methoden konfiguriert werden. Weitere Informationen zur Verwendung von REST-APIs finden Sie unter [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/p/?LinkId=313584).
 
 Weitere Informationen zu Windows PowerShell-Cmdlets für Traffic Manager finden Sie unter [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769).
 
->[AZURE.NOTE]Zurzeit wird das Konfigurieren von externen Endpunkten \(Typ = "Any"\), von Gewichtungen für die Lastenausgleichsmethode "Roundrobin" sowie von geschachtelten Profilen mit dem Verwaltungsportal nicht unterstützt. Hierzu müssen Sie entweder REST \(siehe [Definition erstellen](http://go.microsoft.com/fwlink/p/?LinkId=400772)\) oder Windows PowerShell \(siehe [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/library/azure/dn690257.aspx)\) verwenden.
+>[AZURE.NOTE]Zurzeit wird das Konfigurieren von externen Endpunkten (Typ = "Any"), von Gewichtungen für die Lastenausgleichsmethode "Roundrobin" sowie von geschachtelten Profilen mit dem Verwaltungsportal nicht unterstützt. Hierzu müssen Sie entweder REST (siehe [Definition erstellen](http://go.microsoft.com/fwlink/p/?LinkId=400772)) oder Windows PowerShell (siehe [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/library/azure/dn690257.aspx)) verwenden.
 
 ### Konfigurieren von Einstellungen im Verwaltungsportal
 
@@ -96,7 +97,7 @@ Sie können die folgenden Einstellungen im Verwaltungsportal konfigurieren:
 
 ### Konfigurieren von Einstellungen mithilfe von REST-APIs
 
-Sie können das Traffic Manager-Profil mithilfe von REST-APIs erstellen und konfigurieren. Weitere Informationen finden Sie unter [Vorgänge für Traffic Manager \(REST-API-Referenz\)](http://go.microsoft.com/fwlink/?LinkId=313584).
+Sie können das Traffic Manager-Profil mithilfe von REST-APIs erstellen und konfigurieren. Weitere Informationen finden Sie unter [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/?LinkId=313584).
 
 - **Profil** – Ein Profil enthält ein von Ihnen erstelltes Domänennamenpräfix. Jedes Profil entspricht Ihrem Abonnement. Sie können mehrere Profile pro Abonnement erstellen. Der Profilname ist im Verwaltungsportal sichtbar. Der von Ihnen erstellte und im Profil enthaltene Name ist der Name Ihrer Traffic Manager-Domäne.
 - **Definition** – Eine Definition enthält Richtlinien- und Überwachungseinstellungen. Eine Definition gehört zu einem Profil. Es kann nur eine Definition pro Profil vorhanden sein. Die Definition selbst ist nicht im Verwaltungsportal sichtbar, obwohl viele der in der Definition enthaltenen Einstellungen angezeigt und im Verwaltungsportal konfiguriert werden können.
@@ -156,7 +157,7 @@ In *Abbildung 4* ist das Traffic Manager-Profil der obersten Ebene ein übergeo
 
 Wenn Traffic Manager Benutzer an ein untergeordnetes Profil weiterleitet, das nur wenige einsatzbereite Endpunkte umfasst, werden diese Endpunkte möglicherweise überlastet, sodass Leistungsprobleme auftreten können. Um diese Situation zu verhindern, können Sie das übergeordnete Traffic Manager-Profil mit einem Schwellenwert für einsatzbereite Endpunkte konfigurieren, der festlegt, dass eine bestimmte Anzahl von Endpunkten in den untergeordneten Profilen Datenverkehr empfangen können. Wenn Sie beispielsweise sicherstellen möchten, dass mindestens drei einsatzbereite Endpunkte in den untergeordneten Profilen vorhanden sind, legen Sie diesen Schwellenwert auf 3 fest. Im Beispiel aus Abbildung 4 würden Sie das Traffic Manager-Profil der obersten Ebene mit diesem Schwellenwert konfigurieren.
 
-Wenn Sie ein Traffic Manager-Profil als Endpunkt hinzufügen und die Mindestanzahl von einsatzbereiten Endpunkten konfigurieren möchten, müssen Sie entweder REST \(siehe [Definition erstellen](http://go.microsoft.com/fwlink/p/?LinkId=400772)\) oder Windows PowerShell \(siehe [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/library/azure/dn690257.aspx)\) verwenden. Diese Aufgabe kann nicht im Verwaltungsportal ausgeführt werden.
+Wenn Sie ein Traffic Manager-Profil als Endpunkt hinzufügen und die Mindestanzahl von einsatzbereiten Endpunkten konfigurieren möchten, müssen Sie entweder REST (siehe [Definition erstellen](http://go.microsoft.com/fwlink/p/?LinkId=400772)) oder Windows PowerShell (siehe [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/library/azure/dn690257.aspx)) verwenden. Diese Aufgabe kann nicht im Verwaltungsportal ausgeführt werden.
 
 ## Traffic Manager-Abbildungen
 
@@ -168,8 +169,8 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
 [Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
 
-[Vorgänge für Traffic Manager \(REST-API-Referenz\)](http://go.microsoft.com/fwlink/p/?LinkId=313584)
+[Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/p/?LinkId=313584)
 
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->

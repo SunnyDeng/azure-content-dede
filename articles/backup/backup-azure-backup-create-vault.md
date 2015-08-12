@@ -7,7 +7,14 @@
    manager="shreeshd"
    editor=""/>
 
-\<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt\_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="07/28/2015" ms.author="prvijay"; "jimpark"/\>
+<tags
+   ms.service="backup"
+   ms.workload="storage-backup-recovery"
+	 ms.tgt_pltfrm="na"
+	 ms.devlang="na"
+	 ms.topic="article"
+	 ms.date="07/28/2015"
+	 ms.author="prvijay"; "jimpark"/>
 
 # Erstellen eines Sicherungstresors
 Zum Sichern von Dateien und Daten von Windows Server oder System Center Data Protection Manager \(SCDPM\) in Azure oder beim Sichern von Sie IaaS-VMs in Azure müssen Sie einen Sicherungstresor in Ihrer geografischen Region erstellen, in dem die Daten gespeichert werden sollen.
@@ -15,7 +22,7 @@ Zum Sichern von Dateien und Daten von Windows Server oder System Center Data Pro
 Dieses Lernprogramm führt Sie durch die Erstellung des Tresors, den Sie zum Speichern von Sicherungen verwenden.
 
 1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com/) an.
-2. Klicken Sie auf **Neu** \> **Data Services** \> **Recovery Services** \> **Sicherungstresor**, und wählen Sie **Schnellerfassung** aus.
+2. Klicken Sie auf **Neu** > **Data Services** > **Recovery Services** > **Sicherungstresor**, und wählen Sie **Schnellerfassung** aus.
 
   ![Tresor erstellen][1]
 
@@ -62,4 +69,4 @@ Bei Verwendung von Azure als tertiären Speicherendpunkt \(Sie verwenden beispie
 [4]: ./media/backup-azure-backup-create-vault/grs.png
 [5]: ./media/backup-azure-backup-create-vault/lrs.png
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->

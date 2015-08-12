@@ -24,7 +24,7 @@
 
  Service Fabric unterstützt derzeit nicht die Aktualisierung der Service Fabric-Laufzeit, während ein lokaler Cluster ausgeführt wird. Um eine fehlerfreie Aktualisierung zu gewährleisten, ist es wichtig, zuerst den lokalen Cluster zu bereinigen.
 
- \>[AZURE.NOTE]Beim Bereinigen des lokalen Clusters werden alle bereitgestellten Anwendungen und die dazugehörigen Daten entfernt.
+ > [AZURE.NOTE] Beim Bereinigen des lokalen Clusters werden alle bereitgestellten Anwendungen und die dazugehörigen Daten entfernt.
 
  Sie können Ihren lokalen Cluster wie folgt bereinigen:
 
@@ -49,8 +49,8 @@
 
 Das ist alles! Sie können Visual Studio jetzt starten und mit dem Erstellen von Service Fabric-Anwendungen fortfahren.
 
->[AZURE.NOTE]Die Standardprojektstruktur wurde in dieser Version geändert. Es sollte möglich sein, vorhandene Projekte in Visual Studio zu öffnen und auszuführen. Falls beim Erstellen, Bereitstellen oder Debuggen von Anwendungen aber Probleme auftreten, sollten Sie die Erstellung eines neuen Projekts und die Migration Ihres Codes erwägen.
+>[AZURE.NOTE] Die Standardprojektstruktur wurde in dieser Version geändert. Es sollte möglich sein, vorhandene Projekte in Visual Studio zu öffnen und auszuführen. Falls beim Erstellen, Bereitstellen oder Debuggen von Anwendungen aber Probleme auftreten, sollten Sie die Erstellung eines neuen Projekts und die Migration Ihres Codes erwägen.
 
  [1]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI-Link"
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->
