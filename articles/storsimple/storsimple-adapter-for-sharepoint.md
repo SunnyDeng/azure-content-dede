@@ -23,7 +23,7 @@ Der StorSimple-Adapter für SharePoint ist eine Komponente, mit der Sie flexible
 
 Der StorSimple-Adapter für SharePoint dient als Remote BLOB Storage \(RBS\)-Anbieter und nutzt die SQL Server Remote BLOB Storage-Funktion zum Speichern von nicht strukturiertem SharePoint-Inhalt \(in Form von BLOBs\) auf einem Dateiserver, der von einem StorSimple-Gerät unterstützt wird.
 
->[AZURE.NOTE]Der StorSimple-Adapter für SharePoint unterstützt SharePoint Server 2010 Remote BLOB Storage \(RBS\). SharePoint Server 2010 External BLOB Storage \(EBS\) wird nicht unterstützt.
+>[AZURE.NOTE] Der StorSimple-Adapter für SharePoint unterstützt SharePoint Server 2010 Remote BLOB Storage \(RBS\). SharePoint Server 2010 External BLOB Storage \(EBS\) wird nicht unterstützt.
 
 - Sie können den StorSimple-Adapter für SharePoint im Microsoft Download Center unter [StorSimple-Adapter für SharePoint][1] herunterladen.
 
