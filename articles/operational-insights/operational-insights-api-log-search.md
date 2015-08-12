@@ -197,7 +197,7 @@ Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 	armclient post /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/search/{SearchId}?api-version=2014-10-10
 ```
 
->[AZURE.NOTE]Wenn die Suche den Status "Ausstehend" zurückgibt, können die aktualisierten Ergebnisse über diese API aufgerufen werden. Nach 6 Minuten wird das Ergebnis der Suche aus dem Cache gelöscht, und es wird "Http Fehlend" zurückgegeben. Wenn die anfängliche Suchanforderung sofort den Status "Erfolgreich" zurückgibt, wird sie nicht zum Cache hinzugefügt. Dadurch gibt diese API bei einer Abfrage "Http Fehlend" zurück. Der Inhalt eines "Http 200"-Ergebnisses wird im gleichen Format wie die ursprüngliche Suchanforderung erstellt, nur mit aktualisierten Werten.
+>[AZURE.NOTE] Wenn die Suche den Status "Ausstehend" zurückgibt, können die aktualisierten Ergebnisse über diese API aufgerufen werden. Nach 6 Minuten wird das Ergebnis der Suche aus dem Cache gelöscht, und es wird "Http Fehlend" zurückgegeben. Wenn die anfängliche Suchanforderung sofort den Status "Erfolgreich" zurückgibt, wird sie nicht zum Cache hinzugefügt. Dadurch gibt diese API bei einer Abfrage "Http Fehlend" zurück. Der Inhalt eines "Http 200"-Ergebnisses wird im gleichen Format wie die ursprüngliche Suchanforderung erstellt, nur mit aktualisierten Werten.
 
 ### Gespeicherte Suchvorgänge - nur REST
 
@@ -342,8 +342,9 @@ You may specify the start and end markers that will be used by search to wrap th
 	        }
 	    }
 	}
-\`\`\`
+```
 
 Beachten Sie, dass das oben genannte Ergebnis eine Fehlermeldung enthält, die mit dem Präfix versehen und angefügt wurde.
 
-<!---HONumber=July15_HO5-->
+
+<!-----HONumber=July15_HO5-->
