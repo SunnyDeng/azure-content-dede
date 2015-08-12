@@ -10,4 +10,4 @@ Dieses Lernprogramm baut auf dem Code auf, den Sie beim Mobile Services-Schnells
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: ../articles/mobile-services-android-get-started-data.md
 -->
 
-<!----HONumber=July15_HO4-->
+<!------HONumber=July15_HO4-->

@@ -159,7 +159,7 @@ Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Beda
       		}
 		}
 
-	> [AZURE.NOTE]Ersetzen Sie den Wert **StartDateTime** durch den Zeitpunkt drei Tage vor dem aktuellen Tag und den Wert **EndDateTime** durch den aktuellen Tag. "StartDateTime" und "EndDateTime" müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Ausgabetabelle soll jeden Tag erstellt werden, deshalb werden drei Slices erstellt.
+	> [AZURE.NOTE]Ersetzen Sie den Wert **StartDateTime** durch den Zeitpunkt drei Tage vor dem aktuellen Tag und den Wert **EndDateTime** durch den aktuellen Tag. "StartDateTime" und "EndDateTime" müssen im [ISO-Format](http://de.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Ausgabetabelle soll jeden Tag erstellt werden, deshalb werden drei Slices erstellt.
 	> 
 	> Ersetzen Sie **your storage account** im JSON-Code durch den Namen Ihres Speicherkontos.
 	
@@ -353,4 +353,4 @@ Artikel | Beschreibung
 [Azure Portal]: http://portal.azure.com
  
 
-<!---HONumber=July15_HO5-->
+<!----HONumber=July15_HO5-->

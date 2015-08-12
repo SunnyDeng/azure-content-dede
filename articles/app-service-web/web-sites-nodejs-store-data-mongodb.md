@@ -113,13 +113,13 @@ In diesem Abschnitt erstellen Sie eine neue Node-Anwendung in Ihrer Entwicklungs
 
 1. Wechseln Sie an der Befehlszeile zum Verzeichnis **tasklist**. Falls das Verzeichnis **tasklist** nicht vorhanden ist, erstellen Sie es.
 
-	> [AZURE.NOTE]In diesem Lernprogramm wird auf den Ordner **tasklist** Bezug genommen. Der vollständige Ordnerpfad wird nicht angegeben, da die Pfadsemantik je nach Betriebssystem unterschiedlich ist. Sie sollten diesen Ordner in einem Verzeichnis erstellen, auf das Sie im lokalen Dateisystem einfach zugreifen können, z. B. **~/node/tasklist** oder **c:\node\tasklist**.
+> [AZURE.NOTE]In diesem Lernprogramm wird auf den Ordner **tasklist** Bezug genommen. Der vollständige Ordnerpfad wird nicht angegeben, da die Pfadsemantik je nach Betriebssystem unterschiedlich ist. Sie sollten diesen Ordner in einem Verzeichnis erstellen, auf das Sie im lokalen Dateisystem einfach zugreifen können, z. B. **~/node/tasklist** oder **c:\node\tasklist**.
 
 2. Geben Sie folgenden Befehl ein, um den Befehl "express" zu installieren.
 
 	npm install express-generator -g
 
-	> [AZURE.NOTE]Bei Verwendung des Parameters '-g' bei einigen Betriebssystemen kann ein Fehler ___Error: EPERM, chmod '/usr/local/bin/express'___ zurückgegeben werden und die Aufforderung erfolgen, zu versuchen, das Konto als Administrator auszuführen. Verwenden Sie in diesem Fall den Befehl `sudo`, um npm mit einer höheren Berechtigungsstufe auszuführen.
+> [AZURE.NOTE]Bei Verwendung des Parameters '-g' bei einigen Betriebssystemen kann ein Fehler ___Error: EPERM, chmod '/usr/local/bin/express'___ zurückgegeben werden und die Aufforderung erfolgen, zu versuchen, das Konto als Administrator auszuführen. Verwenden Sie in diesem Fall den Befehl `sudo`, um npm mit einer höheren Berechtigungsstufe auszuführen.
 
     Die Ausgabe dieses Befehls sollte ungefähr wie folgt aussehen:
 
@@ -127,7 +127,7 @@ In diesem Abschnitt erstellen Sie eine neue Node-Anwendung in Ihrer Entwicklungs
 		├── mkdirp@0.3.5
 		└── commander@1.3.2 (keypress@0.1.0)
 
-	> [AZURE.NOTE]Wird der Parameter "-g" bei der Installation des Express-Moduls verwendet, so erfolgt die Installation global. Auf diese Weise können wir den Befehl ___express___ aufrufen, um das Web-App-Gerüst zu generieren, ohne zusätzliche Pfadinformationen angeben zu müssen.
+> [AZURE.NOTE]Wird der Parameter "-g" bei der Installation des Express-Moduls verwendet, so erfolgt die Installation global. Auf diese Weise können wir den Befehl ___express___ aufrufen, um das Web-App-Gerüst zu generieren, ohne zusätzliche Pfadinformationen angeben zu müssen.
 
 4. Verwenden Sie den Befehl **express**, um das Gerüst zu erstellen, das für diese Anwendung verwendet wird:
 
@@ -571,4 +571,4 @@ Informationen zur Sicherheit von MongoDB finden Sie unter [MongoDB-Sicherheit][m
 [mongodbonazure]: http://docs.mongodb.org/ecosystem/tutorial/install-mongodb-on-linux-in-azure/
  
 
-<!---HONumber=July15_HO4-->
+<!-------HONumber=July15_HO4-->

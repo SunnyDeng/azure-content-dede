@@ -344,7 +344,9 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 
 4. Schließlich werden die Ergebnisse in der neuen Ausgabeauflistung abgespeichert.
 
-    > [AZURE.NOTE]Ja, Sie können mehrere Sammlungen als Ausgabe hinzufügen: </br> '<DocumentDB Output Collection Name 1>,<DocumentDB Output Collection Name 2>'</br> Die Sammlungsnamen werden ohne Leerzeichen nur durch ein Komma getrennt.</br> Die Dokumente werden in Umlauf gebracht und über die mehrfachen Auflistungen hinweg verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
+    > [AZURE.NOTE] Ja, Sie können mehrere Sammlungen als Ausgabe hinzufügen: </br>
+    '\<DocumentDB Output Collection Name 1>,\<DocumentDB Output Collection Name 2>'</br> Die Sammlungsnamen werden ohne Leerzeichen nur durch ein Komma getrennt.</br>
+    Die Dokumente werden in Umlauf gebracht und über die mehrfachen Auflistungen hinweg verteilt. Ein Batch von Dokumenten wird in einer Auflistung gespeichert. Ein zweiter Batch von Dokumenten wird dann in der nächsten Auflistung gespeichert usw.
 
 		# Store output data to DocumentDB.
         $queryStringPart3 = "STORE by_minute_count INTO '<DocumentDB Endpoint>' " +
@@ -490,4 +492,4 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [powershell-install-configure]: ../install-configure-powershell.md
  
 
-<!------HONumber=July15_HO4-->
+<!--------HONumber=July15_HO4-->

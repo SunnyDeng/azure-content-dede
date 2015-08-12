@@ -24,7 +24,8 @@ Mit Azure AD Connect können sich Ihre Benutzer sowohl bei Cloud- als auch bei l
 
 
 ### Kennwortsynchronisierung
-Mit der Kennwortsynchronisierung werden Benutzerkennworthashes aus Ihrem lokalen Active Directory mit Azure AD synchronisiert. Werden Kennwörter geändert oder lokal zurückgesetzt, werden die neuen Kennwörter sofort mit Azure AD synchronisiert, damit Ihre Benutzer für Cloudressourcen dasselbe Kennwort verwenden können wie in der lokalen Umgebung. Die Kennwörter werden weder an Azure AD übermittelt noch als Klartext in Azure AD gespeichert. Die Kennwortsynchronisierung kann mit der Kennwortrückschreibung kombiniert werden, um es den Benutzern zu ermöglichen, ihre Kennwörter in Azure AD selbst zurückzusetzen.
+Mit der Kennwortsynchronisierung werden Benutzerkennworthashes aus Ihrem lokalen Active Directory mit Azure AD synchronisiert. Werden Kennwörter geändert oder lokal zurückgesetzt, werden die neuen Kennwörter sofort mit Azure AD synchronisiert, damit Ihre Benutzer für Cloudressourcen dasselbe Kennwort verwenden können wie in der lokalen Umgebung. Die Kennwörter werden weder an Azure AD übermittelt noch als Klartext in Azure AD gespeichert. 
+Die Kennwortsynchronisierung kann mit der Kennwortrückschreibung kombiniert werden, um es den Benutzern zu ermöglichen, ihre Kennwörter in Azure AD selbst zurückzusetzen.
 
 <center>![Cloud](./media/active-directory-aadconnect-user-signin/passwordhash.png)</center>
 
@@ -34,7 +35,7 @@ Mit der Kennwortsynchronisierung werden Benutzerkennworthashes aus Ihrem lokalen
 ### Verbund mit einem neuen oder vorhandenen AD FS in einer Windows Server 2012 R2-Farm
 Mit der Verbundanmeldung können sich Ihre Benutzer bei Azure AD-basierten Dienste mit ihren lokalen Kennwörtern anmelden. Während sie in ihrem Unternehmensnetzwerk angemeldet sind, können sie auf Cloudressourcen zugreifen, ohne ihre Kennwörter erneut eingeben zu müssen. Mit der Verbundoption für AD FS können Sie eine neue Windows Server 2012 R2-Farm bereitstellen oder eine Farm angeben. Wenn Sie eine vorhandene Farm angeben, konfiguriert Azure AD Connect die Vertrauensstellung zwischen der Farm und Azure AD, sodass sich Ihre Benutzer anmelden können.
 
-<center>![Cloud](. / media/active-directory-aadconnect-user-signin/federatedsignin.png)</center>
+<center>![Cloud](./media/active-directory-aadconnect-user-signin/federatedsignin.png)</center>
 
 #### Voraussetzungen für den Verbund mit AD FS unter Windows Server 2012 R2
 Wenn Sie eine neue Farm bereitstellen:
@@ -64,4 +65,4 @@ Für die meisten Organisationen, die lediglich die Benutzeranmeldung für Office
 	- Bedingte Zugriff auf lokale und Cloudressourcen mithilfe der Geräteregistrierung, Azure AD-Einbindung oder Intune-MDM-Richtlinien
  
 
-<!----HONumber=July15_HO4-->
+<!--------HONumber=July15_HO4-->
