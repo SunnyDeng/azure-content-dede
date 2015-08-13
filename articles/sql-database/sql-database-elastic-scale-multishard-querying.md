@@ -24,7 +24,7 @@ Das **Abfragen von mehreren Shards** wird für Aufgaben wie Datensammlung/Berich
 
 In der Clientbibliothek für elastische Datenbanken wird der neue Namespace **Microsoft.Azure.SqlDatabase.ElasticScale.Query** eingeführt, der das Abfragen mehrerer Shards mithilfe einer einzelnen Abfrage und eines einzelnen Ergebnisses ermöglicht. Diese stellt eine Abfrageabstraktion über eine Sammlung von Shards bereit. Darüber hinaus werden auch alternative Ausführungsrichtlinien bereitgestellt, insbesondere Teilergebnisse zur Behandlung von Fehlern beim Abfragen über mehrere Shards hinweg.
 
-Der Haupteinstiegspunkt in das Abfragen mehrerer Shards ist die **MultiShardConnection**-Klasse. Wie beim datenabhängigen Routing verwendet die API die vertrauten **\[System.Data.SqlClient\]\(http://msdn.microsoft.com/library/System.Data.SqlClient(v=vs.110).aspx)**-Klassen und -Methoden. Bei der **SqlClient**-Bibliothek besteht der erste Schritt darin, ein **SqlConnection**-Element und dann ein **SqlCommand**-Element für die Verbindung zu erstellen. Führen Sie anschließend den Befehl mithilfe einer der **Execute**-Methoden aus. **SqlDataReader** durchläuft abschließend die Ergebnissätze, die von der Befehlsausführung zurückgegeben wurden. Die APIs für das Abfragen mehrerer Shards umfassen die folgenden Schritte: 
+Der Haupteinstiegspunkt in das Abfragen mehrerer Shards ist die **MultiShardConnection**-Klasse. Wie beim datenabhängigen Routing verwendet die API die vertrauten **[System.Data.SqlClient](http://msdn.microsoft.com/library/System.Data.SqlClient(v=vs.110).aspx)**-Klassen und -Methoden. Bei der **SqlClient**-Bibliothek besteht der erste Schritt darin, ein **SqlConnection**-Element und dann ein **SqlCommand**-Element für die Verbindung zu erstellen. Führen Sie anschließend den Befehl mithilfe einer der **Execute**-Methoden aus. **SqlDataReader** durchläuft abschließend die Ergebnissätze, die von der Befehlsausführung zurückgegeben wurden. Die APIs für das Abfragen mehrerer Shards umfassen die folgenden Schritte: 
 
 1. Erstellen Sie ein **MultiShardConnection**-Element.
 2. Erstellen Sie ein **MultiShardCommand**-Element für ein **MultiShardConnection**-Element.
@@ -67,4 +67,4 @@ Beim Abfragen mehrerer Shards wird nicht überprüft, ob Shardlets im abgefragte
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=July15_HO5-->
+<!-------HONumber=July15_HO5-->

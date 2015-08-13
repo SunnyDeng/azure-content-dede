@@ -116,7 +116,7 @@ In den folgenden Abschnitten wird beschrieben, wie ausführende Operations Manag
 
 6. Ändern und führen Sie dann das folgende T-SQL-Beispiel auf jeder SQL Server-Instanz aus, um dem ausführenden Konto die erforderlichen Mindestberechtigungen zum Ausführen von SQL Assessment zu erteilen. Dies ist jedoch nicht erforderlich, wenn ein ausführendes Konto bereits Teil der Serverrolle "sysadmin" auf SQL Server-Instanzen ist.
 
-\`\`\`
+```
 ---
     -- Replace <UserName> with the actual user name being used as Run As Account.
     USE master
@@ -146,7 +146,7 @@ Open a PowerShell window and run the following script after you’ve updated it 
     $profile = Get-SCOMRunAsProfile -DisplayName "Operational Insights SQL Assessment Run As Profile"
     $account = Get-SCOMrunAsAccount | Where-Object {$_.Name -eq "<your run as account name>"}
     Set-SCOMRunAsProfile -Action "Add" -Profile $Profile -Account $Account
-\`\`\`
+```
 
 
 ### Festlegen des ausführenden Kontos für Virtual Machine Manager
@@ -215,4 +215,4 @@ Führen Sie die folgenden Schritte aus, um das Konto festzulegen, wenn Sie Opera
 
 Wenn Sie Daten von Servern an unterschiedlichen geografischen Standorten analysieren möchten, sollten Sie die Verwendung einer Verwaltungsgruppe pro Standort in Betracht ziehen. Dadurch können Sie die Leistung der Datenübertragung vom Agent an die Verwaltungsgruppe verbessern.
 
-<!---HONumber=July15_HO5-->
+<!--------HONumber=July15_HO5-->

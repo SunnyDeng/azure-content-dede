@@ -382,7 +382,7 @@ Beide Beispiele geben \*Hello world!\* zurück.
 - value: Ein Wert im DateTime-Format <br>
 - format: Eine Zeichenfolge, die das Format darstellt, in das konvertiert werden soll.
  
-**Hinweise:** <br> Die möglichen Werte für das Format finden Sie hier: \[Benutzerdefinierte Datums-/Zeitformate \(Format-Funktion\)\] \(http://msdn2.microsoft.com/library/73ctwf33(VS.90).aspx\)
+**Hinweise:** <br> Die möglichen Werte für das Format finden Sie hier: [Benutzerdefinierte Datums-/Zeitformate (Format-Funktion)](http://msdn2.microsoft.com/library/73ctwf33(VS.90).aspx)
  
 **Beispiel:** <br>
  
@@ -1058,4 +1058,4 @@ Wenn "string" weniger als "WordNumber" Wörter enthält, oder "string" keine Wö
  
 <!--Image references-->
 
-<!---HONumber=July15_HO5-->
+<!-----HONumber=July15_HO5-->

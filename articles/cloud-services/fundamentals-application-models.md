@@ -69,7 +69,9 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 
 [App Service]: #tellmeas
 [Virtual Machines]: #tellmevm
+[Virtuelle Computer]: #tellmevm
 [Cloud Services]: #tellmecs
+[Cloud-Dienste]: #tellmecs
 
 ## Nächste Schritte
 

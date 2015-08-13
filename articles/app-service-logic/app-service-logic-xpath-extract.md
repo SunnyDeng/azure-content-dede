@@ -23,7 +23,7 @@ Mit dem BizTalk XPath Extract-Connector kann Ihre App Daten aus dem XML-Inhalt s
 ##Verwenden von BizTalk XPath Extractor
 1. Um den BizTalk Xpath Extractor zu verwenden, müssen Sie zunächst eine Instanz der BizTalk Xpath Extractor-API-App erstellen. Dies kann entweder inline beim Erstellen einer Logik-App oder durch Auswählen der BizTalk Xpath Extractor-API-App aus dem Azure Marketplace erfolgen.
 
-	>[AZURE.NOTE]
+	>[AZURE.NOTE] Es sind keine Konfigurationseinstellungen für BizTalk Xpath Extractor vorhanden.
 2. [Erstellen einer neuen Logik-App] Öffnen Sie "Trigger und Aktionen" innerhalb der erstellten Logik-App, um den Logik-App-Designer zu öffnen und den Ablauf zu konfigurieren.
 3. Im Designer werden im rechten Bereich die verfügbaren API-Apps für das Erstellen des Ablaufs aufgeführt. Suchen Sie "BizTalk XPath Extractor". Durch diese Auswahl wird der XPath Extractor Ihrem Ablauf hinzugefügt und eine Instanz davon bereitgestellt.
 2. Nach der Bereitstellung zeigt der Designer die Aktion, die der BizTalk XPath Extractor-API-App zugeordnet sind.
@@ -63,4 +63,4 @@ Die Aktion gibt die Ausgabe als Zeichenfolge zurück - Ergebnis. Das Ergebnis en
 <!-- Links -->
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=July15_HO4-->
+<!-------HONumber=July15_HO4-->

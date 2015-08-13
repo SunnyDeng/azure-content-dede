@@ -23,7 +23,7 @@ Die Azure Active Directory Connect-Synchronisierungsdienste \(Azure AD Connect-
 
 Ein wesentlicher Bestandteil der deklarativen Bereitstellung ist die in den Attributflüssen verwendete Ausdruckssprache. Die verwendete Sprache ist eine Teilmenge von Microsoft ® Visual Basic ® for Applications \(VBA\). Diese Sprache wird in Microsoft Office verwendet, und Benutzer mit Erfahrungen mit VBScript werden sie wiedererkennen. Die Ausdruckssprache für die deklarative Bereitstellung verwendet nur Funktionen und ist keine strukturierte Sprache; es gibt keine Methoden oder Anweisungen. Funktionen werden stattdessen verschachtelt, um den Programmablauf auszudrücken.
 
-Weitere Informationen finden Sie unter \[Willkommen bei der VBA-Sprachreferenz \(Visual Basic for Applications\) für Office 2013\]\(https://msdn.microsoft.com/library/gg264383(v=office.15).aspx).
+Weitere Informationen finden Sie unter [Willkommen bei der VBA-Sprachreferenz (Visual Basic for Applications) für Office 2013](https://msdn.microsoft.com/library/gg264383(v=office.15).aspx).
 
 Die Attribute sind stark typisiert. Eine Funktion, die ein einwertiges Zeichenfolgenattribut erwartet, wird weder mehrwertige Attribute noch Attribute eines anderen Typs akzeptieren. Zudem muss die Groß- und Kleinschreibung beachtet werden. Sowohl bei Funktions- als auch bei Attributnamen muss die Groß- und Kleinschreibung richtig sein, ansonsten wird ein Fehler ausgegeben.
 
@@ -134,4 +134,4 @@ Eine vollständige Liste der Funktionen finden Sie unter [Azure AD Connect-Synch
  
 <!--Image references-->
 
-<!---HONumber=July15_HO5-->
+<!------HONumber=July15_HO5-->
