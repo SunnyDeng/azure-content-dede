@@ -37,11 +37,11 @@ SAS sind zum Beispiel dann hilfreich, wenn Benutzer ihre eigenen Daten in Ihrem 
 
 1\. Clients laden Daten über einen Front-End-Proxydienst hoch und herunter, der die Authentifizierung übernimmt. Dieser Front-End-Proxydienst hat den Vorteil, dass auch Geschäftsregeln validiert werden können. Allerdings kann die Erstellung eines skalierbaren Dienstes für große Datenmengen oder Transaktionen mit großem Volumen teuer und aufwändig sein.
 
-	![sas-storage-fe-proxy-service][sas-storage-fe-proxy-service]
+![sas-storage-fe-proxy-service][sas-storage-fe-proxy-service]
 
-2\. Ein vereinfachter Dienst authentifiziert den Client bei Bedarf und generiert anschließend die SAS. Sobald der Client die SAS erhält, kann er direkt gemäß der in der SAS definierten Berechtigungen für den definierten Zeitraum auf die Speicherkonto-Ressourcen zugreifen. Dank der SAS müssen nicht mehr alle Daten durch einen Front-End-Proxydienst geleitet werden.
+2\.	Ein vereinfachter Dienst authentifiziert den Client bei Bedarf und generiert anschließend die SAS. Sobald der Client die SAS erhält, kann er direkt gemäß der in der SAS definierten Berechtigungen für den definierten Zeitraum auf die Speicherkonto-Ressourcen zugreifen. Dank der SAS müssen nicht mehr alle Daten durch einen Front-End-Proxydienst geleitet werden.
 
-	![sas-storage-provider-service][sas-storage-provider-service]
+![sas-storage-provider-service][sas-storage-provider-service]
 
 Viele tatsächliche Dienste verwenden je nach Szenario eine Mischung aus beiden Ansätzen, verarbeiten und validieren einige Daten im Front-End-Proxy und speichern und/oder lesen andere Daten direkt per SAS.
 
@@ -238,4 +238,4 @@ Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berech
 
  
 
-<!----HONumber=July15_HO5-->
+<!-------HONumber=July15_HO5-->

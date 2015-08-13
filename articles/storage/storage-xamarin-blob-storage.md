@@ -173,9 +173,9 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie den Azure-Blob-Speicher und S
 
 Weitere Informationen zu Blobs, Tabellen und Warteschlangen finden Sie über die folgenden Links:
 
-[Einführung in Microsoft Azure Storage](storage-introduction.md)
-[Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md)
-[Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md)
+[Einführung in Microsoft Azure Storage](storage-introduction.md)  
+[Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md)  
+[Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md)  
 [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
  
 
