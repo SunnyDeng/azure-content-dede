@@ -1,5 +1,5 @@
 <properties
-	pageTitle="IPython Notebook – Azure-Lernprogramm"
+	pageTitle="IPython Notebook | Azure-Lernprogramm"
 	description="Dieses Lernprogramm beschreibt die Bereitstellung von IPython Notebook in Azure mithilfe von virtuellen Linux- oder Windows-Computern (VMs)."
 	services="virtual-machines"
 	documentationCenter="python"
@@ -89,7 +89,7 @@ Um IPython und dessen Abhängigkeiten auf der Windows-VM zu installieren, verbin
 
 **Hinweis**: Sie müssen einige Sicherheitseinstellungen ändern, um Downloads mit dem Internet Explorer ausführen zu können. Klicken Sie im **Server-Manager** auf **Lokaler Server**, anschließend auf **Verstärkte Sicherheitskonfiguration für IE**, und deaktivieren Sie die Option für Administratoren. Sie können die Option nach der Installation von IPython wieder aktivieren.
 
-1.  Laden Sie die aktuelle 32-Bit-Version von [Python 2.7][] herunter, und installieren Sie sie. Sie müssen `C:\Python27` und `C:\Python27\Scripts` zu der `PATH`-Umgebungsvariablen hinzufügen.
+1.  Laden Sie die aktuelle 32-Bit-Version von [Python 2.7][] herunter, und installieren Sie sie. Sie müssen `C:\Python27` und `C:\Python27\Scripts` zu der `PATH` Umgebungsvariablen hinzufügen.
 
 1.  Installieren Sie [Tornado][Tornado], [PyZMQ][PyZMQ] und andere IPython-Abhängigkeiten mithilfe der folgenden Befehle.
 
