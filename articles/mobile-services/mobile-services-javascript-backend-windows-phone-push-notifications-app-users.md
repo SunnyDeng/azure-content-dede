@@ -90,8 +90,8 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 <!-- URLs. -->
 [Hinzufügen von Authentifizierung zur App]: mobile-services-windows-phone-get-started-users.md
 [Hinzufügen von Pushbenachrichtigungen zur App]: mobile-services-javascript-backend-windows-phone-get-started-push.md
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
  
 
-<!----HONumber=July15_HO5-->
+<!-------HONumber=July15_HO5-->
